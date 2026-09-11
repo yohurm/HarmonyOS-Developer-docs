@@ -1,9 +1,9 @@
 # @ohos.app.ability.insightIntentProvider (意图提供方管理能力)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-insightintentprovider
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块为意图提供方提供管理能力，如主动发送指定意图的执行结果。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { insightIntentProvider } from '@kit.AbilityKit';
@@ -22,9 +23,10 @@ import { insightIntentProvider } from '@kit.AbilityKit';
 
 
 
-#### insightIntentProvider.sendExecuteResult
+## insightIntentProvider.sendExecuteResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sendExecuteResult(instanceId: number, result: insightIntent.ExecuteResult): Promise&lt;void&gt;
 
@@ -40,6 +42,7 @@ sendExecuteResult(instanceId: number, result: insightIntent.ExecuteResult): Prom
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | instanceId | number | 是 | 意图实例唯一ID。 |
@@ -47,6 +50,7 @@ sendExecuteResult(instanceId: number, result: insightIntent.ExecuteResult): Prom
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -56,6 +60,7 @@ sendExecuteResult(instanceId: number, result: insightIntent.ExecuteResult): Prom
 **错误码**：
 
 以下错误码详细介绍请参考[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -89,7 +94,7 @@ export default class InsightIntentExecutorUI extends InsightIntentExecutor {
     } catch (error) {
       let code = (error as BusinessError).code;
       let msg = (error as BusinessError).message;
-      console.error(`testTag setReturnModeForUIExtensionAbility fail, error code: ${code}, error msg: ${msg}.`);
+      console.error(`testTag setReturnModeForUIAbilityForeground fail, error code: ${code}, error msg: ${msg}.`);
     }
     // 将意图实例的id通过localStorage传入目标页面中
     let localStorageData: Record<string, number> = {
@@ -136,15 +141,15 @@ struct Index {
             };
             insightIntentProvider.sendExecuteResult(this.insightId, result)
               .then(() => {
-                console.info('testTag setExecuteResult success');
+                console.info('testTag sendExecuteResult success');
               })
               .catch((error: BusinessError) => {
-                console.error(`testTag setExecuteResult fail1, error code: ${error.code}, error msg: ${error.message}.`);
+                console.error(`testTag sendExecuteResult fail 1, error code: ${error.code}, error msg: ${error.message}.`);
               });
           } catch (e) {
             let code = (e as BusinessError).code;
             let msg = (e as BusinessError).message;
-            console.error(`testTag setExecuteResult fail2, error code: ${code}, error msg: ${msg}`);
+            console.error(`testTag sendExecuteResult fail 2, error code: ${code}, error msg: ${msg}`);
           }
         })
     }
@@ -156,9 +161,10 @@ struct Index {
 
 
 
-#### insightIntentProvider.sendIntentResult
+## insightIntentProvider.sendIntentResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sendIntentResult(instanceId: number, result: insightIntent.IntentResult&lt;T&gt;): Promise&lt;void&gt;
 
@@ -174,6 +180,7 @@ sendIntentResult(instanceId: number, result: insightIntent.IntentResult&lt;T&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | instanceId | number | 是 | 意图实例唯一ID。 |
@@ -181,6 +188,7 @@ sendIntentResult(instanceId: number, result: insightIntent.IntentResult&lt;T&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -190,6 +198,7 @@ sendIntentResult(instanceId: number, result: insightIntent.IntentResult&lt;T&gt;
 **错误码**：
 
 以下错误码详细介绍请参考[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -289,7 +298,7 @@ struct Index {
 
   build() {
     Column() {
-      // 通过sendExecuteResult接口主动返回意图执行结果
+      // 通过sendIntentResult接口主动返回意图执行结果
       Button('insightIntentProvider sendIntentResult')
         .onClick(() => {
           try {

@@ -1,9 +1,9 @@
 # @ohos.net.mdns (MDNS管理)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-net-mdns
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 MDNS即多播DNS（Multicast DNS），提供局域网内的本地服务添加、移除、发现、解析等能力。
 
@@ -12,9 +12,10 @@ MDNS即多播DNS（Multicast DNS），提供局域网内的本地服务添加、
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { mdns } from '@kit.NetworkKit';
@@ -22,9 +23,10 @@ import { mdns } from '@kit.NetworkKit';
 
 
 
-#### mdns.addLocalService
+## mdns.addLocalService
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addLocalService(context: Context, serviceInfo: LocalServiceInfo, callback: AsyncCallback&lt;LocalServiceInfo&gt;): void
 
@@ -36,6 +38,7 @@ addLocalService(context: Context, serviceInfo: LocalServiceInfo, callback: Async
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 |
@@ -46,6 +49,7 @@ addLocalService(context: Context, serviceInfo: LocalServiceInfo, callback: Async
 **错误码：**
 
 以下错误码的详细介绍请参见[MDNS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-mdns)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -91,9 +95,10 @@ mdns.addLocalService(context, localServiceInfo, (error:BusinessError, data:mdns.
 
 
 
-#### mdns.addLocalService
+## mdns.addLocalService
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addLocalService(context: Context, serviceInfo: LocalServiceInfo): Promise&lt;LocalServiceInfo&gt;
 
@@ -105,6 +110,7 @@ addLocalService(context: Context, serviceInfo: LocalServiceInfo): Promise&lt;Loc
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 |
@@ -112,6 +118,7 @@ addLocalService(context: Context, serviceInfo: LocalServiceInfo): Promise&lt;Loc
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -121,6 +128,7 @@ addLocalService(context: Context, serviceInfo: LocalServiceInfo): Promise&lt;Loc
 **错误码：**
 
 以下错误码的详细介绍请参见[MDNS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-mdns)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -165,9 +173,10 @@ mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInf
 
 
 
-#### mdns.removeLocalService
+## mdns.removeLocalService
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeLocalService(context: Context, serviceInfo: LocalServiceInfo, callback: AsyncCallback&lt;LocalServiceInfo&gt;): void
 
@@ -179,6 +188,7 @@ removeLocalService(context: Context, serviceInfo: LocalServiceInfo, callback: As
 
 **参数**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 |
@@ -189,6 +199,7 @@ removeLocalService(context: Context, serviceInfo: LocalServiceInfo, callback: As
 **错误码：**
 
 以下错误码的详细介绍请参见[MDNS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-mdns)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -234,9 +245,10 @@ mdns.removeLocalService(context, localServiceInfo, (error: BusinessError, data: 
 
 
 
-#### mdns.removeLocalService
+## mdns.removeLocalService
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeLocalService(context: Context, serviceInfo: LocalServiceInfo): Promise&lt;LocalServiceInfo&gt;
 
@@ -248,6 +260,7 @@ removeLocalService(context: Context, serviceInfo: LocalServiceInfo): Promise&lt;
 
 **参数**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 |
@@ -255,6 +268,7 @@ removeLocalService(context: Context, serviceInfo: LocalServiceInfo): Promise&lt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -264,6 +278,7 @@ removeLocalService(context: Context, serviceInfo: LocalServiceInfo): Promise&lt;
 **错误码：**
 
 以下错误码的详细介绍请参见[MDNS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-mdns)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -307,9 +322,10 @@ mdns.removeLocalService(context, localServiceInfo).then((data: mdns.LocalService
 
 
 
-#### mdns.createDiscoveryService
+## mdns.createDiscoveryService
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createDiscoveryService(context: Context, serviceType: string): DiscoveryService
 
@@ -321,6 +337,7 @@ createDiscoveryService(context: Context, serviceType: string): DiscoveryService
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 |
@@ -328,6 +345,7 @@ createDiscoveryService(context: Context, serviceType: string): DiscoveryService
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -337,6 +355,7 @@ createDiscoveryService(context: Context, serviceType: string): DiscoveryService
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -365,9 +384,10 @@ let discoveryService : Object = mdns.createDiscoveryService(context, serviceType
 
 
 
-#### mdns.resolveLocalService
+## mdns.resolveLocalService
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 resolveLocalService(context: Context, serviceInfo: LocalServiceInfo, callback: AsyncCallback&lt;LocalServiceInfo&gt;): void
 
@@ -379,6 +399,7 @@ resolveLocalService(context: Context, serviceInfo: LocalServiceInfo, callback: A
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 |
@@ -389,6 +410,7 @@ resolveLocalService(context: Context, serviceInfo: LocalServiceInfo, callback: A
 **错误码：**
 
 以下错误码的详细介绍请参见[MDNS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-mdns)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -434,9 +456,10 @@ mdns.resolveLocalService(context, localServiceInfo, (error: BusinessError, data:
 
 
 
-#### mdns.resolveLocalService
+## mdns.resolveLocalService
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 resolveLocalService(context: Context, serviceInfo: LocalServiceInfo): Promise&lt;LocalServiceInfo&gt;
 
@@ -448,6 +471,7 @@ resolveLocalService(context: Context, serviceInfo: LocalServiceInfo): Promise&lt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 |
@@ -455,6 +479,7 @@ resolveLocalService(context: Context, serviceInfo: LocalServiceInfo): Promise&lt
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -464,6 +489,7 @@ resolveLocalService(context: Context, serviceInfo: LocalServiceInfo): Promise&lt
 **错误码：**
 
 以下错误码的详细介绍请参见[MDNS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-mdns)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -508,17 +534,19 @@ mdns.resolveLocalService(context, localServiceInfo).then((data: mdns.LocalServic
 
 
 
-#### DiscoveryService
+## DiscoveryService
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 指定服务类型的发现服务对象。
 
 
 
-#### startSearchingMDNS
+### startSearchingMDNS
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startSearchingMDNS(): void
 
@@ -550,9 +578,10 @@ discoveryService.startSearchingMDNS();
 
 
 
-#### stopSearchingMDNS
+### stopSearchingMDNS
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopSearchingMDNS(): void
 
@@ -584,9 +613,10 @@ discoveryService.stopSearchingMDNS();
 
 
 
-#### on('discoveryStart')
+### on('discoveryStart')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'discoveryStart', callback: Callback&lt;DiscoveryEventInfo&gt;): void
 
@@ -597,6 +627,7 @@ on(type: 'discoveryStart', callback: Callback&lt;DiscoveryEventInfo&gt;): void
 **系统能力**：SystemCapability.Communication.NetManager.MDNS
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -630,9 +661,10 @@ discoveryService.stopSearchingMDNS();
 
 
 
-#### off('discoveryStart')
+### off('discoveryStart')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'discoveryStart', callback?: Callback&lt;DiscoveryEventInfo&gt;): void
 
@@ -643,6 +675,7 @@ off(type: 'discoveryStart', callback?: Callback&lt;DiscoveryEventInfo&gt;): void
 **系统能力**：SystemCapability.Communication.NetManager.MDNS
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -680,9 +713,10 @@ discoveryService.off('discoveryStart', (data: mdns.DiscoveryEventInfo) => {
 
 
 
-#### on('discoveryStop')
+### on('discoveryStop')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'discoveryStop', callback: Callback&lt;DiscoveryEventInfo&gt;): void
 
@@ -693,6 +727,7 @@ on(type: 'discoveryStop', callback: Callback&lt;DiscoveryEventInfo&gt;): void
 **系统能力**：SystemCapability.Communication.NetManager.MDNS
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -726,11 +761,12 @@ discoveryService.stopSearchingMDNS();
 
 
 
-#### off('discoveryStop')
+### off('discoveryStop')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-off(type: 'discoveryStop', callback?: Callback<[DiscoveryEventInfo](#discoveryeventinfo11)>): void
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+off(type: 'discoveryStop', callback?: Callback&lt;DiscoveryEventInfo&gt;): void
 
 取消订阅停止监听MDNS服务的通知。
 
@@ -739,6 +775,7 @@ off(type: 'discoveryStop', callback?: Callback<[DiscoveryEventInfo](#discoveryev
 **系统能力**：SystemCapability.Communication.NetManager.MDNS
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -776,9 +813,10 @@ discoveryService.off('discoveryStop', (data: mdns.DiscoveryEventInfo) => {
 
 
 
-#### on('serviceFound')
+### on('serviceFound')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'serviceFound', callback: Callback&lt;LocalServiceInfo&gt;): void
 
@@ -789,6 +827,7 @@ on(type: 'serviceFound', callback: Callback&lt;LocalServiceInfo&gt;): void
 **系统能力**：SystemCapability.Communication.NetManager.MDNS
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -825,9 +864,10 @@ discoveryService.stopSearchingMDNS();
 
 
 
-#### off('serviceFound')
+### off('serviceFound')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'serviceFound', callback?: Callback&lt;LocalServiceInfo&gt;): void
 
@@ -838,6 +878,7 @@ off(type: 'serviceFound', callback?: Callback&lt;LocalServiceInfo&gt;): void
 **系统能力**：SystemCapability.Communication.NetManager.MDNS
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -878,9 +919,10 @@ discoveryService.off('serviceFound', (data: mdns.LocalServiceInfo) => {
 
 
 
-#### on('serviceLost')
+### on('serviceLost')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'serviceLost', callback: Callback&lt;LocalServiceInfo&gt;): void
 
@@ -891,6 +933,7 @@ on(type: 'serviceLost', callback: Callback&lt;LocalServiceInfo&gt;): void
 **系统能力**：SystemCapability.Communication.NetManager.MDNS
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -924,9 +967,10 @@ discoveryService.stopSearchingMDNS();
 
 
 
-#### off('serviceLost')
+### off('serviceLost')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'serviceLost', callback?: Callback&lt;LocalServiceInfo&gt;): void
 
@@ -937,6 +981,7 @@ off(type: 'serviceLost', callback?: Callback&lt;LocalServiceInfo&gt;): void
 **系统能力**：SystemCapability.Communication.NetManager.MDNS
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -974,9 +1019,10 @@ discoveryService.off('serviceLost', (data: mdns.LocalServiceInfo) => {
 
 
 
-#### LocalServiceInfo
+## LocalServiceInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 MDNS服务信息。
 
@@ -984,26 +1030,29 @@ MDNS服务信息。
 
 **系统能力**：SystemCapability.Communication.NetManager.MDNS
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | serviceType | string | 否 | 否 | MDNS服务的类型。格式：_&lt;name&gt;.<_tcp/_udp>，name长度小于63字符并且不能包含字符'.'。 |
 | serviceName | string | 否 | 否 | MDNS服务的名字。 |
-| port | number | 否 | 是 | MDNS服务的端口号。取值范围[0，65535]。 |
+| port | number | 否 | 是 | MDNS服务的端口号。取值范围[0, 65535]。 |
 | host | NetAddress | 否 | 是 | MDNS服务设备的IP地址。采用设备的IP，添加服务和移除服务时候不生效。 |
 | serviceAttribute | Array&lt;ServiceAttribute&gt; | 否 | 是 | MDNS服务属性信息。 |
 
 
 
 
-#### ServiceAttribute
+## ServiceAttribute
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 MDNS服务属性信息。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Communication.NetManager.MDNS
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1013,15 +1062,17 @@ MDNS服务属性信息。
 
 
 
-#### DiscoveryEventInfo11+
+## DiscoveryEventInfo11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 监听到的MDNS服务事件信息。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Communication.NetManager.MDNS
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1031,15 +1082,17 @@ MDNS服务属性信息。
 
 
 
-#### MdnsError
+## MdnsError
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 MDNS错误信息。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Communication.NetManager.MDNS
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1050,9 +1103,10 @@ MDNS错误信息。
 
 
 
-#### NetAddress
+## NetAddress
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type NetAddress = connection.NetAddress
 
@@ -1061,6 +1115,7 @@ type NetAddress = connection.NetAddress
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
+
 
 | 类型 | 说明 |
 | --- | --- |

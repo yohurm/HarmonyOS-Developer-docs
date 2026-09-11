@@ -1,9 +1,9 @@
 # @ohos.convertxml (XML转换JavaScript)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-convertxml
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供将XML文本转换为JavaScript对象的解析能力，适用于XML配置文件解析、XML格式网络数据处理、数据迁移与格式转换等场景。转换过程中，XML的各类组件（声明、指令、元素、属性、文本、CDATA、注释和Doctype等）会按照ConvertOptions中配置的键名映射为JavaScript对象的属性，形成层级嵌套的对象结构，简化了XML数据的处理流程，支持通过ConvertOptions自定义键名映射实现灵活的输出结构。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```xml
 import { convertxml } from '@kit.ArkTS';
@@ -22,17 +23,19 @@ import { convertxml } from '@kit.ArkTS';
  
   
 
-#### ConvertXML
+## ConvertXML
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ConvertXML类提供将XML文本转换为JavaScript对象的能力，推荐使用[fastConvertToJSObject14+](#fastconverttojsobject14)进行常规XML文本解析，当单元素文本内容超过10M时推荐使用[largeConvertToJSObject23+](#largeconverttojsobject23)。已废弃的[convertToJSObject](#converttojsobjectdeprecated)和[convert](#convertdeprecated)方法不再维护，建议使用[fastConvertToJSObject14+](#fastconverttojsobject14)替代。
  
   
 
-#### fastConvertToJSObject14+
+### fastConvertToJSObject14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fastConvertToJSObject(xml: string, options?: ConvertOptions) : Object
  
@@ -48,6 +51,7 @@ fastConvertToJSObject(xml: string, options?: ConvertOptions) : Object
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | xml | string | 是 | XML文本，需符合XML语法规范，若包含“&”字符，请使用实体引用“&amp;”替换。单元素文本内容超过10M时，输出异常日志并返回仅包含XML声明的基础Object，建议使用largeConvertToJSObject替代。 |
@@ -56,6 +60,7 @@ fastConvertToJSObject(xml: string, options?: ConvertOptions) : Object
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Object | 转换后的JavaScript对象，用于提供解析后的XML结构信息，具体属性键名由ConvertOptions定义，可通过配置键名访问XML各组件的映射数据。 |
@@ -65,6 +70,7 @@ fastConvertToJSObject(xml: string, options?: ConvertOptions) : Object
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200002 | Invalid xml string. |
@@ -112,9 +118,10 @@ try {
  
   
 
-#### largeConvertToJSObject23+
+### largeConvertToJSObject23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 largeConvertToJSObject(xml: string, options?: ConvertOptions): Object
  
@@ -132,6 +139,7 @@ largeConvertToJSObject(xml: string, options?: ConvertOptions): Object
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | xml | string | 是 | XML文本，需符合XML语法规范，若包含“&”字符，请使用实体引用“&amp;”替换。 |
@@ -140,6 +148,7 @@ largeConvertToJSObject(xml: string, options?: ConvertOptions): Object
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Object | 转换后的JavaScript对象，包含解析后的XML结构信息，具体属性键名由ConvertOptions定义。 |
@@ -149,6 +158,7 @@ largeConvertToJSObject(xml: string, options?: ConvertOptions): Object
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200002 | Invalid xml string. |
@@ -166,7 +176,7 @@ try {
     '<catalog id="books">' +
       '<!-- Bestseller Example -->' +
       '<book category="fiction" ref="B101">' +
-        '<title>Echoes & Whispers</title>' +
+        '<title>Echoes &amp; Whispers</title>' +
         '<price unit="USD">19.99</price>' +
         '<descr>' +
           '<![CDATA[<b>suspense</b>novel & Legendary Stories]]>' +
@@ -204,9 +214,10 @@ try {
  
   
 
-#### convertToJSObject(deprecated)
+### convertToJSObject(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 convertToJSObject(xml: string, options?: ConvertOptions) : Object
  
@@ -222,6 +233,7 @@ convertToJSObject(xml: string, options?: ConvertOptions) : Object
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | xml | string | 是 | XML文本，需符合XML语法规范，若包含“&”字符，请使用实体引用“&amp;”替换。 |
@@ -230,6 +242,7 @@ convertToJSObject(xml: string, options?: ConvertOptions) : Object
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Object | 转换后的JavaScript对象，包含解析后的XML结构信息，具体属性键名由ConvertOptions定义。 |
@@ -239,6 +252,7 @@ convertToJSObject(xml: string, options?: ConvertOptions) : Object
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200002 | Invalid xml string. |
@@ -287,9 +301,10 @@ try {
  
   
 
-#### convert(deprecated)
+### convert(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 convert(xml: string, options?: ConvertOptions) : Object
  
@@ -303,6 +318,7 @@ convert(xml: string, options?: ConvertOptions) : Object
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | xml | string | 是 | XML文本，需符合XML语法规范，若包含“&”字符，请使用实体引用“&amp;”替换。 |
@@ -311,6 +327,7 @@ convert(xml: string, options?: ConvertOptions) : Object
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Object | 转换后的JavaScript对象，包含解析后的XML结构信息，具体属性键名由ConvertOptions定义。 |
@@ -352,9 +369,10 @@ console.info(result);
  
   
 
-#### ConvertOptions
+## ConvertOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 转换选项，用于自定义XML到JavaScript对象的转换行为，如控制是否修剪空白字符、是否忽略特定组件（声明、指令、属性、注释、CDATA、Doctype和文本等），以及指定输出对象中各类型组件的属性键名称。
  
@@ -366,6 +384,7 @@ console.info(result);
  
 **系统能力：** SystemCapability.Utils.Lang
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | trim | boolean | 否 | 否 | 是否修剪位于文本内容前后的空白字符，true表示元素内文本内容前后的空白字符将会被修剪，false则表示空白字符会被保留，默认false。 |

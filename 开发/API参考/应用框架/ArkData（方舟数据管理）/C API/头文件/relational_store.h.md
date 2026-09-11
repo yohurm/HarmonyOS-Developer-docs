@@ -1,13 +1,14 @@
 # relational_store.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-relational-store-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供管理关系数据库（RDB）方法的接口，未标注支持向量数据库的接口仅支持关系型数据库。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_Rdb_Config | OH_Rdb_Config | 管理关系数据库配置。 |
@@ -52,10 +56,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_Rdb_SecurityLevel | OH_Rdb_SecurityLevel | 数据库的安全级别枚举。 |
@@ -72,10 +78,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_Rdb_ConfigV2 *OH_Rdb_CreateConfig() | - | 创建一个OH_Rdb_ConfigV2实例，并返回指向该实例的指针。 |
@@ -115,7 +123,7 @@
 | int OH_Rdb_ExecuteV2(OH_Rdb_Store *store, const char *sql, const OH_Data_Values *args, OH_Data_Value **result) | - | 执行有返回值的SQL语句，支持向量数据库。 |
 | int OH_Rdb_ExecuteByTrxId(OH_Rdb_Store *store, int64_t trxId, const char *sql) | - | 使用指定的事务ID执行无返回值的SQL语句，仅支持向量数据库。 |
 | OH_Cursor *OH_Rdb_ExecuteQuery(OH_Rdb_Store *store, const char *sql) | - | 根据指定SQL语句查询数据库中的数据，支持向量数据库。 |
-| OH_Cursor *OH_Rdb_ExecuteQueryV2(OH_Rdb_Store *store, const char *sql, const OH_Data_Values *args) | - | 根据指定SQL语句查询数据库中的数据，支持向量数据库。 |
+| OH_Cursor *OH_Rdb_ExecuteQueryV2(OH_Rdb_Store *store, const char *sql, const OH_Data_Values *args) | - | 根据指定SQL语句查询数据库中的数据，支持SQL参数绑定，支持向量数据库。 |
 | int OH_Rdb_BeginTransaction(OH_Rdb_Store *store) | - | 在开始执行SQL语句之前，开始事务。 |
 | int OH_Rdb_RollBack(OH_Rdb_Store *store) | - | 回滚已经执行的SQL语句。使用前需先调用OH_Rdb_BeginTransaction开始事务。 |
 | int OH_Rdb_Commit(OH_Rdb_Store *store) | - | 提交已执行的SQL语句。使用前需先调用OH_Rdb_BeginTransaction开始事务。 |
@@ -149,7 +157,7 @@
 | int OH_Rdb_RekeyEx(OH_Rdb_Store *store, OH_Rdb_CryptoParam *param) | - | 更改加密数据库密钥。 不支持对非WAL模式的数据库进行密钥更新。 手动更新时需要独占访问数据库，此时若存在任何未释放的结果集、事务或其他进程打开的数据库均会导致更新失败。 支持加密数据库的参数更新，以及加密数据库与非加密数据库之间的相互转换。 数据库越大，执行更新所需的时间越长。 加密参数变更需谨慎，调用OH_Rdb_CreateOrOpen时需要传入正确的加密参数，否则可能打开数据库失败。 |
 | typedef void (*Rdb_CorruptedHandler)(void *context, OH_Rdb_ConfigV2 *config, OH_Rdb_Store *store) | Rdb_CorruptedHandler | 数据库异常处理的回调函数。 |
 | int OH_Rdb_RegisterCorruptedHandler(const OH_Rdb_ConfigV2 *config, void *context, const Rdb_CorruptedHandler handler) | - | 注册数据库异常处理。当数据库发生异常时，将调用异常处理的回调函数。 异常处理逻辑为用户自定义，回调时触发的业务需要用户自行保障。 每个路径只允许注册一次。 |
-| int OH_Rdb_UnregisterCorruptedHandler(const OH_Rdb_ConfigV2 *config, void *context, const Rdb_CorruptedHandler handler) | - | 取消注册的数据库异常处理的回调函数。 handler和context必须要和订阅时保持一致，否则取消失败。 |
+| int OH_Rdb_UnregisterCorruptedHandler(const OH_Rdb_ConfigV2 *config, void *context, const Rdb_CorruptedHandler handler) | - | 取消注册的数据库异常处理的回调函数。 handler和context必须要和注册时保持一致，否则取消失败。 |
 | OH_Cursor *OH_Rdb_QueryWithoutRowCount(OH_Rdb_Store *store, OH_Predicates *predicates, const char * const columns[], int length) | - | 根据指定条件查询数据库中的数据，不计算行数。 |
 | OH_Cursor *OH_Rdb_QuerySqlWithoutRowCount(OH_Rdb_Store *store, const char *sql, const OH_Data_Values *args) | - | 执行有返回值的SQL语句，不计算行数，支持向量数据库。 |
 | int OH_Rdb_BatchInsertWithReturning(OH_Rdb_Store *store, const char *table, const OH_Data_VBuckets *rows, Rdb_ConflictResolution resolution, OH_RDB_ReturningContext *context) | - | 将批量数据插入目标表，并将变更信息输出到上下文中。 |
@@ -159,10 +167,12 @@
  
   
 
-#### 宏定义
+### 宏定义
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | DISTRIBUTED_CONFIG_VERSION 1 | 描述Rdb_DistributedConfig的版本。 起始版本： 11 |
@@ -172,15 +182,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Rdb_SecurityLevel
+### OH_Rdb_SecurityLevel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Rdb_SecurityLevel
@@ -192,6 +204,7 @@ enum OH_Rdb_SecurityLevel
  
 **起始版本：** 10
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | S1 = 1 | S1: 表示数据库的安全级别为低级别。当数据泄露时会产生较低影响。 |
@@ -202,9 +215,10 @@ enum OH_Rdb_SecurityLevel
  
   
 
-#### Rdb_SecurityArea
+### Rdb_SecurityArea
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Rdb_SecurityArea
@@ -216,6 +230,7 @@ enum Rdb_SecurityArea
  
 **起始版本：** 11
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | RDB_SECURITY_AREA_EL1 = 1 | 安全区域等级为1。 |
@@ -227,9 +242,10 @@ enum Rdb_SecurityArea
  
   
 
-#### Rdb_DBType
+### Rdb_DBType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Rdb_DBType
@@ -241,6 +257,7 @@ enum Rdb_DBType
  
 **起始版本：** 14
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | RDB_SQLITE = 1 | 表示使用sqlite作为数据库内核。 |
@@ -250,9 +267,10 @@ enum Rdb_DBType
  
   
 
-#### Rdb_Tokenizer
+### Rdb_Tokenizer
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Rdb_Tokenizer
@@ -264,6 +282,7 @@ enum Rdb_Tokenizer
  
 **起始版本：** 17
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | RDB_NONE_TOKENIZER = 1 | 表示不使用分词器。 |
@@ -273,9 +292,10 @@ enum Rdb_Tokenizer
  
   
 
-#### Rdb_DistributedType
+### Rdb_DistributedType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Rdb_DistributedType
@@ -287,6 +307,7 @@ enum Rdb_DistributedType
  
 **起始版本：** 11
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | RDB_DISTRIBUTED_CLOUD | 表示在设备和云端之间分布式的数据库表。 |
@@ -294,9 +315,10 @@ enum Rdb_DistributedType
  
   
 
-#### Rdb_ChangeType
+### Rdb_ChangeType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Rdb_ChangeType
@@ -308,6 +330,7 @@ enum Rdb_ChangeType
  
 **起始版本：** 11
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | RDB_DATA_CHANGE | 表示是数据发生变更。 |
@@ -316,9 +339,10 @@ enum Rdb_ChangeType
  
   
 
-#### Rdb_SubscribeType
+### Rdb_SubscribeType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Rdb_SubscribeType
@@ -330,6 +354,7 @@ enum Rdb_SubscribeType
  
 **起始版本：** 11
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | RDB_SUBSCRIBE_TYPE_CLOUD | 订阅云端数据更改。 |
@@ -339,9 +364,10 @@ enum Rdb_SubscribeType
  
   
 
-#### Rdb_SyncMode
+### Rdb_SyncMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Rdb_SyncMode
@@ -353,6 +379,7 @@ enum Rdb_SyncMode
  
 **起始版本：** 11
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | RDB_SYNC_MODE_TIME_FIRST | 表示数据从修改时间较近的一端同步到修改时间较远的一端。 |
@@ -362,9 +389,10 @@ enum Rdb_SyncMode
  
   
 
-#### Rdb_Progress
+### Rdb_Progress
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Rdb_Progress
@@ -376,6 +404,7 @@ enum Rdb_Progress
  
 **起始版本：** 11
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | RDB_SYNC_BEGIN | 表示端云同步过程开始。 |
@@ -385,9 +414,10 @@ enum Rdb_Progress
  
   
 
-#### Rdb_ProgressCode
+### Rdb_ProgressCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Rdb_ProgressCode
@@ -399,6 +429,7 @@ enum Rdb_ProgressCode
  
 **起始版本：** 11
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | RDB_SUCCESS | 表示端云同步过程成功。 |
@@ -412,15 +443,17 @@ enum Rdb_ProgressCode
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Rdb_SetSemanticIndex()
+### OH_Rdb_SetSemanticIndex()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_SetSemanticIndex(OH_Rdb_ConfigV2 *config, bool enableSemanticIndex)
@@ -434,6 +467,7 @@ int OH_Rdb_SetSemanticIndex(OH_Rdb_ConfigV2 *config, bool enableSemanticIndex)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_ConfigV2 *config | 指向OH_Rdb_ConfigV2实例的指针。 |
@@ -442,6 +476,7 @@ int OH_Rdb_SetSemanticIndex(OH_Rdb_ConfigV2 *config, bool enableSemanticIndex)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -449,9 +484,10 @@ int OH_Rdb_SetSemanticIndex(OH_Rdb_ConfigV2 *config, bool enableSemanticIndex)
  
   
 
-#### OH_Rdb_CreateConfig()
+### OH_Rdb_CreateConfig()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Rdb_ConfigV2 *OH_Rdb_CreateConfig()
@@ -465,6 +501,7 @@ OH_Rdb_ConfigV2 *OH_Rdb_CreateConfig()
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Rdb_ConfigV2 * | 返回一个指向OH_Rdb_ConfigV2实例的指针。 使用完成后，必须通过OH_Rdb_DestroyConfig接口释放内存。 |
@@ -476,9 +513,10 @@ OH_Rdb_ConfigV2
  
   
 
-#### OH_Rdb_DestroyConfig()
+### OH_Rdb_DestroyConfig()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_DestroyConfig(OH_Rdb_ConfigV2 *config)
@@ -492,6 +530,7 @@ int OH_Rdb_DestroyConfig(OH_Rdb_ConfigV2 *config)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_ConfigV2 *config | 指向OH_Rdb_ConfigV2对象的指针，即与此RDB存储相关的数据库配置。 |
@@ -499,6 +538,7 @@ int OH_Rdb_DestroyConfig(OH_Rdb_ConfigV2 *config)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -506,9 +546,10 @@ int OH_Rdb_DestroyConfig(OH_Rdb_ConfigV2 *config)
  
   
 
-#### OH_Rdb_SetDatabaseDir()
+### OH_Rdb_SetDatabaseDir()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_SetDatabaseDir(OH_Rdb_ConfigV2 *config, const char *databaseDir)
@@ -522,6 +563,7 @@ int OH_Rdb_SetDatabaseDir(OH_Rdb_ConfigV2 *config, const char *databaseDir)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_ConfigV2 *config | 指向OH_Rdb_ConfigV2对象的指针，即与此RDB存储相关的数据库配置。 |
@@ -530,6 +572,7 @@ int OH_Rdb_SetDatabaseDir(OH_Rdb_ConfigV2 *config, const char *databaseDir)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -537,9 +580,10 @@ int OH_Rdb_SetDatabaseDir(OH_Rdb_ConfigV2 *config, const char *databaseDir)
  
   
 
-#### OH_Rdb_SetStoreName()
+### OH_Rdb_SetStoreName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_SetStoreName(OH_Rdb_ConfigV2 *config, const char *storeName)
@@ -553,6 +597,7 @@ int OH_Rdb_SetStoreName(OH_Rdb_ConfigV2 *config, const char *storeName)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_ConfigV2 *config | 指向OH_Rdb_ConfigV2对象的指针，即与此RDB存储相关的数据库配置。 |
@@ -561,6 +606,7 @@ int OH_Rdb_SetStoreName(OH_Rdb_ConfigV2 *config, const char *storeName)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -568,9 +614,10 @@ int OH_Rdb_SetStoreName(OH_Rdb_ConfigV2 *config, const char *storeName)
  
   
 
-#### OH_Rdb_SetBundleName()
+### OH_Rdb_SetBundleName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_SetBundleName(OH_Rdb_ConfigV2 *config, const char *bundleName)
@@ -584,6 +631,7 @@ int OH_Rdb_SetBundleName(OH_Rdb_ConfigV2 *config, const char *bundleName)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_ConfigV2 *config | 指向OH_Rdb_ConfigV2对象的指针，即与此RDB存储相关的数据库配置。 |
@@ -592,6 +640,7 @@ int OH_Rdb_SetBundleName(OH_Rdb_ConfigV2 *config, const char *bundleName)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -599,9 +648,10 @@ int OH_Rdb_SetBundleName(OH_Rdb_ConfigV2 *config, const char *bundleName)
  
   
 
-#### OH_Rdb_SetModuleName()
+### OH_Rdb_SetModuleName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_SetModuleName(OH_Rdb_ConfigV2 *config, const char *moduleName)
@@ -615,6 +665,7 @@ int OH_Rdb_SetModuleName(OH_Rdb_ConfigV2 *config, const char *moduleName)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_ConfigV2 *config | 指向OH_Rdb_ConfigV2对象的指针，即与此RDB存储相关的数据库配置。 |
@@ -623,6 +674,7 @@ int OH_Rdb_SetModuleName(OH_Rdb_ConfigV2 *config, const char *moduleName)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -630,9 +682,10 @@ int OH_Rdb_SetModuleName(OH_Rdb_ConfigV2 *config, const char *moduleName)
  
   
 
-#### OH_Rdb_SetEncrypted()
+### OH_Rdb_SetEncrypted()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_SetEncrypted(OH_Rdb_ConfigV2 *config, bool isEncrypted)
@@ -646,6 +699,7 @@ int OH_Rdb_SetEncrypted(OH_Rdb_ConfigV2 *config, bool isEncrypted)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_ConfigV2 *config | 指向OH_Rdb_ConfigV2对象的指针，即与此RDB存储相关的数据库配置。 |
@@ -654,6 +708,7 @@ int OH_Rdb_SetEncrypted(OH_Rdb_ConfigV2 *config, bool isEncrypted)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -661,9 +716,10 @@ int OH_Rdb_SetEncrypted(OH_Rdb_ConfigV2 *config, bool isEncrypted)
  
   
 
-#### OH_Rdb_SetSecurityLevel()
+### OH_Rdb_SetSecurityLevel()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_SetSecurityLevel(OH_Rdb_ConfigV2 *config, int securityLevel)
@@ -679,6 +735,7 @@ int OH_Rdb_SetSecurityLevel(OH_Rdb_ConfigV2 *config, int securityLevel)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_ConfigV2 *config | 指向OH_Rdb_ConfigV2对象的指针，即与此RDB存储相关的数据库配置。 |
@@ -687,6 +744,7 @@ int OH_Rdb_SetSecurityLevel(OH_Rdb_ConfigV2 *config, int securityLevel)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -694,9 +752,10 @@ int OH_Rdb_SetSecurityLevel(OH_Rdb_ConfigV2 *config, int securityLevel)
  
   
 
-#### OH_Rdb_SetArea()
+### OH_Rdb_SetArea()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_SetArea(OH_Rdb_ConfigV2 *config, int area)
@@ -712,6 +771,7 @@ int OH_Rdb_SetArea(OH_Rdb_ConfigV2 *config, int area)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_ConfigV2 *config | 指向OH_Rdb_ConfigV2对象的指针，即与此RDB存储相关的数据库配置。 |
@@ -720,6 +780,7 @@ int OH_Rdb_SetArea(OH_Rdb_ConfigV2 *config, int area)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -727,9 +788,10 @@ int OH_Rdb_SetArea(OH_Rdb_ConfigV2 *config, int area)
  
   
 
-#### OH_Rdb_SetDbType()
+### OH_Rdb_SetDbType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_SetDbType(OH_Rdb_ConfigV2 *config, int dbType)
@@ -743,14 +805,16 @@ int OH_Rdb_SetDbType(OH_Rdb_ConfigV2 *config, int dbType)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_ConfigV2 *config | 指向OH_Rdb_ConfigV2对象的指针，即与此RDB存储相关的数据库配置。 |
-| int dbType | 表示数据库的数据库类型Rdb_DBType。 |
+| int dbType | 表示数据库的内核类型Rdb_DBType。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。 RDB_E_NOT_SUPPORTED 表示不支持当前操作。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -758,9 +822,10 @@ int OH_Rdb_SetDbType(OH_Rdb_ConfigV2 *config, int dbType)
  
   
 
-#### OH_Rdb_SetCustomDir()
+### OH_Rdb_SetCustomDir()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_SetCustomDir(OH_Rdb_ConfigV2 *config, const char *customDir)
@@ -774,6 +839,7 @@ int OH_Rdb_SetCustomDir(OH_Rdb_ConfigV2 *config, const char *customDir)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_ConfigV2 *config | 表示此关系型数据库相关的数据库配置OH_Rdb_ConfigV2的指针。 |
@@ -782,6 +848,7 @@ int OH_Rdb_SetCustomDir(OH_Rdb_ConfigV2 *config, const char *customDir)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -789,9 +856,10 @@ int OH_Rdb_SetCustomDir(OH_Rdb_ConfigV2 *config, const char *customDir)
  
   
 
-#### OH_Rdb_SetReadOnly()
+### OH_Rdb_SetReadOnly()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_SetReadOnly(OH_Rdb_ConfigV2 *config, bool readOnly)
@@ -805,6 +873,7 @@ int OH_Rdb_SetReadOnly(OH_Rdb_ConfigV2 *config, bool readOnly)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_ConfigV2 *config | 表示此关系型数据库相关的数据库配置OH_Rdb_ConfigV2的指针。 |
@@ -813,6 +882,7 @@ int OH_Rdb_SetReadOnly(OH_Rdb_ConfigV2 *config, bool readOnly)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -820,9 +890,10 @@ int OH_Rdb_SetReadOnly(OH_Rdb_ConfigV2 *config, bool readOnly)
  
   
 
-#### OH_Rdb_SetPlugins()
+### OH_Rdb_SetPlugins()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_SetPlugins(OH_Rdb_ConfigV2 *config, const char **plugins, int32_t length)
@@ -836,6 +907,7 @@ int OH_Rdb_SetPlugins(OH_Rdb_ConfigV2 *config, const char **plugins, int32_t len
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_ConfigV2 *config | 表示此关系型数据库相关的数据库配置OH_Rdb_ConfigV2的指针。 |
@@ -845,6 +917,7 @@ int OH_Rdb_SetPlugins(OH_Rdb_ConfigV2 *config, const char **plugins, int32_t len
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -852,9 +925,10 @@ int OH_Rdb_SetPlugins(OH_Rdb_ConfigV2 *config, const char **plugins, int32_t len
  
   
 
-#### OH_Rdb_SetCryptoParam()
+### OH_Rdb_SetCryptoParam()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_SetCryptoParam(OH_Rdb_ConfigV2 *config, const OH_Rdb_CryptoParam *cryptoParam)
@@ -868,6 +942,7 @@ int OH_Rdb_SetCryptoParam(OH_Rdb_ConfigV2 *config, const OH_Rdb_CryptoParam *cry
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_ConfigV2 *config | 表示此关系型数据库相关的数据库配置OH_Rdb_ConfigV2的指针。 |
@@ -876,6 +951,7 @@ int OH_Rdb_SetCryptoParam(OH_Rdb_ConfigV2 *config, const OH_Rdb_CryptoParam *cry
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -883,9 +959,10 @@ int OH_Rdb_SetCryptoParam(OH_Rdb_ConfigV2 *config, const OH_Rdb_CryptoParam *cry
  
   
 
-#### OH_Rdb_IsTokenizerSupported()
+### OH_Rdb_IsTokenizerSupported()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_IsTokenizerSupported(Rdb_Tokenizer tokenizer, bool *isSupported)
@@ -899,6 +976,7 @@ int OH_Rdb_IsTokenizerSupported(Rdb_Tokenizer tokenizer, bool *isSupported)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Rdb_Tokenizer tokenizer | 要校验是否支持的分词器。 |
@@ -907,6 +985,7 @@ int OH_Rdb_IsTokenizerSupported(Rdb_Tokenizer tokenizer, bool *isSupported)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -914,9 +993,10 @@ int OH_Rdb_IsTokenizerSupported(Rdb_Tokenizer tokenizer, bool *isSupported)
  
   
 
-#### OH_Rdb_SetTokenizer()
+### OH_Rdb_SetTokenizer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_SetTokenizer(OH_Rdb_ConfigV2 *config, Rdb_Tokenizer tokenizer)
@@ -930,6 +1010,7 @@ int OH_Rdb_SetTokenizer(OH_Rdb_ConfigV2 *config, Rdb_Tokenizer tokenizer)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_ConfigV2 *config | 指向此RDB存储相关的数据库配置的指针。 |
@@ -938,6 +1019,7 @@ int OH_Rdb_SetTokenizer(OH_Rdb_ConfigV2 *config, Rdb_Tokenizer tokenizer)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。 RDB_E_NOT_SUPPORTED 表示不支持当前操作。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -945,9 +1027,10 @@ int OH_Rdb_SetTokenizer(OH_Rdb_ConfigV2 *config, Rdb_Tokenizer tokenizer)
  
   
 
-#### OH_Rdb_SetPersistent()
+### OH_Rdb_SetPersistent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_SetPersistent(OH_Rdb_ConfigV2 *config, bool isPersistent)
@@ -961,14 +1044,16 @@ int OH_Rdb_SetPersistent(OH_Rdb_ConfigV2 *config, bool isPersistent)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_ConfigV2 *config | 指向OH_Rdb_ConfigV2实例的指针。 指示与此RDB存储相关的数据库的配置。 |
-| bool isPersistent | 指示数据库是否需要持久性。 |
+| bool isPersistent | 指示数据库是否需要持久化。true表示需要持久化，false表示不需要持久化，即内存数据库。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -976,9 +1061,10 @@ int OH_Rdb_SetPersistent(OH_Rdb_ConfigV2 *config, bool isPersistent)
  
   
 
-#### OH_Rdb_GetSupportedDbType()
+### OH_Rdb_GetSupportedDbType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 const int *OH_Rdb_GetSupportedDbType(int *typeCount)
@@ -992,6 +1078,7 @@ const int *OH_Rdb_GetSupportedDbType(int *typeCount)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | int *typeCount | 表示支持的数据库类型的数组的长度，作为出参使用。 |
@@ -999,6 +1086,7 @@ const int *OH_Rdb_GetSupportedDbType(int *typeCount)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | const int * | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -1006,9 +1094,10 @@ const int *OH_Rdb_GetSupportedDbType(int *typeCount)
  
   
 
-#### OH_Rdb_CreateValueObject()
+### OH_Rdb_CreateValueObject()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_VObject *OH_Rdb_CreateValueObject()
@@ -1022,6 +1111,7 @@ OH_VObject *OH_Rdb_CreateValueObject()
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_VObject * | 创建成功则返回一个指向OH_VObject结构体实例的指针，否则返回NULL。 |
@@ -1033,9 +1123,10 @@ OH_VObject
  
   
 
-#### OH_Rdb_CreateValuesBucket()
+### OH_Rdb_CreateValuesBucket()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_VBucket *OH_Rdb_CreateValuesBucket()
@@ -1049,6 +1140,7 @@ OH_VBucket *OH_Rdb_CreateValuesBucket()
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_VBucket * | 创建成功则返回一个指向OH_VBucket结构体实例的指针，否则返回NULL。 |
@@ -1060,9 +1152,10 @@ OH_VBucket
  
   
 
-#### OH_Rdb_CreatePredicates()
+### OH_Rdb_CreatePredicates()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Predicates *OH_Rdb_CreatePredicates(const char *table)
@@ -1076,6 +1169,7 @@ OH_Predicates *OH_Rdb_CreatePredicates(const char *table)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *table | 表示数据库表名。 |
@@ -1083,6 +1177,7 @@ OH_Predicates *OH_Rdb_CreatePredicates(const char *table)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Predicates * | 创建成功则返回一个指向OH_Predicates结构体实例的指针，否则返回NULL。 |
@@ -1094,9 +1189,10 @@ OH_Predicates
  
   
 
-#### OH_Rdb_GetOrOpen()
+### OH_Rdb_GetOrOpen()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Rdb_Store *OH_Rdb_GetOrOpen(const OH_Rdb_Config *config, int *errCode)
@@ -1110,6 +1206,7 @@ OH_Rdb_Store *OH_Rdb_GetOrOpen(const OH_Rdb_Config *config, int *errCode)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_Rdb_Config *config | 指向OH_Rdb_Config实例的指针，与此RDB存储相关的数据库配置。 |
@@ -1118,6 +1215,7 @@ OH_Rdb_Store *OH_Rdb_GetOrOpen(const OH_Rdb_Config *config, int *errCode)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Rdb_Store * | 创建成功则返回一个指向OH_Rdb_Store结构体实例的指针，否则返回NULL。 RDB_OK表示成功。 RDB_E_INVALID_ARGS表示无效参数。 |
@@ -1125,9 +1223,10 @@ OH_Rdb_Store *OH_Rdb_GetOrOpen(const OH_Rdb_Config *config, int *errCode)
  
   
 
-#### OH_Rdb_CreateOrOpen()
+### OH_Rdb_CreateOrOpen()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Rdb_Store *OH_Rdb_CreateOrOpen(const OH_Rdb_ConfigV2 *config, int *errCode)
@@ -1141,6 +1240,7 @@ OH_Rdb_Store *OH_Rdb_CreateOrOpen(const OH_Rdb_ConfigV2 *config, int *errCode)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_Rdb_ConfigV2 *config | 指向OH_Rdb_ConfigV2对象的指针，即与此RDB存储相关的数据库配置。 |
@@ -1149,6 +1249,7 @@ OH_Rdb_Store *OH_Rdb_CreateOrOpen(const OH_Rdb_ConfigV2 *config, int *errCode)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Rdb_Store * | 创建成功则返回一个指向OH_Rdb_Store结构体实例的指针，否则返回NULL。 RDB_OK表示成功。 RDB_E_INVALID_ARGS表示无效参数。 |
@@ -1156,9 +1257,10 @@ OH_Rdb_Store *OH_Rdb_CreateOrOpen(const OH_Rdb_ConfigV2 *config, int *errCode)
  
   
 
-#### OH_Rdb_CloseStore()
+### OH_Rdb_CloseStore()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_CloseStore(OH_Rdb_Store *store)
@@ -1172,6 +1274,7 @@ int OH_Rdb_CloseStore(OH_Rdb_Store *store)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向OH_Rdb_Store实例的指针。 |
@@ -1179,6 +1282,7 @@ int OH_Rdb_CloseStore(OH_Rdb_Store *store)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -1186,9 +1290,10 @@ int OH_Rdb_CloseStore(OH_Rdb_Store *store)
  
   
 
-#### OH_Rdb_DeleteStore()
+### OH_Rdb_DeleteStore()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_DeleteStore(const OH_Rdb_Config *config)
@@ -1202,6 +1307,7 @@ int OH_Rdb_DeleteStore(const OH_Rdb_Config *config)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_Rdb_Config *config | 表示数据库的配置。 |
@@ -1209,6 +1315,7 @@ int OH_Rdb_DeleteStore(const OH_Rdb_Config *config)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -1216,9 +1323,10 @@ int OH_Rdb_DeleteStore(const OH_Rdb_Config *config)
  
   
 
-#### OH_Rdb_DeleteStoreV2()
+### OH_Rdb_DeleteStoreV2()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_DeleteStoreV2(const OH_Rdb_ConfigV2 *config)
@@ -1234,6 +1342,7 @@ int OH_Rdb_DeleteStoreV2(const OH_Rdb_ConfigV2 *config)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_Rdb_ConfigV2 *config | 表示数据库的配置。 |
@@ -1241,6 +1350,7 @@ int OH_Rdb_DeleteStoreV2(const OH_Rdb_ConfigV2 *config)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -1248,9 +1358,10 @@ int OH_Rdb_DeleteStoreV2(const OH_Rdb_ConfigV2 *config)
  
   
 
-#### OH_Rdb_Insert()
+### OH_Rdb_Insert()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_Insert(OH_Rdb_Store *store, const char *table, OH_VBucket *valuesBucket)
@@ -1264,6 +1375,7 @@ int OH_Rdb_Insert(OH_Rdb_Store *store, const char *table, OH_VBucket *valuesBuck
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向OH_Rdb_Store实例的指针。 |
@@ -1273,6 +1385,7 @@ int OH_Rdb_Insert(OH_Rdb_Store *store, const char *table, OH_VBucket *valuesBuck
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 如果插入成功，返回rowID，否则返回的结果小于0。 RDB_ERR表示插入失败。 RDB_E_INVALID_ARGS表示无效参数。 |
@@ -1280,9 +1393,10 @@ int OH_Rdb_Insert(OH_Rdb_Store *store, const char *table, OH_VBucket *valuesBuck
  
   
 
-#### OH_Rdb_InsertWithConflictResolution()
+### OH_Rdb_InsertWithConflictResolution()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_InsertWithConflictResolution(OH_Rdb_Store *store, const char *table, OH_VBucket *row,Rdb_ConflictResolution resolution, int64_t *rowId)
@@ -1296,6 +1410,7 @@ int OH_Rdb_InsertWithConflictResolution(OH_Rdb_Store *store, const char *table, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向OH_Rdb_Store实例的指针。 |
@@ -1307,6 +1422,7 @@ int OH_Rdb_InsertWithConflictResolution(OH_Rdb_Store *store, const char *table, 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行结果。 返回RDB_OK表示执行成功。 返回RDB_E_ERROR表示数据库常见错误。 返回RDB_E_INVALID_ARGS表示输入参数无效。 返回RDB_E_ALREADY_CLOSED表示数据库已关闭。 返回RDB_E_WAL_SIZE_OVER_LIMIT表示WAL文件大小超过默认限制。 返回RDB_E_SQLITE_FULL表示SQLite错误：数据库已满。 返回RDB_E_SQLITE_CORRUPT表示数据库已损坏。 返回RDB_E_SQLITE_PERM表示SQLite错误：访问权限被拒绝。 返回RDB_E_SQLITE_BUSY表示SQLite错误：数据库文件被锁定。 返回RDB_E_SQLITE_LOCKED表示SQLite错误：数据库中的表被锁定。 返回RDB_E_SQLITE_NOMEM表示SQLite错误：数据库内存不足。 返回RDB_E_SQLITE_READONLY表示SQLite错误：尝试写入只读数据库。 返回RDB_E_SQLITE_IOERR表示SQLite错误：磁盘I/O错误。 返回RDB_E_SQLITE_TOO_BIG表示SQLite错误：TEXT或BLOB超出大小限制。 返回RDB_E_SQLITE_MISMATCH表示SQLite错误：数据类型不匹配。 返回RDB_E_SQLITE_CONSTRAINT表示SQLite错误：违反约束导致操作中止。 |
@@ -1314,9 +1430,10 @@ int OH_Rdb_InsertWithConflictResolution(OH_Rdb_Store *store, const char *table, 
  
   
 
-#### OH_Rdb_BatchInsert()
+### OH_Rdb_BatchInsert()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_BatchInsert(OH_Rdb_Store *store, const char *table, const OH_Data_VBuckets *rows, Rdb_ConflictResolution resolution, int64_t *changes)
@@ -1336,10 +1453,11 @@ int OH_Rdb_BatchInsert(OH_Rdb_Store *store, const char *table, const OH_Data_VBu
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向OH_Rdb_Store实例的指针。 |
-| const char *table | 要设置的分布式数据库表表名。 |
+| const char *table | 表示要插入数据的目标表名。 |
 | const OH_Data_VBuckets *rows | 表示要插入到表中的一组数据。 |
 | Rdb_ConflictResolution resolution | 表示发生冲突时的解决策略。 |
 | int64_t *changes | 输出参数，表示插入成功的次数。 |
@@ -1347,6 +1465,7 @@ int OH_Rdb_BatchInsert(OH_Rdb_Store *store, const char *table, const OH_Data_VBu
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行结果。 返回RDB_OK表示成功。 返回RDB_E_ERROR表示数据库常见错误。 返回RDB_E_INVALID_ARGS表示无效参数。 返回RDB_E_ALREADY_CLOSED表示数据库已经关闭。 返回RDB_E_WAL_SIZE_OVER_LIMIT表示WAL日志文件大小超过默认值。 返回RDB_E_SQLITE_FULL表示SQLite错误码：数据库已满。 返回RDB_E_SQLITE_CORRUPT表示数据库损坏。 返回RDB_E_SQLITE_PERM表示SQLite错误码：访问权限被拒绝。 返回RDB_E_SQLITE_BUSY表示SQLite错误码：数据库文件被锁定。 返回RDB_E_SQLITE_LOCKED表示SQLite错误码：数据库中的表被锁定。 返回RDB_E_SQLITE_NOMEM表示SQLite错误码：数据库内存不足。 返回RDB_E_SQLITE_READONLY表示SQLite错误码：尝试写入只读数据库。 返回RDB_E_SQLITE_IOERR表示SQLite错误码：磁盘I/O错误。 返回RDB_E_SQLITE_TOO_BIG表示SQLite错误码：TEXT或BLOB超出大小限制。 返回RDB_E_SQLITE_MISMATCH表示SQLite错误码：数据类型不匹配。 返回RDB_E_SQLITE_CONSTRAINT表示SQLite错误码：SQLite约束。 |
@@ -1354,9 +1473,10 @@ int OH_Rdb_BatchInsert(OH_Rdb_Store *store, const char *table, const OH_Data_VBu
  
   
 
-#### OH_Rdb_Update()
+### OH_Rdb_Update()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_Update(OH_Rdb_Store *store, OH_VBucket *valuesBucket, OH_Predicates *predicates)
@@ -1370,6 +1490,7 @@ int OH_Rdb_Update(OH_Rdb_Store *store, OH_VBucket *valuesBucket, OH_Predicates *
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向OH_Rdb_Store实例的指针。 |
@@ -1379,6 +1500,7 @@ int OH_Rdb_Update(OH_Rdb_Store *store, OH_VBucket *valuesBucket, OH_Predicates *
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 如果更新成功，返回更新的行数，否则返回的结果小于0。 RDB_ERR表示更新失败。 RDB_E_INVALID_ARGS表示无效参数。 |
@@ -1386,9 +1508,10 @@ int OH_Rdb_Update(OH_Rdb_Store *store, OH_VBucket *valuesBucket, OH_Predicates *
  
   
 
-#### OH_Rdb_UpdateWithConflictResolution()
+### OH_Rdb_UpdateWithConflictResolution()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_UpdateWithConflictResolution(OH_Rdb_Store *store, OH_VBucket *row, OH_Predicates *predicates,Rdb_ConflictResolution resolution, int64_t *changes)
@@ -1402,6 +1525,7 @@ int OH_Rdb_UpdateWithConflictResolution(OH_Rdb_Store *store, OH_VBucket *row, OH
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向OH_Rdb_Store实例的指针。 |
@@ -1413,6 +1537,7 @@ int OH_Rdb_UpdateWithConflictResolution(OH_Rdb_Store *store, OH_VBucket *row, OH
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行结果。 返回RDB_OK表示执行成功。 返回RDB_E_ERROR 表示数据库常见错误。 返回RDB_E_INVALID_ARGS表示输入参数无效。 返回RDB_E_ALREADY_CLOSED表示数据库已关闭。 返回RDB_E_WAL_SIZE_OVER_LIMIT表示WAL文件大小超过默认限制。 返回RDB_E_SQLITE_FULL表示SQLite错误：数据库已满。 返回RDB_E_SQLITE_CORRUPT表示数据库已损坏。 返回RDB_E_SQLITE_PERM表示SQLite错误：访问权限被拒绝。 返回RDB_E_SQLITE_BUSY表示SQLite错误：数据库文件被锁定。 返回RDB_E_SQLITE_LOCKED表示SQLite错误：数据库中的表被锁定。 返回RDB_E_SQLITE_NOMEM表示SQLite错误：数据库内存不足。 返回RDB_E_SQLITE_READONLY表示SQLite错误：尝试写入只读数据库。 返回RDB_E_SQLITE_IOERR表示SQLite错误：磁盘I/O错误。 返回RDB_E_SQLITE_TOO_BIG表示SQLite错误：TEXT或BLOB超出大小限制。 返回RDB_E_SQLITE_MISMATCH表示SQLite错误：数据类型不匹配。 返回RDB_E_SQLITE_CONSTRAINT表示SQLite错误：违反约束导致操作中止。 |
@@ -1420,9 +1545,10 @@ int OH_Rdb_UpdateWithConflictResolution(OH_Rdb_Store *store, OH_VBucket *row, OH
  
   
 
-#### OH_Rdb_Delete()
+### OH_Rdb_Delete()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_Delete(OH_Rdb_Store *store, OH_Predicates *predicates)
@@ -1436,6 +1562,7 @@ int OH_Rdb_Delete(OH_Rdb_Store *store, OH_Predicates *predicates)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向OH_Rdb_Store实例的指针。 |
@@ -1444,6 +1571,7 @@ int OH_Rdb_Delete(OH_Rdb_Store *store, OH_Predicates *predicates)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 如果删除成功，返回删除的行数；如果失败，则返回的结果小于0。 RDB_ERR表示删除失败。 RDB_E_INVALID_ARGS表示无效参数。 |
@@ -1451,9 +1579,10 @@ int OH_Rdb_Delete(OH_Rdb_Store *store, OH_Predicates *predicates)
  
   
 
-#### OH_Rdb_Query()
+### OH_Rdb_Query()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Cursor *OH_Rdb_Query(OH_Rdb_Store *store, OH_Predicates *predicates, const char *const *columnNames, int length)
@@ -1467,6 +1596,7 @@ OH_Cursor *OH_Rdb_Query(OH_Rdb_Store *store, OH_Predicates *predicates, const ch
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向OH_Rdb_Store实例的指针。 |
@@ -1477,6 +1607,7 @@ OH_Cursor *OH_Rdb_Query(OH_Rdb_Store *store, OH_Predicates *predicates, const ch
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Cursor * | 如果查询成功则返回一个指向OH_Cursor结构体实例的指针，否则返回NULL。 |
@@ -1484,9 +1615,10 @@ OH_Cursor *OH_Rdb_Query(OH_Rdb_Store *store, OH_Predicates *predicates, const ch
  
   
 
-#### OH_Rdb_Execute()
+### OH_Rdb_Execute()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_Execute(OH_Rdb_Store *store, const char *sql)
@@ -1500,6 +1632,7 @@ int OH_Rdb_Execute(OH_Rdb_Store *store, const char *sql)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向OH_Rdb_Store实例的指针。 |
@@ -1508,6 +1641,7 @@ int OH_Rdb_Execute(OH_Rdb_Store *store, const char *sql)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -1519,9 +1653,10 @@ OH_Rdb_Store
  
   
 
-#### OH_Rdb_ExecuteV2()
+### OH_Rdb_ExecuteV2()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_ExecuteV2(OH_Rdb_Store *store, const char *sql, const OH_Data_Values *args, OH_Data_Value **result)
@@ -1537,16 +1672,18 @@ int OH_Rdb_ExecuteV2(OH_Rdb_Store *store, const char *sql, const OH_Data_Values 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向OH_Rdb_Store实例的指针。 |
 | const char *sql | 指定要执行的SQL语句。 |
-| const OH_Data_Values *args | 可选参数，指向OH_Data_Values实例的指针。 |
+| const OH_Data_Values *args | 表示SQL语句中参数的值，指向OH_Data_Values实例的指针。SQL语句完整时，args可填写为nullptr。 |
 | OH_Data_Value **result | 执行成功时指向OH_Data_Value实例的指针，作为出参使用。使用完成后，必须通过OH_Value_Destroy接口释放内存。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行结果。 返回RDB_OK表示成功。 返回RDB_E_ERROR表示数据库常见错误。 返回RDB_E_INVALID_ARGS表示无效参数。 返回RDB_E_ALREADY_CLOSED表示数据库已经关闭。 返回RDB_E_WAL_SIZE_OVER_LIMIT表示WAL日志文件大小超过默认值。 返回RDB_E_SQLITE_FULL表示SQLite错误码：数据库已满。 返回RDB_E_SQLITE_CORRUPT表示数据库损坏。 返回RDB_E_SQLITE_PERM表示SQLite错误码：访问权限被拒绝。 返回RDB_E_SQLITE_BUSY表示SQLite错误码：数据库文件被锁定。 返回RDB_E_SQLITE_LOCKED表示SQLite错误码：数据库中的表被锁定。 返回RDB_E_SQLITE_NOMEM表示SQLite错误码：数据库内存不足。 返回RDB_E_SQLITE_READONLY表示SQLite错误码：尝试写入只读数据库。 返回RDB_E_SQLITE_IOERR表示SQLite错误码：磁盘I/O错误。 返回RDB_E_SQLITE_TOO_BIG表示SQLite错误码：TEXT或BLOB超出大小限制。 返回RDB_E_SQLITE_MISMATCH表示SQLite错误码：数据类型不匹配。 |
@@ -1558,9 +1695,10 @@ OH_Value_Destroy
  
   
 
-#### OH_Rdb_ExecuteByTrxId()
+### OH_Rdb_ExecuteByTrxId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_ExecuteByTrxId(OH_Rdb_Store *store, int64_t trxId, const char *sql)
@@ -1576,6 +1714,7 @@ int OH_Rdb_ExecuteByTrxId(OH_Rdb_Store *store, int64_t trxId, const char *sql)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 表示一个指向OH_Rdb_Store 实例的指针。 |
@@ -1585,6 +1724,7 @@ int OH_Rdb_ExecuteByTrxId(OH_Rdb_Store *store, int64_t trxId, const char *sql)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK表示成功。 RDB_E_INVALID_ARGS表示无效参数，可能情况如下： 传入参数为空指针。 当前事务ID不是调用OH_Rdb_BeginTransWithTrxId获得的。 当前事务ID已经调用OH_Rdb_CommitByTrxId提交。 当前事务ID已经调用OH_Rdb_RollBackByTrxId回滚。 当store或者sql为NULL时。 RDB_E_NOT_SUPPORTED表示不支持当前操作。 |
@@ -1596,9 +1736,10 @@ OH_Rdb_Store
  
   
 
-#### OH_Rdb_ExecuteQuery()
+### OH_Rdb_ExecuteQuery()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Cursor *OH_Rdb_ExecuteQuery(OH_Rdb_Store *store, const char *sql)
@@ -1612,6 +1753,7 @@ OH_Cursor *OH_Rdb_ExecuteQuery(OH_Rdb_Store *store, const char *sql)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向OH_Rdb_Store实例的指针。 |
@@ -1620,6 +1762,7 @@ OH_Cursor *OH_Rdb_ExecuteQuery(OH_Rdb_Store *store, const char *sql)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Cursor * | 如果查询成功则返回一个指向OH_Cursor结构体实例的指针，否则返回NULL。 |
@@ -1631,9 +1774,10 @@ OH_Rdb_Store
  
   
 
-#### OH_Rdb_ExecuteQueryV2()
+### OH_Rdb_ExecuteQueryV2()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Cursor *OH_Rdb_ExecuteQueryV2(OH_Rdb_Store *store, const char *sql, const OH_Data_Values *args)
@@ -1641,21 +1785,23 @@ OH_Cursor *OH_Rdb_ExecuteQueryV2(OH_Rdb_Store *store, const char *sql, const OH_
  
 **描述**
  
-根据指定SQL语句查询数据库中的数据，支持向量数据库。
+根据指定SQL语句查询数据库中的数据，支持SQL参数绑定，支持向量数据库。
  
 **起始版本：** 18
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向OH_Rdb_Store实例的指针。 |
 | const char *sql | 指定要执行的SQL语句。 |
-| const OH_Data_Values *args | 可选参数，指向OH_Data_Values实例的指针。 |
+| const OH_Data_Values *args | 表示SQL语句中参数的值，指向OH_Data_Values实例的指针。SQL语句完整时，args可填写为nullptr。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Cursor * | 如果查询成功则返回一个指向OH_Cursor结构体实例的指针，使用完成后及时释放OH_Cursor。 如果SQL语句无效或内存分配失败，则返回NULL。 |
@@ -1667,9 +1813,10 @@ OH_Rdb_Store
  
   
 
-#### OH_Rdb_BeginTransaction()
+### OH_Rdb_BeginTransaction()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_BeginTransaction(OH_Rdb_Store *store)
@@ -1683,6 +1830,7 @@ int OH_Rdb_BeginTransaction(OH_Rdb_Store *store)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向OH_Rdb_Store实例的指针。 |
@@ -1690,6 +1838,7 @@ int OH_Rdb_BeginTransaction(OH_Rdb_Store *store)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -1697,9 +1846,10 @@ int OH_Rdb_BeginTransaction(OH_Rdb_Store *store)
  
   
 
-#### OH_Rdb_RollBack()
+### OH_Rdb_RollBack()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_RollBack(OH_Rdb_Store *store)
@@ -1713,6 +1863,7 @@ int OH_Rdb_RollBack(OH_Rdb_Store *store)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向OH_Rdb_Store实例的指针。 |
@@ -1720,6 +1871,7 @@ int OH_Rdb_RollBack(OH_Rdb_Store *store)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -1727,9 +1879,10 @@ int OH_Rdb_RollBack(OH_Rdb_Store *store)
  
   
 
-#### OH_Rdb_Commit()
+### OH_Rdb_Commit()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_Commit(OH_Rdb_Store *store)
@@ -1743,6 +1896,7 @@ int OH_Rdb_Commit(OH_Rdb_Store *store)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向OH_Rdb_Store实例的指针。 |
@@ -1750,6 +1904,7 @@ int OH_Rdb_Commit(OH_Rdb_Store *store)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -1757,9 +1912,10 @@ int OH_Rdb_Commit(OH_Rdb_Store *store)
  
   
 
-#### OH_Rdb_BeginTransWithTrxId()
+### OH_Rdb_BeginTransWithTrxId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_BeginTransWithTrxId(OH_Rdb_Store *store, int64_t *trxId)
@@ -1773,6 +1929,7 @@ int OH_Rdb_BeginTransWithTrxId(OH_Rdb_Store *store, int64_t *trxId)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 表示一个指向OH_Rdb_Store实例的指针。 |
@@ -1781,6 +1938,7 @@ int OH_Rdb_BeginTransWithTrxId(OH_Rdb_Store *store, int64_t *trxId)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。 RDB_E_NOT_SUPPORTED 表示不支持当前操作。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -1788,9 +1946,10 @@ int OH_Rdb_BeginTransWithTrxId(OH_Rdb_Store *store, int64_t *trxId)
  
   
 
-#### OH_Rdb_RollBackByTrxId()
+### OH_Rdb_RollBackByTrxId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_RollBackByTrxId(OH_Rdb_Store *store, int64_t trxId)
@@ -1804,6 +1963,7 @@ int OH_Rdb_RollBackByTrxId(OH_Rdb_Store *store, int64_t trxId)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 表示一个指向OH_Rdb_Store实例的指针。 |
@@ -1812,6 +1972,7 @@ int OH_Rdb_RollBackByTrxId(OH_Rdb_Store *store, int64_t trxId)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK表示成功。 RDB_E_INVALID_ARGS表示无效参数，可能情况如下： 传入参数为空指针。 当前事务ID不是调用OH_Rdb_BeginTransWithTrxId获得的。 当前事务ID已经调用OH_Rdb_CommitByTrxId提交。 当前事务ID已经调用OH_Rdb_RollBackByTrxId回滚。 RDB_E_NOT_SUPPORTED表示不支持当前操作。 |
@@ -1819,9 +1980,10 @@ int OH_Rdb_RollBackByTrxId(OH_Rdb_Store *store, int64_t trxId)
  
   
 
-#### OH_Rdb_CommitByTrxId()
+### OH_Rdb_CommitByTrxId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_CommitByTrxId(OH_Rdb_Store *store, int64_t trxId)
@@ -1835,6 +1997,7 @@ int OH_Rdb_CommitByTrxId(OH_Rdb_Store *store, int64_t trxId)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 表示一个指向OH_Rdb_Store实例的指针。 |
@@ -1843,6 +2006,7 @@ int OH_Rdb_CommitByTrxId(OH_Rdb_Store *store, int64_t trxId)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS表示无效参数，可能情况如下： 传入参数为空指针。 当前事务ID不是调用OH_Rdb_BeginTransWithTrxId获得的。 当前事务ID已经调用OH_Rdb_CommitByTrxId提交。 当前事务ID已经调用OH_Rdb_RollBackByTrxId回滚。 RDB_E_NOT_SUPPORTED表示不支持当前操作。 |
@@ -1854,9 +2018,10 @@ OH_Rdb_Store
  
   
 
-#### OH_Rdb_Backup()
+### OH_Rdb_Backup()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_Backup(OH_Rdb_Store *store, const char *databasePath)
@@ -1870,6 +2035,7 @@ int OH_Rdb_Backup(OH_Rdb_Store *store, const char *databasePath)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向OH_Rdb_Store实例的指针。 |
@@ -1878,6 +2044,7 @@ int OH_Rdb_Backup(OH_Rdb_Store *store, const char *databasePath)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -1889,9 +2056,10 @@ OH_Rdb_Store
  
   
 
-#### OH_Rdb_Restore()
+### OH_Rdb_Restore()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_Restore(OH_Rdb_Store *store, const char *databasePath)
@@ -1905,6 +2073,7 @@ int OH_Rdb_Restore(OH_Rdb_Store *store, const char *databasePath)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向OH_Rdb_Store实例的指针。 |
@@ -1913,6 +2082,7 @@ int OH_Rdb_Restore(OH_Rdb_Store *store, const char *databasePath)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -1920,9 +2090,10 @@ int OH_Rdb_Restore(OH_Rdb_Store *store, const char *databasePath)
  
   
 
-#### OH_Rdb_GetVersion()
+### OH_Rdb_GetVersion()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_GetVersion(OH_Rdb_Store *store, int *version)
@@ -1936,6 +2107,7 @@ int OH_Rdb_GetVersion(OH_Rdb_Store *store, int *version)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向OH_Rdb_Store实例的指针。 |
@@ -1944,6 +2116,7 @@ int OH_Rdb_GetVersion(OH_Rdb_Store *store, int *version)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -1951,9 +2124,10 @@ int OH_Rdb_GetVersion(OH_Rdb_Store *store, int *version)
  
   
 
-#### OH_Rdb_SetVersion()
+### OH_Rdb_SetVersion()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_SetVersion(OH_Rdb_Store *store, int version)
@@ -1967,6 +2141,7 @@ int OH_Rdb_SetVersion(OH_Rdb_Store *store, int version)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向OH_Rdb_Store实例的指针。 |
@@ -1975,6 +2150,7 @@ int OH_Rdb_SetVersion(OH_Rdb_Store *store, int version)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -1986,9 +2162,10 @@ OH_Rdb_Store
  
   
 
-#### OH_Rdb_SetDistributedTables()
+### OH_Rdb_SetDistributedTables()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_SetDistributedTables(OH_Rdb_Store *store, const char *tables[], uint32_t count, Rdb_DistributedType type,const Rdb_DistributedConfig *config)
@@ -2002,10 +2179,11 @@ int OH_Rdb_SetDistributedTables(OH_Rdb_Store *store, const char *tables[], uint3
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向OH_Rdb_Store实例的指针。 |
-| const char *tables[] | 要设置的分布式数据库表表名。 |
+| const char *tables[] | 表示要插入数据的目标表名。 |
 | uint32_t count | 要设置的分布式数据库表的数量。 |
 | Rdb_DistributedType type | 表的分布式类型Rdb_DistributedType。 |
 | const Rdb_DistributedConfig *config | 表的分布式配置信息Rdb_DistributedConfig。 |
@@ -2013,6 +2191,7 @@ int OH_Rdb_SetDistributedTables(OH_Rdb_Store *store, const char *tables[], uint3
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -2024,9 +2203,10 @@ OH_Rdb_Store
  
   
 
-#### OH_Rdb_FindModifyTime()
+### OH_Rdb_FindModifyTime()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Cursor *OH_Rdb_FindModifyTime(OH_Rdb_Store *store, const char *tableName, const char *columnName,OH_VObject *values)
@@ -2040,6 +2220,7 @@ OH_Cursor *OH_Rdb_FindModifyTime(OH_Rdb_Store *store, const char *tableName, con
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向OH_Rdb_Store实例的指针。 |
@@ -2050,6 +2231,7 @@ OH_Cursor *OH_Rdb_FindModifyTime(OH_Rdb_Store *store, const char *tableName, con
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Cursor * | 如果操作成功则返回一个指向OH_Cursor结构体实例的指针，否则返回NULL。 |
@@ -2057,9 +2239,10 @@ OH_Cursor *OH_Rdb_FindModifyTime(OH_Rdb_Store *store, const char *tableName, con
  
   
 
-#### Rdb_BriefObserver()
+### Rdb_BriefObserver()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*Rdb_BriefObserver)(void *context, const char *values[], uint32_t count)
@@ -2073,18 +2256,20 @@ typedef void (*Rdb_BriefObserver)(void *context, const char *values[], uint32_t 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | void *context | 表示数据观察者的上下文。 |
-| const char *values[] | 表示更改的端云帐户。 |
-| uint32_t count | 表示更改的端云帐户数量。 |
+| const char *values[] | 表示更改的端云账户。 |
+| uint32_t count | 表示更改的端云账户数量。 |
  
  
   
 
-#### Rdb_DetailsObserver()
+### Rdb_DetailsObserver()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*Rdb_DetailsObserver)(void *context, const Rdb_ChangeInfo **changeInfo, uint32_t count)
@@ -2098,6 +2283,7 @@ typedef void (*Rdb_DetailsObserver)(void *context, const Rdb_ChangeInfo **change
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | void *context | 表示数据观察者的上下文。 |
@@ -2107,9 +2293,10 @@ typedef void (*Rdb_DetailsObserver)(void *context, const Rdb_ChangeInfo **change
  
   
 
-#### OH_Rdb_Subscribe()
+### OH_Rdb_Subscribe()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_Subscribe(OH_Rdb_Store *store, Rdb_SubscribeType type, const Rdb_DataObserver *observer)
@@ -2123,6 +2310,7 @@ int OH_Rdb_Subscribe(OH_Rdb_Store *store, Rdb_SubscribeType type, const Rdb_Data
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向OH_Rdb_Store实例的指针。 |
@@ -2132,6 +2320,7 @@ int OH_Rdb_Subscribe(OH_Rdb_Store *store, Rdb_SubscribeType type, const Rdb_Data
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -2139,9 +2328,10 @@ int OH_Rdb_Subscribe(OH_Rdb_Store *store, Rdb_SubscribeType type, const Rdb_Data
  
   
 
-#### OH_Rdb_Unsubscribe()
+### OH_Rdb_Unsubscribe()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_Unsubscribe(OH_Rdb_Store *store, Rdb_SubscribeType type, const Rdb_DataObserver *observer)
@@ -2155,6 +2345,7 @@ int OH_Rdb_Unsubscribe(OH_Rdb_Store *store, Rdb_SubscribeType type, const Rdb_Da
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向OH_Rdb_Store实例的指针。 |
@@ -2164,6 +2355,7 @@ int OH_Rdb_Unsubscribe(OH_Rdb_Store *store, Rdb_SubscribeType type, const Rdb_Da
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -2171,9 +2363,10 @@ int OH_Rdb_Unsubscribe(OH_Rdb_Store *store, Rdb_SubscribeType type, const Rdb_Da
  
   
 
-#### OH_Rdb_GetTableDetails()
+### OH_Rdb_GetTableDetails()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Rdb_TableDetails *OH_Rdb_GetTableDetails(Rdb_ProgressDetails *progress, int32_t version)
@@ -2187,6 +2380,7 @@ Rdb_TableDetails *OH_Rdb_GetTableDetails(Rdb_ProgressDetails *progress, int32_t 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Rdb_ProgressDetails *progress | 指向Rdb_ProgressDetails实例的指针。 |
@@ -2195,6 +2389,7 @@ Rdb_TableDetails *OH_Rdb_GetTableDetails(Rdb_ProgressDetails *progress, int32_t 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Rdb_TableDetails | 如果操作成功，会返回一个Rdb_TableDetails结构体的指针，否则返回NULL。 |
@@ -2206,9 +2401,10 @@ Rdb_TableDetails
  
   
 
-#### Rdb_ProgressCallback()
+### Rdb_ProgressCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*Rdb_ProgressCallback)(void *context, Rdb_ProgressDetails *progressDetails)
@@ -2222,6 +2418,7 @@ typedef void (*Rdb_ProgressCallback)(void *context, Rdb_ProgressDetails *progres
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | void *context | 回调数据的上下文。 |
@@ -2230,9 +2427,10 @@ typedef void (*Rdb_ProgressCallback)(void *context, Rdb_ProgressDetails *progres
  
   
 
-#### Rdb_SyncCallback()
+### Rdb_SyncCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*Rdb_SyncCallback)(Rdb_ProgressDetails *progressDetails)
@@ -2246,6 +2444,7 @@ typedef void (*Rdb_SyncCallback)(Rdb_ProgressDetails *progressDetails)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Rdb_ProgressDetails *progressDetails | 数据库端云同步的统计信息。 |
@@ -2253,9 +2452,10 @@ typedef void (*Rdb_SyncCallback)(Rdb_ProgressDetails *progressDetails)
  
   
 
-#### OH_Rdb_CloudSync()
+### OH_Rdb_CloudSync()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_CloudSync(OH_Rdb_Store *store, Rdb_SyncMode mode, const char *tables[], uint32_t count,const Rdb_ProgressObserver *observer)
@@ -2269,6 +2469,7 @@ int OH_Rdb_CloudSync(OH_Rdb_Store *store, Rdb_SyncMode mode, const char *tables[
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向OH_Rdb_Store实例的指针。 |
@@ -2280,6 +2481,7 @@ int OH_Rdb_CloudSync(OH_Rdb_Store *store, Rdb_SyncMode mode, const char *tables[
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -2287,9 +2489,10 @@ int OH_Rdb_CloudSync(OH_Rdb_Store *store, Rdb_SyncMode mode, const char *tables[
  
   
 
-#### OH_Rdb_SubscribeAutoSyncProgress()
+### OH_Rdb_SubscribeAutoSyncProgress()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_SubscribeAutoSyncProgress(OH_Rdb_Store *store, const Rdb_ProgressObserver *observer)
@@ -2305,6 +2508,7 @@ int OH_Rdb_SubscribeAutoSyncProgress(OH_Rdb_Store *store, const Rdb_ProgressObse
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向目标OH_Rdb_Store实例的指针。 |
@@ -2313,6 +2517,7 @@ int OH_Rdb_SubscribeAutoSyncProgress(OH_Rdb_Store *store, const Rdb_ProgressObse
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -2320,9 +2525,10 @@ int OH_Rdb_SubscribeAutoSyncProgress(OH_Rdb_Store *store, const Rdb_ProgressObse
  
   
 
-#### OH_Rdb_UnsubscribeAutoSyncProgress()
+### OH_Rdb_UnsubscribeAutoSyncProgress()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_UnsubscribeAutoSyncProgress(OH_Rdb_Store *store, const Rdb_ProgressObserver *observer)
@@ -2336,6 +2542,7 @@ int OH_Rdb_UnsubscribeAutoSyncProgress(OH_Rdb_Store *store, const Rdb_ProgressOb
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向目标OH_Rdb_Store实例的指针。 |
@@ -2344,6 +2551,7 @@ int OH_Rdb_UnsubscribeAutoSyncProgress(OH_Rdb_Store *store, const Rdb_ProgressOb
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -2351,9 +2559,10 @@ int OH_Rdb_UnsubscribeAutoSyncProgress(OH_Rdb_Store *store, const Rdb_ProgressOb
  
   
 
-#### OH_Rdb_LockRow()
+### OH_Rdb_LockRow()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_LockRow(OH_Rdb_Store *store, OH_Predicates *predicates)
@@ -2367,6 +2576,7 @@ int OH_Rdb_LockRow(OH_Rdb_Store *store, OH_Predicates *predicates)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向OH_Rdb_Store实例的指针。 |
@@ -2375,6 +2585,7 @@ int OH_Rdb_LockRow(OH_Rdb_Store *store, OH_Predicates *predicates)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -2382,9 +2593,10 @@ int OH_Rdb_LockRow(OH_Rdb_Store *store, OH_Predicates *predicates)
  
   
 
-#### OH_Rdb_UnlockRow()
+### OH_Rdb_UnlockRow()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_UnlockRow(OH_Rdb_Store *store, OH_Predicates *predicates)
@@ -2398,6 +2610,7 @@ int OH_Rdb_UnlockRow(OH_Rdb_Store *store, OH_Predicates *predicates)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向OH_Rdb_Store实例的指针。 |
@@ -2406,6 +2619,7 @@ int OH_Rdb_UnlockRow(OH_Rdb_Store *store, OH_Predicates *predicates)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -2413,9 +2627,10 @@ int OH_Rdb_UnlockRow(OH_Rdb_Store *store, OH_Predicates *predicates)
  
   
 
-#### OH_Rdb_QueryLockedRow()
+### OH_Rdb_QueryLockedRow()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Cursor *OH_Rdb_QueryLockedRow(OH_Rdb_Store *store, OH_Predicates *predicates, const char *const *columnNames, int length)
@@ -2429,6 +2644,7 @@ OH_Cursor *OH_Rdb_QueryLockedRow(OH_Rdb_Store *store, OH_Predicates *predicates,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向OH_Rdb_Store实例的指针。 |
@@ -2439,16 +2655,18 @@ OH_Cursor *OH_Rdb_QueryLockedRow(OH_Rdb_Store *store, OH_Predicates *predicates,
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| OH_Cursor | 如果查询成功则返回一个指向OH_Cursor结构体实例的指针，否则返回NULL。 |
+| OH_Cursor * | 如果查询成功则返回一个指向OH_Cursor结构体实例的指针，否则返回NULL。 |
  
  
   
 
-#### OH_Rdb_CreateTransaction()
+### OH_Rdb_CreateTransaction()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_CreateTransaction(OH_Rdb_Store *store, const OH_RDB_TransOptions *options, OH_Rdb_Transaction **trans)
@@ -2462,6 +2680,7 @@ int OH_Rdb_CreateTransaction(OH_Rdb_Store *store, const OH_RDB_TransOptions *opt
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向OH_Rdb_Store实例的指针。 |
@@ -2471,6 +2690,7 @@ int OH_Rdb_CreateTransaction(OH_Rdb_Store *store, const OH_RDB_TransOptions *opt
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行结果。 返回RDB_OK表示成功。 返回RDB_E_ERROR表示数据库常见错误。 返回RDB_E_INVALID_ARGS表示无效参数。 返回RDB_E_ALREADY_CLOSED表示数据库已关闭。 返回RDB_E_DATABASE_BUSY表示数据库无响应。 返回RDB_E_SQLITE_FULL表示SQLite错误: 数据库已满。 返回RDB_E_SQLITE_CORRUPT表示数据库已损坏。 返回RDB_E_SQLITE_PERM表示SQLite错误: 访问权限被拒绝。 返回RDB_E_SQLITE_BUSY表示SQLite错误: 数据库文件被锁定。 返回RDB_E_SQLITE_NOMEM表示SQLite错误: 数据库内存不足。 返回RDB_E_SQLITE_IOERR表示SQLite错误: 磁盘I/O错误。 返回RDB_E_SQLITE_CANT_OPEN表示SQLite错误: 无法打开数据库文件。 |
@@ -2478,9 +2698,10 @@ int OH_Rdb_CreateTransaction(OH_Rdb_Store *store, const OH_RDB_TransOptions *opt
  
   
 
-#### OH_Rdb_Attach()
+### OH_Rdb_Attach()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_Attach(OH_Rdb_Store *store, const OH_Rdb_ConfigV2 *config, const char *attachName, int64_t waitTime,size_t *attachedNumber)
@@ -2494,6 +2715,7 @@ int OH_Rdb_Attach(OH_Rdb_Store *store, const OH_Rdb_ConfigV2 *config, const char
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向OH_Rdb_Store实例的指针。 |
@@ -2505,6 +2727,7 @@ int OH_Rdb_Attach(OH_Rdb_Store *store, const OH_Rdb_ConfigV2 *config, const char
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行结果。 返回RDB_OK表示执行成功。 返回RDB_E_ERROR 表示数据库常见错误。 返回RDB_E_INVALID_ARGS表示输入参数无效。 返回RDB_E_ALREADY_CLOSED表示数据库已关闭。 返回RDB_E_NOT_SUPPORTED表示不支持的操作。 返回RDB_E_DATABASE_BUSY表示数据库无响应。 返回RDB_E_SQLITE_FULL表示SQLite错误：数据库已满。 返回RDB_E_SQLITE_CORRUPT表示数据库已损坏。 返回RDB_E_SQLITE_PERM表示SQLite错误：访问权限被拒绝。 返回RDB_E_SQLITE_BUSY表示SQLite错误：数据库文件被锁定。 返回RDB_E_SQLITE_LOCKED表示SQLite错误：数据库中的表被锁定。 返回RDB_E_SQLITE_NOMEM表示SQLite错误：数据库内存不足。 返回RDB_E_SQLITE_READONLY表示SQLite错误：尝试写入只读数据库。 返回RDB_E_SQLITE_IOERR表示SQLite错误：磁盘I/O错误。 返回RDB_E_SQLITE_TOO_BIG表示SQLite错误：TEXT或BLOB超出大小限制。 返回RDB_E_SQLITE_MISMATCH表示SQLite错误：数据类型不匹配。 返回RDB_E_SQLITE_CONSTRAINT表示SQLite错误：违反约束导致操作中止。 |
@@ -2512,9 +2735,10 @@ int OH_Rdb_Attach(OH_Rdb_Store *store, const OH_Rdb_ConfigV2 *config, const char
  
   
 
-#### OH_Rdb_Detach()
+### OH_Rdb_Detach()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_Detach(OH_Rdb_Store *store, const char *attachName, int64_t waitTime, size_t *attachedNumber)
@@ -2528,6 +2752,7 @@ int OH_Rdb_Detach(OH_Rdb_Store *store, const char *attachName, int64_t waitTime,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向OH_Rdb_Store实例的指针。 |
@@ -2538,6 +2763,7 @@ int OH_Rdb_Detach(OH_Rdb_Store *store, const char *attachName, int64_t waitTime,
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行结果。 返回RDB_OK表示执行成功。 返回RDB_E_ERROR 表示数据库常见错误。 返回RDB_E_INVALID_ARGS表示输入参数无效。 返回RDB_E_ALREADY_CLOSED表示数据库已关闭。 返回RDB_E_NOT_SUPPORTED表示不支持的操作。 返回RDB_E_DATABASE_BUSY表示数据库无响应。 返回RDB_E_SQLITE_FULL表示SQLite错误：数据库已满。 返回RDB_E_SQLITE_CORRUPT表示数据库已损坏。 返回RDB_E_SQLITE_PERM表示SQLite错误：访问权限被拒绝。 返回RDB_E_SQLITE_BUSY表示SQLite错误：数据库文件被锁定。 返回RDB_E_SQLITE_LOCKED表示SQLite错误：数据库中的表被锁定。 返回RDB_E_SQLITE_NOMEM表示SQLite错误：数据库内存不足。 返回RDB_E_SQLITE_READONLY表示SQLite错误：尝试写入只读数据库。 返回RDB_E_SQLITE_IOERR表示SQLite错误：磁盘I/O错误。 返回RDB_E_SQLITE_TOO_BIG表示SQLite错误：TEXT或BLOB超出大小限制。 返回RDB_E_SQLITE_MISMATCH表示SQLite错误：数据类型不匹配。 返回RDB_E_SQLITE_CONSTRAINT表示SQLite错误：违反约束导致操作中止。 |
@@ -2545,9 +2771,10 @@ int OH_Rdb_Detach(OH_Rdb_Store *store, const char *attachName, int64_t waitTime,
  
   
 
-#### OH_Rdb_SetLocale()
+### OH_Rdb_SetLocale()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_SetLocale(OH_Rdb_Store *store, const char *locale)
@@ -2561,6 +2788,7 @@ int OH_Rdb_SetLocale(OH_Rdb_Store *store, const char *locale)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向OH_Rdb_Store实例的指针。 |
@@ -2569,6 +2797,7 @@ int OH_Rdb_SetLocale(OH_Rdb_Store *store, const char *locale)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行结果。 返回RDB_OK表示执行成功。 返回RDB_ERR表示函数执行异常。 返回RDB_E_INVALID_ARGS表示输入参数无效。 返回RDB_E_ALREADY_CLOSED表示数据库已关闭。 返回RDB_E_SQLITE_BUSY表示SQLite错误：数据库文件被锁定。 返回RDB_E_SQLITE_NOMEM表示SQLite错误：数据库内存不足。 |
@@ -2576,9 +2805,10 @@ int OH_Rdb_SetLocale(OH_Rdb_Store *store, const char *locale)
  
   
 
-#### OH_Rdb_RekeyEx()
+### OH_Rdb_RekeyEx()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_RekeyEx(OH_Rdb_Store *store, OH_Rdb_CryptoParam *param)
@@ -2602,6 +2832,7 @@ int OH_Rdb_RekeyEx(OH_Rdb_Store *store, OH_Rdb_CryptoParam *param)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向OH_Rdb_Store实例的指针。 |
@@ -2610,6 +2841,7 @@ int OH_Rdb_RekeyEx(OH_Rdb_Store *store, OH_Rdb_CryptoParam *param)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行结果。 返回RDB_OK表示执行成功。 返回RDB_E_ERROR 表示数据库常见错误。 返回RDB_E_INVALID_ARGS表示输入参数无效。 返回RDB_E_ALREADY_CLOSED表示数据库已关闭。 返回RDB_E_SQLITE_CORRUPT表示数据库已损坏。 返回RDB_E_SQLITE_PERM表示SQLite错误：访问权限被拒绝。 返回RDB_E_SQLITE_BUSY表示SQLite错误：数据库文件被锁定。 返回RDB_E_SQLITE_NOMEM表示SQLite错误：数据库内存不足。 返回RDB_E_SQLITE_READONLY表示SQLite错误：尝试写入只读数据库。 返回RDB_E_SQLITE_IOERR表示SQLite错误：磁盘I/O错误。 返回RDB_E_SQLITE_FULL表示SQLite错误：数据库已满。 |
@@ -2617,9 +2849,10 @@ int OH_Rdb_RekeyEx(OH_Rdb_Store *store, OH_Rdb_CryptoParam *param)
  
   
 
-#### Rdb_CorruptedHandler()
+### Rdb_CorruptedHandler()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*Rdb_CorruptedHandler)(void *context, OH_Rdb_ConfigV2 *config, OH_Rdb_Store *store)
@@ -2633,6 +2866,7 @@ typedef void (*Rdb_CorruptedHandler)(void *context, OH_Rdb_ConfigV2 *config, OH_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | void *context | 表示数据异常处理的上下文，生命周期由业务自身管理。 |
@@ -2642,9 +2876,10 @@ typedef void (*Rdb_CorruptedHandler)(void *context, OH_Rdb_ConfigV2 *config, OH_
  
   
 
-#### OH_Rdb_RegisterCorruptedHandler()
+### OH_Rdb_RegisterCorruptedHandler()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_RegisterCorruptedHandler(const OH_Rdb_ConfigV2 *config, void *context, const Rdb_CorruptedHandler handler)
@@ -2662,6 +2897,7 @@ int OH_Rdb_RegisterCorruptedHandler(const OH_Rdb_ConfigV2 *config, void *context
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_Rdb_ConfigV2 *config | 指向OH_Rdb_ConfigV2对象的指针，即与此RDB存储相关的数据库配置。 |
@@ -2671,6 +2907,7 @@ int OH_Rdb_RegisterCorruptedHandler(const OH_Rdb_ConfigV2 *config, void *context
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。 返回RDB_E_SUB_LIMIT_REACHED表示注册数量超过限制。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -2678,9 +2915,10 @@ int OH_Rdb_RegisterCorruptedHandler(const OH_Rdb_ConfigV2 *config, void *context
  
   
 
-#### OH_Rdb_UnregisterCorruptedHandler()
+### OH_Rdb_UnregisterCorruptedHandler()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_UnregisterCorruptedHandler(const OH_Rdb_ConfigV2 *config, void *context, const Rdb_CorruptedHandler handler)
@@ -2690,12 +2928,13 @@ int OH_Rdb_UnregisterCorruptedHandler(const OH_Rdb_ConfigV2 *config, void *conte
  
 取消注册的数据库异常处理的回调函数。
  
-handler和context必须要和订阅时保持一致，否则取消失败。
+handler和context必须要和注册时保持一致，否则取消失败。
  
 **起始版本：** 22
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_Rdb_ConfigV2 *config | 指向OH_Rdb_ConfigV2对象的指针，即与此RDB存储相关的数据库配置。 |
@@ -2705,6 +2944,7 @@ handler和context必须要和订阅时保持一致，否则取消失败。
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -2712,9 +2952,10 @@ handler和context必须要和订阅时保持一致，否则取消失败。
  
   
 
-#### OH_Rdb_QueryWithoutRowCount()
+### OH_Rdb_QueryWithoutRowCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Cursor *OH_Rdb_QueryWithoutRowCount(OH_Rdb_Store *store, OH_Predicates *predicates, const char * const columns[], int length)
@@ -2728,6 +2969,7 @@ OH_Cursor *OH_Rdb_QueryWithoutRowCount(OH_Rdb_Store *store, OH_Predicates *predi
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向OH_Rdb_Store实例的指针。 |
@@ -2738,6 +2980,7 @@ OH_Cursor *OH_Rdb_QueryWithoutRowCount(OH_Rdb_Store *store, OH_Predicates *predi
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Cursor * | 如果查询成功则返回一个指向OH_Cursor结构体实例的指针。如果获取store失败或结果集为空，则返回nullptr。 |
@@ -2745,9 +2988,10 @@ OH_Cursor *OH_Rdb_QueryWithoutRowCount(OH_Rdb_Store *store, OH_Predicates *predi
  
   
 
-#### OH_Rdb_QuerySqlWithoutRowCount()
+### OH_Rdb_QuerySqlWithoutRowCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Cursor *OH_Rdb_QuerySqlWithoutRowCount(OH_Rdb_Store *store, const char *sql, const OH_Data_Values *args)
@@ -2761,15 +3005,17 @@ OH_Cursor *OH_Rdb_QuerySqlWithoutRowCount(OH_Rdb_Store *store, const char *sql, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向OH_Rdb_Store实例的指针。 |
 | const char *sql | 要执行的SQL语句。 |
-| const OH_Data_Values *args | 指向OH_Data_Values实例的指针。SQL语句完整时，args可填写为nullptr。 |
+| const OH_Data_Values *args | 表示SQL语句中参数的值，指向OH_Data_Values实例的指针。SQL语句完整时，args可填写为nullptr。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Cursor * * | 如果查询成功则返回一个指向OH_Cursor结构体实例的指针。如果SQL语句无效或内存分配失败，则返回nullptr。 |
@@ -2777,9 +3023,10 @@ OH_Cursor *OH_Rdb_QuerySqlWithoutRowCount(OH_Rdb_Store *store, const char *sql, 
  
   
 
-#### OH_Rdb_BatchInsertWithReturning()
+### OH_Rdb_BatchInsertWithReturning()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_BatchInsertWithReturning(OH_Rdb_Store *store, const char *table, const OH_Data_VBuckets *rows, Rdb_ConflictResolution resolution, OH_RDB_ReturningContext *context)
@@ -2801,6 +3048,7 @@ int OH_Rdb_BatchInsertWithReturning(OH_Rdb_Store *store, const char *table, cons
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向OH_Rdb_Store实例的指针。 |
@@ -2812,6 +3060,7 @@ int OH_Rdb_BatchInsertWithReturning(OH_Rdb_Store *store, const char *table, cons
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。 返回RDB_E_WAL_SIZE_OVER_LIMIT表示WAL文件大小超过默认限制。 返回RDB_E_NOT_SUPPORTED表示不支持的操作。 返回RDB_E_DATABASE_BUSY表示数据库忙。 返回RDB_E_SQLITE_FULL表示SQLite错误：数据库已满。 返回RDB_E_SQLITE_CORRUPT表示数据库损坏。 返回RDB_E_SQLITE_BUSY表示SQLite错误：数据库文件被锁定。 返回RDB_E_SQLITE_LOCKED表示SQLite错误：数据库中的表被锁定。 返回RDB_E_SQLITE_READONLY表示SQLite错误：尝试写入只读数据库。 返回RDB_E_SQLITE_IOERR表示SQLite错误：发生某种磁盘I/O错误。 返回RDB_E_SQLITE_TOO_BIG表示SQLite错误：TEXT或BLOB超出大小限制。 返回RDB_E_SQLITE_MISMATCH表示SQLite错误：数据类型不匹配。 返回RDB_E_SQLITE_CONSTRAINT表示SQLite错误：由于违反约束而中止。 返回RDB_E_SQLITE_ERROR表示SQLite错误。可能原因：语法错误，例如表或列不存在。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -2819,9 +3068,10 @@ int OH_Rdb_BatchInsertWithReturning(OH_Rdb_Store *store, const char *table, cons
  
   
 
-#### OH_Rdb_UpdateWithReturning()
+### OH_Rdb_UpdateWithReturning()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_UpdateWithReturning(OH_Rdb_Store *store, OH_VBucket *row, OH_Predicates *predicates, Rdb_ConflictResolution resolution, OH_RDB_ReturningContext *context)
@@ -2835,6 +3085,7 @@ int OH_Rdb_UpdateWithReturning(OH_Rdb_Store *store, OH_VBucket *row, OH_Predicat
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向OH_Rdb_Store实例的指针。 |
@@ -2846,6 +3097,7 @@ int OH_Rdb_UpdateWithReturning(OH_Rdb_Store *store, OH_VBucket *row, OH_Predicat
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。 返回RDB_E_WAL_SIZE_OVER_LIMIT表示WAL文件大小超过默认限制。 返回RDB_E_NOT_SUPPORTED表示不支持的操作。 返回RDB_E_EMPTY_VALUES_BUCKET表示值桶为空。 返回RDB_E_DATABASE_BUSY表示数据库忙。 返回RDB_E_SQLITE_FULL表示SQLite错误：数据库已满。 返回RDB_E_SQLITE_CORRUPT表示数据库损坏。 返回RDB_E_SQLITE_BUSY表示SQLite错误：数据库文件被锁定。 返回RDB_E_SQLITE_LOCKED表示SQLite错误：数据库中的表被锁定。 返回RDB_E_SQLITE_READONLY表示SQLite错误：尝试写入只读数据库。 返回RDB_E_SQLITE_IOERR表示SQLite错误：发生某种磁盘I/O错误。 返回RDB_E_SQLITE_TOO_BIG表示SQLite错误：TEXT或BLOB超出大小限制。 返回RDB_E_SQLITE_MISMATCH表示SQLite错误：数据类型不匹配。 返回RDB_E_SQLITE_CONSTRAINT表示SQLite错误：由于违反约束而中止。 返回RDB_E_SQLITE_ERROR表示SQLite错误。可能原因：语法错误，例如表或列不存在。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -2853,9 +3105,10 @@ int OH_Rdb_UpdateWithReturning(OH_Rdb_Store *store, OH_VBucket *row, OH_Predicat
  
   
 
-#### OH_Rdb_DeleteWithReturning()
+### OH_Rdb_DeleteWithReturning()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_DeleteWithReturning(OH_Rdb_Store *store, OH_Predicates *predicates, OH_RDB_ReturningContext *context)
@@ -2869,6 +3122,7 @@ int OH_Rdb_DeleteWithReturning(OH_Rdb_Store *store, OH_Predicates *predicates, O
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Store *store | 指向OH_Rdb_Store实例的指针。 |
@@ -2878,6 +3132,7 @@ int OH_Rdb_DeleteWithReturning(OH_Rdb_Store *store, OH_Predicates *predicates, O
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。 返回RDB_E_WAL_SIZE_OVER_LIMIT表示WAL文件大小超过默认限制。 返回RDB_E_NOT_SUPPORTED表示不支持的操作。 返回RDB_E_DATABASE_BUSY表示数据库忙。 返回RDB_E_SQLITE_FULL表示SQLite错误：数据库已满。 返回RDB_E_SQLITE_CORRUPT表示数据库损坏。 返回RDB_E_SQLITE_BUSY表示SQLite错误：数据库文件被锁定。 返回RDB_E_SQLITE_LOCKED表示SQLite错误：数据库中的表被锁定。 返回RDB_E_SQLITE_READONLY表示SQLite错误：尝试写入只读数据库。 返回RDB_E_SQLITE_IOERR表示SQLite错误：发生某种磁盘I/O错误。 返回RDB_E_SQLITE_TOO_BIG表示SQLite错误：TEXT或BLOB超出大小限制。 返回RDB_E_SQLITE_MISMATCH表示SQLite错误：数据类型不匹配。 返回RDB_E_SQLITE_ERROR表示SQLite错误。可能原因：语法错误，例如表或列不存在。详细信息请参阅OH_Rdb_ErrCode。 |

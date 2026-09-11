@@ -1,20 +1,21 @@
 # NavDestination
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navdestination
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-NavDestination作为[Navigation](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation)的子页面根容器，用于显示Navigation的内容区。支持自定义标题栏和工具栏、管理页面生命周期、配置系统/自定义转场动画、绑定可滚动组件联动等功能。当需要实现多页面导航、管理页面状态、自定义页面交互效果时，使用本组件。
+作为子页面的根容器，用于显示[Navigation](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation)的内容区。
 
 > [!NOTE]
 > 该组件从API version 9开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 该组件从API version 11开始默认支持安全区避让特性(默认值为：expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.TOP, SafeAreaEdge.BOTTOM]))，开发者可以重写该属性覆盖默认行为，API version 11之前的版本需配合 expandSafeArea 属性实现安全区避让。 NavDestination组件必须配合Navigation使用，作为Navigation目的页面的根节点，单独使用只能作为普通容器组件，不具备路由相关属性能力。 如果路由栈中间页面的生命周期发生变化，跳转之前的栈顶NavDestination的生命周期(onWillShow, onShown, onHidden, onWillDisappear)与跳转之后的栈顶NavDestination的生命周期(onWillShow, onShown, onHidden, onWillDisappear)均在最后触发。 NavDestination未设置主副标题并且没有返回键时，不显示标题栏。 不建议设置位置、大小等布局相关属性，可能会造成页面显示异常。例如在NavDestination上添加 zIndex 属性时，会覆盖掉系统设置的层级，可能导致出现显示异常。
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 子组件类型：系统组件和自定义组件，支持渲染控制类型（ if/else 、 ForEach 和 LazyForEach ）。 子组件个数：多个。
@@ -22,9 +23,10 @@ NavDestination作为[Navigation](https://developer.huawei.com/consumer/cn/doc/ha
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 NavDestination()
 
@@ -36,17 +38,19 @@ NavDestination()
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)。
 
 
 
-#### title
+### title
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 title(value: string | CustomBuilder | NavDestinationCommonTitle | NavDestinationCustomTitle | Resource, options?: NavigationTitleOptions)
 
@@ -62,17 +66,19 @@ title(value: string | CustomBuilder | NavDestinationCommonTitle | NavDestination
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string \| CustomBuilder \| NavDestinationCommonTitle \| NavDestinationCustomTitle \| Resource14+ | 是 | 页面标题。 |
-| options12+ | NavigationTitleOptions | 否 | 标题栏选项。 默认值：不设置时使用标题栏默认配置。 模型约束： 此接口仅可在Stage模型下使用。 |
+| options12+ | NavigationTitleOptions | 否 | 标题栏选项。 模型约束： 此接口仅可在Stage模型下使用。 |
 
 
 
 
-#### hideTitleBar
+### hideTitleBar
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hideTitleBar(value: boolean)
 
@@ -84,6 +90,7 @@ hideTitleBar(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否隐藏标题栏。 默认值：false true：隐藏标题栏。 false：显示标题栏。 |
@@ -91,9 +98,10 @@ hideTitleBar(value: boolean)
 
 
 
-#### hideTitleBar13+
+### hideTitleBar13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hideTitleBar(hide: boolean, animated: boolean)
 
@@ -107,6 +115,7 @@ hideTitleBar(hide: boolean, animated: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | hide | boolean | 是 | 是否隐藏标题栏。 默认值：false true：隐藏标题栏。 false：显示标题栏。 |
@@ -115,15 +124,16 @@ hideTitleBar(hide: boolean, animated: boolean)
 
 
 
-#### fullScreenOverlay
+### fullScreenOverlay
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fullScreenOverlay(fullScreenOverlay: Optional&lt;boolean&gt;)
 
 设置NavDestination是否以全屏覆盖模式显示。
 
-当参数设置为true时，在Navigation分栏模式下，当前页面会覆盖整个Navigation容器，包括NavBar和内容区。该配置作用于当前NavDestination的所有实例；当路由栈中已有页面以全屏覆盖模式显示时，其后入栈的[DIALOG](#navdestinationmode枚举说明11)页面与未将fullScreenOverlay设置为false的[STANDARD](#navdestinationmode枚举说明11)页面也会继承为全屏覆盖显示。未通过该接口设置时，NavDestination默认是普通显示模式，遵循Navigation分栏显示规则。
+当参数设置为true时，在Navigation分栏模式下，当前页面会覆盖整个Navigation容器，包括NavBar和内容区。该配置作用于当前NavDestination的所有实例；当路由栈中已有页面以全屏覆盖模式显示时，其后入栈的[DIALOG](#navdestinationmode枚举说明11)页面与未设置fullScreenOverlay为false的[STANDARD](#navdestinationmode枚举说明11)页面也会继承为全屏覆盖显示。未通过该接口设置时，NavDestination默认是普通显示模式，遵循Navigation分栏显示规则。
 
 **起始版本：** 26.0.0
 
@@ -135,6 +145,7 @@ fullScreenOverlay(fullScreenOverlay: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fullScreenOverlay | Optional&lt;boolean&gt; | 是 | 是否以全屏覆盖模式显示。 true：全屏覆盖模式，覆盖整个Navigation容器。 false：普通显示模式，遵循Navigation分栏显示规则。指定为false的STANDARD类型页面不会继承全屏显示。 undefined：普通显示模式，遵循Navigation分栏显示规则。指定为undefined的页面会继承全屏显示。 |
@@ -142,9 +153,10 @@ fullScreenOverlay(fullScreenOverlay: Optional&lt;boolean&gt;)
 
 
 
-#### toolbarConfiguration13+
+### toolbarConfiguration13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toolbarConfiguration(toolbarParam: Array&lt;ToolbarItem&gt; | CustomBuilder, options?: NavigationToolbarOptions)
 
@@ -162,17 +174,19 @@ toolbarConfiguration(toolbarParam: Array&lt;ToolbarItem&gt; | CustomBuilder, opt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| toolbarParam | Array&lt;ToolbarItem&gt; \| CustomBuilder | 是 | 工具栏内容。 使用Array&lt;ToolbarItem&gt;写法设置的工具栏有如下特性： -底部工具栏的每个选项均分宽度，用于显示文本和图标。 -竖屏模式最多支持显示5个图标，多余的图标会被放入自动生成的更多图标中，点击更多图标可以展示剩余内容。横屏模式时，如果为Split模式，仍按照竖屏模式显示，如果为Stack模式需配合menus属性的Array&lt;NavigationMenuItem&gt;使用，底部工具栏会自动隐藏，同时底部工具栏所有选项移动至页面右上角菜单。 使用CustomBuilder写法为用户自定义工具栏选项，不具备以上功能。 |
-| options | NavigationToolbarOptions | 否 | 工具栏选项，用于自定义工具栏显示样式。包含工具栏背景颜色、工具栏背景模糊样式及模糊选项、工具栏背景属性、工具栏布局方式、是否隐藏工具栏的文本、工具栏更多图标的菜单选项。当需要自定义工具栏样式时传入，不传入时使用默认工具栏样式。 |
+| toolbarParam | Array&lt;ToolbarItem&gt; \| CustomBuilder | 是 | 工具栏内容。 使用Array&lt;ToolbarItem&gt;写法设置的工具栏有如下特性： -工具栏所有选项均分底部工具栏，在每个均分内容区布局文本和图标。 -竖屏模式最多支持显示5个图标，多余的图标会被放入自动生成的更多图标中，点击更多图标，可以展示剩余内容。横屏模式时，如果为Split模式，仍按照竖屏模式显示，如果为Stack模式需配合menus属性的Array&lt;NavigationMenuItem&gt;使用，底部工具栏会自动隐藏，同时底部工具栏所有选项移动至页面右上角菜单。 使用CustomBuilder写法为用户自定义工具栏选项，不具备以上功能。 |
+| options | NavigationToolbarOptions | 否 | 工具栏选项。包含工具栏背景颜色、工具栏背景模糊样式及模糊选项、工具栏背景属性、工具栏布局方式、是否隐藏工具栏的文本、工具栏更多图标的菜单选项。 |
 
 
 
 
-#### hideToolBar13+
+### hideToolBar13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hideToolBar(hide: boolean, animated?: boolean)
 
@@ -186,6 +200,7 @@ hideToolBar(hide: boolean, animated?: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | hide | boolean | 是 | 是否隐藏工具栏。 默认值：false true：隐藏工具栏。 false：显示工具栏。 |
@@ -194,9 +209,10 @@ hideToolBar(hide: boolean, animated?: boolean)
 
 
 
-#### mode11+
+### mode11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 mode(value: NavDestinationMode)
 
@@ -214,6 +230,7 @@ mode(value: NavDestinationMode)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | NavDestinationMode | 是 | NavDestination类型。 默认值：NavDestinationMode.STANDARD |
@@ -221,9 +238,10 @@ mode(value: NavDestinationMode)
 
 
 
-#### backButtonIcon11+
+### backButtonIcon11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 backButtonIcon(value: ResourceStr | PixelMap | SymbolGlyphModifier)
 
@@ -241,6 +259,7 @@ backButtonIcon(value: ResourceStr | PixelMap | SymbolGlyphModifier)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceStr \| PixelMap \| SymbolGlyphModifier12+ | 是 | 标题栏返回键图标。 |
@@ -248,9 +267,10 @@ backButtonIcon(value: ResourceStr | PixelMap | SymbolGlyphModifier)
 
 
 
-#### backButtonIcon19+
+### backButtonIcon19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 backButtonIcon(icon: ResourceStr | PixelMap | SymbolGlyphModifier, accessibilityText?: ResourceStr)
 
@@ -268,6 +288,7 @@ backButtonIcon(icon: ResourceStr | PixelMap | SymbolGlyphModifier, accessibility
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | icon | ResourceStr \| PixelMap \| SymbolGlyphModifier | 是 | 标题栏返回键图标。 |
@@ -276,9 +297,10 @@ backButtonIcon(icon: ResourceStr | PixelMap | SymbolGlyphModifier, accessibility
 
 
 
-#### menus12+
+### menus12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 menus(value: Array&lt;NavigationMenuItem&gt; | CustomBuilder)
 
@@ -296,6 +318,7 @@ menus(value: Array&lt;NavigationMenuItem&gt; | CustomBuilder)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Array&lt;NavigationMenuItem&gt; \| CustomBuilder | 是 | 页面右上角菜单。 |
@@ -303,9 +326,10 @@ menus(value: Array&lt;NavigationMenuItem&gt; | CustomBuilder)
 
 
 
-#### menus19+
+### menus19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 menus(items: Array&lt;NavigationMenuItem&gt; | CustomBuilder, options?: NavigationMenuOptions)
 
@@ -323,24 +347,26 @@ menus(items: Array&lt;NavigationMenuItem&gt; | CustomBuilder, options?: Navigati
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | items | Array&lt;NavigationMenuItem&gt; \| CustomBuilder | 是 | 页面右上角菜单。 |
-| options | NavigationMenuOptions | 否 | 页面右上角菜单选项。 默认值：不设置时使用菜单默认配置。 |
+| options | NavigationMenuOptions | 否 | 页面右上角菜单选项。 |
 
 
 
 
-#### ignoreLayoutSafeArea12+
+### ignoreLayoutSafeArea12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ignoreLayoutSafeArea(types?: Array&lt;LayoutSafeAreaType&gt;, edges?: Array&lt;LayoutSafeAreaEdge&gt;)
 
 控制组件的布局，使其扩展到非安全区域。
 
 > [!TIP]
-> 组件设置ignoreLayoutSafeArea生效条件：设置LayoutSafeAreaType.SYSTEM时，若组件边界与非安全区域重合，组件可延伸到非安全区域内。 若组件扩展到非安全区域内，此时在非安全区域里触发的事件（例如：点击事件）等可能会被系统拦截，优先响应状态栏等系统组件。 组件想要扩展到非安全区域内，需隐藏或者设置标题栏和工具栏为 STACK 模式。
+> 组件设置ignoreLayoutSafeArea之后生效的条件为： 设置LayoutSafeAreaType.SYSTEM时，组件的边界与非安全区域重合时组件能够延伸到非安全区域下。 若组件扩展到非安全区域内，此时在非安全区域里触发的事件（例如：点击事件）等可能会被系统拦截，优先响应状态栏等系统组件。 组件想要扩展到非安全区域内，需隐藏或者设置标题栏和工具栏为 STACK 模式。
 
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -351,17 +377,19 @@ ignoreLayoutSafeArea(types?: Array&lt;LayoutSafeAreaType&gt;, edges?: Array&lt;L
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| types | Array&lt;LayoutSafeAreaType&gt; | 否 | 配置扩展安全区域的类型。 默认值： [LayoutSafeAreaType.SYSTEM] |
-| edges | Array&lt;LayoutSafeAreaEdge&gt; | 否 | 配置扩展安全区域的方向。 默认值： [LayoutSafeAreaEdge.TOP, LayoutSafeAreaEdge.BOTTOM] 默认扩展顶部和底部方向，用于避让系统状态栏和导航栏的安全区域。 |
+| types | Array &lt;LayoutSafeAreaType&gt; | 否 | 配置扩展安全区域的类型。 默认值： [LayoutSafeAreaType.SYSTEM] |
+| edges | Array &lt;LayoutSafeAreaEdge&gt; | 否 | 配置扩展安全区域的方向。 默认值： [LayoutSafeAreaEdge.TOP, LayoutSafeAreaEdge.BOTTOM]。 |
 
 
 
 
-#### systemBarStyle12+
+### systemBarStyle12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 systemBarStyle(style: Optional&lt;SystemBarStyle&gt;)
 
@@ -379,20 +407,22 @@ systemBarStyle(style: Optional&lt;SystemBarStyle&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| style | Optional&lt;SystemBarStyle&gt; | 是 | 系统状态栏样式。设置后进入该NavDestination时，系统状态栏会切换到对应样式。 |
+| style | Optional&lt;SystemBarStyle&gt; | 是 | 系统状态栏样式。 |
 
 
 
 
-#### systemTransition14+
+### systemTransition14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 systemTransition(type: NavigationSystemTransitionType)
 
-设置NavDestination系统转场动画，支持分别设置系统标题栏动画和内容动画。该属性与customTransition同时设置时，后设置的属性生效。
+设置NavDestination系统转场动画，支持分别设置系统标题栏动画和内容动画。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
@@ -402,6 +432,7 @@ systemTransition(type: NavigationSystemTransitionType)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | NavigationSystemTransitionType | 是 | 系统转场动画类型。 默认值：NavigationSystemTransitionType.DEFAULT |
@@ -409,9 +440,10 @@ systemTransition(type: NavigationSystemTransitionType)
 
 
 
-#### recoverable14+
+### recoverable14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 recoverable(recoverable: Optional&lt;boolean&gt;)
 
@@ -427,16 +459,18 @@ recoverable(recoverable: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| recoverable | Optional&lt;boolean&gt; | 是 | NavDestination是否可恢复，默认为可恢复。 默认值：true true：NavDestination可恢复，需配合Navigation的recoverable属性使用。 false：NavDestination不可恢复。 |
+| recoverable | Optional&lt;boolean&gt; | 是 | NavDestination是否可恢复，默认为可恢复。 默认值：true true：NavDestination可恢复。 false：NavDestination不可恢复。 |
 
 
 
 
-#### bindToScrollable14+
+### bindToScrollable14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 bindToScrollable(scrollers: Array&lt;Scroller&gt;)
 
@@ -454,16 +488,18 @@ bindToScrollable(scrollers: Array&lt;Scroller&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| scrollers | Array&lt;Scroller&gt; | 是 | 可滚动容器组件的控制器。 生效前提：NavDestination的标题栏或工具栏需设置为可见状态。 |
+| scrollers | Array&lt;Scroller&gt; | 是 | 可滚动容器组件的控制器。 |
 
 
 
 
-#### bindToNestedScrollable14+
+### bindToNestedScrollable14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 bindToNestedScrollable(scrollInfos: Array&lt;NestedScrollInfo&gt;)
 
@@ -481,6 +517,7 @@ bindToNestedScrollable(scrollInfos: Array&lt;NestedScrollInfo&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scrollInfos | Array&lt;NestedScrollInfo&gt; | 是 | 嵌套的可滚动容器组件的控制器。 |
@@ -488,13 +525,14 @@ bindToNestedScrollable(scrollInfos: Array&lt;NestedScrollInfo&gt;)
 
 
 
-#### hideBackButton15+
+### hideBackButton15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hideBackButton(hide: Optional&lt;boolean&gt;)
 
-设置是否隐藏标题栏中的返回键。隐藏返回键后，用户可通过系统返回手势、[onBackPressed](#onbackpressed10)回调或自定义导航按钮返回上一页面。适用于首页或不希望用户通过标准返回键返回的场景。
+设置是否隐藏标题栏中的返回键。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
@@ -504,6 +542,7 @@ hideBackButton(hide: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | hide | Optional&lt;boolean&gt; | 是 | 是否隐藏标题栏中的返回键。 默认值：false true：隐藏返回键。 false：显示返回键。 |
@@ -511,9 +550,10 @@ hideBackButton(hide: Optional&lt;boolean&gt;)
 
 
 
-#### customTransition15+
+### customTransition15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 customTransition(delegate: NavDestinationTransitionDelegate)
 
@@ -531,6 +571,7 @@ customTransition(delegate: NavDestinationTransitionDelegate)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | delegate | NavDestinationTransitionDelegate | 是 | NavDestination自定义动画的代理函数。 |
@@ -538,9 +579,10 @@ customTransition(delegate: NavDestinationTransitionDelegate)
 
 
 
-#### preferredOrientation19+
+### preferredOrientation19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 preferredOrientation(orientation: Optional&lt;Orientation&gt;)
 
@@ -558,16 +600,18 @@ preferredOrientation(orientation: Optional&lt;Orientation&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| orientation | Optional&lt;Orientation&gt; | 是 | NavDestination页面的显示方向。转场到该NavDestination后，系统会将应用主窗口切换到该显示方向。 |
+| orientation | Optional&lt;Orientation&gt; | 是 | NavDestination页面对应的Orientation。 |
 
 
 
 
-#### enableStatusBar19+
+### enableStatusBar19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableStatusBar(enabled: Optional&lt;boolean&gt;, animated?: boolean)
 
@@ -585,17 +629,19 @@ enableStatusBar(enabled: Optional&lt;boolean&gt;, animated?: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| enabled | Optional&lt;boolean&gt; | 是 | 进入该NavDestination后，系统状态栏的显示/隐藏状态。 默认值：false true：显示状态栏。 false：隐藏状态栏。 undefined：不改变系统状态栏的显示/隐藏状态。 |
+| enabled | Optional&lt;boolean&gt; | 是 | 进入该NavDestination后，系统状态栏的显示/隐藏状态。 true：显示状态栏。 false：隐藏状态栏。 |
 | animated | boolean | 否 | 是否使用动画的方式显示/隐藏系统状态栏。 默认值：false true：使用动画的方式显示/隐藏系统状态栏。 false：不使用动画的方式显示/隐藏系统状态栏。 |
 
 
 
 
-#### enableNavigationIndicator19+
+### enableNavigationIndicator19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableNavigationIndicator(enabled: Optional&lt;boolean&gt;)
 
@@ -613,16 +659,18 @@ enableNavigationIndicator(enabled: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| enabled | Optional&lt;boolean&gt; | 是 | 进入该NavDestination后，系统导航条的显示/隐藏状态。 默认值：false true：显示导航条。 false：隐藏导航条。 undefined：不改变系统导航条的显示/隐藏状态。 |
+| enabled | Optional&lt;boolean&gt; | 是 | 进入该NavDestination后，系统导航条的显示/隐藏状态。 true：显示导航条。 false：隐藏导航条。 |
 
 
 
 
-#### NavDestinationMode枚举说明11+
+## NavDestinationMode枚举说明11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 NavDestination类型。
 
@@ -632,23 +680,26 @@ NavDestination类型。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| STANDARD | 0 | 标准模式的NavDestination，适合常规的内容页面场景，如列表详情页、设置页面、表单页面等。 |
-| DIALOG | 1 | 默认透明。进出路由栈不影响下层NavDestination的可见性（onShown、onHidden等生命周期），只触发onActive、onInactive生命周期。适合需要透明背景或悬浮效果的场景，如弹窗式页面、浮层提示、操作确认对话框等。 API version 13之前，默认无系统转场动画。从API version 13开始，支持系统转场动画。 |
+| STANDARD | 0 | 标准模式的NavDestination。 |
+| DIALOG | 1 | 默认透明，进出路由栈不影响下层NavDestination的可见性（onShown、onHidden等生命周期），只会触发onActive、onInactive这两个生命周期。 API version 13之前，默认无系统转场动画。从API version 13开始，支持系统转场动画。 |
 
 
 
 
-#### NavigationSystemTransitionType14+枚举说明
+## NavigationSystemTransitionType14+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 系统转场动画类型。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -663,22 +714,24 @@ NavDestination类型。
 
 
 > [!NOTE]
-> 设置系统转场动画，支持分别设置系统标题栏动画和内容动画。 系统默认转场动画中只有STANDARD页面的push和pop动画有单独的标题栏动画，存在如下限制： 设置NavigationSystemTransitionType为TITLE时，系统转场只有标题栏动画。 设置NavigationSystemTransitionType为CONTENT时，系统转场只有内容区动画。 设置NavigationSystemTransitionType为NONE时，没有系统转场动画。 设置NavigationSystemTransitionType为DEFAULT时，使用默认系统转场动画。
+> 设置系统转场动画，支持分别设置系统标题栏动画和内容动画。 系统默认转场动画中只有STANDARD页面的push和pop动画有单独的标题栏动画，存在如下限制： 设置NavigationSystemTransitionType为TITLE时，系统转场只有标题栏动画。 设置NavigationSystemTransitionType为CONTENT时，系统转场只有内容区动画。 设置NONE时没有系统转场动画，设置TITLE时只有标题栏系统转场动画，设置CONTENT和DEFAULT时默认系统转场动画。
 
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)外，还支持如下事件：
 
 
 
-#### onShown10+
+### onShown10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onShown(callback: Callback&lt;VisibilityChangeReason&gt;)
 
@@ -692,6 +745,7 @@ onShown(callback: Callback&lt;VisibilityChangeReason&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;VisibilityChangeReason&gt;21+ | 是 | 当该NavDestination页面显示时触发此回调。 在API version 21之前，当NavDestination页面显示时触发回调。 从API version 21开始，回调会提供入参VisibilityChangeReason以说明onShown触发的原因。 |
@@ -699,9 +753,10 @@ onShown(callback: Callback&lt;VisibilityChangeReason&gt;)
 
 
 
-#### onHidden10+
+### onHidden10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onHidden(callback: Callback&lt;VisibilityChangeReason&gt;)
 
@@ -715,6 +770,7 @@ onHidden(callback: Callback&lt;VisibilityChangeReason&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;VisibilityChangeReason&gt;21+ | 是 | 当该NavDestination页面隐藏时触发此回调。 在API version 21之前，当NavDestination页面隐藏时触发回调。 从API version 21开始，该回调会提供入参VisibilityChangeReason以说明onHidden触发的原因。 |
@@ -722,9 +778,10 @@ onHidden(callback: Callback&lt;VisibilityChangeReason&gt;)
 
 
 
-#### onWillAppear12+
+### onWillAppear12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onWillAppear(callback: Callback&lt;void&gt;)
 
@@ -742,6 +799,7 @@ onWillAppear(callback: Callback&lt;void&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;void&gt; | 是 | 当该NavDestination挂载之前触发此回调。在该回调中允许修改路由栈，当前帧生效。 |
@@ -749,9 +807,10 @@ onWillAppear(callback: Callback&lt;void&gt;)
 
 
 
-#### onWillShow12+
+### onWillShow12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onWillShow(callback: Callback&lt;void&gt;)
 
@@ -769,6 +828,7 @@ onWillShow(callback: Callback&lt;void&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;void&gt; | 是 | 当该NavDestination显示之前触发此回调。 |
@@ -776,9 +836,10 @@ onWillShow(callback: Callback&lt;void&gt;)
 
 
 
-#### onWillHide12+
+### onWillHide12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onWillHide(callback: Callback&lt;void&gt;)
 
@@ -796,6 +857,7 @@ onWillHide(callback: Callback&lt;void&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;void&gt; | 是 | 当该NavDestination隐藏之前触发此回调。 |
@@ -803,9 +865,10 @@ onWillHide(callback: Callback&lt;void&gt;)
 
 
 
-#### onWillDisappear12+
+### onWillDisappear12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onWillDisappear(callback: Callback&lt;void&gt;)
 
@@ -823,6 +886,7 @@ onWillDisappear(callback: Callback&lt;void&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;void&gt; | 是 | 当该NavDestination卸载之前触发的生命周期(有转场动画时，在转场动画开始之前触发)。 |
@@ -830,13 +894,16 @@ onWillDisappear(callback: Callback&lt;void&gt;)
 
 
 
-#### onBackPressed10+
+### onBackPressed10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onBackPressed(callback: () => boolean)
 
 当与Navigation绑定的导航控制器中存在内容时，此回调生效。当点击返回键时，触发该回调。
+
+返回值为true时，表示重写返回键逻辑，返回值为false时，表示回退到上一个页面。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -846,16 +913,18 @@ onBackPressed(callback: () => boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | () => boolean | 是 | 当与Navigation绑定的导航控制器中存在内容时，此回调生效。当点击返回键时，触发该回调。 返回值为true时，表示重写返回键逻辑；返回值为false时，表示回退到上一个页面。 |
+| callback | () => boolean | 是 | 当与Navigation绑定的导航控制器中存在内容时，此回调生效。当点击返回键时，触发该回调。 |
 
 
 
 
-#### onReady11+
+### onReady11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onReady(callback: import('../api/@ohos.base').Callback<[NavDestinationContext](#navdestinationcontext11)>)
 
@@ -873,6 +942,7 @@ onReady(callback: import('../api/@ohos.base').Callback<[NavDestinationContext](#
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | import('../api/@ohos.base').Callback&lt;NavDestinationContext&gt; | 是 | 当NavDestination即将构建子组件之前会触发此回调。 |
@@ -880,9 +950,10 @@ onReady(callback: import('../api/@ohos.base').Callback<[NavDestinationContext](#
 
 
 
-#### onSaveState
+### onSaveState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onSaveState(callback: Optional&lt;SaveStateCallback&gt;)
 
@@ -900,6 +971,7 @@ onSaveState(callback: Optional&lt;SaveStateCallback&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Optional&lt;SaveStateCallback&gt; | 是 | 页面状态保存回调。 |
@@ -907,9 +979,10 @@ onSaveState(callback: Optional&lt;SaveStateCallback&gt;)
 
 
 
-#### onRestoreState
+### onRestoreState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onRestoreState(callback: Optional&lt;RestoreStateCallback&gt;)
 
@@ -927,6 +1000,7 @@ onRestoreState(callback: Optional&lt;RestoreStateCallback&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Optional&lt;RestoreStateCallback&gt; | 是 | 页面状态恢复回调。 |
@@ -934,9 +1008,10 @@ onRestoreState(callback: Optional&lt;RestoreStateCallback&gt;)
 
 
 
-#### onResult15+
+### onResult15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onResult(callback: Optional<Callback&lt;ESObject&gt;>)
 
@@ -954,6 +1029,7 @@ NavDestination返回时触发该回调。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Optional<Callback&lt;ESObject&gt;> | 是 | 页面返回回调，入参为pop、popToName、popToIndex接口传入的result参数。如果不传该参数，入参为undefined。 |
@@ -961,9 +1037,10 @@ NavDestination返回时触发该回调。
 
 
 
-#### onActive17+
+### onActive17+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onActive(callback: Optional<Callback&lt;NavDestinationActiveReason&gt;>)
 
@@ -981,6 +1058,7 @@ NavDestination处于激活态（处于栈顶可操作，且上层无特殊组件
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Optional<Callback&lt;NavDestinationActiveReason&gt;> | 是 | NavDestination由非激活态变为激活态的原因。 |
@@ -988,9 +1066,10 @@ NavDestination处于激活态（处于栈顶可操作，且上层无特殊组件
 
 
 
-#### onInactive17+
+### onInactive17+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onInactive(callback: Optional<Callback&lt;NavDestinationActiveReason&gt;>)
 
@@ -1008,6 +1087,7 @@ NavDestination处于非激活态（处于非栈顶不可操作，或处于栈顶
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Optional<Callback&lt;NavDestinationActiveReason&gt;> | 是 | NavDestination由激活态变为非激活态的原因。 |
@@ -1015,9 +1095,10 @@ NavDestination处于非激活态（处于非栈顶不可操作，或处于栈顶
 
 
 
-#### onNewParam19+
+### onNewParam19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onNewParam(callback: Optional<Callback&lt;ESObject&gt;>)
 
@@ -1035,6 +1116,7 @@ onNewParam(callback: Optional<Callback&lt;ESObject&gt;>)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Optional<Callback&lt;ESObject&gt;> | 是 | onNewParam触发时的回调函数，入参为路由跳转时传递到目标页面的数据。 |
@@ -1042,9 +1124,10 @@ onNewParam(callback: Optional<Callback&lt;ESObject&gt;>)
 
 
 
-#### SaveStateCallback
+## SaveStateCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type SaveStateCallback = () => Record<string, Object> | null
 
@@ -1060,6 +1143,7 @@ type SaveStateCallback = () => Record<string, Object> | null
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Record<string, Object> \| null | 自定义页面状态。状态对象必须可序列化，否则不会被保存；返回null表示不保存页面状态。 |
@@ -1067,9 +1151,10 @@ type SaveStateCallback = () => Record<string, Object> | null
 
 
 
-#### RestoreStateCallback
+## RestoreStateCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type RestoreStateCallback = (savedState: Record<string, Object> | null) => void
 
@@ -1085,6 +1170,7 @@ type RestoreStateCallback = (savedState: Record<string, Object> | null) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | savedState | Record<string, Object> \| null | 是 | onSaveState保存的自定义页面状态。没有保存自定义状态时为null。 |
@@ -1092,15 +1178,17 @@ type RestoreStateCallback = (savedState: Record<string, Object> | null) => void
 
 
 
-#### NavDestinationCommonTitle
+## NavDestinationCommonTitle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 NavDestination通用标题。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1110,15 +1198,17 @@ NavDestination通用标题。
 
 
 
-#### NavDestinationCustomTitle
+## NavDestinationCustomTitle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 NavDestination自定义标题。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1128,9 +1218,10 @@ NavDestination自定义标题。
 
 
 
-#### NavDestinationContext11+
+## NavDestinationContext11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 NavDestination上下文信息。
 
@@ -1138,19 +1229,21 @@ NavDestination上下文信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | pathInfo | NavPathInfo | 否 | 否 | 跳转NavDestination时指定的参数。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | pathStack | NavPathStack | 否 | 否 | 当前NavDestination所处的导航控制器。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | navDestinationId12+ | string | 否 | 是 | 当前NavDestination的唯一ID，由系统自动生成，和组件通用属性id无关。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| mode22+ | NavDestinationMode | 否 | 是 | 当前NavDestination的类型。 默认值：NavDestinationMode.STANDARD 元服务API： 从API version 22开始，该接口支持在元服务中使用。 |
+| mode22+ | NavDestinationMode | 否 | 是 | 当前NavDestination的类型。 元服务API： 从API version 22开始，该接口支持在元服务中使用。 |
 
 
 
 
-#### getConfigInRouteMap12+
+### getConfigInRouteMap12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getConfigInRouteMap(): RouteMapConfig | undefined
 
@@ -1164,6 +1257,7 @@ getConfigInRouteMap(): RouteMapConfig | undefined
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | RouteMapConfig \| undefined | 当前页面路由配置信息。 当该页面不是通过路由表配置时返回undefined。 |
@@ -1171,9 +1265,10 @@ getConfigInRouteMap(): RouteMapConfig | undefined
 
 
 
-#### RouteMapConfig12+
+## RouteMapConfig12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 路由配置信息。
 
@@ -1182,6 +1277,7 @@ getConfigInRouteMap(): RouteMapConfig | undefined
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1192,17 +1288,19 @@ getConfigInRouteMap(): RouteMapConfig | undefined
 
 
 
-#### NestedScrollInfo14+
+## NestedScrollInfo14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-嵌套可滚动容器组件信息。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+嵌套可滚动容器组件信息
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1212,9 +1310,10 @@ getConfigInRouteMap(): RouteMapConfig | undefined
 
 
 
-#### NavDestinationActiveReason17+
+### NavDestinationActiveReason17+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 NavDestination激活态或者非激活态变化的原因。
 
@@ -1223,6 +1322,7 @@ NavDestination激活态或者非激活态变化的原因。
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1236,9 +1336,10 @@ NavDestination激活态或者非激活态变化的原因。
 
 
 
-#### VisibilityChangeReason21+
+### VisibilityChangeReason21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 NavDestination可见性发生变化的原因。
 
@@ -1247,6 +1348,7 @@ NavDestination可见性发生变化的原因。
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1257,9 +1359,10 @@ NavDestination可见性发生变化的原因。
 
 
 
-#### NavDestinationTransition15+
+## NavDestinationTransition15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 NavDestination自定义动画接口。
 
@@ -1269,20 +1372,22 @@ NavDestination自定义动画接口。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | onTransitionEnd | Callback&lt;void&gt; | 否 | 是 | 转场动画结束时的回调函数。 |
-| duration | number | 否 | 是 | 转场动画的持续时间。 取值范围：[0, +∞) 默认值：1000（毫秒） 单位：ms |
+| duration | number | 否 | 是 | 转场动画的持续时间。 默认值：1000（毫秒） 单位：ms |
 | curve | Curve | 否 | 是 | 动画的曲线类型，默认值为Curve.EaseInOut。 |
-| delay | number | 否 | 是 | 转场动画的延迟。 取值范围：[0, +∞) 默认值：0（毫秒） 单位：ms |
+| delay | number | 否 | 是 | 转场动画的延迟。 默认值：0（毫秒） 单位：ms |
 | event | Callback&lt;void&gt; | 否 | 否 | 指定转场动效的闭包函数，系统会根据闭包中对组件UI状态的修改，生成对应的过渡动画。参见animateTo中的event。 |
 
 
 
 
-#### NavDestinationTransitionDelegate15+
+## NavDestinationTransitionDelegate15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type NavDestinationTransitionDelegate = (operation: NavigationOperation, isEnter: boolean) => Array&lt;NavDestinationTransition&gt; | undefined
 
@@ -1296,6 +1401,7 @@ NavDestination自定义转场动画的代理函数。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | operation | NavigationOperation | 是 | 当前页面转场的操作类型。 |
@@ -1304,6 +1410,7 @@ NavDestination自定义转场动画的代理函数。
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;NavDestinationTransition&gt; \| undefined | NavDestination页面的自定义动画集合。如果返回undefined则做系统默认动画。 |
@@ -1311,13 +1418,14 @@ NavDestination自定义转场动画的代理函数。
 
 
 
-#### Orientation19+
+## Orientation19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Orientation = import('../api/@ohos.window').default.Orientation
 
-页面显示方向的枚举类型。
+Orientation实例对象。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -1325,20 +1433,25 @@ type Orientation = import('../api/@ohos.window').default.Orientation
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
-| import('../api/@ohos.window').default.Orientation | Orientation枚举类型，用于指定页面显示方向。 |
+| import('../api/@ohos.window').default.Orientation | 返回Orientation实例对象。 |
 
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（标题栏工具栏与可滚动类组件联动）
+
+
+### 示例1（标题栏工具栏与可滚动类组件联动）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 以下示例主要演示NavDestination绑定可滚动容器组件来实现滚动内容时触发标题栏和工具栏显示隐藏的效果。
 
@@ -1483,12 +1596,15 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/gMhp9EK-Sumutn43__9B-g/zh-cn_image_0000002656008470.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071502Z&HW-CC-Expire=86400&HW-CC-Sign=04BA7E37519D404C0303ABA4700B353CCABBBC044348469A48E444933D19A1E0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/LqSZPVs0Q4mR9Lyyf9sGrA/zh-cn_image_0000002747212553.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073104Z&HW-CC-Expire=86400&HW-CC-Sign=5084C2378CF558E809481DEEE7395FF2FC846BE03138BF7251F58B2FDB310933)
 
 
 
 
-#### 示例2（设置NavDestination自定义转场）
+### 示例2（设置NavDestination自定义转场）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 以下示例主要演示NavDestination设置自定义转场动画属性[customTransition](#customtransition15)的效果。
 
@@ -1546,7 +1662,7 @@ struct NavDest {
           .height(40)
           .margin(20)
           .onClick(() => {
-            this.stack.pushPath({ name: this.name == 'PageOne' ? 'PageTwo' : 'PageOne' });
+            this.stack.pushPath({ name: this.name == 'PageOne' ? "PageTwo" : "PageOne" });
           })
       }
       .size({ width: '100%', height: '100%' })
@@ -1628,12 +1744,15 @@ struct NavDest {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/XCWvizsaRDaJihHicvivuQ/zh-cn_image_0000002655848548.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071502Z&HW-CC-Expire=86400&HW-CC-Sign=F9BFF44067C024A153765ACE4DC172694601FE9C2940996B396684B3683E19D0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/rVQPj96WTj6n8TaKascdHQ/zh-cn_image_0000002717772618.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073104Z&HW-CC-Expire=86400&HW-CC-Sign=C52E0C730D346FF415D3F0688C89DF2C3A558F963DE3E01A7F1BB89EB3901DB5)
 
 
 
 
-#### 示例3（设置指定的NavDestination系统转场）
+### 示例3（设置指定的NavDestination系统转场）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 以下示例主要演示NavDestination设置系统转场动画[systemTransition](#systemtransition14)为Fade、Explode、SlideBottom与SlideRight时的转场效果。
 
@@ -1780,7 +1899,7 @@ struct DestBody {
   build() {
     Column() {
       Column()
-        .width(85)
+        .width('85')
         .height(50)
         .backgroundColor(Color.White)
       Column() {
@@ -1880,24 +1999,27 @@ struct HomeBody {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/9OLR9UDoQt6OY7diWo0xkA/zh-cn_image_0000002686087977.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071502Z&HW-CC-Expire=86400&HW-CC-Sign=41A62657966B1BB69C4CD4BAA2DC091118DFC053BD47E495EF0BBCB012C05197)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/Vz5rnU6MSC-EvuNpjlnVEg/zh-cn_image_0000002717612686.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073104Z&HW-CC-Expire=86400&HW-CC-Sign=26A0F04BE092867890735DAE223829B88EA0E0481FA57E40B247175BD8382DCA)
 
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/xlmTtSeHSFKHQEVyvyoCnw/zh-cn_image_0000002685928149.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071502Z&HW-CC-Expire=86400&HW-CC-Sign=7EC0115FAB04BBAEADF4BD1415C05FC3A4A670AF61A3777E0D0E1DC878E1E24A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/tHp-vMRUS06TtlFGAhs73Q/zh-cn_image_0000002747292639.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073104Z&HW-CC-Expire=86400&HW-CC-Sign=4BA7D49A1E6CABC90F79450388A26E32AB492E5D670564BE567262F1534B013F)
 
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/mdh1Wx_iTFyWgpXhYE2hlQ/zh-cn_image_0000002656008472.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071502Z&HW-CC-Expire=86400&HW-CC-Sign=2E3A428372090E27187C985B091124FB10BA19366D1225BE0E1069533CC9FA2B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/kbSl-tuUTIS3wUlO34QY6w/zh-cn_image_0000002747212555.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073104Z&HW-CC-Expire=86400&HW-CC-Sign=6D409C0BE2D96E6EE9ED7CAA4FDCC6A09C8707E1AB47A4C23E52DF35F45C012E)
 
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/pYSdmdJFQbSTQu2ral7xjw/zh-cn_image_0000002655848550.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071502Z&HW-CC-Expire=86400&HW-CC-Sign=2DCB416201FF6B502CBA812CC8BD52ED6BC4D34239ED8E575A661E0853E1F19E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/XBLjtFMuSJSoSkZdpLrLuA/zh-cn_image_0000002717772620.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073104Z&HW-CC-Expire=86400&HW-CC-Sign=A0B72CB16583E11ACD603E9320910DE4CE9D0AAB4F07818E4987FAAB68EA2736)
 
 
 
 
-#### 示例4（NavDestination配置页面方向和对应状态栏、导航条显隐）
+### 示例4（NavDestination配置页面方向和对应状态栏、导航条显隐）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 以下示例主要演示每个NavDestination可以配置[preferredOrientation](#preferredorientation19)指定的页面方向和状态栏，导航条显隐状态。
 
@@ -1924,7 +2046,7 @@ struct PortraitPage {
     .enableStatusBar(true) // 显示状态栏
     .enableNavigationIndicator(true) // 显示导航条
     .backgroundColor('#ffbaece9')
-    .onResult((result: ESObject) => {
+    .onResult((result: ESObject)=>{
       this.info = result as string;
     })
     .onReady((ctx: NavDestinationContext) => {
@@ -1963,7 +2085,7 @@ struct ExamplePage {
   private stack: NavPathStack = new NavPathStack();
 
   aboutToAppear(): void {
-    this.stack.pushPath({name: 'portrait'});
+    this.stack.pushPath({name: "portrait"});
   }
 
   @Builder
@@ -1987,21 +2109,23 @@ struct ExamplePage {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/mo3jez_vRACmKGrfctsfdA/zh-cn_image_0000002686087979.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071502Z&HW-CC-Expire=86400&HW-CC-Sign=6D8218DE5C9AC1FD040A464888C93DA7CC1AF388FEB328CD5236989A5B3E0F03)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/OYr__kHoSrW7_sLd4Dm8tQ/zh-cn_image_0000002717612688.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073104Z&HW-CC-Expire=86400&HW-CC-Sign=0FC44DDB005A489EE2A327E5E88ED17D6B548FF36BD8322873466D77A0C33507)
 
 
 
 
-#### 示例5（NavDestination的onActive与onInactive生命周期）
+### 示例5（NavDestination的onActive与onInActive生命周期）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 17开始，NavDestination新增[onActive](#onactive17)、[onInactive](#oninactive17)属性。该示例演示onActive与onInactive生命周期的各种触发场景。
 
 ```text
 import { promptAction, ComponentContent, OverlayManager } from '@kit.ArkUI';
-import { BusinessError } from '@kit.BasicServicesKit';
 
 class Params {
-  text: string = '';
+  text: string = "";
   offset: Position;
 
   constructor(text: string, offset: Position) {
@@ -2080,16 +2204,16 @@ struct NavDest {
       let onActiveMsg: string = `[activeTest] ${this.name} onActive, reason: ${reason}`;
       console.info(onActiveMsg);
       // API version 17版本，请替换为promptAction.showToast接口。从API version 18开始，请使用示例中的promptAction.openToast接口。
-      promptAction.openToast({ message: onActiveMsg }).catch((err: BusinessError) => {
-        console.error(`Failed to open toast. Code: ${err.code}, message: ${err.message}`);
+      promptAction.openToast({ message: onActiveMsg }).catch(() => {
+        console.info('open toast failed');
       });
     })
     .onInactive((reason: NavDestinationActiveReason) => {
       let onInActiveMsg: string = `[activeTest] ${this.name} onInactive, reason: ${reason}`;
       console.info(onInActiveMsg);
       // API version 17版本，请替换为promptAction.showToast接口。从API version 18开始，请使用示例中的promptAction.openToast接口。
-      promptAction.openToast({ message: onInActiveMsg }).catch((err: BusinessError) => {
-        console.error(`Failed to open toast. Code: ${err.code}, message: ${err.message}`);
+      promptAction.openToast({ message: onInActiveMsg }).catch(() => {
+        console.info('open toast failed');
       });
     })
     .onBackPressed(() => {
@@ -2142,7 +2266,7 @@ struct NavBody {
       }
       Column() {
         Row() {
-          Button('open Modal')
+          Button("open Modal")
             .onClick(() => {
               this.isShow = true;
             })
@@ -2157,7 +2281,7 @@ struct NavBody {
                   this.isShow = false;
                 }
               })
-          Button('open BindSheet')
+          Button("open BindSheet")
             .onClick(() => {
               this.isBindSheetShow = true;
             })
@@ -2170,7 +2294,7 @@ struct NavBody {
             })
         }
         Row() {
-          Button('open Dialog')
+          Button("open Dialog")
             .onClick(() => {
               let componentContent = new ComponentContent(
                 this.getUIContext(), wrapBuilder<[Params]>(builderText),
@@ -2179,14 +2303,14 @@ struct NavBody {
                 .then(() => {
                   console.info('[activeTest] open custom dialog success');
                 })
-                .catch((err: BusinessError) => {
-                  console.error(`Failed to open custom dialog. Code: ${err.code}, message: ${err.message}`);
+                .catch(() => {
+                  console.info('[activeTest] open custom dialog failed');
                 })
             })
             .fontColor(Color.Black)
             .backgroundColor('#ccc')
             .margin(5)
-          Button('open Overlay')
+          Button("open Overlay")
             .onClick(() => {
               let componentContent = new ComponentContent(
                 this.getUIContext(), wrapBuilder<[Params]>(builderText),
@@ -2209,7 +2333,7 @@ struct NavBody {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/FIJBaCK-R4i9wbdglKytqw/zh-cn_image_0000002685928151.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071502Z&HW-CC-Expire=86400&HW-CC-Sign=811C71687DCB8B6A87513F782B27861855F62DDC2ABB9CCF59124000B49E5EAE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/Wu6QTw1IRWKgMew1gTkMHA/zh-cn_image_0000002747292641.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073104Z&HW-CC-Expire=86400&HW-CC-Sign=7FD1638CB8E2C3DE2F8572DED9D133A680E92CBB6FCC7F313A8F8F7B1FC7BF25)
 
 
 NavDestination其他用法可参考[Navigation示例](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation#示例)。

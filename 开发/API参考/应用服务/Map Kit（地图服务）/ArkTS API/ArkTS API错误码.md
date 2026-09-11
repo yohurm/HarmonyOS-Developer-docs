@@ -1,6 +1,6 @@
 # ArkTS API错误码
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
@@ -10,7 +10,8 @@
 
 
 
-#### 1002600001 系统内部错误
+## 1002600001 系统内部错误
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -32,7 +33,8 @@ System internal error.
 
 
 
-#### 1002600002 应用连接地图服务失败
+## 1002600002 应用连接地图服务失败
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -63,7 +65,8 @@ Failed to connect to the Map Kit server.
 
 
 
-#### 1002600003 应用身份校验失败
+## 1002600003 应用身份校验失败
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -96,7 +99,7 @@ App authentication failed.
 2. 重新生成公钥指纹（[自动生成签名证书指纹](https://developer.huawei.com/consumer/cn/doc/app/agc-help-signature-info-0000001628566748#section958212134217)/[手动生成签名证书指纹](https://developer.huawei.com/consumer/cn/doc/app/agc-help-signature-info-0000001628566748#section2049119231438)），然后在AGC上[配置公钥指纹](https://developer.huawei.com/consumer/cn/doc/app/agc-help-cert-fingerprint-0000002278002933)。
 3. 检查设备网络状态后重新尝试。
 4. 将设备的系统时间往后调整1天。
-5. 请根据[开通地图服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-config-agc#开通地图服务)，先打开地图服务开关，然后重新[申请调试Profile](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-debugprofile-0000001914423102)，并[手动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section297715173233)。
+5. 请根据[开通地图服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-config-agc#开通地图服务)，先打开地图服务开关，然后重新[申请调试Profile](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-debugprofile-0000001914423102)，并[手动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing-manual)。
 6. 自动签名证书不匹配有两种解决方案：
 
   方案一：将本地已生成的csr签名，通过AGC重新生成新的调试证书，然后通过新的调试证书选择生成新的指纹证书。
@@ -148,7 +151,8 @@ App authentication failed.
 
 
 
-#### 1002600004 应用没有开通地图服务权限
+## 1002600004 应用没有开通地图服务权限
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -169,13 +173,14 @@ The Map permission is not enabled.
 2. 配置client_id。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/zhqGd2ooTYCN1ZUERczldA/zh-cn_image_0000002686089251.png?HW-CC-KV=V1&HW-CC-Date=20260730T071736Z&HW-CC-Expire=86400&HW-CC-Sign=F2BAFBE6AB8016F52263C7628B04BE91886B1C447D06AE7A90FDC757513E9C5C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/YR5WowhkSTi3Bw1D7ZTVCg/zh-cn_image_0000002717613968.png?HW-CC-KV=V1&HW-CC-Date=20260911T072738Z&HW-CC-Expire=86400&HW-CC-Sign=2BE232ADED813B769EE0C59538BF36551135DA5F77AA99DD7F10BE819E5ED9F6)
 
 3. 如未解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
 
 
 
-#### 1002600005 网络不可用
+## 1002600005 网络不可用
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -197,7 +202,8 @@ The network is unavailable.
 
 
 
-#### 1002600006 API调用量超出配额
+## 1002600006 API调用量超出配额
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -219,7 +225,8 @@ API调用量超出配额。
 
 
 
-#### 1002600007 API的QPS超过配额
+## 1002600007 API的QPS超过配额
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -241,7 +248,8 @@ API的QPS超过配额。
 
 
 
-#### 1002600008 接口已经欠费
+## 1002600008 接口已经欠费
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -263,7 +271,8 @@ The API is in arrears.
 
 
 
-#### 1002600009 API未订购付费套餐
+## 1002600009 API未订购付费套餐
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -285,7 +294,8 @@ API未订购付费套餐。
 
 
 
-#### 1002600010 服务器繁忙，请稍后再试
+## 1002600010 服务器繁忙，请稍后再试
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -307,7 +317,8 @@ The server is busy. Please wait and try again.
 
 
 
-#### 1002600011 服务器异常
+## 1002600011 服务器异常
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -331,7 +342,8 @@ Server error.
 
 
 
-#### 1002600012 国家或地区码异常
+## 1002600012 国家或地区码异常
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -353,7 +365,8 @@ The country code is not supported.
 
 
 
-#### 1002600013 当前路由地未知，稍后重试
+## 1002600013 当前路由地未知，稍后重试
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -375,7 +388,8 @@ The current routing location is unknown. Try again later.
 
 
 
-#### 1002600014 地图应用启动失败。
+## 1002600014 地图应用启动失败。
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -397,7 +411,8 @@ Failed to start the map app.
 
 
 
-#### 1002600015 热力图ID已存在
+## 1002600015 热力图ID已存在
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -419,7 +434,8 @@ The heatmap ID already exists.
 
 
 
-#### 1002600017 该应用缺少地图信号预测功能的权限
+## 1002600017 该应用缺少地图信号预测功能的权限
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -441,7 +457,8 @@ The app lacks permission for the map signal prediction capability.
 
 
 
-#### 1002600018 信号路线中的signalId已存在
+## 1002600018 信号路线中的signalId已存在
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -463,7 +480,8 @@ signalId in the signal route already exists.
 
 
 
-#### 1002600019 路线长度超过最大限制200公里
+## 1002600019 路线长度超过最大限制200公里
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -485,7 +503,8 @@ The route length exceeds the maximum limit of 200 km.
 
 
 
-#### 1002600020 无效的运营商
+## 1002600020 无效的运营商
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -507,7 +526,8 @@ Invalid carrier.
 
 
 
-#### 1002600021 路由信号不可预测
+## 1002600021 路由信号不可预测
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -529,7 +549,8 @@ The route signal is unpredictable.
 
 
 
-#### 1002600999 未知错误
+## 1002600999 未知错误
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -551,7 +572,8 @@ Unknown error.
 
 
 
-#### 1002601001 要操作的对象已经不存在
+## 1002601001 要操作的对象已经不存在
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -573,7 +595,8 @@ The object to be operated does not exist.
 
 
 
-#### 1002601002 自定义地图样式文件不存在
+## 1002601002 自定义地图样式文件不存在
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -601,7 +624,8 @@ The custom map style file does not exist.
 
 
 
-#### 1002601004 样式内容格式不正确
+## 1002601004 样式内容格式不正确
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -623,7 +647,8 @@ The style content format is incorrect.
 
 
 
-#### 1002601005 生成自定义组件图标失败
+## 1002601005 生成自定义组件图标失败
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -645,7 +670,8 @@ Failed to generate the icon of the custom component.
 
 
 
-#### 1002602001 起终点无归属国家，或服务错误
+## 1002602001 起终点无归属国家，或服务错误
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -667,7 +693,8 @@ The start and end points do not have home countries, or a service error occurred
 
 
 
-#### 1002602002 不支持跨区进行路径规划
+## 1002602002 不支持跨区进行路径规划
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -689,7 +716,8 @@ Cross-region route planning is not supported.
 
 
 
-#### 1002602003 起始点或结束点超过100个
+## 1002602003 起始点或结束点超过100个
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -711,7 +739,8 @@ The number of start points or end points exceed 100.
 
 
 
-#### 1002602004 两点直线距离超过限制的距离
+## 1002602004 两点直线距离超过限制的距离
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -733,7 +762,8 @@ The linear distance between the start point and end point exceeds the upper limi
 
 
 
-#### 1002602005 起点/终点/途经点不支持导航
+## 1002602005 起点/终点/途经点不支持导航
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -755,7 +785,8 @@ The start point, end point, or waypoint does not support navigation.
 
 
 
-#### 1002602006 请求点位映射到道路同一点上
+## 1002602006 请求点位映射到道路同一点上
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -777,7 +808,8 @@ The request point is mapped to the same point on the road.
 
 
 
-#### 1002603001 空结果
+## 1002603001 空结果
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -799,9 +831,10 @@ Zero result.
 
 
 
-#### 1022100001 要操作的地图控制器不存在
+## 1022100001 要操作的地图控制器不存在
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 **错误信息**
 
@@ -818,47 +851,3 @@ The map controller to be operated does not exist.
 **处理步骤**
 
 尝试重试操作或请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
-
-
-
-#### 401 入参无效
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
-
-**错误信息**
-
-Invalid input parameter.
-
-**错误描述**
-
-入参无效。
-
-**可能原因**
-
-入参不符合要求。
-
-**处理步骤**
-
-检查入参。
-
-
-
-#### 801 功能不支持。设备能力受限，调用接口失败。
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
-
-**错误信息**
-
-Capability not supported. Failed to call the API due to limited device capabilities.
-
-**错误描述**
-
-功能不支持。设备能力受限，调用接口失败。
-
-**可能原因**
-
-当前设备不支持调用该接口。
-
-**处理步骤**
-
-更换设备或者使用其他接口。

@@ -19,7 +19,7 @@ export struct Index {
   @Local person: Person = new Person()
 
   aboutToAppear(): void {
-    // 模拟发送接口请求数据
+    <em>// 模拟发送接口请求数据</em>
     setTimeout(() => {
       this.person = UIUtils.makeObserved(
         {
@@ -116,7 +116,7 @@ export struct refreshIndex {
   @Local person: Person = new Person();
 
   aboutToAppear(): void {
-    // 模拟发送接口请求数据，并返回可观测数据
+    <em>// 模拟发送接口请求数据，并返回可观测数据</em>
     setTimeout(() => {
       this.person = UIUtils.makeObserved(
         {
@@ -138,7 +138,7 @@ export struct refreshIndex {
 
   build() {
     Column() {
-      // @LocalBuilder引用传参，同步修改
+      <em>// @LocalBuilder引用传参，同步修改</em>
       this.myBuilder({
         size: this.person.mine.size,
         color: this.person.mine.color
@@ -175,7 +175,7 @@ export struct refreshIndex {
   @Local person: Person = new Person();
 
   aboutToAppear(): void {
-    // 模拟发送接口请求数据，此时由于返回的值不是可观测的类，所以不能用方案一中的方法直接替换this.person，替换后会变成普通字面量。
+    <em>// 模拟发送接口请求数据，此时由于返回的值不是可观测的类，所以不能用方案一中的方法直接替换this.person，替换后会变成普通字面量。</em>
     setTimeout(() => {
       this.person.mine.size = '大2';
       this.person.mine.color = '蓝色2';

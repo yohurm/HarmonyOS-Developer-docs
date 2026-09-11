@@ -1,9 +1,9 @@
 # Tips控制
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-tips
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 为组件绑定Tips悬浮气泡，当鼠标悬浮在组件上时，自动显示提示信息；鼠标离开组件时，悬浮气泡自动隐藏。
  
@@ -12,9 +12,10 @@
 
   
 
-#### bindTips
+## bindTips
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 bindTips(message: TipsMessageType, options?: TipsOptions): T
  
@@ -30,6 +31,7 @@ bindTips(message: TipsMessageType, options?: TipsOptions): T
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | message | TipsMessageType | 是 | 悬浮气泡信息内容。 |
@@ -38,6 +40,7 @@ bindTips(message: TipsMessageType, options?: TipsOptions): T
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | T | 返回当前组件。 |
@@ -45,14 +48,16 @@ bindTips(message: TipsMessageType, options?: TipsOptions): T
  
   
 
-#### TipsOptions类型说明
+## TipsOptions类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 悬浮气泡自定义参数。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | appearingTime | number | 否 | 是 | 设置悬浮气泡的显示时延。显示时延的最大值为4000ms，设置超过4000ms的值以4000ms为准。 默认值：700 单位：ms 元服务API： 从API version 19开始，该接口支持在元服务中使用。 |
@@ -69,9 +74,10 @@ bindTips(message: TipsMessageType, options?: TipsOptions): T
  
   
 
-#### TipsMessageType
+## TipsMessageType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type TipsMessageType = ResourceStr | StyledString
  
@@ -81,6 +87,7 @@ type TipsMessageType = ResourceStr | StyledString
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ResourceStr | 字符串类型，用于描述字符串入参可以使用的类型。 |
@@ -89,15 +96,19 @@ type TipsMessageType = ResourceStr | StyledString
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 示例效果请以真机运行为准，当前DevEco Studio预览器不支持。
  
   
 
-#### 示例1（悬浮气泡的显示和消失）
+### 示例1（悬浮气泡的显示和消失）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 此示例为bindTips通过绑定Button产生悬浮气泡。
  
@@ -123,12 +134,15 @@ struct TipsExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/HHl-7tKmT3eflFlPI0aJ5A/zh-cn_image_0000002655848414.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071456Z&HW-CC-Expire=86400&HW-CC-Sign=072998FC073A067E6B08C8D25E1C7EDA2535487E7BE01DB0D2D1110D05D47B8F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/l6_AhROJQ0eGkoQ1Mb_A1w/zh-cn_image_0000002717772482.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073127Z&HW-CC-Expire=86400&HW-CC-Sign=9FABCDA097CC6E61D45CF7ABB101F8A1DC9B3AF4103D87AFAF8A9A7D4F855D16)
 
  
   
 
-#### 示例2（多个悬浮气泡的显示和消失）
+### 示例2（多个悬浮气泡的显示和消失）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 此示例展示了如何使用bindTips配置多个悬浮气泡依次显示和消失。
  
@@ -167,14 +181,19 @@ struct TipsExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/lmMMjoh5Sh6ctvOY6aM48Q/zh-cn_image_0000002686087843.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071456Z&HW-CC-Expire=86400&HW-CC-Sign=150F9C7B7F8AD6D1BA699362819D2D080B507EC244469D138F74C18DC171BB02)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/VadoooTwSkG-kJOsVX_Vlw/zh-cn_image_0000002717612550.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073127Z&HW-CC-Expire=86400&HW-CC-Sign=6B5BED1F0BE97A714419254195E803C51A148293D025BEB384997D6A46A97A7C)
 
  
   
 
-#### 示例3（设置悬浮气泡的系统材质视效）
+### 示例3（设置悬浮气泡的沉浸光感视效）
 
-该示例通过设置[TipsOptions](#tipsoptions类型说明)中的systemMaterial属性，实现了bindTips的系统材质视效。
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+该示例通过[TipsOptions](#tipsoptions类型说明)中的systemMaterial属性设置组件的系统材质，实现了bindTips的沉浸光感视效。
+ 
+组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
  
 从API版本26.0.0开始，在TipsOptions中新增了systemMaterial属性。
  
@@ -189,7 +208,7 @@ struct TipsExample {
     Flex({ direction: FlexDirection.Column }) {
       Button('Hover Tips')
         .bindTips("悬浮气泡测试", {
-          // 控制是否设置系统材质
+          // 控制是否设置系统材质接口
           systemMaterial: new uiMaterial.ImmersiveMaterial({
             style: uiMaterial.ImmersiveStyle.THIN
           })
@@ -206,10 +225,10 @@ struct TipsExample {
 未设置系统材质时：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/NaqlC7fGSDW3aYsod8yXYw/zh-cn_image_0000002656006378.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071456Z&HW-CC-Expire=86400&HW-CC-Sign=37AB9998AC84740D4F1C611101BC2F062ADBFEDAB6BE51ED12C66865B93E3EEA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/9H0VO5LgRK2C-I-8vx7JKA/zh-cn_image_0000002747292503.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073127Z&HW-CC-Expire=86400&HW-CC-Sign=1B4310D9419BECFC5C12561BFCEF68F74E48BAEF1C17FF9FAE79C35A31136EA7)
 
  
 设置系统材质后：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/YywNva2dQv2QxpQOYWrevw/zh-cn_image_0000002655846458.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071456Z&HW-CC-Expire=86400&HW-CC-Sign=AE3474C0403FA8AB7C7D6BCB4ADD1305276C194A45092061386FD66D904CBA60)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/mIlsamgTTlS2NBn8lBnTBA/zh-cn_image_0000002747212419.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073127Z&HW-CC-Expire=86400&HW-CC-Sign=DB373375556AC95AFBCF4236F998BD6373A0BA6CB425E64179765E30BD2AA745)

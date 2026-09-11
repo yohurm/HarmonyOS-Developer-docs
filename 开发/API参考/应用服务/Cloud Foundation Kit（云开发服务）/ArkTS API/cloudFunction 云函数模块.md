@@ -1,18 +1,19 @@
 # cloudFunction (云函数模块)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/cloudfoundation-cloudfunction
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供调用云函数的能力。
  
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { cloudFunction } from '@kit.CloudFoundationKit';
@@ -20,9 +21,10 @@ import { cloudFunction } from '@kit.CloudFoundationKit';
  
   
 
-#### call
+## call
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 call(parameters: FunctionParams, callback: AsyncCallback&lt;FunctionResult&gt;): void
  
@@ -40,6 +42,7 @@ call(parameters: FunctionParams, callback: AsyncCallback&lt;FunctionResult&gt;):
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | parameters | FunctionParams | 是 | 云函数调用必备参数。 |
@@ -50,6 +53,7 @@ call(parameters: FunctionParams, callback: AsyncCallback&lt;FunctionResult&gt;):
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cloudfoundation)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | No Internet permission. |
@@ -85,9 +89,10 @@ cloudFunction.call({
  
   
 
-#### call
+## call
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 call(parameters: FunctionParams): Promise&lt;FunctionResult&gt;
  
@@ -105,6 +110,7 @@ call(parameters: FunctionParams): Promise&lt;FunctionResult&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | parameters | FunctionParams | 是 | 云函数调用必备参数。 |
@@ -112,6 +118,7 @@ call(parameters: FunctionParams): Promise&lt;FunctionResult&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;FunctionResult&gt; | Promise对象，返回函数调用结果。 |
@@ -121,6 +128,7 @@ call(parameters: FunctionParams): Promise&lt;FunctionResult&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cloudfoundation)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | No Internet permission. |
@@ -154,9 +162,10 @@ cloudFunction.call({
  
   
 
-#### FunctionParams
+## FunctionParams
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 云函数调用参数。
  
@@ -166,6 +175,7 @@ cloudFunction.call({
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | name | string | 否 | 否 | 云函数名称。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
@@ -178,9 +188,10 @@ cloudFunction.call({
  
   
 
-#### LoadMode
+## LoadMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举， 函数请求加载模式。
  
@@ -192,6 +203,7 @@ cloudFunction.call({
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NORMAL | 0 | 普通模式，每次调用call方法均需请求服务器拉取数据。 |
@@ -200,9 +212,10 @@ cloudFunction.call({
  
   
 
-#### FunctionResult
+## FunctionResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 云函数返回的结果。
  
@@ -214,6 +227,7 @@ cloudFunction.call({
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | result | string \| Object | 否 | 否 | 云函数返回的结果。 |

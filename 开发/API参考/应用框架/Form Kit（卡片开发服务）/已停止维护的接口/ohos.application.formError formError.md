@@ -1,9 +1,9 @@
 # @ohos.application.formError (formError)
 
-更新时间：2026-07-24 10:38:53
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-application-formerror
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 formError模块提供获取卡片错误码的能力。
  
@@ -12,9 +12,10 @@ formError模块提供获取卡片错误码的能力。
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { formError } from '@kit.FormKit';
@@ -22,22 +23,25 @@ import { formError } from '@kit.FormKit';
  
   
 
-#### 权限
+## 权限
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
  
   
 
-#### FormError
+## FormError
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，卡片错误码。
  
 **系统能力：** SystemCapability.Ability.Form
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ERR_COMMON | 1 | 默认错误码。 |

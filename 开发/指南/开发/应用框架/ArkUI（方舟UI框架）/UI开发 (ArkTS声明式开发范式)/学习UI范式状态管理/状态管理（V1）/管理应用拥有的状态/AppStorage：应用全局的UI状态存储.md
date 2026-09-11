@@ -1,6 +1,6 @@
 # AppStorage：应用全局的UI状态存储
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-appstorage
 
@@ -17,7 +17,7 @@ AppStorage提供了API接口，允许开发者在自定义组件外手动触发A
 
 
 
-#### 概述
+## 概述
 
 AppStorage是在应用启动时创建的单例，用于提供应用状态数据的中心存储。这些状态数据在应用级别可访问。AppStorage在应用运行过程中保留其属性。
 
@@ -27,7 +27,7 @@ AppStorage中的属性可以被双向同步，并具有不同的功能，比如�
 
 
 
-#### @StorageProp
+## @StorageProp
 
 [@StorageProp](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-state-management-storageprop#storageprop)与AppStorage中对应的属性建立单向数据同步。
 
@@ -37,12 +37,13 @@ AppStorage中的属性可以被双向同步，并具有不同的功能，比如�
 
 
 
-#### 装饰器使用规则说明
+### 装饰器使用规则说明
+
 
 | @StorageProp变量装饰器 | 说明 |
 | --- | --- |
 | 装饰器参数 | 常量字符串，必填（字符串需要有引号）。 说明： 使用null和undefined作为key时，会隐式转换为对应的字符串，不建议该用法。 |
-| 允许装饰的变量类型 | Object、class、string、number、boolean、enum类型，以及这些类型的数组。 API Version 12及以上支持Map、Set、Date、undefined和null类型以及这些类型的联合类型，示例见AppStorage支持联合类型。 嵌套类型的场景请参考观察变化和行为表现。 说明： 变量类型必须被指定，建议和AppStorage中对应属性类型相同，否则会发生类型隐式转换，从而导致应用行为异常。 |
+| 允许装饰的变量类型 | Object、class、string、number、boolean、enum类型，以及这些类型的数组。 API version 12及以上支持Map、Set、Date、undefined和null类型以及这些类型的联合类型，示例见AppStorage支持联合类型。 嵌套类型的场景请参考观察变化和行为表现。 说明： 变量类型必须被指定，建议和AppStorage中对应属性类型相同，否则会发生类型隐式转换，从而导致应用行为异常。 |
 | 不允许装饰的变量类型 | 不支持装饰Function类型。 |
 | 同步类型 | 单向同步：从AppStorage的对应属性到组件的状态变量。 组件本地的修改是允许的，但是AppStorage中给定的属性一旦发生变化，将覆盖本地的修改。 |
 | 被装饰变量的初始值 | 必须本地初始化，如果AppStorage实例中不存在属性，则用该初始值初始化该属性，并存入AppStorage中。 |
@@ -50,7 +51,8 @@ AppStorage中的属性可以被双向同步，并具有不同的功能，比如�
 
 
 
-#### 变量的传递/访问规则说明
+### 变量的传递/访问规则说明
+
 
 | 传递/访问 | 说明 |
 | --- | --- |
@@ -67,7 +69,7 @@ AppStorage中的属性可以被双向同步，并具有不同的功能，比如�
 
 
 
-#### 观察变化和行为表现
+### 观察变化和行为表现
 
 **观察变化**
 
@@ -85,7 +87,7 @@ AppStorage中的属性可以被双向同步，并具有不同的功能，比如�
 
 
 
-#### @StorageLink
+## @StorageLink
 
 [@StorageLink](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-state-management-storagelink#storagelink)与AppStorage中对应的属性建立双向数据同步。
 
@@ -95,12 +97,13 @@ AppStorage中的属性可以被双向同步，并具有不同的功能，比如�
 
 
 
-#### 装饰器使用规则说明
+### 装饰器使用规则说明
+
 
 | @StorageLink变量装饰器 | 说明 |
 | --- | --- |
-| 装饰器参数 | key：常量字符串，必填（字符串需要有引号）。 注意： 使用null和undefined作为key时，会隐式转换为对应的字符串，不建议该用法。 |
-| 允许装饰的变量类型 | Object、class、string、number、boolean、enum类型，以及这些类型的数组。 API Version 12及以上支持Map、Set、Date、undefined和null类型以及这些类型的联合类型，示例见AppStorage支持联合类型。 嵌套类型的场景请参考观察变化和行为表现。 注意： 变量类型必须被指定，建议和AppStorage中对应属性类型相同，否则会发生类型隐式转换，从而导致应用行为异常。 |
+| 装饰器参数 | key：常量字符串，必填（字符串需要有引号）。 说明： 使用null和undefined作为key时，会隐式转换为对应的字符串，不建议该用法。 |
+| 允许装饰的变量类型 | Object、class、string、number、boolean、enum类型，以及这些类型的数组。 API version 12及以上支持Map、Set、Date、undefined和null类型以及这些类型的联合类型，示例见AppStorage支持联合类型。 嵌套类型的场景请参考观察变化和行为表现。 注意： 变量类型必须被指定，建议和AppStorage中对应属性类型相同，否则会发生类型隐式转换，从而导致应用行为异常。 |
 | 不允许装饰的变量类型 | 不支持装饰Function类型。 |
 | 同步类型 | 双向同步：从AppStorage的对应属性到自定义组件，从自定义组件到AppStorage对应属性。 |
 | 被装饰变量的初始值 | 必须本地初始化，如果AppStorage实例中不存在属性，则用该初始值初始化该属性，并存入AppStorage中。 |
@@ -108,7 +111,8 @@ AppStorage中的属性可以被双向同步，并具有不同的功能，比如�
 
 
 
-#### 变量的传递/访问规则说明
+### 变量的传递/访问规则说明
+
 
 | 传递/访问 | 说明 |
 | --- | --- |
@@ -125,7 +129,7 @@ AppStorage中的属性可以被双向同步，并具有不同的功能，比如�
 
 
 
-#### 观察变化和行为表现
+### 观察变化和行为表现
 
 **观察变化**
 
@@ -144,7 +148,7 @@ AppStorage中的属性可以被双向同步，并具有不同的功能，比如�
 
 
 
-#### 限制条件
+## 限制条件
 1. @StorageProp/@StorageLink的参数必须为string类型，否则编译期会报错。
 
   
@@ -181,11 +185,11 @@ let result = Environment.envProp('languageCode','en');
 
 
 
-#### 使用场景
+## 使用场景
 
 
 
-#### 从应用逻辑使用AppStorage和LocalStorage
+### 从应用逻辑使用AppStorage和LocalStorage
 
 AppStorage是单例，其所有API均为静态方法，使用方法类似于[LocalStorage](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-localstorage)中对应的非静态方法。
 
@@ -215,7 +219,7 @@ prop.get() // == 49
 
 
 
-#### 从UI内部使用AppStorage
+### 从UI内部使用AppStorage
 
 @StorageLink与AppStorage配合使用，通过AppStorage中的属性创建双向数据同步。
 
@@ -274,7 +278,7 @@ struct TestStorageProp {
         .fontSize(20)
         .margin(10)
         .onClick(() => {
-          hilog.info(DOMAIN, TAG, `Appstorage.get: ${AppStorage.get<number>('propA')}`);
+          hilog.info(DOMAIN, TAG, `AppStorage.get: ${AppStorage.get<number>('propA')}`);
           AppStorage.set<number>('propA', 100);
         })
 
@@ -298,12 +302,12 @@ struct TestStorageProp {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/PklxKp0aRhC6aFKDyGKcRw/zh-cn_image_0000002704271831.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=5AAB5BECC0694D13C1DA410900E53F5924C8103DD402143A841376BA5668464B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/X5ZwJrSKRJmqfIlbxiGn2A/zh-cn_image_0000002717770028.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072231Z&HW-CC-Expire=86400&HW-CC-Sign=46B4CFE63B7F295D32A5C349C037B85049D572082D1AB3F2E0B5E4572E30CD06)
 
 
 
 
-#### AppStorage支持联合类型
+### AppStorage支持联合类型
 
 在下面的示例中，变量linkA的类型为number | null，变量linkB的类型为number | undefined。[Text](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-components-text-display)组件初始化分别显示为null和undefined，点击切换为数字，再次点击切换回null和undefined。
 
@@ -382,12 +386,12 @@ struct TestPageStorageLink {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/ewS8hxy6Q8-ECXm8ESf-hQ/zh-cn_image_0000002674472032.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=D1CDEF569B88F2F2C098260EBF7965E6DC91C7A907584A8B13B12D08F969E1A2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/EaQ2GxTVSLWhO4fpoXNM8g/zh-cn_image_0000002717610094.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072231Z&HW-CC-Expire=86400&HW-CC-Sign=87F6D81B8A338471CB8A564AB9D6759FFD4514A734BA7C6E72DDA2DEB20DAF31)
 
 
 
 
-#### 装饰Array类型变量
+### 装饰Array类型变量
 
 在下面的示例中，@StorageLink装饰的message类型为number[]，点击Button改变message的值，视图会随之刷新。
 
@@ -439,12 +443,12 @@ struct ArraySample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/H9rGcg6zQfqPZ9WX_eD2QQ/zh-cn_image_0000002704392001.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=16A77914A4808A4CA15747D795B2847FBBB6DDA54BAB86139675BB9BF19CF35E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/ympL8tAvTT2X2TQj3lfKpg/zh-cn_image_0000002747290045.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072231Z&HW-CC-Expire=86400&HW-CC-Sign=8A8EA364A6F4855770F2062E0EF24CA789D0BB06FF7008586F58D813FA26C16A)
 
 
 
 
-#### 装饰Date类型变量
+### 装饰Date类型变量
 
 > [!NOTE]
 > 从API version 12开始，AppStorage支持Date类型。
@@ -496,12 +500,12 @@ struct DateSample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/fA6ba5bTRW-3uKRbWcv2-w/zh-cn_image_0000002674631878.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=8F3F4E8FAC54F9AFDCC8D41E85E23D652C8240014E6A3BB46ED5A2F959F2B64C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/ZT-6pRVqSJmb4fJsC_VsGQ/zh-cn_image_0000002747209963.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072231Z&HW-CC-Expire=86400&HW-CC-Sign=8622D33BC369871DE1861E0B1E0CD1A2EF71330A664CFF73AE77787B00D04EBA)
 
 
 
 
-#### 装饰Map类型变量
+### 装饰Map类型变量
 
 > [!NOTE]
 > 从API version 12开始，AppStorage支持Map类型。
@@ -567,12 +571,12 @@ struct MapSample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/FEM2rTXsSoKri6dRZN370w/zh-cn_image_0000002704271833.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=11B42A76AF451E5884F355A699E7B427BB0A50E802FDA88F9CD9A030124B4100)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/OHTGZC6WTCuR0S0qlISsfg/zh-cn_image_0000002717770030.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072231Z&HW-CC-Expire=86400&HW-CC-Sign=AB413E44817E8291AEEB22658D0495D009A02F68DE9F926E92C94B2236E5FC0F)
 
 
 
 
-#### 装饰Set类型变量
+### 装饰Set类型变量
 
 > [!NOTE]
 > 从API version 12开始，AppStorage支持Set类型。
@@ -629,12 +633,12 @@ struct SetSample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/zlVs1v_9Q123Zj6e_v9grA/zh-cn_image_0000002674472034.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=56A3428705B38635F8CADEE583A852CC03E028FEF1A81DCD286AD3282F0FA62F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/aDRQXgEsQuCeGtWBHRVvMw/zh-cn_image_0000002717610096.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072231Z&HW-CC-Expire=86400&HW-CC-Sign=0EB9DA70FC57F796405B47F36BF07CBA29FA96A1CCDC20857A297E54E3886ED4)
 
 
 
 
-#### AppStorage在多页面中共享使用
+### AppStorage在多页面中共享使用
 
 在下面示例中，Index和Page页面通过同一个全局AppStorage对象共享linkA数据。在一处修改其值，另一处也能获取到更新后的值。
 
@@ -764,16 +768,16 @@ struct Page {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/9v-Jc_pMQkSSzi4-sEaLuQ/zh-cn_image_0000002704392003.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=1EC2B35606BB3831CB8DBDBCFFAAF70DD6869F28AB8833266FBFBA111475D175)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/pkOWwIefQeKqEQtbMGAXHw/zh-cn_image_0000002747290047.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072231Z&HW-CC-Expire=86400&HW-CC-Sign=B8A3C1BE18C4C2999CA2ACD6B80115F6648C95F6B381DAABC3AD17C4E81DF571)
 
 
 
 
-#### AppStorage使用建议
+## AppStorage使用建议
 
 
 
-#### 不建议借助@StorageLink的双向同步机制实现事件通知
+### 不建议借助@StorageLink的双向同步机制实现事件通知
 
 不建议使用@StorageLink和AppStorage的双向同步机制来实现事件通知。AppStorage中的变量可能绑定在多个页面的组件中，但事件通知不一定需要通知到所有这些组件。此外，当这些@StorageLink装饰的变量在UI中使用时，会触发UI刷新，造成不必要的性能影响。
 
@@ -1058,7 +1062,7 @@ export struct TapImage {
 
 
 
-#### @StorageProp和AppStorage接口配合使用时，需要注意更新规则
+### @StorageProp和AppStorage接口配合使用时，需要注意更新规则
 
 使用setOrCreate/set接口更新key的值时，如果值相同，setOrCreate不会通知@StorageLink/@StorageProp更新，但因为@StorageProp本身有数据副本，更改值不会同步给AppStorage，这会导致开发者误认已通过AppStorage改了值，但实际上未通知@StorageProp更新值的情况。示例如下。
 
@@ -1102,7 +1106,7 @@ struct PageStorageProp {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/Ar7EqGK0QM6mFrtlQjqIcA/zh-cn_image_0000002674631880.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=CD3936FDDD21CE15419D54F43C30F4310966DB0006CE967FA9A8C5A05ABC505F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/R9rkkYpARC69Od3XDa_Bow/zh-cn_image_0000002747209965.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072231Z&HW-CC-Expire=86400&HW-CC-Sign=449D332FF9A6A8543FBC86BFCDD66709E8019D8E37211258018A1A7EDE73C53D)
 
 
 上述示例，在点击事件之前，propA的值已经在本地被更改为true，而AppStorage中存的值仍为false。当点击事件通过setOrCreate接口尝试更新propA的值为false时，由于AppStorage中的值为false，两者相等，不会触发更新同步，因此@StorageProp的值仍为true。

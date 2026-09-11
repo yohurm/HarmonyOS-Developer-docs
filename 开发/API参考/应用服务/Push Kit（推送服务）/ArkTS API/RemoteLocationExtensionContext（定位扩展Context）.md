@@ -1,9 +1,9 @@
 # RemoteLocationExtensionContext（定位扩展Context）
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-location-context
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet
 
 RemoteLocationExtensionContext是[RemoteLocationExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-location-ability)的上下文环境，继承自[ExtensionContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-extensioncontext)，未新增内容。RemoteLocationExtensionContext模块提供访问RemoteLocationExtensionAbility资源的能力。
  
@@ -14,9 +14,10 @@ RemoteLocationExtensionContext是[RemoteLocationExtensionAbility](https://develo
 **起始版本：** 4.1.0(11)
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 import { RemoteLocationExtensionContext } from '@kit.PushKit';
@@ -24,9 +25,10 @@ import { RemoteLocationExtensionContext } from '@kit.PushKit';
  
   
 
-#### RemoteLocationExtensionContext
+## RemoteLocationExtensionContext
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 **模型约束：** 属性仅可在Stage模型下使用。
  

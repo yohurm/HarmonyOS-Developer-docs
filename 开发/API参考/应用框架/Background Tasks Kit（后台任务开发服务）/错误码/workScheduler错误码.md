@@ -1,18 +1,19 @@
 # workScheduler错误码
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-workscheduler
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!TIP]
 > 以下仅介绍本模块特有错误码，通用错误码请参考 通用错误码说明文档 。
 
 
 
-#### 9700001 内存操作失败
+## 9700001 内存操作失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -32,9 +33,10 @@ Memory operation failed.
 
 
 
-#### 9700002 Parcel读写操作失败
+## 9700002 Parcel读写操作失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -54,9 +56,10 @@ IPC通信读写Parcel数据失败。
 
 
 
-#### 9700003 系统服务失败
+## 9700003 系统服务失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -76,9 +79,10 @@ System service operation failed.
 
 
 
-#### 9700004 workInfo校验失败
+## 9700004 workInfo校验失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -98,9 +102,10 @@ Check on workInfo failed.
 
 
 
-#### 9700005 StartWork失败
+## 9700005 StartWork失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 

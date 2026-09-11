@@ -1,30 +1,31 @@
 # 栅格布局 (GridRow/GridCol)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-grid-layout
 
-#### 概述
+## 概述
 
 栅格布局是一种通用的辅助定位工具，对移动设备的界面设计有较好的借鉴作用。主要优势包括：
 1. 提供可循的规律：栅格布局可以为布局提供规律性的结构，解决多尺寸多设备的动态布局问题。通过将页面划分为等宽的列数和行数，可以方便地对页面元素进行定位和排版。
 2. 统一的定位标注：栅格布局可以为系统提供一种统一的定位标注，保证不同设备上各个模块的布局一致性。这可以减少设计和开发的复杂度，提高工作效率。
 3. 灵活的间距调整方法：栅格布局可以提供一种灵活的间距调整方法，满足特殊场景布局调整的需求。通过调整列与列之间和行与行之间的间距，可以控制整个页面的排版效果。
-4. 自动换行和自适应：栅格布局可以完成一对多布局的自动换行和自适应。当页面元素的数量超出了一行或一列的容量时，他们会自动换到下一行或下一列，并且在不同的设备上自适应排版，使得页面布局更加灵活和适应性强。
+4. 自动换行和自适应：栅格布局可以完成一对多布局的自动换行和自适应。当页面元素的数量超出了一行或一列的容量时，它们会自动换到下一行或下一列，并且在不同的设备上自适应排版，使得页面布局更加灵活和适应性强。
 
 [GridRow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-gridrow)为栅格容器组件，需与栅格子组件[GridCol](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-gridcol)在栅格布局场景中联合使用。
 
 
 
-#### 栅格容器GridRow
+## 栅格容器GridRow
 
 
 
-#### 栅格容器断点
+### 栅格容器断点
 
 栅格容器以设备的水平宽度（[像素单位](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-pixel-units)，单位vp）作为断点依据，定义设备的宽度类型，形成了一套断点规则。开发者可根据需求在不同的断点区间实现不同的页面布局效果。
 
 栅格容器默认断点将设备宽度分为xs、sm、md、lg四类，尺寸范围如下：
+
 
 | 断点名称 | 取值范围（vp） | 设备描述 |
 | --- | --- | --- |
@@ -35,6 +36,7 @@
 
 
 在GridRow栅格组件中，允许开发者使用[BreakPoints](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-gridrow#breakpoints)自定义修改断点的取值范围，最多支持6个断点，除了默认的4个断点外，还可以启用xl和xxl断点，支持6种不同尺寸（xs，sm，md，lg，xl，xxl）设备的布局设置。
+
 
 | 断点名称 | 设备描述 |
 | --- | --- |
@@ -51,12 +53,19 @@
   假设传入的数组是[n0, n1, n2, n3, n4]，则各个断点取值如下：
 
 | 断点 | 取值范围 |
+
 | --- | --- |
+
 | xs | [0, n0) |
+
 | sm | [n0, n1) |
+
 | md | [n1, n2) |
+
 | lg | [n2, n3) |
+
 | xl | [n3, n4) |
+
 | xxl | [n4, INF) |
 
   
@@ -122,7 +131,7 @@ struct WindowRefGridLayout {
 
 
 
-#### 布局的总列数
+### 布局的总列数
 
 GridRow中通过columns设置栅格布局的总列数。
 
@@ -286,7 +295,7 @@ API version 20之前布局显示（xs设备未配置栅格列数，取默认列�
 
 
 
-#### 排列方向
+### 排列方向
 
 栅格布局中，可以通过设置GridRow的[direction](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-gridrow#gridrowoptions对象说明)属性来指定栅格子组件在栅格容器中的排列方向。该属性可以设置为[GridRowDirection](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-gridrow#gridrowdirection枚举说明).Row（从左往右排列）或[GridRowDirection](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-gridrow#gridrowdirection枚举说明).RowReverse（从右往左排列），以满足不同的布局需求。通过合理的direction属性设置，可以使得页面布局更加灵活和符合设计要求。
 
@@ -312,7 +321,7 @@ GridRow({ direction: GridRowDirection.RowReverse }) { /* ... */ }
 
 
 
-#### 子组件间距
+### 子组件间距
 
 GridRow中通过[gutter](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-gridrow#gridrowoptions对象说明)属性设置子元素在水平和垂直方向的间距。
 
@@ -338,7 +347,7 @@ GridRow({ gutter: { x: 20, y: 50 } }) { /* ... */ }
 
 
 
-#### 子组件GridCol
+## 子组件GridCol
 
 [GridCol](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-gridcol)组件作为[GridRow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-gridrow)组件的子组件，通过给GridCol传参或者设置属性两种方式，设置[span](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-gridcol#gridcoloptions对象说明)（占用列数），[offset](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-gridcol#gridcoloptions对象说明)（偏移列数），[order](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-gridcol#gridcoloptions对象说明)（元素序号）的值。
 
@@ -387,7 +396,7 @@ GridCol({ span: 1 }){}.order(gOrder)
 
 
 
-#### span
+### span
 
 子组件占栅格布局的列数，决定了子组件的宽度。默认值为1。
 
@@ -473,7 +482,7 @@ struct SpanColumnOptionExample {
 
 
 
-#### offset
+### offset
 
 栅格子组件相对于前一个子组件的偏移列数，默认为0。
 
@@ -561,7 +570,7 @@ struct OffsetColumnOptionExample {
 
 
 
-#### order
+### order
 
 栅格子组件的序号，决定子组件排列次序。当子组件不设置order或者设置相同的order，子组件按照代码顺序展示。当子组件设置不同的order时，order较小的组件在前，较大的在后。
 
@@ -653,7 +662,7 @@ struct OrderColumnOptionExample {
 
 
 
-#### 栅格组件的嵌套使用
+## 栅格组件的嵌套使用
 
 栅格组件也可以嵌套使用，完成一些复杂的布局。
 

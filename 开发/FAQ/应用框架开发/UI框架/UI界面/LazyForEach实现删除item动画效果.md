@@ -37,17 +37,17 @@ export class CustomDataSource implements IDataSource {
   data: string[] = ['Item 0', 'Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
   private listeners: DataChangeListener[] = [];
 
-  // 获取数据总数
+ <em> // 获取数据总数</em>
   totalCount(): number {
     return this.data.length;
   }
 
-  // 获取指定索引数据
+<em>  // 获取指定索引数据</em>
   getData(index: number): string {
     return this.data[index];
   }
 
-  // 删除数据方法
+ <em> // 删除数据方法</em>
   deleteData(index: number) {
     if (index >= 0 && index < this.data.length) {
       this.data.splice(index, 1);
@@ -55,14 +55,14 @@ export class CustomDataSource implements IDataSource {
     }
   }
 
-  // 注册数据变化监听
+ <em> // 注册数据变化监听</em>
   registerDataChangeListener(listener: DataChangeListener): void {
     if (this.listeners.indexOf(listener) < 0) {
       this.listeners.push(listener);
     }
   }
 
-  // 注销数据变化监听
+ <em> // 注销数据变化监听</em>
   unregisterDataChangeListener(listener: DataChangeListener): void {
     const pos = this.listeners.indexOf(listener);
     if (pos >= 0) {
@@ -70,7 +70,7 @@ export class CustomDataSource implements IDataSource {
     }
   }
 
-  // 通知数据删除
+ <em> // 通知数据删除</em>
   private notifyDataDelete(index: number) {
     this.listeners.forEach(listener => {
       listener.onDataDelete(index);
@@ -86,7 +86,7 @@ export class CustomDataSource implements IDataSource {
 @Component
 struct AnimatedPage {
   private dataSource = new CustomDataSource();
-  @State toBeDeletedItem: string = ''; // 待删除的Index
+  @State toBeDeletedItem: string = '';<em> </em><em>// 待删除的Index</em>
 
   build() {
     Column() {
@@ -103,7 +103,7 @@ struct AnimatedPage {
           .backgroundColor('#F1F3F5')
           .borderRadius(5)
           .visibility(this.toBeDeletedItem === item ? Visibility.Hidden : Visibility.Visible)
-          .transition(TransitionEffect.opacity(0.5) // 删除动画实现
+          .transition(TransitionEffect.opacity(0.5) <em>// 删除动画实现</em>
             .combine(TransitionEffect.translate({ x: '-100%' })));
         }, (item: string) => item);
       }
@@ -112,11 +112,11 @@ struct AnimatedPage {
   }
 
   deleteItem(index: number) {
-    // 配合visibility对组件隐藏，但参与布局进行占位。
+   <em> // 配合visibility对组件隐藏，但参与布局进行占位。</em>
     this.getUIContext().animateTo({ duration: 250 }, () => {
       this.toBeDeletedItem = this.dataSource.getData(index);
     });
-    // 删除数据
+   <em> // 删除数据</em>
     this.getUIContext().animateTo({ duration: 250, delay: 250 }, () => {
       this.dataSource.deleteData(index);
     });

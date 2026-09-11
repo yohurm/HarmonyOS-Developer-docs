@@ -1,13 +1,14 @@
 # oh_display_manager.h
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-display-manager-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供屏幕管理的基础能力，包括获取默认显示设备的信息（如屏幕宽度、高度、旋转角度、刷新率或像素密度等），以及监听显示设备的旋转、折叠或展开等状态变化的能力。适用于需要适配不同屏幕形态、响应屏幕状态变化和获取屏幕详细属性信息的场景。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayId(uint64_t *displayId) | - | 获取默认屏幕的ID号。 |
@@ -79,15 +83,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_NativeDisplayManager_GetDefaultDisplayId()
+### OH_NativeDisplayManager_GetDefaultDisplayId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayId(uint64_t *displayId)
@@ -101,6 +107,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayId(uint6
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint64_t *displayId | 默认屏幕的ID号，非负整数，此处作为出参返回。 |
@@ -108,6 +115,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayId(uint6
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NativeDisplayManager_ErrorCode | 返回DISPLAY_MANAGER_OK，表示操作成功。 返回DISPLAY_MANAGER_ERROR_INVALID_PARAM，表示参数检查失败。 返回DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL，表示系统服务工作异常。 |
@@ -115,9 +123,10 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayId(uint6
  
   
 
-#### OH_NativeDisplayManager_GetDefaultDisplayWidth()
+### OH_NativeDisplayManager_GetDefaultDisplayWidth()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayWidth(int32_t *displayWidth)
@@ -131,6 +140,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayWidth(in
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | int32_t *displayWidth | 默认屏幕的宽度，单位为px，该参数应为整数，此处作为出参返回。 |
@@ -138,6 +148,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayWidth(in
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NativeDisplayManager_ErrorCode | 返回DISPLAY_MANAGER_OK，表示操作成功。 返回DISPLAY_MANAGER_ERROR_INVALID_PARAM，表示参数检查失败。 返回DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL，表示系统服务工作异常。 |
@@ -145,9 +156,10 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayWidth(in
  
   
 
-#### OH_NativeDisplayManager_GetDefaultDisplayHeight()
+### OH_NativeDisplayManager_GetDefaultDisplayHeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayHeight(int32_t *displayHeight)
@@ -161,6 +173,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayHeight(i
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | int32_t *displayHeight | 默认屏幕的高度，单位为px，该参数应为整数，此处作为出参返回。 |
@@ -168,6 +181,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayHeight(i
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NativeDisplayManager_ErrorCode | 返回DISPLAY_MANAGER_OK，表示操作成功。 返回DISPLAY_MANAGER_ERROR_INVALID_PARAM，表示参数检查失败。 返回DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL，表示系统服务工作异常。 |
@@ -175,9 +189,10 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayHeight(i
  
   
 
-#### OH_NativeDisplayManager_GetDefaultDisplayRotation()
+### OH_NativeDisplayManager_GetDefaultDisplayRotation()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayRotation(NativeDisplayManager_Rotation *displayRotation)
@@ -191,6 +206,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayRotation
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | NativeDisplayManager_Rotation *displayRotation | 默认屏幕的顺时针旋转角度，具体可见NativeDisplayManager_Rotation，此处作为出参返回。 |
@@ -198,6 +214,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayRotation
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NativeDisplayManager_ErrorCode | 返回DISPLAY_MANAGER_OK，表示操作成功。 返回DISPLAY_MANAGER_ERROR_INVALID_PARAM，表示参数检查失败。 返回DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL，表示系统服务工作异常。 |
@@ -205,9 +222,10 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayRotation
  
   
 
-#### OH_NativeDisplayManager_GetDefaultDisplayOrientation()
+### OH_NativeDisplayManager_GetDefaultDisplayOrientation()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayOrientation(NativeDisplayManager_Orientation *displayOrientation)
@@ -221,6 +239,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayOrientat
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | NativeDisplayManager_Orientation *displayOrientation | 屏幕当前显示的方向，具体可见NativeDisplayManager_Orientation，此处作为出参返回。 |
@@ -228,6 +247,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayOrientat
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NativeDisplayManager_ErrorCode | 返回DISPLAY_MANAGER_OK，表示操作成功。 返回DISPLAY_MANAGER_ERROR_INVALID_PARAM，表示参数检查失败。 返回DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL，表示系统服务工作异常。 |
@@ -235,9 +255,10 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayOrientat
  
   
 
-#### OH_NativeDisplayManager_GetDefaultDisplayVirtualPixelRatio()
+### OH_NativeDisplayManager_GetDefaultDisplayVirtualPixelRatio()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayVirtualPixelRatio(float *virtualPixels)
@@ -251,6 +272,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayVirtualP
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | float *virtualPixels | 屏幕的虚拟像素密度，该参数为浮点数，通常与densityPixels相同，此处作为出参返回。 |
@@ -258,6 +280,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayVirtualP
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NativeDisplayManager_ErrorCode | 返回DISPLAY_MANAGER_OK，表示操作成功。 返回DISPLAY_MANAGER_ERROR_INVALID_PARAM，表示参数检查失败。 返回DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL，表示系统服务工作异常。 |
@@ -265,9 +288,10 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayVirtualP
  
   
 
-#### OH_NativeDisplayManager_GetDefaultDisplayRefreshRate()
+### OH_NativeDisplayManager_GetDefaultDisplayRefreshRate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayRefreshRate(uint32_t *refreshRate)
@@ -281,6 +305,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayRefreshR
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t *refreshRate | 屏幕的刷新率，该参数应为整数，单位为Hz，此处作为出参返回。 |
@@ -288,6 +313,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayRefreshR
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NativeDisplayManager_ErrorCode | 返回DISPLAY_MANAGER_OK，表示操作成功。 返回DISPLAY_MANAGER_ERROR_INVALID_PARAM，表示参数检查失败。 返回DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL，表示系统服务工作异常。 |
@@ -295,9 +321,10 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayRefreshR
  
   
 
-#### OH_NativeDisplayManager_GetDefaultDisplayDensityDpi()
+### OH_NativeDisplayManager_GetDefaultDisplayDensityDpi()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayDensityDpi(int32_t *densityDpi)
@@ -311,6 +338,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayDensityD
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | int32_t *densityDpi | 屏幕的物理像素密度，表示每英寸上的像素点数。该参数为整数，实际能取到的值取决于不同设备设置里提供的可选值。此处作为出参返回。 |
@@ -318,6 +346,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayDensityD
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NativeDisplayManager_ErrorCode | 返回DISPLAY_MANAGER_OK，表示操作成功。 返回DISPLAY_MANAGER_ERROR_INVALID_PARAM，表示参数检查失败。 返回DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL，表示系统服务工作异常。 |
@@ -325,9 +354,10 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayDensityD
  
   
 
-#### OH_NativeDisplayManager_GetDefaultDisplayDensityPixels()
+### OH_NativeDisplayManager_GetDefaultDisplayDensityPixels()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayDensityPixels(float *densityPixels)
@@ -341,6 +371,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayDensityP
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | float *densityPixels | 设备逻辑像素的密度，代表物理像素与逻辑像素的缩放系数，该参数为浮点数，受densityDPI范围限制，取值范围在[0.5, 4.0]。一般取值1.0、3.0等，实际取值取决于不同设备提供的densityDpi。此处作为出参返回。 |
@@ -348,6 +379,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayDensityP
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NativeDisplayManager_ErrorCode | 返回DISPLAY_MANAGER_OK，表示操作成功。 返回DISPLAY_MANAGER_ERROR_INVALID_PARAM，表示参数检查失败。 返回DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL，表示系统服务工作异常。 |
@@ -355,9 +387,10 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayDensityP
  
   
 
-#### OH_NativeDisplayManager_GetDefaultDisplayScaledDensity()
+### OH_NativeDisplayManager_GetDefaultDisplayScaledDensity()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayScaledDensity(float *scaledDensity)
@@ -371,6 +404,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayScaledDe
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | float *scaledDensity | 显示字体的缩放因子，该参数为浮点数，通常与densityPixels相同，此处作为出参返回。 |
@@ -378,6 +412,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayScaledDe
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NativeDisplayManager_ErrorCode | 返回DISPLAY_MANAGER_OK，表示操作成功。 返回DISPLAY_MANAGER_ERROR_INVALID_PARAM，表示参数检查失败。 返回DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL，表示系统服务工作异常。 |
@@ -385,9 +420,10 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayScaledDe
  
   
 
-#### OH_NativeDisplayManager_GetDefaultDisplayDensityXdpi()
+### OH_NativeDisplayManager_GetDefaultDisplayDensityXdpi()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayDensityXdpi(float *xDpi)
@@ -401,6 +437,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayDensityX
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | float *xDpi | X方向中每英寸屏幕的物理像素值，该参数为浮点数，此处作为出参返回。 |
@@ -408,6 +445,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayDensityX
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NativeDisplayManager_ErrorCode | 返回DISPLAY_MANAGER_OK，表示操作成功。 返回DISPLAY_MANAGER_ERROR_INVALID_PARAM，表示参数检查失败。 返回DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL，表示系统服务工作异常。 |
@@ -415,9 +453,10 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayDensityX
  
   
 
-#### OH_NativeDisplayManager_GetDefaultDisplayDensityYdpi()
+### OH_NativeDisplayManager_GetDefaultDisplayDensityYdpi()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayDensityYdpi(float *yDpi)
@@ -431,6 +470,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayDensityY
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | float *yDpi | Y方向中每英寸屏幕的物理像素值，该参数为浮点数，此处作为出参返回。 |
@@ -438,6 +478,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayDensityY
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NativeDisplayManager_ErrorCode | 返回DISPLAY_MANAGER_OK，表示操作成功。 返回DISPLAY_MANAGER_ERROR_INVALID_PARAM，表示参数检查失败。 返回DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL，表示系统服务工作异常。 |
@@ -445,9 +486,10 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDefaultDisplayDensityY
  
   
 
-#### OH_NativeDisplayManager_CreateDefaultDisplayCutoutInfo()
+### OH_NativeDisplayManager_CreateDefaultDisplayCutoutInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NativeDisplayManager_ErrorCode OH_NativeDisplayManager_CreateDefaultDisplayCutoutInfo(NativeDisplayManager_CutoutInfo **cutoutInfo)
@@ -461,13 +503,15 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_CreateDefaultDisplayCutou
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| NativeDisplayManager_CutoutInfo **cutoutInfo | 挖孔屏、刘海屏、瀑布屏等不可用屏幕区域信息，具体可见NativeDisplayManager_CutoutInfo，此处作为出参返回。 |
+| NativeDisplayManager_CutoutInfo **cutoutInfo | 挖孔屏、刘海屏、瀑布屏等不可用屏幕区域信息，具体可见NativeDisplayManager_CutoutInfo，此处作为出参返回。使用完毕后需要调用OH_NativeDisplayManager_DestroyDefaultDisplayCutoutInfo释放资源。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NativeDisplayManager_ErrorCode | 返回DISPLAY_MANAGER_OK，表示操作成功。 返回DISPLAY_MANAGER_ERROR_INVALID_PARAM，表示参数检查失败。 返回DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL，表示系统服务工作异常。 |
@@ -475,9 +519,10 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_CreateDefaultDisplayCutou
  
   
 
-#### OH_NativeDisplayManager_DestroyDefaultDisplayCutoutInfo()
+### OH_NativeDisplayManager_DestroyDefaultDisplayCutoutInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NativeDisplayManager_ErrorCode OH_NativeDisplayManager_DestroyDefaultDisplayCutoutInfo(NativeDisplayManager_CutoutInfo *cutoutInfo)
@@ -491,6 +536,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_DestroyDefaultDisplayCuto
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | NativeDisplayManager_CutoutInfo *cutoutInfo | 销毁通过OH_NativeDisplayManager_CreateDefaultDisplayCutoutInfo接口获取的挖孔屏、刘海屏、瀑布屏等不可用屏幕区域信息对象，具体可见NativeDisplayManager_CutoutInfo。 |
@@ -498,6 +544,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_DestroyDefaultDisplayCuto
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NativeDisplayManager_ErrorCode | 返回DISPLAY_MANAGER_OK，表示操作成功。 返回DISPLAY_MANAGER_ERROR_INVALID_PARAM，表示参数检查失败。 |
@@ -505,9 +552,10 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_DestroyDefaultDisplayCuto
  
   
 
-#### OH_NativeDisplayManager_IsFoldable()
+### OH_NativeDisplayManager_IsFoldable()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_NativeDisplayManager_IsFoldable()
@@ -521,6 +569,7 @@ bool OH_NativeDisplayManager_IsFoldable()
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回查询设备是否可折叠的结果。true表示设备可折叠，false表示设备不可折叠。 |
@@ -528,9 +577,10 @@ bool OH_NativeDisplayManager_IsFoldable()
  
   
 
-#### OH_NativeDisplayManager_GetFoldDisplayMode()
+### OH_NativeDisplayManager_GetFoldDisplayMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetFoldDisplayMode(NativeDisplayManager_FoldDisplayMode *displayMode)
@@ -542,10 +592,11 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetFoldDisplayMode(Native
  
 **起始版本：** 12
  
-**设备行为差异：** 该接口在PC/2in1设备、非折叠设备中返回0，在其他设备中可正常调用。
+**设备行为差异：** 该接口在PC/2in1设备、非折叠设备中返回NativeDisplayManager_FoldDisplayMode.DISPLAY_MANAGER_FOLD_DISPLAY_MODE_UNKNOWN，在其他设备中可正常调用。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | NativeDisplayManager_FoldDisplayMode *displayMode | 折叠设备当前的显示模式，具体可见NativeDisplayManager_FoldDisplayMode，此处作为出参返回。 |
@@ -553,6 +604,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetFoldDisplayMode(Native
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NativeDisplayManager_ErrorCode | 返回DISPLAY_MANAGER_OK，表示操作成功。 返回DISPLAY_MANAGER_ERROR_INVALID_PARAM，表示参数检查失败。 返回DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED，表示该设备不支持此API。 |
@@ -560,9 +612,10 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetFoldDisplayMode(Native
  
   
 
-#### OH_NativeDisplayManager_DisplayChangeCallback()
+### OH_NativeDisplayManager_DisplayChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_NativeDisplayManager_DisplayChangeCallback)(uint64_t displayId)
@@ -576,6 +629,7 @@ typedef void (*OH_NativeDisplayManager_DisplayChangeCallback)(uint64_t displayId
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint64_t displayId | 屏幕状态发生变化的屏幕ID号。 |
@@ -583,9 +637,10 @@ typedef void (*OH_NativeDisplayManager_DisplayChangeCallback)(uint64_t displayId
  
   
 
-#### OH_NativeDisplayManager_RegisterDisplayChangeListener()
+### OH_NativeDisplayManager_RegisterDisplayChangeListener()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NativeDisplayManager_ErrorCode OH_NativeDisplayManager_RegisterDisplayChangeListener(OH_NativeDisplayManager_DisplayChangeCallback displayChangeCallback, uint32_t *listenerIndex)
@@ -599,6 +654,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_RegisterDisplayChangeList
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeDisplayManager_DisplayChangeCallback displayChangeCallback | 屏幕状态变化后触发的回调函数，回调函数定义见OH_NativeDisplayManager_DisplayChangeCallback。 |
@@ -607,6 +663,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_RegisterDisplayChangeList
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NativeDisplayManager_ErrorCode | 返回DISPLAY_MANAGER_OK，表示操作成功。 返回DISPLAY_MANAGER_ERROR_INVALID_PARAM，表示参数检查失败。 返回DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL，表示系统服务工作异常。 |
@@ -614,9 +671,10 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_RegisterDisplayChangeList
  
   
 
-#### OH_NativeDisplayManager_UnregisterDisplayChangeListener()
+### OH_NativeDisplayManager_UnregisterDisplayChangeListener()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NativeDisplayManager_ErrorCode OH_NativeDisplayManager_UnregisterDisplayChangeListener(uint32_t listenerIndex)
@@ -630,6 +688,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_UnregisterDisplayChangeLi
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t listenerIndex | 调用注册函数OH_NativeDisplayManager_RegisterDisplayChangeListener时获取到的监听编号。 |
@@ -637,6 +696,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_UnregisterDisplayChangeLi
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NativeDisplayManager_ErrorCode | 返回DISPLAY_MANAGER_OK，表示操作成功。 返回DISPLAY_MANAGER_ERROR_INVALID_PARAM，表示参数检查失败。 返回DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL，表示系统服务工作异常。 |
@@ -644,9 +704,10 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_UnregisterDisplayChangeLi
  
   
 
-#### OH_NativeDisplayManager_FoldDisplayModeChangeCallback()
+### OH_NativeDisplayManager_FoldDisplayModeChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_NativeDisplayManager_FoldDisplayModeChangeCallback)(NativeDisplayManager_FoldDisplayMode displayMode)
@@ -660,6 +721,7 @@ typedef void (*OH_NativeDisplayManager_FoldDisplayModeChangeCallback)(NativeDisp
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | NativeDisplayManager_FoldDisplayMode displayMode | 折叠/展开动作执行后屏幕的状态，具体可见NativeDisplayManager_FoldDisplayMode。 |
@@ -667,9 +729,10 @@ typedef void (*OH_NativeDisplayManager_FoldDisplayModeChangeCallback)(NativeDisp
  
   
 
-#### OH_NativeDisplayManager_RegisterFoldDisplayModeChangeListener()
+### OH_NativeDisplayManager_RegisterFoldDisplayModeChangeListener()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1
 
 ```text
 NativeDisplayManager_ErrorCode OH_NativeDisplayManager_RegisterFoldDisplayModeChangeListener(OH_NativeDisplayManager_FoldDisplayModeChangeCallback displayModeChangeCallback, uint32_t *listenerIndex)
@@ -683,6 +746,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_RegisterFoldDisplayModeCh
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeDisplayManager_FoldDisplayModeChangeCallback displayModeChangeCallback | 屏幕展开和折叠变化后触发的回调函数，回调函数定义见OH_NativeDisplayManager_FoldDisplayModeChangeCallback。 |
@@ -691,6 +755,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_RegisterFoldDisplayModeCh
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NativeDisplayManager_ErrorCode | 返回DISPLAY_MANAGER_OK，表示操作成功。 返回DISPLAY_MANAGER_ERROR_INVALID_PARAM，表示参数检查失败。 返回DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED，表示该设备不支持此API。 返回DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL，表示系统服务工作异常。 |
@@ -698,9 +763,10 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_RegisterFoldDisplayModeCh
  
   
 
-#### OH_NativeDisplayManager_UnregisterFoldDisplayModeChangeListener()
+### OH_NativeDisplayManager_UnregisterFoldDisplayModeChangeListener()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1
 
 ```text
 NativeDisplayManager_ErrorCode OH_NativeDisplayManager_UnregisterFoldDisplayModeChangeListener(uint32_t listenerIndex)
@@ -714,6 +780,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_UnregisterFoldDisplayMode
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t listenerIndex | 调用注册函数OH_NativeDisplayManager_RegisterFoldDisplayModeChangeListener时获取到的监听编号。 |
@@ -721,6 +788,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_UnregisterFoldDisplayMode
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NativeDisplayManager_ErrorCode | 返回DISPLAY_MANAGER_OK，表示操作成功。 返回DISPLAY_MANAGER_ERROR_INVALID_PARAM，表示参数检查失败。 返回DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED，表示该设备不支持此API。 返回DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL，表示系统服务工作异常。 |
@@ -728,9 +796,10 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_UnregisterFoldDisplayMode
  
   
 
-#### OH_NativeDisplayManager_CreateAllDisplays()
+### OH_NativeDisplayManager_CreateAllDisplays()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NativeDisplayManager_ErrorCode OH_NativeDisplayManager_CreateAllDisplays(NativeDisplayManager_DisplaysInfo **allDisplays)
@@ -744,13 +813,15 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_CreateAllDisplays(NativeD
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| NativeDisplayManager_DisplaysInfo **allDisplays | 当前所有的屏幕信息，具体可见NativeDisplayManager_DisplaysInfo，此处作为出参返回。 |
+| NativeDisplayManager_DisplaysInfo **allDisplays | 当前所有的屏幕信息，具体可见NativeDisplayManager_DisplaysInfo，此处作为出参返回。使用完毕后需要调用OH_NativeDisplayManager_DestroyAllDisplays释放资源。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NativeDisplayManager_ErrorCode | 返回DISPLAY_MANAGER_OK，表示操作成功。 返回DISPLAY_MANAGER_ERROR_INVALID_PARAM，表示参数检查失败。 返回DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL，表示系统服务工作异常。 |
@@ -758,9 +829,10 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_CreateAllDisplays(NativeD
  
   
 
-#### OH_NativeDisplayManager_DestroyAllDisplays()
+### OH_NativeDisplayManager_DestroyAllDisplays()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_NativeDisplayManager_DestroyAllDisplays(NativeDisplayManager_DisplaysInfo *allDisplays)
@@ -774,6 +846,7 @@ void OH_NativeDisplayManager_DestroyAllDisplays(NativeDisplayManager_DisplaysInf
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | NativeDisplayManager_DisplaysInfo *allDisplays | 销毁通过OH_NativeDisplayManager_CreateAllDisplays接口获取的所有的屏幕信息，具体可见NativeDisplayManager_DisplaysInfo。 |
@@ -781,12 +854,13 @@ void OH_NativeDisplayManager_DestroyAllDisplays(NativeDisplayManager_DisplaysInf
  
   
 
-#### OH_NativeDisplayManager_CreateDisplayById()
+### OH_NativeDisplayManager_CreateDisplayById()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-NativeDisplayManager_ErrorCode OH_NativeDisplayManager_CreateDisplayById(uint32_t displayId,NativeDisplayManager_DisplayInfo **displayInfo)
+NativeDisplayManager_ErrorCode OH_NativeDisplayManager_CreateDisplayById(uint32_t displayId, NativeDisplayManager_DisplayInfo **displayInfo)
 ```
  
 **描述**
@@ -797,14 +871,16 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_CreateDisplayById(uint32_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t displayId | 指定屏幕的ID号，该值为非负整数。 |
-| NativeDisplayManager_DisplayInfo **displayInfo | 指定的屏幕信息对象，具体可见NativeDisplayManager_DisplayInfo，此处作为出参返回。 |
+| NativeDisplayManager_DisplayInfo **displayInfo | 指定的屏幕信息对象，具体可见NativeDisplayManager_DisplayInfo，此处作为出参返回。使用完毕后需要调用OH_NativeDisplayManager_DestroyDisplay释放资源。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NativeDisplayManager_ErrorCode | 返回DISPLAY_MANAGER_OK，表示操作成功。 返回DISPLAY_MANAGER_ERROR_INVALID_PARAM，表示参数检查失败。 返回DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL，表示系统服务工作异常。 |
@@ -812,9 +888,10 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_CreateDisplayById(uint32_
  
   
 
-#### OH_NativeDisplayManager_DestroyDisplay()
+### OH_NativeDisplayManager_DestroyDisplay()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_NativeDisplayManager_DestroyDisplay(NativeDisplayManager_DisplayInfo *displayInfo)
@@ -828,6 +905,7 @@ void OH_NativeDisplayManager_DestroyDisplay(NativeDisplayManager_DisplayInfo *di
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | NativeDisplayManager_DisplayInfo *displayInfo | 销毁通过OH_NativeDisplayManager_CreateDisplayById或者OH_NativeDisplayManager_CreatePrimaryDisplay接口获取到的屏幕信息，具体可见NativeDisplayManager_DisplayInfo。 |
@@ -835,9 +913,10 @@ void OH_NativeDisplayManager_DestroyDisplay(NativeDisplayManager_DisplayInfo *di
  
   
 
-#### OH_NativeDisplayManager_CreatePrimaryDisplay()
+### OH_NativeDisplayManager_CreatePrimaryDisplay()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NativeDisplayManager_ErrorCode OH_NativeDisplayManager_CreatePrimaryDisplay(NativeDisplayManager_DisplayInfo **displayInfo)
@@ -851,6 +930,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_CreatePrimaryDisplay(Nati
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | NativeDisplayManager_DisplayInfo **displayInfo | 主屏的屏幕信息对象，具体可见NativeDisplayManager_DisplayInfo，此处作为出参返回。 |
@@ -858,6 +938,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_CreatePrimaryDisplay(Nati
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NativeDisplayManager_ErrorCode | 返回DISPLAY_MANAGER_OK，表示操作成功。 返回DISPLAY_MANAGER_ERROR_INVALID_PARAM，表示参数检查失败。 返回DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL，表示系统服务工作异常。 |
@@ -865,9 +946,10 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_CreatePrimaryDisplay(Nati
  
   
 
-#### OH_NativeDisplayManager_AvailableAreaChangeCallback()
+### OH_NativeDisplayManager_AvailableAreaChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 typedef void (*OH_NativeDisplayManager_AvailableAreaChangeCallback)(uint64_t displayId)
@@ -881,6 +963,7 @@ typedef void (*OH_NativeDisplayManager_AvailableAreaChangeCallback)(uint64_t dis
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint64_t displayId | 屏幕的ID号，非负整数。 |
@@ -888,9 +971,10 @@ typedef void (*OH_NativeDisplayManager_AvailableAreaChangeCallback)(uint64_t dis
  
   
 
-#### OH_NativeDisplayManager_RegisterAvailableAreaChangeListener()
+### OH_NativeDisplayManager_RegisterAvailableAreaChangeListener()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NativeDisplayManager_ErrorCode OH_NativeDisplayManager_RegisterAvailableAreaChangeListener(OH_NativeDisplayManager_AvailableAreaChangeCallback availableAreaChangeCallback, uint32_t *listenerIndex)
@@ -905,11 +989,12 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_RegisterAvailableAreaChan
 **设备行为差异：**
  
 - 在搭载HarmonyOS 7.0.0及以上版本的设备上，该接口可正常调用。
-- 针对低于该版本的设备，该接口在PC/2in1设备、Tablet设备中可正常调用，在其他设备中不生效也不报错。
+- 针对HarmonyOS 7.0.0以下版本的设备，该接口在PC/2in1设备、Tablet设备中可正常调用，在其他设备中不生效也不报错。
 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeDisplayManager_AvailableAreaChangeCallback availableAreaChangeCallback | 屏幕可用区域变化后触发的回调函数， 回调函数定义见OH_NativeDisplayManager_AvailableAreaChangeCallback。 |
@@ -918,6 +1003,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_RegisterAvailableAreaChan
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NativeDisplayManager_ErrorCode | 返回DISPLAY_MANAGER_OK，表示操作成功。 返回DISPLAY_MANAGER_ERROR_ILLEGAL_PARAM，表示非法参数。 返回DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL，表示系统服务工作异常。 |
@@ -925,9 +1011,10 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_RegisterAvailableAreaChan
  
   
 
-#### OH_NativeDisplayManager_UnregisterAvailableAreaChangeListener()
+### OH_NativeDisplayManager_UnregisterAvailableAreaChangeListener()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NativeDisplayManager_ErrorCode OH_NativeDisplayManager_UnregisterAvailableAreaChangeListener(uint32_t listenerIndex)
@@ -942,11 +1029,12 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_UnregisterAvailableAreaCh
 **设备行为差异：**
  
 - 在搭载HarmonyOS 7.0.0及以上版本的设备上，该接口可正常调用。
-- 针对低于该版本的设备，该接口在PC/2in1设备、Tablet设备中可正常调用，在其他设备中不生效也不报错。
+- 针对HarmonyOS 7.0.0以下版本的设备，该接口在PC/2in1设备、Tablet设备中可正常调用，在其他设备中不生效也不报错。
 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t listenerIndex | 调用注册函数 OH_NativeDisplayManager_RegisterAvailableAreaChangeListener时获取到的监听编号。 |
@@ -954,6 +1042,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_UnregisterAvailableAreaCh
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NativeDisplayManager_ErrorCode | 返回DISPLAY_MANAGER_OK，表示操作成功。 返回DISPLAY_MANAGER_ERROR_ILLEGAL_PARAM，表示非法参数。 返回DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL，表示系统服务工作异常。 |
@@ -961,9 +1050,10 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_UnregisterAvailableAreaCh
  
   
 
-#### OH_NativeDisplayManager_CreateAvailableArea()
+### OH_NativeDisplayManager_CreateAvailableArea()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NativeDisplayManager_ErrorCode OH_NativeDisplayManager_CreateAvailableArea(uint64_t displayId, NativeDisplayManager_Rect **availableArea)
@@ -973,24 +1063,28 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_CreateAvailableArea(uint6
  
 获取屏幕的可用区域。
  
+可用区域是扣除系统UI（如状态栏、Dock栏）后，可供应用程序自由使用的区域。
+ 
 **起始版本：** 20
  
 **设备行为差异：**
  
 - 在搭载HarmonyOS 7.0.0及以上版本的设备上，该接口可正常调用。
-- 针对低于该版本的设备，该接口在PC/2in1设备、Tablet设备中可正常调用；在其他设备中不可用，请通过[OH_NativeDisplayManager_GetDefaultDisplayWidth()](#oh_nativedisplaymanager_getdefaultdisplaywidth)、[OH_NativeDisplayManager_GetDefaultDisplayHeight()](#oh_nativedisplaymanager_getdefaultdisplayheight)获取当前设备屏幕的可用区域。
+- 针对HarmonyOS 7.0.0以下版本的设备，该接口在PC/2in1设备、Tablet设备中可正常调用；在其他设备中不可用，请通过[OH_NativeDisplayManager_GetDefaultDisplayWidth()](#oh_nativedisplaymanager_getdefaultdisplaywidth)、[OH_NativeDisplayManager_GetDefaultDisplayHeight()](#oh_nativedisplaymanager_getdefaultdisplayheight)获取当前设备屏幕的可用区域。
 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint64_t displayId | 查询屏幕的ID号，非负整数。 |
-| NativeDisplayManager_Rect **availableArea | 屏幕可用区域，具体可见NativeDisplayManager_Rect，此处作为出参返回。 |
+| NativeDisplayManager_Rect **availableArea | 屏幕可用区域，具体可见NativeDisplayManager_Rect，此处作为出参返回。使用完毕后需要调用OH_NativeDisplayManager_DestroyAvailableArea释放资源。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NativeDisplayManager_ErrorCode | 返回DISPLAY_MANAGER_OK，表示操作成功。 返回DISPLAY_MANAGER_ERROR_ILLEGAL_PARAM，表示非法参数。 返回DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL，表示系统服务工作异常。 |
@@ -998,9 +1092,10 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_CreateAvailableArea(uint6
  
   
 
-#### OH_NativeDisplayManager_DestroyAvailableArea()
+### OH_NativeDisplayManager_DestroyAvailableArea()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NativeDisplayManager_ErrorCode OH_NativeDisplayManager_DestroyAvailableArea(NativeDisplayManager_Rect *availableArea)
@@ -1014,6 +1109,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_DestroyAvailableArea(Nati
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | NativeDisplayManager_Rect *availableArea | 销毁通过OH_NativeDisplayManager_CreateAvailableArea获取的屏幕可用区域， 可用区域定义具体可见NativeDisplayManager_Rect。 |
@@ -1021,6 +1117,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_DestroyAvailableArea(Nati
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NativeDisplayManager_ErrorCode | 返回DISPLAY_MANAGER_OK，表示操作成功。 返回DISPLAY_MANAGER_ERROR_ILLEGAL_PARAM，表示非法参数。 |
@@ -1028,9 +1125,10 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_DestroyAvailableArea(Nati
  
   
 
-#### OH_NativeDisplayManager_DisplayAddCallback()
+### OH_NativeDisplayManager_DisplayAddCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_NativeDisplayManager_DisplayAddCallback)(uint64_t displayId)
@@ -1044,6 +1142,7 @@ typedef void (*OH_NativeDisplayManager_DisplayAddCallback)(uint64_t displayId)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint64_t displayId | 新增屏幕的ID号，非负整数。 |
@@ -1051,9 +1150,10 @@ typedef void (*OH_NativeDisplayManager_DisplayAddCallback)(uint64_t displayId)
  
   
 
-#### OH_NativeDisplayManager_RegisterDisplayAddListener()
+### OH_NativeDisplayManager_RegisterDisplayAddListener()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NativeDisplayManager_ErrorCode OH_NativeDisplayManager_RegisterDisplayAddListener(OH_NativeDisplayManager_DisplayAddCallback displayAddCallback, uint32_t *listenerIndex)
@@ -1067,6 +1167,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_RegisterDisplayAddListene
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeDisplayManager_DisplayAddCallback displayAddCallback | 屏幕连接后触发的回调函数，回调函数定义见OH_NativeDisplayManager_DisplayAddCallback。 |
@@ -1075,6 +1176,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_RegisterDisplayAddListene
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NativeDisplayManager_ErrorCode | 返回DISPLAY_MANAGER_OK，表示操作成功。 返回DISPLAY_MANAGER_ERROR_ILLEGAL_PARAM，表示非法参数。 返回DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL，表示系统服务工作异常。 |
@@ -1082,9 +1184,10 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_RegisterDisplayAddListene
  
   
 
-#### OH_NativeDisplayManager_UnregisterDisplayAddListener()
+### OH_NativeDisplayManager_UnregisterDisplayAddListener()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NativeDisplayManager_ErrorCode OH_NativeDisplayManager_UnregisterDisplayAddListener(uint32_t listenerIndex)
@@ -1098,6 +1201,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_UnregisterDisplayAddListe
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t listenerIndex | 调用注册函数OH_NativeDisplayManager_RegisterDisplayAddListener时获取到的监听编号。 |
@@ -1105,6 +1209,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_UnregisterDisplayAddListe
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NativeDisplayManager_ErrorCode | 返回DISPLAY_MANAGER_OK，表示操作成功。 返回DISPLAY_MANAGER_ERROR_ILLEGAL_PARAM，表示非法参数。 返回DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL，表示系统服务工作异常。 |
@@ -1112,9 +1217,10 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_UnregisterDisplayAddListe
  
   
 
-#### OH_NativeDisplayManager_DisplayRemoveCallback()
+### OH_NativeDisplayManager_DisplayRemoveCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_NativeDisplayManager_DisplayRemoveCallback)(uint64_t displayId)
@@ -1128,6 +1234,7 @@ typedef void (*OH_NativeDisplayManager_DisplayRemoveCallback)(uint64_t displayId
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint64_t displayId | 被移除屏幕的ID号，非负整数。 |
@@ -1135,9 +1242,10 @@ typedef void (*OH_NativeDisplayManager_DisplayRemoveCallback)(uint64_t displayId
  
   
 
-#### OH_NativeDisplayManager_RegisterDisplayRemoveListener()
+### OH_NativeDisplayManager_RegisterDisplayRemoveListener()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NativeDisplayManager_ErrorCode OH_NativeDisplayManager_RegisterDisplayRemoveListener(OH_NativeDisplayManager_DisplayRemoveCallback displayRemoveCallback, uint32_t *listenerIndex)
@@ -1151,6 +1259,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_RegisterDisplayRemoveList
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeDisplayManager_DisplayRemoveCallback displayRemoveCallback | 屏幕移除后触发的回调函数，回调函数定义见OH_NativeDisplayManager_DisplayRemoveCallback。 |
@@ -1159,6 +1268,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_RegisterDisplayRemoveList
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NativeDisplayManager_ErrorCode | 返回DISPLAY_MANAGER_OK，表示操作成功。 返回DISPLAY_MANAGER_ERROR_ILLEGAL_PARAM，表示非法参数。 返回DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL，表示系统服务工作异常。 |
@@ -1166,9 +1276,10 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_RegisterDisplayRemoveList
  
   
 
-#### OH_NativeDisplayManager_UnregisterDisplayRemoveListener()
+### OH_NativeDisplayManager_UnregisterDisplayRemoveListener()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NativeDisplayManager_ErrorCode OH_NativeDisplayManager_UnregisterDisplayRemoveListener(uint32_t listenerIndex)
@@ -1182,6 +1293,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_UnregisterDisplayRemoveLi
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t listenerIndex | 调用注册函数OH_NativeDisplayManager_RegisterDisplayRemoveListener时获取到的监听编号。 |
@@ -1189,6 +1301,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_UnregisterDisplayRemoveLi
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NativeDisplayManager_ErrorCode | 返回DISPLAY_MANAGER_OK，表示操作成功。 返回DISPLAY_MANAGER_ERROR_ILLEGAL_PARAM，表示非法参数。 返回DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL，表示系统服务工作异常。 |
@@ -1196,9 +1309,10 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_UnregisterDisplayRemoveLi
  
   
 
-#### OH_NativeDisplayManager_GetDisplaySourceMode()
+### OH_NativeDisplayManager_GetDisplaySourceMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDisplaySourceMode(uint64_t displayId, NativeDisplayManager_SourceMode *sourceMode)
@@ -1212,6 +1326,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDisplaySourceMode(uint
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint64_t displayId | 查询屏幕的ID号，非负整数。 |
@@ -1220,6 +1335,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDisplaySourceMode(uint
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NativeDisplayManager_ErrorCode | 返回DISPLAY_MANAGER_OK，表示操作成功。 返回DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL，表示系统服务工作异常。 |
@@ -1227,9 +1343,10 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDisplaySourceMode(uint
  
   
 
-#### OH_NativeDisplayManager_GetDisplayPosition()
+### OH_NativeDisplayManager_GetDisplayPosition()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDisplayPosition(uint64_t displayId, int32_t *x, int32_t *y)
@@ -1247,6 +1364,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDisplayPosition(uint64
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint64_t displayId | 查询位置信息的屏幕ID号，该参数应为非负整数。 |
@@ -1256,6 +1374,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_GetDisplayPosition(uint64
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NativeDisplayManager_ErrorCode | 返回DISPLAY_MANAGER_OK，表示操作成功。 返回DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL，表示系统服务工作异常。 当前仅支持主屏幕和扩展屏幕查询屏幕位置信息，其他屏幕查询会返回DISPLAY_MANAGER_ERROR_ILLEGAL_PARAM。 |

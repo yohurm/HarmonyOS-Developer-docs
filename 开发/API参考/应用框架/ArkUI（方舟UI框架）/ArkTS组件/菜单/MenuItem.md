@@ -1,9 +1,9 @@
 # MenuItem
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-menuitem
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用来展示菜单中具体的菜单选项。
 
@@ -12,17 +12,19 @@
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 MenuItem(value?: MenuItemOptions | CustomBuilder)
 
@@ -32,6 +34,7 @@ MenuItem(value?: MenuItemOptions | CustomBuilder)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | MenuItemOptions \| CustomBuilder | 否 | 包含设置MenuItem的各项信息。需要使用标准菜单项配置（如起始图标、内容、标签等）时选择MenuItemOptions；需要自定义菜单项的显示内容和布局时选择CustomBuilder。如果不传该参数，则创建空的MenuItem对象。 |
@@ -39,13 +42,15 @@ MenuItem(value?: MenuItemOptions | CustomBuilder)
 
 
 
-#### MenuItemOptions对象说明
+## MenuItemOptions对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Menu中的菜单项信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -60,17 +65,19 @@ Menu中的菜单项信息。
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
 
 
 
-#### selected
+### selected
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selected(value: boolean)
 
@@ -86,6 +93,7 @@ selected(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 菜单项是否选中。 true：菜单项被选中；false：菜单项不被选中。 默认值：false |
@@ -93,9 +101,10 @@ selected(value: boolean)
 
 
 
-#### selectIcon
+### selectIcon
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectIcon(value: boolean | ResourceStr | SymbolGlyphModifier)
 
@@ -107,6 +116,7 @@ selectIcon(value: boolean | ResourceStr | SymbolGlyphModifier)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean \| ResourceStr10+\| SymbolGlyphModifier12+ | 是 | 菜单项被选中时的图标显示方式。 true：显示默认的对勾图标；false：不显示图标。 ResourceStr：显示指定的图标。 SymbolGlyphModifier：显示指定的HMSymbol图标。 默认值：false |
@@ -114,9 +124,10 @@ selectIcon(value: boolean | ResourceStr | SymbolGlyphModifier)
 
 
 
-#### contentFont10+
+### contentFont10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contentFont(value: Font)
 
@@ -130,6 +141,7 @@ contentFont(value: Font)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Font | 是 | 菜单项中内容信息的字体样式。 |
@@ -137,9 +149,10 @@ contentFont(value: Font)
 
 
 
-#### contentFontColor10+
+### contentFontColor10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contentFontColor(value: ResourceColor)
 
@@ -153,6 +166,7 @@ contentFontColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 菜单项中内容信息的字体颜色。 默认值：'#E5000000' |
@@ -160,9 +174,10 @@ contentFontColor(value: ResourceColor)
 
 
 
-#### labelFont10+
+### labelFont10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 labelFont(value: Font)
 
@@ -176,6 +191,7 @@ labelFont(value: Font)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Font | 是 | 菜单项中标签信息的字体样式。 |
@@ -183,9 +199,10 @@ labelFont(value: Font)
 
 
 
-#### labelFontColor10+
+### labelFontColor10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 labelFontColor(value: ResourceColor)
 
@@ -199,6 +216,7 @@ labelFontColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 菜单项中标签信息的字体颜色。 默认值：'#99000000' |
@@ -206,9 +224,10 @@ labelFontColor(value: ResourceColor)
 
 
 
-#### subMenuBuilder
+### subMenuBuilder
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 subMenuBuilder(builder: CustomBuilder)
 
@@ -224,6 +243,7 @@ subMenuBuilder(builder: CustomBuilder)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | builder | CustomBuilder | 是 | 设置二级菜单的自定义内容。 当MenuItem组件的入参类型为CustomBuilder时可以使用本属性来接入自定义二级菜单。 父组件为Menu时，仅当subMenuExpandingMode属性设置为SubMenuExpandingMode.SIDE_EXPAND或SubMenuExpandingMode.STACK_EXPAND时，才可以触发子菜单。 |
@@ -231,15 +251,17 @@ subMenuBuilder(builder: CustomBuilder)
 
 
 
-#### 事件
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 事件
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### onChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### onChange
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onChange(callback: (selected: boolean) => void)
 
@@ -251,6 +273,7 @@ onChange(callback: (selected: boolean) => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | selected | boolean | 是 | 当前菜单项是否被选中。 true：当前菜单项已选中；false：当前菜单项未选中。 |
@@ -258,8 +281,9 @@ onChange(callback: (selected: boolean) => void)
 
 
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 详见[Menu组件示例](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-menu#示例)。

@@ -1,6 +1,6 @@
 # @performance/web-cache-mode-check
 
-更新时间：2026-01-15 06:51:04
+更新时间：2026-08-29 09:41:34
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-performance-web-cache-mode-check
 
@@ -9,7 +9,7 @@ web组件的cacheMode属性参数不建议设置为Online。
 Web完成时延场景下，建议优先修改。
  
 
-#### 规则配置
+## 规则配置
 
 ```json
 // code-linter.json5
@@ -22,13 +22,13 @@ Web完成时延场景下，建议优先修改。
  
  
 
-#### 选项
+## 选项
 
-该规则无需配置额外选项。
+该规则无需配置选项。
  
  
 
-#### 正例
+## 正例
 
 ```text
 import { webview } from '@kit.ArkWeb';
@@ -86,7 +86,7 @@ struct WebCacheModeNoReport {
  
  
 
-#### 反例
+## 反例
 
 ```text
 import { webview } from '@kit.ArkWeb';
@@ -145,10 +145,10 @@ struct WebCacheModeNoReport {
  
  
 
-#### 规则集
+## 规则集
 
 ```text
-plugin:@performance/all
+<span style="color: rgb(106,135,89);">plugin:@performance/all</span>
 ```
  
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-code-linter)。

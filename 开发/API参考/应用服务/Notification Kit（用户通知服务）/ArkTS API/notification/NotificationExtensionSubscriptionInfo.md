@@ -1,9 +1,9 @@
 # NotificationExtensionSubscriptionInfo
 
-更新时间：2026-07-28 11:23:46（官网已下线）
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-notificationextensionsubscriptioninfo
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于描述通知扩展订阅的信息。
  
@@ -12,12 +12,14 @@
 
   
 
-#### NotificationExtensionSubscriptionInfo
+## NotificationExtensionSubscriptionInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Notification.Notification
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | notificationExtensionSubscription.SubscribeType | 否 | 否 | 订阅的类型，指定通知扩展的订阅方式。当前仅支持SubscribeType.BLUETOOTH，表示通过蓝牙订阅通知。 |

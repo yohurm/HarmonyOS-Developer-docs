@@ -1,6 +1,6 @@
 # @ohos.enterprise.applicationManager（应用管理）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-applicationmanager
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -12,7 +12,8 @@
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -22,7 +23,8 @@ import { applicationManager } from '@kit.MDMKit';
 
 
 
-#### applicationManager.addDisallowedRunningBundlesSync
+## applicationManager.addDisallowedRunningBundlesSync
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -44,6 +46,7 @@ addDisallowedRunningBundlesSync(admin: Want, appIds: Array&lt;string&gt;, accoun
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -54,6 +57,7 @@ addDisallowedRunningBundlesSync(admin: Want, appIds: Array&lt;string&gt;, accoun
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -88,13 +92,14 @@ try {
 
 
 
-#### applicationManager.removeDisallowedRunningBundlesSync
+## applicationManager.removeDisallowedRunningBundlesSync
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 removeDisallowedRunningBundlesSync(admin: Want, appIds: Array&lt;string&gt;, accountId?: number): void
 
-将应用从当前/指定用户下的应用运行禁止名单中移除。
+将应用从当前/指定用户下的应用运行禁止名单中移除。移除后，该应用将允许在当前/指定用户下运行。
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_APPLICATION
 
@@ -106,6 +111,7 @@ removeDisallowedRunningBundlesSync(admin: Want, appIds: Array&lt;string&gt;, acc
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -116,6 +122,7 @@ removeDisallowedRunningBundlesSync(admin: Want, appIds: Array&lt;string&gt;, acc
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -149,13 +156,16 @@ try {
 
 
 
-#### applicationManager.getDisallowedRunningBundlesSync
+## applicationManager.getDisallowedRunningBundlesSync
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
-getDisallowedRunningBundlesSync(admin: Want | null, accountId?: number): Array&lt;string&gt;
+getDisallowedRunningBundlesSync(admin: Want, accountId?: number): Array&lt;string&gt;
 
 获取当前/指定用户下的应用运行禁止名单。
+
+本接口通过传入Want查询对应企业设备管理应用设置的策略，如需查询实际生效的策略，请使用[applicationManager.getDisallowedRunningBundlesSync](#applicationmanagergetdisallowedrunningbundlessync-1)接口。
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_APPLICATION
 
@@ -165,13 +175,15 @@ getDisallowedRunningBundlesSync(admin: Want | null, accountId?: number): Array&l
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 当设备存在多个MDM应用时，API版本26.0.0之前，传入Want时查询对应企业设备管理应用设置的策略。从API版本26.0.0开始，新增支持传入null时查询实际生效的策略。 |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
 | accountId | number | 否 | 用户ID，取值范围：大于等于0。 accountId可以通过@ohos.account.osAccount中的getOsAccountLocalId等接口来获取。 - 调用接口时，若传入accountId，表示指定用户。 - 调用接口时，若未传入accountId，表示当前用户。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -181,6 +193,7 @@ getDisallowedRunningBundlesSync(admin: Want | null, accountId?: number): Array&l
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -212,7 +225,71 @@ try {
 
 
 
-#### applicationManager.addAllowedRunningBundles21+
+## applicationManager.getDisallowedRunningBundlesSync
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
+
+getDisallowedRunningBundlesSync(admin: Want | null, accountId?: number): Array&lt;string&gt;
+
+获取当前/指定用户下的应用运行禁止名单。
+
+**起始版本：** 26.0.0
+
+**需要权限：** ohos.permission.ENTERPRISE_MANAGE_APPLICATION
+
+**系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 当设备存在多个MDM应用时，传入Want时查询对应企业设备管理应用设置的策略，传入null时查询实际生效的策略。 |
+| accountId | number | 否 | 用户ID，取值范围：大于等于0。 accountId可以通过@ohos.account.osAccount中的getOsAccountLocalId等接口来获取。 - 调用接口时，若传入accountId，表示指定用户。 - 调用接口时，若未传入accountId，表示当前用户。 |
+
+
+**返回值：**
+
+
+| 类型 | 说明 |
+| --- | --- |
+| Array&lt;string&gt; | 返回当前/指定用户下的应用运行禁止名单。 说明： 返回值为应用appId或appIdentifier列表。 |
+
+
+**错误码**：
+
+以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
+
+**示例：**
+
+```json
+import { applicationManager } from '@kit.MDMKit';
+
+try {
+  // 参数需根据实际情况进行替换
+  let result: Array<string> = applicationManager.getDisallowedRunningBundlesSync(null);
+  console.info(`Succeeded in getting disallowed running bundles, result : ${JSON.stringify(result)}`);
+} catch (err) {
+  console.error(`Failed to get disallowed running bundles. Code is ${err.code}, message is ${err.message}`);
+}
+```
+
+
+
+## applicationManager.addAllowedRunningBundles21+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -234,6 +311,7 @@ addAllowedRunningBundles(admin: Want, appIdentifiers: Array&lt;string&gt;, accou
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -244,6 +322,7 @@ addAllowedRunningBundles(admin: Want, appIdentifiers: Array&lt;string&gt;, accou
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -278,13 +357,14 @@ try {
 
 
 
-#### applicationManager.removeAllowedRunningBundles21+
+## applicationManager.removeAllowedRunningBundles21+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 removeAllowedRunningBundles(admin: Want, appIdentifiers: Array&lt;string&gt;, accountId: number): void
 
-将应用从指定用户下的应用运行允许名单中移除。
+将应用从指定用户下的应用运行允许名单中移除。移除后，该应用将不允许在指定用户下运行。
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_APPLICATION
 
@@ -296,6 +376,7 @@ removeAllowedRunningBundles(admin: Want, appIdentifiers: Array&lt;string&gt;, ac
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -306,6 +387,7 @@ removeAllowedRunningBundles(admin: Want, appIdentifiers: Array&lt;string&gt;, ac
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -339,13 +421,16 @@ try {
 
 
 
-#### applicationManager.getAllowedRunningBundles21+
+## applicationManager.getAllowedRunningBundles21+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
-getAllowedRunningBundles(admin: Want | null, accountId: number): Array&lt;string&gt;
+getAllowedRunningBundles(admin: Want, accountId: number): Array&lt;string&gt;
 
 获取指定用户下的应用运行允许名单。
+
+本接口通过传入Want查询对应企业设备管理应用设置的策略，如需查询实际生效的策略，请使用[applicationManager.getAllowedRunningBundles](#applicationmanagergetallowedrunningbundles)接口。
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_APPLICATION
 
@@ -355,13 +440,15 @@ getAllowedRunningBundles(admin: Want | null, accountId: number): Array&lt;string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 当设备存在多个MDM应用时，API版本26.0.0之前，传入Want时查询对应企业设备管理应用设置的策略。从API版本26.0.0开始，新增支持传入null时查询实际生效的策略。 |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
 | accountId | number | 是 | 用户ID，取值范围：大于等于0。 accountId可以通过@ohos.account.osAccount中的getOsAccountLocalId等接口来获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -371,6 +458,7 @@ getAllowedRunningBundles(admin: Want | null, accountId: number): Array&lt;string
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -401,7 +489,70 @@ try {
 
 
 
-#### applicationManager.addAutoStartApps
+## applicationManager.getAllowedRunningBundles
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
+
+getAllowedRunningBundles(admin: Want | null, accountId: number): Array&lt;string&gt;
+
+获取指定用户下的应用运行允许名单。
+
+**起始版本：** 26.0.0
+
+**需要权限：** ohos.permission.ENTERPRISE_MANAGE_APPLICATION
+
+**系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 当设备存在多个MDM应用时，传入Want时查询对应企业设备管理应用设置的策略，传入null时查询实际生效的策略。 |
+| accountId | number | 是 | 用户ID，取值范围：大于等于0。 accountId可以通过@ohos.account.osAccount中的getOsAccountLocalId等接口来获取。 |
+
+
+**返回值：**
+
+
+| 类型 | 说明 |
+| --- | --- |
+| Array&lt;string&gt; | 返回指定用户下的应用运行允许名单。 |
+
+
+**错误码**：
+
+以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+
+
+**示例：**
+
+```json
+import { applicationManager } from '@kit.MDMKit';
+
+try {
+  // 参数需根据实际情况进行替换
+  let result: Array<string> = applicationManager.getAllowedRunningBundles(null, 100);
+  console.info(`Succeeded in getting allowed running bundles, result : ${JSON.stringify(result)}`);
+} catch (err) {
+  console.error(`Failed to get allowed running bundles. Code is ${err.code}, message is ${err.message}`);
+}
+```
+
+
+
+## applicationManager.addAutoStartApps
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -421,6 +572,7 @@ addAutoStartApps(admin: Want, autoStartApps: Array&lt;Want&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -430,6 +582,7 @@ addAutoStartApps(admin: Want, autoStartApps: Array&lt;Want&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -466,20 +619,21 @@ let autoStartApps: Array<Want> = [
 try {
   applicationManager.addAutoStartApps(wantTemp, autoStartApps);
   console.info('Succeeded in adding auto start applications.');
-} catch(err) {
+} catch (err) {
   console.error(`Failed to add auto start applications. Code: ${err.code}, message: ${err.message}`);
 }
 ```
 
 
 
-#### applicationManager.removeAutoStartApps
+## applicationManager.removeAutoStartApps
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 removeAutoStartApps(admin: Want, autoStartApps: Array&lt;Want&gt;): void
 
-为当前用户删除开机自启动应用名单。
+为当前用户删除开机自启动应用名单。删除后，应用将不再开机自启动。
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_APPLICATION
 
@@ -493,6 +647,7 @@ removeAutoStartApps(admin: Want, autoStartApps: Array&lt;Want&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -502,6 +657,7 @@ removeAutoStartApps(admin: Want, autoStartApps: Array&lt;Want&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -533,14 +689,15 @@ let autoStartApps: Array<Want> = [
 try {
   applicationManager.removeAutoStartApps(wantTemp, autoStartApps);
   console.info('Succeeded in removing auto start applications.');
-} catch(err) {
+} catch (err) {
   console.error(`Failed to remove auto start applications. Code: ${err.code}, message: ${err.message}`);
 }
 ```
 
 
 
-#### applicationManager.removeAutoStartApps20+
+## applicationManager.removeAutoStartApps20+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -560,6 +717,7 @@ removeAutoStartApps(admin: Want, autoStartApps: Array&lt;Want&gt;, accountId: nu
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -570,6 +728,7 @@ removeAutoStartApps(admin: Want, autoStartApps: Array&lt;Want&gt;, accountId: nu
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -601,20 +760,23 @@ let autoStartApps: Array<Want> = [
 try {
   applicationManager.removeAutoStartApps(wantTemp, autoStartApps, 100);
   console.info('Succeeded in removing auto start applications.');
-} catch(err) {
+} catch (err) {
   console.error(`Failed to remove auto start applications. Code: ${err.code}, message: ${err.message}`);
 }
 ```
 
 
 
-#### applicationManager.getAutoStartApps
+## applicationManager.getAutoStartApps
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
-getAutoStartApps(admin: Want | null): Array&lt;Want&gt;
+getAutoStartApps(admin: Want): Array&lt;Want&gt;
 
 查询当前用户开机自启动应用名单。
+
+本接口通过传入Want查询对应企业设备管理应用设置的策略，如需查询实际生效的策略，请使用[applicationManager.getAutoStartApps](#applicationmanagergetautostartapps-1)接口。
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_APPLICATION
 
@@ -626,12 +788,14 @@ getAutoStartApps(admin: Want | null): Array&lt;Want&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 当设备存在多个MDM应用时，API版本26.0.0之前，传入Want时查询对应企业设备管理应用设置的策略。从API版本26.0.0开始，新增支持传入null时查询实际生效的策略。 |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -641,6 +805,7 @@ getAutoStartApps(admin: Want | null): Array&lt;Want&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -665,6 +830,84 @@ let wantTemp: Want = {
 try {
   let res: Array<Want> = applicationManager.getAutoStartApps(wantTemp);
   console.info(`Succeeded in adding auto start apps: ${JSON.stringify(res)}`);
+} catch (err) {
+  console.error(`Failed to auto start apps. Code: ${err.code}, message: ${err.message}`);
+}
+```
+
+```text
+// 返回示例
+[
+  {
+    "bundleName": "com.example.edmtest",
+    "abilityName": "EntryAbility",
+    // 从API version 24支持
+    "parameters": {
+      "isHiddenStart": false
+    }
+  },
+  // ...
+];
+```
+
+
+
+## applicationManager.getAutoStartApps
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
+
+getAutoStartApps(admin: Want | null): Array&lt;Want&gt;
+
+查询当前用户开机自启动应用名单。
+
+**起始版本：** 26.0.0
+
+**需要权限：** ohos.permission.ENTERPRISE_MANAGE_APPLICATION
+
+**系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 当设备存在多个MDM应用时，传入Want时查询对应企业设备管理应用设置的策略，传入null时查询实际生效的策略。 |
+
+
+**返回值：**
+
+
+| 类型 | 说明 |
+| --- | --- |
+| Array&lt;Want&gt; | 应用自启动名单数组。从API version 24开始，支持返回是否隐藏UI的配置。 |
+
+
+**错误码**：
+
+以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
+
+**示例：**
+
+```json
+import { applicationManager } from '@kit.MDMKit';
+import { Want } from '@kit.AbilityKit';
+
+try {
+  // 参数需根据实际情况进行替换
+  let res: Array<Want> = applicationManager.getAutoStartApps(null);
+  console.info(`Succeeded in adding auto start apps: ${JSON.stringify(res)}`);
 } catch(err) {
   console.error(`Failed to auto start apps. Code: ${err.code}, message: ${err.message}`);
 }
@@ -682,12 +925,13 @@ try {
     }
   },
   // ...
-]
+];
 ```
 
 
 
-#### applicationManager.addAutoStartApps20+
+## applicationManager.addAutoStartApps20+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -709,6 +953,7 @@ addAutoStartApps(admin: Want, autoStartApps: Array&lt;Want&gt;, accountId: numbe
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -720,6 +965,7 @@ addAutoStartApps(admin: Want, autoStartApps: Array&lt;Want&gt;, accountId: numbe
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -756,20 +1002,23 @@ let autoStartApps: Array<Want> = [
 try {
   applicationManager.addAutoStartApps(wantTemp, autoStartApps, 100, true);
   console.info('Succeeded in adding auto start applications and set disallowModify.');
-} catch(err) {
+} catch (err) {
   console.error(`Failed to add auto start applications and set disallowModify. Code: ${err.code}, message: ${err.message}`);
 }
 ```
 
 
 
-#### applicationManager.getAutoStartApps20+
+## applicationManager.getAutoStartApps20+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
-getAutoStartApps(admin: Want | null, accountId: number): Array&lt;Want&gt;
+getAutoStartApps(admin: Want, accountId: number): Array&lt;Want&gt;
 
 查询指定用户下的开机自启动应用名单。
+
+本接口通过传入Want查询对应企业设备管理应用设置的策略，如需查询实际生效的策略，请使用[applicationManager.getAutoStartApps](#applicationmanagergetautostartapps-2)接口。
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_APPLICATION
 
@@ -781,13 +1030,15 @@ getAutoStartApps(admin: Want | null, accountId: number): Array&lt;Want&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 当设备存在多个MDM应用时，API版本26.0.0之前，传入Want时查询对应企业设备管理应用设置的策略。从API版本26.0.0开始，新增支持传入null时查询实际生效的策略。 |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
 | accountId | number | 是 | 用户ID，取值范围：大于等于0。 accountId可以通过@ohos.account.osAccount中的getOsAccountLocalId等接口来获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -797,6 +1048,7 @@ getAutoStartApps(admin: Want | null, accountId: number): Array&lt;Want&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -820,6 +1072,84 @@ let wantTemp: Want = {
 try {
   let res: Array<Want> = applicationManager.getAutoStartApps(wantTemp, 100);
   console.info(`Succeeded in getting auto start apps: ${JSON.stringify(res)}`);
+} catch (err) {
+  console.error(`Failed to get auto start apps. Code: ${err.code}, message: ${err.message}`);
+}
+```
+
+```text
+// 返回示例
+[
+  {
+    "bundleName": "com.example.edmtest",
+    "abilityName": "EntryAbility",
+    // 从API version 24支持
+    "parameters": {
+      "isHiddenStart": false
+    }
+  },
+  // ...
+];
+```
+
+
+
+## applicationManager.getAutoStartApps
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
+
+getAutoStartApps(admin: Want | null, accountId: number): Array&lt;Want&gt;
+
+查询指定用户下的开机自启动应用名单。
+
+**起始版本：** 26.0.0
+
+**需要权限：** ohos.permission.ENTERPRISE_MANAGE_APPLICATION
+
+**系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 当设备存在多个MDM应用时，传入Want时查询对应企业设备管理应用设置的策略，传入null时查询实际生效的策略。 |
+| accountId | number | 是 | 用户ID，取值范围：大于等于0。 accountId可以通过@ohos.account.osAccount中的getOsAccountLocalId等接口来获取。 |
+
+
+**返回值：**
+
+
+| 类型 | 说明 |
+| --- | --- |
+| Array&lt;Want&gt; | 应用自启动名单数组。从API version 24开始，支持返回是否隐藏UI的配置。 |
+
+
+**错误码**：
+
+以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+
+
+**示例：**
+
+```json
+import { applicationManager } from '@kit.MDMKit';
+import { Want } from '@kit.AbilityKit';
+
+try {
+  // 参数需根据实际情况进行替换
+  let res: Array<Want> = applicationManager.getAutoStartApps(null, 100);
+  console.info(`Succeeded in getting auto start apps: ${JSON.stringify(res)}`);
 } catch(err) {
   console.error(`Failed to get auto start apps. Code: ${err.code}, message: ${err.message}`);
 }
@@ -837,12 +1167,13 @@ try {
     }
   },
   // ...
-]
+];
 ```
 
 
 
-#### applicationManager.isModifyAutoStartAppsDisallowed20+
+## applicationManager.isModifyAutoStartAppsDisallowed20+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -860,6 +1191,7 @@ isModifyAutoStartAppsDisallowed(admin: Want, autoStartApp: Want, accountId: numb
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -869,6 +1201,7 @@ isModifyAutoStartAppsDisallowed(admin: Want, autoStartApp: Want, accountId: numb
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 是否禁止用户取消应用自启动，true表示禁止，false表示允许。设置为允许后，用户可通过设备上设置->应用和元服务->应用启动管理，取消应用自启动。 |
@@ -877,6 +1210,7 @@ isModifyAutoStartAppsDisallowed(admin: Want, autoStartApp: Want, accountId: numb
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -906,16 +1240,17 @@ let autoStartApp: Want = {
 try {
   let res: boolean = applicationManager.isModifyAutoStartAppsDisallowed(wantTemp, autoStartApp, 100);
   console.info(`Succeeded in getting disallow modify auto start app: ${JSON.stringify(res)}`);
-} catch(err) {
+} catch (err) {
   console.error(`Failed to get disallow modify auto start app. Code: ${err.code}, message: ${err.message}`);
 }
 ```
 
 
 
-#### applicationManager.addKeepAliveApps14+
+## applicationManager.addKeepAliveApps14+
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** PC/2in1
 
 addKeepAliveApps(admin: Want, bundleNames: Array&lt;string&gt;, accountId: number): void
 
@@ -926,6 +1261,10 @@ addKeepAliveApps(admin: Want, bundleNames: Array&lt;string&gt;, accountId: numbe
 如果将应用添加至应用禁止运行名单[addDisallowedRunningBundlesSync](#applicationmanageradddisallowedrunningbundlessync)，就不能将应用添加至保活应用名单，否则会报9200010冲突错误码。
 
 如果需要在Phone/Tablet设备使用类似功能，可以调用[addUserNonStopApps](#applicationmanageraddusernonstopapps22)或者[addFreezeExemptedApps](#applicationmanageraddfreezeexemptedapps22)接口，具体功能请参考相关文档。
+
+> [!NOTE]
+> 应用如果需要支持保活，其 module.json5配置文件 中的mainElement必须是UIAbility。只有当mainElement启动后，系统才会执行应用保活操作。 在PC/2in1设备上，被保活的应用需要在启动后5秒内添加至状态栏。否则，系统将取消该应用的保活设置，并杀死保活重启的进程。 当被保活的应用进程退出时，系统将尝试重启该进程，连续3次重启失败后将不再继续重启。 被保活的应用卸载后，会将该应用从保活名单中移除。 若应用添加到保活名单时未启动，后续启动时保活失败，将从保活名单中移除。
+
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_APPLICATION
 
@@ -939,6 +1278,7 @@ addKeepAliveApps(admin: Want, bundleNames: Array&lt;string&gt;, accountId: numbe
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -949,6 +1289,7 @@ addKeepAliveApps(admin: Want, bundleNames: Array&lt;string&gt;, accountId: numbe
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -985,9 +1326,10 @@ try {
 
 
 
-#### applicationManager.addKeepAliveApps20+
+## applicationManager.addKeepAliveApps20+
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** PC/2in1
 
 addKeepAliveApps(admin: Want, bundleNames: Array&lt;string&gt;, accountId: number, disallowModify: boolean): void
 
@@ -998,6 +1340,10 @@ addKeepAliveApps(admin: Want, bundleNames: Array&lt;string&gt;, accountId: numbe
 如果通过[addDisallowedRunningBundlesSync](#applicationmanageradddisallowedrunningbundlessync)接口将应用添加至应用禁止运行名单，就不能将应用添加至保活应用名单，否则会报9200010冲突错误码。
 
 如果需要在Phone/Tablet设备使用类似功能，可以调用[addUserNonStopApps](#applicationmanageraddusernonstopapps22)或者[addFreezeExemptedApps](#applicationmanageraddfreezeexemptedapps22)接口，具体功能请参考相关文档。
+
+> [!NOTE]
+> 应用如果需要支持保活，其 module.json5配置文件 中的mainElement必须是UIAbility。只有当mainElement启动后，系统才会执行应用保活操作。 在PC/2in1设备上，被保活的应用需要在启动后5秒内添加至状态栏。否则，系统将取消该应用的保活设置，并杀死保活重启的进程。 当被保活的应用进程退出时，系统将尝试重启该进程，连续3次重启失败后将不再继续重启。 被保活的应用卸载后，会将该应用从保活名单中移除。 若应用添加到保活名单时未启动，后续启动时保活失败，将从保活名单中移除。
+
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_APPLICATION
 
@@ -1011,6 +1357,7 @@ addKeepAliveApps(admin: Want, bundleNames: Array&lt;string&gt;, accountId: numbe
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -1022,6 +1369,7 @@ addKeepAliveApps(admin: Want, bundleNames: Array&lt;string&gt;, accountId: numbe
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1058,9 +1406,10 @@ try {
 
 
 
-#### applicationManager.removeKeepAliveApps14+
+## applicationManager.removeKeepAliveApps14+
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** PC/2in1
 
 removeKeepAliveApps(admin: Want, bundleNames: Array&lt;string&gt;, accountId: number): void
 
@@ -1078,6 +1427,7 @@ removeKeepAliveApps(admin: Want, bundleNames: Array&lt;string&gt;, accountId: nu
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -1088,6 +1438,7 @@ removeKeepAliveApps(admin: Want, bundleNames: Array&lt;string&gt;, accountId: nu
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1121,13 +1472,16 @@ try {
 
 
 
-#### applicationManager.getKeepAliveApps14+
+## applicationManager.getKeepAliveApps14+
 
-**支持设备：** Phone | PC/2in1 | Tablet
 
-getKeepAliveApps(admin: Want | null, accountId: number): Array&lt;string&gt;
+**支持设备：** PC/2in1
+
+getKeepAliveApps(admin: Want, accountId: number): Array&lt;string&gt;
 
 获取保活应用包名。
+
+本接口通过传入Want查询对应企业设备管理应用设置的策略，如需查询实际生效的策略，请使用[applicationManager.getKeepAliveApps](#applicationmanagergetkeepaliveapps)接口。
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_APPLICATION
 
@@ -1139,13 +1493,15 @@ getKeepAliveApps(admin: Want | null, accountId: number): Array&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 当设备存在多个MDM应用时，API版本26.0.0之前，传入Want时查询对应企业设备管理应用设置的策略。从API版本26.0.0开始，新增支持传入null时查询实际生效的策略。 |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
 | accountId | number | 是 | 用户ID，取值范围：大于等于0。 accountId可以通过@ohos.account.osAccount中的getOsAccountLocalId等接口来获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1155,6 +1511,7 @@ getKeepAliveApps(admin: Want | null, accountId: number): Array&lt;string&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1178,6 +1535,71 @@ let wantTemp: Want = {
 
 try {
   let result: Array<string> = applicationManager.getKeepAliveApps(wantTemp, 100);
+  console.info(`Succeeded in getting keep alive apps. Result is ${result}`);
+} catch (err) {
+  console.error(`Failed to get keep alive apps. Code is ${err.code}, message is ${err.message}`);
+}
+```
+
+
+
+## applicationManager.getKeepAliveApps
+
+
+**支持设备：** PC/2in1
+
+getKeepAliveApps(admin: Want | null, accountId: number): Array&lt;string&gt;
+
+获取保活应用包名。
+
+**起始版本：** 26.0.0
+
+**需要权限：** ohos.permission.ENTERPRISE_MANAGE_APPLICATION
+
+**系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**设备行为差异：** 该接口在PC/2in1设备上生效，在其他设备中调用无效果。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 当设备存在多个MDM应用时，传入Want时查询对应企业设备管理应用设置的策略，传入null时查询实际生效的策略。 |
+| accountId | number | 是 | 用户ID，取值范围：大于等于0。 accountId可以通过@ohos.account.osAccount中的getOsAccountLocalId等接口来获取。 |
+
+
+**返回值：**
+
+
+| 类型 | 说明 |
+| --- | --- |
+| Array&lt;string&gt; | 返回指定用户下保活应用的包名。 |
+
+
+**错误码**：
+
+以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
+
+**示例：**
+
+```text
+import { applicationManager } from '@kit.MDMKit';
+
+try {
+  // 参数需根据实际情况进行替换
+  let result: Array<string> = applicationManager.getKeepAliveApps(null, 100);
   console.info('Succeeded in getting keep alive apps.');
 } catch (err) {
   console.error(`Failed to get keep alive apps. Code is ${err.code}, message is ${err.message}`);
@@ -1186,9 +1608,10 @@ try {
 
 
 
-#### applicationManager.isModifyKeepAliveAppsDisallowed20+
+## applicationManager.isModifyKeepAliveAppsDisallowed20+
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** PC/2in1
 
 isModifyKeepAliveAppsDisallowed(admin: Want, accountId: number, bundleName: string): boolean
 
@@ -1204,6 +1627,7 @@ isModifyKeepAliveAppsDisallowed(admin: Want, accountId: number, bundleName: stri
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -1213,6 +1637,7 @@ isModifyKeepAliveAppsDisallowed(admin: Want, accountId: number, bundleName: stri
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 是否禁止用户手动取消应用保活，true表示禁止，false表示允许。设置为允许后，用户可通过设备上设置->应用和元服务->应用常驻管理，取消应用保活。 |
@@ -1221,6 +1646,7 @@ isModifyKeepAliveAppsDisallowed(admin: Want, accountId: number, bundleName: stri
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1247,14 +1673,15 @@ let keepAliveApp: string = 'com.example.keepAliveApplication';
 try {
   let res: boolean = applicationManager.isModifyKeepAliveAppsDisallowed(wantTemp, 100, keepAliveApp);
   console.info(`Succeeded in getting disallow modify keep alive app: ${JSON.stringify(res)}`);
-} catch(err) {
+} catch (err) {
   console.error(`Failed to get disallow modify keep alive app. Code: ${err.code}, message: ${err.message}`);
 }
 ```
 
 
 
-#### applicationManager.clearUpApplicationData20+
+## applicationManager.clearUpApplicationData20+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1270,6 +1697,7 @@ clearUpApplicationData(admin: Want, bundleName: string, appIndex: number, accoun
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -1281,6 +1709,7 @@ clearUpApplicationData(admin: Want, bundleName: string, appIndex: number, accoun
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1314,7 +1743,8 @@ try {
 
 
 
-#### applicationManager.setAllowedKioskApps20+
+## applicationManager.setAllowedKioskApps20+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1334,6 +1764,7 @@ Kiosk模式为系统层面提供的一种应用运行模式，该模式下会将
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -1343,6 +1774,7 @@ Kiosk模式为系统层面提供的一种应用运行模式，该模式下会将
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1375,13 +1807,16 @@ try {
 
 
 
-#### applicationManager.getAllowedKioskApps20+
+## applicationManager.getAllowedKioskApps20+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
-getAllowedKioskApps(admin: Want | null): Array&lt;string&gt;
+getAllowedKioskApps(admin: Want): Array&lt;string&gt;
 
 获取允许在Kiosk模式下运行的应用。
+
+本接口通过传入Want查询对应企业设备管理应用设置的策略，如需查询实际生效的策略，请使用[applicationManager.getAllowedKioskApps](#applicationmanagergetallowedkioskapps)接口。
 
 **需要权限：** ohos.permission.ENTERPRISE_SET_KIOSK
 
@@ -1391,12 +1826,14 @@ getAllowedKioskApps(admin: Want | null): Array&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 当设备存在多个MDM应用时，API版本26.0.0之前，传入Want时查询对应企业设备管理应用设置的策略。从API版本26.0.0开始，新增支持传入null时查询实际生效的策略。 |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1406,6 +1843,7 @@ getAllowedKioskApps(admin: Want | null): Array&lt;string&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1436,7 +1874,69 @@ try {
 
 
 
-#### applicationManager.isAppKioskAllowed20+
+## applicationManager.getAllowedKioskApps
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
+
+getAllowedKioskApps(admin: Want | null): Array&lt;string&gt;
+
+获取允许在Kiosk模式下运行的应用。
+
+**起始版本：** 26.0.0
+
+**需要权限：** ohos.permission.ENTERPRISE_SET_KIOSK
+
+**系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 当设备存在多个MDM应用时，传入Want时查询对应企业设备管理应用设置的策略，传入null时查询实际生效的策略。 |
+
+
+**返回值：**
+
+
+| 类型 | 说明 |
+| --- | --- |
+| Array&lt;string&gt; | 允许在Kiosk模式下运行的应用唯一标识符清单。 |
+
+
+**错误码**：
+
+以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+
+
+**示例：**
+
+```json
+import { applicationManager } from '@kit.MDMKit';
+
+try {
+  // 参数需根据实际情况进行替换
+  let appIdentifiers: Array<string> = applicationManager.getAllowedKioskApps(null);
+  console.info(`Succeeded in getting allowed kiosk apps, appIdentifiers: ${JSON.stringify(appIdentifiers)}`);
+} catch (err) {
+  console.error(`Failed to get allowed kiosk apps. Code is ${err.code}, message is ${err.message}`);
+}
+```
+
+
+
+## applicationManager.isAppKioskAllowed20+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1450,12 +1950,14 @@ isAppKioskAllowed(appIdentifier: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | appIdentifier | string | 是 | 应用唯一标识符，可以通过接口bundleManager.getBundleInfo获取bundleInfo.signatureInfo.appIdentifier。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1478,9 +1980,10 @@ try {
 
 
 
-#### applicationManager.setKioskFeatures20+
+## applicationManager.setKioskFeatures20+
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | Tablet
 
 setKioskFeatures(admin: Want, features: Array&lt;KioskFeature&gt;): void
 
@@ -1502,6 +2005,7 @@ setKioskFeatures(admin: Want, features: Array&lt;KioskFeature&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -1511,6 +2015,7 @@ setKioskFeatures(admin: Want, features: Array&lt;KioskFeature&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1546,7 +2051,8 @@ try {
 
 
 
-#### applicationManager.addUserNonStopApps22+
+## applicationManager.addUserNonStopApps22+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1572,6 +2078,7 @@ addUserNonStopApps(admin: Want, applicationInstances: Array<common.ApplicationIn
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -1581,6 +2088,7 @@ addUserNonStopApps(admin: Want, applicationInstances: Array<common.ApplicationIn
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1615,20 +2123,21 @@ let applicationInstances: Array<common.ApplicationInstance> = [
 try {
   applicationManager.addUserNonStopApps(wantTemp, applicationInstances);
   console.info('Succeeded in adding UserNonStop applications.');
-} catch(err) {
+} catch (err) {
   console.error(`Failed to add UserNonStop applications. Code: ${err.code}, message: ${err.message}`);
 }
 ```
 
 
 
-#### applicationManager.removeUserNonStopApps22+
+## applicationManager.removeUserNonStopApps22+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 removeUserNonStopApps(admin: Want, applicationInstances: Array<common.ApplicationInstance>): void
 
-为指定用户删除不可关停应用名单。执行删除策略时，若参数列表中包含未安装应用，删除操作仍能成功执行；已安装的应用将被删除，未安装的应用不影响删除操作。
+为指定用户删除不可关停应用名单。删除后，用户可以在设备上正常关停该应用。执行删除策略时，若参数列表中包含未安装应用，删除操作仍能成功执行；已安装的应用将被删除，未安装的应用不影响删除操作。
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_APPLICATION
 
@@ -1642,6 +2151,7 @@ removeUserNonStopApps(admin: Want, applicationInstances: Array<common.Applicatio
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -1651,6 +2161,7 @@ removeUserNonStopApps(admin: Want, applicationInstances: Array<common.Applicatio
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1684,20 +2195,23 @@ let applicationInstances: Array<common.ApplicationInstance> = [
 try {
   applicationManager.removeUserNonStopApps(wantTemp, applicationInstances);
   console.info('Succeeded in removing UserNonStop applications.');
-} catch(err) {
+} catch (err) {
   console.error(`Failed to remove UserNonStop applications. Code: ${err.code}, message: ${err.message}`);
 }
 ```
 
 
 
-#### applicationManager.getUserNonStopApps22+
+## applicationManager.getUserNonStopApps22+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
-getUserNonStopApps(admin: Want | null): Array<common.ApplicationInstance>
+getUserNonStopApps(admin: Want): Array<common.ApplicationInstance>
 
 获取当前设备下所有用户不可关停应用名单。
+
+本接口通过传入Want查询对应企业设备管理应用设置的策略，如需查询实际生效的策略，请使用[applicationManager.getUserNonStopApps](#applicationmanagergetusernonstopapps)接口。
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_APPLICATION
 
@@ -1709,12 +2223,14 @@ getUserNonStopApps(admin: Want | null): Array<common.ApplicationInstance>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 当设备存在多个MDM应用时，API版本26.0.0之前，传入Want时查询对应企业设备管理应用设置的策略。从API版本26.0.0开始，新增支持传入null时查询实际生效的策略。 |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1724,6 +2240,7 @@ getUserNonStopApps(admin: Want | null): Array<common.ApplicationInstance>
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1747,6 +2264,67 @@ let wantTemp: Want = {
 try {
   let result: Array<common.ApplicationInstance> = applicationManager.getUserNonStopApps(wantTemp);
   console.info(`Succeeded in getting UserNonStop applications, result : ${JSON.stringify(result)}`);
+} catch (err) {
+  console.error(`Failed to get UserNonStop applications. Code: ${err.code}, message: ${err.message}`);
+}
+```
+
+
+
+## applicationManager.getUserNonStopApps
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
+
+getUserNonStopApps(admin: Want | null): Array<common.ApplicationInstance>
+
+获取当前设备下所有用户不可关停应用名单。
+
+**起始版本：** 26.0.0
+
+**需要权限：** ohos.permission.ENTERPRISE_MANAGE_APPLICATION
+
+**系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 当设备存在多个MDM应用时，传入Want时查询对应企业设备管理应用设置的策略，传入null时查询实际生效的策略。 |
+
+
+**返回值：**
+
+
+| 类型 | 说明 |
+| --- | --- |
+| Array<common.ApplicationInstance> | 不可关停应用名单数组。 |
+
+
+**错误码**：
+
+以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+
+
+**示例：**
+
+```json
+import { applicationManager, common } from '@kit.MDMKit';
+
+try {
+  // 参数需根据实际情况进行替换
+  let result: Array<common.ApplicationInstance> = applicationManager.getUserNonStopApps(null);
+  console.info(`Succeeded in getting UserNonStop applications, result : ${JSON.stringify(result)}`);
 } catch(err) {
   console.error(`Failed to get UserNonStop applications. Code: ${err.code}, message: ${err.message}`);
 }
@@ -1754,7 +2332,8 @@ try {
 
 
 
-#### applicationManager.addFreezeExemptedApps22+
+## applicationManager.addFreezeExemptedApps22+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1776,6 +2355,7 @@ addFreezeExemptedApps(admin: Want, applicationInstances: Array<common.Applicatio
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -1785,6 +2365,7 @@ addFreezeExemptedApps(admin: Want, applicationInstances: Array<common.Applicatio
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1818,20 +2399,21 @@ let applicationInstances: Array<common.ApplicationInstance> = [
 try {
   applicationManager.addFreezeExemptedApps(wantTemp, applicationInstances);
   console.info('Succeeded in adding FreezeExempted applications.');
-} catch(err) {
+} catch (err) {
   console.error(`Failed to add FreezeExempted applications. Code: ${err.code}, message: ${err.message}`);
 }
 ```
 
 
 
-#### applicationManager.removeFreezeExemptedApps22+
+## applicationManager.removeFreezeExemptedApps22+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 removeFreezeExemptedApps(admin: Want, applicationInstances: Array<common.ApplicationInstance>): void
 
-为指定用户删除后台防冻结应用名单。执行删除策略时，若参数列表中包含未安装应用，删除操作仍能成功执行；已安装的应用将被删除，未安装的应用不影响删除操作。
+为指定用户删除后台防冻结应用名单。删除后，应用可以被系统冻结。执行删除策略时，若参数列表中包含未安装应用，删除操作仍能成功执行；已安装的应用将被删除，未安装的应用不影响删除操作。
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_APPLICATION
 
@@ -1845,6 +2427,7 @@ removeFreezeExemptedApps(admin: Want, applicationInstances: Array<common.Applica
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -1854,6 +2437,7 @@ removeFreezeExemptedApps(admin: Want, applicationInstances: Array<common.Applica
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1887,20 +2471,23 @@ let applicationInstances: Array<common.ApplicationInstance> = [
 try {
   applicationManager.removeFreezeExemptedApps(wantTemp, applicationInstances);
   console.info('Succeeded in removing FreezeExempted applications.');
-} catch(err) {
+} catch (err) {
   console.error(`Failed to remove FreezeExempted applications. Code: ${err.code}, message: ${err.message}`);
 }
 ```
 
 
 
-#### applicationManager.getFreezeExemptedApps22+
+## applicationManager.getFreezeExemptedApps22+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
-getFreezeExemptedApps(admin: Want | null): Array<common.ApplicationInstance>
+getFreezeExemptedApps(admin: Want): Array<common.ApplicationInstance>
 
 获取当前设备下所有用户后台防冻结应用名单。
+
+本接口通过传入Want查询对应企业设备管理应用设置的策略，如需查询实际生效的策略，请使用[applicationManager.getFreezeExemptedApps](#applicationmanagergetfreezeexemptedapps)接口。
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_APPLICATION
 
@@ -1912,12 +2499,14 @@ getFreezeExemptedApps(admin: Want | null): Array<common.ApplicationInstance>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 当设备存在多个MDM应用时，API版本26.0.0之前，传入Want时查询对应企业设备管理应用设置的策略。从API版本26.0.0开始，新增支持传入null时查询实际生效的策略。 |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1927,6 +2516,7 @@ getFreezeExemptedApps(admin: Want | null): Array<common.ApplicationInstance>
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1950,6 +2540,67 @@ let wantTemp: Want = {
 try {
   let result: Array<common.ApplicationInstance> = applicationManager.getFreezeExemptedApps(wantTemp);
   console.info(`Succeeded in getting FreezeExempted applications, result : ${JSON.stringify(result)}`);
+} catch (err) {
+  console.error(`Failed to get FreezeExempted applications. Code: ${err.code}, message: ${err.message}`);
+}
+```
+
+
+
+## applicationManager.getFreezeExemptedApps
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
+
+getFreezeExemptedApps(admin: Want | null): Array<common.ApplicationInstance>
+
+获取当前设备下所有用户后台防冻结应用名单。
+
+**起始版本：** 26.0.0
+
+**需要权限：** ohos.permission.ENTERPRISE_MANAGE_APPLICATION
+
+**系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 当设备存在多个MDM应用时，传入Want时查询对应企业设备管理应用设置的策略，传入null时查询实际生效的策略。 |
+
+
+**返回值：**
+
+
+| 类型 | 说明 |
+| --- | --- |
+| Array<common.ApplicationInstance> | 后台防冻结应用名单数组。 |
+
+
+**错误码**：
+
+以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+
+
+**示例：**
+
+```json
+import { applicationManager, common } from '@kit.MDMKit';
+
+try {
+  // 参数需根据实际情况进行替换
+  let result: Array<common.ApplicationInstance> = applicationManager.getFreezeExemptedApps(null);
+  console.info(`Succeeded in getting FreezeExempted applications, result : ${JSON.stringify(result)}`);
 } catch(err) {
   console.error(`Failed to get FreezeExempted applications. Code: ${err.code}, message: ${err.message}`);
 }
@@ -1957,7 +2608,8 @@ try {
 
 
 
-#### applicationManager.setAbilityDisabled23+
+## applicationManager.setAbilityDisabled23+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1975,6 +2627,7 @@ setAbilityDisabled(admin: Want, bundleName: string, accountId: number, abilityNa
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -1987,6 +2640,7 @@ setAbilityDisabled(admin: Want, bundleName: string, accountId: number, abilityNa
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2015,20 +2669,23 @@ try {
   let abilityName: string = "EntryAbility";
   applicationManager.setAbilityDisabled(wantTemp, bundleName, accountId, abilityName, true);
   console.info('Succeeded in setting ability disabled');
-} catch(err) {
+} catch (err) {
   console.error(`Failed to set ability disabled. Code: ${err.code}, message: ${err.message}`);
 }
 ```
 
 
 
-#### applicationManager.isAbilityDisabled23+
+## applicationManager.isAbilityDisabled23+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
-isAbilityDisabled(admin: Want | null, bundleName: string, accountId: number, abilityName: string): boolean
+isAbilityDisabled(admin: Want, bundleName: string, accountId: number, abilityName: string): boolean
 
 获取指定应用（系统应用和三方应用均支持）的Ability组件是否被禁用。
+
+本接口通过传入Want查询对应企业设备管理应用设置的策略，如需查询实际生效的策略，请使用[applicationManager.isAbilityDisabled](#applicationmanagerisabilitydisabled)接口。
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_APPLICATION
 
@@ -2038,15 +2695,17 @@ isAbilityDisabled(admin: Want | null, bundleName: string, accountId: number, abi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 当设备存在多个MDM应用时，API版本26.0.0之前，传入Want时查询对应企业设备管理应用设置的策略。从API版本26.0.0开始，新增支持传入null时查询实际生效的策略。 |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
 | bundleName | string | 是 | 应用包名，指定是否禁用的应用包名。 |
 | accountId | number | 是 | 用户ID，取值范围：大于等于0的整数。 accountId可以通过@ohos.account.osAccount中的getOsAccountLocalId等接口来获取。 |
 | abilityName | string | 是 | 表示要禁用/解除禁用的Ability组件名称（当前仅支持UIAbility）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2056,6 +2715,7 @@ isAbilityDisabled(admin: Want | null, bundleName: string, accountId: number, abi
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2084,6 +2744,75 @@ try {
   let abilityName: string = "EntryAbility";
   let isDisabled: boolean = applicationManager.isAbilityDisabled(wantTemp, bundleName, accountId, abilityName);
   console.info(`Succeeded in querying whether the ability is disabled, isDisabled: ${isDisabled}`);
+} catch (err) {
+  console.error(`Failed to query whether the ability is disabled. Code: ${err.code}, message: ${err.message}`);
+}
+```
+
+
+
+## applicationManager.isAbilityDisabled
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
+
+isAbilityDisabled(admin: Want | null, bundleName: string, accountId: number, abilityName: string): boolean
+
+获取指定应用（系统应用和三方应用均支持）的Ability组件是否被禁用。
+
+**起始版本：** 26.0.0
+
+**需要权限：** ohos.permission.ENTERPRISE_MANAGE_APPLICATION
+
+**系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 当设备存在多个MDM应用时，传入Want时查询对应企业设备管理应用设置的策略，传入null时查询实际生效的策略。 |
+| bundleName | string | 是 | 应用包名，指定是否禁用的应用包名。 |
+| accountId | number | 是 | 用户ID，取值范围：大于等于0的整数。 accountId可以通过@ohos.account.osAccount中的getOsAccountLocalId等接口来获取。 |
+| abilityName | string | 是 | 表示要禁用/解除禁用的Ability组件名称（当前仅支持UIAbility）。 |
+
+
+**返回值：**
+
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 该能力是否禁用。true表示该Ability组件被禁用，false表示该Ability组件未被禁用。 |
+
+
+**错误码**：
+
+以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 9200012 | Parameter verification failed. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+
+
+**示例：**
+
+```text
+import { applicationManager, common } from '@kit.MDMKit';
+
+try {
+  // 需根据实际情况进行替换
+  // 参数需根据实际情况进行替换
+  let bundleName: string = "com.example.exampleapplication";
+  let accountId: number = 100;
+  let abilityName: string = "EntryAbility";
+  let isDisabled: boolean = applicationManager.isAbilityDisabled(null, bundleName, accountId, abilityName);
+  console.info(`Succeeded in querying whether the ability is disabled, isDisabled: ${isDisabled}`);
 } catch(err) {
   console.error(`Failed to query whether the ability is disabled. Code: ${err.code}, message: ${err.message}`);
 }
@@ -2091,9 +2820,10 @@ try {
 
 
 
-#### applicationManager.addDockApp24+
+## applicationManager.addDockApp24+
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** PC/2in1
 
 addDockApp(admin: Want, bundleName: string, abilityName: string, index?: number): void
 
@@ -2115,6 +2845,7 @@ addDockApp(admin: Want, bundleName: string, abilityName: string, index?: number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -2126,6 +2857,7 @@ addDockApp(admin: Want, bundleName: string, abilityName: string, index?: number)
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2160,16 +2892,17 @@ try {
   let abilityName: string = 'EntryAbility';
   applicationManager.addDockApp(wantTemp, bundleName, abilityName, 3);
   console.info('Succeeded in adding dock app.');
-} catch(err) {
+} catch (err) {
   console.error(`Failed to add dock app. Code: ${err.code}, message: ${err.message}`);
 }
 ```
 
 
 
-#### applicationManager.removeDockApp24+
+## applicationManager.removeDockApp24+
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** PC/2in1
 
 removeDockApp(admin: Want, bundleName: string, abilityName: string): void
 
@@ -2189,6 +2922,7 @@ removeDockApp(admin: Want, bundleName: string, abilityName: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -2199,6 +2933,7 @@ removeDockApp(admin: Want, bundleName: string, abilityName: string): void
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2228,16 +2963,17 @@ try {
   let abilityName: string = 'EntryAbility';
   applicationManager.removeDockApp(wantTemp, bundleName, abilityName);
   console.info('Succeeded in removing dock app.');
-} catch(err) {
+} catch (err) {
   console.error(`Failed to remove dock app. Code: ${err.code}, message: ${err.message}`);
 }
 ```
 
 
 
-#### applicationManager.getDockApps24+
+## applicationManager.getDockApps24+
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** PC/2in1
 
 getDockApps(admin: Want): Array&lt;DockInfo&gt;
 
@@ -2253,12 +2989,14 @@ getDockApps(admin: Want): Array&lt;DockInfo&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2268,6 +3006,7 @@ getDockApps(admin: Want): Array&lt;DockInfo&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2292,7 +3031,7 @@ let wantTemp: Want = {
 try {
   let result: Array<applicationManager.DockInfo> = applicationManager.getDockApps(wantTemp);
   console.info(`Succeeded in getting dock apps, result : ${JSON.stringify(result)}`);
-} catch(err) {
+} catch (err) {
   console.error(`Failed to get dock apps. Code: ${err.code}, message: ${err.message}`);
 }
 ```
@@ -2306,12 +3045,13 @@ try {
     "index": 5
   },
   // ...
-]
+];
 ```
 
 
 
-#### applicationManager.addAllowedNotificationBundles
+## applicationManager.addAllowedNotificationBundles
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2335,6 +3075,7 @@ addAllowedNotificationBundles(admin: Want, bundleNames: Array&lt;string&gt;, acc
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -2345,6 +3086,7 @@ addAllowedNotificationBundles(admin: Want, bundleNames: Array&lt;string&gt;, acc
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2379,7 +3121,8 @@ try {
 
 
 
-#### applicationManager.removeAllowedNotificationBundles
+## applicationManager.removeAllowedNotificationBundles
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2399,6 +3142,7 @@ removeAllowedNotificationBundles(admin: Want, bundleNames: Array&lt;string&gt;, 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -2409,6 +3153,7 @@ removeAllowedNotificationBundles(admin: Want, bundleNames: Array&lt;string&gt;, 
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2442,7 +3187,8 @@ try {
 
 
 
-#### applicationManager.getAllowedNotificationBundles
+## applicationManager.getAllowedNotificationBundles
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2460,6 +3206,7 @@ getAllowedNotificationBundles(admin: Want | null, accountId: number): Array&lt;s
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -2467,6 +3214,7 @@ getAllowedNotificationBundles(admin: Want | null, accountId: number): Array&lt;s
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2476,6 +3224,7 @@ getAllowedNotificationBundles(admin: Want | null, accountId: number): Array&lt;s
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2507,7 +3256,8 @@ try {
 
 
 
-#### applicationManager.addAllowedDistributeAbilityConnBundles
+## applicationManager.addAllowedDistributeAbilityConnBundles
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2533,6 +3283,7 @@ addAllowedDistributeAbilityConnBundles(admin: Want, appIdentifiers: Array&lt;str
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -2544,6 +3295,7 @@ addAllowedDistributeAbilityConnBundles(admin: Want, appIdentifiers: Array&lt;str
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2580,9 +3332,10 @@ try {
 try {
   // 需根据实际情况进行替换
   let appIdentifiers: Array<string> = ['6917****3569'];
-  applicationManager.addAllowedDistributeAbilityConnBundles(wantTemp, appIdentifiers, applicationManager.ServiceType.COLLABORATION_SERVICE, accountId);
+  applicationManager.addAllowedDistributeAbilityConnBundles(wantTemp, appIdentifiers,
+    applicationManager.ServiceType.COLLABORATION_SERVICE, accountId);
   console.info('Succeeded in adding allowed distribute ability conn bundles.');
-} catch(err) {
+} catch (err) {
   console.error(`Failed to add allowed distribute ability conn bundles. Code: ${err.code}, message: ${err.message}`);
 }
 // 执行以上两个步骤后，在100用户下，仅应用6917****3569可以通过协同业务向其他设备传输数据，其他应用无法向其他设备传输数据。
@@ -2591,7 +3344,8 @@ try {
 
 
 
-#### applicationManager.removeAllowedDistributeAbilityConnBundles
+## applicationManager.removeAllowedDistributeAbilityConnBundles
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2611,6 +3365,7 @@ removeAllowedDistributeAbilityConnBundles(admin: Want, appIdentifiers: Array&lt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -2622,6 +3377,7 @@ removeAllowedDistributeAbilityConnBundles(admin: Want, appIdentifiers: Array&lt;
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2647,17 +3403,19 @@ try {
   // 需根据实际情况进行替换
   let appIdentifiers: Array<string> = ['6917****3569'];
   let accountId: number = 100;
-  applicationManager.removeAllowedDistributeAbilityConnBundles(wantTemp, appIdentifiers, applicationManager.ServiceType.COLLABORATION_SERVICE, accountId);
+  applicationManager.removeAllowedDistributeAbilityConnBundles(wantTemp, appIdentifiers,
+    applicationManager.ServiceType.COLLABORATION_SERVICE, accountId);
   console.info('Succeeded in removing allowed distribute ability conn bundles.');
   // 注意：移除用户下允许使用协同业务的应用名单后，是否需要解除禁用该用户下的设备间单向传输数据能力，应根据实际业务需求判断。
-} catch(err) {
+} catch (err) {
   console.error(`Failed to remove allowed distribute ability conn bundles. Code: ${err.code}, message: ${err.message}`);
 }
 ```
 
 
 
-#### applicationManager.getAllowedDistributeAbilityConnBundles
+## applicationManager.getAllowedDistributeAbilityConnBundles
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2675,6 +3433,7 @@ getAllowedDistributeAbilityConnBundles(admin: Want | null, serviceType: ServiceT
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -2684,6 +3443,7 @@ getAllowedDistributeAbilityConnBundles(admin: Want | null, serviceType: ServiceT
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;string&gt; | 指定用户下特定分布式业务的允许跨设备应用的唯一标识符数组。 |
@@ -2692,6 +3452,7 @@ getAllowedDistributeAbilityConnBundles(admin: Want | null, serviceType: ServiceT
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2716,16 +3477,18 @@ let wantTemp: Want = {
 try {
   // 需根据实际情况进行替换
   let accountId: number = 100;
-  let result: Array<string> = applicationManager.getAllowedDistributeAbilityConnBundles(wantTemp, applicationManager.ServiceType.COLLABORATION_SERVICE, accountId);
+  let result: Array<string> = applicationManager.getAllowedDistributeAbilityConnBundles(wantTemp,
+    applicationManager.ServiceType.COLLABORATION_SERVICE, accountId);
   console.info(`Succeeded in getting allowed distribute ability conn bundles: ${JSON.stringify(result)}`);
-} catch(err) {
+} catch (err) {
   console.error(`Failed to get allowed distribute ability conn bundles. Code: ${err.code}, message: ${err.message}`);
 }
 ```
 
 
 
-#### applicationManager.queryTrafficStats
+## applicationManager.queryTrafficStats
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2747,6 +3510,7 @@ queryTrafficStats(admin: Want, bundleName: string, appIndex: number, accountId: 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -2758,6 +3522,7 @@ queryTrafficStats(admin: Want, bundleName: string, appIndex: number, accountId: 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<statistics.NetStatsInfo> | Promise对象，返回获取的历史流量信息对象。 |
@@ -2766,6 +3531,7 @@ queryTrafficStats(admin: Want, bundleName: string, appIndex: number, accountId: 
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2806,23 +3572,24 @@ async function queryTrafficStats() {
     // 需根据实际情况进行替换
     type: connection.NetBearType.BEARER_CELLULAR,
     // 查询2026/4/15 00:00:00.000 ~ 2026/4/16 00:00:00.000的数据（月份从0开始计算）
-    startTime: Math.floor(new Date(2026, 3, 15, 0, 0, 0, 0).getTime() / 1000),
-    endTime: Math.floor(new Date(2026, 3, 16, 0, 0, 0, 0).getTime() / 1000),
+    startTime: Math.floor(new Date(2026, 4, 15, 0, 0, 0, 0).getTime() / 1000),
+    endTime: Math.floor(new Date(2026, 4, 16, 0, 0, 0, 0).getTime() / 1000),
     // 网络类型为BEARER_CELLULAR时，需要传simId；网络类型为BEARER_WIFI时，不需要传simId；
     simId: simId
-  }
+  };
   await applicationManager.queryTrafficStats(wantTemp, bundleName, appIndex, accountId, networkInfo)
     .then(result => {
       console.info('Succeeded in querying traffic stats.');
     }).catch((error: BusinessError) => {
       console.error(`Failed to query traffic stats. Code is ${error.code}, message is ${error.message}`);
-    })
+    });
 }
 ```
 
 
 
-#### applicationManager.getApplicationWindowStates
+## applicationManager.getApplicationWindowStates
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2840,6 +3607,7 @@ getApplicationWindowStates(admin: Want, bundleName: string, appIndex: number): A
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -2849,6 +3617,7 @@ getApplicationWindowStates(admin: Want, bundleName: string, appIndex: number): A
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;WindowStateInfo&gt; | 返回应用窗口状态信息的数组。 |
@@ -2857,6 +3626,7 @@ getApplicationWindowStates(admin: Want, bundleName: string, appIndex: number): A
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2882,16 +3652,18 @@ let bundleName: string = 'com.example.myapplication';
 // 被查询应用的分身索引，需根据实际情况进行替换
 let appIndex: number = 0;
 try {
-  let result: Array<applicationManager.WindowStateInfo> = applicationManager.getApplicationWindowStates(wantTemp, bundleName, appIndex);
+  let result: Array<applicationManager.WindowStateInfo> =
+    applicationManager.getApplicationWindowStates(wantTemp, bundleName, appIndex);
   console.info(`Succeeded in getting application window states, result: ${JSON.stringify(result)}`);
-} catch(err) {
+} catch (err) {
   console.error(`Failed to get application window states. Code: ${err.code}, message: ${err.message}`);
 }
 ```
 
 
 
-#### KioskFeature20+
+## KioskFeature20+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2900,6 +3672,7 @@ Kiosk模式的特征。
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2911,7 +3684,8 @@ Kiosk模式的特征。
 
 
 
-#### DockInfo24+
+## DockInfo24+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2920,6 +3694,7 @@ Kiosk模式的特征。
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2930,7 +3705,8 @@ Kiosk模式的特征。
 
 
 
-#### BundleStatsInfo
+## BundleStatsInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2942,6 +3718,7 @@ Kiosk模式的特征。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | bundleName | string | 否 | 否 | 应用的包名。 |
@@ -2951,7 +3728,8 @@ Kiosk模式的特征。
 
 
 
-#### WindowStateInfo
+## WindowStateInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2963,6 +3741,7 @@ Kiosk模式的特征。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | windowId | number | 否 | 否 | 应用窗口ID。 |
@@ -2973,7 +3752,8 @@ Kiosk模式的特征。
 
 
 
-#### ServiceType
+## ServiceType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2985,6 +3765,7 @@ Kiosk模式的特征。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | COLLABORATION_SERVICE | 0 | 协同业务。允许使用协同业务的应用，可以通过使用UIAbilityContext、UIExtensionContext中的API或跨设备连接UIAbility开发指南中的方式，跨设备拉起其他应用的页面并向其传输数据。 |
@@ -2992,7 +3773,8 @@ Kiosk模式的特征。
 
 
 
-#### WindowState
+## WindowState
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3003,6 +3785,7 @@ Kiosk模式的特征。
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -3016,7 +3799,8 @@ Kiosk模式的特征。
 
 
 
-#### applicationManager.queryBundleStatsInfos
+## applicationManager.queryBundleStatsInfos
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3034,6 +3818,7 @@ queryBundleStatsInfos(admin: Want, startTime: number, endTime: number, accountId
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -3044,6 +3829,7 @@ queryBundleStatsInfos(admin: Want, startTime: number, endTime: number, accountId
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;BundleStatsInfo&gt; | 返回应用包统计信息的数组。 |
@@ -3052,6 +3838,7 @@ queryBundleStatsInfos(admin: Want, startTime: number, endTime: number, accountId
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3075,12 +3862,13 @@ let wantTemp: Want = {
 
 try {
   // 查询2026/4/15 00:00:00.000 ~ 2026/4/16 23:59:59.999的数据（月份从0开始计算）
-  let startTime: number = new Date(2026, 3, 15, 0, 0, 0, 0).getTime();
-  let endTime: number = new Date(2026, 3, 16, 23, 59, 59, 999).getTime();
+  let startTime: number = new Date(2026, 4, 15, 0, 0, 0, 0).getTime();
+  let endTime: number = new Date(2026, 4, 16, 23, 59, 59, 999).getTime();
   let accountId: number = 100;
-  let result: Array<applicationManager.BundleStatsInfo> = applicationManager.queryBundleStatsInfos(wantTemp, startTime, endTime, accountId);
+  let result: Array<applicationManager.BundleStatsInfo> =
+    applicationManager.queryBundleStatsInfos(wantTemp, startTime, endTime, accountId);
   console.info(`Succeeded in querying bundle stats infos, result : ${JSON.stringify(result)}`);
-} catch(err) {
+} catch (err) {
   console.error(`Failed to query bundle stats infos. Code: ${err.code}, message: ${err.message}`);
 }
 ```
@@ -3107,18 +3895,20 @@ try {
   let startTime: number = lastMonthFirstDay.getTime();
   let endTime: number = lastMonthLastDay.getTime();
   let accountId: number = 100;
-  let result: Array<applicationManager.BundleStatsInfo> = applicationManager.queryBundleStatsInfos(wantTemp, startTime, endTime, accountId);
+  let result: Array<applicationManager.BundleStatsInfo> =
+    applicationManager.queryBundleStatsInfos(wantTemp, startTime, endTime, accountId);
   console.info(`Succeeded in querying bundle stats infos, result : ${JSON.stringify(result)}`);
-} catch(err) {
+} catch (err) {
   console.error(`Failed to query bundle stats infos. Code: ${err.code}, message: ${err.message}`);
 }
 ```
 
 
 
-#### applicationManager.addHideLauncherIcon
+## applicationManager.addHideLauncherIcon
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | Tablet
 
 addHideLauncherIcon(admin: Want, bundleNames: Array&lt;string&gt;): void
 
@@ -3142,6 +3932,7 @@ addHideLauncherIcon(admin: Want, bundleNames: Array&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -3151,6 +3942,7 @@ addHideLauncherIcon(admin: Want, bundleNames: Array&lt;string&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3184,9 +3976,10 @@ try {
 
 
 
-#### applicationManager.removeHideLauncherIcon
+## applicationManager.removeHideLauncherIcon
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | Tablet
 
 removeHideLauncherIcon(admin: Want, bundleNames: Array&lt;string&gt;): void
 
@@ -3210,6 +4003,7 @@ removeHideLauncherIcon(admin: Want, bundleNames: Array&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -3219,6 +4013,7 @@ removeHideLauncherIcon(admin: Want, bundleNames: Array&lt;string&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3252,9 +4047,10 @@ try {
 
 
 
-#### applicationManager.getHideLauncherIcon
+## applicationManager.getHideLauncherIcon
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | Tablet
 
 getHideLauncherIcon(admin: Want | null): Array&lt;string&gt;
 
@@ -3272,12 +4068,14 @@ getHideLauncherIcon(admin: Want | null): Array&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 当设备存在多个MDM应用时，传入admin查询对应admin设置的策略。传入null时查询整机实际生效的策略。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3287,6 +4085,7 @@ getHideLauncherIcon(admin: Want | null): Array&lt;string&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

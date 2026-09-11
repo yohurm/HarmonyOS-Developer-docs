@@ -1,10 +1,10 @@
 # 使用JSVM-API接口进行生命周期相关开发
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-life-cycle
 
-#### 简介
+## 简介
 
 在JSVM-API中，JSVM_Value是一个表示JavaScript值的抽象类型，它可以表示任何JavaScript值，包括基本类型（如数字、字符串、布尔值）和对象类型（如数组、函数、对象等）。
  
@@ -20,7 +20,7 @@ JSVM_Ref是一个JSVM-API类型，用于管理JSVM_Value的生命周期。JSVM_R
  
   
 
-#### 基本概念
+## 基本概念
 
 JSVM-API提供了一组功能，使开发人员能够在JSVM-API模块中创建和操作JavaScript对象，管理引用和生命周期，并注册垃圾回收回调函数等。下面是一些基本概念：
  
@@ -34,8 +34,9 @@ JSVM-API提供了一组功能，使开发人员能够在JSVM-API模块中创建�
  
   
 
-#### 接口说明
+## 接口说明
  
+
 | 接口 | 功能说明 |
 | --- | --- |
 | OH_JSVM_OpenHandleScope | 打开一个Handle scope，确保scope范围内的JSVM_Value不被GC回收。 |
@@ -53,13 +54,13 @@ JSVM-API提供了一组功能，使开发人员能够在JSVM-API模块中创建�
  
   
 
-#### 使用示例
+## 使用示例
 
 JSVM-API接口开发流程参考[使用JSVM-API实现JS与C/C++语言交互开发流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-process)，本文仅展示接口对应的C++代码。
  
   
 
-#### OH_JSVM_OpenHandleScope、OH_JSVM_CloseHandleScope
+### OH_JSVM_OpenHandleScope、OH_JSVM_CloseHandleScope
 
 通过接口OH_JSVM_OpenHandleScope创建上下文环境，并使用OH_JSVM_CloseHandleScope关闭。这用于管理JavaScript对象的生命周期，确保在JSVM-API模块中正确处理JavaScript对象句柄，避免垃圾回收问题。
  
@@ -115,11 +116,11 @@ JSVM HandleScopeFor: success
  
   
 
-#### OH_JSVM_OpenEscapableHandleScope、OH_JSVM_CloseEscapableHandleScope、OH_JSVM_EscapeHandle
+### OH_JSVM_OpenEscapableHandleScope、OH_JSVM_CloseEscapableHandleScope、OH_JSVM_EscapeHandle
 
 通过接口 OH_JSVM_OpenEscapableHandleScope 创建出一个可逃逸的 handle scope，可将 1 个范围内声明的值返回到父作用域。创建的 scope 需使用 OH_JSVM_CloseEscapableHandleScope 进行关闭。OH_JSVM_EscapeHandle 将传入的 JavaScript 对象的生命周期提升到其父作用域。
  
-通过上述接口可以更灵活的使用管理传入的 JavaScript 对象，特别是在处理跨作用域的值传递时非常有用。
+通过上述接口可以更灵活地使用管理传入的 JavaScript 对象，特别是在处理跨作用域的值传递时非常有用。
  
 cpp 部分代码：
  
@@ -181,7 +182,7 @@ JSVM EscapableHandleScopeTest: success
  
   
 
-#### OH_JSVM_CreateReference、OH_JSVM_DeleteReference、OH_JSVM_GetReferenceValue
+### OH_JSVM_CreateReference、OH_JSVM_DeleteReference、OH_JSVM_GetReferenceValue
 1. 调用 OH_JSVM_CreateReference 为 JavaScript 变量创建一个引用，以延长其生命周期。
 2. 调用 OH_JSVM_GetReferenceValue 获取与引用关联的 JavaScript 变量。
 3. 调用 OH_JSVM_DeleteReference 删除传入的引用。
@@ -190,7 +191,7 @@ JSVM EscapableHandleScopeTest: success
  
   
 
-#### OH_JSVM_ReferenceRef、OH_JSVM_ReferenceUnref
+### OH_JSVM_ReferenceRef、OH_JSVM_ReferenceUnref
 
 增加/减少传入的引用的引用计数，并获取新的计数。当引用计数被置为 0 后，对于可以被设置为弱引用的 JavaScript 类型（对象、函数、外部变量），引用将被置为弱引用，在垃圾回收机制认为必要的时候该变量会被回收，当变量被回收后，调用 OH_JSVM_GetReferenceValue 会获得 C NULL；对于不可被置为弱引用的 JavaScript 类型，该引用会被清除，调用 OH_JSVM_GetReferenceValue 会获得 C NULL。
  
@@ -274,7 +275,7 @@ JSVM UseReference success
  
   
 
-#### OH_JSVM_AddFinalizer
+### OH_JSVM_AddFinalizer
 
 为 JavaScript 对象添加 JSVM_Finalize 回调，当 JavaScript 对象被垃圾回收时执行函数回调，该接口通常被用于释放与 JavaScript 对象相关的原生对象。如果传入的参数类型不是 JavaScript 对象，该接口调用失败并返回错误码。
  

@@ -1,10 +1,14 @@
 # FIDO2_PublicKeyCredentialRequestOptions
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_f_i_d_o2___public_key_credential_request_options
+**支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 定义通行密钥认证请求参数。
  
@@ -16,12 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 成员变量
+### 成员变量
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | Uint8Buff challenge | 获取挑战值。 |
@@ -30,16 +41,22 @@
 | FIDO2_PublicKeyCredentialDescriptorArray allowCredentials | 认证凭据的附加参数列表。默认空列表。可选。 |
 | FIDO2_UserVerificationRequirement userVerification | 用户认证需求枚举。默认值为FIDO2_PREFERRED。可选。 |
 | FIDO2_PublicKeyCredentialHintArray hints | 认证方式指示。默认值为[]。可选。 |
-| char * extensions | 扩展名必须是表示Map<string, Object> object的JSON字符串。默认空。可选，最大长度为2048字符。 |
+| char * extensions | 扩展名必须是表示Map<string, Object> object的JSON字符串。默认空。可选，最小长度为0字符，最大长度为2048字符。 |
  
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### allowCredentials
+### allowCredentials
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FIDO2_PublicKeyCredentialDescriptorArray FIDO2_PublicKeyCredentialRequestOptions::allowCredentials
@@ -51,7 +68,10 @@ FIDO2_PublicKeyCredentialDescriptorArray FIDO2_PublicKeyCredentialRequestOptions
  
   
 
-#### challenge
+### challenge
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 Uint8Buff FIDO2_PublicKeyCredentialRequestOptions::challenge
@@ -63,7 +83,10 @@ Uint8Buff FIDO2_PublicKeyCredentialRequestOptions::challenge
  
   
 
-#### extensions
+### extensions
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 char* FIDO2_PublicKeyCredentialRequestOptions::extensions
@@ -75,7 +98,10 @@ char* FIDO2_PublicKeyCredentialRequestOptions::extensions
  
   
 
-#### hints
+### hints
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FIDO2_PublicKeyCredentialHintArray FIDO2_PublicKeyCredentialRequestOptions::hints
@@ -87,7 +113,10 @@ FIDO2_PublicKeyCredentialHintArray FIDO2_PublicKeyCredentialRequestOptions::hint
  
   
 
-#### rpId
+### rpId
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 char* FIDO2_PublicKeyCredentialRequestOptions::rpId
@@ -99,7 +128,10 @@ char* FIDO2_PublicKeyCredentialRequestOptions::rpId
  
   
 
-#### timeout
+### timeout
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 uint32_t FIDO2_PublicKeyCredentialRequestOptions::timeout
@@ -111,7 +143,10 @@ uint32_t FIDO2_PublicKeyCredentialRequestOptions::timeout
  
   
 
-#### userVerification
+### userVerification
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FIDO2_UserVerificationRequirement FIDO2_PublicKeyCredentialRequestOptions::userVerification

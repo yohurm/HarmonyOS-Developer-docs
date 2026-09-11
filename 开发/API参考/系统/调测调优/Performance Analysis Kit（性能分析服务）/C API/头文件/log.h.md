@@ -1,13 +1,14 @@
 # log.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-log-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 HiLog模块日志接口定义，通过这些接口实现日志打印相关功能。用户输出日志时，先定义日志所属业务领域、日志TAG，然后按照类型、级别选择对应API，指定参数隐私标识输出日志内容。
 
@@ -33,15 +34,18 @@ HiLog模块日志接口定义，通过这些接口实现日志打印相关功能
 
 
 
-#### 汇总
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 汇总
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 枚举
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -52,9 +56,11 @@ HiLog模块日志接口定义，通过这些接口实现日志打印相关功能
 
 
 
-#### 宏定义
+### 宏定义
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -69,9 +75,11 @@ HiLog模块日志接口定义，通过这些接口实现日志打印相关功能
 
 
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -87,7 +95,7 @@ HiLog模块日志接口定义，通过这些接口实现日志打印相关功能
 
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/pfh5LQkPRQqkQZ9kxQG_WA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071647Z&HW-CC-Expire=86400&HW-CC-Sign=DF6101551C22983F650EBC595DF93CF0B76D8DB85D4B1DA183FB743271C7D915)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/jdsUaFmARiOI7Y1odimGYQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072252Z&HW-CC-Expire=86400&HW-CC-Sign=AB3ADA0A262C1C7428B3D0B7FAE8A3FA8F4A7AB15B7B6F2A688E077718F43969)
 
 
 如果设置的日志级别低于[全局日志级别](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hilog#查看和设置日志级别)，OH_LOG_SetMinLogLevel()设置不生效。
@@ -98,15 +106,17 @@ debug版本应用下，OH_LOG_SetMinLogLevel()和OH_LOG_SetLogLevel()函数均�
 
 
 
-#### 枚举类型说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 枚举类型说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### LogType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### LogType
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum LogType
@@ -118,6 +128,7 @@ enum LogType
 
 **起始版本：** 8
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | LOG_APP = 0 | 应用日志 |
@@ -125,9 +136,10 @@ enum LogType
 
 
 
-#### LogLevel
+### LogLevel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum LogLevel
@@ -149,6 +161,7 @@ FATAL：重大致命异常，表明程序或功能即将崩溃，故障无法恢
 
 **起始版本：** 8
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | LOG_DEBUG = 3 | DEBUG日志级别，使用OH_LOG_DEBUG接口打印。 |
@@ -160,9 +173,10 @@ FATAL：重大致命异常，表明程序或功能即将崩溃，故障无法恢
 
 
 
-#### PreferStrategy
+### PreferStrategy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum PreferStrategy
@@ -174,6 +188,7 @@ enum PreferStrategy
 
 **起始版本：** 21
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | UNSET_LOGLEVEL = 0 | 清除设置，实际生效的最低日志级别是系统控制的最低级别。 |
@@ -183,17 +198,19 @@ enum PreferStrategy
 
 
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 各接口具体使用说明可查阅：[使用HiLog打印日志（C/C++）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hilog-guidelines-ndk)。
 
 
 
-#### OH_LOG_Print()
+### OH_LOG_Print()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_LOG_Print(LogType type, LogLevel level, unsigned int domain, const char *tag, const char *fmt, ...)
@@ -207,17 +224,19 @@ int OH_LOG_Print(LogType type, LogLevel level, unsigned int domain, const char *
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | LogType type | 日志类型，三方应用日志类型为LOG_APP。 |
 | LogLevel level | 日志级别，日志级别包括LOG_DEBUG、LOG_INFO、LOG_WARN、LOG_ERROR、LOG_FATAL。 |
 | unsigned int domain | 日志业务领域，16进制整数，范围0x0~0xFFFF，超出范围则日志无法打印。 |
 | const char *tag | 日志TAG，字符串，标识调用所在的类或者业务。tag最多为31字节，超出后会截断，不建议使用中文字符，可能出现乱码或者对齐问题。 |
-| const char *fmt | 格式化字符串，基于类printf格式的增强，支持隐私参数标识，即在格式字符串每个参数中'%'符号后类型前增加{public}、{private}标识。 |
+| const char *fmt | 格式化字符串，基于类printf格式的增强，支持隐私参数标识，即在格式字符串每个参数中%符号后类型前增加{public}、{private}标识。 |
 | ... | 与格式字符串里参数类型对应的参数列表，参数数目、参数类型必须与格式字符串中的标识一一对应。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -226,9 +245,10 @@ int OH_LOG_Print(LogType type, LogLevel level, unsigned int domain, const char *
 
 
 
-#### OH_LOG_PrintMsg()
+### OH_LOG_PrintMsg()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_LOG_PrintMsg(LogType type, LogLevel level, unsigned int domain, const char *tag, const char *message)
@@ -242,6 +262,7 @@ int OH_LOG_PrintMsg(LogType type, LogLevel level, unsigned int domain, const cha
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | LogType type | 日志类型，三方应用日志类型为LOG_APP。 |
@@ -253,6 +274,7 @@ int OH_LOG_PrintMsg(LogType type, LogLevel level, unsigned int domain, const cha
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 大于等于0表示成功；小于0表示失败。 失败原因：LogLevel传入的级别低于当前允许打印的级别、domain超出范围、tag为空指针、以及CPU高负载、低内存、整机日志量过大等场景下日志写入socket失败。 |
@@ -260,9 +282,10 @@ int OH_LOG_PrintMsg(LogType type, LogLevel level, unsigned int domain, const cha
 
 
 
-#### OH_LOG_PrintMsgByLen()
+### OH_LOG_PrintMsgByLen()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_LOG_PrintMsgByLen(LogType type, LogLevel level, unsigned int domain, const char *tag, size_t tagLen, const char *message, size_t messageLen)
@@ -275,6 +298,7 @@ int OH_LOG_PrintMsgByLen(LogType type, LogLevel level, unsigned int domain, cons
 **起始版本：** 18
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -289,6 +313,7 @@ int OH_LOG_PrintMsgByLen(LogType type, LogLevel level, unsigned int domain, cons
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 大于等于0表示成功；小于0表示失败。 失败原因：LogLevel传入的级别低于当前允许打印的级别、domain超出范围、tag为空指针、以及CPU高负载、低内存、整机日志量过大等场景下日志写入socket失败。 |
@@ -296,9 +321,10 @@ int OH_LOG_PrintMsgByLen(LogType type, LogLevel level, unsigned int domain, cons
 
 
 
-#### OH_LOG_VPrint()
+### OH_LOG_VPrint()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_LOG_VPrint(LogType type, LogLevel level, unsigned int domain, const char *tag, const char *fmt, va_list ap)
@@ -312,17 +338,19 @@ int OH_LOG_VPrint(LogType type, LogLevel level, unsigned int domain, const char 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | LogType type | 日志类型，三方应用日志类型为LOG_APP。 |
 | LogLevel level | 日志级别，日志级别包括LOG_DEBUG、LOG_INFO、LOG_WARN、LOG_ERROR、LOG_FATAL。 |
 | unsigned int domain | 日志业务领域，16进制整数，范围为0x0~0xFFFF，超出范围则日志无法打印。 |
 | const char *tag | 日志TAG，字符串，标识调用所在的类或者业务。tag最多为31字节，超出后会截断，不建议使用中文字符，可能出现乱码或者对齐问题。 |
-| const char *fmt | 格式化字符串，基于类printf格式的增强，支持隐私参数标识，即在格式字符串每个参数中符号后类型前增加{public}、{private}标识。 |
+| const char *fmt | 格式化字符串，基于类printf格式的增强，支持隐私参数标识，即在格式字符串每个参数中%符号后类型前增加{public}、{private}标识。 |
 | va_list ap | va_list类型，与格式字符串里参数类型对应的参数列表，参数数目、参数类型必须与格式字符串中的标识一一对应。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -331,9 +359,10 @@ int OH_LOG_VPrint(LogType type, LogLevel level, unsigned int domain, const char 
 
 
 
-#### OH_LOG_IsLoggable()
+### OH_LOG_IsLoggable()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_LOG_IsLoggable(unsigned int domain, const char *tag, LogLevel level)
@@ -347,6 +376,7 @@ bool OH_LOG_IsLoggable(unsigned int domain, const char *tag, LogLevel level)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | unsigned int domain | 日志业务领域，16进制整数，范围0x0~0xFFFF，超出范围则日志无法打印。 |
@@ -356,6 +386,7 @@ bool OH_LOG_IsLoggable(unsigned int domain, const char *tag, LogLevel level)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 如果指定domain、tag、level日志可以打印则返回true；否则返回false。 |
@@ -363,9 +394,10 @@ bool OH_LOG_IsLoggable(unsigned int domain, const char *tag, LogLevel level)
 
 
 
-#### OH_LOG_DEBUG()
+### OH_LOG_DEBUG()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_LOG_DEBUG(type, ...)((void)OH_LOG_Print((type), LOG_DEBUG, LOG_DOMAIN, LOG_TAG, __VA_ARGS__))
@@ -379,10 +411,11 @@ DEBUG级别写日志，宏封装接口。使用时需要先定义LOG_DOMAIN和LO
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | type | 日志类型，三方应用日志类型为LOG_APP。 |
-| fmt | 格式化字符串，基于类printf格式的增强，支持隐私参数标识，即在格式字符串每个参数中'%'符号后类型前增加{public}、{private}标识。 |
+| fmt | 格式化字符串，基于类printf格式的增强，支持隐私参数标识，即在格式字符串每个参数中%符号后类型前增加{public}、{private}标识。 |
 | ... | 与格式字符串里参数类型对应的参数列表，参数数目、参数类型必须与格式字符串中的标识一一对应。 |
 
 
@@ -392,9 +425,10 @@ DEBUG级别写日志，宏封装接口。使用时需要先定义LOG_DOMAIN和LO
 
 
 
-#### OH_LOG_INFO()
+### OH_LOG_INFO()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_LOG_INFO(type, ...)((void)OH_LOG_Print((type), LOG_INFO, LOG_DOMAIN, LOG_TAG, __VA_ARGS__))
@@ -408,10 +442,11 @@ INFO级别写日志，宏封装接口。使用时需要先定义LOG_DOMAIN和LOG
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | type | 日志类型，三方应用日志类型为LOG_APP。 |
-| fmt | 格式化字符串，基于类printf格式的增强，支持隐私参数标识，即在格式字符串每个参数中'%'符号后类型前增加{public}、{private}标识。 |
+| fmt | 格式化字符串，基于类printf格式的增强，支持隐私参数标识，即在格式字符串每个参数中%符号后类型前增加{public}、{private}标识。 |
 | ... | 与格式字符串里参数类型对应的参数列表，参数数目、参数类型必须与格式字符串中的标识一一对应。 |
 
 
@@ -421,9 +456,10 @@ INFO级别写日志，宏封装接口。使用时需要先定义LOG_DOMAIN和LOG
 
 
 
-#### OH_LOG_WARN()
+### OH_LOG_WARN()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_LOG_WARN(type, ...)((void)OH_LOG_Print((type), LOG_WARN, LOG_DOMAIN, LOG_TAG, __VA_ARGS__))
@@ -437,10 +473,11 @@ WARN级别写日志，宏封装接口。使用时需要先定义LOG_DOMAIN和LOG
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | type | 日志类型，三方应用日志类型为LOG_APP。 |
-| fmt | 格式化字符串，基于类printf格式的增强，支持隐私参数标识，即在格式字符串每个参数中'%'符号后类型前增加{public}、{private}标识。 |
+| fmt | 格式化字符串，基于类printf格式的增强，支持隐私参数标识，即在格式字符串每个参数中%符号后类型前增加{public}、{private}标识。 |
 | ... | 与格式字符串里参数类型对应的参数列表，参数数目、参数类型必须与格式字符串中的标识一一对应。 |
 
 
@@ -450,9 +487,10 @@ WARN级别写日志，宏封装接口。使用时需要先定义LOG_DOMAIN和LOG
 
 
 
-#### OH_LOG_ERROR()
+### OH_LOG_ERROR()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_LOG_ERROR(type, ...)((void)OH_LOG_Print((type), LOG_ERROR, LOG_DOMAIN, LOG_TAG, __VA_ARGS__))
@@ -466,10 +504,11 @@ ERROR级别写日志，宏封装接口。使用时需要先定义LOG_DOMAIN和LO
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | type | 日志类型，三方应用日志类型为LOG_APP。 |
-| fmt | 格式化字符串，基于类printf格式的增强，支持隐私参数标识，即在格式字符串每个参数中'%'符号后类型前增加{public}、{private}标识。 |
+| fmt | 格式化字符串，基于类printf格式的增强，支持隐私参数标识，即在格式字符串每个参数中%符号后类型前增加{public}、{private}标识。 |
 | ... | 与格式字符串里参数类型对应的参数列表，参数数目、参数类型必须与格式字符串中的标识一一对应。 |
 
 
@@ -479,9 +518,10 @@ ERROR级别写日志，宏封装接口。使用时需要先定义LOG_DOMAIN和LO
 
 
 
-#### OH_LOG_FATAL()
+### OH_LOG_FATAL()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_LOG_FATAL(type, ...)((void)OH_LOG_Print((type), LOG_FATAL, LOG_DOMAIN, LOG_TAG, __VA_ARGS__))
@@ -495,10 +535,11 @@ FATAL级别写日志，宏封装接口。使用时需要先定义LOG_DOMAIN和LO
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | type | 日志类型，三方应用日志类型为LOG_APP。 |
-| fmt | 格式化字符串，基于类printf格式的增强，支持隐私参数标识，即在格式字符串每个参数中'%'符号后类型前增加{public}、{private}标识。 |
+| fmt | 格式化字符串，基于类printf格式的增强，支持隐私参数标识，即在格式字符串每个参数中%符号后类型前增加{public}、{private}标识。 |
 | ... | 与格式字符串里参数类型对应的参数列表，参数数目、参数类型必须与格式字符串中的标识一一对应。 |
 
 
@@ -508,9 +549,10 @@ FATAL级别写日志，宏封装接口。使用时需要先定义LOG_DOMAIN和LO
 
 
 
-#### LogCallback()
+### LogCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*LogCallback)(const LogType type, const LogLevel level, const unsigned int domain, const char *tag, const char *msg)
@@ -524,6 +566,7 @@ typedef void (*LogCallback)(const LogType type, const LogLevel level, const unsi
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const LogType type | 日志类型，三方应用日志类型为LOG_APP。 |
@@ -535,9 +578,10 @@ typedef void (*LogCallback)(const LogType type, const LogLevel level, const unsi
 
 
 
-#### OH_LOG_SetCallback()
+### OH_LOG_SetCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_LOG_SetCallback(LogCallback callback)
@@ -553,6 +597,7 @@ void OH_LOG_SetCallback(LogCallback callback)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | LogCallback callback | 用户实现的回调函数。如果不需要处理hilog日志，可以传输空指针。 |
@@ -560,9 +605,10 @@ void OH_LOG_SetCallback(LogCallback callback)
 
 
 
-#### OH_LOG_SetMinLogLevel()
+### OH_LOG_SetMinLogLevel()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_LOG_SetMinLogLevel(LogLevel level)
@@ -580,6 +626,7 @@ void OH_LOG_SetMinLogLevel(LogLevel level)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | LogLevel level | 日志级别。 |
@@ -587,9 +634,10 @@ void OH_LOG_SetMinLogLevel(LogLevel level)
 
 
 
-#### OH_LOG_SetLogLevel()
+### OH_LOG_SetLogLevel()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_LOG_SetLogLevel(LogLevel level, PreferStrategy prefer)
@@ -606,6 +654,7 @@ void OH_LOG_SetLogLevel(LogLevel level, PreferStrategy prefer)
 **起始版本：** 21
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |

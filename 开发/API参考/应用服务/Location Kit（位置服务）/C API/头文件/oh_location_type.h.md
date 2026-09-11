@@ -1,13 +1,14 @@
 # oh_location_type.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-location-type-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义位置服务常用的属性。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | Location_BasicInfo | Location_BasicInfo | 定义位置基本信息的结构体。 |
@@ -42,10 +46,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | Location_ResultCode | Location_ResultCode | 定义位置服务的错误码。 |
@@ -56,10 +62,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | bool OH_LocationInfo_IsFromMock(Location_Info* location) | - | 判断定位信息是否来自模拟位置功能。 起始版本： 26.0.0 |
@@ -76,15 +84,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### Location_ResultCode
+### Location_ResultCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Location_ResultCode
@@ -96,6 +106,7 @@ enum Location_ResultCode
  
 **起始版本：** 13
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | LOCATION_SUCCESS = 0 | 操作成功。 |
@@ -108,9 +119,10 @@ enum Location_ResultCode
  
   
 
-#### Location_UseScene
+### Location_UseScene
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Location_UseScene
@@ -122,6 +134,7 @@ enum Location_UseScene
  
 **起始版本：** 13
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | LOCATION_USE_SCENE_NAVIGATION = 0x0401 | 导航场景。 适用于在户外获取设备实时位置的场景，如车载、步行导航。 主要使用GNSS定位技术提供定位服务，功耗较高。 |
@@ -132,9 +145,10 @@ enum Location_UseScene
  
   
 
-#### Location_PowerConsumptionScene
+### Location_PowerConsumptionScene
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Location_PowerConsumptionScene
@@ -146,6 +160,7 @@ enum Location_PowerConsumptionScene
  
 **起始版本：** 13
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | LOCATION_HIGH_POWER_CONSUMPTION = 0x0601 | 高功耗。 以GNSS定位技术为主。在GNSS提供稳定位置结果之前会使用网络定位技术提供服务。 在持续定位时，如果超过30秒无法获取GNSS定位结果则会使用网络定位技术获取位置。 对设备的硬件资源消耗较大，功耗较大。 |
@@ -155,9 +170,10 @@ enum Location_PowerConsumptionScene
  
   
 
-#### Location_SourceType
+### Location_SourceType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Location_SourceType
@@ -169,6 +185,7 @@ enum Location_SourceType
  
 **起始版本：** 13
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | LOCATION_SOURCE_TYPE_GNSS = 1 | 表示定位结果来自于GNSS定位技术。 |
@@ -179,15 +196,17 @@ enum Location_SourceType
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_LocationInfo_IsFromMock()
+### OH_LocationInfo_IsFromMock()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_LocationInfo_IsFromMock(Location_Info* location)
@@ -201,6 +220,7 @@ bool OH_LocationInfo_IsFromMock(Location_Info* location)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Location_Info* location | 指向位置信息结构体的指针。 需要传入非空指针，该指针可以在Location_InfoCallback中获取。 |
@@ -208,6 +228,7 @@ bool OH_LocationInfo_IsFromMock(Location_Info* location)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回bool类型的结果，用于指示该位置是否来自模拟位置功能。 如果值为 true，表示该位置来自模拟位置功能；如果值为false，表示该位置源自系统的真实定位结果。 |
@@ -215,9 +236,10 @@ bool OH_LocationInfo_IsFromMock(Location_Info* location)
  
   
 
-#### OH_LocationInfo_GetBasicInfo()
+### OH_LocationInfo_GetBasicInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Location_BasicInfo OH_LocationInfo_GetBasicInfo(Location_Info* location)
@@ -231,6 +253,7 @@ Location_BasicInfo OH_LocationInfo_GetBasicInfo(Location_Info* location)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Location_Info* location | 指向位置信息结构体的指针。 需要传入非空指针，该指针可以在Location_InfoCallback中获取。 |
@@ -238,6 +261,7 @@ Location_BasicInfo OH_LocationInfo_GetBasicInfo(Location_Info* location)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Location_BasicInfo | 返回位置基本信息结构体。详细定义请参考Location_BasicInfo。 |
@@ -245,9 +269,10 @@ Location_BasicInfo OH_LocationInfo_GetBasicInfo(Location_Info* location)
  
   
 
-#### OH_LocationInfo_GetAdditionalInfo()
+### OH_LocationInfo_GetAdditionalInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Location_ResultCode OH_LocationInfo_GetAdditionalInfo(Location_Info* location, char* additionalInfo, uint32_t length)
@@ -261,6 +286,7 @@ Location_ResultCode OH_LocationInfo_GetAdditionalInfo(Location_Info* location, c
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Location_Info* location | 指向位置信息结构体的指针。 需要传入非空指针，该指针可以在Location_InfoCallback中获取。 |
@@ -270,6 +296,7 @@ Location_ResultCode OH_LocationInfo_GetAdditionalInfo(Location_Info* location, c
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Location_ResultCode | 返回操作结果，详细定义参见Location_ResultCode。 LOCATION_SUCCESS 获取附加信息成功。 LOCATION_INVALID_PARAM 1. 入参location或additionalInfo是空指针。 2. 入参length太小，也就是additionalInfo指向的内存太小导致无法保存完整的附加信息字符串。 |
@@ -277,9 +304,10 @@ Location_ResultCode OH_LocationInfo_GetAdditionalInfo(Location_Info* location, c
  
   
 
-#### Location_InfoCallback()
+### Location_InfoCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*Location_InfoCallback)(Location_Info* location, void* userData)
@@ -293,6 +321,7 @@ typedef void (*Location_InfoCallback)(Location_Info* location, void* userData)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Location_Info* location | 指向Location_Info实例的指针，携带最新的位置信息。 location实例的内存会在Location_InfoCallback结束时回收，请在此之前调用OH_LocationInfo_GetBasicInfo等接口获取位置信息。 |
@@ -301,9 +330,10 @@ typedef void (*Location_InfoCallback)(Location_Info* location, void* userData)
  
   
 
-#### OH_Location_CreateRequestConfig()
+### OH_Location_CreateRequestConfig()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Location_RequestConfig* OH_Location_CreateRequestConfig(void)
@@ -317,6 +347,7 @@ Location_RequestConfig* OH_Location_CreateRequestConfig(void)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Location_RequestConfig* | 返回指向Location_RequestConfig实例的指针。 如果返回NULL表示创建失败，可能的原因是应用地址空间满，导致空间分配不出来。 |
@@ -324,9 +355,10 @@ Location_RequestConfig* OH_Location_CreateRequestConfig(void)
  
   
 
-#### OH_Location_DestroyRequestConfig()
+### OH_Location_DestroyRequestConfig()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Location_DestroyRequestConfig(Location_RequestConfig* requestConfig)
@@ -340,6 +372,7 @@ void OH_Location_DestroyRequestConfig(Location_RequestConfig* requestConfig)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Location_RequestConfig* requestConfig | 指向Location_RequestConfig实例的指针。 该实例是由OH_Location_CreateRequestConfig创建的。 |
@@ -347,9 +380,10 @@ void OH_Location_DestroyRequestConfig(Location_RequestConfig* requestConfig)
  
   
 
-#### OH_LocationRequestConfig_SetUseScene()
+### OH_LocationRequestConfig_SetUseScene()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_LocationRequestConfig_SetUseScene(Location_RequestConfig* requestConfig, Location_UseScene useScene)
@@ -371,6 +405,7 @@ void OH_LocationRequestConfig_SetUseScene(Location_RequestConfig* requestConfig,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Location_RequestConfig* requestConfig | 指向Location_RequestConfig实例的指针。 该实例是由OH_Location_CreateRequestConfig创建的。 |
@@ -379,9 +414,10 @@ void OH_LocationRequestConfig_SetUseScene(Location_RequestConfig* requestConfig,
  
   
 
-#### OH_LocationRequestConfig_SetPowerConsumptionScene()
+### OH_LocationRequestConfig_SetPowerConsumptionScene()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_LocationRequestConfig_SetPowerConsumptionScene(Location_RequestConfig* requestConfig, Location_PowerConsumptionScene powerConsumptionScene)
@@ -395,6 +431,7 @@ void OH_LocationRequestConfig_SetPowerConsumptionScene(Location_RequestConfig* r
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Location_RequestConfig* requestConfig | 指向Location_RequestConfig实例的指针。 该实例是由OH_Location_CreateRequestConfig创建的。 |
@@ -403,9 +440,10 @@ void OH_LocationRequestConfig_SetPowerConsumptionScene(Location_RequestConfig* r
  
   
 
-#### OH_LocationRequestConfig_SetInterval()
+### OH_LocationRequestConfig_SetInterval()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_LocationRequestConfig_SetInterval(Location_RequestConfig* requestConfig, int interval)
@@ -419,6 +457,7 @@ void OH_LocationRequestConfig_SetInterval(Location_RequestConfig* requestConfig,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Location_RequestConfig* requestConfig | 指向Location_RequestConfig实例的指针。 该实例是由OH_Location_CreateRequestConfig创建的。 |
@@ -427,9 +466,10 @@ void OH_LocationRequestConfig_SetInterval(Location_RequestConfig* requestConfig,
  
   
 
-#### OH_LocationRequestConfig_SetCallback()
+### OH_LocationRequestConfig_SetCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_LocationRequestConfig_SetCallback(Location_RequestConfig* requestConfig, Location_InfoCallback callback, void* userData)
@@ -443,6 +483,7 @@ void OH_LocationRequestConfig_SetCallback(Location_RequestConfig* requestConfig,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Location_RequestConfig* requestConfig | 指向Location_RequestConfig实例的指针。 该实例是由OH_Location_CreateRequestConfig创建的。 |

@@ -1,18 +1,19 @@
 # Class (NoneActionProposal)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-noneactionproposal
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 智慧手势空动作处理。当通过[registerMonitor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-smartgesturecontroller#registermonitor)接口动态自定义智慧手势行为时，设置返回值[Class (GestureHandlingResolution)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-gesturehandlingresolution)的selectedProposal为该类型对象，不会触发任何动作。
  
 **起始版本：** 26.0.0
   
 
-#### constructor
+## constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
  
@@ -94,4 +95,4 @@ struct SmartGestureControllerExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/cshytunwRLyJ6t6_c3x4Ng/zh-cn_image_0000002698142271.png?HW-CC-KV=V1&HW-CC-Date=20260811T010216Z&HW-CC-Expire=86400&HW-CC-Sign=0971C76956E67FD4F7667C3F2DB9B389D46FD4850126DEA3F415DD5EBF1A865A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/dGf7y3VrQpi-4Mlyq1C4Rw/zh-cn_image_0000002747212251.png?HW-CC-KV=V1&HW-CC-Date=20260911T072446Z&HW-CC-Expire=86400&HW-CC-Sign=51A9502C788A283B06C18D6D3E145A76BC19CA773DA332CB784F8C2519373143)

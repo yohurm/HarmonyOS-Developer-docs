@@ -1,57 +1,60 @@
 # @ohos.bluetoothManager (蓝牙)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bluetoothmanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-蓝牙模块提供了基础的传统蓝牙能力以及BLE的扫描、广播等功能。
- 
+蓝牙模块提供了基础的传统蓝牙能力以及[BLE](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#ble)的扫描、广播等功能。
+
 > [!NOTE]
 > 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 从API Version 10 开始，该接口不再维护，推荐使用 @ohos.bluetooth.ble (蓝牙ble模块) 等相关Profile接口。
 
-  
 
-#### 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 导入模块
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { bluetoothManager } from '@kit.ConnectivityKit';
 ```
- 
-  
 
-#### bluetoothManager.enableBluetooth(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## bluetoothManager.enableBluetooth(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableBluetooth(): void
- 
+
 开启蓝牙。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 access.enableBluetooth 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
 | 801 | Capability not supported. |
 | 2900001 | Service stopped. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 try {
@@ -60,39 +63,41 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### bluetoothManager.disableBluetooth(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## bluetoothManager.disableBluetooth(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 disableBluetooth(): void
- 
+
 关闭蓝牙。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 access.disableBluetooth 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
 | 801 | Capability not supported. |
 | 2900001 | Service stopped. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 try {
@@ -101,46 +106,49 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ", errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### bluetoothManager.getLocalName(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## bluetoothManager.getLocalName(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLocalName(): string
- 
+
 获取蓝牙本地设备名称。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 connection.getLocalName 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **返回值：**
-  
+
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 蓝牙本地设备名称。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
 | 801 | Capability not supported. |
 | 2900001 | Service stopped. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 try {
@@ -149,46 +157,49 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### bluetoothManager.getState(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## bluetoothManager.getState(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getState(): BluetoothState
- 
+
 获取蓝牙开关状态。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 access.getState 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **返回值：**
-  
+
+
 | 类型 | 说明 |
 | --- | --- |
 | BluetoothState | 表示蓝牙开关状态。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
 | 801 | Capability not supported. |
 | 2900001 | Service stopped. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 try {
@@ -197,36 +208,39 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### bluetoothManager.getBtConnectionState(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## bluetoothManager.getBtConnectionState(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBtConnectionState(): ProfileConnectionState
- 
+
 获取蓝牙本端的Profile连接状态，例如：任意一个支持的Profile连接状态为已连接，则此接口返回状态为已连接。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 connection.getProfileConnectionState 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **返回值：**
-  
+
+
 | 类型 | 说明 |
 | --- | --- |
 | ProfileConnectionState | 表示蓝牙设备的Profile连接状态。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -234,10 +248,10 @@ getBtConnectionState(): ProfileConnectionState
 | 2900001 | Service stopped. |
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 try {
@@ -246,36 +260,39 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### bluetoothManager.setLocalName(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## bluetoothManager.setLocalName(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setLocalName(name: string): void
- 
+
 设置蓝牙本地设备名称。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 connection.setLocalName 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 要设置的蓝牙名称，最大长度为248字节数。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -284,10 +301,10 @@ setLocalName(name: string): void
 | 2900001 | Service stopped. |
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 try {
@@ -296,36 +313,39 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### bluetoothManager.pairDevice(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## bluetoothManager.pairDevice(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pairDevice(deviceId: string): void
- 
+
 发起蓝牙配对。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 connection.pairDevice 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 表示配对的远端设备地址，例如："XX:XX:XX:XX:XX:XX"。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -334,10 +354,10 @@ pairDevice(deviceId: string): void
 | 2900001 | Service stopped. |
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 try {
@@ -347,43 +367,47 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### bluetoothManager.getProfileConnectionState(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## bluetoothManager.getProfileConnectionState(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getProfileConnectionState(profileId: ProfileId): ProfileConnectionState
- 
+
 依据ProfileId获取指定profile的连接状态。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 connection.getProfileConnectionState 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | profileId | ProfileId | 是 | 表示profile的枚举值，例如：PROFILE_A2DP_SOURCE。 |
- 
- 
+
+
 **返回值：**
-  
+
+
 | 类型 | 说明 |
 | --- | --- |
 | ProfileConnectionState | profile的连接状态。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -393,10 +417,10 @@ getProfileConnectionState(profileId: ProfileId): ProfileConnectionState
 | 2900003 | Bluetooth disabled. |
 | 2900004 | Profile not supported. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 try {
@@ -405,43 +429,47 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### bluetoothManager.getRemoteDeviceName(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## bluetoothManager.getRemoteDeviceName(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRemoteDeviceName(deviceId: string): string
- 
+
 获取对端蓝牙设备的名称。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 connection.getRemoteDeviceName 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 表示远程设备的地址，例如："XX:XX:XX:XX:XX:XX"。 |
- 
- 
+
+
 **返回值：**
-  
+
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 以字符串格式返回设备名称。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -450,10 +478,10 @@ getRemoteDeviceName(deviceId: string): string
 | 2900001 | Service stopped. |
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 try {
@@ -462,43 +490,47 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### bluetoothManager.getRemoteDeviceClass(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## bluetoothManager.getRemoteDeviceClass(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRemoteDeviceClass(deviceId: string): DeviceClass
- 
+
 获取对端蓝牙设备的类别。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 connection.getRemoteDeviceClass 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 表示远程设备的地址，例如："XX:XX:XX:XX:XX:XX"。 |
- 
- 
+
+
 **返回值：**
-  
+
+
 | 类型 | 说明 |
 | --- | --- |
 | DeviceClass | 远程设备的类别。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -507,10 +539,10 @@ getRemoteDeviceClass(deviceId: string): DeviceClass
 | 2900001 | Service stopped. |
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 try {
@@ -519,36 +551,39 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### bluetoothManager.getPairedDevices(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## bluetoothManager.getPairedDevices(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPairedDevices(): Array&lt;string&gt;
- 
+
 获取蓝牙配对列表。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 connection.getPairedDevices 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **返回值：**
-  
+
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;string&gt; | 已配对蓝牙设备的地址列表。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -556,10 +591,10 @@ getPairedDevices(): Array&lt;string&gt;
 | 2900001 | Service stopped. |
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 try {
@@ -568,37 +603,40 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### bluetoothManager.setBluetoothScanMode(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## bluetoothManager.setBluetoothScanMode(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setBluetoothScanMode(mode: ScanMode, duration: number): void
- 
+
 设置蓝牙扫描模式，可以被远端设备发现。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 connection.setBluetoothScanMode 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | ScanMode | 是 | 蓝牙扫描模式。 |
 | duration | number | 是 | 设备可被发现的持续时间，单位为毫秒；设置为0则持续可发现。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -607,10 +645,10 @@ setBluetoothScanMode(mode: ScanMode, duration: number): void
 | 2900001 | Service stopped. |
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 try {
@@ -620,36 +658,39 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### bluetoothManager.getBluetoothScanMode(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## bluetoothManager.getBluetoothScanMode(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBluetoothScanMode(): ScanMode
- 
+
 获取蓝牙扫描模式。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 connection.getBluetoothScanMode 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **返回值：**
-  
+
+
 | 类型 | 说明 |
 | --- | --- |
 | ScanMode | 蓝牙扫描模式。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -657,10 +698,10 @@ getBluetoothScanMode(): ScanMode
 | 2900001 | Service stopped. |
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 try {
@@ -669,29 +710,31 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### bluetoothManager.startBluetoothDiscovery(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## bluetoothManager.startBluetoothDiscovery(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startBluetoothDiscovery(): void
- 
+
 开启蓝牙扫描，可以发现远端设备。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 connection.startBluetoothDiscovery 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -699,10 +742,10 @@ startBluetoothDiscovery(): void
 | 2900001 | Service stopped. |
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 let deviceId: Array<string>;
@@ -716,29 +759,31 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### bluetoothManager.stopBluetoothDiscovery(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## bluetoothManager.stopBluetoothDiscovery(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopBluetoothDiscovery(): void
- 
+
 关闭蓝牙扫描。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 connection.stopBluetoothDiscovery 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -746,10 +791,10 @@ stopBluetoothDiscovery(): void
 | 2900001 | Service stopped. |
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 try {
@@ -758,37 +803,40 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### bluetoothManager.setDevicePairingConfirmation(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## bluetoothManager.setDevicePairingConfirmation(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setDevicePairingConfirmation(device: string, accept: boolean): void
- 
+
 设置设备配对请求确认。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 connection.setDevicePairingConfirmation 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH 和 ohos.permission.MANAGE_BLUETOOTH（该权限仅系统应用可申请）
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | device | string | 是 | 表示远端设备地址，例如："XX:XX:XX:XX:XX:XX"。 |
 | accept | boolean | 是 | 接受配对请求设置为true，否则设置为false。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -797,10 +845,10 @@ setDevicePairingConfirmation(device: string, accept: boolean): void
 | 2900001 | Service stopped. |
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```json
 import { BusinessError } from '@ohos.base';
 // 订阅“pinRequired”配对请求事件，收到远端配对请求后设置配对确认
@@ -814,47 +862,50 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### bluetoothManager.on('bluetoothDeviceFind')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## bluetoothManager.on('bluetoothDeviceFind')(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'bluetoothDeviceFind', callback: Callback<Array&lt;string&gt;>): void
- 
+
 订阅蓝牙设备发现上报事件。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 connection.on('bluetoothDeviceFind') 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写"bluetoothDeviceFind"字符串，表示蓝牙设备发现事件。 |
 | callback | Callback<Array&lt;string&gt;> | 是 | 表示回调函数的入参，发现的设备集合。回调函数由用户创建通过该接口注册。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | Capability not supported. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```json
 import { BusinessError } from '@ohos.base';
 function onReceiveEvent(data: Array<string>) { // data为蓝牙设备地址集合
@@ -866,46 +917,49 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### bluetoothManager.off('bluetoothDeviceFind')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## bluetoothManager.off('bluetoothDeviceFind')(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'bluetoothDeviceFind', callback?: Callback<Array&lt;string&gt;>): void
- 
+
 取消订阅蓝牙设备发现上报事件。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 connection.off('bluetoothDeviceFind') 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写"bluetoothDeviceFind"字符串，表示蓝牙设备发现事件。 |
 | callback | Callback<Array&lt;string&gt;> | 否 | 表示取消订阅蓝牙设备发现事件上报。不填该参数则取消订阅该type对应的所有回调。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
 | 801 | Capability not supported. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```json
 import { BusinessError } from '@ohos.base';
 function onReceiveEvent(data: Array<string>) {
@@ -918,47 +972,50 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### bluetoothManager.on('pinRequired')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## bluetoothManager.on('pinRequired')(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'pinRequired', callback: Callback&lt;PinRequiredParam&gt;): void
- 
+
 订阅远端蓝牙设备的配对请求事件。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 connection.on('pinRequired') 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写"pinRequired"字符串，表示配对请求事件。 |
 | callback | Callback&lt;PinRequiredParam&gt; | 是 | 表示回调函数的入参，配对请求。回调函数由用户创建通过该接口注册。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | Capability not supported. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```json
 import { BusinessError } from '@ohos.base';
 function onReceiveEvent(data: bluetoothManager.PinRequiredParam) { // data为配对请求参数
@@ -970,47 +1027,50 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### bluetoothManager.off('pinRequired')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## bluetoothManager.off('pinRequired')(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'pinRequired', callback?: Callback&lt;PinRequiredParam&gt;): void
- 
+
 取消订阅远端蓝牙设备的配对请求事件。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 connection.off('pinRequired') 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写"pinRequired"字符串，表示配对请求事件。 |
 | callback | Callback&lt;PinRequiredParam&gt; | 否 | 表示取消订阅蓝牙配对请求事件上报，入参为配对请求参数。不填该参数则取消订阅该type对应的所有回调。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | Capability not supported. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```json
 import { BusinessError } from '@ohos.base';
 function onReceiveEvent(data: bluetoothManager.PinRequiredParam) {
@@ -1023,47 +1083,50 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### bluetoothManager.on('bondStateChange')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## bluetoothManager.on('bondStateChange')(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'bondStateChange', callback: Callback&lt;BondStateParam&gt;): void
- 
+
 订阅蓝牙配对状态改变事件。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 connection.on('bondStateChange') 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写"bondStateChange"字符串，表示蓝牙配对状态改变事件。 |
 | callback | Callback&lt;BondStateParam&gt; | 是 | 表示回调函数的入参，配对的状态。回调函数由用户创建通过该接口注册。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | Capability not supported. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```json
 import { BusinessError } from '@ohos.base';
 function onReceiveEvent(data: bluetoothManager.BondStateParam) { // data为回调函数入参，表示配对的状态
@@ -1075,47 +1138,50 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### bluetoothManager.off('bondStateChange')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## bluetoothManager.off('bondStateChange')(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'bondStateChange', callback?: Callback&lt;BondStateParam&gt;): void
- 
+
 取消订阅蓝牙配对状态改变事件。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 connection.off('bondStateChange') 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写"bondStateChange"字符串，表示蓝牙配对状态改变事件。 |
 | callback | Callback&lt;BondStateParam&gt; | 否 | 表示取消订阅蓝牙配对状态改变事件上报。不填该参数则取消订阅该type对应的所有回调。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | Capability not supported. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```json
 import { BusinessError } from '@ohos.base';
 function onReceiveEvent(data: bluetoothManager.BondStateParam) {
@@ -1128,47 +1194,50 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### bluetoothManager.on('stateChange')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## bluetoothManager.on('stateChange')(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'stateChange', callback: Callback&lt;BluetoothState&gt;): void
- 
+
 订阅蓝牙设备开关状态事件。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 access.on('stateChange') 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写"stateChange"字符串，表示蓝牙状态改变事件。 |
 | callback | Callback&lt;BluetoothState&gt; | 是 | 表示回调函数的入参，蓝牙状态。回调函数由用户创建通过该接口注册。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | Capability not supported. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```json
 import { BusinessError } from '@ohos.base';
 function onReceiveEvent(data: bluetoothManager.BluetoothState) {
@@ -1180,47 +1249,50 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### bluetoothManager.off('stateChange')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## bluetoothManager.off('stateChange')(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'stateChange', callback?: Callback&lt;BluetoothState&gt;): void
- 
+
 取消订阅蓝牙设备开关状态事件。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 access.off('stateChange') 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写"stateChange"字符串，表示蓝牙状态改变事件。 |
 | callback | Callback&lt;BluetoothState&gt; | 否 | 表示取消订阅蓝牙状态改变事件上报。不填该参数则取消订阅该type对应的所有回调。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | Capability not supported. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```json
 import { BusinessError } from '@ohos.base';
 function onReceiveEvent(data: bluetoothManager.BluetoothState) {
@@ -1233,38 +1305,41 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### bluetoothManager.sppListen(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## bluetoothManager.sppListen(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sppListen(name: string, option: SppOption, callback: AsyncCallback&lt;number&gt;): void
- 
+
 创建一个服务端监听Socket。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 socket.sppListen 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 服务的名称。 |
 | option | SppOption | 是 | spp监听配置参数。 |
 | callback | AsyncCallback&lt;number&gt; | 是 | 表示回调函数的入参，服务端Socket的id。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -1274,10 +1349,10 @@ sppListen(name: string, option: SppOption, callback: AsyncCallback&lt;number&gt;
 | 2900003 | Bluetooth disabled. |
 | 2900004 | Profile not supported. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@kit.BasicServicesKit';
 let serverNumber = -1;
@@ -1296,35 +1371,38 @@ try {
     console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
 }
 ```
- 
-  
 
-#### bluetoothManager.sppAccept(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## bluetoothManager.sppAccept(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sppAccept(serverSocket: number, callback: AsyncCallback&lt;number&gt;): void
- 
+
 服务端监听socket等待客户端连接。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 socket.sppAccept 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | serverSocket | number | 是 | 服务端socket的id。 |
 | callback | AsyncCallback&lt;number&gt; | 是 | 表示回调函数的入参，客户端socket的id。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
@@ -1333,10 +1411,10 @@ sppAccept(serverSocket: number, callback: AsyncCallback&lt;number&gt;): void
 | 2900003 | Bluetooth disabled. |
 | 2900004 | Profile not supported. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@kit.BasicServicesKit';
 let serverNumber = -1;
@@ -1362,38 +1440,41 @@ try {
     console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
 }
 ```
- 
-  
 
-#### bluetoothManager.sppConnect(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## bluetoothManager.sppConnect(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sppConnect(device: string, option: SppOption, callback: AsyncCallback&lt;number&gt;): void
- 
+
 客户端向远端设备发起spp连接。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 socket.sppConnect 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | device | string | 是 | 对端设备地址，例如："XX:XX:XX:XX:XX:XX"。 |
 | option | SppOption | 是 | spp客户端连接配置参数。 |
 | callback | AsyncCallback&lt;number&gt; | 是 | 表示回调函数的入参，客户端socket的id。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -1403,10 +1484,10 @@ sppConnect(device: string, option: SppOption, callback: AsyncCallback&lt;number&
 | 2900003 | Bluetooth disabled. |
 | 2900004 | Profile not supported. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@kit.BasicServicesKit';
 
@@ -1426,44 +1507,47 @@ try {
     console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
 }
 ```
- 
-  
 
-#### bluetoothManager.sppCloseServerSocket(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## bluetoothManager.sppCloseServerSocket(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sppCloseServerSocket(socket: number): void
- 
+
 关闭服务端监听Socket，入参socket由sppListen接口返回。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 socket.sppCloseServerSocket 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | socket | number | 是 | 服务端监听socket的id。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
 | 801 | Capability not supported. |
 | 2900001 | Service stopped. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@kit.BasicServicesKit';
 let serverNumber = -1;
@@ -1480,44 +1564,47 @@ try {
     console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
 }
 ```
- 
-  
 
-#### bluetoothManager.sppCloseClientSocket(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## bluetoothManager.sppCloseClientSocket(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sppCloseClientSocket(socket: number): void
- 
+
 关闭客户端socket，入参socket由sppAccept或sppConnect接口获取。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 socket.sppCloseClientSocket 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | socket | number | 是 | 客户端socket的id。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
 | 801 | Capability not supported. |
 | 2900001 | Service stopped. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@kit.BasicServicesKit';
 let clientNumber = -1;
@@ -1535,45 +1622,48 @@ try {
     console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
 }
 ```
- 
-  
 
-#### bluetoothManager.sppWrite(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## bluetoothManager.sppWrite(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sppWrite(clientSocket: number, data: ArrayBuffer): void
- 
+
 通过socket向远端发送数据，入参clientSocket由sppAccept或sppConnect接口获取。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 socket.sppWrite 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | clientSocket | number | 是 | 客户端socket的id。 |
 | data | ArrayBuffer | 是 | 写入的数据。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
 | 801 | Capability not supported. |
 | 2901054 | IO error. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@kit.BasicServicesKit';
 let clientNumber = -1;
@@ -1594,46 +1684,49 @@ try {
     console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
 }
 ```
- 
-  
 
-#### bluetoothManager.on('sppRead')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## bluetoothManager.on('sppRead')(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'sppRead', clientSocket: number, callback: Callback&lt;ArrayBuffer&gt;): void
- 
+
 订阅spp读请求事件，入参clientSocket由sppAccept或sppConnect接口获取。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 socket.on('sppRead') 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写"sppRead"字符串，表示spp读请求事件。 |
 | clientSocket | number | 是 | 客户端socket的id。 |
 | callback | Callback&lt;ArrayBuffer&gt; | 是 | 表示回调函数的入参，读取到的数据。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
 | 801 | Capability not supported. |
 | 2901054 | IO error. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@kit.BasicServicesKit';
 let clientNumber = -1;
@@ -1655,44 +1748,47 @@ try {
     console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
 }
 ```
- 
-  
 
-#### bluetoothManager.off('sppRead')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## bluetoothManager.off('sppRead')(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'sppRead', clientSocket: number, callback?: Callback&lt;ArrayBuffer&gt;): void
- 
+
 取消订阅spp读请求事件，入参clientSocket由sppAccept或sppConnect接口获取。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 socket.off('sppRead') 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写"sppRead"字符串，表示spp读请求事件。 |
 | clientSocket | number | 是 | 客户端Socket的id。 |
 | callback | Callback&lt;ArrayBuffer&gt; | 否 | 表示取消订阅spp读请求事件上报。不填该参数则取消订阅该type对应的所有回调。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
 | 801 | Capability not supported. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@kit.BasicServicesKit';
 let clientNumber = -1;
@@ -1710,49 +1806,53 @@ try {
     console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
 }
 ```
- 
-  
 
-#### bluetoothManager.getProfileInstance(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## bluetoothManager.getProfileInstance(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getProfileInstance(profileId: ProfileId): A2dpSourceProfile | HandsFreeAudioGatewayProfile | HidHostProfile | PanProfile
- 
+
 通过ProfileId，获取profile的对象实例，API9新增了HidHostProfile，PanProfile。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | profileId | ProfileId | 是 | 表示profile的枚举值，例如：PROFILE_A2DP_SOURCE。 |
- 
- 
+
+
 **返回值：**
-  
+
+
 | 类型 | 说明 |
 | --- | --- |
 | A2dpSourceProfile \| HandsFreeAudioGatewayProfile \| HidHostProfile \| PanProfile | 对应的profile的对象实例，当前支持A2dpSourceProfile/HandsFreeAudioGatewayProfile/HidHostProfile/PanProfile。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
 | 801 | Capability not supported. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 try {
@@ -1761,86 +1861,93 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### BLE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## BLE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 BLE模块提供了对蓝牙操作和管理的方法。
- 
-  
 
-#### createGattServer(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### createGattServer(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createGattServer(): GattServer
- 
+
 创建一个可使用的GattServer实例。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.createGattServer 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **返回值：**
-  
+
+
 | 类型 | 说明 |
 | --- | --- |
 | GattServer | server端类，使用server端方法之前需要创建该类的实例进行操作。 |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 let gattServer: bluetoothManager.GattServer  = bluetoothManager.BLE.createGattServer();
 ```
- 
-  
 
-#### createGattClientDevice(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### createGattClientDevice(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createGattClientDevice(deviceId: string): GattClientDevice
- 
+
 创建一个可使用的GattClientDevice实例。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.createGattClientDevice 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 对端设备地址， 例如："XX:XX:XX:XX:XX:XX"。 |
- 
- 
+
+
 **返回值：**
-  
+
+
 | 类型 | 说明 |
 | --- | --- |
 | GattClientDevice | client端类，使用client端方法之前需要创建该类的实例进行操作。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | Capability not supported. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 try {
@@ -1849,36 +1956,39 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### getConnectedBLEDevices(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### getConnectedBLEDevices(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getConnectedBLEDevices(): Array&lt;string&gt;
- 
+
 获取和当前设备连接的BLE设备。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.getConnectedBLEDevices 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **返回值：**
-  
+
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;string&gt; | 返回当前设备作为Server端时连接BLE设备地址集合。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -1886,10 +1996,10 @@ getConnectedBLEDevices(): Array&lt;string&gt;
 | 2900001 | Service stopped. |
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 try {
@@ -1898,37 +2008,40 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### startBLEScan(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### startBLEScan(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startBLEScan(filters: Array&lt;ScanFilter&gt;, options?: ScanOptions): void
- 
+
 发起BLE扫描流程。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.startBLEScan 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | filters | Array&lt;ScanFilter&gt; | 是 | 表示扫描结果过滤策略集合，如果不使用过滤的方式，该参数设置为null。 |
 | options | ScanOptions | 否 | 表示扫描的参数配置，可选参数。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -1937,10 +2050,10 @@ startBLEScan(filters: Array&lt;ScanFilter&gt;, options?: ScanOptions): void
 | 2900001 | Service stopped. |
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```json
 import { BusinessError } from '@ohos.base';
 function onReceiveEvent(data: Array<bluetoothManager.ScanResult>) {
@@ -1963,29 +2076,31 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### stopBLEScan(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### stopBLEScan(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopBLEScan(): void
- 
+
 停止BLE扫描流程。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.stopBLEScan 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -1993,10 +2108,10 @@ stopBLEScan(): void
 | 2900001 | Service stopped. |
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 try {
@@ -2005,47 +2120,50 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### on('BLEDeviceFind')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### on('BLEDeviceFind')(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'BLEDeviceFind', callback: Callback<Array&lt;ScanResult&gt;>): void
- 
+
 订阅BLE设备发现上报事件。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.on('BLEDeviceFind') 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写"BLEDeviceFind"字符串，表示BLE设备发现事件。 |
 | callback | Callback<Array&lt;ScanResult&gt;> | 是 | 表示回调函数的入参，发现的设备集合。回调函数由用户创建通过该接口注册。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | Capability not supported. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```json
 import { BusinessError } from '@ohos.base';
 function onReceiveEvent(data: Array<bluetoothManager.ScanResult>) {
@@ -2057,47 +2175,50 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### off('BLEDeviceFind')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### off('BLEDeviceFind')(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'BLEDeviceFind', callback?: Callback<Array&lt;ScanResult&gt;>): void
- 
+
 取消订阅BLE设备发现上报事件。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.off('BLEDeviceFind') 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写"BLEDeviceFind"字符串，表示BLE设备发现事件。 |
 | callback | Callback<Array&lt;ScanResult&gt;> | 否 | 表示取消订阅BLE设备发现事件上报。不填该参数则取消订阅该type对应的所有回调。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | Capability not supported. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```json
 import { BusinessError } from '@ohos.base';
 function onReceiveEvent(data: Array<bluetoothManager.ScanResult>) {
@@ -2110,44 +2231,48 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### BaseProfile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## BaseProfile
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 profile基类。
- 
-  
 
-#### getConnectionDevices(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### getConnectionDevices(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getConnectionDevices(): Array&lt;string&gt;
- 
+
 获取已连接设备列表。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 baseProfile.getConnectedDevices 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **返回值：**
-  
+
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;string&gt; | 返回已连接设备的地址列表。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -2156,10 +2281,10 @@ getConnectionDevices(): Array&lt;string&gt;
 | 2900003 | Bluetooth disabled. |
 | 2900004 | Profile not supported. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 try {
@@ -2169,43 +2294,47 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### getDeviceState(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### getDeviceState(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDeviceState(device: string): ProfileConnectionState
- 
+
 获取设备profile的连接状态。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 baseProfile.getConnectionState 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | device | string | 是 | 远端设备地址。 |
- 
- 
+
+
 **返回值：**
-  
+
+
 | 类型 | 说明 |
 | --- | --- |
 | ProfileConnectionState | 返回profile的连接状态。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -2215,10 +2344,10 @@ getDeviceState(device: string): ProfileConnectionState
 | 2900003 | Bluetooth disabled. |
 | 2900004 | Profile not supported. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 try {
@@ -2228,48 +2357,52 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### A2dpSourceProfile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## A2dpSourceProfile
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 使用A2dpSourceProfile方法之前需要创建该类的实例进行操作，通过getProfile()方法构造此实例。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 a2dp.A2dpSourceProfile 替代。
 
- 
-  
 
-#### connect(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### connect(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 connect(device: string): void
- 
+
 发起设备的A2dp服务连接请求。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。替代接口仅向系统应用开放。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | device | string | 是 | 远端设备地址。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -2279,10 +2412,10 @@ connect(device: string): void
 | 2900003 | Bluetooth disabled. |
 | 2900004 | Profile not supported. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 try {
@@ -2292,36 +2425,39 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### disconnect(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### disconnect(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 disconnect(device: string): void
- 
+
 断开设备的a2dp服务连接。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。替代接口仅向系统应用开放。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | device | string | 是 | 远端设备地址。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -2331,10 +2467,10 @@ disconnect(device: string): void
 | 2900003 | Bluetooth disabled. |
 | 2900004 | Profile not supported. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 try {
@@ -2344,45 +2480,48 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### on('connectionStateChange')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### on('connectionStateChange')(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'connectionStateChange', callback: Callback<[StateChangeParam](#statechangeparamdeprecated)>): void
- 
+
 订阅a2dp连接状态变化事件。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 baseProfile.on('connectionStateChange') 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写"connectionStateChange"字符串，表示连接状态变化事件。 |
 | callback | Callback&lt;StateChangeParam&gt; | 是 | 表示回调函数的入参。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | Capability not supported. |
- 
- 
+
+
 **示例：**
- 
+
 ```json
 import { BusinessError } from '@ohos.base';
 function onReceiveEvent(data: bluetoothManager.StateChangeParam) {
@@ -2395,45 +2534,48 @@ a2dpSrc.on('connectionStateChange', onReceiveEvent);
     console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### off('connectionStateChange')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### off('connectionStateChange')(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'connectionStateChange', callback?: Callback<[StateChangeParam](#statechangeparamdeprecated)>): void
- 
+
 取消订阅a2dp连接状态变化事件。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 baseProfile.off('connectionStateChange') 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写"connectionStateChange"字符串，表示连接状态变化事件。 |
 | callback | Callback&lt;StateChangeParam&gt; | 否 | 表示回调函数的入参。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | Capability not supported. |
- 
- 
+
+
 **示例：**
- 
+
 ```json
 import { BusinessError } from '@ohos.base';
 function onReceiveEvent(data: bluetoothManager.StateChangeParam) {
@@ -2447,43 +2589,47 @@ a2dpSrc.off('connectionStateChange', onReceiveEvent);
     console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### getPlayingState(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### getPlayingState(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPlayingState(device: string): PlayingState
- 
+
 获取设备的播放状态。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 getPlayingState 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | device | string | 是 | 远端设备地址。 |
- 
- 
+
+
 **返回值：**
-  
+
+
 | 类型 | 说明 |
 | --- | --- |
 | PlayingState | 远端设备的播放状态。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
@@ -2492,10 +2638,10 @@ getPlayingState(device: string): PlayingState
 | 2900003 | Bluetooth disabled. |
 | 2900004 | Profile not supported. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 try {
@@ -2505,48 +2651,52 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### HandsFreeAudioGatewayProfile(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## HandsFreeAudioGatewayProfile(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 使用HandsFreeAudioGatewayProfile方法之前需要创建该类的实例进行操作，通过getProfile()方法构造此实例。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 hfp.HandsFreeAudioGatewayProfile 替代。
 
- 
-  
 
-#### connect(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### connect(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 connect(device: string): void
- 
+
 连接设备的HFP服务。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。替代接口仅向系统应用开放。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | device | string | 是 | 远端设备地址。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -2556,10 +2706,10 @@ connect(device: string): void
 | 2900003 | Bluetooth disabled. |
 | 2900004 | Profile not supported. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 try {
@@ -2569,36 +2719,39 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### disconnect(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### disconnect(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 disconnect(device: string): void
- 
+
 断开连接设备的HFP服务。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。替代接口仅向系统应用开放。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | device | string | 是 | 远端设备地址。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -2608,10 +2761,10 @@ disconnect(device: string): void
 | 2900003 | Bluetooth disabled. |
 | 2900004 | Profile not supported. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 try {
@@ -2621,45 +2774,48 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### on('connectionStateChange')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### on('connectionStateChange')(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'connectionStateChange', callback: Callback<[StateChangeParam](#statechangeparamdeprecated)>): void
- 
+
 订阅HFP连接状态变化事件。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 baseProfile.on('connectionStateChange') 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写"connectionStateChange"字符串，表示连接状态变化事件。 |
 | callback | Callback&lt;StateChangeParam&gt; | 是 | 表示回调函数的入参。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | Capability not supported. |
- 
- 
+
+
 **示例：**
- 
+
 ```json
 import { BusinessError } from '@ohos.base';
 function onReceiveEvent(data: bluetoothManager.StateChangeParam) {
@@ -2673,44 +2829,47 @@ hfpAg.on('connectionStateChange', onReceiveEvent);
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### off('connectionStateChange')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### off('connectionStateChange')(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'connectionStateChange', callback?: Callback<[StateChangeParam](#statechangeparamdeprecated)>): void
- 
+
 取消订阅HFP连接状态变化事件。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 baseProfile.off('connectionStateChange') 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写"connectionStateChange"字符串，表示连接状态变化事件。 |
 | callback | Callback&lt;StateChangeParam&gt; | 否 | 表示回调函数的入参。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | Capability not supported. |
 | 示例： |  |
- 
- 
+
+
 ```json
 import { BusinessError } from '@ohos.base';
 function onReceiveEvent(data: bluetoothManager.StateChangeParam) {
@@ -2725,53 +2884,57 @@ hfpAg.off('connectionStateChange', onReceiveEvent);
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### HidHostProfile(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## HidHostProfile(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 使用HidHostProfile方法之前需要创建该类的实例进行操作，通过getProfile()方法构造此实例。
- 
-  
 
-#### on('connectionStateChange')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### on('connectionStateChange')(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'connectionStateChange', callback: Callback<[StateChangeParam](#statechangeparamdeprecated)>): void
- 
+
 订阅HidHost连接状态变化事件。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 baseProfile.on('connectionStateChange') 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写"connectionStateChange"字符串，表示连接状态变化事件。 |
 | callback | Callback&lt;StateChangeParam&gt; | 是 | 表示回调函数的入参。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | Capability not supported. |
- 
- 
+
+
 **示例：**
- 
+
 ```json
 import { BusinessError } from '@ohos.base';
 function onReceiveEvent(data: bluetoothManager.StateChangeParam) {
@@ -2784,45 +2947,48 @@ hidHost.on('connectionStateChange', onReceiveEvent);
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### off('connectionStateChange')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### off('connectionStateChange')(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'connectionStateChange', callback?: Callback<[StateChangeParam](#statechangeparamdeprecated)>): void
- 
+
 取消订阅HidHost连接状态变化事件。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 baseProfile.off('connectionStateChange') 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写"connectionStateChange"字符串，表示连接状态变化事件。 |
 | callback | Callback&lt;StateChangeParam&gt; | 否 | 表示回调函数的入参。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | Capability not supported. |
- 
- 
+
+
 **示例：**
- 
+
 ```json
 import { BusinessError } from '@ohos.base';
 function onReceiveEvent(data: bluetoothManager.StateChangeParam) {
@@ -2836,57 +3002,61 @@ hidHost.off('connectionStateChange', onReceiveEvent);
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### PanProfile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## PanProfile
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 使用PanProfile方法之前需要创建该类的实例进行操作，通过getProfile()方法构造此实例。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 pan.createPanProfile 替代。
 
- 
-  
 
-#### on('connectionStateChange')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### on('connectionStateChange')(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'connectionStateChange', callback: Callback<[StateChangeParam](#statechangeparamdeprecated)>): void
- 
+
 订阅Pan连接状态变化事件。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 baseProfile.on('connectionStateChange') 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写"connectionStateChange"字符串，表示连接状态变化事件。 |
 | callback | Callback&lt;StateChangeParam&gt; | 是 | 表示回调函数的入参。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | Capability not supported. |
- 
- 
+
+
 **示例：**
- 
+
 ```json
 import { BusinessError } from '@ohos.base';
 function onReceiveEvent(data: bluetoothManager.StateChangeParam) {
@@ -2899,45 +3069,48 @@ panProfile.on('connectionStateChange', onReceiveEvent);
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### off('connectionStateChange')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### off('connectionStateChange')(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'connectionStateChange', callback?: Callback<[StateChangeParam](#statechangeparamdeprecated)>): void
- 
+
 取消订阅Pan连接状态变化事件。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 baseProfile.off('connectionStateChange') 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写"connectionStateChange"字符串，表示连接状态变化事件。 |
 | callback | Callback&lt;StateChangeParam&gt; | 否 | 表示回调函数的入参。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | Capability not supported. |
- 
- 
+
+
 **示例：**
- 
+
 ```json
 import { BusinessError } from '@ohos.base';
 function onReceiveEvent(data: bluetoothManager.StateChangeParam) {
@@ -2951,50 +3124,54 @@ panProfile.off('connectionStateChange', onReceiveEvent);
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### GattServer
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## GattServer
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 server端类，使用server端方法之前需要创建该类的实例进行操作，通过createGattServer()方法构造此实例。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattServer 替代。
 
- 
-  
 
-#### startAdvertising(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### startAdvertising(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startAdvertising(setting: AdvertiseSetting, advData: AdvertiseData, advResponse?: AdvertiseData): void
- 
+
 开始发送BLE广播。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.startAdvertising 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| setting | AdvertiseSetting | 是 | BLE广播的相关参数。 |
-| advData | AdvertiseData | 是 | BLE广播包内容。 |
-| advResponse | AdvertiseData | 否 | BLE回复扫描请求回复响应。 |
- 
- 
+| setting | AdvertiseSetting | 是 | 广播的发送参数。 |
+| advData | AdvertiseData | 是 | 需要发送的广播报文数据内容。 |
+| advResponse | AdvertiseData | 否 | 回复扫描请求的广播报文数据内容。 |
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -3003,10 +3180,10 @@ startAdvertising(setting: AdvertiseSetting, advData: AdvertiseData, advResponse?
 | 2900001 | Service stopped. |
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```json
 import { BusinessError } from '@ohos.base';
 let manufactureValueBuffer = new Uint8Array(4);
@@ -3052,29 +3229,31 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### stopAdvertising(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### stopAdvertising(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopAdvertising(): void
- 
+
 停止发送BLE广播。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.stopAdvertising 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -3082,10 +3261,10 @@ stopAdvertising(): void
 | 2900001 | Service stopped. |
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 let server = bluetoothManager.BLE.createGattServer();
@@ -3095,36 +3274,39 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### addService(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### addService(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addService(service: GattService): void
- 
+
 server端添加服务。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattServer#addService 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | service | GattService | 是 | 服务端的service数据。BLE广播的相关参数 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -3133,10 +3315,10 @@ server端添加服务。
 | 2900001 | Service stopped. |
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 // 创建descriptors
@@ -3170,36 +3352,39 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### removeService(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### removeService(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeService(serviceUuid: string): void
- 
+
 删除已添加的服务。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattServer#removeService 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | serviceUuid | string | 是 | service的UUID，例如“00001810-0000-1000-8000-00805F9B34FB”。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -3209,10 +3394,10 @@ removeService(serviceUuid: string): void
 | 2900003 | Bluetooth disabled. |
 | 2900004 | Profile not supported. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 let server = bluetoothManager.BLE.createGattServer();
@@ -3222,29 +3407,31 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### close(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### close(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(): void
- 
+
 关闭服务端功能，去注册server在协议栈的注册，调用该接口后[GattServer](#gattserver)实例将不能再使用。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattServer#close 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -3252,10 +3439,10 @@ close(): void
 | 2900001 | Service stopped. |
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 let server = bluetoothManager.BLE.createGattServer();
@@ -3265,37 +3452,40 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### notifyCharacteristicChanged(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### notifyCharacteristicChanged(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 notifyCharacteristicChanged(deviceId: string, notifyCharacteristic: NotifyCharacteristic): void
- 
+
 server端特征值发生变化时，主动通知已连接的client设备。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattServer#notifyCharacteristicChanged 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 接收通知的client端设备地址，例如“XX:XX:XX:XX:XX:XX”。 |
 | notifyCharacteristic | NotifyCharacteristic | 是 | 通知的特征值数据。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -3304,10 +3494,10 @@ server端特征值发生变化时，主动通知已连接的client设备。
 | 2900001 | Service stopped. |
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 // 创建descriptors
@@ -3331,36 +3521,39 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### sendResponse(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### sendResponse(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sendResponse(serverResponse: ServerResponse): void
- 
+
 server端回复client端的读写请求。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattServer#sendResponse 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | serverResponse | ServerResponse | 是 | server端回复的响应数据。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -3369,10 +3562,10 @@ server端回复client端的读写请求。
 | 2900001 | Service stopped. |
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 /* send response */
@@ -3394,46 +3587,49 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### on('characteristicRead')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### on('characteristicRead')(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'characteristicRead', callback: Callback&lt;CharacteristicReadRequest&gt;): void
- 
+
 server端订阅特征值读请求事件。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattServer#on('characteristicRead') 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写"characteristicRead"字符串，表示特征值读请求事件。 |
 | callback | Callback&lt;CharacteristicReadRequest&gt; | 是 | 表示回调函数的入参，client端发送的读请求数据。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | Capability not supported. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 let arrayBufferCCC = new ArrayBuffer(8);
@@ -3457,46 +3653,49 @@ function ReadCharacteristicReq(characteristicReadRequest: bluetoothManager.Chara
 let gattServer = bluetoothManager.BLE.createGattServer();
 gattServer.on("characteristicRead", ReadCharacteristicReq);
 ```
- 
-  
 
-#### off('characteristicRead')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### off('characteristicRead')(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'characteristicRead', callback?: Callback&lt;CharacteristicReadRequest&gt;): void
- 
+
 server端取消订阅特征值读请求事件。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattServer#off('characteristicRead') 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写"characteristicRead"字符串，表示特征值读请求事件。 |
 | callback | Callback&lt;CharacteristicReadRequest&gt; | 否 | 表示取消订阅特征值读请求事件上报。不填该参数则取消订阅该type对应的所有回调。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | Capability not supported. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 try {
@@ -3506,46 +3705,49 @@ gattServer.off("characteristicRead");
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### on('characteristicWrite')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### on('characteristicWrite')(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'characteristicWrite', callback: Callback&lt;CharacteristicWriteRequest&gt;): void
- 
+
 server端订阅特征值写请求事件。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattServer#on('characteristicWrite') 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写"characteristicWrite"字符串，表示特征值写请求事件。 |
 | callback | Callback&lt;CharacteristicWriteRequest&gt; | 是 | 表示回调函数的入参，client端发送的写请求数据。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | Capability not supported. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 let arrayBufferCCC = new ArrayBuffer(8);
@@ -3572,46 +3774,49 @@ function WriteCharacteristicReq(characteristicWriteRequest: bluetoothManager.Cha
 let gattServer = bluetoothManager.BLE.createGattServer();
 gattServer.on("characteristicWrite", WriteCharacteristicReq);
 ```
- 
-  
 
-#### off('characteristicWrite')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### off('characteristicWrite')(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'characteristicWrite', callback?: Callback&lt;CharacteristicWriteRequest&gt;): void
- 
+
 server端取消订阅特征值写请求事件。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattServer#off('characteristicWrite') 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写"characteristicWrite"字符串，表示特征值写请求事件。 |
 | callback | Callback&lt;CharacteristicWriteRequest&gt; | 否 | 表示取消订阅特征值写请求事件上报。不填该参数则取消订阅该type对应的所有回调。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | Capability not supported. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 try {
@@ -3621,46 +3826,49 @@ gattServer.off("characteristicWrite");
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### on('descriptorRead')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### on('descriptorRead')(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'descriptorRead', callback: Callback&lt;DescriptorReadRequest&gt;): void
- 
+
 server端订阅描述符读请求事件。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattServer#on('descriptorRead') 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写"descriptorRead"字符串，表示描述符读请求事件。 |
 | callback | Callback&lt;DescriptorReadRequest&gt; | 是 | 表示回调函数的入参，client端发送的读请求数据。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | Capability not supported. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@kit.BasicServicesKit';
 let arrayBufferDesc = new ArrayBuffer(8);
@@ -3684,46 +3892,49 @@ function ReadDescriptorReq(descriptorReadRequest: bluetoothManager.DescriptorRea
 let gattServer = bluetoothManager.BLE.createGattServer();
 gattServer.on("descriptorRead", ReadDescriptorReq);
 ```
- 
-  
 
-#### off('descriptorRead')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### off('descriptorRead')(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'descriptorRead', callback?: Callback&lt;DescriptorReadRequest&gt;): void
- 
+
 server端取消订阅描述符读请求事件。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattServer#off('descriptorRead') 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写"descriptorRead"字符串，表示描述符读请求事件。 |
 | callback | Callback&lt;DescriptorReadRequest&gt; | 否 | 表示取消订阅描述符读请求事件上报。不填该参数则取消订阅该type对应的所有回调。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | Capability not supported. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 try {
@@ -3733,46 +3944,49 @@ gattServer.off("descriptorRead");
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### on('descriptorWrite')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### on('descriptorWrite')(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'descriptorWrite', callback: Callback&lt;DescriptorWriteRequest&gt;): void
- 
+
 server端订阅描述符写请求事件。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattServer#on('descriptorWrite') 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写"descriptorWrite"字符串，表示描述符写请求事件。 |
 | callback | Callback&lt;DescriptorWriteRequest&gt; | 是 | 表示回调函数的入参，client端发送的写请求数据。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | Capability not supported. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 let arrayBufferDesc = new ArrayBuffer(8);
@@ -3799,46 +4013,49 @@ function WriteDescriptorReq(descriptorWriteRequest: bluetoothManager.DescriptorW
 let gattServer = bluetoothManager.BLE.createGattServer();
 gattServer.on("descriptorWrite", WriteDescriptorReq);
 ```
- 
-  
 
-#### off('descriptorWrite')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### off('descriptorWrite')(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'descriptorWrite', callback?: Callback&lt;DescriptorWriteRequest&gt;): void
- 
+
 server端取消订阅描述符写请求事件。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattServer#off('descriptorWrite') 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写"descriptorWrite"字符串，表示描述符写请求事件。 |
 | callback | Callback&lt;DescriptorWriteRequest&gt; | 否 | 表示取消订阅描述符写请求事件上报。不填该参数则取消订阅该type对应的所有回调。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | Capability not supported. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 try {
@@ -3848,46 +4065,49 @@ gattServer.off("descriptorWrite");
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### on('connectStateChange')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### on('connectStateChange')(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'connectStateChange', callback: Callback&lt;BLEConnectChangedState&gt;): void
- 
+
 server端订阅BLE连接状态变化事件。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattServer#on('connectionStateChange') 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写"connectStateChange"字符串，表示BLE连接状态变化事件。 |
 | callback | Callback&lt;BLEConnectChangedState&gt; | 是 | 表示回调函数的入参，连接状态。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | Capability not supported. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 function Connected(BLEConnectChangedState: bluetoothManager.BLEConnectChangedState) {
@@ -3901,46 +4121,49 @@ gattServer.on("connectStateChange", Connected);
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### off('connectStateChange')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### off('connectStateChange')(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'connectStateChange', callback?: Callback&lt;BLEConnectChangedState&gt;): void
- 
+
 server端取消订阅BLE连接状态变化事件。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattServer#off('connectionStateChange') 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写"connectStateChange"字符串，表示BLE连接状态变化事件。 |
 | callback | Callback&lt;BLEConnectChangedState&gt; | 否 | 表示取消订阅BLE连接状态变化事件。不填该参数则取消订阅该type对应的所有回调。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | Capability not supported. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 try {
@@ -3950,41 +4173,44 @@ gattServer.off("connectStateChange");
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### GattClientDevice
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## GattClientDevice
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 client端类，使用client端方法之前需要创建该类的实例进行操作，通过createGattClientDevice(deviceId: string)方法构造此实例。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattClientDevice 替代。
 
- 
-  
 
-#### connect(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### connect(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 connect(): void
- 
+
 client端发起连接远端蓝牙低功耗设备。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattClientDevice#connect 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -3992,10 +4218,10 @@ client端发起连接远端蓝牙低功耗设备。
 | 2900001 | Service stopped. |
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 try {
@@ -4005,29 +4231,31 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### disconnect(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### disconnect(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 disconnect(): void
- 
+
 client端断开与远端蓝牙低功耗设备的连接。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattClientDevice#disconnect 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -4035,10 +4263,10 @@ client端断开与远端蓝牙低功耗设备的连接。
 | 2900001 | Service stopped. |
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 try {
@@ -4048,29 +4276,31 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### close(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### close(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(): void
- 
+
 关闭客户端功能，注销client在协议栈的注册，调用该接口后[GattClientDevice](#gattclientdevice)实例将不能再使用。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattClientDevice#close 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -4078,10 +4308,10 @@ close(): void
 | 2900001 | Service stopped. |
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 try {
@@ -4091,36 +4321,39 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### getServices(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### getServices(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getServices(callback: AsyncCallback<Array&lt;GattService&gt;>): void
- 
+
 client端获取蓝牙低功耗设备的所有服务，即服务发现。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattClientDevice#getServices 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<Array&lt;GattService&gt;> | 是 | client进行服务发现，通过注册回调函数获取。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -4128,10 +4361,10 @@ client端获取蓝牙低功耗设备的所有服务，即服务发现。
 | 801 | Capability not supported. |
 | 2900001 | Service stopped. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@kit.BasicServicesKit';
 // callback 模式
@@ -4155,36 +4388,39 @@ try {
     console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
 }
 ```
- 
-  
 
-#### getServices(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### getServices(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getServices(): Promise<Array&lt;GattService&gt;>
- 
+
 client端获取蓝牙低功耗设备的所有服务，即服务发现。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattClientDevice#getServices 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **返回值：**
-  
+
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;GattService&gt;> | client进行服务发现，通过promise形式获取。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -4192,10 +4428,10 @@ client端获取蓝牙低功耗设备的所有服务，即服务发现。
 | 801 | Capability not supported. |
 | 2900001 | Service stopped. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```json
 import { BusinessError } from '@ohos.base';
 // Promise 模式
@@ -4209,37 +4445,40 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### readCharacteristicValue(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### readCharacteristicValue(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readCharacteristicValue(characteristic: BLECharacteristic, callback: AsyncCallback&lt;BLECharacteristic&gt;): void
- 
+
 client端读取蓝牙低功耗设备特定服务的特征值。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattClientDevice#readCharacteristicValue 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | characteristic | BLECharacteristic | 是 | 待读取的特征值。 |
 | callback | AsyncCallback&lt;BLECharacteristic&gt; | 是 | client读取特征值，通过注册回调函数获取。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -4248,10 +4487,10 @@ client端读取蓝牙低功耗设备特定服务的特征值。
 | 2900001 | Service stopped. |
 | 2901000 | Read forbidden. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@kit.BasicServicesKit';
 function readCcc(code: BusinessError, BLECharacteristic: bluetoothManager.BLECharacteristic) {
@@ -4286,43 +4525,47 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### readCharacteristicValue(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### readCharacteristicValue(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readCharacteristicValue(characteristic: BLECharacteristic): Promise&lt;BLECharacteristic&gt;
- 
+
 client端读取蓝牙低功耗设备特定服务的特征值。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattClientDevice#readCharacteristicValue 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | characteristic | BLECharacteristic | 是 | 待读取的特征值。 |
- 
- 
+
+
 **返回值：**
-  
+
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;BLECharacteristic&gt; | client读取特征值，通过promise形式获取。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -4331,10 +4574,10 @@ client端读取蓝牙低功耗设备特定服务的特征值。
 | 2900001 | Service stopped. |
 | 2901000 | Read forbidden. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 let descriptors: Array<bluetoothManager.BLEDescriptor> = [];
@@ -4360,37 +4603,40 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### readDescriptorValue(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### readDescriptorValue(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readDescriptorValue(descriptor: BLEDescriptor, callback: AsyncCallback&lt;BLEDescriptor&gt;): void
- 
+
 client端读取蓝牙低功耗设备特定的特征包含的描述符。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattClientDevice#readDescriptorValue 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | descriptor | BLEDescriptor | 是 | 待读取的描述符。 |
 | callback | AsyncCallback&lt;BLEDescriptor&gt; | 是 | client读取描述符，通过注册回调函数获取。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -4399,10 +4645,10 @@ client端读取蓝牙低功耗设备特定的特征包含的描述符。
 | 2900001 | Service stopped. |
 | 2901000 | Read forbidden. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@kit.BasicServicesKit';
 function readDesc(code: BusinessError, BLEDescriptor: bluetoothManager.BLEDescriptor) {
@@ -4429,43 +4675,47 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### readDescriptorValue(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### readDescriptorValue(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readDescriptorValue(descriptor: BLEDescriptor): Promise&lt;BLEDescriptor&gt;
- 
+
 client端读取蓝牙低功耗设备特定的特征包含的描述符。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattClientDevice#readDescriptorValue 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | descriptor | BLEDescriptor | 是 | 待读取的描述符。 |
- 
- 
+
+
 **返回值：**
-  
+
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;BLEDescriptor&gt; | client读取描述符，通过promise形式获取。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -4474,10 +4724,10 @@ client端读取蓝牙低功耗设备特定的特征包含的描述符。
 | 2900001 | Service stopped. |
 | 2901000 | Read forbidden. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 let bufferDesc = new ArrayBuffer(8);
@@ -4496,36 +4746,39 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### writeCharacteristicValue(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### writeCharacteristicValue(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeCharacteristicValue(characteristic: BLECharacteristic): void
- 
+
 client端向低功耗蓝牙设备写入特定的特征值。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattClientDevice#writeCharacteristicValue 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | characteristic | BLECharacteristic | 是 | 蓝牙设备特征对应的二进制值及其它参数。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -4534,10 +4787,10 @@ client端向低功耗蓝牙设备写入特定的特征值。
 | 2900001 | Service stopped. |
 | 2901001 | Write forbidden. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 let descriptors: Array<bluetoothManager.BLEDescriptor> = [];
@@ -4562,36 +4815,39 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### writeDescriptorValue(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### writeDescriptorValue(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeDescriptorValue(descriptor: BLEDescriptor): void
- 
+
 client端向低功耗蓝牙设备特定的描述符写入二进制数据。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattClientDevice#writeDescriptorValue 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | descriptor | BLEDescriptor | 是 | 蓝牙设备描述符的二进制值及其它参数。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -4600,10 +4856,10 @@ client端向低功耗蓝牙设备特定的描述符写入二进制数据。
 | 2900001 | Service stopped. |
 | 2901001 | Write forbidden. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 let bufferDesc = new ArrayBuffer(8);
@@ -4622,36 +4878,39 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### setBLEMtuSize(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### setBLEMtuSize(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setBLEMtuSize(mtu: number): void
- 
+
 client协商远端蓝牙低功耗设备的最大传输单元（Maximum Transmission Unit, MTU），调用[connect](#connectdeprecated-1)接口连接成功后才能使用。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattClientDevice#setBLEMtuSize 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mtu | number | 是 | 设置范围为22~512字节。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -4659,10 +4918,10 @@ client协商远端蓝牙低功耗设备的最大传输单元（Maximum Transmiss
 | 801 | Capability not supported. |
 | 2900001 | Service stopped. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 try {
@@ -4672,37 +4931,40 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### setNotifyCharacteristicChanged(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### setNotifyCharacteristicChanged(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setNotifyCharacteristicChanged(characteristic: BLECharacteristic, enable: boolean): void
- 
+
 向服务端发送设置通知此特征值请求。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattClientDevice#setCharacteristicChangeNotification 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | characteristic | BLECharacteristic | 是 | 蓝牙低功耗特征。 |
 | enable | boolean | 是 | 启用接收notify设置为true，否则设置为false。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -4710,10 +4972,10 @@ setNotifyCharacteristicChanged(characteristic: BLECharacteristic, enable: boolea
 | 801 | Capability not supported. |
 | 2900001 | Service stopped. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 // 创建descriptors
@@ -4739,45 +5001,48 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### on('BLECharacteristicChange')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### on('BLECharacteristicChange')(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'BLECharacteristicChange', callback: Callback&lt;BLECharacteristic&gt;): void
- 
+
 订阅蓝牙低功耗设备的特征值变化事件。需要先调用setNotifyCharacteristicChanged接口才能接收server端的通知。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattClientDevice#on('BLECharacteristicChange') 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写"BLECharacteristicChange"字符串，表示特征值变化事件。 |
 | callback | Callback&lt;BLECharacteristic&gt; | 是 | 表示蓝牙低功耗设备的特征值变化事件的回调函数。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
 | 801 | Capability not supported. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 function CharacteristicChange(characteristicChangeReq: ble.BLECharacteristic) {
@@ -4792,45 +5057,48 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### off('BLECharacteristicChange')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### off('BLECharacteristicChange')(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'BLECharacteristicChange', callback?: Callback&lt;BLECharacteristic&gt;): void
- 
+
 取消订阅蓝牙低功耗设备的特征值变化事件。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattClientDevice#off('BLECharacteristicChange') 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写"BLECharacteristicChange"字符串，表示特征值变化事件。 |
 | callback | Callback&lt;BLECharacteristic&gt; | 否 | 表示取消订阅蓝牙低功耗设备的特征值变化事件。不填该参数则取消订阅该type对应的所有回调。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
 | 801 | Capability not supported. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 try {
@@ -4840,45 +5108,48 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### on('BLEConnectionStateChange')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### on('BLEConnectionStateChange')(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'BLEConnectionStateChange', callback: Callback&lt;BLEConnectChangedState&gt;): void
- 
+
 client端订阅蓝牙低功耗设备的连接状态变化事件。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattClientDevice#on('BLEConnectionStateChange') 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写"BLEConnectionStateChange"字符串，表示连接状态变化事件。 |
 | callback | Callback&lt;BLEConnectChangedState&gt; | 是 | 表示连接状态，已连接或断开。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
 | 801 | Capability not supported. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@kit.BasicServicesKit';
 function ConnectStateChanged(state: bluetoothManager.BLEConnectChangedState) {
@@ -4892,45 +5163,48 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### off('BLEConnectionStateChange')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### off('BLEConnectionStateChange')(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'BLEConnectionStateChange', callback?: Callback&lt;BLEConnectChangedState&gt;): void
- 
+
 取消订阅蓝牙低功耗设备的连接状态变化事件。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattClientDevice#off('BLEConnectionStateChange') 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写"BLEConnectionStateChange"字符串，表示连接状态变化事件。 |
 | callback | Callback&lt;BLEConnectChangedState&gt; | 否 | 表示取消订阅蓝牙低功耗设备的连接状态变化事件。不填该参数则取消订阅该type对应的所有回调。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
 | 801 | Capability not supported. |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import { BusinessError } from '@ohos.base';
 try {
@@ -4940,36 +5214,39 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### getDeviceName(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### getDeviceName(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDeviceName(callback: AsyncCallback&lt;string&gt;): void
- 
+
 client获取远端蓝牙低功耗设备名。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattClientDevice#getDeviceName 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;string&gt; | 是 | client获取对端server设备名，通过注册回调函数获取。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -4977,10 +5254,10 @@ client获取远端蓝牙低功耗设备名。
 | 801 | Capability not supported. |
 | 2900001 | Service stopped. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```json
 import { BusinessError } from '@ohos.base';
 // callback
@@ -4995,36 +5272,39 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### getDeviceName(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### getDeviceName(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDeviceName(): Promise&lt;string&gt;
- 
+
 client获取远端蓝牙低功耗设备名。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattClientDevice#getDeviceName 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **返回值：**
-  
+
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | client获取对端server设备名，通过promise形式获取。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -5032,10 +5312,10 @@ client获取远端蓝牙低功耗设备名。
 | 801 | Capability not supported. |
 | 2900001 | Service stopped. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```json
 import { BusinessError } from '@ohos.base';
 // promise
@@ -5049,46 +5329,49 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### getRssiValue(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### getRssiValue(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRssiValue(callback: AsyncCallback&lt;number&gt;): void
- 
+
 client获取远端蓝牙低功耗设备的信号强度 (Received Signal Strength Indication, RSSI)，调用[connect](#connectdeprecated-1)接口连接成功后才能使用。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattClientDevice#getRssiValue 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;number&gt; | 是 | 返回信号强度，单位 dBm，通过注册回调函数获取。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
 | 801 | Capability not supported. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```json
 import { BusinessError } from '@ohos.base';
 // callback
@@ -5103,46 +5386,49 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### getRssiValue(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### getRssiValue(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRssiValue(): Promise&lt;number&gt;
- 
+
 client获取远端蓝牙低功耗设备的信号强度 (Received Signal Strength Indication, RSSI)，调用[connect](#connectdeprecated-1)接口连接成功后才能使用。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattClientDevice#getRssiValue 替代。
 
- 
+
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
- 
+
 **返回值：**
-  
+
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | 返回信号强度，单位 dBm，通过promise形式获取。 |
- 
- 
+
+
 **错误码**：
- 
+
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-  
+
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
 | 801 | Capability not supported. |
 | 2900099 | Operation failed. |
- 
- 
+
+
 **示例：**
- 
+
 ```json
 import { BusinessError } from '@ohos.base';
 // promise
@@ -5155,21 +5441,23 @@ try {
     console.error("errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
 }
 ```
- 
-  
 
-#### ScanMode(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## ScanMode(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，扫描模式。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 connection.ScanMode 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
-  
+
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SCAN_MODE_NONE | 0 | 没有扫描模式。 |
@@ -5178,171 +5466,187 @@ try {
 | SCAN_MODE_LIMITED_DISCOVERABLE | 3 | limited发现模式。 |
 | SCAN_MODE_CONNECTABLE_GENERAL_DISCOVERABLE | 4 | 可连接general发现模式。 |
 | SCAN_MODE_CONNECTABLE_LIMITED_DISCOVERABLE | 5 | 可连接limited发现模式。 |
- 
- 
-  
 
-#### BondState(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+## BondState(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，配对状态。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 connection.BondState 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
-  
+
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | BOND_STATE_INVALID | 0 | 无效的配对。 |
 | BOND_STATE_BONDING | 1 | 正在配对。 |
 | BOND_STATE_BONDED | 2 | 已配对。 |
- 
- 
-  
 
-#### SppOption(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+## SppOption(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述spp的配置参数。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 socket.SppOption 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
-  
+
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| uuid | string | 否 | 否 | spp单据的uuid。 |
+| uuid | string | 否 | 否 | 套接字链路类型的服务UUID。 |
 | secure | boolean | 否 | 否 | 是否是安全通道。 |
 | type | SppType | 否 | 否 | Spp链路类型。 |
- 
- 
-  
 
-#### SppType(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+## SppType(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，Spp链路类型。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 socket.SppType 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
-  
+
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SPP_RFCOMM | 0 | 表示rfcomm链路类型。 |
- 
- 
-  
 
-#### GattService(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+## GattService(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述service的接口参数定义。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.GattService 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
-  
+
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | serviceUuid | string | 否 | 否 | 特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。 |
 | isPrimary | boolean | 否 | 否 | 如果是主服务设置为true，否则设置为false。 |
 | characteristics | Array&lt;BLECharacteristic&gt; | 否 | 否 | 当前服务包含的特征列表。 |
 | includeServices | Array&lt;GattService&gt; | 否 | 是 | 当前服务依赖的其它服务。 |
- 
- 
-  
 
-#### BLECharacteristic(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+## BLECharacteristic(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述characteristic的接口参数定义。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.BLECharacteristic 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
-  
+
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | serviceUuid | string | 否 | 否 | 特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。 |
 | characteristicUuid | string | 否 | 否 | 特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。 |
 | characteristicValue | ArrayBuffer | 否 | 否 | 特征对应的二进制值。 |
 | descriptors | Array&lt;BLEDescriptor&gt; | 否 | 否 | 特定特征的描述符列表。 |
- 
- 
-  
 
-#### BLEDescriptor(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+## BLEDescriptor(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述descriptor的接口参数定义。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.BLEDescriptor 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
-  
+
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | serviceUuid | string | 否 | 否 | 特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。 |
 | characteristicUuid | string | 否 | 否 | 特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。 |
 | descriptorUuid | string | 否 | 否 | 描述符（descriptor）的UUID，例如：00002902-0000-1000-8000-00805f9b34fb。 |
 | descriptorValue | ArrayBuffer | 否 | 否 | 描述符对应的二进制值。 |
- 
- 
-  
 
-#### NotifyCharacteristic(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+## NotifyCharacteristic(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述server端特征值变化时发送的特征通知参数定义。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.NotifyCharacteristic 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
-  
+
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | serviceUuid | string | 否 | 否 | 特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。 |
 | characteristicUuid | string | 否 | 否 | 特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。 |
 | characteristicValue | ArrayBuffer | 否 | 否 | 特征对应的二进制值。 |
 | confirm | boolean | 否 | 否 | 如果是notification则对端回复确认设置为true，如果是indication则对端不需要回复确认设置为false。 |
- 
- 
-  
 
-#### CharacteristicReadRequest(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+## CharacteristicReadRequest(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述server端订阅后收到的特征值读请求事件参数结构。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.CharacteristicReadRequest 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
-  
+
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | deviceId | string | 否 | 否 | 表示发送特征值读请求的远端设备地址，例如："XX:XX:XX:XX:XX:XX"。 |
@@ -5350,22 +5654,24 @@ try {
 | offset | number | 否 | 否 | 表示读特征值数据的起始位置。例如：k表示从第k个字节开始读，server端回复响应时需填写相同的offset。 |
 | characteristicUuid | string | 否 | 否 | 特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。 |
 | serviceUuid | string | 否 | 否 | 特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。 |
- 
- 
-  
 
-#### CharacteristicWriteRequest(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+## CharacteristicWriteRequest(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述server端订阅后收到的特征值写请求事件参数结构。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.CharacteristicWriteRequest 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
-  
+
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | deviceId | string | 否 | 否 | 表示发送特征值写请求的远端设备地址，例如："XX:XX:XX:XX:XX:XX"。 |
@@ -5376,22 +5682,24 @@ try {
 | value | ArrayBuffer | 否 | 否 | 表示写入的描述符二进制数据。 |
 | characteristicUuid | string | 否 | 否 | 特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。 |
 | serviceUuid | string | 否 | 否 | 特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。 |
- 
- 
-  
 
-#### DescriptorReadRequest(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+## DescriptorReadRequest(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述server端订阅后收到的描述符读请求事件参数结构。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.DescriptorReadRequest 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
-  
+
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | deviceId | string | 否 | 否 | 表示发送描述符读请求的远端设备地址，例如："XX:XX:XX:XX:XX:XX"。 |
@@ -5400,22 +5708,24 @@ try {
 | descriptorUuid | string | 否 | 否 | 表示描述符（descriptor）的UUID，例如：00002902-0000-1000-8000-00805f9b34fb。 |
 | characteristicUuid | string | 否 | 否 | 特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。 |
 | serviceUuid | string | 否 | 否 | 特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。 |
- 
- 
-  
 
-#### DescriptorWriteRequest(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+## DescriptorWriteRequest(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述server端订阅后收到的描述符写请求事件参数结构。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.DescriptorWriteRequest 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
-  
+
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | deviceId | string | 否 | 否 | 表示发送描述符写请求的远端设备地址，例如："XX:XX:XX:XX:XX:XX"。 |
@@ -5427,22 +5737,24 @@ try {
 | descriptorUuid | string | 否 | 否 | 表示描述符（descriptor）的UUID，例如：00002902-0000-1000-8000-00805f9b34fb。 |
 | characteristicUuid | string | 否 | 否 | 特定特征（characteristic）的UUID，例如：00002a11-0000-1000-8000-00805f9b34fb。 |
 | serviceUuid | string | 否 | 否 | 特定服务（service）的UUID，例如：00001888-0000-1000-8000-00805f9b34fb。 |
- 
- 
-  
 
-#### ServerResponse(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+## ServerResponse(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述server端回复client端读/写请求的响应参数结构。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.ServerResponse 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
-  
+
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | deviceId | string | 否 | 否 | 表示远端设备地址，例如："XX:XX:XX:XX:XX:XX"。 |
@@ -5450,64 +5762,70 @@ try {
 | status | number | 否 | 否 | 表示响应的状态，设置为0即可，表示正常。 |
 | offset | number | 否 | 否 | 表示请求的读/写起始位置，与订阅的读/写请求事件携带的offset保持一致。 |
 | value | ArrayBuffer | 否 | 否 | 表示回复响应的二进制数据。 |
- 
- 
-  
 
-#### BLEConnectChangedState(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+## BLEConnectChangedState(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述Gatt profile连接状态。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 BLEConnectionChangeState 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
-  
+
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | deviceId | string | 否 | 否 | 表示远端设备地址，例如："XX:XX:XX:XX:XX:XX"。 |
 | state | ProfileConnectionState | 否 | 否 | 表示BLE连接状态的枚举。 |
- 
- 
-  
 
-#### ProfileConnectionState(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+## ProfileConnectionState(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，蓝牙设备的profile连接状态。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 constant.ProfileConnectionState 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
-  
+
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | STATE_DISCONNECTED | 0 | 表示profile已断连。 |
 | STATE_CONNECTING | 1 | 表示profile正在连接。 |
 | STATE_CONNECTED | 2 | 表示profile已连接。 |
 | STATE_DISCONNECTING | 3 | 表示profile正在断连。 |
- 
- 
-  
 
-#### ScanFilter(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+## ScanFilter(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 扫描过滤参数。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.ScanFilter 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
-  
+
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | deviceId | string | 否 | 是 | 表示过滤的BLE设备地址，例如："XX:XX:XX:XX:XX:XX"。 |
@@ -5521,105 +5839,115 @@ try {
 | manufactureId | number | 否 | 是 | 表示过滤包含该制造商ID的设备，例如：0x0006。 |
 | manufactureData | ArrayBuffer | 否 | 是 | 表示过滤包含该制造商相关数据的设备，例如：[0x1F,0x2F,0x3F]。 |
 | manufactureDataMask | ArrayBuffer | 否 | 是 | 表示过滤包含该制造商相关数据掩码的设备，例如：[0xFF,0xFF,0xFF]。 |
- 
- 
-  
 
-#### ScanOptions(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+## ScanOptions(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 扫描的配置参数。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.ScanOptions 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
-  
+
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | interval | number | 否 | 是 | 表示扫描结果上报延迟时间，默认值为0。 |
 | dutyMode | ScanDuty | 否 | 是 | 表示扫描模式，默认值为SCAN_MODE_LOW_POWER。 |
 | matchMode | MatchMode | 否 | 是 | 表示硬件的过滤匹配模式，默认值为MATCH_MODE_AGGRESSIVE。 |
- 
- 
-  
 
-#### ScanDuty(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+## ScanDuty(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，扫描模式。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.ScanDuty 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
-  
+
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SCAN_MODE_LOW_POWER | 0 | 表示低功耗模式，默认值。 |
 | SCAN_MODE_BALANCED | 1 | 表示均衡模式。 |
 | SCAN_MODE_LOW_LATENCY | 2 | 表示低延迟模式。 |
- 
- 
-  
 
-#### MatchMode(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+## MatchMode(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，硬件过滤匹配模式。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.MatchMode 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
-  
+
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | MATCH_MODE_AGGRESSIVE | 1 | 表示硬件上报扫描结果门限较低，比如扫描到的功率较低或者一段时间扫描到的次数较少也触发上报，默认值。 |
 | MATCH_MODE_STICKY | 2 | 表示硬件上报扫描结果门限较高，更高的功率门限以及扫描到多次才会上报。 |
- 
- 
-  
 
-#### ScanResult(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+## ScanResult(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 扫描结果上报数据。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.ScanResult 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
-  
+
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | deviceId | string | 否 | 否 | 表示扫描到的设备地址，例如："XX:XX:XX:XX:XX:XX"。 |
 | rssi | number | 否 | 否 | 表示扫描到的设备的rssi值。 |
 | data | ArrayBuffer | 否 | 否 | 表示扫描到的设备发送的广播包。 |
- 
- 
-  
 
-#### BluetoothState(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+## BluetoothState(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，蓝牙开关状态。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 access.BluetoothState 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
-  
+
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | STATE_OFF | 0 | 表示蓝牙已关闭。 |
@@ -5629,185 +5957,203 @@ try {
 | STATE_BLE_TURNING_ON | 4 | 表示蓝牙正在打开LE-only模式。 |
 | STATE_BLE_ON | 5 | 表示蓝牙正处于LE-only模式。 |
 | STATE_BLE_TURNING_OFF | 6 | 表示蓝牙正在关闭LE-only模式。 |
- 
- 
-  
 
-#### AdvertiseSetting(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+## AdvertiseSetting(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述蓝牙低功耗设备发送广播的参数。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.AdvertiseSetting 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
-  
+
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | interval | number | 否 | 是 | 表示广播间隔，最小值设置32个slot表示20ms，最大值设置16384个slot，默认值设置为1600个slot表示1s。 |
-| txPower | number | 否 | 是 | 表示发送功率，最小值设置-127，最大值设置1，默认值设置-7，单位dbm。 |
+| txPower | number | 否 | 是 | 表示发送功率，最小值设置-127，最大值设置1，默认值设置-7，单位dBm。 |
 | connectable | boolean | 否 | 是 | 表示是否是可连接广播，默认值设置为true。 |
- 
- 
-  
 
-#### AdvertiseData(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+## AdvertiseData(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述BLE广播数据包的内容。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.AdvertiseData 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
-  
+
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | serviceUuids | Array&lt;string&gt; | 否 | 否 | 表示要广播的服务 UUID 列表。 |
 | manufactureData | Array&lt;ManufactureData&gt; | 否 | 否 | 表示要广播的广播的制造商信息列表。 |
 | serviceData | Array&lt;ServiceData&gt; | 否 | 否 | 表示要广播的服务数据列表。 |
- 
- 
-  
 
-#### ManufactureData(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+## ManufactureData(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述BLE广播数据包的内容。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.ManufactureData 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
-  
+
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | manufactureId | number | 否 | 否 | 表示制造商的ID，由蓝牙SIG分配。 |
 | manufactureValue | ArrayBuffer | 否 | 否 | 表示制造商发送的制造商数据。 |
- 
- 
-  
 
-#### ServiceData(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+## ServiceData(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述广播包中服务数据内容。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 ble.ServiceData 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
-  
+
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | serviceUuid | string | 否 | 否 | 表示服务的UUID。 |
 | serviceValue | ArrayBuffer | 否 | 否 | 表示服务数据。 |
- 
- 
-  
 
-#### PinRequiredParam(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+## PinRequiredParam(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述配对请求参数。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 connection.PinRequiredParam 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
-  
+
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | deviceId | string | 否 | 否 | 表示要配对的设备ID。 |
 | pinCode | string | 否 | 否 | 表示要配对的密钥。 |
- 
- 
-  
 
-#### BondStateParam(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+## BondStateParam(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述配对状态参数。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 connection.BondStateParam 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
-  
+
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | deviceId | string | 否 | 否 | 表示要配对的设备ID。 |
 | state | BondState | 否 | 否 | 表示配对设备的状态。 |
- 
- 
-  
 
-#### StateChangeParam(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+## StateChangeParam(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述profile状态改变参数。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 baseProfile.StateChangeParam 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
-  
+
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | deviceId | string | 否 | 否 | 表示蓝牙设备地址。 |
 | state | ProfileConnectionState | 否 | 否 | 表示蓝牙设备的profile连接状态。 |
- 
- 
-  
 
-#### DeviceClass(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+## DeviceClass(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述蓝牙设备的类别。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 connection.DeviceClass 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
-  
+
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | majorClass | MajorClass | 否 | 否 | 表示蓝牙设备主要类别的枚举。 |
 | majorMinorClass | MajorMinorClass | 否 | 否 | 表示主要次要蓝牙设备类别的枚举。 |
 | classOfDevice | number | 否 | 否 | 表示设备类别。 |
- 
- 
-  
 
-#### MajorClass(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+## MajorClass(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，蓝牙设备主要类别。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 constant.MajorClass 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
-  
+
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | MAJOR_MISC | 0x0000 | 表示杂项设备。 |
@@ -5821,22 +6167,24 @@ try {
 | MAJOR_TOY | 0x0800 | 表示玩具设备。 |
 | MAJOR_HEALTH | 0x0900 | 表示健康设备。 |
 | MAJOR_UNCATEGORIZED | 0x1F00 | 表示未分类设备。 |
- 
- 
-  
 
-#### MajorMinorClass(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+## MajorMinorClass(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，主要次要蓝牙设备类别。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 constant.MajorMinorClass 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
-  
+
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | COMPUTER_UNCATEGORIZED | 0x0100 | 表示未分类计算机设备。 |
@@ -5917,50 +6265,54 @@ try {
 | HEALTH_PULSE_OXIMETER | 0x0914 | 表示脉搏血氧仪健康设备。 |
 | HEALTH_PULSE_RATE | 0x0918 | 表示脉搏率健康设备。 |
 | HEALTH_DATA_DISPLAY | 0x091C | 表示数据显示健康设备。 |
-| HEALTH_STEP_COUNTER | 0x0920 | 表示阶梯计数器健康设备。 |
+| HEALTH_STEP_COUNTER | 0x0920 | 表示计步器健康设备。 |
 | HEALTH_BODY_COMPOSITION_ANALYZER | 0x0924 | 表示身体成分分析仪健康设备。 |
-| HEALTH_PEAK_FLOW_MONITOR | 0x0928 | 表示湿度计健康设备。 |
+| HEALTH_PEAK_FLOW_MONITOR | 0x0928 | 表示峰值流量监控仪健康设备。 |
 | HEALTH_MEDICATION_MONITOR | 0x092C | 表示药物监视仪健康设备。 |
 | HEALTH_KNEE_PROSTHESIS | 0x0930 | 表示膝盖假肢健康设备。 |
 | HEALTH_ANKLE_PROSTHESIS | 0x0934 | 表示脚踝假肢健康设备。 |
 | HEALTH_GENERIC_HEALTH_MANAGER | 0x0938 | 表示通用健康管理设备。 |
 | HEALTH_PERSONAL_MOBILITY_DEVICE | 0x093C | 表示个人移动健康设备。 |
- 
- 
-  
 
-#### PlayingState(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+## PlayingState(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，蓝牙A2DP 播放状态。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 a2dp.PlayingState 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
-  
+
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | STATE_NOT_PLAYING | 0 | 表示未播放。 |
 | STATE_PLAYING | 1 | 表示正在播放。 |
- 
- 
-  
 
-#### ProfileId(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+## ProfileId(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 蓝牙profile枚举，API9新增PROFILE_HID_HOST，PROFILE_PAN_NETWORK。
- 
+
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。建议使用 constant.ProfileId 替代。
 
- 
+
 **系统能力**：SystemCapability.Communication.Bluetooth.Core。
-  
+
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | PROFILE_A2DP_SOURCE | 1 | 表示A2DP profile。 |

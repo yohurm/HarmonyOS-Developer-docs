@@ -1,20 +1,21 @@
 # @ohos.app.ability.appManager (应用管理)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-appmanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 appManager模块提供应用管理的能力，包括查询当前系统是否处于稳定性测试场景、查询当前设备是否为RAM（Random Access Memory，随机存取存储器）受限设备、获取当前应用程序可以使用的最大内存值、获取有关运行进程的信息等。
 
 > [!NOTE]
-> 本模块首批接口从API version 9 开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+> 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { appManager } from '@kit.AbilityKit';
@@ -22,15 +23,17 @@ import { appManager } from '@kit.AbilityKit';
 
 
 
-#### ProcessState10+
+## ProcessState10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示进程状态的枚举。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -43,9 +46,10 @@ import { appManager } from '@kit.AbilityKit';
 
 
 
-#### appManager.isRunningInStabilityTest
+## appManager.isRunningInStabilityTest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isRunningInStabilityTest(callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -61,6 +65,7 @@ isRunningInStabilityTest(callback: AsyncCallback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;boolean&gt; | 是 | 回调函数。当接口调用成功，err为undefined，data为当前系统是否处于稳定性测试场景的结果；否则为错误对象。可进行错误处理或其他自定义处理。 返回true表示系统处于稳定性测试场景；返回false表示系统不处于稳定性测试场景。 |
@@ -69,6 +74,7 @@ isRunningInStabilityTest(callback: AsyncCallback&lt;boolean&gt;): void
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -83,7 +89,7 @@ import { appManager } from '@kit.AbilityKit';
 
 appManager.isRunningInStabilityTest((err, flag) => {
   if (err) {
-    console.error(`isRunningInStabilityTest fail, err: ${JSON.stringify(err)}`);
+    console.error(`isRunningInStabilityTest fail, code: ${err.code}, msg:${err.message}`);
   } else {
     console.info(`The result of isRunningInStabilityTest is: ${JSON.stringify(flag)}`);
   }
@@ -92,9 +98,10 @@ appManager.isRunningInStabilityTest((err, flag) => {
 
 
 
-#### appManager.isRunningInStabilityTest
+## appManager.isRunningInStabilityTest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isRunningInStabilityTest(): Promise&lt;boolean&gt;
 
@@ -110,6 +117,7 @@ isRunningInStabilityTest(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示系统处于稳定性测试场景；返回false表示系统不处于稳定性测试场景。 |
@@ -118,6 +126,7 @@ isRunningInStabilityTest(): Promise&lt;boolean&gt;
 **错误码**：
 
 以下错误码详细介绍请参考[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -139,9 +148,10 @@ appManager.isRunningInStabilityTest().then((flag) => {
 
 
 
-#### appManager.isRamConstrainedDevice
+## appManager.isRamConstrainedDevice
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isRamConstrainedDevice(): Promise&lt;boolean&gt;
 
@@ -153,6 +163,7 @@ isRamConstrainedDevice(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示当前设备为RAM受限设备；返回false表示当前设备为非RAM受限设备。 |
@@ -161,6 +172,7 @@ isRamConstrainedDevice(): Promise&lt;boolean&gt;
 **错误码**：
 
 以下错误码详细介绍请参考[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -182,9 +194,10 @@ appManager.isRamConstrainedDevice().then((data) => {
 
 
 
-#### appManager.isRamConstrainedDevice
+## appManager.isRamConstrainedDevice
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isRamConstrainedDevice(callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -196,6 +209,7 @@ isRamConstrainedDevice(callback: AsyncCallback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;boolean&gt; | 是 | 回调函数。当接口调用成功，err为undefined，data为当前设备是否为RAM受限设备的结果；否则为错误对象。可进行错误处理或其他自定义处理。 返回true表示当前设备为RAM受限设备；返回false表示当前设备为非RAM受限设备。 |
@@ -204,6 +218,7 @@ isRamConstrainedDevice(callback: AsyncCallback&lt;boolean&gt;): void
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -218,7 +233,7 @@ import { appManager } from '@kit.AbilityKit';
 
 appManager.isRamConstrainedDevice((err, data) => {
   if (err) {
-    console.error(`isRamConstrainedDevice fail, err: ${JSON.stringify(err)}`);
+    console.error(`isRamConstrainedDevice fail, code: ${err.code}, msg:${err.message}`);
   } else {
     console.info(`The result of isRamConstrainedDevice is: ${JSON.stringify(data)}`);
   }
@@ -227,9 +242,10 @@ appManager.isRamConstrainedDevice((err, data) => {
 
 
 
-#### appManager.getAppMemorySize
+## appManager.getAppMemorySize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAppMemorySize(): Promise&lt;number&gt;
 
@@ -241,14 +257,16 @@ getAppMemorySize(): Promise&lt;number&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;number&gt; | Promise对象，返回当前应用程序可以使用的最大内存（RAM）值，可根据此值进行错误处理或其他自定义处理，单位是M。 |
+| Promise&lt;number&gt; | Promise对象，返回当前应用程序可以使用的最大内存（RAM）值，可根据此值进行错误处理或其他自定义处理，单位是MB。 |
 
 
 **错误码**：
 
 以下错误码详细介绍请参考[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -264,15 +282,16 @@ import { BusinessError } from '@kit.BasicServicesKit';
 appManager.getAppMemorySize().then((data) => {
   console.info(`The size of app memory is: ${JSON.stringify(data)}`);
 }).catch((error: BusinessError) => {
-  console.error(`error: ${JSON.stringify(error)}`);
+  console.error(`code: ${error.code}, msg:${error.message}`);
 });
 ```
 
 
 
-#### appManager.getAppMemorySize
+## appManager.getAppMemorySize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAppMemorySize(callback: AsyncCallback&lt;number&gt;): void
 
@@ -284,14 +303,16 @@ getAppMemorySize(callback: AsyncCallback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback&lt;number&gt; | 是 | 回调函数。当接口调用成功，err为undefined，data为当前应用程序可以使用的最大内存（RAM）值，单位是M；否则为错误对象。可根据此值进行错误处理或其他自定义处理。 |
+| callback | AsyncCallback&lt;number&gt; | 是 | 回调函数。当接口调用成功，err为undefined，data为当前应用程序可以使用的最大内存（RAM）值，单位是MB；否则为错误对象。可根据此值进行错误处理或其他自定义处理。 |
 
 
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -306,7 +327,7 @@ import { appManager } from '@kit.AbilityKit';
 
 appManager.getAppMemorySize((err, data) => {
   if (err) {
-    console.error(`getAppMemorySize fail, err: ${JSON.stringify(err)}`);
+    console.error(`getAppMemorySize fail, code: ${err.code}, msg:${err.message}`);
   } else {
     console.info(`The size of app memory is: ${JSON.stringify(data)}`);
   }
@@ -315,23 +336,25 @@ appManager.getAppMemorySize((err, data) => {
 
 
 
-#### appManager.getRunningProcessInformation
+## appManager.getRunningProcessInformation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRunningProcessInformation(): Promise<Array&lt;ProcessInformation&gt;>
 
-获取当前应用运行进程的相关信息。使用Promise异步回调。
-
-> [!NOTE]
-> 对于API version 11之前的版本，该接口需要申请权限ohos.permission.GET_RUNNING_INFO（该权限仅系统应用可申请）。 从API version 11开始，该接口仅用于获取调用方自身的进程信息，不再需要申请权限。
-
+从API版本11开始，默认仅返回调用方自身的进程信息；若拥有 ohos.permission.GET_RUNNING_INFO 权限（该权限仅系统应用可申请），则可查询全量应用的进程信息。使用Promise异步回调。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
+**需要权限**：
+
+API版本9-10：ohos.permission.GET_RUNNING_INFO（该权限仅系统应用可申请）
+
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -341,6 +364,7 @@ getRunningProcessInformation(): Promise<Array&lt;ProcessInformation&gt;>
 **错误码**：
 
 以下错误码详细介绍请参考[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -356,29 +380,31 @@ import { BusinessError } from '@kit.BasicServicesKit';
 appManager.getRunningProcessInformation().then((data) => {
   console.info(`The running process information is: ${JSON.stringify(data)}`);
 }).catch((error: BusinessError) => {
-  console.error(`error: ${JSON.stringify(error)}`);
+  console.error(`code: ${error.code}, msg:${error.message}`);
 });
 ```
 
 
 
-#### appManager.getRunningProcessInformation
+## appManager.getRunningProcessInformation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRunningProcessInformation(callback: AsyncCallback<Array&lt;ProcessInformation&gt;>): void
 
-获取当前应用运行进程的相关信息。使用callback异步回调。
-
-> [!NOTE]
-> 对于API version 11之前的版本，该接口需要申请权限ohos.permission.GET_RUNNING_INFO（该权限仅系统应用可申请）。 从API version 11开始，该接口仅用于获取调用方自身的进程信息，不再需要申请权限。
-
+从API版本11开始，默认仅返回调用方自身的进程信息；若拥有 ohos.permission.GET_RUNNING_INFO 权限（该权限仅系统应用可申请），则可查询全量应用的进程信息。使用callback异步回调。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
+**需要权限**：
+
+API版本9-10：ohos.permission.GET_RUNNING_INFO（该权限仅系统应用可申请）
+
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -388,6 +414,7 @@ getRunningProcessInformation(callback: AsyncCallback<Array&lt;ProcessInformation
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -402,7 +429,7 @@ import { appManager } from '@kit.AbilityKit';
 
 appManager.getRunningProcessInformation((err, data) => {
   if (err) {
-    console.error(`getRunningProcessInformation fail, err: ${JSON.stringify(err)}`);
+    console.error(`getRunningProcessInformation fail, code: ${err.code}, msg:${err.message}`);
   } else {
     console.info(`The running process information is: ${JSON.stringify(data)}`);
   }
@@ -411,9 +438,10 @@ appManager.getRunningProcessInformation((err, data) => {
 
 
 
-#### appManager.on('applicationState')14+
+## appManager.on('applicationState')14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'applicationState', observer: ApplicationStateObserver): number
 
@@ -425,6 +453,7 @@ on(type: 'applicationState', observer: ApplicationStateObserver): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 调用接口类型，固定填'applicationState'字符串。 |
@@ -432,6 +461,7 @@ on(type: 'applicationState', observer: ApplicationStateObserver): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -441,6 +471,7 @@ on(type: 'applicationState', observer: ApplicationStateObserver): number
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -456,25 +487,25 @@ import { appManager } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 let applicationStateObserver: appManager.ApplicationStateObserver = {
-  onForegroundApplicationChanged(appStateData) {
+  onForegroundApplicationChanged(appStateData: appManager.AppStateData) {
     console.info(`[appManager] onForegroundApplicationChanged: ${JSON.stringify(appStateData)}`);
   },
-  onAbilityStateChanged(abilityStateData) {
+  onAbilityStateChanged(abilityStateData: appManager.AbilityStateData) {
     console.info(`[appManager] onAbilityStateChanged: ${JSON.stringify(abilityStateData)}`);
   },
-  onProcessCreated(processData) {
+  onProcessCreated(processData: appManager.ProcessData) {
     console.info(`[appManager] onProcessCreated: ${JSON.stringify(processData)}`);
   },
-  onProcessDied(processData) {
+  onProcessDied(processData: appManager.ProcessData) {
     console.info(`[appManager] onProcessDied: ${JSON.stringify(processData)}`);
   },
-  onProcessStateChanged(processData) {
+  onProcessStateChanged(processData: appManager.ProcessData) {
     console.info(`[appManager] onProcessStateChanged: ${JSON.stringify(processData)}`);
   },
-  onAppStarted(appStateData) {
+  onAppStarted(appStateData: appManager.AppStateData) {
     console.info(`[appManager] onAppStarted: ${JSON.stringify(appStateData)}`);
   },
-  onAppStopped(appStateData) {
+  onAppStopped(appStateData: appManager.AppStateData) {
     console.info(`[appManager] onAppStopped: ${JSON.stringify(appStateData)}`);
   }
 };
@@ -491,9 +522,10 @@ try {
 
 
 
-#### appManager.on('applicationState')14+
+## appManager.on('applicationState')14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'applicationState', observer: ApplicationStateObserver, bundleNameList: Array&lt;string&gt;): number
 
@@ -505,14 +537,16 @@ on(type: 'applicationState', observer: ApplicationStateObserver, bundleNameList:
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 调用接口类型，固定填'applicationState'字符串。 |
 | observer | ApplicationStateObserver | 是 | 应用状态监听器，用于监听应用的生命周期变化。 |
-| bundleNameList | Array&lt;string&gt; | 是 | 表示需要注册监听的bundleName数组。最大值128。 |
+| bundleNameList | Array&lt;string&gt; | 是 | 表示需要注册监听的bundleName数组。最大值128，超过这个数量将返回16000050错误码。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -522,6 +556,7 @@ on(type: 'applicationState', observer: ApplicationStateObserver, bundleNameList:
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -537,25 +572,25 @@ import { appManager } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 let applicationStateObserver: appManager.ApplicationStateObserver = {
-  onForegroundApplicationChanged(appStateData) {
+  onForegroundApplicationChanged(appStateData: appManager.AppStateData) {
     console.info(`[appManager] onForegroundApplicationChanged: ${JSON.stringify(appStateData)}`);
   },
-  onAbilityStateChanged(abilityStateData) {
+  onAbilityStateChanged(abilityStateData: appManager.AbilityStateData) {
     console.info(`[appManager] onAbilityStateChanged: ${JSON.stringify(abilityStateData)}`);
   },
-  onProcessCreated(processData) {
+  onProcessCreated(processData: appManager.ProcessData) {
     console.info(`[appManager] onProcessCreated: ${JSON.stringify(processData)}`);
   },
-  onProcessDied(processData) {
+  onProcessDied(processData: appManager.ProcessData) {
     console.info(`[appManager] onProcessDied: ${JSON.stringify(processData)}`);
   },
-  onProcessStateChanged(processData) {
+  onProcessStateChanged(processData: appManager.ProcessData) {
     console.info(`[appManager] onProcessStateChanged: ${JSON.stringify(processData)}`);
   },
-  onAppStarted(appStateData) {
+  onAppStarted(appStateData: appManager.AppStateData) {
     console.info(`[appManager] onAppStarted: ${JSON.stringify(appStateData)}`);
   },
-  onAppStopped(appStateData) {
+  onAppStopped(appStateData: appManager.AppStateData) {
     console.info(`[appManager] onAppStopped: ${JSON.stringify(appStateData)}`);
   }
 };
@@ -574,9 +609,10 @@ try {
 
 
 
-#### appManager.off('applicationState')14+
+## appManager.off('applicationState')14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'applicationState', observerId: number): Promise&lt;void&gt;
 
@@ -588,6 +624,7 @@ off(type: 'applicationState', observerId: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 调用接口类型，固定填'applicationState'字符串。 |
@@ -595,6 +632,7 @@ off(type: 'applicationState', observerId: number): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -604,6 +642,7 @@ off(type: 'applicationState', observerId: number): Promise&lt;void&gt;
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -622,25 +661,25 @@ let observerId = 0;
 
 // 1.注册应用状态监听器
 let applicationStateObserver: appManager.ApplicationStateObserver = {
-  onForegroundApplicationChanged(appStateData) {
+  onForegroundApplicationChanged(appStateData: appManager.AppStateData) {
     console.info(`[appManager] onForegroundApplicationChanged: ${JSON.stringify(appStateData)}`);
   },
-  onAbilityStateChanged(abilityStateData) {
+  onAbilityStateChanged(abilityStateData: appManager.AbilityStateData) {
     console.info(`[appManager] onAbilityStateChanged: ${JSON.stringify(abilityStateData)}`);
   },
-  onProcessCreated(processData) {
+  onProcessCreated(processData: appManager.ProcessData) {
     console.info(`[appManager] onProcessCreated: ${JSON.stringify(processData)}`);
   },
-  onProcessDied(processData) {
+  onProcessDied(processData: appManager.ProcessData) {
     console.info(`[appManager] onProcessDied: ${JSON.stringify(processData)}`);
   },
-  onProcessStateChanged(processData) {
+  onProcessStateChanged(processData: appManager.ProcessData) {
     console.info(`[appManager] onProcessStateChanged: ${JSON.stringify(processData)}`);
   },
-  onAppStarted(appStateData) {
+  onAppStarted(appStateData: appManager.AppStateData) {
     console.info(`[appManager] onAppStarted: ${JSON.stringify(appStateData)}`);
   },
-  onAppStopped(appStateData) {
+  onAppStopped(appStateData: appManager.AppStateData) {
     console.info(`[appManager] onAppStopped: ${JSON.stringify(appStateData)}`);
   }
 };
@@ -659,7 +698,7 @@ try {
   appManager.off('applicationState', observerId).then((data) => {
     console.info(`unregisterApplicationStateObserver success, data: ${JSON.stringify(data)}`);
   }).catch((err: BusinessError) => {
-    console.error(`unregisterApplicationStateObserver fail, err: ${JSON.stringify(err)}`);
+    console.error(`unregisterApplicationStateObserver fail, code: ${err.code}, msg:${err.message}`);
   });
 } catch (paramError) {
   let code = (paramError as BusinessError).code;
@@ -670,9 +709,10 @@ try {
 
 
 
-#### appManager.off('applicationState')15+
+## appManager.off('applicationState')15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'applicationState', observerId: number, callback: AsyncCallback&lt;void&gt;): void
 
@@ -684,16 +724,18 @@ off(type: 'applicationState', observerId: number, callback: AsyncCallback&lt;voi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 调用接口类型，固定填'applicationState'字符串。 |
 | observerId | number | 是 | 注册的应用状态监听器ID，即on('applicationState')返回的监听器ID。 |
-| callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当取消注册应用程序状态观测器成功，err为undefined，否则为错误对象。 |
+| callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当注销应用状态监听器成功，err为undefined，否则为错误对象。 |
 
 
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -712,25 +754,25 @@ let observerId = 0;
 
 // 1.注册应用状态监听器
 let applicationStateObserver: appManager.ApplicationStateObserver = {
-  onForegroundApplicationChanged(appStateData) {
+  onForegroundApplicationChanged(appStateData: appManager.AppStateData) {
     console.info(`[appManager] onForegroundApplicationChanged: ${JSON.stringify(appStateData)}`);
   },
-  onAbilityStateChanged(abilityStateData) {
+  onAbilityStateChanged(abilityStateData: appManager.AbilityStateData) {
     console.info(`[appManager] onAbilityStateChanged: ${JSON.stringify(abilityStateData)}`);
   },
-  onProcessCreated(processData) {
+  onProcessCreated(processData: appManager.ProcessData) {
     console.info(`[appManager] onProcessCreated: ${JSON.stringify(processData)}`);
   },
-  onProcessDied(processData) {
+  onProcessDied(processData: appManager.ProcessData) {
     console.info(`[appManager] onProcessDied: ${JSON.stringify(processData)}`);
   },
-  onProcessStateChanged(processData) {
+  onProcessStateChanged(processData: appManager.ProcessData) {
     console.info(`[appManager] onProcessStateChanged: ${JSON.stringify(processData)}`);
   },
-  onAppStarted(appStateData) {
+  onAppStarted(appStateData: appManager.AppStateData) {
     console.info(`[appManager] onAppStarted: ${JSON.stringify(appStateData)}`);
   },
-  onAppStopped(appStateData) {
+  onAppStopped(appStateData: appManager.AppStateData) {
     console.info(`[appManager] onAppStopped: ${JSON.stringify(appStateData)}`);
   }
 };
@@ -764,9 +806,10 @@ try {
 
 
 
-#### appManager.killProcessesByBundleName14+
+## appManager.killProcessesByBundleName14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 killProcessesByBundleName(bundleName: string, clearPageStack: boolean, appIndex?: number): Promise&lt;void&gt;
 
@@ -778,14 +821,16 @@ killProcessesByBundleName(bundleName: string, clearPageStack: boolean, appIndex?
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 表示需要终止进程的应用包名。 |
 | clearPageStack | boolean | 是 | 表示是否清除页面堆栈。true表示清除，false表示不清除。 |
-| appIndex | number | 否 | 应用分身Id，默认值为0。取值为0时，表示终止主应用的所有进程。取值大于0时，表示终止指定分身应用的所有进程。 |
+| appIndex | number | 否 | 应用分身ID，不传该参数时默认值为0。取值范围：0~1000。取值为0时，表示终止主应用的所有进程。取值大于0时，表示终止指定分身应用的所有进程。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -796,6 +841,7 @@ killProcessesByBundleName(bundleName: string, clearPageStack: boolean, appIndex?
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -805,7 +851,7 @@ killProcessesByBundleName(bundleName: string, clearPageStack: boolean, appIndex?
 
 **示例：**
 
-```json
+```text
 import { appManager } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
@@ -817,7 +863,7 @@ try {
   appManager.killProcessesByBundleName(bundleName, isClearPageStack, appIndex).then((data) => {
     console.info('killProcessesByBundleName success.');
   }).catch((err: BusinessError) => {
-    console.error(`killProcessesByBundleName fail, err: ${JSON.stringify(err)}`);
+    console.error(`killProcessesByBundleName fail, code: ${err.code}, msg:${err.message}`);
   });
 } catch (paramError) {
   let code = (paramError as BusinessError).code;
@@ -828,9 +874,10 @@ try {
 
 
 
-#### appManager.isAppRunning14+
+## appManager.isAppRunning14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isAppRunning(bundleName: string, appCloneIndex?: number): Promise&lt;boolean&gt;
 
@@ -846,13 +893,15 @@ isAppRunning(bundleName: string, appCloneIndex?: number): Promise&lt;boolean&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 查询的应用包名。 |
-| appCloneIndex | number | 否 | 分身应用索引，默认值为0。取值范围：0~1000。取值为0时表示主应用；取值大于0时表示指定分身应用。 |
+| appCloneIndex | number | 否 | 分身应用索引，不传该参数时默认值为0。取值范围：0~1000。取值为0时表示判断主应用是否正在运行；取值大于0时表示判断指定分身应用是否正在运行。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -863,10 +912,11 @@ isAppRunning(bundleName: string, appCloneIndex?: number): Promise&lt;boolean&gt;
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 16000050 | Internal error. |
 | 16000073 | The app clone index is invalid. |
 
@@ -875,32 +925,33 @@ isAppRunning(bundleName: string, appCloneIndex?: number): Promise&lt;boolean&gt;
 
 ```ArkTS
 import { appManager } from '@kit.AbilityKit';
-import { hilog } from '@kit.PerformanceAnalysisKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 try {
-  let bundleName = "ohos.samples.etsclock";
+  let bundleName = 'ohos.samples.etsclock';
   appManager.isAppRunning(bundleName).then((data: boolean) => {
-      hilog.info(0x0000, 'testTag', `data: ${JSON.stringify(data)}`);
+      console.info(`data: ${JSON.stringify(data)}`);
     }).catch((err: BusinessError) => {
-      hilog.error(0x0000, 'testTag', `isAppRunning error, code: ${err.code}, msg:${err.message}`);
-    })
+      console.error(`isAppRunning error, code: ${err.code}, msg:${err.message}`);
+    });
 } catch (err) {
-  hilog.error(0x0000, 'testTag', `isAppRunning error, code: ${err.code}, msg:${err.message}`);
+  console.error(`isAppRunning error, code: ${err.code}, msg:${err.message}`);
 }
 ```
 
 
 
-#### AbilityStateData14+
+## AbilityStateData14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AbilityStateData = _AbilityStateData.default
 
 Ability状态信息。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -909,15 +960,17 @@ Ability状态信息。
 
 
 
-#### AppStateData14+
+## AppStateData14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AppStateData = _AppStateData.default
 
 应用状态信息。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -926,15 +979,17 @@ type AppStateData = _AppStateData.default
 
 
 
-#### ApplicationStateObserver14+
+## ApplicationStateObserver14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ApplicationStateObserver = _ApplicationStateObserver.default
 
 应用状态监听器。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -943,9 +998,10 @@ type ApplicationStateObserver = _ApplicationStateObserver.default
 
 
 
-#### ProcessInformation
+## ProcessInformation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ProcessInformation = _ProcessInformation
 
@@ -955,6 +1011,7 @@ type ProcessInformation = _ProcessInformation
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _ProcessInformation | 进程信息。 |
@@ -962,15 +1019,17 @@ type ProcessInformation = _ProcessInformation
 
 
 
-#### ProcessData14+
+## ProcessData14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ProcessData = _ProcessData.default
 
 进程数据。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 类型 | 说明 |
 | --- | --- |

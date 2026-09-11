@@ -1,9 +1,9 @@
 # @ohos.events.emitter (Emitter)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-emitter
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供进程内线程间或线程内事件的发送与处理能力。开发者可以使用本模块的 API，订阅事件（持续订阅或单次订阅）、取消订阅事件，发送事件到事件队列中，以及查询事件的订阅数量，从而实现同一进程内不同线程之间、以及同一线程内的事件通信。适用于跨线程通信、模块解耦、事件驱动等场景，能够帮助开发者实现轻量级的发布-订阅模式，降低组件间的耦合度，提升代码的可维护性和可扩展性。
 
@@ -27,9 +27,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { emitter } from '@kit.BasicServicesKit';
@@ -37,9 +38,10 @@ import { emitter } from '@kit.BasicServicesKit';
 
 
 
-#### emitter.on
+## emitter.on
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(event: InnerEvent, callback: Callback&lt;EventData&gt;): void
 
@@ -50,6 +52,7 @@ on(event: InnerEvent, callback: Callback&lt;EventData&gt;): void
 **系统能力：** SystemCapability.Notification.Emitter
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -66,7 +69,7 @@ let innerEvent: emitter.InnerEvent = {
   eventId: 1
 };
 
-let callback: Callback = (eventData: emitter.EventData) => {
+let callback: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
   console.info(`eventData: ${JSON.stringify(eventData)}`);
 };
 
@@ -76,9 +79,10 @@ emitter.on(innerEvent, callback);
 
 
 
-#### emitter.on11+
+## emitter.on11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(eventId: string, callback: Callback&lt;EventData&gt;): void
 
@@ -89,6 +93,7 @@ on(eventId: string, callback: Callback&lt;EventData&gt;): void
 **系统能力：** SystemCapability.Notification.Emitter
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -101,7 +106,7 @@ on(eventId: string, callback: Callback&lt;EventData&gt;): void
 ```json
 import { Callback } from '@kit.BasicServicesKit';
 
-let callback: Callback = (eventData: emitter.EventData) => {
+let callback: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
   console.info(`eventData: ${JSON.stringify(eventData)}`);
 };
 // 收到eventId为"eventId"的事件后执行回调处理函数
@@ -110,9 +115,10 @@ emitter.on('eventId', callback);
 
 
 
-#### emitter.on12+
+## emitter.on12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on&lt;T&gt;(eventId: string, callback: Callback<GenericEventData&lt;T&gt;>): void
 
@@ -123,6 +129,7 @@ on&lt;T&gt;(eventId: string, callback: Callback<GenericEventData&lt;T&gt;>): voi
 **系统能力：** SystemCapability.Notification.Emitter
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -146,7 +153,7 @@ class Sample {
   count: number;
 }
 
-let callback: Callback> = (eventData: emitter.GenericEventData<Sample>): void => {
+let callback: Callback<emitter.GenericEventData<Sample>> = (eventData: emitter.GenericEventData<Sample>): void => {
   console.info(`eventData: ${JSON.stringify(eventData?.data)}`);
   if (eventData?.data instanceof Sample) {
     eventData?.data?.printCount();
@@ -158,9 +165,10 @@ emitter.on('eventId', callback);
 
 
 
-#### emitter.once
+## emitter.once
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(event: InnerEvent, callback: Callback&lt;EventData&gt;): void
 
@@ -171,6 +179,7 @@ once(event: InnerEvent, callback: Callback&lt;EventData&gt;): void
 **系统能力：** SystemCapability.Notification.Emitter
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -187,7 +196,7 @@ let innerEvent: emitter.InnerEvent = {
   eventId: 1
 };
 
-let callback: Callback = (eventData: emitter.EventData) => {
+let callback: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
   console.info(`eventData: ${JSON.stringify(eventData)}`);
 };
 // 收到eventId为1的事件后执行该回调处理函数
@@ -196,9 +205,10 @@ emitter.once(innerEvent, callback);
 
 
 
-#### emitter.once11+
+## emitter.once11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(eventId: string, callback: Callback&lt;EventData&gt;): void
 
@@ -209,6 +219,7 @@ once(eventId: string, callback: Callback&lt;EventData&gt;): void
 **系统能力：** SystemCapability.Notification.Emitter
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -221,7 +232,7 @@ once(eventId: string, callback: Callback&lt;EventData&gt;): void
 ```json
 import { Callback } from '@kit.BasicServicesKit';
 
-let callback: Callback = (eventData: emitter.EventData) => {
+let callback: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
   console.info(`eventData: ${JSON.stringify(eventData)}`);
 };
 // 收到eventId为"eventId"的事件后执行该回调函数
@@ -230,9 +241,10 @@ emitter.once('eventId', callback);
 
 
 
-#### emitter.once12+
+## emitter.once12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once&lt;T&gt;(eventId: string, callback: Callback<GenericEventData&lt;T&gt;>): void
 
@@ -243,6 +255,7 @@ once&lt;T&gt;(eventId: string, callback: Callback<GenericEventData&lt;T&gt;>): v
 **系统能力：** SystemCapability.Notification.Emitter
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -266,7 +279,7 @@ class Sample {
   count: number;
 }
 
-let callback: Callback> = (eventData: emitter.GenericEventData<Sample>): void => {
+let callback: Callback<emitter.GenericEventData<Sample>> = (eventData: emitter.GenericEventData<Sample>): void => {
   console.info(`eventData: ${JSON.stringify(eventData?.data)}`);
   if (eventData?.data instanceof Sample) {
     eventData?.data?.printCount();
@@ -278,9 +291,10 @@ emitter.once('eventId', callback);
 
 
 
-#### emitter.off
+## emitter.off
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(eventId: number): void
 
@@ -293,6 +307,7 @@ off(eventId: number): void
 **系统能力：** SystemCapability.Notification.Emitter
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -308,9 +323,10 @@ emitter.off(1);
 
 
 
-#### emitter.off11+
+## emitter.off11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(eventId: string): void
 
@@ -323,6 +339,7 @@ off(eventId: string): void
 **系统能力：** SystemCapability.Notification.Emitter
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -338,9 +355,10 @@ emitter.off('eventId1');
 
 
 
-#### emitter.off10+
+## emitter.off10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(eventId: number, callback: Callback&lt;EventData&gt;): void
 
@@ -354,6 +372,7 @@ off(eventId: number, callback: Callback&lt;EventData&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | eventId | number | 是 | 事件ID，由开发者定义，用于辨别事件。 |
@@ -365,7 +384,7 @@ off(eventId: number, callback: Callback&lt;EventData&gt;): void
 ```json
 import { Callback } from '@kit.BasicServicesKit';
 
-let callback: Callback = (eventData: emitter.EventData) => {
+let callback: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
   console.info(`eventData: ${JSON.stringify(eventData)}`);
 };
 // 取消eventId为1的事件回调处理函数，callback对象应使用订阅时的对象
@@ -375,9 +394,10 @@ emitter.off(1, callback);
 
 
 
-#### emitter.off11+
+## emitter.off11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(eventId: string, callback: Callback&lt;EventData&gt;): void
 
@@ -391,6 +411,7 @@ off(eventId: string, callback: Callback&lt;EventData&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | eventId | string | 是 | 事件ID。 不可为空字符串，大小不超过10240字节，超出部分会被截断。 |
@@ -402,7 +423,7 @@ off(eventId: string, callback: Callback&lt;EventData&gt;): void
 ```json
 import { Callback } from '@kit.BasicServicesKit';
 
-let callback: Callback = (eventData: emitter.EventData) => {
+let callback: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
   console.info(`eventData: ${JSON.stringify(eventData)}`);
 };
 // 取消eventId为"eventId1"的事件回调处理函数，callback对象应使用订阅时的对象
@@ -412,9 +433,10 @@ emitter.off('eventId1', callback);
 
 
 
-#### emitter.off12+
+## emitter.off12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off&lt;T&gt;(eventId: string, callback: Callback<GenericEventData&lt;T&gt;>): void
 
@@ -427,6 +449,7 @@ off&lt;T&gt;(eventId: string, callback: Callback<GenericEventData&lt;T&gt;>): vo
 **系统能力：** SystemCapability.Notification.Emitter
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -450,7 +473,7 @@ class Sample {
   count: number;
 }
 
-let callback: Callback> = (eventData: emitter.GenericEventData<Sample>): void => {
+let callback: Callback<emitter.GenericEventData<Sample>> = (eventData: emitter.GenericEventData<Sample>): void => {
   console.info(`eventData: ${JSON.stringify(eventData?.data)}`);
   if (eventData?.data instanceof Sample) {
     eventData?.data?.printCount();
@@ -463,9 +486,10 @@ emitter.off('eventId1', callback);
 
 
 
-#### emitter.emit
+## emitter.emit
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 emit(event: InnerEvent, data?: EventData): void
 
@@ -480,6 +504,7 @@ emit(event: InnerEvent, data?: EventData): void
 **系统能力：** SystemCapability.Notification.Emitter
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -507,9 +532,10 @@ emitter.emit(innerEvent, eventData);
 
 
 
-#### emitter.emit11+
+## emitter.emit11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 emit(eventId: string, data?: EventData): void
 
@@ -525,6 +551,7 @@ emit(eventId: string, data?: EventData): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | eventId | string | 是 | 发送的事件ID。 不可为空字符串，大小不超过10240字节，超出部分会被截断。 |
@@ -546,9 +573,10 @@ emitter.emit('eventId', eventData);
 
 
 
-#### emitter.emit12+
+## emitter.emit12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 emit&lt;T&gt;(eventId: string, data?: GenericEventData&lt;T&gt;): void
 
@@ -564,6 +592,7 @@ emit&lt;T&gt;(eventId: string, data?: GenericEventData&lt;T&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | eventId | string | 是 | 发送的事件ID。 不可为空字符串，大小不超过10240字节，超出部分会被截断。 |
@@ -592,9 +621,10 @@ emitter.emit('eventId', eventData);
 
 
 
-#### emitter.emit11+
+## emitter.emit11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 emit(eventId: string, options: Options, data?: EventData): void
 
@@ -609,6 +639,7 @@ emit(eventId: string, options: Options, data?: EventData): void
 **系统能力：** SystemCapability.Notification.Emitter
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -636,9 +667,10 @@ emitter.emit('eventId', options, eventData);
 
 
 
-#### emitter.emit12+
+## emitter.emit12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 emit&lt;T&gt;(eventId: string, options: Options, data?: GenericEventData&lt;T&gt;): void
 
@@ -653,6 +685,7 @@ emit&lt;T&gt;(eventId: string, options: Options, data?: GenericEventData&lt;T&gt
 **系统能力：** SystemCapability.Notification.Emitter
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -687,9 +720,10 @@ emitter.emit('eventId', options, eventData);
 
 
 
-#### emitter.getListenerCount11+
+## emitter.getListenerCount11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getListenerCount(eventId: number | string): number
 
@@ -701,12 +735,14 @@ getListenerCount(eventId: number | string): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | eventId | number \| string | 是 | 事件ID，由开发者定义，用于辨别事件。 string类型：不可为空字符串，大小不超过10240字节，超出部分会被截断。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -721,15 +757,17 @@ let count: number = emitter.getListenerCount('eventId');
 
 
 
-#### EventPriority
+## EventPriority
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示事件的优先级。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -741,15 +779,17 @@ let count: number = emitter.getListenerCount('eventId');
 
 
 
-#### InnerEvent
+## InnerEvent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 订阅或发送的事件，订阅事件时EventPriority不生效。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -759,15 +799,17 @@ let count: number = emitter.getListenerCount('eventId');
 
 
 
-#### EventData
+## EventData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 发送事件时传递的数据。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -776,15 +818,17 @@ let count: number = emitter.getListenerCount('eventId');
 
 
 
-#### Options11+
+## Options11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 发送事件的优先级。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -793,15 +837,17 @@ let count: number = emitter.getListenerCount('eventId');
 
 
 
-#### GenericEventData&lt;T&gt;12+
+## GenericEventData&lt;T&gt;12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 发送事件时传递的泛型数据。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -810,9 +856,10 @@ let count: number = emitter.getListenerCount('eventId');
 
 
 
-#### Emitter22+
+## Emitter22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该功能支持在同一进程的同一Emitter类实例中，跨不同线程或同一线程内发送和处理事件。它能够实现持续订阅事件、单次订阅事件、取消订阅事件以及将事件发送到事件队列，适用于需要基于独立实例进行线程间通信和事件管理的场景，不同Emitter实例类之间相互隔离，互不影响。
 
@@ -822,9 +869,10 @@ let count: number = emitter.getListenerCount('eventId');
 
 
 
-#### constructor22+
+### constructor22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -842,9 +890,10 @@ let emitter1: emitter.Emitter = new emitter.Emitter();
 
 
 
-#### on22+
+### on22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(eventId: string, callback: Callback&lt;EventData&gt;): void
 
@@ -856,6 +905,7 @@ on(eventId: string, callback: Callback&lt;EventData&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | eventId | string | 是 | 持续订阅的事件ID。 不可为空字符串，大小不超过10240字节，超出部分会被截断。 |
@@ -869,7 +919,7 @@ import { Callback } from '@kit.BasicServicesKit';
 
 let emitter1: emitter.Emitter = new emitter.Emitter();
 
-let callback: Callback = (eventData: emitter.EventData) => {
+let callback: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
   console.info(`eventData: ${JSON.stringify(eventData)}`);
 };
 
@@ -878,9 +928,10 @@ emitter1.on('eventId', callback);
 
 
 
-#### on22+
+### on22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on&lt;T&gt;(eventId: string, callback: Callback<GenericEventData&lt;T&gt;>): void
 
@@ -892,6 +943,7 @@ on&lt;T&gt;(eventId: string, callback: Callback<GenericEventData&lt;T&gt;>): voi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | eventId | string | 是 | 持续订阅的事件ID。 不可为空字符串，大小不超过10240字节，超出部分会被截断。 |
@@ -916,7 +968,7 @@ class Sample {
   count: number;
 }
 
-let callback: Callback> = (eventData: emitter.GenericEventData<Sample>): void => {
+let callback: Callback<emitter.GenericEventData<Sample>> = (eventData: emitter.GenericEventData<Sample>): void => {
   console.info(`eventData: ${JSON.stringify(eventData?.data)}`);
   if (eventData?.data instanceof Sample) {
     eventData?.data?.printCount();
@@ -928,9 +980,10 @@ emitter1.on('eventId', callback);
 
 
 
-#### once22+
+### once22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(eventId: string, callback: Callback&lt;EventData&gt;): void
 
@@ -941,6 +994,7 @@ once(eventId: string, callback: Callback&lt;EventData&gt;): void
 **系统能力：** SystemCapability.Notification.Emitter
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -955,7 +1009,7 @@ import { Callback } from '@kit.BasicServicesKit';
 
 let emitter1: emitter.Emitter = new emitter.Emitter();
 
-let callback: Callback = (eventData: emitter.EventData) => {
+let callback: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
   console.info(`eventData: ${JSON.stringify(eventData)}`);
 };
 
@@ -964,9 +1018,10 @@ emitter1.once('eventId', callback);
 
 
 
-#### once22+
+### once22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once&lt;T&gt;(eventId: string, callback: Callback<GenericEventData&lt;T&gt;>): void
 
@@ -977,6 +1032,7 @@ once&lt;T&gt;(eventId: string, callback: Callback<GenericEventData&lt;T&gt;>): v
 **系统能力：** SystemCapability.Notification.Emitter
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1002,7 +1058,7 @@ class Sample {
   count: number;
 }
 
-let callback: Callback> = (eventData: emitter.GenericEventData<Sample>): void => {
+let callback: Callback<emitter.GenericEventData<Sample>> = (eventData: emitter.GenericEventData<Sample>): void => {
   console.info(`eventData: ${JSON.stringify(eventData?.data)}`);
   if (eventData?.data instanceof Sample) {
     eventData?.data?.printCount();
@@ -1014,9 +1070,10 @@ emitter1.once('eventId', callback);
 
 
 
-#### off22+
+### off22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(eventId: string): void
 
@@ -1029,6 +1086,7 @@ off(eventId: string): void
 **系统能力：** SystemCapability.Notification.Emitter
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1045,9 +1103,10 @@ emitter1.off('eventId');
 
 
 
-#### off22+
+### off22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(eventId: string, callback: Callback&lt;EventData&gt;): void
 
@@ -1060,6 +1119,7 @@ off(eventId: string, callback: Callback&lt;EventData&gt;): void
 **系统能力：** SystemCapability.Notification.Emitter
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1074,7 +1134,7 @@ import { Callback } from '@kit.BasicServicesKit';
 
 let emitter1: emitter.Emitter = new emitter.Emitter();
 
-let callback: Callback = (eventData: emitter.EventData) => {
+let callback: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
   console.info(`eventData: ${JSON.stringify(eventData)}`);
 };
 
@@ -1083,9 +1143,10 @@ emitter1.off('eventId', callback);
 
 
 
-#### off22+
+### off22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off&lt;T&gt;(eventId: string, callback: Callback<GenericEventData&lt;T&gt;>): void
 
@@ -1098,6 +1159,7 @@ off&lt;T&gt;(eventId: string, callback: Callback<GenericEventData&lt;T&gt;>): vo
 **系统能力：** SystemCapability.Notification.Emitter
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1123,7 +1185,7 @@ class Sample {
 
 let emitter1: emitter.Emitter = new emitter.Emitter();
 
-let callback: Callback> = (eventData: emitter.GenericEventData<Sample>): void => {
+let callback: Callback<emitter.GenericEventData<Sample>> = (eventData: emitter.GenericEventData<Sample>): void => {
   console.info(`eventData: ${JSON.stringify(eventData?.data)}`);
   if (eventData?.data instanceof Sample) {
     eventData?.data?.printCount();
@@ -1135,9 +1197,10 @@ emitter1.off('eventId', callback);
 
 
 
-#### emit22+
+### emit22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 emit(eventId: string, data?: EventData): void
 
@@ -1153,6 +1216,7 @@ emit(eventId: string, data?: EventData): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | eventId | string | 是 | 发送的事件ID。 不可为空字符串，大小不超过10240字节，超出部分会被截断。 |
@@ -1175,9 +1239,10 @@ emitter1.emit('eventId', eventData);
 
 
 
-#### emit22+
+### emit22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 emit&lt;T&gt;(eventId: string, data?: GenericEventData&lt;T&gt;): void
 
@@ -1193,6 +1258,7 @@ emit&lt;T&gt;(eventId: string, data?: GenericEventData&lt;T&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | eventId | string | 是 | 发送的事件ID。 不可为空字符串，大小不超过10240字节，超出部分会被截断。 |
@@ -1224,9 +1290,10 @@ emitter1.emit('eventId', eventData);
 
 
 
-#### emit22+
+### emit22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 emit(eventId: string, options: Options, data?: EventData): void
 
@@ -1241,6 +1308,7 @@ emit(eventId: string, options: Options, data?: EventData): void
 **系统能力：** SystemCapability.Notification.Emitter
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1269,9 +1337,10 @@ emitter1.emit('eventId', options, eventData);
 
 
 
-#### emit22+
+### emit22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 emit&lt;T&gt;(eventId: string, options: Options, data?: GenericEventData&lt;T&gt;): void
 
@@ -1286,6 +1355,7 @@ emit&lt;T&gt;(eventId: string, options: Options, data?: GenericEventData&lt;T&gt
 **系统能力：** SystemCapability.Notification.Emitter
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1322,9 +1392,10 @@ emitter1.emit('eventId', options, eventData);
 
 
 
-#### getListenerCount22+
+### getListenerCount22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getListenerCount(eventId: string): number
 
@@ -1336,12 +1407,14 @@ getListenerCount(eventId: string): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | eventId | string | 是 | 事件ID。 不可为空字符串，大小不超过10240字节，超出部分会被截断。。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |

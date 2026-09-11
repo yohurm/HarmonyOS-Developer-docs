@@ -1,6 +1,6 @@
 # navigationInfoMgr（导航信息管理）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/car-navigationinfomgr
 **支持设备：** Phone | Tablet
@@ -10,7 +10,8 @@
 **起始版本：** 4.1.0(11)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | Tablet
 
@@ -20,7 +21,8 @@ import { navigationInfoMgr } from '@kit.CarKit';
  
   
 
-#### NavigationStatus
+## NavigationStatus
+
 
 **支持设备：** Phone | Tablet
 
@@ -32,6 +34,7 @@ import { navigationInfoMgr } from '@kit.CarKit';
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | status | MapStatus | 否 | 否 | 地图状态。 |
@@ -46,7 +49,8 @@ import { navigationInfoMgr } from '@kit.CarKit';
  
   
 
-#### MapStatus
+## MapStatus
+
 
 **支持设备：** Phone | Tablet
 
@@ -58,6 +62,7 @@ import { navigationInfoMgr } from '@kit.CarKit';
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | IDLE | 0 | 地图处于空闲态，地图应用未启动时，默认为该值。 |
@@ -70,7 +75,8 @@ import { navigationInfoMgr } from '@kit.CarKit';
  
   
 
-#### NaviType
+## NaviType
+
 
 **支持设备：** Phone | Tablet
 
@@ -82,6 +88,7 @@ import { navigationInfoMgr } from '@kit.CarKit';
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DRIVING | 0 | 驾车类型。 |
@@ -92,7 +99,8 @@ import { navigationInfoMgr } from '@kit.CarKit';
  
   
 
-#### Location
+## Location
+
 
 **支持设备：** Phone | Tablet
 
@@ -104,6 +112,7 @@ import { navigationInfoMgr } from '@kit.CarKit';
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | name | string | 否 | 否 | 地址名称，地址名称的长度：[0, 1024]字节。 |
@@ -115,7 +124,8 @@ import { navigationInfoMgr } from '@kit.CarKit';
  
   
 
-#### LocationCoordType
+## LocationCoordType
+
 
 **支持设备：** Phone | Tablet
 
@@ -127,6 +137,7 @@ import { navigationInfoMgr } from '@kit.CarKit';
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | GCJ02 | 0 | 国内坐标编码。 |
@@ -135,7 +146,8 @@ import { navigationInfoMgr } from '@kit.CarKit';
  
   
 
-#### RoutePreference
+## RoutePreference
+
 
 **支持设备：** Phone | Tablet
 
@@ -147,6 +159,7 @@ import { navigationInfoMgr } from '@kit.CarKit';
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | INTELLIGENT_RECOMMENDATION | 0 | 智能推荐。 |
@@ -160,7 +173,8 @@ import { navigationInfoMgr } from '@kit.CarKit';
  
   
 
-#### ThemeType
+## ThemeType
+
 
 **支持设备：** Phone | Tablet
 
@@ -172,6 +186,7 @@ import { navigationInfoMgr } from '@kit.CarKit';
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | LIGHT | 0 | 地图是浅色主题。 |
@@ -180,7 +195,8 @@ import { navigationInfoMgr } from '@kit.CarKit';
  
   
 
-#### NavigationMetadata
+## NavigationMetadata
+
 
 **支持设备：** Phone | Tablet
 
@@ -192,6 +208,7 @@ import { navigationInfoMgr } from '@kit.CarKit';
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | naviTurnMode | number | 否 | 否 | 导航转向模式，十六进制，取值范围0~3E7，参考naviTurnMode，按照16进制的格式传递。 |
@@ -215,7 +232,8 @@ import { navigationInfoMgr } from '@kit.CarKit';
  
   
 
-#### SystemNavigationListener
+## SystemNavigationListener
+
 
 **支持设备：** Phone | Tablet
 
@@ -229,7 +247,8 @@ import { navigationInfoMgr } from '@kit.CarKit';
  
   
 
-#### onQueryNavigationInfo
+### onQueryNavigationInfo
+
 
 **支持设备：** Phone | Tablet
 
@@ -249,6 +268,7 @@ onQueryNavigationInfo(query: QueryType, args: Record<string, Object>): Promise&l
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | query | QueryType | 是 | 查询命令。 |
@@ -257,6 +277,7 @@ onQueryNavigationInfo(query: QueryType, args: Record<string, Object>): Promise&l
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;ResultData&gt; | Promise对象，返回查询导航信息的结果。 |
@@ -268,7 +289,8 @@ onQueryNavigationInfo(query: QueryType, args: Record<string, Object>): Promise&l
  
   
 
-#### onReceiveNavigationCmd
+### onReceiveNavigationCmd
+
 
 **支持设备：** Phone | Tablet
 
@@ -288,6 +310,7 @@ onReceiveNavigationCmd(command: CommandType, args: Record<string, Object>): Prom
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | command | CommandType | 是 | 系统服务需要应用执行的命令。 |
@@ -296,6 +319,7 @@ onReceiveNavigationCmd(command: CommandType, args: Record<string, Object>): Prom
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;ResultData&gt; | Promise对象，返回发送指令的结果。 |
@@ -307,7 +331,8 @@ onReceiveNavigationCmd(command: CommandType, args: Record<string, Object>): Prom
  
   
 
-#### QueryType
+## QueryType
+
 
 **支持设备：** Phone | Tablet
 
@@ -319,6 +344,7 @@ onReceiveNavigationCmd(command: CommandType, args: Record<string, Object>): Prom
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NAVIGATION_STATUS | 'navigationStatus' | 查看导航状态，callback返回数据为NavigationStatus。 |
@@ -327,7 +353,8 @@ onReceiveNavigationCmd(command: CommandType, args: Record<string, Object>): Prom
  
   
 
-#### CommandType
+## CommandType
+
 
 **支持设备：** Phone | Tablet
 
@@ -339,6 +366,7 @@ onReceiveNavigationCmd(command: CommandType, args: Record<string, Object>): Prom
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | START_NAVIGATION | 'startNavigation' | 发起导航接口。 |
@@ -357,7 +385,8 @@ onReceiveNavigationCmd(command: CommandType, args: Record<string, Object>): Prom
  
   
 
-#### ResultData
+## ResultData
+
 
 **支持设备：** Phone | Tablet
 
@@ -369,6 +398,7 @@ onReceiveNavigationCmd(command: CommandType, args: Record<string, Object>): Prom
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | code | number | 否 | 否 | 错误码，0表示执行成功，非0表示执行失败（非0以三方地图应用传递的值为准）。 |
@@ -378,7 +408,8 @@ onReceiveNavigationCmd(command: CommandType, args: Record<string, Object>): Prom
  
   
 
-#### getNavigationController
+## getNavigationController
+
 
 **支持设备：** Phone | Tablet
 
@@ -398,6 +429,7 @@ getNavigationController(): NavigationController
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NavigationController | 导航信息服务的控制器。 |
@@ -407,6 +439,7 @@ getNavigationController(): NavigationController
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -423,7 +456,8 @@ let navInfoController: navigationInfoMgr.NavigationController = navigationInfoMg
  
   
 
-#### NavigationController
+## NavigationController
+
 
 **支持设备：** Phone | Tablet
 
@@ -437,7 +471,8 @@ let navInfoController: navigationInfoMgr.NavigationController = navigationInfoMg
  
   
 
-#### updateNavigationStatus
+### updateNavigationStatus
+
 
 **支持设备：** Phone | Tablet
 
@@ -457,6 +492,7 @@ updateNavigationStatus(navigationStatus: NavigationStatus): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | navigationStatus | NavigationStatus | 是 | 导航状态，包含地图状态、导航类型、导航目的地、导航途经点、路线、地图和主题等。 |
@@ -466,6 +502,7 @@ updateNavigationStatus(navigationStatus: NavigationStatus): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-car)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -530,7 +567,8 @@ try {
  
   
 
-#### updateNavigationMetadata
+### updateNavigationMetadata
+
 
 **支持设备：** Phone | Tablet
 
@@ -550,6 +588,7 @@ updateNavigationMetadata(navigationMetadata: NavigationMetadata): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | navigationMetadata | NavigationMetadata | 是 | 导航数据，包含导航转向模式、引导距离、当前道路名、下一次进入道路名等。 |
@@ -559,6 +598,7 @@ updateNavigationMetadata(navigationMetadata: NavigationMetadata): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-car)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -606,7 +646,8 @@ try {
  
   
 
-#### registerSystemNavigationListener
+### registerSystemNavigationListener
+
 
 **支持设备：** Phone | Tablet
 
@@ -626,6 +667,7 @@ registerSystemNavigationListener(listener: SystemNavigationListener): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | listener | SystemNavigationListener | 是 | 注册监听系统导航信息和指令。 |
@@ -635,6 +677,7 @@ registerSystemNavigationListener(listener: SystemNavigationListener): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-car)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -689,7 +732,8 @@ try {
  
   
 
-#### unregisterSystemNavigationListener
+### unregisterSystemNavigationListener
+
 
 **支持设备：** Phone | Tablet
 
@@ -711,6 +755,7 @@ unregisterSystemNavigationListener(): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |

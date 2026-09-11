@@ -1,9 +1,9 @@
 # DataAbilityResult
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-ability-dataabilityresult
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义DataAbility数据操作结果，通过[executeBatch](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-ability-dataabilityhelper#dataabilityhelperexecutebatch)操作数据库时，操作结果使用DataAbilityResult对象返回。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import ability from '@ohos.ability.ability';
@@ -22,12 +23,14 @@ import ability from '@ohos.ability.ability';
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.FAModel
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | uri | string | 否 | 是 | 指示待处理的DataAbility。例：'dataability:///com.example.xxx.xxxx'。 |

@@ -1,9 +1,9 @@
 # @ohos.app.ability.CompletionHandlerForAbilityStartCallback (拉起应用结果回调的操作类)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-completionhandlerforabilitystartcallback
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 CompletionHandlerForAbilityStartCallback作为[AbilityStartCallback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-abilitystartcallback)的可选参数，用于返回垂域面板拉起指定类型的Ability组件的回调结果。
  
@@ -12,9 +12,10 @@ CompletionHandlerForAbilityStartCallback作为[AbilityStartCallback](https://dev
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { CompletionHandlerForAbilityStartCallback } from '@kit.AbilityKit';
@@ -22,20 +23,23 @@ import { CompletionHandlerForAbilityStartCallback } from '@kit.AbilityKit';
  
   
 
-#### CompletionHandlerForAbilityStartCallback
+## CompletionHandlerForAbilityStartCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 CompletionHandlerForAbilityStartCallback提供了onRequestSuccess和onRequestFailure两个回调函数属性，分别在拉起指定类型的Ability组件成功和失败时回调。
  
   
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | onRequestSuccess | OnRequestSuccessFn | 否 | 是 | 拉起指定类型的Ability组件成功时的回调函数。 元服务API：从API version 21开始，该接口支持在元服务中使用。 |
@@ -44,9 +48,10 @@ CompletionHandlerForAbilityStartCallback提供了onRequestSuccess和onRequestFai
  
   
 
-#### OnRequestSuccessFn
+## OnRequestSuccessFn
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnRequestSuccessFn = (name: string) => void
  
@@ -58,6 +63,7 @@ type OnRequestSuccessFn = (name: string) => void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 被拉起Ability组件或系统操作的名称。 Ability组件名称采用'[bundleName]#[moduleName]#[abilityName]'格式拼接。 |
@@ -69,9 +75,10 @@ type OnRequestSuccessFn = (name: string) => void
  
   
 
-#### OnRequestFailureFn
+## OnRequestFailureFn
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnRequestFailureFn = (name: string, failureCode: AbilityStartFailureCode, failureMessage: string) => void
  
@@ -83,6 +90,7 @@ type OnRequestFailureFn = (name: string, failureCode: AbilityStartFailureCode, f
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 被拉起Ability组件或系统操作的名称。 Ability组件名称采用'[bundleName]#[moduleName]#[abilityName]'格式拼接。如果用户自动取消拉起，name为空。 |
@@ -113,7 +121,7 @@ struct Index {
   };
   abilityStartCallback: common.AbilityStartCallback = {
     onError: (code: number, name: string, message: string) => {
-      console.info(`testTag code:` + code + `name:` + name + `message:` + message);
+      console.error(`testTag code:` + code + `name:` + name + `message:` + message);
     },
     onResult: (abilityResult: common.AbilityResult) => {
       console.info(`testTag resultCode:` + abilityResult.resultCode + `bundleName:` + abilityResult.want?.bundleName);
@@ -136,7 +144,7 @@ struct Index {
           this.context.startAbilityByType("share", wantParam, this.abilityStartCallback).then(() => {
             console.info(`startAbilityByType success`);
           }).catch((err: BusinessError) => {
-            console.error(`startAbilityByType fail, err: ${JSON.stringify(err)}`);
+            console.error(`Failed startAbilityByType. Code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
           });
         })
     }
@@ -146,9 +154,10 @@ struct Index {
  
   
 
-#### AbilityStartFailureCode
+## AbilityStartFailureCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 拉起指定类型的Ability组件失败的特定错误码。
  
@@ -156,6 +165,7 @@ struct Index {
  
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | FAILURE_CODE_SYSTEM_MALFUNCTION | 0 | 表示由于系统错误（如跳转弹框崩溃）而无法拉起Ability组件。 |

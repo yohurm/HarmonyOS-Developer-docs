@@ -1,13 +1,14 @@
 # fast_ads_segment_map.h
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/fast-kit-fast-ads-segment-map-8h
 **支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 线段表相关数据结构及函数定义。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 类型定义
+### 类型定义
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | typedef enum FAST_SegmentMapQueryType FAST_SegmentMapQueryType | 线段表支持的查询操作类型。 |
@@ -43,10 +47,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | FAST_SegmentMapQueryType { FAST_SEGMENTMAP_QUERY_TYPE_SUM = 0, FAST_SEGMENTMAP_QUERY_TYPE_MIN = 1, FAST_SEGMENTMAP_QUERY_TYPE_MAX = 2 } | 线段表支持的查询操作类型。 |
@@ -55,10 +61,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | FAST_EXPORT FAST_ErrorCode HMS_FAST_SegmentMap_CreateConfig (FAST_SegmentMapConfig **config) | 创建线段表的不透明配置。 |

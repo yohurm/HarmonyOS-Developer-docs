@@ -1,15 +1,15 @@
 # EventHub
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-eventhub
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 EventHub是系统提供的基于发布-订阅模式实现的事件通信机制。通过事件名，实现了发送方和订阅方之间的解耦，支持不同业务模块间的高效数据传递和状态同步。
 
 主要用于[UIAbility组件与UI的数据通信](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-data-sync-with-ui)。
 
-不同的Context对象拥有不同的EventHub对象，不同EventHub对象之间无法直接通信。事件的订阅、取消订阅、触发都作用在某一个具体的EventHub对象上。
+不同的Context对象拥有不同的EventHub对象，不同EventHub对象之间无法直接通信。事件的订阅、取消订阅、触发都作用在某一个具体的EventHub对象上。当Context对象发生变更，其关联的EventHub即随之失效。例如，应用创建分身时会触发ApplicationContext刷新，此前应用在该ApplicationContext上的EventHub将失效。
 
 由于Worker、Taskpool通过Actor模型实现[多线程并发](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/multi-thread-concurrency-overview#多线程并发模型)，不同虚拟机实例之间拥有独占的内存，因此EventHub对象不能用于线程间的数据通信。
 
@@ -18,9 +18,10 @@ EventHub是系统提供的基于发布-订阅模式实现的事件通信机制�
 
 
 
-#### 约束限制
+## 约束限制
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
  - 不支持在进程间通过Eventhub对象进行数据通信。
  - 不支持在Worker、TaskPool线程间通过EventHub对象进行数据通信。如需进行跨线程通信，参考[使用Emitter进行线程间通信](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/itc-with-emitter)。
@@ -30,9 +31,10 @@ EventHub是系统提供的基于发布-订阅模式实现的事件通信机制�
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { common } from '@kit.AbilityKit';
@@ -40,9 +42,10 @@ import { common } from '@kit.AbilityKit';
 
 
 
-#### 使用说明
+## 使用说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 开发者需要通过Context对象获取EventHub。以下示例通过UIAbility实例的Context对象获取其EventHub对象。
 
@@ -67,9 +70,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### EventHub.on
+## EventHub.on
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(event: string, callback: Function): void;
 
@@ -85,6 +89,7 @@ on(event: string, callback: Function): void;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 事件名称。 |
@@ -94,6 +99,7 @@ on(event: string, callback: Function): void;
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -141,7 +147,7 @@ export default class EntryAbility extends UIAbility {
 
 **示例2：**
 
-callback使用箭头函数时，调用方是EntryAbility对象。EntryAbility对象里存在value属性，因此结果是12。
+callback使用箭头函数时，this指向EntryAbility对象。EntryAbility对象里存在value属性，因此结果是12。
 
 ```text
 import { UIAbility } from '@kit.AbilityKit';
@@ -183,9 +189,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### EventHub.off
+## EventHub.off
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(event: string, callback?: Function): void;
 
@@ -201,6 +208,7 @@ off(event: string, callback?: Function): void;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 事件名称。 |
@@ -210,6 +218,7 @@ off(event: string, callback?: Function): void;
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -249,9 +258,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### EventHub.emit
+## EventHub.emit
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 emit(event: string, ...args: Object[]): void;
 
@@ -263,6 +273,7 @@ emit(event: string, ...args: Object[]): void;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 事件名称。 |
@@ -272,6 +283,7 @@ emit(event: string, ...args: Object[]): void;
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

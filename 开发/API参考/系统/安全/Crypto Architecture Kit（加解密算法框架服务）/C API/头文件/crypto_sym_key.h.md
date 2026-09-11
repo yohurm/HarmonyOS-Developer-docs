@@ -1,15 +1,18 @@
 # crypto_sym_key.h
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-04 10:41:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-crypto-sym-key-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义对称密钥接口。
+ 
+**引用文件：** <CryptoArchitectureKit/crypto_sym_key.h>
  
 **库：** libohcrypto.so
  
@@ -21,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_CryptoSymKey | OH_CryptoSymKey | 对称密钥结构体，表示对称密钥。 |
@@ -39,10 +45,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_Crypto_ErrCode OH_CryptoSymKeyGenerator_Create(const char *algoName, OH_CryptoSymKeyGenerator **ctx) | 根据给定的算法名称创建对称密钥生成器。例如AES256。 注意：创建的资源必须通过OH_CryptoSymKeyGenerator_Destroy销毁。 |
@@ -57,15 +65,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_CryptoSymKeyGenerator_Create()
+### OH_CryptoSymKeyGenerator_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoSymKeyGenerator_Create(const char *algoName, OH_CryptoSymKeyGenerator **ctx)
@@ -75,12 +85,13 @@ OH_Crypto_ErrCode OH_CryptoSymKeyGenerator_Create(const char *algoName, OH_Crypt
  
 根据给定的算法名称创建对称密钥生成器。例如AES256。
  
-注意：创建的资源必须通过[OH_CryptoSymKeyGenerator_Destroy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-crypto-sym-key-h#oh_cryptosymkeygenerator_destroy)销毁
+注意：创建的资源必须通过[OH_CryptoSymKeyGenerator_Destroy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-crypto-sym-key-h#oh_cryptosymkeygenerator_destroy)销毁。
  
 **起始版本：** 12
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *algoName | [in] 对称密钥算法名称，不能为NULL。取值如下： - 从API version 12开始支持"AES128"、"AES192"、"AES256"、"3DES192"、"HMAC\|SHA1"、"HMAC\|SHA224"、"HMAC\|SHA256"、"HMAC\|SHA384"、"HMAC\|SHA512"、"HMAC\|SM3"、"HMAC\|MD5"。从API version 26.0.0开始支持"HMAC\|SHA3-256"、"HMAC\|SHA3-384"、"HMAC\|SHA3-512"。 - 从API version 12开始支持"SM4_128"。 - 从API version 20开始支持"DES64"。 - 从API version 22开始支持"ChaCha20"。 - 从API version 26.0.0开始支持"RC2"、"RC4"、"Blowfish"、"CAST"。注意仅支持将对称密钥数据转换为对称密钥，不支持随机生成。 |
@@ -89,6 +100,7 @@ OH_Crypto_ErrCode OH_CryptoSymKeyGenerator_Create(const char *algoName, OH_Crypt
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_INVALID_PARAMS：ctx为NULL或algoName为NULL。 CRYPTO_NOT_SUPPORTED：不支持的算法。 CRYPTO_MEMORY_ERROR：内存分配失败。 CRYPTO_OPERTION_ERROR：密码操作失败。 |
@@ -102,9 +114,10 @@ OH_Crypto_ErrCode OH_CryptoSymKeyGenerator_Create(const char *algoName, OH_Crypt
  
   
 
-#### OH_CryptoSymKeyGenerator_Generate()
+### OH_CryptoSymKeyGenerator_Generate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoSymKeyGenerator_Generate(OH_CryptoSymKeyGenerator *ctx, OH_CryptoSymKey **keyCtx)
@@ -120,6 +133,7 @@ OH_Crypto_ErrCode OH_CryptoSymKeyGenerator_Generate(OH_CryptoSymKeyGenerator *ct
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoSymKeyGenerator *ctx | [in] 对称密钥生成器。不能为NULL。 |
@@ -128,6 +142,7 @@ OH_Crypto_ErrCode OH_CryptoSymKeyGenerator_Generate(OH_CryptoSymKeyGenerator *ct
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_INVALID_PARAMS：ctx或keyCtx为NULL。 CRYPTO_NOT_SUPPORTED：不支持的操作或算法。 CRYPTO_MEMORY_ERROR：内存操作失败。 CRYPTO_INVALID_CALL：无效的函数调用。可能的原因：算法不支持随机生成密钥（如RC2、RC4、Blowfish、CAST），请使用OH_CryptoSymKeyGenerator_Convert接口。适用版本：26.0.0+ CRYPTO_OPERTION_ERROR：密码操作失败。 |
@@ -135,9 +150,10 @@ OH_Crypto_ErrCode OH_CryptoSymKeyGenerator_Generate(OH_CryptoSymKeyGenerator *ct
  
   
 
-#### OH_CryptoSymKeyGenerator_Convert()
+### OH_CryptoSymKeyGenerator_Convert()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoSymKeyGenerator_Convert(OH_CryptoSymKeyGenerator *ctx, const Crypto_DataBlob *keyData, OH_CryptoSymKey **keyCtx)
@@ -153,6 +169,7 @@ OH_Crypto_ErrCode OH_CryptoSymKeyGenerator_Convert(OH_CryptoSymKeyGenerator *ctx
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoSymKeyGenerator *ctx | [in] 对称密钥生成器。不能为NULL。 |
@@ -162,6 +179,7 @@ OH_Crypto_ErrCode OH_CryptoSymKeyGenerator_Convert(OH_CryptoSymKeyGenerator *ctx
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_INVALID_PARAMS：ctx、keyData或keyCtx为NULL。 CRYPTO_NOT_SUPPORTED：不支持的操作或算法。 CRYPTO_MEMORY_ERROR：内存分配失败。 CRYPTO_OPERTION_ERROR：密码操作失败。 |
@@ -169,9 +187,10 @@ OH_Crypto_ErrCode OH_CryptoSymKeyGenerator_Convert(OH_CryptoSymKeyGenerator *ctx
  
   
 
-#### OH_CryptoSymKeyGenerator_GetAlgoName()
+### OH_CryptoSymKeyGenerator_GetAlgoName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 const char *OH_CryptoSymKeyGenerator_GetAlgoName(OH_CryptoSymKeyGenerator *ctx)
@@ -185,6 +204,7 @@ const char *OH_CryptoSymKeyGenerator_GetAlgoName(OH_CryptoSymKeyGenerator *ctx)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoSymKeyGenerator *ctx | [in] 对称密钥生成器。不能为NULL。 |
@@ -192,6 +212,7 @@ const char *OH_CryptoSymKeyGenerator_GetAlgoName(OH_CryptoSymKeyGenerator *ctx)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | const char * | 返回对称密钥算法名称，不需要调用者释放，在生成器销毁后不可使用。 |
@@ -199,9 +220,10 @@ const char *OH_CryptoSymKeyGenerator_GetAlgoName(OH_CryptoSymKeyGenerator *ctx)
  
   
 
-#### OH_CryptoSymKeyGenerator_Destroy()
+### OH_CryptoSymKeyGenerator_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_CryptoSymKeyGenerator_Destroy(OH_CryptoSymKeyGenerator *ctx)
@@ -215,6 +237,7 @@ void OH_CryptoSymKeyGenerator_Destroy(OH_CryptoSymKeyGenerator *ctx)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoSymKeyGenerator *ctx | [in] 对称密钥生成器。 |
@@ -222,9 +245,10 @@ void OH_CryptoSymKeyGenerator_Destroy(OH_CryptoSymKeyGenerator *ctx)
  
   
 
-#### OH_CryptoSymKey_GetAlgoName()
+### OH_CryptoSymKey_GetAlgoName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 const char *OH_CryptoSymKey_GetAlgoName(OH_CryptoSymKey *keyCtx)
@@ -238,6 +262,7 @@ const char *OH_CryptoSymKey_GetAlgoName(OH_CryptoSymKey *keyCtx)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoSymKey *keyCtx | [in] 对称密钥。不能为NULL。 |
@@ -245,6 +270,7 @@ const char *OH_CryptoSymKey_GetAlgoName(OH_CryptoSymKey *keyCtx)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | const char * | 返回算法名称，不需要调用者释放，在密钥销毁后不可使用。 |
@@ -252,9 +278,10 @@ const char *OH_CryptoSymKey_GetAlgoName(OH_CryptoSymKey *keyCtx)
  
   
 
-#### OH_CryptoSymKey_GetKeyData()
+### OH_CryptoSymKey_GetKeyData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoSymKey_GetKeyData(OH_CryptoSymKey *keyCtx, Crypto_DataBlob *out)
@@ -270,6 +297,7 @@ OH_Crypto_ErrCode OH_CryptoSymKey_GetKeyData(OH_CryptoSymKey *keyCtx, Crypto_Dat
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoSymKey *keyCtx | [in] 对称密钥。不能为NULL。 |
@@ -278,6 +306,7 @@ OH_Crypto_ErrCode OH_CryptoSymKey_GetKeyData(OH_CryptoSymKey *keyCtx, Crypto_Dat
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_INVALID_PARAMS：keyCtx或out为NULL。 CRYPTO_NOT_SUPPORTED：不支持的操作或算法。 CRYPTO_MEMORY_ERROR：内存操作失败。 CRYPTO_OPERTION_ERROR：密码操作失败。 |
@@ -285,9 +314,10 @@ OH_Crypto_ErrCode OH_CryptoSymKey_GetKeyData(OH_CryptoSymKey *keyCtx, Crypto_Dat
  
   
 
-#### OH_CryptoSymKey_Destroy()
+### OH_CryptoSymKey_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_CryptoSymKey_Destroy(OH_CryptoSymKey *keyCtx)
@@ -301,6 +331,7 @@ void OH_CryptoSymKey_Destroy(OH_CryptoSymKey *keyCtx)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoSymKey *keyCtx | [in] 对称密钥。 |

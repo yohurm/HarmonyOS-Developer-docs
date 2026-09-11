@@ -1,10 +1,10 @@
 # 自定义渲染节点 (RenderNode)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-arktsnode-rendernode
 
-#### 概述
+## 概述
 
 对于不具备自己的渲染环境的三方框架，尽管已实现前端解析、布局及事件处理等功能，但仍需依赖系统的基础渲染和动画能力。[FrameNode](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-arktsnode-framenode)上的通用属性与通用事件对这类框架而言是冗余的，会导致多次不必要的操作，涵盖布局、事件处理等逻辑。
 
@@ -12,13 +12,13 @@
 
 
 
-#### 创建和删除节点
+## 创建和删除节点
 
 RenderNode提供了节点创建和删除的能力。可以通过RenderNode的构造函数创建自定义的RenderNode节点。通过构造函数创建的节点对应一个实体的节点。同时，可以通过RenderNode中的[dispose](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode#dispose12)接口来实现与实体节点的绑定关系的解除。
 
 
 
-#### 操作节点树
+## 操作节点树
 
 RenderNode提供了节点的增、删、查、改的能力，能够修改节点的子树结构；可以对所有RenderNode的节点的父子节点做出查询操作，并返回查询结果。
 
@@ -116,7 +116,7 @@ export struct OperationNodeTree {
 
 
 
-#### 设置和获取渲染相关属性
+## 设置和获取渲染相关属性
 
 RenderNode中可以设置渲染相关的属性，包括：[backgroundColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode#backgroundcolor)，[clipToFrame](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode#cliptoframe)，[opacity](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode#opacity)，[size](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode#size)，[position](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode#position)，[frame](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode#frame)，[pivot](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode#pivot)，[scale](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode#scale)，[translation](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode#translation)，[rotation](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode#rotation)，[transform](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode#transform)，[shadowColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode#shadowcolor)，[shadowOffset](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode#shadowoffset)，[shadowAlpha](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode#shadowalpha)，[shadowElevation](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode#shadowelevation)，[shadowRadius](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode#shadowradius)，[borderStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode#borderstyle12)，[borderWidth](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode#borderwidth12)，[borderColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode#bordercolor12)，[borderRadius](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode#borderradius12)，[shapeMask](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode#shapemask12)，[shapeClip](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode#shapeclip12)，[markNodeGroup](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode#marknodegroup12)等。具体属性支持范围参考[RenderNode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode)接口说明。
 
@@ -335,7 +335,7 @@ export struct RenderingProperties {
 
 
 
-#### 自定义绘制
+## 自定义绘制
 
 通过重写RenderNode中的[draw](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode#draw)方法，可以自定义RenderNode的绘制内容，通过[invalidate](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode#invalidate)接口可以主动触发节点的重新绘制。
 
@@ -441,7 +441,7 @@ export struct CustomDraw {
 
 
 
-#### 调整自定义绘制Canvas的变换矩阵
+## 调整自定义绘制Canvas的变换矩阵
 
 从API version 12开始，通过重写RenderNode中的[draw](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode#draw)方法，可以自定义RenderNode的绘制内容。
 
@@ -594,7 +594,7 @@ export struct CustomDrawCanvas {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/B31bIkZdQ5q0_7q7pJbN7w/zh-cn_image_0000002704272443.png?HW-CC-KV=V1&HW-CC-Date=20260813T095721Z&HW-CC-Expire=86400&HW-CC-Sign=CBA1E40BA8B7C87A2AD5F227647AEFCFF74BE7065B90820717B689BCFA059E8C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/W0s7kOyKQCW0aA04vBgvdw/zh-cn_image_0000002717610688.png?HW-CC-KV=V1&HW-CC-Date=20260911T072514Z&HW-CC-Expire=86400&HW-CC-Sign=10DA9D84819157DF4BE7B948188C25CB97BD3AC6B0BAF59D4631D7345C6EBA48)
 
 
 **Node-API调用示例：**
@@ -770,12 +770,12 @@ export struct CustomDrawCanvasNative {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/Oc9benXxR8aXFyrtadKi6w/zh-cn_image_0000002674472646.png?HW-CC-KV=V1&HW-CC-Date=20260813T095721Z&HW-CC-Expire=86400&HW-CC-Sign=3136476EAC55B3BC66745DE45B8234DB72AD0879CD0AA94021894DB80900D607)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/SOAqtIGDTT2EFajtW3-htQ/zh-cn_image_0000002747290641.png?HW-CC-KV=V1&HW-CC-Date=20260911T072514Z&HW-CC-Expire=86400&HW-CC-Sign=27316303D3845B321F063F5B5BF9582296AD4090443A4A93CB16827B059E30F8)
 
 
 
 
-#### 设置标签
+## 设置标签
 
 开发者可利用[label](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode#label12)接口向RenderNode设置标签信息，有助于在使用inspector[检查页面布局](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-inspector-overview)时更清晰区分各节点。
 
@@ -829,12 +829,12 @@ export struct SetLabel {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/cXP6E3oxQsySMe3Q0itk1w/zh-cn_image_0000002704392611.png?HW-CC-KV=V1&HW-CC-Date=20260813T095721Z&HW-CC-Expire=86400&HW-CC-Sign=324D9D385019932EE7DFF3672F7FB711F567E3AD9FD340495FF25743007A0BD4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/-JzGk3V1ShKr0L7mLEFAbA/zh-cn_image_0000002747210559.png?HW-CC-KV=V1&HW-CC-Date=20260911T072514Z&HW-CC-Expire=86400&HW-CC-Sign=B0DBACB54D9C44C31437EE053358FE5259BBDA5446F8986C6FC0B9C0893FBE84)
 
 
 
 
-#### 查询当前RenderNode是否解除引用
+## 查询当前RenderNode是否解除引用
 
 前端节点均绑定有相应的后端实体节点，当节点调用dispose接口解除绑定后，再次调用接口可能会出现crash、返回默认值的情况。在ArkUI框架中，前端节点是在ArkTS代码层面创建的节点，负责与开发者交互；后端节点是在ArkUI框架底层维护的实体节点，负责具体逻辑的处理。
 
@@ -911,4 +911,4 @@ export struct CheckRenderNodeDisposed {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/29XjFkSoTmitXLCm9FlbfQ/zh-cn_image_0000002674632490.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095721Z&HW-CC-Expire=86400&HW-CC-Sign=6ABA54104EC0C4C839E8B0BFC17A422172379600E3F6A1537575C8549C2B499E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/dDWaq0AYTAm42eyv1r-bSg/zh-cn_image_0000002717770624.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072514Z&HW-CC-Expire=86400&HW-CC-Sign=A515B192DC23A722A8F3CF34AA870E41578ECD8C3F46D7A556269756F9F77008)

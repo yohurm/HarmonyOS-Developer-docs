@@ -111,11 +111,11 @@ struct WebPermissionsPage {
           video: {width: 500, height: 500},
           audio: true
        };
-       // 获取video摄像头区域
+      <em> // 获取video摄像头区域</em>
        let video = document.getElementById("video");
-       // 返回的Promise对象
+     <em>  // 返回的Promise对象</em>
        let promise = navigator.mediaDevices.getUserMedia(constraints);
-       // then()异步，调用MediaStream对象作为参数
+      <em> // then()异步，调用MediaStream对象作为参数</em>
        promise.then(function (MediaStream) {
           video.srcObject = MediaStream;
           video.play();
@@ -129,7 +129,7 @@ struct WebPermissionsPage {
     }
 </script>
 <div>
-    message:  
+    <span>message: </span> <span id="container"></span>
 </div>
 </body>
 </html>

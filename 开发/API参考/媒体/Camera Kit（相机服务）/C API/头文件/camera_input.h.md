@@ -1,13 +1,14 @@
 # camera_input.h
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-camera-input-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明相机输入概念。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | CameraInput_Callbacks | CameraInput_Callbacks | 相机输入错误事件的回调。 |
@@ -41,10 +45,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | typedef void (*OH_CameraInput_OnError)(const Camera_Input* cameraInput, Camera_ErrorCode errorCode) | OH_CameraInput_OnError | 在CameraInput_Callbacks中被调用的相机输入错误回调。 |
@@ -65,15 +71,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_CameraInput_OnError()
+### OH_CameraInput_OnError()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_CameraInput_OnError)(const Camera_Input* cameraInput, Camera_ErrorCode errorCode)
@@ -87,6 +95,7 @@ typedef void (*OH_CameraInput_OnError)(const Camera_Input* cameraInput, Camera_E
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_Input* cameraInput | 传递回调的Camera_Input。 |
@@ -105,9 +114,10 @@ typedef void (*OH_CameraInput_OnError)(const Camera_Input* cameraInput, Camera_E
  
   
 
-#### OH_CameraInput_RegisterCallback()
+### OH_CameraInput_RegisterCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CameraInput_RegisterCallback(Camera_Input* cameraInput, CameraInput_Callbacks* callback)
@@ -121,6 +131,7 @@ Camera_ErrorCode OH_CameraInput_RegisterCallback(Camera_Input* cameraInput, Came
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_Input* cameraInput | Camera_Input实例。 |
@@ -129,6 +140,7 @@ Camera_ErrorCode OH_CameraInput_RegisterCallback(Camera_Input* cameraInput, Came
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -136,9 +148,10 @@ Camera_ErrorCode OH_CameraInput_RegisterCallback(Camera_Input* cameraInput, Came
  
   
 
-#### OH_CameraInput_UnregisterCallback()
+### OH_CameraInput_UnregisterCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CameraInput_UnregisterCallback(Camera_Input* cameraInput, CameraInput_Callbacks* callback)
@@ -152,6 +165,7 @@ Camera_ErrorCode OH_CameraInput_UnregisterCallback(Camera_Input* cameraInput, Ca
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_Input* cameraInput | Camera_Input实例。 |
@@ -160,6 +174,7 @@ Camera_ErrorCode OH_CameraInput_UnregisterCallback(Camera_Input* cameraInput, Ca
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -167,9 +182,10 @@ Camera_ErrorCode OH_CameraInput_UnregisterCallback(Camera_Input* cameraInput, Ca
  
   
 
-#### OH_CameraInput_Open()
+### OH_CameraInput_Open()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CameraInput_Open(Camera_Input* cameraInput)
@@ -183,6 +199,7 @@ Camera_ErrorCode OH_CameraInput_Open(Camera_Input* cameraInput)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_Input* cameraInput | 要打开的Camera_Input实例。 |
@@ -190,6 +207,7 @@ Camera_ErrorCode OH_CameraInput_Open(Camera_Input* cameraInput)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_CONFLICT_CAMERA：因冲突而无法使用相机。 CAMERA_DEVICE_DISABLED：由于安全原因禁用了相机。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -197,9 +215,10 @@ Camera_ErrorCode OH_CameraInput_Open(Camera_Input* cameraInput)
  
   
 
-#### OH_CameraInput_OpenSecureCamera()
+### OH_CameraInput_OpenSecureCamera()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CameraInput_OpenSecureCamera(Camera_Input* cameraInput, uint64_t* secureSeqId)
@@ -213,6 +232,7 @@ Camera_ErrorCode OH_CameraInput_OpenSecureCamera(Camera_Input* cameraInput, uint
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_Input* cameraInput | 要打开的Camera_Input实例。 |
@@ -221,6 +241,7 @@ Camera_ErrorCode OH_CameraInput_OpenSecureCamera(Camera_Input* cameraInput, uint
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_CONFLICT_CAMERA：因冲突而无法使用相机。 CAMERA_DEVICE_DISABLED：由于安全原因禁用了相机。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -228,9 +249,10 @@ Camera_ErrorCode OH_CameraInput_OpenSecureCamera(Camera_Input* cameraInput, uint
  
   
 
-#### OH_CameraInput_OpenConcurrentCameras()
+### OH_CameraInput_OpenConcurrentCameras()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CameraInput_OpenConcurrentCameras(Camera_Input* cameraInput, Camera_ConcurrentType type)
@@ -244,6 +266,7 @@ Camera_ErrorCode OH_CameraInput_OpenConcurrentCameras(Camera_Input* cameraInput,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_Input* cameraInput | 要打开的Camera_Input实例。 |
@@ -252,6 +275,7 @@ Camera_ErrorCode OH_CameraInput_OpenConcurrentCameras(Camera_Input* cameraInput,
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK: 方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_CONFLICT_CAMERA：因冲突而无法使用相机。 CAMERA_DEVICE_DISABLED：由于安全原因禁用了相机。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -259,9 +283,10 @@ Camera_ErrorCode OH_CameraInput_OpenConcurrentCameras(Camera_Input* cameraInput,
  
   
 
-#### OH_CameraInput_Close()
+### OH_CameraInput_Close()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CameraInput_Close(Camera_Input* cameraInput)
@@ -275,6 +300,7 @@ Camera_ErrorCode OH_CameraInput_Close(Camera_Input* cameraInput)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_Input* cameraInput | 要关闭的Camera_Input实例。 |
@@ -282,6 +308,7 @@ Camera_ErrorCode OH_CameraInput_Close(Camera_Input* cameraInput)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -289,9 +316,10 @@ Camera_ErrorCode OH_CameraInput_Close(Camera_Input* cameraInput)
  
   
 
-#### OH_CameraInput_Release()
+### OH_CameraInput_Release()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CameraInput_Release(Camera_Input* cameraInput)
@@ -307,6 +335,7 @@ Camera_ErrorCode OH_CameraInput_Release(Camera_Input* cameraInput)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_Input* cameraInput | 要释放的Camera_Input实例。 |
@@ -314,6 +343,7 @@ Camera_ErrorCode OH_CameraInput_Release(Camera_Input* cameraInput)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -321,9 +351,10 @@ Camera_ErrorCode OH_CameraInput_Release(Camera_Input* cameraInput)
  
   
 
-#### OH_CameraInput_IsPhysicalCameraOrientationVariable()
+### OH_CameraInput_IsPhysicalCameraOrientationVariable()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CameraInput_IsPhysicalCameraOrientationVariable(Camera_Input* cameraInput, bool* isVariable)
@@ -337,6 +368,7 @@ Camera_ErrorCode OH_CameraInput_IsPhysicalCameraOrientationVariable(Camera_Input
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_Input* cameraInput | Camera_Input实例。 |
@@ -345,6 +377,7 @@ Camera_ErrorCode OH_CameraInput_IsPhysicalCameraOrientationVariable(Camera_Input
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -352,9 +385,10 @@ Camera_ErrorCode OH_CameraInput_IsPhysicalCameraOrientationVariable(Camera_Input
  
   
 
-#### OH_CameraInput_GetPhysicalCameraOrientation()
+### OH_CameraInput_GetPhysicalCameraOrientation()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CameraInput_GetPhysicalCameraOrientation(Camera_Input* cameraInput, uint32_t* orientation)
@@ -368,6 +402,7 @@ Camera_ErrorCode OH_CameraInput_GetPhysicalCameraOrientation(Camera_Input* camer
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_Input* cameraInput | Camera_Input实例。 |
@@ -376,6 +411,7 @@ Camera_ErrorCode OH_CameraInput_GetPhysicalCameraOrientation(Camera_Input* camer
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -383,9 +419,10 @@ Camera_ErrorCode OH_CameraInput_GetPhysicalCameraOrientation(Camera_Input* camer
  
   
 
-#### OH_CameraInput_UsePhysicalCameraOrientation()
+### OH_CameraInput_UsePhysicalCameraOrientation()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CameraInput_UsePhysicalCameraOrientation(Camera_Input* cameraInput, bool isUsed)
@@ -399,6 +436,7 @@ Camera_ErrorCode OH_CameraInput_UsePhysicalCameraOrientation(Camera_Input* camer
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_Input* cameraInput | Camera_Input实例。 |
@@ -407,6 +445,7 @@ Camera_ErrorCode OH_CameraInput_UsePhysicalCameraOrientation(Camera_Input* camer
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -414,9 +453,10 @@ Camera_ErrorCode OH_CameraInput_UsePhysicalCameraOrientation(Camera_Input* camer
  
   
 
-#### OH_CameraInput_OnOcclusionDetectionCallback()
+### OH_CameraInput_OnOcclusionDetectionCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 typedef void (*OH_CameraInput_OnOcclusionDetectionCallback)(const Camera_Input* cameraInput, Camera_OcclusionDetectionResult occlusionDetectionResult)
@@ -430,6 +470,7 @@ typedef void (*OH_CameraInput_OnOcclusionDetectionCallback)(const Camera_Input* 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_Input* cameraInput | 传递回调的Camera_Input。 |
@@ -438,9 +479,10 @@ typedef void (*OH_CameraInput_OnOcclusionDetectionCallback)(const Camera_Input* 
  
   
 
-#### OH_CameraInput_RegisterOcclusionDetectionCallback()
+### OH_CameraInput_RegisterOcclusionDetectionCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 Camera_ErrorCode OH_CameraInput_RegisterOcclusionDetectionCallback(Camera_Input* cameraInput, OH_CameraInput_OnOcclusionDetectionCallback occlusionDetectionCallback)
@@ -454,6 +496,7 @@ Camera_ErrorCode OH_CameraInput_RegisterOcclusionDetectionCallback(Camera_Input*
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_Input* cameraInput | Camera_Input实例。 |
@@ -462,6 +505,7 @@ Camera_ErrorCode OH_CameraInput_RegisterOcclusionDetectionCallback(Camera_Input*
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -469,9 +513,10 @@ Camera_ErrorCode OH_CameraInput_RegisterOcclusionDetectionCallback(Camera_Input*
  
   
 
-#### OH_CameraInput_UnregisterOcclusionDetectionCallback()
+### OH_CameraInput_UnregisterOcclusionDetectionCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 Camera_ErrorCode OH_CameraInput_UnregisterOcclusionDetectionCallback(Camera_Input* cameraInput, OH_CameraInput_OnOcclusionDetectionCallback occlusionDetectionCallback)
@@ -485,6 +530,7 @@ Camera_ErrorCode OH_CameraInput_UnregisterOcclusionDetectionCallback(Camera_Inpu
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_Input* cameraInput | Camera_Input实例。 |
@@ -493,6 +539,7 @@ Camera_ErrorCode OH_CameraInput_UnregisterOcclusionDetectionCallback(Camera_Inpu
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |

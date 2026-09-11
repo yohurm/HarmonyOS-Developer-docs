@@ -1,18 +1,20 @@
 # 基于AVCodec播放DRM节目(C/C++)
 
-更新时间：2026-04-10 09:55:20
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/drm-avcodec-integration
 
-#### 功能介绍
+## 功能介绍
 
 开发者可以调用DRM Kit的Native API，完成DRM节目播放。
 
 当前支持的解密能力如下：
 
+
 | 音频容器规格 | 音频解密类型 |
 | --- | --- |
 | mp4 | AAC |
+
 
 
 | 视频容器规格 | 视频解密类型 |
@@ -28,7 +30,7 @@
 
 
 
-#### 开发指导
+## 开发指导
 
 详细的API说明请参考[Drm](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drm)。
 
@@ -38,7 +40,7 @@
 
 
 
-#### 在 CMake 脚本中链接动态库
+### 在 CMake 脚本中链接动态库
 
 ```text
 target_link_libraries(sample PUBLIC libnative_drm.so)
@@ -50,7 +52,7 @@ target_link_libraries(sample PUBLIC libnative_drm.so)
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 导入DRM Kit接口。
 
   
@@ -65,6 +67,7 @@ target_link_libraries(sample PUBLIC libnative_drm.so)
 
   
 ```text
+#include <cstring>
 uint32_t count = 3; // count是当前设备实际支持的DRM插件的个数，用户根据实际情况设置。
 DRM_MediaKeySystemDescription descriptions[3];
 memset(descriptions, 0, sizeof(descriptions));

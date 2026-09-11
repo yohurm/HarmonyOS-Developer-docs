@@ -1,12 +1,13 @@
 # ArkTS卡片为组件添加动效
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widget-page-animation
 
 ArkTS卡片开放了使用动画效果的能力，支持[显式动画](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-explicit-animation)、[属性动画](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-animatorproperty)、[组件内转场](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-transition-animation-component)能力。ArkTS卡片使用动画效果时具有以下限制：
 
 **表1** 动效参数限制
+
 
 | 名称 | 参数说明 | 限制描述 |
 | --- | --- | --- |
@@ -21,7 +22,7 @@ ArkTS卡片开放了使用动画效果的能力，支持[显式动画](https://d
 
 
 
-#### 组件自身动效
+## 组件自身动效
 
 以下示例代码使用[animation](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-animatorproperty)接口实现了按钮旋转的动画效果。
 
@@ -57,7 +58,7 @@ struct AnimationCard {
 
 
 
-#### 组件转场动效
+## 组件转场动效
 
 以下示例代码使用[transition](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-transition-animation-component)接口实现了在卡片内图片出现与消失的动画效果。
 

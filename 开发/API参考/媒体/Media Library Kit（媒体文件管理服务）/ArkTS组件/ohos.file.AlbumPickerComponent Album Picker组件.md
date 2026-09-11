@@ -1,9 +1,9 @@
 # @ohos.file.AlbumPickerComponent (Album Picker组件)
 
-更新时间：2026-07-21 07:44:23
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-file-albumpickercomponent
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 应用可以在布局中嵌入AlbumPickerComponent组件，通过此组件，应用无需申请权限，即可访问公共目录中的相册列表。
 
@@ -16,9 +16,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { AlbumPickerComponent, AlbumPickerOptions, AlbumInfo, photoAccessHelper, EmptyAreaClickCallback } from '@kit.MediaLibraryKit';
@@ -26,17 +27,19 @@ import { AlbumPickerComponent, AlbumPickerOptions, AlbumInfo, photoAccessHelper,
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)。
 
 
 
-#### AlbumPickerComponent
+## AlbumPickerComponent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 AlbumPickerComponent( {albumPickerOptions?: AlbumPickerOptions, onAlbumClick?: (albumInfo: AlbumInfo) => boolean, onEmptyAreaClick?: EmptyAreaClickCallback, albumPickerController?: AlbumPickerController })
 
@@ -48,6 +51,7 @@ AlbumPickerComponent( {albumPickerOptions?: AlbumPickerOptions, onAlbumClick?: (
 
 **参数：**
 
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | albumPickerOptions | AlbumPickerOptions | 否 | AlbumPicker的配置信息。 元服务API：从API version 12开始，该接口支持在元服务中使用。 |
@@ -58,13 +62,15 @@ AlbumPickerComponent( {albumPickerOptions?: AlbumPickerOptions, onAlbumClick?: (
 
 
 
-#### AlbumPickerOptions
+## AlbumPickerOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Album Picker配置选项。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -75,9 +81,10 @@ Album Picker配置选项。
 
 
 
-#### EmptyAreaClickCallback13+
+## EmptyAreaClickCallback13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type EmptyAreaClickCallback = () => void
 
@@ -89,15 +96,17 @@ type EmptyAreaClickCallback = () => void
 
 
 
-#### AlbumInfo
+## AlbumInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 相册相关信息。
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -107,9 +116,10 @@ type EmptyAreaClickCallback = () => void
 
 
 
-#### AlbumPickerController20+
+## AlbumPickerController20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 应用可通过AlbumPickerController向组件发送数据。
 
@@ -119,9 +129,10 @@ type EmptyAreaClickCallback = () => void
 
 
 
-#### setFontSize20+
+### setFontSize20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setFontSize(fontSize: number | string): void
 
@@ -133,6 +144,7 @@ setFontSize(fontSize: number | string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fontSize | number \| string | 是 | 字体大小，取值范围参考fontSize。 |
@@ -140,9 +152,10 @@ setFontSize(fontSize: number | string): void
 
 
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```ArkTS
 // xxx.ets

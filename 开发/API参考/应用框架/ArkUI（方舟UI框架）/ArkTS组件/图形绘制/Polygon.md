@@ -1,9 +1,9 @@
 # Polygon
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawing-components-polygon
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 多边形绘制组件。该组件通过设置顶点坐标列表来定义多边形的形状，支持填充颜色、边框样式等属性配置。组件采用二维坐标系统，按照顶点顺序依次连接形成封闭多边形区域。适用于绘制三角形、四边形、五边形等自定义多边形形状，以及实现图表、图标等需要多边形元素的可视化场景。
  
@@ -12,23 +12,26 @@
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
  
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### Polygon
+### Polygon
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 new Polygon(options?: PolygonOptions)
  
@@ -42,6 +45,7 @@ new Polygon(options?: PolygonOptions)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | PolygonOptions | 否 | Polygon组件的配置选项，用于定义绘制区域的宽度和高度。需要指定多边形尺寸时传入此参数，不传入时使用默认宽度和高度（均为0）。当传入undefined或null时，参数设置无效，组件属性维持原值。 |
@@ -49,9 +53,10 @@ new Polygon(options?: PolygonOptions)
  
   
 
-#### Polygon
+### Polygon
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Polygon(options?: PolygonOptions)
  
@@ -65,6 +70,7 @@ Polygon(options?: PolygonOptions)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | PolygonOptions | 否 | Polygon组件的配置选项，用于定义绘制区域的宽度和高度。需要指定多边形尺寸时传入此参数，不传入时使用默认宽度和高度（均为0）。当传入undefined或null时，参数设置无效，组件属性维持原值。 |
@@ -72,9 +78,10 @@ Polygon(options?: PolygonOptions)
  
   
 
-#### PolygonOptions18+对象说明
+## PolygonOptions18+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于描述Polygon组件绘制属性。
  
@@ -90,6 +97,7 @@ Polygon(options?: PolygonOptions)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | width7+ | Length | 否 | 是 | 宽度，取值范围≥0。 默认值：0 默认单位：vp 若给定值小于0，则按默认值处理。异常值undefined、null、NaN和Infinity按照默认值处理。 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -98,17 +106,19 @@ Polygon(options?: PolygonOptions)
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)以及[图形绘制通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawing-components-common)外，还支持以下属性：
  
   
 
-#### points
+### points
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 points(value: Array&lt;any&gt;)
  
@@ -122,6 +132,7 @@ points(value: Array&lt;any&gt;)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Array&lt;any&gt; | 是 | 多边形的顶点坐标列表。使用时传入一个二维数组，每个子数组表示一个顶点的[x, y]坐标。 默认值：[]（空数组） 默认单位：vp 异常值undefined和null按照默认值处理。 |
@@ -129,13 +140,17 @@ points(value: Array&lt;any&gt;)
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 示例1（组件属性绘制）
+### 示例1（组件属性绘制）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过points、fill、fillOpacity、stroke、strokeWidth属性分别绘制多边形的顶点坐标、填充颜色、填充透明度、边框颜色和边框宽度。
  
@@ -176,7 +191,10 @@ struct PolygonExample {
  
   
 
-#### 示例2（宽和高使用不同参数类型绘制多边形）
+### 示例2（宽和高使用不同参数类型绘制多边形）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 width、height属性分别使用不同的长度类型绘制图形。
  
@@ -206,12 +224,15 @@ struct PolygonTypeExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/KOPEkqqNTvuF_fL2TLOQQA/zh-cn_image_0000002685928493.png?HW-CC-KV=V1&HW-CC-Date=20260730T071511Z&HW-CC-Expire=86400&HW-CC-Sign=BD12FC7D95E7C2F4F3CB3042544110D2C0FFCA4972AA530DA617E48114C7D27F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/wg1gAxENQ-ihxhXt0AgBLg/zh-cn_image_0000002717772964.png?HW-CC-KV=V1&HW-CC-Date=20260911T073117Z&HW-CC-Expire=86400&HW-CC-Sign=327589F4992A7CBD9E2D624CFA8AA8D850FDF554D84E82325C7DA883535A0EAC)
 
  
   
 
-#### 示例3（使用attributeModifier动态设置Polygon组件的属性）
+### 示例3（使用attributeModifier动态设置Polygon组件的属性）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 以下示例展示了如何使用attributeModifier动态设置Polygon组件的points、fill、fillOpacity、stroke、strokeDashArray、strokeDashOffset、strokeLineCap、strokeLineJoin、strokeMiterLimit、strokeOpacity、strokeWidth和antiAlias属性。
  
@@ -253,4 +274,4 @@ struct PolygonModifierDemo {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/KbgQgxlZQ8mg1AcQzAcz6A/zh-cn_image_0000002656008816.png?HW-CC-KV=V1&HW-CC-Date=20260730T071511Z&HW-CC-Expire=86400&HW-CC-Sign=970DB39BEAD048EA294DF1D41C8FAC355C95F32499D2731E409266CC5405A1A2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/0tucHQ5aSReNKHCCM5Ecwg/zh-cn_image_0000002717613032.png?HW-CC-KV=V1&HW-CC-Date=20260911T073117Z&HW-CC-Expire=86400&HW-CC-Sign=E9F90C0F1B572C07BE2F424AD60909993C35A8D8CF17A2D56CCCD7DCB3AE7E43)

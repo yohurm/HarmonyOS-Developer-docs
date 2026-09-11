@@ -1,11 +1,12 @@
 # NetworkBoost
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/network-boost-c-overview
 **支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -20,16 +21,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 文件
+### 文件
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | network_boost_handover.h | 声明用于连接迁移的API。提供基本的函数，结构体和const定义。 |
@@ -39,10 +43,12 @@
  
   
 
-#### 结构体
+### 结构体
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | struct NetworkBoost_DataSpeedAction | 发包速率建议。 |
@@ -64,10 +70,12 @@
  
   
 
-#### 宏定义
+### 宏定义
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | NETBOOST_MAX_PATH_NUM 4 | 网络质量变化信息的最大路径数量。 |
@@ -80,10 +88,12 @@
  
   
 
-#### 类型定义
+### 类型定义
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | typedef enum NetworkBoost_DataSpeedSimpleAction NetworkBoost_DataSpeedSimpleAction | 应用发包策略的建议。 |
@@ -115,10 +125,12 @@
  
   
 
-#### 枚举
+### 枚举
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | NetworkBoost_DataSpeedSimpleAction { NB_SIMPLEACTION_SUSPEND_DATA = 1, NB_SIMPLEACTION_DECREASE_DATA = 2, NB_SIMPLEACTION_INCREASE_DATA = 3, NB_SIMPLEACTION_KEEP_DATA = 4 } | 应用发包策略的建议。 |
@@ -140,10 +152,12 @@
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | int32_t HMS_NetworkBoost_RegisterHandoverChangeCallback (HMS_NetworkBoost_HandoverCallback *callback, uint32_t *callbackId) | 注册连接迁移回调。 |
@@ -166,13 +180,15 @@
  
   
 
-#### 宏定义说明
+## 宏定义说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### NB_BPS
+### NB_BPS
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -188,7 +204,8 @@
  
   
 
-#### NB_GBPS
+### NB_GBPS
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -204,7 +221,8 @@
  
   
 
-#### NB_KBPS
+### NB_KBPS
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -220,7 +238,8 @@
  
   
 
-#### NB_MBPS
+### NB_MBPS
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -236,7 +255,8 @@
  
   
 
-#### NB_TBPS
+### NB_TBPS
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -252,7 +272,8 @@
  
   
 
-#### NETBOOST_MAX_PATH_NUM
+### NETBOOST_MAX_PATH_NUM
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -268,13 +289,15 @@
  
   
 
-#### 类型定义说明
+## 类型定义说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### HMS_NetworkBoost_HandoverCallback
+### HMS_NetworkBoost_HandoverCallback
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -290,7 +313,8 @@ typedef struct HMS_NetworkBoost_HandoverCallback HMS_NetworkBoost_HandoverCallba
  
   
 
-#### HMS_NetworkBoost_NetQosChange
+### HMS_NetworkBoost_NetQosChange
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -306,6 +330,7 @@ typedef void(* HMS_NetworkBoost_NetQosChange) (NetworkBoost_NetworkQosArray *net
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | networkQosArray | 网络质量变化的详细信息。 |
@@ -313,7 +338,8 @@ typedef void(* HMS_NetworkBoost_NetQosChange) (NetworkBoost_NetworkQosArray *net
  
   
 
-#### HMS_NetworkBoost_NetSceneChange
+### HMS_NetworkBoost_NetSceneChange
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -329,6 +355,7 @@ typedef void(* HMS_NetworkBoost_NetSceneChange) (NetworkBoost_NetworkScene *netw
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | networkScene | 网络场景变化的详细信息。 |
@@ -336,7 +363,8 @@ typedef void(* HMS_NetworkBoost_NetSceneChange) (NetworkBoost_NetworkScene *netw
  
   
 
-#### HMS_NetworkBoost_OnHandoverComplete
+### HMS_NetworkBoost_OnHandoverComplete
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -352,6 +380,7 @@ typedef void(* HMS_NetworkBoost_OnHandoverComplete) (NetworkBoost_HandoverComple
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | handoverComplete | 连接迁移完成的详细信息。 |
@@ -359,7 +388,8 @@ typedef void(* HMS_NetworkBoost_OnHandoverComplete) (NetworkBoost_HandoverComple
  
   
 
-#### HMS_NetworkBoost_OnHandoverStart
+### HMS_NetworkBoost_OnHandoverStart
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -375,6 +405,7 @@ typedef void(* HMS_NetworkBoost_OnHandoverStart) (NetworkBoost_HandoverStart *ha
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | handoverStart | 连接迁移开始的详细信息 |
@@ -382,7 +413,8 @@ typedef void(* HMS_NetworkBoost_OnHandoverStart) (NetworkBoost_HandoverStart *ha
  
   
 
-#### HMS_NetworkBoost_OnMultiPathRequestResult
+### HMS_NetworkBoost_OnMultiPathRequestResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -398,6 +430,7 @@ typedef void (*HMS_NetworkBoost_OnMultiPathRequestResult)(NetworkBoost_MultiPath
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | result | 发起多网的结果。 |
@@ -405,7 +438,8 @@ typedef void (*HMS_NetworkBoost_OnMultiPathRequestResult)(NetworkBoost_MultiPath
  
   
 
-#### HMS_NetworkBoost_OnMultiPathStateChange
+### HMS_NetworkBoost_OnMultiPathStateChange
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -421,6 +455,7 @@ typedef void (*HMS_NetworkBoost_OnMultiPathStateChange)(NetworkBoost_MultiPathSt
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | multiPathState | 多网状态信息。 |
@@ -428,7 +463,8 @@ typedef void (*HMS_NetworkBoost_OnMultiPathStateChange)(NetworkBoost_MultiPathSt
  
   
 
-#### HMS_NetworkBoost_OnMultiPathRecommendation
+### HMS_NetworkBoost_OnMultiPathRecommendation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -444,6 +480,7 @@ typedef void (*HMS_NetworkBoost_OnMultiPathRecommendation)(NetworkBoost_MultiPat
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | recommendation | 多网推荐信息。 |
@@ -451,7 +488,8 @@ typedef void (*HMS_NetworkBoost_OnMultiPathRecommendation)(NetworkBoost_MultiPat
  
   
 
-#### NetworkBoost_DataSpeedAction
+### NetworkBoost_DataSpeedAction
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -467,7 +505,8 @@ typedef struct NetworkBoost_DataSpeedAction NetworkBoost_DataSpeedAction
  
   
 
-#### NetworkBoost_DataSpeedSimpleAction
+### NetworkBoost_DataSpeedSimpleAction
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -483,7 +522,8 @@ typedef enum NetworkBoost_DataSpeedSimpleAction NetworkBoost_DataSpeedSimpleActi
  
   
 
-#### NetworkBoost_ErrorResult
+### NetworkBoost_ErrorResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -499,7 +539,8 @@ typedef enum NetworkBoost_ErrorResult NetworkBoost_ErrorResult
  
   
 
-#### NetworkBoost_HandoverComplete
+### NetworkBoost_HandoverComplete
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -515,7 +556,8 @@ typedef struct NetworkBoost_HandoverComplete NetworkBoost_HandoverComplete
  
   
 
-#### NetworkBoost_HandoverMode
+### NetworkBoost_HandoverMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -531,7 +573,8 @@ typedef enum NetworkBoost_HandoverMode NetworkBoost_HandoverMode
  
   
 
-#### NetworkBoost_HandoverStart
+### NetworkBoost_HandoverStart
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -547,7 +590,8 @@ typedef struct NetworkBoost_HandoverStart NetworkBoost_HandoverStart
  
   
 
-#### NetworkBoost_NetHandle
+### NetworkBoost_NetHandle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -563,7 +607,8 @@ typedef struct NetworkBoost_NetHandle NetworkBoost_NetHandle
  
   
 
-#### NetworkBoost_NetworkQos
+### NetworkBoost_NetworkQos
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -579,7 +624,8 @@ typedef struct NetworkBoost_NetworkQos NetworkBoost_NetworkQos
  
   
 
-#### NetworkBoost_NetworkQosArray
+### NetworkBoost_NetworkQosArray
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -595,7 +641,8 @@ typedef struct NetworkBoost_NetworkQosArray NetworkBoost_NetworkQosArray
  
   
 
-#### NetworkBoost_NetworkScene
+### NetworkBoost_NetworkScene
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -611,7 +658,8 @@ typedef struct NetworkBoost_NetworkScene NetworkBoost_NetworkScene
  
   
 
-#### NetworkBoost_PathType
+### NetworkBoost_PathType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -627,7 +675,8 @@ typedef enum NetworkBoost_PathType NetworkBoost_PathType
  
   
 
-#### NetworkBoost_QoeType
+### NetworkBoost_QoeType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -643,7 +692,8 @@ typedef enum NetworkBoost_QoeType NetworkBoost_QoeType
  
   
 
-#### NetworkBoost_RecommendedAction
+### NetworkBoost_RecommendedAction
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -659,7 +709,8 @@ typedef enum NetworkBoost_RecommendedAction NetworkBoost_RecommendedAction
  
   
 
-#### NetworkBoost_ReEstAction
+### NetworkBoost_ReEstAction
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -675,7 +726,8 @@ typedef enum NetworkBoost_ReEstAction NetworkBoost_ReEstAction
  
   
 
-#### NetworkBoost_Scene
+### NetworkBoost_Scene
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -691,7 +743,8 @@ typedef enum NetworkBoost_Scene NetworkBoost_Scene
  
   
 
-#### NetworkBoost_ServiceType
+### NetworkBoost_ServiceType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -707,7 +760,8 @@ typedef enum NetworkBoost_ServiceType NetworkBoost_ServiceType
  
   
 
-#### NetworkBoost_WeakSignalPrediction
+### NetworkBoost_WeakSignalPrediction
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -723,13 +777,15 @@ typedef struct NetworkBoost_WeakSignalPrediction NetworkBoost_WeakSignalPredicti
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### NetworkBoost_DataSpeedSimpleAction
+### NetworkBoost_DataSpeedSimpleAction
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -743,6 +799,7 @@ enum NetworkBoost_DataSpeedSimpleAction
  
 **起始版本：** 5.1.0(18)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | NB_SIMPLEACTION_SUSPEND_DATA | 停止发包。 |
@@ -753,7 +810,8 @@ enum NetworkBoost_DataSpeedSimpleAction
  
   
 
-#### NetworkBoost_ErrorResult
+### NetworkBoost_ErrorResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -767,6 +825,7 @@ enum NetworkBoost_ErrorResult
  
 **起始版本：** 5.1.0(18)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | NB_ERROR_NONE | 连接迁移成功。 |
@@ -777,7 +836,8 @@ enum NetworkBoost_ErrorResult
  
   
 
-#### NetworkBoost_HandoverMode
+### NetworkBoost_HandoverMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -791,6 +851,7 @@ enum NetworkBoost_HandoverMode
  
 **起始版本：** 5.1.0(18)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | NB_MODE_DELEGATION | 委托模式，表示由系统发起连接迁移。默认为该模式。 |
@@ -799,7 +860,8 @@ enum NetworkBoost_HandoverMode
  
   
 
-#### NetworkBoost_PathType
+### NetworkBoost_PathType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -813,6 +875,7 @@ enum NetworkBoost_PathType
  
 **起始版本：** 5.1.0(18)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | NB_PATH_CELLULAR_PRIMARY | 蜂窝主卡。 |
@@ -823,7 +886,8 @@ enum NetworkBoost_PathType
  
   
 
-#### NetworkBoost_QoeType
+### NetworkBoost_QoeType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -837,6 +901,7 @@ enum NetworkBoost_QoeType
  
 **起始版本：** 5.1.0(18)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | NB_QOE_GOOD | 体验良好。 |
@@ -851,7 +916,8 @@ enum NetworkBoost_QoeType
  
   
 
-#### NetworkBoost_RecommendedAction
+### NetworkBoost_RecommendedAction
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -865,6 +931,7 @@ enum NetworkBoost_RecommendedAction
  
 **起始版本：** 5.1.0(18)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | NB_ACTION_DO_CACHING | 做缓存动作。 |
@@ -876,7 +943,8 @@ enum NetworkBoost_RecommendedAction
  
   
 
-#### NetworkBoost_ReEstAction
+### NetworkBoost_ReEstAction
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -890,6 +958,7 @@ enum NetworkBoost_ReEstAction
  
 **起始版本：** 5.1.0(18)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | NB_REEST_DEFAULT | 应用需要使用同样的远端IP，进行重建链路。 |
@@ -901,7 +970,8 @@ enum NetworkBoost_ReEstAction
  
   
 
-#### NetworkBoost_Scene
+### NetworkBoost_Scene
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -915,6 +985,7 @@ enum NetworkBoost_Scene
  
 **起始版本：** 5.1.0(18)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | NB_SCENE_NORMAL | 正常场景。 |
@@ -925,7 +996,8 @@ enum NetworkBoost_Scene
  
   
 
-#### NetworkBoost_ServiceType
+### NetworkBoost_ServiceType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -939,6 +1011,7 @@ enum NetworkBoost_ServiceType
  
 **起始版本：** 5.1.0(18)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | NB_SERVICE_DEFAULT | 默认服务类型。 |
@@ -969,7 +1042,8 @@ enum NetworkBoost_ServiceType
  
   
 
-#### NetworkBoost_PathState
+### NetworkBoost_PathState
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -983,6 +1057,7 @@ enum NetworkBoost_PathState
  
 **起始版本：** 6.0.2(22)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | NB_PATH_IDLE | 多网链路处于空闲状态。 |
@@ -992,7 +1067,8 @@ enum NetworkBoost_PathState
  
   
 
-#### NetworkBoost_MultiPathChangeCause
+### NetworkBoost_MultiPathChangeCause
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1006,6 +1082,7 @@ enum NetworkBoost_MultiPathChangeCause
  
 **起始版本：** 6.0.2(22)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | NB_MULTIPATH_CAUSE_REQUEST_NORMAL | 正常发起多网请求。 |
@@ -1025,7 +1102,8 @@ enum NetworkBoost_MultiPathChangeCause
  
   
 
-#### NetworkBoost_MultiPathErrorResult
+### NetworkBoost_MultiPathErrorResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1039,6 +1117,7 @@ enum NetworkBoost_MultiPathErrorResult
  
 **起始版本：** 6.0.2(22)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | NB_MULTIPATH_ERROR_NONE | 多网建立成功。 |
@@ -1049,7 +1128,8 @@ enum NetworkBoost_MultiPathErrorResult
  
   
 
-#### NetworkBoost_MultiPathState
+### NetworkBoost_MultiPathState
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1063,6 +1143,7 @@ enum NetworkBoost_MultiPathState
  
 **起始版本：** 6.0.2(22)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | NB_MULTIPATH_IDLE | 多网处于空闲状态。 |
@@ -1073,7 +1154,8 @@ enum NetworkBoost_MultiPathState
  
   
 
-#### NetworkBoost_MultiPathAction
+### NetworkBoost_MultiPathAction
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1087,6 +1169,7 @@ enum NetworkBoost_MultiPathAction
  
 **起始版本：** 6.0.2(22)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | NB_MULTIPATH_ACTION_REQUEST | 建议发起多网请求。 |
@@ -1095,7 +1178,8 @@ enum NetworkBoost_MultiPathAction
  
   
 
-#### NetworkBoost_SceneEvent
+### NetworkBoost_SceneEvent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1109,6 +1193,7 @@ enum NetworkBoost_SceneEvent
  
 **起始版本：** 6.0.2(22)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | NB_SCENE_EVENT_ENTER | 进入业务场景。 |
@@ -1118,13 +1203,15 @@ enum NetworkBoost_SceneEvent
  
   
 
-#### 函数说明
+## 函数说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### HMS_NetworkBoost_RegisterHandoverChangeCallback()
+### HMS_NetworkBoost_RegisterHandoverChangeCallback()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1140,6 +1227,7 @@ int32_t HMS_NetworkBoost_RegisterHandoverChangeCallback (HMS_NetworkBoost_Handov
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | callback | 连接迁移回调函数。 |
@@ -1168,7 +1256,8 @@ ohos.permission.GET_NETWORK_INFO
  
   
 
-#### HMS_NetworkBoost_RegisterNetQosCallback()
+### HMS_NetworkBoost_RegisterNetQosCallback()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1184,6 +1273,7 @@ int32_t HMS_NetworkBoost_RegisterNetQosCallback (HMS_NetworkBoost_NetQosChange c
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | callback | 网络质量回调函数。 |
@@ -1212,7 +1302,8 @@ ohos.permission.GET_NETWORK_INFO
  
   
 
-#### HMS_NetworkBoost_RegisterNetSceneCallback()
+### HMS_NetworkBoost_RegisterNetSceneCallback()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1228,6 +1319,7 @@ int32_t HMS_NetworkBoost_RegisterNetSceneCallback (HMS_NetworkBoost_NetSceneChan
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | callback | 网络场景变化回调函数。 |
@@ -1256,7 +1348,8 @@ ohos.permission.GET_NETWORK_INFO
  
   
 
-#### HMS_NetworkBoost_ReportQoe()
+### HMS_NetworkBoost_ReportQoe()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1272,6 +1365,7 @@ int32_t HMS_NetworkBoost_ReportQoe (NetworkBoost_ServiceType serviceType, Networ
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | serviceType | 应用的业务类型。 |
@@ -1298,7 +1392,8 @@ ohos.permission.GET_NETWORK_INFO
  
   
 
-#### HMS_NetworkBoost_SetHandoverMode()
+### HMS_NetworkBoost_SetHandoverMode()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1314,6 +1409,7 @@ int32_t HMS_NetworkBoost_SetHandoverMode (NetworkBoost_HandoverMode mode)
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | mode | 连接迁移模式。 |
@@ -1339,7 +1435,8 @@ ohos.permission.GET_NETWORK_INFO
  
   
 
-#### HMS_NetworkBoost_UnregisterHandoverChangeCallback()
+### HMS_NetworkBoost_UnregisterHandoverChangeCallback()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1355,6 +1452,7 @@ int32_t HMS_NetworkBoost_UnregisterHandoverChangeCallback (uint32_t callbackId)
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | callbackId | 回调的ID，在注册回调函数时由系统分配。 |
@@ -1380,7 +1478,8 @@ ohos.permission.GET_NETWORK_INFO
  
   
 
-#### HMS_NetworkBoost_UnregisterNetQosCallback()
+### HMS_NetworkBoost_UnregisterNetQosCallback()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1396,6 +1495,7 @@ int32_t HMS_NetworkBoost_UnregisterNetQosCallback (uint32_t callbackId)
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | callbackId | 回调的ID，在注册回调函数时由系统分配。 |
@@ -1421,7 +1521,8 @@ ohos.permission.GET_NETWORK_INFO
  
   
 
-#### HMS_NetworkBoost_UnregisterNetSceneCallback()
+### HMS_NetworkBoost_UnregisterNetSceneCallback()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1437,6 +1538,7 @@ int32_t HMS_NetworkBoost_UnregisterNetSceneCallback (uint32_t callbackId)
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | callbackId | 回调的ID，在注册回调函数时由系统分配。 |
@@ -1462,7 +1564,8 @@ ohos.permission.GET_NETWORK_INFO
  
   
 
-#### HMS_NetworkBoost_GetMultiPathQuotaStats()
+### HMS_NetworkBoost_GetMultiPathQuotaStats()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1478,6 +1581,7 @@ int32_t HMS_NetworkBoost_GetMultiPathQuotaStats(NetworkBoost_MultiPathQuota* quo
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | quota | 获取到的应用配额信息。 |
@@ -1501,7 +1605,8 @@ ohos.permission.LINKTURBO
  
   
 
-#### HMS_NetworkBoost_RequestMultiPath()
+### HMS_NetworkBoost_RequestMultiPath()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1517,6 +1622,7 @@ int32_t HMS_NetworkBoost_RequestMultiPath(HMS_NetworkBoost_OnMultiPathRequestRes
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | result | 发起多网的结果。 |
@@ -1560,7 +1666,8 @@ ohos.permission.LINKTURBO
  
   
 
-#### HMS_NetworkBoost_ReleaseMultiPath()
+### HMS_NetworkBoost_ReleaseMultiPath()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1594,7 +1701,8 @@ ohos.permission.LINKTURBO
  
   
 
-#### HMS_NetworkBoost_RegisterMultiPathStateChangeCallback()
+### HMS_NetworkBoost_RegisterMultiPathStateChangeCallback()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1610,6 +1718,7 @@ int32_t HMS_NetworkBoost_RegisterMultiPathStateChangeCallback(HMS_NetworkBoost_O
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | callback | 网状态变化回调函数。 |
@@ -1634,7 +1743,8 @@ ohos.permission.LINKTURBO
  
   
 
-#### HMS_NetworkBoost_UnregisterMultiPathStateChangeCallback()
+### HMS_NetworkBoost_UnregisterMultiPathStateChangeCallback()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1650,6 +1760,7 @@ int32_t HMS_NetworkBoost_UnregisterMultiPathStateChangeCallback(uint32_t callbac
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | callbackId | 回调的ID，注册多网状态时由系统分配。 |
@@ -1671,7 +1782,8 @@ ohos.permission.LINKTURBO
  
   
 
-#### HMS_NetworkBoost_RegisterMultiPathRecommendationCallback()
+### HMS_NetworkBoost_RegisterMultiPathRecommendationCallback()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1687,6 +1799,7 @@ int32_t HMS_NetworkBoost_RegisterMultiPathRecommendationCallback(HMS_NetworkBoos
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | callback | 系统多网建议变化回调函数。 |
@@ -1711,7 +1824,8 @@ ohos.permission.LINKTURBO
  
   
 
-#### HMS_NetworkBoost_UnregisterMultiPathRecommendationCallback()
+### HMS_NetworkBoost_UnregisterMultiPathRecommendationCallback()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1727,6 +1841,7 @@ int32_t HMS_NetworkBoost_UnregisterMultiPathRecommendationCallback(uint32_t call
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | callbackId | 回调的ID，注册多网状态时由系统分配。 |
@@ -1748,7 +1863,8 @@ ohos.permission.LINKTURBO
  
   
 
-#### HMS_NetworkBoost_SetSceneDesc()
+### HMS_NetworkBoost_SetSceneDesc()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1764,6 +1880,7 @@ int32_t HMS_NetworkBoost_SetSceneDesc(NetworkBoost_SceneDesc sceneDesc)
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | sceneDesc | 要设置的业务场景信息。 |

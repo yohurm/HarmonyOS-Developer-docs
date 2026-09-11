@@ -1,6 +1,6 @@
 # 使用SoundPool播放短音频(ArkTS)
 
-更新时间：2026-03-20 09:49:50
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-soundpool-for-playback
 
@@ -21,7 +21,7 @@ SoundPool当前支持播放解码后1MB以下的音频资源，解码后大小�
 
 
 
-#### 开发步骤及注意事项
+## 开发步骤及注意事项
 1. 调用[createSoundPool](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-f#mediacreatesoundpool10-1)方法创建SoundPool实例。
 
   
@@ -196,7 +196,7 @@ await this.soundPool!.release();
 
 
 
-#### 运行示例工程
+## 运行示例工程
 
 参考以下示例，使用SoundPool进行低时延播放。
 1. 新建工程，下载[完整示例工程](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/Media/SoundPool/SoundPoolArkTS)，并将示例工程的资源复制到对应目录。

@@ -1,10 +1,10 @@
 # 下载与安装DevEco Studio
 
-更新时间：2026-06-24 07:08:31
+更新时间：2026-08-29 09:41:34
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-software-install
 
-#### 下载软件
+## 下载软件
 
 请前往[下载中心](https://developer.huawei.com/consumer/cn/download/deveco-studio)，登录华为账号后下载DevEco Studio，并根据下载中心页面**工具完整性**指导进行完整性校验。
 
@@ -12,11 +12,11 @@
 DevEco Studio支持Windows和macOS系统，下面将针对两种操作系统的软件安装方式分别进行介绍。
 
 
-#### Windows环境
+## Windows环境
 
 
 
-#### 运行环境要求
+### 运行环境要求
 
 为保证DevEco Studio正常运行，建议电脑配置满足如下要求：
 
@@ -28,8 +28,8 @@ DevEco Studio支持Windows和macOS系统，下面将针对两种操作系统的�
 
 
 
-#### 安装DevEco Studio
-1. 下载完成后，双击下载的“deveco-studio-xxxx.exe”，进入DevEco Studio安装向导。在如下界面选择安装路径，默认安装于C:\Program Files路径下，也可以单击**浏览（B）...**指定其他安装路径，然后单击**下一步**。
+### 安装DevEco Studio
+1. 下载完成后，双击下载的“deveco-studio-xxxx.exe”，进入DevEco Studio安装向导。在如下界面选择安装路径，默认安装于C:\Program Files路径下，也可以单击**浏览（B）...** 指定其他安装路径，然后单击**下一步**。
 
   
 ![](assets/下载与安装DevEco%20Studio/file-20260514134308631-0.png)
@@ -52,11 +52,11 @@ DevEco Studio支持Windows和macOS系统，下面将针对两种操作系统的�
 
 
 
-#### macOS环境
+## macOS环境
 
 
 
-#### 运行环境要求
+### 运行环境要求
 
 为保证DevEco Studio正常运行，建议电脑配置满足如下要求：
 
@@ -68,7 +68,7 @@ DevEco Studio支持Windows和macOS系统，下面将针对两种操作系统的�
 
 
 
-#### 安装DevEco Studio
+### 安装DevEco Studio
 1. 在安装界面中，将“**DevEco-Studio.app**”拖拽到“**Applications**”中，等待安装完成。
 
   
@@ -83,9 +83,9 @@ DevEco Studio支持Windows和macOS系统，下面将针对两种操作系统的�
 
 
 
-#### 诊断开发环境
+## 诊断开发环境
 
-为了您开发应用/元服务的良好体验，DevEco Studio提供了开发环境诊断的功能，帮助您识别开发环境是否完备。您可以在欢迎页面单击**Diagnose**进行诊断。如果您已经打开了工程开发界面，也可以在菜单栏单击**Help > Diagnostic Tools > Diagnose Development Environment**进行诊断。
+DevEco Studio提供开发环境诊断功能，帮助您检查开发环境是否完备。您可以在欢迎页面单击**Diagnose**进行诊断。如果您已经打开了工程开发界面，也可以在菜单栏单击**Help > Diagnostic Tools > Diagnose Development Environment**进行诊断。
 
 
 ![](assets/下载与安装DevEco%20Studio/file-20260514134308631-6.png)
@@ -97,20 +97,20 @@ DevEco Studio开发环境诊断项包括电脑的配置、网络的连通情况�
 
 
 
-#### 启用中文化插件
+## 启用中文化插件
 
 该功能仅支持中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）。
 
 
- - 从DevEco Studio 6.0.0 Beta1版本开始，中文化插件默认启用。如需切换为中文显示效果，在菜单栏进入**File > Settings...**（macOS为**DevEco Studio > Preferences/Settings **）** > Appearance & Behavior > System Settings** > **Language**，语言选择**Chinese**并点击**Apply**，在弹窗中点击**Restart**重启即可完成语言切换。若语言选择时未找到Chinese，请按照[之前版本操作](#li1956431816322)启用插件后，再选择。      
+ - 从DevEco Studio 6.0.0 Beta1版本开始，中文化插件默认启用。如需切换为中文显示效果，在菜单栏进入**File > Settings...** （macOS为**DevEco Studio > Preferences/Settings **）** > Appearance & Behavior > System Settings** > **Language**，语言选择**Chinese**并点击**Apply**，在弹窗中点击**Restart**重启即可完成语言切换。若语言选择时未找到Chinese，请按照[之前版本操作](#li1956431816322)启用插件后，再选择。      
 > [!NOTE]
 > 从DevEco Studio 6.1.0 Beta1版本开始，语言选择时 Chinese 变更为 Chinese(Simplified) 简体中文。
 
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/7gP90kZQQMOHDjNOuF0QDA/zh-cn_image_0000002594634378.png?HW-CC-KV=V1&HW-CC-Date=20260701T014605Z&HW-CC-Expire=86400&HW-CC-Sign=471FB4A022B4089B6EDB283B7FB6719029CE9FAEC3FCB4283CD7E9D4E8CDB5AF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/lgFPDTziQ_u2VqFXc1H4wA/zh-cn_image_0000002701822734.png?HW-CC-KV=V1&HW-CC-Date=20260911T072819Z&HW-CC-Expire=86400&HW-CC-Sign=9664D4EFDCFEBC85F4501FF60D5DD427BF0BAAB5D2546900BD8E2686D61C1BF4)
 
 
 
- - 若使用DevEco Studio 6.0.0 Beta1以下版本，请在菜单栏进入**File > Settings **（macOS为**DevEco Studio > Preferences****/Settings** ）**> Plugins**，选择**Installed**页签，在搜索框输入“Chinese”，搜索结果里将出现**Chinese(Simplified)**，在右侧单击**Enable**，点击**OK**，在弹窗中单击**Restart**，重启DevEco Studio后即可生效。      
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/4QUWORCjRj-jpjhCnP-2fw/zh-cn_image_0000002594474458.png?HW-CC-KV=V1&HW-CC-Date=20260701T014605Z&HW-CC-Expire=86400&HW-CC-Sign=36D790BE11969F78BC3511725F93FCC4004ECCC8BB7AAEA7393A1F14DA1FC633)
+ - 若使用DevEco Studio 6.0.0 Beta1以下版本，请在菜单栏进入**File > Settings **（macOS为**DevEco Studio > Preferences/Settings** ）**> Plugins**，选择**Installed**页签，在搜索框输入“Chinese”，搜索结果里将出现**Chinese(Simplified)**，在右侧单击**Enable**，点击**OK**，在弹窗中单击**Restart**，重启DevEco Studio后即可生效。      
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/st2cxmddQimUawNg4UouBQ/zh-cn_image_0000002701662812.png?HW-CC-KV=V1&HW-CC-Date=20260911T072819Z&HW-CC-Expire=86400&HW-CC-Sign=100B8DD2772265F2BA3C30CE6E30FDA4F4A8C8076191945425B99B0FB5077A80)

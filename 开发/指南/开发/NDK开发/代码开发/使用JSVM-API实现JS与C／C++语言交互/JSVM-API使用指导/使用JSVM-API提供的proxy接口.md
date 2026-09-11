@@ -1,27 +1,28 @@
-# 使用JSVM-API提供的proxy接口
+# 使用JSVM-API接口进行Proxy相关开发
 
-更新时间：2026-04-24 08:10:21
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-about-proxy
 
-#### 简介
+## 简介
 
 JSVM-API 提供了创建 Proxy、判断 JSVM_Value 是否为 Proxy 类型和获取 Proxy 中的目标对象的接口。
  
   
 
-#### 接口说明
+## 接口说明
  
+
 | 接口 | 功能说明 |
 | --- | --- |
-| OH_JSVM_CreateProxy | 创建 Proxy，等价于在 js 中执行 new Proxy(target, handler) |
+| OH_JSVM_CreateProxy | 创建 Proxy，等价于在 JS 中执行 new Proxy(target, handler) |
 | OH_JSVM_IsProxy | 判断传入的 JSVM_Value 是否为 Proxy 类型 |
 | OH_JSVM_ProxyGetTarget | 获取给定 proxy 的目标对象 |
  
  
   
 
-#### 使用示例
+## 使用示例
 
 JSVM-API接口开发流程参考[使用JSVM-API实现JS与C/C++语言交互开发流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-process)，本文仅展示接口对应的C++相关代码。
  
@@ -30,7 +31,7 @@ cpp 部分代码
 ```text
 // OH_JSVM_CreateProxy 的样例方法
 static JSVM_Value CreateProxy(JSVM_Env env, JSVM_CallbackInfo info) {
-    // 接受两个入参，第 1 个参数为 target，第 2 个参数为 handler
+    // 接收两个入参，第 1 个参数为 target，第 2 个参数为 handler
     size_t argc = 2;
     JSVM_Value args[2] = {nullptr};
     JSVM_CALL(OH_JSVM_GetCbInfo(env, info, &argc, args, nullptr, nullptr));

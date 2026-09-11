@@ -1,6 +1,6 @@
 # Web组件嵌套滚动
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-nested-scrolling
 
@@ -13,7 +13,7 @@ Web组件嵌套滚动可通过[方案1：使用nestedScroll属性实现嵌套滚
 
 
 
-#### 使用nestedScroll属性实现嵌套滚动
+## 使用nestedScroll属性实现嵌套滚动
 
 使用Web组件[nestedScroll](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-attributes#nestedscroll11)属性来设置上下左右四个方向，或者设置向前、向后两个方向的嵌套滚动模式，实现与父组件的滚动联动，同时也允许在过程中动态改变嵌套滚动的模式。
 
@@ -107,17 +107,17 @@ struct NestedScroll {
 
 
 
-#### 使用nestedScroll常见问题
+## 使用nestedScroll常见问题
 
 
 
-#### 在父组件优先滚动的场景中，当Web组件进行惯性滚动（抛滑）时，若父组件到达边界且未完全消耗滚动速度，会导致Web组件停止滚动
+### 在父组件优先滚动的场景中，当Web组件进行惯性滚动（抛滑）时，若父组件到达边界且未完全消耗滚动速度，会导致Web组件停止滚动
 
 该问题存在于API 26.0.0以下版本，已在API 26.0.0中修复。若需在低版本实现“父组件优先且不中断 Web 滚动”的效果，建议采用[方案2：滚动偏移量由滚动父组件统一派发](#滚动偏移量由滚动父组件统一派发)。
 
 
 
-#### 滚动偏移量由滚动父组件统一派发
+## 滚动偏移量由滚动父组件统一派发
 
 **实现思路**
 1. 手指向上滑动：
@@ -351,11 +351,11 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/u8bUN4jERbWqKjXKSPXBaQ/zh-cn_image_0000002674472876.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095734Z&HW-CC-Expire=86400&HW-CC-Sign=4D43344E28257D91B95BEB7442F408CA2158F691F93C97FAED224893985D09EF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/o822fLdCQHK12vsWqxRXaQ/zh-cn_image_0000002717770850.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073148Z&HW-CC-Expire=86400&HW-CC-Sign=69FE76ABEEBA320ADD1744FC8170BE9C874EFF471976DEFF385FDEB61AD75012)
 
 
 
 
-#### 示例代码
+## 示例代码
 
  - [Web组件嵌套滑动](https://gitcode.com/harmonyos_samples/web-scroller)

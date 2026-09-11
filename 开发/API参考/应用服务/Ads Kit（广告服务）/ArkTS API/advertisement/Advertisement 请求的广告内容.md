@@ -1,6 +1,6 @@
 # Advertisement (请求的广告内容)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertisement
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -12,7 +12,8 @@
 
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -22,7 +23,8 @@ import { advertising } from '@kit.AdsKit';
  
   
 
-#### Advertisement
+## Advertisement
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -32,6 +34,7 @@ import { advertising } from '@kit.AdsKit';
  
 **系统能力：** SystemCapability.Advertising.Ads
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | adType | number | 否 | 否 | 广告类型。 - 1：开屏广告。 - 3：原生广告。 - 7：激励广告。 - 8：横幅广告。 - 12：插屏广告。 - 60：贴片广告。 不填默认为原生广告类型。 |

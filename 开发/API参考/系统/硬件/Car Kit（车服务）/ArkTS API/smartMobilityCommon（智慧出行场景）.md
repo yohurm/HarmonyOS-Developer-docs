@@ -1,6 +1,6 @@
 # smartMobilityCommon (智慧出行场景)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/car-smartmobilitycommon
 **支持设备：** Phone | Tablet
@@ -10,7 +10,8 @@
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | Tablet
 
@@ -20,7 +21,8 @@ import { smartMobilityCommon } from '@kit.CarKit';
  
   
 
-#### SmartMobilityEvent
+## SmartMobilityEvent
+
 
 **支持设备：** Phone | Tablet
 
@@ -32,6 +34,7 @@ import { smartMobilityCommon } from '@kit.CarKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | eventName | string | 否 | 否 | 事件名，由业务方自定义。 |
@@ -41,7 +44,8 @@ import { smartMobilityCommon } from '@kit.CarKit';
  
   
 
-#### SmartMobilityInfo
+## SmartMobilityInfo
+
 
 **支持设备：** Phone | Tablet
 
@@ -53,6 +57,7 @@ import { smartMobilityCommon } from '@kit.CarKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | status | SmartMobilityStatus | 否 | 否 | 业务连接状态。 |
@@ -62,7 +67,8 @@ import { smartMobilityCommon } from '@kit.CarKit';
  
   
 
-#### SmartMobilityStatus
+## SmartMobilityStatus
+
 
 **支持设备：** Phone | Tablet
 
@@ -74,6 +80,7 @@ import { smartMobilityCommon } from '@kit.CarKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | IDLE | 0 | 业务处于空闲态，业务未启动时，默认为该值。 |
@@ -82,7 +89,8 @@ import { smartMobilityCommon } from '@kit.CarKit';
  
   
 
-#### SmartMobilityType
+## SmartMobilityType
+
 
 **支持设备：** Phone | Tablet
 
@@ -94,6 +102,7 @@ import { smartMobilityCommon } from '@kit.CarKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | HICAR | 0 | HiCar。 |
@@ -103,7 +112,8 @@ import { smartMobilityCommon } from '@kit.CarKit';
  
   
 
-#### getSmartMobilityAwareness
+## getSmartMobilityAwareness
+
 
 **支持设备：** Phone | Tablet
 
@@ -123,6 +133,7 @@ getSmartMobilityAwareness(): SmartMobilityAwareness
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | SmartMobilityAwareness | 智慧出行管理类。 |
@@ -140,6 +151,7 @@ let awareness: smartMobilityCommon.SmartMobilityAwareness = smartMobilityCommon.
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -148,7 +160,8 @@ let awareness: smartMobilityCommon.SmartMobilityAwareness = smartMobilityCommon.
  
   
 
-#### SmartMobilityAwareness
+## SmartMobilityAwareness
+
 
 **支持设备：** Phone | Tablet
 
@@ -162,7 +175,8 @@ let awareness: smartMobilityCommon.SmartMobilityAwareness = smartMobilityCommon.
  
   
 
-#### on('smartMobilityEvent')
+### on('smartMobilityEvent')
+
 
 **支持设备：** Phone | Tablet
 
@@ -182,6 +196,7 @@ on(type: 'smartMobilityEvent', smartMobilityTypes: SmartMobilityType[],callback:
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅类型，该位置为常量值： 'smartMobilityEvent'，表示订阅事件监听。 |
@@ -193,6 +208,7 @@ on(type: 'smartMobilityEvent', smartMobilityTypes: SmartMobilityType[],callback:
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -225,7 +241,8 @@ try {
  
   
 
-#### off('smartMobilityEvent')
+### off('smartMobilityEvent')
+
 
 **支持设备：** Phone | Tablet
 
@@ -245,6 +262,7 @@ off(type: 'smartMobilityEvent', smartMobilityTypes: SmartMobilityType[], callbac
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅类型，该位置为常量值： 'smartMobilityEvent'，表示取消事件监听。 |
@@ -256,6 +274,7 @@ off(type: 'smartMobilityEvent', smartMobilityTypes: SmartMobilityType[], callbac
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -289,7 +308,8 @@ try {
  
   
 
-#### getSmartMobilityEvent
+### getSmartMobilityEvent
+
 
 **支持设备：** Phone | Tablet
 
@@ -309,6 +329,7 @@ getSmartMobilityEvent(type: SmartMobilityType, eventName: string): SmartMobility
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SmartMobilityType | 是 | 业务类型。 |
@@ -317,6 +338,7 @@ getSmartMobilityEvent(type: SmartMobilityType, eventName: string): SmartMobility
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | SmartMobilityEvent | 公共事件信息。 |
@@ -326,6 +348,7 @@ getSmartMobilityEvent(type: SmartMobilityType, eventName: string): SmartMobility
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -357,7 +380,8 @@ try {
  
   
 
-#### on('smartMobilityStatus')
+### on('smartMobilityStatus')
+
 
 **支持设备：** Phone | Tablet
 
@@ -377,6 +401,7 @@ on(type: 'smartMobilityStatus', smartMobilityTypes: SmartMobilityType[], callbac
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅类型，该位置为常量值： 'smartMobilityStatus'，表示订阅业务连接状态监听。 |
@@ -388,6 +413,7 @@ on(type: 'smartMobilityStatus', smartMobilityTypes: SmartMobilityType[], callbac
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -420,7 +446,8 @@ try {
  
   
 
-#### off('smartMobilityStatus')
+### off('smartMobilityStatus')
+
 
 **支持设备：** Phone | Tablet
 
@@ -440,6 +467,7 @@ off(type: 'smartMobilityStatus', smartMobilityTypes: SmartMobilityType[], callba
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅类型，该位置为常量值： 'smartMobilityStatus'，表示取消业务连接状态监听。 |
@@ -451,6 +479,7 @@ off(type: 'smartMobilityStatus', smartMobilityTypes: SmartMobilityType[], callba
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -483,7 +512,8 @@ try {
  
   
 
-#### getSmartMobilityStatus
+### getSmartMobilityStatus
+
 
 **支持设备：** Phone | Tablet
 
@@ -503,6 +533,7 @@ getSmartMobilityStatus(type: SmartMobilityType): SmartMobilityInfo
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SmartMobilityType | 是 | 业务类型。 |
@@ -510,6 +541,7 @@ getSmartMobilityStatus(type: SmartMobilityType): SmartMobilityInfo
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | SmartMobilityInfo | 业务状态信息。 |
@@ -519,6 +551,7 @@ getSmartMobilityStatus(type: SmartMobilityType): SmartMobilityInfo
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |

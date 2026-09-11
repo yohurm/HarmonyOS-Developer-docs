@@ -1,20 +1,21 @@
 # ChipGroup
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-04 10:41:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-chipgroup
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ChipGroup组件提供操作块群组能力，支持单选或多选模式，可自定义样式、图标和间距，支持选中状态管理和事件回调。适用于文件分类、资源筛选、标签选择、内容分组等多种场景，帮助开发者快速实现选择功能，提供统一的视觉和交互体验。
  
 > [!NOTE]
-> 该组件从API version 12开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 本模块接口仅可在Stage模型下使用。
+> 该组件从API version 12开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 本模块接口仅可在Stage模型下使用。 如果ChipGroup设置 通用属性 或 通用事件 ，编译工具链会额外生成节点__Common__，并将通用属性或通用事件挂载在__Common__上，而不是直接应用到ChipGroup本身。这可能导致开发者设置的通用属性或通用事件不生效或不符合预期，因此，不建议ChipGroup设置通用属性和通用事件。
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 import { ChipSize, ChipGroup } from '@kit.ArkUI';
@@ -22,17 +23,19 @@ import { ChipSize, ChipGroup } from '@kit.ArkUI';
  
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 无
  
   
 
-#### ChipGroup
+## ChipGroup
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ChipGroup({ 
  
@@ -64,17 +67,18 @@ ChipGroup({
  
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
   
+
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | items | ChipGroupItemOptions[] | 是 | @Require @Prop | 每个Chip的特定属性，参考ChipGroupItemOptions[]类型。 若为undefined时，ChipGroup默认为空。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| itemStyle | ChipItemStyle | 否 | @Prop | Chip的style属性，如颜色、大小等，参考ChipItemStyle类型。 默认值： { size: ChipSize.NORMAL, backgroundColor: \$r('sys.color.ohos_id_color_button_normal'), fontColor: \$r('sys.color.ohos_id_color_text_primary'), selectedFontColor: \$r('sys.color.ohos_id_color_text_primary_contrary'), selectedBackgroundColor: \$r('sys.color.ohos_id_color_emphasize') } 值为undefined时，按默认值处理。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| selectedIndexes | Array&lt;number&gt; | 否 | @Prop | 被选中Chip的索引。 取值范围：索引值为非负整数，且不能超过items数组长度减1。 传入负数、超出数组范围的索引值或非整数时，该索引值不生效。 默认值：[0] 若multiple=false，selectedIndexes为空数组时默认选中第1个；selectedIndexes包含多个元素时仅第一个索引生效。 值为undefined时，按默认值处理。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| multiple | boolean | 否 | @Prop | 是否选中多个Chip。 true：支持多个Chip选中；false：仅支持单个Chip选中。 默认值：false 值为undefined时，按默认值处理。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| chipGroupSpace | ChipGroupSpaceOptions | 否 | @Prop | 左右内边距及Chip之间间距。参考ChipGroupSpaceOptions类型。 默认值：{ itemSpace: 8, startSpace: 16, endSpace: 16 } 单位：vp 值为undefined时，按默认值处理。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| chipGroupPadding | ChipGroupPaddingOptions | 否 | @Prop | 设置ChipGroup的上下内边距，以控制整体高度。类型为ChipGroupPaddingOptions。 默认值：{ top: 14, bottom: 14 } 单位：vp 值为undefined时，按默认值处理。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| backgroundSystemMaterial | uiMaterial.Material | 否 | @Prop | 设置组件系统材质样式。不同材质具有不同的效果，能够影响组件的backgroundColor、border、shadow视觉属性。设置自动反色的系统材质时，fontColor如果使用系统预定义的可反色颜色资源（如\$r('sys.color.font_primary')），颜色自动适配到材质背景色的反色。当设置backgroundSystemMaterial时，应将backgroundColor设为Color.Transparent，否则会与系统材质冲突。 默认值：undefined 值为undefined时，不应用材质样式。 起始版本： 26.0.0 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
-| selectedBackgroundSystemMaterial | uiMaterial.Material | 否 | @Prop | 设置组件选中状态的系统材质样式。不同材质具有不同的效果，能够影响组件选中时的backgroundColor、border、shadow视觉属性。设置自动反色的系统材质时，selectedFontColor如果使用系统预定义的可反色颜色资源（如\$r('sys.color.font_primary')），颜色自动适配到材质背景色的反色。当设置selectedBackgroundSystemMaterial时，应将selectedBackgroundColor设为Color.Transparent，否则会与系统材质冲突。 默认值：undefined 值为undefined时，不应用选中状态的材质样式。 起始版本： 26.0.0 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
-| onChange | Callback<Array&lt;number&gt;> | 否 | - | Chip状态改变时的回调方法，用于监听Chip选中状态的变更。该回调在selectedIndexes属性更新后触发，开发者可在回调中获取最新的选中状态并执行相应操作，如更新UI、保存选中数据、触发业务逻辑等。当需要响应Chip选中状态变化时传入此参数，不传入时不监听状态变化。 若为undefined，不触发该回调。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| itemStyle | ChipItemStyle | 否 | @Prop | Chip的style属性，如颜色、大小等，参考ChipItemStyle类型。当需要自定义Chip的外观样式（如改变背景色、字体颜色、尺寸）时传入此参数。 默认值： { size: ChipSize.NORMAL, backgroundColor: \$r('sys.color.ohos_id_color_button_normal'), fontColor: \$r('sys.color.ohos_id_color_text_primary'), selectedFontColor: \$r('sys.color.ohos_id_color_text_primary_contrary'), selectedBackgroundColor: \$r('sys.color.ohos_id_color_emphasize') } 值为undefined时，按默认值处理。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| selectedIndexes | Array&lt;number&gt; | 否 | @Prop | 被选中Chip的索引，索引从0开始计数。 取值范围：索引值为非负整数，且不能超过items数组长度减1。 传入负数、超出数组范围的索引值或非整数时，该索引值不生效。 默认值：[0] 若multiple=false，selectedIndexes为空数组时默认选中第1个；selectedIndexes包含多个元素时仅第一个索引生效。 值为undefined时，按默认值处理。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| multiple | boolean | 否 | @Prop | 是否选中多个Chip。 true：支持多个Chip选中，适用于需要同时选择多个选项的场景（如多标签选择、多条件筛选）；false：仅支持单个Chip选中，适用于单选场景（如单项选择）。 默认值：false 值为undefined时，按默认值处理。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| chipGroupSpace | ChipGroupSpaceOptions | 否 | @Prop | 左右内边距及Chip之间间距。参考ChipGroupSpaceOptions类型。当默认间距无法满足布局要求或需要根据UI设计调整Chip之间的间隔时传入此参数。 默认值：{ itemSpace: 8, startSpace: 16, endSpace: 16 } 单位：vp 值为undefined时，按默认值处理。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| chipGroupPadding | ChipGroupPaddingOptions | 否 | @Prop | 设置ChipGroup的上下内边距，以控制整体高度。类型为ChipGroupPaddingOptions。当需要调整ChipGroup组件的垂直空间占用或匹配特定UI设计要求时传入此参数。 默认值：{ top: 14, bottom: 14 } 单位：vp 值为undefined时，按默认值处理。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| backgroundSystemMaterial | uiMaterial.Material | 否 | @Prop | 设置组件系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏子树，或横向Tabs的底部TabBar子树中，材质效果才会生效。不同材质具有不同的效果，能够影响组件的backgroundColor、border、shadow视觉属性。设置自动反色的系统材质时，fontColor如果使用系统预定义的可反色颜色资源（如\$r('sys.color.font_primary')），颜色自动适配到材质背景色的反色。当设置backgroundSystemMaterial时，应将backgroundColor设为Color.Transparent，否则会与系统材质冲突。 默认值：undefined 值为undefined时，不应用材质样式。 起始版本： 26.0.0 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| selectedBackgroundSystemMaterial | uiMaterial.Material | 否 | @Prop | 设置组件选中状态的系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏子树，或横向Tabs的底部TabBar子树中，材质效果才会生效。不同材质具有不同的效果，能够影响组件选中时的backgroundColor、border、shadow视觉属性。设置自动反色的系统材质时，selectedFontColor如果使用系统预定义的可反色颜色资源（如\$r('sys.color.font_primary')），颜色自动适配到材质背景色的反色。当设置selectedBackgroundSystemMaterial时，应将selectedBackgroundColor设为Color.Transparent，否则会与系统材质冲突。 默认值：undefined 值为undefined时，不应用选中状态的材质样式。 起始版本： 26.0.0 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| onChange | Callback<Array&lt;number&gt;> | 否 | - | Chip状态改变时的回调方法，用于监听Chip选中状态的变更。该回调在selectedIndexes属性更新后触发，开发者可在回调中获取最新的选中状态并执行相应操作，如更新UI、保存选中数据、触发业务逻辑等。当需要监听用户选择Chip的操作并执行相应业务逻辑时传入此参数。不传入时，无法接收Chip状态变化的通知。 若为undefined，不触发该回调。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | suffix | Callback&lt;void&gt; | 否 | @BuilderParam | 支持开发者自定义builder，如需在组件最右侧显示自定义内容可配置suffix属性，使用属性suffix需引用IconGroupSuffix接口。 默认不传入时，没有suffix。 值为undefined时，没有suffix。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
  
  
@@ -84,9 +88,10 @@ ChipGroup({
  
   
 
-#### ChipGroupItemOptions
+## ChipGroupItemOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ChipGroupItemOptions定义每个Chip的非通用属性。
  
@@ -94,6 +99,7 @@ ChipGroupItemOptions定义每个Chip的非通用属性。
  
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | prefixIcon | IconOptions | 否 | 是 | 前缀Image图标属性。当需要在Chip前显示图标以增强视觉识别或提供功能提示时设置此参数。 默认值：没有前缀Image图标。 值为undefined时，按默认值处理。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
@@ -115,9 +121,10 @@ ChipGroupItemOptions定义每个Chip的非通用属性。
  
   
 
-#### ChipItemStyle
+## ChipItemStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ChipItemStyle定义了Chip的通用属性。
  
@@ -127,9 +134,10 @@ ChipItemStyle定义了Chip的通用属性。
  
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| size | ChipSize \| SizeOptions | 否 | 是 | Chip尺寸，使用时需要从Chip组件引入ChipSize类型。 默认值：ChipSize.NORMAL或{ height: 0, width: 0 } 为undefined时，使用默认值。 |
+| size | ChipSize \| SizeOptions | 否 | 是 | Chip尺寸，使用时需要从Chip组件引入ChipSize类型。ChipSize.NORMAL适用于大多数标准场景；ChipSize.SMALL适用于紧凑布局或空间受限场景；SizeOptions适用于需要自定义精确尺寸的特殊场景。 默认值：ChipSize.NORMAL或{ height: 0, width: 0 } 为undefined时，使用默认值。 |
 | backgroundColor | ResourceColor | 否 | 是 | Chip背景颜色。 默认值：\$r('sys.color.ohos_id_color_button_normal') 说明：从API版本26.0.0开始，当设置backgroundSystemMaterial时，应将backgroundColor设为Color.Transparent，否则会与系统材质冲突；当backgroundSystemMaterial为undefined时，backgroundColor属性生效。 为undefined时，backgroundColor走默认值。 |
 | fontColor | ResourceColor | 否 | 是 | Chip文字颜色。 默认值：\$r('sys.color.ohos_id_color_text_primary') 说明：从API版本26.0.0开始，backgroundSystemMaterial设置自动反色的系统材质时，fontColor使用系统预定义的可反色颜色资源，文字颜色自动适配到材质背景色的反色。 为undefined时，fontColor走默认值。 |
 | selectedFontColor | ResourceColor | 否 | 是 | Chip激活时的文字颜色。 默认值：\$r('sys.color.ohos_id_color_text_primary_contrary') 说明：从API版本26.0.0开始，selectedBackgroundSystemMaterial设置自动反色的系统材质时，selectedFontColor使用系统预定义的可反色颜色资源（如\$r('sys.color.font_primary')），颜色自动适配到材质背景色的反色。 为undefined时，selectedFontColor走默认值。 |
@@ -142,9 +150,10 @@ ChipItemStyle定义了Chip的通用属性。
  
   
 
-#### ChipGroupSpaceOptions
+## ChipGroupSpaceOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ChipGroupSpaceOptions定义了ChipGroup左右内边距，以及Chip与Chip之间的间距。
  
@@ -154,6 +163,7 @@ ChipGroupSpaceOptions定义了ChipGroup左右内边距，以及Chip与Chip之间
  
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | itemSpace | string \| number | 否 | 是 | Chip与Chip之间的间距（不支持百分比）。 取值范围： number类型：大于等于0的数值（如：0、8、16、24.5）。 string类型：单位为fp \| vp \| px \| lpx且数值部分大于等于0的字符串（如："8vp"、"16fp"、"12px"、"10lpx"）。 说明：传入负数、百分比或无效字符串格式时，使用默认值。 默认值：8 单位：vp 值为undefined时，按默认值处理。 |
@@ -163,9 +173,10 @@ ChipGroupSpaceOptions定义了ChipGroup左右内边距，以及Chip与Chip之间
  
   
 
-#### ChipGroupPaddingOptions
+## ChipGroupPaddingOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ChipGroupPaddingOptions定义了ChipGroup的上下内边距，用于控制其整体高度。
  
@@ -175,6 +186,7 @@ ChipGroupPaddingOptions定义了ChipGroup的上下内边距，用于控制其整
  
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | top | Length | 否 | 否 | ChipGroup的上方内边距（不支持百分比）。 传入负数、百分比或无效字符串格式时，使用默认值。 默认值：14 单位：vp 值为undefined时，按默认值处理。 |
@@ -183,9 +195,10 @@ ChipGroupPaddingOptions定义了ChipGroup的上下内边距，用于控制其整
  
   
 
-#### SuffixImageIconOptions14+
+## SuffixImageIconOptions14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 后缀图标选项的类型。
  
@@ -197,6 +210,7 @@ ChipGroupPaddingOptions定义了ChipGroup的上下内边距，用于控制其整
  
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | action | VoidCallback | 否 | 是 | 后缀图标响应事件，用户点击后缀图标时触发回调。当需要为后缀图标添加自定义交互功能时设置此参数，如执行搜索、打开菜单、删除项等操作。 值为undefined时，无后缀图标响应事件。 |
@@ -207,9 +221,10 @@ ChipGroupPaddingOptions定义了ChipGroup的上下内边距，用于控制其整
  
   
 
-#### SymbolItemOptions14+
+## SymbolItemOptions14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ChipGroup的后缀图标选项类型。
  
@@ -219,10 +234,11 @@ ChipGroup的后缀图标选项类型。
  
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | symbol | SymbolGlyphModifier | 否 | 否 | 尾部图标的SymbolGlyphModifier配置对象，用于设置图标的显示样式、渲染模式等。 |
-| action | VoidCallback | 否 | 否 | 尾部图标响应事件，用户点击尾部图标时触发回调。当需要为尾部图标添加自定义交互功能时设置此参数，如执行特定操作、打开界面等。 |
+| action | VoidCallback | 否 | 否 | 尾部图标响应事件，用户点击尾部图标时触发回调。当需要为尾部图标添加自定义交互功能时设置此参数，如执行特定操作、打开界面等。 值为undefined时，无尾部图标响应事件。 |
 | accessibilityText | ResourceStr | 否 | 是 | 尾部图标的无障碍文本属性。用于为用户进一步说明尾部图标，开发人员可为尾部图标的该属性设置相对较详细的解释文本，帮助用户理解将要执行的操作。如帮助用户理解将要执行的操作可能导致什么后果，尤其是当这些后果无法从尾部图标本身属性与无障碍文本中了解到时。若尾部图标既拥有文本属性又拥有无障碍说明属性，则尾部图标被选中时，先播报尾部图标的文本属性，再播报无障碍说明属性的内容。 默认值：空字符串。 值为undefined时，按默认值处理。 |
 | accessibilityDescription | ResourceStr | 否 | 是 | 尾部图标的无障碍描述。此描述用于向用户详细解释尾部图标，开发人员应为尾部图标的这一属性提供较为详尽的文本说明，以协助用户理解即将执行的操作及其可能产生的后果，特别是当这些后果无法仅从尾部图标的属性和无障碍文本中直接获知时。如果尾部图标同时具备文本属性和无障碍说明属性，当尾部图标被选中时，系统将首先播报尾部图标的文本属性，随后播报无障碍说明属性的内容。 默认值：空字符串。 值为undefined时，按默认值处理。 |
 | accessibilityLevel | string | 否 | 是 | 尾部图标无障碍重要性。用于控制尾部图标是否可被无障碍辅助服务所识别。当需要为无障碍辅助服务用户提供访问支持，或需要将装饰性图标从无障碍树中排除时设置此参数。 支持的值为： "auto"：尾部图标转化为“yes”，适用于大多数场景。 "yes"：尾部图标可被无障碍辅助服务所识别，适用于需要明确启用无障碍访问的场景。 "no"：尾部图标不可被无障碍辅助服务所识别，适用于纯装饰性图标的场景。 "no-hide-descendants"：尾部图标及其所有子组件不可被无障碍辅助服务所识别，适用于需要隐藏整个区域的场景。 默认值："auto"。 值为undefined时，按默认值处理。 |
@@ -230,9 +246,10 @@ ChipGroup的后缀图标选项类型。
  
   
 
-#### IconGroupSuffix
+## IconGroupSuffix
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 IconGroupSuffix({
@@ -247,10 +264,11 @@ IconGroupSuffix({
  
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
   
+
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | items | Array<IconItemOptions \| SymbolGlyphModifier \| SymbolItemOptions> | 是 | @Require @Prop | 尾部区域显示的自定义项数组，支持IconItemOptions（Image图标）、SymbolGlyphModifier（Symbol图标）或SymbolItemOptions（Symbol图标配置）类型。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| iconBackgroundSystemMaterial | uiMaterial.Material | 否 | @Prop | 设置组件系统材质样式。不同材质具有不同的效果，能够影响组件的backgroundColor、border、shadow视觉属性。设置自动反色的系统材质时，fontColor如果使用系统预定义的可反色颜色资源（如\$r('sys.color.font_primary')），颜色自动适配到材质背景色的反色。 默认值：undefined 值为undefined时，不应用材质样式。 起始版本： 26.0.0 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| iconBackgroundSystemMaterial | uiMaterial.Material | 否 | @Prop | 设置组件系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏子树，或横向Tabs的底部TabBar子树中，材质效果才会生效。不同材质具有不同的效果，能够影响组件的backgroundColor、border、shadow视觉属性。设置自动反色的系统材质时，fontColor如果使用系统预定义的可反色颜色资源（如\$r('sys.color.font_primary')），颜色自动适配到材质背景色的反色。 默认值：undefined 值为undefined时，不应用材质样式。 起始版本： 26.0.0 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
  
  
 > [!NOTE]
@@ -259,9 +277,10 @@ IconGroupSuffix({
  
   
 
-#### IconItemOptions
+## IconItemOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 定义了尾部builder接口，用于配置尾部图标及其背景区域的显示属性。
  
@@ -269,6 +288,7 @@ IconGroupSuffix({
  
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | icon | IconOptions | 否 | 否 | 自定义Builder icon。 Chip大小是ChipSize.SMALL时，icon的size默认值：{width: '16vp',height: '16vp'}。 Chip大小是ChipSize.NORMAL时，icon的size默认值：{width: '24vp',height: '24vp'}。 如果想动态修改size，那么必须在引入IconGroupSuffix时，使用SymbolGlyphModifier类型。 值为undefined时，按默认值处理。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
@@ -280,9 +300,10 @@ IconGroupSuffix({
  
   
 
-#### IconOptions
+## IconOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 IconOptions定义图标的通用属性。
  
@@ -292,6 +313,7 @@ IconOptions定义图标的通用属性。
  
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | src | ResourceStr | 否 | 否 | 图标图片或图片地址引用请参考Image。 |
@@ -300,9 +322,10 @@ IconOptions定义图标的通用属性。
  
   
 
-#### LabelOptions
+## LabelOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 LabelOptions定义文本属性。
  
@@ -312,6 +335,7 @@ LabelOptions定义文本属性。
  
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | text | string | 否 | 否 | Chip项显示的文本内容，用于设置Chip上展示的文字信息。 |
@@ -319,13 +343,17 @@ LabelOptions定义文本属性。
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 示例1（无最右侧的builder）
+### 示例1（无最右侧的builder）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例实现了在没有最右侧builder时的效果。
  
@@ -402,7 +430,10 @@ struct Index {
  
   
 
-#### 示例2（有最右侧的builder）
+### 示例2（有最右侧的builder）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 通过配置suffix实现最右侧的自定义组件效果。
  
@@ -497,12 +528,15 @@ struct Index {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/pyc2l3weSTmbvlS5px8bww/zh-cn_image_0000002655848986.png?HW-CC-KV=V1&HW-CC-Date=20260730T071518Z&HW-CC-Expire=86400&HW-CC-Sign=122F9C7357BB1FC2932B67D94A65C60037A78BEEAF9011923974161F7DE8B724)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/u2SFJDpiQVyceFvZUJJEuw/zh-cn_image_0000002717613128.png?HW-CC-KV=V1&HW-CC-Date=20260911T073026Z&HW-CC-Expire=86400&HW-CC-Sign=343D96101365CA8D45319A0DA84A1084D95A59D804EFD043BED6D09E4449D86A)
 
  
   
 
-#### 示例3（设置Symbol类型图标）
+### 示例3（设置Symbol类型图标）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例实现了IconGroupSuffix和ChipGroup传入SymbolGlyph资源。
  
@@ -601,12 +635,15 @@ struct Index {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/QjxCSieOT5qco2skrWNUeA/zh-cn_image_0000002686088417.png?HW-CC-KV=V1&HW-CC-Date=20260730T071518Z&HW-CC-Expire=86400&HW-CC-Sign=48A1319A9ACF3310D9591BA3A24854FCC30499529B638E0321C52983E694A5CB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/TMiFWk_aTryY57mufTebmw/zh-cn_image_0000002747293081.png?HW-CC-KV=V1&HW-CC-Date=20260911T073026Z&HW-CC-Expire=86400&HW-CC-Sign=97F6D7C9A179D212CFCABBB1025F8A36918A5195BC0ABDC57D03B7B78E68B274)
 
  
   
 
-#### 示例4（单选时无障碍朗读）
+### 示例4（单选时无障碍朗读）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例实现ChipGroup在单选模式下，有后缀区域和无后缀区域的屏幕朗读功能，具体播报内容为accessibilityText属性中的内容。
  
@@ -791,7 +828,10 @@ export struct ChipGroupExample2 {
  
   
 
-#### 示例5（多选时无障碍朗读）
+### 示例5（多选时无障碍朗读）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例实现了ChipGroup在多选模式下，有后缀区域和无后缀区域的屏幕朗读功能，具体播报内容为accessibilityText属性中的内容。
  
@@ -945,7 +985,10 @@ export struct ChipGroupExample2 {
  
   
 
-#### 示例6（设置系统材质样式）
+### 示例6（设置系统材质样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例通过配置backgroundSystemMaterial和iconBackgroundSystemMaterial实现系统材质样式，开启自动反色功能使文本颜色适配背景色。
  
@@ -973,7 +1016,8 @@ struct ChipGroupMaterialExample {
     })
   }
 
-  build() {
+  @Builder
+  NavigationTitle() {
     Column({ space: 10 }) {
       ChipGroup({
         items: [
@@ -1015,10 +1059,117 @@ struct ChipGroupMaterialExample {
     })
     .padding(12)
     .width('100%')
-    .height('100%')
+  }
+
+  build() {
+    Column() {
+      Navigation() {
+        // 页面内容
+      }
+      .title({ builder: this.NavigationTitle, height: '100%' })
+    }.width('100%').height('100%')
   }
 }
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/248MemGYSGm1BENctxwTuw/zh-cn_image_0000002685928587.png?HW-CC-KV=V1&HW-CC-Date=20260730T071518Z&HW-CC-Expire=86400&HW-CC-Sign=3F6D93304B92863F40951E9C84840036D1A8DAA7A9935869B90FC53028F7289C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/C41Yim9sR96lpSes70KZ0g/zh-cn_image_0000002747212997.png?HW-CC-KV=V1&HW-CC-Date=20260911T073026Z&HW-CC-Expire=86400&HW-CC-Sign=5046B1CB80FC636AC7180276AFD82AD821E54970EBCB1A9209AE7CCEF6AFDF45)
+
+ 
+  
+
+### 示例7（设置组件选中状态的系统材质样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+该示例通过配置selectedBackgroundSystemMaterial实现组件选中状态的系统材质样式，开启自动反色功能使文本颜色适配背景色。
+ 
+从API版本26.0.0开始，[ChipGroup](#chipgroup-1)新增selectedBackgroundSystemMaterial属性。
+ 
+```text
+import { ChipGroup, IconGroupSuffix, SymbolGlyphModifier, uiMaterial } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct ChipGroupMaterialExample {
+  @State selectedIndexes: Array<number> = [0];
+
+  @LocalBuilder
+  suffixBuilder() {
+    IconGroupSuffix({
+      items: [new SymbolGlyphModifier($r('sys.symbol.magnifyingglass'))
+      // 将fontColor设置为特殊系统资源值，启用自动反色能力。
+        .fontColor([$r('sys.color.font_primary')])],
+      // 设置后缀图标的系统材质样式为ULTRA_THIN，并开启自动反色。
+      iconBackgroundSystemMaterial: new uiMaterial.ImmersiveMaterial({
+        style: uiMaterial.ImmersiveStyle.ULTRA_THIN,
+        colorInvert: true
+      })
+    })
+  }
+
+  @Builder
+  NavigationTitle() {
+    Column({ space: 10 }) {
+      ChipGroup({
+        items: [
+          { label: { text: '选项1' } },
+          { label: { text: '选项2' } },
+          { label: { text: '选项3' } },
+          { label: { text: '选项4' } },
+          { label: { text: '选项5' } },
+          { label: { text: '选项6' } },
+        ],
+        selectedIndexes: this.selectedIndexes,
+        itemStyle: {
+          // 设置透明的背景颜色，否则会和系统材质冲突。
+          backgroundColor: Color.Transparent,
+          // 将fontColor设置为特殊系统资源值，启用自动反色能力。
+          fontColor: $r('sys.color.ohos_id_color_text_primary'),
+          selectedFontColor: $r('sys.color.ohos_id_color_text_primary_contrary')
+        },
+        // 设置ChipGroup的选中项系统材质样式为ULTRA_THIN，并开启自动反色。
+        selectedBackgroundSystemMaterial: new uiMaterial.ImmersiveMaterial({
+          style: uiMaterial.ImmersiveStyle.ULTRA_THIN,
+          materialColor: $r('sys.color.ohos_id_color_emphasize'),
+          colorInvert: true
+        }),
+        // 设置ChipGroup的系统材质样式为ULTRA_THIN，并开启自动反色。
+        backgroundSystemMaterial: new uiMaterial.ImmersiveMaterial({
+          style: uiMaterial.ImmersiveStyle.ULTRA_THIN,
+          colorInvert: true
+        }),
+        onChange: (activatedChipsIndex: Array<number>) => {
+          this.selectedIndexes = activatedChipsIndex;
+        },
+        suffix: () => {
+          this.suffixBuilder()
+        }
+      })
+    }
+    .linearGradient({
+      angle: 90, // 渐变角度，90度是从左到右。
+      colors: [
+        ['#FF9A9E', 0.0], // 起始颜色及位置（0.0表示起点）。
+        ['#FECFEF', 0.5], // 中间颜色及位置。
+        ['#3B324C', 1.0] // 结束颜色及位置（1.0表示终点）。
+      ]
+    })
+    .padding(12)
+    .width('100%')
+  }
+
+  build() {
+    Column() {
+      Navigation() {
+        // 页面内容
+      }
+      .title({ builder: this.NavigationTitle, height: '100%' })
+    }.width('100%').height('100%')
+  }
+}
+```
+ 
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/_Tia98GYQZy6Kbk1bH2CDA/zh-cn_image_0000002717773062.png?HW-CC-KV=V1&HW-CC-Date=20260911T073026Z&HW-CC-Expire=86400&HW-CC-Sign=0D6AB22E8824D0276B76AA0E24AD165A329BC584CFC0B3DFD5AF52A862A4BA3B)

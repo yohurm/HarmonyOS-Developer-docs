@@ -1,21 +1,22 @@
 # 设置HDC认证密钥
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fileguard-set-hdc-authentication-key
 
 从6.1.1(24)版本开始，新增设置[HDC](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hdc)认证密钥接口，支持用户在企业设备上开展安全调试，进一步强化设备安全性。
 
 
-#### 场景介绍
+## 场景介绍
 
 该接口可为上位机和下位机配置HDC认证密钥，确保仅在双方均为企业设备的特定场景下才允许连接和调试，从而有效保障企业资产不被篡改和泄露。
 
 
 
-#### 接口说明
+## 接口说明
 
 详细接口说明可参考[接口文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/dataguard-fileguard)。
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -24,7 +25,7 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 应用需要通过OpenSSL在本地生成一个3072位的RSA密钥对。
 
   通过OpenSSL生成私钥：

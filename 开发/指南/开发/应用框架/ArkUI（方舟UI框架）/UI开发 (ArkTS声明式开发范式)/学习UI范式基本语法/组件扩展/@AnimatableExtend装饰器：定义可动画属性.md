@@ -1,6 +1,6 @@
 # @AnimatableExtend装饰器：定义可动画属性
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-animatable-extend
 
@@ -15,11 +15,11 @@
 
 
 
-#### 装饰器使用说明
+## 装饰器使用说明
 
 
 
-#### 语法
+### 语法
 
 ```text
 @AnimatableExtend(UIComponentName) function functionName(value: typeName) {
@@ -34,9 +34,10 @@
 
 
 
-#### AnimatableArithmetic&lt;T&gt;接口说明
+### AnimatableArithmetic&lt;T&gt;接口说明
 
 该接口定义非number数据类型的动画运算规则。对非number类型的数据（如数组、结构体、颜色等）做动画，需要实现AnimatableArithmetic&lt;T&gt;接口中加法、减法、乘法和判断相等函数，使得该数据能参与动画的插值运算和识别该数据是否发生改变。即定义它们为实现了AnimatableArithmetic&lt;T&gt;接口的类型。
+
 
 | 名称 | 入参类型 | 返回值类型 | 说明 |
 | --- | --- | --- | --- |
@@ -48,7 +49,7 @@
 
 
 
-#### 使用场景
+## 使用场景
 
 以下示例通过改变Text组件宽度实现逐帧布局的效果。
 

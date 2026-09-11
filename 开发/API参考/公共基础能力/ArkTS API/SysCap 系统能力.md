@@ -1,9 +1,9 @@
 # SysCap (系统能力)
 
-更新时间：2026-08-04 06:06:24
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-syscap
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 系统能力（SystemCapability，简称SysCap），指操作系统中每一个相对独立的特性。不同的设备对应不同的系统能力集，每个系统能力对应一个或多个API。开发者可根据系统能力来判断是否可以使用某接口。
  
@@ -12,9 +12,10 @@
 
   
 
-#### canIUse
+## canIUse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 canIUse(syscap: string): boolean
  
@@ -26,6 +27,7 @@ canIUse(syscap: string): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | syscap | string | 是 | 待查询的系统能力名称。不支持输入null、undefined。 |
@@ -33,6 +35,7 @@ canIUse(syscap: string): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 系统能力查询结果，true表示系统具备该能力，false表示系统不具备。 |

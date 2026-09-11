@@ -1,9 +1,9 @@
 # Class (ExifMetadata)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-exifmetadata
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ExifMetadata implements Metadata
 
@@ -14,9 +14,10 @@ Exif（Exchangeable image file format）元数据。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { image } from '@kit.ImageKit';
@@ -24,15 +25,17 @@ import { image } from '@kit.ImageKit';
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 各属性详细取值，请参考[PropertyKey](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-e#propertykey7)。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -180,9 +183,10 @@ import { image } from '@kit.ImageKit';
 
 
 
-#### createInstance
+## createInstance
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static createInstance(): ExifMetadata
 
@@ -193,6 +197,7 @@ static createInstance(): ExifMetadata
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -212,9 +217,10 @@ async function exifMetadataCreateInstance(context: Context) {
 
 
 
-#### getProperties
+## getProperties
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getProperties(key: Array&lt;string&gt;): Promise<Record<string, string | null>>
 
@@ -228,12 +234,14 @@ getProperties(key: Array&lt;string&gt;): Promise<Record<string, string | null>>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | Array&lt;string&gt; | 是 | 要获取的值的属性名称。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -243,6 +251,7 @@ getProperties(key: Array&lt;string&gt;): Promise<Record<string, string | null>>
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -280,9 +289,10 @@ async function exifMetadataGetProperties(context: Context) {
 
 
 
-#### setProperties
+## setProperties
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setProperties(records: Record<string, string | null>): Promise&lt;void&gt;
 
@@ -296,12 +306,14 @@ setProperties(records: Record<string, string | null>): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | records | Record<string, string \| null> | 是 | 用户要修改的ExifMetadata对象的属性和键值对的集合。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -311,6 +323,7 @@ setProperties(records: Record<string, string | null>): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -352,9 +365,10 @@ async function exifMetadataSetProperties(context: Context) {
 
 
 
-#### getAllProperties
+## getAllProperties
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllProperties(): Promise<Record<string, string | null>>
 
@@ -365,6 +379,7 @@ getAllProperties(): Promise<Record<string, string | null>>
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -403,9 +418,10 @@ async function exifMetadataGetAllProperties(context: Context) {
 
 
 
-#### clone
+## clone
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clone(): Promise&lt;ExifMetadata&gt;
 
@@ -416,6 +432,7 @@ clone(): Promise&lt;ExifMetadata&gt;
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -454,9 +471,10 @@ async function exifMetadataClone(context: Context) {
 
 
 
-#### getBlob
+## getBlob
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBlob(): Promise&lt;ArrayBuffer&gt;
 
@@ -467,6 +485,7 @@ getBlob(): Promise&lt;ArrayBuffer&gt;
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -500,9 +519,10 @@ async function exifMetadataGetBlob(context: Context) {
 
 
 
-#### setBlob
+## setBlob
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setBlob(blob: ArrayBuffer): Promise&lt;void&gt;
 
@@ -514,12 +534,14 @@ setBlob(blob: ArrayBuffer): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | blob | ArrayBuffer | 是 | 要替换的二进制数据。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -529,6 +551,7 @@ setBlob(blob: ArrayBuffer): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

@@ -51,21 +51,21 @@ struct CanvasTouch {
           this.context.strokeStyle = '#0000ff';
         })
         .onTouch((event: TouchEvent) => {
-          // 获取到触摸的坐标点
+         <em> // 获取到触摸的坐标点</em>
           let x = event.touches[0].x;
           let y = event.touches[0].y;
           if (event.type == TouchType.Down) {
-            // 手指按下时画布移动到当前坐标点
+          <em>  // 手指按下时画布移动到当前坐标点</em>
             this.context.beginPath();
             this.context.moveTo(x, y);
           }
           if (event.type === TouchType.Move) {
-            // 手指移动时画布用线条连接到当前坐标点
+          <em>  // 手指移动时画布用线条连接到当前坐标点</em>
             this.context.lineTo(x, y);
             this.context.stroke();
           }
           if (event.type === TouchType.Up) {
-            // 手指抬起时生成闭合路径
+           <em> // 手指抬起时生成闭合路径</em>
             this.context.closePath();
           }
         })
@@ -99,19 +99,19 @@ struct CanvasPanGesture {
             .onActionStart((event: GestureEvent) => {
               let x = event.fingerList[0].localX;
               let y = event.fingerList[0].localY;
-              // 手指按下时画布移动到当前坐标点
+          <em>    // 手指按下时画布移动到当前坐标点</em>
               this.context.beginPath();
               this.context.moveTo(x, y);
             })
             .onActionUpdate((event: GestureEvent) => {
               let x = event.fingerList[0].localX;
               let y = event.fingerList[0].localY;
-              // 手指移动时画布用线条连接到当前坐标点
+           <em>   // 手指移动时画布用线条连接到当前坐标点</em>
               this.context.lineTo(x, y);
               this.context.stroke();
             })
             .onActionEnd(() => {
-              // 手指抬起时生成闭合路径
+             <em> // 手指抬起时生成闭合路径</em>
               this.context.closePath();
             })
         )
@@ -166,7 +166,7 @@ struct CanvasCancelDraw {
           let x = event.touches[0].x;
           let y = event.touches[0].y;
           if (event.type == TouchType.Down) {
-            // 按下时新建一条路径
+          <em>  // 按下时新建一条路径</em>
             const path = new DrawingPath();
             path.points.push({ x: x, y: y });
             this.paths.push(path);
@@ -174,7 +174,7 @@ struct CanvasCancelDraw {
             this.context.moveTo(x, y);
           }
           if (event.type === TouchType.Move) {
-            // 移动时把当前的坐标点放入最新的路径中
+           <em> // 移动时把当前的坐标点放入最新的路径中</em>
             this.paths[this.paths.length - 1].points.push({ x: x, y: y });
             this.context.lineTo(x, y);
             this.context.stroke();
@@ -200,7 +200,7 @@ struct CanvasCancelDraw {
             }
             this.paths.pop()!!;
             this.context.clearRect(0, 0, this.context.width, this.context.height);
-            // 重绘保存的路径
+          <em>  // 重绘保存的路径</em>
             this.paths.forEach((path) => {
               if (path.points.length < 1) {
                 return;

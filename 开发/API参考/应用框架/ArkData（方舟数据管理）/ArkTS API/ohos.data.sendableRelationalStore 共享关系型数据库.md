@@ -1,9 +1,9 @@
 # @ohos.data.sendableRelationalStore (共享关系型数据库)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-data-sendablerelationalstore
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该模块针对关系型数据库（Relational Database，RDB）提供了sendable支持。支持从查询结果集中获取sendable类型ValuesBucket用于并发实例间传递。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 使用场景
+## 使用场景
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 在使用[taskpool](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/taskpool-introduction)进行多线程计算时，因为对跨线程传递的数据类型限制，关系型数据库常规的ValuesBucket、Asset、Assets数据存储容器不能直接用于跨线程传递。
 
@@ -22,9 +23,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { sendableRelationalStore } from '@kit.ArkData';
@@ -32,9 +34,10 @@ import { sendableRelationalStore } from '@kit.ArkData';
 
 
 
-#### sendableRelationalStore.toSendableValuesBucket
+## sendableRelationalStore.toSendableValuesBucket
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toSendableValuesBucket(valuesBucket: NonSendableBucket): ValuesBucket
 
@@ -44,12 +47,14 @@ toSendableValuesBucket(valuesBucket: NonSendableBucket): ValuesBucket
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | valuesBucket | NonSendableBucket | 是 | 不可跨线程传递的ValuesBucket数据。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -59,6 +64,7 @@ toSendableValuesBucket(valuesBucket: NonSendableBucket): ValuesBucket
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -102,9 +108,10 @@ const sendableValuesBucket = sendableRelationalStore.toSendableValuesBucket(valu
 
 
 
-#### sendableRelationalStore.fromSendableValuesBucket
+## sendableRelationalStore.fromSendableValuesBucket
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fromSendableValuesBucket(valuesBucket: ValuesBucket): NonSendableBucket
 
@@ -114,12 +121,14 @@ fromSendableValuesBucket(valuesBucket: ValuesBucket): NonSendableBucket
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | valuesBucket | ValuesBucket | 是 | 可用于跨线程传递的ValuesBucket数据。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -129,6 +138,7 @@ fromSendableValuesBucket(valuesBucket: ValuesBucket): NonSendableBucket
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -172,9 +182,10 @@ const nonSendableBucket = sendableRelationalStore.fromSendableValuesBucket(senda
 
 
 
-#### sendableRelationalStore.toSendableAsset
+## sendableRelationalStore.toSendableAsset
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toSendableAsset(asset: NonSendableAsset): Asset
 
@@ -184,12 +195,14 @@ toSendableAsset(asset: NonSendableAsset): Asset
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | asset | NonSendableAsset | 是 | 不可跨线程传递的Asset数据。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -199,6 +212,7 @@ toSendableAsset(asset: NonSendableAsset): Asset
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -222,9 +236,10 @@ const sendableAsset = sendableRelationalStore.toSendableAsset(asset1);
 
 
 
-#### sendableRelationalStore.fromSendableAsset
+## sendableRelationalStore.fromSendableAsset
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fromSendableAsset(asset: Asset): NonSendableAsset
 
@@ -234,12 +249,14 @@ fromSendableAsset(asset: Asset): NonSendableAsset
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | asset | Asset | 是 | 可跨线程传递的Asset数据。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -249,6 +266,7 @@ fromSendableAsset(asset: Asset): NonSendableAsset
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -273,9 +291,10 @@ const normalAsset = sendableRelationalStore.fromSendableAsset(sendableAsset);
 
 
 
-#### sendableRelationalStore.fromSendableValues20+
+## sendableRelationalStore.fromSendableValues20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fromSendableValues(values: collections.Array&lt;ValueType&gt;): NonSendableValues
 
@@ -285,12 +304,14 @@ fromSendableValues(values: collections.Array&lt;ValueType&gt;): NonSendableValue
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | values | collections.Array&lt;ValueType&gt; | 是 | 可跨线程传递的数组数据。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -300,6 +321,7 @@ fromSendableValues(values: collections.Array&lt;ValueType&gt;): NonSendableValue
 **错误码：**
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -321,9 +343,10 @@ const values = sendableRelationalStore.fromSendableValues(array);
 
 
 
-#### sendableRelationalStore.toSendableValues20+
+## sendableRelationalStore.toSendableValues20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toSendableValues(values: NonSendableValues): collections.Array&lt;ValueType&gt;
 
@@ -333,12 +356,14 @@ toSendableValues(values: NonSendableValues): collections.Array&lt;ValueType&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | values | NonSendableValues | 是 | 不可跨线程传递的数组数据。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -348,6 +373,7 @@ toSendableValues(values: NonSendableValues): collections.Array&lt;ValueType&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -367,13 +393,15 @@ const values = sendableRelationalStore.toSendableValues(array);
 
 
 
-#### Asset
+## Asset
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-记录资产附件（文件、图片、视频等类型文件）的相关信息。用于支持资产数据跨线程传递，继承自[lang.ISendable](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkts-lang#langisendable)。资产类型的相关接口暂不支持Datashare。使用[sendableRelationalStore.toSendableAsset](#sendablerelationalstoretosendableasset)方法创建。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+记录资产附件（文件、图片、视频等类型文件）的相关信息。用于支持资产数据跨线程传递，继承自[lang.ISendable](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkts-lang#isendable)。资产类型的相关接口暂不支持Datashare。使用[sendableRelationalStore.toSendableAsset](#sendablerelationalstoretosendableasset)方法创建。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -388,15 +416,17 @@ const values = sendableRelationalStore.toSendableValues(array);
 
 
 
-#### Assets
+## Assets
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Assets = collections.Array&lt;Asset&gt;
 
 表示[Asset](#asset)类型数据的集合。用于支持Asset数据集合跨线程传递。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -405,15 +435,17 @@ type Assets = collections.Array&lt;Asset&gt;
 
 
 
-#### ValueType
+## ValueType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ValueType = null | number | string | boolean | collections.Uint8Array | Asset | Assets | collections.Float32Array | bigint
 
 用于表示允许的数据字段类型，接口参数具体类型根据其功能而定。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -430,15 +462,17 @@ type ValueType = null | number | string | boolean | collections.Uint8Array | Ass
 
 
 
-#### ValuesBucket
+## ValuesBucket
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ValuesBucket = collections.Map<string, ValueType>
 
 表示[ValueType](#valuetype)数据的键值对存储，用于支持ValueType数据跨线程传递。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -447,15 +481,17 @@ type ValuesBucket = collections.Map<string, ValueType>
 
 
 
-#### NonSendableBucket
+## NonSendableBucket
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type NonSendableBucket = relationalStore.ValuesBucket
 
 用于存储键值对的类型。不支持跨线程传递。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -464,15 +500,17 @@ type NonSendableBucket = relationalStore.ValuesBucket
 
 
 
-#### NonSendableValues20+
+## NonSendableValues20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type NonSendableValues = Array<relationalStore.ValueType>
 
 表示[ValueType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-data-relationalstore-t#valuetype)数据数组存储。不支持跨线程传递。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -481,15 +519,17 @@ type NonSendableValues = Array<relationalStore.ValueType>
 
 
 
-#### NonSendableAsset
+## NonSendableAsset
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type NonSendableAsset = relationalStore.Asset
 
 记录资产附件（文件、图片、视频等类型文件）的相关信息。不支持跨线程传递。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -498,9 +538,10 @@ type NonSendableAsset = relationalStore.Asset
 
 
 
-#### 跨线程传递使用示例
+## 跨线程传递使用示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 调用taskpool执行数据插入时，主线程调用toSendableValuesBucket方法将数据转为跨线程传递类型，传入taskpool处理。
 

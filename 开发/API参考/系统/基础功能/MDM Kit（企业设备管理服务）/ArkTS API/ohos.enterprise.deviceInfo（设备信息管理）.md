@@ -1,18 +1,27 @@
 # @ohos.enterprise.deviceInfo（设备信息管理）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-deviceinfo
 **支持设备：** Phone | PC/2in1 | Tablet
 
-本模块提供企业设备信息管理能力，包括获取设备序列号、设备名称等。
+本模块提供企业设备信息管理能力，支持获取设备序列号、设备名称、SIM卡信息等。企业管理员可通过此模块查询设备详细信息，实现设备资产的统一管理和追踪。
+
+**使用场景：**
+
+ - 设备资产管理与追踪
+ - 企业设备合规性检查
+ - 设备信息采集与统计
+ - 故障诊断与设备识别
+
 
 > [!NOTE]
 > 本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 本模块接口仅可在Stage模型下使用。 本模块接口仅对设备管理应用开放，且调用接口前需激活设备管理应用，具体请参考 MDM Kit开发指南 。
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -22,7 +31,8 @@ import { deviceInfo } from '@kit.MDMKit';
 
 
 
-#### deviceInfo.getDeviceInfo
+## deviceInfo.getDeviceInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -38,13 +48,15 @@ getDeviceInfo(admin: Want, label: string): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| admin | Want | 是 | 企业设备管理扩展组件，用于指定具有设备管理能力的目标应用。Want对象中必须包含abilityName（扩展能力名称）和bundleName（应用包名）两个必填字段。 |
 | label | string | 是 | 支持获取的设备信息标签。 - deviceName：设备名称。 - deviceSerial：设备序列号。 - simInfo：SIM卡信息。 - disk：硬盘信息。 - memory：内存信息，当前仅支持PC/2in1设备使用。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -54,6 +66,7 @@ getDeviceInfo(admin: Want, label: string): string
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

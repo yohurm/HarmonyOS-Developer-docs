@@ -1,18 +1,19 @@
 # OH_ImageRawData
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-nativemodule-oh-imagerawdata
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct OH_ImageRawData OH_ImageRawData
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 OH_ImageRawData用于承载图像中的原始数据。
  
@@ -24,6 +25,7 @@ OH_ImageRawData用于承载图像中的原始数据。
  
 OH_ImageRawData结构体内容和操作方式如下：
   
+
 | 字段类型 | 字段名称 | 字段描述 | 字段获取函数 |
 | --- | --- | --- | --- |
 | uint8_t * | data | 原始数据缓冲区首地址。 | OH_ImageSourceNative_GetBufferFromRawData |

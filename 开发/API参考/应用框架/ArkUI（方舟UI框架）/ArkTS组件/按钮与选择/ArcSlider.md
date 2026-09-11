@@ -1,9 +1,9 @@
 # ArcSlider
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-arcslider
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 弧形滑动条组件，通常用于在圆形屏幕的穿戴设备中快速调节设置值，如音量调节、亮度调节等应用场景。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import {
@@ -33,33 +34,37 @@ import {
  
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 不支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)。
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 不支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)。
  
   
 
-#### ArcSlider
+## ArcSlider
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ArcSlider({ options: ArcSliderOptions })
  
@@ -73,6 +78,7 @@ ArcSlider({ options: ArcSliderOptions })
  
 **参数：**
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ArcSliderOptions | 是 | 配置弧形滑动条的参数。 默认值：ArcSliderOptions的各项子属性均取其默认值。 |
@@ -80,9 +86,10 @@ ArcSlider({ options: ArcSliderOptions })
  
   
 
-#### ArcSliderOptions
+## ArcSliderOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 配置弧形Slider的信息。
  
@@ -94,8 +101,12 @@ ArcSlider({ options: ArcSliderOptions })
  
   
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | valueOptions | ArcSliderValueOptions | 否 | 是 | 配置弧形Slider的数值信息。 默认值：ArcSliderValueOptions的各项子属性均取其默认值。 装饰器类型： @Trace |
@@ -109,9 +120,10 @@ ArcSlider({ options: ArcSliderOptions })
  
   
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(options?: ArcSliderOptionsConstructorOptions)
  
@@ -123,6 +135,7 @@ ArcSliderOptions的构造函数。
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ArcSliderOptionsConstructorOptions | 否 | ArcSliderOptions的构造信息。不传入时，ArcSliderOptions的各项子属性均取其默认值。 |
@@ -130,9 +143,10 @@ ArcSliderOptions的构造函数。
  
   
 
-#### ArcSliderValueOptions
+## ArcSliderValueOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 配置弧形Slider的数值信息。
  
@@ -144,8 +158,12 @@ ArcSliderOptions的构造函数。
  
   
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | progress | number | 否 | 是 | 设置当前进度值。 默认值：与参数min的取值一致 装饰器类型： @Trace |
@@ -155,9 +173,10 @@ ArcSliderOptions的构造函数。
  
   
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(options?: ArcSliderValueOptionsConstructorOptions)
  
@@ -169,6 +188,7 @@ ArcSliderValueOptions的构造函数。
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ArcSliderValueOptionsConstructorOptions | 否 | ArcSliderValueOptions的构造信息。不传入时，ArcSliderValueOptions的各项子属性均取其默认值。 |
@@ -176,9 +196,10 @@ ArcSliderValueOptions的构造函数。
  
   
 
-#### ArcSliderLayoutOptions
+## ArcSliderLayoutOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 配置弧形Slider的布局信息。
  
@@ -190,8 +211,12 @@ ArcSliderValueOptions的构造函数。
  
   
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | reverse | boolean | 否 | 是 | 设置弧形Slider的滑动方向。值为false时表示从上往下滑。 默认值：true，表示从下往上滑动。 装饰器类型： @Trace |
@@ -200,9 +225,10 @@ ArcSliderValueOptions的构造函数。
  
   
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(options?: ArcSliderLayoutOptionsConstructorOptions)
  
@@ -214,6 +240,7 @@ ArcSliderLayoutOptions的构造函数。
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ArcSliderLayoutOptionsConstructorOptions | 否 | ArcSliderLayoutOptions的构造信息。不传入时，ArcSliderLayoutOptions的各项子属性均取其默认值。 |
@@ -221,9 +248,10 @@ ArcSliderLayoutOptions的构造函数。
  
   
 
-#### ArcSliderStyleOptions
+## ArcSliderStyleOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 配置弧形Slider的样式信息。
  
@@ -235,8 +263,12 @@ ArcSliderLayoutOptions的构造函数。
  
   
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | trackThickness | number | 否 | 是 | 正常状态下弧形Slider的描边粗细，单位：vp。 默认值：5 取值范围：[5, 16]，异常值按默认值处理。 装饰器类型： @Trace |
@@ -248,9 +280,10 @@ ArcSliderLayoutOptions的构造函数。
  
   
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(options?: ArcSliderStyleOptionsConstructorOptions)
  
@@ -262,6 +295,7 @@ ArcSliderStyleOptions的构造函数。
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ArcSliderStyleOptionsConstructorOptions | 否 | ArcSliderStyleOptions的构造信息。不传入时，ArcSliderStyleOptions的各项子属性均取其默认值。 |
@@ -269,9 +303,10 @@ ArcSliderStyleOptions的构造函数。
  
   
 
-#### ArcSliderPosition
+## ArcSliderPosition
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 配置弧形Slider的屏幕显示位置。
  
@@ -279,6 +314,7 @@ ArcSliderStyleOptions的构造函数。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Circle
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | LEFT | 0 | 弧形Slider的屏幕显示位置在左侧。 |
@@ -287,9 +323,10 @@ ArcSliderStyleOptions的构造函数。
  
   
 
-#### ArcSliderTouchHandler
+## ArcSliderTouchHandler
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ArcSliderTouchHandler = (event: TouchEvent) => void
  
@@ -301,6 +338,7 @@ type ArcSliderTouchHandler = (event: TouchEvent) => void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | TouchEvent | 是 | 获得TouchEvent对象。 |
@@ -308,9 +346,10 @@ type ArcSliderTouchHandler = (event: TouchEvent) => void
  
   
 
-#### ArcSliderChangeHandler
+## ArcSliderChangeHandler
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ArcSliderChangeHandler = (progress: number) => void
  
@@ -322,6 +361,7 @@ type ArcSliderChangeHandler = (progress: number) => void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | progress | number | 是 | Slider当前的进度值。 |
@@ -329,9 +369,10 @@ type ArcSliderChangeHandler = (progress: number) => void
  
   
 
-#### ArcSliderEnlargeHandler
+## ArcSliderEnlargeHandler
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ArcSliderEnlargeHandler = (isEnlarged: boolean) => void
  
@@ -343,6 +384,7 @@ type ArcSliderEnlargeHandler = (isEnlarged: boolean) => void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isEnlarged | boolean | 是 | ArcSlider当前是否放大。 isEnlarged为false时，ArcSlider组件处于缩小状态。 isEnlarged为true时，ArcSlider组件处于放大状态。 |
@@ -350,9 +392,10 @@ type ArcSliderEnlargeHandler = (isEnlarged: boolean) => void
  
   
 
-#### ArcSliderOptionsConstructorOptions
+## ArcSliderOptionsConstructorOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ArcSliderOptions的构造信息。
  
@@ -360,6 +403,7 @@ ArcSliderOptions的构造信息。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Circle
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | valueOptions | ArcSliderValueOptions | 否 | 是 | 配置弧形Slider的数值信息。 默认值：ArcSliderValueOptions的各项子属性均取其默认值。 |
@@ -373,9 +417,10 @@ ArcSliderOptions的构造信息。
  
   
 
-#### ArcSliderValueOptionsConstructorOptions
+## ArcSliderValueOptionsConstructorOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ArcSliderValueOptions的构造信息。
  
@@ -383,6 +428,7 @@ ArcSliderValueOptions的构造信息。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Circle
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | progress | number | 否 | 是 | 设置当前进度值。 默认值：与参数min的取值一致。 |
@@ -392,9 +438,10 @@ ArcSliderValueOptions的构造信息。
  
   
 
-#### ArcSliderLayoutOptionsConstructorOptions
+## ArcSliderLayoutOptionsConstructorOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ArcSliderLayoutOptions的构造信息。
  
@@ -402,6 +449,7 @@ ArcSliderLayoutOptions的构造信息。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Circle
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | reverse | boolean | 否 | 是 | 设置弧形Slider的滑动方向。值为false时表示从上往下滑。 默认值：true，表示从下往上滑动。 |
@@ -410,9 +458,10 @@ ArcSliderLayoutOptions的构造信息。
  
   
 
-#### ArcSliderStyleOptionsConstructorOptions
+## ArcSliderStyleOptionsConstructorOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ArcSliderStyleOptions的构造信息。
  
@@ -420,6 +469,7 @@ ArcSliderStyleOptions的构造信息。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Circle
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | trackThickness | number | 否 | 是 | 正常状态下弧形Slider的描边粗细，单位：vp。 默认值：5 取值范围：[5, 16]，异常值按默认值处理。 |
@@ -431,9 +481,10 @@ ArcSliderStyleOptions的构造信息。
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 18开始，该示例展示了ArcSlider组件的基本用法。
  
@@ -504,4 +555,4 @@ struct ArcSliderExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/731mleSpSXC3WyZP1Y42AA/zh-cn_image_0000002685928213.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071504Z&HW-CC-Expire=86400&HW-CC-Sign=E2A162A1492F77D2AA55A6E112B4B6332E25BD819E1CC676F8414DB7F8EA3E3D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/WXq1CoS_SBufloSjKyGUgw/zh-cn_image_0000002747292705.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073026Z&HW-CC-Expire=86400&HW-CC-Sign=CAA7483005F6114D6BD73E4431E7C28CAFAB04C68658F5794106546E457900F8)

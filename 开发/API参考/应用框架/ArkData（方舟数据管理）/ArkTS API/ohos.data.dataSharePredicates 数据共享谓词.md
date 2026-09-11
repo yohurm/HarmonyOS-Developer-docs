@@ -1,9 +1,9 @@
 # @ohos.data.dataSharePredicates (数据共享谓词)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-data-datasharepredicates
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **谓词(DataSharePredicates)** 是开发者通过DataShare查询数据库中的数据所使用的筛选条件，经常被应用在更新数据、删除数据和查询数据中。
 
@@ -19,9 +19,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { dataSharePredicates } from '@kit.ArkData';
@@ -29,9 +30,10 @@ import { dataSharePredicates } from '@kit.ArkData';
 
 
 
-#### DataSharePredicates
+## DataSharePredicates
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供用于不同实现不同查询方法的数据共享谓词。该类型不是多线程安全的，如果应用中存在多线程同时操作该类派生出的实例，注意加锁保护。
 
@@ -39,9 +41,10 @@ import { dataSharePredicates } from '@kit.ArkData';
 
 
 
-#### equalTo
+### equalTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 equalTo(field: string, value: ValueType): DataSharePredicates
 
@@ -55,6 +58,7 @@ equalTo(field: string, value: ValueType): DataSharePredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名。 field为undefined或null时，此次调用接口配置的谓词无效。 |
@@ -62,6 +66,7 @@ equalTo(field: string, value: ValueType): DataSharePredicates
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -77,9 +82,10 @@ predicates.equalTo("NAME", "Rose");
 
 
 
-#### and
+### and
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 and(): DataSharePredicates
 
@@ -92,6 +98,7 @@ and(): DataSharePredicates
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -109,9 +116,10 @@ predicates.equalTo("NAME", "lisi")
 
 
 
-#### orderByAsc
+### orderByAsc
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 orderByAsc(field: string): DataSharePredicates
 
@@ -125,12 +133,14 @@ orderByAsc(field: string): DataSharePredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名。 field为undefined或null时，此次调用接口配置的谓词无效。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -146,9 +156,10 @@ predicates.orderByAsc("AGE");
 
 
 
-#### orderByDesc
+### orderByDesc
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 orderByDesc(field: string): DataSharePredicates
 
@@ -162,12 +173,14 @@ orderByDesc(field: string): DataSharePredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名。 field为undefined或null时，此次调用接口配置的谓词无效。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -183,9 +196,10 @@ predicates.orderByDesc("AGE");
 
 
 
-#### limit
+### limit
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 limit(total: number, offset: number): DataSharePredicates
 
@@ -199,6 +213,7 @@ limit(total: number, offset: number): DataSharePredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | total | number | 是 | 最大数据记录数。 当使用键值型数据库且total为undefined或null时，会限制最大记录数为0。 当使用关系型数据库且total为undefined或null时，不会限制最大记录数。 当使用键值型数据库时，取值范围参考键值型数据库limit接口中的total参数说明。 当使用关系型数据库时，取值范围参考关系型数据库limitAs接口中的value参数说明。 |
@@ -206,6 +221,7 @@ limit(total: number, offset: number): DataSharePredicates
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -221,9 +237,10 @@ predicates.equalTo("NAME", "Rose").limit(10, 3);
 
 
 
-#### in
+### in
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 in(field: string, value: Array&lt;ValueType&gt;): DataSharePredicates
 
@@ -237,6 +254,7 @@ in(field: string, value: Array&lt;ValueType&gt;): DataSharePredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名。 field为undefined或null时，此次调用接口配置的谓词无效。 当field为字符串'null'或'undefined'时，键值型数据库和关系型数据库接口使用该谓词时，可能匹配结果非预期或抛出异常。 |
@@ -244,6 +262,7 @@ in(field: string, value: Array&lt;ValueType&gt;): DataSharePredicates
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -259,9 +278,10 @@ predicates.in("AGE", [18, 20]);
 
 
 
-#### notEqualTo23+
+### notEqualTo23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 notEqualTo(field: string, value: ValueType): DataSharePredicates
 
@@ -273,6 +293,7 @@ notEqualTo(field: string, value: ValueType): DataSharePredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名。 当field为undefined或null时，此次调用接口配置的谓词无效。 当field为字符串'null'或'undefined'时，键值型数据库和关系型数据库接口使用该谓词时，可能匹配结果非预期或抛出异常。 |
@@ -280,6 +301,7 @@ notEqualTo(field: string, value: ValueType): DataSharePredicates
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -295,9 +317,10 @@ predicates.notEqualTo("NAME", "Rose");
 
 
 
-#### beginWrap23+
+### beginWrap23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 beginWrap(): DataSharePredicates
 
@@ -308,6 +331,7 @@ beginWrap(): DataSharePredicates
 **系统能力：** SystemCapability.DistributedDataManager.DataShare.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -328,9 +352,10 @@ predicates.equalTo("NAME", "lisi")
 
 
 
-#### endWrap23+
+### endWrap23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 endWrap(): DataSharePredicates
 
@@ -341,6 +366,7 @@ endWrap(): DataSharePredicates
 **系统能力：** SystemCapability.DistributedDataManager.DataShare.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -361,9 +387,10 @@ predicates.equalTo("NAME", "lisi")
 
 
 
-#### or23+
+### or23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 or(): DataSharePredicates
 
@@ -375,6 +402,7 @@ or(): DataSharePredicates
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | DataSharePredicates | 返回带有或条件的谓词。 |
@@ -383,7 +411,7 @@ or(): DataSharePredicates
 **示例：**
 
 ```text
-let predicates = new dataSharePredicates.DataSharePredicates()
+let predicates = new dataSharePredicates.DataSharePredicates();
 predicates.equalTo("NAME", "lisi")
     .or()
     .equalTo("NAME", "Rose");
@@ -391,9 +419,10 @@ predicates.equalTo("NAME", "lisi")
 
 
 
-#### like23+
+### like23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 like(field: string, value: string): DataSharePredicates
 
@@ -405,6 +434,7 @@ like(field: string, value: string): DataSharePredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名。 field为undefined或null时，此次调用接口配置的谓词无效。 当field为字符串'null'或'undefined'时，键值型数据库和关系型数据库接口使用该谓词时，可能匹配结果非预期或抛出异常。 |
@@ -412,6 +442,7 @@ like(field: string, value: string): DataSharePredicates
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -427,9 +458,10 @@ predicates.like("NAME", "%os%");
 
 
 
-#### between23+
+### between23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 between(field: string, low: ValueType, high: ValueType): DataSharePredicates
 
@@ -441,6 +473,7 @@ between(field: string, low: ValueType, high: ValueType): DataSharePredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名。 field为undefined或null时，此次调用接口配置的谓词无效。 当field为字符串'null'或'undefined'时，键值型数据库和关系型数据库接口使用该谓词时，可能匹配结果非预期或抛出异常。 |
@@ -449,6 +482,7 @@ between(field: string, low: ValueType, high: ValueType): DataSharePredicates
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -464,9 +498,10 @@ predicates.between("AGE", 10, 50);
 
 
 
-#### notBetween23+
+### notBetween23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 notBetween(field: string, low: ValueType, high: ValueType): DataSharePredicates
 
@@ -478,6 +513,7 @@ notBetween(field: string, low: ValueType, high: ValueType): DataSharePredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名。 field为undefined或null时，此次调用接口配置的谓词无效。 当field为字符串'null'或'undefined'时，键值型数据库和关系型数据库接口使用该谓词时，可能匹配结果非预期或抛出异常。 |
@@ -486,6 +522,7 @@ notBetween(field: string, low: ValueType, high: ValueType): DataSharePredicates
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -501,9 +538,10 @@ predicates.notBetween("AGE", 10, 50);
 
 
 
-#### greaterThan23+
+### greaterThan23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 greaterThan(field: string, value: ValueType): DataSharePredicates
 
@@ -515,6 +553,7 @@ greaterThan(field: string, value: ValueType): DataSharePredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名。 field为undefined或null时，此次调用接口配置的谓词无效。 当field为字符串'null'或'undefined'时，键值型数据库和关系型数据库接口使用该谓词时，可能匹配结果非预期或抛出异常。 |
@@ -522,6 +561,7 @@ greaterThan(field: string, value: ValueType): DataSharePredicates
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -537,9 +577,10 @@ predicates.greaterThan("AGE", 10);
 
 
 
-#### lessThan23+
+### lessThan23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 lessThan(field: string, value: ValueType): DataSharePredicates
 
@@ -551,6 +592,7 @@ lessThan(field: string, value: ValueType): DataSharePredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名。 当field为null或undefined时，此次调用接口配置的谓词无效。 当field为字符串'null'或'undefined'时，键值型数据库和关系型数据库接口使用该谓词时，可能匹配结果非预期或抛出异常。 |
@@ -558,6 +600,7 @@ lessThan(field: string, value: ValueType): DataSharePredicates
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -573,9 +616,10 @@ predicates.lessThan("AGE", 50);
 
 
 
-#### greaterThanOrEqualTo23+
+### greaterThanOrEqualTo23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 greaterThanOrEqualTo(field: string, value: ValueType): DataSharePredicates
 
@@ -587,13 +631,15 @@ greaterThanOrEqualTo(field: string, value: ValueType): DataSharePredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| field | string | 是 | 数据库表中的列名。 field为undefined或null时，此次调用接口配置的谓词无效。 当field为字符串'null'或'undefined'时，此次调用接口配置的谓词匹配结果非预期或抛出异常。 |
+| field | string | 是 | 数据库表中的列名。 field为undefined或null时，此次调用接口配置的谓词无效。 当field为字符串'null'或'undefined'时，键值型数据库和关系型数据库接口使用该谓词时，可能匹配结果非预期或抛出异常。 |
 | value | ValueType | 是 | 指示要与谓词匹配的值。 value为undefined或null时，此次调用接口配置的谓词无效。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -609,9 +655,10 @@ predicates.greaterThanOrEqualTo("AGE", 10);
 
 
 
-#### lessThanOrEqualTo23+
+### lessThanOrEqualTo23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 lessThanOrEqualTo(field: string, value: ValueType): DataSharePredicates
 
@@ -623,6 +670,7 @@ lessThanOrEqualTo(field: string, value: ValueType): DataSharePredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名。 field为undefined或null时，此次调用接口配置的谓词无效。 当field为字符串'null'或'undefined'时，键值型数据库和关系型数据库接口使用该谓词时，可能匹配结果非预期或抛出异常。 |
@@ -630,6 +678,7 @@ lessThanOrEqualTo(field: string, value: ValueType): DataSharePredicates
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -645,9 +694,10 @@ predicates.lessThanOrEqualTo("AGE", 50);
 
 
 
-#### notIn23+
+### notIn23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 notIn(field: string, value: Array&lt;ValueType&gt;): DataSharePredicates
 
@@ -659,6 +709,7 @@ notIn(field: string, value: Array&lt;ValueType&gt;): DataSharePredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名。 field为undefined或null时，此次调用接口配置的谓词无效。 当field为字符串'null'或'undefined'时，键值型数据库和关系型数据库接口使用该谓词时，可能匹配结果非预期或抛出异常。 |
@@ -666,6 +717,7 @@ notIn(field: string, value: Array&lt;ValueType&gt;): DataSharePredicates
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |

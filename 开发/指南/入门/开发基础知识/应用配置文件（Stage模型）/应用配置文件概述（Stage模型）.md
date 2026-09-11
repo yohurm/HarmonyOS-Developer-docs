@@ -1,6 +1,6 @@
 # 应用配置文件概述
 
-更新时间：2026-06-12 06:54:11
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-configuration-file-overview-stage
 

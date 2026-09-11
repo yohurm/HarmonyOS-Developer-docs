@@ -1,13 +1,14 @@
 # drawing_text_run.h
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-text-run-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供字体渲染单元的相关接口，比如绘制功能、获取排版边界功能等。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_Drawing_Array* OH_Drawing_GetRunStringIndices(OH_Drawing_Run* run, int64_t start, int64_t length) | 获取渲染单元指定范围内字形的字符索引数组，该索引是相对于整个段落的偏移。 |
@@ -59,15 +63,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Drawing_GetRunStringIndices()
+### OH_Drawing_GetRunStringIndices()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_Array* OH_Drawing_GetRunStringIndices(OH_Drawing_Run* run, int64_t start, int64_t length)
@@ -83,15 +89,17 @@ OH_Drawing_Array* OH_Drawing_GetRunStringIndices(OH_Drawing_Run* run, int64_t st
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Run* run | 指向渲染单元OH_Drawing_Run对象的指针。 |
-| int64_t start | 渲染单元内指定的开始位置，传入负数时该方法返回空指针。 |
-| int64_t length | 渲染单元内指定的长度，length为0时获取渲染单元的所有字符索引数组，length小于0时该方法返回空指针。 |
+| int64_t start | 渲染单元内指定的开始位置，取值范围为[0, glyphCount-1]，其中glyphCount为渲染单元字形数量。传入负数或超出渲染单元字形数量时，该方法返回空指针。 |
+| int64_t length | 渲染单元内指定的长度。length为0时获取渲染单元的所有字符索引数组；length小于0时该方法返回空指针；start+length超出渲染单元实际范围时，获取到渲染单元末尾的有效数据。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_Array* | 返回字形的字符索引数组，不再需要OH_Drawing_Array时，请使用OH_Drawing_DestroyRunStringIndices接口释放该对象的指针。 |
@@ -99,9 +107,10 @@ OH_Drawing_Array* OH_Drawing_GetRunStringIndices(OH_Drawing_Run* run, int64_t st
  
   
 
-#### OH_Drawing_GetRunStringIndicesByIndex()
+### OH_Drawing_GetRunStringIndicesByIndex()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 uint64_t OH_Drawing_GetRunStringIndicesByIndex(OH_Drawing_Array* stringIndices, size_t index)
@@ -117,14 +126,16 @@ uint64_t OH_Drawing_GetRunStringIndicesByIndex(OH_Drawing_Array* stringIndices, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Array* stringIndices | 字符索引数组。 |
-| size_t index | 渲染单元字形的字符索引数组下标。 |
+| size_t index | 渲染单元字形的字符索引数组下标，取值范围为[0, arrayLength-1]，其中arrayLength为stringIndices数组的元素个数，超出该取值范围时返回0。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | uint64_t | 返回渲染单元单个字形的字符索引。 |
@@ -132,9 +143,10 @@ uint64_t OH_Drawing_GetRunStringIndicesByIndex(OH_Drawing_Array* stringIndices, 
  
   
 
-#### OH_Drawing_DestroyRunStringIndices()
+### OH_Drawing_DestroyRunStringIndices()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_DestroyRunStringIndices(OH_Drawing_Array* stringIndices)
@@ -150,6 +162,7 @@ void OH_Drawing_DestroyRunStringIndices(OH_Drawing_Array* stringIndices)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Array* stringIndices | 字符索引数组。 |
@@ -157,9 +170,10 @@ void OH_Drawing_DestroyRunStringIndices(OH_Drawing_Array* stringIndices)
  
   
 
-#### OH_Drawing_GetRunStringRange()
+### OH_Drawing_GetRunStringRange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_GetRunStringRange(OH_Drawing_Run* run, uint64_t* location, uint64_t* length)
@@ -175,18 +189,20 @@ void OH_Drawing_GetRunStringRange(OH_Drawing_Run* run, uint64_t* location, uint6
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Run* run | 指向渲染单元OH_Drawing_Run对象的指针。 |
-| uint64_t* location | 表示渲染单元字形的字符范围的开始位置，该位置是相对于整个段落的偏移。 |
-| uint64_t* length | 表示渲染单元字符范围的长度。 |
+| uint64_t* location | 表示渲染单元字形的字符范围的开始位置，该位置是相对于整个段落的偏移。作为出参使用。调用者需提供有效的指针来接收返回值。 |
+| uint64_t* length | 表示渲染单元字符范围的长度。作为出参使用。调用者需提供有效的指针来接收返回值。 |
  
  
   
 
-#### OH_Drawing_GetRunTypographicBounds()
+### OH_Drawing_GetRunTypographicBounds()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 float OH_Drawing_GetRunTypographicBounds(OH_Drawing_Run* run, float* ascent, float* descent, float* leading)
@@ -202,26 +218,29 @@ float OH_Drawing_GetRunTypographicBounds(OH_Drawing_Run* run, float* ascent, flo
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Run* run | 指向渲染单元OH_Drawing_Run对象的指针。 |
-| float* ascent | 渲染单元中最高字符到基准线的距离。 |
-| float* descent | 渲染单元中最低字符到基准线的距离。 |
-| float* leading | 渲染单元行间距。 |
+| float* ascent | 渲染单元中最高字符到基准线的距离，单位为px。 |
+| float* descent | 渲染单元中最低字符到基准线的距离，单位为px。 |
+| float* leading | 渲染单元行间距，单位为px。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| float | 返回渲染单元排版宽度。 |
+| float | 返回渲染单元排版宽度，单位为px。 |
  
  
   
 
-#### OH_Drawing_RunPaint()
+### OH_Drawing_RunPaint()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_RunPaint(OH_Drawing_Canvas* canvas, OH_Drawing_Run* run, double x, double y)
@@ -237,19 +256,21 @@ void OH_Drawing_RunPaint(OH_Drawing_Canvas* canvas, OH_Drawing_Run* run, double 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Canvas* canvas | 指向画布OH_Drawing_Canvas对象的指针。 |
 | OH_Drawing_Run* run | 指向渲染单元OH_Drawing_Run对象的指针。 |
-| double x | 渲染单元x坐标。 |
-| double y | 渲染单元y坐标。 |
+| double x | 渲染单元x坐标。单位为px。 |
+| double y | 渲染单元y坐标。单位为px。 |
  
  
   
 
-#### OH_Drawing_GetRunImageBounds()
+### OH_Drawing_GetRunImageBounds()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_Rect* OH_Drawing_GetRunImageBounds(OH_Drawing_Run* run)
@@ -265,6 +286,7 @@ OH_Drawing_Rect* OH_Drawing_GetRunImageBounds(OH_Drawing_Run* run)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Run* run | 指向渲染单元OH_Drawing_Run对象的指针。 |
@@ -272,6 +294,7 @@ OH_Drawing_Rect* OH_Drawing_GetRunImageBounds(OH_Drawing_Run* run)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_Rect* | 返回指向渲染单元图像边界OH_Drawing_Rect对象的指针，不再需要OH_Drawing_Rect时，请使用OH_Drawing_DestroyRunImageBounds接口释放该对象的指针。 |
@@ -279,9 +302,10 @@ OH_Drawing_Rect* OH_Drawing_GetRunImageBounds(OH_Drawing_Run* run)
  
   
 
-#### OH_Drawing_DestroyRunImageBounds()
+### OH_Drawing_DestroyRunImageBounds()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_DestroyRunImageBounds(OH_Drawing_Rect* rect)
@@ -297,6 +321,7 @@ void OH_Drawing_DestroyRunImageBounds(OH_Drawing_Rect* rect)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Rect* rect | 指向渲染单元图像边界OH_Drawing_Rect对象的指针。 |
@@ -304,9 +329,10 @@ void OH_Drawing_DestroyRunImageBounds(OH_Drawing_Rect* rect)
  
   
 
-#### OH_Drawing_GetRunGlyphs()
+### OH_Drawing_GetRunGlyphs()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_Array* OH_Drawing_GetRunGlyphs(OH_Drawing_Run* run, int64_t start, int64_t length)
@@ -322,15 +348,17 @@ OH_Drawing_Array* OH_Drawing_GetRunGlyphs(OH_Drawing_Run* run, int64_t start, in
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Run* run | 指向渲染单元OH_Drawing_Run对象的指针。 |
-| int64_t start | 渲染单元内指定的开始位置，传入负数时该方法返回空指针。 |
-| int64_t length | 渲染单元内指定的长度，length为0时获取渲染单元的所有字符索引，length小于0时该方法返回空指针。 |
+| int64_t start | 渲染单元内指定的开始位置，取值范围为[0, glyphCount-1]，其中glyphCount为渲染单元字形数量。传入负数或超出渲染单元字形数量时，该方法返回空指针。 |
+| int64_t length | 渲染单元内指定的长度。length为0时获取渲染单元的所有字形；length小于0时该方法返回空指针；start+length超出渲染单元实际范围时，获取到渲染单元末尾的有效数据。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_Array* | 返回指向渲染单元字形数组OH_Drawing_Array对象的指针，不再需要OH_Drawing_Array时，请使用OH_Drawing_DestroyRunGlyphs接口释放该对象的指针。 |
@@ -338,9 +366,10 @@ OH_Drawing_Array* OH_Drawing_GetRunGlyphs(OH_Drawing_Run* run, int64_t start, in
  
   
 
-#### OH_Drawing_GetRunGlyphsByIndex()
+### OH_Drawing_GetRunGlyphsByIndex()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 uint16_t OH_Drawing_GetRunGlyphsByIndex(OH_Drawing_Array* glyphs, size_t index)
@@ -356,24 +385,27 @@ uint16_t OH_Drawing_GetRunGlyphsByIndex(OH_Drawing_Array* glyphs, size_t index)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Array* glyphs | 指向渲染单元字形数组OH_Drawing_Array对象的指针。 |
-| size_t index | 渲染单元字形数组下标。 |
+| size_t index | 渲染单元字形数组下标，取值范围为[0, arrayLength-1]，其中arrayLength为glyphs数组的元素个数，超出该取值范围时返回0。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| uint16_t | 渲染单元单个字形。 |
+| uint16_t | 返回渲染单元单个字形的字形ID。 |
  
  
   
 
-#### OH_Drawing_DestroyRunGlyphs()
+### OH_Drawing_DestroyRunGlyphs()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_DestroyRunGlyphs(OH_Drawing_Array* glyphs)
@@ -389,6 +421,7 @@ void OH_Drawing_DestroyRunGlyphs(OH_Drawing_Array* glyphs)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Array* glyphs | 指向渲染单元字形数组OH_Drawing_Array对象的指针。 |
@@ -396,9 +429,10 @@ void OH_Drawing_DestroyRunGlyphs(OH_Drawing_Array* glyphs)
  
   
 
-#### OH_Drawing_GetRunPositions()
+### OH_Drawing_GetRunPositions()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_Array* OH_Drawing_GetRunPositions(OH_Drawing_Run* run, int64_t start, int64_t length)
@@ -414,15 +448,17 @@ OH_Drawing_Array* OH_Drawing_GetRunPositions(OH_Drawing_Run* run, int64_t start,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Run* run | 指向渲染单元OH_Drawing_Run对象的指针。 |
-| int64_t start | 渲染单元内指定的开始位置，传入负数时该方法返回空指针。 |
-| int64_t length | 渲染单元内指定的长度，length为0时获取渲染单元的所有字符索引，length小于0时该方法返回空指针。 |
+| int64_t start | 渲染单元内指定的开始位置，取值范围为[0, glyphCount-1]，其中glyphCount为渲染单元字形数量。传入负数或超出渲染单元字形数量时，该方法返回空指针。 |
+| int64_t length | 渲染单元内指定的长度。length为0时获取渲染单元的所有字形位置；length小于0时该方法返回空指针；start+length超出渲染单元实际范围时，获取到渲染单元末尾的有效数据。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_Array* | 返回指向渲染单元字形位置数组OH_Drawing_Array对象的指针，不再需要OH_Drawing_Array时，请使用OH_Drawing_DestroyRunPositions接口释放该对象的指针。 |
@@ -430,9 +466,10 @@ OH_Drawing_Array* OH_Drawing_GetRunPositions(OH_Drawing_Run* run, int64_t start,
  
   
 
-#### OH_Drawing_GetRunPositionsByIndex()
+### OH_Drawing_GetRunPositionsByIndex()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_Point* OH_Drawing_GetRunPositionsByIndex(OH_Drawing_Array* positions, size_t index)
@@ -448,14 +485,16 @@ OH_Drawing_Point* OH_Drawing_GetRunPositionsByIndex(OH_Drawing_Array* positions,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Array* positions | 指向渲染单元字形位置数组OH_Drawing_Array对象的指针。 |
-| size_t index | 渲染单元字形位置数组下标。 |
+| size_t index | 渲染单元字形位置数组下标，取值范围为[0, arrayLength-1]，其中arrayLength为positions数组的元素个数，超出该取值范围时返回空指针。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_Point* | 返回指向渲染单元单个字形位置OH_Drawing_Point对象的指针。 |
@@ -463,9 +502,10 @@ OH_Drawing_Point* OH_Drawing_GetRunPositionsByIndex(OH_Drawing_Array* positions,
  
   
 
-#### OH_Drawing_DestroyRunPositions()
+### OH_Drawing_DestroyRunPositions()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_DestroyRunPositions(OH_Drawing_Array* positions)
@@ -481,6 +521,7 @@ void OH_Drawing_DestroyRunPositions(OH_Drawing_Array* positions)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Array* positions | 指向渲染单元字形位置数组OH_Drawing_Array对象的指针。 |
@@ -488,9 +529,10 @@ void OH_Drawing_DestroyRunPositions(OH_Drawing_Array* positions)
  
   
 
-#### OH_Drawing_GetRunGlyphCount()
+### OH_Drawing_GetRunGlyphCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 uint32_t OH_Drawing_GetRunGlyphCount(OH_Drawing_Run* run)
@@ -506,6 +548,7 @@ uint32_t OH_Drawing_GetRunGlyphCount(OH_Drawing_Run* run)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Run* run | 指向渲染单元OH_Drawing_Run对象的指针。 |
@@ -513,6 +556,7 @@ uint32_t OH_Drawing_GetRunGlyphCount(OH_Drawing_Run* run)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | uint32_t | 返回渲染单元字形数量。 |
@@ -520,9 +564,10 @@ uint32_t OH_Drawing_GetRunGlyphCount(OH_Drawing_Run* run)
  
   
 
-#### OH_Drawing_GetRunFont()
+### OH_Drawing_GetRunFont()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_Font* OH_Drawing_GetRunFont(OH_Drawing_Run* run)
@@ -538,6 +583,7 @@ OH_Drawing_Font* OH_Drawing_GetRunFont(OH_Drawing_Run* run)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Run* run | 指向渲染单元OH_Drawing_Run对象的指针。 |
@@ -545,6 +591,7 @@ OH_Drawing_Font* OH_Drawing_GetRunFont(OH_Drawing_Run* run)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_Font* | 返回指向渲染单元字体OH_Drawing_Font对象的指针，不再需要OH_Drawing_Font时，请使用OH_Drawing_FontDestroy接口释放该对象的指针。 |
@@ -552,9 +599,10 @@ OH_Drawing_Font* OH_Drawing_GetRunFont(OH_Drawing_Run* run)
  
   
 
-#### OH_Drawing_GetRunTextDirection()
+### OH_Drawing_GetRunTextDirection()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_TextDirection OH_Drawing_GetRunTextDirection(OH_Drawing_Run* run)
@@ -570,6 +618,7 @@ OH_Drawing_TextDirection OH_Drawing_GetRunTextDirection(OH_Drawing_Run* run)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Run* run | 指向渲染单元OH_Drawing_Run对象的指针。 |
@@ -577,6 +626,7 @@ OH_Drawing_TextDirection OH_Drawing_GetRunTextDirection(OH_Drawing_Run* run)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_TextDirection | 返回渲染单元的文本方向。0为TEXT_DIRECTION_RTL，方向为从右到左；1为TEXT_DIRECTION_LTR，方向为从左到右，具体可见OH_Drawing_TextDirection枚举。 |
@@ -584,9 +634,10 @@ OH_Drawing_TextDirection OH_Drawing_GetRunTextDirection(OH_Drawing_Run* run)
  
   
 
-#### OH_Drawing_GetRunGlyphAdvances()
+### OH_Drawing_GetRunGlyphAdvances()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_Array* OH_Drawing_GetRunGlyphAdvances(OH_Drawing_Run* run, uint32_t start, uint32_t length)
@@ -602,15 +653,17 @@ OH_Drawing_Array* OH_Drawing_GetRunGlyphAdvances(OH_Drawing_Run* run, uint32_t s
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Run* run | 指向渲染单元OH_Drawing_Run对象的指针。 |
-| uint32_t start | 渲染单元内指定的开始位置，传入负数时该方法返回空指针。 |
-| uint32_t length | 渲染单元内指定的长度，如果length是0表示从start开始获取到渲染单元结束，length小于0时该方法返回空指针。 |
+| uint32_t start | 渲染单元内指定的开始位置，取值范围为[0, glyphCount-1]，其中glyphCount为渲染单元字形数量。传入值超出渲染单元字形数量时，该方法返回空指针。 |
+| uint32_t length | 渲染单元内指定的长度，length为0时获取从start开始到渲染单元结束的所有字形宽度。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_Array* | 返回指向渲染单元字形宽度数组OH_Drawing_Array对象的指针，不再需要OH_Drawing_Array时，请使用OH_Drawing_DestroyRunGlyphAdvances接口释放该对象的指针。 |
@@ -618,9 +671,10 @@ OH_Drawing_Array* OH_Drawing_GetRunGlyphAdvances(OH_Drawing_Run* run, uint32_t s
  
   
 
-#### OH_Drawing_GetRunGlyphAdvanceByIndex()
+### OH_Drawing_GetRunGlyphAdvanceByIndex()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_Point* OH_Drawing_GetRunGlyphAdvanceByIndex(OH_Drawing_Array* advances, size_t index)
@@ -636,14 +690,16 @@ OH_Drawing_Point* OH_Drawing_GetRunGlyphAdvanceByIndex(OH_Drawing_Array* advance
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Array* advances | 指向渲染单元字形宽度数组OH_Drawing_Array对象的指针。 |
-| size_t index | 渲染单元字形宽度数组的下标。 |
+| size_t index | 渲染单元字形宽度数组的下标，取值范围为[0, arrayLength-1]，其中arrayLength为advances数组的元素个数，超出该取值范围时返回空指针。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_Point* | 返回指向渲染单元单个字形宽度OH_Drawing_Point对象的指针。其中，OH_Drawing_Point对象的x值代表渲染单元单个字形宽度，y值为保留字段，默认返回0。 |
@@ -651,9 +707,10 @@ OH_Drawing_Point* OH_Drawing_GetRunGlyphAdvanceByIndex(OH_Drawing_Array* advance
  
   
 
-#### OH_Drawing_DestroyRunGlyphAdvances()
+### OH_Drawing_DestroyRunGlyphAdvances()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_DestroyRunGlyphAdvances(OH_Drawing_Array* advances)
@@ -669,6 +726,7 @@ void OH_Drawing_DestroyRunGlyphAdvances(OH_Drawing_Array* advances)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Array* advances | 指向渲染单元字形宽度数组OH_Drawing_Array对象的指针。 |

@@ -1,18 +1,19 @@
 # ArkUI_CrossLanguageOption
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-arkui-crosslanguageoption
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct ArkUI_CrossLanguageOption ArkUI_CrossLanguageOption
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义跨语言配置项，用于配置目标节点的跨语言访问能力，例如是否允许跨语言修改属性；从API version 26.0.0开始，还可配置节点树跨语言操作状态。
  
@@ -24,6 +25,7 @@ typedef struct ArkUI_CrossLanguageOption ArkUI_CrossLanguageOption
  
 **相关接口：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_ArkUI_NodeUtils_SetCrossLanguageOption | 设置目标节点的跨语言配置项。 |

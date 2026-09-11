@@ -1,13 +1,13 @@
 # hilog
 
-更新时间：2026-05-07 09:37:20
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hilog
 
 HiLog日志系统，提供给系统框架、服务、以及应用，用于打印日志，记录用户操作、系统运行状态等。开发者可以通过hilog命令行查询相关日志信息。
 
 
-#### 环境要求
+## 环境要求
 
  - 根据hdc命令行工具指导，完成[环境准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hdc#环境准备)。
  - 确保设备已正常连接，并执行hdc shell。
@@ -15,17 +15,17 @@ HiLog日志系统，提供给系统框架、服务、以及应用，用于打印
 
 
 
-#### hilog概述
+## hilog概述
 
 
 
-#### hilog日志生成
+### hilog日志生成
 
 业务代码中，如果调用了HiLog接口，那么业务运行时就会生成对应的hilog日志。
 
 
 
-#### hilog日志查看
+### hilog日志查看
 
 **在线查看**
 
@@ -42,7 +42,8 @@ HiLog日志系统，提供给系统框架、服务、以及应用，用于打印
 
 
 
-#### hilog日志格式说明
+### hilog日志格式说明
+
 
 | 第一列 | 第二列 | 第三列 | 第四列 | 第五列 | 第六列 | 第七列 |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -56,7 +57,7 @@ HiLog日志系统，提供给系统框架、服务、以及应用，用于打印
 
 
 
-#### 查看log版本信息
+### 查看log版本信息
 
 在设备中， 点击 “设置”->搜索关键字“关于本机”->“软件版本”进行查看，log版本会以“log”结尾。
 
@@ -64,7 +65,8 @@ HiLog日志系统，提供给系统框架、服务、以及应用，用于打印
 
 
 
-#### 命令行说明
+## 命令行说明
+
 
 | 短选项 | 长选项 | 参数 | 说明 |
 | --- | --- | --- | --- |
@@ -131,7 +133,7 @@ HiLog日志系统，提供给系统框架、服务、以及应用，用于打印
 
 
 
-#### 查看帮助命令
+## 查看帮助命令
 
 ```bash
 hilog -h
@@ -158,7 +160,7 @@ $ hilog -h
 
 
 
-#### **非阻塞读日志**
+## **非阻塞读日志**
 
 ```bash
 hilog -x
@@ -178,7 +180,7 @@ $ hilog -x
 
 
 
-#### **查看指定级别日志**
+## **查看指定级别日志**
 
 ```bash
 hilog -L D/I/W/E/F
@@ -199,7 +201,7 @@ $ hilog -L E
 
 
 
-#### **查看指定类型日志**
+## **查看指定类型日志**
 
 ```bash
 hilog -t app
@@ -218,7 +220,7 @@ $ hilog -t app
 
 
 
-#### **查看指定domain日志**
+## **查看指定domain日志**
 
 ```bash
 hilog -D 01B06
@@ -237,7 +239,7 @@ $ hilog -D 01B06
 
 
 
-#### **查看指定TAG日志**
+## **查看指定TAG日志**
 
 ```bash
 hilog -T tag
@@ -259,7 +261,7 @@ $ hilog -T SAMGR
 
 
 
-#### **查看缓冲区前n行日志**
+## **查看缓冲区前n行日志**
 
 ```bash
 hilog -a 8
@@ -281,7 +283,7 @@ $ hilog -a 8
 
 
 
-#### **查看缓冲区后n行日志**
+## **查看缓冲区后n行日志**
 
 ```bash
 hilog -z 8
@@ -303,7 +305,7 @@ $ hilog -z 8
 
 
 
-#### **查看指定进程日志**
+## **查看指定进程日志**
 
 ```bash
 hilog -P pid
@@ -324,7 +326,7 @@ $ hilog -P 618
 
 
 
-#### **查看符合正则匹配关键字的日志**
+## **查看符合正则匹配关键字的日志**
 
 ```bash
 hilog -e start
@@ -346,7 +348,7 @@ $ hilog -e start
 
 
 
-#### **查看不同显示格式的日志**
+## **查看不同显示格式的日志**
 
 ```bash
 hilog -v time/color/epoch/monotonic/usec/nsec/year/zone/wrap
@@ -381,7 +383,7 @@ $ hilog -v nsec
 
 
 
-#### 查看和设置落盘任务
+## 查看和设置落盘任务
 
 **查看落盘任务**
 
@@ -446,7 +448,7 @@ Persist task [jobid:2] stop successfully
 
 
 
-#### 查看和设置日志级别
+## 查看和设置日志级别
 
 **查看全局日志级别**
 
@@ -508,11 +510,11 @@ Set tag testTag log level to E successfully
 
 
 
-#### 其他常用命令
+## 其他常用命令
 
 
 
-#### 查看日志缓冲区大小
+### 查看日志缓冲区大小
 
 ```bash
 hilog -g
@@ -530,7 +532,7 @@ Log type only_prerelease buffer size is 16.0M
 
 
 
-#### 修改日志缓冲区大小
+### 修改日志缓冲区大小
 
 ```bash
 hilog -G size
@@ -548,7 +550,7 @@ Set log type only_prerelease buffer size to 16.0M successfully
 
 
 
-#### 清除缓冲区日志
+### 清除缓冲区日志
 
 ```bash
 hilog -r
@@ -563,7 +565,7 @@ Log type core,app,only_prerelease buffer clear successfully
 
 
 
-#### 内核日志读取开关控制
+### 内核日志读取开关控制
 
 ```bash
 hilog -k on/off
@@ -581,7 +583,7 @@ Set hilogd storing kmsg log off successfully
 
 
 
-#### 查询统计信息
+### 查询统计信息
 
 ```bash
 hilog -s
@@ -625,7 +627,7 @@ DROPPED： 统计周期内丢失的行数。
 
 
 
-#### 清除统计信息
+### 清除统计信息
 
 ```bash
 hilog -S
@@ -640,7 +642,7 @@ Statistic info clear successfully
 
 
 
-#### 进程超限开关
+### 进程超限开关
 
 ```bash
 hilog -Q pidon/pidoff
@@ -664,7 +666,7 @@ Set flow control by process to disabled successfully
 
 
 
-#### domain超限开关
+### domain超限开关
 
 ```bash
 hilog -Q domainon/domainoff
@@ -688,7 +690,7 @@ Set flow control by domain to disabled successfully
 
 
 
-#### hilog超限机制介绍
+## hilog超限机制介绍
 
 日志打印量过大时，会触发hilog超限管控机制。触发后，超出部分的日志会被丢弃，并且打印超限提示日志。debug应用默认关闭此机制。
 
@@ -696,7 +698,7 @@ Set flow control by domain to disabled successfully
 
 
 
-#### 应用日志
+### 应用日志
 
 进程维度管控，打印到LOG_APP buffer里面的应用日志适配了pid超限机制，当某进程打印的LOG_APP类型日志量在一秒内超过阈值时会触发管控，超限提示日志示例如下：
 
@@ -706,11 +708,11 @@ Set flow control by domain to disabled successfully
 
 本条日志表示进程com.example.myapplication存在日志打印超限，在17:02:34.219时间点前，有3091行日志由于超限管控丢弃，未打印出来。
 
-**处理方式**：可参考[进程超限开关](#进程超限开关)，关闭对应管控机制。
+**处理方式**：可参考[进程超限开关](#进程超限开关)，关闭对应管控机制。建议每个应用进程每秒打印日志量不超过50KB，否则可能会触发日志超限，导致日志丢失。
 
 
 
-#### 系统日志
+### 系统日志
 
 domainID维度管控，打印到LOG_CORE buffer里面的系统日志适配了domain超限机制，当某domainID打印的LOG_CORE类型日志量在一秒内超过阈值时触发管控，超限提示日志示例如下：
 
@@ -720,11 +722,11 @@ domainID维度管控，打印到LOG_CORE buffer里面的系统日志适配了dom
 
 本条日志表示domainID为02C02的日志存在日志打印超限，在17:02:34.219时间点前，有108行日志由于超限管控丢弃，未打印出来。
 
-**处理方式**：可参考[domain超限开关](#domain超限开关)，关闭对应管控机制。
+**处理方式**：可参考[domain超限开关](#domain超限开关)，关闭对应管控机制。建议每个domainID每秒打印日志量不超过50KB，否则可能会触发日志超限，导致日志丢失。
 
 
 
-#### 日志丢失处理方法
+## 日志丢失处理方法
 
 目前日志丢失场景都有相应的维测信息，可以在hilog日志里面搜索对应关键字查看日志具体丢失的原因。
 
@@ -738,7 +740,7 @@ LOGLIMIT是进程或domainID超限管控的丢失；Slow reader missed是全局�
 
 
 
-#### LOGLIMIT
+### LOGLIMIT
 
 **含义**：日志打印超限，该进程或者domainID被管控。属于领域日志量超出hilog规格后的主动管控，需要领域对日志进行精简和整改。提示日志示例如下：
 
@@ -750,7 +752,7 @@ LOGLIMIT是进程或domainID超限管控的丢失；Slow reader missed是全局�
 
 
 
-#### Slow reader missed
+### Slow reader missed
 
 **含义**：打印时间点前后日志量太大，hilog buffer中的日志还未落盘已经被循环覆盖了。提示日志示例如下：
 
@@ -780,7 +782,7 @@ hilog -G 16M
 
 
 
-#### write socket failed
+### write socket failed
 
 **含义**：日志写入socket失败，出现丢包问题。提示日志示例如下：
 

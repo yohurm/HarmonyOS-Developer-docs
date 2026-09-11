@@ -88,12 +88,12 @@ struct TextAreaSelectionChangeDemo {
     Column() {
       TextArea({ controller: this.controller, text: this.message })
         .onTextSelectionChange((selectionStart: number, selectionEnd: number) => {
-          // 记录光标起始和结束位置
+        <em>  // 记录光标起始和结束位置</em>
           this.startIndex = selectionStart;
           this.endIndex = selectionEnd;
         })
         .onCopy(() => {
-          // 完成复制后将光标定位到记录下来的结束位置
+          <em>// 完成复制后将光标定位到记录下来的结束位置</em>
           this.controller.caretPosition(this.endIndex);
         })
         .margin(40)

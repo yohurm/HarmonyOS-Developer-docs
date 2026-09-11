@@ -1,22 +1,23 @@
 # ProgressButtonV2
 
-更新时间：2026-07-09 02:26:55
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-progressbuttonv2
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 文本下载按钮，可显示具体的下载进度。
 
 该组件基于[状态管理（V2）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state-management-overview#状态管理v2)实现，相较于[状态管理（V1）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state-management-overview#状态管理v1)，状态管理（V2）增强了对数据对象的深度观察与管理能力，不再局限于组件层级。借助状态管理（V2），开发者可以通过该组件更灵活地控制文本下载按钮的数据和状态，实现更高效的用户界面刷新。
 
 > [!NOTE]
-> 该组件从API version 18开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 该组件仅可在Stage模型下使用。 如果ProgressButtonV2设置 通用属性 和 通用事件 ，编译工具链会额外生成节点__Common__，并将通用属性或通用事件挂载在__Common__上，而不是直接应用到ProgressButtonV2本身。这可能导致开发者设置的通用属性或通用事件不生效或不符合预期，因此，不建议ProgressButtonV2设置通用属性和通用事件。
+> 该组件从API version 18开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 本模块接口仅可在Stage模型下使用。 如果ProgressButtonV2设置 通用属性 或 通用事件 ，编译工具链会额外生成节点__Common__，并将通用属性或通用事件挂载在__Common__上，而不是直接应用到ProgressButtonV2本身。这可能导致开发者设置的通用属性或通用事件不生效或不符合预期，因此，不建议ProgressButtonV2设置通用属性和通用事件。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 import { ColorMetrics, LengthMetrics, ProgressButtonV2, ProgressButtonV2Color } from '@kit.ArkUI';
@@ -24,9 +25,10 @@ import { ColorMetrics, LengthMetrics, ProgressButtonV2, ProgressButtonV2Color } 
 
 
 
-#### ProgressButtonV2
+## ProgressButtonV2
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ProgressButtonV2({progress: number, content: ResourceStr, progressButtonWidth?: LengthMetrics, onClicked: ClickCallback, isEnabled: boolean, colorOptions?: ProgressButtonColorOptions, progressButtonRadius?: LengthMetrics})
 
@@ -36,9 +38,12 @@ ProgressButtonV2({progress: number, content: ResourceStr, progressButtonWidth?: 
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
+
 
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -48,22 +53,15 @@ ProgressButtonV2({progress: number, content: ResourceStr, progressButtonWidth?: 
 | onClicked | ClickCallback | 是 | @Param | 下载按钮的点击回调。 |
 | isEnabled | boolean | 是 | @Param | 下载按钮是否可以点击。 true：可以点击。 false：不可点击。 |
 | colorOptions | ProgressButtonV2Color | 否 | @Param | 下载按钮颜色选项。 |
-| progressButtonRadius18+ | LengthMetrics | 否 | @Param | 下载按钮的圆角（不支持百分比设置）。 取值范围：[0, height/2] 默认值：height/2 设置非法数值时，按照默认值处理。 |
+| progressButtonRadius | LengthMetrics | 否 | @Param | 下载按钮的圆角（不支持百分比设置）。 取值范围：[0, height/2] 默认值：height/2 设置非法数值时，按照默认值处理。 |
 
 
 
 
-#### 属性
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-不支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)。
+## ClickCallback
 
 
-
-#### ClickCallback
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 type ClickCallback = () => void
 
@@ -77,9 +75,10 @@ type ClickCallback = () => void
 
 
 
-#### ProgressButtonV2Color
+## ProgressButtonV2Color
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 下载按钮颜色选项。
 
@@ -87,15 +86,19 @@ type ClickCallback = () => void
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -107,9 +110,10 @@ type ClickCallback = () => void
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 constructor(options: ProgressButtonV2ColorOptions);
 
@@ -119,9 +123,12 @@ constructor(options: ProgressButtonV2ColorOptions);
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -130,17 +137,21 @@ constructor(options: ProgressButtonV2ColorOptions);
 
 
 
-#### ProgressButtonV2ColorOptions
+## ProgressButtonV2ColorOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 下载按钮色彩信息选项。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -152,17 +163,10 @@ constructor(options: ProgressButtonV2ColorOptions);
 
 
 
-#### 事件
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-不支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)。
+## 示例
 
 
-
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例实现了一个简单的带加载进度的文本下载按钮。
 
@@ -217,4 +221,4 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/hCvdF6vhRCGL0tpBhkkVQg/zh-cn_image_0000002647588432.png?HW-CC-KV=V1&HW-CC-Date=20260723T012000Z&HW-CC-Expire=86400&HW-CC-Sign=E7E8BFBE8A1A1CF09EBDEBD99C1023D61CC3B2E7732D409CA576011DF3CCD0E9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/b-XXnAYITvOo-uDAORCKtg/zh-cn_image_0000002747213031.png?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=565DB9AD718306719399BF9FD60763CA4045750C8053962E3D13ADDDDFA7AF88)

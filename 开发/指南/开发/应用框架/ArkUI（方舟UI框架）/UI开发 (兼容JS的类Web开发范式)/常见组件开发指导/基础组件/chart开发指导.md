@@ -1,13 +1,13 @@
 # chart开发指导
 
-更新时间：2026-07-09 02:26:55
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-components-chart
 
 chart为图表组件，用于呈现线形图、柱状图和量规图界面。具体用法请参考[chart](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-basic-chart)。
 
 
-#### 创建chart组件
+## 创建chart组件
 
 在pages/index目录下的hml文件中创建一个chart组件。
 
@@ -70,7 +70,7 @@ export default {
 
 
 
-#### 设置图表类型
+## 设置图表类型
 
 chart组件通过设置type属性定义图表类型，如将图表设置为柱状图。
 
@@ -221,7 +221,7 @@ export default {
 
 
 
-#### 设置图表属性
+## 设置图表属性
 
 chart组件在options属性中设置对x轴、y轴和数据序列参数的设置，在datasets属性里添加对线条颜色、填充颜色、填充渐变颜色和绘制点集的设置。
 
@@ -307,7 +307,7 @@ export default {
 
 
 
-#### 场景示例
+## 场景示例
 
 开发者可以根据开关Switch的状态来选择数据展示的状态，当Switch状态为true时，通过定时器来实现数据的动态展示。
 
@@ -518,4 +518,4 @@ export default {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/ldqhYwhJRlOVc2pXZeTH8g/zh-cn_image_0000002677665997.gif?HW-CC-KV=V1&HW-CC-Date=20260723T012138Z&HW-CC-Expire=86400&HW-CC-Sign=FC1BB90BC7CB3B0F071958540FA421B49AA49BFB10D9169FE157E27238DD2672)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/Aw9IWhptTJe3HyJbUrha8g/zh-cn_image_0000002717770742.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073133Z&HW-CC-Expire=86400&HW-CC-Sign=BE6BE3652BA0A54E4F647D9D1236178F815AE13B750BB233910155EAA63332C6)

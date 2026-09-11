@@ -1,9 +1,9 @@
 # select
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-basic-select
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 下拉选择按钮，可使用下拉菜单展示并选择内容。
  
@@ -12,28 +12,32 @@
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持<[option](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-basic-option)>。
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-attributes)。
  
   
 
-#### 样式
+## 样式
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用样式](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-styles)外，还支持如下样式：
   
+
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | font-family | string | 否 | 字体系列列表，用逗号分隔。列表中第一个系统中存在的字体样式或者通过自定义字体指定的字体样式，会被选中作为当前文本的字体样式。 默认值：sans-serif |
@@ -41,12 +45,14 @@
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-events)外，还支持如下事件：
   
+
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | change | {newValue: newValue} | 选择下拉选项后触发该事件，返回值为一个对象，其中newValue为选中项option的value值。 |
@@ -58,17 +64,19 @@
  
   
 
-#### 方法
+## 方法
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用方法](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-methods)。
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 <!-- xxx.hml -->
@@ -115,4 +123,4 @@ export default {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/-O6ke6wjQPigOcZ_ZKs_XQ/zh-cn_image_0000002656009028.png?HW-CC-KV=V1&HW-CC-Date=20260730T071524Z&HW-CC-Expire=86400&HW-CC-Sign=9ED022A16453A97964524A4BA81DF3E0DDE091821D6356CF540A5B3ADE7D1D84)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/vH-hjWlQRUOLn_sxk9maMQ/zh-cn_image_0000002717613250.png?HW-CC-KV=V1&HW-CC-Date=20260911T072956Z&HW-CC-Expire=86400&HW-CC-Sign=7BEC186B0C3B96B4DC39ABFF6A37C6D42DF6CAD4E6C2F18780B252C7FF4C2587)

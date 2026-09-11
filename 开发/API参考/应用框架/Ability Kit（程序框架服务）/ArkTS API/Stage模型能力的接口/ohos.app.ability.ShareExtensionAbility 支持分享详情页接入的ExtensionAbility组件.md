@@ -1,9 +1,9 @@
 # @ohos.app.ability.ShareExtensionAbility (支持分享详情页接入的ExtensionAbility组件)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-shareextensionability
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ShareExtensionAbility继承自[UIExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiextensionability)，为开发者提供接入分享详情页能力。
  
@@ -16,9 +16,10 @@ ShareExtensionAbility继承自[UIExtensionAbility](https://developer.huawei.com/
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { ShareExtensionAbility } from '@kit.AbilityKit';
@@ -26,9 +27,10 @@ import { ShareExtensionAbility } from '@kit.AbilityKit';
  
   
 
-#### ShareExtensionAbility
+## ShareExtensionAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ShareExtensionAbility继承自[UIExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiextensionability)，为开发者提供分享详情页扩展能力。
  

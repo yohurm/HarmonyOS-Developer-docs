@@ -1,18 +1,19 @@
 # @ohos.enterprise.networkManager（网络管理）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-networkmanager
 **支持设备：** Phone | PC/2in1 | Tablet
 
-本模块提供设备网络管理能力，包括查询设备IP地址、MAC地址信息等。
+本模块提供设备网络管理能力，包括查询设备IP地址、MAC地址信息、管理网络接口状态、配置网络全局代理、管理防火墙规则和域名过滤规则、控制移动数据网络、管理APN配置、配置以太网网络等。适用于企业IT管理员对设备网络进行集中管理和安全管控，帮助企业实现网络访问策略统一管理、防止网络攻击和数据泄露、降低网络管理成本。
 
 > [!NOTE]
 > 本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 本模块接口仅可在Stage模型下使用。 本模块接口仅对设备管理应用开放，且调用接口前需激活设备管理应用，具体请参考 MDM Kit开发指南 。
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -22,13 +23,14 @@ import { networkManager } from '@kit.MDMKit';
 
 
 
-#### networkManager.getAllNetworkInterfacesSync
+## networkManager.getAllNetworkInterfacesSync
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 getAllNetworkInterfacesSync(admin: Want): Array&lt;string&gt;
 
-获取所有激活的有线网络接口。
+获取所有激活的有线网络接口。适用于企业网络管理场景，例如查看当前设备可用的网络连接、审计网络接口状态、为后续网络配置操作做准备，帮助企业了解设备网络连接状态，便于集中管理网络资源和排查网络问题。
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_NETWORK
 
@@ -38,12 +40,14 @@ getAllNetworkInterfacesSync(admin: Want): Array&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -53,6 +57,7 @@ getAllNetworkInterfacesSync(admin: Want): Array&lt;string&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -84,13 +89,14 @@ try {
 
 
 
-#### networkManager.getIpAddressSync
+## networkManager.getIpAddressSync
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 getIpAddressSync(admin: Want, networkInterface: string): string
 
-根据网络接口获取设备IP地址。
+根据网络接口获取设备IP地址。适用于企业网络管理场景，例如网络审计、设备定位、网络连接问题排查、IP地址分配管理，帮助企业IT管理员了解设备网络配置，便于网络管理和故障诊断。
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_NETWORK
 
@@ -100,6 +106,7 @@ getIpAddressSync(admin: Want, networkInterface: string): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -107,6 +114,7 @@ getIpAddressSync(admin: Want, networkInterface: string): string
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -116,6 +124,7 @@ getIpAddressSync(admin: Want, networkInterface: string): string
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -148,13 +157,14 @@ try {
 
 
 
-#### networkManager.getMacSync
+## networkManager.getMacSync
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 getMacSync(admin: Want, networkInterface: string): string
 
-根据网络接口获取设备MAC地址。
+根据网络接口获取设备MAC地址。适用于企业网络管理场景，例如设备识别、网络准入控制、MAC地址审计、设备资产管理，帮助企业识别和追踪设备，实现精细化的网络访问控制。
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_NETWORK
 
@@ -164,6 +174,7 @@ getMacSync(admin: Want, networkInterface: string): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -171,6 +182,7 @@ getMacSync(admin: Want, networkInterface: string): string
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -180,6 +192,7 @@ getMacSync(admin: Want, networkInterface: string): string
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -212,13 +225,16 @@ try {
 
 
 
-#### networkManager.isNetworkInterfaceDisabledSync
+## networkManager.isNetworkInterfaceDisabledSync
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
-isNetworkInterfaceDisabledSync(admin: Want | null, networkInterface: string): boolean
+isNetworkInterfaceDisabledSync(admin: Want, networkInterface: string): boolean
 
-查询指定网络接口是否被禁用。
+查询指定网络接口是否被禁用。适用于企业网络管理场景，例如检查网络接口状态、审计网络接口使用情况、验证网络策略执行效果，帮助企业确认网络接口管理策略是否生效，便于策略调整和问题排查。
+
+本接口通过传入Want查询对应企业设备管理应用设置的策略，如需查询实际生效的策略，请使用[networkManager.isNetworkInterfaceDisabledSync](#networkmanagerisnetworkinterfacedisabledsync-1)接口。
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_NETWORK
 
@@ -228,13 +244,15 @@ isNetworkInterfaceDisabledSync(admin: Want | null, networkInterface: string): bo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 当设备存在多个MDM应用时，API版本26.0.0之前，传入Want时查询对应企业设备管理应用设置的策略。从API版本26.0.0开始，新增支持传入null时查询实际生效的策略。 |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
 | networkInterface | string | 是 | 指定网络接口。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -244,6 +262,7 @@ isNetworkInterfaceDisabledSync(admin: Want | null, networkInterface: string): bo
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -276,13 +295,78 @@ try {
 
 
 
-#### networkManager.setNetworkInterfaceDisabledSync
+## networkManager.isNetworkInterfaceDisabledSync
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
+
+isNetworkInterfaceDisabledSync(admin: Want | null, networkInterface: string): boolean
+
+查询指定网络接口是否被禁用。适用于企业网络管理场景，例如检查网络接口状态、审计网络接口使用情况、验证网络策略执行效果，帮助企业确认网络接口管理策略是否生效，便于策略调整和问题排查。
+
+**起始版本：** 26.0.0
+
+**需要权限：** ohos.permission.ENTERPRISE_MANAGE_NETWORK
+
+**系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 当设备存在多个MDM应用时，传入Want时查询对应企业设备管理应用设置的策略，传入null时查询实际生效的策略。 |
+| networkInterface | string | 是 | 指定网络接口。 |
+
+
+**返回值：**
+
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回指定网络接口是否被禁用，true表示该网络接口被禁用，false表示该网络接口未被禁用。 |
+
+
+**错误码**：
+
+以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
+
+**示例：**
+
+```text
+import { networkManager } from '@kit.MDMKit';
+
+try {
+  // 参数需根据实际情况进行替换
+  // 参数需根据实际情况进行替换
+  let result: boolean = networkManager.isNetworkInterfaceDisabledSync(null, 'eth0');
+  console.info(`Succeeded in querying network interface is disabled or not, result : ${result}`);
+} catch (err) {
+  console.error(`Failed to query network interface is disabled or not. Code: ${err.code}, message: ${err.message}`);
+}
+```
+
+
+
+## networkManager.setNetworkInterfaceDisabledSync
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 setNetworkInterfaceDisabledSync(admin: Want, networkInterface: string, isDisabled: boolean): void
 
-禁止设备使用指定网络接口。
+禁止设备使用指定网络接口。适用于企业网络安全管控场景，例如禁用高风险网络接口、限制设备使用特定网络连接、防止通过网络接口进行数据泄露，帮助企业降低网络安全风险，防止通过特定网络接口进行的攻击或数据外泄。
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_NETWORK
 
@@ -294,6 +378,7 @@ setNetworkInterfaceDisabledSync(admin: Want, networkInterface: string, isDisable
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -304,6 +389,7 @@ setNetworkInterfaceDisabledSync(admin: Want, networkInterface: string, isDisable
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -336,13 +422,14 @@ try {
 
 
 
-#### networkManager.setGlobalProxySync
+## networkManager.setGlobalProxySync
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 setGlobalProxySync(admin: Want, httpProxy: connection.HttpProxy): void
 
-设置网络全局代理。
+设置网络全局代理。适用于企业网络管理场景，例如设置企业统一的网络代理、实现网络访问审计、控制网络访问路径、优化网络性能，帮助企业集中管理网络访问，实现网络访问的可审计和可控制。
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_NETWORK
 
@@ -354,15 +441,17 @@ setGlobalProxySync(admin: Want, httpProxy: connection.HttpProxy): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| httpProxy | connection.HttpProxy | 是 | 网络全局Http代理配置信息。 |
+| httpProxy | connection.HttpProxy | 是 | 网络全局HTTP代理配置信息。 |
 
 
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -404,13 +493,14 @@ try {
 
 
 
-#### networkManager.setGlobalProxyForAccount15+
+## networkManager.setGlobalProxyForAccount15+
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** PC/2in1
 
 setGlobalProxyForAccount(admin: Want, httpProxy: connection.HttpProxy, accountId: number): void
 
-设置指定用户下的网络代理。
+设置指定用户下的网络代理。适用于企业多用户环境下的网络管理场景，例如为不同用户设置不同的网络代理策略、实现用户级网络访问控制、满足不同用户的网络访问需求，帮助企业实现精细化的用户级网络管理。
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_NETWORK
 
@@ -424,6 +514,7 @@ setGlobalProxyForAccount(admin: Want, httpProxy: connection.HttpProxy, accountId
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -434,6 +525,7 @@ setGlobalProxyForAccount(admin: Want, httpProxy: connection.HttpProxy, accountId
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -475,13 +567,14 @@ try {
 
 
 
-#### networkManager.getGlobalProxySync
+## networkManager.getGlobalProxySync
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 getGlobalProxySync(admin: Want): connection.HttpProxy
 
-获取网络全局代理。
+获取网络全局代理。适用于企业网络管理场景，例如审计当前网络代理配置、验证代理策略是否生效、排查网络访问问题，帮助企业检查网络代理设置，确保网络访问策略正确执行。
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_NETWORK
 
@@ -491,12 +584,14 @@ getGlobalProxySync(admin: Want): connection.HttpProxy
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -506,6 +601,7 @@ getGlobalProxySync(admin: Want): connection.HttpProxy
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -538,13 +634,18 @@ try {
 
 
 
-#### networkManager.getGlobalProxyForAccount15+
+## networkManager.getGlobalProxyForAccount15+
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** PC/2in1
 
 getGlobalProxyForAccount(admin: Want | null, accountId: number): connection.HttpProxy
 
-获取指定用户下的网络代理。
+获取指定用户下的网络代理。适用于企业多用户环境下的网络管理场景，例如审计用户级网络代理配置、验证用户网络访问策略、排查用户网络访问问题，帮助企业检查和验证用户级网络管理策略。
+
+> [!NOTE]
+> 本接口用于获取通过setGlobalProxyForAccount设置的、指定用户的代理配置。如果需要获取应用于所有用户的全局代理配置，建议使用 getGlobalProxySync 接口。
+
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_NETWORK
 
@@ -556,13 +657,15 @@ getGlobalProxyForAccount(admin: Want | null, accountId: number): connection.Http
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。API version 20之前，调用本接口获取指定用户下的网络代理。当设备存在多个MDM应用时，传入admin查询对应admin设置的策略。从API version 20开始，admin新增支持传入null，传入null时查询整机实际生效的策略。 |
 | accountId | number | 是 | 用户ID，取值范围：大于等于0。 accountId可以通过@ohos.account.osAccount中的getOsAccountLocalId等接口来获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -572,6 +675,7 @@ getGlobalProxyForAccount(admin: Want | null, accountId: number): connection.Http
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -605,7 +709,8 @@ try {
 
 
 
-#### networkManager.addFirewallRule
+## networkManager.addFirewallRule
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -618,7 +723,7 @@ API version 21及之前版本，仅支持IPv4。从API version 22开始，支持
 从API version 23开始，支持[LogType](#logtype23)。
 
 > [!NOTE]
-> 添加了 Action 为ALLOW规则后，将会默认添加DENY规则，不在ALLOW规则之内的网络数据包将会被丢弃或拦截。 设备重启，将会清空防火墙过滤规则。 规则匹配顺序：先匹配域名过滤规则（由 addDomainFilterRule 添加），再匹配本接口添加的IP防火墙规则；在域名规则或IP规则中，均按 Action 为ALLOW、DENY、REJECT的顺序进行匹配。
+> 添加了 Action 为ALLOW规则后，将会默认添加DENY规则，不在ALLOW规则之内的网络数据包将会被丢弃或拦截。 设备重启，将会清空防火墙过滤规则。 规则匹配顺序：先匹配域名过滤规则（由 addDomainFilterRule 添加），再匹配本接口添加的IP防火墙规则；在域名规则或IP规则中，均按 Action 为ALLOW、DENY、REJECT的顺序进行匹配。 若规则配置了appUid，仅允许或禁止该应用的防火墙访问权限。若未配置appUid，则对所有应用生效。 若设备同时支持IPv4和IPv6，需要分别添加对应的IPv4和IPv6防火墙过滤规则。
 
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_NETWORK
@@ -631,6 +736,7 @@ API version 21及之前版本，仅支持IPv4。从API version 22开始，支持
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -640,6 +746,7 @@ API version 21及之前版本，仅支持IPv4。从API version 22开始，支持
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -684,13 +791,14 @@ try {
 
 
 
-#### networkManager.removeFirewallRule
+## networkManager.removeFirewallRule
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 removeFirewallRule(admin: Want, firewallRule?: FirewallRule): void
 
-移除设备防火墙过滤规则。
+移除设备防火墙过滤规则。适用于企业网络安全策略调整场景，例如取消某些网络访问限制、调整防火墙策略、清理过时或无效的规则，帮助企业灵活调整网络安全策略，确保网络访问控制策略与实际需求保持一致。
 
 API version 21及之前版本，仅支持IPv4。从API version 22开始，支持IPv4和IPv6。
 
@@ -708,6 +816,7 @@ API version 21及之前版本，仅支持IPv4。从API version 22开始，支持
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -717,6 +826,7 @@ API version 21及之前版本，仅支持IPv4。从API version 22开始，支持
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -760,7 +870,7 @@ try {
   console.error(`Failed to remove firewall rule. Code: ${err.code}, message: ${err.message}`);
 }
 
-// 清空所有规则
+// 清空IP协议版本为IPv4的所有规则
 try {
   networkManager.removeFirewallRule(wantTemp);
   console.info('Succeeded in removing all firewall rule.');
@@ -771,13 +881,14 @@ try {
 
 
 
-#### networkManager.getFirewallRules
+## networkManager.getFirewallRules
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 getFirewallRules(admin: Want): Array&lt;FirewallRule&gt;
 
-查询设备防火墙过滤规则。
+查询设备防火墙过滤规则。适用于企业网络安全审计场景，例如检查当前防火墙策略配置、审计网络访问控制规则、验证防火墙规则是否正确执行、排查网络访问问题，帮助企业审核和验证网络安全策略，确保网络访问控制符合安全要求。
 
 API version 21及之前版本，仅支持IPv4。从API version 22开始，支持IPv4和IPv6。
 
@@ -791,12 +902,14 @@ API version 21及之前版本，仅支持IPv4。从API version 22开始，支持
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -806,6 +919,7 @@ API version 21及之前版本，仅支持IPv4。从API version 22开始，支持
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -837,7 +951,8 @@ try {
 
 
 
-#### networkManager.addDomainFilterRule
+## networkManager.addDomainFilterRule
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -850,7 +965,7 @@ API version 21及之前版本，仅支持IPv4。从API version 22开始，支持
 从API version 23开始，支持[LogType](#logtype23)。
 
 > [!NOTE]
-> 添加 Action 为ALLOW规则后会自动添加默认DENY规则，不在ALLOW规则之内的域名解析数据包将被丢弃或拦截。 添加的规则在设备重启后会被清空。 为避免DNS缓存导致拦截规则失效，建议系统启动后立即配置域名过滤规则。若已因DNS缓存导致拦截失效，重启系统可清除缓存，恢复拦截功能。 规则匹配顺序：先匹配本接口添加的域名过滤规则，再匹配IP防火墙规则（由 addFirewallRule 添加）；在域名规则或IP规则中，均按 Action 为ALLOW、DENY、REJECT的顺序进行匹配。
+> 添加 Action 为ALLOW规则后会自动添加默认DENY规则，不在ALLOW规则之内的域名解析数据包将被丢弃或拦截。 添加的规则在设备重启后会被清空。 为避免DNS缓存导致拦截规则失效，建议系统启动后立即配置域名过滤规则。若已因DNS缓存导致拦截失效，重启系统可清除缓存，恢复拦截功能。 规则匹配顺序：先匹配本接口添加的域名过滤规则，再匹配IP防火墙规则（由 addFirewallRule 添加）；在域名规则或IP规则中，均按 Action 为ALLOW、DENY、REJECT的顺序进行匹配。 若规则配置了appUid，仅允许或禁止该应用的域名访问权限。若未配置appUid，则对所有应用生效。 若设备同时支持IPv4和IPv6，需要分别添加对应的IPv4和IPv6域名过滤规则。
 
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_NETWORK
@@ -863,15 +978,17 @@ API version 21及之前版本，仅支持IPv4。从API version 22开始，支持
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| domainFilterRule | DomainFilterRule | 是 | 添加域名过滤规则。 |
+| domainFilterRule | DomainFilterRule | 是 | 域名过滤规则对象，包含域名、应用UID、IP协议版本等配置项。 |
 
 
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -911,13 +1028,14 @@ try {
 
 
 
-#### networkManager.removeDomainFilterRule
+## networkManager.removeDomainFilterRule
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 removeDomainFilterRule(admin: Want, domainFilterRule?: DomainFilterRule): void
 
-移除设备域名过滤规则。
+移除设备域名过滤规则。适用于企业网络安全策略调整场景，例如取消某些域名访问限制、调整域名过滤策略、清理过时或无效的规则、解决误拦截问题，帮助企业灵活调整域名访问策略，确保网络访问控制策略符合实际需求。
 
 API version 21及之前版本，仅支持IPv4。从API version 22开始，支持IPv4和IPv6。
 
@@ -935,6 +1053,7 @@ API version 21及之前版本，仅支持IPv4。从API version 22开始，支持
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -944,6 +1063,7 @@ API version 21及之前版本，仅支持IPv4。从API version 22开始，支持
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -982,7 +1102,7 @@ try {
   console.error(`Failed to remove domain filter rules. Code: ${err.code}, message: ${err.message}`);
 }
 
-// 清空所有规则
+// 清空IP协议版本为IPv4的所有规则
 try {
   networkManager.removeDomainFilterRule(wantTemp);
   console.info('Succeeded in removing all domain filter rules');
@@ -993,13 +1113,14 @@ try {
 
 
 
-#### networkManager.getDomainFilterRules
+## networkManager.getDomainFilterRules
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 getDomainFilterRules(admin: Want): Array&lt;DomainFilterRule&gt;
 
-查询设备域名过滤规则。
+查询设备域名过滤规则。适用于企业网络安全审计场景，例如检查当前域名过滤策略配置、审计域名访问控制规则、验证域名过滤规则是否正确执行、排查域名访问问题，帮助企业审核和验证域名访问控制策略，确保网络访问控制符合安全要求。
 
 API version 21及之前版本，仅支持IPv4。从API version 22开始，支持IPv4和IPv6。
 
@@ -1013,12 +1134,14 @@ API version 21及之前版本，仅支持IPv4。从API version 22开始，支持
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1028,6 +1151,7 @@ API version 21及之前版本，仅支持IPv4。从API version 22开始，支持
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1059,7 +1183,8 @@ try {
 
 
 
-#### networkManager.turnOnMobileData20+
+## networkManager.turnOnMobileData20+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1077,15 +1202,17 @@ turnOnMobileData(admin: Want, isForce: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| isForce | boolean | 是 | 是否强制打开移动数据网络。true表示强制开启，强制开启后不支持用户在设备上手动关闭，必须采用turnOffMobileData接口关闭。false表示非强制开启，此时用户可以在设备上手动操作关闭移动数据网络。 |
+| isForce | boolean | 是 | 是否强制打开移动数据网络。true表示强制开启，强制开启后不支持用户在设备上手动关闭，必须采用turnOffMobileData接口关闭。false表示非强制开启，此时用户可以在设备上手动操作关闭移动数据网络。适用于企业网络安全管控场景，例如防止通过移动数据网络进行数据泄露、控制网络连接方式、降低通信成本、确保设备仅使用企业网络，帮助企业控制设备网络访问方式，防止通过移动数据网络的安全风险和数据外泄。 |
 
 
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1115,7 +1242,8 @@ try {
 
 
 
-#### networkManager.turnOffMobileData20+
+## networkManager.turnOffMobileData20+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1133,6 +1261,7 @@ turnOffMobileData(admin: Want): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -1141,6 +1270,7 @@ turnOffMobileData(admin: Want): void
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1170,9 +1300,10 @@ try {
 
 
 
-#### networkManager.addApn20+
+## networkManager.addApn20+
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | Tablet
 
 addApn(admin: Want, apnInfo: Record<string, string>): void
 
@@ -1188,15 +1319,17 @@ addApn(admin: Want, apnInfo: Record<string, string>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| apnInfo | Record<string, string> | 是 | 需要添加的APN参数信息。 - apnName：APN配置的名称标识符，必选。 - mcc：3位数字的移动国家代码，必选。 - mnc：2-3位数字的移动网络代码，必选。 - apn：接入点名称，必选。 - type：APN的服务类型，可选。 - user：APN身份验证的用户名，可选。 - password：APN身份验证的密码，可选。 - proxy：普通数据连接的代理服务器地址，可选。 - mmsproxy：彩信服务的专用代理地址，可选。 - authType：APN的认证协议类型，可选。 |
+| apnInfo | Record<string, string> | 是 | 需要添加的APN参数信息。设置后系统将使用这些参数配置移动数据网络的接入点，影响网络连接方式和数据传输路径。 - apnName：APN配置的名称标识符，必选。 - mcc：3位数字的移动国家代码，必选。 - mnc：2-3位数字的移动网络代码，必选。 - apn：接入点名称，必选。 - type：APN的服务类型，可选。 - user：APN身份验证的用户名，可选。 - password：APN身份验证的密码，可选。 - proxy：普通数据连接的代理服务器地址，可选。 - mmsproxy：彩信服务的专用代理地址，可选。 - authType：APN的认证协议类型，可选。 |
 
 
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1214,14 +1347,14 @@ import { networkManager } from '@kit.MDMKit';
 let wantTemp: Want = {
   // 需根据实际情况进行替换
   bundleName: 'com.example.myapplication',
-  abilityName: 'EnterpriseAdminAbility',
+  abilityName: 'EnterpriseAdminAbility'
 };
 let apnInfo: Record<string, string> = {
   // 需根据实际情况进行替换
   "apnName": "CTNET",
   "apn": "CTNET",
   "mnc": "11",
-  "mcc": "460",
+  "mcc": "460"
 };
 try {
   networkManager.addApn(wantTemp, apnInfo);
@@ -1233,13 +1366,14 @@ try {
 
 
 
-#### networkManager.deleteApn20+
+## networkManager.deleteApn20+
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | Tablet
 
 deleteApn(admin: Want, apnId: string): void
 
-删除APN。
+删除APN。适用于企业移动网络配置管理场景，例如清理无效的APN配置、调整移动网络接入点配置、防止使用错误的APN配置，帮助企业维护正确的移动网络配置，确保设备使用正确的接入点连接移动网络。
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_APN
 
@@ -1251,15 +1385,17 @@ deleteApn(admin: Want, apnId: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| apnId | string | 是 | 需要删除的APN ID。可以通过networkManager.queryApn获取设备APN信息。 |
+| apnId | string | 是 | 需要删除的APN ID。设置后系统将移除该APN配置，对应的接入点将不再可用。可以通过networkManager.queryApn获取设备APN信息。 |
 
 
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1277,7 +1413,7 @@ import { networkManager } from '@kit.MDMKit';
 let wantTemp: Want = {
   // 需根据实际情况进行替换
   bundleName: 'com.example.myapplication',
-  abilityName: 'EnterpriseAdminAbility',
+  abilityName: 'EnterpriseAdminAbility'
 };
 let apnId: string = "1"; // 需根据实际情况进行替换
 try {
@@ -1290,13 +1426,14 @@ try {
 
 
 
-#### networkManager.updateApn20+
+## networkManager.updateApn20+
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | Tablet
 
 updateApn(admin: Want, apnInfo: Record<string, string>, apnId: string): void
 
-更新APN。
+更新APN。适用于企业移动网络配置管理场景，例如修改APN配置参数、调整运营商设置、优化移动网络连接性能，帮助企业灵活调整移动网络配置，确保设备移动网络连接参数符合实际需求。
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_APN
 
@@ -1308,16 +1445,18 @@ updateApn(admin: Want, apnInfo: Record<string, string>, apnId: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| apnInfo | Record<string, string> | 是 | 需要更新的APN参数信息。 - apnName：APN配置的名称标识符，可选。 - mcc：3位数字的移动国家代码，可选。 - mnc：2-3位数字的移动网络代码，可选。 - APN：接入点名称，可选。 - type：APN的服务类型，可选。 - user：APN身份验证的用户名，可选。 - password：APN身份验证的密码，可选。 - proxy：普通数据连接的代理服务器地址，可选。 - mmsproxy：彩信服务的专用代理地址，可选。 - authType：APN的认证协议类型，可选。 |
+| apnInfo | Record<string, string> | 是 | 需要更新的APN参数信息。设置后系统将使用更新后的参数修改对应APN配置，影响网络连接方式和数据传输路径。 - apnName：APN配置的名称标识符，可选。 - mcc：3位数字的移动国家代码，可选。 - mnc：2-3位数字的移动网络代码，可选。 - APN：接入点名称，可选。 - type：APN的服务类型，可选。 - user：APN身份验证的用户名，可选。 - password：APN身份验证的密码，可选。 - proxy：普通数据连接的代理服务器地址，可选。 - mmsproxy：彩信服务的专用代理地址，可选。 - authType：APN的认证协议类型，可选。 |
 | apnId | string | 是 | 需要更新的APN ID。可以通过networkManager.queryApn获取设备APN信息。 |
 
 
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1335,14 +1474,14 @@ import { networkManager } from '@kit.MDMKit';
 let wantTemp: Want = {
   // 需根据实际情况进行替换
   bundleName: 'com.example.myapplication',
-  abilityName: 'EnterpriseAdminAbility',
+  abilityName: 'EnterpriseAdminAbility'
 };
 let apnInfo: Record<string, string> = {
   // 需根据实际情况进行替换
   "apnName": "CTNET",
   "apn": "CTNET",
   "mnc": "11",
-  "mcc": "460",
+  "mcc": "460"
 };
 let apnId: string = "1"; // 需根据实际情况进行替换
 try {
@@ -1355,9 +1494,10 @@ try {
 
 
 
-#### networkManager.setPreferredApn20+
+## networkManager.setPreferredApn20+
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | Tablet
 
 setPreferredApn(admin: Want, apnId: string): void
 
@@ -1373,6 +1513,7 @@ setPreferredApn(admin: Want, apnId: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -1382,6 +1523,7 @@ setPreferredApn(admin: Want, apnId: string): void
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1399,7 +1541,7 @@ import { networkManager } from '@kit.MDMKit';
 let wantTemp: Want = {
   // 需根据实际情况进行替换
   bundleName: 'com.example.myapplication',
-  abilityName: 'EnterpriseAdminAbility',
+  abilityName: 'EnterpriseAdminAbility'
 };
 let apnId: string = "1"; // 需根据实际情况进行替换
 try {
@@ -1412,13 +1554,14 @@ try {
 
 
 
-#### networkManager.queryApn20+
+## networkManager.queryApn20+
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | Tablet
 
 queryApn(admin: Want, apnInfo: Record<string, string>): Array&lt;string&gt;
 
-查询符合特定APN信息的APN ID。
+查询符合特定APN信息的APN ID。适用于企业移动网络配置审计场景，例如查找特定配置的APN、验证APN配置是否存在、为APN管理操作提供APN ID参数，帮助企业查找和管理APN配置，为APN的更新和删除操作提供必要的参数信息。
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_APN
 
@@ -1428,13 +1571,15 @@ queryApn(admin: Want, apnInfo: Record<string, string>): Array&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| apnInfo | Record<string, string> | 是 | APN的查询条件。 - apnName：APN配置的名称标识符，可选。 - mcc：3位数字的移动国家代码，可选。 - mnc：2-3位数字的移动网络代码，可选。 - apn：接入点名称，可选。 - type：APN的服务类型，可选。 - user：APN身份验证的用户名，可选。 - proxy：普通数据连接的代理服务器地址，可选。 - mmsproxy：彩信服务的专用代理地址，可选。 - authType：APN的认证协议类型，可选。 |
+| apnInfo | Record<string, string> | 是 | APN的查询条件。设置后系统将根据这些条件筛选匹配的APN配置，返回符合条件的APN ID列表。 - apnName：APN配置的名称标识符，可选。 - mcc：3位数字的移动国家代码，可选。 - mnc：2-3位数字的移动网络代码，可选。 - apn：接入点名称，可选。 - type：APN的服务类型，可选。 - user：APN身份验证的用户名，可选。 - proxy：普通数据连接的代理服务器地址，可选。 - mmsproxy：彩信服务的专用代理地址，可选。 - authType：APN的认证协议类型，可选。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1444,6 +1589,7 @@ queryApn(admin: Want, apnInfo: Record<string, string>): Array&lt;string&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1461,14 +1607,14 @@ import { networkManager } from '@kit.MDMKit';
 let wantTemp: Want = {
   // 需根据实际情况进行替换
   bundleName: 'com.example.myapplication',
-  abilityName: 'EnterpriseAdminAbility',
+  abilityName: 'EnterpriseAdminAbility'
 };
 let apnInfo: Record<string, string> = {
   // 需根据实际情况进行替换
   "apnName": "CTNET",
   "apn": "CTNET",
   "mnc": "11",
-  "mcc": "460",
+  "mcc": "460"
 };
 try {
   let queryResult: Array<string> = networkManager.queryApn(wantTemp, apnInfo);
@@ -1480,13 +1626,14 @@ try {
 
 
 
-#### networkManager.queryApn20+
+## networkManager.queryApn20+
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | Tablet
 
 queryApn(admin: Want, apnId: string): Record<string, string>
 
-查询特定APN的APN参数信息。
+查询特定APN的APN参数信息。适用于企业移动网络配置审计场景，例如检查特定APN的配置参数、验证APN配置是否正确、审计移动网络接入点配置，帮助企业审核和验证APN配置，确保移动网络配置符合要求。
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_APN
 
@@ -1496,13 +1643,15 @@ queryApn(admin: Want, apnId: string): Record<string, string>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| apnId | string | 是 | 指定的APN ID。可以通过networkManager.queryApn获取设备信息。 |
+| apnId | string | 是 | 指定的APN ID。设置后将查询该APN ID对应的详细参数配置信息。可以通过networkManager.queryApn获取设备信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1512,6 +1661,7 @@ queryApn(admin: Want, apnId: string): Record<string, string>
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1529,7 +1679,7 @@ import { networkManager } from '@kit.MDMKit';
 let wantTemp: Want = {
   // 需根据实际情况进行替换
   bundleName: 'com.example.myapplication',
-  abilityName: 'EnterpriseAdminAbility',
+  abilityName: 'EnterpriseAdminAbility'
 };
 let apnId: string = "1"; // 需根据实际情况进行替换
 try {
@@ -1542,13 +1692,14 @@ try {
 
 
 
-#### networkManager.setEthernetConfig23+
+## networkManager.setEthernetConfig23+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 setEthernetConfig(admin: Want, networkInterface: string, config: InterfaceConfig): void
 
-设置特定以太网网络接口的IP地址。
+设置特定以太网网络接口的IP地址。适用于企业网络管理场景，例如配置设备静态IP地址、统一管理企业网络设备IP分配、设置网络参数，帮助企业集中管理网络配置，确保设备网络参数符合企业网络管理策略。
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_NETWORK
 
@@ -1560,6 +1711,7 @@ setEthernetConfig(admin: Want, networkInterface: string, config: InterfaceConfig
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -1570,6 +1722,7 @@ setEthernetConfig(admin: Want, networkInterface: string, config: InterfaceConfig
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1589,7 +1742,7 @@ import { networkManager } from '@kit.MDMKit';
 let wantTemp: Want = {
   // 需根据实际情况进行替换
   bundleName: 'com.example.myapplication',
-  abilityName: 'EnterpriseAdminAbility',
+  abilityName: 'EnterpriseAdminAbility'
 };
 let config: networkManager.InterfaceConfig = {
   // 需根据实际情况进行替换
@@ -1598,7 +1751,7 @@ let config: networkManager.InterfaceConfig = {
   "gateway": "192.168.1.1",
   "netMask": "255.255.255.0",
   "dnsServers": "192.168.1.1"
-}
+};
 let networkInterface: string = "eth0"; // 需根据实际情况进行替换
 try {
   networkManager.setEthernetConfig(wantTemp, networkInterface, config);
@@ -1610,7 +1763,8 @@ try {
 
 
 
-#### FirewallRule
+## FirewallRule
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1622,13 +1776,16 @@ API version 21及之前版本，仅支持IPv4。从API version 22开始，支持
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| srcAddr | string | 否 | 是 | ip源地址。支持IP段，例如：192.168.0.0/22或者192.168.1.100-192.168.1.200 |
-| destAddr | string | 否 | 是 | ip目标地址。支持IP段，例如：192.168.0.0/22或者192.168.1.100-192.168.1.200 |
+| srcAddr | string | 否 | 是 | IP源地址。支持IP段，例如：192.168.0.0/22或者192.168.1.100-192.168.1.200 |
+| destAddr | string | 否 | 是 | IP目标地址。支持IP段，例如：192.168.0.0/22或者192.168.1.100-192.168.1.200 |
 | srcPort | string | 否 | 是 | 源端口。 |
 | destPort | string | 否 | 是 | 目标端口。 |
-| appUid | string | 否 | 是 | 应用uid。 |
+| appUid | string | 否 | 是 | 应用uid，可以通过接口bundleManager.getInstalledBundleList获取bundleInfo.appInfo.uid。 |
 | direction | Direction | 否 | 是 | 规则链。 添加防火墙过滤规则时必填； 移除防火墙时非必填，当值为空时，表示清空所有的Direction链，且srcAddr，destAddr，srcPort，destPort，appUid也必须传入空值。 |
 | action | Action | 否 | 是 | 接收或者丢弃数据包。 添加防火墙过滤规则时必填； 移除防火墙时非必填，当值为空时，表示清空所有的匹配Action规则的链，且srcAddr，destAddr，srcPort，destPort，appUid也必须传入空值。 |
 | protocol | Protocol | 否 | 是 | 网络协议。当值为ALL或者ICMP时，设置srcPort与destPort无效。 |
@@ -1638,7 +1795,8 @@ API version 21及之前版本，仅支持IPv4。从API version 22开始，支持
 
 
 
-#### DomainFilterRule
+## DomainFilterRule
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1650,25 +1808,32 @@ API version 21及之前版本，仅支持IPv4。从API version 22开始，支持
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | domainName | string | 否 | 是 | 域名。添加域名过滤规则时必填。支持域名分段匹配，例如，domainName传入example.com，那么example.com、www.example.com、www.test.example.com会被匹配，linkexample.com不会被匹配。 |
-| appUid | string | 否 | 是 | 应用uid。 |
+| appUid | string | 否 | 是 | 应用uid，可以通过接口bundleManager.getInstalledBundleList获取bundleInfo.appInfo.uid。 |
 | action | Action | 否 | 是 | 接收或者丢弃数据包。 添加域名过滤规则时必填； 移除域名过滤规则时非必填，当值为空时，表示清空所有的匹配Action规则的链，且domainName，appUid也必须传入空值。 |
-| direction15+ | Direction | 否 | 是 | 规则链。 添加域名过滤规则时非必填；当值设为输出链或输入链时，实际效果为输出链。设为转发链时，appUid需设置为空，否则会报401错误码。 移除域名过滤规则时非必填，当值为空时，表示清空所有的Direction链，且domainName，appUid也必须传入空值。 |
+| direction15+ | Direction | 否 | 是 | 规则链。 添加域名过滤规则时非必填；当值为空，以及设为输出链或输入链时，实际效果为输出链。设为转发链时，appUid需设置为空，否则会报401错误码。 移除域名过滤规则时非必填，当值为空时，表示清空所有的Direction链，且domainName，appUid也必须传入空值。 |
 | family22+ | number | 否 | 是 | IP协议版本。支持取值为1或2，取值为1表示IPv4，取值为2表示IPv6。 |
 | logType23+ | LogType | 否 | 是 | 日志类型，当前仅支持配置NFLOG类型，该参数仅支持PC/2in1设备。 添加域名过滤规则时，此参数非必填。若填写，仅在丢弃或拒绝数据包时生效。生效后，在访问被过滤域名时，会记录网络数据包日志，并向上层提供可查询的日志信息，可以通过订阅安全审计数据获取。 移除域名过滤规则时，当清空某条链时非必填，不影响整条链的清空；当移除单条规则时，是否填写必须与该规则一致，否则可能导致过滤规则已经移除，但是日志还在记录的问题；相同过滤规则移除时必须按添加时的顺序移除。 获取域名过滤规则时，仅日志生效的场景可以获取到logType字段。 |
 
 
 
 
-#### Direction
+## Direction
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 规则链。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1679,13 +1844,17 @@ API version 21及之前版本，仅支持IPv4。从API version 22开始，支持
 
 
 
-#### Action
+## Action
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 数据包的行为。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1696,13 +1865,17 @@ API version 21及之前版本，仅支持IPv4。从API version 22开始，支持
 
 
 
-#### Protocol
+## Protocol
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 网络协议。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1714,13 +1887,17 @@ API version 21及之前版本，仅支持IPv4。从API version 22开始，支持
 
 
 
-#### LogType23+
+## LogType23+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 日志类型。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1729,13 +1906,17 @@ API version 21及之前版本，仅支持IPv4。从API version 22开始，支持
 
 
 
-#### InterfaceConfig23+
+## InterfaceConfig23+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 以太网的网络接口配置。仅支持IPv4。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1748,13 +1929,17 @@ API version 21及之前版本，仅支持IPv4。从API version 22开始，支持
 
 
 
-#### IpSetMode23+
+## IpSetMode23+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 以太网连接模式。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

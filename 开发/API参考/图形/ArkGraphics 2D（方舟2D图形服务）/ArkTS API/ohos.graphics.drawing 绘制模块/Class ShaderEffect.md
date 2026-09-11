@@ -1,9 +1,9 @@
 # Class (ShaderEffect)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-graphics-drawing-shadereffect
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 着色器。画刷和画笔设置着色器后，会使用着色器效果而不是颜色属性去绘制，但此时画笔和画刷的透明度属性仍然生效。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { drawing } from '@kit.ArkGraphics2D';
@@ -22,9 +23,10 @@ import { drawing } from '@kit.ArkGraphics2D';
 
 
 
-#### createComposeShader20+
+## createComposeShader20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static createComposeShader(dstShaderEffect: ShaderEffect, srcShaderEffect: ShaderEffect, blendMode: BlendMode): ShaderEffect
 
@@ -33,6 +35,7 @@ static createComposeShader(dstShaderEffect: ShaderEffect, srcShaderEffect: Shade
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -43,6 +46,7 @@ static createComposeShader(dstShaderEffect: ShaderEffect, srcShaderEffect: Shade
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ShaderEffect | 返回创建的着色器对象。 |
@@ -51,6 +55,7 @@ static createComposeShader(dstShaderEffect: ShaderEffect, srcShaderEffect: Shade
 **错误码：**
 
 以下错误码的详细介绍请参见[图形绘制与显示错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-drawing)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -69,9 +74,10 @@ let shader = drawing.ShaderEffect.createComposeShader(dstShader, srcShader, draw
 
 
 
-#### createImageShader20+
+## createImageShader20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static createImageShader(pixelmap: image.PixelMap, tileX: TileMode, tileY: TileMode, samplingOptions: SamplingOptions, matrix?: Matrix | null): ShaderEffect
 
@@ -80,6 +86,7 @@ static createImageShader(pixelmap: image.PixelMap, tileX: TileMode, tileY: TileM
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -92,6 +99,7 @@ static createImageShader(pixelmap: image.PixelMap, tileX: TileMode, tileY: TileM
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ShaderEffect | 返回创建的着色器对象。 |
@@ -100,6 +108,7 @@ static createImageShader(pixelmap: image.PixelMap, tileX: TileMode, tileY: TileM
 **错误码：**
 
 以下错误码的详细介绍请参见[图形绘制与显示错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-drawing)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -148,9 +157,10 @@ class DrawingRenderNode extends RenderNode {
 
 
 
-#### createColorShader12+
+## createColorShader12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static createColorShader(color: number): ShaderEffect
 
@@ -160,12 +170,14 @@ static createColorShader(color: number): ShaderEffect
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | number | 是 | 表示着色器的ARGB格式颜色，该参数为32位无符号整数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -175,6 +187,7 @@ static createColorShader(color: number): ShaderEffect
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -191,9 +204,10 @@ let shaderEffect = drawing.ShaderEffect.createColorShader(0xFFFF0000);
 
 
 
-#### createLinearGradient12+
+## createLinearGradient12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static createLinearGradient(startPt: common2D.Point, endPt: common2D.Point, colors: Array&lt;number&gt;, mode: TileMode, pos?: Array&lt;number&gt; | null, matrix?: Matrix | null): ShaderEffect
 
@@ -202,6 +216,7 @@ static createLinearGradient(startPt: common2D.Point, endPt: common2D.Point, colo
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -221,6 +236,7 @@ static createLinearGradient(startPt: common2D.Point, endPt: common2D.Point, colo
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ShaderEffect | 返回创建的着色器对象。 |
@@ -229,6 +245,7 @@ static createLinearGradient(startPt: common2D.Point, endPt: common2D.Point, colo
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -247,9 +264,10 @@ let shaderEffect = drawing.ShaderEffect.createLinearGradient(startPt, endPt, [0x
 
 
 
-#### createRadialGradient12+
+## createRadialGradient12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static createRadialGradient(centerPt: common2D.Point, radius: number, colors: Array&lt;number&gt;, mode: TileMode, pos?: Array&lt;number&gt; | null, matrix?: Matrix | null): ShaderEffect
 
@@ -258,6 +276,7 @@ static createRadialGradient(centerPt: common2D.Point, radius: number, colors: Ar
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -277,6 +296,7 @@ static createRadialGradient(centerPt: common2D.Point, radius: number, colors: Ar
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ShaderEffect | 返回创建的着色器对象。 |
@@ -285,6 +305,7 @@ static createRadialGradient(centerPt: common2D.Point, radius: number, colors: Ar
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -302,9 +323,10 @@ let shaderEffect = drawing.ShaderEffect.createRadialGradient(centerPt, 100, [0xF
 
 
 
-#### createSweepGradient12+
+## createSweepGradient12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static createSweepGradient(centerPt: common2D.Point, colors: Array&lt;number&gt;, mode: TileMode, startAngle: number, endAngle: number, pos?: Array&lt;number&gt; | null, matrix?: Matrix | null): ShaderEffect
 
@@ -313,6 +335,7 @@ static createSweepGradient(centerPt: common2D.Point, colors: Array&lt;number&gt;
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -333,6 +356,7 @@ static createSweepGradient(centerPt: common2D.Point, colors: Array&lt;number&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ShaderEffect | 返回创建的着色器对象。 |
@@ -341,6 +365,7 @@ static createSweepGradient(centerPt: common2D.Point, colors: Array&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -358,9 +383,10 @@ let shaderEffect = drawing.ShaderEffect.createSweepGradient(centerPt, [0xFF00FF0
 
 
 
-#### createConicalGradient12+
+## createConicalGradient12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static createConicalGradient(startPt: common2D.Point, startRadius: number, endPt: common2D.Point, endRadius: number, colors: Array&lt;number&gt;, mode: TileMode, pos?: Array&lt;number&gt; | null, matrix?: Matrix | null): ShaderEffect
 
@@ -369,6 +395,7 @@ static createConicalGradient(startPt: common2D.Point, startRadius: number, endPt
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -383,12 +410,13 @@ static createConicalGradient(startPt: common2D.Point, startRadius: number, endPt
 
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/CCacRJIAQuGuX2nY8xhhTg/zh-cn_image_0000002656350981.png?HW-CC-KV=V1&HW-CC-Date=20260624T020309Z&HW-CC-Expire=86400&HW-CC-Sign=A5C9019A80671462DBB73182326768E3F5FA9A830C4C79BC9A3DD7719333C482)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/fRNQ-I-CQBmGTkhE8EfULA/zh-cn_image_0000002747213789.png?HW-CC-KV=V1&HW-CC-Date=20260911T072433Z&HW-CC-Expire=86400&HW-CC-Sign=16E091C5961CA1C02395B9FB693FA6A4C9838B19A907D6503E031E8DC141E395)
 
 
 如上图所示，设置颜色数组为红绿蓝，位置数组为0.0、0.5和1.0的绘制结果。左侧为起始圆不在结束圆内的绘制结果，右侧为起始圆在结束圆内的绘制结果。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -398,6 +426,7 @@ static createConicalGradient(startPt: common2D.Point, startRadius: number, endPt
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

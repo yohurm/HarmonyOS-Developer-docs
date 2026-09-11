@@ -1,9 +1,9 @@
 # Interface (MetadataOutput)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-metadataoutput
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 metadata流。继承[CameraOutput](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-cameraoutput)。
 
@@ -12,9 +12,10 @@ metadata流。继承[CameraOutput](https://developer.huawei.com/consumer/cn/doc/
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { camera } from '@kit.CameraKit';
@@ -22,9 +23,10 @@ import { camera } from '@kit.CameraKit';
 
 
 
-#### start
+## start
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 start(callback: AsyncCallback&lt;void&gt;): void
 
@@ -36,6 +38,7 @@ start(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当开始输出metadata成功，err为undefined，否则为错误对象。错误码类型CameraErrorCode。 |
@@ -44,6 +47,7 @@ start(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -69,9 +73,10 @@ function startMetadataOutput(metadataOutput: camera.MetadataOutput): void {
 
 
 
-#### start
+## start
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 start(): Promise&lt;void&gt;
 
@@ -83,6 +88,7 @@ start(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -91,6 +97,7 @@ start(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -114,9 +121,10 @@ function startMetadataOutput(metadataOutput: camera.MetadataOutput): void {
 
 
 
-#### stop
+## stop
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stop(callback: AsyncCallback&lt;void&gt;): void
 
@@ -127,6 +135,7 @@ stop(callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -151,9 +160,10 @@ function stopMetadataOutput(metadataOutput: camera.MetadataOutput): void {
 
 
 
-#### stop
+## stop
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stop(): Promise&lt;void&gt;
 
@@ -164,6 +174,7 @@ stop(): Promise&lt;void&gt;
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -186,9 +197,10 @@ function stopMetadataOutput(metadataOutput: camera.MetadataOutput): void {
 
 
 
-#### on('metadataObjectsAvailable')
+## on('metadataObjectsAvailable')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'metadataObjectsAvailable', callback: AsyncCallback<Array&lt;MetadataObject&gt;>): void
 
@@ -203,6 +215,7 @@ on(type: 'metadataObjectsAvailable', callback: AsyncCallback<Array&lt;MetadataOb
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -230,9 +243,10 @@ function registerMetadataObjectsAvailable(metadataOutput: camera.MetadataOutput)
 
 
 
-#### off('metadataObjectsAvailable')
+## off('metadataObjectsAvailable')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'metadataObjectsAvailable', callback?: AsyncCallback<Array&lt;MetadataObject&gt;>): void
 
@@ -243,6 +257,7 @@ off(type: 'metadataObjectsAvailable', callback?: AsyncCallback<Array&lt;Metadata
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -260,9 +275,10 @@ function unregisterMetadataObjectsAvailable(metadataOutput: camera.MetadataOutpu
 
 
 
-#### on('error')
+## on('error')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'error', callback: ErrorCallback): void
 
@@ -277,6 +293,7 @@ on(type: 'error', callback: ErrorCallback): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -300,9 +317,10 @@ function registerMetadataOutputError(metadataOutput: camera.MetadataOutput): voi
 
 
 
-#### off('error')
+## off('error')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'error', callback?: ErrorCallback): void
 
@@ -313,6 +331,7 @@ off(type: 'error', callback?: ErrorCallback): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -330,9 +349,10 @@ function unregisterMetadataOutputError(metadataOutput: camera.MetadataOutput): v
 
 
 
-#### addMetadataObjectTypes23+
+## addMetadataObjectTypes23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addMetadataObjectTypes(types: Array&lt;MetadataObjectType&gt;): void
 
@@ -344,6 +364,7 @@ addMetadataObjectTypes(types: Array&lt;MetadataObjectType&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | types | Array&lt;MetadataObjectType&gt; | 是 | metadata流类型信息，通过getSupportedOutputCapability接口获取。 |
@@ -352,6 +373,7 @@ addMetadataObjectTypes(types: Array&lt;MetadataObjectType&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -378,9 +400,10 @@ function addMetadataObjectTypes(metadataOutput: camera.MetadataOutput, types: Ar
 
 
 
-#### removeMetadataObjectTypes23+
+## removeMetadataObjectTypes23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeMetadataObjectTypes(types: Array&lt;MetadataObjectType&gt;): void
 
@@ -392,6 +415,7 @@ removeMetadataObjectTypes(types: Array&lt;MetadataObjectType&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | types | Array&lt;MetadataObjectType&gt; | 是 | metadata流类型信息，通过getSupportedOutputCapability接口获取。 |
@@ -400,6 +424,7 @@ removeMetadataObjectTypes(types: Array&lt;MetadataObjectType&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -426,9 +451,10 @@ function removeMetadataObjectTypes(metadataOutput: camera.MetadataOutput, types:
 
 
 
-#### isLockMetadataObjectTrackingSupported
+## isLockMetadataObjectTrackingSupported
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isLockMetadataObjectTrackingSupported(): boolean
 
@@ -443,6 +469,7 @@ isLockMetadataObjectTrackingSupported(): boolean
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -460,9 +487,10 @@ function checkLockMetadataSupport(metadataOutput: camera.MetadataOutput): void {
 
 
 
-#### lockMetadataObjectTracking
+## lockMetadataObjectTracking
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 lockMetadataObjectTracking(point: Point): void
 
@@ -482,6 +510,7 @@ lockMetadataObjectTracking(point: Point): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | point | Point | 是 | 锁定元数据对象追踪的点位。 |
@@ -490,6 +519,7 @@ lockMetadataObjectTracking(point: Point): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -514,9 +544,10 @@ function lockMetadata(metadataOutput: camera.MetadataOutput, point: camera.Point
 
 
 
-#### unlockMetadataObjectTracking
+## unlockMetadataObjectTracking
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unlockMetadataObjectTracking(): void
 
@@ -533,6 +564,7 @@ unlockMetadataObjectTracking(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

@@ -1,13 +1,13 @@
 # ArkTS卡片概述
 
-更新时间：2026-04-17 08:12:20
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-form-overview
 
 以下内容介绍基于ArkTS声明式开发范式语言开发卡片。
 
 
-#### 亮点/特征
+## 亮点/特征
 1. 统一开发范式
 
   
@@ -24,7 +24,7 @@
 
   
 
-  #### 实现原理
+  ## 实现原理
 
   
 卡片使用方：显示卡片内容的宿主应用，控制卡片在宿主中展示的位置，当前仅系统应用可以作为卡片使用方。
@@ -49,11 +49,12 @@
 
 
 
-#### ArkTS卡片类型
+## ArkTS卡片类型
 
 ArkTS卡片分为动态卡片、静态卡片和互动卡片三种类型。
 
-静态卡片整体的运行框架、渲染流程与动态卡片是一致的。主要区别在于，卡片渲染服务将卡片内容渲染完毕后，卡片使用方会使用最后一帧渲染的数据作为静态图片显示，其次卡片渲染服务中的卡片实例会释放该卡片的所有运行资源以节省内存。因此频繁的刷新会导致静态卡片运行时资源不断的创建和销毁，增加卡片功耗。
+静态卡片整体的运行框架、渲染流程与动态卡片是一致的。主要区别在于，卡片渲染服务将卡片内容渲染完毕后，卡片使用方会使用最后一帧渲染的数据作为静态图片显示，其次卡片渲染服务中的卡片实例会释放该卡片的所有运行资源以节省内存。因此频繁的刷新会导致静态卡片运行时资源不断地创建和销毁，增加卡片功耗。
+
 
 | 卡片类型 | 支持的能力 | 适用场景 | 优缺点 |
 | --- | --- | --- | --- |
@@ -64,7 +65,7 @@ ArkTS卡片分为动态卡片、静态卡片和互动卡片三种类型。
 
 
 
-#### 动态卡片
+### 动态卡片
 
 ArkTS卡片中提供了[postCardAction](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-postcardaction#postcardaction-1)接口用于卡片Card.ets和FormExtensionAbility之间的交互，当前支持router、message和call三种类型的事件，仅在卡片控件的点击事件中可以调用。
 
@@ -83,31 +84,19 @@ ArkTS卡片中提供了[postCardAction](https://developer.huawei.com/consumer/cn
 
 
 
-#### 静态卡片
+### 静态卡片
 
 ArkTS卡片提供FormLink静态卡片交互组件，用于静态卡片内部和提供方应用间的交互，当前支持router、message和call三种类型的事件。请参见[FormLink](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-formlink)。
 
 
 
-#### 互动卡片
+### 互动卡片
 
 从API version 20开始支持互动卡片，互动卡片提供破框动效能力，并实现人机交互，提升信息提醒、浅层交互和可玩性。具体请参考[互动卡片概述](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-liveform-overview)。
 
 
 
-#### 模拟器支持情况
-
-本Kit支持模拟器开发，但与真机存在部分能力差异，具体如下：
-
- - 通用差异：详情请参见[模拟器与真机的差异](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-specification)。
- - 模拟器中不支持 1 * 1卡片预览。
- - 模拟器中不支持背板透明卡片预览。
- - 模拟器中不支持互动卡片预览。
-
-
-
-
-#### 约束与限制
+## 约束与限制
 
 ArkTS卡片支持在UI内运行逻辑代码，相较于JS卡片具备了更加丰富的能力，但也增加了使用卡片进行恶意行为的风险。因为承载ArkTS卡片UI部分的widget.abc代码运行在系统公共的FRS进程内，并最终显示在卡片使用方应用中（一般为桌面应用），为确保系统渲染进程的稳定性、各卡片之间的隔离安全性，以及内存功耗等资源考虑，对ArkTS卡片UI可使用的能力做了以下约束：
 

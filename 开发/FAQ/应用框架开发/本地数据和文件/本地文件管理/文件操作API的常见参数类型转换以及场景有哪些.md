@@ -61,12 +61,12 @@
 
   
 ```text
-// 1、sandboxPath转化fd
+<em>// 1、sandboxPath转化fd</em>
 let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
 let content = context.resourceManager.getRawFileContentSync('testPic.png');
-// 获取沙箱文件sandboxPath：
+<em>// 获取沙箱文件sandboxPath：</em>
 let sandboxPath = context.filesDir + '/testPic.png';
-// 通过fs.openSync接口获取File对象
+<em>// 通过fs.openSync接口获取File对象</em>
 let file = fs.openSync(sandboxPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
 fs.writeSync(file.fd, content.buffer);
 fs.closeSync(file);
@@ -79,7 +79,7 @@ hilog.info(0x0000, TAG, `sandboxPath转化为fd 成功。`);
 ```json
 let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
 let sandboxPath = context.filesDir + 'testPic';
-// 2、sandboxPath转化uri
+<em>// 2、sandboxPath转化uri</em>
 let uri = fileUri.getUriFromPath(sandboxPath);
 let abilityStartCallback: common.AbilityStartCallback = {
   onError: (code, name, message) => {
@@ -87,14 +87,14 @@ let abilityStartCallback: common.AbilityStartCallback = {
     hilog.error(0x0000, TAG, `startAbilityByType: ${tip}`);
   },
   onResult: (result) => {
-    // 获取到回调结果中编辑后的图片uri并做对应的处理
+   <em> // 获取到回调结果中编辑后的图片uri并做对应的处理</em>
     hilog.info(0x0000, TAG, `PhotoEditorCaller result: ${JSON.stringify(result)}`);
   }
 };
 context.startAbilityByType('photoEditor', {
-  // 原始图片的uri,只支持传入一个uri
+  <em>// 原始图片的uri,只支持传入一个uri</em>
   'ability.params.stream': [uri],
-  // 至少需要分享读权限给到图片编辑面板
+ <em> // 至少需要分享读权限给到图片编辑面板</em>
   'ability.want.params.uriPermissionFlag': wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION
 
 
@@ -117,10 +117,10 @@ let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
 let filePath = context.filesDir + 'testPic';
 let file = fs.openSync(filePath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
 let fd: number = file.fd;
-// 通过fs.dup接口将fd转换为sandboxPath
+<em>// 通过fs.dup接口将fd转换为sandboxPath</em>
 let sandboxPath = fs.dup(fd).path;
 hilog.info(0x0000, TAG, `sandboxPath is ${sandboxPath}`);
-// 再通过sandboxPath获取uri
+<em>// 再通过sandboxPath获取uri</em>
 let uri = fileUri.getUriFromPath(sandboxPath);
 hilog.info(0x0000, TAG, `uri is ${uri}`);
 fs.closeSync(file);
@@ -134,16 +134,16 @@ fs.closeSync(file);
 ```text
 let uris: Array<string> = [];
 let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-// 创建文件选择器实例
+<em>// 创建文件选择器实例</em>
 const documentSelectOptions = new picker.DocumentSelectOptions();
 documentSelectOptions.maxSelectNumber = 1;
 const documentViewPicker = new picker.DocumentViewPicker(context);
 documentViewPicker.select(documentSelectOptions).then((documentSelectResult: Array<string>) => {
-  // 文件选择成功后，返回被选中文档的uri结果集。
+  <em>// 文件选择成功后，返回被选中文档的uri结果集。</em>
   uris = documentSelectResult;
   hilog.info(0x0000, TAG, `documentViewPicker.select to file succeed and uris are: ${uris}`);
   let file = fs.openSync(uris[0], fs.OpenMode.READ_ONLY);
-  // 通过fs.openSync获取File对象，从而获得fd、sandboxPath
+  <em>// 通过fs.openSync获取File对象，从而获得fd、sandboxPath</em>
   hilog.info(0x0000, TAG, `file fd: ${file.fd}`);
   hilog.info(0x0000, TAG, `sandboxPath is ${file.path}`);
 }).catch((err: BusinessError) => {
@@ -174,12 +174,12 @@ struct Index {
       Button('sandboxPath转化为fd')
         .onClick(() => {
           try {
-            // 1、sandboxPath转化fd
+          <em>  // 1、sandboxPath转化fd</em>
             let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
             let content = context.resourceManager.getRawFileContentSync('testPic.png');
-            // 获取沙箱文件sandboxPath：
+            <em>// 获取沙箱文件sandboxPath：</em>
             let sandboxPath = context.filesDir + '/testPic.png';
-            // 通过fs.openSync接口获取File对象
+           <em> // 通过fs.openSync接口获取File对象</em>
             let file = fs.openSync(sandboxPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
             fs.writeSync(file.fd, content.buffer);
             fs.closeSync(file);
@@ -196,7 +196,7 @@ struct Index {
           try {
             let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
             let sandboxPath = context.filesDir + 'testPic';
-            // 2、sandboxPath转化uri
+        <em>    // 2、sandboxPath转化uri</em>
             let uri = fileUri.getUriFromPath(sandboxPath);
             let abilityStartCallback: common.AbilityStartCallback = {
               onError: (code, name, message) => {
@@ -204,14 +204,14 @@ struct Index {
                 hilog.error(0x0000, TAG, `startAbilityByType: ${tip}`);
               },
               onResult: (result) => {
-                // 获取到回调结果中编辑后的图片uri并做对应的处理
+           <em>     // 获取到回调结果中编辑后的图片uri并做对应的处理</em>
                 hilog.info(0x0000, TAG, `PhotoEditorCaller result: ${JSON.stringify(result)}`);
               }
             };
             context.startAbilityByType('photoEditor', {
-              // 原始图片的uri,只支持传入一个uri
+            <em>  // 原始图片的uri,只支持传入一个uri</em>
               'ability.params.stream': [uri],
-              // 至少需要分享读权限给到图片编辑面板
+             <em> // 至少需要分享读权限给到图片编辑面板</em>
               'ability.want.params.uriPermissionFlag': wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION
 
 
@@ -236,10 +236,10 @@ struct Index {
             let filePath = context.filesDir + 'testPic';
             let file = fs.openSync(filePath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
             let fd: number = file.fd;
-            // 通过fs.dup接口将fd转换为sandboxPath
+          <em>  // 通过fs.dup接口将fd转换为sandboxPath</em>
             let sandboxPath = fs.dup(fd).path;
             hilog.info(0x0000, TAG, `sandboxPath is ${sandboxPath}`);
-            // 再通过sandboxPath获取uri
+         <em>   // 再通过sandboxPath获取uri</em>
             let uri = fileUri.getUriFromPath(sandboxPath);
             hilog.info(0x0000, TAG, `uri is ${uri}`);
             fs.closeSync(file);
@@ -256,16 +256,16 @@ struct Index {
           try {
             let uris: Array<string> = [];
             let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-            // 创建文件选择器实例
+         <em>   // 创建文件选择器实例</em>
             const documentSelectOptions = new picker.DocumentSelectOptions();
             documentSelectOptions.maxSelectNumber = 1;
             const documentViewPicker = new picker.DocumentViewPicker(context);
             documentViewPicker.select(documentSelectOptions).then((documentSelectResult: Array<string>) => {
-              // 文件选择成功后，返回被选中文档的uri结果集。
+            <em>  // 文件选择成功后，返回被选中文档的uri结果集。</em>
               uris = documentSelectResult;
               hilog.info(0x0000, TAG, `documentViewPicker.select to file succeed and uris are: ${uris}`);
               let file = fs.openSync(uris[0], fs.OpenMode.READ_ONLY);
-              // 通过fs.openSync获取File对象，从而获得fd、sandboxPath
+            <em>  // 通过fs.openSync获取File对象，从而获得fd、sandboxPath</em>
               hilog.info(0x0000, TAG, `file fd: ${file.fd}`);
               hilog.info(0x0000, TAG, `sandboxPath is ${file.path}`);
             }).catch((err: BusinessError) => {

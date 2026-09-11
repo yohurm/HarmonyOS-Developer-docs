@@ -1,9 +1,9 @@
 # @ohos.app.ability.abilityLifecycleCallback (UIAbility生命周期回调监听器)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-abilitylifecyclecallback
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [UIAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability)从创建到销毁过程其生命周期是动态变化的。AbilityLifecycleCallback模块提供监听[UIAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability)生命周期变化的能力，可用于统计每个UIAbility的运行时长、执行与UIAbility业务逻辑解耦的数据加载等场景。
 
@@ -12,18 +12,20 @@
 
 
 
-#### 使用说明
+## 使用说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 1. 应用创建AbilityLifecycleCallback对象，并调用[ApplicationContext.on('abilityLifecycle')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-applicationcontext#applicationcontextonabilitylifecycle)接口注册UIAbility生命周期变化监听。
 2. 当UIAbility生命周期变化时，应用可以通过已注册的AbilityLifecycleCallback对象接收到UIAbility生命周期的变化通知。
 3. 当应用不需要监听UIAbility生命周期变化时，需要通过[ApplicationContext.off('abilityLifecycle')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-applicationcontext#applicationcontextoffabilitylifecycle)接口取消监听。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { AbilityLifecycleCallback } from '@kit.AbilityKit';
@@ -31,15 +33,17 @@ import { AbilityLifecycleCallback } from '@kit.AbilityKit';
 
 
 
-#### AbilityLifecycleCallback
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## AbilityLifecycleCallback
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### onAbilityCreate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### onAbilityCreate
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onAbilityCreate(ability: UIAbility): void
 
@@ -51,6 +55,7 @@ onAbilityCreate(ability: UIAbility): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
@@ -62,9 +67,10 @@ onAbilityCreate(ability: UIAbility): void
 
 
 
-#### onWindowStageCreate
+### onWindowStageCreate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onWindowStageCreate(ability: UIAbility, windowStage: window.WindowStage): void
 
@@ -76,6 +82,7 @@ onWindowStageCreate(ability: UIAbility, windowStage: window.WindowStage): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
@@ -88,9 +95,10 @@ onWindowStageCreate(ability: UIAbility, windowStage: window.WindowStage): void
 
 
 
-#### onWindowStageActive
+### onWindowStageActive
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onWindowStageActive(ability: UIAbility, windowStage: window.WindowStage): void
 
@@ -102,6 +110,7 @@ onWindowStageActive(ability: UIAbility, windowStage: window.WindowStage): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
@@ -114,9 +123,10 @@ onWindowStageActive(ability: UIAbility, windowStage: window.WindowStage): void
 
 
 
-#### onWindowStageInactive
+### onWindowStageInactive
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onWindowStageInactive(ability: UIAbility, windowStage: window.WindowStage): void
 
@@ -128,6 +138,7 @@ onWindowStageInactive(ability: UIAbility, windowStage: window.WindowStage): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
@@ -140,9 +151,10 @@ onWindowStageInactive(ability: UIAbility, windowStage: window.WindowStage): void
 
 
 
-#### onWindowStageDestroy
+### onWindowStageDestroy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onWindowStageDestroy(ability: UIAbility, windowStage: window.WindowStage): void
 
@@ -153,6 +165,7 @@ onWindowStageDestroy(ability: UIAbility, windowStage: window.WindowStage): void
 **系统能力**：SystemCapability.Ability.AbilityRuntime.AbilityCore
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -166,9 +179,10 @@ onWindowStageDestroy(ability: UIAbility, windowStage: window.WindowStage): void
 
 
 
-#### onAbilityDestroy
+### onAbilityDestroy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onAbilityDestroy(ability: UIAbility): void
 
@@ -180,6 +194,7 @@ onAbilityDestroy(ability: UIAbility): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
@@ -191,9 +206,10 @@ onAbilityDestroy(ability: UIAbility): void
 
 
 
-#### onAbilityForeground
+### onAbilityForeground
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onAbilityForeground(ability: UIAbility): void
 
@@ -205,6 +221,7 @@ onAbilityForeground(ability: UIAbility): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
@@ -216,9 +233,10 @@ onAbilityForeground(ability: UIAbility): void
 
 
 
-#### onAbilityBackground
+### onAbilityBackground
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onAbilityBackground(ability: UIAbility): void
 
@@ -230,6 +248,7 @@ onAbilityBackground(ability: UIAbility): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
@@ -241,9 +260,10 @@ onAbilityBackground(ability: UIAbility): void
 
 
 
-#### onAbilityContinue
+### onAbilityContinue
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onAbilityContinue(ability: UIAbility): void
 
@@ -255,6 +275,7 @@ onAbilityContinue(ability: UIAbility): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
@@ -266,9 +287,10 @@ onAbilityContinue(ability: UIAbility): void
 
 
 
-#### onAbilityWillCreate12+
+### onAbilityWillCreate12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onAbilityWillCreate?(ability: UIAbility): void
 
@@ -280,6 +302,7 @@ onAbilityWillCreate?(ability: UIAbility): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
@@ -291,9 +314,10 @@ onAbilityWillCreate?(ability: UIAbility): void
 
 
 
-#### onWindowStageWillCreate12+
+### onWindowStageWillCreate12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onWindowStageWillCreate?(ability: UIAbility, windowStage: window.WindowStage): void
 
@@ -305,6 +329,7 @@ onWindowStageWillCreate?(ability: UIAbility, windowStage: window.WindowStage): v
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
@@ -317,9 +342,10 @@ onWindowStageWillCreate?(ability: UIAbility, windowStage: window.WindowStage): v
 
 
 
-#### onWindowStageWillDestroy12+
+### onWindowStageWillDestroy12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onWindowStageWillDestroy?(ability: UIAbility, windowStage: window.WindowStage): void
 
@@ -331,6 +357,7 @@ onWindowStageWillDestroy?(ability: UIAbility, windowStage: window.WindowStage): 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
@@ -343,9 +370,10 @@ onWindowStageWillDestroy?(ability: UIAbility, windowStage: window.WindowStage): 
 
 
 
-#### onAbilityWillForeground12+
+### onAbilityWillForeground12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onAbilityWillForeground?(ability: UIAbility): void
 
@@ -357,6 +385,7 @@ onAbilityWillForeground?(ability: UIAbility): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
@@ -368,9 +397,10 @@ onAbilityWillForeground?(ability: UIAbility): void
 
 
 
-#### onAbilityWillDestroy12+
+### onAbilityWillDestroy12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onAbilityWillDestroy?(ability: UIAbility): void
 
@@ -382,6 +412,7 @@ onAbilityWillDestroy?(ability: UIAbility): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
@@ -393,9 +424,10 @@ onAbilityWillDestroy?(ability: UIAbility): void
 
 
 
-#### onAbilityWillBackground12+
+### onAbilityWillBackground12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onAbilityWillBackground?(ability: UIAbility): void
 
@@ -407,6 +439,7 @@ onAbilityWillBackground?(ability: UIAbility): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
@@ -418,9 +451,10 @@ onAbilityWillBackground?(ability: UIAbility): void
 
 
 
-#### onWillNewWant12+
+### onWillNewWant12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onWillNewWant?(ability: UIAbility): void
 
@@ -432,6 +466,7 @@ onWillNewWant?(ability: UIAbility): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
@@ -443,9 +478,10 @@ onWillNewWant?(ability: UIAbility): void
 
 
 
-#### onNewWant12+
+### onNewWant12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onNewWant?(ability: UIAbility): void
 
@@ -457,6 +493,7 @@ onNewWant?(ability: UIAbility): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
@@ -468,9 +505,10 @@ onNewWant?(ability: UIAbility): void
 
 
 
-#### onAbilityWillContinue12+
+### onAbilityWillContinue12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onAbilityWillContinue?(ability: UIAbility): void
 
@@ -482,6 +520,7 @@ onAbilityWillContinue?(ability: UIAbility): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
@@ -493,9 +532,10 @@ onAbilityWillContinue?(ability: UIAbility): void
 
 
 
-#### onWindowStageWillRestore12+
+### onWindowStageWillRestore12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onWindowStageWillRestore?(ability: UIAbility, windowStage: window.WindowStage): void
 
@@ -507,6 +547,7 @@ onWindowStageWillRestore?(ability: UIAbility, windowStage: window.WindowStage): 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
@@ -519,9 +560,10 @@ onWindowStageWillRestore?(ability: UIAbility, windowStage: window.WindowStage): 
 
 
 
-#### onWindowStageRestore12+
+### onWindowStageRestore12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onWindowStageRestore?(ability: UIAbility, windowStage: window.WindowStage): void
 
@@ -533,6 +575,7 @@ onWindowStageRestore?(ability: UIAbility, windowStage: window.WindowStage): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
@@ -545,9 +588,10 @@ onWindowStageRestore?(ability: UIAbility, windowStage: window.WindowStage): void
 
 
 
-#### onAbilityWillSaveState12+
+### onAbilityWillSaveState12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onAbilityWillSaveState?(ability: UIAbility): void
 
@@ -559,6 +603,7 @@ onAbilityWillSaveState?(ability: UIAbility): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
@@ -570,9 +615,10 @@ onAbilityWillSaveState?(ability: UIAbility): void
 
 
 
-#### onAbilitySaveState12+
+### onAbilitySaveState12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onAbilitySaveState?(ability: UIAbility): void
 
@@ -584,6 +630,7 @@ onAbilitySaveState?(ability: UIAbility): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ability | UIAbility | 是 | 回调事件对应的UIAbility对象。 |
@@ -595,7 +642,10 @@ onAbilitySaveState?(ability: UIAbility): void
 
 
 
-#### AbilityLifecycleCallback使用示例
+### AbilityLifecycleCallback使用示例
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例展示了生命周期监听机制的部分使用场景：
 1. 在[AbilityStage](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/abilitystage)创建时注册监听。

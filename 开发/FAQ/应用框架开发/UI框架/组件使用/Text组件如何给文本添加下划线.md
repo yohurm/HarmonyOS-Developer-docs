@@ -42,12 +42,12 @@ struct Index {
           .onAreaChange((oldValue: Area, newValue: Area) => {
             this.textLength = newValue.width;
           })
-        // 自定义选中文本底部导航条--单直线
+       <em> // 自定义选中文本底部导航条--单直线</em>
         if (this.isKey) {
           Column().width(this.textLength).height(2).backgroundColor('#0A59F7');
         }
 
-        // 自定义选中文本底部导航条--线性渐变
+       <em> // 自定义选中文本底部导航条--线性渐变</em>
         if (this.isKey) {
           Text().width(this.textLength).height(2)
             .linearGradient({
@@ -95,14 +95,14 @@ struct Scene2 {
         .fontColor(Color.Blue)
         .decoration({ type: TextDecorationType.Underline, color: '#00FFFFFF' })
 
-      // overlay中decoration绘制下划线，注意y的位置有下划线避让
+  <em>    // overlay中decoration绘制下划线，注意y的位置有下划线避让</em>
       Text(this.messageDecoration)
         .overlay(this.OverlayNodeDecoration(), {
           align: Alignment.Start,
           offset: { x: 0, y: 0 }
         })
 
-      // overlay中border绘制下划线，注意y的位置没有下划线避让
+    <em>  // overlay中border绘制下划线，注意y的位置没有下划线避让</em>
       Text(this.messageBorder)
         .overlay(this.OverlayNodeBorder(), {
           align: Alignment.Start,
@@ -116,13 +116,13 @@ struct Scene2 {
           offset: { x: 0, y: -10 }
         })
 
-      // 字体放大后，下划线避让非常明显
+     <em> // 字体放大后，下划线避让非常明显</em>
       Text('下划线避让 gjyqp')
         .fontColor(Color.Blue)
         .fontSize(25)
         .decoration({ type: TextDecorationType.Underline })
 
-      // border绘制的下划线，位置更靠下
+     <em> // border绘制的下划线，位置更靠下</em>
       Text('border绘制下划线 gjyqp')
         .fontColor(Color.Blue)
         .fontSize(25)
@@ -134,14 +134,14 @@ struct Scene2 {
   @Builder
   OverlayNodeDecoration() {
     Text(this.messageDecoration)
-      // decoration绘制下划线，下划线避让，会导致y的位置出现一段空白
+    <em>  // decoration绘制下划线，下划线避让，会导致y的位置出现一段空白</em>
       .decoration({
         type: TextDecorationType.Underline,
         color: Color.Blue,
         style: TextDecorationStyle.SOLID
       })
       .fontColor(Color.Transparent)
-      .hitTestBehavior(HitTestMode.Transparent) // 配置浮层不阻塞交互
+      .hitTestBehavior(HitTestMode.Transparent) <em>// </em><em>配置浮层不阻塞交互</em>
   }
 
   @Builder
@@ -150,7 +150,7 @@ struct Scene2 {
       .borderWidth({ bottom: 1 })
       .borderColor(Color.Blue)
       .fontColor(Color.Transparent)
-      .hitTestBehavior(HitTestMode.Transparent) // 配置浮层不阻塞交互
+      .hitTestBehavior(HitTestMode.Transparent) <em>// </em><em>配置浮层不阻塞交互</em>
   }
 
   @Builder
@@ -159,7 +159,7 @@ struct Scene2 {
       .borderWidth({ bottom: 1 })
       .borderColor(Color.Blue)
       .fontColor(Color.Transparent)
-      .hitTestBehavior(HitTestMode.Transparent) // 配置浮层不阻塞交互
+      .hitTestBehavior(HitTestMode.Transparent) <em>// </em><em>配置浮层不阻塞交互</em>
   }
 }
 ```
@@ -186,7 +186,7 @@ struct Scene3 {
           },
           color: { bottom: Color.Gray },
           style: {
-            bottom: BorderStyle.Solid // 线条样式（实线）
+            bottom: BorderStyle.Solid <em>// 线条样式（实线）</em>
           }
         })
     }
@@ -222,7 +222,7 @@ struct Scene4 {
 
   在rawfile文件夹新建Index.html。
 ```text
-<!DOCTYPE html>
+<em><!DOCTYPE html></em>
 <html>
 <body>
 <p>我是通过Web组件添加的</p>
@@ -250,7 +250,7 @@ struct WebComponent {
 
   build() {
     Column() {
-      // 通过$rawfile加载本地资源文件。
+     <em> // 通过$rawfile加载本地资源文件。</em>
       Web({ src: $rawfile('Index.html'), controller: this.controller })
         .fileAccess(true)
         .geolocationAccess(false);

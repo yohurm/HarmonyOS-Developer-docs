@@ -1,24 +1,25 @@
 # 应用文件访问(C/C++)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-fileio-guidelines
 
-#### 场景介绍
+## 场景介绍
 
 FileIO模块提供了部分文件基础操作能力，其他能力请参考[libc标准库](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/musl)/[c++标准库](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/cpp)。
 
 
 
-#### 约束限制
+## 约束限制
 
 进行文件操作之前，必须保证传入正确有效的URI或path。
 
 
 
-#### 接口说明
+## 接口说明
 
 接口的详细说明，请参考[FileIO](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-fileio-h)。
+
 
 | 接口名称 | 描述 |
 | --- | --- |
@@ -29,7 +30,7 @@ FileIO模块提供了部分文件基础操作能力，其他能力请参考[libc
 
 
 
-#### 开发步骤
+## 开发步骤
 
 **在CMake脚本中链接动态库**
 

@@ -1,9 +1,9 @@
 # Class (TextMenuController)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-textmenucontroller
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TextMenuController用于控制文本选择菜单的行为，支持设置菜单显示选项（如优先使用独立窗口显示）、屏蔽系统服务菜单项或指定菜单项，适用于需要自定义文本选择菜单显示方式或限制特定菜单功能的应用场景，如在特定业务场景下禁用翻译、搜索等功能。
  
@@ -12,9 +12,10 @@ TextMenuController用于控制文本选择菜单的行为，支持设置菜单�
 
   
 
-#### setMenuOptions16+
+## setMenuOptions16+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMenuOptions(options: TextMenuOptions): void
  
@@ -28,6 +29,7 @@ setMenuOptions(options: TextMenuOptions): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | TextMenuOptions | 是 | 设置菜单选项，用于控制文本选择菜单的显示模式。 |
@@ -76,9 +78,10 @@ struct Index {
  
   
 
-#### disableSystemServiceMenuItems20+
+## disableSystemServiceMenuItems20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static disableSystemServiceMenuItems(disable: boolean): void
  
@@ -96,6 +99,7 @@ static disableSystemServiceMenuItems(disable: boolean): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | disable | boolean | 是 | 是否禁用系统服务菜单项。true表示禁用，false表示不禁用。 |
@@ -111,7 +115,7 @@ import { TextMenuController } from '@kit.ArkUI';
 @Component
 struct Index {
   aboutToAppear(): void {
-    // 禁用所有系统服务菜单。
+    // 禁用除复制、剪切、全选、粘贴外的所有系统服务菜单项。
     TextMenuController.disableSystemServiceMenuItems(true);
   }
 
@@ -148,9 +152,10 @@ struct Index {
  
   
 
-#### disableMenuItems20+
+## disableMenuItems20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static disableMenuItems(items: Array&lt;TextMenuItemId&gt;): void
  
@@ -168,6 +173,7 @@ static disableMenuItems(items: Array&lt;TextMenuItemId&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | items | Array&lt;TextMenuItemId&gt; | 是 | 禁用菜单项的列表。仅支持禁用系统服务菜单项（复制、剪切、全选、粘贴除外），禁用一级菜单项会同时禁用其所有二级菜单项，不支持直接禁用二级菜单项。 |

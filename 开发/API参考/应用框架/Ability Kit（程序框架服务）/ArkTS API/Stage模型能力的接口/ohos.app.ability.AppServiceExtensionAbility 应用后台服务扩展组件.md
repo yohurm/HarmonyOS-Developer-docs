@@ -1,9 +1,9 @@
 # @ohos.app.ability.AppServiceExtensionAbility (应用后台服务扩展组件)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-appserviceextensionability
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** PC/2in1
 
 AppServiceExtensionAbility模块提供后台服务相关扩展能力，包括后台服务的创建、销毁、连接、断开等生命周期回调。
 
@@ -12,25 +12,27 @@ AppServiceExtensionAbility模块提供后台服务相关扩展能力，包括后
 
 
 
-#### 约束限制
+## 约束限制
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
- - 当前仅支持2in1设备。
+**支持设备：** PC/2in1
+
+ - 当前仅支持PC/2in1设备。
  - 应用集成AppServiceExtensionAbility的组件需要申请ACL权限（ohos.permission.SUPPORT_APP_SERVICE_EXTENSION）。该ACL权限当前只对企业普通应用开放申请，申请方式参考[权限申请指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions)。
  - 为保障系统安全性和稳定性，防止AppServiceExtensionAbility滥用系统资源，系统对其能力进行管控，不支持[@ohos.window (窗口)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window)模块的引用。
 
 
 
 
-#### 生命周期
+## 生命周期
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 AppServiceExtensionAbility提供了[onCreate()](#oncreate)、[onRequest()](#onrequest)、[onConnect()](#onconnect)、[onDisconnect()](#ondisconnect)和[onDestroy()](#ondestroy)生命周期回调，开发者可根据需要重写对应的回调方法。下图展示了AppServiceExtensionAbility的生命周期。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/CQs09esqRLa9TeeQa8oeWQ/zh-cn_image_0000002685927837.png?HW-CC-KV=V1&HW-CC-Date=20260730T071420Z&HW-CC-Expire=86400&HW-CC-Sign=A48ED484C9A745965FDC03BE2AC2B79A07F8CD3CA19FEE077F88CB2830281874)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/IzkKOju0QYyuZMDEIniybA/zh-cn_image_0000002717772290.png?HW-CC-KV=V1&HW-CC-Date=20260911T072829Z&HW-CC-Expire=86400&HW-CC-Sign=96A8950C01FEAAD687A8C48EDD946D5333F46721E26349495DFB6D30F663EEE3)
 
 
  - **onCreate**
@@ -52,9 +54,10 @@ AppServiceExtensionAbility提供了[onCreate()](#oncreate)、[onRequest()](#onre
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 ```text
 import { AppServiceExtensionAbility } from '@kit.AbilityKit';
@@ -62,21 +65,24 @@ import { AppServiceExtensionAbility } from '@kit.AbilityKit';
 
 
 
-#### AppServiceExtensionAbility
+## AppServiceExtensionAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 AppServiceExtensionAbility模块提供后台服务相关扩展能力，包括后台服务的创建、销毁、连接、断开等生命周期回调。
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **设备行为差异**：该属性仅在PC/2in1设备中可正常调用，在其他设备上不生效。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -85,13 +91,14 @@ AppServiceExtensionAbility模块提供后台服务相关扩展能力，包括后
 
 
 
-#### onCreate
+### onCreate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 onCreate(want: Want): void
 
-在AppServiceExtensionAbility实例创建时，系统会触发该回调。应用可以在该接口中执行自己的业务逻辑初始化操作，例如注册公共事件监听等。
+在AppServiceExtensionAbility实例创建时，系统会触发该回调。应用可以在该接口中执行业务逻辑初始化操作，例如注册公共事件监听等。
 
 > [!NOTE]
 > 如果AppServiceExtensionAbility实例已创建，再次启动或连接该实例时不会触发onCreate()回调。
@@ -102,6 +109,7 @@ onCreate(want: Want): void
 **设备行为差异**：该接口仅在PC/2in1设备中可正常执行回调，在其他设备上不执行回调。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -125,13 +133,14 @@ export default class AppServiceExtAbility extends AppServiceExtensionAbility {
 
 
 
-#### onDestroy
+### onDestroy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 onDestroy(): void
 
-在AppServiceExtensionAbility实例销毁时，系统会触发该回调。应用可以在该接口中执行资源清理等操作，如注销监听等。
+在AppServiceExtensionAbility实例销毁时，系统会触发该回调。应用可以在该接口中执行资源清理等操作，如注销监听。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
@@ -154,9 +163,10 @@ export default class AppServiceExtAbility extends AppServiceExtensionAbility {
 
 
 
-#### onRequest
+### onRequest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 onRequest(want: Want, startId: number): void
 
@@ -167,6 +177,7 @@ onRequest(want: Want, startId: number): void
 **设备行为差异**：该接口仅在PC/2in1设备中可正常执行回调，在其他设备上不执行回调。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -191,9 +202,10 @@ export default class AppServiceExtAbility extends AppServiceExtensionAbility {
 
 
 
-#### onConnect
+### onConnect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 onConnect(want: Want): rpc.RemoteObject
 
@@ -207,12 +219,14 @@ onConnect(want: Want): rpc.RemoteObject
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| want | Want | 是 | 调用方拉起当前AppServiceExtensionAbility实例时传递的Want类型信息，包括Ability名称、Bundle名称等。 |
+| want | Want | 是 | 调用方连接当前AppServiceExtensionAbility实例时传递的Want类型信息，包括Ability名称、Bundle名称等。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -247,9 +261,10 @@ export default class AppServiceExtAbility extends AppServiceExtensionAbility {
 
 
 
-#### onDisconnect
+### onDisconnect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 onDisconnect(want: Want): void
 
@@ -260,6 +275,7 @@ onDisconnect(want: Want): void
 **设备行为差异**：该接口仅在PC/2in1设备中可正常执行回调，在其他设备上不执行回调。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |

@@ -1,9 +1,9 @@
 # input
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-service-widget-basic-input
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 交互式组件，提供单选框功能。
  
@@ -12,12 +12,14 @@
 
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-service-widget-common-attributes)外，还支持如下属性：
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | type | string | radio | 是 | input组件类型，当前仅支持radio类型： - "radio"：定义单选按钮，允许在多个拥有相同name值的选项中选中其中一个。 |
@@ -28,18 +30,21 @@
  
   
 
-#### 样式
+## 样式
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 支持[通用样式](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-service-widget-common-styles)。
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
  
+
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | change | $event.checkedItem | radio单选框的checked状态发生变化时触发该事件，返回选中的组件value值。 |
@@ -48,9 +53,10 @@
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 <!-- xxx.hml -->
@@ -87,4 +93,4 @@
 **4*4卡片**
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/l46rcxBpSEa3dKQtXFblMw/zh-cn_image_0000002626071220.gif?HW-CC-KV=V1&HW-CC-Date=20260624T015950Z&HW-CC-Expire=86400&HW-CC-Sign=13743E70ACCABCF3156879D3B07DF3C81378C876590F8E71E07E8FE2C1A72B29)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/xu31Mv0PSGS4XhgVJW4d9Q/zh-cn_image_0000002717773416.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073002Z&HW-CC-Expire=86400&HW-CC-Sign=77DE08BAE7DC4126BF65DADBACED58CB3EA8067F47679B43251A9726AE9BB57F)

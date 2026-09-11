@@ -1,6 +1,6 @@
 # 配置ArkTS卡片的配置文件
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widget-configuration
 
@@ -11,7 +11,7 @@
 
 
 
-#### FormExtensionAbility配置
+## FormExtensionAbility配置
 
 卡片需要在[module.json5配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)的extensionAbilities标签下，配置FormExtensionAbility相关信息。FormExtensionAbility需要填写metadata元信息标签，其中键名称为固定字符串 “ohos.extension.form”，资源为[卡片具体配置信息的资源索引](#卡片配置)。
 
@@ -44,7 +44,7 @@
 
 
 
-#### 独立卡片包配置
+## 独立卡片包配置
 
 相对应地，在卡片包的[module.json5配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)中，formExtensionModule字段用来关联应用包的module。
 
@@ -68,15 +68,16 @@
 
 
 
-#### 卡片配置
+## 卡片配置
 
 在上述FormExtensionAbility的元信息metadata配置项中，可以指定卡片具体配置信息的资源索引。例如当resource指定为$profile:form_config时，会使用开发视图的resources/base/profile/目录下的form_config.json作为卡片profile配置文件。在[创建卡片](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widget-creation)时会自动生成form_config.json配置文件。
 
 
 
-#### 配置文件字段说明
+### 配置文件字段说明
 
 **表1** 卡片form_config.json配置文件
+
 
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |
@@ -100,13 +101,13 @@
 | isDynamic | 表示此卡片是否为动态卡片（仅针对ArkTS卡片生效）。 - true：为动态卡片 。 - false：为静态卡片。 | 布尔类型 | 可缺省，缺省值为true。 |
 | fontScaleFollowSystem | 表示卡片使用方设置此卡片的字体是否支持跟随系统变化。 - true：支持跟随系统字体大小变化。 - false：不支持跟随系统字体大小变化。 | 布尔类型 | 可缺省，缺省值为true。 |
 | supportShapes | 表示卡片的显示形状，取值范围如下： - rect：表示矩形卡片。 - circle：表示圆形卡片。 | 字符串数组 | 可缺省，缺省值：["rect"]。 |
-| previewImages | 表示卡片预览图, 与配置项supportDimensions一一对应。智能穿戴卡片必须配置，当前仅支持在智能穿戴上使用。 | 字符串数组 | 可缺省，缺省值：[]。 |
+| previewImages | 表示卡片预览图，与配置项supportDimensions一一对应。智能穿戴卡片必须配置，当前仅支持在智能穿戴上使用。 | 字符串数组 | 可缺省，缺省值：[]。 |
 | transparencyEnabled | 表示是否为背板透明卡片（仅对系统应用或者申请了背板透明卡片能力的ArkTS卡片生效）。 - true：表示是背板透明卡片。 - false：表示不是背板透明卡片。 | 布尔类型 | 可缺省，缺省值为false。 |
 | enableBlurBackground | 表示卡片是否使用模糊背板。 - true：开启模糊背板。 - false：关闭模糊背板。 说明： 本特性对产品功耗、性能要求较高，从API version 23开始仅在旗舰机型上支持，在不支持的机型上调用后不生效。 | 布尔类型 | 可缺省，缺省值为false。 |
 | renderingMode | 表示卡片的渲染模式，取值范围如下： - autoColor：自动模式，呈现效果可以根据卡片使用方确定最终是全彩模式还是单色模式，具体请参考卡片色彩。该模式下卡片中的颜色和图片允许卡片使用方修改，卡片配置了该模式就可以添加到桌面或锁屏上。 - fullColor：全彩模式，具体请参考卡片色彩。该模式下卡片中的颜色和图片不允许被卡片使用方修改，卡片配置了该模式就可以添加到桌面上。 - singleColor：单色模式，通过透明度和模糊区分元素，不使用任何色相，具体请参考卡片色彩。该模式下卡片中的颜色和图片允许卡片使用方修改，卡片配置了该模式就可以添加到锁屏上。 说明： 从API version 15开始，支持该字段。 | 字符串 | 可缺省，缺省值为“fullColor”。 |
-| multiScheduledUpdateTime | 表示卡片的多定点刷新的时刻，作为单点刷新的一个附加参数，采用24小时制，精确到分钟，多个时间用英文逗号分隔，最多写24个时间。 说明： 从API version 18开始，支持该字段。multiScheduledUpdateTime需要配合scheduledUpdateTime使用。 | 字符串 | 可缺省，缺省时不进行多定点刷新。 |
-| conditionUpdate | 表示卡片支持的条件刷新。取值范围如下： - network：表示支持网络刷新。 说明： 从API版本18开始，支持该字段配置。从API版本26.0.0开始，设置后功能生效。 | 字符串数组 | 可缺省，缺省值为空字符串数组。 |
-| funInteractionParams | 趣味交互类型互动卡片扩展字段。从API version 20开始，支持该字段。 | 对象 | 可缺省，缺省为空。funInteractionParams 和 sceneAnimationParams 同时配置时识别为趣味交互类型互动卡片。 |
+| multiScheduledUpdateTime | 表示卡片的多定点刷新的时刻，作为单点刷新的一个附加参数，采用24小时制，精确到分钟，多个时间用英文逗号分隔，最多写24个时间，例如："10:30,10:50,11:00"。 说明： 从API version 18开始，支持该字段。multiScheduledUpdateTime需要配合scheduledUpdateTime使用。 | 字符串 | 可缺省，缺省时不进行多定点刷新。 |
+| conditionUpdate | 表示卡片支持的条件刷新。当前支持取值如下： - network：表示支持网络刷新。 说明： 从API version 18开始，支持该字段配置。从API版本26.0.0开始，设置后功能生效。 | 字符串数组 | 可缺省，缺省值为空字符串数组。 |
+| funInteractionParams | 趣味交互类型互动卡片扩展字段。 说明： 从API version 20开始，支持该字段。 | 对象 | 可缺省，缺省为空。funInteractionParams 和 sceneAnimationParams 同时配置时识别为趣味交互类型互动卡片。 |
 | sceneAnimationParams | 场景动效类型互动卡片扩展字段。从API version 20开始，支持该字段。 | 对象 | 可缺省，缺省为空。funInteractionParams 和 sceneAnimationParams 同时配置时识别为趣味交互类型互动卡片。 |
 | resizable | 表示是否可以拖拽卡片调整大小。调整值必须在该卡片或者同groupId卡片的supportDimensions配置列表中。 - true：可以调整大小。 - false：不可以调整大小。 说明： 从API version 20开始，支持该字段。 | 布尔类型 | 可缺省，缺省值为false。 |
 | groupId | 表示一组卡片的共同id。多张卡片的groupId相同且resizable为true时，多张卡片的supportDimensions配置共享，推荐多张卡片功能相同且需要调整卡片尺寸时配置。 示例一：卡片A的groupId配置为'1'，resizable配置为true，supportDimension为2*2。卡片B的groupId配置为'1'，resizable配置为true，supportDimension为2*4。那么支持卡片A、B之间调整大小。 示例二：当supportDimension存在多个，resizable设置为true时，优先在同一张卡片之间调整大小。卡片A的resizable配置为true，supportDimension为2*2、2*4，支持卡片A的两个尺寸之间调整大小。 示例三：卡片A的groupId配置为'1'，resizable配置为true，supportDimension为1*2。卡片B的groupId配置为'1'，resizable配置为true，supportDimension为2*2、2*4、4*4。卡片A可以调整到卡片B的默认尺寸，卡片B只支持在B卡片支持的三个尺寸之间调整大小，无法调整为卡片A。 说明： 从API version 20开始，支持该字段。 | 字符串 | 可缺省，空字符串。 |
@@ -117,9 +118,10 @@
 
 
 
-#### supportDeviceTypes标签
+### supportDeviceTypes标签
 
 此标签标识卡片支持的设备类型。
+
 
 | 属性名称 | 含义 | 数据类型 |
 | --- | --- | --- |
@@ -133,9 +135,10 @@
 
 
 
-#### supportDevicePerformanceClasses标签
+### supportDevicePerformanceClasses标签
 
 此标签标识卡片支持的设备性能等级信息。
+
 
 | 属性名称 | 含义 | 数据类型 |
 | --- | --- | --- |
@@ -146,9 +149,10 @@
 
 
 
-#### window标签
+### window标签
 
 此标签标识window对象的内部结构说明。只支持在JS卡片中使用。
+
 
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |
@@ -158,9 +162,10 @@
 
 
 
-#### funInteractionParams标签
+### funInteractionParams标签
 
 此标签标识趣味交互类型互动卡片配置。funInteractionParams 和 sceneAnimationParams 同时配置时识别为趣味交互类型互动卡片。
+
 
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -186,9 +191,10 @@
 
 
 
-#### sceneAnimationParams标签
+### sceneAnimationParams标签
 
 此标签标识场景动效类型互动卡片配置。funInteractionParams 和 sceneAnimationParams 同时配置时识别为趣味交互类型互动卡片。
+
 
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -214,9 +220,10 @@
 
 
 
-#### standby标签
+### standby标签
 
 此标签标识standby对象的内部结构说明。应用通过开放能力申请，且卡片isSupported配置为true才支持在待机屏保显示界面展示。
+
 
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |
@@ -242,7 +249,7 @@
 
 
 
-#### 配置文件示例
+### 配置文件示例
 
 ```ArkTS
 {
@@ -276,9 +283,10 @@
 
 
 
-#### supportDimensions字段与设备支持关系表
+### supportDimensions字段与设备支持关系表
 
 各类型设备支持的卡片尺寸规格。其中"仅锁屏"表示该尺寸仅适用于锁屏场景；"部分机型"表示具体支持情况需根据设备桌面宫格配置判断。
+
 
 | 卡片尺寸信息 | Phone | PC | 2in1 | Tablet | TV | Car | Wearable |
 | --- | --- | --- | --- | --- | --- | --- | --- |

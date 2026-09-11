@@ -1,10 +1,10 @@
 # 主动获取HiCar的连接状态
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/car-check-application-start
 
-#### 场景介绍
+## 场景介绍
 
 生态应用可以通过主动获取智慧出行连接状态接口来获取HiCar的连接状态（如：判断应用是否在HiCar上拉起）。
 
@@ -14,9 +14,10 @@
 
 
 
-#### 接口说明
+## 接口说明
 
 获取HiCar连接状态的接口如下：
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -25,9 +26,10 @@
 
 
 
-#### SmartMobilityInfo事件名说明
+### SmartMobilityInfo事件名说明
 
 SmartMobilityInfo状态（status）取值如下：
+
 
 | 编号 | 状态 | 描述 |
 | --- | --- | --- |
@@ -36,6 +38,7 @@ SmartMobilityInfo状态（status）取值如下：
 
 
 SmartMobilityInfo业务类型（type）取值如下：
+
 
 | 编号 | 业务类型 | 描述 |
 | --- | --- | --- |
@@ -46,6 +49,7 @@ SmartMobilityInfo业务类型（type）取值如下：
 
 SmartMobilityInfo业务数据（data）参数如下：
 
+
 | 编号 | 参数 | 描述 |
 | --- | --- | --- |
 | 0 | DEVICE_TYPE | 设备类型。 |
@@ -55,7 +59,7 @@ SmartMobilityInfo业务数据（data）参数如下：
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 导入相关模块。
 
   

@@ -43,7 +43,7 @@ struct PDFView {
     }
 
     let dir: string = context.filesDir;
-    // 确保rawfile里面有pdf文件
+   <em> // 确保rawfile里面有pdf文件</em>
     let filePath: string = dir + '/pdf_reference.pdf';
     try {
       fileIo.accessSync(filePath);
@@ -93,7 +93,7 @@ struct PDFView {
       }.onTouchTestDone((event, recognizers) => {
         for (let i = 0; i < recognizers.length; i++) {
           let recognizer = recognizers[i];
-          // 根据类型禁用捏合手势
+     <em>     // 根据类型禁用捏合手势</em>
           if (recognizer.getType() == GestureControl.GestureType.PINCH_GESTURE) {
             recognizer.preventBegin();
           }

@@ -1,9 +1,9 @@
 # @ohos.security.certManager (证书管理模块)
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-certmanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 证书管理主要提供系统级的证书管理能力，实现证书全生命周期（安装，存储，使用，销毁）的管理和安全使用。
 
@@ -14,9 +14,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { certificateManager } from '@kit.DeviceCertificateKit';
@@ -24,13 +25,15 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 
 
-#### CmKeyPurpose
+## CmKeyPurpose
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示密钥使用目的的枚举，用于签名、验签。
 
 **系统能力：** SystemCapability.Security.CertificateManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -40,13 +43,15 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 
 
-#### CmKeyDigest
+## CmKeyDigest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示签名、验签使用的摘要算法的枚举。
 
 **系统能力：** SystemCapability.Security.CertificateManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -62,13 +67,15 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 
 
-#### CmKeyPadding
+## CmKeyPadding
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示签名、验签使用的填充方式的枚举。
 
 **系统能力：** SystemCapability.Security.CertificateManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -79,13 +86,15 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 
 
-#### CMSignatureSpec
+## CMSignatureSpec
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示签名、验签操作使用的参数集合，包括密钥使用目的、填充方式和摘要算法。
 
 **系统能力：** SystemCapability.Security.CertificateManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -96,13 +105,15 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 
 
-#### CertInfo
+## CertInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示证书详细信息。
 
 **系统能力：** SystemCapability.Security.CertificateManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -120,13 +131,15 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 
 
-#### CertAbstract
+## CertAbstract
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示证书简要信息。
 
 **系统能力：** SystemCapability.Security.CertificateManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -138,13 +151,15 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 
 
-#### Credential
+## Credential
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示凭据详细信息。
 
 **系统能力：** SystemCapability.Security.CertificateManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -159,13 +174,15 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 
 
-#### CredentialAbstract
+## CredentialAbstract
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示凭据的简要信息。
 
 **系统能力：** SystemCapability.Security.CertificateManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -176,13 +193,15 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 
 
-#### CMResult
+## CMResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示接口的返回结果。
 
 **系统能力：** SystemCapability.Security.CertificateManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -199,13 +218,15 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 
 
-#### CMHandle
+## CMHandle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示签名、验签的初始化操作句柄。
 
 **系统能力：** SystemCapability.Security.CertificateManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -214,9 +235,10 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 
 
-#### CertBlob
+## CertBlob
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示证书文件数据。
 
@@ -225,6 +247,7 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 **系统能力：** SystemCapability.Security.CertificateManager
 
 **模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -235,13 +258,15 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 
 
-#### CMErrorCode
+## CMErrorCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示调用证书管理相关API的错误码。
 
 **系统能力：** SystemCapability.Security.CertificateManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -260,13 +285,15 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 
 
-#### CertType18+
+## CertType18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示证书类型。
 
 **系统能力：** SystemCapability.Security.CertificateManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -276,13 +303,15 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 
 
-#### CertScope18+
+## CertScope18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示证书的位置。
 
 **系统能力：** SystemCapability.Security.CertificateManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -292,13 +321,15 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 
 
-#### CertAlgorithm20+
+## CertAlgorithm20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示证书的算法类型。
 
 **系统能力：** SystemCapability.Security.CertificateManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -308,13 +339,15 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 
 
-#### CertStoreProperty18+
+## CertStoreProperty18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示获取证书存储位置的参数集合，包括证书的类型及证书的位置。
 
 **系统能力：** SystemCapability.Security.CertificateManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -325,13 +358,15 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 
 
-#### AuthStorageLevel18+
+## AuthStorageLevel18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示凭据的存储级别。
 
 **系统能力：** SystemCapability.Security.CertificateManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -342,13 +377,15 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 
 
-#### CertificatePurpose22+
+## CertificatePurpose22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示凭据用途的枚举。
 
 **系统能力：** SystemCapability.Security.CertificateManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -360,13 +397,15 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 
 
-#### UkeyInfo22+
+## UkeyInfo22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供USB Key证书凭据属性信息。
 
 **系统能力：** SystemCapability.Security.CertificateManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -375,9 +414,10 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 
 
-#### CertFileFormat
+## CertFileFormat
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示证书文件格式。
 
@@ -387,6 +427,7 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | PEM_DER | 0 | 表示证书文件格式为PEM或DER。 |
@@ -395,9 +436,10 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 
 
 
-#### certificateManager.installPrivateCertificate
+## certificateManager.installPrivateCertificate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 installPrivateCertificate(keystore: Uint8Array, keystorePwd: string, certAlias: string, callback: AsyncCallback&lt;CMResult&gt;): void
 
@@ -408,6 +450,7 @@ installPrivateCertificate(keystore: Uint8Array, keystorePwd: string, certAlias: 
 **系统能力：** SystemCapability.Security.CertificateManager
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -420,6 +463,7 @@ installPrivateCertificate(keystore: Uint8Array, keystorePwd: string, certAlias: 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[证书管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-certmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -439,9 +483,9 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 let keystore: Uint8Array = new Uint8Array([
   0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01
 ]);
-let keystorePwd: string = "123456";
+let keystorePwd: string = '123456';
 try {
-  certificateManager.installPrivateCertificate(keystore, keystorePwd, "test", (err, cmResult) => {
+  certificateManager.installPrivateCertificate(keystore, keystorePwd, 'test', (err, cmResult) => {
     if (err != null) {
       console.error(`Failed to install private certificate. Code: ${err.code}, message: ${err.message}`);
     } else {
@@ -456,9 +500,10 @@ try {
 
 
 
-#### certificateManager.installPrivateCertificate
+## certificateManager.installPrivateCertificate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 installPrivateCertificate(keystore: Uint8Array, keystorePwd: string, certAlias: string): Promise&lt;CMResult&gt;
 
@@ -470,6 +515,7 @@ installPrivateCertificate(keystore: Uint8Array, keystorePwd: string, certAlias: 
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keystore | Uint8Array | 是 | 表示带有密钥对和证书的密钥库文件，最大长度为20480字节。 |
@@ -479,6 +525,7 @@ installPrivateCertificate(keystore: Uint8Array, keystorePwd: string, certAlias: 
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;CMResult&gt; | Promise对象，返回安装私有凭据的结果，返回值为CMResult对象中的uri属性。 |
@@ -487,6 +534,7 @@ installPrivateCertificate(keystore: Uint8Array, keystorePwd: string, certAlias: 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[证书管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-certmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -507,7 +555,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 let keystore: Uint8Array = new Uint8Array([
   0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01
 ]);
-let keystorePwd: string = "123456";
+let keystorePwd: string = '123456';
 try {
   certificateManager.installPrivateCertificate(keystore, keystorePwd, 'test').then((cmResult) => {
     let uri: string = cmResult?.uri ?? '';
@@ -523,9 +571,10 @@ try {
 
 
 
-#### certificateManager.installPrivateCertificate18+
+## certificateManager.installPrivateCertificate18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 installPrivateCertificate(keystore: Uint8Array, keystorePwd: string, certAlias: string, level: AuthStorageLevel): Promise&lt;CMResult&gt;
 
@@ -537,6 +586,7 @@ installPrivateCertificate(keystore: Uint8Array, keystorePwd: string, certAlias: 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keystore | Uint8Array | 是 | 表示带有密钥对和证书的密钥库文件，最大长度为20480字节。 |
@@ -547,6 +597,7 @@ installPrivateCertificate(keystore: Uint8Array, keystorePwd: string, certAlias: 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;CMResult&gt; | Promise对象，返回安装私有凭据的结果，返回值为CMResult对象中的uri属性。 |
@@ -555,6 +606,7 @@ installPrivateCertificate(keystore: Uint8Array, keystorePwd: string, certAlias: 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[证书管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-certmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -575,7 +627,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 let keystore: Uint8Array = new Uint8Array([
   0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01
 ]);
-let keystorePwd: string = "123456";
+let keystorePwd: string = '123456';
 try {
   /* 安装凭据在首次解锁设备后可以使用。 */
   let level = certificateManager.AuthStorageLevel.EL2;
@@ -593,9 +645,10 @@ try {
 
 
 
-#### certificateManager.getPrivateCertificate
+## certificateManager.getPrivateCertificate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPrivateCertificate(keyUri: string, callback: AsyncCallback&lt;CMResult&gt;): void
 
@@ -607,6 +660,7 @@ getPrivateCertificate(keyUri: string, callback: AsyncCallback&lt;CMResult&gt;): 
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyUri | string | 是 | 表示待获取凭据的唯一标识符，长度限制256字节以内。 |
@@ -616,6 +670,7 @@ getPrivateCertificate(keyUri: string, callback: AsyncCallback&lt;CMResult&gt;): 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[证书管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-certmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -651,9 +706,10 @@ try {
 
 
 
-#### certificateManager.getPrivateCertificate
+## certificateManager.getPrivateCertificate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPrivateCertificate(keyUri: string): Promise&lt;CMResult&gt;
 
@@ -665,12 +721,14 @@ getPrivateCertificate(keyUri: string): Promise&lt;CMResult&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyUri | string | 是 | 表示待获取凭据的唯一标识符，长度限制256字节以内。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -680,6 +738,7 @@ getPrivateCertificate(keyUri: string): Promise&lt;CMResult&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[证书管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-certmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -715,9 +774,10 @@ try {
 
 
 
-#### certificateManager.uninstallPrivateCertificate
+## certificateManager.uninstallPrivateCertificate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 uninstallPrivateCertificate(keyUri: string, callback: AsyncCallback&lt;void&gt;): void
 
@@ -729,6 +789,7 @@ uninstallPrivateCertificate(keyUri: string, callback: AsyncCallback&lt;void&gt;)
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyUri | string | 是 | 表示待卸载凭据的唯一标识符，长度限制256字节以内。 |
@@ -738,6 +799,7 @@ uninstallPrivateCertificate(keyUri: string, callback: AsyncCallback&lt;void&gt;)
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[证书管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-certmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -768,9 +830,10 @@ try {
 
 
 
-#### certificateManager.uninstallPrivateCertificate
+## certificateManager.uninstallPrivateCertificate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 uninstallPrivateCertificate(keyUri: string): Promise&lt;void&gt;
 
@@ -782,12 +845,14 @@ uninstallPrivateCertificate(keyUri: string): Promise&lt;void&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyUri | string | 是 | 表示待卸载凭据的唯一标识符，长度限制256字节以内。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -797,6 +862,7 @@ uninstallPrivateCertificate(keyUri: string): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[证书管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-certmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -827,9 +893,10 @@ try {
 
 
 
-#### certificateManager.installUserTrustedCertificate
+## certificateManager.installUserTrustedCertificate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 installUserTrustedCertificate(certificate: CertBlob): Promise&lt;CMResult&gt;
 
@@ -845,12 +912,14 @@ installUserTrustedCertificate(certificate: CertBlob): Promise&lt;CMResult&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | certificate | CertBlob | 是 | 表示证书信息。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -860,6 +929,7 @@ installUserTrustedCertificate(certificate: CertBlob): Promise&lt;CMResult&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[证书管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-certmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -901,9 +971,10 @@ try {
 
 
 
-#### certificateManager.installUserTrustedCertificateSync18+
+## certificateManager.installUserTrustedCertificateSync18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 installUserTrustedCertificateSync(cert: Uint8Array, certScope: CertScope): CMResult
 
@@ -915,6 +986,7 @@ installUserTrustedCertificateSync(cert: Uint8Array, certScope: CertScope): CMRes
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cert | Uint8Array | 是 | 表示CA证书数据，最大长度为8196字节。 |
@@ -922,6 +994,7 @@ installUserTrustedCertificateSync(cert: Uint8Array, certScope: CertScope): CMRes
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -931,6 +1004,7 @@ installUserTrustedCertificateSync(cert: Uint8Array, certScope: CertScope): CMRes
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[证书管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-certmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -952,12 +1026,13 @@ let certData: Uint8Array = new Uint8Array([
   0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01
 ]);
 try {
-  let result: certificateManager.CMResult = certificateManager.installUserTrustedCertificateSync(certData, certificateManager.CertScope.CURRENT_USER);
+  let result: certificateManager.CMResult = certificateManager.installUserTrustedCertificateSync(certData,
+    certificateManager.CertScope.CURRENT_USER);
   let certUri = result.uri;
   if (certUri === undefined) {
-    console.error("The result of install user trusted certificate is undefined.");
+    console.error('The result of install user trusted certificate is undefined.');
   } else {
-    console.info("Succeeded in installing user trusted certificate.");
+    console.info('Succeeded in installing user trusted certificate.');
   }
 } catch (error) {
   console.error(`Failed to install user trusted certificate. Code: ${error.code}, message: ${error.message}`);
@@ -966,9 +1041,10 @@ try {
 
 
 
-#### certificateManager.uninstallUserTrustedCertificateSync18+
+## certificateManager.uninstallUserTrustedCertificateSync18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 uninstallUserTrustedCertificateSync(certUri: string) : void
 
@@ -980,6 +1056,7 @@ uninstallUserTrustedCertificateSync(certUri: string) : void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | certUri | string | 是 | 表示待卸载证书的唯一标识符，长度限制256字节以内。 |
@@ -988,6 +1065,7 @@ uninstallUserTrustedCertificateSync(certUri: string) : void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[证书管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-certmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1002,7 +1080,7 @@ uninstallUserTrustedCertificateSync(certUri: string) : void
 ```text
 import { certificateManager } from '@kit.DeviceCertificateKit';
 
-let certUri: string = "test"; /* 业务删除证书，需要使用证书的标识符，此处省略 */
+let certUri: string = 'test'; /* 业务删除证书，需要使用证书的标识符，此处省略 */
 try {
   certificateManager.uninstallUserTrustedCertificateSync(certUri);
 } catch (error) {
@@ -1012,9 +1090,10 @@ try {
 
 
 
-#### certificateManager.init
+## certificateManager.init
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 init(authUri: string, spec: CMSignatureSpec, callback: AsyncCallback&lt;CMHandle&gt;): void
 
@@ -1026,6 +1105,7 @@ init(authUri: string, spec: CMSignatureSpec, callback: AsyncCallback&lt;CMHandle
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | authUri | string | 是 | 表示使用凭据的唯一标识符，长度限制256字节以内。 |
@@ -1036,6 +1116,7 @@ init(authUri: string, spec: CMSignatureSpec, callback: AsyncCallback&lt;CMHandle
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[证书管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-certmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1072,9 +1153,10 @@ try {
 
 
 
-#### certificateManager.init
+## certificateManager.init
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 init(authUri: string, spec: CMSignatureSpec): Promise&lt;CMHandle&gt;
 
@@ -1086,6 +1168,7 @@ init(authUri: string, spec: CMSignatureSpec): Promise&lt;CMHandle&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | authUri | string | 是 | 表示使用凭据的唯一标识符，长度限制256字节以内。 |
@@ -1093,6 +1176,7 @@ init(authUri: string, spec: CMSignatureSpec): Promise&lt;CMHandle&gt;
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1102,6 +1186,7 @@ init(authUri: string, spec: CMSignatureSpec): Promise&lt;CMHandle&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[证书管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-certmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1138,9 +1223,10 @@ try {
 
 
 
-#### certificateManager.update
+## certificateManager.update
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 update(handle: Uint8Array, data: Uint8Array, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1152,6 +1238,7 @@ update(handle: Uint8Array, data: Uint8Array, callback: AsyncCallback&lt;void&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handle | Uint8Array | 是 | 表示操作句柄，需先调用init方法获得。 |
@@ -1162,6 +1249,7 @@ update(handle: Uint8Array, data: Uint8Array, callback: AsyncCallback&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[证书管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-certmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1197,9 +1285,10 @@ try {
 
 
 
-#### certificateManager.update
+## certificateManager.update
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 update(handle: Uint8Array, data: Uint8Array): Promise&lt;void&gt;
 
@@ -1211,6 +1300,7 @@ update(handle: Uint8Array, data: Uint8Array): Promise&lt;void&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handle | Uint8Array | 是 | 表示操作句柄，需先调用init方法获得。 |
@@ -1218,6 +1308,7 @@ update(handle: Uint8Array, data: Uint8Array): Promise&lt;void&gt;
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1227,6 +1318,7 @@ update(handle: Uint8Array, data: Uint8Array): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[证书管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-certmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1262,9 +1354,10 @@ try {
 
 
 
-#### certificateManager.finish
+## certificateManager.finish
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 finish(handle: Uint8Array, callback: AsyncCallback&lt;CMResult&gt;): void
 
@@ -1276,6 +1369,7 @@ finish(handle: Uint8Array, callback: AsyncCallback&lt;CMResult&gt;): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handle | Uint8Array | 是 | 表示操作句柄，需先调用init方法获得。 |
@@ -1285,6 +1379,7 @@ finish(handle: Uint8Array, callback: AsyncCallback&lt;CMResult&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[证书管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-certmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1315,16 +1410,17 @@ try {
       }
     }
   });
-} catch(error) {
+} catch (error) {
   console.error(`Failed to finish. Code: ${error.code}, message: ${error.message}`);
 }
 ```
 
 
 
-#### certificateManager.finish
+## certificateManager.finish
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 finish(handle: Uint8Array, signature: Uint8Array, callback: AsyncCallback&lt;CMResult&gt;): void
 
@@ -1336,16 +1432,18 @@ finish(handle: Uint8Array, signature: Uint8Array, callback: AsyncCallback&lt;CMR
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handle | Uint8Array | 是 | 表示操作句柄，需先调用init方法获得。 |
 | signature | Uint8Array | 是 | 表示签名数据。 |
-| callback | AsyncCallback&lt;CMResult&gt; | 是 | 回调函数。当验签成功时，err为null；否则为错误对象。 |
+| callback | AsyncCallback&lt;CMResult&gt; | 是 | 回调函数。当验签成功时，err为null，data为CMResult对象中的outData属性，验签时outData属性为null；否则为错误对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[证书管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-certmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1374,16 +1472,17 @@ try {
       console.info('Succeeded in finishing.');
     }
   });
-} catch(error) {
+} catch (error) {
   console.error(`Failed to finish. Code: ${error.code}, message: ${error.message}`);
 }
 ```
 
 
 
-#### certificateManager.finish
+## certificateManager.finish
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 finish(handle: Uint8Array, signature?: Uint8Array): Promise&lt;CMResult&gt;
 
@@ -1395,6 +1494,7 @@ finish(handle: Uint8Array, signature?: Uint8Array): Promise&lt;CMResult&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handle | Uint8Array | 是 | 表示操作句柄，需先调用init方法获得。 |
@@ -1402,6 +1502,7 @@ finish(handle: Uint8Array, signature?: Uint8Array): Promise&lt;CMResult&gt;
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1411,6 +1512,7 @@ finish(handle: Uint8Array, signature?: Uint8Array): Promise&lt;CMResult&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[证书管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-certmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1454,16 +1556,17 @@ try {
     let err = error as BusinessError;
     console.error(`Failed to finish verification. Code: ${err.code}, message: ${err.message}`);
   });
-} catch(error) {
+} catch (error) {
   console.error(`Failed to finish. Code: ${error.code}, message: ${error.message}`);
 }
 ```
 
 
 
-#### certificateManager.abort
+## certificateManager.abort
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 abort(handle: Uint8Array, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1475,6 +1578,7 @@ abort(handle: Uint8Array, callback: AsyncCallback&lt;void&gt;): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handle | Uint8Array | 是 | 表示初始化操作返回的句柄，最大长度为8字节。 |
@@ -1484,6 +1588,7 @@ abort(handle: Uint8Array, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[证书管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-certmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1509,16 +1614,17 @@ try {
       console.info('Succeeded in aborting.');
     }
   });
-} catch(error) {
+} catch (error) {
   console.error(`Failed to abort. Code: ${error.code}, message: ${error.message}`);
 }
 ```
 
 
 
-#### certificateManager.abort
+## certificateManager.abort
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 abort(handle: Uint8Array): Promise&lt;void&gt;
 
@@ -1530,12 +1636,14 @@ abort(handle: Uint8Array): Promise&lt;void&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handle | Uint8Array | 是 | 表示初始化操作返回的句柄，最大长度为8字节。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1545,6 +1653,7 @@ abort(handle: Uint8Array): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[证书管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-certmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1577,9 +1686,10 @@ try {
 
 
 
-#### certificateManager.getPublicCertificate12+
+## certificateManager.getPublicCertificate12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPublicCertificate(keyUri: string): Promise&lt;CMResult&gt;
 
@@ -1591,12 +1701,14 @@ getPublicCertificate(keyUri: string): Promise&lt;CMResult&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyUri | string | 是 | 表示用户公共凭据的唯一标识符，长度限制256字节以内。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1606,6 +1718,7 @@ getPublicCertificate(keyUri: string): Promise&lt;CMResult&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[证书管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-certmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1642,9 +1755,10 @@ try {
 
 
 
-#### certificateManager.isAuthorizedApp12+
+## certificateManager.isAuthorizedApp12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isAuthorizedApp(keyUri: string): Promise&lt;boolean&gt;
 
@@ -1656,12 +1770,14 @@ isAuthorizedApp(keyUri: string): Promise&lt;boolean&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyUri | string | 是 | 表示用户授权给应用使用的凭据的唯一标识符，长度限制256字节以内。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1671,6 +1787,7 @@ isAuthorizedApp(keyUri: string): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[证书管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-certmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1704,9 +1821,10 @@ try {
 
 
 
-#### certificateManager.getAllUserTrustedCertificates12+
+## certificateManager.getAllUserTrustedCertificates12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllUserTrustedCertificates(): Promise&lt;CMResult&gt;
 
@@ -1718,6 +1836,7 @@ getAllUserTrustedCertificates(): Promise&lt;CMResult&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;CMResult&gt; | Promise对象，返回获取用户根CA证书列表的结果，返回值为CMResult对象中的certList属性。 |
@@ -1726,6 +1845,7 @@ getAllUserTrustedCertificates(): Promise&lt;CMResult&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[证书管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-certmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1760,9 +1880,10 @@ try {
 
 
 
-#### certificateManager.getAllUserTrustedCertificates18+
+## certificateManager.getAllUserTrustedCertificates18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllUserTrustedCertificates(scope: CertScope): Promise&lt;CMResult&gt;
 
@@ -1774,12 +1895,14 @@ getAllUserTrustedCertificates(scope: CertScope): Promise&lt;CMResult&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scope | CertScope | 是 | 表示证书的位置。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1789,6 +1912,7 @@ getAllUserTrustedCertificates(scope: CertScope): Promise&lt;CMResult&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[证书管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-certmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1804,7 +1928,7 @@ import { certificateManager } from '@kit.DeviceCertificateKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 try {
-  /* 获取当前用户下的用户根CA证书列表; 如果需要获取设备公共位置的用户根CA列表，则传入GLOBAL_USER */
+  /* 获取当前用户下的用户根CA证书列表，如果需要获取设备公共位置的用户根CA列表，则传入GLOBAL_USER */
   let scope: certificateManager.CertScope = certificateManager.CertScope.CURRENT_USER;
   certificateManager.getAllUserTrustedCertificates(scope).then((cmResult) => {
     if (cmResult === undefined) { // 用户根CA证书个数为0时，返回cmResult为undefined。
@@ -1826,9 +1950,10 @@ try {
 
 
 
-#### certificateManager.getUserTrustedCertificate12+
+## certificateManager.getUserTrustedCertificate12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUserTrustedCertificate(certUri: string): Promise&lt;CMResult&gt;
 
@@ -1840,12 +1965,14 @@ getUserTrustedCertificate(certUri: string): Promise&lt;CMResult&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | certUri | string | 是 | 表示用户根CA证书的唯一标识符，长度限制256字节以内。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1855,6 +1982,7 @@ getUserTrustedCertificate(certUri: string): Promise&lt;CMResult&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[证书管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-certmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1890,9 +2018,10 @@ try {
 
 
 
-#### certificateManager.getPrivateCertificates13+
+## certificateManager.getPrivateCertificates13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPrivateCertificates(): Promise&lt;CMResult&gt;
 
@@ -1904,6 +2033,7 @@ getPrivateCertificates(): Promise&lt;CMResult&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;CMResult&gt; | Promise对象，返回获取应用安装的凭据列表的结果，返回值为CMResult对象中的credentialList属性。 |
@@ -1912,6 +2042,7 @@ getPrivateCertificates(): Promise&lt;CMResult&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[证书管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-certmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1937,18 +2068,21 @@ try {
     }
   }).catch((error: Error) => {
     let err = error as BusinessError;
-    console.error(`Failed to get all private certificates installed by the application. Code: ${err.code}, message: ${err.message}`);
+    console.error(`Failed to get all private certificates installed by the application. ` +
+      `Code: ${err.code}, message: ${err.message}`);
   });
 } catch (error) {
-  console.error(`Failed to get all private certificates installed by the application. Code: ${error.code}, message: ${error.message}`);
+  console.error(`Failed to get all private certificates installed by the application. ` +
+    `Code: ${error.code}, message: ${error.message}`);
 }
 ```
 
 
 
-#### certificateManager.getCertificateStorePath18+
+## certificateManager.getCertificateStorePath18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCertificateStorePath(property: CertStoreProperty): string
 
@@ -1958,12 +2092,14 @@ getCertificateStorePath(property: CertStoreProperty): string
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | property | CertStoreProperty | 是 | 表示获取证书存储路径的参数集合。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1973,6 +2109,7 @@ getCertificateStorePath(property: CertStoreProperty): string
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[证书管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-certmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1992,7 +2129,7 @@ try {
     certType: certificateManager.CertType.CA_CERT_SYSTEM
   };
   let systemCAPath = certificateManager.getCertificateStorePath(property1);
-  console.info(`Success to get system ca path: ${systemCAPath}`);
+  console.info(`Succeeded in getting system CA path: ${systemCAPath}`);
 
   /* 获取当前用户的用户CA存储位置 */
   let property2: certificateManager.CertStoreProperty = {
@@ -2000,7 +2137,7 @@ try {
     certScope: certificateManager.CertScope.CURRENT_USER
   };
   let userCACurrentPath = certificateManager.getCertificateStorePath(property2);
-  console.info(`Success to get current user's user ca path: ${userCACurrentPath}`);
+  console.info(`Succeeded in getting current user's user CA path: ${userCACurrentPath}`);
 
   /* 获取设备公共的用户CA存储位置 */
   let property3: certificateManager.CertStoreProperty = {
@@ -2008,7 +2145,7 @@ try {
     certScope: certificateManager.CertScope.GLOBAL_USER
   };
   let globalCACurrentPath = certificateManager.getCertificateStorePath(property3);
-  console.info(`Success to get global user's user ca path: ${globalCACurrentPath}`);
+  console.info(`Succeeded in getting global user's user CA path: ${globalCACurrentPath}`);
 
   /* 获取SM算法系统CA的存储位置 */
   let property4: certificateManager.CertStoreProperty = {
@@ -2016,7 +2153,7 @@ try {
     certAlg: certificateManager.CertAlgorithm.SM
   };
   let smSystemCAPath = certificateManager.getCertificateStorePath(property4);
-  console.info(`Success to get SM system ca path: ${smSystemCAPath}`);
+  console.info(`Succeeded in getting SM system CA path: ${smSystemCAPath}`);
 } catch (error) {
   console.error(`Failed to get store path. Code: ${error.code}, message: ${error.message}`);
 }
@@ -2024,9 +2161,10 @@ try {
 
 
 
-#### certificateManager.getUkeyCertificate22+
+## certificateManager.getUkeyCertificate22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 getUkeyCertificate(keyUri: string, ukeyInfo: UkeyInfo): Promise&lt;CMResult&gt;
 
@@ -2044,6 +2182,7 @@ getUkeyCertificate(keyUri: string, ukeyInfo: UkeyInfo): Promise&lt;CMResult&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyUri | string | 是 | 表示USB Key证书凭据的唯一标识符，长度限制256字节以内。 |
@@ -2051,6 +2190,7 @@ getUkeyCertificate(keyUri: string, ukeyInfo: UkeyInfo): Promise&lt;CMResult&gt;
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2060,6 +2200,7 @@ getUkeyCertificate(keyUri: string, ukeyInfo: UkeyInfo): Promise&lt;CMResult&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[证书管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-certmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2083,8 +2224,12 @@ let ukeyInfo: certificateManager.UkeyInfo = { /* USB凭据的属性信息，此�
 };
 try {
   certificateManager.getUkeyCertificate(keyUri, ukeyInfo).then((cmResult) => {
-    let list = cmResult.credentialDetailList;
-    console.info('Succeeded in getting detail of USB Key certificate.');
+    if (cmResult?.credentialDetailList === undefined) {
+      console.info('The result of getting detail of USB Key certificate is undefined.');
+    } else {
+      let list = cmResult.credentialDetailList;
+      console.info('Succeeded in getting detail of USB Key certificate.');
+    }
   }).catch((error: Error) => {
     let err = error as BusinessError;
     console.error(`Failed to get detail of USB Key certificate. Code: ${err.code}, message: ${err.message}`);
@@ -2096,9 +2241,10 @@ try {
 
 
 
-#### certificateManager.getUkeyCertificateList
+## certificateManager.getUkeyCertificateList
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 getUkeyCertificateList(ukeyProvider: string, ukeyInfo: UkeyInfo): Promise&lt;CMResult&gt;
 
@@ -2116,6 +2262,7 @@ getUkeyCertificateList(ukeyProvider: string, ukeyInfo: UkeyInfo): Promise&lt;CMR
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ukeyProvider | string | 是 | 表示USB Key的设备提供商。 |
@@ -2123,6 +2270,7 @@ getUkeyCertificateList(ukeyProvider: string, ukeyInfo: UkeyInfo): Promise&lt;CMR
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2132,6 +2280,7 @@ getUkeyCertificateList(ukeyProvider: string, ukeyInfo: UkeyInfo): Promise&lt;CMR
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[证书管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-certmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2167,9 +2316,10 @@ try {
 
 
 
-#### certificateManager.importUkeyCertificate
+## certificateManager.importUkeyCertificate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 importUkeyCertificate(keyUri: string, cert: Uint8Array, ukeyInfo: UkeyInfo): Promise&lt;void&gt;
 
@@ -2187,6 +2337,7 @@ importUkeyCertificate(keyUri: string, cert: Uint8Array, ukeyInfo: UkeyInfo): Pro
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyUri | string | 是 | 表示USB Key证书凭据的uri。 keyUri参数用于标识证书实体，可以通过调用getUkeyCertificateList接口得到，最大长度为256字节。 |
@@ -2196,6 +2347,7 @@ importUkeyCertificate(keyUri: string, cert: Uint8Array, ukeyInfo: UkeyInfo): Pro
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -2204,6 +2356,7 @@ importUkeyCertificate(keyUri: string, cert: Uint8Array, ukeyInfo: UkeyInfo): Pro
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[证书管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-certmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

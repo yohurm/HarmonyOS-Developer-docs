@@ -1,22 +1,22 @@
 # 使用RSA私钥进行编码解码(ArkTS)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-encoded-decoded
 
 **编码**
 1. 调用[cryptoFramework.createAsyKeyGenerator](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#cryptoframeworkcreateasykeygenerator)、[AsyKeyGenerator.generateKeyPair](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#generatekeypair-1)，生成RSA密钥类型为RSA1024、素数个数为2的非对称密钥对（KeyPair）。KeyPair对象中包括公钥PubKey、私钥PriKey。
 
-  如何生成RSA非对称密钥对，开发者可参考下文示例，并结合[非对称密钥生成和转换规格：RSA](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-asym-key-generation-conversion-spec#rsa)和[随机生成非对称密钥对](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-generate-asym-key-pair-randomly)理解，参考文档与当前示例可能存在入参差异，请在阅读时注意区分。
+  如何生成RSA非对称密钥对，开发者可参考下文示例，并结合[非对称密钥生成和转换规格：RSA](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-key-generation-conversion#rsa)和[随机生成非对称密钥对](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-generate-asym-key-pair-randomly)理解，参考文档与当前示例可能存在入参差异，请在阅读时注意区分。
 2. 传入参数[KeyEncodingConfig](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#keyencodingconfig18)，参数PKCS1/PKCS8，调用[prikey.getEncodedPem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#getencodedpem18)生成编码后的私钥字符串。
 
 **解码**
 1. 调用[cryptoFramework.createAsyKeyGenerator](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#cryptoframeworkcreateasykeygenerator)生成RSA非对称密钥生成器asyKeyGenerator。
 
-  如何生成RSA非对称密钥对，开发者可参考下文示例，并结合[非对称密钥生成和转换规格：RSA](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-asym-key-generation-conversion-spec#rsa)。
+  如何生成RSA非对称密钥对，开发者可参考下文示例，并结合[非对称密钥生成和转换规格：RSA](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-key-generation-conversion#rsa)。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/e7NGYCK2QTuGRN1tJfd25g/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095751Z&HW-CC-Expire=86400&HW-CC-Sign=5858BDA330D50C73707FF8D7EF1B24AEF160EB37F3ECF6353492DE294539E0E9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/1PhrB5fARdK26ldIao0mXA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072725Z&HW-CC-Expire=86400&HW-CC-Sign=A3E257794D1BB3D25E3EB9A1D8B0BE4907B5A60419F23B96628CF7E39FD309F3)
  
 
   解码应该与编码传入的算法一致。

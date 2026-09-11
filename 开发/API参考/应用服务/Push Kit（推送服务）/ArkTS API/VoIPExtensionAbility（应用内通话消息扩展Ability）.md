@@ -1,9 +1,9 @@
 # VoIPExtensionAbility（应用内通话消息扩展Ability）（废弃）
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-voip-ability
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet
 
 VoIPExtensionAbility为应用内通话消息扩展Ability，继承自[UIExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiextensionability)，增加获取场景化消息数据的回调。有如下约束：
  
@@ -22,17 +22,19 @@ VoIPExtensionAbility为应用内通话消息扩展Ability，继承自[UIExtensio
 **废弃版本：** 26.0.0
   
 
-#### 约束限制
+## 约束限制
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 为保障系统安全性和稳定性，防止VoIPExtensionAbility滥用系统资源，系统对其能力进行管控， 不支持部分模块的引用，详情请参考[附录](#附录)。
  
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 import { VoIPExtensionAbility } from '@kit.PushKit';
@@ -40,9 +42,10 @@ import { VoIPExtensionAbility } from '@kit.PushKit';
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 **模型约束：** 属性仅可在Stage模型下使用。
  
@@ -54,6 +57,7 @@ import { VoIPExtensionAbility } from '@kit.PushKit';
  
 **废弃版本：** 26.0.0
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | context | VoIPExtensionContext(deprecated) | 否 | 否 | VoIPExtensionAbility的上下文环境，继承自UIExtensionContext。 |
@@ -61,9 +65,10 @@ import { VoIPExtensionAbility } from '@kit.PushKit';
  
   
 
-#### onReceiveMessage(deprecated)
+## onReceiveMessage(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 onReceiveMessage(voipInfo: pushCommon.VoIPInfo): void
  
@@ -81,6 +86,7 @@ onReceiveMessage(voipInfo: pushCommon.VoIPInfo): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | voipInfo | pushCommon.VoIPInfo | 是 | 网络音视频通话消息数据。 |
@@ -105,12 +111,14 @@ export default class VoipExtAbility extends VoIPExtensionAbility {
  
   
 
-#### 附录
+## 附录
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 VoIPExtensionAbility不支持以下模块的引用。
   
+
 | Kit | 模块 |
 | --- | --- |
 | Form Kit | @ohos.app.form.formProvider (formProvider) @ohos.app.form.formInfo (formInfo) @ohos.app.form.formBindingData (卡片数据绑定类) @ohos.app.form.FormExtensionAbility (FormExtensionAbility) @ohos.application.formBindingData (卡片数据绑定类) @ohos.application.formInfo (formInfo) @ohos.application.formProvider (formProvider) |

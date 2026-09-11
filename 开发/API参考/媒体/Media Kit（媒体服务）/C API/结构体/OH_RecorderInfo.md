@@ -1,6 +1,6 @@
 # OH_RecorderInfo
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-04 10:41:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avscreencapture-oh-recorderinfo
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -10,7 +10,8 @@ typedef struct OH_RecorderInfo {...} OH_RecorderInfo
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -26,18 +27,21 @@ OH_RecorderInfo用于存储屏幕录制文件的输出信息，包括录制文�
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
-| char* url | 录制文件的URL，用于指定录屏文件的输出位置。仅支持本地文件路径URL格式。需与urlLen配合使用。 |
+| char *url | 录制文件的URL，用于指定录屏文件的输出位置。仅支持本地文件路径URL格式。需与urlLen配合使用。 |
 | uint32_t urlLen | 录制文件的URL的长度值，表示url参数所指字符串的字节长度（不包括终止空字符）。需与url参数配合使用，不匹配时可能导致录制异常。 |
 | OH_ContainerFormatType fileFormat | 录制文件的容器封装格式类型，用于指定录屏输出的文件封装格式。可选值：CFT_MPEG_4A（M4A格式，适用于仅需要录制音频的场景）、CFT_MPEG_4（MP4格式，适用于需要同时录制音视频的场景）。可选值为OH_ContainerFormatType中定义的格式类型。 |

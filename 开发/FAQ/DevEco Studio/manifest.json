@@ -2445,7 +2445,7 @@
   {
     "slug": "faqs-codegenie-3",
     "name": "CodeGenie偶现报错：The reasoning_content in the thinking mode must be passed back to the API.",
-    "file": "AI辅助编程/CodeGenie偶现报错：The reasoning_content in the thinking mode must be passed back to the API..md",
+    "file": "AI辅助编程/CodeGenie偶现报错：The reasoning_content in the thinking mode must be passed back to the API.md",
     "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-codegenie-3",
     "section": ""
   },
@@ -3167,7 +3167,7 @@
   {
     "slug": "faqs-development-environment-22",
     "name": "DevEco Studio编译时报错FetchPackageInfo: \"@ohos/hamock\" failed",
-    "file": "环境准备/DevEco Studio编译时报错FetchPackageInfo： \"@ohos／hamock\" failed/DevEco Studio编译时报错FetchPackageInfo： ＂@ohos／hamock＂ failed.md",
+    "file": "环境准备/DevEco Studio编译时报错FetchPackageInfo： ＂@ohos／hamock＂ failed/DevEco Studio编译时报错FetchPackageInfo： ＂@ohos／hamock＂ failed.md",
     "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-development-environment-22"
   },
   {

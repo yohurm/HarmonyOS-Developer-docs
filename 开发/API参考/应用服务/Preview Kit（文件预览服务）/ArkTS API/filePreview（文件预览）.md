@@ -1,6 +1,6 @@
 # filePreview（文件预览）
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/preview-arkts
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -11,6 +11,7 @@
  
 支持的预览文件类型如下：
   
+
 | 类型 | 文件后缀 | mimeType类型 |
 | --- | --- | --- |
 | 文本 | txt、cpp、c、h、java、xhtml、xml | text/plain、text/x-c++src、text/x-csrc、text/x-chdr、text/x-java、application/xhtml+xml、text/xml |
@@ -26,7 +27,8 @@
 **起始版本：** 4.1.0(11)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -36,7 +38,8 @@ import { filePreview } from '@kit.PreviewKit';
  
   
 
-#### PreviewInfo
+## PreviewInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -50,6 +53,7 @@ import { filePreview } from '@kit.PreviewKit';
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | title | string | 否 | 是 | 文件的标题名称 |
@@ -59,7 +63,8 @@ import { filePreview } from '@kit.PreviewKit';
  
   
 
-#### DisplayInfo
+## DisplayInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -73,6 +78,7 @@ import { filePreview } from '@kit.PreviewKit';
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | x | number | 否 | 否 | 预览窗口的起始X轴，单位px |
@@ -83,7 +89,8 @@ import { filePreview } from '@kit.PreviewKit';
  
   
 
-#### openPreview
+## openPreview
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -103,6 +110,7 @@ openPreview(context: Context, file: PreviewInfo, info?: DisplayInfo): Promise&lt
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 上下文common.UIAbilityContext。 注意： 当前context仅支持传入UIAbilityContext。 |
@@ -112,6 +120,7 @@ openPreview(context: Context, file: PreviewInfo, info?: DisplayInfo): Promise&lt
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -119,6 +128,7 @@ openPreview(context: Context, file: PreviewInfo, info?: DisplayInfo): Promise&lt
  
 **错误码：** 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | invalid input parameter. |
@@ -153,7 +163,8 @@ filePreview.openPreview(uiContext, fileInfo, displayInfo).then(() => {
  
   
 
-#### openPreview
+## openPreview
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -173,6 +184,7 @@ openPreview(context: Context, file: PreviewInfo, info: DisplayInfo, callback: As
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 上下文common.UIAbilityContext。 注意： 当前context仅支持传入UIAbilityContext。 |
@@ -183,6 +195,7 @@ openPreview(context: Context, file: PreviewInfo, info: DisplayInfo, callback: As
  
 **错误码：** 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | invalid input parameter. |
@@ -218,9 +231,10 @@ filePreview.openPreview(uiContext, fileInfo, displayInfo, (err) => {
  
   
 
-#### openPreview
+## openPreview
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | Tablet
 
 openPreview(context: Context, files: Array&lt;PreviewInfo&gt;, index?: number): Promise&lt;void&gt;
  
@@ -228,18 +242,19 @@ openPreview(context: Context, files: Array&lt;PreviewInfo&gt;, index?: number): 
  
 该接口需要调用方确认传入的uri可进行转授权。
  
-该接口不支持PC/2in1设备。
- 
 **模型约束：** 此接口仅可在Stage模型下使用。
  
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
  
 **系统能力：** SystemCapability.FileManagement.FilePreview.Core
  
+**设备行为差异：** 此接口在PC/2in1中调用返回801错误码，在其他设备类型中可正常调用。
+ 
 **起始版本：** 5.0.0(12)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 上下文common.UIAbilityContext。 注意： 当前context仅支持传入UIAbilityContext。 |
@@ -249,6 +264,7 @@ openPreview(context: Context, files: Array&lt;PreviewInfo&gt;, index?: number): 
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -256,6 +272,7 @@ openPreview(context: Context, files: Array&lt;PreviewInfo&gt;, index?: number): 
  
 **错误码：** 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | invalid input parameter. |
@@ -287,7 +304,8 @@ filePreview.openPreview(uiContext, files, 0).then(() => {
  
   
 
-#### canPreview
+## canPreview
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -307,6 +325,7 @@ canPreview(context: Context, uri: string): Promise&lt;boolean&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 上下文common.UIAbilityContext。 注意： 当前context仅支持传入UIAbilityContext。 |
@@ -315,6 +334,7 @@ canPreview(context: Context, uri: string): Promise&lt;boolean&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象，当传入支持的文件uri时，会返回true；传入不可预览的文件uri时，返回false。 |
@@ -322,6 +342,7 @@ canPreview(context: Context, uri: string): Promise&lt;boolean&gt;
  
 **错误码：** 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | invalid input parameter. |
@@ -359,7 +380,8 @@ filePreview.canPreview(uiContext, uri).then((result) => { // 此处返回false
  
   
 
-#### canPreview
+## canPreview
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -379,6 +401,7 @@ canPreview(context: Context, uri: string, callback: AsyncCallback&lt;boolean&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 上下文common.UIAbilityContext。 注意： 当前context仅支持传入UIAbilityContext。 |
@@ -388,6 +411,7 @@ canPreview(context: Context, uri: string, callback: AsyncCallback&lt;boolean&gt;
  
 **错误码：** 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | invalid input parameter. |
@@ -427,7 +451,8 @@ filePreview.canPreview(uiContext, uri, (err, result) => {
  
   
 
-#### hasDisplayed
+## hasDisplayed
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -445,6 +470,7 @@ hasDisplayed(context: Context): Promise&lt;boolean&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 上下文common.UIAbilityContext。 注意： 当前context仅支持传入UIAbilityContext。 |
@@ -452,6 +478,7 @@ hasDisplayed(context: Context): Promise&lt;boolean&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象，预览窗口是单例的形式，当预览窗口已经打开过并且没关闭，那会返回true。如果没打开或者打开后已关闭，那将返回false。 |
@@ -459,6 +486,7 @@ hasDisplayed(context: Context): Promise&lt;boolean&gt;
  
 **错误码：** 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | invalid input parameter. |
@@ -494,7 +522,8 @@ filePreview.hasDisplayed(uiContext).then((result) => { // 此处返回false
  
   
 
-#### hasDisplayed
+## hasDisplayed
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -512,6 +541,7 @@ hasDisplayed(context: Context, callback: AsyncCallback&lt;boolean&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 上下文common.UIAbilityContext。 注意： 当前context仅支持传入UIAbilityContext。 |
@@ -520,6 +550,7 @@ hasDisplayed(context: Context, callback: AsyncCallback&lt;boolean&gt;): void
  
 **错误码：** 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | invalid input parameter. |
@@ -557,7 +588,8 @@ filePreview.hasDisplayed(uiContext, (err, result) => {
  
   
 
-#### closePreview
+## closePreview
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -575,6 +607,7 @@ closePreview(context: Context): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 上下文common.UIAbilityContext。 注意： 当前context仅支持传入UIAbilityContext。 |
@@ -582,6 +615,7 @@ closePreview(context: Context): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -589,6 +623,7 @@ closePreview(context: Context): Promise&lt;void&gt;
  
 **错误码：** 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | invalid input parameter. |
@@ -610,7 +645,8 @@ filePreview.closePreview(uiContext).then(() => { // 仅当预览窗口存在时�
  
   
 
-#### closePreview
+## closePreview
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -628,6 +664,7 @@ closePreview(context: Context, callback: AsyncCallback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 上下文common.UIAbilityContext。 注意： 当前context仅支持传入UIAbilityContext。 |
@@ -636,6 +673,7 @@ closePreview(context: Context, callback: AsyncCallback&lt;void&gt;): void
  
 **错误码：** 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | invalid input parameter. |
@@ -658,7 +696,8 @@ filePreview.closePreview(uiContext, (err) => { // 仅当预览窗口存在时起
  
   
 
-#### loadData
+## loadData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -676,6 +715,7 @@ loadData(context: Context, file: PreviewInfo): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 上下文common.UIAbilityContext。 注意： 当前context仅支持传入UIAbilityContext。 |
@@ -684,6 +724,7 @@ loadData(context: Context, file: PreviewInfo): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -691,6 +732,7 @@ loadData(context: Context, file: PreviewInfo): Promise&lt;void&gt;
  
 **错误码：** 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | invalid input parameter. |
@@ -717,7 +759,8 @@ filePreview.loadData(uiContext, fileInfo).then(() => { // 仅当预览窗口存�
  
   
 
-#### loadData
+## loadData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -735,6 +778,7 @@ loadData(context: Context, file: PreviewInfo, callback: AsyncCallback&lt;void&gt
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 上下文common.UIAbilityContext。 注意： 当前context仅支持传入UIAbilityContext。 |
@@ -744,6 +788,7 @@ loadData(context: Context, file: PreviewInfo, callback: AsyncCallback&lt;void&gt
  
 **错误码：** 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | invalid input parameter. |
@@ -771,9 +816,10 @@ filePreview.loadData(uiContext, fileInfo, (err) => { // 仅当预览窗口存在
  
   
 
-#### loadData
+## loadData
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | Tablet
 
 loadData(context: Context, files: Array&lt;PreviewInfo&gt;, index?: number): Promise&lt;void&gt;
  
@@ -787,10 +833,13 @@ loadData(context: Context, files: Array&lt;PreviewInfo&gt;, index?: number): Pro
  
 **系统能力：** SystemCapability.FileManagement.FilePreview.Core
  
+**设备行为差异：** 此接口在PC/2in1中调用返回801错误码，在其他设备类型中可正常调用。
+ 
 **起始版本：** 5.0.0(12)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 上下文common.UIAbilityContext。 注意： 当前context仅支持传入UIAbilityContext。 |
@@ -800,6 +849,7 @@ loadData(context: Context, files: Array&lt;PreviewInfo&gt;, index?: number): Pro
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -807,6 +857,7 @@ loadData(context: Context, files: Array&lt;PreviewInfo&gt;, index?: number): Pro
  
 **错误码：** 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | invalid input parameter. |

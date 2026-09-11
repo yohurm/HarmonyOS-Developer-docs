@@ -1,6 +1,6 @@
 # attributionTestManager（应用归因接入调试功能）
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/store-attributiontestmanager
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -14,7 +14,8 @@
 **起始版本：** 5.0.0(12)
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -24,7 +25,8 @@ import { attributionTestManager } from '@kit.AppGalleryKit';
 
 
 
-#### attributionTestManager.validateSource
+## attributionTestManager.validateSource
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -40,6 +42,7 @@ validateSource(adSourceInfo: AdSourceInfo, publicKey: string): Promise&lt;void&g
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | adSourceInfo | AdSourceInfo | 是 | 媒体app/分发平台登记的归因来源信息。 |
@@ -47,6 +50,7 @@ validateSource(adSourceInfo: AdSourceInfo, publicKey: string): Promise&lt;void&g
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -56,6 +60,7 @@ validateSource(adSourceInfo: AdSourceInfo, publicKey: string): Promise&lt;void&g
 **错误码**：
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-appgallery)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -138,7 +143,8 @@ class  AttributionTest {
 
 
 
-#### attributionTestManager.setPostback
+## attributionTestManager.setPostback
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -158,12 +164,14 @@ setPostback(postbackInfo: PostbackInfo): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | postbackInfo | PostbackInfo | 是 | 归因结果回传信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -173,6 +181,7 @@ setPostback(postbackInfo: PostbackInfo): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-appgallery)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -255,7 +264,8 @@ struct Attribution {
 
 
 
-#### attributionTestManager.flushPostbacks
+## attributionTestManager.flushPostbacks
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -275,12 +285,14 @@ flushPostbacks(adTechId: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | adTechId | string | 是 | 分发平台对应的归因角色ID，本次登记归因来源对应营销任务所归属的分发平台的标识符，长度固定为8个字符。 使用setPostback()接口中成功设置的adTechId值。 说明： 调试过程不依赖云侧注册，开发者可以使用虚拟的adTechId。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -290,6 +302,7 @@ flushPostbacks(adTechId: string): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-appgallery)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -344,7 +357,8 @@ struct Attribution {
 
 
 
-#### AdSourceInfo
+## AdSourceInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -355,6 +369,7 @@ struct Attribution {
 **系统能力：** SystemCapability.AppGalleryService.AttributionManager
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -371,7 +386,8 @@ struct Attribution {
 
 
 
-#### PostbackInfo
+## PostbackInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -382,6 +398,7 @@ struct Attribution {
 **系统能力：** SystemCapability.AppGalleryService.AttributionManager
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -397,7 +414,8 @@ struct Attribution {
 
 
 
-#### SourceType
+## SourceType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -408,6 +426,7 @@ struct Attribution {
 **系统能力：** SystemCapability.AppGalleryService.AttributionManager
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

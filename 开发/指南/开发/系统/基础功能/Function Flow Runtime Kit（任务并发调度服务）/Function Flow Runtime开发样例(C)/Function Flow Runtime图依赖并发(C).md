@@ -1,10 +1,10 @@
 # Function Flow Runtime图依赖并发(C)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ffrt-concurrency-graph-c
 
-#### 概述
+## 概述
 
 FFRT图依赖并发范式支持任务依赖和数据依赖两种方式构建任务依赖图。任务依赖图中每个节点代表一个任务，边代表任务之间的依赖关系。任务依赖分为输入依赖in_deps和输出依赖out_deps。
  
@@ -16,7 +16,7 @@ FFRT图依赖并发范式支持任务依赖和数据依赖两种方式构建任�
  
   
 
-#### 任务依赖
+### 任务依赖
 
 > [!NOTE]
 > 当任务句柄出现在一个任务的in_deps中时，任务句柄对应的任务是该任务的前置任务；当任务句柄出现在一个任务的out_deps中时，任务句柄对应的任务是该任务的后继任务。
@@ -31,7 +31,7 @@ FFRT图依赖并发范式支持任务依赖和数据依赖两种方式构建任�
  
   
 
-#### 数据依赖
+### 数据依赖
 
 > [!NOTE]
 > 当数据对象的签名出现在一个任务的in_deps中时，该任务称为数据对象的消费者任务，消费者任务执行不改变其输入数据对象的内容； 当数据对象的签名出现在任务的out_deps中时，该任务称为数据对象的生产者任务，生产者任务执行改变其输出数据对象的内容，从而生成该数据对象的一个新的版本。
@@ -81,12 +81,12 @@ task5(OUT A);
  
   
 
-#### 示例：流媒体视频处理
+## 示例：流媒体视频处理
 
 用户上传视频到流媒体平台，处理步骤包含：视频解析A、视频转码B、视频缩略图生成C、视频水印添加D和视频发布E，其中步骤B和步骤C可以并行执行。任务流程如下图所示：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/9BUFkElOR3qeSFQX640yHw/zh-cn_image_0000002704273003.png?HW-CC-KV=V1&HW-CC-Date=20260813T095811Z&HW-CC-Expire=86400&HW-CC-Sign=4621F884D8BD13EA9C4D6EF98B4B62324872CC005E81FE41044F7056A9071D1C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/Yp09Odq6QfKbjKPWva6MZQ/zh-cn_image_0000002717611244.png?HW-CC-KV=V1&HW-CC-Date=20260911T072747Z&HW-CC-Expire=86400&HW-CC-Sign=E6C9D45B0002D5F42CCB0C857D1C58573E41712B6F6C45E99482255DA086D72C)
 
  
 借助FFRT提供的图依赖并发范式，可以描述任务依赖关系，同时并行化上述视频处理流程，代码如下所示：
@@ -179,7 +179,7 @@ int DependenceCExec()
  
   
 
-#### 示例：斐波那契数列
+## 示例：斐波那契数列
 
 斐波那契数列中每个数字是前两个数字之和，计算斐波那契数的过程可以很好地通过数据对象来表达任务依赖关系。使用FFRT并发编程框架计算斐波那契数的代码如下所示：
  
@@ -264,15 +264,16 @@ Fibonacci(5) is 5
 各个任务在FFRT内部形成了一棵调用树：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/yY76yEsVQ_CeCciQcnOTYQ/zh-cn_image_0000002674473206.png?HW-CC-KV=V1&HW-CC-Date=20260813T095811Z&HW-CC-Expire=86400&HW-CC-Sign=F69C9B96E6D279AE309A9989A865FEAFE18A85D381EAE38C22777DD7EFFF24F2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/AbSGc28yReOtHqs6Uk60Ww/zh-cn_image_0000002747291197.png?HW-CC-KV=V1&HW-CC-Date=20260911T072747Z&HW-CC-Expire=86400&HW-CC-Sign=6117ECF306ED1DAD8F0AAD6D15CD94B5B4DADEDB5E58A9C2189300C4C07DD3B3)
 
  
   
 
-#### 接口说明
+## 接口说明
 
 上述样例中涉及到主要的FFRT的接口包括：
   
+
 | 名称 | 描述 |
 | --- | --- |
 | ffrt_submit_f | 提交任务调度执行。 说明：从API version 20开始，支持该接口。 |
@@ -286,7 +287,7 @@ Fibonacci(5) is 5
  
   
 
-#### 约束限制
+## 约束限制
 
 - 使用ffrt_submit_base接口进行任务提交时，每个任务的输入依赖和输出依赖的数量之和不能超过8个。
 - 使用ffrt_submit_h_base接口进行任务提交时，每个任务的输入依赖和输出依赖的数量之和不能超过7个。

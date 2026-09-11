@@ -1,9 +1,9 @@
 # Interface (AVRecorder)
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avrecorder
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 AVRecorder是音视频录制管理类，用于音视频录制的全流程管理，支持音频录制、视频录制及音视频混合录制，可灵活配置编码参数、添加水印、设置元数据、监听录制状态和错误事件等。适用于录制音视频并保存到文件的场景，包括需要在音频流打断期间保持录制连续性、实时监控音频振幅等场景。在调用AVRecorder的方法前，需要先调用[createAVRecorder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-f#mediacreateavrecorder9)接口构建一个AVRecorder实例。典型录制流程：[createAVRecorder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-f#mediacreateavrecorder9) → [prepare](#prepare9) → [getInputSurface](#getinputsurface9)（纯视频/音视频录制时） → [start](#start9) → [pause](#pause9)/[resume](#resume9) → [stop](#stop9) → [release](#release9)。
 
@@ -14,9 +14,10 @@ AVRecorder是音视频录制管理类，用于音视频录制的全流程管理�
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { media } from '@kit.MediaKit';
@@ -24,11 +25,13 @@ import { media } from '@kit.MediaKit';
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -37,9 +40,10 @@ import { media } from '@kit.MediaKit';
 
 
 
-#### prepare9+
+## prepare9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 prepare(config: AVRecorderConfig, callback: AsyncCallback&lt;void&gt;): void
 
@@ -55,6 +59,7 @@ prepare(config: AVRecorderConfig, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | config | AVRecorderConfig | 是 | 配置音视频录制的相关参数。音频录制时需设置audioSourceType，视频录制时需设置videoSourceType。 |
@@ -64,6 +69,7 @@ prepare(config: AVRecorderConfig, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -114,9 +120,10 @@ avRecorder.prepare(avRecorderConfig, (err: BusinessError) => {
 
 
 
-#### prepare9+
+## prepare9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 prepare(config: AVRecorderConfig): Promise&lt;void&gt;
 
@@ -134,12 +141,14 @@ prepare(config: AVRecorderConfig): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | config | AVRecorderConfig | 是 | 配置音视频录制的相关参数。音频录制时需设置audioSourceType，视频录制时需设置videoSourceType。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -149,6 +158,7 @@ prepare(config: AVRecorderConfig): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -198,9 +208,10 @@ avRecorder.prepare(avRecorderConfig).then(() => {
 
 
 
-#### addWatermark
+## addWatermark
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addWatermark(watermark: image.PixelMap, config: WatermarkConfiguration): Promise&lt;number&gt;
 
@@ -218,6 +229,7 @@ addWatermark(watermark: image.PixelMap, config: WatermarkConfiguration): Promise
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | watermark | image.PixelMap | 是 | 水印图像。该图像将作为水印叠加到录制的视频中。 |
@@ -225,6 +237,7 @@ addWatermark(watermark: image.PixelMap, config: WatermarkConfiguration): Promise
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -234,6 +247,7 @@ addWatermark(watermark: image.PixelMap, config: WatermarkConfiguration): Promise
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -265,9 +279,10 @@ if (watermark) {
 
 
 
-#### getInputSurface9+
+## getInputSurface9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getInputSurface(callback: AsyncCallback&lt;string&gt;): void
 
@@ -283,6 +298,7 @@ getInputSurface(callback: AsyncCallback&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;string&gt; | 是 | 回调函数。当获取surface成功，err为undefined，data为获取到的surfaceId，否则为错误对象。 |
@@ -291,6 +307,7 @@ getInputSurface(callback: AsyncCallback&lt;string&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -318,9 +335,10 @@ avRecorder.getInputSurface((err: BusinessError, surfaceId: string) => {
 
 
 
-#### getInputSurface9+
+## getInputSurface9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getInputSurface(): Promise&lt;string&gt;
 
@@ -334,14 +352,16 @@ getInputSurface(): Promise&lt;string&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;string&gt; | Promise对象，返回获取的surfaceId。 |
+| Promise&lt;string&gt; | Promise对象，返回surface中获取的surfaceBuffer。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -368,9 +388,10 @@ avRecorder.getInputSurface().then((surfaceId: string) => {
 
 
 
-#### updateRotation12+
+## updateRotation12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateRotation(rotation: number): Promise&lt;void&gt;
 
@@ -382,12 +403,14 @@ updateRotation(rotation: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rotation | number | 是 | 旋转角度，单位为度（°）。取值仅支持0°、90°、180°和270°。传入不支持的角度值时，返回错误码401。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -397,6 +420,7 @@ updateRotation(rotation: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -423,9 +447,10 @@ avRecorder.updateRotation(rotation).then(() => {
 
 
 
-#### setMetadata
+## setMetadata
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMetadata(metadata: Record<string, string>): void
 
@@ -439,6 +464,7 @@ setMetadata(metadata: Record<string, string>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | metadata | Record<string, string> | 是 | 录制的元数据信息。 格式为字符串键值对，其中，键需要以com.openharmony.开头，否则该键值对将被忽略；值的长度范围为0-256个字节，否则返回错误码5400108。 |
@@ -447,6 +473,7 @@ setMetadata(metadata: Record<string, string>): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -476,9 +503,10 @@ try {
 
 
 
-#### setWillMuteWhenInterrupted20+
+## setWillMuteWhenInterrupted20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setWillMuteWhenInterrupted(muteWhenInterrupted: boolean): Promise&lt;void&gt;
 
@@ -490,12 +518,14 @@ setWillMuteWhenInterrupted(muteWhenInterrupted: boolean): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| muteWhenInterrupted | boolean | 是 | 设置当前录制音频流是否启用静音打断模式。true表示启用，音频流被打断时录制静音；false表示不启用，音频流被打断时停止录制。 |
+| muteWhenInterrupted | boolean | 是 | 设置当前录制音频流是否启用静音打断模式，true表示启用，false表示不启用，保持为默认打断模式。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -505,6 +535,7 @@ setWillMuteWhenInterrupted(muteWhenInterrupted: boolean): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -527,9 +558,10 @@ avRecorder.setWillMuteWhenInterrupted(true).then(() => {
 
 
 
-#### start9+
+## start9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 start(callback: AsyncCallback&lt;void&gt;): void
 
@@ -541,6 +573,7 @@ start(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。如果开始录制成功，err为undefined，否则为错误对象。 |
@@ -549,6 +582,7 @@ start(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -573,9 +607,10 @@ avRecorder.start((err: BusinessError) => {
 
 
 
-#### start9+
+## start9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 start(): Promise&lt;void&gt;
 
@@ -589,6 +624,7 @@ start(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -597,6 +633,7 @@ start(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -620,9 +657,10 @@ avRecorder.start().then(() => {
 
 
 
-#### pause9+
+## pause9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pause(callback: AsyncCallback&lt;void&gt;): void
 
@@ -634,6 +672,7 @@ pause(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。如果暂停录制成功，err为undefined，否则为错误对象。 |
@@ -642,6 +681,7 @@ pause(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -666,9 +706,10 @@ avRecorder.pause((err: BusinessError) => {
 
 
 
-#### pause9+
+## pause9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pause(): Promise&lt;void&gt;
 
@@ -682,6 +723,7 @@ pause(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -690,6 +732,7 @@ pause(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -713,9 +756,10 @@ avRecorder.pause().then(() => {
 
 
 
-#### resume9+
+## resume9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 resume(callback: AsyncCallback&lt;void&gt;): void
 
@@ -727,6 +771,7 @@ resume(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。如果恢复录制成功，err为undefined，否则为错误对象。 |
@@ -735,6 +780,7 @@ resume(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -759,9 +805,10 @@ avRecorder.resume((err: BusinessError) => {
 
 
 
-#### resume9+
+## resume9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 resume(): Promise&lt;void&gt;
 
@@ -775,6 +822,7 @@ resume(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -783,6 +831,7 @@ resume(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -806,9 +855,10 @@ avRecorder.resume().then(() => {
 
 
 
-#### stop9+
+## stop9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stop(callback: AsyncCallback&lt;void&gt;): void
 
@@ -822,6 +872,7 @@ stop(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。如果停止录制成功，err为undefined，否则为错误对象。 |
@@ -830,6 +881,7 @@ stop(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -854,9 +906,10 @@ avRecorder.stop((err: BusinessError) => {
 
 
 
-#### stop9+
+## stop9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stop(): Promise&lt;void&gt;
 
@@ -872,6 +925,7 @@ stop(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -880,6 +934,7 @@ stop(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -903,9 +958,10 @@ avRecorder.stop().then(() => {
 
 
 
-#### reset9+
+## reset9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reset(callback: AsyncCallback&lt;void&gt;): void
 
@@ -919,6 +975,7 @@ reset(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当重置音视频录制成功，err为undefined，否则为错误对象。 |
@@ -927,6 +984,7 @@ reset(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -950,9 +1008,10 @@ avRecorder.reset((err: BusinessError) => {
 
 
 
-#### reset9+
+## reset9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reset(): Promise&lt;void&gt;
 
@@ -966,6 +1025,7 @@ reset(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -974,6 +1034,7 @@ reset(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -996,9 +1057,10 @@ avRecorder.reset().then(() => {
 
 
 
-#### release9+
+## release9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(callback: AsyncCallback&lt;void&gt;): void
 
@@ -1012,6 +1074,7 @@ release(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当释放音视频录制资源成功，err为undefined，否则为错误对象。 |
@@ -1020,6 +1083,7 @@ release(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1042,9 +1106,10 @@ avRecorder.release((err: BusinessError) => {
 
 
 
-#### release9+
+## release9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(): Promise&lt;void&gt;
 
@@ -1060,6 +1125,7 @@ release(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1068,6 +1134,7 @@ release(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1089,9 +1156,10 @@ avRecorder.release().then(() => {
 
 
 
-#### getCurrentAudioCapturerInfo11+
+## getCurrentAudioCapturerInfo11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCurrentAudioCapturerInfo(callback: AsyncCallback<audio.AudioCapturerChangeInfo>): void
 
@@ -1103,6 +1171,7 @@ getCurrentAudioCapturerInfo(callback: AsyncCallback<audio.AudioCapturerChangeInf
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<audio.AudioCapturerChangeInfo> | 是 | 回调函数。当获取音频采集参数成功时，err为undefined，data为获取到的audio.AudioCapturerChangeInfo，否则为错误对象。 |
@@ -1111,6 +1180,7 @@ getCurrentAudioCapturerInfo(callback: AsyncCallback<audio.AudioCapturerChangeInf
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1139,9 +1209,10 @@ avRecorder.getCurrentAudioCapturerInfo((err: BusinessError, capturerInfo: audio.
 
 
 
-#### getCurrentAudioCapturerInfo11+
+## getCurrentAudioCapturerInfo11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCurrentAudioCapturerInfo(): Promise<audio.AudioCapturerChangeInfo>
 
@@ -1153,6 +1224,7 @@ getCurrentAudioCapturerInfo(): Promise<audio.AudioCapturerChangeInfo>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<audio.AudioCapturerChangeInfo> | Promise对象，返回获取的当前音频采集参数。 |
@@ -1161,6 +1233,7 @@ getCurrentAudioCapturerInfo(): Promise<audio.AudioCapturerChangeInfo>
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1188,9 +1261,10 @@ avRecorder.getCurrentAudioCapturerInfo().then((capturerInfo: audio.AudioCapturer
 
 
 
-#### getAudioCapturerMaxAmplitude11+
+## getAudioCapturerMaxAmplitude11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAudioCapturerMaxAmplitude(callback: AsyncCallback&lt;number&gt;): void
 
@@ -1204,6 +1278,7 @@ getAudioCapturerMaxAmplitude(callback: AsyncCallback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;number&gt; | 是 | 回调函数。获取当前音频最大振幅成功时，err为undefined，data为获取到的最大振幅，否则为错误对象。 |
@@ -1212,6 +1287,7 @@ getAudioCapturerMaxAmplitude(callback: AsyncCallback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1238,9 +1314,10 @@ avRecorder.getAudioCapturerMaxAmplitude((err: BusinessError, amplitude: number) 
 
 
 
-#### getAudioCapturerMaxAmplitude11+
+## getAudioCapturerMaxAmplitude11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAudioCapturerMaxAmplitude(): Promise&lt;number&gt;
 
@@ -1254,6 +1331,7 @@ getAudioCapturerMaxAmplitude(): Promise&lt;number&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象，返回获取的当前音频最大振幅。 |
@@ -1262,6 +1340,7 @@ getAudioCapturerMaxAmplitude(): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1287,19 +1366,21 @@ avRecorder.getAudioCapturerMaxAmplitude().then((amplitude: number) => {
 
 
 
-#### getAvailableEncoder11+
+## getAvailableEncoder11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAvailableEncoder(callback: AsyncCallback<Array&lt;EncoderInfo&gt;>): void
 
-获取可用的编码器参数。适用于需要根据设备能力选择合适编码器的场景。使用callback异步回调。
+获取可用的编码器参数。使用callback异步回调。
 
 必须在非released/error状态下调用。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1309,6 +1390,7 @@ getAvailableEncoder(callback: AsyncCallback<Array&lt;EncoderInfo&gt;>): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1339,19 +1421,21 @@ avRecorder.getAvailableEncoder((err: BusinessError, info: media.EncoderInfo[]) =
 
 
 
-#### getAvailableEncoder11+
+## getAvailableEncoder11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAvailableEncoder(): Promise<Array&lt;EncoderInfo&gt;>
 
-获取可用的编码器参数。适用于需要根据设备能力选择合适编码器的场景。使用Promise异步回调。
+获取可用的编码器参数。使用Promise异步回调。
 
 必须在非released/error状态下调用。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1361,6 +1445,7 @@ getAvailableEncoder(): Promise<Array&lt;EncoderInfo&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1390,9 +1475,10 @@ avRecorder.getAvailableEncoder().then((info: media.EncoderInfo[]) => {
 
 
 
-#### getAVRecorderConfig11+
+## getAVRecorderConfig11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAVRecorderConfig(callback: AsyncCallback&lt;AVRecorderConfig&gt;): void
 
@@ -1404,6 +1490,7 @@ getAVRecorderConfig(callback: AsyncCallback&lt;AVRecorderConfig&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;AVRecorderConfig&gt; | 是 | 回调函数。获取实时配置的参数成功时，err为undefined，data为获取到的配置参数，否则为错误对象。 |
@@ -1412,6 +1499,7 @@ getAVRecorderConfig(callback: AsyncCallback&lt;AVRecorderConfig&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1439,9 +1527,10 @@ avRecorder.getAVRecorderConfig((err: BusinessError, config: media.AVRecorderConf
 
 
 
-#### getAVRecorderConfig11+
+## getAVRecorderConfig11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAVRecorderConfig(): Promise&lt;AVRecorderConfig&gt;;
 
@@ -1453,6 +1542,7 @@ getAVRecorderConfig(): Promise&lt;AVRecorderConfig&gt;;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;AVRecorderConfig&gt; | Promise对象。返回实时配置参数。 |
@@ -1461,6 +1551,7 @@ getAVRecorderConfig(): Promise&lt;AVRecorderConfig&gt;;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1487,9 +1578,10 @@ avRecorder.getAVRecorderConfig().then((config: media.AVRecorderConfig) => {
 
 
 
-#### on('stateChange')9+
+## on('stateChange')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'stateChange', callback: OnAVRecorderStateChangeHandler): void
 
@@ -1501,6 +1593,7 @@ on(type: 'stateChange', callback: OnAVRecorderStateChangeHandler): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 录制状态机切换的回调类型，支持的事件：'stateChange'，用户操作和系统都会触发此事件。 |
@@ -1510,6 +1603,7 @@ on(type: 'stateChange', callback: OnAVRecorderStateChangeHandler): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1527,9 +1621,10 @@ avRecorder.on('stateChange', (state: media.AVRecorderState, reason: media.StateC
 
 
 
-#### off('stateChange')9+
+## off('stateChange')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'stateChange', callback?: OnAVRecorderStateChangeHandler): void
 
@@ -1540,6 +1635,7 @@ off(type: 'stateChange', callback?: OnAVRecorderStateChangeHandler): void
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1555,9 +1651,10 @@ avRecorder.off('stateChange');
 
 
 
-#### on('error')9+
+## on('error')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'error', callback: ErrorCallback): void
 
@@ -1571,6 +1668,7 @@ on(type: 'error', callback: ErrorCallback): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 录制错误的回调类型，支持的事件：'error'。 |
@@ -1580,6 +1678,7 @@ on(type: 'error', callback: ErrorCallback): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1607,9 +1706,10 @@ avRecorder.on('error', (err: BusinessError) => {
 
 
 
-#### off('error')9+
+## off('error')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'error', callback?: ErrorCallback): void
 
@@ -1620,6 +1720,7 @@ off(type: 'error', callback?: ErrorCallback): void
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1635,9 +1736,10 @@ avRecorder.off('error');
 
 
 
-#### on('audioCapturerChange')11+
+## on('audioCapturerChange')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'audioCapturerChange', callback: Callback<audio.AudioCapturerChangeInfo>): void
 
@@ -1649,6 +1751,7 @@ on(type: 'audioCapturerChange', callback: Callback<audio.AudioCapturerChangeInfo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 录音配置变化的回调类型，支持的事件：'audioCapturerChange'。 |
@@ -1658,6 +1761,7 @@ on(type: 'audioCapturerChange', callback: Callback<audio.AudioCapturerChangeInfo
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1679,9 +1783,10 @@ avRecorder.on('audioCapturerChange', (audioCapturerChangeInfo: audio.AudioCaptur
 
 
 
-#### off('audioCapturerChange')11+
+## off('audioCapturerChange')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'audioCapturerChange', callback?: Callback<audio.AudioCapturerChangeInfo>): void
 
@@ -1690,6 +1795,7 @@ off(type: 'audioCapturerChange', callback?: Callback<audio.AudioCapturerChangeIn
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1705,9 +1811,10 @@ avRecorder.off('audioCapturerChange');
 
 
 
-#### on('photoAssetAvailable')12+
+## on('photoAssetAvailable')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'photoAssetAvailable', callback: Callback<photoAccessHelper.PhotoAsset>): void
 
@@ -1719,6 +1826,7 @@ on(type: 'photoAssetAvailable', callback: Callback<photoAccessHelper.PhotoAsset>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 媒体资源创建完成的回调类型，支持的事件：'photoAssetAvailable'。 |
@@ -1728,6 +1836,7 @@ on(type: 'photoAssetAvailable', callback: Callback<photoAccessHelper.PhotoAsset>
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1771,9 +1880,10 @@ avRecorder.on('photoAssetAvailable', (asset: photoAccessHelper.PhotoAsset) => {
 
 
 
-#### off('photoAssetAvailable')12+
+## off('photoAssetAvailable')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'photoAssetAvailable', callback?: Callback<photoAccessHelper.PhotoAsset>): void
 
@@ -1782,6 +1892,7 @@ off(type: 'photoAssetAvailable', callback?: Callback<photoAccessHelper.PhotoAsse
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |

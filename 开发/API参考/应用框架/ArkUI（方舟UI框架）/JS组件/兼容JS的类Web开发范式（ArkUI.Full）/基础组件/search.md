@@ -1,9 +1,9 @@
 # search
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-basic-search
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
@@ -12,20 +12,23 @@
 提供搜索框组件，用于提供用户搜索内容的输入区域。
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 不支持。
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-attributes)外，还支持如下属性：
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | icon | string | - | 否 | 搜索图标，默认使用系统搜索图标，图标格式为svg，jpg和png。 |
@@ -37,6 +40,7 @@
  
 **表1** MenuOption5+
   
+
 | 名称 | 类型 | 描述 |
 | --- | --- | --- |
 | icon | string | 菜单选项中的图标路径。 |
@@ -45,12 +49,14 @@
  
   
 
-#### 样式
+## 样式
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用样式](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-styles)外，还支持如下样式：
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | color | &lt;color&gt; | #e6000000 | 否 | 搜索框的文本颜色。 |
@@ -64,12 +70,14 @@
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-events)外，还支持如下事件：
   
+
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | change | { text:newText } | 输入内容发生变化时触发。 改变value属性值不会触发该回调。 |
@@ -82,17 +90,19 @@
  
   
 
-#### 方法
+## 方法
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用方法](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-methods)。
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 <!-- xxx.hml -->
@@ -112,4 +122,4 @@
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/utVGpTP8RQSmMchiAdXCZw/zh-cn_image_0000002659222267.png?HW-CC-KV=V1&HW-CC-Date=20260701T014402Z&HW-CC-Expire=86400&HW-CC-Sign=F6DB15D3DC822B4E268CDAA64824FEB87B18E84F8CA6428A270C1A7D14C63F8B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/YO2wPFARRKyQE_QQAbna3A/zh-cn_image_0000002717773182.png?HW-CC-KV=V1&HW-CC-Date=20260911T072956Z&HW-CC-Expire=86400&HW-CC-Sign=445B836F996F64DA6B495DE8BDF202F8FE65CF9879CD1D695E31F1A7C59AB472)

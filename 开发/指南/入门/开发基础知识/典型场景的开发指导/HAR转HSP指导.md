@@ -1,6 +1,6 @@
 # HAR转HSP指导
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/har-to-hsp
 
@@ -11,7 +11,7 @@
 
 
 
-#### HAR转HSP的操作步骤
+## HAR转HSP的操作步骤
 1. 修改HAR模块下的module.json5文件，将type字段设置为shared，并新增deliveryWithInstall和pages字段。
 
   

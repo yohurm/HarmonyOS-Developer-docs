@@ -1,16 +1,16 @@
 # HCE卡模拟开发指南
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nfc-hce-guide
 
-#### 简介
+## 简介
 
 近场通信(Near Field Communication，NFC)是一种短距高频的无线电技术，在13.56MHz频率运行，通信距离一般在10厘米距离内。HCE(Host Card Emulation)，称为基于主机的卡模拟，表示不依赖安全单元芯片，电子设备上的应用程序模拟NFC卡片和NFC读卡器通信，实现NFC刷卡业务。从API version 22开始支持OFFHOST(Off Host Card Emulation)，称为基于安全单元的卡模拟，卡由设备中的一个单独芯片(称为安全单元)进行模拟。无线运营商部分SIM卡也包含安全单元。
 
 
 
-#### 场景介绍
+## 场景介绍
 
 应用程序模拟NFC卡片，和NFC读卡器通信完成NFC刷卡业务。从使用场景上，可以分成HCE应用前台刷卡和HCE应用后台刷卡。
 
@@ -26,18 +26,19 @@
 
 
 
-#### HCE应用刷卡的约束条件
+## HCE应用刷卡的约束条件
 1. 基于刷卡安全性考虑，不论HCE应用是前台方式还是后台方式刷卡，均不支持电子设备在灭屏或熄屏状态下的HCE刷卡操作。
 2. 电子设备必须具备NFC控制器芯片，才支持HCE刷卡能力。对于是否具有NFC安全单元芯片，没有约束要求。
 3. HCE应用程序需要声明NFC卡模拟权限，具体见示例。
 
 
 
-#### 接口说明
+## 接口说明
 
 NFC卡模拟完整的API说明以及实例代码请参考：[@ohos.nfc.cardEmulation (标准NFC-cardEmulation)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cardemulation)。
 
 完成HCE卡模拟功能，需要使用到下面的接口。
+
 
 | 接口名 | 支持版本 | 功能描述 |
 | --- | --- | --- |
@@ -52,11 +53,11 @@ NFC卡模拟完整的API说明以及实例代码请参考：[@ohos.nfc.cardEmula
 
 
 
-#### 开发准备
+## 开发准备
 
 
 
-#### HCE应用支持前台或后台刷卡的选择
+### HCE应用支持前台或后台刷卡的选择
 
 HCE应用开发者根据业务需要，可以选择实现前台刷卡或者后台刷卡。两种不同的刷卡方式，代码实现上会存在一些差异。
 
@@ -87,11 +88,11 @@ HCE应用开发者根据业务需要，可以选择实现前台刷卡或者后�
 
 
 
-#### 开发步骤
+## 开发步骤
 
 
 
-#### HCE应用前台刷卡
+### HCE应用前台刷卡
 1. 在module.json5文件中声明NFC卡模拟权限，以及声明HCE特定的action。
 2. import需要的NFC卡模拟模块和其他相关的模块。
 3. 判断设备是否支持NFC能力和HCE能力。
@@ -226,7 +227,7 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### HCE应用后台刷卡
+### HCE应用后台刷卡
 1. 在module.json5文件中声明NFC卡模拟权限，声明HCE特定的action，声明应用能够处理的AID。
 2. import需要的NFC卡模拟模块和其他相关的模块。
 3. 判断设备是否支持NFC能力和HCE能力。
@@ -343,7 +344,7 @@ export default class HceUIAbility extends UIAbility {
 
   onDestroy() {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
-    // 退出应用程序，取消订阅接受HCE刷卡数据
+    // 退出应用程序，取消订阅接收HCE刷卡数据
     hceService.off('hceCmd', hceCommandCb);
   }
 }
@@ -351,7 +352,7 @@ export default class HceUIAbility extends UIAbility {
 
 
 
-#### OFFHOST应用刷卡
+### OFFHOST应用刷卡
 1. 在module.json5文件中声明OFFHOST特定的action，声明应用能够处理的AID，声明安全单元。
 2. 将OFFHOST应用设置为默认付款应用。
 

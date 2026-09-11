@@ -1,6 +1,6 @@
 # JSVM_PropertyHandlerConfigurationStruct
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-jsvm-jsvm-propertyhandlerconfigurationstruct
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
@@ -10,7 +10,8 @@ typedef struct {...} JSVM_PropertyHandlerConfigurationStruct
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -32,16 +33,19 @@ typedef struct {...} JSVM_PropertyHandlerConfigurationStruct
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | JSVM_Value namedPropertyData | 命名属性回调使用的数据。 |
@@ -50,10 +54,12 @@ typedef struct {...} JSVM_PropertyHandlerConfigurationStruct
  
   
 
-#### 回调函数成员
+### 回调函数成员
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | JSVM_Value (JSVM_CDECL* genericNamedPropertyGetterCallback)(JSVM_Env env,JSVM_Value name,JSVM_Value thisArg,JSVM_Value namedPropertyData) | 通过获取实例对象的命名属性而触发的回调函数。 |
@@ -68,13 +74,15 @@ typedef struct {...} JSVM_PropertyHandlerConfigurationStruct
  
   
 
-#### 回调函数成员说明
+## 回调函数成员说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
   
 
-#### genericNamedPropertyGetterCallback()
+### genericNamedPropertyGetterCallback()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -88,7 +96,8 @@ JSVM_Value (JSVM_CDECL* genericNamedPropertyGetterCallback)(JSVM_Env env,JSVM_Va
  
   
 
-#### genericNamedPropertySetterCallback()
+### genericNamedPropertySetterCallback()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -102,7 +111,8 @@ JSVM_Value (JSVM_CDECL* genericNamedPropertySetterCallback)(JSVM_Env env,JSVM_Va
  
   
 
-#### genericNamedPropertyDeleterCallback()
+### genericNamedPropertyDeleterCallback()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -116,7 +126,8 @@ JSVM_Value (JSVM_CDECL* genericNamedPropertyDeleterCallback)(JSVM_Env env,JSVM_V
  
   
 
-#### genericNamedPropertyEnumeratorCallback()
+### genericNamedPropertyEnumeratorCallback()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -130,7 +141,8 @@ JSVM_Value (JSVM_CDECL* genericNamedPropertyEnumeratorCallback)(JSVM_Env env,JSV
  
   
 
-#### genericIndexedPropertyGetterCallback()
+### genericIndexedPropertyGetterCallback()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -144,7 +156,8 @@ JSVM_Value (JSVM_CDECL* genericIndexedPropertyGetterCallback)(JSVM_Env env,JSVM_
  
   
 
-#### genericIndexedPropertySetterCallback()
+### genericIndexedPropertySetterCallback()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -158,7 +171,8 @@ JSVM_Value (JSVM_CDECL* genericIndexedPropertySetterCallback)(JSVM_Env env,JSVM_
  
   
 
-#### genericIndexedPropertyDeleterCallback()
+### genericIndexedPropertyDeleterCallback()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -172,7 +186,8 @@ JSVM_Value (JSVM_CDECL* genericIndexedPropertyDeleterCallback)(JSVM_Env env,JSVM
  
   
 
-#### genericIndexedPropertyEnumeratorCallback()
+### genericIndexedPropertyEnumeratorCallback()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 

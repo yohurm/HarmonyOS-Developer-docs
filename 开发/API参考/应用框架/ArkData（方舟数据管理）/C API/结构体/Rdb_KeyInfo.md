@@ -1,18 +1,19 @@
 # Rdb_KeyInfo
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-rdb-rdb-keyinfo
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct {...} Rdb_KeyInfo
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述发生变化的行的主键或者行号。
  
@@ -24,18 +25,21 @@ typedef struct {...} Rdb_KeyInfo
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 成员变量
+### 成员变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | int count | 表示发生变化的主键或者行号的数量。 |
-| int type | 表示主键或行号的数据类型OH_ColumnType。 |
+| int type | 表示主键或行号的类型OH_ColumnType。 |
 | Rdb_KeyData* data | 存放发生变化的具体数据。 |

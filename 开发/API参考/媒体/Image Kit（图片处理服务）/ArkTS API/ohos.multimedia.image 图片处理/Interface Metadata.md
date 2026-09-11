@@ -1,9 +1,9 @@
 # Interface (Metadata)
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-metadata
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Metadata类，用于存储图像的元数据。目前支持的元数据类型可参考[MetadataType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-e#metadatatype13)。
 
@@ -12,9 +12,10 @@ Metadata类，用于存储图像的元数据。目前支持的元数据类型可
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { image } from '@kit.ImageKit';
@@ -22,9 +23,10 @@ import { image } from '@kit.ImageKit';
 
 
 
-#### getProperties13+
+## getProperties13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getProperties(key: Array&lt;string&gt;): Promise<Record<string, string | null>>
 
@@ -36,12 +38,14 @@ getProperties(key: Array&lt;string&gt;): Promise<Record<string, string | null>>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | Array&lt;string&gt; | 是 | 要获取其值的属性的名称。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -51,6 +55,7 @@ getProperties(key: Array&lt;string&gt;): Promise<Record<string, string | null>>
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -88,9 +93,10 @@ async function GetProperties(context: Context) {
 
 
 
-#### setProperties13+
+## setProperties13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setProperties(records: Record<string, string | null>): Promise&lt;void&gt;
 
@@ -102,12 +108,14 @@ setProperties(records: Record<string, string | null>): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | records | Record<string, string \| null> | 是 | 要修改的属性和值的数组。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -117,6 +125,7 @@ setProperties(records: Record<string, string | null>): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -158,9 +167,10 @@ async function SetProperties(context: Context) {
 
 
 
-#### getAllProperties13+
+## getAllProperties13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllProperties(): Promise<Record<string, string | null>>
 
@@ -171,6 +181,7 @@ getAllProperties(): Promise<Record<string, string | null>>
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -209,9 +220,10 @@ async function GetAllProperties(context: Context) {
 
 
 
-#### clone13+
+## clone13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clone(): Promise&lt;Metadata&gt;
 
@@ -220,6 +232,7 @@ clone(): Promise&lt;Metadata&gt;
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -257,9 +270,10 @@ async function Clone(context: Context) {
 
 
 
-#### getBlob23+
+## getBlob23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBlob(): Promise&lt;ArrayBuffer&gt;
 
@@ -270,6 +284,7 @@ getBlob(): Promise&lt;ArrayBuffer&gt;
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -305,9 +320,10 @@ async function GetBlob(context: Context) {
 
 
 
-#### setBlob23+
+## setBlob23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setBlob(blob: ArrayBuffer): Promise&lt;void&gt;
 
@@ -319,12 +335,14 @@ setBlob(blob: ArrayBuffer): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | blob | ArrayBuffer | 是 | 要替换的二进制数据。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -334,6 +352,7 @@ setBlob(blob: ArrayBuffer): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

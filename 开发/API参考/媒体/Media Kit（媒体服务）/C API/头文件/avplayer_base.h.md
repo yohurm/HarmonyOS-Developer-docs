@@ -1,13 +1,14 @@
 # avplayer_base.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avplayer-base-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义AVPlayer的结构体和枚举。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | AVPlayerCallback | AVPlayerCallback | 包含了OH_AVPlayerOnInfo和OH_AVPlayerOnError回调函数指针的集合。应用需注册此结构体到OH_AVPlayer实例中，并处理回调上报的信息，保证AVPlayer的正常运行。 |
@@ -43,10 +47,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | AVPlayerState | AVPlayerState | 播放状态。 |
@@ -60,10 +66,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | typedef void (*OH_AVPlayerOnInfo)(OH_AVPlayer *player, AVPlayerOnInfoType type, int32_t extra) | OH_AVPlayerOnInfo | 收到播放器消息时调用。 从API version 12开始废弃。 |
@@ -78,10 +86,12 @@
  
   
 
-#### 变量
+### 变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | const char * OH_PLAYER_STATE | 获取播放状态的关键字，对应值类型是int32_t。 起始版本： 12 |
@@ -134,15 +144,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### AVPlayerState
+### AVPlayerState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum AVPlayerState
@@ -154,6 +166,7 @@ enum AVPlayerState
  
 **起始版本：** 11
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AV_IDLE = 0 | 空闲 |
@@ -169,9 +182,10 @@ enum AVPlayerState
  
   
 
-#### AVPlayerSeekMode
+### AVPlayerSeekMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum AVPlayerSeekMode
@@ -183,6 +197,7 @@ enum AVPlayerSeekMode
  
 **起始版本：** 11
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AV_SEEK_NEXT_SYNC = 0 | 同步到时间点之后的关键帧。 |
@@ -193,9 +208,10 @@ enum AVPlayerSeekMode
  
   
 
-#### AVPlaybackSpeed
+### AVPlaybackSpeed
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum AVPlaybackSpeed
@@ -207,6 +223,7 @@ enum AVPlaybackSpeed
  
 **起始版本：** 11
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AV_SPEED_FORWARD_0_75_X | 0.75倍速播放。 |
@@ -223,9 +240,10 @@ enum AVPlaybackSpeed
  
   
 
-#### AVPlayerOnInfoType
+### AVPlayerOnInfoType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum AVPlayerOnInfoType
@@ -243,6 +261,7 @@ OnInfo类型。
  
 **起始版本：** 11
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AV_INFO_TYPE_SEEKDONE = 0 | 跳转到对应播放位置时返回消息。 key为OH_PLAYER_SEEK_POSITION：取值类型int32_t。系统通过int32_t传递value，应用需通过int32_t获取。 |
@@ -269,9 +288,10 @@ OnInfo类型。
  
   
 
-#### AVPlayerBufferingType
+### AVPlayerBufferingType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum AVPlayerBufferingType
@@ -283,6 +303,7 @@ enum AVPlayerBufferingType
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AVPLAYER_BUFFERING_START = 1 | 缓冲开始消息。 |
@@ -293,9 +314,10 @@ enum AVPlayerBufferingType
  
   
 
-#### AVPlayerTrackSwitchMode
+### AVPlayerTrackSwitchMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum AVPlayerTrackSwitchMode
@@ -307,6 +329,7 @@ enum AVPlayerTrackSwitchMode
  
 **起始版本：** 23
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AV_TRACK_SWITCH_MODE_SMOOTH = 0 | 平滑切换轨道。 |
@@ -316,9 +339,10 @@ enum AVPlayerTrackSwitchMode
  
   
 
-#### OH_VideoOutputResult
+### OH_VideoOutputResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_VideoOutputResult
@@ -330,6 +354,7 @@ enum OH_VideoOutputResult
  
 **起始版本：** 26.0.0
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_VIDEO_OUTPUT_OK = 0 | 输出1个解码视频帧。 |
@@ -338,15 +363,17 @@ enum OH_VideoOutputResult
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AVPlayerOnInfo()
+### OH_AVPlayerOnInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_AVPlayerOnInfo)(OH_AVPlayer *player, AVPlayerOnInfoType type, int32_t extra)
@@ -358,6 +385,7 @@ typedef void (*OH_AVPlayerOnInfo)(OH_AVPlayer *player, AVPlayerOnInfoType type, 
  
 信息类型（type）和信息（extra）的对应关系如表所示。
   
+
 | 信息类型（type） | 对应的extra描述 |
 | --- | --- |
 | AV_INFO_TYPE_SEEKDONE | 跳转到对应播放位置时返回消息，extra表示跳转到的位置。 |
@@ -388,6 +416,7 @@ typedef void (*OH_AVPlayerOnInfo)(OH_AVPlayer *player, AVPlayerOnInfoType type, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -397,9 +426,10 @@ typedef void (*OH_AVPlayerOnInfo)(OH_AVPlayer *player, AVPlayerOnInfoType type, 
  
   
 
-#### OH_AVPlayerOnInfoCallback()
+### OH_AVPlayerOnInfoCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_AVPlayerOnInfoCallback)(OH_AVPlayer *player, AVPlayerOnInfoType type, OH_AVFormat* infoBody, void *userData)
@@ -413,6 +443,7 @@ typedef void (*OH_AVPlayerOnInfoCallback)(OH_AVPlayer *player, AVPlayerOnInfoTyp
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -423,9 +454,10 @@ typedef void (*OH_AVPlayerOnInfoCallback)(OH_AVPlayer *player, AVPlayerOnInfoTyp
  
   
 
-#### OH_AVPlayerOnError()
+### OH_AVPlayerOnError()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_AVPlayerOnError)(OH_AVPlayer *player, int32_t errorCode, const char *errorMsg)
@@ -443,6 +475,7 @@ typedef void (*OH_AVPlayerOnError)(OH_AVPlayer *player, int32_t errorCode, const
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -452,9 +485,10 @@ typedef void (*OH_AVPlayerOnError)(OH_AVPlayer *player, int32_t errorCode, const
  
   
 
-#### OH_AVPlayerOnErrorCallback()
+### OH_AVPlayerOnErrorCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_AVPlayerOnErrorCallback)(OH_AVPlayer *player, int32_t errorCode, const char *errorMsg, void *userData)
@@ -468,6 +502,7 @@ typedef void (*OH_AVPlayerOnErrorCallback)(OH_AVPlayer *player, int32_t errorCod
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -478,9 +513,10 @@ typedef void (*OH_AVPlayerOnErrorCallback)(OH_AVPlayer *player, int32_t errorCod
  
   
 
-#### OH_AVPlayerOnAmplitudeUpdateCallback()
+### OH_AVPlayerOnAmplitudeUpdateCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_AVPlayerOnAmplitudeUpdateCallback)(OH_AVPlayer *player, double *amplitudes, uint32_t size, void *userData)
@@ -498,6 +534,7 @@ typedef void (*OH_AVPlayerOnAmplitudeUpdateCallback)(OH_AVPlayer *player, double
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -508,9 +545,10 @@ typedef void (*OH_AVPlayerOnAmplitudeUpdateCallback)(OH_AVPlayer *player, double
  
   
 
-#### OH_AVPlayerOnSeiMessageReceivedCallback()
+### OH_AVPlayerOnSeiMessageReceivedCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_AVPlayerOnSeiMessageReceivedCallback)(OH_AVPlayer *player, OH_AVSeiMessageArray *message, int32_t playbackPosition, void *userData)
@@ -528,6 +566,7 @@ typedef void (*OH_AVPlayerOnSeiMessageReceivedCallback)(OH_AVPlayer *player, OH_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -538,9 +577,10 @@ typedef void (*OH_AVPlayerOnSeiMessageReceivedCallback)(OH_AVPlayer *player, OH_
  
   
 
-#### OH_AVPlayerPCMOutputCallback()
+### OH_AVPlayerPCMOutputCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_AVPlayerPCMOutputCallback)(OH_AVPlayer *player, OH_AVBuffer *pcmBuffer, void *userData)
@@ -558,6 +598,7 @@ typedef void (*OH_AVPlayerPCMOutputCallback)(OH_AVPlayer *player, OH_AVBuffer *p
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -567,9 +608,10 @@ typedef void (*OH_AVPlayerPCMOutputCallback)(OH_AVPlayer *player, OH_AVBuffer *p
  
   
 
-#### OH_AVPlayerPCMProcessorCallback()
+### OH_AVPlayerPCMProcessorCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_AVPlayerPCMProcessorCallback)(OH_AVPlayer *player, OH_AVBuffer *pcmBuffer, void *userData)
@@ -585,6 +627,7 @@ typedef void (*OH_AVPlayerPCMProcessorCallback)(OH_AVPlayer *player, OH_AVBuffer
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |

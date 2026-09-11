@@ -1,20 +1,20 @@
 # SIGBUS非法内存访问故障模式说明
 
-更新时间：2026-07-14 02:11:31
+更新时间：2026-09-03 02:56:00
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-cppcrash-sigbus-fault-mode
 
-#### BUS_ADRALN内存地址对齐错误
+## BUS_ADRALN内存地址对齐错误
 
  
 
-#### 根因描述
+### 根因描述
 
 SIGBUS中BUS_ADRALN表示内存地址对齐错误，该错误发生在尝试访问未对齐的内存地址时。例如访问一个4字节整数的非偶数地址。
  
  
 
-#### 问题分析思路
+### 问题分析思路
 
 此类问题，通常情况下会有如下几种可能。
  1. 结构体未对齐：使用#pragma pack或手动偏移导致成员未对齐。
@@ -24,13 +24,13 @@ SIGBUS中BUS_ADRALN表示内存地址对齐错误，该错误发生在尝试访�
  
 问题分析的步骤如下。
  1. 确认类型：确认信号为SIGBUS，错误码为BUS_ADRALN。
-2. 调用栈分析：使用[llvm-addr2line](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)工具查看崩溃点的函数调用栈，定位具体访问未对齐地址的代码位置。
+2. 调用栈分析：参考[C++堆栈解析流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)，使用llvm-addr2line工具定位具体访问未对齐地址的代码位置。
 3. 代码分析：仔细检查指针类型转换、结构体定义、内存分配方式，确认是否存在未对齐访问。
 4. 更多日志：查看完整崩溃日志文件（FatalLog），或在DevEco Studio中使用FatalLog查看功能，结合寄存器和内存映射进一步确认。
  
  
 
-#### 关键字
+### 关键字
 
 关注CppCrash故障日志中是否有如下关键字。
  
@@ -40,7 +40,7 @@ SIGBUS中BUS_ADRALN表示内存地址对齐错误，该错误发生在尝试访�
  
  
 
-#### 案例分析
+### 案例分析
 
 **案例一：主动构造BUS_ADRALN故障**
  
@@ -60,12 +60,12 @@ SIGBUS中BUS_ADRALN表示内存地址对齐错误，该错误发生在尝试访�
 
   
 ```text
-Reason:Signal:SIGBUS(BUS_ADRALN)@0x0000007f5158a251 
-Fault thread info:
-Tid:7875, Name:ppcrashanalysis
-#00 pc 0000000000028950 /data/storage/el1/bundle/libs/arm64/libentry.so(TestSigBusADRALN001(napi_env__*, napi_callback_info__*)+24)(9292a79a3a85a8e682ac2c774db1d42ff07d1ac4)
-#01 pc 0000000000062570 /system/lib64/platformsdk/libace_napi.z.so(panda::JSValueRef ArkNativeFunctionCallBack<true>(panda::JsiRuntimeCallInfo*)+236)(f017508e01b34e04b48d6447935ffa37)
-#02 pc 0000000000e86b98 /system/lib64/module/arkcompiler/stub.an(RTStub_PushCallArgsAndDispatchNative+40)
+Reason:Signal:SIGBUS(BUS_ADRALN)@<span style="color: rgb(0,0,255);">0x0000007f5158a251</span> 
+Fault thread <span style="color: rgb(80,160,79);">info:</span>
+Tid:<span style="color: rgb(0,0,255);">7875</span>, Name:ppcrashanalysis
+#<span style="color: rgb(0,0,255);">00</span> pc <span style="color: rgb(0,0,255);">0000000000028950</span> /data/storage/el1/bundle/libs/arm64/libentry.so(TestSigBusADRALN001(napi_env__*, napi_callback_info__*)+<span style="color: rgb(0,0,255);">24</span>)(<span style="color: rgb(0,0,255);">9292a79a3a85a8e682ac2c774db1d42ff07d1ac4</span>)
+#<span style="color: rgb(0,0,255);">01</span> pc <span style="color: rgb(0,0,255);">0000000000062570</span> /system/lib64/platformsdk/libace_napi.<span style="color: rgb(0,0,255);">z.so</span>(panda::JSValueRef ArkNativeFunctionCallBack<<span style="color: rgb(0,0,255);">true</span>>(panda::JsiRuntimeCallInfo*)+<span style="color: rgb(0,0,255);">236</span>)(<span style="color: rgb(0,0,255);">f017508e01b34e04b48d6447935ffa37</span>)
+#<span style="color: rgb(0,0,255);">02</span> pc 0000000000e86b98 /system/lib64/module/arkcompiler/stub.an(RTStub_PushCallArgsAndDispatchNative+<span style="color: rgb(0,0,255);">40</span>)
 ...
 ```
 
@@ -77,9 +77,9 @@ Tid:7875, Name:ppcrashanalysis
 
   
 ```text
-ault thread info:
-Tid:7875, Name:ppcrashanalysis
-#00 pc 0000000000028950 /data/storage/el1/bundle/libs/arm64/libentry.so(TestSigBusADRALN001(napi_env__*, napi_callback_info__*)+24)(9292a79a3a85a8e682ac2c774db1d42ff07d1ac4)
+Fault thread <span style="color: rgb(80,160,79);">info:</span>
+Tid:<span style="color: rgb(0,0,255);">7875</span>, Name:ppcrashanalysis
+#<span style="color: rgb(0,0,255);">00</span> pc <span style="color: rgb(0,0,255);">0000000000028950</span> /data/storage/el1/bundle/libs/arm64/libentry.so(TestSigBusADRALN001(napi_env__*, napi_callback_info__*)+<span style="color: rgb(0,0,255);">24</span>)(<span style="color: rgb(0,0,255);">9292a79a3a85a8e682ac2c774db1d42ff07d1ac4</span>)
 ...
 ```
  说明2：在第#00行代码处触发了BUS_ADRALN异常。
@@ -129,17 +129,17 @@ Tid:7875, Name:ppcrashanalysis
 
   
 ```text
-Reason:Signal:SIGBUS(BUS_ADRALN)@0x0000005ac3b0a96e 
-Fault thread info:
-Tid:8001, Name:ppcrashanalysis
-#00 pc 000000000000b96e /data/storage/el1/bundle/libs/arm64/libentry.so(9292a79a3a85a8e682ac2c774db1d42ff07d1ac4)
-#01 pc 000000000002898c /data/storage/el1/bundle/libs/arm64/libentry.so(TestSigBusADRALN002(napi_env__*, napi_callback_info__*)+32)(9292a79a3a85a8e682ac2c774db1d42ff07d1ac4)
-#02 pc 0000000000062570 /system/lib64/platformsdk/libace_napi.z.so(panda::JSValueRef ArkNativeFunctionCallBack<true>(panda::JsiRuntimeCallInfo*)+236)(f017508e01b34e04b48d6447935ffa37)
-#03 pc 0000000000e86b98 /system/lib64/module/arkcompiler/stub.an(RTStub_PushCallArgsAndDispatchNative+40)
+Reason:Signal:SIGBUS(BUS_ADRALN)@<span style="color: rgb(0,0,255);">0x0000005ac3b0a96e</span> 
+Fault thread <span style="color: rgb(80,160,79);">info:</span>
+Tid:<span style="color: rgb(0,0,255);">8001</span>, Name:ppcrashanalysis
+#<span style="color: rgb(0,0,255);">00</span> pc 000000000000b96e /data/storage/el1/bundle/libs/arm64/libentry.so(<span style="color: rgb(0,0,255);">9292a79a3a85a8e682ac2c774db1d42ff07d1ac4</span>)
+#<span style="color: rgb(0,0,255);">01</span> pc 000000000002898c /data/storage/el1/bundle/libs/arm64/libentry.so(TestSigBusADRALN002(napi_env__*, napi_callback_info__*)+<span style="color: rgb(0,0,255);">32</span>)(<span style="color: rgb(0,0,255);">9292a79a3a85a8e682ac2c774db1d42ff07d1ac4</span>)
+#<span style="color: rgb(0,0,255);">02</span> pc <span style="color: rgb(0,0,255);">0000000000062570</span> /system/lib64/platformsdk/libace_napi.<span style="color: rgb(0,0,255);">z.so</span>(panda::JSValueRef ArkNativeFunctionCallBack<<span style="color: rgb(0,0,255);">true</span>>(panda::JsiRuntimeCallInfo*)+<span style="color: rgb(0,0,255);">236</span>)(<span style="color: rgb(0,0,255);">f017508e01b34e04b48d6447935ffa37</span>)
+#<span style="color: rgb(0,0,255);">03</span> pc 0000000000e86b98 /system/lib64/module/arkcompiler/stub.an(RTStub_PushCallArgsAndDispatchNative+<span style="color: rgb(0,0,255);">40</span>)
 ...
 ```
  说明1：Reason:Signal:SIGBUS(BUS_ADRALN)@0x0000005ac3b0a96e，可以看到地址未对齐。
-2. 找到异常函数，#00栈帧 未映射到有效的代码，继续分析#01栈帧。
+2. 找到异常函数，#00栈帧未映射到有效的代码，继续分析#01栈帧。
 
   证据2：第9行为异常代码。
 
@@ -168,18 +168,18 @@ char* GetName()
 
   
 ```text
-x0(/data/storage/el1/bundle/libs/arm64/libentry.so):
-    0000005ac3b0a958 3264003564007325   "%s\05d\0d2"
-    0000005ac3b0a960 696c003832640034   "4\0d28\0li"
-    0000005ac3b0a968 6574006f732e4262   "bB.so\0te"
-    0000005ac3b0a970 5400656d616e7473   "stname\0T"
-    0000005ac3b0a978 7341726567676972   "riggerAs"
+x0(<span style="color: rgb(128,128,128);">/</span>data<span style="color: rgb(128,128,128);">/</span>storage<span style="color: rgb(128,128,128);">/</span>el1<span style="color: rgb(128,128,128);">/</span>bundle<span style="color: rgb(128,128,128);">/</span>libs<span style="color: rgb(128,128,128);">/</span>arm64<span style="color: rgb(128,128,128);">/</span>libentry.so):
+    <em>0000005ac3b0a958</em> <span style="color: rgb(80,160,79);">3264003564007325</span>   <span style="color: rgb(0,0,255);">"</span><span style="color: rgb(255,0,0);">%s</span><span style="color: rgb(181,106,1);">\05</span><span style="color: rgb(0,0,255);">d</span><span style="color: rgb(181,106,1);">\0</span><span style="color: rgb(0,0,255);">d2"</span>
+    <em>0000005ac3b0a960</em> <em>696c003832640034</em>   <span style="color: rgb(0,0,255);">"4</span><span style="color: rgb(181,106,1);">\0</span><span style="color: rgb(0,0,255);">d28</span><span style="color: rgb(181,106,1);">\0</span><span style="color: rgb(0,0,255);">li"</span>
+    <em>0000005ac3b0a968</em> <em>6574006f732e4262</em>   <span style="color: rgb(0,0,255);">"bB.so</span><span style="color: rgb(181,106,1);">\0</span><span style="color: rgb(0,0,255);">te"</span>
+    <em>0000005ac3b0a970</em> <em>5400656d616e7473</em>   <span style="color: rgb(0,0,255);">"stname</span><span style="color: rgb(181,106,1);">\0</span><span style="color: rgb(0,0,255);">T"</span>
+    <em>0000005ac3b0a978</em> <span style="color: rgb(80,160,79);">7341726567676972</span>   <span style="color: rgb(0,0,255);">"riggerAs"</span>
 ```
  说明3：由于0x0000005ac3b0a96e上是普通字符，无法被当时可执行代码，GetName调用方式异常，触发了异常。
  
  
 
-#### 常见易错代码预防建议
+### 常见易错代码预防建议
 
 针对BUS_ADRALN导致的崩溃，可以参考[稳定性编码规范](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-coding-standard)，通过标准化编码降低系统故障率。
  
@@ -187,34 +187,34 @@ x0(/data/storage/el1/bundle/libs/arm64/libentry.so):
  
  
 
-#### BUS_OBJERR对象访问错误
+## BUS_OBJERR对象访问错误
 
  
 
-#### 根因描述
+### 根因描述
 
 SIGBUS BUS_OBJERR类型的Native崩溃，根本原因在于程序访问的内存区域所依赖的底层物理对象（如文件）出现了无法恢复的硬件或逻辑错误。
  
  
 
-#### 问题分析思路
+### 问题分析思路
 
 对于SIGBUS BUS_OBJERR类型的崩溃，通常情况下可能由以下原因导致：
- 1. 内存映射文件截断：文件被mmap映射后又被其他进程截断（ftruncate），导致访问映射区域中超出文件新大小的部分时触发此错误。因为进程的虚拟地址仍存在，但支撑它的文件内容已消失，操作系统需用 BUS_OBJERR 来区分普通的无效内存访问。
+ 1. 内存映射文件截断：文件被mmap映射后又被其他进程截断（ftruncate），导致访问映射区域中超出文件新大小的部分时触发此错误。因为进程的虚拟地址仍存在，但支撑它的文件内容已消失，操作系统需用BUS_OBJERR来区分普通的无效内存访问。
 2. 内存映射I/O（MMIO）错误：直接访问硬件寄存器时若方式不当（如读取未就绪的状态寄存器），硬件总线会拒绝访问并触发异常。
-3. 系统资源限制：内核在处理缺页异常时，可能因资源限制而发送 BUS_OBJERR 信号给进程。
+3. 系统资源限制：内核在处理缺页异常时，可能因资源限制而发送BUS_OBJERR信号给进程。
  
 
  
 问题分析的步骤如下：
  1. **确认类型：**首先确认崩溃信号是否为SIGBUS，且si_code是否为BUS_OBJERR，这直接指明了问题的性质。重点关注**访问出错的地址** (fault addr) 和**导致崩溃的代码位置**（backtrace)，这是定位问题的物理出发点。
 2. **调用栈分析：**找到异常内存访问的调用栈，根据栈帧崩溃文件名，转到业务代码栈帧去查看崩溃的函数。
-3. **代码分析：**通过[llvm-addr2line](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-app-crash-cpp-way#section14952241528)工具，结合调用栈文件和地址偏移，找到具体业务代码行。根据代码上下文，分析其中可能存在的逻辑问题，从崩溃点出发逆向分析，数据从何而来，是否涉及mmap映射，对应的文件是否存在并发修改等问题。
+3. **代码分析：**参考[C++堆栈解析流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)，使用llvm-addr2line工具结合调用栈文件和地址偏移，找到具体业务代码行。根据代码上下文，分析其中可能存在的逻辑问题，从崩溃点出发逆向分析，数据从何而来，是否涉及mmap映射，对应的文件是否存在并发修改等问题。
 4. **更多日志：**结合崩溃日志文件中的其他信息，以及hilog日志，还原更多故障现场信息，进行定位。
  
  
 
-#### 关键字
+### 关键字
 
 关注CppCrash故障日志中是否有如下关键字。
  
@@ -224,7 +224,7 @@ SIGBUS BUS_OBJERR类型的Native崩溃，根本原因在于程序访问的内存
  
  
 
-#### 案例分析
+### 案例分析
 
 **案例一：mmap映射访问越界**
  
@@ -268,7 +268,7 @@ Process name:com.example.dfx_test
 Process life time:18s
 Process Memory(kB): 200232(Rss)
 Device Memory(kB): Total 15834760, Free 3808892, Available 8742912
-<strong>Reason:Signal:SIGBUS(BUS_OBJERR)@0x0000005a42159400 </strong>
+<strong><span style="color: rgb(255,0,0);">Reason:Signal:SIGBUS(BUS_OBJERR)@0x0000005a42159400 </span></strong>
 Fault thread info:
 Tid:46522, Name:ppcrashanalysis
 #00 pc 00000000000f2f5c /data/storage/el1/bundle/libs/arm64/libentry.so(AccessMmapOverFlow()+408)(abb4b46e70f623a009bd903f7972ff26d4d14792)
@@ -303,7 +303,7 @@ pstate:0000000060001000 esr:0000000092000047
 ```ArkTS
 Fault thread info:
 Tid:46522, Name:ppcrashanalysis
-#00 pc 00000000000f2f5c /data/storage/el1/bundle/libs/arm64/libentry.so(AccessMmapOverFlow()+408)(abb4b46e70f623a009bd903f7972ff26d4d14792) --> 业务栈帧，访问出错位置
+<span style="color: rgb(255,0,0);">#00 pc 00000000000f2f5c /data/storage/el1/bundle/libs/arm64/libentry.so(AccessMmapOverFlow()+408)(abb4b46e70f623a009bd903f7972ff26d4d14792) --</span><span style="color: rgb(255,0,0);">></span><span style="color: rgb(255,0,0);"> 业务栈帧，访问出错位置</span>
 #01 pc 00000000000f2fe4 /data/storage/el1/bundle/libs/arm64/libentry.so(TriggerStackAlignObjerr(napi_env__*, napi_callback_info__*)+36)(abb4b46e70f623a009bd903f7972ff26d4d14792)
 #02 pc 0000000000067c90 /system/lib64/platformsdk/libace_napi.z.so(panda::JSValueRef ArkNativeFunctionCallBack<true>(panda::JsiRuntimeCallInfo*)+288)(76bc1ed675edcc5f429a976d6c9b955d)
 #03 pc 0000000000e179f4 /system/lib64/module/arkcompiler/stub.an(RTStub_PushCallArgsAndDispatchNative+40)
@@ -311,10 +311,10 @@ Tid:46522, Name:ppcrashanalysis
 #05 at anonymous entry (entry/src/main/ets/pages/page_second/page_third_cppcrash/cppcrash_sigbus.ets:294:30)
 ...
 ```
- 说明3：通常认为标准库、系统so较为稳定，因此优先分析崩溃栈帧中的业务部分调用栈。
+ 说明2：通常认为标准库、系统so较为稳定，因此优先分析崩溃栈帧中的业务部分调用栈。
 3. 找到上下文。
 
-  使用[llvm-addr2line](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-app-crash-cpp-way#section14952241528)工具定位行号，通常用法为llvm-addr2line -Cfie libentry.so 00000000000f2f5c，即可定位到行号，so为带符号版本。
+  参考[C++堆栈解析流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)使用llvm-addr2line工具定位行号，通常用法为llvm-addr2line -Cfie libentry.so 00000000000f2f5c，即可定位到行号，so为带符号版本。
 
   证据3：从上往下跳过C库的调用栈，找到内存访问出错的调用栈（#01层调用栈）。
 
@@ -383,7 +383,7 @@ napi_value AccessMmapOverFlow(napi_env env, napi_callback_info info)
  
 **问题现象**
  
-一个多线程日志缓存服务使用内存映射文件作为底层存储。**线程**** A（写入线程）**不断将日志记录追加写入映射文件的末尾区域；**线程**** B（维护线程）**定期对文件进行“截断清理”，删除过期的旧日志（即缩小文件大小）。
+一个多线程日志缓存服务使用内存映射文件作为底层存储。**线程A（写入线程）**不断将日志记录追加写入映射文件的末尾区域；**线程B（维护线程）**定期对文件进行“截断清理”，删除过期的旧日志（即缩小文件大小）。
  
 触发业务代码调用后，应用触发退出，并生成崩溃文件。
  
@@ -424,7 +424,7 @@ Process name:com.example.dfx_test
 Process life time:10s
 Process Memory(kB): 196825(Rss)
 Device Memory(kB): Total 15834760, Free 3105120, Available 8151040
-<strong>Reason:Signal:SIGBUS(BUS_OBJERR)@0x0000005a420d3400 </strong>
+<strong><span style="color: rgb(255,0,0);">Reason:Signal:SIGBUS(BUS_OBJERR)@0x0000005a420d3400 </span></strong>
 Fault thread info:
 Tid:13805, Name:ppcrashanalysis
 #00 pc 00000000001005f0 /data/storage/el1/bundle/libs/arm64/libentry.so(6d07e50b6b7cb781f587f7587a4b658b5fe2576d)
@@ -460,7 +460,7 @@ Tid:12877, Name:ppcrashanalysis
 ```text
 Fault thread info:
 Tid:13805, Name:ppcrashanalysis
-#00 pc 00000000001005f0 /data/storage/el1/bundle/libs/arm64/libentry.so(6d07e50b6b7cb781f587f7587a4b658b5fe2576d) --> 业务栈帧，访问出错位置
+<span style="color: rgb(255,0,0);">#00 pc 00000000001005f0 /data/storage/el1/bundle/libs/arm64/libentry.so(6d07e50b6b7cb781f587f7587a4b658b5fe2576d) --</span><span style="color: rgb(255,0,0);">></span><span style="color: rgb(255,0,0);"> 业务栈帧，访问出错位置</span>
 #01 pc 0000000000100548 /data/storage/el1/bundle/libs/arm64/libentry.so(6d07e50b6b7cb781f587f7587a4b658b5fe2576d)
 #02 pc 0000000000100524 /data/storage/el1/bundle/libs/arm64/libentry.so(6d07e50b6b7cb781f587f7587a4b658b5fe2576d)
 #03 pc 00000000001002fc /data/storage/el1/bundle/libs/arm64/libentry.so(6d07e50b6b7cb781f587f7587a4b658b5fe2576d)
@@ -469,7 +469,7 @@ Tid:13805, Name:ppcrashanalysis
  说明3：通常认为标准库、系统侧so较为稳定，因此优先分析崩溃栈帧中的业务部分调用栈。
 3. 找到上下文。
 
-  使用[llvm-addr2line](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-app-crash-cpp-way#section14952241528)定位行号，通常用法为llvm-addr2line -Cfie libentry.so 000000000001005f0，即可定位到行号，so为带符号版本。
+  参考[C++堆栈解析流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)使用llvm-addr2line工具定位行号，通常用法为llvm-addr2line -Cfie libentry.so 000000000001005f0，即可定位到行号，so为带符号版本。
 
   证据3：从上往下跳过C库的调用栈，找到内存访问出错的调用栈，对应#00层调用栈。
 
@@ -480,7 +480,7 @@ napi_value AccessMemWithoutCheck(napi_env env, napi_callback_info info)
     const char* fileName = "/data/storage/el2/log/sigbustest";
     size_t mapSize = 4096 * 2;
     size_t truncateSize = 4096;
-    
+
     // 1. Create and fill a file (O_SYNC reduces cache latency)
     int fd = open(fileName, O_RDWR | O_CREAT | O_TRUNC | O_SYNC, 0666); // 0666 : -rw-rw-rw-
     if (fd < 0) {
@@ -489,7 +489,7 @@ napi_value AccessMemWithoutCheck(napi_env env, napi_callback_info info)
     }
     ftruncate(fd, mapSize);
     close(fd);
-    
+
     // Thread A: simulate log writing thread.
     std::thread writer([=] () {
         int fd = open(fileName, O_RDWR);
@@ -503,8 +503,8 @@ napi_value AccessMemWithoutCheck(napi_env env, napi_callback_info info)
         }
         munmap(addr, mapSize);
     });
-    
-    // Thread B: simulate the log clearing thread and continuously truncates the file to tuncated size.
+
+    // Thread B: simulate the log clearing thread and continuously truncates the file to truncated size.
     std::thread cleaner([=] () {
         while (true) {
             int fd = open(fileName, O_RDWR);
@@ -512,7 +512,7 @@ napi_value AccessMemWithoutCheck(napi_env env, napi_callback_info info)
             close(fd);
         }
     });
-    
+
     writer.join();
     cleaner.join();
     return nullptr;
@@ -525,7 +525,7 @@ napi_value AccessMemWithoutCheck(napi_env env, napi_callback_info info)
  
 **问题结论与总结**
  
-由于两个线程没有加任何同步，当写入线程在文件被截断后依然尝试写入原本有效但已被截断的地址时，就会触发 SIGBUS BUS_OBJERR 崩溃。
+由于两个线程没有加任何同步，当写入线程在文件被截断后依然尝试写入原本有效但已被截断的地址时，就会触发SIGBUS BUS_OBJERR崩溃。
  
 
  
@@ -601,7 +601,7 @@ napi_value AccessMemWithCheck(napi_env env, napi_callback_info info)
 ```
  
 
-#### 常见易错代码预防建议
+### 常见易错代码预防建议
 
 **文件访问和操作需要做长度校验**
  
@@ -616,7 +616,7 @@ int CorrectMmapUsage()
         std::cout << "Open failed, errno: " << errno << std::endl;
         return -1;
     }
-    
+
     // set file size
     size_t fileSize = 1024;
     if (ftruncate(fd, fileSize) != 0) {
@@ -624,7 +624,7 @@ int CorrectMmapUsage()
         close(fd);
         return -1;
     }
-    
+
     // get file size actually (double check)
     struct stat st;
     if (fstat(fd, &st) != 0) {
@@ -633,17 +633,17 @@ int CorrectMmapUsage()
         return -1;
     }
     fileSize = st.st_size;
-    
-    // The mapped area dose not exceed the file size.
+
+    // The mapped area does not exceed the file size.
     size_t mapSize = fileSize;
     void* mapped = mmap(nullptr, mapSize, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
     close(fd);
-    
+
     if (mapped == MAP_FAILED) {
         std::cout << "mmap failed, errno: " << errno << std::endl;
         return -1;
     }
-    
+
     // Checking whether the access offset is valid before the access.
     size_t accessOffset = 100;
     if (accessOffset < fileSize) {
@@ -653,7 +653,7 @@ int CorrectMmapUsage()
     } else {
         std::cout << "Access offset " << accessOffset << " exceeds file size " << fileSize << std::endl;
     }
-    
+
     munmap(mapped, mapSize);
     return 0;
 }

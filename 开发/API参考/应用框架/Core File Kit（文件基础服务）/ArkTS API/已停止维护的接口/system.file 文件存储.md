@@ -1,6 +1,6 @@
 # @system.file (文件存储)
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-system-file
 **支持设备：** Wearable | lite_wearable
@@ -14,7 +14,8 @@
 2. internal://app/为固定前缀，表示应用根目录，xxx为开发者自行创建的目录或文件名。
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -24,13 +25,15 @@ import file from '@system.file';
  
   
 
-#### File
+## File
+
 
 **支持设备：** Wearable | lite_wearable
 
   
 
-#### move
+### move
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -46,6 +49,7 @@ static move(options: FileMoveOption): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | FileMoveOption | 是 | 文件移动选项。 |
@@ -136,7 +140,8 @@ export default {
  
   
 
-#### copy
+### copy
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -152,6 +157,7 @@ static copy(options: FileCopyOption): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | FileCopyOption | 是 | 文件拷贝选项。 |
@@ -242,7 +248,8 @@ export default {
  
   
 
-#### list
+### list
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -258,6 +265,7 @@ static list(options: FileListOption): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | FileListOption | 是 | 获取指定路径下全部文件的列表选项。 |
@@ -346,7 +354,8 @@ export default {
  
   
 
-#### get
+### get
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -362,6 +371,7 @@ static get(options: FileGetOption): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | FileGetOption | 是 | 获取指定本地文件的信息选项。 |
@@ -450,7 +460,8 @@ export default {
  
   
 
-#### delete
+### delete
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -466,6 +477,7 @@ static delete(options: FileDeleteOption): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | FileDeleteOption | 是 | 删除本地文件选项。 |
@@ -554,7 +566,8 @@ export default {
  
   
 
-#### writeText
+### writeText
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -570,6 +583,7 @@ static writeText(options: FileWriteTextOption): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | FileWriteTextOption | 是 | 写文本内容到指定文件选项。 |
@@ -660,7 +674,8 @@ export default {
  
   
 
-#### writeArrayBuffer
+### writeArrayBuffer
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -676,6 +691,7 @@ static writeArrayBuffer(options: FileWriteArrayBufferOption): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | FileWriteArrayBufferOption | 是 | 写Buffer内容到指定文件选项。 |
@@ -766,7 +782,8 @@ export default {
  
   
 
-#### readText
+### readText
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -782,6 +799,7 @@ static readText(options: FileReadTextOption): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | FileReadTextOption | 是 | 从指定文件中读取文本内容选项。 |
@@ -870,7 +888,8 @@ export default {
  
   
 
-#### readArrayBuffer
+### readArrayBuffer
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -886,6 +905,7 @@ static readArrayBuffer(options: FileReadArrayBufferOption): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | FileReadArrayBufferOption | 是 | 从指定文件中读取Buffer内容选项。 |
@@ -978,7 +998,8 @@ export default {
  
   
 
-#### access
+### access
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -994,6 +1015,7 @@ static access(options: FileAccessOption): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | FileAccessOption | 是 | 判断指定文件或目录是否存在选项。 |
@@ -1082,7 +1104,8 @@ export default {
  
   
 
-#### mkdir
+### mkdir
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1098,6 +1121,7 @@ static mkdir(options: FileMkdirOption): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | FileMkdirOption | 是 | 创建指定目录选项。 |
@@ -1186,7 +1210,8 @@ export default {
  
   
 
-#### rmdir
+### rmdir
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1202,6 +1227,7 @@ static rmdir(options: FileRmdirOption): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | FileRmdirOption | 是 | 删除指定目录选项。 |
@@ -1290,7 +1316,8 @@ export default {
  
   
 
-#### FileResponse
+## FileResponse
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1298,6 +1325,7 @@ export default {
  
 **系统能力**：SystemCapability.FileManagement.File.FileIO.Lite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | uri | string | 否 | 否 | 文件的URI。 |
@@ -1309,7 +1337,8 @@ export default {
  
   
 
-#### FileListResponse
+## FileListResponse
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1317,6 +1346,7 @@ export default {
  
 **系统能力**：SystemCapability.FileManagement.File.FileIO.Lite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | fileList | Array&lt;FileResponse&gt; | 否 | 否 | 获取的文件列表，其中每个文件的信息的格式为： { uri:'file1', lastModifiedTime:1589965924479, length:10240, type: 'file' } |
@@ -1324,7 +1354,8 @@ export default {
  
   
 
-#### FileReadTextResponse
+## FileReadTextResponse
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1332,6 +1363,7 @@ export default {
  
 **系统能力**：SystemCapability.FileManagement.File.FileIO.Lite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | text | string | 否 | 否 | 读取到的文本内容。 |
@@ -1339,7 +1371,8 @@ export default {
  
   
 
-#### FileReadArrayBufferResponse
+## FileReadArrayBufferResponse
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1347,6 +1380,7 @@ export default {
  
 **系统能力**：SystemCapability.FileManagement.File.FileIO.Lite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | buffer | Uint8Array | 否 | 否 | 读取到的文件内容。 |
@@ -1354,7 +1388,8 @@ export default {
  
   
 
-#### FileMoveOption
+## FileMoveOption
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1362,6 +1397,7 @@ export default {
  
 **系统能力**：SystemCapability.FileManagement.File.FileIO.Lite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | srcUri | string | 否 | 否 | 要移动的文件的URI。由于轻量级穿戴设备底层文件系统的限制，该值必须满足以下要求： 1. URI 中不得包含以下特殊字符：\"*+,:;<=>?[]\ |
@@ -1373,7 +1409,8 @@ export default {
  
   
 
-#### FileCopyOption
+## FileCopyOption
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1381,6 +1418,7 @@ export default {
  
 **系统能力**：SystemCapability.FileManagement.File.FileIO.Lite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | srcUri | string | 否 | 否 | 要拷贝的文件的URI。由于轻量级穿戴设备底层文件系统的限制，该值必须满足以下要求： 1. URI 中不得包含以下特殊字符：\"*+,:;<=>?[]\ |
@@ -1392,7 +1430,8 @@ export default {
  
   
 
-#### FileListOption
+## FileListOption
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1400,6 +1439,7 @@ export default {
  
 **系统能力**：SystemCapability.FileManagement.File.FileIO.Lite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | uri | string | 否 | 否 | 目录URI。由于轻量级穿戴设备底层文件系统的限制，该值必须满足以下要求： 1. URI 中不得包含以下特殊字符：\"*+,:;<=>?[]\ |
@@ -1410,7 +1450,8 @@ export default {
  
   
 
-#### FileGetOption
+## FileGetOption
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1418,6 +1459,7 @@ export default {
  
 **系统能力**：SystemCapability.FileManagement.File.FileIO.Lite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | uri | string | 否 | 否 | 文件的URI。由于轻量级穿戴设备底层文件系统的限制，该值必须满足以下要求： 1. URI 中不得包含以下特殊字符：\"*+,:;<=>?[]\ |
@@ -1429,7 +1471,8 @@ export default {
  
   
 
-#### FileDeleteOption
+## FileDeleteOption
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1437,6 +1480,7 @@ export default {
  
 **系统能力**：SystemCapability.FileManagement.File.FileIO.Lite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | uri | string | 否 | 否 | 删除文件的URI，不能是应用资源路径。由于轻量级穿戴设备底层文件系统的限制，该值必须满足以下要求： 1. URI 中不得包含以下特殊字符：\"*+,:;<=>?[]\ |
@@ -1447,7 +1491,8 @@ export default {
  
   
 
-#### FileWriteTextOption
+## FileWriteTextOption
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1455,6 +1500,7 @@ export default {
  
 **系统能力**：SystemCapability.FileManagement.File.FileIO.Lite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | uri | string | 否 | 否 | 本地文件URI，如果文件不存在会创建文件。由于轻量级穿戴设备底层文件系统的限制，该值必须满足以下要求： 1. URI 中不得包含以下特殊字符：\"*+,:;<=>?[]\ |
@@ -1468,7 +1514,8 @@ export default {
  
   
 
-#### FileWriteArrayBufferOption
+## FileWriteArrayBufferOption
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1476,6 +1523,7 @@ export default {
  
 **系统能力**：SystemCapability.FileManagement.File.FileIO.Lite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | uri | string | 否 | 否 | 本地文件URI，如果文件不存在会创建文件。由于轻量级穿戴设备底层文件系统的限制，该值必须满足以下要求： 1. URI 中不得包含以下特殊字符：\"*+,:;<=>?[]\ |
@@ -1489,7 +1537,8 @@ export default {
  
   
 
-#### FileReadTextOption
+## FileReadTextOption
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1497,6 +1546,7 @@ export default {
  
 **系统能力**：SystemCapability.FileManagement.File.FileIO.Lite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | uri | string | 否 | 否 | 本地文件URI。由于轻量级穿戴设备底层文件系统的限制，该值必须满足以下要求： 1. URI 中不得包含以下特殊字符：\"*+,:;<=>?[]\ |
@@ -1510,7 +1560,8 @@ export default {
  
   
 
-#### FileReadArrayBufferOption
+## FileReadArrayBufferOption
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1518,6 +1569,7 @@ export default {
  
 **系统能力**：SystemCapability.FileManagement.File.FileIO.Lite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | uri | string | 否 | 否 | 本地文件URI。由于轻量级穿戴设备底层文件系统的限制，该值必须满足以下要求： 1. URI 中不得包含以下特殊字符：\"*+,:;<=>?[]\ |
@@ -1530,7 +1582,8 @@ export default {
  
   
 
-#### FileAccessOption
+## FileAccessOption
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1538,6 +1591,7 @@ export default {
  
 **系统能力**：SystemCapability.FileManagement.File.FileIO.Lite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | uri | string | 否 | 否 | 目录或文件URI。由于轻量级穿戴设备底层文件系统的限制，该值必须满足以下要求： 1. URI 中不得包含以下特殊字符：\"*+,:;<=>?[]\ |
@@ -1548,7 +1602,8 @@ export default {
  
   
 
-#### FileMkdirOption
+## FileMkdirOption
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1556,6 +1611,7 @@ export default {
  
 **系统能力**：SystemCapability.FileManagement.File.FileIO.Lite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | uri | string | 否 | 否 | 目录URI。由于轻量级穿戴设备底层文件系统的限制，该值必须满足以下要求： 1. URI 中不得包含以下特殊字符：\"*+,:;<=>?[]\ |
@@ -1567,7 +1623,8 @@ export default {
  
   
 
-#### FileRmdirOption
+## FileRmdirOption
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1575,6 +1632,7 @@ export default {
  
 **系统能力**：SystemCapability.FileManagement.File.FileIO.Lite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | uri | string | 否 | 否 | 目录URI。由于轻量级穿戴设备底层文件系统的限制，该值必须满足以下要求： 1. URI 中不得包含以下特殊字符：\"*+,:;<=>?[]\ |

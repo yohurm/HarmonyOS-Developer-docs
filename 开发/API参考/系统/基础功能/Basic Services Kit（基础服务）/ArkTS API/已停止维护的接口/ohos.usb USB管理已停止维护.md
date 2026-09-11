@@ -1,6 +1,6 @@
 # @ohos.usb (USB管理)
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-usb-deprecated
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -12,7 +12,8 @@
 
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -22,7 +23,8 @@ import usb from "@ohos.usb";
  
   
 
-#### usb.getDevices
+## usb.getDevices
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -34,6 +36,7 @@ getDevices(): Array<Readonly&lt;USBDevice&gt;>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Array<Readonly&lt;USBDevice&gt;> | 设备信息列表。 |
@@ -100,7 +103,8 @@ console.info(`devicesList = ${devicesList}`);
  
   
 
-#### usb.connectDevice
+## usb.connectDevice
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -114,6 +118,7 @@ connectDevice(device: USBDevice): Readonly&lt;USBDevicePipe&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | device | USBDevice | 是 | USB设备信息。 |
@@ -121,6 +126,7 @@ connectDevice(device: USBDevice): Readonly&lt;USBDevicePipe&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Readonly&lt;USBDevicePipe&gt; | 指定的传输通道对象。 |
@@ -135,7 +141,8 @@ console.info(`devicepipe = ${devicepipe}`);
  
   
 
-#### usb.hasRight
+## usb.hasRight
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -147,6 +154,7 @@ hasRight(deviceName: string): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceName | string | 是 | 设备名称。 |
@@ -154,6 +162,7 @@ hasRight(deviceName: string): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | true表示有访问设备的权限，false表示没有访问设备的权限。 |
@@ -169,7 +178,8 @@ console.info(`hasRight = ${bool}`);
  
   
 
-#### usb.requestRight
+## usb.requestRight
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -181,6 +191,7 @@ requestRight(deviceName: string): Promise&lt;boolean&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceName | string | 是 | 设备名称。 |
@@ -188,6 +199,7 @@ requestRight(deviceName: string): Promise&lt;boolean&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象，返回临时权限的申请结果。返回true表示临时权限申请成功；返回false则表示临时权限申请失败。 |
@@ -204,7 +216,8 @@ usb.requestRight(devicesName).then((ret) => {
  
   
 
-#### usb.claimInterface
+## usb.claimInterface
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -218,6 +231,7 @@ claimInterface(pipe: USBDevicePipe, iface: USBInterface, force ?: boolean): numb
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pipe | USBDevicePipe | 是 | 用于确定总线号和设备地址。 |
@@ -227,6 +241,7 @@ claimInterface(pipe: USBDevicePipe, iface: USBInterface, force ?: boolean): numb
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 注册通信接口成功返回0；注册通信接口失败返回其他错误码。 |
@@ -241,7 +256,8 @@ console.info(`claimInterface = ${ret}`);
  
   
 
-#### usb.releaseInterface
+## usb.releaseInterface
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -255,6 +271,7 @@ releaseInterface(pipe: USBDevicePipe, iface: USBInterface): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pipe | USBDevicePipe | 是 | 用于确定总线号和设备地址。 |
@@ -263,6 +280,7 @@ releaseInterface(pipe: USBDevicePipe, iface: USBInterface): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 释放接口成功返回0；释放接口失败返回其他错误码。 |
@@ -277,7 +295,8 @@ console.info(`releaseInterface = ${ret}`);
  
   
 
-#### usb.setConfiguration
+## usb.setConfiguration
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -291,6 +310,7 @@ setConfiguration(pipe: USBDevicePipe, config: USBConfig): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pipe | USBDevicePipe | 是 | 用于确定总线号和设备地址。 |
@@ -299,6 +319,7 @@ setConfiguration(pipe: USBDevicePipe, config: USBConfig): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 设置设备配置成功返回0；设置设备配置失败返回其他错误码。 |
@@ -313,7 +334,8 @@ console.info(`setConfiguration = ${ret}`);
  
   
 
-#### usb.setInterface
+## usb.setInterface
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -327,6 +349,7 @@ setInterface(pipe: USBDevicePipe, iface: USBInterface): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pipe | USBDevicePipe | 是 | 用于确定总线号和设备地址。 |
@@ -335,6 +358,7 @@ setInterface(pipe: USBDevicePipe, iface: USBInterface): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 设置设备接口成功返回0；设置设备接口失败返回其他错误码。 |
@@ -349,7 +373,8 @@ console.info(`setInterface = ${ret}`);
  
   
 
-#### usb.getRawDescriptor
+## usb.getRawDescriptor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -363,6 +388,7 @@ getRawDescriptor(pipe: USBDevicePipe): Uint8Array
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pipe | USBDevicePipe | 是 | 用于确定总线号和设备地址。 |
@@ -370,6 +396,7 @@ getRawDescriptor(pipe: USBDevicePipe): Uint8Array
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Uint8Array | 返回获取的原始数据；失败返回undefined。 |
@@ -383,7 +410,8 @@ let ret = usb.getRawDescriptor(devicepipe);
  
   
 
-#### usb.getFileDescriptor
+## usb.getFileDescriptor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -397,6 +425,7 @@ getFileDescriptor(pipe: USBDevicePipe): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pipe | USBDevicePipe | 是 | 用于确定总线号和设备地址。 |
@@ -404,6 +433,7 @@ getFileDescriptor(pipe: USBDevicePipe): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回设备对应的文件描述符；失败返回-1。 |
@@ -417,7 +447,8 @@ let ret = usb.getFileDescriptor(devicepipe);
  
   
 
-#### usb.controlTransfer
+## usb.controlTransfer
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -431,6 +462,7 @@ controlTransfer(pipe: USBDevicePipe, controlparam: USBControlParams, timeout ?: 
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pipe | USBDevicePipe | 是 | 用于确定设备。 |
@@ -440,6 +472,7 @@ controlTransfer(pipe: USBDevicePipe, controlparam: USBControlParams, timeout ?: 
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象，获取传输或接收到的数据块大小。失败返回-1。 |
@@ -463,7 +496,8 @@ usb.controlTransfer(devicepipe, param).then((ret) => {
  
   
 
-#### usb.bulkTransfer
+## usb.bulkTransfer
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -477,6 +511,7 @@ bulkTransfer(pipe: USBDevicePipe, endpoint: USBEndpoint, buffer: Uint8Array, tim
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pipe | USBDevicePipe | 是 | 用于确定设备。 |
@@ -487,6 +522,7 @@ bulkTransfer(pipe: USBDevicePipe, endpoint: USBEndpoint, buffer: Uint8Array, tim
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象，获取传输或接收到的数据块大小。失败返回-1。 |
@@ -505,7 +541,8 @@ usb.bulkTransfer(devicepipe, endpoint, buffer).then((ret) => {
  
   
 
-#### usb.closePipe
+## usb.closePipe
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -519,6 +556,7 @@ closePipe(pipe: USBDevicePipe): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pipe | USBDevicePipe | 是 | 用于确定USB设备消息控制通道。 |
@@ -526,6 +564,7 @@ closePipe(pipe: USBDevicePipe): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 关闭设备消息控制通道成功返回0；关闭设备消息控制通道失败返回其他错误码。 |
@@ -540,7 +579,8 @@ console.info(`closePipe = ${ret}`);
  
   
 
-#### USBEndpoint
+## USBEndpoint
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -548,6 +588,7 @@ console.info(`closePipe = ${ret}`);
  
 **系统能力：** SystemCapability.USB.USBManager
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | address | number | 是 | 端点地址。 |
@@ -562,7 +603,8 @@ console.info(`closePipe = ${ret}`);
  
   
 
-#### USBInterface
+## USBInterface
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -570,6 +612,7 @@ console.info(`closePipe = ${ret}`);
  
 **系统能力：** SystemCapability.USB.USBManager
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | number | 是 | 接口的唯一标识。 |
@@ -583,7 +626,8 @@ console.info(`closePipe = ${ret}`);
  
   
 
-#### USBConfig
+## USBConfig
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -591,20 +635,22 @@ USB配置，一个[USBDevice](#usbdevice)中可以含有多个配置。
  
 **系统能力：** SystemCapability.USB.USBManager
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | number | 是 | 配置的唯一标识。 |
 | attributes | number | 是 | 配置的属性。 |
 | maxPower | number | 是 | 最大功耗，以毫安为单位。 |
 | name | string | 是 | 配置的名称，可以为空。 |
-| isRemoteWakeup | boolean | 是 | 检查当前配置是否支持远程唤醒。 |
-| isSelfPowered | boolean | 是 | 检查当前配置是否支持独立电源。 |
+| isRemoteWakeup | boolean | 是 | 检查当前配置是否支持远程唤醒。true表示支持，false表示不支持。 |
+| isSelfPowered | boolean | 是 | 检查当前配置是否支持独立电源。true表示支持，false表示不支持。 |
 | interfaces | Array &lt;USBInterface&gt; | 是 | 配置支持的接口属性。 |
  
  
   
 
-#### USBDevice
+## USBDevice
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -612,6 +658,7 @@ USB设备信息。
  
 **系统能力：** SystemCapability.USB.USBManager
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | busNum | number | 是 | 总线地址。 |
@@ -631,7 +678,8 @@ USB设备信息。
  
   
 
-#### USBDevicePipe
+## USBDevicePipe
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -639,6 +687,7 @@ USB设备消息传输通道，用于确定设备。
  
 **系统能力：** SystemCapability.USB.USBManager
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | busNum | number | 是 | 总线地址。 |
@@ -647,7 +696,8 @@ USB设备消息传输通道，用于确定设备。
  
   
 
-#### USBControlParams
+## USBControlParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -655,6 +705,7 @@ USB设备消息传输通道，用于确定设备。
  
 **系统能力：** SystemCapability.USB.USBManager
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | number | 是 | 请求类型。 |
@@ -667,7 +718,8 @@ USB设备消息传输通道，用于确定设备。
  
   
 
-#### USBRequestTargetType
+## USBRequestTargetType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -675,6 +727,7 @@ USB设备消息传输通道，用于确定设备。
  
 **系统能力：** SystemCapability.USB.USBManager
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | USB_REQUEST_TARGET_DEVICE | 0 | 设备。 |
@@ -685,7 +738,8 @@ USB设备消息传输通道，用于确定设备。
  
   
 
-#### USBControlRequestType
+## USBControlRequestType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -693,6 +747,7 @@ USB设备消息传输通道，用于确定设备。
  
 **系统能力：** SystemCapability.USB.USBManager
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | USB_REQUEST_TYPE_STANDARD | 0 | 标准。 |
@@ -702,7 +757,8 @@ USB设备消息传输通道，用于确定设备。
  
   
 
-#### USBRequestDirection
+## USBRequestDirection
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -710,6 +766,7 @@ USB设备消息传输通道，用于确定设备。
  
 **系统能力：** SystemCapability.USB.USBManager
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | USB_REQUEST_DIR_TO_DEVICE | 0 | 写数据，主设备往从设备。 |

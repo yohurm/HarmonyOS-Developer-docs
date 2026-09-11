@@ -1,15 +1,19 @@
 # 图像AI分析错误码
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image-analyzer
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 > [!TIP]
 > 以下仅介绍本模块特有错误码，通用错误码请参考 通用错误码说明文档 。
 
 
 
-#### 110001 AI图像分析功能不支持
+## 110001 AI图像分析功能不支持
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -29,7 +33,10 @@ NA
 
 
 
-#### 110002 AI图像分析正在进行中
+## 110002 AI图像分析正在进行中
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -49,7 +56,10 @@ NA
 
 
 
-#### 110003 AI图像分析已停止
+## 110003 AI图像分析已停止
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 

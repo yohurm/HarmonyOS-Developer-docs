@@ -1,18 +1,19 @@
 # Types
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-avsession-t
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { avSession } from '@kit.AVSessionKit';
@@ -20,9 +21,10 @@ import { avSession } from '@kit.AVSessionKit';
  
   
 
-#### AVSessionType10+
+## AVSessionType10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AVSessionType = 'audio' | 'video' | 'voice_call' | 'video_call' | 'photo'
  
@@ -34,6 +36,7 @@ type AVSessionType = 'audio' | 'video' | 'voice_call' | 'video_call' | 'photo'
  
 **系统能力：** SystemCapability.Multimedia.AVSession.Core
   
+
 | 类型 | 说明 |
 | --- | --- |
 | 'audio' | 音频 |
@@ -45,7 +48,8 @@ type AVSessionType = 'audio' | 'video' | 'voice_call' | 'video_call' | 'photo'
  
   
 
-#### AVCastControlCommandType10+
+## AVCastControlCommandType10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -59,6 +63,7 @@ type AVCastControlCommandType = 'play' | 'pause' | 'stop' | 'playNext' | 'playPr
  
 **系统能力：** SystemCapability.Multimedia.AVSession.AVCast
   
+
 | 类型 | 说明 |
 | --- | --- |
 | 'play' | 播放。无需传入参数。 |
@@ -66,21 +71,22 @@ type AVCastControlCommandType = 'play' | 'pause' | 'stop' | 'playNext' | 'playPr
 | 'stop' | 停止。无需传入参数。 |
 | 'playNext' | 下一首。无需传入参数。 |
 | 'playPrevious' | 上一首。无需传入参数。 |
-| 'fastForward' | 快进。对应参数使用number类型，单位毫秒（ms）。 |
-| 'rewind' | 快退。对应参数使用number类型，单位毫秒（ms）。 |
-| 'seek' | 跳转到指定时间点。对应参数使用number类型，单位毫秒（ms）。 |
+| 'fastForward' | 快进。对应参数使用number类型，单位为毫秒（ms）。 |
+| 'rewind' | 快退。对应参数使用number类型，单位为毫秒（ms）。 |
+| 'seek' | 跳转到指定时间点。对应参数使用number类型，单位为毫秒（ms）。 |
 | 'setVolume' | 设置音量。对应参数使用number类型，可通过AVPlaybackState.maxVolume获取系统最大音量。 |
-| 'setSpeed' | 设置播放倍速。在音视频投播场景下，当远端设备使用DLNA协议进行连接时，不支持设置此项数据。对应参数使用media.PlaybackSpeed。 |
+| 'setSpeed' | 设置播放倍速。在音视频投播场景下，远端设备使用DLNA协议连接时，不支持设置此项。对应参数使用media.PlaybackSpeed。 |
 | 'setLoopMode' | 设置循环模式。对应参数使用LoopMode。 |
-| 'toggleFavorite' | 切换收藏状态。无需传入参数。 |
+| 'toggleFavorite' | 切换收藏状态。对应参数使用AVMetadata.assetId指定媒体资源标识符。 |
 | 'toggleMute' | 切换静音状态。无需传入参数。 |
  
  
   
 
-#### ExtraInfo18+
+## ExtraInfo18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ExtraInfo = {[key: string]: Object;}
  
@@ -88,14 +94,16 @@ type ExtraInfo = {[key: string]: Object;}
  
 **系统能力：** SystemCapability.Multimedia.AVSession.Core
   
+
 | 类型 | 说明 |
 | --- | --- |
-| {[key: string]: Object;} | key为远端分布式事件类型。当前支持的事件类型包括： AUDIO_GET_VOLUME：获取远端设备音量。 AUDIO_GET_AVAILABLE_DEVICES：获取远端所有可连接设备。 AUDIO_GET_PREFERRED_OUTPUT_DEVICE_FOR_RENDERER_INFO：获取远端实际发声设备。 媒体提供方根据不同的远端分布式事件类型，返回对应的媒体数据包对象。 |
+| {[key: string]: Object;} | key为远端分布式事件类型。当前支持的事件类型包括： AUDIO_GET_VOLUME：获取远端设备音量。 AUDIO_GET_AVAILABLE_DEVICES：获取远端所有可用设备。 AUDIO_GET_PREFERRED_OUTPUT_DEVICE_FOR_RENDERER_INFO：获取远端实际发声设备。 媒体提供方根据不同的远端分布式事件类型，返回对应的媒体数据包对象。 |
  
  
   
 
-#### KeyRequestCallback12+
+## KeyRequestCallback12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -109,9 +117,10 @@ type KeyRequestCallback = (assetId: string, requestData: Uint8Array) => void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| assetId | string | 是 | 媒体ID。 |
+| assetId | string | 是 | 媒体资源的唯一标识符。 |
 | requestData | Uint8Array | 是 | 媒体许可证请求数据。 |
  
  
@@ -120,14 +129,15 @@ type KeyRequestCallback = (assetId: string, requestData: Uint8Array) => void
 ```text
 let keyRequestCallback: avSession.KeyRequestCallback = async(assetId: string, requestData: Uint8Array) => {
   console.info(`Succeeded in keyRequestCallback. assetId: ${assetId}, requestData: ${requestData}`);
-}
+};
 ```
  
   
 
-#### AVControlCommandType10+
+## AVControlCommandType10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AVControlCommandType = 'play' | 'pause' | 'stop' | 'playNext' | 'playPrevious' | 'fastForward' | 'rewind' |
  
@@ -135,26 +145,27 @@ type AVControlCommandType = 'play' | 'pause' | 'stop' | 'playNext' | 'playPrevio
  
 会话可传递的命令。
  
-该类型可取的值为下表字符串的并集。
+该类型可取的值为下表所列字符串。
  
 **系统能力：** SystemCapability.Multimedia.AVSession.Core
   
+
 | 类型 | 说明 |
 | --- | --- |
 | 'play' | 播放。无需传入参数。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | 'pause' | 暂停。无需传入参数。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| 'stop' | 停止。 无需传入参数。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| 'stop' | 停止。无需传入参数。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | 'playNext' | 下一首。无需传入参数。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | 'playPrevious' | 上一首。无需传入参数。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| 'fastForward' | 快进。对应参数请参考SkipIntervals。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| 'rewind' | 快退。对应参数请参考SkipIntervals。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| 'seek' | 跳转到指定时间点。对应参数使用number类型。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| 'fastForward' | 快进。对应参数请参考SkipIntervals，表示快进的时间间隔。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| 'rewind' | 快退。对应参数请参考SkipIntervals，表示快退的时间间隔。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| 'seek' | 跳转到指定时间点。对应参数使用number类型，单位为毫秒（ms）。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | 'setSpeed' | 设置播放倍速。对应参数使用number类型。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | 'setLoopMode' | 设置循环模式。对应参数使用LoopMode。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | 'setTargetLoopMode' 18+ | 设置目标循环模式。对应参数使用LoopMode。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
-| 'toggleFavorite' | 切换收藏状态。对应参数使用AVMetadata.assetId。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| 'toggleFavorite' | 切换收藏状态。对应参数使用AVMetadata.assetId指定媒体资源标识符。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | 'playFromAssetId' 11+ | 播放指定的assetId。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| 'playWithAssetId' 20+ | 播放指定的assetId。对应参数使用AVMetadata.assetId， 字符串长度<40960字节。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
+| 'playWithAssetId' 20+ | 播放指定的assetId。对应参数使用AVMetadata.assetId， assetId字符串长度需小于40960字节。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
 | 'answer' 11+ | 接听。无需传入参数。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | 'hangUp' 11+ | 挂断。无需传入参数。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | 'toggleCallMute' 11+ | 切换通话静音状态。无需传入参数。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
@@ -162,9 +173,10 @@ type AVControlCommandType = 'play' | 'pause' | 'stop' | 'playNext' | 'playPrevio
  
   
 
-#### AVMediaCenterControlType
+## AVMediaCenterControlType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AVMediaCenterControlType = 'playNext' | 'playPrevious' | 'fastForward' | 'rewind' | 'setSpeed' | 'setLoopMode' | 'toggleFavorite'
  
@@ -176,6 +188,7 @@ type AVMediaCenterControlType = 'playNext' | 'playPrevious' | 'fastForward' | 'r
  
 **系统能力：** SystemCapability.Multimedia.AVSession.Core
   
+
 | 类型 | 说明 |
 | --- | --- |
 | 'playNext' | 下一首。 |
@@ -189,9 +202,10 @@ type AVMediaCenterControlType = 'playNext' | 'playPrevious' | 'fastForward' | 'r
  
   
 
-#### NoParamCallback22+
+## NoParamCallback22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type NoParamCallback = () => void
  
@@ -201,9 +215,10 @@ type NoParamCallback = () => void
  
   
 
-#### TwoParamCallback22+
+## TwoParamCallback22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type TwoParamCallback<T, G> = (data1: T, data2: G) => void
  
@@ -213,7 +228,8 @@ type TwoParamCallback<T, G> = (data1: T, data2: G) => void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| data1 | T | 是 | 参数1。 |
-| data2 | G | 是 | 参数2。 |
+| data1 | T | 是 | 回调函数接收的第一个数据参数，具体类型和含义由调用方定义。 |
+| data2 | G | 是 | 回调函数接收的第二个数据参数，具体类型和含义由调用方定义。 |

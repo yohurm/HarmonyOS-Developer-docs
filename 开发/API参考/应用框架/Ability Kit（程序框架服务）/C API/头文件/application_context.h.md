@@ -1,13 +1,14 @@
 # application_context.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-application-context-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供应用级别上下文相关的接口。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetCacheDir(char* buffer, int32_t bufferSize, int32_t* writeLength) | 获取本应用的应用级的缓存目录。 |
@@ -58,15 +62,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AbilityRuntime_ApplicationContextGetCacheDir()
+### OH_AbilityRuntime_ApplicationContextGetCacheDir()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetCacheDir(char* buffer, int32_t bufferSize, int32_t* writeLength)
@@ -80,15 +86,17 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetCacheDir(char* b
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | char* buffer | 指向缓冲区的指针，用于接收本应用的应用级的缓存目录。 |
-| const int32_t bufferSize | 缓冲区大小，单位为字节。 |
+| int32_t bufferSize | 缓冲区大小，单位为字节。 |
 | int32_t* writeLength | 在返回ABILITY_RUNTIME_ERROR_CODE_NO_ERROR时，表示实际写入到缓冲区的字符串长度，单位为字节。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityRuntime_ErrorCode | 返回执行结果。 ABILITY_RUNTIME_ERROR_CODE_NO_ERROR - 查询成功。 ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。 ABILITY_RUNTIME_ERROR_CODE_CONTEXT_NOT_EXIST - 应用上下文不存在，如在应用创建的ChildProcess中应用级别上下文不存在。 |
@@ -96,9 +104,10 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetCacheDir(char* b
  
   
 
-#### OH_AbilityRuntime_ApplicationContextGetAreaMode()
+### OH_AbilityRuntime_ApplicationContextGetAreaMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetAreaMode(AbilityRuntime_AreaMode* areaMode)
@@ -112,6 +121,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetAreaMode(Ability
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_AreaMode* areaMode | 指向接收数据加密等级的指针。 |
@@ -119,6 +129,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetAreaMode(Ability
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityRuntime_ErrorCode | 返回执行结果。 ABILITY_RUNTIME_ERROR_CODE_NO_ERROR - 查询成功。 ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID - areaMode为null。 ABILITY_RUNTIME_ERROR_CODE_CONTEXT_NOT_EXIST - 应用上下文不存在，如在应用创建的ChildProcess中应用级别上下文不存在。 |
@@ -126,9 +137,10 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetAreaMode(Ability
  
   
 
-#### OH_AbilityRuntime_ApplicationContextGetBundleName()
+### OH_AbilityRuntime_ApplicationContextGetBundleName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetBundleName(char* buffer, int32_t bufferSize, int32_t* writeLength)
@@ -142,15 +154,17 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetBundleName(char*
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | char* buffer | 指向缓冲区的指针，用于接收应用包名。 |
-| const int32_t bufferSize | 缓冲区大小，单位为字节。 |
+| int32_t bufferSize | 缓冲区大小，单位为字节。 |
 | int32_t* writeLength | 在返回ABILITY_RUNTIME_ERROR_CODE_NO_ERROR时，表示实际写入到缓冲区的字符串长度，单位为字节。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityRuntime_ErrorCode | 返回执行结果。 ABILITY_RUNTIME_ERROR_CODE_NO_ERROR - 查询成功。 ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。 ABILITY_RUNTIME_ERROR_CODE_CONTEXT_NOT_EXIST - 应用上下文不存在，如在应用创建的ChildProcess中应用级别上下文不存在。 |
@@ -158,9 +172,10 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetBundleName(char*
  
   
 
-#### OH_AbilityRuntime_ApplicationContextGetTempDir()
+### OH_AbilityRuntime_ApplicationContextGetTempDir()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetTempDir(char* buffer, const int32_t bufferSize, int32_t* writeLength)
@@ -168,12 +183,13 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetTempDir(char* bu
  
 **描述**
  
-获取本应用的应用级的临时文件目录。该目录用于应用运行期间的临时文件，这些文件在应用退出或系统清理时可能被删除。
+获取本应用的应用级的临时文件目录。该目录用于存储应用运行期间的临时文件，这些文件在应用退出或系统清理时可能被删除。
  
 **起始版本：** 16
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | char* buffer | 指向缓冲区的指针，用于接收临时文件目录。 |
@@ -183,6 +199,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetTempDir(char* bu
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityRuntime_ErrorCode | 返回执行结果。 ABILITY_RUNTIME_ERROR_CODE_NO_ERROR - 查询成功。 ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。 ABILITY_RUNTIME_ERROR_CODE_CONTEXT_NOT_EXIST - 应用上下文不存在，如在应用创建的ChildProcess中应用级别上下文不存在。 |
@@ -190,9 +207,10 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetTempDir(char* bu
  
   
 
-#### OH_AbilityRuntime_ApplicationContextGetFilesDir()
+### OH_AbilityRuntime_ApplicationContextGetFilesDir()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetFilesDir(char* buffer, const int32_t bufferSize, int32_t* writeLength)
@@ -206,6 +224,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetFilesDir(char* b
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | char* buffer | 指向缓冲区的指针，用于接收通用文件目录。 |
@@ -215,6 +234,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetFilesDir(char* b
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityRuntime_ErrorCode | 返回执行结果。 ABILITY_RUNTIME_ERROR_CODE_NO_ERROR - 查询成功。 ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。 ABILITY_RUNTIME_ERROR_CODE_CONTEXT_NOT_EXIST - 应用上下文不存在，如在应用创建的ChildProcess中应用级别上下文不存在。 |
@@ -222,9 +242,10 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetFilesDir(char* b
  
   
 
-#### OH_AbilityRuntime_ApplicationContextGetDatabaseDir()
+### OH_AbilityRuntime_ApplicationContextGetDatabaseDir()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetDatabaseDir(char* buffer, const int32_t bufferSize, int32_t* writeLength)
@@ -238,6 +259,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetDatabaseDir(char
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | char* buffer | 指向缓冲区的指针，用于接收数据库文件目录。 |
@@ -247,6 +269,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetDatabaseDir(char
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityRuntime_ErrorCode | 返回执行结果。 ABILITY_RUNTIME_ERROR_CODE_NO_ERROR - 查询成功。 ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。 ABILITY_RUNTIME_ERROR_CODE_CONTEXT_NOT_EXIST - 应用上下文不存在，如在应用创建的ChildProcess中应用级别上下文不存在。 |
@@ -254,9 +277,10 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetDatabaseDir(char
  
   
 
-#### OH_AbilityRuntime_ApplicationContextGetPreferencesDir()
+### OH_AbilityRuntime_ApplicationContextGetPreferencesDir()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetPreferencesDir(char* buffer, const int32_t bufferSize, int32_t* writeLength)
@@ -270,6 +294,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetPreferencesDir(c
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | char* buffer | 指向缓冲区的指针，用于接收首选项文件目录。 |
@@ -279,6 +304,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetPreferencesDir(c
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityRuntime_ErrorCode | 返回执行结果。 ABILITY_RUNTIME_ERROR_CODE_NO_ERROR - 查询成功。 ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。 ABILITY_RUNTIME_ERROR_CODE_CONTEXT_NOT_EXIST - 应用上下文不存在，如在应用创建的ChildProcess中应用级别上下文不存在。 |
@@ -286,9 +312,10 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetPreferencesDir(c
  
   
 
-#### OH_AbilityRuntime_ApplicationContextGetBundleCodeDir()
+### OH_AbilityRuntime_ApplicationContextGetBundleCodeDir()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetBundleCodeDir(char* buffer, const int32_t bufferSize, int32_t* writeLength)
@@ -302,6 +329,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetBundleCodeDir(ch
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | char* buffer | 指向缓冲区的指针，用于接收安装文件目录。 |
@@ -311,6 +339,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetBundleCodeDir(ch
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityRuntime_ErrorCode | 返回执行结果。 ABILITY_RUNTIME_ERROR_CODE_NO_ERROR - 查询成功。 ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。 ABILITY_RUNTIME_ERROR_CODE_CONTEXT_NOT_EXIST - 应用上下文不存在，如在应用创建的ChildProcess中应用级别上下文不存在。 |
@@ -318,9 +347,10 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetBundleCodeDir(ch
  
   
 
-#### OH_AbilityRuntime_ApplicationContextGetDistributedFilesDir()
+### OH_AbilityRuntime_ApplicationContextGetDistributedFilesDir()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetDistributedFilesDir(char* buffer, const int32_t bufferSize, int32_t* writeLength)
@@ -334,6 +364,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetDistributedFiles
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | char* buffer | 指向缓冲区的指针，用于接收分布式文件目录。 |
@@ -343,6 +374,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetDistributedFiles
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityRuntime_ErrorCode | 返回执行结果。 ABILITY_RUNTIME_ERROR_CODE_NO_ERROR - 查询成功。 ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。 ABILITY_RUNTIME_ERROR_CODE_CONTEXT_NOT_EXIST - 应用上下文不存在，如在应用创建的ChildProcess中应用级别上下文不存在。 |
@@ -350,9 +382,10 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetDistributedFiles
  
   
 
-#### OH_AbilityRuntime_ApplicationContextGetCloudFileDir()
+### OH_AbilityRuntime_ApplicationContextGetCloudFileDir()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetCloudFileDir(char* buffer, const int32_t bufferSize, int32_t* writeLength)
@@ -366,6 +399,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetCloudFileDir(cha
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | char* buffer | 指向缓冲区的指针，用于接收云文件目录。 |
@@ -375,6 +409,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetCloudFileDir(cha
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityRuntime_ErrorCode | 返回执行结果。 ABILITY_RUNTIME_ERROR_CODE_NO_ERROR - 查询成功。 ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。 ABILITY_RUNTIME_ERROR_CODE_CONTEXT_NOT_EXIST - 应用上下文不存在，如在应用创建的ChildProcess中应用级别上下文不存在。 |
@@ -382,9 +417,10 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetCloudFileDir(cha
  
   
 
-#### OH_AbilityRuntime_ApplicationContextGetLogFileDir()
+### OH_AbilityRuntime_ApplicationContextGetLogFileDir()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetLogFileDir(char* buffer, const int32_t bufferSize, int32_t* writeLength)
@@ -398,6 +434,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetLogFileDir(char*
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | char* buffer | 指向缓冲区的指针，用于接收日志文件目录。 |
@@ -407,6 +444,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetLogFileDir(char*
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityRuntime_ErrorCode | 返回执行结果。 ABILITY_RUNTIME_ERROR_CODE_NO_ERROR - 查询成功。 ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。 ABILITY_RUNTIME_ERROR_CODE_CONTEXT_NOT_EXIST - 应用上下文不存在，如在应用创建的ChildProcess中应用级别上下文不存在。 |
@@ -414,9 +452,10 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetLogFileDir(char*
  
   
 
-#### OH_AbilityRuntime_ApplicationContextGetResourceDir()
+### OH_AbilityRuntime_ApplicationContextGetResourceDir()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetResourceDir(const char* moduleName, char* buffer, const int32_t bufferSize, int32_t* writeLength)
@@ -430,6 +469,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetResourceDir(cons
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char* moduleName | 模块名，用于指定要获取资源目录的目标模块。开发者可通过bundleManager模块的接口获取应用包含的模块名列表，不同模块名对应不同的资源目录路径。 |
@@ -440,6 +480,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetResourceDir(cons
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityRuntime_ErrorCode | 返回执行结果。 ABILITY_RUNTIME_ERROR_CODE_NO_ERROR - 查询成功。 ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。 ABILITY_RUNTIME_ERROR_CODE_CONTEXT_NOT_EXIST - 应用上下文不存在，如在应用创建的ChildProcess中应用级别上下文不存在。 |
@@ -447,9 +488,10 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetResourceDir(cons
  
   
 
-#### OH_AbilityRuntime_StartSelfUIAbility()
+### OH_AbilityRuntime_StartSelfUIAbility()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_StartSelfUIAbility(AbilityBase_Want *want)
@@ -467,6 +509,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_StartSelfUIAbility(AbilityBase_Want *
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityBase_Want *want | 启动当前应用UIAbility时需要的Want信息。 |
@@ -474,6 +517,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_StartSelfUIAbility(AbilityBase_Want *
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityRuntime_ErrorCode | ABILITY_RUNTIME_ERROR_CODE_NO_ERROR - 接口调用成功。 ABILITY_RUNTIME_ERROR_CODE_PERMISSION_DENIED - 调用方权限校验失败。 ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID - 调用方入参校验失败。 ABILITY_RUNTIME_ERROR_CODE_NOT_SUPPORTED - 设备类型不支持。 ABILITY_RUNTIME_ERROR_CODE_NO_SUCH_ABILITY - 指定的Ability名称不存在。 ABILITY_RUNTIME_ERROR_CODE_INCORRECT_ABILITY_TYPE - 接口调用Ability类型错误。 ABILITY_RUNTIME_ERROR_CODE_CROWDTEST_EXPIRED - 众测应用到期。 ABILITY_RUNTIME_ERROR_CODE_WUKONG_MODE - Wukong模式，不允许启动/停止Ability。 ABILITY_RUNTIME_ERROR_CODE_CONTROLLED - 应用被管控。 ABILITY_RUNTIME_ERROR_CODE_EDM_CONTROLLED - 应用被EDM管控。 ABILITY_RUNTIME_ERROR_CODE_CROSS_APP - 限制API 11以上版本三方应用跳转。 ABILITY_RUNTIME_ERROR_CODE_INTERNAL - 内部错误。 ABILITY_RUNTIME_ERROR_CODE_NOT_TOP_ABILITY - 非顶层应用。 ABILITY_RUNTIME_ERROR_CODE_UPPER_LIMIT_REACHED - 应用多实例已达到上限（从API17开始）。 ABILITY_RUNTIME_ERROR_CODE_APP_INSTANCE_KEY_NOT_SUPPORTED - 不允许设置APP_INSTANCE_KEY（从API17开始）。 详细内容参考AbilityRuntime_ErrorCode。 |
@@ -505,9 +549,10 @@ void startSelfUIAbilityTest()
  
   
 
-#### OH_AbilityRuntime_StartSelfUIAbilityWithStartOptions()
+### OH_AbilityRuntime_StartSelfUIAbilityWithStartOptions()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_StartSelfUIAbilityWithStartOptions(AbilityBase_Want *want,AbilityRuntime_StartOptions *options)
@@ -525,6 +570,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_StartSelfUIAbilityWithStartOptions(Ab
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityBase_Want *want | 启动当前应用UIAbility时需要的Want信息。 |
@@ -533,6 +579,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_StartSelfUIAbilityWithStartOptions(Ab
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityRuntime_ErrorCode | ABILITY_RUNTIME_ERROR_CODE_NO_ERROR - 接口调用成功。 ABILITY_RUNTIME_ERROR_CODE_PERMISSION_DENIED - 调用方权限校验失败。 ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID - 调用方入参校验失败。 ABILITY_RUNTIME_ERROR_CODE_NOT_SUPPORTED - 设备类型不支持。 ABILITY_RUNTIME_ERROR_CODE_NO_SUCH_ABILITY - 指定的Ability名称不存在。 ABILITY_RUNTIME_ERROR_CODE_INCORRECT_ABILITY_TYPE - 接口调用Ability类型错误。 ABILITY_RUNTIME_ERROR_CODE_CROWDTEST_EXPIRED - 众测应用到期。 ABILITY_RUNTIME_ERROR_CODE_WUKONG_MODE - Wukong模式，不允许启动/停止Ability。 ABILITY_RUNTIME_ERROR_CODE_CONTROLLED - 应用被管控。 ABILITY_RUNTIME_ERROR_CODE_EDM_CONTROLLED - 应用被EDM管控。 ABILITY_RUNTIME_ERROR_CODE_CROSS_APP - 限制API 11以上版本三方应用跳转。 ABILITY_RUNTIME_ERROR_CODE_INTERNAL - 内部错误。 ABILITY_RUNTIME_ERROR_CODE_NOT_TOP_ABILITY - 非顶层应用。 ABILITY_RUNTIME_ERROR_VISIBILITY_SETTING_DISABLED - 不允许设置窗口启动可见性。 ABILITY_RUNTIME_ERROR_CODE_MULTI_APP_NOT_SUPPORTED - 不支持应用分身和多实例。 ABILITY_RUNTIME_ERROR_CODE_INVALID_APP_INSTANCE_KEY - 无效多实例。 ABILITY_RUNTIME_ERROR_CODE_UPPER_LIMIT_REACHED - 应用多实例已达到上限。 ABILITY_RUNTIME_ERROR_MULTI_INSTANCE_NOT_SUPPORTED - 不支持应用多实例。 ABILITY_RUNTIME_ERROR_CODE_APP_INSTANCE_KEY_NOT_SUPPORTED - 不允许设置APP_INSTANCE_KEY。 详细内容参考AbilityRuntime_ErrorCode。 |
@@ -578,9 +625,10 @@ void demo()
  
   
 
-#### OH_AbilityRuntime_ApplicationContextGetVersionCode()
+### OH_AbilityRuntime_ApplicationContextGetVersionCode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetVersionCode(int64_t* versionCode)
@@ -594,6 +642,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetVersionCode(int6
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | int64_t* versionCode | 指向应用包版本号的指针，对应bundleInfo中的versionCode字段。 |
@@ -601,6 +650,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetVersionCode(int6
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityRuntime_ErrorCode | 返回执行结果。 ABILITY_RUNTIME_ERROR_CODE_NO_ERROR - 查询成功。 ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID - 入参versionCode为空。 ABILITY_RUNTIME_ERROR_CODE_CONTEXT_NOT_EXIST - 应用上下文不存在，如在应用创建的ChildProcess中应用级别上下文不存在。 ABILITY_RUNTIME_ERROR_CODE_GET_APPLICATION_INFO_FAILED - 获取应用信息失败，如应用未安装或应用信息损坏。 |
@@ -608,9 +658,10 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetVersionCode(int6
  
   
 
-#### OH_AbilityRuntime_StartSelfUIAbilityWithPidResult()
+### OH_AbilityRuntime_StartSelfUIAbilityWithPidResult()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(AbilityBase_Want *want, AbilityRuntime_StartOptions *options, int32_t *targetPid)
@@ -632,6 +683,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(Abili
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityBase_Want *want | 启动当前应用UIAbility时需要的Want信息。 |
@@ -641,6 +693,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(Abili
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityRuntime_ErrorCode | ABILITY_RUNTIME_ERROR_CODE_NO_ERROR - 接口调用成功。 ABILITY_RUNTIME_ERROR_CODE_PERMISSION_DENIED - 调用方权限校验失败。 ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID - 调用方入参校验失败。 ABILITY_RUNTIME_ERROR_CODE_NOT_SUPPORTED - 设备类型不支持。 ABILITY_RUNTIME_ERROR_CODE_NO_SUCH_ABILITY - 指定的Ability名称不存在。 ABILITY_RUNTIME_ERROR_CODE_INCORRECT_ABILITY_TYPE - 接口调用Ability类型错误。 ABILITY_RUNTIME_ERROR_CODE_CROWDTEST_EXPIRED - 众测应用到期。 ABILITY_RUNTIME_ERROR_CODE_WUKONG_MODE - Wukong模式，不允许启动/停止Ability。 ABILITY_RUNTIME_ERROR_CODE_CONTROLLED - 应用被管控。 ABILITY_RUNTIME_ERROR_CODE_EDM_CONTROLLED - 应用被EDM管控。 ABILITY_RUNTIME_ERROR_CODE_CROSS_APP - 限制API 11以上版本三方应用跳转。 ABILITY_RUNTIME_ERROR_CODE_INTERNAL - 内部错误。 ABILITY_RUNTIME_ERROR_CODE_NOT_TOP_ABILITY - 非顶层应用。 ABILITY_RUNTIME_ERROR_VISIBILITY_SETTING_DISABLED - 不允许设置窗口启动可见性。 ABILITY_RUNTIME_ERROR_CODE_MULTI_APP_NOT_SUPPORTED - 不支持应用分身和多实例。 ABILITY_RUNTIME_ERROR_CODE_INVALID_APP_INSTANCE_KEY - 无效多实例。 ABILITY_RUNTIME_ERROR_CODE_UPPER_LIMIT_REACHED - 应用多实例已达到上限。 ABILITY_RUNTIME_ERROR_MULTI_INSTANCE_NOT_SUPPORTED - 不支持应用多实例。 ABILITY_RUNTIME_ERROR_CODE_APP_INSTANCE_KEY_NOT_SUPPORTED - 不允许设置APP_INSTANCE_KEY。 ABILITY_RUNTIME_ERROR_CODE_START_TIMEOUT - 启动UIAbility超时。 ABILITY_RUNTIME_ERROR_CODE_MAIN_THREAD_NOT_SUPPORTED - 接口不允许在应用主线程被调用。 |
@@ -687,9 +740,10 @@ void demo()
  
   
 
-#### OH_AbilityRuntime_ApplicationContextGetLaunchParameter()
+### OH_AbilityRuntime_ApplicationContextGetLaunchParameter()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetLaunchParameter(
@@ -704,6 +758,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetLaunchParameter(
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | char* buffer | 指向缓冲区的指针，用于接收WantParams参数。 |
@@ -713,6 +768,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetLaunchParameter(
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityRuntime_ErrorCode | 返回执行结果。 ABILITY_RUNTIME_ERROR_CODE_NO_ERROR - 查询成功。 ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。 ABILITY_RUNTIME_ERROR_CODE_CONTEXT_NOT_EXIST - 应用上下文不存在，如在应用创建的ChildProcess中应用级别上下文不存在。 |
@@ -743,9 +799,10 @@ static napi_value GetLaunchParameter(napi_env env, napi_callback_info info)
  
   
 
-#### OH_AbilityRuntime_ApplicationContextGetLatestParameter()
+### OH_AbilityRuntime_ApplicationContextGetLatestParameter()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetLatestParameter(
@@ -760,6 +817,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetLatestParameter(
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | char* buffer | 指向缓冲区的指针，用于接收WantParams参数。 |
@@ -769,6 +827,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextGetLatestParameter(
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityRuntime_ErrorCode | 返回执行结果。 ABILITY_RUNTIME_ERROR_CODE_NO_ERROR - 查询成功。 ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID - 入参buffer或者writeLength为空，或者缓冲区大小小于需要写入的大小。 ABILITY_RUNTIME_ERROR_CODE_CONTEXT_NOT_EXIST - 应用上下文不存在，如在应用创建的ChildProcess中应用级别上下文不存在。 |
@@ -799,9 +858,10 @@ static napi_value GetLatestParameter(napi_env env, napi_callback_info info)
  
   
 
-#### OH_AbilityRuntime_ApplicationContextNotifyPageChanged()
+### OH_AbilityRuntime_ApplicationContextNotifyPageChanged()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextNotifyPageChanged(
@@ -816,6 +876,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextNotifyPageChanged(
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char* targetPageName | 目标页面路径。 |
@@ -825,6 +886,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_ApplicationContextNotifyPageChanged(
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityRuntime_ErrorCode | 返回执行结果。 ABILITY_RUNTIME_ERROR_CODE_NO_ERROR - 操作成功。 ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID - 入参targetPageName为空或者windowId无效。 ABILITY_RUNTIME_ERROR_CODE_INTERNAL - 内部错误。 |

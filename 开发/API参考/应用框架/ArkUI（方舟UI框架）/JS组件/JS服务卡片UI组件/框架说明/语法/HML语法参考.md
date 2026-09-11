@@ -1,16 +1,17 @@
 # HML语法参考
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-service-widget-syntax-hml
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 HML是一套类HTML的标记语言，通过组件，事件构建出页面的内容。页面具备数据绑定、事件绑定、条件渲染和逻辑控制等高级能力。
   
 
-#### 页面结构
+## 页面结构
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 <!-- xxx.hml -->
@@ -24,9 +25,10 @@ HML是一套类HTML的标记语言，通过组件，事件构建出页面的内�
  
   
 
-#### 数据绑定
+## 数据绑定
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 <!-- xxx.hml -->
@@ -55,14 +57,15 @@ HML是一套类HTML的标记语言，通过组件，事件构建出页面的内�
 ```
  
 > [!WARNING]
-> key值支持对象操作符和数组操作符，如{{key.value}}、{{key[0]}}。 支持字符串拼接、逻辑运算和三元表达式。 字符串拼接： 支持变量跟变量：{{key1}}{{key2}}等 支持常量跟变量： "my name is {{name}}， I am from {{city}}." "key1 {{key1}}" 逻辑运算： 与：{{flag1 && flag2}}（仅支持两个boolean变量间的与逻辑运算） 或：{{flag1 || flag2}} （仅支持两个boolean变量间的或逻辑运算） 非：{{!flag1}} （仅支持boolean变量的非逻辑运算） 三元表达式 {{flag? key1:key2}}（flag为boolean变量，key1和key2可以是变量，也可以是常量） 注意事项 非boolean类型值进行bool运算默认为false 以上所有变量解析跟运算解析均不支持嵌套
+> key值支持对象操作符和数组操作符，如{{key.value}}、{{key[0]}}。 支持字符串拼接、逻辑运算和三元表达式。 字符串拼接： 支持变量跟变量：{{key1}}{{key2}}等 支持常量跟变量： "my name is {{name}}， i am from {{city}}." "key1 {{key1}}" 逻辑运算： 与：{{flag1 && flag2}}（仅支持两个boolean变量间的与逻辑运算） 或：{{flag1 || flag2}} （仅支持两个boolean变量间的或逻辑运算） 非：{{!flag1}} （仅支持boolean变量的非逻辑运算） 三元表达式 {{flag? key1:key2}}（flag为boolean变量，key1和key2可以是变量，也可以是常量） 注意事项 非boolean类型值进行bool运算默认为false 以上所有变量解析跟运算解析均不支持嵌套
 
  
   
 
-#### 事件绑定
+## 事件绑定
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 卡片的事件需要在json文件的actions字段下进行声明。卡片仅支持click通用事件，事件的定义只能是直接命令式，事件定义必须包含action字段，用以说明事件类型。卡片支持两种事件类型：跳转事件(router)和消息事件(message)。跳转事件可以跳转到卡片提供方的应用，消息事件可以将开发者自定义信息传递给卡片提供方。事件参数支持变量，变量以"{{}}"修饰。跳转事件中若定义了params字段，则在被拉起应用的onStart的intent中，可用"params"作为key将跳转事件定义的params字段的值取到。
  
@@ -71,9 +74,13 @@ HML是一套类HTML的标记语言，通过组件，事件构建出页面的内�
   通过定义ability名称和携带的参数字段params直接跳转，可用"params"作为key提取到跳转事件定义的params字段值。
 
 | 选择器 | 样例 | 默认值 | 样例描述 |
+
 | --- | --- | --- | --- |
+
 | action | string | "router" | 事件类型。 - "router"：用于应用跳转。 |
+
 | abilityName | string | - | 跳转ability名。 |
+
 | params | Object | - | 跳转应用携带的额外参数。 |
 
   
@@ -95,8 +102,11 @@ HML是一套类HTML的标记语言，通过组件，事件构建出页面的内�
 - 消息事件格式
 
 | 选择器 | 样例 | 默认值 | 样例描述 |
+
 | --- | --- | --- | --- |
+
 | action | string | message | 表示事件类型。 - "message"：自定义点击事件。 |
+
 | params | Object | - | 跳转应用携带的额外参数。 |
 
   
@@ -128,9 +138,10 @@ HML是一套类HTML的标记语言，通过组件，事件构建出页面的内�
  
   
 
-#### 列表渲染
+## 列表渲染
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 <!-- xxx.hml -->
@@ -175,9 +186,10 @@ tid属性主要用来加速for循环的重渲染，旨在列表中的数据有�
  
   
 
-#### 条件渲染
+## 条件渲染
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 条件渲染分为2种：if/elif/else和show。
  
@@ -218,9 +230,10 @@ tid属性主要用来加速for循环的重渲染，旨在列表中的数据有�
  
   
 
-#### 逻辑控制块
+## 逻辑控制块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 &lt;block&gt;控制块使得循环渲染和条件渲染变得更加灵活；block在构建时不会被当作真实的节点编译。block标签只支持if属性。
  

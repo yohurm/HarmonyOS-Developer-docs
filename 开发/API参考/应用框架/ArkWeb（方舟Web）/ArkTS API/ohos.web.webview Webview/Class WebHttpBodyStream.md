@@ -1,9 +1,9 @@
 # Class (WebHttpBodyStream)
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webhttpbodystream
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 WebHttpBodyStream是HTTP请求体数据流对象，用于在自定义scheme拦截场景中读取POST、PUT等请求的请求体数据。该对象通过WebSchemeHandlerRequest的getHttpBodyStream方法获取，支持BYTES、FILE、BLOB、CHUNKED类型的数据。开发者可以通过该接口在自定义协议拦截器中读取上行数据，实现对请求体的检视或转发。注意本类中的其他接口需要在[initialize](#initialize12)成功后才能调用。
 
@@ -14,9 +14,10 @@ WebHttpBodyStream与[WebSchemeHandlerRequest](https://developer.huawei.com/consu
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { webview } from '@kit.ArkWeb';
@@ -24,9 +25,10 @@ import { webview } from '@kit.ArkWeb';
 
 
 
-#### initialize12+
+## initialize12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 initialize(): Promise&lt;void&gt;
 
@@ -36,6 +38,7 @@ initialize(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise实例，用于获取WebHttpBodyStream是否初始化成功。 |
@@ -44,6 +47,7 @@ initialize(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -134,9 +138,10 @@ struct WebComponent {
 
 
 
-#### read12+
+## read12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 read(size: number): Promise&lt;ArrayBuffer&gt;
 
@@ -146,12 +151,14 @@ read(size: number): Promise&lt;ArrayBuffer&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | size | number | 是 | 读取WebHttpBodyStream中的字节数。单位：字节。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -161,6 +168,7 @@ read(size: number): Promise&lt;ArrayBuffer&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -173,9 +181,10 @@ read(size: number): Promise&lt;ArrayBuffer&gt;
 
 
 
-#### getSize12+
+## getSize12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSize(): number
 
@@ -185,9 +194,10 @@ getSize(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| number | 获取WebHttpBodyStream中的数据大小。单位：字节。 |
+| number | 获取WebHttpBodyStream数据大小。单位：字节。 |
 
 
 **示例：**
@@ -196,9 +206,10 @@ getSize(): number
 
 
 
-#### getPosition12+
+## getPosition12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPosition(): number
 
@@ -207,6 +218,7 @@ getPosition(): number
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -219,9 +231,10 @@ getPosition(): number
 
 
 
-#### isChunked12+
+## isChunked12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isChunked(): boolean
 
@@ -230,6 +243,7 @@ WebHttpBodyStream是否采用分块传输。
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -242,9 +256,10 @@ WebHttpBodyStream是否采用分块传输。
 
 
 
-#### isEof12+
+## isEof12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isEof(): boolean
 
@@ -253,6 +268,7 @@ isEof(): boolean
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -265,9 +281,10 @@ isEof(): boolean
 
 
 
-#### isInMemory12+
+## isInMemory12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isInMemory(): boolean
 
@@ -276,6 +293,7 @@ isInMemory(): boolean
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |

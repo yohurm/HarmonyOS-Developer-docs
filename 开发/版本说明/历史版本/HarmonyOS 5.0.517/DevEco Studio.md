@@ -1,13 +1,14 @@
 # DevEco Studio
 
-更新时间：2026-06-27 01:41:31
+更新时间：2026-08-29 09:40:02
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/deveco-studio-new-features
 
-#### DevEco Studio 5.0.5 Release（5.0.13.240）兼容性配套关系
+## DevEco Studio 5.0.5 Release（5.0.13.240）兼容性配套关系
 
 DevEco Studio 5.0.13.240携带的工具列表、支持的API范围及开发态版本号信息如下：
   
+
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
 | HarmonyOS SDK | HarmonyOS 5.0.5 Release SDK | - |
@@ -20,6 +21,7 @@ DevEco Studio 5.0.13.240携带的工具列表、支持的API范围及开发态�
  
 DevEco Studio 5.0.13.240配套使用的命令行工具列表、支持的API范围及开发态版本号信息如下：
   
+
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
 | Command Line | 5.0.13.240 | 命令行工具集版本。 |
@@ -34,16 +36,17 @@ DevEco Studio 5.0.13.240配套使用的命令行工具列表、支持的API范�
  
  
 
-#### DevEco Studio 5.0.5 Release（5.0.13.240）新增和增强特性
+## DevEco Studio 5.0.5 Release（5.0.13.240）新增和增强特性
 
 无新增和增强特性。
  
  
 
-#### DevEco Studio 5.0.5 Release（5.0.13.230）兼容性配套关系
+## DevEco Studio 5.0.5 Release（5.0.13.230）兼容性配套关系
 
 DevEco Studio 5.0.13.230携带的工具列表、支持的API范围及开发态版本号信息如下：
   
+
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
 | HarmonyOS SDK | HarmonyOS 5.0.5 Release SDK | - |
@@ -56,6 +59,7 @@ DevEco Studio 5.0.13.230携带的工具列表、支持的API范围及开发态�
  
 DevEco Studio 5.0.13.230配套使用的命令行工具列表、支持的API范围及开发态版本号信息如下：
   
+
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
 | Command Line | 5.0.13.230 | 命令行工具集版本。 |
@@ -70,16 +74,17 @@ DevEco Studio 5.0.13.230配套使用的命令行工具列表、支持的API范�
  
  
 
-#### DevEco Studio 5.0.5 Release（5.0.13.230）新增和增强特性
+## DevEco Studio 5.0.5 Release（5.0.13.230）新增和增强特性
 
 无新增和增强特性。
  
  
 
-#### DevEco Studio 5.0.5 Release（5.0.13.220）兼容性配套关系
+## DevEco Studio 5.0.5 Release（5.0.13.220）兼容性配套关系
 
 DevEco Studio 5.0.13.220携带的工具列表、支持的API范围及开发态版本号信息如下：
   
+
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
 | HarmonyOS SDK | HarmonyOS 5.0.5 Release SDK | - |
@@ -92,6 +97,7 @@ DevEco Studio 5.0.13.220携带的工具列表、支持的API范围及开发态�
  
 DevEco Studio 5.0.13.220配套使用的命令行工具列表、支持的API范围及开发态版本号信息如下：
   
+
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
 | Command Line | 5.0.13.220 | 命令行工具集版本。 |
@@ -106,7 +112,7 @@ DevEco Studio 5.0.13.220配套使用的命令行工具列表、支持的API范�
  
  
 
-#### DevEco Studio 5.0.5 Release（5.0.13.220）新增和增强特性
+## DevEco Studio 5.0.5 Release（5.0.13.220）新增和增强特性
 
 - CodeGenie提供智能AI能力对框选的代码片段进行逐条解释，总结代码段含义，提升阅读代码的速度和效率。具体请参考[代码智能解读](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-explain-code)。
 - 新增页面生成功能，支持通过自然语言进行多轮对话，生成应用/元服务可用的页面代码，快速完成页面搭建。具体请参考[页面生成](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-page-generation)。
@@ -117,10 +123,11 @@ DevEco Studio 5.0.13.220配套使用的命令行工具列表、支持的API范�
  
  
 
-#### DevEco Studio 5.0.5 Release（5.0.13.210）兼容性配套关系
+## DevEco Studio 5.0.5 Release（5.0.13.210）兼容性配套关系
 
 DevEco Studio 5.0.13.210携带的工具列表、支持的API范围及开发态版本号信息如下：
   
+
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
 | DevEco Studio | DevEco Studio 5.0.5 Release（5.0.13.210） | - |
@@ -134,6 +141,7 @@ DevEco Studio 5.0.13.210携带的工具列表、支持的API范围及开发态�
  
 DevEco Studio 5.0.13.210配套使用的命令行工具列表、支持的API范围及开发态版本号信息如下：
   
+
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
 | Command Line | 5.0.13.210 | 命令行工具集版本。 |
@@ -148,16 +156,17 @@ DevEco Studio 5.0.13.210配套使用的命令行工具列表、支持的API范�
  
  
 
-#### DevEco Studio 5.0.5 Release（5.0.13.210）新增和增强特性
+## DevEco Studio 5.0.5 Release（5.0.13.210）新增和增强特性
 
 无新增和增强特性。
  
  
 
-#### DevEco Studio 5.0.5 Release（5.0.13.200）兼容性配套关系
+## DevEco Studio 5.0.5 Release（5.0.13.200）兼容性配套关系
 
 DevEco Studio 5.0.13.200携带的工具列表、支持的API范围及开发态版本号信息如下：
   
+
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
 | DevEco Studio | DevEco Studio 5.0.5 Release（5.0.13.200） | - |
@@ -171,6 +180,7 @@ DevEco Studio 5.0.13.200携带的工具列表、支持的API范围及开发态�
  
 DevEco Studio 5.0.13.200配套使用的命令行工具列表、支持的API范围及开发态版本号信息如下：
   
+
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
 | Command Line | 5.0.13.200 | 命令行工具集版本。 |
@@ -185,13 +195,13 @@ DevEco Studio 5.0.13.200配套使用的命令行工具列表、支持的API范�
  
  
 
-#### DevEco Studio 5.0.5 Release（5.0.13.200）新增和增强特性
+## DevEco Studio 5.0.5 Release（5.0.13.200）新增和增强特性
 
 - DevEco Studio支持开发API 17工程。
 - hvigor-config.json5文件的properties下新增ohos.uiTransform.Optimization字段，用于指定是否对ArkTS编译转换后的产物中的bundleName字段开启优化，开启后，bundleName字段的值是变量。具体请参考[hvigor-config.json5文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-set-options)。
 
  
-- 新增部分ACL权限支持通过自动签名快速申请。具体请参考[支持ACL权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section5301916183411)。
+- 新增部分ACL权限支持通过自动签名快速申请。具体请参考[支持ACL权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing-auto#section5301916183411)。
 - 工程级和模块级build-profile.json5文件buildOption/arkOptions下新增reExportCheckMode，用于指定以下场景，编译时是否进行拦截报错：使用lazy import导入的变量，在同文件中被再次导出。具体请参考[工程级build-profile.json5文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-build-profile-app)和[模块级build-profile.json5文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-build-profile)。
 - DevEco Studio支持自动监听WebView进程并转发端口。具体请参考[自动映射WebView调试链接](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-run-debug-configurations#section48387420516)。
 - 模拟器新增支持2in1设备。具体请参考[设备支持类型](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-devicetype)。

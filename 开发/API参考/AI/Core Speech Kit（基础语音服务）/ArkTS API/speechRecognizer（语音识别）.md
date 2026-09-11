@@ -1,6 +1,6 @@
 # speechRecognizer（语音识别）
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/hms-ai-speechrecognizer
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -12,7 +12,8 @@
 **起始版本：** 4.1.0(11)
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -22,7 +23,8 @@ import { speechRecognizer } from '@kit.CoreSpeechKit';
 
 
 
-#### speechRecognizer.createEngine
+## speechRecognizer.createEngine
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -38,6 +40,7 @@ createEngine(createEngineParams: CreateEngineParams, callback: AsyncCallback&lt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | createEngineParams | CreateEngineParams | 是 | 创建引擎实例的配置项。 |
@@ -47,6 +50,7 @@ createEngine(createEngineParams: CreateEngineParams, callback: AsyncCallback&lt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Core Speech Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-corespeech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -98,7 +102,8 @@ struct Page {
 
 
 
-#### speechRecognizer.createEngine
+## speechRecognizer.createEngine
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -114,12 +119,14 @@ createEngine(createEngineParams: CreateEngineParams): Promise&lt;SpeechRecogniti
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | createEngineParams | CreateEngineParams | 是 | 创建引擎实例的配置项。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -129,6 +136,7 @@ createEngine(createEngineParams: CreateEngineParams): Promise&lt;SpeechRecogniti
 **错误码：**
 
 以下错误码的详细介绍请参见[Core Speech Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-corespeech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -175,7 +183,8 @@ struct Page {
 
 
 
-#### SpeechRecognitionEngine
+## SpeechRecognitionEngine
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -189,7 +198,8 @@ struct Page {
 
 
 
-#### listLanguages
+### listLanguages
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -205,6 +215,7 @@ listLanguages(params: LanguageQuery, callback: AsyncCallback<Array&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | LanguageQuery | 是 | 查询语种信息请求参数。 |
@@ -214,6 +225,7 @@ listLanguages(params: LanguageQuery, callback: AsyncCallback<Array&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Core Speech Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-corespeech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -258,7 +270,8 @@ struct Page {
 
 
 
-#### listLanguages
+### listLanguages
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -274,12 +287,14 @@ listLanguages(params: LanguageQuery): Promise<Array&lt;string&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | LanguageQuery | 是 | 查询语种信息请求参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -289,6 +304,7 @@ listLanguages(params: LanguageQuery): Promise<Array&lt;string&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Core Speech Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-corespeech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -330,7 +346,8 @@ struct Page {
 
 
 
-#### setListener
+### setListener
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -345,6 +362,7 @@ setListener(listener: RecognitionListener): void
 **起始版本：** 4.1.0(11)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -397,7 +415,8 @@ struct Page {
 
 
 
-#### startListening
+### startListening
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -413,6 +432,7 @@ startListening(params: StartParams): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | StartParams | 是 | 启动语音识别的相关参数，用于设置会话ID、音频配置信息等。 |
@@ -421,6 +441,7 @@ startListening(params: StartParams): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Core Speech Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-corespeech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -457,7 +478,8 @@ struct Page {
 
 
 
-#### writeAudio
+### writeAudio
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -473,6 +495,7 @@ writeAudio(sessionId: string, audio: Uint8Array): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sessionId | string | 是 | 会话ID，会话的唯一标识。 由字母、数字、下划线和短横线组成，无长度限制。 |
@@ -482,6 +505,7 @@ writeAudio(sessionId: string, audio: Uint8Array): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Core Speech Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-corespeech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -518,7 +542,8 @@ struct Page {
 
 
 
-#### finish
+### finish
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -534,6 +559,7 @@ finish(sessionId: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sessionId | string | 是 | 会话ID，会话的唯一标识。 由字母、数字、下划线和短横线组成，无长度限制。 |
@@ -542,6 +568,7 @@ finish(sessionId: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Core Speech Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-corespeech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -594,7 +621,8 @@ struct Page {
 
 
 
-#### cancel
+### cancel
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -610,6 +638,7 @@ cancel(sessionId: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sessionId | string | 是 | 会话ID，会话的唯一标识。 由字母、数字、下划线和短横线组成，无长度限制。 |
@@ -618,6 +647,7 @@ cancel(sessionId: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Core Speech Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-corespeech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -670,7 +700,8 @@ struct Page {
 
 
 
-#### isBusy
+### isBusy
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -686,6 +717,7 @@ isBusy(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 服务是否处于繁忙状态的返回值。 - true：引擎正处于繁忙状态。 - false：引擎没有处于繁忙状态。 |
@@ -694,6 +726,7 @@ isBusy(): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[Core Speech Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-corespeech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -745,7 +778,8 @@ struct Page {
 
 
 
-#### shutdown
+### shutdown
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -803,7 +837,8 @@ struct Page {
 
 
 
-#### RecognitionListener
+## RecognitionListener
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -817,7 +852,8 @@ struct Page {
 
 
 
-#### onStart
+### onStart
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -832,6 +868,7 @@ onStart(sessionId: string, eventMessage: string): void
 **起始版本：** 4.1.0(11)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -885,7 +922,8 @@ struct Page {
 
 
 
-#### onEvent
+### onEvent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -900,6 +938,7 @@ onEvent(sessionId: string, eventCode: number, eventMessage: string): void
 **起始版本：** 4.1.0(11)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -954,7 +993,8 @@ struct Page {
 
 
 
-#### onResult
+### onResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -969,6 +1009,7 @@ onResult(sessionId: string, result: SpeechRecognitionResult): void
 **起始版本：** 4.1.0(11)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1022,7 +1063,8 @@ struct Page {
 
 
 
-#### onComplete
+### onComplete
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1037,6 +1079,7 @@ onComplete(sessionId: string, eventMessage: string): void
 **起始版本：** 4.1.0(11)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1090,7 +1133,8 @@ struct Page {
 
 
 
-#### onError
+### onError
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1105,6 +1149,7 @@ onError(sessionId: string, errorCode: number, errorMessage: string): void
 **起始版本：** 4.1.0(11)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1159,7 +1204,8 @@ struct Page {
 
 
 
-#### CreateEngineParams
+## CreateEngineParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1171,6 +1217,7 @@ struct Page {
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | language | string | 否 | 否 | 语种，当前仅支持“zh-CN”中文。 |
@@ -1180,7 +1227,8 @@ struct Page {
 
 
 
-#### LanguageQuery
+## LanguageQuery
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1192,6 +1240,7 @@ struct Page {
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | sessionId | string | 否 | 否 | 会话ID，会话的唯一标识。 由字母、数字、下划线和短横线组成，无长度限制。 |
@@ -1200,7 +1249,8 @@ struct Page {
 
 
 
-#### StartParams
+## StartParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1211,6 +1261,7 @@ struct Page {
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1260,7 +1311,8 @@ struct Page {
 
 
 
-#### AudioInfo
+## AudioInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1271,6 +1323,7 @@ struct Page {
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1283,7 +1336,8 @@ struct Page {
 
 
 
-#### SpeechRecognitionResult
+## SpeechRecognitionResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1294,6 +1348,7 @@ struct Page {
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

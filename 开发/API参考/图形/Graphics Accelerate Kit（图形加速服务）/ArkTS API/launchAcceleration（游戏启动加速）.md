@@ -1,6 +1,6 @@
 # launchAcceleration（游戏启动加速）
 
-更新时间：2026-06-12 06:54:11
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/graphics-accelerate-launchacceleration
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -14,7 +14,8 @@
 **起始版本：** 6.0.0(20)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -24,7 +25,8 @@ import { launchAcceleration } from '@kit.GraphicsAccelerateKit';
  
   
 
-#### isLaunchMirrorEnabled
+## isLaunchMirrorEnabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -40,6 +42,7 @@ isLaunchMirrorEnabled(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 系统将结合当前设备的游戏热度、内存镜像数、当日磁盘换出量综合判定是否使能内存镜像功能： - true：游戏使能了内存镜像功能。游戏先切换场景（建议开发者将场景切换至游戏登录界面），系统在退出游戏前自动制作内存镜像，制作内存镜像大概需要4s。 - false：游戏未使能内存镜像功能，系统将直接退出游戏进程。 默认为false。 |
@@ -61,7 +64,8 @@ onWindowStageWillDestroy(): void {
  
   
 
-#### completeGamePrelaunch
+## completeGamePrelaunch
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -77,6 +81,7 @@ completeGamePrelaunch(context: common.UIAbilityContext): Promise&lt;void&gt;
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | UIAbility组件上下文。 |
@@ -84,6 +89,7 @@ completeGamePrelaunch(context: common.UIAbilityContext): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -93,6 +99,7 @@ completeGamePrelaunch(context: common.UIAbilityContext): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-graphics-accelerate)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1019400001 | Service error. 1. Connect to system service failed; 2.System service failed to communicate with dependency module. |
@@ -119,7 +126,8 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### terminateGamePrelaunch
+## terminateGamePrelaunch
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -135,6 +143,7 @@ terminateGamePrelaunch(context: common.UIAbilityContext): Promise&lt;void&gt;
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | UIAbility组件上下文。 |
@@ -142,6 +151,7 @@ terminateGamePrelaunch(context: common.UIAbilityContext): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -151,6 +161,7 @@ terminateGamePrelaunch(context: common.UIAbilityContext): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-graphics-accelerate)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1019400001 | Service error. 1. Connect to system service failed; 2.System service failed to communicate with dependency module. |

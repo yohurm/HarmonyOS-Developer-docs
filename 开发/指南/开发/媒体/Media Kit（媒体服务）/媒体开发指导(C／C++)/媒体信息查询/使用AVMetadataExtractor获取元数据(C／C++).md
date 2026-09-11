@@ -1,6 +1,6 @@
 # 使用AVMetadataExtractor获取元数据(C/C++)
 
-更新时间：2026-03-09 02:50:43
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ndk-avmetadataextractor-for-media
 
@@ -9,7 +9,7 @@
 获取媒体资源的元数据的全流程包含：创建AVMetadataExtractor、设置资源、获取元数据、销毁资源。
 
 
-#### 开发步骤及注意事项
+## 开发步骤及注意事项
 
 在CMake脚本中链接动态库。
 
@@ -138,7 +138,7 @@ OH_AVMetadataExtractor_Release(mainExtractor);
 
 
 
-#### 运行示例工程
+## 运行示例工程
 
 参考以下示例，获取一个音频的元数据和专辑封面。
 1. 新建工程，下载[完整示例工程](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/Media/AVMetadataExtractor/AVMetadataExtractorNDK)，并将示例工程的资源复制到对应目录。       

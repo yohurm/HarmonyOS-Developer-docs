@@ -37,7 +37,7 @@ RichEditor能否实现文本的有序标签和无序标签？如果不能有没�
 @Entry
 @Component
 struct test {
-  // 编号开头的列表行
+<em>  // 编号开头的列表行</em>
   @Builder
   ListNumBuilder(num: number, title: string) {
     Flex() {
@@ -46,7 +46,7 @@ struct test {
     }
   }
 
-  // 列表行
+<em>  // 列表行</em>
   @Builder
   ListItemBuilder(title: string) {
     Flex() {

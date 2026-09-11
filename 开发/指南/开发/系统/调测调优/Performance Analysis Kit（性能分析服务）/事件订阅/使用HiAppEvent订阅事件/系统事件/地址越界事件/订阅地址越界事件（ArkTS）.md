@@ -1,12 +1,13 @@
 # 订阅地址越界事件（ArkTS）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-watcher-address-sanitizer-events-arkts
 
-#### 接口说明
+## 接口说明
 
 API接口的具体使用说明（参数使用限制、具体取值范围等）请参考[@ohos.hiviewdfx.hiAppEvent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hiviewdfx-hiappevent)。
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -16,13 +17,13 @@ API接口的具体使用说明（参数使用限制、具体取值范围等）�
 
 
 
-#### 开发步骤
+## 开发步骤
 
 以实现对写数组越界场景生成的地址越界事件订阅为例，说明开发步骤。
 
 
 
-#### 步骤一：新建工程
+### 步骤一：新建工程
 1. 新建Native C++工程，目录结构如下：
 
   
@@ -54,7 +55,7 @@ import { deviceInfo, BusinessError } from '@kit.BasicServicesKit';
 
 
 
-#### 步骤二：订阅地址越界事件
+### 步骤二：订阅地址越界事件
 1. 编辑工程中的“entry > src > main > ets > entryability > EntryAbility.ets”文件，在onCreate函数中添加系统事件的订阅，示例代码如下
 
   
@@ -114,7 +115,7 @@ hiAppEvent.addWatcher({
 
 
 
-#### 步骤三：构造地址越界错误
+### 步骤三：构造地址越界错误
 1. 编辑“entry > src > main > cpp > napi_init.cpp”文件，该文件实现地址越界场景，并提供NAPI接口给应用层代码调用，完整示例代码如下：
 
   

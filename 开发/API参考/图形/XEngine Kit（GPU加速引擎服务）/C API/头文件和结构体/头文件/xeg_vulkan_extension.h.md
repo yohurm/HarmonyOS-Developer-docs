@@ -1,11 +1,12 @@
 # xeg_vulkan_extension.h
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-kit-xeg-vulkan-extension-8h
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -23,16 +24,19 @@ XEngine扩展特性查询接口（Vulkan）。
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 结构体
+### 结构体
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | struct XEG_ExtensionProperties | 此结构体描述通过HMS_XEG_EnumerateDeviceExtensionProperties接口查询到的XEngine扩展特性集合。 |
@@ -40,10 +44,12 @@ XEngine扩展特性查询接口（Vulkan）。
  
   
 
-#### 宏定义
+### 宏定义
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | XEG_MAX_EXTENSION_NAME_SIZE 256 | XEngine扩展特性名称支持的最大长度。 |
@@ -51,10 +57,12 @@ XEngine扩展特性查询接口（Vulkan）。
  
   
 
-#### 类型定义
+### 类型定义
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | typedef struct XEG_ExtensionProperties XEG_ExtensionProperties | 此结构体描述通过HMS_XEG_EnumerateDeviceExtensionProperties接口查询到的XEngine扩展特性集合。 |
@@ -63,10 +71,12 @@ XEngine扩展特性查询接口（Vulkan）。
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | VKAPI_ATTR VkResult VKAPI_CALL HMS_XEG_EnumerateDeviceExtensionProperties (VkPhysicalDevice physicalDevice, uint32_t *pPropertyCount, XEG_ExtensionProperties *pProperties) | XEngine Vulkan扩展特性查询接口。 |

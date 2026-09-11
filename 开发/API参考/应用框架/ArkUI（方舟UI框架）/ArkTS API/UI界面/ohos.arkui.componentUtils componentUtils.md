@@ -1,9 +1,9 @@
 # @ohos.arkui.componentUtils (componentUtils)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-componentutils
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供获取组件绘制区域坐标和大小的能力，适用于在组件布局完成后查询组件实际绘制区域信息的场景，帮助开发者获取组件尺寸、位置等布局结果。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { componentUtils } from '@kit.ArkUI';
@@ -22,9 +23,10 @@ import { componentUtils } from '@kit.ArkUI';
 
 
 
-#### componentUtils.getRectangleById(deprecated)
+## componentUtils.getRectangleById(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRectangleById(id: string): ComponentInfo
 
@@ -40,12 +42,14 @@ getRectangleById(id: string): ComponentInfo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | string | 是 | 指定组件id。目标组件需已挂载到组件树并完成布局。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -55,6 +59,7 @@ getRectangleById(id: string): ComponentInfo
 **错误码：**
 
 以下错误码的详细介绍请参见[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -70,15 +75,17 @@ let modePosition:componentUtils.ComponentInfo = componentUtils.getRectangleById(
 
 
 
-#### ComponentInfo
+## ComponentInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 组件大小、位置、平移缩放旋转及仿射矩阵属性信息。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -94,13 +101,15 @@ let modePosition:componentUtils.ComponentInfo = componentUtils.getRectangleById(
 
 
 
-#### Size
+## Size
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -110,13 +119,15 @@ let modePosition:componentUtils.ComponentInfo = componentUtils.getRectangleById(
 
 
 
-#### Offset
+## Offset
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -126,13 +137,15 @@ let modePosition:componentUtils.ComponentInfo = componentUtils.getRectangleById(
 
 
 
-#### TranslateResult
+## TranslateResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -143,13 +156,15 @@ let modePosition:componentUtils.ComponentInfo = componentUtils.getRectangleById(
 
 
 
-#### ScaleResult
+## ScaleResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -162,13 +177,15 @@ let modePosition:componentUtils.ComponentInfo = componentUtils.getRectangleById(
 
 
 
-#### RotateResult
+## RotateResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -182,9 +199,10 @@ let modePosition:componentUtils.ComponentInfo = componentUtils.getRectangleById(
 
 
 
-#### Matrix4Result
+## Matrix4Result
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Matrix4Result = [number,number,number,number,number,number,number,number,number,number,number,number,number,number,number,number]
 
@@ -192,12 +210,14 @@ type Matrix4Result = [number,number,number,number,number,number,number,number,nu
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | [number,number,number,number, number,number,number,number, number,number,number,number, number,number,number,number] | 长度为16（4*4）的number数组，详情见四阶矩阵说明。 |
 
 
 **四阶矩阵说明：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -221,13 +241,17 @@ type Matrix4Result = [number,number,number,number,number,number,number,number,nu
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（获取ComponentUtils对象）
+
+
+### 示例1（获取ComponentUtils对象）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 推荐使用[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)中的[getComponentUtils](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#getcomponentutils)方法获取当前UI上下文关联的ComponentUtils对象。
 
@@ -237,11 +261,11 @@ import { matrix4 } from '@kit.ArkUI';
 @Entry
 @Component
 struct Utils {
-  @State translateX: number = 120;
-  @State translateY: number = 10;
-  @State translateZ: number = 100;
+  @State x: number = 120;
+  @State y: number = 10;
+  @State z: number = 100;
   @State value: string = '';
-  private matrix1 = matrix4.identity().translate({ x: this.translateX, y: this.translateY, z: this.translateZ });
+  private matrix1 = matrix4.identity().translate({ x: this.x, y: this.y, z: this.z });
 
   build() {
     Column() {
@@ -278,4 +302,4 @@ struct Utils {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/zqFLJIKKTL-B6Yh-2id-YQ/zh-cn_image_0000002704274131.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095444Z&HW-CC-Expire=86400&HW-CC-Sign=7698B8955501AAFD7D9ABD90668384DF20A263442F6E7211DA229926BA82BF50)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/6DkIDopKRt2liDFqahpIJQ/zh-cn_image_0000002747212235.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=64DCD93EAA5CEB3728C76F647335FAF2C80EEC2AA34EE01C0F98C2652C353B1B)

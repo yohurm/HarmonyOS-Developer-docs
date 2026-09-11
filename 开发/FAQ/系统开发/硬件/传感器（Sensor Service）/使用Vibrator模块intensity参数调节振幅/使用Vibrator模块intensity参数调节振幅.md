@@ -48,14 +48,14 @@ struct VibratorDemo {
             let ret = vibrator.isHdHapticSupported();
             console.info(`isHdHapticSupported result is ${ret}`);
             if (ret) {
-              // 需要在module.json5中添加权限"ohos.permission.VIBRATE"
+             <em> // 需要在module.json5中添加权限"ohos.permission.VIBRATE"</em>
               vibrator.startVibration({
                 type: 'preset',
                 count: 20,
                 intensity: 100,
                 effectId: 'haptic.effect.hard',
               }, {
-                // 可定义振动使用场景
+               <em> // 可定义振动使用场景</em>
                 usage: 'unknown'
               }, (error: BusinessError) => {
                 if (error) {

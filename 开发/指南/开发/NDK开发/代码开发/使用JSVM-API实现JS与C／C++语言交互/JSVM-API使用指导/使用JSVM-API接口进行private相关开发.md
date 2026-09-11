@@ -1,23 +1,24 @@
-# 使用JSVM-API接口进行private相关开发
+# 使用JSVM-API接口进行 private 属性相关开发
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-about-private
 
-#### 简介
+## 简介
 
 JSVM-API 提供操作私有属性的接口。
  
   
 
-#### 基本概念
+## 基本概念
 
 JSVM-API提供创建private key的能力，并支持在对象上使用该key进行属性的创建与删除，同时持久化保存private key symbol。
  
   
 
-#### 接口说明
+## 接口说明
  
+
 | 接口 | 功能说明 |
 | --- | --- |
 | OH_JSVM_CreateDataReference | 在JSVM中创建一个带有指定引用计数的数据引用。 |
@@ -30,15 +31,15 @@ JSVM-API提供创建private key的能力，并支持在对象上使用该key进�
  
   
 
-#### 使用示例
+## 使用示例
 
 JSVM-API接口开发流程参考[使用JSVM-API实现JS与C/C++语言交互开发流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-process)，本文仅对接口对应C++相关代码进行展示。
  
   
 
-#### 使用接口创建 private key 并添加对应 private property，随后删除
+### 使用接口创建 private key 并添加对应 private property，随后删除
 
-cpp部分代码
+cpp部分代码：
  
 ```text
 static JSVM_Value privateTest(JSVM_Env env, JSVM_CallbackInfo info) {
@@ -104,7 +105,7 @@ const char *srcCallNative = R"JS(privateTest();)JS";
  
   
 
-#### 预期输出结果
+## 预期输出结果
 
 ```text
 private property set: 1

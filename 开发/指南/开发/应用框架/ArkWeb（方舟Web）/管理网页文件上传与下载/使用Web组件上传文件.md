@@ -1,13 +1,13 @@
 # 使用Web组件上传文件
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-file-upload
 
 Web组件支持前端页面选择文件上传功能，应用开发者可以使用[onShowFileSelector()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-events#onshowfileselector9)接口来处理前端页面文件上传的请求，如果应用开发者不做任何处理，ArkWeb会提供默认行为来处理前端页面文件上传的请求。应用开发者也可以通过获取到的前端数据，自定义拉起Picker。
 
 
-#### 使用onShowFileSelector拉起文件管理器
+## 使用onShowFileSelector拉起文件管理器
 
 下面的示例中，当用户在前端页面点击文件上传按钮，应用侧在[onShowFileSelector()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-events#onshowfileselector9)接口中收到文件上传请求，在此接口中开发者将上传的本地文件路径设置给前端页面。
 
@@ -75,7 +75,7 @@ struct WebComponent {
 
 
 
-#### 使用onShowFileSelector拉起图库
+## 使用onShowFileSelector拉起图库
 
 下面的示例中，当用户在前端页面点击文件上传按钮，应用侧在[onShowFileSelector()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-events#onshowfileselector9)接口中收到文件上传请求，在此接口中开发者将上传的本地图片路径设置给前端页面。
 
@@ -145,7 +145,7 @@ struct WebComponent {
 
 
 
-#### 使用onShowFileSelector拉起相机
+## 使用onShowFileSelector拉起相机
 
 Web组件支持前端页面上传图片文件时调用相机即时拍照，应用开发者可以使用[onShowFileSelector()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-events#onshowfileselector9)接口来处理前端页面文件上传的请求并自行拉起相机，如果应用开发者不做任何处理，ArkWeb会提供默认行为来处理前端页面调用相机的请求。
 
@@ -247,7 +247,7 @@ HTML页面代码
 
 
 
-#### 使用ArkWeb默认的方式处理文件上传请求
+## 使用ArkWeb默认的方式处理文件上传请求
 
 accept属性是一个字符串，它定义了文件input应该接受的文件类型。这个字符串是一个以逗号为分隔的唯一文件类型说明符列表。由于给定的文件类型可以用多种方式指定，因此当你需要给定格式的文件时，提供一组完整的类型指定符是非常有用的。
 
@@ -256,6 +256,7 @@ capture属性是一个字符串，如果accept属性指出了input是图片或�
 当指定布尔类型属性multiple时，文件input允许用户选择多个文件。
 
 示例页面内有数个文件选择器，分别设置了不同的accept及capture属性，这两个属性对相机的影响如下：
+
 
 | accept | capture | 文件选择器行为 |
 | --- | --- | --- |
@@ -348,7 +349,7 @@ struct Index {
 
 
 
-#### 自定义处理JS接口拉起的文件请求
+## 自定义处理JS接口拉起的文件请求
 
 从API version 23开始，在OnShowFileSelectorEvent的FileSelectorParam中新增接口getSuggestedName()、getDefaultPath()、getDescriptions()、isAcceptAllOptionExcluded()。
 
@@ -499,7 +500,7 @@ struct WebComponent {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/h6TQroXdSnSE0ZMHp4XwpA/zh-cn_image_0000002704272693.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095736Z&HW-CC-Expire=86400&HW-CC-Sign=AE092B53D38B81A9833E490D806359003E6B04ED8FA91A1048C75E8C0068C557)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/HBsoH-hTTb27qqqdzdmsnA/zh-cn_image_0000002747210805.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073147Z&HW-CC-Expire=86400&HW-CC-Sign=139C22096CB603C40177BE05EFE0DED2675C1D72263D89D28609CEFC6B0553C3)
 
 
 样例以HTML中的showSaveFilePicker()配合ArkTS中documentViewPicker.save()方法为例。
@@ -510,17 +511,17 @@ struct WebComponent {
 
 
 
-#### 常见问题
+## 常见问题
 
 
 
-#### onShowFileSelector配合ArkWeb默认弹窗使用
+### onShowFileSelector配合ArkWeb默认弹窗使用
 
 用户点击文件上传按钮后，程序优先执行onShowFileSelector中的回调进行逻辑处理，应用开发者可根据处理结果选择返回false以触发ArkWeb默认弹窗，此时应避免同时触发应用侧的其他Picker；若开发者选择返回true，则拦截ArkWeb默认弹窗并仅执行自定义行为。
 
 
 
-#### 回调中getAcceptType和getMimeTypes的区别
+### 回调中getAcceptType和getMimeTypes的区别
 
 getAcceptType返回的是accept属性值全量转换为文件扩展名所组成的字符串数组，getMimeTypes返回的是accept属性值用逗号拆分后所组成的字符串数组。
 
@@ -528,13 +529,13 @@ getAcceptType返回的是accept属性值全量转换为文件扩展名所组成�
 
 
 
-#### ArkWeb默认弹窗的说明
+### ArkWeb默认弹窗的说明
 
 选项“图片”会拉起图库，根据accept属性值不同，用户可以选择上传图片或视频；选项“拍照”会拉起相机，根据accept属性值不同，用户可以选择拍照或录像；选项“文件”会拉起文件管理器，用户可以上传任意内容。
 
 
 
-#### handleFileList的使用说明
+### handleFileList的使用说明
 
 该函数将选择的文件路径提交给ArkWeb，入参主要有两种类型：
 1. file协议路径，目前只支持前缀为file://media/、file://docs/的公共路径和file://&lt;packageName&gt;/的应用包名路径，其他file协议路径无权限。

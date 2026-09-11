@@ -1,18 +1,19 @@
 # ARKUI_TextPickerCascadeRangeContent
 
-更新时间：2026-07-28 11:23:46（官网已下线）
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-arkui-textpickercascaderangecontent
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct {...} ARKUI_TextPickerCascadeRangeContent
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义多列联动滑动数据选择器的结构体，用于描述多列联动选择器的层级数据结构。该结构体通过children成员形成树状结构，支持多级联动选择，适用于需要展示省市区、年月日等分级数据的场景，可简化多级联动选择器的开发。
  
@@ -24,16 +25,19 @@ typedef struct {...} ARKUI_TextPickerCascadeRangeContent
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 成员变量
+### 成员变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | const char* text | 要显示在多列联动滑动选择器中的文本内容，用于表示该选项的显示文本。默认值为NULL，可设置为空字符串表示无文本。取值原则请参见接口说明。 说明： 未设置文本时，建议将text设置为NULL。 |

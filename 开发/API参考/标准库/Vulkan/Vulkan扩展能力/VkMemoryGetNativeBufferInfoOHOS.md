@@ -1,15 +1,19 @@
 # VkMemoryGetNativeBufferInfoOHOS
 
-更新时间：2026-03-09 02:50:43
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-vulkan-vkmemorygetnativebufferinfoohos
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct VkMemoryGetNativeBufferInfoOHOS {...} VkMemoryGetNativeBufferInfoOHOS
 ```
   
 
-#### 概述
+## 概述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于从Vulkan内存中获取OH_NativeBuffer。
  
@@ -21,12 +25,19 @@ typedef struct VkMemoryGetNativeBufferInfoOHOS {...} VkMemoryGetNativeBufferInfo
  
   
 
-#### 汇总
+## 汇总
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 成员变量
+### 成员变量
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | VkStructureType sType | 结构体类型，值必须为VK_STRUCTURE_TYPE_MEMORY_GET_NATIVE_BUFFER_INFO_OHOS。 |

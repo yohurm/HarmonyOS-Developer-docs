@@ -1,27 +1,28 @@
 # USB串口通信管理
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/usbserial-communication
 
-#### 简介
+## 简介
 
 USB串口通信服务中通过Host设备的USB接口连接串口设备的串口进行串行数据传输，通信管理核心目标是实现设备间的高效、稳定数据传输与协同控制。主要使用在工业自动化与远程监控、物联网设备互联、医疗设备管理等场景。
  
   
 
-#### 环境准备
+## 环境准备
 
 请参考USB串口通信服务开发概述[环境准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/usbserial-overview#环境准备)。
  
   
 
-#### 开发指导
+## 开发指导
 
   
 
-#### 接口说明
+### 接口说明
  
+
 | 接口名 | 描述 |
 | --- | --- |
 | getPortList(): Readonly&lt;SerialPort&gt;[] | 获取串口设备列表。 |
@@ -37,7 +38,7 @@ USB串口通信服务中通过Host设备的USB接口连接串口设备的串口�
  
   
 
-#### 开发步骤
+### 开发步骤
 
 开发者可以通过上述接口读取和写入数据：
  
@@ -184,7 +185,7 @@ try {
  
   
 
-#### 调测验证
+### 调测验证
 1. 准备一根USB转串口线缆，线缆的USB接口连接到HarmonyOS设备USB端口（该端口需支持USB转串口），线缆的串口接口连接到目标设备的串口上。
 2. 在HarmonyOS设备上执行上述示例。
 3. 返回usbSerial success，表示相关接口调用成功，设备串口通信能力正常；返回usbSerial error，表示接口调用失败。

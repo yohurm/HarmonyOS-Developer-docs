@@ -1,6 +1,6 @@
 # OH_AVScreenCaptureHighlightConfig
 
-更新时间：2026-07-28 11:23:46（官网已下线）
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avscreencapture-oh-avscreencapturehighlightconfig
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -10,7 +10,8 @@ typedef struct OH_AVScreenCaptureHighlightConfig {...} OH_AVScreenCaptureHighlig
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -24,16 +25,19 @@ typedef struct OH_AVScreenCaptureHighlightConfig {...} OH_AVScreenCaptureHighlig
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_ScreenCaptureHighlightMode mode | 高亮边框的模式，各枚举值的意义及与数字的对应关系请参见OH_ScreenCaptureHighlightMode枚举定义。方形全包边框：适用于常规录制场景，高亮效果更明显。四角包裹边框：适用于需要减少视觉干扰的场景。未指定时默认为方形全包边框（即边框完全包围捕获区域的所有边）；其他模式请根据录制区域的显示需求选择。 |

@@ -1,18 +1,19 @@
 # DRM错误码
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-drm
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!TIP]
 > 以下仅介绍本模块特有错误码，通用错误码请参考 通用错误码说明文档 。
 
 
 
-#### 24700101 未知错误
+## 24700101 未知错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -32,9 +33,10 @@ Unknown error.
 
 
 
-#### 24700103 MediaKeySystem数量达到极限
+## 24700103 MediaKeySystem数量达到极限
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -54,9 +56,10 @@ MediaKeySystem实例数量超过上限（64个）。
 
 
 
-#### 24700104 MediaKeySession数量达到极限
+## 24700104 MediaKeySession数量达到极限
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -76,9 +79,10 @@ MediaKeySession实例数量超过上限（64个）。
 
 
 
-#### 24700201 服务异常
+## 24700201 服务异常
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 

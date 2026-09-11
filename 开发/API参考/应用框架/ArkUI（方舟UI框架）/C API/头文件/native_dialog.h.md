@@ -1,13 +1,14 @@
 # native_dialog.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-dialog-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供ArkUI在Native侧的自定义弹窗接口定义集合，支持创建、显示、更新、关闭自定义弹窗，以及设置弹窗样式、背景、边框、阴影等属性，支持注册弹窗生命周期事件监听，适用于需要在Native侧实现灵活弹窗交互的场景。
  
@@ -25,16 +26,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | ArkUI_NativeDialogAPI_1 | ArkUI_NativeDialogAPI_1 | ArkUI提供的Native侧自定义弹窗接口集合。 |
@@ -46,10 +50,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | ArkUI_DismissReason | ArkUI_DismissReason | 弹窗关闭的触发方式。 |
@@ -61,10 +67,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | typedef bool (*ArkUI_OnWillDismissEvent)(int32_t reason) | ArkUI_OnWillDismissEvent | 弹窗关闭的回调函数。 |
@@ -112,15 +120,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### ArkUI_DismissReason
+### ArkUI_DismissReason
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_DismissReason
@@ -132,6 +142,7 @@ enum ArkUI_DismissReason
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | DIALOG_DISMISS_BACK_PRESS = 0 | 点击三键back、侧滑（左滑/右滑）、键盘ESC触发。 |
@@ -142,9 +153,10 @@ enum ArkUI_DismissReason
  
   
 
-#### ArkUI_LevelMode
+### ArkUI_LevelMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_LevelMode
@@ -156,6 +168,7 @@ enum ArkUI_LevelMode
  
 **起始版本：** 15
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ARKUI_LEVEL_MODE_OVERLAY = 0 | 显示在应用最上层。 |
@@ -164,9 +177,10 @@ enum ArkUI_LevelMode
  
   
 
-#### ArkUI_ImmersiveMode
+### ArkUI_ImmersiveMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_ImmersiveMode
@@ -178,6 +192,7 @@ enum ArkUI_ImmersiveMode
  
 **起始版本：** 15
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ARKUI_IMMERSIVE_MODE_DEFAULT = 0 | 弹窗蒙层按照显示页面给定的布局约束显示。 |
@@ -186,9 +201,10 @@ enum ArkUI_ImmersiveMode
  
   
 
-#### OH_ArkUI_DialogDisplayModeInSubWindow
+### OH_ArkUI_DialogDisplayModeInSubWindow
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_ArkUI_DialogDisplayModeInSubWindow
@@ -200,6 +216,7 @@ enum OH_ArkUI_DialogDisplayModeInSubWindow
  
 **起始版本：** 26.0.0
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_ARKUI_DIALOG_DISPLAY_MODE_SCREEN_BASED = 0 | 弹窗在屏幕居中显示。 |
@@ -208,9 +225,10 @@ enum OH_ArkUI_DialogDisplayModeInSubWindow
  
   
 
-#### ArkUI_DialogState
+### ArkUI_DialogState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_DialogState
@@ -222,6 +240,7 @@ enum ArkUI_DialogState
  
 **起始版本：** 20
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | DIALOG_UNINITIALIZED = 0 | 未初始化，控制器未与dialog绑定时。 |
@@ -234,15 +253,17 @@ enum ArkUI_DialogState
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### ArkUI_OnWillDismissEvent()
+### ArkUI_OnWillDismissEvent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef bool (*ArkUI_OnWillDismissEvent)(int32_t reason)
@@ -256,13 +277,15 @@ typedef bool (*ArkUI_OnWillDismissEvent)(int32_t reason)
  
 **参数:**
   
-| 名称 | 描述 |
+
+| 参数项 | 描述 |
 | --- | --- |
-| reason | 触发弹窗关闭的原因，取值为ArkUI_DismissReason枚举值。 |
+| int32_t reason | 触发弹窗关闭的原因，取值为ArkUI_DismissReason枚举值。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回任意值都表示不关闭弹窗。 |
@@ -270,9 +293,10 @@ typedef bool (*ArkUI_OnWillDismissEvent)(int32_t reason)
  
   
 
-#### OH_ArkUI_DialogDismissEvent_SetShouldBlockDismiss()
+### OH_ArkUI_DialogDismissEvent_SetShouldBlockDismiss()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_DialogDismissEvent_SetShouldBlockDismiss(ArkUI_DialogDismissEvent* event, bool shouldBlockDismiss)
@@ -286,6 +310,7 @@ void OH_ArkUI_DialogDismissEvent_SetShouldBlockDismiss(ArkUI_DialogDismissEvent*
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DialogDismissEvent* event | 弹窗关闭事件对象指针。 |
@@ -294,9 +319,10 @@ void OH_ArkUI_DialogDismissEvent_SetShouldBlockDismiss(ArkUI_DialogDismissEvent*
  
   
 
-#### OH_ArkUI_DialogDismissEvent_GetUserData()
+### OH_ArkUI_DialogDismissEvent_GetUserData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void* OH_ArkUI_DialogDismissEvent_GetUserData(ArkUI_DialogDismissEvent* event)
@@ -310,6 +336,7 @@ void* OH_ArkUI_DialogDismissEvent_GetUserData(ArkUI_DialogDismissEvent* event)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DialogDismissEvent* event | 弹窗关闭事件对象指针。 |
@@ -317,6 +344,7 @@ void* OH_ArkUI_DialogDismissEvent_GetUserData(ArkUI_DialogDismissEvent* event)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | void* | 返回注册回调时传入的用户自定义数据指针，常用于在回调函数中获取上下文信息。 |
@@ -324,9 +352,10 @@ void* OH_ArkUI_DialogDismissEvent_GetUserData(ArkUI_DialogDismissEvent* event)
  
   
 
-#### OH_ArkUI_DialogDismissEvent_GetDismissReason()
+### OH_ArkUI_DialogDismissEvent_GetDismissReason()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_DialogDismissEvent_GetDismissReason(ArkUI_DialogDismissEvent* event)
@@ -340,6 +369,7 @@ int32_t OH_ArkUI_DialogDismissEvent_GetDismissReason(ArkUI_DialogDismissEvent* e
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DialogDismissEvent* event | 弹窗关闭事件对象指针。 |
@@ -347,6 +377,7 @@ int32_t OH_ArkUI_DialogDismissEvent_GetDismissReason(ArkUI_DialogDismissEvent* e
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 关闭原因，异常情况返回-1。 DIALOG_DISMISS_BACK_PRESS 点击三键back、侧滑（左滑/右滑）、键盘ESC触发。 DIALOG_DISMISS_TOUCH_OUTSIDE 点击遮罩层触发。 DIALOG_DISMISS_CLOSE_BUTTON 点击关闭按钮。 DIALOG_DISMISS_SLIDE_DOWN 下拉关闭。 |
@@ -354,9 +385,10 @@ int32_t OH_ArkUI_DialogDismissEvent_GetDismissReason(ArkUI_DialogDismissEvent* e
  
   
 
-#### OH_ArkUI_CustomDialog_OpenDialog()
+### OH_ArkUI_CustomDialog_OpenDialog()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_CustomDialog_OpenDialog(ArkUI_CustomDialogOptions* options, void (*callback)(int32_t dialogId))
@@ -370,6 +402,7 @@ int32_t OH_ArkUI_CustomDialog_OpenDialog(ArkUI_CustomDialogOptions* options, voi
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CustomDialogOptions* options | 弹窗参数。 |
@@ -378,6 +411,7 @@ int32_t OH_ArkUI_CustomDialog_OpenDialog(ArkUI_CustomDialogOptions* options, voi
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -385,9 +419,10 @@ int32_t OH_ArkUI_CustomDialog_OpenDialog(ArkUI_CustomDialogOptions* options, voi
  
   
 
-#### OH_ArkUI_CustomDialog_UpdateDialog()
+### OH_ArkUI_CustomDialog_UpdateDialog()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_CustomDialog_UpdateDialog(ArkUI_CustomDialogOptions* options, void (*callback)(int32_t dialogId))
@@ -401,6 +436,7 @@ int32_t OH_ArkUI_CustomDialog_UpdateDialog(ArkUI_CustomDialogOptions* options, v
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CustomDialogOptions* options | 弹窗参数。 |
@@ -409,6 +445,7 @@ int32_t OH_ArkUI_CustomDialog_UpdateDialog(ArkUI_CustomDialogOptions* options, v
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -416,9 +453,10 @@ int32_t OH_ArkUI_CustomDialog_UpdateDialog(ArkUI_CustomDialogOptions* options, v
  
   
 
-#### OH_ArkUI_CustomDialog_CloseDialog()
+### OH_ArkUI_CustomDialog_CloseDialog()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_CustomDialog_CloseDialog(int32_t dialogId)
@@ -432,6 +470,7 @@ int32_t OH_ArkUI_CustomDialog_CloseDialog(int32_t dialogId)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | int32_t dialogId | 需要关闭的弹窗ID。 |
@@ -439,6 +478,7 @@ int32_t OH_ArkUI_CustomDialog_CloseDialog(int32_t dialogId)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -446,9 +486,10 @@ int32_t OH_ArkUI_CustomDialog_CloseDialog(int32_t dialogId)
  
   
 
-#### OH_ArkUI_CustomDialog_CreateOptions()
+### OH_ArkUI_CustomDialog_CreateOptions()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_CustomDialogOptions* OH_ArkUI_CustomDialog_CreateOptions(ArkUI_NodeHandle content)
@@ -462,6 +503,7 @@ ArkUI_CustomDialogOptions* OH_ArkUI_CustomDialog_CreateOptions(ArkUI_NodeHandle 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle content | 自定义弹窗的内容节点指针，类型为ArkUI_NodeHandle。 |
@@ -469,6 +511,7 @@ ArkUI_CustomDialogOptions* OH_ArkUI_CustomDialog_CreateOptions(ArkUI_NodeHandle 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_CustomDialogOptions* | 自定义弹窗配置的指针。 |
@@ -476,9 +519,10 @@ ArkUI_CustomDialogOptions* OH_ArkUI_CustomDialog_CreateOptions(ArkUI_NodeHandle 
  
   
 
-#### OH_ArkUI_CustomDialog_DisposeOptions()
+### OH_ArkUI_CustomDialog_DisposeOptions()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_CustomDialog_DisposeOptions(ArkUI_CustomDialogOptions* options)
@@ -492,6 +536,7 @@ void OH_ArkUI_CustomDialog_DisposeOptions(ArkUI_CustomDialogOptions* options)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CustomDialogOptions* options | 自定义弹窗配置的指针。 |
@@ -499,9 +544,10 @@ void OH_ArkUI_CustomDialog_DisposeOptions(ArkUI_CustomDialogOptions* options)
  
   
 
-#### OH_ArkUI_CustomDialog_SetLevelMode()
+### OH_ArkUI_CustomDialog_SetLevelMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_CustomDialog_SetLevelMode(ArkUI_CustomDialogOptions* options, ArkUI_LevelMode levelMode)
@@ -519,6 +565,7 @@ int32_t OH_ArkUI_CustomDialog_SetLevelMode(ArkUI_CustomDialogOptions* options, A
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CustomDialogOptions* options | 指向自定义弹窗options的指针。 |
@@ -527,6 +574,7 @@ int32_t OH_ArkUI_CustomDialog_SetLevelMode(ArkUI_CustomDialogOptions* options, A
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -534,9 +582,10 @@ int32_t OH_ArkUI_CustomDialog_SetLevelMode(ArkUI_CustomDialogOptions* options, A
  
   
 
-#### OH_ArkUI_CustomDialog_SetLevelUniqueId()
+### OH_ArkUI_CustomDialog_SetLevelUniqueId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_CustomDialog_SetLevelUniqueId(ArkUI_CustomDialogOptions* options, int32_t uniqueId)
@@ -554,6 +603,7 @@ int32_t OH_ArkUI_CustomDialog_SetLevelUniqueId(ArkUI_CustomDialogOptions* option
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CustomDialogOptions* options | 指向自定义弹窗options的指针。 |
@@ -562,6 +612,7 @@ int32_t OH_ArkUI_CustomDialog_SetLevelUniqueId(ArkUI_CustomDialogOptions* option
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -569,9 +620,10 @@ int32_t OH_ArkUI_CustomDialog_SetLevelUniqueId(ArkUI_CustomDialogOptions* option
  
   
 
-#### OH_ArkUI_CustomDialog_SetImmersiveMode()
+### OH_ArkUI_CustomDialog_SetImmersiveMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_CustomDialog_SetImmersiveMode(ArkUI_CustomDialogOptions* options, ArkUI_ImmersiveMode immersiveMode)
@@ -589,6 +641,7 @@ int32_t OH_ArkUI_CustomDialog_SetImmersiveMode(ArkUI_CustomDialogOptions* option
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CustomDialogOptions* options | 指向自定义弹窗options的指针。 |
@@ -597,6 +650,7 @@ int32_t OH_ArkUI_CustomDialog_SetImmersiveMode(ArkUI_CustomDialogOptions* option
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -604,9 +658,10 @@ int32_t OH_ArkUI_CustomDialog_SetImmersiveMode(ArkUI_CustomDialogOptions* option
  
   
 
-#### OH_ArkUI_CustomDialog_SetBackgroundColor()
+### OH_ArkUI_CustomDialog_SetBackgroundColor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_CustomDialog_SetBackgroundColor(ArkUI_CustomDialogOptions* options, uint32_t backgroundColor)
@@ -624,6 +679,7 @@ int32_t OH_ArkUI_CustomDialog_SetBackgroundColor(ArkUI_CustomDialogOptions* opti
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CustomDialogOptions* options | 弹窗参数。 |
@@ -632,6 +688,7 @@ int32_t OH_ArkUI_CustomDialog_SetBackgroundColor(ArkUI_CustomDialogOptions* opti
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -639,9 +696,10 @@ int32_t OH_ArkUI_CustomDialog_SetBackgroundColor(ArkUI_CustomDialogOptions* opti
  
   
 
-#### OH_ArkUI_CustomDialog_SetCornerRadius()
+### OH_ArkUI_CustomDialog_SetCornerRadius()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_CustomDialog_SetCornerRadius(ArkUI_CustomDialogOptions* options, float topLeft, float topRight, float bottomLeft, float bottomRight)
@@ -659,6 +717,7 @@ int32_t OH_ArkUI_CustomDialog_SetCornerRadius(ArkUI_CustomDialogOptions* options
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CustomDialogOptions* options | 弹窗参数。 |
@@ -670,6 +729,7 @@ int32_t OH_ArkUI_CustomDialog_SetCornerRadius(ArkUI_CustomDialogOptions* options
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -677,9 +737,10 @@ int32_t OH_ArkUI_CustomDialog_SetCornerRadius(ArkUI_CustomDialogOptions* options
  
   
 
-#### OH_ArkUI_CustomDialog_SetBorderWidth()
+### OH_ArkUI_CustomDialog_SetBorderWidth()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_CustomDialog_SetBorderWidth(ArkUI_CustomDialogOptions* options, float top, float right, float bottom, float left, ArkUI_LengthMetricUnit unit)
@@ -697,6 +758,7 @@ int32_t OH_ArkUI_CustomDialog_SetBorderWidth(ArkUI_CustomDialogOptions* options,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CustomDialogOptions* options | 弹窗参数。 |
@@ -709,6 +771,7 @@ int32_t OH_ArkUI_CustomDialog_SetBorderWidth(ArkUI_CustomDialogOptions* options,
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -716,9 +779,10 @@ int32_t OH_ArkUI_CustomDialog_SetBorderWidth(ArkUI_CustomDialogOptions* options,
  
   
 
-#### OH_ArkUI_CustomDialog_SetBorderColor()
+### OH_ArkUI_CustomDialog_SetBorderColor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_CustomDialog_SetBorderColor(ArkUI_CustomDialogOptions* options, uint32_t top, uint32_t right, uint32_t bottom, uint32_t left)
@@ -736,6 +800,7 @@ int32_t OH_ArkUI_CustomDialog_SetBorderColor(ArkUI_CustomDialogOptions* options,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CustomDialogOptions* options | 弹窗参数。 |
@@ -747,6 +812,7 @@ int32_t OH_ArkUI_CustomDialog_SetBorderColor(ArkUI_CustomDialogOptions* options,
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -754,9 +820,10 @@ int32_t OH_ArkUI_CustomDialog_SetBorderColor(ArkUI_CustomDialogOptions* options,
  
   
 
-#### OH_ArkUI_CustomDialog_SetBorderStyle()
+### OH_ArkUI_CustomDialog_SetBorderStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_CustomDialog_SetBorderStyle(ArkUI_CustomDialogOptions* options, int32_t top, int32_t right, int32_t bottom, int32_t left)
@@ -774,17 +841,19 @@ int32_t OH_ArkUI_CustomDialog_SetBorderStyle(ArkUI_CustomDialogOptions* options,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CustomDialogOptions* options | 弹窗参数。 |
-| ArkUI_BorderStyle top | 弹窗上边框的样式，默认值为ARKUI_BORDER_STYLE_SOLID。 |
-| ArkUI_BorderStyle right | 弹窗右边框的样式，默认值为ARKUI_BORDER_STYLE_SOLID。 |
-| ArkUI_BorderStyle bottom | 弹窗下边框的样式，默认值为ARKUI_BORDER_STYLE_SOLID。 |
-| ArkUI_BorderStyle left | 弹窗左边框的样式，默认值为ARKUI_BORDER_STYLE_SOLID。 |
+| int32_t top | 弹窗上边框的样式，默认值为ARKUI_BORDER_STYLE_SOLID。 |
+| int32_t right | 弹窗右边框的样式，默认值为ARKUI_BORDER_STYLE_SOLID。 |
+| int32_t bottom | 弹窗下边框的样式，默认值为ARKUI_BORDER_STYLE_SOLID。 |
+| int32_t left | 弹窗左边框的样式，默认值为ARKUI_BORDER_STYLE_SOLID。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -792,9 +861,10 @@ int32_t OH_ArkUI_CustomDialog_SetBorderStyle(ArkUI_CustomDialogOptions* options,
  
   
 
-#### OH_ArkUI_CustomDialog_SetWidth()
+### OH_ArkUI_CustomDialog_SetWidth()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_CustomDialog_SetWidth(ArkUI_CustomDialogOptions* options, float width, ArkUI_LengthMetricUnit unit)
@@ -812,6 +882,7 @@ int32_t OH_ArkUI_CustomDialog_SetWidth(ArkUI_CustomDialogOptions* options, float
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CustomDialogOptions* options | 弹窗参数。 |
@@ -821,6 +892,7 @@ int32_t OH_ArkUI_CustomDialog_SetWidth(ArkUI_CustomDialogOptions* options, float
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -828,9 +900,10 @@ int32_t OH_ArkUI_CustomDialog_SetWidth(ArkUI_CustomDialogOptions* options, float
  
   
 
-#### OH_ArkUI_CustomDialog_SetHeight()
+### OH_ArkUI_CustomDialog_SetHeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_CustomDialog_SetHeight(ArkUI_CustomDialogOptions* options, float height, ArkUI_LengthMetricUnit unit)
@@ -848,6 +921,7 @@ int32_t OH_ArkUI_CustomDialog_SetHeight(ArkUI_CustomDialogOptions* options, floa
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CustomDialogOptions* options | 弹窗参数。 |
@@ -857,6 +931,7 @@ int32_t OH_ArkUI_CustomDialog_SetHeight(ArkUI_CustomDialogOptions* options, floa
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -864,9 +939,10 @@ int32_t OH_ArkUI_CustomDialog_SetHeight(ArkUI_CustomDialogOptions* options, floa
  
   
 
-#### OH_ArkUI_CustomDialog_SetShadow()
+### OH_ArkUI_CustomDialog_SetShadow()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_CustomDialog_SetShadow(ArkUI_CustomDialogOptions* options, ArkUI_ShadowStyle shadow)
@@ -884,6 +960,7 @@ int32_t OH_ArkUI_CustomDialog_SetShadow(ArkUI_CustomDialogOptions* options, ArkU
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CustomDialogOptions* options | 弹窗参数。 |
@@ -892,6 +969,7 @@ int32_t OH_ArkUI_CustomDialog_SetShadow(ArkUI_CustomDialogOptions* options, ArkU
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -899,9 +977,10 @@ int32_t OH_ArkUI_CustomDialog_SetShadow(ArkUI_CustomDialogOptions* options, ArkU
  
   
 
-#### OH_ArkUI_CustomDialog_SetCustomShadow()
+### OH_ArkUI_CustomDialog_SetCustomShadow()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_CustomDialog_SetCustomShadow(ArkUI_CustomDialogOptions* options, const ArkUI_AttributeItem* customShadow)
@@ -919,6 +998,7 @@ int32_t OH_ArkUI_CustomDialog_SetCustomShadow(ArkUI_CustomDialogOptions* options
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CustomDialogOptions* options | 弹窗参数。 |
@@ -927,6 +1007,7 @@ int32_t OH_ArkUI_CustomDialog_SetCustomShadow(ArkUI_CustomDialogOptions* options
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -934,9 +1015,10 @@ int32_t OH_ArkUI_CustomDialog_SetCustomShadow(ArkUI_CustomDialogOptions* options
  
   
 
-#### OH_ArkUI_CustomDialog_SetBackgroundBlurStyle()
+### OH_ArkUI_CustomDialog_SetBackgroundBlurStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_CustomDialog_SetBackgroundBlurStyle(ArkUI_CustomDialogOptions* options, ArkUI_BlurStyle blurStyle)
@@ -954,6 +1036,7 @@ int32_t OH_ArkUI_CustomDialog_SetBackgroundBlurStyle(ArkUI_CustomDialogOptions* 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CustomDialogOptions* options | 弹窗参数。 |
@@ -962,6 +1045,7 @@ int32_t OH_ArkUI_CustomDialog_SetBackgroundBlurStyle(ArkUI_CustomDialogOptions* 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -969,9 +1053,10 @@ int32_t OH_ArkUI_CustomDialog_SetBackgroundBlurStyle(ArkUI_CustomDialogOptions* 
  
   
 
-#### OH_ArkUI_CustomDialog_SetAlignment()
+### OH_ArkUI_CustomDialog_SetAlignment()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_CustomDialog_SetAlignment(ArkUI_CustomDialogOptions* options, int32_t alignment, float offsetX, float offsetY)
@@ -989,6 +1074,7 @@ int32_t OH_ArkUI_CustomDialog_SetAlignment(ArkUI_CustomDialogOptions* options, i
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CustomDialogOptions* options | 弹窗参数。 |
@@ -999,6 +1085,7 @@ int32_t OH_ArkUI_CustomDialog_SetAlignment(ArkUI_CustomDialogOptions* options, i
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1006,9 +1093,10 @@ int32_t OH_ArkUI_CustomDialog_SetAlignment(ArkUI_CustomDialogOptions* options, i
  
   
 
-#### OH_ArkUI_CustomDialog_SetModalMode()
+### OH_ArkUI_CustomDialog_SetModalMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_CustomDialog_SetModalMode(ArkUI_CustomDialogOptions* options, bool isModal)
@@ -1026,6 +1114,7 @@ int32_t OH_ArkUI_CustomDialog_SetModalMode(ArkUI_CustomDialogOptions* options, b
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CustomDialogOptions* options | 弹窗参数。 |
@@ -1034,6 +1123,7 @@ int32_t OH_ArkUI_CustomDialog_SetModalMode(ArkUI_CustomDialogOptions* options, b
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1041,9 +1131,10 @@ int32_t OH_ArkUI_CustomDialog_SetModalMode(ArkUI_CustomDialogOptions* options, b
  
   
 
-#### OH_ArkUI_CustomDialog_SetAutoCancel()
+### OH_ArkUI_CustomDialog_SetAutoCancel()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_CustomDialog_SetAutoCancel(ArkUI_CustomDialogOptions* options, bool autoCancel)
@@ -1061,6 +1152,7 @@ int32_t OH_ArkUI_CustomDialog_SetAutoCancel(ArkUI_CustomDialogOptions* options, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CustomDialogOptions* options | 弹窗参数。 |
@@ -1069,6 +1161,7 @@ int32_t OH_ArkUI_CustomDialog_SetAutoCancel(ArkUI_CustomDialogOptions* options, 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1076,9 +1169,10 @@ int32_t OH_ArkUI_CustomDialog_SetAutoCancel(ArkUI_CustomDialogOptions* options, 
  
   
 
-#### OH_ArkUI_CustomDialog_SetSubwindowMode()
+### OH_ArkUI_CustomDialog_SetSubwindowMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_CustomDialog_SetSubwindowMode(ArkUI_CustomDialogOptions* options, bool showInSubwindow)
@@ -1096,6 +1190,7 @@ int32_t OH_ArkUI_CustomDialog_SetSubwindowMode(ArkUI_CustomDialogOptions* option
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CustomDialogOptions* options | 弹窗参数。 |
@@ -1104,6 +1199,7 @@ int32_t OH_ArkUI_CustomDialog_SetSubwindowMode(ArkUI_CustomDialogOptions* option
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1111,9 +1207,10 @@ int32_t OH_ArkUI_CustomDialog_SetSubwindowMode(ArkUI_CustomDialogOptions* option
  
   
 
-#### OH_ArkUI_NativeModule_CustomDialog_SetSystemMaterial()
+### OH_ArkUI_NativeModule_CustomDialog_SetSystemMaterial()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_NativeModule_CustomDialog_SetSystemMaterial(ArkUI_NativeDialogHandle handle, ArkUI_ImmersiveMaterialHandle material)
@@ -1127,6 +1224,7 @@ int32_t OH_ArkUI_NativeModule_CustomDialog_SetSystemMaterial(ArkUI_NativeDialogH
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NativeDialogHandle handle | 指向自定义弹窗控制器的指针。 |
@@ -1135,6 +1233,7 @@ int32_t OH_ArkUI_NativeModule_CustomDialog_SetSystemMaterial(ArkUI_NativeDialogH
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1142,9 +1241,10 @@ int32_t OH_ArkUI_NativeModule_CustomDialog_SetSystemMaterial(ArkUI_NativeDialogH
  
   
 
-#### OH_ArkUI_NativeModule_CustomDialog_SetSystemMaterialInOptions()
+### OH_ArkUI_NativeModule_CustomDialog_SetSystemMaterialInOptions()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_NativeModule_CustomDialog_SetSystemMaterialInOptions(ArkUI_CustomDialogOptions* options, ArkUI_ImmersiveMaterialHandle material)
@@ -1162,6 +1262,7 @@ int32_t OH_ArkUI_NativeModule_CustomDialog_SetSystemMaterialInOptions(ArkUI_Cust
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CustomDialogOptions* options | 指向弹窗参数对象的指针。 |
@@ -1170,6 +1271,7 @@ int32_t OH_ArkUI_NativeModule_CustomDialog_SetSystemMaterialInOptions(ArkUI_Cust
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1177,9 +1279,10 @@ int32_t OH_ArkUI_NativeModule_CustomDialog_SetSystemMaterialInOptions(ArkUI_Cust
  
   
 
-#### OH_ArkUI_CustomDialog_SetDisplayModeInSubWindow()
+### OH_ArkUI_CustomDialog_SetDisplayModeInSubWindow()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_CustomDialog_SetDisplayModeInSubWindow(ArkUI_CustomDialogOptions* options, OH_ArkUI_DialogDisplayModeInSubWindow displayModeInSubWindow)
@@ -1197,6 +1300,7 @@ int32_t OH_ArkUI_CustomDialog_SetDisplayModeInSubWindow(ArkUI_CustomDialogOption
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CustomDialogOptions* options | 弹窗参数。 |
@@ -1205,6 +1309,7 @@ int32_t OH_ArkUI_CustomDialog_SetDisplayModeInSubWindow(ArkUI_CustomDialogOption
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1212,9 +1317,10 @@ int32_t OH_ArkUI_CustomDialog_SetDisplayModeInSubWindow(ArkUI_CustomDialogOption
  
   
 
-#### OH_ArkUI_CustomDialog_SetMask()
+### OH_ArkUI_CustomDialog_SetMask()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_CustomDialog_SetMask(ArkUI_CustomDialogOptions* options, uint32_t maskColor, const ArkUI_Rect* maskRect)
@@ -1232,6 +1338,7 @@ int32_t OH_ArkUI_CustomDialog_SetMask(ArkUI_CustomDialogOptions* options, uint32
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CustomDialogOptions* options | 弹窗参数。 |
@@ -1241,6 +1348,7 @@ int32_t OH_ArkUI_CustomDialog_SetMask(ArkUI_CustomDialogOptions* options, uint32
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1248,9 +1356,10 @@ int32_t OH_ArkUI_CustomDialog_SetMask(ArkUI_CustomDialogOptions* options, uint32
  
   
 
-#### OH_ArkUI_CustomDialog_SetKeyboardAvoidMode()
+### OH_ArkUI_CustomDialog_SetKeyboardAvoidMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_CustomDialog_SetKeyboardAvoidMode(ArkUI_CustomDialogOptions* options, ArkUI_KeyboardAvoidMode keyboardAvoidMode)
@@ -1268,6 +1377,7 @@ int32_t OH_ArkUI_CustomDialog_SetKeyboardAvoidMode(ArkUI_CustomDialogOptions* op
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CustomDialogOptions* options | 弹窗参数。 |
@@ -1276,6 +1386,7 @@ int32_t OH_ArkUI_CustomDialog_SetKeyboardAvoidMode(ArkUI_CustomDialogOptions* op
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1283,9 +1394,10 @@ int32_t OH_ArkUI_CustomDialog_SetKeyboardAvoidMode(ArkUI_CustomDialogOptions* op
  
   
 
-#### OH_ArkUI_CustomDialog_SetHoverModeEnabled()
+### OH_ArkUI_CustomDialog_SetHoverModeEnabled()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_CustomDialog_SetHoverModeEnabled(ArkUI_CustomDialogOptions* options, bool enabled)
@@ -1303,6 +1415,7 @@ int32_t OH_ArkUI_CustomDialog_SetHoverModeEnabled(ArkUI_CustomDialogOptions* opt
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CustomDialogOptions* options | 弹窗参数。 |
@@ -1311,6 +1424,7 @@ int32_t OH_ArkUI_CustomDialog_SetHoverModeEnabled(ArkUI_CustomDialogOptions* opt
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1318,9 +1432,10 @@ int32_t OH_ArkUI_CustomDialog_SetHoverModeEnabled(ArkUI_CustomDialogOptions* opt
  
   
 
-#### OH_ArkUI_CustomDialog_SetHoverModeArea()
+### OH_ArkUI_CustomDialog_SetHoverModeArea()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_CustomDialog_SetHoverModeArea(ArkUI_CustomDialogOptions* options, ArkUI_HoverModeAreaType hoverModeAreaType)
@@ -1338,6 +1453,7 @@ int32_t OH_ArkUI_CustomDialog_SetHoverModeArea(ArkUI_CustomDialogOptions* option
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CustomDialogOptions* options | 弹窗参数。 |
@@ -1346,6 +1462,7 @@ int32_t OH_ArkUI_CustomDialog_SetHoverModeArea(ArkUI_CustomDialogOptions* option
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1353,9 +1470,10 @@ int32_t OH_ArkUI_CustomDialog_SetHoverModeArea(ArkUI_CustomDialogOptions* option
  
   
 
-#### OH_ArkUI_CustomDialog_RegisterOnWillDismissCallback()
+### OH_ArkUI_CustomDialog_RegisterOnWillDismissCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_CustomDialog_RegisterOnWillDismissCallback(ArkUI_CustomDialogOptions* options, void* userData, void (*callback)(ArkUI_DialogDismissEvent* event))
@@ -1373,6 +1491,7 @@ int32_t OH_ArkUI_CustomDialog_RegisterOnWillDismissCallback(ArkUI_CustomDialogOp
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CustomDialogOptions* options | 弹窗参数。 |
@@ -1382,6 +1501,7 @@ int32_t OH_ArkUI_CustomDialog_RegisterOnWillDismissCallback(ArkUI_CustomDialogOp
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1389,9 +1509,10 @@ int32_t OH_ArkUI_CustomDialog_RegisterOnWillDismissCallback(ArkUI_CustomDialogOp
  
   
 
-#### OH_ArkUI_CustomDialog_RegisterOnWillAppearCallback()
+### OH_ArkUI_CustomDialog_RegisterOnWillAppearCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_CustomDialog_RegisterOnWillAppearCallback(ArkUI_CustomDialogOptions* options, void* userData, void (*callback)(void* userData))
@@ -1409,6 +1530,7 @@ int32_t OH_ArkUI_CustomDialog_RegisterOnWillAppearCallback(ArkUI_CustomDialogOpt
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CustomDialogOptions* options | 弹窗参数。 |
@@ -1418,6 +1540,7 @@ int32_t OH_ArkUI_CustomDialog_RegisterOnWillAppearCallback(ArkUI_CustomDialogOpt
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1425,9 +1548,10 @@ int32_t OH_ArkUI_CustomDialog_RegisterOnWillAppearCallback(ArkUI_CustomDialogOpt
  
   
 
-#### OH_ArkUI_CustomDialog_RegisterOnDidAppearCallback()
+### OH_ArkUI_CustomDialog_RegisterOnDidAppearCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_CustomDialog_RegisterOnDidAppearCallback(ArkUI_CustomDialogOptions* options, void* userData, void (*callback)(void* userData))
@@ -1445,6 +1569,7 @@ int32_t OH_ArkUI_CustomDialog_RegisterOnDidAppearCallback(ArkUI_CustomDialogOpti
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CustomDialogOptions* options | 弹窗参数。 |
@@ -1454,6 +1579,7 @@ int32_t OH_ArkUI_CustomDialog_RegisterOnDidAppearCallback(ArkUI_CustomDialogOpti
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1461,9 +1587,10 @@ int32_t OH_ArkUI_CustomDialog_RegisterOnDidAppearCallback(ArkUI_CustomDialogOpti
  
   
 
-#### OH_ArkUI_CustomDialog_RegisterOnWillDisappearCallback()
+### OH_ArkUI_CustomDialog_RegisterOnWillDisappearCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_CustomDialog_RegisterOnWillDisappearCallback(ArkUI_CustomDialogOptions* options, void* userData, void (*callback)(void* userData))
@@ -1481,6 +1608,7 @@ int32_t OH_ArkUI_CustomDialog_RegisterOnWillDisappearCallback(ArkUI_CustomDialog
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CustomDialogOptions* options | 弹窗参数。 |
@@ -1490,6 +1618,7 @@ int32_t OH_ArkUI_CustomDialog_RegisterOnWillDisappearCallback(ArkUI_CustomDialog
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1497,9 +1626,10 @@ int32_t OH_ArkUI_CustomDialog_RegisterOnWillDisappearCallback(ArkUI_CustomDialog
  
   
 
-#### OH_ArkUI_CustomDialog_RegisterOnDidDisappearCallback()
+### OH_ArkUI_CustomDialog_RegisterOnDidDisappearCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_CustomDialog_RegisterOnDidDisappearCallback(ArkUI_CustomDialogOptions* options, void* userData, void (*callback)(void* userData))
@@ -1517,6 +1647,7 @@ int32_t OH_ArkUI_CustomDialog_RegisterOnDidDisappearCallback(ArkUI_CustomDialogO
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CustomDialogOptions* options | 弹窗参数。 |
@@ -1526,6 +1657,7 @@ int32_t OH_ArkUI_CustomDialog_RegisterOnDidDisappearCallback(ArkUI_CustomDialogO
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1533,9 +1665,10 @@ int32_t OH_ArkUI_CustomDialog_RegisterOnDidDisappearCallback(ArkUI_CustomDialogO
  
   
 
-#### OH_ArkUI_CustomDialog_GetState()
+### OH_ArkUI_CustomDialog_GetState()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_CustomDialog_GetState(ArkUI_NativeDialogHandle handle, ArkUI_DialogState* state)
@@ -1549,6 +1682,7 @@ int32_t OH_ArkUI_CustomDialog_GetState(ArkUI_NativeDialogHandle handle, ArkUI_Di
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NativeDialogHandle handle | 指向自定义弹窗控制器的指针。 |
@@ -1557,6 +1691,7 @@ int32_t OH_ArkUI_CustomDialog_GetState(ArkUI_NativeDialogHandle handle, ArkUI_Di
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1564,9 +1699,10 @@ int32_t OH_ArkUI_CustomDialog_GetState(ArkUI_NativeDialogHandle handle, ArkUI_Di
  
   
 
-#### OH_ArkUI_CustomDialog_SetBackgroundBlurStyleOptions()
+### OH_ArkUI_CustomDialog_SetBackgroundBlurStyleOptions()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_CustomDialog_SetBackgroundBlurStyleOptions(ArkUI_CustomDialogOptions* options, const ArkUI_AttributeItem* backgroundBlurStyleOptions)
@@ -1584,6 +1720,7 @@ int32_t OH_ArkUI_CustomDialog_SetBackgroundBlurStyleOptions(ArkUI_CustomDialogOp
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CustomDialogOptions* options | 弹窗参数。 |
@@ -1592,6 +1729,7 @@ int32_t OH_ArkUI_CustomDialog_SetBackgroundBlurStyleOptions(ArkUI_CustomDialogOp
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1599,9 +1737,10 @@ int32_t OH_ArkUI_CustomDialog_SetBackgroundBlurStyleOptions(ArkUI_CustomDialogOp
  
   
 
-#### OH_ArkUI_CustomDialog_SetBackgroundEffect()
+### OH_ArkUI_CustomDialog_SetBackgroundEffect()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_CustomDialog_SetBackgroundEffect(ArkUI_CustomDialogOptions* options, const ArkUI_AttributeItem* backgroundEffect)
@@ -1619,6 +1758,7 @@ int32_t OH_ArkUI_CustomDialog_SetBackgroundEffect(ArkUI_CustomDialogOptions* opt
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CustomDialogOptions* options | 弹窗参数。 |
@@ -1627,6 +1767,7 @@ int32_t OH_ArkUI_CustomDialog_SetBackgroundEffect(ArkUI_CustomDialogOptions* opt
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |

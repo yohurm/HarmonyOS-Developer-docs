@@ -1,9 +1,9 @@
 # FormExtensionContext
 
-更新时间：2026-07-17 09:35:24
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-formextensioncontext
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 FormExtensionContext模块提供FormExtensionAbility具有的接口和能力。
  
@@ -12,11 +12,12 @@ FormExtensionContext模块提供FormExtensionAbility具有的接口和能力。
 
   
 
-#### FormExtensionContext
+## FormExtensionContext
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-FormExtensionContext模块是[FormExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-form-formextensionability)的上下文环境，继承自[ExtensionContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-extensioncontext)。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+ FormExtensionContext模块是[FormExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-form-formextensionability)的上下文环境，继承自[ExtensionContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-extensioncontext)，用于获取卡片相关的上下文信息，适用于卡片开发场景。
  
 **系统能力：** SystemCapability.Ability.Form
  
@@ -26,9 +27,10 @@ FormExtensionContext模块是[FormExtensionAbility](https://developer.huawei.com
  
   
 
-#### 使用说明
+## 使用说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 FormExtensionContext主要用于查询所属FormExtensionAbility的信息、Module的配置信息以及HAP包的信息，开发者可根据自身业务需求使用对应的信息。
  

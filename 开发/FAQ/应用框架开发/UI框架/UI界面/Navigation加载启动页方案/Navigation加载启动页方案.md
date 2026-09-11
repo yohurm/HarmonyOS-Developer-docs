@@ -48,11 +48,11 @@ struct InterceptionSolution {
     setTimeout(() => {
       this.pathStack.pushPathByName('MainPage', undefined, false);
       this.hideNavBar = true;
-      // 添加路由拦截功能
+    <em>  // 添加路由拦截功能</em>
       this.pathStack.setInterception({
         willShow: (from: NavDestinationContext | NavBar, to: NavDestinationContext | NavBar,
           operation: NavigationOperation, isAnimated: boolean) => {
-          // 如果返回到首页，就跳转为MainPage页面
+        <em>  // 如果返回到首页，就跳转为MainPage页面</em>
           if (to == 'navBar') {
             console.info(`${from} ${to} ${operation} ${isAnimated}`);
             this.getUIContext().getPromptAction().showToast({ message: '无法返回到首页' });
@@ -211,7 +211,7 @@ struct RouterSolution {
           middle: { anchor: '__container__', align: HorizontalAlign.Center }
         })
         .onClick(() => {
-          // 确定用户同意后跳转首页
+        <em>  // 确定用户同意后跳转首页</em>
           this.getUIContext().getRouter().pushUrl({ url: 'pages/NavigationPage' });
         });
     }
@@ -230,12 +230,12 @@ struct NavigationPage {
   private stack: NavPathStack = new NavPathStack();
 
   onPageShow(): void {
-    // 清除闪屏页，防止返回上一页
+ <em>   // 清除闪屏页，防止返回上一页</em>
     this.getUIContext().getRouter().clear();
   }
 
   build() {
-    // 在这里配置主页NavDestination信息
+   <em> // 在这里配置主页NavDestination信息</em>
     Navigation(this.stack) {
       Column() {
         Text('Navigation首页，后续使用Navigation实现路由');

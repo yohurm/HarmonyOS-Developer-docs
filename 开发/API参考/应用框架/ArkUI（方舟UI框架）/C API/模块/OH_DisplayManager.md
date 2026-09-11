@@ -1,13 +1,14 @@
 # OH_DisplayManager
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-displaymanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供屏幕管理能力，包括获取显示设备的信息、获取屏幕截屏以及监听显示设备的旋转、折叠或展开等状态变化。开发者可通过该模块查询屏幕属性，响应屏幕状态变化事件，实现屏幕适配和多屏幕场景支持。
  
@@ -17,10 +18,12 @@
  
   
 
-#### 文件汇总
+## 文件汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | oh_display_capture.h | 提供屏幕截屏的能力。 |

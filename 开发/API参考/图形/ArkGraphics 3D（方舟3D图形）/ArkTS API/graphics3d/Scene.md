@@ -1,9 +1,9 @@
 # Scene
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-scene
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块作为ArkGraphics 3D基础模块，提供SceneResourceParameters、SceneNodeParameters等通用数据类型。同时提供glTF模型加载，场景元素、资源创建等基础方法。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { SceneResourceParameters, SceneNodeParameters, RaycastResult, RaycastParameters, RenderResourceFactory, CameraParameters, EffectParameters,
@@ -23,13 +24,15 @@ import { SceneResourceParameters, SceneNodeParameters, RaycastResult, RaycastPar
 
 
 
-#### SceneResourceParameters
+## SceneResourceParameters
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 场景资源参数对象，包含name和uri，用于提供场景资源的名称以及3D场景所需的资源文件路径。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -54,9 +57,9 @@ function createShaderPromise(): Promise<Shader> {
         uri: $rawfile("shaders/custom_shader/custom_material_sample.shader") };
       let shader: Shader = await sceneFactory.createShader(sceneResourceParameter);
       resolve(shader);
-    }).catch((error: Error) => {
-      console.error('Scene load failed:', error);
-      reject(error);
+    }).catch((err: Error) => {
+      console.error(`Failed to load scene. Message: ${err.message}`);
+      reject(err);
     });
   });
 }
@@ -64,13 +67,15 @@ function createShaderPromise(): Promise<Shader> {
 
 
 
-#### SceneNodeParameters
+## SceneNodeParameters
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 场景节点参数对象，用于提供场景节点层次中的名称和路径。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -95,9 +100,9 @@ function createNodePromise() : Promise<Node> {
         path:"/rootNode_/empty_node" };
       let node: Node = await sceneFactory.createNode(sceneNodeParameter);
       resolve(node);
-    }).catch((error: Error) => {
-      console.error('Scene load failed:', error);
-      reject(error);
+    }).catch((err: Error) => {
+      console.error(`Failed to load scene. Message: ${err.message}`);
+      reject(err);
     });
   });
 }
@@ -105,13 +110,15 @@ function createNodePromise() : Promise<Node> {
 
 
 
-#### RaycastResult20+
+## RaycastResult20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 射线检测命中结果对象，包含被射线击中的3D物体详细信息。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -122,13 +129,15 @@ function createNodePromise() : Promise<Node> {
 
 
 
-#### RaycastParameters20+
+## RaycastParameters20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 射线检测参数配置，用于定义射线检测的行为。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -137,17 +146,19 @@ function createNodePromise() : Promise<Node> {
 
 
 
-#### RenderResourceFactory20+
+## RenderResourceFactory20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于创建可在共享[RenderContext](#rendercontext20)的多个场景（[Scene](#scene-1)）中共享的渲染资源。
 
 
 
-#### createShader20+
+### createShader20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createShader(params: SceneResourceParameters): Promise&lt;Shader&gt;
 
@@ -157,12 +168,14 @@ createShader(params: SceneResourceParameters): Promise&lt;Shader&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | SceneResourceParameters | 是 | 创建着色器的参数。详细.shader文件格式请参考.shader资源文件格式要求。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -191,9 +204,10 @@ function createShaderResource(): Promise<Shader> {
 
 
 
-#### createImage20+
+### createImage20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createImage(params: SceneResourceParameters): Promise&lt;Image&gt;
 
@@ -203,12 +217,14 @@ createImage(params: SceneResourceParameters): Promise&lt;Image&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | SceneResourceParameters | 是 | 创建图像的参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -237,9 +253,10 @@ function createImageResource(): Promise<Image> {
 
 
 
-#### createImageStream
+### createImageStream
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createImageStream(params: SceneResourceParameters): Promise&lt;ImageStream&gt;
 
@@ -253,12 +270,14 @@ createImageStream(params: SceneResourceParameters): Promise&lt;ImageStream&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | SceneResourceParameters | 是 | 创建流图片的参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -285,9 +304,10 @@ function createImageStreamResource(): Promise<ImageStream> {
 
 
 
-#### createMesh20+
+### createMesh20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createMesh(params: SceneResourceParameters, geometry: GeometryDefinition): Promise&lt;MeshResource&gt;
 
@@ -297,6 +317,7 @@ createMesh(params: SceneResourceParameters, geometry: GeometryDefinition): Promi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | SceneResourceParameters | 是 | 创建网格资源的参数。 |
@@ -304,6 +325,7 @@ createMesh(params: SceneResourceParameters, geometry: GeometryDefinition): Promi
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -334,12 +356,12 @@ function createMeshResource(): Promise<MeshResource> {
     { x: 0, y: 1, z: 1 }
   ];
   geometry.indices = [
-    0, 1, 2, 2, 3, 0,     // front
-    4, 5, 6, 6, 7, 4,     // back
-    0, 4, 5, 5, 1, 0,     // bottom
-    1, 5, 6, 6, 2, 1,     // right
-    3, 2, 6, 6, 7, 3,     // top
-    3, 7, 4, 4, 0, 3      // left
+    0, 1, 2, 2, 3, 0, // front
+    4, 5, 6, 6, 7, 4, // back
+    0, 4, 5, 5, 1, 0, // bottom
+    1, 5, 6, 6, 2, 1, // right
+    3, 2, 6, 6, 7, 3, // top
+    3, 7, 4, 4, 0, 3  // left
   ];
   geometry.topology = PrimitiveTopology.TRIANGLE_LIST;
   geometry.normals = [
@@ -383,9 +405,10 @@ function createMeshResource(): Promise<MeshResource> {
 
 
 
-#### createSampler20+
+### createSampler20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createSampler(params:SceneResourceParameters): Promise&lt;Sampler&gt;
 
@@ -395,12 +418,14 @@ createSampler(params:SceneResourceParameters): Promise&lt;Sampler&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | SceneResourceParameters | 是 | 创建采样器的参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -429,9 +454,10 @@ function createSamplerResource(): Promise<Sampler> {
 
 
 
-#### createScene20+
+### createScene20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createScene(uri?: ResourceStr): Promise&lt;Scene&gt;
 
@@ -441,12 +467,14 @@ createScene(uri?: ResourceStr): Promise&lt;Scene&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uri | ResourceStr | 否 | 创建场景使用的资源路径，如果未传入资源路径，则默认创建一个空场景。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -478,13 +506,15 @@ function createScenePromise(fromFile: boolean = false): Promise<Scene> {
 
 
 
-#### CameraParameters21+
+## CameraParameters21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 相机创建参数配置，用于定义相机创建的额外选项。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -494,13 +524,15 @@ function createScenePromise(fromFile: boolean = false): Promise<Scene> {
 
 
 
-#### EffectParameters21+
+## EffectParameters21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 特效参数配置，用于指定创建特效时所需的特效ID，作为[createEffect](#createeffect21)接口的入参来创建特效对象。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -509,17 +541,19 @@ function createScenePromise(fromFile: boolean = false): Promise<Scene> {
 
 
 
-#### SceneResourceFactory
+## SceneResourceFactory
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于创建3D场景中资源的接口，例如相机、光源等，继承自[RenderResourceFactory](#renderresourcefactory20)。
 
 
 
-#### createCamera
+### createCamera
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createCamera(params: SceneNodeParameters): Promise&lt;Camera&gt;
 
@@ -529,12 +563,14 @@ createCamera(params: SceneNodeParameters): Promise&lt;Camera&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | SceneNodeParameters | 是 | 场景节点参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -556,9 +592,9 @@ function createCameraPromise(): Promise<Camera> {
       // 创建相机
       let camera: Camera = await sceneFactory.createCamera(sceneCameraParameter);
       resolve(camera);
-    }).catch((error: Error) => {
-      console.error('Scene load failed:', error);
-      reject(error);
+    }).catch((err: Error) => {
+      console.error(`Failed to load scene. Message: ${err.message}`);
+      reject(err);
     });
   });
 }
@@ -566,9 +602,10 @@ function createCameraPromise(): Promise<Camera> {
 
 
 
-#### createCamera21+
+### createCamera21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createCamera(params: SceneNodeParameters, cameraParams: CameraParameters): Promise&lt;Camera&gt;
 
@@ -578,6 +615,7 @@ createCamera(params: SceneNodeParameters, cameraParams: CameraParameters): Promi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | SceneNodeParameters | 是 | 场景节点参数。 |
@@ -585,6 +623,7 @@ createCamera(params: SceneNodeParameters, cameraParams: CameraParameters): Promi
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -608,9 +647,9 @@ function createCameraPromise(): Promise<Camera> {
       // 创建相机
       let camera: Camera = await sceneFactory.createCamera(nodeParameter, camParameter);
       resolve(camera);
-    }).catch((error: Error) => {
-      console.error('Scene load failed:', error);
-      reject(error);
+    }).catch((err: Error) => {
+      console.error(`Failed to load scene. Message: ${err.message}`);
+      reject(err);
     });
   });
 }
@@ -618,9 +657,10 @@ function createCameraPromise(): Promise<Camera> {
 
 
 
-#### createLight
+### createLight
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createLight(params: SceneNodeParameters, lightType: LightType): Promise&lt;Light&gt;
 
@@ -630,6 +670,7 @@ createLight(params: SceneNodeParameters, lightType: LightType): Promise&lt;Light
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | SceneNodeParameters | 是 | 场景节点参数。 |
@@ -637,6 +678,7 @@ createLight(params: SceneNodeParameters, lightType: LightType): Promise&lt;Light
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -658,9 +700,9 @@ function createLightPromise() : Promise<Light> {
       // 创建平行光
       let light: Light = await sceneFactory.createLight(sceneLightParameter, LightType.DIRECTIONAL);
       resolve(light);
-    }).catch((error: Error) => {
-      console.error('Scene load failed:', error);
-      reject(error);
+    }).catch((err: Error) => {
+      console.error(`Failed to load scene. Message: ${err.message}`);
+      reject(err);
     });
   });
 }
@@ -668,9 +710,10 @@ function createLightPromise() : Promise<Light> {
 
 
 
-#### createNode
+### createNode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(params: SceneNodeParameters): Promise&lt;Node&gt;
 
@@ -680,12 +723,14 @@ createNode(params: SceneNodeParameters): Promise&lt;Node&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | SceneNodeParameters | 是 | 场景节点参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -708,9 +753,9 @@ function createNodePromise(): Promise<Node> {
       // 创建节点
       let node: Node = await sceneFactory.createNode(sceneNodeParameter);
       resolve(node);
-    }).catch((error: Error) => {
-      console.error('Scene load failed:', error);
-      reject(error);
+    }).catch((err: Error) => {
+      console.error(`Failed to load scene. Message: ${err.message}`);
+      reject(err);
     });
   });
 }
@@ -718,9 +763,10 @@ function createNodePromise(): Promise<Node> {
 
 
 
-#### createMaterial
+### createMaterial
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createMaterial(params: SceneResourceParameters, materialType: MaterialType): Promise&lt;Material&gt;
 
@@ -730,6 +776,7 @@ createMaterial(params: SceneResourceParameters, materialType: MaterialType): Pro
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | SceneResourceParameters | 是 | 场景资源参数。 |
@@ -737,6 +784,7 @@ createMaterial(params: SceneResourceParameters, materialType: MaterialType): Pro
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -758,9 +806,9 @@ function createMaterialPromise() : Promise<Material> {
       // 创建材质
       let material: Material = await sceneFactory.createMaterial(sceneMaterialParameter, MaterialType.SHADER);
       resolve(material);
-    }).catch((error: Error) => {
-      console.error('Scene load failed:', error);
-      reject(error);
+    }).catch((err: Error) => {
+      console.error(`Failed to load scene. Message: ${err.message}`);
+      reject(err);
     });
   });
 }
@@ -768,9 +816,10 @@ function createMaterialPromise() : Promise<Material> {
 
 
 
-#### createEnvironment
+### createEnvironment
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createEnvironment(params: SceneResourceParameters): Promise&lt;Environment&gt;
 
@@ -780,12 +829,14 @@ createEnvironment(params: SceneResourceParameters): Promise&lt;Environment&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | SceneResourceParameters | 是 | 场景资源参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -808,9 +859,9 @@ function createEnvironmentPromise(): Promise<Environment> {
       // 创建Environment
       let env: Environment = await sceneFactory.createEnvironment(sceneEnvironmentParameter);
       resolve(env);
-    }).catch((error: Error) => {
-      console.error('Scene load failed:', error);
-      reject(error);
+    }).catch((err: Error) => {
+      console.error(`Failed to load scene. Message: ${err.message}`);
+      reject(err);
     });
   });
 }
@@ -818,9 +869,10 @@ function createEnvironmentPromise(): Promise<Environment> {
 
 
 
-#### createGeometry18+
+### createGeometry18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createGeometry(params: SceneNodeParameters, mesh:MeshResource): Promise&lt;Geometry&gt;
 
@@ -830,6 +882,7 @@ createGeometry(params: SceneNodeParameters, mesh:MeshResource): Promise&lt;Geome
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | SceneNodeParameters | 是 | 场景节点参数。 |
@@ -837,6 +890,7 @@ createGeometry(params: SceneNodeParameters, mesh:MeshResource): Promise&lt;Geome
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -865,9 +919,9 @@ function createGeometryPromise() : Promise<Geometry> {
       // 根据场景节点参数和网格资源创建几何对象
       let geometry: Geometry = await sceneFactory.createGeometry({ name: "GeometryName" }, meshRes);
       resolve(geometry);
-    }).catch((error: Error) => {
-      console.error('Scene load failed:', error);
-      reject(error);
+    }).catch((err: Error) => {
+      console.error(`Failed to load scene. Message: ${err.message}`);
+      reject(err);
     });
   });
 }
@@ -875,9 +929,10 @@ function createGeometryPromise() : Promise<Geometry> {
 
 
 
-#### createEffect21+
+### createEffect21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createEffect(params: EffectParameters): Promise&lt;Effect&gt;
 
@@ -887,12 +942,14 @@ createEffect(params: EffectParameters): Promise&lt;Effect&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | EffectParameters | 是 | 特效参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -916,9 +973,9 @@ function createEffect() : Promise<Effect> {
       let params: EffectParameters = {effectId: "e68a7f45-2d21-4a0d-9aef-7d9c825d3f12"};
       let effect: Effect = await sceneFactory.createEffect(params);
       resolve(effect);
-    }).catch((error: Error) => {
-      console.error('Scene load failed:', error);
-      reject(error);
+    }).catch((err: Error) => {
+      console.error(`Failed to load scene. Message: ${err.message}`);
+      reject(err);
     });
   });
 }
@@ -926,13 +983,15 @@ function createEffect() : Promise<Effect> {
 
 
 
-#### SceneComponent20+
+## SceneComponent20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示基础场景组件，用于描述场景节点的组件信息，包括组件名称及其对应的属性集合。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -942,17 +1001,19 @@ function createEffect() : Promise<Effect> {
 
 
 
-#### RenderContext20+
+## RenderContext20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义了所有渲染资源的上下文。在同一渲染上下文中创建的多个场景之间，可以共享渲染资源。
 
 
 
-#### getRenderResourceFactory20+
+### getRenderResourceFactory20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRenderResourceFactory() : RenderResourceFactory
 
@@ -961,6 +1022,7 @@ getRenderResourceFactory() : RenderResourceFactory
 **系统能力：** SystemCapability.ArkUi.Graphics3D
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -975,7 +1037,7 @@ import { Scene, RenderContext, RenderResourceFactory } from '@kit.ArkGraphics3D'
 function getRenderResourceFactory(): void {
   const renderContext: RenderContext | null = Scene.getDefaultRenderContext();
   if (!renderContext) {
-    console.error("RenderContext is null");
+    console.error("Failed to get default render context");
     return;
   }
   const renderResourceFactory: RenderResourceFactory = renderContext.getRenderResourceFactory();
@@ -985,9 +1047,10 @@ function getRenderResourceFactory(): void {
 
 
 
-#### loadPlugin20+
+### loadPlugin20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 loadPlugin(name: string): Promise&lt;boolean&gt;
 
@@ -997,12 +1060,14 @@ loadPlugin(name: string): Promise&lt;boolean&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 要加载的插件名称，必须是系统预定义或已注册且可用的插件名称，且符合命名规范。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1017,7 +1082,7 @@ import { Scene, RenderContext } from '@kit.ArkGraphics3D';
 function loadPlugin(): Promise<boolean> {
   const renderContext: RenderContext | null = Scene.getDefaultRenderContext();
   if (!renderContext) {
-    console.error("RenderContext is null");
+    console.error("Failed to get default render context");
     return Promise.reject(new Error("RenderContext is null"));
   }
   return renderContext.loadPlugin("pluginName");
@@ -1026,9 +1091,10 @@ function loadPlugin(): Promise<boolean> {
 
 
 
-#### registerResourcePath20+
+### registerResourcePath20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 registerResourcePath(protocol: string, uri: string): boolean
 
@@ -1038,6 +1104,7 @@ registerResourcePath(protocol: string, uri: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | protocol | string | 是 | 要注册的路径检索名，用作shader内部关联文件路径的前缀标识，必须是系统未预定义或未注册且非空的检索名称。 |
@@ -1045,6 +1112,7 @@ registerResourcePath(protocol: string, uri: string): boolean
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1062,7 +1130,7 @@ function registerResourcePath(): void {
     .then(() => {
       const renderContext: RenderContext | null = Scene.getDefaultRenderContext();
       if (!renderContext) {
-        console.error("RenderContext is null");
+        console.error("Failed to get default render context");
         return false;
       }
       // 注册路径检索名"myproto"及其对应的资产路径目录"OhosRawFile://shaders/custom_shader/"
@@ -1073,9 +1141,9 @@ function registerResourcePath(): void {
     })
     .then(result => {
       if (result) {
-        console.info("resource path registration success");
+        console.info("Succeeded in registering resource path");
       } else {
-        console.error("resource path registration failed");
+        console.error("Failed to register resource path");
       }
     });
 }
@@ -1083,9 +1151,10 @@ function registerResourcePath(): void {
 
 
 
-#### SoftShadowConfig
+## SoftShadowConfig
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 软阴影配置抽象基类，用于控制阴影渲染的算法类型及其参数配置。
 
@@ -1095,6 +1164,7 @@ function registerResourcePath(): void {
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | shadowAlgorithmType | ShadowAlgorithmType | 是 | 否 | 阴影算法的枚举值。 |
@@ -1102,9 +1172,10 @@ function registerResourcePath(): void {
 
 
 
-#### PCFConfig
+## PCFConfig
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 PCF（Percentage Closer Filtering，百分比邻近过滤）软阴影配置类，继承自[SoftShadowConfig](#softshadowconfig)。
 
@@ -1114,6 +1185,7 @@ PCF（Percentage Closer Filtering，百分比邻近过滤）软阴影配置类�
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | shadowSampleRadius | number \| undefined | 否 | 是 | 采样半径，决定了阴影边缘模糊的范围，半径越大，阴影边缘越柔和。采样半径过大会导致阴影过度模糊，失去阴影形状特征。 默认值为5.0。 取值范围：>= 0。 - 设置为0时，将不进行PCF采样，无阴影效果。 - 设置为undefined时，恢复默认值5.0进行渲染。 |
@@ -1122,13 +1194,15 @@ PCF（Percentage Closer Filtering，百分比邻近过滤）软阴影配置类�
 
 
 
-#### RenderConfiguration23+
+## RenderConfiguration23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 渲染配置接口。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1138,13 +1212,15 @@ PCF（Percentage Closer Filtering，百分比邻近过滤）软阴影配置类�
 
 
 
-#### RenderParameters15+
+## RenderParameters15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 渲染参数接口。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1153,19 +1229,22 @@ PCF（Percentage Closer Filtering，百分比邻近过滤）软阴影配置类�
 
 
 
-#### Scene
+## Scene
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于设置场景。Scene采用树状层次结构组织场景节点，根节点（root）作为场景的入口。
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1177,9 +1256,10 @@ PCF（Percentage Closer Filtering，百分比邻近过滤）软阴影配置类�
 
 
 
-#### load
+### load
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static load(uri?: ResourceStr): Promise&lt;Scene&gt;
 
@@ -1189,12 +1269,14 @@ static load(uri?: ResourceStr): Promise&lt;Scene&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uri | ResourceStr | 否 | 待加载的模型文件资源路径，默认值为undefined。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1243,17 +1325,18 @@ async function loadModelFromAbsolutePath(context: common.UIAbilityContext): Prom
   // 使用绝对路径加载模型
   Scene.load(load_uri).then((scene: Scene) => {
     // 加载成功后的逻辑处理
-  }).catch((error: string) => {
-    console.error('Scene load failed: ' + error);
+  }).catch((err: Error) => {
+    console.error(`Failed to load scene. Message: ${err.message}`);
   });
 }
 ```
 
 
 
-#### getNodeByPath
+### getNodeByPath
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getNodeByPath(path: string, type?: NodeType): Node | null
 
@@ -1263,6 +1346,7 @@ getNodeByPath(path: string, type?: NodeType): Node | null
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 场景节点层次中的路径。每层之间使用'/'符号进行分割。 |
@@ -1270,6 +1354,7 @@ getNodeByPath(path: string, type?: NodeType): Node | null
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1295,9 +1380,10 @@ function getNode(): void {
 
 
 
-#### getResourceFactory
+### getResourceFactory
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResourceFactory(): SceneResourceFactory
 
@@ -1306,6 +1392,7 @@ getResourceFactory(): SceneResourceFactory
 **系统能力：** SystemCapability.ArkUi.Graphics3D
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1331,9 +1418,10 @@ function getFactory(): void {
 
 
 
-#### destroy
+### destroy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 destroy(): void
 
@@ -1360,9 +1448,10 @@ function destroy(): void {
 
 
 
-#### importNode18+
+### importNode18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 importNode(name: string, node: Node, parent: Node | null): Node
 
@@ -1372,6 +1461,7 @@ importNode(name: string, node: Node, parent: Node | null): Node
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 导入节点后的名称，由开发者自定义，无特殊要求。 |
@@ -1380,6 +1470,7 @@ importNode(name: string, node: Node, parent: Node | null): Node
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1412,9 +1503,10 @@ function ImportNodeTest() {
 
 
 
-#### importScene18+
+### importScene18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 importScene(name: string, scene: Scene, parent: Node | null): Node
 
@@ -1424,6 +1516,7 @@ importScene(name: string, scene: Scene, parent: Node | null): Node
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 导入场景的根节点名称，由开发者自定义，无特殊要求。 |
@@ -1432,6 +1525,7 @@ importScene(name: string, scene: Scene, parent: Node | null): Node
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1458,9 +1552,10 @@ function ImportSceneTest() {
 
 
 
-#### renderFrame15+
+### renderFrame15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 renderFrame(params?: RenderParameters): boolean
 
@@ -1470,12 +1565,14 @@ renderFrame(params?: RenderParameters): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | RenderParameters | 否 | 渲染参数，默认值为undefined。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1502,9 +1599,10 @@ function RenderFrameTest() {
 
 
 
-#### createComponent20+
+### createComponent20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createComponent(node: Node, name: string): Promise&lt;SceneComponent&gt;
 
@@ -1514,6 +1612,7 @@ createComponent(node: Node, name: string): Promise&lt;SceneComponent&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | Node | 是 | 组件需要附加到的节点。 |
@@ -1521,6 +1620,7 @@ createComponent(node: Node, name: string): Promise&lt;SceneComponent&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1537,14 +1637,14 @@ function createComponentTest(): Promise<SceneComponent> {
   return Scene.load($rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb"))
     .then(scene => {
       if (!scene) {
-        return Promise.reject(new Error("Scene load failed"));
+        return Promise.reject(new Error("Failed to load scene"));
       }
       // RenderConfigurationComponent为引擎内置组件，创建时无需依赖插件
       return scene.createComponent(scene.root, "RenderConfigurationComponent");
     })
     .then(component => {
       if (!component) {
-        return Promise.reject(new Error("createComponent failed"));
+        return Promise.reject(new Error("Failed to create component"));
       }
       return component;
     });
@@ -1553,9 +1653,10 @@ function createComponentTest(): Promise<SceneComponent> {
 
 
 
-#### getComponent20+
+### getComponent20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getComponent(node: Node, name: string): SceneComponent | null
 
@@ -1565,6 +1666,7 @@ getComponent(node: Node, name: string): SceneComponent | null
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | Node | 是 | 组件附加的节点。 |
@@ -1572,6 +1674,7 @@ getComponent(node: Node, name: string): SceneComponent | null
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1588,15 +1691,15 @@ function getComponentTest() {
   Scene.load($rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb"))
     .then(async (result: Scene | undefined) => {
       if (!result) {
-        console.error("Scene load failed");
+        console.error("Failed to load scene");
         return;
       }
       console.info("TEST getComponentTest");
       let component = result.getComponent(result.root, "myComponent");
       if (component) {
-        console.info("getComponent success");
+        console.info("Succeeded in getting component");
       } else {
-        console.warn("Component not found");
+        console.error("Failed to get component");
       }
     });
 }
@@ -1604,9 +1707,10 @@ function getComponentTest() {
 
 
 
-#### getDefaultRenderContext20+
+### getDefaultRenderContext20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getDefaultRenderContext(): RenderContext | null
 
@@ -1615,6 +1719,7 @@ static getDefaultRenderContext(): RenderContext | null
 **系统能力：** SystemCapability.ArkUi.Graphics3D
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1630,18 +1735,19 @@ function getDefaultRenderContextTest() {
   console.info("TEST getDefaultRenderContextTest");
   const renderContext: RenderContext | null = Scene.getDefaultRenderContext();
   if (renderContext) {
-    console.info("getDefaultRenderContext success");
+    console.info("Succeeded in getting default render context");
   } else {
-    console.error("RenderContext is null");
+    console.error("Failed to get default render context");
   }
 }
 ```
 
 
 
-#### cloneNode23+
+### cloneNode23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cloneNode(node: Node, parent: Node, name: string): Node | null
 
@@ -1651,6 +1757,7 @@ cloneNode(node: Node, parent: Node, name: string): Node | null
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | Node | 是 | 被克隆的节点。 |
@@ -1659,6 +1766,7 @@ cloneNode(node: Node, parent: Node, name: string): Node | null
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1679,9 +1787,9 @@ function CloneNode() {
       let name = "cloneNode_";
       let clone = result.cloneNode(node, parent, name);
       if (clone) {
-        console.info("cloneNode success");
+        console.info("Succeeded in cloning node");
       } else {
-        console.error("cloneNode failed");
+        console.error("Failed to clone node");
       }
     });
 }

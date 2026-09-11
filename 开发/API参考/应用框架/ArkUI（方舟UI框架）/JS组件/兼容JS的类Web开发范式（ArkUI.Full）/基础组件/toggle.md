@@ -1,9 +1,9 @@
 # toggle
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-basic-toggle
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 5开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
@@ -12,28 +12,32 @@
 状态按钮用于从一组选项中进行选择，并可能在界面上实时显示选择后的结果。通常这一组选项都是由状态按钮构成。
   
 
-#### 权限列表
+## 权限列表
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
  
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 不支持。
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-attributes)外，还支持如下属性：
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | value | string | - | 是 | 状态按钮的文本值。 |
@@ -42,12 +46,14 @@
  
   
 
-#### 样式
+## 样式
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用样式](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-styles)外，还支持如下样式：
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | text-color | &lt;color&gt; | #E5000000 | 否 | 状态按钮的文本颜色。 |
@@ -60,12 +66,14 @@
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-events)外，还支持如下事件：
   
+
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | change | { checked: isChecked } | 组件选中状态发生变化时触发。 |
@@ -73,17 +81,19 @@
  
   
 
-#### 方法
+## 方法
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用方法](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-methods)。
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 <!-- xxx.hml -->
@@ -159,4 +169,4 @@ export default {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/BS6ZmdcQR2WDhSTMFSPqNQ/zh-cn_image_0000002659222271.png?HW-CC-KV=V1&HW-CC-Date=20260701T014403Z&HW-CC-Expire=86400&HW-CC-Sign=526DD7D18B9F68A7B48FA5A0DAAB8515DCE4574CA93469569164F40D14FE70F6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/SqQMQhhMQWmkehaLsnoI_Q/zh-cn_image_0000002717773186.png?HW-CC-KV=V1&HW-CC-Date=20260911T072956Z&HW-CC-Expire=86400&HW-CC-Sign=8A312BC89AC1900ED93FC2415385AE93349829254AE82EBCB6961D384DD95FC6)

@@ -1,9 +1,9 @@
 # @ohos.reminderAgentManager (后台代理提醒)
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-reminderagentmanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供后台代理提醒的能力，即当应用被冻结或应用退出时，定时提醒功能将被系统服务代理。开发者可以调用本模块接口创建定时提醒，提醒类型支持倒计时、日历、闹钟三种。开发指导请参考[代理提醒开发指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agent-powered-reminder)。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { reminderAgentManager } from '@kit.BackgroundTasksKit';
@@ -22,9 +23,10 @@ import { reminderAgentManager } from '@kit.BackgroundTasksKit';
 
 
 
-#### reminderAgentManager.publishReminder
+## reminderAgentManager.publishReminder
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 publishReminder(reminderReq: ReminderRequest, callback: AsyncCallback&lt;number&gt;): void
 
@@ -40,6 +42,7 @@ publishReminder(reminderReq: ReminderRequest, callback: AsyncCallback&lt;number&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | reminderReq | ReminderRequest | 是 | 需要发布的代理提醒实例。 |
@@ -50,8 +53,10 @@ publishReminder(reminderReq: ReminderRequest, callback: AsyncCallback&lt;number&
 
 以下错误码的详细介绍请参见[reminderAgentManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-reminderagentmanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
+| 201 | Permission denied. |
 | 401 | If the input parameter is not valid parameter. |
 | 1700001 | Notification is not enabled. |
 | 1700002 | The number of reminders exceeds the limit. |
@@ -79,9 +84,10 @@ reminderAgentManager.publishReminder(timer, (err: BusinessError, reminderId: num
 
 
 
-#### reminderAgentManager.publishReminder
+## reminderAgentManager.publishReminder
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 publishReminder(reminderReq: ReminderRequest): Promise&lt;number&gt;
 
@@ -97,12 +103,14 @@ publishReminder(reminderReq: ReminderRequest): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | reminderReq | ReminderRequest | 是 | 需要发布的代理提醒实例。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -113,8 +121,10 @@ publishReminder(reminderReq: ReminderRequest): Promise&lt;number&gt;
 
 以下错误码的详细介绍请参见[reminderAgentManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-reminderagentmanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
+| 201 | Permission denied. |
 | 401 | If the input parameter is not valid parameter. |
 | 1700001 | Notification is not enabled. |
 | 1700002 | The number of reminders exceeds the limit. |
@@ -140,9 +150,10 @@ reminderAgentManager.publishReminder(timer).then((reminderId: number) => {
 
 
 
-#### reminderAgentManager.cancelReminder
+## reminderAgentManager.cancelReminder
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancelReminder(reminderId: number, callback: AsyncCallback&lt;void&gt;): void
 
@@ -151,6 +162,7 @@ cancelReminder(reminderId: number, callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Notification.ReminderAgent
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -161,6 +173,7 @@ cancelReminder(reminderId: number, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[reminderAgentManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-reminderagentmanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -187,9 +200,10 @@ reminderAgentManager.cancelReminder(reminderId, (err: BusinessError) => {
 
 
 
-#### reminderAgentManager.cancelReminder
+## reminderAgentManager.cancelReminder
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancelReminder(reminderId: number): Promise&lt;void&gt;
 
@@ -199,12 +213,14 @@ cancelReminder(reminderId: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | reminderId | number | 是 | 需要取消的代理提醒的id，代理提醒id会在调用reminderAgentManager.publishReminder时作为返回值返回。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -214,6 +230,7 @@ cancelReminder(reminderId: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[reminderAgentManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-reminderagentmanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -238,9 +255,10 @@ reminderAgentManager.cancelReminder(reminderId).then(() => {
 
 
 
-#### reminderAgentManager.getValidReminders
+## reminderAgentManager.getValidReminders
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getValidReminders(callback: AsyncCallback<Array&lt;ReminderRequest&gt;>): void
 
@@ -250,6 +268,7 @@ getValidReminders(callback: AsyncCallback<Array&lt;ReminderRequest&gt;>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<Array&lt;ReminderRequest&gt;> | 是 | 回调函数，当查询代理提醒成功，err为undefined，data为当前应用设置的所有有效（未过期）的代理提醒；否则为错误对象。 |
@@ -258,6 +277,7 @@ getValidReminders(callback: AsyncCallback<Array&lt;ReminderRequest&gt;>): void
 **错误码：**
 
 以下错误码的详细介绍请参见[reminderAgentManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-reminderagentmanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -302,9 +322,10 @@ reminderAgentManager.getValidReminders((err: BusinessError, reminders: Array<rem
 
 
 
-#### reminderAgentManager.getValidReminders
+## reminderAgentManager.getValidReminders
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getValidReminders(): Promise<Array&lt;ReminderRequest&gt;>
 
@@ -314,6 +335,7 @@ getValidReminders(): Promise<Array&lt;ReminderRequest&gt;>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;ReminderRequest&gt;> | Promise对象，返回当前应用设置的所有有效（未过期）的代理提醒。 |
@@ -322,6 +344,7 @@ getValidReminders(): Promise<Array&lt;ReminderRequest&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[reminderAgentManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-reminderagentmanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -364,9 +387,10 @@ reminderAgentManager.getValidReminders().then((reminders: Array<reminderAgentMan
 
 
 
-#### reminderAgentManager.cancelAllReminders
+## reminderAgentManager.cancelAllReminders
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancelAllReminders(callback: AsyncCallback&lt;void&gt;): void
 
@@ -376,6 +400,7 @@ cancelAllReminders(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数，当取消代理提醒成功，err为undefined；否则为错误对象。 |
@@ -384,6 +409,7 @@ cancelAllReminders(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[reminderAgentManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-reminderagentmanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -408,9 +434,10 @@ reminderAgentManager.cancelAllReminders((err: BusinessError) =>{
 
 
 
-#### reminderAgentManager.cancelAllReminders
+## reminderAgentManager.cancelAllReminders
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancelAllReminders(): Promise&lt;void&gt;
 
@@ -420,6 +447,7 @@ cancelAllReminders(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -428,6 +456,7 @@ cancelAllReminders(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[reminderAgentManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-reminderagentmanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -450,9 +479,10 @@ reminderAgentManager.cancelAllReminders().then(() => {
 
 
 
-#### reminderAgentManager.addNotificationSlot
+## reminderAgentManager.addNotificationSlot
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addNotificationSlot(slot: NotificationSlot, callback: AsyncCallback&lt;void&gt;): void
 
@@ -461,6 +491,7 @@ addNotificationSlot(slot: NotificationSlot, callback: AsyncCallback&lt;void&gt;)
 **系统能力：** SystemCapability.Notification.ReminderAgent
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -471,6 +502,7 @@ addNotificationSlot(slot: NotificationSlot, callback: AsyncCallback&lt;void&gt;)
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -499,9 +531,10 @@ reminderAgentManager.addNotificationSlot(mySlot, (err: BusinessError) => {
 
 
 
-#### reminderAgentManager.addNotificationSlot
+## reminderAgentManager.addNotificationSlot
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addNotificationSlot(slot: NotificationSlot): Promise&lt;void&gt;
 
@@ -511,12 +544,14 @@ addNotificationSlot(slot: NotificationSlot): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | slot | NotificationSlot | 是 | 通知渠道实例，仅支持设置其notificationType属性。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -526,6 +561,7 @@ addNotificationSlot(slot: NotificationSlot): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -551,9 +587,10 @@ reminderAgentManager.addNotificationSlot(mySlot).then(() => {
 
 
 
-#### reminderAgentManager.removeNotificationSlot
+## reminderAgentManager.removeNotificationSlot
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeNotificationSlot(slotType: notification.SlotType, callback: AsyncCallback&lt;void&gt;): void
 
@@ -562,6 +599,7 @@ removeNotificationSlot(slotType: notification.SlotType, callback: AsyncCallback&
 **系统能力：** SystemCapability.Notification.ReminderAgent
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -572,6 +610,7 @@ removeNotificationSlot(slotType: notification.SlotType, callback: AsyncCallback&
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -597,9 +636,10 @@ reminderAgentManager.removeNotificationSlot(notificationManager.SlotType.CONTENT
 
 
 
-#### reminderAgentManager.removeNotificationSlot
+## reminderAgentManager.removeNotificationSlot
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeNotificationSlot(slotType: notification.SlotType): Promise&lt;void&gt;
 
@@ -609,12 +649,14 @@ removeNotificationSlot(slotType: notification.SlotType): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | slotType | notification.SlotType | 是 | 通知渠道类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -624,6 +666,7 @@ removeNotificationSlot(slotType: notification.SlotType): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -646,9 +689,10 @@ reminderAgentManager.removeNotificationSlot(notificationManager.SlotType.CONTENT
 
 
 
-#### reminderAgentManager.getAllValidReminders12+
+## reminderAgentManager.getAllValidReminders12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllValidReminders(): Promise<Array&lt;ReminderInfo&gt;>
 
@@ -658,6 +702,7 @@ getAllValidReminders(): Promise<Array&lt;ReminderInfo&gt;>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;ReminderInfo&gt;> | Promise对象，返回当前应用设置的所有有效（未过期）的代理提醒。 |
@@ -666,6 +711,7 @@ getAllValidReminders(): Promise<Array&lt;ReminderInfo&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -707,9 +753,10 @@ reminderAgentManager.getAllValidReminders().then((reminders: Array<reminderAgent
 
 
 
-#### reminderAgentManager.addExcludeDate12+
+## reminderAgentManager.addExcludeDate12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addExcludeDate(reminderId: number, date: Date): Promise&lt;void&gt;
 
@@ -719,6 +766,7 @@ addExcludeDate(reminderId: number, date: Date): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | reminderId | number | 是 | 需要添加不提醒日期的代理提醒id，代理提醒id会在调用reminderAgentManager.publishReminder时作为返回值返回。 |
@@ -726,6 +774,7 @@ addExcludeDate(reminderId: number, date: Date): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -735,6 +784,7 @@ addExcludeDate(reminderId: number, date: Date): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[reminderAgentManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-reminderagentmanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -760,9 +810,10 @@ reminderAgentManager.addExcludeDate(reminderId, date).then(() => {
 
 
 
-#### reminderAgentManager.deleteExcludeDates12+
+## reminderAgentManager.deleteExcludeDates12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteExcludeDates(reminderId: number): Promise&lt;void&gt;
 
@@ -772,12 +823,14 @@ deleteExcludeDates(reminderId: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | reminderId | number | 是 | 需要删除不提醒日期的代理提醒id，代理提醒id会在调用reminderAgentManager.publishReminder时作为返回值返回。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -787,6 +840,7 @@ deleteExcludeDates(reminderId: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[reminderAgentManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-reminderagentmanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -810,9 +864,10 @@ reminderAgentManager.deleteExcludeDates(reminderId).then(() => {
 
 
 
-#### reminderAgentManager.getExcludeDates12+
+## reminderAgentManager.getExcludeDates12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getExcludeDates(reminderId: number): Promise<Array&lt;Date&gt;>
 
@@ -822,12 +877,14 @@ getExcludeDates(reminderId: number): Promise<Array&lt;Date&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | reminderId | number | 是 | 需要查询不提醒日期的代理提醒id，代理提醒id会在调用reminderAgentManager.publishReminder时作为返回值返回。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -837,6 +894,7 @@ getExcludeDates(reminderId: number): Promise<Array&lt;Date&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[reminderAgentManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-reminderagentmanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -863,9 +921,10 @@ reminderAgentManager.getExcludeDates(reminderId).then((dates) => {
 
 
 
-#### reminderAgentManager.updateReminder20+
+## reminderAgentManager.updateReminder20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateReminder(reminderId: number, reminderReq: ReminderRequest): Promise&lt;void&gt;
 
@@ -877,6 +936,7 @@ updateReminder(reminderId: number, reminderReq: ReminderRequest): Promise&lt;voi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | reminderId | number | 是 | 需要更新的代理提醒的id，代理提醒id会在调用reminderAgentManager.publishReminder时作为返回值返回。 |
@@ -884,6 +944,7 @@ updateReminder(reminderId: number, reminderReq: ReminderRequest): Promise&lt;voi
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -893,6 +954,7 @@ updateReminder(reminderId: number, reminderReq: ReminderRequest): Promise&lt;voi
 **错误码：**
 
 以下错误码的详细介绍请参见[reminderAgentManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-reminderagentmanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -922,9 +984,10 @@ reminderAgentManager.updateReminder(reminderId, timer).then(() => {
 
 
 
-#### reminderAgentManager.cancelReminderOnDisplay23+
+## reminderAgentManager.cancelReminderOnDisplay23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancelReminderOnDisplay(reminderId: number): Promise&lt;void&gt;
 
@@ -934,12 +997,14 @@ cancelReminderOnDisplay(reminderId: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | reminderId | number | 是 | 需要取消的代理提醒的id，代理提醒id会在调用reminderAgentManager.publishReminder时作为返回值返回。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -949,6 +1014,7 @@ cancelReminderOnDisplay(reminderId: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[reminderAgentManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-reminderagentmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -972,9 +1038,10 @@ reminderAgentManager.cancelReminderOnDisplay(reminderId).then(() => {
 
 
 
-#### reminderAgentManager.subscribeReminderState23+
+## reminderAgentManager.subscribeReminderState23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 subscribeReminderState(callback: Callback<Array&lt;ReminderState&gt;>): Promise&lt;void&gt;
 
@@ -988,12 +1055,14 @@ subscribeReminderState(callback: Callback<Array&lt;ReminderState&gt;>): Promise&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback<Array&lt;ReminderState&gt;> | 是 | 回调函数，返回代理提醒状态信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1003,6 +1072,7 @@ subscribeReminderState(callback: Callback<Array&lt;ReminderState&gt;>): Promise&
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[reminderAgentManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-reminderagentmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1029,9 +1099,10 @@ reminderAgentManager.subscribeReminderState(reminderStateCallback).then(() => {
 
 
 
-#### reminderAgentManager.unsubscribeReminderState23+
+## reminderAgentManager.unsubscribeReminderState23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unsubscribeReminderState(callback?: Callback<Array&lt;ReminderState&gt;>): Promise&lt;void&gt;
 
@@ -1043,12 +1114,14 @@ unsubscribeReminderState(callback?: Callback<Array&lt;ReminderState&gt;>): Promi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback<Array&lt;ReminderState&gt;> | 否 | 回调函数。如果不传参数callback，则取消所有订阅。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1058,6 +1131,7 @@ unsubscribeReminderState(callback?: Callback<Array&lt;ReminderState&gt;>): Promi
 **错误码：**
 
 以下错误码的详细介绍请参见[reminderAgentManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-reminderagentmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1083,13 +1157,15 @@ reminderAgentManager.unsubscribeReminderState(reminderStateCallback).then(() => 
 
 
 
-#### ActionButtonType
+## ActionButtonType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提醒上的按钮的类型。
 
 **系统能力：** SystemCapability.Notification.ReminderAgent
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1099,13 +1175,15 @@ reminderAgentManager.unsubscribeReminderState(reminderStateCallback).then(() => 
 
 
 
-#### ReminderType
+## ReminderType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提醒的类型。
 
 **系统能力：** SystemCapability.Notification.ReminderAgent
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1116,13 +1194,15 @@ reminderAgentManager.unsubscribeReminderState(reminderStateCallback).then(() => 
 
 
 
-#### RingChannel20+
+## RingChannel20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 自定义提示音的音频播放通道。
 
 **系统能力：** SystemCapability.Notification.ReminderAgent
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1133,9 +1213,10 @@ reminderAgentManager.unsubscribeReminderState(reminderStateCallback).then(() => 
 
 
 
-#### TimeZoneType
+## TimeZoneType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 时区类型。用于时区变更时，按照变更后的时区重新计算提醒的目标时间。
 
@@ -1144,6 +1225,7 @@ reminderAgentManager.unsubscribeReminderState(reminderStateCallback).then(() => 
 **系统能力：** SystemCapability.Notification.ReminderAgent
 
 **模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1154,13 +1236,15 @@ reminderAgentManager.unsubscribeReminderState(reminderStateCallback).then(() => 
 
 
 
-#### ActionButton
+## ActionButton
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 弹出的提醒中按钮的类型和标题。
 
 **系统能力：** SystemCapability.Notification.ReminderAgent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1171,13 +1255,15 @@ reminderAgentManager.unsubscribeReminderState(reminderStateCallback).then(() => 
 
 
 
-#### WantAgent
+## WantAgent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 跳转目标的ability信息。
 
 **系统能力：** SystemCapability.Notification.ReminderAgent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1189,13 +1275,15 @@ reminderAgentManager.unsubscribeReminderState(reminderStateCallback).then(() => 
 
 
 
-#### MaxScreenWantAgent
+## MaxScreenWantAgent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通知中心弹出提醒时，全屏显示自动拉起目标的ability信息。该接口为预留接口，暂不支持使用。
 
 **系统能力：** SystemCapability.Notification.ReminderAgent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1205,9 +1293,10 @@ reminderAgentManager.unsubscribeReminderState(reminderStateCallback).then(() => 
 
 
 
-#### NotificationRequestProxy
+## NotificationRequestProxy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通知请求信息。
 
@@ -1217,6 +1306,7 @@ reminderAgentManager.unsubscribeReminderState(reminderStateCallback).then(() => 
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | appMessageId | string | 否 | 是 | 应用发送通知携带的唯一标识字段，用于通知去重，默认为空。具体请参考NotificationRequest.appMessageId。 |
@@ -1225,13 +1315,15 @@ reminderAgentManager.unsubscribeReminderState(reminderStateCallback).then(() => 
 
 
 
-#### ReminderRequest
+## ReminderRequest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 代理提醒对象，用于设置提醒类型、响铃时长等具体信息。
 
 **系统能力：** SystemCapability.Notification.ReminderAgent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1264,15 +1356,15 @@ reminderAgentManager.unsubscribeReminderState(reminderStateCallback).then(() => 
 
 
 
-#### ReminderRequestCalendar
+## ReminderRequestCalendar
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-ReminderRequestCalendar extends ReminderRequest
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-日历实例对象，用于设置提醒的时间。
+日历实例对象，用于设置提醒的时间。ReminderRequestCalendar继承自[ReminderRequest](#reminderrequest)。
 
 **系统能力：** SystemCapability.Notification.ReminderAgent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1285,15 +1377,15 @@ ReminderRequestCalendar extends ReminderRequest
 
 
 
-#### ReminderRequestAlarm
+## ReminderRequestAlarm
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-ReminderRequestAlarm extends ReminderRequest
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-闹钟实例对象，用于设置提醒的时间。
+闹钟实例对象，用于设置提醒的时间。ReminderRequestAlarm继承自[ReminderRequest](#reminderrequest)。
 
 **系统能力：** SystemCapability.Notification.ReminderAgent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1304,15 +1396,15 @@ ReminderRequestAlarm extends ReminderRequest
 
 
 
-#### ReminderRequestTimer
+## ReminderRequestTimer
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-ReminderRequestTimer extends ReminderRequest
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-倒计时实例对象，用于设置提醒的时间。
+倒计时实例对象，用于设置提醒的时间。ReminderRequestTimer继承自[ReminderRequest](#reminderrequest)。
 
 **系统能力：** SystemCapability.Notification.ReminderAgent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1323,13 +1415,15 @@ ReminderRequestTimer extends ReminderRequest
 
 
 
-#### LocalDateTime
+## LocalDateTime
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于日历类提醒设置时指定时间信息。
 
 **系统能力：** SystemCapability.Notification.ReminderAgent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1343,13 +1437,15 @@ ReminderRequestTimer extends ReminderRequest
 
 
 
-#### ReminderInfo12+
+## ReminderInfo12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 代理提醒信息，包含 ReminderRequest 和 ReminderId。
 
 **系统能力：** SystemCapability.Notification.ReminderAgent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1359,9 +1455,10 @@ ReminderRequestTimer extends ReminderRequest
 
 
 
-#### ReminderState23+
+## ReminderState23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 代理提醒状态信息。状态信息会在如下两种情况发送通知：
 1. 用户点击代理提醒的通知按钮时，如果应用进程存在，则会发送用户点击的按钮类型的通知给应用。如果应用未运行，则无法收到通知。
@@ -1370,6 +1467,7 @@ ReminderRequestTimer extends ReminderRequest
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Notification.ReminderAgent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

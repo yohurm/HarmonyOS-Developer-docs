@@ -1,10 +1,10 @@
 # OH_MIDI概述(C/C++)
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/midi-overview
 
-#### MIDI简介
+## MIDI简介
 
 乐器数字接口（Musical Instrument Digital Interface）是一种用于电子乐器、计算机和其他设备之间进行通信的国际标准协议。同时定义了音符、控制信号等音乐数据的传输方式，广泛应用于音乐制作、舞台演出和游戏开发等领域。
 
@@ -12,7 +12,7 @@
 
 
 
-#### MIDI协议版本
+### MIDI协议版本
 
  - MIDI 1.0：1983年发布的经典协议，使用7位（bit）分辨率（取值范围为[0, 127]），单向通信，广泛兼容现有设备。
  - MIDI 2.0：2020年发布的新一代协议，支持32位高分辨率、双向通信、自动配置（MIDI-CI）等特性。
@@ -22,7 +22,7 @@ OH_MIDI支持连接标准MIDI 1.0设备，并通过系统服务层自动将传�
 
 
 
-#### UMP数据格式说明
+### UMP数据格式说明
 
 通用MIDI数据包（Universal MIDI Packet）是MIDI 2.0标准中定义的统一数据包格式，采用32位对齐结构，可同时承载MIDI 1.0和MIDI 2.0协议消息。
 
@@ -46,7 +46,7 @@ OH_MIDI包含客户端、设备、端口和事件四个核心概念。使用OH_M
 
 
 
-#### OH_MIDI客户端（Client）
+## OH_MIDI客户端（Client）
 
 客户端是应用使用MIDI服务的入口点，所有MIDI操作都需要先创建客户端。同时，客户端负责管理与MIDI服务的连接、提供设备枚举、设备打开和端口管理等核心功能。
 
@@ -56,7 +56,7 @@ OH_MIDI包含客户端、设备、端口和事件四个核心概念。使用OH_M
 
 
 
-#### OH_MIDI设备（Device）
+## OH_MIDI设备（Device）
 
 MIDI设备是指物理或虚拟的MIDI接口设备，包括USB MIDI键盘、蓝牙MIDI控制器等。设备连接后，MIDI服务会为其分配标识符（[OH_MIDIDeviceInformation](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohmidi-oh-midideviceinformation)中的midiDeviceId），用于在当前会话中区分和管理不同设备。
 
@@ -68,7 +68,7 @@ MIDI设备是指物理或虚拟的MIDI接口设备，包括USB MIDI键盘、蓝�
 
 
 
-#### OH_MIDI端口（Port）
+## OH_MIDI端口（Port）
 
 MIDI端口是设备上的数据传输端点，分为输入端口和输出端口。
 
@@ -94,7 +94,7 @@ MIDI端口是设备上的数据传输端点，分为输入端口和输出端口�
 
 
 
-#### OH_MIDI事件（Event）
+## OH_MIDI事件（Event）
 
 MIDI事件是MIDI数据传输的基本单元。OH_MIDI强制使用UMP（Universal MIDI Packet）格式，统一承载MIDI 1.0和MIDI 2.0数据。
 
@@ -107,9 +107,10 @@ MIDI事件是MIDI数据传输的基本单元。OH_MIDI强制使用UMP（Universa
 
 
 
-#### 完整消息类型参考
+### 完整消息类型参考
 
 UMP格式通过消息类型（Message Type）区分不同消息。MT是UMP数据包的最高4位，决定了消息的功能范围、数据包大小和状态字段大小。
+
 
 | MT值 | 名称 | 大小（bit） | 说明 |
 | --- | --- | --- | --- |
@@ -143,7 +144,8 @@ UMP格式通过消息类型（Message Type）区分不同消息。MT是UMP数据
 
 
 
-#### 术语表
+## 术语表
+
 
 | 术语 | 全称 | 说明 |
 | --- | --- | --- |
@@ -158,7 +160,7 @@ UMP格式通过消息类型（Message Type）区分不同消息。MT是UMP数据
 
 
 
-#### 约束与限制
+## 约束与限制
 
  - 同时打开的设备数量限制：单个客户端最多可同时打开16个MIDI设备。超过限制时，[OH_MIDIClient_OpenDevice](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-midi-h#oh_midiclient_opendevice)接口将返回OH_MIDI_STATUS_TOO_MANY_OPEN_DEVICES错误。
  - 每个设备的端口数量限制：每个MIDI设备最多可有64个端口（输入+输出总计）。单个客户端最多可同时打开64个端口。超过限制时，[OH_MIDIDevice_OpenInputPort](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-midi-h#oh_mididevice_openinputport)或[OH_MIDIDevice_OpenOutputPort](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-midi-h#oh_mididevice_openoutputport)接口将返回OH_MIDI_STATUS_TOO_MANY_OPEN_PORTS错误。
@@ -174,7 +176,7 @@ UMP格式通过消息类型（Message Type）区分不同消息。MT是UMP数据
 
 
 此顺序为推荐做法，用于保证代码逻辑清晰，但系统提供自动资源回收机制确保资源正确释放。
-      - 设备类型特性差异：
+            - 设备类型特性差异：
 
   
 USB MIDI设备：通过USB连接，支持低延迟传输，设备枚举通过系统USB驱动完成。
@@ -184,10 +186,10 @@ USB MIDI设备：通过USB连接，支持低延迟传输，设备枚举通过系
 
 
 
-#### 相关参考
+## 相关参考
 
  - [使用OH_MIDI进行MIDI开发(C/C++)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ohmidi)
  - 
 [OHMIDI](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohmidi)API参考
 
-      - MIDI状态码枚举：[OH_MIDIStatusCode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-midi-base-h#oh_midistatuscode)
+            - MIDI状态码枚举：[OH_MIDIStatusCode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-midi-base-h#oh_midistatuscode)

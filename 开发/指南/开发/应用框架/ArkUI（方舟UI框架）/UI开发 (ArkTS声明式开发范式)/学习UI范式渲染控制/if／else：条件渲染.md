@@ -1,6 +1,6 @@
 # if/else：条件渲染
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse
 
@@ -11,7 +11,7 @@ ArkTS提供了渲染控制能力。条件渲染可根据应用状态，使用if�
 
 
 
-#### 使用规则
+## 使用规则
 
  - 支持if、else和else if语句。
  - if和else if后的条件语句可以使用状态变量或常规变量（状态变量的值改变时会实时渲染UI，而常规变量的值改变则不会）。
@@ -22,7 +22,7 @@ ArkTS提供了渲染控制能力。条件渲染可根据应用状态，使用if�
 
 
 
-#### 更新机制
+## 更新机制
 
 当if、else if后跟随的状态判断中使用的状态变量值变化时，条件渲染语句会进行更新，更新步骤如下：
 1. 评估if和else if的状态判断条件，如果分支没有变化，无需执行以下步骤。如果分支有变化，则执行2、3步骤。
@@ -33,11 +33,11 @@ ArkTS提供了渲染控制能力。条件渲染可根据应用状态，使用if�
 
 
 
-#### 使用场景
+## 使用场景
 
 
 
-#### 使用if进行条件渲染
+### 使用if进行条件渲染
 
 ```ArkTS
 @Entry
@@ -82,7 +82,7 @@ if语句的每个分支都包含一个构建函数。此类构建函数必须创
 
 
 
-#### if ... else ...语句和子组件状态
+### if ... else ...语句和子组件状态
 
 以下示例包含if ... else ...语句与拥有[@State](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state)装饰变量的子组件。
 
@@ -193,14 +193,14 @@ struct KeepMainView {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/Oac1RS52QU2rIKhnddCL1Q/zh-cn_image_0000002674631982.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095708Z&HW-CC-Expire=86400&HW-CC-Sign=8DDEBF3D9749310DC73AE250F38D8E7ED2545B128B686B108270A403AFD5955D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/6dUf_DhbRduuVj2NJZ2OUw/zh-cn_image_0000002717770132.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072255Z&HW-CC-Expire=86400&HW-CC-Sign=9C159845ACD1866BC3C2AFA66082CCEA14EB3B9A0DEC91E4F6BAD7E3E1691334)
 
 
 此处，@State counter变量归父组件所有。因此，当KeepCounterView组件实例被删除时，该变量不会被销毁。KeepCounterView组件通过[@Link](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-link)装饰器引用状态。状态必须从子级移动到其父级（或父级的父级），以避免在条件内容或重复内容被销毁时丢失状态。
 
 
 
-#### 嵌套if语句
+### 嵌套if语句
 
 嵌套条件语句不会影响父组件的相关规则。
 
@@ -255,4 +255,4 @@ struct NestedIf {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/0NYZ9nLsRlm96ZeEyVxQ9Q/zh-cn_image_0000002704271935.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095708Z&HW-CC-Expire=86400&HW-CC-Sign=CD85D0435404FDAE6D128583A70CC46070B64EE2D7AF1BF6458BB6E8BF0145B4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/bOBXOB0FQOO4KnOPT49DMw/zh-cn_image_0000002717610198.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072255Z&HW-CC-Expire=86400&HW-CC-Sign=43B937590D1B54D93456BAC00A7C08F5D444CEC6A399BDE9A5E45C5574FEC7DB)

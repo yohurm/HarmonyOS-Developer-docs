@@ -1,6 +1,6 @@
 # @ohos.data.uniformDataStruct (标准化数据结构)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-data-uniformdatastruct
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -12,7 +12,8 @@
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -22,13 +23,15 @@ import { uniformDataStruct } from '@kit.ArkData';
 
 
 
-#### PlainText
+## PlainText
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 纯文本类型数据，用于描述和管理纯文本内容。创建PlainText对象后，可用于拖拽、复制粘贴等数据共享场景，实现跨应用的纯文本数据交互。
 
 **系统能力**：SystemCapability.DistributedDataManager.UDMF.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -65,13 +68,15 @@ let record = new unifiedDataChannel.UnifiedRecord(uniformTypeDescriptor.UniformD
 
 
 
-#### Hyperlink
+## Hyperlink
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 超链接类型数据，用于描述和管理超链接信息。创建Hyperlink对象后，可用于拖拽、分享等场景，实现跨应用的超链接数据传递和跳转。
 
 **系统能力**：SystemCapability.DistributedDataManager.UDMF.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -102,13 +107,15 @@ let record = new unifiedDataChannel.UnifiedRecord(uniformTypeDescriptor.UniformD
 
 
 
-#### HTML
+## HTML
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 HTML类型数据，用于描述超文本标记语言数据。创建HTML对象后，可在拖拽、复制粘贴等场景中传递富文本内容，支持跨应用的HTML格式数据交互，并可通过uriAuthorizationPolicies控制URI授权策略。
 
 **系统能力**：SystemCapability.DistributedDataManager.UDMF.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -144,13 +151,15 @@ let record = new unifiedDataChannel.UnifiedRecord(uniformTypeDescriptor.UniformD
 
 
 
-#### OpenHarmonyAppItem
+## OpenHarmonyAppItem
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 系统定义的桌面图标类型数据，用于跨应用共享桌面图标信息。典型使用场景包括：桌面启动器拖拽图标、应用商店分享应用图标或创建快捷方式等。
 
 **系统能力**：SystemCapability.DistributedDataManager.UDMF.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -191,13 +200,15 @@ let record = new unifiedDataChannel.UnifiedRecord(uniformTypeDescriptor.UniformD
 
 
 
-#### ContentForm14+
+## ContentForm14+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 内容卡片类型数据，用于跨应用共享内容卡片信息。典型使用场景包括：资讯应用分享文章卡片、电商应用分享商品卡片、社交应用分享内容预览等。
 
 **系统能力**：SystemCapability.DistributedDataManager.UDMF.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -232,13 +243,15 @@ let record = new unifiedDataChannel.UnifiedRecord(uniformTypeDescriptor.UniformD
 
 
 
-#### Form15+
+## Form15+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 系统定义的卡片类型数据，用于跨应用共享卡片信息。典型使用场景包括：卡片拖拽分享、卡片内容跨应用传输、桌面小组件数据共享等。
 
 **系统能力**：SystemCapability.DistributedDataManager.UDMF.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -277,7 +290,8 @@ let record = new unifiedDataChannel.UnifiedRecord(uniformTypeDescriptor.UniformD
 
 
 
-#### FileUri15+
+## FileUri15+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -285,11 +299,12 @@ let record = new unifiedDataChannel.UnifiedRecord(uniformTypeDescriptor.UniformD
 
 **系统能力**：SystemCapability.DistributedDataManager.UDMF.Core
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | uniformDataType | 'general.file-uri' | 是 | 否 | 统一数据类型标识为文件地址类型数据，固定为“general.file-uri”，数据类型描述信息见UniformDataType。 |
 | oriUri | string | 否 | 否 | 文件的原始URI路径。支持本地文件绝对路径、file://协议和http/https网络URL格式。长度限制为4096字节。例如：/data/local/tmp/test.txt、file:///data/local/tmp/test.txt或http://example.com/file.txt。 |
-| fileType | string | 否 | 否 | 文件类型（必须是标准化数据类型（即UTD预置列表中各类型对应的UTD-ID或自定义UTD-ID）。fileType最大长度限制为1024个字节，超出限制时抛出异常。 |
+| fileType | string | 否 | 否 | 文件类型必须是标准化数据类型（即UTD预置列表中各类型对应的UTD-ID或自定义UTD-ID）。fileType最大长度限制为1024个字节，超出限制时抛出异常。 |
 | details | Record<string, number \| string \| Uint8Array> | 否 | 是 | 字典类型对象，key为string类型，value可包含number（数值类型）、string（字符串类型）或Uint8Array（二进制字节数组）类型数据。非必填字段，默认值为空字典对象。 |
 | uriAuthorizationPolicies | Array&lt;number&gt; | 否 | 是 | 用于拖拽场景的URI授权策略。默认值为READ+WRITE+PERSIST（读+写+持久化授权）。只针对单个record使用，优先级最高，具体策略见UriPermission。 起始版本：26.0.0 |
 
@@ -322,13 +337,15 @@ let record = new unifiedDataChannel.UnifiedRecord(uniformTypeDescriptor.UniformD
 
 
 
-#### PixelMap15+
+## PixelMap15+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 系统定义的像素图类型数据，用于描述图像像素数据。创建PixelMap对象后，可用于图像拖拽、图像共享等场景，实现跨应用的图像数据传递。
 
 **系统能力**：SystemCapability.DistributedDataManager.UDMF.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

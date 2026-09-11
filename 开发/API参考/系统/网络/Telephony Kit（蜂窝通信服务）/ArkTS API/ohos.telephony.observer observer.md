@@ -1,9 +1,9 @@
-# @ohos.telephony.observer (observer)
+# @ohos.telephony.observer (电话服务状态监听)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-observer
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 本模块提供订阅管理功能，可以订阅/取消订阅的事件包括：网络状态变化、信号状态变化、通话状态变化、蜂窝数据链路连接状态、蜂窝数据业务的上下行数据流状态、SIM状态变化。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 import { observer } from '@kit.TelephonyKit';
@@ -22,15 +23,17 @@ import { observer } from '@kit.TelephonyKit';
 
 
 
-#### NetworkState
+## NetworkState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 type NetworkState = radio.NetworkState
 
 网络注册状态。
 
 **系统能力**：SystemCapability.Telephony.StateRegistry
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -39,15 +42,17 @@ type NetworkState = radio.NetworkState
 
 
 
-#### SignalInformation
+## SignalInformation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 type SignalInformation = radio.SignalInformation
 
 网络信号强度信息对象。
 
 **系统能力**：SystemCapability.Telephony.StateRegistry
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -56,15 +61,17 @@ type SignalInformation = radio.SignalInformation
 
 
 
-#### DataConnectState
+## DataConnectState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 type DataConnectState = data.DataConnectState
 
 描述蜂窝数据链路连接状态。
 
 **系统能力**：SystemCapability.Telephony.StateRegistry
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -73,15 +80,17 @@ type DataConnectState = data.DataConnectState
 
 
 
-#### RatType
+## RatType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 type RatType = radio.RadioTechnology
 
 无线接入技术。
 
 **系统能力**：SystemCapability.Telephony.StateRegistry
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -90,15 +99,17 @@ type RatType = radio.RadioTechnology
 
 
 
-#### DataFlowType
+## DataFlowType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 type DataFlowType = data.DataFlowType
 
 描述蜂窝数据流类型。
 
 **系统能力**：SystemCapability.Telephony.StateRegistry
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -107,15 +118,17 @@ type DataFlowType = data.DataFlowType
 
 
 
-#### CallState
+## CallState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 type CallState = call.CallState
 
 通话状态码。
 
 **系统能力**：SystemCapability.Telephony.StateRegistry
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -124,15 +137,17 @@ type CallState = call.CallState
 
 
 
-#### CCallState23+
+## CCallState23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 type CCallState = call.CCallState
 
 运营商通话状态码。
 
 **系统能力**：SystemCapability.Telephony.StateRegistry
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -141,15 +156,17 @@ type CCallState = call.CCallState
 
 
 
-#### CardType
+## CardType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 type CardType = sim.CardType
 
 卡类型。
 
 **系统能力**：SystemCapability.Telephony.StateRegistry
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -158,15 +175,17 @@ type CardType = sim.CardType
 
 
 
-#### SimState
+## SimState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 type SimState = sim.SimState
 
 SIM卡状态。
 
 **系统能力**：SystemCapability.Telephony.StateRegistry
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -175,15 +194,17 @@ SIM卡状态。
 
 
 
-#### TelCallState21+
+## TelCallState21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 type TelCallState = call.TelCallState
 
 通话状态码。
 
 **系统能力**：SystemCapability.Telephony.StateRegistry
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -192,9 +213,10 @@ type TelCallState = call.TelCallState
 
 
 
-#### observer.on('networkStateChange')
+## observer.on('networkStateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 on(type: 'networkStateChange', callback: Callback&lt;NetworkState&gt;): void
 
@@ -206,6 +228,7 @@ on(type: 'networkStateChange', callback: Callback&lt;NetworkState&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 网络状态变化事件，参数固定为'networkStateChange'。 |
@@ -215,6 +238,7 @@ on(type: 'networkStateChange', callback: Callback&lt;NetworkState&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -229,16 +253,21 @@ on(type: 'networkStateChange', callback: Callback&lt;NetworkState&gt;): void
 **示例：**
 
 ```json
-observer.on('networkStateChange', (data: observer.NetworkState) => {
-    console.info("on networkStateChange, data:" + JSON.stringify(data));
-});
+try {
+    observer.on('networkStateChange', (data: observer.NetworkState) => {
+        console.info("on networkStateChange, data:" + JSON.stringify(data));
+    });
+} catch (err) {
+    console.error(`observer.on networkStateChange failed: ${JSON.stringify(err)}`);
+}
 ```
 
 
 
-#### observer.on('networkStateChange')
+## observer.on('networkStateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 on(type: 'networkStateChange', options: ObserverOptions, callback: Callback&lt;NetworkState&gt;): void
 
@@ -249,6 +278,7 @@ on(type: 'networkStateChange', options: ObserverOptions, callback: Callback&lt;N
 **系统能力**：SystemCapability.Telephony.StateRegistry
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -261,6 +291,7 @@ on(type: 'networkStateChange', options: ObserverOptions, callback: Callback&lt;N
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -274,9 +305,11 @@ on(type: 'networkStateChange', options: ObserverOptions, callback: Callback&lt;N
 **示例：**
 
 ```json
+// 设置订阅参数，指定卡槽ID为0（卡槽1）
 let options: observer.ObserverOptions = {
     slotId: 0
 }
+// 订阅指定卡槽的网络状态变化事件
 observer.on('networkStateChange', options, (data: observer.NetworkState) => {
     console.info("on networkStateChange, data:" + JSON.stringify(data));
 });
@@ -284,9 +317,10 @@ observer.on('networkStateChange', options, (data: observer.NetworkState) => {
 
 
 
-#### observer.off('networkStateChange')
+## observer.off('networkStateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 off(type: 'networkStateChange', callback?: Callback&lt;NetworkState&gt;): void
 
@@ -300,6 +334,7 @@ off(type: 'networkStateChange', callback?: Callback&lt;NetworkState&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 网络状态变化事件，参数固定为'networkStateChange'。 |
@@ -309,6 +344,7 @@ off(type: 'networkStateChange', callback?: Callback&lt;NetworkState&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -333,9 +369,10 @@ observer.off('networkStateChange');
 
 
 
-#### observer.on('signalInfoChange')
+## observer.on('signalInfoChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 on(type: 'signalInfoChange', callback: Callback<Array&lt;SignalInformation&gt;>): void
 
@@ -344,6 +381,7 @@ on(type: 'signalInfoChange', callback: Callback<Array&lt;SignalInformation&gt;>)
 **系统能力**：SystemCapability.Telephony.StateRegistry
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -354,6 +392,7 @@ on(type: 'signalInfoChange', callback: Callback<Array&lt;SignalInformation&gt;>)
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -376,9 +415,10 @@ observer.on('signalInfoChange', (data: Array<radio.SignalInformation>) => {
 
 
 
-#### observer.on('signalInfoChange')
+## observer.on('signalInfoChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 on(type: 'signalInfoChange', options: ObserverOptions, callback: Callback<Array&lt;SignalInformation&gt;>): void
 
@@ -387,6 +427,7 @@ on(type: 'signalInfoChange', options: ObserverOptions, callback: Callback<Array&
 **系统能力**：SystemCapability.Telephony.StateRegistry
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -398,6 +439,7 @@ on(type: 'signalInfoChange', options: ObserverOptions, callback: Callback<Array&
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -423,9 +465,10 @@ observer.on('signalInfoChange', options, (data: Array<radio.SignalInformation>) 
 
 
 
-#### observer.off('signalInfoChange')
+## observer.off('signalInfoChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 off(type: 'signalInfoChange', callback?: Callback<Array&lt;SignalInformation&gt;>): void
 
@@ -439,6 +482,7 @@ off(type: 'signalInfoChange', callback?: Callback<Array&lt;SignalInformation&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 信号状态变化事件，参数固定为'signalInfoChange'。 |
@@ -448,6 +492,7 @@ off(type: 'signalInfoChange', callback?: Callback<Array&lt;SignalInformation&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -474,9 +519,10 @@ observer.off('signalInfoChange');
 
 
 
-#### observer.on('callStateChange')
+## observer.on('callStateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 on(type: 'callStateChange', callback: Callback&lt;CallStateInfo&gt;): void
 
@@ -486,15 +532,17 @@ on(type: 'callStateChange', callback: Callback&lt;CallStateInfo&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 通话状态变化事件，参数固定为'callStateChange'。 |
+| type | string | 是 | 通话状态变化事件，参数固定为"callStateChange"。 |
 | callback | Callback&lt;CallStateInfo&gt; | 是 | 回调函数，返回通话状态信息对象。 应用可获取到CallStateInfo。 其中，三方应用仅能获取state通话状态。number受系统权限管控，仅面向系统应用开放。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -515,9 +563,10 @@ observer.on('callStateChange', (data: observer.CallStateInfo) => {
 
 
 
-#### observer.on('callStateChange')
+## observer.on('callStateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 on(type: 'callStateChange', options: ObserverOptions, callback: Callback&lt;CallStateInfo&gt;): void
 
@@ -527,9 +576,10 @@ on(type: 'callStateChange', options: ObserverOptions, callback: Callback&lt;Call
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 通话状态变化事件，参数固定为'callStateChange'。 |
+| type | string | 是 | 通话状态变化事件，参数固定为"callStateChange"。 |
 | options | ObserverOptions | 是 | 电话相关事件订阅参数可选项。 |
 | callback | Callback&lt;CallStateInfo&gt; | 是 | 回调函数，返回通话状态信息对象。 应用可获取到CallStateInfo。 其中，三方应用仅能获取state通话状态。number受系统权限管控，仅面向系统应用开放。 |
 
@@ -537,6 +587,7 @@ on(type: 'callStateChange', options: ObserverOptions, callback: Callback&lt;Call
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -560,9 +611,10 @@ observer.on('callStateChange', options, (data: observer.CallStateInfo) => {
 
 
 
-#### observer.off('callStateChange')
+## observer.off('callStateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 off(type: 'callStateChange', callback?: Callback&lt;CallStateInfo&gt;): void
 
@@ -576,15 +628,17 @@ off(type: 'callStateChange', callback?: Callback&lt;CallStateInfo&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 通话状态变化事件，参数固定为'callStateChange'。 |
-| callback | Callback&lt;CallStateInfo&gt; | 否 | 回调函数，返回通话状态信息对象。参考call的CallState。 number：电话号码。 |
+| type | string | 是 | 通话状态变化事件，参数固定为"callStateChange"。 |
+| callback | Callback&lt;CallStateInfo&gt; | 否 | 回调函数，返回通话状态信息对象。 其中，三方应用仅能获取state通话状态。number受系统权限管控，仅面向系统应用开放。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -609,9 +663,10 @@ observer.off('callStateChange');
 
 
 
-#### observer.on('callStateChangeEx')21+
+## observer.on('callStateChangeEx')21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 on(type: 'callStateChangeEx', callback: Callback&lt;TelCallState&gt;, options?: ObserverOptions): void
 
@@ -621,16 +676,18 @@ on(type: 'callStateChangeEx', callback: Callback&lt;TelCallState&gt;, options?: 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 通话状态变化事件，参数固定为'callStateChangeEx'。 |
+| type | string | 是 | 通话状态变化事件，参数固定为"callStateChangeEx"。 |
 | callback | Callback&lt;TelCallState&gt; | 是 | 回调函数，返回通话状态对象。 应用可获取到TelCallState。 |
-| options | ObserverOptions | 否 | 电话相关事件订阅参数可选项。 |
+| options | ObserverOptions | 否 | 电话相关事件订阅参数可选项，指定事件订阅的卡槽ID，默认为当前默认数据卡槽ID。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -645,22 +702,31 @@ on(type: 'callStateChangeEx', callback: Callback&lt;TelCallState&gt;, options?: 
 ```json
 import { call } from '@kit.TelephonyKit';
 
+// 定义通话状态变化拓展事件回调
 let callback: (data: call.TelCallState) => void = (data: call.TelCallState) => {
     console.info("on callStateChangeEx, data:" + JSON.stringify(data));
 }
+// 设置订阅参数，指定卡槽ID
 let options: observer.ObserverOptions = {
     slotId: 0
 }
 
-observer.on('callStateChangeEx', callback, options);
-observer.on('callStateChangeEx', callback);
+try {
+    // 订阅通话状态变化拓展事件（指定卡槽）
+    observer.on('callStateChangeEx', callback, options);
+    // 订阅通话状态变化拓展事件（不指定卡槽，监听所有卡槽）
+    observer.on('callStateChangeEx', callback);
+} catch (err) {
+    console.error(`observer.on callStateChangeEx failed: ${JSON.stringify(err)}`);
+}
 ```
 
 
 
-#### observer.off('callStateChangeEx')21+
+## observer.off('callStateChangeEx')21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 off(type: 'callStateChangeEx', callback?: Callback&lt;TelCallState&gt;): void
 
@@ -674,15 +740,17 @@ off(type: 'callStateChangeEx', callback?: Callback&lt;TelCallState&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 通话状态变化事件，参数固定为'callStateChange'。 |
+| type | string | 是 | 通话状态变化事件，参数固定为'callStateChangeEx'。 |
 | callback | Callback&lt;TelCallState&gt; | 否 | 回调函数，返回通话状态对象。参考call的TelCallState。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -707,9 +775,10 @@ observer.off('callStateChangeEx');
 
 
 
-#### observer.on('cellularDataConnectionStateChange')7+
+## observer.on('cellularDataConnectionStateChange')7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 on(type: 'cellularDataConnectionStateChange', callback: Callback&lt;DataConnectionStateInfo&gt;): void
 
@@ -718,6 +787,7 @@ on(type: 'cellularDataConnectionStateChange', callback: Callback&lt;DataConnecti
 **系统能力**：SystemCapability.Telephony.StateRegistry
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -728,6 +798,7 @@ on(type: 'cellularDataConnectionStateChange', callback: Callback&lt;DataConnecti
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -748,9 +819,10 @@ observer.on('cellularDataConnectionStateChange', (data: observer.DataConnectionS
 
 
 
-#### observer.on('cellularDataConnectionStateChange')7+
+## observer.on('cellularDataConnectionStateChange')7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 on(type: 'cellularDataConnectionStateChange', options: ObserverOptions, callback: Callback&lt;DataConnectionStateInfo&gt;): void
 
@@ -759,6 +831,7 @@ on(type: 'cellularDataConnectionStateChange', options: ObserverOptions, callback
 **系统能力**：SystemCapability.Telephony.StateRegistry
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -770,6 +843,7 @@ on(type: 'cellularDataConnectionStateChange', options: ObserverOptions, callback
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -793,9 +867,10 @@ observer.on('cellularDataConnectionStateChange', options, (data: observer.DataCo
 
 
 
-#### observer.off('cellularDataConnectionStateChange')7+
+## observer.off('cellularDataConnectionStateChange')7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 off(type: 'cellularDataConnectionStateChange', callback?: Callback&lt;DataConnectionStateInfo&gt;): void
 
@@ -809,6 +884,7 @@ off(type: 'cellularDataConnectionStateChange', callback?: Callback&lt;DataConnec
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 蜂窝数据链路连接状态事件，参数固定为'cellularDataConnectionStateChange'。 |
@@ -818,6 +894,7 @@ off(type: 'cellularDataConnectionStateChange', callback?: Callback&lt;DataConnec
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -842,9 +919,10 @@ observer.off('cellularDataConnectionStateChange');
 
 
 
-#### observer.on('cellularDataFlowChange')7+
+## observer.on('cellularDataFlowChange')7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 on(type: 'cellularDataFlowChange', callback: Callback&lt;DataFlowType&gt;): void
 
@@ -853,6 +931,7 @@ on(type: 'cellularDataFlowChange', callback: Callback&lt;DataFlowType&gt;): void
 **系统能力**：SystemCapability.Telephony.StateRegistry
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -863,6 +942,7 @@ on(type: 'cellularDataFlowChange', callback: Callback&lt;DataFlowType&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -885,9 +965,10 @@ observer.on('cellularDataFlowChange', (data: data.DataFlowType) => {
 
 
 
-#### observer.on('cellularDataFlowChange')7+
+## observer.on('cellularDataFlowChange')7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 on(type: 'cellularDataFlowChange', options: ObserverOptions, callback: Callback&lt;DataFlowType&gt;): void
 
@@ -896,6 +977,7 @@ on(type: 'cellularDataFlowChange', options: ObserverOptions, callback: Callback&
 **系统能力**：SystemCapability.Telephony.StateRegistry
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -907,6 +989,7 @@ on(type: 'cellularDataFlowChange', options: ObserverOptions, callback: Callback&
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -932,9 +1015,10 @@ observer.on('cellularDataFlowChange', options, (data: data.DataFlowType) => {
 
 
 
-#### observer.off('cellularDataFlowChange')7+
+## observer.off('cellularDataFlowChange')7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 off(type: 'cellularDataFlowChange', callback?: Callback&lt;DataFlowType&gt;): void
 
@@ -948,6 +1032,7 @@ off(type: 'cellularDataFlowChange', callback?: Callback&lt;DataFlowType&gt;): vo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 蜂窝数据业务的上下行数据流状态事件，参数固定为'cellularDataFlowChange'。 |
@@ -957,6 +1042,7 @@ off(type: 'cellularDataFlowChange', callback?: Callback&lt;DataFlowType&gt;): vo
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -983,31 +1069,34 @@ observer.off('cellularDataFlowChange');
 
 
 
-#### observer.on('simStateChange')7+
+## observer.on('simStateChange')7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 on(type: 'simStateChange', callback: Callback&lt;SimStateData&gt;): void
 
-订阅sim状态更改事件，使用callback方式作为异步方法。
+订阅SIM卡状态更改事件，使用callback方式作为异步方法。
 
 > [!NOTE]
-> 此接口不包含sim卡的激活状态，具体请参见 sim.isSimActive 接口。
+> 此接口不包含SIM卡的激活状态，具体请参见 sim.isSimActive 接口。
 
 
 **系统能力**：SystemCapability.Telephony.StateRegistry
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | sim状态更改事件，参数固定为'simStateChange'。 |
+| type | string | 是 | SIM卡状态更改事件，参数固定为"simStateChange"。 |
 | callback | Callback&lt;SimStateData&gt; | 是 | 回调函数，返回卡状态数据对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1028,21 +1117,23 @@ observer.on('simStateChange', (data: observer.SimStateData) => {
 
 
 
-#### observer.on('simStateChange')7+
+## observer.on('simStateChange')7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 on(type: 'simStateChange', options: ObserverOptions, callback: Callback&lt;SimStateData&gt;): void
 
-订阅指定卡槽位的sim状态更改事件，使用callback方式作为异步方法。
+订阅指定卡槽位的SIM卡状态更改事件，使用callback方式作为异步方法。
 
 **系统能力**：SystemCapability.Telephony.StateRegistry
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | sim状态更改事件，参数固定为'simStateChange'。 |
+| type | string | 是 | SIM卡状态更改事件，参数固定为"simStateChange"。 |
 | options | ObserverOptions | 是 | 电话相关事件订阅参数可选项。 |
 | callback | Callback&lt;SimStateData&gt; | 是 | 回调函数，返回卡状态数据对象。 |
 
@@ -1050,6 +1141,7 @@ on(type: 'simStateChange', options: ObserverOptions, callback: Callback&lt;SimSt
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1073,13 +1165,14 @@ observer.on('simStateChange', options, (data: observer.SimStateData) => {
 
 
 
-#### observer.off('simStateChange')7+
+## observer.off('simStateChange')7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 off(type: 'simStateChange', callback?: Callback&lt;SimStateData&gt;): void
 
-移除订阅sim状态更改事件，使用callback方式作为异步方法。
+移除订阅SIM卡状态更改事件，使用callback方式作为异步方法。
 
 > [!NOTE]
 > 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
@@ -1089,15 +1182,17 @@ off(type: 'simStateChange', callback?: Callback&lt;SimStateData&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | sim状态更改事件，参数固定为'simStateChange'。 |
+| type | string | 是 | SIM卡状态更改事件，参数固定为"simStateChange"。 |
 | callback | Callback&lt;SimStateData&gt; | 否 | 回调函数，返回卡状态数据对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1122,27 +1217,30 @@ observer.off('simStateChange');
 
 
 
-#### observer.on('iccAccountInfoChange')10+
+## observer.on('iccAccountInfoChange')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 on(type: 'iccAccountInfoChange', callback: Callback&lt;void&gt;): void
 
-订阅卡帐户变化事件，使用callback方式作为异步方法。
+订阅卡账户变化事件，使用callback方式作为异步方法。
 
 **系统能力**：SystemCapability.Telephony.StateRegistry
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 卡帐户变化事件，参数固定为'iccAccountInfoChange'。 |
-| callback | Callback&lt;void&gt; | 是 | 回调函数。当卡账户改变成功，err为undefined，否则为错误对象。 |
+| type | string | 是 | 卡账户变化事件，参数固定为"iccAccountInfoChange"。 |
+| callback | Callback&lt;void&gt; | 是 | 回调函数。当卡账户变化时触发。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1163,13 +1261,14 @@ observer.on('iccAccountInfoChange', () => {
 
 
 
-#### observer.off('iccAccountInfoChange')10+
+## observer.off('iccAccountInfoChange')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 off(type: 'iccAccountInfoChange', callback?: Callback&lt;void&gt;): void
 
-移除订阅卡帐户变化事件，使用callback方式作为异步方法。
+移除订阅卡账户变化事件，使用callback方式作为异步方法。
 
 > [!NOTE]
 > 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
@@ -1179,15 +1278,17 @@ off(type: 'iccAccountInfoChange', callback?: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 卡帐户变化事件，参数固定为'iccAccountInfoChange'。 |
-| callback | Callback&lt;void&gt; | 否 | 回调函数。当卡账户改变成功，err为undefined，否则为错误对象。 |
+| type | string | 是 | 卡账户变化事件，参数固定为"iccAccountInfoChange"。 |
+| callback | Callback&lt;void&gt; | 否 | 回调函数。当卡账户变化时触发。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1212,19 +1313,21 @@ observer.off('iccAccountInfoChange');
 
 
 
-#### observer.onGetSimActiveState23+
+## observer.onGetSimActiveState23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 onGetSimActiveState(slotId: number, callback: Callback&lt;boolean&gt;): void
 
-SIM卡激活状态变化的监听，使用callback方式作为异步方法。
+监听SIM卡激活状态变化，使用callback方式作为异步方法。
 
 **需要权限**：ohos.permission.GET_TELEPHONY_STATE
 
 **系统能力**：SystemCapability.Telephony.StateRegistry
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1236,9 +1339,10 @@ SIM卡激活状态变化的监听，使用callback方式作为异步方法。
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied |
+| 201 | Permission denied. |
 | 8300001 | Invalid parameter value. |
 | 8300002 | Service connection failed. |
 | 8300003 | System internal error. |
@@ -1260,9 +1364,10 @@ observer.onGetSimActiveState(sislotId, simActiveState);
 
 
 
-#### observer.offGetSimActiveState23+
+## observer.offGetSimActiveState23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 offGetSimActiveState(callback?: Callback&lt;boolean&gt;): void
 
@@ -1274,6 +1379,7 @@ offGetSimActiveState(callback?: Callback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;boolean&gt; | 否 | 回调函数，返回SIM卡是否激活。 - true：激活。 - false：未激活。 |
@@ -1283,9 +1389,10 @@ offGetSimActiveState(callback?: Callback&lt;boolean&gt;): void
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied |
+| 201 | Permission denied. |
 | 8300001 | Invalid parameter value. |
 | 8300002 | Service connection failed. |
 | 8300003 | System internal error. |
@@ -1306,13 +1413,14 @@ observer.offGetSimActiveState(simActiveState);
 
 
 
-#### observer.onCCallStateChange23+
+## observer.onCCallStateChange23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 onCCallStateChange(callback: Callback&lt;CCallStateInfo&gt;, options?: ObserverOptions): void
 
-三方应用监听运营商通话状态并获取通话号码，使用callback方式作为异步方法。
+订阅运营商通话状态变化事件并获取通话号码，使用callback方式作为异步方法。
 
 **系统能力**：SystemCapability.Telephony.StateRegistry
 
@@ -1320,15 +1428,17 @@ onCCallStateChange(callback: Callback&lt;CCallStateInfo&gt;, options?: ObserverO
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | Callback&lt;CCallStateInfo&gt; | 是 | 回调函数，返回通话状态信息对象。 应用可获取到CCallState。 |
-| options | ObserverOptions | 否 | 电话相关事件订阅参数可选项。 |
+| callback | Callback&lt;CCallStateInfo&gt; | 是 | 回调函数，返回通话状态信息对象。 应用可获取到CCallStateInfo。 |
+| options | ObserverOptions | 否 | 电话相关事件订阅参数可选项，指定事件订阅的卡槽ID，默认为当前默认数据卡槽ID。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1344,26 +1454,39 @@ onCCallStateChange(callback: Callback&lt;CCallStateInfo&gt;, options?: ObserverO
 ```json
 import { call, observer } from '@kit.TelephonyKit';
 
+// 定义运营商通话状态变化回调
 let callback: (data: observer.CCallStateInfo) => void = (data: observer.CCallStateInfo) => {
     console.info("onCCallStateChange, data:" + JSON.stringify(data));
-}
+};
+// 设置订阅参数，指定卡槽ID
 let options: observer.ObserverOptions = {
     slotId: 0
-}
+};
 
-observer.onCCallStateChange(callback, options);
-observer.onCCallStateChange(callback);
+try {
+    // 监听运营商通话状态（指定卡槽）
+    observer.onCCallStateChange(callback, options);
+    // 监听运营商通话状态（不指定卡槽）
+    observer.onCCallStateChange(callback);
+} catch (err) {
+    console.error(`observer.onCCallStateChange failed: ${JSON.stringify(err)}`);
+}
 ```
 
 
 
-#### observer.offCCallStateChange23+
+## observer.offCCallStateChange23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 offCCallStateChange(callback?: Callback&lt;CCallStateInfo&gt;): void
 
-取消三方应用监听运营商通话状态并获取通话号码，使用callback方式作为异步方法。
+取消订阅运营商通话状态变化事件并获取通话号码，使用callback方式作为异步方法。
+
+> [!NOTE]
+> 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
+
 
 **系统能力**：SystemCapability.Telephony.StateRegistry
 
@@ -1371,14 +1494,16 @@ offCCallStateChange(callback?: Callback&lt;CCallStateInfo&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | Callback&lt;CCallStateInfo&gt; | 否 | 回调函数，返回通话状态信息对象。 应用可获取到CCallState。 |
+| callback | Callback&lt;CCallStateInfo&gt; | 否 | 回调函数，返回通话状态信息对象。 应用可获取到CCallStateInfo。 不传入此参数时，取消所有运营商通话状态的监听。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1392,7 +1517,7 @@ offCCallStateChange(callback?: Callback&lt;CCallStateInfo&gt;): void
 **示例：**
 
 ```json
-import { call, observer } from '@kit.TelephonyKit';
+import { observer } from '@kit.TelephonyKit';
 
 let callback: (data: observer.CCallStateInfo) => void = (data: observer.CCallStateInfo) => {
     console.info("onCCallStateChange, data:" + JSON.stringify(data));
@@ -1404,9 +1529,10 @@ observer.offCCallStateChange();
 
 
 
-#### observer.onCommunicationStateChange
+## observer.onCommunicationStateChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 onCommunicationStateChange(callback: Callback&lt;boolean&gt;, options?:ObserverOptions): void
 
@@ -1422,6 +1548,7 @@ onCommunicationStateChange(callback: Callback&lt;boolean&gt;, options?:ObserverO
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;boolean&gt; | 是 | 回调函数。返回true表示5A状态为使能态；返回false表示5A状态为非使能态。 |
@@ -1432,6 +1559,7 @@ onCommunicationStateChange(callback: Callback&lt;boolean&gt;, options?:ObserverO
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -1440,24 +1568,32 @@ onCommunicationStateChange(callback: Callback&lt;boolean&gt;, options?:ObserverO
 **示例：**
 
 ```json
+// 设置订阅参数，指定卡槽ID
 let options: observer.ObserverOptions = {
     slotId: 0
 }
+// 定义5A网络状态变化回调
 let callback: Callback<boolean> = (isCommunicationStateOn: boolean) => {
     console.info(`communicationStateChanged ${JSON.stringify(isCommunicationStateOn)}`);
 }
-observer.onCommunicationStateChange(callback, options);
+try {
+    // 订阅5A网络状态变化事件
+    observer.onCommunicationStateChange(callback, options);
+} catch (err) {
+    console.error(`observer.onCommunicationStateChange failed: ${JSON.stringify(err)}`);
+}
 ```
 
 
 
-#### observer.offCommunicationStateChange
+## observer.offCommunicationStateChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 offCommunicationStateChange(callback: Callback&lt;boolean&gt;, options?:ObserverOptions): void
 
-取消订阅5A网络状态变化事件，使用callback异步回调。
+取消订阅5A网络状态变化事件，使用callback方式作为异步方法。
 
 **起始版本：** 26.0.0
 
@@ -1469,6 +1605,7 @@ offCommunicationStateChange(callback: Callback&lt;boolean&gt;, options?:Observer
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;boolean&gt; | 是 | 回调函数。返回true表示5A状态为使能态；返回false表示5A状态为非使能态。 |
@@ -1478,6 +1615,7 @@ offCommunicationStateChange(callback: Callback&lt;boolean&gt;, options?:Observer
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1499,13 +1637,15 @@ observer.offCommunicationStateChange(callback, options);
 
 
 
-#### LockReason8+
+## LockReason8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 SIM卡锁类型。
 
 **系统能力**：SystemCapability.Telephony.StateRegistry
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1526,13 +1666,15 @@ SIM卡锁类型。
 
 
 
-#### SimStateData7+
+## SimStateData7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 SIM卡类型和状态。
 
 **系统能力**：SystemCapability.Telephony.StateRegistry
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1543,45 +1685,51 @@ SIM卡类型和状态。
 
 
 
-#### CallStateInfo11+
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
-
-通话状态相关信息。
-
-**系统能力**：SystemCapability.Telephony.StateRegistry
-
-| 名称 | 类型 | 只读 | 可选 | 说明 |
-| --- | --- | --- | --- | --- |
-| state | CallState | 否 | 否 | 通话类型。 |
-| number | string | 否 | 否 | 电话号码。 |
+## CallStateInfo11+
 
 
-
-
-#### CCallStateInfo23+
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+**支持设备：** Phone | Tablet | Wearable
 
 通话状态相关信息。
 
 **系统能力**：SystemCapability.Telephony.StateRegistry
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| state | CCallState | 否 | 否 | 通话类型。 |
+| state | CallState | 否 | 否 | 通话状态。 |
+| number | string | 否 | 否 | 电话号码。受系统权限管控，仅面向系统应用开放，三方应用无法获取。 |
+
+
+
+
+## CCallStateInfo23+
+
+
+**支持设备：** Phone | Tablet | Wearable
+
+通话状态相关信息。
+
+**系统能力**：SystemCapability.Telephony.StateRegistry
+
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| state | CCallState | 否 | 否 | 通话状态。 |
 | teleNumber | string | 否 | 否 | 电话号码。 |
 
 
 
 
-#### DataConnectionStateInfo11+
+## DataConnectionStateInfo11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 数据连接状态相关信息。
 
 **系统能力**：SystemCapability.Telephony.StateRegistry
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1591,14 +1739,16 @@ SIM卡类型和状态。
 
 
 
-#### ObserverOptions11+
+## ObserverOptions11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 电话相关事件订阅参数可选项。
 
 **系统能力**：SystemCapability.Telephony.StateRegistry
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| slotId | number | 否 | 否 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
+| slotId | number | 否 | 否 | 卡槽ID。 - 0：卡槽1 - 1：卡槽2 |

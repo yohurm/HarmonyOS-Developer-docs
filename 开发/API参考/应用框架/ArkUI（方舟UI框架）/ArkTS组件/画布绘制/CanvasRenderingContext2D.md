@@ -1,9 +1,9 @@
 # CanvasRenderingContext2D
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-canvasrenderingcontext2d
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 CanvasRenderingContext2D是Canvas组件的2D绘图上下文对象，用于在Canvas组件上进行自定义绘图。支持绘制形状（矩形、圆形、椭圆、路径等）、文本、图片、渐变、阴影等多种绘制类型，适用于数据可视化、游戏开发、图像编辑、自定义UI绘制等场景。通过该对象，开发者可以灵活控制绘制过程，实现复杂的2D图形效果。
 
@@ -12,9 +12,10 @@ CanvasRenderingContext2D是Canvas组件的2D绘图上下文对象，用于在Can
 
 
 
-#### constructor
+## constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(settings?: RenderingContextSettings)
 
@@ -32,6 +33,7 @@ constructor(settings?: RenderingContextSettings)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | settings | RenderingContextSettings | 否 | 用于配置CanvasRenderingContext2D对象的参数，当需要开启抗锯齿等高级配置时传入此参数，不传入时使用默认配置（不开启抗锯齿）。见RenderingContextSettings。 异常值undefined和null按RenderingContextSettings的默认值处理。 |
@@ -39,9 +41,10 @@ constructor(settings?: RenderingContextSettings)
 
 
 
-#### constructor12+
+## constructor12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(settings?: RenderingContextSettings, unit?: LengthMetricsUnit)
 
@@ -60,6 +63,7 @@ constructor(settings?: RenderingContextSettings, unit?: LengthMetricsUnit)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -115,11 +119,13 @@ struct LengthMetricsUnitDemo {
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -130,9 +136,10 @@ struct LengthMetricsUnitDemo {
 
 
 
-#### toDataURL
+## toDataURL
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toDataURL(type?: string, quality?: any): string
 
@@ -146,6 +153,7 @@ toDataURL(type?: string, quality?: any): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 否 | 用于指定图像格式。 可选参数为："image/png"（无损压缩，适合需要精确像素的场景）、"image/jpeg"（有损压缩，适合照片类图像）、"image/webp"（高效压缩，适合网络传输场景）。 异常值undefined或null按默认值处理。 默认值：image/png |
@@ -153,6 +161,7 @@ toDataURL(type?: string, quality?: any): string
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -196,9 +205,10 @@ struct CanvasExample {
 
 
 
-#### on('onAttach')13+
+## on('onAttach')13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'onAttach', callback: Callback&lt;void&gt;): void
 
@@ -212,6 +222,7 @@ on(type: 'onAttach', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅CanvasRenderingContext2D与Canvas组件发生绑定的事件类型，固定为'onAttach'。 异常值undefined或null按无效值处理。 |
@@ -222,20 +233,22 @@ on(type: 'onAttach', callback: Callback&lt;void&gt;): void
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Input parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
 
 
 > [!NOTE]
-> CanvasRenderingContext2D对象在同一时间只能与一个Canvas组件绑定。 当CanvasRenderingContext2D对象和Canvas组件发生绑定时，会触发'onAttach'回调，表示可以获取到 canvas 。 避免在'onAttach'中执行绘制方法，应保证Canvas组件已经' onReady '再进行绘制。 触发'onAttach'回调的一般场景： 1、Canvas组件创建时绑定CanvasRenderingContext2D对象; 2、CanvasRenderingContext2D对象新绑定一个Canvas组件时。
+> CanvasRenderingContext2D对象在同一时间只能与一个Canvas组件绑定。 当CanvasRenderingContext2D对象和Canvas组件发生绑定时，会触发'onAttach'回调，表示可以获取到 canvas 。 避免在'onAttach'中执行绘制方法，应保证Canvas组件已经' onReady '再进行绘制。 触发'onAttach'回调的一般场景： 1、Canvas组件创建时绑定CanvasRenderingContext2D对象； 2、CanvasRenderingContext2D对象新绑定一个Canvas组件时。
 
 
 
 
-#### on('onDetach')13+
+## on('onDetach')13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'onDetach', callback: Callback&lt;void&gt;): void
 
@@ -249,6 +262,7 @@ on(type: 'onDetach', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅CanvasRenderingContext2D与Canvas组件解除绑定的事件类型，固定为'onDetach'。 异常值undefined或null按无效值处理。 |
@@ -259,20 +273,22 @@ on(type: 'onDetach', callback: Callback&lt;void&gt;): void
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Input parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
 
 
 > [!NOTE]
-> 当CanvasRenderingContext2D对象和Canvas组件解除绑定时，会触发'onDetach'回调，表示应停止绘制行为。 触发'onDetach'回调的一般场景： 1、Canvas组件销毁时解除绑定CanvasRenderingContext2D对象; 2、CanvasRenderingContext2D对象新绑定一个Canvas组件，会先解除已有的绑定。
+> 当CanvasRenderingContext2D对象和Canvas组件解除绑定时，会触发'onDetach'回调，表示应停止绘制行为。 触发'onDetach'回调的一般场景： 1、Canvas组件销毁时解除绑定CanvasRenderingContext2D对象； 2、CanvasRenderingContext2D对象新绑定一个Canvas组件，会先解除已有的绑定。
 
 
 
 
-#### off('onAttach')13+
+## off('onAttach')13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'onAttach', callback?: Callback&lt;void&gt;): void
 
@@ -286,6 +302,7 @@ off(type: 'onAttach', callback?: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 取消订阅CanvasRenderingContext2D与Canvas组件发生绑定的事件类型，固定为'onAttach'。 异常值undefined或null按无效值处理。 |
@@ -296,6 +313,7 @@ off(type: 'onAttach', callback?: Callback&lt;void&gt;): void
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Input parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
@@ -303,9 +321,10 @@ off(type: 'onAttach', callback?: Callback&lt;void&gt;): void
 
 
 
-#### off('onDetach')13+
+## off('onDetach')13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'onDetach', callback?: Callback&lt;void&gt;): void
 
@@ -319,6 +338,7 @@ off(type: 'onDetach', callback?: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 取消订阅CanvasRenderingContext2D与Canvas组件解除绑定的事件类型，固定为'onDetach'。 异常值undefined或null按无效值处理。 |
@@ -328,6 +348,7 @@ off(type: 'onDetach', callback?: Callback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -433,9 +454,10 @@ struct AttachDetachExample {
 
 
 
-#### startImageAnalyzer12+
+## startImageAnalyzer12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startImageAnalyzer(config: ImageAnalyzerConfig): Promise&lt;void&gt;
 
@@ -457,12 +479,14 @@ startImageAnalyzer(config: ImageAnalyzerConfig): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | config | ImageAnalyzerConfig | 是 | 执行AI分析所需要的入参，用于配置AI分析的类型（如主体识别、文字识别等）。详见ImageAnalyzerConfig。 异常值undefined或null按无效值处理。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -473,6 +497,7 @@ startImageAnalyzer(config: ImageAnalyzerConfig): Promise&lt;void&gt;
 
 以下错误码的详细介绍请参见[图像AI分析错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image-analyzer)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 110001 | Image analysis feature is unsupported. |
@@ -482,9 +507,10 @@ startImageAnalyzer(config: ImageAnalyzerConfig): Promise&lt;void&gt;
 
 
 
-#### stopImageAnalyzer12+
+## stopImageAnalyzer12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopImageAnalyzer(): void
 
@@ -572,9 +598,10 @@ struct ImageAnalyzerExample {
 
 
 
-#### getContext2DFromDrawingContext23+
+## getContext2DFromDrawingContext23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getContext2DFromDrawingContext(drawingContext: DrawingRenderingContext, options?: RenderingContextOptions): CanvasRenderingContext2D
 
@@ -592,6 +619,7 @@ static getContext2DFromDrawingContext(drawingContext: DrawingRenderingContext, o
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | drawingContext | DrawingRenderingContext | 是 | 一个DrawingRenderingContext类型的对象。 异常值undefined或null按无效值处理。 |
@@ -599,6 +627,7 @@ static getContext2DFromDrawingContext(drawingContext: DrawingRenderingContext, o
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -608,6 +637,7 @@ static getContext2DFromDrawingContext(drawingContext: DrawingRenderingContext, o
 **错误码：**
 
 以下错误码的详细介绍请参见[Canvas组件错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-canvas)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -648,9 +678,10 @@ struct CanvasExample {
 
 
 
-#### RenderingContextOptions23+
+## RenderingContextOptions23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义渲染上下文的具体配置参数。
 
@@ -660,6 +691,7 @@ struct CanvasExample {
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | antialias | boolean | 否 | 是 | 表明RenderingContext是否需要开启抗锯齿。 异常值undefined或null按默认值处理。 true：开启抗锯齿；false：不开启抗锯齿。 默认值：false |
@@ -667,17 +699,19 @@ struct CanvasExample {
 
 
 
-#### RenderingContextSettings
+## RenderingContextSettings
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于配置CanvasRenderingContext2D对象的参数，包括是否开启抗锯齿。
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(antialias?: boolean)
 
@@ -691,6 +725,7 @@ constructor(antialias?: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | antialias | boolean | 否 | 表明canvas是否开启抗锯齿。 异常值undefined或null按默认值处理。 true：表示开启抗锯齿，false：表示不开启抗锯齿功能。 默认值：false 说明： 绘制文本默认开启抗锯齿效果，RenderingContextSettings的antialias无法影响绘制文本的抗锯齿效果，如需修改文本抗锯齿效果，请使用antialias24+接口。 |
@@ -698,15 +733,17 @@ constructor(antialias?: boolean)
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -715,13 +752,17 @@ constructor(antialias?: boolean)
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（width属性用法）
+
+
+### 示例1（width属性用法）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```ArkTS
 // xxx.ets
@@ -754,7 +795,10 @@ struct WidthExample {
 
 
 
-#### 示例2（height属性用法）
+### 示例2（height属性用法）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```ArkTS
 // xxx.ets
@@ -787,7 +831,10 @@ struct HeightExample {
 
 
 
-#### 示例3（canvas属性用法）
+### 示例3（canvas属性用法）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```ArkTS
 import { FrameNode } from '@kit.ArkUI'

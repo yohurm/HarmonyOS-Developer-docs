@@ -1,13 +1,14 @@
 # oh_sensor_type.h
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-sensor-type-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义常用传感器属性。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | Sensor_Info | Sensor_Info | 定义传感器信息。 |
@@ -44,10 +48,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | Sensor_Type | Sensor_Type | 枚举传感器类型。 |
@@ -57,10 +63,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | Sensor_Info **OH_Sensor_CreateInfos(uint32_t count) | - | 用给定的数字创建一个实例数组，请参考Sensor_Info。创建成功后，返回指向count个Sensor_Info实例的指针数组。 |
@@ -92,15 +100,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### Sensor_Type
+### Sensor_Type
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Sensor_Type
@@ -112,6 +122,7 @@ enum Sensor_Type
  
 **起始版本：** 11
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | SENSOR_TYPE_ACCELEROMETER = 1 | 加速度传感器。 起始版本： 11 |
@@ -133,9 +144,10 @@ enum Sensor_Type
  
   
 
-#### Sensor_Result
+### Sensor_Result
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Sensor_Result
@@ -147,6 +159,7 @@ enum Sensor_Result
  
 **起始版本：** 11
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | SENSOR_SUCCESS = 0 | 操作成功。 起始版本： 11 |
@@ -157,9 +170,10 @@ enum Sensor_Result
  
   
 
-#### Sensor_Accuracy
+### Sensor_Accuracy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Sensor_Accuracy
@@ -171,6 +185,7 @@ enum Sensor_Accuracy
  
 **起始版本：** 11
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | SENSOR_ACCURACY_UNRELIABLE = 0 | 传感器数据不可靠。有可能传感器不与设备接触而进行测量。 起始版本： 11 |
@@ -181,15 +196,17 @@ enum Sensor_Accuracy
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Sensor_CreateInfos()
+### OH_Sensor_CreateInfos()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Sensor_Info **OH_Sensor_CreateInfos(uint32_t count)
@@ -205,6 +222,7 @@ Sensor_Info **OH_Sensor_CreateInfos(uint32_t count)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t count | 要创建的实例的数量，请参考 Sensor_Info。 |
@@ -212,6 +230,7 @@ Sensor_Info **OH_Sensor_CreateInfos(uint32_t count)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Sensor_Info ** | 如果操作成功，返回指向Sensor_Info实例数组的双指针，数组中包含count个Sensor_Info实例，用于存储传感器信息；否则返回NULL。 |
@@ -219,9 +238,10 @@ Sensor_Info **OH_Sensor_CreateInfos(uint32_t count)
  
   
 
-#### OH_Sensor_DestroyInfos()
+### OH_Sensor_DestroyInfos()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Sensor_DestroyInfos(Sensor_Info **sensors, uint32_t count)
@@ -235,6 +255,7 @@ int32_t OH_Sensor_DestroyInfos(Sensor_Info **sensors, uint32_t count)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Sensor_Info **sensors | 指向Sensor_Info实例数组的双指针。 |
@@ -243,6 +264,7 @@ int32_t OH_Sensor_DestroyInfos(Sensor_Info **sensors, uint32_t count)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回操作结果，如果成功返回SENSOR_SUCCESS，表示所有实例已成功销毁；否则返回Sensor_Result中定义的错误代码。 |
@@ -250,9 +272,10 @@ int32_t OH_Sensor_DestroyInfos(Sensor_Info **sensors, uint32_t count)
  
   
 
-#### OH_SensorInfo_GetName()
+### OH_SensorInfo_GetName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_SensorInfo_GetName(Sensor_Info* sensor, char *sensorName, uint32_t *length)
@@ -266,6 +289,7 @@ int32_t OH_SensorInfo_GetName(Sensor_Info* sensor, char *sensorName, uint32_t *l
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Sensor_Info* sensor | 指向传感器信息的指针。 |
@@ -275,6 +299,7 @@ int32_t OH_SensorInfo_GetName(Sensor_Info* sensor, char *sensorName, uint32_t *l
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回操作结果，如果成功返回SENSOR_SUCCESS，表示传感器名称已成功获取；否则返回Sensor_Result中定义的错误代码。 |
@@ -282,9 +307,10 @@ int32_t OH_SensorInfo_GetName(Sensor_Info* sensor, char *sensorName, uint32_t *l
  
   
 
-#### OH_SensorInfo_GetVendorName()
+### OH_SensorInfo_GetVendorName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_SensorInfo_GetVendorName(Sensor_Info* sensor, char *vendorName, uint32_t *length)
@@ -298,6 +324,7 @@ int32_t OH_SensorInfo_GetVendorName(Sensor_Info* sensor, char *vendorName, uint3
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Sensor_Info* sensor | 指向传感器信息的指针。 |
@@ -307,6 +334,7 @@ int32_t OH_SensorInfo_GetVendorName(Sensor_Info* sensor, char *vendorName, uint3
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回操作结果，如果成功返回SENSOR_SUCCESS，表示传感器厂商名称已成功获取；否则返回Sensor_Result中定义的错误代码。 |
@@ -314,9 +342,10 @@ int32_t OH_SensorInfo_GetVendorName(Sensor_Info* sensor, char *vendorName, uint3
  
   
 
-#### OH_SensorInfo_GetType()
+### OH_SensorInfo_GetType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_SensorInfo_GetType(Sensor_Info* sensor, Sensor_Type *sensorType)
@@ -330,6 +359,7 @@ int32_t OH_SensorInfo_GetType(Sensor_Info* sensor, Sensor_Type *sensorType)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Sensor_Info* sensor | 指向传感器信息的指针。 |
@@ -338,6 +368,7 @@ int32_t OH_SensorInfo_GetType(Sensor_Info* sensor, Sensor_Type *sensorType)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回操作结果，如果成功返回SENSOR_SUCCESS，表示传感器类型已成功获取；否则返回Sensor_Result中定义的错误代码。 |
@@ -345,9 +376,10 @@ int32_t OH_SensorInfo_GetType(Sensor_Info* sensor, Sensor_Type *sensorType)
  
   
 
-#### OH_SensorInfo_GetResolution()
+### OH_SensorInfo_GetResolution()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_SensorInfo_GetResolution(Sensor_Info* sensor, float *resolution)
@@ -361,6 +393,7 @@ int32_t OH_SensorInfo_GetResolution(Sensor_Info* sensor, float *resolution)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Sensor_Info* sensor | 指向传感器信息的指针。 |
@@ -369,6 +402,7 @@ int32_t OH_SensorInfo_GetResolution(Sensor_Info* sensor, float *resolution)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回操作结果，如果成功返回SENSOR_SUCCESS，表示传感器分辨率已成功获取；否则返回Sensor_Result中定义的错误代码。 |
@@ -376,9 +410,10 @@ int32_t OH_SensorInfo_GetResolution(Sensor_Info* sensor, float *resolution)
  
   
 
-#### OH_SensorInfo_GetMinSamplingInterval()
+### OH_SensorInfo_GetMinSamplingInterval()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_SensorInfo_GetMinSamplingInterval(Sensor_Info* sensor, int64_t *minSamplingInterval)
@@ -392,6 +427,7 @@ int32_t OH_SensorInfo_GetMinSamplingInterval(Sensor_Info* sensor, int64_t *minSa
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Sensor_Info* sensor | 指向传感器信息的指针。 |
@@ -400,6 +436,7 @@ int32_t OH_SensorInfo_GetMinSamplingInterval(Sensor_Info* sensor, int64_t *minSa
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回操作结果，如果成功返回SENSOR_SUCCESS，表示最小数据上报间隔已成功获取；否则返回Sensor_Result中定义的错误代码。 |
@@ -407,9 +444,10 @@ int32_t OH_SensorInfo_GetMinSamplingInterval(Sensor_Info* sensor, int64_t *minSa
  
   
 
-#### OH_SensorInfo_GetMaxSamplingInterval()
+### OH_SensorInfo_GetMaxSamplingInterval()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_SensorInfo_GetMaxSamplingInterval(Sensor_Info* sensor, int64_t *maxSamplingInterval)
@@ -423,6 +461,7 @@ int32_t OH_SensorInfo_GetMaxSamplingInterval(Sensor_Info* sensor, int64_t *maxSa
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Sensor_Info* sensor | 指向传感器信息的指针。 |
@@ -431,6 +470,7 @@ int32_t OH_SensorInfo_GetMaxSamplingInterval(Sensor_Info* sensor, int64_t *maxSa
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回操作结果，如果成功返回SENSOR_SUCCESS，表示最大数据上报间隔已成功获取；否则返回Sensor_Result中定义的错误代码。 |
@@ -438,9 +478,10 @@ int32_t OH_SensorInfo_GetMaxSamplingInterval(Sensor_Info* sensor, int64_t *maxSa
  
   
 
-#### OH_SensorEvent_GetType()
+### OH_SensorEvent_GetType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_SensorEvent_GetType(Sensor_Event* sensorEvent, Sensor_Type *sensorType)
@@ -454,6 +495,7 @@ int32_t OH_SensorEvent_GetType(Sensor_Event* sensorEvent, Sensor_Type *sensorTyp
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Sensor_Event* sensorEvent | 指向传感器数据信息的指针。 |
@@ -462,6 +504,7 @@ int32_t OH_SensorEvent_GetType(Sensor_Event* sensorEvent, Sensor_Type *sensorTyp
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回操作结果，如果成功返回SENSOR_SUCCESS，表示传感器事件类型已成功获取；否则返回Sensor_Result中定义的错误代码。 |
@@ -469,9 +512,10 @@ int32_t OH_SensorEvent_GetType(Sensor_Event* sensorEvent, Sensor_Type *sensorTyp
  
   
 
-#### OH_SensorEvent_GetTimestamp()
+### OH_SensorEvent_GetTimestamp()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_SensorEvent_GetTimestamp(Sensor_Event* sensorEvent, int64_t *timestamp)
@@ -485,6 +529,7 @@ int32_t OH_SensorEvent_GetTimestamp(Sensor_Event* sensorEvent, int64_t *timestam
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Sensor_Event* sensorEvent | 指向传感器数据信息的指针。 |
@@ -493,6 +538,7 @@ int32_t OH_SensorEvent_GetTimestamp(Sensor_Event* sensorEvent, int64_t *timestam
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回操作结果，如果成功返回SENSOR_SUCCESS，表示时间戳已成功获取；否则返回Sensor_Result中定义的错误代码。 |
@@ -500,9 +546,10 @@ int32_t OH_SensorEvent_GetTimestamp(Sensor_Event* sensorEvent, int64_t *timestam
  
   
 
-#### OH_SensorEvent_GetAccuracy()
+### OH_SensorEvent_GetAccuracy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_SensorEvent_GetAccuracy(Sensor_Event* sensorEvent, Sensor_Accuracy *accuracy)
@@ -516,6 +563,7 @@ int32_t OH_SensorEvent_GetAccuracy(Sensor_Event* sensorEvent, Sensor_Accuracy *a
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Sensor_Event* sensorEvent | 指向传感器数据信息的指针。 |
@@ -524,6 +572,7 @@ int32_t OH_SensorEvent_GetAccuracy(Sensor_Event* sensorEvent, Sensor_Accuracy *a
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回操作结果，如果成功返回SENSOR_SUCCESS，表示传感器数据精度已成功获取；否则返回Sensor_Result中定义的错误代码。 |
@@ -531,9 +580,10 @@ int32_t OH_SensorEvent_GetAccuracy(Sensor_Event* sensorEvent, Sensor_Accuracy *a
  
   
 
-#### OH_SensorEvent_GetData()
+### OH_SensorEvent_GetData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_SensorEvent_GetData(Sensor_Event* sensorEvent, float **data, uint32_t *length)
@@ -543,6 +593,7 @@ int32_t OH_SensorEvent_GetData(Sensor_Event* sensorEvent, float **data, uint32_t
  
 获取传感器数据。数据的长度和内容依赖于监听的传感器类型，传感器上报的数据格式如下表所示：
   
+
 | 传感器类型 | 数据元素及描述 |
 | --- | --- |
 | SENSOR_TYPE_ACCELEROMETER | data[0]、data[1]、data[2]分别表示设备x、y、z轴的加速度分量，单位：m/s² |
@@ -566,6 +617,7 @@ int32_t OH_SensorEvent_GetData(Sensor_Event* sensorEvent, float **data, uint32_t
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Sensor_Event* sensorEvent | 指向传感器数据信息的指针。 |
@@ -575,6 +627,7 @@ int32_t OH_SensorEvent_GetData(Sensor_Event* sensorEvent, float **data, uint32_t
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回操作结果，如果成功返回SENSOR_SUCCESS，表示传感器数据已成功获取；否则返回Sensor_Result中定义的错误代码。 |
@@ -582,9 +635,10 @@ int32_t OH_SensorEvent_GetData(Sensor_Event* sensorEvent, float **data, uint32_t
  
   
 
-#### OH_Sensor_CreateSubscriptionId()
+### OH_Sensor_CreateSubscriptionId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Sensor_SubscriptionId *OH_Sensor_CreateSubscriptionId(void)
@@ -600,6 +654,7 @@ Sensor_SubscriptionId *OH_Sensor_CreateSubscriptionId(void)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Sensor_SubscriptionId * | 如果操作成功，返回指向Sensor_SubscriptionId实例的指针，该实例可用于标识传感器订阅；否则返回NULL。 |
@@ -607,9 +662,10 @@ Sensor_SubscriptionId *OH_Sensor_CreateSubscriptionId(void)
  
   
 
-#### OH_Sensor_DestroySubscriptionId()
+### OH_Sensor_DestroySubscriptionId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Sensor_DestroySubscriptionId(Sensor_SubscriptionId *id)
@@ -623,6 +679,7 @@ int32_t OH_Sensor_DestroySubscriptionId(Sensor_SubscriptionId *id)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Sensor_SubscriptionId *id | 指向Sensor_SubscriptionId实例的指针。 |
@@ -630,6 +687,7 @@ int32_t OH_Sensor_DestroySubscriptionId(Sensor_SubscriptionId *id)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回操作结果，如果成功返回SENSOR_SUCCESS，表示订阅ID实例已成功销毁；否则返回Sensor_Result中定义的错误代码。 |
@@ -637,9 +695,10 @@ int32_t OH_Sensor_DestroySubscriptionId(Sensor_SubscriptionId *id)
  
   
 
-#### OH_SensorSubscriptionId_GetType()
+### OH_SensorSubscriptionId_GetType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_SensorSubscriptionId_GetType(Sensor_SubscriptionId* id, Sensor_Type *sensorType)
@@ -653,6 +712,7 @@ int32_t OH_SensorSubscriptionId_GetType(Sensor_SubscriptionId* id, Sensor_Type *
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Sensor_SubscriptionId* id | 指向传感器订阅ID的指针。 |
@@ -661,6 +721,7 @@ int32_t OH_SensorSubscriptionId_GetType(Sensor_SubscriptionId* id, Sensor_Type *
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回操作结果，如果成功返回SENSOR_SUCCESS，表示传感器订阅类型已成功获取；否则返回Sensor_Result中定义的错误代码。 |
@@ -668,9 +729,10 @@ int32_t OH_SensorSubscriptionId_GetType(Sensor_SubscriptionId* id, Sensor_Type *
  
   
 
-#### OH_SensorSubscriptionId_SetType()
+### OH_SensorSubscriptionId_SetType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_SensorSubscriptionId_SetType(Sensor_SubscriptionId* id, const Sensor_Type sensorType)
@@ -684,6 +746,7 @@ int32_t OH_SensorSubscriptionId_SetType(Sensor_SubscriptionId* id, const Sensor_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Sensor_SubscriptionId* id | 指向传感器订阅ID的指针。 |
@@ -692,6 +755,7 @@ int32_t OH_SensorSubscriptionId_SetType(Sensor_SubscriptionId* id, const Sensor_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回操作结果，如果成功返回SENSOR_SUCCESS，表示传感器订阅类型已成功设置；否则返回Sensor_Result中定义的错误代码。 |
@@ -699,9 +763,10 @@ int32_t OH_SensorSubscriptionId_SetType(Sensor_SubscriptionId* id, const Sensor_
  
   
 
-#### OH_Sensor_CreateSubscriptionAttribute()
+### OH_Sensor_CreateSubscriptionAttribute()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Sensor_SubscriptionAttribute *OH_Sensor_CreateSubscriptionAttribute(void)
@@ -717,6 +782,7 @@ Sensor_SubscriptionAttribute *OH_Sensor_CreateSubscriptionAttribute(void)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Sensor_SubscriptionAttribute * | 如果操作成功，返回指向Sensor_SubscriptionAttribute实例的指针，该实例可用于配置传感器订阅属性；否则返回NULL。 |
@@ -724,9 +790,10 @@ Sensor_SubscriptionAttribute *OH_Sensor_CreateSubscriptionAttribute(void)
  
   
 
-#### OH_Sensor_DestroySubscriptionAttribute()
+### OH_Sensor_DestroySubscriptionAttribute()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Sensor_DestroySubscriptionAttribute(Sensor_SubscriptionAttribute *attribute)
@@ -740,6 +807,7 @@ int32_t OH_Sensor_DestroySubscriptionAttribute(Sensor_SubscriptionAttribute *att
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Sensor_SubscriptionAttribute *attribute | 指向Sensor_SubscriptionAttribute实例的指针。 |
@@ -747,6 +815,7 @@ int32_t OH_Sensor_DestroySubscriptionAttribute(Sensor_SubscriptionAttribute *att
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回操作结果，如果成功返回SENSOR_SUCCESS，表示订阅属性实例已成功销毁；否则返回Sensor_Result中定义的错误代码。 |
@@ -754,9 +823,10 @@ int32_t OH_Sensor_DestroySubscriptionAttribute(Sensor_SubscriptionAttribute *att
  
   
 
-#### OH_SensorSubscriptionAttribute_SetSamplingInterval()
+### OH_SensorSubscriptionAttribute_SetSamplingInterval()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_SensorSubscriptionAttribute_SetSamplingInterval(Sensor_SubscriptionAttribute* attribute, const int64_t samplingInterval)
@@ -770,6 +840,7 @@ int32_t OH_SensorSubscriptionAttribute_SetSamplingInterval(Sensor_SubscriptionAt
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Sensor_SubscriptionAttribute* attribute | 指向传感器订阅属性的指针。 |
@@ -778,6 +849,7 @@ int32_t OH_SensorSubscriptionAttribute_SetSamplingInterval(Sensor_SubscriptionAt
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回操作结果，如果成功返回SENSOR_SUCCESS，表示传感器数据报告间隔已成功设置；否则返回Sensor_Result中定义的错误代码。 |
@@ -785,9 +857,10 @@ int32_t OH_SensorSubscriptionAttribute_SetSamplingInterval(Sensor_SubscriptionAt
  
   
 
-#### OH_SensorSubscriptionAttribute_GetSamplingInterval()
+### OH_SensorSubscriptionAttribute_GetSamplingInterval()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_SensorSubscriptionAttribute_GetSamplingInterval(Sensor_SubscriptionAttribute* attribute, int64_t *samplingInterval)
@@ -801,6 +874,7 @@ int32_t OH_SensorSubscriptionAttribute_GetSamplingInterval(Sensor_SubscriptionAt
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Sensor_SubscriptionAttribute* attribute | 指向传感器订阅属性的指针。 |
@@ -809,6 +883,7 @@ int32_t OH_SensorSubscriptionAttribute_GetSamplingInterval(Sensor_SubscriptionAt
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回操作结果，如果成功返回SENSOR_SUCCESS，表示传感器数据报告间隔已成功获取；否则返回Sensor_Result中定义的错误代码。 |
@@ -816,9 +891,10 @@ int32_t OH_SensorSubscriptionAttribute_GetSamplingInterval(Sensor_SubscriptionAt
  
   
 
-#### Sensor_EventCallback()
+### Sensor_EventCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*Sensor_EventCallback)(Sensor_Event *event)
@@ -832,6 +908,7 @@ typedef void (*Sensor_EventCallback)(Sensor_Event *event)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Sensor_Event* event | 指向传感器数据信息的指针。 |
@@ -839,9 +916,10 @@ typedef void (*Sensor_EventCallback)(Sensor_Event *event)
  
   
 
-#### OH_Sensor_CreateSubscriber()
+### OH_Sensor_CreateSubscriber()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Sensor_Subscriber *OH_Sensor_CreateSubscriber(void)
@@ -857,6 +935,7 @@ Sensor_Subscriber *OH_Sensor_CreateSubscriber(void)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Sensor_Subscriber * | 如果操作成功，返回指向Sensor_Subscriber实例的指针，该实例可用于订阅传感器数据；否则返回NULL。 |
@@ -864,9 +943,10 @@ Sensor_Subscriber *OH_Sensor_CreateSubscriber(void)
  
   
 
-#### OH_Sensor_DestroySubscriber()
+### OH_Sensor_DestroySubscriber()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Sensor_DestroySubscriber(Sensor_Subscriber *subscriber)
@@ -880,6 +960,7 @@ int32_t OH_Sensor_DestroySubscriber(Sensor_Subscriber *subscriber)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Sensor_Subscriber *subscriber | 指向Sensor_Subscriber实例的指针。 |
@@ -887,6 +968,7 @@ int32_t OH_Sensor_DestroySubscriber(Sensor_Subscriber *subscriber)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回操作结果，如果成功返回SENSOR_SUCCESS，表示订阅者实例已成功销毁；否则返回Sensor_Result中定义的错误代码。 |
@@ -894,9 +976,10 @@ int32_t OH_Sensor_DestroySubscriber(Sensor_Subscriber *subscriber)
  
   
 
-#### OH_SensorSubscriber_SetCallback()
+### OH_SensorSubscriber_SetCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_SensorSubscriber_SetCallback(Sensor_Subscriber* subscriber, const Sensor_EventCallback callback)
@@ -910,6 +993,7 @@ int32_t OH_SensorSubscriber_SetCallback(Sensor_Subscriber* subscriber, const Sen
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Sensor_Subscriber* subscriber | 指向传感器订阅者信息的指针。 |
@@ -918,6 +1002,7 @@ int32_t OH_SensorSubscriber_SetCallback(Sensor_Subscriber* subscriber, const Sen
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回操作结果，如果成功返回SENSOR_SUCCESS，表示回调函数已成功设置；否则返回Sensor_Result中定义的错误代码。 |
@@ -925,9 +1010,10 @@ int32_t OH_SensorSubscriber_SetCallback(Sensor_Subscriber* subscriber, const Sen
  
   
 
-#### OH_SensorSubscriber_GetCallback()
+### OH_SensorSubscriber_GetCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_SensorSubscriber_GetCallback(Sensor_Subscriber* subscriber, Sensor_EventCallback *callback)
@@ -941,6 +1027,7 @@ int32_t OH_SensorSubscriber_GetCallback(Sensor_Subscriber* subscriber, Sensor_Ev
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Sensor_Subscriber* subscriber | 指向传感器订阅者信息的指针。 |
@@ -949,6 +1036,7 @@ int32_t OH_SensorSubscriber_GetCallback(Sensor_Subscriber* subscriber, Sensor_Ev
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回操作结果，如果成功返回SENSOR_SUCCESS，表示回调函数已成功获取；否则返回Sensor_Result中定义的错误代码。 |

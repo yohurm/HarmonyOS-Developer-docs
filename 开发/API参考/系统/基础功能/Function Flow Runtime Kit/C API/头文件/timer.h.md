@@ -1,13 +1,14 @@
 # timer.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-timer-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明定时器的C接口。提供基于QoS等级的定时器能力，支持在指定超时时间后执行回调函数，可用于延时任务调度等场景。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | FFRT_C_API ffrt_timer_t ffrt_timer_start(ffrt_qos_t qos, uint64_t timeout, void* data, ffrt_timer_cb cb, bool repeat) | 在FFRT工作线程上启动定时器。避免在cb中调用exit或ffrt_timer_stop，以防止未定义行为或死锁。 |
@@ -41,15 +45,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### ffrt_timer_start()
+### ffrt_timer_start()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API ffrt_timer_t ffrt_timer_start(ffrt_qos_t qos, uint64_t timeout, void* data, ffrt_timer_cb cb, bool repeat)
@@ -63,6 +69,7 @@ FFRT_C_API ffrt_timer_t ffrt_timer_start(ffrt_qos_t qos, uint64_t timeout, void*
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_qos_t qos | 运行定时器的工作线程的QoS等级。 |
@@ -74,6 +81,7 @@ FFRT_C_API ffrt_timer_t ffrt_timer_start(ffrt_qos_t qos, uint64_t timeout, void*
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API ffrt_timer_t | 定时器句柄；若回调函数为空指针或QoS映射未注册则返回-1。 |
@@ -85,9 +93,10 @@ FFRT_C_API ffrt_timer_t ffrt_timer_start(ffrt_qos_t qos, uint64_t timeout, void*
  
   
 
-#### ffrt_timer_stop()
+### ffrt_timer_stop()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API int ffrt_timer_stop(ffrt_qos_t qos, ffrt_timer_t handle)
@@ -101,6 +110,7 @@ FFRT_C_API int ffrt_timer_stop(ffrt_qos_t qos, ffrt_timer_t handle)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_qos_t qos | 运行定时器的工作线程的QoS等级。必须与ffrt_timer_start中使用的QoS等级一致。 |
@@ -109,6 +119,7 @@ FFRT_C_API int ffrt_timer_stop(ffrt_qos_t qos, ffrt_timer_t handle)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API int | 操作成功时返回0； 否则返回-1。 |

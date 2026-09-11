@@ -1,9 +1,9 @@
 # @ohos.app.appstartup.startupManager (启动框架管理能力)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-appstartup-startupmanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供[应用启动框架](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-startup)管理启动任务的能力，只能在主线程调用。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { startupManager }  from '@kit.AbilityKit';
@@ -22,9 +23,10 @@ import { startupManager }  from '@kit.AbilityKit';
 
 
 
-#### startupManager.run
+## startupManager.run
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 run(startupTasks: Array&lt;string&gt;, config?: StartupConfig): Promise&lt;void&gt;
 
@@ -38,13 +40,15 @@ run(startupTasks: Array&lt;string&gt;, config?: StartupConfig): Promise&lt;void&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| startupTasks | Array&lt;string&gt; | 是 | 表示准备执行的启动任务StartupTask的名称或预加载so名称的数组。 |
+| startupTasks | Array&lt;string&gt; | 是 | 表示准备执行的启动任务StartupTask的名称或预加载so名称的数组。该接口不支持feature类型HAP中的启动任务。名称需与配置文件startup_config.json中配置的name取值保持一致，详见定义启动任务配置和定义预加载so任务配置。 |
 | config | StartupConfig | 否 | 表示启动任务配置信息，包含启动框架超时时间与启动任务监听器配置。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -54,6 +58,7 @@ run(startupTasks: Array&lt;string&gt;, config?: StartupConfig): Promise&lt;void&
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -79,14 +84,14 @@ export default class EntryAbility extends UIAbility {
     try {
       // 手动调用run方法
       startupManager.run(startParams).then(() => {
-        console.info(`StartupTest startupManager run then, startParams = ${startParams}.`);
+        hilog.info(0x0000, 'testTag', 'StartupTest startupManager run then, startParams = %{public}s.', startParams.join(','));
       }).catch((error: BusinessError) => {
-        console.error(`StartupTest promise catch failed, error code: ${error.code}, error msg: ${error.message}.`);
+        hilog.error(0x0000, 'testTag', 'StartupTest promise catch failed, error code: %{public}d, error msg: %{public}s.', error.code, error.message);
       });
     } catch (error) {
       let errMsg = (error as BusinessError).message;
       let errCode = (error as BusinessError).code;
-      console.error(`Startup.run failed, err code: ${errCode}, err msg: ${errMsg}.`);
+      hilog.error(0x0000, 'testTag', 'startupManager.run failed, err code: %{public}d, err msg: %{public}s.', errCode, errMsg);
     }
   }
 
@@ -96,9 +101,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### startupManager.run20+
+## startupManager.run20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 run(startupTasks: Array&lt;string&gt;, context: common.AbilityStageContext, config: StartupConfig): Promise&lt;void&gt;
 
@@ -108,14 +114,16 @@ run(startupTasks: Array&lt;string&gt;, context: common.AbilityStageContext, conf
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| startupTasks | Array&lt;string&gt; | 是 | 表示准备执行的启动任务StartupTask的名称或预加载so名称的数组。 |
+| startupTasks | Array&lt;string&gt; | 是 | 表示准备执行的启动任务StartupTask的名称或预加载so名称的数组。名称需与配置文件startup_config.json中配置的name取值保持一致，详见定义启动任务配置和定义预加载so任务配置。 |
 | context | common.AbilityStageContext | 是 | 表示执行启动任务StartupTask的AbilityStage上下文，作为入参传给启动任务的init。 |
 | config | StartupConfig | 是 | 表示启动任务配置信息，包含启动框架超时时间与启动任务监听器配置。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -125,6 +133,7 @@ run(startupTasks: Array&lt;string&gt;, context: common.AbilityStageContext, conf
 **错误码：**
 
 以下错误码详细介绍请参考[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -145,7 +154,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 export default class MyAbilityStage extends AbilityStage {
   onCreate(): void {
     hilog.info(0x0000, 'testTag', 'AbilityStage onCreate');
-    let onCompletedCallback = (error: BusinessError<void>) => {
+    let onCompletedCallback = (error: BusinessError) => {
       if (error) {
         hilog.error(0x0000, 'testTag', `onCompletedCallback error code: ${error.code}, error msg: ${error.message}`);
       } else {
@@ -164,9 +173,9 @@ export default class MyAbilityStage extends AbilityStage {
       // 手动调用run方法
       startupManager.run(['StartupTask_001', 'libentry_001'], this.context, config).then(() => {
         hilog.info(0x0000, 'testTag', '%{public}s', 'startupManager.run success');
-      }).catch((error: BusinessError<void>) => {
+      }).catch((error: BusinessError) => {
         hilog.error(0x0000, 'testTag', `startupManager.run promise catch error code: ${error.code}, error msg: ${error.message}`);
-      })
+      });
     } catch (error) {
       hilog.error(0x0000, 'testTag', `startupManager.run catch error code: ${error.code}, error msg: ${error.message}`);
     }
@@ -177,9 +186,10 @@ export default class MyAbilityStage extends AbilityStage {
 
 
 
-#### startupManager.removeAllStartupTaskResults
+## startupManager.removeAllStartupTaskResults
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeAllStartupTaskResults(): void
 
@@ -207,7 +217,7 @@ export default class EntryAbility extends UIAbility {
         hilog.error(0x0000, 'testTag', `StartupTask_001 promise catch failed, error code: ${error.code}, error msg: ${error.message}`);
       });
     } catch (error) {
-      hilog.error(0x0000, 'testTag', `StartupTask_001.run failed, error code: ${error.code}, error msg: ${error.message}`);
+      hilog.error(0x0000, 'testTag', `startupManager.run failed, error code: ${error.code}, error msg: ${error.message}`);
     }
   }
 
@@ -228,9 +238,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### startupManager.getStartupTaskResult
+## startupManager.getStartupTaskResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStartupTaskResult(startupTask: string): Object
 
@@ -240,12 +251,14 @@ getStartupTaskResult(startupTask: string): Object
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| startupTask | string | 是 | 启动任务StartupTask的名称或预加载so名称。 |
+| startupTask | string | 是 | 启动任务StartupTask的名称或预加载so名称。名称需与配置文件startup_config.json中配置的name取值保持一致，详见定义启动任务配置和定义预加载so任务配置。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -255,6 +268,7 @@ getStartupTaskResult(startupTask: string): Object
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -279,14 +293,14 @@ export default class EntryAbility extends UIAbility {
         hilog.error(0x0000, 'testTag', `StartupTask_001 promise catch failed, error code: ${error.code}, error msg: ${error.message}`);
       });
     } catch (error) {
-      hilog.error(0x0000, 'testTag', `StartupTask_001.run failed, error code: ${error.code}, error msg: ${error.message}`);
+      hilog.error(0x0000, 'testTag', `startupManager.run failed, error code: ${error.code}, error msg: ${error.message}`);
     }
   }
 
   onWindowStageCreate(windowStage: window.WindowStage) {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
     let result = startupManager.getStartupTaskResult('StartupTask_001'); // 手动获取启动任务结果
-    hilog.info(0x0000, 'testTag', 'getStartupTaskResult result = %{public}s', result);
+    hilog.info(0x0000, 'testTag', 'getStartupTaskResult result = %{public}s', JSON.stringify(result));
     windowStage.loadContent('pages/Index', (err, data) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', `Failed to load the content. Cause error code: ${err.code}, error msg: ${err.message}`);
@@ -300,9 +314,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### startupManager.isStartupTaskInitialized
+## startupManager.isStartupTaskInitialized
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isStartupTaskInitialized(startupTask: string): boolean
 
@@ -312,12 +327,14 @@ isStartupTaskInitialized(startupTask: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | startupTask | string | 是 | 启动任务StartupTask的名称或预加载so名称。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -327,6 +344,7 @@ isStartupTaskInitialized(startupTask: string): boolean
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -346,12 +364,12 @@ export default class EntryAbility extends UIAbility {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
     try {
       startupManager.run(['StartupTask_001', 'libentry_001']).then(() => {
-      hilog.info(0x0000, 'testTag', 'StartupTask_001 init successful');
+        hilog.info(0x0000, 'testTag', 'StartupTask_001 init successful');
       }).catch((error: BusinessError) => {
         hilog.error(0x0000, 'testTag', `StartupTask_001 promise catch failed, error code: ${error.code}, error msg: ${error.message}`);
       });
     } catch (error) {
-      hilog.error(0x0000, 'testTag', `StartupTask_001.run failed, error code: ${error.code}, error msg: ${error.message}`);
+      hilog.error(0x0000, 'testTag', `startupManager.run failed, error code: ${error.code}, error msg: ${error.message}`);
     }
   }
 
@@ -360,14 +378,14 @@ export default class EntryAbility extends UIAbility {
     let result1 = startupManager.isStartupTaskInitialized('StartupTask_001');
     let result2 = startupManager.isStartupTaskInitialized('libentry_001');
     if (result1) {
-      console.info('StartupTask_001 init successful');
+      hilog.info(0x0000, 'testTag', 'StartupTask_001 init successful');
     } else {
-      console.info('StartupTask_001 uninitialized');
+      hilog.info(0x0000, 'testTag', 'StartupTask_001 uninitialized');
     }
     if (result2) {
-      console.info('libentry_001 init successful');
+      hilog.info(0x0000, 'testTag', 'libentry_001 init successful');
     } else {
-      console.info('libentry_001 uninitialized');
+      hilog.info(0x0000, 'testTag', 'libentry_001 uninitialized');
     }
 
     windowStage.loadContent('pages/Index', (err, data) => {
@@ -383,15 +401,16 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### startupManager.removeStartupTaskResult
+## startupManager.removeStartupTaskResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeStartupTaskResult(startupTask: string): void
 
-删除指定启动任务或so预加载任务的初始化结果。
+删除指定启动任务或so预加载任务的结果。
 
- - 输入为启动任务名时，删除指定启动任务的初始化结果。
+ - 输入为启动任务名时，删除指定启动任务的结果。
  - 输入为so文件时，将该so文件置为未加载，缓存中已加载的so文件不会被移除。
 
 
@@ -399,14 +418,16 @@ removeStartupTaskResult(startupTask: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| startupTask | string | 是 | 启动任务StartupTask的名称或预加载so名称。 |
+| startupTask | string | 是 | 启动任务StartupTask的名称或预加载so名称。名称需与配置文件startup_config.json中配置的name取值保持一致，详见定义启动任务配置和定义预加载so任务配置。 |
 
 
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -424,14 +445,14 @@ import { BusinessError } from '@kit.BasicServicesKit';
 export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
-    try{
+    try {
       startupManager.run(['StartupTask_001', 'libentry_001']).then(() => {
         hilog.info(0x0000, 'testTag', 'StartupTask_001 init successful');
       }).catch((error: BusinessError) => {
         hilog.error(0x0000, 'testTag', `StartupTask_001 promise catch failed, error code: ${error.code}, error msg: ${error.message}`);
       });
     } catch (error) {
-      hilog.error(0x0000, 'testTag', `StartupTask_001.run failed, error code: ${error.code}, error msg: ${error.message}`);
+      hilog.error(0x0000, 'testTag', `startupManager.run failed, error code: ${error.code}, error msg: ${error.message}`);
     }
   }
 

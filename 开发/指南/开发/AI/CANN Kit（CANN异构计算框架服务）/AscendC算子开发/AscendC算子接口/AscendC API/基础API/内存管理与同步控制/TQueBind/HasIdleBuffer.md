@@ -1,16 +1,16 @@
 # HasIdleBuffer
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-18 12:49:55
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-hasidlebuffer
 
-#### 功能说明
+## 功能说明
 
 查询队列中是否有空闲的内存块。
  
   
 
-#### 函数原型
+## 函数原型
 
 ```text
 __aicore__ inline bool HasIdleBuffer()
@@ -18,27 +18,29 @@ __aicore__ inline bool HasIdleBuffer()
  
   
 
-#### 参数说明
+## 参数说明
 
 无
  
   
 
-#### 支持的型号
+## 支持的型号
 
 Kirin9020系列处理器
+ 
+Kirin9030系列处理器
  
 KirinX90系列处理器
  
   
 
-#### 注意事项
+## 注意事项
 
 无
  
   
 
-#### 返回值
+## 返回值
 
 - true：表示Queue中存在空闲内存。
 - false：表示Queue中不存在空闲内存。
@@ -46,7 +48,7 @@ KirinX90系列处理器
  
   
 
-#### 调用示例
+## 调用示例
 
 ```text
 // 当前Queue中已经分配了4块内存

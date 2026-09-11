@@ -1,6 +1,6 @@
 # 使用AVPlayer播放音频(ArkTS)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-avplayer-for-playback
 
@@ -19,7 +19,7 @@
 状态的详细说明请参考[AVPlayerState](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-t#avplayerstate9)。当播放处于prepared / playing / paused / completed状态时，播放引擎处于工作状态，这需要占用系统大量的运行内存。当客户端暂时不使用播放器时，调用reset()或release()回收内存资源，做好资源利用。
 
 
-#### 开发建议
+## 开发建议
 
 当前指导仅介绍如何实现媒体资源播放，在应用开发过程中，涉及后台播放、播放冲突等情况时，请根据实际需要参考以下说明。
 
@@ -32,7 +32,7 @@
 
 
 
-#### 开发步骤及注意事项
+## 开发步骤及注意事项
 
 详细的API说明请参考[AVPlayer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer)。
 1. 创建实例createAVPlayer()，AVPlayer初始化idle状态。
@@ -48,15 +48,25 @@ let avPlayer = await media.createAVPlayer();
 2. 设置业务需要的监听事件，搭配全流程场景使用。支持的监听事件包括：
 
 | 事件类型 | 说明 |
+
 | --- | --- |
+
 | stateChange | 必要事件，监听播放器的state属性改变。 需要播放器在idle状态下、未调用设置资源接口前完成设置监听，若在调用设置资源接口后再设置监听，可能导致无法收到资源设置过程中上报的stateChange事件。 |
+
 | error | 必要事件，监听播放器的错误信息。 需要播放器在idle状态下、未调用设置资源接口前完成设置监听，若在调用设置资源接口后再设置监听，可能导致无法收到资源设置过程中上报的error事件。 |
+
 | durationUpdate | 用于进度条，监听进度条长度，刷新资源时长。 |
+
 | timeUpdate | 用于进度条，监听进度条当前位置，刷新当前时间。 |
+
 | seekDone | 响应API调用，监听seek()请求完成情况。 当使用seek()跳转到指定播放位置后，如果seek操作成功，将上报该事件。 |
+
 | speedDone | 响应API调用，监听setSpeed()请求完成情况。 当使用setSpeed()设置播放倍速后，如果setSpeed操作成功，将上报该事件。 |
+
 | volumeChange | 响应API调用，监听setVolume()请求完成情况。 当使用setVolume()调节播放音量后，如果setVolume操作成功，将上报该事件。 |
+
 | bufferingUpdate | 用于网络播放，监听网络播放缓冲信息，用于上报缓冲百分比以及缓存播放进度。 |
+
 | audioInterrupt | 监听音频焦点切换信息，搭配属性audioInterruptMode使用。 如果当前设备存在多个音频正在播放，音频焦点被切换（即播放其他媒体如通话等）时将上报该事件，应用可以及时处理。 |
 
   
@@ -230,7 +240,7 @@ avPlayer.release((err: BusinessError) => {
 
 
 
-#### 运行完整示例
+## 运行完整示例
 
 参考以下示例，完整地播放一首音乐，实现起播后3s暂停，暂停3s重新播放的效果。
 1. 新建工程，下载[示例工程](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/Media/AVPlayer/AVPlayerArkTSAudio)，并将示例工程的以下资源复制到对应目录。       

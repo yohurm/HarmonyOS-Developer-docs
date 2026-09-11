@@ -1,13 +1,14 @@
 # native_avmemory.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avmemory-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明了媒体数据结构AVMemory的定义。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_AVMemory | OH_AVMemory | 为音视频内存接口定义native层对象。 |
@@ -40,10 +44,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_AVMemory *OH_AVMemory_Create(int32_t size) | 创建OH_AVMemory实例的指针。 |
@@ -54,15 +60,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AVMemory_Create()
+### OH_AVMemory_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVMemory *OH_AVMemory_Create(int32_t size)
@@ -82,6 +90,7 @@ OH_AVMemory *OH_AVMemory_Create(int32_t size)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | int32_t size | 创建内存的大小，单位字节。 |
@@ -89,6 +98,7 @@ OH_AVMemory *OH_AVMemory_Create(int32_t size)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVMemory * | 如果创建成功，返回OH_AVMemory实例的指针，如果失败，返回NULL。 使用结束后需要通过OH_AVMemory_Destroy释放内存。 可能的失败原因： 1. size <= 0。 2. 创建OH_AVMemory失败。 3. OH_AVMemory内存分配失败。 |
@@ -96,9 +106,10 @@ OH_AVMemory *OH_AVMemory_Create(int32_t size)
  
   
 
-#### OH_AVMemory_GetAddr()
+### OH_AVMemory_GetAddr()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 uint8_t *OH_AVMemory_GetAddr(struct OH_AVMemory *mem)
@@ -118,6 +129,7 @@ uint8_t *OH_AVMemory_GetAddr(struct OH_AVMemory *mem)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVMemory *mem | 指向OH_AVMemory实例的指针。 |
@@ -125,6 +137,7 @@ uint8_t *OH_AVMemory_GetAddr(struct OH_AVMemory *mem)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | uint8_t * | 如果内存有效，返回内存的虚拟地址，如果内存无效，返回NULL。 可能的失败原因： 1. 输入mem为空指针。 2. 输入mem参数结构校验失败。 3. 输入mem中内存为空指针。 |
@@ -132,9 +145,10 @@ uint8_t *OH_AVMemory_GetAddr(struct OH_AVMemory *mem)
  
   
 
-#### OH_AVMemory_GetSize()
+### OH_AVMemory_GetSize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_AVMemory_GetSize(struct OH_AVMemory *mem)
@@ -154,6 +168,7 @@ int32_t OH_AVMemory_GetSize(struct OH_AVMemory *mem)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVMemory *mem | 指向OH_AVMemory实例的指针。 |
@@ -161,6 +176,7 @@ int32_t OH_AVMemory_GetSize(struct OH_AVMemory *mem)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 如果内存有效，返回内存长度，如果内存无效，返回-1。 可能的失败原因： 1. 输入mem为空指针。 2. 输入mem参数结构校验失败。 3. 输入mem中内存为空指针。 |
@@ -168,9 +184,10 @@ int32_t OH_AVMemory_GetSize(struct OH_AVMemory *mem)
  
   
 
-#### OH_AVMemory_Destroy()
+### OH_AVMemory_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVMemory_Destroy(struct OH_AVMemory *mem)
@@ -190,6 +207,7 @@ OH_AVErrCode OH_AVMemory_Destroy(struct OH_AVMemory *mem)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVMemory *mem | 指向OH_AVMemory实例的指针。 |
@@ -197,6 +215,7 @@ OH_AVErrCode OH_AVMemory_Destroy(struct OH_AVMemory *mem)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：释放成功。 AV_ERR_INVALID_VAL： 1. 输入mem为空指针。 2. 输入mem参数结构校验失败。 3. 输入mem不是开发者创建的。 |

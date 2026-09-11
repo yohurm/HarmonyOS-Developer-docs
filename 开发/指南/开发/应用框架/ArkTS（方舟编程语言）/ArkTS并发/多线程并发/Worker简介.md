@@ -1,13 +1,13 @@
 # Worker简介
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/worker-introduction
 
 Worker的主要作用是为应用程序提供一个多线程的运行环境，实现应用程序执行过程与宿主线程分离。通过在后台线程运行脚本处理耗时操作，避免计算密集型或高延迟任务阻塞宿主线程。具体接口信息及使用方法详情请见[Worker](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-worker)。
 
 
-#### Worker运作机制
+## Worker运作机制
 
 **图1** Worker运作机制示意图
 
@@ -19,7 +19,7 @@ Worker的主要作用是为应用程序提供一个多线程的运行环境，�
 
 
 
-#### 创建Worker的注意事项
+## 创建Worker的注意事项
 
 Worker线程文件需要放在"{moduleName}/src/main/ets/"目录层级之下，否则不会被打包到应用中。有手动和自动两种创建Worker线程目录及文件的方式，推荐使用自动创建方式。手动创建Worker线程目录及文件时，需同步进行相关配置。
 
@@ -55,7 +55,7 @@ FA模型：
 
 
 
-#### 文件路径注意事项
+## 文件路径注意事项
 
 使用Worker模块的具体功能时，需先构造Worker实例对象。构造函数与API版本相关，且需传入Worker线程文件的路径（scriptURL）。
 
@@ -67,7 +67,7 @@ const worker1: worker.ThreadWorker = new worker.ThreadWorker('entry/ets/workers/
 
 
 
-#### Stage模型下的文件路径规则
+### Stage模型下的文件路径规则
 
 针对scriptURL的路径有以下三种写法：
 
@@ -114,6 +114,7 @@ const workerInstance4: worker.ThreadWorker = new worker.ThreadWorker('../../work
 
 > [!NOTE]
 > 当开发者加载entry、 feature 及hsp包的Worker线程文件时，不建议采用写法三，推荐使用写法一，此写法无需拼接路径，可实现Worker的快速创建。 Worker线程文件的路径后缀（.ets/.ts）可以省略。 跨HSP/HAR包的场景下，需在创建Worker的模块包对应的oh-package.json5文件中，配置所需HSP/HAR包的依赖项，详见 引用共享包 。 当feature模块需加载其他模块的Worker线程文件时，应先完成对feature模块的调用。 当开启useNormalizedOHMUrl（在工程目录中与entry同级别的应用级build-profile.json5文件中，将strictMode属性下的useNormalizedOHMUrl字段配置为true）或HAR包被打包成三方包使用时，HAR包中使用Worker仅支持通过相对路径的加载形式创建。
+
 
 
 | 加载方\被加载方 | entry | feature | 应用内hsp | 跨工程hsp | 源码har | 三方har |
@@ -200,7 +201,7 @@ struct Index {
 
 
 
-#### FA模型下的文件路径规则
+### FA模型下的文件路径规则
 
 构造函数中的scriptURL为：Worker线程文件与"{moduleName}/src/main/ets/MainAbility"的相对路径。
 
@@ -221,7 +222,7 @@ const workerFA3: worker.ThreadWorker = new worker.ThreadWorker('ThreadFile/worke
 
 
 
-#### 生命周期注意事项
+## 生命周期注意事项
 
  - Worker创建后需要手动管理生命周期。Worker的创建和销毁会消耗较多的系统资源，建议开发者合理管理并重复使用已创建的Worker。Worker空闲时仍会占用资源，当不需要Worker时，可以调用[terminate()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-worker#terminate9)方法或[close()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-worker#close9)方法主动销毁Worker。需要注意的是，调用完terminate()方法或close()方法后，Worker线程的退出是异步的。若开发者注册onexit()，则线程真正退出的时机是在onexit()回调完成之后。若Worker处于已销毁或正在销毁等非运行状态时，调用其功能接口，会抛出相应的错误。
  - Worker的数量由内存管理策略决定，设定的内存阈值为1.5GB和设备物理内存的60%中的较小值。在内存允许的情况下，系统最多可以同时运行64个Worker，并且与[napi_create_ark_runtime](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/napi#napi_create_ark_runtime)创建的runtime总数不超过80。尝试创建的Worker数量超出上限时，系统将抛出错误：“Worker initialization failure, the number of workers exceeds the maximum.”。实际运行的Worker数量会根据当前内存使用情况实时调整。当所有Worker和主线程的累积内存占用超过设定的阈值时，系统将触发内存溢出（OOM）错误，导致应用程序崩溃。
@@ -229,7 +230,7 @@ const workerFA3: worker.ThreadWorker = new worker.ThreadWorker('ThreadFile/worke
 
 
 
-#### 其他注意事项
+## 其他注意事项
 
  - 不同线程中上下文对象是不同的，因此Worker线程只能使用线程安全的库，例如UI相关的非线程安全库不能在Worker子线程中使用。
  - 单次序列化传输的数据量大小限制为16MB。
@@ -241,7 +242,7 @@ const workerFA3: worker.ThreadWorker = new worker.ThreadWorker('ThreadFile/worke
 
 
 
-#### Worker基本用法示例
+## Worker基本用法示例
 1. DevEco Studio支持一键生成Worker，在对应的{moduleName}目录下任意位置，单击鼠标右键 > New > Worker，即可自动生成Worker的模板文件及配置信息。本文以创建“worker”为例。
 
   支持手动创建Worker文件，具体方式和注意事项请参阅[创建Worker的注意事项](#创建worker的注意事项)。
@@ -342,13 +343,13 @@ workerPort.onerror = (err: ErrorEvent) => {
 
 
 
-#### 多级Worker生命周期管理
+## 多级Worker生命周期管理
 
 支持创建多级Worker，即父Worker可以创建子Worker，形成层级线程关系。由于Worker线程的生命周期由开发者管理，因此需要正确管理多级Worker的生命周期。当销毁父Worker时未能终止其子Worker的运行，可能会导致不可预期的结果。所以需要确保子Worker的生命周期在父Worker生命周期范围内，销毁父Worker前，先销毁所有子Worker，以防止不可预期的结果。
 
 
 
-#### 推荐使用示例
+### 推荐使用示例
 
 ```ArkTS
 // 在宿主线程中创建Worker线程（父Worker），在Worker线程中再次创建Worker线程（子Worker）
@@ -433,7 +434,7 @@ workerPort.onmessage = (e: MessageEvents) => {
 
 
 
-#### 不推荐使用示例
+### 不推荐使用示例
 
 反例1：不建议在父Worker销毁后，子Worker继续向父Worker发送消息。因为父Worker已被销毁，消息无法被正确处理。
 

@@ -1,20 +1,121 @@
 # @ohos.inputMethod (输入法框架)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inputmethod
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-本模块主要面向普通前台应用（备忘录、信息、设置等系统应用与三方应用），提供对输入法（输入法应用）的控制、管理能力，包括显示/隐藏输入法软键盘、切换输入法、获取所有输入法列表等等。
+@ohos.inputMethod模块是面向普通前台应用（如备忘录、短信、设置等应用）的输入法客户端模块，提供输入法控制和管理能力。
+
+本模块是输入法框架的客户端接口，为编辑框应用提供与输入法服务的交互能力，包括输入法绑定/解绑、软键盘显示/隐藏、输入法切换、输入法列表查询、编辑框属性与光标更新、文本选择与操作事件监听、自定义消息通信等。
+
+本模块提供两大核心能力集：1）通过InputMethodController实现编辑框应用与输入法之间的绑定、交互和事件监听——编辑框应用绑定输入法后可控制键盘显隐、更新光标和编辑属性、监听输入法发出的文本操作事件（插入、删除、选中文本、移动光标、发送功能键和扩展动作等），以及通过自定义消息通道与输入法应用双向通信；2）通过InputMethodSetting实现输入法管理——获取输入法列表、查询当前输入法及子类型、订阅输入法切换事件、切换输入法及子类型、查询面板显示状态等。
+
+当开发带有文本编辑框的应用（需要与输入法交互）或系统应用（需要管理输入法）时使用本模块。典型场景包括：应用中编辑框获取焦点时绑定输入法并显示键盘、编辑框失去焦点时解绑输入法并隐藏键盘、系统设置应用中切换和配置输入法等。
 
 > [!NOTE]
 > 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 
+本模块是IME Kit（输入法框架Kit）中的客户端控制模块，与IME Kit中的其他模块协同工作：
 
-#### 导入模块
+ - @ohos.inputMethodEngine：面向输入法应用的服务端模块，提供软键盘窗口创建、文本插入/删除、监听物理按键等能力。本模块（@ohos.inputMethod）发出的请求（如显示键盘、切换输入法）最终由@ohos.inputMethodEngine侧的输入法应用响应和处理。
+ - @ohos.inputMethodList：提供输入法列表选择对话框的显示与管理能力。
+ - @ohos.inputMethod.Panel：定义输入法面板类型与状态信息，用于查询面板可见性等。
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+典型的客户端应用（如备忘录、设置）与输入法交互的调用序列如下：
+1. 通过inputMethod.getController()获取客户端控制器实例InputMethodController。
+2. 通过InputMethodController.attach()绑定输入法（对于自绘控件场景），或依赖系统原生编辑框自动绑定。
+3. 通过InputMethodController.showTextInput()拉起软键盘，进入文本编辑状态。
+4. 在编辑过程中，通过updateCursor、changeSelection、updateAttribute等接口向输入法同步编辑框状态。
+5. 通过InputMethodController.hideTextInput()隐藏软键盘，退出编辑状态。
+6. 通过InputMethodController.detach()解除与输入法的绑定。
+
+配对约束：
+
+ - attach与detach必须配对使用，未detach而直接退出可能导致资源泄漏。
+ - showTextInput与hideTextInput必须配对使用，避免输入法状态不一致。
+
+
+本模块的核心开放能力由以下关键Interface承载：
+
+
+| Interface | 说明 |
+| --- | --- |
+| InputMethodController | 输入法控制器，编辑框应用与输入法交互的核心对象。提供绑定/解绑输入法（attach/detach）、显示/隐藏键盘（showTextInput/hideTextInput）、更新光标和编辑属性（updateCursor/updateAttribute/changeSelection）、监听输入法操作事件（insertText/deleteLeft/deleteRight/selectByRange/selectByMovement/moveCursor/sendFunctionKey/sendKeyboardStatus/handleExtendAction/setPreviewText/finishTextPreview）、自定义消息通信（sendMessage/recvMessage）、停止输入会话等能力。通过getController()获取实例。 |
+| InputMethodSetting | 输入法设置管理对象，提供输入法查询和管理能力。包括获取已启用/已禁用/全部输入法列表（getInputMethods/getAllInputMethods）、查询指定输入法的子类型列表（listInputMethodSubtype）、获取当前输入法及子类型、订阅输入法切换事件（on('imeChange')）、订阅面板显隐事件（on('imeShow')/on('imeHide')）、查询面板显示状态（isPanelShown）、启用/禁用输入法（enableInputMethod）、获取输入法自身启用状态（getInputMethodState）等。通过getSetting()获取实例。 |
+
+
+此外，本模块还定义了多个关键数据类型：
+
+
+| 类型 | 说明 |
+| --- | --- |
+| InputMethodProperty | 输入法属性信息，描述一个输入法的名称、ID、标签、图标、启用状态等。 |
+| InputMethodSubtype | 输入法子类型，描述输入法的语言、模式等子类型属性。 |
+| TextConfig | 编辑框文本配置，包含输入属性（InputAttribute）、光标信息（CursorInfo）、选区信息、窗口ID等。 |
+| InputAttribute | 输入属性，定义文本输入类型（TextInputType）和回车键类型（EnterKeyType）。 |
+| CursorInfo | 光标信息，定义光标的位置和尺寸。 |
+| MessageHandler | 自定义消息处理器，用于接收输入法应用发送的消息并提供终止通知。 |
+
+
+编辑框应用与输入法交互的典型流程涉及InputMethodController的多个API组合调用：获取控制器 -> 绑定输入法 -> 订阅输入法操作事件 -> 在回调中处理文本操作 -> 解绑输入法。
+
+```text
+// 以下为阐述调用逻辑的伪代码
+
+// 1. 获取输入法控制器和设置对象
+let controller = inputMethod.getController();
+let setting = inputMethod.getSetting();
+
+// 2. 订阅输入法操作事件（在attach之前订阅，确保事件不遗漏）
+controller.on('insertText', (text) => { /* 处理文本插入 */ });
+controller.on('deleteLeft', (length) => { /* 处理左删 */ });
+controller.on('deleteRight', (length) => { /* 处理右删 */ });
+controller.on('selectByRange', (range) => { /* 处理按范围选中文本 */ });
+controller.on('selectByMovement', (movement) => { /* 处理按方向选中文本 */ });
+controller.on('moveCursor', (direction) => { /* 处理光标移动 */ });
+controller.on('sendFunctionKey', (functionKey) => { /* 处理功能键 */ });
+controller.on('handleExtendAction', (action) => { /* 处理扩展动作 */ });
+
+// 3. 绑定输入法（编辑框获得焦点时调用）
+let textConfig = {
+  inputAttribute: { textInputType: TextInputType.TEXT, enterKeyType: EnterKeyType.NONE },
+  cursorInfo: { left: 100, top: 200, width: 2, height: 20 },
+  selection: { start: 0, end: 0 },
+  windowId: 1
+};
+controller.attach(true, textConfig);
+
+// 4. 显示键盘
+controller.showTextInput();
+
+// 5. 更新光标和编辑属性（编辑框状态变化时调用）
+controller.updateCursor(cursorInfo);
+controller.updateAttribute(inputAttribute);
+controller.changeSelection(text, start, end);
+
+// 6. 需要隐藏键盘时
+controller.hideTextInput();
+
+// 7. 编辑框失去焦点时解绑输入法
+controller.detach();
+
+// 8. 系统应用切换输入法
+setting.getInputMethods(true);  // 获取已启用输入法列表
+inputMethod.switchInputMethod(targetProperty);  // 切换到目标输入法
+```
+
+> [!NOTE]
+> 订阅输入法操作事件（如insertText、deleteLeft等）应在attach之前完成，避免事件遗漏。attach是编辑框应用使用输入法能力的前提，必须先绑定才能进行后续操作。
+
+
+
+## 导入模块
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { inputMethod } from '@kit.IMEKit';
@@ -22,13 +123,15 @@ import { inputMethod } from '@kit.IMEKit';
 
 
 
-#### 常量
+## 常量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 常量值。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
+
 
 | 名称 | 类型 | 常量值 | 说明 |
 | --- | --- | --- | --- |
@@ -37,13 +140,15 @@ import { inputMethod } from '@kit.IMEKit';
 
 
 
-#### InputMethodProperty8+
+## InputMethodProperty8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 输入法应用属性。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -54,42 +159,52 @@ import { inputMethod } from '@kit.IMEKit';
 | icon9+ | string | 是 | 是 | 非必填。 - 当InputMethodProperty用于切换、查询等接口的入参时，开发者可不填写此字段，通过name和id即可唯一指定一个输入法扩展。 - 当InputMethodProperty作为查询接口的返回值时（如getCurrentInputMethod），此字段表示输入法图标数据，可以通过iconId查询获取。 |
 | iconId9+ | number | 是 | 是 | 非必填。 - 当InputMethodProperty用于切换、查询等接口的入参时，开发者可不填写此字段，通过name和id即可唯一指定一个输入法扩展。 - 当InputMethodProperty作为查询接口的返回值时（如getCurrentInputMethod），此字段表示icon字段的资源号。 |
 | enabledState20+ | EnabledState | 是 | 是 | 非必填。 - 当InputMethodProperty用于切换、查询等接口的入参时，开发者可不填写此字段，通过name和id即可唯一指定一个输入法扩展 - 当InputMethodProperty作为查询接口的返回值时（如getCurrentInputMethod），此字段表示该输入法启用状态。 |
-| extra9+ | object | 否 | 是 | 输入法扩展信息。预留字段，当前无具体含义，暂不支持使用。 - API version 10起：非必填； - API version 9：必填。 |
+| extra9+ | object | 否 | 是 | 输入法扩展信息。 - API version 10起：非必填； - API version 9：必填。 |
 | packageName(deprecated) | string | 是 | 否 | 输入法包名。必填。 说明：从API version 8开始支持，从API version 9开始废弃，建议使用name替代。 |
 | methodId(deprecated) | string | 是 | 否 | 输入法唯一标识。必填。 说明：从API version 8开始支持，从API version 9开始废弃，建议使用id替代。 |
 
 
 
 
-#### CapitalizeMode20+
+## CapitalizeMode20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，定义了文本首字母大写的不同模式。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| NONE | 0 | 不进行任何首字母大写处理。 |
-| SENTENCES | 1 | 每个句子的首字母大写。 |
-| WORDS | 2 | 每个单词首字母大写。 |
-| CHARACTERS | 3 | 每个字母都大写。 |
+| NONE | 0 | 不进行任何首字母大写处理。 使用场景：适用于无需自动大写的输入框，如密码输入、验证码输入等。 |
+| SENTENCES | 1 | 每个句子的首字母大写。 使用场景：适用于普通文本输入框，如聊天、备忘录等，自动在句号等标点后将首字母大写。 |
+| WORDS | 2 | 每个单词首字母大写。 使用场景：适用于标题、人名等需要每个单词首字母大写的场景。 |
+| CHARACTERS | 3 | 每个字母都大写。 使用场景：适用于全大写输入场景，如缩写词输入（如URL中的域名部分）。 |
 
 
 
 
-#### inputMethod.getController9+
+## inputMethod.getController9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getController(): InputMethodController
 
 获取客户端实例[InputMethodController](#inputmethodcontroller)。
 
+含义/功能：获取当前应用的输入法客户端控制器实例，用于后续与输入法进行交互（绑定、显示/隐藏键盘、同步编辑框状态等）。
+
+使用场景：当前台应用（如备忘录、聊天应用）需要控制输入法的显示/隐藏、绑定/解绑、同步编辑框信息时，必须先通过此接口获取InputMethodController实例。
+
+使用后效果：返回一个InputMethodController实例，后续可通过该实例调用attach、showTextInput、hideTextInput、detach等一系列接口与输入法交互。
+
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -99,6 +214,7 @@ getController(): InputMethodController
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -113,9 +229,10 @@ let inputMethodController: inputMethod.InputMethodController = inputMethod.getCo
 
 
 
-#### inputMethod.getDefaultInputMethod11+
+## inputMethod.getDefaultInputMethod11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDefaultInputMethod(): InputMethodProperty
 
@@ -125,6 +242,7 @@ getDefaultInputMethod(): InputMethodProperty
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | InputMethodProperty | 返回默认输入法属性对象。 |
@@ -133,6 +251,7 @@ getDefaultInputMethod(): InputMethodProperty
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -147,9 +266,10 @@ let defaultIme: inputMethod.InputMethodProperty = inputMethod.getDefaultInputMet
 
 
 
-#### inputMethod.getSystemInputMethodConfigAbility11+
+## inputMethod.getSystemInputMethodConfigAbility11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSystemInputMethodConfigAbility(): ElementName
 
@@ -159,6 +279,7 @@ getSystemInputMethodConfigAbility(): ElementName
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ElementName | 系统输入法设置界面Ability的ElementName。 |
@@ -167,6 +288,7 @@ getSystemInputMethodConfigAbility(): ElementName
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -183,17 +305,25 @@ let inputMethodConfig: bundleManager.ElementName = inputMethod.getSystemInputMet
 
 
 
-#### inputMethod.getSetting9+
+## inputMethod.getSetting9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSetting(): InputMethodSetting
 
 获取客户端设置实例[InputMethodSetting](#inputmethodsetting8)。
 
+含义/功能：获取输入法设置实例，用于查询输入法列表、订阅输入法变化事件、查询面板可见性等配置管理操作。
+
+使用场景：当应用需要查询已安装/已激活输入法列表、订阅输入法切换事件、或显示输入法选择对话框时，必须先通过此接口获取InputMethodSetting实例。
+
+使用后效果：返回一个InputMethodSetting实例，后续可通过该实例调用getInputMethods、listInputMethodSubtype、on('imeChange')等接口。
+
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -203,6 +333,7 @@ getSetting(): InputMethodSetting
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -217,31 +348,48 @@ let inputMethodSetting: inputMethod.InputMethodSetting = inputMethod.getSetting(
 
 
 
-#### inputMethod.switchInputMethod9+
+## inputMethod.switchInputMethod9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 switchInputMethod(target: InputMethodProperty, callback: AsyncCallback&lt;boolean&gt;): void
 
 切换输入法，使用callback异步回调。
 
-> [!NOTE]
-> 在API version 9-10版本，仅支持系统应用调用且需要权限ohos.permission.CONNECT_IME_ABILITY。 在API version 11版本起，仅支持当前输入法应用调用。
+含义/功能：将当前输入法切换为指定的目标输入法。
+
+使用场景：当前输入法应用需要切换到另一个输入法时使用（如用户在输入法设置中选择了新的输入法）。
+
+使用后效果：成功时系统将当前输入法切换为目标输入法，目标输入法成为新的当前输入法；失败时当前输入法不变。
+
+**需要权限：**
+
+ - API版本9-10：ohos.permission.CONNECT_IME_ABILITY
+ - API版本11+：N/A
+
+
+**需要权限：**
+
+ - API版本9-10：ohos.permission.CONNECT_IME_ABILITY
+ - API版本11+：N/A
 
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| target | InputMethodProperty | 是 | 目标输入法。 |
+| target | InputMethodProperty | 是 | 目标输入法。 使用场景：指定要切换到的目标输入法，通过name和id唯一确定。 说明：只需填写name和id字段即可唯一指定一个输入法，无需填写label、icon等可选字段。 |
 | callback | AsyncCallback&lt;boolean&gt; | 是 | 回调函数。当输入法切换成功，err为undefined，data为true；否则为错误对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -276,37 +424,55 @@ inputMethod.switchInputMethod(currentIme, (err: BusinessError, result: boolean) 
 
 
 
-#### inputMethod.switchInputMethod9+
+## inputMethod.switchInputMethod9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 switchInputMethod(target: InputMethodProperty): Promise&lt;boolean&gt;
 
 切换输入法，使用promise异步回调。
 
-> [!NOTE]
-> 在API version 9-10版本，仅支持系统应用调用且需要权限ohos.permission.CONNECT_IME_ABILITY。 在API version 11版本起，仅支持当前输入法应用调用。
+含义/功能：将当前输入法切换为指定的目标输入法。
+
+使用场景：当前输入法应用需要切换到另一个输入法时使用。
+
+使用后效果：成功时系统将当前输入法切换为目标输入法；失败时当前输入法不变。
+
+**需要权限：**
+
+ - API版本9-10：ohos.permission.CONNECT_IME_ABILITY
+ - API版本11+：N/A
+
+
+**需要权限：**
+
+ - API版本9-10：ohos.permission.CONNECT_IME_ABILITY
+ - API版本11+：N/A
 
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| target | InputMethodProperty | 是 | 目标输入法。 |
+| target | InputMethodProperty | 是 | 目标输入法。 使用场景：指定要切换到的目标输入法，通过name和id唯一确定。 说明：只需填写name和id字段即可唯一指定一个输入法。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;boolean&gt; | Promise对象。返回true表示切换输入法成功，返回false表示切换输入法失败。 |
+| Promise&lt;boolean&gt; | Promise对象。resolve时返回true表示切换输入法成功，返回false表示切换输入法失败；reject时返回错误对象，表示切换输入法时发生错误。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -339,17 +505,25 @@ inputMethod.switchInputMethod(currentIme).then((result: boolean) => {
 
 
 
-#### inputMethod.getCurrentInputMethod9+
+## inputMethod.getCurrentInputMethod9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCurrentInputMethod(): InputMethodProperty
 
 使用同步方法获取当前输入法。
 
+含义/功能：获取当前正在使用的输入法属性信息。
+
+使用场景：当应用需要知道当前活跃的输入法是哪个（如判断输入法名称、获取输入法id用于后续切换操作）时使用。
+
+使用后效果：返回当前输入法的InputMethodProperty对象。
+
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -364,21 +538,31 @@ let currentIme: inputMethod.InputMethodProperty = inputMethod.getCurrentInputMet
 
 
 
-#### inputMethod.switchCurrentInputMethodSubtype9+
+## inputMethod.switchCurrentInputMethodSubtype9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 switchCurrentInputMethodSubtype(target: InputMethodSubtype, callback: AsyncCallback&lt;boolean&gt;): void
 
 切换当前输入法的子类型。使用callback异步回调。
 
-> [!NOTE]
-> 在API version 9版本，仅支持系统应用调用且需要权限ohos.permission.CONNECT_IME_ABILITY。 在API version 10版本，支持系统应用和当前输入法应用调用；需要权限ohos.permission.CONNECT_IME_ABILITY。 在API version 11版本起，仅支持当前输入法调用。
+**需要权限：**
+
+ - API版本9-10：ohos.permission.CONNECT_IME_ABILITY
+ - API版本11+：N/A
+
+
+**需要权限：**
+
+ - API版本9-10：ohos.permission.CONNECT_IME_ABILITY
+ - API版本11+：N/A
 
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -389,6 +573,7 @@ switchCurrentInputMethodSubtype(target: InputMethodSubtype, callback: AsyncCallb
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -434,21 +619,31 @@ inputMethod.switchCurrentInputMethodSubtype({
 
 
 
-#### inputMethod.switchCurrentInputMethodSubtype9+
+## inputMethod.switchCurrentInputMethodSubtype9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 switchCurrentInputMethodSubtype(target: InputMethodSubtype): Promise&lt;boolean&gt;
 
 切换当前输入法的子类型。使用promise异步回调。
 
-> [!NOTE]
-> 在API version 9版本，仅支持系统应用调用且需要权限ohos.permission.CONNECT_IME_ABILITY。 在API version 10版本，支持系统应用和当前输入法应用调用；需要权限ohos.permission.CONNECT_IME_ABILITY。 在API version 11版本起，仅支持当前输入法调用。
+**需要权限：**
+
+ - API版本9-10：ohos.permission.CONNECT_IME_ABILITY
+ - API版本11+：N/A
+
+
+**需要权限：**
+
+ - API版本9-10：ohos.permission.CONNECT_IME_ABILITY
+ - API版本11+：N/A
 
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -457,14 +652,16 @@ switchCurrentInputMethodSubtype(target: InputMethodSubtype): Promise&lt;boolean&
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;boolean&gt; | Promise对象。返回true表示当前输入法切换子类型成功，返回false表示当前输入法切换子类型失败。 |
+| Promise&lt;boolean&gt; | Promise对象。resolve时返回true表示当前输入法切换子类型成功，返回false表示当前输入法切换子类型失败；reject时返回错误对象，表示切换输入法子类型时发生错误。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -508,9 +705,10 @@ inputMethod.switchCurrentInputMethodSubtype({
 
 
 
-#### inputMethod.getCurrentInputMethodSubtype9+
+## inputMethod.getCurrentInputMethodSubtype9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCurrentInputMethodSubtype(): InputMethodSubtype
 
@@ -519,6 +717,7 @@ getCurrentInputMethodSubtype(): InputMethodSubtype
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -535,21 +734,31 @@ let currentImeSubType: InputMethodSubtype = inputMethod.getCurrentInputMethodSub
 
 
 
-#### inputMethod.switchCurrentInputMethodAndSubtype9+
+## inputMethod.switchCurrentInputMethodAndSubtype9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 switchCurrentInputMethodAndSubtype(inputMethodProperty: InputMethodProperty, inputMethodSubtype: InputMethodSubtype, callback: AsyncCallback&lt;boolean&gt;): void
 
 切换至指定输入法的指定子类型，适用于跨输入法切换子类型。使用callback异步回调。
 
-> [!NOTE]
-> 在API version 9-10版本，仅支持系统应用调用且需要权限ohos.permission.CONNECT_IME_ABILITY。 在API version 11版本起，仅支持当前输入法调用。
+**需要权限：**
+
+ - API版本9-10：ohos.permission.CONNECT_IME_ABILITY
+ - API版本11+：N/A
+
+
+**需要权限：**
+
+ - API版本9-10：ohos.permission.CONNECT_IME_ABILITY
+ - API版本11+：N/A
 
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -561,6 +770,7 @@ switchCurrentInputMethodAndSubtype(inputMethodProperty: InputMethodProperty, inp
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -597,21 +807,31 @@ inputMethod.switchCurrentInputMethodAndSubtype(currentIme, imSubType, (err: Busi
 
 
 
-#### inputMethod.switchCurrentInputMethodAndSubtype9+
+## inputMethod.switchCurrentInputMethodAndSubtype9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 switchCurrentInputMethodAndSubtype(inputMethodProperty: InputMethodProperty, inputMethodSubtype: InputMethodSubtype): Promise&lt;boolean&gt;
 
 切换至指定输入法的指定子类型，适用于跨输入法切换子类型。使用promise异步回调。
 
-> [!NOTE]
-> 在API version 9-10版本，仅支持系统应用调用且需要权限ohos.permission.CONNECT_IME_ABILITY。 在API version 11版本起，仅支持当前输入法调用。
+**需要权限：**
+
+ - API版本9-10：ohos.permission.CONNECT_IME_ABILITY
+ - API版本11+：N/A
+
+
+**需要权限：**
+
+ - API版本9-10：ohos.permission.CONNECT_IME_ABILITY
+ - API版本11+：N/A
 
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -621,14 +841,16 @@ switchCurrentInputMethodAndSubtype(inputMethodProperty: InputMethodProperty, inp
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;boolean&gt; | Promise对象。返回true表示切换至指定输入法的指定子类型成功，返回false表示切换至指定输入法的指定子类型失败。 |
+| Promise&lt;boolean&gt; | Promise对象。resolve时返回true表示切换至指定输入法的指定子类型成功，返回false表示切换至指定输入法的指定子类型失败；reject时返回错误对象，表示切换至指定输入法的指定子类型时发生错误。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -663,9 +885,10 @@ inputMethod.switchCurrentInputMethodAndSubtype(currentIme, imSubType).then((resu
 
 
 
-#### inputMethod.getInputMethodController(deprecated)
+## inputMethod.getInputMethodController(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getInputMethodController(): InputMethodController
 
@@ -678,6 +901,7 @@ getInputMethodController(): InputMethodController
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -692,9 +916,10 @@ let inputMethodController: inputMethod.InputMethodController = inputMethod.getIn
 
 
 
-#### inputMethod.getInputMethodSetting(deprecated)
+## inputMethod.getInputMethodSetting(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getInputMethodSetting(): InputMethodSetting
 
@@ -707,6 +932,7 @@ getInputMethodSetting(): InputMethodSetting
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -721,9 +947,10 @@ let inputMethodSetting: inputMethod.InputMethodSetting = inputMethod.getInputMet
 
 
 
-#### inputMethod.setSimpleKeyboardEnabled20+
+## inputMethod.setSimpleKeyboardEnabled20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setSimpleKeyboardEnabled(enable: boolean): void
 
@@ -732,6 +959,7 @@ setSimpleKeyboardEnabled(enable: boolean): void
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -747,9 +975,10 @@ let enable: boolean = false;
 
 
 
-#### inputMethod.onAttachmentDidFail22+
+## inputMethod.onAttachmentDidFail22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onAttachmentDidFail(callback: Callback&lt;AttachFailureReason&gt;): void
 
@@ -758,6 +987,7 @@ onAttachmentDidFail(callback: Callback&lt;AttachFailureReason&gt;): void
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -771,9 +1001,9 @@ import { Callback } from '@kit.BasicServicesKit';
 
 let attachmentDidFailCallback: Callback<inputMethod.AttachFailureReason> =
   (reason: inputMethod.AttachFailureReason): void => {
-    console.info(`Attachment failed with reason: ${reason}.`);
+    console.error(`Attachment failed with reason: ${reason}.`);
   if (reason === inputMethod.AttachFailureReason.CALLER_NOT_FOCUSED) {
-    console.info(`Failure reason is CALLER_NOT_FOCUSED.`);
+    console.error(`Failure reason is CALLER_NOT_FOCUSED.`);
   }
   };
 inputMethod.onAttachmentDidFail(attachmentDidFailCallback);
@@ -781,9 +1011,10 @@ inputMethod.onAttachmentDidFail(attachmentDidFailCallback);
 
 
 
-#### inputMethod.offAttachmentDidFail22+
+## inputMethod.offAttachmentDidFail22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offAttachmentDidFail(callback?: Callback&lt;AttachFailureReason&gt;): void
 
@@ -792,6 +1023,7 @@ offAttachmentDidFail(callback?: Callback&lt;AttachFailureReason&gt;): void
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -805,9 +1037,9 @@ import { Callback } from '@kit.BasicServicesKit';
 
 let attachmentDidFailCallback: Callback<inputMethod.AttachFailureReason> =
   (reason: inputMethod.AttachFailureReason): void => {
-    console.info(`Attachment failed with reason: ${reason}.`);
+    console.error(`Attachment failed with reason: ${reason}.`);
   if (reason === inputMethod.AttachFailureReason.CALLER_NOT_FOCUSED) {
-    console.info(`Failure reason is CALLER_NOT_FOCUSED.`);
+    console.error(`Failure reason is CALLER_NOT_FOCUSED.`);
   }
   };
 inputMethod.onAttachmentDidFail(attachmentDidFailCallback);
@@ -816,118 +1048,130 @@ inputMethod.offAttachmentDidFail(attachmentDidFailCallback);
 
 
 
-#### TextInputType10+
+## TextInputType10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文本输入类型。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| NONE | -1 | NONE。 |
-| TEXT | 0 | 文本类型。 |
-| MULTILINE | 1 | 多行类型。 |
-| NUMBER | 2 | 数字类型。 |
-| PHONE | 3 | 电话号码类型。 |
-| DATETIME | 4 | 日期类型。 |
-| EMAIL_ADDRESS | 5 | 邮箱地址类型。 |
-| URL | 6 | 链接类型。 |
-| VISIBLE_PASSWORD | 7 | 密码类型。 |
-| NUMBER_PASSWORD11+ | 8 | 数字密码类型。 |
-| SCREEN_LOCK_PASSWORD20+ | 9 | 锁屏密码类型。 |
-| USER_NAME20+ | 10 | 用户名类型。 |
-| NEW_PASSWORD20+ | 11 | 新密码类型。 |
-| NUMBER_DECIMAL20+ | 12 | 带小数点的数字类型。 |
-| ONE_TIME_CODE20+ | 13 | 验证码类型。 |
+| NONE | -1 | NONE。 使用场景：当编辑框不希望指定特定输入类型时使用，输入法将使用默认键盘布局。 |
+| TEXT | 0 | 文本类型。 使用场景：适用于普通文本输入框，如聊天、备忘录等，输入法显示全功能键盘。 |
+| MULTILINE | 1 | 多行类型。 使用场景：适用于需要多行文本输入的场景，如长文本编辑、评论框等。 |
+| NUMBER | 2 | 数字类型。 使用场景：适用于仅需要输入数字的场景，如数量输入、年龄输入等，输入法显示数字键盘。 |
+| PHONE | 3 | 电话号码类型。 使用场景：适用于电话号码输入框，输入法显示电话号码键盘（包含数字和常用电话符号）。 |
+| DATETIME | 4 | 日期类型。 使用场景：适用于日期时间输入框，输入法显示日期相关的键盘布局。 |
+| EMAIL_ADDRESS | 5 | 邮箱地址类型。 使用场景：适用于邮箱输入框，输入法键盘会突出显示"@""."等常用邮箱符号。 |
+| URL | 6 | 链接类型。 使用场景：适用于网址输入框，输入法键盘会突出显示"/""."等常用URL符号。 |
+| VISIBLE_PASSWORD | 7 | 密码类型。 使用场景：适用于密码输入框，输入法显示可见密码键盘，不进行自动建议。 |
+| NUMBER_PASSWORD11+ | 8 | 数字密码类型。 使用场景：适用于仅需输入数字密码的场景，如PIN码输入。 |
+| SCREEN_LOCK_PASSWORD20+ | 9 | 锁屏密码类型。 使用场景：适用于锁屏界面的密码输入框。 |
+| USER_NAME20+ | 10 | 用户名类型。 使用场景：适用于用户名输入框，输入法可根据用户名特点优化建议。 |
+| NEW_PASSWORD20+ | 11 | 新密码类型。 使用场景：适用于设置新密码的输入框，输入法可提供密码强度提示。 |
+| NUMBER_DECIMAL20+ | 12 | 带小数点的数字类型。 使用场景：适用于需要输入带小数点数字的场景，如金额输入。 |
+| ONE_TIME_CODE20+ | 13 | 验证码类型。 使用场景：适用于验证码输入框，输入法可优化验证码输入体验。 |
 
 
 
 
-#### EnterKeyType10+
+## EnterKeyType10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Enter键的功能类型。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| UNSPECIFIED | 0 | 未指定。 |
-| NONE | 1 | NONE。 |
-| GO | 2 | 前往。 |
-| SEARCH | 3 | 查找。 |
-| SEND | 4 | 发送。 |
-| NEXT | 5 | 下一步。 |
-| DONE | 6 | 完成。 |
-| PREVIOUS | 7 | 上一步。 |
-| NEWLINE12+ | 8 | 换行。 |
+| UNSPECIFIED | 0 | 未指定。 使用场景：编辑框不指定Enter键具体功能时使用。 |
+| NONE | 1 | NONE。 使用场景：Enter键无特定行为，仅作为换行或普通按键使用。 |
+| GO | 2 | 前往。 使用场景：适用于URL输入框，Enter键触发"前往"操作，如打开链接。 |
+| SEARCH | 3 | 查找。 使用场景：适用于搜索框，Enter键触发搜索操作。 |
+| SEND | 4 | 发送。 使用场景：适用于消息发送框，Enter键触发发送操作。 |
+| NEXT | 5 | 下一步。 使用场景：适用于多步骤表单，Enter键跳转到下一个输入框。 |
+| DONE | 6 | 完成。 使用场景：适用于单步骤表单的最后输入框，Enter键表示输入完成。 |
+| PREVIOUS | 7 | 上一步。 使用场景：适用于多步骤表单，Enter键跳转到上一个输入框。 |
+| NEWLINE12+ | 8 | 换行。 使用场景：适用于多行文本编辑框，Enter键插入换行符。 |
 
 
 
 
-#### KeyboardStatus10+
+## KeyboardStatus10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 输入法软键盘状态。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| NONE | 0 | NONE。 |
-| HIDE | 1 | 隐藏状态。 |
-| SHOW | 2 | 显示状态。 |
+| NONE | 0 | NONE。 使用场景：表示键盘状态尚未确定或无法判断时使用。 |
+| HIDE | 1 | 隐藏状态。 使用场景：表示当前软键盘处于隐藏状态。 |
+| SHOW | 2 | 显示状态。 使用场景：表示当前软键盘处于显示状态。 |
 
 
 
 
-#### Direction10+
+## Direction10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 光标移动方向。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| CURSOR_UP | 1 | 向上。 |
-| CURSOR_DOWN | 2 | 向下。 |
-| CURSOR_LEFT | 3 | 向左。 |
-| CURSOR_RIGHT | 4 | 向右。 |
+| CURSOR_UP | 1 | 向上。 使用场景：输入法请求光标向上移动时使用，如多行文本中上移光标。 |
+| CURSOR_DOWN | 2 | 向下。 使用场景：输入法请求光标向下移动时使用。 |
+| CURSOR_LEFT | 3 | 向左。 使用场景：输入法请求光标向左移动时使用，如删除左侧字符前移动光标。 |
+| CURSOR_RIGHT | 4 | 向右。 使用场景：输入法请求光标向右移动时使用。 |
 
 
 
 
-#### ExtendAction10+
+## ExtendAction10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 编辑框中文本的扩展编辑操作类型，如剪切、复制等。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| SELECT_ALL | 0 | 全选。 |
-| CUT | 3 | 剪切。 |
-| COPY | 4 | 复制。 |
-| PASTE | 5 | 粘贴。 |
+| SELECT_ALL | 0 | 全选。 使用场景：输入法请求全选编辑框中的文本时使用。 |
+| CUT | 3 | 剪切。 使用场景：输入法请求剪切选中的文本时使用，将选中文本复制到剪贴板并删除原文本。 |
+| COPY | 4 | 复制。 使用场景：输入法请求复制选中的文本时使用，将选中文本复制到剪贴板。 |
+| PASTE | 5 | 粘贴。 使用场景：输入法请求粘贴剪贴板内容时使用。 |
 
 
 
 
-#### FunctionKey10+
+## FunctionKey10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 输入法功能键类型。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -936,13 +1180,15 @@ Enter键的功能类型。
 
 
 
-#### InputAttribute10+
+## InputAttribute10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 编辑框属性，包含文本输入类型和Enter键功能类型。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -955,13 +1201,15 @@ Enter键的功能类型。
 
 
 
-#### TextConfig10+
+## TextConfig10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 编辑框的配置信息。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -975,13 +1223,15 @@ Enter键的功能类型。
 
 
 
-#### CursorInfo10+
+## CursorInfo10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 光标信息。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -994,13 +1244,15 @@ Enter键的功能类型。
 
 
 
-#### Range10+
+## Range10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文本的选中范围。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1010,13 +1262,15 @@ Enter键的功能类型。
 
 
 
-#### Movement10+
+## Movement10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 选中文本时，光标移动的方向。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1025,13 +1279,15 @@ Enter键的功能类型。
 
 
 
-#### InputWindowInfo10+
+## InputWindowInfo10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 输入法软键盘的窗口信息。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1045,44 +1301,49 @@ Enter键的功能类型。
 
 
 
-#### EnabledState15+
+## EnabledState15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 输入法启用状态。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| DISABLED | 0 | 未启用。 |
-| BASIC_MODE | 1 | 基础模式。 |
-| FULL_EXPERIENCE_MODE | 2 | 完整体验模式。 |
+| DISABLED | 0 | 未启用。 使用场景：输入法已被禁用，不能作为当前输入法使用。 |
+| BASIC_MODE | 1 | 基础模式。 使用场景：输入法已启用但处于基础模式，仅具备基础输入能力，不支持高级功能（如自定义通信）。 |
+| FULL_EXPERIENCE_MODE | 2 | 完整体验模式。 使用场景：输入法已启用且处于完整体验模式，支持所有功能（包括自定义通信、预上屏等）。 |
 
 
 
 
-#### RequestKeyboardReason15+
+## RequestKeyboardReason15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 请求键盘输入的原因。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| NONE | 0 | 表示没有特定的原因触发键盘请求。 |
-| MOUSE | 1 | 表示键盘请求是由鼠标操作触发的。 |
-| TOUCH | 2 | 表示键盘请求是由触摸操作触发的。 |
-| OTHER | 20 | 表示键盘请求是由其他原因触发的。 |
+| NONE | 0 | 表示没有特定的原因触发键盘请求。 使用场景：默认值，不指定特定触发原因时使用。 |
+| MOUSE | 1 | 表示键盘请求是由鼠标操作触发的。 使用场景：用户通过鼠标点击编辑框触发键盘弹出时使用。 |
+| TOUCH | 2 | 表示键盘请求是由触摸操作触发的。 使用场景：用户通过触摸点击编辑框触发键盘弹出时使用。 |
+| OTHER | 20 | 表示键盘请求是由其他原因触发的。 使用场景：键盘弹出的触发原因不属于鼠标和触摸时使用。 |
 
 
 
 
-#### MessageHandler15+
+## MessageHandler15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 自定义通信对象。
 
@@ -1092,9 +1353,10 @@ Enter键的功能类型。
 
 
 
-#### onMessage15+
+### onMessage15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onMessage(msgId: string, msgParam?: ArrayBuffer): void
 
@@ -1107,6 +1369,7 @@ onMessage(msgId: string, msgParam?: ArrayBuffer): void
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1132,9 +1395,10 @@ inputMethodController.recvMessage(messageHandler);
 
 
 
-#### onTerminated15+
+### onTerminated15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onTerminated(): void
 
@@ -1164,9 +1428,10 @@ inputMethodController.recvMessage(messageHandler);
 
 
 
-#### SetPreviewTextCallback17+
+## SetPreviewTextCallback17+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type SetPreviewTextCallback = (text: string, range: Range) => void
 
@@ -1176,6 +1441,7 @@ type SetPreviewTextCallback = (text: string, range: Range) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | text | string | 是 | 预览文本内容。 |
@@ -1184,32 +1450,36 @@ type SetPreviewTextCallback = (text: string, range: Range) => void
 
 
 
-#### AttachFailureReason22+
+## AttachFailureReason22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，绑定失败的原因。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| CALLER_NOT_FOCUSED | 0 | 表示调用者非焦点窗口所属应用导致的失败。 |
-| IME_ABNORMAL | 1 | 表示输入法应用异常导致的失败。 |
-| SERVICE_ABNORMAL | 2 | 表示输入法框架服务异常导致的失败。 |
+| CALLER_NOT_FOCUSED | 0 | 表示调用者非焦点窗口所属应用导致的失败。 使用场景：应用窗口未获得焦点时调用attach，会返回此失败原因。 说明：调用attach前需确保应用窗口已获焦。 |
+| IME_ABNORMAL | 1 | 表示输入法应用异常导致的失败。 使用场景：输入法应用进程崩溃或未正常运行时，attach会返回此失败原因。 |
+| SERVICE_ABNORMAL | 2 | 表示输入法框架服务异常导致的失败。 使用场景：输入法框架服务进程异常时，attach会返回此失败原因。 |
 
 
 
 
-#### AttachOptions23+
+## AttachOptions23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 绑定输入法的附加选项。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1219,21 +1489,54 @@ type SetPreviewTextCallback = (text: string, range: Range) => void
 
 
 
-#### InputMethodController
+## InputMethodController
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 下列API示例中都需使用[getController](#inputmethodgetcontroller9)获取到InputMethodController实例，再通过实例调用对应方法。
 
+InputMethodController是输入法客户端控制器，面向前台应用提供与输入法交互的核心能力。通过inputMethod.getController()获取实例后，可进行以下操作：
+
+ - 绑定管理：通过[attach](#attach10)建立与输入法的绑定，通过[detach](#detach10)解除绑定。attach和detach必须配对使用。
+ - 键盘控制：通过[showTextInput](#showtextinput10)拉起软键盘进入编辑状态，通过[hideTextInput](#hidetextinput10)隐藏软键盘退出编辑状态。showTextInput和hideTextInput必须配对使用。
+ - 编辑框状态同步：通过[updateCursor](#updatecursor10)、[changeSelection](#changeselection10)、[updateAttribute](#updateattribute10)等接口向输入法同步光标、选区、属性等编辑框状态信息。
+ - 事件订阅：通过on('insertText')、on('deleteLeft')等接口订阅输入法应用发送的文本操作事件。
 
 
-#### attach10+
+典型调用序列：getController() → attach() → showTextInput()/hideTextInput() → detach()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+> [!NOTE]
+> attach和detach必须配对使用，showTextInput和hideTextInput必须配对使用，否则可能导致资源泄漏或状态不一致。
+
+
+
+
+### attach10+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 attach(showKeyboard: boolean, textConfig: TextConfig, callback: AsyncCallback&lt;void&gt;): void
 
 自绘控件绑定输入法。使用callback异步回调。
+
+含义/功能：建立自绘控件与输入法应用之间的绑定关系，是自绘控件使用输入法功能的前提。
+
+使用场景：自绘控件（非系统原生编辑框）需要与输入法交互时，必须先调用此接口建立绑定。原生编辑框获焦时系统自动绑定，无需调用此接口。
+
+使用后效果：绑定成功后，自绘控件可调用showTextInput/hideTextInput控制键盘显隐、调用updateCursor/changeSelection同步编辑框状态、订阅输入法事件等。
+
+前提条件/前置操作：自绘控件所在窗口需处于获焦状态，否则绑定会失败。
+
+相关接口间的配合/制约关系：attach必须与detach配对使用。调用attach后才能调用showTextInput、hideTextInput、updateCursor等接口。
+
+相似接口差异点及选取原则：
+
+ - attach：不需要传入UIContext，适用于API version 10+的自绘控件绑定场景。
+ - attachWithUIContext：需要传入UIContext，适用于API version 23+的Stage模型场景，支持更多绑定选项。
+ - 选取原则：API version 23+的Stage模型应用优先使用attachWithUIContext，以获得更完整的绑定选项支持。
+
 
 > [!NOTE]
 > 需要先调用此接口，完成自绘控件与输入法的绑定，才能使用以下功能：显示/隐藏键盘、更新光标信息、更改编辑框选中范围、保存配置信息、监听处理由输入法应用发送的信息或命令等。 当自绘控件所在窗口通过 setWindowFocusable 设置为不可获焦窗口时，系统将无法保证自绘输入控件与输入法正常交互。若开发者希望在不可获焦窗口中绘制输入框，建议参考 不可获焦窗口中输入框与输入法交互指南 。
@@ -1242,6 +1545,7 @@ attach(showKeyboard: boolean, textConfig: TextConfig, callback: AsyncCallback&lt
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1253,6 +1557,7 @@ attach(showKeyboard: boolean, textConfig: TextConfig, callback: AsyncCallback&lt
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1282,9 +1587,10 @@ inputMethod.getController().attach(true, textConfig, (err: BusinessError) => {
 
 
 
-#### attach10+
+### attach10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 attach(showKeyboard: boolean, textConfig: TextConfig): Promise&lt;void&gt;
 
@@ -1298,6 +1604,7 @@ attach(showKeyboard: boolean, textConfig: TextConfig): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | showKeyboard | boolean | 是 | 绑定输入法成功后，是否拉起输入法键盘。 - true表示拉起。 - false表示不拉起。 |
@@ -1306,14 +1613,16 @@ attach(showKeyboard: boolean, textConfig: TextConfig): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | 无返回结果的Promise对象。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1341,9 +1650,10 @@ inputMethod.getController().attach(true, textConfig).then(() => {
 
 
 
-#### attach15+
+### attach15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 attach(showKeyboard: boolean, textConfig: TextConfig, requestKeyboardReason: RequestKeyboardReason): Promise&lt;void&gt;
 
@@ -1357,6 +1667,7 @@ attach(showKeyboard: boolean, textConfig: TextConfig, requestKeyboardReason: Req
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | showKeyboard | boolean | 是 | 绑定输入法成功后，是否拉起输入法键盘。 - true表示拉起。 - false表示不拉起。 |
@@ -1366,14 +1677,16 @@ attach(showKeyboard: boolean, textConfig: TextConfig, requestKeyboardReason: Req
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | 无返回结果的Promise对象。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)和[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1403,9 +1716,10 @@ inputMethod.getController().attach(true, textConfig, requestKeyboardReason).then
 
 
 
-#### attachWithUIContext23+
+### attachWithUIContext23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 attachWithUIContext(uiContext: UIContext, textConfig: TextConfig, attachOptions?: AttachOptions): Promise&lt;void&gt;
 
@@ -1421,6 +1735,7 @@ attachWithUIContext(uiContext: UIContext, textConfig: TextConfig, attachOptions?
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uiContext | UIContext | 是 | UIContext实例对象。 |
@@ -1430,6 +1745,7 @@ attachWithUIContext(uiContext: UIContext, textConfig: TextConfig, attachOptions?
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1438,6 +1754,7 @@ attachWithUIContext(uiContext: UIContext, textConfig: TextConfig, attachOptions?
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1467,9 +1784,10 @@ inputMethod.getController().attachWithUIContext(uiContext, textConfig, attachOpt
 
 
 
-#### discardTypingText20+
+### discardTypingText20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 discardTypingText(): Promise&lt;void&gt;
 
@@ -1483,6 +1801,7 @@ discardTypingText(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -1491,6 +1810,7 @@ discardTypingText(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1513,13 +1833,31 @@ inputMethod.getController().discardTypingText().then(() => {
 
 
 
-#### showTextInput10+
+### showTextInput10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showTextInput(callback: AsyncCallback&lt;void&gt;): void
 
 进入文本编辑状态。使用callback异步回调。
+
+含义/功能：拉起软键盘，使编辑框进入文本编辑状态。
+
+使用场景：自绘控件绑定输入法后，需要显示软键盘开始文本输入时调用。
+
+使用后效果：软键盘弹出，编辑框进入可输入的文本编辑状态。
+
+前提条件/前置操作：需先调用[attach](#attach10)完成绑定，否则会报12800009错误。
+
+相关接口间的配合/制约关系：showTextInput与hideTextInput必须配对使用。调用hideTextInput退出编辑状态后，需再次调用showTextInput才能重新进入编辑状态。
+
+相似接口差异点及选取原则：
+
+ - showTextInput：面向自绘控件，需先attach绑定后调用。适用于自绘控件场景，是标准的键盘显示方式。
+ - showSoftKeyboard：面向系统应用，需权限ohos.permission.CONNECT_IME_ABILITY。适用于系统应用需要强制显示键盘的场景。
+ - 选取原则：自绘控件优先使用showTextInput；系统应用且有特殊需求时使用showSoftKeyboard。
+
 
 > [!NOTE]
 > 编辑框与输入法绑定成功后，可调用该接口拉起软键盘，进入文本编辑状态。
@@ -1529,6 +1867,7 @@ showTextInput(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。若成功进入编辑状态，err为undefined；否则为错误对象。 |
@@ -1537,6 +1876,7 @@ showTextInput(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1561,9 +1901,10 @@ inputMethod.getController().showTextInput((err: BusinessError) => {
 
 
 
-#### showTextInput10+
+### showTextInput10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showTextInput(): Promise&lt;void&gt;
 
@@ -1577,14 +1918,16 @@ showTextInput(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | 无返回结果的Promise对象。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1607,9 +1950,10 @@ inputMethod.getController().showTextInput().then(() => {
 
 
 
-#### showTextInput15+
+### showTextInput15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showTextInput(requestKeyboardReason: RequestKeyboardReason): Promise&lt;void&gt;
 
@@ -1623,6 +1967,7 @@ showTextInput(requestKeyboardReason: RequestKeyboardReason): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | requestKeyboardReason | RequestKeyboardReason | 是 | 请求键盘输入的原因。 |
@@ -1630,14 +1975,16 @@ showTextInput(requestKeyboardReason: RequestKeyboardReason): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | 无返回结果的Promise对象。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1662,13 +2009,31 @@ inputMethod.getController().showTextInput(requestKeyboardReason).then(() => {
 
 
 
-#### hideTextInput10+
+### hideTextInput10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hideTextInput(callback: AsyncCallback&lt;void&gt;): void
 
 退出文本编辑状态。使用callback异步回调。
+
+含义/功能：隐藏软键盘，使编辑框退出文本编辑状态。
+
+使用场景：自绘控件不再需要输入时调用，如用户点击了编辑框外的区域、切换到其他页面等。
+
+使用后效果：软键盘被隐藏，编辑框退出编辑状态。调用此接口不会解除与输入法的绑定，再次调用showTextInput可重新进入编辑状态。
+
+前提条件/前置操作：需先调用[attach](#attach10)完成绑定，且已调用showTextInput进入编辑状态。
+
+相关接口间的配合/制约关系：hideTextInput与showTextInput必须配对使用。hideTextInput后如需再次输入，必须先调用showTextInput重新进入编辑状态，不能直接调用其他编辑操作。
+
+相似接口差异点及选取原则：
+
+ - hideTextInput：面向自绘控件，退出编辑状态但不解除绑定，可再次showTextInput重新进入。适用于自绘控件需要暂时隐藏键盘的场景。
+ - hideSoftKeyboard：面向系统应用，需权限ohos.permission.CONNECT_IME_ABILITY。仅隐藏键盘，不改变编辑状态。
+ - 选取原则：自绘控件优先使用hideTextInput；系统应用且有特殊需求时使用hideSoftKeyboard。
+
 
 > [!NOTE]
 > 调用接口时，若软键盘处于显示状态，调用接口后软键盘会被隐藏。 调用该接口不会解除与输入法的绑定，再次调用 showTextInput 时，可重新进入文本编辑状态。
@@ -1678,6 +2043,7 @@ hideTextInput(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当成功退出编辑状态时，err为undefined；否则为错误对象。 |
@@ -1686,6 +2052,7 @@ hideTextInput(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1710,9 +2077,10 @@ inputMethod.getController().hideTextInput((err: BusinessError) => {
 
 
 
-#### hideTextInput10+
+### hideTextInput10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hideTextInput(): Promise&lt;void&gt;
 
@@ -1726,14 +2094,16 @@ hideTextInput(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | 无返回结果的Promise对象。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1756,17 +2126,27 @@ inputMethod.getController().hideTextInput().then(() => {
 
 
 
-#### detach10+
+### detach10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 detach(callback: AsyncCallback&lt;void&gt;): void
 
 自绘控件解除与输入法的绑定。使用callback异步回调。
 
+含义/功能：解除自绘控件与输入法应用之间的绑定关系，释放相关资源。
+
+使用场景：自绘控件不再需要与输入法交互时调用（如页面切换、编辑框被销毁等）。
+
+使用后效果：解除绑定后，不能再调用showTextInput、hideTextInput、updateCursor等需要绑定状态的接口。输入法软键盘将被隐藏。
+
+相关接口间的配合/制约关系：detach必须与attach配对使用。建议在hideTextInput之后调用detach，完整流程为：attach → showTextInput → hideTextInput → detach。
+
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1776,6 +2156,7 @@ detach(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1799,26 +2180,37 @@ inputMethod.getController().detach((err: BusinessError) => {
 
 
 
-#### detach10+
+### detach10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 detach(): Promise&lt;void&gt;
 
 自绘控件解除与输入法的绑定。使用promise异步回调。
 
+含义/功能：解除自绘控件与输入法应用之间的绑定关系，释放相关资源。
+
+使用场景：自绘控件不再需要与输入法交互时调用。
+
+使用后效果：解除绑定后，不能再调用需要绑定状态的接口。输入法软键盘将被隐藏。
+
+相关接口间的配合/制约关系：detach必须与attach配对使用。
+
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | 无返回结果的Promise对象。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1840,21 +2232,23 @@ inputMethod.getController().detach().then(() => {
 
 
 
-#### setCallingWindow10+
+### setCallingWindow10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCallingWindow(windowId: number, callback: AsyncCallback&lt;void&gt;): void
 
 设置要避让软键盘的窗口。使用callback异步回调。
 
 > [!NOTE]
-> 将绑定到输入法的应用程序所在的窗口Id传入，此窗口可以避让输入法窗口。
+> 编辑框与输入法绑定成功后，才可调用该接口设置避让软键盘的窗口。 将绑定到输入法的应用程序所在的窗口Id传入，此窗口可以避让输入法窗口。
 
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1865,6 +2259,7 @@ setCallingWindow(windowId: number, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1891,9 +2286,10 @@ inputMethod.getController().setCallingWindow(windowId, (err: BusinessError) => {
 
 
 
-#### setCallingWindow10+
+### setCallingWindow10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCallingWindow(windowId: number): Promise&lt;void&gt;
 
@@ -1907,6 +2303,7 @@ setCallingWindow(windowId: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | windowId | number | 是 | 绑定输入法应用的应用程序所在的窗口Id。该参数应为整数。 |
@@ -1914,14 +2311,16 @@ setCallingWindow(windowId: number): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | 无返回结果的Promise对象。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1941,22 +2340,28 @@ inputMethod.getController().setCallingWindow(windowId).then(() => {
   console.info('Succeeded in setting callingWindow.');
 }).catch((err: BusinessError) => {
   console.error(`Failed to setCallingWindow, code: ${err.code}, message: ${err.message}`);
-})
+});
 ```
 
 
 
-#### updateCursor10+
+### updateCursor10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateCursor(cursorInfo: CursorInfo, callback: AsyncCallback&lt;void&gt;): void
 
 当编辑框内的光标信息发生变化时，调用该接口使输入法感知到光标变化。使用callback异步回调。
 
+> [!NOTE]
+> 编辑框与输入法绑定成功后，才可调用该接口更新光标信息。
+
+
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1967,6 +2372,7 @@ updateCursor(cursorInfo: CursorInfo, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1998,17 +2404,23 @@ inputMethod.getController().updateCursor(cursorInfo, (err: BusinessError) => {
 
 
 
-#### updateCursor10+
+### updateCursor10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateCursor(cursorInfo: CursorInfo): Promise&lt;void&gt;
 
 当编辑框内的光标信息发生变化时，调用该接口使输入法感知到光标变化。使用promise异步回调。
 
+> [!NOTE]
+> 编辑框与输入法绑定成功后，才可调用该接口更新光标信息。
+
+
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2017,14 +2429,16 @@ updateCursor(cursorInfo: CursorInfo): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | 无返回结果的Promise对象。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2054,17 +2468,23 @@ inputMethod.getController().updateCursor(cursorInfo).then(() => {
 
 
 
-#### changeSelection10+
+### changeSelection10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 changeSelection(text: string, start: number, end: number, callback: AsyncCallback&lt;void&gt;): void
 
 当编辑框内被选中的文本信息内容或文本范围发生变化时，可调用该接口更新文本信息，使输入法应用感知到变化。使用callback异步回调。
 
+> [!NOTE]
+> 编辑框与输入法绑定成功后，才可调用该接口更新文本选区信息。
+
+
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2077,6 +2497,7 @@ changeSelection(text: string, start: number, end: number, callback: AsyncCallbac
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2102,17 +2523,23 @@ inputMethod.getController().changeSelection('text', 0, 5, (err: BusinessError) =
 
 
 
-#### changeSelection10+
+### changeSelection10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 changeSelection(text: string, start: number, end: number): Promise&lt;void&gt;
 
 当编辑框内被选中的文本信息内容或文本范围发生变化时，可调用该接口更新文本信息，使输入法应用感知到变化。使用promise异步回调。
 
+> [!NOTE]
+> 编辑框与输入法绑定成功后，才可调用该接口更新文本选区信息。
+
+
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2123,14 +2550,16 @@ changeSelection(text: string, start: number, end: number): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | 无返回结果的Promise对象。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2154,9 +2583,10 @@ inputMethod.getController().changeSelection('test', 0, 5).then(() => {
 
 
 
-#### updateAttribute10+
+### updateAttribute10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateAttribute(attribute: InputAttribute, callback: AsyncCallback&lt;void&gt;): void
 
@@ -2165,6 +2595,7 @@ updateAttribute(attribute: InputAttribute, callback: AsyncCallback&lt;void&gt;):
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2175,6 +2606,7 @@ updateAttribute(attribute: InputAttribute, callback: AsyncCallback&lt;void&gt;):
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2201,17 +2633,23 @@ inputMethod.getController().updateAttribute(inputAttribute, (err: BusinessError)
 
 
 
-#### updateAttribute10+
+### updateAttribute10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateAttribute(attribute: InputAttribute): Promise&lt;void&gt;
 
 更新编辑框属性信息。使用promise异步回调。
 
+> [!NOTE]
+> 编辑框与输入法绑定成功后，才可调用该接口更新编辑框属性信息。
+
+
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2220,14 +2658,16 @@ updateAttribute(attribute: InputAttribute): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | 无返回结果的Promise对象。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2252,13 +2692,24 @@ inputMethod.getController().updateAttribute(inputAttribute).then(() => {
 
 
 
-#### stopInputSession9+
+### stopInputSession9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopInputSession(callback: AsyncCallback&lt;boolean&gt;): void
 
 结束输入会话。使用callback异步回调。
+
+含义/功能：结束当前的输入会话，隐藏软键盘。
+
+使用场景：应用需要主动结束输入会话时调用（如用户完成了输入操作）。
+
+使用后效果：软键盘被隐藏，输入会话结束。
+
+前提条件/前置操作：编辑框与输入法绑定时才能调用，即点击编辑控件后。
+
+相关接口间的配合/制约关系：stopInputSession会隐藏软键盘并结束输入会话。如果使用自绘控件的attach/showTextInput/hideTextInput/detach流程，建议使用hideTextInput而非stopInputSession。
 
 > [!NOTE]
 > 该接口需要编辑框与输入法绑定时才能调用，即点击编辑控件后，才可调用该接口结束输入会话。
@@ -2268,14 +2719,16 @@ stopInputSession(callback: AsyncCallback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback&lt;boolean&gt; | 是 | 回调函数。当结束输入会话成功时，err为undefined，data为true；否则为错误对象。 |
+| callback | AsyncCallback&lt;boolean&gt; | 是 | 回调函数。当结束输入会话成功时，err为undefined，data为true；失败时err为错误对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2303,9 +2756,10 @@ inputMethod.getController().stopInputSession((err: BusinessError, result: boolea
 
 
 
-#### stopInputSession9+
+### stopInputSession9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopInputSession(): Promise&lt;boolean&gt;
 
@@ -2319,6 +2773,7 @@ stopInputSession(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示结束输入会话成功，返回false表示结束输入会话失败。 |
@@ -2327,6 +2782,7 @@ stopInputSession(): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2352,13 +2808,29 @@ inputMethod.getController().stopInputSession().then((result: boolean) => {
 
 
 
-#### showSoftKeyboard9+
+### showSoftKeyboard9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showSoftKeyboard(callback: AsyncCallback&lt;void&gt;): void
 
 显示输入法软键盘。使用callback异步回调。
+
+含义/功能：强制显示当前输入法的软键盘。
+
+使用场景：系统应用需要强制显示输入法软键盘时使用（如设置应用测试输入法）。
+
+使用后效果：输入法软键盘弹出显示。
+
+前提条件/前置操作：编辑框与输入法绑定时才能调用。
+
+相似接口差异点及选取原则：
+
+ - showSoftKeyboard：面向系统应用，需权限ohos.permission.CONNECT_IME_ABILITY，仅显示键盘不改变编辑状态。
+ - showTextInput：面向自绘控件，需先attach绑定，拉起键盘并进入编辑状态。
+ - 选取原则：自绘控件使用showTextInput；系统应用且有权限时使用showSoftKeyboard。
+
 
 > [!NOTE]
 > 该接口需要编辑框与输入法绑定时才能调用，即点击编辑控件后，才可调用显示当前输入法的软键盘。
@@ -2370,6 +2842,7 @@ showSoftKeyboard(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当软键盘显示成功。err为undefined，否则为错误对象。 |
@@ -2378,6 +2851,7 @@ showSoftKeyboard(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2402,9 +2876,10 @@ inputMethod.getController().showSoftKeyboard((err: BusinessError) => {
 
 
 
-#### showSoftKeyboard9+
+### showSoftKeyboard9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showSoftKeyboard(): Promise&lt;void&gt;
 
@@ -2420,14 +2895,16 @@ showSoftKeyboard(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | 无返回结果的Promise对象。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2450,13 +2927,29 @@ inputMethod.getController().showSoftKeyboard().then(() => {
 
 
 
-#### hideSoftKeyboard9+
+### hideSoftKeyboard9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hideSoftKeyboard(callback: AsyncCallback&lt;void&gt;): void
 
 隐藏输入法软键盘。使用callback异步回调。
+
+含义/功能：强制隐藏当前输入法的软键盘。
+
+使用场景：系统应用需要强制隐藏输入法软键盘时使用。
+
+使用后效果：输入法软键盘被隐藏。
+
+前提条件/前置操作：编辑框与输入法绑定时才能调用。
+
+相似接口差异点及选取原则：
+
+ - hideSoftKeyboard：面向系统应用，需权限ohos.permission.CONNECT_IME_ABILITY，仅隐藏键盘不退出编辑状态。
+ - hideTextInput：面向自绘控件，隐藏键盘并退出编辑状态，可再次showTextInput重新进入。
+ - 选取原则：自绘控件使用hideTextInput；系统应用且有权限时使用hideSoftKeyboard。
+
 
 > [!NOTE]
 > 该接口需要编辑框与输入法绑定时才能调用，即点击编辑控件后，才可调用隐藏当前输入法的软键盘。
@@ -2468,6 +2961,7 @@ hideSoftKeyboard(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当软键盘隐藏成功。err为undefined，否则为错误对象。 |
@@ -2476,6 +2970,7 @@ hideSoftKeyboard(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2500,9 +2995,10 @@ inputMethod.getController().hideSoftKeyboard((err: BusinessError) => {
 
 
 
-#### hideSoftKeyboard9+
+### hideSoftKeyboard9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hideSoftKeyboard(): Promise&lt;void&gt;
 
@@ -2518,14 +3014,16 @@ hideSoftKeyboard(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | 无返回结果的Promise对象。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2548,9 +3046,10 @@ inputMethod.getController().hideSoftKeyboard().then(() => {
 
 
 
-#### sendMessage15+
+### sendMessage15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sendMessage(msgId: string, msgParam?: ArrayBuffer): Promise&lt;void&gt;
 
@@ -2564,6 +3063,7 @@ sendMessage(msgId: string, msgParam?: ArrayBuffer): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | msgId | string | 是 | 需要发送至输入法应用的自定义数据的标识符。 |
@@ -2572,14 +3072,16 @@ sendMessage(msgId: string, msgParam?: ArrayBuffer): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | 无返回结果的Promise对象。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2607,9 +3109,10 @@ inputMethod.getController().sendMessage(msgId, msgParam).then(() => {
 
 
 
-#### recvMessage15+
+### recvMessage15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 recvMessage(msgHandler?: MessageHandler): void
 
@@ -2623,6 +3126,7 @@ recvMessage(msgHandler?: MessageHandler): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | msgHandler | MessageHandler | 否 | 该对象通过onMessage接收来自输入法应用所发送的自定义通信数据，并通过onTerminated接收终止此对象订阅的消息。 若不填写此参数，则取消全局已注册的MessageHandler对象，同时触发其onTerminated回调函数。 |
@@ -2631,6 +3135,7 @@ recvMessage(msgHandler?: MessageHandler): void
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2658,9 +3163,10 @@ inputMethodController.recvMessage();
 
 
 
-#### stopInput(deprecated)
+### stopInput(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopInput(callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -2673,6 +3179,7 @@ stopInput(callback: AsyncCallback&lt;boolean&gt;): void
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2699,9 +3206,10 @@ inputMethod.getController().stopInput((err: BusinessError, result: boolean) => {
 
 
 
-#### stopInput(deprecated)
+### stopInput(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopInput(): Promise&lt;boolean&gt;
 
@@ -2714,6 +3222,7 @@ stopInput(): Promise&lt;boolean&gt;
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2733,14 +3242,15 @@ inputMethod.getController().stopInput().then((result: boolean) => {
   }
 }).catch((err: BusinessError) => {
   console.error(`Failed to stopInput, code: ${err.code}, message: ${err.message}`);
-})
+});
 ```
 
 
 
-#### on('insertText')10+
+### on('insertText')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'insertText', callback: (text: string) => void): void
 
@@ -2749,6 +3259,7 @@ on(type: 'insertText', callback: (text: string) => void): void
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2760,6 +3271,7 @@ on(type: 'insertText', callback: (text: string) => void): void
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
@@ -2769,11 +3281,11 @@ on(type: 'insertText', callback: (text: string) => void): void
 **示例：**
 
 ```text
-function callback1(text: string): void {
+const callback1 = (text: string): void => {
   console.info(`Succeeded in getting callback1, data: ${text}`);
 }
 
-function callback2(text: string): void {
+const callback2 = (text: string): void => {
   console.info(`Succeeded in getting callback2, data: ${text}`);
 }
 
@@ -2789,9 +3301,10 @@ inputMethodController.off('insertText');
 
 
 
-#### off('insertText')10+
+### off('insertText')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'insertText', callback?: (text: string) => void): void
 
@@ -2800,6 +3313,7 @@ off(type: 'insertText', callback?: (text: string) => void): void
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2823,9 +3337,10 @@ inputMethodController.off('insertText');
 
 
 
-#### on('deleteLeft')10+
+### on('deleteLeft')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'deleteLeft', callback: (length: number) => void): void
 
@@ -2834,6 +3349,7 @@ on(type: 'deleteLeft', callback: (length: number) => void): void
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2844,6 +3360,7 @@ on(type: 'deleteLeft', callback: (length: number) => void): void
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2861,9 +3378,10 @@ inputMethod.getController().on('deleteLeft', (length: number) => {
 
 
 
-#### off('deleteLeft')10+
+### off('deleteLeft')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'deleteLeft', callback?: (length: number) => void): void
 
@@ -2872,6 +3390,7 @@ off(type: 'deleteLeft', callback?: (length: number) => void): void
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2895,9 +3414,10 @@ inputMethodController.off('deleteLeft');
 
 
 
-#### on('deleteRight')10+
+### on('deleteRight')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'deleteRight', callback: (length: number) => void): void
 
@@ -2906,6 +3426,7 @@ on(type: 'deleteRight', callback: (length: number) => void): void
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2916,6 +3437,7 @@ on(type: 'deleteRight', callback: (length: number) => void): void
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2933,9 +3455,10 @@ inputMethod.getController().on('deleteRight', (length: number) => {
 
 
 
-#### off('deleteRight')10+
+### off('deleteRight')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'deleteRight', callback?: (length: number) => void): void
 
@@ -2944,6 +3467,7 @@ off(type: 'deleteRight', callback?: (length: number) => void): void
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2966,9 +3490,10 @@ inputMethodController.off('deleteRight');
 
 
 
-#### on('sendKeyboardStatus')10+
+### on('sendKeyboardStatus')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'sendKeyboardStatus', callback: (keyboardStatus: KeyboardStatus) => void): void
 
@@ -2977,6 +3502,7 @@ on(type: 'sendKeyboardStatus', callback: (keyboardStatus: KeyboardStatus) => voi
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2987,6 +3513,7 @@ on(type: 'sendKeyboardStatus', callback: (keyboardStatus: KeyboardStatus) => voi
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3004,9 +3531,10 @@ inputMethod.getController().on('sendKeyboardStatus', (keyboardStatus: inputMetho
 
 
 
-#### off('sendKeyboardStatus')10+
+### off('sendKeyboardStatus')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'sendKeyboardStatus', callback?: (keyboardStatus: KeyboardStatus) => void): void
 
@@ -3015,6 +3543,7 @@ off(type: 'sendKeyboardStatus', callback?: (keyboardStatus: KeyboardStatus) => v
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3038,9 +3567,10 @@ inputMethodController.off('sendKeyboardStatus');
 
 
 
-#### on('sendFunctionKey')10+
+### on('sendFunctionKey')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'sendFunctionKey', callback: (functionKey: FunctionKey) => void): void
 
@@ -3049,6 +3579,7 @@ on(type: 'sendFunctionKey', callback: (functionKey: FunctionKey) => void): void
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3059,6 +3590,7 @@ on(type: 'sendFunctionKey', callback: (functionKey: FunctionKey) => void): void
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3076,9 +3608,10 @@ inputMethod.getController().on('sendFunctionKey', (functionKey: inputMethod.Func
 
 
 
-#### off('sendFunctionKey')10+
+### off('sendFunctionKey')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'sendFunctionKey', callback?: (functionKey: FunctionKey) => void): void
 
@@ -3087,6 +3620,7 @@ off(type: 'sendFunctionKey', callback?: (functionKey: FunctionKey) => void): voi
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3110,9 +3644,10 @@ inputMethodController.off('sendFunctionKey');
 
 
 
-#### on('moveCursor')10+
+### on('moveCursor')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'moveCursor', callback: (direction: Direction) => void): void
 
@@ -3121,6 +3656,7 @@ on(type: 'moveCursor', callback: (direction: Direction) => void): void
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3131,6 +3667,7 @@ on(type: 'moveCursor', callback: (direction: Direction) => void): void
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3148,9 +3685,10 @@ inputMethod.getController().on('moveCursor', (direction: inputMethod.Direction) 
 
 
 
-#### off('moveCursor')10+
+### off('moveCursor')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'moveCursor', callback?: (direction: Direction) => void): void
 
@@ -3159,6 +3697,7 @@ off(type: 'moveCursor', callback?: (direction: Direction) => void): void
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3182,9 +3721,10 @@ inputMethodController.off('moveCursor');
 
 
 
-#### on('handleExtendAction')10+
+### on('handleExtendAction')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'handleExtendAction', callback: (action: ExtendAction) => void): void
 
@@ -3193,6 +3733,7 @@ on(type: 'handleExtendAction', callback: (action: ExtendAction) => void): void
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3203,6 +3744,7 @@ on(type: 'handleExtendAction', callback: (action: ExtendAction) => void): void
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3220,9 +3762,10 @@ inputMethod.getController().on('handleExtendAction', (action: inputMethod.Extend
 
 
 
-#### off('handleExtendAction')10+
+### off('handleExtendAction')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'handleExtendAction', callback?: (action: ExtendAction) => void): void
 
@@ -3231,6 +3774,7 @@ off(type: 'handleExtendAction', callback?: (action: ExtendAction) => void): void
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3254,9 +3798,10 @@ inputMethodController.off('handleExtendAction');
 
 
 
-#### on('selectByRange')10+
+### on('selectByRange')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'selectByRange', callback: Callback&lt;Range&gt;): void
 
@@ -3265,6 +3810,7 @@ on(type: 'selectByRange', callback: Callback&lt;Range&gt;): void
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3275,6 +3821,7 @@ on(type: 'selectByRange', callback: Callback&lt;Range&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3291,9 +3838,10 @@ inputMethod.getController().on('selectByRange', (range: inputMethod.Range) => {
 
 
 
-#### off('selectByRange')10+
+### off('selectByRange')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'selectByRange', callback?: Callback&lt;Range&gt;): void
 
@@ -3302,6 +3850,7 @@ off(type: 'selectByRange', callback?: Callback&lt;Range&gt;): void
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3325,9 +3874,10 @@ inputMethodController.off('selectByRange');
 
 
 
-#### on('selectByMovement')10+
+### on('selectByMovement')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'selectByMovement', callback: Callback&lt;Movement&gt;): void
 
@@ -3336,6 +3886,7 @@ on(type: 'selectByMovement', callback: Callback&lt;Movement&gt;): void
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3346,6 +3897,7 @@ on(type: 'selectByMovement', callback: Callback&lt;Movement&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3362,9 +3914,10 @@ inputMethod.getController().on('selectByMovement', (movement: inputMethod.Moveme
 
 
 
-#### off('selectByMovement')10+
+### off('selectByMovement')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'selectByMovement', callback?: Callback&lt;Movement&gt;): void
 
@@ -3373,6 +3926,7 @@ off(type: 'selectByMovement', callback?: Callback&lt;Movement&gt;): void
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3396,9 +3950,10 @@ inputMethodController.off('selectByMovement');
 
 
 
-#### on('getLeftTextOfCursor')10+
+### on('getLeftTextOfCursor')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'getLeftTextOfCursor', callback: (length: number) => string): void
 
@@ -3407,6 +3962,7 @@ on(type: 'getLeftTextOfCursor', callback: (length: number) => string): void
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3417,6 +3973,7 @@ on(type: 'getLeftTextOfCursor', callback: (length: number) => string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3436,9 +3993,10 @@ inputMethod.getController().on('getLeftTextOfCursor', (length: number) => {
 
 
 
-#### off('getLeftTextOfCursor')10+
+### off('getLeftTextOfCursor')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'getLeftTextOfCursor', callback?: (length: number) => string): void
 
@@ -3447,6 +4005,7 @@ off(type: 'getLeftTextOfCursor', callback?: (length: number) => string): void
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3470,9 +4029,10 @@ inputMethodController.off('getLeftTextOfCursor');
 
 
 
-#### on('getRightTextOfCursor')10+
+### on('getRightTextOfCursor')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'getRightTextOfCursor', callback: (length: number) => string): void
 
@@ -3481,6 +4041,7 @@ on(type: 'getRightTextOfCursor', callback: (length: number) => string): void
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3491,6 +4052,7 @@ on(type: 'getRightTextOfCursor', callback: (length: number) => string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3510,9 +4072,10 @@ inputMethod.getController().on('getRightTextOfCursor', (length: number) => {
 
 
 
-#### off('getRightTextOfCursor')10+
+### off('getRightTextOfCursor')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'getRightTextOfCursor', callback?: (length: number) => string): void
 
@@ -3521,6 +4084,7 @@ off(type: 'getRightTextOfCursor', callback?: (length: number) => string): void
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3544,9 +4108,10 @@ inputMethodController.off('getRightTextOfCursor');
 
 
 
-#### on('getTextIndexAtCursor')10+
+### on('getTextIndexAtCursor')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'getTextIndexAtCursor', callback: () => number): void
 
@@ -3555,6 +4120,7 @@ on(type: 'getTextIndexAtCursor', callback: () => number): void
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3565,6 +4131,7 @@ on(type: 'getTextIndexAtCursor', callback: () => number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3584,9 +4151,10 @@ inputMethod.getController().on('getTextIndexAtCursor', () => {
 
 
 
-#### off('getTextIndexAtCursor')10+
+### off('getTextIndexAtCursor')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'getTextIndexAtCursor', callback?: () => number): void
 
@@ -3595,6 +4163,7 @@ off(type: 'getTextIndexAtCursor', callback?: () => number): void
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3618,9 +4187,10 @@ inputMethodController.off('getTextIndexAtCursor');
 
 
 
-#### on('setPreviewText')17+
+### on('setPreviewText')17+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'setPreviewText', callback: SetPreviewTextCallback): void
 
@@ -3634,6 +4204,7 @@ on(type: 'setPreviewText', callback: SetPreviewTextCallback): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 设置监听类型，固定取值为'setPreviewText'。 |
@@ -3643,6 +4214,7 @@ on(type: 'setPreviewText', callback: SetPreviewTextCallback): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3675,9 +4247,10 @@ console.info(`All callbacks unsubscribed from setPreviewText`);
 
 
 
-#### off('setPreviewText')17+
+### off('setPreviewText')17+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'setPreviewText', callback?: SetPreviewTextCallback): void
 
@@ -3686,6 +4259,7 @@ off(type: 'setPreviewText', callback?: SetPreviewTextCallback): void
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3719,9 +4293,10 @@ console.info(`All callbacks unsubscribed from setPreviewText`);
 
 
 
-#### on('finishTextPreview')17+
+### on('finishTextPreview')17+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'finishTextPreview', callback: Callback&lt;void&gt;): void
 
@@ -3735,6 +4310,7 @@ on(type: 'finishTextPreview', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 设置监听类型，固定取值为'finishTextPreview'。 |
@@ -3744,6 +4320,7 @@ on(type: 'finishTextPreview', callback: Callback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3777,9 +4354,10 @@ console.info(`All callbacks unsubscribed from finishTextPreview`);
 
 
 
-#### off('finishTextPreview')17+
+### off('finishTextPreview')17+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'finishTextPreview', callback?: Callback&lt;void&gt;): void
 
@@ -3788,6 +4366,7 @@ off(type: 'finishTextPreview', callback?: Callback&lt;void&gt;): void
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3822,17 +4401,29 @@ console.info(`All callbacks unsubscribed from finishTextPreview`);
 
 
 
-#### InputMethodSetting8+
+## InputMethodSetting8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+InputMethodSetting提供输入法配置与查询能力，面向前台应用提供以下功能：
+
+ - 输入法变化订阅：通过[on('imeChange')](#onimechange9)订阅输入法及子类型变化事件，当用户切换输入法时收到通知。
+ - 输入法列表查询：通过[getInputMethods](#getinputmethods9)查询已激活/未激活输入法列表，通过[getAllInputMethods](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inputmethod#getallinputmethods11)查询所有已安装输入法列表，通过[listInputMethodSubtype](#listinputmethodsubtype9)查询指定输入法的子类型列表。
+ - 面板可见性查询：通过isPanelShown查询输入法面板是否显示。
+ - 输入法选择对话框：通过showOptionalInputMethods显示输入法选择对话框（已废弃，建议使用InputMethodListDialog）。
+
+
+需通过[getSetting](#inputmethodgetsetting9)获取InputMethodSetting实例后使用。
 
 下列API均需使用[getSetting](#inputmethodgetsetting9)获取到InputMethodSetting实例后，通过实例调用。
 
 
 
-#### on('imeChange')9+
+### on('imeChange')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'imeChange', callback: (inputMethodProperty: InputMethodProperty, inputMethodSubtype: InputMethodSubtype) => void): void
 
@@ -3841,6 +4432,7 @@ on(type: 'imeChange', callback: (inputMethodProperty: InputMethodProperty, input
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3862,9 +4454,10 @@ inputMethod.getSetting()
 
 
 
-#### off('imeChange')9+
+### off('imeChange')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'imeChange', callback?: (inputMethodProperty: InputMethodProperty, inputMethodSubtype: InputMethodSubtype) => void): void
 
@@ -3873,6 +4466,7 @@ off(type: 'imeChange', callback?: (inputMethodProperty: InputMethodProperty, inp
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3888,9 +4482,10 @@ inputMethod.getSetting().off('imeChange');
 
 
 
-#### listInputMethodSubtype9+
+### listInputMethodSubtype9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 listInputMethodSubtype(inputMethodProperty: InputMethodProperty, callback: AsyncCallback<Array&lt;InputMethodSubtype&gt;>): void
 
@@ -3899,6 +4494,7 @@ listInputMethodSubtype(inputMethodProperty: InputMethodProperty, callback: Async
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3909,6 +4505,7 @@ listInputMethodSubtype(inputMethodProperty: InputMethodProperty, callback: Async
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3927,7 +4524,7 @@ let inputMethodProperty: inputMethod.InputMethodProperty = {
   name: 'com.example.keyboard',
   id: 'propertyId',
   packageName: 'com.example.keyboard',
-  methodId: 'propertyId',
+  methodId: 'propertyId'
 }
 let inputMethodSetting: inputMethod.InputMethodSetting = inputMethod.getSetting();
 
@@ -3943,9 +4540,10 @@ inputMethodSetting.listInputMethodSubtype(inputMethodProperty,
 
 
 
-#### listInputMethodSubtype9+
+### listInputMethodSubtype9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 listInputMethodSubtype(inputMethodProperty: InputMethodProperty): Promise<Array&lt;InputMethodSubtype&gt;>
 
@@ -3955,12 +4553,14 @@ listInputMethodSubtype(inputMethodProperty: InputMethodProperty): Promise<Array&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | inputMethodProperty | InputMethodProperty | 是 | 输入法应用。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3970,6 +4570,7 @@ listInputMethodSubtype(inputMethodProperty: InputMethodProperty): Promise<Array&
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3988,7 +4589,7 @@ let inputMethodProperty: inputMethod.InputMethodProperty = {
   name: 'com.example.keyboard',
   id: 'propertyId',
   packageName: 'com.example.keyboard',
-  methodId: 'propertyId',
+  methodId: 'propertyId'
 }
 let inputMethodSetting: inputMethod.InputMethodSetting = inputMethod.getSetting();
 
@@ -4001,9 +4602,10 @@ inputMethodSetting.listInputMethodSubtype(inputMethodProperty).then((data: Array
 
 
 
-#### listCurrentInputMethodSubtype9+
+### listCurrentInputMethodSubtype9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 listCurrentInputMethodSubtype(callback: AsyncCallback<Array&lt;InputMethodSubtype&gt;>): void
 
@@ -4013,6 +4615,7 @@ listCurrentInputMethodSubtype(callback: AsyncCallback<Array&lt;InputMethodSubtyp
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<Array&lt;InputMethodSubtype&gt;> | 是 | 回调函数，返回当前输入法应用的所有子类型。 |
@@ -4021,6 +4624,7 @@ listCurrentInputMethodSubtype(callback: AsyncCallback<Array&lt;InputMethodSubtyp
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4046,9 +4650,10 @@ inputMethodSetting.listCurrentInputMethodSubtype((err: BusinessError, data: Arra
 
 
 
-#### listCurrentInputMethodSubtype9+
+### listCurrentInputMethodSubtype9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 listCurrentInputMethodSubtype(): Promise<Array&lt;InputMethodSubtype&gt;>
 
@@ -4058,6 +4663,7 @@ listCurrentInputMethodSubtype(): Promise<Array&lt;InputMethodSubtype&gt;>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;InputMethodSubtype&gt;> | Promise对象，返回当前输入法应用的所有子类型。 |
@@ -4066,6 +4672,7 @@ listCurrentInputMethodSubtype(): Promise<Array&lt;InputMethodSubtype&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4090,9 +4697,10 @@ inputMethodSetting.listCurrentInputMethodSubtype().then((data: Array<InputMethod
 
 
 
-#### getInputMethods9+
+### getInputMethods9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getInputMethods(enable: boolean, callback: AsyncCallback<Array&lt;InputMethodProperty&gt;>): void
 
@@ -4106,6 +4714,7 @@ getInputMethods(enable: boolean, callback: AsyncCallback<Array&lt;InputMethodPro
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | boolean | 是 | true表示返回已激活输入法列表，false表示返回未激活输入法列表。 |
@@ -4115,6 +4724,7 @@ getInputMethods(enable: boolean, callback: AsyncCallback<Array&lt;InputMethodPro
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4139,9 +4749,10 @@ inputMethod.getSetting().getInputMethods(true, (err: BusinessError, data: Array<
 
 
 
-#### getInputMethods9+
+### getInputMethods9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getInputMethods(enable: boolean): Promise<Array&lt;InputMethodProperty&gt;>
 
@@ -4155,12 +4766,14 @@ getInputMethods(enable: boolean): Promise<Array&lt;InputMethodProperty&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | boolean | 是 | - true表示返回已激活输入法列表，false表示返回未激活输入法列表。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4170,6 +4783,7 @@ getInputMethods(enable: boolean): Promise<Array&lt;InputMethodProperty&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4192,21 +4806,23 @@ inputMethod.getSetting().getInputMethods(true).then((data: Array<inputMethod.Inp
 
 
 
-#### getInputMethodsSync11+
+### getInputMethodsSync11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getInputMethodsSync(enable: boolean): Array&lt;InputMethodProperty&gt;
 
 获取已激活/未激活的输入法应用列表。同步接口。
 
 > [!NOTE]
-> 已激活输入法为使能的输入法应用。默认输入法默认使能，其他输入法可被设置为使能或非使能。 已激活输入法列表包括默认输入法和已被设置为使能的输入法应用，未激活输入法列表包括除使能输入法以外的其他已安装的输入法。
+> 同步接口阻塞主线程，容易影响UI交互，需谨慎使用。 已激活输入法为使能的输入法应用。默认输入法默认使能，其他输入法可被设置为使能或非使能。 已激活输入法列表包括默认输入法和已被设置为使能的输入法应用，未激活输入法列表包括除使能输入法以外的其他已安装的输入法。
 
 
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4214,6 +4830,7 @@ getInputMethodsSync(enable: boolean): Array&lt;InputMethodProperty&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4223,6 +4840,7 @@ getInputMethodsSync(enable: boolean): Array&lt;InputMethodProperty&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4239,9 +4857,10 @@ let imeProperty: Array<inputMethod.InputMethodProperty> = inputMethod.getSetting
 
 
 
-#### getAllInputMethods11+
+### getAllInputMethods11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllInputMethods(callback: AsyncCallback<Array&lt;InputMethodProperty&gt;>): void
 
@@ -4251,6 +4870,7 @@ getAllInputMethods(callback: AsyncCallback<Array&lt;InputMethodProperty&gt;>): v
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<Array&lt;InputMethodProperty&gt;> | 是 | 回调函数，返回所有输入法列表。 |
@@ -4259,6 +4879,7 @@ getAllInputMethods(callback: AsyncCallback<Array&lt;InputMethodProperty&gt;>): v
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4282,9 +4903,10 @@ inputMethod.getSetting().getAllInputMethods((err: BusinessError, data: Array<inp
 
 
 
-#### getAllInputMethods11+
+### getAllInputMethods11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllInputMethods(): Promise<Array&lt;InputMethodProperty&gt;>
 
@@ -4294,6 +4916,7 @@ getAllInputMethods(): Promise<Array&lt;InputMethodProperty&gt;>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;InputMethodProperty&gt;> | Promise对象，返回所有输入法列表。 |
@@ -4302,6 +4925,7 @@ getAllInputMethods(): Promise<Array&lt;InputMethodProperty&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)，[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4323,17 +4947,23 @@ inputMethod.getSetting().getAllInputMethods().then((data: Array<inputMethod.Inpu
 
 
 
-#### getAllInputMethodsSync11+
+### getAllInputMethodsSync11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllInputMethodsSync(): Array&lt;InputMethodProperty&gt;
 
 获取所有输入法应用列表。同步接口。
 
+> [!NOTE]
+> 同步接口阻塞主线程，容易影响UI交互，需谨慎使用。
+
+
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4343,6 +4973,7 @@ getAllInputMethodsSync(): Array&lt;InputMethodProperty&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4358,9 +4989,10 @@ let imeProperty: Array<inputMethod.InputMethodProperty> = inputMethod.getSetting
 
 
 
-#### showOptionalInputMethods(deprecated)
+### showOptionalInputMethods(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showOptionalInputMethods(callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -4374,6 +5006,7 @@ showOptionalInputMethods(callback: AsyncCallback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;boolean&gt; | 是 | 回调函数。当输入法选择对话框显示成功，err为undefined，data为true；否则为错误对象。 |
@@ -4382,6 +5015,7 @@ showOptionalInputMethods(callback: AsyncCallback&lt;boolean&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4408,9 +5042,10 @@ inputMethod.getSetting().showOptionalInputMethods((err: BusinessError, result: b
 
 
 
-#### showOptionalInputMethods(deprecated)
+### showOptionalInputMethods(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showOptionalInputMethods(): Promise&lt;boolean&gt;
 
@@ -4424,14 +5059,16 @@ showOptionalInputMethods(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;boolean&gt; | Promise对象。当输入法选择对话框显示成功，err为undefined，data为true；否则为错误对象。 |
+| Promise&lt;boolean&gt; | Promise对象。返回true表示输入法选择对话框显示成功，返回false表示显示失败。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4456,9 +5093,10 @@ inputMethod.getSetting().showOptionalInputMethods().then((result: boolean) => {
 
 
 
-#### listInputMethod(deprecated)
+### listInputMethod(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 listInputMethod(callback: AsyncCallback<Array&lt;InputMethodProperty&gt;>): void
 
@@ -4471,6 +5109,7 @@ listInputMethod(callback: AsyncCallback<Array&lt;InputMethodProperty&gt;>): void
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4493,9 +5132,10 @@ inputMethod.getSetting().listInputMethod((err: BusinessError, data: Array<inputM
 
 
 
-#### listInputMethod(deprecated)
+### listInputMethod(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 listInputMethod(): Promise<Array&lt;InputMethodProperty&gt;>
 
@@ -4508,6 +5148,7 @@ listInputMethod(): Promise<Array&lt;InputMethodProperty&gt;>
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4528,9 +5169,10 @@ inputMethod.getSetting().listInputMethod().then((data: Array<inputMethod.InputMe
 
 
 
-#### displayOptionalInputMethod(deprecated)
+### displayOptionalInputMethod(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 displayOptionalInputMethod(callback: AsyncCallback&lt;void&gt;): void
 
@@ -4543,6 +5185,7 @@ displayOptionalInputMethod(callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.MiscServices.InputMethodFramework
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4565,9 +5208,10 @@ inputMethod.getSetting().displayOptionalInputMethod((err: BusinessError) => {
 
 
 
-#### displayOptionalInputMethod(deprecated)
+### displayOptionalInputMethod(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 displayOptionalInputMethod(): Promise&lt;void&gt;
 
@@ -4581,9 +5225,10 @@ displayOptionalInputMethod(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | 无返回结果的Promise对象。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **示例：**
@@ -4600,9 +5245,10 @@ inputMethod.getSetting().displayOptionalInputMethod().then(() => {
 
 
 
-#### getInputMethodState15+
+### getInputMethodState15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getInputMethodState(): Promise&lt;EnabledState&gt;
 
@@ -4612,6 +5258,7 @@ getInputMethodState(): Promise&lt;EnabledState&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;EnabledState&gt; | Promise对象，返回EnabledState.DISABLED表示未启用; 返回EnabledState.BASIC_MODE表示基础模式; 返回EnabledState.FULL_EXPERIENCE_MODE表示完整体验模式。 |
@@ -4620,6 +5267,7 @@ getInputMethodState(): Promise&lt;EnabledState&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[输入法框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputmethod-framework)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4636,5 +5284,5 @@ inputMethod.getSetting().getInputMethodState().then((status: inputMethod.Enabled
   console.info(`Succeeded in getInputMethodState, status: ${status}`);
 }).catch((err: BusinessError) => {
   console.error(`Failed to getInputMethodState, code: ${err.code}, message: ${err.message}`);
-})
+});
 ```

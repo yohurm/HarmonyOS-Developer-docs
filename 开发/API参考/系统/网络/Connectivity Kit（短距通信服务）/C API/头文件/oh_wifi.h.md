@@ -1,15 +1,16 @@
 # oh_wifi.h
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-wifi-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-定义查询WIFI开关状态的接口。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+定义查询WIFI开关状态、获取设备MAC地址和获取WIFI连接信息的接口。
  
 **引用文件：** <ConnectivityKit/wifi/oh_wifi.h>
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 宏定义
+### 宏定义
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | WIFI_MAX_SSID_LEN 33 | OH_WifiLinkedInfo 成员变量ssid数组的长度（32 + \0）。 起始版本： 24 |
@@ -41,10 +45,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | Wifi_ResultCode | Wifi_ResultCode | 定义WIFI接口返回值的错误码。 |
@@ -57,10 +63,12 @@
  
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_WifiLinkedInfo | 提供WLAN连接的相关信息。可以获取当前设备已连接的WIFI热点的信息。 |
@@ -68,10 +76,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | Wifi_ResultCode OH_Wifi_IsWifiEnabled(bool *enabled) | 查询WIFI开关是否开启。 |
@@ -81,15 +91,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### Wifi_ResultCode
+### Wifi_ResultCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Wifi_ResultCode
@@ -101,6 +113,7 @@ enum Wifi_ResultCode
  
 **起始版本：** 13
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | WIFI_SUCCESS = 0 | 操作成功。 |
@@ -113,9 +126,10 @@ enum Wifi_ResultCode
  
   
 
-#### OH_WifiConnState
+### OH_WifiConnState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_WifiConnState
@@ -127,6 +141,7 @@ WLAN连接状态。
  
 **起始版本：** 24
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_WIFI_CONN_SCANNING = 0 | 设备正在搜索可用的热点。 |
@@ -142,9 +157,10 @@ WLAN连接状态。
  
   
 
-#### OH_WifiChannelWidth
+### OH_WifiChannelWidth
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_WifiChannelWidth
@@ -156,6 +172,7 @@ WLAN信道带宽。
  
 **起始版本：** 24
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_WIFI_WIDTH_20MHZ = 0 | 20MHz信道带宽。 |
@@ -168,9 +185,10 @@ WLAN信道带宽。
  
   
 
-#### OH_WifiStandard
+### OH_WifiStandard
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_WifiStandard
@@ -182,6 +200,7 @@ WIFI标准枚举。
  
 **起始版本：** 24
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_WIFI_STANDARD_UNDEFINED = 0 | 无效的WIFI标准。 |
@@ -196,9 +215,10 @@ WIFI标准枚举。
  
   
 
-#### OH_WifiCategory
+### OH_WifiCategory
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_WifiCategory
@@ -210,6 +230,7 @@ WIFI类别枚举。
  
 **起始版本：** 24
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_WIFI_CATEGORY_DEFAULT = 1 | 默认类别。 |
@@ -221,9 +242,10 @@ WIFI类别枚举。
  
   
 
-#### OH_WifiLinkType
+### OH_WifiLinkType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_WifiLinkType
@@ -235,6 +257,7 @@ WIFI7连接类型。
  
 **起始版本：** 24
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_WIFI_LINK_DISCONNECT = -1 | 未连接。 |
@@ -248,18 +271,20 @@ WIFI7连接类型。
  
   
 
-#### 结构体说明
+## 结构体说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_WifiLinkedInfo
+### OH_WifiLinkedInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-Struct OH_WifiLinkedInfo
+struct OH_WifiLinkedInfo
 ```
  
 **描述**
@@ -268,12 +293,13 @@ Struct OH_WifiLinkedInfo
  
 **起始版本：** 24
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| ssid | char[] | 否 | 否 | 热点的SSID（Service Set Identifier，服务集标识符），用于获取当前设备已连接的WIFI热点的公开名称（即无线网络的名称），编码格式为UTF-8。 长度 WIFI_MAX_SSID_LEN = 18。 |
-| bssid | char[] | 否 | 否 | 热点的BSSID（Basic Service Set Identifier，基本服务集标识符）即无线网络的MAC地址。如果应用已请求 ohos.permission.GET_WIFI_PEERS_MAC 权限，则返回的bssid为真实BSSID地址；否则为随机设备地址。 格式："AA:BB:CC:DD:EE:FF" 最大长度 WIFI_MAC_LEN = 33。 |
+| ssid | char[] | 否 | 否 | 热点的SSID（Service Set Identifier，服务集标识符），用于获取当前设备已连接的WIFI热点的公开名称（即无线网络的名称），编码格式为UTF-8。 长度 WIFI_MAX_SSID_LEN = 33。 |
+| bssid | char[] | 否 | 否 | 热点的BSSID（Basic Service Set Identifier，基本服务集标识符）即无线网络的MAC地址。如果应用已请求 ohos.permission.GET_WIFI_PEERS_MAC 权限，则返回的bssid为真实BSSID地址；否则为随机设备地址。 格式："AA:BB:CC:DD:EE:FF" 最大长度 WIFI_MAC_LEN = 18。 |
 | rssi | int32_t | 否 | 否 | 热点的信号强度(dBm)。RSSI（Received Signal Strength Indicator，接收信号强度指示）。 |
-| band | int32_t | 否 | 否 | WLAN接入点的频段，1表示2.4GHZ；2表示5GHZ。 |
+| band | int32_t | 否 | 否 | WLAN接入点的频段，1表示2.4GHz；2表示5GHz。 |
 | linkSpeed | int32_t | 否 | 否 | WLAN接入点的上行速度单位Mbps。 |
 | rxLinkSpeed | int32_t | 否 | 否 | WLAN接入点的下行速度单位Mbps。 |
 | maxSupportedTxLinkSpeed | int32_t | 否 | 否 | 当前支持的最大上行速率单位Mbps。 |
@@ -294,15 +320,17 @@ Struct OH_WifiLinkedInfo
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Wifi_IsWifiEnabled()
+### OH_Wifi_IsWifiEnabled()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Wifi_ResultCode OH_Wifi_IsWifiEnabled(bool *enabled)
@@ -316,6 +344,7 @@ Wifi_ResultCode OH_Wifi_IsWifiEnabled(bool *enabled)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | bool *enabled | - bool类型的指针，用于接收WIFI开关状态值。 等于true表示WIFI开关开启，false表示WIFI开关关闭。 需要传入非空指针，否则会返回错误。 |
@@ -323,16 +352,18 @@ Wifi_ResultCode OH_Wifi_IsWifiEnabled(bool *enabled)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| Wifi_ResultCode | 返回操作结果，详细定义参见Wifi_ResultCode. WIFI_SUCCESS 查询WIFI开关状态成功。 WIFI_INVALID_PARAM 入参为空指针。 WIFI_OPERATION_FAILED 服务内部执行错误。 |
+| Wifi_ResultCode | 返回操作结果，详细定义参见Wifi_ResultCode。 WIFI_SUCCESS查询WIFI开关状态成功。 WIFI_INVALID_PARAM入参为空指针。 WIFI_OPERATION_FAILED 服务内部执行错误。 |
  
  
   
 
-#### OH_Wifi_GetDeviceMacAddress()
+### OH_Wifi_GetDeviceMacAddress()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Wifi_ResultCode OH_Wifi_GetDeviceMacAddress(char *macAddr, unsigned int *macAddrLen)
@@ -348,6 +379,7 @@ Wifi_ResultCode OH_Wifi_GetDeviceMacAddress(char *macAddr, unsigned int *macAddr
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | char *macAddr | 设备MAC地址的字符数组，以'\0'结尾。 |
@@ -356,6 +388,7 @@ Wifi_ResultCode OH_Wifi_GetDeviceMacAddress(char *macAddr, unsigned int *macAddr
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Wifi_ResultCode | 返回操作结果，详细定义参见Wifi_ResultCode。 WIFI_SUCCESS 成功获取设备MAC地址。 WIFI_PERMISSION_DENIED 权限拒绝。 WIFI_NOT_SUPPORTED 不支持该能力。 WIFI_INVALID_PARAM 输入参数macAddr是空指针。 WIFI_OPERATION_FAILED 内部执行失败。 WIFI_STA_DISABLED WIFI STA模式未启用。 |
@@ -363,9 +396,10 @@ Wifi_ResultCode OH_Wifi_GetDeviceMacAddress(char *macAddr, unsigned int *macAddr
  
   
 
-#### OH_Wifi_GetLinkedInfo()
+### OH_Wifi_GetLinkedInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Wifi_ResultCode OH_Wifi_GetLinkedInfo(OH_WifiLinkedInfo *info)
@@ -385,6 +419,7 @@ Wifi_ResultCode OH_Wifi_GetLinkedInfo(OH_WifiLinkedInfo *info)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_WifiLinkedInfo *info | OH_WifiLinkedInfo类型的结构体。 |
@@ -392,6 +427,7 @@ Wifi_ResultCode OH_Wifi_GetLinkedInfo(OH_WifiLinkedInfo *info)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Wifi_ResultCode | 返回操作结果，详细定义参见Wifi_ResultCode。 WIFI_SUCCESS 成功获取WIFI连接信息。 WIFI_PERMISSION_DENIED 权限拒绝。 WIFI_NOT_SUPPORTED 不支持获取连接信息。 WIFI_INVALID_PARAM 输入参数info是空指针。 WIFI_OPERATION_FAILED 内部执行失败。 WIFI_STA_DISABLED WIFI STA模式未启用。 |

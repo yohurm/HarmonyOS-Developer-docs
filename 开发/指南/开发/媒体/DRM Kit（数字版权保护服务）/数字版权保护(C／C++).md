@@ -1,10 +1,10 @@
 # 数字版权保护(C/C++)
 
-更新时间：2026-04-10 09:55:20
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/drm-c-dev-guide
 
-#### 功能介绍
+## 功能介绍
 
 开发者可以调用DRM Kit的C/C++接口实现DRM证书管理、DRM许可证管理、DRM节目授权、DRM节目解密等数字版权保护功能。
 
@@ -12,7 +12,7 @@ DRM Kit提供MediaKeySystem实现DRM证书管理、DRM许可证管理功能，�
 
 
 
-#### 开发步骤
+## 开发步骤
 
 详细的API说明请参考[Drm](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drm)。
 1. 导入DRM Kit接口。
@@ -36,6 +36,7 @@ target_link_libraries(PUBLIC libnative_drm.so)
 
   
 ```text
+#include <cstring>
 uint32_t count = 3; // count是当前设备实际支持的DRM插件的个数，用户根据实际情况设置。
 DRM_MediaKeySystemDescription descriptions[3];
 memset(descriptions, 0, sizeof(descriptions));

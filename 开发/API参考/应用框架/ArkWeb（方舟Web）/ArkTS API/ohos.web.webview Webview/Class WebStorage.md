@@ -1,16 +1,17 @@
 # Class (WebStorage)
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webstorage
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过WebStorage可管理Web SQL数据库接口和HTML5 Web存储接口，每个应用中的所有Web组件共享一个WebStorage。
 
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 WebStorage提供对Web存储数据的管理能力，包括Web SQL数据库和HTML5 Web存储API，主要解决以下问题：
 
@@ -21,7 +22,10 @@ WebStorage提供对Web存储数据的管理能力，包括Web SQL数据库和HTM
 
 
 
-#### 基本概念
+### 基本概念
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
  - **源（Origin）**：Web存储的数据隔离单位，相同源下的页面可以共享存储数据。
  - **配额（Quota）**：每个源允许使用的最大存储空间，以字节为单位。
@@ -30,7 +34,10 @@ WebStorage提供对Web存储数据的管理能力，包括Web SQL数据库和HTM
 
 
 
-#### 关键设计
+### 关键设计
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 WebStorage采用统一管理的设计模式：
 1. 每个应用中的所有Web组件共享一个WebStorage实例。
@@ -40,7 +47,10 @@ WebStorage采用统一管理的设计模式：
 
 
 
-#### 使用示例
+### 使用示例
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { webview } from '@kit.ArkWeb';
@@ -64,9 +74,10 @@ webview.WebStorage.deleteOrigin('https://example.com');
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { webview } from '@kit.ArkWeb';
@@ -74,9 +85,10 @@ import { webview } from '@kit.ArkWeb';
 
 
 
-#### deleteOrigin
+## deleteOrigin
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static deleteOrigin(origin: string): void
 
@@ -92,6 +104,7 @@ static deleteOrigin(origin: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | origin | string | 是 | 指定源的字符串索引，来自于getOrigins。 |
@@ -100,6 +113,7 @@ static deleteOrigin(origin: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -230,9 +244,10 @@ struct WebComponent {
 
 
 
-#### getOrigins
+## getOrigins
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getOrigins(callback: AsyncCallback<Array&lt;WebStorageOrigin&gt;>): void
 
@@ -242,6 +257,7 @@ static getOrigins(callback: AsyncCallback<Array&lt;WebStorageOrigin&gt;>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<Array&lt;WebStorageOrigin&gt;> | 是 | 以数组方式返回源的信息。 |
@@ -250,6 +266,7 @@ static getOrigins(callback: AsyncCallback<Array&lt;WebStorageOrigin&gt;>): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -300,9 +317,10 @@ struct WebComponent {
 
 
 
-#### getOrigins
+## getOrigins
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getOrigins(): Promise<Array&lt;WebStorageOrigin&gt;>
 
@@ -312,6 +330,7 @@ static getOrigins(): Promise<Array&lt;WebStorageOrigin&gt;>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;WebStorageOrigin&gt;> | Promise实例，用于获取当前所有源的信息。 |
@@ -320,6 +339,7 @@ static getOrigins(): Promise<Array&lt;WebStorageOrigin&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -370,9 +390,10 @@ struct WebComponent {
 
 
 
-#### getOriginQuota
+## getOriginQuota
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getOriginQuota(origin: string, callback: AsyncCallback&lt;number&gt;): void
 
@@ -388,6 +409,7 @@ static getOriginQuota(origin: string, callback: AsyncCallback&lt;number&gt;): vo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | origin | string | 是 | 指定源的字符串索引。 |
@@ -397,6 +419,7 @@ static getOriginQuota(origin: string, callback: AsyncCallback&lt;number&gt;): vo
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -444,9 +467,10 @@ struct WebComponent {
 
 
 
-#### getOriginQuota
+## getOriginQuota
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getOriginQuota(origin: string): Promise&lt;number&gt;
 
@@ -462,12 +486,14 @@ static getOriginQuota(origin: string): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | origin | string | 是 | 指定源的字符串索引 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -477,6 +503,7 @@ static getOriginQuota(origin: string): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -524,9 +551,10 @@ struct WebComponent {
 
 
 
-#### getOriginUsage
+## getOriginUsage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getOriginUsage(origin: string, callback: AsyncCallback&lt;number&gt;): void
 
@@ -542,6 +570,7 @@ static getOriginUsage(origin: string, callback: AsyncCallback&lt;number&gt;): vo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | origin | string | 是 | 指定源的字符串索引 |
@@ -551,6 +580,7 @@ static getOriginUsage(origin: string, callback: AsyncCallback&lt;number&gt;): vo
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -598,9 +628,10 @@ struct WebComponent {
 
 
 
-#### getOriginUsage
+## getOriginUsage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getOriginUsage(origin: string): Promise&lt;number&gt;
 
@@ -616,12 +647,14 @@ static getOriginUsage(origin: string): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | origin | string | 是 | 指定源的字符串索引 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -631,6 +664,7 @@ static getOriginUsage(origin: string): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -676,9 +710,10 @@ struct WebComponent {
 
 
 
-#### deleteAllData
+## deleteAllData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static deleteAllData(incognito?: boolean): void
 
@@ -687,6 +722,7 @@ static deleteAllData(incognito?: boolean): void
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |

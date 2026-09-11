@@ -1,9 +1,9 @@
 # @ohos.app.ability.Ability (Ability基类)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-ability
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Ability类是应用生命周期调度的基本单元，是[UIAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability)和[ExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-extensionability)的基类，提供系统配置更新回调和系统内存级别变化回调能力。该基类不支持开发者直接继承，开发者应根据具体的业务场景选择使用[UIAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability)或[ExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-extensionability)，相关指南参见[Ability Kit简介](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/abilitykit-overview)。
 
@@ -12,9 +12,10 @@ Ability类是应用生命周期调度的基本单元，是[UIAbility](https://de
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { Ability } from '@kit.AbilityKit';
@@ -22,9 +23,10 @@ import { Ability } from '@kit.AbilityKit';
 
 
 
-#### Ability的继承关系说明
+## Ability的继承关系说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Ability基类及其子类的继承关系如下图所示。
 
@@ -33,21 +35,22 @@ Ability基类及其子类的继承关系如下图所示。
 
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/X7UG3r4vT8yfMjUQd2UwOA/zh-cn_image_0000002659221425.png?HW-CC-KV=V1&HW-CC-Date=20260701T014229Z&HW-CC-Expire=86400&HW-CC-Sign=41FDCBD994E9BA96E14C42F3DC9119233BA82283CDE866ADC187D718B8499829)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/3MTYt68CQtmhlvWUiLK5PQ/zh-cn_image_0000002747212225.png?HW-CC-KV=V1&HW-CC-Date=20260911T072827Z&HW-CC-Expire=86400&HW-CC-Sign=7884D17A4748EA5F7D8B991FE9A3AA554338AAAE9A6ABB1BA52E47478D6836F4)
 
 
 
 
-#### Ability.onConfigurationUpdate
+## Ability.onConfigurationUpdate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onConfigurationUpdate(newConfig: Configuration): void
 
 当系统环境变量发生变化时，系统会触发该回调。开发者可以重写该回调实现对系统环境变量变化时的响应，例如当系统语言类型发生变化时，应用可以在回调中进行定制化的处理等。
 
 > [!NOTE]
-> 该回调方法在实际触发时存在一定限制。例如如果开发者通过 setLanguage 接口设置应用的语言，即便系统语言发生变化，系统也不再触发onConfigurationUpdate回调。详见 使用场景 。
+> 该回调方法在实际触发时存在一定限制。例如如果开发者通过 setLanguage 接口设置应用的语言，即便系统语言发生变化，系统也不再触发onConfigurationUpdate回调。详见 使用场景 。 如果需要在页面中监控Ability的环境变量，可以使用 ApplicationContext.on('environment') 方法。
 
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
@@ -55,6 +58,7 @@ onConfigurationUpdate(newConfig: Configuration): void
 **系统能力**：SystemCapability.Ability.AbilityRuntime.AbilityCore
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -76,16 +80,17 @@ class MyUIAbility extends UIAbility {
 
 
 
-#### Ability.onMemoryLevel
+## Ability.onMemoryLevel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onMemoryLevel(level: AbilityConstant.MemoryLevel): void
 
 当整机可用内存变化到指定程度时，系统会触发该回调。开发者可以重写该回调实现对内存级别变化的响应，例如释放缓存数据等。
 
 > [!NOTE]
-> onMemoryLevel回调运行在当前进程的主线程中，如果在该回调中做耗时的UI组件释放，会阻塞主线程任务，因此不建议在该回调中释放UI组件。
+> onMemoryLevel回调运行在当前进程的主线程中，如果在该回调中做耗时的UI组件释放，会阻塞主线程任务，因此不建议在该回调中释放UI组件。 如果需要在页面中监控Ability的环境变量，可以使用 ApplicationContext.on('environment') 方法。
 
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
@@ -93,6 +98,7 @@ onMemoryLevel(level: AbilityConstant.MemoryLevel): void
 **系统能力**：SystemCapability.Ability.AbilityRuntime.AbilityCore
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |

@@ -1,6 +1,6 @@
 # ArkTS API错误码
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-corespeech
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -10,7 +10,8 @@
 
 
 
-#### 1002200001 创建引擎失败
+## 1002200001 创建引擎失败
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -36,7 +37,8 @@ Create engine failed.
 
 
 
-#### 1002200002 开始识别失败
+## 1002200002 开始识别失败
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -58,7 +60,8 @@ Start listening failed.
 
 
 
-#### 1002200003 超过最大音频
+## 1002200003 超过最大音频
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -80,7 +83,8 @@ Exceeded the maximum audio length supported.
 
 
 
-#### 1002200004 结束识别失败
+## 1002200004 结束识别失败
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -102,7 +106,8 @@ Finish recognition failed.
 
 
 
-#### 1002200005 取消识别失败
+## 1002200005 取消识别失败
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -124,7 +129,8 @@ Cancel recognition failed.
 
 
 
-#### 1002200006 服务忙碌
+## 1002200006 服务忙碌
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -146,7 +152,8 @@ The engine of SpeechRecognition is busy.
 
 
 
-#### 1002200007 引擎未初始化
+## 1002200007 引擎未初始化
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -168,7 +175,8 @@ The engine is not initialized.
 
 
 
-#### 1002200008 引擎已被销毁
+## 1002200008 引擎已被销毁
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -190,7 +198,8 @@ The engine of SpeechRecognition is being destroyed.
 
 
 
-#### 1002200009 内部服务错误
+## 1002200009 内部服务错误
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -214,7 +223,8 @@ Internal Service Error.
 
 
 
-#### 1002200010 语音识别未启动
+## 1002200010 语音识别未启动
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -236,7 +246,10 @@ Write audio failed because the start listening is failed.
 
 
 
-#### 1002200011 语音识别异常
+## 1002200011 语音识别异常
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 **错误信息**
 
@@ -256,7 +269,10 @@ Error in recognition.
 
 
 
-#### 1002200012 没有获取麦克风权限
+## 1002200012 没有获取麦克风权限
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 **错误信息**
 
@@ -276,7 +292,8 @@ AudioCapturer create failed, please check the permission of MICROPHONE.
 
 
 
-#### 1002300001 文本长度非法
+## 1002300001 文本长度非法
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -298,7 +315,8 @@ The length of text is out of range or empty.
 
 
 
-#### 1002300002 语言不支持
+## 1002300002 语言不支持
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -320,7 +338,8 @@ The language is not supported.
 
 
 
-#### 1002300003 音色不支持
+## 1002300003 音色不支持
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -342,7 +361,8 @@ The person is not supported.
 
 
 
-#### 1002300005 创建引擎失败
+## 1002300005 创建引擎失败
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -366,7 +386,8 @@ Create engine failed.
 
 
 
-#### 1002300008 下载音色错误
+## 1002300008 下载音色错误
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -388,7 +409,8 @@ Failed to download voice.
 
 
 
-#### 1002300009 下载参数错误
+## 1002300009 下载参数错误
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -413,7 +435,8 @@ Parameter error. Possible causes:
 
 
 
-#### 1002300010 音色已经下载过
+## 1002300010 音色已经下载过
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 

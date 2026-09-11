@@ -1,6 +1,6 @@
 # 图片绘制（C/C++）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pixelmap-drawing-c
 
@@ -54,7 +54,7 @@ for (uint32_t i = 0; i < width * height; ++i) {
         pixels[i * RGBA_SIZE + 2] = 0xFF; // +2表示蓝色通道赋值，其余通道为0，颜色显蓝色
     }
 }
-// 设置位图格式（长、宽、颜色类型、透明度类型）
+// 设置位图格式（宽、高、颜色类型、透明度类型）
 OH_Pixelmap_InitializationOptions *createOps = nullptr;
 OH_PixelmapInitializationOptions_Create(&createOps);
 OH_PixelmapInitializationOptions_SetWidth(createOps, width);
@@ -89,7 +89,7 @@ OH_Drawing_Rect *src = OH_Drawing_RectCreate(0, 0, 600, 400);
 OH_Drawing_Rect *dst = OH_Drawing_RectCreate(value200_, value200_, value800_, value600_);
 // 采样选项对象
 OH_Drawing_SamplingOptions* samplingOptions = OH_Drawing_SamplingOptionsCreate(
-    OH_Drawing_FilterMode::FILTER_MODE_LINEAR, OH_Drawing_MipmapMode::MIPMAP_MODE_LINEAR);
+    FILTER_MODE_LINEAR, MIPMAP_MODE_LINEAR);
 // 绘制PixelMap
 OH_Drawing_CanvasDrawPixelMapRect(canvas, pixelMap, src, dst, samplingOptions);
 ```
@@ -99,15 +99,20 @@ OH_Drawing_CanvasDrawPixelMapRect(canvas, pixelMap, src, dst, samplingOptions);
   
 ```cpp
 OH_PixelmapNative_Release(pixelMapNative);
+OH_PixelmapInitializationOptions_Release(createOps);
+OH_Drawing_PixelMapDissolve(pixelMap);
+OH_Drawing_RectDestroy(src);
+OH_Drawing_RectDestroy(dst);
+OH_Drawing_SamplingOptionsDestroy(samplingOptions);
 delete[] pixels;
 ```
 绘制效果如下：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/ZodO6zfJS_-SYrQlYaYbRQ/zh-cn_image_0000002674633324.jpg?HW-CC-KV=V1&HW-CC-Date=20260813T095834Z&HW-CC-Expire=86400&HW-CC-Sign=FB084ED85D75825BCC6DE1C75A0666F7F8363A39102D3DAD876F29F90CA4CED6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/swF1gVyGQiGbb0xtIMApLg/zh-cn_image_0000002717771452.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T073043Z&HW-CC-Expire=86400&HW-CC-Sign=3DD5825EC15739EC309E4CA25A303CCC2EA2DD9E6AB6863FD3169044C46BB96F)
 
 
 
-#### 示例代码
+## 示例代码
 
  - [图形绘制（C/C++）](https://gitcode.com/HarmonyOS_Samples/guide-snippets/tree/master/ArkGraphics2D/Drawing/NDKGraphicsDraw)

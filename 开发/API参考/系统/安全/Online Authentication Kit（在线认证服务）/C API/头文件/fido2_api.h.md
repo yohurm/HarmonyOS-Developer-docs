@@ -1,10 +1,14 @@
 # fido2_api.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/onlineauthentication_capi_header_fido2
+**支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 本声明用于访问FIDO2的API。提供FIDO2（通行密钥）能力的相关接口。FIDO2的基础核心能力，包含：获取支持的FIDO2能力、获取平台认证器能力、注册通行密钥能力和使用通行密钥认证能力。
  
@@ -20,12 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 结构体
+### 结构体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | struct Uint8Buff | 定义uint8_t字节流。 |
@@ -57,8 +68,12 @@
  
   
 
-#### 类型定义
+### 类型定义
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | typedef struct Uint8Buff Uint8Buff | 定义uint8_t字节流。 |
@@ -102,14 +117,18 @@
  
   
 
-#### 枚举
+### 枚举
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | FIDO2_TokenBindingStatus { FIDO2_PRESENT = 0, FIDO2_SUPPORTED = 1 } | TokenBinding协议的状态。 |
 | FIDO2_AttestationConveyancePreference { FIDO2_NONE = 0, FIDO2_INDIRECT = 1, FIDO2_DIRECT = 2, FIDO2_ENTERPRISE = 3 } | 供WebAuthn依赖方在生成凭据时参考，以指定凭据传递的首选项。 |
 | FIDO2_UserVerificationRequirement { FIDO2_REQUIRED = 0, FIDO2_PREFERRED = 1, FIDO2_DISCOURAGED = 2 } | 依赖方可能需要对某些操作进行用户鉴权（认证当前用户是否为用户）， 但不需要对其他操作进行认证。定义枚举类型是为了区分不同的需求级别。 |
-| FIDO2_AuthenticatorAttachment { FIDO2_PLATFORM = 0, FIDO2_CROSS_PLATFORM = 1 } | 认证器信息（FIDO2_PLATFORM表示平台，FIDO2_ROAMING表示漫游）。默认值为FIDO2_PLATFORM。可选。 |
+| FIDO2_AuthenticatorAttachment { FIDO2_PLATFORM = 0, FIDO2_CROSS_PLATFORM = 1 } | 认证器信息（FIDO2_PLATFORM表示平台，FIDO2_CROSS_PLATFORM表示漫游）。默认值为FIDO2_PLATFORM。可选。 |
 | FIDO2_AuthenticatorTransport { FIDO2_USB = 0, FIDO2_NFC = 1, FIDO2_BLE = 2, FIDO2_SMART_CARD = 3, FIDO2_HYBRID = 4, FIDO2_INTERNAL = 5 } | 认证器传输方式的枚举。 |
 | FIDO2_Algorithm { FIDO2_ES256 = -7, FIDO2_ES384 = -35, FIDO2_ES512 = -36, FIDO2_RS256 = -257, FIDO2_RS384 = -258, FIDO2_RS512 = -259, FIDO2_PS256 = -37, FIDO2_PS384 = -38, FIDO2_PS512 = -39 } | FIDO2支持的密码算法枚举。 |
 | FIDO2_PublicKeyCredentialHint { FIDO2_SECURITY_KEY = 0, FIDO2_CLIENT_DEVICE = 1, FIDO2_HINT_HYBRID = 2 } | 认证方式指示的枚举。 |
@@ -122,8 +141,12 @@
  
   
 
-#### 函数
+### 函数
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | void HMS_FIDO2_initCreationOptions (FIDO2_CredentialCreationOptions *options) | 初始化FIDO2_CredentialCreationOptions结构。 |

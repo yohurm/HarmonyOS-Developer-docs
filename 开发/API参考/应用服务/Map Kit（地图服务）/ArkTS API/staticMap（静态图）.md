@@ -1,6 +1,6 @@
 # staticMap（静态图）
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-staticmap
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
@@ -10,7 +10,8 @@
 **起始版本：** 4.1.0(11)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -20,7 +21,8 @@ import { staticMap } from '@kit.MapKit';
  
   
 
-#### getMapImage
+## getMapImage
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -38,6 +40,7 @@ getMapImage(options: StaticMapOptions): Promise<image.PixelMap>
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | StaticMapOptions | 是 | 静态图参数。 |
@@ -45,15 +48,17 @@ getMapImage(options: StaticMapOptions): Promise<image.PixelMap>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise<image.PixelMap> | Promise对象，返回image.PixelMap。 |
+| Promise<image.PixelMap> | Promise对象，返回image.PixelMap，可用于渲染或保存为图片文件。 |
  
  
 **错误码：**
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid input parameter. |
@@ -86,7 +91,8 @@ await staticMap.getMapImage(staticMapOptions);
  
   
 
-#### getMapImage
+## getMapImage
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -104,6 +110,7 @@ getMapImage(context: common.Context, options: StaticMapOptions): Promise<image.P
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | Context上下文。 |
@@ -112,6 +119,7 @@ getMapImage(context: common.Context, options: StaticMapOptions): Promise<image.P
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<image.PixelMap> | Promise对象，返回image.PixelMap。 |
@@ -121,6 +129,7 @@ getMapImage(context: common.Context, options: StaticMapOptions): Promise<image.P
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid input parameter. |
@@ -153,7 +162,8 @@ await staticMap.getMapImage(this.getUIContext().getHostContext(), staticMapOptio
  
   
 
-#### StaticMapOptions
+## StaticMapOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -165,6 +175,7 @@ StaticMapOptions定义了静态图的参数。
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | location | mapCommon.LatLng | 否 | 否 | 地图的中心点坐标。 元服务API： 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
@@ -194,7 +205,8 @@ let staticMapOptions: staticMap.StaticMapOptions = {
  
   
 
-#### StaticMapMarker
+## StaticMapMarker
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -208,6 +220,7 @@ StaticMapMarker定义了标记点位置。
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | location | mapCommon.LatLng | 否 | 否 | 标记点坐标。 |
@@ -236,7 +249,8 @@ let staticMapMarker: staticMap.StaticMapMarker = {
  
   
 
-#### StaticMapPath
+## StaticMapPath
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -250,6 +264,7 @@ StaticMapPath定义了添加到地图图像上的路径信息。
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | locations | Array<mapCommon.LatLng> | 否 | 否 | 路径的坐标。 |
@@ -277,7 +292,8 @@ let staticMapPath: staticMap.StaticMapPath = {
  
   
 
-#### IconSize
+## IconSize
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -291,6 +307,7 @@ IconSize定义了静态地图标记的默认图标大小。
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | TINY | 0 | 最小的图标。 |

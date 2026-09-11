@@ -1,16 +1,17 @@
 # CSS语法参考
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-service-widget-syntax-css
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 CSS是描述HML页面结构的样式语言。所有组件均存在系统默认样式，也可在页面CSS样式文件中对组件、页面自定义不同的样式。
   
 
-#### 尺寸单位
+## 尺寸单位
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 1. 逻辑像素px（文档中以&lt;length&gt;表示）：
 
   
@@ -22,17 +23,19 @@ CSS是描述HML页面结构的样式语言。所有组件均存在系统默认�
  
   
 
-#### 样式导入
+## 样式导入
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 为了模块化管理和代码复用，CSS样式文件支持 @import 语句，导入 CSS 文件。
  
   
 
-#### 声明样式
+## 声明样式
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 每个页面目录下存在一个与布局hml文件同名的css文件，用来描述该hml页面中组件的样式，决定组件应该如何显示。
  1. 内部样式，支持使用style、class属性来控制组件的样式。例如：
@@ -73,12 +76,14 @@ CSS是描述HML页面结构的样式语言。所有组件均存在系统默认�
  
   
 
-#### 选择器
+## 选择器
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 CSS选择器用于选择需要添加样式的元素，支持的选择器如下表所示：
   
+
 | 选择器 | 样例 | 样例描述 |
 | --- | --- | --- |
 | .class | .container | 用于选择class="container"的组件。 |
@@ -111,9 +116,10 @@ CSS选择器用于选择需要添加样式的元素，支持的选择器如下�
  
   
 
-#### 选择器优先级
+## 选择器优先级
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 选择器的优先级计算规则与W3C规则保持一致（只支持：内联样式，id，class），其中内联样式为在元素style属性中声明的样式。
  

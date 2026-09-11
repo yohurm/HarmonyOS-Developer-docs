@@ -1,14 +1,15 @@
 # 订阅地址越界事件（C/C++）
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-watcher-address-sanitizer-events-ndk
 
-#### 接口说明
+## 接口说明
 
 API接口的具体使用说明（参数使用限制、具体取值范围等）请参考[hiappevent.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hiappevent-h)。
 
 **订阅接口功能介绍**：
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -18,13 +19,13 @@ API接口的具体使用说明（参数使用限制、具体取值范围等）�
 
 
 
-#### 开发步骤
+## 开发步骤
 
 以实现对写数组越界场景生成的地址越界事件订阅为例，说明开发步骤。
 
 
 
-#### 步骤一：新建工程
+### 步骤一：新建工程
 1. 参考[三方开源库jsoncpp代码仓](https://github.com/open-source-parsers/jsoncpp)README中**Using JsonCpp in your project**介绍的使用方法获取到jsoncpp.cpp、json.h和json-forwards.h三个文件。
 2. 新建Native C++工程，并将上述文件导入到新建工程内，目录结构如下：
 
@@ -76,7 +77,7 @@ target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so libhiappev
 
 
 
-#### 步骤二：订阅地址越界事件
+### 步骤二：订阅地址越界事件
 1. 订阅系统事件：
 
   
@@ -208,7 +209,7 @@ static napi_value RegisterWatcher(napi_env env, napi_callback_info info) {
 
 
 
-#### 步骤三：构造地址越界错误
+### 步骤三：构造地址越界错误
 1. 编辑"napi_init.cpp"文件，定义Test方法，方法中对一个整数数组进行越界访问：
 
   
@@ -298,7 +299,7 @@ HiAppEvent eventInfo.params.log_over_limit=false
 
 
 
-#### 步骤四：销毁事件观察者
+### 步骤四：销毁事件观察者
 1. 移除事件观察者：
 
   

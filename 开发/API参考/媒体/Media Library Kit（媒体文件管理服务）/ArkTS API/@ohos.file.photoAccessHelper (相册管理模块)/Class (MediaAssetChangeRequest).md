@@ -1,9 +1,9 @@
 # Class (MediaAssetChangeRequest)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-photoaccesshelper-mediaassetchangerequest
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 MediaAssetChangeRequest implements [MediaChangeRequest](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-photoaccesshelper-i#mediachangerequest11).
 
@@ -14,9 +14,10 @@ MediaAssetChangeRequest implements [MediaChangeRequest](https://developer.huawei
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
@@ -24,15 +25,17 @@ import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **元服务API**：从API version 23开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -41,9 +44,10 @@ import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
 
 
-#### constructor11+
+## constructor11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(asset: PhotoAsset)
 
@@ -55,6 +59,7 @@ constructor(asset: PhotoAsset)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | asset | PhotoAsset | 是 | 需要变更的资产。 |
@@ -63,6 +68,7 @@ constructor(asset: PhotoAsset)
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -92,9 +98,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### createImageAssetRequest11+
+## createImageAssetRequest11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static createImageAssetRequest(context: Context, fileUri: string): MediaAssetChangeRequest
 
@@ -108,6 +115,7 @@ static createImageAssetRequest(context: Context, fileUri: string): MediaAssetCha
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 传入Ability实例的上下文。 |
@@ -115,6 +123,7 @@ static createImageAssetRequest(context: Context, fileUri: string): MediaAssetCha
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -124,6 +133,7 @@ static createImageAssetRequest(context: Context, fileUri: string): MediaAssetCha
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -153,9 +163,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
 
 
 
-#### createVideoAssetRequest11+
+## createVideoAssetRequest11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static createVideoAssetRequest(context: Context, fileUri: string): MediaAssetChangeRequest
 
@@ -167,6 +178,7 @@ static createVideoAssetRequest(context: Context, fileUri: string): MediaAssetCha
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 传入Ability实例的上下文。 |
@@ -174,6 +186,7 @@ static createVideoAssetRequest(context: Context, fileUri: string): MediaAssetCha
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -183,6 +196,7 @@ static createVideoAssetRequest(context: Context, fileUri: string): MediaAssetCha
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -212,9 +226,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
 
 
 
-#### createAssetRequest11+
+## createAssetRequest11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static createAssetRequest(context: Context, photoType: PhotoType, extension: string, options?: CreateOptions): MediaAssetChangeRequest
 
@@ -226,15 +241,17 @@ static createAssetRequest(context: Context, photoType: PhotoType, extension: str
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 传入Ability实例的上下文。 |
 | photoType | PhotoType | 是 | 待创建的文件类型，IMAGE或者VIDEO类型。 |
-| extension | string | 是 | 文件扩展名，例如：'jpg'。 |
+| extension | string | 是 | 文件扩展名。必须为合法的图片或视频扩展名，如jpg、png、gif、mp4、mov等。 |
 | options | CreateOptions | 否 | 创建选项，例如：{title: 'testPhoto'}。 文件名中不允许出现非法英文字符，包括： . .. \ / : * ? " ' ` < > \| { } [ ] |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -244,6 +261,7 @@ static createAssetRequest(context: Context, photoType: PhotoType, extension: str
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -278,9 +296,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
 
 
 
-#### deleteAssets11+
+## deleteAssets11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static deleteAssets(context: Context, assets: Array&lt;PhotoAsset&gt;): Promise&lt;void&gt;
 
@@ -292,6 +311,7 @@ static deleteAssets(context: Context, assets: Array&lt;PhotoAsset&gt;): Promise&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 传入Ability实例的上下文。 |
@@ -299,6 +319,7 @@ static deleteAssets(context: Context, assets: Array&lt;PhotoAsset&gt;): Promise&
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -308,6 +329,7 @@ static deleteAssets(context: Context, assets: Array&lt;PhotoAsset&gt;): Promise&
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -343,9 +365,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
 
 
 
-#### deleteAssets11+
+## deleteAssets11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static deleteAssets(context: Context, uriList: Array&lt;string&gt;): Promise&lt;void&gt;
 
@@ -357,6 +380,7 @@ static deleteAssets(context: Context, uriList: Array&lt;string&gt;): Promise&lt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 传入Ability实例的上下文。 |
@@ -364,6 +388,7 @@ static deleteAssets(context: Context, uriList: Array&lt;string&gt;): Promise&lt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -373,6 +398,7 @@ static deleteAssets(context: Context, uriList: Array&lt;string&gt;): Promise&lt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -409,16 +435,17 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
 
 
 
-#### getAsset11+
+## getAsset11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAsset(): PhotoAsset
 
 获取当前资产变更请求中的资产。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/OB4tSAFIRFO-pCJ_y_Spnw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095544Z&HW-CC-Expire=86400&HW-CC-Sign=4F9ECFB20261CEAD91F8C095227B51355E6D26471FABA293D03DDFFCE1C430F9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/Wao0LVVPTbuZueYfvDp1ew/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072147Z&HW-CC-Expire=86400&HW-CC-Sign=54CC6AF4822DD8D98EA9217DBD0E00A37C0CDE0F8BAE279519ACE41B5A219429)
 
 
 对于创建资产的变更请求，在调用接口[applyChanges](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-photoaccesshelper-photoaccesshelper#applychanges11)的提交生效之前，该接口会返回null。
@@ -431,14 +458,16 @@ getAsset(): PhotoAsset
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| PhotoAsset | 返回当前资产变更请求中的资产。 |
+| PhotoAsset | 返回当前资产变更请求中的资产。对于创建资产的变更请求，在调用接口applyChanges的提交生效之前，该接口会返回null。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -468,9 +497,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
 
 
 
-#### setTitle11+
+## setTitle11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setTitle(title: string): void
 
@@ -481,6 +511,7 @@ setTitle(title: string): void
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -499,6 +530,7 @@ title参数规格为：
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -536,16 +568,17 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### getWriteCacheHandler11+
+## getWriteCacheHandler11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getWriteCacheHandler(): Promise&lt;number&gt;
 
 获取临时文件写句柄。使用Promise异步回调。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/5zm2AeEHSJeAkTmNFM-UOQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095544Z&HW-CC-Expire=86400&HW-CC-Sign=0BC4317B5393A875A0A098648620C220CA7D78FC227AA43A5ADDB28130F8FC49)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/_oJbo8eOSm2i5sNS_zsKrQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072147Z&HW-CC-Expire=86400&HW-CC-Sign=D39AC47A6874FDA776BE9DCF3B3AEC2773A4D3B37D97E3E2BB4F8494F8BF6E92)
 
 
 对于同一个资产变更请求，不支持在成功获取临时文件写句柄后，重复调用该接口。
@@ -558,6 +591,7 @@ getWriteCacheHandler(): Promise&lt;number&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象，返回临时文件写句柄。 |
@@ -566,6 +600,7 @@ getWriteCacheHandler(): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -588,6 +623,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
     let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.VIDEO;
     let extension: string = 'mp4';
     let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest = photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(context, photoType, extension);
+    // 获取临时文件写句柄，用于写入数据。
     let fd: number = await assetChangeRequest.getWriteCacheHandler();
     console.info('getWriteCacheHandler successfully');
     // write data into fd..
@@ -601,16 +637,17 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
 
 
 
-#### addResource11+
+## addResource11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addResource(type: ResourceType, fileUri: string): void
 
 通过文件URI从应用沙箱添加资源，待添加资源的数据来源可参考[@ohos.file.fileuri (文件URI)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-file-fileuri)。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/rN8-VObGStGnHsYtPiARqg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095544Z&HW-CC-Expire=86400&HW-CC-Sign=083F95020BCA57505C055494C0FF5FD96D0E76AC8E39A27E35CE1E1500CCC109)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/PJtYHgoARAWJhjqMM-kfPw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072147Z&HW-CC-Expire=86400&HW-CC-Sign=DD3490D644DEA47A0D76A617855E21954CF51C1B1B2D9DF0371705F51A48BB6E)
 
 
 对于同一个资产变更请求，成功添加资源后不支持重复调用该接口。对于动态照片，可调用两次该接口分别添加图片和视频资源。
@@ -623,6 +660,7 @@ addResource(type: ResourceType, fileUri: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | ResourceType | 是 | 待添加资源的类型。 |
@@ -632,6 +670,7 @@ addResource(type: ResourceType, fileUri: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -665,16 +704,17 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
 
 
 
-#### addResource11+
+## addResource11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addResource(type: ResourceType, data: ArrayBuffer): void
 
 通过ArrayBuffer数据添加资源。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/jcI0BZuTRl-m2UW1hStGZw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095544Z&HW-CC-Expire=86400&HW-CC-Sign=3EAEF0A9822F9248F01A5E9BD317C87DF2EC709162670DF36338963ECBD51A41)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/v810vQNKSuWpYMbIgFSpWA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072147Z&HW-CC-Expire=86400&HW-CC-Sign=BE4B73DAE49F4F21C9186CB6EBE406414C378038BF67C1C5886DB1F61B1D78D0)
 
 
 对于同一个资产变更请求，成功添加资源后不支持重复调用该接口。对于动态照片，可调用两次该接口分别添加图片和视频资源。
@@ -687,6 +727,7 @@ addResource(type: ResourceType, data: ArrayBuffer): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | ResourceType | 是 | 待添加资源的类型。 |
@@ -696,6 +737,7 @@ addResource(type: ResourceType, data: ArrayBuffer): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -727,16 +769,17 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
 
 
 
-#### saveCameraPhoto12+
+## saveCameraPhoto12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 saveCameraPhoto(): void
 
 拍照场景下，使用该接口保存相机拍摄的照片资源。
 
 > [!NOTE]
-> 非YUV拍摄模式下，照片资源保存的编码格式与 CameraFormat 保持一致。 YUV拍摄模式下，该接口无法指定编码格式，图片资源保存为默认的jpg格式。
+> 非YUV拍摄模式下，照片资源保存的编码格式与 CameraFormat 保持一致。 YUV拍摄模式下，该接口无法指定编码格式，图片资源保存为默认的jpg格式。从API version 13开始，如需指定编码格式，请使用 saveCameraPhoto 接口。
 
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
@@ -744,6 +787,7 @@ saveCameraPhoto(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -771,9 +815,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, asse
 
 
 
-#### saveCameraPhoto13+
+## saveCameraPhoto13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 saveCameraPhoto(imageFileType: ImageFileType): void
 
@@ -787,6 +832,7 @@ saveCameraPhoto(imageFileType: ImageFileType): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | imageFileType | ImageFileType | 是 | 需要保存的类型。 |
@@ -795,6 +841,7 @@ saveCameraPhoto(imageFileType: ImageFileType): void
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -808,7 +855,6 @@ phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](https:/
 
 ```text
 import { dataSharePredicates } from '@kit.ArkData';
-import { image } from '@kit.ImageKit';
 
 async function example(context: Context, asset: photoAccessHelper.PhotoAsset) {
   console.info('saveCameraPhotoDemo');
@@ -826,9 +872,10 @@ async function example(context: Context, asset: photoAccessHelper.PhotoAsset) {
 
 
 
-#### discardCameraPhoto12+
+## discardCameraPhoto12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 discardCameraPhoto(): void
 
@@ -839,6 +886,7 @@ discardCameraPhoto(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -866,26 +914,33 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, asse
 
 
 
-#### setOrientation15+
+## setOrientation15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setOrientation(orientation: number): void
 
-修改图片的旋转角度。
+设置图片的显示旋转角度。本接口通过修改exif元数据实现对图片旋转角度的调整。
+
+> [!NOTE]
+> bmp、gif、ico、svg图片本身不包含exif元数据信息，因此无法通过本接口调整旋转角度。 dng图片的exif元数据不支持编辑，因此无法通过本接口调整旋转角度。
+
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| orientation | number | 是 | 待修改的图片旋转角度，且只能为0、90、180、270。 |
+| orientation | number | 是 | 待修改的图片旋转角度，单位：度（°），且只能为0°、90°、180°、270°。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -911,6 +966,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
   let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
   let asset = await fetchResult.getFirstObject();
   let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest = new photoAccessHelper.MediaAssetChangeRequest(asset);
+  // 修改图片的旋转角度为90°（参数只能为0°、90°、180°、270°）。
   assetChangeRequest.setOrientation(90);
   phAccessHelper.applyChanges(assetChangeRequest).then(() => {
     console.info('apply setOrientation successfully');
@@ -922,9 +978,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### setFavorite
+## setFavorite
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setFavorite(favoriteState: boolean): void
 
@@ -936,14 +993,16 @@ setFavorite(favoriteState: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| favoriteState | boolean | 是 | 是否设置为收藏文件，true表示设置为收藏文件；false表示取消收藏。 |
+| favoriteState | boolean | 是 | 是否设置为收藏文件，true表示收藏；false表示取消收藏。 |
 
 
 **错误码：**
 
 接口抛出错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -968,6 +1027,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
   let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
   let asset = await fetchResult.getFirstObject();
   let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest = new photoAccessHelper.MediaAssetChangeRequest(asset);
+  // 将文件设置为收藏文件（入参为true表示收藏，false表示取消收藏）。
   assetChangeRequest.setFavorite(true);
   phAccessHelper.applyChanges(assetChangeRequest).then(() => {
     console.info('apply setFavorite successfully');

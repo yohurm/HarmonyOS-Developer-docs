@@ -1,9 +1,9 @@
 # Interface (AudioLoopback)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audioloopback
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供音频返听的相关接口。
 
@@ -18,9 +18,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { audio } from '@kit.AudioKit';
@@ -28,9 +29,10 @@ import { audio } from '@kit.AudioKit';
 
 
 
-#### getStatus20+
+## getStatus20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStatus(): Promise&lt;AudioLoopbackStatus&gt;
 
@@ -39,6 +41,7 @@ getStatus(): Promise&lt;AudioLoopbackStatus&gt;
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -59,9 +62,10 @@ audioLoopback.getStatus().then((status: audio.AudioLoopbackStatus) => {
 
 
 
-#### setVolume20+
+## setVolume20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setVolume(volume: number): Promise&lt;void&gt;
 
@@ -71,12 +75,14 @@ setVolume(volume: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | volume | number | 是 | 音量值范围为[0.0, 1.0]。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -86,6 +92,7 @@ setVolume(volume: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -106,9 +113,10 @@ audioLoopback.setVolume(0.5).then(() => {
 
 
 
-#### getVolume
+## getVolume
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getVolume(): number
 
@@ -121,6 +129,7 @@ getVolume(): number
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -136,9 +145,10 @@ console.info(`Current loopback volume is ${volume}.`);
 
 
 
-#### on('statusChange')20+
+## on('statusChange')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'statusChange', callback: Callback&lt;AudioLoopbackStatus&gt;): void
 
@@ -147,6 +157,7 @@ on(type: 'statusChange', callback: Callback&lt;AudioLoopbackStatus&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -157,6 +168,7 @@ on(type: 'statusChange', callback: Callback&lt;AudioLoopbackStatus&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -181,9 +193,10 @@ audioLoopback.on('statusChange', (status: audio.AudioLoopbackStatus) => {
 
 
 
-#### off('statusChange')20+
+## off('statusChange')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'statusChange', callback?: Callback&lt;AudioLoopbackStatus&gt;): void
 
@@ -192,6 +205,7 @@ off(type: 'statusChange', callback?: Callback&lt;AudioLoopbackStatus&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -202,6 +216,7 @@ off(type: 'statusChange', callback?: Callback&lt;AudioLoopbackStatus&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -234,9 +249,10 @@ audioLoopback.off('statusChange', statusChangeCallback);
 
 
 
-#### getSupportedDevicePairs
+## getSupportedDevicePairs
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSupportedDevicePairs(): Array&lt;AudioDevicePair&gt;
 
@@ -249,6 +265,7 @@ getSupportedDevicePairs(): Array&lt;AudioDevicePair&gt;
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -266,9 +283,10 @@ if (supportedPairs.length === 0) {
 
 
 
-#### getPreferredDevicePair
+## getPreferredDevicePair
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPreferredDevicePair(): AudioDevicePair | null
 
@@ -281,6 +299,7 @@ getPreferredDevicePair(): AudioDevicePair | null
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -298,9 +317,10 @@ if (preferredPair === null) {
 
 
 
-#### enable20+
+## enable20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enable(enable: boolean): Promise&lt;boolean&gt;
 
@@ -312,12 +332,14 @@ enable(enable: boolean): Promise&lt;boolean&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | boolean | 是 | 表示是否启用音频返听器。true表示启用，false表示禁用。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -327,6 +349,7 @@ enable(enable: boolean): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -352,9 +375,10 @@ audioLoopback.enable(true).then((isSuccess) => {
 
 
 
-#### setReverbPreset21+
+## setReverbPreset21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setReverbPreset(preset: AudioLoopbackReverbPreset): boolean
 
@@ -364,12 +388,14 @@ setReverbPreset(preset: AudioLoopbackReverbPreset): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | preset | AudioLoopbackReverbPreset | 是 | 混响模式。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -379,6 +405,7 @@ setReverbPreset(preset: AudioLoopbackReverbPreset): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -393,9 +420,10 @@ audioLoopback.setReverbPreset(audio.AudioLoopbackReverbPreset.THEATER);
 
 
 
-#### getReverbPreset21+
+## getReverbPreset21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getReverbPreset(): AudioLoopbackReverbPreset
 
@@ -404,6 +432,7 @@ getReverbPreset(): AudioLoopbackReverbPreset
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -423,9 +452,10 @@ try {
 
 
 
-#### setEqualizerPreset21+
+## setEqualizerPreset21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setEqualizerPreset(preset: AudioLoopbackEqualizerPreset): boolean
 
@@ -435,12 +465,14 @@ setEqualizerPreset(preset: AudioLoopbackEqualizerPreset): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | preset | AudioLoopbackEqualizerPreset | 是 | 均衡器类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -450,6 +482,7 @@ setEqualizerPreset(preset: AudioLoopbackEqualizerPreset): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -469,9 +502,10 @@ try {
 
 
 
-#### getEqualizerPreset21+
+## getEqualizerPreset21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEqualizerPreset(): AudioLoopbackEqualizerPreset
 
@@ -480,6 +514,7 @@ getEqualizerPreset(): AudioLoopbackEqualizerPreset
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |

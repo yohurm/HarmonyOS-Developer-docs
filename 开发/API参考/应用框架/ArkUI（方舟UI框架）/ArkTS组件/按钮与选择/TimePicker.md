@@ -1,9 +1,9 @@
 # TimePicker
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-timepicker
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TimePicker是用于滑动选择时间的组件，支持12/24小时制、多种时间格式（小时/分钟/秒）、循环滚动、样式定制和时间范围限制等功能。适用于日程安排、时间预约、任务管理等需要用户选择时间的场景，能够提升用户体验，减少输入错误，并可快速集成到应用中。
 
@@ -12,17 +12,19 @@ TimePicker是用于滑动选择时间的组件，支持12/24小时制、多种�
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该组件为基础组件，不建议包含子组件。
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TimePicker(options?: TimePickerOptions)
 
@@ -34,6 +36,7 @@ TimePicker(options?: TimePickerOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | TimePickerOptions | 否 | 配置时间选择组件的参数。当需要自定义初始选中时间、时间格式、时间范围等配置时传入此参数，不传入时使用默认配置（初始选中时间为当前系统时间，时间格式默认为小时和分钟，时间范围默认为00:00-23:59（默认结束时间为23:59:59））。 |
@@ -41,13 +44,15 @@ TimePicker(options?: TimePickerOptions)
 
 
 
-#### TimePickerOptions对象说明
+## TimePickerOptions对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 时间选择器组件的参数说明。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -67,12 +72,14 @@ Date对象用于处理日期和时间，使用方式如下。
 
 **方式2：** new Date(value: number | string)
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| string | 是 | 设置日期格式。 number：毫秒，自1970年1月1日00:00:00开始的毫秒数。取值范围：[0, +∞)。 string：时间格式的字符串，如‘2025-02-20 08:00:00’或‘2025-02-20T08:00:00’。 |
 
 
 **方式3：** new Date(year: number, monthIndex: number, date?: number, hours?: number, minutes?: number, seconds?: number, ms?: number)
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -87,6 +94,7 @@ Date对象用于处理日期和时间，使用方式如下。
 
 **起始时间和结束时间的异常情形说明：**
 
+
 | 异常情形 | 对应结果 |
 | --- | --- |
 | 起始时间晚于结束时间。 | 起始时间、结束时间都为默认值。 |
@@ -99,9 +107,10 @@ Date对象用于处理日期和时间，使用方式如下。
 
 
 
-#### TimePickerFormat11+枚举说明
+## TimePickerFormat11+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 时间选择器的数据格式。
 
@@ -111,6 +120,7 @@ Date对象用于处理日期和时间，使用方式如下。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | HOUR_MINUTE | 0 | 按照小时和分钟进行显示。 |
@@ -119,17 +129,19 @@ Date对象用于处理日期和时间，使用方式如下。
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
 
 
 
-#### useMilitaryTime
+### useMilitaryTime
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 useMilitaryTime(value: boolean)
 
@@ -141,6 +153,7 @@ useMilitaryTime(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 时间是否以24小时制展示。 - true：时间以24小时制展示。 - false：时间以12小时制展示。 |
@@ -148,9 +161,10 @@ useMilitaryTime(value: boolean)
 
 
 
-#### useMilitaryTime18+
+### useMilitaryTime18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 useMilitaryTime(isMilitaryTime: Optional&lt;boolean&gt;)
 
@@ -164,6 +178,7 @@ useMilitaryTime(isMilitaryTime: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isMilitaryTime | Optional&lt;boolean&gt; | 是 | 展示时间是否为24小时制。 - true：展示时间为24小时制。 - false：展示时间为12小时制。 当isMilitaryTime的值为undefined时，跟随系统设置。 |
@@ -171,9 +186,10 @@ useMilitaryTime(isMilitaryTime: Optional&lt;boolean&gt;)
 
 
 
-#### disappearTextStyle10+
+### disappearTextStyle10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 disappearTextStyle(value: PickerTextStyle)
 
@@ -187,6 +203,7 @@ disappearTextStyle(value: PickerTextStyle)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | PickerTextStyle | 是 | 边缘项（以选中项为基准向上或向下的第二项）的文本颜色、字号和字体粗细。 默认值： { color: '#ff182431', font: { size: '14fp', weight: FontWeight.Regular } } |
@@ -198,9 +215,10 @@ disappearTextStyle(value: PickerTextStyle)
 
 
 
-#### disappearTextStyle18+
+### disappearTextStyle18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 disappearTextStyle(style: Optional&lt;PickerTextStyle&gt;)
 
@@ -214,6 +232,7 @@ disappearTextStyle(style: Optional&lt;PickerTextStyle&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | Optional&lt;PickerTextStyle&gt; | 是 | 边缘项的文本颜色、字号、字体粗细。 默认值： { color: '#ff182431', font: { size: '14fp', weight: FontWeight.Regular } } 当style的值为undefined时，使用默认值。 |
@@ -225,9 +244,10 @@ disappearTextStyle(style: Optional&lt;PickerTextStyle&gt;)
 
 
 
-#### textStyle10+
+### textStyle10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 textStyle(value: PickerTextStyle)
 
@@ -241,6 +261,7 @@ textStyle(value: PickerTextStyle)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | PickerTextStyle | 是 | 待选项的文本颜色、字号、字体粗细。 默认值： { color: '#ff182431', font: { size: '16fp', weight: FontWeight.Regular } } |
@@ -252,9 +273,10 @@ textStyle(value: PickerTextStyle)
 
 
 
-#### textStyle18+
+### textStyle18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 textStyle(style: Optional&lt;PickerTextStyle&gt;)
 
@@ -268,6 +290,7 @@ textStyle(style: Optional&lt;PickerTextStyle&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | Optional&lt;PickerTextStyle&gt; | 是 | 待选项的文本颜色、字号、字体粗细。 默认值： { color: '#ff182431', font: { size: '16fp', weight: FontWeight.Regular } } 当style的值为undefined时，使用默认值。 |
@@ -279,9 +302,10 @@ textStyle(style: Optional&lt;PickerTextStyle&gt;)
 
 
 
-#### selectedTextStyle10+
+### selectedTextStyle10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 selectedTextStyle(value: PickerTextStyle)
 
@@ -295,6 +319,7 @@ selectedTextStyle(value: PickerTextStyle)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | PickerTextStyle | 是 | 选中项的文本颜色、字号、字体粗细。 默认值： { color: '#ff007dff', font: { size: '20fp', weight: FontWeight.Medium } } |
@@ -302,9 +327,10 @@ selectedTextStyle(value: PickerTextStyle)
 
 
 
-#### selectedTextStyle18+
+### selectedTextStyle18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 selectedTextStyle(style: Optional&lt;PickerTextStyle&gt;)
 
@@ -318,6 +344,7 @@ selectedTextStyle(style: Optional&lt;PickerTextStyle&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | Optional&lt;PickerTextStyle&gt; | 是 | 选中项的文本颜色、字号、字体粗细。 默认值： { color: '#ff007dff', font: { size: '20fp', weight: FontWeight.Medium } } 当style的值为undefined时，使用默认值。 |
@@ -325,9 +352,10 @@ selectedTextStyle(style: Optional&lt;PickerTextStyle&gt;)
 
 
 
-#### loop11+
+### loop11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 loop(value: boolean)
 
@@ -341,6 +369,7 @@ loop(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否启用循环模式。 - true：启用循环模式。 - false：不启用循环模式。 默认值：true 说明： 设置了start或end且为非默认值的场景下，loop不生效。 |
@@ -348,9 +377,10 @@ loop(value: boolean)
 
 
 
-#### loop18+
+### loop18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 loop(isLoop: Optional&lt;boolean&gt;)
 
@@ -368,6 +398,7 @@ loop(isLoop: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isLoop | Optional&lt;boolean&gt; | 是 | 是否启用循环模式。 - true：启用循环模式。 - false：不启用循环模式。 默认值：true 当isLoop的值为undefined时，使用默认值。 |
@@ -375,9 +406,10 @@ loop(isLoop: Optional&lt;boolean&gt;)
 
 
 
-#### dateTimeOptions12+
+### dateTimeOptions12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 dateTimeOptions(value: DateTimeOptions)
 
@@ -391,6 +423,7 @@ dateTimeOptions(value: DateTimeOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | DateTimeOptions | 是 | 设置时分秒是否显示前导0。 默认值： hour: 24小时制默认为"2-digit"，设置hour是否按照2位数字显示，如果实际数值小于10，则会补充前导0并显示，即为"0X"；12小时制默认为"numeric"，即没有前导0。 minute: 默认为"2-digit"，设置minute是否按照2位数字显示，如果实际数值小于10，则会补充前导0并显示，即为"0X"。 second: 默认为"2-digit"，设置second是否按照2位数字显示，如果实际数值小于10，则会补充前导0并显示，即为"0X"。 当hour、minute、second的值设置为undefined时，显示效果与其默认值规则一致。 |
@@ -398,9 +431,10 @@ dateTimeOptions(value: DateTimeOptions)
 
 
 
-#### dateTimeOptions18+
+### dateTimeOptions18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 dateTimeOptions(timeFormat: Optional&lt;DateTimeOptions&gt;)
 
@@ -414,6 +448,7 @@ dateTimeOptions(timeFormat: Optional&lt;DateTimeOptions&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | timeFormat | Optional&lt;DateTimeOptions&gt; | 是 | 设置时分秒是否显示前导0，目前只支持设置hour、minute和second参数。 默认值： hour: 24小时制默认为"2-digit"，设置hour是否按照2位数字显示，如果实际数值小于10，则会补充前导0并显示，即为"0X"；12小时制默认为"numeric"，即没有前导0。 minute: 默认为"2-digit"，设置minute是否按照2位数字显示，如果实际数值小于10，则会补充前导0并显示，即为"0X"。 second: 默认为"2-digit"，设置second是否按照2位数字显示，如果实际数值小于10，则会补充前导0并显示，即为"0X"。 当hour、minute、second的值设置为undefined时，显示效果与其默认值规则一致。 |
@@ -421,9 +456,10 @@ dateTimeOptions(timeFormat: Optional&lt;DateTimeOptions&gt;)
 
 
 
-#### enableHapticFeedback12+
+### enableHapticFeedback12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableHapticFeedback(enable: boolean)
 
@@ -451,6 +487,7 @@ enableHapticFeedback(enable: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | boolean | 是 | 设置是否开启触控反馈。 - true：开启触控反馈。 - false：不开启触控反馈。 默认值：true 设置为true后，若系统硬件不支持振动功能，则不会产生振动反馈。 |
@@ -458,9 +495,10 @@ enableHapticFeedback(enable: boolean)
 
 
 
-#### enableHapticFeedback18+
+### enableHapticFeedback18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableHapticFeedback(enable: Optional&lt;boolean&gt;)
 
@@ -484,6 +522,7 @@ enableHapticFeedback(enable: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | Optional&lt;boolean&gt; | 是 | 设置是否开启触控反馈。 - true：开启触控反馈。 - false：不开启触控反馈。 默认值：true 当enable的值为undefined时，使用默认值。 设置为true后，若系统硬件不支持振动功能，则不会产生振动反馈。 |
@@ -491,9 +530,10 @@ enableHapticFeedback(enable: Optional&lt;boolean&gt;)
 
 
 
-#### enableCascade18+
+### enableCascade18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableCascade(enabled: boolean)
 
@@ -507,6 +547,7 @@ enableCascade(enabled: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 上午和下午的标识是否根据小时数自动切换，仅在useMilitaryTime设置为false时生效。 - true：自动切换。当enabled设置为true时，仅在loop参数同时为true时生效。 - false：不自动切换。上午/下午标识需手动选择，不会根据小时数自动调整。 默认值：false |
@@ -518,9 +559,10 @@ enableCascade(enabled: boolean)
 
 
 
-#### digitalCrownSensitivity18+
+### digitalCrownSensitivity18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Wearable
 
 digitalCrownSensitivity(sensitivity: Optional&lt;CrownSensitivity&gt;)
 
@@ -534,6 +576,7 @@ digitalCrownSensitivity(sensitivity: Optional&lt;CrownSensitivity&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sensitivity | Optional&lt;CrownSensitivity&gt; | 是 | 表冠响应灵敏度。 默认值：CrownSensitivity.MEDIUM，表示响应速度适中。 |
@@ -545,17 +588,19 @@ digitalCrownSensitivity(sensitivity: Optional&lt;CrownSensitivity&gt;)
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)外，还支持以下事件：
 
 
 
-#### onChange
+### onChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onChange(callback: (value: TimePickerResult ) => void)
 
@@ -569,6 +614,7 @@ onChange(callback: (value: TimePickerResult ) => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | TimePickerResult | 是 | 选中的时间结果，hour取值0-23，与展示制式无关。 |
@@ -576,9 +622,10 @@ onChange(callback: (value: TimePickerResult ) => void)
 
 
 
-#### onChange18+
+### onChange18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onChange(callback: Optional&lt;OnTimePickerChangeCallback&gt;)
 
@@ -594,6 +641,7 @@ onChange(callback: Optional&lt;OnTimePickerChangeCallback&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Optional&lt;OnTimePickerChangeCallback&gt; | 是 | 选择时间时触发该回调。 当callback的值为undefined时，不使用回调函数。 |
@@ -601,9 +649,10 @@ onChange(callback: Optional&lt;OnTimePickerChangeCallback&gt;)
 
 
 
-#### onEnterSelectedArea18+
+### onEnterSelectedArea18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onEnterSelectedArea(callback: Callback&lt;TimePickerResult&gt;)
 
@@ -611,7 +660,7 @@ onEnterSelectedArea(callback: Callback&lt;TimePickerResult&gt;)
 
 与[onChange](#onchange)事件的差别在于，该事件的触发时机早于[onChange](#onchange)事件，当滑动列的滑动距离超过选中项高度的一半时，选项已经进入分割线区域内，会触发该事件。当[enableCascade](#enablecascade18)设置为true时，由于上午/下午列与小时列存在联动关系（即上午/下午标识会根据小时数自动调整），不建议使用该回调。该回调标识的是滑动过程中选项进入分割线区域内的节点，而联动变化的选项并不涉及滑动，因此，回调的返回值中，仅当前滑动列的值会正常变化，其余未滑动列的值保持不变。
 
-> [!TIP]
+> [!NOTE]
 > 该接口不支持在 attributeModifier 中调用。
 
 
@@ -623,6 +672,7 @@ onEnterSelectedArea(callback: Callback&lt;TimePickerResult&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;TimePickerResult&gt; | 是 | 滑动TimePicker过程中，选项进入分割线区域时触发的回调。 |
@@ -630,9 +680,10 @@ onEnterSelectedArea(callback: Callback&lt;TimePickerResult&gt;)
 
 
 
-#### DateTimeOptions12+类型说明
+## DateTimeOptions12+类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type DateTimeOptions = import('../api/@ohos.intl').default.DateTimeOptions
 
@@ -644,6 +695,7 @@ type DateTimeOptions = import('../api/@ohos.intl').default.DateTimeOptions
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | import('../api/@ohos.intl').default.DateTimeOptions | 创建时间、日期格式化对象时可设置的配置项。 |
@@ -651,9 +703,10 @@ type DateTimeOptions = import('../api/@ohos.intl').default.DateTimeOptions
 
 
 
-#### OnTimePickerChangeCallback18+
+## OnTimePickerChangeCallback18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnTimePickerChangeCallback = (result: TimePickerResult) => void
 
@@ -667,6 +720,7 @@ type OnTimePickerChangeCallback = (result: TimePickerResult) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | result | TimePickerResult | 是 | 选中的时间结果，hour取值0-23，与展示制式无关。 |
@@ -674,15 +728,17 @@ type OnTimePickerChangeCallback = (result: TimePickerResult) => void
 
 
 
-#### TimePickerResult对象说明
+## TimePickerResult对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 返回选中的时间结果，hour取值0-23，与展示制式无关。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -693,13 +749,17 @@ type OnTimePickerChangeCallback = (result: TimePickerResult) => void
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（设置文本样式）
+
+
+### 示例1（设置文本样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置[disappearTextStyle](#disappeartextstyle10)、[textStyle](#textstyle10)和[selectedTextStyle](#selectedtextstyle10)实现文本选择器中的文本样式。
 
@@ -728,12 +788,15 @@ struct TimePickerExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/p9UUqvtOQYyc4eaC02QcUw/zh-cn_image_0000002686088023.png?HW-CC-KV=V1&HW-CC-Date=20260730T071504Z&HW-CC-Expire=86400&HW-CC-Sign=9BBC6974CECB0C1F6341D69F2FCE36F82430855BFEFD59698E05B5198E3CC505)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/7GmUFFmWTUKwBu_iKeGzfQ/zh-cn_image_0000002717772666.png?HW-CC-KV=V1&HW-CC-Date=20260911T073109Z&HW-CC-Expire=86400&HW-CC-Sign=147B2774F9ADEFD7708514F9EE94506409928EE0A268E7741B18BD2866876A7F)
 
 
 
 
-#### 示例2（切换小时制）
+### 示例2（切换小时制）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置useMilitaryTime实现12小时制、24小时制的切换。
 
@@ -772,12 +835,15 @@ struct TimePickerExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/sdOfzsgTQ96mY6ZabB-YKQ/zh-cn_image_0000002685928195.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071504Z&HW-CC-Expire=86400&HW-CC-Sign=88DC4EF70B651455F066F47C1C04E0A304E921F558067B82EF61C2146A031E0E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/G6F5NwpDRmm21xJSodktsQ/zh-cn_image_0000002717612734.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073109Z&HW-CC-Expire=86400&HW-CC-Sign=A530886B5C06F3BD6B0D56DBA08A51DBAC0AADDCFFFC26178595214F2BC8AA8E)
 
 
 
 
-#### 示例3（设置时间格式）
+### 示例3（设置时间格式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例使用format和dateTimeOptions设置TimePicker时间格式。
 
@@ -807,12 +873,15 @@ struct TimePickerExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/H-we7nF2Tsmbfc-0PCA-EA/zh-cn_image_0000002656008518.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071504Z&HW-CC-Expire=86400&HW-CC-Sign=512E343E633BC5AB163B531C6488A73A701F5590A80EC8BA6D9E5B594299234C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/g-tZp-KwQIi9EiAkwo3sug/zh-cn_image_0000002747292687.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073109Z&HW-CC-Expire=86400&HW-CC-Sign=8D0FD6C4518DCC620F4B8934C86AEFDD3B8D0066743C2AC55DC691C7AC257486)
 
 
 
 
-#### 示例4（设置循环滚动）
+### 示例4（设置循环滚动）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置[loop](#loop11)设置TimePicker是否循环滚动。
 
@@ -852,12 +921,15 @@ struct TimePickerExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/67x7r1x5RdCmaZB8heR-_g/zh-cn_image_0000002655848598.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071504Z&HW-CC-Expire=86400&HW-CC-Sign=4A87A6832348A9415B597E0006B85808B6765B4016AF35C69DFAD7062CDA405D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/LZpBT5AjSOy5X5ubeazntQ/zh-cn_image_0000002747212603.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073109Z&HW-CC-Expire=86400&HW-CC-Sign=E17BAF55474474CCC12C6159AF4587EE0C08C354D86D78A7F5E6BDDA8F68BB06)
 
 
 
 
-#### 示例5（设置时间选择组件的起始时间）
+### 示例5（设置时间选择组件的起始时间）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例设置TimePicker的起始时间。
 
@@ -888,12 +960,15 @@ struct TimePickerExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/cLBjSVvtQiSn4T6rNYNyAQ/zh-cn_image_0000002686088025.png?HW-CC-KV=V1&HW-CC-Date=20260730T071504Z&HW-CC-Expire=86400&HW-CC-Sign=FA63C5615F9D69ACEBF1C394249C42469A8322528741ED0E313AFCA6C8D51A80)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/bFSq3i0RRJ2FU0WJ5vsKGg/zh-cn_image_0000002717772668.png?HW-CC-KV=V1&HW-CC-Date=20260911T073109Z&HW-CC-Expire=86400&HW-CC-Sign=89CE940E505FED0CD38EDCC81E1821B5F05F49CFE78FEC1D382580551E71798F)
 
 
 
 
-#### 示例6（设置时间选择组件的结束时间）
+### 示例6（设置时间选择组件的结束时间）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例设置TimePicker的结束时间。
 
@@ -924,12 +999,15 @@ struct TimePickerExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/xO6TtC3uTrSVQUX-k7LAnA/zh-cn_image_0000002685928197.png?HW-CC-KV=V1&HW-CC-Date=20260730T071504Z&HW-CC-Expire=86400&HW-CC-Sign=3B465849CB9FB18DE745A028EBC0AB1CEF5B3223B7A1AF334EF55295645A9B68)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/R1RaJkaXSiyywis52D7AYw/zh-cn_image_0000002717612736.png?HW-CC-KV=V1&HW-CC-Date=20260911T073109Z&HW-CC-Expire=86400&HW-CC-Sign=91F85E035B8C272F0D18850A93EBA94F5B61436A86A9C29B9FEAC7E7D54C3F43)
 
 
 
 
-#### 示例7（设置上午/下午跟随时间联动）
+### 示例7（设置上午/下午跟随时间联动）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置[enableCascade](#enablecascade18)、[loop](#loop11)实现12小时制时上午/下午跟随时间联动。
 
@@ -962,4 +1040,4 @@ struct TimePickerExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/rmInBDUpTeywyEixSUnuMw/zh-cn_image_0000002656008520.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071504Z&HW-CC-Expire=86400&HW-CC-Sign=00C5E198C20FD8E237BBB887344AFCBC3F4476FAFDAEC123D1C76690CD7F8AD2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/8gLOkYYZSg-cJtJlU_A_pw/zh-cn_image_0000002747292689.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073109Z&HW-CC-Expire=86400&HW-CC-Sign=EAE136A103C1D00565D0D8793C791CF2968E9717DB940173D2537F0541A558FA)

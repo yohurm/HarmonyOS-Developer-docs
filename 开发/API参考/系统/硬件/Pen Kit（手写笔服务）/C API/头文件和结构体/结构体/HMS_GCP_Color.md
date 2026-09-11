@@ -1,11 +1,12 @@
 # HMS_GCP_Color
 
-更新时间：2026-06-12 06:54:11
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/pen-imagefeaturepicker-struct-color
 **支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -21,16 +22,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | int32_t red | 红色域。 |
@@ -41,13 +45,15 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### alpha
+### alpha
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -61,7 +67,8 @@ int32_t HMS_GCP_Color::alpha
  
   
 
-#### blue
+### blue
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -75,7 +82,8 @@ int32_t HMS_GCP_Color::blue
  
   
 
-#### green
+### green
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -89,7 +97,8 @@ int32_t HMS_GCP_Color::green
  
   
 
-#### red
+### red
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 

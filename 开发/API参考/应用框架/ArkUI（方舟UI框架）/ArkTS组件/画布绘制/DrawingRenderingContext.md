@@ -1,9 +1,9 @@
 # DrawingRenderingContext
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawingrenderingcontext
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 DrawingRenderingContext对象与Canvas组件绑定后，可在Canvas组件上进行绘制，绘制对象可以是形状、文本、图片等。绑定方式：通过Canvas组件构造函数传入DrawingRenderingContext对象建立绑定关系。绘制流程：通过canvas属性获取DrawingCanvas对象，调用drawing模块接口执行绘制操作，最后调用invalidate()方法触发重新渲染。适用于需要高性能图形绘制、自定义图表、图像编辑等场景，相比CanvasRenderingContext2D提供了更灵活的绘制接口。
 
@@ -12,9 +12,10 @@ DrawingRenderingContext对象与Canvas组件绑定后，可在Canvas组件上进
 
 
 
-#### constructor
+## constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(unit?: LengthMetricsUnit)
 
@@ -28,6 +29,7 @@ constructor(unit?: LengthMetricsUnit)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | unit | LengthMetricsUnit | 否 | 用来配置DrawingRenderingContext对象的单位模式，配置后无法更改，配置方法同CanvasRenderingContext2D。 可选值：DEFAULT（默认vp单位）、PX（px像素单位）。 异常值undefined、NaN和Infinity按默认值处理。 默认值：DEFAULT |
@@ -35,9 +37,10 @@ constructor(unit?: LengthMetricsUnit)
 
 
 
-#### size
+## size
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get size(): Size
 
@@ -51,6 +54,7 @@ get size(): Size
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Size | DrawingRenderingContext的尺寸信息。 |
@@ -58,9 +62,10 @@ get size(): Size
 
 
 
-#### canvas
+## canvas
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get canvas(): DrawingCanvas
 
@@ -74,6 +79,7 @@ get canvas(): DrawingCanvas
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | DrawingCanvas | 绘制内容的画布对象。 |
@@ -81,9 +87,10 @@ get canvas(): DrawingCanvas
 
 
 
-#### invalidate
+## invalidate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 invalidate(): void
 
@@ -97,9 +104,10 @@ invalidate(): void
 
 
 
-#### DrawingCanvas对象说明
+## DrawingCanvas对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type DrawingCanvas = import('../api/@ohos.graphics.drawing').default.Canvas
 
@@ -111,6 +119,7 @@ type DrawingCanvas = import('../api/@ohos.graphics.drawing').default.Canvas
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | import('../api/@ohos.graphics.drawing').default.Canvas | 返回一个Canvas对象，可用于在DrawingRenderingContext绑定的Canvas组件上绘制形状、文本、图片等内容。 |
@@ -118,9 +127,10 @@ type DrawingCanvas = import('../api/@ohos.graphics.drawing').default.Canvas
 
 
 
-#### Size
+## Size
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 DrawingRenderingContext的尺寸信息。
 
@@ -130,6 +140,7 @@ DrawingRenderingContext的尺寸信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | width | number | 否 | 否 | 获取DrawingRenderingContext的宽度，其值为关联的Canvas组件的宽度。单位由constructor的unit参数配置决定，支持单位：vp、px。默认单位为vp。 |
@@ -138,13 +149,17 @@ DrawingRenderingContext的尺寸信息。
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（绘制图形）
+
+
+### 示例1（绘制图形）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例实现了如何使用DrawingRenderingContext中的方法绘制图形。
 
@@ -212,7 +227,10 @@ struct CanvasExample {
 
 
 
-#### 示例2（绘制文本）
+### 示例2（绘制文本）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例实现了通过[makeFromRawFile](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-graphics-drawing-typeface#makefromrawfile18)（从API version 18开始）加载自定义字体。并使用[drawTextBlob](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-graphics-drawing-canvas#drawtextblob)绘制文本，drawing接口绘制自定义文字时，不需要调用this.uiContext.getFont().[registerFont](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-font#registerfont)或者fontCollection.[loadFontSync](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-graphics-text#loadfontsync)提前注册字体，而是通过drawing.Typeface.[makeFromRawFile](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-graphics-drawing-typeface#makefromrawfile18)（从API version 18开始）传入rawfile目录下的自定义字体文件。
 

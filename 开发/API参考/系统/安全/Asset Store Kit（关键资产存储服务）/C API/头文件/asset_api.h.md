@@ -1,13 +1,14 @@
 # asset_api.h
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-asset-api-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明用于访问关键资产的接口。
 
@@ -23,15 +24,18 @@
 
 
 
-#### 汇总
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 汇总
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 函数
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -49,15 +53,17 @@
 
 
 
-#### 函数说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 函数说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### OH_Asset_Add()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### OH_Asset_Add()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Asset_Add(const Asset_Attr *attributes, uint32_t attrCnt)
@@ -73,6 +79,7 @@ int32_t OH_Asset_Add(const Asset_Attr *attributes, uint32_t attrCnt)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Asset_Attr *attributes | 待新增关键资产的属性集合。 |
@@ -81,6 +88,7 @@ int32_t OH_Asset_Add(const Asset_Attr *attributes, uint32_t attrCnt)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | Asset_ResultCode： ASSET_SUCCESS = 0：操作成功。 ASSET_PERMISSION_DENIED = 201：调用者没有权限。 ASSET_INVALID_ARGUMENT = 401：参数错误。 可能原因： 1. 必选参数未指定。 2. 参数类型错误。 3. 参数校验失败。 ASSET_SERVICE_UNAVAILABLE = 24000001：关键资产服务不可用。 ASSET_DUPLICATED = 24000003：关键资产已存在。 ASSET_STATUS_MISMATCH = 24000005：锁屏状态不匹配。 ASSET_OUT_OF_MEMORY = 24000006：系统内存不足。 ASSET_DATA_CORRUPTED = 24000007：关键资产损坏。 ASSET_DATABASE_ERROR = 24000008：数据库操作失败。 ASSET_CRYPTO_ERROR = 24000009：算法库操作失败。 ASSET_IPC_ERROR = 24000010：进程通信错误。 ASSET_BMS_ERROR = 24000011：包管理服务异常。 ASSET_ACCOUNT_ERROR = 24000012：账号系统服务异常。 ASSET_ACCESS_TOKEN_ERROR = 24000013：访问控制服务异常。 ASSET_FILE_OPERATION_ERROR = 24000014：文件操作失败。 ASSET_GET_SYSTEM_TIME_ERROR = 24000015：获取系统时间失败。 |
@@ -88,9 +96,10 @@ int32_t OH_Asset_Add(const Asset_Attr *attributes, uint32_t attrCnt)
 
 
 
-#### OH_Asset_Remove()
+### OH_Asset_Remove()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Asset_Remove(const Asset_Attr *query, uint32_t queryCnt)
@@ -104,6 +113,7 @@ int32_t OH_Asset_Remove(const Asset_Attr *query, uint32_t queryCnt)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Asset_Attr *query | 待删除关键资产的搜索条件。 |
@@ -112,6 +122,7 @@ int32_t OH_Asset_Remove(const Asset_Attr *query, uint32_t queryCnt)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | Asset_ResultCode： ASSET_SUCCESS = 0：操作成功。 ASSET_INVALID_ARGUMENT = 401：参数错误。 可能原因： 1. 参数类型错误。 2. 参数校验失败。 ASSET_SERVICE_UNAVAILABLE = 24000001：关键资产服务不可用。 ASSET_NOT_FOUND = 24000002：未找到关键资产。 ASSET_OUT_OF_MEMORY = 24000006：系统内存不足。 ASSET_DATA_CORRUPTED = 24000007：关键资产损坏。 ASSET_DATABASE_ERROR = 24000008：数据库操作失败。 ASSET_IPC_ERROR = 24000010：进程通信错误。 ASSET_BMS_ERROR = 24000011：包管理服务异常。 ASSET_ACCOUNT_ERROR = 24000012：账号系统服务异常。 ASSET_ACCESS_TOKEN_ERROR = 24000013：访问控制服务异常。 ASSET_GET_SYSTEM_TIME_ERROR = 24000015：获取系统时间失败。 |
@@ -119,9 +130,10 @@ int32_t OH_Asset_Remove(const Asset_Attr *query, uint32_t queryCnt)
 
 
 
-#### OH_Asset_Update()
+### OH_Asset_Update()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Asset_Update(const Asset_Attr *query, uint32_t queryCnt, const Asset_Attr *attributesToUpdate, uint32_t updateCnt)
@@ -135,6 +147,7 @@ int32_t OH_Asset_Update(const Asset_Attr *query, uint32_t queryCnt, const Asset_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Asset_Attr *query | 待更新关键资产的搜索条件。 |
@@ -145,6 +158,7 @@ int32_t OH_Asset_Update(const Asset_Attr *query, uint32_t queryCnt, const Asset_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | Asset_ResultCode： ASSET_SUCCESS = 0：操作成功。 ASSET_INVALID_ARGUMENT = 401：参数错误。 可能原因： 1. 必选参数未指定。 2. 参数类型错误。 3. 参数校验失败。 ASSET_SERVICE_UNAVAILABLE = 24000001：关键资产服务不可用。 ASSET_NOT_FOUND = 24000002：未找到关键资产。 ASSET_STATUS_MISMATCH = 24000005：锁屏状态不匹配。 ASSET_OUT_OF_MEMORY = 24000006：系统内存不足。 ASSET_DATA_CORRUPTED = 24000007：关键资产损坏。 ASSET_DATABASE_ERROR = 24000008：数据库操作失败。 ASSET_CRYPTO_ERROR = 24000009：算法库操作失败。 ASSET_IPC_ERROR = 24000010：进程通信错误。 ASSET_BMS_ERROR = 24000011：包管理服务异常。 ASSET_ACCOUNT_ERROR = 24000012：账号系统服务异常。 ASSET_ACCESS_TOKEN_ERROR = 24000013：访问控制服务异常。 ASSET_GET_SYSTEM_TIME_ERROR = 24000015：获取系统时间失败。 |
@@ -152,9 +166,10 @@ int32_t OH_Asset_Update(const Asset_Attr *query, uint32_t queryCnt, const Asset_
 
 
 
-#### OH_Asset_PreQuery()
+### OH_Asset_PreQuery()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Asset_PreQuery(const Asset_Attr *query, uint32_t queryCnt, Asset_Blob *challenge)
@@ -168,6 +183,7 @@ int32_t OH_Asset_PreQuery(const Asset_Attr *query, uint32_t queryCnt, Asset_Blob
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Asset_Attr *query | 关键资产的查询条件。 |
@@ -177,6 +193,7 @@ int32_t OH_Asset_PreQuery(const Asset_Attr *query, uint32_t queryCnt, Asset_Blob
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | Asset_ResultCode： ASSET_SUCCESS = 0：操作成功。 ASSET_INVALID_ARGUMENT = 401：参数错误。 可能原因： 1. 参数类型错误。 2. 参数校验失败。 ASSET_SERVICE_UNAVAILABLE = 24000001：关键资产服务不可用。 ASSET_NOT_FOUND = 24000002：未找到关键资产。 ASSET_STATUS_MISMATCH = 24000005：锁屏状态不匹配。 ASSET_OUT_OF_MEMORY = 24000006：系统内存不足。 ASSET_DATA_CORRUPTED = 24000007：关键资产损坏。 ASSET_DATABASE_ERROR = 24000008：数据库操作失败。 ASSET_CRYPTO_ERROR = 24000009：算法库操作失败。 ASSET_IPC_ERROR = 24000010：进程通信错误。 ASSET_BMS_ERROR = 24000011：包管理服务异常。 ASSET_ACCOUNT_ERROR = 24000012：账号系统服务异常。 ASSET_ACCESS_TOKEN_ERROR = 24000013：访问控制服务异常。 ASSET_LIMIT_EXCEEDED = 24000016：缓存数量超限。 ASSET_UNSUPPORTED = 24000017：该子功能不支持。 |
@@ -184,9 +201,10 @@ int32_t OH_Asset_PreQuery(const Asset_Attr *query, uint32_t queryCnt, Asset_Blob
 
 
 
-#### OH_Asset_Query()
+### OH_Asset_Query()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Asset_Query(const Asset_Attr *query, uint32_t queryCnt, Asset_ResultSet *resultSet)
@@ -200,6 +218,7 @@ int32_t OH_Asset_Query(const Asset_Attr *query, uint32_t queryCnt, Asset_ResultS
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Asset_Attr *query | 关键资产的查询条件。 |
@@ -209,6 +228,7 @@ int32_t OH_Asset_Query(const Asset_Attr *query, uint32_t queryCnt, Asset_ResultS
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | Asset_ResultCode： ASSET_SUCCESS = 0：操作成功。 ASSET_INVALID_ARGUMENT = 401：参数错误。 可能原因： 1. 参数类型错误。 2. 参数校验失败。 ASSET_SERVICE_UNAVAILABLE = 24000001：关键资产服务不可用。 ASSET_NOT_FOUND = 24000002：未找到关键资产。 ASSET_ACCESS_DENIED = 24000004：访问被拒绝。 ASSET_STATUS_MISMATCH = 24000005：锁屏状态不匹配。 ASSET_OUT_OF_MEMORY = 24000006：系统内存不足。 ASSET_DATA_CORRUPTED = 24000007：关键资产损坏。 ASSET_DATABASE_ERROR = 24000008：数据库操作失败。 ASSET_CRYPTO_ERROR = 24000009：算法库操作失败。 ASSET_IPC_ERROR = 24000010：进程通信错误。 ASSET_BMS_ERROR = 24000011：包管理服务异常。 ASSET_ACCOUNT_ERROR = 24000012：账号系统服务异常。 ASSET_ACCESS_TOKEN_ERROR = 24000013：访问控制服务异常。 ASSET_UNSUPPORTED = 24000017：该子功能不支持。 |
@@ -216,9 +236,10 @@ int32_t OH_Asset_Query(const Asset_Attr *query, uint32_t queryCnt, Asset_ResultS
 
 
 
-#### OH_Asset_PostQuery()
+### OH_Asset_PostQuery()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Asset_PostQuery(const Asset_Attr *handle, uint32_t handleCnt)
@@ -232,6 +253,7 @@ int32_t OH_Asset_PostQuery(const Asset_Attr *handle, uint32_t handleCnt)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Asset_Attr *handle | 待处理的查询句柄，当前包含OH_Asset_PreQuery执行成功返回的挑战值。 |
@@ -240,6 +262,7 @@ int32_t OH_Asset_PostQuery(const Asset_Attr *handle, uint32_t handleCnt)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | Asset_ResultCode： ASSET_SUCCESS = 0：操作成功。 ASSET_INVALID_ARGUMENT = 401：参数错误。 可能原因： 1. 必选参数未指定。 2. 参数类型错误。 3. 参数校验失败。 ASSET_SERVICE_UNAVAILABLE = 24000001：关键资产服务不可用。 ASSET_OUT_OF_MEMORY = 24000006：系统内存不足。 ASSET_IPC_ERROR = 24000010：进程通信错误。 ASSET_BMS_ERROR = 24000011：包管理服务异常。 ASSET_ACCOUNT_ERROR = 24000012：账号系统服务异常。 ASSET_ACCESS_TOKEN_ERROR = 24000013：访问控制服务异常。 |
@@ -247,9 +270,10 @@ int32_t OH_Asset_PostQuery(const Asset_Attr *handle, uint32_t handleCnt)
 
 
 
-#### OH_Asset_QuerySyncResult()
+### OH_Asset_QuerySyncResult()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Asset_QuerySyncResult(const Asset_Attr *query, uint32_t queryCnt, Asset_SyncResult *syncResult)
@@ -263,6 +287,7 @@ int32_t OH_Asset_QuerySyncResult(const Asset_Attr *query, uint32_t queryCnt, Ass
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Asset_Attr *query | 关键资产同步结果的查询条件。 |
@@ -272,6 +297,7 @@ int32_t OH_Asset_QuerySyncResult(const Asset_Attr *query, uint32_t queryCnt, Ass
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | Asset_ResultCode： ASSET_SUCCESS = 0：操作成功。 ASSET_SERVICE_UNAVAILABLE = 24000001：关键资产服务不可用。 ASSET_OUT_OF_MEMORY = 24000006：系统内存不足。 ASSET_IPC_ERROR = 24000010：进程通信错误。 ASSET_BMS_ERROR = 24000011：包管理服务异常。 ASSET_ACCOUNT_ERROR = 24000012：账号系统服务异常。 ASSET_ACCESS_TOKEN_ERROR = 24000013：访问控制服务异常。 ASSET_FILE_OPERATION_ERROR = 24000014：文件操作失败。 ASSET_PARAM_VERIFICATION_FAILED = 24000018：参数校验失败。 |
@@ -279,9 +305,10 @@ int32_t OH_Asset_QuerySyncResult(const Asset_Attr *query, uint32_t queryCnt, Ass
 
 
 
-#### OH_Asset_ParseAttr()
+### OH_Asset_ParseAttr()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Asset_Attr *OH_Asset_ParseAttr(const Asset_Result *result, Asset_Tag tag)
@@ -295,6 +322,7 @@ Asset_Attr *OH_Asset_ParseAttr(const Asset_Result *result, Asset_Tag tag)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Asset_Result *result | 从OH_Asset_Query中获取的查询结果。 |
@@ -303,6 +331,7 @@ Asset_Attr *OH_Asset_ParseAttr(const Asset_Result *result, Asset_Tag tag)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Asset_Attr* | 如果操作成功，则以Asset_Attr的形式返回属性，该属性不需要业务进行释放；否则返回NULL。 |
@@ -310,9 +339,10 @@ Asset_Attr *OH_Asset_ParseAttr(const Asset_Result *result, Asset_Tag tag)
 
 
 
-#### OH_Asset_FreeBlob()
+### OH_Asset_FreeBlob()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Asset_FreeBlob(Asset_Blob *blob)
@@ -326,6 +356,7 @@ void OH_Asset_FreeBlob(Asset_Blob *blob)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Asset_Blob *blob | 从OH_Asset_PreQuery获取的挑战值。 |
@@ -333,9 +364,10 @@ void OH_Asset_FreeBlob(Asset_Blob *blob)
 
 
 
-#### OH_Asset_FreeResultSet()
+### OH_Asset_FreeResultSet()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Asset_FreeResultSet(Asset_ResultSet *resultSet)
@@ -348,6 +380,7 @@ void OH_Asset_FreeResultSet(Asset_ResultSet *resultSet)
 **起始版本：** 11
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |

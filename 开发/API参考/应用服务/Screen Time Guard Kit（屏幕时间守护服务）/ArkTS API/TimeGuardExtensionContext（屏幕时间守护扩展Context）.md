@@ -1,11 +1,12 @@
 # @hms.utilityApplication.screenTimeGuard.TimeGuardExtensionContext（屏幕时间守护扩展Context）
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/screentimeguard-timeguardextensioncontext
 **支持设备：** Phone | Tablet
 
-#### 模块概述
+## 模块概述
+
 
 **支持设备：** Phone | Tablet
 
@@ -15,7 +16,8 @@
  
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | Tablet
 
@@ -25,7 +27,8 @@ import { TimeGuardExtensionContext } from '@kit.ScreenTimeGuardKit';
  
   
 
-#### TimeGuardExtensionContext
+## TimeGuardExtensionContext
+
 
 **支持设备：** Phone | Tablet
 

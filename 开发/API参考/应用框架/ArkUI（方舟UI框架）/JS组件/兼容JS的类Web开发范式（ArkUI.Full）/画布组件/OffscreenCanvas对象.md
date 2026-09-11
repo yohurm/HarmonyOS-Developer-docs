@@ -1,9 +1,9 @@
 # OffscreenCanvas对象
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-canvas-offscreencanvas
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 > [!NOTE]
 > 从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
@@ -12,10 +12,12 @@
 可以离屏渲染的canvas对象。
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
  
+
 | 属性 | 类型 | 描述 |
 | --- | --- | --- |
 | width | number | offscreen canvas对象的宽度。 |
@@ -24,15 +26,17 @@
  
   
 
-#### 方法
+## 方法
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
   
 
-#### getContext
+### getContext
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 getContext(contextId: string, options?: CanvasRenderingContext2DSettings): OffscreenCanvasRenderingContext2D
  
@@ -40,6 +44,7 @@ getContext(contextId: string, options?: CanvasRenderingContext2DSettings): Offsc
  
 **参数：**
   
+
 | 参数名 | 参数类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | contextId | string | 是 | 仅支持 '2d'。 |
@@ -48,6 +53,7 @@ getContext(contextId: string, options?: CanvasRenderingContext2DSettings): Offsc
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OffscreenCanvasRenderingContext2D | 2D绘制对象，用于在画布组件上绘制矩形、文本、图片等。 |
@@ -55,14 +61,16 @@ getContext(contextId: string, options?: CanvasRenderingContext2DSettings): Offsc
  
   
 
-#### CanvasRenderingContext2DSettings
+### CanvasRenderingContext2DSettings
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 CanvasRenderingContext2DSettings(antialias?: boolean)
  
 用来配置OffscreenCanvasRenderingContext2D对象的参数，包括是否开启抗锯齿。
   
+
 | 参数名 | 类型 | 说明 |
 | --- | --- | --- |
 | antialias | boolean | 是否开启抗锯齿功能，默认为false，表示不开启抗锯齿功能。 |
@@ -70,9 +78,10 @@ CanvasRenderingContext2DSettings(antialias?: boolean)
  
   
 
-#### toDataURL
+### toDataURL
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 toDataURL(type?: string, quality?:number): string
  
@@ -80,6 +89,7 @@ toDataURL(type?: string, quality?:number): string
  
 **参数：**
   
+
 | 参数名 | 参数类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | type | string | 否 | 可选参数，用于指定图像格式，默认格式为image/png。 |
@@ -88,6 +98,7 @@ toDataURL(type?: string, quality?:number): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 图像的URL地址。 |
@@ -95,9 +106,10 @@ toDataURL(type?: string, quality?:number): string
  
   
 
-#### transferToImageBitmap
+### transferToImageBitmap
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 transferToImageBitmap(): ImageBitmap
  
@@ -105,6 +117,7 @@ transferToImageBitmap(): ImageBitmap
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageBitmap | 存储离屏画布上渲染的像素数据。 |
@@ -112,9 +125,10 @@ transferToImageBitmap(): ImageBitmap
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 <!-- xxx.hml -->

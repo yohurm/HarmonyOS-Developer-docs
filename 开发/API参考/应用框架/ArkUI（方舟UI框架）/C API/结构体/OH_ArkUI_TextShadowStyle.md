@@ -1,26 +1,29 @@
 # OH_ArkUI_TextShadowStyle
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-oh-arkui-textshadowstyle
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct OH_ArkUI_TextShadowStyle OH_ArkUI_TextShadowStyle
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-定义文本阴影样式。 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+定义文本阴影样式，文本阴影样式包含阴影偏移、模糊半径、颜色等属性，用于为文本添加阴影效果，如标题文字突出显示、深色背景下的文字增强等。
  
- 可以通过[OH_ArkUI_TextShadowStyle_Create](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-styled-string-h#oh_arkui_textshadowstyle_create)接口创建对应的文本阴影样式对象。 
+调用[OH_ArkUI_TextShadowStyle_Create](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-styled-string-h#oh_arkui_textshadowstyle_create)接口创建文本阴影样式对象。
  
- 可以通过[OH_ArkUI_TextShadowStyle_Destroy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-styled-string-h#oh_arkui_textshadowstyle_destroy)接口销毁文本阴影样式对象。 
+调用[OH_ArkUI_TextShadowStyle_Destroy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-styled-string-h#oh_arkui_textshadowstyle_destroy)接口销毁文本阴影样式对象。
  
- 对象创建后通过[OH_ArkUI_TextShadowStyle_SetTextShadow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-styled-string-h#oh_arkui_textshadowstyle_settextshadow)接口设置生效的具体样式。
+创建文本阴影样式对象后，调用[OH_ArkUI_TextShadowStyle_SetTextShadow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-styled-string-h#oh_arkui_textshadowstyle_settextshadow)接口设置文本阴影的具体样式。
+ 
+调用[OH_ArkUI_TextShadowStyle_GetTextShadow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-styled-string-h#oh_arkui_textshadowstyle_gettextshadow)接口获取已设置的文本阴影样式。
  
 **起始版本：** 24
  

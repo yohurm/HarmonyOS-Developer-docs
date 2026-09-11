@@ -1,6 +1,6 @@
 # @ohos.identifier.oaid (开放匿名设备标识服务)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-oaid
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -12,7 +12,8 @@
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -22,7 +23,8 @@ import { identifier } from '@kit.AdsKit';
 
 
 
-#### identifier.getOAID
+## identifier.getOAID
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -36,6 +38,7 @@ getOAID(): Promise&lt;string&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回开放匿名设备标识符（OAID）。 1.如应用已配置ohos.permission.APP_TRACKING_CONSENT权限，且“跨应用关联访问权限”为“允许”，则返回OAID。 2.如应用已配置ohos.permission.APP_TRACKING_CONSENT权限，且“跨应用关联访问权限”为“禁止”，则返回00000000-0000-0000-0000-000000000000。 3.如应用未配置ohos.permission.APP_TRACKING_CONSENT权限，则返回00000000-0000-0000-0000-000000000000。 |
@@ -48,6 +51,7 @@ getOAID(): Promise&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[开放匿名设备标识服务错误码参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-oaid)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -63,7 +67,6 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 
 void identifier.getOAID().then((data: string) => {
   const oaid: string = data;
-  hilog.info(0x0000, 'testTag', `Succeeded in getting OAID: ${oaid}`);
 }).catch((error: BusinessError) => {
   hilog.error(0x0000, 'testTag', `Failed to get oaid. Code is ${error.code}, message is ${error.message}`);
 });
@@ -71,7 +74,8 @@ void identifier.getOAID().then((data: string) => {
 
 
 
-#### identifier.getOAID
+## identifier.getOAID
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -85,6 +89,7 @@ getOAID(callback: AsyncCallback&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;string&gt; | 是 | 回调函数，返回开放匿名设备标识符（OAID）。 1.如应用已配置ohos.permission.APP_TRACKING_CONSENT权限，且“跨应用关联访问权限”为“允许”，则返回OAID。 2.如应用已配置ohos.permission.APP_TRACKING_CONSENT权限，且“跨应用关联访问权限”为“禁止”，则返回00000000-0000-0000-0000-000000000000。 3.如应用未配置ohos.permission.APP_TRACKING_CONSENT权限，则返回00000000-0000-0000-0000-000000000000。 |
@@ -97,6 +102,7 @@ getOAID(callback: AsyncCallback&lt;string&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[开放匿名设备标识服务错误码参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-oaid)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -114,6 +120,5 @@ identifier.getOAID((err: BusinessError, data: string) => {
     return;
   }
   const oaid: string = data;
-  hilog.info(0x0000, 'testTag', `Succeeded in getting OAID: ${oaid}`);
 });
 ```

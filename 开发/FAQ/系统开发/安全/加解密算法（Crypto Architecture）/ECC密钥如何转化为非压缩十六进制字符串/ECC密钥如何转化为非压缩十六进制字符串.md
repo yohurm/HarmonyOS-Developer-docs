@@ -29,7 +29,7 @@
 ```text
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
-// Uint8Array to hexadecimal
+<em>// Uint8Array to hexadecimal</em>
 function uint8ArrayToHexStr(data: Uint8Array): string {
   let hexString = '';
   let i: number;

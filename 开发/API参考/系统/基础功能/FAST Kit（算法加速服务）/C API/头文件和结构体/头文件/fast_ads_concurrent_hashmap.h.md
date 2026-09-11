@@ -1,13 +1,14 @@
 # fast_ads_concurrent_hashmap.h
 
-更新时间：2026-06-12 06:54:11
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/fast-kit-fast-ads-concurrent-hashmap-8h
 **支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 并发哈希表相关数据结构及函数定义。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 类型定义
+### 类型定义
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | typedef void* FAST_ConcurrentHashmapHandle | 并发哈希表句柄。 |
@@ -45,10 +49,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | FAST_ErrorCode HMS_FAST_ConcurrentHashmap_Create (FAST_ConcurrentHashmapHandle* handle, HMS_FAST_ConcurrentHashmap_HashFunc hasher, HMS_FAST_ConcurrentHashmap_KeyEqualFunc equaler, float maxLoadFac, size_t numShards) | 使用给定配置创建并发哈希表。 |

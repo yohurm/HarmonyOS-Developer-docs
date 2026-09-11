@@ -1,9 +1,9 @@
 # Shape
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawing-components-shape
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 绘制组件的父组件，描述所有绘制组件均支持的通用属性。
 
@@ -20,23 +20,26 @@ Shape组件的两种使用方式：
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 包含[Rect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawing-components-rect)、[Path](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawing-components-path)、[Circle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawing-components-circle)、[Ellipse](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawing-components-ellipse)、[Polyline](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawing-components-polyline)、[Polygon](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawing-components-polygon)、[Image](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image)、[Text](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text)、[Column](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-column)、[Row](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-row)和Shape子组件。
 
 
 
-#### 接口
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 接口
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### Shape
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### Shape
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 new Shape(value?: PixelMap)
 
@@ -48,6 +51,7 @@ new Shape(value?: PixelMap)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | PixelMap | 否 | 绘制目标，可将图形绘制在指定的PixelMap对象中，若未设置，则默认在当前绘制目标中进行绘制。 异常值undefined和null按照无效值处理，本次设置不生效。 |
@@ -55,9 +59,10 @@ new Shape(value?: PixelMap)
 
 
 
-#### Shape
+### Shape
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Shape(value: PixelMap)
 
@@ -69,6 +74,7 @@ Shape(value: PixelMap)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | PixelMap | 是 | 绘制目标，可将图形绘制在指定的PixelMap对象中。 说明：此参数为必填参数，应传入有效的PixelMap对象，传入undefined或null时不生效。 |
@@ -76,9 +82,10 @@ Shape(value: PixelMap)
 
 
 
-#### Shape
+### Shape
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Shape()
 
@@ -92,9 +99,10 @@ Shape()
 
 
 
-#### ViewportRect18+对象说明
+## ViewportRect18+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于描述Viewport的绘制属性。
 
@@ -110,6 +118,7 @@ Shape()
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | x7+ | Length | 否 | 是 | 形状视口起始点的水平坐标。 默认值：0 默认单位：vp 异常值undefined、null、NaN和Infinity按照默认值处理。 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -120,17 +129,19 @@ Shape()
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)以及[图形绘制通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawing-components-common)外，还支持以下属性：
 
 
 
-#### viewPort
+### viewPort
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 viewPort(value: ViewportRect)
 
@@ -146,6 +157,7 @@ viewPort(value: ViewportRect)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ViewportRect | 是 | Viewport绘制属性。 默认值：{x: 0, y: 0, width: 0, height: 0} 异常值undefined和null按照默认值处理。 |
@@ -153,9 +165,10 @@ viewPort(value: ViewportRect)
 
 
 
-#### mesh8+
+### mesh8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 mesh(value: Array&lt;any&gt;, column: number, row: number)
 
@@ -175,6 +188,7 @@ mesh(value: Array&lt;any&gt;, column: number, row: number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Array&lt;any&gt; | 是 | 长度（row + 1）* （column + 1）* 2的数组，记录扭曲后的位图各个顶点位置。坐标系基于Shape组件显示区域，原点(0,0)位于左上角，x轴向右延伸，y轴向下延伸。 默认单位：vp 设置异常值undefined、null时按照空数组处理。 |
@@ -184,13 +198,17 @@ mesh(value: Array&lt;any&gt;, column: number, row: number)
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（组件属性绘制）
+
+
+### 示例1（组件属性绘制）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过Shape组件绘制矩形、椭圆和直线路径。
 
@@ -353,7 +371,10 @@ struct ShapeExample {
 
 
 
-#### 示例2（使用不同参数类型绘制图形）
+### 示例2（使用不同参数类型绘制图形）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 各属性通过不同的长度类型绘制图形。
 
@@ -395,12 +416,15 @@ struct ShapeTypeExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/zUuWpCzDR86F0HaF-EVi2A/zh-cn_image_0000002685928497.png?HW-CC-KV=V1&HW-CC-Date=20260730T071512Z&HW-CC-Expire=86400&HW-CC-Sign=2984AFC2F4689255AE416A21B1A373B7C9E7C0DD9C0483433C0F6688D0FF64F3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/cHUVdmSPQVup6whCBhTcbg/zh-cn_image_0000002717772968.png?HW-CC-KV=V1&HW-CC-Date=20260911T073117Z&HW-CC-Expire=86400&HW-CC-Sign=2E3FEB2A8934655D836C03E95029D4567216DF60314019C604EE1E8F4A888D51)
 
 
 
 
-#### 示例3（使用attributeModifier动态设置Shape组件的属性）
+### 示例3（使用attributeModifier动态设置Shape组件的属性）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 以下示例展示了如何使用attributeModifier动态设置Shape组件的fill、fillOpacity、stroke、strokeDashArray、strokeDashOffset、strokeLineCap、strokeLineJoin、strokeMiterLimit、strokeOpacity、strokeWidth和antiAlias属性。
 
@@ -443,12 +467,15 @@ struct ShapeModifierDemo {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/ki0VVFpxRYSc2Y87MKqvmA/zh-cn_image_0000002656008820.png?HW-CC-KV=V1&HW-CC-Date=20260730T071512Z&HW-CC-Expire=86400&HW-CC-Sign=E2392453F32A7DD47EBDDB7EFD9F7D42C2C01E4EF27F8CC5B87D756AB1735D36)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/86NM-1oDTPOgoshgEGGPxA/zh-cn_image_0000002717613036.png?HW-CC-KV=V1&HW-CC-Date=20260911T073117Z&HW-CC-Expire=86400&HW-CC-Sign=71A26F35556F3011C3E58BB5B8F17B89FE3D7DC703E585320389C9584C12E7E0)
 
 
 
 
-#### 示例4（使用mesh实现图像局部扭曲）
+### 示例4（使用mesh实现图像局部扭曲）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 以下示例展示了如何使用mesh属性设置网格效果，实现图像局部扭曲。
 
@@ -491,4 +518,4 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/N111Jwu0RKS8uWJMCpZfWw/zh-cn_image_0000002655848900.png?HW-CC-KV=V1&HW-CC-Date=20260730T071512Z&HW-CC-Expire=86400&HW-CC-Sign=0710A7FD7105752EAC4B739137F42A14CCAB7C7DD4AF856A612AEEFCD3631127)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/oNUrlnIpS-e8XtBXS7D97w/zh-cn_image_0000002747292989.png?HW-CC-KV=V1&HW-CC-Date=20260911T073117Z&HW-CC-Expire=86400&HW-CC-Sign=FF80C7071CB74A5C91B1A6B306679C11E00B7B75D48B35D1C0E4D3BE536882C0)

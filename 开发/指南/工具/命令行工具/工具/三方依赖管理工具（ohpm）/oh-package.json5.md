@@ -1,6 +1,6 @@
 # oh-package.json5
 
-更新时间：2026-07-29 07:25:01
+更新时间：2026-09-08 02:53:31
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-oh-package-json5
 
@@ -13,12 +13,13 @@
 开发者可将标准的DevEco Studio工程下的各个模块打成HAR包后，发布到OpenHarmony三方库中心仓；所有发布到仓库的包必须包含模块级oh-package.json5文件，以描述当前包基本信息。
 
 
-#### 工程级oh-package.json5 字段说明
+## 工程级oh-package.json5字段说明
 
 
 
 > [!NOTE] 说明
 > 如debug和beta环境下需要配置不同的parameterFile，实现不同的包依赖管理，诸如此类场景称为多环境。
+
 
 | 配置项 | 字段名称 | 字段说明 | 字段要求 | 字段类型 | 默认值 | 备注 |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -46,9 +47,10 @@
 
 
 
-#### 模块级oh-package.json5字段说明
+## 模块级oh-package.json5字段说明
 
 模块级oh-package.json5文件位于工程各个模块的根目录下，用来描述当前模块被其他模块依赖时的相关信息，包括：作为依赖时的依赖名（name）、作为依赖时的版本号（version）、入口文件（main/types）和子依赖项等信息。
+
 
 | 配置项 | 字段名称 | 字段说明 | 字段要求 | 字段类型 | 默认值 | 备注 |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -56,7 +58,7 @@
 | 描述配置 | version | 版本号 | 必选 | 字符串 | 1.0.0 | 该模块构建产物（HAR/HSP）的版本号。 规范：采用X.Y.Z（主版本.次版本.修订号）三段式结构，遵循 semver 语义化规范，从1.0.0开始。 |
 | 描述配置 | description | 简介 | 可选 | 字符串 | 无 | 用于描述该模块构建产物（HAR/HSP）的信息，有助于被搜索发现。长度范围为0-512字符。 |
 | 描述配置 | keywords | 关键字 | 可选 | 数组 | [] | 关键字信息数组，便于搜索使用。例如：["tools", "project"]。 |
-| 描述配置 | author | 作者 | 可选/必选 | 对象或字符串 | 无 | author包含 name 字段（必选）、 email 字段（可选）、url字段（可选），可通过格式对象或字符串格式配置。 name字段允许使用字母、数字，点（.），中划线（-），下划线（_），空格，中文。 对象格式："author": {"name": "xxx" , "email": "***@example.com" , "url": "https://xxx.com" }。 字符串格式："author": "name<***@example.com>(https://xxx.com)"。 仅发布到OpenHarmony三方库中心仓时，必须填写，其他场景可选填。 |
+| 描述配置 | author | 作者 | 可选/必选 | 对象或字符串 | 无 | author包含 name 字段（必选）、 email 字段（可选）、url字段（可选），可通过格式对象或字符串格式配置。 name字段允许使用字母、数字，点（.），中划线（-），下划线（_），空格，中文，长度范围为[1,128]，email长度范围为[1,64]，url长度范围为[1,256]。 对象格式："author": {"name": "xxx" , "email": "***@example.com" , "url": "https://xxx.com" }。 字符串格式："author": "name<***@example.com>(https://xxx.com)"。 仅发布到OpenHarmony三方库中心仓时，必须填写，其他场景可选填。 |
 | 描述配置 | homepage | 主页链接 | 可选 | 字符串 | "" | 通常是项目gitee链接。 |
 | 描述配置 | repository | 仓库地址 | 可选 | 字符串 | "" | 开源代码仓库地址。在私仓管理界面的系统设置处可定义是否为必填。 |
 | 描述配置 | license | 开源协议 | 可选/必选 | 字符串 | "ISC" | 当前项目的开源许可证。遵循 spdx license 规范。许可证若为 GPL，repository 建议不为空。 仅发布开源三方库到OpenHarmony三方库中心仓时，必须填写，其他场景可选填。 |
@@ -75,6 +77,7 @@
 | 其他 | hooks | 钩子 | 可选 | 对象 | {} | 安装或卸载的钩子设置，包含 "preInstall", "postInstall", "preUninstall", "postUninstall","preVersion", "postVersion", "prePublish", "postPublish" 字段。仅支持执行当前工程中的 hooks，不支持执行依赖中的 hooks。 |
 | 其他 | category | 检查规则白名单 | 可选 | 字符串 | {} | 在私仓管理界面配置后自动生成，白名单为分号隔开的字符串列表，每个列表项必须是一个由大小写字母或下划线组成的字符串，包含在白名单中的配置项，不再做规则检查。 |
 | 其他 | packageType | 包类型 | 可选 | 字符串 | InterfaceHar | 标识模块是否为HSP包，在新建Shared Library时会自动生成该字段，并默认赋值为"InterfaceHar"；Static Library中没有该字段，表示为普通HAR包。 |
+| 其他 | dependencyMode | BundledHar类型 | 可选 | 字符串 | loose | 该字段由编译构建自动生成，不推荐开发者手动配置。 用于标识当前HAR包编译时是否开启bundledAllDependencies。若开启填入bundled，若未开启填入loose或缺省。 三方中心仓仅支持bundled和loose两种取值，其他取值会导致校验失败。 |
 
 
 
@@ -95,7 +98,7 @@
 
 
 
-#### 兼容性字段配置示例
+## 兼容性字段配置示例
 
 三方库开发者使用的SDK和当前集成该三方库工程编译时使用的SDK可能存在不一致的情况。因此，ohpm新增了兼容性检测相关配置以帮助SDK做兼容性分析。配置示例如下：
 
@@ -124,7 +127,7 @@
 
 
 
-#### 创建一个新的oh-package.json5文件
+## 创建一个新的oh-package.json5文件
 
 通过命令行创建 oh-package.json5文件，执行如下命令：
 1. 导航到包的目录。
@@ -177,7 +180,7 @@ ohpm init --yes
 
   
 
-  #### 依赖配置说明
+  ## 依赖配置说明
 
   ohpm 存在 dependencies，devDependencies和dynamicDependencies 三种依赖类型。同时支持具体版本号，范围版本号，tag标签，本地har/tgz文件路径、本地源码目录和使用@module通过模块名指向模块目录（示例："module_key": "@module:module_name"）多种方式引入依赖。当依赖的三方库版本号配置为 * 时，表示当前依赖的包版本为该三方库的最新包版本。
 
@@ -211,8 +214,8 @@ ohpm init --yes
     // 本地源码引入，可引入本地其他模块的源码，示例直接引入本地的"module1"模块
     "local_source_code": "file:../module1"
 
-    // 项目存在Foo模块，即build-profile.json5文件或dependencyMap.json5文件中modules节点下存在名称为Foo的模块；该模块Foo的oh-package.json5中name为：foo_test
-    "foo_test": "@module:Foo"
+<span>    // 项目存在Foo模块，即build-profile.json5文件或dependencyMap.json5文件中modules节点下存在名称为Foo的模块；该模块Foo的oh-package.json5中name为：foo_test</span>
+<span>    "foo_test": "@module:Foo"</span>
   },
   "devDependencies": {
     // 支持依赖引入类型同dependencies
@@ -258,7 +261,7 @@ ohpm init --yes
 
   
 
-  #### overrides
+  ## overrides
 
   ohpm客户端在1.4.0版本开始支持Override机制，可以在项目级别的oh-package.json5（即项目根目录下的oh-package.json5）文件中添加overrides配置，方便将依赖树中的依赖替换为另一个版本。替换的版本可以是一个具体的版本号或模糊版本、本地存在的HAR包或源码目录、[parameterFile](#section122411462820)配置（示例："foo": "@param:dependencies.foo"），也可以使用@module通过模块名指向模块目录（示例："module_key": "@module:module_name"）。
 
@@ -283,8 +286,8 @@ ohpm init --yes
 ```json
 {
    "overrides": {
-      // 项目存在Foo模块，即build-profile.json5文件或dependencyMap.json5文件中modules节点下存在名称为Foo的模块；该模块Foo的oh-package.json5中name为：foo_test
-      // "foo_test": "@module:Foo"
+<span>      // 项目存在Foo模块，即build-profile.json5文件或dependencyMap.json5文件中modules节点下存在名称为Foo的模块；该模块Foo的oh-package.json5中name为：foo_test</span>
+<span>      // "foo_test": "@module:Foo"</span>
       // 本地存在"foo"的源码目录，如项目根目录下的foo目录
       // "foo": "file:./foo" 
       // 本地存在"foo"的HAR文件，如项目根目录下的libs目录中的foo.har
@@ -296,13 +299,13 @@ ohpm init --yes
 
   
 
-  #### exclusions
+  ## exclusions
 
   ohpm客户端在5.3.0版本开始支持exclusions机制，可以在项目级oh-package.json5（即项目根目录下的oh-package.json5）文件中添加exclusions配置，即可实现移除第三方依赖（远程依赖、本地文件依赖）中的一个或多个子依赖。
 
   
 
-  #### 配置说明
+  ### 配置说明
 
   
 配置格式       
@@ -339,7 +342,7 @@ exclusions必须配置在项目级别的oh-package.json5中，配置在模块级
 
 
 
-#### 示例
+### 示例
 
 下面演示如何移除远程依赖或本地文件依赖的oh-package.json5中dependencies、dynamicDependencies下配置的依赖。示例中以&lt;project&gt;代表项目根路径进行说明。
 
@@ -410,7 +413,7 @@ entry 1.0.0 <project>\entry
 
 
 
-#### parameterFile
+## parameterFile
 
 OHPM新增了参数化配置功能。开发者可在项目根目录配置一个参数化文件（json5格式文件），在该文件中维护模块或依赖版本信息，不同模块将根据该文件中的版本进行配置，满足不同构建场景下，开发者快速切换依赖版本的需要。同时，支持通过命令行指定参数化文件，降低流水线场景下模块和依赖版本的变更难度。
 
@@ -428,7 +431,7 @@ OHPM客户端在1.6.0版本开始支持参数化配置。可以在项目级别�
 
 
 
-#### 基础配置示例
+### 基础配置示例
 
 
 工程级oh-package.json5示例：
@@ -487,7 +490,7 @@ parameterFile所指向文件的配置示例：
 ```
 
 
-#### 一仓多包示例
+### 一仓多包示例
 
 
 一个代码仓有多个har/hsp模块，发包时，一般需要开发者手动修改所有模块的版本号后再打包发布，若模块较多，操作繁琐且效率低下，建议使用参数化配置解决该问题，详细示例如下。
@@ -540,7 +543,7 @@ AppTest
 ```
 
 
-#### properties
+## properties
 
 从ohpm 6.1.2.268版本开始，在工程级的oh-package.json5中新增properties参数，该配置参数用于多环境下的依赖管理。
 
@@ -602,7 +605,7 @@ AppTest
 
 
 
-#### overrideDependencyMap
+## overrideDependencyMap
 
 OHPM客户端在1.7.0版本开始支持使用overrideDependencyMap机制重写源码模块或三方库的依赖关系。开发者可在工程级oh-package.json5文件中新增overrideDependencyMap配置，在该配置对象中通过key-value形式配置依赖关系重写文件；其中，key为依赖标识符，value为依赖关系重写文件路径。在依赖安装时， ohpm会将依赖树中的某个依赖节点的所有直接子依赖替换为对应依赖关系重写文件中配置的依赖项，依赖关系重写文件中支持配置的依赖类型为dependencies、devDependencies、dynamicDependencies，通过使用overrideDependencyMap机制，可以满足开发者在不同场景下，动态变更依赖的需求。
 
@@ -707,7 +710,7 @@ entry 1.0.0 D:\overrideDependencyMapTest\entry
 
 
 
-#### oh-exports
+## oh-exports
 
 从ohpm 6.1.1.816版本开始，支持通过oh-exports字段控制导出模块中文件，实现包的可见性控制。
 
@@ -734,7 +737,7 @@ oh-exports为选填字段，字段值为字符串数组。
 
 
 
-#### .ohpmrc中projectPackageJson配置
+## .ohpmrc中projectPackageJson配置
 
 
 通过在.ohpmrc文件中配置projectPackageJson，可同时实现对overrides、overrideDependencyMap字段配置的效果，替换项目级oh-package.json5文件中相应的配置，方便开发者在不同使用场景下快速切换使用。配置格式及使用约束如下所示：
@@ -816,7 +819,7 @@ entry 1.0.0 D:\overrideDependencyMapTest\entry
 
 
 
-#### oh-package-lock.json5
+## oh-package-lock.json5
 
 oh-package-lock.json5用于锁定所有依赖的版本，以及缓存依赖的元数据信息。不建议开发者手动修改该文件的内容，也不建议开发者使用其他分析工具直接读取该文件的内容。
 

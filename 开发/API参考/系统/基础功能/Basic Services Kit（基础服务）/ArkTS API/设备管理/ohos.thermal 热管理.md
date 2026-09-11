@@ -1,9 +1,9 @@
 # @ohos.thermal (热管理)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-thermal
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该模块提供热管理相关的接口，包括热档位查询及注册回调等功能。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import {thermal} from '@kit.BasicServicesKit';
@@ -22,9 +23,10 @@ import {thermal} from '@kit.BasicServicesKit';
 
 
 
-#### thermal.registerThermalLevelCallback9+
+## thermal.registerThermalLevelCallback9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 registerThermalLevelCallback(callback: Callback&lt;ThermalLevel&gt;): void
 
@@ -34,6 +36,7 @@ registerThermalLevelCallback(callback: Callback&lt;ThermalLevel&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;ThermalLevel&gt; | 是 | 回调函数，返回变化后的热档位；该参数是一个函数类型。 |
@@ -42,6 +45,7 @@ registerThermalLevelCallback(callback: Callback&lt;ThermalLevel&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -63,9 +67,10 @@ try {
 
 
 
-#### thermal.unregisterThermalLevelCallback9+
+## thermal.unregisterThermalLevelCallback9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unregisterThermalLevelCallback(callback?: Callback&lt;void&gt;): void
 
@@ -75,6 +80,7 @@ unregisterThermalLevelCallback(callback?: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;void&gt; | 否 | 可选参数，回调函数，无返回值。 |
@@ -83,6 +89,7 @@ unregisterThermalLevelCallback(callback?: Callback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -104,9 +111,10 @@ try {
 
 
 
-#### thermal.getLevel9+
+## thermal.getLevel9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLevel(): ThermalLevel
 
@@ -115,6 +123,7 @@ getLevel(): ThermalLevel
 **系统能力：** SystemCapability.PowerManager.ThermalManager
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -130,9 +139,10 @@ console.info('thermal level is: ' + level);
 
 
 
-#### thermal.subscribeThermalLevel(deprecated)
+## thermal.subscribeThermalLevel(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 subscribeThermalLevel(callback: AsyncCallback&lt;ThermalLevel&gt;): void
 
@@ -145,6 +155,7 @@ subscribeThermalLevel(callback: AsyncCallback&lt;ThermalLevel&gt;): void
 **系统能力：** SystemCapability.PowerManager.ThermalManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -161,9 +172,10 @@ thermal.subscribeThermalLevel((err: Error, level: thermal.ThermalLevel) => {
 
 
 
-#### thermal.unsubscribeThermalLevel(deprecated)
+## thermal.unsubscribeThermalLevel(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unsubscribeThermalLevel(callback?: AsyncCallback&lt;void&gt;): void
 
@@ -176,6 +188,7 @@ unsubscribeThermalLevel(callback?: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.PowerManager.ThermalManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -192,9 +205,10 @@ thermal.unsubscribeThermalLevel(() => {
 
 
 
-#### thermal.getThermalLevel(deprecated)
+## thermal.getThermalLevel(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getThermalLevel(): ThermalLevel
 
@@ -207,6 +221,7 @@ getThermalLevel(): ThermalLevel
 **系统能力：** SystemCapability.PowerManager.ThermalManager
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -222,13 +237,15 @@ console.info('thermal level is: ' + level);
 
 
 
-#### ThermalLevel
+## ThermalLevel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 热档位信息。
 
 **系统能力：** SystemCapability.PowerManager.ThermalManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

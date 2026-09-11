@@ -1,11 +1,12 @@
 # Interface (MarkerDelegate)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-markerdelegate
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-#### MarkerDelegate
+## MarkerDelegate
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -21,6 +22,7 @@
  
 **参数**：
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | marker | Marker | 否 | 是 | 用于表示代理对象的标记。 |

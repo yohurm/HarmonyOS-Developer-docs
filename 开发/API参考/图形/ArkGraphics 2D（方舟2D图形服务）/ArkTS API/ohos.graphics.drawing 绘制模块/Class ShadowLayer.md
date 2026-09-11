@@ -1,9 +1,9 @@
 # Class (ShadowLayer)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-graphics-drawing-shadowlayer
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 阴影层对象。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { drawing } from '@kit.ArkGraphics2D';
@@ -22,9 +23,10 @@ import { drawing } from '@kit.ArkGraphics2D';
 
 
 
-#### create12+
+## create12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static create(blurRadius: number, x: number, y: number, color: common2D.Color): ShadowLayer
 
@@ -34,15 +36,17 @@ static create(blurRadius: number, x: number, y: number, color: common2D.Color): 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| blurRadius | number | 是 | 阴影的半径，必须为大于零的浮点数。单位为物理像素px。 |
+| blurRadius | number | 是 | 阴影的模糊半径，必须为大于零的浮点数。单位为物理像素px。 |
 | x | number | 是 | x轴上的偏移点，该参数为浮点数。单位为物理像素px。 |
 | y | number | 是 | Y轴上的偏移点，该参数为浮点数。单位为物理像素px。 |
 | color | common2D.Color | 是 | ARGB格式的颜色，每个颜色通道的值是0到255之间的整数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -52,6 +56,7 @@ static create(blurRadius: number, x: number, y: number, color: common2D.Color): 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -75,9 +80,10 @@ class DrawingRenderNode extends RenderNode {
 
 
 
-#### create18+
+## create18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static create(blurRadius: number, x: number, y: number, color: common2D.Color | number): ShadowLayer
 
@@ -87,15 +93,17 @@ static create(blurRadius: number, x: number, y: number, color: common2D.Color | 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| blurRadius | number | 是 | 阴影的半径，必须为大于零的浮点数。单位为物理像素px。 |
+| blurRadius | number | 是 | 阴影的模糊半径，必须为大于零的浮点数。单位为物理像素px。 |
 | x | number | 是 | x轴上的偏移点，该参数为浮点数。单位为物理像素px。 |
 | y | number | 是 | Y轴上的偏移点，该参数为浮点数。单位为物理像素px。 |
 | color | common2D.Color \| number | 是 | 颜色，可以用16进制ARGB格式的无符号整数表示。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -105,6 +113,7 @@ static create(blurRadius: number, x: number, y: number, color: common2D.Color | 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

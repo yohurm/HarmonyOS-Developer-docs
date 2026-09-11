@@ -1,11 +1,12 @@
 # AREngine_ARAugmentedImageSource
 
-更新时间：2026-04-28 03:31:56
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-struct-araugmentedimagesource
 **支持设备：** Phone | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -19,16 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | const char *imageName | 图像名，不允许为空，255个字符以内，超过255个字符的部分将被自动截断。 |
@@ -41,13 +45,15 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### imageName
+### imageName
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -61,7 +67,8 @@ const char* AREngine_ARAugmentedImageSource::imageName
  
   
 
-#### imageData
+### imageData
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -75,7 +82,8 @@ const uint8_t* AREngine_ARAugmentedImageSource::imageData
  
   
 
-#### pixelWidth
+### pixelWidth
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -89,7 +97,8 @@ int32_t AREngine_ARAugmentedImageSource::pixelWidth
  
   
 
-#### pixelHeight
+### pixelHeight
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -103,7 +112,8 @@ int32_t AREngine_ARAugmentedImageSource::pixelHeight
  
   
 
-#### stride
+### stride
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -117,7 +127,8 @@ int32_t AREngine_ARAugmentedImageSource::stride
  
   
 
-#### realWidthInMeters
+### realWidthInMeters
+
 
 **支持设备：** Phone | Tablet | TV
 

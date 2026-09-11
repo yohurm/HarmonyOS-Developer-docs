@@ -1,13 +1,13 @@
 # 不依赖UI组件的全局气泡提示 (openPopup)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-popup-and-menu-components-uicontext-popup
 
 [气泡提示（Popup）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-popup-and-menu-components-popup)在使用时依赖绑定UI组件，否则无法使用。从API version 18开始，可以通过使用全局接口[openPopup](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-promptaction#openpopup18)的方式，在无UI组件的场景下直接或封装使用，例如在事件回调中使用或封装后对外提供能力。
 
 
-#### 弹出气泡
+## 弹出气泡
 
 通过[openPopup](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-promptaction#openpopup18)可以弹出气泡。
 
@@ -25,7 +25,7 @@ this.promptAction.openPopup(this.contentNode, { id: targetId }, {
 
 
 
-#### 创建ComponentContent
+### 创建ComponentContent
 
 通过调用openPopup接口弹出气泡，需要定义ComponentContent，以提供自定义弹出框的内容。详细规格可参考[ComponentContent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-componentcontent)说明。
 
@@ -88,7 +88,7 @@ let contentNode: ComponentContent<Object> =
 
 
 
-#### 绑定组件信息
+### 绑定组件信息
 
 通过调用openPopup接口弹出气泡，需要提供绑定组件的信息[TargetInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-i#targetinfo18)。若未传入有效的target，气泡将无法弹出。
 
@@ -144,7 +144,7 @@ build() {
 
 
 
-#### 设置弹出气泡样式
+### 设置弹出气泡样式
 
 通过调用openPopup接口弹出气泡，可以设置[PopupCommonOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-popup#popupcommonoptions18类型说明)属性调整气泡样式。
 
@@ -154,7 +154,7 @@ private options: PopupCommonOptions = { enableArrow: true };
 
 
 
-#### 更新气泡样式
+## 更新气泡样式
 
 从API version 18开始，通过[updatePopup](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-promptaction#updatepopup18)可以更新气泡的样式。支持全量更新和增量更新其气泡样式，不支持更新[PopupCommonOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-popup#popupcommonoptions18类型说明)中的showInSubWindow、focusable、onStateChange、onWillDismiss和transition属性。
 
@@ -172,7 +172,7 @@ this.promptAction.updatePopup(this.contentNode, {
 
 
 
-#### 关闭气泡
+## 关闭气泡
 
 从API version 18开始，通过调用[closePopup](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-promptaction#closepopup18)可以关闭气泡。
 
@@ -192,7 +192,7 @@ this.promptAction.closePopup(this.contentNode)
 
 
 
-#### 在HAR包中使用全局气泡提示
+## 在HAR包中使用全局气泡提示
 
 以下示例通过[HAR](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/har-package)包封装一个Popup，从而对外提供气泡的弹出、更新和关闭能力。
 
@@ -345,4 +345,4 @@ export struct OpenPopup {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/L7ykNqkyTDKwUk5TG1RJfg/zh-cn_image_0000002674632342.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095714Z&HW-CC-Expire=86400&HW-CC-Sign=922BD11E3E80BB69B79E017106B26CED8B0B063B54D1E5B034144BD80BE0EEB3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/iyhh5DdVShqZo6OwozxyLw/zh-cn_image_0000002747290511.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072302Z&HW-CC-Expire=86400&HW-CC-Sign=D2209F36C8AD204B5445FC7165FDF4C774FCF5D6AE1BB7CADE5014FA851BFB6E)

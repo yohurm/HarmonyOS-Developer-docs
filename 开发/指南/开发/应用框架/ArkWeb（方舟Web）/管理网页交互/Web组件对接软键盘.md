@@ -1,6 +1,6 @@
 # Web组件对接软键盘
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-docking-softkeyboard
 
@@ -13,7 +13,7 @@
 
 
 
-#### Web页面输入框输入与软键盘交互的W3C标准支持
+## Web页面输入框输入与软键盘交互的W3C标准支持
 
 为支持Web页面与系统软键盘、自定义软键盘等的良好交互，ArkWeb遵循并实现了W3C规范中的以下输入控制属性：
 
@@ -22,47 +22,79 @@
   type属性定义了input元素的类型，影响输入的验证、显示方式和键盘类型。常见的type值包括：
 
 | type值 | 描述 |
+
 | --- | --- |
+
 | text | 默认值。普通文本输入 |
+
 | number | 数字输入 |
+
 | email | 电子邮件地址输入 |
+
 | password | 密码输入 |
+
 | tel | 电话号码输入 |
+
 | url | URL输入 |
+
 | date | 日期选择器 |
+
 | time | 时间选择器 |
+
 | checkbox | 复选框 |
+
 | radio | 单选按钮 |
+
 | file | 文件上传 |
+
 | submit | 提交按钮 |
+
 | reset | 重置按钮 |
+
 | button | 普通按钮 |
  - inputmode属性
 
   inputmode属性用于配置输入法类型，默认值：text。
 
 | inputmode | 描述 |
+
 | --- | --- |
+
 | decimal | 只显示数字键盘，通常还有一个逗号键。 |
+
 | email | 文本键盘，键通常用于电子邮件地址，如[@]。 |
+
 | none | 不应出现键盘。 |
+
 | numeric | 只显示数字键盘。 |
+
 | search | 文本键盘，[enter]键通常显示为[go]。 |
+
 | tel | 只显示数字键盘，通常还有[+]、[*]和[#]键。 |
+
 | text | 默认文本键盘。 |
+
 | url | 文本键盘，键通常用于网址，如[.]和[/]，以及特殊的[.com]键，或者其他通常用于本地设置的域名结束符。 |
  - enterkeyhint属性
 
   enterkeyhint属性用于指定移动设备虚拟键盘上回车键的显示方式。
 
 | enterkeyhint值 | 描述 |
+
 | --- | --- |
+
 | enter | 显示默认的回车键 |
+
 | done | 表示输入完成 |
+
 | go | 表示跳转或执行 |
+
 | next | 进入下一个输入字段 |
+
 | previous | 返回上一个输入字段 |
+
 | search | 执行搜索 |
+
 | send | 发送信息 |
 
 
@@ -72,7 +104,7 @@
 
 
 
-#### 软键盘自动弹出
+## 软键盘自动弹出
 
 为提升用户体验，可以在页面完成加载后，输入框自动获焦并弹出软键盘。通过调用[showTextInput()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inputmethod#showtextinput10)设置软键盘自动弹出功能。
 
@@ -116,7 +148,7 @@ struct WebComponent {
 
 
 
-#### 设置软键盘避让模式
+## 设置软键盘避让模式
 
 在移动设备上，支持设置Web页面的软键盘避让模式。
 1. 在应用代码中设置[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)的软键盘避让模式[setKeyboardAvoidMode()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-expand-safe-area#setkeyboardavoidmode11)。ArkWeb组件支持Resize和Offset两种模式。
@@ -263,6 +295,7 @@ struct WebComponent {
 
 与其他Web组件行为的交互场景：
 
+
 | 交叉场景 | 规格 |
 | --- | --- |
 | 同层渲染 | 同层Web：软键盘避让方式与普通场景相同。 同层系统组件：由ArkUI负责软键盘避让模式。 |
@@ -275,7 +308,7 @@ struct WebComponent {
 
 
 
-#### 拦截系统软键盘与自定义软键盘输入
+## 拦截系统软键盘与自定义软键盘输入
 
 应用可以通过监听[onInterceptKeyboardAttach](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-events#oninterceptkeyboardattach12)回调，在软键盘拉起前，控制软键盘的显示，包括系统默认软键盘、带有特定Enter键的软键盘，或完全自定义软键盘。借助这一功能，开发者能够实现对软键盘的灵活管理。
 
@@ -456,10 +489,10 @@ ArkWeb自定义键盘的示例效果如图4、图5和图6所示。
 **图5** ArkWeb自定义键盘字母键盘
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/zLyk70SlTV-vMQ77jWoNYw/zh-cn_image_0000002674632724.png?HW-CC-KV=V1&HW-CC-Date=20260813T095735Z&HW-CC-Expire=86400&HW-CC-Sign=D0EDBDBBBDAB8FAAF4A7A66F83129AA159E41460B1301DBB7560617CF42EE1C2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/RY7d3j7LRtqepRYA9LidYA/zh-cn_image_0000002747290871.png?HW-CC-KV=V1&HW-CC-Date=20260911T073147Z&HW-CC-Expire=86400&HW-CC-Sign=D11A8270F7E99C9127798F8D9F3C723BAB1672B300E7801850D620E521B075F2)
 
 
 **图6** ArkWeb自定义键盘符号键盘
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/Dhv-geiBTvOoJ5cabLEtYg/zh-cn_image_0000002704272677.png?HW-CC-KV=V1&HW-CC-Date=20260813T095735Z&HW-CC-Expire=86400&HW-CC-Sign=174A8BB7C332F15CA51215C1CB8B41FE543EB535EE30AE3EAA06C6A4AEE3DA90)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/yz3dTu-zQE-XEDlKQjPWLw/zh-cn_image_0000002747210789.png?HW-CC-KV=V1&HW-CC-Date=20260911T073147Z&HW-CC-Expire=86400&HW-CC-Sign=EB1B6972164F246BC97CE167BFF7C4116394E3E190821BA03568F626234D9373)

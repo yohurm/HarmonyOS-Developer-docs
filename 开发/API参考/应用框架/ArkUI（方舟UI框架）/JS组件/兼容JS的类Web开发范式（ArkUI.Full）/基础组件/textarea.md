@@ -1,9 +1,9 @@
 # textarea
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-basic-textarea
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 > [!NOTE]
 > 从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
@@ -12,28 +12,32 @@
 多行文本输入的文本框。
   
 
-#### 权限列表
+## 权限列表
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 无
  
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 不支持。
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-attributes)外，还支持如下属性：
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | placeholder | string | - | 否 | 多行文本框的提示文本内容。 |
@@ -51,6 +55,7 @@
  
 **表1** MenuOption5+
   
+
 | 名称 | 类型 | 描述 |
 | --- | --- | --- |
 | icon | string | 菜单选项中的图标路径。 |
@@ -59,12 +64,14 @@
  
   
 
-#### 样式
+## 样式
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 除支持[通用样式](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-styles)外，还支持如下样式：
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | color | &lt;color&gt; | #e6000000 | 否 | 多行文本框的文本颜色。 |
@@ -78,12 +85,14 @@
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-events)外，还支持如下事件：
   
+
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | change | { text: newText, lines: textLines, height: textHeight } | 输入内容发生变化时触发该事件，通过参数获取输入内容、行数和行高。 从API version 5开始，改变value属性值不会触发该回调。 |
@@ -96,17 +105,19 @@
  
   
 
-#### 方法
+## 方法
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 支持[通用方法](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-methods)。
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 <!-- xxx.hml -->
@@ -137,4 +148,4 @@ change(e){
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/QWBnpaTgSWKtD9nj8cuLwA/zh-cn_image_0000002659102305.png?HW-CC-KV=V1&HW-CC-Date=20260701T014403Z&HW-CC-Expire=86400&HW-CC-Sign=8CBEB9FCC819B7743CF426E3498EC65BC924D552EEFA0BD1B4E8462868BB872B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/wXYrwBkRT3G7xLENMSqIOA/zh-cn_image_0000002747293205.png?HW-CC-KV=V1&HW-CC-Date=20260911T072956Z&HW-CC-Expire=86400&HW-CC-Sign=BC77DA3D87C12C3E141191272E8FFCF596749CED0B4B34F9107238112655436A)

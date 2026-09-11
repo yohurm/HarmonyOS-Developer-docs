@@ -1,9 +1,9 @@
 # @ohos.bundle.launcherBundleManager (launcherBundleManager模块)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-launcherbundlemanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块支持launcher应用（桌面有图标的应用）所需的查询能力，支持[LauncherAbilityInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bundlemanager-launcherabilityinfo)信息的查询。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { launcherBundleManager } from '@kit.AbilityKit';
@@ -22,9 +23,10 @@ import { launcherBundleManager } from '@kit.AbilityKit';
 
 
 
-#### launcherBundleManager.getLauncherAbilityInfoSync
+## launcherBundleManager.getLauncherAbilityInfoSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLauncherAbilityInfoSync(bundleName: string, userId: number) : Array<[LauncherAbilityInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bundlemanager-launcherabilityinfo)>
 
@@ -36,6 +38,7 @@ getLauncherAbilityInfoSync(bundleName: string, userId: number) : Array<[Launcher
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 应用Bundle名称。 |
@@ -43,6 +46,7 @@ getLauncherAbilityInfoSync(bundleName: string, userId: number) : Array<[Launcher
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -52,6 +56,7 @@ getLauncherAbilityInfoSync(bundleName: string, userId: number) : Array<[Launcher
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[包管理子系统通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bundle)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -79,15 +84,17 @@ try {
 
 
 
-#### LauncherAbilityInfo
+## LauncherAbilityInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type LauncherAbilityInfo = _LauncherAbilityInfo
 
 桌面应用Ability的基础信息，包含应用标识、图标、名称等核心属性。详细信息请参见[LauncherAbilityInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bundlemanager-launcherabilityinfo)。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Launcher
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -96,15 +103,17 @@ type LauncherAbilityInfo = _LauncherAbilityInfo
 
 
 
-#### ShortcutInfo20+
+## ShortcutInfo20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ShortcutInfo = _ShortcutInfo
 
 应用[module.json5配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#shortcuts标签)中定义的快捷方式信息。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Launcher
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -113,15 +122,17 @@ type ShortcutInfo = _ShortcutInfo
 
 
 
-#### ShortcutWant20+
+## ShortcutWant20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ShortcutWant = _ShortcutWant
 
 快捷方式内定义的目标[wants](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#wants标签)信息集合。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Launcher
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -130,15 +141,17 @@ type ShortcutWant = _ShortcutWant
 
 
 
-#### ParameterItem20+
+## ParameterItem20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ParameterItem = _ParameterItem
 
 快捷方式配置信息中的自定义数据。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Launcher
+
 
 | 类型 | 说明 |
 | --- | --- |

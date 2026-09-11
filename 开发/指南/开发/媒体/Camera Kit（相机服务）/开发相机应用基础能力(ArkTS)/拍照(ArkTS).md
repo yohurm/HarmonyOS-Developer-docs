@@ -1,10 +1,10 @@
 # 拍照(ArkTS)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-shooting
 
-#### 概述
+## 概述
 
 拍照是相机的重要功能之一，拍照模块基于相机复杂的逻辑，为了保证用户拍出的照片质量，在中间步骤可以设置分辨率、闪光灯、焦距、照片质量及旋转角度等信息。
 
@@ -16,7 +16,7 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 
 详细的API说明请参考[@ohos.multimedia.camera (相机管理)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera)。
 1. 导入[Image](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-image)接口。获取拍照输出的数据需要用到系统提供的Image接口能力，导入Image接口的方法如下。
@@ -232,14 +232,14 @@ capture(captureLocation?: camera.Location): void {
 
 
 
-#### 高性能拍照
+## 高性能拍照
 
 从API version 21开始支持高性能拍照功能，即在进行单段式拍照时设置明确的[画质优先策略](#画质优先策略)。
 
 单段式拍照的体验主要由出图速度和最终图片质量衡量。因此，为满足开发者在不同场景下的差异化需求，对这两项指标的侧重也不同。例如，街头抓拍要求快速捕捉瞬间，而风景或人像拍摄则更追求极致的画质。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/QVpvXSH3QM-bf-2n18Wc_A/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095823Z&HW-CC-Expire=86400&HW-CC-Sign=3857394F36F3398BB6622C0766E356F2CAAD74294628574322D14C523AD09D7B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/-9Mvi26wRRCD-4Uq-xXSdw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072531Z&HW-CC-Expire=86400&HW-CC-Sign=6E29F4F7D40AD3E848A07F845B3CFD82DC6823A52F8C752D748C485476682E39)
 
 
 仅单段式拍照支持设置画质优先策略。若在分段式拍照中设置画质优先策略，该设置将无效。
@@ -248,7 +248,7 @@ capture(captureLocation?: camera.Location): void {
 
 
 
-#### 画质优先策略
+### 画质优先策略
 
 在使用单段式拍照时，支持设置速度优先和画质优先两种画质优先策略类型，并且分别对应着不同的[PhotoQualityPrioritization](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-e#photoqualityprioritization21)枚举类型。
 
@@ -258,7 +258,7 @@ capture(captureLocation?: camera.Location): void {
 
 
 
-#### 如何正确设置画质优先策略
+### 如何正确设置画质优先策略
 
 为了正确地在单段式拍照中设置画质优先策略，高性能拍照功能提供了如下两个接口：
 
@@ -268,7 +268,7 @@ capture(captureLocation?: camera.Location): void {
 
 
 
-#### 开发步骤
+### 开发步骤
 
 高性能拍照相关接口需要在[会话管理(ArkTS)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-session-management)流程的使能步骤中进行调用。
 
@@ -442,7 +442,7 @@ async function modeSwitchToHigh(photoSession: camera.PhotoSession, photoOutput: 
 
 
 
-#### 状态监听
+## 状态监听
 
 在相机应用开发过程中，可以随时监听拍照输出流状态，包括拍照流开始、拍照帧的开始与结束、拍照输出流的错误。
 

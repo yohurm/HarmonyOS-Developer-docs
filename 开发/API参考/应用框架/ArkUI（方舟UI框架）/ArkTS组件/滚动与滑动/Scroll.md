@@ -1,9 +1,9 @@
 # Scroll
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 可滚动的容器组件，当子组件的布局尺寸超过父组件的尺寸时，内容可以滚动。支持设置滚动方向、滚动条、边缘效果、嵌套滚动以及自由滚动缩放等能力，适用于内容超出显示区域或需要复杂滚动交互的场景。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持单个子组件。
 
@@ -22,9 +23,10 @@
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Scroll(scroller?: Scroller)
 
@@ -36,6 +38,7 @@ Scroll(scroller?: Scroller)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scroller | Scroller | 否 | 可滚动组件的控制器。用于与可滚动组件进行绑定，并通过控制器接口控制滚动；不传入时，无法通过控制器接口控制该Scroll组件。 说明： 不允许和其他滚动类组件，如：ArcList、List、Grid、Scroll和WaterFlow绑定同一个滚动控制对象。 |
@@ -43,17 +46,19 @@ Scroll(scroller?: Scroller)
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)和[滚动组件通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scrollable-common#属性)外，还支持以下属性：
 
 
 
-#### scrollable
+### scrollable
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scrollable(value: ScrollDirection)
 
@@ -65,6 +70,7 @@ scrollable(value: ScrollDirection)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ScrollDirection | 是 | 滚动方向。 默认值：ScrollDirection.Vertical |
@@ -74,9 +80,10 @@ scrollable(value: ScrollDirection)
 
 
 
-#### scrollBar
+### scrollBar
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scrollBar(barState: BarState)
 
@@ -90,6 +97,7 @@ scrollBar(barState: BarState)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | barState | BarState | 是 | 滚动条状态。 默认值：BarState.Auto |
@@ -97,9 +105,10 @@ scrollBar(barState: BarState)
 
 
 
-#### scrollBarColor
+### scrollBarColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scrollBarColor(color: Color | number | string)
 
@@ -111,6 +120,7 @@ scrollBarColor(color: Color | number | string)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | Color \| number \| string | 是 | 滚动条的颜色。 默认值：'#66182431' number为HEX格式颜色，支持rgb或者argb，取值范围：[0x0, 0xFFFFFFFF]，示例：0xffffff。 string为rgb或者argb格式颜色，示例：'#ffffff'。 |
@@ -118,9 +128,10 @@ scrollBarColor(color: Color | number | string)
 
 
 
-#### scrollBarColor22+
+### scrollBarColor22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scrollBarColor(color: Color | number | string | Resource)
 
@@ -134,6 +145,7 @@ scrollBarColor(color: Color | number | string | Resource)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | Color \| number \| string \| Resource | 是 | 滚动条的颜色。 默认值：'#66182431' number为HEX格式颜色，支持rgb或者argb，取值范围：[0x0, 0xFFFFFFFF]，示例：0xffffff。string为rgb或者argb格式颜色，示例：'#ffffff'。 |
@@ -141,13 +153,14 @@ scrollBarColor(color: Color | number | string | Resource)
 
 
 
-#### scrollBarWidth
+### scrollBarWidth
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scrollBarWidth(value: number | string)
 
-设置滚动条的宽度，不支持百分比设置。宽度设置后，滚动条正常状态和按压状态宽度均为滚动条的宽度值。如果滚动条的宽度超过Scroll组件主轴方向的可视尺寸，则滚动条的宽度会变为默认值4vp。
+设置滚动条的宽度，不支持百分比设置。宽度设置后，滚动条正常状态和按压状态宽度均为滚动条的宽度值。如果滚动条的宽度超过Scroll组件主轴方向的可视尺寸，则按默认值4vp处理。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -155,22 +168,24 @@ scrollBarWidth(value: number | string)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number \| string | 是 | 滚动条的宽度。 默认值：4 单位：vp 取值范围：设置为小于0的值时，按4vp处理。设置为0时，不显示滚动条。 |
+| value | number \| string | 是 | 滚动条的宽度。 默认值：4 单位：vp 取值范围：设置为小于0的值时，按默认值4vp处理。设置为0时，不显示滚动条。 |
 
 
 
 
-#### scrollBarWidth
+### scrollBarWidth
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scrollBarWidth(value: number | string | Resource)
 
-设置滚动条的宽度，不支持百分比设置。宽度设置后，滚动条正常状态和按压状态宽度均为滚动条的宽度值。如果滚动条的宽度超过Scroll组件主轴方向的可视尺寸，则滚动条的宽度会变为默认值4vp，支持Resource资源类型。
+设置滚动条的宽度，不支持百分比设置。宽度设置后，滚动条正常状态和按压状态宽度均为滚动条的宽度值。如果滚动条的宽度超过Scroll组件主轴方向的可视尺寸，则按默认值4vp处理，支持Resource资源类型。
 
-未通过该接口设置时，设置滚动条的宽度为4vp。
+未通过该接口设置时，滚动条宽度为默认值4vp。
 
 **起始版本：** 26.0.0
 
@@ -182,16 +197,18 @@ scrollBarWidth(value: number | string | Resource)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number \| string \| Resource | 是 | 滚动条的宽度。 默认值：4 单位：vp 取值范围：[0, +∞)。设置为小于0的值时，按4vp处理。设置为0时，不显示滚动条。 |
+| value | number \| string \| Resource | 是 | 滚动条的宽度。 默认值：4 单位：vp 取值范围：[0, +∞)。设置为小于0的值时，按默认值4vp处理。设置为0时，不显示滚动条。 |
 
 
 
 
-#### scrollSnap10+
+### scrollSnap10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scrollSnap(value: ScrollSnapOptions)
 
@@ -207,6 +224,7 @@ scrollSnap(value: ScrollSnapOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ScrollSnapOptions | 是 | Scroll组件的限位滚动模式。该对象包含snapAlign（对齐方式）、snapPagination（分页点）、enableSnapToStart（是否在开头限位）和enableSnapToEnd（是否在末尾限位）等属性。 |
@@ -214,9 +232,10 @@ scrollSnap(value: ScrollSnapOptions)
 
 
 
-#### edgeEffect
+### edgeEffect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 edgeEffect(edgeEffect: EdgeEffect, options?: EdgeEffectOptions)
 
@@ -228,6 +247,7 @@ edgeEffect(edgeEffect: EdgeEffect, options?: EdgeEffectOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | edgeEffect | EdgeEffect | 是 | Scroll组件的边缘滑动效果，支持弹簧效果和阴影效果。 默认值：EdgeEffect.None |
@@ -236,9 +256,10 @@ edgeEffect(edgeEffect: EdgeEffect, options?: EdgeEffectOptions)
 
 
 
-#### enableScrollInteraction10+
+### enableScrollInteraction10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableScrollInteraction(value: boolean)
 
@@ -252,6 +273,7 @@ enableScrollInteraction(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否支持滚动手势。设置为true时可以通过手指或者鼠标滚动，设置为false时无法通过手指或者鼠标滚动，但不影响控制器Scroller的滚动接口。 默认值：true |
@@ -263,9 +285,10 @@ enableScrollInteraction(value: boolean)
 
 
 
-#### nestedScroll10+
+### nestedScroll10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 nestedScroll(value: NestedScrollOptions)
 
@@ -279,6 +302,7 @@ nestedScroll(value: NestedScrollOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | NestedScrollOptions | 是 | 嵌套滚动选项，用于配置前后两个方向的嵌套滚动模式，包含scrollForward（向前滚动模式）和scrollBackward（向后滚动模式）字段。NestedScrollMode.SELF_ONLY表示仅自身滚动，NestedScrollMode.SELF_FIRST表示自身优先滚动，NestedScrollMode.PARENT_FIRST表示父组件优先滚动，NestedScrollMode.PARALLEL表示自身和父组件同时滚动。 默认值：{ scrollForward: NestedScrollMode.SELF_ONLY, scrollBackward: NestedScrollMode.SELF_ONLY } Scroll设置enablePaging或者scrollSnap，并同时设置父组件优先的嵌套滚动时，嵌套滚动不生效。 |
@@ -286,9 +310,10 @@ nestedScroll(value: NestedScrollOptions)
 
 
 
-#### friction10+
+### friction10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 friction(value: number | Resource)
 
@@ -302,6 +327,7 @@ friction(value: number | Resource)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| Resource | 是 | 摩擦系数。 默认值：非可穿戴设备为0.6，可穿戴设备为0.9。 从API version 11开始，非可穿戴设备默认值为0.7。 从API version 12开始，非可穿戴设备默认值为0.75。 取值范围：(0, +∞)，设置为小于等于0的值时，按默认值处理。 |
@@ -309,9 +335,10 @@ friction(value: number | Resource)
 
 
 
-#### enablePaging11+
+### enablePaging11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enablePaging(value: boolean)
 
@@ -325,6 +352,7 @@ enablePaging(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否支持滑动翻页。设置为true支持滑动翻页，false不支持。 默认值：false |
@@ -332,9 +360,10 @@ enablePaging(value: boolean)
 
 
 
-#### initialOffset12+
+### initialOffset12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 initialOffset(value: OffsetOptions)
 
@@ -348,6 +377,7 @@ initialOffset(value: OffsetOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | OffsetOptions | 是 | 当输入的大小为百分比时，初始滚动偏移量为Scroll组件主轴方向大小与百分比数值之积。 |
@@ -355,9 +385,10 @@ initialOffset(value: OffsetOptions)
 
 
 
-#### maxZoomScale20+
+### maxZoomScale20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 maxZoomScale(scale: number)
 
@@ -371,6 +402,7 @@ maxZoomScale(scale: number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scale | number | 是 | Scroll组件内容的最大手势缩放比例。 默认值：1 取值范围：(0, +∞)，小于或等于0时按默认值1处理。 |
@@ -378,9 +410,10 @@ maxZoomScale(scale: number)
 
 
 
-#### minZoomScale20+
+### minZoomScale20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 minZoomScale(scale: number)
 
@@ -394,6 +427,7 @@ minZoomScale(scale: number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scale | number | 是 | Scroll组件内容的最小手势缩放比例。 默认值：1 取值范围：(0, maxZoomScale]，小于或等于0时按默认值1处理，大于maxZoomScale时按maxZoomScale处理。 |
@@ -405,9 +439,10 @@ minZoomScale(scale: number)
 
 
 
-#### zoomScale20+
+### zoomScale20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 zoomScale(scale: number)
 
@@ -421,6 +456,7 @@ zoomScale(scale: number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scale | number | 是 | 设置Scroll组件内容的缩放比例，该参数支持!!双向绑定变量。 默认值：1 取值范围：(0, +∞)，小于或等于0时按默认值1处理。 |
@@ -428,9 +464,10 @@ zoomScale(scale: number)
 
 
 
-#### enableBouncesZoom20+
+### enableBouncesZoom20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableBouncesZoom(enable: boolean)
 
@@ -444,6 +481,7 @@ enableBouncesZoom(enable: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | boolean | 是 | 是否启用过缩放回弹效果。当用户缩放超出最大或最小缩放比例时，释放手势后内容会回弹到最大或最小缩放比例。设置为true表示启用该效果，设置为false表示禁用该效果。 默认值：true |
@@ -451,13 +489,15 @@ enableBouncesZoom(enable: boolean)
 
 
 
-#### ScrollDirection枚举说明
+## ScrollDirection枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 滚动方向枚举。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -469,6 +509,7 @@ enableBouncesZoom(enable: boolean)
 
 
 FREE（自由滚动）模式下支持的能力：
+
 
 | 支持的属性 | 支持的事件 | 支持的Scroller接口 |
 | --- | --- | --- |
@@ -490,9 +531,10 @@ FREE（自由滚动）模式下支持的能力：
 
 
 
-#### ScrollSnapOptions10+对象说明
+## ScrollSnapOptions10+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 限位滚动模式对象。
 
@@ -501,6 +543,7 @@ FREE（自由滚动）模式下支持的能力：
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -512,9 +555,10 @@ FREE（自由滚动）模式下支持的能力：
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)和[滚动组件通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scrollable-common#事件)外，还支持以下事件：
 
@@ -524,9 +568,10 @@ FREE（自由滚动）模式下支持的能力：
 
 
 
-#### onScrollFrameBegin9+
+### onScrollFrameBegin9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onScrollFrameBegin(event: OnScrollFrameBeginCallback)
 
@@ -552,6 +597,7 @@ onScrollFrameBegin(event: OnScrollFrameBeginCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | OnScrollFrameBeginCallback | 是 | 每帧滚动开始回调函数。 |
@@ -559,9 +605,10 @@ onScrollFrameBegin(event: OnScrollFrameBeginCallback)
 
 
 
-#### onScroll(deprecated)
+### onScroll(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onScroll(event: (xOffset: number, yOffset: number) => void)
 
@@ -582,6 +629,7 @@ onScroll(event: (xOffset: number, yOffset: number) => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | xOffset | number | 是 | 相对于上一帧水平方向的偏移量，Scroll中的内容向左滚动时偏移量为正，向右滚动时偏移量为负。 单位vp。 |
@@ -590,9 +638,10 @@ onScroll(event: (xOffset: number, yOffset: number) => void)
 
 
 
-#### onWillScroll12+
+### onWillScroll12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onWillScroll(handler: ScrollOnWillScrollCallback)
 
@@ -617,6 +666,7 @@ onWillScroll(handler: ScrollOnWillScrollCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handler | ScrollOnWillScrollCallback | 是 | Scroll滚动前触发的回调。 |
@@ -624,9 +674,10 @@ onWillScroll(handler: ScrollOnWillScrollCallback)
 
 
 
-#### onDidScroll12+
+### onDidScroll12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDidScroll(handler: ScrollOnScrollCallback)
 
@@ -647,6 +698,7 @@ onDidScroll(handler: ScrollOnScrollCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handler | ScrollOnScrollCallback | 是 | Scroll滚动时触发的回调。 |
@@ -654,9 +706,10 @@ onDidScroll(handler: ScrollOnScrollCallback)
 
 
 
-#### onScrollEdge
+### onScrollEdge
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onScrollEdge(event: OnScrollEdgeCallback)
 
@@ -675,6 +728,7 @@ onScrollEdge(event: OnScrollEdgeCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | OnScrollEdgeCallback | 是 | 滚动到的边缘位置。 当Scroll设置为水平方向滚动时，上报Edge.Center表示水平方向起始位置，上报Edge.Baseline表示水平方向末尾位置。由于Edge.Center和Edge.Baseline枚举值已经废弃，推荐使用onReachStart、onReachEnd事件监听是否滚动到边界。 |
@@ -682,9 +736,10 @@ onScrollEdge(event: OnScrollEdgeCallback)
 
 
 
-#### onScrollEnd(deprecated)
+### onScrollEnd(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onScrollEnd(event: () => void)
 
@@ -703,6 +758,7 @@ onScrollEnd(event: () => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | () => void | 是 | 滚动停止事件回调。 |
@@ -710,9 +766,10 @@ onScrollEnd(event: () => void)
 
 
 
-#### onScrollStart9+
+### onScrollStart9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onScrollStart(event: VoidCallback)
 
@@ -729,6 +786,7 @@ onScrollStart(event: VoidCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | VoidCallback | 是 | 滚动开始回调。 |
@@ -736,9 +794,10 @@ onScrollStart(event: VoidCallback)
 
 
 
-#### onScrollStop9+
+### onScrollStop9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onScrollStop(event: VoidCallback)
 
@@ -755,6 +814,7 @@ onScrollStop(event: VoidCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | VoidCallback | 是 | 滚动停止回调。 |
@@ -762,9 +822,10 @@ onScrollStop(event: VoidCallback)
 
 
 
-#### onDidZoom20+
+### onDidZoom20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDidZoom(event: ScrollOnDidZoomCallback)
 
@@ -778,6 +839,7 @@ onDidZoom(event: ScrollOnDidZoomCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | ScrollOnDidZoomCallback | 是 | 每帧缩放完成时回调。 |
@@ -785,9 +847,10 @@ onDidZoom(event: ScrollOnDidZoomCallback)
 
 
 
-#### onZoomStart20+
+### onZoomStart20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onZoomStart(event: VoidCallback)
 
@@ -801,6 +864,7 @@ onZoomStart(event: VoidCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | VoidCallback | 是 | 缩放开始回调。 |
@@ -808,9 +872,10 @@ onZoomStart(event: VoidCallback)
 
 
 
-#### onZoomStop20+
+### onZoomStop20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onZoomStop(event: VoidCallback)
 
@@ -824,6 +889,7 @@ onZoomStop(event: VoidCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | VoidCallback | 是 | 缩放停止回调。 |
@@ -831,9 +897,10 @@ onZoomStop(event: VoidCallback)
 
 
 
-#### ScrollOnScrollCallback12+
+## ScrollOnScrollCallback12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ScrollOnScrollCallback = (xOffset: number, yOffset: number, scrollState: ScrollState) => void
 
@@ -846,6 +913,7 @@ Scroll滚动时触发的回调。
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -860,9 +928,10 @@ Scroll滚动时触发的回调。
 
 
 
-#### ScrollOnWillScrollCallback12+
+## ScrollOnWillScrollCallback12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ScrollOnWillScrollCallback = (xOffset: number, yOffset: number, scrollState: ScrollState, scrollSource: ScrollSource) => void | OffsetResult
 
@@ -876,6 +945,7 @@ Scroll滚动前触发的回调。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | xOffset | number | 是 | 相对于上一帧水平方向的偏移量，Scroll中的内容向左滚动时偏移量为正，向右滚动时偏移量为负。 单位vp。 |
@@ -886,6 +956,7 @@ Scroll滚动前触发的回调。
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | void \| OffsetResult | 返回OffsetResult时按照开发者指定的偏移量滚动；不返回时按回调参数(xOffset, yOffset)滚动。 |
@@ -893,9 +964,10 @@ Scroll滚动前触发的回调。
 
 
 
-#### OnScrollEdgeCallback18+
+## OnScrollEdgeCallback18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnScrollEdgeCallback = (side: Edge) => void
 
@@ -909,6 +981,7 @@ type OnScrollEdgeCallback = (side: Edge) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | side | Edge | 是 | 滚动到的边缘位置。竖直方向滚动时，Edge.Top和Edge.Start表示起始边缘，Edge.Bottom和Edge.End表示末尾边缘。水平方向滚动时，Edge.Center表示水平方向起始位置，Edge.Baseline表示水平方向末尾位置。 |
@@ -916,9 +989,10 @@ type OnScrollEdgeCallback = (side: Edge) => void
 
 
 
-#### OnScrollFrameBeginCallback18+
+## OnScrollFrameBeginCallback18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnScrollFrameBeginCallback = (offset: number, state: ScrollState) => OnScrollFrameBeginHandlerResult;
 
@@ -932,6 +1006,7 @@ Scroll每帧滚动前触发的回调。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 是 | 即将发生的滑动量，单位vp。 |
@@ -940,6 +1015,7 @@ Scroll每帧滚动前触发的回调。
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OnScrollFrameBeginHandlerResult | 返回实际滑动量，Scroll将按照返回值中的offsetRemain进行滚动。 |
@@ -947,9 +1023,10 @@ Scroll每帧滚动前触发的回调。
 
 
 
-#### OnScrollFrameBeginHandlerResult18+对象说明
+## OnScrollFrameBeginHandlerResult18+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [OnScrollFrameBeginCallback](#onscrollframebegincallback18)返回的实际相对上一帧滚动偏移量。
 
@@ -963,6 +1040,7 @@ Scroll每帧滚动前触发的回调。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | offsetRemain9+ | number | 否 | 否 | 实际相对上一帧的滚动偏移量。 单位vp。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -970,9 +1048,10 @@ Scroll每帧滚动前触发的回调。
 
 
 
-#### ScrollOnDidZoomCallback20+
+## ScrollOnDidZoomCallback20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ScrollOnDidZoomCallback = (scale: number) => void
 
@@ -986,6 +1065,7 @@ Scroll每帧缩放完成时触发的回调。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scale | number | 是 | 当前缩放倍数。 |
@@ -993,9 +1073,10 @@ Scroll每帧缩放完成时触发的回调。
 
 
 
-#### Scroller
+## Scroller
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 可滚动容器组件的控制器，可以将此组件绑定至容器组件，然后通过它控制容器组件的滚动。同一个控制器不可以控制多个容器组件，目前支持绑定到ArcList、ArcScrollBar、List、Scroll、ScrollBar、Grid、WaterFlow上。
 
@@ -1005,7 +1086,10 @@ Scroll每帧缩放完成时触发的回调。
 
 
 
-#### 导入对象
+### 导入对象
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 scroller: Scroller = new Scroller();
@@ -1013,9 +1097,10 @@ scroller: Scroller = new Scroller();
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -1027,9 +1112,10 @@ Scroller的构造函数。
 
 
 
-#### scrollTo
+### scrollTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scrollTo(options: ScrollOptions)
 
@@ -1045,6 +1131,7 @@ scrollTo(options: ScrollOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ScrollOptions | 是 | 滑动到指定位置的参数，包含xOffset、yOffset、animation、canOverScroll等字段，用于指定滚动目标位置和滚动行为。 |
@@ -1052,9 +1139,10 @@ scrollTo(options: ScrollOptions)
 
 
 
-#### scrollEdge
+### scrollEdge
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scrollEdge(value: Edge, options?: ScrollEdgeOptions)
 
@@ -1068,6 +1156,7 @@ Scroll组件默认有动画，Grid、List、WaterFlow组件默认无动画。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Edge | 是 | 滚动到的边缘位置。 |
@@ -1076,9 +1165,10 @@ Scroll组件默认有动画，Grid、List、WaterFlow组件默认无动画。
 
 
 
-#### fling12+
+### fling12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fling(velocity: number): void
 
@@ -1092,6 +1182,7 @@ fling(velocity: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | velocity | number | 是 | 惯性滚动的初始速度值。单位：vp/s 说明： velocity值设置为0时，本次滚动不生效且不会产生滚动动画。如果值为正数，则向顶部滚动；如果值为负数，则向底部滚动。 |
@@ -1101,6 +1192,7 @@ fling(velocity: number): void
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[滚动类组件错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-scroll)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
@@ -1109,9 +1201,10 @@ fling(velocity: number): void
 
 
 
-#### scrollPage9+
+### scrollPage9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scrollPage(value: ScrollPageOptions)
 
@@ -1123,6 +1216,7 @@ scrollPage(value: ScrollPageOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ScrollPageOptions | 是 | 设置翻页模式。包含next（是否向下翻页）和animation（是否开启翻页动画）字段，用于指定翻页行为。 |
@@ -1130,9 +1224,10 @@ scrollPage(value: ScrollPageOptions)
 
 
 
-#### scrollPage(deprecated)
+### scrollPage(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scrollPage(value: { next: boolean, direction?: Axis })
 
@@ -1146,6 +1241,7 @@ scrollPage(value: { next: boolean, direction?: Axis })
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | next | boolean | 是 | 是否向下翻页。true表示向下翻页，false表示向上翻页。 |
@@ -1154,9 +1250,10 @@ scrollPage(value: { next: boolean, direction?: Axis })
 
 
 
-#### currentOffset
+### currentOffset
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 currentOffset(): OffsetResult
 
@@ -1172,6 +1269,7 @@ currentOffset(): OffsetResult
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OffsetResult11+ | 返回当前的滚动总偏移量。xOffset表示水平滚动总偏移量，yOffset表示竖直滚动总偏移量。 模型约束： 此接口仅可在Stage模型下使用。 |
@@ -1179,9 +1277,10 @@ currentOffset(): OffsetResult
 
 
 
-#### offset23+
+### offset23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offset(): OffsetResult | undefined
 
@@ -1195,6 +1294,7 @@ offset(): OffsetResult | undefined
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OffsetResult \| undefined | 返回当前的滚动总偏移量。xOffset表示水平滚动总偏移量，yOffset表示竖直滚动总偏移量。当Scroller没有和组件绑定时，该接口会返回undefined。 |
@@ -1202,9 +1302,10 @@ offset(): OffsetResult | undefined
 
 
 
-#### scrollToIndex
+### scrollToIndex
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scrollToIndex(value: number, smooth?: boolean, align?: ScrollAlign, options?: ScrollToIndexOptions)
 
@@ -1222,6 +1323,7 @@ scrollToIndex(value: number, smooth?: boolean, align?: ScrollAlign, options?: Sc
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 要滑动到的目标元素在当前容器中的索引值。 说明： value值设置成负值或者大于当前容器子组件的最大索引值，视为异常值，本次跳转不生效。 |
@@ -1232,9 +1334,10 @@ scrollToIndex(value: number, smooth?: boolean, align?: ScrollAlign, options?: Sc
 
 
 
-#### scrollBy9+
+### scrollBy9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scrollBy(dx: Length, dy: Length)
 
@@ -1250,6 +1353,7 @@ scrollBy(dx: Length, dy: Length)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dx | Length | 是 | 水平方向滚动距离，不支持百分比形式。 取值范围：(-∞, +∞) |
@@ -1258,9 +1362,10 @@ scrollBy(dx: Length, dy: Length)
 
 
 
-#### isAtEnd10+
+### isAtEnd10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isAtEnd(): boolean
 
@@ -1278,6 +1383,7 @@ isAtEnd(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | true表示组件已经滚动到底部，false表示组件还没滚动到底部。 |
@@ -1285,9 +1391,10 @@ isAtEnd(): boolean
 
 
 
-#### getItemRect11+
+### getItemRect11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getItemRect(index: number): RectResult
 
@@ -1305,6 +1412,7 @@ getItemRect(index: number): RectResult
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 子组件的索引值。 |
@@ -1316,6 +1424,7 @@ getItemRect(index: number): RectResult
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | RectResult | 子组件的大小和相对于组件的位置。 单位：vp。 |
@@ -1325,6 +1434,7 @@ getItemRect(index: number): RectResult
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[滚动类组件错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-scroll)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
@@ -1333,9 +1443,10 @@ getItemRect(index: number): RectResult
 
 
 
-#### getItemIndex14+
+### getItemIndex14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getItemIndex(x: number, y: number): number
 
@@ -1353,6 +1464,7 @@ getItemIndex(x: number, y: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | x | number | 是 | x轴坐标，单位为vp。 |
@@ -1365,6 +1477,7 @@ getItemIndex(x: number, y: number): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回坐标命中的子组件索引。坐标未命中子组件时，返回-1。 |
@@ -1374,6 +1487,7 @@ getItemIndex(x: number, y: number): number
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[滚动类组件错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-scroll)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
@@ -1382,9 +1496,10 @@ getItemIndex(x: number, y: number): number
 
 
 
-#### contentSize22+
+### contentSize22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contentSize(): SizeResult
 
@@ -1402,6 +1517,7 @@ contentSize(): SizeResult
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | SizeResult | 滚动组件内容总大小。主轴方向内容大小为所有子组件布局后的总大小，交叉轴方向内容大小为组件自身交叉轴方向大小减去padding和border后的大小。 单位：vp |
@@ -1411,6 +1527,7 @@ contentSize(): SizeResult
 
 以下错误码详细介绍请参考[滚动类组件错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-scroll)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 100004 | Controller not bound to a component. |
@@ -1418,9 +1535,10 @@ contentSize(): SizeResult
 
 
 
-#### getFrameNode
+### getFrameNode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFrameNode(): FrameNode | undefined
 
@@ -1436,6 +1554,7 @@ getFrameNode(): FrameNode | undefined
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | FrameNode \| undefined | 当Scroller已绑定到Scroll、List、Grid、WaterFlow等滚动类组件时，返回对应组件的FrameNode；如果Scroller未绑定组件，则返回undefined。 |
@@ -1443,9 +1562,10 @@ getFrameNode(): FrameNode | undefined
 
 
 
-#### OffsetResult11+对象说明
+## OffsetResult11+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 滑动偏移量对象。
 
@@ -1455,6 +1575,7 @@ getFrameNode(): FrameNode | undefined
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | xOffset | number | 否 | 否 | 水平滑动偏移。 单位：vp。 |
@@ -1463,9 +1584,10 @@ getFrameNode(): FrameNode | undefined
 
 
 
-#### ScrollAnimationOptions12+对象说明
+## ScrollAnimationOptions12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 自定义滚动动效的参数选项。
 
@@ -1474,6 +1596,7 @@ getFrameNode(): FrameNode | undefined
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1484,9 +1607,10 @@ getFrameNode(): FrameNode | undefined
 
 
 
-#### ScrollAlign10+枚举说明
+## ScrollAlign10+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 对齐方式枚举。
 
@@ -1495,6 +1619,7 @@ getFrameNode(): FrameNode | undefined
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1506,9 +1631,10 @@ getFrameNode(): FrameNode | undefined
 
 
 
-#### ScrollToIndexOptions12+对象说明
+## ScrollToIndexOptions12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 滑动到指定Index的参数选项。
 
@@ -1518,6 +1644,7 @@ getFrameNode(): FrameNode | undefined
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | extraOffset | LengthMetrics | 否 | 是 | 滑动到指定Index的额外偏移量。如果值为正数，则向底部额外偏移；如果值为负数，则向顶部额外偏移。 |
@@ -1525,9 +1652,10 @@ getFrameNode(): FrameNode | undefined
 
 
 
-#### ScrollPageOptions14+对象说明
+## ScrollPageOptions14+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 翻页模式的参数选项。
 
@@ -1537,6 +1665,7 @@ getFrameNode(): FrameNode | undefined
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | next | boolean | 否 | 否 | 是否向下翻页。true表示向下翻页，false表示向上翻页。 |
@@ -1545,9 +1674,10 @@ getFrameNode(): FrameNode | undefined
 
 
 
-#### OffsetOptions12+对象说明
+## OffsetOptions12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 初始滚动偏移量的参数选项。
 
@@ -1557,6 +1687,7 @@ getFrameNode(): FrameNode | undefined
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | xOffset | Dimension | 否 | 是 | 水平滚动偏移。 默认值：0 参数类型为number时单位为vp。 |
@@ -1565,9 +1696,10 @@ getFrameNode(): FrameNode | undefined
 
 
 
-#### ScrollEdgeOptions12+对象说明
+## ScrollEdgeOptions12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 滚动到边缘位置的参数选项。
 
@@ -1577,6 +1709,7 @@ getFrameNode(): FrameNode | undefined
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | velocity | number | 否 | 是 | 设置滚动到容器边缘的固定速度。未设置或设置小于等于0的值时，固定速度设置不生效。 默认值：0 单位：vp/s |
@@ -1584,9 +1717,10 @@ getFrameNode(): FrameNode | undefined
 
 
 
-#### ScrollOptions18+对象说明
+## ScrollOptions18+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 滚动到指定位置的参数选项。
 
@@ -1600,6 +1734,7 @@ getFrameNode(): FrameNode | undefined
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | xOffset10+ | number \| string | 否 | 否 | 水平滚动总偏移量。 说明： 不支持设置百分比。 仅滚动轴为x轴时生效。 取值范围：当值小于0时，不带动画的滚动，按0处理。带动画的滚动，默认滚动到起始位置后停止，可通过设置animation参数，使滚动在越界时启动回弹动画。 参数类型为number时单位为vp。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -1610,9 +1745,10 @@ getFrameNode(): FrameNode | undefined
 
 
 
-#### UIScrollEvent19+
+## UIScrollEvent19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 frameNode中[getEvent('Scroll')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#geteventscroll19)方法的返回值，可用于给Scroll节点设置滚动事件。
 
@@ -1620,9 +1756,10 @@ UIScrollEvent继承于[UIScrollableCommonEvent](https://developer.huawei.com/con
 
 
 
-#### setOnWillScroll19+
+### setOnWillScroll19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setOnWillScroll(callback: ScrollOnWillScrollCallback | undefined): void
 
@@ -1638,6 +1775,7 @@ setOnWillScroll(callback: ScrollOnWillScrollCallback | undefined): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | ScrollOnWillScrollCallback \| undefined | 是 | onWillScroll事件的回调函数。 |
@@ -1645,9 +1783,10 @@ setOnWillScroll(callback: ScrollOnWillScrollCallback | undefined): void
 
 
 
-#### setOnDidScroll19+
+### setOnDidScroll19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setOnDidScroll(callback: ScrollOnScrollCallback | undefined): void
 
@@ -1663,6 +1802,7 @@ setOnDidScroll(callback: ScrollOnScrollCallback | undefined): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | ScrollOnScrollCallback \| undefined | 是 | onDidScroll事件的回调函数。 |
@@ -1670,13 +1810,17 @@ setOnDidScroll(callback: ScrollOnScrollCallback | undefined): void
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（设置scroller控制器）
+
+
+### 示例1（设置scroller控制器）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示了Scroll组件部分属性和scroller控制器的使用。
 
@@ -1784,7 +1928,10 @@ struct ScrollExample {
 
 
 
-#### 示例2（嵌套滚动实现方式一）
+### 示例2（嵌套滚动实现方式一）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例使用onScrollFrameBegin事件实现了内层List组件和外层Scroll组件的嵌套滚动。
 
@@ -1865,7 +2012,10 @@ struct NestedScroll {
 
 
 
-#### 示例3（嵌套滚动实现方式二）
+### 示例3（嵌套滚动实现方式二）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例使用[nestedScroll](#nestedscroll10)属性实现了内层List组件和外层Scroll组件的嵌套滚动。
 
@@ -1937,7 +2087,10 @@ struct StickyNestedScroll {
 
 
 
-#### 示例4（嵌套滚动父组件向子组件传递滚动）
+### 示例4（嵌套滚动父组件向子组件传递滚动）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例使用[enableScrollInteraction](#enablescrollinteraction10)属性和[onScrollFrameBegin](#onscrollframebegin9)事件实现了父组件向子组件传递滚动。
 
@@ -2036,7 +2189,10 @@ struct NestedScroll {
 
 
 
-#### 示例5（设置限位滚动）
+### 示例5（设置限位滚动）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例实现了Scroll组件的限位滚动。
 
@@ -2076,7 +2232,10 @@ struct Index {
 
 
 
-#### 示例6（获取子组件索引）
+### 示例6（获取子组件索引）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示了如何获得List组件的子组件索引。
 
@@ -2165,7 +2324,10 @@ struct ListExample {
 
 
 
-#### 示例7（设置边缘渐隐）
+### 示例7（设置边缘渐隐）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例实现了Scroll组件开启边缘渐隐效果并设置边缘渐隐长度。
 
@@ -2209,7 +2371,10 @@ struct ScrollExample {
 
 
 
-#### 示例8（单边边缘效果）
+### 示例8（单边边缘效果）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[edgeEffect](#edgeeffect)接口，实现了Scroll组件设置单边边缘效果。
 
@@ -2249,7 +2414,10 @@ struct ScrollExample {
 
 
 
-#### 示例9（滑动翻页效果）
+### 示例9（滑动翻页效果）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[enablePaging](#enablepaging11)接口，实现了Scroll组件滑动翻页效果。
 
@@ -2287,7 +2455,10 @@ struct EnablePagingExample {
 
 
 
-#### 示例10（设置过界停留）
+### 示例10（设置过界停留）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[scrollTo](#scrollto)接口，实现了Scroll组件设置过界停留效果。
 
@@ -2354,7 +2525,10 @@ struct StickyNestedScroll {
 
 
 
-#### 示例11（自由滚动和缩放）
+### 示例11（自由滚动和缩放）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 20开始，该示例实现了Scroll组件自由滚动和缩放效果。
 
@@ -2394,7 +2568,10 @@ struct ScrollZoomExample {
 
 
 
-#### 示例12（获取内容总大小）
+### 示例12（获取内容总大小）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 22 开始，该示例实现了获取内容总大小的功能。
 
@@ -2473,7 +2650,10 @@ struct ScrollExample1 {
 
 
 
-#### 示例13（设置滚动事件）
+### 示例13（设置滚动事件）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过FrameNode中的[getEvent('Scroll')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#geteventscroll19)获取[UIScrollEvent](#uiscrollevent19)，并为Scroll设置滚动事件回调，用于事件监听方因无法直接修改页面代码而无法使用声明式接口设置回调的场景。
 

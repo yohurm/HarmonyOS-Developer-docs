@@ -1,9 +1,9 @@
 # BuilderNode
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-buildernode
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供能够挂载系统组件的自定义节点BuilderNode。BuilderNode仅可作为叶子节点使用，支持通过@Builder生成组件树、实现组件复用与回收、跨节点事件分发以及状态同步，适用于在应用内动态创建和管理自定义组件节点的场景。使用方式参考[BuilderNode开发指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-arktsnode-buildernode)。最佳实践请参考组件动态创建-[组件动态添加、更新和删除](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-component-dynamic-creation#组件动态添加更新和删除)。
 
@@ -14,9 +14,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { BuilderNode, ReactiveBuilderNode, RenderOptions, NodeRenderType } from '@kit.ArkUI';
@@ -24,15 +25,17 @@ import { BuilderNode, ReactiveBuilderNode, RenderOptions, NodeRenderType } from 
 
 
 
-#### NodeRenderType
+## NodeRenderType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 节点渲染类型枚举。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -46,15 +49,17 @@ import { BuilderNode, ReactiveBuilderNode, RenderOptions, NodeRenderType } from 
 
 
 
-#### RenderOptions
+## RenderOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 创建BuilderNode时的可选参数。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -65,13 +70,15 @@ import { BuilderNode, ReactiveBuilderNode, RenderOptions, NodeRenderType } from 
 
 
 
-#### BuildOptions12+
+## BuildOptions12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 build的可选参数。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -82,9 +89,10 @@ build的可选参数。
 
 
 
-#### InputEventType20+
+## InputEventType20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type InputEventType = TouchEvent | MouseEvent | AxisEvent
 
@@ -93,6 +101,7 @@ type InputEventType = TouchEvent | MouseEvent | AxisEvent
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -103,9 +112,10 @@ type InputEventType = TouchEvent | MouseEvent | AxisEvent
 
 
 
-#### BuilderNode
+## BuilderNode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 class BuilderNode<Args extends Object[]>
 
@@ -117,9 +127,10 @@ BuilderNode支持通过无状态的UI方法[@Builder](https://developer.huawei.c
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(uiContext: UIContext, options?: RenderOptions)
 
@@ -130,6 +141,7 @@ constructor(uiContext: UIContext, options?: RenderOptions)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -143,9 +155,10 @@ constructor(uiContext: UIContext, options?: RenderOptions)
 
 
 
-#### build
+### build
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 build(builder: WrappedBuilder&lt;Args&gt;, arg?: Object): void
 
@@ -163,6 +176,7 @@ build(builder: WrappedBuilder&lt;Args&gt;, arg?: Object): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | builder | WrappedBuilder&lt;Args&gt; | 是 | 创建对应节点树的时候所需的无状态UI方法@Builder。 |
@@ -171,9 +185,10 @@ build(builder: WrappedBuilder&lt;Args&gt;, arg?: Object): void
 
 
 
-#### build12+
+### build12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 build(builder: WrappedBuilder&lt;Args&gt;, arg: Object, options: BuildOptions): void
 
@@ -190,6 +205,7 @@ build(builder: WrappedBuilder&lt;Args&gt;, arg: Object, options: BuildOptions): 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -263,9 +279,10 @@ struct Index {
 
 
 
-#### getFrameNode
+### getFrameNode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFrameNode(): FrameNode | null
 
@@ -276,6 +293,7 @@ getFrameNode(): FrameNode | null
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -507,9 +525,10 @@ struct Index {
 
 
 
-#### update
+### update
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 update(arg: Object): void
 
@@ -520,6 +539,7 @@ update(arg: Object): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -570,7 +590,6 @@ function buildText(params: Params) {
 
 // 继承NodeController实现自定义textNode控制器
 class TextNodeController extends NodeController {
-  private rootNode: FrameNode | null = null;
   private textNode: BuilderNode<[Params]> | null = null;
   private message: string = '';
 
@@ -627,9 +646,10 @@ struct Index {
 
 
 
-#### postTouchEvent
+### postTouchEvent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 postTouchEvent(event: TouchEvent): boolean
 
@@ -653,12 +673,14 @@ offsetA为builderNode相对于父组件的偏移量，可以通过FrameNode中�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | TouchEvent | 是 | 用于派发到BuilderNode创建出的FrameNode上的触摸事件。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -760,9 +782,10 @@ struct MyComponent {
 
 
 
-#### dispose12+
+### dispose12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 dispose(): void
 
@@ -862,9 +885,10 @@ struct Index {
 
 
 
-#### reuse12+
+### reuse12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reuse(param?: Object): void
 
@@ -878,6 +902,7 @@ BuilderNode通过reuse和[recycle](#recycle12)完成其内外自定义组件之�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | param | Object | 否 | 用于复用BuilderNode的参数。该参数将直接用于BuilderNode中所有顶层自定义组件的复用，应该包含每个自定义组件的构造函数参数所需内容，否则，会导致未定义行为。调用此方法将同步触发内部自定义组件的aboutToReuse生命周期回调，并将该参数作为回调的入参。默认值为undefined，此时BuilderNode中的自定义组件将直接使用构造时的数据源。 |
@@ -885,9 +910,10 @@ BuilderNode通过reuse和[recycle](#recycle12)完成其内外自定义组件之�
 
 
 
-#### recycle12+
+### recycle12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 recycle(): void
 
@@ -1270,9 +1296,10 @@ struct Index {
 
 
 
-#### updateConfiguration12+
+### updateConfiguration12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateConfiguration(): void
 
@@ -1443,9 +1470,10 @@ struct Index {
 
 
 
-#### isDisposed20+
+### isDisposed20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isDisposed(): boolean
 
@@ -1456,6 +1484,7 @@ isDisposed(): boolean
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1582,9 +1611,10 @@ struct Index {
 
 
 
-#### postInputEvent20+
+### postInputEvent20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 postInputEvent(event: InputEventType): boolean
 
@@ -1606,12 +1636,14 @@ offsetA为builderNode相对于父组件的偏移，offsetB为命中位置相对�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | InputEventType | 是 | 用于事件分发的输入事件。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1624,9 +1656,10 @@ offsetA为builderNode相对于父组件的偏移，offsetB为命中位置相对�
 
 
 
-#### postInputEventWithStrategy24+
+### postInputEventWithStrategy24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 postInputEventWithStrategy(event: InputEventType, competitionStrategy?: CompetitionStrategy): boolean
 
@@ -1638,7 +1671,7 @@ postInputEventWithStrategy(event: InputEventType, competitionStrategy?: Competit
 ![](assets/BuilderNode/file-20260514163844466-20.gif)
 
 
-> [!TIP]
+> [!WARNING]
 > 传入的坐标值单位需要转换为px，坐标转换示例可以参考下面示例代码。 系统在处理鼠标左键点击事件时将转换为触摸事件，转发时应注意不在外层同时绑定触摸事件与鼠标事件，否则可能导致坐标偏移。这是由于在事件转换过程中， SourceType 不会发生变化，规格可查看 onTouch 。 注入事件为轴事件 AxisEvent 时，由于轴事件中缺少旋转轴信息，因此注入的事件无法触发旋转手势 RotationGesture 。 转发的事件会在被分发到的目标组件及其子组件里做事件处理，并触发对应手势。可以通过入参控制当前组件和目标组件手势是否为竞争关系。 如果event转化为对应的事件后，该事件为开发者构造的事件，必填字段必须赋值，比如触摸事件的touches字段，轴事件的scrollStep字段。要保证事件的完整，比如触摸事件的 TouchType 中必须同时包含DOWN和UP两个字段，防止出现程序异常或意外崩溃。 webview 已经处理过坐标系变换，可以将事件直接下发。 postTouchEvent接口需要提供手势坐标相对于接收事件的目标节点内的局部坐标，postInputEventWithStrategy接口需要提供手势坐标相对于接收事件的目标节点内的窗口坐标。 支持同一个事件转发多次。
 
 
@@ -1650,6 +1683,7 @@ postInputEventWithStrategy(event: InputEventType, competitionStrategy?: Competit
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | InputEventType | 是 | 用于事件分发的输入事件。 |
@@ -1657,6 +1691,7 @@ postInputEventWithStrategy(event: InputEventType, competitionStrategy?: Competit
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1669,9 +1704,10 @@ postInputEventWithStrategy(event: InputEventType, competitionStrategy?: Competit
 
 
 
-#### inheritFreezeOptions20+
+### inheritFreezeOptions20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 inheritFreezeOptions(enabled: boolean): void
 
@@ -1686,6 +1722,7 @@ inheritFreezeOptions(enabled: boolean): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1901,9 +1938,10 @@ struct TextBuilder {
 
 
 
-#### ReactiveBuilderNode22+
+## ReactiveBuilderNode22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ReactiveBuilderNode支持通过无状态的UI方法[@Builder](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-builder)生成组件树，并持有该组件树的根节点，不支持定义为状态变量。ReactiveBuilderNode中持有的[FrameNode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode)仅用于将此ReactiveBuilderNode作为子节点挂载到其他FrameNode上。对ReactiveBuilderNode持有的FrameNode进行属性设置与子节点操作可能会导致未定义行为，因此不建议通过ReactiveBuilderNode的[getFrameNode](#getframenode)方法和[FrameNode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode)节点的[getRenderNode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#getrendernode)方法获取RenderNode，并通过[RenderNode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode)的接口对其进行属性设置与子节点操作。
 
@@ -1913,9 +1951,10 @@ ReactiveBuilderNode支持通过无状态的UI方法[@Builder](https://developer.
 
 
 
-#### constructor22+
+### constructor22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(uiContext: UIContext, options?: RenderOptions)
 
@@ -1927,6 +1966,7 @@ constructor(uiContext: UIContext, options?: RenderOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uiContext | UIContext | 是 | UI上下文，获取方式可参考UIContext获取方法。uiContext需要为一个有效的值，即UI上下文正确，如果传入非法值或者未设置，会导致创建失败。 |
@@ -1935,9 +1975,10 @@ constructor(uiContext: UIContext, options?: RenderOptions)
 
 
 
-#### build22+
+### build22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 build(builder: WrappedBuilder&lt;Args&gt;, config: BuildOptions, ...args: Args): void
 
@@ -1954,6 +1995,7 @@ build(builder: WrappedBuilder&lt;Args&gt;, config: BuildOptions, ...args: Args):
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2027,9 +2069,10 @@ struct Index {
 
 
 
-#### getFrameNode22+
+### getFrameNode22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFrameNode(): FrameNode | null
 
@@ -2040,6 +2083,7 @@ getFrameNode(): FrameNode | null
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2147,9 +2191,10 @@ struct Index {
 
 
 
-#### postTouchEvent22+
+### postTouchEvent22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 postTouchEvent(event: TouchEvent): boolean
 
@@ -2173,12 +2218,14 @@ offsetA为builderNode相对于父组件的偏移量，可以通过FrameNode中�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | TouchEvent | 是 | 用于派发到ReactiveBuilderNode创建出的FrameNode上的触摸事件。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2285,9 +2332,10 @@ struct MyComponent {
 
 
 
-#### dispose22+
+### dispose22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 dispose(): void
 
@@ -2404,9 +2452,10 @@ struct Index {
 
 
 
-#### reuse22+
+### reuse22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reuse(param?: Object): void
 
@@ -2420,6 +2469,7 @@ ReactiveBuilderNode通过reuse和[recycle](#recycle22)完成其内外自定义�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | param | Object | 否 | 用于复用ReactiveBuilderNode的参数。该参数将直接用于ReactiveBuilderNode中所有顶层自定义组件的复用，应该包含每个自定义组件的构造函数参数所需内容，否则，会导致未定义行为。调用此方法将同步触发内部自定义组件的aboutToReuse生命周期回调，并将该参数作为回调的入参。默认值为undefined，此时ReactiveBuilderNode中的自定义组件将直接使用构造时的数据源。 |
@@ -2431,9 +2481,10 @@ ReactiveBuilderNode通过reuse和[recycle](#recycle22)完成其内外自定义�
 
 
 
-#### recycle22+
+### recycle22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 recycle(): void
 
@@ -2637,7 +2688,7 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/8os-UyIkSJuJlT8o1-d5uA/zh-cn_image_0000002686087715.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071447Z&HW-CC-Expire=86400&HW-CC-Sign=230FF53C7C62429427AD78065F816403E13334DC4ED7D35EAD950E280017E4D8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/Iskh0Xt6T0OrouZAkEWsJg/zh-cn_image_0000002747292373.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=E15ED7FDFC053D87001E3B87DCDC82351909B11B9894D0E65576CBC90426111B)
 
 
 从API版本26.0.0开始，ReactiveBuilderNode中的自定义组件支持V2组件复用。
@@ -2826,9 +2877,10 @@ struct Index {
 
 
 
-#### updateConfiguration22+
+### updateConfiguration22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateConfiguration(): void
 
@@ -2998,14 +3050,15 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/lT0AUrFrRZGLU5U_gEXPNw/zh-cn_image_0000002685927887.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071447Z&HW-CC-Expire=86400&HW-CC-Sign=F35657DF60AE73FEC29FC90D77B9E94B6396AD0B2E0DCE532C59420C27197CC7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/hyzKU5IHQ1uqKMl6SV2oww/zh-cn_image_0000002747212289.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=E41E598A817CAB61E9EF19FE51C2BD55F8C1D0EE61668E063AA951946E0AD1F9)
 
 
 
 
-#### flushState22+
+### flushState22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 flushState(): void
 
@@ -3114,14 +3167,15 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/uV0tYLqsQ_GHLFsgAolODg/zh-cn_image_0000002656008208.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071447Z&HW-CC-Expire=86400&HW-CC-Sign=9230EAA9A959352BDF5AC9C6004F79DAB79E766217F49B797E93C55240AD77B8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/RGz853bCQ_GUfR6616Bp4Q/zh-cn_image_0000002717772354.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=D0B734EE1BE3E12685BE80F3E4B0166DDAFE388D06025FF6D7D8F236366A374B)
 
 
 
 
-#### postInputEvent22+
+### postInputEvent22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 postInputEvent(event: InputEventType): boolean
 
@@ -3130,10 +3184,10 @@ postInputEvent(event: InputEventType): boolean
 offsetA为builderNode相对于父组件的偏移，offsetB为命中位置相对于builderNode的偏移，offsetC为offsetA+offsetB，最终输入给postInputEvent当中。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/f0--zlIbSO6nOHbcekBs1Q/zh-cn_image_0000002656008204.png?HW-CC-KV=V1&HW-CC-Date=20260730T071447Z&HW-CC-Expire=86400&HW-CC-Sign=83E436BDC2D3AB9A13ED2505780BB71B2624E8F241827D853BCC2D6FF6131563)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/H7JKQiiWSte3LOnq2pHWhQ/zh-cn_image_0000002717772350.png?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=240711A34E672CD89FCA224C4688D3771324273188C3759E405FC2E15FF92FA3)
 
 
-> [!TIP]
+> [!WARNING]
 > 传入的坐标值需要转换为px，坐标转换示例可以参考下面示例代码。 鼠标左键点击事件将转换为触摸事件，转发时应注意不在外层同时绑定触摸事件与鼠标事件，否则可能导致坐标偏移。这是由于在事件转换过程中，事件的 SourceType 不会发生变化，规格可查看 onTouch 。 注入事件为轴事件 （AxisEvent） 时，由于轴事件中缺少旋转轴信息，因此注入的事件无法触发 RotationGesture 。 转发的事件会在被分发到的目标组件所在的子树里做触摸测试（TouchTest），并触发对应手势，原始事件也会触发当前组件所在组件树中的手势。不保证两类手势的竞争结果。 如果是开发者构造的事件，必填字段必须赋值，比如触摸事件的touches字段、轴事件的scrollStep字段，同时要保证事件的完整，比如触摸事件的 TouchType 中DOWN和UP字段都要有，防止出现未定义行为。 webview 已经处理过坐标系变换，可以将事件直接下发。 postTouchEvent接口需要提供手势坐标相对于接收事件的目标节点内的局部坐标，postInputEvent接口需要提供手势坐标相对于接收事件的目标节点内的窗口坐标。 不建议同一个事件转发多次。
 
 
@@ -3143,12 +3197,14 @@ offsetA为builderNode相对于父组件的偏移，offsetB为命中位置相对�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | InputEventType | 是 | 待分发的输入事件。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3161,9 +3217,10 @@ offsetA为builderNode相对于父组件的偏移，offsetB为命中位置相对�
 
 
 
-#### postInputEventWithStrategy24+
+### postInputEventWithStrategy24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 postInputEventWithStrategy(event: InputEventType, competitionStrategy?: CompetitionStrategy): boolean
 
@@ -3172,10 +3229,10 @@ postInputEventWithStrategy(event: InputEventType, competitionStrategy?: Competit
 接口调用前需要将event转化为对应的事件，并对event中的window参数的坐标进行转化：offsetA表示ReactiveBuilderNode相对于父组件的偏移量，offsetB为命中位置相对于ReactiveBuilderNode的偏移量，offsetC是offsetA与offsetB之和，最终作为event中的window参数，传递给postInputEventWithStrategy方法，具体请参考示例。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/y0SYsq4mSP2TS0rLfKvxJg/zh-cn_image_0000002656008204.png?HW-CC-KV=V1&HW-CC-Date=20260730T071447Z&HW-CC-Expire=86400&HW-CC-Sign=D07159D4E07B765EF0D0CB485677323843B952BE7657279B2A35BB02E9850D3B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/yB7YDJX0QHaVdjoU9Gkxcw/zh-cn_image_0000002717772350.png?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=7A214C8F2D43A5CFD4435D108337A91B11FF8983B9CDAB02051D1AD54B36DA91)
 
 
-> [!TIP]
+> [!WARNING]
 > 传入的坐标值单位需要转换为px，坐标转换示例可以参考下面示例代码。 系统在处理鼠标左键点击事件时将转换为触摸事件，转发时应注意不在外层同时绑定触摸事件与鼠标事件，否则可能导致坐标偏移。这是由于在事件转换过程中， SourceType 不会发生变化，规格可查看 onTouch 。 注入事件为轴事件 AxisEvent 时，由于轴事件中缺少旋转轴信息，因此注入的事件无法触发旋转手势 RotationGesture 。 转发的事件会在被分发到的目标组件及其子组件里做事件处理，并触发对应手势。可以通过入参控制当前组件和目标组件手势是否为竞争关系。 如果event转化为对应的事件后，该事件为开发者构造的事件，必填字段必须赋值，比如触摸事件的touches字段，轴事件的scrollStep字段。要保证事件的完整，比如触摸事件的 TouchType 中必须同时包含DOWN和UP两个字段，防止出现程序异常或意外崩溃。 webview 已经处理过坐标系变换，可以将事件直接下发。 postTouchEvent接口需要提供手势坐标相对于接收事件的目标节点内的局部坐标，postInputEventWithStrategy接口需要提供手势坐标相对于接收事件的目标节点内的窗口坐标。 支持同一个事件转发多次。
 
 
@@ -3187,6 +3244,7 @@ postInputEventWithStrategy(event: InputEventType, competitionStrategy?: Competit
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | InputEventType | 是 | 用于事件分发的输入事件。 |
@@ -3195,6 +3253,7 @@ postInputEventWithStrategy(event: InputEventType, competitionStrategy?: Competit
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 事件是否被成功派发。如果成功，则返回true；否则，返回false。 |
@@ -3202,9 +3261,10 @@ postInputEventWithStrategy(event: InputEventType, competitionStrategy?: Competit
 
 
 
-#### inheritFreezeOptions22+
+### inheritFreezeOptions22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 inheritFreezeOptions(enabled: boolean): void
 
@@ -3219,6 +3279,7 @@ inheritFreezeOptions(enabled: boolean): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3455,14 +3516,15 @@ struct TextBuilder {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/8TC8GilBQuqwPKr0dmXThA/zh-cn_image_0000002655848288.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071447Z&HW-CC-Expire=86400&HW-CC-Sign=6A377EBCE19BA5FDAFB2C6C0042E058424C76A01E61B0F2F842265941CB2B188)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/9N0IC_OMQsOYabPg2dIJQw/zh-cn_image_0000002717612422.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=BC8CFB7656FEDE65852E143D4B1C426E758C3907244DB99CDDCD949D3845BC48)
 
 
 
 
-#### isDisposed22+
+### isDisposed22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isDisposed(): boolean
 
@@ -3473,6 +3535,7 @@ isDisposed(): boolean
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3599,18 +3662,22 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/6am3ug8KTFi9RD1qmMAn4A/zh-cn_image_0000002686087717.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071447Z&HW-CC-Expire=86400&HW-CC-Sign=0902615C4D05769F00A86D0E04F668F759DECB0CD26ECA3A351DBAC2EA71D0B8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/bWymN2x_RJSLpVYgwKbceQ/zh-cn_image_0000002747292375.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=1799E42862A2162EDD718EA28A29116E125F74ACFF2F93C8AC3D674F4FB8A09E)
 
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（BuilderNode中鼠标事件）
+
+
+### 示例1（BuilderNode中鼠标事件）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例演示了在自定义组件中截获鼠标事件并进行坐标转换的完整流程。组件通过[onMouse](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-mouse-key#onmouse)回调读取本地x/y，再结合FrameNode.[getPositionToParent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#getpositiontoparent12)()得到的偏移量，调用vp2px将相对坐标转换为像素坐标，更新[MouseEvent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-mouse-key#mouseevent对象说明)的windowX/windowY、displayX/displayY。最后通过rootNode.[postInputEvent](#postinputevent20)(event)将转换后的鼠标事件分发给子节点进行处理。
 
@@ -3751,12 +3818,15 @@ struct MyComponent {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/YhPegmPOQN6naqtcp1l9gw/zh-cn_image_0000002685927889.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071447Z&HW-CC-Expire=86400&HW-CC-Sign=64BC5519E8C9B701B32B3B70BBA8DCDCFA5B26EDE7C6914D8C3FB4505DF832F6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/DEIfy1BDTrW_eNBRwJbeCA/zh-cn_image_0000002747212291.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=6C759D05840A96DE6CCC99EA3F0B99F0CBDC2ED9D67906CC4DC0EDC7F7A2668F)
 
 
 
 
-#### 示例2（BuilderNode中触摸事件）
+### 示例2（BuilderNode中触摸事件）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例演示了在自定义组件中截获触摸事件并对触点坐标进行转换的完整流程。在[onTouch](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-events-touch#ontouch)回调中，遍历[TouchEvent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-events-touch#touchevent对象说明)的changedTouches和touches数组，对每个触点的x/y加上组件偏移量并调用vp2px转换为像素，更新各自的windowX/windowY、displayX/displayY。最后同样通过rootNode.postInputEvent(event)将转换后的触摸事件分发给子节点处理。
 
@@ -3869,12 +3939,15 @@ struct MyComponent {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/kXhHQufdSta-MWPmXFiXoA/zh-cn_image_0000002656008210.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071447Z&HW-CC-Expire=86400&HW-CC-Sign=6DB5D721FDF740A2C7534A7DB00ADD305AC75DC2F325159B4A0498C614BD22C3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/Wydb1hvFTei90LToRkOoBg/zh-cn_image_0000002717772356.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=B4AC46863CD2802537A4DCF41FA44B813AA6AF7ACA68A63B675E3533CDCAE4D2)
 
 
 
 
-#### 示例3（BuilderNode中轴事件）
+### 示例3（BuilderNode中轴事件）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例演示了在自定义组件中截获滚轮或触控板轴事件并进行坐标转换的完整流程。在[onAxisEvent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-events-axis#onaxisevent)回调中，先获取事件的相对x/y，再加上组件偏移量后调用vp2px转换为像素，更新AxisEvent的windowX/windowY、displayX/displayY，最后通过rootNode.postInputEvent(event)将转换后的轴事件分发给子节点进行处理。
 
@@ -3973,12 +4046,15 @@ struct MyComponent {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/2Yrd_YUzTYW55P6B_n3EKA/zh-cn_image_0000002655848290.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071447Z&HW-CC-Expire=86400&HW-CC-Sign=A30FE0B05BE12AFFB43B77EF66E192C888A4A88AAB9AA8DC9619AD126B0E27E7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/63TKK8h4T8GsrnSu-7GTmQ/zh-cn_image_0000002717612424.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=635594FCAC6334DBFD192175B897C85BC41315E0D6076BA0149201F0156E9634)
 
 
 
 
-#### 示例4（BuilderNode共享localStorage）
+### 示例4（BuilderNode共享localStorage）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例演示了如何通过BuilderNode的build方法传入外部[localStorage](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-state-management#localstorage9)，此时挂载在BuilderNode的所有自定义组件共享该localStorage。
 
@@ -4061,7 +4137,10 @@ struct CustomComp {
 
 
 
-#### 示例5（BuilderNode支持内部@Consume接收外部的@Provide数据）
+### 示例5（BuilderNode支持内部@Consume接收外部的@Provide数据）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置BuilderNode的[BuildOptions](#buildoptions12)中enableProvideConsumeCrossing为true，以实现BuilderNode内部自定义组件的@Consume与所在自定义组件的@Provide双向同步。
 
@@ -4142,12 +4221,15 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/EzYNZsrwQwui4sd8PL9usw/zh-cn_image_0000002686087719.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071447Z&HW-CC-Expire=86400&HW-CC-Sign=ED91DE525F3B41A1E8C57D66DE60003B69E07B0CB536D2F41700CAC35CBD6793)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/TA3h1f3UQqehTbYCv_00WQ/zh-cn_image_0000002747292377.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=452FF1E5CC1FD2878197C7D3F5F08446C67678391A88ADA2A925B5778D5AB89D)
 
 
 
 
-#### 示例6（BuilderNode支持内部@Consumer接收外部的@Provider数据）
+### 示例6（BuilderNode支持内部@Consumer接收外部的@Provider数据）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 23开始，支持跨BuilderNode配对@Provider和@Consumer。
@@ -4237,12 +4319,15 @@ struct AddChild {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/5hCUkBahQBWFGMuED2bgMw/zh-cn_image_0000002685927891.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071447Z&HW-CC-Expire=86400&HW-CC-Sign=972B027C8126107EC31FCCF203A52C0DA705F9CC59F3C1DC6313F03562859B31)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/OokCxEdKSoyv3PSSQ6aulA/zh-cn_image_0000002747212293.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=7F6A1C8EAB509005A316F21A8ED4845C75C0859374D70D6664792480D8623537)
 
 
 
 
-#### 示例7（BuilderNode上下树时的同步关系变化）
+### 示例7（BuilderNode上下树时的同步关系变化）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 23开始，支持跨BuilderNode配对@Provider和@Consumer。
@@ -4368,7 +4453,10 @@ struct TestRemove {
 
 
 
-#### 示例8（BuilderNode上树后再上另一棵树时的同步关系变化）
+### 示例8（BuilderNode上树后再上另一棵树时的同步关系变化）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 23开始，支持跨BuilderNode配对@Provider和@Consumer。
@@ -4513,7 +4601,10 @@ struct ConsumerChild {
 
 
 
-#### 示例9（BuilderNode互相嵌套的场景下的同步关系变化）
+### 示例9（BuilderNode互相嵌套的场景下的同步关系变化）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 23开始，支持跨BuilderNode配对@Provider和@Consumer。
@@ -4645,7 +4736,10 @@ struct BuildNodeToBuildNodeChild {
 
 
 
-#### 示例10（BuilderNode下的@Consumer所在组件还有其他子组件时的同步关系）
+### 示例10（BuilderNode下的@Consumer所在组件还有其他子组件时的同步关系）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 23开始，支持跨BuilderNode配对@Provider和@Consumer。
@@ -4796,7 +4890,10 @@ struct NestedComponentChildChild {
 
 
 
-#### 示例11（组件树为@Provider-@Consumer-BuilderNode-@Consumer时的同步关系）
+### 示例11（组件树为@Provider-@Consumer-BuilderNode-@Consumer时的同步关系）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 23开始，支持跨BuilderNode配对@Provider和@Consumer。
@@ -4959,7 +5056,10 @@ struct NestedComponentChild {
 
 
 
-#### 示例12（组件树为@Provider-BuilderNode-@Provider-@Consumer时的同步关系）
+### 示例12（组件树为@Provider-BuilderNode-@Provider-@Consumer时的同步关系）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 23开始，支持跨BuilderNode配对@Provider和@Consumer。
@@ -5124,7 +5224,10 @@ struct DefaultConsumer {
 
 
 
-#### 示例13（ReactiveBuilderNode中鼠标事件）
+### 示例13（ReactiveBuilderNode中鼠标事件）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 22版本开始支持。
 
@@ -5269,12 +5372,15 @@ struct MyComponent {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/BEgjHPlYRciLpAVf86N7SQ/zh-cn_image_0000002656008212.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071447Z&HW-CC-Expire=86400&HW-CC-Sign=6D5E2147923796EA07C428E3D1A39A30D5617AFF218F49B4B140FD75BD726BA5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/Q2H6R7dITyO3QcqZqRWN4g/zh-cn_image_0000002717772358.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=9D83BF6E873E7D73745FF86A0CF31835CC628F72B0FD812A29FE688E82571C23)
 
 
 
 
-#### 示例14（ReactiveBuilderNode中触摸事件）
+### 示例14（ReactiveBuilderNode中触摸事件）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 22版本开始支持。
 
@@ -5387,12 +5493,15 @@ struct MyComponent {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/q98BLmtKQrOBNuT7-_jnzQ/zh-cn_image_0000002655848292.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071447Z&HW-CC-Expire=86400&HW-CC-Sign=2A16C0EC93B42FCB576B3866F720E0E86FC655EC22E941C47EE96CB135804923)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/bef7AjiZTr2P_SUu6k5ifQ/zh-cn_image_0000002717612426.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=B543A238C7F022FCEB8A116284385D84683632C3F218A00CDC19F6F2A5345443)
 
 
 
 
-#### 示例15（ReactiveBuilderNode中轴事件）
+### 示例15（ReactiveBuilderNode中轴事件）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 22版本开始支持。
 
@@ -5492,12 +5601,15 @@ struct MyComponent {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/6pBjsRYxSHS7jXhIHpRHqQ/zh-cn_image_0000002686087721.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071447Z&HW-CC-Expire=86400&HW-CC-Sign=DD1F5BE4A650355BE26DE681824407F4A10E33DBF63562BDB87BC1D6273FBA41)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/n7vakrDyS5GwhSHFmOxGTw/zh-cn_image_0000002747292379.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=9B954D1976857623B82F16E468964FD82949710C58BEEE661F9791F98F81DF70)
 
 
 
 
-#### 示例16（BuilderNode中带竞争策略的鼠标事件）
+### 示例16（BuilderNode中带竞争策略的鼠标事件）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 24开始，新增postInputEventWithStrategy接口。
 
@@ -5755,7 +5867,10 @@ struct MyComponent {
 
 
 
-#### 示例17（BuilderNode中带竞争策略的触摸事件）
+### 示例17（BuilderNode中带竞争策略的触摸事件）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 24开始，新增postInputEventWithStrategy接口。
 
@@ -6044,7 +6159,10 @@ struct MyComponent {
 
 
 
-#### 示例18（BuilderNode中带竞争策略的轴事件）
+### 示例18（BuilderNode中带竞争策略的轴事件）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 24开始，新增postInputEventWithStrategy接口。
 

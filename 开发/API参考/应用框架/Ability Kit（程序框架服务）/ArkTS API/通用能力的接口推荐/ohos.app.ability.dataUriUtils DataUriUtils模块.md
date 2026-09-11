@@ -1,20 +1,21 @@
 # @ohos.app.ability.dataUriUtils (DataUriUtils模块)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-datauriutils
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-DataUriUtils模块提供用于处理uri对象的能力，包括获取、绑定、删除和更新指定uri对象的路径末尾的ID。
+DataUriUtils模块提供用于处理uri对象的能力，包括获取、附加、删除和更新指定uri对象的路径末尾的ID。
 
 > [!NOTE]
 > 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { dataUriUtils } from '@kit.AbilityKit';
@@ -22,9 +23,10 @@ import { dataUriUtils } from '@kit.AbilityKit';
 
 
 
-#### dataUriUtils.getId
+## dataUriUtils.getId
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getId(uri: string): number
 
@@ -34,12 +36,14 @@ getId(uri: string): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| uri | string | 是 | 表示uri对象。 |
+| uri | string | 是 | 表示要获取ID的uri对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -50,6 +54,7 @@ getId(uri: string): number
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
@@ -57,22 +62,24 @@ getId(uri: string): number
 
 **示例：**
 
-```text
+```json
 import { dataUriUtils } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 try {
   let id = dataUriUtils.getId('com.example.dataUriUtils/1221');
   console.info(`get id: ${id}`);
-} catch(err) {
-  console.error(`get id err ,check the uri ${err}`);
+} catch (err) {
+  console.error(`get id err, code: ${JSON.stringify((err as BusinessError).code)}, msg: ${JSON.stringify((err as BusinessError).message)}`);
 }
 ```
 
 
 
-#### dataUriUtils.attachId
+## dataUriUtils.attachId
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 attachId(uri: string, id: number): string
 
@@ -82,13 +89,15 @@ attachId(uri: string, id: number): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| uri | string | 是 | 表示uri对象。 |
+| uri | string | 是 | 表示要附加ID的uri对象。 |
 | id | number | 是 | 表示要附加的ID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -98,6 +107,7 @@ attachId(uri: string, id: number): string
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -118,15 +128,16 @@ try {
   );
   console.info(`attachId the uri is: ${uri}`);
 } catch (err) {
-  console.error(`get id err, code: ${JSON.stringify((err as BusinessError).code)}, msg: ${JSON.stringify((err as BusinessError).message)}`);
+  console.error(`attachId err, code: ${JSON.stringify((err as BusinessError).code)}, msg: ${JSON.stringify((err as BusinessError).message)}`);
 }
 ```
 
 
 
-#### dataUriUtils.deleteId
+## dataUriUtils.deleteId
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteId(uri: string): string
 
@@ -136,12 +147,14 @@ deleteId(uri: string): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uri | string | 是 | 表示要从中删除ID的uri对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -151,6 +164,7 @@ deleteId(uri: string): string
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -166,16 +180,17 @@ import { BusinessError } from '@kit.BasicServicesKit';
 try {
   let uri = dataUriUtils.deleteId('com.example.dataUriUtils/1221');
   console.info(`delete id with the uri is: ${uri}`);
-} catch(err) {
+} catch (err) {
   console.error(`delete id err, code: ${JSON.stringify((err as BusinessError).code)}, msg: ${JSON.stringify((err as BusinessError).message)}`);
 }
 ```
 
 
 
-#### dataUriUtils.updateId
+## dataUriUtils.updateId
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateId(uri: string, id: number): string
 
@@ -185,13 +200,15 @@ updateId(uri: string, id: number): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| uri | string | 是 | 表示uri对象 |
-| id | number | 是 | 表示要更新的ID |
+| uri | string | 是 | 表示要更新ID的uri对象。 |
+| id | number | 是 | 表示要更新的ID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -201,6 +218,7 @@ updateId(uri: string, id: number): string
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -219,6 +237,7 @@ try {
     'com.example.dataUriUtils/1221',
     id
   );
+  console.info(`update id with the uri is: ${uri}`);
 } catch (err) {
   console.error(`update id err, code: ${JSON.stringify((err as BusinessError).code)}, msg: ${JSON.stringify((err as BusinessError).message)}`);
 }

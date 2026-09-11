@@ -1,11 +1,12 @@
 # frame_generation_base.h
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/frame__generation__base_8h
 **支持设备：** Phone | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### 结构体
+### 结构体
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | struct FG_Mat4x4 | 此结构体描述列主序4x4矩阵。列主序是指在连续的线性内存地址中，优先按列遍历矩阵元素。 |
@@ -46,10 +50,12 @@
  
   
 
-#### 类型定义
+### 类型定义
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | typedef struct FG_Mat4x4 FG_Mat4x4 | 此结构体描述列主序4x4矩阵。列主序是指在连续的线性内存地址中，优先按列遍历矩阵元素。 |
@@ -69,10 +75,12 @@
  
   
 
-#### 枚举
+### 枚举
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | FG_PredictionMode { FG_PREDICTION_MODE_INTERPOLATION = 0, FG_PREDICTION_MODE_EXTRAPOLATION = 1 } | 此枚举描述超帧预测算法模式。 |
@@ -85,10 +93,12 @@
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | bool HMS_FG_IsFrameGenerationSupported(FG_FeatureType featureType) | 表示当前设备是否支持此类型的超帧功能，不同机型支持的超帧功能不同。以AI超帧特性为例，该接口会判断当前机型是否含有NPU及NPU算力是否满足特性要求，如果不满足则会返回false。 |

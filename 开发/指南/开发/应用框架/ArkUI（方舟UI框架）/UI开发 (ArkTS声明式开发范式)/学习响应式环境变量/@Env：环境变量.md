@@ -1,6 +1,6 @@
 # @Env：环境变量
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-env-system-property
 
@@ -11,7 +11,7 @@
 
 
 
-#### 概述
+## 概述
 
 @Env是响应式系统环境变量装饰器，其功能包括：
 
@@ -37,15 +37,16 @@
 
 
 
-#### @Env支持参数
+## @Env支持参数
 
 @Env支持的参数请参考[SystemProperties枚举类型说明](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-env-system-property#systemproperties) | [SystemEnvKey&lt;T&gt;类型说明](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-env-system-property#systemenvkeyt)。
 
 
 
-#### @Env和Environment能力对比
+## @Env和Environment能力对比
 
 @Env和[Environment](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-environment)都是系统环境变量相关，但两者能力有较大的不同，具体能力对比见下表。
+
 
 | 能力 | @Env | Environment |
 | --- | --- | --- |
@@ -57,7 +58,7 @@
 
 
 
-#### 限制条件
+## 限制条件
 
  - @Env仅支持在@Component和@ComponentV2中使用，否则会有编译时报错。如果开发者绕过编译时检查，则会有运行时报错。
 
@@ -150,7 +151,7 @@ struct Index {
   }
 }
 ```
-      - @Env只能单独使用，不能和其他V1V2状态变量装饰器或@Require联用，否则会有编译时报错。从API版本26.0.0开始，在@Component中，可通过[@Watch](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-watch)监听@Env装饰变量的变化，具体示例见[@Watch与@Monitor监听@Env装饰的变量](#watch与monitor监听env装饰的变量)。
+            - @Env只能单独使用，不能和其他V1V2状态变量装饰器或@Require联用，否则会有编译时报错。从API版本26.0.0开始，在@Component中，可通过[@Watch](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-watch)监听@Env装饰变量的变化，具体示例见[@Watch与@Monitor监听@Env装饰的变量](#watch与monitor监听env装饰的变量)。
 
   
 ```text
@@ -222,7 +223,7 @@ struct CompInvalid {
 
 
 
-#### @Env初始化流程
+## @Env初始化流程
 
 @Env变量不允许开发者初始化，其值由框架根据当前窗口的环境变量自动提供，@Env变量在被第一次读值的时候，会触发初始化。@Env变量初始化遵循以下流程：
 1. 从父组件中查找已有实例：       
@@ -343,11 +344,11 @@ struct GrandChild2 {
 
   
 
-  #### 使用场景
+  ## 使用场景
 
   
 
-  #### 在@ComponentV2中使用@Env
+  ### 在@ComponentV2中使用@Env
 
   下面的例子中：
 
@@ -430,7 +431,7 @@ struct Comp {
 
 
 
-#### 在@Component中使用@Env
+### 在@Component中使用@Env
 
 @Env在@Component中使用和其在@ComponentV2中使用类似，示例如下。
 
@@ -507,9 +508,9 @@ struct Comp {
 
 
 
-#### 通过BuilderNode切换窗口
+### 通过BuilderNode切换窗口
 
-@Env用于展示@Component/@ComponentV2所在[窗口](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window)的环境变量信息。开发者通过BuilderNode切换@Component@ComponentV2所在的窗口实例时，@Env会根据新的窗口获取对应的环境变量信息，并触发关联的UI组件刷新。以SystemProperties.BREAK_POINT为例。
+@Env用于展示@Component/@ComponentV2所在[窗口](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window)的环境变量信息。开发者通过BuilderNode切换@Component/@ComponentV2所在的窗口实例时，@Env会根据新的窗口获取对应的环境变量信息，并触发关联的UI组件刷新。以SystemProperties.BREAK_POINT为例。
 
 在下面的示例中：
 1. 点击Button('add node to tree')，创建BuilderNode节点挂载到NodeContainer下。
@@ -828,7 +829,7 @@ struct Comp {
 
 
 
-#### @Watch与@Monitor监听@Env装饰的变量
+### @Watch与@Monitor监听@Env装饰的变量
 
 从API版本26.0.0开始，在@Component中，可通过[@Watch](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-watch)监听@Env装饰变量的变化。需要注意的是，仅当@Env装饰的变量被整体赋值时才会触发@Watch监听回调，其内部属性的变化不会触发回调。
 

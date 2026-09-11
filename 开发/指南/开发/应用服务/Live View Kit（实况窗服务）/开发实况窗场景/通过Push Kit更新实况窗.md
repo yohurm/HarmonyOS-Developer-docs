@@ -1,10 +1,10 @@
 # 通过Push Kit更新实况窗
 
-更新时间：2026-06-12 06:54:11
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/liveview-update-by-push
 
-#### 场景介绍
+## 场景介绍
 
 本地实况窗的更新依赖于应用进程的存活，为了让实况窗在生命周期内正常完成更新和结束，我们更推荐开发者使用Push Kit实时更新实况窗状态。
 
@@ -23,13 +23,14 @@
 
 
 
-#### 支持网络图片下载
+## 支持网络图片下载
 
 从26.0.0开始，实况窗支持通过Push Kit下载网络图片，存在以下限制条件：
 1. 支持下载的网络图片大小不大于512KB。
 2. 支持下载的网络图片文件格式包括jpg、jpeg、png、bmp、webp。
 3. 仅支持HTTPS协议的网络图片下载，即只支持以"https://"开头的图片网址。
 4. 仅如下1到7位置支持网络图片下载，具体请参考[请求体参数说明](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-scenariozed-api-request-param)。
+
 
 | 模板类型 | 示意图 |
 | --- | --- |

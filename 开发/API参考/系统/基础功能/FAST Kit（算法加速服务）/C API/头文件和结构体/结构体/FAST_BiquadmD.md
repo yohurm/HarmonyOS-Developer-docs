@@ -1,11 +1,12 @@
 # FAST_BiquadmD
 
-更新时间：2026-05-18 03:44:20
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/fast-kit--fast-biquadmd
 **支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -21,16 +22,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | uint8_t* activeFilters | 活跃滤波器掩码数组。 |
@@ -45,13 +49,15 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### activeFilters
+### activeFilters
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -65,7 +71,8 @@ uint8_t* FAST_BiquadmD::activeFilters
  
   
 
-#### channelGains
+### channelGains
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -79,7 +86,8 @@ double* FAST_BiquadmD::channelGains
  
   
 
-#### coefficients
+### coefficients
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -93,7 +101,8 @@ FAST_BiquadCoefficientsD* FAST_BiquadmD::coefficients
  
   
 
-#### isInitialized
+### isInitialized
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -107,7 +116,8 @@ uint8_t FAST_BiquadmD::isInitialized
  
   
 
-#### maxFrames
+### maxFrames
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -121,7 +131,8 @@ size_t FAST_BiquadmD::maxFrames
  
   
 
-#### numChannels
+### numChannels
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -135,7 +146,8 @@ size_t FAST_BiquadmD::numChannels
  
   
 
-#### numSections
+### numSections
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -149,7 +161,8 @@ size_t FAST_BiquadmD::numSections
  
   
 
-#### states
+### states
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 

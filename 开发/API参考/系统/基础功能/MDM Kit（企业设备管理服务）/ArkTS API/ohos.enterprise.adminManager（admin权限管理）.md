@@ -1,6 +1,6 @@
 # @ohos.enterprise.adminManager（admin权限管理）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-adminmanager
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -12,7 +12,8 @@
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -22,13 +23,14 @@ import { adminManager } from '@kit.MDMKit';
 
 
 
-#### adminManager.disableAdmin
+## adminManager.disableAdmin
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 disableAdmin(admin: Want, userId?: number): Promise&lt;void&gt;
 
-解除激活指定用户的设备管理应用。使用Promise异步回调。
+解除激活指定用户的设备管理应用。使用Promise异步回调。调用成功后，指定的设备管理应用将被解除激活，不再具备设备管理能力。
 
 **需要权限：** ohos.permission.MANAGE_ENTERPRISE_DEVICE_ADMIN（仅系统应用支持申请）或ohos.permission.START_PROVISIONING_MESSAGE或ohos.permission.ENTERPRISE_DEACTIVATE_DEVICE_ADMIN
 
@@ -36,13 +38,14 @@ disableAdmin(admin: Want, userId?: number): Promise&lt;void&gt;
 
 - 从API version 20开始，支持申请ohos.permission.START_PROVISIONING_MESSAGE权限。仅当[BYOD](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-term#bring-your-own-device-byod自带设备办公)设备管理应用解除激活自身时，可以申请该权限。
 
-- API 19及之前的版本，需要申请ohos.permission.MANAGE_ENTERPRISE_DEVICE_ADMIN（仅系统应用支持申请）。
+- API version 19及之前的版本，需要申请ohos.permission.MANAGE_ENTERPRISE_DEVICE_ADMIN（仅系统应用支持申请）。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -52,6 +55,7 @@ disableAdmin(admin: Want, userId?: number): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。当解除激活设备管理应用失败时，会抛出错误对象。 |
@@ -60,6 +64,7 @@ disableAdmin(admin: Want, userId?: number): Promise&lt;void&gt;
 **错误码**:
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -87,7 +92,8 @@ adminManager.disableAdmin(wantTemp, 100).catch((err: BusinessError) => {
 
 
 
-#### adminManager.isByodAdmin20+
+## adminManager.isByodAdmin20+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -103,12 +109,14 @@ isByodAdmin(admin: Want): boolean
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。仅支持传入当前应用的企业设备管理扩展组件。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -118,6 +126,7 @@ isByodAdmin(admin: Want): boolean
 **错误码**:
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -147,13 +156,14 @@ try {
 
 
 
-#### adminManager.subscribeManagedEventSync
+## adminManager.subscribeManagedEventSync
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 subscribeManagedEventSync(admin: Want, managedEvents: Array&lt;ManagedEvent&gt;): void
 
-订阅系统管理事件。
+订阅系统管理事件。调用成功后，当已订阅的系统管理事件发生时，设备管理应用将收到相应的通知。
 
 从API版本26.0.0开始，非超级设备管理应用调用该接口订阅[MANAGED_EVENT_POLICIES_CHANGED](#managedevent)事件时返回9200002错误码。
 
@@ -165,15 +175,17 @@ subscribeManagedEventSync(admin: Want, managedEvents: Array&lt;ManagedEvent&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| managedEvents | Array&lt;ManagedEvent&gt; | 是 | 订阅事件数组。 |
+| managedEvents | Array&lt;ManagedEvent&gt; | 是 | 订阅事件数组，用于指定需要订阅的系统管理事件。数组元素为ManagedEvent枚举值，可订阅多个事件类型，如应用安装/卸载/启动/停止事件/系统更新事件等。 |
 
 
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -195,7 +207,8 @@ let wantTemp: Want = {
   bundleName: 'com.example.myapplication',
   abilityName: 'EnterpriseAdminAbility'
 };
-let events: Array<adminManager.ManagedEvent> = [adminManager.ManagedEvent.MANAGED_EVENT_BUNDLE_ADDED, adminManager.ManagedEvent.MANAGED_EVENT_BUNDLE_REMOVED];
+let events: Array<adminManager.ManagedEvent> = [adminManager.ManagedEvent.MANAGED_EVENT_BUNDLE_ADDED,
+  adminManager.ManagedEvent.MANAGED_EVENT_BUNDLE_REMOVED];
 
 try {
   adminManager.subscribeManagedEventSync(wantTemp, events);
@@ -207,13 +220,14 @@ try {
 
 
 
-#### adminManager.unsubscribeManagedEventSync
+## adminManager.unsubscribeManagedEventSync
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 unsubscribeManagedEventSync(admin: Want, managedEvents: Array&lt;ManagedEvent&gt;): void
 
-取消订阅系统管理事件。
+取消订阅系统管理事件。调用成功后，将不再收到已取消订阅的系统管理事件通知。
 
 **需要权限：** ohos.permission.ENTERPRISE_SUBSCRIBE_MANAGED_EVENT
 
@@ -223,15 +237,17 @@ unsubscribeManagedEventSync(admin: Want, managedEvents: Array&lt;ManagedEvent&gt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| managedEvents | Array&lt;ManagedEvent&gt; | 是 | 取消订阅事件数组。 |
+| managedEvents | Array&lt;ManagedEvent&gt; | 是 | 取消订阅事件数组，用于指定需要取消订阅的系统管理事件。数组元素为ManagedEvent枚举值，应与订阅时传入的事件类型一致。 |
 
 
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -252,7 +268,8 @@ let wantTemp: Want = {
   bundleName: 'com.example.myapplication',
   abilityName: 'EnterpriseAdminAbility'
 };
-let events: Array<adminManager.ManagedEvent> = [adminManager.ManagedEvent.MANAGED_EVENT_BUNDLE_ADDED, adminManager.ManagedEvent.MANAGED_EVENT_BUNDLE_REMOVED];
+let events: Array<adminManager.ManagedEvent> = [adminManager.ManagedEvent.MANAGED_EVENT_BUNDLE_ADDED,
+  adminManager.ManagedEvent.MANAGED_EVENT_BUNDLE_REMOVED];
 
 try {
   adminManager.unsubscribeManagedEventSync(wantTemp, events);
@@ -264,7 +281,8 @@ try {
 
 
 
-#### adminManager.setDelegatedPolicies14+
+## adminManager.setDelegatedPolicies14+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -280,6 +298,7 @@ setDelegatedPolicies(admin: Want, bundleName: string, policies: Array&lt;string&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -290,6 +309,7 @@ setDelegatedPolicies(admin: Want, bundleName: string, policies: Array&lt;string&
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -325,7 +345,8 @@ try {
 
 
 
-#### adminManager.getDelegatedPolicies14+
+## adminManager.getDelegatedPolicies14+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -341,6 +362,7 @@ getDelegatedPolicies(admin: Want, bundleName: string): Array&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -348,6 +370,7 @@ getDelegatedPolicies(admin: Want, bundleName: string): Array&lt;string&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -357,6 +380,7 @@ getDelegatedPolicies(admin: Want, bundleName: string): Array&lt;string&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -389,7 +413,8 @@ try {
 
 
 
-#### adminManager.getDelegatedBundleNames14+
+## adminManager.getDelegatedBundleNames14+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -405,6 +430,7 @@ getDelegatedBundleNames(admin: Want, policy: string): Array&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -412,6 +438,7 @@ getDelegatedBundleNames(admin: Want, policy: string): Array&lt;string&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -421,6 +448,7 @@ getDelegatedBundleNames(admin: Want, policy: string): Array&lt;string&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -453,9 +481,10 @@ try {
 
 
 
-#### adminManager.startAdminProvision15+
+## adminManager.startAdminProvision15+
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | Tablet
 
 startAdminProvision(admin: Want, type: AdminType, context: common.Context, parameters: Record<string, string>): void
 
@@ -471,27 +500,29 @@ startAdminProvision(admin: Want, type: AdminType, context: common.Context, param
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
 | type | AdminType | 是 | 激活的设备管理应用类型，仅支持ADMIN_TYPE_BYOD类型。 |
 | context | common.Context | 是 | 管理应用的上下文信息。 |
-| parameters | Record<string, string> | 是 | 自定义参数信息，其中Key值必须包含："activateId"，可以包含"customizedInfo"、"localDeactivationPolicy"。 - activateId：项目激活ID。 - customizedInfo：企业自定义信息。 - localDeactivationPolicy：从API version 22开始支持，本地延迟取消激活时间（单位：小时） |
+| parameters | Record<string, string> | 是 | 自定义参数信息，其中Key值必须包含："activateId"，可以包含"customizedInfo"、"localDeactivationPolicy"。 - activateId：项目激活ID。 - customizedInfo：企业自定义信息。 - localDeactivationPolicy：本地延迟取消激活时间（单位：小时），端侧传入时长要小于等于云侧配置时长，否则会激活失败并提示为无效的激活参数，实际生效以端侧传入时长为准，从API version 22开始支持。 |
 
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/Wmj_dFwKREyy0HIRkYSX7w/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071638Z&HW-CC-Expire=86400&HW-CC-Sign=A0BB142762D64B944A6F9873CDDC2AEC2893E6A13C8E374EC94A77E2EBEFE4C7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/3vRxlfJQThih2XvRU3A_JA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072857Z&HW-CC-Expire=86400&HW-CC-Sign=5C9F04F914C4F6B88E91086F9CF60212E1A73C7B336D658B3F0458FD22A3DB11)
 
 
 1、此接口只能在企业设备上生效。
 
-2、参数credential为激活凭证，该激活凭证支持管理员通过HEM平台申请，[申请指导](https://developer.huawei.com/business/cn/doc/HEM/hem_developer_faq_emmwenti_pc_mdmazhjh-0000002540608338#section184382913281)。。 |
+2、参数credential为激活凭证，该激活凭证支持管理员通过HEM平台申请，[申请指导](https://developer.huawei.com/business/cn/doc/HEM/hem_developer_faq_emmwenti_pc_mdmazhjh-0000002540608338#section184382913281)。 |
 
 
 
 **错误码**：
 
-以下的错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -520,21 +551,22 @@ const context = this.getUIContext().getHostContext() as common.UIAbilityContext;
 try {
   console.info('context:' + JSON.stringify(context));
   adminManager.startAdminProvision(wantTemp, adminManager.AdminType.ADMIN_TYPE_BYOD, context, recordParameters);
-  console.info('startAdminProvision::success');
+  console.info('Succeeded in starting Admin Provision');
 } catch (error) {
-  console.error('startAdminProvision::errorCode: ' + error.code + ' errorMessage: ' + error.message);
+  console.error('Failed to start Admin Provision::errorCode: ' + error.code + ' errorMessage: ' + error.message);
 }
 ```
 
 
 
-#### adminManager.enableDeviceAdmin23+
+## adminManager.enableDeviceAdmin23+
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** PC/2in1
 
 enableDeviceAdmin(admin: Want): Promise&lt;void&gt;
 
-[SDA](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-term#super-device-admin-sda超级设备管理员)应用通过该接口可以激活其他[DA](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-term#device-admin-da普通设备管理员)应用，使用Promise异步回调。该接口仅支持超级设备管理应用调用。
+[SDA](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-term#super-device-admin-sda超级设备管理员)应用通过该接口可以激活其他[DA](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-term#device-admin-da普通设备管理员)应用，使用Promise异步回调。调用成功后，指定的DA应用将被激活并具备设备管理能力。该接口仅支持超级设备管理应用调用。
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_DEVICE_ADMIN
 
@@ -546,12 +578,14 @@ enableDeviceAdmin(admin: Want): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -561,6 +595,7 @@ enableDeviceAdmin(admin: Want): Promise&lt;void&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -592,13 +627,14 @@ adminManager.enableDeviceAdmin(wantTemp).catch((err: BusinessError) => {
 
 
 
-#### adminManager.disableDeviceAdmin23+
+## adminManager.disableDeviceAdmin23+
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** PC/2in1
 
 disableDeviceAdmin(admin: Want): Promise&lt;void&gt;
 
-[SDA](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-term#super-device-admin-sda超级设备管理员)应用通过该接口可以解除激活其他[DA](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-term#device-admin-da普通设备管理员)应用，使用Promise异步回调。该接口仅支持超级设备管理应用调用。
+[SDA](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-term#super-device-admin-sda超级设备管理员)应用通过该接口可以解除激活其他[DA](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-term#device-admin-da普通设备管理员)应用，使用Promise异步回调。调用成功后，指定的DA应用将被解除激活，不再具备设备管理能力。该接口仅支持超级设备管理应用调用。
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_DEVICE_ADMIN
 
@@ -610,12 +646,14 @@ disableDeviceAdmin(admin: Want): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -625,6 +663,7 @@ disableDeviceAdmin(admin: Want): Promise&lt;void&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -655,16 +694,17 @@ adminManager.disableDeviceAdmin(wantTemp).catch((err: BusinessError) => {
 
 
 
-#### adminManager.enableSelfDeviceAdmin
+## adminManager.enableSelfDeviceAdmin
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** PC/2in1
 
 enableSelfDeviceAdmin(admin: Want, credential: string): void
 
 在企业设备中，MDM应用没有预置激活的场景下，MDM应用可以通过该接口实现自激活。该接口仅支持激活MDM应用自身，不支持激活其他MDM应用；支持的激活类型包括超级设备管理应用和普通设备管理应用。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/0gRNDddeTj2qjNNFQXXKYA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071638Z&HW-CC-Expire=86400&HW-CC-Sign=B4594E4115130C99CC2ADF4057ACBF4A459D8BB0ABD4F3BC7A72A5BA4EF9B48E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/m7A_zWWjRea0f0Z5bKgl0A/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072857Z&HW-CC-Expire=86400&HW-CC-Sign=1D1695567FFDA7C1A3F7B1B19D5695BF299B8EB3D88534A77BCB3263FAC56000)
 
 
 1、此接口只能在企业设备上生效。
@@ -685,6 +725,7 @@ enableSelfDeviceAdmin(admin: Want, credential: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -694,6 +735,7 @@ enableSelfDeviceAdmin(admin: Want, credential: string): void
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -711,7 +753,6 @@ enableSelfDeviceAdmin(admin: Want, credential: string): void
 ```text
 import { Want } from '@kit.AbilityKit';
 import { adminManager } from '@kit.MDMKit';
-import { BusinessError } from '@kit.BasicServicesKit';
 
 let wantTemp: Want = {
   // 需根据实际情况进行替换
@@ -724,7 +765,7 @@ let credential: string = '{"enterpriseId": "123456", "appIdentifier": "123456", 
 
 try {
   adminManager.enableSelfDeviceAdmin(wantTemp, credential);
-  console.info(`succeed in enable self device admin.`);
+  console.info(`succeed in enabling self device admin.`);
 } catch (err) {
   console.error(`Failed to enable self device admin. Code: ${err.code}, message: ${err.message}`);
 }
@@ -732,13 +773,15 @@ try {
 
 
 
-#### ManagedEvent
+## ManagedEvent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 可订阅的系统管理事件。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -758,13 +801,15 @@ try {
 
 
 
-#### AdminType15+
+## AdminType15+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 设备管理应用的类型。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -773,7 +818,8 @@ try {
 
 
 
-#### Policy20+
+## Policy20+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -782,6 +828,7 @@ try {
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束**：此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

@@ -1,6 +1,6 @@
 # 开发Hvigor插件
 
-更新时间：2026-07-28 12:07:32
+更新时间：2026-08-29 09:41:34
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-plugin
 
@@ -15,7 +15,7 @@ Hvigor主要提供了两种方式来实现插件：基于hvigorfile脚本开发�
 
 
 
-#### 基于hvigorfile脚本开发
+## 基于hvigorfile脚本开发
 
 基于hvigorfile.ts脚本开发的方式，其优点是可实现快速开发，直接编辑工程或模块下hvigorfile.ts即可编写插件代码，不足之处是在多个项目中，无法方便地进行插件代码的复用和共享分发。
 
@@ -41,16 +41,16 @@ import { HvigorPlugin, HvigorNode } from '@ohos/hvigor';
 
   
 ```text
-// 工程级hvigorfile.ts
-function customPlugin(): HvigorPlugin {
-  return {
-    pluginId: 'customPlugin',
-    apply(node: HvigorNode) {
-      // 插件主体
-      console.log('hello customPlugin!');
-    }
-  }
-}
+<span style="color: rgb(128,128,128);">// 工程级</span>hvigorfile.ts
+function <span style="color: rgb(0,0,255);">customPlugin</span><span style="color: rgb(0,0,255);">()</span><span style="color: rgb(181,106,1);">: </span><span style="color: rgb(0,0,255);">HvigorPlugin </span><span style="color: rgb(255,0,170);">{</span>
+  return <span style="color: rgb(255,0,170);">{</span>
+    <span style="color: rgb(0,0,255);">pluginId</span><span style="color: rgb(181,106,1);">: </span><span style="color: rgb(255,0,170);">'customPlugin'</span><span style="color: rgb(181,106,1);">,</span>
+    <span style="color: rgb(0,0,255);">apply</span><span style="color: rgb(0,0,255);">(</span><span style="color: rgb(0,0,255);">node</span><span style="color: rgb(181,106,1);">: </span><span style="color: rgb(0,0,255);">HvigorNode</span><span style="color: rgb(0,0,255);">) </span><span style="color: rgb(255,0,170);">{</span>
+      <span style="color: rgb(128,128,128);">// </span><span style="color: rgb(128,128,128);">插件主体</span>
+      <span style="color: rgb(0,0,255);">console</span><span style="color: rgb(181,106,1);">.</span><span style="color: rgb(0,0,255);">log</span><span style="color: rgb(0,0,255);">(</span><span style="color: rgb(255,0,170);">'hello customPlugin!'</span><span style="color: rgb(0,0,255);">)</span><span style="color: rgb(181,106,1);">;</span>
+    <span style="color: rgb(255,0,170);">}</span>
+<span style="color: rgb(255,0,170);">  }</span>
+<span style="color: rgb(255,0,170);">}</span>
 ```
 
 3. 在导出声明中使用插件。
@@ -58,12 +58,12 @@ function customPlugin(): HvigorPlugin {
   
 ```text
 // 工程级hvigorfile.ts
-export default {
-  system: appTasks,
-  plugins:[
-    customPlugin()  // 应用自定义Plugin
-  ]
-}
+export default <span style="color: rgb(255,0,170);">{</span>
+  <span style="color: rgb(0,0,255);">system</span><span style="color: rgb(181,106,1);">: </span><span style="color: rgb(0,0,255);">appTasks</span><span style="color: rgb(181,106,1);">,</span>
+  <span style="color: rgb(0,0,255);">plugins</span><span style="color: rgb(181,106,1);">:</span><span style="color: rgb(0,0,255);">[</span>
+    <span style="color: rgb(0,0,255);">customPlugin</span><span style="color: rgb(0,0,255);">()  </span><span style="color: rgb(128,128,128);">// </span><span style="color: rgb(128,128,128);">应用自定义</span><span style="color: rgb(128,128,128);">Plugin</span>
+  <span style="color: rgb(0,0,255);">]</span>
+<span style="color: rgb(255,0,170);">}</span>
 ```
 
 4. 执行Hvigor命令。
@@ -76,13 +76,13 @@ export default {
 
 
 
-#### 基于typescript项目开发
+## 基于typescript项目开发
 
-基于typescript项目开发较好地弥补了上一小节中使用hvigorfile脚本方式编写插件代码不易复用和共享分发的问题。因此通常情况下推荐此方式开发。
+基于typescript项目开发的方式，能够较好地弥补上一小节中使用hvigorfile脚本编写插件代码不易复用和共享分发的问题。因此通常情况下推荐此方式开发。
 
 
 
-#### 初始化typescript项目
+### 初始化typescript项目
 1. 创建一个空目录。
 
   在命令行工具中使用cd命令进入空目录下。
@@ -120,8 +120,7 @@ tsc --init
 
 
 
-#### 开发插件
-
+### 开发插件
 1. 配置npm镜像仓库地址，用于安装@ohos/hvigor插件。
 
   在工程目录下创建.npmrc文件，配置如下信息：
@@ -144,11 +143,11 @@ registry=https://repo.huaweicloud.com/repository/npm/
 ```
 
 > [!NOTE]
-> 如果依赖配置在dependencies中，会导致使用插件时报错。
+> 如果依赖配置在dependencies中，会导致使用插件时编译报错。
 
 3. 安装依赖。
 
-  执行如下命令安装依赖。       
+  执行如下命令安装依赖。        
 ```bash
 npm install
 ```
@@ -159,16 +158,16 @@ npm install
 
   
 ```text
-import type { HvigorNode, HvigorPlugin } from '@ohos/hvigor';
+import type <span style="color: rgb(255,0,170);">{ </span><span style="color: rgb(0,0,255);">HvigorNode</span><span style="color: rgb(181,106,1);">, </span><span style="color: rgb(0,0,255);">HvigorPlugin </span><span style="color: rgb(255,0,170);">} </span>from <span style="color: rgb(255,0,170);">'@ohos/hvigor'</span><span style="color: rgb(181,106,1);">;</span>
 
-export function customPlugin(): HvigorPlugin {
-  return {
-    pluginId: 'customPlugin',
-    apply(node: HvigorNode) {
-      console.log('hello customPlugin!');
-    }
-  }
-}
+export function <span style="color: rgb(0,0,255);">customPlugin</span><span style="color: rgb(0,0,255);">()</span><span style="color: rgb(181,106,1);">: </span><span style="color: rgb(0,0,255);">HvigorPlugin </span><span style="color: rgb(255,0,170);">{</span>
+  return <span style="color: rgb(255,0,170);">{</span>
+    <span style="color: rgb(0,0,255);">pluginId</span><span style="color: rgb(181,106,1);">: </span><span style="color: rgb(255,0,170);">'customPlugin'</span><span style="color: rgb(181,106,1);">,</span>
+    <span style="color: rgb(0,0,255);">apply</span><span style="color: rgb(0,0,255);">(</span><span style="color: rgb(0,0,255);">node</span><span style="color: rgb(181,106,1);">: </span><span style="color: rgb(0,0,255);">HvigorNode</span><span style="color: rgb(0,0,255);">) </span><span style="color: rgb(255,0,170);">{</span>
+      <span style="color: rgb(0,0,255);">console</span><span style="color: rgb(181,106,1);">.</span><span style="color: rgb(0,0,255);">log</span><span style="color: rgb(0,0,255);">(</span><span style="color: rgb(255,0,170);">'hello customPlugin!'</span><span style="color: rgb(0,0,255);">)</span><span style="color: rgb(181,106,1);">;</span>
+    <span style="color: rgb(255,0,170);">}</span>
+<span style="color: rgb(255,0,170);">  }</span>
+<span style="color: rgb(255,0,170);">}</span>
 ```
 
 5. 导出插件。
@@ -182,12 +181,10 @@ export { customPlugin } from './src/plugin/custom-plugin.js';
 
 
 
-#### 发布插件
 
+### 发布插件
 
 typescript项目本质上是一种npm项目，插件发布流程遵循npm发布规范。详情请查询npm官方资料。
-
-
 
 发布npm包流程：
 1. 配置registry。
@@ -217,7 +214,7 @@ tsc
 如果编译时报以下错误，请检查初始化项目时是否[删除了verbatimModuleSyntax](#li88369101451)。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/VQvKs6HvTKCMbR8yKgdhLQ/zh-cn_image_0000002677996477.png?HW-CC-KV=V1&HW-CC-Date=20260730T071821Z&HW-CC-Expire=86400&HW-CC-Sign=5FA0308A5EFF00930477C068F98D796E88236F03F5BCDC352FC504C7BF68955B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/BEibAiZuRfGIsYDaPeBITg/zh-cn_image_0000002701822884.png?HW-CC-KV=V1&HW-CC-Date=20260911T072815Z&HW-CC-Expire=86400&HW-CC-Sign=49B27E02B5D1E3FD9FAA15DEA4765C9E3BD85B5BAED0196D8F2C1738CB56E3FE)
 
 4. 发布npm包。
 
@@ -230,24 +227,24 @@ npm publish
 
 
 
-#### 使用插件
 
+### 使用插件
 1. 添加依赖。
 
   在工程下hvigor/hvigor-config.json5中添加自定义插件依赖，依赖项支持离线插件配置。
 
   
 ```json
-"dependencies": {
-  "custom-plugin": "1.0.0"   // 添加自定义插件依赖
-}
+<span style="color: rgb(255,0,170);">"dependencies"</span><span style="color: rgb(181,106,1);">: </span><span style="color: rgb(255,0,170);">{</span>
+  <span style="color: rgb(255,0,170);">"custom-plugin"</span><span style="color: rgb(181,106,1);">: </span><span style="color: rgb(255,0,170);">"1.0.0"   </span><span style="color: rgb(128,128,128);">// </span><span style="color: rgb(128,128,128);">添加自定义插件依赖</span>
+<span style="color: rgb(255,0,170);">}</span>
 ```
 
 2. 安装依赖。
 
   
-方式1：执行编辑区右上角**Sync**** Now**或执行菜单**File -> Sync and Refresh Project**进行工程Sync后，DevEco Studio将会根据hvigor-config.json5中的依赖配置自动安装。
-3. 方式2：使用hvigorw命令行工具执行任一命令，命令行工具会自动执行安装构建依赖。        
+方式1：执行编辑区右上角**Sync Now**或执行菜单**File -> Sync and Refresh Project**进行工程Sync后，DevEco Studio将会根据hvigor-config.json5中的依赖配置自动安装。
+3. 方式2：使用hvigorw命令行工具执行任一命令，命令行工具会自动执行安装构建依赖。         
 ```bash
 hvigorw --sync
 ```
@@ -267,10 +264,10 @@ import { customPlugin } from 'custom-plugin';
 
   
 ```text
-export default {
-  system: appTasks,  // 以工程级hvigorfile.ts为例
-  plugins:[
-    customPlugin()  // 应用自定义插件
-  ]
-}
+export default <span style="color: rgb(255,0,170);">{</span>
+  <span style="color: rgb(0,0,255);">system</span><span style="color: rgb(181,106,1);">: </span><span style="color: rgb(0,0,255);">appTasks</span><span style="color: rgb(181,106,1);">,</span>  // 以工程级hvigorfile.ts为例
+  <span style="color: rgb(0,0,255);">plugins</span><span style="color: rgb(181,106,1);">:</span><span style="color: rgb(0,0,255);">[</span>
+    <span style="color: rgb(0,0,255);">customPlugin</span><span style="color: rgb(0,0,255);">()  </span><span style="color: rgb(128,128,128);">// </span><span style="color: rgb(128,128,128);">应用自定义插件</span>
+  <span style="color: rgb(0,0,255);">]</span>
+<span style="color: rgb(255,0,170);">}</span>
 ```

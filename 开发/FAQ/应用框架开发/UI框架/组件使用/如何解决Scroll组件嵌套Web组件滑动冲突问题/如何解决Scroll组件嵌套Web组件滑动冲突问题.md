@@ -1,31 +1,37 @@
 # 如何解决Scroll组件嵌套Web组件滑动冲突问题
 
-更新时间：2026-06-26 07:47:42
+更新时间：2026-09-10 13:01:20
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-567
 
-#### 问题现象
+## 问题现象
 
-当Scroll组件嵌套Web组件滑动时，滑动冲突，如何处理？
+场景一：当Scroll组件嵌套Web组件滑动时，滑动冲突，如何处理？
+ 
+场景二：[Swiper](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-create-looping)组件嵌套Scroll组件，Scroll组件内再嵌套Web组件，Web页面内的markdown表格可以横向滑动，但触摸表格上下滑动时无法触发Scroll组件滑动。
  
  
 
-#### 背景知识
+## 背景知识
 
 - [Scroll](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll)：可滚动的容器组件，当子组件的布局尺寸超过父组件的尺寸时，内容可以滚动。
 - [ArkWeb](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-component-overview?ha_source=sousuo&ha_sourceId=89000251)：ArkWeb（方舟Web）提供了Web组件，用于在应用程序中显示Web页面内容。
 - [触摸测试控制](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-hit-test-behavior)可以设置不同的触摸测试响应模式，影响组件的触摸测试收集结果，最终影响后续的触屏事件分发。
+- [Swiper](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-create-looping)：Swiper组件实现滑动容器，常用于轮播图展示。
 
  
  
 
-#### 解决方案
+## 解决方案
 
-Web组件和Scroll组件在同一页面时，会存在Web获取焦点，导致Scroll无法上下滑动。
- 
-解决思路是可以通过设置边界调节来屏蔽其中一个的滑动响应来实现避免冲突的效果。
- 
-- **方案一**：屏蔽Web响应。可以在Scroll的onWillScroll事件中增加判断，在Scroll滑动到底部之前屏蔽所有Web响应，不过需要注意的是，如果Web本身也需要滑动的话，该方法不太适用，这种场景下可以使用方案二来处理冲突。
+- 场景一：Web组件和Scroll组件在同一页面时，会存在Web获取焦点，导致Scroll无法上下滑动。
+
+  解决思路是可以通过设置边界调节来屏蔽其中一个的滑动响应来实现避免冲突的效果。
+
+  
+**方案一**：屏蔽Web响应。可以在Scroll的onWillScroll事件中增加判断，在Scroll滑动到底部之前屏蔽所有Web响应，不过需要注意的是，如果Web本身也需要滑动的话，该方法不太适用，这种场景下可以使用方案二来处理冲突。
+
+  代码示例如下。
 
   
 ```text
@@ -39,42 +45,41 @@ Web组件和Scroll组件在同一页面时，会存在Web获取焦点，导致Sc
   }
 });
 ```
- 效果预览：
+ 代码运行效果图如下：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/XXyYpdT4Q4ebLDoe5b1Aeg/zh-cn_image_0000002658911361.png?HW-CC-KV=V1&HW-CC-Date=20260811T005816Z&HW-CC-Expire=86400&HW-CC-Sign=4063BE7A0A5610824E25458BF1C0A7785F7EA83147F6086E189C15B6D72CB711)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/sQ3v8bMWQU2WeYXIN409eA/zh-cn_image_0000002747576209.png?HW-CC-KV=V1&HW-CC-Date=20260911T072743Z&HW-CC-Expire=86400&HW-CC-Sign=CBD33B6D0B79453B5054CFDC38F86CACE941EECAFE60BA815B1108654E5F0587)
 
 - **方案二**：触摸事件传递。可以使用触摸测试控制来规避此种情况，请给显示在上层的节点设置hitTestBehavior为HitTestMode.Transparent。详情见[参考文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-hit-test-behavior)。
 
+  代码示例如下。
+
   
 ```text
-.hitTestBehavior(HitTestMode.Transparent); // 自身和子节点均响应触摸测试，不会阻塞兄弟节点和祖先节点的触摸测试。
+.hitTestBehavior(HitTestMode.Transparent); <em>// 自身和子节点均响应触摸测试，不会阻塞兄弟节点和祖先节点的触摸测试。</em>
 ```
- 效果预览：
+ 代码运行效果图如下：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/2Sq-MCe2RNSWGVKI62BiOg/zh-cn_image_0000002628392144.png?HW-CC-KV=V1&HW-CC-Date=20260811T005816Z&HW-CC-Expire=86400&HW-CC-Sign=2432D2BDF705318F23036095B70F42E2AF42A2B320DEEECD8909D393022270B4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/rYnUooz8T6O5DQInkgWXLA/zh-cn_image_0000002747577235.png?HW-CC-KV=V1&HW-CC-Date=20260911T072743Z&HW-CC-Expire=86400&HW-CC-Sign=BF1E0BE36FF3FBB60A206DCD3AF9185F086299F251F4305B7ECCB66E50229629)
 
-- **方案三**：调整嵌套滚动模式。在嵌套滚动组件时，可以通过设置“nestedScroll”属性来控制滚动顺序。
+- **方案三**：调整嵌套滚动模式。在嵌套滚动组件时，可以通过设置"nestedScroll"属性来控制滚动顺序。
 
   
 ```text
 .nestedScroll({
-  scrollForward: NestedScrollMode.PARENT_FIRST, // 向前滚动父容器优先
-  scrollBackward: NestedScrollMode.SELF_FIRST // 向后滚动子组件优先
+  scrollForward: NestedScrollMode.PARENT_FIRST, <em>// 向前滚动父容器优先</em>
+  scrollBackward: NestedScrollMode.SELF_FIRST <em>// 向后滚动子组件优先</em>
 });
 ```
- 效果预览：
+ 代码运行效果图如下：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/Vdr1_x9jSoeu1DbzDH5sgQ/zh-cn_image_0000002658791425.png?HW-CC-KV=V1&HW-CC-Date=20260811T005816Z&HW-CC-Expire=86400&HW-CC-Sign=42A3E97ADF861A7B45947D46F7533E4D51AFF2DEE92D16D15AC1DA6212919A90)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/78w5MJ3vRcaG4yCqYLgc3Q/zh-cn_image_0000002718057924.png?HW-CC-KV=V1&HW-CC-Date=20260911T072743Z&HW-CC-Expire=86400&HW-CC-Sign=8A4A9AB7F2822D12A8F0FF247F6817F76D0600C16B5D46CA2756E0F45B969897)
 
+- 完整示例代码如下。ArkTS页面代码：
 
- 
-完整示例代码如下：
- 
-ArkTS页面代码：
- 
+  
 ```text
 import { webview } from '@kit.ArkWeb';
 
@@ -88,7 +93,7 @@ struct Solution1 {
     Scroll(this.scroller) {
       Column({ space: 20 }) {
         Web({
-          // 开发者需根据需求替换src
+        <em>  // 开发者需根据需求替换src</em>
           src: $rawfile('ScrollWeb.html'),
           controller: this.webController
         })
@@ -127,7 +132,7 @@ struct Solution2 {
     Scroll(this.scroller) {
       Column({ space: 20 }) {
         Web({
-          // 开发者需根据需求替换src
+        <em>  // 开发者需根据需求替换src</em>
           src: $rawfile('ScrollWeb.html'),
           controller: this.webController
         })
@@ -144,7 +149,7 @@ struct Solution2 {
     .height('100%')
     .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.TOP, SafeAreaEdge.BOTTOM])
     .backgroundColor('#F1F3F5')
-    .hitTestBehavior(HitTestMode.Transparent); // 自身和子节点均响应触摸测试，不会阻塞兄弟节点和祖先节点的触摸测试。
+    .hitTestBehavior(HitTestMode.Transparent); <em>// 自身和子节点均响应触摸测试，不会阻塞兄弟节点和祖先节点的触摸测试。</em>
   }
 }
 
@@ -157,7 +162,7 @@ struct Solution3 {
     Scroll(this.scroller) {
       Column({ space: 20 }) {
         Web({
-          // 开发者需根据需求替换src
+       <em>   // 开发者需根据需求替换src</em>
           src: $rawfile('ScrollWeb.html'),
           controller: this.webController
         })
@@ -167,8 +172,8 @@ struct Solution3 {
           .height('100%')
           .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.TOP, SafeAreaEdge.BOTTOM])
           .nestedScroll({
-            scrollForward: NestedScrollMode.PARENT_FIRST, // 向前滚动父容器优先
-            scrollBackward: NestedScrollMode.SELF_FIRST // 向后滚动子组件优先
+            scrollForward: NestedScrollMode.PARENT_FIRST,<em> // 向前滚动父容器优先</em>
+            scrollBackward: NestedScrollMode.SELF_FIRST <em>// 向后滚动子组件优先</em>
           });
         Row()
           .height(150);
@@ -227,13 +232,13 @@ struct TabsExample {
         .tabBar(this.tabBuilder(2, '方案3'))
         .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.TOP, SafeAreaEdge.BOTTOM]);
       }
-      //.vertical(false)
-      //.barMode(BarMode.Fixed)
+     <em> //.vertical(false)</em>
+<em>      //.barMode(BarMode.Fixed)</em>
       .barWidth(360)
       .barHeight(56)
       .animationDuration(400)
       .onChange((index: number) => {
-        // currentIndex控制TabContent显示页签
+     <em>   // currentIndex控制TabContent显示页签</em>
         this.currentIndex = index;
         this.selectedIndex = index;
       })
@@ -242,7 +247,7 @@ struct TabsExample {
           return;
         }
         console.info(`event currentOffset ${event.currentOffset}`);
-        // selectedIndex控制自定义TabBar内Image和Text颜色切换
+  <em>      // selectedIndex控制自定义TabBar内Image和Text颜色切换</em>
         this.selectedIndex = targetIndex;
       })
       .width('100%')
@@ -255,29 +260,29 @@ struct TabsExample {
   }
 }
 ```
- 
-html页面代码：
- 
+ html页面代码：
+
+  
 ```text
 <!-- index.html -->
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        .lightgray {
-          background-color: #D1D1D6;
-        }
-        .midgray {
-          background-color: #C7C7CC;
-        }
-        .lightgray, .midgray {
-         font-size:16px;
-         height:200px;
-         text-align: center;       /* 水平居中 */
-         line-height: 200px;       /* 垂直居中（值等于容器高度） */
-        }
-    </style>
+<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+.lightgray {
+background-color: #D1D1D6;
+}
+.midgray {
+background-color: #C7C7CC;
+}
+.lightgray, .midgray {
+font-size:16px;
+height:200px;
+text-align: center;      <em> /* 水平居中 */</em>
+line-height: 200px;     <em>  /* 垂直居中（值等于容器高度） */</em>
+}
+</style>
 </head>
 <body>
 <div class="lightgray" >webArea</div>
@@ -290,10 +295,16 @@ html页面代码：
 </body>
 </html>
 ```
+
+
+ - 场景二：**删除overscroll-behavior属性。**
+
+  Web页面内CSS样式中设置了overscroll-behavior: none属性，该属性会阻止滚动行为向外层容器传递，导致触摸表格上下滑动时无法触发Scroll组件滑动。在前端页面的table_content元素中删除overscroll-behavior: none属性即可恢复正常的滑动传递。
+
  
  
 
-#### 总结
+## 总结
 
 当两个可响应滑动的组件（如Web和Scroll）共存时，可能出现焦点抢占导致某一组件无法滑动的问题。
  

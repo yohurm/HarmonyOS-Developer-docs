@@ -1,9 +1,9 @@
 # ImageAnimator
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-imageanimator
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供帧动画组件来实现逐帧播放图片的能力，可以配置需要播放的图片列表，每张图片可以配置时长。
 
@@ -12,17 +12,19 @@
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ImageAnimator()
 
@@ -34,17 +36,19 @@ ImageAnimator()
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
 
 
 
-#### images
+### images
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 images(value: Array&lt;ImageFrameInfo&gt;)
 
@@ -58,6 +62,7 @@ images(value: Array&lt;ImageFrameInfo&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Array&lt;ImageFrameInfo&gt; | 是 | 设置图片帧信息集合。每一帧的帧信息(ImageFrameInfo)包含图片路径、图片大小、图片位置和图片播放时长信息，详见ImageFrameInfo对象说明。 默认值：[] 说明： 传入数组的内容过大时，内存占用会随之升高。此内存由开发者自行控制。因此，开发者在传入数据前，请充分评估内存消耗情况，以避免内存不足等问题。 |
@@ -65,9 +70,10 @@ images(value: Array&lt;ImageFrameInfo&gt;)
 
 
 
-#### state
+### state
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 state(value: AnimationStatus)
 
@@ -81,6 +87,7 @@ state(value: AnimationStatus)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | AnimationStatus | 是 | 用于控制播放状态。 默认值：AnimationStatus.Initial |
@@ -88,9 +95,10 @@ state(value: AnimationStatus)
 
 
 
-#### duration
+### duration
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 duration(value: number)
 
@@ -104,6 +112,7 @@ duration(value: number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 播放时长。 value为0时，不播放图片。 value平均分配给单张图片的播放时长小于一帧时间，将导致播放异常。 设置为负数时，取默认值1000毫秒。 value的改变只会在下一次循环开始时生效。 单位：毫秒 默认值：1000 |
@@ -111,9 +120,10 @@ duration(value: number)
 
 
 
-#### reverse
+### reverse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reverse(value: boolean)
 
@@ -127,6 +137,7 @@ reverse(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 播放方向。 false表示从第1张图片播放到最后1张图片，true表示从最后1张图片播放到第1张图片。 动画结束后保留哪一帧还与fillMode属性有关，详见fillMode说明。 默认值：false |
@@ -134,9 +145,10 @@ reverse(value: boolean)
 
 
 
-#### fixedSize
+### fixedSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fixedSize(value: boolean)
 
@@ -150,6 +162,7 @@ fixedSize(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 设置图片大小是否固定为组件大小。 true表示图片大小与组件大小一致，此时设置图片的width 、height 、top 和left属性无效。false表示每一张图片的width 、height 、top和left属性都要单独设置。图片宽高与组件宽高不一致时，图片不会被拉伸。 默认值：true |
@@ -157,9 +170,10 @@ fixedSize(value: boolean)
 
 
 
-#### preDecode(deprecated)
+### preDecode(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 preDecode(value: number)
 
@@ -173,6 +187,7 @@ preDecode(value: number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 预解码的图片数量。例如，设置为2时，播放当前帧时会提前加载后面两张图片至缓存，以提升性能。 默认值：0 |
@@ -180,9 +195,10 @@ preDecode(value: number)
 
 
 
-#### fillMode
+### fillMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fillMode(value: FillMode)
 
@@ -196,6 +212,7 @@ fillMode(value: FillMode)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | FillMode | 是 | 当前播放方向下，动画开始前和结束后的状态。 默认值：FillMode.Forwards |
@@ -203,9 +220,10 @@ fillMode(value: FillMode)
 
 
 
-#### iterations
+### iterations
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 iterations(value: number)
 
@@ -217,6 +235,7 @@ iterations(value: number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 默认播放一次；-1表示无限次播放，小于-1的负数取默认值1；浮点数向下取整。 默认值：1 |
@@ -224,9 +243,10 @@ iterations(value: number)
 
 
 
-#### monitorInvisibleArea17+
+### monitorInvisibleArea17+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 monitorInvisibleArea(monitorInvisibleArea: boolean)
 
@@ -240,6 +260,7 @@ monitorInvisibleArea(monitorInvisibleArea: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | monitorInvisibleArea | boolean | 是 | 当设置为true时，组件将基于系统的onVisibleAreaChange可见性判定，控制组件的暂停和播放。 当组件的运行状态为AnimationStatus的Running时，若判定组件不可见，则自动执行暂停操作；若判定为可见，则自动恢复播放。 当设置为false时，组件的暂停和播放不受到onVisibleAreaChange影响。 默认值：false 说明： 当该属性由true动态修改为false时，组件将依据当前的AnimationStatus状态进行处理。 例如，若当前状态为Running且因onVisibleAreaChange的不可见回调暂停，则在属性由true改为false后，组件会从上次暂停的位置重新开始播放。 由该属性导致的不可见暂停和可见播放操作不会改变用户设置的state值。 |
@@ -247,15 +268,17 @@ monitorInvisibleArea(monitorInvisibleArea: boolean)
 
 
 
-#### ImageFrameInfo对象说明
+## ImageFrameInfo对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 图片帧信息集合。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -269,17 +292,19 @@ monitorInvisibleArea(monitorInvisibleArea: boolean)
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)外，还支持以下事件：
 
 
 
-#### onStart
+### onStart
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onStart(event: () => void)
 
@@ -293,6 +318,7 @@ onStart(event: () => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | () => void | 是 | 状态回调，动画开始播放时触发。 |
@@ -300,9 +326,10 @@ onStart(event: () => void)
 
 
 
-#### onPause
+### onPause
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onPause(event: () => void)
 
@@ -316,6 +343,7 @@ onPause(event: () => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | () => void | 是 | 状态回调，动画暂停播放时触发。 |
@@ -323,9 +351,10 @@ onPause(event: () => void)
 
 
 
-#### onRepeat
+### onRepeat
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onRepeat(event: () => void)
 
@@ -337,6 +366,7 @@ onRepeat(event: () => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | () => void | 是 | 状态回调，动画重复播放时触发。 |
@@ -344,9 +374,10 @@ onRepeat(event: () => void)
 
 
 
-#### onCancel
+### onCancel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onCancel(event: () => void)
 
@@ -360,6 +391,7 @@ onCancel(event: () => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | () => void | 是 | 状态回调，动画取消时触发。当state被设置为AnimationStatus.Initial时触发；触发后图片显示回到第一帧（正播）或最后一帧（逆播）。 |
@@ -367,9 +399,10 @@ onCancel(event: () => void)
 
 
 
-#### onFinish
+### onFinish
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onFinish(event: () => void)
 
@@ -383,6 +416,7 @@ onFinish(event: () => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | () => void | 是 | 状态回调，动画播放完成时（iterations轮次全部播完且动画自然结束）或者停止播放时（state被切换为AnimationStatus.Stopped）触发。 |
@@ -390,13 +424,17 @@ onFinish(event: () => void)
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（播放Resource动画）
+
+
+### 示例1（播放Resource动画）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过ImageAnimator组件播放Resource动画。
 
@@ -488,7 +526,10 @@ struct ImageAnimatorExample {
 
 
 
-#### 示例2（播放PixelMap动画）
+### 示例2（播放PixelMap动画）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过ImageAnimator组件播放PixelMap动画。
 
@@ -592,7 +633,10 @@ struct ImageAnimatorExample {
 
 
 
-#### 示例3（设置不可见自动停播）
+### 示例3（设置不可见自动停播）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过[monitorInvisibleArea](#monitorinvisiblearea17)属性实现了当ImageAnimator的[state](#state)属性为AnimationStatus.Running时，控制组件在不可见时停止播放，在可见时恢复播放。
 

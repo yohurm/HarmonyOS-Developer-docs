@@ -1,9 +1,9 @@
 # @ohos.multimodalInput.inputDevice (输入设备)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inputdevice
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供输入设备管理能力，包括监听输入设备的连接和断开状态，查询设备名称等输入设备信息。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { inputDevice } from '@kit.InputKit';
@@ -23,9 +24,10 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 
 
-#### inputDevice.getDeviceList9+
+## inputDevice.getDeviceList9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDeviceList(callback: AsyncCallback<Array&lt;number&gt;>): void
 
@@ -35,6 +37,7 @@ getDeviceList(callback: AsyncCallback<Array&lt;number&gt;>): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<Array&lt;number&gt;> | 是 | 回调函数。当获取成功，err为undefined，data为所有输入设备的ID列表（ID是输入设备的唯一标识）；否则为错误对象。 |
@@ -43,6 +46,7 @@ getDeviceList(callback: AsyncCallback<Array&lt;number&gt;>): void
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -82,9 +86,10 @@ struct Index {
 
 
 
-#### inputDevice.getDeviceList9+
+## inputDevice.getDeviceList9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDeviceList(): Promise<Array&lt;number&gt;>
 
@@ -93,6 +98,7 @@ getDeviceList(): Promise<Array&lt;number&gt;>
 **系统能力**：SystemCapability.MultimodalInput.Input.InputDevice
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -130,9 +136,10 @@ struct Index {
 
 
 
-#### inputDevice.getDeviceInfo9+
+## inputDevice.getDeviceInfo9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDeviceInfo(deviceId: number, callback: AsyncCallback&lt;InputDeviceData&gt;): void
 
@@ -141,6 +148,7 @@ getDeviceInfo(deviceId: number, callback: AsyncCallback&lt;InputDeviceData&gt;):
 **系统能力**：SystemCapability.MultimodalInput.Input.InputDevice
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -151,6 +159,7 @@ getDeviceInfo(deviceId: number, callback: AsyncCallback&lt;InputDeviceData&gt;):
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -191,9 +200,10 @@ struct Index {
 
 
 
-#### inputDevice.getDeviceInfo9+
+## inputDevice.getDeviceInfo9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDeviceInfo(deviceId: number): Promise&lt;InputDeviceData&gt;
 
@@ -203,12 +213,14 @@ getDeviceInfo(deviceId: number): Promise&lt;InputDeviceData&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | number | 是 | 输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -218,6 +230,7 @@ getDeviceInfo(deviceId: number): Promise&lt;InputDeviceData&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -256,9 +269,10 @@ struct Index {
 
 
 
-#### inputDevice.getDeviceInfoSync10+
+## inputDevice.getDeviceInfoSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDeviceInfoSync(deviceId: number): InputDeviceData
 
@@ -268,12 +282,14 @@ getDeviceInfoSync(deviceId: number): InputDeviceData
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | number | 是 | 输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -283,6 +299,7 @@ getDeviceInfoSync(deviceId: number): InputDeviceData
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -317,9 +334,10 @@ struct Index {
 
 
 
-#### inputDevice.on('change')9+
+## inputDevice.on('change')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'change', listener: Callback&lt;DeviceListener&gt;): void
 
@@ -328,6 +346,7 @@ on(type: 'change', listener: Callback&lt;DeviceListener&gt;): void
 **系统能力**：SystemCapability.MultimodalInput.Input.InputDevice
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -338,6 +357,7 @@ on(type: 'change', listener: Callback&lt;DeviceListener&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -423,9 +443,10 @@ struct Index {
 
 
 
-#### inputDevice.off('change')9+
+## inputDevice.off('change')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'change', listener?: Callback&lt;DeviceListener&gt;): void
 
@@ -434,6 +455,7 @@ off(type: 'change', listener?: Callback&lt;DeviceListener&gt;): void
 **系统能力**：SystemCapability.MultimodalInput.Input.InputDevice
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -444,6 +466,7 @@ off(type: 'change', listener?: Callback&lt;DeviceListener&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -497,9 +520,10 @@ struct Index {
 
 
 
-#### inputDevice.getDeviceIds(deprecated)
+## inputDevice.getDeviceIds(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDeviceIds(callback: AsyncCallback<Array&lt;number&gt;>): void
 
@@ -512,6 +536,7 @@ getDeviceIds(callback: AsyncCallback<Array&lt;number&gt;>): void
 **系统能力**：SystemCapability.MultimodalInput.Input.InputDevice
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -547,9 +572,10 @@ struct Index {
 
 
 
-#### inputDevice.getDeviceIds(deprecated)
+## inputDevice.getDeviceIds(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDeviceIds(): Promise<Array&lt;number&gt;>
 
@@ -562,6 +588,7 @@ getDeviceIds(): Promise<Array&lt;number&gt;>
 **系统能力**：SystemCapability.MultimodalInput.Input.InputDevice
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -595,9 +622,10 @@ struct Index {
 
 
 
-#### inputDevice.getDevice(deprecated)
+## inputDevice.getDevice(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDevice(deviceId: number, callback: AsyncCallback&lt;InputDeviceData&gt;): void
 
@@ -610,6 +638,7 @@ getDevice(deviceId: number, callback: AsyncCallback&lt;InputDeviceData&gt;): voi
 **系统能力**：SystemCapability.MultimodalInput.Input.InputDevice
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -646,9 +675,10 @@ struct Index {
 
 
 
-#### inputDevice.getDevice(deprecated)
+## inputDevice.getDevice(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDevice(deviceId: number): Promise&lt;InputDeviceData&gt;
 
@@ -662,12 +692,14 @@ getDevice(deviceId: number): Promise&lt;InputDeviceData&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | number | 是 | 输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -701,9 +733,10 @@ struct Index {
 
 
 
-#### inputDevice.supportKeys9+
+## inputDevice.supportKeys9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 supportKeys(deviceId: number, keys: Array&lt;KeyCode&gt;, callback: AsyncCallback <Array&lt;boolean&gt;>): void
 
@@ -712,6 +745,7 @@ supportKeys(deviceId: number, keys: Array&lt;KeyCode&gt;, callback: AsyncCallbac
 **系统能力**：SystemCapability.MultimodalInput.Input.InputDevice
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -723,6 +757,7 @@ supportKeys(deviceId: number, keys: Array&lt;KeyCode&gt;, callback: AsyncCallbac
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -763,9 +798,10 @@ struct Index {
 
 
 
-#### inputDevice.supportKeys9+
+## inputDevice.supportKeys9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 supportKeys(deviceId: number, keys: Array&lt;KeyCode&gt;): Promise<Array&lt;boolean&gt;>
 
@@ -775,6 +811,7 @@ supportKeys(deviceId: number, keys: Array&lt;KeyCode&gt;): Promise<Array&lt;bool
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | number | 是 | 输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。 |
@@ -782,6 +819,7 @@ supportKeys(deviceId: number, keys: Array&lt;KeyCode&gt;): Promise<Array&lt;bool
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -791,6 +829,7 @@ supportKeys(deviceId: number, keys: Array&lt;KeyCode&gt;): Promise<Array&lt;bool
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -829,9 +868,10 @@ struct Index {
 
 
 
-#### inputDevice.supportKeysSync10+
+## inputDevice.supportKeysSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 supportKeysSync(deviceId: number, keys: Array&lt;KeyCode&gt;): Array&lt;boolean&gt;
 
@@ -841,6 +881,7 @@ supportKeysSync(deviceId: number, keys: Array&lt;KeyCode&gt;): Array&lt;boolean&
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | number | 是 | 输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。 |
@@ -848,6 +889,7 @@ supportKeysSync(deviceId: number, keys: Array&lt;KeyCode&gt;): Array&lt;boolean&
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -857,6 +899,7 @@ supportKeysSync(deviceId: number, keys: Array&lt;KeyCode&gt;): Array&lt;boolean&
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -891,9 +934,10 @@ struct Index {
 
 
 
-#### inputDevice.getKeyboardType9+
+## inputDevice.getKeyboardType9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getKeyboardType(deviceId: number, callback: AsyncCallback&lt;KeyboardType&gt;): void
 
@@ -902,6 +946,7 @@ getKeyboardType(deviceId: number, callback: AsyncCallback&lt;KeyboardType&gt;): 
 **系统能力**：SystemCapability.MultimodalInput.Input.InputDevice
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -912,6 +957,7 @@ getKeyboardType(deviceId: number, callback: AsyncCallback&lt;KeyboardType&gt;): 
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -952,9 +998,10 @@ struct Index {
 
 
 
-#### inputDevice.getKeyboardType9+
+## inputDevice.getKeyboardType9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getKeyboardType(deviceId: number): Promise&lt;KeyboardType&gt;
 
@@ -964,12 +1011,14 @@ getKeyboardType(deviceId: number): Promise&lt;KeyboardType&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | number | 是 | 输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -979,6 +1028,7 @@ getKeyboardType(deviceId: number): Promise&lt;KeyboardType&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1017,9 +1067,10 @@ struct Index {
 
 
 
-#### inputDevice.getKeyboardTypeSync10+
+## inputDevice.getKeyboardTypeSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getKeyboardTypeSync(deviceId: number): KeyboardType
 
@@ -1029,12 +1080,14 @@ getKeyboardTypeSync(deviceId: number): KeyboardType
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | number | 是 | 输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1044,6 +1097,7 @@ getKeyboardTypeSync(deviceId: number): KeyboardType
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1078,9 +1132,10 @@ struct Index {
 
 
 
-#### inputDevice.isFunctionKeyEnabled15+
+## inputDevice.isFunctionKeyEnabled15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isFunctionKeyEnabled(functionKey: FunctionKey): Promise&lt;boolean&gt;
 
@@ -1090,12 +1145,14 @@ isFunctionKeyEnabled(functionKey: FunctionKey): Promise&lt;boolean&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | functionKey | FunctionKey | 是 | 需要设置的功能键类型。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1105,6 +1162,7 @@ isFunctionKeyEnabled(functionKey: FunctionKey): Promise&lt;boolean&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[输入设备错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputdevice)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1143,9 +1201,10 @@ struct Index {
 
 
 
-#### inputDevice.setFunctionKeyEnabled15+
+## inputDevice.setFunctionKeyEnabled15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setFunctionKeyEnabled(functionKey: FunctionKey, enabled: boolean): Promise&lt;void&gt;
 
@@ -1157,6 +1216,7 @@ setFunctionKeyEnabled(functionKey: FunctionKey, enabled: boolean): Promise&lt;vo
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | functionKey | FunctionKey | 是 | 需要设置的功能键类型。 |
@@ -1164,6 +1224,7 @@ setFunctionKeyEnabled(functionKey: FunctionKey, enabled: boolean): Promise&lt;vo
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1173,6 +1234,7 @@ setFunctionKeyEnabled(functionKey: FunctionKey, enabled: boolean): Promise&lt;vo
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[输入设备错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-inputdevice)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1213,9 +1275,10 @@ struct Index {
 
 
 
-#### inputDevice.getIntervalSinceLastInput14+
+## inputDevice.getIntervalSinceLastInput14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getIntervalSinceLastInput(): Promise&lt;number&gt;
 
@@ -1224,6 +1287,7 @@ getIntervalSinceLastInput(): Promise&lt;number&gt;
 **系统能力**：SystemCapability.MultimodalInput.Input.InputDevice
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1261,13 +1325,15 @@ struct Index {
 
 
 
-#### DeviceListener9+
+## DeviceListener9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述输入设备热插拔的信息。
 
 **系统能力**：SystemCapability.MultimodalInput.Input.InputDevice
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1277,13 +1343,15 @@ struct Index {
 
 
 
-#### InputDeviceData
+## InputDeviceData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述输入设备的信息。
 
 **系统能力**：SystemCapability.MultimodalInput.Input.InputDevice
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1303,15 +1371,17 @@ struct Index {
 
 
 
-#### AxisType9+
+## AxisType9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AxisType = 'touchmajor' | 'touchminor' | 'orientation' | 'x' | 'y' | 'pressure' | 'toolminor' | 'toolmajor' | 'null'
 
 输入设备的轴类型。
 
 **系统能力**：SystemCapability.MultimodalInput.Input.InputDevice
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1328,13 +1398,15 @@ type AxisType = 'touchmajor' | 'touchminor' | 'orientation' | 'x' | 'y' | 'press
 
 
 
-#### AxisRange
+## AxisRange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 输入设备的轴信息。
 
 **系统能力**： SystemCapability.MultimodalInput.Input.InputDevice
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1349,15 +1421,17 @@ type AxisType = 'touchmajor' | 'touchminor' | 'orientation' | 'x' | 'y' | 'press
 
 
 
-#### SourceType9+
+## SourceType9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type SourceType = 'keyboard' | 'mouse' | 'touchpad' | 'touchscreen' | 'joystick' | 'trackball'
 
 输入设备的输入能力。包括键盘、鼠标、触摸屏、轨迹球、触控板、操纵杆等。
 
 **系统能力**：SystemCapability.MultimodalInput.Input.InputDevice
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1371,15 +1445,17 @@ type SourceType = 'keyboard' | 'mouse' | 'touchpad' | 'touchscreen' | 'joystick'
 
 
 
-#### ChangedType9+
+## ChangedType9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ChangedType = 'add' | 'remove'
 
 监听设备热插拔事件类型。
 
 **系统能力**：SystemCapability.MultimodalInput.Input.InputDevice
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1389,13 +1465,15 @@ type ChangedType = 'add' | 'remove'
 
 
 
-#### KeyboardType9+
+## KeyboardType9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 键盘输入设备的类型。
 
 **系统能力**：SystemCapability.MultimodalInput.Input.InputDevice
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1409,13 +1487,15 @@ type ChangedType = 'add' | 'remove'
 
 
 
-#### FunctionKey15+
+## FunctionKey15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 功能键的类型。
 
 **系统能力**：SystemCapability.MultimodalInput.Input.InputDevice
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

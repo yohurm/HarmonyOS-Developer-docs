@@ -1,9 +1,9 @@
 # @ohos.data.storage (轻量级存储)
 
-更新时间：2026-07-09 02:26:55
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-data-storage
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 轻量级存储为应用提供key-value键值型的文件数据处理能力，支持应用对数据进行轻量级存储及查询。数据存储形式为键值对，键的类型为字符串型，值的存储数据类型包括数字型、字符型、布尔型。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import data_storage from '@ohos.data.storage';
@@ -22,12 +23,14 @@ import data_storage from '@ohos.data.storage';
  
   
 
-#### 常量
+## 常量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** 以下各项对应的系统能力均为SystemCapability.DistributedDataManager.Preferences.Core
   
+
 | 名称 | 类型 | 可读 | 可写 | 说明 |
 | --- | --- | --- | --- | --- |
 | MAX_KEY_LENGTH | number | 是 | 否 | key的最大长度限制为80字节。 |
@@ -36,9 +39,10 @@ import data_storage from '@ohos.data.storage';
  
   
 
-#### data_storage.getStorageSync
+## data_storage.getStorageSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStorageSync(path: string): Storage
  
@@ -48,6 +52,7 @@ getStorageSync(path: string): Storage
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 应用程序内部数据存储路径。 |
@@ -55,6 +60,7 @@ getStorageSync(path: string): Storage
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Storage | 获取到要操作的Storage实例，用于进行数据存储操作。 |
@@ -79,9 +85,10 @@ context.getFilesDir().then((filePath) => {
  
   
 
-#### data_storage.getStorage
+## data_storage.getStorage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStorage(path: string, callback: AsyncCallback&lt;Storage&gt;): void
  
@@ -91,6 +98,7 @@ getStorage(path: string, callback: AsyncCallback&lt;Storage&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 应用程序内部数据存储路径。 |
@@ -121,9 +129,10 @@ context.getFilesDir().then((filePath) => {
  
   
 
-#### data_storage.getStorage
+## data_storage.getStorage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStorage(path: string): Promise&lt;Storage&gt;
  
@@ -133,6 +142,7 @@ getStorage(path: string): Promise&lt;Storage&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 应用程序内部数据存储路径。 |
@@ -140,6 +150,7 @@ getStorage(path: string): Promise&lt;Storage&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Storage&gt; | Promise实例，用于异步获取结果。 |
@@ -168,9 +179,10 @@ context.getFilesDir().then((filePath) => {
  
   
 
-#### data_storage.deleteStorageSync
+## data_storage.deleteStorageSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteStorageSync(path: string): void
  
@@ -180,6 +192,7 @@ deleteStorageSync(path: string): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 应用程序内部数据存储路径。 |
@@ -202,9 +215,10 @@ context.getFilesDir().then((filePath) => {
  
   
 
-#### data_storage.deleteStorage
+## data_storage.deleteStorage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteStorage(path: string, callback: AsyncCallback&lt;void&gt;): void
  
@@ -214,6 +228,7 @@ deleteStorage(path: string, callback: AsyncCallback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 应用程序内部数据存储路径。 |
@@ -243,9 +258,10 @@ context.getFilesDir().then((filePath) => {
  
   
 
-#### data_storage.deleteStorage
+## data_storage.deleteStorage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteStorage(path: string): Promise&lt;void&gt;
  
@@ -255,6 +271,7 @@ deleteStorage(path: string): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 应用程序内部数据存储路径。 |
@@ -262,6 +279,7 @@ deleteStorage(path: string): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise实例，用于异步获取结果。 |
@@ -289,9 +307,10 @@ context.getFilesDir().then((filePath) => {
  
   
 
-#### data_storage.removeStorageFromCacheSync
+## data_storage.removeStorageFromCacheSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeStorageFromCacheSync(path: string): void
  
@@ -301,6 +320,7 @@ removeStorageFromCacheSync(path: string): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 应用程序内部数据存储路径。 |
@@ -323,9 +343,10 @@ context.getFilesDir().then((filePath) => {
  
   
 
-#### data_storage.removeStorageFromCache
+## data_storage.removeStorageFromCache
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeStorageFromCache(path: string, callback: AsyncCallback&lt;void&gt;): void
  
@@ -335,6 +356,7 @@ removeStorageFromCache(path: string, callback: AsyncCallback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 应用程序内部数据存储路径。 |
@@ -364,9 +386,10 @@ context.getFilesDir().then((filePath) => {
  
   
 
-#### data_storage.removeStorageFromCache
+## data_storage.removeStorageFromCache
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeStorageFromCache(path: string): Promise&lt;void&gt;
  
@@ -376,6 +399,7 @@ removeStorageFromCache(path: string): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 应用程序内部数据存储路径。 |
@@ -383,6 +407,7 @@ removeStorageFromCache(path: string): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise实例，用于异步获取结果。 |
@@ -410,9 +435,10 @@ context.getFilesDir().then((filePath) => {
  
   
 
-#### Storage
+## Storage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供获取和修改存储数据的接口。
  
@@ -420,9 +446,10 @@ context.getFilesDir().then((filePath) => {
  
   
 
-#### getSync
+### getSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSync(key: string, defValue: ValueType): ValueType
  
@@ -432,6 +459,7 @@ getSync(key: string, defValue: ValueType): ValueType
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 要获取的存储key名称，不能为空。 |
@@ -440,6 +468,7 @@ getSync(key: string, defValue: ValueType): ValueType
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ValueType | 键对应的值，如果值为null或者非默认值类型，返回默认数据。 |
@@ -454,9 +483,10 @@ console.info("The value of startup is " + value);
  
   
 
-#### get
+### get
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get(key: string, defValue: ValueType, callback: AsyncCallback&lt;ValueType&gt;): void
  
@@ -466,6 +496,7 @@ get(key: string, defValue: ValueType, callback: AsyncCallback&lt;ValueType&gt;):
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 要获取的存储key名称，不能为空。 |
@@ -487,9 +518,10 @@ storage.get('startup', 'default', function(err, value) {
  
   
 
-#### get
+### get
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get(key: string, defValue: ValueType): Promise&lt;ValueType&gt;
  
@@ -499,6 +531,7 @@ get(key: string, defValue: ValueType): Promise&lt;ValueType&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 要获取的存储key名称，不能为空。 |
@@ -507,6 +540,7 @@ get(key: string, defValue: ValueType): Promise&lt;ValueType&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;ValueType&gt; | Promise实例，用于异步获取结果。 |
@@ -525,9 +559,10 @@ promiseget.then((value) => {
  
   
 
-#### putSync
+### putSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 putSync(key: string, value: ValueType): void
  
@@ -537,6 +572,7 @@ putSync(key: string, value: ValueType): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 要修改的存储的key，不能为空。 |
@@ -551,9 +587,10 @@ storage.putSync('startup', 'auto');
  
   
 
-#### put
+### put
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 put(key: string, value: ValueType, callback: AsyncCallback&lt;void&gt;): void
  
@@ -563,6 +600,7 @@ put(key: string, value: ValueType, callback: AsyncCallback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 要修改的存储的key，不能为空。 |
@@ -584,9 +622,10 @@ storage.put('startup', 'auto', function (err) {
  
   
 
-#### put
+### put
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 put(key: string, value: ValueType): Promise&lt;void&gt;
  
@@ -596,6 +635,7 @@ put(key: string, value: ValueType): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 要修改的存储的key，不能为空。 |
@@ -604,6 +644,7 @@ put(key: string, value: ValueType): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise实例，用于异步处理。 |
@@ -622,9 +663,10 @@ promiseput.then(() => {
  
   
 
-#### hasSync
+### hasSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hasSync(key: string): boolean
  
@@ -634,6 +676,7 @@ hasSync(key: string): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 要获取的存储key名称，不能为空。 |
@@ -641,6 +684,7 @@ hasSync(key: string): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | true 表示存在，false表示不存在。 |
@@ -657,9 +701,10 @@ if (isExist) {
  
   
 
-#### has
+### has
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 has(key: string, callback: AsyncCallback&lt;boolean&gt;): boolean
  
@@ -669,6 +714,7 @@ has(key: string, callback: AsyncCallback&lt;boolean&gt;): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 要获取的存储key名称，不能为空。 |
@@ -677,6 +723,7 @@ has(key: string, callback: AsyncCallback&lt;boolean&gt;): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | true表示存在，false表示不存在。 |
@@ -698,9 +745,10 @@ storage.has('startup', function (err, isExist) {
  
   
 
-#### has
+### has
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 has(key: string): Promise&lt;boolean&gt;
  
@@ -710,6 +758,7 @@ has(key: string): Promise&lt;boolean&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 要获取的存储key名称，不能为空。 |
@@ -717,6 +766,7 @@ has(key: string): Promise&lt;boolean&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise实例，用于异步处理。 |
@@ -737,9 +787,10 @@ promisehas.then((isExist) => {
  
   
 
-#### deleteSync
+### deleteSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteSync(key: string): void
  
@@ -749,6 +800,7 @@ deleteSync(key: string): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 要获取的存储key名称。它不能为空。 |
@@ -762,9 +814,10 @@ storage.deleteSync('startup');
  
   
 
-#### delete
+### delete
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 delete(key: string, callback: AsyncCallback&lt;void&gt;): void
  
@@ -774,6 +827,7 @@ delete(key: string, callback: AsyncCallback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 要获取的存储key名称，不能为空。 |
@@ -794,9 +848,10 @@ storage.delete('startup', function (err) {
  
   
 
-#### delete
+### delete
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 delete(key: string): Promise&lt;void&gt;
  
@@ -806,6 +861,7 @@ delete(key: string): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 要获取的存储key名称。 |
@@ -813,6 +869,7 @@ delete(key: string): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise实例，用于异步处理。 |
@@ -831,9 +888,10 @@ promisedel.then(() => {
  
   
 
-#### flushSync
+### flushSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 flushSync(): void
  
@@ -849,9 +907,10 @@ storage.flushSync();
  
   
 
-#### flush
+### flush
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 flush(callback: AsyncCallback&lt;void&gt;): void
  
@@ -861,6 +920,7 @@ flush(callback: AsyncCallback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。 |
@@ -880,9 +940,10 @@ storage.flush(function (err) {
  
   
 
-#### flush
+### flush
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 flush(): Promise&lt;void&gt;
  
@@ -892,6 +953,7 @@ flush(): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise实例，用于异步处理。 |
@@ -910,9 +972,10 @@ promiseflush.then(() => {
  
   
 
-#### clearSync
+### clearSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clearSync(): void
  
@@ -928,9 +991,10 @@ storage.clearSync();
  
   
 
-#### clear
+### clear
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clear(callback: AsyncCallback&lt;void&gt;): void
  
@@ -940,6 +1004,7 @@ clear(callback: AsyncCallback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。 |
@@ -959,9 +1024,10 @@ storage.clear(function (err) {
  
   
 
-#### clear
+### clear
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clear(): Promise&lt;void&gt;
  
@@ -971,6 +1037,7 @@ clear(): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise实例，用于异步处理。 |
@@ -989,9 +1056,10 @@ promiseclear.then(() => {
  
   
 
-#### on('change')
+### on('change')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'change', callback: Callback&lt;StorageObserver&gt;): void
  
@@ -1001,6 +1069,7 @@ on(type: 'change', callback: Callback&lt;StorageObserver&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件类型，固定值'change'，表示数据变更。 |
@@ -1020,9 +1089,10 @@ storage.flushSync();  // observer will be called.
  
   
 
-#### off('change')
+### off('change')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'change', callback: Callback&lt;StorageObserver&gt;): void
  
@@ -1032,6 +1102,7 @@ off(type: 'change', callback: Callback&lt;StorageObserver&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件类型，固定值'change'，表示数据变更。 |
@@ -1049,12 +1120,14 @@ storage.off('change', observer);
  
   
 
-#### StorageObserver
+## StorageObserver
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.DistributedDataManager.Preferences.Core
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 变更的数据内容。 |
@@ -1062,9 +1135,10 @@ storage.off('change', observer);
  
   
 
-#### ValueType
+## ValueType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ValueType = number | string | boolean
  
@@ -1072,6 +1146,7 @@ type ValueType = number | string | boolean
  
 **系统能力：** SystemCapability.DistributedDataManager.Preferences.Core
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 表示值类型为数字。 |

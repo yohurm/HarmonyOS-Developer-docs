@@ -1,6 +1,6 @@
 # 证书CMS验签
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/create-cms-verify-object
 
@@ -11,7 +11,7 @@ PKCS #7是用于存储签名或加密数据的标准语法。CMS（Cryptographic
 目前仅支持CMS签名数据和封装数据。
 
 
-#### 开发步骤
+## 开发步骤
 1. 导入[证书模块](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cert)。
 
   

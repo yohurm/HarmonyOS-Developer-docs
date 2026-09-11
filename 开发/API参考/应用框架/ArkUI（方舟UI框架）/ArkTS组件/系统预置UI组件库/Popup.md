@@ -1,9 +1,9 @@
 # Popup
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-popup
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Popup是用于显示特定样式气泡的组件，支持图标、文本和按钮的灵活组合，适用于通知提示、信息确认、警告提示等场景。通过可定制的样式选项，能够快速实现一致的气泡交互体验。
  
@@ -12,9 +12,10 @@ Popup是用于显示特定样式气泡的组件，支持图标、文本和按钮
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { Popup, PopupOptions, PopupTextOptions, PopupButtonOptions, PopupIconOptions } from '@kit.ArkUI';
@@ -22,17 +23,19 @@ import { Popup, PopupOptions, PopupTextOptions, PopupButtonOptions, PopupIconOpt
  
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
  
   
 
-#### Popup
+## Popup
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Popup(options: PopupOptions): void
  
@@ -44,6 +47,7 @@ Popup(options: PopupOptions): void
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | PopupOptions | 是 | Popup组件的配置参数。 |
@@ -51,14 +55,16 @@ Popup(options: PopupOptions): void
  
   
 
-#### PopupOptions
+## PopupOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 PopupOptions定义Popup的具体样式参数。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | icon | PopupIconOptions | 否 | 是 | 设置Popup图标。 说明： 当width和height设置异常值或0时不显示。 默认不显示图标。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
@@ -73,9 +79,10 @@ PopupOptions定义Popup的具体样式参数。
  
   
 
-#### PopupTextOptions
+## PopupTextOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置文本样式。
  
@@ -83,6 +90,7 @@ PopupOptions定义Popup的具体样式参数。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | text | ResourceStr | 否 | 否 | 设置文本内容。 |
@@ -93,9 +101,10 @@ PopupOptions定义Popup的具体样式参数。
  
   
 
-#### PopupButtonOptions
+## PopupButtonOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 PopupButtonOptions定义按钮的相关属性和事件。
  
@@ -103,6 +112,7 @@ PopupButtonOptions定义按钮的相关属性和事件。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | text | ResourceStr | 否 | 否 | 设置按钮内容。 |
@@ -113,9 +123,10 @@ PopupButtonOptions定义按钮的相关属性和事件。
  
   
 
-#### PopupIconOptions
+## PopupIconOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 PopupIconOptions定义图标的属性。
  
@@ -123,6 +134,7 @@ PopupIconOptions定义图标的属性。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | image | ResourceStr | 否 | 否 | 设置图标内容。 |
@@ -134,13 +146,17 @@ PopupIconOptions定义图标的属性。
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 示例1（设置气泡样式）
+### 示例1（设置气泡样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置PopupIconOptions、PopupTextOptions、PopupButtonOptions实现气泡的样式。
  
@@ -214,7 +230,10 @@ struct PopupExample {
  
   
 
-#### 示例2（设置镜像效果）
+### 示例2（设置镜像效果）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置direction参数实现Popup的镜像布局效果。
  
@@ -293,7 +312,10 @@ struct PopupPage {
  
   
 
-#### 示例3（设置自定义宽度）
+### 示例3（设置自定义宽度）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置maxWidth实现Popup的自定义宽度效果。
  

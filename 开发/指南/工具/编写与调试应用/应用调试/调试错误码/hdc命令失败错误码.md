@@ -1,10 +1,10 @@
 # hdc命令失败错误码
 
-更新时间：2026-01-15 06:51:04
+更新时间：2026-08-29 09:41:34
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-errorcode-00404
 
-#### 00404035 安装hap包超时
+## 00404035 安装hap包超时
 
 **错误信息**
  
@@ -20,11 +20,11 @@ Install hap timeout.
  
 **处理步骤**
  
-重新拔插下设备，或者执行hdc kill -r命令再重新运行。
+重新连接设备，或者执行hdc kill -r命令再重新运行。
  
  
 
-#### 00404036 删除临时目录超时
+## 00404036 删除临时目录超时
 
 **错误信息**
  
@@ -40,11 +40,11 @@ Remove Directory Timeout: XXX.
  
 **处理步骤**
  
-重新拔插下设备，或者执行hdc kill -r命令再重新运行。
+重新连接设备，或者执行hdc kill -r命令再重新运行。
  
  
 
-#### 00404037 创建临时目录超时
+## 00404037 创建临时目录超时
 
 **错误信息**
  
@@ -60,11 +60,11 @@ Create Directory Timeout.
  
 **处理步骤**
  
-重新拔插下设备，或者执行hdc kill -r命令再重新运行。
+重新连接设备，或者执行hdc kill -r命令再重新运行。
  
  
 
-#### 00404038 构建打包信息为空
+## 00404038 构建打包信息为空
 
 **错误信息**
  
@@ -84,7 +84,7 @@ Build package info list is empty.
  
  
 
-#### 00404039 创建临时目录失败
+## 00404039 创建临时目录失败
 
 **错误信息**
  
@@ -100,11 +100,11 @@ Failed to create temporary directory during hap push operation.
  
 **处理步骤**
  
-重新拔插下设备，或者执行hdc kill -r命令再重新运行。
+重新连接设备，或者执行hdc kill -r命令再重新运行。
  
  
 
-#### 00404040 推包超时
+## 00404040 推包超时
 
 **错误信息**
  
@@ -124,7 +124,7 @@ Push Hap Timeout.
  
  
 
-#### 00404041 不支持方舟native模块加载异常信息增强
+## 00404041 不支持方舟native模块加载异常信息增强
 
 **错误信息**
  
@@ -144,7 +144,7 @@ Start ability failed:The current device version does not support enhance error i
  
  
 
-#### 00404042 不支持方舟多线程检测
+## 00404042 不支持方舟多线程检测
 
 **错误信息**
  
@@ -164,7 +164,7 @@ The current device version does not support multi thread check. Update device ve
  
  
 
-#### 00404053 不支持等待调试功能
+## 00404053 不支持等待调试功能
 
 **错误信息**
  
@@ -184,7 +184,7 @@ The current device version does not support the waiting for debugging capability
  
  
 
-#### 00404054 等待调试命令执行超时
+## 00404054 等待调试命令执行超时
 
 **错误信息**
  
@@ -200,11 +200,11 @@ Waiting for the debug command times out.
  
 **处理步骤**
  
-重新拔插下设备，或者执行hdc kill -r命令再重试。
+重新连接设备，或者执行hdc kill -r命令再重试。
  
  
 
-#### 00404055 应用没安装或者不是debug签名
+## 00404055 应用没安装或者不是debug签名
 
 **错误信息**
  
@@ -220,4 +220,4 @@ This app is not installed or not signed with a debug signature.
  
 **处理步骤**
  1. 检查应用是否已安装，应用签名是否使用debug签名；
-2. 检查设备连接是否正常，可以尝试拔插设备重新连接，再重新启动等待调试。
+2. 检查设备连接是否正常，可以尝试重新连接设备，再启动等待调试。

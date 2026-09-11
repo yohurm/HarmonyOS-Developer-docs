@@ -11,13 +11,13 @@
 问题关键代码如下：
  
 ```ArkTS
-// Index.ets
+<em>// Index.ets</em>
 @Entry
 @Component
 struct NavigationPage {
   @Provide('pageInfos') pageInfos: NavPathStack = new NavPathStack();
 
-  // 从子页返回根页面不会触发
+ <em> // 从子页返回根页面不会触发</em>
   onPageShow(): void {
     console.info('NavigationPage onPageShow');
   }
@@ -30,13 +30,13 @@ struct NavigationPage {
 ```
  
 ```ArkTS
-// PageOne.ets
+<em>// PageOne.ets</em>
 @Entry
 @Component
 export struct PageOne {
   @Consume('pageInfos') pageInfos: NavPathStack;
 
-  // onPageShow不会被触发
+ <em> // onPageShow不会被触发</em>
   onPageShow(): void {
     console.info('NavDestination PageOne onPageShow');
   }
@@ -129,15 +129,15 @@ struct NavDestinationSwitchPage {
   pageInfos: NavPathStack = new NavPathStack();
 
   aboutToAppear(): void {
-    // 监听navigation页面切换事件
+   <em> // 监听navigation页面切换事件</em>
     uiObserver.on('navDestinationSwitch', this.getUIContext(), (switchInfo) => {
-      // 可根据from和to判断显隐的页面，类型为NavDestinationInfo表示子页，为NavBar表示Navigation页面
+    <em>  // 可根据from和to判断显隐的页面，类型为NavDestinationInfo表示子页，为NavBar表示Navigation页面</em>
       console.info(`from ${JSON.stringify(switchInfo.from)} -> to ${JSON.stringify(switchInfo.to)}`);
     });
   }
 
   aboutToDisappear() {
-    uiObserver.off('navDestinationSwitch', this.getUIContext()); // 取消监听
+    uiObserver.off('navDestinationSwitch', this.getUIContext()); <em>// </em><em>取消监听</em>
   }
 
   @Builder

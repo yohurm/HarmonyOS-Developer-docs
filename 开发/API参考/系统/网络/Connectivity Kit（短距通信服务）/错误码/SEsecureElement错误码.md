@@ -1,18 +1,19 @@
 # SE(secureElement)错误码
 
-更新时间：2026-04-24 08:10:21
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-se
-**支持设备：** Phone | Wearable
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 > [!TIP]
 > 以下仅介绍本模块特有错误码，通用错误码请参考 通用错误码说明文档 。
 
 
 
-#### 3300101 SE服务状态异常
+## 3300101 SE服务状态异常
 
-**支持设备：** Phone | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -32,9 +33,10 @@ SE服务状态异常。
 
 
 
-#### 3300102 找不到对应SE安全单元异常
+## 3300102 找不到对应SE安全单元异常
 
-**支持设备：** Phone | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -55,9 +57,10 @@ NoSuchElementError, the AID on the SE is not available or cannot be selected.
 
 
 
-#### 3300103 无法获取访问控制规则异常
+## 3300103 无法获取访问控制规则异常
 
-**支持设备：** Phone | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -68,17 +71,19 @@ SecurityError, the calling application cannot be granted access to this AID or t
 无法获取访问控制规则异常。
 
 **可能原因**
-1. 安全单元上没有应用所依赖的访问规则。
+
+安全单元上没有应用所依赖的访问控制规则。
 
 **处理步骤**
-1. 写入正确的访问规则到安全单元上。
+1. 写入正确的访问控制规则到安全单元上。
 2. 关闭SE服务后重新建立连接。
 
 
 
-#### 3300104 SE芯片IO异常
+## 3300104 SE芯片IO异常
 
-**支持设备：** Phone | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 

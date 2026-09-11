@@ -1,6 +1,6 @@
 # CMAC(ArkTS)
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-cmac-arkts
 
@@ -11,7 +11,7 @@ CMAC是基于对称密钥分组加密算法的消息认证码（Cipher-based Mes
 
 
 
-#### 开发步骤
+## 开发步骤
 
 **生成密钥**
 1. 获取生成密钥算法参数配置。

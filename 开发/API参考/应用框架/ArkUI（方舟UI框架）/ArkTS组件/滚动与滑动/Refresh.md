@@ -1,9 +1,9 @@
 # Refresh
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-refresh
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Refresh是提供下拉刷新交互的容器组件，适用于列表数据刷新、页面内容更新等需要用户触发数据更新的场景。它支持自定义刷新区域显示内容和文本、设置下拉偏移量和跟手系数、控制最大下拉距离等，可灵活适配不同应用的下拉刷新需求，提供一致且流畅的刷新体验。
 
@@ -12,9 +12,10 @@ Refresh是提供下拉刷新交互的容器组件，适用于列表数据刷新�
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持单个子组件。
 
@@ -22,9 +23,10 @@ Refresh是提供下拉刷新交互的容器组件，适用于列表数据刷新�
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Refresh(value: RefreshOptions)
 
@@ -36,6 +38,7 @@ Refresh(value: RefreshOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | RefreshOptions | 是 | 刷新组件参数。 |
@@ -43,13 +46,15 @@ Refresh(value: RefreshOptions)
 
 
 
-#### RefreshOptions对象说明
+## RefreshOptions对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于设置Refresh组件参数。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -67,17 +72,19 @@ Refresh(value: RefreshOptions)
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
 
 
 
-#### refreshOffset12+
+### refreshOffset12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 refreshOffset(value: number)
 
@@ -91,6 +98,7 @@ refreshOffset(value: number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 下拉偏移量，单位vp。 取值范围：(0, +∞)。 默认值：未设置promptText参数时为64vp，设置了promptText参数时为96vp。 如果取值为0或负数的时候此接口采用默认值。 |
@@ -98,9 +106,10 @@ refreshOffset(value: number)
 
 
 
-#### refreshOffset
+### refreshOffset
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 refreshOffset(value: number | Resource)
 
@@ -118,6 +127,7 @@ refreshOffset(value: number | Resource)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| Resource | 是 | 下拉偏移量。 单位：vp 取值范围：(0, +∞)。 默认值：未设置promptText参数时为64vp，设置了promptText参数时为96vp。 值为0或负数时，按默认值处理。 |
@@ -125,9 +135,10 @@ refreshOffset(value: number | Resource)
 
 
 
-#### pullToRefresh12+
+### pullToRefresh12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pullToRefresh(value: boolean)
 
@@ -141,6 +152,7 @@ pullToRefresh(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 当下拉距离超过refreshOffset时是否能触发刷新。true表示能触发刷新，false表示不能触发刷新。 默认值：true |
@@ -148,9 +160,10 @@ pullToRefresh(value: boolean)
 
 
 
-#### pullUpToCancelRefresh23+
+### pullUpToCancelRefresh23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pullUpToCancelRefresh(enabled: boolean | undefined)
 
@@ -164,6 +177,7 @@ pullUpToCancelRefresh(enabled: boolean | undefined)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean \| undefined | 是 | 设置上滑是否取消刷新。 true表示取消刷新；false表示不取消刷新。 默认值：true。值为undefined时，按默认值处理。 |
@@ -171,9 +185,10 @@ pullUpToCancelRefresh(enabled: boolean | undefined)
 
 
 
-#### pullDownRatio12+
+### pullDownRatio12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pullDownRatio(ratio: [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)&lt;number&gt;)
 
@@ -187,6 +202,7 @@ pullDownRatio(ratio: [Optional](https://developer.huawei.com/consumer/cn/doc/har
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ratio | Optional&lt;number&gt; | 是 | 下拉跟手系数。数值越大，跟随手势下拉的反应越灵敏。0表示不跟随手势下拉，1表示等比例跟随手势下拉。 没有设置或设置为undefined时，默认使用动态下拉跟手系数，下拉距离越大，跟手系数越小。 取值范围：[0, 1]。小于0的值会被视为0，大于1的值会被视为1。 |
@@ -194,9 +210,10 @@ pullDownRatio(ratio: [Optional](https://developer.huawei.com/consumer/cn/doc/har
 
 
 
-#### maxPullDownDistance20+
+### maxPullDownDistance20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 maxPullDownDistance(distance: Optional&lt;number&gt;)
 
@@ -210,6 +227,7 @@ maxPullDownDistance(distance: Optional&lt;number&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | distance | Optional&lt;number&gt; | 是 | 最大下拉距离。 取值范围：[0, +∞)，值小于0时按0处理。当该值小于刷新的下拉偏移量refreshOffset时，Refresh下拉离手不会触发刷新。 undefined和null按没有设置此属性处理。 默认值：undefined 单位：vp |
@@ -217,9 +235,10 @@ maxPullDownDistance(distance: Optional&lt;number&gt;)
 
 
 
-#### maxPullDownDistance
+### maxPullDownDistance
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 maxPullDownDistance(distance: number | Resource | undefined)
 
@@ -237,6 +256,7 @@ maxPullDownDistance(distance: number | Resource | undefined)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | distance | number \| Resource \| undefined | 是 | 最大下拉距离。 默认值：undefined 单位：vp 取值范围：[0, +∞)，值小于0时按0处理。当该值小于刷新的下拉偏移量refreshOffset时，Refresh下拉离手不会触发刷新。 undefined和null按没有设置此属性处理，即没有最大下拉距离限制。 |
@@ -244,17 +264,19 @@ maxPullDownDistance(distance: number | Resource | undefined)
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)外，还支持以下事件：
 
 
 
-#### onStateChange
+### onStateChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onStateChange(callback: (state: RefreshStatus) => void)
 
@@ -266,6 +288,7 @@ onStateChange(callback: (state: RefreshStatus) => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | state | RefreshStatus | 是 | 刷新状态。 |
@@ -273,9 +296,10 @@ onStateChange(callback: (state: RefreshStatus) => void)
 
 
 
-#### onRefreshing
+### onRefreshing
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onRefreshing(callback: () => void)
 
@@ -287,6 +311,7 @@ onRefreshing(callback: () => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | () => void | 是 | 进入刷新状态时触发的回调。 |
@@ -294,9 +319,10 @@ onRefreshing(callback: () => void)
 
 
 
-#### onOffsetChange12+
+### onOffsetChange12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onOffsetChange(callback: Callback&lt;number&gt;)
 
@@ -314,6 +340,7 @@ onOffsetChange(callback: Callback&lt;number&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;number&gt; | 是 | 回调函数，用于监听下拉距离的变化。当下拉距离发生变化时触发，回调参数为当前的下拉距离。 单位：vp |
@@ -321,15 +348,17 @@ onOffsetChange(callback: Callback&lt;number&gt;)
 
 
 
-#### RefreshStatus枚举说明
+## RefreshStatus枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 RefreshStatus刷新状态枚举。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -342,13 +371,17 @@ RefreshStatus刷新状态枚举。
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（默认刷新样式）
+
+
+### 示例1（默认刷新样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 刷新区域使用默认刷新样式。
 
@@ -420,7 +453,10 @@ struct RefreshExample {
 
 
 
-#### 示例2（设置刷新区域显示文本）
+### 示例2（设置刷新区域显示文本）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过[promptText](#refreshoptions对象说明)参数设置刷新区域显示文本。
 
@@ -484,7 +520,10 @@ struct RefreshExample {
 
 
 
-#### 示例3（自定义刷新区域显示内容-builder）
+### 示例3（自定义刷新区域显示内容-builder）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过[builder](#refreshoptions对象说明)参数自定义刷新区域显示内容。
 
@@ -560,7 +599,10 @@ struct RefreshExample {
 
 
 
-#### 示例4（自定义刷新区域显示内容-refreshingContent）
+### 示例4（自定义刷新区域显示内容-refreshingContent）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过[refreshingContent](#refreshoptions对象说明)参数自定义刷新区域显示内容。
 
@@ -658,7 +700,10 @@ struct RefreshExample {
 
 
 
-#### 示例5（实现最大下拉距离）
+### 示例5（实现最大下拉距离）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过[pullDownRatio](#pulldownratio12)属性和[onOffsetChange](#onoffsetchange12)事件实现最大下拉距离。
 
@@ -748,7 +793,10 @@ struct RefreshExample {
 
 
 
-#### 示例6（实现下拉刷新上拉加载更多）
+### 示例6（实现下拉刷新上拉加载更多）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Refresh组件与[List](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)组件组合实现下拉刷新上拉加载更多效果。
 
@@ -852,7 +900,10 @@ struct ListRefreshLoad {
 
 
 
-#### 示例7（设置最大下拉距离）
+### 示例7（设置最大下拉距离）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 20开始，通过[maxPullDownDistance](#maxpulldowndistance20)属性设置最大下拉距离。
 
@@ -916,7 +967,10 @@ struct RefreshExample {
 
 
 
-#### 示例8（禁止下拉刷新）
+### 示例8（禁止下拉刷新）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过[pullDownRatio](#pulldownratio12)属性禁止下拉刷新。
 
@@ -989,7 +1043,10 @@ struct RefreshExample {
 
 
 
-#### 示例9（不满一屏场景实现下拉刷新）
+### 示例9（不满一屏场景实现下拉刷新）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 调用[edgeEffect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scrollable-common#edgeeffect11)时，将options参数的[alwaysEnabled](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scrollable-common#edgeeffectoptions11对象说明)设置为true，可以在不满一屏的情况下实现Refresh组件的下拉刷新效果。
 
@@ -1057,7 +1114,10 @@ struct RefreshExample {
 
 
 
-#### 示例10（上滑不取消刷新）
+### 示例10（上滑不取消刷新）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[pullUpToCancelRefresh](#pulluptocancelrefresh23)接口设置上滑不取消刷新。
 

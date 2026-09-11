@@ -1,13 +1,14 @@
 # HiCollie
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hicollie
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供检测业务线程卡死、卡顿，以及上报卡死事件的能力。本模块函数支持以下功能：
  
@@ -25,10 +26,12 @@
  
   
 
-#### 文件汇总
+## 文件汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | hicollie.h | HiCollie模块提供检测业务线程卡死、卡顿，以及上报卡死事件的能力。 |

@@ -1,19 +1,19 @@
 # 实时预览(C/C++)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-suite-real-time-rendering
 
 从API version 22开始，[OHAudioSuite](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohaudiosuite)给开发者提供音频编创的实时预览能力（API version 22只支持均衡器效果，API version 23及以后支持其他效果）。例如，可以使用均衡器中预置的音效，改变音乐的风格。
 
 
-#### 开发基础配置
+## 开发基础配置
 
 开发者使用[OHAudioSuite](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohaudiosuite)提供的实时预览能力，添加对应的头文件。
 
 
 
-#### 在CMake脚本中链接动态库
+### 在CMake脚本中链接动态库
 
 ```text
 target_link_libraries(sample PUBLIC libohaudio.so libohaudiosuite.so)
@@ -21,7 +21,7 @@ target_link_libraries(sample PUBLIC libohaudio.so libohaudiosuite.so)
 
 
 
-#### 添加头文件
+### 添加头文件
 
 开发者通过引入头文件<[native_audio_suite_base.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-audio-suite-base-h)>、<[native_audio_suite_engine.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-audio-suite-engine-h)>、<[native_audiostreambuilder.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-audiostreambuilder-h)>和<[native_audiorenderer.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-audiorenderer-h)>使用音频编创和音频播放相关API。
 
@@ -34,17 +34,17 @@ target_link_libraries(sample PUBLIC libohaudio.so libohaudiosuite.so)
 
 
 
-#### 开发步骤
+## 开发步骤
 
 
 
-#### 接口调用
+### 接口调用
 
 详细的API说明请参考[OHAudioSuite](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohaudiosuite)。
 
 
 
-#### 均衡器效果
+### 均衡器效果
 
 **图1**：实时预览示意图
 
@@ -52,7 +52,7 @@ target_link_libraries(sample PUBLIC libohaudio.so libohaudiosuite.so)
 ![](assets/实时渲染(C／C++)/file-20260514131449707-0.png)
 
 
-开发者可以通过以下步骤来实现一个简单的均衡器效果节点实时预览功能。
+开发者可以通过以下步骤来实现一个简单的均衡器效果节点实时预览功能。此处以均衡器效果为例演示实时预览流程，其他效果节点的详细说明请参考[音频效果(C/C++)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-suite-effects)。
 1. 在初始化时，创建[OHAudioSuite](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohaudiosuite)管线（包括输入节点、均衡器节点、输出节点）。
 
   
@@ -166,7 +166,7 @@ OH_AudioSuiteEngine_ConnectNodes(eqNode, outputNode);
 3. 创建[OH_AudioRendererStruct](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohaudio-oh-audiorendererstruct)实例，并在其AudioRendererOnWriteData()回调函数中调用[OHAudioSuite](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohaudiosuite)管线的[OH_AudioSuiteEngine_RenderFrame()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-audio-suite-engine-h#oh_audiosuiteengine_renderframe)接口来处理数据。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/L8DYFul3RdyVnbhkbletng/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095820Z&HW-CC-Expire=86400&HW-CC-Sign=BE9A0212B120D465BA7A72A1837457C158778AC6E59CB30E7595332FD8503770)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/Kk_aWIpdT8aTzgUL4c303A/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072518Z&HW-CC-Expire=86400&HW-CC-Sign=6B2476FAB1B6F563AB1BE41598E618D21692DC455538BAEEDD6455C050FF0ED7)
  
 
   [OH_AudioSuiteEngine_RenderFrame()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-audio-suite-engine-h#oh_audiosuiteengine_renderframe)接口的处理时长和管线中连接的效果节点数量有关，需要注意接口处理时长，以避免实时预览卡顿。
@@ -252,7 +252,7 @@ OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
 
   
 
-  #### 注意事项
+  ## 注意事项
 
   
 音频实时预览过程中，不支持重新创建新的效果节点，只支持修改效果节点的参数。
@@ -261,6 +261,6 @@ OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
 
 
 
-#### 完整示例代码
+## 完整示例代码
 
  - [音频编创示例代码](https://gitcode.com/HarmonyOS_Samples/guide-snippets/tree/master/Media/Audio/AudioSuiteSample)

@@ -4,15 +4,16 @@
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-c-body
 
-#### 约束与限制
+## 约束与限制
 
 从6.1.0(23)开始，人体跟踪与骨骼关键点识别能力支持部分Phone、部分Tablet设备、TV设备。请参考[硬件要求](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-preparations#硬件要求)判断设备是否支持人体骨骼点识别与跟踪特性（[ARENGINE_FEATURE_TYPE_BODY](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-capi-arengine#arengine_featuretype)）。
 
 
 
-#### 接口说明
+## 接口说明
 
 人体跟踪与骨骼关键点识别主要依赖ARBody，以下接口为AR Engine人体跟踪与骨骼关键点识别相关接口，详细接口和说明，请参考[AR Engine API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-capi-arengine)。
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -30,11 +31,11 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 
 
 
-#### 创建UI界面
+### 创建UI界面
 
 创建一个UI界面，使用[XComponent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-xcomponent)组件显示相机预览画面，定时触发每一帧绘制。
 
@@ -258,13 +259,13 @@ struct ARBody {
 
 
 
-#### 引入AR Engine
+### 引入AR Engine
 
 开发者可参考管理AR会话章节的[引入AR Engine](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-c-arsession#引入ar-engine)。
 
 
 
-#### 创建AR会话
+### 创建AR会话
 
 创建AR会话，配置人体跟踪模式。使用人体跟踪与骨骼关键点识别能力时请使用[HMS_AREngine_ARSession_Create_Human_Perception](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-capi-arengine#hms_arengine_arsession_create_human_perception)创建AR会话。
 
@@ -284,7 +285,7 @@ HMS_AREngine_ARConfig_Destroy(arConfig);
 
 
 
-#### 创建可跟踪对象列表
+### 创建可跟踪对象列表
 
 创建一个可跟踪对象列表targetList，用于存放AR Engine运行过程中检测到的所有可跟踪对象。
 
@@ -295,7 +296,7 @@ CHECK(HMS_AREngine_ARTrackableList_Create(mArSession, &arTrackableList));
 
 
 
-#### 获取人体追踪对象
+### 获取人体追踪对象
 
 调用[HMS_AREngine_ARSession_GetAllTrackables](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-capi-arengine#hms_arengine_arsession_getalltrackables)函数，检测当前环境中的所有人体追踪对象，并将结果存放在targetList中。
 
@@ -305,7 +306,7 @@ CHECK(HMS_AREngine_ARSession_GetAllTrackables(mArSession, ARENGINE_TRACKABLE_BOD
 
 
 
-#### 获取可跟踪对象数量
+### 获取可跟踪对象数量
 
 调用[HMS_AREngine_ARTrackableList_GetSize](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-capi-arengine#hms_arengine_artrackablelist_getsize)函数获取当前可跟踪对象数量，结果存放在targetSize中。
 
@@ -316,7 +317,7 @@ CHECK(HMS_AREngine_ARTrackableList_GetSize(mArSession, arTrackableList, &trackab
 
 
 
-#### 获取骨骼点相关信息
+### 获取骨骼点相关信息
 
 创建一个骨骼点信息列表skeletonValid2Ds，用于存放骨骼点信息数据。
 
@@ -359,7 +360,7 @@ for (int i = 0; i < trackableListSize; i++) {
 
 
 
-#### 获取骨骼点之间的连接关系数据
+### 获取骨骼点之间的连接关系数据
 
 创建一个骨骼点连接关系数据列表connections，用于存放骨骼点之间相连关系数据。
 
@@ -390,7 +391,7 @@ for (int i = 0; i < trackableListSize; i++) {
 
 
 
-#### 销毁可跟踪对象列表
+### 销毁可跟踪对象列表
 
 可跟踪对象列表targetList不再使用后需销毁：
 

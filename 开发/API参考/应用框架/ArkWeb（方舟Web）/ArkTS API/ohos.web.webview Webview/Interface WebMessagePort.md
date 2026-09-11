@@ -1,9 +1,9 @@
 # Interface (WebMessagePort)
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webmessageport
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 WebMessagePort是Web组件中用于应用侧（ArkTS）与HTML5侧（JavaScript）之间双向通信的消息端口接口。通过createWebMessagePorts创建一对关联的端口，将一个端口发送到HTML5侧，另一个保留在应用侧，实现跨运行时消息传递。WebMessagePort支持两种消息协议：基础协议使用WebMessage作为消息载体（postMessageEvent/onMessageEvent），扩展协议使用WebMessageExt支持更丰富的数据类型（postMessageEventExt/onMessageEventExt）。
 
@@ -12,9 +12,10 @@ WebMessagePort是Web组件中用于应用侧（ArkTS）与HTML5侧（JavaScript�
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { webview } from '@kit.ArkWeb';
@@ -22,11 +23,13 @@ import { webview } from '@kit.ArkWeb';
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -35,9 +38,10 @@ import { webview } from '@kit.ArkWeb';
 
 
 
-#### postMessageEvent
+## postMessageEvent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 postMessageEvent(message: WebMessage): void
 
@@ -47,6 +51,7 @@ postMessageEvent(message: WebMessage): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | message | WebMessage | 是 | 要发送的消息。 |
@@ -55,6 +60,7 @@ postMessageEvent(message: WebMessage): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -108,9 +114,10 @@ struct WebComponent {
 
 
 
-#### onMessageEvent
+## onMessageEvent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onMessageEvent(callback: (result: WebMessage) => void): void
 
@@ -120,6 +127,7 @@ onMessageEvent(callback: (result: WebMessage) => void): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | (result: WebMessage) => void | 是 | 接收到的消息。 |
@@ -128,6 +136,7 @@ onMessageEvent(callback: (result: WebMessage) => void): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -179,9 +188,10 @@ struct WebComponent {
 
 
 
-#### postMessageEventExt10+
+## postMessageEventExt10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 postMessageEventExt(message: WebMessageExt): void
 
@@ -190,6 +200,7 @@ postMessageEventExt(message: WebMessageExt): void
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -200,6 +211,7 @@ postMessageEventExt(message: WebMessageExt): void
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 17100010 | Failed to post messages through the port. |
@@ -208,9 +220,10 @@ postMessageEventExt(message: WebMessageExt): void
 
 
 
-#### onMessageEventExt10+
+## onMessageEventExt10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onMessageEventExt(callback: (result: WebMessageExt) => void): void
 
@@ -220,6 +233,7 @@ onMessageEventExt(callback: (result: WebMessageExt) => void): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | (result: WebMessageExt) => void | 是 | 接收到的消息。 |
@@ -228,6 +242,7 @@ onMessageEventExt(callback: (result: WebMessageExt) => void): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -527,9 +542,10 @@ function postStringToApp() {
 
 
 
-#### close
+## close
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(): void
 

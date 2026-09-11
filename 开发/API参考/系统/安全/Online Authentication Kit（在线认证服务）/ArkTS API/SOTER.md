@@ -1,16 +1,17 @@
 # SOTER
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/onlineauthentication-soter-api
 **支持设备：** Phone | PC/2in1 | Tablet
 
-SOTER提供移动端免密身份认证能力，支持使用SOTER协议的应用实现免密登录，免密支付等业务场景。
+SOTER提供移动端免密认证能力，支持使用SOTER协议的应用实现免密登录，免密支付等业务场景。
  
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -20,7 +21,8 @@ import { soter } from '@kit.OnlineAuthenticationKit';
  
   
 
-#### KeyType
+## KeyType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -34,6 +36,7 @@ import { soter } from '@kit.OnlineAuthenticationKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ECC_P256 | 0 | 密钥选型ECC P256。 |
@@ -41,7 +44,8 @@ import { soter } from '@kit.OnlineAuthenticationKit';
  
   
 
-#### SignedResult
+## SignedResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -55,6 +59,7 @@ import { soter } from '@kit.OnlineAuthenticationKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | message | Uint8Array | 是 | 原始报文。 |
@@ -64,7 +69,8 @@ import { soter } from '@kit.OnlineAuthenticationKit';
  
   
 
-#### getVersionSync
+## soter.getVersionSync
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -82,6 +88,7 @@ getVersionSync(): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 返回SOTER免密认证的API接口版本号。最大长度64个字符。 |
@@ -91,6 +98,7 @@ getVersionSync(): string
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[SOTER免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-soter)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Device type error. 适用版本：6.0.1(21)+ |
@@ -105,7 +113,8 @@ let res: string = soter.getVersionSync();// 开发者处理结果
  
   
 
-#### getVersion
+## soter.getVersion
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -123,6 +132,7 @@ getVersion(): Promise&lt;string&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回SOTER免密认证的API接口版本号。最大长度64个字符。 |
@@ -132,6 +142,7 @@ getVersion(): Promise&lt;string&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[SOTER免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-soter)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Device type error. 适用版本：6.0.1(21)+ |
@@ -154,7 +165,8 @@ resPromise.then(result => {
  
   
 
-#### hasAppSecureKeySync
+## soter.hasAppSecureKeySync
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -172,6 +184,7 @@ hasAppSecureKeySync(keyType: KeyType): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyType | KeyType | 是 | 密钥选型，当前只支持 soter.KeyType.ECC_P256。 |
@@ -179,6 +192,7 @@ hasAppSecureKeySync(keyType: KeyType): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 同步返回应用密钥的生成状态。true代表已生成，false代表未生成。 |
@@ -188,6 +202,7 @@ hasAppSecureKeySync(keyType: KeyType): boolean
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[SOTER免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-soter)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Parameter verification failed. |
@@ -207,7 +222,8 @@ console.info('Succeeded in doing hasAppSecureKeySync. hasAppSecureKey:', hasAppS
  
   
 
-#### hasAppSecureKey
+## soter.hasAppSecureKey
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -225,6 +241,7 @@ hasAppSecureKey(keyType: KeyType): Promise&lt;boolean&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyType | KeyType | 是 | 密钥选型，目前只支持 soter.KeyType.ECC_P256。 |
@@ -232,6 +249,7 @@ hasAppSecureKey(keyType: KeyType): Promise&lt;boolean&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象，返回应用密钥的生成状态。true代表已生成，false代表未生成。 |
@@ -241,6 +259,7 @@ hasAppSecureKey(keyType: KeyType): Promise&lt;boolean&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[SOTER免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-soter)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Parameter verification failed. |
@@ -267,7 +286,8 @@ hasAppSecureKeyPromise.then(result => {
  
   
 
-#### generateAppSecureKeySync
+## soter.generateAppSecureKeySync
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -285,6 +305,7 @@ generateAppSecureKeySync(keyType: KeyType): Uint8Array
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyType | KeyType | 是 | 密钥选型，目前只支持 soter.KeyType.ECC_P256。 |
@@ -292,6 +313,7 @@ generateAppSecureKeySync(keyType: KeyType): Uint8Array
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Uint8Array | 返回App应用密钥。 |
@@ -301,6 +323,7 @@ generateAppSecureKeySync(keyType: KeyType): Uint8Array
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[SOTER免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-soter)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Parameter verification failed. |
@@ -320,7 +343,8 @@ console.info('Succeeded in doing generateAppSecureKeySync. appSecureKey:', appSe
  
   
 
-#### generateAppSecureKey
+## soter.generateAppSecureKey
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -338,6 +362,7 @@ generateAppSecureKey(keyType: KeyType): Promise&lt;Uint8Array&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyType | KeyType | 是 | 密钥选型，目前只支持 soter.KeyType.ECC_P256，其余枚举值均报错。 |
@@ -345,6 +370,7 @@ generateAppSecureKey(keyType: KeyType): Promise&lt;Uint8Array&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Uint8Array&gt; | Promise对象，返回App应用密钥。 |
@@ -354,6 +380,7 @@ generateAppSecureKey(keyType: KeyType): Promise&lt;Uint8Array&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[SOTER免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-soter)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Parameter verification failed. |
@@ -380,7 +407,8 @@ appSecureKeyPromise.then(result => {
  
   
 
-#### getAppSecureKeySync
+## soter.getAppSecureKeySync
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -398,6 +426,7 @@ getAppSecureKeySync(keyType: KeyType): Uint8Array
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyType | KeyType | 是 | 密钥选型，目前只支持 soter.KeyType.ECC_P256。 |
@@ -405,6 +434,7 @@ getAppSecureKeySync(keyType: KeyType): Uint8Array
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Uint8Array | 返回App应用密钥。 |
@@ -414,6 +444,7 @@ getAppSecureKeySync(keyType: KeyType): Uint8Array
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[SOTER免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-soter)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Parameter verification failed. |
@@ -433,7 +464,8 @@ console.info('Succeeded in doing getAppSecureKeySync. appSecureKey:', appSecureK
  
   
 
-#### getAppSecureKey
+## soter.getAppSecureKey
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -451,6 +483,7 @@ getAppSecureKey(keyType: KeyType): Promise&lt;Uint8Array&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyType | KeyType | 是 | 密钥选型，目前只支持 soter.KeyType.ECC_P256。 |
@@ -458,6 +491,7 @@ getAppSecureKey(keyType: KeyType): Promise&lt;Uint8Array&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Uint8Array&gt; | Promise对象，返回App应用密钥。 |
@@ -467,6 +501,7 @@ getAppSecureKey(keyType: KeyType): Promise&lt;Uint8Array&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[SOTER免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-soter)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Parameter verification failed. |
@@ -493,7 +528,8 @@ appSecureKeyPromise.then(result => {
  
   
 
-#### hasAuthKeySync
+## soter.hasAuthKeySync
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -511,6 +547,7 @@ hasAuthKeySync(keyAlias: string, keyType: KeyType): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | 开发者自定义的密钥别名，keyAlias长度取值范围为[1, 31]。合法字符为：a-z, A-Z, 0-9, -(非首字符), _(非首字符)。 |
@@ -519,6 +556,7 @@ hasAuthKeySync(keyAlias: string, keyType: KeyType): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 同步返回AuthKey生成状态，true代表已生成，false代表未生成。 |
@@ -528,6 +566,7 @@ hasAuthKeySync(keyAlias: string, keyType: KeyType): boolean
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[SOTER免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-soter)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Parameter verification failed. |
@@ -548,7 +587,8 @@ console.info('Succeeded in doing hasAuthKeySync. hasAuthKey:', hasAuthKey);
  
   
 
-#### hasAuthKey
+## soter.hasAuthKey
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -566,6 +606,7 @@ hasAuthKey(keyAlias: string, keyType: KeyType): Promise&lt;boolean&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | 开发者自定义的密钥别名，keyAlias长度取值范围为[1, 31]。合法字符为：a-z, A-Z, 0-9, -(非首字符), _(非首字符)。 |
@@ -574,6 +615,7 @@ hasAuthKey(keyAlias: string, keyType: KeyType): Promise&lt;boolean&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象，返回查询AuthKey生成状态。true代表已生成，false代表未生成。 |
@@ -583,6 +625,7 @@ hasAuthKey(keyAlias: string, keyType: KeyType): Promise&lt;boolean&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[SOTER免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-soter)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Parameter verification failed. |
@@ -610,7 +653,8 @@ hasAuthKeyPromise.then((result: boolean) => {
  
   
 
-#### generateAuthKeySync
+## soter.generateAuthKeySync
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -628,6 +672,7 @@ generateAuthKeySync(keyAlias: string, keyType: KeyType): SignedResult
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | 开发者自定义的密钥别名，keyAlias长度取值范围为[1, 31]。合法字符为：a-z, A-Z, 0-9, -(非首字符), _(非首字符)。 |
@@ -636,6 +681,7 @@ generateAuthKeySync(keyAlias: string, keyType: KeyType): SignedResult
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | SignedResult | 返回SignedResult对象。其中signature为返回报文的签名，message为返回报文的原文，saltLength为加密盐值长度。 |
@@ -645,6 +691,7 @@ generateAuthKeySync(keyAlias: string, keyType: KeyType): SignedResult
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[SOTER免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-soter)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Parameter verification failed. |
@@ -666,7 +713,8 @@ console.info('Succeeded in doing generateAuthKeySync. authKey:', authKey);
  
   
 
-#### generateAuthKey
+## soter.generateAuthKey
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -684,6 +732,7 @@ generateAuthKey(keyAlias: string, keyType: KeyType): Promise&lt;SignedResult&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | 开发者自定义的密钥别名，keyAlias长度取值范围为[1, 31]。合法字符为：a-z, A-Z, 0-9, -(非首字符), _(非首字符)。 |
@@ -692,6 +741,7 @@ generateAuthKey(keyAlias: string, keyType: KeyType): Promise&lt;SignedResult&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;SignedResult&gt; | Promise对象，返回SignedResult对象。其中signature为返回报文的签名，message为返回报文的原文，saltLength为加密盐值长度。 |
@@ -701,6 +751,7 @@ generateAuthKey(keyAlias: string, keyType: KeyType): Promise&lt;SignedResult&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[SOTER免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-soter)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Parameter verification failed. |
@@ -728,7 +779,8 @@ authKeyPromise.then(result => {
  
   
 
-#### getAuthKeySync
+## soter.getAuthKeySync
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -746,6 +798,7 @@ getAuthKeySync(keyAlias: string, keyType: KeyType): SignedResult
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | 开发者自定义的密钥别名，keyAlias长度取值范围为[1, 31]。合法字符为：a-z, A-Z, 0-9, -(非首字符), _(非首字符)。 |
@@ -754,6 +807,7 @@ getAuthKeySync(keyAlias: string, keyType: KeyType): SignedResult
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | SignedResult | 返回SignedResult对象。其中signature为返回报文的签名，message为返回报文的原文，saltLength为加密盐值长度。 |
@@ -763,6 +817,7 @@ getAuthKeySync(keyAlias: string, keyType: KeyType): SignedResult
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[SOTER免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-soter)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Parameter verification failed. |
@@ -784,7 +839,8 @@ console.info('Succeeded in doing getAuthKeySync. authKey:', authKey);
  
   
 
-#### getAuthKey
+## soter.getAuthKey
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -802,6 +858,7 @@ getAuthKey(keyAlias: string, keyType: KeyType): Promise&lt;SignedResult&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | 开发者自定义的密钥别名，keyAlias长度取值范围为[1, 31]。合法字符为：a-z, A-Z, 0-9, -(非首字符), _(非首字符)。 |
@@ -810,6 +867,7 @@ getAuthKey(keyAlias: string, keyType: KeyType): Promise&lt;SignedResult&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;SignedResult&gt; | Promise对象，返回SignedResult对象。其中signature为返回报文的签名，message为返回报文的原文，saltLength为加密盐值长度。 |
@@ -819,6 +877,7 @@ getAuthKey(keyAlias: string, keyType: KeyType): Promise&lt;SignedResult&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[SOTER免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-soter)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Parameter verification failed. |
@@ -846,7 +905,8 @@ authKeyPromise.then(result => {
  
   
 
-#### generateChallengeSync
+## soter.generateChallengeSync
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -864,6 +924,7 @@ generateChallengeSync(keyAlias: string): Uint8Array
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | 开发者自定义的密钥别名，keyAlias长度取值范围为[1, 31]。合法字符为：a-z, A-Z, 0-9, -(非首字符), _(非首字符)。 |
@@ -871,6 +932,7 @@ generateChallengeSync(keyAlias: string): Uint8Array
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Uint8Array | 返回生成的Challenge。 |
@@ -880,6 +942,7 @@ generateChallengeSync(keyAlias: string): Uint8Array
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[SOTER免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-soter)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Parameter verification failed. |
@@ -899,7 +962,8 @@ console.info('Succeeded in doing generateChallengeSync. challenge:', challenge);
  
   
 
-#### generateChallenge
+## soter.generateChallenge
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -917,6 +981,7 @@ generateChallenge(keyAlias: string): Promise&lt;Uint8Array&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | 开发者自定义的密钥别名，keyAlias长度取值范围为[1, 31]。合法字符为：a-z, A-Z, 0-9, -(非首字符), _(非首字符)。 |
@@ -924,6 +989,7 @@ generateChallenge(keyAlias: string): Promise&lt;Uint8Array&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Uint8Array&gt; | Promise对象，返回生成的Challenge。 |
@@ -933,6 +999,7 @@ generateChallenge(keyAlias: string): Promise&lt;Uint8Array&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[SOTER免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-soter)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Parameter verification failed. |
@@ -959,7 +1026,8 @@ challengePromise.then(result => {
  
   
 
-#### signWithAuthKeySync
+## soter.signWithAuthKeySync
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -977,6 +1045,7 @@ SOTER免密认证，同步返回签名的报文。
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | 开发者自定义的密钥别名，keyAlias长度取值范围为[1, 31]。合法字符为：a-z, A-Z, 0-9, -(非首字符), _(非首字符)。 |
@@ -986,6 +1055,7 @@ SOTER免密认证，同步返回签名的报文。
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | SignedResult | 返回SignedResult对象。其中signature为返回报文的签名，message为返回报文的原文，saltLength为加密盐值长度。 |
@@ -995,6 +1065,7 @@ SOTER免密认证，同步返回签名的报文。
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[SOTER免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-soter)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Parameter verification failed. |
@@ -1015,7 +1086,8 @@ console.info('Succeeded in doing signWithAuthKeySync. authResult:', JSON.stringi
  
   
 
-#### signWithAuthKey
+## soter.signWithAuthKey
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1033,6 +1105,7 @@ SOTER免密认证，使用Promise异步回调返回签名的报文。
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | 开发者自定义的密钥别名，keyAlias长度取值范围为[1, 31]。合法字符为：a-z, A-Z, 0-9, -(非首字符), _(非首字符)。 |
@@ -1042,6 +1115,7 @@ SOTER免密认证，使用Promise异步回调返回签名的报文。
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;SignedResult&gt; | Promise对象，返回SignedResult对象。其中signature为返回报文的签名，message为返回报文的原文，saltLength为加密盐值长度。 |
@@ -1051,6 +1125,7 @@ SOTER免密认证，使用Promise异步回调返回签名的报文。
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[SOTER免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-soter)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Parameter verification failed. |
@@ -1078,7 +1153,8 @@ authResultPromise.then(result => {
  
   
 
-#### deleteAuthKeySync
+## soter.deleteAuthKeySync
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1096,6 +1172,7 @@ deleteAuthKeySync(keyAlias: string): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | 开发者自定义的密钥别名，keyAlias长度取值范围为[1, 31]。合法字符为：a-z, A-Z, 0-9, -(非首字符), _(非首字符)。 |
@@ -1105,6 +1182,7 @@ deleteAuthKeySync(keyAlias: string): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[SOTER免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-soter)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Parameter verification failed. |
@@ -1122,7 +1200,8 @@ soter.deleteAuthKeySync(keyAlias);
  
   
 
-#### deleteAuthKey
+## soter.deleteAuthKey
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1140,6 +1219,7 @@ deleteAuthKey(keyAlias: string): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | 开发者自定义的密钥别名，keyAlias长度取值范围为[1, 31]。合法字符为：a-z, A-Z, 0-9, -(非首字符), _(非首字符)。 |
@@ -1147,6 +1227,7 @@ deleteAuthKey(keyAlias: string): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -1156,6 +1237,7 @@ deleteAuthKey(keyAlias: string): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[SOTER免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-soter)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Parameter verification failed. |
@@ -1180,7 +1262,8 @@ delPromise.then(() => {
  
   
 
-#### deleteAppSecureKeySync
+## soter.deleteAppSecureKeySync
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1200,6 +1283,7 @@ deleteAppSecureKeySync(): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[SOTER免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-soter)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Device type error. 适用版本：6.0.1(21)+ |
@@ -1215,7 +1299,8 @@ soter.deleteAppSecureKeySync();
  
   
 
-#### deleteAppSecureKey
+## soter.deleteAppSecureKey
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1233,6 +1318,7 @@ deleteAppSecureKey(): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -1242,6 +1328,7 @@ deleteAppSecureKey(): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[SOTER免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-soter)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Device type error. 适用版本：6.0.1(21)+ |

@@ -60,9 +60,9 @@ struct JsonMergeDemo {
 ```text
 export class ObjectUtil {
   static Assign<T extends object, U>(target: T, source: U): T & U {
-    // 1、使用Object.assign()
+    <em>// 1、使用Object.assign()</em>
     return Object.assign(target, source);
-    // 2、使用扩展运算符
+  <em>  // 2、使用扩展运算符</em>
     return { ...target, ...source };
   }
 }

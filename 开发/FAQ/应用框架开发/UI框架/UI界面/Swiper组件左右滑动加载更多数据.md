@@ -43,7 +43,7 @@
 ```text
 import cryptoFramework from '@ohos.security.cryptoFramework';
 
-// 数据源，支持对数据的增删改查，并通知UI更新
+<em>// </em><em>数据源，支持对数据的增删改查，并通知UI更新</em>
 class MyDataSource implements IDataSource {
   private list: number[] = [];
   private listeners: DataChangeListener[] = [];
@@ -60,13 +60,13 @@ class MyDataSource implements IDataSource {
     return this.list[index];
   }
 
-  // 数组末尾添加数据
+ <em> // 数组末尾添加数据</em>
   pushData(element: number) {
     this.list.push(element);
     this.notifyDataReload();
   }
 
-  // 数组开头添加数据
+ <em> // 数组开头添加数据</em>
   unshiftData(element: number) {
     this.list.unshift(element);
     this.notifyDataAdd(0);
@@ -92,35 +92,35 @@ class MyDataSource implements IDataSource {
     }
   }
 
-  // 通知LazyForEach组件需要重载所有子组件
+ <em> // 通知LazyForEach组件需要重载所有子组件</em>
   notifyDataReload(): void {
     this.listeners.forEach(listener => {
       listener.onDataReloaded();
     });
   }
 
-  // 通知LazyForEach组件需要在index对应索引处添加子组件
+  <em>// </em><em>通知LazyForEach组件需要在index对应索引处添加子组件</em>
   notifyDataAdd(index: number): void {
     this.listeners.forEach(listener => {
       listener.onDataAdd(index);
     });
   }
 
-  // 通知LazyForEach组件在index对应索引处数据有变化，需要重建该子组件
+<em>  // 通知LazyForEach组件在index对应索引处数据有变化，需要重建该子组件</em>
   notifyDataChange(index: number): void {
     this.listeners.forEach(listener => {
       listener.onDataChange(index);
     });
   }
 
-  // 通知LazyForEach组件需要在index对应索引处删除该子组件
+ <em> // 通知LazyForEach组件需要在index对应索引处删除该子组件</em>
   notifyDataDelete(index: number): void {
     this.listeners.forEach(listener => {
       listener.onDataDelete(index);
     });
   }
 
-  // 通知LazyForEach组件将from索引和to索引处的子组件进行交换
+ <em> // 通知LazyForEach组件将from索引和to索引处的子组件进行交换</em>
   notifyDataMove(from: number, to: number): void {
     this.listeners.forEach(listener => {
       listener.onDataMove(from, to);
@@ -162,17 +162,17 @@ struct SwiperExample {
       .curve(Curve.Linear)
       .onAnimationStart((index: number, targetIndex: number, extraInfo: SwiperAnimationEvent) => {
         console.info('extraInfo', extraInfo);
-        // 下标为0时，向右滑动，模拟拉取新数据
+       <em> // 下标为0时，向右滑动，模拟拉取新数据</em>
         if (index === 0 && targetIndex === 0 && extraInfo.currentOffset > 0) {
           let rand = cryptoFramework.createRandom();
-          // 设置生成随机数的字节长度为1
+       <em>   // 设置生成随机数的字节长度为1</em>
           let randData = rand.generateRandomSync(1);
-          // 自定义范围(0-10之内)
+        <em>  // 自定义范围(0-10之内)</em>
           let num: number = Math.round(randData.data[0] * 10 / 255);
           this.data.unshiftData(num);
           this.swiperController.changeIndex(1);
         }
-        // 下标为数组最后一个时，向左滑动，模拟拉取新数据
+     <em>   // 下标为数组最后一个时，向左滑动，模拟拉取新数据</em>
         if (index === this.data.totalCount() - 1 && targetIndex === index && extraInfo.currentOffset < 0) {
           let rand = cryptoFramework.createRandom();
           let randData = rand.generateRandomSync(1);

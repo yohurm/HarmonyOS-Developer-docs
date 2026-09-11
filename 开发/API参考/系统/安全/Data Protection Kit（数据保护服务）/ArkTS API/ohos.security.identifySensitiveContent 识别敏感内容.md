@@ -1,6 +1,6 @@
 # @ohos.security.identifySensitiveContent (识别敏感内容)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-identifysensitivecontent
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -12,7 +12,8 @@
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -22,9 +23,10 @@ import { identifySensitiveContent } from '@kit.DataProtectionKit';
 
 
 
-#### identifySensitiveContent.scanFile
+## identifySensitiveContent.scanFile
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** PC/2in1
 
 scanFile(filePath: string, identifyPolicies:Array&lt;Policy&gt;): Promise<Array&lt;MatchResult&gt;>
 
@@ -36,6 +38,7 @@ scanFile(filePath: string, identifyPolicies:Array&lt;Policy&gt;): Promise<Array&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | filePath | string | 是 | 识别的文件路径，需使用物理路径，路径指向的文件必须存在且支持访问。 |
@@ -43,6 +46,7 @@ scanFile(filePath: string, identifyPolicies:Array&lt;Policy&gt;): Promise<Array&
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -53,11 +57,12 @@ scanFile(filePath: string, identifyPolicies:Array&lt;Policy&gt;): Promise<Array&
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[数据泄露防护DLP服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-dlp)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | permission denied. |
 | 801 | Capability not supported. |
-| 19110001 | Parameter error.Possible causes: 1. Incorrect policy format. 2. Invalid parameter range. |
+| 19110001 | Parameter error. Possible causes: 1. Incorrect policy format. 2. Invalid parameter range. |
 | 19110002 | Sensitive file content identification timed out. |
 | 19110003 | The file is not supported. Possible causes: 1. The file path does not exist. 2. The file type is not supported. 3. The file permission is not supported. |
 | 19110004 | A system error has occurred. |
@@ -67,12 +72,13 @@ scanFile(filePath: string, identifyPolicies:Array&lt;Policy&gt;): Promise<Array&
 
 ```text
 import { identifySensitiveContent } from '@kit.DataProtectionKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 // 定义待扫描的文件物理路径
-let filePath = "/data/service/el2/100/hmdfs/account/files/Docs/Documents/test.txt";
+const filePath = '/data/service/el2/100/hmdfs/account/files/Docs/Documents/test.txt';
 
 // 配置敏感内容识别策略
-let policies: Array<identifySensitiveContent.Policy> = [
+const policies: Array<identifySensitiveContent.Policy> = [
   {"sensitiveLabel":"name", "keywords":["姓名"], "regex":""},
   {"sensitiveLabel":"phone", "keywords":[], "regex":"电话"},
   {"sensitiveLabel":"address", "keywords":["地址"], "regex":"xx省xx市"}
@@ -88,16 +94,17 @@ try {
     }
   }).catch((err: BusinessError) => {
     // 处理识别失败
-    console.error(`Failed to scanFile. Code:${err.code}, message:${err.message}`);
-  })
+    console.error(`Failed to scanFile. Code: ${err.code}, message: ${err.message}`);
+  });
 } catch (err) {
-  console.error('error message', err.message);
+  console.error(`Failed to scanFile. Code: ${err.code}, message: ${err.message}`);
 }
 ```
 
 
 
-#### Policy
+## Policy
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -110,6 +117,7 @@ try {
 
 **系统能力：** SystemCapability.Security.DataLossPrevention
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | sensitiveLabel | string | 否 | 否 | 表示识别策略的标签，用于标识和分类匹配结果。长度范围1-30字节。 |
@@ -119,13 +127,15 @@ try {
 
 
 
-#### MatchResult
+## MatchResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 表示敏感内容的识别结果。
 
 **系统能力：** SystemCapability.Security.DataLossPrevention
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

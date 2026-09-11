@@ -1,11 +1,12 @@
 # XEG_RTShadowAODenoiserParameters
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-kit-xeg-rtshadowaodenoiserparameters
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -19,16 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | float temporalBlendFactor = 0.075f | 时域滤波时当前帧与历史帧混合的权重系数。一致性校验通过后，权重值越大，越多采用当前帧的信息。此参数的值将被限制在[0.01, 1.0]范围内。默认值为0.075。 |
@@ -41,13 +45,15 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### ghostingAlpha
+### ghostingAlpha
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -61,7 +67,8 @@ float XEG_RTShadowAODenoiserParameters::ghostingAlpha = 0.0f
  
   
 
-#### positionConstantDistance
+### positionConstantDistance
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -75,7 +82,8 @@ float XEG_RTShadowAODenoiserParameters::positionConstantDistance = 1.0f
  
   
 
-#### spatialDenoiseTimes
+### spatialDenoiseTimes
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -89,7 +97,8 @@ uint32_t XEG_RTShadowAODenoiserParameters::spatialDenoiseTimes = 2
  
   
 
-#### spatialMaxKernelStep
+### spatialMaxKernelStep
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -103,7 +112,8 @@ uint32_t XEG_RTShadowAODenoiserParameters::spatialMaxKernelStep = 0
  
   
 
-#### spatialNormalWeight
+### spatialNormalWeight
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -117,7 +127,8 @@ float XEG_RTShadowAODenoiserParameters::spatialNormalWeight = 1.0f
  
   
 
-#### temporalBlendFactor
+### temporalBlendFactor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 

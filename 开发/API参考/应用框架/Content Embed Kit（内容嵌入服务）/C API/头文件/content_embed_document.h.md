@@ -1,11 +1,12 @@
 # content_embed_document.h
 
-更新时间：2026-05-26 06:48:54
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-content-embed-document-h
 **支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 结构体
+### 结构体
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | ContentEmbed_Document | ContentEmbed_Document | 声明OE文档结构体类型。封装了被嵌入文档的元数据、内容和存储结构。 |
@@ -44,10 +48,12 @@
  
   
 
-#### 宏定义
+### 宏定义
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | MAX_PATH_LENGTH (4 * 1024) | 表示支持文件路径的最大长度。 起始版本： 24 |
@@ -55,10 +61,12 @@
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | ContentEmbed_ErrorCode OH_ContentEmbed_CreateDocumentByOEid(const char *oeid, ContentEmbed_Document **document) | 使用提供的标识符OEID创建一个新的ContentEmbed_Document实例。 开发者可通过OH_ContentEmbed_DestroyDocument销毁实例，以避免内存泄漏。 |
@@ -101,13 +109,15 @@
  
   
 
-#### 函数说明
+## 函数说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### OH_ContentEmbed_CreateDocumentByOEid()
+### OH_ContentEmbed_CreateDocumentByOEid()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -125,6 +135,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_CreateDocumentByOEid(const char *oeid, Co
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *oeid | 用于唯一表示OE文档的标识符OEID，建议数组长度为MAX_OEID_LENGTH。 |
@@ -133,6 +144,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_CreateDocumentByOEid(const char *oeid, Co
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_NULL_POINTER：表示返回空指针。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -140,7 +152,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_CreateDocumentByOEid(const char *oeid, Co
  
   
 
-#### OH_ContentEmbed_CreateDocumentByFile()
+### OH_ContentEmbed_CreateDocumentByFile()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -158,6 +171,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_CreateDocumentByFile(const char *srcFileP
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *srcFilePath | 源文件路径。 |
@@ -168,6 +182,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_CreateDocumentByFile(const char *srcFileP
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_NULL_POINTER：表示返回空指针。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 CE_ERR_INVALID_LINKING_PATH：表示链接文件在应用沙箱中，无法创建链接。 |
@@ -175,7 +190,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_CreateDocumentByFile(const char *srcFileP
  
   
 
-#### OH_ContentEmbed_LoadDocumentFromFile()
+### OH_ContentEmbed_LoadDocumentFromFile()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -193,6 +209,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_LoadDocumentFromFile(const char *srcFileP
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *srcFilePath | 源文件路径，指向要加载的OE格式文件。 |
@@ -202,6 +219,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_LoadDocumentFromFile(const char *srcFileP
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_NULL_POINTER：表示返回空指针。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -209,7 +227,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_LoadDocumentFromFile(const char *srcFileP
  
   
 
-#### OH_ContentEmbed_Document_Read()
+### OH_ContentEmbed_Document_Read()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -225,6 +244,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Document_Read(uint8_t *buffer, size_t len
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint8_t *buffer | 输出参数。用于存储从OE文档读取的数据的缓冲区。 |
@@ -236,6 +256,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Document_Read(uint8_t *buffer, size_t len
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_NULL_POINTER：表示返回空指针。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_STORAGE_OPERATION_FAILED：表示OE格式文件目录相关操作失败。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -243,7 +264,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Document_Read(uint8_t *buffer, size_t len
  
   
 
-#### OH_ContentEmbed_Document_GetOEid()
+### OH_ContentEmbed_Document_GetOEid()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -259,6 +281,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Document_GetOEid(const ContentEmbed_Docum
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ContentEmbed_Document *document | 指向OE文档对象指针。 |
@@ -267,6 +290,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Document_GetOEid(const ContentEmbed_Docum
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -274,7 +298,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Document_GetOEid(const ContentEmbed_Docum
  
   
 
-#### OH_ContentEmbed_Document_IsLinking()
+### OH_ContentEmbed_Document_IsLinking()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -290,6 +315,7 @@ OE文档是否以链接方式创建。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ContentEmbed_Document *document | 指向OE文档对象指针。 |
@@ -298,6 +324,7 @@ OE文档是否以链接方式创建。
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -305,7 +332,8 @@ OE文档是否以链接方式创建。
  
   
 
-#### OH_ContentEmbed_Document_GetNativeFilePath()
+### OH_ContentEmbed_Document_GetNativeFilePath()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -321,6 +349,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Document_GetNativeFilePath(const ContentE
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ContentEmbed_Document *document | 指向OE文档对象指针。 |
@@ -329,6 +358,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Document_GetNativeFilePath(const ContentE
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -336,7 +366,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Document_GetNativeFilePath(const ContentE
  
   
 
-#### OH_ContentEmbed_Document_GetRootStorage()
+### OH_ContentEmbed_Document_GetRootStorage()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -354,6 +385,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Document_GetRootStorage(ContentEmbed_Docu
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_Document *document | 指向OE文档对象指针。 |
@@ -362,6 +394,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Document_GetRootStorage(ContentEmbed_Docu
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_NULL_POINTER：表示返回空指针。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -369,7 +402,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Document_GetRootStorage(ContentEmbed_Docu
  
   
 
-#### OH_ContentEmbed_Document_Flush()
+### OH_ContentEmbed_Document_Flush()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -385,6 +419,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Document_Flush(const ContentEmbed_Documen
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ContentEmbed_Document *document | 指向OE文档对象指针。 |
@@ -392,6 +427,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Document_Flush(const ContentEmbed_Documen
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_FILE_OPERATION_FAILED：表示文件操作失败。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -399,7 +435,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Document_Flush(const ContentEmbed_Documen
  
   
 
-#### OH_ContentEmbed_Storage_CreateStorage()
+### OH_ContentEmbed_Storage_CreateStorage()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -417,6 +454,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Storage_CreateStorage(const ContentEmbed_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ContentEmbed_Storage *parentStorage | 指向OE文档父Storage对象指针。 当需要从父Storage对象删除指定的子Storage对象时，可以调用OH_ContentEmbed_Storage_DeleteEntry。 当需要从父Storage对象删除所有的子Storage对象时，可以调用OH_ContentEmbed_Storage_DeleteAllEntry。 |
@@ -426,6 +464,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Storage_CreateStorage(const ContentEmbed_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败，可能是parentStorage无效或名称无效。 CE_ERR_NULL_POINTER：表示返回空指针，可能是childStorage创建失败。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_STORAGE_OPERATION_FAILED：表示存储操作失败，可能是磁盘空间不足。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -433,7 +472,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Storage_CreateStorage(const ContentEmbed_
  
   
 
-#### OH_ContentEmbed_Storage_GetStorage()
+### OH_ContentEmbed_Storage_GetStorage()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -451,6 +491,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Storage_GetStorage(const ContentEmbed_Sto
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ContentEmbed_Storage *parentStorage | 指向OE文档父Storage对象指针。 |
@@ -460,6 +501,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Storage_GetStorage(const ContentEmbed_Sto
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_NULL_POINTER：表示返回空指针。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_STORAGE_OPERATION_FAILED：表示OE格式文件目录相关操作失败。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -467,7 +509,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Storage_GetStorage(const ContentEmbed_Sto
  
   
 
-#### OH_ContentEmbed_Storage_CreateStream()
+### OH_ContentEmbed_Storage_CreateStream()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -485,6 +528,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Storage_CreateStream(ContentEmbed_Storage
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_Storage *parentStorage | 指向OE文档父Storage对象指针。 当需要从父Storage对象删除指定的子Stream对象时，可以调用OH_ContentEmbed_Storage_DeleteEntry。 当需要从父Storage对象删除所有的子Stream对象时，可以调用OH_ContentEmbed_Storage_DeleteAllEntry。 |
@@ -494,6 +538,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Storage_CreateStream(ContentEmbed_Storage
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_NULL_POINTER：表示返回空指针。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_STORAGE_OPERATION_FAILED：表示OE格式文件目录相关操作失败。 CE_ERR_STREAM_OPERATION_FAILED：表示OE格式文件流操作失败。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -501,7 +546,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Storage_CreateStream(ContentEmbed_Storage
  
   
 
-#### OH_ContentEmbed_Storage_GetStream()
+### OH_ContentEmbed_Storage_GetStream()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -519,6 +565,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Storage_GetStream(ContentEmbed_Storage *p
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_Storage *parentStorage | 指向OE文档父Storage对象指针。 |
@@ -528,6 +575,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Storage_GetStream(ContentEmbed_Storage *p
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_NULL_POINTER：表示返回空指针。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_STORAGE_OPERATION_FAILED：表示OE格式文件目录相关操作失败。 CE_ERR_STREAM_OPERATION_FAILED：表示OE格式文件流操作失败。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -535,7 +583,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Storage_GetStream(ContentEmbed_Storage *p
  
   
 
-#### OH_ContentEmbed_Storage_DeleteEntry()
+### OH_ContentEmbed_Storage_DeleteEntry()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -551,6 +600,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Storage_DeleteEntry(ContentEmbed_Storage 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_Storage *parentStorage | 指向OE文档父Storage对象指针。 |
@@ -559,6 +609,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Storage_DeleteEntry(ContentEmbed_Storage 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_NULL_POINTER：表示返回空指针。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_STORAGE_OPERATION_FAILED：表示OE格式文件目录相关操作失败。 CE_ERR_FILE_OPERATION_FAILED：表示OE格式文件操作失败。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -566,7 +617,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Storage_DeleteEntry(ContentEmbed_Storage 
  
   
 
-#### OH_ContentEmbed_Storage_DeleteAllEntry()
+### OH_ContentEmbed_Storage_DeleteAllEntry()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -582,6 +634,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Storage_DeleteAllEntry(ContentEmbed_Stora
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_Storage *storage | 指向OE文档Storage对象指针。 |
@@ -589,6 +642,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Storage_DeleteAllEntry(ContentEmbed_Stora
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_NULL_POINTER：表示返回空指针。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_STORAGE_OPERATION_FAILED：表示OE格式文件目录相关操作失败。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -596,7 +650,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Storage_DeleteAllEntry(ContentEmbed_Stora
  
   
 
-#### OH_ContentEmbed_DestroyStorage()
+### OH_ContentEmbed_DestroyStorage()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -612,6 +667,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_DestroyStorage(ContentEmbed_Storage *stor
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_Storage *storage | 指向OE文档Storage对象指针。 |
@@ -619,6 +675,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_DestroyStorage(ContentEmbed_Storage *stor
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -626,7 +683,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_DestroyStorage(ContentEmbed_Storage *stor
  
   
 
-#### OH_ContentEmbed_Stream_Read()
+### OH_ContentEmbed_Stream_Read()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -642,6 +700,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Stream_Read(ContentEmbed_Stream *stream, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_Stream *stream | 指向OE文档Stream对象指针。 |
@@ -652,6 +711,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Stream_Read(ContentEmbed_Stream *stream, 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_NULL_POINTER：表示返回空指针。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_STREAM_OPERATION_FAILED：表示流操作失败。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -659,7 +719,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Stream_Read(ContentEmbed_Stream *stream, 
  
   
 
-#### OH_ContentEmbed_Stream_Write()
+### OH_ContentEmbed_Stream_Write()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -675,6 +736,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Stream_Write(ContentEmbed_Stream *stream,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_Stream *stream | 指向OE文档Stream对象指针。 |
@@ -685,6 +747,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Stream_Write(ContentEmbed_Stream *stream,
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_NULL_POINTER：表示返回空指针。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_STREAM_OPERATION_FAILED：表示流操作失败。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -692,7 +755,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Stream_Write(ContentEmbed_Stream *stream,
  
   
 
-#### OH_ContentEmbed_Stream_Seek()
+### OH_ContentEmbed_Stream_Seek()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -708,6 +772,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Stream_Seek(ContentEmbed_Stream *stream, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_Stream *stream | 指向OE文档Stream对象指针。 |
@@ -716,6 +781,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Stream_Seek(ContentEmbed_Stream *stream, 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_NULL_POINTER：表示返回空指针。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_STREAM_OPERATION_FAILED：表示OE格式文件流相关操作失败。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -723,7 +789,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Stream_Seek(ContentEmbed_Stream *stream, 
  
   
 
-#### OH_ContentEmbed_Stream_GetPosition()
+### OH_ContentEmbed_Stream_GetPosition()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -739,6 +806,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Stream_GetPosition(ContentEmbed_Stream *s
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_Stream *stream | 指向OE文档Stream对象指针。 |
@@ -747,6 +815,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Stream_GetPosition(ContentEmbed_Stream *s
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_NULL_POINTER：表示返回空指针。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_STREAM_OPERATION_FAILED：表示OE格式文件流相关操作失败。 CE_ERR_FILE_OPERATION_FAILED：表示文件操作失败。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -754,7 +823,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Stream_GetPosition(ContentEmbed_Stream *s
  
   
 
-#### OH_ContentEmbed_Stream_GetSize()
+### OH_ContentEmbed_Stream_GetSize()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -770,6 +840,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Stream_GetSize(ContentEmbed_Stream *strea
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_Stream *stream | 指向OE文档Stream对象指针。 |
@@ -778,6 +849,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Stream_GetSize(ContentEmbed_Stream *strea
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_NULL_POINTER：表示返回空指针。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_STREAM_OPERATION_FAILED：表示OE格式文件流相关操作失败。 CE_ERR_FILE_OPERATION_FAILED：表示文件操作失败。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -785,7 +857,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Stream_GetSize(ContentEmbed_Stream *strea
  
   
 
-#### OH_ContentEmbed_DestroyStream()
+### OH_ContentEmbed_DestroyStream()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -801,6 +874,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_DestroyStream(ContentEmbed_Stream *stream
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_Stream *stream | 指向OE文档Stream对象指针。 |
@@ -808,6 +882,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_DestroyStream(ContentEmbed_Stream *stream
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -815,7 +890,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_DestroyStream(ContentEmbed_Stream *stream
  
   
 
-#### OH_ContentEmbed_DestroyDocument()
+### OH_ContentEmbed_DestroyDocument()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -831,6 +907,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_DestroyDocument(ContentEmbed_Document *do
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_Document *document | 指向OE文档对象指针。 |
@@ -838,6 +915,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_DestroyDocument(ContentEmbed_Document *do
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -845,7 +923,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_DestroyDocument(ContentEmbed_Document *do
  
   
 
-#### OH_ContentEmbed_Storage_GetOEid()
+### OH_ContentEmbed_Storage_GetOEid()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -861,6 +940,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Storage_GetOEid(ContentEmbed_Storage *sto
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_Storage *storage | 指向OE文档Storage对象指针。 |
@@ -870,6 +950,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Storage_GetOEid(ContentEmbed_Storage *sto
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_NULL_POINTER：表示返回空指针。 CE_ERR_STORAGE_OPERATION_FAILED：表示OE格式文件目录相关操作失败。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -877,7 +958,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Storage_GetOEid(ContentEmbed_Storage *sto
  
   
 
-#### OH_ContentEmbed_Storage_SetOEid()
+### OH_ContentEmbed_Storage_SetOEid()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -893,6 +975,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Storage_SetOEid(ContentEmbed_Storage *sto
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_Storage *storage | 指向OE文档Storage对象指针。 |
@@ -902,6 +985,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Storage_SetOEid(ContentEmbed_Storage *sto
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_NULL_POINTER：表示返回空指针。 CE_ERR_STORAGE_OPERATION_FAILED：表示OE格式文件目录相关操作失败。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -909,7 +993,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Storage_SetOEid(ContentEmbed_Storage *sto
  
   
 
-#### OH_ContentEmbed_StorageElements_Create()
+### OH_ContentEmbed_StorageElements_Create()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -927,6 +1012,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_StorageElements_Create(ContentEmbed_Stora
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_StorageElements **storageElements | 输出参数。调用成功后，该指针将指向ContentEmbed_StorageElements实例。 |
@@ -934,6 +1020,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_StorageElements_Create(ContentEmbed_Stora
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_NULL_POINTER：表示返回空指针。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -941,7 +1028,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_StorageElements_Create(ContentEmbed_Stora
  
   
 
-#### OH_ContentEmbed_StorageElements_Destroy()
+### OH_ContentEmbed_StorageElements_Destroy()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -957,6 +1045,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_StorageElements_Destroy(ContentEmbed_Stor
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_StorageElements *storageElements | 指向ContentEmbed_StorageElements实例指针。 |
@@ -964,6 +1053,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_StorageElements_Destroy(ContentEmbed_Stor
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_NULL_POINTER：表示返回空指针。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -971,7 +1061,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_StorageElements_Destroy(ContentEmbed_Stor
  
   
 
-#### OH_ContentEmbed_Storage_GetElements()
+### OH_ContentEmbed_Storage_GetElements()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -987,6 +1078,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Storage_GetElements(const ContentEmbed_St
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ContentEmbed_Storage *storage | 指向OE文档Storage对象指针。 |
@@ -995,6 +1087,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Storage_GetElements(const ContentEmbed_St
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_NULL_POINTER：表示返回空指针。 CE_ERR_STORAGE_OPERATION_FAILED：表示OE格式文件目录相关操作失败。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -1002,7 +1095,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Storage_GetElements(const ContentEmbed_St
  
   
 
-#### OH_ContentEmbed_StorageElements_GetCount()
+### OH_ContentEmbed_StorageElements_GetCount()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1018,6 +1112,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_StorageElements_GetCount(const ContentEmb
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ContentEmbed_StorageElements *storageElements | 指向ContentEmbed_StorageElements实例指针。 |
@@ -1026,6 +1121,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_StorageElements_GetCount(const ContentEmb
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_NULL_POINTER：表示返回空指针。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -1033,7 +1129,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_StorageElements_GetCount(const ContentEmb
  
   
 
-#### OH_ContentEmbed_StorageElements_GetElement()
+### OH_ContentEmbed_StorageElements_GetElement()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1049,6 +1146,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_StorageElements_GetElement(const ContentE
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ContentEmbed_StorageElements *storageElements | 指向ContentEmbed_StorageElements实例指针。 |
@@ -1058,6 +1156,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_StorageElements_GetElement(const ContentE
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_NULL_POINTER：表示返回空指针。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -1065,7 +1164,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_StorageElements_GetElement(const ContentE
  
   
 
-#### OH_ContentEmbed_StorageElement_GetName()
+### OH_ContentEmbed_StorageElement_GetName()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1081,6 +1181,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_StorageElement_GetName(const ContentEmbed
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ContentEmbed_StorageElement *storageElement | 指向ContentEmbed_StorageElement实例指针。 |
@@ -1090,6 +1191,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_StorageElement_GetName(const ContentEmbed
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_NULL_POINTER：表示返回空指针。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -1097,7 +1199,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_StorageElement_GetName(const ContentEmbed
  
   
 
-#### OH_ContentEmbed_StorageElement_GetCTime()
+### OH_ContentEmbed_StorageElement_GetCTime()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1113,6 +1216,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_StorageElement_GetCTime(const ContentEmbe
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ContentEmbed_StorageElement *element | 指向ContentEmbed_StorageElement实例指针。 |
@@ -1121,6 +1225,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_StorageElement_GetCTime(const ContentEmbe
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_NULL_POINTER：表示返回空指针。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -1128,7 +1233,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_StorageElement_GetCTime(const ContentEmbe
  
   
 
-#### OH_ContentEmbed_StorageElement_GetMTime()
+### OH_ContentEmbed_StorageElement_GetMTime()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1144,6 +1250,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_StorageElement_GetMTime(const ContentEmbe
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ContentEmbed_StorageElement *element | 指向ContentEmbed_StorageElement实例指针。 |
@@ -1152,6 +1259,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_StorageElement_GetMTime(const ContentEmbe
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_NULL_POINTER：表示返回空指针。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -1159,7 +1267,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_StorageElement_GetMTime(const ContentEmbe
  
   
 
-#### OH_ContentEmbed_StorageElement_IsStorage()
+### OH_ContentEmbed_StorageElement_IsStorage()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1175,6 +1284,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_StorageElement_IsStorage(const ContentEmb
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ContentEmbed_StorageElement *storageElement | 指向ContentEmbed_StorageElement实例指针。 |
@@ -1183,6 +1293,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_StorageElement_IsStorage(const ContentEmb
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_NULL_POINTER：表示返回空指针。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -1190,7 +1301,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_StorageElement_IsStorage(const ContentEmb
  
   
 
-#### OH_ContentEmbed_StorageElement_IsStream()
+### OH_ContentEmbed_StorageElement_IsStream()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1206,6 +1318,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_StorageElement_IsStream(const ContentEmbe
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ContentEmbed_StorageElement *element | 指向ContentEmbed_StorageElement实例指针。 |
@@ -1214,6 +1327,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_StorageElement_IsStream(const ContentEmbe
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_NULL_POINTER：表示返回空指针。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -1221,7 +1335,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_StorageElement_IsStream(const ContentEmbe
  
   
 
-#### OH_ContentEmbed_Storage_CopyTo()
+### OH_ContentEmbed_Storage_CopyTo()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1237,6 +1352,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Storage_CopyTo(ContentEmbed_Storage *srcS
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_Storage *srcStorage | 指向源OE文档Storage对象指针。 |
@@ -1245,6 +1361,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Storage_CopyTo(ContentEmbed_Storage *srcS
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_NULL_POINTER：表示返回空指针。 CE_ERR_STORAGE_OPERATION_FAILED：表示存储操作失败。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |

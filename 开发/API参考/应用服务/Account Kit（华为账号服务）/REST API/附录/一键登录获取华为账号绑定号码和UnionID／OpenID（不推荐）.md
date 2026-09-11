@@ -1,10 +1,11 @@
 # 一键登录获取华为账号绑定号码和UnionID/OpenID（不推荐）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-api-get-user-info-quicklogin-getid
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/4poZzh2fSFS-_Z0Tm3gE3A/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071727Z&HW-CC-Expire=86400&HW-CC-Sign=42D496553C586E78210DA1E09A47E3C727DDD299078A43CAD571E1534BBBA055)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/iAz4lHhlTW6dtzNvZMO1sA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072232Z&HW-CC-Expire=86400&HW-CC-Sign=42CB4BABEB418E5B34E8DC871D2C5A50083A9E13699F5999C83988818F1703C0)
 
 
 为了更安全的网络访问，请务必使用TLS1.2协议及规定内的加密套件。若使用协议是TLS1.0、TLS1.1或规定外的加密套件，可能无法正常访问华为账号服务。
@@ -18,19 +19,28 @@
 
 
 
-#### 功能介绍
+## 功能介绍
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [华为账号一键登录（获取手机号和UnionID/OpenID）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-phone-unionid-login)场景，应用服务端向华为账号服务器调用该接口获取UnionID，OpenID，华为账号绑定的手机号码及其相关信息。该服务仅对中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）用户提供。
 
 
 
-#### 场景描述
+## 场景描述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 应用已经通过授权码（Authorization Code）获取到Access Token后，获取UnionID，OpenID，华为账号绑定的手机号码及其相关信息。
 
 
 
-#### 使用约束
+## 使用约束
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
  - 需确保调用端网络正常。
  - 华为账号一键登录服务仅对中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）用户提供；且应用服务端获取华为账号绑定号码时，该服务器必须部署在中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）。
@@ -43,7 +53,10 @@
 
 
 
-#### 接口原型
+## 接口原型
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
  - **承载协议**：HTTPS POST
  - **接口方向**：开发者服务器->华为账号服务器
@@ -57,11 +70,18 @@
 
 
 
-#### 请求参数
+## 请求参数
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 
 
-#### Request Header
+### Request Header
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
@@ -70,7 +90,11 @@
 
 
 
-#### Request Body
+### Request Body
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
@@ -79,7 +103,10 @@
 
 
 
-#### 请求示例
+## 请求示例
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 请通过POST方式调用，示例如下：
 
@@ -93,11 +120,18 @@ access_token=<Access Token>
 
 
 
-#### 响应参数
+## 响应参数
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 
 
-#### Response Header
+### Response Header
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
@@ -106,9 +140,13 @@ access_token=<Access Token>
 
 
 
-#### Response Body
+### Response Body
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 调用成功时，响应消息返回如下：
+
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
@@ -127,6 +165,7 @@ access_token=<Access Token>
 
 调用失败时，响应消息返回如下：
 
+
 | 参数 | 参数位置 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | NSP_STATUS | header | String | 错误码，详见本章节错误码。 |
@@ -135,11 +174,17 @@ access_token=<Access Token>
 
 
 
-#### 响应示例
+## 响应示例
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 
 
-#### 请求成功时
+### 请求成功时
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```json
 HTTP/1.1 200 OK
@@ -160,7 +205,10 @@ Content-Type: application/json;charset=utf-8
 
 
 
-#### 请求失败时
+### 请求失败时
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```json
 HTTP/1.1 200 OK
@@ -174,7 +222,10 @@ NSP_STATUS: 6
 
 
 
-#### 从中国境外、香港特别行政区、澳门特别行政区或中国台湾服务器请求时
+### 从中国境外、香港特别行政区、澳门特别行政区或中国台湾服务器请求时
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```json
 HTTP/1.1 200 OK
@@ -188,7 +239,10 @@ Content-Type: application/json;charset=utf-8
 
 
 
-#### 示例代码
+## 示例代码
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Java示例代码如下，运行前需要进行[示例代码环境配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-api-common#示例代码环境配置)（请将此示例代码与工具类CallUtils放于同一路径下，如不在同一路径，请手动添加import）
 
@@ -242,7 +296,11 @@ public class GetMobileByQuickLoginDemo {
 
 
 
-#### 错误码
+## 错误码
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | HTTP响应码 | 描述 | 解决方法 |
 | --- | --- | --- |
@@ -259,6 +317,7 @@ public class GetMobileByQuickLoginDemo {
 
 > [!NOTE]
 > Response Header中的NSP_STATUS字段，在处理成功时不会返回。
+
 
 
 | NSP_STATUS | 描述 | 解决方法 |

@@ -1,20 +1,21 @@
 # @ohos.wantAgent (WantAgent模块)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-wantagent
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-WantAgent模块提供了创建WantAgent实例、获取实例的用户ID、获取want信息、比较WantAgent实例和获取bundle名称等能力。
+WantAgent模块提供了创建WantAgent实例、获取实例的用户ID、获取Want信息、比较WantAgent实例和获取Bundle名称等能力。
  
 > [!NOTE]
 > 本模块首批接口从API version 7开始支持，从API version 9废弃，替换模块为 @ohos.app.ability.wantAgent 。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import wantAgent from '@ohos.wantAgent';
@@ -22,9 +23,10 @@ import wantAgent from '@ohos.wantAgent';
  
   
 
-#### wantAgent.getWantAgent
+## wantAgent.getWantAgent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getWantAgent(info: WantAgentInfo, callback: AsyncCallback&lt;WantAgent&gt;): void
  
@@ -36,6 +38,7 @@ getWantAgent(info: WantAgentInfo, callback: AsyncCallback&lt;WantAgent&gt;): voi
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | info | WantAgentInfo | 是 | WantAgent信息。 |
@@ -51,7 +54,7 @@ import { BusinessError } from '@ohos.base';
 // getWantAgent回调
 function getWantAgentCallback(err: BusinessError, data: _WantAgent) {
     if (err.code) {
-        console.info('getWantAgent Callback err:' + JSON.stringify(err));
+        console.error('getWantAgent Callback err:' + JSON.stringify(err));
     } else {
         console.info('getWantAgent Callback success');
     }
@@ -87,9 +90,10 @@ wantAgent.getWantAgent({
  
   
 
-#### wantAgent.getWantAgent
+## wantAgent.getWantAgent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getWantAgent(info: WantAgentInfo): Promise&lt;WantAgent&gt;
  
@@ -101,6 +105,7 @@ getWantAgent(info: WantAgentInfo): Promise&lt;WantAgent&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | info | WantAgentInfo | 是 | WantAgent信息。 |
@@ -108,6 +113,7 @@ getWantAgent(info: WantAgentInfo): Promise&lt;WantAgent&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;WantAgent&gt; | 以Promise形式返回WantAgent。 |
@@ -150,9 +156,10 @@ wantAgent.getWantAgent({
  
   
 
-#### wantAgent.getBundleName
+## wantAgent.getBundleName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBundleName(agent: WantAgent, callback: AsyncCallback&lt;string&gt;): void
  
@@ -164,6 +171,7 @@ getBundleName(agent: WantAgent, callback: AsyncCallback&lt;string&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | agent | WantAgent | 是 | WantAgent对象。 |
@@ -226,9 +234,10 @@ wantAgent.getWantAgent({
  
   
 
-#### wantAgent.getBundleName
+## wantAgent.getBundleName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBundleName(agent: WantAgent): Promise&lt;string&gt;
  
@@ -240,6 +249,7 @@ getBundleName(agent: WantAgent): Promise&lt;string&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | agent | WantAgent | 是 | WantAgent对象。 |
@@ -247,6 +257,7 @@ getBundleName(agent: WantAgent): Promise&lt;string&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | 以Promise形式返回获取WantAgent实例的Bundle名称。 |
@@ -298,9 +309,10 @@ wantAgent.getWantAgent({
  
   
 
-#### wantAgent.getUid
+## wantAgent.getUid
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUid(agent: WantAgent, callback: AsyncCallback&lt;number&gt;): void
  
@@ -312,6 +324,7 @@ getUid(agent: WantAgent, callback: AsyncCallback&lt;number&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | agent | WantAgent | 是 | WantAgent对象。 |
@@ -374,9 +387,10 @@ wantAgent.getWantAgent({
  
   
 
-#### wantAgent.getUid
+## wantAgent.getUid
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUid(agent: WantAgent): Promise&lt;number&gt;
  
@@ -388,6 +402,7 @@ getUid(agent: WantAgent): Promise&lt;number&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | agent | WantAgent | 是 | WantAgent对象。 |
@@ -395,6 +410,7 @@ getUid(agent: WantAgent): Promise&lt;number&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | 以Promise形式返回获取WantAgent实例的用户ID。 |
@@ -446,9 +462,10 @@ wantAgent.getWantAgent({
  
   
 
-#### wantAgent.cancel
+## wantAgent.cancel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancel(agent: WantAgent, callback: AsyncCallback&lt;void&gt;): void
  
@@ -460,6 +477,7 @@ cancel(agent: WantAgent, callback: AsyncCallback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | agent | WantAgent | 是 | WantAgent对象。 |
@@ -522,9 +540,10 @@ wantAgent.getWantAgent({
  
   
 
-#### wantAgent.cancel
+## wantAgent.cancel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancel(agent: WantAgent): Promise&lt;void&gt;
  
@@ -536,6 +555,7 @@ cancel(agent: WantAgent): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | agent | WantAgent | 是 | WantAgent对象。 |
@@ -543,6 +563,7 @@ cancel(agent: WantAgent): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 以Promise形式获取异步返回结果。 |
@@ -595,9 +616,10 @@ wantAgent.getWantAgent({
  
   
 
-#### wantAgent.trigger
+## wantAgent.trigger
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 trigger(agent: WantAgent, triggerInfo: TriggerInfo, callback?: Callback&lt;CompleteData&gt;): void
  
@@ -609,6 +631,7 @@ trigger(agent: WantAgent, triggerInfo: TriggerInfo, callback?: Callback&lt;Compl
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | agent | WantAgent | 是 | WantAgent对象。 |
@@ -673,9 +696,10 @@ wantAgent.getWantAgent({
  
   
 
-#### wantAgent.equal
+## wantAgent.equal
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 equal(agent: WantAgent, otherAgent: WantAgent, callback: AsyncCallback&lt;boolean&gt;): void
  
@@ -687,6 +711,7 @@ equal(agent: WantAgent, otherAgent: WantAgent, callback: AsyncCallback&lt;boolea
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | agent | WantAgent | 是 | WantAgent对象。 |
@@ -752,9 +777,10 @@ wantAgent.getWantAgent({
  
   
 
-#### wantAgent.equal
+## wantAgent.equal
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 equal(agent: WantAgent, otherAgent: WantAgent): Promise&lt;boolean&gt;
  
@@ -766,6 +792,7 @@ equal(agent: WantAgent, otherAgent: WantAgent): Promise&lt;boolean&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | agent | WantAgent | 是 | WantAgent对象。 |
@@ -774,6 +801,7 @@ equal(agent: WantAgent, otherAgent: WantAgent): Promise&lt;boolean&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | 以Promise形式返回获取判断两个WantAgent实例是否相等的结果。返回true表示两个WantAgent实例相等；返回false表示不相等。 |
@@ -827,14 +855,16 @@ wantAgent.getWantAgent({
  
   
 
-#### WantAgentFlags
+## WantAgentFlags
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
  
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ONE_TIME_FLAG | 0 | WantAgent仅能使用一次。 |
@@ -851,47 +881,52 @@ wantAgent.getWantAgent({
  
   
 
-#### OperationType
+## OperationType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
  
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | UNKNOWN_TYPE | 0 | 不识别的类型。 |
 | START_ABILITY | 1 | 开启一个有页面的Ability。 |
 | START_ABILITIES | 2 | 开启多个有页面的Ability。 |
-| START_SERVICE | 3 | 开启一个无页面的ability。 |
+| START_SERVICE | 3 | 开启一个无页面的Ability。 |
 | SEND_COMMON_EVENT | 4 | 发送一个公共事件。 |
  
  
   
 
-#### CompleteData
+## CompleteData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
  
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| info | WantAgent | 否 | 否 | 触发的wantAgent。 |
-| want | Want | 否 | 否 | 存在的被触发的want。 |
-| finalCode | number | 否 | 否 | 触发wantAgent的请求代码。 |
+| info | WantAgent | 否 | 否 | 触发的WantAgent。 |
+| want | Want | 否 | 否 | 存在的被触发的Want。 |
+| finalCode | number | 否 | 否 | 触发WantAgent的请求代码。 |
 | finalData | string | 否 | 否 | 公共事件收集的最终数据。 |
 | extraInfo | { [key: string]: any } | 否 | 是 | 额外数据。 |
  
  
   
 
-#### WantAgent
+## WantAgent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type WantAgent = object
  
@@ -901,6 +936,7 @@ WantAgent对象。
  
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
   
+
 | 类型 | 说明 |
 | --- | --- |
 | object | WantAgent对象。 |

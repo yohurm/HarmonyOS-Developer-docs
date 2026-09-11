@@ -1,9 +1,9 @@
 # PinchGesture
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-gestures-pinchgesture
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于触发捏合手势，常用于实现图片、页面内容等对象的缩放交互。最少需要2指，最多5指，最小识别距离为5vp。在支持鼠标和键盘输入的设备上，通过“Ctrl+鼠标滚轮”也可以触发捏合手势。
  
@@ -12,15 +12,17 @@
 
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### PinchGesture
+### PinchGesture
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 PinchGesture(value?: { fingers?: number; distance?: number })
  
@@ -32,6 +34,7 @@ PinchGesture(value?: { fingers?: number; distance?: number })
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | { fingers?: number; distance?: number } | 否 | 设置捏合手势事件参数。 - fingers：触发捏合的最少手指数，最小为2指，最大为5指。 默认值：2 取值范围：[2, 5]。当设置的值不在该范围内时，会被转化为默认值。 触发手势的手指数量可以多于fingers数目，但只有最先落下的与fingers相同数目的手指参与手势计算。 - distance：最小识别距离，单位为vp。该距离是指当前参与手势计算的多根手指相对手指中心位置的平均横向偏移量与平均纵向偏移量计算得到的缩放距离，与手指落下时对应缩放距离之间的差值。当这一差值大于或等于最小识别距离时，捏合手势被视为成功。 默认值：5 说明： 取值范围：(0, +∞)。当识别距离的值小于等于0时，会被转化为默认值。 |
@@ -39,9 +42,10 @@ PinchGesture(value?: { fingers?: number; distance?: number })
  
   
 
-#### PinchGesture15+
+### PinchGesture15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 PinchGesture(options?: PinchGestureHandlerOptions)
  
@@ -55,6 +59,7 @@ PinchGesture(options?: PinchGestureHandlerOptions)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | PinchGestureHandlerOptions | 否 | 捏合手势处理器配置参数。当需要自定义触发捏合的最少手指数、最小识别距离或手指数量校验行为时传入；不传入时使用捏合手势默认配置（触发手指数为2、最小识别距离为5vp，手指数量校验采用PinchGestureHandlerOptions的默认行为）。 |
@@ -62,9 +67,10 @@ PinchGesture(options?: PinchGestureHandlerOptions)
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!TIP]
 > 在 GestureEvent 的fingerList元素中，手指索引编号与位置相对应，即fingerList[index]的id为index。对于先按下但未参与当前手势触发的手指，fingerList中对应的位置为空。建议开发者优先使用fingerInfos。
@@ -72,9 +78,10 @@ PinchGesture(options?: PinchGestureHandlerOptions)
  
   
 
-#### onActionStart
+### onActionStart
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onActionStart(event: (event: GestureEvent) => void)
  
@@ -86,6 +93,7 @@ onActionStart(event: (event: GestureEvent) => void)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | (event: GestureEvent) => void | 是 | 手势事件回调函数。 |
@@ -93,9 +101,10 @@ onActionStart(event: (event: GestureEvent) => void)
  
   
 
-#### onActionUpdate
+### onActionUpdate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onActionUpdate(event: (event: GestureEvent) => void)
  
@@ -107,6 +116,7 @@ onActionUpdate(event: (event: GestureEvent) => void)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | (event: GestureEvent) => void | 是 | 手势事件回调函数。 |
@@ -114,9 +124,10 @@ onActionUpdate(event: (event: GestureEvent) => void)
  
   
 
-#### onActionEnd
+### onActionEnd
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onActionEnd(event: (event: GestureEvent) => void)
  
@@ -128,6 +139,7 @@ onActionEnd(event: (event: GestureEvent) => void)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | (event: GestureEvent) => void | 是 | 手势事件回调函数。 |
@@ -135,9 +147,10 @@ onActionEnd(event: (event: GestureEvent) => void)
  
   
 
-#### onActionCancel
+### onActionCancel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onActionCancel(event: () => void)
  
@@ -149,6 +162,7 @@ onActionCancel(event: () => void)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | () => void | 是 | 手势事件回调函数。 |
@@ -156,9 +170,10 @@ onActionCancel(event: () => void)
  
   
 
-#### onActionCancel18+
+### onActionCancel18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onActionCancel(event: Callback&lt;GestureEvent&gt;)
  
@@ -172,6 +187,7 @@ onActionCancel(event: Callback&lt;GestureEvent&gt;)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | Callback&lt;GestureEvent&gt; | 是 | 手势事件回调函数。 |
@@ -179,13 +195,17 @@ onActionCancel(event: Callback&lt;GestureEvent&gt;)
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 示例1（实现简单缩放）
+### 示例1（实现简单缩放）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置PinchGesture实现了三指捏合手势的识别功能。
  
@@ -237,12 +257,15 @@ struct PinchGestureExample {
 ```
  
  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/wPwWv4AWTqq1Urc8PuKiZA/zh-cn_image_0000002656008370.png?HW-CC-KV=V1&HW-CC-Date=20260730T071458Z&HW-CC-Expire=86400&HW-CC-Sign=38D4C8818B93D024D00E22B55517C06822407CEB6CFC7D2757E795C2CD5390D7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/rVzIuKlHQLa-aJwRAN3_aA/zh-cn_image_0000002747292539.png?HW-CC-KV=V1&HW-CC-Date=20260911T073110Z&HW-CC-Expire=86400&HW-CC-Sign=E895C1F5A000BAFEE29636CB4E66E6BE74E75B28350D2A7E34E6A8FA92772016)
 
  
   
 
-#### 示例2（实现图片跟手缩放）
+### 示例2（实现图片跟手缩放）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过配置PinchGesture，该示例实现了图片的跟手缩放效果。
  
@@ -339,4 +362,4 @@ struct PinchGestureExample {
 ```
  
  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/uKUMNg-iSXSUgDwIoJLsyw/zh-cn_image_0000002655848450.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071458Z&HW-CC-Expire=86400&HW-CC-Sign=0046DA88AA87F4A68653668751442F2CEAFB504244039F8F77F31A8C68C156C7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/nOh9GBkCTqatPkk4wiQWXw/zh-cn_image_0000002747212455.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073110Z&HW-CC-Expire=86400&HW-CC-Sign=E077FE76D04437AAB3194FA41FC9E170BC92CFA63DC87E4A83A7002E9C0445F3)

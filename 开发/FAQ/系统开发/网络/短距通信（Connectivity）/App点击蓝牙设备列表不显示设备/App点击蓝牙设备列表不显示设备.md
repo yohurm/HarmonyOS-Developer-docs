@@ -70,7 +70,7 @@ List() {
         Row({ space: 5 }) {
           Button('链接').width(60).height(20).fontSize(12).onClick(() => {
             try {
-              // 实际的地址可由扫描流程获取
+           <em>   // 实际的地址可由扫描流程获取</em>
               connection.pairDevice(item.deviceId, () => {
                 this.getUIContext().getPromptAction().showToast({
                   message: '配对成功'
@@ -115,7 +115,7 @@ interface Device {
 @Entry
 @Component
 struct Index {
-  // 正确写法（Stage模型）
+<em>  // 正确写法（Stage模型）</em>
   private context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
   promptAction: PromptAction = this.getUIContext().getPromptAction();
 
@@ -127,7 +127,7 @@ struct Index {
     const permissions: Array<Permissions> = ['ohos.permission.ACCESS_BLUETOOTH'];
     let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
     atManager.requestPermissionsFromUser(this.context, permissions).then(() => {
-      // 授权成功
+   <em>   // 授权成功</em>
     }).catch((err: BusinessError) => {
       console.error(`Failed to request permissions from user. Code is ${err.code}, message is ${err.message}`);
     });
@@ -138,7 +138,7 @@ struct Index {
     Flex({ direction: FlexDirection.Column }) {
       Row() {
         Button('扫描蓝牙').onClick(() => {
-          // 开启扫描
+         <em> // 开启扫描</em>
           try {
             connection.startBluetoothDiscovery();
             console.info('startBleScan success');
@@ -152,7 +152,7 @@ struct Index {
           };
 
 
-          // 接收扫描结果
+        <em>  // 接收扫描结果</em>
           connection.on('bluetoothDeviceFind', (data: string[]) => {
             console.info(`data: ${JSON.stringify(data)} ${connection.getRemoteDeviceName(data[0])}`);
             if (!this.findList.find((item: Device) => item.deviceId === data[0])) {
@@ -167,7 +167,7 @@ struct Index {
 
         Button('停止扫描').onClick(() => {
           try {
-            // 关闭扫描
+        <em>    // 关闭扫描</em>
             connection.stopBluetoothDiscovery();
             console.info('stopBleScan success');
             this.getUIContext().getPromptAction().showToast({
@@ -199,7 +199,7 @@ struct Index {
               Row({ space: 5 }) {
                 Button('链接').width(60).height(20).fontSize(12).onClick(() => {
                   try {
-                    // 实际的地址可由扫描流程获取
+                  <em>  // 实际的地址可由扫描流程获取</em>
                     connection.pairDevice(item.deviceId, () => {
                       this.getUIContext().getPromptAction().showToast({
                         message: '配对成功'

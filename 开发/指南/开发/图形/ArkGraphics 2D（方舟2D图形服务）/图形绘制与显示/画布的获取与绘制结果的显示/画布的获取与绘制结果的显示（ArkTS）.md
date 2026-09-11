@@ -1,10 +1,10 @@
 # 画布的获取与绘制结果的显示（ArkTS）
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/canvas-get-result-draw-arkts
 
-#### 场景介绍
+## 场景介绍
 
 Canvas即画布，提供绘制基本图形的能力，用于在屏幕上绘制图形和处理图形。开发者可以通过Canvas实现自定义的绘图效果，增强应用的用户体验。
 
@@ -14,7 +14,7 @@ Canvas是图形绘制的核心，本章中提到的所有绘制操作（包括�
 
 
 
-#### 获取可直接显示的Canvas画布
+## 获取可直接显示的Canvas画布
 
 通过[RenderNode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode)获取可直接上屏显示的Canvas画布。
 1. 导入依赖的相关文件。
@@ -49,6 +49,7 @@ class MyRenderNodeDirectDisplay extends RenderNode {
       brush.setColor({red: 255, blue: 0, green: 0, alpha: 255});
       canvas.attachBrush(brush);
       canvas.drawRect({left: 0, right: 300, top: 0, bottom: 300});
+      canvas.detachBrush();
     }
   }
 }
@@ -101,6 +102,7 @@ async draw(context: DrawContext) {
     brush.setColor({red: 255, blue: 0, green: 0, alpha: 255});
     canvas.attachBrush(brush);
     canvas.drawRect({left: 0, right: 300, top: 0, bottom: 300});
+    canvas.detachBrush();
   }
 }
 ```
@@ -143,7 +145,7 @@ struct RenderTest {
 
 
 
-#### 离屏Canvas画布的获取与显示
+## 离屏Canvas画布的获取与显示
 1. 导入依赖的相关文件。
 
   
@@ -186,6 +188,7 @@ export class MyRenderNodeIndirectDisplay extends RenderNode {
       brush.setColor({ alpha: 255, red: 0, green: 0, blue: 255 });
       canvas_.attachBrush(brush);
       canvas_.drawRect({ left: 150, right: 575, top: 0, bottom: 600 });
+      canvas_.detachBrush();
 
       // 5.3 将离屏Canvas的绘制结果交给RenderNode
       canvas.drawImage(this.pixelMap, 0, 0);
@@ -275,6 +278,6 @@ struct RenderTest {
 
 
 
-#### 示例代码
+## 示例代码
 
  - [图形绘制（ArkTS）](https://gitcode.com/HarmonyOS_Samples/guide-snippets/tree/master/ArkGraphics2D/Drawing/ArkTSGraphicsDraw)

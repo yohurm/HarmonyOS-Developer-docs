@@ -1,6 +1,6 @@
 # WindowManager（窗口管理）
 
-更新时间：2026-06-12 06:54:11
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/speech-windowmanager
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -10,7 +10,8 @@
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -20,9 +21,10 @@ import { WindowManager } from '@kit.SpeechKit';
  
   
 
-#### setWindowStage
+## setWindowStage
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** PC/2in1
 
 static setWindowStage(windowStage: window.WindowStage): void
  
@@ -40,6 +42,7 @@ static setWindowStage(windowStage: window.WindowStage): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | windowStage | window.WindowStage | 是 | 窗口管理器。管理各个基本窗口单元，即Window实例。 |
@@ -91,9 +94,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### getWindowStage
+## getWindowStage
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** PC/2in1
 
 static getWindowStage(): window.WindowStage
  
@@ -111,6 +115,7 @@ static getWindowStage(): window.WindowStage
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | window.WindowStage | 窗口管理器。管理各个基本窗口单元，即Window实例。 |

@@ -28,16 +28,16 @@ struct WebComponent {
       Button('loadData')
         .onClick(() => {
           try {
-            // 点击按钮时，通过loadData，加载HTML格式的文本数据
+           <em> // 点击按钮时，通过loadData，加载HTML格式的文本数据</em>
            this.controller.loadData(
               '<body>\n' +
                 '<div">\n' +
                 '<p><strong>' +
-                '' +
+                '<span style="font-size: 20px; color: rgb(34, 34, 34)">' +
                 '<meta name="viewport" content="width=device-width, initial-scale=1.0">' +
                 '#特别提示：Test: LoadData Test！' +
                 '</mark>' +
-                '' +
+                '</span>' +
                 '</strong>\n' +
                 '</p>\n' +
                 '</div>\n' +
@@ -93,24 +93,24 @@ struct WebComponent {
       Button('loadData')
         .onClick(() => {
           try {
-            // 点击按钮时，通过loadData，加载HTML格式的文本数据
+          <em>  // 点击按钮时，通过loadData，加载HTML格式的文本数据</em>
             this.controller.loadData(
               '<body>\n' +
                 '<div">\n' +
                 '<p><strong>' +
-                '' +
+                '<span style="font-size: 20px; color: rgb(34, 34, 34)">' +
                 '<meta name="viewport" content="width=device-width, initial-scale=1.0">' +
                 '#特别提示：Test: LoadData Test！' +
                 '</mark>' +
-                '' +
+                '</span>' +
                 '</strong>\n' +
                 '</p>\n' +
                 '</div>\n' +
                 '</body>',
               'text/html',
               'UTF-8',
-              ' ', // baseUrl设置为空格
-              ' ' // historyUrl设置为空格
+              ' ', <em>// baseUrl设置为空格</em>
+              ' ' <em>// historyUrl设置为空格</em>
             );
           } catch (error) {
             console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
@@ -145,19 +145,19 @@ struct WebComponent1 {
           let htmlStr = '<body>\n' +
             '<div">\n' +
             '<p><strong>' +
-            '' +
+            '<span style="font-size: 20px; color: rgb(34, 34, 34)">' +
             '<meta name="viewport" content="width=device-width, initial-scale=1.0">' +
             '#特别提示：Test: LoadData Test！' +
             '</mark>' +
-            '' +
+            '</span>' +
             '</strong>\n' +
             '</p>\n' +
             '</div>\n' +
             '</body>';
-          // 对html进行编码转义
+         <em> // 对html进行编码转义</em>
           let encodeHtml = encodeURIComponent(htmlStr);
           try {
-            // 点击按钮时，通过loadData，加载HTML格式的文本数据
+          <em>  // 点击按钮时，通过loadData，加载HTML格式的文本数据</em>
             this.controller.loadData(
               encodeHtml,
               'text/html',

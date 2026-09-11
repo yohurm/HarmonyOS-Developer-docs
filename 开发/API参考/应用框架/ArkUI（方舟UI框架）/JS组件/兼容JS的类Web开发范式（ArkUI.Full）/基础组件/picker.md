@@ -1,9 +1,9 @@
 # picker
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-basic-picker
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 > [!NOTE]
 > 从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
@@ -12,28 +12,32 @@
 滑动选择器组件，类型支持普通选择器、日期选择器、时间选择器、日期时间选择器和多列文本选择器。
   
 
-#### 权限列表
+## 权限列表
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 无
  
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 不支持。
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-attributes)外，还支持如下属性：
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | type | string | - | 否 | 该属性值不支持动态修改。可选择项有： - text：文本选择器。 - date：日期选择器。 - time：时间选择器。 - datetime：日期时间选择器。 - multi-text：多列文本选择器。 |
@@ -41,27 +45,31 @@
  
   
 
-#### 普通选择器
+### 普通选择器
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 滑动选择器类型设置为text时表示普通选择器。
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
-| range | Array | - | 否 | 设置普通选择器的取值范围，如["15", "20", "25"]。 使用时需要使用数据绑定的方式range ={{data}}，js中声明相应变量data：["15","20","25"]。 |
+| range | Array | - | 否 | 设置普通选择器的取值范围，如["15", "20", "25"]。 使用时需要使用数据绑定的方式range ={{data}}，js中声明相应变量data:["15","20","25"]。 |
 | selected | string | 0 | 否 | 设置普通选择器弹窗的默认取值，取值需要是 range 的索引值，该取值表示选择器弹窗界面的默认选择值。 |
 | value | string | - | 否 | 设置普通选择器的值。 |
  
  
   
 
-#### 日期选择器
+### 日期选择器
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 滑动选择器类型设置为date时表示日期选择器。
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | start | &lt;time&gt; | 1970-1-1 | 否 | 设置日期选择器的起始时间，格式为 YYYY-MM-DD。 |
@@ -74,12 +82,14 @@
  
   
 
-#### 时间选择器
+### 时间选择器
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 滑动选择器类型设置为time时表示时间选择器。
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | containsecond | boolean | false | 否 | 设置时间选择器是否包含秒。 默认值：false，表示设置时间选择器不包含秒。 |
@@ -90,12 +100,14 @@
  
   
 
-#### 日期时间选择器
+### 日期时间选择器
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 滑动选择器类型设置为datetime时表示日期时间选择器，日期的选择范围为本年的日月。
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | selected | string | 当前日期时间 | 否 | 设置日期时间选择器弹窗的默认取值，有两种可选格式。 - 月日时分：MM-DD-HH-mm - 年月日时分：YYYY-MM-DD-HH-mm 不设置年时，默认使用当前年，该取值表示选择器弹窗界面的默认选择值。 |
@@ -107,28 +119,32 @@
  
   
 
-#### 多列文本选择器
+### 多列文本选择器
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 滑动选择器类型设置为multi-text时表示多列文本选择器。
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | columns | number | - | 是 | 设置多列文本选择器的列数。 |
-| range | 二维Array | - | 否 | 设置多列文本选择器的选择项，其中range 为二维数组。长度表示多少列，数组的每项表示每列的数据，如 [["a","b"], ["c","d"]]。 使用时需要使用数据绑定的方式range ={{data}}，js中声明相应变量data：[["a","b"], ["c","d"]]。 |
+| range | 二维Array | - | 否 | 设置多列文本选择器的选择项，其中range 为二维数组。长度表示多少列，数组的每项表示每列的数据，如 [["a","b"], ["c","d"]]。 使用时需要使用数据绑定的方式range ={{data}}，js中声明相应变量data:[["a","b"], ["c","d"]]。 |
 | selected | Array | [0,0,0,…] | 否 | 设置多列文本选择器弹窗的默认值，每一列被选中项对应的索引构成的数组，该取值表示选择器弹窗界面的默认选择值。 |
 | value | Array | - | 否 | 设置多列文本选择器的值，每一列被选中项对应的值构成的数组。 |
  
  
   
 
-#### 样式
+## 样式
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 除支持[通用样式](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-styles)外，还支持如下样式：
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | text-color | &lt;color&gt; | - | 否 | 选择器的文本颜色。 |
@@ -145,18 +161,21 @@
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-events)外，还支持如下事件：
  
   
 
-#### 普通选择器
+### 普通选择器
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
  
+
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | change | { newValue: newValue, newSelected: newSelected } | 普通选择器选择值后点击弹窗中的确认按钮时触发该事件（newSelected为索引）。 |
@@ -165,10 +184,12 @@
  
   
 
-#### 日期选择器
+### 日期选择器
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
  
+
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | change | { year: year, month: month, day: day } | 日期选择器选择值后点击弹窗中的确认按钮时触发该事件。 从API version 5开始，month值范围为： 0（1月）~11（12月）。 |
@@ -177,10 +198,12 @@
  
   
 
-#### 日期时间选择器
+### 日期时间选择器
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
  
+
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | change | { year: year, month: month, day: day, hour: hour, minute: minute} | 日期时间选择器选择值后点击弹窗中的确认按钮时触发该事件。 |
@@ -189,10 +212,12 @@
  
   
 
-#### 时间选择器
+### 时间选择器
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
  
+
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | change | { hour: hour, minute: minute, [second: second] } | 时间选择器选择值后点击弹窗中的确认按钮时触发该事件，当使用时分秒时，还包含秒数据。 |
@@ -201,10 +226,12 @@
  
   
 
-#### 多列文本选择器
+### 多列文本选择器
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
  
+
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | change | { newValue: [newValue1, newValue2, newValue3, …], newSelected:[newSelected1, newSelected2, newSelected3, …] } | 多列文本选择器选择值后点击弹窗中的确认按钮时触发该事件，其中： - newValue：被选中项对应的值构成的数组。 - newSelected：被选中项对应的索引构成的数组，两者的长度和range的长度一致。 |
@@ -214,12 +241,14 @@
  
   
 
-#### 方法
+## 方法
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 除支持[通用方法](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-methods)外，支持如下方法：
   
+
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | show | - | 显示 picker。 |
@@ -227,9 +256,10 @@
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 <!-- xxx.hml -->
@@ -387,4 +417,4 @@ export default {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/u4QQ03V2QjeXz53aavTPZw/zh-cn_image_0000002655849102.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071524Z&HW-CC-Expire=86400&HW-CC-Sign=174B79D43A82F9EAEDB4198C3315950AB9652D9B808A286DDC153E707655A2E7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/plyoLLlKTF-LCj03-6apKQ/zh-cn_image_0000002747293197.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072955Z&HW-CC-Expire=86400&HW-CC-Sign=D089EDDDB6DEE0F7EECF588100835A868ED892DA4A0820AF9E8BFE0C7A8CA1C3)

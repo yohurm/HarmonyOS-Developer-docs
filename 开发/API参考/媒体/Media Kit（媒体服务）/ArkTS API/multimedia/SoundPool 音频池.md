@@ -1,9 +1,9 @@
 # SoundPool (音频池)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-multimedia-soundpool
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 音频池提供了短音频的加载、播放、音量设置、循环设置、停止播放、资源卸载等功能。SoundPool适用于游戏音效、UI交互音效、通知音等需要快速响应和低延迟播放的场景。
 
@@ -14,9 +14,10 @@ SoundPool需要和@ohos.multimedia.media配合使用，需要先通过[media.cre
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { media } from '@kit.MediaKit';
@@ -25,15 +26,17 @@ import { audio } from '@kit.AudioKit';
 
 
 
-#### PlayParameters
+## PlayParameters
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示音频池播放参数设置。
 
 通过设置播放相关参数，来控制播放的音量，循环次数，播放优先级等参数。
 
 **系统能力：** SystemCapability.Multimedia.Media.SoundPool
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -47,13 +50,15 @@ import { audio } from '@kit.AudioKit';
 
 
 
-#### ErrorType20+
+## ErrorType20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，错误类型（用于区分错误发生阶段）。
 
 **系统能力：** SystemCapability.Multimedia.Media.SoundPool
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -63,13 +68,15 @@ import { audio } from '@kit.AudioKit';
 
 
 
-#### ErrorInfo20+
+## ErrorInfo20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 错误信息。
 
 **系统能力：** SystemCapability.Multimedia.Media.SoundPool
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -81,9 +88,10 @@ import { audio } from '@kit.AudioKit';
 
 
 
-#### SoundPool
+## SoundPool
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 音频池提供了系统声音的加载、播放、音量设置、循环设置、停止播放和资源卸载等功能，在调用SoundPool的接口前，需要先通过[media.createSoundPool](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-f#mediacreatesoundpool10)创建实例。
 
@@ -93,9 +101,10 @@ import { audio } from '@kit.AudioKit';
 
 
 
-#### load
+### load
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 load(uri: string, callback: AsyncCallback&lt;number&gt;): void
 
@@ -113,6 +122,7 @@ load(uri: string, callback: AsyncCallback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uri | string | 是 | 音频文件的加载路径描述，一般以"fd://"开头的文件描述。 |
@@ -122,6 +132,7 @@ load(uri: string, callback: AsyncCallback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -172,9 +183,10 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
 
 
 
-#### load
+### load
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 load(uri: string): Promise&lt;number&gt;
 
@@ -192,12 +204,14 @@ load(uri: string): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uri | string | 是 | 音频文件的加载路径描述，一般以"fd://"开头的文件描述。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -207,6 +221,7 @@ load(uri: string): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -257,9 +272,10 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
 
 
 
-#### load
+### load
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 load(fd: number, offset: number, length: number, callback: AsyncCallback&lt;number&gt;): void
 
@@ -275,6 +291,7 @@ load(fd: number, offset: number, length: number, callback: AsyncCallback&lt;numb
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fd | number | 是 | 资源句柄，通过resourceManager.getRawFd获取。 |
@@ -286,6 +303,7 @@ load(fd: number, offset: number, length: number, callback: AsyncCallback&lt;numb
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -376,9 +394,10 @@ function create(context: Context) {
 
 
 
-#### load
+### load
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 load(fd: number, offset: number, length: number): Promise&lt;number&gt;
 
@@ -394,6 +413,7 @@ load(fd: number, offset: number, length: number): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fd | number | 是 | 资源句柄，通过resourceManager.getRawFd获取。 |
@@ -403,6 +423,7 @@ load(fd: number, offset: number, length: number): Promise&lt;number&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象，返回soundID，有效值大于0。 |
@@ -411,6 +432,7 @@ load(fd: number, offset: number, length: number): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -497,9 +519,10 @@ function create(context: Context) {
 
 
 
-#### play
+### play
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 play(soundID: number, params: PlayParameters, callback: AsyncCallback&lt;number&gt;): void
 
@@ -508,6 +531,7 @@ play(soundID: number, params: PlayParameters, callback: AsyncCallback&lt;number&
 **系统能力：** SystemCapability.Multimedia.Media.SoundPool
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -519,6 +543,7 @@ play(soundID: number, params: PlayParameters, callback: AsyncCallback&lt;number&
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -571,9 +596,10 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
 
 
 
-#### play
+### play
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 play(soundID: number, callback: AsyncCallback&lt;number&gt;): void
 
@@ -582,6 +608,7 @@ play(soundID: number, callback: AsyncCallback&lt;number&gt;): void
 **系统能力：** SystemCapability.Multimedia.Media.SoundPool
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -592,6 +619,7 @@ play(soundID: number, callback: AsyncCallback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -636,9 +664,10 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
 
 
 
-#### play
+### play
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 play(soundID: number, params?: PlayParameters): Promise&lt;number&gt;
 
@@ -648,6 +677,7 @@ play(soundID: number, params?: PlayParameters): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | soundID | number | 是 | 资源ID，通过load方法获取。 |
@@ -655,6 +685,7 @@ play(soundID: number, params?: PlayParameters): Promise&lt;number&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -664,6 +695,7 @@ play(soundID: number, params?: PlayParameters): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -715,9 +747,10 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
 
 
 
-#### stop
+### stop
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stop(streamID: number, callback: AsyncCallback&lt;void&gt;): void
 
@@ -726,6 +759,7 @@ stop(streamID: number, callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Media.SoundPool
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -736,6 +770,7 @@ stop(streamID: number, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -779,9 +814,10 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
 
 
 
-#### stop
+### stop
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stop(streamID: number): Promise&lt;void&gt;
 
@@ -791,12 +827,14 @@ stop(streamID: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | streamID | number | 是 | 音频流ID，通过play方法获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -806,6 +844,7 @@ stop(streamID: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -847,9 +886,10 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
 
 
 
-#### setLoop
+### setLoop
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setLoop(streamID: number, loop: number, callback: AsyncCallback&lt;void&gt;): void
 
@@ -858,6 +898,7 @@ setLoop(streamID: number, loop: number, callback: AsyncCallback&lt;void&gt;): vo
 **系统能力：** SystemCapability.Multimedia.Media.SoundPool
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -869,6 +910,7 @@ setLoop(streamID: number, loop: number, callback: AsyncCallback&lt;void&gt;): vo
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -913,9 +955,10 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
 
 
 
-#### setLoop
+### setLoop
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setLoop(streamID: number, loop: number): Promise&lt;void&gt;
 
@@ -925,6 +968,7 @@ setLoop(streamID: number, loop: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | streamID | number | 是 | 音频流ID，通过play方法获取。 |
@@ -932,6 +976,7 @@ setLoop(streamID: number, loop: number): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -941,6 +986,7 @@ setLoop(streamID: number, loop: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -983,9 +1029,10 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
 
 
 
-#### setPriority
+### setPriority
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setPriority(streamID: number, priority: number, callback: AsyncCallback&lt;void&gt;): void
 
@@ -994,6 +1041,7 @@ setPriority(streamID: number, priority: number, callback: AsyncCallback&lt;void&
 **系统能力：** SystemCapability.Multimedia.Media.SoundPool
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1005,6 +1053,7 @@ setPriority(streamID: number, priority: number, callback: AsyncCallback&lt;void&
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1049,9 +1098,10 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
 
 
 
-#### setPriority
+### setPriority
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setPriority(streamID: number, priority: number): Promise&lt;void&gt;
 
@@ -1061,6 +1111,7 @@ setPriority(streamID: number, priority: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | streamID | number | 是 | 音频流ID，通过play方法获取。 |
@@ -1068,6 +1119,7 @@ setPriority(streamID: number, priority: number): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1077,6 +1129,7 @@ setPriority(streamID: number, priority: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1120,9 +1173,10 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
 
 
 
-#### setRate
+### setRate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setRate(streamID: number, rate: audio.AudioRendererRate, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1131,6 +1185,7 @@ setRate(streamID: number, rate: audio.AudioRendererRate, callback: AsyncCallback
 **系统能力：** SystemCapability.Multimedia.Media.SoundPool
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1142,6 +1197,7 @@ setRate(streamID: number, rate: audio.AudioRendererRate, callback: AsyncCallback
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1186,9 +1242,10 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
 
 
 
-#### setRate
+### setRate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setRate(streamID: number, rate: audio.AudioRendererRate): Promise&lt;void&gt;
 
@@ -1198,6 +1255,7 @@ setRate(streamID: number, rate: audio.AudioRendererRate): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | streamID | number | 是 | 音频流ID，通过play方法获取。 |
@@ -1205,6 +1263,7 @@ setRate(streamID: number, rate: audio.AudioRendererRate): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1214,6 +1273,7 @@ setRate(streamID: number, rate: audio.AudioRendererRate): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1256,9 +1316,10 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
 
 
 
-#### setVolume
+### setVolume
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setVolume(streamID: number, leftVolume: number, rightVolume: number, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1267,6 +1328,7 @@ setVolume(streamID: number, leftVolume: number, rightVolume: number, callback: A
 **系统能力：** SystemCapability.Multimedia.Media.SoundPool
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1279,6 +1341,7 @@ setVolume(streamID: number, leftVolume: number, rightVolume: number, callback: A
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1323,9 +1386,10 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
 
 
 
-#### setVolume
+### setVolume
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setVolume(streamID: number, leftVolume: number, rightVolume: number): Promise&lt;void&gt;
 
@@ -1334,6 +1398,7 @@ setVolume(streamID: number, leftVolume: number, rightVolume: number): Promise&lt
 **系统能力：** SystemCapability.Multimedia.Media.SoundPool
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1344,6 +1409,7 @@ setVolume(streamID: number, leftVolume: number, rightVolume: number): Promise&lt
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1352,6 +1418,7 @@ setVolume(streamID: number, leftVolume: number, rightVolume: number): Promise&lt
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1394,9 +1461,10 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
 
 
 
-#### setInterruptMode23+
+### setInterruptMode23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setInterruptMode(interruptMode: media.SoundInterruptMode): void
 
@@ -1407,6 +1475,7 @@ setInterruptMode(interruptMode: media.SoundInterruptMode): void
 **系统能力：** SystemCapability.Multimedia.Media.SoundPool
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1441,9 +1510,10 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
 
 
 
-#### unload
+### unload
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unload(soundID: number, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1452,6 +1522,7 @@ unload(soundID: number, callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Media.SoundPool
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1462,6 +1533,7 @@ unload(soundID: number, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1505,9 +1577,10 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
 
 
 
-#### unload
+### unload
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unload(soundID: number): Promise&lt;void&gt;
 
@@ -1517,12 +1590,14 @@ unload(soundID: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | soundID | number | 是 | 资源ID，通过load方法获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1532,6 +1607,7 @@ unload(soundID: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1574,9 +1650,10 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
 
 
 
-#### release
+### release
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(callback: AsyncCallback&lt;void&gt;): void
 
@@ -1586,6 +1663,7 @@ release(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当音频池release方法回调成功，err为undefined，否则为错误对象。 |
@@ -1594,6 +1672,7 @@ release(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1633,9 +1712,10 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
 
 
 
-#### release
+### release
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(): Promise&lt;void&gt;
 
@@ -1645,6 +1725,7 @@ release(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1653,6 +1734,7 @@ release(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1690,9 +1772,10 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
 
 
 
-#### on('loadComplete')
+### on('loadComplete')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'loadComplete', callback: Callback&lt;number&gt;): void
 
@@ -1701,6 +1784,7 @@ on(type: 'loadComplete', callback: Callback&lt;number&gt;): void
 **系统能力：** SystemCapability.Multimedia.Media.SoundPool
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1737,9 +1821,10 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
 
 
 
-#### off('loadComplete')
+### off('loadComplete')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'loadComplete'): void
 
@@ -1748,6 +1833,7 @@ off(type: 'loadComplete'): void
 **系统能力：** SystemCapability.Multimedia.Media.SoundPool
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1781,9 +1867,10 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
 
 
 
-#### on('playFinishedWithStreamId')18+
+### on('playFinishedWithStreamId')18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'playFinishedWithStreamId', callback: Callback&lt;number&gt;): void
 
@@ -1796,6 +1883,7 @@ on(type: 'playFinishedWithStreamId', callback: Callback&lt;number&gt;): void
 **系统能力：** SystemCapability.Multimedia.Media.SoundPool
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1831,9 +1919,10 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool: me
 
 
 
-#### off('playFinishedWithStreamId')18+
+### off('playFinishedWithStreamId')18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'playFinishedWithStreamId'): void
 
@@ -1842,6 +1931,7 @@ off(type: 'playFinishedWithStreamId'): void
 **系统能力：** SystemCapability.Multimedia.Media.SoundPool
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1874,9 +1964,10 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool: me
 
 
 
-#### on('playFinished')
+### on('playFinished')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'playFinished', callback: Callback&lt;void&gt;): void
 
@@ -1885,6 +1976,7 @@ on(type: 'playFinished', callback: Callback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Media.SoundPool
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1921,9 +2013,10 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
 
 
 
-#### off('playFinished')
+### off('playFinished')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'playFinished'): void
 
@@ -1932,6 +2025,7 @@ off(type: 'playFinished'): void
 **系统能力：** SystemCapability.Multimedia.Media.SoundPool
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1965,9 +2059,10 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
 
 
 
-#### on('error')
+### on('error')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'error', callback: ErrorCallback): void
 
@@ -1976,6 +2071,7 @@ on(type: 'error', callback: ErrorCallback): void
 **系统能力：** SystemCapability.Multimedia.Media.SoundPool
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2013,9 +2109,10 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
 
 
 
-#### off('error')
+### off('error')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'error'): void
 
@@ -2024,6 +2121,7 @@ off(type: 'error'): void
 **系统能力：** SystemCapability.Multimedia.Media.SoundPool
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2057,9 +2155,10 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
 
 
 
-#### on('errorOccurred')20+
+### on('errorOccurred')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'errorOccurred', callback: Callback&lt;ErrorInfo&gt;): void
 
@@ -2068,6 +2167,7 @@ on(type: 'errorOccurred', callback: Callback&lt;ErrorInfo&gt;): void
 **系统能力：** SystemCapability.Multimedia.Media.SoundPool
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2108,9 +2208,10 @@ media.createSoundPool(5, audioRendererInfo, (error: BusinessError, soundPool_: m
 
 
 
-#### off('errorOccurred')20+
+### off('errorOccurred')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'errorOccurred', callback?: Callback&lt;ErrorInfo&gt;): void
 
@@ -2119,6 +2220,7 @@ off(type: 'errorOccurred', callback?: Callback&lt;ErrorInfo&gt;): void
 **系统能力：** SystemCapability.Multimedia.Media.SoundPool
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |

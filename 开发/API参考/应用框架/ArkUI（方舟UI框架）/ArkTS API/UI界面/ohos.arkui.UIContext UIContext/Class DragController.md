@@ -1,9 +1,9 @@
 # Class (DragController)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-dragcontroller
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供拖拽控制能力，支持在应用接收到触摸或长按等事件时主动发起拖拽并携带拖拽信息，也支持创建拖拽Action、获取拖拽背板、控制拖拽事件上报和拖拽启动请求、取消拖拽数据加载，以及设置不允许落入目标区域时的禁止角标显示。
 
@@ -12,9 +12,10 @@
 
 
 
-#### executeDrag11+
+## executeDrag11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 executeDrag(custom: CustomBuilder | DragItemInfo, dragInfo: dragController.DragInfo, callback: AsyncCallback<dragController.DragEventParam>): void
 
@@ -26,6 +27,7 @@ executeDrag(custom: CustomBuilder | DragItemInfo, dragInfo: dragController.DragI
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | custom | CustomBuilder \| DragItemInfo | 是 | 拖拽发起后跟手效果所拖拽的对象。当仅需通过builder生成当次拖拽中显示的图片时，使用CustomBuilder；当需要同时提供pixelMap、builder或extraInfo等拖拽项信息时，使用DragItemInfo。 说明： CustomBuilder不支持全局builder。如果builder中使用了Image组件，建议开启同步加载，即配置Image的syncLoad为true。该builder只用于生成当次拖拽中显示的图片。builder的根组件宽高为0时，无法生成拖拽显示的图片导致拖拽失败。builder的修改不会同步到当前正在拖拽的图片，对builder的修改需要在下一次拖拽时生效。 |
@@ -36,6 +38,7 @@ executeDrag(custom: CustomBuilder | DragItemInfo, dragInfo: dragController.DragI
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -81,13 +84,14 @@ struct DragControllerPage {
                 data: unifiedData,
                 extraParams: ''
               };
+              let eve: DragInfo = new DragInfo();
               this.getUIContext().getDragController().executeDrag(() => {
                 this.DraggingBuilder()
-              }, dragInfo, (err, dragEventParam) => {
-                if (dragEventParam.event) {
-                  if (dragEventParam.event.getResult() == DragResult.DRAG_SUCCESSFUL) {
+              }, dragInfo, (err, eve) => {
+                if (eve.event) {
+                  if (eve.event.getResult() == DragResult.DRAG_SUCCESSFUL) {
                     // ...
-                  } else if (dragEventParam.event.getResult() == DragResult.DRAG_FAILED) {
+                  } else if (eve.event.getResult() == DragResult.DRAG_FAILED) {
                     // ...
                   }
                 }
@@ -108,9 +112,10 @@ struct DragControllerPage {
 
 
 
-#### executeDrag11+
+## executeDrag11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 executeDrag(custom: CustomBuilder | DragItemInfo, dragInfo: dragController.DragInfo): Promise<dragController.DragEventParam>
 
@@ -122,6 +127,7 @@ executeDrag(custom: CustomBuilder | DragItemInfo, dragInfo: dragController.DragI
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | custom | CustomBuilder \| DragItemInfo | 是 | 拖拽发起后跟手效果所拖拽的对象。当仅需通过builder生成当次拖拽中显示的图片时，使用CustomBuilder；当需要同时提供pixelMap、builder或extraInfo等拖拽项信息时，使用DragItemInfo。 说明： CustomBuilder不支持全局builder。如果builder中使用了Image组件，应尽量开启同步加载，即配置Image的syncLoad为true。该builder只用于生成当次拖拽中显示的图片。builder的根组件宽高为0时，无法生成拖拽显示的图片导致拖拽失败。builder的修改不会同步到当前正在拖拽的图片，对builder的修改需要在下一次拖拽时生效。 |
@@ -129,6 +135,7 @@ executeDrag(custom: CustomBuilder | DragItemInfo, dragInfo: dragController.DragI
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -138,6 +145,7 @@ executeDrag(custom: CustomBuilder | DragItemInfo, dragInfo: dragController.DragI
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -208,13 +216,14 @@ struct DragControllerPage {
                   },
                   extraInfo: 'DragItemInfoTest'
                 };
+                let eve: DragInfo = new DragInfo();
                 this.getUIContext()
                   .getDragController()
                   .executeDrag(dragItemInfo, dragInfo)
-                  .then((dragEventParam) => {
-                    if (dragEventParam.event.getResult() == DragResult.DRAG_SUCCESSFUL) {
+                  .then((eve) => {
+                    if (eve.event.getResult() == DragResult.DRAG_SUCCESSFUL) {
                       // ...
-                    } else if (dragEventParam.event.getResult() == DragResult.DRAG_FAILED) {
+                    } else if (eve.event.getResult() == DragResult.DRAG_FAILED) {
                       // ...
                     }
                   })
@@ -237,13 +246,14 @@ struct DragControllerPage {
 
 
 
-#### createDragAction11+
+## createDragAction11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 createDragAction(customArray: Array<CustomBuilder | DragItemInfo>, dragInfo: dragController.DragInfo): dragController.DragAction
 
-创建拖拽的Action对象时，需要显式指定拖拽背板图（可多个）、拖拽的数据、跟手点等信息。当通过一个已创建的Action对象发起的拖拽未结束时，无法再次创建新的Action对象，接口会抛出异常。当Action对象的生命周期结束后，注册在该对象上的回调函数会失效。因此，需要在需要接收该对象回调期间持有该对象，并在每次发起拖拽前通过createDragAction返回新的对象覆盖旧值。
+创建拖拽的Action对象，需要显式指定拖拽背板图（可多个），以及拖拽的数据，跟手点等信息；当通过一个已创建的Action对象发起的拖拽未结束时，无法再次创建新的Action对象，接口会抛出异常；当Action对象的生命周期结束后，注册在该对象上的回调函数会失效，因此需要在一个尽量长的作用域下持有该对象，并在每次发起拖拽前通过createDragAction返回新的对象覆盖旧值。
 
 > [!NOTE]
 > 建议控制传递的拖拽背板数量，避免因拖拽背板数量增加导致拖起耗时增加。
@@ -255,6 +265,7 @@ createDragAction(customArray: Array<CustomBuilder | DragItemInfo>, dragInfo: dra
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | customArray | Array<CustomBuilder \| DragItemInfo> | 是 | 拖拽发起后跟手效果所拖拽的对象。 说明： CustomBuilder不支持全局builder。如果builder中使用了Image组件，应尽量开启同步加载，即配置Image的syncLoad为true。builder用于生成拖拽中显示的图片。builder的根组件宽高为0时，无法生成拖拽显示的图片导致拖拽失败。builder的修改不会同步到当前正在拖拽的图片，对builder的修改需要在下一次拖拽时生效。 |
@@ -262,6 +273,7 @@ createDragAction(customArray: Array<CustomBuilder | DragItemInfo>, dragInfo: dra
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -271,6 +283,7 @@ createDragAction(customArray: Array<CustomBuilder | DragItemInfo>, dragInfo: dra
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -432,9 +445,10 @@ struct DragControllerPage {
 
 
 
-#### getDragPreview11+
+## getDragPreview11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 getDragPreview(): dragController.DragPreview
 
@@ -446,9 +460,10 @@ getDragPreview(): dragController.DragPreview
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| dragController.DragPreview | 返回一个代表拖拽背板的对象，提供背板样式设置的接口；在onDrop和onDragEnd回调中使用该对象设置背板样式不生效。 |
+| dragController.DragPreview | 一个代表拖拽背板的对象，提供背板样式设置的接口，在onDrop和onDragEnd回调中使用不生效。 |
 
 
 **错误码：** 通用错误码请参考[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
@@ -459,13 +474,14 @@ getDragPreview(): dragController.DragPreview
 
 
 
-#### setDragEventStrictReportingEnabled12+
+## setDragEventStrictReportingEnabled12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 setDragEventStrictReportingEnabled(enable: boolean): void
 
-当拖拽对象从父组件拖拽到子组件时，是否会触发父组件的onDragLeave回调。
+当目标从父组件拖拽到子组件时，通过该方法设置是否会触发父组件的onDragLeave的回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -473,9 +489,10 @@ setDragEventStrictReportingEnabled(enable: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| enable | boolean | 是 | 当拖拽对象从父组件拖拽到子组件时，是否会触发父组件的onDragLeave回调。true表示触发父组件的onDragLeave回调，false表示不触发。 |
+| enable | boolean | 是 | 将目标从父组件拖拽到子组件时，是否会触发父组件的onDragLeave的回调。true表示触发父组件的onDragLeave的回调，false表示不触发。 |
 
 
 **示例：**
@@ -505,9 +522,10 @@ import { window, UIContext } from '@kit.ArkUI';
 
 
 
-#### cancelDataLoading15+
+## cancelDataLoading15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancelDataLoading(key: string): void
 
@@ -519,6 +537,7 @@ cancelDataLoading(key: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 拖拽数据的标识，用于区分每次拖拽。key可通过startDataLoading接口获取。 |
@@ -528,6 +547,7 @@ cancelDataLoading(key: string): void
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[拖拽事件错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-drag-event)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -536,9 +556,10 @@ cancelDataLoading(key: string): void
 
 
 
-#### notifyDragStartRequest18+
+## notifyDragStartRequest18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 notifyDragStartRequest(requestStatus: dragController.DragStartRequestStatus): void
 
@@ -549,6 +570,7 @@ notifyDragStartRequest(requestStatus: dragController.DragStartRequestStatus): vo
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -632,14 +654,15 @@ struct NormalEts {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/xOK8zkzySvuiG7V5-hYwUg/zh-cn_image_0000002656008176.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071444Z&HW-CC-Expire=86400&HW-CC-Sign=A5C8B1A87D0692C12C7167C2872B15EF59EF8F51571E66884AED0FC9B01A3A7F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/zpPB1yx6QVikzgd4zadiVg/zh-cn_image_0000002747292329.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072223Z&HW-CC-Expire=86400&HW-CC-Sign=23A9989263BCCCD9E4822781C95F35206D8D23C434A8B947A6AC6D03C6604D6E)
 
 
 
 
-#### enableDropDisallowedBadge20+
+## enableDropDisallowedBadge20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 enableDropDisallowedBadge(enabled: boolean): void
 
@@ -650,6 +673,7 @@ enableDropDisallowedBadge(enabled: boolean): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -712,4 +736,4 @@ struct Index {
 
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/j_390jNWQI28OALzZi3B1A/zh-cn_image_0000002655848256.png?HW-CC-KV=V1&HW-CC-Date=20260730T071444Z&HW-CC-Expire=86400&HW-CC-Sign=F6060F855006508AF72AB55D89F4891843A09036720844BD8E8CF59534B4E64B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/uWoz80SWQd2E1QmflRIlCQ/zh-cn_image_0000002747212245.png?HW-CC-KV=V1&HW-CC-Date=20260911T072223Z&HW-CC-Expire=86400&HW-CC-Sign=607FC42414B481FFF6E9FBA049204F054405D3081528F421507BFC4C515DC3CC)

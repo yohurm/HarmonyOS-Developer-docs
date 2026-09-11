@@ -1,11 +1,12 @@
 # Class (AnimationSet)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-animationset
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -15,7 +16,8 @@ import { map } from '@kit.MapKit';
  
   
 
-#### AnimationSet
+## AnimationSet
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -31,7 +33,8 @@ import { map } from '@kit.MapKit';
  
   
 
-#### constructor
+### constructor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -53,6 +56,7 @@ constructor(shareInterpolator: boolean)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | shareInterpolator | boolean | 是 | 定义是否共享插值器。 - true：共享 - false：不共享 |
@@ -81,7 +85,8 @@ animation.clearAnimation();
  
   
 
-#### addAnimation
+### addAnimation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -99,6 +104,7 @@ addAnimation(animation: Animation): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | animation | Animation | 是 | 要添加的动画对象。 |
@@ -125,7 +131,8 @@ animation.addAnimation(animation3);
  
   
 
-#### clearAnimation
+### clearAnimation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 

@@ -24,9 +24,9 @@ D:/DeveloperTools/Huawei/SDK/default/base/native/llvm/lib/clang/15.0.4/include/a
     "x86_64",
     "arm64-v8a"
   ],
-  // This is a configuration item to be added
+  <em>// This is a configuration item to be added</em>
   "cppFlags": "-mfloat-abi=hard",
-  // This is a configuration item to be added
+  <em>// This is a configuration item to be added</em>
 },
 ```
  

@@ -1,6 +1,6 @@
 # @ohos.batteryInfo (电量信息)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-battery-info
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
@@ -12,7 +12,8 @@
 
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -22,7 +23,8 @@ import {batteryInfo} from '@kit.BasicServicesKit';
  
   
 
-#### 常量
+## 常量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -30,6 +32,7 @@ import {batteryInfo} from '@kit.BasicServicesKit';
  
 **系统能力**：SystemCapability.PowerManager.BatteryManager.Core
   
+
 | 名称 | 类型 | 只读 | 说明 |
 | --- | --- | --- | --- |
 | batterySOC | number | 是 | 表示当前设备剩余电池电量百分比，取值范围是[0，100]。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
@@ -82,7 +85,8 @@ console.info("The nowCurrentInfo is: " + nowCurrentInfo);
  
   
 
-#### BatteryPluggedType
+## BatteryPluggedType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -90,6 +94,7 @@ console.info("The nowCurrentInfo is: " + nowCurrentInfo);
  
 **系统能力**：SystemCapability.PowerManager.BatteryManager.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NONE | 0 | 表示未获取到连接充电器类型。 |
@@ -100,7 +105,8 @@ console.info("The nowCurrentInfo is: " + nowCurrentInfo);
  
   
 
-#### BatteryChargeState
+## BatteryChargeState
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -110,6 +116,7 @@ console.info("The nowCurrentInfo is: " + nowCurrentInfo);
  
 **系统能力**：SystemCapability.PowerManager.BatteryManager.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NONE | 0 | 表示电池充电状态为未充电。 |
@@ -120,7 +127,8 @@ console.info("The nowCurrentInfo is: " + nowCurrentInfo);
  
   
 
-#### BatteryHealthState
+## BatteryHealthState
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -128,6 +136,7 @@ console.info("The nowCurrentInfo is: " + nowCurrentInfo);
  
 **系统能力**：SystemCapability.PowerManager.BatteryManager.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | UNKNOWN | 0 | 表示电池健康状态未知。 |
@@ -140,7 +149,8 @@ console.info("The nowCurrentInfo is: " + nowCurrentInfo);
  
   
 
-#### BatteryCapacityLevel9+
+## BatteryCapacityLevel9+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -148,6 +158,7 @@ console.info("The nowCurrentInfo is: " + nowCurrentInfo);
  
 **系统能力**：SystemCapability.PowerManager.BatteryManager.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | LEVEL_NONE23+ | 0 | 表示电池电量等级为未知电量。 |
@@ -162,7 +173,8 @@ console.info("The nowCurrentInfo is: " + nowCurrentInfo);
  
   
 
-#### CommonEventBatteryChangedKey9+
+## CommonEventBatteryChangedKey9+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -170,6 +182,7 @@ console.info("The nowCurrentInfo is: " + nowCurrentInfo);
  
 **系统能力**：SystemCapability.PowerManager.BatteryManager.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | EXTRA_SOC | "soc" | 表示剩余电池电量百分比的查询键。 |

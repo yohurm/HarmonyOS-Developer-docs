@@ -1,6 +1,6 @@
 # StatusBarViewExtensionAbility（状态栏扩展Ability）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/statusbar-extension-ability
 **支持设备：** PC/2in1
@@ -16,7 +16,8 @@ StatusBarViewExtensionAbility为状态栏扩展Ability，继承自[UIExtensionAb
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** PC/2in1
 

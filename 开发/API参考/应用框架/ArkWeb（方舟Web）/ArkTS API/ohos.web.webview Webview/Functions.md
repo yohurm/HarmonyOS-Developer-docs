@@ -1,20 +1,21 @@
 # Functions
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-f
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-ArkWeb Functions模块是ArkWeb（Web子系统）的函数能力集合，提供Web组件运行过程中所需的独立函数，例如订阅Web引擎初始化完成事件。开发者在使用Web组件时，可通过本模块中的函数监听Web引擎关键生命周期事件或执行全局性Web相关操作。
+ArkWeb Functions模块是ArkWeb（Web子系统）的函数能力集合，提供Web组件运行过程中所需的独立函数，例如订阅Web引擎初始化完成事件。开发者在使用Web组件时，可通过本模块中的函数监听Web引擎关键生命周期事件或执行全局性Web操作。
 
 > [!NOTE]
 > 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 示例效果请以真机运行为准。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { webview } from '@kit.ArkWeb';
@@ -22,9 +23,10 @@ import { webview } from '@kit.ArkWeb';
 
 
 
-#### webview.once
+## webview.once
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: string, callback: Callback&lt;void&gt;): void
 
@@ -36,15 +38,17 @@ once(type: string, callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | Web事件的类型，目前支持："webInited"（Web引擎初始化完成）。 |
-| callback | Callback&lt;void&gt; | 是 | 所订阅的回调函数。 |
+| type | string | 是 | Web事件的类型，目前仅支持："webInited"（Web引擎初始化完成）。 |
+| callback | Callback&lt;void&gt; | 是 | Web引擎初始化完成时触发的回调函数。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -57,10 +61,10 @@ once(type: string, callback: Callback&lt;void&gt;): void
 // xxx.ets
 import { webview } from '@kit.ArkWeb';
 
-webview.once("webInited", () => {
-  console.info("configCookieSync");
-  webview.WebCookieManager.configCookieSync("https://www.example.com", "a=b");
-})
+webview.once('webInited', () => {
+  console.info('configCookieSync');
+  webview.WebCookieManager.configCookieSync('https://www.example.com', 'a=b');
+});
 
 @Entry
 @Component

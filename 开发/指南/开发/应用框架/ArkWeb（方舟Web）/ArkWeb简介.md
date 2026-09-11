@@ -1,10 +1,10 @@
 # ArkWeb简介
 
-更新时间：2026-06-12 06:54:11
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-component-overview
 
-#### 使用场景
+## 使用场景
 
 ArkWeb（方舟Web）提供了Web组件，用于在应用中显示Web页面内容。常见使用场景包括：
 
@@ -15,7 +15,7 @@ ArkWeb（方舟Web）提供了Web组件，用于在应用中显示Web页面内�
 
 
 
-#### 能力范围
+## 能力范围
 
 Web组件为开发者提供了丰富的控制Web页面能力。包括：
 
@@ -31,7 +31,7 @@ Web组件为开发者提供了丰富的控制Web页面能力。包括：
 
 
 
-#### 需要权限
+## 需要权限
 
 使用Web组件访问在线Web网页时需添加网络权限：ohos.permission.INTERNET，具体申请方式请参考[声明权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions)。
 
@@ -45,23 +45,29 @@ Web组件为开发者提供了丰富的控制Web页面能力。包括：
 
 
 
-#### 约束与限制
+## 约束与限制
 
  - 可依据ArkWeb内核版本在相关网站查询W3C标准的支持情况。例如：[https://developer.mozilla.org/en-US/](https://developer.mozilla.org/en-US/) 和 [https://webassembly.org/features/](https://webassembly.org/features/) 。
  - ArkWeb内核版本：ArkWeb基于谷歌Chromium内核开发，系统版本与Chromium版本的对应关系如表格所示。
 
 | 系统版本 | Chromium版本 |
+
 | --- | --- |
+
 | HarmonyOS 4.0及之前 | M99 |
+
 | HarmonyOS 4.1-5.1 | M114 |
+
 | HarmonyOS 6.0 | M132（默认，推荐使用，请参考M114->M132差异适配指南） M114（可选，若应用需切换为此内核，请参考M114内核在HarmonyOS 6.0系统上的适配指导） |
+
 | HarmonyOS 6.1 | M132 |
+
 | HarmonyOS 7.0 | M144（默认，推荐使用，请参考M132->M144差异适配指南） M132（可选，若应用需切换为此内核，请参考M132内核在HarmonyOS 7.0系统上的适配指导） |
  - 为保障用户隐私安全，HarmonyOS内置了ArkWeb组件，旨在为全场景设备提供安全、可靠且一致的网页浏览体验。应用渲染网页需调用ArkWeb组件；元服务内嵌网页渲染则需使用官方提供的Webview组件。开发者可根据其元服务开发框架，选择使用[ASCF Webview](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/develop-web-view)或[AtomicServiceEnhancedWeb](https://developer.huawei.com/consumer/cn/doc/atomic-guides/atomicserviceweb-guidelines#atomicserviceenhancedweb)组件。元服务内嵌页面内容需遵循元服务内嵌页面管理规范。
 
 
 
 
-#### 模拟器支持情况
+## 模拟器支持情况
 
  - 本Kit支持模拟器。模拟器与真机存在通用差异，详情请参见“[模拟器与真机的差异](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-specification)”。

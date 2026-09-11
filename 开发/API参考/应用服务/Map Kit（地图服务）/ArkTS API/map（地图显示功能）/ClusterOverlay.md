@@ -1,11 +1,12 @@
 # Interface (ClusterOverlay)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-04 10:41:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-clusteroverlay
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -15,11 +16,12 @@ import { map, mapCommon } from '@kit.MapKit';
  
   
 
-#### ClusterOverlay
+## ClusterOverlay
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-聚合图层类。ClusterOverlay用于在地图上展示聚合后的标记点，以优化大量标记点显示时的性能和用户体验。它将地理位置相近的多个标记点合并为一个聚合点，并支持点击聚合点展开查看具体标记点。适用于展示大量POI数据、避免地图过于拥挤的情况。
+聚合图层类。ClusterOverlay用于在地图上展示聚合后的标记点，以优化大量标记点显示时的性能和用户体验。它将地理位置相近的多个标记点合并为一个聚合点，并支持点击聚合点展开查看具体标记点。适用于展示大量POI数据、避免地图过于拥挤的情况。在调用map.[MapComponentController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-mapcomponentcontroller)类的[addClusterOverlay](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-mapcomponentcontroller#addclusteroverlay)方法时会返回该类型的实例。
  
 **模型约束：** 此接口仅可在Stage模型下使用。
  
@@ -57,7 +59,8 @@ let clusterOverlay: map.ClusterOverlay = await this.mapController.addClusterOver
  
   
 
-#### on('clusterClick')
+### on('clusterClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -77,6 +80,7 @@ on(type: 'clusterClick', callback: Callback<Array<mapCommon.ClusterItem>>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'clusterClick'：聚合图层的聚合点点击监听事件。 |
@@ -93,7 +97,8 @@ clusterOverlay.on("clusterClick", (clusterItems) => {
  
   
 
-#### off('clusterClick')
+### off('clusterClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -113,6 +118,7 @@ off(type: 'clusterClick', callback?: Callback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'clusterClick'：聚合图层的聚合点点击监听事件。 |
@@ -129,7 +135,8 @@ clusterOverlay.off("clusterClick", () => {
  
   
 
-#### on('click')
+### on('click')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -147,6 +154,7 @@ on(type: 'click', callback: Callback<Array<mapCommon.ClusterItem>>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'click'：监听聚合图层的聚合点点击事件。 |
@@ -172,7 +180,8 @@ clusterOverlay.on("click", callback3);
  
   
 
-#### off('click')
+### off('click')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -190,6 +199,7 @@ off(type: 'click', callback?: Callback<Array<mapCommon.ClusterItem>>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'click'：监听聚合图层的聚合点点击事件。 |
@@ -220,7 +230,8 @@ clusterOverlay.off('click');
  
   
 
-#### on('markerClusterClick')
+### on('markerClusterClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -238,6 +249,7 @@ on(type: 'markerClusterClick', callback: Callback&lt;MarkerClusterInfo&gt;): voi
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'markerClusterClick'：聚合图层的标记点击监听事件。 |
@@ -263,7 +275,8 @@ clusterOverlay.on("markerClusterClick", callback3);
  
   
 
-#### off('markerClusterClick')
+### off('markerClusterClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -281,6 +294,7 @@ off(type: 'markerClusterClick', callback?: Callback&lt;MarkerClusterInfo&gt;): v
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'markerClusterClick'：聚合图层的标记点击监听事件。 |
@@ -310,7 +324,8 @@ clusterOverlay.off('markerClusterClick');
  
   
 
-#### addItem
+### addItem
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -328,6 +343,7 @@ addItem(item: mapCommon.ClusterItem): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | item | mapCommon.ClusterItem | 是 | 待聚合节点。 |
@@ -335,6 +351,7 @@ addItem(item: mapCommon.ClusterItem): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -354,7 +371,8 @@ await clusterOverlay.addItem(clusterItem);
  
   
 
-#### remove
+### remove
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -372,6 +390,7 @@ remove(): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |

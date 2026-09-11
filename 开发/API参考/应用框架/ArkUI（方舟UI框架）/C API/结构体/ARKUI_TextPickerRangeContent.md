@@ -1,18 +1,19 @@
 # ARKUI_TextPickerRangeContent
 
-更新时间：2026-07-28 11:23:46（官网已下线）
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-arkui-textpickerrangecontent
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct {...} ARKUI_TextPickerRangeContent
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义单列滑动数据选择器支持的图片资源结构体。该结构体用于在TextPicker组件中同时显示图片和文本内容，适用于需要在单列滑动选择器中展示图标和文本组合的场景。支持自定义图标路径和文本内容，每项可设置独立的图标和文本或仅设置其中之一，帮助开发者实现灵活的图文选择器配置。
  
@@ -24,16 +25,19 @@ typedef struct {...} ARKUI_TextPickerRangeContent
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 成员变量
+### 成员变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | const char* icon | 图标路径。以\0结尾的C字符串。可为NULL。未通过API设置时，字段保持默认值nullptr；通过OH_ArkUI_TextPickerRangeContentArray_SetIconAtIndex设置为nullptr时不生效（API会忽略此设置）。空字符串""合法，表示不显示图标。具体路径用于显示自定义图标（当需要图标提示时选择），空字符串用于明确不显示图标（当仅显示文本时选择），NULL为默认值（应通过Set方法设置为具体值或空字符串，不建议保留NULL）。路径格式为应用内资源路径，例如"/common/hello.png"，与ArkTS TextPickerRangeContent一致；亦支持URI。图片格式未做专门限制，通过ImageSourceInfo加载，与Image组件支持的格式一致（如png、jpg、webp等）。显示尺寸固定为24vp × 24vp，不可通过本结构体配置。源码中未规定文件大小上限。 |

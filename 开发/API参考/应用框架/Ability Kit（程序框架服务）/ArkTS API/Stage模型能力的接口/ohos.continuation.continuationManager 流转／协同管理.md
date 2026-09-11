@@ -1,6 +1,6 @@
 # @ohos.continuation.continuationManager (流转/协同管理)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-continuation-continuationmanager
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -12,7 +12,8 @@ continuationManager模块提供了流转/协同入口管理服务能力，包括
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -22,7 +23,8 @@ import { continuationManager } from '@kit.AbilityKit';
 
 
 
-#### continuationManager.register(deprecated)
+## continuationManager.register(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -39,6 +41,7 @@ register(callback: AsyncCallback&lt;number&gt;): void
 **系统能力**：SystemCapability.Ability.DistributedAbilityManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -63,7 +66,8 @@ continuationManager.register((err, data) => {
 
 
 
-#### continuationManager.register(deprecated)
+## continuationManager.register(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -80,6 +84,7 @@ register(options: ContinuationExtraParams, callback: AsyncCallback&lt;number&gt;
 **系统能力**：SystemCapability.Ability.DistributedAbilityManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -109,7 +114,8 @@ continuationManager.register(
 
 
 
-#### continuationManager.register(deprecated)
+## continuationManager.register(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -127,12 +133,14 @@ register(options?: ContinuationExtraParams): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ContinuationExtraParams | 否 | 过滤可选择设备列表的额外参数，该参数可缺省。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -157,7 +165,8 @@ continuationManager.register(
 
 
 
-#### continuationManager.registerContinuation(deprecated)
+## continuationManager.registerContinuation(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -179,6 +188,7 @@ registerContinuation(callback: AsyncCallback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;number&gt; | 是 | AsyncCallback形式返回流转管理服务连接后生成的token。 |
@@ -187,6 +197,7 @@ registerContinuation(callback: AsyncCallback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[DistributedSchedule错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedschedule)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -218,7 +229,8 @@ try {
 
 
 
-#### continuationManager.registerContinuation(deprecated)
+## continuationManager.registerContinuation(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -240,6 +252,7 @@ registerContinuation(options: ContinuationExtraParams, callback: AsyncCallback&l
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ContinuationExtraParams | 是 | 过滤可选择设备列表的额外参数。 |
@@ -249,6 +262,7 @@ registerContinuation(options: ContinuationExtraParams, callback: AsyncCallback&l
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[DistributedSchedule错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedschedule)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -284,7 +298,8 @@ try {
 
 
 
-#### continuationManager.registerContinuation(deprecated)
+## continuationManager.registerContinuation(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -306,12 +321,14 @@ registerContinuation(options?: ContinuationExtraParams): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ContinuationExtraParams | 否 | 过滤可选择设备列表的额外参数，该参数可缺省。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -321,6 +338,7 @@ registerContinuation(options?: ContinuationExtraParams): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[DistributedSchedule错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedschedule)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -354,7 +372,8 @@ try {
 
 
 
-#### continuationManager.on('deviceConnect')(deprecated)
+## continuationManager.on('deviceConnect')(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -371,6 +390,7 @@ on(type: 'deviceConnect', callback: Callback&lt;ContinuationResult&gt;): void
 **系统能力**：SystemCapability.Ability.DistributedAbilityManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -392,7 +412,8 @@ continuationManager.on("deviceConnect", (data) => {
 
 
 
-#### continuationManager.on('deviceDisconnect')(deprecated)
+## continuationManager.on('deviceDisconnect')(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -409,6 +430,7 @@ on(type: 'deviceDisconnect', callback: Callback&lt;string&gt;): void
 **系统能力**：SystemCapability.Ability.DistributedAbilityManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -428,7 +450,8 @@ continuationManager.on("deviceDisconnect", (data) => {
 
 
 
-#### continuationManager.off('deviceConnect')(deprecated)
+## continuationManager.off('deviceConnect')(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -445,6 +468,7 @@ off(type: 'deviceConnect', callback?: Callback&lt;ContinuationResult&gt;): void
 **系统能力**：SystemCapability.Ability.DistributedAbilityManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -466,7 +490,8 @@ continuationManager.off("deviceConnect", (data) => {
 
 
 
-#### continuationManager.off('deviceDisconnect')(deprecated)
+## continuationManager.off('deviceDisconnect')(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -483,6 +508,7 @@ off(type: 'deviceDisconnect', callback?: Callback&lt;string&gt;): void
 **系统能力**：SystemCapability.Ability.DistributedAbilityManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -502,7 +528,8 @@ continuationManager.off("deviceDisconnect", (data) => {
 
 
 
-#### continuationManager.on('deviceSelected')(deprecated)
+## continuationManager.on('deviceSelected')(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -524,6 +551,7 @@ on(type: 'deviceSelected', token: number, callback: Callback<Array&lt;Continuati
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件类型，固定值"deviceSelected"。 |
@@ -534,6 +562,7 @@ on(type: 'deviceSelected', token: number, callback: Callback<Array&lt;Continuati
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[DistributedSchedule错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedschedule)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -566,7 +595,8 @@ try {
 
 
 
-#### continuationManager.on('deviceUnselected')(deprecated)
+## continuationManager.on('deviceUnselected')(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -588,6 +618,7 @@ on(type: 'deviceUnselected', token: number, callback: Callback<Array&lt;Continua
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件类型，固定值"deviceUnselected"。 |
@@ -598,6 +629,7 @@ on(type: 'deviceUnselected', token: number, callback: Callback<Array&lt;Continua
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[DistributedSchedule错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedschedule)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -631,7 +663,8 @@ try {
 
 
 
-#### continuationManager.off('deviceSelected')(deprecated)
+## continuationManager.off('deviceSelected')(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -653,6 +686,7 @@ off(type: 'deviceSelected', token: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 取消监听的事件类型，固定值"deviceSelected"。 |
@@ -662,6 +696,7 @@ off(type: 'deviceSelected', token: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[DistributedSchedule错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedschedule)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -687,7 +722,8 @@ try {
 
 
 
-#### continuationManager.off('deviceUnselected')(deprecated)
+## continuationManager.off('deviceUnselected')(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -709,6 +745,7 @@ off(type: 'deviceUnselected', token: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 取消监听的事件类型，固定值"deviceUnselected"。 |
@@ -718,6 +755,7 @@ off(type: 'deviceUnselected', token: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[DistributedSchedule错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedschedule)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -743,7 +781,8 @@ try {
 
 
 
-#### continuationManager.startDeviceManager(deprecated)
+## continuationManager.startDeviceManager(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -760,6 +799,7 @@ startDeviceManager(token: number, callback: AsyncCallback&lt;void&gt;): void
 **系统能力**：SystemCapability.Ability.DistributedAbilityManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -784,7 +824,8 @@ continuationManager.startDeviceManager(token, (err) => {
 
 
 
-#### continuationManager.startDeviceManager(deprecated)
+## continuationManager.startDeviceManager(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -801,6 +842,7 @@ startDeviceManager(token: number, options: ContinuationExtraParams, callback: As
 **系统能力**：SystemCapability.Ability.DistributedAbilityManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -831,7 +873,8 @@ continuationManager.startDeviceManager(
 
 
 
-#### continuationManager.startDeviceManager(deprecated)
+## continuationManager.startDeviceManager(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -849,6 +892,7 @@ startDeviceManager(token: number, options?: ContinuationExtraParams): Promise&lt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | token | number | 是 | 注册后的token。 |
@@ -856,6 +900,7 @@ startDeviceManager(token: number, options?: ContinuationExtraParams): Promise&lt
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -882,7 +927,8 @@ continuationManager.startDeviceManager(
 
 
 
-#### continuationManager.startContinuationDeviceManager(deprecated)
+## continuationManager.startContinuationDeviceManager(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -904,6 +950,7 @@ startContinuationDeviceManager(token: number, callback: AsyncCallback&lt;void&gt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | token | number | 是 | 注册后的token。 |
@@ -913,6 +960,7 @@ startContinuationDeviceManager(token: number, callback: AsyncCallback&lt;void&gt
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[DistributedSchedule错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedschedule)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -943,7 +991,8 @@ try {
 
 
 
-#### continuationManager.startContinuationDeviceManager(deprecated)
+## continuationManager.startContinuationDeviceManager(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -965,6 +1014,7 @@ startContinuationDeviceManager(token: number, options: ContinuationExtraParams, 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | token | number | 是 | 注册后的token。 |
@@ -975,6 +1025,7 @@ startContinuationDeviceManager(token: number, options: ContinuationExtraParams, 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[DistributedSchedule错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedschedule)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1010,7 +1061,8 @@ try {
 
 
 
-#### continuationManager.startContinuationDeviceManager(deprecated)
+## continuationManager.startContinuationDeviceManager(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1032,6 +1084,7 @@ startContinuationDeviceManager(token: number, options?: ContinuationExtraParams)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | token | number | 是 | 注册后的token。 |
@@ -1039,6 +1092,7 @@ startContinuationDeviceManager(token: number, options?: ContinuationExtraParams)
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1048,6 +1102,7 @@ startContinuationDeviceManager(token: number, options?: ContinuationExtraParams)
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[DistributedSchedule错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedschedule)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1081,7 +1136,8 @@ try {
 
 
 
-#### continuationManager.updateConnectStatus(deprecated)
+## continuationManager.updateConnectStatus(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1098,6 +1154,7 @@ updateConnectStatus(token: number, deviceId: string, status: DeviceConnectState,
 **系统能力**：SystemCapability.Ability.DistributedAbilityManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1125,7 +1182,8 @@ continuationManager.updateConnectStatus(token, deviceId, continuationManager.Dev
 
 
 
-#### continuationManager.updateConnectStatus(deprecated)
+## continuationManager.updateConnectStatus(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1143,6 +1201,7 @@ updateConnectStatus(token: number, deviceId: string, status: DeviceConnectState)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | token | number | 是 | 注册后的token。 |
@@ -1151,6 +1210,7 @@ updateConnectStatus(token: number, deviceId: string, status: DeviceConnectState)
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1176,7 +1236,8 @@ continuationManager.updateConnectStatus(token, deviceId, continuationManager.Dev
 
 
 
-#### continuationManager.updateContinuationState(deprecated)
+## continuationManager.updateContinuationState(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1198,6 +1259,7 @@ updateContinuationState(token: number, deviceId: string, status: DeviceConnectSt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | token | number | 是 | 注册后的token。 |
@@ -1209,6 +1271,7 @@ updateContinuationState(token: number, deviceId: string, status: DeviceConnectSt
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[DistributedSchedule错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedschedule)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1240,7 +1303,8 @@ try {
 
 
 
-#### continuationManager.updateContinuationState(deprecated)
+## continuationManager.updateContinuationState(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1262,6 +1326,7 @@ updateContinuationState(token: number, deviceId: string, status: DeviceConnectSt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | token | number | 是 | 注册后的token。 |
@@ -1271,6 +1336,7 @@ updateContinuationState(token: number, deviceId: string, status: DeviceConnectSt
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise形式返回接口调用结果。 |
@@ -1279,6 +1345,7 @@ updateContinuationState(token: number, deviceId: string, status: DeviceConnectSt
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[DistributedSchedule错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedschedule)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1311,7 +1378,8 @@ try {
 
 
 
-#### continuationManager.unregister(deprecated)
+## continuationManager.unregister(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1328,6 +1396,7 @@ unregister(token: number, callback: AsyncCallback&lt;void&gt;): void
 **系统能力**：SystemCapability.Ability.DistributedAbilityManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1352,7 +1421,8 @@ continuationManager.unregister(token, (err) => {
 
 
 
-#### continuationManager.unregister(deprecated)
+## continuationManager.unregister(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1370,12 +1440,14 @@ unregister(token: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | token | number | 是 | 注册后的token。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1399,7 +1471,8 @@ continuationManager.unregister(token)
 
 
 
-#### continuationManager.unregisterContinuation(deprecated)
+## continuationManager.unregisterContinuation(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1421,6 +1494,7 @@ unregisterContinuation(token: number, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | token | number | 是 | 注册后的token。 |
@@ -1430,6 +1504,7 @@ unregisterContinuation(token: number, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[DistributedSchedule错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedschedule)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1460,7 +1535,8 @@ try {
 
 
 
-#### continuationManager.unregisterContinuation(deprecated)
+## continuationManager.unregisterContinuation(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1482,12 +1558,14 @@ unregisterContinuation(token: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | token | number | 是 | 注册后的token。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1497,6 +1575,7 @@ unregisterContinuation(token: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[DistributedSchedule错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedschedule)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1526,7 +1605,8 @@ try {
 
 
 
-#### DeviceConnectState(deprecated)
+## DeviceConnectState(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1542,6 +1622,7 @@ try {
 
 **系统能力**：SystemCapability.Ability.DistributedAbilityManager
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | IDLE | 0 | 设备连接初始状态。 |
@@ -1552,7 +1633,8 @@ try {
 
 
 
-#### ContinuationMode(deprecated)
+## ContinuationMode(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1568,6 +1650,7 @@ try {
 
 **系统能力**：SystemCapability.Ability.DistributedAbilityManager
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | COLLABORATION_SINGLE | 0 | 设备选择模块单选模式。 |
@@ -1576,7 +1659,8 @@ try {
 
 
 
-#### ContinuationResult(deprecated)
+## ContinuationResult(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1594,6 +1678,7 @@ type ContinuationResult = _ContinuationResult
 
 **系统能力**：SystemCapability.Ability.DistributedAbilityManager
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _ContinuationResult | 表示流转管理入口返回的设备信息。 |
@@ -1601,7 +1686,8 @@ type ContinuationResult = _ContinuationResult
 
 
 
-#### ContinuationExtraParams(deprecated)
+## ContinuationExtraParams(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1618,6 +1704,7 @@ type ContinuationExtraParams = _ContinuationExtraParams
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.Ability.DistributedAbilityManager
+
 
 | 类型 | 说明 |
 | --- | --- |

@@ -33,7 +33,7 @@ onGestureSwipe逐帧触发回调，一般用于监听每帧移动距离。如需
 ```text
 const currentTime = Date.now();
 if (currentTime - this.lastSwipeTime < this.swipeThreshold) {
-  return; // 时间间隔过短，忽略此次事件
+  return; <em>// 时间间隔过短，忽略此次事件</em>
 }
 this.lastSwipeTime = currentTime;
 ```
@@ -42,10 +42,10 @@ this.lastSwipeTime = currentTime;
  
 ```text
 if (this.isHandlingSwipe) {
-  return; // 正在处理中，忽略此次事件
+  return; <em>// 正在处理中，忽略此次事件</em>
 }
 this.isHandlingSwipe = true;
-// 模拟处理延迟
+<em>// 模拟处理延迟</em>
 setTimeout(() => {
   this.isHandlingSwipe = false;
 }, this.swipeThreshold);
@@ -82,8 +82,8 @@ struct SwiperGestureExample {
   private swiperController: SwiperController = new SwiperController();
   private data: MyDataSource = new MyDataSource([]);
   @State lastSwipeTime: number = 0;
-  @State isHandlingSwipe: boolean = false; // 用于标记当前是否正在处理滑动
-  swipeThreshold: number = 300; // 防抖阈值(毫秒)
+  @State isHandlingSwipe: boolean = false; <em>// 用于标记当前是否正在处理滑动</em>
+  swipeThreshold: number = 300; <em>// 防抖阈值(毫秒)</em>
 
   aboutToAppear(): void {
     let list: number[] = [];
@@ -112,19 +112,19 @@ struct SwiperGestureExample {
       .duration(2000)
       .itemSpace(10)
       .onGestureSwipe(() => {
-        // 方案一:时间间隔防抖
+      <em>  // 方案一:时间间隔防抖</em>
         const currentTime = Date.now();
         if (currentTime - this.lastSwipeTime < this.swipeThreshold) {
-          return; // 时间间隔过短，忽略此次事件
+          return;<em> // 时间间隔过短，忽略此次事件</em>
         }
         this.lastSwipeTime = currentTime;
 
-        // 方案二:状态锁防抖
+      <em>  // 方案二:状态锁防抖</em>
         if (this.isHandlingSwipe) {
-          return; // 正在处理中，忽略此次事件
+          return;<em> // 正在处理中，忽略此次事件</em>
         }
         this.isHandlingSwipe = true;
-        // 模拟处理延迟
+       <em> // 模拟处理延迟</em>
         setTimeout(() => {
           this.isHandlingSwipe = false;
         }, this.swipeThreshold);

@@ -1,6 +1,6 @@
 # 使用AVRecorder录制音频（ArkTS）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-avrecorder-for-recording
 
@@ -17,7 +17,7 @@
 状态的详细说明请参考[AVRecorderState](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-t#avrecorderstate9)。
 
 
-#### 申请权限
+## 申请权限
 
 在开发此功能前，开发者应根据实际需求申请相关权限：
 
@@ -31,7 +31,7 @@
 
 
 
-#### 开发音频录制应用须知
+## 开发音频录制应用须知
 
  - 如果需要持续录制或后台录制，请申请长时任务避免进入挂起（Suspend）状态。具体参考[长时任务开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/continuous-task)。
  - 录制需要在前台启动，启动后可以退后台。在后台启动录制将会失败。
@@ -41,7 +41,7 @@
 
 
 
-#### 开发步骤及注意事项
+## 开发步骤及注意事项
 
 详细的API说明请参考[AVRecorder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avrecorder)。
 1. 创建AVRecorder实例，实例创建完成进入idle状态。
@@ -52,19 +52,22 @@
 
 
   
-```ArkTS
+```text
 this.avRecorder = await media.createAVRecorder();
 ```
 
 2. 设置业务需要的监听事件，监听状态变化及错误上报。
 
 | 事件类型 | 说明 |
+
 | --- | --- |
+
 | stateChange | 必要事件，监听AVRecorder的state属性改变。 |
+
 | error | 必要事件，监听AVRecorder的错误信息。 |
 
   
-```ArkTS
+```text
 this.avRecorder?.on('stateChange', (state: media.AVRecorderState, reason: media.StateChangeReason) => {
   console.info(`AVRecorder state is changed to ${state}, reason: ${reason}`);
   // 用户可以在此补充状态发生切换后想要进行的动作。
@@ -83,7 +86,7 @@ this.avRecorder?.on('error', (error: BusinessError) => {
 
 
   
-```ArkTS
+```text
 public async prepareAudioRecorder(context: common.Context): Promise<void> {
   let path: string = context.filesDir + '/audio_example.m4a';
   let file: fileIo.File = await fileIo.open(path, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
@@ -116,28 +119,28 @@ public async prepareAudioRecorder(context: common.Context): Promise<void> {
 4. 开始录制，调用[start](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avrecorder#start9-1)接口，此时进入started状态。
 
   
-```ArkTS
+```text
 await this.avRecorder?.start();
 ```
 
 5. 暂停录制，调用[pause](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avrecorder#pause9-1)接口，此时进入paused状态。
 
   
-```ArkTS
+```text
 await this.avRecorder?.pause();
 ```
 
 6. 恢复录制，调用[resume](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avrecorder#resume9-1)接口，此时再次进入started状态。
 
   
-```ArkTS
+```text
 await this.avRecorder?.resume();
 ```
 
 7. 停止录制，调用[stop](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avrecorder#stop9-1)接口，此时进入stopped状态。
 
   
-```ArkTS
+```text
 await this.avRecorder?.stop();
 await this.closeFd();
 ```
@@ -145,27 +148,27 @@ await this.closeFd();
 8. 重置资源，调用[reset](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avrecorder#reset9-1)接口，重新进入idle状态，允许重新配置录制参数。
 
   
-```ArkTS
+```text
 await this.avRecorder?.reset();
 ```
 
 9. 销毁实例，调用[release](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avrecorder#release9-1)接口，进入released状态，退出录制。
 
   
-```ArkTS
+```text
 await this.avRecorder?.release();
 ```
 
 
 
 
-#### 完整示例
+## 完整示例
 
 参考以下示例，完成“开始录制-暂停录制-恢复录制-停止录制”的完整流程。
 
 使用当前示例代码时，需要申请**ohos.permission.MICROPHONE**麦克风权限。申请方式请参考：[向用户申请授权](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/request-user-authorization)。
 
-```ArkTS
+```text
 import { BusinessError } from '@kit.BasicServicesKit';
 import { media } from '@kit.MediaKit';
 import { fileIo } from '@kit.CoreFileKit';

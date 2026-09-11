@@ -1,6 +1,6 @@
 # 使用TaskPool执行独立的耗时任务
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/independent-time-consuming-task
 
@@ -74,6 +74,7 @@ struct Index {
               this.message = 'success';
             }).catch(() => {
               console.error(`Failed to execute taskpool.`);
+              this.message = 'fail';
             })
           })
       }

@@ -1,6 +1,6 @@
 # XML生成
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xml-generation
 
@@ -9,7 +9,7 @@ XML可以作为数据交换格式，被各种系统和应用程序支持。例�
 XML还可以作为消息传递格式，用于分布式系统中不同节点的通信。
 
 
-#### 注意事项
+## 注意事项
 
  - XML标签必须成对出现，生成开始标签就要生成结束标签。
  - XML标签对大小写敏感，开始标签与结束标签大小写要一致。
@@ -17,7 +17,7 @@ XML还可以作为消息传递格式，用于分布式系统中不同节点的�
 
 
 
-#### 开发步骤
+## 开发步骤
 
 XML模块提供XmlSerializer及XmlDynamicSerializer类来生成XML数据，使用XmlSerializer需传入固定长度的ArrayBuffer或DataView对象作为输出缓冲区，用于存储序列化后的XML数据。
 

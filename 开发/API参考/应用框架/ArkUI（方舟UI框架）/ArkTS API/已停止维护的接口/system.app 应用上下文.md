@@ -1,18 +1,19 @@
 # @system.app (应用上下文)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-system-app
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 > [!NOTE]
 > 本模块首批接口从API version 3开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 import app, { AppResponse } from '@system.app';
@@ -20,15 +21,17 @@ import app, { AppResponse } from '@system.app';
  
   
 
-#### App
+## App
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV | lite_wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
   
 
-#### getInfo
+### getInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 static getInfo(): AppResponse
  
@@ -42,6 +45,7 @@ static getInfo(): AppResponse
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AppResponse | 定义AppResponse信息。 |
@@ -164,9 +168,10 @@ export default {
  
   
 
-#### terminate
+### terminate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 static terminate(): void
  
@@ -259,9 +264,10 @@ export default {
  
   
 
-#### setImageCacheCount7+
+### setImageCacheCount7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static setImageCacheCount(value: number): void
  
@@ -277,6 +283,7 @@ setImageCacheCount、setImageRawDataCacheSize、和setImageFileCacheSize并不�
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 内存中解码后图片的缓存数量。number取值需大于0。 |
@@ -313,9 +320,10 @@ struct Index {
  
   
 
-#### setImageRawDataCacheSize7+
+### setImageRawDataCacheSize7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static setImageRawDataCacheSize(value: number): void
  
@@ -329,6 +337,7 @@ setImageRawDataCacheSize方法需要在@Entry标记的页面，[onPageShow](http
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 内存中解码前图片数据的缓存大小，单位为字节。number取值需大于0。 |
@@ -365,9 +374,10 @@ struct Index {
  
   
 
-#### setImageFileCacheSize7+
+### setImageFileCacheSize7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static setImageFileCacheSize(value: number): void
  
@@ -379,6 +389,7 @@ static setImageFileCacheSize(value: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 图片文件的缓存大小，单位为字节。number取值需大于0。 |
@@ -404,9 +415,10 @@ export default class OnC {
  
   
 
-#### ScreenOnVisible(deprecated)
+### ScreenOnVisible(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static screenOnVisible(options?: ScreenOnVisibleOptions): void
  
@@ -416,6 +428,7 @@ static screenOnVisible(options?: ScreenOnVisibleOptions): void
  
 **系统能力：** 以下各项对应的系统能力均为SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ScreenOnVisibleOptions | 否 | 当启动保活时，锁屏时将阻止系统返回桌面显示，以保持屏幕唤醒时应用可见。 |
@@ -423,9 +436,10 @@ static screenOnVisible(options?: ScreenOnVisibleOptions): void
  
   
 
-#### requestFullWindow(deprecated)
+### requestFullWindow(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static requestFullWindow(options?: RequestFullWindowOptions): void
  
@@ -437,6 +451,7 @@ static requestFullWindow(options?: RequestFullWindowOptions): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | RequestFullWindowOptions | 否 | 请求全窗口时，设定非全窗口到全窗口的过渡时间，单位为毫秒，默认时间与非全窗口到全窗口的距离成正比。 |
@@ -457,9 +472,10 @@ export default class Req {
  
   
 
-#### AppResponse
+## AppResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV | lite_wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 定义AppResponse信息。
  
@@ -467,6 +483,7 @@ export default class Req {
  
 **系统能力：** 以下各项对应的系统能力有所不同，详见下表。
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | appID6+ | string | 是 | 表示应用的包名，用于标识应用的唯一性。 系统能力： SystemCapability.ArkUI.ArkUI.Full |
@@ -477,14 +494,16 @@ export default class Req {
  
   
 
-#### ScreenOnVisibleOptions
+## ScreenOnVisibleOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义屏幕上可见接口的选项。
  
 **系统能力：** 以下各项对应的系统能力均为SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | visible | boolean | 否 | 是否启动保活，默认值false。 |
@@ -495,14 +514,16 @@ export default class Req {
  
   
 
-#### RequestFullWindowOptions
+## RequestFullWindowOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义RequestFullWindow接口的选项。
  
 **系统能力：** 以下各项对应的系统能力均为SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | duration | number | 是 | 定义动画选项的持续时间，单位为毫秒。 |

@@ -1,9 +1,9 @@
 # BundleInfo
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bundlemanager-bundleinfo
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 应用包信息，可以通过[bundleManager.getBundleInfoForSelf](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bundlemanager#bundlemanagergetbundleinfoforself)获取自身的应用包信息，其中参数[bundleFlags](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bundlemanager#bundleflag)指定所返回的[BundleInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bundlemanager-bundleinfo)中所包含的信息。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { bundleManager } from '@kit.AbilityKit';
@@ -22,11 +23,13 @@ import { bundleManager } from '@kit.AbilityKit';
 
 
 
-#### BundleInfo
+## BundleInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -51,9 +54,10 @@ import { bundleManager } from '@kit.AbilityKit';
 
 
 
-#### ReqPermissionDetail
+## ReqPermissionDetail
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 应用运行时需向系统申请的权限集合的详细信息。
 
@@ -64,6 +68,7 @@ import { bundleManager } from '@kit.AbilityKit';
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -76,15 +81,17 @@ import { bundleManager } from '@kit.AbilityKit';
 
 
 
-#### UsedScene
+## UsedScene
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述权限的使用场景和时机，帮助开发者合理申请和使用权限。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -94,15 +101,17 @@ import { bundleManager } from '@kit.AbilityKit';
 
 
 
-#### SignatureInfo
+## SignatureInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述应用包的签名信息，可标识应用来源、确保应用完整性，并用于应用安全校验与识别。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -114,13 +123,15 @@ import { bundleManager } from '@kit.AbilityKit';
 
 
 
-#### AppCloneIdentity14+
+## AppCloneIdentity14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述应用包的身份信息。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -130,9 +141,10 @@ import { bundleManager } from '@kit.AbilityKit';
 
 
 
-#### AlternateIconInfo
+## AlternateIconInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述应用备用图标信息。
 
@@ -141,6 +153,7 @@ import { bundleManager } from '@kit.AbilityKit';
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

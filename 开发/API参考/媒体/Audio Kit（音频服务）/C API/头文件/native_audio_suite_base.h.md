@@ -1,11 +1,12 @@
 # native_audio_suite_base.h
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-audio-suite-base-h
 **支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 结构体
+### 结构体
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_AudioFormat | OH_AudioFormat | 定义音频编创的音频流信息，用于描述基本音频格式。 |
@@ -50,10 +54,12 @@
  
   
 
-#### 枚举
+### 枚举
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_AudioNode_Type | OH_AudioNode_Type | 定义音频编创节点类型。 |
@@ -74,10 +80,12 @@
  
   
 
-#### 宏定义
+### 宏定义
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | EQUALIZER_BAND_NUM (10) | 定义均衡器频带数量为10个。 起始版本： 22 |
@@ -86,10 +94,12 @@
  
   
 
-#### 变量
+### 变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | const OH_EqualizerFrequencyBandGains OH_EQUALIZER_PARAM_DEFAULT | 默认均衡器频带增益效果。 各频带增益：{0, 0, 0, 0, 0, 0, 0, 0, 0, 0}。 起始版本： 22 |
@@ -105,13 +115,15 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### OH_AudioNode_Type
+### OH_AudioNode_Type
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -125,6 +137,7 @@ enum OH_AudioNode_Type
  
 **起始版本：** 22
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | INPUT_NODE_TYPE_DEFAULT = 1 | 输入节点，支持从应用程序获取音频数据。 起始版本： 22 |
@@ -145,7 +158,8 @@ enum OH_AudioNode_Type
  
   
 
-#### OH_AudioSuite_PipelineWorkMode
+### OH_AudioSuite_PipelineWorkMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -159,6 +173,7 @@ enum OH_AudioSuite_PipelineWorkMode
  
 **起始版本：** 22
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AUDIOSUITE_PIPELINE_EDIT_MODE = 1 | 编辑模式，管线处于该工作模式下可创建多种效果节点进行音频处理。 |
@@ -167,7 +182,8 @@ enum OH_AudioSuite_PipelineWorkMode
  
   
 
-#### OH_AudioSuite_PipelineState
+### OH_AudioSuite_PipelineState
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -181,6 +197,7 @@ enum OH_AudioSuite_PipelineState
  
 **起始版本：** 22
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AUDIOSUITE_PIPELINE_STOPPED = 1 | 管线处于停止状态。 |
@@ -189,7 +206,8 @@ enum OH_AudioSuite_PipelineState
  
   
 
-#### OH_AudioSuite_Result
+### OH_AudioSuite_Result
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -203,6 +221,7 @@ enum OH_AudioSuite_Result
  
 **起始版本：** 22
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AUDIOSUITE_SUCCESS = 0 | 调用成功。 |
@@ -216,14 +235,15 @@ enum OH_AudioSuite_Result
 | AUDIOSUITE_ERROR_UNSUPPORTED_CONNECT = 8 | 节点之间不支持连接。 |
 | AUDIOSUITE_ERROR_UNSUPPORTED_OPERATION = 9 | 不支持的操作。例如，效果节点不支持设置音频格式。 |
 | AUDIOSUITE_ERROR_CREATED_EXCEED_SYSTEM_LIMITS = 10 | 创建管线或者节点超过系统最大数量限制。具体情况如下： 引擎最多支持创建10条管线。在API版本26.0.0之前，实时预览管线最多创建1条；在API版本26.0.0及以后，不再对实时预览管线的数量做单独限制，但管线的总数仍不得超过10条。 每一个管线中，输出节点的数量不超过1个，混音节点的数量不超过3个，音源分离节点的数量不超过1个。 在API version 24之前，每一个管线中，输入节点的数量不超过5个，其余效果节点的数量不超过5个；在API version 24及以后，每一个管线中，输入节点的数量不超过15个，其余效果节点的数量不超过15个。 |
-| AUDIOSUITE_ERROR_REQUIRED_PARAMETERS_MISSING = 11 | 参数缺少必要参数。例如，输入节点未设置回调函数、输出节点未设置音频格式。 |
+| AUDIOSUITE_ERROR_REQUIRED_PARAMETERS_MISSING = 11 | 缺少必要参数。例如，输入节点未设置回调函数、输出节点未设置音频格式。 |
 | AUDIOSUITE_ERROR_TIMEOUT = 12 | 操作超时。 |
 | AUDIOSUITE_ERROR_MEMORY_ALLOC_FAILED = 13 | 内存申请失败。 |
  
  
   
 
-#### OH_Audio_SampleFormat
+### OH_Audio_SampleFormat
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -237,18 +257,20 @@ enum OH_Audio_SampleFormat
  
 **起始版本：** 22
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AUDIO_SAMPLE_U8 = 0 | Unsigned 8位。 |
-| AUDIO_SAMPLE_S16LE = 1 | Short 16位小端。 |
-| AUDIO_SAMPLE_S24LE = 2 | Short 24位小端。 |
-| AUDIO_SAMPLE_S32LE = 3 | Short 32位小端。 |
+| AUDIO_SAMPLE_S16LE = 1 | Signed 16位小端。 |
+| AUDIO_SAMPLE_S24LE = 2 | Signed 24位小端。 |
+| AUDIO_SAMPLE_S32LE = 3 | Signed 32位小端。 |
 | AUDIO_SAMPLE_F32LE = 4 | Float 32位小端。 |
  
  
   
 
-#### OH_Audio_EncodingType
+### OH_Audio_EncodingType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -262,6 +284,7 @@ enum OH_Audio_EncodingType
  
 **起始版本：** 22
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AUDIO_ENCODING_TYPE_RAW = 0 | PCM编码。 |
@@ -269,7 +292,8 @@ enum OH_Audio_EncodingType
  
   
 
-#### OH_Audio_SampleRate
+### OH_Audio_SampleRate
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -283,6 +307,7 @@ enum OH_Audio_SampleRate
  
 **起始版本：** 22
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | SAMPLE_RATE_8000 = 8000 | 采样率8kHz。 |
@@ -303,7 +328,8 @@ enum OH_Audio_SampleRate
  
   
 
-#### OH_SoundFieldType
+### OH_SoundFieldType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -317,6 +343,7 @@ enum OH_SoundFieldType
  
 **起始版本：** 22
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | SOUND_FIELD_FRONT_FACING = 1 | 前置声场效果。 |
@@ -327,7 +354,8 @@ enum OH_SoundFieldType
  
   
 
-#### OH_EnvironmentType
+### OH_EnvironmentType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -341,6 +369,7 @@ enum OH_EnvironmentType
  
 **起始版本：** 22
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ENVIRONMENT_TYPE_BROADCAST = 1 | 环境节点效果为广播。 |
@@ -351,7 +380,8 @@ enum OH_EnvironmentType
  
   
 
-#### OH_VoiceBeautifierType
+### OH_VoiceBeautifierType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -365,6 +395,7 @@ enum OH_VoiceBeautifierType
  
 **起始版本：** 22
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | VOICE_BEAUTIFIER_TYPE_CLEAR = 1 | 声音美化节点效果为清澈。 |
@@ -375,7 +406,8 @@ enum OH_VoiceBeautifierType
  
   
 
-#### OH_AudioSuite_SurroundDirection
+### OH_AudioSuite_SurroundDirection
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -389,6 +421,7 @@ enum OH_AudioSuite_SurroundDirection
  
 **起始版本：** 23
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | SPACE_RENDER_CCW = 0 | 逆时针旋转。 |
@@ -397,7 +430,8 @@ enum OH_AudioSuite_SurroundDirection
  
   
 
-#### OH_AudioSuite_PureVoiceChangeGenderOption
+### OH_AudioSuite_PureVoiceChangeGenderOption
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -411,6 +445,7 @@ enum OH_AudioSuite_PureVoiceChangeGenderOption
  
 **起始版本：** 23
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | PURE_VOICE_CHANGE_FEMALE = 1 | 设置女声。 |
@@ -419,7 +454,8 @@ enum OH_AudioSuite_PureVoiceChangeGenderOption
  
   
 
-#### OH_AudioSuite_PureVoiceChangeType
+### OH_AudioSuite_PureVoiceChangeType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -433,6 +469,7 @@ enum OH_AudioSuite_PureVoiceChangeType
  
 **起始版本：** 23
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | PURE_VOICE_CHANGE_TYPE_CARTOON = 1 | 传统变声效果节点为卡通类型。 |
@@ -446,7 +483,8 @@ enum OH_AudioSuite_PureVoiceChangeType
  
   
 
-#### OH_AudioSuite_GeneralVoiceChangeType
+### OH_AudioSuite_GeneralVoiceChangeType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -460,6 +498,7 @@ enum OH_AudioSuite_GeneralVoiceChangeType
  
 **起始版本：** 23
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | GENERAL_VOICE_CHANGE_TYPE_CUTE = 1 | 通用变声效果节点为萝莉类型。 |

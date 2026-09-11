@@ -1,16 +1,23 @@
 # 通过mercContractCode查询签约信息
 
-更新时间：2026-05-26 06:48:54
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-partner-withhold-query-contractcode
+**支持设备：** Phone | PC/2in1 | Tablet
 
-#### 功能介绍
+## 功能介绍
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 开发者可以调用此接口来查询所有通过华为支付签约成功的详细信息。
 
 
 
-#### 场景描述
+## 场景描述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 存在签约关系前提下，开发者可以通过该接口查看某笔签约信息，也可以通过主动查询签约状态用以完成下一步的业务逻辑，常见的使用场景：
 
@@ -20,7 +27,10 @@
 
 
 
-#### 接口原型
+## 接口原型
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
  - **承载协议：** HTTPS GET
  - **接口方向：** 开发者服务器 -> 华为支付服务器
@@ -34,9 +44,13 @@
 
 
 
-#### 请求参数
+## 请求参数
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 **Request Header**
+
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
@@ -46,6 +60,7 @@
 
 **Request path**
 
+
 | 参数 | 是否必选 | 类型 | 说明 |
 | --- | --- | --- | --- |
 | mercContractCode | 是 | String | 商户签约协议号。开发者请求签约时传入的签约协议号，由商户生成，商户需保证字段唯一性。最大长度64。 |
@@ -53,7 +68,10 @@
 
 
 
-#### 请求示例
+## 请求示例
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```json
 GET /api/v1/partner/contract/sign/merc-contracts/{mercContractCode} HTTP/1.1
@@ -63,9 +81,13 @@ PayMercAuth: {"callerId":"10132120***","traceId":"202305151026422776499","time":
 
 
 
-#### 响应参数
+## 响应参数
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 **Response Header**
+
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
@@ -73,6 +95,7 @@ PayMercAuth: {"callerId":"10132120***","traceId":"202305151026422776499","time":
 
 
 **Response Body**
+
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
@@ -96,7 +119,10 @@ PayMercAuth: {"callerId":"10132120***","traceId":"202305151026422776499","time":
 
 
 
-#### 响应示例
+## 响应示例
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```json
 HTTP/1.1 200 OK
@@ -115,9 +141,13 @@ Content-Type: application/json; charset=UTF-8
 
 
 
-#### 错误码
+## 错误码
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 **resultCode**非400000的错误码请看[公共错误码说明](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-error-code-rest#公共错误码说明)。
+
 
 | 返回码 | 错误码 | 错误描述 | 解决方案 |
 | --- | --- | --- | --- |

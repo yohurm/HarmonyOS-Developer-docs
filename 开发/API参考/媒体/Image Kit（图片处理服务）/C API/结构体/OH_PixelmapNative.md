@@ -1,18 +1,19 @@
 # OH_PixelmapNative
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-nativemodule-oh-pixelmapnative
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 struct OH_PixelmapNative
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 OH_PixelmapNative是Native层封装的图像解码后无压缩的位图格式结构体，支持像素数据读写、不透明度设置、缩放、平移、旋转、翻转、裁剪等操作，适用于需要在Native层对Pixelmap进行像素级处理与变换的场景。
  
@@ -20,6 +21,7 @@ OH_PixelmapNative是Native层封装的图像解码后无压缩的位图格式结
  
 OH_PixelmapNative结构体的部分相关函数和操作方式如下：
   
+
 | 字段类型 | 字段名称 | 字段描述 | 操作函数 | 函数描述 |
 | --- | --- | --- | --- | --- |
 | uint8_t | data | 图像像素数据，当未指定源像素格式时，默认按BGRA_8888格式解析。 | OH_PixelmapNative_ReadPixels | 读取Pixelmap的像素数据，结果写入缓冲区中。 |

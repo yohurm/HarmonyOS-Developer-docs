@@ -1,13 +1,14 @@
 # hiappevent.h
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hiappevent-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 HiAppEvent模块为应用开发者提供的事件订阅和事件打点函数定义。在执行应用事件打点之前，开发者必须先构造一个参数列表对象来存储输入的事件参数，并指定事件领域、事件名称和事件类型。
 
@@ -31,15 +32,18 @@ HiAppEvent模块为应用开发者提供的事件订阅和事件打点函数定�
 
 
 
-#### 汇总
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 汇总
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 结构体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -53,9 +57,11 @@ HiAppEvent模块为应用开发者提供的事件订阅和事件打点函数定�
 
 
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -66,9 +72,11 @@ HiAppEvent模块为应用开发者提供的事件订阅和事件打点函数定�
 
 
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -126,15 +134,17 @@ HiAppEvent模块为应用开发者提供的事件订阅和事件打点函数定�
 
 
 
-#### 枚举类型说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 枚举类型说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### HiAppEvent_ErrorCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### HiAppEvent_ErrorCode
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum HiAppEvent_ErrorCode
@@ -145,6 +155,7 @@ enum HiAppEvent_ErrorCode
 错误码定义。
 
 **起始版本：** 15
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -161,9 +172,10 @@ enum HiAppEvent_ErrorCode
 
 
 
-#### EventType
+### EventType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum EventType
@@ -175,6 +187,7 @@ enum EventType
 
 **起始版本：** 8
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | FAULT = 1 | 故障事件类型。 |
@@ -185,9 +198,10 @@ enum EventType
 
 
 
-#### OH_HiAppEvent_FrameworkType
+### OH_HiAppEvent_FrameworkType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_HiAppEvent_FrameworkType
@@ -199,6 +213,7 @@ enum OH_HiAppEvent_FrameworkType
 
 **起始版本：** 26.0.0
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_FLUTTER_DART = 0 | Flutter_dart类型。 |
@@ -208,15 +223,17 @@ enum OH_HiAppEvent_FrameworkType
 
 
 
-#### 函数说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 函数说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### OH_HiAppEvent_OnReceive()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### OH_HiAppEvent_OnReceive()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_HiAppEvent_OnReceive)(const char* domain, const struct HiAppEvent_AppEventGroup* appEventGroups, uint32_t groupLen)
@@ -230,6 +247,7 @@ typedef void (*OH_HiAppEvent_OnReceive)(const char* domain, const struct HiAppEv
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char* domain | 接收到的应用事件的领域。 |
@@ -239,9 +257,10 @@ typedef void (*OH_HiAppEvent_OnReceive)(const char* domain, const struct HiAppEv
 
 
 
-#### OH_HiAppEvent_OnTrigger()
+### OH_HiAppEvent_OnTrigger()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_HiAppEvent_OnTrigger)(int row, int size)
@@ -257,6 +276,7 @@ typedef void (*OH_HiAppEvent_OnTrigger)(int row, int size)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | int row | 事件观察者新接收到的事件消息的数量。 |
@@ -265,9 +285,10 @@ typedef void (*OH_HiAppEvent_OnTrigger)(int row, int size)
 
 
 
-#### OH_HiAppEvent_OnTake()
+### OH_HiAppEvent_OnTake()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_HiAppEvent_OnTake)(const char* const *events, uint32_t eventLen)
@@ -281,6 +302,7 @@ typedef void (*OH_HiAppEvent_OnTake)(const char* const *events, uint32_t eventLe
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char* const *events | JSON字符串格式的事件数组。 |
@@ -289,9 +311,10 @@ typedef void (*OH_HiAppEvent_OnTake)(const char* const *events, uint32_t eventLe
 
 
 
-#### OH_HiAppEvent_CreateParamList()
+### OH_HiAppEvent_CreateParamList()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ParamList OH_HiAppEvent_CreateParamList(void)
@@ -313,6 +336,7 @@ ParamList OH_HiAppEvent_CreateParamList(void)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ParamList | 指向参数列表对象的指针。 |
@@ -320,9 +344,10 @@ ParamList OH_HiAppEvent_CreateParamList(void)
 
 
 
-#### OH_HiAppEvent_DestroyParamList()
+### OH_HiAppEvent_DestroyParamList()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_HiAppEvent_DestroyParamList(ParamList list)
@@ -336,6 +361,7 @@ void OH_HiAppEvent_DestroyParamList(ParamList list)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ParamList list | 参数列表对象指针。 |
@@ -343,9 +369,10 @@ void OH_HiAppEvent_DestroyParamList(ParamList list)
 
 
 
-#### OH_HiAppEvent_AddBoolParam()
+### OH_HiAppEvent_AddBoolParam()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ParamList OH_HiAppEvent_AddBoolParam(ParamList list, const char* name, bool boolean)
@@ -359,6 +386,7 @@ ParamList OH_HiAppEvent_AddBoolParam(ParamList list, const char* name, bool bool
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ParamList list | 需要添加参数的参数列表指针。 |
@@ -368,6 +396,7 @@ ParamList OH_HiAppEvent_AddBoolParam(ParamList list, const char* name, bool bool
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ParamList | 添加参数后的参数列表指针。 |
@@ -375,9 +404,10 @@ ParamList OH_HiAppEvent_AddBoolParam(ParamList list, const char* name, bool bool
 
 
 
-#### OH_HiAppEvent_AddBoolArrayParam()
+### OH_HiAppEvent_AddBoolArrayParam()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ParamList OH_HiAppEvent_AddBoolArrayParam(ParamList list, const char* name, const bool* booleans, int arrSize)
@@ -391,6 +421,7 @@ ParamList OH_HiAppEvent_AddBoolArrayParam(ParamList list, const char* name, cons
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ParamList list | 需要添加参数的参数列表指针。 |
@@ -401,6 +432,7 @@ ParamList OH_HiAppEvent_AddBoolArrayParam(ParamList list, const char* name, cons
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ParamList | 添加参数后的参数列表指针。 |
@@ -408,9 +440,10 @@ ParamList OH_HiAppEvent_AddBoolArrayParam(ParamList list, const char* name, cons
 
 
 
-#### OH_HiAppEvent_AddInt8Param()
+### OH_HiAppEvent_AddInt8Param()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ParamList OH_HiAppEvent_AddInt8Param(ParamList list, const char* name, int8_t num)
@@ -424,6 +457,7 @@ ParamList OH_HiAppEvent_AddInt8Param(ParamList list, const char* name, int8_t nu
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ParamList list | 需要添加参数的参数列表指针。 |
@@ -433,6 +467,7 @@ ParamList OH_HiAppEvent_AddInt8Param(ParamList list, const char* name, int8_t nu
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ParamList | 添加参数后的参数列表指针。 |
@@ -440,9 +475,10 @@ ParamList OH_HiAppEvent_AddInt8Param(ParamList list, const char* name, int8_t nu
 
 
 
-#### OH_HiAppEvent_AddInt8ArrayParam()
+### OH_HiAppEvent_AddInt8ArrayParam()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ParamList OH_HiAppEvent_AddInt8ArrayParam(ParamList list, const char* name, const int8_t* nums, int arrSize)
@@ -456,6 +492,7 @@ ParamList OH_HiAppEvent_AddInt8ArrayParam(ParamList list, const char* name, cons
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ParamList list | 需要添加参数的参数列表指针。 |
@@ -466,6 +503,7 @@ ParamList OH_HiAppEvent_AddInt8ArrayParam(ParamList list, const char* name, cons
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ParamList | 添加参数后的参数列表指针。 |
@@ -473,9 +511,10 @@ ParamList OH_HiAppEvent_AddInt8ArrayParam(ParamList list, const char* name, cons
 
 
 
-#### OH_HiAppEvent_AddInt16Param()
+### OH_HiAppEvent_AddInt16Param()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ParamList OH_HiAppEvent_AddInt16Param(ParamList list, const char* name, int16_t num)
@@ -489,6 +528,7 @@ ParamList OH_HiAppEvent_AddInt16Param(ParamList list, const char* name, int16_t 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ParamList list | 需要添加参数的参数列表指针。 |
@@ -498,6 +538,7 @@ ParamList OH_HiAppEvent_AddInt16Param(ParamList list, const char* name, int16_t 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ParamList | 添加参数后的参数列表指针。 |
@@ -505,9 +546,10 @@ ParamList OH_HiAppEvent_AddInt16Param(ParamList list, const char* name, int16_t 
 
 
 
-#### OH_HiAppEvent_AddInt16ArrayParam()
+### OH_HiAppEvent_AddInt16ArrayParam()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ParamList OH_HiAppEvent_AddInt16ArrayParam(ParamList list, const char* name, const int16_t* nums, int arrSize)
@@ -521,6 +563,7 @@ ParamList OH_HiAppEvent_AddInt16ArrayParam(ParamList list, const char* name, con
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ParamList list | 需要添加参数的参数列表指针。 |
@@ -531,6 +574,7 @@ ParamList OH_HiAppEvent_AddInt16ArrayParam(ParamList list, const char* name, con
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ParamList | 添加参数后的参数列表指针。 |
@@ -538,9 +582,10 @@ ParamList OH_HiAppEvent_AddInt16ArrayParam(ParamList list, const char* name, con
 
 
 
-#### OH_HiAppEvent_AddInt32Param()
+### OH_HiAppEvent_AddInt32Param()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ParamList OH_HiAppEvent_AddInt32Param(ParamList list, const char* name, int32_t num)
@@ -554,6 +599,7 @@ ParamList OH_HiAppEvent_AddInt32Param(ParamList list, const char* name, int32_t 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ParamList list | 需要添加参数的参数列表指针。 |
@@ -563,6 +609,7 @@ ParamList OH_HiAppEvent_AddInt32Param(ParamList list, const char* name, int32_t 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ParamList | 添加参数后的参数列表指针。 |
@@ -570,9 +617,10 @@ ParamList OH_HiAppEvent_AddInt32Param(ParamList list, const char* name, int32_t 
 
 
 
-#### OH_HiAppEvent_AddInt32ArrayParam()
+### OH_HiAppEvent_AddInt32ArrayParam()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ParamList OH_HiAppEvent_AddInt32ArrayParam(ParamList list, const char* name, const int32_t* nums, int arrSize)
@@ -586,6 +634,7 @@ ParamList OH_HiAppEvent_AddInt32ArrayParam(ParamList list, const char* name, con
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ParamList list | 需要添加参数的参数列表指针。 |
@@ -596,6 +645,7 @@ ParamList OH_HiAppEvent_AddInt32ArrayParam(ParamList list, const char* name, con
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ParamList | 添加参数后的参数列表指针。 |
@@ -603,9 +653,10 @@ ParamList OH_HiAppEvent_AddInt32ArrayParam(ParamList list, const char* name, con
 
 
 
-#### OH_HiAppEvent_AddInt64Param()
+### OH_HiAppEvent_AddInt64Param()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ParamList OH_HiAppEvent_AddInt64Param(ParamList list, const char* name, int64_t num)
@@ -619,6 +670,7 @@ ParamList OH_HiAppEvent_AddInt64Param(ParamList list, const char* name, int64_t 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ParamList list | 需要添加参数的参数列表指针。 |
@@ -628,6 +680,7 @@ ParamList OH_HiAppEvent_AddInt64Param(ParamList list, const char* name, int64_t 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ParamList | 添加参数后的参数列表指针。 |
@@ -635,9 +688,10 @@ ParamList OH_HiAppEvent_AddInt64Param(ParamList list, const char* name, int64_t 
 
 
 
-#### OH_HiAppEvent_AddInt64ArrayParam()
+### OH_HiAppEvent_AddInt64ArrayParam()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ParamList OH_HiAppEvent_AddInt64ArrayParam(ParamList list, const char* name, const int64_t* nums, int arrSize)
@@ -651,6 +705,7 @@ ParamList OH_HiAppEvent_AddInt64ArrayParam(ParamList list, const char* name, con
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ParamList list | 需要添加参数的参数列表指针。 |
@@ -661,6 +716,7 @@ ParamList OH_HiAppEvent_AddInt64ArrayParam(ParamList list, const char* name, con
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ParamList | 添加参数后的参数列表指针。 |
@@ -668,9 +724,10 @@ ParamList OH_HiAppEvent_AddInt64ArrayParam(ParamList list, const char* name, con
 
 
 
-#### OH_HiAppEvent_AddFloatParam()
+### OH_HiAppEvent_AddFloatParam()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ParamList OH_HiAppEvent_AddFloatParam(ParamList list, const char* name, float num)
@@ -684,6 +741,7 @@ ParamList OH_HiAppEvent_AddFloatParam(ParamList list, const char* name, float nu
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ParamList list | 需要添加参数的参数列表指针。 |
@@ -693,6 +751,7 @@ ParamList OH_HiAppEvent_AddFloatParam(ParamList list, const char* name, float nu
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ParamList | 添加参数后的参数列表指针。 |
@@ -700,9 +759,10 @@ ParamList OH_HiAppEvent_AddFloatParam(ParamList list, const char* name, float nu
 
 
 
-#### OH_HiAppEvent_AddFloatArrayParam()
+### OH_HiAppEvent_AddFloatArrayParam()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ParamList OH_HiAppEvent_AddFloatArrayParam(ParamList list, const char* name, const float* nums, int arrSize)
@@ -716,6 +776,7 @@ ParamList OH_HiAppEvent_AddFloatArrayParam(ParamList list, const char* name, con
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ParamList list | 需要添加参数的参数列表指针。 |
@@ -726,6 +787,7 @@ ParamList OH_HiAppEvent_AddFloatArrayParam(ParamList list, const char* name, con
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ParamList | 添加参数后的参数列表指针。 |
@@ -733,9 +795,10 @@ ParamList OH_HiAppEvent_AddFloatArrayParam(ParamList list, const char* name, con
 
 
 
-#### OH_HiAppEvent_AddDoubleParam()
+### OH_HiAppEvent_AddDoubleParam()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ParamList OH_HiAppEvent_AddDoubleParam(ParamList list, const char* name, double num)
@@ -749,6 +812,7 @@ ParamList OH_HiAppEvent_AddDoubleParam(ParamList list, const char* name, double 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ParamList list | 需要添加参数的参数列表指针。 |
@@ -758,6 +822,7 @@ ParamList OH_HiAppEvent_AddDoubleParam(ParamList list, const char* name, double 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ParamList | 添加参数后的参数列表指针。 |
@@ -765,9 +830,10 @@ ParamList OH_HiAppEvent_AddDoubleParam(ParamList list, const char* name, double 
 
 
 
-#### OH_HiAppEvent_AddDoubleArrayParam()
+### OH_HiAppEvent_AddDoubleArrayParam()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ParamList OH_HiAppEvent_AddDoubleArrayParam(ParamList list, const char* name, const double* nums, int arrSize)
@@ -781,6 +847,7 @@ ParamList OH_HiAppEvent_AddDoubleArrayParam(ParamList list, const char* name, co
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ParamList list | 需要添加参数的参数列表指针。 |
@@ -791,6 +858,7 @@ ParamList OH_HiAppEvent_AddDoubleArrayParam(ParamList list, const char* name, co
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ParamList | 添加参数后的参数列表指针。 |
@@ -798,9 +866,10 @@ ParamList OH_HiAppEvent_AddDoubleArrayParam(ParamList list, const char* name, co
 
 
 
-#### OH_HiAppEvent_AddStringParam()
+### OH_HiAppEvent_AddStringParam()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ParamList OH_HiAppEvent_AddStringParam(ParamList list, const char* name, const char* str)
@@ -814,6 +883,7 @@ ParamList OH_HiAppEvent_AddStringParam(ParamList list, const char* name, const c
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ParamList list | 需要添加参数的参数列表指针。 |
@@ -823,6 +893,7 @@ ParamList OH_HiAppEvent_AddStringParam(ParamList list, const char* name, const c
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ParamList | 添加参数后的参数列表指针。 |
@@ -830,9 +901,10 @@ ParamList OH_HiAppEvent_AddStringParam(ParamList list, const char* name, const c
 
 
 
-#### OH_HiAppEvent_AddStringArrayParam()
+### OH_HiAppEvent_AddStringArrayParam()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ParamList OH_HiAppEvent_AddStringArrayParam(ParamList list, const char* name, const char * const *strs, int arrSize)
@@ -846,6 +918,7 @@ ParamList OH_HiAppEvent_AddStringArrayParam(ParamList list, const char* name, co
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ParamList list | 需要添加参数的参数列表指针。 |
@@ -856,6 +929,7 @@ ParamList OH_HiAppEvent_AddStringArrayParam(ParamList list, const char* name, co
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ParamList | 添加参数后的参数列表指针。 |
@@ -863,9 +937,10 @@ ParamList OH_HiAppEvent_AddStringArrayParam(ParamList list, const char* name, co
 
 
 
-#### OH_HiAppEvent_Write()
+### OH_HiAppEvent_Write()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_HiAppEvent_Write(const char* domain, const char* name, enum EventType type, const ParamList list)
@@ -879,6 +954,7 @@ int OH_HiAppEvent_Write(const char* domain, const char* name, enum EventType typ
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char* domain | 事件领域。开发者可以根据需要自定义事件领域。 事件领域名称支持数字、字母、下划线字符，需要以字母开头且不能以下划线结尾，长度非空且不超过32个字符。 |
@@ -889,6 +965,7 @@ int OH_HiAppEvent_Write(const char* domain, const char* name, enum EventType typ
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 如果事件参数校验成功，则返回0，将事件写入事件文件； 如果事件中存在无效参数，则返回正值，丢弃无效参数后将事件写入事件文件； 如果事件参数校验失败，则返回负值，并且事件将不会写入事件文件。 0 事件参数校验成功。 -1 非法的事件名称。 -4 非法的事件领域名称。 -99 打点功能被关闭。 1 非法的事件参数名称。 4 非法的事件参数字符串长度。 5 非法的事件参数数量。 6 非法的事件参数数组长度。 8 重复的事件参数名称。 |
@@ -896,9 +973,10 @@ int OH_HiAppEvent_Write(const char* domain, const char* name, enum EventType typ
 
 
 
-#### OH_HiAppEvent_Configure()
+### OH_HiAppEvent_Configure()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_HiAppEvent_Configure(const char* name, const char* value)
@@ -912,6 +990,7 @@ bool OH_HiAppEvent_Configure(const char* name, const char* value)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char* name | 配置项名称。名称可填DISABLE和MAX_STORAGE。 |
@@ -920,6 +999,7 @@ bool OH_HiAppEvent_Configure(const char* name, const char* value)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 配置结果。如果配置成功，则返回true；如果配置失败则返回false。 |
@@ -927,9 +1007,10 @@ bool OH_HiAppEvent_Configure(const char* name, const char* value)
 
 
 
-#### OH_HiAppEvent_CreateWatcher()
+### OH_HiAppEvent_CreateWatcher()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 HiAppEvent_Watcher* OH_HiAppEvent_CreateWatcher(const char* name)
@@ -951,12 +1032,14 @@ HiAppEvent_Watcher* OH_HiAppEvent_CreateWatcher(const char* name)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char* name | 事件观察者名称。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -965,9 +1048,10 @@ HiAppEvent_Watcher* OH_HiAppEvent_CreateWatcher(const char* name)
 
 
 
-#### OH_HiAppEvent_DestroyWatcher()
+### OH_HiAppEvent_DestroyWatcher()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_HiAppEvent_DestroyWatcher(HiAppEvent_Watcher* watcher)
@@ -981,6 +1065,7 @@ void OH_HiAppEvent_DestroyWatcher(HiAppEvent_Watcher* watcher)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | HiAppEvent_Watcher* watcher | 指向事件观察者的指针（即OH_HiAppEvent_CreateWatcher接口返回的指针）。 |
@@ -988,9 +1073,10 @@ void OH_HiAppEvent_DestroyWatcher(HiAppEvent_Watcher* watcher)
 
 
 
-#### OH_HiAppEvent_SetTriggerCondition()
+### OH_HiAppEvent_SetTriggerCondition()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_HiAppEvent_SetTriggerCondition(HiAppEvent_Watcher* watcher, int row, int size, int timeOut)
@@ -1006,6 +1092,7 @@ int OH_HiAppEvent_SetTriggerCondition(HiAppEvent_Watcher* watcher, int row, int 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | HiAppEvent_Watcher* watcher | 指向事件观察者的指针（即OH_HiAppEvent_CreateWatcher接口返回的指针）。 |
@@ -1016,6 +1103,7 @@ int OH_HiAppEvent_SetTriggerCondition(HiAppEvent_Watcher* watcher, int row, int 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 0：接口调用成功；-5：watcher入参空指针。 |
@@ -1023,9 +1111,10 @@ int OH_HiAppEvent_SetTriggerCondition(HiAppEvent_Watcher* watcher, int row, int 
 
 
 
-#### OH_HiAppEvent_SetAppEventFilter()
+### OH_HiAppEvent_SetAppEventFilter()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_HiAppEvent_SetAppEventFilter(HiAppEvent_Watcher* watcher, const char* domain, uint8_t eventTypes, const char* const *names, int namesLen)
@@ -1039,6 +1128,7 @@ int OH_HiAppEvent_SetAppEventFilter(HiAppEvent_Watcher* watcher, const char* dom
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | HiAppEvent_Watcher* watcher | 指向事件观察者的指针（即OH_HiAppEvent_CreateWatcher接口返回的指针）。 |
@@ -1050,6 +1140,7 @@ int OH_HiAppEvent_SetAppEventFilter(HiAppEvent_Watcher* watcher, const char* dom
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 0：接口调用成功；-1：names参数异常；-4：domain参数异常；-5：watcher入参空指针。 |
@@ -1057,9 +1148,10 @@ int OH_HiAppEvent_SetAppEventFilter(HiAppEvent_Watcher* watcher, const char* dom
 
 
 
-#### OH_HiAppEvent_SetWatcherOnTrigger()
+### OH_HiAppEvent_SetWatcherOnTrigger()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_HiAppEvent_SetWatcherOnTrigger(HiAppEvent_Watcher* watcher, OH_HiAppEvent_OnTrigger onTrigger)
@@ -1075,6 +1167,7 @@ int OH_HiAppEvent_SetWatcherOnTrigger(HiAppEvent_Watcher* watcher, OH_HiAppEvent
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | HiAppEvent_Watcher* watcher | 指向事件观察者的指针（即OH_HiAppEvent_CreateWatcher接口返回的指针）。 |
@@ -1083,6 +1176,7 @@ int OH_HiAppEvent_SetWatcherOnTrigger(HiAppEvent_Watcher* watcher, OH_HiAppEvent
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 0：接口调用成功；-5：watcher入参空指针。 |
@@ -1090,9 +1184,10 @@ int OH_HiAppEvent_SetWatcherOnTrigger(HiAppEvent_Watcher* watcher, OH_HiAppEvent
 
 
 
-#### OH_HiAppEvent_SetWatcherOnReceive()
+### OH_HiAppEvent_SetWatcherOnReceive()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_HiAppEvent_SetWatcherOnReceive(HiAppEvent_Watcher* watcher, OH_HiAppEvent_OnReceive onReceive)
@@ -1106,6 +1201,7 @@ int OH_HiAppEvent_SetWatcherOnReceive(HiAppEvent_Watcher* watcher, OH_HiAppEvent
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | HiAppEvent_Watcher* watcher | 指向事件观察者的指针（即OH_HiAppEvent_CreateWatcher接口返回的指针）。 |
@@ -1114,6 +1210,7 @@ int OH_HiAppEvent_SetWatcherOnReceive(HiAppEvent_Watcher* watcher, OH_HiAppEvent
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 0：接口调用成功；-5：watcher入参空指针。 |
@@ -1121,9 +1218,10 @@ int OH_HiAppEvent_SetWatcherOnReceive(HiAppEvent_Watcher* watcher, OH_HiAppEvent
 
 
 
-#### OH_HiAppEvent_TakeWatcherData()
+### OH_HiAppEvent_TakeWatcherData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_HiAppEvent_TakeWatcherData(HiAppEvent_Watcher* watcher, uint32_t eventNum, OH_HiAppEvent_OnTake onTake)
@@ -1137,6 +1235,7 @@ int OH_HiAppEvent_TakeWatcherData(HiAppEvent_Watcher* watcher, uint32_t eventNum
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | HiAppEvent_Watcher* watcher | 指向事件观察者的指针（即OH_HiAppEvent_CreateWatcher接口返回的指针）。 |
@@ -1146,6 +1245,7 @@ int OH_HiAppEvent_TakeWatcherData(HiAppEvent_Watcher* watcher, uint32_t eventNum
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 0：接口调用成功；-5：watcher入参空指针；-6：还未调用OH_HiAppEvent_AddWatcher，操作顺序有误。 |
@@ -1153,9 +1253,10 @@ int OH_HiAppEvent_TakeWatcherData(HiAppEvent_Watcher* watcher, uint32_t eventNum
 
 
 
-#### OH_HiAppEvent_AddWatcher()
+### OH_HiAppEvent_AddWatcher()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_HiAppEvent_AddWatcher(HiAppEvent_Watcher* watcher)
@@ -1166,7 +1267,7 @@ int OH_HiAppEvent_AddWatcher(HiAppEvent_Watcher* watcher)
 添加事件观察者的接口，事件观察者开始监听系统消息。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/2SCnq9PWRxCPUqNOQEhfmg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095516Z&HW-CC-Expire=86400&HW-CC-Sign=94FF8B8E586F2D31B012B00797184EA848FF8D1955923A65D96C13C898137E03)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/QRBNKWH3TKCZcG0pTCpevQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072604Z&HW-CC-Expire=86400&HW-CC-Sign=ABD165E31864E724AFFCF0B7F8E5A2A8D750373853CEFA65667D4A9583D13684)
 
 
 OH_HiAppEvent_AddWatcher接口涉及I/O操作。在对性能敏感的业务场景中，开发者应根据实际需要确定该接口是在主线程还是在子线程中调用。
@@ -1179,12 +1280,14 @@ OH_HiAppEvent_AddWatcher接口涉及I/O操作。在对性能敏感的业务场�
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | HiAppEvent_Watcher* watcher | 指向事件观察者的指针（即OH_HiAppEvent_CreateWatcher接口返回的指针）。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1193,9 +1296,10 @@ OH_HiAppEvent_AddWatcher接口涉及I/O操作。在对性能敏感的业务场�
 
 
 
-#### OH_HiAppEvent_RemoveWatcher()
+### OH_HiAppEvent_RemoveWatcher()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_HiAppEvent_RemoveWatcher(HiAppEvent_Watcher* watcher)
@@ -1209,12 +1313,14 @@ int OH_HiAppEvent_RemoveWatcher(HiAppEvent_Watcher* watcher)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | HiAppEvent_Watcher* watcher | 指向事件观察者的指针（即OH_HiAppEvent_CreateWatcher接口返回的指针）。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1223,9 +1329,10 @@ int OH_HiAppEvent_RemoveWatcher(HiAppEvent_Watcher* watcher)
 
 
 
-#### OH_HiAppEvent_ClearData()
+### OH_HiAppEvent_ClearData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_HiAppEvent_ClearData()
@@ -1239,9 +1346,10 @@ void OH_HiAppEvent_ClearData()
 
 
 
-#### OH_HiAppEvent_CreateProcessor()
+### OH_HiAppEvent_CreateProcessor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 HiAppEvent_Processor* OH_HiAppEvent_CreateProcessor(const char* name)
@@ -1252,7 +1360,7 @@ HiAppEvent_Processor* OH_HiAppEvent_CreateProcessor(const char* name)
 创建一个用于处理应用事件上报的处理者。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/5Zi66umdQvmkhPOR6xXt-A/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095516Z&HW-CC-Expire=86400&HW-CC-Sign=962A45933821900827431483FCEBF4E5EE95715A5018FF5C983FC1BAE1D6CA94)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/z1uzaZ2bSnC2Cw-Ogw3TNg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072604Z&HW-CC-Expire=86400&HW-CC-Sign=70420E9ED5601C47BFCDE966EAE8D7CF00DCA03DEE6E3BC2EA6C6BCBDC29A7FF)
 
 
 创建的处理者不再使用后，必须通过[OH_HiAppEvent_DestroyProcessor](#oh_hiappevent_destroyprocessor)接口进行销毁。
@@ -1263,12 +1371,14 @@ HiAppEvent_Processor* OH_HiAppEvent_CreateProcessor(const char* name)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char* name | 处理者名称。只能包含大小写字母、数字、下划线和$，不能以数字开头，长度非空且不超过256个字符。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1277,9 +1387,10 @@ HiAppEvent_Processor* OH_HiAppEvent_CreateProcessor(const char* name)
 
 
 
-#### OH_HiAppEvent_SetReportRoute()
+### OH_HiAppEvent_SetReportRoute()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_HiAppEvent_SetReportRoute(HiAppEvent_Processor* processor, const char* appId, const char* routeInfo)
@@ -1293,6 +1404,7 @@ int OH_HiAppEvent_SetReportRoute(HiAppEvent_Processor* processor, const char* ap
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | HiAppEvent_Processor* processor | 指向处理者的指针（即OH_HiAppEvent_CreateProcessor接口返回的指针）。 |
@@ -1302,6 +1414,7 @@ int OH_HiAppEvent_SetReportRoute(HiAppEvent_Processor* processor, const char* ap
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int | HIAPPEVENT_SUCCESS：接口调用成功； HIAPPEVENT_PROCESSOR_IS_NULL：processor入参为空； HIAPPEVENT_INVALID_PARAM_VALUE：参数值无效； HIAPPEVENT_INVALID_UID：用户标识无效； HIAPPEVENT_INVALID_PARAM_VALUE_LENGTH：参数值长度无效。 具体可参考HiAppEvent_ErrorCode。 |
@@ -1309,9 +1422,10 @@ int OH_HiAppEvent_SetReportRoute(HiAppEvent_Processor* processor, const char* ap
 
 
 
-#### OH_HiAppEvent_SetReportPolicy()
+### OH_HiAppEvent_SetReportPolicy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_HiAppEvent_SetReportPolicy(HiAppEvent_Processor* processor, int periodReport, int batchReport, bool onStartReport, bool onBackgroundReport)
@@ -1325,6 +1439,7 @@ int OH_HiAppEvent_SetReportPolicy(HiAppEvent_Processor* processor, int periodRep
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | HiAppEvent_Processor* processor | 指向处理者的指针（即OH_HiAppEvent_CreateProcessor接口返回的指针）。 |
@@ -1336,6 +1451,7 @@ int OH_HiAppEvent_SetReportPolicy(HiAppEvent_Processor* processor, int periodRep
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int | HIAPPEVENT_SUCCESS：接口调用成功； HIAPPEVENT_PROCESSOR_IS_NULL：processor入参为空； HIAPPEVENT_INVALID_PARAM_VALUE：参数值无效； HIAPPEVENT_INVALID_UID：用户标识无效。 具体可参考HiAppEvent_ErrorCode。 |
@@ -1343,9 +1459,10 @@ int OH_HiAppEvent_SetReportPolicy(HiAppEvent_Processor* processor, int periodRep
 
 
 
-#### OH_HiAppEvent_SetReportEvent()
+### OH_HiAppEvent_SetReportEvent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_HiAppEvent_SetReportEvent(HiAppEvent_Processor* processor, const char* domain, const char* name, bool isRealTime)
@@ -1359,6 +1476,7 @@ int OH_HiAppEvent_SetReportEvent(HiAppEvent_Processor* processor, const char* do
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | HiAppEvent_Processor* processor | 指向处理者的指针（即OH_HiAppEvent_CreateProcessor接口返回的指针）。 |
@@ -1369,6 +1487,7 @@ int OH_HiAppEvent_SetReportEvent(HiAppEvent_Processor* processor, const char* do
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int | HIAPPEVENT_SUCCESS：接口调用成功； HIAPPEVENT_PROCESSOR_IS_NULL：processor入参为空； HIAPPEVENT_INVALID_PARAM_VALUE：参数值无效； HIAPPEVENT_INVALID_UID：用户标识无效。 具体可参考HiAppEvent_ErrorCode。 |
@@ -1376,9 +1495,10 @@ int OH_HiAppEvent_SetReportEvent(HiAppEvent_Processor* processor, const char* do
 
 
 
-#### OH_HiAppEvent_SetCustomConfig()
+### OH_HiAppEvent_SetCustomConfig()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_HiAppEvent_SetCustomConfig(HiAppEvent_Processor* processor, const char* key, const char* value)
@@ -1392,6 +1512,7 @@ int OH_HiAppEvent_SetCustomConfig(HiAppEvent_Processor* processor, const char* k
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | HiAppEvent_Processor* processor | 指向处理者的指针（即OH_HiAppEvent_CreateProcessor接口返回的指针）。 |
@@ -1401,6 +1522,7 @@ int OH_HiAppEvent_SetCustomConfig(HiAppEvent_Processor* processor, const char* k
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int | HIAPPEVENT_SUCCESS：接口调用成功； HIAPPEVENT_PROCESSOR_IS_NULL：processor入参为空； HIAPPEVENT_INVALID_PARAM_VALUE：参数值无效； HIAPPEVENT_INVALID_UID：用户标识无效； HIAPPEVENT_INVALID_PARAM_VALUE_LENGTH：参数值长度无效。 具体可参考HiAppEvent_ErrorCode。 |
@@ -1408,9 +1530,10 @@ int OH_HiAppEvent_SetCustomConfig(HiAppEvent_Processor* processor, const char* k
 
 
 
-#### OH_HiAppEvent_SetConfigId()
+### OH_HiAppEvent_SetConfigId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_HiAppEvent_SetConfigId(HiAppEvent_Processor* processor, int configId)
@@ -1424,6 +1547,7 @@ int OH_HiAppEvent_SetConfigId(HiAppEvent_Processor* processor, int configId)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | HiAppEvent_Processor* processor | 指向处理者的指针（即OH_HiAppEvent_CreateProcessor接口返回的指针）。 |
@@ -1432,6 +1556,7 @@ int OH_HiAppEvent_SetConfigId(HiAppEvent_Processor* processor, int configId)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int | HIAPPEVENT_SUCCESS：接口调用成功； HIAPPEVENT_PROCESSOR_IS_NULL：processor入参为空； HIAPPEVENT_INVALID_PARAM_VALUE：参数值无效； HIAPPEVENT_INVALID_UID：用户标识无效。 具体可参考HiAppEvent_ErrorCode。 |
@@ -1439,9 +1564,10 @@ int OH_HiAppEvent_SetConfigId(HiAppEvent_Processor* processor, int configId)
 
 
 
-#### OH_HiAppEvent_SetConfigName()
+### OH_HiAppEvent_SetConfigName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_HiAppEvent_SetConfigName(HiAppEvent_Processor* processor, const char* configName)
@@ -1455,6 +1581,7 @@ int OH_HiAppEvent_SetConfigName(HiAppEvent_Processor* processor, const char* con
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | HiAppEvent_Processor* processor | 指向处理者的指针（即OH_HiAppEvent_CreateProcessor接口返回的指针）。 |
@@ -1463,6 +1590,7 @@ int OH_HiAppEvent_SetConfigName(HiAppEvent_Processor* processor, const char* con
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int | HIAPPEVENT_SUCCESS：接口调用成功； HIAPPEVENT_PROCESSOR_IS_NULL：processor入参为空； HIAPPEVENT_INVALID_PARAM_VALUE：参数值无效； HIAPPEVENT_INVALID_UID：用户标识无效。 HIAPPEVENT_INVALID_PARAM_VALUE_LENGTH：参数值长度无效。 具体可参考HiAppEvent_ErrorCode。 |
@@ -1470,9 +1598,10 @@ int OH_HiAppEvent_SetConfigName(HiAppEvent_Processor* processor, const char* con
 
 
 
-#### OH_HiAppEvent_SetReportUserId()
+### OH_HiAppEvent_SetReportUserId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_HiAppEvent_SetReportUserId(HiAppEvent_Processor* processor, const char* const * userIdNames, int size)
@@ -1486,6 +1615,7 @@ int OH_HiAppEvent_SetReportUserId(HiAppEvent_Processor* processor, const char* c
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | HiAppEvent_Processor* processor | 指向处理者的指针（即OH_HiAppEvent_CreateProcessor接口返回的指针）。 |
@@ -1495,6 +1625,7 @@ int OH_HiAppEvent_SetReportUserId(HiAppEvent_Processor* processor, const char* c
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int | HIAPPEVENT_SUCCESS：接口调用成功； HIAPPEVENT_PROCESSOR_IS_NULL：processor入参为空； HIAPPEVENT_INVALID_PARAM_VALUE：参数值无效； HIAPPEVENT_INVALID_UID：用户标识无效； HIAPPEVENT_INVALID_PARAM_VALUE_LENGTH：参数值长度无效。 具体可参考HiAppEvent_ErrorCode。 |
@@ -1502,9 +1633,10 @@ int OH_HiAppEvent_SetReportUserId(HiAppEvent_Processor* processor, const char* c
 
 
 
-#### OH_HiAppEvent_SetReportUserProperty()
+### OH_HiAppEvent_SetReportUserProperty()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_HiAppEvent_SetReportUserProperty(HiAppEvent_Processor* processor, const char* const * userPropertyNames, int size)
@@ -1518,6 +1650,7 @@ int OH_HiAppEvent_SetReportUserProperty(HiAppEvent_Processor* processor, const c
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | HiAppEvent_Processor* processor | 指向处理者的指针（即OH_HiAppEvent_CreateProcessor接口返回的指针）。 |
@@ -1527,6 +1660,7 @@ int OH_HiAppEvent_SetReportUserProperty(HiAppEvent_Processor* processor, const c
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int | HIAPPEVENT_SUCCESS：接口调用成功； HIAPPEVENT_PROCESSOR_IS_NULL：processor入参为空； HIAPPEVENT_INVALID_PARAM_VALUE：参数值无效； HIAPPEVENT_INVALID_UID：用户标识无效； HIAPPEVENT_INVALID_PARAM_VALUE_LENGTH：参数值长度无效。 具体可参考HiAppEvent_ErrorCode。 |
@@ -1534,9 +1668,10 @@ int OH_HiAppEvent_SetReportUserProperty(HiAppEvent_Processor* processor, const c
 
 
 
-#### OH_HiAppEvent_AddProcessor()
+### OH_HiAppEvent_AddProcessor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int64_t OH_HiAppEvent_AddProcessor(HiAppEvent_Processor* processor)
@@ -1550,12 +1685,14 @@ int64_t OH_HiAppEvent_AddProcessor(HiAppEvent_Processor* processor)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | HiAppEvent_Processor* processor | 指向处理者的指针（即OH_HiAppEvent_CreateProcessor接口返回的指针）。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1564,9 +1701,10 @@ int64_t OH_HiAppEvent_AddProcessor(HiAppEvent_Processor* processor)
 
 
 
-#### OH_HiAppEvent_DestroyProcessor()
+### OH_HiAppEvent_DestroyProcessor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_HiAppEvent_DestroyProcessor(HiAppEvent_Processor* processor)
@@ -1580,6 +1718,7 @@ void OH_HiAppEvent_DestroyProcessor(HiAppEvent_Processor* processor)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | HiAppEvent_Processor* processor | 指向处理者的指针（即OH_HiAppEvent_CreateProcessor接口返回的指针）。 |
@@ -1587,9 +1726,10 @@ void OH_HiAppEvent_DestroyProcessor(HiAppEvent_Processor* processor)
 
 
 
-#### OH_HiAppEvent_RemoveProcessor()
+### OH_HiAppEvent_RemoveProcessor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_HiAppEvent_RemoveProcessor(int64_t processorId)
@@ -1603,12 +1743,14 @@ int OH_HiAppEvent_RemoveProcessor(int64_t processorId)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | int64_t processorId | 处理者唯一ID。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1617,9 +1759,10 @@ int OH_HiAppEvent_RemoveProcessor(int64_t processorId)
 
 
 
-#### OH_HiAppEvent_CreateConfig()
+### OH_HiAppEvent_CreateConfig()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 HiAppEvent_Config* OH_HiAppEvent_CreateConfig(void)
@@ -1630,7 +1773,7 @@ HiAppEvent_Config* OH_HiAppEvent_CreateConfig(void)
 创建一个指向设置系统事件自定义规格的配置对象的指针。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/6zfEeDRDRRy56p-UMw9pkg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095516Z&HW-CC-Expire=86400&HW-CC-Sign=117D4ABF5441EB6E09B811E075CAAF4BBF222A6196DAE4A5506DD9BCDA1887B7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/ZsVcL4iUS4WiiPErY58lIQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072604Z&HW-CC-Expire=86400&HW-CC-Sign=E23EFD268E9B84B8F127E6BF0AF20FF441F42A121EEC07A7476E8DD6064DC01B)
 
 
 创建的指向设置系统事件自定义规格的配置对象的指针不再使用后，必须通过[OH_HiAppEvent_DestroyConfig](#oh_hiappevent_destroyconfig)接口进行销毁。
@@ -1641,6 +1784,7 @@ HiAppEvent_Config* OH_HiAppEvent_CreateConfig(void)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | HiAppEvent_Config* | 指向设置系统事件自定义规格的配置对象的指针。 |
@@ -1648,9 +1792,10 @@ HiAppEvent_Config* OH_HiAppEvent_CreateConfig(void)
 
 
 
-#### OH_HiAppEvent_DestroyConfig()
+### OH_HiAppEvent_DestroyConfig()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_HiAppEvent_DestroyConfig(HiAppEvent_Config* config)
@@ -1664,6 +1809,7 @@ void OH_HiAppEvent_DestroyConfig(HiAppEvent_Config* config)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | HiAppEvent_Config* config | 指向配置对象的指针（即OH_HiAppEvent_CreateConfig接口返回的指针）。 |
@@ -1671,9 +1817,10 @@ void OH_HiAppEvent_DestroyConfig(HiAppEvent_Config* config)
 
 
 
-#### OH_HiAppEvent_SetConfigItem()
+### OH_HiAppEvent_SetConfigItem()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_HiAppEvent_SetConfigItem(HiAppEvent_Config* config, const char* itemName, const char* itemValue)
@@ -1687,6 +1834,7 @@ int OH_HiAppEvent_SetConfigItem(HiAppEvent_Config* config, const char* itemName,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | HiAppEvent_Config* config | 指向配置对象的指针（即OH_HiAppEvent_CreateConfig接口返回的指针）。 |
@@ -1696,6 +1844,7 @@ int OH_HiAppEvent_SetConfigItem(HiAppEvent_Config* config, const char* itemName,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int | HIAPPEVENT_SUCCESS：接口调用成功； HIAPPEVENT_EVENT_CONFIG_IS_NULL：传入的指向配置对象的指针为空； HIAPPEVENT_INVALID_PARAM_VALUE：设定的配置项无效。 具体可参考HiAppEvent_ErrorCode。 |
@@ -1703,9 +1852,10 @@ int OH_HiAppEvent_SetConfigItem(HiAppEvent_Config* config, const char* itemName,
 
 
 
-#### OH_HiAppEvent_SetEventConfig()
+### OH_HiAppEvent_SetEventConfig()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_HiAppEvent_SetEventConfig(const char* name, HiAppEvent_Config* config)
@@ -1727,6 +1877,7 @@ EVENT_APP_CRASH（参数配置详见[崩溃事件介绍](https://developer.huawe
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char* name | 系统事件的名称。 |
@@ -1735,6 +1886,7 @@ EVENT_APP_CRASH（参数配置详见[崩溃事件介绍](https://developer.huawe
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int | HIAPPEVENT_SUCCESS：接口调用成功； HIAPPEVENT_INVALID_PARAM_VALUE：设置的参数无效。 具体可参考HiAppEvent_ErrorCode。 |
@@ -1742,9 +1894,10 @@ EVENT_APP_CRASH（参数配置详见[崩溃事件介绍](https://developer.huawe
 
 
 
-#### OH_HiAppEvent_ReportFrameworkMemAnomaly()
+### OH_HiAppEvent_ReportFrameworkMemAnomaly()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_HiAppEvent_ReportFrameworkMemAnomaly(
@@ -1767,6 +1920,7 @@ int OH_HiAppEvent_ReportFrameworkMemAnomaly(
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | enum OH_HiAppEvent_FrameworkType frameworkType | 应用框架类型。 |
@@ -1775,6 +1929,7 @@ int OH_HiAppEvent_ReportFrameworkMemAnomaly(
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |

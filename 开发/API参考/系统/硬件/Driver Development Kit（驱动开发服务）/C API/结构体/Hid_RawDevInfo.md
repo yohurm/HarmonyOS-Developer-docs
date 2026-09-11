@@ -1,6 +1,6 @@
 # Hid_RawDevInfo
 
-更新时间：2026-03-09 02:50:43
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hidddk-hid-rawdevinfo
 **支持设备：** PC/2in1
@@ -10,11 +10,12 @@ typedef struct Hid_RawDevInfo {...} Hid_RawDevInfo
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** PC/2in1
 
-原始设备信息定义。
+HID原始设备信息，包含总线类型、供应商ID、产品ID等关键标识信息。开发者可以通过此结构体识别和区分不同的HID设备，通常用于设备识别、设备匹配、设备过滤等场景。
  
 **起始版本：** 18
  
@@ -24,18 +25,21 @@ typedef struct Hid_RawDevInfo {...} Hid_RawDevInfo
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** PC/2in1
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** PC/2in1
  
+
 | 名称 | 描述 |
 | --- | --- |
-| uint32_t busType | 总线类型 |
-| uint16_t vendor | 供应商ID |
-| uint16_t product | 产品ID |
+| uint32_t busType | 总线类型，用于标识HID设备的物理连接方式。 |
+| uint16_t vendor | 供应商ID。 |
+| uint16_t product | 产品ID。 |

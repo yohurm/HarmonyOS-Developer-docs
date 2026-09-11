@@ -1,9 +1,9 @@
 # ContentSlot
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-contentslot
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于渲染Native侧使用C-API创建的组件，并通过Content管理器管理这些组件。
  
@@ -14,9 +14,10 @@
 
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ContentSlot(content: Content)
  
@@ -28,6 +29,7 @@ ContentSlot(content: Content)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | content | Content | 是 | Content作为ContentSlot的管理器，通过Native侧提供的接口，可以注册并触发ContentSlot的上下树（即组件节点加入或移出组件渲染树）事件回调以及管理ContentSlot的子组件。 |
@@ -35,9 +37,10 @@ ContentSlot(content: Content)
  
   
 
-#### Content
+## Content
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Content = import('../api/@ohos.arkui.node').Content
  
@@ -47,6 +50,7 @@ type Content = import('../api/@ohos.arkui.node').Content
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 类型 | 说明 |
 | --- | --- |
 | import('../api/@ohos.arkui.node').Content | 定义ComponentContent和NodeContent的基类。 |
@@ -54,9 +58,10 @@ type Content = import('../api/@ohos.arkui.node').Content
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 下面的示例展示了ContentSlot的基本用法。
  

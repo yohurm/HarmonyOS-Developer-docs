@@ -1,8 +1,50 @@
 [
   {
-    "slug": "game-controller-glossary",
-    "name": "游戏控制器术语",
     "file": "Game Controller Kit（游戏控制器服务）/游戏控制器术语/游戏控制器术语.md",
+    "name": "游戏控制器术语",
+    "slug": "game-controller-glossary",
     "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/game-controller-glossary"
+  },
+  {
+    "file": "File Manager Service Kit术语.md",
+    "name": "File Manager Service Kit术语",
+    "slug": "filemanagerservice-glossary",
+    "title": "File Manager Service Kit术语",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/filemanagerservice-glossary"
+  },
+  {
+    "file": "Health Service Kit术语.md",
+    "name": "Health Service Kit术语",
+    "slug": "health-glossary",
+    "title": "Health Service Kit术语",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-glossary"
+  },
+  {
+    "file": "压力.md",
+    "name": "压力",
+    "slug": "health-stress",
+    "title": "压力",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-stress"
+  },
+  {
+    "file": "Notification Kit术语.md",
+    "name": "Notification Kit术语",
+    "slug": "notification-glossary",
+    "title": "Notification Kit术语",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary"
+  },
+  {
+    "file": "Push Kit术语.md",
+    "name": "Push Kit术语",
+    "slug": "push-glossary",
+    "title": "Push Kit术语",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-glossary"
+  },
+  {
+    "file": "Live View Kit术语.md",
+    "name": "Live View Kit术语",
+    "slug": "liveview-kit-terminology",
+    "title": "Live View Kit术语",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/liveview-kit-terminology"
   }
 ]

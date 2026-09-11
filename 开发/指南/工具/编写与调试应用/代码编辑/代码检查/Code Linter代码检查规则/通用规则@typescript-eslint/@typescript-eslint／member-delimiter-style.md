@@ -1,6 +1,6 @@
 # @typescript-eslint/member-delimiter-style
 
-更新时间：2026-01-15 06:51:04
+更新时间：2026-08-29 09:41:34
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_member-delimiter-style
 
@@ -9,12 +9,12 @@
 支持定义的分隔符有三种：分号、逗号、无分隔符。
  
 
-#### 规则配置
+## 规则配置
 
 ```json
 // code-linter.json5
 {
-  "rules": {
+  <span style="color: rgb(135,16,148);">"rules"</span>: {
     "@typescript-eslint/member-delimiter-style": "error"
   }
 }
@@ -22,7 +22,7 @@
  
  
 
-#### 选项
+## 选项
 
 支持配置以下选项：
  
@@ -67,7 +67,7 @@ none：表示不需要加分隔符。
  
 - multilineDetection：枚举类型，判断多行的依据，可取值如下：
 brackets：默认值，表示interface/type alias中存在换行，即视为多行。
-- last-member：表示interface/type alias的最后一个成员与右括号（“}”）处于同一行，则视为单行。
+- last-member：表示interface/type alias的最后一个成员与右括号（}）处于同一行，则视为单行。
 
  - overrides：对象类型，可以针对interface/type alias进行差异化配置，支持以下两种属性：
 interface：对象类型，可以对interface进行差异化配置，配置方式同multiline/singleline。
@@ -121,7 +121,7 @@ interface：对象类型，可以对interface进行差异化配置，配置方�
  
  
 
-#### 正例
+## 正例
 
 ```text
 // 默认接口/类型别名定义为多行的场景下，每个成员应以分号 (;) 分隔。 最后一个成员必须有一个分隔符。
@@ -138,7 +138,7 @@ export interface Foo2 { name: string }
  
  
 
-#### 反例
+## 反例
 
 ```text
 // missing semicolon delimiter
@@ -162,10 +162,10 @@ export interface Baz {
  
  
 
-#### 规则集
+## 规则集
 
 ```text
-plugin:@typescript-eslint/all
+<span style="color: rgb(6,125,23);">plugin:@typescript-eslint/all</span>
 ```
  
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-code-linter)。

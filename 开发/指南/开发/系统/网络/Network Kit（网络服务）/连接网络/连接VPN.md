@@ -1,10 +1,10 @@
 # 连接VPN
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/net-vpnextension
 
-#### 简介
+## 简介
 
 VPN，即虚拟专用网络（Virtual Private Network），是在公用网络上建立专用网络的一种技术。在VPN网络中，任意两个节点间的连接并非依赖传统专用网络所需要的端到端的物理链路，而是构建在公用网络服务商提供的平台（如Internet）之上的逻辑网络。用户数据在这一逻辑链路中进行传输。
 
@@ -16,27 +16,27 @@ HarmonyOS为开发者提供了用于创建VPN的API解决方案。当前提供�
 
 
 
-#### VPN应用的显示体验
+## VPN应用的显示体验
 
-开发者可以借助系统提供的[@ohos.net.vpnExtension (VPN增强管理)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-net-vpnextension)接口构建支持不同协议的VPN服务。HarmonyOS系统提供了界面 (UI) 使用户可以了解当前VPN应用服务的启动和连接：
+借助系统提供的[vpnExtension](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-net-vpnextension)接口开发者可以构建支持不同协议的VPN服务。HarmonyOS系统提供了界面 (UI) 使用户可以了解当前VPN应用服务的启动和连接：
 
  - 在VPN应用首次启动连接之前，系统会显示VPN连接授权对话框。该对话框会提示用户是否信任该VPN应用并接受VPN连接请求。
- - 当VPN启动连接成功时，状态栏显示一个VPN (钥匙) 图标以提醒用户VPN处于连接状态。
+ - 当VPN启动连接成功时，状态栏显示一个VPN（钥匙）图标以提醒用户VPN处于连接状态。
 
 
 为了使用户可以方便的查看和配置，您的VPN应用还需要提供以下界面：
 
  - 用于手动启动和停止连接的控件。
- - 当VPN启动连接时，在通知栏显示VPN应用的连接状态或提供网络统计信息 (如连接时长、流量等) 。点击该通知能够将您的VPN应用调入前台。
+ - 当VPN启动连接时，在通知栏显示VPN应用的连接状态或提供网络统计信息（如连接时长、流量等）。点击该通知能够将您的VPN应用调入前台。
 
 
 
 
-#### 开发步骤
+## 开发步骤
 
 
 
-#### 创建VPN Extension Ability
+### 创建VPN Extension Ability
 
 如果想使您的应用支持VPN能力，首先您需要创建一个继承于VpnExtensionAbility的extensionAbilities。
 
@@ -71,7 +71,7 @@ HarmonyOS为开发者提供了用于创建VPN的API解决方案。当前提供�
 
 
 
-#### 启动VPN Extension Ability
+### 启动VPN Extension Ability
 
 当VPN应用启动VPN连接时，需要调用startVpnExtensionAbility接口，携带需要启动的VpnExtensionAbility信息，其中bundleName需要与您的VPN应用bundleName一致，abilityName为您在前面创建的VpnExtensionAbility名。您可参考如下示例：
 
@@ -132,7 +132,7 @@ struct StartVpn {
 
 
 
-#### 停止VPN Extension Ability
+### 停止VPN Extension Ability
 
 当VPN应用需要停止VPN连接时，需要调用stopVpnExtensionAbility接口，携带需要停止的VpnExtensionAbility信息。系统会对调用方做权限校验，stopVpnExtensionAbility的调用方应用必须获取了用户的VPN信任授权，且只允许停止应用自己启动的VpnExtensionAbility，所以接口传入的参数中bundleName需要与您的VPN应用bundleName一致，abilityName为指定停止VPN的VpnExtensionAbility名。
 
@@ -218,7 +218,7 @@ Destroy() {
 
 
 
-#### 生成VPN Id
+### 生成VPN Id
 
 创建新的VPN时，应生成一个VPN Id作为VPN的唯一标识。
 
@@ -245,7 +245,7 @@ export class VpnTest extends VpnExtensionAbility {
 
 
 
-#### 断开VPN
+### 断开VPN
 
 若需断开VPN，可参考如下示例：
 
@@ -269,7 +269,7 @@ export class VpnTest extends VpnExtensionAbility {
 
 
 
-#### 服务生命周期
+## 服务生命周期
 
 为了保障设备的网络连接，当系统观察到VPN相关应用出现异常时会主动停止VPN连接：
 
@@ -279,15 +279,16 @@ export class VpnTest extends VpnExtensionAbility {
 
 
 
-#### VPN Config参数说明
+## VPN Config参数说明
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | addresses | Array&lt;LinkAddress&gt; | 否 | 否 | VPN虚拟网卡的IP地址。 |
-| routes | Array&lt;RouteInfo&gt; | 否 | 是 | VPN虚拟网卡的路由信息（API version 23前最多可配置1024条路由；从API version 23开始最多可配置10000条路由）。 |
+| routes | Array&lt;RouteInfo&gt; | 否 | 是 | VPN虚拟网卡的路由信息（目前最多可配置1024条路由）。 |
 | dnsAddresses | Array&lt;string&gt; | 否 | 是 | DNS服务器地址信息。配置DNS服务器地址后，VPN启动状态下，被代理的应用上网时，使用配置的DNS服务器进行DNS查询。 |
 | searchDomains | Array&lt;string&gt; | 否 | 是 | DNS的搜索域列表。 |
-| mtu | number | 否 | 是 | 最大传输单元MTU值(单位：字节)。 |
+| mtu | number | 否 | 是 | 最大传输单元MTU值（单位：字节）。 |
 | isIPv4Accepted | boolean | 否 | 是 | 是否支持IPV4，默认值为true。true：支持IPV4；false：不支持IPV4。 |
 | isIPv6Accepted | boolean | 否 | 是 | 是否支持IPV6，默认值为false。true：支持IPV6；false：不支持IPV6。 |
 | isInternal | boolean | 否 | 是 | 是否支持内置VPN，默认值为false。true：支持内置VPN；false：不支持内置VPN。 |
@@ -338,9 +339,9 @@ let vpnConfig: vpnExtension.VpnConfig = {
   mtu: 1400,
   // 配置VPN使用的DNS服务器。
   dnsAddresses: ['223.x.x.5', '223.x.x.6'],
-  // 受信任的应用信息列表。
+  // 受信任的应用信息列表。配置此项时，被阻止的应用信息列表应配置为空。
   trustedApplications: ['com.test.browser'],
-  // 被阻止的应用信息列表。
+  // 被阻止的应用信息列表。配置此项时，受信任的应用信息列表应配置为空。
   blockedApplications: ['com.test.games'],
 }
 ```
@@ -357,6 +358,6 @@ vpnConnection.create(vpnConfig).then((data) => {
 
 
 
-#### VPN Demo示例
+## VPN Demo示例
 
 HarmonyOS开源项目包含一个名为[VPN](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/NetWork_Kit/NetWorkKit_NetManager/VPNControl_Case)的示例应用。此应用展示了如何设置和连接 VPN 服务。

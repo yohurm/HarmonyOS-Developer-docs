@@ -1,13 +1,14 @@
 # oh_values_bucket.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-values-bucket-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于存储键值对的类型。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_VBucket | OH_VBucket | 用于存储键值对的类型。 |
@@ -40,10 +44,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | int OH_VBucket_PutAsset(OH_VBucket *bucket, const char *field, Data_Asset *value) | 将Data_Asset 类型的对象放入给定列名的OH_VBucket对象中。 |
@@ -54,15 +60,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_VBucket_PutAsset()
+### OH_VBucket_PutAsset()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_VBucket_PutAsset(OH_VBucket *bucket, const char *field, Data_Asset *value)
@@ -76,6 +84,7 @@ int OH_VBucket_PutAsset(OH_VBucket *bucket, const char *field, Data_Asset *value
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_VBucket *bucket | 表示指向OH_VBucket实例的指针。 |
@@ -85,6 +94,7 @@ int OH_VBucket_PutAsset(OH_VBucket *bucket, const char *field, Data_Asset *value
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -92,9 +102,10 @@ int OH_VBucket_PutAsset(OH_VBucket *bucket, const char *field, Data_Asset *value
  
   
 
-#### OH_VBucket_PutAssets()
+### OH_VBucket_PutAssets()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_VBucket_PutAssets(OH_VBucket *bucket, const char *field, Data_Asset **value, uint32_t count)
@@ -108,6 +119,7 @@ int OH_VBucket_PutAssets(OH_VBucket *bucket, const char *field, Data_Asset **val
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_VBucket *bucket | 表示指向OH_VBucket实例的指针。 |
@@ -118,6 +130,7 @@ int OH_VBucket_PutAssets(OH_VBucket *bucket, const char *field, Data_Asset **val
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -129,9 +142,10 @@ int OH_VBucket_PutAssets(OH_VBucket *bucket, const char *field, Data_Asset **val
  
   
 
-#### OH_VBucket_PutFloatVector()
+### OH_VBucket_PutFloatVector()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_VBucket_PutFloatVector(OH_VBucket *bucket, const char *field, const float *vec, size_t len)
@@ -145,6 +159,7 @@ int OH_VBucket_PutFloatVector(OH_VBucket *bucket, const char *field, const float
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_VBucket *bucket | 表示指向OH_VBucket实例的指针。 |
@@ -155,6 +170,7 @@ int OH_VBucket_PutFloatVector(OH_VBucket *bucket, const char *field, const float
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -166,9 +182,10 @@ int OH_VBucket_PutFloatVector(OH_VBucket *bucket, const char *field, const float
  
   
 
-#### OH_VBucket_PutUnlimitedInt()
+### OH_VBucket_PutUnlimitedInt()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_VBucket_PutUnlimitedInt(OH_VBucket *bucket, const char *field, int sign, const uint64_t *trueForm, size_t len)
@@ -182,6 +199,7 @@ int OH_VBucket_PutUnlimitedInt(OH_VBucket *bucket, const char *field, int sign, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_VBucket *bucket | 表示指向OH_VBucket实例的指针。 |
@@ -193,6 +211,7 @@ int OH_VBucket_PutUnlimitedInt(OH_VBucket *bucket, const char *field, int sign, 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |

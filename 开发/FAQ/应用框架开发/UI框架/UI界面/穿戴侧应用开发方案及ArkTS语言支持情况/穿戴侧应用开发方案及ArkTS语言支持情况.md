@@ -1,16 +1,16 @@
 # 穿戴侧应用开发方案及ArkTS语言支持情况
 
-更新时间：2026-08-13 14:12:37
+更新时间：2026-08-20 00:48:37
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1520
 
-#### 问题现象
+## 问题现象
 
 穿戴侧应用开发目前只能用JS实现吗，请问是否有ArkTS实现方案？
  
  
 
-#### 背景知识
+## 背景知识
 
 - [智能穿戴应用开发](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-smartwatch)：智能穿戴是一种腕部可穿戴设备，提供沟通功能和与移动设备的数据交互功能。
 - [轻量级智能穿戴](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-lite-wearable-guide)：对于轻量级智能穿戴，应用可以通过HarmonyOS提供的接口实现传感器、UI交互等常规业务的开发。开发者可以根据轻量级智能穿戴的特点，打造针对轻量级智能穿戴的独特应用。
@@ -18,7 +18,7 @@
  
  
 
-#### 解决方案
+## 解决方案
 
 根据穿戴设备类型不同，采用不同实现方案进行应用开发：
  
@@ -29,7 +29,7 @@
  
  
 
-#### 常见FAQ
+## 常见FAQ
 
 Q：ArkTS是否有支持手表类的特有显示效果的UI组件？
  
@@ -41,7 +41,7 @@ A：Watch5手表无法调试GT5端APP，GT5属于轻量级智能穿戴而Watch5�
  
 Q：如果想开发轻量级智能穿戴HarmonyOS应用，需要用什么版本的API开发？
  
-A：API版本详细参考[轻量级智能穿戴产品系列支持API表](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-lite-wearable-guide#section8618133925012)。
+A：API版本详细参考[轻量级智能穿戴产品系列支持API表](https://developer.huawei.com/consumer/cn/doc/lite-wearable-guides/lite-wearable-bpta-guide)。
  
 Q：Watch5系列，支持低功耗蓝牙开发吗？
  
@@ -57,4 +57,4 @@ A：可以在智能穿戴设备上实现[地图应用](https://gitcode.com/Harmo
  
 Q：是否所有华为手表都支持ArkWeb？
  
-A：并非所有手表都支持ArkWeb。Wearable智能表在HarmonyOS 5+上支持ArkTS语言和ArkWeb；Lite Wearable运动表在HarmonyOS 5+上仅支持JS语言和部分ArkUI开发，不支持ArkWeb。具体支持请参考[兼容JS的类Web开发范式](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkui-js-lite-comp)和[最佳实践](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-lite-wearable-guide#section8618133925012)。
+A：并非所有手表都支持ArkWeb。Wearable智能表在HarmonyOS 5+上支持ArkTS语言和ArkWeb；Lite Wearable运动表在HarmonyOS 5+上仅支持JS语言和部分ArkUI开发，不支持ArkWeb。具体支持请参考[兼容JS的类Web开发范式](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkui-js-lite-comp)和[最佳实践](https://developer.huawei.com/consumer/cn/doc/lite-wearable-guides/lite-wearable-bpta-guide)。

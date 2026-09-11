@@ -1,11 +1,12 @@
 # scanBarcode (默认界面扫码)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/scan-scanbarcode-api
 **支持设备：** Phone | Tablet | Wearable
 
-#### 模块概述
+## 模块概述
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -17,7 +18,8 @@ scanBarcode模块提供系统级体验一致的扫码界面，包含相机预览
  
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -27,7 +29,8 @@ import { scanBarcode } from '@kit.ScanKit';
  
   
 
-#### ScanResult
+## ScanResult
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -39,6 +42,7 @@ import { scanBarcode } from '@kit.ScanKit';
  
 **起始版本：** 4.0.0(10)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | scanType | scanCore.ScanType | 否 | 否 | 码类型。 元服务API： 从API版本4.1.0(11)开始，该接口支持在元服务中使用。 |
@@ -51,7 +55,8 @@ import { scanBarcode } from '@kit.ScanKit';
  
   
 
-#### ScanCodeRect
+## ScanCodeRect
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -65,6 +70,7 @@ import { scanBarcode } from '@kit.ScanKit';
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | left | number | 否 | 否 | 码外接矩形左上角的x坐标。单位：px。 |
@@ -79,7 +85,8 @@ import { scanBarcode } from '@kit.ScanKit';
  
   
 
-#### Point
+## Point
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -93,6 +100,7 @@ import { scanBarcode } from '@kit.ScanKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | x | number | 否 | 否 | X轴坐标，单位：px。 |
@@ -101,7 +109,8 @@ import { scanBarcode } from '@kit.ScanKit';
  
   
 
-#### ScanOptions
+## ScanOptions
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -115,6 +124,7 @@ import { scanBarcode } from '@kit.ScanKit';
  
 **起始版本：** 4.0.0(10)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | scanTypes | Array<scanCore.ScanType> | 否 | 是 | 设置扫码类型。 默认值： ALL（全部码类型）。 从API版本6.1.0(23)开始，默认界面扫码的标题支持根据此参数进行动态显示。 在API版本6.1.0(23)之前，标题统一显示为“扫描二维码/条形码”。 在API版本6.1.0(23)及之后： - scanTypes为ALL、FORMAT_UNKNOWN，或同时包含条形码和二维码类型，标题显示为“扫描二维码/条形码”。 - scanTypes未设置，标题显示为“扫描二维码/条形码”。 - scanTypes仅包含条形码类型，标题显示为“扫描条形码”。 - scanTypes仅包含二维码类型，标题显示为“扫描二维码”。 |
@@ -124,7 +134,7 @@ import { scanBarcode } from '@kit.ScanKit';
  
 **示例：**
  
-```json
+```text
 import { scanBarcode, scanCore } from '@kit.ScanKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -136,7 +146,7 @@ function loadPage(uiContext: UIContext) {
   try {
     scanBarcode.startScanForResult(uiContext.getHostContext(), options).then((data: scanBarcode.ScanResult) => {
       hilog.info(0x0001, '[Scan Sample]',
-        `Succeeded in getting ScanResult by promise with options, result is ${JSON.stringify(data)}`);
+        `Succeeded in getting ScanResult by promise with options, scanType: ${data.scanType}`);
     }).catch((err: BusinessError) => {
       hilog.error(0x0001, '[Scan Sample]',
         `Failed to get ScanResult by promise with options. Code: ${err.code}, message: ${err.message}`);
@@ -150,7 +160,8 @@ function loadPage(uiContext: UIContext) {
  
   
 
-#### startScanForResult
+## startScanForResult
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -170,6 +181,7 @@ startScanForResult(context: common.Context, options?: ScanOptions): Promise&lt;S
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 应用上下文。 |
@@ -178,6 +190,7 @@ startScanForResult(context: common.Context, options?: ScanOptions): Promise&lt;S
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;ScanResult&gt; | Promise对象，返回扫码结果对象。 |
@@ -187,6 +200,7 @@ startScanForResult(context: common.Context, options?: ScanOptions): Promise&lt;S
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-scan)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
@@ -196,7 +210,7 @@ startScanForResult(context: common.Context, options?: ScanOptions): Promise&lt;S
  
 **示例：**
  
-```json
+```text
 import { scanBarcode, scanCore } from '@kit.ScanKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -208,7 +222,7 @@ function loadPage(uiContext: UIContext) {
   try {
     scanBarcode.startScanForResult(uiContext.getHostContext(), options).then((data: scanBarcode.ScanResult) => {
       hilog.info(0x0001, '[Scan Sample]',
-        `Succeeded in getting ScanResult by promise with options, result is ${JSON.stringify(data)}`);
+        `Succeeded in getting ScanResult by promise with options, scanType: ${data.scanType}`);
     }).catch((err: BusinessError) => {
       hilog.error(0x0001, '[Scan Sample]',
         `Failed to get ScanResult by promise with options. Code: ${err.code}, message: ${err.message}`);
@@ -222,7 +236,8 @@ function loadPage(uiContext: UIContext) {
  
   
 
-#### startScanForResult
+## startScanForResult
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -242,6 +257,7 @@ startScanForResult(context: common.Context, callback: AsyncCallback&lt;ScanResul
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 应用上下文。 |
@@ -252,6 +268,7 @@ startScanForResult(context: common.Context, callback: AsyncCallback&lt;ScanResul
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-scan)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
@@ -261,7 +278,7 @@ startScanForResult(context: common.Context, callback: AsyncCallback&lt;ScanResul
  
 **示例：**
  
-```json
+```text
 import { scanBarcode } from '@kit.ScanKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -277,7 +294,7 @@ function loadPage(uiContext: UIContext) {
           return;
         }
         hilog.info(0x0001, '[Scan Sample]',
-          `Succeeded in getting ScanResult by callback, result is ${JSON.stringify(data)}`);
+          `Succeeded in getting ScanResult by callback, scanType: ${data.scanType}`);
       });
   } catch (err) {
     hilog.error(0x0001, '[Scan Sample]',
@@ -288,7 +305,8 @@ function loadPage(uiContext: UIContext) {
  
   
 
-#### startScanForResult
+## startScanForResult
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -308,6 +326,7 @@ startScanForResult(context: common.Context, options: ScanOptions, callback: Asyn
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 应用上下文。 |
@@ -319,6 +338,7 @@ startScanForResult(context: common.Context, options: ScanOptions, callback: Asyn
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-scan)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
@@ -328,7 +348,7 @@ startScanForResult(context: common.Context, options: ScanOptions, callback: Asyn
  
 **示例：**
  
-```json
+```text
 import { scanCore, scanBarcode } from '@kit.ScanKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -347,7 +367,7 @@ function loadPage(uiContext: UIContext) {
           return;
         }
         hilog.info(0x0001, '[Scan Sample]',
-          `Succeeded in getting ScanResult by callback with options, result is ${JSON.stringify(data)}`);
+          `Succeeded in getting ScanResult by callback with options, scanType: ${data.scanType}`);
       });
   } catch (err) {
     hilog.error(0x0001, '[Scan Sample]',
@@ -358,7 +378,8 @@ function loadPage(uiContext: UIContext) {
  
   
 
-#### startScan(deprecated)
+## startScan(deprecated)
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -378,6 +399,7 @@ startScan(options?: ScanOptions): Promise&lt;ScanResult&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ScanOptions | 否 | 启动扫码配置参数。 默认值： 参考ScanOptions的默认值。 |
@@ -385,6 +407,7 @@ startScan(options?: ScanOptions): Promise&lt;ScanResult&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;ScanResult&gt; | Promise对象，返回扫码结果对象。 |
@@ -394,6 +417,7 @@ startScan(options?: ScanOptions): Promise&lt;ScanResult&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Incorrect parameter types; 2. Parameter verification failed. |
@@ -401,7 +425,7 @@ startScan(options?: ScanOptions): Promise&lt;ScanResult&gt;
  
 **示例：**
  
-```json
+```text
 import { scanCore, scanBarcode } from '@kit.ScanKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -411,7 +435,7 @@ let options: scanBarcode.ScanOptions = { scanTypes: [scanCore.ScanType.ALL], ena
 try {
   scanBarcode.startScan(options).then((data: scanBarcode.ScanResult) => {
     hilog.info(0x0001, '[Scan Sample]',
-      `Succeeded in getting ScanResult by promise with options, result is ${JSON.stringify(data)}`);
+      `Succeeded in getting ScanResult by promise with options, scanType: ${data.scanType}`);
   }).catch((err: BusinessError) => {
     // 当扫码过程中出现错误，打印并返回报错
     hilog.error(0x0001, '[Scan Sample]',
@@ -424,7 +448,8 @@ try {
  
   
 
-#### startScan(deprecated)
+## startScan(deprecated)
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -444,6 +469,7 @@ startScan(callback: AsyncCallback&lt;ScanResult&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;ScanResult&gt; | 是 | 回调函数。当扫码返回成功，err为undefined，data为获取到的扫码结果对象ScanResult；否则为错误对象。 |
@@ -453,6 +479,7 @@ startScan(callback: AsyncCallback&lt;ScanResult&gt;): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
@@ -460,7 +487,7 @@ startScan(callback: AsyncCallback&lt;ScanResult&gt;): void
  
 **示例：**
  
-```json
+```text
 import { scanBarcode } from '@kit.ScanKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -474,7 +501,7 @@ try {
       return;
     }
     hilog.info(0x0001, '[Scan Sample]',
-      `Succeeded in getting ScanResult by callback, result is ${JSON.stringify(data)}`);
+      `Succeeded in getting ScanResult by callback, scanType: ${data.scanType}`);
   });
 } catch (err) {
   hilog.error(0x0001, '[Scan Sample]', `Failed to startScan. Code: ${err.code}, message: ${err.message}`);
@@ -483,7 +510,8 @@ try {
  
   
 
-#### startScan(deprecated)
+## startScan(deprecated)
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -503,6 +531,7 @@ startScan(options: ScanOptions, callback: AsyncCallback&lt;ScanResult&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ScanOptions | 是 | 扫码配置参数。 |
@@ -513,6 +542,7 @@ startScan(options: ScanOptions, callback: AsyncCallback&lt;ScanResult&gt;): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
@@ -520,7 +550,7 @@ startScan(options: ScanOptions, callback: AsyncCallback&lt;ScanResult&gt;): void
  
 **示例：**
  
-```json
+```text
 import { scanCore, scanBarcode } from '@kit.ScanKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -536,7 +566,7 @@ try {
       return;
     }
     hilog.info(0x0001, '[Scan Sample]',
-      `Succeeded in getting ScanResult by callback with options, result is ${JSON.stringify(data)}`);
+      `Succeeded in getting ScanResult by callback with options, scanType: ${data.scanType}`);
   });
 } catch (err) {
   hilog.error(0x0001, '[Scan Sample]', `Failed to startScan. Code: ${err.code}, message: ${err.message}`);

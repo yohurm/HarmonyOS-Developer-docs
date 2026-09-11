@@ -1,17 +1,18 @@
 # AVTranscoder
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avtranscoder
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 提供请求转码能力的API。
 
-根据实际的开发需求，参考对应的开发指南及样例[使用AVTranscoder实现音视频转码](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ndk-avtranscoder-for-transcodering)。
+根据实际的开发需求，参考对应的开发指南及样例[使用AVTranscoder实现视频转码](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ndk-avtranscoder-for-transcodering)。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVTranscoder
 
@@ -19,9 +20,11 @@
 
 
 
-#### 文件汇总
+## 文件汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
+
 
 | 名称 | 描述 |
 | --- | --- |

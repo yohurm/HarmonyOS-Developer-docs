@@ -1,6 +1,6 @@
 # openFileBoost（文件打开加速）（已废弃）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/preview-arkts-openfileboost-api
 **支持设备：** PC/2in1 | Tablet
@@ -14,7 +14,8 @@
 **废弃版本：** 26.0.0
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** PC/2in1 | Tablet
 
@@ -24,7 +25,8 @@ import { openFileBoost } from '@kit.PreviewKit';
 
 
 
-#### FilePreloadState(deprecated)
+## FilePreloadState(deprecated)
+
 
 **支持设备：** PC/2in1 | Tablet
 
@@ -38,6 +40,7 @@ import { openFileBoost } from '@kit.PreviewKit';
 
 **废弃版本：** 26.0.0
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NOT_PRELOADED | 0 | 文件未预加载。 |
@@ -47,7 +50,8 @@ import { openFileBoost } from '@kit.PreviewKit';
 
 
 
-#### FilePreloadStatusInfo(deprecated)
+## FilePreloadStatusInfo(deprecated)
+
 
 **支持设备：** PC/2in1 | Tablet
 
@@ -61,6 +65,7 @@ import { openFileBoost } from '@kit.PreviewKit';
 
 **废弃版本：** 26.0.0
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | sandboxPath | string | 否 | 否 | 文件的沙箱路径，字符长度范围：[1, 1024]。 |
@@ -70,7 +75,8 @@ import { openFileBoost } from '@kit.PreviewKit';
 
 
 
-#### openFileBoost.on('filePreloadStateChanged')(deprecated)
+## openFileBoost.on('filePreloadStateChanged')(deprecated)
+
 
 **支持设备：** PC/2in1 | Tablet
 
@@ -88,6 +94,7 @@ on(type: 'filePreloadStateChanged', callback: Callback&lt;FilePreloadStatusInfo&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，固定为'filePreloadStateChanged'，每当预加载文件状态变化时都会触发该事件并返回对应信息。如填入'filePreloadStateChanged'以外的值，将注册成功但无法获取文件预加载的状态变化。 |
@@ -97,6 +104,7 @@ on(type: 'filePreloadStateChanged', callback: Callback&lt;FilePreloadStatusInfo&
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[模块错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-preview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -133,7 +141,8 @@ openFileBoost.on('filePreloadStateChanged', callback);
 
 
 
-#### openFileBoost.off('filePreloadStateChanged')(deprecated)
+## openFileBoost.off('filePreloadStateChanged')(deprecated)
+
 
 **支持设备：** PC/2in1 | Tablet
 
@@ -151,6 +160,7 @@ off(type: 'filePreloadStateChanged', callback?: Callback&lt;FilePreloadStatusInf
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调用类型，固定为'filePreloadStateChanged'，当预加载文件状态变化时会触发该事件并返回对应信息。如填入'filePreloadStateChanged'以外的值，将无法取消获取文件预加载的状态变化。 |
@@ -160,6 +170,7 @@ off(type: 'filePreloadStateChanged', callback?: Callback&lt;FilePreloadStatusInf
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[模块错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-preview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -199,7 +210,8 @@ function callback3(filePreloadStatusInfo: openFileBoost.FilePreloadStatusInfo): 
 
 
 
-#### openFileBoost.addFile(deprecated)
+## openFileBoost.addFile(deprecated)
+
 
 **支持设备：** PC/2in1 | Tablet
 
@@ -219,6 +231,7 @@ addFile(file: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | file | string | 是 | 文件的沙箱路径，字符长度范围：[1, 1024]。 |
@@ -227,6 +240,7 @@ addFile(file: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[模块错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-preview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -256,7 +270,8 @@ openFileBoost.addFile(file);
 
 
 
-#### openFileBoost.removeFile(deprecated)
+## openFileBoost.removeFile(deprecated)
+
 
 **支持设备：** PC/2in1 | Tablet
 
@@ -274,6 +289,7 @@ removeFile(file: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | file | string | 是 | 文件的沙箱路径，字符长度范围：[1, 1024]。 |
@@ -282,6 +298,7 @@ removeFile(file: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[模块错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-preview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -302,7 +319,8 @@ openFileBoost.removeFile(file);
 
 
 
-#### openFileBoost.queryFilePreloadStatusInfo(deprecated)
+## openFileBoost.queryFilePreloadStatusInfo(deprecated)
+
 
 **支持设备：** PC/2in1 | Tablet
 
@@ -320,12 +338,14 @@ queryFilePreloadStatusInfo(file: string): FilePreloadStatusInfo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | file | string | 是 | 文件的沙箱路径，字符长度范围：[1, 1024]。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -335,6 +355,7 @@ queryFilePreloadStatusInfo(file: string): FilePreloadStatusInfo
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[模块错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-preview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

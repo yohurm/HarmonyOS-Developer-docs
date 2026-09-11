@@ -1,20 +1,21 @@
 # @ohos.notificationExtensionSubscription (notificationExtensionSubscription模块)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-notificationextensionsubscription
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-本模块提供管理通知扩展的能力，具体包括：打开通知扩展订阅设置界面、订阅和取消订阅通知扩展、获取和设置通知授权状态。
+本模块提供管理通知扩展的能力，具体包括：打开通知扩展订阅设置界面、订阅和取消订阅通知扩展、获取和设置[通知授权](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-authorization通知授权)状态。
 
 > [!NOTE]
 > 本模块首批接口从API version 22开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { notificationExtensionSubscription } from '@kit.NotificationKit';
@@ -23,9 +24,10 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 
 
-#### notificationExtensionSubscription.openSubscriptionSettings
+## notificationExtensionSubscription.openSubscriptionSettings
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | Tablet
 
 openSubscriptionSettings(context: UIAbilityContext): Promise&lt;void&gt;
 
@@ -37,12 +39,14 @@ openSubscriptionSettings(context: UIAbilityContext): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIAbilityContext | 是 | 通知设置页面绑定Ability的上下文。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -52,6 +56,7 @@ openSubscriptionSettings(context: UIAbilityContext): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -82,9 +87,10 @@ try {
 
 
 
-#### notificationExtensionSubscription.openSubscriptionSettingsWithResult
+## notificationExtensionSubscription.openSubscriptionSettingsWithResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | Tablet
 
 openSubscriptionSettingsWithResult(context: UIAbilityContext): Promise&lt;UserGrantSetting&gt;
 
@@ -100,12 +106,14 @@ openSubscriptionSettingsWithResult(context: UIAbilityContext): Promise&lt;UserGr
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIAbilityContext | 是 | 通知设置页面绑定Ability的上下文。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -115,6 +123,7 @@ openSubscriptionSettingsWithResult(context: UIAbilityContext): Promise&lt;UserGr
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -145,9 +154,10 @@ try {
 
 
 
-#### notificationExtensionSubscription.subscribe
+## notificationExtensionSubscription.subscribe
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | Tablet
 
 subscribe(info: NotificationExtensionSubscriptionInfo[]): Promise&lt;void&gt;
 
@@ -159,12 +169,14 @@ subscribe(info: NotificationExtensionSubscriptionInfo[]): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | info | NotificationExtensionSubscriptionInfo[] | 是 | 订阅的信息列表（数组）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -174,6 +186,7 @@ subscribe(info: NotificationExtensionSubscriptionInfo[]): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -201,9 +214,10 @@ notificationExtensionSubscription.subscribe(infos).then(() => {
 
 
 
-#### notificationExtensionSubscription.unsubscribe
+## notificationExtensionSubscription.unsubscribe
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | Tablet
 
 unsubscribe(): Promise&lt;void&gt;
 
@@ -215,6 +229,7 @@ unsubscribe(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -223,6 +238,7 @@ unsubscribe(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -243,9 +259,10 @@ notificationExtensionSubscription.unsubscribe().then(() => {
 
 
 
-#### notificationExtensionSubscription.getSubscribeInfo
+## notificationExtensionSubscription.getSubscribeInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | Tablet
 
 getSubscribeInfo(): Promise<NotificationExtensionSubscriptionInfo[]>
 
@@ -257,6 +274,7 @@ getSubscribeInfo(): Promise<NotificationExtensionSubscriptionInfo[]>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<NotificationExtensionSubscriptionInfo[]> | Promise对象，返回一个NotificationExtensionSubscriptionInfo[]对象数组，表示应用的订阅信息。 |
@@ -265,6 +283,7 @@ getSubscribeInfo(): Promise<NotificationExtensionSubscriptionInfo[]>
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -285,9 +304,10 @@ notificationExtensionSubscription.getSubscribeInfo().then((data: notificationExt
 
 
 
-#### notificationExtensionSubscription.isUserGranted
+## notificationExtensionSubscription.isUserGranted
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | Tablet
 
 isUserGranted(): Promise&lt;boolean&gt;
 
@@ -299,6 +319,7 @@ isUserGranted(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示功能已启用；返回false表示功能未启用。 |
@@ -307,6 +328,7 @@ isUserGranted(): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -331,9 +353,10 @@ notificationExtensionSubscription.isUserGranted().then((isOpen: boolean) => {
 
 
 
-#### notificationExtensionSubscription.getUserGrantedEnabledBundles
+## notificationExtensionSubscription.getUserGrantedEnabledBundles
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUserGrantedEnabledBundles(): Promise<GrantedBundleInfo[]>
 
@@ -345,6 +368,7 @@ getUserGrantedEnabledBundles(): Promise<GrantedBundleInfo[]>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<GrantedBundleInfo[]> | Promise对象，返回本应用中“已获取的本机通知”通知开关开启的应用列表。 |
@@ -353,6 +377,7 @@ getUserGrantedEnabledBundles(): Promise<GrantedBundleInfo[]>
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -373,15 +398,17 @@ notificationExtensionSubscription.getUserGrantedEnabledBundles().then((data: not
 
 
 
-#### NotificationExtensionSubscriptionInfo
+## NotificationExtensionSubscriptionInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type NotificationExtensionSubscriptionInfo = _NotificationExtensionSubscriptionInfo
 
 用于描述通知扩展订阅的信息。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -390,15 +417,17 @@ type NotificationExtensionSubscriptionInfo = _NotificationExtensionSubscriptionI
 
 
 
-#### NotificationInfo
+## NotificationInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type NotificationInfo = _NotificationInfo
 
-通知订阅扩展能力中[onReceiveMessage](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-notificationsubscriberextensionability#onreceivemessage)回调的通知信息。
+[通知订阅](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-subscription通知订阅)扩展能力中[onReceiveMessage](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-notificationsubscriberextensionability#onreceivemessage)回调的通知信息。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -407,13 +436,15 @@ type NotificationInfo = _NotificationInfo
 
 
 
-#### SubscribeType
+## SubscribeType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示通知扩展订阅的类型。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -422,15 +453,17 @@ type NotificationInfo = _NotificationInfo
 
 
 
-#### BundleOption
+## BundleOption
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type BundleOption = _BundleOption
 
 指定应用的包信息。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -439,15 +472,17 @@ type BundleOption = _BundleOption
 
 
 
-#### GrantedBundleInfo
+## GrantedBundleInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type GrantedBundleInfo = _GrantedBundleInfo
 
 授权应用的包信息。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -456,9 +491,10 @@ type GrantedBundleInfo = _GrantedBundleInfo
 
 
 
-#### UserGrantSetting
+## UserGrantSetting
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type UserGrantSetting = _UserGrantSetting
 
@@ -469,6 +505,7 @@ type UserGrantSetting = _UserGrantSetting
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 类型 | 说明 |
 | --- | --- |

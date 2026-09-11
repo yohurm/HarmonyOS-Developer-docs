@@ -1,11 +1,12 @@
 # OpenGTX_NetworkLatency
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_open_g_t_x___network_latency
 **支持设备：** Phone | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -19,16 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | int32_t total | 游戏的总时延，单位：ms，取值范围：[0,200]。 |
@@ -38,13 +42,15 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### down
+### down
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -58,7 +64,8 @@ int32_t OpenGTX_NetworkLatency::down
  
   
 
-#### total
+### total
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -72,7 +79,8 @@ int32_t OpenGTX_NetworkLatency::total
  
   
 
-#### up
+### up
+
 
 **支持设备：** Phone | Tablet | TV
 

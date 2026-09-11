@@ -1,20 +1,23 @@
 # restool工具
 
-更新时间：2026-06-12 06:54:11
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/restool
 
-#### 简介
+## 简介
 
-restool是一种应用工程资源编译工具，通过编译资源文件创建资源索引、解析资源，开发者可以调用[资源管理接口](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-resource-manager)获取到对应资源。restool工具保存在sdk安装目录下的toolchains子目录。
+restool是应用资源编译工具，会解析应用资源文件生成资源索引文件和资源二进制文件等产物，生成的产物由[打包工具](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/packing-tool)打包到应用包中，在应用运行阶段开发者可以通过[资源管理](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-resource-manager)接口获取应用包中的资源。
 
-
-
-#### 参数说明
+restool工具存放在SDK安装目录下的toolchains文件夹中。
 
 
 
-#### restool支持的命令选项
+## 参数说明
+
+
+
+### restool支持的命令选项
+
 
 | 选项 | 是否可缺省 | 是否存在入参 | 描述 |
 | --- | --- | --- | --- |
@@ -63,6 +66,7 @@ Locale匹配规则：Locale匹配需满足以下三条规则。
 **-l/--fileList参数说明**
 
 用于指定命令选项集合的json文件，json文件包含的字段与命令选项的对应关系如下。
+
 
 | 字段名称 | 类型 | 命令选项 | 描述 |
 | --- | --- | --- | --- |
@@ -169,7 +173,8 @@ Locale匹配规则：Locale匹配需满足以下三条规则。
 
 
 
-#### restool支持的子命令
+### restool支持的子命令
+
 
 | 命令 | 描述 |
 | --- | --- |
@@ -183,6 +188,7 @@ restool dump [-h] [config] filePath
 ```
 
 dump命令参数列表：
+
 
 | 参数 | 是否可缺省 | 是否存在入参 | 描述 |
 | --- | --- | --- | --- |
@@ -201,7 +207,7 @@ restool dump config entry.hap
 
 
 
-#### 使用实例
+## 使用实例
 
 例如，entry目录结构如下：
 
@@ -219,7 +225,7 @@ entry/src/main
 
 
 
-#### 编译资源
+### 编译资源
 
 编译资源的方式有三种，分别是全量资源编译、增量资源编译和叠加资源编译。其中增量编译仅预览模式可用，用于预览开发阶段的组件效果；全量编译用于构建工程的资源文件；叠加编译支持将工程中的资源叠加进已有的HAP模板资源中，复用已编译的资源项。
 
@@ -252,7 +258,7 @@ restool -i entry/src/main -i hapResource -j entry/src/main/module.json -p com.oh
 
 
 
-#### 固定资源ID
+### 固定资源ID
 
 固定资源ID，具体步骤如下：
 
@@ -299,11 +305,11 @@ restool -i entry/src/main -j entry/src/main/module.json -p com.ohos.demo -o out1
 
 
 
-#### restool工具错误码
+## restool工具错误码
 
 
 
-#### 11201001 加载依赖库失败
+### 11201001 加载依赖库失败
 
 **错误信息**
 
@@ -325,7 +331,7 @@ Failed to load the library 'xxx.dll'.
 
 
 
-#### 11203001 JSON文件打开失败
+### 11203001 JSON文件打开失败
 
 **错误信息**
 
@@ -345,7 +351,7 @@ JSON文件路径错误，或无访问权限。
 
 
 
-#### 11203002 JSON文件解析失败
+### 11203002 JSON文件解析失败
 
 **错误信息**
 
@@ -365,7 +371,7 @@ JSON文件格式错误，如包含多余的逗号等。
 
 
 
-#### 11203003 JSON节点的类型与预期不匹配
+### 11203003 JSON节点的类型与预期不匹配
 
 **错误信息**
 
@@ -385,7 +391,7 @@ JSON中对应节点的类型错误，如预期类型是string，实际类型为n
 
 
 
-#### 11203004 JSON中缺少必需节点
+### 11203004 JSON中缺少必需节点
 
 **错误信息**
 
@@ -405,7 +411,7 @@ JSON中没有配置对应的必需节点，如name、value等。
 
 
 
-#### 11203005 JSON中存在空object或空数组
+### 11203005 JSON中存在空object或空数组
 
 **错误信息**
 
@@ -425,7 +431,7 @@ JSON中对应节点为空，如object配置为{}，或数组配置为[]。
 
 
 
-#### 11203006 JSON中包含多个子节点
+### 11203006 JSON中包含多个子节点
 
 **错误信息**
 
@@ -445,7 +451,7 @@ JSON中对应节点包含了多个子节点。
 
 
 
-#### 11203007 无效的JSON节点名称
+### 11203007 无效的JSON节点名称
 
 **错误信息**
 
@@ -465,7 +471,7 @@ JSON中对应节点的名称错误，不在指定的名称["boolean","color","fl
 
 
 
-#### 11204001 创建文件失败
+### 11204001 创建文件失败
 
 **错误信息**
 
@@ -480,12 +486,17 @@ Failed to create the directory or file 'xxx'.
 文件路径错误，或无访问权限。
 
 **处理步骤**
+1. 检查文件路径是否准确。
+2. 检查文件权限。若文件权限为只读，修改文件权限为可读可写。具体操作如下：       
+Windows：选中文件，点击鼠标右键，选择属性，取消勾选"只读"属性。
+3. Linux/MacOS：执行chmod命令"chmod 644 文件路径"。         
+> [!NOTE]
+> 若报错的文件路径为编译产物build目录下的路径，需先手动删除报错的文件，再修改其对应的源文件的权限。如报错路径为"entry\build\default\intermediates\res\default\resources\base\profile\form_config.json"，则修改对应的源文件"entry\src\main\resources\base\profile\form_config.json"的权限。
 
-检查文件路径是否准确且有访问权限。
 
 
 
-#### 11204003 删除文件失败
+### 11204003 删除文件失败
 
 **错误信息**
 
@@ -500,12 +511,17 @@ Failed to delete the directory or file 'xxx'.
 文件路径错误，或无访问权限。
 
 **处理步骤**
+1. 检查文件路径是否准确。
+2. 检查文件权限。若文件权限为只读，修改文件权限为可读可写。具体操作如下：       
+Windows：选中文件，点击鼠标右键，选择属性，取消勾选"只读"属性。
+3. Linux/MacOS：执行chmod命令"chmod 644 文件路径"。         
+> [!NOTE]
+> 若报错的文件路径为编译产物build目录下的路径，需先手动删除报错的文件，再修改其对应的源文件的权限。如报错路径为"entry\build\default\intermediates\res\default\resources\base\profile\form_config.json"，则修改对应的源文件"entry\src\main\resources\base\profile\form_config.json"的权限。
 
-检查文件路径是否准确且有访问权限。
 
 
 
-#### 11204004 拷贝文件失败
+### 11204004 拷贝文件失败
 
 **错误信息**
 
@@ -520,12 +536,17 @@ Failed to copy the file from 'xxx' to 'xxx'.
 文件路径错误，或无访问权限。
 
 **处理步骤**
+1. 检查文件路径是否准确。
+2. 检查文件权限。若文件权限为只读，修改文件权限为可读可写。具体操作如下：       
+Windows：选中文件，点击鼠标右键，选择属性，取消勾选"只读"属性。
+3. Linux/MacOS：执行chmod命令"chmod 644 文件路径"。         
+> [!NOTE]
+> 若报错的文件路径为编译产物build目录下的路径，需先手动删除报错的文件，再修改其对应的源文件的权限。如报错路径为"entry\build\default\intermediates\res\default\resources\base\profile\form_config.json"，则修改对应的源文件"entry\src\main\resources\base\profile\form_config.json"的权限。
 
-检查文件路径是否准确且有访问权限。
 
 
 
-#### 11204005 打开文件失败
+### 11204005 打开文件失败
 
 **错误信息**
 
@@ -540,12 +561,17 @@ Failed to open the file 'xxx'.
 文件路径错误，或无访问权限。
 
 **处理步骤**
+1. 检查文件路径是否准确。
+2. 检查文件权限。若文件权限为只读，修改文件权限为可读可写。具体操作如下：       
+Windows：选中文件，点击鼠标右键，选择属性，取消勾选"只读"属性。
+3. Linux/MacOS：执行chmod命令"chmod 644 文件路径"。         
+> [!NOTE]
+> 若报错的文件路径为编译产物build目录下的路径，需先手动删除报错的文件，再修改其对应的源文件的权限。如报错路径为"entry\build\default\intermediates\res\default\resources\base\profile\form_config.json"，则修改对应的源文件"entry\src\main\resources\base\profile\form_config.json"的权限。
 
-检查文件路径是否准确且有访问权限。
 
 
 
-#### 11204006 读取文件失败
+### 11204006 读取文件失败
 
 **错误信息**
 
@@ -565,7 +591,7 @@ Failed to read the file 'xxx'.
 
 
 
-#### 11210001 未知命令选项
+### 11210001 未知命令选项
 
 **错误信息**
 
@@ -585,7 +611,7 @@ Unknown option 'xxx'.
 
 
 
-#### 11210002 选项缺少必需参数
+### 11210002 选项缺少必需参数
 
 **错误信息**
 
@@ -605,7 +631,7 @@ Option 'xxx' requires an argument.
 
 
 
-#### 11210003 无效参数
+### 11210003 无效参数
 
 **错误信息**
 
@@ -625,7 +651,7 @@ Invalid argument value 'xxx'.
 
 
 
-#### 11210004 无效的输入路径
+### 11210004 无效的输入路径
 
 **错误信息**
 
@@ -645,7 +671,7 @@ Invalid input path 'xxx'.
 
 
 
-#### 11210005 重复的输入路径
+### 11210005 重复的输入路径
 
 **错误信息**
 
@@ -665,7 +691,7 @@ Duplicated input path 'xxx'.
 
 
 
-#### 11210006 包名存在冲突
+### 11210006 包名存在冲突
 
 **错误信息**
 
@@ -685,7 +711,7 @@ The package names 'xxx' and 'xxx' conflict.
 
 
 
-#### 11210007 无效的输出路径
+### 11210007 无效的输出路径
 
 **错误信息**
 
@@ -705,7 +731,7 @@ Invalid output path 'xxx'.
 
 
 
-#### 11210008 输出路径存在冲突
+### 11210008 输出路径存在冲突
 
 **错误信息**
 
@@ -725,7 +751,7 @@ The output paths 'xxx' and 'xxx' conflict.
 
 
 
-#### 11210009 重复的资源头文件路径
+### 11210009 重复的资源头文件路径
 
 **错误信息**
 
@@ -745,7 +771,7 @@ Duplicated resource header path 'xxx'.
 
 
 
-#### 11210010 模块名称存在冲突
+### 11210010 模块名称存在冲突
 
 **错误信息**
 
@@ -765,7 +791,7 @@ The module names 'xxx' and 'xxx' conflict.
 
 
 
-#### 11210011 重复的模块名称
+### 11210011 重复的模块名称
 
 **错误信息**
 
@@ -785,7 +811,7 @@ Duplicated module name 'xxx'.
 
 
 
-#### 11210012 应用配置文件存在冲突
+### 11210012 应用配置文件存在冲突
 
 **错误信息**
 
@@ -805,7 +831,7 @@ The paths 'xxx' and 'xxx' of the module.json (in the stage model) or config.json
 
 
 
-#### 11210013 无效的资源起始id
+### 11210013 无效的资源起始id
 
 **错误信息**
 
@@ -825,7 +851,7 @@ Invalid start ID 'xxx'. It is out of range.
 
 
 
-#### 11210014 重复的增量资源文件路径
+### 11210014 重复的增量资源文件路径
 
 **错误信息**
 
@@ -845,7 +871,7 @@ Duplicated append path 'xxx'.
 
 
 
-#### 11210015 target-config存在冲突
+### 11210015 target-config存在冲突
 
 **错误信息**
 
@@ -865,7 +891,7 @@ The target configurations 'xxx' and 'xxx' conflict.
 
 
 
-#### 11210016 无效的target-config
+### 11210016 无效的target-config
 
 **错误信息**
 
@@ -885,7 +911,7 @@ Invalid target configuration argument 'xxx'. The argument format for option --ta
 
 
 
-#### 11210017 无效的系统资源id_defined.json路径
+### 11210017 无效的系统资源id_defined.json路径
 
 **错误信息**
 
@@ -905,7 +931,7 @@ Invalid system id_defined.json path 'xxx'.
 
 
 
-#### 11210018 重复的系统资源id_defined.json路径
+### 11210018 重复的系统资源id_defined.json路径
 
 **错误信息**
 
@@ -925,7 +951,7 @@ Duplicated system id_defined.json path 'xxx'.
 
 
 
-#### 11210019 compressed-config存在冲突
+### 11210019 compressed-config存在冲突
 
 **错误信息**
 
@@ -945,7 +971,7 @@ The compression JSON paths 'xxx' and 'xxx' conflict.
 
 
 
-#### 11210020 参数非ASCII值
+### 11210020 参数非ASCII值
 
 **错误信息**
 
@@ -965,7 +991,7 @@ The argument value 'xxx' is not an ASCII value.
 
 
 
-#### 11210021 选项之间存在互斥
+### 11210021 选项之间存在互斥
 
 **错误信息**
 
@@ -985,7 +1011,7 @@ Options 'xxx' and 'xxx' cannot be used together.
 
 
 
-#### 11210022 包名为空
+### 11210022 包名为空
 
 **错误信息**
 
@@ -1005,7 +1031,7 @@ The package name is empty. It should be specified with option -p/--packageName.
 
 
 
-#### 11210023 资源头文件路径为空
+### 11210023 资源头文件路径为空
 
 **错误信息**
 
@@ -1025,7 +1051,7 @@ The resource header path (for example, ./ResourceTable.js, ./ResourceTable.h) is
 
 
 
-#### 11210024 dump命令缺少HAP包路径
+### 11210024 dump命令缺少HAP包路径
 
 **错误信息**
 
@@ -1045,7 +1071,7 @@ dump命令未指定HAP包路径。
 
 
 
-#### 11210025 dump命令指定的HAP包路径无效
+### 11210025 dump命令指定的HAP包路径无效
 
 **错误信息**
 
@@ -1065,7 +1091,7 @@ dump命令指定的HAP包路径错误或无访问权限。
 
 
 
-#### 11210026 无效的子线程数量
+### 11210026 无效的子线程数量
 
 **错误信息**
 
@@ -1085,7 +1111,7 @@ Invalid thread count 'xxx'. It should be an integer greater than 0.
 
 
 
-#### 11211001 输出路径已存在
+### 11211001 输出路径已存在
 
 **错误信息**
 
@@ -1105,7 +1131,7 @@ The output path exists. Specify option -f/--forceWrite to overwrite.
 
 
 
-#### 11211002 缺少模块配置文件路径
+### 11211002 缺少模块配置文件路径
 
 **错误信息**
 
@@ -1125,7 +1151,7 @@ There are multiple input paths, but the path of the module.json (in the stage mo
 
 
 
-#### 11211003 无效的模块类型
+### 11211003 无效的模块类型
 
 **错误信息**
 
@@ -1145,7 +1171,7 @@ Invalid module type 'xxx'. Valid values: ["entry", "har", "shared", "feature"].
 
 
 
-#### 11211004 资源起始id与id_defined.json存在冲突
+### 11211004 资源起始id与id_defined.json存在冲突
 
 **错误信息**
 
@@ -1169,7 +1195,7 @@ The start ID 'xxx' specified by option -e/--startId conflict with the IDs in the
 
 
 
-#### 11211007 id_defined.json中的资源类型无效
+### 11211007 id_defined.json中的资源类型无效
 
 **错误信息**
 
@@ -1189,7 +1215,7 @@ id_defined.json中资源类型type的取值不在["boolean","color","float","id"
 
 
 
-#### 11211008 id_defined.json中的资源id无效
+### 11211008 id_defined.json中的资源id无效
 
 **错误信息**
 
@@ -1209,7 +1235,7 @@ id_defined.json中资源id无效。
 
 
 
-#### 11211012 id_defined.json定义了重复的id
+### 11211012 id_defined.json定义了重复的id
 
 **错误信息**
 
@@ -1229,7 +1255,7 @@ id_defined.json中两个资源定义了同一个资源id值。
 
 
 
-#### 11211014 错误的模块名称
+### 11211014 错误的模块名称
 
 **错误信息**
 
@@ -1249,7 +1275,7 @@ The module name 'xxx' is not found in ["yyy","zzz"], which is specified by -m/--
 
 
 
-#### 11211101 无效的资源文件
+### 11211101 无效的资源文件
 
 **错误信息**
 
@@ -1271,7 +1297,7 @@ Failed to scan resources: invalid path 'xxx'.
 
 
 
-#### 11211103 无效的限定词目录
+### 11211103 无效的限定词目录
 
 **错误信息**
 
@@ -1291,7 +1317,7 @@ Invalid qualifier key 'xxx'. It should match the pattern of the qualifiers direc
 
 
 
-#### 11211104 无效的资源组目录
+### 11211104 无效的资源组目录
 
 **错误信息**
 
@@ -1311,7 +1337,7 @@ Invalid resource directory name 'xxx'. Valid values: ["element","media","profile
 
 
 
-#### 11211106 无效的翻译状态
+### 11211106 无效的翻译状态
 
 **错误信息**
 
@@ -1331,7 +1357,7 @@ Invalid translation priority value 'xxx'. Valid values: ["code","translate","LT"
 
 
 
-#### 11211107 不支持的element资源类型
+### 11211107 不支持的element资源类型
 
 **错误信息**
 
@@ -1351,7 +1377,7 @@ element目录下json资源文件支持的资源类型为["integer","string","str
 
 
 
-#### 11211108 无效的颜色值
+### 11211108 无效的颜色值
 
 **错误信息**
 
@@ -1373,7 +1399,7 @@ color资源只支持以下两种格式：
 
 
 
-#### 11211109 无效的资源引用
+### 11211109 无效的资源引用
 
 **错误信息**
 
@@ -1393,7 +1419,7 @@ Invalid resource reference $xxx:xxx. Supported reference: $(ohos:)?xxx:xxx.
 
 
 
-#### 11211110 theme资源的parent为空
+### 11211110 theme资源的parent为空
 
 **错误信息**
 
@@ -1449,7 +1475,7 @@ theme资源的parent属性是可选的，其值需配置为其他theme资源的�
 
 
 
-#### 11211111 数组类型的资源超长
+### 11211111 数组类型的资源超长
 
 **错误信息**
 
@@ -1469,7 +1495,7 @@ The array resource 'xxx' is too large. The total length of the value of the arra
 
 
 
-#### 11211112 无效的单复数资源类别
+### 11211112 无效的单复数资源类别
 
 **错误信息**
 
@@ -1489,7 +1515,7 @@ Invalid quantity 'xxx' of the plural resource 'xxx'. Valid values: ["zero","one"
 
 
 
-#### 11211113 单复数资源的类别重复
+### 11211113 单复数资源的类别重复
 
 **错误信息**
 
@@ -1533,7 +1559,7 @@ Duplicated quantity 'xxx' of the plural resource 'xxx'.
 
 
 
-#### 11211114 单复数资源缺少other类别
+### 11211114 单复数资源缺少other类别
 
 **错误信息**
 
@@ -1553,7 +1579,7 @@ The plural resource 'xxx' should contain the 'other' quantity.
 
 
 
-#### 11211115 无效的symbol资源
+### 11211115 无效的symbol资源
 
 **错误信息**
 
@@ -1573,7 +1599,7 @@ symbol资源的值不在[0xF0000,0xFFFFF] 或 [0x100000,0x10FFFF]范围内。
 
 
 
-#### 11211116 无效的资源名称
+### 11211116 无效的资源名称
 
 **错误信息**
 
@@ -1593,7 +1619,7 @@ Invalid resource name 'xxx'. It should match the pattern [a-zA-Z0-9_].
 
 
 
-#### 11211117 资源重复定义
+### 11211117 资源重复定义
 
 **错误信息**
 
@@ -1613,7 +1639,7 @@ Resource 'xxx' conflict. It is first declared at 'xxx' and declared again at 'xx
 
 
 
-#### 11211118 资源id超过最大值
+### 11211118 资源id超过最大值
 
 **错误信息**
 
@@ -1633,7 +1659,7 @@ The resource ID 'xxx' exceeds the maximum ID 'xxx'.
 
 
 
-#### 11211120 引用的资源未定义
+### 11211120 引用的资源未定义
 
 **错误信息**
 
@@ -1653,7 +1679,7 @@ The resource reference '$xxx:xxx' is not defined.
 
 
 
-#### 11211124 解析resources.index文件失败
+### 11211124 解析resources.index文件失败
 
 **错误信息**
 
@@ -1673,7 +1699,7 @@ resources.index格式不正确，如内容为空或文件开头不存在128字�
 
 
 
-#### 11212001 解析HAP包错误
+### 11212001 解析HAP包错误
 
 **错误信息**
 

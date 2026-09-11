@@ -1,6 +1,6 @@
 # 相机控制器(ArkTS)
 
-更新时间：2026-03-09 02:50:43
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-control-center
 
@@ -9,7 +9,7 @@
 相机控制器为直播和视频通话场景设计，目前仅支持在前置镜头的录像模式下使用，最高可支持1080P分辨率和30fps帧率。
 
 
-#### 开发步骤
+## 开发步骤
 
 详细的API说明请参考[Camera](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera)。
 1. 导入camera接口，接口中提供了相机相关的属性和方法，导入方法如下。
@@ -66,7 +66,7 @@ function enableControlCenter(videoSession: camera.VideoSession, enable: boolean)
 
 
 
-#### 状态监听
+## 状态监听
 
 使用相机控制器的过程中，应用可以监听控制器效果的使能状态。
 

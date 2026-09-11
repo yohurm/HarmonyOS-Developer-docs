@@ -1,18 +1,19 @@
 # PerfTest错误码
 
-更新时间：2026-07-09 02:26:55
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-perftest
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!TIP]
 > 以下仅介绍本模块特有错误码，通用错误码请参考 通用错误码说明文档 。
 
 
 
-#### 32400001 初始化失败
+## 32400001 初始化失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -32,9 +33,10 @@ Initialization failed.
 
 
 
-#### 32400002 内部错误
+## 32400002 内部错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -54,9 +56,10 @@ Internal error.
 
 
 
-#### 32400003 参数校验失败
+## 32400003 参数校验失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -76,9 +79,10 @@ Parameter verification failed.
 
 
 
-#### 32400004 执行回调函数失败
+## 32400004 执行回调函数失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -98,9 +102,10 @@ Failed to execute the callback.
 
 
 
-#### 32400005 采集性能数据失败
+## 32400005 采集性能数据失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -120,9 +125,10 @@ Failed to collect metric data.
 
 
 
-#### 32400006 无法获取性能数据
+## 32400006 无法获取性能数据
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -142,9 +148,10 @@ Failed to obtain the measurement result.
 
 
 
-#### 32400007 接口不支持并行调用
+## 32400007 接口不支持并行调用
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 

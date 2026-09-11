@@ -1,13 +1,14 @@
 # crypto_asym_key.h
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-04 10:41:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-crypto-asym-key-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义非对称密钥接口。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_CryptoKeyPair | OH_CryptoKeyPair | 密钥对结构体，表示密钥对。 |
@@ -47,10 +51,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | CryptoAsymKey_ParamType | CryptoAsymKey_ParamType | 定义非对称密钥参数类型。 |
@@ -61,10 +67,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_Crypto_ErrCode OH_CryptoAsymKeyGenerator_Create(const char *algoName, OH_CryptoAsymKeyGenerator **ctx) | 根据给定的算法名称创建非对称密钥生成器。 注意：创建的资源必须通过OH_CryptoAsymKeyGenerator_Destroy销毁。 |
@@ -102,15 +110,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### CryptoAsymKey_ParamType
+### CryptoAsymKey_ParamType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum CryptoAsymKey_ParamType
@@ -122,6 +132,7 @@ enum CryptoAsymKey_ParamType
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | CRYPTO_DSA_P_DATABLOB = 101 | 表示DSA算法的素数p。 |
@@ -158,9 +169,10 @@ enum CryptoAsymKey_ParamType
  
   
 
-#### Crypto_EncodingType
+### Crypto_EncodingType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Crypto_EncodingType
@@ -172,6 +184,7 @@ enum Crypto_EncodingType
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | CRYPTO_PEM = 0 | PEM格式。 |
@@ -180,9 +193,10 @@ enum Crypto_EncodingType
  
   
 
-#### CryptoPrivKeyEncoding_ParamType
+### CryptoPrivKeyEncoding_ParamType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum CryptoPrivKeyEncoding_ParamType
@@ -194,6 +208,7 @@ enum CryptoPrivKeyEncoding_ParamType
  
 **起始版本：** 20
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | CRYPTO_PRIVATE_KEY_ENCODING_PASSWORD_STR = 0 | 表示密码字符串。 |
@@ -202,9 +217,10 @@ enum CryptoPrivKeyEncoding_ParamType
  
   
 
-#### CryptoAsymKeySpec_Type
+### CryptoAsymKeySpec_Type
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum CryptoAsymKeySpec_Type
@@ -216,6 +232,7 @@ enum CryptoAsymKeySpec_Type
  
 **起始版本：** 20
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | CRYPTO_ASYM_KEY_COMMON_PARAMS_SPEC = 0 | 通用参数规格。 |
@@ -226,15 +243,17 @@ enum CryptoAsymKeySpec_Type
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_CryptoAsymKeyGenerator_Create()
+### OH_CryptoAsymKeyGenerator_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoAsymKeyGenerator_Create(const char *algoName, OH_CryptoAsymKeyGenerator **ctx)
@@ -250,6 +269,7 @@ OH_Crypto_ErrCode OH_CryptoAsymKeyGenerator_Create(const char *algoName, OH_Cryp
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *algoName | [in] 非对称密钥算法名称，不能为NULL。取值如下： - 从API version 12开始支持RSA系列："RSA512"、"RSA768"、"RSA1024"、"RSA2048"、"RSA3072"、"RSA4096"、"RSA8192"。支持多素数格式，示例："RSA1024\|PRIMES_3"、"RSA4096\|PRIMES_4"、"RSA8192\|PRIMES_5"。 - 从API version 12开始支持ECC系列："ECC224"、"ECC256"、"ECC384"、"ECC521"。 - 从API version 12开始支持ECC BrainPool系列："ECC_BrainPoolP160r1"、"ECC_BrainPoolP160t1"、"ECC_BrainPoolP192r1"、"ECC_BrainPoolP192t1"、"ECC_BrainPoolP224r1"、"ECC_BrainPoolP224t1"、"ECC_BrainPoolP256r1"、"ECC_BrainPoolP256t1"、"ECC_BrainPoolP320r1"、"ECC_BrainPoolP320t1"、"ECC_BrainPoolP384r1"、"ECC_BrainPoolP384t1"、"ECC_BrainPoolP512r1"、"ECC_BrainPoolP512t1"。 - 从API version 12开始支持"SM2_256"、"Ed25519"、"X25519"。 - 从API version 12开始支持DSA系列："DSA1024"、"DSA2048"、"DSA3072"。 - 从API version 12开始支持DH系列："DH_modp1536"、"DH_modp2048"、"DH_modp3072"、"DH_modp4096"、"DH_modp6144"、"DH_modp8192"、"DH_ffdhe2048"、"DH_ffdhe3072"、"DH_ffdhe4096"、"DH_ffdhe6144"、"DH_ffdhe8192"。 - 从API version 14开始支持"ECC_Secp256k1"。 - 从API版本26.0.0开始支持"ECC192"。 |
@@ -258,6 +278,7 @@ OH_Crypto_ErrCode OH_CryptoAsymKeyGenerator_Create(const char *algoName, OH_Cryp
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_INVALID_PARAMS：ctx为NULL或algoName为NULL。 CRYPTO_NOT_SUPPORTED：不支持的算法。 CRYPTO_MEMORY_ERROR：内存分配失败。 CRYPTO_OPERTION_ERROR：密码操作失败。 |
@@ -271,9 +292,10 @@ OH_Crypto_ErrCode OH_CryptoAsymKeyGenerator_Create(const char *algoName, OH_Cryp
  
   
 
-#### OH_CryptoAsymKeyGenerator_Generate()
+### OH_CryptoAsymKeyGenerator_Generate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoAsymKeyGenerator_Generate(OH_CryptoAsymKeyGenerator *ctx, OH_CryptoKeyPair **keyCtx)
@@ -289,6 +311,7 @@ OH_Crypto_ErrCode OH_CryptoAsymKeyGenerator_Generate(OH_CryptoAsymKeyGenerator *
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoAsymKeyGenerator *ctx | [in] 非对称密钥生成器。不能为NULL。 |
@@ -297,6 +320,7 @@ OH_Crypto_ErrCode OH_CryptoAsymKeyGenerator_Generate(OH_CryptoAsymKeyGenerator *
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_INVALID_PARAMS：ctx或keyCtx为NULL。 CRYPTO_NOT_SUPPORTED：不支持的操作或算法。 CRYPTO_MEMORY_ERROR：内存操作失败。 CRYPTO_OPERTION_ERROR：密码操作失败。 |
@@ -304,9 +328,10 @@ OH_Crypto_ErrCode OH_CryptoAsymKeyGenerator_Generate(OH_CryptoAsymKeyGenerator *
  
   
 
-#### OH_CryptoAsymKeyGenerator_Convert()
+### OH_CryptoAsymKeyGenerator_Convert()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoAsymKeyGenerator_Convert(OH_CryptoAsymKeyGenerator *ctx, Crypto_EncodingType type, Crypto_DataBlob *pubKeyData, Crypto_DataBlob *priKeyData, OH_CryptoKeyPair **keyCtx)
@@ -322,6 +347,7 @@ OH_Crypto_ErrCode OH_CryptoAsymKeyGenerator_Convert(OH_CryptoAsymKeyGenerator *c
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoAsymKeyGenerator *ctx | [in] 非对称密钥生成器。不能为NULL。 |
@@ -333,6 +359,7 @@ OH_Crypto_ErrCode OH_CryptoAsymKeyGenerator_Convert(OH_CryptoAsymKeyGenerator *c
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_INVALID_PARAMS：ctx为NULL，pubKeyData和priKeyData同时为NULL，keyCtx为NULL或type不是有效的Crypto_EncodingType。 CRYPTO_NOT_SUPPORTED：不支持的密钥格式。 CRYPTO_MEMORY_ERROR：内存分配失败。 CRYPTO_OPERTION_ERROR：密钥转换失败。可能的原因： 密钥数据损坏或不是有效的PEM/DER格式，密钥数据与算法不匹配，或加密私钥的密码不正确。 |
@@ -340,9 +367,10 @@ OH_Crypto_ErrCode OH_CryptoAsymKeyGenerator_Convert(OH_CryptoAsymKeyGenerator *c
  
   
 
-#### OH_CryptoAsymKeyGenerator_GetAlgoName()
+### OH_CryptoAsymKeyGenerator_GetAlgoName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 const char *OH_CryptoAsymKeyGenerator_GetAlgoName(OH_CryptoAsymKeyGenerator *ctx)
@@ -356,6 +384,7 @@ const char *OH_CryptoAsymKeyGenerator_GetAlgoName(OH_CryptoAsymKeyGenerator *ctx
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoAsymKeyGenerator *ctx | [in] 非对称密钥生成器。不能为NULL。 |
@@ -363,6 +392,7 @@ const char *OH_CryptoAsymKeyGenerator_GetAlgoName(OH_CryptoAsymKeyGenerator *ctx
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | const char * | 返回非对称密钥算法名称，不需要调用者释放，在生成器销毁后不可使用。 返回NULL，如果ctx是NULL。 |
@@ -370,9 +400,10 @@ const char *OH_CryptoAsymKeyGenerator_GetAlgoName(OH_CryptoAsymKeyGenerator *ctx
  
   
 
-#### OH_CryptoAsymKeyGenerator_Destroy()
+### OH_CryptoAsymKeyGenerator_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_CryptoAsymKeyGenerator_Destroy(OH_CryptoAsymKeyGenerator *ctx)
@@ -386,6 +417,7 @@ void OH_CryptoAsymKeyGenerator_Destroy(OH_CryptoAsymKeyGenerator *ctx)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoAsymKeyGenerator *ctx | [in] 非对称密钥生成器。 |
@@ -393,9 +425,10 @@ void OH_CryptoAsymKeyGenerator_Destroy(OH_CryptoAsymKeyGenerator *ctx)
  
   
 
-#### OH_CryptoKeyPair_Destroy()
+### OH_CryptoKeyPair_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_CryptoKeyPair_Destroy(OH_CryptoKeyPair *keyCtx)
@@ -409,6 +442,7 @@ void OH_CryptoKeyPair_Destroy(OH_CryptoKeyPair *keyCtx)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoKeyPair *keyCtx | [in] 密钥对。 |
@@ -416,9 +450,10 @@ void OH_CryptoKeyPair_Destroy(OH_CryptoKeyPair *keyCtx)
  
   
 
-#### OH_CryptoKeyPair_GetPubKey()
+### OH_CryptoKeyPair_GetPubKey()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_CryptoPubKey *OH_CryptoKeyPair_GetPubKey(OH_CryptoKeyPair *keyCtx)
@@ -432,6 +467,7 @@ OH_CryptoPubKey *OH_CryptoKeyPair_GetPubKey(OH_CryptoKeyPair *keyCtx)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoKeyPair *keyCtx | [in] 密钥对。不能为NULL。 |
@@ -439,6 +475,7 @@ OH_CryptoPubKey *OH_CryptoKeyPair_GetPubKey(OH_CryptoKeyPair *keyCtx)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_CryptoPubKey * | 返回密钥对中的公钥。为内部引用，不需要单独销毁，在密钥对销毁后不可使用。 返回NULL，如果keyCtx为NULL或公钥不存在。 |
@@ -446,9 +483,10 @@ OH_CryptoPubKey *OH_CryptoKeyPair_GetPubKey(OH_CryptoKeyPair *keyCtx)
  
   
 
-#### OH_CryptoKeyPair_GetPrivKey()
+### OH_CryptoKeyPair_GetPrivKey()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_CryptoPrivKey *OH_CryptoKeyPair_GetPrivKey(OH_CryptoKeyPair *keyCtx)
@@ -462,6 +500,7 @@ OH_CryptoPrivKey *OH_CryptoKeyPair_GetPrivKey(OH_CryptoKeyPair *keyCtx)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoKeyPair *keyCtx | [in] 密钥对。不能为NULL。 |
@@ -469,6 +508,7 @@ OH_CryptoPrivKey *OH_CryptoKeyPair_GetPrivKey(OH_CryptoKeyPair *keyCtx)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_CryptoPrivKey * | 返回密钥对中的私钥。为内部引用，不需要单独销毁，在密钥对销毁后不可使用。 返回NULL，如果keyCtx为NULL或私钥不存在。 |
@@ -476,9 +516,10 @@ OH_CryptoPrivKey *OH_CryptoKeyPair_GetPrivKey(OH_CryptoKeyPair *keyCtx)
  
   
 
-#### OH_CryptoPubKey_Encode()
+### OH_CryptoPubKey_Encode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoPubKey_Encode(OH_CryptoPubKey *key, Crypto_EncodingType type, const char *encodingStandard, Crypto_DataBlob *out)
@@ -494,6 +535,7 @@ OH_Crypto_ErrCode OH_CryptoPubKey_Encode(OH_CryptoPubKey *key, Crypto_EncodingTy
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoPubKey *key | [in] 公钥。不能为NULL。 |
@@ -504,16 +546,18 @@ OH_Crypto_ErrCode OH_CryptoPubKey_Encode(OH_CryptoPubKey *key, Crypto_EncodingTy
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_INVALID_PARAMS：key、out或encodingStandard为NULL，type不是 有效的Crypto_EncodingType，或编码标准与密钥类型不兼容。 CRYPTO_NOT_SUPPORTED：不支持的编码格式。 CRYPTO_MEMORY_ERROR：内存分配失败。 CRYPTO_OPERTION_ERROR：编码失败。 |
+| OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_INVALID_PARAMS：key、out或encodingStandard为NULL，type不是有效的Crypto_EncodingType，或编码标准与密钥类型不兼容。 CRYPTO_NOT_SUPPORTED：不支持的编码格式。 CRYPTO_MEMORY_ERROR：内存分配失败。 CRYPTO_OPERTION_ERROR：编码失败。 |
  
  
   
 
-#### OH_CryptoPubKey_GetParam()
+### OH_CryptoPubKey_GetParam()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoPubKey_GetParam(OH_CryptoPubKey *key, CryptoAsymKey_ParamType item, Crypto_DataBlob *value)
@@ -529,6 +573,7 @@ OH_Crypto_ErrCode OH_CryptoPubKey_GetParam(OH_CryptoPubKey *key, CryptoAsymKey_P
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoPubKey *key | [in] 公钥。不能为NULL。 |
@@ -538,6 +583,7 @@ OH_Crypto_ErrCode OH_CryptoPubKey_GetParam(OH_CryptoPubKey *key, CryptoAsymKey_P
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_INVALID_PARAMS：key或value为NULL，或该参数类型不支持该密钥算法。 CRYPTO_NOT_SUPPORTED：不支持的参数类型。 CRYPTO_MEMORY_ERROR：内存分配失败。 CRYPTO_OPERTION_ERROR：获取参数失败。 |
@@ -545,9 +591,10 @@ OH_Crypto_ErrCode OH_CryptoPubKey_GetParam(OH_CryptoPubKey *key, CryptoAsymKey_P
  
   
 
-#### OH_CryptoAsymKeyGenerator_SetPassword()
+### OH_CryptoAsymKeyGenerator_SetPassword()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoAsymKeyGenerator_SetPassword(OH_CryptoAsymKeyGenerator *ctx, const unsigned char *password, uint32_t passwordLen)
@@ -561,6 +608,7 @@ OH_Crypto_ErrCode OH_CryptoAsymKeyGenerator_SetPassword(OH_CryptoAsymKeyGenerato
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoAsymKeyGenerator *ctx | [in] 非对称密钥生成器。不能为NULL。 |
@@ -570,6 +618,7 @@ OH_Crypto_ErrCode OH_CryptoAsymKeyGenerator_SetPassword(OH_CryptoAsymKeyGenerato
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_NOT_SUPPORTED：不支持的操作或算法。 CRYPTO_MEMORY_ERROR：内存分配失败。 CRYPTO_PARAMETER_CHECK_FAILED：ctx或password为NULL，或passwordLen为0。 CRYPTO_OPERTION_ERROR：密码操作失败。 |
@@ -577,9 +626,10 @@ OH_Crypto_ErrCode OH_CryptoAsymKeyGenerator_SetPassword(OH_CryptoAsymKeyGenerato
  
   
 
-#### OH_CryptoPrivKeyEncodingParams_Create()
+### OH_CryptoPrivKeyEncodingParams_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoPrivKeyEncodingParams_Create(OH_CryptoPrivKeyEncodingParams **ctx)
@@ -595,6 +645,7 @@ OH_Crypto_ErrCode OH_CryptoPrivKeyEncodingParams_Create(OH_CryptoPrivKeyEncoding
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoPrivKeyEncodingParams **ctx | [out] 指向私钥编码参数指针的指针。ctx不能为NULL，*ctx必须为NULL。 |
@@ -602,6 +653,7 @@ OH_Crypto_ErrCode OH_CryptoPrivKeyEncodingParams_Create(OH_CryptoPrivKeyEncoding
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_PARAMETER_CHECK_FAILED：ctx为NULL。 CRYPTO_NOT_SUPPORTED：不支持的操作或算法。 CRYPTO_MEMORY_ERROR：内存分配失败。 CRYPTO_OPERTION_ERROR：密码操作失败。 |
@@ -613,9 +665,10 @@ OH_Crypto_ErrCode OH_CryptoPrivKeyEncodingParams_Create(OH_CryptoPrivKeyEncoding
  
   
 
-#### OH_CryptoPrivKeyEncodingParams_SetParam()
+### OH_CryptoPrivKeyEncodingParams_SetParam()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoPrivKeyEncodingParams_SetParam(OH_CryptoPrivKeyEncodingParams *ctx, CryptoPrivKeyEncoding_ParamType type, Crypto_DataBlob *value)
@@ -629,6 +682,7 @@ OH_Crypto_ErrCode OH_CryptoPrivKeyEncodingParams_SetParam(OH_CryptoPrivKeyEncodi
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoPrivKeyEncodingParams *ctx | [in] 私钥编码参数。不能为NULL。 |
@@ -638,6 +692,7 @@ OH_Crypto_ErrCode OH_CryptoPrivKeyEncodingParams_SetParam(OH_CryptoPrivKeyEncodi
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_PARAMETER_CHECK_FAILED：ctx或value为NULL，value->data为NULL，value->len为0，或type无法识别。 CRYPTO_NOT_SUPPORTED：不支持的操作或算法。 CRYPTO_MEMORY_ERROR：深拷贝内存分配失败。 CRYPTO_OPERTION_ERROR：密码操作失败。 |
@@ -645,9 +700,10 @@ OH_Crypto_ErrCode OH_CryptoPrivKeyEncodingParams_SetParam(OH_CryptoPrivKeyEncodi
  
   
 
-#### OH_CryptoPrivKeyEncodingParams_Destroy()
+### OH_CryptoPrivKeyEncodingParams_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_CryptoPrivKeyEncodingParams_Destroy(OH_CryptoPrivKeyEncodingParams *ctx)
@@ -661,6 +717,7 @@ void OH_CryptoPrivKeyEncodingParams_Destroy(OH_CryptoPrivKeyEncodingParams *ctx)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoPrivKeyEncodingParams *ctx | [in] 私钥编码参数。 |
@@ -668,9 +725,10 @@ void OH_CryptoPrivKeyEncodingParams_Destroy(OH_CryptoPrivKeyEncodingParams *ctx)
  
   
 
-#### OH_CryptoPrivKey_Encode()
+### OH_CryptoPrivKey_Encode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoPrivKey_Encode(OH_CryptoPrivKey *key, Crypto_EncodingType type, const char *encodingStandard, OH_CryptoPrivKeyEncodingParams *params, Crypto_DataBlob *out)
@@ -686,6 +744,7 @@ OH_Crypto_ErrCode OH_CryptoPrivKey_Encode(OH_CryptoPrivKey *key, Crypto_Encoding
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoPrivKey *key | [in] 私钥。不能为NULL。 |
@@ -697,6 +756,7 @@ OH_Crypto_ErrCode OH_CryptoPrivKey_Encode(OH_CryptoPrivKey *key, Crypto_Encoding
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_PARAMETER_CHECK_FAILED：key、out或encodingStandard为NULL，type不是有效的Crypto_EncodingType，或编码标准与密钥类型不兼容。 CRYPTO_NOT_SUPPORTED：不支持的编码格式。 CRYPTO_MEMORY_ERROR：内存分配失败。 CRYPTO_OPERTION_ERROR：编码失败。 |
@@ -704,9 +764,10 @@ OH_Crypto_ErrCode OH_CryptoPrivKey_Encode(OH_CryptoPrivKey *key, Crypto_Encoding
  
   
 
-#### OH_CryptoPrivKey_GetParam()
+### OH_CryptoPrivKey_GetParam()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoPrivKey_GetParam(OH_CryptoPrivKey *key, CryptoAsymKey_ParamType item, Crypto_DataBlob *value)
@@ -722,6 +783,7 @@ OH_Crypto_ErrCode OH_CryptoPrivKey_GetParam(OH_CryptoPrivKey *key, CryptoAsymKey
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoPrivKey *key | [in] 私钥。不能为NULL。 |
@@ -731,6 +793,7 @@ OH_Crypto_ErrCode OH_CryptoPrivKey_GetParam(OH_CryptoPrivKey *key, CryptoAsymKey
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_PARAMETER_CHECK_FAILED：key或value为NULL，或该参数类型不支持该密钥算法。 CRYPTO_NOT_SUPPORTED：不支持的参数类型。 CRYPTO_MEMORY_ERROR：内存分配失败。 CRYPTO_OPERTION_ERROR：获取参数失败。 |
@@ -738,9 +801,10 @@ OH_Crypto_ErrCode OH_CryptoPrivKey_GetParam(OH_CryptoPrivKey *key, CryptoAsymKey
  
   
 
-#### OH_CryptoAsymKeySpec_GenEcCommonParamsSpec()
+### OH_CryptoAsymKeySpec_GenEcCommonParamsSpec()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoAsymKeySpec_GenEcCommonParamsSpec(const char *curveName, OH_CryptoAsymKeySpec **spec)
@@ -756,6 +820,7 @@ OH_Crypto_ErrCode OH_CryptoAsymKeySpec_GenEcCommonParamsSpec(const char *curveNa
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *curveName | [in] ECC曲线的NID（Name Identifier）字符串名称，不能为NULL。例如"NID_X9_62_prime256v1"、"NID_secp384r1"、"NID_secp521r1"、"NID_sm2"。 |
@@ -764,6 +829,7 @@ OH_Crypto_ErrCode OH_CryptoAsymKeySpec_GenEcCommonParamsSpec(const char *curveNa
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_PARAMETER_CHECK_FAILED：curveName或spec为NULL，或曲线名不是有效的椭圆曲线。 CRYPTO_NOT_SUPPORTED：不支持的曲线。 CRYPTO_MEMORY_ERROR：内存分配失败。 CRYPTO_OPERTION_ERROR：生成规格失败。 |
@@ -771,9 +837,10 @@ OH_Crypto_ErrCode OH_CryptoAsymKeySpec_GenEcCommonParamsSpec(const char *curveNa
  
   
 
-#### OH_CryptoAsymKeySpec_GenDhCommonParamsSpec()
+### OH_CryptoAsymKeySpec_GenDhCommonParamsSpec()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoAsymKeySpec_GenDhCommonParamsSpec(int pLen, int skLen, OH_CryptoAsymKeySpec **spec)
@@ -789,6 +856,7 @@ OH_Crypto_ErrCode OH_CryptoAsymKeySpec_GenDhCommonParamsSpec(int pLen, int skLen
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | int pLen | [in] 素数p的比特长度。 |
@@ -798,6 +866,7 @@ OH_Crypto_ErrCode OH_CryptoAsymKeySpec_GenDhCommonParamsSpec(int pLen, int skLen
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_PARAMETER_CHECK_FAILED：spec为NULL，pLen为负数，skLen为负数，或skLen大于pLen。 CRYPTO_NOT_SUPPORTED：不支持的操作或算法。 CRYPTO_MEMORY_ERROR：内存分配失败。 CRYPTO_OPERTION_ERROR：密码操作失败。 |
@@ -805,9 +874,10 @@ OH_Crypto_ErrCode OH_CryptoAsymKeySpec_GenDhCommonParamsSpec(int pLen, int skLen
  
   
 
-#### OH_CryptoAsymKeySpec_Create()
+### OH_CryptoAsymKeySpec_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoAsymKeySpec_Create(const char *algoName, CryptoAsymKeySpec_Type type, OH_CryptoAsymKeySpec **spec)
@@ -823,6 +893,7 @@ OH_Crypto_ErrCode OH_CryptoAsymKeySpec_Create(const char *algoName, CryptoAsymKe
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *algoName | [in] 非对称密钥规格算法名称，不能为NULL。取值如下： - 从API version 20开始支持"RSA"、"ECC"、"DSA"、"SM2"、"Ed25519"、"X25519"、"DH"。 |
@@ -832,6 +903,7 @@ OH_Crypto_ErrCode OH_CryptoAsymKeySpec_Create(const char *algoName, CryptoAsymKe
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_PARAMETER_CHECK_FAILED：algoName或spec为NULL，algoName不是支持的算法名称。 CRYPTO_NOT_SUPPORTED：不支持的操作或算法。 CRYPTO_MEMORY_ERROR：内存分配失败。 CRYPTO_OPERTION_ERROR：密码操作失败。 |
@@ -839,9 +911,10 @@ OH_Crypto_ErrCode OH_CryptoAsymKeySpec_Create(const char *algoName, CryptoAsymKe
  
   
 
-#### OH_CryptoAsymKeySpec_SetParam()
+### OH_CryptoAsymKeySpec_SetParam()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoAsymKeySpec_SetParam(OH_CryptoAsymKeySpec *spec, CryptoAsymKey_ParamType type, Crypto_DataBlob *value)
@@ -855,6 +928,7 @@ OH_Crypto_ErrCode OH_CryptoAsymKeySpec_SetParam(OH_CryptoAsymKeySpec *spec, Cryp
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoAsymKeySpec *spec | [in] 非对称密钥规格。不能为NULL。 |
@@ -864,6 +938,7 @@ OH_Crypto_ErrCode OH_CryptoAsymKeySpec_SetParam(OH_CryptoAsymKeySpec *spec, Cryp
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_PARAMETER_CHECK_FAILED：spec或value为NULL，value->data为NULL，value->len为0，或该参数类型不支持该算法。 CRYPTO_NOT_SUPPORTED：不支持的操作或算法。 CRYPTO_MEMORY_ERROR：深拷贝内存分配失败。 CRYPTO_OPERTION_ERROR：密码操作失败。 |
@@ -871,9 +946,10 @@ OH_Crypto_ErrCode OH_CryptoAsymKeySpec_SetParam(OH_CryptoAsymKeySpec *spec, Cryp
  
   
 
-#### OH_CryptoAsymKeySpec_SetCommonParamsSpec()
+### OH_CryptoAsymKeySpec_SetCommonParamsSpec()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoAsymKeySpec_SetCommonParamsSpec(OH_CryptoAsymKeySpec *spec, OH_CryptoAsymKeySpec *commonParamsSpec)
@@ -887,6 +963,7 @@ OH_Crypto_ErrCode OH_CryptoAsymKeySpec_SetCommonParamsSpec(OH_CryptoAsymKeySpec 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoAsymKeySpec *spec | [in] 非对称密钥规格。不能为NULL。 |
@@ -895,6 +972,7 @@ OH_Crypto_ErrCode OH_CryptoAsymKeySpec_SetCommonParamsSpec(OH_CryptoAsymKeySpec 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_PARAMETER_CHECK_FAILED：spec或commonParamsSpec为NULL。 CRYPTO_NOT_SUPPORTED：不支持的操作或算法。 CRYPTO_MEMORY_ERROR：内存分配失败。 CRYPTO_OPERTION_ERROR：密码操作失败。 |
@@ -902,9 +980,10 @@ OH_Crypto_ErrCode OH_CryptoAsymKeySpec_SetCommonParamsSpec(OH_CryptoAsymKeySpec 
  
   
 
-#### OH_CryptoAsymKeySpec_GetParam()
+### OH_CryptoAsymKeySpec_GetParam()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoAsymKeySpec_GetParam(OH_CryptoAsymKeySpec *spec, CryptoAsymKey_ParamType type, Crypto_DataBlob *value)
@@ -920,6 +999,7 @@ OH_Crypto_ErrCode OH_CryptoAsymKeySpec_GetParam(OH_CryptoAsymKeySpec *spec, Cryp
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoAsymKeySpec *spec | [in] 非对称密钥规格。不能为NULL。 |
@@ -929,6 +1009,7 @@ OH_Crypto_ErrCode OH_CryptoAsymKeySpec_GetParam(OH_CryptoAsymKeySpec *spec, Cryp
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_PARAMETER_CHECK_FAILED：spec或value为NULL，或该参数类型不支持该算法。 CRYPTO_NOT_SUPPORTED：不支持的操作或算法。 CRYPTO_MEMORY_ERROR：内存分配失败。 CRYPTO_OPERTION_ERROR：密码操作失败。 |
@@ -936,9 +1017,10 @@ OH_Crypto_ErrCode OH_CryptoAsymKeySpec_GetParam(OH_CryptoAsymKeySpec *spec, Cryp
  
   
 
-#### OH_CryptoAsymKeySpec_Destroy()
+### OH_CryptoAsymKeySpec_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_CryptoAsymKeySpec_Destroy(OH_CryptoAsymKeySpec *spec)
@@ -952,6 +1034,7 @@ void OH_CryptoAsymKeySpec_Destroy(OH_CryptoAsymKeySpec *spec)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoAsymKeySpec *spec | [in] 非对称密钥规格。 |
@@ -959,9 +1042,10 @@ void OH_CryptoAsymKeySpec_Destroy(OH_CryptoAsymKeySpec *spec)
  
   
 
-#### OH_CryptoAsymKeyGeneratorWithSpec_Create()
+### OH_CryptoAsymKeyGeneratorWithSpec_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoAsymKeyGeneratorWithSpec_Create(OH_CryptoAsymKeySpec *keySpec, OH_CryptoAsymKeyGeneratorWithSpec **generator)
@@ -977,6 +1061,7 @@ OH_Crypto_ErrCode OH_CryptoAsymKeyGeneratorWithSpec_Create(OH_CryptoAsymKeySpec 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoAsymKeySpec *keySpec | [in] 非对称密钥规格。不能为NULL。 |
@@ -985,6 +1070,7 @@ OH_Crypto_ErrCode OH_CryptoAsymKeyGeneratorWithSpec_Create(OH_CryptoAsymKeySpec 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_PARAMETER_CHECK_FAILED：keySpec或generator为NULL，或密钥规格参数不完整或无效。 CRYPTO_NOT_SUPPORTED：不支持的算法。 CRYPTO_MEMORY_ERROR：内存分配失败。 CRYPTO_OPERTION_ERROR：创建生成器失败。 |
@@ -996,9 +1082,10 @@ OH_Crypto_ErrCode OH_CryptoAsymKeyGeneratorWithSpec_Create(OH_CryptoAsymKeySpec 
  
   
 
-#### OH_CryptoAsymKeyGeneratorWithSpec_GenKeyPair()
+### OH_CryptoAsymKeyGeneratorWithSpec_GenKeyPair()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoAsymKeyGeneratorWithSpec_GenKeyPair(OH_CryptoAsymKeyGeneratorWithSpec *generator, OH_CryptoKeyPair **keyPair)
@@ -1014,6 +1101,7 @@ OH_Crypto_ErrCode OH_CryptoAsymKeyGeneratorWithSpec_GenKeyPair(OH_CryptoAsymKeyG
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoAsymKeyGeneratorWithSpec *generator | [in] 基于规格的非对称密钥生成器。不能为NULL。 |
@@ -1022,6 +1110,7 @@ OH_Crypto_ErrCode OH_CryptoAsymKeyGeneratorWithSpec_GenKeyPair(OH_CryptoAsymKeyG
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_PARAMETER_CHECK_FAILED：generator或keyPair为NULL。 CRYPTO_NOT_SUPPORTED：不支持的操作。 CRYPTO_MEMORY_ERROR：内存分配失败。 CRYPTO_OPERTION_ERROR：生成密钥对失败。可能的原因：密钥规格参数不完整或不一致。 |
@@ -1029,9 +1118,10 @@ OH_Crypto_ErrCode OH_CryptoAsymKeyGeneratorWithSpec_GenKeyPair(OH_CryptoAsymKeyG
  
   
 
-#### OH_CryptoAsymKeyGeneratorWithSpec_Destroy()
+### OH_CryptoAsymKeyGeneratorWithSpec_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_CryptoAsymKeyGeneratorWithSpec_Destroy(OH_CryptoAsymKeyGeneratorWithSpec *generator)
@@ -1045,6 +1135,7 @@ void OH_CryptoAsymKeyGeneratorWithSpec_Destroy(OH_CryptoAsymKeyGeneratorWithSpec
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoAsymKeyGeneratorWithSpec *generator | [in] 基于规格的非对称密钥生成器。 |
@@ -1052,9 +1143,10 @@ void OH_CryptoAsymKeyGeneratorWithSpec_Destroy(OH_CryptoAsymKeyGeneratorWithSpec
  
   
 
-#### OH_CryptoEcPoint_Create()
+### OH_CryptoEcPoint_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoEcPoint_Create(const char *curveName, Crypto_DataBlob *ecKeyData, OH_CryptoEcPoint **point)
@@ -1070,6 +1162,7 @@ OH_Crypto_ErrCode OH_CryptoEcPoint_Create(const char *curveName, Crypto_DataBlob
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *curveName | [in] 椭圆曲线的NID（Name Identifier）字符串名称，不能为NULL。例如"NID_X9_62_prime256v1"、"NID_secp384r1"、"NID_secp521r1"、"NID_sm2"。 |
@@ -1079,6 +1172,7 @@ OH_Crypto_ErrCode OH_CryptoEcPoint_Create(const char *curveName, Crypto_DataBlob
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_PARAMETER_CHECK_FAILED：curveName或point为NULL，或曲线名称无效。 CRYPTO_NOT_SUPPORTED：不支持的曲线。 CRYPTO_MEMORY_ERROR：内存分配失败。 CRYPTO_OPERTION_ERROR：创建EC点失败。可能的原因：点数据格式不正确。 |
@@ -1092,9 +1186,10 @@ OH_Crypto_ErrCode OH_CryptoEcPoint_Create(const char *curveName, Crypto_DataBlob
  
   
 
-#### OH_CryptoEcPoint_GetCoordinate()
+### OH_CryptoEcPoint_GetCoordinate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoEcPoint_GetCoordinate(OH_CryptoEcPoint *point, Crypto_DataBlob *x, Crypto_DataBlob *y)
@@ -1104,12 +1199,13 @@ OH_Crypto_ErrCode OH_CryptoEcPoint_GetCoordinate(OH_CryptoEcPoint *point, Crypto
  
 获取椭圆曲线点的x和y坐标。
  
-注意：使用完成后必须通过[OH_Crypto_FreeDataBlob](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-crypto-common-h#oh_crypto_freedatablob)释放x和y内存
+注意：使用完成后必须通过[OH_Crypto_FreeDataBlob](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-crypto-common-h#oh_crypto_freedatablob)释放x和y内存。
  
 **起始版本：** 20
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoEcPoint *point | [in] 椭圆曲线点。不能为NULL。 |
@@ -1119,6 +1215,7 @@ OH_Crypto_ErrCode OH_CryptoEcPoint_GetCoordinate(OH_CryptoEcPoint *point, Crypto
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_PARAMETER_CHECK_FAILED：point、x或y为NULL。 CRYPTO_NOT_SUPPORTED：不支持的操作或算法。 CRYPTO_MEMORY_ERROR：内存分配失败。 CRYPTO_OPERTION_ERROR：密码操作失败。 |
@@ -1126,9 +1223,10 @@ OH_Crypto_ErrCode OH_CryptoEcPoint_GetCoordinate(OH_CryptoEcPoint *point, Crypto
  
   
 
-#### OH_CryptoEcPoint_SetCoordinate()
+### OH_CryptoEcPoint_SetCoordinate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoEcPoint_SetCoordinate(OH_CryptoEcPoint *point, Crypto_DataBlob *x, Crypto_DataBlob *y)
@@ -1142,6 +1240,7 @@ OH_Crypto_ErrCode OH_CryptoEcPoint_SetCoordinate(OH_CryptoEcPoint *point, Crypto
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoEcPoint *point | [in] 椭圆曲线点。不能为NULL。 |
@@ -1151,6 +1250,7 @@ OH_Crypto_ErrCode OH_CryptoEcPoint_SetCoordinate(OH_CryptoEcPoint *point, Crypto
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_PARAMETER_CHECK_FAILED：point、x或y为NULL。 CRYPTO_NOT_SUPPORTED：不支持的操作或算法。 CRYPTO_MEMORY_ERROR：深拷贝内存分配失败。 CRYPTO_OPERTION_ERROR：密码操作失败。 |
@@ -1162,9 +1262,10 @@ OH_Crypto_ErrCode OH_CryptoEcPoint_SetCoordinate(OH_CryptoEcPoint *point, Crypto
  
   
 
-#### OH_CryptoEcPoint_Encode()
+### OH_CryptoEcPoint_Encode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoEcPoint_Encode(OH_CryptoEcPoint *point, const char *format, Crypto_DataBlob *out)
@@ -1180,6 +1281,7 @@ OH_Crypto_ErrCode OH_CryptoEcPoint_Encode(OH_CryptoEcPoint *point, const char *f
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoEcPoint *point | [in] 椭圆曲线点。不能为NULL。 |
@@ -1189,6 +1291,7 @@ OH_Crypto_ErrCode OH_CryptoEcPoint_Encode(OH_CryptoEcPoint *point, const char *f
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_PARAMETER_CHECK_FAILED：point、format或out为NULL，或格式字符串不是有效的点格式。 CRYPTO_NOT_SUPPORTED：不支持的格式。 CRYPTO_MEMORY_ERROR：内存分配失败。 CRYPTO_OPERTION_ERROR：编码失败。可能的原因：该点不是有效的曲线点。 |
@@ -1196,9 +1299,10 @@ OH_Crypto_ErrCode OH_CryptoEcPoint_Encode(OH_CryptoEcPoint *point, const char *f
  
   
 
-#### OH_CryptoEcPoint_Destroy()
+### OH_CryptoEcPoint_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_CryptoEcPoint_Destroy(OH_CryptoEcPoint *point)
@@ -1212,6 +1316,7 @@ void OH_CryptoEcPoint_Destroy(OH_CryptoEcPoint *point)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoEcPoint *point | [in] 椭圆曲线点。 |

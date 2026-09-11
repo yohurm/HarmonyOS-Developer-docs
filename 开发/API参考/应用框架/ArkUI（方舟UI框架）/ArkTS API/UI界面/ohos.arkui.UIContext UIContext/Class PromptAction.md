@@ -1,9 +1,9 @@
 # Class (PromptAction)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-promptaction
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 创建并显示即时反馈、对话框、操作菜单以及自定义弹窗。
 
@@ -12,9 +12,10 @@
 
 
 
-#### getTopOrder18+
+## getTopOrder18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTopOrder(): LevelOrder
 
@@ -27,6 +28,7 @@ getTopOrder(): LevelOrder
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -97,9 +99,10 @@ struct Index {
 
 
 
-#### getBottomOrder18+
+## getBottomOrder18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBottomOrder(): LevelOrder
 
@@ -112,6 +115,7 @@ getBottomOrder(): LevelOrder
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -182,9 +186,10 @@ struct Index {
 
 
 
-#### openToast18+
+## openToast18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 openToast(options: promptAction.ShowToastOptions): Promise&lt;number&gt;
 
@@ -198,12 +203,14 @@ openToast(options: promptAction.ShowToastOptions): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | promptAction.ShowToastOptions | 是 | Toast选项。用于配置Toast的显示内容和样式，包括message、duration等属性。 |
 
 
 **返回值**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -213,6 +220,7 @@ openToast(options: promptAction.ShowToastOptions): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -269,9 +277,10 @@ struct Index {
 
 
 
-#### closeToast18+
+## closeToast18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 closeToast(toastId: number): void
 
@@ -285,6 +294,7 @@ closeToast(toastId: number): void
 
 **参数**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | toastId | number | 是 | openToast返回的即时反馈id，用于标识特定的Toast，以便后续通过closeToast关闭。 |
@@ -293,6 +303,7 @@ closeToast(toastId: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[弹窗错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-promptaction)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -307,9 +318,10 @@ closeToast(toastId: number): void
 
 
 
-#### showToast
+## showToast
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showToast(options: promptAction.ShowToastOptions): void
 
@@ -323,6 +335,7 @@ showToast(options: promptAction.ShowToastOptions): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | promptAction.ShowToastOptions | 是 | Toast选项。用于配置Toast的显示内容和样式，包括message、duration、systemMaterial等属性。 |
@@ -332,6 +345,7 @@ showToast(options: promptAction.ShowToastOptions): void
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
@@ -340,9 +354,11 @@ showToast(options: promptAction.ShowToastOptions): void
 
 **示例：**
 
-该示例通过设置options参数中的systemMaterial属性，实现了Toast的系统材质。
+该示例通过options参数中的systemMaterial属性设置组件的系统材质，实现了Toast的沉浸光感效果。
 
 从API版本26.0.0开始，参数options的类型[promptAction.ShowToastOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-promptaction#showtoastoptions)中新增了systemMaterial属性。
+
+组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
 
 ```text
 import { PromptAction, promptAction, uiMaterial } from '@kit.ArkUI';
@@ -363,7 +379,7 @@ struct Index {
               message: 'Message Info',
               duration: 2000,
               showMode:promptAction.ToastShowMode.DEFAULT,
-              // 设置系统材质
+              // 设置系统材质接口
               systemMaterial: new uiMaterial.ImmersiveMaterial({
                 style: uiMaterial.ImmersiveStyle.THIN
               })
@@ -387,20 +403,21 @@ struct Index {
 未设置系统材质时：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/yH8llrYeRGSzfZH_VVFbGw/zh-cn_image_0000002704272323.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095444Z&HW-CC-Expire=86400&HW-CC-Sign=7D972DC6F660CBA601A1C32C10F9722A3668FCFB38A14E2D225061A28F10FC1C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/gS1pUU_nQ_23BWb32e4Tlw/zh-cn_image_0000002717612380.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072446Z&HW-CC-Expire=86400&HW-CC-Sign=1CF24337F02979E629B55C57E0168AFEF16CC8DF5269576F5DCA7A9EC66C1E21)
 
 
 设置系统材质后：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/KZViPfYCTBmrhDHxzjB2iA/zh-cn_image_0000002674472524.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095444Z&HW-CC-Expire=86400&HW-CC-Sign=9EDCE66DA7EFB65213B6440E1A991E86CD370B8792DC4E61D54F06D65D13B248)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/-2iQQDw8TveqEidX4FZgDQ/zh-cn_image_0000002747292333.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072446Z&HW-CC-Expire=86400&HW-CC-Sign=F8B05BBAF90F64EE6C851CC45F48108C41F9C655BA38E3FA35150AAB64C102B2)
 
 
 
 
-#### showDialog
+## showDialog
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showDialog(options: promptAction.ShowDialogOptions, callback: AsyncCallback<promptAction.ShowDialogSuccessResponse>): void
 
@@ -414,6 +431,7 @@ showDialog(options: promptAction.ShowDialogOptions, callback: AsyncCallback<prom
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | promptAction.ShowDialogOptions | 是 | 对话框选项。用于配置对话框的显示内容和样式，包括title、message、buttons等属性。 |
@@ -423,6 +441,7 @@ showDialog(options: promptAction.ShowDialogOptions, callback: AsyncCallback<prom
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -481,9 +500,10 @@ struct Index {
 
 
 
-#### showDialog
+## showDialog
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showDialog(options: promptAction.ShowDialogOptions): Promise<promptAction.ShowDialogSuccessResponse>
 
@@ -497,12 +517,14 @@ showDialog(options: promptAction.ShowDialogOptions): Promise<promptAction.ShowDi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | promptAction.ShowDialogOptions | 是 | 对话框选项。用于配置对话框的显示内容和样式，包括title、message、buttons等属性。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -512,6 +534,7 @@ showDialog(options: promptAction.ShowDialogOptions): Promise<promptAction.ShowDi
 **错误码：**
 
 以下错误码的详细介绍请参见[ 通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -564,9 +587,10 @@ struct Index {
 
 
 
-#### showActionMenu11+
+## showActionMenu11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showActionMenu(options: promptAction.ActionMenuOptions, callback: AsyncCallback<[promptAction.ActionMenuSuccessResponse](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-promptaction#actionmenusuccessresponse)>): void
 
@@ -580,6 +604,7 @@ showActionMenu(options: promptAction.ActionMenuOptions, callback: AsyncCallback<
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | promptAction.ActionMenuOptions | 是 | 操作菜单选项。用于配置操作菜单的显示内容和样式，包括title、buttons等属性。 |
@@ -589,6 +614,7 @@ showActionMenu(options: promptAction.ActionMenuOptions, callback: AsyncCallback<
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -644,9 +670,10 @@ struct Index {
 
 
 
-#### showActionMenu
+## showActionMenu
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showActionMenu(options: promptAction.ActionMenuOptions): Promise<promptAction.ActionMenuSuccessResponse>
 
@@ -660,12 +687,14 @@ showActionMenu(options: promptAction.ActionMenuOptions): Promise<promptAction.Ac
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | promptAction.ActionMenuOptions | 是 | 操作菜单选项。用于配置操作菜单的显示内容和样式，包括title、buttons等属性。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -675,6 +704,7 @@ showActionMenu(options: promptAction.ActionMenuOptions): Promise<promptAction.Ac
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -726,9 +756,10 @@ struct Index {
 
 
 
-#### openCustomDialog12+
+## openCustomDialog12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 openCustomDialog<T extends Object>(dialogContent: ComponentContent&lt;T&gt;, options?: promptAction.BaseDialogOptions): Promise&lt;void&gt;
 
@@ -742,6 +773,7 @@ openCustomDialog<T extends Object>(dialogContent: ComponentContent&lt;T&gt;, opt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dialogContent | ComponentContent&lt;T&gt; | 是 | 自定义弹窗中显示的组件内容。 |
@@ -749,6 +781,7 @@ openCustomDialog<T extends Object>(dialogContent: ComponentContent&lt;T&gt;, opt
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -758,6 +791,7 @@ openCustomDialog<T extends Object>(dialogContent: ComponentContent&lt;T&gt;, opt
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[弹窗错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-promptaction)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -867,9 +901,10 @@ struct Index {
 
 
 
-#### openCustomDialog12+
+## openCustomDialog12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 openCustomDialog(options: promptAction.CustomDialogOptions): Promise&lt;number&gt;
 
@@ -883,12 +918,14 @@ openCustomDialog(options: promptAction.CustomDialogOptions): Promise&lt;number&g
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | promptAction.CustomDialogOptions | 是 | 自定义弹窗选项。用于设置自定义弹窗的内容、样式、位置等属性。 说明： 如果BaseDialogOptions中的isModal与showInSubWindow同时设置为true，则以showInSubWindow的设置为准，在子窗口中显示，不显示蒙层。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -898,6 +935,7 @@ openCustomDialog(options: promptAction.CustomDialogOptions): Promise&lt;number&g
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -982,9 +1020,10 @@ struct Index {
 
 
 
-#### openCustomDialogWithController18+
+## openCustomDialogWithController18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 openCustomDialogWithController<T extends Object>(dialogContent: ComponentContent&lt;T&gt;, controller: promptAction.DialogController, options?: promptAction.BaseDialogOptions): Promise&lt;void&gt;
 
@@ -1000,6 +1039,7 @@ openCustomDialogWithController<T extends Object>(dialogContent: ComponentContent
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dialogContent | ComponentContent&lt;T&gt; | 是 | 自定义弹窗中显示的组件内容。 |
@@ -1009,6 +1049,7 @@ openCustomDialogWithController<T extends Object>(dialogContent: ComponentContent
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1017,6 +1058,7 @@ openCustomDialogWithController<T extends Object>(dialogContent: ComponentContent
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[弹窗错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-promptaction)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1093,9 +1135,10 @@ struct Index {
 
 
 
-#### updateCustomDialog12+
+## updateCustomDialog12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateCustomDialog<T extends Object>(dialogContent: ComponentContent&lt;T&gt;, options: promptAction.BaseDialogOptions): Promise&lt;void&gt;
 
@@ -1109,6 +1152,7 @@ updateCustomDialog<T extends Object>(dialogContent: ComponentContent&lt;T&gt;, o
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dialogContent | ComponentContent&lt;T&gt; | 是 | 自定义弹窗中显示的组件内容。 |
@@ -1116,6 +1160,7 @@ updateCustomDialog<T extends Object>(dialogContent: ComponentContent&lt;T&gt;, o
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1125,6 +1170,7 @@ updateCustomDialog<T extends Object>(dialogContent: ComponentContent&lt;T&gt;, o
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[弹窗错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-promptaction)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1201,9 +1247,10 @@ struct Index {
 
 
 
-#### closeCustomDialog12+
+## closeCustomDialog12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 closeCustomDialog<T extends Object>(dialogContent: ComponentContent&lt;T&gt;): Promise&lt;void&gt;
 
@@ -1217,12 +1264,14 @@ closeCustomDialog<T extends Object>(dialogContent: ComponentContent&lt;T&gt;): P
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dialogContent | ComponentContent&lt;T&gt; | 是 | 自定义弹窗中显示的组件内容。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1232,6 +1281,7 @@ closeCustomDialog<T extends Object>(dialogContent: ComponentContent&lt;T&gt;): P
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[弹窗错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-promptaction)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1307,9 +1357,10 @@ struct Index {
 
 
 
-#### closeCustomDialog12+
+## closeCustomDialog12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 closeCustomDialog(dialogId: number): void
 
@@ -1323,6 +1374,7 @@ closeCustomDialog(dialogId: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dialogId | number | 是 | openCustomDialog返回的对话框id，用于标识特定的自定义弹窗，以便后续关闭。 |
@@ -1331,6 +1383,7 @@ closeCustomDialog(dialogId: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1398,9 +1451,10 @@ struct Index {
 
 
 
-#### presentCustomDialog18+
+## presentCustomDialog18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 presentCustomDialog(builder: CustomBuilder | CustomBuilderWithId, controller?: promptAction.DialogController, options?: promptAction.DialogOptions): Promise&lt;number&gt;
 
@@ -1416,6 +1470,7 @@ presentCustomDialog(builder: CustomBuilder | CustomBuilderWithId, controller?: p
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | builder | CustomBuilder \| CustomBuilderWithId | 是 | 自定义弹窗的内容。 |
@@ -1425,6 +1480,7 @@ presentCustomDialog(builder: CustomBuilder | CustomBuilderWithId, controller?: p
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象。返回自定义弹窗ID。 |
@@ -1433,6 +1489,7 @@ presentCustomDialog(builder: CustomBuilder | CustomBuilderWithId, controller?: p
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1520,9 +1577,10 @@ struct Index {
 
 
 
-#### openPopup18+
+## openPopup18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 openPopup<T extends Object>(content: ComponentContent&lt;T&gt;, target: TargetInfo, options?: PopupCommonOptions): Promise&lt;void&gt;
 
@@ -1540,6 +1598,7 @@ openPopup<T extends Object>(content: ComponentContent&lt;T&gt;, target: TargetIn
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | content | ComponentContent&lt;T&gt; | 是 | popup弹窗中显示的组件内容。 |
@@ -1549,6 +1608,7 @@ openPopup<T extends Object>(content: ComponentContent&lt;T&gt;, target: TargetIn
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1557,6 +1617,7 @@ openPopup<T extends Object>(content: ComponentContent&lt;T&gt;, target: TargetIn
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[弹窗错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-promptaction)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1655,9 +1716,10 @@ struct Index {
 
 
 
-#### updatePopup18+
+## updatePopup18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updatePopup<T extends Object>(content: ComponentContent&lt;T&gt;, options: PopupCommonOptions, partialUpdate?: boolean ): Promise&lt;void&gt;
 
@@ -1675,6 +1737,7 @@ updatePopup<T extends Object>(content: ComponentContent&lt;T&gt;, options: Popup
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | content | ComponentContent&lt;T&gt; | 是 | popup弹窗中显示的组件内容。 |
@@ -1684,6 +1747,7 @@ updatePopup<T extends Object>(content: ComponentContent&lt;T&gt;, options: Popup
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1692,6 +1756,7 @@ updatePopup<T extends Object>(content: ComponentContent&lt;T&gt;, options: Popup
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[弹窗错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-promptaction)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1706,9 +1771,10 @@ updatePopup<T extends Object>(content: ComponentContent&lt;T&gt;, options: Popup
 
 
 
-#### closePopup18+
+## closePopup18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 closePopup<T extends Object>(content: ComponentContent&lt;T&gt;): Promise&lt;void&gt;
 
@@ -1722,12 +1788,14 @@ closePopup<T extends Object>(content: ComponentContent&lt;T&gt;): Promise&lt;voi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | content | ComponentContent&lt;T&gt; | 是 | popup弹窗中显示的组件内容。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1737,6 +1805,7 @@ closePopup<T extends Object>(content: ComponentContent&lt;T&gt;): Promise&lt;voi
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[弹窗错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-promptaction)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1751,9 +1820,10 @@ closePopup<T extends Object>(content: ComponentContent&lt;T&gt;): Promise&lt;voi
 
 
 
-#### openMenu18+
+## openMenu18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 openMenu<T extends Object>(content: ComponentContent&lt;T&gt;, target: TargetInfo, options?: MenuOptions): Promise&lt;void&gt;
 
@@ -1771,6 +1841,7 @@ openMenu<T extends Object>(content: ComponentContent&lt;T&gt;, target: TargetInf
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | content | ComponentContent&lt;T&gt; | 是 | menu弹窗中显示的组件内容。 |
@@ -1780,6 +1851,7 @@ openMenu<T extends Object>(content: ComponentContent&lt;T&gt;, target: TargetInf
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1788,6 +1860,7 @@ openMenu<T extends Object>(content: ComponentContent&lt;T&gt;, target: TargetInf
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[弹窗错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-promptaction)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1853,9 +1926,10 @@ struct Index {
 
 
 
-#### updateMenu18+
+## updateMenu18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateMenu<T extends Object>(content: ComponentContent&lt;T&gt;, options: MenuOptions, partialUpdate?: boolean ): Promise&lt;void&gt;
 
@@ -1873,6 +1947,7 @@ updateMenu<T extends Object>(content: ComponentContent&lt;T&gt;, options: MenuOp
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | content | ComponentContent&lt;T&gt; | 是 | menu弹窗中显示的组件内容。 |
@@ -1882,6 +1957,7 @@ updateMenu<T extends Object>(content: ComponentContent&lt;T&gt;, options: MenuOp
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1890,6 +1966,7 @@ updateMenu<T extends Object>(content: ComponentContent&lt;T&gt;, options: MenuOp
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[弹窗错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-promptaction)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1958,9 +2035,10 @@ struct Index {
 
 
 
-#### closeMenu18+
+## closeMenu18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 closeMenu<T extends Object>(content: ComponentContent&lt;T&gt;): Promise&lt;void&gt;
 
@@ -1974,12 +2052,14 @@ closeMenu<T extends Object>(content: ComponentContent&lt;T&gt;): Promise&lt;void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | content | ComponentContent&lt;T&gt; | 是 | menu弹窗中显示的组件内容。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1989,6 +2069,7 @@ closeMenu<T extends Object>(content: ComponentContent&lt;T&gt;): Promise&lt;void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[弹窗错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-promptaction)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2055,9 +2136,10 @@ struct Index {
 
 
 
-#### showActionMenu(deprecated)
+## showActionMenu(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showActionMenu(options: promptAction.ActionMenuOptions, callback: [promptAction.ActionMenuSuccessResponse](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-promptaction#actionmenusuccessresponse)): void
 
@@ -2073,6 +2155,7 @@ showActionMenu(options: promptAction.ActionMenuOptions, callback: [promptAction.
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | promptAction.ActionMenuOptions | 是 | 操作菜单选项。用于配置操作菜单的显示内容和样式，包括title、buttons等属性。 |
@@ -2082,6 +2165,7 @@ showActionMenu(options: promptAction.ActionMenuOptions, callback: [promptAction.
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

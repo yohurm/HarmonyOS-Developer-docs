@@ -1,9 +1,9 @@
 # @ohos.util.TreeSet (非线性容器TreeSet)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-treeset
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TreeSet基于[TreeMap](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-treemap)实现，在TreeSet中，仅处理元素的值（value），不单独处理键（key）。TreeSet的每个元素在底层TreeMap中同时作为key和value存储，因此元素中value唯一且有序。关于TreeMap的详细实现机制，请参见[TreeMap](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-treemap)。
  
@@ -21,9 +21,10 @@ TreeSet和[HashSet](https://developer.huawei.com/consumer/cn/doc/harmonyos-refer
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { TreeSet } from '@kit.ArkTS';
@@ -31,20 +32,23 @@ import { TreeSet } from '@kit.ArkTS';
  
   
 
-#### TreeSet
+## TreeSet
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
  
 **系统能力：** SystemCapability.Utils.Lang
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | length | number | 是 | 否 | TreeSet的元素个数。 |
@@ -52,9 +56,10 @@ import { TreeSet } from '@kit.ArkTS';
  
   
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(comparator?: (firstValue: T, secondValue: T) => boolean)
  
@@ -66,6 +71,7 @@ TreeSet的构造函数，支持通过比较函数对元素进行升序或降序�
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | comparator | function | 否 | 用户自定义的比较函数，可通过比较关系对元素排序。默认值为null，表示不提供比较函数。取值原则：比较函数返回值决定排序方向，返回firstValue < secondValue为升序排序，返回firstValue > secondValue为降序排序。 |
@@ -73,6 +79,7 @@ TreeSet的构造函数，支持通过比较函数对元素进行升序或降序�
  
 comparator的参数说明：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | firstValue | T | 是 | 比较函数中的第一个比较元素，与secondValue比较后决定排序方向。 |
@@ -83,6 +90,7 @@ comparator的参数说明：
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200012 | The TreeSet's constructor cannot be directly invoked. |
@@ -132,9 +140,10 @@ console.info('treeSet: ', testEntrySet.length);
  
   
 
-#### isEmpty
+### isEmpty
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isEmpty(): boolean
  
@@ -146,6 +155,7 @@ isEmpty(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 为空返回true，不为空返回false。 |
@@ -155,6 +165,7 @@ isEmpty(): boolean
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The isEmpty method cannot be bound. |
@@ -171,9 +182,10 @@ console.info('result:', result);  // result: true
  
   
 
-#### has
+### has
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 has(value: T): boolean
  
@@ -185,6 +197,7 @@ has(value: T): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | T | 是 | 要判断是否存在于容器中的目标元素。 |
@@ -192,6 +205,7 @@ has(value: T): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 包含指定元素返回true，不包含指定元素返回false。 |
@@ -201,6 +215,7 @@ has(value: T): boolean
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The has method cannot be bound. |
@@ -218,9 +233,10 @@ console.info('result:', result); // result: true
  
   
 
-#### getFirstValue
+### getFirstValue
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFirstValue(): T
  
@@ -232,6 +248,7 @@ getFirstValue(): T
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | T | 返回排序第一的数据，为空时返回undefined。 |
@@ -241,6 +258,7 @@ getFirstValue(): T
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The getFirstValue method cannot be bound. |
@@ -258,9 +276,10 @@ console.info('result:', result); // result: sparrow
  
   
 
-#### getLastValue
+### getLastValue
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLastValue(): T
  
@@ -272,6 +291,7 @@ getLastValue(): T
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | T | 返回排序最后的数据，为空时返回undefined。 |
@@ -281,6 +301,7 @@ getLastValue(): T
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The getLastValue method cannot be bound. |
@@ -298,9 +319,10 @@ console.info('result:', result); // result: squirrel
  
   
 
-#### add
+### add
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 add(value: T): boolean
  
@@ -312,6 +334,7 @@ add(value: T): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | T | 是 | 向TreeSet中添加的值元素。 |
@@ -319,6 +342,7 @@ add(value: T): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 成功添加新元素至容器返回true，当元素已存在时返回false。 |
@@ -328,6 +352,7 @@ add(value: T): boolean
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The add method cannot be bound. |
@@ -343,9 +368,10 @@ console.info('result:', result); // result: true
  
   
 
-#### remove
+### remove
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 remove(value: T): boolean
  
@@ -357,6 +383,7 @@ remove(value: T): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | T | 是 | 要从容器中删除的目标元素。 |
@@ -364,6 +391,7 @@ remove(value: T): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 成功删除元素返回true，指定元素不存在返回false。 |
@@ -373,6 +401,7 @@ remove(value: T): boolean
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The remove method cannot be bound. |
@@ -390,9 +419,10 @@ console.info('result:', result); // result: true
  
   
 
-#### getLowerValue
+### getLowerValue
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLowerValue(key: T): T
  
@@ -404,6 +434,7 @@ getLowerValue(key: T): T
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | T | 是 | 作为查找基准的元素值，用于定位排序中比该元素靠前一位的数据。 |
@@ -411,6 +442,7 @@ getLowerValue(key: T): T
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | T | 返回排序中传入元素前一位的数据，为空时返回undefined。 |
@@ -420,6 +452,7 @@ getLowerValue(key: T): T
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The getLowerValue method cannot be bound. |
@@ -438,9 +471,10 @@ console.info('result:', result); // result: gander
  
   
 
-#### getHigherValue
+### getHigherValue
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getHigherValue(key: T): T
  
@@ -452,6 +486,7 @@ getHigherValue(key: T): T
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | T | 是 | 作为查找基准的元素，用于定位排序中比该元素靠后一位的数据。 |
@@ -459,6 +494,7 @@ getHigherValue(key: T): T
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | T | 返回排序中传入元素后一位的数据。为空时返回undefined。 |
@@ -468,6 +504,7 @@ getHigherValue(key: T): T
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The getHigherValue method cannot be bound. |
@@ -486,9 +523,10 @@ console.info('result:', result); // result: squirrel
  
   
 
-#### popFirst
+### popFirst
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 popFirst(): T
  
@@ -500,6 +538,7 @@ popFirst(): T
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | T | 返回删除的数据，为空时返回undefined。 |
@@ -509,6 +548,7 @@ popFirst(): T
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The popFirst method cannot be bound. |
@@ -526,9 +566,10 @@ console.info('result:', result); // result: sparrow
  
   
 
-#### popLast
+### popLast
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 popLast(): T
  
@@ -540,6 +581,7 @@ popLast(): T
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | T | 返回删除的数据，为空时返回undefined。 |
@@ -549,6 +591,7 @@ popLast(): T
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The popLast method cannot be bound. |
@@ -566,9 +609,10 @@ console.info('result:', result); // result: squirrel
  
   
 
-#### clear
+### clear
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clear(): void
  
@@ -582,6 +626,7 @@ clear(): void
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The clear method cannot be bound. |
@@ -600,9 +645,10 @@ console.info('result:', result); // result: true
  
   
 
-#### values
+### values
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 values(): IterableIterator&lt;T&gt;
  
@@ -614,6 +660,7 @@ values(): IterableIterator&lt;T&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator&lt;T&gt; | 返回包含TreeSet中所有元素的迭代器。 |
@@ -623,6 +670,7 @@ values(): IterableIterator&lt;T&gt;
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The values method cannot be bound. |
@@ -645,9 +693,10 @@ for (let value of values) {
  
   
 
-#### forEach
+### forEach
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 forEach(callbackFn: (value?: T, key?: T, set?: TreeSet&lt;T&gt;) => void, thisArg?: Object): void
  
@@ -659,6 +708,7 @@ forEach(callbackFn: (value?: T, key?: T, set?: TreeSet&lt;T&gt;) => void, thisAr
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callbackFn | function | 是 | 遍历实例对象中每个元素时调用的回调函数，开发者可在回调中对元素及其下标进行自定义处理。 |
@@ -667,6 +717,7 @@ forEach(callbackFn: (value?: T, key?: T, set?: TreeSet&lt;T&gt;) => void, thisAr
  
 callbackFn的参数说明：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | T | 否 | 当前遍历到的value元素，forEach调用回调时始终传入此参数。 |
@@ -678,6 +729,7 @@ callbackFn的参数说明：
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The forEach method cannot be bound. |
@@ -710,9 +762,10 @@ for (let i = 0; i < 10; i++) {
  
   
 
-#### entries
+### entries
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 entries(): IterableIterator<[T, T]>
  
@@ -724,6 +777,7 @@ entries(): IterableIterator<[T, T]>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator<[T, T]> | 返回包含TreeSet中所有元素键值对的迭代器对象，每个键值对中键与值相同，均为元素本身。 |
@@ -733,6 +787,7 @@ entries(): IterableIterator<[T, T]>
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The entries method cannot be bound. |
@@ -769,9 +824,10 @@ for(let i = 0; i < 10; i++) {
  
   
 
-#### [Symbol.iterator]
+### [Symbol.iterator]
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [Symbol.iterator](): IterableIterator&lt;T&gt;
  
@@ -783,6 +839,7 @@ for(let i = 0; i < 10; i++) {
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator&lt;T&gt; | 返回包含TreeSet中所有元素的迭代器。 |
@@ -792,6 +849,7 @@ for(let i = 0; i < 10; i++) {
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The Symbol.iterator method cannot be bound. |

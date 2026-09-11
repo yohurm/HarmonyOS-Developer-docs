@@ -1,9 +1,9 @@
 # Interface (Album)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-photoaccesshelper-album
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Album extends [AbsAlbum](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-photoaccesshelper-absalbum).
 
@@ -14,9 +14,10 @@ Album extends [AbsAlbum](https://developer.huawei.com/consumer/cn/doc/harmonyos-
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
@@ -24,11 +25,13 @@ import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -38,19 +41,21 @@ import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
 
 
-#### commitModify
+## commitModify
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 commitModify(callback: AsyncCallback&lt;void&gt;): void
 
-更新相册属性修改到数据库中。使用callback异步回调。
+更新相册属性到数据库中。使用callback异步回调。
 
 **需要权限**：ohos.permission.WRITE_IMAGEVIDEO
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -60,6 +65,7 @@ commitModify(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -95,7 +101,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
   }
   album.albumName = 'hello';
   album.commitModify((err) => {
-    if (err !== undefined) {
+    if (err) {
       console.error(`commitModify failed with error: ${err.code}, ${err.message}`);
     } else {
       console.info('commitModify successfully');
@@ -106,19 +112,21 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### commitModify
+## commitModify
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 commitModify(): Promise&lt;void&gt;
 
-更新相册属性修改到数据库中。使用Promise异步回调。
+更新相册属性到数据库中。使用Promise异步回调。
 
 **需要权限**：ohos.permission.WRITE_IMAGEVIDEO
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -128,6 +136,7 @@ commitModify(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -163,6 +172,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
     return;
   }
   album.albumName = 'hello';
+  // 提交相册名称修改到数据库。
   album.commitModify().then(() => {
     console.info('commitModify successfully');
   }).catch((err: BusinessError) => {
@@ -173,13 +183,14 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### addAssets(deprecated)
+## addAssets(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addAssets(assets: Array&lt;PhotoAsset&gt;, callback: AsyncCallback&lt;void&gt;): void
 
-向用户相册中添加图片或视频，需预置相册和文件资源。使用callback异步回调。
+向用户相册添加图片或视频，调用前需确保已获取相册对象并准备好资源文件。使用callback异步回调。
 
 > [!NOTE]
 > 从API version 10开始支持，从API version 11开始废弃。建议使用 MediaAlbumChangeRequest.addAssets 替代。
@@ -191,15 +202,17 @@ addAssets(assets: Array&lt;PhotoAsset&gt;, callback: AsyncCallback&lt;void&gt;):
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| assets | Array&lt;PhotoAsset&gt; | 是 | 待添加到相册中的图片或视频数组。 |
+| assets | Array&lt;PhotoAsset&gt; | 是 | 待添加到相册的图片或视频数组。 |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当添加图片或视频成功，err为undefined，否则为错误对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -233,7 +246,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
       return;
     }
     album.addAssets([asset], (err) => {
-      if (err === undefined) {
+      if (!err) {
         console.info('album addAssets successfully');
       } else {
         console.error(`album addAssets failed with error: ${err.code}, ${err.message}`);
@@ -247,13 +260,14 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### addAssets(deprecated)
+## addAssets(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addAssets(assets: Array&lt;PhotoAsset&gt;): Promise&lt;void&gt;
 
-向用户相册添加图片或视频，需预置相册和文件资源。使用Promise异步回调。
+向用户相册添加图片或视频，调用前需确保已获取相册对象并准备好资源文件。使用Promise异步回调。
 
 > [!NOTE]
 > 从API version 10开始支持，从API version 11开始废弃。建议使用 MediaAlbumChangeRequest.addAssets 替代。
@@ -265,12 +279,14 @@ addAssets(assets: Array&lt;PhotoAsset&gt;): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | assets | Array&lt;PhotoAsset&gt; | 是 | 待添加到相册中的图片或视频数组。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -280,6 +296,7 @@ addAssets(assets: Array&lt;PhotoAsset&gt;): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -313,6 +330,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
       console.error('addAssetsDemoPromise asset is undefined');
       return;
     }
+    // 向相册添加资源。
     album.addAssets([asset]).then(() => {
       console.info('album addAssets successfully');
     }).catch((err: BusinessError) => {
@@ -326,13 +344,14 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### removeAssets(deprecated)
+## removeAssets(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeAssets(assets: Array&lt;PhotoAsset&gt;, callback: AsyncCallback&lt;void&gt;): void
 
-从用户相册移除图片或视频，需预置相册和文件资源。使用callback异步回调。
+从用户相册中移除图片或视频，调用前需确保已获取相册对象并准备好资源文件。使用callback异步回调。
 
 > [!NOTE]
 > 从API version 10开始支持，从API version 11开始废弃。建议使用 MediaAlbumChangeRequest.removeAssets 替代。
@@ -344,6 +363,7 @@ removeAssets(assets: Array&lt;PhotoAsset&gt;, callback: AsyncCallback&lt;void&gt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | assets | Array&lt;PhotoAsset&gt; | 是 | 相册中待移除的图片或视频数组。 |
@@ -353,6 +373,7 @@ removeAssets(assets: Array&lt;PhotoAsset&gt;, callback: AsyncCallback&lt;void&gt
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -386,7 +407,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
       return;
     }
     album.removeAssets([asset], (err) => {
-      if (err === undefined) {
+      if (!err) {
         console.info('album removeAssets successfully');
       } else {
         console.error(`album removeAssets failed with error: ${err.code}, ${err.message}`);
@@ -400,13 +421,14 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### removeAssets(deprecated)
+## removeAssets(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeAssets(assets: Array&lt;PhotoAsset&gt;): Promise&lt;void&gt;
 
-从用户相册中移除图片或视频，需预置相册和文件资源。使用Promise异步回调。
+从用户相册中移除图片或视频，调用前需确保已获取相册对象并准备好资源文件。使用Promise异步回调。
 
 > [!NOTE]
 > 从API version 10开始支持，从API version 11开始废弃。建议使用 MediaAlbumChangeRequest.removeAssets 替代。
@@ -418,12 +440,14 @@ removeAssets(assets: Array&lt;PhotoAsset&gt;): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | assets | Array&lt;PhotoAsset&gt; | 是 | 相册中待移除的图片或视频数组。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -433,6 +457,7 @@ removeAssets(assets: Array&lt;PhotoAsset&gt;): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -470,6 +495,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
       console.error('removeAssetsPromise asset is undefined');
       return;
     }
+    // 从相册移除资源。
     album.removeAssets([asset]).then(() => {
       console.info('album removeAssets successfully');
     }).catch((err: BusinessError) => {

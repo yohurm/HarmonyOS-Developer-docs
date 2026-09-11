@@ -1,10 +1,10 @@
-# DevEco Studio上使用使用api或组件时编辑器提示各种报错与告警
+# DevEco Studio上使用api或组件时编辑器提示各种报错与告警
 
-更新时间：2026-07-15 01:45:01
+更新时间：2026-09-10 12:59:19
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-coding-18
 
-#### 场景1
+## 场景1
 
 使用ArcList组件时编辑器提示"The default system capabilities of devices wearable do not include SystemCapability.ArkUI.ArkUI.Circle"。
  
@@ -22,7 +22,7 @@
  
  
 
-#### 场景2
+## 场景2
 
 使用被@test标注的api或组件属性时编辑报错："This API can only be used for unit test code"。
  

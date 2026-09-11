@@ -1,18 +1,19 @@
 # Interface (AbsAlbum)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-photoaccesshelper-absalbum
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
@@ -20,11 +21,13 @@ import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -40,9 +43,10 @@ import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
 
 
-#### getAssets
+## getAssets
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAssets(options: FetchOptions, callback: AsyncCallback<FetchResult&lt;PhotoAsset&gt;>): void
 
@@ -54,17 +58,17 @@ getAssets(options: FetchOptions, callback: AsyncCallback<FetchResult&lt;PhotoAss
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | FetchOptions | 是 | 检索选项。 |
-| callback | AsyncCallback<FetchResult&lt;PhotoAsset&gt;> | 是 | 回调函数。当获取相册中的文件成功，err为undefined，data为获取到的图片和视频数据结果集FetchResult；否则为错误对象。 |
+| callback | AsyncCallback<FetchResult&lt;PhotoAsset&gt;> | 是 | 回调函数。当获取相册中的文件成功，err为undefined，data为获取到的图片和视频数据结果集FetchResult；失败时err为错误对象，data为undefined。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
 
-在API version 13及之前的版本，无相关权限返回错误码13900012；从API version 14开始，无相关权限返回错误码201。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -77,7 +81,7 @@ getAssets(options: FetchOptions, callback: AsyncCallback<FetchResult&lt;PhotoAss
 
 **示例：**
 
-phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-photoaccesshelper-f#photoaccesshelpergetphotoaccesshelper)的示例使用。
+参考[photoAccessHelper.getPhotoAccessHelper](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-photoaccesshelper-f#photoaccesshelpergetphotoaccesshelper)的示例创建phAccessHelper。
 
 ```text
 import { dataSharePredicates } from '@kit.ArkData';
@@ -96,7 +100,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
   let albumList: photoAccessHelper.FetchResult<photoAccessHelper.Album> = await phAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC, albumFetchOptions);
   let album: photoAccessHelper.Album = await albumList.getFirstObject();
   album.getAssets(fetchOption, (err, albumFetchResult) => {
-    if (albumFetchResult !== undefined) {
+    if (!err) {
       console.info('album getAssets successfully, getCount: ' + albumFetchResult.getCount());
     } else {
       console.error(`album getAssets failed with error: ${err.code}, ${err.message}`);
@@ -107,9 +111,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### getAssets
+## getAssets
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAssets(options: FetchOptions): Promise<FetchResult&lt;PhotoAsset&gt;>
 
@@ -123,12 +128,14 @@ getAssets(options: FetchOptions): Promise<FetchResult&lt;PhotoAsset&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | FetchOptions | 是 | 检索选项。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -139,7 +146,6 @@ getAssets(options: FetchOptions): Promise<FetchResult&lt;PhotoAsset&gt;>
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
 
-在API version 13及之前的版本，无相关权限返回错误码13900012；从API version 14开始，无相关权限返回错误码201。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -152,7 +158,7 @@ getAssets(options: FetchOptions): Promise<FetchResult&lt;PhotoAsset&gt;>
 
 **示例：**
 
-phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-photoaccesshelper-f#photoaccesshelpergetphotoaccesshelper)的示例使用。
+参考[photoAccessHelper.getPhotoAccessHelper](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-photoaccesshelper-f#photoaccesshelpergetphotoaccesshelper)的示例创建phAccessHelper。
 
 ```text
 import { dataSharePredicates } from '@kit.ArkData';

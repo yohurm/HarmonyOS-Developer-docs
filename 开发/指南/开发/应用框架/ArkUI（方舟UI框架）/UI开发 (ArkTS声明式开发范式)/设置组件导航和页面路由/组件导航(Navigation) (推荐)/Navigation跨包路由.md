@@ -1,6 +1,6 @@
 # Navigation跨包路由
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigation-cross-package
 
@@ -9,9 +9,10 @@ Navigation提供[系统路由表](#系统路由表)和[自定义路由表](#自�
 支持自定义路由表和系统路由表混用。
 
 
-#### 路由表能力对比
+## 路由表能力对比
 
 不同路由方式适用于不同需求，易用性或可扩展性需根据项目特点权衡选择。
+
 
 | 路由方式 | 跨包跳转能力 | 可扩展性 | 易用性 |
 | --- | --- | --- | --- |
@@ -21,7 +22,7 @@ Navigation提供[系统路由表](#系统路由表)和[自定义路由表](#自�
 
 
 
-#### 系统路由表
+## 系统路由表
 
 系统路由表是动态路由的一种实现方式。从API version 12开始，Navigation支持使用系统路由表的方式进行动态路由。从API version 23开始，Navigation组件支持跳转到[按需加载](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-modular-design#section28312051291)的HSP页面。
 
@@ -106,9 +107,10 @@ struct SystemRoutingTable {
 
 
 
-#### 自定义路由表
+## 自定义路由表
 
 自定义路由表通过给Navigation的[navDestination](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation#navdestination10)属性设置Builder函数实现，其特点是需要import页面。有两种import页面的方式，静态import和动态import，二者的区别在于：
+
 
 | import方式 | 模块间耦合度 | 实现复杂度 | 性能 |
 | --- | --- | --- | --- |
@@ -118,7 +120,7 @@ struct SystemRoutingTable {
 
 
 
-#### 动态import
+### 动态import
 
 动态import主要用于多个模块（HAR/HSP）复用相同业务逻辑的场景，实现各业务模块间的解耦，同时支持路由功能的扩展与整合，可以按需import。
 
@@ -138,7 +140,7 @@ struct SystemRoutingTable {
 
 
 
-#### 静态import
+### 静态import
 
 静态import实现方式简单，但通过静态import页面进行路由跳转会导致不同模块之间的依赖耦合，并存在首页加载时间长等问题。建议使用[动态import](#动态import)或[系统路由表](#系统路由表)。
 
@@ -248,7 +250,7 @@ export struct pageOneTmp {
 
 
 
-#### 开发步骤
+## 开发步骤
 
 如下示例展示了基于系统路由表的跨包跳转，实现六个页面之间的相互跳转，其中HAP包有两个页面HapPageA和HapPageB，HSP包中有两个页面HspPageA和HspPageB，HAR包中也有两个页面HarPageA、HarPageB。
 1. 配置路由表。

@@ -1,6 +1,6 @@
 # cashierComponentManager (iap嵌入式收银台组件管理)
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-cashier-component-manager
 **支持设备：** TV
@@ -10,7 +10,8 @@
 **起始版本：** 6.1.0(23)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** TV
 
@@ -20,7 +21,8 @@ import { cashierComponentManager } from '@kit.IAPKit';
  
   
 
-#### CashierListener
+## CashierListener
+
 
 **支持设备：** TV
 
@@ -36,7 +38,8 @@ import { cashierComponentManager } from '@kit.IAPKit';
  
   
 
-#### onPurchaseSuccess
+### onPurchaseSuccess
+
 
 **支持设备：** TV
 
@@ -54,6 +57,7 @@ iap嵌入式收银台的支付成功回调。在用户使用iap嵌入式收银�
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | productId | string | 是 | 支付成功的商品ID。 |
@@ -62,7 +66,8 @@ iap嵌入式收银台的支付成功回调。在用户使用iap嵌入式收银�
  
   
 
-#### onPurchaseFailure
+### onPurchaseFailure
+
 
 **支持设备：** TV
 
@@ -80,6 +85,7 @@ iap嵌入式收银台的支付失败回调。在用户使用iap嵌入式收银�
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | productId | string | 是 | 支付失败的商品ID。 |
@@ -88,7 +94,8 @@ iap嵌入式收银台的支付失败回调。在用户使用iap嵌入式收银�
  
   
 
-#### CashierDisplayOptions
+## CashierDisplayOptions
+
 
 **支持设备：** TV
 
@@ -102,6 +109,7 @@ iap嵌入式收银台的支付失败回调。在用户使用iap嵌入式收银�
  
 **起始版本：** 6.1.0(23)
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | backgroundColor | ResourceColor | 否 | 收银台背景颜色。 |

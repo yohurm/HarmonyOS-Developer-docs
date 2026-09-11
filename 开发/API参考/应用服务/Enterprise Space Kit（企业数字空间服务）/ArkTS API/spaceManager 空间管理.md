@@ -1,6 +1,6 @@
 # @hms.enterpriseSpaceService.spaceManager(空间管理)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/enterprisespace-spacemanager
 **支持设备：** PC/2in1
@@ -10,7 +10,8 @@
 **起始版本：** 6.0.0(20)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** PC/2in1
 
@@ -20,7 +21,23 @@ import { spaceManager } from '@kit.EnterpriseSpaceKit';
  
   
 
-#### CreateWorkspaceParams
+## spaceManager
+
+
+**支持设备：** PC/2in1
+
+空间管理服务的实例，提供统一的空间管理能力。
+ 
+**起始版本：** 6.0.0(20)
+ 
+**模型约束：** 此接口仅可在Stage模型下使用。
+ 
+**系统能力：** SystemCapability.EnterpriseSpace.ServiceManage
+ 
+  
+
+### CreateWorkspaceParams
+
 
 **支持设备：** PC/2in1
 
@@ -32,6 +49,7 @@ import { spaceManager } from '@kit.EnterpriseSpaceKit';
  
 **系统能力：** SystemCapability.EnterpriseSpace.ServiceManage
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | shortName | string | 否 | 否 | 工作空间的本地简称，默认值与WorkspaceInfo下的localName一致。 |
@@ -39,7 +57,8 @@ import { spaceManager } from '@kit.EnterpriseSpaceKit';
  
   
 
-#### WorkspaceDomainInfo
+### WorkspaceDomainInfo
+
 
 **支持设备：** PC/2in1
 
@@ -51,6 +70,7 @@ import { spaceManager } from '@kit.EnterpriseSpaceKit';
  
 **系统能力：** SystemCapability.EnterpriseSpace.ServiceManage
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | domain | string | 否 | 否 | 域名，仅在工作空间认证后有值，例如“xx.com”，否则其值为空。 |
@@ -63,7 +83,8 @@ import { spaceManager } from '@kit.EnterpriseSpaceKit';
  
   
 
-#### WorkspaceInfo
+### WorkspaceInfo
+
 
 **支持设备：** PC/2in1
 
@@ -75,6 +96,7 @@ import { spaceManager } from '@kit.EnterpriseSpaceKit';
  
 **系统能力：** SystemCapability.EnterpriseSpace.ServiceManage
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | workspaceId | number | 否 | 否 | 工作空间ID。首个空间ID为100，后续创建的工作空间ID逐一递增，例如101、102。 |
@@ -93,7 +115,8 @@ import { spaceManager } from '@kit.EnterpriseSpaceKit';
  
   
 
-#### ProcessConfigInfo
+### ProcessConfigInfo
+
 
 **支持设备：** PC/2in1
 
@@ -105,6 +128,7 @@ import { spaceManager } from '@kit.EnterpriseSpaceKit';
  
 **系统能力：** SystemCapability.EnterpriseSpace.ServiceManage
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | processName | string | 否 | 否 | 系统服务进程的名称。 |
@@ -113,7 +137,8 @@ import { spaceManager } from '@kit.EnterpriseSpaceKit';
  
   
 
-#### WorkspaceType
+### WorkspaceType
+
 
 **支持设备：** PC/2in1
 
@@ -125,6 +150,7 @@ import { spaceManager } from '@kit.EnterpriseSpaceKit';
  
 **系统能力：** SystemCapability.EnterpriseSpace.ServiceManage
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ADMIN | 0 | 管理员工作空间，具有管理其他工作空间的权限。 |
@@ -132,7 +158,8 @@ import { spaceManager } from '@kit.EnterpriseSpaceKit';
  
   
 
-#### QueryType
+### QueryType
+
 
 **支持设备：** PC/2in1
 
@@ -144,6 +171,7 @@ import { spaceManager } from '@kit.EnterpriseSpaceKit';
  
 **系统能力：** SystemCapability.EnterpriseSpace.ServiceManage
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ALL | 0 | 查询所有的工作空间。 |
@@ -152,7 +180,8 @@ import { spaceManager } from '@kit.EnterpriseSpaceKit';
  
   
 
-#### EventType
+### EventType
+
 
 **支持设备：** PC/2in1
 
@@ -164,6 +193,7 @@ import { spaceManager } from '@kit.EnterpriseSpaceKit';
  
 **系统能力：** SystemCapability.EnterpriseSpace.ServiceManage
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | EVENT_WORKSPACE_SWITCHED | 0 | 工作空间切换事件。 |
@@ -171,7 +201,8 @@ import { spaceManager } from '@kit.EnterpriseSpaceKit';
  
   
 
-#### UserDataEnum
+### UserDataEnum
+
 
 **支持设备：** PC/2in1
 
@@ -183,6 +214,7 @@ import { spaceManager } from '@kit.EnterpriseSpaceKit';
  
 **系统能力：** SystemCapability.EnterpriseSpace.ServiceManage
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ENTERPRISE | 0 | 表示企业空间。 |
@@ -191,7 +223,8 @@ import { spaceManager } from '@kit.EnterpriseSpaceKit';
  
   
 
-#### EventData
+### EventData
+
 
 **支持设备：** PC/2in1
 
@@ -203,6 +236,7 @@ import { spaceManager } from '@kit.EnterpriseSpaceKit';
  
 **系统能力：** SystemCapability.EnterpriseSpace.ServiceManage
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | event | EventType | 否 | 否 | 事件类型，取值可参见EventType。 |
@@ -211,7 +245,8 @@ import { spaceManager } from '@kit.EnterpriseSpaceKit';
  
   
 
-#### LockdownModePolicy
+### LockdownModePolicy
+
 
 **支持设备：** PC/2in1
 
@@ -223,6 +258,7 @@ import { spaceManager } from '@kit.EnterpriseSpaceKit';
  
 **系统能力：** SystemCapability.EnterpriseSpace.ServiceManage
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | OFF | 0 | 关闭。关闭后不支持后台应用冻结和公共数据目录加解密。 |
@@ -231,7 +267,8 @@ import { spaceManager } from '@kit.EnterpriseSpaceKit';
  
   
 
-#### SpaceGuidePolicy
+### SpaceGuidePolicy
+
 
 **支持设备：** PC/2in1
 
@@ -243,6 +280,7 @@ import { spaceManager } from '@kit.EnterpriseSpaceKit';
  
 **系统能力：** SystemCapability.EnterpriseSpace.ServiceManage
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SHOW | 0 | 展示个人空间创建页引导页。 |
@@ -251,7 +289,8 @@ import { spaceManager } from '@kit.EnterpriseSpaceKit';
  
   
 
-#### AuthResult
+### AuthResult
+
 
 **支持设备：** PC/2in1
 
@@ -263,6 +302,7 @@ import { spaceManager } from '@kit.EnterpriseSpaceKit';
  
 **系统能力：** SystemCapability.EnterpriseSpace.ServiceManage
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | result | number | 否 | 否 | 认证结果，0代表成功，其他代表失败。 |
@@ -271,7 +311,8 @@ import { spaceManager } from '@kit.EnterpriseSpaceKit';
  
   
 
-#### StatusBarIcon
+### StatusBarIcon
+
 
 **支持设备：** PC/2in1
 
@@ -283,6 +324,7 @@ import { spaceManager } from '@kit.EnterpriseSpaceKit';
  
 **系统能力：** SystemCapability.EnterpriseSpace.ServiceManage
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | white | image.PixelMap | 否 | 否 | 深色背景下图标，样式设计参考设计规范。 |
@@ -291,7 +333,8 @@ import { spaceManager } from '@kit.EnterpriseSpaceKit';
  
   
 
-#### NotificationVisibilitySwitch
+### NotificationVisibilitySwitch
+
 
 **支持设备：** PC/2in1
 
@@ -303,6 +346,7 @@ import { spaceManager } from '@kit.EnterpriseSpaceKit';
  
 **系统能力：** SystemCapability.EnterpriseSpace.ServiceManage
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NOTIFICATION_HIDDEN | 0 | 隐藏跨空间消息提醒。 |
@@ -311,7 +355,8 @@ import { spaceManager } from '@kit.EnterpriseSpaceKit';
  
   
 
-#### NotificationSwitch
+### NotificationSwitch
+
 
 **支持设备：** PC/2in1
 
@@ -323,6 +368,7 @@ import { spaceManager } from '@kit.EnterpriseSpaceKit';
  
 **系统能力：** SystemCapability.EnterpriseSpace.ServiceManage
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ON | 0 | 开启跨空间消息提醒。 |
@@ -331,7 +377,8 @@ import { spaceManager } from '@kit.EnterpriseSpaceKit';
  
   
 
-#### NotificationVisibilityControl
+### NotificationVisibilityControl
+
 
 **支持设备：** PC/2in1
 
@@ -343,6 +390,7 @@ import { spaceManager } from '@kit.EnterpriseSpaceKit';
  
 **系统能力：** SystemCapability.EnterpriseSpace.ServiceManage
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ALLOW_CHANGE | 0 | 允许修改跨空间消息提醒可见性开关状态。 |
@@ -351,7 +399,8 @@ import { spaceManager } from '@kit.EnterpriseSpaceKit';
  
   
 
-#### NotificationConfig
+### NotificationConfig
+
 
 **支持设备：** PC/2in1
 
@@ -363,6 +412,7 @@ import { spaceManager } from '@kit.EnterpriseSpaceKit';
  
 **系统能力：** SystemCapability.EnterpriseSpace.ServiceManage
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | workspaceId | number | 否 | 否 | 工作空间ID。首个空间ID为100，后续创建的工作空间ID逐一递增，例如101、102。取值应为[100,10736]内的整数。 |
@@ -374,7 +424,8 @@ import { spaceManager } from '@kit.EnterpriseSpaceKit';
  
   
 
-#### createWorkspace
+### createWorkspace
+
 
 **支持设备：** PC/2in1
 
@@ -396,6 +447,7 @@ createWorkspace(localName: string, workspaceType: WorkspaceType, params?: Create
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | localName | string | 是 | 工作空间的本地账号名称，例如，“testWorkspace”。 |
@@ -405,6 +457,7 @@ createWorkspace(localName: string, workspaceType: WorkspaceType, params?: Create
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;WorkspaceInfo&gt; | Promise对象，返回工作空间信息。 |
@@ -414,6 +467,7 @@ createWorkspace(localName: string, workspaceType: WorkspaceType, params?: Create
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-space)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | The application does not have permission to call this function. |
@@ -442,7 +496,8 @@ console.info(`Succeeded in creating workspace. workspaceInfo: ${JSON.stringify(w
  
   
 
-#### enableWorkspace
+### enableWorkspace
+
 
 **支持设备：** PC/2in1
 
@@ -464,6 +519,7 @@ enableWorkspace(enable: boolean): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | boolean | 是 | 双空间特性是否启用。参数的默认值为false。 - true：支持双空间特性 - false：不支持双空间特性 |
@@ -471,6 +527,7 @@ enableWorkspace(enable: boolean): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -480,6 +537,7 @@ enableWorkspace(enable: boolean): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-space)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | The application does not have permission to call this function. |
@@ -502,7 +560,8 @@ console.info(`Succeeded in enabling workspace.`);
  
   
 
-#### queryWorkspace
+### queryWorkspace
+
 
 **支持设备：** PC/2in1
 
@@ -520,6 +579,7 @@ queryWorkspace(queryFlag: QueryType): Promise<WorkspaceInfo[]>
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | queryFlag | QueryType | 是 | 工作空间类型。 |
@@ -527,6 +587,7 @@ queryWorkspace(queryFlag: QueryType): Promise<WorkspaceInfo[]>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<WorkspaceInfo[]> | Promise对象，返回工作空间信息列表。 |
@@ -536,6 +597,7 @@ queryWorkspace(queryFlag: QueryType): Promise<WorkspaceInfo[]>
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-space)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | The application does not have permission to call this function. |
@@ -556,13 +618,18 @@ console.info(`Succeeded in querying workspace. spaces: ${JSON.stringify(spaces)}
  
   
 
-#### removeWorkspace
+### removeWorkspace
+
 
 **支持设备：** PC/2in1
 
 removeWorkspace(workspaceId: number): Promise&lt;void&gt;
  
 移除工作空间。使用Promise异步回调。
+ 
+> [!NOTE]
+> 工作空间ID为100的首空间不支持移除，其余空间可正常移除。
+
  
 **起始版本：** 6.0.0(20)
  
@@ -574,6 +641,7 @@ removeWorkspace(workspaceId: number): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | workspaceId | number | 是 | 工作空间ID。首个空间ID为100，后续创建的工作空间ID逐一递增，例如101、102。取值应为[100,10736]内的整数。 |
@@ -581,6 +649,7 @@ removeWorkspace(workspaceId: number): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -590,6 +659,7 @@ removeWorkspace(workspaceId: number): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-space)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | The application does not have permission to call this function. |
@@ -612,7 +682,8 @@ console.info(`Succeeded in removing workspace.`);
  
   
 
-#### setWorkspaceInfo
+### setWorkspaceInfo
+
 
 **支持设备：** PC/2in1
 
@@ -630,6 +701,7 @@ setWorkspaceInfo(workspaceId: number, domainInfo: WorkspaceDomainInfo): Promise&
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | workspaceId | number | 是 | 工作空间ID。首个空间ID为100，后续创建的工作空间ID逐一递增，例如101、102。取值应为[100,10736]内的整数。 |
@@ -638,6 +710,7 @@ setWorkspaceInfo(workspaceId: number, domainInfo: WorkspaceDomainInfo): Promise&
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -647,6 +720,7 @@ setWorkspaceInfo(workspaceId: number, domainInfo: WorkspaceDomainInfo): Promise&
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-space)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | The application does not have permission to call this function. |
@@ -678,7 +752,8 @@ console.info(`Succeeded in setting workspace info.`);
  
   
 
-#### setWorkspaceProfilePhoto
+### setWorkspaceProfilePhoto
+
 
 **支持设备：** PC/2in1
 
@@ -696,6 +771,7 @@ setWorkspaceProfilePhoto(workspaceId: number, photo: string): Promise&lt;void&gt
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | workspaceId | number | 是 | 工作空间ID。首个空间ID为100，后续创建的工作空间ID逐一递增，例如101、102。取值应为[100,10736]内的整数。 |
@@ -704,6 +780,7 @@ setWorkspaceProfilePhoto(workspaceId: number, photo: string): Promise&lt;void&gt
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -713,6 +790,7 @@ setWorkspaceProfilePhoto(workspaceId: number, photo: string): Promise&lt;void&gt
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-space)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | The application does not have permission to call this function. |
@@ -740,7 +818,8 @@ try {
  
   
 
-#### subscribeEvent
+### subscribeEvent
+
 
 **支持设备：** PC/2in1
 
@@ -758,6 +837,7 @@ subscribeEvent(eventId: EventType[], callback: AsyncCallback&lt;EventData&gt;): 
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | eventId | EventType[] | 是 | 订阅的空间事件类型列表。 |
@@ -766,6 +846,7 @@ subscribeEvent(eventId: EventType[], callback: AsyncCallback&lt;EventData&gt;): 
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 订阅ID，用于在取消空间事件中使用。首个返回的订阅ID为1，后续返回的订阅ID逐一递增，例如2、3。 |
@@ -775,6 +856,7 @@ subscribeEvent(eventId: EventType[], callback: AsyncCallback&lt;EventData&gt;): 
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-space)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | The application does not have permission to call this function. |
@@ -804,7 +886,8 @@ console.info(`Succeeded in subscribing event. subscribeId: ${subscribeId}`);
  
   
 
-#### unsubscribeEvent
+### unsubscribeEvent
+
 
 **支持设备：** PC/2in1
 
@@ -822,6 +905,7 @@ unsubscribeEvent(subscribeId: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | subscribeId | number | 是 | 由订阅空间事件得到的订阅ID，用于取消订阅对应的空间事件。 |
@@ -831,6 +915,7 @@ unsubscribeEvent(subscribeId: number): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-space)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | The application does not have permission to call this function. |
@@ -852,7 +937,8 @@ console.info(`Succeeded in unsubscribing event.`);
  
   
 
-#### setRestrictedAccessBackgroundUserdata
+### setRestrictedAccessBackgroundUserdata
+
 
 **支持设备：** PC/2in1
 
@@ -870,6 +956,7 @@ setRestrictedAccessBackgroundUserdata(userData: UserDataEnum, enable: boolean): 
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | userData | UserDataEnum | 是 | 表示工作空间类型。 |
@@ -878,6 +965,7 @@ setRestrictedAccessBackgroundUserdata(userData: UserDataEnum, enable: boolean): 
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -887,6 +975,7 @@ setRestrictedAccessBackgroundUserdata(userData: UserDataEnum, enable: boolean): 
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-space)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | The application does not have permission to call this function. |
@@ -909,7 +998,8 @@ console.info(`Succeeded in setting restricted access background user data.`);
  
   
 
-#### getRestrictedAccessBackgroundUserdataStatus
+### getRestrictedAccessBackgroundUserdataStatus
+
 
 **支持设备：** PC/2in1
 
@@ -927,6 +1017,7 @@ getRestrictedAccessBackgroundUserdataStatus(userData: UserDataEnum): Promise&lt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | userData | UserDataEnum | 是 | 表示工作空间类型。 |
@@ -934,6 +1025,7 @@ getRestrictedAccessBackgroundUserdataStatus(userData: UserDataEnum): Promise&lt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象，表示系统服务进程访问后台用户数据是否管控。 - true：表示开启管控，此时系统服务进程不可访问后台用户的数据 - false：表示关闭管控，此时系统服务进程可正常访问后台用户的数据。 |
@@ -943,6 +1035,7 @@ getRestrictedAccessBackgroundUserdataStatus(userData: UserDataEnum): Promise&lt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-space)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | The application does not have permission to call this function. |
@@ -964,7 +1057,8 @@ console.info(`Succeeded in getting restricted access background user data status
  
   
 
-#### getRestrictedAccessBackgroundUserdataProcessList
+### getRestrictedAccessBackgroundUserdataProcessList
+
 
 **支持设备：** PC/2in1
 
@@ -982,6 +1076,7 @@ getRestrictedAccessBackgroundUserdataProcessList(userData: UserDataEnum): Promis
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | userData | UserDataEnum | 是 | 表示工作空间类型。 |
@@ -989,6 +1084,7 @@ getRestrictedAccessBackgroundUserdataProcessList(userData: UserDataEnum): Promis
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<ProcessConfigInfo[]> | Promise对象，返回当前配置的管控信息列表。 |
@@ -998,6 +1094,7 @@ getRestrictedAccessBackgroundUserdataProcessList(userData: UserDataEnum): Promis
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-space)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | The application does not have permission to call this function. |
@@ -1023,7 +1120,8 @@ try {
  
   
 
-#### addRestrictedAccessBackgroundUserdataProcessList
+### addRestrictedAccessBackgroundUserdataProcessList
+
 
 **支持设备：** PC/2in1
 
@@ -1041,6 +1139,7 @@ addRestrictedAccessBackgroundUserdataProcessList(userData: UserDataEnum, process
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | userData | UserDataEnum | 是 | 表示工作空间类型。 |
@@ -1050,6 +1149,7 @@ addRestrictedAccessBackgroundUserdataProcessList(userData: UserDataEnum, process
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1059,6 +1159,7 @@ addRestrictedAccessBackgroundUserdataProcessList(userData: UserDataEnum, process
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-space)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | The application does not have permission to call this function. |
@@ -1086,7 +1187,8 @@ try {
  
   
 
-#### deleteRestrictedAccessBackgroundUserdataProcessList
+### deleteRestrictedAccessBackgroundUserdataProcessList
+
 
 **支持设备：** PC/2in1
 
@@ -1104,6 +1206,7 @@ deleteRestrictedAccessBackgroundUserdataProcessList(userData: UserDataEnum, proc
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | userData | UserDataEnum | 是 | 表示工作空间类型，其值参考UserDataEnum枚举值。 |
@@ -1112,6 +1215,7 @@ deleteRestrictedAccessBackgroundUserdataProcessList(userData: UserDataEnum, proc
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1121,6 +1225,7 @@ deleteRestrictedAccessBackgroundUserdataProcessList(userData: UserDataEnum, proc
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-space)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | The application does not have permission to call this function. |
@@ -1147,7 +1252,8 @@ try {
  
   
 
-#### setWorkspacePolicy
+### setWorkspacePolicy
+
 
 **支持设备：** PC/2in1
 
@@ -1165,6 +1271,7 @@ setWorkspacePolicy(key: string, value: number, workspaceId?: number): Promise&lt
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 表示策略名称。从6.0.2(22)版本开始支持深度冻结策略“lockdown”，从6.1.0(23)版本开始支持个人空间创建引导页展示策略“spaceguide”。 |
@@ -1174,6 +1281,7 @@ setWorkspacePolicy(key: string, value: number, workspaceId?: number): Promise&lt
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1183,6 +1291,7 @@ setWorkspacePolicy(key: string, value: number, workspaceId?: number): Promise&lt
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-space)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | The application does not have permission to call this function. |
@@ -1205,7 +1314,8 @@ console.info(`Succeeded in setting workspace policy.`);
  
   
 
-#### getWorkspacePolicy
+### getWorkspacePolicy
+
 
 **支持设备：** PC/2in1
 
@@ -1223,6 +1333,7 @@ getWorkspacePolicy(key: string, workspaceId?: number): Promise&lt;number&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 表示策略名称。从6.0.2(22)版本开始支持深度冻结策略“lockdown”，从6.1.0(23)版本开始支持个人空间创建引导页展示策略“spaceguide”。 |
@@ -1231,6 +1342,7 @@ getWorkspacePolicy(key: string, workspaceId?: number): Promise&lt;number&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象，返回策略状态，根据传入的key查看LockdownModePolicy或者SpaceGuidePolicy的枚举值。 |
@@ -1240,6 +1352,7 @@ getWorkspacePolicy(key: string, workspaceId?: number): Promise&lt;number&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-space)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | The application does not have permission to call this function. |
@@ -1262,7 +1375,8 @@ console.info(`Succeeded in getting workspace policy. value: ${value}`);
  
   
 
-#### setLockdownExemptionApps
+### setLockdownExemptionApps
+
 
 **支持设备：** PC/2in1
 
@@ -1280,14 +1394,16 @@ setLockdownExemptionApps(appIds: string[], workspaceId?: number): Promise&lt;voi
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| appIds | string[] | 是 | 表示属于深度冻结豁免名单的应用ID数组。列表，例如“['com.example.test1', 'com.example.test2']”。详情信息可参考什么是appId。 |
+| appIds | string[] | 是 | 表示属于深度冻结豁免名单的应用ID数组。列表，例如“['com.example.test1_BN************', 'com.example.test2_BN************']”。详情信息可参考什么是appId。 |
 | workspaceId | number | 否 | 表示工作空间ID。首个空间ID为100，后续创建的工作空间ID逐一递增，例如101、102。如果未设置，则默认使用调用者所在的工作空间ID。取值应为[100,10736]内的整数。 |
  
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1297,6 +1413,7 @@ setLockdownExemptionApps(appIds: string[], workspaceId?: number): Promise&lt;voi
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-space)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | The application does not have permission to call this function. |
@@ -1313,8 +1430,8 @@ import { spaceManager } from '@kit.EnterpriseSpaceKit';
 
 const workspaceId: number = 100;
 const appIds = [
-  'com.example.enterprisespacekit_samplecode_clientdemo_arkts1',
-  'com.example.enterprisespacekit_samplecode_clientdemo_arkts2'
+  'com.example.test1_BN************',
+  'com.example.test2_BN************'
 ];
 await spaceManager.setLockdownExemptionApps(appIds, workspaceId);
 console.info(`Succeeded in setting lockdown exemption apps.`);
@@ -1322,7 +1439,8 @@ console.info(`Succeeded in setting lockdown exemption apps.`);
  
   
 
-#### getLockdownExemptionApps
+### getLockdownExemptionApps
+
 
 **支持设备：** PC/2in1
 
@@ -1340,6 +1458,7 @@ getLockdownExemptionApps(workspaceId?: number): Promise<string[]>
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | workspaceId | number | 否 | 工作空间ID。首个空间ID为100，后续创建的工作空间ID逐一递增，例如101、102。如果未设置，则默认使用调用者所在的工作空间ID。取值应为[100,10736]内的整数。 |
@@ -1347,6 +1466,7 @@ getLockdownExemptionApps(workspaceId?: number): Promise<string[]>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<string[]> | Promise对象，返回深度冻结豁免名单。 |
@@ -1356,6 +1476,7 @@ getLockdownExemptionApps(workspaceId?: number): Promise<string[]>
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-space)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | The application does not have permission to call this function. |
@@ -1377,7 +1498,8 @@ console.info(`Succeeded in getting lockdown exemption apps. apps: ${JSON.stringi
  
   
 
-#### authenticate
+### authenticate
+
 
 **支持设备：** PC/2in1
 
@@ -1395,6 +1517,7 @@ authenticate(enterpriseAuthInfo: WorkspaceDomainInfo, credential: Uint8Array): P
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enterpriseAuthInfo | WorkspaceDomainInfo | 是 | 工作空间域信息，具体可参见WorkspaceDomainInfo。 |
@@ -1403,6 +1526,7 @@ authenticate(enterpriseAuthInfo: WorkspaceDomainInfo, credential: Uint8Array): P
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;AuthResult&gt; | Promise对象，返回企业账号认证结果。 |
@@ -1412,6 +1536,7 @@ authenticate(enterpriseAuthInfo: WorkspaceDomainInfo, credential: Uint8Array): P
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-space)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | The application does not have permission to call this function. |
@@ -1445,7 +1570,8 @@ try {
  
   
 
-#### getAccessToken
+### getAccessToken
+
 
 **支持设备：** PC/2in1
 
@@ -1463,6 +1589,7 @@ getAccessToken(businessParams: Record<string, string>): Promise&lt;Uint8Array&gt
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | businessParams | Record<string, string> | 是 | 业务参数，由业务方根据请求协议自定义。 |
@@ -1470,6 +1597,7 @@ getAccessToken(businessParams: Record<string, string>): Promise&lt;Uint8Array&gt
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Uint8Array&gt; | Promise对象，返回访问令牌，可用于企业应用的免密登录。 |
@@ -1479,6 +1607,7 @@ getAccessToken(businessParams: Record<string, string>): Promise&lt;Uint8Array&gt
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-space)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | The application does not have permission to call this function. |
@@ -1508,7 +1637,8 @@ try {
  
   
 
-#### setWorkspaceStatusBarIcon
+### setWorkspaceStatusBarIcon
+
 
 **支持设备：** PC/2in1
 
@@ -1528,6 +1658,7 @@ setWorkspaceStatusBarIcon(icon: StatusBarIcon, workspaceId?: number): Promise&lt
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | icon | StatusBarIcon | 是 | 设置的工作空间的状态栏图标。 |
@@ -1536,6 +1667,7 @@ setWorkspaceStatusBarIcon(icon: StatusBarIcon, workspaceId?: number): Promise&lt
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1545,6 +1677,7 @@ setWorkspaceStatusBarIcon(icon: StatusBarIcon, workspaceId?: number): Promise&lt
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-space)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | The application does not have permission to call this function. |
@@ -1569,13 +1702,13 @@ struct Index {
     const context = this.getUIContext().getHostContext() as common.UIAbilityContext;
     const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
 
-    // 创建white pixelMap，需在资源rawfile文件夹中预置HuaweiWhite.jpg图片
-    const whiteFileData = await resourceMgr.getRawFd('HuaweiWhite.jpg');
+    // 创建white pixelMap，需在资源rawfile文件夹中预置CustomWhite.jpg图片
+    const whiteFileData = await resourceMgr.getRawFd('CustomWhite.jpg');
     const whiteImageSource: image.ImageSource = image.createImageSource(whiteFileData);
     const whitePixelMap: image.PixelMap = await whiteImageSource.createPixelMap();
 
-    // 创建black pixelMap，需在资源rawfile文件夹中预置HuaweiBlack.jpg图片
-    const blackFileData = await resourceMgr.getRawFd('HuaweiBlack.jpg');
+    // 创建black pixelMap，需在资源rawfile文件夹中预置CustomBlack.jpg图片
+    const blackFileData = await resourceMgr.getRawFd('CustomBlack.jpg');
     const blackImageSource: image.ImageSource = image.createImageSource(blackFileData);
     const blackPixelMap: image.PixelMap = await blackImageSource.createPixelMap();
 
@@ -1600,7 +1733,8 @@ struct Index {
  
   
 
-#### setWorkspaceLocalName
+### setWorkspaceLocalName
+
 
 **支持设备：** PC/2in1
 
@@ -1620,6 +1754,7 @@ setWorkspaceLocalName(localName: string, workspaceId?: number): Promise&lt;void&
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | localName | string | 是 | 设置的工作空间的本地名称。 |
@@ -1628,6 +1763,7 @@ setWorkspaceLocalName(localName: string, workspaceId?: number): Promise&lt;void&
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1637,6 +1773,7 @@ setWorkspaceLocalName(localName: string, workspaceId?: number): Promise&lt;void&
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-space)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | The application does not have permission to call this function. |
@@ -1658,7 +1795,8 @@ console.info(`Succeeded in setting workspace local name.`);
  
   
 
-#### isEnterpriseWorkspaceEnabled
+### isEnterpriseWorkspaceEnabled
+
 
 **支持设备：** PC/2in1
 
@@ -1676,6 +1814,7 @@ isEnterpriseWorkspaceEnabled(): Promise&lt;boolean&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象，返回true表示当前设备已开启企业数字空间特性；返回false表示当前设备未开启企业数字空间特性。 |
@@ -1685,6 +1824,7 @@ isEnterpriseWorkspaceEnabled(): Promise&lt;boolean&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-space)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | The application does not have permission to call this function. |
@@ -1703,7 +1843,8 @@ console.info(`Succeeded in getting space enable. status: ${status}`);
  
   
 
-#### isEnterpriseWorkspace
+### isEnterpriseWorkspace
+
 
 **支持设备：** PC/2in1
 
@@ -1721,6 +1862,7 @@ isEnterpriseWorkspace(workspaceId?: number): Promise&lt;boolean&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | workspaceId | number | 否 | 工作空间ID。首个空间ID为100，后续创建的工作空间ID逐一递增，例如101、102。如果未设置，则默认使用应用所在的工作空间ID。取值应为[100,10736]内的整数。 |
@@ -1728,6 +1870,7 @@ isEnterpriseWorkspace(workspaceId?: number): Promise&lt;boolean&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象，返回true表示该工作空间是企业空间；返回false表示该工作空间是个人空间。 |
@@ -1737,6 +1880,7 @@ isEnterpriseWorkspace(workspaceId?: number): Promise&lt;boolean&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-space)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | The application does not have permission to call this function. |
@@ -1759,7 +1903,8 @@ console.info(`Succeeded in getting enterprise space. isEnterprise: ${isEnterpris
  
   
 
-#### switchWorkspace
+### switchWorkspace
+
 
 **支持设备：** PC/2in1
 
@@ -1779,6 +1924,7 @@ switchWorkspace(workspaceId?: number): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | workspaceId | number | 否 | 目标工作空间ID，如果未设置，则默认切换到另一个工作空间。取值应为[100,10736]内的整数。 |
@@ -1786,6 +1932,7 @@ switchWorkspace(workspaceId?: number): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1795,6 +1942,7 @@ switchWorkspace(workspaceId?: number): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-space)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | The application does not have permission to call this function. |
@@ -1817,7 +1965,8 @@ console.info(`Succeeded in switching workspace.`);
  
   
 
-#### setNotificationConfig
+### setNotificationConfig
+
 
 **支持设备：** PC/2in1
 
@@ -1835,6 +1984,7 @@ setNotificationConfig(configs: NotificationConfig[]): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | configs | NotificationConfig[] | 是 | 跨空间消息提醒配置列表。 |
@@ -1842,6 +1992,7 @@ setNotificationConfig(configs: NotificationConfig[]): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1851,6 +2002,7 @@ setNotificationConfig(configs: NotificationConfig[]): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-space)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | The application does not have permission to call this function. |
@@ -1869,7 +2021,7 @@ import { spaceManager } from '@kit.EnterpriseSpaceKit';
 const configs: spaceManager.NotificationConfig[] = [
   {
     workspaceId: 100,
-    appIdentifier: 'com.example.app',
+    appIdentifier: '691867************',
     notificationState: spaceManager.NotificationSwitch.ON,
     visibilityState: spaceManager.NotificationVisibilitySwitch.NOTIFICATION_VISIBLE,
     allowVisibilityChange: spaceManager.NotificationVisibilityControl.ALLOW_CHANGE
@@ -1881,7 +2033,8 @@ console.info(`Succeeded in setting notification config.`);
  
   
 
-#### getNotificationConfig
+### getNotificationConfig
+
 
 **支持设备：** PC/2in1
 
@@ -1899,6 +2052,7 @@ getNotificationConfig(): Promise<NotificationConfig[]>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<NotificationConfig[]> | Promise对象，返回跨空间消息提醒配置列表。 |
@@ -1908,6 +2062,7 @@ getNotificationConfig(): Promise<NotificationConfig[]>
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-space)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | The application does not have permission to call this function. |

@@ -1,20 +1,20 @@
 # SIGTRAP断点或陷阱异常故障模式说明
 
-更新时间：2026-07-14 02:11:31
+更新时间：2026-09-02 03:30:31
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-cppcrash-sigtrap-fault-mode
 
-#### TRAP_BRKPT软件断点
+## TRAP_BRKPT软件断点
 
  
 
-#### 根因描述
+### 根因描述
 
 TRAP_BRKPT是SIGTRAP信号的一种类型，通常由软件断点指令触发。在正常调试场景下这是预期行为；但在非调试环境中触发时往往预示着更深层次的系统或代码问题。
  
  
 
-#### 问题分析思路
+### 问题分析思路
 
 此类问题，通常情况下，会有如下几种可能：
  
@@ -22,8 +22,9 @@ TRAP_BRKPT是SIGTRAP信号的一种类型，通常由软件断点指令触发。
  
 2.  模块检测机制使用BRKPT信号检测异常，常见有jemalloc的Double Free和CFI后向检测机制。
  
-备注：CFI检测拦截也会使用此指令，如遇栈帧符号信息包含.cfi内容，按照CFI问题排查分析， CFI检查机制触发信号场景对照表：
+备注：CFI检测拦截也会使用此指令，如遇栈帧符号信息包含.cfi内容，按照CFI问题排查分析，CFI检查机制触发信号场景对照表：
   
+
 | 信号 | si_code | 触发场景和机制 | 典型架构/实现 | 底层指令/异常 | 关键特征 |
 | SIGTRAP | TRAP_BRKPT | 软件CFI校验失败 | ARM64(LLVM -fsanitize=cfi配置) | brk #0 | 编译器插入，内核按照断点信号处理 |
 | SIGILL | ILL_ILLOPC | 软件CFI校验失败 | x86_64/ARM64(udf配置) | ud2/udf #0 | CPU视为非法操作码 |
@@ -33,13 +34,13 @@ TRAP_BRKPT是SIGTRAP信号的一种类型，通常由软件断点指令触发。
  
 问题分析的步骤如下：
  1. **确认类型：**查看CppCrash日志中的Reason字段，确认信号为SIGTRAP(TRAP_BRKPT)。
-2. **分析崩溃堆栈：**反编译首帧地址的汇编指令是否为BRK指令 （arm64架构为BRK指令， arm32为BKPT指令， x86为INT3指令）。
-3. **定位代码位置：**使用[C++堆栈解析流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)定位具体代码行，结合代码走读分析，何处触发BRK指令。
+2. **分析崩溃堆栈：**反编译首帧地址的汇编指令是否为BRK指令（arm64架构为BRK指令，arm32为BKPT指令，x86为INT3指令）。
+3. **定位代码位置：**参考[C++堆栈解析流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)使用llvm-addr2line工具定位行号，结合代码走读分析，何处触发BRK指令。
 4. **确认BRK原因：** 分析使用断言或者采用BRKPT触发信号的模块机制。
  
  
 
-#### 关键字
+### 关键字
 
 关注CppCrash故障日志中是否有如下关键字。
  
@@ -49,7 +50,7 @@ TRAP_BRKPT是SIGTRAP信号的一种类型，通常由软件断点指令触发。
  
  
 
-#### 案例分析
+### 案例分析
 
 **案例一：构造触发BRKPT故障**
  
@@ -76,7 +77,7 @@ App running unique id:6954091671400091859
 Process life time:24s
 Process Memory(kB): 80670(Rss)
 Device Memory(kB): Total 11699072, Free 574140, Available 5592064
-<strong>Reason:Signal:SIGTRAP(TRAP_BRKPT)@0x0000005a2e7a86e8</strong>
+<strong><span style="color: rgb(255,0,0);">Reason:Signal:SIGTRAP(TRAP_BRKPT)@0x0000005a2e7a86e8</span></strong>
 Fault thread info:
 Tid:40974, Name:ppcrashanalysis
 #00 pc 00000000000286e8 /data/storage/el1/bundle/libs/arm64/libentry.so(TriggerBrkInstruction(napi_env__*, napi_callback_info__*)+12)(4687a4d714038f89c2e644d7b764097814597256)
@@ -96,7 +97,7 @@ Tid:40974, Name:ppcrashanalysis
 .text:00000000000286EC                 ADRP            X0, #unk_4078A@PAGE
 ```
 
-3. 按照[C++堆栈解析流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)确认代码位置。
+3. 参考[C++堆栈解析流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)使用llvm-addr2line工具定位行号。
 
   证据3：找到对应的代码位置。
 
@@ -178,11 +179,11 @@ Tid:41223, Name:ppcrashanalysis
 ```text
 .text:00000000000B9908 loc_B9908                               ; CODE XREF: cache_bin_dalloc_safety_checks+94↓j
 .text:00000000000B9908                                         ; cache_bin_dalloc_safety_checks+A0↓j
-<strong>.text:00000000000B9908                 BRK             #1</strong>
+<strong><span style="color: rgb(255,0,0);">.text:00000000000B9908                 BRK             #1</span></strong>
 .text:00000000000B9908
 ```
 
-3. 按照[C++堆栈解析流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)确认代码位置。
+3. 参考[C++堆栈解析流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)使用llvm-addr2line工具确认代码位置。
 
   证据3：找到对应的代码位置。
 
@@ -199,7 +200,7 @@ cache_bin_dalloc_safety_checks
 
   
 ```text
-<strong style="color: rgb(255,0,0);">#00 pc 00000000000b9908 </strong>/system/lib/ld-musl-aarch64.so.1(cache_bin_dalloc_safety_checks+108)(f9a4c305648402bdc0bcb0933fea9780)
+<strong style="color: rgb(255,0,0);">#00 pc 00000000000b9908 </strong><span style="color: rgb(255,0,0);">/system/lib/ld-musl-aarch64.so.1(cache_bin_dalloc_safety_checks+108)</span>(f9a4c305648402bdc0bcb0933fea9780)
 #01 pc 00000000000c6160 /system/lib/ld-musl-aarch64.so.1(je_free+408)(f9a4c305648402bdc0bcb0933fea9780)
 #02 pc 000000000002874c /data/storage/el1/bundle/libs/arm64/libentry.so(TriggerDoubleFreeTrap(napi_env__*, napi_callback_info__*)+84)(4687a4d714038f89c2e644d7b764097814597256)
 ```
@@ -230,7 +231,7 @@ LastFatalMessage字段信息中已标明存在内存重复释放问题，后续�
  
  
 
-#### 常见易错代码预防建议
+### 常见易错代码预防建议
 1. 清理调试代码，常见有__asm__()类的BRK指令，或者__builtin_trap()函数。
 2. 严格管理断言assert()使用，尽量避免在release模式下开启。
 3. 代码静态分析，检查内存申请和释放行为，避免重复释放内存逻辑。

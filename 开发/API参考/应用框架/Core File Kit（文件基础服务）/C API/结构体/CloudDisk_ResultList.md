@@ -1,6 +1,6 @@
 # CloudDisk_ResultList
 
-更新时间：2026-03-09 02:50:43
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-clouddisk-clouddisk-resultlist
 **支持设备：** PC/2in1 | Tablet
@@ -10,7 +10,8 @@ typedef struct CloudDisk_ResultList {...} CloudDisk_ResultList
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** PC/2in1 | Tablet
 
@@ -24,16 +25,19 @@ typedef struct CloudDisk_ResultList {...} CloudDisk_ResultList
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** PC/2in1 | Tablet
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | CloudDisk_PathInfo pathInfo | 文件的绝对路径信息。 |

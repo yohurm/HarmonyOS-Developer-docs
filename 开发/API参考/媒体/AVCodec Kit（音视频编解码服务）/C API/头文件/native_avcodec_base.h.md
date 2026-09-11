@@ -1,13 +1,14 @@
 # native_avcodec_base.h
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avcodec-base-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明用于音视频封装、解封装、编解码基础功能的Native API。
 
@@ -25,15 +26,18 @@
 
 
 
-#### 汇总
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 汇总
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 结构体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -47,9 +51,11 @@
 
 
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -92,9 +98,11 @@
 
 
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -110,9 +118,11 @@
 
 
 
-#### 变量
+### 变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -300,15 +310,17 @@
 
 
 
-#### 枚举类型说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 枚举类型说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### OH_MediaType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### OH_MediaType
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_MediaType
@@ -322,6 +334,7 @@ enum OH_MediaType
 
 **起始版本：** 9
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | MEDIA_TYPE_AUD = 0 | 音频轨。 |
@@ -333,9 +346,10 @@ enum OH_MediaType
 
 
 
-#### OH_AACProfile
+### OH_AACProfile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AACProfile
@@ -349,6 +363,7 @@ AAC档次。
 
 **起始版本：** 9
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AAC_PROFILE_LC = 0 | AAC编码档次为Low Complexity级别。 |
@@ -358,9 +373,10 @@ AAC档次。
 
 
 
-#### OH_AVCProfile
+### OH_AVCProfile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AVCProfile
@@ -374,6 +390,7 @@ AVC档次。
 
 **起始版本：** 9
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AVC_PROFILE_BASELINE = 0 | AVC编码档次为基本档次。 |
@@ -383,9 +400,10 @@ AVC档次。
 
 
 
-#### OH_HEVCProfile
+### OH_HEVCProfile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_HEVCProfile
@@ -399,6 +417,7 @@ HEVC档次。
 
 **起始版本：** 10
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | HEVC_PROFILE_MAIN = 0 | HEVC编码档次为主档次。 |
@@ -410,9 +429,10 @@ HEVC档次。
 
 
 
-#### OH_VVCProfile
+### OH_VVCProfile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_VVCProfile
@@ -425,6 +445,7 @@ VVC档次。
 **系统能力：** SystemCapability.Multimedia.Media.CodecBase
 
 **起始版本：** 15
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -447,9 +468,10 @@ VVC档次。
 
 
 
-#### OH_MPEG2Profile
+### OH_MPEG2Profile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_MPEG2Profile
@@ -463,6 +485,7 @@ MPEG2档次。
 
 **起始版本：** 17
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | MPEG2_PROFILE_SIMPLE = 0 | 简单档次。 |
@@ -475,9 +498,10 @@ MPEG2档次。
 
 
 
-#### OH_MPEG4Profile
+### OH_MPEG4Profile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_MPEG4Profile
@@ -490,6 +514,7 @@ MPEG4档次。
 **系统能力：** SystemCapability.Multimedia.Media.CodecBase
 
 **起始版本：** 17
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -512,9 +537,10 @@ MPEG4档次。
 
 
 
-#### OH_H263Profile
+### OH_H263Profile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_H263Profile
@@ -528,6 +554,7 @@ H.263档次。
 
 **起始版本：** 17
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | H263_PROFILE_BASELINE = 0 | 基线档次。 |
@@ -536,9 +563,10 @@ H.263档次。
 
 
 
-#### OH_VC1Profile
+### OH_VC1Profile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_VC1Profile
@@ -552,6 +580,7 @@ VC-1档次。
 
 **起始版本：** 22
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | VC1_PROFILE_SIMPLE = 0 | 简单档次。 |
@@ -561,9 +590,10 @@ VC-1档次。
 
 
 
-#### OH_AV1Profile
+### OH_AV1Profile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AV1Profile
@@ -575,6 +605,7 @@ AV1档次。
 
 **起始版本：** 23
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AV1_PROFILE_MAIN = 0 | 主档次。 |
@@ -584,9 +615,10 @@ AV1档次。
 
 
 
-#### OH_VP9Profile
+### OH_VP9Profile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_VP9Profile
@@ -598,6 +630,7 @@ VP9档次。
 
 **起始版本：** 23
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | VP9_PROFILE_0 = 0 | 0档次。 |
@@ -608,9 +641,10 @@ VP9档次。
 
 
 
-#### OH_WVC1Profile
+### OH_WVC1Profile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_WVC1Profile
@@ -622,6 +656,7 @@ WVC1档次。
 
 **起始版本：** 23
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | WVC1_PROFILE_ADVANCED = 0 | 高级档次。 |
@@ -629,9 +664,10 @@ WVC1档次。
 
 
 
-#### OH_WMV3Profile
+### OH_WMV3Profile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_WMV3Profile
@@ -645,6 +681,7 @@ WMV3档次。
 
 **起始版本：** 22
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | WMV3_PROFILE_SIMPLE = 0 | 简单档次。 |
@@ -653,9 +690,10 @@ WMV3档次。
 
 
 
-#### OH_AVOutputFormat
+### OH_AVOutputFormat
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AVOutputFormat
@@ -668,6 +706,7 @@ enum OH_AVOutputFormat
 **系统能力：** SystemCapability.Multimedia.Media.CodecBase
 
 **起始版本：** 10
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -685,9 +724,10 @@ enum OH_AVOutputFormat
 
 
 
-#### OH_AVSeekMode
+### OH_AVSeekMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AVSeekMode
@@ -701,6 +741,7 @@ enum OH_AVSeekMode
 
 **起始版本：** 10
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | SEEK_MODE_NEXT_SYNC = 0 | 指定时间位置的下一I帧。若时间点后没有I帧，该模式可能跳转失败。 |
@@ -710,9 +751,10 @@ enum OH_AVSeekMode
 
 
 
-#### OH_ScalingMode
+### OH_ScalingMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_ScalingMode
@@ -730,6 +772,7 @@ enum OH_ScalingMode
 
 **替代接口：** [OHScalingModeV2](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-external-window-h#ohscalingmodev2)
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | SCALING_MODE_SCALE_TO_WINDOW = 1 | 根据窗口尺寸自适应调整图像大小。 替代接口： OHScalingModeV2.OH_SCALING_MODE_SCALE_TO_WINDOW_V2 |
@@ -738,9 +781,10 @@ enum OH_ScalingMode
 
 
 
-#### OH_BitsPerSample
+### OH_BitsPerSample
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_BitsPerSample
@@ -753,6 +797,7 @@ enum OH_BitsPerSample
 **系统能力：** SystemCapability.Multimedia.Media.CodecBase
 
 **起始版本：** 10
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -771,9 +816,10 @@ enum OH_BitsPerSample
 
 
 
-#### OH_ColorPrimary
+### OH_ColorPrimary
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_ColorPrimary
@@ -786,6 +832,7 @@ enum OH_ColorPrimary
 **系统能力：** SystemCapability.Multimedia.Media.CodecBase
 
 **起始版本：** 10
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -804,9 +851,10 @@ enum OH_ColorPrimary
 
 
 
-#### OH_TransferCharacteristic
+### OH_TransferCharacteristic
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_TransferCharacteristic
@@ -819,6 +867,7 @@ enum OH_TransferCharacteristic
 **系统能力：** SystemCapability.Multimedia.Media.CodecBase
 
 **起始版本：** 10
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -843,9 +892,10 @@ enum OH_TransferCharacteristic
 
 
 
-#### OH_MatrixCoefficient
+### OH_MatrixCoefficient
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_MatrixCoefficient
@@ -858,6 +908,7 @@ enum OH_MatrixCoefficient
 **系统能力：** SystemCapability.Multimedia.Media.CodecBase
 
 **起始版本：** 10
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -879,9 +930,10 @@ enum OH_MatrixCoefficient
 
 
 
-#### OH_AVCLevel
+### OH_AVCLevel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AVCLevel
@@ -894,6 +946,7 @@ AVC级别。
 **系统能力：** SystemCapability.Multimedia.Media.CodecBase
 
 **起始版本：** 12
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -921,9 +974,10 @@ AVC级别。
 
 
 
-#### OH_HEVCLevel
+### OH_HEVCLevel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_HEVCLevel
@@ -936,6 +990,7 @@ HEVC级别。
 **系统能力：** SystemCapability.Multimedia.Media.CodecBase
 
 **起始版本：** 12
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -956,9 +1011,10 @@ HEVC级别。
 
 
 
-#### OH_VVCLevel
+### OH_VVCLevel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_VVCLevel
@@ -971,6 +1027,7 @@ VVC级别。
 **系统能力：** SystemCapability.Multimedia.Media.CodecBase
 
 **起始版本：** 15
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -993,9 +1050,10 @@ VVC级别。
 
 
 
-#### OH_MPEG2Level
+### OH_MPEG2Level
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_MPEG2Level
@@ -1009,6 +1067,7 @@ MPEG2级别。
 
 **起始版本：** 17
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | MPEG2_LEVEL_LOW = 0 | 低级别。 |
@@ -1019,9 +1078,10 @@ MPEG2级别。
 
 
 
-#### OH_MPEG4Level
+### OH_MPEG4Level
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_MPEG4Level
@@ -1034,6 +1094,7 @@ MPEG4级别。
 **系统能力：** SystemCapability.Multimedia.Media.CodecBase
 
 **起始版本：** 17
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -1051,9 +1112,10 @@ MPEG4级别。
 
 
 
-#### OH_H263Level
+### OH_H263Level
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_H263Level
@@ -1066,6 +1128,7 @@ H.263级别。
 **系统能力：** SystemCapability.Multimedia.Media.CodecBase
 
 **起始版本：** 17
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -1081,9 +1144,10 @@ H.263级别。
 
 
 
-#### OH_VC1Level
+### OH_VC1Level
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_VC1Level
@@ -1096,6 +1160,7 @@ VC-1级别。
 **系统能力：** SystemCapability.Multimedia.Media.CodecBase
 
 **起始版本：** 22
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -1111,9 +1176,10 @@ VC-1级别。
 
 
 
-#### OH_AV1Level
+### OH_AV1Level
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AV1Level
@@ -1124,6 +1190,7 @@ enum OH_AV1Level
 AV1级别。
 
 **起始版本：** 23
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -1155,9 +1222,10 @@ AV1级别。
 
 
 
-#### OH_VP9Level
+### OH_VP9Level
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_VP9Level
@@ -1168,6 +1236,7 @@ enum OH_VP9Level
 VP9级别。
 
 **起始版本：** 23
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -1189,9 +1258,10 @@ VP9级别。
 
 
 
-#### OH_WVC1Level
+### OH_WVC1Level
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_WVC1Level
@@ -1202,6 +1272,7 @@ enum OH_WVC1Level
 WVC1级别。
 
 **起始版本：** 23
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -1214,9 +1285,10 @@ WVC1级别。
 
 
 
-#### OH_WMV3Level
+### OH_WMV3Level
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_WMV3Level
@@ -1230,6 +1302,7 @@ WMV3级别。
 
 **起始版本：** 22
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | WMV3_LEVEL_LOW = 0 | 低级别。 |
@@ -1239,9 +1312,10 @@ WMV3级别。
 
 
 
-#### OH_TemporalGopReferenceMode
+### OH_TemporalGopReferenceMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_TemporalGopReferenceMode
@@ -1255,6 +1329,7 @@ enum OH_TemporalGopReferenceMode
 
 **起始版本：** 12
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ADJACENT_REFERENCE = 0 | 参考最近的短期参考帧。 |
@@ -1264,9 +1339,10 @@ enum OH_TemporalGopReferenceMode
 
 
 
-#### OH_BitrateMode
+### OH_BitrateMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_BitrateMode
@@ -1280,6 +1356,7 @@ enum OH_BitrateMode
 
 **起始版本：** 10
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | BITRATE_MODE_CBR = 0 | 恒定比特率模式。 |
@@ -1291,9 +1368,10 @@ enum OH_BitrateMode
 
 
 
-#### OH_FrameRetentionMode
+### OH_FrameRetentionMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_FrameRetentionMode
@@ -1305,6 +1383,7 @@ enum OH_FrameRetentionMode
 
 **起始版本：** 26.0.0
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_FRAME_RETENTION_MODE_FULL = 0 | 全量保留模式。 解码器工作在透明直通状态，100%保留所有输入帧，实质上禁用了抽帧功能。所有底层的视觉感知算法将被完全跳过，实现零算法开销。 起始版本： 26.0.0 |
@@ -1314,9 +1393,10 @@ enum OH_FrameRetentionMode
 
 
 
-#### OH_AudioEncoderPTSMode
+### OH_AudioEncoderPTSMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AudioEncoderPTSMode
@@ -1328,6 +1408,7 @@ enum OH_AudioEncoderPTSMode
 
 **起始版本：** 26.0.0
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_AUDIO_ENCODER_PTS_MODE_DEFAULT = 0 | 音频编码器默认PTS模式，不同编码器可能有不同表现。 起始版本： 26.0.0 |
@@ -1337,15 +1418,17 @@ enum OH_AudioEncoderPTSMode
 
 
 
-#### 函数说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 函数说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### OH_AVCodecOnError()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### OH_AVCodecOnError()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_AVCodecOnError)(OH_AVCodec *codec, int32_t errorCode, void *userData)
@@ -1354,6 +1437,7 @@ typedef void (*OH_AVCodecOnError)(OH_AVCodec *codec, int32_t errorCode, void *us
 **描述**
 
 当OH_AVCodec实例运行出错时，会调用来上报具体的错误信息的函数指针。
+
 
 | 使用场景 | 错误码 |
 | --- | --- |
@@ -1369,6 +1453,7 @@ typedef void (*OH_AVCodecOnError)(OH_AVCodec *codec, int32_t errorCode, void *us
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | OH_AVCodec实例。 |
@@ -1378,9 +1463,10 @@ typedef void (*OH_AVCodecOnError)(OH_AVCodec *codec, int32_t errorCode, void *us
 
 
 
-#### OH_AVCodecOnStreamChanged()
+### OH_AVCodecOnStreamChanged()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_AVCodecOnStreamChanged)(OH_AVCodec *codec, OH_AVFormat *format, void *userData)
@@ -1400,6 +1486,7 @@ typedef void (*OH_AVCodecOnStreamChanged)(OH_AVCodec *codec, OH_AVFormat *format
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | OH_AVCodec实例。 |
@@ -1409,9 +1496,10 @@ typedef void (*OH_AVCodecOnStreamChanged)(OH_AVCodec *codec, OH_AVFormat *format
 
 
 
-#### OH_AVCodecOnNeedInputData()
+### OH_AVCodecOnNeedInputData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_AVCodecOnNeedInputData)(OH_AVCodec *codec, uint32_t index, OH_AVMemory *data, void *userData)
@@ -1431,6 +1519,7 @@ typedef void (*OH_AVCodecOnNeedInputData)(OH_AVCodec *codec, uint32_t index, OH_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | OH_AVCodec实例。 |
@@ -1441,9 +1530,10 @@ typedef void (*OH_AVCodecOnNeedInputData)(OH_AVCodec *codec, uint32_t index, OH_
 
 
 
-#### OH_AVCodecOnNewOutputData()
+### OH_AVCodecOnNewOutputData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_AVCodecOnNewOutputData)(OH_AVCodec *codec, uint32_t index, OH_AVMemory *data, OH_AVCodecBufferAttr *attr, void *userData)
@@ -1463,6 +1553,7 @@ typedef void (*OH_AVCodecOnNewOutputData)(OH_AVCodec *codec, uint32_t index, OH_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | OH_AVCodec实例。 |
@@ -1474,9 +1565,10 @@ typedef void (*OH_AVCodecOnNewOutputData)(OH_AVCodec *codec, uint32_t index, OH_
 
 
 
-#### OH_AVCodecOnNeedInputBuffer()
+### OH_AVCodecOnNeedInputBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_AVCodecOnNeedInputBuffer)(OH_AVCodec *codec, uint32_t index, OH_AVBuffer *buffer, void *userData)
@@ -1492,6 +1584,7 @@ typedef void (*OH_AVCodecOnNeedInputBuffer)(OH_AVCodec *codec, uint32_t index, O
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | OH_AVCodec实例。 |
@@ -1502,9 +1595,10 @@ typedef void (*OH_AVCodecOnNeedInputBuffer)(OH_AVCodec *codec, uint32_t index, O
 
 
 
-#### OH_AVCodecOnNewOutputBuffer()
+### OH_AVCodecOnNewOutputBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_AVCodecOnNewOutputBuffer)(OH_AVCodec *codec, uint32_t index, OH_AVBuffer *buffer, void *userData)
@@ -1520,6 +1614,7 @@ typedef void (*OH_AVCodecOnNewOutputBuffer)(OH_AVCodec *codec, uint32_t index, O
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | OH_AVCodec实例。 |
@@ -1530,9 +1625,10 @@ typedef void (*OH_AVCodecOnNewOutputBuffer)(OH_AVCodec *codec, uint32_t index, O
 
 
 
-#### OH_AVDataSourceReadAt()
+### OH_AVDataSourceReadAt()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef int32_t (*OH_AVDataSourceReadAt)(OH_AVBuffer *data, int32_t length, int64_t pos)
@@ -1548,6 +1644,7 @@ typedef int32_t (*OH_AVDataSourceReadAt)(OH_AVBuffer *data, int32_t length, int6
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVBuffer *data | 要填充的缓冲区。 |
@@ -1557,6 +1654,7 @@ typedef int32_t (*OH_AVDataSourceReadAt)(OH_AVBuffer *data, int32_t length, int6
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 读取到缓冲区的数据的实际长度。 |
@@ -1564,9 +1662,10 @@ typedef int32_t (*OH_AVDataSourceReadAt)(OH_AVBuffer *data, int32_t length, int6
 
 
 
-#### OH_AVDataSourceReadAtExt()
+### OH_AVDataSourceReadAtExt()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef int32_t (*OH_AVDataSourceReadAtExt)(OH_AVBuffer *data, int32_t length, int64_t pos, void *userData)
@@ -1582,6 +1681,7 @@ typedef int32_t (*OH_AVDataSourceReadAtExt)(OH_AVBuffer *data, int32_t length, i
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVBuffer *data | 要填充的缓冲区。 |
@@ -1591,6 +1691,7 @@ typedef int32_t (*OH_AVDataSourceReadAtExt)(OH_AVBuffer *data, int32_t length, i
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |

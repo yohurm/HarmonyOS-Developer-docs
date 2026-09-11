@@ -1,18 +1,19 @@
 # OH_Pixelmap_InitializationOptions
 
-更新时间：2026-07-28 11:23:46（官网已下线）
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-nativemodule-oh-pixelmap-initializationoptions
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 struct OH_Pixelmap_InitializationOptions
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 OH_Pixelmap_InitializationOptions是Native层封装的初始化选项结构体，用于在创建Pixelmap时指定其属性，可配置图片宽高、像素格式、透明度类型等参数，适用于需要在Native层创建Pixelmap并自定义其初始化属性的场景。
  
@@ -20,6 +21,7 @@ OH_Pixelmap_InitializationOptions是Native层封装的初始化选项结构体�
  
 OH_Pixelmap_InitializationOptions结构体内容和操作方式如下：
   
+
 | 字段类型 | 字段名称 | 字段描述 | 操作函数 | 函数描述 |
 | --- | --- | --- | --- | --- |
 | uint32_t | width | 图片宽，单位：像素（px）。取值需大于0，最大值受系统内存限制。 | OH_PixelmapInitializationOptions_GetWidth | 获取图片宽。 |

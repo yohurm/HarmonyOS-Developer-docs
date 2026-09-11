@@ -1,9 +1,9 @@
 # ArcList
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arclist
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 弧形列表由沿弧形排列的一系列列表项组成，适用于圆形屏幕设备。适合连续、多行呈现同类数据，例如图片和文本。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > ArcListAttribute是用于配置ArcList组件属性的关键接口。API version 21及之前版本，导入ArcList组件后需要开发者手动导入ArcListAttribute，否则会编译报错。从API version 22开始，编译工具链识别到导入ArcList组件后，会自动导入ArcListAttribute，无需开发者手动导入ArcListAttribute。 如果开发者手动导入ArcListAttribute，DevEco Studio会显示置灰，API version 21及之前版本删除会编译报错，从API version 22开始，删除对功能无影响。
@@ -34,11 +35,12 @@ import { ArcList } from '@kit.ArkUI';
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-仅支持[ArcListItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arclistitem)子组件。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+仅支持[ArcListItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arclistitem)和自定义组件。自定义组件在ArcList下使用时，请使用ArcListItem作为自定义组件的顶层组件，请勿直接给自定义组件设置属性和事件方法，因为ArcList通过ArcListItem管理子组件的布局和事件处理，直接设置可能导致部分功能无法正常生效。
 
 > [!NOTE]
 > ArcList的子组件索引值计算规则： 按子组件的顺序依次递增。 if/else 语句中，只有条件成立的分支内的子组件会参与索引值计算，条件不成立的分支内子组件不计算索引值。 ForEach / LazyForEach 语句中，会计算展开所有子组件索引值。 if/else 、 ForEach 和 LazyForEach 发生变化以后，会更新子组件索引值。 ArcList子组件 visibility 属性设置为Hidden或None依然会计算索引值。
@@ -46,9 +48,10 @@ import { ArcList } from '@kit.ArkUI';
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ArcList(options?: ArkListOptions)
 
@@ -60,6 +63,7 @@ ArcList(options?: ArkListOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ArkListOptions | 否 | 弧形列表的配置项，用于设置初始加载位置、滚动控制器和头部组件。 |
@@ -67,17 +71,19 @@ ArcList(options?: ArkListOptions)
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
 
 
 
-#### digitalCrownSensitivity
+### digitalCrownSensitivity
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Wearable
 
 digitalCrownSensitivity(sensitivity: Optional&lt;CrownSensitivity&gt;)
 
@@ -89,6 +95,7 @@ digitalCrownSensitivity(sensitivity: Optional&lt;CrownSensitivity&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sensitivity | Optional&lt;CrownSensitivity&gt; | 是 | 表冠响应灵敏度。 默认值：CrownSensitivity.MEDIUM，响应速度适中。 |
@@ -96,9 +103,10 @@ digitalCrownSensitivity(sensitivity: Optional&lt;CrownSensitivity&gt;)
 
 
 
-#### space
+### space
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 space(space: Optional&lt;LengthMetrics&gt;)
 
@@ -110,6 +118,7 @@ space(space: Optional&lt;LengthMetrics&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | space | Optional&lt;LengthMetrics&gt; | 是 | 列表子项之间的间距。 默认值：LengthMetrics.vp(0) ArcList子组件的visibility属性设置为None时不显示，但该子组件上下的space还会生效。 |
@@ -117,9 +126,10 @@ space(space: Optional&lt;LengthMetrics&gt;)
 
 
 
-#### scrollBar
+### scrollBar
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scrollBar(status: Optional&lt;BarState&gt;)
 
@@ -131,6 +141,7 @@ scrollBar(status: Optional&lt;BarState&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | status | Optional&lt;BarState&gt; | 是 | 滚动条状态。 默认值：BarState.Auto |
@@ -138,9 +149,10 @@ scrollBar(status: Optional&lt;BarState&gt;)
 
 
 
-#### cachedCount
+### cachedCount
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cachedCount(count: Optional&lt;number&gt;)
 
@@ -152,6 +164,7 @@ cachedCount(count: Optional&lt;number&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | count | Optional&lt;number&gt; | 是 | ArcListItem的预加载数量。 默认值：根据屏幕内显示的节点个数设置，最大值为16。 取值范围：[0, +∞) 设置为负数时，按1处理。 |
@@ -159,9 +172,10 @@ cachedCount(count: Optional&lt;number&gt;)
 
 
 
-#### chainAnimation
+### chainAnimation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 chainAnimation(enable: Optional&lt;boolean&gt;)
 
@@ -177,6 +191,7 @@ chainAnimation(enable: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | Optional&lt;boolean&gt; | 是 | 是否启用链式联动动效。仅当边缘效果为EdgeEffect.Spring时，链式联动动效才会生效。 默认值：false，不启用链式联动。true，启用链式联动。 |
@@ -184,9 +199,10 @@ chainAnimation(enable: Optional&lt;boolean&gt;)
 
 
 
-#### enableScrollInteraction
+### enableScrollInteraction
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableScrollInteraction(enable: Optional&lt;boolean&gt;)
 
@@ -198,6 +214,7 @@ enableScrollInteraction(enable: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | Optional&lt;boolean&gt; | 是 | 是否支持滚动手势。设置为true时可以通过手指或者鼠标滚动，设置为false时无法通过手指或者鼠标滚动，但不影响控制器Scroller的滚动接口。 默认值：true |
@@ -205,9 +222,10 @@ enableScrollInteraction(enable: Optional&lt;boolean&gt;)
 
 
 
-#### fadingEdge
+### fadingEdge
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fadingEdge(enable: Optional&lt;boolean&gt;)
 
@@ -219,6 +237,7 @@ fadingEdge(enable: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | Optional&lt;boolean&gt; | 是 | fadingEdge生效时，会覆盖原组件的.overlay()属性。 fadingEdge生效时，建议不在该组件上设置background相关属性，会影响渐隐的显示效果。 fadingEdge生效时，组件会裁剪到边界，设置组件的clip属性为false不生效。 设置为true时开启边缘渐隐效果，设置为false时不开启边缘渐隐效果。 默认值：false |
@@ -226,9 +245,10 @@ fadingEdge(enable: Optional&lt;boolean&gt;)
 
 
 
-#### friction
+### friction
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 friction(friction: Optional&lt;number&gt;)
 
@@ -240,6 +260,7 @@ friction(friction: Optional&lt;number&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | friction | Optional&lt;number&gt; | 是 | 摩擦系数，手动滑动滚动区域时生效，仅影响惯性滚动过程。设置为小于等于0的值时，按默认值处理。 默认值：0.8 取值范围：(0, +∞) |
@@ -247,9 +268,10 @@ friction(friction: Optional&lt;number&gt;)
 
 
 
-#### scrollBarWidth
+### scrollBarWidth
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scrollBarWidth(width: Optional&lt;LengthMetrics&gt;)
 
@@ -261,6 +283,7 @@ scrollBarWidth(width: Optional&lt;LengthMetrics&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | width | Optional&lt;LengthMetrics&gt; | 是 | ArcList滚动条在按压态下的宽度。 默认值：LengthMetrics.vp(24) 非按压态宽度：LengthMetrics.vp(4) 设置为负值、undefined等异常值时，按滚动条的普通态宽度处理。 单位：vp |
@@ -268,9 +291,10 @@ scrollBarWidth(width: Optional&lt;LengthMetrics&gt;)
 
 
 
-#### scrollBarColor
+### scrollBarColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scrollBarColor(color: Optional&lt;ColorMetrics&gt;)
 
@@ -282,6 +306,7 @@ scrollBarColor(color: Optional&lt;ColorMetrics&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | Optional&lt;ColorMetrics&gt; | 是 | 设置滚动条颜色。 默认值：ColorMetrics.numeric(0xA9FFFFFF) 异常值undefined和null按照无效值处理，本次设置不生效。 |
@@ -289,9 +314,10 @@ scrollBarColor(color: Optional&lt;ColorMetrics&gt;)
 
 
 
-#### flingSpeedLimit
+### flingSpeedLimit
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 flingSpeedLimit(speed: Optional&lt;number&gt;)
 
@@ -303,6 +329,7 @@ flingSpeedLimit(speed: Optional&lt;number&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | speed | Optional&lt;number&gt; | 是 | 惯性滚动动效开始时的最大初始速度。设置为小于等于0的值时，按默认值处理。 默认值：9000 单位：vp/s 取值范围：(0, +∞) 异常值undefined和null按照无效值处理，本次设置不生效。 |
@@ -310,9 +337,10 @@ flingSpeedLimit(speed: Optional&lt;number&gt;)
 
 
 
-#### childrenMainSize
+### childrenMainSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 childrenMainSize(size: Optional&lt;ChildrenMainSize&gt;)
 
@@ -324,6 +352,7 @@ childrenMainSize(size: Optional&lt;ChildrenMainSize&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | size | Optional&lt;ChildrenMainSize&gt; | 是 | 通过ChildrenMainSize对象向ArcList组件精确提供所有子组件在主轴方向的大小信息，能够确保ArcList组件在子组件主轴尺寸不统一、子组件的增删变动、以及使用scrollToIndex等场景时，仍能保持其滑动位置的准确性。进而保证了scrollTo能够精准跳转至指定位置，currentOffset或offset准确反映当前的滑动位置，且内置滚动条能够实现平滑移动，避免任何跳跃或突变。从API version 23开始，新增offset接口。 说明： 提供的主轴方向大小必须与子组件实际在主轴方向的大小一致，否则可能导致ArcList组件显示异常。子组件在主轴方向大小发生变化或进行增删操作时，必须通过调用ChildrenMainSize对象的方法在变更后通知ArcList组件，否则可能导致ArcList组件显示异常。 |
@@ -331,15 +360,17 @@ childrenMainSize(size: Optional&lt;ChildrenMainSize&gt;)
 
 
 
-#### 事件
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 事件
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### onScrollIndex
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### onScrollIndex
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onScrollIndex(handler: Optional&lt;ArcScrollIndexHandler&gt;)
 
@@ -353,6 +384,7 @@ ArcList的边缘效果为弹簧效果时，在ArcList滑动到边缘后继续滑
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handler | Optional&lt;ArcScrollIndexHandler&gt; | 是 | 有子组件划入或划出ArcList显示区域时触发该回调。 |
@@ -360,9 +392,10 @@ ArcList的边缘效果为弹簧效果时，在ArcList滑动到边缘后继续滑
 
 
 
-#### onReachStart
+### onReachStart
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onReachStart(handler: Optional&lt;VoidCallback&gt;)
 
@@ -376,6 +409,7 @@ onReachStart(handler: Optional&lt;VoidCallback&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handler | Optional&lt;VoidCallback&gt; | 是 | 列表到达起始位置时触发。 |
@@ -383,9 +417,10 @@ onReachStart(handler: Optional&lt;VoidCallback&gt;)
 
 
 
-#### onReachEnd
+### onReachEnd
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onReachEnd(handler: Optional&lt;VoidCallback&gt;)
 
@@ -399,6 +434,7 @@ ArcList边缘效果为弹簧效果时，滑动经过末尾位置时触发一次�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handler | Optional&lt;VoidCallback&gt; | 是 | 列表到达末尾位置时触发。 |
@@ -406,9 +442,10 @@ ArcList边缘效果为弹簧效果时，滑动经过末尾位置时触发一次�
 
 
 
-#### onScrollStart
+### onScrollStart
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onScrollStart(handler: Optional&lt;VoidCallback&gt;)
 
@@ -420,6 +457,7 @@ onScrollStart(handler: Optional&lt;VoidCallback&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handler | Optional&lt;VoidCallback&gt; | 是 | 列表滑动开始时触发。 |
@@ -427,9 +465,10 @@ onScrollStart(handler: Optional&lt;VoidCallback&gt;)
 
 
 
-#### onScrollStop
+### onScrollStop
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onScrollStop(handler: Optional&lt;VoidCallback&gt;)
 
@@ -441,6 +480,7 @@ onScrollStop(handler: Optional&lt;VoidCallback&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handler | Optional&lt;VoidCallback&gt; | 是 | 列表滑动停止时触发。 |
@@ -448,9 +488,10 @@ onScrollStop(handler: Optional&lt;VoidCallback&gt;)
 
 
 
-#### onWillScroll
+### onWillScroll
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onWillScroll(handler: Optional&lt;OnWillScrollCallback&gt;)
 
@@ -461,6 +502,7 @@ onWillScroll(handler: Optional&lt;OnWillScrollCallback&gt;)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Circle
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -473,9 +515,10 @@ onWillScroll(handler: Optional&lt;OnWillScrollCallback&gt;)
 
 
 
-#### onDidScroll
+### onDidScroll
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDidScroll(handler: Optional&lt;OnScrollCallback&gt;)
 
@@ -487,6 +530,7 @@ onDidScroll(handler: Optional&lt;OnScrollCallback&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handler | Optional&lt;OnScrollCallback&gt; | 是 | 列表滑动时触发的回调。 |
@@ -494,15 +538,17 @@ onDidScroll(handler: Optional&lt;OnScrollCallback&gt;)
 
 
 
-#### ArkListOptions
+## ArkListOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 包含创建ArcList组件的基础参数。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Circle
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -513,9 +559,10 @@ onDidScroll(handler: Optional&lt;OnScrollCallback&gt;)
 
 
 
-#### ArcScrollIndexHandler
+## ArcScrollIndexHandler
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ArcScrollIndexHandler = (start: number, end: number, center: number) => void
 
@@ -527,6 +574,7 @@ type ArcScrollIndexHandler = (start: number, end: number, center: number) => voi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | start | number | 是 | ArcList显示区域内第一个子组件的索引值。 |
@@ -536,9 +584,10 @@ type ArcScrollIndexHandler = (start: number, end: number, center: number) => voi
 
 
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例增加了ArcList支持标题栏设置的效果，子项自动缩放显示。
 
@@ -619,4 +668,4 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/oXNqpU2hRRa7Za1yRQ8GRA/zh-cn_image_0000002709646643.png?HW-CC-KV=V1&HW-CC-Date=20260818T063503Z&HW-CC-Expire=86400&HW-CC-Sign=3775267E78FA95BDDFD9353749052B345A782763051D4ABFB8A5590EA589D981)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/OtOth9ESQRCj4n5AjOZiPw/zh-cn_image_0000002747292579.png?HW-CC-KV=V1&HW-CC-Date=20260911T073111Z&HW-CC-Expire=86400&HW-CC-Sign=6C128BB12726C06D0E90FC291CD4A685412AA41798D01508CFE73E07E41CDD16)

@@ -1,9 +1,11 @@
 # EnterpriseAdminExtensionContext（企业设备管理扩展能力上下文环境）
 
-更新时间：2026-07-28 11:23:46（官网已下线）
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-application-enterpriseadminextensioncontext
 **支持设备：** Phone | PC/2in1 | Tablet
+
+EnterpriseAdminExtensionContext在@ohos.enterprise.common模块中作为类型导出，具体接口定义见本文档。
 
 EnterpriseAdminExtensionContext是[EnterpriseAdminExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterpriseadminextensionability)的上下文环境，继承自[ExtensionContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-extensioncontext)。
 
@@ -14,7 +16,8 @@ EnterpriseAdminExtensionContext是[EnterpriseAdminExtensionAbility](https://deve
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -24,7 +27,8 @@ import { common } from '@kit.MDMKit';
 
 
 
-#### EnterpriseAdminExtensionContext
+## EnterpriseAdminExtensionContext
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -32,33 +36,36 @@ import { common } from '@kit.MDMKit';
 
 
 
-#### startAbilityByAdmin
+### startAbilityByAdmin
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 startAbilityByAdmin(admin: Want, want: Want): Promise&lt;void&gt;
 
-在[EnterpriseAdminExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterpriseadminextensionability)组件中直接启动另外一个组件（页面没有弹窗提醒），目前支持[UIAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability)，[AppServiceExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-appserviceextensionability)。使用Promise异步回调。
+在[EnterpriseAdminExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterpriseadminextensionability)组件中静默启动另外一个组件（无需用户确认即可启动），支持[UIAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability)，[AppServiceExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-appserviceextensionability)。调用成功后，目标组件将被启动并进入运行状态。使用Promise异步回调。
 
 > [!NOTE]
 > 仅支持启动三方应用组件，不支持系统应用组件。 被启动的组件需要对外可见，即module.json5中的exported字段需要为true。 不支持 隐式Want启动 。 如果被启动的UIAbility有权限保护，需要额外申请对应的权限。
 
 
-**需要权限**：ohos.permission.ENTERPRISE_START_ABILITIES
+**需要权限：** ohos.permission.ENTERPRISE_START_ABILITIES
 
-**系统能力**：SystemCapability.Customization.EnterpriseDeviceManager
+**系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
-**模型约束**：此接口仅可在Stage模型下使用。
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| want | Want | 是 | 启动组件的必要信息，Want中必须包含被启动组件的abilityName和所在应用的bundleName。 |
+| admin | Want | 是 | 企业设备管理扩展组件。admin参数需传入当前应用自身的企业设备管理扩展组件信息，Want中必须包含当前应用的企业设备管理扩展能力的abilityName和所在应用的bundleName。设置后系统将以此参数验证调用方的设备管理员身份和权限。 |
+| want | Want | 是 | 启动组件的必要信息，Want中必须包含被启动组件的abilityName和所在应用的bundleName。设置后系统将根据bundleName定位目标应用，根据abilityName定位并启动目标组件。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -68,6 +75,7 @@ startAbilityByAdmin(admin: Want, want: Want): Promise&lt;void&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -127,7 +135,7 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
     // 需根据实际情况进行替换
     let admin: Want = {
       bundleName: 'com.example.myapplication',
-      abilityName: 'EnterpriseAdminAbility',
+      abilityName: 'EnterpriseAdminAbility'
     };
     // 需根据实际情况进行替换
     let want: Want = {
@@ -145,7 +153,7 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
     // 通过context获取到preferences数据
     let options: preferences.Options = {
       // 需根据实际情况进行替换
-      name: "key",
+      name: "key"
     };
     try {
       let preference = preferences.getPreferencesSync(this.context, options);

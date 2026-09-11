@@ -1,6 +1,6 @@
 # @ohos.data.cloudData (端云服务)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-data-clouddata
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -14,7 +14,8 @@
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -24,13 +25,15 @@ import { cloudData } from '@kit.ArkData';
 
 
 
-#### StrategyType
+## StrategyType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 云同步策略类型枚举。
 
 **系统能力：** SystemCapability.DistributedDataManager.CloudSync.Client
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -39,13 +42,15 @@ import { cloudData } from '@kit.ArkData';
 
 
 
-#### NetWorkStrategy
+## NetWorkStrategy
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 网络策略参数枚举。
 
 **系统能力：** SystemCapability.DistributedDataManager.CloudSync.Client
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -55,7 +60,8 @@ import { cloudData } from '@kit.ArkData';
 
 
 
-#### AutoSyncTriggerMode
+## AutoSyncTriggerMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -66,6 +72,7 @@ import { cloudData } from '@kit.ArkData';
 **系统能力：** SystemCapability.DistributedDataManager.CloudSync.Client
 
 **模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -78,7 +85,8 @@ import { cloudData } from '@kit.ArkData';
 
 
 
-#### AutoSyncTriggerInfo
+## AutoSyncTriggerInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -90,6 +98,7 @@ import { cloudData } from '@kit.ArkData';
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | mode | AutoSyncTriggerMode | 否 | 否 | 自动同步触发模式。 |
@@ -97,7 +106,8 @@ import { cloudData } from '@kit.ArkData';
 
 
 
-#### cloudData.setCloudStrategy
+## cloudData.setCloudStrategy
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -109,6 +119,7 @@ setCloudStrategy(strategy: StrategyType, param?: Array<commonType.ValueType>): P
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | strategy | StrategyType | 是 | 配置的策略类型。 |
@@ -116,6 +127,7 @@ setCloudStrategy(strategy: StrategyType, param?: Array<commonType.ValueType>): P
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -125,6 +137,7 @@ setCloudStrategy(strategy: StrategyType, param?: Array<commonType.ValueType>): P
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -147,7 +160,8 @@ cloudData.setCloudStrategy(cloudData.StrategyType.NETWORK, [cloudData.NetWorkStr
 
 
 
-#### cloudData.onAutoSyncTrigger
+## cloudData.onAutoSyncTrigger
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -163,14 +177,16 @@ onAutoSyncTrigger(observer: Callback&lt;AutoSyncTriggerInfo&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| observer | Callback&lt;AutoSyncTriggerInfo&gt; | 是 | 回调函数。 |
+| observer | Callback&lt;AutoSyncTriggerInfo&gt; | 是 | 回调函数，返回自动同步触发信息。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -189,7 +205,8 @@ cloudData.onAutoSyncTrigger(autoSyncTriggerObserver);
 
 
 
-#### cloudData.offAutoSyncTrigger
+## cloudData.offAutoSyncTrigger
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -205,6 +222,7 @@ offAutoSyncTrigger(observer?: Callback&lt;AutoSyncTriggerInfo&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | observer | Callback&lt;AutoSyncTriggerInfo&gt; | 否 | 回调函数。 若传入observer，则取消指定回调函数的订阅；若不传入observer，则取消所有已注册的订阅。 |
@@ -213,6 +231,7 @@ offAutoSyncTrigger(observer?: Callback&lt;AutoSyncTriggerInfo&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

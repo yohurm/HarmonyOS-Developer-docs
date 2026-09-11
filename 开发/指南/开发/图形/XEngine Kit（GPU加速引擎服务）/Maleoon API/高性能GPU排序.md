@@ -1,6 +1,6 @@
 # 高性能GPU排序
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xengine-kit-high-performance-gpu-sorting
 
@@ -9,7 +9,7 @@
 XEngine Kit高性能着色器(High Performance Shaders，HPS)特性提供GPU排序能力。相比于其它排序能力，该能力依托于华为Maleoon GPU的软硬结合优化，效率更高。
 
 
-#### 约束与限制
+## 约束与限制
 
 可通过以下方式查询相关扩展特性是否支持：
 
@@ -17,9 +17,10 @@ XEngine Kit高性能着色器(High Performance Shaders，HPS)特性提供GPU排�
 
 
 
-#### 接口说明
+## 接口说明
 
 以下接口为使用高性能GPU排序所需要使用的接口，关于这些接口的详细说明见[接口文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-kit-xengine)。
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -30,12 +31,12 @@ XEngine Kit高性能着色器(High Performance Shaders，HPS)特性提供GPU排�
 
 
 
-#### 业务流程
+## 业务流程
 
  - 下面是以Vulkan应用程序渲染为例，说明使用高性能GPU排序的主要业务流程
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/K2po79VIQPG4nHKavmiupw/zh-cn_image_0000002674473572.jpg?HW-CC-KV=V1&HW-CC-Date=20260813T095837Z&HW-CC-Expire=86400&HW-CC-Sign=617246787B56B78D5DF4B8102EE83FEAB1911B3EAFA86B68B4995D8DE016888A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/neOV0Z6lSFW0Xw31u0CzQQ/zh-cn_image_0000002747291559.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T073151Z&HW-CC-Expire=86400&HW-CC-Sign=82E474DD0FD0C38260ECE2D189F5DD12BE2407A8FA17289DAFF1ABF6FD735A2E)
 
 
 1. 应用调用[HMS_XEG_EnumerateDeviceExtensionProperties](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-kit-xengine#hms_xeg_enumeratedeviceextensionproperties)接口获取XEngine Kit支持的扩展属性列表。检查返回列表中是否包含[XEG_HPS_RADIX_SORT_EXTENSION_NAME](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-kit-xengine#xeg_hps_radix_sort_extension_name)。若不包含，则当前设备不支持此特性，流程终止。
@@ -46,13 +47,13 @@ XEngine Kit高性能着色器(High Performance Shaders，HPS)特性提供GPU排�
 
 
 
-#### 开发步骤
+## 开发步骤
 
 本章以在Vulkan应用程序渲染为例，说明使用高性能GPU排序的开发步骤。
 
 
 
-#### 配置项目
+### 配置项目
 
 编译HAP包时，Native层so需要依赖NDK中的XEngine相关库和头文件。
 
@@ -90,7 +91,7 @@ target_link_libraries(nativerender PUBLIC
 
 
 
-#### 集成高性能GPU排序（Vulkan）
+### 集成高性能GPU排序（Vulkan）
 
 XEngine 高性能GPU排序可以独立使用。相关代码在Native层实现。
 

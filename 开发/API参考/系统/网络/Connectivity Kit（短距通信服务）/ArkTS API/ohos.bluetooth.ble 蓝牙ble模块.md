@@ -1,20 +1,21 @@
 # @ohos.bluetooth.ble (蓝牙ble模块)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bluetooth-ble
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-本模块提供了基于低功耗蓝牙（Bluetooth Low Energy，[BLE](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#ble)）技术的蓝牙能力，支持发起BLE扫描、发送BLE广播报文、以及基于通用属性协议（Generic Attribute Profile，[GATT](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#gatt)）的连接和传输数据。
+本模块提供了基于低功耗蓝牙（Bluetooth Low Energy，[BLE](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#ble)）技术的蓝牙能力，支持发起BLE扫描、发送BLE广播报文、以及基于通用属性协议（Generic Attribute Profile，[GATT](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#gatt)）的连接和传输数据。适用于智能穿戴设备、健康监测、物联网设备互联等低功耗短距离无线通信场景，有助于降低设备功耗、延长续航时间。
 
 > [!NOTE]
 > 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 接口中涉及的 UUID 服务，可以通过工具函数 util.generateRandomUUID 生成。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { ble } from '@kit.ConnectivityKit';
@@ -22,9 +23,10 @@ import { ble } from '@kit.ConnectivityKit';
 
 
 
-#### ProfileConnectionState
+## ProfileConnectionState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ProfileConnectionState = constant.ProfileConnectionState
 
@@ -36,6 +38,7 @@ type ProfileConnectionState = constant.ProfileConnectionState
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | constant.ProfileConnectionState | 蓝牙设备的profile连接状态。 |
@@ -43,9 +46,10 @@ type ProfileConnectionState = constant.ProfileConnectionState
 
 
 
-#### BluetoothAddress23+
+## BluetoothAddress23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type BluetoothAddress = common.BluetoothAddress
 
@@ -55,6 +59,7 @@ type BluetoothAddress = common.BluetoothAddress
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | common.BluetoothAddress | 蓝牙设备的地址信息。 |
@@ -62,9 +67,10 @@ type BluetoothAddress = common.BluetoothAddress
 
 
 
-#### BluetoothTransport
+## BluetoothTransport
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type BluetoothTransport = connection.BluetoothTransport
 
@@ -78,16 +84,18 @@ type BluetoothTransport = connection.BluetoothTransport
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
-| connection.BluetoothTransport | 远程设备的传输类型。 |
+| connection.BluetoothTransport | 远端设备的传输类型。 |
 
 
 
 
-#### ble.createGattServer
+## ble.createGattServer
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createGattServer(): GattServer
 
@@ -104,6 +112,7 @@ createGattServer(): GattServer
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | GattServer | 返回一个Gatt服务的实例。 |
@@ -118,9 +127,10 @@ console.info('gatt success');
 
 
 
-#### ble.createGattClientDevice
+## ble.createGattClientDevice
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createGattClientDevice(deviceId: string): GattClientDevice
 
@@ -139,12 +149,14 @@ createGattClientDevice(deviceId: string): GattClientDevice
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 对端设备地址， 例如："XX:XX:XX:XX:XX:XX"。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -154,6 +166,7 @@ createGattClientDevice(deviceId: string): GattClientDevice
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -173,9 +186,10 @@ try {
 
 
 
-#### ble.createGattClientDevice
+## ble.createGattClientDevice
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createGattClientDevice(deviceId: string, setting: GattSetting): GattClientDevice
 
@@ -183,6 +197,8 @@ createGattClientDevice(deviceId: string, setting: GattSetting): GattClientDevice
 
  - 通过该实例可以操作client端行为，如调用[connect](#connect)向对端设备发起连接，调用[getServices](#getservices)获取对端设备支持的所有服务能力。
  - 创建该实例所需要的设备地址表示server端设备。可以通过[ble.startBLEScan](#blestartblescan)或[BleScanner](#blescanner15)的[startScan](#startscan15)接口获取server端设备地址，且需保证server端设备的BLE广播是可连接的。
+ - 通过[GattSetting](#gattsetting)设置连接的传输类型transport时，若不清楚设备的传输类型[BluetoothTransport](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bluetooth-connection#bluetoothtransport)，默认为[TRANSPORT_LE](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bluetooth-connection#bluetoothtransport)，但不能设置为[TRANSPORT_UNKNOWN](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bluetooth-connection#bluetoothtransport)（未知的设备传输方式），否则无法成功创建[GattClientDevice](#gattclientdevice)实例。
+ - 若支持远端设备可用时自动连接，即GattSetting参数autoConnect设为true时，对端的[蓝牙设备地址类型](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bluetooth-overview#蓝牙设备地址类型)须为Public Address（公共设备地址）、Static Random Address（静态随机地址）或者是通过[connection.pairDevice](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bluetooth-connection#connectionpairdevice)配对后的Resolvable Private Address（可解析私有地址）。未配对的Resolvable Private Address（可解析私有地址）不支持远端设备可用时自动连接，调用connect也无法连接到对端设备。
 
 
 **起始版本**：26.0.0
@@ -195,6 +211,7 @@ createGattClientDevice(deviceId: string, setting: GattSetting): GattClientDevice
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 对端设备的MAC地址，例如："XX:XX:XX:XX:XX:XX"。 |
@@ -203,14 +220,16 @@ createGattClientDevice(deviceId: string, setting: GattSetting): GattClientDevice
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| GattClientDevice | GATT客户端类，使用client端方法之前需要创建该类的实例进行操作。 |
+| GattClientDevice | client端类，使用client端方法之前需要创建该类的实例进行操作。 |
 
 
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -234,9 +253,10 @@ try {
 
 
 
-#### ble.getConnectedBLEDevices
+## ble.getConnectedBLEDevices
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getConnectedBLEDevices(): Array&lt;string&gt;
 
@@ -257,6 +277,7 @@ getConnectedBLEDevices(): Array&lt;string&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;string&gt; | 返回和本机设备已建立GATT连接的BLE设备地址集合。 基于信息安全考虑，此处获取的设备地址为虚拟MAC地址。 - 若和该设备地址配对成功后，该地址不会变更。 - 若该设备重启蓝牙开关，重新获取到的虚拟地址会立即变更。 - 若取消配对，蓝牙子系统会根据该地址的实际使用情况，决策后续变更时机；若其他应用正在使用该地址，则不会立刻变更。 - 若要持久化保存该地址，可使用access.addPersistentDeviceId方法。 |
@@ -265,6 +286,7 @@ getConnectedBLEDevices(): Array&lt;string&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -287,9 +309,10 @@ try {
 
 
 
-#### ble.getConnectedBLEDevices21+
+## ble.getConnectedBLEDevices21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getConnectedBLEDevices(profile: BleProfile): Array&lt;string&gt;
 
@@ -312,6 +335,7 @@ getConnectedBLEDevices(profile: BleProfile): Array&lt;string&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | profile | BleProfile | 是 | 当前设备的Profile协议类型，表明该设备在GATT链路中的通信角色。 - GATT_CLIENT表示指定本机设备为client端角色，与其建立GATT连接的所有对端设备为server端角色。 |
@@ -319,14 +343,16 @@ getConnectedBLEDevices(profile: BleProfile): Array&lt;string&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Array&lt;string&gt; | 返回和本机设备已建立GATT连接的BLE设备地址集合。 基于信息安全考虑，此处获取的设备地址为虚拟MAC地址。 - 若和该设备地址配对成功后，该地址不会变更。 - 取消配对该设备或蓝牙关闭后，若重新获取，该虚拟地址会变更。 - 若要持久化保存该地址，可使用access.addPersistentDeviceId方法 |
+| Array&lt;string&gt; | 返回和本机设备已建立GATT连接的BLE设备地址集合。 基于信息安全考虑，此处获取的设备地址为虚拟MAC地址。 - 若和该设备地址配对成功后，该地址不会变更。 - 取消配对该设备或蓝牙关闭后，若重新获取，该虚拟地址会变更。蓝牙子系统会根据该地址的实际使用情况决策后续变更时机；若其他应用正在使用该地址，则不会立刻变更。 - 若要持久化保存该地址，可使用access.addPersistentDeviceId方法 |
 
 
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -349,9 +375,10 @@ try {
 
 
 
-#### ble.startBLEScan
+## ble.startBLEScan
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startBLEScan(filters: Array&lt;ScanFilter&gt;, options?: ScanOptions): void
 
@@ -372,15 +399,17 @@ startBLEScan(filters: Array&lt;ScanFilter&gt;, options?: ScanOptions): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| filters | Array&lt;ScanFilter&gt; | 是 | 表示扫描结果过滤策略集合，符合过滤条件的设备发现会保留。 -若该参数设置为null，将扫描所有可发现的周边BLE设备，但是不建议使用此方式，可能扫描到非预期设备，并增加功耗。 |
-| options | ScanOptions | 否 | 表示扫描的参数配置。 |
+| filters | Array&lt;ScanFilter&gt; | 是 | 表示扫描结果过滤策略集合，符合过滤条件的设备会被保留。 -若该参数设置为null，将扫描所有可发现的周边BLE设备，但是不建议使用此方式，可能扫描到非预期设备，并增加功耗。 |
+| options | ScanOptions | 否 | 表示扫描的参数配置。不填写时使用默认配置。 |
 
 
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -425,9 +454,10 @@ try {
 
 
 
-#### ble.stopBLEScan
+## ble.stopBLEScan
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopBLEScan(): void
 
@@ -450,6 +480,7 @@ stopBLEScan(): void
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -471,9 +502,10 @@ try {
 
 
 
-#### ble.startAdvertising
+## ble.startAdvertising
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startAdvertising(setting: AdvertiseSetting, advData: AdvertiseData, advResponse?: AdvertiseData): void
 
@@ -498,16 +530,18 @@ startAdvertising(setting: AdvertiseSetting, advData: AdvertiseData, advResponse?
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | setting | AdvertiseSetting | 是 | BLE广播的相关参数。 |
 | advData | AdvertiseData | 是 | BLE广播报文内容。 |
-| advResponse | AdvertiseData | 否 | BLE扫描回复广播报文。 |
+| advResponse | AdvertiseData | 否 | BLE扫描回复广播报文。若不填写，则不携带扫描回复广播报文。 |
 
 
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -572,9 +606,10 @@ try {
 
 
 
-#### ble.stopAdvertising
+## ble.stopAdvertising
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopAdvertising(): void
 
@@ -597,6 +632,7 @@ stopAdvertising(): void
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -618,16 +654,17 @@ try {
 
 
 
-#### ble.startAdvertising11+
+## ble.startAdvertising11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startAdvertising(advertisingParams: AdvertisingParams, callback: AsyncCallback&lt;number&gt;): void
 
 首次启动发送BLE广播报文。使用Callback异步回调。
 
  - 启动成功后，蓝牙子系统会分配相关资源，并使用Callback异步返回该广播的标识。
- - 若携带了发送广播持续时间，则一定时间后，广播会停止发送，但分配的广播资源还存在，可以通过[ble.enableAdvertising](#bleenableadvertising11)重新启动发送该广播。
+ - 若携带了发送广播持续时间，则达到该持续时间后，广播会停止发送，但分配的广播资源还存在，可以通过[ble.enableAdvertising](#bleenableadvertising11)重新启动发送该广播。
  - 从API version 15开始，应用可多次调用，支持发起多路广播，每一路广播通过不同的ID标识管理。
  - 当应用不再需要该广播时，需调用API version 11开始支持的[ble.stopAdvertising](#blestopadvertising11)完全停止该广播，不要与API version 10开始支持的[ble.stopAdvertising](#blestopadvertising)混用。
 
@@ -645,15 +682,17 @@ startAdvertising(advertisingParams: AdvertisingParams, callback: AsyncCallback&l
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | advertisingParams | AdvertisingParams | 是 | 启动BLE广播的相关参数。 |
-| callback | AsyncCallback&lt;number&gt; | 是 | 广播ID标识，通过注册回调函数获取。 |
+| callback | AsyncCallback&lt;number&gt; | 是 | 回调函数。当广播启动成功，err为undefined，data为分配的广播ID标识；否则为错误对象。 |
 
 
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -732,16 +771,17 @@ try {
 
 
 
-#### ble.startAdvertising11+
+## ble.startAdvertising11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startAdvertising(advertisingParams: AdvertisingParams): Promise&lt;number&gt;
 
 首次启动发送BLE广播报文。使用Promise异步回调。
 
  - 启动成功后，蓝牙子系统会分配相关资源，并使用Promise异步返回该广播的标识。
- - 若携带了发送广播持续时间，则一定时间后，广播会停止发送，但分配的广播资源还存在，可以通过[ble.enableAdvertising](#bleenableadvertising11)重新启动发送该广播。
+ - 若携带了发送广播持续时间，则达到该持续时间后，广播会停止发送，但分配的广播资源还存在，可以通过[ble.enableAdvertising](#bleenableadvertising11)重新启动发送该广播。
  - 从API version 15开始，应用可多次调用，支持发起多路广播，每一路广播通过不同的ID标识管理。
  - 当应用不再需要该广播时，需调用API version 11开始支持的[ble.stopAdvertising](#blestopadvertising11-1)完全停止该广播，不要与API version 10开始支持的[ble.stopAdvertising](#blestopadvertising)混用。
 
@@ -759,12 +799,14 @@ startAdvertising(advertisingParams: AdvertisingParams): Promise&lt;number&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | advertisingParams | AdvertisingParams | 是 | 启动BLE广播的相关参数。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -774,6 +816,7 @@ startAdvertising(advertisingParams: AdvertisingParams): Promise&lt;number&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -848,9 +891,10 @@ try {
 
 
 
-#### ble.enableAdvertising11+
+## ble.enableAdvertising11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableAdvertising(advertisingEnableParams: AdvertisingEnableParams, callback: AsyncCallback&lt;void&gt;): void
 
@@ -870,15 +914,258 @@ enableAdvertising(advertisingEnableParams: AdvertisingEnableParams, callback: As
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | advertisingEnableParams | AdvertisingEnableParams | 是 | 临时启动BLE广播的相关参数。 |
-| callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。 |
+| callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当重新启动广播成功，err为undefined，否则为错误对象。 |
 
 
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 801 | Capability not supported. |
+| 2900001 | Service stopped. |
+| 2900003 | Bluetooth disabled. |
+| 2900099 | Operation failed. |
+| 2902055 | Invalid advertising id. 适用版本：20+ |
+
+
+**示例**：
+
+```json
+let manufactureValueBuffer = new Uint8Array(4);
+manufactureValueBuffer[0] = 1;
+manufactureValueBuffer[1] = 2;
+manufactureValueBuffer[2] = 3;
+manufactureValueBuffer[3] = 4;
+
+let serviceValueBuffer = new Uint8Array(4);
+serviceValueBuffer[0] = 4;
+serviceValueBuffer[1] = 6;
+serviceValueBuffer[2] = 7;
+serviceValueBuffer[3] = 8;
+console.info('manufactureValueBuffer = '+ JSON.stringify(manufactureValueBuffer));
+console.info('serviceValueBuffer = '+ JSON.stringify(serviceValueBuffer));
+try {
+    let setting: ble.AdvertiseSetting = {
+        interval:150,
+        txPower:0,
+        connectable:true,
+        isExtended:false
+    };
+    let manufactureDataUnit: ble.ManufactureData = {
+        manufactureId:4567,
+        manufactureValue:manufactureValueBuffer.buffer
+    };
+    let serviceDataUnit: ble.ServiceData = {
+        serviceUuid:"00001888-0000-1000-8000-00805f9b34fb",
+        serviceValue:serviceValueBuffer.buffer
+    };
+    let advData: ble.AdvertiseData = {
+        serviceUuids:["00001888-0000-1000-8000-00805f9b34fb"],
+        manufactureData:[manufactureDataUnit],
+        serviceData:[serviceDataUnit]
+    };
+    let advResponse: ble.AdvertiseData = {
+        serviceUuids:["00001888-0000-1000-8000-00805f9b34fb"],
+        manufactureData:[manufactureDataUnit],
+        serviceData:[serviceDataUnit]
+    };
+    let advertisingParams: ble.AdvertisingParams = {
+        advertisingSettings: setting,
+        advertisingData: advData,
+        advertisingResponse: advResponse,
+        duration: 0
+    }
+    let advHandle = 0xFF;
+    ble.startAdvertising(advertisingParams, (err, outAdvHandle) => {
+        if (err) {
+            return;
+        } else {
+            advHandle = outAdvHandle;
+            console.info("advHandle: " + advHandle);
+        }
+    });
+
+    let advertisingDisableParams: ble.AdvertisingDisableParams = {
+        advertisingId: advHandle
+    }
+    ble.disableAdvertising(advertisingDisableParams, (err) => {
+        if (err) {
+            return;
+        }
+    });
+} catch (err) {
+    console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
+}
+```
+
+
+
+## ble.enableAdvertising11+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+enableAdvertising(advertisingEnableParams: AdvertisingEnableParams): Promise&lt;void&gt;
+
+重新启动指定标识的BLE广播。使用Promise异步回调。
+
+ - [AdvertisingEnableParams](#advertisingenableparams11)中advertisingId对应的广播资源已在[ble.startAdvertising](#blestartadvertising11)首次启动广播时分配。
+ - 若[ble.startAdvertising](#blestartadvertising11)首次启动广播时指定了广播持续时间，超时后广播自动停止，调用此接口可重新启动同一路BLE广播。
+ - 通过[ble.disableAdvertising](#bledisableadvertising11)停止的广播，调用此接口可重新启动同一路BLE广播。
+ - 通过[ble.on('advertisingStateChange')](#bleonadvertisingstatechange11)回调获取启动广播结果。
+
+
+**需要权限**：ohos.permission.ACCESS_BLUETOOTH
+
+**系统能力**：SystemCapability.Communication.Bluetooth.Core
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
+
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| advertisingEnableParams | AdvertisingEnableParams | 是 | 临时启动BLE广播的相关参数。 |
+
+
+**返回值**：
+
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
+
+
+**错误码**：
+
+以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
+| 801 | Capability not supported. |
+| 2900001 | Service stopped. |
+| 2900003 | Bluetooth disabled. |
+| 2900099 | Operation failed. |
+| 2902055 | Invalid advertising id. 适用版本：20+ |
+
+
+**示例**：
+
+```json
+let manufactureValueBuffer = new Uint8Array(4);
+manufactureValueBuffer[0] = 1;
+manufactureValueBuffer[1] = 2;
+manufactureValueBuffer[2] = 3;
+manufactureValueBuffer[3] = 4;
+
+let serviceValueBuffer = new Uint8Array(4);
+serviceValueBuffer[0] = 4;
+serviceValueBuffer[1] = 6;
+serviceValueBuffer[2] = 7;
+serviceValueBuffer[3] = 8;
+console.info('manufactureValueBuffer = '+ JSON.stringify(manufactureValueBuffer));
+console.info('serviceValueBuffer = '+ JSON.stringify(serviceValueBuffer));
+try {
+    let setting: ble.AdvertiseSetting = {
+        interval:150,
+        txPower:0,
+        connectable:true,
+        isExtended:false
+    };
+    let manufactureDataUnit: ble.ManufactureData = {
+        manufactureId:4567,
+        manufactureValue:manufactureValueBuffer.buffer
+    };
+    let serviceDataUnit: ble.ServiceData = {
+        serviceUuid:"00001888-0000-1000-8000-00805f9b34fb",
+        serviceValue:serviceValueBuffer.buffer
+    };
+    let advData: ble.AdvertiseData = {
+        serviceUuids:["00001888-0000-1000-8000-00805f9b34fb"],
+        manufactureData:[manufactureDataUnit],
+        serviceData:[serviceDataUnit]
+    };
+    let advResponse: ble.AdvertiseData = {
+        serviceUuids:["00001888-0000-1000-8000-00805f9b34fb"],
+        manufactureData:[manufactureDataUnit],
+        serviceData:[serviceDataUnit]
+    };
+    let advertisingParams: ble.AdvertisingParams = {
+        advertisingSettings: setting,
+        advertisingData: advData,
+        advertisingResponse: advResponse,
+        duration: 0
+    }
+    let advHandle = 0xFF;
+    ble.startAdvertising(advertisingParams, (err, outAdvHandle) => {
+        if (err) {
+            return;
+        } else {
+            advHandle = outAdvHandle;
+            console.info("advHandle: " + advHandle);
+        }
+    });
+
+    let advertisingDisableParams: ble.AdvertisingDisableParams = {
+        advertisingId: advHandle
+    }
+    ble.disableAdvertising(advertisingDisableParams)
+        .then(() => {
+            console.info("enable success");
+    });
+} catch (err) {
+    console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
+}
+```
+
+
+
+## ble.disableAdvertising11+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+disableAdvertising(advertisingDisableParams: AdvertisingDisableParams, callback: AsyncCallback&lt;void&gt;): void
+
+停止指定标识的BLE广播。使用Callback异步回调。
+
+ - 停止BLE广播，但不释放已申请的广播资源，调用[ble.enableAdvertising](#bleenableadvertising11)可重新启动此方法停止的广播。
+ - [AdvertisingDisableParams](#advertisingdisableparams11)中advertisingId对应的广播资源已在[ble.startAdvertising](#blestartadvertising11)首次启动广播时分配。
+ - 通过[ble.on('advertisingStateChange')](#bleonadvertisingstatechange11)回调获取停止广播结果。
+
+
+**需要权限**：ohos.permission.ACCESS_BLUETOOTH
+
+**系统能力**：SystemCapability.Communication.Bluetooth.Core
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
+
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| advertisingDisableParams | AdvertisingDisableParams | 是 | 临时关闭BLE广播的相关参数。 |
+| callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当停止广播成功，err为undefined，否则为错误对象。 |
+
+
+**错误码**：
+
+以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -966,18 +1253,18 @@ try {
 
 
 
-#### ble.enableAdvertising11+
+## ble.disableAdvertising11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-enableAdvertising(advertisingEnableParams: AdvertisingEnableParams): Promise&lt;void&gt;
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-重新启动指定标识的BLE广播。使用Promise异步回调。
+disableAdvertising(advertisingDisableParams: AdvertisingDisableParams): Promise&lt;void&gt;
 
- - [AdvertisingEnableParams](#advertisingenableparams11)中advertisingId对应的广播资源已在[ble.startAdvertising](#blestartadvertising11)首次启动广播时分配。
- - 若[ble.startAdvertising](#blestartadvertising11)首次启动广播时指定了广播持续时间，超时后广播自动停止，调用此接口可重新启动同一路BLE广播。
- - 通过[ble.disableAdvertising](#bledisableadvertising11)停止的广播，调用此接口可重新启动同一路BLE广播。
- - 通过[ble.on('advertisingStateChange')](#bleonadvertisingstatechange11)回调获取启动广播结果。
+停止指定标识的BLE广播。使用Promise异步回调。
+
+ - 停止BLE广播，但不释放已申请的广播资源，调用[ble.enableAdvertising](#bleenableadvertising11)可重新启动此方法停止的广播。
+ - [AdvertisingDisableParams](#advertisingdisableparams11)中advertisingId对应的广播资源已在[ble.startAdvertising](#blestartadvertising11)首次启动广播时分配。
+ - 通过[ble.on('advertisingStateChange')](#bleonadvertisingstatechange11)回调获取停止广播结果。
 
 
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
@@ -988,21 +1275,24 @@ enableAdvertising(advertisingEnableParams: AdvertisingEnableParams): Promise&lt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| advertisingEnableParams | AdvertisingEnableParams | 是 | 临时启动BLE广播的相关参数。 |
+| advertisingDisableParams | AdvertisingDisableParams | 是 | 临时关闭BLE广播的相关参数。 |
 
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | 回调函数。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1089,242 +1379,10 @@ try {
 
 
 
-#### ble.disableAdvertising11+
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-disableAdvertising(advertisingDisableParams: AdvertisingDisableParams, callback: AsyncCallback&lt;void&gt;): void
-
-停止指定标识的BLE广播。使用Callback异步回调。
-
- - 停止BLE广播，但不释放已申请的广播资源，调用[ble.enableAdvertising](#bleenableadvertising11)可重新启动此方法停止的广播。
- - [AdvertisingDisableParams](#advertisingdisableparams11)中advertisingId对应的广播资源已在[ble.startAdvertising](#blestartadvertising11)首次启动广播时分配。
- - 通过[ble.on('advertisingStateChange')](#bleonadvertisingstatechange11)回调获取停止广播结果。
+## ble.stopAdvertising11+
 
 
-**需要权限**：ohos.permission.ACCESS_BLUETOOTH
-
-**系统能力**：SystemCapability.Communication.Bluetooth.Core
-
-**模型约束**：此接口仅可在Stage模型下使用。
-
-**参数**：
-
-| 参数名 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
-| advertisingDisableParams | AdvertisingDisableParams | 是 | 临时关闭BLE广播的相关参数。 |
-| callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。 |
-
-
-**错误码**：
-
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 201 | Permission denied. |
-| 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
-| 801 | Capability not supported. |
-| 2900001 | Service stopped. |
-| 2900003 | Bluetooth disabled. |
-| 2900099 | Operation failed. |
-| 2902055 | Invalid advertising id. 适用版本：20+ |
-
-
-**示例**：
-
-```json
-let manufactureValueBuffer = new Uint8Array(4);
-manufactureValueBuffer[0] = 1;
-manufactureValueBuffer[1] = 2;
-manufactureValueBuffer[2] = 3;
-manufactureValueBuffer[3] = 4;
-
-let serviceValueBuffer = new Uint8Array(4);
-serviceValueBuffer[0] = 4;
-serviceValueBuffer[1] = 6;
-serviceValueBuffer[2] = 7;
-serviceValueBuffer[3] = 8;
-console.info('manufactureValueBuffer = '+ JSON.stringify(manufactureValueBuffer));
-console.info('serviceValueBuffer = '+ JSON.stringify(serviceValueBuffer));
-try {
-    let setting: ble.AdvertiseSetting = {
-        interval:150,
-        txPower:0,
-        connectable:true,
-        isExtended:false
-    };
-    let manufactureDataUnit: ble.ManufactureData = {
-        manufactureId:4567,
-        manufactureValue:manufactureValueBuffer.buffer
-    };
-    let serviceDataUnit: ble.ServiceData = {
-        serviceUuid:"00001888-0000-1000-8000-00805f9b34fb",
-        serviceValue:serviceValueBuffer.buffer
-    };
-    let advData: ble.AdvertiseData = {
-        serviceUuids:["00001888-0000-1000-8000-00805f9b34fb"],
-        manufactureData:[manufactureDataUnit],
-        serviceData:[serviceDataUnit]
-    };
-    let advResponse: ble.AdvertiseData = {
-        serviceUuids:["00001888-0000-1000-8000-00805f9b34fb"],
-        manufactureData:[manufactureDataUnit],
-        serviceData:[serviceDataUnit]
-    };
-    let advertisingParams: ble.AdvertisingParams = {
-        advertisingSettings: setting,
-        advertisingData: advData,
-        advertisingResponse: advResponse,
-        duration: 0
-    }
-    let advHandle = 0xFF;
-    ble.startAdvertising(advertisingParams, (err, outAdvHandle) => {
-        if (err) {
-            return;
-        } else {
-            advHandle = outAdvHandle;
-            console.info("advHandle: " + advHandle);
-        }
-    });
-
-    let advertisingDisableParams: ble.AdvertisingDisableParams = {
-        advertisingId: advHandle
-    }
-    ble.disableAdvertising(advertisingDisableParams, (err) => {
-        if (err) {
-            return;
-        }
-    });
-} catch (err) {
-    console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
-}
-```
-
-
-
-#### ble.disableAdvertising11+
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-disableAdvertising(advertisingDisableParams: AdvertisingDisableParams): Promise&lt;void&gt;
-
-停止指定标识的BLE广播。使用Promise异步回调。
-
- - 停止BLE广播，但不释放已申请的广播资源，调用[ble.enableAdvertising](#bleenableadvertising11)可重新启动此方法停止的广播。
- - [AdvertisingDisableParams](#advertisingdisableparams11)中advertisingId对应的广播资源已在[ble.startAdvertising](#blestartadvertising11)首次启动广播时分配。
- - 通过[ble.on('advertisingStateChange')](#bleonadvertisingstatechange11)回调获取停止广播结果。
-
-
-**需要权限**：ohos.permission.ACCESS_BLUETOOTH
-
-**系统能力**：SystemCapability.Communication.Bluetooth.Core
-
-**模型约束**：此接口仅可在Stage模型下使用。
-
-**参数**：
-
-| 参数名 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
-| advertisingDisableParams | AdvertisingDisableParams | 是 | 临时关闭BLE广播的相关参数。 |
-
-
-**返回值**：
-
-| 类型 | 说明 |
-| --- | --- |
-| Promise&lt;void&gt; | 回调函数。 |
-
-
-**错误码**：
-
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 201 | Permission denied. |
-| 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
-| 801 | Capability not supported. |
-| 2900001 | Service stopped. |
-| 2900003 | Bluetooth disabled. |
-| 2900099 | Operation failed. |
-| 2902055 | Invalid advertising id. 适用版本：20+ |
-
-
-**示例**：
-
-```json
-let manufactureValueBuffer = new Uint8Array(4);
-manufactureValueBuffer[0] = 1;
-manufactureValueBuffer[1] = 2;
-manufactureValueBuffer[2] = 3;
-manufactureValueBuffer[3] = 4;
-
-let serviceValueBuffer = new Uint8Array(4);
-serviceValueBuffer[0] = 4;
-serviceValueBuffer[1] = 6;
-serviceValueBuffer[2] = 7;
-serviceValueBuffer[3] = 8;
-console.info('manufactureValueBuffer = '+ JSON.stringify(manufactureValueBuffer));
-console.info('serviceValueBuffer = '+ JSON.stringify(serviceValueBuffer));
-try {
-    let setting: ble.AdvertiseSetting = {
-        interval:150,
-        txPower:0,
-        connectable:true,
-        isExtended:false
-    };
-    let manufactureDataUnit: ble.ManufactureData = {
-        manufactureId:4567,
-        manufactureValue:manufactureValueBuffer.buffer
-    };
-    let serviceDataUnit: ble.ServiceData = {
-        serviceUuid:"00001888-0000-1000-8000-00805f9b34fb",
-        serviceValue:serviceValueBuffer.buffer
-    };
-    let advData: ble.AdvertiseData = {
-        serviceUuids:["00001888-0000-1000-8000-00805f9b34fb"],
-        manufactureData:[manufactureDataUnit],
-        serviceData:[serviceDataUnit]
-    };
-    let advResponse: ble.AdvertiseData = {
-        serviceUuids:["00001888-0000-1000-8000-00805f9b34fb"],
-        manufactureData:[manufactureDataUnit],
-        serviceData:[serviceDataUnit]
-    };
-    let advertisingParams: ble.AdvertisingParams = {
-        advertisingSettings: setting,
-        advertisingData: advData,
-        advertisingResponse: advResponse,
-        duration: 0
-    }
-    let advHandle = 0xFF;
-    ble.startAdvertising(advertisingParams, (err, outAdvHandle) => {
-        if (err) {
-            return;
-        } else {
-            advHandle = outAdvHandle;
-            console.info("advHandle: " + advHandle);
-        }
-    });
-
-    let advertisingDisableParams: ble.AdvertisingDisableParams = {
-        advertisingId: advHandle
-    }
-    ble.disableAdvertising(advertisingDisableParams)
-        .then(() => {
-            console.info("enable success");
-    });
-} catch (err) {
-    console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
-}
-```
-
-
-
-#### ble.stopAdvertising11+
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopAdvertising(advertisingId: number, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1344,15 +1402,17 @@ stopAdvertising(advertisingId: number, callback: AsyncCallback&lt;void&gt;): voi
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | advertisingId | number | 是 | 需要停止的广播ID标识。 |
-| callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。 |
+| callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当完全停止广播成功，err为undefined，否则为错误对象。 |
 
 
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1434,9 +1494,10 @@ try {
 
 
 
-#### ble.stopAdvertising11+
+## ble.stopAdvertising11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopAdvertising(advertisingId: number): Promise&lt;void&gt;
 
@@ -1456,6 +1517,7 @@ stopAdvertising(advertisingId: number): Promise&lt;void&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | advertisingId | number | 是 | 需要停止的广播ID标识。 |
@@ -1463,14 +1525,16 @@ stopAdvertising(advertisingId: number): Promise&lt;void&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | 回调函数。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1551,9 +1615,10 @@ try {
 
 
 
-#### ble.on('advertisingStateChange')11+
+## ble.on('advertisingStateChange')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'advertisingStateChange', callback: Callback&lt;AdvertisingStateChangeInfo&gt;): void
 
@@ -1567,6 +1632,7 @@ on(type: 'advertisingStateChange', callback: Callback&lt;AdvertisingStateChangeI
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'advertisingStateChange'，表示广播状态事件。 当调用ble.startAdvertising、ble.stopAdvertising、ble.enableAdvertising、ble.disableAdvertising，广播状态改变时，均会触发该事件。 |
@@ -1576,6 +1642,7 @@ on(type: 'advertisingStateChange', callback: Callback&lt;AdvertisingStateChangeI
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1601,9 +1668,10 @@ try {
 
 
 
-#### ble.off('advertisingStateChange')11+
+## ble.off('advertisingStateChange')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'advertisingStateChange', callback?: Callback&lt;AdvertisingStateChangeInfo&gt;): void
 
@@ -1617,6 +1685,7 @@ off(type: 'advertisingStateChange', callback?: Callback&lt;AdvertisingStateChang
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'advertisingStateChange'，表示广播状态事件。 |
@@ -1626,6 +1695,7 @@ off(type: 'advertisingStateChange', callback?: Callback&lt;AdvertisingStateChang
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1652,9 +1722,10 @@ try {
 
 
 
-#### ble.on('BLEDeviceFind')
+## ble.on('BLEDeviceFind')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'BLEDeviceFind', callback: Callback<Array&lt;ScanResult&gt;>): void
 
@@ -1674,6 +1745,7 @@ on(type: 'BLEDeviceFind', callback: Callback<Array&lt;ScanResult&gt;>): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'BLEDeviceFind'，表示BLE设备扫描结果上报事件。 当调用ble.startBLEScan 后，开始BLE扫描，若扫描到BLE设备，触发该事件。 |
@@ -1683,6 +1755,7 @@ on(type: 'BLEDeviceFind', callback: Callback<Array&lt;ScanResult&gt;>): void
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1708,9 +1781,10 @@ try {
 
 
 
-#### ble.off('BLEDeviceFind')
+## ble.off('BLEDeviceFind')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'BLEDeviceFind', callback?: Callback<Array&lt;ScanResult&gt;>): void
 
@@ -1729,6 +1803,7 @@ off(type: 'BLEDeviceFind', callback?: Callback<Array&lt;ScanResult&gt;>): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'BLEDeviceFind'，表示BLE设备扫描结果上报事件。 |
@@ -1738,6 +1813,7 @@ off(type: 'BLEDeviceFind', callback?: Callback<Array&lt;ScanResult&gt;>): void
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1764,9 +1840,10 @@ try {
 
 
 
-#### GattServer
+## GattServer
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 GATT通信中的服务端类。
 
@@ -1777,9 +1854,10 @@ GATT通信中的服务端类。
 
 
 
-#### addService
+### addService
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addService(service: GattService): void
 
@@ -1795,6 +1873,7 @@ server端添加服务。该操作会在蓝牙子系统中注册该服务，表�
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | service | GattService | 是 | server端的service数据。表示支持的特定功能。 例如：00001800-0000-1000-8000-00805f9b34fb表示通用访问服务；00001801-0000-1000-8000-00805f9b34fb表示通用属性服务等。 |
@@ -1803,6 +1882,7 @@ server端添加服务。该操作会在蓝牙子系统中注册该服务，表�
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1850,13 +1930,14 @@ try {
 
 
 
-#### removeService
+### removeService
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeService(serviceUuid: string): void
 
-删除Server端已添加的服务。
+删除server端已添加的服务。
 
  - 该服务曾通过[addService](#addservice)添加。
 
@@ -1871,6 +1952,7 @@ removeService(serviceUuid: string): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | serviceUuid | string | 是 | 即将删除的服务的UUID。例如：00001810-0000-1000-8000-00805F9B34FB。 |
@@ -1879,6 +1961,7 @@ removeService(serviceUuid: string): void
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1905,13 +1988,14 @@ try {
 
 
 
-#### removeAllServices
+### removeAllServices
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeAllServices(): void
 
-删除Server端所有服务。
+删除server端所有服务。
 
 **起始版本**：26.0.0
 
@@ -1926,6 +2010,7 @@ removeAllServices(): void
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1949,9 +2034,10 @@ try {
 
 
 
-#### getService22+
+### getService22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getService(serviceUuid: string): GattService
 
@@ -1969,12 +2055,14 @@ getService(serviceUuid: string): GattService
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | serviceUuid | string | 是 | 需要获取的服务的UUID。例如：00001810-0000-1000-8000-00805F9B34FB。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1984,6 +2072,7 @@ getService(serviceUuid: string): GattService
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2014,9 +2103,10 @@ try {
 
 
 
-#### getServices22+
+### getServices22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getServices(): GattService[]
 
@@ -2033,6 +2123,7 @@ server端获取本端已添加的服务能力。
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | GattService[] | server端已添加的服务能力。 |
@@ -2041,6 +2132,7 @@ server端获取本端已添加的服务能力。
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2069,9 +2161,10 @@ try {
 
 
 
-#### close
+### close
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(): void
 
@@ -2088,6 +2181,7 @@ close(): void
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2112,9 +2206,10 @@ try {
 
 
 
-#### connect
+### connect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 connect(deviceId: string, autoConnect?: boolean): void
 
@@ -2137,6 +2232,7 @@ connect(deviceId: string, autoConnect?: boolean): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 对端设备的MAC地址，例如："XX:XX:XX:XX:XX:XX"。 |
@@ -2146,6 +2242,7 @@ connect(deviceId: string, autoConnect?: boolean): void
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2171,9 +2268,10 @@ try {
 
 
 
-#### disconnect
+### disconnect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 disconnect(deviceId: string): void
 
@@ -2193,6 +2291,7 @@ disconnect(deviceId: string): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 对端设备的MAC地址，例如："XX:XX:XX:XX:XX:XX"。 |
@@ -2201,6 +2300,7 @@ disconnect(deviceId: string): void
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2225,9 +2325,10 @@ try {
 
 
 
-#### notifyCharacteristicChanged
+### notifyCharacteristicChanged
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 notifyCharacteristicChanged(deviceId: string, notifyCharacteristic: NotifyCharacteristic, callback: AsyncCallback&lt;void&gt;): void
 
@@ -2249,6 +2350,7 @@ server端发送特征值变化通知或者指示给client端。使用Callback异
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 接收通知的client设备地址。例如：“XX:XX:XX:XX:XX:XX”。 |
@@ -2259,6 +2361,7 @@ server端发送特征值变化通知或者指示给client端。使用Callback异
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2297,17 +2400,19 @@ try {
 
 
 
-#### notifyCharacteristicChanged
+### notifyCharacteristicChanged
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 notifyCharacteristicChanged(deviceId: string, notifyCharacteristic: NotifyCharacteristic): Promise&lt;void&gt;
 
-server端发送特征值变化通知或者指示给对端设备。使用Promise异步回调。
+server端发送特征值变化通知或者指示给client端。使用Promise异步回调。
 
  - 建议该特征值的Client Characteristic Configuration描述符notification（通知）或indication（指示）能力已被使能。
  - 蓝牙标准协议规定Client Characteristic Configuration描述符的数据内容长度为2字节，bit0和bit1分别表示notification（通知）和indication（指示）能力是否使能，例如bit0 = 1表示notification enabled。
  - 该特征值数据内容变化时调用。
+ - [notifyCharacteristic](#notifycharacteristic)入参的characteristicValue数据长度默认限制为（MTU-3）字节，MTU大小可从订阅的回调[on('BLEMtuChange')](#onblemtuchange)获取。
 
 
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
@@ -2320,6 +2425,7 @@ server端发送特征值变化通知或者指示给对端设备。使用Promise�
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 接收通知的client设备地址。例如：“XX:XX:XX:XX:XX:XX”。 |
@@ -2327,6 +2433,7 @@ server端发送特征值变化通知或者指示给对端设备。使用Promise�
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2336,6 +2443,7 @@ server端发送特征值变化通知或者指示给对端设备。使用Promise�
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2370,9 +2478,10 @@ try {
 
 
 
-#### sendResponse
+### sendResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sendResponse(serverResponse: ServerResponse): void
 
@@ -2396,6 +2505,7 @@ client请求是指通过下述接口订阅回调收到的请求消息：
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | serverResponse | ServerResponse | 是 | server端回复client的响应数据。 |
@@ -2404,6 +2514,7 @@ client请求是指通过下述接口订阅回调收到的请求消息：
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2440,9 +2551,10 @@ try {
 
 
 
-#### on('characteristicRead')
+### on('characteristicRead')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'characteristicRead', callback: Callback&lt;CharacteristicReadRequest&gt;): void
 
@@ -2462,6 +2574,7 @@ server端订阅client的特征值读请求事件，server端收到该事件后�
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'characteristicRead'，表示特征值读请求事件。 当收到client端设备的读取特征值请求时，触发该事件。 |
@@ -2471,6 +2584,7 @@ server端订阅client的特征值读请求事件，server端收到该事件后�
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2506,9 +2620,10 @@ gattServer.on('characteristicRead', ReadCharacteristicReq);
 
 
 
-#### off('characteristicRead')
+### off('characteristicRead')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'characteristicRead', callback?: Callback&lt;CharacteristicReadRequest&gt;): void
 
@@ -2524,6 +2639,7 @@ server端取消订阅client的特征值读请求事件。
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'characteristicRead'，表示特征值读请求事件。 |
@@ -2533,6 +2649,7 @@ server端取消订阅client的特征值读请求事件。
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2555,9 +2672,10 @@ try {
 
 
 
-#### on('characteristicWrite')
+### on('characteristicWrite')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'characteristicWrite', callback: Callback&lt;CharacteristicWriteRequest&gt;): void
 
@@ -2577,6 +2695,7 @@ server端订阅client的特征值写请求事件，server端收到该事件后�
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'characteristicWrite'，表示特征值写请求事件。 当收到client端设备的写特征值请求时，触发该事件。 |
@@ -2586,6 +2705,7 @@ server端订阅client的特征值写请求事件，server端收到该事件后�
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2624,9 +2744,10 @@ gattServer.on('characteristicWrite', WriteCharacteristicReq);
 
 
 
-#### off('characteristicWrite')
+### off('characteristicWrite')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'characteristicWrite', callback?: Callback&lt;CharacteristicWriteRequest&gt;): void
 
@@ -2642,6 +2763,7 @@ server端取消订阅client的特征值写请求事件。
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'characteristicWrite'，表示特征值写请求事件。 |
@@ -2651,6 +2773,7 @@ server端取消订阅client的特征值写请求事件。
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2673,9 +2796,10 @@ try {
 
 
 
-#### on('descriptorRead')
+### on('descriptorRead')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'descriptorRead', callback: Callback&lt;DescriptorReadRequest&gt;): void
 
@@ -2695,6 +2819,7 @@ server端订阅client的描述符读请求事件，server端收到该事件后�
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'descriptorRead'，表示描述符读请求事件。 当收到client端设备的读取描述符请求时，触发该事件。 |
@@ -2704,6 +2829,7 @@ server端订阅client的描述符读请求事件，server端收到该事件后�
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2739,9 +2865,10 @@ gattServer.on('descriptorRead', ReadDescriptorReq);
 
 
 
-#### off('descriptorRead')
+### off('descriptorRead')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'descriptorRead', callback?: Callback&lt;DescriptorReadRequest&gt;): void
 
@@ -2757,6 +2884,7 @@ server端取消订阅client的描述符读请求事件。
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'descriptorRead'，表示描述符读请求事件。 |
@@ -2766,6 +2894,7 @@ server端取消订阅client的描述符读请求事件。
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2788,9 +2917,10 @@ try {
 
 
 
-#### on('descriptorWrite')
+### on('descriptorWrite')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'descriptorWrite', callback: Callback&lt;DescriptorWriteRequest&gt;): void
 
@@ -2810,6 +2940,7 @@ server端订阅client的描述符写请求事件，server端收到该事件后�
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'descriptorWrite'，表示描述符写请求事件。 当收到client端设备的写描述符请求时，触发该事件。 |
@@ -2819,6 +2950,7 @@ server端订阅client的描述符写请求事件，server端收到该事件后�
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2857,9 +2989,10 @@ gattServer.on('descriptorWrite', WriteDescriptorReq);
 
 
 
-#### off('descriptorWrite')
+### off('descriptorWrite')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'descriptorWrite', callback?: Callback&lt;DescriptorWriteRequest&gt;): void
 
@@ -2875,6 +3008,7 @@ server端取消订阅client的描述符写请求事件。
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'descriptorWrite'，表示描述符写请求事件。 |
@@ -2884,6 +3018,7 @@ server端取消订阅client的描述符写请求事件。
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2906,9 +3041,10 @@ gattServer.off('descriptorWrite');
 
 
 
-#### on('connectionStateChange')
+### on('connectionStateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'connectionStateChange', callback: Callback&lt;BLEConnectionChangeState&gt;): void
 
@@ -2928,15 +3064,17 @@ server端订阅GATT profile协议的连接状态变化事件。使用Callback异
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型，支持的事件为'connectionStateChange'，表示GATT profile连接状态发生变化的事件。 当client和server端之间的连接状态发生变化时，触发该事件。 例如：收到连接请求或者断连请求时，可能引起连接状态生变化。 |
+| type | string | 是 | 事件回调类型，支持的事件为'connectionStateChange'，表示GATT profile连接状态发生变化的事件。 当client和server端之间的连接状态发生变化时，触发该事件。 例如：收到连接请求或者断连请求时，可能引起连接状态发生变化。 |
 | callback | Callback&lt;BLEConnectionChangeState&gt; | 是 | 指定订阅的回调函数，会携带连接状态。 |
 
 
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2964,9 +3102,10 @@ try {
 
 
 
-#### off('connectionStateChange')
+### off('connectionStateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'connectionStateChange', callback?: Callback&lt;BLEConnectionChangeState&gt;): void
 
@@ -2982,6 +3121,7 @@ server端取消订阅GATT profile协议的连接状态变化事件。
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'connectionStateChange'，表示GATT profile连接状态发生变化的事件。 |
@@ -2991,6 +3131,7 @@ server端取消订阅GATT profile协议的连接状态变化事件。
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3013,9 +3154,10 @@ try {
 
 
 
-#### on('BLEMtuChange')
+### on('BLEMtuChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'BLEMtuChange', callback: Callback&lt;number&gt;): void
 
@@ -3029,15 +3171,17 @@ server端订阅MTU（最大传输单元）大小变更事件。使用Callback异
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型，支持的事件为'BLEMtuChange'，表示MTU状态变化事件。 当收到了client端发起了MTU协商请求时，触发该事件。 |
+| type | string | 是 | 事件回调类型，支持的事件为'BLEMtuChange'，表示MTU状态变化事件。 当收到client端发起的MTU协商请求时，触发该事件。 |
 | callback | Callback&lt;number&gt; | 是 | 指定订阅的回调函数，会携带协商后的MTU大小。单位：Byte。 |
 
 
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3062,9 +3206,10 @@ try {
 
 
 
-#### off('BLEMtuChange')
+### off('BLEMtuChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'BLEMtuChange', callback?: Callback&lt;number&gt;): void
 
@@ -3078,6 +3223,7 @@ server端取消订阅MTU（最大传输单元）大小变更事件。
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为"BLEMtuChange"，表示MTU状态变化事件。 |
@@ -3087,6 +3233,7 @@ server端取消订阅MTU（最大传输单元）大小变更事件。
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3109,9 +3256,10 @@ try {
 
 
 
-#### getConnectedState22+
+### getConnectedState22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getConnectedState(deviceId: string): ProfileConnectionState
 
@@ -3125,12 +3273,14 @@ getConnectedState(deviceId: string): ProfileConnectionState
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 要查询连接状态的对端蓝牙设备地址。例如："XX:XX:XX:XX:XX:XX"。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3140,6 +3290,7 @@ getConnectedState(deviceId: string): ProfileConnectionState
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3165,9 +3316,10 @@ try {
 
 
 
-#### readPhy23+
+### readPhy23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readPhy(deviceId: string): Promise&lt;PhyValue&gt;
 
@@ -3185,12 +3337,14 @@ readPhy(deviceId: string): Promise&lt;PhyValue&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| deviceId | string | 是 | 需要传输数据的client端蓝牙设备地址。例如："XX:XX:XX:XX:XX:XX"。 |
+| deviceId | string | 是 | 需要读取物理通道类型的client端蓝牙设备地址。例如："XX:XX:XX:XX:XX:XX"。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3200,6 +3354,7 @@ readPhy(deviceId: string): Promise&lt;PhyValue&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3226,9 +3381,10 @@ try {
 
 
 
-#### setPhy23+
+### setPhy23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setPhy(deviceId: string, phyValue: PhyValue): Promise&lt;void&gt;
 
@@ -3236,6 +3392,7 @@ server端设置和指定设备连接链路的物理通道类型。使用Promise�
 
  - 需先由client端发起连接，并等待连接成功后，再调用该方法。
  - 本端server调用setPhy设置和指定设备连接链路的物理通道类型后，底层会根据对端设备能力，协商出本端和对端设备均支持的物理通道类型作为最终结果。例如本端支持并设置[BLE_PHY_2M](#blephy23)，但对端设备仅支持[BLE_PHY_1M](#blephy23)，则最终设置的结果仍为[BLE_PHY_1M](#blephy23)。
+ - 协商后的最终物理通道类型可通过订阅[onBlePhyUpdate](#onblephyupdate23)事件获取。
 
 
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
@@ -3246,13 +3403,15 @@ server端设置和指定设备连接链路的物理通道类型。使用Promise�
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| deviceId | string | 是 | 需要传输数据的client端蓝牙设备地址。例如："XX:XX:XX:XX:XX:XX"。 |
+| deviceId | string | 是 | 需要设置物理通道类型的client端蓝牙设备地址。例如："XX:XX:XX:XX:XX:XX"。 |
 | phyValue | PhyValue | 是 | 连接链路的物理通道类型配置参数。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3262,6 +3421,7 @@ server端设置和指定设备连接链路的物理通道类型。使用Promise�
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3290,9 +3450,10 @@ try {
 
 
 
-#### onBlePhyUpdate23+
+### onBlePhyUpdate23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onBlePhyUpdate(callback: Callback&lt;PhyValue&gt;): void
 
@@ -3306,6 +3467,7 @@ onBlePhyUpdate(callback: Callback&lt;PhyValue&gt;): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;PhyValue&gt; | 是 | 指定订阅的回调函数，会携带变更后最新的物理通道类型。 当本端server调用setPhy或对端变更当前物理通道类型后，如订阅此事件，均会收到携带最新物理通道类型的回调函数。 |
@@ -3314,6 +3476,7 @@ onBlePhyUpdate(callback: Callback&lt;PhyValue&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3337,9 +3500,10 @@ try {
 
 
 
-#### offBlePhyUpdate23+
+### offBlePhyUpdate23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offBlePhyUpdate(callback?: Callback&lt;PhyValue&gt;): void
 
@@ -3353,6 +3517,7 @@ offBlePhyUpdate(callback?: Callback&lt;PhyValue&gt;): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;PhyValue&gt; | 否 | 指定取消订阅的回调函数。若传参，则需与onBlePhyUpdate中的回调函数一致， 若无传参，则取消订阅所有物理通道类型变更的回调函数通知。 |
@@ -3361,6 +3526,7 @@ offBlePhyUpdate(callback?: Callback&lt;PhyValue&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3384,9 +3550,10 @@ try {
 
 
 
-#### GattClientDevice
+## GattClientDevice
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 GATT客户端类，提供了和服务端进行连接和数据传输等操作方法。
 
@@ -3396,9 +3563,10 @@ GATT客户端类，提供了和服务端进行连接和数据传输等操作方�
 
 
 
-#### connect
+### connect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 connect(): void
 
@@ -3419,6 +3587,7 @@ client端主动发起和server蓝牙设备的GATT协议连接。
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3443,15 +3612,16 @@ try {
 
 
 
-#### disconnect
+### disconnect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 disconnect(): void
 
 client断开与远端蓝牙低功耗设备的连接。
 
- - client可通过订阅[on('BLEConnectionStateChange')](#onbleconnectionstatechange)事件来感知连接是否成功。
+ - client可通过订阅[on('BLEConnectionStateChange')](#onbleconnectionstatechange)事件来感知断连是否成功。
 
 
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
@@ -3465,6 +3635,7 @@ client断开与远端蓝牙低功耗设备的连接。
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3489,9 +3660,10 @@ try {
 
 
 
-#### close
+### close
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(): void
 
@@ -3508,6 +3680,7 @@ close(): void
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3532,13 +3705,16 @@ try {
 
 
 
-#### getDeviceName
+### getDeviceName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDeviceName(callback: AsyncCallback&lt;string&gt;): void
 
 client获取server端设备名称。使用Callback异步回调。
+
+需先调用[connect](#connect)方法，等GATT profile连接成功后才能使用。
 
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
 
@@ -3550,6 +3726,7 @@ client获取server端设备名称。使用Callback异步回调。
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;string&gt; | 是 | 回调函数。当读取成功，err为undefined，data为server端设备名称。 |
@@ -3558,6 +3735,7 @@ client获取server端设备名称。使用Callback异步回调。
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3594,13 +3772,16 @@ try {
 
 
 
-#### getDeviceName
+### getDeviceName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDeviceName(): Promise&lt;string&gt;
 
-client获取远端蓝牙低功耗设备的名称。使用Promise异步回调。
+client获取server端设备名称。使用Promise异步回调。
+
+需先调用[connect](#connect)方法，等GATT profile连接成功后才能使用。
 
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
 
@@ -3612,6 +3793,7 @@ client获取远端蓝牙低功耗设备的名称。使用Promise异步回调。
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，携带server端设备名称。 |
@@ -3620,6 +3802,7 @@ client获取远端蓝牙低功耗设备的名称。使用Promise异步回调。
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3656,16 +3839,17 @@ try {
 
 
 
-#### getServices
+### getServices
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getServices(callback: AsyncCallback<Array&lt;GattService&gt;>): void
 
 client获取server端支持的所有服务能力，即服务发现流程。使用Callback异步回调。
 
-应用调用该方法后，才能调用其他读写特征值、描述符等其他方法，且需确保server支持的服务能力中包含需要操作的特征值或描述符。包含接口如下所示：
-
+ - 需先调用[connect](#connect)方法，等GATT profile连接成功后才能使用。
+ - 应用调用该方法后，才能调用其他读写特征值、描述符等其他方法，且需确保server支持的服务能力中包含需要操作的特征值或描述符。包含接口如下所示：
  - [readCharacteristicValue](#readcharacteristicvalue)
  - [readDescriptorValue](#readdescriptorvalue)
  - [writeCharacteristicValue](#writecharacteristicvalue)
@@ -3684,6 +3868,7 @@ client获取server端支持的所有服务能力，即服务发现流程。使�
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<Array&lt;GattService&gt;> | 是 | 回调函数。当读取成功，err为undefined，data为server端的服务列表。 |
@@ -3692,6 +3877,7 @@ client获取server端支持的所有服务能力，即服务发现流程。使�
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3737,13 +3923,16 @@ try {
 
 
 
-#### getServices
+### getServices
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getServices(): Promise<Array&lt;GattService&gt;>
 
-client端获取蓝牙低功耗设备的所有服务，即服务发现。使用Promise异步回调。
+client端获取server端支持的所有服务能力，即服务发现流程。使用Promise异步回调。
+
+需先调用[connect](#connect)方法，等GATT profile连接成功后才能使用。
 
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
 
@@ -3755,6 +3944,7 @@ client端获取蓝牙低功耗设备的所有服务，即服务发现。使用Pr
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;GattService&gt;> | Promise对象，返回获取到的server端服务列表。 |
@@ -3763,6 +3953,7 @@ client端获取蓝牙低功耗设备的所有服务，即服务发现。使用Pr
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3798,9 +3989,10 @@ try {
 
 
 
-#### readCharacteristicValue
+### readCharacteristicValue
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readCharacteristicValue(characteristic: BLECharacteristic, callback: AsyncCallback&lt;BLECharacteristic&gt;): void
 
@@ -3821,6 +4013,7 @@ client端从指定的server端特征值读取数据。使用Callback异步回调
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | characteristic | BLECharacteristic | 是 | 需要读取的特征值。 |
@@ -3830,6 +4023,7 @@ client端从指定的server端特征值读取数据。使用Callback异步回调
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3886,9 +4080,10 @@ try {
 
 
 
-#### readCharacteristicValue
+### readCharacteristicValue
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readCharacteristicValue(characteristic: BLECharacteristic): Promise&lt;BLECharacteristic&gt;
 
@@ -3907,12 +4102,14 @@ client端从指定的server端特征值读取数据。使用Promise异步回调�
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | characteristic | BLECharacteristic | 是 | 需要读取的特征值。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3922,6 +4119,7 @@ client端从指定的server端特征值读取数据。使用Promise异步回调�
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3969,9 +4167,10 @@ try {
 
 
 
-#### readDescriptorValue
+### readDescriptorValue
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readDescriptorValue(descriptor: BLEDescriptor, callback: AsyncCallback&lt;BLEDescriptor&gt;): void
 
@@ -3990,6 +4189,7 @@ client端从指定的server端描述符读取数据。使用Callback异步回调
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | descriptor | BLEDescriptor | 是 | 需要读取的描述符。 |
@@ -3999,6 +4199,7 @@ client端从指定的server端描述符读取数据。使用Callback异步回调
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4048,9 +4249,10 @@ try {
 
 
 
-#### readDescriptorValue
+### readDescriptorValue
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readDescriptorValue(descriptor: BLEDescriptor): Promise&lt;BLEDescriptor&gt;
 
@@ -4069,12 +4271,14 @@ client端从指定的server端描述符读取数据。使用Promise异步回调�
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | descriptor | BLEDescriptor | 是 | 需要读取的描述符。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4084,6 +4288,7 @@ client端从指定的server端描述符读取数据。使用Promise异步回调�
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4124,9 +4329,10 @@ try {
 
 
 
-#### writeCharacteristicValue
+### writeCharacteristicValue
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeCharacteristicValue(characteristic: BLECharacteristic, writeType: GattWriteType, callback: AsyncCallback&lt;void&gt;): void
 
@@ -4147,6 +4353,7 @@ client端向指定的server端特征值写入数据。使用Callback异步回调
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | characteristic | BLECharacteristic | 是 | 需要写入的特征值，包含写入的数据内容。 |
@@ -4157,6 +4364,7 @@ client端向指定的server端特征值写入数据。使用Callback异步回调
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4209,9 +4417,10 @@ try {
 
 
 
-#### writeCharacteristicValue
+### writeCharacteristicValue
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeCharacteristicValue(characteristic: BLECharacteristic, writeType: GattWriteType): Promise&lt;void&gt;
 
@@ -4232,6 +4441,7 @@ client端向指定的server端特征值写入数据。使用Promise异步回调�
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | characteristic | BLECharacteristic | 是 | 需要写入的特征值，包含写入的数据内容。 |
@@ -4239,6 +4449,7 @@ client端向指定的server端特征值写入数据。使用Promise异步回调�
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4248,6 +4459,7 @@ client端向指定的server端特征值写入数据。使用Promise异步回调�
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4294,9 +4506,10 @@ try {
 
 
 
-#### writeDescriptorValue
+### writeDescriptorValue
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeDescriptorValue(descriptor: BLEDescriptor, callback: AsyncCallback&lt;void&gt;): void
 
@@ -4318,6 +4531,7 @@ client端向指定的server端描述符写入数据。使用Callback异步回调
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | descriptor | BLEDescriptor | 是 | 需要写入的描述符，包含写入的数据内容。 |
@@ -4327,6 +4541,7 @@ client端向指定的server端描述符写入数据。使用Callback异步回调
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4373,9 +4588,10 @@ try {
 
 
 
-#### writeDescriptorValue
+### writeDescriptorValue
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeDescriptorValue(descriptor: BLEDescriptor): Promise&lt;void&gt;
 
@@ -4397,12 +4613,14 @@ client端向指定的server端描述符写入数据。使用Promise异步回调�
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | descriptor | BLEDescriptor | 是 | 需要写入的描述符，包含写入的数据内容。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4412,6 +4630,7 @@ client端向指定的server端描述符写入数据。使用Promise异步回调�
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4454,9 +4673,10 @@ try {
 
 
 
-#### getRssiValue
+### getRssiValue
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRssiValue(callback: AsyncCallback&lt;number&gt;): void
 
@@ -4475,6 +4695,7 @@ client端获取GATT连接链路信号强度 (Received Signal Strength Indication
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;number&gt; | 是 | 回调函数。获取链路信号强度成功，err为undefined，data为获取到的信号强度值，单位：dBm；否则为错误对象。 |
@@ -4483,6 +4704,7 @@ client端获取GATT连接链路信号强度 (Received Signal Strength Indication
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4513,9 +4735,10 @@ try {
 
 
 
-#### getRssiValue
+### getRssiValue
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRssiValue(): Promise&lt;number&gt;
 
@@ -4534,6 +4757,7 @@ client端获取GATT连接链路信号强度 (Received Signal Strength Indication
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象。返回链路的信号强度，单位：dBm。 |
@@ -4542,6 +4766,7 @@ client端获取GATT连接链路信号强度 (Received Signal Strength Indication
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4570,15 +4795,17 @@ try {
 
 
 
-#### setBLEMtuSize
+### setBLEMtuSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setBLEMtuSize(mtu: number): void
 
 client端同server端协商[MTU](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#mtu)（最大传输单元）大小。
 
  - 需先调用[connect](#connect)方法，等GATT profile连接成功后才能使用。
+ - 应用调用该接口后，本端设备会向对端设备发起MTU协商请求。
  - 通过[on('BLEMtuChange')](#onblemtuchange-1)，订阅MTU协商结果。
  - 如果未协商，MTU大小默认为23字节。
 
@@ -4593,6 +4820,7 @@ client端同server端协商[MTU](https://developer.huawei.com/consumer/cn/doc/ha
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mtu | number | 是 | 需要协商的mtu大小，取值范围：[23, 517]，单位：Byte。 |
@@ -4601,6 +4829,7 @@ client端同server端协商[MTU](https://developer.huawei.com/consumer/cn/doc/ha
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4625,15 +4854,17 @@ try {
 
 
 
-#### setBLEMtu
+### setBLEMtu
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setBLEMtu(mtu: number): Promise&lt;number&gt;
 
-client端同server端协商[MTU](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#mtu)（最大传输单元）大小。
+client端同server端协商[MTU](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#mtu)（最大传输单元）大小。与[setBLEMtuSize](#setblemtusize)相比，本接口直接通过Promise返回实际协商成功的MTU结果，无需额外订阅[on('BLEMtuChange')](#onblemtuchange-1)事件获取协商结果。
 
  - 需先调用[connect](#connect-1)方法，等GATT profile连接成功后才能使用。
+ - 应用调用该接口后，本端设备会向对端设备发起MTU协商请求。
  - 需保证入参符合取值范围，不在取值范围内会直接返回异常。
  - 如果未协商，MTU大小默认为23字节。
 
@@ -4650,12 +4881,14 @@ client端同server端协商[MTU](https://developer.huawei.com/consumer/cn/doc/ha
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mtu | number | 是 | 需要协商的mtu大小，取值范围：[23, 517]，单位：Byte。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4665,6 +4898,7 @@ client端同server端协商[MTU](https://developer.huawei.com/consumer/cn/doc/ha
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4690,9 +4924,10 @@ try {
 
 
 
-#### setCharacteristicChangeNotification
+### setCharacteristicChangeNotification
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCharacteristicChangeNotification(characteristic: BLECharacteristic, enable: boolean, callback: AsyncCallback&lt;void&gt;): void
 
@@ -4717,6 +4952,7 @@ client端启用或者禁用接收server端特征值内容变更通知的能力�
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | characteristic | BLECharacteristic | 是 | 需要管理的server端特征值。 |
@@ -4727,6 +4963,7 @@ client端启用或者禁用接收server端特征值内容变更通知的能力�
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4771,9 +5008,10 @@ try {
 
 
 
-#### setCharacteristicChangeNotification
+### setCharacteristicChangeNotification
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCharacteristicChangeNotification(characteristic: BLECharacteristic, enable: boolean): Promise&lt;void&gt;
 
@@ -4798,6 +5036,7 @@ client端启用或者禁用接收server端特征值内容变更通知的能力�
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | characteristic | BLECharacteristic | 是 | 需要管理的server端特征值。 |
@@ -4805,6 +5044,7 @@ client端启用或者禁用接收server端特征值内容变更通知的能力�
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4814,6 +5054,7 @@ client端启用或者禁用接收server端特征值内容变更通知的能力�
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4852,9 +5093,10 @@ try {
 
 
 
-#### setCharacteristicChangeIndication
+### setCharacteristicChangeIndication
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCharacteristicChangeIndication(characteristic: BLECharacteristic, enable: boolean, callback: AsyncCallback&lt;void&gt;): void
 
@@ -4879,6 +5121,7 @@ client端启用或者禁用接收server端特征值内容变更指示的能力�
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | characteristic | BLECharacteristic | 是 | 需要管理的server端特征值。 |
@@ -4889,6 +5132,7 @@ client端启用或者禁用接收server端特征值内容变更指示的能力�
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4933,9 +5177,10 @@ try {
 
 
 
-#### setCharacteristicChangeIndication
+### setCharacteristicChangeIndication
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCharacteristicChangeIndication(characteristic: BLECharacteristic, enable: boolean): Promise&lt;void&gt;
 
@@ -4960,6 +5205,7 @@ client端启用或者禁用接收server端特征值内容变更指示的能力�
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | characteristic | BLECharacteristic | 是 | 需要管理的server端特征值。 |
@@ -4967,6 +5213,7 @@ client端启用或者禁用接收server端特征值内容变更指示的能力�
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4976,6 +5223,7 @@ client端启用或者禁用接收server端特征值内容变更指示的能力�
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5014,9 +5262,10 @@ try {
 
 
 
-#### on('BLECharacteristicChange')
+### on('BLECharacteristicChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'BLECharacteristicChange', callback: Callback&lt;BLECharacteristic&gt;): void
 
@@ -5035,6 +5284,7 @@ client端订阅server端特征值变化事件。使用Callback异步回调。
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'BLECharacteristicChange'，表示server端特征值变化事件。 当client端收到server端特征值内容变更的通知或者指示时，触发该事件。 |
@@ -5044,6 +5294,7 @@ client端订阅server端特征值变化事件。使用Callback异步回调。
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5071,9 +5322,10 @@ try {
 
 
 
-#### off('BLECharacteristicChange')
+### off('BLECharacteristicChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'BLECharacteristicChange', callback?: Callback&lt;BLECharacteristic&gt;): void
 
@@ -5089,6 +5341,7 @@ client端取消订阅server端特征值变化事件。
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'BLECharacteristicChange'，表示server端特征值变化事件。 |
@@ -5098,6 +5351,7 @@ client端取消订阅server端特征值变化事件。
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5120,9 +5374,10 @@ try {
 
 
 
-#### on('BLEConnectionStateChange')
+### on('BLEConnectionStateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'BLEConnectionStateChange', callback: Callback&lt;BLEConnectionChangeState&gt;): void
 
@@ -5138,15 +5393,17 @@ client端订阅GATT profile协议的连接状态变化事件。使用Callback异
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型，支持的事件为'BLEConnectionStateChange'，表示连接状态变化事件。 client和server端之间的连接状态发生变化时，触发该事件。 当client端调用connect或disconnect时，可能引起连接状态生变化。 |
+| type | string | 是 | 事件回调类型，支持的事件为'BLEConnectionStateChange'，表示连接状态变化事件。 client和server端之间的连接状态发生变化时，触发该事件。 当client端调用connect或disconnect时，可能引起连接状态发生变化。 |
 | callback | Callback&lt;BLEConnectionChangeState&gt; | 是 | 指定订阅的回调函数，会携带连接状态信息。 |
 
 
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5173,9 +5430,10 @@ try {
 
 
 
-#### off('BLEConnectionStateChange')
+### off('BLEConnectionStateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'BLEConnectionStateChange', callback?: Callback&lt;BLEConnectionChangeState&gt;): void
 
@@ -5191,6 +5449,7 @@ client端取消订阅GATT profile协议的连接状态变化事件。
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'BLEConnectionStateChange'，表示连接状态变化事件。 |
@@ -5200,6 +5459,7 @@ client端取消订阅GATT profile协议的连接状态变化事件。
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5222,9 +5482,10 @@ try {
 
 
 
-#### on('BLEMtuChange')
+### on('BLEMtuChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'BLEMtuChange', callback: Callback&lt;number&gt;): void
 
@@ -5240,6 +5501,7 @@ client端订阅MTU（最大传输单元）大小变更事件。使用Callback异
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'BLEMtuChange'，表示MTU大小变更事件。 当调用setBLEMtuSize方法，client端发起MTU大小协商后，会触发该事件。 |
@@ -5249,6 +5511,7 @@ client端订阅MTU（最大传输单元）大小变更事件。使用Callback异
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5273,9 +5536,10 @@ try {
 
 
 
-#### off('BLEMtuChange')
+### off('BLEMtuChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'BLEMtuChange', callback?: Callback&lt;number&gt;): void
 
@@ -5291,6 +5555,7 @@ client端取消订阅MTU（最大传输单元）大小变更事件。
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'BLEMtuChange'，表示MTU大小变更事件。 |
@@ -5300,6 +5565,7 @@ client端取消订阅MTU（最大传输单元）大小变更事件。
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5322,9 +5588,10 @@ try {
 
 
 
-#### on('serviceChange')22+
+### on('serviceChange')22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'serviceChange', callback: Callback&lt;void&gt;): void
 
@@ -5342,6 +5609,7 @@ client端设备订阅server端设备服务变化的通知事件，使用Callback
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'serviceChange'，表示服务变化通知事件。 当server端添加或删除服务时，会触发该事件通知client端。 |
@@ -5351,6 +5619,7 @@ client端设备订阅server端设备服务变化的通知事件，使用Callback
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5377,9 +5646,10 @@ try {
 
 
 
-#### off('serviceChange')22+
+### off('serviceChange')22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'serviceChange', callback?: Callback&lt;void&gt;): void
 
@@ -5396,6 +5666,7 @@ client端设备取消订阅server端设备服务变化的通知事件。
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'serviceChange'，表示服务变化通知事件。 当server端添加或删除服务时，会触发该事件通知client端。 |
@@ -5405,6 +5676,7 @@ client端设备取消订阅server端设备服务变化的通知事件。
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5431,9 +5703,10 @@ try {
 
 
 
-#### getConnectedState22+
+### getConnectedState22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getConnectedState(): ProfileConnectionState
 
@@ -5447,6 +5720,7 @@ getConnectedState(): ProfileConnectionState
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ProfileConnectionState | 蓝牙设备的profile连接状态。 |
@@ -5455,6 +5729,7 @@ getConnectedState(): ProfileConnectionState
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5479,9 +5754,10 @@ try {
 
 
 
-#### updateConnectionParam22+
+### updateConnectionParam22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateConnectionParam(param: ConnectionParam): Promise&lt;void&gt;
 
@@ -5499,12 +5775,14 @@ updateConnectionParam(param: ConnectionParam): Promise&lt;void&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | param | ConnectionParam | 是 | 连接参数类型。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5514,6 +5792,7 @@ updateConnectionParam(param: ConnectionParam): Promise&lt;void&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5539,9 +5818,10 @@ try {
 
 
 
-#### readPhy23+
+### readPhy23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readPhy(): Promise&lt;PhyValue&gt;
 
@@ -5558,6 +5838,7 @@ readPhy(): Promise&lt;PhyValue&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;PhyValue&gt; | Promise对象，返回client端连接链路的物理通道类型。 |
@@ -5566,6 +5847,7 @@ readPhy(): Promise&lt;PhyValue&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5591,9 +5873,10 @@ try {
 
 
 
-#### setPhy23+
+### setPhy23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setPhy(phyValue: PhyValue): Promise&lt;void&gt;
 
@@ -5601,6 +5884,7 @@ client端设置连接链路的物理通道类型。使用Promise异步回调。
 
  - 需先调用[connect](#connect)方法发起连接，并等待连接成功后，再调用该方法。
  - 本端client调用setPhy设置物理通道类型后，底层会根据对端设备能力，协商出本端和对端设备均支持的物理通道类型作为最终结果。例如本端支持并设置[BLE_PHY_2M](#blephy23)，但对端设备仅支持[BLE_PHY_1M](#blephy23)，则最终设置的结果仍为[BLE_PHY_1M](#blephy23)。
+ - 协商后的最终物理通道类型可通过订阅[onBlePhyUpdate](#onblephyupdate23-1)事件获取。
 
 
 **需要权限**：ohos.permission.ACCESS_BLUETOOTH
@@ -5611,12 +5895,14 @@ client端设置连接链路的物理通道类型。使用Promise异步回调。
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | phyValue | PhyValue | 是 | 连接链路的物理通道类型配置参数。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5626,6 +5912,7 @@ client端设置连接链路的物理通道类型。使用Promise异步回调。
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5653,9 +5940,10 @@ try {
 
 
 
-#### onBlePhyUpdate23+
+### onBlePhyUpdate23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onBlePhyUpdate(callback: Callback&lt;PhyValue&gt;): void
 
@@ -5669,6 +5957,7 @@ onBlePhyUpdate(callback: Callback&lt;PhyValue&gt;): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;PhyValue&gt; | 是 | 指定订阅的回调函数，会携带变更后最新的物理通道类型。 当本端client调用setPhy或对端变更当前物理通道类型后，如订阅此事件，均会收到携带最新物理通道类型的回调函数。 |
@@ -5676,7 +5965,8 @@ onBlePhyUpdate(callback: Callback&lt;PhyValue&gt;): void
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)
+以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5700,9 +5990,10 @@ try {
 
 
 
-#### offBlePhyUpdate23+
+### offBlePhyUpdate23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offBlePhyUpdate(callback?: Callback&lt;PhyValue&gt;): void
 
@@ -5716,6 +6007,7 @@ offBlePhyUpdate(callback?: Callback&lt;PhyValue&gt;): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;PhyValue&gt; | 否 | 指定取消订阅的回调函数。若传参，则需与onBlePhyUpdate中的回调函数一致。 若无传参，则取消订阅所有物理通道类型变更的回调函数通知。 |
@@ -5723,7 +6015,8 @@ offBlePhyUpdate(callback?: Callback&lt;PhyValue&gt;): void
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)
+以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5747,21 +6040,23 @@ try {
 
 
 
-#### ble.createBleScanner15+
+## ble.createBleScanner15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createBleScanner(): BleScanner
 
 创建一个[BleScanner](#blescanner15)实例对象，可用于发起或停止BLE扫描等流程。
 
-**元服务API**: 从API version 15开始，该接口支持在元服务中使用。
+**元服务API**：从API version 15开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5779,9 +6074,10 @@ console.info('create bleScanner success');
 
 
 
-#### BleScanner15+
+## BleScanner15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 BLE扫描类，提供了扫描相关的操作方法。
 
@@ -5791,9 +6087,10 @@ BLE扫描类，提供了扫描相关的操作方法。
 
 
 
-#### startScan15+
+### startScan15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startScan(filters: Array&lt;ScanFilter&gt;, options?: ScanOptions): Promise&lt;void&gt;
 
@@ -5814,13 +6111,15 @@ startScan(filters: Array&lt;ScanFilter&gt;, options?: ScanOptions): Promise&lt;v
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | filters | Array&lt;ScanFilter&gt; | 是 | 扫描BLE广播的过滤条件集合，符合过滤条件的设备会被上报。 - 若该参数设置为null，将扫描所有可发现的周边BLE设备，但是不建议使用此方式，可能扫描到非预期设备，并增加功耗。 - 围栏模式下（ScanReportMode设置为FENCE_SENSITIVITY_LOW或FENCE_SENSITIVITY_HIGH时），该参数不可设置为null，需传入非空过滤器。 - 过滤器资源为所有应用共享，建议单个应用使用过滤器数量不超过3个，否则过滤器资源占满将导致开启扫描失败，返回2900009错误码。 |
-| options | ScanOptions | 否 | 扫描的配置参数。 |
+| options | ScanOptions | 否 | 扫描的配置参数。不填写时使用默认配置。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5830,6 +6129,7 @@ startScan(filters: Array&lt;ScanFilter&gt;, options?: ScanOptions): Promise&lt;v
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5874,9 +6174,10 @@ try {
 
 
 
-#### stopScan15+
+### stopScan15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopScan(): Promise&lt;void&gt;
 
@@ -5896,6 +6197,7 @@ stopScan(): Promise&lt;void&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -5904,6 +6206,7 @@ stopScan(): Promise&lt;void&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5930,9 +6233,10 @@ try {
 
 
 
-#### on('BLEDeviceFind')15+
+### on('BLEDeviceFind')15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'BLEDeviceFind', callback: Callback&lt;ScanReport&gt;): void
 
@@ -5952,6 +6256,7 @@ on(type: 'BLEDeviceFind', callback: Callback&lt;ScanReport&gt;): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'BLEDeviceFind'，表示BLE设备扫描结果上报事件。 当调用startScan 后，开始BLE扫描，若扫描到BLE设备，触发该事件。 |
@@ -5961,6 +6266,7 @@ on(type: 'BLEDeviceFind', callback: Callback&lt;ScanReport&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5988,9 +6294,10 @@ try {
 
 
 
-#### off('BLEDeviceFind')15+
+### off('BLEDeviceFind')15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'BLEDeviceFind', callback?: Callback&lt;ScanReport&gt;): void
 
@@ -6009,6 +6316,7 @@ off(type: 'BLEDeviceFind', callback?: Callback&lt;ScanReport&gt;): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'BLEDeviceFind'，表示BLE设备扫描结果上报事件。 |
@@ -6018,6 +6326,7 @@ off(type: 'BLEDeviceFind', callback?: Callback&lt;ScanReport&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6046,9 +6355,10 @@ try {
 
 
 
-#### GattService
+## GattService
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 GATT服务结构定义，可包含多个特征值[BLECharacteristic](#blecharacteristic)和依赖的其他服务。
 
@@ -6058,19 +6368,21 @@ GATT服务结构定义，可包含多个特征值[BLECharacteristic](#blecharact
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | serviceUuid | string | 否 | 否 | 服务UUID，标识一个GATT服务。例如：00001888-0000-1000-8000-00805f9b34fb。 |
 | isPrimary | boolean | 否 | 否 | 是否是主服务。true表示是主服务，false表示是次要服务。 |
 | characteristics | Array&lt;BLECharacteristic&gt; | 否 | 否 | 当前服务包含的特征值列表。 |
-| includeServices | Array&lt;GattService&gt; | 否 | 是 | 当前服务依赖的其它服务。 |
+| includeServices | Array&lt;GattService&gt; | 否 | 是 | 当前服务依赖的其它服务。若不设置此参数，则默认不依赖其它服务。 |
 
 
 
 
-#### BLECharacteristic
+## BLECharacteristic
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 GATT特征值结构定义，是服务[GattService](#gattservice)的核心数据单元。
 
@@ -6078,22 +6390,24 @@ GATT特征值结构定义，是服务[GattService](#gattservice)的核心数据�
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | serviceUuid | string | 否 | 否 | 特征值所属的服务UUID。例如：00001888-0000-1000-8000-00805f9b34fb。 元服务API：从API version 12开始，该接口支持在元服务中使用。 |
 | characteristicUuid | string | 否 | 否 | 特征值UUID。例如：00002a11-0000-1000-8000-00805f9b34fb。 元服务API：从API version 12开始，该接口支持在元服务中使用。 |
 | characteristicValue | ArrayBuffer | 否 | 否 | 特征值的数据内容。 元服务API：从API version 12开始，该接口支持在元服务中使用。 |
 | descriptors | Array&lt;BLEDescriptor&gt; | 否 | 否 | 特征值包含的描述符列表。 元服务API：从API version 12开始，该接口支持在元服务中使用。 |
-| properties | GattProperties | 否 | 是 | 特征值支持的属性。 元服务API：从API version 12开始，该接口支持在元服务中使用。 |
-| characteristicValueHandle18+ | number | 否 | 是 | 特征值的唯一标识句柄。当server端BLE蓝牙设备提供了多个相同UUID特征值时，可以通过此句柄区分不同的特征值。 元服务API：从API version 18开始，该接口支持在元服务中使用。 |
-| permissions20+ | GattPermissions | 否 | 是 | 特征值读写操作需要的权限。 元服务API：从API version 20开始，该接口支持在元服务中使用。 |
+| properties | GattProperties | 否 | 是 | 特征值支持的属性。若不设置此参数，则使用默认属性值。 元服务API：从API version 12开始，该接口支持在元服务中使用。 |
+| characteristicValueHandle18+ | number | 否 | 是 | 特征值的唯一标识句柄。当server端BLE蓝牙设备提供了多个相同UUID特征值时，可以通过此句柄区分不同的特征值。若不设置此参数，则内容为undefined。 元服务API：从API version 18开始，该接口支持在元服务中使用。 |
+| permissions20+ | GattPermissions | 否 | 是 | 特征值读写操作需要的权限。若不设置此参数，则使用默认权限值。 元服务API：从API version 20开始，该接口支持在元服务中使用。 |
 
 
 
 
-#### BLEDescriptor
+## BLEDescriptor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 GATT描述符结构定义，是特征值[BLECharacteristic](#blecharacteristic)的数据单元，用于描述特征值的附加信息和属性。
 
@@ -6101,21 +6415,23 @@ GATT描述符结构定义，是特征值[BLECharacteristic](#blecharacteristic)�
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | serviceUuid | string | 否 | 否 | 特征值所属的服务UUID。例如：00001888-0000-1000-8000-00805f9b34fb。 元服务API：从API version 12开始，该接口支持在元服务中使用。 |
 | characteristicUuid | string | 否 | 否 | 描述符所属的特征值UUID。例如：00002a11-0000-1000-8000-00805f9b34fb。 元服务API：从API version 12开始，该接口支持在元服务中使用。 |
 | descriptorUuid | string | 否 | 否 | 描述符UUID。例如：00002902-0000-1000-8000-00805f9b34fb。 元服务API：从API version 12开始，该接口支持在元服务中使用。 |
 | descriptorValue | ArrayBuffer | 否 | 否 | 描述符的数据内容。 元服务API：从API version 12开始，该接口支持在元服务中使用。 |
-| descriptorHandle18+ | number | 否 | 是 | 描述符的唯一标识句柄。当server端BLE蓝牙设备提供了多个相同UUID描述符时，可以通过此句柄区分不同的描述符。 元服务API：从API version 18开始，该接口支持在元服务中使用。 |
-| permissions20+ | GattPermissions | 否 | 是 | 描述符读写操作需要的权限。 元服务API：从API version 20开始，该接口支持在元服务中使用。 |
+| descriptorHandle18+ | number | 否 | 是 | 描述符的唯一标识句柄。当server端BLE蓝牙设备提供了多个相同UUID描述符时，可以通过此句柄区分不同的描述符。若不设置此参数，则内容为undefined。 元服务API：从API version 18开始，该接口支持在元服务中使用。 |
+| permissions20+ | GattPermissions | 否 | 是 | 描述符读写操作需要的权限。若不设置此参数，则使用默认权限值。 元服务API：从API version 20开始，该接口支持在元服务中使用。 |
 
 
 
 
-#### NotifyCharacteristic
+## NotifyCharacteristic
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述server端特征值发生变化时，server端发送特征值通知的参数结构。
 
@@ -6124,6 +6440,7 @@ GATT描述符结构定义，是特征值[BLECharacteristic](#blecharacteristic)�
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
 **模型约束**：此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -6135,9 +6452,10 @@ GATT描述符结构定义，是特征值[BLECharacteristic](#blecharacteristic)�
 
 
 
-#### CharacteristicReadRequest
+## CharacteristicReadRequest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述server端订阅client端读特征值请求事件后，接收到的事件参数结构。
 
@@ -6146,6 +6464,7 @@ GATT描述符结构定义，是特征值[BLECharacteristic](#blecharacteristic)�
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
 **模型约束**：此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -6158,9 +6477,10 @@ GATT描述符结构定义，是特征值[BLECharacteristic](#blecharacteristic)�
 
 
 
-#### CharacteristicWriteRequest
+## CharacteristicWriteRequest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述server端订阅client端写特征值请求事件后，接收到的事件参数结构。
 
@@ -6169,6 +6489,7 @@ GATT描述符结构定义，是特征值[BLECharacteristic](#blecharacteristic)�
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
 **模型约束**：此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -6184,9 +6505,10 @@ GATT描述符结构定义，是特征值[BLECharacteristic](#blecharacteristic)�
 
 
 
-#### DescriptorReadRequest
+## DescriptorReadRequest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述server端订阅client端读描述符请求事件后，接收到的事件参数结构。
 
@@ -6195,6 +6517,7 @@ GATT描述符结构定义，是特征值[BLECharacteristic](#blecharacteristic)�
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
 **模型约束**：此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -6208,9 +6531,10 @@ GATT描述符结构定义，是特征值[BLECharacteristic](#blecharacteristic)�
 
 
 
-#### DescriptorWriteRequest
+## DescriptorWriteRequest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述server端订阅client端写描述符请求事件后，接收到的事件参数结构。
 
@@ -6219,6 +6543,7 @@ GATT描述符结构定义，是特征值[BLECharacteristic](#blecharacteristic)�
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
 **模型约束**：此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -6235,9 +6560,10 @@ GATT描述符结构定义，是特征值[BLECharacteristic](#blecharacteristic)�
 
 
 
-#### ServerResponse
+## ServerResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述server端回复client端读或者写请求的响应参数结构。
 
@@ -6246,6 +6572,7 @@ GATT描述符结构定义，是特征值[BLECharacteristic](#blecharacteristic)�
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
 **模型约束**：此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -6258,15 +6585,17 @@ GATT描述符结构定义，是特征值[BLECharacteristic](#blecharacteristic)�
 
 
 
-#### BLEConnectionChangeState
+## BLEConnectionChangeState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述GATT profile协议连接状态。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
 **模型约束**：此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -6278,9 +6607,10 @@ GATT描述符结构定义，是特征值[BLECharacteristic](#blecharacteristic)�
 
 
 
-#### ScanResult
+## ScanResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 扫描到符合过滤条件的广播报文后，上报的扫描数据。
 
@@ -6288,10 +6618,11 @@ GATT描述符结构定义，是特征值[BLECharacteristic](#blecharacteristic)�
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | deviceId | string | 否 | 否 | 扫描到的蓝牙设备地址。例如："XX:XX:XX:XX:XX:XX"。 基于信息安全考虑，若应用开启扫描时没有在ScanFilter中配置实际MAC地址，则此处获取的设备地址为虚拟MAC地址。 - 若和该设备地址配对成功后，该地址不会变更。 - 若该设备重启蓝牙开关，重新获取到的虚拟地址会立即变更。 - 若取消配对，蓝牙子系统会根据该地址的实际使用情况，决策后续变更时机；若其他应用正在使用该地址，则不会立刻变更。 - 若要持久化保存该地址，可使用access.addPersistentDeviceId方法。 元服务API：从API version 12开始，该接口支持在元服务中使用。 |
-| address23+ | BluetoothAddress | 否 | 是 | 扫描到的蓝牙设备地址信息，包括地址与地址类型。 |
+| address23+ | BluetoothAddress | 否 | 是 | 扫描到的蓝牙设备地址信息，包括地址与地址类型。若不设置此参数，则内容为undefined。 |
 | rssi | number | 否 | 否 | 扫描到的设备信号强度，单位：dBm。 元服务API：从API version 12开始，该接口支持在元服务中使用。 |
 | data | ArrayBuffer | 否 | 否 | 扫描到的设备发送的原始未解析的广播报文内容。 元服务API：从API version 12开始，该接口支持在元服务中使用。 |
 | deviceName | string | 否 | 否 | 扫描到的设备名称，从原始数据data字段中解析而来，在蓝牙协议中广播数据类型为0x09。 元服务API：从API version 12开始，该接口支持在元服务中使用。 |
@@ -6300,21 +6631,23 @@ GATT描述符结构定义，是特征值[BLECharacteristic](#blecharacteristic)�
 | manufacturerDataMap22+ | Map<number, Uint8Array> | 否 | 是 | 扫描到的设备制造商数据集合，从原始数据data字段中解析而来，在蓝牙协议中广播数据类型为0xFF。若广播报文中携带设备制造商数据，则该字段有值，否则内容为undefined。 - Map的key表示制造商ID，value表示对应制造商数据的具体内容。 元服务API：从API version 22开始，该接口支持在元服务中使用。 |
 | serviceDataMap22+ | Map<string, Uint8Array> | 否 | 是 | 扫描到的设备服务数据集合，从原始数据data字段中解析而来，在蓝牙协议中广播数据类型为0x16。若广播报文中携带设备服务数据，则该字段有值，否则内容为undefined。 - Map的key表示服务UUID，value表示对应UUID服务的具体内容。 元服务API：从API version 22开始，该接口支持在元服务中使用。 |
 | serviceUuids22+ | string[] | 否 | 是 | 扫描到的设备服务UUID集合，从原始数据data字段中解析而来，在蓝牙协议中，16-bit UUID的广播数据类型为0x03，32-bit UUID类型为0x05，128-bit UUID类型为0x07。若广播报文中携带设备服务UUID，则该字段有值，否则内容为undefined。 元服务API：从API version 22开始，该接口支持在元服务中使用。 |
-| txPowerLevel22+ | number | 否 | 是 | 扫描到的设备广播发送功率，从原始数据data字段中解析而来，在蓝牙协议中广播数据类型为0x0A。若广播报文中携带设备广播发送功率，则该字段有值，否则内容为undefined。 元服务API：从API version 22开始，该接口支持在元服务中使用。 |
+| txPowerLevel22+ | number | 否 | 是 | 扫描到的设备广播发送功率，单位：dBm，从原始数据data字段中解析而来，在蓝牙协议中广播数据类型为0x0A。若广播报文中携带设备广播发送功率，则该字段有值，否则内容为undefined。 元服务API：从API version 22开始，该接口支持在元服务中使用。 |
 | advertisingDataMap22+ | Map<number, Uint8Array> | 否 | 是 | 扫描到的设备广播数据集，从原始数据data字段中解析而来。 - Map的key表示广播数据类型，value表示对应数据类型的具体内容，如advertisingDataMap字段中key为0x0A的对应value含义为txPowerLevel值。 - 若广播报文中携带任意广播数据内容，则该字段有值，否则内容为undefined。 元服务API：从API version 22开始，该接口支持在元服务中使用。 |
 
 
 
 
-#### AdvertiseSetting
+## AdvertiseSetting
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述BLE广播的发送参数。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
 **模型约束**：此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -6326,9 +6659,10 @@ GATT描述符结构定义，是特征值[BLECharacteristic](#blecharacteristic)�
 
 
 
-#### AdvertiseData
+## AdvertiseData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述BLE广播报文数据内容，也可以用作回复扫描请求的广播报文数据内容。支持传统广播和扩展广播，传统广播报文最大长度为31个字节，扩展广播报文最大长度由蓝牙芯片能力决定。若超出最大长度限制，会导致启动广播失败。
 
@@ -6339,6 +6673,7 @@ GATT描述符结构定义，是特征值[BLECharacteristic](#blecharacteristic)�
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | serviceUuids | Array&lt;string&gt; | 否 | 否 | 要携带的服务UUID。 元服务API：从API version 12开始，该接口支持在元服务中使用。 |
@@ -6346,14 +6681,15 @@ GATT描述符结构定义，是特征值[BLECharacteristic](#blecharacteristic)�
 | serviceData | Array&lt;ServiceData&gt; | 否 | 否 | 要携带的服务数据内容。 元服务API：从API version 12开始，该接口支持在元服务中使用。 |
 | includeDeviceName | boolean | 否 | 是 | 是否携带本机的设备名称作为广播名称。 true表示携带，false表示不携带，默认值为false。 若应用需要自定义广播名称，可通过advertiseName进行设置。本参数不可与advertiseName同时使用。 元服务API：从API version 12开始，该接口支持在元服务中使用。 |
 | includeTxPower18+ | boolean | 否 | 是 | 是否携带广播发送功率。 true表示携带广播发送功率，false表示不携带广播发送功率，默认值为false。 携带该值后，广播报文长度将多占用3个字节。 元服务API：从API version 18开始，该接口支持在元服务中使用。 |
-| advertiseName23+ | string | 否 | 是 | 要携带的自定义广播名称。 不可与includeDeviceName同时使用。 需要权限：ohos.permission.MANAGE_BLUETOOTH_ADVERTISER_NAME 元服务API：从API version 23开始，该接口支持在元服务中使用。 |
+| advertiseName23+ | string | 否 | 是 | 要携带的自定义广播名称。若不设置此参数，则默认不携带自定义广播名称。 不可与includeDeviceName同时使用。 需要权限：ohos.permission.MANAGE_BLUETOOTH_ADVERTISER_NAME 元服务API：从API version 23开始，该接口支持在元服务中使用。 |
 
 
 
 
-#### AdvertisingParams11+
+## AdvertisingParams11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 首次启动BLE广播时设置的参数。
 
@@ -6363,19 +6699,21 @@ GATT描述符结构定义，是特征值[BLECharacteristic](#blecharacteristic)�
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | advertisingSettings11+ | AdvertiseSetting | 否 | 否 | 广播的发送参数。 |
 | advertisingData11+ | AdvertiseData | 否 | 否 | 需要发送的广播报文数据内容。 |
-| advertisingResponse11+ | AdvertiseData | 否 | 是 | 回复扫描请求的广播报文数据内容。 |
+| advertisingResponse11+ | AdvertiseData | 否 | 是 | 回复扫描请求的广播报文数据内容。若不填写，则不携带扫描回复广播报文。在扩展广播模式下（isExtended为true时），与connectable不能共存：connectable为true时本参数需为空，connectable为false时本参数不能为空。 |
 | duration11+ | number | 否 | 是 | 发送广播的持续时间。取值范围：[1, 65535]，单位：10ms。 如果未指定此参数或者将其设置为0，则会持续发送广播。 |
 
 
 
 
-#### AdvertisingEnableParams11+
+## AdvertisingEnableParams11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 启动指定标识的BLE广播时设置的参数。
 
@@ -6383,17 +6721,19 @@ GATT描述符结构定义，是特征值[BLECharacteristic](#blecharacteristic)�
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| advertisingId | number | 否 | 否 | 需要启动的广播标识。 |
+| advertisingId | number | 否 | 否 | 需要启动的广播标识。该值由ble.startAdvertising首次启动广播时分配。 |
 | duration | number | 否 | 是 | 发送广播的持续时间。取值范围：[1, 65535]，单位：10ms。 如果未指定此参数或者将其设置为0，则会持续发送广播。 |
 
 
 
 
-#### AdvertisingDisableParams11+
+## AdvertisingDisableParams11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 停止指定标识的BLE广播时设置的参数。
 
@@ -6401,22 +6741,25 @@ GATT描述符结构定义，是特征值[BLECharacteristic](#blecharacteristic)�
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| advertisingId | number | 否 | 否 | 需要停止的广播标识。 |
+| advertisingId | number | 否 | 否 | 需要停止的广播标识。该值由ble.startAdvertising首次启动广播时分配。 |
 
 
 
 
-#### AdvertisingStateChangeInfo11+
+## AdvertisingStateChangeInfo11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述BLE广播启动、停止的状态信息。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
 **模型约束**：此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -6426,9 +6769,10 @@ GATT描述符结构定义，是特征值[BLECharacteristic](#blecharacteristic)�
 
 
 
-#### ManufactureData
+## ManufactureData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述BLE广播报文中制造商数据内容。
 
@@ -6438,6 +6782,7 @@ GATT描述符结构定义，是特征值[BLECharacteristic](#blecharacteristic)�
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | manufactureId | number | 否 | 否 | 制造商的标识，由蓝牙技术联盟分配。 |
@@ -6446,9 +6791,10 @@ GATT描述符结构定义，是特征值[BLECharacteristic](#blecharacteristic)�
 
 
 
-#### ServiceData
+## ServiceData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述BLE广播报文中的服务数据内容。
 
@@ -6458,6 +6804,7 @@ GATT描述符结构定义，是特征值[BLECharacteristic](#blecharacteristic)�
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | serviceUuid | string | 否 | 否 | 服务UUID。 |
@@ -6466,9 +6813,10 @@ GATT描述符结构定义，是特征值[BLECharacteristic](#blecharacteristic)�
 
 
 
-#### ScanFilter
+## ScanFilter
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 扫描BLE广播的过滤条件，只有符合该条件的广播报文才会上报。
 
@@ -6476,9 +6824,10 @@ GATT描述符结构定义，是特征值[BLECharacteristic](#blecharacteristic)�
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| deviceId | string | 否 | 是 | 过滤该BLE设备地址的广播报文。例如："XX:XX:XX:XX:XX:XX"。 元服务API：从API version 12开始，该接口支持在元服务中使用。 |
+| deviceId | string | 否 | 是 | 过滤该BLE设备地址的广播报文。例如："XX:XX:XX:XX:XX:XX"。若同时设置了address参数，则以address参数为准，deviceId不生效。 元服务API：从API version 12开始，该接口支持在元服务中使用。 |
 | address23+ | BluetoothAddress | 否 | 是 | 过滤该BLE设备地址和地址类型的广播报文。 与deviceId相比，本参数支持同时指定BLE设备地址和地址类型来对BLE广播报文进行过滤。 若deviceId与本参数同时指定，本参数生效，deviceId不生效。 |
 | name | string | 否 | 是 | 过滤该BLE设备名称的广播报文。 元服务API：从API version 12开始，该接口支持在元服务中使用。 |
 | serviceUuid | string | 否 | 是 | 过滤包含该服务UUID的广播报文，serviceUuid通常在外围设备的广播报文中携带，表示外围设备支持的服务UUID。例如：00001888-0000-1000-8000-00805f9b34fb。 元服务API：从API version 12开始，该接口支持在元服务中使用。 |
@@ -6490,20 +6839,22 @@ GATT描述符结构定义，是特征值[BLECharacteristic](#blecharacteristic)�
 | manufactureId | number | 否 | 是 | 过滤包含该制造商标识符的广播报文。例如：0x0006。 元服务API：从API version 12开始，该接口支持在元服务中使用。 |
 | manufactureData | ArrayBuffer | 否 | 是 | 搭配manufactureId过滤器使用，过滤包含该制造商数据的广播报文。例如：[0x1F,0x2F,0x3F]。 元服务API：从API version 12开始，该接口支持在元服务中使用。 |
 | manufactureDataMask | ArrayBuffer | 否 | 是 | 搭配manufactureData过滤器使用，可设置过滤部分制造商数据。例如：[0xFF,0xFF,0xFF]。 元服务API：从API version 12开始，该接口支持在元服务中使用。 |
-| rssiThreshold23+ | number | 否 | 是 | 过滤信号强度大于或等于该信号强度门限值的广播报文，蓝牙协议上规定可设置范围为[-128, 127]，建议设置[-90, 127]范围内的门限值。 元服务API：从API version 23开始，该接口支持在元服务中使用。 |
+| rssiThreshold23+ | number | 否 | 是 | 过滤信号强度大于或等于该信号强度门限值的广播报文，蓝牙协议上规定可设置范围为[-128, 127]，单位：dBm，建议设置[-90, 127]范围内的门限值。 元服务API：从API version 23开始，该接口支持在元服务中使用。 |
 
 
 
 
-#### ScanOptions
+## ScanOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 BLE扫描的配置参数。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
 **模型约束**：此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -6517,15 +6868,17 @@ BLE扫描的配置参数。
 
 
 
-#### GattProperties
+## GattProperties
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述GATT特征值支持的属性。决定了特征值内容和描述符如何被使用和访问。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
 **模型约束**：此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -6536,14 +6889,15 @@ BLE扫描的配置参数。
 | indicate | boolean | 否 | 是 | 该特征值是否支持向对端设备指示特征值内容。 true表示支持，对端设备需要回复确认，false表示不支持。默认值为false。 元服务API：从API version 12开始，该接口支持在元服务中使用。 |
 | broadcast20+ | boolean | 否 | 是 | 该特征值是否支持作为广播内容由server端发送。 true表示支持，server端可将特征值内容以ServiceData类型在广播报文中携带，false表示不支持。默认值为false。 元服务API：从API version 20开始，该接口支持在元服务中使用。 |
 | authenticatedSignedWrite20+ | boolean | 否 | 是 | 该特征值是否支持签名写入操作，通过对写入内容进行签名校验替代加密流程。 true表示支持，且该特征值权限GattPermissions中的writeSigned或writeSignedMitm需设置为true，否则该属性不生效，false表示不支持。默认值为false。 元服务API：从API version 20开始，该接口支持在元服务中使用。 |
-| extendedProperties20+ | boolean | 否 | 是 | 该特征值是否存在扩展属性。 true表示存在扩展属性，false表示不存在。默认值为false。 元服务API：从API version 20开始，该接口支持在元服务中使用。 |
+| extendedProperties20+ | boolean | 否 | 是 | 该特征值是否存在扩展属性。 true表示存在扩展属性；false表示不存在扩展属性。默认值为false。 元服务API：从API version 20开始，该接口支持在元服务中使用。 |
 
 
 
 
-#### GattPermissions20+
+## GattPermissions20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述读写GATT特征值或描述符需具备的权限。
 
@@ -6552,6 +6906,7 @@ BLE扫描的配置参数。
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
 **模型约束**：此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -6567,15 +6922,17 @@ BLE扫描的配置参数。
 
 
 
-#### PhyValue23+
+## PhyValue23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 连接链路的物理通道类型配置参数。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
 **模型约束**：此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -6586,9 +6943,10 @@ BLE扫描的配置参数。
 
 
 
-#### GattWriteType
+## GattWriteType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，写入特征值的方式（不同的取值，对端蓝牙设备的表现不一样）。
 
@@ -6598,6 +6956,7 @@ BLE扫描的配置参数。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | WRITE | 1 | 写入特征值后，对端蓝牙设备需要回复确认。 |
@@ -6606,9 +6965,10 @@ BLE扫描的配置参数。
 
 
 
-#### ScanDuty
+## ScanDuty
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，扫描模式，表示不同的扫描性能和功耗情况。
 
@@ -6617,6 +6977,7 @@ BLE扫描的配置参数。
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
 **模型约束**：此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -6627,9 +6988,10 @@ BLE扫描的配置参数。
 
 
 
-#### MatchMode
+## MatchMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，硬件过滤匹配模式。
 
@@ -6639,6 +7001,7 @@ BLE扫描的配置参数。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | MATCH_MODE_AGGRESSIVE | 1 | 当广播报文信号强度较低或者短时间内广播报文的发送次数较少时，可以更快地上报。 |
@@ -6647,15 +7010,17 @@ BLE扫描的配置参数。
 
 
 
-#### AdvertisingState11+
+## AdvertisingState11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，不同操作对应的BLE广播状态。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
 **模型约束**：此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -6667,9 +7032,10 @@ BLE扫描的配置参数。
 
 
 
-#### PhyType12+
+## PhyType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，指定扫描过程中接收BLE广播报文的物理通道。
 
@@ -6679,6 +7045,7 @@ BLE扫描的配置参数。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | PHY_LE_1M12+ | 1 | 使用1M PHY类型扫描。 |
@@ -6687,9 +7054,10 @@ BLE扫描的配置参数。
 
 
 
-#### ScanReport15+
+## ScanReport15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 上报的扫描数据。
 
@@ -6699,6 +7067,7 @@ BLE扫描的配置参数。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | reportType | ScanReportType | 否 | 否 | 扫描结果上报类型。 |
@@ -6707,9 +7076,10 @@ BLE扫描的配置参数。
 
 
 
-#### ScanReportType15+
+## ScanReportType15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，扫描结果上报类型。
 
@@ -6717,18 +7087,20 @@ BLE扫描的配置参数。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ON_FOUND | 1 | 扫描到符合过滤条件的BLE广播报文时，触发上报，可搭配常规和围栏上报模式使用。 元服务API：从API version 15开始，该接口支持在元服务中使用。 |
 | ON_LOST | 2 | 当不再扫描到符合过滤条件的BLE广播报文时，触发上报，只搭配围栏上报模式使用。 元服务API：从API version 15开始，该接口支持在元服务中使用 |
-| ON_BATCH19+ | 3 | 扫描到符合过滤条件的BLE广播报文时，以ScanOptions中的interval字段为周期触发上报。 元服务API：从API version 19开始，该接口支持在元服务中使用 |
+| ON_BATCH19+ | 3 | 扫描到符合过滤条件的BLE广播报文时，以ScanOptions中的interval字段为周期触发上报，只搭配批量上报模式（BATCH）使用。 元服务API：从API version 19开始，该接口支持在元服务中使用 |
 
 
 
 
-#### GattDisconnectReason20+
+## GattDisconnectReason20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，指定GATT链路断开的原因。
 
@@ -6737,6 +7109,7 @@ BLE扫描的配置参数。
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
 **模型约束**：此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -6748,15 +7121,17 @@ BLE扫描的配置参数。
 
 
 
-#### BleProfile21+
+## BleProfile21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，指定当前设备的Profile协议类型。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
 **模型约束**：此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -6767,15 +7142,17 @@ BLE扫描的配置参数。
 
 
 
-#### ScanReportMode15+
+## ScanReportMode15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，扫描结果上报模式。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
 **模型约束**：此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -6787,15 +7164,17 @@ BLE扫描的配置参数。
 
 
 
-#### ConnectionParam22+
+## ConnectionParam22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，连接参数类型。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
 **模型约束**：此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -6806,15 +7185,17 @@ BLE扫描的配置参数。
 
 
 
-#### BlePhy23+
+## BlePhy23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，连接与广播的物理通道类型。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
 **模型约束**：此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -6825,15 +7206,17 @@ BLE扫描的配置参数。
 
 
 
-#### CodedPhyMode23+
+## CodedPhyMode23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，BLE_PHY_CODED类型下的编码方式。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
 **模型约束**：此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -6843,9 +7226,10 @@ BLE扫描的配置参数。
 
 
 
-#### GattSetting
+## GattSetting
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述GATT连接的参数。
 
@@ -6856,6 +7240,7 @@ BLE扫描的配置参数。
 **元服务API**：从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **模型约束**：此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

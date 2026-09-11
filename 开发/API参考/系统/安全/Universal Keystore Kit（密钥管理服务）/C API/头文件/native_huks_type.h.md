@@ -1,13 +1,14 @@
 # native_huks_type.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-huks-type-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供通用密钥库（HUKS）中的枚举变量、结构体定义、宏定义与错误码。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_Huks_Result | OH_Huks_Result | 表示状态返回数据，包括返回码和消息。 |
@@ -52,10 +56,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_Huks_KeyPurpose | OH_Huks_KeyPurpose | 密钥用途类型。支持通过按位或（\|）组合多个用途。 |
@@ -86,10 +92,12 @@
  
   
 
-#### 宏定义
+### 宏定义
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_HUKS_AE_TAG_LEN 16 | AEAD认证标签的字节长度。 起始版本： 9 |
@@ -112,15 +120,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Huks_KeyPurpose
+### OH_Huks_KeyPurpose
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Huks_KeyPurpose
@@ -132,6 +142,7 @@ enum OH_Huks_KeyPurpose
  
 **起始版本：** 9
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_HUKS_KEY_PURPOSE_ENCRYPT = 1 | 表示密钥用于对明文进行加密操作。 |
@@ -147,9 +158,10 @@ enum OH_Huks_KeyPurpose
  
   
 
-#### OH_Huks_KeyDigest
+### OH_Huks_KeyDigest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Huks_KeyDigest
@@ -161,6 +173,7 @@ enum OH_Huks_KeyDigest
  
 **起始版本：** 9
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_HUKS_DIGEST_NONE = 0 | 无摘要算法。 |
@@ -175,9 +188,10 @@ enum OH_Huks_KeyDigest
  
   
 
-#### OH_Huks_KeyPadding
+### OH_Huks_KeyPadding
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Huks_KeyPadding
@@ -189,6 +203,7 @@ enum OH_Huks_KeyPadding
  
 **起始版本：** 9
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_HUKS_PADDING_NONE = 0 | 不使用填充算法。 |
@@ -203,9 +218,10 @@ enum OH_Huks_KeyPadding
  
   
 
-#### OH_Huks_CipherMode
+### OH_Huks_CipherMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Huks_CipherMode
@@ -217,6 +233,7 @@ enum OH_Huks_CipherMode
  
 **起始版本：** 9
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_HUKS_MODE_ECB = 1 | 使用ECB模式。 |
@@ -230,9 +247,10 @@ enum OH_Huks_CipherMode
  
   
 
-#### OH_Huks_KeySize
+### OH_Huks_KeySize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Huks_KeySize
@@ -244,6 +262,7 @@ enum OH_Huks_KeySize
  
 **起始版本：** 9
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_HUKS_RSA_KEY_SIZE_512 = 512 | 使用RSA算法的密钥长度为512bit。 |
@@ -273,9 +292,10 @@ enum OH_Huks_KeySize
  
   
 
-#### OH_Huks_KeyAlg
+### OH_Huks_KeyAlg
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Huks_KeyAlg
@@ -287,6 +307,7 @@ enum OH_Huks_KeyAlg
  
 **起始版本：** 9
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_HUKS_ALG_RSA = 1 | 使用RSA算法。 |
@@ -310,9 +331,10 @@ enum OH_Huks_KeyAlg
  
   
 
-#### OH_Huks_AlgSuite
+### OH_Huks_AlgSuite
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Huks_AlgSuite
@@ -350,6 +372,7 @@ OH_HUKS_UNWRAP_SUITE_SM2_SM4_ECB_NOPADDING对应的密钥材料格式：
  
 **起始版本：** 9
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_HUKS_UNWRAP_SUITE_X25519_AES_256_GCM_NOPADDING = 1 | 密文导入密钥材料格式（Length-Value格式）采用X25519密钥协商同时采用AES-256-GCM加解密。具体材料格式见上方枚举描述。 |
@@ -359,9 +382,10 @@ OH_HUKS_UNWRAP_SUITE_SM2_SM4_ECB_NOPADDING对应的密钥材料格式：
  
   
 
-#### OH_Huks_KeyGenerateType
+### OH_Huks_KeyGenerateType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Huks_KeyGenerateType
@@ -373,6 +397,7 @@ enum OH_Huks_KeyGenerateType
  
 **起始版本：** 9
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_HUKS_KEY_GENERATE_TYPE_DEFAULT = 0 | 默认生成的密钥。 |
@@ -382,9 +407,10 @@ enum OH_Huks_KeyGenerateType
  
   
 
-#### OH_Huks_KeyFlag
+### OH_Huks_KeyFlag
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Huks_KeyFlag
@@ -396,6 +422,7 @@ enum OH_Huks_KeyFlag
  
 **起始版本：** 9
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_HUKS_KEY_FLAG_IMPORT_KEY = 1 | 通过导入公钥接口导入的密钥。 |
@@ -406,9 +433,10 @@ enum OH_Huks_KeyFlag
  
   
 
-#### OH_Huks_KeyStorageType
+### OH_Huks_KeyStorageType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Huks_KeyStorageType
@@ -420,6 +448,7 @@ enum OH_Huks_KeyStorageType
  
 **起始版本：** 9
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_HUKS_STORAGE_TEMP = 0 | 通过接口返回给业务。 |
@@ -430,9 +459,10 @@ enum OH_Huks_KeyStorageType
  
   
 
-#### OH_Huks_ImportKeyType
+### OH_Huks_ImportKeyType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Huks_ImportKeyType
@@ -444,6 +474,7 @@ enum OH_Huks_ImportKeyType
  
 **起始版本：** 9
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_HUKS_KEY_TYPE_PUBLIC_KEY = 0 | 导入的密钥类型为公钥。 |
@@ -453,9 +484,10 @@ enum OH_Huks_ImportKeyType
  
   
 
-#### OH_Huks_RsaPssSaltLenType
+### OH_Huks_RsaPssSaltLenType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Huks_RsaPssSaltLenType
@@ -467,6 +499,7 @@ RSA算法PSS填充模式下盐值长度类型。
  
 **起始版本：** 10
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_HUKS_RSA_PSS_SALT_LEN_DIGEST = 0 | 以摘要长度设置盐值长度。 |
@@ -475,9 +508,10 @@ RSA算法PSS填充模式下盐值长度类型。
  
   
 
-#### OH_Huks_ErrCode
+### OH_Huks_ErrCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Huks_ErrCode
@@ -489,6 +523,7 @@ enum OH_Huks_ErrCode
  
 **起始版本：** 9
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_HUKS_SUCCESS = 0 | 成功。 |
@@ -524,9 +559,10 @@ enum OH_Huks_ErrCode
  
   
 
-#### OH_Huks_TagType
+### OH_Huks_TagType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Huks_TagType
@@ -538,6 +574,7 @@ enum OH_Huks_TagType
  
 **起始版本：** 9
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_HUKS_TAG_TYPE_INVALID = 0 << 28 | 非法的Tag类型。 |
@@ -554,9 +591,10 @@ enum OH_Huks_TagType
  
   
 
-#### OH_Huks_UserAuthType
+### OH_Huks_UserAuthType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Huks_UserAuthType
@@ -568,6 +606,7 @@ enum OH_Huks_UserAuthType
  
 **起始版本：** 9
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_HUKS_USER_AUTH_TYPE_FINGERPRINT = 1 << 0 | 用户认证类型为指纹。 |
@@ -578,9 +617,10 @@ enum OH_Huks_UserAuthType
  
   
 
-#### OH_Huks_AuthAccessType
+### OH_Huks_AuthAccessType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Huks_AuthAccessType
@@ -592,6 +632,7 @@ enum OH_Huks_AuthAccessType
  
 **起始版本：** 9
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_HUKS_AUTH_ACCESS_INVALID_CLEAR_PASSWORD = 1 << 0 | 安全访问控制类型为清除密码后密钥无效。 |
@@ -601,9 +642,10 @@ enum OH_Huks_AuthAccessType
  
   
 
-#### OH_Huks_AuthStorageLevel
+### OH_Huks_AuthStorageLevel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Huks_AuthStorageLevel
@@ -615,6 +657,7 @@ enum OH_Huks_AuthStorageLevel
  
 **起始版本：** 11
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_HUKS_AUTH_STORAGE_LEVEL_DE = 0 | 表示密钥仅在开机后可访问。 |
@@ -628,9 +671,10 @@ enum OH_Huks_AuthStorageLevel
  
   
 
-#### OH_Huks_ChallengeType
+### OH_Huks_ChallengeType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Huks_ChallengeType
@@ -642,6 +686,7 @@ enum OH_Huks_ChallengeType
  
 **起始版本：** 9
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_HUKS_CHALLENGE_TYPE_NORMAL = 0 | challenge为普通类型，默认32字节。 |
@@ -655,9 +700,10 @@ enum OH_Huks_ChallengeType
  
   
 
-#### OH_Huks_UserAuthMode
+### OH_Huks_UserAuthMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Huks_UserAuthMode
@@ -669,6 +715,7 @@ enum OH_Huks_UserAuthMode
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_HUKS_USER_AUTH_MODE_LOCAL = 0 | 本地认证模式。 |
@@ -677,9 +724,10 @@ enum OH_Huks_UserAuthMode
  
   
 
-#### OH_Huks_ChallengePosition
+### OH_Huks_ChallengePosition
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Huks_ChallengePosition
@@ -691,6 +739,7 @@ challenge类型为用户自定义类型时，生成的challenge有效长度仅�
  
 **起始版本：** 9
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_HUKS_CHALLENGE_POS_0 = 0 | 0~7字节为当前密钥的有效challenge。 |
@@ -701,9 +750,10 @@ challenge类型为用户自定义类型时，生成的challenge有效长度仅�
  
   
 
-#### OH_Huks_SecureSignType
+### OH_Huks_SecureSignType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Huks_SecureSignType
@@ -715,6 +765,7 @@ enum OH_Huks_SecureSignType
  
 **起始版本：** 9
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_HUKS_SECURE_SIGN_WITH_AUTHINFO = 1 | 签名类型为携带认证信息。生成或导入密钥时指定该字段，则在使用密钥进行签名时，对待签名的数据添加认证信息后进行签名。注意：携带的认证信息包含身份信息，开发者需在其隐私声明中对此身份信息的使用目的、存留策略和销毁方式进行说明。 |
@@ -722,9 +773,10 @@ enum OH_Huks_SecureSignType
  
   
 
-#### OH_Huks_KeyClassType
+### OH_Huks_KeyClassType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Huks_KeyClassType
@@ -736,6 +788,7 @@ enum OH_Huks_KeyClassType
  
 **起始版本：** 22
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_HUKS_KEY_CLASS_DEFAULT = 0 | 默认类型，指定密钥存储在HUKS中。 |
@@ -744,9 +797,10 @@ enum OH_Huks_KeyClassType
  
   
 
-#### OH_Huks_KeyWrapType
+### OH_Huks_KeyWrapType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Huks_KeyWrapType
@@ -758,6 +812,7 @@ enum OH_Huks_KeyWrapType
  
 **起始版本：** 20
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_HUKS_KEY_WRAP_TYPE_HUK_BASED = 2 | 硬件唯一密钥的封装类型。 |
@@ -765,9 +820,10 @@ enum OH_Huks_KeyWrapType
  
   
 
-#### OH_Huks_Tag
+### OH_Huks_Tag
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Huks_Tag
@@ -793,6 +849,7 @@ enum OH_Huks_Tag
  
 **起始版本：** 9
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_HUKS_TAG_ALGORITHM = OH_HUKS_TAG_TYPE_UINT \| 1 | 算法类型。类型可在枚举OH_Huks_KeyAlg中选择。 |

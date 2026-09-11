@@ -1,9 +1,9 @@
 # AbilityDelegator
 
-更新时间：2026-06-16 09:03:21
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-abilitydelegator
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 AbilityDelegator是用于调度和管理UIAbility测试生命周期的代理控制器，它通过AbilityMonitor机制来监听和管理[UIAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability)生命周期的变化。例如获取UIAbility当前状态（如是否已创建/是否在前台等）、查询当前获焦的UIAbility、等待UIAbility进入某个生命周期节点（如等待UIAbility进入onForeground）、启动指定UIAbility、设置超时机制等功能。
 
@@ -14,9 +14,10 @@ AbilityDelegator是用于调度和管理UIAbility测试生命周期的代理控�
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { abilityDelegatorRegistry } from '@kit.TestKit';
@@ -24,15 +25,17 @@ import { abilityDelegatorRegistry } from '@kit.TestKit';
 
 
 
-#### AbilityDelegator
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## AbilityDelegator
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### addAbilityMonitor9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### addAbilityMonitor
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addAbilityMonitor(monitor: AbilityMonitor, callback: AsyncCallback&lt;void&gt;): void
 
@@ -44,6 +47,7 @@ addAbilityMonitor(monitor: AbilityMonitor, callback: AsyncCallback&lt;void&gt;):
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | monitor | AbilityMonitor | 是 | AbilityMonitor实例。 |
@@ -54,9 +58,10 @@ addAbilityMonitor(monitor: AbilityMonitor, callback: AsyncCallback&lt;void&gt;):
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling AddAbilityMonitor failed. |
 
 
@@ -89,9 +94,10 @@ abilityDelegator.addAbilityMonitor(monitor, (error: BusinessError) => {
 
 
 
-#### addAbilityMonitor9+
+### addAbilityMonitor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addAbilityMonitor(monitor: AbilityMonitor): Promise&lt;void&gt;
 
@@ -103,12 +109,14 @@ addAbilityMonitor(monitor: AbilityMonitor): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | monitor | AbilityMonitor | 是 | AbilityMonitor实例。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -119,9 +127,10 @@ addAbilityMonitor(monitor: AbilityMonitor): Promise&lt;void&gt;
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling AddAbilityMonitor failed. |
 
 
@@ -148,9 +157,10 @@ abilityDelegator.addAbilityMonitor(monitor).then(() => {
 
 
 
-#### addAbilityMonitorSync10+
+### addAbilityMonitorSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addAbilityMonitorSync(monitor: AbilityMonitor): void
 
@@ -162,6 +172,7 @@ addAbilityMonitorSync(monitor: AbilityMonitor): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | monitor | AbilityMonitor | 是 | AbilityMonitor实例。 |
@@ -171,9 +182,10 @@ addAbilityMonitorSync(monitor: AbilityMonitor): void
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling AddAbilityMonitorSync failed. |
 
 
@@ -200,19 +212,21 @@ abilityDelegator.addAbilityMonitorSync(monitor);
 
 
 
-#### removeAbilityMonitor9+
+### removeAbilityMonitor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeAbilityMonitor(monitor: AbilityMonitor, callback: AsyncCallback&lt;void&gt;): void
 
-删除已经添加的AbilityMonitor实例。使用callback异步回调。
+删除已经添加的AbilityMonitor实例。使用callback异步回调。不支持多线程并发调用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -224,9 +238,10 @@ removeAbilityMonitor(monitor: AbilityMonitor, callback: AsyncCallback&lt;void&gt
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling RemoveAbilityMonitor failed. |
 
 
@@ -256,9 +271,10 @@ abilityDelegator.removeAbilityMonitor(monitor, (error: BusinessError) => {
 
 
 
-#### removeAbilityMonitor9+
+### removeAbilityMonitor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeAbilityMonitor(monitor: AbilityMonitor): Promise&lt;void&gt;
 
@@ -270,12 +286,14 @@ removeAbilityMonitor(monitor: AbilityMonitor): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | monitor | AbilityMonitor | 是 | AbilityMonitor实例。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -286,9 +304,10 @@ removeAbilityMonitor(monitor: AbilityMonitor): Promise&lt;void&gt;
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling RemoveAbilityMonitor failed. |
 
 
@@ -316,9 +335,10 @@ abilityDelegator.removeAbilityMonitor(monitor).then(() => {
 
 
 
-#### removeAbilityMonitorSync10+
+### removeAbilityMonitorSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeAbilityMonitorSync(monitor: AbilityMonitor): void
 
@@ -330,6 +350,7 @@ removeAbilityMonitorSync(monitor: AbilityMonitor): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | monitor | AbilityMonitor | 是 | AbilityMonitor实例。 |
@@ -339,9 +360,10 @@ removeAbilityMonitorSync(monitor: AbilityMonitor): void
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling RemoveAbilityMonitorSync failed. |
 
 
@@ -367,9 +389,10 @@ abilityDelegator.removeAbilityMonitorSync(monitor);
 
 
 
-#### waitAbilityMonitor9+
+### waitAbilityMonitor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 waitAbilityMonitor(monitor: AbilityMonitor, callback: AsyncCallback&lt;UIAbility&gt;): void
 
@@ -381,6 +404,7 @@ waitAbilityMonitor(monitor: AbilityMonitor, callback: AsyncCallback&lt;UIAbility
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | monitor | AbilityMonitor | 是 | AbilityMonitor实例。 |
@@ -391,9 +415,10 @@ waitAbilityMonitor(monitor: AbilityMonitor, callback: AsyncCallback&lt;UIAbility
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling WaitAbilityMonitor failed. |
 
 
@@ -426,9 +451,10 @@ abilityDelegator.waitAbilityMonitor(monitor, (error: BusinessError, data: UIAbil
 
 
 
-#### waitAbilityMonitor9+
+### waitAbilityMonitor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 waitAbilityMonitor(monitor: AbilityMonitor, timeout: number, callback: AsyncCallback&lt;UIAbility&gt;): void
 
@@ -439,6 +465,7 @@ waitAbilityMonitor(monitor: AbilityMonitor, timeout: number, callback: AsyncCall
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -451,9 +478,10 @@ waitAbilityMonitor(monitor: AbilityMonitor, timeout: number, callback: AsyncCall
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling WaitAbilityMonitor failed. |
 
 
@@ -492,9 +520,10 @@ abilityDelegator.waitAbilityMonitor(monitor, timeout, (error: BusinessError, dat
 
 
 
-#### waitAbilityMonitor9+
+### waitAbilityMonitor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 waitAbilityMonitor(monitor: AbilityMonitor, timeout?: number): Promise&lt;UIAbility&gt;
 
@@ -506,6 +535,7 @@ waitAbilityMonitor(monitor: AbilityMonitor, timeout?: number): Promise&lt;UIAbil
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | monitor | AbilityMonitor | 是 | AbilityMonitor实例。 |
@@ -513,6 +543,7 @@ waitAbilityMonitor(monitor: AbilityMonitor, timeout?: number): Promise&lt;UIAbil
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -523,9 +554,10 @@ waitAbilityMonitor(monitor: AbilityMonitor, timeout?: number): Promise&lt;UIAbil
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling WaitAbilityMonitor failed. |
 
 
@@ -553,9 +585,10 @@ abilityDelegator.waitAbilityMonitor(monitor).then((data: UIAbility) => {
 
 
 
-#### getAppContext9+
+### getAppContext
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAppContext(): Context
 
@@ -566,6 +599,7 @@ getAppContext(): Context
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -586,9 +620,10 @@ let context = abilityDelegator.getAppContext();
 
 
 
-#### getAbilityState9+
+### getAbilityState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAbilityState(ability: UIAbility): number
 
@@ -600,12 +635,14 @@ getAbilityState(ability: UIAbility): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ability | UIAbility | 是 | 指定Ability对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -616,9 +653,10 @@ getAbilityState(ability: UIAbility): number
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 
 
 **示例：**
@@ -642,19 +680,21 @@ abilityDelegator.getCurrentTopAbility((err: BusinessError, data: UIAbility) => {
 
 
 
-#### getCurrentTopAbility9+
+### getCurrentTopAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCurrentTopAbility(callback: AsyncCallback&lt;UIAbility&gt;): void
 
-获取当前应用顶部Ability。使用callback异步回调。不支持Worker线程调用。
+获取当前应用顶部Ability。使用callback异步回调。不支持Worker线程调用。不支持多线程并发调用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -665,9 +705,10 @@ getCurrentTopAbility(callback: AsyncCallback&lt;UIAbility&gt;): void
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling GetCurrentTopAbility failed. |
 
 
@@ -690,19 +731,21 @@ abilityDelegator.getCurrentTopAbility((err: BusinessError, data: UIAbility) => {
 
 
 
-#### getCurrentTopAbility9+
+### getCurrentTopAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCurrentTopAbility(): Promise&lt;UIAbility&gt;
 
-获取当前应用顶部Ability。使用Promise异步回调。不支持Worker线程调用。
+获取当前应用顶部Ability。使用Promise异步回调。不支持Worker线程调用。不支持多线程并发调用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -712,6 +755,7 @@ getCurrentTopAbility(): Promise&lt;UIAbility&gt;
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -736,19 +780,21 @@ abilityDelegator.getCurrentTopAbility().then((data: UIAbility) => {
 
 
 
-#### startAbility9+
+### startAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startAbility(want: Want, callback: AsyncCallback&lt;void&gt;): void
 
-启动指定Ability。使用callback异步回调。
+启动指定Ability。使用callback异步回调。不支持多线程并发调用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -760,9 +806,10 @@ startAbility(want: Want, callback: AsyncCallback&lt;void&gt;): void
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000001 | The specified ability does not exist. |
 | 16000002 | Incorrect ability type. |
 | 16000004 | Cannot start an invisible component. |
@@ -805,13 +852,14 @@ abilityDelegator.startAbility(want, (err: BusinessError, data: void) => {
 
 
 
-#### startAbility9+
+### startAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startAbility(want: Want): Promise&lt;void&gt;
 
-启动指定Ability。使用Promise异步回调。
+启动指定Ability。使用Promise异步回调。不支持多线程并发调用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -819,12 +867,14 @@ startAbility(want: Want): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | 启动Ability参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -835,9 +885,10 @@ startAbility(want: Want): Promise&lt;void&gt;
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000001 | The specified ability does not exist. |
 | 16000002 | Incorrect ability type. |
 | 16000004 | Cannot start an invisible component. |
@@ -875,19 +926,21 @@ abilityDelegator.startAbility(want).then((data: void) => {
 
 
 
-#### doAbilityForeground9+
+### doAbilityForeground
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 doAbilityForeground(ability: UIAbility, callback: AsyncCallback&lt;void&gt;): void
 
-调度指定Ability生命周期状态到Foreground状态。使用callback异步回调。
+调度指定Ability生命周期状态到Foreground状态。使用callback异步回调。不支持多线程并发调用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -899,9 +952,10 @@ doAbilityForeground(ability: UIAbility, callback: AsyncCallback&lt;void&gt;): vo
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling DoAbilityForeground failed. |
 
 
@@ -917,23 +971,32 @@ let ability: UIAbility;
 
 abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 abilityDelegator.getCurrentTopAbility((err: BusinessError, data: UIAbility) => {
-  console.info('getCurrentTopAbility callback');
-  ability = data;
-  abilityDelegator.doAbilityForeground(ability, (err: BusinessError) => {
-    console.info("doAbilityForeground callback");
-  });
+  if (err) {
+    console.error(`getCurrentTopAbility fail. Code: ${err.code}, message: ${err.message}`);
+  } else {
+    console.info('getCurrentTopAbility callback');
+    ability = data;
+    abilityDelegator.doAbilityForeground(ability, (err: BusinessError) => {
+      if (err) {
+        console.error(`doAbilityForeground fail. Code: ${err.code}, message: ${err.message}`);
+      } else {
+        console.info('doAbilityForeground callback');
+      }
+    });
+  }
 });
 ```
 
 
 
-#### doAbilityForeground9+
+### doAbilityForeground
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 doAbilityForeground(ability: UIAbility): Promise&lt;void&gt;
 
-调度指定Ability生命周期状态到Foreground状态。使用Promise异步回调。
+调度指定Ability生命周期状态到Foreground状态。使用Promise异步回调。不支持多线程并发调用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -941,12 +1004,14 @@ doAbilityForeground(ability: UIAbility): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ability | UIAbility | 是 | 指定Ability对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -957,9 +1022,10 @@ doAbilityForeground(ability: UIAbility): Promise&lt;void&gt;
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling DoAbilityForeground failed. |
 
 
@@ -985,19 +1051,21 @@ abilityDelegator.getCurrentTopAbility((err: BusinessError, data: UIAbility) => {
 
 
 
-#### doAbilityBackground9+
+### doAbilityBackground
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 doAbilityBackground(ability: UIAbility, callback: AsyncCallback&lt;void&gt;): void
 
-调度指定Ability生命周期状态到Background状态。使用callback异步回调。
+调度指定Ability生命周期状态到Background状态。使用callback异步回调。不支持多线程并发调用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1009,9 +1077,10 @@ doAbilityBackground(ability: UIAbility, callback: AsyncCallback&lt;void&gt;): vo
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling DoAbilityBackground failed. |
 
 
@@ -1037,13 +1106,14 @@ abilityDelegator.getCurrentTopAbility((err: BusinessError, data: UIAbility) => {
 
 
 
-#### doAbilityBackground9+
+### doAbilityBackground
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 doAbilityBackground(ability: UIAbility): Promise&lt;void&gt;
 
-调度指定Ability生命周期状态到Background状态。使用Promise异步回调。
+调度指定Ability生命周期状态到Background状态。使用Promise异步回调。不支持多线程并发调用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1051,12 +1121,14 @@ doAbilityBackground(ability: UIAbility): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ability | UIAbility | 是 | 指定Ability对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1067,9 +1139,10 @@ doAbilityBackground(ability: UIAbility): Promise&lt;void&gt;
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling DoAbilityBackground failed. |
 
 
@@ -1095,9 +1168,10 @@ abilityDelegator.getCurrentTopAbility((err: BusinessError, data: UIAbility) => {
 
 
 
-#### printSync9+
+### printSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 printSync(msg: string): void
 
@@ -1109,6 +1183,7 @@ printSync(msg: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | msg | string | 是 | 日志字符串。字符串最大长度为10000。 |
@@ -1118,9 +1193,10 @@ printSync(msg: string): void
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 
 
 **示例：**
@@ -1137,9 +1213,10 @@ abilityDelegator.printSync(msg);
 
 
 
-#### print
+### print
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 print(msg: string, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1150,6 +1227,7 @@ print(msg: string, callback: AsyncCallback&lt;void&gt;): void
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1174,9 +1252,10 @@ abilityDelegator.print(msg, (err: BusinessError) => {
 
 
 
-#### print
+### print
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 print(msg: string): Promise&lt;void&gt;
 
@@ -1188,12 +1267,14 @@ print(msg: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | msg | string | 是 | 日志字符串。字符串最大长度为10000。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1216,13 +1297,14 @@ abilityDelegator.print(msg).then(() => {
 
 
 
-#### executeShellCommand
+### executeShellCommand
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 executeShellCommand(cmd: string, callback: AsyncCallback&lt;ShellCmdResult&gt;): void
 
-执行指定的shell命令。使用callback异步回调。
+执行指定的shell命令。使用callback异步回调。不支持多线程并发调用。
 
 仅支持如下shell命令：aa, bm, cp, mkdir, rm, uinput, hilog, ppwd, echo, uitest, acm, hidumper, wukong, pkill, ps, pidof。
 
@@ -1231,6 +1313,7 @@ executeShellCommand(cmd: string, callback: AsyncCallback&lt;ShellCmdResult&gt;):
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1258,13 +1341,14 @@ abilityDelegator.executeShellCommand(cmd, (err: BusinessError, data: abilityDele
 
 
 
-#### executeShellCommand
+### executeShellCommand
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 executeShellCommand(cmd: string, timeoutSecs: number, callback: AsyncCallback&lt;ShellCmdResult&gt;): void
 
-指定超时时间，并执行指定的shell命令。使用callback异步回调。
+指定超时时间，并执行指定的shell命令。使用callback异步回调。不支持多线程并发调用。
 
 仅支持如下shell命令：aa, bm, cp, mkdir, rm, uinput, hilog, ppwd, echo, uitest, acm, hidumper, wukong, pkill, ps, pidof。
 
@@ -1273,6 +1357,7 @@ executeShellCommand(cmd: string, timeoutSecs: number, callback: AsyncCallback&lt
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1299,13 +1384,14 @@ abilityDelegator.executeShellCommand(cmd, timeout, (err: BusinessError, data: ab
 
 
 
-#### executeShellCommand
+### executeShellCommand
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 executeShellCommand(cmd: string, timeoutSecs?: number): Promise&lt;ShellCmdResult&gt;
 
-指定超时时间，并执行指定的shell命令。使用Promise异步回调。
+指定超时时间，并执行指定的shell命令。使用Promise异步回调。不支持多线程并发调用。
 
 仅支持如下shell命令：aa, bm, cp, mkdir, rm, uinput, hilog, ppwd, echo, uitest, acm, hidumper, wukong, pkill, ps, pidof。
 
@@ -1315,6 +1401,7 @@ executeShellCommand(cmd: string, timeoutSecs?: number): Promise&lt;ShellCmdResul
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cmd | string | 是 | shell命令字符串。 |
@@ -1322,6 +1409,7 @@ executeShellCommand(cmd: string, timeoutSecs?: number): Promise&lt;ShellCmdResul
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1345,9 +1433,10 @@ abilityDelegator.executeShellCommand(cmd, timeout).then((data) => {
 
 
 
-#### finishTest9+
+### finishTest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 finishTest(msg: string, code: number, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1358,6 +1447,7 @@ finishTest(msg: string, code: number, callback: AsyncCallback&lt;void&gt;): void
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1370,9 +1460,10 @@ finishTest(msg: string, code: number, callback: AsyncCallback&lt;void&gt;): void
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling FinishTest failed. |
 
 
@@ -1393,9 +1484,10 @@ abilityDelegator.finishTest(msg, 0, (err: BusinessError) => {
 
 
 
-#### finishTest9+
+### finishTest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 finishTest(msg: string, code: number): Promise&lt;void&gt;
 
@@ -1407,6 +1499,7 @@ finishTest(msg: string, code: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | msg | string | 是 | 日志字符串。 |
@@ -1414,6 +1507,7 @@ finishTest(msg: string, code: number): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1424,9 +1518,10 @@ finishTest(msg: string, code: number): Promise&lt;void&gt;
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling FinishTest failed. |
 
 
@@ -1446,19 +1541,21 @@ abilityDelegator.finishTest(msg, 0).then(() => {
 
 
 
-#### addAbilityStageMonitor9+
+### addAbilityStageMonitor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addAbilityStageMonitor(monitor: AbilityStageMonitor, callback: AsyncCallback&lt;void&gt;): void
 
-添加一个AbilityStageMonitor对象，用于监视指定AbilityStage的生命周期状态更改。使用callback异步回调。
+添加一个AbilityStageMonitor对象，用于监视指定AbilityStage的生命周期状态更改。使用callback异步回调。不支持多线程并发调用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1470,9 +1567,10 @@ addAbilityStageMonitor(monitor: AbilityStageMonitor, callback: AsyncCallback&lt;
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling AddAbilityStageMonitor failed. |
 
 
@@ -1495,9 +1593,10 @@ abilityDelegator.addAbilityStageMonitor({
 
 
 
-#### addAbilityStageMonitor9+
+### addAbilityStageMonitor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addAbilityStageMonitor(monitor: AbilityStageMonitor): Promise&lt;void&gt;
 
@@ -1509,12 +1608,14 @@ addAbilityStageMonitor(monitor: AbilityStageMonitor): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | monitor | AbilityStageMonitor | 是 | AbilityStageMonitor 实例。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1525,9 +1626,10 @@ addAbilityStageMonitor(monitor: AbilityStageMonitor): Promise&lt;void&gt;
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling AddAbilityStageMonitor failed. |
 
 
@@ -1549,9 +1651,10 @@ abilityDelegator.addAbilityStageMonitor({
 
 
 
-#### addAbilityStageMonitorSync10+
+### addAbilityStageMonitorSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addAbilityStageMonitorSync(monitor: AbilityStageMonitor): void
 
@@ -1563,6 +1666,7 @@ addAbilityStageMonitorSync(monitor: AbilityStageMonitor): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | monitor | AbilityStageMonitor | 是 | AbilityStageMonitor 实例。 |
@@ -1572,9 +1676,10 @@ addAbilityStageMonitorSync(monitor: AbilityStageMonitor): void
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling AddAbilityStageMonitorSync failed. |
 
 
@@ -1594,9 +1699,10 @@ abilityDelegator.addAbilityStageMonitorSync({
 
 
 
-#### removeAbilityStageMonitor9+
+### removeAbilityStageMonitor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeAbilityStageMonitor(monitor: AbilityStageMonitor, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1608,6 +1714,7 @@ removeAbilityStageMonitor(monitor: AbilityStageMonitor, callback: AsyncCallback&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | monitor | AbilityStageMonitor | 是 | AbilityStageMonitor 实例。 |
@@ -1618,9 +1725,10 @@ removeAbilityStageMonitor(monitor: AbilityStageMonitor, callback: AsyncCallback&
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling RemoveAbilityStageMonitor failed. |
 
 
@@ -1643,9 +1751,10 @@ abilityDelegator.removeAbilityStageMonitor({
 
 
 
-#### removeAbilityStageMonitor9+
+### removeAbilityStageMonitor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeAbilityStageMonitor(monitor: AbilityStageMonitor): Promise&lt;void&gt;
 
@@ -1657,12 +1766,14 @@ removeAbilityStageMonitor(monitor: AbilityStageMonitor): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | monitor | AbilityStageMonitor | 是 | AbilityStageMonitor 实例。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1673,9 +1784,10 @@ removeAbilityStageMonitor(monitor: AbilityStageMonitor): Promise&lt;void&gt;
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling RemoveAbilityStageMonitor failed. |
 
 
@@ -1697,9 +1809,10 @@ abilityDelegator.removeAbilityStageMonitor({
 
 
 
-#### removeAbilityStageMonitorSync10+
+### removeAbilityStageMonitorSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeAbilityStageMonitorSync(monitor: AbilityStageMonitor): void
 
@@ -1711,6 +1824,7 @@ removeAbilityStageMonitorSync(monitor: AbilityStageMonitor): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | monitor | AbilityStageMonitor | 是 | AbilityStageMonitor 实例。 |
@@ -1720,9 +1834,10 @@ removeAbilityStageMonitorSync(monitor: AbilityStageMonitor): void
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling RemoveAbilityStageMonitorSync failed. |
 
 
@@ -1742,9 +1857,10 @@ abilityDelegator.removeAbilityStageMonitorSync({
 
 
 
-#### waitAbilityStageMonitor9+
+### waitAbilityStageMonitor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 waitAbilityStageMonitor(monitor: AbilityStageMonitor, callback: AsyncCallback&lt;AbilityStage&gt;): void
 
@@ -1756,6 +1872,7 @@ waitAbilityStageMonitor(monitor: AbilityStageMonitor, callback: AsyncCallback&lt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | monitor | AbilityStageMonitor | 是 | AbilityStageMonitor 实例。 |
@@ -1766,9 +1883,10 @@ waitAbilityStageMonitor(monitor: AbilityStageMonitor, callback: AsyncCallback&lt
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling WaitAbilityStageMonitor failed. |
 
 
@@ -1792,9 +1910,10 @@ abilityDelegator.waitAbilityStageMonitor({
 
 
 
-#### waitAbilityStageMonitor9+
+### waitAbilityStageMonitor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 waitAbilityStageMonitor(monitor: AbilityStageMonitor, timeout?: number): Promise&lt;AbilityStage&gt;
 
@@ -1806,6 +1925,7 @@ waitAbilityStageMonitor(monitor: AbilityStageMonitor, timeout?: number): Promise
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | monitor | AbilityStageMonitor | 是 | AbilityStageMonitor 实例。 |
@@ -1813,6 +1933,7 @@ waitAbilityStageMonitor(monitor: AbilityStageMonitor, timeout?: number): Promise
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1823,9 +1944,10 @@ waitAbilityStageMonitor(monitor: AbilityStageMonitor, timeout?: number): Promise
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling WaitAbilityStageMonitor failed. |
 
 
@@ -1848,9 +1970,10 @@ abilityDelegator.waitAbilityStageMonitor({
 
 
 
-#### waitAbilityStageMonitor9+
+### waitAbilityStageMonitor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 waitAbilityStageMonitor(monitor: AbilityStageMonitor, timeout: number, callback: AsyncCallback&lt;AbilityStage&gt;): void
 
@@ -1861,6 +1984,7 @@ waitAbilityStageMonitor(monitor: AbilityStageMonitor, timeout: number, callback:
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1873,9 +1997,10 @@ waitAbilityStageMonitor(monitor: AbilityStageMonitor, timeout: number, callback:
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000100 | Calling WaitAbilityStageMonitor failed. |
 
 
@@ -1900,9 +2025,10 @@ abilityDelegator.waitAbilityStageMonitor({
 
 
 
-#### setMockList11+
+### setMockList11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMockList(mockList: Record<string, string>): void
 
@@ -1914,6 +2040,7 @@ setMockList(mockList: Record<string, string>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mockList | Record<string, string> | 是 | 模块mock替换关系的键值对象，其中key为待替换的目标路径，value为用于替换的mock实现文件的路径。 |
@@ -1923,9 +2050,10 @@ setMockList(mockList: Record<string, string>): void
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 16000050 | Internal error. |
 
 

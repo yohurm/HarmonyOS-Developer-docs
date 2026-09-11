@@ -1,9 +1,9 @@
 # ExtensionContext
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-extensioncontext
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ExtensionContext是[ExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-extensionability)的上下文环境，继承自[Context](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-context#context)。
  
@@ -14,9 +14,10 @@ ExtensionContext模块提供访问特定[ExtensionAbility](https://developer.hua
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { common } from '@kit.AbilityKit';
@@ -24,14 +25,16 @@ import { common } from '@kit.AbilityKit';
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
  
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | currentHapModuleInfo | HapModuleInfo | 否 | 否 | 所属Hap包的信息。 |
@@ -41,15 +44,16 @@ import { common } from '@kit.AbilityKit';
  
   
 
-#### 使用场景
+## 使用场景
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-ExtensionContext主要用于查询所属ExtensionAbility的信息、Module的配置信息以及HAP包的信息，开发者可根据自身业务需求使用对应的信息。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+ExtensionContext主要用于查询所属ExtensionAbility的信息、Module的配置信息以及HAP模块的信息，开发者可根据自身业务需求使用对应的信息。
  
 **示例：**
  
-在扩展的[FormExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-form-formextensionability)中获取上下文，查询该扩展的FormExtensionAbility所属HAP包等信息。
+在扩展的[FormExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-form-formextensionability)中获取上下文，查询该扩展的FormExtensionAbility所属HAP模块等信息。
  
 ```text
 import { FormExtensionAbility, formBindingData } from '@kit.FormKit';

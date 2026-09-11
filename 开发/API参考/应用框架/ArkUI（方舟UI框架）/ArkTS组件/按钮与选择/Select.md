@@ -1,9 +1,9 @@
 # Select
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-select
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供下拉选择菜单，让用户在多个选项间选择。Select组件支持设置选项图标、自定义样式、分割线等，适用于需要在有限空间内展示多个选项供用户选择的场景。
 
@@ -12,17 +12,19 @@
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Select(options: Array&lt;SelectOption&gt;)
 
@@ -32,6 +34,7 @@ Select(options: Array&lt;SelectOption&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | Array&lt;SelectOption&gt; | 是 | 设置下拉选项。 |
@@ -39,13 +42,15 @@ Select(options: Array&lt;SelectOption&gt;)
 
 
 
-#### SelectOption对象说明
+## SelectOption对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 下拉菜单项的信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -56,17 +61,19 @@ Select(options: Array&lt;SelectOption&gt;)
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
 
 
 
-#### selected
+### selected
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selected(value: number | Resource)
 
@@ -82,6 +89,7 @@ selected(value: number | Resource)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| Resource11+ | 是 | 下拉菜单初始选项的索引，索引值从0开始。 |
@@ -89,9 +97,10 @@ selected(value: number | Resource)
 
 
 
-#### selected18+
+### selected18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selected(numCount: Optional<number | Resource>)
 
@@ -107,6 +116,7 @@ selected(numCount: Optional<number | Resource>)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | numCount | Optional<number \| Resource> | 是 | 下拉菜单初始选项的索引，索引值从0开始。 当numCount的值为undefined或null时，选中第一项。 |
@@ -114,9 +124,10 @@ selected(numCount: Optional<number | Resource>)
 
 
 
-#### value
+### value
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 value(value: ResourceStr)
 
@@ -132,6 +143,7 @@ value(value: ResourceStr)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceStr11+ | 是 | 下拉按钮本身的文本内容。 说明： 文本长度大于列宽时，文本被截断，超出的部分以省略号的方式显示。 |
@@ -139,9 +151,10 @@ value(value: ResourceStr)
 
 
 
-#### value18+
+### value18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 value(resStr: Optional&lt;ResourceStr&gt;)
 
@@ -157,6 +170,7 @@ value(resStr: Optional&lt;ResourceStr&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resStr | Optional&lt;ResourceStr&gt; | 是 | 下拉按钮本身的文本内容。 当resStr的值为undefined时维持上次取值。 说明： 文本长度大于列宽时，文本被截断。 |
@@ -164,9 +178,10 @@ value(resStr: Optional&lt;ResourceStr&gt;)
 
 
 
-#### controlSize12+
+### controlSize12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 controlSize(value: ControlSize)
 
@@ -179,6 +194,7 @@ controlSize(value: ControlSize)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -195,9 +211,10 @@ controlSize、width、height接口作用优先级：
 
 
 
-#### controlSize18+
+### controlSize18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 controlSize(size: Optional&lt;ControlSize&gt;)
 
@@ -210,6 +227,7 @@ controlSize(size: Optional&lt;ControlSize&gt;)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -226,9 +244,10 @@ controlSize、width、height接口作用优先级：
 
 
 
-#### menuItemContentModifier12+
+### menuItemContentModifier12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 menuItemContentModifier(modifier: ContentModifier&lt;MenuItemConfiguration&gt;)
 
@@ -246,6 +265,7 @@ menuItemContentModifier(modifier: ContentModifier&lt;MenuItemConfiguration&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | modifier | ContentModifier&lt;MenuItemConfiguration&gt; | 是 | 在Select组件上，定制下拉菜单项内容区的方法。 modifier：内容修改器，开发者需要自定义class实现ContentModifier接口。 |
@@ -253,9 +273,10 @@ menuItemContentModifier(modifier: ContentModifier&lt;MenuItemConfiguration&gt;)
 
 
 
-#### menuItemContentModifier18+
+### menuItemContentModifier18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 menuItemContentModifier(modifier: Optional<ContentModifier&lt;MenuItemConfiguration&gt;>)
 
@@ -273,6 +294,7 @@ menuItemContentModifier(modifier: Optional<ContentModifier&lt;MenuItemConfigurat
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | modifier | Optional<ContentModifier&lt;MenuItemConfiguration&gt;> | 是 | 在Select组件上，定制下拉菜单项内容区的方法。 modifier：内容修改器，开发者需要自定义class实现ContentModifier接口。 当modifier的值为undefined或null时，不使用内容修改器。 |
@@ -280,9 +302,10 @@ menuItemContentModifier(modifier: Optional<ContentModifier&lt;MenuItemConfigurat
 
 
 
-#### divider12+
+### divider12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 divider(options: Optional&lt;DividerOptions&gt; | null)
 
@@ -296,6 +319,7 @@ divider(options: Optional&lt;DividerOptions&gt; | null)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | Optional&lt;DividerOptions&gt; \| null | 是 | 1.设置DividerOptions，则按设置的样式显示分割线。 默认值： { strokeWidth: '1px' , color: '#33182431' } 2.设置为null时，不显示分割线。 3.strokeWidth设置过宽时，会覆盖文字。分割线会从每一个Item底部开始，同时向上向下画分割线。 4.startMargin和endMargin的默认值与不设置divider属性时的分割线样式保持一致。startMargin和endMargin的和与optionWidth的值相等时，不显示分割线。 startMargin和endMargin的和超过optionWidth的值时，按照默认样式显示分割线。 |
@@ -303,9 +327,10 @@ divider(options: Optional&lt;DividerOptions&gt; | null)
 
 
 
-#### dividerStyle19+
+### dividerStyle19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 dividerStyle(style: Optional&lt;DividerStyleOptions&gt;)
 
@@ -319,6 +344,7 @@ dividerStyle(style: Optional&lt;DividerStyleOptions&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | Optional&lt;DividerStyleOptions&gt; | 是 | 1.设置DividerStyleOptions，则按设置的样式显示分割线。 默认值： { strokeWidth: '1px' , color: '#33182431' } 2.设置为null或undefined时，展示默认分割线。 3.当mode为FLOAT_ABOVE_MENU时，strokeWidth设置过宽时，会覆盖文字。分割线会从每一个Item底部开始，同时向上向下画分割线。当mode为EMBEDDED_IN_MENU时，分割线在Menu中展开，独立占用高度。 4.startMargin和endMargin的默认值与不设置divider属性时的分割线样式保持一致。startMargin和endMargin的和与optionWidth的值相等时，不显示分割线。startMargin和endMargin的和超过optionWidth的值时，按照默认样式显示分割线。 |
@@ -326,9 +352,10 @@ dividerStyle(style: Optional&lt;DividerStyleOptions&gt;)
 
 
 
-#### font
+### font
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 font(value: Font)
 
@@ -340,6 +367,7 @@ font(value: Font)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Font | 是 | 下拉按钮本身的文本样式。 API version 11及以前默认值： { size: \$r('sys.float.ohos_id_text_size_button1'), weight: FontWeight.Medium } API version 12以后，如果设置controlSize的值为：ControlSize.SMALL，size默认值是\$r('sys.float.ohos_id_text_size_button2')，否则为\$r('sys.float.ohos_id_text_size_button1')。 |
@@ -347,9 +375,10 @@ font(value: Font)
 
 
 
-#### font18+
+### font18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 font(selectFont: Optional&lt;Font&gt;)
 
@@ -363,6 +392,7 @@ font(selectFont: Optional&lt;Font&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | selectFont | Optional&lt;Font&gt; | 是 | 下拉按钮本身的文本样式。 如果设置controlSize的值为：ControlSize.SMALL，size默认值是\$r('sys.float.ohos_id_text_size_button2')，否则为\$r('sys.float.ohos_id_text_size_button1')。 当selectFont的值为undefined时，恢复为系统文本样式。 |
@@ -370,9 +400,10 @@ font(selectFont: Optional&lt;Font&gt;)
 
 
 
-#### fontColor
+### fontColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontColor(value: ResourceColor)
 
@@ -384,6 +415,7 @@ fontColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 下拉按钮本身的文本颜色。 默认值：\$r('sys.color.ohos_id_color_text_primary')混合\$r('sys.color.ohos_id_alpha_content_primary')的透明度。 |
@@ -391,9 +423,10 @@ fontColor(value: ResourceColor)
 
 
 
-#### fontColor18+
+### fontColor18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontColor(resColor: Optional&lt;ResourceColor&gt;)
 
@@ -407,6 +440,7 @@ fontColor(resColor: Optional&lt;ResourceColor&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resColor | Optional&lt;ResourceColor&gt; | 是 | 下拉按钮本身的文本颜色。 当resColor的值为undefined时，默认值：\$r('sys.color.ohos_id_color_text_primary')混合\$r('sys.color.ohos_id_alpha_content_primary')的透明度。 |
@@ -414,9 +448,10 @@ fontColor(resColor: Optional&lt;ResourceColor&gt;)
 
 
 
-#### selectedOptionBgColor
+### selectedOptionBgColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectedOptionBgColor(value: ResourceColor)
 
@@ -428,6 +463,7 @@ selectedOptionBgColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 下拉菜单选中项的背景色。 默认值：\$r('sys.color.ohos_id_color_component_activated')混合\$r('sys.color.ohos_id_alpha_highlight_bg')的透明度。 |
@@ -435,9 +471,10 @@ selectedOptionBgColor(value: ResourceColor)
 
 
 
-#### selectedOptionBgColor18+
+### selectedOptionBgColor18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectedOptionBgColor(resColor: Optional&lt;ResourceColor&gt;)
 
@@ -451,6 +488,7 @@ selectedOptionBgColor(resColor: Optional&lt;ResourceColor&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resColor | Optional&lt;ResourceColor&gt; | 是 | 下拉菜单选中项的背景色。 当resColor的值为undefined时，默认值：\$r('sys.color.ohos_id_color_component_activated')混合\$r('sys.color.ohos_id_alpha_highlight_bg')的透明度。 |
@@ -458,9 +496,10 @@ selectedOptionBgColor(resColor: Optional&lt;ResourceColor&gt;)
 
 
 
-#### selectedOptionFont
+### selectedOptionFont
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectedOptionFont(value: Font)
 
@@ -472,6 +511,7 @@ selectedOptionFont(value: Font)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Font | 是 | 下拉菜单选中项的文本样式。 默认值： { size: \$r('sys.float.ohos_id_text_size_body1'), weight: FontWeight.Regular } |
@@ -479,9 +519,10 @@ selectedOptionFont(value: Font)
 
 
 
-#### selectedOptionFont18+
+### selectedOptionFont18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectedOptionFont(selectFont: Optional&lt;Font&gt;)
 
@@ -495,6 +536,7 @@ selectedOptionFont(selectFont: Optional&lt;Font&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | selectFont | Optional&lt;Font&gt; | 是 | 下拉菜单选中项的文本样式。 当selectFont的值为undefined时，默认值： { size: \$r('sys.float.ohos_id_text_size_body1'), weight: FontWeight.Regular } |
@@ -502,9 +544,10 @@ selectedOptionFont(selectFont: Optional&lt;Font&gt;)
 
 
 
-#### selectedOptionFontColor
+### selectedOptionFontColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectedOptionFontColor(value: ResourceColor)
 
@@ -516,6 +559,7 @@ selectedOptionFontColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 下拉菜单选中项的文本颜色。 默认值：\$r('sys.color.ohos_id_color_text_primary_activated') |
@@ -523,9 +567,10 @@ selectedOptionFontColor(value: ResourceColor)
 
 
 
-#### selectedOptionFontColor18+
+### selectedOptionFontColor18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectedOptionFontColor(resColor: Optional&lt;ResourceColor&gt;)
 
@@ -539,6 +584,7 @@ selectedOptionFontColor(resColor: Optional&lt;ResourceColor&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resColor | Optional&lt;ResourceColor&gt; | 是 | 下拉菜单选中项的文本颜色。 当resColor的值为undefined时，默认值为\$r('sys.color.ohos_id_color_text_primary_activated')。 |
@@ -546,9 +592,10 @@ selectedOptionFontColor(resColor: Optional&lt;ResourceColor&gt;)
 
 
 
-#### optionBgColor
+### optionBgColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 optionBgColor(value: ResourceColor)
 
@@ -560,6 +607,7 @@ optionBgColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 下拉菜单项的背景色。 默认值： API version 11之前，默认值为Color.White。 API version 11及之后，默认值为Color.Transparent。 |
@@ -567,9 +615,10 @@ optionBgColor(value: ResourceColor)
 
 
 
-#### optionBgColor18+
+### optionBgColor18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 optionBgColor(resColor: Optional&lt;ResourceColor&gt;)
 
@@ -583,6 +632,7 @@ optionBgColor(resColor: Optional&lt;ResourceColor&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resColor | Optional&lt;ResourceColor&gt; | 是 | 下拉菜单项的背景色。 当resColor的值为undefined时，默认值：API version 11之前为Color.White，API version 11及之后为Color.Transparent。 |
@@ -590,9 +640,10 @@ optionBgColor(resColor: Optional&lt;ResourceColor&gt;)
 
 
 
-#### optionFont
+### optionFont
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 optionFont(value: Font)
 
@@ -604,6 +655,7 @@ optionFont(value: Font)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Font | 是 | 下拉菜单项的文本样式。 默认值： { size: \$r('sys.float.ohos_id_text_size_body1'), weight: FontWeight.Regular } |
@@ -611,9 +663,10 @@ optionFont(value: Font)
 
 
 
-#### optionFont18+
+### optionFont18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 optionFont(selectFont: Optional&lt;Font&gt;)
 
@@ -629,6 +682,7 @@ optionFont(selectFont: Optional&lt;Font&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | selectFont | Optional&lt;Font&gt; | 是 | 下拉菜单项的文本样式。 当selectFont的值为undefined时，默认值： { size: \$r('sys.float.ohos_id_text_size_body1'), weight: FontWeight.Regular } |
@@ -636,9 +690,10 @@ optionFont(selectFont: Optional&lt;Font&gt;)
 
 
 
-#### optionFontColor
+### optionFontColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 optionFontColor(value: ResourceColor)
 
@@ -650,6 +705,7 @@ optionFontColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 下拉菜单项的文本颜色。 默认值：\$r('sys.color.ohos_id_color_text_primary') |
@@ -657,9 +713,10 @@ optionFontColor(value: ResourceColor)
 
 
 
-#### optionFontColor18+
+### optionFontColor18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 optionFontColor(resColor: Optional&lt;ResourceColor&gt;)
 
@@ -673,6 +730,7 @@ optionFontColor(resColor: Optional&lt;ResourceColor&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resColor | Optional&lt;ResourceColor&gt; | 是 | 下拉菜单项的文本颜色。 当resColor的值为undefined时，默认值：\$r('sys.color.ohos_id_color_text_primary') |
@@ -680,9 +738,10 @@ optionFontColor(resColor: Optional&lt;ResourceColor&gt;)
 
 
 
-#### space10+
+### space10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 space(value: Length)
 
@@ -696,6 +755,7 @@ space(value: Length)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Length | 是 | 下拉菜单项的文本与箭头的间距。 默认值：8vp 说明： 设置string类型时，不支持百分比。 |
@@ -703,9 +763,10 @@ space(value: Length)
 
 
 
-#### space18+
+### space18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 space(spaceLength: Optional&lt;Length&gt;)
 
@@ -719,6 +780,7 @@ space(spaceLength: Optional&lt;Length&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | spaceLength | Optional&lt;Length&gt; | 是 | 下拉菜单项的文本与箭头之间的间距。 当spaceLength的值为undefined时，默认值：8vp |
@@ -726,9 +788,10 @@ space(spaceLength: Optional&lt;Length&gt;)
 
 
 
-#### arrowPosition10+
+### arrowPosition10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 arrowPosition(value: ArrowPosition)
 
@@ -742,6 +805,7 @@ arrowPosition(value: ArrowPosition)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ArrowPosition | 是 | 下拉菜单项的文本与箭头之间的对齐方式。 默认值：ArrowPosition.END |
@@ -749,9 +813,10 @@ arrowPosition(value: ArrowPosition)
 
 
 
-#### arrowPosition18+
+### arrowPosition18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 arrowPosition(position: Optional&lt;ArrowPosition&gt;)
 
@@ -765,6 +830,7 @@ arrowPosition(position: Optional&lt;ArrowPosition&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | position | Optional&lt;ArrowPosition&gt; | 是 | 下拉菜单项的文本与箭头之间的对齐方式。 当position的值为undefined时，默认值：ArrowPosition.END |
@@ -772,9 +838,10 @@ arrowPosition(position: Optional&lt;ArrowPosition&gt;)
 
 
 
-#### menuAlign10+
+### menuAlign10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 menuAlign(alignType: MenuAlignType, offset?: Offset)
 
@@ -788,6 +855,7 @@ menuAlign(alignType: MenuAlignType, offset?: Offset)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | alignType | MenuAlignType | 是 | 对齐方式类型。 默认值：MenuAlignType.START |
@@ -796,9 +864,10 @@ menuAlign(alignType: MenuAlignType, offset?: Offset)
 
 
 
-#### menuAlign18+
+### menuAlign18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 menuAlign(alignType: Optional&lt;MenuAlignType&gt;, offset?: Offset)
 
@@ -812,6 +881,7 @@ menuAlign(alignType: Optional&lt;MenuAlignType&gt;, offset?: Offset)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | alignType | Optional&lt;MenuAlignType&gt; | 是 | 对齐方式类型。 当alignType的值为undefined时，默认值：MenuAlignType.START |
@@ -820,9 +890,10 @@ menuAlign(alignType: Optional&lt;MenuAlignType&gt;, offset?: Offset)
 
 
 
-#### optionWidth11+
+### optionWidth11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 optionWidth(value: Dimension | OptionWidthMode )
 
@@ -840,6 +911,7 @@ Select组件距屏幕边缘的左右间距为16vp，建议将组件本身及菜�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Dimension \| OptionWidthMode | 是 | 下拉菜单项的宽度。 |
@@ -847,9 +919,10 @@ Select组件距屏幕边缘的左右间距为16vp，建议将组件本身及菜�
 
 
 
-#### optionWidth18+
+### optionWidth18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 optionWidth(width: Optional<Dimension | OptionWidthMode> )
 
@@ -867,6 +940,7 @@ Select组件距屏幕边缘的左右间距为16vp，建议将组件本身及菜�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | width | Optional<Dimension \| OptionWidthMode> | 是 | 下拉菜单项的宽度。 当width的值为undefined时，属性无效，菜单项宽度设为默认值，即2栅格。 |
@@ -874,9 +948,10 @@ Select组件距屏幕边缘的左右间距为16vp，建议将组件本身及菜�
 
 
 
-#### optionHeight11+
+### optionHeight11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 optionHeight(value: Dimension)
 
@@ -894,6 +969,7 @@ optionHeight(value: Dimension)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Dimension | 是 | 下拉菜单显示的最大高度。 |
@@ -901,9 +977,10 @@ optionHeight(value: Dimension)
 
 
 
-#### optionHeight18+
+### optionHeight18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 optionHeight(height: Optional&lt;Dimension&gt;)
 
@@ -921,6 +998,7 @@ optionHeight(height: Optional&lt;Dimension&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | height | Optional&lt;Dimension&gt; | 是 | 下拉菜单显示的最大高度。 当height的值为undefined时，属性不生效，下拉菜单最大高度设为默认值，即屏幕可用高度的80%。 |
@@ -928,9 +1006,10 @@ optionHeight(height: Optional&lt;Dimension&gt;)
 
 
 
-#### menuBackgroundColor11+
+### menuBackgroundColor11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 menuBackgroundColor(value: ResourceColor)
 
@@ -948,6 +1027,7 @@ menuBackgroundColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 下拉菜单的背景色。 默认值：API version 11之前为\$r('sys.color.ohos_id_color_card_bg')，API version 11及之后为Color.Transparent。 |
@@ -955,9 +1035,10 @@ menuBackgroundColor(value: ResourceColor)
 
 
 
-#### menuBackgroundColor18+
+### menuBackgroundColor18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 menuBackgroundColor(resColor: Optional&lt;ResourceColor&gt;)
 
@@ -971,6 +1052,7 @@ menuBackgroundColor(resColor: Optional&lt;ResourceColor&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resColor | Optional&lt;ResourceColor&gt; | 是 | 下拉菜单的背景色。 当resColor的值为undefined时，默认值为Color.Transparent。 |
@@ -978,9 +1060,10 @@ menuBackgroundColor(resColor: Optional&lt;ResourceColor&gt;)
 
 
 
-#### menuBackgroundBlurStyle11+
+### menuBackgroundBlurStyle11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 menuBackgroundBlurStyle(value: BlurStyle)
 
@@ -998,6 +1081,7 @@ menuBackgroundBlurStyle(value: BlurStyle)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | BlurStyle | 是 | 下拉菜单的背景模糊材质。 默认值：BlurStyle.COMPONENT_ULTRA_THICK |
@@ -1005,9 +1089,10 @@ menuBackgroundBlurStyle(value: BlurStyle)
 
 
 
-#### menuBackgroundBlurStyle18+
+### menuBackgroundBlurStyle18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 menuBackgroundBlurStyle(style: Optional&lt;BlurStyle&gt;)
 
@@ -1021,6 +1106,7 @@ menuBackgroundBlurStyle(style: Optional&lt;BlurStyle&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | Optional&lt;BlurStyle&gt; | 是 | 下拉菜单的背景模糊材质。 当style的值为undefined时，默认值：BlurStyle.COMPONENT_ULTRA_THICK |
@@ -1028,9 +1114,10 @@ menuBackgroundBlurStyle(style: Optional&lt;BlurStyle&gt;)
 
 
 
-#### avoidance19+
+### avoidance19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 avoidance(mode: AvoidanceMode)
 
@@ -1044,6 +1131,7 @@ avoidance(mode: AvoidanceMode)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | AvoidanceMode | 是 | 设置下拉菜单的避让模式。 默认值：AvoidanceMode.COVER_TARGET |
@@ -1051,9 +1139,10 @@ avoidance(mode: AvoidanceMode)
 
 
 
-#### menuOutline20+
+### menuOutline20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 menuOutline(outline: MenuOutlineOptions)
 
@@ -1067,6 +1156,7 @@ menuOutline(outline: MenuOutlineOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | outline | MenuOutlineOptions | 是 | 下拉菜单框的外描边样式。 |
@@ -1074,9 +1164,10 @@ menuOutline(outline: MenuOutlineOptions)
 
 
 
-#### showDefaultSelectedIcon20+
+### showDefaultSelectedIcon20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showDefaultSelectedIcon(show: boolean)
 
@@ -1090,6 +1181,7 @@ showDefaultSelectedIcon(show: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | show | boolean | 是 | 是否显示默认选定的图标。 true：显示默认选定的图标；false：不显示默认选定的图标，通过突出显示背景色来表示选中。 默认值：false 当show为true时，若设置了selectedOptionBgColor选中项的背景色时，则同时显示选中项的背景色和默认选定的图标；若未通过selectedOptionBgColor设置选中项的背景色时，不突出显示背景色，只显示默认选定的图标。 |
@@ -1097,9 +1189,10 @@ showDefaultSelectedIcon(show: boolean)
 
 
 
-#### textModifier20+
+### textModifier20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 textModifier(modifier: Optional&lt;TextModifier&gt;)
 
@@ -1117,6 +1210,7 @@ textModifier(modifier: Optional&lt;TextModifier&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | modifier | Optional&lt;TextModifier&gt; | 是 | 在Select组件上，定制按钮文本样式的方法。 当modifier的值为undefined时，不自定义文本样式。 |
@@ -1124,9 +1218,10 @@ textModifier(modifier: Optional&lt;TextModifier&gt;)
 
 
 
-#### arrowModifier20+
+### arrowModifier20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 arrowModifier(modifier: Optional&lt;SymbolGlyphModifier&gt;)
 
@@ -1144,6 +1239,7 @@ arrowModifier(modifier: Optional&lt;SymbolGlyphModifier&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | modifier | Optional&lt;SymbolGlyphModifier&gt; | 是 | 在Select组件上，定制Select按钮下拉箭头图标样式的方法。 当modifier的值为undefined时，不自定义下拉箭头图标样式。 |
@@ -1151,9 +1247,10 @@ arrowModifier(modifier: Optional&lt;SymbolGlyphModifier&gt;)
 
 
 
-#### optionTextModifier20+
+### optionTextModifier20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 optionTextModifier(modifier: Optional&lt;TextModifier&gt;)
 
@@ -1173,6 +1270,7 @@ optionTextModifier(modifier: Optional&lt;TextModifier&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | modifier | Optional&lt;TextModifier&gt; | 是 | 在Select组件上，定制Select下拉菜单未选中项文本样式的方法。 当modifier的值为undefined时，不自定义下拉菜单未选中项的文本样式。 |
@@ -1180,9 +1278,10 @@ optionTextModifier(modifier: Optional&lt;TextModifier&gt;)
 
 
 
-#### selectedOptionTextModifier20+
+### selectedOptionTextModifier20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectedOptionTextModifier(modifier: Optional<[TextModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#自定义modifier)>)
 
@@ -1202,6 +1301,7 @@ selectedOptionTextModifier(modifier: Optional<[TextModifier](https://developer.h
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | modifier | Optional&lt;TextModifier&gt; | 是 | 设置下拉菜单选中项的文本样式。 开发者可以根据需要管理和维护文本的样式进行设置。 当modifier的值为undefined时，不自定义下拉菜单选中项的文本样式。 |
@@ -1209,9 +1309,10 @@ selectedOptionTextModifier(modifier: Optional<[TextModifier](https://developer.h
 
 
 
-#### showInSubWindow20+
+### showInSubWindow20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showInSubWindow(showInSubWindow:Optional&lt;boolean&gt;)
 
@@ -1225,6 +1326,7 @@ showInSubWindow(showInSubWindow:Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | showInSubWindow | Optional&lt;boolean&gt; | 是 | 设置下拉菜单是否显示在子窗中。 true代表下拉菜单显示在子窗中。 false代表下拉菜单不显示在子窗中。 |
@@ -1232,9 +1334,10 @@ showInSubWindow(showInSubWindow:Optional&lt;boolean&gt;)
 
 
 
-#### keyboardAvoidMode23+
+### keyboardAvoidMode23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 keyboardAvoidMode(mode:Optional&lt;MenuKeyboardAvoidMode&gt;)
 
@@ -1248,6 +1351,7 @@ keyboardAvoidMode(mode:Optional&lt;MenuKeyboardAvoidMode&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | Optional&lt;MenuKeyboardAvoidMode&gt; | 是 | 设置下拉菜单是否避让软键盘。取值为undefined时，按照MenuKeyboardAvoidMode.NONE处理，不避让软键盘。各枚举值的具体效果参见MenuKeyboardAvoidMode枚举说明。 |
@@ -1255,9 +1359,10 @@ keyboardAvoidMode(mode:Optional&lt;MenuKeyboardAvoidMode&gt;)
 
 
 
-#### minKeyboardAvoidDistance23+
+### minKeyboardAvoidDistance23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 minKeyboardAvoidDistance(distance:Optional&lt;LengthMetrics&gt;)
 
@@ -1271,6 +1376,7 @@ minKeyboardAvoidDistance(distance:Optional&lt;LengthMetrics&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | distance | Optional&lt;LengthMetrics&gt; | 是 | 设置下拉菜单避让软键盘的最小距离。设置为负数、undefined时，按照8vp处理。 |
@@ -1278,9 +1384,10 @@ minKeyboardAvoidDistance(distance:Optional&lt;LengthMetrics&gt;)
 
 
 
-#### menuBackgroundBlurStyleOptions
+### menuBackgroundBlurStyleOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 menuBackgroundBlurStyleOptions(blurStyle: Optional&lt;BackgroundBlurStyleOptions&gt;)
 
@@ -1296,6 +1403,7 @@ menuBackgroundBlurStyleOptions(blurStyle: Optional&lt;BackgroundBlurStyleOptions
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | blurStyle | Optional&lt;BackgroundBlurStyleOptions&gt; | 是 | 设置Select下拉菜单的背景模糊效果。 |
@@ -1303,9 +1411,10 @@ menuBackgroundBlurStyleOptions(blurStyle: Optional&lt;BackgroundBlurStyleOptions
 
 
 
-#### menuBackgroundEffect
+### menuBackgroundEffect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 menuBackgroundEffect(effect: Optional&lt;BackgroundEffectOptions&gt;)
 
@@ -1321,6 +1430,7 @@ menuBackgroundEffect(effect: Optional&lt;BackgroundEffectOptions&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | effect | Optional&lt;BackgroundEffectOptions&gt; | 是 | 设置Select下拉菜单的背景属性，包括：模糊半径、亮度、饱和度和颜色。 |
@@ -1328,9 +1438,10 @@ menuBackgroundEffect(effect: Optional&lt;BackgroundEffectOptions&gt;)
 
 
 
-#### menuSystemMaterial
+### menuSystemMaterial
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 menuSystemMaterial(material:Optional&lt;SystemUiMaterial&gt;)
 
@@ -1346,6 +1457,7 @@ menuSystemMaterial(material:Optional&lt;SystemUiMaterial&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | material | Optional&lt;SystemUiMaterial&gt; | 是 | 设置下拉菜单系统材质。材质设置为无效值、undefined时，按照不设置系统材质处理。 |
@@ -1353,9 +1465,10 @@ menuSystemMaterial(material:Optional&lt;SystemUiMaterial&gt;)
 
 
 
-#### ArrowPosition10+枚举说明
+## ArrowPosition10+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 箭头的位置。
 
@@ -1365,6 +1478,7 @@ menuSystemMaterial(material:Optional&lt;SystemUiMaterial&gt;)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | END | 0 | 文字在前，箭头在后。 |
@@ -1373,9 +1487,10 @@ menuSystemMaterial(material:Optional&lt;SystemUiMaterial&gt;)
 
 
 
-#### MenuAlignType10+枚举说明
+## MenuAlignType10+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 下拉菜单的对齐方式。
 
@@ -1384,6 +1499,7 @@ menuSystemMaterial(material:Optional&lt;SystemUiMaterial&gt;)
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1394,9 +1510,10 @@ menuSystemMaterial(material:Optional&lt;SystemUiMaterial&gt;)
 
 
 
-#### AvoidanceMode19+枚举说明
+## AvoidanceMode19+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 下拉菜单避让模式的枚举选项。
 
@@ -1406,6 +1523,7 @@ menuSystemMaterial(material:Optional&lt;SystemUiMaterial&gt;)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | COVER_TARGET | 0 | 目标组件下方无足够空间时，覆盖目标组件。 |
@@ -1414,9 +1532,10 @@ menuSystemMaterial(material:Optional&lt;SystemUiMaterial&gt;)
 
 
 
-#### MenuItemConfiguration12+对象说明
+## MenuItemConfiguration12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 开发者需要自定义class实现ContentModifier接口。继承自[CommonConfiguration](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-content-modifier#commonconfigurationt)。
 
@@ -1425,6 +1544,7 @@ menuSystemMaterial(material:Optional&lt;SystemUiMaterial&gt;)
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1438,9 +1558,10 @@ menuSystemMaterial(material:Optional&lt;SystemUiMaterial&gt;)
 
 
 
-#### MenuOutlineOptions20+对象说明
+## MenuOutlineOptions20+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 下拉菜单框的外描边参数对象。
 
@@ -1450,6 +1571,7 @@ menuSystemMaterial(material:Optional&lt;SystemUiMaterial&gt;)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | width | Dimension \| EdgeOutlineWidths | 否 | 是 | 设置外描边宽度，不支持百分比。 默认值：0vp |
@@ -1458,15 +1580,17 @@ menuSystemMaterial(material:Optional&lt;SystemUiMaterial&gt;)
 
 
 
-#### 事件
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 事件
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### onSelect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### onSelect
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onSelect(callback: (index: number, value: string) => void)
 
@@ -1478,6 +1602,7 @@ onSelect(callback: (index: number, value: string) => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 选中项的索引，索引值从0开始。 |
@@ -1486,9 +1611,10 @@ onSelect(callback: (index: number, value: string) => void)
 
 
 
-#### onSelect18+
+### onSelect18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onSelect(callback: Optional&lt;OnSelectCallback&gt; )
 
@@ -1502,6 +1628,7 @@ onSelect(callback: Optional&lt;OnSelectCallback&gt; )
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Optional&lt;OnSelectCallback&gt; | 是 | 下拉菜单选中某一项的回调。 当callback的值为undefined时，不使用回调函数。 |
@@ -1509,9 +1636,10 @@ onSelect(callback: Optional&lt;OnSelectCallback&gt; )
 
 
 
-#### OnSelectCallback18+
+## OnSelectCallback18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnSelectCallback = (index: number, selectStr: string) => void
 
@@ -1525,6 +1653,7 @@ type OnSelectCallback = (index: number, selectStr: string) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 选中项的索引，索引值从0开始。 |
@@ -1533,13 +1662,17 @@ type OnSelectCallback = (index: number, selectStr: string) => void
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（设置下拉菜单）
+
+
+### 示例1（设置下拉菜单）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置[SelectOption](#selectoption对象说明)实现下拉菜单，并从API version 19开始通过设置[avoidance](#avoidance19)属性实现菜单的避让方式。
 
@@ -1598,7 +1731,10 @@ struct SelectExample {
 
 
 
-#### 示例2（设置symbol类型图标）
+### 示例2（设置symbol类型图标）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例实现了一个下拉菜单中图片为Symbol的Select组件，并从API version 19开始通过设置[avoidance](#avoidance19)属性实现菜单的避让方式。
 
@@ -1663,7 +1799,10 @@ struct SelectExample {
 
 
 
-#### 示例3（自定义下拉菜单）
+### 示例3（自定义下拉菜单）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例实现了一个自定义下拉菜单选项的Select组件。自定义下拉菜单选项样式为“文本 + Symbol图片 + 空白间隔 + 文本 + 绘制三角形”，点击菜单选项后Select组件显示菜单选项的文本内容。
 
@@ -1757,7 +1896,10 @@ struct SelectExample {
 
 
 
-#### 示例4（设置分割线样式）
+### 示例4（设置分割线样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置divider的DividerOptions类型实现分割线样式的下拉菜单，并从API version 19开始通过设置[avoidance](#avoidance19)属性实现菜单的避让方式。
 
@@ -1818,7 +1960,10 @@ struct SelectExample {
 
 
 
-#### 示例5（设置无分割线样式）
+### 示例5（设置无分割线样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置divider为null实现无分割线样式的下拉菜单，并从API version 19开始通过设置[avoidance](#avoidance19)属性实现菜单的避让方式。
 
@@ -1869,7 +2014,10 @@ struct SelectExample {
 
 
 
-#### 示例6（设置Select中文本和箭头样式）
+### 示例6（设置Select中文本和箭头样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 20开始，该示例通过[textModifier](#textmodifier20)和[arrowModifier](#arrowmodifier20)属性设置文本以及箭头样式。
 
@@ -1948,7 +2096,10 @@ struct SelectExample {
 
 
 
-#### 示例7（设置Select下拉菜单选中和非选中项文本样式）
+### 示例7（设置Select下拉菜单选中和非选中项文本样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 20开始，该示例通过[optionTextModifier](#optiontextmodifier20)和[selectedOptionTextModifier](#selectedoptiontextmodifier20)属性设置下拉菜单选中和非选中项文本样式。
 
@@ -2029,7 +2180,10 @@ struct SelectExample {
 
 
 
-#### 示例8（设置分割线模式）
+### 示例8（设置分割线模式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 19开始，该示例通过配置[DividerStyleOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#dividerstyleoptions12)的mode属性设置分割线模式。
 
@@ -2067,7 +2221,10 @@ struct Index {
 
 
 
-#### 示例9（设置Select下拉菜单外描边样式）
+### 示例9（设置Select下拉菜单外描边样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 20开始该示例通过配置menuOutline的width和color属性设置下拉菜单外描边样式。
 
@@ -2126,7 +2283,10 @@ struct SelectExample {
 
 
 
-#### 示例10（设置Select弹出菜单避让软键盘）
+### 示例10（设置Select弹出菜单避让软键盘）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过调用[keyboardAvoidMode](#keyboardavoidmode23)和[minKeyboardAvoidDistance](#minkeyboardavoiddistance23)接口，实现下拉菜单避让软键盘并自定义避让软键盘的最小距离。
 
@@ -2210,9 +2370,14 @@ struct Index {
 
 
 
-#### 示例11（设置Select和下拉菜单系统材质）
+### 示例11（设置Select和下拉菜单沉浸光感效果）
 
-该示例通过调用[menuSystemMaterial](#menusystemmaterial)接口实现下拉菜单系统材质效果，通过[SystemUiMaterial](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-image-effect#systemuimaterial)接口实现select组件系统材质效果。
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+该示例通过调用[menuSystemMaterial](#menusystemmaterial)接口设置下拉菜单的系统材质，实现沉浸光感效果；通过[SystemUiMaterial](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-image-effect#systemuimaterial)接口设置Select组件的系统材质，实现沉浸光感效果。
+
+组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
 
 从API版本26.0.0开始，新增menuSystemMaterial接口。
 

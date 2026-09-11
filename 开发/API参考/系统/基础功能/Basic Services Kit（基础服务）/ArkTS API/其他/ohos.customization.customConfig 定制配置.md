@@ -1,9 +1,9 @@
 # @ohos.customization.customConfig (定制配置)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-customization-customconfig
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块接口为应用提供定制配置的获取能力，如渠道号等。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { customConfig } from '@kit.BasicServicesKit';
@@ -22,9 +23,10 @@ import { customConfig } from '@kit.BasicServicesKit';
  
   
 
-#### customConfig.getChannelId
+## customConfig.getChannelId
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getChannelId(): string
  
@@ -32,10 +34,11 @@ getChannelId(): string
  
 **元服务API：** 从API version 13开始，该接口支持在元服务中使用。
  
-**系统能力：**SystemCapability.Customization.CustomConfig
+**系统能力：** SystemCapability.Customization.CustomConfig
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 渠道号 |

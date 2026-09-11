@@ -1,9 +1,9 @@
 # @ohos.statfs (statfs)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-statfs
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该模块提供文件系统相关存储信息的功能，向应用程序提供获取文件系统总字节数、空闲字节数的ArkTS接口。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import statfs from '@ohos.statfs';
@@ -22,9 +23,10 @@ import statfs from '@ohos.statfs';
  
   
 
-#### Statfs.getFreeBytes
+## Statfs.getFreeBytes
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFreeBytes(path:string):Promise&lt;number&gt;
  
@@ -34,6 +36,7 @@ getFreeBytes(path:string):Promise&lt;number&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 需要查询的文件系统的文件路径 |
@@ -41,6 +44,7 @@ getFreeBytes(path:string):Promise&lt;number&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | 返回空闲字节数 |
@@ -60,9 +64,10 @@ statfs.getFreeBytes(path).then((number: number) => {
  
   
 
-#### Statfs.getFreeBytes
+## Statfs.getFreeBytes
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFreeBytes(path:string, callback:AsyncCallback&lt;number&gt;): void
  
@@ -72,6 +77,7 @@ getFreeBytes(path:string, callback:AsyncCallback&lt;number&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 需要查询的文件系统的文件路径 |
@@ -96,9 +102,10 @@ statfs.getFreeBytes(path, (err: BusinessError, freeBytes:Number) => {
  
   
 
-#### Statfs.getTotalBytes
+## Statfs.getTotalBytes
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTotalBytes(path: string): Promise&lt;number&gt;
  
@@ -108,6 +115,7 @@ getTotalBytes(path: string): Promise&lt;number&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 需要查询的文件系统的文件路径 |
@@ -115,6 +123,7 @@ getTotalBytes(path: string): Promise&lt;number&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | 返回总字节数 |
@@ -134,9 +143,10 @@ statfs.getTotalBytes(path).then((number: number) => {
  
   
 
-#### Statfs.getTotalBytes
+## Statfs.getTotalBytes
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTotalBytes(path: string, callback: AsyncCallback&lt;number&gt;): void
  
@@ -146,6 +156,7 @@ getTotalBytes(path: string, callback: AsyncCallback&lt;number&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 需要查询的文件系统的文件路径 |

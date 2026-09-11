@@ -1,6 +1,6 @@
 # 文件打开加速（C/C++）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/preview-openfileboost
 
@@ -11,11 +11,12 @@
 从26.0.0版本起，新增动态参数配置功能，允许应用根据自身需求定制文件预加载策略（如文件后缀、大小范围）。同时，系统还提供文件打开加速服务可用性查询和文件操作事件上报功能，有助于提升预加载的准确性。
 
 
-#### 接口说明
+## 接口说明
 
 具体API说明详见[文件打开加速接口文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/openfileboost_preview)。
 
 **表1** 文件预加载接口介绍（C API）
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -52,13 +53,13 @@
 
 
 
-#### 约束限制
+## 约束限制
 
-当前仅在PC/2in1和tablet设备上支持。
+支持的设备类型：PC/2in1，从26.0.0版本开始，新增支持tablet设备。
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 申请文件打开加速服务的对应权限，在module.json5文件中添加文件预加载权限，注意ohos.permission.PRELOAD_FILE为受限权限，具体可参考[申请使用受限权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions-in-acl) 。
 
   
@@ -455,10 +456,10 @@ static napi_value ReportScanResult(napi_env env, napi_callback_info info) {
                                                          static_cast<uint32_t>(strlen(reportPath.c_str())), scanResult);
 
         if (res == FILE_SCAN_BOOST_SUCCESS) {
-            // 报告失败，应用可自定义错误处理
             OH_LOG_INFO(LOG_APP, "ReportScanResult successfully for: %{public}s", reportPath.c_str());
             reportCount++;
         } else {
+            // 报告失败，应用可自定义错误处理
             OH_LOG_ERROR(LOG_APP, "ReportScanResult failed for %{public}s, ret :%{public}d", reportPath.c_str(), res);
         }
 

@@ -1,10 +1,11 @@
 # 通过Authorization Code获取GroupUnionID
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-api-get-groupunionid-code
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/m68BO5jCR52HPHOTrIJotg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071727Z&HW-CC-Expire=86400&HW-CC-Sign=4870EEFEB706A65DA18C7314EB7D005B749B155BD07FDCB67D93DCF64B2917AE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/WcvWqhNqRb-dq3pYwPGNsQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072356Z&HW-CC-Expire=86400&HW-CC-Sign=E0A7089ABE6432071430B5F29E08F14B5435E7BFBFC159793440481020B7C26A)
 
 
 为了更安全的网络访问，请务必使用TLS1.2协议及规定内的加密套件。若使用协议是TLS1.0、TLS1.1或规定外的加密套件，可能无法正常访问华为账号服务。
@@ -14,19 +15,28 @@
 
 
 
-#### 功能介绍
+## 功能介绍
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 应用服务端通过获取到的Authorization Code调用此接口，获取GroupUnionID、用户级Access Token、Refresh Token、ID Token等信息。
 
 
 
-#### 场景描述
+## 场景描述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 针对用户登录需要获取GroupUnionID场景时，可以在[华为账号一键登录（获取手机号和UnionID/OpenID）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-phone-unionid-login)、[华为账号登录（获取UnionID/OpenID）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-unionid-login-button)、[静默登录](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-silent-login)等场景获取到Authorization Code后，调用该接口获取GroupUnionID、Access Token、Refresh Token、ID Token等信息。
 
 
 
-#### 使用约束
+## 使用约束
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
  - 需确保调用端网络正常。
  - 仅对企业开发者开放。
@@ -36,7 +46,10 @@
 
 
 
-#### 接口原型
+## 接口原型
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
  - **承载协议：** HTTPS POST
  - **接口方向：** 开发者服务器->华为账号服务器
@@ -50,11 +63,18 @@
 
 
 
-#### 请求参数
+## 请求参数
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 
 
-#### Request Header
+### Request Header
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
@@ -63,7 +83,11 @@
 
 
 
-#### Request Body
+### Request Body
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
@@ -77,7 +101,10 @@
 
 
 
-#### 请求示例
+## 请求示例
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 POST /oauth2/v3/token HTTP/1.1
@@ -89,11 +116,18 @@ grant_type=authorization_code&code=&client_id=<client_id>&client_secret=<client_
 
 
 
-#### 响应参数
+## 响应参数
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 
 
-#### Response Header
+### Response Header
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
@@ -102,9 +136,13 @@ grant_type=authorization_code&code=&client_id=<client_id>&client_secret=<client_
 
 
 
-#### Response Body
+### Response Body
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 调用成功时，响应消息体返回如下：
+
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
@@ -119,6 +157,7 @@ grant_type=authorization_code&code=&client_id=<client_id>&client_secret=<client_
 
 调用失败时，响应消息体返回如下：
 
+
 | 参数 | 参数类型 | 描述 |
 | --- | --- | --- |
 | error | int | 业务响应主错误码，详见错误码。 |
@@ -128,11 +167,17 @@ grant_type=authorization_code&code=&client_id=<client_id>&client_secret=<client_
 
 
 
-#### 响应示例
+## 响应示例
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 
 
-#### 请求成功时
+### 请求成功时
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```json
 HTTP/1.1 200 OK
@@ -151,7 +196,10 @@ Content-Type: application/json;charset=utf-8
 
 
 
-#### 请求失败时
+### 请求失败时
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```json
 HTTP/1.1 400 Bad Request
@@ -166,7 +214,10 @@ Content-Type: application/json
 
 
 
-#### 示例代码
+## 示例代码
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Java示例代码如下，运行前需要进行[示例代码环境配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-api-common#示例代码环境配置)（请将此示例代码与工具类CallUtils放于同一路径下，如不在同一路径，请手动添加import）
 
@@ -233,7 +284,11 @@ public class GetGroupUnionIDByCodeDemo {
 
 
 
-#### 错误码
+## 错误码
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | HTTP响应码 | 描述 | 解决方法 |
 | --- | --- | --- |
@@ -247,6 +302,7 @@ public class GetGroupUnionIDByCodeDemo {
 | 503 | 系统流控。 | 触发系统流控，请稍后重试。 |
 | 504 | 请求连接超时，常见于网络状况不稳定。 | 建议稍后重试，若仍无法解决，请通过在线提单提交问题。 |
 | 590 | 服务内部错误。 | 请通过在线提单提交问题。 |
+
 
 
 | 业务响应主错误码 | 业务响应子错误码 | 描述 | 解决方法 |

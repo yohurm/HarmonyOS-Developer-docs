@@ -16,7 +16,7 @@ import { BusinessError } from '@ohos.base';
 
 
 function getCertDetails() {
-  // 证书二进制数据，需业务自行赋值，下为示例，代码运行需要自行填充
+ <em> // 证书二进制数据，需业务自行赋值，下为示例，代码运行需要自行填充</em>
   let certData = '-----BEGIN CERTIFICATE-----\r\n' +
       'MIIDTjCCAjagAwIBAgIBBDANBgkqhkiG9w0BAQsFADASMRAwDgYDVQQDDAdSb290\n' +
       'IENBMB4XDTI0MDMxOTAyMDQwMVoXDTM0MDMxNzAyMDQwMVowEjEQMA4GA1UEAwwH\n' +
@@ -39,10 +39,10 @@ function getCertDetails() {
       '-----END CERTIFICATE-----';
   let encodingBlob: cert.EncodingBlob = {
     data: stringToUint8Array(certData),
-    // 根据encodingData的格式进行赋值，支持FORMAT_PEM和FORMAT_DER
+   <em> // 根据encodingData的格式进行赋值，支持FORMAT_PEM和FORMAT_DER</em>
     encodingFormat: cert.EncodingFormat.FORMAT_PEM
   };
-  // 创建X509Cert实例
+ <em> // 创建X509Cert实例</em>
   cert.createX509Cert(encodingBlob, (error, x509Cert) => {
     if (error) {
       hilog.error(0x0000, 'test', `errMsg: ${error.message}`);
@@ -59,7 +59,7 @@ function getCertDetails() {
   });
 }
 
-// string转Uint8Array
+<em>// string转Uint8Array</em>
 function stringToUint8Array(str: string): Uint8Array {
   let arr: Array<number> = [];
   for (let i = 0, j = str.length; i < j; i++) {
@@ -129,7 +129,7 @@ struct X509Cert {
   @State sn: string = '';
 
   getCertDetails() {
-    // 证书二进制数据，需业务自行赋值，下为占位格式示例，代码运行需要自行填充
+   <em> // 证书二进制数据，需业务自行赋值，下为占位格式示例，代码运行需要自行填充</em>
     let certData = '-----BEGIN CERTIFICATE-----\r\n' +
       'MIIDTjCCAjagAwIBAgIBBDANBgkqhkiG9w0BAQsFADASMRAwDgYDVQQDDAdSb290\n' +
       'IENBMB4XDTI0MDMxOTAyMDQwMVoXDTM0MDMxNzAyMDQwMVowEjEQMA4GA1UEAwwH\n' +
@@ -152,10 +152,10 @@ struct X509Cert {
       '-----END CERTIFICATE-----';
     let encodingBlob: cert.EncodingBlob = {
       data: this.stringToUint8Array(certData),
-      // 根据encodingData的格式进行赋值，支持FORMAT_PEM和FORMAT_DER
+    <em>  // 根据encodingData的格式进行赋值，支持FORMAT_PEM和FORMAT_DER</em>
       encodingFormat: cert.EncodingFormat.FORMAT_PEM
     };
-    // 创建X509Cert实例
+   <em> // 创建X509Cert实例</em>
     cert.createX509Cert(encodingBlob, (error, x509Cert) => {
       if (error) {
         hilog.error(0x0000, 'test', 'createX509Cert failed, errCode: ' + error.code + ', errMsg: ' + error.message);
@@ -174,7 +174,7 @@ struct X509Cert {
     });
   }
 
-  // string转Uint8Array
+ <em> // string转Uint8Array</em>
   stringToUint8Array(str: string): Uint8Array {
     let arr: Array<number> = [];
     for (let i = 0, j = str.length; i < j; i++) {

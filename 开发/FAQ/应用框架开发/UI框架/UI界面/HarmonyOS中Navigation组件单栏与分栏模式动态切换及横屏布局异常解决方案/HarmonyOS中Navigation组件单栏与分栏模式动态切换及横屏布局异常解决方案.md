@@ -4,7 +4,7 @@
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1644
 
-#### 问题现象
+## 问题现象
 
 在应用开发中使用Navigation组件时，常遇到与单栏与分栏模式相关的显示需求或异常：
  
@@ -14,7 +14,7 @@
  
  
 
-#### 背景知识
+## 背景知识
 
 - [Navigation组件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation)的分栏模式由[mode属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation#mode9)控制，包括单栏（Stack）、分栏（Split）和自适应（Auto）三个属性。该属性默认为Auto模式，在该模式下会自动监听屏幕属性，当为折叠屏或平板时，默认分栏显示，在折叠状态或普通手机时可为单栏显示。可通过[状态管理](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state-management-overview)实现动态切换mode属性的单栏与分栏模式，实现子页的放大效果。
 - 状态管理中的[AppStorage](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-state-management#appstorage)能实现全局的UI状态存储且通过[@StorageLink](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-appstorage#storagelink)可以和AppStorage中key对应的属性建立双向数据同步：1. StorageLink装饰的变量本地发生修改后，该修改会被写回AppStorage中。
@@ -24,7 +24,7 @@
  
  
 
-#### 解决方案
+## 解决方案
 
 - **针对问题一：实现页面在单栏与分栏模式间动态切换显示。**若应用需要在不同宽屏设备或用户交互中动态改变单栏与分栏效果，可以通过全局状态管理变量来控制 Navigation 组件的 mode 属性。
 
@@ -37,7 +37,7 @@ struct MainPage {
   pageInfos: NavPathStack = new NavPathStack();
   @StorageLink('isSplit') isSplit: boolean = true;
 
-  // 跳转回主页时重新修改为分栏模式，根据实际需求设置
+  <em>// 跳转回主页时重新修改为分栏模式，根据实际需求设置</em>
   aboutToAppear(): void {
     AppStorage.set('isSplit', true);
   }
@@ -73,7 +73,7 @@ export function NavPageOneBuilder() {
 struct NavPageOne {
   @State message: string = '放大';
 
-  // 跳转回该页面时重新修改为分栏模式，根据实际需求设置
+ <em> // 跳转回该页面时重新修改为分栏模式，根据实际需求设置</em>
   aboutToAppear(): void {
     AppStorage.set('isSplit', true);
   }
@@ -105,7 +105,7 @@ struct NavPageOne {
  实现效果如下：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/EBPWHPOMSMKSWR3e-Tj8JA/zh-cn_image_0000002663720495.png?HW-CC-KV=V1&HW-CC-Date=20260818T063534Z&HW-CC-Expire=86400&HW-CC-Sign=AF99666D3AF5ABBE82DE416C65867F3D19E60CBC0686B842CB69D1724120EEB7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/EBPWHPOMSMKSWR3e-Tj8JA/zh-cn_image_0000002663720495.png?HW-CC-KV=V1&HW-CC-Date=20260911T072743Z&HW-CC-Expire=86400&HW-CC-Sign=A95EED9FF76244CCE3342E7CFB66FE857CCB5C55569E011CCA56DB439BD647DA)
 
 - **场景二：跳转不同页面采用不同的模式设置。**在推送子页时修改 Navigation 模式，需要单栏显示的页面设置为 false，需要分栏显示的页面设置为 true。参考场景一，修改代码如下：
 
@@ -120,13 +120,13 @@ export function NavPageTwoBuilder() {
 struct NavPageTwo {
   @State message: string = '缩小';
 
-  // Startsolution1
-  // 其它页面跳转该页面时，会先重置为单栏模式
+ <em> // Startsolution1</em>
+<em>  // 其它页面跳转该页面时，会先重置为单栏模式</em>
   aboutToAppear(): void {
     AppStorage.set('isSplit', false);
     this.message = '缩小';
   }
-  // Endsolution1
+<em>  // Endsolution1</em>
 
   build() {
     NavDestination() {
@@ -196,7 +196,7 @@ struct MainPage {
           })
       }
     }
-    .mode(NavigationMode.Stack) // 强制设置为单栏模式，避免横屏时自动切换为分栏模式
+    .mode(NavigationMode.Stack) <em>// 强制设置为单栏模式，避免横屏时自动切换为分栏模式</em>
     .hideTitleBar(true)
     .hideToolBar(true)
   }
@@ -207,7 +207,7 @@ struct MainPage {
  
  
 
-#### 常见FAQ
+## 常见FAQ
 
 Q：[navBarWidth](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation#navbarwidth9)和[navBarWidthRange](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation#navbarwidthrange10)属性是否可以实现子页放大的功能？
  

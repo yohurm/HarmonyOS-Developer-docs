@@ -1,9 +1,9 @@
 # @ohos.app.appstartup.StartupConfig (启动框架配置信息)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-appstartup-startupconfig
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供[应用启动框架](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-startup)配置信息的定义。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { StartupConfig } from '@kit.AbilityKit';
@@ -22,18 +23,20 @@ import { StartupConfig } from '@kit.AbilityKit';
 
 
 
-#### StartupConfig
+## StartupConfig
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于配置任务超时时间和启动框架的监听器。详细使用方法可参考[设置启动参数](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-startup#设置启动参数)章节。
 
 **系统能力**：SystemCapability.Ability.AppStartup
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| timeoutMs | number | 否 | 是 | 执行所有启动任务的超时时间（单位：ms），默认值为10000ms。 |
-| startupListener | StartupListener | 否 | 是 | 表示启动框架的监听器，该监听器将在所有启动任务完成时调用。 |
+| timeoutMs | number | 否 | 是 | 执行所有启动任务的超时时间（单位：ms），默认值为10000ms。超时后启动框架会停止等待，并通过startupListener.onCompleted回调返回超时错误。超时不会中断正在执行的启动任务，但会影响后续任务的执行。 |
+| startupListener | StartupListener | 否 | 是 | 启动框架的监听器，该监听器将在所有启动任务完成时调用。未设置该参数时，不进行回调通知。 |
 
 
 **示例：**

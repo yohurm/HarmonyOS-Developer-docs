@@ -1,13 +1,13 @@
 # HiDebug接口使用示例（ArkTS）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hidebug-guidelines-arkts
 
 HiDebug ArkTS接口功能独立，需要获取调试信息时直接调用。具体调用方式请参考[@ohos.hidebug](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hidebug)中的示例。
 
 
-#### 开发示例
+## 开发示例
 
 本文以获取系统CPU使用率为例，展示如何调用HiDebug ArkTS接口。
 1. 使用DevEco Studio新建工程，选择“Empty Ability”。

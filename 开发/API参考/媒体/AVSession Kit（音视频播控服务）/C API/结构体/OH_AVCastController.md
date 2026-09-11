@@ -1,18 +1,19 @@
 # OH_AVCastController
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohavsession-oh-avcastcontroller
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct OH_AVCastController OH_AVCastController
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明投播控制器对象。该对象可以使用[OH_AVSession_CreateAVCastController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avsession-h#oh_avsession_createavcastcontroller)函数创建。
  

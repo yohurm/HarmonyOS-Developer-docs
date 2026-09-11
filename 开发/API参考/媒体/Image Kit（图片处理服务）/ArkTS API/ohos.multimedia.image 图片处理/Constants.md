@@ -1,18 +1,19 @@
 # Constants
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-c
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 本模块首批接口从API version 23开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { image } from '@kit.ImageKit';
@@ -20,14 +21,16 @@ import { image } from '@kit.ImageKit';
  
   
 
-#### 常量
+## 常量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
  
 **系统能力：** SystemCapability.Multimedia.Image.Core
   
+
 | 名称 | 类型 | 值 | 说明 |
 | --- | --- | --- | --- |
 | XMAGE_WATERMARK_MODE_AT_THE_BOTTOM | number | 9 | XMAGE水印模式：XMAGE水印固定位于图像底部中央。 |
@@ -54,13 +57,17 @@ import { image } from '@kit.ImageKit';
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### XMAGE水印模式
+### XMAGE水印模式
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -80,7 +87,10 @@ async function SetXmageWatermarkMode(imageSourceObj : image.ImageSource) {
  
   
 
-#### 拍摄模式
+### 拍摄模式
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -100,6 +110,9 @@ async function SetCaptureMode(imageSourceObj : image.ImageSource) {
  
   
 
-#### XMP Namespaces
+### XMP Namespaces
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 可以参考XMPMetadata中的[setValue](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-xmpmetadata#setvalue)和[getTag](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-xmpmetadata#gettag)等方法的示例来使用这些命名空间。

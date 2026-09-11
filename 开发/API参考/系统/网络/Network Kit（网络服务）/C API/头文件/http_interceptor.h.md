@@ -1,13 +1,14 @@
 # http_interceptor.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-net-http-interceptor-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义HTTP全局拦截器模块的接口，分为只读拦截器与可修改拦截器两类。通过全局只读拦截器，开发者可以监控应用内部通过所支持的系统网络组件发起的所有HTTP请求，实现日志记录功能，也可以在全局可修改拦截器中添加自定义逻辑，修改应用内部通过所支持的系统网络组件发起的HTTP请求的请求头、响应头、响应体。
  
@@ -22,8 +23,8 @@
   - **触发条件**：
 
   
-不拦截自动重定向的中间过程(仅暴露最终响应)。
-- 不拦截缓存命中时的响应(因无实际网络请求)。
+不拦截自动重定向的中间过程（仅暴露最终响应）。
+- 不拦截缓存命中时的响应（因无实际网络请求）。
 
   
  
@@ -39,16 +40,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | int32_t OH_Http_AddReadOnlyInterceptor(struct OH_Http_Interceptor *interceptor) | 添加一个HTTP全局只读拦截器。 |
@@ -61,15 +65,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Http_AddReadOnlyInterceptor()
+### OH_Http_AddReadOnlyInterceptor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Http_AddReadOnlyInterceptor(struct OH_Http_Interceptor *interceptor)
@@ -79,7 +85,7 @@ int32_t OH_Http_AddReadOnlyInterceptor(struct OH_Http_Interceptor *interceptor)
  
 添加一个HTTP全局只读拦截器。
  
-- 当前仅支持只读响应(OH_STAGE_RESPONSE)拦截器。
+- 当前仅支持只读响应（OH_STAGE_RESPONSE）拦截器。
 - 拦截器添加后将持续生效，开发者需显式调用接口释放资源。可调用[OH_Http_RemoveInterceptor](#oh_http_removeinterceptor)移除单个拦截器，或调用[OH_Http_RemoveAllInterceptors](#oh_http_removeallinterceptors)移除整组拦截器以释放资源。
 - 支持按需启动控制。若拦截器[OH_Http_Interceptor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-netstack-http-interceptor)的 enabled 属性设为 0，调用添加接口后拦截器不会立即启动，后续需调用[OH_Http_StartAllInterceptors](#oh_http_startallinterceptors)接口以启用拦截器。若enabled 属性设为 1，也可调用[OH_Http_StopAllInterceptors](#oh_http_stopallinterceptors)接口以停用拦截器。
 
@@ -92,6 +98,7 @@ int32_t OH_Http_AddReadOnlyInterceptor(struct OH_Http_Interceptor *interceptor)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_Http_Interceptor *interceptor | 待添加的拦截器，指向OH_Http_Interceptor结构体的指针。 |
@@ -99,6 +106,7 @@ int32_t OH_Http_AddReadOnlyInterceptor(struct OH_Http_Interceptor *interceptor)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回值为0表示执行成功；返回值为201表示权限被拒绝；返回值为401表示参数错误（如指针为nullptr，或不支持所添加的拦截器类型）。详细错误码请参考OH_HTTP_RESULT_OK、OH_HTTP_PERMISSION_DENIED和OH_HTTP_PARAMETER_ERROR。 |
@@ -106,9 +114,10 @@ int32_t OH_Http_AddReadOnlyInterceptor(struct OH_Http_Interceptor *interceptor)
  
   
 
-#### OH_Http_AddWritableInterceptor()
+### OH_Http_AddWritableInterceptor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Http_AddWritableInterceptor(struct OH_Http_Interceptor *interceptor)
@@ -130,6 +139,7 @@ int32_t OH_Http_AddWritableInterceptor(struct OH_Http_Interceptor *interceptor)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_Http_Interceptor *interceptor | 待添加的拦截器，指向OH_Http_Interceptor结构体的指针。 |
@@ -137,6 +147,7 @@ int32_t OH_Http_AddWritableInterceptor(struct OH_Http_Interceptor *interceptor)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回值为0表示执行成功；返回值为201表示权限被拒绝；返回值为401表示参数错误（如指针为nullptr，或不支持所添加的拦截器类型）。详细错误码请参考OH_HTTP_RESULT_OK、OH_HTTP_PERMISSION_DENIED和OH_HTTP_PARAMETER_ERROR。 |
@@ -144,9 +155,10 @@ int32_t OH_Http_AddWritableInterceptor(struct OH_Http_Interceptor *interceptor)
  
   
 
-#### OH_Http_RemoveInterceptor()
+### OH_Http_RemoveInterceptor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Http_RemoveInterceptor(struct OH_Http_Interceptor *interceptor)
@@ -164,6 +176,7 @@ int32_t OH_Http_RemoveInterceptor(struct OH_Http_Interceptor *interceptor)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_Http_Interceptor *interceptor | 待删除的拦截器，指向OH_Http_Interceptor结构体的指针。 |
@@ -171,6 +184,7 @@ int32_t OH_Http_RemoveInterceptor(struct OH_Http_Interceptor *interceptor)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回值为0表示执行成功；返回值为201表示权限被拒绝；返回值为401表示参数错误（如指针为 nullptr）。详细错误码请参考OH_HTTP_RESULT_OK、OH_HTTP_PERMISSION_DENIED和OH_HTTP_PARAMETER_ERROR。 |
@@ -178,9 +192,10 @@ int32_t OH_Http_RemoveInterceptor(struct OH_Http_Interceptor *interceptor)
  
   
 
-#### OH_Http_RemoveAllInterceptors()
+### OH_Http_RemoveAllInterceptors()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Http_RemoveAllInterceptors(int32_t groupId)
@@ -203,6 +218,7 @@ int32_t OH_Http_RemoveAllInterceptors(int32_t groupId)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | int32_t groupId | 拦截器组ID。 |
@@ -210,6 +226,7 @@ int32_t OH_Http_RemoveAllInterceptors(int32_t groupId)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回值为0表示执行成功；返回值为201表示权限被拒绝。详细错误码请参考OH_HTTP_RESULT_OK和OH_HTTP_PERMISSION_DENIED。 |
@@ -217,9 +234,10 @@ int32_t OH_Http_RemoveAllInterceptors(int32_t groupId)
  
   
 
-#### OH_Http_StartAllInterceptors()
+### OH_Http_StartAllInterceptors()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Http_StartAllInterceptors(int32_t groupId)
@@ -240,6 +258,7 @@ int32_t OH_Http_StartAllInterceptors(int32_t groupId)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | int32_t groupId | 拦截器组ID。 |
@@ -247,6 +266,7 @@ int32_t OH_Http_StartAllInterceptors(int32_t groupId)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回值为0表示执行成功；返回值为201表示权限被拒绝。详细错误码请参考OH_HTTP_RESULT_OK和OH_HTTP_PERMISSION_DENIED。 |
@@ -254,9 +274,10 @@ int32_t OH_Http_StartAllInterceptors(int32_t groupId)
  
   
 
-#### OH_Http_StopAllInterceptors()
+### OH_Http_StopAllInterceptors()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Http_StopAllInterceptors(int32_t groupId)
@@ -277,6 +298,7 @@ int32_t OH_Http_StopAllInterceptors(int32_t groupId)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | int32_t groupId | 拦截器组ID。 |
@@ -284,6 +306,7 @@ int32_t OH_Http_StopAllInterceptors(int32_t groupId)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回值为0表示执行成功；返回值为201表示权限被拒绝。详细错误码请参考OH_HTTP_RESULT_OK和OH_HTTP_PERMISSION_DENIED。 |

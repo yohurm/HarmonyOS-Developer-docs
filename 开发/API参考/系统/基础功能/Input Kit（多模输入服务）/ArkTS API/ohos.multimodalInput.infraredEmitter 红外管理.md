@@ -1,6 +1,6 @@
 # @ohos.multimodalInput.infraredEmitter (红外管理)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-infraredemitter
 **支持设备：** Phone | TV
@@ -8,11 +8,12 @@
 红外管理模块提供产生特定频率和大小的红外信号，以及查询设备支持的频率范围等功能。
 
 > [!NOTE]
-> 本模块首批接口从API version 15开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+> 本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | TV
 
@@ -22,7 +23,8 @@ import { infraredEmitter } from '@kit.InputKit';
 
 
 
-#### infraredEmitter.transmitInfrared
+## infraredEmitter.transmitInfrared15+
+
 
 **支持设备：** Phone | TV
 
@@ -36,6 +38,7 @@ transmitInfrared(infraredFrequency: number, pattern: Array&lt;number&gt;): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | infraredFrequency | number | 是 | 红外频率，单位：Hz。 |
@@ -45,6 +48,7 @@ transmitInfrared(infraredFrequency: number, pattern: Array&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -79,7 +83,8 @@ struct Index {
 
 
 
-#### infraredEmitter.getInfraredFrequencies
+## infraredEmitter.getInfraredFrequencies15+
+
 
 **支持设备：** Phone | TV
 
@@ -95,6 +100,7 @@ getInfraredFrequencies(): Array&lt;InfraredFrequency&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;InfraredFrequency&gt; | 红外信号的频率范围，包含多组最大和最小频率。 从API version 23开始，当设备不具有红外发射器，返回一组最大和最小频率，且均为0Hz。 |
@@ -103,6 +109,7 @@ getInfraredFrequencies(): Array&lt;InfraredFrequency&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -136,13 +143,15 @@ struct Index {
 
 
 
-#### InfraredFrequency
+## InfraredFrequency15+
+
 
 **支持设备：** Phone | TV
 
 红外信号的频率范围。
 
 **系统能力**：SystemCapability.MultimodalInput.Input.InfraredEmitter
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -152,7 +161,8 @@ struct Index {
 
 
 
-#### infraredEmitter.hasIrEmitter23+
+## infraredEmitter.hasIrEmitter23+
+
 
 **支持设备：** Phone | TV
 
@@ -166,6 +176,7 @@ hasIrEmitter(): Promise&lt;boolean&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示设备具有红外发射器；返回false表示设备不具有红外发射器。 |
@@ -174,6 +185,7 @@ hasIrEmitter(): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[红外管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-infraredemitter)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

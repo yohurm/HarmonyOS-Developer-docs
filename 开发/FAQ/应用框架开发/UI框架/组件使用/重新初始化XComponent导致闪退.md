@@ -77,7 +77,7 @@ export struct YUVView {
     Column() {
       Column() {
         XComponent({
-          id: Common.YUV_XCOMPONENT_ID + this.doRandBySync()?.toString(), // 给Id添加随机数(解决方案),
+          id: Common.YUV_XCOMPONENT_ID + this.doRandBySync()?.toString(), <em>// </em><em>给Id添加随机数(解决方案),</em>
           type: XComponentType.TEXTURE,
           libraryname: Common.LIBRARY_NAME
         })
@@ -121,7 +121,7 @@ export struct YUVView {
 
   async writeYUVFile() {
     try {
-      // Write the yuv file to the sandbox path.
+     <em> // Write the yuv file to the sandbox path.</em>
       const resourceManager = this.getUIContext().getHostContext()!.resourceManager;
       const imageArray = await resourceManager.getMediaContent($r('app.media.ic_picture').id);
       let path: string = this.getUIContext().getHostContext()!.filesDir + '/image.yuv';

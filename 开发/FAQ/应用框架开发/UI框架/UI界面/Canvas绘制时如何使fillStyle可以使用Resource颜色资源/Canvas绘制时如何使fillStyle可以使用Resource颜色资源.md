@@ -4,13 +4,13 @@
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-971
 
-#### 问题现象
+## 问题现象
 
 在Canvas画布上绘制时，fillStyle用于设置画笔的填充颜色，但fillStyle只接受number或string类型的颜色资源，不接受Resource类型的颜色资源（即\$r('xxx')的引用方式），如何使得fillStyle可以使用引用资源的方式设置颜色？
  
  
 
-#### 背景知识
+## 背景知识
 
 - [Canvas](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-canvas)是画布组件，规定用于绘制的区域。
 - [CanvasRenderingContext2D](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-canvasrenderingcontext2d)是画笔，用于绘制内容到Canvas上。[fillStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-common-property#fillstyle)是CanvasRenderingContext2D的属性，用于设置画笔的颜色。
@@ -20,13 +20,13 @@
  
  
 
-#### 解决方案
+## 解决方案
 1. 在EntryAbility中通过AppStorage存储context，以便调用resourceManager。
 ```json
 onWindowStageCreate(windowStage: window.WindowStage): void {
   let context = this.context;
   AppStorage.setOrCreate('context', context);
-  // Main window is created, set main page for this ability
+  <em>// Main window is created, set main page for this ability</em>
   hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
   windowStage.loadContent('pages/Index', (err) => {

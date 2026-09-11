@@ -1,11 +1,12 @@
 # Interface (MarkerClusterInfo)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-04 10:41:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-markerclusterinfo
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -15,11 +16,12 @@ import { map, mapCommon } from '@kit.MapKit';
  
   
 
-#### MarkerClusterInfo
+## MarkerClusterInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-聚合图层的标记的信息。
+聚合图层的标记的信息。当进入室内图时，会通过[on](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-clusteroverlay#onclusterclick)方法触发回调，并返回[MarkerClusterInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-markerclusterinfo)类型的实例。
  
 **模型约束：** 此接口仅可在Stage模型下使用。
  
@@ -29,6 +31,7 @@ import { map, mapCommon } from '@kit.MapKit';
  
 **起始版本：** 5.0.3(15)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | marker | Marker | 否 | 否 | 聚合图层的标记。 |

@@ -1,10 +1,10 @@
 # GPU活动分析
 
-更新时间：2026-06-12 06:54:33
+更新时间：2026-08-29 09:41:34
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-profiler-gpu
 
-#### 功能介绍
+## 功能介绍
 
  
 从DevEco Studio 6.0.0 Beta3版本开始，DevEco Profiler提供GPU模板展示不同GPU硬件模块利用率的详细信息，这些信息可用于识别GPU利用率低、执行图形和计算工作负载性能瓶颈的根本原因。
@@ -16,7 +16,7 @@ GPU模板支持的泳道包括：Counters、ArkTS Callstack、Callstack、CPU Co
 
  
 
-#### 约束与限制
+## 约束与限制
 
 - 该功能仅支持中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）。
 - 仅支持Phone设备。
@@ -24,14 +24,10 @@ GPU模板支持的泳道包括：Counters、ArkTS Callstack、Callstack、CPU Co
  
  
 
-#### 操作步骤
+## 操作步骤
 1. 创建GPU分析任务并录制相关数据，操作方法可参考[性能问题定位：深度录制](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/deep-recording)。
 
-  GPU分析任务支持在录制前单击
-![](assets/GPU活动分析/file-20260514133155142-0.png)
-指定要录制的泳道。单击工具控制栏中的
-![](assets/GPU活动分析/file-20260514133155142-1.png)
-按钮，可以设置采样时间间隔（Sampling Interval），可设置范围为1ms~1000ms，默认为10ms。
+  GPU分析任务支持在录制前单击![icon](assets/GPU活动分析/file-20260514133155142-0.png)指定要录制的泳道。单击工具控制栏中的![icon](assets/GPU活动分析/file-20260514133155142-1.png)按钮，可以设置采样时间间隔（Sampling Interval），可设置范围为1ms~1000ms，默认为10ms。
 2. **Counters**泳道显示当前设备GPU的使用率。
 
   

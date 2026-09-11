@@ -1,9 +1,9 @@
 # Interface (AVMetadataExtractor)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avmetadataextractor
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 元数据获取类，用于从媒体资源中获取元数据、缩略图。在调用AVMetadataExtractor的方法前，需要先通过[media.createAVMetadataExtractor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-f#mediacreateavmetadataextractor11)构建一个AVMetadataExtractor实例。
 
@@ -14,9 +14,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { media } from '@kit.MediaKit';
@@ -24,11 +25,13 @@ import { media } from '@kit.MediaKit';
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Multimedia.Media.AVMetadataExtractor
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -38,9 +41,10 @@ import { media } from '@kit.MediaKit';
 
 
 
-#### setUrlSource20+
+## setUrlSource20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setUrlSource(url: string, headers?: Record<string, string>): void
 
@@ -49,6 +53,7 @@ setUrlSource(url: string, headers?: Record<string, string>): void
 **系统能力：** SystemCapability.Multimedia.Media.AVMetadataExtractor
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -81,9 +86,10 @@ media.createAVMetadataExtractor((error: BusinessError, extractor: media.AVMetada
 
 
 
-#### fetchFrameByTime20+
+## fetchFrameByTime20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fetchFrameByTime(timeUs: number, options: AVImageQueryOptions, param: PixelMapParams): Promise<image.PixelMap>
 
@@ -92,6 +98,7 @@ fetchFrameByTime(timeUs: number, options: AVImageQueryOptions, param: PixelMapPa
 **系统能力：** SystemCapability.Multimedia.Media.AVMetadataExtractor
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -102,6 +109,7 @@ fetchFrameByTime(timeUs: number, options: AVImageQueryOptions, param: PixelMapPa
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<image.PixelMap> | Promise对象，返回视频缩略图对象。 |
@@ -110,6 +118,7 @@ fetchFrameByTime(timeUs: number, options: AVImageQueryOptions, param: PixelMapPa
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -154,9 +163,10 @@ media.createAVMetadataExtractor((error: BusinessError, extractor: media.AVMetada
 
 
 
-#### fetchFrameByTimeWithTimeout
+## fetchFrameByTimeWithTimeout
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fetchFrameByTimeWithTimeout(timeUs: number, options: AVImageQueryOptions, param: PixelMapParams, timeoutMs: number): Promise<image.PixelMap | undefined>
 
@@ -170,6 +180,7 @@ fetchFrameByTimeWithTimeout(timeUs: number, options: AVImageQueryOptions, param:
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | timeUs | number | 是 | 需要获取的缩略图在视频中的时间点，单位为微秒（μs）。 |
@@ -180,6 +191,7 @@ fetchFrameByTimeWithTimeout(timeUs: number, options: AVImageQueryOptions, param:
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<image.PixelMap \| undefined> | Promise对象，返回视频缩略图对象。 |
@@ -188,6 +200,7 @@ fetchFrameByTimeWithTimeout(timeUs: number, options: AVImageQueryOptions, param:
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -234,9 +247,10 @@ media.createAVMetadataExtractor((error: BusinessError, extractor: media.AVMetada
 
 
 
-#### fetchFramesByTimes23+
+## fetchFramesByTimes23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fetchFramesByTimes(timesUs: number[], queryOption: AVImageQueryOptions, param: PixelMapParams, callback: OnFrameFetched): void
 
@@ -252,6 +266,7 @@ fetchFramesByTimes(timesUs: number[], queryOption: AVImageQueryOptions, param: P
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | timesUs | number[] | 是 | 需要获取的所有缩略图在视频中的时间点集合。 时间单位为微秒（μs），数组长度取值范围为(0, 4096]。 |
@@ -263,6 +278,7 @@ fetchFramesByTimes(timesUs: number[], queryOption: AVImageQueryOptions, param: P
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -307,9 +323,10 @@ async function fetchFramesByTimesDemo() {
 
 
 
-#### fetchFramesByTimesWithTimeout
+## fetchFramesByTimesWithTimeout
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fetchFramesByTimesWithTimeout(timesUs: number[], queryOption: AVImageQueryOptions, param: PixelMapParams, timeoutMs: number, callback: OnFrameFetched): void
 
@@ -327,6 +344,7 @@ fetchFramesByTimesWithTimeout(timesUs: number[], queryOption: AVImageQueryOption
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | timesUs | number[] | 是 | 需要获取的所有缩略图在视频中的时间点集合。 时间单位为微秒（μs），数组长度取值范围为(0, 4096]。 |
@@ -339,6 +357,7 @@ fetchFramesByTimesWithTimeout(timesUs: number[], queryOption: AVImageQueryOption
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -384,9 +403,10 @@ async function fetchFramesByTimesDemo() {
 
 
 
-#### cancelAllFetchFrames23+
+## cancelAllFetchFrames23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancelAllFetchFrames(): void
 
@@ -417,9 +437,10 @@ media.createAVMetadataExtractor((error: BusinessError, extractor: media.AVMetada
 
 
 
-#### fetchMetadata11+
+## fetchMetadata11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fetchMetadata(callback: AsyncCallback&lt;AVMetadata&gt;): void
 
@@ -429,6 +450,7 @@ fetchMetadata(callback: AsyncCallback&lt;AVMetadata&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;AVMetadata&gt; | 是 | 回调函数。异步返回音视频元数据对象（AVMetadata）。 |
@@ -437,6 +459,7 @@ fetchMetadata(callback: AsyncCallback&lt;AVMetadata&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -466,9 +489,10 @@ async function test() {
 
 
 
-#### fetchMetadata11+
+## fetchMetadata11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fetchMetadata(): Promise&lt;AVMetadata&gt;
 
@@ -478,6 +502,7 @@ fetchMetadata(): Promise&lt;AVMetadata&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;AVMetadata&gt; | Promise对象。异步返回音视频元数据对象（AVMetadata）。 |
@@ -486,6 +511,7 @@ fetchMetadata(): Promise&lt;AVMetadata&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -513,9 +539,10 @@ async function test() {
 
 
 
-#### fetchMetadataWithTimeout
+## fetchMetadataWithTimeout
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fetchMetadataWithTimeout(timeoutMs: number): Promise<AVMetadata | undefined>
 
@@ -529,12 +556,14 @@ fetchMetadataWithTimeout(timeoutMs: number): Promise<AVMetadata | undefined>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | timeoutMs | number | 是 | 获取媒体元数据的最大等待时间，时间范围为(0, 20000]，单位为毫秒（ms）。 在给定的超时时间内未完成元数据获取操作，则返回操作超时错误码5400104。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -544,6 +573,7 @@ fetchMetadataWithTimeout(timeoutMs: number): Promise<AVMetadata | undefined>
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -576,9 +606,10 @@ async function test() {
 
 
 
-#### fetchAlbumCover11+
+## fetchAlbumCover11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fetchAlbumCover(callback: AsyncCallback<image.PixelMap>): void
 
@@ -588,6 +619,7 @@ fetchAlbumCover(callback: AsyncCallback<image.PixelMap>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<image.PixelMap> | 是 | 回调函数。异步返回专辑封面。 |
@@ -596,6 +628,7 @@ fetchAlbumCover(callback: AsyncCallback<image.PixelMap>): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -627,9 +660,10 @@ async function test() {
 
 
 
-#### fetchAlbumCover11+
+## fetchAlbumCover11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fetchAlbumCover(): Promise<image.PixelMap>
 
@@ -639,6 +673,7 @@ fetchAlbumCover(): Promise<image.PixelMap>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<image.PixelMap> | Promise对象。异步返回专辑封面。 |
@@ -647,6 +682,7 @@ fetchAlbumCover(): Promise<image.PixelMap>
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -676,9 +712,10 @@ async function test() {
 
 
 
-#### release11+
+## release11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(callback: AsyncCallback&lt;void&gt;): void
 
@@ -688,6 +725,7 @@ release(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当释放资源成功，err为undefined，否则为错误对象。 |
@@ -696,6 +734,7 @@ release(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -723,9 +762,10 @@ async function test() {
 
 
 
-#### release11+
+## release11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(): Promise&lt;void&gt;
 
@@ -735,6 +775,7 @@ release(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 异步方式释放资源release方法的Promise返回值。 |
@@ -743,6 +784,7 @@ release(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

@@ -1,13 +1,14 @@
 # oh_rdb_types.h
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-rdb-types-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供与数据值相关的类型定义。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_RDB_ReturningContext | OH_RDB_ReturningContext | returning相关接口的上下文。 |
@@ -40,10 +44,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | Rdb_ConflictResolution | Rdb_ConflictResolution | 表示冲突解决策略的枚举。 |
@@ -51,10 +57,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_RDB_ReturningContext *OH_RDB_CreateReturningContext(void) | 创建OH_RDB_ReturningContext的实例对象。 |
@@ -67,15 +75,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### Rdb_ConflictResolution
+### Rdb_ConflictResolution
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Rdb_ConflictResolution
@@ -87,6 +97,7 @@ enum Rdb_ConflictResolution
  
 **起始版本：** 18
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | RDB_CONFLICT_NONE = 1 | 发生冲突时不执行任何操作。 |
@@ -99,15 +110,17 @@ enum Rdb_ConflictResolution
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_RDB_CreateReturningContext()
+### OH_RDB_CreateReturningContext()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_RDB_ReturningContext *OH_RDB_CreateReturningContext(void)
@@ -121,6 +134,7 @@ OH_RDB_ReturningContext *OH_RDB_CreateReturningContext(void)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_RDB_ReturningContext * | 执行成功时返回指向OH_RDB_ReturningContext实例的指针。 否则返回nullptr。使用完成后必须通过OH_RDB_DestroyReturningContext接口释放内存。 |
@@ -128,9 +142,10 @@ OH_RDB_ReturningContext *OH_RDB_CreateReturningContext(void)
  
   
 
-#### OH_RDB_DestroyReturningContext()
+### OH_RDB_DestroyReturningContext()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_RDB_DestroyReturningContext(OH_RDB_ReturningContext *context)
@@ -144,6 +159,7 @@ void OH_RDB_DestroyReturningContext(OH_RDB_ReturningContext *context)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_RDB_ReturningContext *context | 指向OH_RDB_ReturningContext实例的指针。 |
@@ -151,9 +167,10 @@ void OH_RDB_DestroyReturningContext(OH_RDB_ReturningContext *context)
  
   
 
-#### OH_RDB_SetReturningFields()
+### OH_RDB_SetReturningFields()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_RDB_SetReturningFields(OH_RDB_ReturningContext *context, const char *const fields[], int32_t len)
@@ -167,15 +184,17 @@ int OH_RDB_SetReturningFields(OH_RDB_ReturningContext *context, const char *cons
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_RDB_ReturningContext *context | 指向OH_RDB_ReturningContext实例的指针。 |
-| const char *const fields[] | 要返回的列名。 |
-| int32_t len | 字段长度。 |
+| const char *const fields[] | 要返回的字段名。 |
+| int32_t len | 字段数量。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行结果。 执行成功返回RDB_OK。 输入参数无效返回RDB_E_INVALID_ARGS。 |
@@ -183,9 +202,10 @@ int OH_RDB_SetReturningFields(OH_RDB_ReturningContext *context, const char *cons
  
   
 
-#### OH_RDB_SetMaxReturningCount()
+### OH_RDB_SetMaxReturningCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_RDB_SetMaxReturningCount(OH_RDB_ReturningContext *context, int32_t count)
@@ -199,6 +219,7 @@ int OH_RDB_SetMaxReturningCount(OH_RDB_ReturningContext *context, int32_t count)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_RDB_ReturningContext *context | 指向OH_RDB_ReturningContext实例的指针。 |
@@ -207,6 +228,7 @@ int OH_RDB_SetMaxReturningCount(OH_RDB_ReturningContext *context, int32_t count)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行结果。 执行成功返回RDB_OK。 输入参数无效返回RDB_E_INVALID_ARGS。 |
@@ -214,9 +236,10 @@ int OH_RDB_SetMaxReturningCount(OH_RDB_ReturningContext *context, int32_t count)
  
   
 
-#### OH_RDB_GetReturningValues()
+### OH_RDB_GetReturningValues()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Cursor *OH_RDB_GetReturningValues(OH_RDB_ReturningContext *context)
@@ -230,6 +253,7 @@ OH_Cursor *OH_RDB_GetReturningValues(OH_RDB_ReturningContext *context)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_RDB_ReturningContext *context | 指向OH_RDB_ReturningContext实例的指针。 |
@@ -237,6 +261,7 @@ OH_Cursor *OH_RDB_GetReturningValues(OH_RDB_ReturningContext *context)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Cursor * | 返回指向OH_Cursor结构体实例的指针。 如果获取游标失败，则返回nullptr。使用OH_RDB_DestroyReturningContext接口释放内存时会销毁游标，无需单独释放。 |
@@ -244,9 +269,10 @@ OH_Cursor *OH_RDB_GetReturningValues(OH_RDB_ReturningContext *context)
  
   
 
-#### OH_RDB_GetChangedCount()
+### OH_RDB_GetChangedCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int64_t OH_RDB_GetChangedCount(OH_RDB_ReturningContext *context)
@@ -260,6 +286,7 @@ int64_t OH_RDB_GetChangedCount(OH_RDB_ReturningContext *context)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_RDB_ReturningContext *context | 指向OH_RDB_ReturningContext实例的指针。 |
@@ -267,6 +294,7 @@ int64_t OH_RDB_GetChangedCount(OH_RDB_ReturningContext *context)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int64_t | 返回已更改的条目数，如果获取变更失败则返回-1。 |

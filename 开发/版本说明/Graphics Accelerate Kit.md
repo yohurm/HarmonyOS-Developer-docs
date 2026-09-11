@@ -1,0 +1,34 @@
+# Graphics Accelerate Kit
+
+更新时间：2026-08-29 09:40:02
+
+来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-graphicsacceleratekit-7003
+
+| 操作 | 旧版本 | 新版本 | d.ts文件 |
+| --- | --- | --- | --- |
+| 新增错误码 | 类名：gameBuddyService； API声明：function onGameApplicationStatus(callback: Callback&lt;GameApplicationStatus&gt;): void; 差异内容：NA | 类名：gameBuddyService； API声明：function onGameApplicationStatus(callback: Callback&lt;GameApplicationStatusInfo&gt;): void; 差异内容：1009503001 | api/@hms.gameAcceleration.gameBuddyService.d.ts |
+| 新增错误码 | 类名：gameBuddyService； API声明：function onGameSnapshot(callback: Callback&lt;number&gt;): void; 差异内容：NA | 类名：gameBuddyService； API声明：function onGameSnapshot(callback: Callback&lt;number&gt;): void; 差异内容：1009503001 | api/@hms.gameAcceleration.gameBuddyService.d.ts |
+| 新增API | NA | 类名：gameBuddyService； API声明：interface GameApplicationStatusInfo 差异内容：interface GameApplicationStatusInfo | api/@hms.gameAcceleration.gameBuddyService.d.ts |
+| 新增API | NA | 类名：GameApplicationStatusInfo； API声明：gameBundle: string; 差异内容：gameBundle: string; | api/@hms.gameAcceleration.gameBuddyService.d.ts |
+| 新增API | NA | 类名：GameApplicationStatusInfo； API声明：status: GameApplicationStatus; 差异内容：status: GameApplicationStatus; | api/@hms.gameAcceleration.gameBuddyService.d.ts |
+| 删除API | 类名：gameBuddyService； API声明：interface AudioInfo 差异内容：interface AudioInfo | NA | api/@hms.gameAcceleration.gameBuddyService.d.ts |
+| 删除API | 类名：AudioInfo； API声明：audioType: string; 差异内容：audioType: string; | NA | api/@hms.gameAcceleration.gameBuddyService.d.ts |
+| 删除API | 类名：AudioInfo； API声明：sampleRate: number; 差异内容：sampleRate: number; | NA | api/@hms.gameAcceleration.gameBuddyService.d.ts |
+| 删除API | 类名：AudioInfo； API声明：sampleBit: number; 差异内容：sampleBit: number; | NA | api/@hms.gameAcceleration.gameBuddyService.d.ts |
+| 删除API | 类名：AudioInfo； API声明：channel: number; 差异内容：channel: number; | NA | api/@hms.gameAcceleration.gameBuddyService.d.ts |
+| 删除API | 类名：AudioInfo； API声明：audioData: ArrayBuffer; 差异内容：audioData: ArrayBuffer; | NA | api/@hms.gameAcceleration.gameBuddyService.d.ts |
+| 删除API | 类名：gameBuddyService； API声明：interface QueryMessage 差异内容：interface QueryMessage | NA | api/@hms.gameAcceleration.gameBuddyService.d.ts |
+| 删除API | 类名：QueryMessage； API声明：audioInfo?: AudioInfo; 差异内容：audioInfo?: AudioInfo; | NA | api/@hms.gameAcceleration.gameBuddyService.d.ts |
+| 删除API | 类名：gameBuddyService； API声明：enum MessageType 差异内容：enum MessageType | NA | api/@hms.gameAcceleration.gameBuddyService.d.ts |
+| 删除API | 类名：MessageType； API声明：INFORMATION = 1 差异内容：INFORMATION = 1 | NA | api/@hms.gameAcceleration.gameBuddyService.d.ts |
+| 删除API | 类名：MessageType； API声明：WARNING = 2 差异内容：WARNING = 2 | NA | api/@hms.gameAcceleration.gameBuddyService.d.ts |
+| 删除API | 类名：MessageType； API声明：ERROR = 3 差异内容：ERROR = 3 | NA | api/@hms.gameAcceleration.gameBuddyService.d.ts |
+| 删除API | 类名：gameBuddyService； API声明：interface AppStateMessage 差异内容：interface AppStateMessage | NA | api/@hms.gameAcceleration.gameBuddyService.d.ts |
+| 删除API | 类名：AppStateMessage； API声明：type: MessageType; 差异内容：type: MessageType; | NA | api/@hms.gameAcceleration.gameBuddyService.d.ts |
+| 删除API | 类名：AppStateMessage； API声明：message: string; 差异内容：message: string; | NA | api/@hms.gameAcceleration.gameBuddyService.d.ts |
+| 删除API | 类名：gameBuddyService； API声明：function setFloatWindowAvatar(avatar: image.PixelMap, avatarDescription?: string): Promise&lt;void&gt;; 差异内容：function setFloatWindowAvatar(avatar: image.PixelMap, avatarDescription?: string): Promise&lt;void&gt;; | NA | api/@hms.gameAcceleration.gameBuddyService.d.ts |
+| 删除API | 类名：gameBuddyService； API声明：function onQueryMessage(callback: Callback&lt;QueryMessage&gt;): void; 差异内容：function onQueryMessage(callback: Callback&lt;QueryMessage&gt;): void; | NA | api/@hms.gameAcceleration.gameBuddyService.d.ts |
+| 删除API | 类名：gameBuddyService； API声明：function offQueryMessage(callback?: Callback&lt;QueryMessage&gt;): void; 差异内容：function offQueryMessage(callback?: Callback&lt;QueryMessage&gt;): void; | NA | api/@hms.gameAcceleration.gameBuddyService.d.ts |
+| 删除API | 类名：gameBuddyService； API声明：function sendAppStateMessage(message: AppStateMessage): Promise&lt;void&gt;; 差异内容：function sendAppStateMessage(message: AppStateMessage): Promise&lt;void&gt;; | NA | api/@hms.gameAcceleration.gameBuddyService.d.ts |
+| 函数变更 | 类名：gameBuddyService； API声明：function onGameApplicationStatus(callback: Callback&lt;GameApplicationStatus&gt;): void; 差异内容：callback: Callback&lt;GameApplicationStatus&gt; | 类名：gameBuddyService； API声明：function onGameApplicationStatus(callback: Callback&lt;GameApplicationStatusInfo&gt;): void; 差异内容：callback: Callback&lt;GameApplicationStatusInfo&gt; | api/@hms.gameAcceleration.gameBuddyService.d.ts |
+| 函数变更 | 类名：gameBuddyService； API声明：function offGameApplicationStatus(callback?: Callback&lt;GameApplicationStatus&gt;): void; 差异内容：callback?: Callback&lt;GameApplicationStatus&gt; | 类名：gameBuddyService； API声明：function offGameApplicationStatus(callback?: Callback&lt;GameApplicationStatusInfo&gt;): void; 差异内容：callback?: Callback&lt;GameApplicationStatusInfo&gt; | api/@hms.gameAcceleration.gameBuddyService.d.ts |

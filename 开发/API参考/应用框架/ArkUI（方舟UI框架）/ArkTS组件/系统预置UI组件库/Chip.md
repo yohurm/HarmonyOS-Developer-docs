@@ -1,20 +1,21 @@
 # Chip
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-chip
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 Chip组件用于标签展示和交互场景，支持自定义样式、图标、激活态等功能，适用于搜索框历史记录、邮件发送列表等场景，可快速实现标签的创建、删除和交互能力。
 
 > [!NOTE]
-> 该组件从API version 11开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 本模块接口仅可在Stage模型下使用。
+> 该组件从API version 11开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 本模块接口仅可在Stage模型下使用。 如果Chip设置 通用属性 或 通用事件 ，编译工具链会额外生成节点__Common__，并将通用属性或通用事件挂载在__Common__上，而不是直接应用到Chip本身。这可能导致开发者设置的通用属性或通用事件不生效或不符合预期，因此，不建议Chip设置通用属性和通用事件。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 import { Chip, ChipOptions, ChipSize } from '@kit.ArkUI';
@@ -22,17 +23,19 @@ import { Chip, ChipOptions, ChipSize } from '@kit.ArkUI';
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 无
 
 
 
-#### Chip
+## Chip
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 Chip(options:ChipOptions): void
 
@@ -48,6 +51,7 @@ Chip(options:ChipOptions): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ChipOptions | 是 | 定义Chip组件的参数，包括尺寸、启用状态、激活态、前缀/后缀图标、文本内容、背景颜色、圆角、无障碍属性等，用于自定义Chip组件的样式和行为。 |
@@ -55,15 +59,17 @@ Chip(options:ChipOptions): void
 
 
 
-#### ChipOptions
+## ChipOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ChipOptions定义Chip的样式及具体样式参数。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -78,12 +84,12 @@ ChipOptions定义Chip的样式及具体样式参数。
 | suffixSymbolOptions14+ | ChipSuffixSymbolGlyphOptions | 否 | 是 | symbol类型后缀图标的无障碍朗读功能属性及点击事件回调等。 默认值：不设置对应属性。 值为undefined时，按默认值处理。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
 | backgroundColor | ResourceColor | 否 | 是 | Chip背景颜色。 默认值：\$r('sys.color.ohos_id_color_button_normal')。 值为undefined时，按默认值处理。赋值为非法值时，背景颜色透明。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | activatedBackgroundColor12+ | ResourceColor | 否 | 是 | Chip激活态的背景颜色。 默认值：\$r('sys.color.ohos_id_color_emphasize')。 值为undefined时，按默认值处理。赋值为非法值时，背景颜色透明。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| backgroundSystemMaterial | uiMaterial.Material | 否 | 是 | 设置组件系统材质样式。不同材质具有不同的效果，能够影响组件的backgroundColor、border、shadow等视觉属性。 默认值：undefined 值为undefined时，不应用材质样式。 说明：当设置backgroundSystemMaterial时，应将backgroundColor设为Color.Transparent，否则会与系统材质冲突；当backgroundSystemMaterial为undefined时，backgroundColor属性生效。 起始版本： 26.0.0 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
-| activatedBackgroundSystemMaterial | uiMaterial.Material | 否 | 是 | 设置组件激活状态下的系统材质样式。不同材质具有不同的效果，能够影响组件的backgroundColor、border、shadow等视觉属性。 默认值：undefined 值为undefined时，不应用材质样式。 说明：当设置activatedBackgroundSystemMaterial时，应将activatedBackgroundColor设为Color.Transparent，否则会与系统材质冲突；当activatedBackgroundSystemMaterial为undefined时，activatedBackgroundColor属性生效。 起始版本： 26.0.0 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| backgroundSystemMaterial | uiMaterial.Material | 否 | 是 | 设置组件系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏子树，或横向Tabs的底部TabBar子树中，材质效果才会生效。适用于需要实现沉浸式背景效果、半透明磨砂效果等场景。不同材质具有不同的效果，能够影响组件的backgroundColor、border、shadow等视觉属性。 默认值：undefined 值为undefined时，不应用材质样式。 说明：当设置backgroundSystemMaterial时，应将backgroundColor设为Color.Transparent，否则会与系统材质冲突；当backgroundSystemMaterial为undefined时，backgroundColor属性生效。 起始版本： 26.0.0 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| activatedBackgroundSystemMaterial | uiMaterial.Material | 否 | 是 | 设置组件激活状态下的系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏子树，或横向Tabs的底部TabBar子树中，材质效果才会生效。适用于需要激活状态下保持或切换材质效果的交互场景，如标签选中、状态切换等。不同材质具有不同的效果，能够影响组件的backgroundColor、border、shadow等视觉属性。 默认值：undefined 值为undefined时，不应用材质样式。 说明：当设置activatedBackgroundSystemMaterial时，应将activatedBackgroundColor设为Color.Transparent，否则会与系统材质冲突；当activatedBackgroundSystemMaterial为undefined时，activatedBackgroundColor属性生效。 起始版本： 26.0.0 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
 | borderRadius | Dimension | 否 | 是 | Chip背景圆角半径大小，不支持百分比，传入百分比时按默认值处理。 取值范围：[0, +∞) 默认值：\$r('sys.float.ohos_id_corner_radius_button')。 单位：vp 值为undefined时，按默认值处理。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | allowClose | boolean | 否 | 是 | 关闭图标是否显示。 默认值：true true：关闭图标显示；false：关闭图标不显示。 值为undefined时，按默认值处理。 说明：当suffixSymbol有传入参数时，allowClose不生效；当suffixSymbol没有传入参数而suffixIcon有传入参数时，allowClose不生效；当suffixSymbol和suffixIcon都没有传入参数时，allowClose决定是否显示关闭图标。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| onClose | ()=>void | 否 | 是 | 默认关闭图标点击事件。 值为undefined时，不触发关闭图标点击事件。 说明：仅当关闭图标显示时生效，即suffixSymbol和suffixIcon都未传入参数且allowClose为true时。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| onClicked12+ | Callback&lt;void&gt; | 否 | 是 | Chip组件点击事件。 值为undefined时，Chip不能被点击。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| onClose | ()=>void | 否 | 是 | 默认关闭图标点击事件回调，无参数和返回值。当用户点击默认关闭图标时触发该回调。 值为undefined时，不触发关闭图标点击事件。 说明：仅当关闭图标显示时生效，即suffixSymbol和suffixIcon都未传入参数且allowClose为true时。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| onClicked12+ | Callback&lt;void&gt; | 否 | 是 | Chip组件点击事件回调，无参数和返回值。当用户点击Chip组件时触发该回调。 值为undefined时，Chip不能被点击。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | direction12+ | Direction | 否 | 是 | 布局方向。 默认值：Direction.Auto。 值为undefined时，按默认值处理。 使用场景：常用于国际化场景，适配阿拉伯语等从右到左（RTL）阅读习惯的语言环境，实现界面镜像效果。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | closeOptions14+ | CloseOptions | 否 | 是 | 默认关闭图标的功能属性，包括无障碍朗读功能和字体大小等属性。仅在默认关闭图标显示时生效，即allowClose为true且suffixSymbol和suffixIcon均未设置传入参数时。 值为undefined时，按默认值处理。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
 | accessibilityDescription14+ | ResourceStr | 否 | 是 | Chip组件的无障碍描述。用于向用户详细解释当前组件，开发人员应提供详尽的文本说明，协助用户理解即将执行的操作及其结果。特别是当这些结果无法仅从组件属性和无障碍文本中直接获知时。如果组件同时具备文本属性和无障碍说明属性，当组件被选中时，系统将首先播报组件的文本属性，随后播报无障碍说明属性的内容。 默认值：空字符串。 值为undefined时，按默认值处理。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
@@ -101,9 +107,10 @@ ChipOptions定义Chip的样式及具体样式参数。
 
 
 
-#### ChipSize
+## ChipSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ChipSize定义Chip组件可指定的尺寸类型，如普通型和小尺寸型。
 
@@ -113,6 +120,7 @@ ChipSize定义Chip组件可指定的尺寸类型，如普通型和小尺寸型�
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NORMAL | "NORMAL" | normal尺寸操作块，适用于常规展示场景。 |
@@ -121,9 +129,10 @@ ChipSize定义Chip组件可指定的尺寸类型，如普通型和小尺寸型�
 
 
 
-#### AccessibilitySelectedType14+
+## AccessibilitySelectedType14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 AccessibilitySelectedType定义Chip可指定的选中态类型，用于控制无障碍服务如何向用户传达组件的选中状态。不同的选中态类型提供了不同的语义和用户体验。
 
@@ -132,6 +141,7 @@ AccessibilitySelectedType定义Chip可指定的选中态类型，用于控制无
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -142,9 +152,10 @@ AccessibilitySelectedType定义Chip可指定的选中态类型，用于控制无
 
 
 
-#### IconCommonOptions
+## IconCommonOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 IconCommonOptions定义图标的共通属性。
 
@@ -153,6 +164,7 @@ IconCommonOptions定义图标的共通属性。
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -168,9 +180,10 @@ IconCommonOptions定义图标的共通属性。
 
 
 
-#### PrefixIconOptions
+## PrefixIconOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 PrefixIconOptions定义前缀图标的属性。
 
@@ -184,9 +197,10 @@ PrefixIconOptions定义前缀图标的属性。
 
 
 
-#### SuffixIconOptions
+## SuffixIconOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 SuffixIconOptions定义后缀图标的属性。
 
@@ -196,9 +210,10 @@ SuffixIconOptions定义后缀图标的属性。
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| action | () => void | 否 | 是 | 后缀图标点击事件回调。 值为undefined时，不设定后缀图标事件。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| action | () => void | 否 | 是 | 后缀图标点击事件回调，无参数和返回值。当用户点击后缀图标时触发该回调。 值为undefined时，不设定后缀图标事件。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | accessibilityText14+ | ResourceStr | 否 | 是 | 后缀图标无障碍文本属性。当后缀图标不包含文本属性时，屏幕朗读选中后缀图标时不播报，使用者无法清楚地知道当前是否选中了后缀图标。开发人员可为此类图标设置无障碍文本，屏幕朗读选中时播报该文本内容。 默认值：‘ ’ 值为undefined时，按默认值处理。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
 | accessibilityDescription14+ | ResourceStr | 否 | 是 | 后缀图标的无障碍描述。此描述用于向用户详细解释后缀图标，开发人员应提供较为详尽的文本说明，以协助用户理解即将执行的操作及其可能产生的后果，特别是当这些后果无法仅从后缀图标的属性和无障碍文本中直接获知时。如果后缀图标同时具备文本属性和无障碍说明属性，当后缀图标被选中时，系统将首先播报后缀图标的文本属性，随后播报无障碍说明属性的内容。 默认值：‘ ’ 值为undefined时，按默认值处理。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
 | accessibilityLevel14+ | string | 否 | 是 | 后缀图标的无障碍重要性。用于控制后缀图标是否可被无障碍辅助服务识别。 支持的值为： "auto"：当前组件存在action时转化为"yes"，不存在action时，转化为"no"。 "yes"：当前组件可被无障碍辅助服务所识别。 "no"：当前组件不可被无障碍辅助服务所识别。 "no-hide-descendants"：当前组件及其所有子组件不可被无障碍辅助服务所识别。 默认值："auto"。 值为undefined时，按默认值处理。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
@@ -206,9 +221,10 @@ SuffixIconOptions定义后缀图标的属性。
 
 
 
-#### AccessibilityOptions14+
+## AccessibilityOptions14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 后缀图标的无障碍朗读功能属性。
 
@@ -217,6 +233,7 @@ SuffixIconOptions定义后缀图标的属性。
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -227,9 +244,10 @@ SuffixIconOptions定义后缀图标的属性。
 
 
 
-#### ChipSuffixSymbolGlyphOptions14+
+## ChipSuffixSymbolGlyphOptions14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 symbol类型后缀图标的无障碍朗读功能属性及点击事件回调。
 
@@ -239,18 +257,20 @@ symbol类型后缀图标的无障碍朗读功能属性及点击事件回调。
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| action | VoidCallback | 否 | 是 | 后缀图标点击事件回调。 值为undefined时，不设定后缀图标事件。 默认值：undefined |
+| action | VoidCallback | 否 | 是 | 后缀图标点击事件回调，无参数和返回值。当用户点击后缀图标时触发该回调。 值为undefined时，不设定后缀图标事件。 默认值：undefined |
 | normalAccessibility | AccessibilityOptions | 否 | 是 | 非激活态无障碍朗读功能属性。 默认值：undefined |
 | activatedAccessibility | AccessibilityOptions | 否 | 是 | 激活态无障碍朗读功能属性。 默认值：undefined |
 
 
 
 
-#### ChipSymbolGlyphOptions12+
+## ChipSymbolGlyphOptions12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ChipSymbolGlyphOptions定义前缀图标和后缀图标的属性。
 
@@ -259,6 +279,7 @@ ChipSymbolGlyphOptions定义前缀图标和后缀图标的属性。
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -272,9 +293,10 @@ ChipSymbolGlyphOptions定义前缀图标和后缀图标的属性。
 
 
 
-#### LabelOptions
+## LabelOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 LabelOptions定义文本属性。
 
@@ -283,6 +305,7 @@ LabelOptions定义文本属性。
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -301,9 +324,10 @@ LabelOptions定义文本属性。
 
 
 
-#### CloseOptions14+
+## CloseOptions14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 CloseOptions用于定义Chip组件默认的关闭图标功能属性，包括无障碍功能属性，其中accessibilityText默认为"删除"。
 
@@ -313,6 +337,7 @@ CloseOptions用于定义Chip组件默认的关闭图标功能属性，包括无�
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | fontSize23+ | Dimension | 否 | 是 | 设置Chip组件默认关闭图标的字体大小，不支持百分比，传入百分比时按默认值处理。 默认值： size为ChipSize.SMALL时，\$r('sys.float.chip_small_font_size') 其他情况：\$r('sys.float.chip_normal_font_size') 单位：fp 传入负数时，按默认值处理。值为undefined时，按默认值处理。 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API version 23开始，该接口支持在元服务中使用。 |
@@ -320,9 +345,10 @@ CloseOptions用于定义Chip组件默认的关闭图标功能属性，包括无�
 
 
 
-#### LabelMarginOptions
+## LabelMarginOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 LabelMarginOptions用于定义文本与左右侧图标之间间距。
 
@@ -332,6 +358,7 @@ LabelMarginOptions用于定义文本与左右侧图标之间间距。
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | left | Dimension | 否 | 是 | 文本与左侧图标的间距，不支持百分比。 默认值： size为ChipSize.SMALL时，left默认值：4 size为ChipSize.NORMAL时，left默认值：6 单位：vp 超出取值范围按默认值处理。 取值范围：[0, +∞) |
@@ -340,9 +367,10 @@ LabelMarginOptions用于定义文本与左右侧图标之间间距。
 
 
 
-#### LocalizedLabelMarginOptions12+
+## LocalizedLabelMarginOptions12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 LocalizedLabelMarginOptions用于定义本地化文本与左右侧图标之间间距。
 
@@ -352,6 +380,7 @@ LocalizedLabelMarginOptions用于定义本地化文本与左右侧图标之间�
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | start | LengthMetrics | 否 | 是 | 文本与起始侧图标的间距，不支持百分比。 默认值： size为ChipSize.SMALL时，start默认值： LengthMetrics.resource(\$r('sys.float.chip_small_text_margin')) size为ChipSize.NORMAL时，start默认值： LengthMetrics.resource(\$r('sys.float.chip_normal_text_margin')) 值为undefined时，按默认值处理。 |
@@ -360,13 +389,17 @@ LocalizedLabelMarginOptions用于定义本地化文本与左右侧图标之间�
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 示例1（自定义后缀图标）
+
+
+### 示例1（自定义后缀图标）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 通过配置suffixIcon实现自定义操作块的后缀图标。
 
@@ -425,7 +458,10 @@ struct Index {
 
 
 
-#### 示例2（设置默认后缀图标）
+### 示例2（设置默认后缀图标）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 配置allowClose为true，显示关闭图标。
 
@@ -478,7 +514,10 @@ struct Index {
 
 
 
-#### 示例3（不显示后缀图标）
+### 示例3（不显示后缀图标）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 配置allowClose为false，隐藏关闭图标。
 
@@ -530,7 +569,10 @@ struct Index {
 
 
 
-#### 示例4（激活态操作块）
+### 示例4（激活态操作块）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例通过配置activated实现激活态操作块。
 
@@ -592,7 +634,10 @@ struct Index {
 
 
 
-#### 示例5（设置symbol类型图标）
+### 示例5（设置symbol类型图标）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 Chip组件的前缀图标使用symbol类型资源展示。
 
@@ -651,7 +696,10 @@ struct Index {
 
 
 
-#### 示例6（设置镜像效果）
+### 示例6（设置镜像效果）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 配置direction实现Chip布局镜像化展示。
 
@@ -707,7 +755,10 @@ struct ChipPage {
 
 
 
-#### 示例7（Image类型无障碍朗读）
+### 示例7（Image类型无障碍朗读）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例代码实现Chip组件Image类型后缀图标的无障碍朗读功能，点击后缀图标播报“图标，按钮，新手提醒”。
 
@@ -799,7 +850,10 @@ struct ChipExample2 {
 
 
 
-#### 示例8（symbol类型无障碍朗读）
+### 示例8（symbol类型无障碍朗读）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例代码实现Chip组件symbol类型后缀图标的无障碍朗读功能，点击后缀图标播报“音乐，按钮，新手提醒”。
 
@@ -929,7 +983,10 @@ struct ChipExample2 {
 
 
 
-#### 示例9（Chip组件无障碍朗读）
+### 示例9（Chip组件无障碍朗读）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 示例展示Chip组件的无障碍属性设置，包括不同的accessibilitySelectedType类型和各种无障碍属性。
 
@@ -1031,7 +1088,10 @@ struct ChipAccessibilityExample {
 
 
 
-#### 示例10（设置系统材质样式）
+### 示例10（设置系统材质样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例通过配置backgroundSystemMaterial和activatedBackgroundSystemMaterial实现系统材质样式，启用自动反色功能适配标签文本颜色。
 
@@ -1066,7 +1126,8 @@ struct ChipMaterialExample {
     })
   }
 
-  build() {
+  @Builder
+  NavigationTitle() {
     Column({ space: 50 }) {
       Chip(this.chipOptions)
       Chip(this.chipOptions)
@@ -1083,8 +1144,17 @@ struct ChipMaterialExample {
     .width('100%')
     .height(150)
   }
+
+  build() {
+    Column() {
+      Navigation() {
+        // 页面内容
+      }
+      .title({ builder: this.NavigationTitle, height: '100%' })
+    }.width('100%').height('100%')
+  }
 }
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/sBIplq7eSt6J5lk6he2xAw/zh-cn_image_0000002685928583.png?HW-CC-KV=V1&HW-CC-Date=20260730T071518Z&HW-CC-Expire=86400&HW-CC-Sign=1F96C6581FC28891EB2B8EDD402049768144B3B8C7BBA2570D283CD208339258)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/LzlbsudbSlmPZsCYWu6iTw/zh-cn_image_0000002747212993.png?HW-CC-KV=V1&HW-CC-Date=20260911T073026Z&HW-CC-Expire=86400&HW-CC-Sign=19C03C8656A6FB2D67EC34E5AF97A9674AD85BE16066A68AFD1BA79BDA45A692)

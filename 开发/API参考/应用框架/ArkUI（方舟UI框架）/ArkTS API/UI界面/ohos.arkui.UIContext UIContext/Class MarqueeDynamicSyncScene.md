@@ -1,9 +1,9 @@
 # Class (MarqueeDynamicSyncScene)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-marqueedynamicsyncscene
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供Marquee组件动态帧率的配置能力，支持在Marquee组件运行动画时动态调节帧率，优化性能和功耗，适用于需要在跑马灯场景中平衡动画流畅度和系统资源消耗的场景。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
  
@@ -22,6 +23,7 @@
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | MarqueeDynamicSyncSceneType | 是 | 否 | Marquee的动态帧率场景类型。用于指定Marquee组件的动态帧率场景模式，不同场景类型对应不同的帧率调节策略，详见MarqueeDynamicSyncSceneType。 |
@@ -78,7 +80,7 @@ struct MarqueeExample {
           this.start = true;
           this.controller.start();
           this.scenes.forEach((scene: MarqueeDynamicSyncScene) => {
-            if (scene.type == MarqueeDynamicSyncSceneType.ANIMATION) {
+            if (scene.type === MarqueeDynamicSyncSceneType.ANIMATION) {
               scene.setFrameRateRange(this.frameRateRange);
             }
           });

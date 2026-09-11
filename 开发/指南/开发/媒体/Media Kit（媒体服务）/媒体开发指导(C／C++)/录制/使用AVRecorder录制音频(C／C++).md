@@ -1,6 +1,6 @@
 # 使用AVRecorder录制音频(C/C++)
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ndk-avrecorder-for-audio-recording
 
@@ -19,7 +19,7 @@ AVRecorder支持开发音频或视频单独录制，集成了音频捕获、音�
 状态的详细说明请参考[OH_AVRecorder_State](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avrecorder-base-h#oh_avrecorder_state)。
 
 
-#### 申请权限
+## 申请权限
 
 在开发此功能前，开发者应根据实际需求申请相关权限：
 
@@ -33,7 +33,7 @@ AVRecorder支持开发音频或视频单独录制，集成了音频捕获、音�
 
 
 
-#### 开发步骤及注意事项
+## 开发步骤及注意事项
 
 选择只录音频时，与视频相关的所有参数（如videoFrameWidth和videoFrameHeight）均不需要配置。同理，选择只录视频不录音频时，与音频相关的所有参数（如audioBitrate和audioChannels）均不需要配置。
 
@@ -85,16 +85,16 @@ target_link_libraries(entry PUBLIC libhilog_ndk.z.so)
 1. 创建AVRecorder实例，实例创建完成进入idle状态。
 
   
-```cpp
+```text
 #include "multimedia/player_framework/avrecorder.h"
 #include "multimedia/player_framework/avrecorder_base.h"
 ```
 
-```cpp
+```text
 static OH_AVRecorder *g_recorder = nullptr;
 ```
 
-```cpp
+```text
 g_recorder = OH_AVRecorder_Create();
 ```
 
@@ -109,15 +109,15 @@ g_recorder = OH_AVRecorder_Create();
 | OnError | 监听AVRecorder的错误信息。 |
 
   
-```cpp
+```text
 OH_AVRecorder_SetStateCallback(g_recorder, OnStateChange, nullptr);
 ```
 
-```cpp
+```text
 OH_AVRecorder_SetErrorCallback(g_recorder, OnError, nullptr);
 ```
 
-```cpp
+```text
 static void OnStateChange(OH_AVRecorder *recorder, OH_AVRecorder_State state,
     OH_AVRecorder_StateChangeReason reason, void *userData)
 {
@@ -136,7 +136,7 @@ static void OnStateChange(OH_AVRecorder *recorder, OH_AVRecorder_State state,
 }
 ```
 
-```cpp
+```text
 static void OnError(OH_AVRecorder *recorder, int32_t errorCode, const char *errorMsg, void *userData)
 {
     // ...
@@ -156,7 +156,7 @@ static void OnError(OH_AVRecorder *recorder, int32_t errorCode, const char *erro
 
 
   
-```cpp
+```text
 static napi_value PrepareAudioRecorder(napi_env env, napi_callback_info info)
 {
     OH_LOG_INFO(LOG_APP, "PrepareAudioRecorder called");
@@ -202,53 +202,53 @@ static napi_value PrepareAudioRecorder(napi_env env, napi_callback_info info)
 4. 开始录制，调用OH_AVRecorder_Start()接口，此时AVRecorder进入started状态。
 
   
-```cpp
+```text
 OH_AVErrCode err = OH_AVRecorder_Start(g_recorder);
 ```
 
 5. 暂停录制，调用OH_AVRecorder_Pause()接口，此时AVRecorder进入paused状态，同时暂停输入源输入数据。
 
   
-```cpp
+```text
 OH_AVErrCode err = OH_AVRecorder_Pause(g_recorder);
 ```
 
 6. 恢复录制，调用OH_AVRecorder_Resume()接口，此时再次进入started状态。
 
   
-```cpp
+```text
 OH_AVErrCode err = OH_AVRecorder_Resume(g_recorder);
 ```
 
 7. 停止录制，调用OH_AVRecorder_Stop()接口，此时进入stopped状态。
 
   
-```cpp
+```text
 OH_AVErrCode err = OH_AVRecorder_Stop(g_recorder);
 ```
 
 8. 重置录制状态，调用OH_AVRecorder_Reset()重新进入idle状态，允许重新配置录制参数。
 
   
-```cpp
+```text
 OH_AVErrCode err = OH_AVRecorder_Reset(g_recorder);
 ```
 
 9. 释放录制资源，调用OH_AVRecorder_Release()进入released状态，退出录制。
 
   
-```cpp
+```text
 OH_AVRecorder_Release(g_recorder);
 ```
 
 
 
 
-#### 完整示例
+## 完整示例
 
 参考以下示例，包括“创建AVRecorder实例-准备录制-开始录制-暂停录制-恢复录制-停止录制-重置录制状态-释放录制资源”的完整流程。
 
-```cpp
+```text
 #include <cstdio>
 #include <cstring>
 #include <string>

@@ -1,9 +1,9 @@
 # @ohos.app.ability.wantConstant (Want常量)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-wantconstant
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 wantConstant模块提供了[Want](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-want)操作相关的系统预设枚举和常量，例如在启动Ability时常用的Flag、Param参数等。
 
@@ -12,9 +12,10 @@ wantConstant模块提供了[Want](https://developer.huawei.com/consumer/cn/doc/h
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { wantConstant } from '@kit.AbilityKit';
@@ -22,13 +23,15 @@ import { wantConstant } from '@kit.AbilityKit';
 
 
 
-#### Params
+## Params
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [Want.parameters](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-want#want)字段常用的系统预置关键字。开发者可以通过这些预置关键字设置或获取应用跳转等场景中额外携带的参数信息。例如在[UIAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability)的启动阶段，如果从onCreate回调的入参want字段中获取到ABILITY_RECOVERY_RESTART的值为true，则表示当前UIAbility发生了故障重启。
 
 **系统能力**：SystemCapability.Ability.AbilityBase
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -60,13 +63,15 @@ import { wantConstant } from '@kit.AbilityKit';
 
 
 
-#### Flags
+## Flags
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [Want.flags](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-want#want)字段常用的系统预置关键字。开发者可以通过这些预置关键字设置或获取应用跳转等场景中额外携带的标志位信息。
 
 **系统能力**：SystemCapability.Ability.AbilityBase
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -80,13 +85,15 @@ import { wantConstant } from '@kit.AbilityKit';
 
 
 
-#### ShowMode12+
+## ShowMode12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示[EmbeddableUIAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-embeddableuiability)被拉起时的显示模式。
 
 **系统能力**：SystemCapability.Ability.AbilityBase
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -97,9 +104,10 @@ import { wantConstant } from '@kit.AbilityKit';
 
 
 
-#### Action
+## Action
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示要执行的通用操作。
 
@@ -108,6 +116,7 @@ import { wantConstant } from '@kit.AbilityKit';
 **系统能力**：SystemCapability.Ability.AbilityBase
 
 **模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

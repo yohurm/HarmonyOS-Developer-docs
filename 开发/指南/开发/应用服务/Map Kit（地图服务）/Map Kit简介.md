@@ -1,6 +1,6 @@
 # Map Kit简介
 
-更新时间：2026-07-09 02:26:55
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-introduction
 
@@ -11,7 +11,7 @@ Map Kit提供了全球3.2亿的 POI（Point of Interest，兴趣点）。在地�
 Map Kit不断优化丰富地图的细节呈现能力，例如在POI和路网信息展示方面，根据POI属性信息及区域路网差异，在不同层级比例尺条件下，为用户展示更合适的POI和路网信息。手势交互方面，提供了包括缩放、旋转、移动、倾斜等流畅的交互体验。
   
 
-#### 场景介绍
+## 场景介绍
 
 中国大陆使用GCJ02坐标系，中国台湾和海外使用WGS84坐标系。详见[坐标纠偏](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-convert-coordinate)。
  
@@ -30,30 +30,43 @@ Map Kit提供以下功能，满足绝大多数地图开发的需求：
  
   
 
-#### 约束和限制
+## 约束和限制
 
   
 
-#### 支持的国家/地区
+### 支持的国家/地区
 
 请参见[支持的国家/地区](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-supported)。
  
   
 
-#### 支持的设备
+### 支持的设备
+ 
 
-本Kit仅适用于Phone、Tablet、PC/2in1和Wearable。
+| 能力 | 支持的设备 |
+| --- | --- |
+| 创建地图 | 支持Phone、Tablet、PC/2in1和Wearable。 说明： 室内图功能支持Phone、Tablet和PC/2in1。 |
+| 地图交互 | 支持Phone、Tablet、PC/2in1和Wearable。 |
+| 在地图上绘制 | 支持Phone、Tablet、PC/2in1和Wearable。 矢量图层功能支持Phone、Tablet和PC/2in1。 流场图层功能支持Phone、Tablet和PC/2in1。 |
+| 位置搜索 | 支持Phone、Tablet、PC/2in1和Wearable。 |
+| 路径规划 | 支持Phone、Tablet、PC/2in1和Wearable。 |
+| 静态图 | 支持Phone、Tablet、PC/2in1和Wearable。 |
+| 地图Picker | 支持Phone、Tablet和PC/2in1。 |
+| 通过地图应用实现导航等能力 | 支持Phone、Tablet和PC/2in1。 说明： 打开地图应用的打车页面功能支持Phone和Tablet。 |
+| 离线地图 | 支持Phone、Tablet和PC/2in1。 |
+| 地图计算工具 | 支持Phone、Tablet、PC/2in1和Wearable。 |
+ 
  
   
 
-#### 示例代码
+### 示例代码
 
 Map Kit（地图服务）示例代码，请参考[示例代码](https://gitcode.com/HarmonyOS_Samples/map-kit_-sample-code_-demo-arkts)。
  
   
 
-#### 模拟器支持情况
+## 模拟器支持情况
 
 - 通用差异：请参见“[模拟器与真机的差异](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-specification#section1227613205203)”。
-- ARM模拟器：petalMaps命名空间下相关功能不支持，我的位置功能不支持。
-- x86模拟器：petalMaps命名空间下相关功能不支持，我的位置功能不支持，手表不支持。
+- 模拟器：我的位置功能不支持，通过地图应用实现导航等能力相关功能不支持，离线地图相关功能不支持。
+- Map Kit所有功能不支持在x86模拟器的Wearable设备上运行。

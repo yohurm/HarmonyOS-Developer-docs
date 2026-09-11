@@ -1,9 +1,9 @@
 # @ohos.arkui.StateManagement (状态管理)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-statemanagement
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 状态管理模块具备应用数据存储、持久化管理以及UIAbility（包含用户界面的应用组件）数据存储能力，同时覆盖环境状态、工具和UI状态同步等场景，从而帮助开发者简化状态管理逻辑，提升应用的响应能力和数据一致性。
 
@@ -13,6 +13,7 @@
 
 本文中T和S的含义如下：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | T | Class、number、boolean、string和这些类型的数组形式。 |
@@ -20,9 +21,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { AppStorageV2, PersistenceV2, UIUtils } from '@kit.ArkUI';
@@ -30,17 +32,19 @@ import { AppStorageV2, PersistenceV2, UIUtils } from '@kit.ArkUI';
 
 
 
-#### AppStorageV2
+## AppStorageV2
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 AppStorageV2提供应用级全局共享状态变量的能力，开发者可以通过connect绑定同一个key，进行跨Ability的数据共享。具体UI使用说明，详见[AppStorageV2(应用全局的UI状态存储)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-appstoragev2)。
 
 
 
-#### connect
+### connect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static connect<T extends object>(
 
@@ -66,6 +70,7 @@ defaultCreator?: StorageDefaultCreator&lt;T&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | TypeConstructorWithArgs&lt;T&gt; | 是 | 指定的类型，若未指定key，则使用type的name作为key。 |
@@ -74,6 +79,7 @@ defaultCreator?: StorageDefaultCreator&lt;T&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -102,9 +108,10 @@ const sampleData3: SampleClass = AppStorageV2.connect(SampleClass) as SampleClas
 
 
 
-#### remove
+### remove
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static remove&lt;T&gt;(keyOrType: string | TypeConstructorWithArgs&lt;T&gt;): void
 
@@ -119,6 +126,7 @@ static remove&lt;T&gt;(keyOrType: string | TypeConstructorWithArgs&lt;T&gt;): vo
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -140,9 +148,10 @@ AppStorageV2.remove('key_as1');
 
 
 
-#### keys
+### keys
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static keys(): Array&lt;string&gt;
 
@@ -158,6 +167,7 @@ static keys(): Array&lt;string&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;string&gt; | 所有AppStorageV2中的key。 |
@@ -172,17 +182,19 @@ const keys: Array<string> = AppStorageV2.keys();
 
 
 
-#### PersistenceV2
+## PersistenceV2
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 继承自[AppStorageV2](#appstoragev2)，PersistenceV2提供UI状态的持久化存储能力，支持将应用状态数据持久化到磁盘，在应用重启后恢复数据，适用于需要保留UI状态数据的场景。具体UI使用说明，详见[PersistenceV2(持久化存储UI状态)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-persistencev2)。
 
 
 
-#### globalConnect18+
+### globalConnect18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static globalConnect<T extends object>(type: ConnectOptions&lt;T&gt;): T | undefined
 
@@ -198,12 +210,14 @@ static globalConnect<T extends object>(type: ConnectOptions&lt;T&gt;): T | undef
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | ConnectOptions&lt;T&gt; | 是 | globalConnect的配置参数，包含指定的类型、key、默认构造器和加密级别等配置项，详细说明见ConnectOptions参数说明。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -256,9 +270,10 @@ const persistedSample3: Sample = PersistenceV2.globalConnect({
 
 
 
-#### globalConnect23+
+### globalConnect23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static globalConnect<T extends CollectionType&lt;S&gt;, S extends object>(
 
@@ -279,6 +294,7 @@ type: ConnectOptionsCollections<T, S> | ConnectOptions&lt;T&gt;
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -310,6 +326,7 @@ struct Page1 {
 ```
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -358,9 +375,10 @@ struct Page1 {
 
 
 
-#### save
+### save
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static save&lt;T&gt;(keyOrType: string | TypeConstructorWithArgs&lt;T&gt;): void
 
@@ -375,6 +393,7 @@ static save&lt;T&gt;(keyOrType: string | TypeConstructorWithArgs&lt;T&gt;): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -401,9 +420,10 @@ PersistenceV2.save('key_as1');
 
 
 
-#### notifyOnError
+### notifyOnError
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static notifyOnError(callback: PersistenceErrorCallback | undefined): void
 
@@ -414,6 +434,7 @@ static notifyOnError(callback: PersistenceErrorCallback | undefined): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -431,15 +452,17 @@ PersistenceV2.notifyOnError((key: string, reason: string, msg: string) => {
 
 
 
-#### ConnectOptions&lt;T&gt;18+
+## ConnectOptions&lt;T&gt;18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 globalConnect参数类型。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -451,9 +474,10 @@ globalConnect参数类型。
 
 
 
-#### ConnectOptionsCollections<T, S>23+
+## ConnectOptionsCollections<T, S>23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [globalConnect](#globalconnect23)接口参数类型，ConnectOptionsCollections继承自[ConnectOptions&lt;T&gt;](#connectoptionst18)。当开发者需要持久化容器类型数据（如Array&lt;S&gt;）时，需要使用ConnectOptionsCollections入参。
 
@@ -463,10 +487,11 @@ globalConnect参数类型。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | defaultCreator | StorageDefaultCreator&lt;T&gt; | 否 | 是 | 用于持久化容器类型数据，当提供默认defaultSubCreator时，则需要同时提供默认构造器defaultCreator，不提供默认构造器会导致持久化失败。集合项类型S必须与defaultSubCreator的返回类型相同。 |
-| defaultSubCreator | StorageDefaultCreator&lt;S&gt; | 否 | 是 | 使用该集合项默认构造函数，用于持久化容器类数据。使用此参数时，必须同时提供defaultCreator，否则会导致持久化失败。如果defaultSubCreator返回的是undefined或null时，会导致持久化失败。 当持久化用户自定义class类集合（如Array&lt;ClassA&gt;）时，defaultCreator中的泛型类型T为Array&lt;ClassA&gt;，则defaultSubCreator中的泛型类型S为ClassA。 |
+| defaultSubCreator | StorageDefaultCreator&lt;S&gt; | 否 | 是 | 使用该集合项默认构造函数，用于持久化容器类数据。使用此参数时，必须同时提供defaultCreator，否则会导致持久化失败。持久化容器类数据时，若未传入该参数，或defaultSubCreator返回undefined或null，将导致持久化操作失败。当持久化用户自定义class类集合（如Array&lt;ClassA&gt;）时，defaultCreator中的泛型类型T为Array&lt;ClassA&gt;，则defaultSubCreator中的泛型类型S为ClassA。 |
 
 
 如下展示StorageDefaultCreator&lt;T&gt;和StorageDefaultCreator&lt;S&gt;示例：
@@ -554,9 +579,10 @@ struct Comp {
 
 
 
-#### CollectionType23+
+## CollectionType23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type CollectionType&lt;S&gt; = Array&lt;S&gt; | Map<string | number, S> |
 
@@ -570,6 +596,7 @@ globalConnect的入参泛型，用于定义globalConnect支持的持久化集合
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;S&gt; | 表示值类型为Array类型。 |
@@ -582,9 +609,10 @@ globalConnect的入参泛型，用于定义globalConnect支持的持久化集合
 
 
 
-#### ObservedResult23+
+## ObservedResult23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 对象是否可被观察的结果。
 
@@ -593,6 +621,7 @@ globalConnect的入参泛型，用于定义globalConnect支持的持久化集合
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -603,9 +632,10 @@ globalConnect的入参泛型，用于定义globalConnect支持的持久化集合
 
 
 
-#### DecoratorInfo23+
+## DecoratorInfo23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 可被观察对象关联的装饰器和组件信息。
 
@@ -614,6 +644,7 @@ globalConnect的入参泛型，用于定义globalConnect支持的持久化集合
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -626,9 +657,10 @@ globalConnect的入参泛型，用于定义globalConnect支持的持久化集合
 
 
 
-#### ElementInfo23+
+## ElementInfo23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 可被观察对象关联的组件信息，包含系统组件和自定义组件。
 
@@ -638,6 +670,7 @@ globalConnect的入参泛型，用于定义globalConnect支持的持久化集合
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | elementName | string | 否 | 否 | 组件的名称。 |
@@ -646,17 +679,19 @@ globalConnect的入参泛型，用于定义globalConnect支持的持久化集合
 
 
 
-#### UIUtils
+## UIUtils
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 UIUtils状态管理相关的工具方法，包括获取代理对象的原始对象、将非观察数据变为可观察数据、动态添加和删除状态变量监听、同步刷新状态变量修改、创建数据绑定等，适用于需要手动管理状态观察、监听和同步刷新的场景。
 
 
 
-#### getTarget
+### getTarget
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getTarget<T extends object>(source: T): T
 
@@ -668,12 +703,14 @@ static getTarget<T extends object>(source: T): T
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | source | T | 是 | 数据源对象，即被状态管理框架包裹的代理对象，用于获取去除代理后的原始对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -708,9 +745,10 @@ struct Index {
 
 
 
-#### getLifecycle23+
+### getLifecycle23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getLifecycle<T extends BaseCustomComponent>(customComponent: T): CustomComponentLifecycle
 
@@ -724,12 +762,14 @@ getLifecycle用于获取[自定义组件的生命周期](https://developer.huawe
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | customComponent | T | 是 | 自定义组件实例。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -761,9 +801,10 @@ struct Index {
 
 
 
-#### canBeObserved23+
+### canBeObserved23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static canBeObserved<T extends object>(source: T): ObservedResult
 
@@ -777,12 +818,14 @@ static canBeObserved<T extends object>(source: T): ObservedResult
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | source | T | 是 | 输入一个数据对象，判断其是否可被观察。支持Array、Map、Set和Date类型数据。 具体使用规则，详见canBeObserved接口：判断对象是否为可被观察对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -902,9 +945,10 @@ export struct School {
 
 
 
-#### makeObserved
+### makeObserved
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static makeObserved<T extends object>(source: T): T
 
@@ -916,12 +960,14 @@ static makeObserved<T extends object>(source: T): T
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | source | T | 是 | 数据源对象。支持非@Observed和@ObservedV2装饰的class，JSON.parse返回的Object和@Sendable修饰的class。 支持Array、Map、Set和Date。 支持collections.Array、collections.Set和collections.Map。 具体使用规则，详见makeObserved接口：将非观察数据变为可观察数据。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -961,9 +1007,10 @@ struct Index {
 
 
 
-#### enableV2Compatibility19+
+### enableV2Compatibility19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static enableV2Compatibility<T extends object>(source: T): T
 
@@ -975,12 +1022,14 @@ static enableV2Compatibility<T extends object>(source: T): T
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | source | T | 是 | 数据源，仅支持V1状态数据，如被@Observed装饰的对象或被makeV1Observed方法转换的对象。传入非V1状态数据时返回数据源本身。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1030,9 +1079,10 @@ struct CompV2 {
 
 
 
-#### makeV1Observed19+
+### makeV1Observed19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static makeV1Observed<T extends object>(source: T): T
 
@@ -1046,12 +1096,14 @@ static makeV1Observed<T extends object>(source: T): T
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | source | T | 是 | 数据源。支持普通class、Array、Map、Set、Date类型。 不支持@arkts.collections (ArkTS容器集)和@Sendable修饰的class。 不支持undefined和null。不支持状态管理V2的数据和makeObserved的返回值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1107,9 +1159,10 @@ struct Child {
 
 
 
-#### makeBinding20+
+### makeBinding20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static makeBinding&lt;T&gt;(getter: GetterCallback&lt;T&gt;): Binding&lt;T&gt;
 
@@ -1121,12 +1174,14 @@ static makeBinding&lt;T&gt;(getter: GetterCallback&lt;T&gt;): Binding&lt;T&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | getter | GetterCallback&lt;T&gt; | 是 | 获取值的回调函数，每次访问值都会重新执行函数，获取最新值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1178,9 +1233,10 @@ struct CompV2 {
 
 
 
-#### makeBinding20+
+### makeBinding20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static makeBinding&lt;T&gt;(getter: GetterCallback&lt;T&gt;, setter: SetterCallback&lt;T&gt;): MutableBinding&lt;T&gt;
 
@@ -1192,6 +1248,7 @@ static makeBinding&lt;T&gt;(getter: GetterCallback&lt;T&gt;, setter: SetterCallb
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | getter | GetterCallback&lt;T&gt; | 是 | 获取值的回调函数，每次访问值都会重新执行函数，获取最新值。 |
@@ -1199,6 +1256,7 @@ static makeBinding&lt;T&gt;(getter: GetterCallback&lt;T&gt;, setter: SetterCallb
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1254,9 +1312,10 @@ struct CompV2 {
 
 
 
-#### addMonitor20+
+### addMonitor20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static addMonitor(target: object, path: string | string[], monitorCallback: MonitorCallback, options?: MonitorOptions): void
 
@@ -1267,6 +1326,7 @@ static addMonitor(target: object, path: string | string[], monitorCallback: Moni
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1279,6 +1339,7 @@ static addMonitor(target: object, path: string | string[], monitorCallback: Moni
 **错误码：**
 
 以下错误码的详细介绍请参见[状态管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-statemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1337,9 +1398,10 @@ struct Index {
 
 
 
-#### clearMonitor20+
+### clearMonitor20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static clearMonitor(target: object, path: string | string[], monitorCallback?: MonitorCallback): void
 
@@ -1350,6 +1412,7 @@ static clearMonitor(target: object, path: string | string[], monitorCallback?: M
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1362,6 +1425,7 @@ static clearMonitor(target: object, path: string | string[], monitorCallback?: M
 
 以下错误码的详细介绍请参见[状态管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-statemanagement)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 130000 | The target is not a custom component instance or V2 class instance. |
@@ -1373,7 +1437,7 @@ static clearMonitor(target: object, path: string | string[], monitorCallback?: M
 
 在下面的示例中：
 1. 在ObservedClass的构造方法中，添加对age属性的同步监听回调onChange。
-2. 点击Text组件，触发age自增，onChange的监听回调函数被触发。打印日志如下。        
+2. 点击Text组件，触发age自增，onChange的监听回调函数被触发。打印日志如下。       
 ```text
 ObservedClass property age change from 10 to 11
 ```
@@ -1426,9 +1490,10 @@ struct Index {
 
 
 
-#### applySync22+
+### applySync22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static applySync&lt;T&gt;(task: TaskCallback): T
 
@@ -1440,12 +1505,14 @@ static applySync&lt;T&gt;(task: TaskCallback): T
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | task | TaskCallback | 是 | 闭包函数，该闭包中产生的状态变量修改会同步执行。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1455,6 +1522,7 @@ static applySync&lt;T&gt;(task: TaskCallback): T
 **错误码：**
 
 以下错误码的详细介绍请参见[状态管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-statemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1509,9 +1577,10 @@ struct Index {
 
 
 
-#### flushUpdates22+
+### flushUpdates22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static flushUpdates(): void
 
@@ -1524,6 +1593,7 @@ static flushUpdates(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[状态管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-statemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1578,9 +1648,10 @@ struct Index {
 
 
 
-#### flushUIUpdates22+
+### flushUIUpdates22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static flushUIUpdates(): void
 
@@ -1593,6 +1664,7 @@ static flushUIUpdates(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[状态管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-statemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1648,9 +1720,10 @@ struct Index {
 
 
 
-#### getCustomComponentContext
+### getCustomComponentContext
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getCustomComponentContext<T extends BaseCustomComponent>(customComponent: T): CustomComponentContext
 
@@ -1666,12 +1739,14 @@ static getCustomComponentContext<T extends BaseCustomComponent>(customComponent:
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | customComponent | T | 是 | 要获取其上下文的@Component或@ComponentV2实例。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1740,9 +1815,10 @@ struct Index {
 
 
 
-#### TaskCallback22+
+## TaskCallback22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type TaskCallback = () => T
 
@@ -1754,6 +1830,7 @@ type TaskCallback = () => T
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | T | 闭包函数执行得到的返回值。 |
@@ -1761,13 +1838,15 @@ type TaskCallback = () => T
 
 
 
-#### MonitorOptions20+
+## MonitorOptions20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [addMonitor](#addmonitor20)的可选参数，用于配置回调类型以及是否使能通配符能力。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1777,9 +1856,10 @@ type TaskCallback = () => T
 
 
 
-#### MonitorCallback20+
+## MonitorCallback20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type MonitorCallback = (monitorValue: IMonitor) => void
 
@@ -1791,6 +1871,7 @@ type MonitorCallback = (monitorValue: IMonitor) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | monitorValue | IMonitor | 是 | 回调函数传入的变化信息，包含状态变量变化的路径（dirty）、变化前后的值（通过value方法获取）等详细信息。具体属性和方法详见IMonitor。 |
@@ -1798,9 +1879,10 @@ type MonitorCallback = (monitorValue: IMonitor) => void
 
 
 
-#### StorageDefaultCreator&lt;T&gt;
+## StorageDefaultCreator&lt;T&gt;
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type StorageDefaultCreator&lt;T&gt; = () => T
 
@@ -1811,6 +1893,7 @@ type StorageDefaultCreator&lt;T&gt; = () => T
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1852,17 +1935,19 @@ struct SampleComp {
 
 
 
-#### TypeConstructorWithArgs&lt;T&gt;
+## TypeConstructorWithArgs&lt;T&gt;
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 含有任意入参的类构造器。
 
 
 
-#### new
+### new
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 new(...args: any): T
 
@@ -1874,12 +1959,14 @@ new(...args: any): T
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ...args | any | 否 | 创建类型T实例时传入的构造参数，用于初始化实例。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1921,9 +2008,10 @@ struct SampleComp {
 
 
 
-#### PersistenceErrorCallback
+## PersistenceErrorCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type PersistenceErrorCallback = (key: string, reason: 'quota' | 'serialization' | 'unknown', message: string, oldValue?: string) => void
 
@@ -1934,6 +2022,7 @@ type PersistenceErrorCallback = (key: string, reason: 'quota' | 'serialization' 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1986,17 +2075,19 @@ struct Index {
 
 
 
-#### TypeConstructor&lt;T&gt;
+## TypeConstructor&lt;T&gt;
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 类构造函数。
 
 
 
-#### new
+### new
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 new(): T
 
@@ -2007,6 +2098,7 @@ new(): T
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2051,9 +2143,10 @@ struct Index {
 
 
 
-#### TypeDecorator
+## TypeDecorator
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type TypeDecorator = &lt;T&gt;(type: TypeConstructor&lt;T&gt;) => PropertyDecorator
 
@@ -2065,12 +2158,14 @@ type TypeDecorator = &lt;T&gt;(type: TypeConstructor&lt;T&gt;) => PropertyDecora
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | TypeConstructor&lt;T&gt; | 是 | 标记类属性的类型，仅支持自定义class类型，传入其他类型会导致持久化失败。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2136,9 +2231,10 @@ class Sample {
 
 
 
-#### GetterCallback20+
+## GetterCallback20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type GetterCallback&lt;T&gt; = () => T
 
@@ -2149,6 +2245,7 @@ type GetterCallback&lt;T&gt; = () => T
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2192,9 +2289,10 @@ struct CompV2 {
 
 
 
-#### SetterCallback20+
+## SetterCallback20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type SetterCallback&lt;T&gt; = (newValue: T) => void
 
@@ -2205,6 +2303,7 @@ type SetterCallback&lt;T&gt; = (newValue: T) => void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2251,17 +2350,19 @@ struct CompV2 {
 
 
 
-#### Binding&lt;T&gt;20+
+## Binding&lt;T&gt;20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 只读数据绑定的泛型类，可以绑定任意类型的数据。
 
 
 
-#### value20+
+### value20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get value(): T
 
@@ -2272,6 +2373,7 @@ get value(): T
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2316,17 +2418,19 @@ struct CompV2 {
 
 
 
-#### MutableBinding&lt;T&gt;20+
+## MutableBinding&lt;T&gt;20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 可变数据绑定的泛型类，允许对绑定值进行读写操作，提供完整的get和set访问器。
 
 
 
-#### value20+
+### value20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set value(newValue: T)
 
@@ -2338,6 +2442,7 @@ set value(newValue: T)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | newValue | T | 是 | 要设置的新值，当绑定值被修改时传入此参数。类型与MutableBinding&lt;T&gt;定义的泛型T一致。 |
@@ -2345,9 +2450,10 @@ set value(newValue: T)
 
 
 
-#### value20+
+### value20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get value(): T
 
@@ -2358,6 +2464,7 @@ get value(): T
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2404,9 +2511,10 @@ struct CompV2 {
 
 
 
-#### CustomComponentContext
+## CustomComponentContext
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 CustomComponentContext类提供对组件级服务的访问，包括复用池。通过[UIUtils.getCustomComponentContext](#getcustomcomponentcontext)获取实例。
 
@@ -2420,9 +2528,10 @@ CustomComponentContext类提供对组件级服务的访问，包括复用池。�
 
 
 
-#### getReusePool
+### getReusePool
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getReusePool(): IReusePool | undefined
 
@@ -2437,6 +2546,7 @@ getReusePool(): IReusePool | undefined
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2482,9 +2592,10 @@ struct PoolOwner {
 
 
 
-#### IReusePool
+## IReusePool
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 IReusePool接口提供自定义组件上的全局复用池的相关功能，包括查询回收组件的当前数量和上限信息、预渲染可复用组件到复用池中等，适用于开发者需要手动管理和优化组件复用效率的场景。
 
@@ -2498,9 +2609,10 @@ IReusePool接口提供自定义组件上的全局复用池的相关功能，包�
 
 
 
-#### getReusableInfo
+### getReusableInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getReusableInfo(constructor: ReusableComponentConstructor, reuseId?: string): IReusableInfo[] | IReusableInfo | undefined
 
@@ -2516,6 +2628,7 @@ getReusableInfo(constructor: ReusableComponentConstructor, reuseId?: string): IR
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | constructor | ReusableComponentConstructor | 是 | 要查询的可复用自定义组件的构造函数。 |
@@ -2523,6 +2636,7 @@ getReusableInfo(constructor: ReusableComponentConstructor, reuseId?: string): IR
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2598,9 +2712,10 @@ struct PoolOwner {
 
 
 
-#### preRender
+### preRender
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 preRender(builder: WrappedBuilder<[]>, times: number): Promise&lt;void&gt;
 
@@ -2620,6 +2735,7 @@ preRender(builder: WrappedBuilder<[]>, times: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | builder | WrappedBuilder<[]> | 是 | 包含要执行times次的@Builder函数的 WrappedBuilder。每次执行应创建一个或多个@Reusable/@ReusableV2组件。 |
@@ -2627,6 +2743,7 @@ preRender(builder: WrappedBuilder<[]>, times: number): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2717,17 +2834,19 @@ struct CompA {
 
 
 
-#### IReusableInfo
+## IReusableInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 IReusableInfo接口提供有关复用池管理的可复用组件的当前数量和数量上限的信息。
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **起始版本：** 26.0.0
 
@@ -2736,6 +2855,7 @@ IReusableInfo接口提供有关复用池管理的可复用组件的当前数量�
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2825,9 +2945,10 @@ struct PoolOwner {
 
 
 
-#### ReusableComponentConstructor
+## ReusableComponentConstructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ReusableComponentConstructor = Function
 

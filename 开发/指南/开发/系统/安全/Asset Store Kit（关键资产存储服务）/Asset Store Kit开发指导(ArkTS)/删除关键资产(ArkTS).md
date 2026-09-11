@@ -1,10 +1,10 @@
 # 删除关键资产(ArkTS)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/asset-js-remove
 
-#### 接口介绍
+## 接口介绍
 
 开发者可以查阅API文档，获取关键资产删除接口的详细说明：异步接口[remove(query: AssetMap)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-asset#assetremove)、同步接口[removeSync(query: AssetMap)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-asset#assetremovesync12)。
 
@@ -15,6 +15,7 @@
 
 
 下表中“ALIAS”和名称包含“DATA_LABEL”的关键资产属性，用于存储业务自定义信息，其内容不会被加密，请勿存放敏感个人数据。
+
 
 
 
@@ -44,7 +45,7 @@
 
 
 
-#### 代码示例
+## 代码示例
 
 > [!NOTE]
 > 本模块提供了异步和同步两套接口，以下为异步接口的使用示例，同步接口详见 @ohos.security.asset (关键资产存储服务) 。 在指定群组中删除一条关键资产的使用示例详见 删除群组关键资产 。 在删除前，需确保已有关键资产，可参考 指南文档 新增关键资产，否则将抛出NOT_FOUND错误（错误码24000002）。

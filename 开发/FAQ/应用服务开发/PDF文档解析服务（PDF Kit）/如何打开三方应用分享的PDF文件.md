@@ -54,19 +54,19 @@
               "ohos.want.action.home"
             ]
           },
-          // 添加skill配置
+         <em> // 添加skill配置</em>
           {
             "actions": [
-              // 必需，声明数据处理能力
+              <em>// 必需，声明数据处理能力</em>
               "ohos.want.action.viewData",
               "ohos.want.action.sendData"
             ],
             "uris": [
               {
                 "scheme": "file",
-                // 目标应用在配置支持接收的数据类型时，需穷举支持的UTD
+                <em>// 目标应用在配置支持接收的数据类型时，需穷举支持的UTD</em>
                 "utd": "com.adobe.pdf",
-                // maxFileSupported对于归属指定类型的文件，标识一次支持接收的最大数量。默认为0，代表不支持此类文件的分享
+               <em> // maxFileSupported对于归属指定类型的文件，标识一次支持接收的最大数量。默认为0，代表不支持此类文件的分享</em>
                 "maxFileSupported": 1
               },
               {
@@ -125,7 +125,7 @@ export default class EntryAbility extends UIAbility {
           }
 
           try {
-            // 获取uri，缓存至应用沙箱
+            <em>// </em><em>获取uri，缓存至应用沙箱</em>
             const file = fileIo.openSync(record.uri, fileIo.OpenMode.READ_ONLY);
             const destPath = this.context.cacheDir + '/' + file.name;
             const outFile = fileIo.openSync(destPath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);

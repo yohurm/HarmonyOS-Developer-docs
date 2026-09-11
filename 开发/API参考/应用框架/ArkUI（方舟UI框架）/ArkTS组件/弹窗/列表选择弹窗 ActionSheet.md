@@ -1,9 +1,9 @@
 # 列表选择弹窗 (ActionSheet)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-action-sheet
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于显示列表选择项的弹窗组件。
 
@@ -12,13 +12,15 @@
 
 
 
-#### ActionSheetOptions对象说明
+## ActionSheetOptions对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 列表选择弹窗的样式。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -62,15 +64,17 @@
 
 
 
-#### SheetInfo对象说明
+## SheetInfo对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 弹窗中的选项内容，每一项支持设置文本、图标以及选中的回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -81,9 +85,10 @@
 
 
 
-#### LevelMode15+
+## LevelMode15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type LevelMode = import('../api/@ohos.promptAction').LevelMode
 
@@ -95,6 +100,7 @@ type LevelMode = import('../api/@ohos.promptAction').LevelMode
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | import('../api/@ohos.promptAction').LevelMode | 设置弹窗的显示层级。 |
@@ -102,9 +108,10 @@ type LevelMode = import('../api/@ohos.promptAction').LevelMode
 
 
 
-#### ImmersiveMode15+
+## ImmersiveMode15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ImmersiveMode = import('../api/@ohos.promptAction').ImmersiveMode
 
@@ -116,6 +123,7 @@ type ImmersiveMode = import('../api/@ohos.promptAction').ImmersiveMode
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | import('../api/@ohos.promptAction').ImmersiveMode | 设置页面内弹窗的蒙层效果。 |
@@ -123,9 +131,10 @@ type ImmersiveMode = import('../api/@ohos.promptAction').ImmersiveMode
 
 
 
-#### DismissDialogAction12+
+## DismissDialogAction12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 弹窗关闭的信息。
 
@@ -137,7 +146,11 @@ type ImmersiveMode = import('../api/@ohos.promptAction').ImmersiveMode
 
 
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -147,9 +160,10 @@ type ImmersiveMode = import('../api/@ohos.promptAction').ImmersiveMode
 
 
 
-#### ActionSheetButtonOptions18+对象说明
+## ActionSheetButtonOptions18+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 弹窗中按钮的样式。
 
@@ -163,6 +177,7 @@ type ImmersiveMode = import('../api/@ohos.promptAction').ImmersiveMode
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | enabled10+ | boolean | 否 | 是 | 点击Button是否响应，true表示Button可以响应，false表示Button不可以响应。 默认值：true 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -174,9 +189,10 @@ type ImmersiveMode = import('../api/@ohos.promptAction').ImmersiveMode
 
 
 
-#### ActionSheetOffset18+对象说明
+## ActionSheetOffset18+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 弹窗相对alignment所在位置的偏移量。
 
@@ -186,6 +202,7 @@ type ImmersiveMode = import('../api/@ohos.promptAction').ImmersiveMode
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | dx | number \| string \| Resource | 否 | 否 | 弹窗相对于对齐位置dx的偏移量。 可指定像素单位，如'10px'，也可设置百分比字符串，如'100%'。 说明： 不指定像素单位时，默认单位vp，如'10'，等同于'10vp'。 |
@@ -194,15 +211,17 @@ type ImmersiveMode = import('../api/@ohos.promptAction').ImmersiveMode
 
 
 
-#### ActionSheet
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## ActionSheet
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### show(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### show(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static show(value: ActionSheetOptions)
 
@@ -218,6 +237,7 @@ static show(value: ActionSheetOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ActionSheetOptions | 是 | 配置列表选择弹窗的参数。 |
@@ -225,9 +245,10 @@ static show(value: ActionSheetOptions)
 
 
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 直接使用ActionSheet可能导致实例不明确的问题，建议使用getUIContext()获取 UIContext 实例，并使用 showActionSheet 调用绑定实例的ActionSheet.show()。
@@ -235,7 +256,10 @@ static show(value: ActionSheetOptions)
 
 
 
-#### 示例1（弹出列表选择弹窗）
+### 示例1（弹出列表选择弹窗）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过点击按钮弹出列表选择弹窗。
 
@@ -309,7 +333,10 @@ struct ActionSheetExample {
 
 
 
-#### 示例2（可在主窗外弹出的弹窗）
+### 示例2（可在主窗外弹出的弹窗）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 在2in1设备上设置[showInSubWindow](#actionsheetoptions对象说明)为true时，可以弹出在主窗外显示的弹窗。
 
@@ -385,7 +412,10 @@ struct ActionSheetExample {
 
 
 
-#### 示例3（设置弹窗的动画）
+### 示例3（设置弹窗的动画）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置[transition](#actionsheetoptions对象说明)实现弹窗的显示和消失动画。
 
@@ -451,7 +481,10 @@ struct ActionSheetExample {
 
 
 
-#### 示例4（设置弹窗的样式）
+### 示例4（设置弹窗的样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例定义了ActionSheet的样式，如宽度、高度、背景色、阴影等。
 
@@ -537,7 +570,10 @@ struct ActionSheetExample {
 
 
 
-#### 示例5（悬停态弹窗）
+### 示例5（悬停态弹窗）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示了在折叠屏悬停态下设置dialog布局区域的效果。
 
@@ -608,12 +644,15 @@ struct ActionSheetExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/qsbZu_Y_TxmmUT_QjiyAKg/zh-cn_image_0000002704394979.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095450Z&HW-CC-Expire=86400&HW-CC-Sign=CCB8FCDCFF2DF9649BCE358FFD46EB24F1D3E87C351FED0FF0354DB5DAAAE3F9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/GdBFozEAR_2LrPwpualEWA/zh-cn_image_0000002717772994.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=9C7C1C36B88E57172C7107857FC1141E40FA5F809E12A9AD0A552E824F32FA0F)
 
 
 
 
-#### 示例6（弹窗生命周期）
+### 示例6（弹窗生命周期）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例为弹窗配置生命周期回调。
 
@@ -690,12 +729,15 @@ struct Example1 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/5ppXvOVyTFeg-1319di8_w/zh-cn_image_0000002674634858.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095450Z&HW-CC-Expire=86400&HW-CC-Sign=4CAEBA5025169ED41151751ABD4BE48170029242A19C79ECA7F21DDEE3178BFF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/VxZ2idJJRkyczSCs6aOubQ/zh-cn_image_0000002717613062.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=92E49A7556F06A857258CBFDB84062655739E2FE47ADF275612B934A2AD9DD5C)
 
 
 
 
-#### 示例7（自定义背景模糊效果参数）
+### 示例7（自定义背景模糊效果参数）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置[backgroundBlurStyleOptions](#actionsheetoptions对象说明)，实现自定义背景模糊效果。
 
@@ -754,12 +796,15 @@ struct ActionSheetExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/FIJMsggDSByMtWYKvUREww/zh-cn_image_0000002704274811.png?HW-CC-KV=V1&HW-CC-Date=20260813T095450Z&HW-CC-Expire=86400&HW-CC-Sign=021C4CDD31A7407492A3BFD1D0A6BC56211E319C41B788D2F85081565EB603F1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/CG-PDGH4QZSgc6EjCulTcQ/zh-cn_image_0000002747293015.png?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=DEFF242B212764B7A2634B573204786850CDBC316BA756330B882649754EB114)
 
 
 
 
-#### 示例8（自定义背景效果参数）
+### 示例8（自定义背景效果参数）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置[backgroundEffect](#actionsheetoptions对象说明)，实现自定义背景效果。
 
@@ -819,14 +864,19 @@ struct ActionSheetExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/bj4_gb7xTReJJwUAQSPMxA/zh-cn_image_0000002674475020.png?HW-CC-KV=V1&HW-CC-Date=20260813T095450Z&HW-CC-Expire=86400&HW-CC-Sign=37C6334C34130E77DD7140B781DB6B66D3362D9E1A42FC3E2C7A6B0DC7DAA703)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/GRdEnJ0hTJ2rnlqYnA1saQ/zh-cn_image_0000002747212931.png?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=C79542E408BA1EB3D870566DCB9E71F2F33A76DAB9239270F50DD158941FCC94)
 
 
 
 
-#### 示例9（设置弹窗的系统材质）
+### 示例9（设置弹窗的沉浸光感效果）
 
-该示例通过配置[ActionSheetOptions](#actionsheetoptions对象说明)中的systemMaterial属性，实现系统材质效果。
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+该示例通过[ActionSheetOptions](#actionsheetoptions对象说明)中的systemMaterial属性设置组件的系统材质，实现沉浸光感效果。
+
+组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
 
 从API版本26.0.0开始，在[ActionSheetOptions](#actionsheetoptions对象说明)中新增了systemMaterial属性。
 
@@ -873,11 +923,21 @@ struct ActionSheetExample {
       }
       .height('100%')
       .width('100%')
-      .backgroundColor(Color.Gray)
+      // 请开发者替换为实际资源文件
+      .backgroundImage($r("app.media.img"))
+      .backgroundImageSize({ width: '100%', height: '100%' })
     }
   }
 }
 ```
 
+未设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/ojtcJmdzQDubv54FzEMvNg/zh-cn_image_0000002704394981.png?HW-CC-KV=V1&HW-CC-Date=20260813T095450Z&HW-CC-Expire=86400&HW-CC-Sign=E2509E17A53321C8C8F17043FEE2A35E443313CBBE62B49B3A456E6EA6816E78)
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/QAd3yjJ9Ti6XhuDznx4BEw/zh-cn_image_0000002717772996.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=3AC1FF9B1EEC9EC66B23487D6C39AF7A72D9FA8992ABE992E143AD34A441D6CF)
+
+
+设置系统材质后：
+
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/5A493L0VSxGw-pNjqXQA7w/zh-cn_image_0000002717613064.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=F1ED2061D3AB62B8C6B4F0E8A35F3B38F76A6A027702A9AAAFAD2BCA0BAD51AC)

@@ -1,6 +1,6 @@
 # 使用AVRecorder录制视频(C/C++)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ndk-avrecorder-for-video-recording
 
@@ -19,7 +19,7 @@ AVRecorder支持开发音视频录制，集成了音频捕获、音频编码、�
 状态的详细说明请参考[OH_AVRecorder_State](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avrecorder-base-h#oh_avrecorder_state)。
 
 
-#### 申请权限
+## 申请权限
 
 在开发此功能前，开发者应根据实际需求申请相关权限：
 
@@ -35,7 +35,7 @@ AVRecorder支持开发音视频录制，集成了音频捕获、音频编码、�
 
 
 
-#### 开发步骤及注意事项
+## 开发步骤及注意事项
 
 > [!NOTE]
 > AVRecorder只负责视频数据的处理，需要与视频数据采集模块配合才能完成视频录制。视频数据采集模块需要通过Surface将视频数据传递给AVRecorder进行数据处理。当前常用的视频数据采集模块为相机模块，具体请参考 相机-录像 。 文件的创建与存储，请参考 应用文件访问与管理 ，默认存储在应用的沙箱路径之下，如需存储至图库，请使用 安全控件保存媒体资源 对沙箱内文件进行存储。
@@ -89,41 +89,45 @@ target_link_libraries(entry PUBLIC libhilog_ndk.z.so)
 1. 创建AVRecorder实例，实例创建完成进入idle状态。
 
   
-```cpp
+```text
 #include "multimedia/player_framework/avrecorder.h"
 #include "multimedia/player_framework/avrecorder_base.h"
 ```
 
-```cpp
+```text
 static OH_AVRecorder *g_recorder = nullptr;
 ```
 
-```cpp
+```text
 g_recorder = OH_AVRecorder_Create();
 ```
 
 2. 设置业务需要的监听事件，监听状态变化及错误上报。
 
 | 事件类型 | 说明 |
+
 | --- | --- |
+
 | OnStateChange | 监听AVRecorder的状态改变。 |
+
 | OnError | 监听AVRecorder的错误信息。 |
+
 | OnUri | 监听AVRecorder生成媒体文件。 |
 
   
-```cpp
+```text
 OH_AVRecorder_SetStateCallback(g_recorder, OnStateChange, nullptr);
 ```
 
-```cpp
+```text
 OH_AVRecorder_SetErrorCallback(g_recorder, OnError, nullptr);
 ```
 
-```cpp
+```text
 OH_AVRecorder_SetUriCallback(g_recorder, OnUri, nullptr);
 ```
 
-```cpp
+```text
 static void OnStateChange(OH_AVRecorder *recorder, OH_AVRecorder_State state,
     OH_AVRecorder_StateChangeReason reason, void *userData)
 {
@@ -142,7 +146,7 @@ static void OnStateChange(OH_AVRecorder *recorder, OH_AVRecorder_State state,
 }
 ```
 
-```cpp
+```text
 static void OnError(OH_AVRecorder *recorder, int32_t errorCode, const char *errorMsg, void *userData)
 {
     // ...
@@ -154,7 +158,7 @@ static void OnError(OH_AVRecorder *recorder, int32_t errorCode, const char *erro
 }
 ```
 
-```cpp
+```text
 void OnUri(OH_AVRecorder *recorder, OH_MediaAsset *asset, void *userData)
 {
     (void)recorder;
@@ -191,7 +195,7 @@ void OnUri(OH_AVRecorder *recorder, OH_MediaAsset *asset, void *userData)
 
 
   
-```cpp
+```text
 static napi_value PrepareVideoRecorder(napi_env env, napi_callback_info info)
 {
     OH_LOG_INFO(LOG_APP, "PrepareVideoRecorder called");
@@ -247,7 +251,7 @@ static napi_value PrepareVideoRecorder(napi_env env, napi_callback_info info)
   输入源模块通过SurfaceID可以获取到Surface，通过Surface可以将视频数据流传递给AVRecorder，由AVRecorder再进行视频数据的处理。
 
   
-```cpp
+```text
 static std::string GetSurfaceIdString()
 {
     OHNativeWindow *window = nullptr;
@@ -272,53 +276,53 @@ static std::string GetSurfaceIdString()
 6. 开始录制，启动输入源输入视频数据，例如相机模块调用OH_VideoOutput_Start()接口启动相机录制。然后调用OH_AVRecorder_Start()接口，此时AVRecorder进入started状态。
 
   
-```cpp
+```text
 OH_AVErrCode err = OH_AVRecorder_Start(g_recorder);
 ```
 
 7. 暂停录制，调用OH_AVRecorder_Pause()接口，此时AVRecorder进入paused状态，同时暂停输入源输入数据。例如相机模块调用OH_VideoOutput_Stop()停止相机视频数据输入。
 
   
-```cpp
+```text
 OH_AVErrCode err = OH_AVRecorder_Pause(g_recorder);
 ```
 
 8. 恢复录制，调用OH_AVRecorder_Resume()接口，此时再次进入started状态。
 
   
-```cpp
+```text
 OH_AVErrCode err = OH_AVRecorder_Resume(g_recorder);
 ```
 
 9. 停止录制，调用OH_AVRecorder_Stop()接口，此时进入stopped状态，同时停止相机录制。
 
   
-```cpp
+```text
 OH_AVErrCode err = OH_AVRecorder_Stop(g_recorder);
 ```
 
 10. 重置资源，调用OH_AVRecorder_Reset()重新进入idle状态，允许重新配置录制参数。
 
   
-```cpp
+```text
 OH_AVErrCode err = OH_AVRecorder_Reset(g_recorder);
 ```
 
 11. 销毁实例，调用OH_AVRecorder_Release()进入released状态，退出录制，释放视频数据输入源相关资源，例如相机资源。
 
   
-```cpp
+```text
 OH_AVRecorder_Release(g_recorder);
 ```
 
 
 
 
-#### 完整示例
+## 完整示例
 
 参考以下示例，包括“创建录制实例-准备录制-开始录制-暂停录制-恢复录制-停止录制-重置录制状态-释放录制资源”的完整流程。
 
-```cpp
+```text
 #include <cstdio>
 #include <cstring>
 #include <string>

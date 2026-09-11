@@ -1,10 +1,10 @@
 # 拉起文件处理类应用（startAbility）
 
-更新时间：2026-03-09 02:50:43
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/file-processing-apps-startup
 
-#### 使用场景
+## 使用场景
 
 开发者可以通过调用[startAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext#startability)接口，由系统从已安装的应用中寻找符合要求的应用，打开特定文件。
 
@@ -18,11 +18,12 @@
 
 
 
-#### 接口关键参数说明
+## 接口关键参数说明
 
 开发者通过调用[startAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext#startability)接口即可实现由已安装的垂域应用来打开文件。
 
 表1 startAbility请求中[want](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-want)相关参数说明
+
 
 | 参数名称 | 类型 | 是否必填 | 说明 |
 | --- | --- | --- | --- |
@@ -35,6 +36,7 @@
 
 **表2** [parameters](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-wantconstant#params)相关参数说明
 
+
 | 参数名称 | 类型 | 说明 |
 | --- | --- | --- |
 | ability.params.stream | string | 指示携带的文件URI要授权给目标方，用于待打开的文件存在其他文件依赖的场景。例如打开本地html文件依赖本地其余资源文件的场景等。对应的value必须是string类型的文件URI数组。文件URI的获取参考表1中uri参数。 |
@@ -44,6 +46,7 @@
 
 **表3** [flags](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-wantconstant#flags)相关参数说明
 
+
 | 参数名称 | 值 | 说明 |
 | --- | --- | --- |
 | FLAG_AUTH_READ_URI_PERMISSION | 0x00000001 | 指对URI执行读取操作的授权。 |
@@ -52,11 +55,11 @@
 
 
 
-#### 接入步骤
+## 接入步骤
 
 
 
-#### 调用方接入步骤
+### 调用方接入步骤
 1. 导入相关模块。
 
   
@@ -145,7 +148,7 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### 目标方接入步骤
+### 目标方接入步骤
 1. 声明文件打开能力。
 
   支持打开文件的应用需要在[module.json5](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)配置文件中声明文件打开能力。其中uris字段表示接收URI的类型，其中scheme固定为file。type字段表示支持打开的文件类型（参见[UTD类型](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uniform-data-type-descriptors)（推荐）或[MIME type类型](https://www.iana.org/assignments/media-types/media-types.xhtml?utm_source=ld246.com)），如下举例中类型为txt文件。

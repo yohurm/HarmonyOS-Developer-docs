@@ -1,13 +1,13 @@
 # Scenario Fusion Kit简介
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusion-introduction
 
 Scenario Fusion Kit（融合场景服务）基于ArkUI框架组件开发，提供跨多个子系统融合的场景化组件，降低开发者接入复杂度，确保鸿蒙生态体验统一。ArkUI一行核心代码启用，智能推荐输入建议，复杂表单一键填充。Scenario Fusion Kit通过完善应用/元服务的系统开发能力，进一步丰富鸿蒙生态，满足开发者在HarmonyOS系统下的服务闭环诉求。
   
 
-#### 业务价值
+## 业务价值
 
 - 提升开发效率
 
@@ -22,12 +22,13 @@ Scenario Fusion Kit（融合场景服务）基于ArkUI框架组件开发，提�
  
   
 
-#### 约束与限制
+## 约束与限制
 
   
 
-#### 支持的国家和地区
+### 支持的国家和地区
  
+
 | 场景 | 国家/地区 |
 | --- | --- |
 | 场景化Button | 只支持中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）。 |
@@ -39,8 +40,9 @@ Scenario Fusion Kit（融合场景服务）基于ArkUI框架组件开发，提�
  
   
 
-#### 支持的设备
+### 支持的设备
  
+
 | 场景 | 支持设备 |
 | --- | --- |
 | 快速验证手机号Button | 支持Phone、Tablet和PC/2in1设备，并且从5.1.0(18)版本开始，新增支持TV设备。 |
@@ -59,13 +61,13 @@ Scenario Fusion Kit（融合场景服务）基于ArkUI框架组件开发，提�
 | 通过API异步获取系统信息属性 | 支持Phone、Tablet和PC/2in1设备，并且从5.1.0(18)版本开始，新增支持Wearable和TV设备。 |
 | 通过API获取系统设置属性 | 支持Phone、Tablet和PC/2in1设备，并且从5.1.0(18)版本开始，新增支持Wearable和TV设备。 |
 | 通过API展示关注组件 | Phone、Tablet |
-| 文件路径转换API | Phone、Tablet |
+| 文件路径转换API | Phone、Tablet，并且从API版本26.0.0开始，新增支持Car设备和TV设备。 |
 | 智能填充服务 | 支持Phone、Tablet设备，并且从5.1.0(18)版本开始，新增支持PC/2in1设备。 |
  
  
   
 
-#### 模拟器支持情况
+## 模拟器支持情况
 
 - 本Kit支持模拟器开发，通用差异可参考[模拟器与真机的差异](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-specification#section1227613205203)。
 - 模拟器与真机存在部分支持能力差异，详情如下：
@@ -73,6 +75,7 @@ Scenario Fusion Kit（融合场景服务）基于ArkUI框架组件开发，提�
  
 Windows(X86)系统支持的设备类型见下表。
   
+
 | 场景 | Phone | Tablet | 2in1 | Wearable | TV |
 | --- | --- | --- | --- | --- | --- |
 | 快速验证手机号Button | 不支持 | 不支持 | 不支持 | 不支持 | 不支持 |
@@ -97,6 +100,7 @@ Windows(X86)系统支持的设备类型见下表。
  
 macOS(ARM)系统支持的设备类型见下表。
   
+
 | 场景 | Phone | Tablet | 2in1 | Wearable | TV |
 | --- | --- | --- | --- | --- | --- |
 | 快速验证手机号Button | 支持 | 支持 | 支持 | 不支持 | 支持 |

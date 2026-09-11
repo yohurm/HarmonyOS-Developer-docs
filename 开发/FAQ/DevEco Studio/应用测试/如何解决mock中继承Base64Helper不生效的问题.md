@@ -11,7 +11,7 @@ mock中继承Base64Helper不生效。
 问题代码示例参考如下：
  
 ```ArkTS
-// Base64HelperMock.mock.ets
+<em>// Base64HelperMock.mock.ets</em>
 import { util } from '@kit.ArkTS'
 
 export class Base64HelperMock extends util.Base64Helper {
@@ -28,7 +28,7 @@ export class Base64HelperMock extends util.Base64Helper {
 ```
  
 ```ArkTS
-// mock-config.json5
+<em>// mock-config.json5</em>
 {
   "@ohos.util": {
     "source": "src/mock/Base64HelperMock.mock.ets"
@@ -37,7 +37,7 @@ export class Base64HelperMock extends util.Base64Helper {
 ```
  
 ```text
-// 测试文件
+<em>// </em><em>测试文件</em>
 import { util } from '@kit.ArkTS'
 import { describe, it } from '@ohos/hypium';
 

@@ -1,9 +1,9 @@
 # @ohos.bundle.overlay (overlay特征模块)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-overlay
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供overlay特征应用的[OverlayModuleInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bundlemanager-overlaymoduleinfo)信息查询以及禁用启用的能力。
 
@@ -14,9 +14,10 @@ overlay特征模块指的是当前模块中包含有overlay资源包，而当前
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { overlay } from '@kit.AbilityKit';
@@ -24,17 +25,19 @@ import { overlay } from '@kit.AbilityKit';
 
 
 
-#### overlay.setOverlayEnabled
+## overlay.setOverlayEnabled
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setOverlayEnabled(moduleName:string, isEnabled: boolean): Promise&lt;void&gt;
 
-设置当前应用中overlay特征模块的禁用启用状态。使用Promise异步回调。
+设置当前应用中overlay特征模块的禁用启用状态。使用Promise异步回调。接口调用失败时可能返回null，需校验返回值后使用。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Overlay
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -44,6 +47,7 @@ setOverlayEnabled(moduleName:string, isEnabled: boolean): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -52,6 +56,7 @@ setOverlayEnabled(moduleName:string, isEnabled: boolean): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[包管理子系统通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bundle)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -85,9 +90,10 @@ try {
 
 
 
-#### overlay.setOverlayEnabled
+## overlay.setOverlayEnabled
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setOverlayEnabled(moduleName: string, isEnabled: boolean, callback: AsyncCallback&lt;void&gt;): void
 
@@ -96,6 +102,7 @@ setOverlayEnabled(moduleName: string, isEnabled: boolean, callback: AsyncCallbac
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Overlay
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -107,6 +114,7 @@ setOverlayEnabled(moduleName: string, isEnabled: boolean, callback: AsyncCallbac
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[包管理子系统通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bundle)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -141,17 +149,19 @@ try {
 
 
 
-#### overlay.getOverlayModuleInfo
+## overlay.getOverlayModuleInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOverlayModuleInfo(moduleName: string): Promise&lt;OverlayModuleInfo&gt;
 
-获取当前应用中overlay特征模块的OverlayModuleInfo信息。使用Promise异步回调。
+获取当前应用中overlay特征模块的OverlayModuleInfo信息。使用Promise异步回调。接口调用失败时可能返回null，需校验返回值后使用。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Overlay
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -159,6 +169,7 @@ getOverlayModuleInfo(moduleName: string): Promise&lt;OverlayModuleInfo&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -168,6 +179,7 @@ getOverlayModuleInfo(moduleName: string): Promise&lt;OverlayModuleInfo&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[包管理子系统通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bundle)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -199,9 +211,10 @@ let moduleName = "feature";
 
 
 
-#### overlay.getOverlayModuleInfo
+## overlay.getOverlayModuleInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOverlayModuleInfo(moduleName: string, callback: AsyncCallback&lt;OverlayModuleInfo&gt;): void
 
@@ -210,6 +223,7 @@ getOverlayModuleInfo(moduleName: string, callback: AsyncCallback&lt;OverlayModul
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Overlay
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -220,6 +234,7 @@ getOverlayModuleInfo(moduleName: string, callback: AsyncCallback&lt;OverlayModul
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[包管理子系统通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bundle)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -254,17 +269,19 @@ try {
 
 
 
-#### overlay.getTargetOverlayModuleInfos
+## overlay.getTargetOverlayModuleInfos
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTargetOverlayModuleInfos(targetModuleName: string): Promise<Array&lt;OverlayModuleInfo&gt;>
 
-获取指定的目标module所关联的OverlayModuleInfo。overlay特征的module一般是为设备上存在的非overlay特征的module提供覆盖的资源文件，其中非overlay特征的module被称作目标module。使用Promise异步回调。
+获取指定的目标module所关联的OverlayModuleInfo。overlay特征的module一般是为设备上存在的非overlay特征的module提供覆盖的资源文件，其中非overlay特征的module被称作目标module。使用Promise异步回调。接口调用失败时可能返回null，需校验返回值后使用。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Overlay
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -272,6 +289,7 @@ getTargetOverlayModuleInfos(targetModuleName: string): Promise<Array&lt;OverlayM
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -281,6 +299,7 @@ getTargetOverlayModuleInfos(targetModuleName: string): Promise<Array&lt;OverlayM
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[包管理子系统通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bundle)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -311,9 +330,10 @@ let targetModuleName = "feature";
 
 
 
-#### overlay.getTargetOverlayModuleInfos
+## overlay.getTargetOverlayModuleInfos
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTargetOverlayModuleInfos(targetModuleName: string, callback: AsyncCallback<Array&lt;OverlayModuleInfo&gt;>): void
 
@@ -322,6 +342,7 @@ getTargetOverlayModuleInfos(targetModuleName: string, callback: AsyncCallback<Ar
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Overlay
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -332,6 +353,7 @@ getTargetOverlayModuleInfos(targetModuleName: string, callback: AsyncCallback<Ar
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[包管理子系统通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bundle)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -366,15 +388,17 @@ try {
 
 
 
-#### OverlayModuleInfo
+## OverlayModuleInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OverlayModuleInfo = _OverlayModuleInfo.OverlayModuleInfo
 
 OverlayModuleInfo信息，包含overlay特征模块的名称、状态、目标模块等配置信息，用于描述和管理应用的资源覆盖配置。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Overlay
+
 
 | 类型 | 说明 |
 | --- | --- |

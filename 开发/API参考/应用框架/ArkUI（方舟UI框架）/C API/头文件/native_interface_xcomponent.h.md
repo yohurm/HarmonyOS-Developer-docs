@@ -1,15 +1,16 @@
 # native_interface_xcomponent.h
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-interface-xcomponent-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-声明用于访问Native XComponent的API。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+声明用于访问Native XComponent的API。Native XComponent提供Surface生命周期管理、触摸事件、鼠标事件、按键事件、帧率控制、图像AI分析及无障碍接入等能力，适用于需要在ArkUI中嵌入自渲染内容（如游戏渲染、媒体播放等）的场景。
  
 **引用文件：** <ace/xcomponent/native_interface_xcomponent.h>
  
@@ -25,16 +26,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_NativeXComponent_HistoricalPoint | OH_NativeXComponent_HistoricalPoint | 历史接触点。 |
@@ -49,23 +53,25 @@
 | OH_NativeXComponent_ExtraMouseEventInfo | OH_NativeXComponent_ExtraMouseEventInfo | 提供封装的扩展的鼠标事件信息实例。 |
 | OH_ArkUI_SurfaceHolder | OH_ArkUI_SurfaceHolder | 提供封装的OH_ArkUI_SurfaceHolder实例。 |
 | OH_ArkUI_SurfaceCallback | OH_ArkUI_SurfaceCallback | 定义Surface生命周期回调函数。 |
-| NativeWindow | OHNativeWindow | 提供封装的NativeWindow实例。 |
+| OHNativeWindow | OHNativeWindow | 提供封装的NativeWindow实例。 |
 | ArkUI_XComponentSurfaceConfig | ArkUI_XComponentSurfaceConfig | 定义XComponent组件持有的Surface选项，用于设置XComponent组件持有的Surface在渲染时是否被视为不透明。 |
  
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | anonymous | - | 枚举API执行结果状态。 |
 | ArkUI_XComponent_ImageAnalyzerState | ArkUI_XComponent_ImageAnalyzerState | XComponent图像AI分析状态码。 |
 | OH_NativeXComponent_TouchEventType | OH_NativeXComponent_TouchEventType | 触摸事件类型。 |
 | OH_NativeXComponent_TouchPointToolType | OH_NativeXComponent_TouchPointToolType | 触摸点工具类型。 |
-| OH_NativeXComponent_EventSourceType | OH_NativeXComponent_EventSourceType | 触摸事件源类型。 |
+| OH_NativeXComponent_EventSourceType | OH_NativeXComponent_EventSourceType | 事件源类型。 |
 | OH_NativeXComponent_MouseEventAction | OH_NativeXComponent_MouseEventAction | 鼠标事件动作。 |
 | OH_NativeXComponent_MouseEventButton | OH_NativeXComponent_MouseEventButton | 鼠标事件按键。 |
 | OH_NativeXComponent_TouchEvent_SourceTool | OH_NativeXComponent_TouchEvent_SourceTool | 表示触摸事件的源工具类型。 |
@@ -73,10 +79,12 @@
  
   
 
-#### 宏定义
+### 宏定义
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_NATIVE_XCOMPONENT_OBJ (“__NATIVE_XCOMPONENT_OBJ__”) | 代表Native XComponent实例。 |
@@ -85,10 +93,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | int32_t OH_NativeXComponent_GetXComponentId(OH_NativeXComponent* component, char* id, uint64_t* size) | 获取ArkUI XComponent的id。 |
@@ -121,7 +131,7 @@
 | int32_t OH_NativeXComponent_GetKeyEventNumLockState(OH_NativeXComponent_KeyEvent* keyEvent, bool* isNumLockOn) | 从按键事件中获取NumLock（小键盘锁定）键的状态信息。 |
 | int32_t OH_NativeXComponent_GetKeyEventCapsLockState(OH_NativeXComponent_KeyEvent* keyEvent, bool* isCapsLockOn) | 从按键事件中获取CapsLock（大写锁定）键的状态信息。 |
 | int32_t OH_NativeXComponent_GetKeyEventScrollLockState(OH_NativeXComponent_KeyEvent* keyEvent, bool* isScrollLockOn) | 从按键事件中获取ScrollLock（滚动锁定）键的状态信息。 |
-| int32_t OH_NativeXComponent_SetExpectedFrameRateRange(OH_NativeXComponent* component, OH_NativeXComponent_ExpectedRateRange* range) | 设置期望帧率范围。本接口适用于通过OH_NativeXComponent指针操作的场景。若使用NativeNode（ArkUI_NodeHandle）创建的XComponent，请使用OH_ArkUI_XComponent_SetExpectedFrameRateRange。 |
+| int32_t OH_NativeXComponent_SetExpectedFrameRateRange(OH_NativeXComponent* component, OH_NativeXComponent_ExpectedRateRange* range) | 设置期望帧率范围。本接口适用于通过OH_NativeXComponent指针操作的场景。若使用NativeNode（ArkUI_NodeHandle）创建的XComponent，请使用OH_ArkUI_XComponent_SetExpectedFrameRateRange接口。 |
 | int32_t OH_NativeXComponent_RegisterOnFrameCallback(OH_NativeXComponent* component, void (*callback)(OH_NativeXComponent* component, uint64_t timestamp, uint64_t targetTimestamp)) | 为此OH_NativeXComponent实例注册显示更新回调，并使能每帧回调此函数。 |
 | int32_t OH_NativeXComponent_UnregisterOnFrameCallback(OH_NativeXComponent* component) | 为此OH_NativeXComponent实例取消注册回调函数，并关闭每帧回调此函数。 |
 | int32_t OH_NativeXComponent_AttachNativeRootNode(OH_NativeXComponent* component, ArkUI_NodeHandle root) | 将通过ArkUI的Native接口创建出来的UI组件挂载到当前XComponent上。 配对调用： 挂载的组件在不再需要时，必须调用OH_NativeXComponent_DetachNativeRootNode卸载。 |
@@ -133,7 +143,7 @@
 | int32_t OH_NativeXComponent_RegisterSurfaceHideCallback(OH_NativeXComponent* component, void (*callback)(OH_NativeXComponent* component, void* window)) | 为此OH_NativeXComponent实例注册Surface隐藏回调，该回调在应用窗口已经从前台进入后台时触发。 |
 | int32_t OH_NativeXComponent_GetTouchEventSourceType(OH_NativeXComponent* component, int32_t pointId, OH_NativeXComponent_EventSourceType* sourceType) | 获取ArkUI XComponent触摸事件的输入设备类型。 |
 | OH_NativeXComponent* OH_NativeXComponent_GetNativeXComponent(ArkUI_NodeHandle node) | 基于Native接口创建的组件实例获取OH_NativeXComponent类型的指针。 |
-| int32_t OH_NativeXComponent_GetNativeAccessibilityProvider(OH_NativeXComponent* component, ArkUI_AccessibilityProvider** handle) | 获取ArkUI XComponent无障碍接入句柄，handle为地址（双重指针），用于接收返回的实例指针。 |
+| int32_t OH_NativeXComponent_GetNativeAccessibilityProvider(OH_NativeXComponent* component, ArkUI_AccessibilityProvider** handle) | 获取ArkUI XComponent无障碍接入Provider，handle为地址（双重指针），用于接收返回的实例指针。 |
 | int32_t OH_NativeXComponent_RegisterKeyEventCallbackWithResult(OH_NativeXComponent* component, bool (*callback)(OH_NativeXComponent* component, void* window)) | 为此OH_NativeXComponent实例注册带有返回值的按键事件回调。与OH_NativeXComponent_RegisterKeyEventCallback不同，通过此接口注册的按键事件回调都必须返回一个结果，即true或false。当返回值为true时，该事件将不会继续分发；当返回值为false时，该事件将按照事件处理流程继续分发。如需控制按键事件是否继续分发，使用此接口；如仅需监听按键事件，可使用OH_NativeXComponent_RegisterKeyEventCallback。 |
 | int32_t OH_ArkUI_XComponent_StartImageAnalyzer(ArkUI_NodeHandle node, void* userData, void (*callback)(ArkUI_NodeHandle node, ArkUI_XComponent_ImageAnalyzerState statusCode, void* userData)) | 为此XComponent组件实例开始图像AI分析，适用于需要在应用中提供图像智能识别相关功能的场景，使用前需先使能图像AI分析能力。 |
 | int32_t OH_ArkUI_XComponent_StopImageAnalyzer(ArkUI_NodeHandle node) | 为此XComponent组件实例停止图像AI分析。使用前需先使能图像AI分析能力。 方法关系（配对调用）： 此方法为OH_ArkUI_XComponent_StartImageAnalyzer的配对方法，需在调用StartImageAnalyzer开始分析后，于分析完成或不再需要分析时调用此方法停止分析并释放相关资源。 |
@@ -169,10 +179,12 @@
  
   
 
-#### 变量
+### 变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | const uint32_t OH_XCOMPONENT_ID_LEN_MAX = 128 | ArkUI XComponent的id最大长度。 起始版本： 8 |
@@ -182,15 +194,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### anonymous
+### anonymous
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum anonymous
@@ -202,18 +216,20 @@ enum anonymous
  
 **起始版本：** 8
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_NATIVEXCOMPONENT_RESULT_SUCCESS = 0 | 成功结果。 |
-| OH_NATIVEXCOMPONENT_RESULT_FAILED = -1 | 失败结果。 |
-| OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER = -2 | 无效参数。 |
+| OH_NATIVEXCOMPONENT_RESULT_FAILED = -1 | 失败结果。表示接口执行失败，可能由以下原因导致：1. XComponent组件尚未完成初始化；2. Surface已被销毁或释放；3. 系统内部错误。请检查XComponent初始化状态和Surface生命周期后重试。 |
+| OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER = -2 | 无效参数。表示传入的参数为空指针或不符合接口要求，请检查传入参数是否合法。 |
  
  
   
 
-#### ArkUI_XComponent_ImageAnalyzerState
+### ArkUI_XComponent_ImageAnalyzerState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_XComponent_ImageAnalyzerState
@@ -225,6 +241,7 @@ XComponent图像AI分析状态码。
  
 **起始版本：** 18
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ARKUI_XCOMPONENT_AI_ANALYSIS_FINISHED = 0 | 图像AI分析完成。 |
@@ -236,9 +253,10 @@ XComponent图像AI分析状态码。
  
   
 
-#### OH_NativeXComponent_TouchEventType
+### OH_NativeXComponent_TouchEventType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_NativeXComponent_TouchEventType
@@ -250,6 +268,7 @@ enum OH_NativeXComponent_TouchEventType
  
 **起始版本：** 8
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_NATIVEXCOMPONENT_DOWN = 0 | 手指按下时触发触摸事件。 |
@@ -261,9 +280,10 @@ enum OH_NativeXComponent_TouchEventType
  
   
 
-#### OH_NativeXComponent_TouchPointToolType
+### OH_NativeXComponent_TouchPointToolType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_NativeXComponent_TouchPointToolType
@@ -275,6 +295,7 @@ enum OH_NativeXComponent_TouchPointToolType
  
 **起始版本：** 9
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_NATIVEXCOMPONENT_TOOL_TYPE_UNKNOWN = 0 | 未识别工具类型。 |
@@ -290,9 +311,10 @@ enum OH_NativeXComponent_TouchPointToolType
  
   
 
-#### OH_NativeXComponent_EventSourceType
+### OH_NativeXComponent_EventSourceType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_NativeXComponent_EventSourceType
@@ -304,21 +326,23 @@ enum OH_NativeXComponent_EventSourceType
  
 **起始版本：** 9
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_NATIVEXCOMPONENT_SOURCE_TYPE_UNKNOWN = 0 | 未知的输入源类型。 |
-| OH_NATIVEXCOMPONENT_SOURCE_TYPE_MOUSE = 1 | 表示输入源生成鼠标多点触摸事件。 |
+| OH_NATIVEXCOMPONENT_SOURCE_TYPE_MOUSE = 1 | 表示输入源生成鼠标事件。 |
 | OH_NATIVEXCOMPONENT_SOURCE_TYPE_TOUCHSCREEN = 2 | 表示输入源生成一个触摸屏多点触摸事件。 |
 | OH_NATIVEXCOMPONENT_SOURCE_TYPE_TOUCHPAD = 3 | 表示输入源生成一个触摸板多点触摸事件。 |
-| OH_NATIVEXCOMPONENT_SOURCE_TYPE_JOYSTICK = 4 | 表示输入源生成一个操纵杆多点触摸事件。 |
+| OH_NATIVEXCOMPONENT_SOURCE_TYPE_JOYSTICK = 4 | 表示输入源生成一个操纵杆事件。 |
 | OH_NATIVEXCOMPONENT_SOURCE_TYPE_KEYBOARD = 5 | 表示输入源生成一个键盘事件。 起始版本： 10 |
  
  
   
 
-#### OH_NativeXComponent_MouseEventAction
+### OH_NativeXComponent_MouseEventAction
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_NativeXComponent_MouseEventAction
@@ -330,6 +354,7 @@ enum OH_NativeXComponent_MouseEventAction
  
 **起始版本：** 9
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_NATIVEXCOMPONENT_MOUSE_NONE = 0 | 无效鼠标事件。 |
@@ -341,9 +366,10 @@ enum OH_NativeXComponent_MouseEventAction
  
   
 
-#### OH_NativeXComponent_MouseEventButton
+### OH_NativeXComponent_MouseEventButton
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_NativeXComponent_MouseEventButton
@@ -355,6 +381,7 @@ enum OH_NativeXComponent_MouseEventButton
  
 **起始版本：** 9
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_NATIVEXCOMPONENT_NONE_BUTTON = 0 | 鼠标无按键操作时触发鼠标事件。 |
@@ -367,9 +394,10 @@ enum OH_NativeXComponent_MouseEventButton
  
   
 
-#### OH_NativeXComponent_TouchEvent_SourceTool
+### OH_NativeXComponent_TouchEvent_SourceTool
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_NativeXComponent_TouchEvent_SourceTool
@@ -381,6 +409,7 @@ enum OH_NativeXComponent_TouchEvent_SourceTool
  
 **起始版本：** 10
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_NATIVEXCOMPONENT_SOURCETOOL_UNKNOWN = 0 | 未知的触摸事件的源工具。 |
@@ -397,15 +426,17 @@ enum OH_NativeXComponent_TouchEvent_SourceTool
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_NativeXComponent_GetXComponentId()
+### OH_NativeXComponent_GetXComponentId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_GetXComponentId(OH_NativeXComponent* component, char* id, uint64_t* size)
@@ -419,6 +450,7 @@ int32_t OH_NativeXComponent_GetXComponentId(OH_NativeXComponent* component, char
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent* component | 返回指向OH_NativeXComponent实例的指针，用于访问和管理XComponent的Native能力。 |
@@ -428,6 +460,7 @@ int32_t OH_NativeXComponent_GetXComponentId(OH_NativeXComponent* component, char
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 OH_NATIVEXCOMPONENT_RESULT_SUCCESS - 执行成功。 OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER - 传入参数异常。 |
@@ -435,9 +468,10 @@ int32_t OH_NativeXComponent_GetXComponentId(OH_NativeXComponent* component, char
  
   
 
-#### OH_NativeXComponent_GetXComponentSize()
+### OH_NativeXComponent_GetXComponentSize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_GetXComponentSize(OH_NativeXComponent* component, const void* window, uint64_t* width, uint64_t* height)
@@ -451,16 +485,18 @@ int32_t OH_NativeXComponent_GetXComponentSize(OH_NativeXComponent* component, co
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent* component | 表示指向OH_NativeXComponent实例的指针。 |
 | const void* window | 表示NativeWindow句柄。 |
-| uint64_t* width | 表示指向当前Surface宽度的指针。单位：vp。 |
-| uint64_t* height | 表示指向当前Surface高度的指针。单位：vp。 |
+| uint64_t* width | 表示指向当前Surface宽度的指针。单位：px。 |
+| uint64_t* height | 表示指向当前Surface高度的指针。单位：px。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 OH_NATIVEXCOMPONENT_RESULT_SUCCESS - 执行成功。 OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER - 传入参数异常。 |
@@ -468,9 +504,10 @@ int32_t OH_NativeXComponent_GetXComponentSize(OH_NativeXComponent* component, co
  
   
 
-#### OH_NativeXComponent_GetXComponentOffset()
+### OH_NativeXComponent_GetXComponentOffset()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_GetXComponentOffset(OH_NativeXComponent* component, const void* window, double* x, double* y)
@@ -484,6 +521,7 @@ int32_t OH_NativeXComponent_GetXComponentOffset(OH_NativeXComponent* component, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent* component | 表示指向OH_NativeXComponent实例的指针。 |
@@ -494,6 +532,7 @@ int32_t OH_NativeXComponent_GetXComponentOffset(OH_NativeXComponent* component, 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 OH_NATIVEXCOMPONENT_RESULT_SUCCESS - 执行成功。 OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER - 传入参数异常。 |
@@ -501,9 +540,10 @@ int32_t OH_NativeXComponent_GetXComponentOffset(OH_NativeXComponent* component, 
  
   
 
-#### OH_NativeXComponent_GetTouchEvent()
+### OH_NativeXComponent_GetTouchEvent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_GetTouchEvent(OH_NativeXComponent* component, const void* window, OH_NativeXComponent_TouchEvent* touchEvent)
@@ -517,6 +557,7 @@ int32_t OH_NativeXComponent_GetTouchEvent(OH_NativeXComponent* component, const 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent* component | 表示指向OH_NativeXComponent实例的指针。 |
@@ -526,6 +567,7 @@ int32_t OH_NativeXComponent_GetTouchEvent(OH_NativeXComponent* component, const 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 OH_NATIVEXCOMPONENT_RESULT_SUCCESS - 执行成功。 OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER - 传入参数异常。 |
@@ -533,9 +575,10 @@ int32_t OH_NativeXComponent_GetTouchEvent(OH_NativeXComponent* component, const 
  
   
 
-#### OH_NativeXComponent_GetTouchPointToolType()
+### OH_NativeXComponent_GetTouchPointToolType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_GetTouchPointToolType(OH_NativeXComponent* component, uint32_t pointIndex,OH_NativeXComponent_TouchPointToolType* toolType)
@@ -549,6 +592,7 @@ int32_t OH_NativeXComponent_GetTouchPointToolType(OH_NativeXComponent* component
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent* component | 表示指向OH_NativeXComponent实例的指针。 |
@@ -558,6 +602,7 @@ int32_t OH_NativeXComponent_GetTouchPointToolType(OH_NativeXComponent* component
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 OH_NATIVEXCOMPONENT_RESULT_SUCCESS - 执行成功。 OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER - 传入参数异常。 |
@@ -565,9 +610,10 @@ int32_t OH_NativeXComponent_GetTouchPointToolType(OH_NativeXComponent* component
  
   
 
-#### OH_NativeXComponent_GetTouchPointTiltX()
+### OH_NativeXComponent_GetTouchPointTiltX()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_GetTouchPointTiltX(OH_NativeXComponent* component, uint32_t pointIndex, float* tiltX)
@@ -581,6 +627,7 @@ int32_t OH_NativeXComponent_GetTouchPointTiltX(OH_NativeXComponent* component, u
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent* component | 表示指向OH_NativeXComponent实例的指针。 |
@@ -590,6 +637,7 @@ int32_t OH_NativeXComponent_GetTouchPointTiltX(OH_NativeXComponent* component, u
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 OH_NATIVEXCOMPONENT_RESULT_SUCCESS - 执行成功。 OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER - 传入参数异常。 |
@@ -597,9 +645,10 @@ int32_t OH_NativeXComponent_GetTouchPointTiltX(OH_NativeXComponent* component, u
  
   
 
-#### OH_NativeXComponent_GetTouchPointTiltY()
+### OH_NativeXComponent_GetTouchPointTiltY()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_GetTouchPointTiltY(OH_NativeXComponent* component, uint32_t pointIndex, float* tiltY)
@@ -613,15 +662,17 @@ int32_t OH_NativeXComponent_GetTouchPointTiltY(OH_NativeXComponent* component, u
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent* component | 表示指向OH_NativeXComponent实例的指针。 |
-| uint32_t pointIndex | 表示触摸点的指针索引。取值范围为[0, OH_NATIVE_XCOMPONENT_MAX_TOUCH_POINTS_NUMBER)，仅当传入的索引为当前触摸事件中的有效触点索引时可正确获取信息。 |
+| uint32_t pointIndex | 表示触摸点的索引。取值范围为[0, OH_NATIVE_XCOMPONENT_MAX_TOUCH_POINTS_NUMBER)，仅当传入的索引为当前触摸事件中的有效触点索引时可正确获取信息。 |
 | float* tiltY | 表示指向触摸点沿Y轴倾斜角度的指针。取值范围为[-90, 90]，单位：度。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 OH_NATIVEXCOMPONENT_RESULT_SUCCESS - 执行成功。 OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER - 传入参数异常。 |
@@ -629,9 +680,10 @@ int32_t OH_NativeXComponent_GetTouchPointTiltY(OH_NativeXComponent* component, u
  
   
 
-#### OH_NativeXComponent_GetTouchPointWindowX()
+### OH_NativeXComponent_GetTouchPointWindowX()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_GetTouchPointWindowX(OH_NativeXComponent* component, uint32_t pointIndex, float* windowX)
@@ -645,15 +697,17 @@ int32_t OH_NativeXComponent_GetTouchPointWindowX(OH_NativeXComponent* component,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent* component | 表示指向OH_NativeXComponent实例的指针。 |
-| uint32_t pointIndex | 表示触摸点的指针索引。 |
-| float* windowX | 表示指向触摸点相对于应用窗口左上角的X坐标的指针。 |
+| uint32_t pointIndex | 表示触摸点的索引。取值范围[0, 当前触摸事件中的触摸点数量-1]，且不超过OH_NATIVE_XCOMPONENT_MAX_TOUCH_POINTS_NUMBER-1。传入越界索引时返回OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER。 |
+| float* windowX | 表示指向触摸点相对于应用窗口左上角的X坐标的指针。单位：px。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 OH_NATIVEXCOMPONENT_RESULT_SUCCESS 获取windowX成功。 OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER component是空指针、windowX是空指针或者Native XComponent是空指针。 |
@@ -661,9 +715,10 @@ int32_t OH_NativeXComponent_GetTouchPointWindowX(OH_NativeXComponent* component,
  
   
 
-#### OH_NativeXComponent_GetTouchPointWindowY()
+### OH_NativeXComponent_GetTouchPointWindowY()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_GetTouchPointWindowY(OH_NativeXComponent* component, uint32_t pointIndex, float* windowY)
@@ -677,15 +732,17 @@ int32_t OH_NativeXComponent_GetTouchPointWindowY(OH_NativeXComponent* component,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent* component | 表示指向OH_NativeXComponent实例的指针。 |
-| uint32_t pointIndex | 表示触摸点的指针索引。 |
-| float* windowY | 表示指向触摸点相对于应用窗口左上角的Y坐标的指针。 |
+| uint32_t pointIndex | 表示触摸点的指针索引。取值范围为[0, OH_NATIVE_XCOMPONENT_MAX_TOUCH_POINTS_NUMBER - 1]。 |
+| float* windowY | 表示指向触摸点相对于应用窗口左上角的Y坐标的指针。单位：px。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 OH_NATIVEXCOMPONENT_RESULT_SUCCESS 获取windowY成功。 OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER component是空指针、windowY是空指针或者Native XComponent是空指针。 |
@@ -693,9 +750,10 @@ int32_t OH_NativeXComponent_GetTouchPointWindowY(OH_NativeXComponent* component,
  
   
 
-#### OH_NativeXComponent_GetTouchPointDisplayX()
+### OH_NativeXComponent_GetTouchPointDisplayX()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_GetTouchPointDisplayX(OH_NativeXComponent* component, uint32_t pointIndex, float* displayX)
@@ -709,15 +767,17 @@ int32_t OH_NativeXComponent_GetTouchPointDisplayX(OH_NativeXComponent* component
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent* component | 表示指向OH_NativeXComponent实例的指针。 |
 | uint32_t pointIndex | 表示触摸点的指针索引。 |
-| float* displayX | 表示指向触摸点相对于应用所在屏幕左上角的X坐标的指针。 |
+| float* displayX | 表示指向触摸点相对于应用所在屏幕左上角的X坐标的指针。单位：px。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 OH_NATIVEXCOMPONENT_RESULT_SUCCESS 获取displayX成功。 OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER component是空指针、displayX是空指针或者Native XComponent是空指针。 |
@@ -725,9 +785,10 @@ int32_t OH_NativeXComponent_GetTouchPointDisplayX(OH_NativeXComponent* component
  
   
 
-#### OH_NativeXComponent_GetTouchPointDisplayY()
+### OH_NativeXComponent_GetTouchPointDisplayY()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_GetTouchPointDisplayY(OH_NativeXComponent* component, uint32_t pointIndex, float* displayY)
@@ -741,15 +802,17 @@ int32_t OH_NativeXComponent_GetTouchPointDisplayY(OH_NativeXComponent* component
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent* component | 表示指向OH_NativeXComponent实例的指针。 |
 | uint32_t pointIndex | 表示触摸点的指针索引。 |
-| float* displayY | 表示指向触摸点相对于应用所在屏幕左上角的Y坐标的指针。 |
+| float* displayY | 表示指向触摸点相对于应用所在屏幕左上角的Y坐标的指针。单位：px。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 OH_NATIVEXCOMPONENT_RESULT_SUCCESS 获取displayY成功。 OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER component是空指针、displayY是空指针或者Native XComponent是空指针。 |
@@ -757,9 +820,10 @@ int32_t OH_NativeXComponent_GetTouchPointDisplayY(OH_NativeXComponent* component
  
   
 
-#### OH_NativeXComponent_GetHistoricalPoints()
+### OH_NativeXComponent_GetHistoricalPoints()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_GetHistoricalPoints(OH_NativeXComponent* component, const void* window,int32_t* size, OH_NativeXComponent_HistoricalPoint** historicalPoints)
@@ -773,6 +837,7 @@ int32_t OH_NativeXComponent_GetHistoricalPoints(OH_NativeXComponent* component, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent* component | 表示指向OH_NativeXComponent实例的指针。 |
@@ -783,6 +848,7 @@ int32_t OH_NativeXComponent_GetHistoricalPoints(OH_NativeXComponent* component, 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 OH_NATIVEXCOMPONENT_RESULT_SUCCESS - 执行成功。 OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER - 传入参数异常。 |
@@ -790,9 +856,10 @@ int32_t OH_NativeXComponent_GetHistoricalPoints(OH_NativeXComponent* component, 
  
   
 
-#### OH_NativeXComponent_GetMouseEvent()
+### OH_NativeXComponent_GetMouseEvent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_GetMouseEvent(OH_NativeXComponent* component, const void* window, OH_NativeXComponent_MouseEvent* mouseEvent)
@@ -806,6 +873,7 @@ int32_t OH_NativeXComponent_GetMouseEvent(OH_NativeXComponent* component, const 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent* component | 表示指向OH_NativeXComponent实例的指针。 |
@@ -815,6 +883,7 @@ int32_t OH_NativeXComponent_GetMouseEvent(OH_NativeXComponent* component, const 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 OH_NATIVEXCOMPONENT_RESULT_SUCCESS - 执行成功。 OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER - 传入参数异常。 |
@@ -822,9 +891,10 @@ int32_t OH_NativeXComponent_GetMouseEvent(OH_NativeXComponent* component, const 
  
   
 
-#### OH_NativeXComponent_RegisterCallback()
+### OH_NativeXComponent_RegisterCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_RegisterCallback(OH_NativeXComponent* component, OH_NativeXComponent_Callback* callback)
@@ -838,6 +908,7 @@ int32_t OH_NativeXComponent_RegisterCallback(OH_NativeXComponent* component, OH_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent* component | 表示指向OH_NativeXComponent实例的指针。 |
@@ -846,6 +917,7 @@ int32_t OH_NativeXComponent_RegisterCallback(OH_NativeXComponent* component, OH_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 OH_NATIVEXCOMPONENT_RESULT_SUCCESS - 执行成功。 OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER - 传入参数异常。 |
@@ -853,9 +925,10 @@ int32_t OH_NativeXComponent_RegisterCallback(OH_NativeXComponent* component, OH_
  
   
 
-#### OH_NativeXComponent_RegisterMouseEventCallback()
+### OH_NativeXComponent_RegisterMouseEventCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_RegisterMouseEventCallback(OH_NativeXComponent* component, OH_NativeXComponent_MouseEvent_Callback* callback)
@@ -869,6 +942,7 @@ int32_t OH_NativeXComponent_RegisterMouseEventCallback(OH_NativeXComponent* comp
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent* component | 表示指向OH_NativeXComponent实例的指针。 |
@@ -877,6 +951,7 @@ int32_t OH_NativeXComponent_RegisterMouseEventCallback(OH_NativeXComponent* comp
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 OH_NATIVEXCOMPONENT_RESULT_SUCCESS - 执行成功。 OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER - 传入参数异常。 |
@@ -884,9 +959,10 @@ int32_t OH_NativeXComponent_RegisterMouseEventCallback(OH_NativeXComponent* comp
  
   
 
-#### OH_NativeXComponent_GetExtraMouseEventInfo()
+### OH_NativeXComponent_GetExtraMouseEventInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_GetExtraMouseEventInfo(OH_NativeXComponent* component, OH_NativeXComponent_ExtraMouseEventInfo** extraMouseEventInfo)
@@ -900,6 +976,7 @@ int32_t OH_NativeXComponent_GetExtraMouseEventInfo(OH_NativeXComponent* componen
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent* component | 表示指向OH_NativeXComponent实例的指针。 |
@@ -908,6 +985,7 @@ int32_t OH_NativeXComponent_GetExtraMouseEventInfo(OH_NativeXComponent* componen
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 返回 ARKUI_ERROR_CODE_NO_ERROR - 执行成功。 返回 ARKUI_ERROR_CODE_PARAM_INVALID - 传入参数异常。 |
@@ -915,9 +993,10 @@ int32_t OH_NativeXComponent_GetExtraMouseEventInfo(OH_NativeXComponent* componen
  
   
 
-#### OH_NativeXComponent_GetMouseEventModifierKeyStates()
+### OH_NativeXComponent_GetMouseEventModifierKeyStates()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_GetMouseEventModifierKeyStates(OH_NativeXComponent_ExtraMouseEventInfo* extraMouseEventInfo, uint64_t* keys)
@@ -931,6 +1010,7 @@ int32_t OH_NativeXComponent_GetMouseEventModifierKeyStates(OH_NativeXComponent_E
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent_ExtraMouseEventInfo* extraMouseEventInfo | 表示指向扩展的鼠标事件信息实例的指针。 |
@@ -939,6 +1019,7 @@ int32_t OH_NativeXComponent_GetMouseEventModifierKeyStates(OH_NativeXComponent_E
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 返回 ARKUI_ERROR_CODE_NO_ERROR - 执行成功。 返回 ARKUI_ERROR_CODE_PARAM_INVALID - 传入参数异常。 |
@@ -946,9 +1027,10 @@ int32_t OH_NativeXComponent_GetMouseEventModifierKeyStates(OH_NativeXComponent_E
  
   
 
-#### OH_NativeXComponent_RegisterFocusEventCallback()
+### OH_NativeXComponent_RegisterFocusEventCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_RegisterFocusEventCallback(OH_NativeXComponent* component, void (*callback)(OH_NativeXComponent* component, void* window))
@@ -962,6 +1044,7 @@ int32_t OH_NativeXComponent_RegisterFocusEventCallback(OH_NativeXComponent* comp
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent* component | 表示指向OH_NativeXComponent实例的指针。 |
@@ -970,6 +1053,7 @@ int32_t OH_NativeXComponent_RegisterFocusEventCallback(OH_NativeXComponent* comp
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 OH_NATIVEXCOMPONENT_RESULT_SUCCESS - 执行成功。 OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER - 传入参数异常。 |
@@ -977,9 +1061,10 @@ int32_t OH_NativeXComponent_RegisterFocusEventCallback(OH_NativeXComponent* comp
  
   
 
-#### OH_NativeXComponent_RegisterKeyEventCallback()
+### OH_NativeXComponent_RegisterKeyEventCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_RegisterKeyEventCallback(OH_NativeXComponent* component, void (*callback)(OH_NativeXComponent* component, void* window))
@@ -993,6 +1078,7 @@ int32_t OH_NativeXComponent_RegisterKeyEventCallback(OH_NativeXComponent* compon
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent* component | 表示指向OH_NativeXComponent实例的指针。 |
@@ -1001,6 +1087,7 @@ int32_t OH_NativeXComponent_RegisterKeyEventCallback(OH_NativeXComponent* compon
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 OH_NATIVEXCOMPONENT_RESULT_SUCCESS - 执行成功。 OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER - 传入参数异常。 |
@@ -1008,9 +1095,10 @@ int32_t OH_NativeXComponent_RegisterKeyEventCallback(OH_NativeXComponent* compon
  
   
 
-#### OH_NativeXComponent_RegisterBlurEventCallback()
+### OH_NativeXComponent_RegisterBlurEventCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_RegisterBlurEventCallback(OH_NativeXComponent* component, void (*callback)(OH_NativeXComponent* component, void* window))
@@ -1024,6 +1112,7 @@ int32_t OH_NativeXComponent_RegisterBlurEventCallback(OH_NativeXComponent* compo
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent* component | 表示指向OH_NativeXComponent实例的指针。 |
@@ -1032,6 +1121,7 @@ int32_t OH_NativeXComponent_RegisterBlurEventCallback(OH_NativeXComponent* compo
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 OH_NATIVEXCOMPONENT_RESULT_SUCCESS - 执行成功。 OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER - 传入参数异常。 |
@@ -1039,9 +1129,10 @@ int32_t OH_NativeXComponent_RegisterBlurEventCallback(OH_NativeXComponent* compo
  
   
 
-#### OH_NativeXComponent_GetKeyEvent()
+### OH_NativeXComponent_GetKeyEvent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_GetKeyEvent(OH_NativeXComponent* component, OH_NativeXComponent_KeyEvent** keyEvent)
@@ -1055,6 +1146,7 @@ int32_t OH_NativeXComponent_GetKeyEvent(OH_NativeXComponent* component, OH_Nativ
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent* component | 表示指向OH_NativeXComponent实例的指针。 |
@@ -1063,6 +1155,7 @@ int32_t OH_NativeXComponent_GetKeyEvent(OH_NativeXComponent* component, OH_Nativ
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 OH_NATIVEXCOMPONENT_RESULT_SUCCESS - 执行成功。 OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER - 传入参数异常。 |
@@ -1070,9 +1163,10 @@ int32_t OH_NativeXComponent_GetKeyEvent(OH_NativeXComponent* component, OH_Nativ
  
   
 
-#### OH_NativeXComponent_GetKeyEventAction()
+### OH_NativeXComponent_GetKeyEventAction()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_GetKeyEventAction(OH_NativeXComponent_KeyEvent* keyEvent, OH_NativeXComponent_KeyAction* action)
@@ -1086,6 +1180,7 @@ int32_t OH_NativeXComponent_GetKeyEventAction(OH_NativeXComponent_KeyEvent* keyE
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent_KeyEvent* keyEvent | 表示指向OH_NativeXComponent_KeyEvent实例的指针。 |
@@ -1094,6 +1189,7 @@ int32_t OH_NativeXComponent_GetKeyEventAction(OH_NativeXComponent_KeyEvent* keyE
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 OH_NATIVEXCOMPONENT_RESULT_SUCCESS - 执行成功。 OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER - 传入参数异常。 |
@@ -1101,9 +1197,10 @@ int32_t OH_NativeXComponent_GetKeyEventAction(OH_NativeXComponent_KeyEvent* keyE
  
   
 
-#### OH_NativeXComponent_GetKeyEventCode()
+### OH_NativeXComponent_GetKeyEventCode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_GetKeyEventCode(OH_NativeXComponent_KeyEvent* keyEvent, OH_NativeXComponent_KeyCode* code)
@@ -1117,6 +1214,7 @@ int32_t OH_NativeXComponent_GetKeyEventCode(OH_NativeXComponent_KeyEvent* keyEve
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent_KeyEvent* keyEvent | 表示指向OH_NativeXComponent_KeyEvent实例的指针。 |
@@ -1125,6 +1223,7 @@ int32_t OH_NativeXComponent_GetKeyEventCode(OH_NativeXComponent_KeyEvent* keyEve
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 OH_NATIVEXCOMPONENT_RESULT_SUCCESS - 执行成功。 OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER - 传入参数异常。 |
@@ -1132,9 +1231,10 @@ int32_t OH_NativeXComponent_GetKeyEventCode(OH_NativeXComponent_KeyEvent* keyEve
  
   
 
-#### OH_NativeXComponent_GetKeyEventSourceType()
+### OH_NativeXComponent_GetKeyEventSourceType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_GetKeyEventSourceType(OH_NativeXComponent_KeyEvent* keyEvent, OH_NativeXComponent_EventSourceType* sourceType)
@@ -1148,6 +1248,7 @@ int32_t OH_NativeXComponent_GetKeyEventSourceType(OH_NativeXComponent_KeyEvent* 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent_KeyEvent* keyEvent | 表示指向OH_NativeXComponent_KeyEvent实例的指针。 |
@@ -1156,6 +1257,7 @@ int32_t OH_NativeXComponent_GetKeyEventSourceType(OH_NativeXComponent_KeyEvent* 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 OH_NATIVEXCOMPONENT_RESULT_SUCCESS - 执行成功。 OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER - 传入参数异常。 |
@@ -1163,9 +1265,10 @@ int32_t OH_NativeXComponent_GetKeyEventSourceType(OH_NativeXComponent_KeyEvent* 
  
   
 
-#### OH_NativeXComponent_GetKeyEventDeviceId()
+### OH_NativeXComponent_GetKeyEventDeviceId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_GetKeyEventDeviceId(OH_NativeXComponent_KeyEvent* keyEvent, int64_t* deviceId)
@@ -1179,6 +1282,7 @@ int32_t OH_NativeXComponent_GetKeyEventDeviceId(OH_NativeXComponent_KeyEvent* ke
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent_KeyEvent* keyEvent | 表示指向OH_NativeXComponent_KeyEvent实例的指针。 |
@@ -1187,6 +1291,7 @@ int32_t OH_NativeXComponent_GetKeyEventDeviceId(OH_NativeXComponent_KeyEvent* ke
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 OH_NATIVEXCOMPONENT_RESULT_SUCCESS - 执行成功。 OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER - 传入参数异常。 |
@@ -1194,9 +1299,10 @@ int32_t OH_NativeXComponent_GetKeyEventDeviceId(OH_NativeXComponent_KeyEvent* ke
  
   
 
-#### OH_NativeXComponent_GetKeyEventTimestamp()
+### OH_NativeXComponent_GetKeyEventTimestamp()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_GetKeyEventTimestamp(OH_NativeXComponent_KeyEvent* keyEvent, int64_t* timestamp)
@@ -1210,6 +1316,7 @@ int32_t OH_NativeXComponent_GetKeyEventTimestamp(OH_NativeXComponent_KeyEvent* k
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent_KeyEvent* keyEvent | 表示指向OH_NativeXComponent_KeyEvent实例的指针。 |
@@ -1218,6 +1325,7 @@ int32_t OH_NativeXComponent_GetKeyEventTimestamp(OH_NativeXComponent_KeyEvent* k
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 OH_NATIVEXCOMPONENT_RESULT_SUCCESS - 执行成功。 OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER - 传入参数异常。 |
@@ -1225,9 +1333,10 @@ int32_t OH_NativeXComponent_GetKeyEventTimestamp(OH_NativeXComponent_KeyEvent* k
  
   
 
-#### OH_NativeXComponent_GetKeyEventModifierKeyStates()
+### OH_NativeXComponent_GetKeyEventModifierKeyStates()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_GetKeyEventModifierKeyStates(OH_NativeXComponent_KeyEvent* keyEvent, uint64_t* keys)
@@ -1241,6 +1350,7 @@ int32_t OH_NativeXComponent_GetKeyEventModifierKeyStates(OH_NativeXComponent_Key
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent_KeyEvent* keyEvent | 表示指向按键事件的指针。 |
@@ -1249,6 +1359,7 @@ int32_t OH_NativeXComponent_GetKeyEventModifierKeyStates(OH_NativeXComponent_Key
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 返回 ARKUI_ERROR_CODE_NO_ERROR - 执行成功。 返回 ARKUI_ERROR_CODE_PARAM_INVALID - 传入参数异常。 |
@@ -1256,9 +1367,10 @@ int32_t OH_NativeXComponent_GetKeyEventModifierKeyStates(OH_NativeXComponent_Key
  
   
 
-#### OH_NativeXComponent_GetKeyEventNumLockState()
+### OH_NativeXComponent_GetKeyEventNumLockState()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_GetKeyEventNumLockState(OH_NativeXComponent_KeyEvent* keyEvent, bool* isNumLockOn)
@@ -1272,6 +1384,7 @@ int32_t OH_NativeXComponent_GetKeyEventNumLockState(OH_NativeXComponent_KeyEvent
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent_KeyEvent* keyEvent | 表示指向按键事件的指针。 |
@@ -1280,6 +1393,7 @@ int32_t OH_NativeXComponent_GetKeyEventNumLockState(OH_NativeXComponent_KeyEvent
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 返回 ARKUI_ERROR_CODE_NO_ERROR - 执行成功。 返回 ARKUI_ERROR_CODE_PARAM_INVALID - 传入参数异常。 |
@@ -1287,9 +1401,10 @@ int32_t OH_NativeXComponent_GetKeyEventNumLockState(OH_NativeXComponent_KeyEvent
  
   
 
-#### OH_NativeXComponent_GetKeyEventCapsLockState()
+### OH_NativeXComponent_GetKeyEventCapsLockState()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_GetKeyEventCapsLockState(OH_NativeXComponent_KeyEvent* keyEvent, bool* isCapsLockOn)
@@ -1303,6 +1418,7 @@ int32_t OH_NativeXComponent_GetKeyEventCapsLockState(OH_NativeXComponent_KeyEven
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent_KeyEvent* keyEvent | 表示指向按键事件的指针。 |
@@ -1311,6 +1427,7 @@ int32_t OH_NativeXComponent_GetKeyEventCapsLockState(OH_NativeXComponent_KeyEven
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 返回 ARKUI_ERROR_CODE_NO_ERROR - 执行成功。 返回 ARKUI_ERROR_CODE_PARAM_INVALID - 传入参数异常。 |
@@ -1318,9 +1435,10 @@ int32_t OH_NativeXComponent_GetKeyEventCapsLockState(OH_NativeXComponent_KeyEven
  
   
 
-#### OH_NativeXComponent_GetKeyEventScrollLockState()
+### OH_NativeXComponent_GetKeyEventScrollLockState()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_GetKeyEventScrollLockState(OH_NativeXComponent_KeyEvent* keyEvent, bool* isScrollLockOn)
@@ -1334,6 +1452,7 @@ int32_t OH_NativeXComponent_GetKeyEventScrollLockState(OH_NativeXComponent_KeyEv
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent_KeyEvent* keyEvent | 表示指向按键事件的指针。 |
@@ -1342,6 +1461,7 @@ int32_t OH_NativeXComponent_GetKeyEventScrollLockState(OH_NativeXComponent_KeyEv
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 返回 ARKUI_ERROR_CODE_NO_ERROR - 执行成功。 返回 ARKUI_ERROR_CODE_PARAM_INVALID - 传入参数异常。 |
@@ -1349,9 +1469,10 @@ int32_t OH_NativeXComponent_GetKeyEventScrollLockState(OH_NativeXComponent_KeyEv
  
   
 
-#### OH_NativeXComponent_SetExpectedFrameRateRange()
+### OH_NativeXComponent_SetExpectedFrameRateRange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_SetExpectedFrameRateRange(OH_NativeXComponent* component, OH_NativeXComponent_ExpectedRateRange* range)
@@ -1365,6 +1486,7 @@ int32_t OH_NativeXComponent_SetExpectedFrameRateRange(OH_NativeXComponent* compo
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent* component | 表示指向OH_NativeXComponent实例的指针。 |
@@ -1373,6 +1495,7 @@ int32_t OH_NativeXComponent_SetExpectedFrameRateRange(OH_NativeXComponent* compo
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 OH_NATIVEXCOMPONENT_RESULT_SUCCESS - 执行成功。 OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER - 传入参数异常。 |
@@ -1380,9 +1503,10 @@ int32_t OH_NativeXComponent_SetExpectedFrameRateRange(OH_NativeXComponent* compo
  
   
 
-#### OH_NativeXComponent_RegisterOnFrameCallback()
+### OH_NativeXComponent_RegisterOnFrameCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_RegisterOnFrameCallback(OH_NativeXComponent* component,void (*callback)(OH_NativeXComponent* component, uint64_t timestamp, uint64_t targetTimestamp))
@@ -1396,6 +1520,7 @@ int32_t OH_NativeXComponent_RegisterOnFrameCallback(OH_NativeXComponent* compone
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent* component | 表示指向OH_NativeXComponent实例的指针。 |
@@ -1404,6 +1529,7 @@ int32_t OH_NativeXComponent_RegisterOnFrameCallback(OH_NativeXComponent* compone
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 OH_NATIVEXCOMPONENT_RESULT_SUCCESS - 执行成功。 OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER - 传入参数异常。 |
@@ -1411,9 +1537,10 @@ int32_t OH_NativeXComponent_RegisterOnFrameCallback(OH_NativeXComponent* compone
  
   
 
-#### OH_NativeXComponent_UnregisterOnFrameCallback()
+### OH_NativeXComponent_UnregisterOnFrameCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_UnregisterOnFrameCallback(OH_NativeXComponent* component)
@@ -1427,6 +1554,7 @@ int32_t OH_NativeXComponent_UnregisterOnFrameCallback(OH_NativeXComponent* compo
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent* component | 表示指向OH_NativeXComponent实例的指针。 |
@@ -1434,6 +1562,7 @@ int32_t OH_NativeXComponent_UnregisterOnFrameCallback(OH_NativeXComponent* compo
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 OH_NATIVEXCOMPONENT_RESULT_SUCCESS - 执行成功。 OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER - 传入参数异常。 |
@@ -1441,9 +1570,10 @@ int32_t OH_NativeXComponent_UnregisterOnFrameCallback(OH_NativeXComponent* compo
  
   
 
-#### OH_NativeXComponent_AttachNativeRootNode()
+### OH_NativeXComponent_AttachNativeRootNode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_AttachNativeRootNode(OH_NativeXComponent* component, ArkUI_NodeHandle root)
@@ -1453,6 +1583,10 @@ int32_t OH_NativeXComponent_AttachNativeRootNode(OH_NativeXComponent* component,
  
 将通过ArkUI的Native接口创建出来的UI组件挂载到当前XComponent上。
  
+> [!NOTE]
+> 挂载的组件在不再需要时，必须调用 OH_NativeXComponent_DetachNativeRootNode 进行卸载，避免内存泄漏。
+
+ 
 **起始版本：** 12
  
 **废弃版本：** 20
@@ -1461,6 +1595,7 @@ int32_t OH_NativeXComponent_AttachNativeRootNode(OH_NativeXComponent* component,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent* component | 表示指向OH_NativeXComponent实例的指针。 |
@@ -1469,6 +1604,7 @@ int32_t OH_NativeXComponent_AttachNativeRootNode(OH_NativeXComponent* component,
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 返回 OH_NATIVEXCOMPONENT_RESULT_SUCCESS - 执行成功。 返回 OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER - 传入参数异常。 |
@@ -1476,9 +1612,10 @@ int32_t OH_NativeXComponent_AttachNativeRootNode(OH_NativeXComponent* component,
  
   
 
-#### OH_NativeXComponent_DetachNativeRootNode()
+### OH_NativeXComponent_DetachNativeRootNode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_DetachNativeRootNode(OH_NativeXComponent* component, ArkUI_NodeHandle root)
@@ -1496,6 +1633,7 @@ int32_t OH_NativeXComponent_DetachNativeRootNode(OH_NativeXComponent* component,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent* component | 表示指向OH_NativeXComponent实例的指针。 |
@@ -1504,6 +1642,7 @@ int32_t OH_NativeXComponent_DetachNativeRootNode(OH_NativeXComponent* component,
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 返回 OH_NATIVEXCOMPONENT_RESULT_SUCCESS - 成功。 返回 OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER - 参数异常。 |
@@ -1511,9 +1650,10 @@ int32_t OH_NativeXComponent_DetachNativeRootNode(OH_NativeXComponent* component,
  
   
 
-#### OH_NativeXComponent_RegisterUIInputEventCallback()
+### OH_NativeXComponent_RegisterUIInputEventCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_RegisterUIInputEventCallback(OH_NativeXComponent *component,void (*callback)(OH_NativeXComponent *component, ArkUI_UIInputEvent *event,ArkUI_UIInputEvent_Type type),ArkUI_UIInputEvent_Type type)
@@ -1527,6 +1667,7 @@ int32_t OH_NativeXComponent_RegisterUIInputEventCallback(OH_NativeXComponent *co
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent *component | 表示指向OH_NativeXComponent实例的指针。 |
@@ -1536,6 +1677,7 @@ int32_t OH_NativeXComponent_RegisterUIInputEventCallback(OH_NativeXComponent *co
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 返回 ARKUI_ERROR_CODE_NO_ERROR - 成功。 返回 ARKUI_ERROR_CODE_PARAM_INVALID - 参数异常。 |
@@ -1543,9 +1685,10 @@ int32_t OH_NativeXComponent_RegisterUIInputEventCallback(OH_NativeXComponent *co
  
   
 
-#### OH_NativeXComponent_RegisterOnTouchInterceptCallback()
+### OH_NativeXComponent_RegisterOnTouchInterceptCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_RegisterOnTouchInterceptCallback(OH_NativeXComponent* component, HitTestMode (*callback)(OH_NativeXComponent* component, ArkUI_UIInputEvent* event))
@@ -1559,6 +1702,7 @@ int32_t OH_NativeXComponent_RegisterOnTouchInterceptCallback(OH_NativeXComponent
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent* component | 表示指向OH_NativeXComponent实例的指针。 |
@@ -1567,6 +1711,7 @@ int32_t OH_NativeXComponent_RegisterOnTouchInterceptCallback(OH_NativeXComponent
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 返回 ARKUI_ERROR_CODE_NO_ERROR - 成功。 返回 ARKUI_ERROR_CODE_PARAM_INVALID - 参数异常。 |
@@ -1574,9 +1719,10 @@ int32_t OH_NativeXComponent_RegisterOnTouchInterceptCallback(OH_NativeXComponent
  
   
 
-#### OH_NativeXComponent_SetNeedSoftKeyboard()
+### OH_NativeXComponent_SetNeedSoftKeyboard()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_SetNeedSoftKeyboard(OH_NativeXComponent* component, bool needSoftKeyboard)
@@ -1590,6 +1736,7 @@ int32_t OH_NativeXComponent_SetNeedSoftKeyboard(OH_NativeXComponent* component, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent* component | 表示指向OH_NativeXComponent实例的指针。 |
@@ -1598,6 +1745,7 @@ int32_t OH_NativeXComponent_SetNeedSoftKeyboard(OH_NativeXComponent* component, 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 OH_NATIVEXCOMPONENT_RESULT_SUCCESS - 执行成功。 OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER - 传入参数异常。 |
@@ -1605,9 +1753,10 @@ int32_t OH_NativeXComponent_SetNeedSoftKeyboard(OH_NativeXComponent* component, 
  
   
 
-#### OH_NativeXComponent_RegisterSurfaceShowCallback()
+### OH_NativeXComponent_RegisterSurfaceShowCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_RegisterSurfaceShowCallback(OH_NativeXComponent* component, void (*callback)(OH_NativeXComponent* component, void* window))
@@ -1621,6 +1770,7 @@ int32_t OH_NativeXComponent_RegisterSurfaceShowCallback(OH_NativeXComponent* com
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent* component | 表示指向OH_NativeXComponent实例的指针。 |
@@ -1629,6 +1779,7 @@ int32_t OH_NativeXComponent_RegisterSurfaceShowCallback(OH_NativeXComponent* com
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 OH_NATIVEXCOMPONENT_RESULT_SUCCESS - 执行成功。 OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER - 传入参数异常。 |
@@ -1636,9 +1787,10 @@ int32_t OH_NativeXComponent_RegisterSurfaceShowCallback(OH_NativeXComponent* com
  
   
 
-#### OH_NativeXComponent_RegisterSurfaceHideCallback()
+### OH_NativeXComponent_RegisterSurfaceHideCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_RegisterSurfaceHideCallback(OH_NativeXComponent* component, void (*callback)(OH_NativeXComponent* component, void* window))
@@ -1652,6 +1804,7 @@ int32_t OH_NativeXComponent_RegisterSurfaceHideCallback(OH_NativeXComponent* com
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent* component | 表示指向OH_NativeXComponent实例的指针。 |
@@ -1660,6 +1813,7 @@ int32_t OH_NativeXComponent_RegisterSurfaceHideCallback(OH_NativeXComponent* com
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 OH_NATIVEXCOMPONENT_RESULT_SUCCESS - 执行成功。 OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER - 传入参数异常。 |
@@ -1667,9 +1821,10 @@ int32_t OH_NativeXComponent_RegisterSurfaceHideCallback(OH_NativeXComponent* com
  
   
 
-#### OH_NativeXComponent_GetTouchEventSourceType()
+### OH_NativeXComponent_GetTouchEventSourceType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_GetTouchEventSourceType(OH_NativeXComponent* component, int32_t pointId, OH_NativeXComponent_EventSourceType* sourceType)
@@ -1683,6 +1838,7 @@ int32_t OH_NativeXComponent_GetTouchEventSourceType(OH_NativeXComponent* compone
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent* component | 表示指向OH_NativeXComponent实例的指针。 |
@@ -1692,6 +1848,7 @@ int32_t OH_NativeXComponent_GetTouchEventSourceType(OH_NativeXComponent* compone
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | OH_NATIVEXCOMPONENT_RESULT_SUCCESS - 成功。 OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER - 参数异常。 OH_NATIVEXCOMPONENT_RESULT_FAILED - 其他错误。 |
@@ -1699,9 +1856,10 @@ int32_t OH_NativeXComponent_GetTouchEventSourceType(OH_NativeXComponent* compone
  
   
 
-#### OH_NativeXComponent_GetNativeXComponent()
+### OH_NativeXComponent_GetNativeXComponent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_NativeXComponent* OH_NativeXComponent_GetNativeXComponent(ArkUI_NodeHandle node)
@@ -1715,6 +1873,7 @@ OH_NativeXComponent* OH_NativeXComponent_GetNativeXComponent(ArkUI_NodeHandle no
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 表示指向Native接口创建的组件实例的指针。 |
@@ -1722,6 +1881,7 @@ OH_NativeXComponent* OH_NativeXComponent_GetNativeXComponent(ArkUI_NodeHandle no
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_NativeXComponent* | 表示指向OH_NativeXComponent实例的指针。 |
@@ -1729,9 +1889,10 @@ OH_NativeXComponent* OH_NativeXComponent_GetNativeXComponent(ArkUI_NodeHandle no
  
   
 
-#### OH_NativeXComponent_GetNativeAccessibilityProvider()
+### OH_NativeXComponent_GetNativeAccessibilityProvider()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_GetNativeAccessibilityProvider(OH_NativeXComponent* component, ArkUI_AccessibilityProvider** handle)
@@ -1745,6 +1906,7 @@ int32_t OH_NativeXComponent_GetNativeAccessibilityProvider(OH_NativeXComponent* 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent* component | 表示指向OH_NativeXComponent实例的指针。 |
@@ -1753,6 +1915,7 @@ int32_t OH_NativeXComponent_GetNativeAccessibilityProvider(OH_NativeXComponent* 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | OH_NATIVEXCOMPONENT_RESULT_SUCCESS - 成功。 OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER - 参数异常。 OH_NATIVEXCOMPONENT_RESULT_FAILED - 其他错误。 |
@@ -1760,9 +1923,10 @@ int32_t OH_NativeXComponent_GetNativeAccessibilityProvider(OH_NativeXComponent* 
  
   
 
-#### OH_NativeXComponent_RegisterKeyEventCallbackWithResult()
+### OH_NativeXComponent_RegisterKeyEventCallbackWithResult()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeXComponent_RegisterKeyEventCallbackWithResult(OH_NativeXComponent* component, bool (*callback)(OH_NativeXComponent* component, void* window))
@@ -1776,6 +1940,7 @@ int32_t OH_NativeXComponent_RegisterKeyEventCallbackWithResult(OH_NativeXCompone
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent* component | 表示指向OH_NativeXComponent实例的指针。 |
@@ -1784,6 +1949,7 @@ int32_t OH_NativeXComponent_RegisterKeyEventCallbackWithResult(OH_NativeXCompone
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 OH_NATIVEXCOMPONENT_RESULT_SUCCESS - 回调函数注册成功。 OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER - 传入参数异常。 |
@@ -1791,9 +1957,10 @@ int32_t OH_NativeXComponent_RegisterKeyEventCallbackWithResult(OH_NativeXCompone
  
   
 
-#### OH_ArkUI_XComponent_StartImageAnalyzer()
+### OH_ArkUI_XComponent_StartImageAnalyzer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_XComponent_StartImageAnalyzer(ArkUI_NodeHandle node, void* userData,void (*callback)(ArkUI_NodeHandle node, ArkUI_XComponent_ImageAnalyzerState statusCode, void* userData))
@@ -1812,6 +1979,7 @@ int32_t OH_ArkUI_XComponent_StartImageAnalyzer(ArkUI_NodeHandle node, void* user
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 表示指向XComponent组件实例的指针。 |
@@ -1821,6 +1989,7 @@ int32_t OH_ArkUI_XComponent_StartImageAnalyzer(ArkUI_NodeHandle node, void* user
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 返回 ARKUI_ERROR_CODE_NO_ERROR - 执行成功。 返回 ARKUI_ERROR_CODE_PARAM_INVALID - 传入参数异常。 |
@@ -1828,9 +1997,10 @@ int32_t OH_ArkUI_XComponent_StartImageAnalyzer(ArkUI_NodeHandle node, void* user
  
   
 
-#### OH_ArkUI_XComponent_StopImageAnalyzer()
+### OH_ArkUI_XComponent_StopImageAnalyzer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_XComponent_StopImageAnalyzer(ArkUI_NodeHandle node)
@@ -1844,6 +2014,7 @@ int32_t OH_ArkUI_XComponent_StopImageAnalyzer(ArkUI_NodeHandle node)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 表示XComponent组件实例。 |
@@ -1851,6 +2022,7 @@ int32_t OH_ArkUI_XComponent_StopImageAnalyzer(ArkUI_NodeHandle node)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 返回 ARKUI_ERROR_CODE_NO_ERROR - 执行成功。 返回 ARKUI_ERROR_CODE_PARAM_INVALID - 传入参数异常。 |
@@ -1858,9 +2030,10 @@ int32_t OH_ArkUI_XComponent_StopImageAnalyzer(ArkUI_NodeHandle node)
  
   
 
-#### OH_ArkUI_SurfaceHolder_Create()
+### OH_ArkUI_SurfaceHolder_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_ArkUI_SurfaceHolder* OH_ArkUI_SurfaceHolder_Create(ArkUI_NodeHandle node)
@@ -1874,6 +2047,7 @@ OH_ArkUI_SurfaceHolder* OH_ArkUI_SurfaceHolder_Create(ArkUI_NodeHandle node)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 表示指向Native接口创建的XComponent组件实例的指针。 |
@@ -1881,6 +2055,7 @@ OH_ArkUI_SurfaceHolder* OH_ArkUI_SurfaceHolder_Create(ArkUI_NodeHandle node)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_ArkUI_SurfaceHolder* | 返回被创建的OH_ArkUI_SurfaceHolder对象的指针。 |
@@ -1888,9 +2063,10 @@ OH_ArkUI_SurfaceHolder* OH_ArkUI_SurfaceHolder_Create(ArkUI_NodeHandle node)
  
   
 
-#### OH_ArkUI_SurfaceHolder_Dispose()
+### OH_ArkUI_SurfaceHolder_Dispose()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_SurfaceHolder_Dispose(OH_ArkUI_SurfaceHolder* surfaceHolder)
@@ -1904,6 +2080,7 @@ void OH_ArkUI_SurfaceHolder_Dispose(OH_ArkUI_SurfaceHolder* surfaceHolder)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_SurfaceHolder* surfaceHolder | 表示指向需要销毁的OH_ArkUI_SurfaceHolder实例的指针。 |
@@ -1911,9 +2088,10 @@ void OH_ArkUI_SurfaceHolder_Dispose(OH_ArkUI_SurfaceHolder* surfaceHolder)
  
   
 
-#### OH_ArkUI_SurfaceHolder_SetUserData()
+### OH_ArkUI_SurfaceHolder_SetUserData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_SurfaceHolder_SetUserData(OH_ArkUI_SurfaceHolder* surfaceHolder, void* userData)
@@ -1927,6 +2105,7 @@ int32_t OH_ArkUI_SurfaceHolder_SetUserData(OH_ArkUI_SurfaceHolder* surfaceHolder
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_SurfaceHolder* surfaceHolder | 表示指向存储自定义数据的OH_ArkUI_SurfaceHolder实例的指针。 |
@@ -1935,6 +2114,7 @@ int32_t OH_ArkUI_SurfaceHolder_SetUserData(OH_ArkUI_SurfaceHolder* surfaceHolder
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 返回 ARKUI_ERROR_CODE_NO_ERROR - 执行成功。 返回 ARKUI_ERROR_CODE_PARAM_INVALID - 传入参数异常。 |
@@ -1942,9 +2122,10 @@ int32_t OH_ArkUI_SurfaceHolder_SetUserData(OH_ArkUI_SurfaceHolder* surfaceHolder
  
   
 
-#### OH_ArkUI_SurfaceHolder_GetUserData()
+### OH_ArkUI_SurfaceHolder_GetUserData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void* OH_ArkUI_SurfaceHolder_GetUserData(OH_ArkUI_SurfaceHolder* surfaceHolder)
@@ -1958,6 +2139,7 @@ void* OH_ArkUI_SurfaceHolder_GetUserData(OH_ArkUI_SurfaceHolder* surfaceHolder)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_SurfaceHolder* surfaceHolder | 表示指向存储自定义数据的OH_ArkUI_SurfaceHolder实例的指针。 |
@@ -1965,6 +2147,7 @@ void* OH_ArkUI_SurfaceHolder_GetUserData(OH_ArkUI_SurfaceHolder* surfaceHolder)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | void* | 返回自定义数据。 |
@@ -1972,9 +2155,10 @@ void* OH_ArkUI_SurfaceHolder_GetUserData(OH_ArkUI_SurfaceHolder* surfaceHolder)
  
   
 
-#### OH_ArkUI_SurfaceCallback_Create()
+### OH_ArkUI_SurfaceCallback_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_ArkUI_SurfaceCallback* OH_ArkUI_SurfaceCallback_Create()
@@ -1988,6 +2172,7 @@ OH_ArkUI_SurfaceCallback* OH_ArkUI_SurfaceCallback_Create()
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_ArkUI_SurfaceCallback* | 返回创建的OH_ArkUI_SurfaceCallback对象的指针。 |
@@ -1995,9 +2180,10 @@ OH_ArkUI_SurfaceCallback* OH_ArkUI_SurfaceCallback_Create()
  
   
 
-#### OH_ArkUI_SurfaceCallback_Dispose()
+### OH_ArkUI_SurfaceCallback_Dispose()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_SurfaceCallback_Dispose(OH_ArkUI_SurfaceCallback* callback)
@@ -2011,6 +2197,7 @@ void OH_ArkUI_SurfaceCallback_Dispose(OH_ArkUI_SurfaceCallback* callback)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_SurfaceCallback* callback | 表示指向需要销毁的OH_ArkUI_SurfaceCallback对象的指针。 |
@@ -2018,9 +2205,10 @@ void OH_ArkUI_SurfaceCallback_Dispose(OH_ArkUI_SurfaceCallback* callback)
  
   
 
-#### OH_ArkUI_SurfaceCallback_SetSurfaceCreatedEvent()
+### OH_ArkUI_SurfaceCallback_SetSurfaceCreatedEvent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_SurfaceCallback_SetSurfaceCreatedEvent(OH_ArkUI_SurfaceCallback* callback,void (*onSurfaceCreated)(OH_ArkUI_SurfaceHolder* surfaceHolder))
@@ -2034,6 +2222,7 @@ void OH_ArkUI_SurfaceCallback_SetSurfaceCreatedEvent(OH_ArkUI_SurfaceCallback* c
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_SurfaceCallback* callback | 表示指向Surface生命周期回调的指针。 |
@@ -2042,9 +2231,10 @@ void OH_ArkUI_SurfaceCallback_SetSurfaceCreatedEvent(OH_ArkUI_SurfaceCallback* c
  
   
 
-#### OH_ArkUI_SurfaceCallback_SetSurfaceChangedEvent()
+### OH_ArkUI_SurfaceCallback_SetSurfaceChangedEvent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_SurfaceCallback_SetSurfaceChangedEvent(OH_ArkUI_SurfaceCallback* callback,void (*onSurfaceChanged)(OH_ArkUI_SurfaceHolder* surfaceHolder, uint64_t width, uint64_t height))
@@ -2058,6 +2248,7 @@ void OH_ArkUI_SurfaceCallback_SetSurfaceChangedEvent(OH_ArkUI_SurfaceCallback* c
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_SurfaceCallback* callback | 表示指向Surface生命周期回调的指针。 |
@@ -2066,9 +2257,10 @@ void OH_ArkUI_SurfaceCallback_SetSurfaceChangedEvent(OH_ArkUI_SurfaceCallback* c
  
   
 
-#### OH_ArkUI_SurfaceCallback_SetSurfaceDestroyedEvent()
+### OH_ArkUI_SurfaceCallback_SetSurfaceDestroyedEvent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_SurfaceCallback_SetSurfaceDestroyedEvent(OH_ArkUI_SurfaceCallback* callback,void (*onSurfaceDestroyed)(OH_ArkUI_SurfaceHolder* surfaceHolder))
@@ -2082,6 +2274,7 @@ void OH_ArkUI_SurfaceCallback_SetSurfaceDestroyedEvent(OH_ArkUI_SurfaceCallback*
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_SurfaceCallback* callback | 表示指向Surface生命周期回调的指针。 |
@@ -2090,9 +2283,10 @@ void OH_ArkUI_SurfaceCallback_SetSurfaceDestroyedEvent(OH_ArkUI_SurfaceCallback*
  
   
 
-#### OH_ArkUI_SurfaceHolder_AddSurfaceCallback()
+### OH_ArkUI_SurfaceHolder_AddSurfaceCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_SurfaceHolder_AddSurfaceCallback(OH_ArkUI_SurfaceHolder* surfaceHolder,OH_ArkUI_SurfaceCallback* callback)
@@ -2106,6 +2300,7 @@ int32_t OH_ArkUI_SurfaceHolder_AddSurfaceCallback(OH_ArkUI_SurfaceHolder* surfac
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_SurfaceHolder* surfaceHolder | 表示指向OH_ArkUI_SurfaceHolder实例的指针。 |
@@ -2114,6 +2309,7 @@ int32_t OH_ArkUI_SurfaceHolder_AddSurfaceCallback(OH_ArkUI_SurfaceHolder* surfac
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 返回 ARKUI_ERROR_CODE_NO_ERROR - 执行成功。 返回 ARKUI_ERROR_CODE_PARAM_INVALID - 传入参数异常。 |
@@ -2121,9 +2317,10 @@ int32_t OH_ArkUI_SurfaceHolder_AddSurfaceCallback(OH_ArkUI_SurfaceHolder* surfac
  
   
 
-#### OH_ArkUI_SurfaceHolder_RemoveSurfaceCallback()
+### OH_ArkUI_SurfaceHolder_RemoveSurfaceCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_SurfaceHolder_RemoveSurfaceCallback(OH_ArkUI_SurfaceHolder* surfaceHolder,OH_ArkUI_SurfaceCallback* callback)
@@ -2137,6 +2334,7 @@ int32_t OH_ArkUI_SurfaceHolder_RemoveSurfaceCallback(OH_ArkUI_SurfaceHolder* sur
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_SurfaceHolder* surfaceHolder | 表示指向OH_ArkUI_SurfaceHolder实例的指针。 |
@@ -2145,6 +2343,7 @@ int32_t OH_ArkUI_SurfaceHolder_RemoveSurfaceCallback(OH_ArkUI_SurfaceHolder* sur
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 返回 ARKUI_ERROR_CODE_NO_ERROR - 执行成功。 返回 ARKUI_ERROR_CODE_PARAM_INVALID - 传入参数异常。 |
@@ -2152,9 +2351,10 @@ int32_t OH_ArkUI_SurfaceHolder_RemoveSurfaceCallback(OH_ArkUI_SurfaceHolder* sur
  
   
 
-#### OH_ArkUI_XComponent_GetNativeWindow()
+### OH_ArkUI_XComponent_GetNativeWindow()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OHNativeWindow* OH_ArkUI_XComponent_GetNativeWindow(OH_ArkUI_SurfaceHolder* surfaceHolder)
@@ -2168,6 +2368,7 @@ OHNativeWindow* OH_ArkUI_XComponent_GetNativeWindow(OH_ArkUI_SurfaceHolder* surf
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_SurfaceHolder* surfaceHolder | 表示指向OH_ArkUI_SurfaceHolder实例的指针。 |
@@ -2175,16 +2376,18 @@ OHNativeWindow* OH_ArkUI_XComponent_GetNativeWindow(OH_ArkUI_SurfaceHolder* surf
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| NativeWindow* | 返回OH_ArkUI_SurfaceHolder实例关联的NativeWindow。 |
+| OHNativeWindow* | 返回OH_ArkUI_SurfaceHolder实例关联的OHNativeWindow。 |
  
  
   
 
-#### OH_ArkUI_XComponent_SetAutoInitialize()
+### OH_ArkUI_XComponent_SetAutoInitialize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_XComponent_SetAutoInitialize(ArkUI_NodeHandle node, bool autoInitialize)
@@ -2204,6 +2407,7 @@ int32_t OH_ArkUI_XComponent_SetAutoInitialize(ArkUI_NodeHandle node, bool autoIn
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 表示指向XComponent组件实例的指针。 |
@@ -2212,6 +2416,7 @@ int32_t OH_ArkUI_XComponent_SetAutoInitialize(ArkUI_NodeHandle node, bool autoIn
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 返回 ARKUI_ERROR_CODE_NO_ERROR - 执行成功。 返回 ARKUI_ERROR_CODE_PARAM_INVALID - 传入参数异常。 |
@@ -2219,9 +2424,10 @@ int32_t OH_ArkUI_XComponent_SetAutoInitialize(ArkUI_NodeHandle node, bool autoIn
  
   
 
-#### OH_ArkUI_XComponent_Initialize()
+### OH_ArkUI_XComponent_Initialize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_XComponent_Initialize(ArkUI_NodeHandle node)
@@ -2242,6 +2448,7 @@ int32_t OH_ArkUI_XComponent_Initialize(ArkUI_NodeHandle node)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 表示指向XComponent组件实例的指针。 |
@@ -2249,6 +2456,7 @@ int32_t OH_ArkUI_XComponent_Initialize(ArkUI_NodeHandle node)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 返回 ARKUI_ERROR_CODE_NO_ERROR - 执行成功。 返回 ARKUI_ERROR_CODE_PARAM_INVALID - 传入参数异常。 返回 ARKUI_ERROR_CODE_XCOMPONENT_STATE_INVALID - XComponent持有的Surface已经被初始化。 |
@@ -2256,9 +2464,10 @@ int32_t OH_ArkUI_XComponent_Initialize(ArkUI_NodeHandle node)
  
   
 
-#### OH_ArkUI_XComponent_Finalize()
+### OH_ArkUI_XComponent_Finalize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_XComponent_Finalize(ArkUI_NodeHandle node)
@@ -2278,6 +2487,7 @@ int32_t OH_ArkUI_XComponent_Finalize(ArkUI_NodeHandle node)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 表示指向XComponent组件实例的指针。 |
@@ -2285,6 +2495,7 @@ int32_t OH_ArkUI_XComponent_Finalize(ArkUI_NodeHandle node)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 返回 ARKUI_ERROR_CODE_NO_ERROR - 执行成功。 返回 ARKUI_ERROR_CODE_PARAM_INVALID - 传入参数异常。 返回 ARKUI_ERROR_CODE_XCOMPONENT_STATE_INVALID - XComponent持有的Surface已经被销毁。 |
@@ -2292,9 +2503,10 @@ int32_t OH_ArkUI_XComponent_Finalize(ArkUI_NodeHandle node)
  
   
 
-#### OH_ArkUI_XComponent_IsInitialized()
+### OH_ArkUI_XComponent_IsInitialized()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_XComponent_IsInitialized(ArkUI_NodeHandle node, bool* isInitialized)
@@ -2308,6 +2520,7 @@ int32_t OH_ArkUI_XComponent_IsInitialized(ArkUI_NodeHandle node, bool* isInitial
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 表示指向XComponent组件实例的指针。 |
@@ -2316,6 +2529,7 @@ int32_t OH_ArkUI_XComponent_IsInitialized(ArkUI_NodeHandle node, bool* isInitial
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 返回 ARKUI_ERROR_CODE_NO_ERROR - 执行成功。 返回 ARKUI_ERROR_CODE_PARAM_INVALID - 传入参数异常。 |
@@ -2323,9 +2537,10 @@ int32_t OH_ArkUI_XComponent_IsInitialized(ArkUI_NodeHandle node, bool* isInitial
  
   
 
-#### OH_ArkUI_XComponent_SetExpectedFrameRateRange()
+### OH_ArkUI_XComponent_SetExpectedFrameRateRange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_XComponent_SetExpectedFrameRateRange(ArkUI_NodeHandle node, OH_NativeXComponent_ExpectedRateRange range)
@@ -2339,6 +2554,7 @@ int32_t OH_ArkUI_XComponent_SetExpectedFrameRateRange(ArkUI_NodeHandle node, OH_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 表示XComponent组件实例。 |
@@ -2347,6 +2563,7 @@ int32_t OH_ArkUI_XComponent_SetExpectedFrameRateRange(ArkUI_NodeHandle node, OH_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 返回 ARKUI_ERROR_CODE_NO_ERROR - 执行成功。 返回 ARKUI_ERROR_CODE_PARAM_INVALID - 传入参数异常。 |
@@ -2354,9 +2571,10 @@ int32_t OH_ArkUI_XComponent_SetExpectedFrameRateRange(ArkUI_NodeHandle node, OH_
  
   
 
-#### OH_ArkUI_XComponent_RegisterOnFrameCallback()
+### OH_ArkUI_XComponent_RegisterOnFrameCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_XComponent_RegisterOnFrameCallback(ArkUI_NodeHandle node,void (*callback)(ArkUI_NodeHandle node, uint64_t timestamp, uint64_t targetTimestamp))
@@ -2370,6 +2588,7 @@ int32_t OH_ArkUI_XComponent_RegisterOnFrameCallback(ArkUI_NodeHandle node,void (
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 表示XComponent组件实例。 |
@@ -2378,6 +2597,7 @@ int32_t OH_ArkUI_XComponent_RegisterOnFrameCallback(ArkUI_NodeHandle node,void (
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 返回 ARKUI_ERROR_CODE_NO_ERROR - 执行成功。 返回 ARKUI_ERROR_CODE_PARAM_INVALID - 传入参数异常。 |
@@ -2385,9 +2605,10 @@ int32_t OH_ArkUI_XComponent_RegisterOnFrameCallback(ArkUI_NodeHandle node,void (
  
   
 
-#### OH_ArkUI_XComponent_UnregisterOnFrameCallback()
+### OH_ArkUI_XComponent_UnregisterOnFrameCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_XComponent_UnregisterOnFrameCallback(ArkUI_NodeHandle node)
@@ -2401,6 +2622,7 @@ int32_t OH_ArkUI_XComponent_UnregisterOnFrameCallback(ArkUI_NodeHandle node)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 表示XComponent组件实例。 |
@@ -2408,6 +2630,7 @@ int32_t OH_ArkUI_XComponent_UnregisterOnFrameCallback(ArkUI_NodeHandle node)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 返回 ARKUI_ERROR_CODE_NO_ERROR - 执行成功。 返回 ARKUI_ERROR_CODE_PARAM_INVALID - 传入参数异常。 |
@@ -2415,9 +2638,10 @@ int32_t OH_ArkUI_XComponent_UnregisterOnFrameCallback(ArkUI_NodeHandle node)
  
   
 
-#### OH_ArkUI_XComponent_SetNeedSoftKeyboard()
+### OH_ArkUI_XComponent_SetNeedSoftKeyboard()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_XComponent_SetNeedSoftKeyboard(ArkUI_NodeHandle node, bool needSoftKeyboard)
@@ -2431,6 +2655,7 @@ int32_t OH_ArkUI_XComponent_SetNeedSoftKeyboard(ArkUI_NodeHandle node, bool need
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 表示XComponent组件实例。 |
@@ -2439,6 +2664,7 @@ int32_t OH_ArkUI_XComponent_SetNeedSoftKeyboard(ArkUI_NodeHandle node, bool need
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行的状态代码。 返回 ARKUI_ERROR_CODE_NO_ERROR - 执行成功。 返回 ARKUI_ERROR_CODE_PARAM_INVALID - 传入参数异常。 |
@@ -2446,9 +2672,10 @@ int32_t OH_ArkUI_XComponent_SetNeedSoftKeyboard(ArkUI_NodeHandle node, bool need
  
   
 
-#### OH_ArkUI_AccessibilityProvider_Create()
+### OH_ArkUI_AccessibilityProvider_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_AccessibilityProvider* OH_ArkUI_AccessibilityProvider_Create(ArkUI_NodeHandle node)
@@ -2462,6 +2689,7 @@ ArkUI_AccessibilityProvider* OH_ArkUI_AccessibilityProvider_Create(ArkUI_NodeHan
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 表示XComponent组件实例。 |
@@ -2469,6 +2697,7 @@ ArkUI_AccessibilityProvider* OH_ArkUI_AccessibilityProvider_Create(ArkUI_NodeHan
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_AccessibilityProvider* | 返回创建的ArkUI_AccessibilityProvider对象的指针，用于无障碍接入。 |
@@ -2476,9 +2705,10 @@ ArkUI_AccessibilityProvider* OH_ArkUI_AccessibilityProvider_Create(ArkUI_NodeHan
  
   
 
-#### OH_ArkUI_AccessibilityProvider_Dispose()
+### OH_ArkUI_AccessibilityProvider_Dispose()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_AccessibilityProvider_Dispose(ArkUI_AccessibilityProvider* provider)
@@ -2492,6 +2722,7 @@ void OH_ArkUI_AccessibilityProvider_Dispose(ArkUI_AccessibilityProvider* provide
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityProvider* provider | 表示由Native接口OH_ArkUI_AccessibilityProvider_Create创建的ArkUI_AccessibilityProvider实例。 |
@@ -2499,9 +2730,10 @@ void OH_ArkUI_AccessibilityProvider_Dispose(ArkUI_AccessibilityProvider* provide
  
   
 
-#### OH_ArkUI_SurfaceCallback_SetSurfaceShowEvent()
+### OH_ArkUI_SurfaceCallback_SetSurfaceShowEvent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_SurfaceCallback_SetSurfaceShowEvent(OH_ArkUI_SurfaceCallback* callback,void (*onSurfaceShow)(OH_ArkUI_SurfaceHolder* surfaceHolder))
@@ -2515,17 +2747,19 @@ void OH_ArkUI_SurfaceCallback_SetSurfaceShowEvent(OH_ArkUI_SurfaceCallback* call
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_SurfaceCallback* callback | 表示指向OH_ArkUI_SurfaceCallback实例的指针。 |
-| void (onSurfaceShow)(OH_ArkUI_SurfaceHolder surfaceHolder) | 表示Surface显示回调函数指针。- surfaceHolder: 表示指向OH_ArkUI_SurfaceHolder实例的指针。 |
+| void (*onSurfaceShow)(OH_ArkUI_SurfaceHolder* surfaceHolder) | 表示Surface显示回调函数指针。- surfaceHolder: 表示指向OH_ArkUI_SurfaceHolder实例的指针。 |
  
  
   
 
-#### OH_ArkUI_SurfaceCallback_SetSurfaceHideEvent()
+### OH_ArkUI_SurfaceCallback_SetSurfaceHideEvent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_SurfaceCallback_SetSurfaceHideEvent(OH_ArkUI_SurfaceCallback* callback,void (*onSurfaceHide)(OH_ArkUI_SurfaceHolder* surfaceHolder))
@@ -2539,17 +2773,19 @@ void OH_ArkUI_SurfaceCallback_SetSurfaceHideEvent(OH_ArkUI_SurfaceCallback* call
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_SurfaceCallback* callback | 表示指向OH_ArkUI_SurfaceCallback实例的指针。 |
-| void (onSurfaceHide)(OH_ArkUI_SurfaceHolder surfaceHolder) | 表示Surface隐藏回调函数指针。- surfaceHolder: 表示指向OH_ArkUI_SurfaceHolder实例的指针。 |
+| void (*onSurfaceHide)(OH_ArkUI_SurfaceHolder* surfaceHolder) | 表示Surface隐藏回调函数指针。- surfaceHolder: 表示指向OH_ArkUI_SurfaceHolder实例的指针。 |
  
  
   
 
-#### OH_ArkUI_XComponentSurfaceConfig_Create()
+### OH_ArkUI_XComponentSurfaceConfig_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_XComponentSurfaceConfig* OH_ArkUI_XComponentSurfaceConfig_Create()
@@ -2563,6 +2799,7 @@ ArkUI_XComponentSurfaceConfig* OH_ArkUI_XComponentSurfaceConfig_Create()
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_XComponentSurfaceConfig* | 返回创建的ArkUI_XComponentSurfaceConfig对象的指针。 |
@@ -2570,9 +2807,10 @@ ArkUI_XComponentSurfaceConfig* OH_ArkUI_XComponentSurfaceConfig_Create()
  
   
 
-#### OH_ArkUI_XComponentSurfaceConfig_Dispose()
+### OH_ArkUI_XComponentSurfaceConfig_Dispose()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_XComponentSurfaceConfig_Dispose(ArkUI_XComponentSurfaceConfig* config)
@@ -2586,6 +2824,7 @@ void OH_ArkUI_XComponentSurfaceConfig_Dispose(ArkUI_XComponentSurfaceConfig* con
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_XComponentSurfaceConfig* config | 表示指向需要销毁的ArkUI_XComponentSurfaceConfig对象的指针。 |
@@ -2593,9 +2832,10 @@ void OH_ArkUI_XComponentSurfaceConfig_Dispose(ArkUI_XComponentSurfaceConfig* con
  
   
 
-#### OH_ArkUI_XComponentSurfaceConfig_SetIsOpaque()
+### OH_ArkUI_XComponentSurfaceConfig_SetIsOpaque()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_XComponentSurfaceConfig_SetIsOpaque(ArkUI_XComponentSurfaceConfig* config, bool isOpaque)
@@ -2609,6 +2849,7 @@ void OH_ArkUI_XComponentSurfaceConfig_SetIsOpaque(ArkUI_XComponentSurfaceConfig*
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_XComponentSurfaceConfig* config | 表示指向ArkUI_XComponentSurfaceConfig实例的指针。 |
@@ -2617,9 +2858,10 @@ void OH_ArkUI_XComponentSurfaceConfig_SetIsOpaque(ArkUI_XComponentSurfaceConfig*
  
   
 
-#### OH_ArkUI_SurfaceHolder_SetSurfaceConfig()
+### OH_ArkUI_SurfaceHolder_SetSurfaceConfig()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_SurfaceHolder_SetSurfaceConfig(OH_ArkUI_SurfaceHolder* surfaceHolder, ArkUI_XComponentSurfaceConfig *config)
@@ -2633,6 +2875,7 @@ int32_t OH_ArkUI_SurfaceHolder_SetSurfaceConfig(OH_ArkUI_SurfaceHolder* surfaceH
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_SurfaceHolder* surfaceHolder | 表示指向OH_ArkUI_SurfaceHolder实例的指针。 |
@@ -2641,6 +2884,7 @@ int32_t OH_ArkUI_SurfaceHolder_SetSurfaceConfig(OH_ArkUI_SurfaceHolder* surfaceH
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回执行结果。 返回 ARKUI_ERROR_CODE_NO_ERROR - 执行成功。 返回 ARKUI_ERROR_CODE_PARAM_INVALID - 传入参数异常。 |

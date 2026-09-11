@@ -1,11 +1,12 @@
 # lowpower_video_sink.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-lowpower-video-sink-h
 **支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_LowPowerVideoSink* OH_LowPowerVideoSink_CreateByMime(const char* mime) | 创建低功耗LowPowerVideoSink。 |
@@ -68,13 +72,15 @@
  
   
 
-#### 函数说明
+## 函数说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### OH_LowPowerVideoSink_CreateByMime()
+### OH_LowPowerVideoSink_CreateByMime()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -90,6 +96,7 @@ OH_LowPowerVideoSink* OH_LowPowerVideoSink_CreateByMime(const char* mime)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char* mime | 视频解码器的MIME类型，取值范围请参考OH_AVCODEC_MIMETYPE。 |
@@ -97,6 +104,7 @@ OH_LowPowerVideoSink* OH_LowPowerVideoSink_CreateByMime(const char* mime)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_LowPowerVideoSink* | 如果创建成功返回指向OH_LowPowerVideoSink实例的指针，否则返回空指针。 |
@@ -104,7 +112,8 @@ OH_LowPowerVideoSink* OH_LowPowerVideoSink_CreateByMime(const char* mime)
  
   
 
-#### OH_LowPowerVideoSink_Configure()
+### OH_LowPowerVideoSink_Configure()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -120,6 +129,7 @@ OH_AVErrCode OH_LowPowerVideoSink_Configure(OH_LowPowerVideoSink* sink, const OH
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_LowPowerVideoSink* sink | 指向OH_LowPowerVideoSink实例的指针。 |
@@ -128,6 +138,7 @@ OH_AVErrCode OH_LowPowerVideoSink_Configure(OH_LowPowerVideoSink* sink, const OH
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：参数为nullptr或参数非法。 AV_ERR_UNSUPPORT：不支持的格式。 AV_ERR_SERVICE_DIED：媒体服务端已销毁。 AV_ERR_OPERATE_NOT_PERMIT：操作不支持。 |
@@ -135,7 +146,8 @@ OH_AVErrCode OH_LowPowerVideoSink_Configure(OH_LowPowerVideoSink* sink, const OH
  
   
 
-#### OH_LowPowerVideoSink_SetParameter()
+### OH_LowPowerVideoSink_SetParameter()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -151,6 +163,7 @@ OH_AVErrCode OH_LowPowerVideoSink_SetParameter(OH_LowPowerVideoSink* sink, const
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_LowPowerVideoSink* sink | 指向OH_LowPowerVideoSink实例的指针。 |
@@ -159,6 +172,7 @@ OH_AVErrCode OH_LowPowerVideoSink_SetParameter(OH_LowPowerVideoSink* sink, const
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：参数为nullptr或参数非法。 AV_ERR_UNSUPPORT：不支持的格式。 AV_ERR_SERVICE_DIED：媒体服务端已销毁。 AV_ERR_OPERATE_NOT_PERMIT：操作不支持。 |
@@ -166,7 +180,8 @@ OH_AVErrCode OH_LowPowerVideoSink_SetParameter(OH_LowPowerVideoSink* sink, const
  
   
 
-#### OH_LowPowerVideoSink_GetParameter()
+### OH_LowPowerVideoSink_GetParameter()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -182,6 +197,7 @@ OH_AVErrCode OH_LowPowerVideoSink_GetParameter(OH_LowPowerVideoSink* sink, OH_AV
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_LowPowerVideoSink* sink | 指向OH_LowPowerVideoSink实例的指针。 |
@@ -190,6 +206,7 @@ OH_AVErrCode OH_LowPowerVideoSink_GetParameter(OH_LowPowerVideoSink* sink, OH_AV
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：参数为nullptr或参数非法。 AV_ERR_OPERATE_NOT_PERMIT：操作不支持。 |
@@ -197,7 +214,8 @@ OH_AVErrCode OH_LowPowerVideoSink_GetParameter(OH_LowPowerVideoSink* sink, OH_AV
  
   
 
-#### OH_LowPowerVideoSink_SetVideoSurface()
+### OH_LowPowerVideoSink_SetVideoSurface()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -213,6 +231,7 @@ OH_AVErrCode OH_LowPowerVideoSink_SetVideoSurface(OH_LowPowerVideoSink* sink, co
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_LowPowerVideoSink* sink | 指向OH_LowPowerVideoSink实例的指针。 |
@@ -221,6 +240,7 @@ OH_AVErrCode OH_LowPowerVideoSink_SetVideoSurface(OH_LowPowerVideoSink* sink, co
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：参数为nullptr或参数非法。 AV_ERR_SERVICE_DIED：媒体服务端已销毁。 AV_ERR_OPERATE_NOT_PERMIT：操作不支持。 |
@@ -228,7 +248,8 @@ OH_AVErrCode OH_LowPowerVideoSink_SetVideoSurface(OH_LowPowerVideoSink* sink, co
  
   
 
-#### OH_LowPowerVideoSink_Prepare()
+### OH_LowPowerVideoSink_Prepare()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -244,6 +265,7 @@ OH_AVErrCode OH_LowPowerVideoSink_Prepare(OH_LowPowerVideoSink* sink)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_LowPowerVideoSink* sink | 指向OH_LowPowerVideoSink实例的指针。 |
@@ -251,6 +273,7 @@ OH_AVErrCode OH_LowPowerVideoSink_Prepare(OH_LowPowerVideoSink* sink)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：参数为nullptr或参数非法。 AV_ERR_UNSUPPORT：不支持的格式。 AV_ERR_SERVICE_DIED：媒体服务端已销毁。 AV_ERR_OPERATE_NOT_PERMIT：操作不支持。 |
@@ -258,7 +281,8 @@ OH_AVErrCode OH_LowPowerVideoSink_Prepare(OH_LowPowerVideoSink* sink)
  
   
 
-#### OH_LowPowerVideoSink_StartDecoder()
+### OH_LowPowerVideoSink_StartDecoder()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -276,6 +300,7 @@ OH_AVErrCode OH_LowPowerVideoSink_StartDecoder(OH_LowPowerVideoSink* sink)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_LowPowerVideoSink* sink | 指向OH_LowPowerVideoSink实例的指针。 |
@@ -283,6 +308,7 @@ OH_AVErrCode OH_LowPowerVideoSink_StartDecoder(OH_LowPowerVideoSink* sink)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：参数为nullptr或参数非法。 AV_ERR_UNSUPPORT：不支持的格式。 AV_ERR_SERVICE_DIED：媒体服务端已销毁。 AV_ERR_OPERATE_NOT_PERMIT：操作不支持。 |
@@ -290,7 +316,8 @@ OH_AVErrCode OH_LowPowerVideoSink_StartDecoder(OH_LowPowerVideoSink* sink)
  
   
 
-#### OH_LowPowerVideoSink_RenderFirstFrame()
+### OH_LowPowerVideoSink_RenderFirstFrame()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -306,6 +333,7 @@ OH_AVErrCode OH_LowPowerVideoSink_RenderFirstFrame(OH_LowPowerVideoSink* sink)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_LowPowerVideoSink* sink | 指向OH_LowPowerVideoSink实例的指针。 |
@@ -313,6 +341,7 @@ OH_AVErrCode OH_LowPowerVideoSink_RenderFirstFrame(OH_LowPowerVideoSink* sink)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：参数为nullptr或参数非法。 AV_ERR_SERVICE_DIED：媒体服务端已销毁。 AV_ERR_OPERATE_NOT_PERMIT：操作不支持。 |
@@ -320,7 +349,8 @@ OH_AVErrCode OH_LowPowerVideoSink_RenderFirstFrame(OH_LowPowerVideoSink* sink)
  
   
 
-#### OH_LowPowerVideoSink_StartRenderer()
+### OH_LowPowerVideoSink_StartRenderer()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -336,6 +366,7 @@ OH_AVErrCode OH_LowPowerVideoSink_StartRenderer(OH_LowPowerVideoSink* sink)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_LowPowerVideoSink* sink | 指向OH_LowPowerVideoSink实例的指针。 |
@@ -343,6 +374,7 @@ OH_AVErrCode OH_LowPowerVideoSink_StartRenderer(OH_LowPowerVideoSink* sink)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：参数为nullptr或参数非法。 AV_ERR_UNSUPPORT：不支持的格式。 AV_ERR_SERVICE_DIED：媒体服务端已销毁。 AV_ERR_OPERATE_NOT_PERMIT：操作不支持。 |
@@ -350,7 +382,8 @@ OH_AVErrCode OH_LowPowerVideoSink_StartRenderer(OH_LowPowerVideoSink* sink)
  
   
 
-#### OH_LowPowerVideoSink_Pause()
+### OH_LowPowerVideoSink_Pause()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -368,6 +401,7 @@ OH_AVErrCode OH_LowPowerVideoSink_Pause(OH_LowPowerVideoSink* sink)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_LowPowerVideoSink* sink | 指向OH_LowPowerVideoSink实例的指针。 |
@@ -375,6 +409,7 @@ OH_AVErrCode OH_LowPowerVideoSink_Pause(OH_LowPowerVideoSink* sink)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：参数为nullptr或参数非法。 AV_ERR_SERVICE_DIED：媒体服务端已销毁。 AV_ERR_OPERATE_NOT_PERMIT：操作不支持。 |
@@ -382,7 +417,8 @@ OH_AVErrCode OH_LowPowerVideoSink_Pause(OH_LowPowerVideoSink* sink)
  
   
 
-#### OH_LowPowerVideoSink_Resume()
+### OH_LowPowerVideoSink_Resume()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -400,6 +436,7 @@ OH_AVErrCode OH_LowPowerVideoSink_Resume(OH_LowPowerVideoSink* sink)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_LowPowerVideoSink* sink | 指向OH_LowPowerVideoSink实例的指针。 |
@@ -407,6 +444,7 @@ OH_AVErrCode OH_LowPowerVideoSink_Resume(OH_LowPowerVideoSink* sink)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：参数为nullptr或参数非法。 AV_ERR_SERVICE_DIED：媒体服务端已销毁。 AV_ERR_OPERATE_NOT_PERMIT：操作不支持。 |
@@ -414,7 +452,8 @@ OH_AVErrCode OH_LowPowerVideoSink_Resume(OH_LowPowerVideoSink* sink)
  
   
 
-#### OH_LowPowerVideoSink_Flush()
+### OH_LowPowerVideoSink_Flush()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -434,6 +473,7 @@ OH_AVErrCode OH_LowPowerVideoSink_Flush(OH_LowPowerVideoSink* sink)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_LowPowerVideoSink* sink | 指向OH_LowPowerVideoSink实例的指针。 |
@@ -441,6 +481,7 @@ OH_AVErrCode OH_LowPowerVideoSink_Flush(OH_LowPowerVideoSink* sink)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：参数为nullptr或参数非法。 AV_ERR_SERVICE_DIED：媒体服务端已销毁。 AV_ERR_OPERATE_NOT_PERMIT：操作不支持。 |
@@ -448,7 +489,8 @@ OH_AVErrCode OH_LowPowerVideoSink_Flush(OH_LowPowerVideoSink* sink)
  
   
 
-#### OH_LowPowerVideoSink_Stop()
+### OH_LowPowerVideoSink_Stop()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -464,6 +506,7 @@ OH_AVErrCode OH_LowPowerVideoSink_Stop(OH_LowPowerVideoSink* sink)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_LowPowerVideoSink* sink | 指向OH_LowPowerVideoSink实例的指针。 |
@@ -471,6 +514,7 @@ OH_AVErrCode OH_LowPowerVideoSink_Stop(OH_LowPowerVideoSink* sink)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：参数为nullptr或参数非法。 AV_ERR_SERVICE_DIED：媒体服务端已销毁。 AV_ERR_OPERATE_NOT_PERMIT：操作不支持。 |
@@ -478,7 +522,8 @@ OH_AVErrCode OH_LowPowerVideoSink_Stop(OH_LowPowerVideoSink* sink)
  
   
 
-#### OH_LowPowerVideoSink_Reset()
+### OH_LowPowerVideoSink_Reset()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -496,6 +541,7 @@ OH_AVErrCode OH_LowPowerVideoSink_Reset(OH_LowPowerVideoSink* sink)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_LowPowerVideoSink* sink | 指向OH_LowPowerVideoSink实例的指针。 |
@@ -503,6 +549,7 @@ OH_AVErrCode OH_LowPowerVideoSink_Reset(OH_LowPowerVideoSink* sink)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：参数为nullptr或参数非法。 AV_ERR_SERVICE_DIED：媒体服务端已销毁。 AV_ERR_OPERATE_NOT_PERMIT：操作不支持。 |
@@ -510,7 +557,8 @@ OH_AVErrCode OH_LowPowerVideoSink_Reset(OH_LowPowerVideoSink* sink)
  
   
 
-#### OH_LowPowerVideoSink_Destroy()
+### OH_LowPowerVideoSink_Destroy()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -526,6 +574,7 @@ OH_AVErrCode OH_LowPowerVideoSink_Destroy(OH_LowPowerVideoSink* sink)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_LowPowerVideoSink* sink | 指向OH_LowPowerVideoSink实例的指针。 |
@@ -533,6 +582,7 @@ OH_AVErrCode OH_LowPowerVideoSink_Destroy(OH_LowPowerVideoSink* sink)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：参数为nullptr或参数非法。 AV_ERR_SERVICE_DIED：媒体服务端已销毁。 AV_ERR_OPERATE_NOT_PERMIT：操作不支持。 |
@@ -540,7 +590,8 @@ OH_AVErrCode OH_LowPowerVideoSink_Destroy(OH_LowPowerVideoSink* sink)
  
   
 
-#### OH_LowPowerVideoSink_SetSyncAudioSink()
+### OH_LowPowerVideoSink_SetSyncAudioSink()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -556,6 +607,7 @@ LowPowerVideoSink设置用于音画同步的OH_LowPowerAudioSink。需要在OH_L
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_LowPowerVideoSink* videoSink | 指向OH_LowPowerVideoSink实例的指针。 |
@@ -564,6 +616,7 @@ LowPowerVideoSink设置用于音画同步的OH_LowPowerAudioSink。需要在OH_L
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：参数为nullptr或参数非法。 AV_ERR_SERVICE_DIED：媒体服务端已销毁。 AV_ERR_OPERATE_NOT_PERMIT：操作不支持。 |
@@ -571,7 +624,8 @@ LowPowerVideoSink设置用于音画同步的OH_LowPowerAudioSink。需要在OH_L
  
   
 
-#### OH_LowPowerVideoSink_SetTargetStartFrame()
+### OH_LowPowerVideoSink_SetTargetStartFrame()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -587,6 +641,7 @@ OH_AVErrCode OH_LowPowerVideoSink_SetTargetStartFrame(OH_LowPowerVideoSink* sink
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_LowPowerVideoSink* sink | 指向OH_LowPowerVideoSink实例的指针。 |
@@ -598,6 +653,7 @@ OH_AVErrCode OH_LowPowerVideoSink_SetTargetStartFrame(OH_LowPowerVideoSink* sink
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：参数为nullptr或参数非法。 AV_ERR_SERVICE_DIED：媒体服务端已销毁。 AV_ERR_OPERATE_NOT_PERMIT：操作不支持。 |
@@ -605,7 +661,8 @@ OH_AVErrCode OH_LowPowerVideoSink_SetTargetStartFrame(OH_LowPowerVideoSink* sink
  
   
 
-#### OH_LowPowerVideoSink_SetPlaybackSpeed()
+### OH_LowPowerVideoSink_SetPlaybackSpeed()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -621,6 +678,7 @@ OH_AVErrCode OH_LowPowerVideoSink_SetPlaybackSpeed(OH_LowPowerVideoSink* sink, c
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_LowPowerVideoSink* sink | 指向OH_LowPowerVideoSink实例的指针。 |
@@ -629,6 +687,7 @@ OH_AVErrCode OH_LowPowerVideoSink_SetPlaybackSpeed(OH_LowPowerVideoSink* sink, c
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：参数为nullptr或参数非法。 AV_ERR_SERVICE_DIED：媒体服务端已销毁。 AV_ERR_OPERATE_NOT_PERMIT：操作不支持。 |
@@ -636,7 +695,8 @@ OH_AVErrCode OH_LowPowerVideoSink_SetPlaybackSpeed(OH_LowPowerVideoSink* sink, c
  
   
 
-#### OH_LowPowerVideoSink_ReturnSamples()
+### OH_LowPowerVideoSink_ReturnSamples()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -652,6 +712,7 @@ OH_AVErrCode OH_LowPowerVideoSink_ReturnSamples(OH_LowPowerVideoSink* sink, OH_A
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_LowPowerVideoSink* sink | 指向OH_LowPowerVideoSink实例的指针。 |
@@ -660,6 +721,7 @@ OH_AVErrCode OH_LowPowerVideoSink_ReturnSamples(OH_LowPowerVideoSink* sink, OH_A
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：参数为nullptr或参数非法。 AV_ERR_SERVICE_DIED：媒体服务端已销毁。 AV_ERR_OPERATE_NOT_PERMIT：操作不支持。 |
@@ -667,7 +729,8 @@ OH_AVErrCode OH_LowPowerVideoSink_ReturnSamples(OH_LowPowerVideoSink* sink, OH_A
  
   
 
-#### OH_LowPowerVideoSink_GetLatestPts()
+### OH_LowPowerVideoSink_GetLatestPts()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -683,6 +746,7 @@ OH_AVErrCode OH_LowPowerVideoSink_GetLatestPts(OH_LowPowerVideoSink *sink, int64
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_LowPowerVideoSink *sink | 指向OH_LowPowerVideoSink实例的指针。 |
@@ -691,6 +755,7 @@ OH_AVErrCode OH_LowPowerVideoSink_GetLatestPts(OH_LowPowerVideoSink *sink, int64
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：参数为nullptr或参数非法。 AV_ERR_SERVICE_DIED：媒体服务端已销毁。 AV_ERR_OPERATE_NOT_PERMIT：操作不支持。 |
@@ -698,7 +763,8 @@ OH_AVErrCode OH_LowPowerVideoSink_GetLatestPts(OH_LowPowerVideoSink *sink, int64
  
   
 
-#### OH_LowPowerVideoSink_RegisterCallback()
+### OH_LowPowerVideoSink_RegisterCallback()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -714,6 +780,7 @@ OH_AVErrCode OH_LowPowerVideoSink_RegisterCallback(OH_LowPowerVideoSink* sink, O
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_LowPowerVideoSink* sink | 指向OH_LowPowerVideoSink实例的指针。 |
@@ -722,6 +789,7 @@ OH_AVErrCode OH_LowPowerVideoSink_RegisterCallback(OH_LowPowerVideoSink* sink, O
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：参数为nullptr或参数非法。 AV_ERR_SERVICE_DIED：媒体服务端已销毁。 AV_ERR_OPERATE_NOT_PERMIT：操作不支持。 |
@@ -729,7 +797,8 @@ OH_AVErrCode OH_LowPowerVideoSink_RegisterCallback(OH_LowPowerVideoSink* sink, O
  
   
 
-#### OH_LowPowerVideoSinkCallback_Create()
+### OH_LowPowerVideoSinkCallback_Create()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -745,6 +814,7 @@ OH_LowPowerVideoSinkCallback* OH_LowPowerVideoSinkCallback_Create(void)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_LowPowerVideoSinkCallback* | 返回指向OH_LowPowerVideoSinkCallback实例的指针。如果内存不足，则返回nullptr。 |
@@ -752,7 +822,8 @@ OH_LowPowerVideoSinkCallback* OH_LowPowerVideoSinkCallback_Create(void)
  
   
 
-#### OH_LowPowerVideoSinkCallback_Destroy()
+### OH_LowPowerVideoSinkCallback_Destroy()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -768,6 +839,7 @@ OH_AVErrCode OH_LowPowerVideoSinkCallback_Destroy(OH_LowPowerVideoSinkCallback* 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_LowPowerVideoSinkCallback* callback | 指向OH_LowPowerVideoSinkCallback实例的指针。 |
@@ -775,6 +847,7 @@ OH_AVErrCode OH_LowPowerVideoSinkCallback_Destroy(OH_LowPowerVideoSinkCallback* 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：参数为nullptr或参数非法。 |
@@ -782,7 +855,8 @@ OH_AVErrCode OH_LowPowerVideoSinkCallback_Destroy(OH_LowPowerVideoSinkCallback* 
  
   
 
-#### OH_LowPowerVideoSinkCallback_SetDataNeededListener()
+### OH_LowPowerVideoSinkCallback_SetDataNeededListener()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -798,6 +872,7 @@ OH_AVErrCode OH_LowPowerVideoSinkCallback_SetDataNeededListener(OH_LowPowerVideo
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_LowPowerVideoSinkCallback* callback | 指向OH_LowPowerVideoSinkCallback实例的指针。 |
@@ -807,6 +882,7 @@ OH_AVErrCode OH_LowPowerVideoSinkCallback_SetDataNeededListener(OH_LowPowerVideo
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：参数为nullptr或参数非法。 AV_ERR_OPERATE_NOT_PERMIT：操作不支持。 |
@@ -814,7 +890,8 @@ OH_AVErrCode OH_LowPowerVideoSinkCallback_SetDataNeededListener(OH_LowPowerVideo
  
   
 
-#### OH_LowPowerVideoSinkCallback_SetErrorListener()
+### OH_LowPowerVideoSinkCallback_SetErrorListener()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -830,6 +907,7 @@ OH_AVErrCode OH_LowPowerVideoSinkCallback_SetErrorListener(OH_LowPowerVideoSinkC
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_LowPowerVideoSinkCallback* callback | 指向OH_LowPowerVideoSinkCallback实例的指针。 |
@@ -839,6 +917,7 @@ OH_AVErrCode OH_LowPowerVideoSinkCallback_SetErrorListener(OH_LowPowerVideoSinkC
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：参数为nullptr或参数非法。 AV_ERR_OPERATE_NOT_PERMIT：操作不支持。 |
@@ -846,7 +925,8 @@ OH_AVErrCode OH_LowPowerVideoSinkCallback_SetErrorListener(OH_LowPowerVideoSinkC
  
   
 
-#### OH_LowPowerVideoSinkCallback_SetRenderStartListener()
+### OH_LowPowerVideoSinkCallback_SetRenderStartListener()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -862,6 +942,7 @@ OH_AVErrCode OH_LowPowerVideoSinkCallback_SetRenderStartListener(OH_LowPowerVide
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_LowPowerVideoSinkCallback* callback | 指向OH_LowPowerVideoSinkCallback实例的指针。 |
@@ -871,6 +952,7 @@ OH_AVErrCode OH_LowPowerVideoSinkCallback_SetRenderStartListener(OH_LowPowerVide
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：参数为nullptr或参数非法。 AV_ERR_OPERATE_NOT_PERMIT：操作不支持。 |
@@ -878,7 +960,8 @@ OH_AVErrCode OH_LowPowerVideoSinkCallback_SetRenderStartListener(OH_LowPowerVide
  
   
 
-#### OH_LowPowerVideoSinkCallback_SetStreamChangedListener()
+### OH_LowPowerVideoSinkCallback_SetStreamChangedListener()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -894,6 +977,7 @@ OH_AVErrCode OH_LowPowerVideoSinkCallback_SetStreamChangedListener(OH_LowPowerVi
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_LowPowerVideoSinkCallback* callback | 指向OH_LowPowerVideoSinkCallback实例的指针。 |
@@ -903,6 +987,7 @@ OH_AVErrCode OH_LowPowerVideoSinkCallback_SetStreamChangedListener(OH_LowPowerVi
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：参数为nullptr或参数非法。 AV_ERR_OPERATE_NOT_PERMIT：操作不支持。 |
@@ -910,7 +995,8 @@ OH_AVErrCode OH_LowPowerVideoSinkCallback_SetStreamChangedListener(OH_LowPowerVi
  
   
 
-#### OH_LowPowerVideoSinkCallback_SetFirstFrameDecodedListener()
+### OH_LowPowerVideoSinkCallback_SetFirstFrameDecodedListener()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -926,6 +1012,7 @@ OH_AVErrCode OH_LowPowerVideoSinkCallback_SetFirstFrameDecodedListener(OH_LowPow
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_LowPowerVideoSinkCallback* callback | 指向OH_LowPowerVideoSinkCallback实例的指针。 |
@@ -935,6 +1022,7 @@ OH_AVErrCode OH_LowPowerVideoSinkCallback_SetFirstFrameDecodedListener(OH_LowPow
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：参数为nullptr或参数非法。 AV_ERR_OPERATE_NOT_PERMIT：操作不支持。 |
@@ -942,7 +1030,8 @@ OH_AVErrCode OH_LowPowerVideoSinkCallback_SetFirstFrameDecodedListener(OH_LowPow
  
   
 
-#### OH_LowPowerVideoSinkCallback_SetEosListener()
+### OH_LowPowerVideoSinkCallback_SetEosListener()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -958,6 +1047,7 @@ OH_AVErrCode OH_LowPowerVideoSinkCallback_SetEosListener(OH_LowPowerVideoSinkCal
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_LowPowerVideoSinkCallback* callback | 指向OH_LowPowerVideoSinkCallback实例的指针。 |
@@ -967,6 +1057,7 @@ OH_AVErrCode OH_LowPowerVideoSinkCallback_SetEosListener(OH_LowPowerVideoSinkCal
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：参数为nullptr或参数非法。 AV_ERR_OPERATE_NOT_PERMIT：操作不支持。 |

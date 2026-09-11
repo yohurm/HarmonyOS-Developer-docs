@@ -1,15 +1,16 @@
 # drag_and_drop.h
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drag-and-drop-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-提供NativeDrag相关接口定义，支持获取拖拽事件、设置和获取拖拽数据、配置拖拽预览、发起拖拽操作及监听拖拽状态，适用于应用实现原生拖拽交互、数据拖入拖出和自定义拖拽效果等场景。该模块支持跨设备拖拽交互、提供异步数据加载机制以提升大量数据的拖拽传输效率，并支持细粒度的拖拽行为控制与状态监听。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+提供NativeDrag相关接口定义，支持获取拖拽事件、设置和获取拖拽数据、配置拖拽预览、发起拖拽操作及监听拖拽状态，适用于应用实现原生拖拽交互、数据拖入拖出和自定义拖拽效果等场景。
 
 **引用文件：** <arkui/drag_and_drop.h>
 
@@ -25,32 +26,37 @@
 
 
 
-#### 汇总
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 汇总
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 结构体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | ArkUI_NodeEvent | ArkUI_NodeEvent | 定义组件事件的通用结构类型。 |
 | ArkUI_Context | ArkUI_Context | ArkUI native UI 的上下文实例对象，用于表示组件所在页面的 UIContext。其指针类型为 ArkUI_ContextHandle，开发者可通过 OH_ArkUI_GetContextByNode 获取对应上下文，并将其作为拖拽操作、动画、UI 任务调度等接口的上下文入参。 |
 | ArkUI_Context* | ArkUI_ContextHandle | ArkUI 在 Native 侧的上下文实例对象指针，用于表示组件所在页面的 UIContext。开发者可通过OH_ArkUI_GetContextByNode或OH_ArkUI_GetContextFromNapiValue获取该指针，并将其作为 UI 任务调度、动画、焦点控制等接口的上下文入参。 |
-| ArkUI_DragEvent | ArkUI_DragEvent | 拖拽事件，用于表示ArkUI组件拖拽过程中的事件信息。开发者可通过以下头文件中的拖拽事件接口获取拖拽状态和事件数据；拖拽事件绑定流程请参见绑定拖拽事件。 |
+| ArkUI_DragEvent | ArkUI_DragEvent | 拖拽事件，用于表示ArkUI组件拖拽过程中的事件信息，开发者可通过相关拖拽事件接口获取拖拽状态和事件数据。 |
 | ArkUI_DragPreviewOption | ArkUI_DragPreviewOption | 设置拖拽跟手图的自定义参数（如投影、圆角效果等），用于在拖拽场景中自定义预览图显示效果，帮助应用提供更符合业务需求的拖拽交互体验。 |
-| ArkUI_DragAction | ArkUI_DragAction | 拖拽行为句柄，用于主动发起拖拽操作，即由开发者主动调用接口启动拖拽，区别于被动响应拖拽事件。该句柄支持创建、配置、执行和销毁拖拽行为，可设置拖拽数据并主动启动拖拽。ArkUI_DragAction的使用流程如下：1. 通过OH_ArkUI_CreateDragActionWithNode或OH_ArkUI_CreateDragActionWithContext创建对象。2. 调用OH_ArkUI_DragAction_SetData等接口配置拖拽参数。3. 调用OH_ArkUI_StartDrag发起拖拽。4. 不再使用时，调用OH_ArkUI_DragAction_Dispose销毁对象并释放资源。关于创建、配置和执行机制的详细说明，请参见绑定拖拽事件。 |
-| ArkUI_DragAndDropInfo | ArkUI_DragAndDropInfo | 主动发起拖拽后，系统通过拖拽状态监听回调返回ArkUI_DragAndDropInfo。开发者可从该结构体获取拖拽开始或结束状态，以及拖拽结束时的拖拽事件数据，并根据状态进行后续处理。拖拽回调的注册方式请参见drag_and_drop.h。 |
+| ArkUI_DragAction | ArkUI_DragAction | 拖拽行为句柄，用于主动发起拖拽操作，即由开发者主动调用接口启动拖拽，区别于被动响应拖拽事件。开发者可结合主动拖拽流程了解ArkUI_DragAction的创建、配置和执行机制，相关说明请参见绑定拖拽事件。 |
+| ArkUI_DragAndDropInfo | ArkUI_DragAndDropInfo | 主动发起拖拽后，通过拖拽状态监听返回的系统拖拽相关数据，帮助应用根据拖拽状态进行后续处理。 |
 
 
 
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -63,20 +69,22 @@
 
 
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 描述 |
 | --- | --- |
 | ArkUI_DragEvent* OH_ArkUI_NodeEvent_GetDragEvent(ArkUI_NodeEvent* nodeEvent) | 从 NodeEvent 中获取DragEvent。 |
 | ArkUI_PreDragStatus OH_ArkUI_NodeEvent_GetPreDragStatus(ArkUI_NodeEvent* nodeEvent) | 获取预览拖拽事件状态。 |
 | int32_t OH_ArkUI_DragEvent_DisableDefaultDropAnimation(ArkUI_DragEvent* event, bool disable) | 设置是否禁用松手时的系统默认动效，默认不禁用，通常在应用需要自定义落位动效时配置。 |
-| int32_t OH_ArkUI_DragEvent_SetSuggestedDropOperation(ArkUI_DragEvent* event, ArkUI_DropOperation dropOperation) | 设置数据处理方式，影响拖拽过程中角标的显示方式。适用于拖拽落入时需要向系统建议数据处理行为的场景。例如，当拖拽的是可复制的文本或图片内容时，建议设置为复制行为（ARKUI_DROP_OPERATION_COPY）；当拖拽的是需要从源位置移除的内容时，建议设置为剪切行为（ARKUI_DROP_OPERATION_MOVE）。与OH_ArkUI_NotifySuggestedDropOperation功能相同，区别在于：本方法在同步的拖拽事件回调中直接设置，适用于不需要延迟处理拖拽结束事件的场景；OH_ArkUI_NotifySuggestedDropOperation在异步的RequestDragEndPending流程中通知，适用于已调用OH_ArkUI_DragEvent_RequestDragEndPending延迟处理拖拽结束事件的场景。 |
-| int32_t OH_ArkUI_DragEvent_SetDragResult(ArkUI_DragEvent* event, ArkUI_DragResult result) | 作为数据接收方，在落入回调中设置拖拽事件的处理结果，以便拖出方感知数据的接收处理状态。与OH_ArkUI_NotifyDragResult功能相同，区别在于：本方法在同步的拖拽事件回调中直接设置，适用于不需要延迟处理拖拽结束事件的场景；OH_ArkUI_NotifyDragResult在异步的RequestDragEndPending流程中通知，适用于已调用OH_ArkUI_DragEvent_RequestDragEndPending延迟处理拖拽结束事件的场景。 |
+| int32_t OH_ArkUI_DragEvent_SetSuggestedDropOperation(ArkUI_DragEvent* event, ArkUI_DropOperation dropOperation) | 设置数据处理方式。 |
+| int32_t OH_ArkUI_DragEvent_SetDragResult(ArkUI_DragEvent* event, ArkUI_DragResult result) | 设置拖拽事件的结果。 |
 | int32_t OH_ArkUI_DragEvent_SetData(ArkUI_DragEvent* event, OH_UdmfData* data) | 向ArkUI_DragEvent中设置拖拽数据。 |
-| ArkUI_ErrorCode OH_ArkUI_DragEvent_SetDataLoadParams(ArkUI_DragEvent* event, OH_UdmfDataLoadParams* dataLoadParams) | 使用此方法为系统提供一个数据加载参数，而不是直接提供一个完整的数据对象。当用户拖拽到目标应用并落入时，系统将使用dataLoadParams请求数据。可以提高拖拽数据的加载效率，以及目标应用中处理落入数据的效率，尤其适用于数据量较大的场景。此方法应始终优先于OH_ArkUI_DragEvent_SetData使用。请参考udmf.h中的OH_UdmfDataLoadParams_Create了解如何创建和准备数据加载参数。该方法与OH_ArkUI_DragEvent_SetData存在冲突，系统始终以最后调用的方法为准。 |
-| int32_t OH_ArkUI_DragEvent_GetUdmfData(ArkUI_DragEvent* event, OH_UdmfData *data) | 从ArkUI_DragEvent中获取拖拽数据。 |
+| ArkUI_ErrorCode OH_ArkUI_DragEvent_SetDataLoadParams(ArkUI_DragEvent* event, OH_UdmfDataLoadParams* dataLoadParams) | 使用此方法为系统提供一个数据加载参数，而不是直接提供一个完整的数据对象。当用户拖拽到目标应用并落入时，系统将使用dataLoadParams请求数据。可以极大地提高拖拽大量数据的效率，以及目标应用中处理落入数据的效率。此方法应始终优先于OH_ArkUI_DragEvent_SetData使用。请参考udmf.h中的OH_UdmfDataLoadParams_Create了解如何创建和准备数据加载参数。该方法与OH_ArkUI_DragEvent_SetData存在冲突，系统始终以最后调用的方法为准。 |
+| int32_t OH_ArkUI_DragEvent_GetUdmfData(ArkUI_DragEvent* event, OH_UdmfData *data) | 从ArkUI_DragEvent中获取拖拽默认相关数据。 |
 | int32_t OH_ArkUI_DragEvent_GetDataTypeCount(ArkUI_DragEvent* event, int32_t* count) | 从ArkUI_DragEvent中获取所拖拽的数据类型种类个数。 |
 | int32_t OH_ArkUI_DragEvent_GetDataTypes(ArkUI_DragEvent *event, char *eventTypeArray[], int32_t length, int32_t maxStrLen) | 从ArkUI_DragEvent中获取拖拽数据的类型列表。 |
 | int32_t OH_ArkUI_DragEvent_GetDragResult(ArkUI_DragEvent* event, ArkUI_DragResult* result) | 从ArkUI_DragEvent中获取拖拽结果。 |
@@ -99,8 +107,8 @@
 | int32_t OH_ArkUI_SetDragEventStrictReportWithNode(ArkUI_NodeHandle node, bool enabled) | 设置是否开启严格dragEvent上报。建议开启，默认不开启。不开启时，从父组件拖移进子组件时，父组件不会收到leave通知；开启后，前后组件发生变化时，上一个组件会收到leave通知，新组件会收到enter通知。该配置与具体的UI实例相关，需通过传入一个当前UI实例上的组件节点来关联。 |
 | int32_t OH_ArkUI_SetDragEventStrictReportWithContext(ArkUI_ContextHandle uiContext, bool enabled) | 设置是否开启严格dragEvent上报。建议开启，默认不开启。不开启时，从父组件拖移进子组件时，父组件不会收到leave通知；开启后，前后组件发生变化时，上一个组件会收到leave通知，新组件会收到enter通知。该配置与具体的UI实例相关，可通过传入一个UI实例来关联。 |
 | int32_t OH_ArkUI_SetNodeAllowedDropDataTypes(ArkUI_NodeHandle node, const char* typesArray[], int32_t count) | 配置组件允许接受落入的数据类型，该接口会重置通过 OH_ArkUI_DisallowNodeAnyDropDataTypes 或OH_ArkUI_AllowNodeAllDropDataTypes进行的配置。 |
-| int32_t OH_ArkUI_DisallowNodeAnyDropDataTypes(ArkUI_NodeHandle node) | 配置组件不允许接受任何数据类型，该接口会重置通过OH_ArkUI_SetNodeAllowedDropDataTypes配置的数据类型。说明：调用OH_ArkUI_SetNodeAllowedDropDataTypes也会重置本接口的配置。 |
-| int32_t OH_ArkUI_AllowNodeAllDropDataTypes(ArkUI_NodeHandle node) | 配置组件允许接受任意数据类型，该接口会重置通过OH_ArkUI_SetNodeAllowedDropDataTypes配置的数据类型。说明：调用OH_ArkUI_SetNodeAllowedDropDataTypes也会重置本接口的配置。 |
+| int32_t OH_ArkUI_DisallowNodeAnyDropDataTypes(ArkUI_NodeHandle node) | 配置组件不允许接受任何数据类型，该接口会重置通过OH_ArkUI_SetNodeAllowedDropDataTypes配置的数据类型。 |
+| int32_t OH_ArkUI_AllowNodeAllDropDataTypes(ArkUI_NodeHandle node) | 配置组件允许接受任意数据类型，该接口会重置通过OH_ArkUI_SetNodeAllowedDropDataTypes配置的数据类型。 |
 | int32_t OH_ArkUI_SetNodeDraggable(ArkUI_NodeHandle node, bool enabled) | 设置该组件是否允许进行拖拽。 |
 | int32_t OH_ArkUI_SetNodeDragPreview(ArkUI_NodeHandle node, OH_PixelmapNative* preview) | 设置组件在被拖拽时的自定义跟手图。 |
 | ArkUI_DragPreviewOption* OH_ArkUI_CreateDragPreviewOption(void) | 构建一个ArkUI_DragPreviewOption对象。 |
@@ -108,7 +116,7 @@
 | int32_t OH_ArkUI_DragPreviewOption_SetScaleMode(ArkUI_DragPreviewOption* option, ArkUI_DragPreviewScaleMode scaleMode) | 设置拖拽跟手图是否根据系统定义自动进行缩放。 |
 | int32_t OH_ArkUI_DragPreviewOption_SetDefaultShadowEnabled(ArkUI_DragPreviewOption* option, bool enabled) | 设置跟手图背板默认的投影效果，默认不开启。 |
 | int32_t OH_ArkUI_DragPreviewOption_SetDefaultRadiusEnabled(ArkUI_DragPreviewOption* option, bool enabled) | 设置跟手图背板默认的圆角效果（默认圆角半径为12.0vp），默认不开启。 |
-| int32_t OH_ArkUI_DragPreviewOption_SetNumberBadgeEnabled(ArkUI_DragPreviewOption* option, bool enabled) | 设置跟手图背板是否显示角标，开启后，系统会根据拖拽数量自动进行角标显示。说明：调用OH_ArkUI_DragPreviewOption_SetBadgeNumber会覆盖本接口设置的值。 |
+| int32_t OH_ArkUI_DragPreviewOption_SetNumberBadgeEnabled(ArkUI_DragPreviewOption* option, bool enabled) | 设置跟手图背板是否显示角标，开启后，系统会根据拖拽数量自动进行角标显示。 |
 | int32_t OH_ArkUI_DragPreviewOption_SetBadgeNumber(ArkUI_DragPreviewOption* option, uint32_t forcedNumber) | 强制显示角标的数量，覆盖OH_ArkUI_DragPreviewOption_SetNumberBadgeEnabled设置的值。 |
 | int32_t OH_ArkUI_DragPreviewOption_SetDefaultAnimationBeforeLiftingEnabled(ArkUI_DragPreviewOption* option, bool enabled) | 配置是否开启点按时的默认动画，适用于需要在拖拽浮起前提供按压视觉反馈的场景。 |
 | int32_t OH_ArkUI_SetNodeDragPreviewOption(ArkUI_NodeHandle node, ArkUI_DragPreviewOption* option) | 将构造的ArkUI_DragPreviewOption设置给组件。 |
@@ -123,7 +131,7 @@
 | ArkUI_ErrorCode OH_ArkUI_DragAction_SetDataLoadParams(ArkUI_DragAction* dragAction,OH_UdmfDataLoadParams* dataLoadParams) | 使用此方法为系统提供一个数据加载参数，而不是直接提供一个完整的数据对象。当用户拖拽到目标应用并落入时，系统将使用dataLoadParams请求数据。可以极大地提高拖拽大量数据的效率，以及目标应用中处理落入数据的效率。此方法应始终优先于OH_ArkUI_DragAction_SetData使用。请参考udmf.h中的OH_UdmfDataLoadParams_Create了解如何创建和准备数据加载参数。该方法与OH_ArkUI_DragAction_SetData存在冲突，系统始终以最后调用的方法为准。 |
 | int32_t OH_ArkUI_DragAction_SetDragPreviewOption(ArkUI_DragAction* dragAction, ArkUI_DragPreviewOption* option) | 将构造的ArkUI_DragPreviewOption设置给ArkUI_DragAction。 |
 | int32_t OH_ArkUI_DragAction_RegisterStatusListener(ArkUI_DragAction* dragAction, void* userData,void(*listener)(ArkUI_DragAndDropInfo* dragAndDropInfo, void* userData)) | 注册拖拽状态监听回调，该回调可感知到拖拽已经发起或用户松手结束的状态，可通过该监听获取到落入方对数据的接收处理是否成功。 |
-| ArkUI_ErrorCode OH_ArkUI_DragEvent_GetDisplayId(ArkUI_DragEvent* event, int32_t* displayId) | 获取当前拖拽事件发生时所在的屏幕ID，适用于多屏设备场景下需要判断拖拽操作发生在哪个屏幕的情况，如跨屏拖拽时根据屏幕ID进行差异化处理。不支持当eventType为NODE_ON_DRAG_END时获取。 |
+| ArkUI_ErrorCode OH_ArkUI_DragEvent_GetDisplayId(ArkUI_DragEvent* event, int32_t* displayId) | 获取当前拖拽事件发生时所在的屏幕ID，不支持当eventType为NODE_ON_DRAG_END时获取。 |
 | void OH_ArkUI_DragAction_UnregisterStatusListener(ArkUI_DragAction* dragAction) | 解注册拖拽状态监听回调。 |
 | ArkUI_DragStatus OH_ArkUI_DragAndDropInfo_GetDragStatus(ArkUI_DragAndDropInfo* dragAndDropInfo) | 获取ArkUI_DragAction发起拖拽的状态，获取异常时返回 ArkUI_DRAG_STATUS_UNKNOWN。 |
 | ArkUI_DragEvent* OH_ArkUI_DragAndDropInfo_GetDragEvent(ArkUI_DragAndDropInfo* dragAndDropInfo) | 通过dragAndDropInfo获取到DragEvent，可通过DragEvent获取释放结果等。 |
@@ -137,20 +145,22 @@
 | float OH_ArkUI_DragEvent_GetTouchPointXToGlobalDisplay(ArkUI_DragEvent* event) | 从ArkUI_DragEvent中获取跟手点相对于全局屏幕的x轴坐标。 |
 | float OH_ArkUI_DragEvent_GetTouchPointYToGlobalDisplay(ArkUI_DragEvent* event) | 从ArkUI_DragEvent中获取跟手点相对于全局屏幕的y轴坐标。 |
 | ArkUI_ErrorCode OH_ArkUI_DragEvent_GetDragSource(ArkUI_DragEvent* event, char *bundleName, int32_t length) | 获取拖拽发起方的应用包名信息，可用于识别拖拽来源应用、按来源进行校验或执行差异化处理；调用时需要传递一个字符数组来接收包名字符串，并显式指明数组长度，该数组长度不小于128个字符。 |
-| ArkUI_ErrorCode OH_ArkUI_DragEvent_IsRemote(ArkUI_DragEvent* event, bool* isRemote) | 判断当前的拖拽操作是否是跨设备拖拽，适用于需要区分本地拖拽和跨设备拖拽的场景。例如，跨设备拖拽时可能需要对数据传输进行额外校验或展示不同的UI提示，而本地拖拽则可直接处理数据。 |
+| ArkUI_ErrorCode OH_ArkUI_DragEvent_IsRemote(ArkUI_DragEvent* event, bool* isRemote) | 判断当前的拖拽操作是否是跨设备拖拽。 |
 
 
 
 
-#### 枚举类型说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 枚举类型说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### ArkUI_DragResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### ArkUI_DragResult
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 enum ArkUI_DragResult
@@ -162,6 +172,7 @@ enum ArkUI_DragResult
 
 **起始版本：** 12
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ARKUI_DRAG_RESULT_SUCCESSFUL = 0 | 拖拽处理成功。 |
@@ -171,9 +182,10 @@ enum ArkUI_DragResult
 
 
 
-#### ArkUI_DropOperation
+### ArkUI_DropOperation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 enum ArkUI_DropOperation
@@ -185,6 +197,7 @@ enum ArkUI_DropOperation
 
 **起始版本：** 12
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ARKUI_DROP_OPERATION_COPY = 0 | 复制行为。 |
@@ -193,9 +206,10 @@ enum ArkUI_DropOperation
 
 
 
-#### ArkUI_PreDragStatus
+### ArkUI_PreDragStatus
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 enum ArkUI_PreDragStatus
@@ -206,6 +220,7 @@ enum ArkUI_PreDragStatus
 定义拖拽发起前的长按交互阶段的变化状态。
 
 **起始版本：** 12
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -221,9 +236,10 @@ enum ArkUI_PreDragStatus
 
 
 
-#### ArkUI_DragPreviewScaleMode
+### ArkUI_DragPreviewScaleMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 enum ArkUI_DragPreviewScaleMode
@@ -235,17 +251,19 @@ enum ArkUI_DragPreviewScaleMode
 
 **起始版本：** 12
 
+
 | 枚举项 | 描述 |
 | --- | --- |
-| ARKUI_DRAG_PREVIEW_SCALE_AUTO = 0 | 系统根据拖拽场景自动改变跟手点位置，并根据系统定义的缩放规则自动对拖拽背板图进行缩放变换。 |
+| ARKUI_DRAG_PREVIEW_SCALE_AUTO = 0 | 系统根据拖拽场景自动改变跟手点位置，根据规则自动对拖拽背板图进行缩放变换等。 |
 | ARKUI_DRAG_PREVIEW_SCALE_DISABLED = 1 | 禁用系统对拖拽背板图的缩放行为。 |
 
 
 
 
-#### ArkUI_DragStatus
+### ArkUI_DragStatus
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 enum ArkUI_DragStatus
@@ -257,6 +275,7 @@ enum ArkUI_DragStatus
 
 **起始版本：** 12
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ARKUI_DRAG_STATUS_UNKNOWN = -1 | 未知的拖拽状态。 |
@@ -266,15 +285,17 @@ enum ArkUI_DragStatus
 
 
 
-#### 函数说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 函数说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### OH_ArkUI_NodeEvent_GetDragEvent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### OH_ArkUI_NodeEvent_GetDragEvent()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 ArkUI_DragEvent* OH_ArkUI_NodeEvent_GetDragEvent(ArkUI_NodeEvent* nodeEvent)
@@ -288,12 +309,14 @@ ArkUI_DragEvent* OH_ArkUI_NodeEvent_GetDragEvent(ArkUI_NodeEvent* nodeEvent)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeEvent* nodeEvent | ArkUI_NodeEvent事件指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -302,9 +325,10 @@ ArkUI_DragEvent* OH_ArkUI_NodeEvent_GetDragEvent(ArkUI_NodeEvent* nodeEvent)
 
 
 
-#### OH_ArkUI_NodeEvent_GetPreDragStatus()
+### OH_ArkUI_NodeEvent_GetPreDragStatus()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 ArkUI_PreDragStatus OH_ArkUI_NodeEvent_GetPreDragStatus(ArkUI_NodeEvent* nodeEvent)
@@ -318,12 +342,14 @@ ArkUI_PreDragStatus OH_ArkUI_NodeEvent_GetPreDragStatus(ArkUI_NodeEvent* nodeEve
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeEvent* nodeEvent | ArkUI_NodeEvent事件指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -332,9 +358,10 @@ ArkUI_PreDragStatus OH_ArkUI_NodeEvent_GetPreDragStatus(ArkUI_NodeEvent* nodeEve
 
 
 
-#### OH_ArkUI_DragEvent_DisableDefaultDropAnimation()
+### OH_ArkUI_DragEvent_DisableDefaultDropAnimation()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_DragEvent_DisableDefaultDropAnimation(ArkUI_DragEvent* event, bool disable)
@@ -348,6 +375,7 @@ int32_t OH_ArkUI_DragEvent_DisableDefaultDropAnimation(ArkUI_DragEvent* event, b
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragEvent* event | ArkUI_DragEvent事件指针。 |
@@ -356,6 +384,7 @@ int32_t OH_ArkUI_DragEvent_DisableDefaultDropAnimation(ArkUI_DragEvent* event, b
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -363,9 +392,10 @@ int32_t OH_ArkUI_DragEvent_DisableDefaultDropAnimation(ArkUI_DragEvent* event, b
 
 
 
-#### OH_ArkUI_DragEvent_SetSuggestedDropOperation()
+### OH_ArkUI_DragEvent_SetSuggestedDropOperation()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_DragEvent_SetSuggestedDropOperation(ArkUI_DragEvent* event, ArkUI_DropOperation dropOperation)
@@ -373,11 +403,12 @@ int32_t OH_ArkUI_DragEvent_SetSuggestedDropOperation(ArkUI_DragEvent* event, Ark
 
 **描述：**
 
-设置数据处理方式，影响拖拽过程中角标的显示方式。适用于拖拽落入时需要向系统建议数据处理行为的场景。例如，当拖拽的是可复制的文本或图片内容时，建议设置为复制行为（ARKUI_DROP_OPERATION_COPY）；当拖拽的是需要从源位置移除的内容时，建议设置为剪切行为（ARKUI_DROP_OPERATION_MOVE）。与[OH_ArkUI_NotifySuggestedDropOperation](#oh_arkui_notifysuggesteddropoperation)功能相同，区别在于：本方法在同步的拖拽事件回调中直接设置，适用于不需要延迟处理拖拽结束事件的场景；OH_ArkUI_NotifySuggestedDropOperation在异步的RequestDragEndPending流程中通知，适用于已调用[OH_ArkUI_DragEvent_RequestDragEndPending](#oh_arkui_dragevent_requestdragendpending)延迟处理拖拽结束事件的场景。
+设置数据处理方式。与[OH_ArkUI_NotifySuggestedDropOperation](#oh_arkui_notifysuggesteddropoperation)功能相同，区别在于：本方法在同步的拖拽事件回调中直接设置，适用于不需要延迟处理拖拽结束事件的场景；OH_ArkUI_NotifySuggestedDropOperation在异步的RequestDragEndPending流程中通知，适用于已调用[OH_ArkUI_DragEvent_RequestDragEndPending](#oh_arkui_dragevent_requestdragendpending)延迟处理拖拽结束事件的场景。
 
 **起始版本：** 12
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -387,6 +418,7 @@ int32_t OH_ArkUI_DragEvent_SetSuggestedDropOperation(ArkUI_DragEvent* event, Ark
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -394,9 +426,10 @@ int32_t OH_ArkUI_DragEvent_SetSuggestedDropOperation(ArkUI_DragEvent* event, Ark
 
 
 
-#### OH_ArkUI_DragEvent_SetDragResult()
+### OH_ArkUI_DragEvent_SetDragResult()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_DragEvent_SetDragResult(ArkUI_DragEvent* event, ArkUI_DragResult result)
@@ -404,11 +437,12 @@ int32_t OH_ArkUI_DragEvent_SetDragResult(ArkUI_DragEvent* event, ArkUI_DragResul
 
 **描述：**
 
-作为数据接收方，在落入回调中设置拖拽事件的处理结果，以便拖出方感知数据的接收处理状态。与[OH_ArkUI_NotifyDragResult](#oh_arkui_notifydragresult)功能相同，区别在于：本方法在同步的拖拽事件回调中直接设置，适用于不需要延迟处理拖拽结束事件的场景；OH_ArkUI_NotifyDragResult在异步的RequestDragEndPending流程中通知，适用于已调用[OH_ArkUI_DragEvent_RequestDragEndPending](#oh_arkui_dragevent_requestdragendpending)延迟处理拖拽结束事件的场景。
+设置拖拽事件的结果。与[OH_ArkUI_NotifyDragResult](#oh_arkui_notifydragresult)功能相同，区别在于：本方法在同步的拖拽事件回调中直接设置，适用于不需要延迟处理拖拽结束事件的场景；OH_ArkUI_NotifyDragResult在异步的RequestDragEndPending流程中通知，适用于已调用[OH_ArkUI_DragEvent_RequestDragEndPending](#oh_arkui_dragevent_requestdragendpending)延迟处理拖拽结束事件的场景。
 
 **起始版本：** 12
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -418,6 +452,7 @@ int32_t OH_ArkUI_DragEvent_SetDragResult(ArkUI_DragEvent* event, ArkUI_DragResul
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -425,9 +460,10 @@ int32_t OH_ArkUI_DragEvent_SetDragResult(ArkUI_DragEvent* event, ArkUI_DragResul
 
 
 
-#### OH_ArkUI_DragEvent_SetData()
+### OH_ArkUI_DragEvent_SetData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_DragEvent_SetData(ArkUI_DragEvent* event, OH_UdmfData* data)
@@ -441,6 +477,7 @@ int32_t OH_ArkUI_DragEvent_SetData(ArkUI_DragEvent* event, OH_UdmfData* data)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragEvent* event | ArkUI_DragEvent事件指针。 |
@@ -449,6 +486,7 @@ int32_t OH_ArkUI_DragEvent_SetData(ArkUI_DragEvent* event, OH_UdmfData* data)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -456,9 +494,10 @@ int32_t OH_ArkUI_DragEvent_SetData(ArkUI_DragEvent* event, OH_UdmfData* data)
 
 
 
-#### OH_ArkUI_DragEvent_SetDataLoadParams()
+### OH_ArkUI_DragEvent_SetDataLoadParams()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_DragEvent_SetDataLoadParams(ArkUI_DragEvent* event, OH_UdmfDataLoadParams* dataLoadParams)
@@ -466,11 +505,12 @@ ArkUI_ErrorCode OH_ArkUI_DragEvent_SetDataLoadParams(ArkUI_DragEvent* event, OH_
 
 **描述：**
 
-使用此方法为系统提供一个数据加载参数，而不是直接提供一个完整的数据对象。当用户拖拽到目标应用并落入时，系统将使用dataLoadParams请求数据。可以提高拖拽数据的加载效率，以及目标应用中处理落入数据的效率，尤其适用于数据量较大的场景。此方法应始终优先于[OH_ArkUI_DragEvent_SetData](#oh_arkui_dragevent_setdata)使用。请参考**udmf.h**中的[OH_UdmfDataLoadParams_Create](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-udmf-h#oh_udmfdataloadparams_create)了解如何创建和准备数据加载参数。该方法与[OH_ArkUI_DragEvent_SetData](#oh_arkui_dragevent_setdata)存在冲突，系统始终以最后调用的方法为准。
+使用此方法为系统提供一个数据加载参数，而不是直接提供一个完整的数据对象。当用户拖拽到目标应用并落入时，系统将使用dataLoadParams请求数据。可以极大地提高拖拽大量数据的效率，以及目标应用中处理落入数据的效率。此方法应始终优先于[OH_ArkUI_DragEvent_SetData](#oh_arkui_dragevent_setdata)使用。请参考**udmf.h**中的[OH_UdmfDataLoadParams_Create](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-udmf-h#oh_udmfdataloadparams_create)了解如何创建和准备数据加载参数。该方法与[OH_ArkUI_DragEvent_SetData](#oh_arkui_dragevent_setdata)存在冲突，系统始终以最后调用的方法为准。
 
 **起始版本：** 20
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -480,6 +520,7 @@ ArkUI_ErrorCode OH_ArkUI_DragEvent_SetDataLoadParams(ArkUI_DragEvent* event, OH_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -487,9 +528,10 @@ ArkUI_ErrorCode OH_ArkUI_DragEvent_SetDataLoadParams(ArkUI_DragEvent* event, OH_
 
 
 
-#### OH_ArkUI_DragEvent_GetUdmfData()
+### OH_ArkUI_DragEvent_GetUdmfData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_DragEvent_GetUdmfData(ArkUI_DragEvent* event, OH_UdmfData *data)
@@ -497,11 +539,12 @@ int32_t OH_ArkUI_DragEvent_GetUdmfData(ArkUI_DragEvent* event, OH_UdmfData *data
 
 **描述：**
 
-从ArkUI_DragEvent中获取拖拽数据。
+从ArkUI_DragEvent中获取拖拽默认相关数据。
 
 **起始版本：** 12
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -511,6 +554,7 @@ int32_t OH_ArkUI_DragEvent_GetUdmfData(ArkUI_DragEvent* event, OH_UdmfData *data
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -518,9 +562,10 @@ int32_t OH_ArkUI_DragEvent_GetUdmfData(ArkUI_DragEvent* event, OH_UdmfData *data
 
 
 
-#### OH_ArkUI_DragEvent_GetDataTypeCount()
+### OH_ArkUI_DragEvent_GetDataTypeCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_DragEvent_GetDataTypeCount(ArkUI_DragEvent* event, int32_t* count)
@@ -534,6 +579,7 @@ int32_t OH_ArkUI_DragEvent_GetDataTypeCount(ArkUI_DragEvent* event, int32_t* cou
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragEvent* event | ArkUI_DragEvent事件指针。 |
@@ -542,6 +588,7 @@ int32_t OH_ArkUI_DragEvent_GetDataTypeCount(ArkUI_DragEvent* event, int32_t* cou
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -549,9 +596,10 @@ int32_t OH_ArkUI_DragEvent_GetDataTypeCount(ArkUI_DragEvent* event, int32_t* cou
 
 
 
-#### OH_ArkUI_DragEvent_GetDataTypes()
+### OH_ArkUI_DragEvent_GetDataTypes()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_DragEvent_GetDataTypes(ArkUI_DragEvent *event, char *eventTypeArray[], int32_t length, int32_t maxStrLen)
@@ -565,15 +613,17 @@ int32_t OH_ArkUI_DragEvent_GetDataTypes(ArkUI_DragEvent *event, char *eventTypeA
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragEvent *event | ArkUI_DragEvent事件指针。 |
 | char *eventTypeArray[] | 返回拖拽数据的类型列表，需要先自行创建字符串数组。 |
 | int32_t length | 数组总长度，不应少于使用OH_ArkUI_DragEvent_GetDataTypeCount获取到的数量。 |
-| int32_t maxStrLen | 拖拽数据类型的最大字符串长度，用于限制每个数据类型字符串的缓冲区大小。取值原则：建议不小于128个字符，以确保能完整接收所有标准UDMF数据类型字符串。 |
+| int32_t maxStrLen | 拖拽数据类型的最大字符串长度。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -582,9 +632,10 @@ int32_t OH_ArkUI_DragEvent_GetDataTypes(ArkUI_DragEvent *event, char *eventTypeA
 
 
 
-#### OH_ArkUI_DragEvent_GetDragResult()
+### OH_ArkUI_DragEvent_GetDragResult()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_DragEvent_GetDragResult(ArkUI_DragEvent* event, ArkUI_DragResult* result)
@@ -598,6 +649,7 @@ int32_t OH_ArkUI_DragEvent_GetDragResult(ArkUI_DragEvent* event, ArkUI_DragResul
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragEvent* event | ArkUI_DragEvent事件指针。 |
@@ -606,6 +658,7 @@ int32_t OH_ArkUI_DragEvent_GetDragResult(ArkUI_DragEvent* event, ArkUI_DragResul
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -613,9 +666,10 @@ int32_t OH_ArkUI_DragEvent_GetDragResult(ArkUI_DragEvent* event, ArkUI_DragResul
 
 
 
-#### OH_ArkUI_DragEvent_GetDropOperation()
+### OH_ArkUI_DragEvent_GetDropOperation()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_DragEvent_GetDropOperation(ArkUI_DragEvent* event, ArkUI_DropOperation* operation)
@@ -629,6 +683,7 @@ int32_t OH_ArkUI_DragEvent_GetDropOperation(ArkUI_DragEvent* event, ArkUI_DropOp
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragEvent* event | ArkUI_DragEvent事件指针。 |
@@ -637,6 +692,7 @@ int32_t OH_ArkUI_DragEvent_GetDropOperation(ArkUI_DragEvent* event, ArkUI_DropOp
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 可能原因：1. 参数为空或event非有效的DragEvent。 |
@@ -644,9 +700,10 @@ int32_t OH_ArkUI_DragEvent_GetDropOperation(ArkUI_DragEvent* event, ArkUI_DropOp
 
 
 
-#### OH_ArkUI_DragEvent_GetPreviewTouchPointX()
+### OH_ArkUI_DragEvent_GetPreviewTouchPointX()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 float OH_ArkUI_DragEvent_GetPreviewTouchPointX(ArkUI_DragEvent* event)
@@ -660,12 +717,14 @@ float OH_ArkUI_DragEvent_GetPreviewTouchPointX(ArkUI_DragEvent* event)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragEvent* event | ArkUI_DragEvent事件指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -674,9 +733,10 @@ float OH_ArkUI_DragEvent_GetPreviewTouchPointX(ArkUI_DragEvent* event)
 
 
 
-#### OH_ArkUI_DragEvent_GetPreviewTouchPointY()
+### OH_ArkUI_DragEvent_GetPreviewTouchPointY()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 float OH_ArkUI_DragEvent_GetPreviewTouchPointY(ArkUI_DragEvent* event)
@@ -690,12 +750,14 @@ float OH_ArkUI_DragEvent_GetPreviewTouchPointY(ArkUI_DragEvent* event)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragEvent* event | ArkUI_DragEvent事件指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -704,9 +766,10 @@ float OH_ArkUI_DragEvent_GetPreviewTouchPointY(ArkUI_DragEvent* event)
 
 
 
-#### OH_ArkUI_DragEvent_GetPreviewRectWidth()
+### OH_ArkUI_DragEvent_GetPreviewRectWidth()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 float OH_ArkUI_DragEvent_GetPreviewRectWidth(ArkUI_DragEvent* event)
@@ -720,12 +783,14 @@ float OH_ArkUI_DragEvent_GetPreviewRectWidth(ArkUI_DragEvent* event)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragEvent* event | ArkUI_DragEvent事件指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -734,9 +799,10 @@ float OH_ArkUI_DragEvent_GetPreviewRectWidth(ArkUI_DragEvent* event)
 
 
 
-#### OH_ArkUI_DragEvent_GetPreviewRectHeight()
+### OH_ArkUI_DragEvent_GetPreviewRectHeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 float OH_ArkUI_DragEvent_GetPreviewRectHeight(ArkUI_DragEvent* event)
@@ -750,12 +816,14 @@ float OH_ArkUI_DragEvent_GetPreviewRectHeight(ArkUI_DragEvent* event)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragEvent* event | ArkUI_DragEvent事件指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -764,9 +832,10 @@ float OH_ArkUI_DragEvent_GetPreviewRectHeight(ArkUI_DragEvent* event)
 
 
 
-#### OH_ArkUI_DragEvent_GetTouchPointXToWindow()
+### OH_ArkUI_DragEvent_GetTouchPointXToWindow()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 float OH_ArkUI_DragEvent_GetTouchPointXToWindow(ArkUI_DragEvent* event)
@@ -780,12 +849,14 @@ float OH_ArkUI_DragEvent_GetTouchPointXToWindow(ArkUI_DragEvent* event)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragEvent* event | ArkUI_DragEvent事件指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -794,9 +865,10 @@ float OH_ArkUI_DragEvent_GetTouchPointXToWindow(ArkUI_DragEvent* event)
 
 
 
-#### OH_ArkUI_DragEvent_GetTouchPointYToWindow()
+### OH_ArkUI_DragEvent_GetTouchPointYToWindow()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 float OH_ArkUI_DragEvent_GetTouchPointYToWindow(ArkUI_DragEvent* event)
@@ -810,12 +882,14 @@ float OH_ArkUI_DragEvent_GetTouchPointYToWindow(ArkUI_DragEvent* event)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragEvent* event | ArkUI_DragEvent事件指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -824,9 +898,10 @@ float OH_ArkUI_DragEvent_GetTouchPointYToWindow(ArkUI_DragEvent* event)
 
 
 
-#### OH_ArkUI_DragEvent_GetTouchPointXToDisplay()
+### OH_ArkUI_DragEvent_GetTouchPointXToDisplay()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 float OH_ArkUI_DragEvent_GetTouchPointXToDisplay(ArkUI_DragEvent* event)
@@ -840,12 +915,14 @@ float OH_ArkUI_DragEvent_GetTouchPointXToDisplay(ArkUI_DragEvent* event)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragEvent* event | ArkUI_DragEvent事件指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -854,9 +931,10 @@ float OH_ArkUI_DragEvent_GetTouchPointXToDisplay(ArkUI_DragEvent* event)
 
 
 
-#### OH_ArkUI_DragEvent_GetTouchPointYToDisplay()
+### OH_ArkUI_DragEvent_GetTouchPointYToDisplay()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 float OH_ArkUI_DragEvent_GetTouchPointYToDisplay(ArkUI_DragEvent* event)
@@ -870,12 +948,14 @@ float OH_ArkUI_DragEvent_GetTouchPointYToDisplay(ArkUI_DragEvent* event)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragEvent* event | ArkUI_DragEvent事件指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -884,9 +964,10 @@ float OH_ArkUI_DragEvent_GetTouchPointYToDisplay(ArkUI_DragEvent* event)
 
 
 
-#### OH_ArkUI_DragEvent_GetVelocityX()
+### OH_ArkUI_DragEvent_GetVelocityX()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 float OH_ArkUI_DragEvent_GetVelocityX(ArkUI_DragEvent* event)
@@ -900,12 +981,14 @@ float OH_ArkUI_DragEvent_GetVelocityX(ArkUI_DragEvent* event)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragEvent* event | ArkUI_DragEvent事件指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -914,9 +997,10 @@ float OH_ArkUI_DragEvent_GetVelocityX(ArkUI_DragEvent* event)
 
 
 
-#### OH_ArkUI_DragEvent_GetVelocityY()
+### OH_ArkUI_DragEvent_GetVelocityY()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 float OH_ArkUI_DragEvent_GetVelocityY(ArkUI_DragEvent* event)
@@ -930,12 +1014,14 @@ float OH_ArkUI_DragEvent_GetVelocityY(ArkUI_DragEvent* event)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragEvent* event | ArkUI_DragEvent事件指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -944,9 +1030,10 @@ float OH_ArkUI_DragEvent_GetVelocityY(ArkUI_DragEvent* event)
 
 
 
-#### OH_ArkUI_DragEvent_GetVelocity()
+### OH_ArkUI_DragEvent_GetVelocity()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 float OH_ArkUI_DragEvent_GetVelocity(ArkUI_DragEvent* event)
@@ -960,12 +1047,14 @@ float OH_ArkUI_DragEvent_GetVelocity(ArkUI_DragEvent* event)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragEvent* event | ArkUI_DragEvent事件指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -974,9 +1063,10 @@ float OH_ArkUI_DragEvent_GetVelocity(ArkUI_DragEvent* event)
 
 
 
-#### OH_ArkUI_DragEvent_GetModifierKeyStates()
+### OH_ArkUI_DragEvent_GetModifierKeyStates()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_DragEvent_GetModifierKeyStates(ArkUI_DragEvent* event, uint64_t* keys)
@@ -990,6 +1080,7 @@ int32_t OH_ArkUI_DragEvent_GetModifierKeyStates(ArkUI_DragEvent* event, uint64_t
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragEvent* event | ArkUI_DragEvent事件指针。 |
@@ -998,6 +1089,7 @@ int32_t OH_ArkUI_DragEvent_GetModifierKeyStates(ArkUI_DragEvent* event, uint64_t
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1005,9 +1097,10 @@ int32_t OH_ArkUI_DragEvent_GetModifierKeyStates(ArkUI_DragEvent* event, uint64_t
 
 
 
-#### OH_ArkUI_DragEvent_StartDataLoading()
+### OH_ArkUI_DragEvent_StartDataLoading()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_DragEvent_StartDataLoading(ArkUI_DragEvent* event, OH_UdmfGetDataParams* options, char* key, unsigned int keyLen)
@@ -1021,15 +1114,17 @@ int32_t OH_ArkUI_DragEvent_StartDataLoading(ArkUI_DragEvent* event, OH_UdmfGetDa
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragEvent* event | ArkUI_DragEvent事件指针。 |
 | OH_UdmfGetDataParams* options | 数据获取参数指针，用于配置本次拖拽数据同步时的数据请求选项。 |
-| char* key | 返回数据加载成功启动后分配的key值，用于接收key值的字符数组长度不小于UDMF_KEY_BUFFER_LEN。 |
-| unsigned int keyLen | key字符串的长度，不应小于UDMF_KEY_BUFFER_LEN定义的长度，用于确保key值能够被完整接收。 |
+| char* key | 返回数据设置成功之后的key值，用于接收key值的字符数组长度不小于UDMF_KEY_BUFFER_LEN。 |
+| unsigned int keyLen | 表示key字符串的长度。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1038,9 +1133,10 @@ int32_t OH_ArkUI_DragEvent_StartDataLoading(ArkUI_DragEvent* event, OH_UdmfGetDa
 
 
 
-#### OH_ArkUI_CancelDataLoading()
+### OH_ArkUI_CancelDataLoading()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_CancelDataLoading(ArkUI_ContextHandle uiContext, const char* key)
@@ -1054,6 +1150,7 @@ int32_t OH_ArkUI_CancelDataLoading(ArkUI_ContextHandle uiContext, const char* ke
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_ContextHandle uiContext | UI实例对象指针。 |
@@ -1062,6 +1159,7 @@ int32_t OH_ArkUI_CancelDataLoading(ArkUI_ContextHandle uiContext, const char* ke
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1069,9 +1167,10 @@ int32_t OH_ArkUI_CancelDataLoading(ArkUI_ContextHandle uiContext, const char* ke
 
 
 
-#### OH_ArkUI_DisableDropDataPrefetchOnNode()
+### OH_ArkUI_DisableDropDataPrefetchOnNode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_DisableDropDataPrefetchOnNode(ArkUI_NodeHandle node, bool disabled)
@@ -1085,6 +1184,7 @@ int32_t OH_ArkUI_DisableDropDataPrefetchOnNode(ArkUI_NodeHandle node, bool disab
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 组件节点指针。 |
@@ -1093,6 +1193,7 @@ int32_t OH_ArkUI_DisableDropDataPrefetchOnNode(ArkUI_NodeHandle node, bool disab
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1100,9 +1201,10 @@ int32_t OH_ArkUI_DisableDropDataPrefetchOnNode(ArkUI_NodeHandle node, bool disab
 
 
 
-#### OH_ArkUI_SetDragEventStrictReportWithNode()
+### OH_ArkUI_SetDragEventStrictReportWithNode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_SetDragEventStrictReportWithNode(ArkUI_NodeHandle node, bool enabled)
@@ -1116,6 +1218,7 @@ int32_t OH_ArkUI_SetDragEventStrictReportWithNode(ArkUI_NodeHandle node, bool en
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 组件节点指针。 |
@@ -1124,6 +1227,7 @@ int32_t OH_ArkUI_SetDragEventStrictReportWithNode(ArkUI_NodeHandle node, bool en
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1131,9 +1235,10 @@ int32_t OH_ArkUI_SetDragEventStrictReportWithNode(ArkUI_NodeHandle node, bool en
 
 
 
-#### OH_ArkUI_SetDragEventStrictReportWithContext()
+### OH_ArkUI_SetDragEventStrictReportWithContext()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_SetDragEventStrictReportWithContext(ArkUI_ContextHandle uiContext, bool enabled)
@@ -1147,6 +1252,7 @@ int32_t OH_ArkUI_SetDragEventStrictReportWithContext(ArkUI_ContextHandle uiConte
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_ContextHandle uiContext | UI实例指针。 |
@@ -1155,6 +1261,7 @@ int32_t OH_ArkUI_SetDragEventStrictReportWithContext(ArkUI_ContextHandle uiConte
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1162,9 +1269,10 @@ int32_t OH_ArkUI_SetDragEventStrictReportWithContext(ArkUI_ContextHandle uiConte
 
 
 
-#### OH_ArkUI_SetNodeAllowedDropDataTypes()
+### OH_ArkUI_SetNodeAllowedDropDataTypes()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_SetNodeAllowedDropDataTypes(ArkUI_NodeHandle node, const char* typesArray[], int32_t count)
@@ -1178,14 +1286,16 @@ int32_t OH_ArkUI_SetNodeAllowedDropDataTypes(ArkUI_NodeHandle node, const char* 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 组件节点指针。 |
 | const char* typesArray[] | 允许落入的数据类型数组，数组元素为UDMF定义的统一数据类型标识符字符串。 |
-| int32_t count | 数组的长度，表示typesArray中数据类型字符串的个数，应与typesArray数组的实际元素数量一致。 |
+| int32_t count | 数组的长度。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1194,9 +1304,10 @@ int32_t OH_ArkUI_SetNodeAllowedDropDataTypes(ArkUI_NodeHandle node, const char* 
 
 
 
-#### OH_ArkUI_DisallowNodeAnyDropDataTypes()
+### OH_ArkUI_DisallowNodeAnyDropDataTypes()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_DisallowNodeAnyDropDataTypes(ArkUI_NodeHandle node)
@@ -1204,11 +1315,12 @@ int32_t OH_ArkUI_DisallowNodeAnyDropDataTypes(ArkUI_NodeHandle node)
 
 **描述：**
 
-配置组件不允许接受任何数据类型，该接口会重置通过[OH_ArkUI_SetNodeAllowedDropDataTypes](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drag-and-drop-h#oh_arkui_setnodealloweddropdatatypes)配置的数据类型。说明：调用OH_ArkUI_SetNodeAllowedDropDataTypes也会重置本接口的配置。
+配置组件不允许接受任何数据类型，该接口会重置通过[OH_ArkUI_SetNodeAllowedDropDataTypes](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drag-and-drop-h#oh_arkui_setnodealloweddropdatatypes)配置的数据类型。
 
 **起始版本：** 12
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -1217,6 +1329,7 @@ int32_t OH_ArkUI_DisallowNodeAnyDropDataTypes(ArkUI_NodeHandle node)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1224,9 +1337,10 @@ int32_t OH_ArkUI_DisallowNodeAnyDropDataTypes(ArkUI_NodeHandle node)
 
 
 
-#### OH_ArkUI_AllowNodeAllDropDataTypes()
+### OH_ArkUI_AllowNodeAllDropDataTypes()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_AllowNodeAllDropDataTypes(ArkUI_NodeHandle node)
@@ -1234,11 +1348,12 @@ int32_t OH_ArkUI_AllowNodeAllDropDataTypes(ArkUI_NodeHandle node)
 
 **描述：**
 
-配置组件允许接受任意数据类型，该接口会重置通过[OH_ArkUI_SetNodeAllowedDropDataTypes](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drag-and-drop-h#oh_arkui_setnodealloweddropdatatypes)配置的数据类型。说明：调用OH_ArkUI_SetNodeAllowedDropDataTypes也会重置本接口的配置。
+配置组件允许接受任意数据类型，该接口会重置通过[OH_ArkUI_SetNodeAllowedDropDataTypes](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drag-and-drop-h#oh_arkui_setnodealloweddropdatatypes)配置的数据类型。
 
 **起始版本：** 12
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -1247,6 +1362,7 @@ int32_t OH_ArkUI_AllowNodeAllDropDataTypes(ArkUI_NodeHandle node)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1254,9 +1370,10 @@ int32_t OH_ArkUI_AllowNodeAllDropDataTypes(ArkUI_NodeHandle node)
 
 
 
-#### OH_ArkUI_SetNodeDraggable()
+### OH_ArkUI_SetNodeDraggable()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_SetNodeDraggable(ArkUI_NodeHandle node, bool enabled)
@@ -1270,6 +1387,7 @@ int32_t OH_ArkUI_SetNodeDraggable(ArkUI_NodeHandle node, bool enabled)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 组件节点指针。 |
@@ -1278,6 +1396,7 @@ int32_t OH_ArkUI_SetNodeDraggable(ArkUI_NodeHandle node, bool enabled)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1285,9 +1404,10 @@ int32_t OH_ArkUI_SetNodeDraggable(ArkUI_NodeHandle node, bool enabled)
 
 
 
-#### OH_ArkUI_SetNodeDragPreview()
+### OH_ArkUI_SetNodeDragPreview()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_SetNodeDragPreview(ArkUI_NodeHandle node, OH_PixelmapNative* preview)
@@ -1301,6 +1421,7 @@ int32_t OH_ArkUI_SetNodeDragPreview(ArkUI_NodeHandle node, OH_PixelmapNative* pr
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 目标组件节点指针。 |
@@ -1309,6 +1430,7 @@ int32_t OH_ArkUI_SetNodeDragPreview(ArkUI_NodeHandle node, OH_PixelmapNative* pr
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1316,9 +1438,10 @@ int32_t OH_ArkUI_SetNodeDragPreview(ArkUI_NodeHandle node, OH_PixelmapNative* pr
 
 
 
-#### OH_ArkUI_CreateDragPreviewOption()
+### OH_ArkUI_CreateDragPreviewOption()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 ArkUI_DragPreviewOption* OH_ArkUI_CreateDragPreviewOption(void)
@@ -1332,6 +1455,7 @@ ArkUI_DragPreviewOption* OH_ArkUI_CreateDragPreviewOption(void)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_DragPreviewOption* | ArkUI_DragPreviewOption对象，用于配置拖拽跟手图的自定义参数。 |
@@ -1339,9 +1463,10 @@ ArkUI_DragPreviewOption* OH_ArkUI_CreateDragPreviewOption(void)
 
 
 
-#### OH_ArkUI_DragPreviewOption_Dispose()
+### OH_ArkUI_DragPreviewOption_Dispose()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 void OH_ArkUI_DragPreviewOption_Dispose(ArkUI_DragPreviewOption* option)
@@ -1355,6 +1480,7 @@ void OH_ArkUI_DragPreviewOption_Dispose(ArkUI_DragPreviewOption* option)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragPreviewOption* option | 待销毁的拖拽跟手图自定义参数对象。 |
@@ -1362,9 +1488,10 @@ void OH_ArkUI_DragPreviewOption_Dispose(ArkUI_DragPreviewOption* option)
 
 
 
-#### OH_ArkUI_DragPreviewOption_SetScaleMode()
+### OH_ArkUI_DragPreviewOption_SetScaleMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_DragPreviewOption_SetScaleMode(ArkUI_DragPreviewOption* option, ArkUI_DragPreviewScaleMode scaleMode)
@@ -1378,6 +1505,7 @@ int32_t OH_ArkUI_DragPreviewOption_SetScaleMode(ArkUI_DragPreviewOption* option,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragPreviewOption* option | 拖拽跟手图自定义参数对象，用于设置跟手图缩放模式。 |
@@ -1386,6 +1514,7 @@ int32_t OH_ArkUI_DragPreviewOption_SetScaleMode(ArkUI_DragPreviewOption* option,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1393,9 +1522,10 @@ int32_t OH_ArkUI_DragPreviewOption_SetScaleMode(ArkUI_DragPreviewOption* option,
 
 
 
-#### OH_ArkUI_DragPreviewOption_SetDefaultShadowEnabled()
+### OH_ArkUI_DragPreviewOption_SetDefaultShadowEnabled()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_DragPreviewOption_SetDefaultShadowEnabled(ArkUI_DragPreviewOption* option, bool enabled)
@@ -1409,6 +1539,7 @@ int32_t OH_ArkUI_DragPreviewOption_SetDefaultShadowEnabled(ArkUI_DragPreviewOpti
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragPreviewOption* option | 拖拽跟手图自定义参数对象，用于设置跟手图背板默认投影效果。 |
@@ -1417,6 +1548,7 @@ int32_t OH_ArkUI_DragPreviewOption_SetDefaultShadowEnabled(ArkUI_DragPreviewOpti
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1424,9 +1556,10 @@ int32_t OH_ArkUI_DragPreviewOption_SetDefaultShadowEnabled(ArkUI_DragPreviewOpti
 
 
 
-#### OH_ArkUI_DragPreviewOption_SetDefaultRadiusEnabled()
+### OH_ArkUI_DragPreviewOption_SetDefaultRadiusEnabled()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_DragPreviewOption_SetDefaultRadiusEnabled(ArkUI_DragPreviewOption* option, bool enabled)
@@ -1440,6 +1573,7 @@ int32_t OH_ArkUI_DragPreviewOption_SetDefaultRadiusEnabled(ArkUI_DragPreviewOpti
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragPreviewOption* option | 拖拽跟手图自定义参数对象，用于设置跟手图背板默认圆角效果。 |
@@ -1448,6 +1582,7 @@ int32_t OH_ArkUI_DragPreviewOption_SetDefaultRadiusEnabled(ArkUI_DragPreviewOpti
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1455,9 +1590,10 @@ int32_t OH_ArkUI_DragPreviewOption_SetDefaultRadiusEnabled(ArkUI_DragPreviewOpti
 
 
 
-#### OH_ArkUI_DragPreviewOption_SetNumberBadgeEnabled()
+### OH_ArkUI_DragPreviewOption_SetNumberBadgeEnabled()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_DragPreviewOption_SetNumberBadgeEnabled(ArkUI_DragPreviewOption* option, bool enabled)
@@ -1465,11 +1601,12 @@ int32_t OH_ArkUI_DragPreviewOption_SetNumberBadgeEnabled(ArkUI_DragPreviewOption
 
 **描述：**
 
-设置跟手图背板是否显示角标，开启后，系统会根据拖拽数量自动进行角标显示。说明：调用[OH_ArkUI_DragPreviewOption_SetBadgeNumber](#oh_arkui_dragpreviewoption_setbadgenumber)会覆盖本接口设置的值。
+设置跟手图背板是否显示角标，开启后，系统会根据拖拽数量自动进行角标显示。
 
 **起始版本：** 12
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -1479,6 +1616,7 @@ int32_t OH_ArkUI_DragPreviewOption_SetNumberBadgeEnabled(ArkUI_DragPreviewOption
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1486,9 +1624,10 @@ int32_t OH_ArkUI_DragPreviewOption_SetNumberBadgeEnabled(ArkUI_DragPreviewOption
 
 
 
-#### OH_ArkUI_DragPreviewOption_SetBadgeNumber()
+### OH_ArkUI_DragPreviewOption_SetBadgeNumber()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_DragPreviewOption_SetBadgeNumber(ArkUI_DragPreviewOption* option, uint32_t forcedNumber)
@@ -1502,13 +1641,15 @@ int32_t OH_ArkUI_DragPreviewOption_SetBadgeNumber(ArkUI_DragPreviewOption* optio
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragPreviewOption* option | 拖拽跟手图自定义参数对象，用于设置强制显示的角标数量。 |
-| uint32_t forcedNumber | 角标的数量，取值原则：取值为正整数，用于强制指定角标显示数量。 |
+| uint32_t forcedNumber | 角标的数量。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1517,9 +1658,10 @@ int32_t OH_ArkUI_DragPreviewOption_SetBadgeNumber(ArkUI_DragPreviewOption* optio
 
 
 
-#### OH_ArkUI_DragPreviewOption_SetDefaultAnimationBeforeLiftingEnabled()
+### OH_ArkUI_DragPreviewOption_SetDefaultAnimationBeforeLiftingEnabled()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_DragPreviewOption_SetDefaultAnimationBeforeLiftingEnabled(ArkUI_DragPreviewOption* option, bool enabled)
@@ -1533,6 +1675,7 @@ int32_t OH_ArkUI_DragPreviewOption_SetDefaultAnimationBeforeLiftingEnabled(ArkUI
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragPreviewOption* option | 拖拽跟手图自定义参数对象。 |
@@ -1541,6 +1684,7 @@ int32_t OH_ArkUI_DragPreviewOption_SetDefaultAnimationBeforeLiftingEnabled(ArkUI
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1548,9 +1692,10 @@ int32_t OH_ArkUI_DragPreviewOption_SetDefaultAnimationBeforeLiftingEnabled(ArkUI
 
 
 
-#### OH_ArkUI_SetNodeDragPreviewOption()
+### OH_ArkUI_SetNodeDragPreviewOption()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_SetNodeDragPreviewOption(ArkUI_NodeHandle node, ArkUI_DragPreviewOption* option)
@@ -1564,6 +1709,7 @@ int32_t OH_ArkUI_SetNodeDragPreviewOption(ArkUI_NodeHandle node, ArkUI_DragPrevi
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 组件节点指针。 |
@@ -1572,6 +1718,7 @@ int32_t OH_ArkUI_SetNodeDragPreviewOption(ArkUI_NodeHandle node, ArkUI_DragPrevi
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1579,9 +1726,10 @@ int32_t OH_ArkUI_SetNodeDragPreviewOption(ArkUI_NodeHandle node, ArkUI_DragPrevi
 
 
 
-#### OH_ArkUI_CreateDragActionWithNode()
+### OH_ArkUI_CreateDragActionWithNode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 ArkUI_DragAction* OH_ArkUI_CreateDragActionWithNode(ArkUI_NodeHandle node)
@@ -1595,12 +1743,14 @@ ArkUI_DragAction* OH_ArkUI_CreateDragActionWithNode(ArkUI_NodeHandle node)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 组件节点指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1609,9 +1759,10 @@ ArkUI_DragAction* OH_ArkUI_CreateDragActionWithNode(ArkUI_NodeHandle node)
 
 
 
-#### OH_ArkUI_CreateDragActionWithContext()
+### OH_ArkUI_CreateDragActionWithContext()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 ArkUI_DragAction* OH_ArkUI_CreateDragActionWithContext(ArkUI_ContextHandle uiContext)
@@ -1625,12 +1776,14 @@ ArkUI_DragAction* OH_ArkUI_CreateDragActionWithContext(ArkUI_ContextHandle uiCon
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_ContextHandle uiContext | UI实例对象指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1639,9 +1792,10 @@ ArkUI_DragAction* OH_ArkUI_CreateDragActionWithContext(ArkUI_ContextHandle uiCon
 
 
 
-#### OH_ArkUI_DragAction_Dispose()
+### OH_ArkUI_DragAction_Dispose()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 void OH_ArkUI_DragAction_Dispose(ArkUI_DragAction* dragAction)
@@ -1655,6 +1809,7 @@ void OH_ArkUI_DragAction_Dispose(ArkUI_DragAction* dragAction)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragAction* dragAction | 拖拽行为对象。 |
@@ -1662,9 +1817,10 @@ void OH_ArkUI_DragAction_Dispose(ArkUI_DragAction* dragAction)
 
 
 
-#### OH_ArkUI_DragAction_SetPointerId()
+### OH_ArkUI_DragAction_SetPointerId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_DragAction_SetPointerId(ArkUI_DragAction* dragAction, int32_t pointer)
@@ -1678,6 +1834,7 @@ int32_t OH_ArkUI_DragAction_SetPointerId(ArkUI_DragAction* dragAction, int32_t p
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragAction* dragAction | 拖拽行为对象。 |
@@ -1686,6 +1843,7 @@ int32_t OH_ArkUI_DragAction_SetPointerId(ArkUI_DragAction* dragAction, int32_t p
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1693,9 +1851,10 @@ int32_t OH_ArkUI_DragAction_SetPointerId(ArkUI_DragAction* dragAction, int32_t p
 
 
 
-#### OH_ArkUI_DragAction_SetPixelMaps()
+### OH_ArkUI_DragAction_SetPixelMaps()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_DragAction_SetPixelMaps(ArkUI_DragAction* dragAction, OH_PixelmapNative* pixelmapArray[], int32_t size)
@@ -1709,14 +1868,16 @@ int32_t OH_ArkUI_DragAction_SetPixelMaps(ArkUI_DragAction* dragAction, OH_Pixelm
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragAction* dragAction | 拖拽行为对象。 |
 | OH_PixelmapNative* pixelmapArray[] | 拖拽跟手图位图数组。 说明： 该参数必须为堆上分配对象，请开发者手动管理其生命周期。 |
-| int32_t size | 拖拽跟手图数量，取值范围为大于0的整数，需与pixelmapArray的实际元素数量一致。 |
+| int32_t size | 拖拽跟手图数量。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1725,9 +1886,10 @@ int32_t OH_ArkUI_DragAction_SetPixelMaps(ArkUI_DragAction* dragAction, OH_Pixelm
 
 
 
-#### OH_ArkUI_DragAction_SetTouchPointX()
+### OH_ArkUI_DragAction_SetTouchPointX()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_DragAction_SetTouchPointX(ArkUI_DragAction* dragAction, float x)
@@ -1741,6 +1903,7 @@ int32_t OH_ArkUI_DragAction_SetTouchPointX(ArkUI_DragAction* dragAction, float x
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragAction* dragAction | 拖拽行为对象。 |
@@ -1749,6 +1912,7 @@ int32_t OH_ArkUI_DragAction_SetTouchPointX(ArkUI_DragAction* dragAction, float x
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1756,9 +1920,10 @@ int32_t OH_ArkUI_DragAction_SetTouchPointX(ArkUI_DragAction* dragAction, float x
 
 
 
-#### OH_ArkUI_DragAction_SetTouchPointY()
+### OH_ArkUI_DragAction_SetTouchPointY()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_DragAction_SetTouchPointY(ArkUI_DragAction* dragAction, float y)
@@ -1772,6 +1937,7 @@ int32_t OH_ArkUI_DragAction_SetTouchPointY(ArkUI_DragAction* dragAction, float y
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragAction* dragAction | 拖拽行为对象。 |
@@ -1780,6 +1946,7 @@ int32_t OH_ArkUI_DragAction_SetTouchPointY(ArkUI_DragAction* dragAction, float y
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1787,9 +1954,10 @@ int32_t OH_ArkUI_DragAction_SetTouchPointY(ArkUI_DragAction* dragAction, float y
 
 
 
-#### OH_ArkUI_DragAction_SetData()
+### OH_ArkUI_DragAction_SetData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_DragAction_SetData(ArkUI_DragAction* dragAction, OH_UdmfData* data)
@@ -1803,6 +1971,7 @@ int32_t OH_ArkUI_DragAction_SetData(ArkUI_DragAction* dragAction, OH_UdmfData* d
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragAction* dragAction | 拖拽行为对象。 |
@@ -1811,6 +1980,7 @@ int32_t OH_ArkUI_DragAction_SetData(ArkUI_DragAction* dragAction, OH_UdmfData* d
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1818,9 +1988,10 @@ int32_t OH_ArkUI_DragAction_SetData(ArkUI_DragAction* dragAction, OH_UdmfData* d
 
 
 
-#### OH_ArkUI_DragAction_SetDataLoadParams()
+### OH_ArkUI_DragAction_SetDataLoadParams()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_DragAction_SetDataLoadParams(ArkUI_DragAction* dragAction, OH_UdmfDataLoadParams* dataLoadParams)
@@ -1834,6 +2005,7 @@ ArkUI_ErrorCode OH_ArkUI_DragAction_SetDataLoadParams(ArkUI_DragAction* dragActi
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragAction* dragAction | 拖拽行为对象。 |
@@ -1842,6 +2014,7 @@ ArkUI_ErrorCode OH_ArkUI_DragAction_SetDataLoadParams(ArkUI_DragAction* dragActi
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1849,9 +2022,10 @@ ArkUI_ErrorCode OH_ArkUI_DragAction_SetDataLoadParams(ArkUI_DragAction* dragActi
 
 
 
-#### OH_ArkUI_DragAction_SetDragPreviewOption()
+### OH_ArkUI_DragAction_SetDragPreviewOption()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_DragAction_SetDragPreviewOption(ArkUI_DragAction* dragAction, ArkUI_DragPreviewOption* option)
@@ -1865,6 +2039,7 @@ int32_t OH_ArkUI_DragAction_SetDragPreviewOption(ArkUI_DragAction* dragAction, A
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragAction* dragAction | 拖拽行为对象。 |
@@ -1873,6 +2048,7 @@ int32_t OH_ArkUI_DragAction_SetDragPreviewOption(ArkUI_DragAction* dragAction, A
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1880,9 +2056,10 @@ int32_t OH_ArkUI_DragAction_SetDragPreviewOption(ArkUI_DragAction* dragAction, A
 
 
 
-#### OH_ArkUI_DragAction_RegisterStatusListener()
+### OH_ArkUI_DragAction_RegisterStatusListener()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_DragAction_RegisterStatusListener(ArkUI_DragAction* dragAction, void* userData, void(*listener)(ArkUI_DragAndDropInfo* dragAndDropInfo, void* userData))
@@ -1896,14 +2073,16 @@ int32_t OH_ArkUI_DragAction_RegisterStatusListener(ArkUI_DragAction* dragAction,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragAction* dragAction | 拖拽行为对象。 |
 | void* userData | 应用自定义数据，注册状态监听后会在回调触发时通过listener的userData参数传回。 |
-| listener | 状态监听回调，签名为void(*listener)(ArkUI_DragAndDropInfo* dragAndDropInfo, void* userData)。dragAndDropInfo为系统返回的拖拽状态对象指针，该指针会在回调执行完成后被销毁，应用不应再持有；userData为注册时传入的应用自定义数据。 |
+| void(*listener)(ArkUI_DragAndDropInfo* dragAndDropInfo, void* userData) | 状态监听回调。dragAndDropInfo为系统返回的拖拽状态对象指针，该指针会在回调执行完成后被销毁，应用不应再持有；userData为注册时传入的应用自定义数据。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1912,9 +2091,10 @@ int32_t OH_ArkUI_DragAction_RegisterStatusListener(ArkUI_DragAction* dragAction,
 
 
 
-#### OH_ArkUI_DragEvent_GetDisplayId()
+### OH_ArkUI_DragEvent_GetDisplayId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_DragEvent_GetDisplayId(ArkUI_DragEvent* event, int32_t* displayId)
@@ -1922,11 +2102,12 @@ ArkUI_ErrorCode OH_ArkUI_DragEvent_GetDisplayId(ArkUI_DragEvent* event, int32_t*
 
 **描述：**
 
-获取当前拖拽事件发生时所在的屏幕ID，适用于多屏设备场景下需要判断拖拽操作发生在哪个屏幕的情况，如跨屏拖拽时根据屏幕ID进行差异化处理。不支持当eventType为NODE_ON_DRAG_END时获取。
+获取当前拖拽事件发生时所在的屏幕ID，不支持当eventType为NODE_ON_DRAG_END时获取。
 
 **起始版本：** 20
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -1936,6 +2117,7 @@ ArkUI_ErrorCode OH_ArkUI_DragEvent_GetDisplayId(ArkUI_DragEvent* event, int32_t*
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1943,9 +2125,10 @@ ArkUI_ErrorCode OH_ArkUI_DragEvent_GetDisplayId(ArkUI_DragEvent* event, int32_t*
 
 
 
-#### OH_ArkUI_DragAction_UnregisterStatusListener()
+### OH_ArkUI_DragAction_UnregisterStatusListener()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 void OH_ArkUI_DragAction_UnregisterStatusListener(ArkUI_DragAction* dragAction)
@@ -1959,6 +2142,7 @@ void OH_ArkUI_DragAction_UnregisterStatusListener(ArkUI_DragAction* dragAction)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragAction* dragAction | 拖拽行为对象。 |
@@ -1966,9 +2150,10 @@ void OH_ArkUI_DragAction_UnregisterStatusListener(ArkUI_DragAction* dragAction)
 
 
 
-#### OH_ArkUI_DragAndDropInfo_GetDragStatus()
+### OH_ArkUI_DragAndDropInfo_GetDragStatus()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 ArkUI_DragStatus OH_ArkUI_DragAndDropInfo_GetDragStatus(ArkUI_DragAndDropInfo* dragAndDropInfo)
@@ -1982,12 +2167,14 @@ ArkUI_DragStatus OH_ArkUI_DragAndDropInfo_GetDragStatus(ArkUI_DragAndDropInfo* d
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragAndDropInfo* dragAndDropInfo | 拖拽状态监听返回的拖拽相关信息。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1996,9 +2183,10 @@ ArkUI_DragStatus OH_ArkUI_DragAndDropInfo_GetDragStatus(ArkUI_DragAndDropInfo* d
 
 
 
-#### OH_ArkUI_DragAndDropInfo_GetDragEvent()
+### OH_ArkUI_DragAndDropInfo_GetDragEvent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 ArkUI_DragEvent* OH_ArkUI_DragAndDropInfo_GetDragEvent(ArkUI_DragAndDropInfo* dragAndDropInfo)
@@ -2012,12 +2200,14 @@ ArkUI_DragEvent* OH_ArkUI_DragAndDropInfo_GetDragEvent(ArkUI_DragAndDropInfo* dr
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragAndDropInfo* dragAndDropInfo | 拖拽状态监听返回的拖拽相关信息。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2026,9 +2216,10 @@ ArkUI_DragEvent* OH_ArkUI_DragAndDropInfo_GetDragEvent(ArkUI_DragAndDropInfo* dr
 
 
 
-#### OH_ArkUI_StartDrag()
+### OH_ArkUI_StartDrag()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_StartDrag(ArkUI_DragAction* dragAction)
@@ -2042,12 +2233,14 @@ int32_t OH_ArkUI_StartDrag(ArkUI_DragAction* dragAction)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragAction* dragAction | 拖拽action对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2056,9 +2249,10 @@ int32_t OH_ArkUI_StartDrag(ArkUI_DragAction* dragAction)
 
 
 
-#### OH_ArkUI_DragEvent_RequestDragEndPending()
+### OH_ArkUI_DragEvent_RequestDragEndPending()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_DragEvent_RequestDragEndPending(ArkUI_DragEvent* event, int32_t* requestIdentify)
@@ -2072,6 +2266,7 @@ int32_t OH_ArkUI_DragEvent_RequestDragEndPending(ArkUI_DragEvent* event, int32_t
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragEvent* event | 指向 ArkUI_DragEvent 对象的指针。 |
@@ -2080,16 +2275,18 @@ int32_t OH_ArkUI_DragEvent_RequestDragEndPending(ArkUI_DragEvent* event, int32_t
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_DRAG_DROP_OPERATION_NOT_ALLOWED 当前拖拽事件处理阶段不允许执行请求的操作。 |
+| int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_DRAG_DROP_OPERATION_NOT_ALLOWED 当前拖放事件处理阶段不允许执行请求的操作。 |
 
 
 
 
-#### OH_ArkUI_NotifyDragResult()
+### OH_ArkUI_NotifyDragResult()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_NotifyDragResult(int32_t requestIdentify, ArkUI_DragResult result)
@@ -2103,6 +2300,7 @@ int32_t OH_ArkUI_NotifyDragResult(int32_t requestIdentify, ArkUI_DragResult resu
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | int32_t requestIdentify | 由 OH_ArkUI_DragEvent_RequestDragEndPending 返回的标识符。 |
@@ -2111,16 +2309,18 @@ int32_t OH_ArkUI_NotifyDragResult(int32_t requestIdentify, ArkUI_DragResult resu
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_DRAG_DROP_OPERATION_NOT_ALLOWED 当前拖拽事件处理阶段不允许执行请求的操作。 |
+| int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_DRAG_DROP_OPERATION_NOT_ALLOWED 当前拖放事件处理阶段不允许执行请求的操作。 |
 
 
 
 
-#### OH_ArkUI_NotifySuggestedDropOperation()
+### OH_ArkUI_NotifySuggestedDropOperation()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_NotifySuggestedDropOperation(int32_t requestIdentity, ArkUI_DropOperation operation)
@@ -2134,6 +2334,7 @@ int32_t OH_ArkUI_NotifySuggestedDropOperation(int32_t requestIdentity, ArkUI_Dro
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | int32_t requestIdentity | 由OH_ArkUI_DragEvent_RequestDragEndPending返回的标识符，用来标识本次拖拽事件。 |
@@ -2142,6 +2343,7 @@ int32_t OH_ArkUI_NotifySuggestedDropOperation(int32_t requestIdentity, ArkUI_Dro
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_DRAG_DROP_OPERATION_NOT_ALLOWED 函数未在落入阶段调用。 |
@@ -2149,9 +2351,10 @@ int32_t OH_ArkUI_NotifySuggestedDropOperation(int32_t requestIdentity, ArkUI_Dro
 
 
 
-#### OH_ArkUI_NotifyDisableDefaultDropAnimation()
+### OH_ArkUI_NotifyDisableDefaultDropAnimation()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_NotifyDisableDefaultDropAnimation(int32_t requestIdentity, bool disable)
@@ -2165,6 +2368,7 @@ int32_t OH_ArkUI_NotifyDisableDefaultDropAnimation(int32_t requestIdentity, bool
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | int32_t requestIdentity | 由OH_ArkUI_DragEvent_RequestDragEndPending返回的标识符，用来标识本次拖拽事件。 |
@@ -2173,6 +2377,7 @@ int32_t OH_ArkUI_NotifyDisableDefaultDropAnimation(int32_t requestIdentity, bool
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_DRAG_DROP_OPERATION_NOT_ALLOWED 函数未在落入阶段调用。 |
@@ -2180,9 +2385,10 @@ int32_t OH_ArkUI_NotifyDisableDefaultDropAnimation(int32_t requestIdentity, bool
 
 
 
-#### OH_ArkUI_NotifyDragEndPendingDone()
+### OH_ArkUI_NotifyDragEndPendingDone()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_ArkUI_NotifyDragEndPendingDone(int32_t requestIdentify)
@@ -2196,6 +2402,7 @@ int32_t OH_ArkUI_NotifyDragEndPendingDone(int32_t requestIdentify)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | int32_t requestIdentify | 由 OH_ArkUI_DragEvent_RequestDragEndPending 返回的标识符。 |
@@ -2203,16 +2410,18 @@ int32_t OH_ArkUI_NotifyDragEndPendingDone(int32_t requestIdentify)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_DRAG_DROP_OPERATION_NOT_ALLOWED 当前拖拽事件处理阶段不允许执行请求的操作。 |
+| int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_DRAG_DROP_OPERATION_NOT_ALLOWED 当前拖放事件处理阶段不允许执行请求的操作。 |
 
 
 
 
-#### OH_ArkUI_EnableDropDisallowedBadge()
+### OH_ArkUI_EnableDropDisallowedBadge()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_EnableDropDisallowedBadge(ArkUI_ContextHandle uiContext, bool enabled)
@@ -2226,6 +2435,7 @@ ArkUI_ErrorCode OH_ArkUI_EnableDropDisallowedBadge(ArkUI_ContextHandle uiContext
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_ContextHandle uiContext | UI实例对象指针。 |
@@ -2234,6 +2444,7 @@ ArkUI_ErrorCode OH_ArkUI_EnableDropDisallowedBadge(ArkUI_ContextHandle uiContext
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -2241,9 +2452,10 @@ ArkUI_ErrorCode OH_ArkUI_EnableDropDisallowedBadge(ArkUI_ContextHandle uiContext
 
 
 
-#### OH_ArkUI_DragEvent_GetTouchPointXToGlobalDisplay()
+### OH_ArkUI_DragEvent_GetTouchPointXToGlobalDisplay()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 float OH_ArkUI_DragEvent_GetTouchPointXToGlobalDisplay(ArkUI_DragEvent* event)
@@ -2257,12 +2469,14 @@ float OH_ArkUI_DragEvent_GetTouchPointXToGlobalDisplay(ArkUI_DragEvent* event)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragEvent* event | ArkUI_DragEvent事件指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2271,9 +2485,10 @@ float OH_ArkUI_DragEvent_GetTouchPointXToGlobalDisplay(ArkUI_DragEvent* event)
 
 
 
-#### OH_ArkUI_DragEvent_GetTouchPointYToGlobalDisplay()
+### OH_ArkUI_DragEvent_GetTouchPointYToGlobalDisplay()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 float OH_ArkUI_DragEvent_GetTouchPointYToGlobalDisplay(ArkUI_DragEvent* event)
@@ -2287,12 +2502,14 @@ float OH_ArkUI_DragEvent_GetTouchPointYToGlobalDisplay(ArkUI_DragEvent* event)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragEvent* event | ArkUI_DragEvent事件指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2301,9 +2518,10 @@ float OH_ArkUI_DragEvent_GetTouchPointYToGlobalDisplay(ArkUI_DragEvent* event)
 
 
 
-#### OH_ArkUI_DragEvent_GetDragSource()
+### OH_ArkUI_DragEvent_GetDragSource()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_DragEvent_GetDragSource(ArkUI_DragEvent* event, char *bundleName, int32_t length)
@@ -2317,6 +2535,7 @@ ArkUI_ErrorCode OH_ArkUI_DragEvent_GetDragSource(ArkUI_DragEvent* event, char *b
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DragEvent* event | 指向ArkUI_DragEvent对象的指针。 |
@@ -2326,6 +2545,7 @@ ArkUI_ErrorCode OH_ArkUI_DragEvent_GetDragSource(ArkUI_DragEvent* event, char *b
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -2333,9 +2553,10 @@ ArkUI_ErrorCode OH_ArkUI_DragEvent_GetDragSource(ArkUI_DragEvent* event, char *b
 
 
 
-#### OH_ArkUI_DragEvent_IsRemote()
+### OH_ArkUI_DragEvent_IsRemote()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_DragEvent_IsRemote(ArkUI_DragEvent* event, bool* isRemote)
@@ -2343,11 +2564,12 @@ ArkUI_ErrorCode OH_ArkUI_DragEvent_IsRemote(ArkUI_DragEvent* event, bool* isRemo
 
 **描述：**
 
-判断当前的拖拽操作是否是跨设备拖拽，适用于需要区分本地拖拽和跨设备拖拽的场景。例如，跨设备拖拽时可能需要对数据传输进行额外校验或展示不同的UI提示，而本地拖拽则可直接处理数据。
+判断当前的拖拽操作是否是跨设备拖拽，适用于需要区分本地拖拽和跨设备拖拽的场景。
 
 **起始版本：** 20
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -2356,6 +2578,7 @@ ArkUI_ErrorCode OH_ArkUI_DragEvent_IsRemote(ArkUI_DragEvent* event, bool* isRemo
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |

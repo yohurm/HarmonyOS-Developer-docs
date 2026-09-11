@@ -1,6 +1,6 @@
 # healthDataTypes (运动健康数据类型常量)
 
-更新时间：2026-06-12 06:54:11
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/health-api-healthdatatypes
 **支持设备：** Phone | Tablet | Wearable
@@ -10,7 +10,8 @@
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -24,7 +25,8 @@ import { healthStore } from '@kit.HealthServiceKit';
  
   
 
-#### 常量
+## 常量
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -34,6 +36,7 @@ import { healthStore } from '@kit.HealthServiceKit';
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 说明 |
 | --- | --- | --- |
 | BLOOD_OXYGEN_SATURATION | healthStore.DataType | 血氧数据类型。 |

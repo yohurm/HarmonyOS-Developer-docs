@@ -1,15 +1,19 @@
 # Types
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-avmusictemplate-t
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 本模块首批接口从API version 23开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 本模块仅适用于API version 23及以上版本的Car设备。
 
 
 
-#### NoParamAsyncCallback
+## NoParamAsyncCallback
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type NoParamAsyncCallback = () => Promise&lt;void&gt;
 
@@ -21,6 +25,7 @@ type NoParamAsyncCallback = () => Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -28,7 +33,10 @@ type NoParamAsyncCallback = () => Promise&lt;void&gt;
 
 
 
-#### QueryMainTabsEvent
+## QueryMainTabsEvent
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type QueryMainTabsEvent = () => Promise<MediaTab[]>
 
@@ -40,6 +48,7 @@ type QueryMainTabsEvent = () => Promise<MediaTab[]>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<MediaTab[]> | Promise对象，返回媒体标签页的集合。 |
@@ -47,7 +56,10 @@ type QueryMainTabsEvent = () => Promise<MediaTab[]>
 
 
 
-#### QueryMediaTabContentEvent
+## QueryMediaTabContentEvent
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type QueryMediaTabContentEvent = (tabId: string) => Promise&lt;MediaTabContent&gt;
 
@@ -59,12 +71,14 @@ type QueryMediaTabContentEvent = (tabId: string) => Promise&lt;MediaTabContent&g
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | tabId | string | 是 | 标签页的ID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -73,7 +87,10 @@ type QueryMediaTabContentEvent = (tabId: string) => Promise&lt;MediaTabContent&g
 
 
 
-#### QueryMediaEntityEvent
+## QueryMediaEntityEvent
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type QueryMediaEntityEvent = (params: QueryMediaEntityParam) => Promise&lt;PageMediaEntity&gt;
 
@@ -85,12 +102,14 @@ type QueryMediaEntityEvent = (params: QueryMediaEntityParam) => Promise&lt;PageM
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | QueryMediaEntityParam | 是 | 查询媒体实体的参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -99,7 +118,10 @@ type QueryMediaEntityEvent = (params: QueryMediaEntityParam) => Promise&lt;PageM
 
 
 
-#### QueryCompilationEvent
+## QueryCompilationEvent
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type QueryCompilationEvent = (compilationId: string, pageIndex: number) => Promise&lt;PageMediaEntity&gt;
 
@@ -111,6 +133,7 @@ type QueryCompilationEvent = (compilationId: string, pageIndex: number) => Promi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | compilationId | string | 是 | 合集的ID。 |
@@ -119,6 +142,7 @@ type QueryCompilationEvent = (compilationId: string, pageIndex: number) => Promi
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;PageMediaEntity&gt; | Promise对象，返回查询的合集媒体实体对象。 |
@@ -126,7 +150,10 @@ type QueryCompilationEvent = (compilationId: string, pageIndex: number) => Promi
 
 
 
-#### QueryPlaylistEvent
+## QueryPlaylistEvent
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type QueryPlaylistEvent = (pageIndex: number, sort: Sort) => Promise&lt;PageMediaEntity&gt;
 
@@ -138,6 +165,7 @@ type QueryPlaylistEvent = (pageIndex: number, sort: Sort) => Promise&lt;PageMedi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pageIndex | number | 是 | 页面的索引。 |
@@ -146,6 +174,7 @@ type QueryPlaylistEvent = (pageIndex: number, sort: Sort) => Promise&lt;PageMedi
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;PageMediaEntity&gt; | Promise对象，返回查询的播放列表的分页对象。 |
@@ -153,7 +182,10 @@ type QueryPlaylistEvent = (pageIndex: number, sort: Sort) => Promise&lt;PageMedi
 
 
 
-#### QueryCurrentSingleEvent
+## QueryCurrentSingleEvent
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type QueryCurrentSingleEvent = () => Promise&lt;Single&gt;
 
@@ -165,6 +197,7 @@ type QueryCurrentSingleEvent = () => Promise&lt;Single&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Single&gt; | Promise对象，返回Single对象。 |
@@ -172,7 +205,10 @@ type QueryCurrentSingleEvent = () => Promise&lt;Single&gt;
 
 
 
-#### QueryCompilationByKeywordEvent
+## QueryCompilationByKeywordEvent
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type QueryCompilationByKeywordEvent = (keyword: string) => Promise<Compilation[]>
 
@@ -184,12 +220,14 @@ type QueryCompilationByKeywordEvent = (keyword: string) => Promise<Compilation[]
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyword | string | 是 | 用于查找合集的关键字。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -198,7 +236,10 @@ type QueryCompilationByKeywordEvent = (keyword: string) => Promise<Compilation[]
 
 
 
-#### QueryMediaEntityByKeywordEvent
+## QueryMediaEntityByKeywordEvent
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type QueryMediaEntityByKeywordEvent = (keyword: string, searchType: EntityType, pageIndex: number) => Promise&lt;PageMediaEntity&gt;
 
@@ -210,6 +251,7 @@ type QueryMediaEntityByKeywordEvent = (keyword: string, searchType: EntityType, 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyword | string | 是 | 用于查找媒体的关键字。 |
@@ -219,6 +261,7 @@ type QueryMediaEntityByKeywordEvent = (keyword: string, searchType: EntityType, 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;PageMediaEntity&gt; | Promise对象，返回关键字相关的媒体实体的分页对象。 |
@@ -226,7 +269,10 @@ type QueryMediaEntityByKeywordEvent = (keyword: string, searchType: EntityType, 
 
 
 
-#### QueryRecommendMediaEntityListEvent
+## QueryRecommendMediaEntityListEvent
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type QueryRecommendMediaEntityListEvent = () => Promise<MediaEntity[]>
 
@@ -238,6 +284,7 @@ type QueryRecommendMediaEntityListEvent = () => Promise<MediaEntity[]>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<MediaEntity[]> | Promise对象，返回推荐的媒体实体的数组。 |
@@ -245,7 +292,10 @@ type QueryRecommendMediaEntityListEvent = () => Promise<MediaEntity[]>
 
 
 
-#### QueryHotWordsEvent
+## QueryHotWordsEvent
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type QueryHotWordsEvent = () => Promise<string[]>
 
@@ -257,6 +307,7 @@ type QueryHotWordsEvent = () => Promise<string[]>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<string[]> | Promise对象，返回热词的数组。 |
@@ -264,7 +315,10 @@ type QueryHotWordsEvent = () => Promise<string[]>
 
 
 
-#### QuerySearchHistoryEvent
+## QuerySearchHistoryEvent
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type QuerySearchHistoryEvent = () => Promise<string[]>
 
@@ -276,6 +330,7 @@ type QuerySearchHistoryEvent = () => Promise<string[]>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<string[]> | Promise对象，返回搜索历史的数组。 |
@@ -283,7 +338,10 @@ type QuerySearchHistoryEvent = () => Promise<string[]>
 
 
 
-#### ClearSearchHistoryEvent
+## ClearSearchHistoryEvent
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ClearSearchHistoryEvent = () => Promise&lt;OperResult&gt;
 
@@ -295,6 +353,7 @@ type ClearSearchHistoryEvent = () => Promise&lt;OperResult&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;OperResult&gt; | Promise对象，返回清除搜索历史的操作结果的对象。 |
@@ -302,17 +361,21 @@ type ClearSearchHistoryEvent = () => Promise&lt;OperResult&gt;
 
 
 
-#### LoginEvent
+## LoginEvent
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type LoginEvent = (controlType: LoginType, id?: string) => Promise<QrCodeInfo[]>
 
-登录事件。使用Promise异步回调。
+登录事件。用于控制登录流程，包括查询登录信息、刷新登录信息、取消操作和退出登录。使用Promise异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -322,6 +385,7 @@ type LoginEvent = (controlType: LoginType, id?: string) => Promise<QrCodeInfo[]>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<QrCodeInfo[]> | Promise对象，返回二维码信息的数组。 |
@@ -329,7 +393,10 @@ type LoginEvent = (controlType: LoginType, id?: string) => Promise<QrCodeInfo[]>
 
 
 
-#### LoginType
+## LoginType
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type LoginType = 'queryLoginInfo' | 'refreshLoginInfo' | 'cancel' | 'logout'
 
@@ -338,6 +405,7 @@ type LoginType = 'queryLoginInfo' | 'refreshLoginInfo' | 'cancel' | 'logout'
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -349,7 +417,10 @@ type LoginType = 'queryLoginInfo' | 'refreshLoginInfo' | 'cancel' | 'logout'
 
 
 
-#### RequestDialogInfoEvent
+## RequestDialogInfoEvent
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type RequestDialogInfoEvent = (actionType: DialogActionType, actionInfo?: DialogActionInfo) => Promise&lt;DialogInfo&gt;
 
@@ -361,6 +432,7 @@ type RequestDialogInfoEvent = (actionType: DialogActionType, actionInfo?: Dialog
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | actionType | DialogActionType | 是 | 对话框操作类型。 |
@@ -369,6 +441,7 @@ type RequestDialogInfoEvent = (actionType: DialogActionType, actionInfo?: Dialog
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;DialogInfo&gt; | Promise对象，返回对话框信息。 |
@@ -376,7 +449,10 @@ type RequestDialogInfoEvent = (actionType: DialogActionType, actionInfo?: Dialog
 
 
 
-#### DialogActionType
+## DialogActionType
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type DialogActionType = 'open' | 'close' | 'refresh'
 
@@ -385,6 +461,7 @@ type DialogActionType = 'open' | 'close' | 'refresh'
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -395,17 +472,21 @@ type DialogActionType = 'open' | 'close' | 'refresh'
 
 
 
-#### HandleMemberPurchaseEvent
+## HandleMemberPurchaseEvent
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type HandleMemberPurchaseEvent = (info: MemberPurchaseInfo) => Promise&lt;DialogInfo&gt;
 
-处理购买会员事件。使用Promise异步回调。
+处理购买会员事件。系统会在用户触发购买操作时调用此事件。使用Promise异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -414,6 +495,7 @@ type HandleMemberPurchaseEvent = (info: MemberPurchaseInfo) => Promise&lt;Dialog
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;DialogInfo&gt; | Promise对象，返回对话框信息。 |
@@ -421,17 +503,21 @@ type HandleMemberPurchaseEvent = (info: MemberPurchaseInfo) => Promise&lt;Dialog
 
 
 
-#### QueryMemberPurchaseEvent
+## QueryMemberPurchaseEvent
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type QueryMemberPurchaseEvent = (memberPurchaseType: MemberPurchaseType) => Promise<MemberPurchaseInfo[]>
 
-购买会员查询事件。使用Promise异步回调。
+购买会员查询事件。用于根据会员购买类型查询可用的会员购买信息，系统会在用户进入会员购买页面时调用此事件。使用Promise异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -440,6 +526,7 @@ type QueryMemberPurchaseEvent = (memberPurchaseType: MemberPurchaseType) => Prom
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<MemberPurchaseInfo[]> | Promise对象，返回会员购买信息的数组。 |
@@ -447,17 +534,21 @@ type QueryMemberPurchaseEvent = (memberPurchaseType: MemberPurchaseType) => Prom
 
 
 
-#### QueryCustomContentEvent
+## QueryCustomContentEvent
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type QueryCustomContentEvent = (queryType: CustomType[]) => Promise&lt;CustomElement&gt;
 
-自定义内容查询事件。使用Promise异步回调。
+自定义内容查询事件。用于查询用户基本信息、界面选项卡配置、代码编译选项和系统设置项等自定义内容。使用Promise异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -466,6 +557,7 @@ type QueryCustomContentEvent = (queryType: CustomType[]) => Promise&lt;CustomEle
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;CustomElement&gt; | Promise对象，返回我的页面的自定义元素。 |
@@ -473,7 +565,10 @@ type QueryCustomContentEvent = (queryType: CustomType[]) => Promise&lt;CustomEle
 
 
 
-#### CustomType
+## CustomType
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type CustomType = 'USER_INFO' | 'TAB' | 'COMPILATION' | 'SETTINGS'
 
@@ -482,6 +577,7 @@ type CustomType = 'USER_INFO' | 'TAB' | 'COMPILATION' | 'SETTINGS'
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -493,17 +589,21 @@ type CustomType = 'USER_INFO' | 'TAB' | 'COMPILATION' | 'SETTINGS'
 
 
 
-#### DownloadMediaEntityEvent
+## DownloadMediaEntityEvent
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type DownloadMediaEntityEvent = (controlType: DownloadControlType, mediaEntity: MediaEntity) => Promise&lt;OperResult&gt;
 
-媒体实体下载事件。使用Promise异步回调。
+媒体实体下载事件。用于控制媒体实体的下载流程，支持开始下载、暂停下载、恢复下载和删除下载操作。使用Promise异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -513,6 +613,7 @@ type DownloadMediaEntityEvent = (controlType: DownloadControlType, mediaEntity: 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;OperResult&gt; | Promise对象，返回下载媒体实体的操作结果对象。 |
@@ -520,15 +621,19 @@ type DownloadMediaEntityEvent = (controlType: DownloadControlType, mediaEntity: 
 
 
 
-#### DownloadControlType
+## DownloadControlType
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type DownloadControlType = 'startDownload' | 'deleteDownload' | 'resumeDownload' | 'pauseDownload'
 
-定义下载操作的控制类型，包括开始下载、删除下载、恢复下载和暂停下载。该类型可取的值为下表字符串。
+下载操作控制类型。该类型可取的值为下表字符串。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -540,7 +645,10 @@ type DownloadControlType = 'startDownload' | 'deleteDownload' | 'resumeDownload'
 
 
 
-#### SettingsChangeEvent
+## SettingsChangeEvent
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type SettingsChangeEvent = (settingItem: SettingItem) => Promise&lt;SettingItem&gt;
 
@@ -552,12 +660,14 @@ type SettingsChangeEvent = (settingItem: SettingItem) => Promise&lt;SettingItem&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | settingItem | SettingItem | 是 | 设置项。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -566,7 +676,10 @@ type SettingsChangeEvent = (settingItem: SettingItem) => Promise&lt;SettingItem&
 
 
 
-#### ProblemAndAdviceEvent
+## ProblemAndAdviceEvent
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ProblemAndAdviceEvent = (advice: string) => Promise&lt;OperResult&gt;
 
@@ -578,12 +691,14 @@ type ProblemAndAdviceEvent = (advice: string) => Promise&lt;OperResult&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | advice | string | 是 | 问题和建议的内容。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -592,17 +707,21 @@ type ProblemAndAdviceEvent = (advice: string) => Promise&lt;OperResult&gt;
 
 
 
-#### PlayForSearchEvent
+## PlayForSearchEvent
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type PlayForSearchEvent = (command: SearchPlayInfoType, args: SearchPlayInfo) => Promise&lt;OperResult&gt;
 
-搜播事件。使用Promise异步回调。
+搜索并播放媒体的事件。使用Promise异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -612,6 +731,7 @@ type PlayForSearchEvent = (command: SearchPlayInfoType, args: SearchPlayInfo) =>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;OperResult&gt; | Promise对象，返回搜播的操作结果对象。 |
@@ -619,7 +739,10 @@ type PlayForSearchEvent = (command: SearchPlayInfoType, args: SearchPlayInfo) =>
 
 
 
-#### ExecuteActionEvent
+## ExecuteActionEvent
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ExecuteActionEvent = (actionType: string, params: string) => Promise&lt;string&gt;
 
@@ -631,6 +754,7 @@ type ExecuteActionEvent = (actionType: string, params: string) => Promise&lt;str
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | actionType | string | 是 | 动作类型。 |
@@ -639,6 +763,7 @@ type ExecuteActionEvent = (actionType: string, params: string) => Promise&lt;str
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回执行操作的结果字符串。 |
@@ -646,7 +771,10 @@ type ExecuteActionEvent = (actionType: string, params: string) => Promise&lt;str
 
 
 
-#### PlayMediaEntityEvent
+## PlayMediaEntityEvent
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type PlayMediaEntityEvent = (mediaEntity: MediaEntity) => Promise&lt;void&gt;
 
@@ -658,12 +786,14 @@ type PlayMediaEntityEvent = (mediaEntity: MediaEntity) => Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mediaEntity | MediaEntity | 是 | 需要播放的媒体实体。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -672,7 +802,10 @@ type PlayMediaEntityEvent = (mediaEntity: MediaEntity) => Promise&lt;void&gt;
 
 
 
-#### FavoriteMediaEntityEvent
+## FavoriteMediaEntityEvent
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type FavoriteMediaEntityEvent = (actionType: MediaFavoriteType, mediaEntity: MediaEntity) => Promise&lt;OperResult&gt;
 
@@ -684,6 +817,7 @@ type FavoriteMediaEntityEvent = (actionType: MediaFavoriteType, mediaEntity: Med
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | actionType | MediaFavoriteType | 是 | 操作类型。 |
@@ -692,6 +826,7 @@ type FavoriteMediaEntityEvent = (actionType: MediaFavoriteType, mediaEntity: Med
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;OperResult&gt; | Promise对象，返回收藏媒体实体的操作结果对象。 |
@@ -699,7 +834,10 @@ type FavoriteMediaEntityEvent = (actionType: MediaFavoriteType, mediaEntity: Med
 
 
 
-#### MediaFavoriteType
+## MediaFavoriteType
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type MediaFavoriteType = 'addFavorite' | 'removeFavorite'
 
@@ -709,6 +847,7 @@ type MediaFavoriteType = 'addFavorite' | 'removeFavorite'
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
 
+
 | 类型 | 说明 |
 | --- | --- |
 | 'addFavorite' | 添加收藏。 |
@@ -717,7 +856,10 @@ type MediaFavoriteType = 'addFavorite' | 'removeFavorite'
 
 
 
-#### DialogControlType
+## DialogControlType
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type DialogControlType = 'open' | 'close' | 'refresh' | 'toast'
 
@@ -726,6 +868,7 @@ type DialogControlType = 'open' | 'close' | 'refresh' | 'toast'
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -737,7 +880,10 @@ type DialogControlType = 'open' | 'close' | 'refresh' | 'toast'
 
 
 
-#### ActionType
+## ActionType
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ActionType = 'add' | 'remove'
 
@@ -747,6 +893,7 @@ type ActionType = 'add' | 'remove'
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
 
+
 | 类型 | 说明 |
 | --- | --- |
 | 'add' | 添加。 |
@@ -755,7 +902,10 @@ type ActionType = 'add' | 'remove'
 
 
 
-#### ReportDialogCommandEvent
+## ReportDialogCommandEvent
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ReportDialogCommandEvent = (type: DialogControlType, buttonInfo: DialogInfo) => void
 
@@ -767,6 +917,7 @@ type ReportDialogCommandEvent = (type: DialogControlType, buttonInfo: DialogInfo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | DialogControlType | 是 | 对话框控制类型。 |
@@ -775,7 +926,10 @@ type ReportDialogCommandEvent = (type: DialogControlType, buttonInfo: DialogInfo
 
 
 
-#### ReportTabContentEvent
+## ReportTabContentEvent
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ReportTabContentEvent = (tabId: string, tabContent: MediaTabContent) => void
 
@@ -787,6 +941,7 @@ type ReportTabContentEvent = (tabId: string, tabContent: MediaTabContent) => voi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | tabId | string | 是 | 标签页的ID。 |
@@ -795,7 +950,10 @@ type ReportTabContentEvent = (tabId: string, tabContent: MediaTabContent) => voi
 
 
 
-#### ReportCustomElementsChangeEvent
+## ReportCustomElementsChangeEvent
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ReportCustomElementsChangeEvent = (actionType: ActionType, customType: CustomType, customElement: CustomElement) => void
 
@@ -807,6 +965,7 @@ type ReportCustomElementsChangeEvent = (actionType: ActionType, customType: Cust
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | actionType | ActionType | 是 | 操作类型。 |
@@ -816,7 +975,10 @@ type ReportCustomElementsChangeEvent = (actionType: ActionType, customType: Cust
 
 
 
-#### ReportExecuteActionEvent
+## ReportExecuteActionEvent
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ReportExecuteActionEvent = (actionType: string, params: string) => void
 
@@ -828,6 +990,7 @@ type ReportExecuteActionEvent = (actionType: string, params: string) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | actionType | string | 是 | 操作类型。 |
@@ -836,7 +999,10 @@ type ReportExecuteActionEvent = (actionType: string, params: string) => void
 
 
 
-#### ReportExecuteAbilityEvent
+## ReportExecuteAbilityEvent
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ReportExecuteAbilityEvent = (want: WantAgent) => void
 
@@ -847,6 +1013,7 @@ type ReportExecuteAbilityEvent = (want: WantAgent) => void
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |

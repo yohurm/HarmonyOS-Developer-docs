@@ -1,9 +1,9 @@
 # ColumnSplit
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-columnsplit
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 将子组件纵向布局，并在每个子组件之间插入横向分割线。适用于需要垂直方向上多区域布局且支持动态调整区域大小的场景，如仪表盘界面、可调节高度的上下分区布局等。通过可拖拽的分割线，用户可以灵活调整各区域高度，提升界面交互性和用户体验。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 可以包含子组件。
  
@@ -24,9 +25,10 @@ ColumnSplit通过分割线限制子组件的高度。初始化时，分割线位
  
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ColumnSplit()
  
@@ -38,9 +40,10 @@ ColumnSplit()
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
  
@@ -50,9 +53,10 @@ ColumnSplit()
  
   
 
-#### resizeable
+### resizeable
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 resizeable(value: boolean)
  
@@ -68,6 +72,7 @@ resizeable(value: boolean)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 分割线是否可拖动。设置为true时表示分割线可拖动，设置为false时表示分割线不可拖动。子组件的高度调整范围受其最大最小高度限制；当子组件尺寸大于相邻分割线间距时，不支持拖动分割线。初始化后，当动态修改margin、border、padding通用属性导致子组件尺寸大于相邻分割线间距时，不支持拖动分割线改变子组件的高度。 默认值：false 非法值：按默认值处理。 |
@@ -75,9 +80,10 @@ resizeable(value: boolean)
  
   
 
-#### divider10+
+### divider10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 divider(value: ColumnSplitDividerStyle | null)
  
@@ -91,6 +97,7 @@ divider(value: ColumnSplitDividerStyle | null)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ColumnSplitDividerStyle \| null | 是 | 分割线的margin，即设置分割线与子组件的距离。对象属性包括：startMargin（子组件与上方分割线的距离）和endMargin（子组件与下方分割线的距离）。 默认值：null。当设置为null时，分割线与子组件的距离为0vp。 非法值：按默认值处理。 |
@@ -98,9 +105,10 @@ divider(value: ColumnSplitDividerStyle | null)
  
   
 
-#### ColumnSplitDividerStyle10+对象说明
+## ColumnSplitDividerStyle10+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置子组件与上下分割线的距离。
  
@@ -110,6 +118,7 @@ divider(value: ColumnSplitDividerStyle | null)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | startMargin | Dimension | 否 | 是 | 子组件与其上方分割线的距离。可调整间距（如避免内容与分割线重叠、美化布局等场景）。 默认值：0vp 取值范围：不支持负值。 非法值：按默认值处理，此时getInspectorByKey()接口获取到的属性值为undefined。 |
@@ -122,21 +131,26 @@ divider(value: ColumnSplitDividerStyle | null)
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)。
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 示例1（设置可拖动的ColumnSplit组件）
+### 示例1（设置可拖动的ColumnSplit组件）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例展示如何设置可拖动的ColumnSplit组件及其效果。
  
@@ -164,12 +178,15 @@ struct ColumnSplitExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/bzI7gR_0TCCmsu9uL7sUAA/zh-cn_image_0000002686087901.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071459Z&HW-CC-Expire=86400&HW-CC-Sign=FE62EC92A1DE86878780C6DB2B038546C9FB6DB15950720D441E72E41B1375FA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/x2_rkDVNQfKpDhk9CE6XOQ/zh-cn_image_0000002717772542.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073112Z&HW-CC-Expire=86400&HW-CC-Sign=A871F215284044B4597330C6FE309A5756965B8E1BD2533954F03981E58EAD0F)
 
  
   
 
-#### 示例2（设置带有间隔的ColumnSplit组件）
+### 示例2（设置带有间隔的ColumnSplit组件）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例展示如何设置带有间隔的ColumnSplit组件及其效果。
  
@@ -198,4 +215,4 @@ struct ColumnSplitDividerExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/zMgFb8oLRaySdrC8mhyX2w/zh-cn_image_0000002685928073.png?HW-CC-KV=V1&HW-CC-Date=20260730T071459Z&HW-CC-Expire=86400&HW-CC-Sign=66577B6A73C5158B7EDAF1D9C8B3DE47A4BC6A183767FB70EDBA4B3B13A4B0D1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/limTS7CITAuaSSfwpQj55g/zh-cn_image_0000002717612610.png?HW-CC-KV=V1&HW-CC-Date=20260911T073112Z&HW-CC-Expire=86400&HW-CC-Sign=D1FF8188A713BDE45775081C898691EC937C3F69F70406FE437BA0DF20159896)

@@ -1,6 +1,6 @@
-# MultiWindowEntryInAPP
+# MultiWindowEntryInAPP (应用内多窗)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-multiwindowentryinapp-api
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -16,7 +16,8 @@ MultiWindowEntryInAPP组件承载单应用多窗口并行逻辑的实现，应�
 **起始版本：** 6.0.0(20)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -38,7 +39,8 @@ import { MultiWindowEntryInAPP, MultiWindowEntryInAPPParams, MultiWindowEntryInA
  
   
 
-#### 子组件
+## 子组件
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -46,7 +48,8 @@ import { MultiWindowEntryInAPP, MultiWindowEntryInAPPParams, MultiWindowEntryInA
  
   
 
-#### 接口
+## 接口
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -60,6 +63,7 @@ MultiWindowEntryInAPP(params: MultiWindowEntryInAPPParams)
  
 **起始版本：** 6.0.0(20)
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | MultiWindowEntryInAPPParams | 是 | 应用内多窗组件参数。 |
@@ -67,7 +71,8 @@ MultiWindowEntryInAPP(params: MultiWindowEntryInAPPParams)
  
   
 
-#### MultiWindowEntryInAPPParams
+## MultiWindowEntryInAPPParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -81,6 +86,7 @@ MultiWindowEntryInAPP组件参数。
  
 **参数：**
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | want | Want | 否 | 否 | 要启动窗口的参数，有以下要求： 1. 必填字段：abilityName, moduleName和bundleName； 2. 应用限制：所有指定的名称（abilityName, moduleName 和bundleName）必须属于当前应用； 3. 跨应用限制：多窗口功能不支持跨应用的能力。 |
@@ -90,7 +96,8 @@ MultiWindowEntryInAPP组件参数。
  
   
 
-#### MultiWindowEntryInAPPStyle
+## MultiWindowEntryInAPPStyle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -104,6 +111,7 @@ MultiWindowEntryInAPP组件风格参数。
  
 **参数：**
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | iconOptions | MultiWindowEntryInAPPIconOptions | 否 | 是 | 组件图标参数。 |
@@ -112,7 +120,8 @@ MultiWindowEntryInAPP组件风格参数。
  
   
 
-#### MultiWindowEntryInAPPIconOptions
+## MultiWindowEntryInAPPIconOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -126,6 +135,7 @@ MultiWindowEntryInAPP组件图标参数。
  
 **参数：**
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | iconColor | ResourceColor | 否 | 是 | 组件图标颜色。 默认值：\$r('sys.color.font_primary')。 |
@@ -136,7 +146,8 @@ MultiWindowEntryInAPP组件图标参数。
  
   
 
-#### MultiWindowEntryInAPPSubtitleOptions
+## MultiWindowEntryInAPPSubtitleOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -150,6 +161,7 @@ MultiWindowEntryInAPP组件标题文本参数。
  
 **参数：**
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | modifier | TextModifier | 否 | 是 | 组件文本标题修改器。 |
@@ -157,7 +169,8 @@ MultiWindowEntryInAPP组件标题文本参数。
  
   
 
-#### 属性
+## 属性
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -169,7 +182,8 @@ MultiWindowEntryInAPP组件标题文本参数。
  
   
 
-#### 事件
+## 事件
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -181,7 +195,8 @@ MultiWindowEntryInAPP组件标题文本参数。
  
   
 
-#### 示例
+## 示例
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -227,4 +242,4 @@ struct MultiWindowEntryInAPPTest {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/dp2RGGzsTrmQh7LviWyY9g/zh-cn_image_0000002626071322.jpg?HW-CC-KV=V1&HW-CC-Date=20260624T020050Z&HW-CC-Expire=86400&HW-CC-Sign=F4DE5838865C3EA9FBF97C6C3DAFD7A42D5F4DD935704EB987A5CFF667C32D0F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/Sh1CMQMfSVKwOwL73BDukw/zh-cn_image_0000002717773518.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T073132Z&HW-CC-Expire=86400&HW-CC-Sign=EB1D9FA7B65991FA2425AB29F7B1112A1D1505D65A47A10D2F1E6992F49C92E0)

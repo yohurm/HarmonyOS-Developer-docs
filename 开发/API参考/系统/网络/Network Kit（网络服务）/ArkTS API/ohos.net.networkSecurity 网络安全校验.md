@@ -1,9 +1,9 @@
 # @ohos.net.networkSecurity (网络安全校验)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-networksecurity
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供网络安全校验能力。应用可以通过证书校验API完成证书校验功能。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { networkSecurity } from '@kit.NetworkKit';
@@ -22,9 +23,10 @@ import { networkSecurity } from '@kit.NetworkKit';
 
 
 
-#### 完整示例
+## 完整示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { networkSecurity } from '@kit.NetworkKit';
@@ -51,7 +53,7 @@ networkSecurity.certVerification(cert, caCert)
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/PXrd9tDhRYOiv6UDYThCaA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071625Z&HW-CC-Expire=86400&HW-CC-Sign=CE1926D282145D090D7BBB28B8CA87D74FF03F18090207AB35D9B0DD1004505C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/zc4eF16BSQWzJFdobDjgNA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072925Z&HW-CC-Expire=86400&HW-CC-Sign=B57F61EA7602C166D00EFF842B91A0D6C07CAA528FE3EB7B80F5919C2BE26762)
 
 
 请务必将示例中的证书数据替换为实际的证书内容。
@@ -60,13 +62,15 @@ networkSecurity.certVerification(cert, caCert)
 
 
 
-#### CertType
+## CertType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 证书编码类型。
 
 **系统能力**: SystemCapability.Communication.NetStack
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -76,13 +80,15 @@ networkSecurity.certVerification(cert, caCert)
 
 
 
-#### CertBlob
+## CertBlob
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 证书数据。
 
 **系统能力**: SystemCapability.Communication.NetStack
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -92,9 +98,10 @@ networkSecurity.certVerification(cert, caCert)
 
 
 
-#### networkSecurity.certVerification
+## networkSecurity.certVerification
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 certVerification(cert: CertBlob, caCert?: CertBlob): Promise&lt;number&gt;
 
@@ -104,6 +111,7 @@ certVerification(cert: CertBlob, caCert?: CertBlob): Promise&lt;number&gt;
 
 **参数**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cert | CertBlob | 是 | 被校验的证书。 |
@@ -111,6 +119,7 @@ certVerification(cert: CertBlob, caCert?: CertBlob): Promise&lt;number&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -120,6 +129,7 @@ certVerification(cert: CertBlob, caCert?: CertBlob): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[网络安全校验错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-networksecurity)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -136,11 +146,11 @@ certVerification(cert: CertBlob, caCert?: CertBlob): Promise&lt;number&gt;
 | 2305010 | Certificate has expired. |
 | 2305011 | CRL is not yet valid. |
 | 2305012 | CRL has expired. |
-| 2305018 | Self-signed certificate. |
+| 2305018 | Self-signed certificate. 适用版本：12+ |
 | 2305023 | Certificate has been revoked. |
 | 2305024 | Invalid certificate authority (CA). |
 | 2305027 | Certificate is untrusted. |
-| 2305069 | Invalid certificate verification context. |
+| 2305069 | Invalid certificate verification context. 适用版本：12+ |
 
 
 > [!NOTE]
@@ -174,7 +184,7 @@ networkSecurity.certVerification(cert, caCert)
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/dwbyrZepRqSXTXwi45Xx5Q/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071625Z&HW-CC-Expire=86400&HW-CC-Sign=B62E6DFC99D69ABDEB5E2777D756467A9A5A86C2B875EA798FE47748281036B1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/BLsSEnWCScGD1tUP7Y34Ew/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072925Z&HW-CC-Expire=86400&HW-CC-Sign=BB572E2E9F51B5351BA510B2FEC15605E69504B410357212C6F327CD70D05297)
 
 
 请务必将示例中的证书数据替换为实际的证书内容。
@@ -183,9 +193,10 @@ networkSecurity.certVerification(cert, caCert)
 
 
 
-#### networkSecurity.certVerificationSync
+## networkSecurity.certVerificationSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 certVerificationSync(cert: CertBlob, caCert?: CertBlob): number
 
@@ -195,6 +206,7 @@ certVerificationSync(cert: CertBlob, caCert?: CertBlob): number
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cert | CertBlob | 是 | 被校验的证书。 |
@@ -202,6 +214,7 @@ certVerificationSync(cert: CertBlob, caCert?: CertBlob): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -211,6 +224,7 @@ certVerificationSync(cert: CertBlob, caCert?: CertBlob): number
 **错误码：**
 
 以下错误码的详细介绍请参见[网络安全校验错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-networksecurity)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -227,11 +241,11 @@ certVerificationSync(cert: CertBlob, caCert?: CertBlob): number
 | 2305010 | Certificate has expired. |
 | 2305011 | CRL is not yet valid. |
 | 2305012 | CRL has expired. |
-| 2305018 | Self-signed certificate. |
+| 2305018 | Self-signed certificate. 适用版本：12+ |
 | 2305023 | Certificate has been revoked. |
 | 2305024 | Invalid certificate authority (CA). |
 | 2305027 | Certificate is untrusted. |
-| 2305069 | Invalid certificate verification context. |
+| 2305069 | Invalid certificate verification context. 适用版本：12+ |
 
 
 > [!NOTE]
@@ -269,7 +283,7 @@ console.info('Synchronous Verification Result:', resultSync);
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/NYYffLa1Sr2H7gOfnBKUUQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071625Z&HW-CC-Expire=86400&HW-CC-Sign=D6F09A4DAA3F837AD1FEEF8FC9668829EFA3ECDFDDD5309423C3836C0CD783B2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/C8UGSg6MQ6mfP-HPcJhMVQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072925Z&HW-CC-Expire=86400&HW-CC-Sign=470729662BFDD2657AB906AEAA2A5DDE9EF897CBD5FE4EB16F9B30D9AF1677AE)
 
 
 请务必将示例中的证书数据替换为实际的证书内容。
@@ -278,9 +292,10 @@ console.info('Synchronous Verification Result:', resultSync);
 
 
 
-#### networkSecurity.verifyCertChain
+## networkSecurity.verifyCertChain
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 verifyCertChain(cert: CertBlob[], caCert?: CertBlob, hostname?: string): Promise<CertBlob[]>
 
@@ -294,6 +309,7 @@ verifyCertChain(cert: CertBlob[], caCert?: CertBlob, hostname?: string): Promise
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cert | CertBlob[] | 是 | 待校验证书数组。第一个元素必须是叶子证书（end-entity certificate），其余元素为中间证书。 |
@@ -303,6 +319,7 @@ verifyCertChain(cert: CertBlob[], caCert?: CertBlob, hostname?: string): Promise
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<CertBlob[]> | 以promise形式返回排序后的证书链数组，顺序为从叶子节点到根节点。 |
@@ -311,6 +328,7 @@ verifyCertChain(cert: CertBlob[], caCert?: CertBlob, hostname?: string): Promise
 **错误码：**
 
 以下错误码的详细介绍请参见[网络安全校验错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-networksecurity)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -368,7 +386,7 @@ networkSecurity.verifyCertChain([cert1, cert2], caCert, "example.com")
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/Yi-s1ut9RDmIHCnCjzgVdA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071625Z&HW-CC-Expire=86400&HW-CC-Sign=56555341B6328740294302F219CA0D0D8C5027AE622B27CB1A6FA4590DEEA828)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/IsAeE9J2RbWFvix2Y4cInA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072925Z&HW-CC-Expire=86400&HW-CC-Sign=40C80EAED0ADA51B84ABBB7EAB22D226CC442F0A07CEAD4FDFC01D2A22E741FB)
 
 
 请务必将示例中的证书数据替换为实际的证书内容。
@@ -377,9 +395,10 @@ networkSecurity.verifyCertChain([cert1, cert2], caCert, "example.com")
 
 
 
-#### networkSecurity.isCleartextPermitted18+
+## networkSecurity.isCleartextPermitted18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isCleartextPermitted(): boolean
 
@@ -391,6 +410,7 @@ isCleartextPermitted(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 整体明文HTTP是否允许。返回true表示允许访问明文HTTP，false表示不允许。默认返回true。 |
@@ -399,6 +419,7 @@ isCleartextPermitted(): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -420,9 +441,10 @@ try {
 
 
 
-#### networkSecurity.isCleartextPermittedByHostName18+
+## networkSecurity.isCleartextPermittedByHostName18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isCleartextPermittedByHostName(hostName: string): boolean
 
@@ -434,12 +456,14 @@ isCleartextPermittedByHostName(hostName: string): boolean
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | hostName | string | 是 | 需要查询的主机名。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -449,6 +473,7 @@ isCleartextPermittedByHostName(hostName: string): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

@@ -1,13 +1,14 @@
 # native_audiorenderer.h
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-audiorenderer-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明音频渲染的相关接口。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_AudioStream_Result OH_AudioRenderer_Release(OH_AudioRenderer* renderer) | - | 释放输出音频流。 |
@@ -80,15 +84,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AudioRenderer_Release()
+### OH_AudioRenderer_Release()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioRenderer_Release(OH_AudioRenderer* renderer)
@@ -102,6 +108,7 @@ OH_AudioStream_Result OH_AudioRenderer_Release(OH_AudioRenderer* renderer)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -109,6 +116,7 @@ OH_AudioStream_Result OH_AudioRenderer_Release(OH_AudioRenderer* renderer)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数renderer为nullptr。 AUDIOSTREAM_ERROR_ILLEGAL_STATE：执行状态异常。 |
@@ -116,9 +124,10 @@ OH_AudioStream_Result OH_AudioRenderer_Release(OH_AudioRenderer* renderer)
  
   
 
-#### OH_AudioRenderer_Start()
+### OH_AudioRenderer_Start()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioRenderer_Start(OH_AudioRenderer* renderer)
@@ -132,6 +141,7 @@ OH_AudioStream_Result OH_AudioRenderer_Start(OH_AudioRenderer* renderer)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -139,6 +149,7 @@ OH_AudioStream_Result OH_AudioRenderer_Start(OH_AudioRenderer* renderer)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数renderer为nullptr。 AUDIOSTREAM_ERROR_ILLEGAL_STATE：执行状态异常。 |
@@ -146,9 +157,10 @@ OH_AudioStream_Result OH_AudioRenderer_Start(OH_AudioRenderer* renderer)
  
   
 
-#### OH_AudioRenderer_Pause()
+### OH_AudioRenderer_Pause()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioRenderer_Pause(OH_AudioRenderer* renderer)
@@ -162,6 +174,7 @@ OH_AudioStream_Result OH_AudioRenderer_Pause(OH_AudioRenderer* renderer)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -169,6 +182,7 @@ OH_AudioStream_Result OH_AudioRenderer_Pause(OH_AudioRenderer* renderer)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数renderer为nullptr。 AUDIOSTREAM_ERROR_ILLEGAL_STATE：执行状态异常。 |
@@ -176,9 +190,10 @@ OH_AudioStream_Result OH_AudioRenderer_Pause(OH_AudioRenderer* renderer)
  
   
 
-#### OH_AudioRenderer_Stop()
+### OH_AudioRenderer_Stop()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioRenderer_Stop(OH_AudioRenderer* renderer)
@@ -192,6 +207,7 @@ OH_AudioStream_Result OH_AudioRenderer_Stop(OH_AudioRenderer* renderer)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -199,6 +215,7 @@ OH_AudioStream_Result OH_AudioRenderer_Stop(OH_AudioRenderer* renderer)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数renderer为nullptr。 AUDIOSTREAM_ERROR_ILLEGAL_STATE：执行状态异常。 |
@@ -206,9 +223,10 @@ OH_AudioStream_Result OH_AudioRenderer_Stop(OH_AudioRenderer* renderer)
  
   
 
-#### OH_AudioRenderer_Flush()
+### OH_AudioRenderer_Flush()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioRenderer_Flush(OH_AudioRenderer* renderer)
@@ -222,6 +240,7 @@ OH_AudioStream_Result OH_AudioRenderer_Flush(OH_AudioRenderer* renderer)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -229,6 +248,7 @@ OH_AudioStream_Result OH_AudioRenderer_Flush(OH_AudioRenderer* renderer)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数renderer为nullptr。 AUDIOSTREAM_ERROR_ILLEGAL_STATE：执行状态异常。 |
@@ -236,9 +256,10 @@ OH_AudioStream_Result OH_AudioRenderer_Flush(OH_AudioRenderer* renderer)
  
   
 
-#### OH_AudioRenderer_GetCurrentState()
+### OH_AudioRenderer_GetCurrentState()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioRenderer_GetCurrentState(OH_AudioRenderer* renderer, OH_AudioStream_State* state)
@@ -252,6 +273,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetCurrentState(OH_AudioRenderer* rendere
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -260,6 +282,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetCurrentState(OH_AudioRenderer* rendere
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数renderer为nullptr。 |
@@ -267,9 +290,10 @@ OH_AudioStream_Result OH_AudioRenderer_GetCurrentState(OH_AudioRenderer* rendere
  
   
 
-#### OH_AudioRenderer_GetSamplingRate()
+### OH_AudioRenderer_GetSamplingRate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioRenderer_GetSamplingRate(OH_AudioRenderer* renderer, int32_t* rate)
@@ -283,6 +307,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetSamplingRate(OH_AudioRenderer* rendere
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -291,6 +316,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetSamplingRate(OH_AudioRenderer* rendere
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数renderer为nullptr。 |
@@ -298,9 +324,10 @@ OH_AudioStream_Result OH_AudioRenderer_GetSamplingRate(OH_AudioRenderer* rendere
  
   
 
-#### OH_AudioRenderer_GetStreamId()
+### OH_AudioRenderer_GetStreamId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioRenderer_GetStreamId(OH_AudioRenderer* renderer, uint32_t* streamId)
@@ -314,6 +341,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetStreamId(OH_AudioRenderer* renderer, u
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -322,6 +350,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetStreamId(OH_AudioRenderer* renderer, u
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数renderer为nullptr。 |
@@ -329,9 +358,10 @@ OH_AudioStream_Result OH_AudioRenderer_GetStreamId(OH_AudioRenderer* renderer, u
  
   
 
-#### OH_AudioRenderer_GetChannelCount()
+### OH_AudioRenderer_GetChannelCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioRenderer_GetChannelCount(OH_AudioRenderer* renderer, int32_t* channelCount)
@@ -345,6 +375,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetChannelCount(OH_AudioRenderer* rendere
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -353,6 +384,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetChannelCount(OH_AudioRenderer* rendere
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数renderer为nullptr。 |
@@ -360,9 +392,10 @@ OH_AudioStream_Result OH_AudioRenderer_GetChannelCount(OH_AudioRenderer* rendere
  
   
 
-#### OH_AudioRenderer_GetSampleFormat()
+### OH_AudioRenderer_GetSampleFormat()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioRenderer_GetSampleFormat(OH_AudioRenderer* renderer, OH_AudioStream_SampleFormat* sampleFormat)
@@ -376,6 +409,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetSampleFormat(OH_AudioRenderer* rendere
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -384,6 +418,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetSampleFormat(OH_AudioRenderer* rendere
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数renderer为nullptr。 |
@@ -391,9 +426,10 @@ OH_AudioStream_Result OH_AudioRenderer_GetSampleFormat(OH_AudioRenderer* rendere
  
   
 
-#### OH_AudioRenderer_GetLatencyMode()
+### OH_AudioRenderer_GetLatencyMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioRenderer_GetLatencyMode(OH_AudioRenderer* renderer, OH_AudioStream_LatencyMode* latencyMode)
@@ -407,6 +443,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetLatencyMode(OH_AudioRenderer* renderer
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -415,6 +452,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetLatencyMode(OH_AudioRenderer* renderer
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数renderer为nullptr。 |
@@ -422,9 +460,10 @@ OH_AudioStream_Result OH_AudioRenderer_GetLatencyMode(OH_AudioRenderer* renderer
  
   
 
-#### OH_AudioRenderer_GetRendererInfo()
+### OH_AudioRenderer_GetRendererInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioRenderer_GetRendererInfo(OH_AudioRenderer* renderer, OH_AudioStream_Usage* usage)
@@ -438,6 +477,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetRendererInfo(OH_AudioRenderer* rendere
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -446,6 +486,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetRendererInfo(OH_AudioRenderer* rendere
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数renderer为nullptr。 |
@@ -453,9 +494,10 @@ OH_AudioStream_Result OH_AudioRenderer_GetRendererInfo(OH_AudioRenderer* rendere
  
   
 
-#### OH_AudioRenderer_GetEncodingType()
+### OH_AudioRenderer_GetEncodingType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioRenderer_GetEncodingType(OH_AudioRenderer* renderer, OH_AudioStream_EncodingType* encodingType)
@@ -469,6 +511,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetEncodingType(OH_AudioRenderer* rendere
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -477,6 +520,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetEncodingType(OH_AudioRenderer* rendere
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数renderer为nullptr。 |
@@ -484,9 +528,10 @@ OH_AudioStream_Result OH_AudioRenderer_GetEncodingType(OH_AudioRenderer* rendere
  
   
 
-#### OH_AudioRenderer_GetFramesWritten()
+### OH_AudioRenderer_GetFramesWritten()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioRenderer_GetFramesWritten(OH_AudioRenderer* renderer, int64_t* frames)
@@ -500,6 +545,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetFramesWritten(OH_AudioRenderer* render
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -508,6 +554,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetFramesWritten(OH_AudioRenderer* render
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数renderer为nullptr。 |
@@ -515,9 +562,10 @@ OH_AudioStream_Result OH_AudioRenderer_GetFramesWritten(OH_AudioRenderer* render
  
   
 
-#### OH_AudioRenderer_GetTimestamp()
+### OH_AudioRenderer_GetTimestamp()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioRenderer_GetTimestamp(OH_AudioRenderer* renderer, clockid_t clockId, int64_t* framePosition, int64_t* timestamp)
@@ -543,6 +591,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetTimestamp(OH_AudioRenderer* renderer, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -553,6 +602,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetTimestamp(OH_AudioRenderer* renderer, 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM： 1. 参数renderer为nullptr； 2. 参数clockId无效。 AUDIOSTREAM_ERROR_ILLEGAL_STATE：执行状态异常。 |
@@ -560,9 +610,10 @@ OH_AudioStream_Result OH_AudioRenderer_GetTimestamp(OH_AudioRenderer* renderer, 
  
   
 
-#### OH_AudioRenderer_GetAudioTimestampInfo()
+### OH_AudioRenderer_GetAudioTimestampInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioRenderer_GetAudioTimestampInfo(OH_AudioRenderer* renderer, int64_t* framePosition, int64_t* timestamp)
@@ -579,13 +630,14 @@ OH_AudioStream_Result OH_AudioRenderer_GetAudioTimestampInfo(OH_AudioRenderer* r
  该接口通常用来实现音画同步，调用频率建议高于200ms一次，推荐频率为每分钟一次。在能保证音画同步效果的情况下，不需要频繁地查询时间戳，避免出现功耗问题。
  
 > [!NOTE]
-> 当实际播放位置（framePosition）为0时，时间戳（timestamp）是固定值，直到流真正开始播放时才会更新。 播放位置（framePosition）单位为采样数，采样数计算方式为采样率乘以时间（例如，当采样率为48000Hz时，20ms音频数据对应的采样数为48000*0.02，即采样点为960）。 当调用Flush接口时实际播放位置也会被重置。 在调用此函数之前，确保音频流处于运行状态，并且至少已成功播放一帧数据。 当音频流路由（route）变化时，例如设备变化或者输出类型变化时，播放位置可能也会被重置，但此时时间戳仍会持续增长。推荐当实际播放位置和时间戳的变化稳定后再使用该接口获取的值。 该接口适配倍速接口，例如当播放速度设置为2倍时，播放位置的增长速度也会返回为正常的2倍。
+> 当实际播放位置（framePosition）为0时，时间戳（timestamp）是固定值，直到流真正跑起来时才会更新。 播放位置（framePosition）单位为采样数，采样数计算方式为采样率乘以时间（例如，当采样率为48000Hz时，20ms音频数据对应的采样数为48000*0.02，即采样点为960）。 当调用Flush接口时实际播放位置也会被重置。 在调用此函数之前，确保音频流处于运行状态，并且至少已成功播放一帧数据。 当音频流路由（route）变化时，例如设备变化或者输出类型变化时，播放位置可能也会被重置，但此时时间戳仍会持续增长。推荐当实际播放位置和时间戳的变化稳定后再使用该接口获取的值。 该接口适配倍速接口，例如当播放速度设置为2倍时，播放位置的增长速度也会返回为正常的2倍。
 
  
 **起始版本：** 15
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -595,6 +647,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetAudioTimestampInfo(OH_AudioRenderer* r
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM： 1. 参数renderer为nullptr； 2. 参数framePosition或timestamp为nullptr。 AUDIOSTREAM_ERROR_ILLEGAL_STATE：当前流状态不为合法状态时返回。 AUDIOSTREAM_ERROR_SYSTEM： 1. 系统进程崩溃或被阻塞； 2. 内部系统其他错误。 |
@@ -602,9 +655,10 @@ OH_AudioStream_Result OH_AudioRenderer_GetAudioTimestampInfo(OH_AudioRenderer* r
  
   
 
-#### OH_AudioRenderer_GetFrameSizeInCallback()
+### OH_AudioRenderer_GetFrameSizeInCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioRenderer_GetFrameSizeInCallback(OH_AudioRenderer* renderer, int32_t* frameSize)
@@ -618,6 +672,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetFrameSizeInCallback(OH_AudioRenderer* 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -626,6 +681,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetFrameSizeInCallback(OH_AudioRenderer* 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数renderer为nullptr。 |
@@ -633,9 +689,10 @@ OH_AudioStream_Result OH_AudioRenderer_GetFrameSizeInCallback(OH_AudioRenderer* 
  
   
 
-#### OH_AudioRenderer_GetSpeed()
+### OH_AudioRenderer_GetSpeed()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioRenderer_GetSpeed(OH_AudioRenderer* renderer, float* speed)
@@ -649,6 +706,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetSpeed(OH_AudioRenderer* renderer, floa
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -657,6 +715,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetSpeed(OH_AudioRenderer* renderer, floa
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数renderer为nullptr。 |
@@ -664,9 +723,10 @@ OH_AudioStream_Result OH_AudioRenderer_GetSpeed(OH_AudioRenderer* renderer, floa
  
   
 
-#### OH_AudioRenderer_SetSpeed()
+### OH_AudioRenderer_SetSpeed()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioRenderer_SetSpeed(OH_AudioRenderer* renderer, float speed)
@@ -680,6 +740,7 @@ OH_AudioStream_Result OH_AudioRenderer_SetSpeed(OH_AudioRenderer* renderer, floa
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -688,6 +749,7 @@ OH_AudioStream_Result OH_AudioRenderer_SetSpeed(OH_AudioRenderer* renderer, floa
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数renderer为nullptr。 |
@@ -695,9 +757,10 @@ OH_AudioStream_Result OH_AudioRenderer_SetSpeed(OH_AudioRenderer* renderer, floa
  
   
 
-#### OH_AudioRenderer_SetMarkPosition()
+### OH_AudioRenderer_SetMarkPosition()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioRenderer_SetMarkPosition(OH_AudioRenderer* renderer, uint32_t samplePos, OH_AudioRenderer_OnMarkReachedCallback callback, void* userData)
@@ -711,6 +774,7 @@ OH_AudioStream_Result OH_AudioRenderer_SetMarkPosition(OH_AudioRenderer* rendere
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -721,6 +785,7 @@ OH_AudioStream_Result OH_AudioRenderer_SetMarkPosition(OH_AudioRenderer* rendere
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM： 1. 参数renderer为nullptr； 2. 参数samplePos无效。 AUDIOSTREAM_ERROR_ILLEGAL_STATE：执行状态异常。 AUDIOSTREAM_ERROR_SYSTEM：出现系统错误。 |
@@ -728,9 +793,10 @@ OH_AudioStream_Result OH_AudioRenderer_SetMarkPosition(OH_AudioRenderer* rendere
  
   
 
-#### OH_AudioRenderer_CancelMark()
+### OH_AudioRenderer_CancelMark()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioRenderer_CancelMark(OH_AudioRenderer* renderer)
@@ -744,6 +810,7 @@ OH_AudioStream_Result OH_AudioRenderer_CancelMark(OH_AudioRenderer* renderer)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -751,6 +818,7 @@ OH_AudioStream_Result OH_AudioRenderer_CancelMark(OH_AudioRenderer* renderer)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数renderer为nullptr。 |
@@ -758,9 +826,10 @@ OH_AudioStream_Result OH_AudioRenderer_CancelMark(OH_AudioRenderer* renderer)
  
   
 
-#### OH_AudioRenderer_SetVolume()
+### OH_AudioRenderer_SetVolume()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioRenderer_SetVolume(OH_AudioRenderer* renderer, float volume)
@@ -774,6 +843,7 @@ OH_AudioStream_Result OH_AudioRenderer_SetVolume(OH_AudioRenderer* renderer, flo
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -782,6 +852,7 @@ OH_AudioStream_Result OH_AudioRenderer_SetVolume(OH_AudioRenderer* renderer, flo
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM： 1. 参数renderer为nullptr； 2. 参数volume无效。 AUDIOSTREAM_ERROR_ILLEGAL_STATE：执行状态异常。 AUDIOSTREAM_ERROR_SYSTEM：出现系统错误。 |
@@ -789,9 +860,10 @@ OH_AudioStream_Result OH_AudioRenderer_SetVolume(OH_AudioRenderer* renderer, flo
  
   
 
-#### OH_AudioRenderer_SetVolumeWithRamp()
+### OH_AudioRenderer_SetVolumeWithRamp()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioRenderer_SetVolumeWithRamp(OH_AudioRenderer* renderer, float volume, int32_t durationMs)
@@ -805,6 +877,7 @@ OH_AudioStream_Result OH_AudioRenderer_SetVolumeWithRamp(OH_AudioRenderer* rende
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -814,6 +887,7 @@ OH_AudioStream_Result OH_AudioRenderer_SetVolumeWithRamp(OH_AudioRenderer* rende
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM： 1. 参数renderer为nullptr； 2. 参数volume无效。 AUDIOSTREAM_ERROR_ILLEGAL_STATE：执行状态异常。 AUDIOSTREAM_ERROR_SYSTEM：出现系统错误。 |
@@ -821,9 +895,10 @@ OH_AudioStream_Result OH_AudioRenderer_SetVolumeWithRamp(OH_AudioRenderer* rende
  
   
 
-#### OH_AudioRenderer_GetVolume()
+### OH_AudioRenderer_GetVolume()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioRenderer_GetVolume(OH_AudioRenderer* renderer, float* volume)
@@ -837,6 +912,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetVolume(OH_AudioRenderer* renderer, flo
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -845,6 +921,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetVolume(OH_AudioRenderer* renderer, flo
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM： 1. 参数renderer为nullptr； 2. 参数volume为nullptr。 |
@@ -852,9 +929,10 @@ OH_AudioStream_Result OH_AudioRenderer_GetVolume(OH_AudioRenderer* renderer, flo
  
   
 
-#### OH_AudioRenderer_GetUnderflowCount()
+### OH_AudioRenderer_GetUnderflowCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioRenderer_GetUnderflowCount(OH_AudioRenderer* renderer, uint32_t* count)
@@ -868,6 +946,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetUnderflowCount(OH_AudioRenderer* rende
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -876,6 +955,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetUnderflowCount(OH_AudioRenderer* rende
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM： 1. 参数renderer为nullptr； 2. 参数count为nullptr。 |
@@ -883,9 +963,10 @@ OH_AudioStream_Result OH_AudioRenderer_GetUnderflowCount(OH_AudioRenderer* rende
  
   
 
-#### OH_AudioRenderer_GetChannelLayout()
+### OH_AudioRenderer_GetChannelLayout()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioRenderer_GetChannelLayout(OH_AudioRenderer* renderer, OH_AudioChannelLayout* channelLayout)
@@ -899,6 +980,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetChannelLayout(OH_AudioRenderer* render
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -907,6 +989,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetChannelLayout(OH_AudioRenderer* render
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数renderer为nullptr。 |
@@ -914,9 +997,10 @@ OH_AudioStream_Result OH_AudioRenderer_GetChannelLayout(OH_AudioRenderer* render
  
   
 
-#### OH_AudioRenderer_GetEffectMode()
+### OH_AudioRenderer_GetEffectMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioRenderer_GetEffectMode(OH_AudioRenderer* renderer, OH_AudioStream_AudioEffectMode* effectMode)
@@ -930,6 +1014,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetEffectMode(OH_AudioRenderer* renderer,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -938,6 +1023,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetEffectMode(OH_AudioRenderer* renderer,
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数renderer为nullptr。 |
@@ -945,9 +1031,10 @@ OH_AudioStream_Result OH_AudioRenderer_GetEffectMode(OH_AudioRenderer* renderer,
  
   
 
-#### OH_AudioRenderer_SetEffectMode()
+### OH_AudioRenderer_SetEffectMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioRenderer_SetEffectMode(OH_AudioRenderer* renderer, OH_AudioStream_AudioEffectMode effectMode)
@@ -961,6 +1048,7 @@ OH_AudioStream_Result OH_AudioRenderer_SetEffectMode(OH_AudioRenderer* renderer,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -969,6 +1057,7 @@ OH_AudioStream_Result OH_AudioRenderer_SetEffectMode(OH_AudioRenderer* renderer,
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数renderer为nullptr。 |
@@ -976,9 +1065,10 @@ OH_AudioStream_Result OH_AudioRenderer_SetEffectMode(OH_AudioRenderer* renderer,
  
   
 
-#### OH_AudioRenderer_GetRendererPrivacy()
+### OH_AudioRenderer_GetRendererPrivacy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioRenderer_GetRendererPrivacy(OH_AudioRenderer* renderer, OH_AudioStream_PrivacyType* privacy)
@@ -992,6 +1082,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetRendererPrivacy(OH_AudioRenderer* rend
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -1000,6 +1091,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetRendererPrivacy(OH_AudioRenderer* rend
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数renderer为nullptr。 |
@@ -1007,9 +1099,10 @@ OH_AudioStream_Result OH_AudioRenderer_GetRendererPrivacy(OH_AudioRenderer* rend
  
   
 
-#### OH_AudioRenderer_SetSilentModeAndMixWithOthers()
+### OH_AudioRenderer_SetSilentModeAndMixWithOthers()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioRenderer_SetSilentModeAndMixWithOthers(OH_AudioRenderer* renderer, bool on)
@@ -1025,6 +1118,7 @@ OH_AudioStream_Result OH_AudioRenderer_SetSilentModeAndMixWithOthers(OH_AudioRen
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -1033,6 +1127,7 @@ OH_AudioStream_Result OH_AudioRenderer_SetSilentModeAndMixWithOthers(OH_AudioRen
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数renderer为nullptr。 |
@@ -1040,9 +1135,10 @@ OH_AudioStream_Result OH_AudioRenderer_SetSilentModeAndMixWithOthers(OH_AudioRen
  
   
 
-#### OH_AudioRenderer_GetSilentModeAndMixWithOthers()
+### OH_AudioRenderer_GetSilentModeAndMixWithOthers()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioRenderer_GetSilentModeAndMixWithOthers(OH_AudioRenderer* renderer, bool* on)
@@ -1056,6 +1152,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetSilentModeAndMixWithOthers(OH_AudioRen
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -1064,6 +1161,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetSilentModeAndMixWithOthers(OH_AudioRen
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数renderer为nullptr。 |
@@ -1071,9 +1169,10 @@ OH_AudioStream_Result OH_AudioRenderer_GetSilentModeAndMixWithOthers(OH_AudioRen
  
   
 
-#### OH_AudioRenderer_SetDefaultOutputDevice()
+### OH_AudioRenderer_SetDefaultOutputDevice()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioRenderer_SetDefaultOutputDevice(OH_AudioRenderer* renderer, OH_AudioDevice_Type deviceType)
@@ -1093,6 +1192,7 @@ OH_AudioStream_Result OH_AudioRenderer_SetDefaultOutputDevice(OH_AudioRenderer* 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -1101,6 +1201,7 @@ OH_AudioStream_Result OH_AudioRenderer_SetDefaultOutputDevice(OH_AudioRenderer* 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM： 1. 参数renderer为nullptr。 2. 参数deviceType无效。 AUDIOSTREAM_ERROR_ILLEGAL_STATE：执行状态异常。 AUDIOSTREAM_ERROR_SYSTEM：出现系统错误。 |
@@ -1108,9 +1209,10 @@ OH_AudioStream_Result OH_AudioRenderer_SetDefaultOutputDevice(OH_AudioRenderer* 
  
   
 
-#### OH_AudioRenderer_OnInterruptCallback()
+### OH_AudioRenderer_OnInterruptCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_AudioRenderer_OnInterruptCallback)(OH_AudioRenderer* renderer, void* userData, OH_AudioInterrupt_ForceType type, OH_AudioInterrupt_Hint hint)
@@ -1124,6 +1226,7 @@ typedef void (*OH_AudioRenderer_OnInterruptCallback)(OH_AudioRenderer* renderer,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -1134,9 +1237,10 @@ typedef void (*OH_AudioRenderer_OnInterruptCallback)(OH_AudioRenderer* renderer,
  
   
 
-#### OH_AudioRenderer_OnErrorCallback()
+### OH_AudioRenderer_OnErrorCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_AudioRenderer_OnErrorCallback)(OH_AudioRenderer* renderer, void* userData, OH_AudioStream_Result error)
@@ -1150,6 +1254,7 @@ typedef void (*OH_AudioRenderer_OnErrorCallback)(OH_AudioRenderer* renderer, voi
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -1159,9 +1264,10 @@ typedef void (*OH_AudioRenderer_OnErrorCallback)(OH_AudioRenderer* renderer, voi
  
   
 
-#### OH_AudioRenderer_GetFastStatus()
+### OH_AudioRenderer_GetFastStatus()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioRenderer_GetFastStatus(OH_AudioRenderer* renderer, OH_AudioStream_FastStatus* status)
@@ -1175,6 +1281,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetFastStatus(OH_AudioRenderer* renderer,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -1183,6 +1290,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetFastStatus(OH_AudioRenderer* renderer,
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数renderer为nullptr。 AUDIOSTREAM_ERROR_ILLEGAL_STATE：执行状态异常，仅在释放状态之前可用。 |
@@ -1190,9 +1298,10 @@ OH_AudioStream_Result OH_AudioRenderer_GetFastStatus(OH_AudioRenderer* renderer,
  
   
 
-#### OH_AudioRenderer_OnFastStatusChange()
+### OH_AudioRenderer_OnFastStatusChange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_AudioRenderer_OnFastStatusChange)(OH_AudioRenderer* renderer, void* userData, OH_AudioStream_FastStatus status
@@ -1207,6 +1316,7 @@ typedef void (*OH_AudioRenderer_OnFastStatusChange)(OH_AudioRenderer* renderer, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -1216,9 +1326,10 @@ typedef void (*OH_AudioRenderer_OnFastStatusChange)(OH_AudioRenderer* renderer, 
  
   
 
-#### OH_AudioRenderer_SetLoudnessGain()
+### OH_AudioRenderer_SetLoudnessGain()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioRenderer_SetLoudnessGain(OH_AudioRenderer* renderer, float loudnessGain)
@@ -1244,6 +1355,7 @@ OH_AudioStream_Result OH_AudioRenderer_SetLoudnessGain(OH_AudioRenderer* rendere
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -1252,6 +1364,7 @@ OH_AudioStream_Result OH_AudioRenderer_SetLoudnessGain(OH_AudioRenderer* rendere
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM： 1. 参数renderer为nullptr，或音频流不支持设置响度； 2. 参数loudnessGain不在响度值范围内。 |
@@ -1259,9 +1372,10 @@ OH_AudioStream_Result OH_AudioRenderer_SetLoudnessGain(OH_AudioRenderer* rendere
  
   
 
-#### OH_AudioRenderer_GetLoudnessGain()
+### OH_AudioRenderer_GetLoudnessGain()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioRenderer_GetLoudnessGain(OH_AudioRenderer* renderer, float* loudnessGain)
@@ -1275,6 +1389,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetLoudnessGain(OH_AudioRenderer* rendere
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -1283,6 +1398,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetLoudnessGain(OH_AudioRenderer* rendere
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM： 1. 参数renderer为nullptr； 2. 参数loudnessGain为nullptr。 |
@@ -1290,9 +1406,10 @@ OH_AudioStream_Result OH_AudioRenderer_GetLoudnessGain(OH_AudioRenderer* rendere
  
   
 
-#### OH_AudioRenderer_OnWriteDataCallbackAdvanced()
+### OH_AudioRenderer_OnWriteDataCallbackAdvanced()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef int32_t (*OH_AudioRenderer_OnWriteDataCallbackAdvanced)(OH_AudioRenderer* renderer, void* userData, void* audioData, int32_t audioDataSize)
@@ -1312,6 +1429,7 @@ typedef int32_t (*OH_AudioRenderer_OnWriteDataCallbackAdvanced)(OH_AudioRenderer
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向发生回调的实例。 |
@@ -1322,6 +1440,7 @@ typedef int32_t (*OH_AudioRenderer_OnWriteDataCallbackAdvanced)(OH_AudioRenderer
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 应用实际填充有效音频数据的长度。返回值必须在[0, audioDataSize]范围内。 如果返回值小于0，系统将调整为0。 并且，如果返回值大于audioDataSize，系统将其调整到audioDataSize。 注意返回值必须是单个采样点大小的整数倍。 比如，双声道S16格式的音频数据，必须是4(2 * 16 / 8)的整数倍。 否则，可能造成播放杂音。 |
@@ -1329,9 +1448,10 @@ typedef int32_t (*OH_AudioRenderer_OnWriteDataCallbackAdvanced)(OH_AudioRenderer
  
   
 
-#### OH_AudioRenderer_GetLatency()
+### OH_AudioRenderer_GetLatency()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioRenderer_GetLatency(OH_AudioRenderer* renderer, OH_AudioStream_LatencyType type, int32_t* latencyMs)
@@ -1349,6 +1469,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetLatency(OH_AudioRenderer* renderer, OH
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -1358,6 +1479,7 @@ OH_AudioStream_Result OH_AudioRenderer_GetLatency(OH_AudioRenderer* renderer, OH
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM： 1. 参数renderer为nullptr； 2. 参数latencyMs为nullptr； 3. 参数type无效。 AUDIOSTREAM_ERROR_SYSTEM：系统内部错误，例如音频服务异常。 |
@@ -1365,9 +1487,10 @@ OH_AudioStream_Result OH_AudioRenderer_GetLatency(OH_AudioRenderer* renderer, OH
  
   
 
-#### OH_AudioRenderer_SetIndependentAudioSessionStrategy()
+### OH_AudioRenderer_SetIndependentAudioSessionStrategy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioRenderer_SetIndependentAudioSessionStrategy(OH_AudioRenderer* renderer, const OH_AudioSession_Strategy* strategy, uint32_t behavior)
@@ -1381,6 +1504,7 @@ OH_AudioStream_Result OH_AudioRenderer_SetIndependentAudioSessionStrategy(OH_Aud
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRenderer* renderer | 指向OH_AudioStreamBuilder_GenerateRenderer创建的音频流实例。 |
@@ -1390,6 +1514,7 @@ OH_AudioStream_Result OH_AudioRenderer_SetIndependentAudioSessionStrategy(OH_Aud
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数为空指针或超出范围。 AUDIOSTREAM_ERROR_ILLEGAL_STATE：执行状态异常。 |

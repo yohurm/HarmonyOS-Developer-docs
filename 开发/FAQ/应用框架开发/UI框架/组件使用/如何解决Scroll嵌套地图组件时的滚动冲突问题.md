@@ -71,7 +71,7 @@ export default class EntryAbility extends UIAbility {
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
-    // Main window is created, set main page for this ability
+   <em> // Main window is created, set main page for this ability</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
     window.getLastWindow(this.context).then((lastWindow) => {
@@ -88,17 +88,17 @@ export default class EntryAbility extends UIAbility {
   }
 
   onWindowStageDestroy(): void {
-    // Main window is destroyed, release UI related resources
+ <em>   // Main window is destroyed, release UI related resources</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
   }
 
   onForeground(): void {
-    // Ability has brought to foreground
+   <em> // Ability has brought to foreground</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onForeground');
   }
 
   onBackground(): void {
-    // Ability has back to background
+    <em>// Ability has back to background</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onBackground');
   }
 };
@@ -121,7 +121,7 @@ struct MapDemo {
   private mapController?: map.MapComponentController;
 
   aboutToAppear(): void {
-    // 地图初始化参数，设置地图中心点坐标及层级
+  <em>  // 地图初始化参数，设置地图中心点坐标及层级</em>
     this.mapOption = {
       position: {
         target: {
@@ -131,10 +131,10 @@ struct MapDemo {
         zoom: 10
       }
     };
-    // 地图初始化的回调
+ <em>   // 地图初始化的回调</em>
     this.callback = async (err, mapController) => {
       if (!err) {
-        // 获取地图的控制器类，用来操作地图
+       <em> // 获取地图的控制器类，用来操作地图</em>
         this.mapController = mapController;
         this.mapEventManager = this.mapController.getEventManager();
         let callback = () => {
@@ -149,7 +149,7 @@ struct MapDemo {
     Stack() {
       Scroll() {
         Column() {
-          // 调用MapComponent组件初始化地图
+        <em>  // 调用MapComponent组件初始化地图</em>
           MapComponent({ mapOptions: this.mapOption, mapCallback: this.callback })
             .width('100%')
             .height('60%')
@@ -166,7 +166,7 @@ struct MapDemo {
                   break;
               }
             });
-          // 用于观测是否跟随滑动
+         <em> // 用于观测是否跟随滑动</em>
           Text('测试是否可以滑动').width('100%').height('50%').textAlign(TextAlign.Center);
         }
         .width('100%');

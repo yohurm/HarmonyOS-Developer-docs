@@ -1,16 +1,16 @@
 # 代理提醒(ArkTS)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agent-powered-reminder
 
-#### 功能介绍
+## 功能介绍
 
 应用退到后台或进程终止后，仍然有一些提醒用户的定时类通知，为满足此类功能场景，系统提供了代理提醒的能力。当应用退至后台或进程终止后，系统会代理应用做定时提醒。当前支持的提醒类型包括：倒计时、日历和闹钟。为了防止代理提醒被滥用于广告、营销类提醒，影响用户体验，部分设备上代理提醒增加了管控机制，应用无法直接使用代理提醒，管控后的使用方法请参考[管控限制](#约束与限制)。
 
 
 
-#### 约束与限制
+## 约束与限制
 
  - **设备限制**：代理提醒适用于手机、平板、PC/2in1、智慧屏、智能穿戴设备。
  - **管控限制**：
@@ -50,24 +50,25 @@
 
 
 
-#### 与相关Kit的关系
+## 与相关Kit的关系
 
  - 当到达设置的提醒时间点后，代理提醒使用Notification Kit发布通知，通知会显示在通知中心，通知样式请参考[Notification Kit通知样式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-overview#通知样式)中的文本类型。
 
 
 
 
-#### 模拟器支持情况
+## 模拟器支持情况
 
 从API version 20开始，本能力支持模拟器开发。
 
 
 
-#### 接口说明
+## 接口说明
 
 以下是代理提醒的相关接口，下表均以Promise形式为例，更多接口及使用方式请见[后台代理提醒](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-reminderagentmanager)文档。
 
 **表1** 主要接口
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -81,11 +82,11 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 
 
 
-#### 代理提醒开放能力申请
+### 代理提醒开放能力申请
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，选择“开发与服务”。
 2. 在项目列表中找到您的项目，在项目下的应用列表中选择需要申请代理提醒的应用。如果无对应应用，请先[创建HarmonyOS应用](https://developer.huawei.com/consumer/cn/doc/app/agc-help-create-app-0000002247955506)。
 3. 进入“项目设置”->“开放能力管理”页面，点击“代理提醒”卡片对应的“申请”按钮。
@@ -101,30 +102,30 @@
 5. 返回“开放能力接入”页面，原“申请”按钮变为“申请中”，8个工作日反馈申请结果。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/ECTjzYNITcemUvfwzArkOg/zh-cn_image_0000002704392895.png?HW-CC-KV=V1&HW-CC-Date=20260813T095739Z&HW-CC-Expire=86400&HW-CC-Sign=41933AA239F37F16E8ACDFE0F62D2A54E8745E56A8BF7D57E41CC84CC4F1B103)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/0-j3vDhUT4O3lxzYlewoRw/zh-cn_image_0000002717610968.png?HW-CC-KV=V1&HW-CC-Date=20260911T072400Z&HW-CC-Expire=86400&HW-CC-Sign=3C357099F9BA29D7F45B13D0B6CFC90D73BBFE1A1BEFD437A73D623EFF632012)
 
 6. 申请审批通过后，互动中心会发送通知给您，同时“申请中”按钮会变为置灰显示的“申请”。
-7. 能力申请通过后，勾选代理提醒的能力开关，点击右上角“保存”。至此，您的应用已成功接入开放能力。此时，调试和发布应用必须重新生成Profile文件并使用[手动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing)。
+7. 能力申请通过后，勾选代理提醒的能力开关，点击右上角“保存”。至此，您的应用已成功接入开放能力。此时，调试和发布应用必须重新生成Profile文件并使用[手动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing-manual)。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/800Pcf_fTWOJgyMVWMIvFA/zh-cn_image_0000002674632774.png?HW-CC-KV=V1&HW-CC-Date=20260813T095739Z&HW-CC-Expire=86400&HW-CC-Sign=E3CB328E053874F9ADC45CCBF6F3E4A53B72B5CF034F9CBE378CC2B3C7CC954F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/Q2PlXWOtTcGSvFyaVrD0og/zh-cn_image_0000002747290921.png?HW-CC-KV=V1&HW-CC-Date=20260911T072400Z&HW-CC-Expire=86400&HW-CC-Sign=02CD7D1D8696DF9FB435125DB54D3849F247514ABD9C440581EAC2DDC199C43F)
 
 
 
 
-#### 申请权限
+### 申请权限
 
 申请ohos.permission.PUBLISH_AGENT_REMINDER权限，配置方式请参阅[声明权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions)。
 
 
 
-#### 请求通知授权
+### 请求通知授权
 
 [请求通知授权](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-enable)。获得用户授权后，才能使用代理提醒功能。
 
 
 
-#### 功能开发
+### 功能开发
 1. 导入模块。
 
   

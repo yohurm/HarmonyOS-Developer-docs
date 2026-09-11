@@ -1,9 +1,9 @@
 # @ohos.data.distributedKVStore (分布式键值数据库)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-distributedkvstore
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 分布式键值数据库为应用程序提供不同设备间数据库的分布式协同能力。通过调用分布式键值数据库各个接口，应用程序可将数据保存到分布式键值数据库中，并可对分布式键值数据库中的数据进行增加、删除、修改、查询、端端同步等操作。
 
@@ -21,9 +21,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { distributedKVStore } from '@kit.ArkData';
@@ -31,69 +32,77 @@ import { distributedKVStore } from '@kit.ArkData';
 
 
 
-#### KVManagerConfig
+## KVManagerConfig
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供KVManager实例的配置信息，包括调用方的包名和应用的上下文。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | context | BaseContext | 否 | 否 | 应用的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 从API version 10开始，context的参数类型为BaseContext。 |
-| bundleName | string | 否 | 否 | 调用方的包名，不可为空且长度范围为1-256字节。 |
+| bundleName | string | 否 | 否 | 调用方的包名，不可为空且长度范围为1-256字节（Byte）。 |
 
 
 
 
-#### Constants
+## Constants
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 分布式键值数据库常量。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| MAX_KEY_LENGTH | number | 是 | 否 | 值为1024，表示数据库中Key允许的最大长度，单位字节。 |
-| MAX_VALUE_LENGTH | number | 是 | 否 | 值为4194303，表示数据库中Value允许的最大长度，单位字节。 |
-| MAX_KEY_LENGTH_DEVICE | number | 是 | 否 | 值为896，表示设备协同数据库中Key允许的最大长度，单位字节。 |
-| MAX_STORE_ID_LENGTH | number | 是 | 否 | 值为128，表示数据库标识符允许的最大长度，单位字节。 |
-| MAX_QUERY_LENGTH | number | 是 | 否 | 值为512000，表示最大查询长度，单位字节。 |
+| MAX_KEY_LENGTH | number | 是 | 否 | 值为1024，表示数据库中Key允许的最大长度，单位：字节（Byte）。 |
+| MAX_VALUE_LENGTH | number | 是 | 否 | 值为4194303，表示数据库中Value允许的最大长度，单位：字节（Byte）。 |
+| MAX_KEY_LENGTH_DEVICE | number | 是 | 否 | 值为896，表示设备协同数据库中Key允许的最大长度，单位：字节（Byte）。 |
+| MAX_STORE_ID_LENGTH | number | 是 | 否 | 值为128，表示数据库标识符允许的最大长度，单位：字节（Byte）。 |
+| MAX_QUERY_LENGTH | number | 是 | 否 | 值为512000，表示最大查询长度，单位：字节（Byte）。 |
 | MAX_BATCH_SIZE | number | 是 | 否 | 值为128，表示最大批处理操作数量。 |
 
 
 
 
-#### ValueType
+## ValueType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 数据类型枚举。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | STRING | 0 | 表示值类型为字符串。 |
 | INTEGER | 1 | 表示值类型为整数。 |
 | FLOAT | 2 | 表示值类型为浮点数。 |
-| BYTE_ARRAY | 3 | 表示值类型为字节数组。 |
+| BYTE_ARRAY | 3 | 表示值类型为字节（Byte）数组。 |
 | BOOLEAN | 4 | 表示值类型为布尔值。 |
 | DOUBLE | 5 | 表示值类型为双浮点数。 |
 
 
 
 
-#### Value
+## Value
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 存储在数据库中的值对象。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -103,13 +112,15 @@ import { distributedKVStore } from '@kit.ArkData';
 
 
 
-#### Entry
+## Entry
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 存储在数据库中的键值对。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -119,13 +130,15 @@ import { distributedKVStore } from '@kit.ArkData';
 
 
 
-#### ChangeNotification
+## ChangeNotification
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 数据变更时通知的对象，包括插入的数据、更新的数据、删除的数据和设备ID。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -137,13 +150,15 @@ import { distributedKVStore } from '@kit.ArkData';
 
 
 
-#### SyncMode
+## SyncMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 同步模式枚举。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -154,13 +169,15 @@ import { distributedKVStore } from '@kit.ArkData';
 
 
 
-#### SubscribeType
+## SubscribeType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 订阅类型枚举。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -171,11 +188,13 @@ import { distributedKVStore } from '@kit.ArkData';
 
 
 
-#### KVStoreType
+## KVStoreType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 分布式键值数据库类型枚举。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -185,9 +204,10 @@ import { distributedKVStore } from '@kit.ArkData';
 
 
 
-#### SecurityLevel
+## SecurityLevel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 数据库的安全级别枚举。
 
@@ -196,6 +216,7 @@ import { distributedKVStore } from '@kit.ArkData';
 
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -207,11 +228,13 @@ import { distributedKVStore } from '@kit.ArkData';
 
 
 
-#### Options
+## Options
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于提供创建数据库的配置信息。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -227,13 +250,15 @@ import { distributedKVStore } from '@kit.ArkData';
 
 
 
-#### BackupConfig24+
+## BackupConfig24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于备份数据库的配置信息。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -243,20 +268,22 @@ import { distributedKVStore } from '@kit.ArkData';
 
 
 
-#### Schema
+## Schema
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示数据库模式，可以在创建或打开数据库时创建Schema对象并将它们放入[Options](#options)中。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | root | FieldNode | 否 | 否 | 存放了Value中所有字段的定义。 |
 | indexes | Array&lt;string&gt; | 否 | 否 | 索引字段定义，只有通过此字段指定的FieldNode才会创建索引，格式为：'$.field1', '$.field2'。 |
 | mode | number | 否 | 否 | Schema的模式，可以取值0或1，0表示COMPATIBLE模式，1表示STRICT模式。 |
-| skip | number | 否 | 否 | 支持在检查Value时，跳过skip指定的字节数，取值范围为[0, 4 * 1024 * 1024 - 2]字节。 |
+| skip | number | 否 | 否 | 支持在检查Value时，跳过skip指定的字节（Byte）数，取值范围为[0, 4 * 1024 * 1024 - 2]字节（Byte）。 |
 
 
 STRICT：STRICT模式要求用户插入的值必须与Schema定义严格匹配，字段数量和格式都不能有差异。如果不匹配，数据库将在插入数据时返回错误。
@@ -265,9 +292,10 @@ COMPATIBLE：选择为COMPATIBLE模式时，数据库在检查Value格式时较�
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -297,13 +325,15 @@ schema.skip = 0;
 
 
 
-#### FieldNode
+## FieldNode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示 Schema 实例的节点，提供定义存储在数据库中的值的方法。
 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -314,9 +344,10 @@ schema.skip = 0;
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(name: string)
 
@@ -325,6 +356,7 @@ constructor(name: string)
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -335,6 +367,7 @@ constructor(name: string)
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Parameter verification failed. |
@@ -342,9 +375,10 @@ constructor(name: string)
 
 
 
-#### appendChild
+### appendChild
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 appendChild(child: FieldNode): boolean
 
@@ -354,12 +388,14 @@ appendChild(child: FieldNode): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | child | FieldNode | 是 | 要附加的子节点。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -369,6 +405,7 @@ appendChild(child: FieldNode): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -399,9 +436,10 @@ try {
 
 
 
-#### distributedKVStore.createKVManager
+## distributedKVStore.createKVManager
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createKVManager(config: KVManagerConfig): KVManager
 
@@ -411,12 +449,14 @@ createKVManager(config: KVManagerConfig): KVManager
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | config | KVManagerConfig | 是 | 提供KVManager实例的配置信息，包括应用的上下文和调用方的包名（不能为空）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -426,6 +466,7 @@ createKVManager(config: KVManagerConfig): KVManager
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -495,24 +536,26 @@ if (kvManager !== undefined) {
 
 
 
-#### KVManager
+## KVManager
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 分布式键值数据库管理实例，用于获取分布式键值数据库的相关信息。在调用KVManager的方法前，需要先通过[createKVManager](#distributedkvstorecreatekvmanager)构建一个KVManager实例。
 
 
 
-#### getKVStore
+### getKVStore
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getKVStore&lt;T&gt;(storeId: string, options: Options, callback: AsyncCallback&lt;T&gt;): void
 
 通过指定options和storeId，创建并获取分布式键值数据库，使用callback异步回调。获取数据库后，在使用完毕时需调用[closeKVStore](#closekvstore)关闭数据库释放资源。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/zxgTt4pSSp2jvvEqSzsm4g/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071431Z&HW-CC-Expire=86400&HW-CC-Sign=8B141F6D29FCA22A8C66AFE48C257F88ACA63C6C100058D52AF210FE8F6205C4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/oaadglipTu6R_CY0xsvTYw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072855Z&HW-CC-Expire=86400&HW-CC-Sign=ADC1EA034A05BDBF695392A3EB57D7A1E203F205A92BC2111EE459660E6A4B76)
 
 
 在获取已有的分布式键值数据库时，如果数据库文件无法打开（例如文件头损坏），将触发自动重建逻辑，并返回新创建的分布式键值数据库实例。建议对重要且无法重新生成的数据使用备份恢复功能，以防止数据丢失。有关备份恢复的使用方法，请参阅[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
@@ -522,6 +565,7 @@ getKVStore&lt;T&gt;(storeId: string, options: Options, callback: AsyncCallback&l
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -533,6 +577,7 @@ getKVStore&lt;T&gt;(storeId: string, options: Options, callback: AsyncCallback&l
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -576,16 +621,17 @@ try {
 
 
 
-#### getKVStore
+### getKVStore
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getKVStore&lt;T&gt;(storeId: string, options: Options): Promise&lt;T&gt;
 
 指定options和storeId，创建并获取分布式键值数据库，使用Promise回调。获取数据库后，在使用完毕时需调用[closeKVStore](#closekvstore)关闭数据库释放资源。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/srdhWLh1TOiebmkOFSAOkw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071431Z&HW-CC-Expire=86400&HW-CC-Sign=34AFEB14C1692B251130727979845B6A572BDDE7790419DF405DFBBBADC02146)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/QLfDbJT3Tc-Fqb4fXdtZcQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072855Z&HW-CC-Expire=86400&HW-CC-Sign=C03B395F71FFFB78A8A67CB3DF04F5CC528635AA52FA3AEF03DDA3759D15132B)
 
 
 获取已有的分布式键值数据库时，如果数据库文件无法打开（如文件头损坏），将触发自动重建逻辑，并返回新创建的分布式键值数据库实例。建议对重要且无法重新生成的数据使用备份恢复功能，防止数据丢失。备份恢复的使用方法详见[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
@@ -596,6 +642,7 @@ getKVStore&lt;T&gt;(storeId: string, options: Options): Promise&lt;T&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | storeId | string | 是 | 数据库唯一标识符，长度范围为1-MAX_STORE_ID_LENGTH，且只能包含字母数字或下划线_。 |
@@ -603,6 +650,7 @@ getKVStore&lt;T&gt;(storeId: string, options: Options): Promise&lt;T&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -612,6 +660,7 @@ getKVStore&lt;T&gt;(storeId: string, options: Options): Promise&lt;T&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -651,9 +700,10 @@ try {
 
 
 
-#### closeKVStore
+### closeKVStore
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 closeKVStore(appId: string, storeId: string, callback: AsyncCallback&lt;void&gt;): void
 
@@ -663,9 +713,10 @@ closeKVStore(appId: string, storeId: string, callback: AsyncCallback&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| appId | string | 是 | 应用的BundleName，不可为空且长度范围为1-256字节。 |
+| appId | string | 是 | 应用的BundleName，不可为空且长度范围为1-256字节（Byte）。 |
 | storeId | string | 是 | 要关闭的数据库唯一标识符，长度范围为1-MAX_STORE_ID_LENGTH，且只能包含字母数字或下划线_。 |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当要关闭的数据库成功关闭，err为undefined，否则为错误对象。 |
 
@@ -673,6 +724,7 @@ closeKVStore(appId: string, storeId: string, callback: AsyncCallback&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -723,9 +775,10 @@ try {
 
 
 
-#### closeKVStore
+### closeKVStore
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 closeKVStore(appId: string, storeId: string, kvConfig?: Options): Promise&lt;void&gt;
 
@@ -735,14 +788,16 @@ closeKVStore(appId: string, storeId: string, kvConfig?: Options): Promise&lt;voi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| appId | string | 是 | 应用的BundleName，不可为空且长度范围为1-256字节。 |
+| appId | string | 是 | 应用的BundleName，不可为空且长度范围为1-256字节（Byte）。 |
 | storeId | string | 是 | 要关闭的数据库唯一标识符，长度范围为1-MAX_STORE_ID_LENGTH，且只能包含字母数字或下划线_。 |
 | kvConfig24+ | Options | 否 | 要关闭的数据库的配置信息，默认为空。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -752,6 +807,7 @@ closeKVStore(appId: string, storeId: string, kvConfig?: Options): Promise&lt;voi
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -801,9 +857,10 @@ try {
 
 
 
-#### deleteKVStore
+### deleteKVStore
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteKVStore(appId: string, storeId: string, callback: AsyncCallback&lt;void&gt;): void
 
@@ -813,9 +870,10 @@ deleteKVStore(appId: string, storeId: string, callback: AsyncCallback&lt;void&gt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| appId | string | 是 | 应用的BundleName，不可为空且长度范围为1-256字节。 |
+| appId | string | 是 | 应用的BundleName，不可为空且长度范围为1-256字节（Byte）。 |
 | storeId | string | 是 | 要删除的数据库唯一标识符，长度范围为1-MAX_STORE_ID_LENGTH，且只能包含字母数字或下划线_。 |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当要删除的数据库成功删除，err为undefined，否则为错误对象。 |
 
@@ -823,6 +881,7 @@ deleteKVStore(appId: string, storeId: string, callback: AsyncCallback&lt;void&gt
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -875,9 +934,10 @@ try {
 
 
 
-#### deleteKVStore
+### deleteKVStore
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteKVStore(appId: string, storeId: string, kvConfig?: Options): Promise&lt;void&gt;
 
@@ -887,14 +947,16 @@ deleteKVStore(appId: string, storeId: string, kvConfig?: Options): Promise&lt;vo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| appId | string | 是 | 应用的BundleName，不可为空且长度范围为1-256字节。 |
+| appId | string | 是 | 应用的BundleName，不可为空且长度范围为1-256字节（Byte）。 |
 | storeId | string | 是 | 要删除的数据库唯一标识符，长度范围为1-MAX_STORE_ID_LENGTH，且只能包含字母数字或下划线_。 |
 | kvConfig24+ | Options | 否 | 要删除的数据库的配置信息，默认为空。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -904,6 +966,7 @@ deleteKVStore(appId: string, storeId: string, kvConfig?: Options): Promise&lt;vo
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -954,9 +1017,10 @@ try {
 
 
 
-#### getAllKVStoreId
+### getAllKVStoreId
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllKVStoreId(appId: string, callback: AsyncCallback<string[]>): void
 
@@ -966,15 +1030,17 @@ getAllKVStoreId(appId: string, callback: AsyncCallback<string[]>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| appId | string | 是 | 应用的BundleName，不可为空且长度范围为1-256字节。 |
+| appId | string | 是 | 应用的BundleName，不可为空且长度范围为1-256字节（Byte）。 |
 | callback | AsyncCallback<string[]> | 是 | 回调函数。返回所有创建的分布式键值数据库的storeId。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1004,9 +1070,10 @@ try {
 
 
 
-#### getAllKVStoreId
+### getAllKVStoreId
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllKVStoreId(appId: string): Promise<string[]>
 
@@ -1016,12 +1083,14 @@ getAllKVStoreId(appId: string): Promise<string[]>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| appId | string | 是 | 应用的BundleName，不可为空且长度范围为1-256字节。 |
+| appId | string | 是 | 应用的BundleName，不可为空且长度范围为1-256字节（Byte）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1031,6 +1100,7 @@ getAllKVStoreId(appId: string): Promise<string[]>
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1059,9 +1129,10 @@ try {
 
 
 
-#### on('distributedDataServiceDie')
+### on('distributedDataServiceDie')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(event: 'distributedDataServiceDie', deathCallback: Callback&lt;void&gt;): void
 
@@ -1070,6 +1141,7 @@ on(event: 'distributedDataServiceDie', deathCallback: Callback&lt;void&gt;): voi
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1080,6 +1152,7 @@ on(event: 'distributedDataServiceDie', deathCallback: Callback&lt;void&gt;): voi
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1105,9 +1178,10 @@ try {
 
 
 
-#### off('distributedDataServiceDie')
+### off('distributedDataServiceDie')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(event: 'distributedDataServiceDie', deathCallback?: Callback&lt;void&gt;): void
 
@@ -1116,6 +1190,7 @@ off(event: 'distributedDataServiceDie', deathCallback?: Callback&lt;void&gt;): v
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1126,6 +1201,7 @@ off(event: 'distributedDataServiceDie', deathCallback?: Callback&lt;void&gt;): v
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1151,9 +1227,10 @@ try {
 
 
 
-#### KVStoreResultSet
+## KVStoreResultSet
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供获取数据库结果集的相关方法，包括查询和移动数据读取位置等。同时允许打开的结果集的最大数量为8个。
 
@@ -1167,9 +1244,10 @@ KVStoreResultSet实例不会实时刷新。使用结果集后，如果数据库�
 
 
 
-#### getCount
+### getCount
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCount(): number
 
@@ -1178,6 +1256,7 @@ getCount(): number
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1208,9 +1287,10 @@ try {
 
 
 
-#### getPosition
+### getPosition
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPosition(): number
 
@@ -1219,6 +1299,7 @@ getPosition(): number
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1249,9 +1330,10 @@ try {
 
 
 
-#### moveToFirst
+### moveToFirst
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 moveToFirst(): boolean
 
@@ -1260,6 +1342,7 @@ moveToFirst(): boolean
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1290,9 +1373,10 @@ try {
 
 
 
-#### moveToLast
+### moveToLast
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 moveToLast(): boolean
 
@@ -1301,6 +1385,7 @@ moveToLast(): boolean
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1331,9 +1416,10 @@ try {
 
 
 
-#### moveToNext
+### moveToNext
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 moveToNext(): boolean
 
@@ -1342,6 +1428,7 @@ moveToNext(): boolean
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1374,9 +1461,10 @@ try {
 
 
 
-#### moveToPrevious
+### moveToPrevious
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 moveToPrevious(): boolean
 
@@ -1385,6 +1473,7 @@ moveToPrevious(): boolean
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1416,9 +1505,10 @@ try {
 
 
 
-#### move
+### move
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 move(offset: number): boolean
 
@@ -1428,12 +1518,14 @@ move(offset: number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 是 | 表示与当前位置的相对偏移量，正偏移表示向结果集末尾方向移动（行号增大），负偏移表示向结果集起始方向移动（行号减小）。当游标超出结果集最前或者最后的位置时，接口返回false。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1443,6 +1535,7 @@ move(offset: number): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1473,9 +1566,10 @@ try {
 
 
 
-#### moveToPosition
+### moveToPosition
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 moveToPosition(position: number): boolean
 
@@ -1485,12 +1579,14 @@ moveToPosition(position: number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | position | number | 是 | 表示绝对位置。当绝对位置超出结果集最前或者最后的位置时，接口返回false。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1500,6 +1596,7 @@ moveToPosition(position: number): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1530,9 +1627,10 @@ try {
 
 
 
-#### isFirst
+### isFirst
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isFirst(): boolean
 
@@ -1541,6 +1639,7 @@ isFirst(): boolean
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1571,9 +1670,10 @@ try {
 
 
 
-#### isLast
+### isLast
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isLast(): boolean
 
@@ -1582,6 +1682,7 @@ isLast(): boolean
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1612,9 +1713,10 @@ try {
 
 
 
-#### isBeforeFirst
+### isBeforeFirst
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isBeforeFirst(): boolean
 
@@ -1623,6 +1725,7 @@ isBeforeFirst(): boolean
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1652,9 +1755,10 @@ try {
 
 
 
-#### isAfterLast
+### isAfterLast
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isAfterLast(): boolean
 
@@ -1663,6 +1767,7 @@ isAfterLast(): boolean
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1692,9 +1797,10 @@ try {
 
 
 
-#### getEntry
+### getEntry
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEntry(): Entry
 
@@ -1703,6 +1809,7 @@ getEntry(): Entry
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1732,9 +1839,10 @@ try {
 
 
 
-#### Query
+## Query
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 使用谓词表示数据库查询，提供创建Query实例、查询数据库中的数据和添加谓词的方法。Query对象的谓词方法均返回自身，支持链式调用。一个Query对象中谓词数量上限为256个。
 
@@ -1742,9 +1850,10 @@ try {
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -1754,9 +1863,10 @@ constructor()
 
 
 
-#### reset
+### reset
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reset(): Query
 
@@ -1765,6 +1875,7 @@ reset(): Query
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1793,9 +1904,10 @@ try {
 
 
 
-#### equalTo
+### equalTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 equalTo(field: string, value: number | string | boolean): Query
 
@@ -1809,6 +1921,7 @@ equalTo(field: string, value: number | string | boolean): Query
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 表示指定字段，不能包含'^'。包含'^'将导致谓词失效，查询结果会返回数据库中的所有数据。 |
@@ -1816,6 +1929,7 @@ equalTo(field: string, value: number | string | boolean): Query
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1825,6 +1939,7 @@ equalTo(field: string, value: number | string | boolean): Query
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1851,9 +1966,10 @@ try {
 
 
 
-#### notEqualTo
+### notEqualTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 notEqualTo(field: string, value: number | string | boolean): Query
 
@@ -1867,6 +1983,7 @@ notEqualTo(field: string, value: number | string | boolean): Query
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 表示指定字段，不能包含'^'。包含'^'将导致谓词失效，查询结果会返回数据库中的所有数据。 |
@@ -1874,6 +1991,7 @@ notEqualTo(field: string, value: number | string | boolean): Query
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1883,6 +2001,7 @@ notEqualTo(field: string, value: number | string | boolean): Query
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1909,9 +2028,10 @@ try {
 
 
 
-#### greaterThan
+### greaterThan
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 greaterThan(field: string, value: number | string | boolean): Query
 
@@ -1925,6 +2045,7 @@ greaterThan(field: string, value: number | string | boolean): Query
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 表示指定字段，不能包含'^'。包含'^'将导致谓词失效，查询结果会返回数据库中的所有数据。 |
@@ -1932,6 +2053,7 @@ greaterThan(field: string, value: number | string | boolean): Query
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1941,6 +2063,7 @@ greaterThan(field: string, value: number | string | boolean): Query
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1967,9 +2090,10 @@ try {
 
 
 
-#### lessThan
+### lessThan
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 lessThan(field: string, value: number | string): Query
 
@@ -1983,6 +2107,7 @@ lessThan(field: string, value: number | string): Query
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 表示指定字段，不能包含'^'。包含'^'将导致谓词失效，查询结果会返回数据库中的所有数据。 |
@@ -1990,6 +2115,7 @@ lessThan(field: string, value: number | string): Query
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1999,6 +2125,7 @@ lessThan(field: string, value: number | string): Query
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2025,9 +2152,10 @@ try {
 
 
 
-#### greaterThanOrEqualTo
+### greaterThanOrEqualTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 greaterThanOrEqualTo(field: string, value: number | string): Query
 
@@ -2041,6 +2169,7 @@ greaterThanOrEqualTo(field: string, value: number | string): Query
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 表示指定字段，不能包含'^'。包含'^'将导致谓词失效，查询结果会返回数据库中的所有数据。 |
@@ -2048,6 +2177,7 @@ greaterThanOrEqualTo(field: string, value: number | string): Query
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2057,6 +2187,7 @@ greaterThanOrEqualTo(field: string, value: number | string): Query
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2083,9 +2214,10 @@ try {
 
 
 
-#### lessThanOrEqualTo
+### lessThanOrEqualTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 lessThanOrEqualTo(field: string, value: number | string): Query
 
@@ -2099,6 +2231,7 @@ lessThanOrEqualTo(field: string, value: number | string): Query
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 表示指定字段，不能包含'^'。包含'^'将导致谓词失效，查询结果会返回数据库中的所有数据。 |
@@ -2106,6 +2239,7 @@ lessThanOrEqualTo(field: string, value: number | string): Query
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2115,6 +2249,7 @@ lessThanOrEqualTo(field: string, value: number | string): Query
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2141,9 +2276,10 @@ try {
 
 
 
-#### isNull
+### isNull
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isNull(field: string): Query
 
@@ -2157,12 +2293,14 @@ isNull(field: string): Query
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 表示指定字段，不能包含'^'。包含'^'将导致谓词失效，查询结果会返回数据库中的所有数据。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2172,6 +2310,7 @@ isNull(field: string): Query
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2198,9 +2337,10 @@ try {
 
 
 
-#### inNumber
+### inNumber
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 inNumber(field: string, valueList: number[]): Query
 
@@ -2214,6 +2354,7 @@ inNumber(field: string, valueList: number[]): Query
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 表示指定字段，不能包含'^'。包含'^'将导致谓词失效，查询结果会返回数据库中的所有数据。 |
@@ -2221,6 +2362,7 @@ inNumber(field: string, valueList: number[]): Query
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2230,6 +2372,7 @@ inNumber(field: string, valueList: number[]): Query
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2256,9 +2399,10 @@ try {
 
 
 
-#### inString
+### inString
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 inString(field: string, valueList: string[]): Query
 
@@ -2272,6 +2416,7 @@ inString(field: string, valueList: string[]): Query
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 表示指定字段，不能包含'^'。包含'^'将导致谓词失效，查询结果会返回数据库中的所有数据。 |
@@ -2279,6 +2424,7 @@ inString(field: string, valueList: string[]): Query
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2288,6 +2434,7 @@ inString(field: string, valueList: string[]): Query
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2314,9 +2461,10 @@ try {
 
 
 
-#### notInNumber
+### notInNumber
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 notInNumber(field: string, valueList: number[]): Query
 
@@ -2330,6 +2478,7 @@ notInNumber(field: string, valueList: number[]): Query
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 表示指定字段，不能包含'^'。包含'^'将导致谓词失效，查询结果会返回数据库中的所有数据。 |
@@ -2337,6 +2486,7 @@ notInNumber(field: string, valueList: number[]): Query
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2346,6 +2496,7 @@ notInNumber(field: string, valueList: number[]): Query
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2372,9 +2523,10 @@ try {
 
 
 
-#### notInString
+### notInString
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 notInString(field: string, valueList: string[]): Query
 
@@ -2388,6 +2540,7 @@ notInString(field: string, valueList: string[]): Query
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 表示指定字段，不能包含'^'。包含'^'将导致谓词失效，查询结果会返回数据库中的所有数据。 |
@@ -2395,6 +2548,7 @@ notInString(field: string, valueList: string[]): Query
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2404,6 +2558,7 @@ notInString(field: string, valueList: string[]): Query
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2430,9 +2585,10 @@ try {
 
 
 
-#### like
+### like
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 like(field: string, value: string): Query
 
@@ -2446,6 +2602,7 @@ like(field: string, value: string): Query
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 表示指定字段，不能包含'^'。包含'^'将导致谓词失效，查询结果会返回数据库中的所有数据。 |
@@ -2453,6 +2610,7 @@ like(field: string, value: string): Query
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2462,6 +2620,7 @@ like(field: string, value: string): Query
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2488,9 +2647,10 @@ try {
 
 
 
-#### unlike
+### unlike
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unlike(field: string, value: string): Query
 
@@ -2504,6 +2664,7 @@ unlike(field: string, value: string): Query
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 表示指定字段，不能包含'^'。包含'^'将导致谓词失效，查询结果会返回数据库中的所有数据。 |
@@ -2511,6 +2672,7 @@ unlike(field: string, value: string): Query
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2520,6 +2682,7 @@ unlike(field: string, value: string): Query
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2546,9 +2709,10 @@ try {
 
 
 
-#### and
+### and
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 and(): Query
 
@@ -2557,6 +2721,7 @@ and(): Query
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2585,9 +2750,10 @@ try {
 
 
 
-#### or
+### or
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 or(): Query
 
@@ -2596,6 +2762,7 @@ or(): Query
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2624,9 +2791,10 @@ try {
 
 
 
-#### orderByAsc
+### orderByAsc
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 orderByAsc(field: string): Query
 
@@ -2640,12 +2808,14 @@ orderByAsc(field: string): Query
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 表示指定字段，不能包含'^'。包含'^'将导致谓词失效，查询结果会返回数据库中的所有数据。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2655,6 +2825,7 @@ orderByAsc(field: string): Query
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2682,9 +2853,10 @@ try {
 
 
 
-#### orderByDesc
+### orderByDesc
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 orderByDesc(field: string): Query
 
@@ -2698,12 +2870,14 @@ orderByDesc(field: string): Query
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 表示指定字段，不能包含'^'。包含'^'将导致谓词失效，查询结果会返回数据库中的所有数据。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2713,6 +2887,7 @@ orderByDesc(field: string): Query
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2740,9 +2915,10 @@ try {
 
 
 
-#### limit
+### limit
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 limit(total: number, offset: number): Query
 
@@ -2752,6 +2928,7 @@ limit(total: number, offset: number): Query
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | total | number | 是 | 表示最大数据记录数。 取值为非负整数时表示指定的最大记录数。 取值为负数时，表示查询整个结果集。 |
@@ -2759,6 +2936,7 @@ limit(total: number, offset: number): Query
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2768,6 +2946,7 @@ limit(total: number, offset: number): Query
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2797,9 +2976,10 @@ try {
 
 
 
-#### isNotNull
+### isNotNull
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isNotNull(field: string): Query
 
@@ -2813,12 +2993,14 @@ isNotNull(field: string): Query
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 表示指定字段，不能包含'^'。包含'^'将导致谓词失效，查询结果会返回数据库中的所有数据。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2828,6 +3010,7 @@ isNotNull(field: string): Query
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2854,9 +3037,10 @@ try {
 
 
 
-#### beginGroup
+### beginGroup
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 beginGroup(): Query
 
@@ -2866,6 +3050,7 @@ beginGroup(): Query
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Query | 返回Query对象。 |
@@ -2893,9 +3078,10 @@ try {
 
 
 
-#### endGroup
+### endGroup
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 endGroup(): Query
 
@@ -2905,6 +3091,7 @@ endGroup(): Query
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Query | 返回Query对象。 |
@@ -2932,9 +3119,10 @@ try {
 
 
 
-#### prefixKey
+### prefixKey
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 prefixKey(prefix: string): Query
 
@@ -2944,12 +3132,14 @@ prefixKey(prefix: string): Query
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | prefix | string | 是 | 表示指定的键前缀，长度范围为0-MAX_KEY_LENGTH，不能包含'^'。包含'^'将导致谓词失效，查询结果会返回数据库中的所有数据。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2959,6 +3149,7 @@ prefixKey(prefix: string): Query
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2986,9 +3177,10 @@ try {
 
 
 
-#### setSuggestIndex
+### setSuggestIndex
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setSuggestIndex(index: string): Query
 
@@ -2998,12 +3190,14 @@ setSuggestIndex(index: string): Query
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | string | 是 | 表示要设置的索引，不能包含'^'。包含'^'将导致谓词失效，查询结果会返回数据库中的所有数据。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3013,6 +3207,7 @@ setSuggestIndex(index: string): Query
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3040,9 +3235,10 @@ try {
 
 
 
-#### deviceId
+### deviceId
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deviceId(deviceId:string):Query
 
@@ -3056,12 +3252,14 @@ deviceId(deviceId:string):Query
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 设备的networkId，标识要查询其数据的设备，不能为空。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3071,6 +3269,7 @@ deviceId(deviceId:string):Query
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3096,9 +3295,10 @@ try {
 
 
 
-#### getSqlLike
+### getSqlLike
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSqlLike():string
 
@@ -3107,6 +3307,7 @@ getSqlLike():string
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3132,9 +3333,10 @@ try {
 
 
 
-#### SingleKVStore
+## SingleKVStore
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 SingleKVStore数据库实例，提供增加数据、删除数据和订阅数据变更、订阅数据端端同步完成的方法。
 
@@ -3142,9 +3344,10 @@ SingleKVStore数据库实例，提供增加数据、删除数据和订阅数据�
 
 
 
-#### put
+### put
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 put(key: string, value: Uint8Array | string | number | boolean, callback: AsyncCallback&lt;void&gt;): void
 
@@ -3153,6 +3356,7 @@ put(key: string, value: Uint8Array | string | number | boolean, callback: AsyncC
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3165,6 +3369,7 @@ put(key: string, value: Uint8Array | string | number | boolean, callback: AsyncC
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed. |
@@ -3173,6 +3378,7 @@ put(key: string, value: Uint8Array | string | number | boolean, callback: AsyncC
 
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3202,9 +3408,10 @@ try {
 
 
 
-#### put
+### put
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 put(key: string, value: Uint8Array | string | number | boolean): Promise&lt;void&gt;
 
@@ -3214,6 +3421,7 @@ put(key: string, value: Uint8Array | string | number | boolean): Promise&lt;void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 要添加数据的Key，不能为空且长度范围为1-MAX_KEY_LENGTH。 |
@@ -3221,6 +3429,7 @@ put(key: string, value: Uint8Array | string | number | boolean): Promise&lt;void
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3231,6 +3440,7 @@ put(key: string, value: Uint8Array | string | number | boolean): Promise&lt;void
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed. |
@@ -3239,6 +3449,7 @@ put(key: string, value: Uint8Array | string | number | boolean): Promise&lt;void
 
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3266,9 +3477,10 @@ try {
 
 
 
-#### putBatch
+### putBatch
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 putBatch(entries: Entry[], callback: AsyncCallback&lt;void&gt;): void
 
@@ -3277,6 +3489,7 @@ putBatch(entries: Entry[], callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3288,6 +3501,7 @@ putBatch(entries: Entry[], callback: AsyncCallback&lt;void&gt;): void
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
@@ -3296,6 +3510,7 @@ putBatch(entries: Entry[], callback: AsyncCallback&lt;void&gt;): void
 
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3337,8 +3552,6 @@ try {
         console.info(`entries.length: ${entries.length}`);
         console.info(`entries[0]: ${entries[0]}`);
       });
-    } else {
-      console.error('KvStore is null'); // 后续示例代码与此处保持一致
     }
   });
 } catch (err) {
@@ -3349,9 +3562,10 @@ try {
 
 
 
-#### putBatch
+### putBatch
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 putBatch(entries: Entry[]): Promise&lt;void&gt;
 
@@ -3361,12 +3575,14 @@ putBatch(entries: Entry[]): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | entries | Entry[] | 是 | 表示要批量插入的键值对。一个entries对象中允许的最大数据量为512MB。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3377,6 +3593,7 @@ putBatch(entries: Entry[]): Promise&lt;void&gt;
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
@@ -3385,6 +3602,7 @@ putBatch(entries: Entry[]): Promise&lt;void&gt;
 
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3431,9 +3649,10 @@ try {
 
 
 
-#### delete
+### delete
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 delete(key: string, callback: AsyncCallback&lt;void&gt;): void
 
@@ -3442,6 +3661,7 @@ delete(key: string, callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3453,6 +3673,7 @@ delete(key: string, callback: AsyncCallback&lt;void&gt;): void
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed. |
@@ -3461,6 +3682,7 @@ delete(key: string, callback: AsyncCallback&lt;void&gt;): void
 
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3499,9 +3721,10 @@ try {
 
 
 
-#### delete
+### delete
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 delete(key: string): Promise&lt;void&gt;
 
@@ -3511,12 +3734,14 @@ delete(key: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 要删除数据的Key，不能为空且长度范围为1-MAX_KEY_LENGTH。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3527,6 +3752,7 @@ delete(key: string): Promise&lt;void&gt;
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed. |
@@ -3535,6 +3761,7 @@ delete(key: string): Promise&lt;void&gt;
 
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3569,9 +3796,10 @@ try {
 
 
 
-#### deleteBatch
+### deleteBatch
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteBatch(keys: string[], callback: AsyncCallback&lt;void&gt;): void
 
@@ -3580,6 +3808,7 @@ deleteBatch(keys: string[], callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3591,6 +3820,7 @@ deleteBatch(keys: string[], callback: AsyncCallback&lt;void&gt;): void
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed. |
@@ -3599,6 +3829,7 @@ deleteBatch(keys: string[], callback: AsyncCallback&lt;void&gt;): void
 
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3650,9 +3881,10 @@ try {
 
 
 
-#### deleteBatch
+### deleteBatch
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteBatch(keys: string[]): Promise&lt;void&gt;
 
@@ -3662,12 +3894,14 @@ deleteBatch(keys: string[]): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keys | string[] | 是 | 表示要批量删除的键名列表，不能为空，数组中每个元素的长度范围为1-MAX_KEY_LENGTH。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3678,6 +3912,7 @@ deleteBatch(keys: string[]): Promise&lt;void&gt;
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed. |
@@ -3686,6 +3921,7 @@ deleteBatch(keys: string[]): Promise&lt;void&gt;
 
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3733,9 +3969,10 @@ try {
 
 
 
-#### removeDeviceData
+### removeDeviceData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeDeviceData(deviceId: string, callback: AsyncCallback&lt;void&gt;): void
 
@@ -3749,6 +3986,7 @@ removeDeviceData(deviceId: string, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 设备的networkId，标识要删除其数据的设备，不能为空。 |
@@ -3758,6 +3996,7 @@ removeDeviceData(deviceId: string, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3807,9 +4046,10 @@ try {
 
 
 
-#### removeDeviceData
+### removeDeviceData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeDeviceData(deviceId: string): Promise&lt;void&gt;
 
@@ -3823,12 +4063,14 @@ removeDeviceData(deviceId: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 设备的networkId，标识要删除其数据的设备，不能为空。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3838,6 +4080,7 @@ removeDeviceData(deviceId: string): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3877,9 +4120,10 @@ try {
 
 
 
-#### get
+### get
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get(key: string, callback: AsyncCallback<boolean | string | number | Uint8Array>): void
 
@@ -3888,6 +4132,7 @@ get(key: string, callback: AsyncCallback<boolean | string | number | Uint8Array>
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3898,6 +4143,7 @@ get(key: string, callback: AsyncCallback<boolean | string | number | Uint8Array>
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3940,9 +4186,10 @@ try {
 
 
 
-#### get
+### get
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get(key: string): Promise<boolean | string | number | Uint8Array>
 
@@ -3952,12 +4199,14 @@ get(key: string): Promise<boolean | string | number | Uint8Array>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 要查询数据的Key，不能为空且长度范围为1-MAX_KEY_LENGTH。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3967,6 +4216,7 @@ get(key: string): Promise<boolean | string | number | Uint8Array>
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4005,9 +4255,10 @@ try {
 
 
 
-#### getEntries
+### getEntries
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEntries(keyPrefix: string, callback: AsyncCallback<Entry[]>): void
 
@@ -4016,6 +4267,7 @@ getEntries(keyPrefix: string, callback: AsyncCallback<Entry[]>): void
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4026,6 +4278,7 @@ getEntries(keyPrefix: string, callback: AsyncCallback<Entry[]>): void
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4079,9 +4332,10 @@ try {
 
 
 
-#### getEntries
+### getEntries
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEntries(keyPrefix: string): Promise<Entry[]>
 
@@ -4091,12 +4345,14 @@ getEntries(keyPrefix: string): Promise<Entry[]>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyPrefix | string | 是 | 表示要匹配的键前缀，长度范围为1-MAX_KEY_LENGTH。不能包含'^'，包含'^'将导致谓词失效，查询结果会返回数据库中的所有数据。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4106,6 +4362,7 @@ getEntries(keyPrefix: string): Promise<Entry[]>
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4155,9 +4412,10 @@ try {
 
 
 
-#### getEntries
+### getEntries
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEntries(query: Query, callback: AsyncCallback<Entry[]>): void
 
@@ -4166,6 +4424,7 @@ getEntries(query: Query, callback: AsyncCallback<Entry[]>): void
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4176,6 +4435,7 @@ getEntries(query: Query, callback: AsyncCallback<Entry[]>): void
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4232,9 +4492,10 @@ try {
 
 
 
-#### getEntries
+### getEntries
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEntries(query: Query): Promise<Entry[]>
 
@@ -4244,12 +4505,14 @@ getEntries(query: Query): Promise<Entry[]>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | query | Query | 是 | 表示查询对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4259,6 +4522,7 @@ getEntries(query: Query): Promise<Entry[]>
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4310,9 +4574,10 @@ try {
 
 
 
-#### getResultSet
+### getResultSet
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResultSet(keyPrefix: string, callback: AsyncCallback&lt;KVStoreResultSet&gt;): void
 
@@ -4321,6 +4586,7 @@ getResultSet(keyPrefix: string, callback: AsyncCallback&lt;KVStoreResultSet&gt;)
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4331,6 +4597,7 @@ getResultSet(keyPrefix: string, callback: AsyncCallback&lt;KVStoreResultSet&gt;)
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4393,9 +4660,10 @@ try {
 
 
 
-#### getResultSet
+### getResultSet
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResultSet(keyPrefix: string): Promise&lt;KVStoreResultSet&gt;
 
@@ -4405,12 +4673,14 @@ getResultSet(keyPrefix: string): Promise&lt;KVStoreResultSet&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyPrefix | string | 是 | 表示要匹配的键前缀，长度范围为1-MAX_KEY_LENGTH。不能包含'^'，包含'^'将导致谓词失效，查询结果会返回数据库中的所有数据。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4420,6 +4690,7 @@ getResultSet(keyPrefix: string): Promise&lt;KVStoreResultSet&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4474,9 +4745,10 @@ try {
 
 
 
-#### getResultSet
+### getResultSet
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResultSet(query: Query, callback: AsyncCallback&lt;KVStoreResultSet&gt;): void
 
@@ -4485,6 +4757,7 @@ getResultSet(query: Query, callback: AsyncCallback&lt;KVStoreResultSet&gt;): voi
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4495,6 +4768,7 @@ getResultSet(query: Query, callback: AsyncCallback&lt;KVStoreResultSet&gt;): voi
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4549,9 +4823,10 @@ try {
 
 
 
-#### getResultSet
+### getResultSet
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResultSet(query: Query): Promise&lt;KVStoreResultSet&gt;
 
@@ -4561,12 +4836,14 @@ getResultSet(query: Query): Promise&lt;KVStoreResultSet&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | query | Query | 是 | 表示查询对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4576,6 +4853,7 @@ getResultSet(query: Query): Promise&lt;KVStoreResultSet&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4623,9 +4901,10 @@ try {
 
 
 
-#### closeResultSet
+### closeResultSet
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 closeResultSet(resultSet: KVStoreResultSet, callback: AsyncCallback&lt;void&gt;): void
 
@@ -4634,6 +4913,7 @@ closeResultSet(resultSet: KVStoreResultSet, callback: AsyncCallback&lt;void&gt;)
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4644,6 +4924,7 @@ closeResultSet(resultSet: KVStoreResultSet, callback: AsyncCallback&lt;void&gt;)
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4682,9 +4963,10 @@ try {
 
 
 
-#### closeResultSet
+### closeResultSet
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 closeResultSet(resultSet: KVStoreResultSet): Promise&lt;void&gt;
 
@@ -4694,12 +4976,14 @@ closeResultSet(resultSet: KVStoreResultSet): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resultSet | KVStoreResultSet | 是 | 表示要关闭的KVStoreResultSet对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4709,6 +4993,7 @@ closeResultSet(resultSet: KVStoreResultSet): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4744,9 +5029,10 @@ try {
 
 
 
-#### getResultSize
+### getResultSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResultSize(query: Query, callback: AsyncCallback&lt;number&gt;): void
 
@@ -4755,6 +5041,7 @@ getResultSize(query: Query, callback: AsyncCallback&lt;number&gt;): void
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4765,6 +5052,7 @@ getResultSize(query: Query, callback: AsyncCallback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4818,9 +5106,10 @@ try {
 
 
 
-#### getResultSize
+### getResultSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResultSize(query: Query): Promise&lt;number&gt;
 
@@ -4830,12 +5119,14 @@ getResultSize(query: Query): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | query | Query | 是 | 表示查询对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4845,6 +5136,7 @@ getResultSize(query: Query): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4892,9 +5184,10 @@ try {
 
 
 
-#### backup
+### backup
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 backup(file:string, callback: AsyncCallback&lt;void&gt;):void
 
@@ -4903,6 +5196,7 @@ backup(file:string, callback: AsyncCallback&lt;void&gt;):void
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4913,6 +5207,7 @@ backup(file:string, callback: AsyncCallback&lt;void&gt;):void
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4931,7 +5226,7 @@ try {
     if (err) {
       console.error(`Failed to backup. Code: ${err.code}, message: ${err.message} `);
     } else {
-      console.info(`Succeeded in backupping data`);
+      console.info(`Succeeded in backing up data`);
     }
   });
 } catch (err) {
@@ -4942,9 +5237,10 @@ try {
 
 
 
-#### backup
+### backup
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 backup(file:string): Promise&lt;void&gt;
 
@@ -4954,12 +5250,14 @@ backup(file:string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | file | string | 是 | 备份数据库的指定名称，不能为空，无长度限制，不能包含特殊字符'/'。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4969,6 +5267,7 @@ backup(file:string): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4984,7 +5283,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 let backupFile = 'BK001';
 try {
   kvStore.backup(backupFile).then(() => {
-    console.info(`Succeeded in backupping data`);
+    console.info(`Succeeded in backing up data`);
   }).catch((err: BusinessError) => {
     console.error(`Failed to backup. Code: ${err.code}, message: ${err.message}`);
   });
@@ -4996,9 +5295,10 @@ try {
 
 
 
-#### backupEx24+
+### backupEx24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 backupEx(backupConfig:BackupConfig): Promise&lt;void&gt;
 
@@ -5008,12 +5308,14 @@ backupEx(backupConfig:BackupConfig): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | backupConfig | BackupConfig | 是 | 备份数据库的信息（名称和路径）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5023,6 +5325,7 @@ backupEx(backupConfig:BackupConfig): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5041,7 +5344,7 @@ const backupConfig: distributedKVStore.BackupConfig = {
 };
 try {
   kvStore.backupEx(backupConfig).then(() => {
-    console.info(`Succeeded in backupping data`);
+    console.info(`Succeeded in backing up data`);
   }).catch((err: BusinessError) => {
     console.error(`Failed to backup. Code: ${err.code}, message: ${err.message}`);
   });
@@ -5053,9 +5356,10 @@ try {
 
 
 
-#### restore
+### restore
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 restore(file:string, callback: AsyncCallback&lt;void&gt;):void
 
@@ -5064,6 +5368,7 @@ restore(file:string, callback: AsyncCallback&lt;void&gt;):void
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5074,6 +5379,7 @@ restore(file:string, callback: AsyncCallback&lt;void&gt;):void
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5103,9 +5409,10 @@ try {
 
 
 
-#### restore
+### restore
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 restore(file:string): Promise&lt;void&gt;
 
@@ -5115,12 +5422,14 @@ restore(file:string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | file | string | 是 | 指定的数据库文件名称，不能为空，无长度限制，不能包含特殊字符'/'。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5130,6 +5439,7 @@ restore(file:string): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5157,9 +5467,10 @@ try {
 
 
 
-#### restoreEx24+
+### restoreEx24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 restoreEx(backupConfig:BackupConfig): Promise&lt;void&gt;
 
@@ -5169,12 +5480,14 @@ restoreEx(backupConfig:BackupConfig): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | backupConfig | BackupConfig | 是 | 备份数据库的信息（名称和路径）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5184,6 +5497,7 @@ restoreEx(backupConfig:BackupConfig): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5214,9 +5528,10 @@ try {
 
 
 
-#### deleteBackup
+### deleteBackup
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteBackup(files:Array&lt;string&gt;, callback: AsyncCallback<Array<[string, number]>>):void
 
@@ -5225,6 +5540,7 @@ deleteBackup(files:Array&lt;string&gt;, callback: AsyncCallback<Array<[string, n
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5235,6 +5551,7 @@ deleteBackup(files:Array&lt;string&gt;, callback: AsyncCallback<Array<[string, n
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5263,9 +5580,10 @@ try {
 
 
 
-#### deleteBackup
+### deleteBackup
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteBackup(files:Array&lt;string&gt;): Promise<Array<[string, number]>>
 
@@ -5275,12 +5593,14 @@ deleteBackup(files:Array&lt;string&gt;): Promise<Array<[string, number]>>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | files | Array&lt;string&gt; | 是 | 删除备份文件所指定的名称，不能为空，无长度限制，不能包含特殊字符'/'。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5290,6 +5610,7 @@ deleteBackup(files:Array&lt;string&gt;): Promise<Array<[string, number]>>
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5316,9 +5637,10 @@ try {
 
 
 
-#### deleteBackupEx24+
+### deleteBackupEx24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteBackupEx(backupConfig:BackupConfig): Promise&lt;void&gt;
 
@@ -5328,12 +5650,14 @@ deleteBackupEx(backupConfig:BackupConfig): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | backupConfig | BackupConfig | 是 | 备份数据库的信息（名称和路径）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5343,6 +5667,7 @@ deleteBackupEx(backupConfig:BackupConfig): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5372,9 +5697,10 @@ try {
 
 
 
-#### startTransaction
+### startTransaction
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startTransaction(callback: AsyncCallback&lt;void&gt;): void
 
@@ -5383,6 +5709,7 @@ startTransaction(callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5393,12 +5720,14 @@ startTransaction(callback: AsyncCallback&lt;void&gt;): void
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 15100005 | Database or result set already closed. |
 
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5457,9 +5786,10 @@ try {
 
 
 
-#### startTransaction
+### startTransaction
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startTransaction(): Promise&lt;void&gt;
 
@@ -5468,6 +5798,7 @@ startTransaction(): Promise&lt;void&gt;
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5478,12 +5809,14 @@ startTransaction(): Promise&lt;void&gt;
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 15100005 | Database or result set already closed. |
 
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5512,9 +5845,10 @@ try {
 
 
 
-#### commit
+### commit
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 commit(callback: AsyncCallback&lt;void&gt;): void
 
@@ -5524,6 +5858,7 @@ commit(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。提交SingleKVStore数据库中的事务成功，err为undefined，否则为错误对象。 |
@@ -5532,6 +5867,7 @@ commit(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5559,9 +5895,10 @@ try {
 
 
 
-#### commit
+### commit
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 commit(): Promise&lt;void&gt;
 
@@ -5571,6 +5908,7 @@ commit(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -5579,6 +5917,7 @@ commit(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5604,9 +5943,10 @@ try {
 
 
 
-#### rollback
+### rollback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 rollback(callback: AsyncCallback&lt;void&gt;): void
 
@@ -5616,6 +5956,7 @@ rollback(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。SingleKVStore数据库中回滚事务成功，err为undefined，否则为错误对象。 |
@@ -5624,6 +5965,7 @@ rollback(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5651,9 +5993,10 @@ try {
 
 
 
-#### rollback
+### rollback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 rollback(): Promise&lt;void&gt;
 
@@ -5663,6 +6006,7 @@ rollback(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -5671,6 +6015,7 @@ rollback(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5696,9 +6041,10 @@ try {
 
 
 
-#### enableSync
+### enableSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableSync(enabled: boolean, callback: AsyncCallback&lt;void&gt;): void
 
@@ -5707,6 +6053,7 @@ enableSync(enabled: boolean, callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5717,6 +6064,7 @@ enableSync(enabled: boolean, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5744,9 +6092,10 @@ try {
 
 
 
-#### enableSync
+### enableSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableSync(enabled: boolean): Promise&lt;void&gt;
 
@@ -5756,12 +6105,14 @@ enableSync(enabled: boolean): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 设定是否开启端端同步，true表示开启端端同步，false表示不启用端端同步。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5771,6 +6122,7 @@ enableSync(enabled: boolean): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5796,9 +6148,10 @@ try {
 
 
 
-#### setSyncRange
+### setSyncRange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setSyncRange(localLabels: string[], remoteSupportLabels: string[], callback: AsyncCallback&lt;void&gt;): void
 
@@ -5807,6 +6160,7 @@ setSyncRange(localLabels: string[], remoteSupportLabels: string[], callback: Asy
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5818,6 +6172,7 @@ setSyncRange(localLabels: string[], remoteSupportLabels: string[], callback: Asy
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5847,9 +6202,10 @@ try {
 
 
 
-#### setSyncRange
+### setSyncRange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setSyncRange(localLabels: string[], remoteSupportLabels: string[]): Promise&lt;void&gt;
 
@@ -5859,6 +6215,7 @@ setSyncRange(localLabels: string[], remoteSupportLabels: string[]): Promise&lt;v
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | localLabels | string[] | 是 | 表示本地设备的同步标签，用于标识本设备可参与同步的范围。 |
@@ -5866,6 +6223,7 @@ setSyncRange(localLabels: string[], remoteSupportLabels: string[]): Promise&lt;v
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5875,6 +6233,7 @@ setSyncRange(localLabels: string[], remoteSupportLabels: string[]): Promise&lt;v
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5902,9 +6261,10 @@ try {
 
 
 
-#### setSyncParam
+### setSyncParam
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setSyncParam(defaultAllowedDelayMs: number, callback: AsyncCallback&lt;void&gt;): void
 
@@ -5918,6 +6278,7 @@ setSyncParam(defaultAllowedDelayMs: number, callback: AsyncCallback&lt;void&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | defaultAllowedDelayMs | number | 是 | 表示一个延时时间，单位为毫秒（ms），取值范围为0或[100, 86400000]。 |
@@ -5927,6 +6288,7 @@ setSyncParam(defaultAllowedDelayMs: number, callback: AsyncCallback&lt;void&gt;)
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5955,9 +6317,10 @@ try {
 
 
 
-#### setSyncParam
+### setSyncParam
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setSyncParam(defaultAllowedDelayMs: number): Promise&lt;void&gt;
 
@@ -5971,12 +6334,14 @@ setSyncParam(defaultAllowedDelayMs: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | defaultAllowedDelayMs | number | 是 | 表示一个延时时间，单位为毫秒（ms），取值范围为0或[100, 86400000]。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5986,6 +6351,7 @@ setSyncParam(defaultAllowedDelayMs: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6012,9 +6378,10 @@ try {
 
 
 
-#### sync
+### sync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sync(deviceIds: string[], mode: SyncMode, delayMs?: number): void
 
@@ -6030,6 +6397,7 @@ sync(deviceIds: string[], mode: SyncMode, delayMs?: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceIds | string[] | 是 | 同一组网环境下，需要同步的设备的networkId列表。 |
@@ -6040,6 +6408,7 @@ sync(deviceIds: string[], mode: SyncMode, delayMs?: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6058,7 +6427,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 let devManager: distributedDeviceManager.DeviceManager;
 const KEY_TEST_SYNC_ELEMENT = 'key_test_sync';
 const VALUE_TEST_SYNC_ELEMENT = 'value-string-001';
-// create deviceManager
+
 export default class EntryAbility extends UIAbility {
   onCreate() {
     let context = this.context;
@@ -6105,9 +6474,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### sync
+### sync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sync(deviceIds: string[], query: Query, mode: SyncMode, delayMs?: number): void
 
@@ -6123,6 +6493,7 @@ sync(deviceIds: string[], query: Query, mode: SyncMode, delayMs?: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceIds | string[] | 是 | 同一组网环境下，需要同步的设备的networkId列表。 |
@@ -6134,6 +6505,7 @@ sync(deviceIds: string[], query: Query, mode: SyncMode, delayMs?: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6151,7 +6523,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 const KEY_TEST_SYNC_ELEMENT = 'key_test_sync';
 const VALUE_TEST_SYNC_ELEMENT = 'value-string-001';
-// create deviceManager
+
 export default class EntryAbility extends UIAbility {
   onCreate() {
     let context = this.context;
@@ -6201,9 +6573,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### on('dataChange')
+### on('dataChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(event: 'dataChange', type: SubscribeType, listener: Callback&lt;ChangeNotification&gt;): void
 
@@ -6212,6 +6585,7 @@ on(event: 'dataChange', type: SubscribeType, listener: Callback&lt;ChangeNotific
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6223,6 +6597,7 @@ on(event: 'dataChange', type: SubscribeType, listener: Callback&lt;ChangeNotific
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6248,9 +6623,10 @@ try {
 
 
 
-#### on('syncComplete')
+### on('syncComplete')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(event: 'syncComplete', syncCallback: Callback<Array<[string, number]>>): void
 
@@ -6259,6 +6635,7 @@ on(event: 'syncComplete', syncCallback: Callback<Array<[string, number]>>): void
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6269,6 +6646,7 @@ on(event: 'syncComplete', syncCallback: Callback<Array<[string, number]>>): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6300,9 +6678,10 @@ try {
 
 
 
-#### off('dataChange')
+### off('dataChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(event:'dataChange', listener?: Callback&lt;ChangeNotification&gt;): void
 
@@ -6311,6 +6690,7 @@ off(event:'dataChange', listener?: Callback&lt;ChangeNotification&gt;): void
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6321,6 +6701,7 @@ off(event:'dataChange', listener?: Callback&lt;ChangeNotification&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6364,9 +6745,10 @@ class KvstoreModel {
 
 
 
-#### off('syncComplete')
+### off('syncComplete')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(event: 'syncComplete', syncCallback?: Callback<Array<[string, number]>>): void
 
@@ -6375,6 +6757,7 @@ off(event: 'syncComplete', syncCallback?: Callback<Array<[string, number]>>): vo
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6385,6 +6768,7 @@ off(event: 'syncComplete', syncCallback?: Callback<Array<[string, number]>>): vo
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6427,9 +6811,10 @@ class KvstoreModel {
 
 
 
-#### getSecurityLevel
+### getSecurityLevel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSecurityLevel(callback: AsyncCallback&lt;SecurityLevel&gt;): void
 
@@ -6439,6 +6824,7 @@ getSecurityLevel(callback: AsyncCallback&lt;SecurityLevel&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;SecurityLevel&gt; | 是 | 回调函数。返回数据库的安全级别。 |
@@ -6447,6 +6833,7 @@ getSecurityLevel(callback: AsyncCallback&lt;SecurityLevel&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6474,9 +6861,10 @@ try {
 
 
 
-#### getSecurityLevel
+### getSecurityLevel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSecurityLevel(): Promise&lt;SecurityLevel&gt;
 
@@ -6486,6 +6874,7 @@ getSecurityLevel(): Promise&lt;SecurityLevel&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;SecurityLevel&gt; | Promise对象。返回数据库的安全级别。 |
@@ -6494,6 +6883,7 @@ getSecurityLevel(): Promise&lt;SecurityLevel&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6519,9 +6909,10 @@ try {
 
 
 
-#### rekey
+### rekey
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 rekey(): Promise&lt;void&gt;
 
@@ -6539,6 +6930,7 @@ rekey(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -6547,6 +6939,7 @@ rekey(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6572,9 +6965,10 @@ try {
 
 
 
-#### DeviceKVStore
+## DeviceKVStore
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设备协同数据库，继承自SingleKVStore，提供查询数据和端端同步数据的方法，可以使用SingleKVStore的方法例如：put、putBatch等。
 
@@ -6586,9 +6980,10 @@ try {
 
 
 
-#### get
+### get
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get(key: string, callback: AsyncCallback<boolean | string | number | Uint8Array>): void
 
@@ -6597,6 +6992,7 @@ get(key: string, callback: AsyncCallback<boolean | string | number | Uint8Array>
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6607,6 +7003,7 @@ get(key: string, callback: AsyncCallback<boolean | string | number | Uint8Array>
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6648,9 +7045,10 @@ try {
 
 
 
-#### get
+### get
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get(key: string): Promise<boolean | string | number | Uint8Array>
 
@@ -6660,12 +7058,14 @@ get(key: string): Promise<boolean | string | number | Uint8Array>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 要查询数据的Key，不能为空且长度范围为1-MAX_KEY_LENGTH。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6675,6 +7075,7 @@ get(key: string): Promise<boolean | string | number | Uint8Array>
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6712,9 +7113,10 @@ try {
 
 
 
-#### get
+### get
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get(deviceId: string, key: string, callback: AsyncCallback<boolean | string | number | Uint8Array>): void
 
@@ -6728,6 +7130,7 @@ get(deviceId: string, key: string, callback: AsyncCallback<boolean | string | nu
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 设备的networkId，标识要查询其数据的设备，不能为空。 |
@@ -6738,6 +7141,7 @@ get(deviceId: string, key: string, callback: AsyncCallback<boolean | string | nu
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6779,9 +7183,10 @@ try {
 
 
 
-#### get
+### get
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get(deviceId: string, key: string): Promise<boolean | string | number | Uint8Array>
 
@@ -6795,6 +7200,7 @@ get(deviceId: string, key: string): Promise<boolean | string | number | Uint8Arr
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 设备的networkId，标识要查询其数据的设备，不能为空。 |
@@ -6802,6 +7208,7 @@ get(deviceId: string, key: string): Promise<boolean | string | number | Uint8Arr
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6811,6 +7218,7 @@ get(deviceId: string, key: string): Promise<boolean | string | number | Uint8Arr
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6848,9 +7256,10 @@ try {
 
 
 
-#### getEntries
+### getEntries
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEntries(keyPrefix: string, callback: AsyncCallback<Entry[]>): void
 
@@ -6859,6 +7268,7 @@ getEntries(keyPrefix: string, callback: AsyncCallback<Entry[]>): void
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6869,6 +7279,7 @@ getEntries(keyPrefix: string, callback: AsyncCallback<Entry[]>): void
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6922,9 +7333,10 @@ try {
 
 
 
-#### getEntries
+### getEntries
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEntries(keyPrefix: string): Promise<Entry[]>
 
@@ -6934,12 +7346,14 @@ getEntries(keyPrefix: string): Promise<Entry[]>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyPrefix | string | 是 | 表示要匹配的键前缀，长度范围为1-MAX_KEY_LENGTH。不能包含'^'，包含'^'将导致谓词失效，查询结果会返回数据库中的所有数据。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6949,6 +7363,7 @@ getEntries(keyPrefix: string): Promise<Entry[]>
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6997,9 +7412,10 @@ try {
 
 
 
-#### getEntries
+### getEntries
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEntries(deviceId: string, keyPrefix: string, callback: AsyncCallback<Entry[]>): void
 
@@ -7013,6 +7429,7 @@ getEntries(deviceId: string, keyPrefix: string, callback: AsyncCallback<Entry[]>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 设备的networkId，标识要查询其数据的设备，不能为空。 |
@@ -7023,6 +7440,7 @@ getEntries(deviceId: string, keyPrefix: string, callback: AsyncCallback<Entry[]>
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7076,9 +7494,10 @@ try {
 
 
 
-#### getEntries
+### getEntries
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEntries(deviceId: string, keyPrefix: string): Promise<Entry[]>
 
@@ -7092,6 +7511,7 @@ getEntries(deviceId: string, keyPrefix: string): Promise<Entry[]>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 设备的networkId，标识要查询其数据的设备，不能为空。 |
@@ -7099,6 +7519,7 @@ getEntries(deviceId: string, keyPrefix: string): Promise<Entry[]>
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7108,6 +7529,7 @@ getEntries(deviceId: string, keyPrefix: string): Promise<Entry[]>
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7159,9 +7581,10 @@ try {
 
 
 
-#### getEntries
+### getEntries
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEntries(query: Query, callback: AsyncCallback<Entry[]>): void
 
@@ -7170,6 +7593,7 @@ getEntries(query: Query, callback: AsyncCallback<Entry[]>): void
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -7180,6 +7604,7 @@ getEntries(query: Query, callback: AsyncCallback<Entry[]>): void
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7236,9 +7661,10 @@ try {
 
 
 
-#### getEntries
+### getEntries
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEntries(query: Query): Promise<Entry[]>
 
@@ -7248,12 +7674,14 @@ getEntries(query: Query): Promise<Entry[]>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | query | Query | 是 | 表示查询对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7263,6 +7691,7 @@ getEntries(query: Query): Promise<Entry[]>
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7314,9 +7743,10 @@ try {
 
 
 
-#### getEntries
+### getEntries
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEntries(deviceId: string, query: Query, callback: AsyncCallback<Entry[]>): void
 
@@ -7330,6 +7760,7 @@ getEntries(deviceId: string, query: Query, callback: AsyncCallback<Entry[]>): vo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 设备的networkId，标识要查询其数据的设备，不能为空。 |
@@ -7340,6 +7771,7 @@ getEntries(deviceId: string, query: Query, callback: AsyncCallback<Entry[]>): vo
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7398,9 +7830,10 @@ try {
 
 
 
-#### getEntries
+### getEntries
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEntries(deviceId: string, query: Query): Promise<Entry[]>
 
@@ -7414,6 +7847,7 @@ getEntries(deviceId: string, query: Query): Promise<Entry[]>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 设备的networkId，标识要查询其数据的设备，不能为空。 |
@@ -7421,6 +7855,7 @@ getEntries(deviceId: string, query: Query): Promise<Entry[]>
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7430,6 +7865,7 @@ getEntries(deviceId: string, query: Query): Promise<Entry[]>
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7482,9 +7918,10 @@ try {
 
 
 
-#### getResultSet
+### getResultSet
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResultSet(keyPrefix: string, callback: AsyncCallback&lt;KVStoreResultSet&gt;): void
 
@@ -7493,6 +7930,7 @@ getResultSet(keyPrefix: string, callback: AsyncCallback&lt;KVStoreResultSet&gt;)
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -7503,6 +7941,7 @@ getResultSet(keyPrefix: string, callback: AsyncCallback&lt;KVStoreResultSet&gt;)
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7565,9 +8004,10 @@ try {
 
 
 
-#### getResultSet
+### getResultSet
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResultSet(keyPrefix: string): Promise&lt;KVStoreResultSet&gt;
 
@@ -7577,12 +8017,14 @@ getResultSet(keyPrefix: string): Promise&lt;KVStoreResultSet&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyPrefix | string | 是 | 表示要匹配的键前缀，长度范围为1-MAX_KEY_LENGTH。不能包含'^'，包含'^'将导致谓词失效，查询结果会返回数据库中的所有数据。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7592,6 +8034,7 @@ getResultSet(keyPrefix: string): Promise&lt;KVStoreResultSet&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7646,9 +8089,10 @@ try {
 
 
 
-#### getResultSet
+### getResultSet
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResultSet(deviceId: string, keyPrefix: string, callback: AsyncCallback&lt;KVStoreResultSet&gt;): void
 
@@ -7662,6 +8106,7 @@ getResultSet(deviceId: string, keyPrefix: string, callback: AsyncCallback&lt;KVS
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 设备的networkId，标识要查询其数据的设备，不能为空。 |
@@ -7672,6 +8117,7 @@ getResultSet(deviceId: string, keyPrefix: string, callback: AsyncCallback&lt;KVS
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7713,9 +8159,10 @@ try {
 
 
 
-#### getResultSet
+### getResultSet
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResultSet(deviceId: string, keyPrefix: string): Promise&lt;KVStoreResultSet&gt;
 
@@ -7729,6 +8176,7 @@ getResultSet(deviceId: string, keyPrefix: string): Promise&lt;KVStoreResultSet&g
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 设备的networkId，标识要查询其数据的设备，不能为空。 |
@@ -7736,6 +8184,7 @@ getResultSet(deviceId: string, keyPrefix: string): Promise&lt;KVStoreResultSet&g
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7745,6 +8194,7 @@ getResultSet(deviceId: string, keyPrefix: string): Promise&lt;KVStoreResultSet&g
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7782,9 +8232,10 @@ try {
 
 
 
-#### getResultSet
+### getResultSet
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResultSet(deviceId: string, query: Query, callback: AsyncCallback&lt;KVStoreResultSet&gt;): void
 
@@ -7798,6 +8249,7 @@ getResultSet(deviceId: string, query: Query, callback: AsyncCallback&lt;KVStoreR
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 设备的networkId，标识要查询其数据的设备，不能为空。 |
@@ -7808,6 +8260,7 @@ getResultSet(deviceId: string, query: Query, callback: AsyncCallback&lt;KVStoreR
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7872,9 +8325,10 @@ try {
 
 
 
-#### getResultSet
+### getResultSet
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResultSet(deviceId: string, query: Query): Promise&lt;KVStoreResultSet&gt;
 
@@ -7888,6 +8342,7 @@ getResultSet(deviceId: string, query: Query): Promise&lt;KVStoreResultSet&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 设备的networkId，标识要查询其数据的设备，不能为空。 |
@@ -7895,6 +8350,7 @@ getResultSet(deviceId: string, query: Query): Promise&lt;KVStoreResultSet&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7904,6 +8360,7 @@ getResultSet(deviceId: string, query: Query): Promise&lt;KVStoreResultSet&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7965,9 +8422,10 @@ try {
 
 
 
-#### getResultSet
+### getResultSet
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResultSet(query: Query): Promise&lt;KVStoreResultSet&gt;
 
@@ -7977,12 +8435,14 @@ getResultSet(query: Query): Promise&lt;KVStoreResultSet&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | query | Query | 是 | 表示查询对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7992,6 +8452,7 @@ getResultSet(query: Query): Promise&lt;KVStoreResultSet&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -8041,9 +8502,10 @@ try {
 
 
 
-#### getResultSet
+### getResultSet
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResultSet(query: Query, callback:AsyncCallback&lt;KVStoreResultSet&gt;): void
 
@@ -8052,6 +8514,7 @@ getResultSet(query: Query, callback:AsyncCallback&lt;KVStoreResultSet&gt;): void
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -8062,6 +8525,7 @@ getResultSet(query: Query, callback:AsyncCallback&lt;KVStoreResultSet&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -8126,9 +8590,10 @@ try {
 
 
 
-#### getResultSize
+### getResultSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResultSize(query: Query, callback: AsyncCallback&lt;number&gt;): void
 
@@ -8137,6 +8602,7 @@ getResultSize(query: Query, callback: AsyncCallback&lt;number&gt;): void
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -8147,6 +8613,7 @@ getResultSize(query: Query, callback: AsyncCallback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -8200,9 +8667,10 @@ try {
 
 
 
-#### getResultSize
+### getResultSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResultSize(query: Query): Promise&lt;number&gt;
 
@@ -8212,12 +8680,14 @@ getResultSize(query: Query): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | query | Query | 是 | 表示查询对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8227,6 +8697,7 @@ getResultSize(query: Query): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -8274,9 +8745,10 @@ try {
 
 
 
-#### getResultSize
+### getResultSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResultSize(deviceId: string, query: Query, callback: AsyncCallback&lt;number&gt;): void
 
@@ -8290,6 +8762,7 @@ getResultSize(deviceId: string, query: Query, callback: AsyncCallback&lt;number&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 设备的networkId，标识要查询其数据的设备，不能为空。 |
@@ -8300,6 +8773,7 @@ getResultSize(deviceId: string, query: Query, callback: AsyncCallback&lt;number&
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -8353,9 +8827,10 @@ try {
 
 
 
-#### getResultSize
+### getResultSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResultSize(deviceId: string, query: Query): Promise&lt;number&gt;
 
@@ -8369,6 +8844,7 @@ getResultSize(deviceId: string, query: Query): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 设备的networkId，标识要查询其数据的设备，不能为空。 |
@@ -8376,6 +8852,7 @@ getResultSize(deviceId: string, query: Query): Promise&lt;number&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8385,6 +8862,7 @@ getResultSize(deviceId: string, query: Query): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式键值数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributedkvstore)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

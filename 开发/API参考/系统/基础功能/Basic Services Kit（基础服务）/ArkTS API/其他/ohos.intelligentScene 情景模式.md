@@ -1,6 +1,6 @@
 # @ohos.intelligentScene (情景模式)
 
-更新时间：2026-05-19 09:13:51
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-intelligentscene
 **支持设备：** Phone | Tablet
@@ -12,7 +12,8 @@
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | Tablet
 
@@ -22,7 +23,8 @@ import { intelligentScene } from '@kit.BasicServicesKit';
 
 
 
-#### intelligentScene.isDoNotDisturbEnabled
+## intelligentScene.isDoNotDisturbEnabled
+
 
 **支持设备：** Phone | Tablet
 
@@ -38,6 +40,7 @@ isDoNotDisturbEnabled(): Promise&lt;boolean&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回免打扰功能是否已开启。true表示免打扰功能已开启，false表示免打扰功能未开启。 |
@@ -46,6 +49,7 @@ isDoNotDisturbEnabled(): Promise&lt;boolean&gt;
 **错误码**：
 
 以下错误码详细介绍请参考[情景模式错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-intelligentscene)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -76,7 +80,8 @@ async function isDoNotDisturbEnabled(): Promise<boolean> {
 
 
 
-#### intelligentScene.isNotifyAllowedInDoNotDisturb
+## intelligentScene.isNotifyAllowedInDoNotDisturb
+
 
 **支持设备：** Phone | Tablet
 
@@ -92,6 +97,7 @@ isNotifyAllowedInDoNotDisturb(): Promise&lt;boolean&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。免打扰功能未开启时，返回false；免打扰功能开启时，返回是否允许当前应用打扰：true表示允许打扰，false表示不允许打扰。 |
@@ -100,6 +106,7 @@ isNotifyAllowedInDoNotDisturb(): Promise&lt;boolean&gt;
 **错误码**：
 
 以下错误码详细介绍请参考[情景模式错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-intelligentscene)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

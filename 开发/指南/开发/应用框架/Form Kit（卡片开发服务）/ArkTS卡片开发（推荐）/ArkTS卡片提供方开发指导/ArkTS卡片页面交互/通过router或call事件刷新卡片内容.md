@@ -1,6 +1,6 @@
 # 通过router或call事件刷新卡片内容
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widget-event-uiability
 
@@ -11,7 +11,7 @@
 
 
 
-#### 通过router事件刷新卡片内容
+## 通过router事件刷新卡片内容
 
  - 在卡片页面代码文件中，通过注册Button的onClick点击事件回调并在回调中调用postCardAction接口，触发router事件拉起UIAbility至前台。
 
@@ -136,7 +136,7 @@ export default class WidgetEventRouterEntryAbility extends UIAbility {
 
 
 
-#### 通过call事件刷新卡片内容
+## 通过call事件刷新卡片内容
 
  - 在卡片页面代码文件中，通过注册Button的onClick点击事件回调并在回调中调用postCardAction接口，触发call事件拉起UIAbility至后台。
 

@@ -1,8 +1,9 @@
 # 一键登录获取华为账号绑定号码和UnionID/OpenID
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-api-get-user-info-quicklogin-by-code
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ![](assets/一键登录获取华为账号绑定号码和UnionID／OpenID/file-20260525091449513-001.png)
 
@@ -14,19 +15,28 @@
 
 
 
-#### 功能介绍
+## 功能介绍
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过一键登录场景的Authorization Code获取UnionID，OpenID，华为账号绑定的手机号码及其相关信息。
 
 
 
-#### 场景描述
+## 场景描述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [华为账号一键登录（获取手机号和UnionID/OpenID）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-phone-unionid-login)场景，应用服务端向华为账号服务器调用该接口获取UnionID，OpenID，华为账号绑定的手机号码及其相关信息。该服务仅对中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）用户提供。
 
 
 
-#### 使用约束
+## 使用约束
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
  - 需确保调用端网络正常。
  - 华为账号一键登录服务仅对中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）用户提供。
@@ -35,7 +45,10 @@
 
 
 
-#### 接口原型
+## 接口原型
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
  - **承载协议：** HTTPS POST
  - **接口方向：** 开发者服务器->华为账号服务器
@@ -49,11 +62,18 @@
 
 
 
-#### 请求参数
+## 请求参数
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 
 
-#### Request Header
+### Request Header
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
@@ -62,7 +82,11 @@
 
 
 
-#### Request Body
+### Request Body
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
@@ -73,7 +97,10 @@
 
 
 
-#### 请求示例
+## 请求示例
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 请通过POST方式调用，示例如下：
 
@@ -87,11 +114,18 @@ Content-Type: application/json
 
 
 
-#### 响应参数
+## 响应参数
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 
 
-#### Response Header
+### Response Header
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
@@ -100,9 +134,13 @@ Content-Type: application/json
 
 
 
-#### Response Body
+### Response Body
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 调用成功时，响应消息返回如下：
+
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
@@ -116,6 +154,7 @@ Content-Type: application/json
 
 调用失败时，响应消息返回如下：
 
+
 | 参数 | 参数类型 | 描述 |
 | --- | --- | --- |
 | resultCode | int | 错误码，详见本章节错误码。 |
@@ -124,11 +163,17 @@ Content-Type: application/json
 
 
 
-#### 响应示例
+## 响应示例
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 
 
-#### 请求成功时
+### 请求成功时
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```json
 HTTP/1.1 200 OK
@@ -149,7 +194,10 @@ Content-Type: application/json
 
 
 
-#### 请求失败时
+### 请求失败时
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```json
 HTTP/1.1 200 OK
@@ -163,7 +211,10 @@ Content-Type: application/json
 
 
 
-#### 示例代码
+## 示例代码
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Java示例代码如下，运行前需要进行[示例代码环境配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-api-common#示例代码环境配置)（请将此示例代码与工具类CallUtils放于同一路径下，如不在同一路径，请手动添加import）
 
@@ -219,7 +270,11 @@ public class GetQuickLoginMobilePhoneByCodeDemo {
 
 
 
-#### 错误码
+## 错误码
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | HTTP响应码 | 描述 | 解决方法 |
 | --- | --- | --- |
@@ -233,6 +288,7 @@ public class GetQuickLoginMobilePhoneByCodeDemo {
 | 503 | 系统流控。 | 触发系统流控，请稍后重试。 |
 | 504 | 请求连接超时，常见于网络状况不稳定。 | 建议稍后重试，若仍无法解决，请通过在线提单提交问题。 |
 | 590 | 服务内部错误。 | 请通过在线提单提交问题。 |
+
 
 
 | 错误码 | 描述 | 解决方法 |

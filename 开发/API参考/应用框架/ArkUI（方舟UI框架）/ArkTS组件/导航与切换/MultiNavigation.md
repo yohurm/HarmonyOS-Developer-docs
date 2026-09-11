@@ -1,20 +1,21 @@
 # MultiNavigation
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-multinavigation
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-MultiNavigation是一个支持分栏导航的组件，提供多层页面栈管理能力，通过MultiNavPathStack统一管理主页、详情页、全屏页等不同类型页面的导航栈。支持左起右清栈等智能路由策略，适用于平板、折叠屏等大尺寸设备的复杂导航场景，能够优化页面跳转体验、提升用户操作效率。
+MultiNavigation用于在大尺寸设备上分栏显示、进行路由跳转。
 
 > [!TIP]
-> 该组件从API version 14开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 本模块接口仅可在Stage模型下使用。 由于MultiNavigation存在多层次的页面栈结构（主页、详情页、全屏页各自维护子栈，并由MultiNavPathStack统一管理），调用本文档明确说明的不支持接口或不在本文档支持接口列表中的接口（例如 getParent 、 setInterception 、 pushDestination 等），可能会发生无法预期的问题。 MultiNavigation在深层嵌套场景下，可能存在路由动效异常的问题。
+> 该组件从API version 14开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 本模块接口仅可在Stage模型下使用。 由于MultiNavigation存在多层次的页面栈结构（主页、详情页、全屏页各自维护子栈，并由MultiNavPathStack统一管理），调用本文档明确说明的不支持接口或不在本文档支持接口列表中的接口(例如 getParent 、 setInterception 、 pushDestination 等)，可能会发生无法预期的问题。 MultiNavigation在深层嵌套场景下，可能存在路由动效异常的问题。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { MultiNavigation, MultiNavPathStack, SplitPolicy } from '@kit.ArkUI';
@@ -22,17 +23,19 @@ import { MultiNavigation, MultiNavPathStack, SplitPolicy } from '@kit.ArkUI';
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 不可以包含子组件。
 
 
 
-#### MultiNavigation
+## MultiNavigation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 MultiNavigation({navDestination: NavDestinationBuildFunction, multiStack: MultiNavPathStack, onNavigationModeChange?: OnNavigationModeChangeCallback, onHomeShowOnTop?: OnHomeShowOnTopCallback})
 
@@ -50,6 +53,7 @@ MultiNavigation组件遵循默认的左起右清栈规则：从主页触发详�
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | multiStack | MultiNavPathStack | 是 | @State | 设置路由栈。 |
@@ -60,17 +64,19 @@ MultiNavigation组件遵循默认的左起右清栈规则：从主页触发详�
 
 
 
-#### MultiNavPathStack
+## MultiNavPathStack
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 MultiNavigation的路由栈仅支持由使用方自行创建，不支持通过回调方式获取。请勿使用[NavDestination](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navdestination)的[onReady](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navdestination#onready11)等类似事件或接口来获取NavPathStack并进行栈操作，因为这可能会导致不可预知的问题。
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -82,9 +88,10 @@ constructor()
 
 
 
-#### pushPath
+### pushPath
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pushPath(info: NavPathInfo, animated?: boolean, policy?: SplitPolicy): void
 
@@ -96,6 +103,7 @@ pushPath(info: NavPathInfo, animated?: boolean, policy?: SplitPolicy): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | info | NavPathInfo | 是 | NavDestination页面的信息。 |
@@ -105,9 +113,10 @@ pushPath(info: NavPathInfo, animated?: boolean, policy?: SplitPolicy): void
 
 
 
-#### pushPath
+### pushPath
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pushPath(info: NavPathInfo, options?: NavigationOptions, policy?: SplitPolicy): void
 
@@ -119,6 +128,7 @@ pushPath(info: NavPathInfo, options?: NavigationOptions, policy?: SplitPolicy): 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | info | NavPathInfo | 是 | NavDestination页面的信息。 |
@@ -128,9 +138,10 @@ pushPath(info: NavPathInfo, options?: NavigationOptions, policy?: SplitPolicy): 
 
 
 
-#### pushPathByName
+### pushPathByName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pushPathByName(name: string, param: Object, animated?: boolean, policy?: SplitPolicy): void
 
@@ -142,6 +153,7 @@ pushPathByName(name: string, param: Object, animated?: boolean, policy?: SplitPo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | NavDestination页面名称。需要与NavDestinationBuildFunction中注册的页面名称一致。 |
@@ -152,9 +164,10 @@ pushPathByName(name: string, param: Object, animated?: boolean, policy?: SplitPo
 
 
 
-#### pushPathByName
+### pushPathByName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pushPathByName(name: string, param: Object, onPop?: base.Callback&lt;PopInfo&gt;, animated?: boolean, policy?: SplitPolicy): void
 
@@ -165,6 +178,7 @@ pushPathByName(name: string, param: Object, onPop?: base.Callback&lt;PopInfo&gt;
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -177,9 +191,10 @@ pushPathByName(name: string, param: Object, onPop?: base.Callback&lt;PopInfo&gt;
 
 
 
-#### replacePath
+### replacePath
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 replacePath(info: NavPathInfo, animated?: boolean): void
 
@@ -191,6 +206,7 @@ replacePath(info: NavPathInfo, animated?: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | info | NavPathInfo | 是 | NavDestination页面的信息。 |
@@ -199,9 +215,10 @@ replacePath(info: NavPathInfo, animated?: boolean): void
 
 
 
-#### replacePath
+### replacePath
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 replacePath(info: NavPathInfo, options?: NavigationOptions): void
 
@@ -213,17 +230,19 @@ replacePath(info: NavPathInfo, options?: NavigationOptions): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | info | NavPathInfo | 是 | NavDestination页面的信息。 |
-| options | NavigationOptions | 否 | 页面栈操作选项。仅支持其中的animated字段，使用其他字段将被忽略。省略时使用默认动画配置。 |
+| options | NavigationOptions | 否 | 页面栈操作选项。仅支持其中的animated字段。 |
 
 
 
 
-#### replacePathByName
+### replacePathByName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 replacePathByName(name: string, param: Object, animated?: boolean): void
 
@@ -235,18 +254,20 @@ replacePathByName(name: string, param: Object, animated?: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | NavDestination页面名称。 |
-| param | Object | 是 | NavDestination页面详细参数，用于向目标页面传递自定义数据。具体字段规格请参考NavDestination相关文档。 |
+| param | Object | 是 | NavDestination页面详细参数。 |
 | animated | boolean | 否 | 是否支持转场动画。 默认值：true true：支持转场动画。 false：不支持转场动画。 |
 
 
 
 
-#### removeByIndexes
+### removeByIndexes
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeByIndexes(indexes: Array&lt;number&gt;): number
 
@@ -258,12 +279,14 @@ removeByIndexes(indexes: Array&lt;number&gt;): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | indexes | Array&lt;number&gt; | 是 | 待删除NavDestination页面的索引值数组。 number类型的取值范围：[0, +∞)。超出范围时操作不生效。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -272,9 +295,10 @@ removeByIndexes(indexes: Array&lt;number&gt;): number
 
 
 
-#### removeByName
+### removeByName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeByName(name: string): number
 
@@ -286,12 +310,14 @@ removeByName(name: string): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 待删除NavDestination页面的名称。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -300,9 +326,10 @@ removeByName(name: string): number
 
 
 
-#### pop
+### pop
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pop(animated?: boolean): NavPathInfo | undefined
 
@@ -318,6 +345,7 @@ pop(animated?: boolean): NavPathInfo | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | animated | boolean | 否 | 是否支持转场动画。 默认值：true true：支持转场动画。 false：不支持转场动画。 |
@@ -325,16 +353,18 @@ pop(animated?: boolean): NavPathInfo | undefined
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| NavPathInfo \| undefined | 返回栈顶NavDestination页面的信息。栈为空时返回undefined。 |
+| NavPathInfo \| undefined | 返回栈顶NavDestination页面的信息。 |
 
 
 
 
-#### pop
+### pop
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pop(result?: Object, animated?: boolean): NavPathInfo | undefined
 
@@ -350,6 +380,7 @@ pop(result?: Object, animated?: boolean): NavPathInfo | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | result | Object | 否 | 页面自定义处理结果。具体内容由开发者自定义，建议包含明确的业务标识和处理结果数据。该结果将传递给入栈时设置的onPop回调函数。省略时不传递结果数据。 |
@@ -358,16 +389,18 @@ pop(result?: Object, animated?: boolean): NavPathInfo | undefined
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| NavPathInfo \| undefined | 返回栈顶NavDestination页面的信息。栈为空时返回undefined。 |
+| NavPathInfo \| undefined | 返回栈顶NavDestination页面的信息。 |
 
 
 
 
-#### popToName
+### popToName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 popToName(name: string, animated?: boolean): number
 
@@ -379,6 +412,7 @@ popToName(name: string, animated?: boolean): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | NavDestination页面名称。 |
@@ -387,6 +421,7 @@ popToName(name: string, animated?: boolean): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 如果栈中存在名为name的NavDestination页面，则返回由栈底开始第一个名为name的NavDestination页面的索引，否则返回-1。 取值范围：[-1, +∞) |
@@ -394,9 +429,10 @@ popToName(name: string, animated?: boolean): number
 
 
 
-#### popToName
+### popToName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 popToName(name: string, result: Object, animated?: boolean): number
 
@@ -408,6 +444,7 @@ popToName(name: string, result: Object, animated?: boolean): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | NavDestination页面名称。 |
@@ -417,6 +454,7 @@ popToName(name: string, result: Object, animated?: boolean): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 如果栈中存在名为name的NavDestination页面，则返回由栈底开始第一个名为name的NavDestination页面的索引，否则返回-1。 取值范围：[-1, +∞) |
@@ -424,9 +462,10 @@ popToName(name: string, result: Object, animated?: boolean): number
 
 
 
-#### popToIndex
+### popToIndex
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 popToIndex(index: number, animated?: boolean): void
 
@@ -438,6 +477,7 @@ popToIndex(index: number, animated?: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | NavDestination页面的位置索引。 取值范围：[0, +∞)。超出范围时操作不生效。 |
@@ -446,19 +486,21 @@ popToIndex(index: number, animated?: boolean): void
 
 
 
-#### popToIndex
+### popToIndex
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 popToIndex(index: number, result: Object, animated?: boolean): void
 
-回退路由栈到index指定的NavDestination页面，并触发onPop回调传入页面处理结果。当index无效（超出范围）时，不执行回退操作。
+回退路由栈到index指定的NavDestination页面，并触发onPop回调传入页面处理结果。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -469,9 +511,10 @@ popToIndex(index: number, result: Object, animated?: boolean): void
 
 
 
-#### moveToTop
+### moveToTop
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 moveToTop(name: string, animated?: boolean): number
 
@@ -487,6 +530,7 @@ moveToTop(name: string, animated?: boolean): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | NavDestination页面名称。 |
@@ -495,6 +539,7 @@ moveToTop(name: string, animated?: boolean): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 如果栈中存在名为name的NavDestination页面，则返回由栈底开始第一个名为name的NavDestination页面的索引，否则返回-1。 |
@@ -502,9 +547,10 @@ moveToTop(name: string, animated?: boolean): number
 
 
 
-#### moveIndexToTop
+### moveIndexToTop
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 moveIndexToTop(index: number, animated?: boolean): void
 
@@ -520,17 +566,19 @@ moveIndexToTop(index: number, animated?: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| index | number | 是 | NavDestination页面的位置索引。 取值范围：[0, +∞)。超出范围时操作不生效。 |
+| index | number | 是 | NavDestination页面的位置索引。 取值范围：[0, +∞) |
 | animated | boolean | 否 | 是否支持转场动画。 默认值：true true：支持转场动画。 false：不支持转场动画。 |
 
 
 
 
-#### clear
+### clear
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clear(animated?: boolean): void
 
@@ -546,6 +594,7 @@ clear(animated?: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | animated | boolean | 否 | 是否支持转场动画。 默认值：true true：支持转场动画。 false：不支持转场动画。 |
@@ -553,9 +602,10 @@ clear(animated?: boolean): void
 
 
 
-#### getAllPathName
+### getAllPathName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllPathName(): Array&lt;string&gt;
 
@@ -567,16 +617,18 @@ getAllPathName(): Array&lt;string&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Array&lt;string&gt; | 返回栈中所有NavDestination页面的名称，数组元素按栈底到栈顶的顺序排列。 |
+| Array&lt;string&gt; | 返回栈中所有NavDestination页面的名称。 |
 
 
 
 
-#### getParamByIndex
+### getParamByIndex
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getParamByIndex(index: number): Object | undefined
 
@@ -588,12 +640,14 @@ getParamByIndex(index: number): Object | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | NavDestination页面的位置索引。 取值范围：[0, +∞) |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -602,9 +656,10 @@ getParamByIndex(index: number): Object | undefined
 
 
 
-#### getParamByName
+### getParamByName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getParamByName(name: string): Array&lt;Object&gt;
 
@@ -616,12 +671,14 @@ getParamByName(name: string): Array&lt;Object&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | NavDestination页面名称。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -630,9 +687,10 @@ getParamByName(name: string): Array&lt;Object&gt;
 
 
 
-#### getIndexByName
+### getIndexByName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getIndexByName(name: string): Array&lt;number&gt;
 
@@ -644,12 +702,14 @@ getIndexByName(name: string): Array&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | NavDestination页面名称。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -658,9 +718,10 @@ getIndexByName(name: string): Array&lt;number&gt;
 
 
 
-#### size
+### size
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 size(): number
 
@@ -672,6 +733,7 @@ size(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回栈大小。 取值范围：[0, +∞) |
@@ -679,9 +741,10 @@ size(): number
 
 
 
-#### disableAnimation
+### disableAnimation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 disableAnimation(disable: boolean): void
 
@@ -697,6 +760,7 @@ disableAnimation(disable: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | disable | boolean | 是 | 是否关闭转场动画。 默认值：false true：关闭转场动画。 false：不关闭转场动画。 |
@@ -704,9 +768,10 @@ disableAnimation(disable: boolean): void
 
 
 
-#### switchFullScreenState
+### switchFullScreenState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 switchFullScreenState(isFullScreen?: boolean): boolean
 
@@ -718,12 +783,14 @@ switchFullScreenState(isFullScreen?: boolean): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isFullScreen | boolean | 否 | 是否切换为全屏模式。 默认值：false true：全屏模式；false：分栏模式。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -732,9 +799,10 @@ switchFullScreenState(isFullScreen?: boolean): boolean
 
 
 
-#### setHomeWidthRange
+### setHomeWidthRange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setHomeWidthRange(minPercent: number, maxPercent: number): void
 
@@ -746,6 +814,7 @@ setHomeWidthRange(minPercent: number, maxPercent: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | minPercent | number | 是 | 最小主页宽度百分比。 取值范围：[0, 100]，且需小于等于maxPercent。 |
@@ -754,9 +823,10 @@ setHomeWidthRange(minPercent: number, maxPercent: number): void
 
 
 
-#### keepBottomPage
+### keepBottomPage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 keepBottomPage(keepBottom: boolean): void
 
@@ -772,6 +842,7 @@ keepBottomPage(keepBottom: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keepBottom | boolean | 是 | 是否保留栈底页面。 默认值：false true：保留栈底页面。 false：不保留栈底页面。 |
@@ -779,16 +850,17 @@ keepBottomPage(keepBottom: boolean): void
 
 
 
-#### setPlaceholderPage
+### setPlaceholderPage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setPlaceholderPage(info: NavPathInfo): void
 
 设置占位页面。
 
 > [!NOTE]
-> 占位页面为特殊页面类型，当应用设置后，在支持分栏显示的大屏设备上会和主页默认形成左右分栏的效果，即左边主页，右边占位页。 当应用可绘制区域小于600vp、折叠屏由展开态切换为折叠态及平板横屏转竖屏等场景时，会自动将占位页出栈，只显示主页； 而当应用可绘制区域大于等于600vp、折叠屏由折叠态切换为展开态及平板竖屏转横屏等场景时，会自动补充占位页，形成分栏。
+> 占位页面为特殊页面类型，当应用设置后，在一些大屏设备上会和主页默认形成左右分栏的效果，即左边主页，右边占位页。 当应用可绘制区域小于600vp、折叠屏由展开态切换为折叠态及平板横屏转竖屏等场景时，会自动将占位页出栈，只显示主页； 而当应用可绘制区域大于等于600vp、折叠屏由折叠态切换为展开态及平板竖屏转横屏等场景时，会自动补充占位页，形成分栏。
 
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
@@ -797,6 +869,7 @@ setPlaceholderPage(info: NavPathInfo): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | info | NavPathInfo | 是 | 占位页页面信息，用于设置占位页。占位页在大屏设备上会与主页形成左右分栏效果。 |
@@ -804,15 +877,17 @@ setPlaceholderPage(info: NavPathInfo): void
 
 
 
-#### SplitPolicy
+## SplitPolicy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示MultiNavigation中页面的类型。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -823,9 +898,10 @@ setPlaceholderPage(info: NavPathInfo): void
 
 
 
-#### NavDestinationBuildFunction
+## NavDestinationBuildFunction
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type NavDestinationBuildFunction = (name: string, param?: object) => void
 
@@ -837,6 +913,7 @@ MultiNavigation用以加载NavDestination的方法。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 路由页面的标识符。 |
@@ -845,9 +922,10 @@ MultiNavigation用以加载NavDestination的方法。
 
 
 
-#### OnNavigationModeChangeCallback
+## OnNavigationModeChangeCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnNavigationModeChangeCallback = (mode: NavigationMode) => void
 
@@ -859,6 +937,7 @@ type OnNavigationModeChangeCallback = (mode: NavigationMode) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | NavigationMode | 是 | 当回调触发时的NavigationMode。 |
@@ -866,9 +945,10 @@ type OnNavigationModeChangeCallback = (mode: NavigationMode) => void
 
 
 
-#### OnHomeShowOnTopCallback
+## OnHomeShowOnTopCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnHomeShowOnTopCallback = (name: string) => void
 
@@ -880,6 +960,7 @@ type OnHomeShowOnTopCallback = (name: string) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 显示在栈顶的页面的标识符。 |
@@ -887,25 +968,28 @@ type OnHomeShowOnTopCallback = (name: string) => void
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 不支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)。
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 不支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)。
 
 
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例演示MultiNavigation的基本功能。
 
@@ -965,6 +1049,7 @@ export struct PageHome1 {
   controller: TextInputController = new TextInputController();
   text: string = '';
   param: Object = new Object();
+  lastBackTime: number = 0;
 
   build() {
     if (this.log()) {
@@ -1080,7 +1165,7 @@ export struct PageHome1 {
                 .margin(20)
                 .onClick(() => {
                   if (this.pageStack !== undefined && this.pageStack !== null) {
-                    // 删除栈中index为0、1、3、5的页面
+                    // 删除栈中index为0，1，3，5的页面
                     this.pageStack.removeByIndexes([0,1,3,5]);
                   }
                 })
@@ -1255,7 +1340,7 @@ export struct PageDetail1 {
                 .margin(20)
                 .onClick(() => {
                   if (this.pageStack !== undefined && this.pageStack !== null) {
-                    // 删除栈中index为0、1、3、5的页面
+                    // 删除栈中index为0，1，3，5的页面
                     this.pageStack.removeByIndexes([0,1,3,5]);
                   }
                 })
@@ -1503,7 +1588,6 @@ export struct PageDetail2 {
                 .margin(20)
                 .onClick(() => {
                   if (this.pageStack !== undefined && this.pageStack !== null) {
-                    // 弹出路由栈栈顶元素
                     this.pageStack.pop();
                   }
                 })
@@ -1661,7 +1745,7 @@ export struct PageFull1 {
                 .margin(20)
                 .onClick(() => {
                   if (this.pageStack !== undefined && this.pageStack !== null) {
-                    // 删除栈中index为0、1、3、5的页面
+                    // 删除栈中index为0，1，3，5的页面
                     this.pageStack.removeByIndexes([0, 1, 3, 5]);
                   }
                 })
@@ -1730,6 +1814,7 @@ export struct PagePlaceholder {
   @Consume('pageStack') pageStack: MultiNavPathStack;
   controller: TextInputController = new TextInputController();
   text: string = '';
+  lastBackTime: number = 0;
 
   build() {
     if (this.log()) {
@@ -1766,16 +1851,16 @@ export struct PagePlaceholder {
 分栏效果演示：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/PmZdyttETtS-S3I9_G5NTw/zh-cn_image_0000002704274441.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095448Z&HW-CC-Expire=86400&HW-CC-Sign=360DF4FF72A4779FCE53559F6C7A320E4C82D0B8B6B92FB8CDE9325C5337664B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/5A1mjW_gSfuUA0mJTXQ_VA/zh-cn_image_0000002747212557.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=1240704A3553FCCD66A781BC3F8B4DFC629002726006529A4C146D19DD017DBF)
 
 
 主页跳转详情页效果演示：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/k9x9xhR3RkmUSn3lHtYH7g/zh-cn_image_0000002674474650.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095448Z&HW-CC-Expire=86400&HW-CC-Sign=1F109096C8CD06DAE71E5FF259D6752BBAC157B00A3E6467745ED30467354E5F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/TqMKDzx5QSKldrKVlGhZYA/zh-cn_image_0000002717772622.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=42B5238F579EB61968F332DD5CEDA36202E7E0341AED3E7EE70444AC48BE424B)
 
 
 全屏类型页面效果演示：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/MgWpeCaKS5-l9h96via_ww/zh-cn_image_0000002704394607.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095448Z&HW-CC-Expire=86400&HW-CC-Sign=CCFD93ACB20F88983B6206D10245B45EB62E1D771E9A123D027E1790593DBF94)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/JS4Gc7SUQ4WlPPQaWBRpDg/zh-cn_image_0000002717612690.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=EA924BF29B3A2B2CDDBD634DABB4584B575A8FE9A9F70D6822FF10DBDF7E607D)

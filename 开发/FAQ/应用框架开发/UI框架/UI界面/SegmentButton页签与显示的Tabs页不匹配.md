@@ -42,7 +42,7 @@ import { ItemRestriction, SegmentButton, SegmentButtonOptions, SegmentButtonText
 @Entry
 @Component
 struct TabPage {
-  // SegmentButton配置项
+ <em> // SegmentButton配置项</em>
   @State tabOptions: SegmentButtonOptions = SegmentButtonOptions.tab({
     buttons: [
       { text: '测试01' },
@@ -52,9 +52,9 @@ struct TabPage {
     ] as ItemRestriction<SegmentButtonTextItem>,
   });
   controller: TabsController = new TabsController();
-  @State segmentIndex: number[] = [0]; // 选中项编号列表
-  @State currentIndex: number = 0; // 当前Tabs页索引
-  tabs: string[] = ['测试01', '测试02', '测试03', '测试04']; // Tabs页列表
+  @State segmentIndex: number[] = [0];<em> // 选中项编号列表</em>
+  @State currentIndex: number = 0; <em>// 当前Tabs页索引</em>
+  tabs: string[] = ['测试01', '测试02', '测试03', '测试04']; <em>// Tabs页列表</em>
 
   build() {
     Column() {
@@ -62,12 +62,12 @@ struct TabPage {
         options: this.tabOptions,
         selectedIndexes: this.segmentIndex,
         onItemClicked: (index: number) => {
-          this.controller.changeIndex(index); // 点击SegmentButton内的按钮切换Tabs页内容
+          this.controller.changeIndex(index); <em>// 点击SegmentButton内的按钮切换Tabs页内容</em>
         }
       });
       Tabs({
         barPosition: BarPosition.End,
-        index: $$this.currentIndex, // 双向同步当前Tabs页的索引
+        index: $$this.currentIndex, <em>// 双向同步当前Tabs页的索引</em>
         controller: this.controller
       }) {
         ForEach(this.tabs, (item: string, index?: number) => {
@@ -77,24 +77,24 @@ struct TabPage {
             };
           }
           .borderRadius(12)
-          .backgroundColor('#f1f3f5') // 灰色占位
+          .backgroundColor('#f1f3f5') <em>// 灰色占位</em>
           .margin({
-            left: index === 0 ? 0 : 6, // 第一页左边距为0，其他页左边距6px
-            right: index === this.tabs.length - 1 ? 0 : 6, // 最后一页右边距为0，其他页右边距6px
+            left: index === 0 ? 0 : 6, <em>// 第一页左边距为0，其他页左边距6px</em>
+            right: index === this.tabs.length - 1 ? 0 : 6,<em> // 最后一页右边距为0，其他页右边距6px</em>
             top: 8,
             bottom: 30
-          }); // 内容避让导航栏
+          }); <em>// 内容避让导航栏</em>
         });
       }
-      .barHeight(0) // 隐藏tabBar
+      .barHeight(0) <em>// 隐藏tabBar</em>
       .onChange((newIndex: number) => {
-        this.currentIndex = newIndex; // 页面切换，更改Tabs组件的index参数
+        this.currentIndex = newIndex; <em>// 页面切换，更改Tabs组件的index参数</em>
       });
     }
     .margin({ left: 20 })
     .height('100%')
     .width('90%')
-    .padding({ top: 26 }); // 避让状态栏
+    .padding({ top: 26 }); <em>// 避让状态栏</em>
   }
 }
 ```
@@ -106,7 +106,7 @@ import { ItemRestriction, SegmentButton, SegmentButtonOptions, SegmentButtonText
 @Entry
 @Component
 struct TabPage {
-  // SegmentButton配置项
+ <em> // SegmentButton配置项</em>
   @State tabOptions: SegmentButtonOptions = SegmentButtonOptions.tab({
     buttons: [
       { text: '测试01' },
@@ -116,9 +116,9 @@ struct TabPage {
     ] as ItemRestriction<SegmentButtonTextItem>,
   });
   controller: TabsController = new TabsController();
-  @State segmentIndex: number[] = [0]; // 选中项编号列表
-  @State currentIndex: number = 0; // 当前Tabs页索引
-  tabs: string[] = ['测试01', '测试02', '测试03', '测试04']; // Tabs页列表
+  @State segmentIndex: number[] = [0]; <em>// 选中项编号列表</em>
+  @State currentIndex: number = 0; <em>// 当前Tabs页索引</em>
+  tabs: string[] = ['测试01', '测试02', '测试03', '测试04']; <em>// Tabs页列表</em>
 
   build() {
     Column() {
@@ -131,7 +131,7 @@ struct TabPage {
       });
       Tabs({
         barPosition: BarPosition.End,
-        index: $$this.currentIndex, // 双向同步当前Tabs页的索引
+        index: $$this.currentIndex,<em> // 双向同步当前Tabs页的索引</em>
         controller: this.controller
       }) {
         ForEach(this.tabs, (item: string, index?: number) => {
@@ -141,19 +141,19 @@ struct TabPage {
             };
           }
           .borderRadius(12)
-          .backgroundColor('#f1f3f5') // 灰色占位
+          .backgroundColor('#f1f3f5')<em> // 灰色占位</em>
           .margin({
-            left: index === 0 ? 0 : 6, // 第一页左边距为0，其他页左边距6px
-            right: index === this.tabs.length - 1 ? 0 : 6, // 最后一页右边距为0，其他页右边距6px
+            left: index === 0 ? 0 : 6,<em> // 第一页左边距为0，其他页左边距6px</em>
+            right: index === this.tabs.length - 1 ? 0 : 6, <em>// 最后一页右边距为0，其他页右边距6px</em>
             top: 8,
             bottom: 30
-          }); // 内容避让导航栏
+          }); <em>// 内容避让导航栏</em>
         });
       }
-      // 推荐在onAnimationStart事件中更新，onChange事件是Tabs页切换完成后才触发的
+     <em> // 推荐在onAnimationStart事件中更新，onChange事件是Tabs页切换完成后才触发的</em>
       .onAnimationStart((index: number, targetIndex: number) => {
         if (this.currentIndex !== targetIndex) {
-          // 添加切换动画
+         <em> // 添加切换动画</em>
           this.getUIContext().animateTo({
             duration: 300,
             curve: Curve.EaseInOut
@@ -162,12 +162,12 @@ struct TabPage {
           });
         }
       })
-      .barHeight(0); // 隐藏tabBar
+      .barHeight(0);<em> // 隐藏tabBar</em>
     }
     .margin({ left: 20 })
     .height('100%')
     .width('90%')
-    .padding({ top: 26 }); // 避让状态栏
+    .padding({ top: 26 }); <em>// 避让状态栏</em>
   }
 }
 ```
@@ -199,7 +199,7 @@ import { ItemRestriction, SegmentButton, SegmentButtonOptions, SegmentButtonText
 @Entry
 @Component
 struct TabPage {
-  // SegmentButton配置项
+ <em> // SegmentButton配置项</em>
   @State tabOptions: SegmentButtonOptions = SegmentButtonOptions.tab({
     buttons: [
       { text: '测试01' },
@@ -208,10 +208,10 @@ struct TabPage {
       { text: '测试04' }
     ] as ItemRestriction<SegmentButtonTextItem>,
   });
-  @Watch('updateIndex') @State segmentIndex: number[] = [0]; // 选中项编号列表
+  @Watch('updateIndex') @State segmentIndex: number[] = [0];<em> // 选中项编号列表</em>
   controller: TabsController = new TabsController();
-  @State currentIndex: number = 0; // 当前Tabs页索引
-  tabs: string[] = ['测试01', '测试02', '测试03', '测试04']; // Tabs页列表
+  @State currentIndex: number = 0; <em>// 当前Tabs页索引</em>
+  tabs: string[] = ['测试01', '测试02', '测试03', '测试04']; <em>// Tabs页列表</em>
 
   updateIndex() {
     if (this.segmentIndex[0] != this.currentIndex) {
@@ -228,7 +228,7 @@ struct TabPage {
 
       Tabs({
         barPosition: BarPosition.End,
-        index: $$this.currentIndex, // 双向同步当前Tabs页的索引
+        index: $$this.currentIndex,<em> // 双向同步当前Tabs页的索引</em>
         controller: this.controller
       }) {
         ForEach(this.tabs, (item: string, index?: number) => {
@@ -238,20 +238,20 @@ struct TabPage {
             };
           }
           .borderRadius(12)
-          .backgroundColor('#F1F3F5') // 灰色占位
+          .backgroundColor('#F1F3F5')<em> // 灰色占位</em>
           .margin({
-            left: index === 0 ? 0 : 6, // 第一页左边距为0，其他页左边距6px
-            right: index === this.tabs.length - 1 ? 0 : 6, // 最后一页右边距为0，其他页右边距6px
+            left: index === 0 ? 0 : 6,<em> // 第一页左边距为0，其他页左边距6px</em>
+            right: index === this.tabs.length - 1 ? 0 : 6, <em>// 最后一页右边距为0，其他页右边距6px</em>
             top: 8,
             bottom: 30
-          }); // 内容避让导航栏
+          });<em> // 内容避让导航栏</em>
         });
       }
-      .barHeight(0) // 隐藏tabBar
-      // 推荐在onAnimationStart事件中更新，onChange事件是Tabs页切换完成后才触发的
+      .barHeight(0) <em>// 隐藏tabBar</em>
+   <em>   // 推荐在onAnimationStart事件中更新，onChange事件是Tabs页切换完成后才触发的</em>
       .onAnimationStart((index: number, targetIndex: number) => {
         if (this.currentIndex !== targetIndex) {
-          // 添加切换动画
+        <em>  // 添加切换动画</em>
           this.getUIContext().animateTo({
             duration: 300,
             curve: Curve.EaseInOut
@@ -267,7 +267,7 @@ struct TabPage {
     .margin({ left: 20 })
     .height('100%')
     .width('90%')
-    .padding({ top: 26 }); // 避让状态栏
+    .padding({ top: 26 }); <em>// 避让状态栏</em>
   }
 }
 ```

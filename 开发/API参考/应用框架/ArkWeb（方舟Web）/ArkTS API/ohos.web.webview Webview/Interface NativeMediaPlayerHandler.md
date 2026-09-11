@@ -1,9 +1,9 @@
 # Interface (NativeMediaPlayerHandler)
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-nativemediaplayerhandler
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 NativeMediaPlayerHandler 是[CreateNativeMediaPlayerCallback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-t#createnativemediaplayercallback12)回调函数的参数。当应用使用[NativeMediaPlayerBridge](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-nativemediaplayerbridge)接管网页媒体播放时，需要通过将播放器的各种状态变化实时同步给 ArkWeb 内核，确保网页 JavaScript 能够获取正确的播放器状态，ArkWeb 内核会将这些状态转换为标准的 HTML5 Media Events，触发网页中注册的事件监听器，从而保证网页功能的正常运行。
  
@@ -12,9 +12,10 @@ NativeMediaPlayerHandler 是[CreateNativeMediaPlayerCallback](https://developer.
 
   
 
-#### handleStatusChanged12+
+## handleStatusChanged12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 handleStatusChanged(status: PlaybackStatus): void
  
@@ -24,6 +25,7 @@ handleStatusChanged(status: PlaybackStatus): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | status | PlaybackStatus | 是 | 播放器的播放状态。 |
@@ -35,9 +37,10 @@ handleStatusChanged(status: PlaybackStatus): void
  
   
 
-#### handleVolumeChanged12+
+## handleVolumeChanged12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 handleVolumeChanged(volume: number): void
  
@@ -47,9 +50,10 @@ handleVolumeChanged(volume: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| volume | number | 是 | 播放器的音量，取值范围：[0, 1.0]。 |
+| volume | number | 是 | 播放器的音量，取值范围：[0, 1.0]。超出范围时，ArkWeb内核将不会执行。 |
  
  
 **示例：**
@@ -58,9 +62,10 @@ handleVolumeChanged(volume: number): void
  
   
 
-#### handleMutedChanged12+
+## handleMutedChanged12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 handleMutedChanged(muted: boolean): void
  
@@ -70,6 +75,7 @@ handleMutedChanged(muted: boolean): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | muted | boolean | 是 | 当前播放器是否静音。 true表示当前播放器静音，false表示当前播放器未静音。 |
@@ -81,9 +87,10 @@ handleMutedChanged(muted: boolean): void
  
   
 
-#### handlePlaybackRateChanged12+
+## handlePlaybackRateChanged12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 handlePlaybackRateChanged(playbackRate: number): void
  
@@ -93,9 +100,10 @@ handlePlaybackRateChanged(playbackRate: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| playbackRate | number | 是 | 播放速率，取值范围：[0, +∞) |
+| playbackRate | number | 是 | 播放速率，取值范围：[0, +∞)。传入负数时，ArkWeb内核将不会执行。 |
  
  
 **示例：**
@@ -104,9 +112,10 @@ handlePlaybackRateChanged(playbackRate: number): void
  
   
 
-#### handleDurationChanged12+
+## handleDurationChanged12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 handleDurationChanged(duration: number): void
  
@@ -116,9 +125,10 @@ handleDurationChanged(duration: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| duration | number | 是 | 媒体的总时长。 单位：秒，取值范围：[0, +∞) |
+| duration | number | 是 | 媒体的总时长。 单位：秒，取值范围：[0, +∞)。传入负数时，ArkWeb内核将不会执行。 |
  
  
 **示例：**
@@ -127,9 +137,10 @@ handleDurationChanged(duration: number): void
  
   
 
-#### handleTimeUpdate12+
+## handleTimeUpdate12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 handleTimeUpdate(currentPlayTime: number): void
  
@@ -139,9 +150,10 @@ handleTimeUpdate(currentPlayTime: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| currentPlayTime | number | 是 | 当前播放时间。 单位：秒，取值范围：[0, duration] |
+| currentPlayTime | number | 是 | 当前播放时间。 单位：秒，取值范围：[0, duration]。超出范围时，ArkWeb内核将不会执行。 |
  
  
 **示例：**
@@ -150,9 +162,10 @@ handleTimeUpdate(currentPlayTime: number): void
  
   
 
-#### handleBufferedEndTimeChanged12+
+## handleBufferedEndTimeChanged12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 handleBufferedEndTimeChanged(bufferedEndTime: number): void
  
@@ -162,9 +175,10 @@ handleBufferedEndTimeChanged(bufferedEndTime: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| bufferedEndTime | number | 是 | 媒体缓冲的时长。 单位：秒，取值范围：[0, duration] |
+| bufferedEndTime | number | 是 | 媒体缓冲的时长。 单位：秒，取值范围：[0, duration]。超出范围时，ArkWeb内核将不会执行。 |
  
  
 **示例：**
@@ -173,9 +187,10 @@ handleBufferedEndTimeChanged(bufferedEndTime: number): void
  
   
 
-#### handleEnded12+
+## handleEnded12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 handleEnded(): void
  
@@ -189,9 +204,10 @@ handleEnded(): void
  
   
 
-#### handleNetworkStateChanged12+
+## handleNetworkStateChanged12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 handleNetworkStateChanged(state: NetworkState): void
  
@@ -201,6 +217,7 @@ handleNetworkStateChanged(state: NetworkState): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | state | NetworkState | 是 | 播放器的网络状态。 |
@@ -212,9 +229,10 @@ handleNetworkStateChanged(state: NetworkState): void
  
   
 
-#### handleReadyStateChanged12+
+## handleReadyStateChanged12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 handleReadyStateChanged(state: ReadyState): void
  
@@ -224,6 +242,7 @@ handleReadyStateChanged(state: ReadyState): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | state | ReadyState | 是 | 播放器的缓存状态。 |
@@ -235,9 +254,10 @@ handleReadyStateChanged(state: ReadyState): void
  
   
 
-#### handleFullscreenChanged12+
+## handleFullscreenChanged12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 handleFullscreenChanged(fullscreen: boolean): void
  
@@ -247,6 +267,7 @@ handleFullscreenChanged(fullscreen: boolean): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fullscreen | boolean | 是 | 是否全屏。 true表示全屏，false表示未全屏。 |
@@ -258,13 +279,14 @@ handleFullscreenChanged(fullscreen: boolean): void
  
   
 
-#### handleSeeking12+
+## handleSeeking12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 handleSeeking(): void
  
-当播放器进入seek状态时，调用该方法将seek进入事件通知 ArkWeb 内核。
+当播放器进入seek状态时，调用该方法将seek进入事件通知ArkWeb内核。seek完成后，应调用handleSeekFinished将seek完成事件通知ArkWeb内核。
  
 **系统能力：** SystemCapability.Web.Webview.Core
  
@@ -274,13 +296,14 @@ handleSeeking(): void
  
   
 
-#### handleSeekFinished12+
+## handleSeekFinished12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 handleSeekFinished(): void
  
-当播放器seek完成后，调用该方法将seek完成事件通知 ArkWeb 内核。
+当播放器seek完成后，调用该方法将seek完成事件通知给ArkWeb内核。
  
 **系统能力：** SystemCapability.Web.Webview.Core
  
@@ -290,18 +313,20 @@ handleSeekFinished(): void
  
   
 
-#### handleError12+
+## handleError12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 handleError(error: MediaError, errorMessage: string): void
  
-当播放器发生错误时，调用该方法将错误通知 ArkWeb 内核。
+当播放器发生错误时，调用该方法将错误通知给ArkWeb内核。
  
 **系统能力：** SystemCapability.Web.Webview.Core
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | error | MediaError | 是 | 错误类型。 |
@@ -314,22 +339,24 @@ handleError(error: MediaError, errorMessage: string): void
  
   
 
-#### handleVideoSizeChanged12+
+## handleVideoSizeChanged12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 handleVideoSizeChanged(width: number, height: number): void
  
-当播放器解析出视频的尺寸时， 调用该方法将视频尺寸通知 ArkWeb 内核。
+当播放器解析出视频的尺寸时，调用该方法将视频尺寸通知给ArkWeb内核。
  
 **系统能力：** SystemCapability.Web.Webview.Core
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| width | number | 是 | 视频的宽，单位：像素，取值范围：[0, +∞) |
-| height | number | 是 | 视频的高，单位：像素，取值范围：[0, +∞) |
+| width | number | 是 | 视频的宽，单位：像素，取值范围：[0, +∞)。传入负数时，ArkWeb内核将忽略该值。 |
+| height | number | 是 | 视频的高，单位：像素，取值范围：[0, +∞)。传入负数时，ArkWeb内核将忽略该值。 |
  
  
 **示例：**

@@ -1,15 +1,15 @@
 # Instrument Test
 
-更新时间：2026-07-28 12:07:32
+更新时间：2026-08-29 09:41:34
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-instrument-test
 
-#### 创建ArkTS测试用例
+## 创建ArkTS测试用例
 
  
 
-#### 创建默认测试用例
-1. 在工程目录下打开待测试模块（支持HAP、HAR、HSP模块）下的ets文件，将光标置于代码中任意位置，单击**右键 > Show Context Actions**** > Create Instrument Test**或快捷键**Alt+Enter**** （macOS为Option+Enter）> Create Instrument Test**创建测试类。
+### 创建默认测试用例
+1. 在工程目录下打开待测试模块（支持HAP、HAR、HSP模块）下的ets文件，将光标置于代码中任意位置，单击**右键 > Show Context Actions > Create Instrument Test**或快捷键**Alt+Enter （macOS为Option+Enter）> Create Instrument Test**创建测试类。
 
   
 ![](assets/Instrument%20Test/file-20260514133035505-0.png)
@@ -32,7 +32,7 @@
 
   
 
-  #### 自定义Ability和Resources
+  ### 自定义Ability和Resources
 
   从5.0.3.403版本开始，新创建的工程/模块的ohosTest目录下默认不创建testability、testrunner和resources目录，历史工程仍保留这些目录，如果新工程需要使用ability或resources能力，需要开发者自行创建。
 
@@ -42,11 +42,10 @@
 
 
 | 新版本 | 历史版本 |
+
 |  |  |
 
-1. 创建以下目录或文件，文件内容示例可在[运行Instrument Test测试用例](#section1574003717165)后，在对应模块的.test/{productName}/intermediates/src/ohosTest（DevEco Studio 6.1.0 Beta1及以上版本）或build/{productName}/intermediates/src/ohosTest（DevEco Studio 6.1.0 Beta1以下版本）下查看，其中productName是当前生效的product，可以通过点击DevEco Studio右上方
-![](assets/Instrument%20Test/file-20260514133035505-14.png)
-图标进行查看。
+1. 创建以下目录或文件，文件内容示例可在[运行Instrument Test测试用例](#section1574003717165)后，在对应模块的.test/{productName}/intermediates/src/ohosTest（DevEco Studio 6.1.0 Beta1及以上版本）或build/{productName}/intermediates/src/ohosTest（DevEco Studio 6.1.0 Beta1以下版本）下查看，其中productName是当前生效的product，可以通过点击DevEco Studio右上方![icon](assets/Instrument%20Test/file-20260514133035505-14.png)图标进行查看。
 
   
 testability目录 > TestAbility.ets文件
@@ -66,29 +65,29 @@ testability目录 > TestAbility.ets文件
   
 ```ArkTS
 {
-  "module": {
-    "name": "entry_test",
-    "type": "feature",
-    "description": "$string:module_test_desc",
-    "mainElement": "TestAbility",                                   // 对应下方abilities中的ability name。
-    "deviceTypes": [
-      "phone",
-      "tablet",
-      "2in1"
+  <span style="color: rgb(135,16,148);">"module"</span>: {
+    <span style="color: rgb(135,16,148);">"name"</span>: <span style="color: rgb(6,125,23);">"entry_test"</span>,
+    <span style="color: rgb(135,16,148);">"type"</span>: <span style="color: rgb(6,125,23);">"feature"</span>,
+<span style="color: rgb(135,16,148);">    "description"</span>: <span style="color: rgb(6,125,23);">"$string:module_test_desc"</span>,
+    <span style="color: rgb(135,16,148);">"mainElement"</span>: <span style="color: rgb(6,125,23);">"TestAbility"</span>,                                   // 对应下方abilities中的ability name。
+    <span style="color: rgb(135,16,148);">"deviceTypes"</span>: [
+      <span style="color: rgb(6,125,23);">"phone"</span>,
+      <span style="color: rgb(6,125,23);">"tablet"</span>,
+      <span style="color: rgb(6,125,23);">"2in1"</span>
     ],
-    "deliveryWithInstall": true,
-    "installationFree": false,
-    "pages": "$profile:test_pages",                                 // 对应resources目录 > base目录 > profile目录 > test_pages.json文件。
-    "abilities": [                                                  // 添加的ability的配置信息。
+    <span style="color: rgb(135,16,148);">"deliveryWithInstall"</span>: <span style="color: rgb(0,51,179);">true</span>,
+    <span style="color: rgb(135,16,148);">"installationFree"</span>: <span style="color: rgb(0,51,179);">false</span>,
+    <span style="color: rgb(135,16,148);">"pages"</span>: <span style="color: rgb(6,125,23);">"$profile:test_pages"</span>,                                 // 对应resources目录 > base目录 > profile目录 > test_pages.json文件。
+    <span style="color: rgb(135,16,148);">"abilities"</span>: [                                                  // 添加的ability的配置信息。
       {
-        "name": "TestAbility",
-        "srcEntry": "./ets/testability/TestAbility.ets",
-        "description": "$string:TestAbility_desc",
-        "icon": "$media:icon",    // 确保引用的资源都存在
-        "label": "$string:TestAbility_label",
-        "exported": true,
-        "startWindowIcon": "$media:icon",
-        "startWindowBackground": "$color:start_window_background"
+        <span style="color: rgb(135,16,148);">"name"</span>: <span style="color: rgb(6,125,23);">"TestAbility"</span>,
+        <span style="color: rgb(135,16,148);">"srcEntry"</span>: <span style="color: rgb(6,125,23);">"./ets/testability/TestAbility.ets"</span>,
+        <span style="color: rgb(135,16,148);">"description"</span>: <span style="color: rgb(6,125,23);">"$string:TestAbility_desc"</span>,
+        <span style="color: rgb(135,16,148);">"icon"</span>: <span style="color: rgb(6,125,23);">"$media:icon"</span>,    // 确保引用的资源都存在
+        <span style="color: rgb(135,16,148);">"label"</span>: <span style="color: rgb(6,125,23);">"$string:TestAbility_label"</span>,
+        <span style="color: rgb(135,16,148);">"exported"</span>: <span style="color: rgb(0,51,179);">true</span>,
+        <span style="color: rgb(135,16,148);">"startWindowIcon"</span>: <span style="color: rgb(6,125,23);">"$media:icon"</span>,
+        <span style="color: rgb(135,16,148);">"startWindowBackground"</span>: <span style="color: rgb(6,125,23);">"$color:start_window_background"</span>
       }
     ]
   }
@@ -98,11 +97,11 @@ testability目录 > TestAbility.ets文件
 
   
 
-  #### 运行测试用例
+  ## 运行测试用例
 
   
 
-  #### 运行模式
+  ### 运行模式
 
   使用DevEco Studio运行测试用例前，需要将设备与电脑进行连接，将工程编译成带签名信息的HAP，再安装到真机设备或模拟器上运行，具体请参考[使用本地真机运行应用](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-run-device)或[使用模拟器运行应用](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-run-emulator)。
 
@@ -115,9 +114,7 @@ testability目录 > TestAbility.ets文件
 
 - 如果要根据自定义的配置执行Instrument Test，在[创建测试用例运行任务](#section65264166107)后，通过如下方式的其中之一，执行Instrument Test：
 在工具栏主菜单单击**Run > Run'测试名称'**。
-- 在DevEco Studio的右上角，选择测试任务，然后单击右侧的
-![](assets/Instrument%20Test/file-20260514133035505-17.png)
-按钮，执行Instrument Test。
+- 在DevEco Studio的右上角，选择测试任务，然后单击右侧的![icon](assets/Instrument%20Test/file-20260514133035505-17.png)按钮，执行Instrument Test。
 ![](assets/Instrument%20Test/file-20260514133035505-18.png)
 
 
@@ -132,7 +129,7 @@ testability目录 > TestAbility.ets文件
  
  
 
-#### 调试模式
+### 调试模式
 
 调试模式相比运行模式增加了断点管理功能。在断点命中时，可以选择单步执行、步入步出、进入下个断点等方式进行调试，另外可以使用线程堆栈可视化、变量和表达式可视化功能，快速定位问题。
  
@@ -166,7 +163,7 @@ testability目录 > TestAbility.ets文件
  
  
 
-#### 覆盖率统计模式
+### 覆盖率统计模式
 
 在Instrument Test运行的基础上支持代码覆盖率统计。
  
@@ -180,9 +177,7 @@ testability目录 > TestAbility.ets文件
 - 方式一：在工程目录中，选中文件，单击**右键 > Run '测试文件名称' with Coverage**，执行测试。
 ![](assets/Instrument%20Test/file-20260514133035505-24.png)
 
-- 方式二：在DevEco Studio的右上角，选择测试任务，然后单击右侧的
-![](assets/Instrument%20Test/file-20260514133035505-25.png)
-按钮，执行测试。
+- 方式二：在DevEco Studio的右上角，选择测试任务，然后单击右侧的![icon](assets/Instrument%20Test/file-20260514133035505-25.png)按钮，执行测试。
 ![](assets/Instrument%20Test/file-20260514133035505-26.png)
 
 
@@ -206,7 +201,7 @@ testability目录 > TestAbility.ets文件
 
  
 
-#### （可选）自定义测试用例运行任务
+## （可选）自定义测试用例运行任务
 
 默认情况下，测试用例可直接运行，如果需要自定义测试用例运行任务，可通过如下方法进行设置。
  1. 在工具栏主菜单单击**Run** >** Edit Configurations**进入Run/Debug Configurations界面。
@@ -226,7 +221,7 @@ testability目录 > TestAbility.ets文件
 
   
 
-  #### 使用过滤条件筛选待运行的测试用例
+  ### 使用过滤条件筛选待运行的测试用例
 
 1. 在用例编写时，通过配置it的第二个入参，为每个用例添加过滤参数。此参数用于为测试用例添加标注，不添加则参数默认为0表示未被标注。
 
@@ -234,9 +229,7 @@ testability目录 > TestAbility.ets文件
 ![](assets/Instrument%20Test/file-20260514133035505-31.png)
 
 
-2. 打开**Run/Debug Configurations**窗口，点击Test Args
-![](assets/Instrument%20Test/file-20260514133035505-32.png)
-，打开**Test Args**界面，添加测试参数。
+2. 打开**Run/Debug Configurations**窗口，点击Test Args![icon](assets/Instrument%20Test/file-20260514133035505-32.png)，打开**Test Args**界面，添加测试参数。
 
   
 ![](assets/Instrument%20Test/file-20260514133035505-33.png)
@@ -249,9 +242,13 @@ testability目录 > TestAbility.ets文件
 
 
 | Key | 含义说明 | Value取值范围 |
+
 | --- | --- | --- |
+
 | level | 用例级别 | "0","1","2","3","4", 例如：-s level 1 |
+
 | size | 用例粒度 | "small","medium","large", 例如：-s size small |
+
 | testType | 用例测试类型 | "function","performance","power","reliability","security","global","compatibility","user","standard","safety","resilience", 例如：-s testType function |
 
 3. 完成以上配置后，在运行此项配置对应的测试任务时，只运行过滤后的测试用例。
@@ -262,7 +259,7 @@ testability目录 > TestAbility.ets文件
 
   
 
-  #### 设置调试代码类型
+  ### 设置调试代码类型
 
   点击**Run > Edit Configurations**，打开**Run/Debug Configurations**窗口，选择Instrument Test，点击**Debugger**页签，设置Debug type。
 
@@ -273,10 +270,15 @@ testability目录 > TestAbility.ets文件
   调试类型Debug type默认为Detect Automatically，关于各调试类型的说明如下表所示：
 
 | 调试类型 | 调试代码 |
+
 | --- | --- |
+
 | Detect Automatically | 自动检测。根据工程模块及其依赖的模块涉及的编程语言，自动启动对应的调试器。 如果检测到是Native模块，出现两个调试窗口（PandaDebugger、Native）；如果不是Native模块，只出现PandaDebugger调试窗口。 |
+
 | ArkTS/JS | 只调试ArkTS/JS，只出现PandaDebugger调试窗口。 |
+
 | Native | 单独调试C++，只出现Native调试窗口。 |
+
 | Dual(ArkTS/JS + Native) | 支持ArkTS/JS和C++混合调试，出现两个调试窗口（PandaDebugger、Native）。 |
 
   
@@ -286,7 +288,7 @@ testability目录 > TestAbility.ets文件
 
   
 
-  #### ASan检测
+  ### ASan检测
 
   Instrument Test针对C/C++方法提供ASan检测能力，关于ASan的介绍请参考[ASan检测](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-asan)，当前不支持JS语言。
 
@@ -307,12 +309,12 @@ testability目录 > TestAbility.ets文件
 4. 当程序出现内存错误时，弹出ASan log信息，点击信息中的链接即可跳转至引起内存错误的代码处。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/HxSu9E9DS3mu7a7F1wfGdw/zh-cn_image_0000002678157083.png?HW-CC-KV=V1&HW-CC-Date=20260730T071819Z&HW-CC-Expire=86400&HW-CC-Sign=4F002A24A972143613A0057E900EAB9363076BAEB98CCE696DA93A89AA4CCCD4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/qas2YaT4QQe0K4tP9Jzjlw/zh-cn_image_0000002731382889.png?HW-CC-KV=V1&HW-CC-Date=20260911T072815Z&HW-CC-Expire=86400&HW-CC-Sign=F3AAF9E84046CC528AF969082699D8FF8D6ED5CB29D690B101271420DC08257E)
 
 
   
 
-  #### 测试C++代码
+  ## 测试C++代码
 
   从DevEco Studio 6.0.0 Beta5版本开始，支持对C++代码进行测试，包括运行/调试C++测试代码、对C++代码进行覆盖率统计。
 
@@ -320,14 +322,14 @@ testability目录 > TestAbility.ets文件
 
   
 
-  #### 运行C++测试代码
+  ### 运行C++测试代码
 
 1. 创建cpp测试目录，鼠标右键单击ohosTest目录，选择**New > C/C++ File(Napi)**，在ohosTest下生成cpp测试目录，以entry模块为例，目录结构如下。
 **src > ohosTest > cpp > types**：用于存放C++的API接口描述文件。
 
-2. **src > ohosTest > cpp > types** **> libentry_test > index.d.ts**：描述C++ API接口行为，如接口名、入参、返回参数等。
+2. **src > ohosTest > cpp > types> libentry_test > index.d.ts**：描述C++ API接口行为，如接口名、入参、返回参数等。
 
-3. **src > ohosTest > cpp > types** **> libentry_test > oh-package.json5**：配置.so三方包声明文件的入口及包名。
+3. **src > ohosTest > cpp > types> libentry_test > oh-package.json5**：配置.so三方包声明文件的入口及包名。
 
 4. **src > ohosTest > cpp > CMakeLists.txt**：CMake配置文件，提供CMake构建脚本。
 
@@ -352,12 +354,12 @@ export default function abilityTest() {
 
 
 7. 运行testNative测试用例，查看测试结果。
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/Oks0vKjHS_q9f6xW9E-WtQ/zh-cn_image_0000002677997219.png?HW-CC-KV=V1&HW-CC-Date=20260730T071819Z&HW-CC-Expire=86400&HW-CC-Sign=B610D1FA0333B59B9497E88621407CC4BFE2BF35855C3167B47EEBCC9FACC152)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/e37Lo5baSn2VLaZZqdP2lw/zh-cn_image_0000002731542861.png?HW-CC-KV=V1&HW-CC-Date=20260911T072815Z&HW-CC-Expire=86400&HW-CC-Sign=53D818DEF88E13BB7DD60FCF7692064D4FCF7E1A44E1F3DE800283AB4474E863)
 
 
   
 
-  #### 收集代码覆盖率
+  ### 收集代码覆盖率
 
   DevEco Studio默认不收集C++代码覆盖率，需要通过以下方式开启。
 
@@ -379,17 +381,17 @@ endif()
 
   
 ```text
-extern "C" {
-    void __llvm_profile_set_filename(char *);
-    int __llvm_profile_write_file(void);
+<span style="color: rgb(0,0,255);">extern</span> <span style="color: rgb(255,0,0);">"C"</span> {
+    <span style="color: rgb(0,0,255);">void</span> __llvm_profile_set_filename(<span style="color: rgb(0,0,255);">char</span> *);
+    <span style="color: rgb(0,0,255);">int</span> __llvm_profile_write_file(<span style="color: rgb(0,0,255);">void</span>);
 }
 
-static napi_value RunNativeTest(napi_env env, napi_callback_info info)
+<span style="color: rgb(0,0,255);">static</span> napi_value RunNativeTest(napi_env env, napi_callback_info info)
 {
-    char filename[256];
-    snprintf(filename, sizeof(filename), "/data/storage/el2/base/c++_coverage.profraw"); // 覆盖率报告文件路径和文件名，不可修改
+    <span style="color: rgb(0,0,255);">char</span> filename[<span style="color: rgb(80,160,79);">256</span>];
+    snprintf(filename, <span style="color: rgb(0,0,255);">sizeof</span>(filename), <span style="color: rgb(255,0,0);">"/data/storage/el2/base/c++_coverage.profraw"</span>); // 覆盖率报告文件路径和文件名，不可修改
     __llvm_profile_set_filename(filename);
-    // 开启测试
+    <span style="color: rgb(80,160,79);">// 开启测试</span>
     ...
     // 结束测试，保存数据
      __llvm_profile_write_file();
@@ -398,35 +400,36 @@ static napi_value RunNativeTest(napi_env env, napi_callback_info info)
 ```
 
 
-3. 运行覆盖率测试，选中ArkTS测试文件，单击**右键 >**** Run '测试文件名称' with Coverage**，执行测试。
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/IrIbfqrMTNi7844KfwpZ9g/zh-cn_image_0000002678157073.png?HW-CC-KV=V1&HW-CC-Date=20260730T071819Z&HW-CC-Expire=86400&HW-CC-Sign=AA08E397A11DCBAE481EFF5FE4D9B59DF95F99D5D652B5683A50A7003A9DAC05)
+3. 运行覆盖率测试，选中ArkTS测试文件，单击**右键 > Run '测试文件名称' with Coverage**，执行测试。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/_RS0isJcTW6fMNbK35j8Bw/zh-cn_image_0000002731542837.png?HW-CC-KV=V1&HW-CC-Date=20260911T072815Z&HW-CC-Expire=86400&HW-CC-Sign=B04F4D6A4E71D64FD81E15F1BA06D52501B621B3F4A5E795A08F9A2FB7C958F4)
 
 
   启动测试后，进行编译构建，底部将出现Cover窗口，构建结束后自动拉起Cover窗口，测试任务结束后，窗口中会打印测试报告的路径。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/ITrJtlOUQgygNwXYuqyO7g/zh-cn_image_0000002677997213.png?HW-CC-KV=V1&HW-CC-Date=20260730T071819Z&HW-CC-Expire=86400&HW-CC-Sign=34090A1706577393C8EFC29AD94329BD56398168C13AA8D1A6D5390F8B8B2408)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/v3BdMOA9SLibdEWafz5VWw/zh-cn_image_0000002731542835.png?HW-CC-KV=V1&HW-CC-Date=20260911T072815Z&HW-CC-Expire=86400&HW-CC-Sign=18B5769B837DC983B0BEA8557689E15480E2426C14B99F077CD1DD8F79DD79EE)
 
 
   点击链接可打开报告，查看C++代码覆盖率详情。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/Rf42XqchQvWNtGte3McIIg/zh-cn_image_0000002677997215.png?HW-CC-KV=V1&HW-CC-Date=20260730T071819Z&HW-CC-Expire=86400&HW-CC-Sign=2CC1DB6B5ADB19F3F8803956756B95CE74F47BB4617F3E346C28C371698957CB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/CX6qNnWuTfmFAxPIvsbZAQ/zh-cn_image_0000002731542845.png?HW-CC-KV=V1&HW-CC-Date=20260911T072815Z&HW-CC-Expire=86400&HW-CC-Sign=E28445635016035FAA73DF2F22CD625BCD1D1FF68D763618808F6430F6F646E9)
 
 
   
 
-  #### 使用命令行执行测试Instrument Test
+  ## 使用命令行执行测试
 
   通过命令行方式执行Instrument Test，在工程根目录下执行命令：
 ```bash
-hvigorw onDeviceTest -p module={moduleName} -p coverage={true|false} -p scope={suiteName}#{methodName} -p ohos-debug-asan={true|false}
+hvigorw onDeviceTest -p module={moduleName} -p coverage={true|false} -p scope={suiteName}#{methodName} -p ohos-debug-asan={true|false} -p patch={patchPath}
 ```
  
 module：执行测试的模块，缺省默认是执行所有模块的用例。
 - coverage：是否生成覆盖率报告，缺省默认是true，在<module-path>/.test/default/outputs/ohosTest/reports路径下生成两份报告，一份是html格式（index.html），一份是json格式（coverageReport.json），具体参考[查看覆盖率报告](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ui-test#section10394362109)。如果开启了C++代码覆盖率测试，会生成C++代码的覆盖率报告，路径：<module-path>/.test/default/outputs/ohosTest/cpp_reports/index.html
 - scope：格式为{suiteName}#{methodName}或{suiteName}，分别表示测试用例级别或测试套件级别的测试，缺省默认是执行当前模块的所有用例。
 - ohos-debug-asan：是否启用ASan检测，缺省默认是false。从DevEco Studio 5.1.1 Beta1版本开始支持。ASan日志路径：<module-path>/.test/default/intermediates/ohosTest/coverage_data
+- patch：可选参数，指定代码补丁文件路径，用于统计增量代码覆盖率。仅支持绝对路径，后缀必须为.patch或.diff，可以通过git diff等命令生成。从26.0.0版本开始支持。
 
  
  

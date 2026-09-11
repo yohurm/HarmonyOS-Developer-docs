@@ -1,9 +1,9 @@
 # Interface (AVPlayer)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 播放管理接口，用于管理和播放媒体资源。支持音视频播放、播放控制（播放、暂停、停止、跳转、倍速等）、状态管理和事件监听。适用于本地音视频播放、网络流媒体播放、直播等多种场景。使用AVPlayer可以快速实现播放功能，简化开发流程，提升应用性能和用户体验。在调用AVPlayer的方法前，需要先通过[createAVPlayer()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-f#mediacreateavplayer9)构建一个AVPlayer实例。
 
@@ -18,9 +18,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { media } from '@kit.MediaKit';
@@ -28,11 +29,13 @@ import { media } from '@kit.MediaKit';
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -56,9 +59,10 @@ import { media } from '@kit.MediaKit';
 
 
 
-#### on('stateChange')9+
+## on('stateChange')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'stateChange', callback: OnAVPlayerStateChangeHandle): void
 
@@ -69,6 +73,7 @@ on(type: 'stateChange', callback: OnAVPlayerStateChangeHandle): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -121,9 +126,10 @@ async function test(){
 
 
 
-#### off('stateChange')9+
+## off('stateChange')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'stateChange', callback?: OnAVPlayerStateChangeHandle): void
 
@@ -134,6 +140,7 @@ off(type: 'stateChange', callback?: OnAVPlayerStateChangeHandle): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -153,9 +160,10 @@ async function test(){
 
 
 
-#### on('error')9+
+## on('error')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'error', callback: ErrorCallback): void
 
@@ -166,6 +174,7 @@ on(type: 'error', callback: ErrorCallback): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -178,6 +187,7 @@ on(type: 'error', callback: ErrorCallback): void
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
 
 在API version 9-13，针对网络、服务器等数据流异常，接口上报5400103；从API version 14开始，对应错误细化为错误码5411001-5411012。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -221,9 +231,10 @@ async function test(){
 
 
 
-#### off('error')9+
+## off('error')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'error', callback?: ErrorCallback): void
 
@@ -234,6 +245,7 @@ off(type: 'error', callback?: ErrorCallback): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -255,9 +267,10 @@ async function test(){
 
 
 
-#### setMediaSource12+
+## setMediaSource12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMediaSource(src:MediaSource, strategy?: PlaybackStrategy): Promise&lt;void&gt;
 
@@ -269,6 +282,7 @@ setMediaSource(src:MediaSource, strategy?: PlaybackStrategy): Promise&lt;void&gt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | src | MediaSource | 是 | 流媒体预下载的媒体来源对象。 |
@@ -276,6 +290,7 @@ setMediaSource(src:MediaSource, strategy?: PlaybackStrategy): Promise&lt;void&gt
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -285,6 +300,7 @@ setMediaSource(src:MediaSource, strategy?: PlaybackStrategy): Promise&lt;void&gt
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -313,9 +329,10 @@ async function test(){
 
 
 
-#### getTrackSelectionFilter
+## getTrackSelectionFilter
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTrackSelectionFilter(): Promise&lt;TrackSelectionFilter&gt;
 
@@ -329,6 +346,7 @@ getTrackSelectionFilter(): Promise&lt;TrackSelectionFilter&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;TrackSelectionFilter&gt; | Promise对象，返回当前配置的轨道选择过滤器。 |
@@ -337,6 +355,7 @@ getTrackSelectionFilter(): Promise&lt;TrackSelectionFilter&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -360,9 +379,10 @@ async function test() {
 
 
 
-#### setTrackSelectionFilter
+## setTrackSelectionFilter
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setTrackSelectionFilter(filter : TrackSelectionFilter): Promise&lt;void&gt;
 
@@ -376,12 +396,14 @@ setTrackSelectionFilter(filter : TrackSelectionFilter): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | filter | TrackSelectionFilter | 是 | 轨道选择过滤器配置对象，用于设置视频/音频轨道的选择条件，如比特率范围、分辨率范围、帧率范围等。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -391,6 +413,7 @@ setTrackSelectionFilter(filter : TrackSelectionFilter): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -429,9 +452,10 @@ async function test() {
 
 
 
-#### addPlaybackMediaSource
+## addPlaybackMediaSource
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addPlaybackMediaSource(src: MediaSource, id?: string): Promise&lt;string&gt;
 
@@ -447,6 +471,7 @@ addPlaybackMediaSource(src: MediaSource, id?: string): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | src | MediaSource | 是 | 要添加到播放列表的媒体源对象。 |
@@ -454,6 +479,7 @@ addPlaybackMediaSource(src: MediaSource, id?: string): Promise&lt;string&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -463,6 +489,7 @@ addPlaybackMediaSource(src: MediaSource, id?: string): Promise&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -485,16 +512,17 @@ async function test() {
 
 
 
-#### removePlaybackMediaSource
+## removePlaybackMediaSource
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removePlaybackMediaSource(id: string): Promise&lt;void&gt;
 
 从播放器的播放列表中移除指定的媒体源。使用Promise异步回调。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/72_ytRobRRiudLVjq4gLwg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095525Z&HW-CC-Expire=86400&HW-CC-Sign=04A625566188DC590728D7B949C605DC64B118F259A4566D0435CF540D613292)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/jla2UjOvSq67NI6cnUa2Wg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072136Z&HW-CC-Expire=86400&HW-CC-Sign=520390B6652FE1CA81D3F1722186BB03BB20D1536C9AB3EF60B9C386E28B5EB9)
 
 
  - 如果该ID在当前播放列表中不存在，将返回错误码。
@@ -512,12 +540,14 @@ removePlaybackMediaSource(id: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | string | 是 | 要移除的媒体源的唯一标识ID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -527,6 +557,7 @@ removePlaybackMediaSource(id: string): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -548,9 +579,10 @@ async function test() {
 
 
 
-#### clearPlaybackList
+## clearPlaybackList
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clearPlaybackList(): Promise&lt;void&gt;
 
@@ -566,6 +598,7 @@ clearPlaybackList(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -575,9 +608,10 @@ clearPlaybackList(): Promise&lt;void&gt;
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 5400102 | Operation not allowed. Returned via promise. |
+| 5400102 | operation not allowed . Returned via promise. |
 
 
 **示例：**
@@ -596,9 +630,10 @@ async function test() {
 
 
 
-#### getCurrentMediaSource
+## getCurrentMediaSource
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCurrentMediaSource(): MediaSource | undefined;
 
@@ -614,6 +649,7 @@ getCurrentMediaSource(): MediaSource | undefined;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | MediaSource \| undefined | 如果操作成功，则返回当前媒体源，否则返回 undefined。 |
@@ -622,6 +658,7 @@ getCurrentMediaSource(): MediaSource | undefined;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -642,9 +679,10 @@ async function test() {
 
 
 
-#### getMediaSources
+## getMediaSources
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMediaSources(): Array<MediaSource | undefined>
 
@@ -660,6 +698,7 @@ getMediaSources(): Array<MediaSource | undefined>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array<MediaSource \| undefined> | 播放列表中的媒体源数组。 |
@@ -668,6 +707,7 @@ getMediaSources(): Array<MediaSource | undefined>
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -690,9 +730,10 @@ async function test() {
 
 
 
-#### advanceToNextMediaSource
+## advanceToNextMediaSource
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 advanceToNextMediaSource(): Promise&lt;void&gt;
 
@@ -708,6 +749,7 @@ advanceToNextMediaSource(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -716,6 +758,7 @@ advanceToNextMediaSource(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -743,9 +786,10 @@ async function test() {
 
 
 
-#### advanceToPrevMediaSource
+## advanceToPrevMediaSource
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 advanceToPrevMediaSource(): Promise&lt;void&gt;
 
@@ -761,6 +805,7 @@ advanceToPrevMediaSource(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -769,6 +814,7 @@ advanceToPrevMediaSource(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -799,9 +845,10 @@ async function test() {
 
 
 
-#### advanceToMediaSource
+## advanceToMediaSource
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 advanceToMediaSource(id: string): Promise&lt;void&gt;
 
@@ -817,12 +864,14 @@ advanceToMediaSource(id: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | string | 是 | 要跳转播放的媒体源的唯一标识ID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -832,6 +881,7 @@ advanceToMediaSource(id: string): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -860,9 +910,10 @@ async function test() {
 
 
 
-#### setPlaybackStrategy12+
+## setPlaybackStrategy12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setPlaybackStrategy(strategy: PlaybackStrategy): Promise&lt;void&gt;
 
@@ -874,12 +925,14 @@ setPlaybackStrategy(strategy: PlaybackStrategy): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | strategy | PlaybackStrategy | 是 | 播放策略配置对象，用于设置播放器的各项参数，如preferredWidth、preferredHeight、preferredBufferDuration、preferredHdr、mutedMediaType等，以优化播放体验。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -889,6 +942,7 @@ setPlaybackStrategy(strategy: PlaybackStrategy): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -919,9 +973,10 @@ player.setPlaybackStrategy(playStrategy);
 
 
 
-#### setPlaybackRange18+
+## setPlaybackRange18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setPlaybackRange(startTimeMs: number, endTimeMs: number, mode?: SeekMode) : Promise&lt;void&gt;
 
@@ -933,6 +988,7 @@ setPlaybackRange(startTimeMs: number, endTimeMs: number, mode?: SeekMode) : Prom
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | startTimeMs | number | 是 | 区间开始位置，单位为毫秒（ms）。 取值原则：该值必须为整数，范围为[0, duration)。可以取值-1，表示从0位置开始播放。小于-1的其他值不满足要求会报错。 |
@@ -942,6 +998,7 @@ setPlaybackRange(startTimeMs: number, endTimeMs: number, mode?: SeekMode) : Prom
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -950,6 +1007,7 @@ setPlaybackRange(startTimeMs: number, endTimeMs: number, mode?: SeekMode) : Prom
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -974,9 +1032,10 @@ async function  test(){
 
 
 
-#### prepare9+
+## prepare9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 prepare(callback: AsyncCallback&lt;void&gt;): void
 
@@ -988,6 +1047,7 @@ prepare(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 准备播放的回调方法。 |
@@ -996,6 +1056,7 @@ prepare(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1023,9 +1084,10 @@ async function  test(){
 
 
 
-#### prepare9+
+## prepare9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 prepare(): Promise&lt;void&gt;
 
@@ -1039,6 +1101,7 @@ prepare(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1047,6 +1110,7 @@ prepare(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1072,9 +1136,10 @@ async function  test(){
 
 
 
-#### setMediaMuted12+
+## setMediaMuted12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMediaMuted(mediaType: MediaType, muted: boolean ): Promise&lt;void&gt;
 
@@ -1088,6 +1153,7 @@ setMediaMuted(mediaType: MediaType, muted: boolean ): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mediaType | MediaType | 是 | 媒体类型枚举，决定静音或画面显示的控制范围。 API version 12-19：仅支持MEDIA_TYPE_AUD，影响音频静音。 API version 20及以后：支持MEDIA_TYPE_VID，影响视频画面显示。 |
@@ -1095,6 +1161,7 @@ setMediaMuted(mediaType: MediaType, muted: boolean ): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1104,6 +1171,7 @@ setMediaMuted(mediaType: MediaType, muted: boolean ): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1130,9 +1198,10 @@ async function  test(){
 
 
 
-#### play9+
+## play9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 play(callback: AsyncCallback&lt;void&gt;): void
 
@@ -1144,6 +1213,7 @@ play(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 开始播放的回调方法。 |
@@ -1152,6 +1222,7 @@ play(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1178,9 +1249,10 @@ async function  test(){
 
 
 
-#### play9+
+## play9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 play(): Promise&lt;void&gt;
 
@@ -1192,6 +1264,7 @@ play(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1200,6 +1273,7 @@ play(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1224,9 +1298,10 @@ async function  test(){
 
 
 
-#### pause9+
+## pause9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pause(callback: AsyncCallback&lt;void&gt;): void
 
@@ -1238,6 +1313,7 @@ pause(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 暂停播放的回调方法。 |
@@ -1246,6 +1322,7 @@ pause(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1272,9 +1349,10 @@ async function  test(){
 
 
 
-#### pause9+
+## pause9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pause(): Promise&lt;void&gt;
 
@@ -1286,6 +1364,7 @@ pause(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1294,6 +1373,7 @@ pause(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1318,9 +1398,10 @@ async function  test(){
 
 
 
-#### stop9+
+## stop9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stop(callback: AsyncCallback&lt;void&gt;): void
 
@@ -1332,6 +1413,7 @@ stop(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 停止播放的回调方法。 |
@@ -1340,6 +1422,7 @@ stop(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1366,9 +1449,10 @@ async function  test(){
 
 
 
-#### stop9+
+## stop9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stop(): Promise&lt;void&gt;
 
@@ -1380,6 +1464,7 @@ stop(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1388,6 +1473,7 @@ stop(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1412,9 +1498,10 @@ async function  test(){
 
 
 
-#### reset9+
+## reset9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reset(callback: AsyncCallback&lt;void&gt;): void
 
@@ -1426,6 +1513,7 @@ reset(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 重置播放的回调方法。 |
@@ -1434,6 +1522,7 @@ reset(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1460,9 +1549,10 @@ async function  test(){
 
 
 
-#### reset9+
+## reset9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reset(): Promise&lt;void&gt;
 
@@ -1474,6 +1564,7 @@ reset(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1482,6 +1573,7 @@ reset(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1506,9 +1598,10 @@ async function  test(){
 
 
 
-#### release9+
+## release9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(callback: AsyncCallback&lt;void&gt;): void
 
@@ -1520,6 +1613,7 @@ release(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 销毁播放的回调方法。 |
@@ -1528,6 +1622,7 @@ release(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1554,9 +1649,10 @@ async function  test(){
 
 
 
-#### release9+
+## release9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(): Promise&lt;void&gt;
 
@@ -1568,6 +1664,7 @@ release(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1576,6 +1673,7 @@ release(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1600,9 +1698,10 @@ async function  test(){
 
 
 
-#### getTrackDescription9+
+## getTrackDescription9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTrackDescription(callback: AsyncCallback<Array&lt;MediaDescription&gt;>): void
 
@@ -1614,6 +1713,7 @@ getTrackDescription(callback: AsyncCallback<Array&lt;MediaDescription&gt;>): voi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<Array&lt;MediaDescription&gt;> | 是 | 回调函数，当获取音视频轨道信息成功，err为undefined，data为获取到的MediaDescription数组；否则为错误对象。 |
@@ -1622,6 +1722,7 @@ getTrackDescription(callback: AsyncCallback<Array&lt;MediaDescription&gt;>): voi
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1648,9 +1749,10 @@ async function  test(){
 
 
 
-#### getTrackDescription9+
+## getTrackDescription9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTrackDescription(): Promise<Array&lt;MediaDescription&gt;>
 
@@ -1662,6 +1764,7 @@ getTrackDescription(): Promise<Array&lt;MediaDescription&gt;>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;MediaDescription&gt;> | Promise对象，返回音视频轨道信息MediaDescription数组。 |
@@ -1670,6 +1773,7 @@ getTrackDescription(): Promise<Array&lt;MediaDescription&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1694,9 +1798,10 @@ async function  test(){
 
 
 
-#### getSelectedTracks12+
+## getSelectedTracks12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSelectedTracks(): Promise<Array&lt;number&gt;>
 
@@ -1708,6 +1813,7 @@ getSelectedTracks(): Promise<Array&lt;number&gt;>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;number&gt;> | Promise对象，返回已选择音视频轨道索引数组。 |
@@ -1716,6 +1822,7 @@ getSelectedTracks(): Promise<Array&lt;number&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1740,9 +1847,10 @@ async function  test(){
 
 
 
-#### getPlaybackInfo12+
+## getPlaybackInfo12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPlaybackInfo(): Promise&lt;PlaybackInfo&gt;
 
@@ -1751,6 +1859,7 @@ getPlaybackInfo(): Promise&lt;PlaybackInfo&gt;
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1784,9 +1893,10 @@ media.createAVPlayer(async (err: BusinessError, player: media.AVPlayer) => {
 
 
 
-#### getPlaybackPosition18+
+## getPlaybackPosition18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPlaybackPosition(): number
 
@@ -1798,6 +1908,7 @@ getPlaybackPosition(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回当前播放位置的时间，单位：毫秒（ms）。 |
@@ -1806,6 +1917,7 @@ getPlaybackPosition(): number
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1832,9 +1944,10 @@ async function  test(){
 
 
 
-#### getCurrentPresentationTimestamp23+
+## getCurrentPresentationTimestamp23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCurrentPresentationTimestamp() : number
 
@@ -1848,6 +1961,7 @@ getCurrentPresentationTimestamp() : number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回当前播放位置的时间，单位：微秒（μs）。 |
@@ -1856,6 +1970,7 @@ getCurrentPresentationTimestamp() : number
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1882,9 +1997,10 @@ async function  test(){
 
 
 
-#### selectTrack12+
+## selectTrack12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectTrack(index: number, mode?: SwitchMode): Promise&lt;void&gt;
 
@@ -1898,6 +2014,7 @@ selectTrack(index: number, mode?: SwitchMode): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 多音视频资源的轨道索引。该值必须为整数。 取值约束：可通过getTrackDescription接口返回的音视频轨道信息MediaDescription中读取的key为MD_KEY_TRACK_INDEX所对应的值。 每个key值的Object类型和范围，请参考MediaDescriptionKey对应Key值的说明。 |
@@ -1905,6 +2022,7 @@ selectTrack(index: number, mode?: SwitchMode): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1914,6 +2032,7 @@ selectTrack(index: number, mode?: SwitchMode): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1950,9 +2069,10 @@ async function  test(){
 
 
 
-#### deselectTrack12+
+## deselectTrack12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deselectTrack(index: number): Promise&lt;void&gt;
 
@@ -1964,12 +2084,14 @@ deselectTrack(index: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 多音视频资源的轨道索引，来自getTrackDescription接口所获取的轨道信息MediaDescription。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1979,6 +2101,7 @@ deselectTrack(index: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2014,9 +2137,10 @@ avPlayer.deselectTrack(parseInt(audioTrackIndex.toString()));
 
 
 
-#### setDecryptionConfig11+
+## setDecryptionConfig11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setDecryptionConfig(mediaKeySession: drm.MediaKeySession, secureVideoPath: boolean): void
 
@@ -2028,6 +2152,7 @@ setDecryptionConfig(mediaKeySession: drm.MediaKeySession, secureVideoPath: boole
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mediaKeySession | drm.MediaKeySession | 是 | 解密会话对象，用于播放DRM加密内容。 |
@@ -2037,6 +2162,7 @@ setDecryptionConfig(mediaKeySession: drm.MediaKeySession, secureVideoPath: boole
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2066,9 +2192,10 @@ async function  test(){
 
 
 
-#### getMediaKeySystemInfos11+
+## getMediaKeySystemInfos11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMediaKeySystemInfos(): Array<drm.MediaKeySystemInfo>
 
@@ -2079,6 +2206,7 @@ getMediaKeySystemInfos(): Array<drm.MediaKeySystemInfo>
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2104,16 +2232,17 @@ async function  test(){
 
 
 
-#### seek9+
+## seek9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 seek(timeMs: number, mode?:SeekMode): void
 
 跳转到指定播放位置，只能在prepared/playing/paused/completed状态调用，可以通过[on('seekDone')](#onseekdone9)事件确认是否生效。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/LdCM-FhXQKO2fZbJ0e21SQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095525Z&HW-CC-Expire=86400&HW-CC-Sign=503DB0E031546314CC2600AA6BC2CC1F3963FE3713AC2B942A6E876F3F018D7F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/Mi348mbRSkmzd9mqcpgoPg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072136Z&HW-CC-Expire=86400&HW-CC-Sign=1F5D90F0D5109D600B0EE084346717AA9F35BE9949BC4380098195FF5FD5F07E)
 
 
 从API版本26.0.0开始，直播场景支持seek。
@@ -2127,6 +2256,7 @@ seek(timeMs: number, mode?:SeekMode): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2160,9 +2290,10 @@ async function  test(){
 
 
 
-#### isSeekContinuousSupported18+
+## isSeekContinuousSupported18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isSeekContinuousSupported() : boolean
 
@@ -2173,6 +2304,7 @@ isSeekContinuousSupported() : boolean
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2191,9 +2323,10 @@ async function  test(){
 
 
 
-#### on('seekDone')9+
+## on('seekDone')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'seekDone', callback: Callback&lt;number&gt;): void
 
@@ -2204,6 +2337,7 @@ on(type: 'seekDone', callback: Callback&lt;number&gt;): void
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2225,9 +2359,10 @@ async function  test(){
 
 
 
-#### off('seekDone')9+
+## off('seekDone')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'seekDone', callback?: Callback&lt;number&gt;): void
 
@@ -2238,6 +2373,7 @@ off(type: 'seekDone', callback?: Callback&lt;number&gt;): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2257,9 +2393,10 @@ async function  test(){
 
 
 
-#### setSpeed9+
+## setSpeed9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setSpeed(speed: PlaybackSpeed): void
 
@@ -2268,7 +2405,7 @@ setSpeed(speed: PlaybackSpeed): void
 setSpeed使用固定的枚举倍速值，适合标准倍速场景；setPlaybackRate支持任意倍速值且取值范围更大，适合自定义倍速场景。两者功能相同，建议根据API版本和精度需求选择：API version 9-19，使用setSpeed；API version 20及以上且需要精确倍速控制，使用setPlaybackRate。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/7wFUoQzuTlKH-nq0rlTLRw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095525Z&HW-CC-Expire=86400&HW-CC-Sign=EE709C4E3A93F9FD6545029574C34B31F4166AFD887262EDEACF9C3DAFBACD8E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/cbrMrGQnTkWqy0wHGmGZpQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072136Z&HW-CC-Expire=86400&HW-CC-Sign=9A88D254F3EFC772FA77C28CF6ECE828A9025859EFE629A68B5B9DA43F29EFE9)
 
 
 直播场景不支持setSpeed。
@@ -2280,6 +2417,7 @@ setSpeed使用固定的枚举倍速值，适合标准倍速场景；setPlaybackR
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2298,9 +2436,10 @@ async function  test(){
 
 
 
-#### on('speedDone')9+
+## on('speedDone')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'speedDone', callback: Callback&lt;number&gt;): void
 
@@ -2311,6 +2450,7 @@ on(type: 'speedDone', callback: Callback&lt;number&gt;): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2332,9 +2472,10 @@ async function  test(){
 
 
 
-#### off('speedDone')9+
+## off('speedDone')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'speedDone', callback?: Callback&lt;number&gt;): void
 
@@ -2345,6 +2486,7 @@ off(type: 'speedDone', callback?: Callback&lt;number&gt;): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2364,16 +2506,17 @@ async function  test(){
 
 
 
-#### setPlaybackRate20+
+## setPlaybackRate20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setPlaybackRate(rate: number): void
 
 设置倍速模式。只能在'prepared' | 'playing' | 'paused' | 'completed'状态下调用，在API版本26.0.0及以上的取值范围是[0.125, 8.0]，API版本26.0.0以下的取值范围是[0.125, 4.0]，可以通过[playbackRateDone](#onplaybackratedone20)事件确认是否生效。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/JQoOuPXzR6Sr4a_ucGYmRw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095525Z&HW-CC-Expire=86400&HW-CC-Sign=08E1ADF0D8E5005BBA60FE19B3A34C2C440B9DD39247B89C1271515891425197)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/ioIgSDg2RXOMcZyn4jbnwA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072136Z&HW-CC-Expire=86400&HW-CC-Sign=F9DD63B4033BADF61F2D92AC9E970A145D4CF82FE7CF2C1D54605A034AF4DEB3)
 
 
 直播场景不支持setPlaybackRate。
@@ -2386,6 +2529,7 @@ setPlaybackRate(rate: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rate | number | 是 | 指定播放倍速速率值，单位为倍速（x）。 在API版本26.0.0之前的取值范围是[0.125, 4.0]，API版本26.0.0及以后的取值范围是[0.125, 8.0]。默认值为1.0x（正常速度）。 |
@@ -2394,6 +2538,7 @@ setPlaybackRate(rate: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2413,9 +2558,10 @@ async function test(){
 
 
 
-#### getPlaybackRate23+
+## getPlaybackRate23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPlaybackRate(): Promise&lt;number&gt;
 
@@ -2424,6 +2570,7 @@ getPlaybackRate(): Promise&lt;number&gt;
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2443,9 +2590,10 @@ async function test(){
 
 
 
-#### on('playbackRateDone')20+
+## on('playbackRateDone')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'playbackRateDone', callback: OnPlaybackRateDone): void
 
@@ -2456,6 +2604,7 @@ on(type: 'playbackRateDone', callback: OnPlaybackRateDone): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2477,9 +2626,10 @@ async function test(){
 
 
 
-#### off('playbackRateDone')20+
+## off('playbackRateDone')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'playbackRateDone', callback?: OnPlaybackRateDone): void
 
@@ -2490,6 +2640,7 @@ off(type: 'playbackRateDone', callback?: OnPlaybackRateDone): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2509,9 +2660,10 @@ async function test(){
 
 
 
-#### getLoadedTimeRanges
+## getLoadedTimeRanges
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLoadedTimeRanges(): Promise<Array&lt;Range&gt;>
 
@@ -2528,6 +2680,7 @@ getLoadedTimeRanges(): Promise<Array&lt;Range&gt;>
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2551,9 +2704,10 @@ async function test(){
 
 
 
-#### getSeekableTimeRanges
+## getSeekableTimeRanges
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSeekableTimeRanges(): Promise<Array&lt;Range&gt;>
 
@@ -2570,6 +2724,7 @@ getSeekableTimeRanges(): Promise<Array&lt;Range&gt;>
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2593,9 +2748,10 @@ async function test(){
 
 
 
-#### seekToDefaultPosition
+## seekToDefaultPosition
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 seekToDefaultPosition(): void
 
@@ -2610,6 +2766,7 @@ seekToDefaultPosition(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2634,9 +2791,10 @@ async function test(){
 
 
 
-#### setBitrate9+
+## setBitrate9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setBitrate(bitrate: number): void
 
@@ -2647,6 +2805,7 @@ setBitrate(bitrate: number): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2666,9 +2825,10 @@ async function  test(){
 
 
 
-#### on('bitrateDone')9+
+## on('bitrateDone')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'bitrateDone', callback: Callback&lt;number&gt;): void
 
@@ -2679,6 +2839,7 @@ on(type: 'bitrateDone', callback: Callback&lt;number&gt;): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2700,9 +2861,10 @@ async function  test(){
 
 
 
-#### off('bitrateDone')9+
+## off('bitrateDone')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'bitrateDone', callback?: Callback&lt;number&gt;): void
 
@@ -2713,6 +2875,7 @@ off(type: 'bitrateDone', callback?: Callback&lt;number&gt;): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2732,9 +2895,10 @@ async function  test(){
 
 
 
-#### on('availableBitrates')9+
+## on('availableBitrates')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'availableBitrates', callback: Callback<Array&lt;number&gt;>): void
 
@@ -2745,6 +2909,7 @@ on(type: 'availableBitrates', callback: Callback<Array&lt;number&gt;>): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2766,9 +2931,10 @@ async function  test(){
 
 
 
-#### off('availableBitrates')9+
+## off('availableBitrates')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'availableBitrates', callback?: Callback<Array&lt;number&gt;>): void
 
@@ -2779,6 +2945,7 @@ off(type: 'availableBitrates', callback?: Callback<Array&lt;number&gt;>): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2798,9 +2965,10 @@ async function test(){
 
 
 
-#### on('mediaKeySystemInfoUpdate')11+
+## on('mediaKeySystemInfoUpdate')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'mediaKeySystemInfoUpdate', callback: Callback<Array<drm.MediaKeySystemInfo>>): void
 
@@ -2811,6 +2979,7 @@ on(type: 'mediaKeySystemInfoUpdate', callback: Callback<Array<drm.MediaKeySystem
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2837,9 +3006,10 @@ async function test(){
 
 
 
-#### off('mediaKeySystemInfoUpdate')11+
+## off('mediaKeySystemInfoUpdate')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'mediaKeySystemInfoUpdate', callback?: Callback<Array<drm.MediaKeySystemInfo>>): void;
 
@@ -2850,6 +3020,7 @@ off(type: 'mediaKeySystemInfoUpdate', callback?: Callback<Array<drm.MediaKeySyst
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2869,9 +3040,10 @@ async function test(){
 
 
 
-#### setLoudnessGain21+
+## setLoudnessGain21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setLoudnessGain(loudnessGain: number): Promise&lt;void&gt;
 
@@ -2885,12 +3057,14 @@ setLoudnessGain(loudnessGain: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | loudnessGain | number | 是 | 设置播放器的响度值，单位为分贝（dB），响度范围为[-90.0, 24.0]。默认值为0.0dB。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2916,9 +3090,10 @@ async function test(){
 
 
 
-#### setVolume9+
+## setVolume9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setVolume(volume: number): void
 
@@ -2929,6 +3104,7 @@ setVolume(volume: number): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2947,9 +3123,10 @@ async function test(){
 
 
 
-#### on('volumeChange')9+
+## on('volumeChange')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'volumeChange', callback: Callback&lt;number&gt;): void
 
@@ -2960,6 +3137,7 @@ on(type: 'volumeChange', callback: Callback&lt;number&gt;): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2981,9 +3159,10 @@ async function test(){
 
 
 
-#### off('volumeChange')9+
+## off('volumeChange')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'volumeChange', callback?: Callback&lt;number&gt;): void
 
@@ -2994,6 +3173,7 @@ off(type: 'volumeChange', callback?: Callback&lt;number&gt;): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3013,9 +3193,10 @@ async function test(){
 
 
 
-#### on('endOfStream')9+
+## on('endOfStream')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'endOfStream', callback: Callback&lt;void&gt;): void
 
@@ -3026,6 +3207,7 @@ on(type: 'endOfStream', callback: Callback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3047,9 +3229,10 @@ async function test(){
 
 
 
-#### off('endOfStream')9+
+## off('endOfStream')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'endOfStream', callback?: Callback&lt;void&gt;): void
 
@@ -3060,6 +3243,7 @@ off(type: 'endOfStream', callback?: Callback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3079,16 +3263,17 @@ async function test(){
 
 
 
-#### on('timeUpdate')9+
+## on('timeUpdate')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'timeUpdate', callback: Callback&lt;number&gt;): void
 
 监听资源播放当前时间，单位为毫秒（ms），用于刷新进度条当前位置，默认间隔100ms时间上报，因用户操作（seek）产生的时间变化会立刻上报。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/e6onGf2nRtqOLl4h9s8gwQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095525Z&HW-CC-Expire=86400&HW-CC-Sign=BCF4A10A81F254DE25FE2E4B0B3A4F193029E3E584FD8311ADDB542DC8CA7D18)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/p7kJogEqQ5C8TbSbPVdbtg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072136Z&HW-CC-Expire=86400&HW-CC-Sign=A822253D267B2B3E8017167F4592E0C57A235F624BFBA12658C6D67354CD1166)
 
 
  - 直播场景不支持timeUpdate上报。
@@ -3103,6 +3288,7 @@ on(type: 'timeUpdate', callback: Callback&lt;number&gt;): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3161,9 +3347,10 @@ async function test() {
 
 
 
-#### off('timeUpdate')9+
+## off('timeUpdate')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'timeUpdate', callback?: Callback&lt;number&gt;): void
 
@@ -3174,6 +3361,7 @@ off(type: 'timeUpdate', callback?: Callback&lt;number&gt;): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3193,16 +3381,17 @@ async function test(){
 
 
 
-#### on('durationUpdate')9+
+## on('durationUpdate')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'durationUpdate', callback: Callback&lt;number&gt;): void
 
 监听资源播放资源的时长，单位为毫秒（ms），用于刷新进度条长度，默认只在prepared上报一次，同时允许一些特殊码流刷新多次时长。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/ejbHq8YbTFefHbvqPrOhmw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095525Z&HW-CC-Expire=86400&HW-CC-Sign=7B88FE74E11BE3B4B129B5A0D22DFF8B0672B33870E7982D95ECD10DBFC7FA10)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/wvUqC4ahT5GxbEbg3l27Vw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072136Z&HW-CC-Expire=86400&HW-CC-Sign=172E3BDED14F46CF533EAFB7407259F50AA21719F033879ABA03F0C55121F641)
 
 
 直播场景不支持durationUpdate上报。
@@ -3214,6 +3403,7 @@ on(type: 'durationUpdate', callback: Callback&lt;number&gt;): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3235,9 +3425,10 @@ async function test(){
 
 
 
-#### off('durationUpdate')9+
+## off('durationUpdate')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'durationUpdate', callback?: Callback&lt;number&gt;): void
 
@@ -3248,6 +3439,7 @@ off(type: 'durationUpdate', callback?: Callback&lt;number&gt;): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3267,9 +3459,10 @@ async function test(){
 
 
 
-#### on('bufferingUpdate')9+
+## on('bufferingUpdate')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'bufferingUpdate', callback: OnBufferingUpdateHandler): void
 
@@ -3280,6 +3473,7 @@ on(type: 'bufferingUpdate', callback: OnBufferingUpdateHandler): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3301,9 +3495,10 @@ async function test(){
 
 
 
-#### off('bufferingUpdate')9+
+## off('bufferingUpdate')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'bufferingUpdate', callback?: OnBufferingUpdateHandler): void
 
@@ -3314,6 +3509,7 @@ off(type: 'bufferingUpdate', callback?: OnBufferingUpdateHandler): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3333,9 +3529,10 @@ async function test(){
 
 
 
-#### on('startRenderFrame')9+
+## on('startRenderFrame')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'startRenderFrame', callback: Callback&lt;void&gt;): void
 
@@ -3346,6 +3543,7 @@ on(type: 'startRenderFrame', callback: Callback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3367,9 +3565,10 @@ async function test(){
 
 
 
-#### off('startRenderFrame')9+
+## off('startRenderFrame')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'startRenderFrame', callback?: Callback&lt;void&gt;): void
 
@@ -3380,6 +3579,7 @@ off(type: 'startRenderFrame', callback?: Callback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3399,9 +3599,10 @@ async function test(){
 
 
 
-#### on('videoSizeChange')9+
+## on('videoSizeChange')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'videoSizeChange', callback: OnVideoSizeChangeHandler): void
 
@@ -3412,6 +3613,7 @@ on(type: 'videoSizeChange', callback: OnVideoSizeChangeHandler): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3433,9 +3635,10 @@ async function test(){
 
 
 
-#### off('videoSizeChange')9+
+## off('videoSizeChange')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'videoSizeChange', callback?: OnVideoSizeChangeHandler): void
 
@@ -3446,6 +3649,7 @@ off(type: 'videoSizeChange', callback?: OnVideoSizeChangeHandler): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3465,9 +3669,10 @@ async function test(){
 
 
 
-#### on('audioInterrupt')9+
+## on('audioInterrupt')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'audioInterrupt', callback: Callback<audio.InterruptEvent>): void
 
@@ -3478,6 +3683,7 @@ on(type: 'audioInterrupt', callback: Callback<audio.InterruptEvent>): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3501,9 +3707,10 @@ async function test(){
 
 
 
-#### off('audioInterrupt')9+
+## off('audioInterrupt')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'audioInterrupt', callback?: Callback<audio.InterruptEvent>): void
 
@@ -3514,6 +3721,7 @@ off(type: 'audioInterrupt', callback?: Callback<audio.InterruptEvent>): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3533,9 +3741,10 @@ async function test(){
 
 
 
-#### on('audioOutputDeviceChangeWithInfo')11+
+## on('audioOutputDeviceChangeWithInfo')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'audioOutputDeviceChangeWithInfo', callback: Callback<audio.AudioStreamDeviceChangeInfo>): void
 
@@ -3549,6 +3758,7 @@ on(type: 'audioOutputDeviceChangeWithInfo', callback: Callback<audio.AudioStream
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为：'audioOutputDeviceChangeWithInfo'。 |
@@ -3558,6 +3768,7 @@ on(type: 'audioOutputDeviceChangeWithInfo', callback: Callback<audio.AudioStream
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3580,9 +3791,10 @@ async function test(){
 
 
 
-#### off('audioOutputDeviceChangeWithInfo')11+
+## off('audioOutputDeviceChangeWithInfo')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'audioOutputDeviceChangeWithInfo', callback?: Callback<audio.AudioStreamDeviceChangeInfo>): void
 
@@ -3594,6 +3806,7 @@ off(type: 'audioOutputDeviceChangeWithInfo', callback?: Callback<audio.AudioStre
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为：'audioOutputDeviceChangeWithInfo'。 |
@@ -3603,6 +3816,7 @@ off(type: 'audioOutputDeviceChangeWithInfo', callback?: Callback<audio.AudioStre
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3621,9 +3835,10 @@ async function test(){
 
 
 
-#### addSubtitleFromFd12+
+## addSubtitleFromFd12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addSubtitleFromFd(fd: number, offset?: number, length?: number): Promise&lt;void&gt;
 
@@ -3635,6 +3850,7 @@ addSubtitleFromFd(fd: number, offset?: number, length?: number): Promise&lt;void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fd | number | 是 | 资源句柄，通过resourceManager.getRawFd获取。 |
@@ -3644,6 +3860,7 @@ addSubtitleFromFd(fd: number, offset?: number, length?: number): Promise&lt;void
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -3652,6 +3869,7 @@ addSubtitleFromFd(fd: number, offset?: number, length?: number): Promise&lt;void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3673,9 +3891,10 @@ avPlayer.addSubtitleFromFd(fileDescriptor.fd, fileDescriptor.offset, fileDescrip
 
 
 
-#### addSubtitleFromUrl12+
+## addSubtitleFromUrl12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addSubtitleFromUrl(url: string): Promise&lt;void&gt;
 
@@ -3687,12 +3906,14 @@ addSubtitleFromUrl(url: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | string | 是 | 外挂字幕文件地址。支持http/https网络地址和本地文件路径。当前支持的字幕文件格式包括srt、vtt等常见格式。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3702,6 +3923,7 @@ addSubtitleFromUrl(url: string): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3721,9 +3943,10 @@ async function test(){
 
 
 
-#### on('subtitleUpdate')12+
+## on('subtitleUpdate')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'subtitleUpdate', callback: Callback&lt;SubtitleInfo&gt;): void
 
@@ -3734,6 +3957,7 @@ on(type: 'subtitleUpdate', callback: Callback&lt;SubtitleInfo&gt;): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3762,9 +3986,10 @@ async function test(){
 
 
 
-#### off('subtitleUpdate')12+
+## off('subtitleUpdate')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'subtitleUpdate', callback?: Callback&lt;SubtitleInfo&gt;): void
 
@@ -3775,6 +4000,7 @@ off(type: 'subtitleUpdate', callback?: Callback&lt;SubtitleInfo&gt;): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3794,9 +4020,10 @@ async function test(){
 
 
 
-#### on('trackChange')12+
+## on('trackChange')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'trackChange', callback: OnTrackChangeHandler): void
 
@@ -3807,6 +4034,7 @@ on(type: 'trackChange', callback: OnTrackChangeHandler): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3828,9 +4056,10 @@ async function test(){
 
 
 
-#### off('trackChange')12+
+## off('trackChange')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'trackChange', callback?: OnTrackChangeHandler): void
 
@@ -3841,6 +4070,7 @@ off(type: 'trackChange', callback?: OnTrackChangeHandler): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3860,9 +4090,10 @@ async function test(){
 
 
 
-#### on('trackInfoUpdate')12+
+## on('trackInfoUpdate')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'trackInfoUpdate', callback: Callback<Array&lt;MediaDescription&gt;>): void
 
@@ -3873,6 +4104,7 @@ on(type: 'trackInfoUpdate', callback: Callback<Array&lt;MediaDescription&gt;>): 
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3902,9 +4134,10 @@ async function test(){
 
 
 
-#### off('trackInfoUpdate')12+
+## off('trackInfoUpdate')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'trackInfoUpdate', callback?: Callback<Array&lt;MediaDescription&gt;>): void
 
@@ -3915,6 +4148,7 @@ off(type: 'trackInfoUpdate', callback?: Callback<Array&lt;MediaDescription&gt;>)
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3934,9 +4168,10 @@ async function test(){
 
 
 
-#### on('amplitudeUpdate')13+
+## on('amplitudeUpdate')13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'amplitudeUpdate', callback: Callback<Array&lt;number&gt;>): void
 
@@ -3945,6 +4180,7 @@ on(type: 'amplitudeUpdate', callback: Callback<Array&lt;number&gt;>): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3966,9 +4202,10 @@ async function test(){
 
 
 
-#### off('amplitudeUpdate')13+
+## off('amplitudeUpdate')13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'amplitudeUpdate', callback?: Callback<Array&lt;number&gt;>): void
 
@@ -3977,6 +4214,7 @@ off(type: 'amplitudeUpdate', callback?: Callback<Array&lt;number&gt;>): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3996,9 +4234,10 @@ async function test(){
 
 
 
-#### on('seiMessageReceived')18+
+## on('seiMessageReceived')18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'seiMessageReceived', payloadTypes: Array&lt;number&gt;, callback: OnSeiMessageHandle): void
 
@@ -4009,6 +4248,7 @@ on(type: 'seiMessageReceived', payloadTypes: Array&lt;number&gt;, callback: OnSe
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4045,9 +4285,10 @@ async function test(){
 
 
 
-#### off('seiMessageReceived')18+
+## off('seiMessageReceived')18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'seiMessageReceived', payloadTypes?: Array&lt;number&gt;, callback?: OnSeiMessageHandle): void
 
@@ -4058,6 +4299,7 @@ off(type: 'seiMessageReceived', payloadTypes?: Array&lt;number&gt;, callback?: O
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4078,9 +4320,10 @@ async function test(){
 
 
 
-#### setSuperResolution18+
+## setSuperResolution18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setSuperResolution(enabled: boolean) : Promise&lt;void&gt;
 
@@ -4096,12 +4339,14 @@ setSuperResolution(enabled: boolean) : Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 表示是否开启超分。true表示开启超分（当需要提升低分辨率视频的显示质量时选择），false表示关闭超分（当原始分辨率已足够或不需要超分处理时选择）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4111,6 +4356,7 @@ setSuperResolution(enabled: boolean) : Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4137,9 +4383,10 @@ async function test(){
 
 
 
-#### setVideoWindowSize18+
+## setVideoWindowSize18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setVideoWindowSize(width: number, height: number) : Promise&lt;void&gt;
 
@@ -4155,6 +4402,7 @@ setVideoWindowSize(width: number, height: number) : Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | width | number | 是 | 超分算法的目标输出视频宽度，取值范围为[320-1920]，单位为像素（px）。 |
@@ -4162,6 +4410,7 @@ setVideoWindowSize(width: number, height: number) : Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4171,6 +4420,7 @@ setVideoWindowSize(width: number, height: number) : Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4199,9 +4449,10 @@ async function test(){
 
 
 
-#### on('superResolutionChanged')18+
+## on('superResolutionChanged')18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type:'superResolutionChanged', callback: OnSuperResolutionChanged): void
 
@@ -4212,6 +4463,7 @@ on(type:'superResolutionChanged', callback: OnSuperResolutionChanged): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4233,9 +4485,10 @@ async function test(){
 
 
 
-#### off('superResolutionChanged')18+
+## off('superResolutionChanged')18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type:'superResolutionChanged', callback?: OnSuperResolutionChanged): void
 
@@ -4246,6 +4499,7 @@ off(type:'superResolutionChanged', callback?: OnSuperResolutionChanged): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4265,9 +4519,10 @@ async function test(){
 
 
 
-#### onPlaybackContentChanged
+## onPlaybackContentChanged
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onPlaybackContentChanged(callback: Callback&lt;string&gt;):void;
 
@@ -4282,6 +4537,7 @@ onPlaybackContentChanged(callback: Callback&lt;string&gt;):void;
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4301,9 +4557,10 @@ async function test(){
 
 
 
-#### offPlaybackContentChanged
+## offPlaybackContentChanged
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offPlaybackContentChanged(callback?: Callback&lt;string&gt;):void;
 
@@ -4318,6 +4575,7 @@ offPlaybackContentChanged(callback?: Callback&lt;string&gt;):void;
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4340,9 +4598,10 @@ async function test(){
 
 
 
-#### getPlaybackStatisticMetrics23+
+## getPlaybackStatisticMetrics23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPlaybackStatisticMetrics(): Promise&lt;PlaybackMetrics&gt;
 
@@ -4351,6 +4610,7 @@ getPlaybackStatisticMetrics(): Promise&lt;PlaybackMetrics&gt;
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4384,9 +4644,10 @@ media.createAVPlayer(async (err: BusinessError, player: media.AVPlayer) => {
 
 
 
-#### onMetricsEvent23+
+## onMetricsEvent23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onMetricsEvent(callback: Callback<Array&lt;AVMetricsEvent&gt;>): void
 
@@ -4395,6 +4656,7 @@ onMetricsEvent(callback: Callback<Array&lt;AVMetricsEvent&gt;>): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4420,9 +4682,10 @@ async function test(){
 
 
 
-#### offMetricsEvent23+
+## offMetricsEvent23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offMetricsEvent(callback?: Callback<Array&lt;AVMetricsEvent&gt;>): void
 
@@ -4431,6 +4694,7 @@ offMetricsEvent(callback?: Callback<Array&lt;AVMetricsEvent&gt;>): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4448,9 +4712,10 @@ async function test(){
 
 
 
-#### onTimedMetaData
+## onTimedMetaData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onTimedMetaData(callback: Callback&lt;AVTimedMetaData&gt;): void
 
@@ -4465,6 +4730,7 @@ onTimedMetaData(callback: Callback&lt;AVTimedMetaData&gt;): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4483,9 +4749,10 @@ async function test(){
 
 
 
-#### offTimedMetaData
+## offTimedMetaData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offTimedMetaData(callback?: Callback&lt;AVTimedMetaData&gt;): void
 
@@ -4500,6 +4767,7 @@ offTimedMetaData(callback?: Callback&lt;AVTimedMetaData&gt;): void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4517,9 +4785,10 @@ async function test(){
 
 
 
-#### getCurrentTrack
+## getCurrentTrack
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCurrentTrack(trackType: MediaType): Promise&lt;number&gt;
 
@@ -4535,12 +4804,14 @@ getCurrentTrack(trackType: MediaType): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | trackType | MediaType | 是 | 媒体类型枚举，决定获取轨道索引的类型。 仅支持设置MEDIA_TYPE_AUD获取音频轨道索引、MEDIA_TYPE_VID获取视频轨道索引。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4550,6 +4821,7 @@ getCurrentTrack(trackType: MediaType): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

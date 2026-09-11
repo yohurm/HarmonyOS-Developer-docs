@@ -18,7 +18,7 @@ struct TextInputDemo {
         .onEditChange((isEditing: boolean) => {
           if (isEditing) {
             setTimeout(() => {
-              // The cursor will reset to the beginning of the text after 100ms
+             <em> // The cursor will reset to the beginning of the text after 100ms</em>
               this.controller.caretPosition(0);
             }, 100)
           }

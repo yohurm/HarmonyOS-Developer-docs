@@ -1,9 +1,9 @@
 # CheckboxGroup
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-checkboxgroup
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 多选框群组，用于控制多选框全选或取消全选状态。适用于需要批量管理多个Checkbox选择状态的场景，如列表项批量选择、表单全选等，可简化用户操作，提升交互体验。
 
@@ -12,17 +12,19 @@
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 CheckboxGroup(options?: CheckboxGroupOptions)
 
@@ -38,6 +40,7 @@ CheckboxGroup(options?: CheckboxGroupOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | CheckboxGroupOptions | 否 | 配置多选框群组参数。 未设置时，按照CheckboxGroupOptions中各参数的默认值配置。 |
@@ -45,9 +48,10 @@ CheckboxGroup(options?: CheckboxGroupOptions)
 
 
 
-#### CheckboxGroupOptions对象说明
+## CheckboxGroupOptions对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 多选框群组的信息。
 
@@ -57,6 +61,7 @@ CheckboxGroup(options?: CheckboxGroupOptions)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | group | string | 否 | 是 | 群组名称。 默认值：undefined，默认状态下管理CheckboxOptions属性group信息为undefined的节点。 说明： 具有相同群组名称的多个CheckboxGroup，仅第一个CheckboxGroup生效。 |
@@ -64,17 +69,19 @@ CheckboxGroup(options?: CheckboxGroupOptions)
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
 
 
 
-#### selectAll
+### selectAll
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectAll(value: boolean)
 
@@ -94,6 +101,7 @@ selectAll(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否全选。 默认值：false 值为true时，多选框群组将全部被选中；值为false时，多选框群组将全部取消选中。 若同组的Checkbox显式设置了select属性，则Checkbox的优先级高。 |
@@ -101,9 +109,10 @@ selectAll(value: boolean)
 
 
 
-#### selectAll18+
+### selectAll18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectAll(isAllSelected: Optional&lt;boolean&gt;)
 
@@ -123,6 +132,7 @@ selectAll(isAllSelected: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isAllSelected | Optional&lt;boolean&gt; | 是 | 是否全选。 当isAllSelected的值为undefined时取默认值false。 值为true时，多选框群组将全部被选中；值为false时，多选框群组将全部取消选中。 |
@@ -130,9 +140,10 @@ selectAll(isAllSelected: Optional&lt;boolean&gt;)
 
 
 
-#### selectedColor
+### selectedColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectedColor(value: ResourceColor)
 
@@ -146,6 +157,7 @@ selectedColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 被选中或部分选中状态的颜色。 默认值：\$r('sys.color.ohos_id_color_text_primary_activated') 异常值按照默认值处理。 |
@@ -153,9 +165,10 @@ selectedColor(value: ResourceColor)
 
 
 
-#### selectedColor18+
+### selectedColor18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectedColor(resColor: Optional&lt;ResourceColor&gt;)
 
@@ -171,6 +184,7 @@ selectedColor(resColor: Optional&lt;ResourceColor&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resColor | Optional&lt;ResourceColor&gt; | 是 | 被选中或部分选中状态的颜色。 当resColor的值为undefined时，默认值：\$r('sys.color.ohos_id_color_text_primary_activated') 异常值按照默认值处理。 |
@@ -178,9 +192,10 @@ selectedColor(resColor: Optional&lt;ResourceColor&gt;)
 
 
 
-#### unselectedColor10+
+### unselectedColor10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unselectedColor(value: ResourceColor)
 
@@ -194,6 +209,7 @@ unselectedColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 非选中状态边框颜色。 默认值：\$r('sys.color.ohos_id_color_switch_outline_off')。 |
@@ -201,9 +217,10 @@ unselectedColor(value: ResourceColor)
 
 
 
-#### unselectedColor18+
+### unselectedColor18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unselectedColor(resColor: Optional&lt;ResourceColor&gt;)
 
@@ -217,6 +234,7 @@ unselectedColor(resColor: Optional&lt;ResourceColor&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resColor | Optional&lt;ResourceColor&gt; | 是 | 非选中状态边框颜色。 当resColor的值为undefined时，默认值：\$r('sys.color.ohos_id_color_switch_outline_off')。 |
@@ -224,9 +242,10 @@ unselectedColor(resColor: Optional&lt;ResourceColor&gt;)
 
 
 
-#### mark10+
+### mark10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 mark(value: MarkStyle)
 
@@ -240,6 +259,7 @@ mark(value: MarkStyle)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | MarkStyle | 是 | 多选框内部图标样式。 异常值按照默认值处理。 |
@@ -247,9 +267,10 @@ mark(value: MarkStyle)
 
 
 
-#### mark18+
+### mark18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 mark(style: Optional&lt;MarkStyle&gt;)
 
@@ -263,6 +284,7 @@ mark(style: Optional&lt;MarkStyle&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | Optional&lt;MarkStyle&gt; | 是 | 多选框内部图标样式。 当style的值为undefined时，维持上次取值。 |
@@ -270,9 +292,10 @@ mark(style: Optional&lt;MarkStyle&gt;)
 
 
 
-#### checkboxShape12+
+### checkboxShape12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checkboxShape(value: CheckBoxShape)
 
@@ -288,6 +311,7 @@ checkboxShape(value: CheckBoxShape)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | CheckBoxShape | 是 | 设置CheckboxGroup组件形状，包括圆形和圆角方形。 默认值：CheckBoxShape.CIRCLE 说明： CheckboxGroup组件将按照设置的形状显示。 CheckboxGroup内所有未单独设置shape类型的Checkbox，其形状将与CheckboxGroup保持一致。 CheckboxGroup内已单独设置shape类型的Checkbox，其形状将优先于CheckboxGroup的设置，按照自身设置显示。 异常值按照默认值处理。 |
@@ -295,9 +319,10 @@ checkboxShape(value: CheckBoxShape)
 
 
 
-#### checkboxShape18+
+### checkboxShape18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checkboxShape(shape: Optional&lt;CheckBoxShape&gt;)
 
@@ -313,6 +338,7 @@ checkboxShape(shape: Optional&lt;CheckBoxShape&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | shape | Optional&lt;CheckBoxShape&gt; | 是 | 设置CheckboxGroup组件形状，包括圆形和圆角方形。 当shape的值为undefined时，默认值为CheckBoxShape.CIRCLE。 说明： CheckboxGroup组件将按照设置的形状显示。 CheckboxGroup内所有未单独设置shape类型的Checkbox，其形状将与CheckboxGroup保持一致。 CheckboxGroup内已单独设置shape类型的Checkbox，其形状将优先于CheckboxGroup的设置，按照自身设置显示。 异常值按照默认值处理。 |
@@ -320,9 +346,10 @@ checkboxShape(shape: Optional&lt;CheckBoxShape&gt;)
 
 
 
-#### contentModifier21+
+### contentModifier21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contentModifier(modifier: Optional<ContentModifier&lt;CheckBoxGroupConfiguration&gt;>)
 
@@ -340,6 +367,7 @@ contentModifier(modifier: Optional<ContentModifier&lt;CheckBoxGroupConfiguration
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | modifier | Optional<ContentModifier&lt;CheckBoxGroupConfiguration&gt;> | 是 | 在CheckboxGroup组件上，定制内容区的方法。 modifier：内容修改器，开发者需要自定义类以实现ContentModifier接口。 当modifier的值为undefined时，不使用内容修改器。 |
@@ -347,17 +375,19 @@ contentModifier(modifier: Optional<ContentModifier&lt;CheckBoxGroupConfiguration
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)外，还支持以下事件：
 
 
 
-#### onChange
+### onChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onChange(callback: OnCheckboxGroupChangeCallback)
 
@@ -371,6 +401,7 @@ CheckboxGroup的选中状态或群组内的Checkbox的选中状态发生变化�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | OnCheckboxGroupChangeCallback | 是 | 多选框群组的信息。 |
@@ -378,9 +409,10 @@ CheckboxGroup的选中状态或群组内的Checkbox的选中状态发生变化�
 
 
 
-#### onChange18+
+### onChange18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onChange(callback: Optional&lt;OnCheckboxGroupChangeCallback&gt;)
 
@@ -396,6 +428,7 @@ CheckboxGroup的选中状态或群组内的Checkbox的选中状态发生变化�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Optional&lt;OnCheckboxGroupChangeCallback&gt; | 是 | 多选框群组的信息。 当callback的值为undefined时，不使用回调函数。 |
@@ -403,9 +436,10 @@ CheckboxGroup的选中状态或群组内的Checkbox的选中状态发生变化�
 
 
 
-#### OnCheckboxGroupChangeCallback18+
+## OnCheckboxGroupChangeCallback18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnCheckboxGroupChangeCallback = (value: CheckboxGroupResult) => void
 
@@ -421,6 +455,7 @@ type OnCheckboxGroupChangeCallback = (value: CheckboxGroupResult) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | CheckboxGroupResult | 是 | 多选框群组的信息。 |
@@ -428,9 +463,10 @@ type OnCheckboxGroupChangeCallback = (value: CheckboxGroupResult) => void
 
 
 
-#### CheckboxGroupResult对象说明
+## CheckboxGroupResult对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 多选框群组的名称和状态。
 
@@ -440,6 +476,7 @@ type OnCheckboxGroupChangeCallback = (value: CheckboxGroupResult) => void
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | name | Array&lt;string&gt; | 否 | 否 | 群组内所有被选中的多选框名称。 |
@@ -448,9 +485,10 @@ type OnCheckboxGroupChangeCallback = (value: CheckboxGroupResult) => void
 
 
 
-#### SelectStatus枚举说明
+## SelectStatus枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 多选框群组的选中状态。
 
@@ -459,6 +497,7 @@ type OnCheckboxGroupChangeCallback = (value: CheckboxGroupResult) => void
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -469,9 +508,10 @@ type OnCheckboxGroupChangeCallback = (value: CheckboxGroupResult) => void
 
 
 
-#### CheckBoxGroupConfiguration21+对象说明
+## CheckBoxGroupConfiguration21+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 开发者必须自定义此类以实现ContentModifier接口，使用方法见[contentModifier](#contentmodifier21)。
 
@@ -480,6 +520,7 @@ type OnCheckboxGroupChangeCallback = (value: CheckboxGroupResult) => void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -490,13 +531,17 @@ type OnCheckboxGroupChangeCallback = (value: CheckboxGroupResult) => void
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（设置多选框群组）
+
+
+### 示例1（设置多选框群组）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例用于控制多选框群组的全选或取消全选状态。
 
@@ -563,7 +608,10 @@ struct CheckboxExample {
 
 
 
-#### 示例2（自定义勾选样式）
+### 示例2（自定义勾选样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置CheckboxGroup的mark属性，实现自定义多选框群组的勾选样式。
 
@@ -646,7 +694,10 @@ struct Index {
 
 
 
-#### 示例3（自定义多选框样式）
+### 示例3（自定义多选框样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[contentModifier](#contentmodifier21)属性实现了自定义复选框群组样式的功能。自定义样式实现了一个五边形复选框群组，如果全部选中，内部会出现红色三角图案，标题会显示全选字样；如果部分选中，三角图案显示蓝色，标题会显示部分选中字样；如果未选中，三角图案消失，标题会显示未选中。
 
@@ -767,12 +818,15 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/Sa0v_ZeXTIuwc1vCKbPMEg/zh-cn_image_0000002656008502.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071503Z&HW-CC-Expire=86400&HW-CC-Sign=441F4267CCEC4A49E392A8CC7EC3222DA7BF05249EDFECFBCDBFE3D87308104A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/KmSt1MTBRhm9GYvECi3LGw/zh-cn_image_0000002747292671.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073103Z&HW-CC-Expire=86400&HW-CC-Sign=085381F04E59BF217C62ED764CE2F0D94D76DBE3D5A40750742205B50A0FF6C1)
 
 
 
 
-#### 示例4（设置全选）
+### 示例4（设置全选）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示了在结合带缓存功能的组件（如List）使用时，手动控制未被创建的Checkbox选中状态。
 
@@ -929,4 +983,4 @@ struct MyComponent {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/wAnQQzolQh2Qe9i-Z_6WXQ/zh-cn_image_0000002655848580.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071503Z&HW-CC-Expire=86400&HW-CC-Sign=45903D5E3471EEE8FBBD334A6781344E33B4C4E26B4D9DECC113D3536F9578B7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/WAotxEYDRpqV5dq0wZP99g/zh-cn_image_0000002747212587.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073103Z&HW-CC-Expire=86400&HW-CC-Sign=085D3A7708CF56BC04BA4040FFEC2F16B7E2DAF5118AD907BE1E4E251468A258)

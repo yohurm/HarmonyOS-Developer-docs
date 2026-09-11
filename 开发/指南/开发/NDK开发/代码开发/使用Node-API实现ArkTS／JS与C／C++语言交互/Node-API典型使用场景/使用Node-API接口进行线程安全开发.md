@@ -1,10 +1,10 @@
 # 使用Node-API接口进行线程安全开发
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-thread-safety
 
-#### 场景介绍
+## 场景介绍
 
 [napi_create_threadsafe_function](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/napi#napi_create_threadsafe_function)是Node-API接口之一，用于创建一个线程安全的JavaScript函数。该函数主要用于在多个线程之间共享和调用，避免竞争条件和死锁。包含以下场景：
 
@@ -15,7 +15,7 @@
 
 
 
-#### 使用示例
+## 使用示例
 1. CMakeLists.txt配置
 
   
@@ -212,14 +212,14 @@ nativeModule.startThread(callback);
 
 
 
-#### 子线程交互场景介绍
+## 子线程交互场景介绍
 
  - napi_threadsafe_function在主线程和子线程使用并无差异，下面是子线程的使用示例。
 
 
 
 
-#### 基于[Worker](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/worker-introduction)实现的C++子线程与ArkTS子线程交互场景
+### 基于[Worker](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/worker-introduction)实现的C++子线程与ArkTS子线程交互场景
 1. CMakeLists.txt配置
 
   
@@ -267,7 +267,7 @@ struct ThreadData {
 void NativeThread(void* arg)
 {
     auto* data = static_cast<ThreadData*>(arg);
-    OH_LOG_INFO(LOG_APP, "[C++ SubThread] Received from Worker: %{public}s\n", data->inputStr.c_str());
+    OH_LOG_INFO(LOG_APP, "[C++ SubThread] Received from %{public}s\n", data->inputStr.c_str());
     std::string str = "Hello from C++!";
     std::string msg = "Echo of " + str;
     char* cstr = strdup(msg.c_str());
@@ -394,7 +394,7 @@ const port = worker.workerPort;
 
 port.onmessage = (e: MessageEvents) => {
   console.info('Worker thread received:' + e.data);
-  nativeModule.startWithCallback('Hello', (result: string) => {
+  nativeModule.startWithCallback('Worker', (result: string) => {
     console.info('[Worker] Got from native:', result);
     port.postMessage(result);
   });
@@ -429,15 +429,15 @@ wk.onmessage = (msg) => {
 ```text
 运行结果：
 Worker thread received:Start
-[C++ SubThread] Received from Worker: Hello
+[C++ SubThread] Received from Worker
 [Worker] Got from native: Echo of Hello from C++!
-[Main] Received: Echo of Hello from C++
+[Main] Received: Echo of Hello from C++!
 ```
 
 
 
 
-#### 基于[Taskpool](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/taskpool-introduction)实现的C++子线程与ArkTS子线程交互场景
+### 基于[Taskpool](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/taskpool-introduction)实现的C++子线程与ArkTS子线程交互场景
 1. native侧实现代码以及模块注册与“基于Worker实现的C++子线程与ArkTS子线程交互场景”一致，可直接复用。
 2. ArkTS侧示例代码。
 
@@ -449,7 +449,7 @@ import { taskpool } from '@kit.ArkTS';
 @Concurrent
 function nativeCall(input : string): void {
   console.info('Taskpool thread received:%s', input);
-  nativeModule.startWithCallback('Hello', (result: string) => {
+  nativeModule.startWithCallback('Taskpool', (result: string) => {
     console.info('[Taskpool] Got from native:', result);
   });
 }
@@ -472,6 +472,6 @@ testTaskpool();
 ```text
 运行结果：
 Taskpool thread received:Start
-[C++ SubThread] Received from Worker: Hello
+[C++ SubThread] Received from Taskpool
 [Taskpool] Got from native: Echo of Hello from C++!
 ```

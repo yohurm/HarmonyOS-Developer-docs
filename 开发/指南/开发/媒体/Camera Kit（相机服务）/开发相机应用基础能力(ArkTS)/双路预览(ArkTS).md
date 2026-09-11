@@ -1,6 +1,6 @@
 # 双路预览(ArkTS)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-dual-channel-preview
 
@@ -15,7 +15,7 @@
 详细的API说明请参考[@ohos.multimedia.camera (相机管理)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera)。
 
 
-#### 约束与限制
+## 约束与限制
 
  - 暂不支持动态添加流，即不能在没有调用[session.stop](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-session#stop11)的情况下，调用[addOutput](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-session#addoutput11)添加流。
  - 对ImageReceiver组件获取到的图像数据处理后，需要将对应的图像Buffer释放，确保Surface的BufferQueue正常轮转。
@@ -23,7 +23,7 @@
 
 
 
-#### 调用流程
+## 调用流程
 
 双路方案调用流程图建议如下：
 
@@ -33,7 +33,7 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 
  - 用于处理图像的第一路预览流：创建ImageReceiver对象，获取SurfaceId创建第一路预览流，注册图像监听，按需处理预览流每帧图像。
  - 用于显示画面的第二路预览流：创建XComponent组件，获取SurfaceId创建第二路预览流，预览流画面直接在组件内渲染。
@@ -44,7 +44,7 @@
 
 
 
-#### 用于处理图像的第一路预览流
+### 用于处理图像的第一路预览流
 1. 导入依赖，本篇文档需要用到图片和相机框架等相关依赖包。
 
   
@@ -125,7 +125,7 @@ onImageArrival(receiver: image.ImageReceiver): void {
 通过 [image.Component](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-i#component9) 解析图片buffer数据参考：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/gL7uj9-aRMuEvjOcRs4hVg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095822Z&HW-CC-Expire=86400&HW-CC-Sign=E678D5837AE321547478D704C5263A48518A46B51837653178A518AFE4A72563)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/sT6SuoIDRtuEWCpdO_Wwig/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072530Z&HW-CC-Expire=86400&HW-CC-Sign=6E7862A7CA37B9F5D2D04E09142E2B69D384C13967AE17CBB84D9D0029C3015D)
 
 
 需要确认图像的宽width是否与行距rowStride一致，如果不一致可参考以下方式处理：
@@ -169,7 +169,7 @@ pixelMap.cropSync({size:{width:width, height:height}, x:0, y:0});
 
 
 
-#### 用于显示画面的第二路预览流
+### 用于显示画面的第二路预览流
 
 获取第二路预览流SurfaceId：创建XComponent组件用于预览流显示，获取SurfaceId请参考XComponent组件提供的[getXComponentSurfaceId](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-xcomponent#getxcomponentsurfaceid9)方法，而XComponent的能力由UI提供，相关介绍可参考[XComponent组件参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-xcomponent)。
 
@@ -190,7 +190,7 @@ XComponent({
 
 
 
-#### 创建预览流获取数据
+### 创建预览流获取数据
 
 通过两个SurfaceId分别创建两路预览流输出，加入相机会话，启动相机会话，获取预览流数据。
 
@@ -218,7 +218,7 @@ async createOutput(config: CreateOutputConfig) {
 
 
 
-#### 完整示例
+## 完整示例
 
 ```ArkTS
 import { image } from '@kit.ImageKit';

@@ -1,9 +1,9 @@
 # rcp（数据请求）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-communication-rcp
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供HTTP数据请求功能。应用程序可通过HTTP发起数据请求。常见的HTTP方法包括GET、POST、HEAD、PUT、DELETE、PATCH、OPTIONS等。
  
@@ -12,9 +12,10 @@
 **起始版本：** 4.1.0(11)
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { rcp } from '@kit.RemoteCommunicationKit';
@@ -22,9 +23,10 @@ import { rcp } from '@kit.RemoteCommunicationKit';
  
   
 
-#### createSession
+## createSession
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createSession(sessionConfiguration?: SessionConfiguration): Session
  
@@ -38,6 +40,7 @@ createSession(sessionConfiguration?: SessionConfiguration): Session
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sessionConfiguration | SessionConfiguration | 否 | 会话配置，应用于会话请求的设置。 |
@@ -45,6 +48,7 @@ createSession(sessionConfiguration?: SessionConfiguration): Session
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Session | 代表一个会话，用于发送HTTP请求并管理其配置、取消和关闭的生命周期。自5.1.0(18)版本开始变更为最多可创建1024个session实例，应用在通过创建的session实例访问完网络请求后，应及时关闭session，保证资源合理利用。 |
@@ -54,6 +58,7 @@ createSession(sessionConfiguration?: SessionConfiguration): Session
  
 错误码的详细介绍请参见[API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-remote-communication)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -68,9 +73,10 @@ const session = rcp.createSession();
  
   
 
-#### Session
+## Session
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Session类表示可用于发出HTTP请求的通信会话。它提供了各种HTTP方法（FETCH、GET、POST、PUT、HEAD、DELETE、CANCEL、CLOSE）。
  
@@ -82,8 +88,12 @@ Session类表示可用于发出HTTP请求的通信会话。它提供了各种HTT
  
   
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | id | string | 是 | 否 | 表示会话的标识符。 |
@@ -92,9 +102,10 @@ Session类表示可用于发出HTTP请求的通信会话。它提供了各种HTT
  
   
 
-#### fetch
+### fetch
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fetch(request: Request): Promise&lt;Response&gt;
  
@@ -110,6 +121,7 @@ fetch(request: Request): Promise&lt;Response&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | Request | 是 | 待发送的请求。 |
@@ -117,6 +129,7 @@ fetch(request: Request): Promise&lt;Response&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Response&gt; | Promise对象，返回来自服务器的响应对象。 |
@@ -133,7 +146,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { rcp } from '@kit.RemoteCommunicationKit';
 
 const session = rcp.createSession();
-let req = new rcp.Request("http://example.com/fetch", "POST");
+let req = new rcp.Request('http://example.com/fetch', 'POST');
 session.fetch(req).then((response) => {
   console.info(`Succeeded in getting the response ${response}`);
 }).catch((err: BusinessError) => {
@@ -143,9 +156,10 @@ session.fetch(req).then((response) => {
  
   
 
-#### fetchForSendable
+### fetchForSendable
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fetchForSendable(request: Request): Promise&lt;ResponseSendable&gt;
  
@@ -161,6 +175,7 @@ fetchForSendable(request: Request): Promise&lt;ResponseSendable&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | Request | 是 | 待发送的请求。 |
@@ -168,6 +183,7 @@ fetchForSendable(request: Request): Promise&lt;ResponseSendable&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;ResponseSendable&gt; | Promise对象，返回来自服务器的响应对象，该响应对象支持Sendable。 |
@@ -216,9 +232,10 @@ async function test() {
  
   
 
-#### get
+### get
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get(url: URLOrString, destination?: ResponseBodyDestination): Promise&lt;Response&gt;
  
@@ -234,6 +251,7 @@ get(url: URLOrString, destination?: ResponseBodyDestination): Promise&lt;Respons
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | URLOrString | 是 | HTTP GET请求资源的URL。 |
@@ -242,6 +260,7 @@ get(url: URLOrString, destination?: ResponseBodyDestination): Promise&lt;Respons
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Response&gt; | Promise对象，返回来自服务器的响应对象。 |
@@ -258,7 +277,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { rcp } from '@kit.RemoteCommunicationKit';
 
 const session = rcp.createSession();
-session.get("http://example.com/get").then((response) => {
+session.get('http://example.com/get').then((response) => {
   console.info(`Succeeded in getting the response ${response}`);
 }).catch((err: BusinessError) => {
   console.error(`err: error code is ${err.code}, error data is ${err.data}`);
@@ -267,9 +286,10 @@ session.get("http://example.com/get").then((response) => {
  
   
 
-#### post
+### post
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 post(url: URLOrString, content?: RequestContent, destination?: ResponseBodyDestination): Promise&lt;Response&gt;
  
@@ -285,6 +305,7 @@ post(url: URLOrString, content?: RequestContent, destination?: ResponseBodyDesti
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | URLOrString | 是 | HTTP POST请求资源的URL。 |
@@ -294,6 +315,7 @@ post(url: URLOrString, content?: RequestContent, destination?: ResponseBodyDesti
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Response&gt; | Promise对象，返回来自服务器的响应对象。 |
@@ -310,7 +332,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { rcp } from '@kit.RemoteCommunicationKit';
 
 const session = rcp.createSession();
-session.post("http://example.com/post", "data to send").then((response) => {
+session.post('http://example.com/post', 'data to send').then((response) => {
   console.info(`Succeeded in getting the response ${response}`);
 }).catch((err: BusinessError) => {
   console.error(`err: error code is ${err.code}, error data is ${err.data}`);
@@ -319,9 +341,10 @@ session.post("http://example.com/post", "data to send").then((response) => {
  
   
 
-#### put
+### put
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 put(url: URLOrString, content?: RequestContent, destination?: ResponseBodyDestination): Promise&lt;Response&gt;
  
@@ -337,6 +360,7 @@ put(url: URLOrString, content?: RequestContent, destination?: ResponseBodyDestin
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | URLOrString | 是 | HTTP PUT请求资源的URL。 |
@@ -346,6 +370,7 @@ put(url: URLOrString, content?: RequestContent, destination?: ResponseBodyDestin
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Response&gt; | Promise对象，返回来自服务器的响应对象。 |
@@ -362,7 +387,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { rcp } from '@kit.RemoteCommunicationKit';
 
 const session = rcp.createSession();
-session.put("http://example.com/put", "data to send").then((response) => {
+session.put('http://example.com/put', 'data to send').then((response) => {
   console.info(`Succeeded in getting the response ${response.toString()}`);
 }).catch((err: BusinessError) => {
   console.error(`err: error code is ${err.code}, error data is ${err.data}`);
@@ -371,9 +396,10 @@ session.put("http://example.com/put", "data to send").then((response) => {
  
   
 
-#### downloadToFile
+### downloadToFile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 downloadToFile(url: URLOrString, downloadTo: DownloadToFile): Promise&lt;Response&gt;
  
@@ -389,6 +415,7 @@ downloadToFile(url: URLOrString, downloadTo: DownloadToFile): Promise&lt;Respons
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | URLOrString | 是 | HTTP DOWNLOADTOFILE请求资源的URL。 |
@@ -397,6 +424,7 @@ downloadToFile(url: URLOrString, downloadTo: DownloadToFile): Promise&lt;Respons
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Response&gt; | Promise对象，返回来自服务器的响应对象。 |
@@ -414,10 +442,10 @@ import { rcp } from '@kit.RemoteCommunicationKit';
 
 let downloadToFile: rcp.DownloadToFile = {
   kind: 'folder',
-  path: "/path/dir" // 请根据自身业务选择合适的路径
+  path: '/path/dir' // 请根据自身业务选择合适的路径
 } as rcp.DownloadToFile
 const session = rcp.createSession();
-session.downloadToFile("http://www.example.com", downloadToFile).then((response) => {
+session.downloadToFile('http://www.example.com', downloadToFile).then((response) => {
   console.info(`Succeeded in getting the response ${response.toString()}`);
 }).catch((err: BusinessError) => {
   console.error(`DownloadToFile failed, the error code is ${err.code}, error data is ${err.data}`);
@@ -426,9 +454,10 @@ session.downloadToFile("http://www.example.com", downloadToFile).then((response)
  
   
 
-#### uploadFromFile
+### uploadFromFile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 uploadFromFile(url: URLOrString, uploadFrom: UploadFromFile): Promise&lt;Response&gt;
  
@@ -444,6 +473,7 @@ uploadFromFile(url: URLOrString, uploadFrom: UploadFromFile): Promise&lt;Respons
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | URLOrString | 是 | HTTP UPLOADFROMFILE请求资源的URL。 |
@@ -452,6 +482,7 @@ uploadFromFile(url: URLOrString, uploadFrom: UploadFromFile): Promise&lt;Respons
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Response&gt; | Promise对象，返回来自服务器的响应对象。 |
@@ -467,12 +498,12 @@ uploadFromFile(url: URLOrString, uploadFrom: UploadFromFile): Promise&lt;Respons
 import { BusinessError } from '@kit.BasicServicesKit';
 import { rcp } from '@kit.RemoteCommunicationKit';
 
-let fileDir = "/path/dir/"; // 请根据自身业务定义此路径
+let fileDir = '/path/dir/'; // 请根据自身业务定义此路径
 let uploadFromFile: rcp.UploadFromFile = {
   fileOrPath: fileDir
 };
 const session = rcp.createSession();
-session.uploadFromFile("http://example.com/head", uploadFromFile).then((response) => {
+session.uploadFromFile('http://example.com/head', uploadFromFile).then((response) => {
   console.info(`Succeeded in getting the response ${response.toString()}`);
 }).catch((err: BusinessError) => {
   console.error(`err: error code is ${err.code}, error data is ${err.data}`);
@@ -481,9 +512,10 @@ session.uploadFromFile("http://example.com/head", uploadFromFile).then((response
  
   
 
-#### downloadToStream
+### downloadToStream
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 downloadToStream(url: URLOrString, downloadTo: DownloadToStream): Promise&lt;Response&gt;
  
@@ -499,6 +531,7 @@ downloadToStream(url: URLOrString, downloadTo: DownloadToStream): Promise&lt;Res
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | URLOrString | 是 | HTTP DOWNLOADTOSTREAM请求资源的URL。 |
@@ -507,6 +540,7 @@ downloadToStream(url: URLOrString, downloadTo: DownloadToStream): Promise&lt;Res
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Response&gt; | Promise对象，返回来自服务器的响应对象。 |
@@ -520,7 +554,7 @@ downloadToStream(url: URLOrString, downloadTo: DownloadToStream): Promise&lt;Res
  
 ```text
 import { rcp } from '@kit.RemoteCommunicationKit';
-import { BusinessError } from '@kit.BasicServicesKit'
+import { BusinessError } from '@kit.BasicServicesKit';
 
 const streamData: rcp.WriteStream = {
   write(buffer: ArrayBuffer): Promise<void | number> {
@@ -533,7 +567,7 @@ let downloadToStream: rcp.DownloadToStream = {
   stream: streamData
 }
 const session = rcp.createSession();
-session.downloadToStream("http://example.com/head", downloadToStream).then((response) => {
+session.downloadToStream('http://example.com/head', downloadToStream).then((response) => {
   console.info(`Succeeded in getting the response ${response}`);
 }).catch((err: BusinessError) => {
   console.error(`err: error code is ${err.code}, error data is ${err.data}`);
@@ -542,9 +576,10 @@ session.downloadToStream("http://example.com/head", downloadToStream).then((resp
  
   
 
-#### uploadFromStream
+### uploadFromStream
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 uploadFromStream(url: URLOrString, uploadFrom: UploadFromStream): Promise&lt;Response&gt;
  
@@ -560,6 +595,7 @@ uploadFromStream(url: URLOrString, uploadFrom: UploadFromStream): Promise&lt;Res
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | URLOrString | 是 | HTTP UPLOADFROMSTREAM请求资源的URL。 |
@@ -568,6 +604,7 @@ uploadFromStream(url: URLOrString, uploadFrom: UploadFromStream): Promise&lt;Res
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Response&gt; | Promise对象，返回来自服务器的响应对象。 |
@@ -587,7 +624,7 @@ let uploadFromStream: rcp.UploadFromStream = {
   stream: object // 此处请自行定义类型为Stream、ReadStream、SyncReadStream的对象
 }
 const session = rcp.createSession();
-session.uploadFromStream("http://example.com/head", uploadFromStream).then((response) => {
+session.uploadFromStream('http://example.com/head', uploadFromStream).then((response) => {
   console.info(`Succeeded in getting the response ${response}`);
 }).catch((err: BusinessError) => {
   console.error(`err: error code is ${err.code}, error data is ${err.data}`);
@@ -596,9 +633,10 @@ session.uploadFromStream("http://example.com/head", uploadFromStream).then((resp
  
   
 
-#### head
+### head
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 head(url: URLOrString): Promise&lt;Response&gt;
  
@@ -614,6 +652,7 @@ head(url: URLOrString): Promise&lt;Response&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | URLOrString | 是 | HTTP HEAD请求资源的URL。 |
@@ -621,6 +660,7 @@ head(url: URLOrString): Promise&lt;Response&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Response&gt; | Promise对象，返回来自服务器的响应对象。 |
@@ -637,7 +677,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { rcp } from '@kit.RemoteCommunicationKit';
 
 const session = rcp.createSession();
-session.head("http://example.com/head").then((response) => {
+session.head('http://example.com/head').then((response) => {
   console.info(`Succeeded in getting the response ${response}`);
 }).catch((err: BusinessError) => {
   console.error(`err: error code is ${err.code}, error data is ${err.data}`);
@@ -646,9 +686,10 @@ session.head("http://example.com/head").then((response) => {
  
   
 
-#### delete
+### delete
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 delete(url: URLOrString): Promise&lt;Response&gt;
  
@@ -664,6 +705,7 @@ delete(url: URLOrString): Promise&lt;Response&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | URLOrString | 是 | HTTP DELETE请求资源的URL。 |
@@ -671,6 +713,7 @@ delete(url: URLOrString): Promise&lt;Response&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Response&gt; | Promise对象，返回来自服务器的响应对象。 |
@@ -687,7 +730,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { rcp } from '@kit.RemoteCommunicationKit';
 
 const session = rcp.createSession();
-session.delete("http://example.com/delete").then((response) => {
+session.delete('http://example.com/delete').then((response) => {
   console.info(`Succeeded in getting the response ${response}`);
 }).catch((err: BusinessError) => {
   console.error(`err: error code is ${err.code}, error data is ${err.data}`);
@@ -696,9 +739,10 @@ session.delete("http://example.com/delete").then((response) => {
  
   
 
-#### cancel
+### cancel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancel(requestToCancel?: Request | Request[]): void
  
@@ -712,6 +756,7 @@ cancel(requestToCancel?: Request | Request[]): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | requestToCancel | Request \| Request[] | 否 | 待取消的请求或请求数组。在不指定Request情况下，默认取消所有请求。 |
@@ -721,6 +766,7 @@ cancel(requestToCancel?: Request | Request[]): void
  
 错误码的详细介绍请参见[API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-remote-communication)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -733,7 +779,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { rcp } from '@kit.RemoteCommunicationKit';
 
 const session = rcp.createSession();
-let req = new rcp.Request("http://example.com/fetch", "GET");
+let req = new rcp.Request('http://example.com/fetch', 'GET');
 session.fetch(req).then((response) => {
   console.info(`Succeeded in getting the response ${response}`);
   session.cancel(req);
@@ -744,9 +790,10 @@ session.fetch(req).then((response) => {
  
   
 
-#### close
+### close
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(): void
  
@@ -765,7 +812,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { rcp } from '@kit.RemoteCommunicationKit';
 
 const session = rcp.createSession();
-let req = new rcp.Request("http://example.com/fetch", "GET");
+let req = new rcp.Request('http://example.com/fetch', 'GET');
 session.fetch(req).then((response) => {
   console.info(`Succeeded in getting the response ${response}`);
   session.close();
@@ -777,9 +824,10 @@ session.fetch(req).then((response) => {
  
   
 
-#### getDefaultSession
+## getDefaultSession
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDefaultSession(): DefaultSession
  
@@ -793,6 +841,7 @@ getDefaultSession(): DefaultSession
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DefaultSession | 代表一个默认会话，用于发送或取消HTTP请求。 |
@@ -808,9 +857,10 @@ const defaultSession = rcp.getDefaultSession();
  
   
 
-#### DefaultSession
+## DefaultSession
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 DefaultSession类表示一个默认的通信会话，可用于发送HTTP请求。如果不需要定制Session的配置，可以使用DefaultSession便捷地发起网络请求。
  
@@ -822,9 +872,10 @@ DefaultSession类表示一个默认的通信会话，可用于发送HTTP请求�
  
   
 
-#### fetch
+### fetch
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fetch(request: Request): Promise&lt;Response&gt;
  
@@ -840,6 +891,7 @@ fetch(request: Request): Promise&lt;Response&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | Request | 是 | 待发送的请求。 |
@@ -847,6 +899,7 @@ fetch(request: Request): Promise&lt;Response&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Response&gt; | Promise对象，返回来自服务器的响应对象。 |
@@ -863,7 +916,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { rcp } from '@kit.RemoteCommunicationKit';
 
 const defaultSession = rcp.getDefaultSession();
-let req = new rcp.Request("http://example.com/fetch", "POST");
+let req = new rcp.Request('http://example.com/fetch', 'POST');
 defaultSession.fetch(req).then((response) => {
   console.info(`Succeeded in getting the response ${response}`);
 }).catch((err: BusinessError) => {
@@ -873,9 +926,10 @@ defaultSession.fetch(req).then((response) => {
  
   
 
-#### fetchForSendable
+### fetchForSendable
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fetchForSendable(request: Request): Promise&lt;ResponseSendable&gt;
  
@@ -891,6 +945,7 @@ fetchForSendable(request: Request): Promise&lt;ResponseSendable&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | Request | 是 | 待发送的请求。 |
@@ -898,6 +953,7 @@ fetchForSendable(request: Request): Promise&lt;ResponseSendable&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;ResponseSendable&gt; | Promise对象，返回来自服务器的响应对象，该响应对象支持Sendable。 |
@@ -946,9 +1002,10 @@ async function test() {
  
   
 
-#### get
+### get
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get(url: URLOrString, destination?: ResponseBodyDestination): Promise&lt;Response&gt;
  
@@ -964,6 +1021,7 @@ get(url: URLOrString, destination?: ResponseBodyDestination): Promise&lt;Respons
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | URLOrString | 是 | HTTP GET请求资源的URL。 |
@@ -972,6 +1030,7 @@ get(url: URLOrString, destination?: ResponseBodyDestination): Promise&lt;Respons
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Response&gt; | Promise对象，返回来自服务器的响应对象。 |
@@ -988,7 +1047,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { rcp } from '@kit.RemoteCommunicationKit';
 
 const defaultSession = rcp.getDefaultSession();
-defaultSession.get("http://example.com/get").then((response) => {
+defaultSession.get('http://example.com/get').then((response) => {
   console.info(`Succeeded in getting the response ${response}`);
 }).catch((err: BusinessError) => {
   console.error(`err: error code is ${err.code}, error data is ${err.data}`);
@@ -997,9 +1056,10 @@ defaultSession.get("http://example.com/get").then((response) => {
  
   
 
-#### post
+### post
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 post(url: URLOrString, content?: RequestContent, destination?: ResponseBodyDestination): Promise&lt;Response&gt;
  
@@ -1015,6 +1075,7 @@ post(url: URLOrString, content?: RequestContent, destination?: ResponseBodyDesti
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | URLOrString | 是 | HTTP POST请求资源的URL。 |
@@ -1024,6 +1085,7 @@ post(url: URLOrString, content?: RequestContent, destination?: ResponseBodyDesti
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Response&gt; | Promise对象，返回来自服务器的响应对象。 |
@@ -1040,7 +1102,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { rcp } from '@kit.RemoteCommunicationKit';
 
 const defaultSession = rcp.getDefaultSession();
-defaultSession.post("http://example.com/post", "data to send").then((response) => {
+defaultSession.post('http://example.com/post', 'data to send').then((response) => {
   console.info(`Succeeded in getting the response ${response}`);
 }).catch((err: BusinessError) => {
   console.error(`err: error code is ${err.code}, error data is ${err.data}`);
@@ -1049,9 +1111,10 @@ defaultSession.post("http://example.com/post", "data to send").then((response) =
  
   
 
-#### put
+### put
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 put(url: URLOrString, content?: RequestContent, destination?: ResponseBodyDestination): Promise&lt;Response&gt;
  
@@ -1067,6 +1130,7 @@ put(url: URLOrString, content?: RequestContent, destination?: ResponseBodyDestin
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | URLOrString | 是 | HTTP PUT请求资源的URL。 |
@@ -1076,6 +1140,7 @@ put(url: URLOrString, content?: RequestContent, destination?: ResponseBodyDestin
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Response&gt; | Promise对象，返回来自服务器的响应对象。 |
@@ -1092,7 +1157,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { rcp } from '@kit.RemoteCommunicationKit';
 
 const defaultSession = rcp.getDefaultSession();
-defaultSession.put("http://example.com/put", "data to send").then((response) => {
+defaultSession.put('http://example.com/put', 'data to send').then((response) => {
   console.info(`Succeeded in getting the response ${response}`);
 }).catch((err: BusinessError) => {
   console.error(`err: error code is ${err.code}, error data is ${err.data}`);
@@ -1101,9 +1166,10 @@ defaultSession.put("http://example.com/put", "data to send").then((response) => 
  
   
 
-#### downloadToFile
+### downloadToFile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 downloadToFile(url: URLOrString, downloadTo: DownloadToFile): Promise&lt;Response&gt;
  
@@ -1119,6 +1185,7 @@ downloadToFile(url: URLOrString, downloadTo: DownloadToFile): Promise&lt;Respons
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | URLOrString | 是 | HTTP DOWNLOADTOFILE请求资源的URL。 |
@@ -1127,6 +1194,7 @@ downloadToFile(url: URLOrString, downloadTo: DownloadToFile): Promise&lt;Respons
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Response&gt; | Promise对象，返回来自服务器的响应对象。 |
@@ -1144,10 +1212,10 @@ import { rcp } from '@kit.RemoteCommunicationKit';
 
 let downloadToFile: rcp.DownloadToFile = {
   kind: 'folder',
-  path: "/path/dir" // 请根据自身业务选择合适的路径
+  path: '/path/dir' // 请根据自身业务选择合适的路径
 } as rcp.DownloadToFile
 const defaultSession = rcp.getDefaultSession();
-defaultSession.downloadToFile("http://www.example.com", downloadToFile).then((response) => {
+defaultSession.downloadToFile('http://www.example.com', downloadToFile).then((response) => {
   console.info(`Succeeded in getting the response ${response}`);
 }).catch((err: BusinessError) => {
   console.error(`DownloadToFile failed, the error code is ${err.code}, error data is ${err.data}`);
@@ -1156,9 +1224,10 @@ defaultSession.downloadToFile("http://www.example.com", downloadToFile).then((re
  
   
 
-#### uploadFromFile
+### uploadFromFile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 uploadFromFile(url: URLOrString, uploadFrom: UploadFromFile): Promise&lt;Response&gt;
  
@@ -1174,6 +1243,7 @@ uploadFromFile(url: URLOrString, uploadFrom: UploadFromFile): Promise&lt;Respons
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | URLOrString | 是 | HTTP UPLOADFROMFILE请求资源的URL。 |
@@ -1182,6 +1252,7 @@ uploadFromFile(url: URLOrString, uploadFrom: UploadFromFile): Promise&lt;Respons
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Response&gt; | Promise对象，返回来自服务器的响应对象。 |
@@ -1197,12 +1268,12 @@ uploadFromFile(url: URLOrString, uploadFrom: UploadFromFile): Promise&lt;Respons
 import { BusinessError } from '@kit.BasicServicesKit';
 import { rcp } from '@kit.RemoteCommunicationKit';
 
-let fileDir = "/path/dir/"; // 请根据自身业务定义此路径
+let fileDir = '/path/dir/'; // 请根据自身业务定义此路径
 let uploadFromFile: rcp.UploadFromFile = {
   fileOrPath: fileDir
 };
 const defaultSession = rcp.getDefaultSession();
-defaultSession.uploadFromFile("http://example.com/head", uploadFromFile).then((response) => {
+defaultSession.uploadFromFile('http://example.com/head', uploadFromFile).then((response) => {
   console.info(`Succeeded in getting the response ${response}`);
 }).catch((err: BusinessError) => {
   console.error(`err: error code is ${err.code}, error data is ${err.data}`);
@@ -1211,9 +1282,10 @@ defaultSession.uploadFromFile("http://example.com/head", uploadFromFile).then((r
  
   
 
-#### downloadToStream
+### downloadToStream
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 downloadToStream(url: URLOrString, downloadTo: DownloadToStream): Promise&lt;Response&gt;
  
@@ -1229,6 +1301,7 @@ downloadToStream(url: URLOrString, downloadTo: DownloadToStream): Promise&lt;Res
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | URLOrString | 是 | HTTP DOWNLOADTOSTREAM请求资源的URL。 |
@@ -1237,6 +1310,7 @@ downloadToStream(url: URLOrString, downloadTo: DownloadToStream): Promise&lt;Res
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Response&gt; | Promise对象，返回来自服务器的响应对象。 |
@@ -1263,7 +1337,7 @@ let downloadToStream: rcp.DownloadToStream = {
   stream: streamData
 }
 const defaultSession = rcp.getDefaultSession();
-defaultSession.downloadToStream("http://example.com/head", downloadToStream).then((response) => {
+defaultSession.downloadToStream('http://example.com/head', downloadToStream).then((response) => {
   console.info(`Succeeded in getting the response ${response}`);
 }).catch((err: BusinessError) => {
   console.error(`err: error code is ${err.code}, error data is ${err.data}`);
@@ -1272,9 +1346,10 @@ defaultSession.downloadToStream("http://example.com/head", downloadToStream).the
  
   
 
-#### uploadFromStream
+### uploadFromStream
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 uploadFromStream(url: URLOrString, uploadFrom: UploadFromStream): Promise&lt;Response&gt;
  
@@ -1290,6 +1365,7 @@ uploadFromStream(url: URLOrString, uploadFrom: UploadFromStream): Promise&lt;Res
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | URLOrString | 是 | HTTP UPLOADFROMSTREAM请求资源的URL。 |
@@ -1298,6 +1374,7 @@ uploadFromStream(url: URLOrString, uploadFrom: UploadFromStream): Promise&lt;Res
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Response&gt; | Promise对象，返回来自服务器的响应对象。 |
@@ -1317,7 +1394,7 @@ let uploadFromStream: rcp.UploadFromStream = {
   stream: object // 此处请自行定义类型为Stream、ReadStream、SyncReadStream的对象
 }
 const defaultSession = rcp.getDefaultSession();
-defaultSession.uploadFromStream("http://example.com/head", uploadFromStream).then((response) => {
+defaultSession.uploadFromStream('http://example.com/head', uploadFromStream).then((response) => {
   console.info(`Succeeded in getting the response ${response}`);
 }).catch((err: BusinessError) => {
   console.error(`err: error code is ${err.code}, error data is ${err.data}`);
@@ -1326,9 +1403,10 @@ defaultSession.uploadFromStream("http://example.com/head", uploadFromStream).the
  
   
 
-#### head
+### head
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 head(url: URLOrString): Promise&lt;Response&gt;
  
@@ -1344,6 +1422,7 @@ head(url: URLOrString): Promise&lt;Response&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | URLOrString | 是 | HTTP HEAD请求资源的URL。 |
@@ -1351,6 +1430,7 @@ head(url: URLOrString): Promise&lt;Response&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Response&gt; | Promise对象，返回来自服务器的响应对象。 |
@@ -1367,7 +1447,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { rcp } from '@kit.RemoteCommunicationKit';
 
 const defaultSession = rcp.getDefaultSession();
-defaultSession.head("http://example.com/head").then((response) => {
+defaultSession.head('http://example.com/head').then((response) => {
   console.info(`Succeeded in getting the response ${response}`);
 }).catch((err: BusinessError) => {
   console.error(`err: error code is ${err.code}, error data is ${err.data}`);
@@ -1376,9 +1456,10 @@ defaultSession.head("http://example.com/head").then((response) => {
  
   
 
-#### delete
+### delete
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 delete(url: URLOrString): Promise&lt;Response&gt;
  
@@ -1394,6 +1475,7 @@ delete(url: URLOrString): Promise&lt;Response&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | URLOrString | 是 | HTTP DELETE请求资源的URL。 |
@@ -1401,6 +1483,7 @@ delete(url: URLOrString): Promise&lt;Response&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Response&gt; | Promise对象，返回来自服务器的响应对象。 |
@@ -1417,7 +1500,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { rcp } from '@kit.RemoteCommunicationKit';
 
 const defaultSession = rcp.getDefaultSession();
-defaultSession.delete("http://example.com/delete").then((response) => {
+defaultSession.delete('http://example.com/delete').then((response) => {
   console.info(`Succeeded in getting the response ${response}`);
 }).catch((err: BusinessError) => {
   console.error(`err: error code is ${err.code}, error data is ${err.data}`);
@@ -1426,9 +1509,10 @@ defaultSession.delete("http://example.com/delete").then((response) => {
  
   
 
-#### cancel
+### cancel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancel(requestToCancel?: Request | Request[]): void
  
@@ -1442,6 +1526,7 @@ cancel(requestToCancel?: Request | Request[]): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | requestToCancel | Request \| Request[] | 否 | 待取消的请求或请求数组。在不指定Request情况下，默认取消所有请求。 |
@@ -1458,7 +1543,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { rcp } from '@kit.RemoteCommunicationKit';
 
 const defaultSession = rcp.getDefaultSession();
-let req = new rcp.Request("http://example.com/fetch", "GET");
+let req = new rcp.Request('http://example.com/fetch', 'GET');
 defaultSession.fetch(req).then((response) => {
   console.info(`Succeeded in getting the response ${response}`);
   defaultSession.cancel(req);
@@ -1469,9 +1554,10 @@ defaultSession.fetch(req).then((response) => {
  
   
 
-#### RequestHandler
+## RequestHandler
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 拦截器的请求处理器。
  
@@ -1483,9 +1569,10 @@ defaultSession.fetch(req).then((response) => {
  
   
 
-#### handle
+### handle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 handle(context: RequestContext): Promise&lt;Response&gt;
  
@@ -1501,6 +1588,7 @@ handle(context: RequestContext): Promise&lt;Response&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | RequestContext | 是 | 请求上下文。 |
@@ -1508,6 +1596,7 @@ handle(context: RequestContext): Promise&lt;Response&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Response&gt; | Promise对象，返回来自服务器的响应对象。 |
@@ -1519,9 +1608,10 @@ handle(context: RequestContext): Promise&lt;Response&gt;
  
   
 
-#### RequestContext
+## RequestContext
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 拦截器请求上下文。
  
@@ -1531,6 +1621,7 @@ handle(context: RequestContext): Promise&lt;Response&gt;
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | request | Request | 否 | 否 | HTTP请求。 |
@@ -1539,9 +1630,10 @@ handle(context: RequestContext): Promise&lt;Response&gt;
  
   
 
-#### Interceptor
+## Interceptor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 拦截器。
  
@@ -1553,9 +1645,10 @@ handle(context: RequestContext): Promise&lt;Response&gt;
  
   
 
-#### intercept
+### intercept
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 intercept(context: RequestContext, next: RequestHandler): Promise&lt;Response&gt;
  
@@ -1569,6 +1662,7 @@ intercept(context: RequestContext, next: RequestHandler): Promise&lt;Response&gt
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | RequestContext | 是 | 请求上下文。 |
@@ -1577,6 +1671,7 @@ intercept(context: RequestContext, next: RequestHandler): Promise&lt;Response&gt
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Response&gt; | Promise对象。此拦截器对下一个拦截器做拦截、修改、透传等操作后，返回此拦截器提供的Response对象。 |
@@ -1635,7 +1730,7 @@ function testInterceptor() {
     console.error(`Error: error code is ${err.code}, error data is ${err.data}`);
   });
 
-  let request = new rcp.Request("https://www.example.com", 'GET');
+  let request = new rcp.Request('https://www.example.com', 'GET');
   session.fetch(request).then((response: rcp.Response) => {
     console.info(`Succeeded in fetching the response. The statusCode of the response is ${response.statusCode}`);
   }).catch((err: BusinessError) => {
@@ -1646,9 +1741,10 @@ function testInterceptor() {
  
   
 
-#### SessionConfiguration
+## SessionConfiguration
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义会话的配置参数，为开发者提供了对HTTP会话各个方面的详细控制。
  
@@ -1658,11 +1754,12 @@ function testInterceptor() {
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | interceptors | Interceptor[] | 否 | 是 | 请求/响应拦截器。 起始版本： 5.0.0(12) |
 | requestConfiguration | Configuration | 否 | 是 | 指定与会话关联的HTTP请求的配置。包括transfer、proxy、DNS、connection和security configurations。 |
-| baseAddress | URLOrString | 否 | 是 | 设置会话中URL的基地址。这允许开发者为会话中的多个请求定义一个通用的基本URL。如果请求URL不是绝对URL，则把基地址预制在请求URL的前面。例如，"https://example.com?name=value"，"https://example.com"为基地址，"?name=value"为请求URL。 |
+| baseAddress | URLOrString | 否 | 是 | 设置会话中URL的基地址。这允许开发者为会话中的多个请求定义一个通用的基本URL。如果请求URL不是绝对URL，则把基地址预制在请求URL的前面。例如，'https://example.com?name=value'，'https://example.com'为基地址，'?name=value'为请求URL。 |
 | headers | RequestHeaders | 否 | 是 | 为Session发出的HTTP请求定义headers（可自定义）。开发者可以根据他们的需求定制的特定headers。 |
 | cookies | RequestCookies | 否 | 是 | 提供在与会话关联的HTTP请求中包含自定义cookie的方法。适用于需要将某些cookie附加到每个请求的场景。需要手动设置cookie，携带cookie为用户行为。 |
 | sessionListener | SessionListener | 否 | 是 | 允许开发者将侦听器附加到会话，接收会话取消或关闭等事件的通知，更好地处理应用程序中与会话相关的事件。 |
@@ -1691,18 +1788,18 @@ const sessionConfig: rcp.SessionConfiguration = {
       verbose: true
     }
   },
-  baseAddress: "http://api.example.com",
+  baseAddress: 'http://api.example.com',
   headers: {
-    "Authorization": "Bearer YOUR_ACCESS_TOKEN",
-    "Content-Type": "application/json"
+    'Authorization': 'Bearer YOUR_ACCESS_TOKEN',
+    'Content-Type': 'application/json'
   },
   cookies: {
-    "user": "john_doe",
-    "session_id": "abc123"
+    'user': 'john_doe',
+    'session_id': 'abc123'
   },
   sessionListener: {
-    onCanceled: () => console.info("Session was cancelled"),
-    onClosed: () => console.info("Session was closed")
+    onCanceled: () => console.info('Session was cancelled'),
+    onClosed: () => console.info('Session was closed')
   },
   cookieRepository: cookieRepository,
   // ...
@@ -1763,7 +1860,7 @@ function testInterceptor() {
     console.error(`Error: error code is ${err.code}, error data is ${err.data}`);
   });
 
-  let request = new rcp.Request("https://www.example.com", 'GET');
+  let request = new rcp.Request('https://www.example.com', 'GET');
   session.fetch(request).then((response: rcp.Response) => {
     console.info(`Succeeded in fetching the response. The statusCode of the response is ${response.statusCode}`);
   }).catch((err: BusinessError) => {
@@ -1774,9 +1871,10 @@ function testInterceptor() {
  
   
 
-#### Configuration
+## Configuration
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Configuration接口包含一组配置参数，开发者可以利用这些参数来微调会话中HTTP请求的行为。这包括传输、跟踪、代理、DNS和安全配置的设置。
  
@@ -1786,6 +1884,7 @@ Configuration接口包含一组配置参数，开发者可以利用这些参数�
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | transfer | TransferConfiguration | 否 | 是 | 配置与HTTP请求期间的数据传输相关的各个方面，例如自动重定向和超时设置。 |
@@ -1805,7 +1904,7 @@ import { rcp } from '@kit.RemoteCommunicationKit';
 const cache: rcp.ResponseCache = new rcp.ResponseCache({
   persistent: {
     kind: 'file-system',
-    pathToFolder: "/path/dir/" // 请根据自身业务指定缓存路径
+    pathToFolder: '/path/dir/' // 请根据自身业务指定缓存路径
   }
 });
 const requestConfig: rcp.Configuration = {
@@ -1816,31 +1915,31 @@ const requestConfig: rcp.Configuration = {
       transferMs: 10000
     },
     assumesHTTP3Capable: true,
-    pathPreference: "cellular"
+    pathPreference: 'cellular'
   },
   tracing: {
     verbose: true
   },
-  proxy: "system",
+  proxy: 'system',
   dns: {
     dnsRules: [
-      { host: "https://example.com", port: 443, ipAddresses: ["192.168.1.1", "192.168.1.2"] }
+      { host: 'https://example.com', port: 443, ipAddresses: ['192.168.1.1', '192.168.1.2'] }
     ]
   },
 
   security: {
     certificate: {
-      content: "-----BEGIN CERTIFICATE-----\n...",
-      type: "PEM",
-      key: "/path/dir/", // 请根据自身业务对key进行修改
-      keyPassword: "your-password"
+      content: '-----BEGIN CERTIFICATE-----\n...',
+      type: 'PEM',
+      key: '/path/dir/', // 请根据自身业务对key进行修改
+      keyPassword: 'your-password'
     },
     serverAuthentication: {
       credential: {
-        username: "your-username",
-        password: "your-password"
+        username: 'your-username',
+        password: 'your-password'
       },
-      authenticationType: "basic"
+      authenticationType: 'basic'
     }
   },
   cache: cache
@@ -1852,9 +1951,10 @@ const session = rcp.createSession({ requestConfiguration: requestConfig });
  
   
 
-#### ConnectionConfiguration
+## ConnectionConfiguration
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ConnectionConfiguration接口包含两个参数，开发者可以调整最大并发TCP的连接数也可以对单个主机或此次会话中的TCP最大连接数进行调整。
  
@@ -1864,16 +1964,17 @@ ConnectionConfiguration接口包含两个参数，开发者可以调整最大并
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| maxConnectionsPerHost | number | 是 | 是 | 单个主机允许的最大并发 TCP 连接数（主机与主机名+端口号对相同）。 取值范围：1~2147483647。 默认值：6。 |
-| maxTotalConnections | number | 是 | 是 | 此会话中允许的最大同时 TCP 连接总数。 取值范围：1~2147483647。 默认值为 64。 |
+| maxConnectionsPerHost | number | 是 | 是 | 单个主机允许的最大并发 TCP 连接数（主机与主机名+端口号对相同）。 取值范围：[1~2147483647]。 默认值：6。 |
+| maxTotalConnections | number | 是 | 是 | 此会话中允许的最大同时 TCP 连接总数。 取值范围：[1~2147483647]。 默认值为 64。 |
  
  
 **示例：**
  
 ```text
-import { rcp } from '@kit.RemoteCommunicationKit'
+import { rcp } from '@kit.RemoteCommunicationKit';
 
 const connectionConfig: rcp.ConnectionConfiguration = {
   maxConnectionsPerHost: 6,
@@ -1884,9 +1985,10 @@ const session = rcp.createSession({ connectionConfiguration: connectionConfig })
  
   
 
-#### TcpConfiguration
+## TcpConfiguration
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TcpConfiguration接口为开发者提供设置TCP选项的能力。
  
@@ -1898,12 +2000,13 @@ TcpConfiguration接口为开发者提供设置TCP选项的能力。
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| keepIdleSec | number | 否 | 是 | 该参数设置一个计时器，TCP连接将在计时器触发时发送探测报文。 单位：s。 取值范围：1~7200。 默认值：7200。 |
-| userTimeoutMs | number | 否 | 是 | 该参数设置一个超时时间。若传输的数据在超时时间内未收到服务器的确认报文，TCP连接将被断开。 单位：ms。 取值范围：1~3600000。 默认值：和Timeout.transferMs保持一致。 |
-| keepCnt | number | 否 | 是 | 该参数设置发送探测报文的次数。 单位：次。 取值范围：1~9。 默认值：9。 |
-| keepIntervalSec | number | 否 | 是 | 该参数设置每个探测报文之间的时间间隔。 单位：s。 取值范围：1~75。 默认值：75。 |
+| keepIdleSec | number | 否 | 是 | 该参数设置一个计时器，TCP连接将在计时器触发时发送探测报文。 单位：s。 取值范围：[1~7200]。 默认值：7200。 |
+| userTimeoutMs | number | 否 | 是 | 该参数设置一个超时时间。若传输的数据在超时时间内未收到服务器的确认报文，TCP连接将被断开。 单位：ms。 取值范围：[1~3600000]。 默认值：和Timeout.transferMs保持一致。 |
+| keepCnt | number | 否 | 是 | 该参数设置发送探测报文的次数。 单位：次。 取值范围：[1~9]。 默认值：9。 |
+| keepIntervalSec | number | 否 | 是 | 该参数设置每个探测报文之间的时间间隔。 单位：s。 取值范围：[1~75]。 默认值：75。 |
  
  
 **示例：**
@@ -1936,9 +2039,10 @@ request.configuration = {
  
   
 
-#### CookieRepository
+## CookieRepository
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cookie仓库。cookie仓库能够自动存储HTTP响应中的cookie，自动在HTTP请求中携带cookie，也支持手动管理仓库中的cookie。cookie仓库约每30秒将现有的cookie存储到本地，也可以使用[setCookies](#setcookies)主动将cookie存储到本地。使用cookie仓库的[Session](#session)实际上都会通过[DefaultSession](#defaultsession)处理请求。
  
@@ -1950,32 +2054,10 @@ cookie仓库。cookie仓库能够自动存储HTTP响应中的cookie，自动在H
  
   
 
-#### SessionPathPreference
+### create
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-type SessionPathPreference = 'auto' | 'cellular-if-could' | 'mptcp'
- 
-会话路径偏好设置。
- 
-**模型约束：** 此接口仅可在Stage模型下使用。
- 
-**系统能力：** SystemCapability.Collaboration.RemoteCommunication
- 
-**起始版本：** 26.0.0
-  
-| 类型 | 说明 |
-| --- | --- |
-| 'auto' | 表示没有配置会话路径偏好，系统自动选择路径。 |
-| 'cellular-if-could' | 表示蜂窝网络可用时，优先使用蜂窝网络。需要配置ohos.permission.GET_NETWORK_INFO才能生效。如何激活蜂窝网络，请参考网络连接管理文档。 |
-| 'mptcp' | 表示使用多路传输控制协议（MPTCP），请参考RFC 8684。 |
- 
- 
-  
-
-#### create
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static create(identifier?: string): CookieRepository
  
@@ -1989,6 +2071,7 @@ static create(identifier?: string): CookieRepository
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | identifier | string | 否 | cookie仓库标识。只能包含大写字母、小写字母和下划线。 传入undefined、null或空字符串时默认为'default'。 传入其他字符时抛出1007900401错误。 具有同样标识的cookie仓库共享cookie信息（即具有同样标识的cookie仓库实例使用起来如同同一个实例）。 |
@@ -1996,6 +2079,7 @@ static create(identifier?: string): CookieRepository
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | CookieRepository | cookie仓库实例。 |
@@ -2005,6 +2089,7 @@ static create(identifier?: string): CookieRepository
  
 错误码的详细介绍请参见[API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-remote-communication)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1007900401 | Parameter error. |
@@ -2024,9 +2109,10 @@ try {
  
   
 
-#### setCookies
+### setCookies
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCookies(cookies: ResponseCookie | ResponseCookie[]): Promise&lt;void&gt;
  
@@ -2040,6 +2126,7 @@ setCookies(cookies: ResponseCookie | ResponseCookie[]): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cookies | ResponseCookie \| ResponseCookie[] | 是 | 传入cookie仓库的cookie。cookie仓库里实际会存如下7项数据：domain、httpOnly、path、isSecure、expires、name和value。当两个cookie的name、domain、path三项完全相同时，视为同一个cookie。 path默认为'/'。 domain不设置或者设置为空字符串时抛出1007900401错误。 maxAge会转化为expires。maxAge和expires都设置时，使用maxAge。 expires应是符合RFC 7231协议，并且是GMT时间的字符串，精确到秒，例如：'Wed, 21 Oct 2025 07:28:00 GMT'。当expires字段传入无效字符串时抛出1007900401错误。 系统会不定期清除expires过期的cookie。传入空数组时，仅将cookie仓库中现有的cookie存储到本地。 |
@@ -2047,6 +2134,7 @@ setCookies(cookies: ResponseCookie | ResponseCookie[]): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -2056,6 +2144,7 @@ setCookies(cookies: ResponseCookie | ResponseCookie[]): Promise&lt;void&gt;
  
 错误码的详细介绍请参见[API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-remote-communication)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1007900401 | Parameter error. |
@@ -2085,9 +2174,10 @@ cookieRepository.setCookies(cookie).then(() => {
  
   
 
-#### getAllCookies
+### getAllCookies
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllCookies(): Promise<ResponseCookie[]>
  
@@ -2101,6 +2191,7 @@ getAllCookies(): Promise<ResponseCookie[]>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<ResponseCookie[]> | Promise对象，返回ResponseCookie列表。 |
@@ -2110,6 +2201,7 @@ getAllCookies(): Promise<ResponseCookie[]>
  
 错误码的详细介绍请参见[API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-remote-communication)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1007900999 | Internal Error. |
@@ -2131,9 +2223,10 @@ cookieRepository.getAllCookies().then((cookies) => {
  
   
 
-#### getCookiesByUrl
+### getCookiesByUrl
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCookiesByUrl(url: URL): Promise<ResponseCookie[]>
  
@@ -2147,6 +2240,7 @@ getCookiesByUrl(url: URL): Promise<ResponseCookie[]>
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | URL | 是 | HTTP请求的url，用于匹配cookie。匹配规则符合RFC 6265协议。 |
@@ -2154,6 +2248,7 @@ getCookiesByUrl(url: URL): Promise<ResponseCookie[]>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<ResponseCookie[]> | Promise对象，返回匹配url的cookie列表。 |
@@ -2163,6 +2258,7 @@ getCookiesByUrl(url: URL): Promise<ResponseCookie[]>
  
 错误码的详细介绍请参见[API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-remote-communication)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1007900999 | Internal Error. |
@@ -2185,9 +2281,10 @@ cookieRepository.getCookiesByUrl(url.URL.parseURL('https://www.example.com')).th
  
   
 
-#### deleteCookies
+### deleteCookies
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteCookies(cookies?: ResponseCookie | ResponseCookie[]): Promise&lt;void&gt;
  
@@ -2201,6 +2298,7 @@ deleteCookies(cookies?: ResponseCookie | ResponseCookie[]): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cookies | ResponseCookie \| ResponseCookie[] | 否 | 需要删除的cookie。cookie的匹配规则和抛出错误的规则参考setCookies。 |
@@ -2208,6 +2306,7 @@ deleteCookies(cookies?: ResponseCookie | ResponseCookie[]): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -2217,6 +2316,7 @@ deleteCookies(cookies?: ResponseCookie | ResponseCookie[]): Promise&lt;void&gt;
  
 错误码的详细介绍请参见[API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-remote-communication)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1007900401 | Parameter error. |
@@ -2246,9 +2346,10 @@ cookieRepository.deleteCookies(cookie).then(() => {
  
   
 
-#### deleteCookiesByUrl
+### deleteCookiesByUrl
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteCookiesByUrl(url: URL): Promise&lt;void&gt;
  
@@ -2262,6 +2363,7 @@ deleteCookiesByUrl(url: URL): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | URL | 是 | HTTP请求的url，用于匹配cookie。匹配规则符合RFC 6265协议。 |
@@ -2269,6 +2371,7 @@ deleteCookiesByUrl(url: URL): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -2278,6 +2381,7 @@ deleteCookiesByUrl(url: URL): Promise&lt;void&gt;
  
 错误码的详细介绍请参见[API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-remote-communication)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1007900999 | Internal Error. |
@@ -2300,9 +2404,10 @@ cookieRepository.deleteCookiesByUrl(url.URL.parseURL('https://www.example.com'))
  
   
 
-#### identifier
+### identifier
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get identifier(): string
  
@@ -2316,6 +2421,7 @@ get identifier(): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 返回cookies仓库标识。 |
@@ -2333,9 +2439,35 @@ console.info(`identifier is: ${identifier}`);
  
   
 
-#### TransferConfiguration
+## SessionPathPreference
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+type SessionPathPreference = 'auto' | 'cellular-if-could' | 'mptcp'
+ 
+会话路径偏好设置。
+ 
+**模型约束：** 此接口仅可在Stage模型下使用。
+ 
+**系统能力：** SystemCapability.Collaboration.RemoteCommunication
+ 
+**起始版本：** 26.0.0
+  
+
+| 类型 | 说明 |
+| --- | --- |
+| 'auto' | 表示没有配置会话路径偏好，系统自动选择路径。 |
+| 'cellular-if-could' | 表示蜂窝网络可用时，优先使用蜂窝网络。需要配置ohos.permission.GET_NETWORK_INFO才能生效。如何激活蜂窝网络，请参考网络连接管理文档。 |
+| 'mptcp' | 表示使用多路传输控制协议（MPTCP），请参考RFC 8684。 |
+ 
+ 
+  
+
+## TransferConfiguration
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TransferConfiguration接口为开发者提供了一组选项，用于调整会话中HTTP请求期间的数据传输行为。这包括与自动重定向和超时配置相关的设置。
  
@@ -2345,10 +2477,11 @@ TransferConfiguration接口为开发者提供了一组选项，用于调整会�
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | autoRedirect | boolean | 否 | 是 | HTTP请求是否开启自动重定向。true表示开启自动重定向，false表示不开启自动重定向。默认值为true。 |
-| maxAutoRedirects | number | 否 | 是 | 最大重定向次数，在autoRedirect为true时生效。 取值范围：1~2147483647。 默认值为50。 起始版本： 5.0.0(12) |
+| maxAutoRedirects | number | 否 | 是 | 最大重定向次数，在autoRedirect为true时生效。 取值范围：[1~2147483647]。 默认值为50。 起始版本： 5.0.0(12) |
 | timeout | Timeout | 否 | 是 | 配置HTTP请求的超时值，允许开发者定义连接和传输数据所允许的最长时间。如果未设置，则使用默认时间。 |
 | assumesHTTP3Capable | boolean | 否 | 是 | 指定本次请求是否尝试升级为HTTP/3版本。true表示尝试升级，系统会根据客户端/服务端平台能力、网络质量等因素决定此次请求是否升级为HTTP/3版本，false表示不升级。默认为false。如需指定HTTP版本，请使用httpVersionSelectCallback。 |
 | pathPreference | PathPreference | 否 | 是 | HTTP请求路径首选项，此处配置的为建议路径，在实际使用过程中，设备的系统会决定使用哪个路径。可以是'auto'或'cellular'路径。默认为'auto'路径。 |
@@ -2372,8 +2505,8 @@ const transferConfig: rcp.TransferConfiguration = {
     transferMs: 10000
   },
   assumesHTTP3Capable: true,
-  pathPreference: "cellular",
-  connectionReusePolicy: "balanced",
+  pathPreference: 'cellular',
+  connectionReusePolicy: 'balanced',
   httpVersionSelectCallback: (url: rcp.URL): rcp.HttpVersion => {
     return '2';
   },
@@ -2385,9 +2518,10 @@ const session = rcp.createSession({ requestConfiguration: { transfer: transferCo
  
   
 
-#### TracingConfiguration
+## TracingConfiguration
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TracingConfiguration接口使开发者能够在会话中的HTTP请求期间捕获详细的跟踪信息。跟踪有助于调试、性能分析和深入了解通信过程中的数据流。
  
@@ -2397,6 +2531,7 @@ TracingConfiguration接口使开发者能够在会话中的HTTP请求期间捕�
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | verbose | boolean | 否 | 是 | 启用详细跟踪，捕获有关HTTP请求/响应流的大量信息。默认值为false，true表示开启捕获，false表示不开启。 |
@@ -2432,11 +2567,11 @@ const customHttpEventsHandler: rcp.HttpEventsHandler = {
   },
   onDataEnd: () => {
     // 用于处理数据传输完成的自定义逻辑。
-    console.info("Data transfer complete");
+    console.info('Data transfer complete');
   },
   onCanceled: () => {
     // 处理取消操作的自定义逻辑
-    console.info("Request/response canceled");
+    console.info('Request/response canceled');
   },
   onStatusCodeReceive: (statusCode: number, request?: rcp.Request) => {
     // 用于处理 statusCode 的自定义逻辑。
@@ -2467,9 +2602,10 @@ console.info(`session id: ${session.id}`);
  
   
 
-#### ProxyConfiguration
+## ProxyConfiguration
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ProxyConfiguration = 'system' | 'no-proxy' | WebProxy
  
@@ -2481,6 +2617,7 @@ ProxyConfiguration接口允许开发者为会话中的HTTP请求配置代理设�
  
 **起始版本：** 4.1.0(11)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | 'system' | HTTP代理配置。'system'：表示使用系统代理配置。 |
@@ -2494,32 +2631,32 @@ ProxyConfiguration接口允许开发者为会话中的HTTP请求配置代理设�
 import { rcp } from '@kit.RemoteCommunicationKit';
 
 // 配置系统代理（默认）
-const systemProxyConfig = "system";
+const systemProxyConfig = 'system';
 
 // 配置自定义代理
 const customProxyConfig: rcp.WebProxy = {
-  url: "http://custom-proxy.example.com",
-  createTunnel: "always",
-  exclusions: ["http://exclude.example.com"],
+  url: 'http://custom-proxy.example.com',
+  createTunnel: 'always',
+  exclusions: ['http://exclude.example.com'],
   security: {
     certificate: {
-      content: "-----BEGIN CERTIFICATE-----\n...",
-      type: "PEM",
-      key: "-----BEGIN PRIVATE KEY-----\n...", // 请根据实际业务选择合适的key
-      keyPassword: "your-password"
+      content: '-----BEGIN CERTIFICATE-----\n...',
+      type: 'PEM',
+      key: '-----BEGIN PRIVATE KEY-----\n...', // 请根据实际业务选择合适的key
+      keyPassword: 'your-password'
     },
     serverAuthentication: {
       credential: {
-        username: "proxy-username",
-        password: "proxy-password"
+        username: 'proxy-username',
+        password: 'proxy-password'
       },
-      authenticationType: "basic"
+      authenticationType: 'basic'
     }
   }
 };
 
 // 配置无代理模式
-const noProxyConfig = "no-proxy";
+const noProxyConfig = 'no-proxy';
 
 // 在会话创建中使用代理配置。
 const sessionWithSystemProxy = rcp.createSession({ requestConfiguration: { proxy: systemProxyConfig } });
@@ -2534,9 +2671,10 @@ console.info(`sessionWithNoProxy id: ${sessionWithNoProxy.id}`);
  
   
 
-#### DnsConfiguration
+## DnsConfiguration
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 允许开发者为会话中的HTTP请求配置域名系统（DNS）设置。它提供了指定DNS规则的灵活性，包括自定义DNS服务器或静态DNS规则。
  
@@ -2546,6 +2684,7 @@ console.info(`sessionWithNoProxy id: ${sessionWithNoProxy.id}`);
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | dnsRules | DnsServers \| StaticDnsRules \| DynamicDnsRule | 否 | 是 | 配置DNS规则，默认值为undefined。 DnsServers：表示优先使用指定的DNS服务器解析主机名。 StaticDnsRules：静态DNS规则，表示如果hostname匹配，则优先使用指定的地址。 DynamicDnsRule：动态DNS规则，表示优先使用函数中返回的地址。 说明： 针对同一域名配置多个静态或者动态DNS规则后，默认情况下，仅有最后一个IP地址生效。如果希望多个IP地址同时生效，在6.0.0(20)版本后，支持同一域名配置多个静态或者动态DNS规则，此时将happyEyeballOnDnsRule设置为true可以让多个IP地址同时生效。 |
@@ -2560,19 +2699,19 @@ import { rcp } from '@kit.RemoteCommunicationKit';
 
 // 配置自定义DNS服务器，下面IP地址仅作为示意。
 const customDnsServers: rcp.DnsServers = [
-  { ip: "192.168.1.1" },
-  { ip: "192.168.1.2", port: 53 }
+  { ip: '192.168.1.1' },
+  { ip: '192.168.1.2', port: 53 }
 ];
 
 // 配置静态DNS规则，下面IP地址仅作为示意。
 const staticDnsRules: rcp.StaticDnsRules = [
-  { host: "example.com", port: 80, ipAddresses: ["192.168.1.1", "192.168.1.2"] },
-  { host: "sub.example.com", port: 443, ipAddresses: ["192.168.2.1"] }
+  { host: 'example.com', port: 80, ipAddresses: ['192.168.1.1', '192.168.1.2'] },
+  { host: 'sub.example.com', port: 443, ipAddresses: ['192.168.2.1'] }
 ];
 
 // 配置通过 HTTPS 的 DNS
 const dohConfig: rcp.DnsOverHttpsConfiguration = {
-  url: "https://dns.example.com/dns-query",
+  url: 'https://dns.example.com/dns-query',
   skipCertificatesValidation: true
 };
 
@@ -2611,9 +2750,10 @@ request.configuration = {
  
   
 
-#### DnsOverHttpsConfiguration
+## DnsOverHttpsConfiguration
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 允许开发者配置HTTPS上的DNS（DOH）设置，从而通过HTTPS端点实现安全的DNS解析。
  
@@ -2623,6 +2763,7 @@ request.configuration = {
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | url | URLOrString | 否 | 否 | DOH端点的URL或字符串表示形式。 |
@@ -2636,7 +2777,7 @@ import { rcp } from '@kit.RemoteCommunicationKit';
 
 // 配置 DNS over HTTPS 设置
 const dohConfig: rcp.DnsOverHttpsConfiguration = {
-  url: "https://dns.example.com/dns-query",
+  url: 'https://dns.example.com/dns-query',
   skipCertificatesValidation: true
 };
 
@@ -2646,9 +2787,10 @@ const sessionWithDoh = rcp.createSession({ requestConfiguration: { dns: { dnsOve
  
   
 
-#### SecurityConfiguration
+## SecurityConfiguration
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 SecurityConfiguration接口允许开发者在会话中配置与安全相关的设置，包括证书和服务器身份验证。
  
@@ -2658,6 +2800,7 @@ SecurityConfiguration接口允许开发者在会话中配置与安全相关的�
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | remoteValidation | 'system' \| 'skip' \| CertificateAuthority \| ValidationCallback | 否 | 是 | 证书颁发机构（CA），用于验证远程服务器的身份。默认值为'system'。 如果未设置此字段，系统CA将被用于验证远程服务器的标识。 'system'：表示使用系统CA配置。 'skip'：跳过验证。 CertificateAuthority：证书颁发机构（CA）验证。 ValidationCallback：自定义证书校验。 说明： 从5.0.0(12)版本开始，新增支持ValidationCallback类型。 |
@@ -2679,19 +2822,19 @@ import { rcp } from '@kit.RemoteCommunicationKit';
 
 // 配置安全设置
 const securityConfig: rcp.SecurityConfiguration = {
-  remoteValidation: "system",
+  remoteValidation: 'system',
   certificate: {
-    content: "-----BEGIN CERTIFICATE-----\n...",
-    type: "PEM",
-    key: "-----BEGIN PRIVATE KEY-----\n...", // 请根据自身业务选择合适的key
-    keyPassword: "your-password"
+    content: '-----BEGIN CERTIFICATE-----\n...',
+    type: 'PEM',
+    key: '-----BEGIN PRIVATE KEY-----\n...', // 请根据自身业务选择合适的key
+    keyPassword: 'your-password'
   },
   serverAuthentication: {
     credential: {
-      username: "exampleUser",
-      password: "examplePassword"
+      username: 'exampleUser',
+      password: 'examplePassword'
     },
-    authenticationType: "basic"
+    authenticationType: 'basic'
   },
   tlsOptions: {
     tlsVersion: 'TlsV1.3',
@@ -2705,9 +2848,10 @@ const sessionWithSecurityConfig = rcp.createSession({ requestConfiguration: { se
  
   
 
-#### CertificateAuthority
+## CertificateAuthority
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 证书颁发机构（CA）用于验证远程服务器的身份。
  
@@ -2717,6 +2861,7 @@ const sessionWithSecurityConfig = rcp.createSession({ requestConfiguration: { se
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | content | string \| ArrayBuffer | 否 | 是 | 用于验证对等方的证书颁发机构证书捆绑包。内容应为PEM格式。 |
@@ -2726,9 +2871,10 @@ const sessionWithSecurityConfig = rcp.createSession({ requestConfiguration: { se
  
   
 
-#### ClientCertificate
+## ClientCertificate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 客户端证书。
  
@@ -2738,6 +2884,7 @@ const sessionWithSecurityConfig = rcp.createSession({ requestConfiguration: { se
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | content | string \| ArrayBuffer | 否 | 是 | 证书颁发机构（CA）证书的内容。它可以作为字符串或ArrayBuffer提供。 |
@@ -2749,9 +2896,10 @@ const sessionWithSecurityConfig = rcp.createSession({ requestConfiguration: { se
  
   
 
-#### ServerAuthentication
+## ServerAuthentication
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 HTTP服务器身份验证。
  
@@ -2761,6 +2909,7 @@ HTTP服务器身份验证。
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | credential | Credential | 否 | 否 | 服务器的凭证。默认值为undefined。 |
@@ -2769,9 +2918,10 @@ HTTP服务器身份验证。
  
   
 
-#### TlsVersionRangeOptions
+## TlsVersionRangeOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TLS版本可用范围配置属性，开发者能够设置安全相关TLS版本的上限和下限，并指定该范围内加密套件列表。如果最小版本大于最大版本，发起请求时抛出[401](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal#section401-参数检查失败)错误。
  
@@ -2781,6 +2931,7 @@ TLS版本可用范围配置属性，开发者能够设置安全相关TLS版本�
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | min | TlsVersion | 否 | 是 | TLS可用最小版本，默认不设置，由系统选择。 |
@@ -2790,9 +2941,10 @@ TLS版本可用范围配置属性，开发者能够设置安全相关TLS版本�
  
   
 
-#### OnAuthenticationChallenge
+## OnAuthenticationChallenge
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnAuthenticationChallenge = (info: AuthenticationChallengeInfo[], response: Response, challengeCount: number) => ServerAuthentication | null
  
@@ -2806,6 +2958,7 @@ type OnAuthenticationChallenge = (info: AuthenticationChallengeInfo[], response:
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | info | AuthenticationChallengeInfo[] | 是 | 认证挑战参数。系统解析响应头中的WWW-Authenticate信息，并将信息转化为键值对。 |
@@ -2815,6 +2968,7 @@ type OnAuthenticationChallenge = (info: AuthenticationChallengeInfo[], response:
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ServerAuthentication \| null | 返回类型为HTTP服务器的身份验证信息或null。若返回验证信息，系统将使用用户提供的信息进行认证挑战；若返回null，则放弃认证挑战。 |
@@ -2822,9 +2976,10 @@ type OnAuthenticationChallenge = (info: AuthenticationChallengeInfo[], response:
  
   
 
-#### SecurityLayerType
+## SecurityLayerType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type SecurityLayerType = 'ssl-tls' | 'tlcp'
  
@@ -2836,6 +2991,7 @@ type SecurityLayerType = 'ssl-tls' | 'tlcp'
  
 **起始版本：** 26.0.0
   
+
 | 类型 | 说明 |
 | --- | --- |
 | 'ssl-tls' | 表示安全层使用TLS协议。 |
@@ -2844,9 +3000,10 @@ type SecurityLayerType = 'ssl-tls' | 'tlcp'
  
   
 
-#### CertificateDecompress
+## CertificateDecompress
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type CertificateDecompress = 'zlib' | 'brotli'
  
@@ -2858,6 +3015,7 @@ type CertificateDecompress = 'zlib' | 'brotli'
  
 **起始版本：** 26.0.0
   
+
 | 类型 | 说明 |
 | --- | --- |
 | 'zlib' | 表示使用zlib算法解压缩。 |
@@ -2866,9 +3024,10 @@ type CertificateDecompress = 'zlib' | 'brotli'
  
   
 
-#### AuthenticationChallengeInfo
+## AuthenticationChallengeInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AuthenticationChallengeInfo = Record<string, string>
  
@@ -2880,6 +3039,7 @@ type AuthenticationChallengeInfo = Record<string, string>
  
 **起始版本：** 6.1.0(23)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Record<string, string> | 从WWW-Authenticate中解析到的认证挑战信息，常见的键包括'type'、'realm'等。 |
@@ -2887,9 +3047,10 @@ type AuthenticationChallengeInfo = Record<string, string>
  
   
 
-#### Request
+## Request
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 HTTP请求。
  
@@ -2899,6 +3060,7 @@ HTTP请求。
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | id | string | 是 | 否 | 请求对象的唯一标识符。由系统生成。 |
@@ -2916,9 +3078,10 @@ HTTP请求。
  
   
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(url: URLOrString, method?: HttpMethod, headers?: RequestHeaders, content?: RequestContent, cookies?: RequestCookies, transferRange?: TransferRange | TransferRange[], configuration?: Configuration)
  
@@ -2932,6 +3095,7 @@ constructor(url: URLOrString, method?: HttpMethod, headers?: RequestHeaders, con
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | URLOrString | 是 | 请求的地址类型，在构造函数中，参数可以是 URLOrString，但 URL 只是 URL，字符串需要转换为URL。 |
@@ -2949,9 +3113,9 @@ constructor(url: URLOrString, method?: HttpMethod, headers?: RequestHeaders, con
 import { rcp } from '@kit.RemoteCommunicationKit';
 
 let headers: rcp.RequestHeaders = {
-  "accept": "application/json"
+  'accept': 'application/json'
 };
-let content = "data to send";
+let content = 'data to send';
 let configuration: rcp.Configuration = {
   transfer: {
     timeout: { connectMs: 60000, transferMs: 60000 }
@@ -2959,14 +3123,15 @@ let configuration: rcp.Configuration = {
 };
 let cookies: rcp.RequestCookies = { 'name1': 'value1', 'name2': 'value2' };
 let transferRange: rcp.TransferRange = { from: 100, to: 200 };
-let req = new rcp.Request("http://example.com", "POST", headers, content, cookies, transferRange, configuration);
+let req = new rcp.Request('http://example.com', 'POST', headers, content, cookies, transferRange, configuration);
 ```
  
   
 
-#### URL
+## URL
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type URL = url.URL
  
@@ -2978,6 +3143,7 @@ type URL = url.URL
  
 **起始版本：** 4.1.0(11)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | url.URL | 表示值的类型为@ohos.url.URL，请求的地址类型，可取任意值。 |
@@ -2985,9 +3151,10 @@ type URL = url.URL
  
   
 
-#### X509Cert
+## X509Cert
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type X509Cert = cert.X509Cert
  
@@ -2999,6 +3166,7 @@ type X509Cert = cert.X509Cert
  
 **起始版本：** 5.0.0(12)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | cert.X509Cert | 表示值的类型为@ohos.security.cert.X509Cert，可取任意值。 |
@@ -3006,9 +3174,10 @@ type X509Cert = cert.X509Cert
  
   
 
-#### File
+## File
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type File = fs.File
  
@@ -3020,6 +3189,7 @@ type File = fs.File
  
 **起始版本：** 5.0.0(12)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | fs.File | 表示值的类型为@ohos.file.fs.File，可取任意值。 |
@@ -3027,9 +3197,10 @@ type File = fs.File
  
   
 
-#### RandomAccessFile
+## RandomAccessFile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type RandomAccessFile = fs.RandomAccessFile
  
@@ -3041,6 +3212,7 @@ type RandomAccessFile = fs.RandomAccessFile
  
 **起始版本：** 5.0.0(12)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | fs.RandomAccessFile | 表示值的类型为@ohos.file.fs.RandomAccessFile，可取任意值。 |
@@ -3048,9 +3220,10 @@ type RandomAccessFile = fs.RandomAccessFile
  
   
 
-#### Stream
+## Stream
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Stream = fs.Stream
  
@@ -3062,6 +3235,7 @@ type Stream = fs.Stream
  
 **起始版本：** 5.0.0(12)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | fs.Stream | 表示值的类型为@ohos.file.fs.Stream，可取任意值。 |
@@ -3069,9 +3243,10 @@ type Stream = fs.Stream
  
   
 
-#### RawDataContent
+## RawDataContent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type RawDataContent = string | ArrayBuffer | object
  
@@ -3083,6 +3258,7 @@ ArkTs的基本类型数据。
  
 **起始版本：** 5.0.0(12)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 表示数据以文本字符串的形式存在，可取任意值。 |
@@ -3092,9 +3268,10 @@ ArkTs的基本类型数据。
  
   
 
-#### FileDescriptor
+## FileDescriptor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type FileDescriptor = number
  
@@ -3106,6 +3283,7 @@ type FileDescriptor = number
  
 **起始版本：** 5.0.0(12)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 表示值的类型为number，可取任意值。 |
@@ -3113,9 +3291,10 @@ type FileDescriptor = number
  
   
 
-#### LocalFile
+## LocalFile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type LocalFile = FileDescriptor | File | RandomAccessFile
  
@@ -3127,6 +3306,7 @@ type LocalFile = FileDescriptor | File | RandomAccessFile
  
 **起始版本：** 5.0.0(12)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FileDescriptor | 表示文件的描述符。文件描述符是一个整数，用于标识一个打开的文件。 |
@@ -3136,9 +3316,10 @@ type LocalFile = FileDescriptor | File | RandomAccessFile
  
   
 
-#### WriteFile
+## WriteFile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供向文件写入数据的函数。
  
@@ -3150,9 +3331,10 @@ type LocalFile = FileDescriptor | File | RandomAccessFile
  
   
 
-#### write
+### write
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 write(buffer: ArrayBuffer): Promise<void | number>
  
@@ -3166,6 +3348,7 @@ write(buffer: ArrayBuffer): Promise<void | number>
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | buffer | ArrayBuffer | 是 | 向文件中写入的数据。 |
@@ -3173,6 +3356,7 @@ write(buffer: ArrayBuffer): Promise<void | number>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<void \| number> | Promise对象。无返回结果，或者返回写入的字节数。 |
@@ -3180,9 +3364,10 @@ write(buffer: ArrayBuffer): Promise<void | number>
  
   
 
-#### ReadFile
+## ReadFile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供从文件中读取数据的函数。
  
@@ -3194,9 +3379,10 @@ write(buffer: ArrayBuffer): Promise<void | number>
  
   
 
-#### read
+### read
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 read(buffer: ArrayBuffer): Promise&lt;number&gt;
  
@@ -3210,6 +3396,7 @@ read(buffer: ArrayBuffer): Promise&lt;number&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | buffer | ArrayBuffer | 是 | 需要读取数据的文件。 |
@@ -3217,6 +3404,7 @@ read(buffer: ArrayBuffer): Promise&lt;number&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | 使用Promise异步回调，返回读取的字节数。 |
@@ -3224,9 +3412,10 @@ read(buffer: ArrayBuffer): Promise&lt;number&gt;
  
   
 
-#### WriteStream
+## WriteStream
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供将数据写入流中的函数。
  
@@ -3238,9 +3427,10 @@ read(buffer: ArrayBuffer): Promise&lt;number&gt;
  
   
 
-#### write
+### write
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 write(buffer: ArrayBuffer): Promise<void | number>
  
@@ -3254,6 +3444,7 @@ write(buffer: ArrayBuffer): Promise<void | number>
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | buffer | ArrayBuffer | 是 | 缓冲区，用于存储读取到的数据。 |
@@ -3261,6 +3452,7 @@ write(buffer: ArrayBuffer): Promise<void | number>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<void \| number> | Promise对象。无返回结果，或者返回写入的字节数。 |
@@ -3268,9 +3460,10 @@ write(buffer: ArrayBuffer): Promise<void | number>
  
   
 
-#### SyncWriteStream
+## SyncWriteStream
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供同步将数据写入流中的函数。
  
@@ -3282,9 +3475,10 @@ write(buffer: ArrayBuffer): Promise<void | number>
  
   
 
-#### writeSync
+### writeSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeSync(buffer: ArrayBuffer): void | number
  
@@ -3298,6 +3492,7 @@ writeSync(buffer: ArrayBuffer): void | number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | buffer | ArrayBuffer | 是 | 缓冲区，用于存储读取到的数据。 |
@@ -3305,6 +3500,7 @@ writeSync(buffer: ArrayBuffer): void | number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | void \| number | 无返回值；或者返回写入的字节数。 |
@@ -3312,9 +3508,10 @@ writeSync(buffer: ArrayBuffer): void | number
  
   
 
-#### ReadStream
+## ReadStream
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供从流中读取数据的函数。
  
@@ -3326,9 +3523,10 @@ writeSync(buffer: ArrayBuffer): void | number
  
   
 
-#### read
+### read
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 read(buffer: ArrayBuffer): Promise&lt;number&gt;
  
@@ -3342,6 +3540,7 @@ read(buffer: ArrayBuffer): Promise&lt;number&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | buffer | ArrayBuffer | 是 | 缓冲区，用于存储读取到的数据。 |
@@ -3349,6 +3548,7 @@ read(buffer: ArrayBuffer): Promise&lt;number&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | 使用Promise异步回调，返回读取的字节数。 |
@@ -3356,9 +3556,10 @@ read(buffer: ArrayBuffer): Promise&lt;number&gt;
  
   
 
-#### SyncReadStream
+## SyncReadStream
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供同步从流中读取数据的函数。
  
@@ -3370,9 +3571,10 @@ read(buffer: ArrayBuffer): Promise&lt;number&gt;
  
   
 
-#### readSync
+### readSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readSync(buffer: ArrayBuffer): number
  
@@ -3386,6 +3588,7 @@ readSync(buffer: ArrayBuffer): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | buffer | ArrayBuffer | 是 | 缓冲区，用于存储读取到的数据。 |
@@ -3393,6 +3596,7 @@ readSync(buffer: ArrayBuffer): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回读取的字节数。 |
@@ -3400,9 +3604,10 @@ readSync(buffer: ArrayBuffer): number
  
   
 
-#### DownloadedTo
+## DownloadedTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用户在发起请求时通过[DownloadToFile](#downloadtofile)指定的路径。
  
@@ -3412,6 +3617,7 @@ readSync(buffer: ArrayBuffer): number
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | path | Path | 否 | 否 | 如果请求目标（Request.destination）是下载到文件时，path表示文件保存的路径。 |
@@ -3420,9 +3626,10 @@ readSync(buffer: ArrayBuffer): number
  
   
 
-#### TargetFile
+## TargetFile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 下载后的数据存放在本地设备的指定目录中，通常是下载文件夹或指定的默认存储位置。
  
@@ -3432,6 +3639,7 @@ readSync(buffer: ArrayBuffer): number
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | path | Path | 否 | 否 | 指定的数据下载路径。 |
@@ -3440,9 +3648,10 @@ readSync(buffer: ArrayBuffer): number
  
   
 
-#### TargetFileCallback
+## TargetFileCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type TargetFileCallback = (request: Request, suggestedPath: Path) => TargetFile | Promise&lt;TargetFile&gt;
  
@@ -3456,6 +3665,7 @@ type TargetFileCallback = (request: Request, suggestedPath: Path) => TargetFile 
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | Request | 是 | 表示入参的类型为一个HTTP请求。 |
@@ -3464,6 +3674,7 @@ type TargetFileCallback = (request: Request, suggestedPath: Path) => TargetFile 
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | TargetFile \| Promise&lt;TargetFile&gt; | 回调函数，返回TargetFile对象；或者Promise对象，返回TargetFile对象，表示下载数据的存放位置。 |
@@ -3471,9 +3682,10 @@ type TargetFileCallback = (request: Request, suggestedPath: Path) => TargetFile 
  
   
 
-#### IncomingDataCallback
+## IncomingDataCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type IncomingDataCallback = (incomingData: ArrayBuffer) => void | Promise&lt;void&gt;
  
@@ -3487,6 +3699,7 @@ type IncomingDataCallback = (incomingData: ArrayBuffer) => void | Promise&lt;voi
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | incomingData | ArrayBuffer | 是 | 表示需要处理的ArrayBuffer类型数据。 |
@@ -3494,6 +3707,7 @@ type IncomingDataCallback = (incomingData: ArrayBuffer) => void | Promise&lt;voi
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | void \| Promise&lt;void&gt; | 回调函数，无返回值； 或者Promise对象，无返回结果。 |
@@ -3501,9 +3715,10 @@ type IncomingDataCallback = (incomingData: ArrayBuffer) => void | Promise&lt;voi
  
   
 
-#### UploadFromFile
+## UploadFromFile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 UploadFromFile表示一种文件上传的方式，允许客户端将本地计算机上的文件上传到服务器。
  
@@ -3513,6 +3728,7 @@ UploadFromFile表示一种文件上传的方式，允许客户端将本地计算
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | fileOrPath | Path \| LocalFile \| ReadFile | 是 | 否 | 表示需要上传的文件或者上传文件的路径，参考应用文件。 |
@@ -3520,9 +3736,10 @@ UploadFromFile表示一种文件上传的方式，允许客户端将本地计算
  
   
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(fileOrPath: Path | LocalFile | ReadFile)
  
@@ -3536,6 +3753,7 @@ constructor(fileOrPath: Path | LocalFile | ReadFile)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fileOrPath | Path \| LocalFile \| ReadFile | 是 | 表示需要上传的文件或者上传文件的路径，参考应用文件。 |
@@ -3543,9 +3761,10 @@ constructor(fileOrPath: Path | LocalFile | ReadFile)
  
   
 
-#### UploadFromStream
+## UploadFromStream
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 UploadFromStream表示以流的形式进行上传操作。
  
@@ -3555,6 +3774,7 @@ UploadFromStream表示以流的形式进行上传操作。
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | stream | Stream \| ReadStream \| SyncReadStream | 是 | 否 | 表示需要上传的流。 |
@@ -3562,9 +3782,10 @@ UploadFromStream表示以流的形式进行上传操作。
  
   
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(stream: Stream | ReadStream | SyncReadStream)
  
@@ -3578,6 +3799,7 @@ constructor(stream: Stream | ReadStream | SyncReadStream)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | stream | Stream \| ReadStream \| SyncReadStream | 是 | 表示需要上传的流。 |
@@ -3585,9 +3807,10 @@ constructor(stream: Stream | ReadStream | SyncReadStream)
  
   
 
-#### DownloadToFile
+## DownloadToFile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type DownloadToFile = { kind: 'file'; file: TargetFileCallback; } | { kind: 'file'; file: Path; keepLocal?: boolean; } | { kind: 'file'; file: LocalFile | WriteFile; } | { kind: 'folder'; path: Path; keepLocal?: boolean; }
  
@@ -3601,6 +3824,7 @@ type DownloadToFile = { kind: 'file'; file: TargetFileCallback; } | { kind: 'fil
  
 **起始版本：** 5.0.0(12)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | { kind: 'file'; file: TargetFileCallback; } | 表示以回调的方式返回下载结果。键kind为'file'，键file为TargetFileCallback。 |
@@ -3611,9 +3835,10 @@ type DownloadToFile = { kind: 'file'; file: TargetFileCallback; } | { kind: 'fil
  
   
 
-#### DownloadToStream
+## DownloadToStream
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type DownloadToStream = { kind: 'stream'; stream: Stream | WriteStream | SyncWriteStream; }
  
@@ -3625,6 +3850,7 @@ type DownloadToStream = { kind: 'stream'; stream: Stream | WriteStream | SyncWri
  
 **起始版本：** 5.0.0(12)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | { kind: 'stream'; stream: Stream\| WriteStream\| SyncWriteStream } | 表示键kind值为'stream'，键stream的值为 Stream或WriteStream或SyncWriteStream的对象。 |
@@ -3632,9 +3858,10 @@ type DownloadToStream = { kind: 'stream'; stream: Stream | WriteStream | SyncWri
  
   
 
-#### PausePolicy
+## PausePolicy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 请求的暂停策略。
  
@@ -3644,6 +3871,7 @@ type DownloadToStream = { kind: 'stream'; stream: Stream | WriteStream | SyncWri
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | receiving | ReceivingPausePolicy | 否 | 是 | 设置暂停响应体接收的策略。 |
@@ -3652,9 +3880,10 @@ type DownloadToStream = { kind: 'stream'; stream: Stream | WriteStream | SyncWri
  
   
 
-#### ReceivingPauseByTimeout
+## ReceivingPauseByTimeout
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 暂停接收流程的按超时的策略。
  
@@ -3664,17 +3893,19 @@ type DownloadToStream = { kind: 'stream'; stream: Stream | WriteStream | SyncWri
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | kind | 'timeout' | 否 | 否 | 策略类型。用来表示这是按超时暂停接收流程的策略。 |
-| timeoutMs | number | 否 | 否 | 超时时间。如果超过了该时间，框架还没从服务端收到数据，就会暂停请求。单位：ms。 取值范围：1~1000。 默认值为 0。 |
+| timeoutMs | number | 否 | 否 | 超时时间。如果超过了该时间，框架还没从服务端收到数据，就会暂停请求。单位：ms。 取值范围：[1~1000]。 默认值为 0。 |
  
  
   
 
-#### ReceivingPauseByCache
+## ReceivingPauseByCache
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 暂停接收流程的按缓存的策略。
  
@@ -3684,6 +3915,7 @@ type DownloadToStream = { kind: 'stream'; stream: Stream | WriteStream | SyncWri
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | kind | 'cacheSize' | 否 | 否 | 策略类型。用来表示这是按缓存暂停接收流程的策略。 |
@@ -3692,9 +3924,10 @@ type DownloadToStream = { kind: 'stream'; stream: Stream | WriteStream | SyncWri
  
   
 
-#### ReceivingPausePolicy
+## ReceivingPausePolicy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ReceivingPausePolicy = ReceivingPauseByCache | ReceivingPauseByTimeout
  
@@ -3706,6 +3939,7 @@ type ReceivingPausePolicy = ReceivingPauseByCache | ReceivingPauseByTimeout
  
 **起始版本：** 5.0.0(12)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ReceivingPauseByCache | 策略的缓存大小。 |
@@ -3714,9 +3948,10 @@ type ReceivingPausePolicy = ReceivingPauseByCache | ReceivingPauseByTimeout
  
   
 
-#### NetworkOutputQueue
+## NetworkOutputQueue
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 const NetworkOutputQueue: NetworkOutputQueueConstructor
  
@@ -3730,9 +3965,10 @@ const NetworkOutputQueue: NetworkOutputQueueConstructor
  
   
 
-#### NetworkOutputQueueConstructor
+## NetworkOutputQueueConstructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 NetworkOutputQueueConstructor是一个[INetworkOutputQueue](#inetworkoutputqueue)的构造函数。
  
@@ -3744,9 +3980,10 @@ NetworkOutputQueueConstructor是一个[INetworkOutputQueue](#inetworkoutputqueue
  
   
 
-#### new
+### new
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 new (): INetworkOutputQueue
  
@@ -3760,6 +3997,7 @@ new (): INetworkOutputQueue
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | INetworkOutputQueue | 返回一个同步读队列对象。 |
@@ -3767,9 +4005,10 @@ new (): INetworkOutputQueue
  
   
 
-#### new
+### new
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 new (maxSize: number): INetworkOutputQueue
  
@@ -3783,6 +4022,7 @@ new (maxSize: number): INetworkOutputQueue
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | maxSize | number | 是 | 队列大小，表示框架可写入的最大字节数。 |
@@ -3790,6 +4030,7 @@ new (maxSize: number): INetworkOutputQueue
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | INetworkOutputQueue | 返回一个同步读队列对象。 |
@@ -3797,9 +4038,10 @@ new (maxSize: number): INetworkOutputQueue
  
   
 
-#### new
+### new
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 new (maxSize: number, pausePolicyOverride: ReceivingPausePolicy): INetworkOutputQueue
  
@@ -3813,6 +4055,7 @@ new (maxSize: number, pausePolicyOverride: ReceivingPausePolicy): INetworkOutput
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | maxSize | number | 是 | 队列大小，表示可写入的最大字节数。 |
@@ -3821,6 +4064,7 @@ new (maxSize: number, pausePolicyOverride: ReceivingPausePolicy): INetworkOutput
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | INetworkOutputQueue | 返回一个同步读队列对象。 |
@@ -3828,9 +4072,10 @@ new (maxSize: number, pausePolicyOverride: ReceivingPausePolicy): INetworkOutput
  
   
 
-#### INetworkOutputQueue
+## INetworkOutputQueue
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 INetworkOutputQueue是用读响应体的同步读队列。通过new [NetworkOutputQueue](#networkoutputqueue)()来构造。
  
@@ -3842,9 +4087,10 @@ INetworkOutputQueue是用读响应体的同步读队列。通过new [NetworkOutp
  
   
 
-#### read
+### read
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 read(maxBytesToRead: number): ArrayBuffer
  
@@ -3858,6 +4104,7 @@ read(maxBytesToRead: number): ArrayBuffer
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | maxBytesToRead | number | 是 | 从队列中读取数据的最大字节数。 |
@@ -3865,6 +4112,7 @@ read(maxBytesToRead: number): ArrayBuffer
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ArrayBuffer | 读取到的二进制数据。 |
@@ -3874,6 +4122,7 @@ read(maxBytesToRead: number): ArrayBuffer
  
 错误码的详细介绍请参见[API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-remote-communication)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1007900990 | Out of memory. |
@@ -3881,9 +4130,10 @@ read(maxBytesToRead: number): ArrayBuffer
  
   
 
-#### readInto
+### readInto
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readInto(buffer: ArrayBuffer): number
  
@@ -3897,6 +4147,7 @@ readInto(buffer: ArrayBuffer): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | buffer | ArrayBuffer | 是 | 读到参数中的buffer里面。 |
@@ -3904,6 +4155,7 @@ readInto(buffer: ArrayBuffer): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 读取的二进制数据的字节数。 |
@@ -3913,6 +4165,7 @@ readInto(buffer: ArrayBuffer): number
  
 错误码的详细介绍请参见[API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-remote-communication)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1007900990 | Out of memory. |
@@ -3920,9 +4173,10 @@ readInto(buffer: ArrayBuffer): number
  
   
 
-#### getStoredBytes
+### getStoredBytes
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStoredBytes(): number
  
@@ -3936,6 +4190,7 @@ getStoredBytes(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 获取队列中的数据的大小。单位：byte。 |
@@ -3943,9 +4198,10 @@ getStoredBytes(): number
  
   
 
-#### ResponseBodyDestination
+## ResponseBodyDestination
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ResponseBodyDestination = 'array-buffer'| IncomingDataCallback | DownloadToFile | DownloadToStream | INetworkOutputQueue
  
@@ -3957,6 +4213,7 @@ ResponseBodyDestination类型指定了响应的目标位置或目的地，指示
  
 **起始版本：** 5.0.0(12)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | 'array-buffer' | 表示值的类型为'array-buffer'类型数据。默认将响应体写到内存。 |
@@ -3968,9 +4225,10 @@ ResponseBodyDestination类型指定了响应的目标位置或目的地，指示
  
   
 
-#### URLOrString
+## URLOrString
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type URLOrString = URL | string
  
@@ -3982,6 +4240,7 @@ URLOrString类型是表示URL对象或表示URL的字符串的并集类型。可
  
 **起始版本：** 4.1.0(11)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | URL | URL对象，可以作为HTTP/HTTPS地址的入参。 |
@@ -3990,9 +4249,10 @@ URLOrString类型是表示URL对象或表示URL的字符串的并集类型。可
  
   
 
-#### PathPreference
+## PathPreference
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type PathPreference = 'auto' | 'cellular'
  
@@ -4004,6 +4264,7 @@ HTTP请求路径偏好配置。此配置仅为开发者的建议，实际使用�
  
 **起始版本：** 4.1.0(11)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | 'auto' | 表示系统自动选择路径。 |
@@ -4012,9 +4273,10 @@ HTTP请求路径偏好配置。此配置仅为开发者的建议，实际使用�
  
   
 
-#### ConnectionReusePolicy
+## ConnectionReusePolicy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ConnectionReusePolicy = 'balanced' | 'forbidden' | 'naive'
  
@@ -4026,6 +4288,7 @@ HTTP连接复用方式。
  
 **起始版本：** 6.1.0(23)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | 'balanced' | 表示均衡地使用HTTP连接。系统会选择当前负载最低的HTTP连接。 |
@@ -4035,9 +4298,10 @@ HTTP连接复用方式。
  
   
 
-#### HttpVersionSelectCallback
+## HttpVersionSelectCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type HttpVersionSelectCallback = (url: URL) => HttpVersion
  
@@ -4051,13 +4315,15 @@ type HttpVersionSelectCallback = (url: URL) => HttpVersion
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| url | Url | 是 | HTTP 请求资源的URL。 |
+| url | URL | 是 | HTTP 请求资源的URL。 |
  
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | HttpVersion | 选择的HTTP版本。 |
@@ -4065,9 +4331,10 @@ type HttpVersionSelectCallback = (url: URL) => HttpVersion
  
   
 
-#### IpAddress
+## IpAddress
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type IpAddress = string
  
@@ -4079,6 +4346,7 @@ IP地址类型。
  
 **起始版本：** 4.1.0(11)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 表示IP地址只是一个字符串。它可以是IPv4字符串或IPv6字符串。 |
@@ -4086,9 +4354,10 @@ IP地址类型。
  
   
 
-#### DnsServers
+## DnsServers
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type DnsServers = IpAndPort[]
  
@@ -4100,6 +4369,7 @@ DnsServers接口允许开发者在DnsConfiguration中配置DNS设置时，指定
  
 **起始版本：** 4.1.0(11)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | IpAndPort[] | 表示值的类型为IpAndPort数组，数组成员为地址和端口键值对。 |
@@ -4107,9 +4377,10 @@ DnsServers接口允许开发者在DnsConfiguration中配置DNS设置时，指定
  
   
 
-#### IpAndPort
+## IpAndPort
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 IpAndPort接口允许开发者定义IP地址和可选端口号。它通常用于需要同时指定IP地址和端口的情况，例如在DnsServers接口中配置自定义DNS服务器时。
  
@@ -4119,6 +4390,7 @@ IpAndPort接口允许开发者定义IP地址和可选端口号。它通常用于
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | ip | IpAddress | 否 | 否 | IP地址。类型是IPv4或IPv6地址。 |
@@ -4127,9 +4399,10 @@ IpAndPort接口允许开发者定义IP地址和可选端口号。它通常用于
  
   
 
-#### ServiceType
+## ServiceType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ServiceType = 'default' | 'background' | 'realtimeVoice' | 'realtimeVideo' | 'callSignaling' | 'realtimeGame' | 'normalGame' | 'shortVideo' | 'longVideo' | 'livestreamingAnchor' | 'livestreamingWatcher' | 'download' | 'upload' | 'browser'
  
@@ -4141,6 +4414,7 @@ type ServiceType = 'default' | 'background' | 'realtimeVoice' | 'realtimeVideo' 
  
 **起始版本：** 4.1.0(11)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | 'default' | 表示默认服务类型，适用于大多数一般性的服务需求。 说明： 除'default'外，其他类型均为5.0.0(12)新增类型。 |
@@ -4161,9 +4435,10 @@ type ServiceType = 'default' | 'background' | 'realtimeVoice' | 'realtimeVideo' 
  
   
 
-#### HttpMethod
+## HttpMethod
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type HttpMethod = 'GET' | 'POST' | 'HEAD' | 'PUT' | 'DELETE' | 'PATCH' | 'OPTIONS' | (string & NonNullable&lt;unknown&gt;)
  
@@ -4175,6 +4450,7 @@ HttpMethod是HTTP库中的一种类型，代表网络请求中使用的各种HTT
  
 **起始版本：** 4.1.0(11)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | 'GET' | 表示网络请求的方式为GET，通常用于从服务器获取数据，如获取网页、图片、API 数据等。 |
@@ -4189,9 +4465,10 @@ HttpMethod是HTTP库中的一种类型，代表网络请求中使用的各种HTT
  
   
 
-#### RequestHeaders
+## RequestHeaders
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type RequestHeaders = { [k: string]: string | string[] | undefined; 'authorization'?: string; 'accept'?: ContentType | ContentType[]; 'accept-charset'?: string | string[]; 'accept-encoding'?: ContentCoding | ContentCoding[]; 'accept-language'?: string | string[]; 'cache-control'?: string | string[]; 'cookie'?: string | string[]; 'range'?: string | string[]; 'upgrade'?: string | string[]; 'user-agent'?: string; 'content-type'?: ContentType; }
  
@@ -4203,6 +4480,7 @@ type RequestHeaders = { [k: string]: string | string[] | undefined; 'authorizati
  
 **起始版本：** 4.1.0(11)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | { [k: string]: string \| string[] \| undefined; 'authorization'?: string; 'accept'?: ContentType \| ContentType[]; 'accept-charset'?: string \| string[]; 'accept-encoding'?: ContentCoding \| ContentCoding[]; 'accept-language'?: string \| string[]; 'cache-control'?: string \| string[]; 'cookie'?: string \| string[]; 'range'?: string \| string[]; 'upgrade'?: string \| string[]; 'user-agent'?: string; 'content-type'?: ContentType; } | 若键取值为[k: string]: string \| string[] \| undefined，表示值类型为一个包含一个或多个键值对的对象，其键的类型为字符，可取任意值，其值的类型为字符、字符数组或undefined。 若键取值为'authorization'，值的类型为字符，可取任意值。 若键取值为'accept'，值的类型为ContentType或ContentType数组，可取任意值。 若键取值为'accept-charset'，值的类型为字符或字符数组，可取任意值。 若键取值为'accept-encoding'，值的类型为ContentCoding或ContentCoding数组，可取任意值。 若键取值为'accept-language'，值的类型为字符或字符数组，可取任意值。 若键取值为'cache-control'，值的类型为字符或字符数组，可取任意值。 若键取值为'cookie'，值的类型为字符或字符数组，可取任意值。 若键取值为'range'，值的类型为字符或字符数组，可取任意值。 若键取值为'upgrade'，值的类型为字符或字符数组，可取任意值。 若键取值为'user-agent'，值的类型为字符，可取任意值。 若键取值为'content-type'，值的类型为ContentType，可取任意值。当此项不存在或为空字符串时，系统将根据RequestContent配置默认的内容类型。若不希望使用默认内容类型，可以传入单个空格。 |
@@ -4210,9 +4488,10 @@ type RequestHeaders = { [k: string]: string | string[] | undefined; 'authorizati
  
   
 
-#### SendingPausePolicy
+## SendingPausePolicy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 暂停发送流程的策略。
  
@@ -4222,17 +4501,19 @@ type RequestHeaders = { [k: string]: string | string[] | undefined; 'authorizati
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | kind | 'timeout' | 否 | 否 | 策略类型。用来表示这是暂停发送流程的策略。 |
-| timeoutMs | number | 否 | 否 | 超时时间。如果超过了该时间，应用还没有给框架数据，就会暂停请求，单位：ms。 取值范围：1~1000。 默认值为 0。 |
+| timeoutMs | number | 否 | 否 | 超时时间。如果超过了该时间，应用还没有给框架数据，就会暂停请求，单位：ms。 取值范围：[1~1000]。 默认值为 0。 |
  
  
   
 
-#### NetworkInputQueue
+## NetworkInputQueue
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 const NetworkInputQueue: NetworkInputQueueConstructor
  
@@ -4246,9 +4527,10 @@ const NetworkInputQueue: NetworkInputQueueConstructor
  
   
 
-#### NetworkInputQueueConstructor
+## NetworkInputQueueConstructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 NetworkInputQueueConstructor是一个[INetworkInputQueue](#inetworkinputqueue)的构造函数。
  
@@ -4260,9 +4542,10 @@ NetworkInputQueueConstructor是一个[INetworkInputQueue](#inetworkinputqueue)�
  
   
 
-#### new
+### new
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 new (): INetworkInputQueue
  
@@ -4276,6 +4559,7 @@ new (): INetworkInputQueue
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | INetworkInputQueue | 返回一个同步写队列对象。 |
@@ -4283,9 +4567,10 @@ new (): INetworkInputQueue
  
   
 
-#### new
+### new
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 new (maxSize: number): INetworkInputQueue
  
@@ -4299,6 +4584,7 @@ new (maxSize: number): INetworkInputQueue
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | maxSize | number | 是 | 队列大小，表示可写入的最大字节数。 |
@@ -4306,6 +4592,7 @@ new (maxSize: number): INetworkInputQueue
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | INetworkInputQueue | 返回一个同步写队列对象。 |
@@ -4313,9 +4600,10 @@ new (maxSize: number): INetworkInputQueue
  
   
 
-#### new
+### new
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 new (maxSize: number, pausePolicyOverride: SendingPausePolicy): INetworkInputQueue
  
@@ -4329,6 +4617,7 @@ new (maxSize: number, pausePolicyOverride: SendingPausePolicy): INetworkInputQue
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | maxSize | number | 是 | 队列大小，表示可写入的最大字节数。 |
@@ -4337,6 +4626,7 @@ new (maxSize: number, pausePolicyOverride: SendingPausePolicy): INetworkInputQue
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | INetworkInputQueue | 返回一个同步写队列对象。 |
@@ -4344,9 +4634,10 @@ new (maxSize: number, pausePolicyOverride: SendingPausePolicy): INetworkInputQue
  
   
 
-#### INetworkInputQueue
+## INetworkInputQueue
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 INetworkInputQueue是用于写请求体的同步写队列。通过new [NetworkInputQueue](#networkinputqueue)()来构造。
  
@@ -4358,9 +4649,10 @@ INetworkInputQueue是用于写请求体的同步写队列。通过new [NetworkIn
  
   
 
-#### write
+### write
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 write(buffer: string | ArrayBuffer): void
  
@@ -4374,6 +4666,7 @@ write(buffer: string | ArrayBuffer): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | buffer | string \| ArrayBuffer | 是 | 待发送的数据。 |
@@ -4383,6 +4676,7 @@ write(buffer: string | ArrayBuffer): void
  
 错误码的详细介绍请参见[API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-remote-communication)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1007900990 | Out of memory. |
@@ -4390,9 +4684,10 @@ write(buffer: string | ArrayBuffer): void
  
   
 
-#### close
+### close
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(): void
  
@@ -4406,9 +4701,10 @@ close(): void
  
   
 
-#### getFreeSpace
+### getFreeSpace
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFreeSpace(): number
  
@@ -4422,6 +4718,7 @@ getFreeSpace(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 获取剩余可写空间。 |
@@ -4429,9 +4726,10 @@ getFreeSpace(): number
  
   
 
-#### RequestContent
+## RequestContent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type RequestContent = RawDataContent | Form | MultipartForm | GetDataCallback | UploadFromFile | UploadFromStream | INetworkInputQueue
  
@@ -4443,6 +4741,7 @@ RequestContent是HTTP模块中的一种类型，代表HTTP请求的内容。
  
 **起始版本：** 4.1.0(11)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | RawDataContent | ArkTs的基本类型的数据。 |
@@ -4456,9 +4755,10 @@ RequestContent是HTTP模块中的一种类型，代表HTTP请求的内容。
  
   
 
-#### Form
+## Form
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 HTTP简单的表格数据。
  
@@ -4470,8 +4770,12 @@ HTTP简单的表格数据。
  
   
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | fields | FormFields | 否 | 否 | HTTP简单表单数据字段，类型为表单字段类型。 |
@@ -4480,9 +4784,10 @@ HTTP简单的表格数据。
  
   
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(fields: FormFields)
  
@@ -4496,6 +4801,7 @@ constructor(fields: FormFields)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fields | FormFields | 是 | HTTP简单表单数据字段，类型为表单字段类型。 |
@@ -4507,7 +4813,7 @@ constructor(fields: FormFields)
 import { rcp } from '@kit.RemoteCommunicationKit';
 
 let headers: rcp.RequestHeaders = {
-  "accept": "application/json"
+  'accept': 'application/json'
 };
 let configuration: rcp.Configuration = {
   transfer: {
@@ -4518,19 +4824,20 @@ let cookies: rcp.RequestCookies = { 'name1': 'value1', 'name2': 'value2' };
 let transferRange: rcp.TransferRange = { from: 100, to: 200 };
 
 const simpleForm = new rcp.Form({
-  "key1": "value1",
-  "key2": ["valueList0", "valueList1"],
+  'key1': 'value1',
+  'key2': ['valueList0', 'valueList1'],
 });
-simpleForm.keys = ["key2", "key1"];
-let req = new rcp.Request("http://example.com", "POST", headers, simpleForm, cookies, transferRange, configuration);
+simpleForm.keys = ['key2', 'key1'];
+let req = new rcp.Request('http://example.com', 'POST', headers, simpleForm, cookies, transferRange, configuration);
 req.content = simpleForm;
 ```
  
   
 
-#### MultipartForm
+## MultipartForm
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 HTTP多部分表格数据。
  
@@ -4542,8 +4849,12 @@ HTTP多部分表格数据。
  
   
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | fields | MultipartFormFields | 否 | 否 | 表示多部分表单数据，其中值为多表单字段类型。 |
@@ -4555,6 +4866,7 @@ HTTP多部分表格数据。
  
 错误码的详细介绍请参见[API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-remote-communication)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -4562,9 +4874,10 @@ HTTP多部分表格数据。
  
   
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(fields: MultipartFormFields)
  
@@ -4578,6 +4891,7 @@ constructor(fields: MultipartFormFields)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fields | MultipartFormFields | 是 | 表示多部分表单数据，其中值为多表单字段类型。 |
@@ -4589,7 +4903,7 @@ constructor(fields: MultipartFormFields)
 import { rcp } from '@kit.RemoteCommunicationKit';
 
 let headers: rcp.RequestHeaders = {
-  "accept": "application/json"
+  'accept': 'application/json'
 };
 let configuration: rcp.Configuration = {
   transfer: {
@@ -4600,24 +4914,25 @@ let cookies: rcp.RequestCookies = { 'name1': 'value1', 'name2': 'value2' };
 let transferRange: rcp.TransferRange = { from: 100, to: 200 };
 
 const multiForm = new rcp.MultipartForm({
-  "key1": "value1",
-  "key2": ["valueList0", "valueList1"],
-  "key3": {
-    contentType: "text/plain",
-    remoteFileName: "RemoteFileName",
-    contentOrPath: "/file/to/Path",
+  'key1': 'value1',
+  'key2': ['valueList0', 'valueList1'],
+  'key3': {
+    contentType: 'text/plain',
+    remoteFileName: 'RemoteFileName',
+    contentOrPath: '/file/to/Path',
   },
 });
-multiForm.keys = ["key3", "key1", "key2"];
-let req = new rcp.Request("http://example.com", "POST", headers, multiForm, cookies, transferRange, configuration);
+multiForm.keys = ['key3', 'key1', 'key2'];
+let req = new rcp.Request('http://example.com', 'POST', headers, multiForm, cookies, transferRange, configuration);
 req.content = multiForm;
 ```
  
   
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(fields: MultipartFormFields, boundary: string)
  
@@ -4631,6 +4946,7 @@ constructor(fields: MultipartFormFields, boundary: string)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fields | MultipartFormFields | 是 | 表示多部分表单数据，其中值为多表单字段类型。 |
@@ -4643,7 +4959,7 @@ constructor(fields: MultipartFormFields, boundary: string)
 import { rcp } from '@kit.RemoteCommunicationKit';
 
 let headers: rcp.RequestHeaders = {
-  "accept": "application/json"
+  'accept': 'application/json'
 };
 let configuration: rcp.Configuration = {
   transfer: {
@@ -4652,28 +4968,29 @@ let configuration: rcp.Configuration = {
 };
 let cookies: rcp.RequestCookies = { 'name1': 'value1', 'name2': 'value2' };
 let transferRange: rcp.TransferRange = { from: 100, to: 200 };
-let Boundary: string = "--MULTIPARTFORM BEGIN AND END BOUNDARY"
+let Boundary: string = '--MULTIPARTFORM BEGIN AND END BOUNDARY'
 
 const multiForm = new rcp.MultipartForm({
-  "key1": "value1",
-  "key2": ["valueList0", "valueList1"],
-  "key3": {
-    contentType: "text/plain",
-    remoteFileName: "RemoteFileName",
-    contentOrPath: "/file/to/Path",
+  'key1': 'value1',
+  'key2': ['valueList0', 'valueList1'],
+  'key3': {
+    contentType: 'text/plain',
+    remoteFileName: 'RemoteFileName',
+    contentOrPath: '/file/to/Path',
   },
 }, Boundary)
-multiForm.keys = ["key3", "key1", "key2"];
+multiForm.keys = ['key3', 'key1', 'key2'];
 
-let req = new rcp.Request("http://example.com", "POST", headers, multiForm, cookies, transferRange, configuration);
+let req = new rcp.Request('http://example.com', 'POST', headers, multiForm, cookies, transferRange, configuration);
 req.content = multiForm;
 ```
  
   
 
-#### MultipartFormFields
+## MultipartFormFields
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type MultipartFormFields = { [k: string]: MultipartFormFieldValue | MultipartFormFieldValue[]; }
  
@@ -4685,6 +5002,7 @@ HTTP多部分表单数据字段。
  
 **起始版本：** 4.1.0(11)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | { [k: string]: MultipartFormFieldValue \| MultipartFormFieldValue[] } | 表示值的类型为一个或者多个多部分表单数据字段值，值的类型为MultipartFormFieldValue或MultipartFormFieldValue的数组，可取任意值。 |
@@ -4692,9 +5010,10 @@ HTTP多部分表单数据字段。
  
   
 
-#### MultipartFormFieldValue
+## MultipartFormFieldValue
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type MultipartFormFieldValue = FormFieldValue | FormFieldFileValue
  
@@ -4706,6 +5025,7 @@ HTTP多部分表单数据字段值。
  
 **起始版本：** 4.1.0(11)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FormFieldValue | 表示值的类型为FormFieldValue，HTTP简单表单数据字段值。 |
@@ -4714,9 +5034,10 @@ HTTP多部分表单数据字段值。
  
   
 
-#### FormFields
+## FormFields
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type FormFields = { [k: string]: FormFieldValue | FormFieldValue[]; }
  
@@ -4728,6 +5049,7 @@ HTTP简单表单数据字段。
  
 **起始版本：** 4.1.0(11)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | { [k: string]: FormFieldValue \| FormFieldValue[] } | 表示值的类型为一个或者多个多部分表单数据字段值，值的类型为FormFieldValue或FormFieldValue的数组，可取任意值。 |
@@ -4739,16 +5061,17 @@ HTTP简单表单数据字段。
 import { rcp } from '@kit.RemoteCommunicationKit';
 
 const simpleForm: rcp.FormFields = {
-  "key1": "value1",
-  "key2": ["valueList0", "valueList1"],
+  'key1': 'value1',
+  'key2': ['valueList0', 'valueList1'],
 };
 ```
  
   
 
-#### FormFieldValue
+## FormFieldValue
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type FormFieldValue = string | number | boolean | bigint
  
@@ -4760,6 +5083,7 @@ HTTP简单表单数据字段值。
  
 **起始版本：** 4.1.0(11)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 表示字段的值是一个字符串。 |
@@ -4770,9 +5094,10 @@ HTTP简单表单数据字段值。
  
   
 
-#### Path
+## Path
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Path = string
  
@@ -4784,6 +5109,7 @@ HTTP表单数据内容中的文件路径类型。
  
 **起始版本：** 4.1.0(11)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 表示值的类型为string，可取任意值。 |
@@ -4791,9 +5117,10 @@ HTTP表单数据内容中的文件路径类型。
  
   
 
-#### FileContent
+## FileContent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 HTTP表单数据内容中的文件内容类型。
  
@@ -4803,6 +5130,7 @@ HTTP表单数据内容中的文件内容类型。
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | content | string \| ArrayBuffer | 否 | 否 | 待发送到远程服务器的内容，可取任意值。 |
@@ -4810,9 +5138,10 @@ HTTP表单数据内容中的文件内容类型。
  
   
 
-#### FormFieldFileValue
+## FormFieldFileValue
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文件表单数据接口。
  
@@ -4822,6 +5151,7 @@ HTTP表单数据内容中的文件内容类型。
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | contentType | ContentType | 否 | 是 | HTTP多部分表单数据内容类型。默认值为undefined。 |
@@ -4835,17 +5165,18 @@ HTTP表单数据内容中的文件内容类型。
 import { rcp } from '@kit.RemoteCommunicationKit';
 
 const formFieldFileValue: rcp.FormFieldFileValue = {
-  contentType: "image/png",
-  remoteFileName: "remoteFile1",
-  contentOrPath: "/path/to/file",
+  contentType: 'image/png',
+  remoteFileName: 'remoteFile1',
+  contentOrPath: '/path/to/file',
 };
 ```
  
   
 
-#### RequestCookies
+## RequestCookies
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 RequestCookies是HTTP模块中的一个接口，用于表示HTTP请求中包含的cookie。
  
@@ -4855,6 +5186,7 @@ RequestCookies是HTTP模块中的一个接口，用于表示HTTP请求中包含�
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | [name: string] | string | 否 | 否 | Cookies数据。 |
@@ -4866,17 +5198,18 @@ RequestCookies是HTTP模块中的一个接口，用于表示HTTP请求中包含�
 import { rcp } from '@kit.RemoteCommunicationKit';
 
 const cookies: rcp.RequestCookies = {
-  "sessionID": "abc123",
-  "userToken": "xyz789",
+  'sessionID': 'abc123',
+  'userToken': 'xyz789',
   // 可以在此处添加额外的cookies
 };
 ```
  
   
 
-#### TransferRange
+## TransferRange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置传输数据范围。HTTP范围请求要求服务器只将HTTP消息的一部分发回客户端。
  
@@ -4886,6 +5219,7 @@ const cookies: rcp.RequestCookies = {
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | from | number | 否 | 是 | 用于设置传输数据的起始字节。默认值为undefined。 |
@@ -4894,9 +5228,10 @@ const cookies: rcp.RequestCookies = {
  
   
 
-#### Response
+## Response
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 HTTP请求的响应数据。
  
@@ -4908,8 +5243,12 @@ HTTP请求的响应数据。
  
   
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | request | Request | 是 | 否 | 收到此响应的相关HTTP请求内容。 |
@@ -4958,9 +5297,10 @@ async function TestRcp() {
  
   
 
-#### toString
+### toString
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toString(): string | null
  
@@ -4974,6 +5314,7 @@ toString(): string | null
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string \| null | 如果HTTP响应体不是UTF-8格式，则返回UTF-8格式字符串；或者返回null。 |
@@ -4986,7 +5327,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { rcp } from '@kit.RemoteCommunicationKit';
 
 const session = rcp.createSession();
-const request = new rcp.Request("https://www.example.com");
+const request = new rcp.Request('https://www.example.com');
 session.fetch(request).then((response: rcp.Response) => {
   if (response) {
     console.info(`Succeeded in fetching the response, response: ${response.toString()}`);
@@ -4998,9 +5339,10 @@ session.fetch(request).then((response: rcp.Response) => {
  
   
 
-#### toJSON
+### toJSON
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toJSON(): object | null
  
@@ -5014,6 +5356,7 @@ toJSON(): object | null
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | object \| null | 如果没有异常，则返回带有toString()的JSON格式字符串，toJSON是针对body的，如果body不是JSON那么返回值会是null。 |
@@ -5026,7 +5369,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { rcp } from '@kit.RemoteCommunicationKit';
 
 const session = rcp.createSession();
-const request = new rcp.Request("https://www.example.com");
+const request = new rcp.Request('https://www.example.com');
 session.fetch(request).then((response: rcp.Response) => {
   if (response) {
     let resJson = response.toJSON();
@@ -5039,9 +5382,10 @@ session.fetch(request).then((response: rcp.Response) => {
  
   
 
-#### toJSON
+### toJSON
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toJSON(param: json.ParseOptions): object | null
  
@@ -5055,6 +5399,7 @@ toJSON(param: json.ParseOptions): object | null
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | param | json.ParseOptions | 是 | 解析配置项。支持定义处理BigInt的模式。 |
@@ -5062,6 +5407,7 @@ toJSON(param: json.ParseOptions): object | null
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | object \| null | 对通过toString()方法转换后的字符串进行JSON解析的结果，如果解析过程中发生异常，则返回null。toJSON方法用于处理body，当body不是JSON格式时，返回值同样为null。 |
@@ -5075,7 +5421,7 @@ import { JSON } from '@kit.ArkTS';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 const session = rcp.createSession();
-const request = new rcp.Request("https://www.example.com");
+const request = new rcp.Request('https://www.example.com');
 session.fetch(request).then((response: rcp.Response) => {
   if (response) {
     const obj = response.toJSON({ bigIntMode: JSON.BigIntMode.PARSE_AS_BIGINT }); // 此处仅为示意，实际response的body应为JSON格式，且可能包含大整型数据
@@ -5088,9 +5434,10 @@ session.fetch(request).then((response: rcp.Response) => {
  
   
 
-#### ResponseSendable
+## ResponseSendable
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 HTTP请求的响应数据，该响应数据支持[Sendable](https://developer.huawei.com/consumer/cn/doc/HarmonyOS-Guides/arkts-sendable)。
  
@@ -5100,6 +5447,7 @@ HTTP请求的响应数据，该响应数据支持[Sendable](https://developer.hu
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | requestId | string | 是 | 否 | 待发送请求的序列号。 |
@@ -5118,9 +5466,10 @@ HTTP请求的响应数据，该响应数据支持[Sendable](https://developer.hu
  
   
 
-#### ResponseHeaders
+## ResponseHeaders
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ResponseHeaders = { [k: string]: string | string[] | undefined; 'accept-ranges'?: 'none' | 'bytes' | (string & NonNullable&lt;unknown&gt;); 'allow'?: HttpMethod | HttpMethod[]; 'cache-control'?: string | string[]; 'content-encoding'?: ContentCoding; 'content-range'?: string; 'content-type'?: ContentType; 'date'?: string; 'etag'?: string; 'expires'?: string; 'location'?: string; 'retry-after'?: string; 'set-cookie'?: string | string[]; 'server'?: string; 'www-authenticate'?: string | string[]; }
  
@@ -5132,6 +5481,7 @@ type ResponseHeaders = { [k: string]: string | string[] | undefined; 'accept-ran
  
 **起始版本：** 4.1.0(11)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | { [k: string]: string \| string[] \| undefined; 'accept-ranges'?: 'none' \| 'bytes' \| (string & NonNullable&lt;unknown&gt;); 'allow'?: HttpMethod \| HttpMethod[]; 'cache-control'?: string \| string[]; 'content-encoding'?: ContentCoding; 'content-range'?: string; 'content-type'?: ContentType; 'date'?: string; 'etag'?: string; 'expires'?: string; 'location'?: string; 'retry-after'?: string; 'set-cookie'?: string \| string[]; 'server'?: string; 'www-authenticate'?: string \| string[]; } | 若键取值为[k: string]: string \| string[] \| undefined，表示值类型为一个包含一个或多个键值对的对象，其键的类型为字符，可取任意值，其值的类型为字符、字符数组或undefined。 'accept-ranges'表示响应头accept-ranges数据。 若键的值为'allow'，值的类型为HttpMethod或者HttpMethod[]，可取任意值。 若键取值为'cache-control'，值的类型为字符串或字符串数组，可取任意值。 若键的值为'content-encoding'，值的类型为ContentCoding，可取任意值。 若键的值为'content-range'，值的类型为字符串，可取任意值。 若键的值为'content-type'，值的类型为ContentType，可取任意值。 若键的值为'date'，值的类型为字符串，可取任意值。 若键的值为'etag'，值的类型为字符串，可取任意值。 若键的值为'expires'，值的类型为字符串，可取任意值。 若键的值为'location'，值的类型为字符串，可取任意值。 若键的值为'retry-after'，值的类型为字符串，可取任意值。 若键的值为'set-cookie'，值的类型为字符串或字符串数组，可取任意值。 若键的值为'server'，值的类型为字符串，可取任意值。 若键的值为'www-authenticate'，值的类型为字符串或字符串数组，可取任意值。 |
@@ -5139,9 +5489,10 @@ type ResponseHeaders = { [k: string]: string | string[] | undefined; 'accept-ran
  
   
 
-#### ResponseCookie
+## ResponseCookie
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 HTTP响应的cookie接口。
  
@@ -5151,6 +5502,7 @@ HTTP响应的cookie接口。
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | name | string | 否 | 否 | cookie的名称。 |
@@ -5168,9 +5520,10 @@ HTTP响应的cookie接口。
  
   
 
-#### DebugInfo
+## DebugInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 请求/响应处理调试信息的接口。
  
@@ -5180,6 +5533,7 @@ HTTP响应的cookie接口。
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | DebugEvent | 否 | 否 | 调试信息的类型。 |
@@ -5188,9 +5542,10 @@ HTTP响应的cookie接口。
  
   
 
-#### HttpVersion
+## HttpVersion
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type HttpVersion = '1.0' | '1.1' | '2' | '3' | 'unknown'
  
@@ -5202,6 +5557,7 @@ HTTP的版本。
  
 **起始版本：** 5.0.0(12)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | '1.0' | 表示值的类型为字符串，'1.0'代表HTTP版本为1.0。 |
@@ -5213,9 +5569,10 @@ HTTP的版本。
  
   
 
-#### TimeInfo
+## TimeInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 HTTP请求各阶段相关的时间信息的接口。
  
@@ -5225,6 +5582,7 @@ HTTP请求各阶段相关的时间信息的接口。
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | nameLookupTimeMs | number | 否 | 否 | DNS解析所需的时间，单位为毫秒。 |
@@ -5248,7 +5606,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 // 1. 创建session、requestURL
 const session = rcp.createSession();
-const requestURL = "https://www.example.com";
+const requestURL = 'https://www.example.com';
 
 // 2. 在需要跟踪分析请求过程中各个时间段消耗的时间，请将此开关打开
 const configuration: rcp.Configuration = {
@@ -5258,12 +5616,12 @@ const configuration: rcp.Configuration = {
 }
 
 // 3. 创建请求
-const request = new rcp.Request(requestURL, "GET");
+const request = new rcp.Request(requestURL, 'GET');
 request.configuration = configuration;
 
 // 4. 使用fetch发起网络请求，request中携带上面配置好的configuration
 session.fetch(request).then((response: rcp.Response) => {
-// 由于timeInfo中各个参数有可能为undefined，所以需要在两个时间段做运算前添加判空操作
+  // 由于timeInfo中各个参数有可能为undefined，所以需要在两个时间段做运算前添加判空操作
   if (!response.timeInfo) {
     console.error(`TimeInfo is undefined ${response.timeInfo}`);
     return;
@@ -5282,9 +5640,10 @@ session.fetch(request).then((response: rcp.Response) => {
  
   
 
-#### CookieAttributes
+## CookieAttributes
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type CookieAttributes = { [k: string]: string | undefined; }
  
@@ -5296,6 +5655,7 @@ Cookie属性类型。
  
 **起始版本：** 4.1.0(11)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | { [k: string]: string \| undefined; } | 表示值的类型为一个包含一个或多个键值对的对象。其中键的类型为字符，可取任意值，值的类型为字符或者undefined，可取任意值。 |
@@ -5303,9 +5663,10 @@ Cookie属性类型。
  
   
 
-#### ContentType
+## ContentType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ContentType = 'application/json' | 'text/plain' | 'multipart/form-data' | 'application/octet-stream' | 'application/x-www-form-urlencoded' | (string & NonNullable&lt;unknown&gt;)
  
@@ -5317,6 +5678,7 @@ type ContentType = 'application/json' | 'text/plain' | 'multipart/form-data' | '
  
 **起始版本：** 4.1.0(11)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | 'application/json' | 'application/json': 表示数据内容的类型为json字符串。 |
@@ -5329,9 +5691,10 @@ type ContentType = 'application/json' | 'text/plain' | 'multipart/form-data' | '
  
   
 
-#### ValidationContext
+## ValidationContext
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 证书上下文。
  
@@ -5341,6 +5704,7 @@ type ContentType = 'application/json' | 'text/plain' | 'multipart/form-data' | '
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | pemCerts | string[] | 否 | 否 | PEM格式证书。 |
@@ -5351,9 +5715,10 @@ type ContentType = 'application/json' | 'text/plain' | 'multipart/form-data' | '
  
   
 
-#### ValidationCallback
+## ValidationCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ValidationCallback = (context: ValidationContext) => boolean | Promise&lt;boolean&gt;
  
@@ -5367,6 +5732,7 @@ type ValidationCallback = (context: ValidationContext) => boolean | Promise&lt;b
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | ValidationContext | 是 | 表示值的类型为context，是证书上下文。 |
@@ -5374,16 +5740,18 @@ type ValidationCallback = (context: ValidationContext) => boolean | Promise&lt;b
  
 **返回值：**
   
-| 取值范围 | 说明 |
+
+| 类型 | 说明 |
 | --- | --- |
 | boolean \| Promise&lt;boolean&gt; | 回调函数，返回true表示校验成功，返回false表示校验失败；或者Promise对象，返回true表示校验成功，返回false表示校验失败。 |
  
  
   
 
-#### TlsV13SpecificCipherSuite
+## TlsV13SpecificCipherSuite
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type TlsV13SpecificCipherSuite = 'TLS_AES_128_GCM_SHA256' | 'TLS_AES_256_GCM_SHA384' | 'TLS_CHACHA20_POLY1305_SHA256'
  
@@ -5395,6 +5763,7 @@ TLS1.3及以上版本支持的加密套件。本框架有内置的优先顺序�
  
 **起始版本：** 5.0.0(12)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | 'TLS_AES_128_GCM_SHA256' | 表示值的类型为字符，可取'TLS_AES_128_GCM_SHA256'。 |
@@ -5404,11 +5773,12 @@ TLS1.3及以上版本支持的加密套件。本框架有内置的优先顺序�
  
   
 
-#### TlsV12SpecificCipherSuite
+## TlsV12SpecificCipherSuite
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-type TlsV12SpecificCipherSuite = 'TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256' | 'TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256' | 'TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384' | 'TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384' | 'TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256' | 'TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256' | 'TLS_RSA_WITH_AES_128_GCM_SHA256' | 'TLS_RSA_WITH_AES_256_GCM_SHA384';
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+type TlsV12SpecificCipherSuite = 'TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256' | 'TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256' | 'TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384' | 'TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384' | 'TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256' | 'TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256' | 'TLS_RSA_WITH_AES_128_GCM_SHA256' | 'TLS_RSA_WITH_AES_256_GCM_SHA384'
  
 TLS1.2及以上版本支持的加密套件。
  
@@ -5418,6 +5788,7 @@ TLS1.2及以上版本支持的加密套件。
  
 **起始版本：** 5.0.0(12)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | 'TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256' | 表示值的类型为字符串，可取'TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256'。 |
@@ -5432,9 +5803,10 @@ TLS1.2及以上版本支持的加密套件。
  
   
 
-#### TlsV10SpecificCipherSuite
+## TlsV10SpecificCipherSuite
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type TlsV10SpecificCipherSuite = 'TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA' | 'TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA' | 'TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA' | 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA' | 'TLS_RSA_WITH_AES_128_CBC_SHA' | 'TLS_RSA_WITH_AES_256_CBC_SHA' | 'TLS_RSA_WITH_3DES_EDE_CBC_SHA'
  
@@ -5446,6 +5818,7 @@ TLS1.0及以上版本支持的加密套件。
  
 **起始版本：** 5.0.0(12)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | 'TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA' | 表示值的类型为字符串，可取'TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA'。 |
@@ -5459,9 +5832,10 @@ TLS1.0及以上版本支持的加密套件。
  
   
 
-#### CipherSuite
+## CipherSuite
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type CipherSuite = TlsV13CipherSuite
  
@@ -5473,6 +5847,7 @@ type CipherSuite = TlsV13CipherSuite
  
 **起始版本：** 5.0.0(12)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | TlsV13CipherSuite | 表示值的类型为TlsV13CipherSuite。 |
@@ -5480,9 +5855,10 @@ type CipherSuite = TlsV13CipherSuite
  
   
 
-#### TlsV13CipherSuite
+## TlsV13CipherSuite
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type TlsV13CipherSuite = TlsV12CipherSuite | TlsV13SpecificCipherSuite
  
@@ -5494,6 +5870,7 @@ TLS1.3的加密套件声明函数，支持TLS1.3版本，兼容TLS1.2版本。
  
 **起始版本：** 5.0.0(12)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | TlsV12CipherSuite | 表示值的类型为TlsV12CipherSuite。 |
@@ -5502,9 +5879,10 @@ TLS1.3的加密套件声明函数，支持TLS1.3版本，兼容TLS1.2版本。
  
   
 
-#### TlsV12CipherSuite
+## TlsV12CipherSuite
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type TlsV12CipherSuite = TlsV11CipherSuite | TlsV12SpecificCipherSuite
  
@@ -5516,6 +5894,7 @@ TLS1.2的加密套件声明函数，支持TLS1.2版本，兼容TLS1.1版本。
  
 **起始版本：** 5.0.0(12)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | TlsV11CipherSuite | 表示值的类型为TlsV11CipherSuite。 |
@@ -5524,9 +5903,10 @@ TLS1.2的加密套件声明函数，支持TLS1.2版本，兼容TLS1.1版本。
  
   
 
-#### TlsV11CipherSuite
+## TlsV11CipherSuite
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type TlsV11CipherSuite = TlsV10CipherSuite
  
@@ -5538,6 +5918,7 @@ TLS1.1的加密套件声明函数，与TLS1.0相同。
  
 **起始版本：** 5.0.0(12)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | TlsV10CipherSuite | 表示值的类型为TlsV10CipherSuite。 |
@@ -5545,9 +5926,10 @@ TLS1.1的加密套件声明函数，与TLS1.0相同。
  
   
 
-#### TlsV10CipherSuite
+## TlsV10CipherSuite
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type TlsV10CipherSuite = TlsV10SpecificCipherSuite
  
@@ -5559,6 +5941,7 @@ TLS1.0的加密套件声明函数。
  
 **起始版本：** 5.0.0(12)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | TlsV10SpecificCipherSuite | 表示值的类型为TlsV10SpecificCipherSuite。 |
@@ -5566,9 +5949,10 @@ TLS1.0的加密套件声明函数。
  
   
 
-#### TlsV13Option
+## TlsV13Option
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TLS1.3选择器，用来选择Tls的使用版本，以及配套加密套件。
  
@@ -5578,17 +5962,19 @@ TLS1.3选择器，用来选择Tls的使用版本，以及配套加密套件。
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| tlsVersion | 'TlsV1.3' | 否 | 否 | TLS版本为"TlsV1.3"。 |
+| tlsVersion | 'TlsV1.3' | 否 | 否 | TLS版本为'TlsV1.3'。 |
 | cipherSuite | TlsV13CipherSuite[] | 否 | 是 | TLS1.3版本对应的加密套件。 |
  
  
   
 
-#### TlsV12Option
+## TlsV12Option
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TLS1.2选择器，用来选择Tls的使用版本，以及配套加密套件。
  
@@ -5598,6 +5984,7 @@ TLS1.2选择器，用来选择Tls的使用版本，以及配套加密套件。
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | tlsVersion | 'TlsV1.2' | 否 | 否 | TLS版本为'TlsV1.2'。 |
@@ -5606,9 +5993,10 @@ TLS1.2选择器，用来选择Tls的使用版本，以及配套加密套件。
  
   
 
-#### TlsV11Option
+## TlsV11Option
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TLS1.1选择器，用来选择Tls的使用版本，以及配套加密套件。
  
@@ -5618,6 +6006,7 @@ TLS1.1选择器，用来选择Tls的使用版本，以及配套加密套件。
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | tlsVersion | 'TlsV1.1' | 否 | 否 | TLS版本为'TlsV1.1'。 |
@@ -5626,9 +6015,10 @@ TLS1.1选择器，用来选择Tls的使用版本，以及配套加密套件。
  
   
 
-#### TlsV10Option
+## TlsV10Option
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TLS1.0选择器，用来选择Tls的使用版本，以及配套加密套件。
  
@@ -5638,6 +6028,7 @@ TLS1.0选择器，用来选择Tls的使用版本，以及配套加密套件。
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | tlsVersion | 'TlsV1.0' | 否 | 否 | TLS版本为'TlsV1.0'。 |
@@ -5646,9 +6037,10 @@ TLS1.0选择器，用来选择Tls的使用版本，以及配套加密套件。
  
   
 
-#### ContentCoding
+## ContentCoding
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ContentCoding = 'aes128gcm' | 'br' | 'compress' | 'deflate' | 'exi' | 'gzip' | 'pack200-gzip' | 'x-compress' | 'x-gzip' | 'zstd' | (string & NonNullable&lt;unknown&gt;)
  
@@ -5660,6 +6052,7 @@ type ContentCoding = 'aes128gcm' | 'br' | 'compress' | 'deflate' | 'exi' | 'gzip
  
 **起始版本：** 4.1.0(11)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | 'aes128gcm' | 表示使用AES-128-GCM加密算法对内容进行编码，用于对称加密。 |
@@ -5677,9 +6070,10 @@ type ContentCoding = 'aes128gcm' | 'br' | 'compress' | 'deflate' | 'exi' | 'gzip
  
   
 
-#### ResponseValidationCallback
+## ResponseValidationCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ResponseValidationCallback = (response: Response) => boolean | Promise&lt;boolean&gt;
  
@@ -5693,6 +6087,7 @@ type ResponseValidationCallback = (response: Response) => boolean | Promise&lt;b
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | response | Response | 是 | 框架传入的响应，即需要进行校验的响应。 |
@@ -5700,6 +6095,7 @@ type ResponseValidationCallback = (response: Response) => boolean | Promise&lt;b
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean \| Promise&lt;boolean&gt; | 回调函数，返回true表示校验成功，返回false表示校验失败；或者Promise对象，返回true表示校验成功，返回false表示校验失败。 |
@@ -5707,9 +6103,10 @@ type ResponseValidationCallback = (response: Response) => boolean | Promise&lt;b
  
   
 
-#### ProcessingConfiguration
+## ProcessingConfiguration
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 请求处理配置。
  
@@ -5719,6 +6116,7 @@ type ResponseValidationCallback = (response: Response) => boolean | Promise&lt;b
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | validateResponse | 'default' \| ResponseValidationCallback | 否 | 是 | 默认不处理。或者使用ResponseValidationCallback对响应进行校验。 |
@@ -5726,9 +6124,10 @@ type ResponseValidationCallback = (response: Response) => boolean | Promise&lt;b
  
   
 
-#### GetDataCallback
+## GetDataCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type GetDataCallback = (maxSize: number) => ArrayBuffer | Promise&lt;ArrayBuffer&gt;
  
@@ -5742,6 +6141,7 @@ type GetDataCallback = (maxSize: number) => ArrayBuffer | Promise&lt;ArrayBuffer
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | maxSize | number | 是 | 数据最大字节数。 返回值为ArrayBuffer或使用Promise异步回调的方法，可取任意值。 |
@@ -5749,16 +6149,60 @@ type GetDataCallback = (maxSize: number) => ArrayBuffer | Promise&lt;ArrayBuffer
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| ArrayBuffer \| Promise&lt;ArrayBuffer&gt; | 回调函数，返回用于发送的数据；或者Promise对象，返回用于发送的数据。 说明： 5.0.0(12)新增返回值Promise&lt;ArrayBuffer&gt;。 |
+| ArrayBuffer | 回调函数，返回用于发送的数据。 适用版本： 4.1.0(11) |
+| ArrayBuffer \| Promise&lt;ArrayBuffer&gt; | 回调函数，返回用于发送的数据；或者Promise对象，返回用于发送的数据。 适用版本： 5.0.0(12)+ |
  
+ 
+**示例：**
+ 
+```text
+import { rcp } from '@kit.RemoteCommunicationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { util } from '@kit.ArkTS';
+
+let read = false;
+
+function testGetDataCallback() {
+  try {
+    const session = rcp.createSession();
+    const request = new rcp.Request('https://www.example.com');
+    // 创建getDataCallback对象。
+    const getDataCallback: rcp.GetDataCallback = (maxSize: number) => {
+      if (read) {
+        return Promise.resolve(new ArrayBuffer(0));
+      }
+      read = true;
+      // 将字符串类型的测试数据转换为ArrayBuffer，并作为GetDataCallback的返回值。
+      const data = "Hello World";
+      const buffer = new ArrayBuffer(data.length);
+      const uint8Array = new Uint8Array(buffer);
+      new util.TextEncoder().encodeIntoUint8Array(data, uint8Array);
+      return Promise.resolve(buffer);
+    }
+    // 将getDataCallback对象赋值给request.content。
+    request.content = getDataCallback;
+    session.fetch(request).then((response) => {
+      console.info(`Succeeded in fetch the response ${response.toString()}`);
+      session.close();
+    }).catch((error: BusinessError) => {
+      console.error(`Error: error code is ${error.code}, error data is ${error.data}`);
+      session.close();
+    });
+  } catch (error) {
+    console.error(`Error: error code is ${error.code}, error data is ${error.data}`);
+  }
+}
+```
  
   
 
-#### DynamicExclusionRule
+## DynamicExclusionRule
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type DynamicExclusionRule = (url: URLOrString) => boolean
  
@@ -5772,6 +6216,7 @@ type DynamicExclusionRule = (url: URLOrString) => boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | URLOrString | 是 | 表示URL对象或表示URL的字符串的并集类型。 表示入参的类型为URLOrString，返回值为boolean的方法。为true，代表主机使用代理，false则代表未使用。 |
@@ -5779,6 +6224,7 @@ type DynamicExclusionRule = (url: URLOrString) => boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回一个boolean类型值，为true，代表主机使用代理，false则代表未使用。 |
@@ -5786,9 +6232,10 @@ type DynamicExclusionRule = (url: URLOrString) => boolean
  
   
 
-#### StaticDnsRule
+## StaticDnsRule
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 StaticDnsRule接口表示一个单独的静态DNS规则，将特定的IP地址与主机名和端口相关联。此配置是StaticDnsRule接口的一部分，用于自定义DNS映射。
  
@@ -5798,6 +6245,7 @@ StaticDnsRule接口表示一个单独的静态DNS规则，将特定的IP地址�
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | host | string | 否 | 否 | 应用静态DNS规则的主机名。 |
@@ -5807,9 +6255,10 @@ StaticDnsRule接口表示一个单独的静态DNS规则，将特定的IP地址�
  
   
 
-#### StaticDnsRules
+## StaticDnsRules
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type StaticDnsRules = StaticDnsRule[]
  
@@ -5821,6 +6270,7 @@ type StaticDnsRules = StaticDnsRule[]
  
 **起始版本：** 4.1.0(11)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | StaticDnsRule[] | 表示值的类型为StaticDnsRule数组。 |
@@ -5828,9 +6278,10 @@ type StaticDnsRules = StaticDnsRule[]
  
   
 
-#### DynamicDnsRule
+## DynamicDnsRule
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type DynamicDnsRule = (host: string, port: number) => IpAddress[]
  
@@ -5844,6 +6295,7 @@ type DynamicDnsRule = (host: string, port: number) => IpAddress[]
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | host | string | 是 | 指定的主机名。 |
@@ -5852,6 +6304,7 @@ type DynamicDnsRule = (host: string, port: number) => IpAddress[]
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | IpAddress[] | 一个IP地址数组。 |
@@ -5859,9 +6312,10 @@ type DynamicDnsRule = (host: string, port: number) => IpAddress[]
  
   
 
-#### WebProxy
+## WebProxy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 WebProxy接口使开发者能够在[ProxyConfiguration](#proxyconfiguration)中配置自定义代理时定义自定义代理设置。它允许指定代理URL、排除和其他安全配置。
  
@@ -5871,19 +6325,21 @@ WebProxy接口使开发者能够在[ProxyConfiguration](#proxyconfiguration)中�
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | url | URLOrString | 否 | 否 | 自定义代理的URL。 |
 | createTunnel | 'auto' \| 'always' | 否 | 是 | 用于控制何时创建代理隧道。隧道是指将HTTP CONNECT请求发送到代理，要求其连接到一个特定端口号上的远程主机，然后流量通过代理。默认值为'auto'。 'auto'表示为HTTPS创建隧道，而不是为HTTP创建。 'always'表示始终创建隧道。 |
-| exclusions | URLOrString \| URLOrString[] \| DynamicExclusionRule | 否 | 是 | 需要从代理中排除的URL （例如："http://exclude.example.com"或["http://exclude1.com", "http://exclude2.com"]）。默认值为undefined。 |
+| exclusions | URLOrString \| URLOrString[] \| DynamicExclusionRule | 否 | 是 | 需要从代理中排除的URL （例如：'http://exclude.example.com'或['http://exclude1.com', 'http://exclude2.com']）。默认值为undefined。 |
 | security | SecurityConfiguration | 否 | 是 | 设置代理安全配置。默认值为undefined。 |
  
  
   
 
-#### InfoToCollect
+## InfoToCollect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 InfoToCollect接口可以帮助开发者收集信息事件。收集到的信息事件会在[Response](#response)的debugInfo字段中返回。InfoToCollect开启后会占用内存，建议仅在开发调试阶段使用。
  
@@ -5893,6 +6349,7 @@ InfoToCollect接口可以帮助开发者收集信息事件。收集到的信息�
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | textual | boolean | 否 | 是 | 是否收集文本信息事件。true代表收集文本信息事件，false代表不收集文本信息事件。默认值为false。 |
@@ -5902,16 +6359,17 @@ InfoToCollect接口可以帮助开发者收集信息事件。收集到的信息�
 | outgoingData | boolean | 否 | 是 | 是否收集传出的数据信息事件。true代表收集传出的数据信息事件，false代表不收集传出的数据信息事件。默认值为false。 |
 | incomingSslData | boolean | 否 | 是 | 是否收集传入的SSL/TLS数据信息事件。true代表收集传入的SSL/TLS数据信息事件，false代表不收集传入的SSL/TLS数据信息事件。默认值为false。 |
 | outgoingSslData | boolean | 否 | 是 | 是否收集传出的SSL/TLS数据信息事件。true代表收集传出的SSL/TLS数据信息事件，false代表不收集传出的SSL/TLS数据信息事件。默认值为false。 |
-| srcAddr | boolean | 否 | 是 | 客户端地址。 true：收集客户端地址及端口号。 false：不收集客户端地址及端口号。 默认值是false。 起始版本： 6.0.0(20 |
+| srcAddr | boolean | 否 | 是 | 客户端地址。 true：收集客户端地址及端口号。 false：不收集客户端地址及端口号。 默认值是false。 起始版本： 6.0.0(20) |
 | dstAddr | boolean | 否 | 是 | 服务器地址。 true：收集服务器地址及端口号。 false：不收集服务器地址及端口号。 默认值是false。 起始版本： 6.0.0(20) |
 | redirectCount | boolean | 否 | 是 | 是否收集重定向次数。 true：收集重定向次数。 false：不收集重定向次数。 默认值为false。 起始版本： 6.1.0(23) |
  
  
   
 
-#### HttpEventsHandler
+## HttpEventsHandler
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 HttpEventsHandler接口使开发者能够定义自定义逻辑，用于处理会话中HTTP请求/响应过程中的各种操作。
  
@@ -5921,6 +6379,7 @@ HttpEventsHandler接口使开发者能够定义自定义逻辑，用于处理会
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | onDataReceive | OnDataReceive | 否 | 是 | 当接收到HTTP响应正文的一部分时调用的回调。默认为undefined。当开发者需要请求超过50M字节的数据时，使用此回调接受数据。使用后，返回的Response对象的body字段将不再含有数据。 |
@@ -5935,9 +6394,10 @@ HttpEventsHandler接口使开发者能够定义自定义逻辑，用于处理会
  
   
 
-#### Timeout
+## Timeout
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 配置HTTP请求的超时值，允许开发者定义连接和传输数据所允许的最长时间。
  
@@ -5947,6 +6407,7 @@ HttpEventsHandler接口使开发者能够定义自定义逻辑，用于处理会
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | connectMs | number | 否 | 是 | 允许建立连接的最长时间（以毫秒为单位）。如果连接过程超过这个时间限制，连接将被认为超时。默认值为60000。 |
@@ -5956,9 +6417,10 @@ HttpEventsHandler接口使开发者能够定义自定义逻辑，用于处理会
  
   
 
-#### CertificatePinning
+## CertificatePinning
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 证书锁定是校验服务器的证书的公钥SHA-256哈希值是否与设置的值匹配。
  
@@ -5968,6 +6430,7 @@ HttpEventsHandler接口使开发者能够定义自定义逻辑，用于处理会
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | kind | 'public-key' | 否 | 否 | 证书的校验类型。 |
@@ -5977,9 +6440,10 @@ HttpEventsHandler接口使开发者能够定义自定义逻辑，用于处理会
  
   
 
-#### SessionListener
+## SessionListener
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义会话监听器。
  
@@ -5989,6 +6453,7 @@ HttpEventsHandler接口使开发者能够定义自定义逻辑，用于处理会
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | onCanceled | OnCanceled | 否 | 是 | 会话取消事件的回调。会话取消时调用。默认为undefined。 |
@@ -5997,9 +6462,10 @@ HttpEventsHandler接口使开发者能够定义自定义逻辑，用于处理会
  
   
 
-#### Credential
+## Credential
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 凭据接口表示会话中服务器身份验证设置中使用的身份验证凭据，包括用户名和密码。
  
@@ -6009,6 +6475,7 @@ HttpEventsHandler接口使开发者能够定义自定义逻辑，用于处理会
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | username | string | 否 | 否 | 用于身份验证的用户名。默认值为' '。 |
@@ -6017,9 +6484,10 @@ HttpEventsHandler接口使开发者能够定义自定义逻辑，用于处理会
  
   
 
-#### TlsVersion
+## TlsVersion
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type TlsVersion = 'TlsV1.0' | 'TlsV1.1' | 'TlsV1.2' | 'TlsV1.3'
  
@@ -6031,6 +6499,7 @@ type TlsVersion = 'TlsV1.0' | 'TlsV1.1' | 'TlsV1.2' | 'TlsV1.3'
  
 **起始版本：** 6.0.0(20)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | 'TlsV1.0' | 表示使用TLS1.0版本。 |
@@ -6041,9 +6510,10 @@ type TlsVersion = 'TlsV1.0' | 'TlsV1.1' | 'TlsV1.2' | 'TlsV1.3'
  
   
 
-#### DebugEvent
+## DebugEvent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type DebugEvent = 'text' | 'headerIn' | 'headerOut' | 'dataIn' | 'dataOut' | 'sslDataIn' | 'sslDataOut' | 'srcAddr' | 'dstAddr' | 'redirectCount'
  
@@ -6055,6 +6525,7 @@ type DebugEvent = 'text' | 'headerIn' | 'headerOut' | 'dataIn' | 'dataOut' | 'ss
  
 **起始版本：** 4.1.0(11)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | 'text' | 表示调试事件与HTTP响应的文本内容相关。 |
@@ -6071,9 +6542,10 @@ type DebugEvent = 'text' | 'headerIn' | 'headerOut' | 'dataIn' | 'dataOut' | 'ss
  
   
 
-#### AuthenticationType
+## AuthenticationType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AuthenticationType = 'basic' | 'ntlm' | 'digest'
  
@@ -6085,6 +6557,7 @@ type AuthenticationType = 'basic' | 'ntlm' | 'digest'
  
 **起始版本：** 4.1.0(11)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | 'basic' | 表示使用基本身份验证，通过将用户名和密码组合成一个字符串并进行Base64编码来进行身份验证。 |
@@ -6094,9 +6567,10 @@ type AuthenticationType = 'basic' | 'ntlm' | 'digest'
  
   
 
-#### OnCanceled
+## OnCanceled
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnCanceled = (request?: Request) => void
  
@@ -6110,6 +6584,7 @@ type OnCanceled = (request?: Request) => void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | Request | 否 | 触发回调的HTTP请求。 起始版本： 6.0.0(20) |
@@ -6117,9 +6592,10 @@ type OnCanceled = (request?: Request) => void
  
   
 
-#### OnClosed
+## OnClosed
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnClosed = () => void
  
@@ -6133,9 +6609,10 @@ type OnClosed = () => void
  
   
 
-#### OnDataReceive
+## OnDataReceive
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnDataReceive = (incomingData: ArrayBuffer, request?: Request) => number | void | Promise&lt;void&gt;
  
@@ -6149,6 +6626,7 @@ type OnDataReceive = (incomingData: ArrayBuffer, request?: Request) => number | 
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | incomingData | ArrayBuffer | 是 | 参数为收到HTTP数据。 |
@@ -6157,16 +6635,19 @@ type OnDataReceive = (incomingData: ArrayBuffer, request?: Request) => number | 
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| number \| void \| Promise&lt;void&gt; | 回调函数，返回number类型数据，表示处理的字节数；或者回调函数，无返回值；或者Promise对象，无返回结果。 说明： 5.0.0(12)版本上新增返回值void \| Promise&lt;void&gt;。 |
+| number | 回调函数，返回number类型数据，表示处理的字节数。 适用版本： 4.1.0(11) |
+| number \| void \| Promise&lt;void&gt; | 回调函数，返回number类型数据，表示处理的字节数；或者回调函数，无返回值；或者Promise对象，无返回结果。 适用版本： 5.0.0(12)+ |
  
  
   
 
-#### OnUploadProgress
+## OnUploadProgress
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnUploadProgress = (totalSize: number, transferredSize: number, request?: Request) => void
  
@@ -6180,6 +6661,7 @@ type OnUploadProgress = (totalSize: number, transferredSize: number, request?: R
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | totalSize | number | 是 | 上传总大小。 |
@@ -6189,9 +6671,10 @@ type OnUploadProgress = (totalSize: number, transferredSize: number, request?: R
  
   
 
-#### OnDownloadProgress
+## OnDownloadProgress
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnDownloadProgress = (totalSize: number, transferredSize: number, request?: Request) => void
  
@@ -6205,6 +6688,7 @@ type OnDownloadProgress = (totalSize: number, transferredSize: number, request?:
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | totalSize | number | 是 | 下载总大小。 |
@@ -6214,9 +6698,10 @@ type OnDownloadProgress = (totalSize: number, transferredSize: number, request?:
  
   
 
-#### OnHeaderReceive
+## OnHeaderReceive
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnHeaderReceive = (headers: ResponseHeaders, request?: Request) => void
  
@@ -6230,6 +6715,7 @@ type OnHeaderReceive = (headers: ResponseHeaders, request?: Request) => void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | headers | ResponseHeaders | 是 | 参数为HTTP响应头，返回为空。 |
@@ -6238,9 +6724,10 @@ type OnHeaderReceive = (headers: ResponseHeaders, request?: Request) => void
  
   
 
-#### OnDataEnd
+## OnDataEnd
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnDataEnd = (request?: Request) => void
  
@@ -6254,6 +6741,7 @@ type OnDataEnd = (request?: Request) => void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | Request | 否 | 触发回调的HTTP请求。 起始版本： 6.0.0(20) |
@@ -6261,9 +6749,10 @@ type OnDataEnd = (request?: Request) => void
  
   
 
-#### OnTimeInfo
+## OnTimeInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnTimeInfo = (timeInfo: TimeInfo, request?: Request) => void
  
@@ -6277,6 +6766,7 @@ type OnTimeInfo = (timeInfo: TimeInfo, request?: Request) => void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | timeInfo | TimeInfo | 是 | HTTP各个阶段耗时。 |
@@ -6291,7 +6781,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 // 1. 创建session、requestURL和request。
 const session = rcp.createSession();
-const requestURL = "https://www.example.com";
+const requestURL = 'https://www.example.com';
 const request = new rcp.Request(requestURL);
 
 // 2. 配置请求的configuration，设置onTimeInfo回调函数以获取网络请求相关的时间信息
@@ -6323,9 +6813,10 @@ session.fetch(request).then((response) => {
  
   
 
-#### OnStatusCodeReceive
+## OnStatusCodeReceive
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnStatusCodeReceive = (statusCode: number, request?: Request) => void
  
@@ -6339,6 +6830,7 @@ type OnStatusCodeReceive = (statusCode: number, request?: Request) => void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | statusCode | number | 是 | HTTP状态码。 |
@@ -6347,9 +6839,10 @@ type OnStatusCodeReceive = (statusCode: number, request?: Request) => void
  
   
 
-#### CacheControl
+## CacheControl
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 缓存控制，用于配置HTTP缓存行为和策略，包括资源缓存策略、更新机制及存储规则等。
  
@@ -6359,6 +6852,7 @@ type OnStatusCodeReceive = (statusCode: number, request?: Request) => void
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | expirationPolicy | TimeLimitedExpirationPolicy | 否 | 是 | 为HTTP请求所创建的缓存配置过期策略。如果设置该属性，则会覆盖HTTP响应过期策略。 |
@@ -6374,9 +6868,10 @@ type OnStatusCodeReceive = (statusCode: number, request?: Request) => void
  
   
 
-#### CacheInfo
+## CacheInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 缓存信息，包含该缓存对应的原始HTTP请求ID和已存在时长。
  
@@ -6386,6 +6881,7 @@ type OnStatusCodeReceive = (statusCode: number, request?: Request) => void
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | originalRequestId | string | 否 | 否 | 创建该缓存时的HTTP请求ID。 |
@@ -6394,9 +6890,10 @@ type OnStatusCodeReceive = (statusCode: number, request?: Request) => void
  
   
 
-#### ExpirationPolicy
+## ExpirationPolicy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ExpirationPolicy = NeverExpirationPolicy | TimeLimitedExpirationPolicy
  
@@ -6408,6 +6905,7 @@ type ExpirationPolicy = NeverExpirationPolicy | TimeLimitedExpirationPolicy
  
 **起始版本：** 6.0.0(20)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NeverExpirationPolicy | 永不过期类型过期策略。 |
@@ -6416,9 +6914,10 @@ type ExpirationPolicy = NeverExpirationPolicy | TimeLimitedExpirationPolicy
  
   
 
-#### NeverExpirationPolicy
+## NeverExpirationPolicy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 缓存记录永不过期的过期策略。缓存记录会一直停留在缓存中，直到超过缓存大小限制。
  
@@ -6428,6 +6927,7 @@ type ExpirationPolicy = NeverExpirationPolicy | TimeLimitedExpirationPolicy
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | kind | 'never' | 否 | 否 | 策略类型。用来表示这是永不过期的过期策略。 |
@@ -6435,9 +6935,10 @@ type ExpirationPolicy = NeverExpirationPolicy | TimeLimitedExpirationPolicy
  
   
 
-#### TimeLimitedExpirationPolicy
+## TimeLimitedExpirationPolicy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type TimeLimitedExpirationPolicy = AbsoluteTimeExpirationPolicy | RelativeTimeExpirationPolicy | SlidingTimeExpirationPolicy
  
@@ -6449,6 +6950,7 @@ type TimeLimitedExpirationPolicy = AbsoluteTimeExpirationPolicy | RelativeTimeEx
  
 **起始版本：** 6.0.0(20)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbsoluteTimeExpirationPolicy | 绝对时间过期策略。到达指定时间，该缓存记录过期。 |
@@ -6458,9 +6960,10 @@ type TimeLimitedExpirationPolicy = AbsoluteTimeExpirationPolicy | RelativeTimeEx
  
   
 
-#### AbsoluteTimeExpirationPolicy
+## AbsoluteTimeExpirationPolicy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 绝对时间过期策略。到达指定时间，该缓存记录过期。
  
@@ -6470,6 +6973,7 @@ type TimeLimitedExpirationPolicy = AbsoluteTimeExpirationPolicy | RelativeTimeEx
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | kind | 'absolute' | 否 | 否 | 策略类型。用来表示这是绝对时间过期策略。 |
@@ -6478,9 +6982,10 @@ type TimeLimitedExpirationPolicy = AbsoluteTimeExpirationPolicy | RelativeTimeEx
  
   
 
-#### RelativeTimeExpirationPolicy
+## RelativeTimeExpirationPolicy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 相对时间过期策略。经过指定的时间间隔后，该缓存记录过期。
  
@@ -6490,6 +6995,7 @@ type TimeLimitedExpirationPolicy = AbsoluteTimeExpirationPolicy | RelativeTimeEx
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | kind | 'relative' | 否 | 否 | 策略类型。用来表示这是相对时间过期策略。 |
@@ -6498,9 +7004,10 @@ type TimeLimitedExpirationPolicy = AbsoluteTimeExpirationPolicy | RelativeTimeEx
  
   
 
-#### SlidingTimeExpirationPolicy
+## SlidingTimeExpirationPolicy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 滑动时间过期策略。指定的时间间隔期间，若无任何访问，该缓存记录过期；若有访问，则重置过期时间。
  
@@ -6510,6 +7017,7 @@ type TimeLimitedExpirationPolicy = AbsoluteTimeExpirationPolicy | RelativeTimeEx
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | kind | 'sliding' | 否 | 否 | 策略类型。用来表示这是滑动时间过期策略。 |
@@ -6518,9 +7026,10 @@ type TimeLimitedExpirationPolicy = AbsoluteTimeExpirationPolicy | RelativeTimeEx
  
   
 
-#### TimeInterval
+## TimeInterval
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 时间间隔。
  
@@ -6530,6 +7039,7 @@ type TimeLimitedExpirationPolicy = AbsoluteTimeExpirationPolicy | RelativeTimeEx
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | units | TimeIntervalUnits | 否 | 否 | 时间间隔单位。 |
@@ -6538,9 +7048,10 @@ type TimeLimitedExpirationPolicy = AbsoluteTimeExpirationPolicy | RelativeTimeEx
  
   
 
-#### TimeIntervalUnits
+## TimeIntervalUnits
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type TimeIntervalUnits = 'seconds' | 'minutes' | 'hours' | 'days'
  
@@ -6552,6 +7063,7 @@ type TimeIntervalUnits = 'seconds' | 'minutes' | 'hours' | 'days'
  
 **起始版本：** 6.0.0(20)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | 'seconds' | 时间单位：秒。 |
@@ -6562,9 +7074,10 @@ type TimeIntervalUnits = 'seconds' | 'minutes' | 'hours' | 'days'
  
   
 
-#### CachedResponse
+## CachedResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 缓存中存储的HTTP响应数据。
  
@@ -6574,6 +7087,7 @@ type TimeIntervalUnits = 'seconds' | 'minutes' | 'hours' | 'days'
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | timeStamp | Date | 否 | 否 | 从网络获取HTTP响应的时间。 |
@@ -6589,9 +7103,10 @@ type TimeIntervalUnits = 'seconds' | 'minutes' | 'hours' | 'days'
  
   
 
-#### ResponseCacheKey
+## ResponseCacheKey
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 标识HTTP响应缓存记录的键。
  
@@ -6601,6 +7116,7 @@ type TimeIntervalUnits = 'seconds' | 'minutes' | 'hours' | 'days'
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | url | URLOrString | 否 | 否 | 请求URL。 |
@@ -6610,9 +7126,10 @@ type TimeIntervalUnits = 'seconds' | 'minutes' | 'hours' | 'days'
  
   
 
-#### ResponseCacheRecord
+## ResponseCacheRecord
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 缓存记录。
  
@@ -6622,6 +7139,7 @@ type TimeIntervalUnits = 'seconds' | 'minutes' | 'hours' | 'days'
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | expirationPolicy | ExpirationPolicy | 否 | 否 | 缓存过期策略。 |
@@ -6631,9 +7149,10 @@ type TimeIntervalUnits = 'seconds' | 'minutes' | 'hours' | 'days'
  
   
 
-#### CacheConfiguration
+## CacheConfiguration
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 缓存配置。开发者可以通过该接口控制缓存行为，包括内存和磁盘缓存配置、缓存内存和条数上限、默认过期策略等。
  
@@ -6643,6 +7162,7 @@ type TimeIntervalUnits = 'seconds' | 'minutes' | 'hours' | 'days'
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | persistent | PersistentStorageConfiguration | 否 | 否 | 指定持久化缓存配置。 |
@@ -6654,9 +7174,10 @@ type TimeIntervalUnits = 'seconds' | 'minutes' | 'hours' | 'days'
  
   
 
-#### PersistentStorageConfiguration
+## PersistentStorageConfiguration
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type PersistentStorageConfiguration = FileSystemStorageConfiguration
  
@@ -6668,6 +7189,7 @@ type PersistentStorageConfiguration = FileSystemStorageConfiguration
  
 **起始版本：** 6.0.0(20)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FileSystemStorageConfiguration | 基于文件系统的缓存存储配置。 |
@@ -6675,9 +7197,10 @@ type PersistentStorageConfiguration = FileSystemStorageConfiguration
  
   
 
-#### FileSystemStorageConfiguration
+## FileSystemStorageConfiguration
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 基于文件系统的缓存存储配置。
  
@@ -6687,6 +7210,7 @@ type PersistentStorageConfiguration = FileSystemStorageConfiguration
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | kind | 'file-system' | 否 | 否 | 持久化缓存存储介质键，键值为'file-system'，表示基于文件系统介质存储。 |
@@ -6695,9 +7219,10 @@ type PersistentStorageConfiguration = FileSystemStorageConfiguration
  
   
 
-#### InMemoryCacheConfiguration
+## InMemoryCacheConfiguration
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 基于内存的缓存存储配置。
  
@@ -6707,6 +7232,7 @@ type PersistentStorageConfiguration = FileSystemStorageConfiguration
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | maxItems | number | 否 | 是 | 指定内存缓存中的最大记录数上限。 |
@@ -6715,9 +7241,10 @@ type PersistentStorageConfiguration = FileSystemStorageConfiguration
  
   
 
-#### CacheState
+## CacheState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 缓存状态信息。包含当前缓存条数、缓存大小和缓存命中数。
  
@@ -6727,6 +7254,7 @@ type PersistentStorageConfiguration = FileSystemStorageConfiguration
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | size | number | 否 | 否 | 持久化存储缓存的字节数。 单位：Byte。 |
@@ -6736,9 +7264,10 @@ type PersistentStorageConfiguration = FileSystemStorageConfiguration
  
   
 
-#### ResponseCache
+## ResponseCache
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 HTTP响应缓存，为开发者提供了记录和操作HTTP缓存的能力。Remote Communication Kit不为HTTP响应缓存加密，开发者应结合自身需要选择是否使用HTTP响应缓存功能。
  
@@ -6750,9 +7279,10 @@ HTTP响应缓存，为开发者提供了记录和操作HTTP缓存的能力。Rem
  
   
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(configuration: CacheConfiguration)
  
@@ -6766,6 +7296,7 @@ constructor(configuration: CacheConfiguration)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | configuration | CacheConfiguration | 是 | 缓存配置。 |
@@ -6783,16 +7314,17 @@ import { rcp } from '@kit.RemoteCommunicationKit';
 const cache = new rcp.ResponseCache({
   persistent: {
     kind: 'file-system',
-    pathToFolder: "/path/dir" // 请根据自身业务选择合适的路径
+    pathToFolder: '/path/dir' // 请根据自身业务选择合适的路径
   }
 });
 ```
  
   
 
-#### close
+### close
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(): Promise&lt;void&gt;
  
@@ -6806,6 +7338,7 @@ close(): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -6815,6 +7348,7 @@ close(): Promise&lt;void&gt;
  
 错误码的详细介绍请参见[API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-remote-communication)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1007900985 | File system IO error. |
@@ -6829,7 +7363,7 @@ try {
   const cache = new rcp.ResponseCache({
     persistent: {
       kind: 'file-system',
-      pathToFolder: "/path/dir" // 请根据自身业务选择合适的路径
+      pathToFolder: '/path/dir' // 请根据自身业务选择合适的路径
     }
   });
   await cache.close();
@@ -6840,9 +7374,10 @@ try {
  
   
 
-#### set
+### set
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set(key: ResponseCacheKey, response: CachedResponse, expirationPolicy?: ExpirationPolicy): Promise&lt;void&gt;
  
@@ -6856,6 +7391,7 @@ set(key: ResponseCacheKey, response: CachedResponse, expirationPolicy?: Expirati
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | ResponseCacheKey | 是 | 缓存键。 |
@@ -6865,6 +7401,7 @@ set(key: ResponseCacheKey, response: CachedResponse, expirationPolicy?: Expirati
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -6874,6 +7411,7 @@ set(key: ResponseCacheKey, response: CachedResponse, expirationPolicy?: Expirati
  
 错误码的详细介绍请参见[API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-remote-communication)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1007900401 | Parameter error. |
@@ -6889,7 +7427,7 @@ try {
   const cache = new rcp.ResponseCache({
     persistent: {
       kind: 'file-system',
-      pathToFolder: "/path/dir" // 请根据自身业务选择合适的路径
+      pathToFolder: '/path/dir' // 请根据自身业务选择合适的路径
     }
   });
   const session: rcp.Session = rcp.createSession({
@@ -6918,9 +7456,10 @@ try {
  
   
 
-#### get
+### get
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get(key: ResponseCacheKey): Promise&lt;ResponseCacheRecord&gt;
  
@@ -6934,6 +7473,7 @@ get(key: ResponseCacheKey): Promise&lt;ResponseCacheRecord&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | ResponseCacheKey | 是 | 缓存键。 |
@@ -6941,6 +7481,7 @@ get(key: ResponseCacheKey): Promise&lt;ResponseCacheRecord&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;ResponseCacheRecord&gt; | Promise对象，返回HTTP响应缓存记录。 |
@@ -6950,6 +7491,7 @@ get(key: ResponseCacheKey): Promise&lt;ResponseCacheRecord&gt;
  
 错误码的详细介绍请参见[API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-remote-communication)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1007900401 | Parameter error. |
@@ -6965,7 +7507,7 @@ try {
   const cache = new rcp.ResponseCache({
     persistent: {
       kind: 'file-system',
-      pathToFolder: "/path/dir" // 请根据自身业务选择合适的路径
+      pathToFolder: '/path/dir' // 请根据自身业务选择合适的路径
     }
   });
   const record = await cache.get({
@@ -6979,9 +7521,10 @@ try {
  
   
 
-#### clear
+### clear
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clear(): Promise&lt;void&gt;
  
@@ -6995,6 +7538,7 @@ clear(): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -7004,6 +7548,7 @@ clear(): Promise&lt;void&gt;
  
 错误码的详细介绍请参见[API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-remote-communication)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1007900985 | File system IO error. |
@@ -7018,7 +7563,7 @@ try {
   const cache = new rcp.ResponseCache({
     persistent: {
       kind: 'file-system',
-      pathToFolder: "/path/dir" // 请根据自身业务选择合适的路径
+      pathToFolder: '/path/dir' // 请根据自身业务选择合适的路径
     }
   });
   await cache.clear();
@@ -7029,9 +7574,10 @@ try {
  
   
 
-#### getState
+### getState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getState(): Promise&lt;CacheState&gt;
  
@@ -7045,6 +7591,7 @@ getState(): Promise&lt;CacheState&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;CacheState&gt; | Promise对象，返回缓存状态信息。 |
@@ -7054,6 +7601,7 @@ getState(): Promise&lt;CacheState&gt;
  
 错误码的详细介绍请参见[API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-remote-communication)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1007900985 | File system IO error. |
@@ -7068,7 +7616,7 @@ try {
   const cache = new rcp.ResponseCache({
     persistent: {
       kind: 'file-system',
-      pathToFolder: "/path/dir" // 请根据自身业务选择合适的路径
+      pathToFolder: '/path/dir' // 请根据自身业务选择合适的路径
     }
   });
   const cacheState = await cache.getState();
@@ -7079,9 +7627,10 @@ try {
  
   
 
-#### remove
+### remove
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 remove(key: ResponseCacheKey): Promise&lt;boolean&gt;
  
@@ -7095,6 +7644,7 @@ remove(key: ResponseCacheKey): Promise&lt;boolean&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | ResponseCacheKey | 是 | 缓存键。 |
@@ -7102,6 +7652,7 @@ remove(key: ResponseCacheKey): Promise&lt;boolean&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象，返回true表示删除成功；返回false表示删除失败。 |
@@ -7111,6 +7662,7 @@ remove(key: ResponseCacheKey): Promise&lt;boolean&gt;
  
 错误码的详细介绍请参见[API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-remote-communication)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1007900401 | Parameter error. |
@@ -7126,7 +7678,7 @@ try {
   const cache = new rcp.ResponseCache({
     persistent: {
       kind: 'file-system',
-      pathToFolder: "/path/dir" // 请根据自身业务选择合适的路径
+      pathToFolder: '/path/dir' // 请根据自身业务选择合适的路径
     }
   });
   const key: rcp.ResponseCacheKey = {
@@ -7141,9 +7693,10 @@ try {
  
   
 
-#### removeMultiple
+### removeMultiple
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeMultiple(url: URLOrString, matchKind: URLMatchKind, method?: HttpMethod): Promise&lt;boolean&gt;
  
@@ -7157,6 +7710,7 @@ removeMultiple(url: URLOrString, matchKind: URLMatchKind, method?: HttpMethod): 
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | URLOrString | 是 | URL，用于与缓存键中的URL进行匹配。 |
@@ -7166,6 +7720,7 @@ removeMultiple(url: URLOrString, matchKind: URLMatchKind, method?: HttpMethod): 
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象，返回true表示删除成功；返回false表示删除失败。 |
@@ -7175,6 +7730,7 @@ removeMultiple(url: URLOrString, matchKind: URLMatchKind, method?: HttpMethod): 
  
 错误码的详细介绍请参见[API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-remote-communication)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1007900401 | Parameter error. |
@@ -7190,7 +7746,7 @@ try {
   const cache = new rcp.ResponseCache({
     persistent: {
       kind: 'file-system',
-      pathToFolder: "/path/dir" // 请根据自身业务选择合适的路径
+      pathToFolder: '/path/dir' // 请根据自身业务选择合适的路径
     }
   });
   const result = await cache.removeMultiple('https://www.example.com', 'exact', 'GET');
@@ -7201,9 +7757,10 @@ try {
  
   
 
-#### URLMatchKind
+## URLMatchKind
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type URLMatchKind = 'exact' | 'as-substring'
  
@@ -7215,6 +7772,7 @@ URL匹配类型。
  
 **起始版本：** 6.0.0(20)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | 'exact' | 指定URL精准匹配。匹配的URL应等于提供的URL。 |
@@ -7223,9 +7781,10 @@ URL匹配类型。
  
   
 
-#### createResponse
+## createResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createResponse(request: Request, cachedResponse: CachedResponse, currentTime: Date): Response
  
@@ -7239,6 +7798,7 @@ createResponse(request: Request, cachedResponse: CachedResponse, currentTime: Da
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | Request | 是 | 待创建响应的HTTP请求。 |
@@ -7248,6 +7808,7 @@ createResponse(request: Request, cachedResponse: CachedResponse, currentTime: Da
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Response | HTTP响应。 |
@@ -7266,7 +7827,7 @@ try {
   const cache = new rcp.ResponseCache({
     persistent: {
       kind: 'file-system',
-      pathToFolder: "/path/dir" // 请根据自身业务选择合适的路径
+      pathToFolder: '/path/dir' // 请根据自身业务选择合适的路径
     }
   });
   const request = new rcp.Request('https://www.example.com', 'GET');
@@ -7287,9 +7848,10 @@ try {
  
   
 
-#### createCachedResponse
+## createCachedResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createCachedResponse(response: Response, timeStamp?: Date): CachedResponse
  
@@ -7303,6 +7865,7 @@ createCachedResponse(response: Response, timeStamp?: Date): CachedResponse
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | response | Response | 是 | HTTP响应。 |
@@ -7311,6 +7874,7 @@ createCachedResponse(response: Response, timeStamp?: Date): CachedResponse
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | CachedResponse | HTTP响应缓存。 |

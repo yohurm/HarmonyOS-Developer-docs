@@ -1,20 +1,21 @@
 # Class (Font)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-graphics-drawing-font
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-描述字型绘制时所使用的属性，如大小、字体等。
+Font类用于描述字型绘制时所使用的属性（如大小、字体、粗细、倾斜、缩放等），并支持文本测量、字形转换、路径轮廓获取、主题字体跟随等能力。
 
 > [!NOTE]
 > 本模块首批接口从API version 11开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 本模块使用屏幕物理像素单位px。 本模块为单线程模型策略，需要调用方自行管理线程安全和上下文状态的切换。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { drawing } from '@kit.ArkGraphics2D';
@@ -22,13 +23,14 @@ import { drawing } from '@kit.ArkGraphics2D';
 
 
 
-#### isSubpixel12+
+## isSubpixel12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isSubpixel(): boolean
 
-获取字型是否使用次像素渲染。
+获取字型是否使用亚像素渲染。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
@@ -36,15 +38,16 @@ isSubpixel(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 返回字型是否使用次像素渲染的结果，true表示使用，false表示不使用。 |
+| boolean | 返回字型是否使用亚像素渲染的结果，true表示使用，false表示不使用。 |
 
 
 **示例：**
 
 ```text
-import {drawing} from '@kit.ArkGraphics2D';
+import { drawing } from '@kit.ArkGraphics2D';
 
 let font: drawing.Font = new drawing.Font();
 font.enableSubpixel(true)
@@ -53,9 +56,10 @@ console.info("values=" + font.isSubpixel());
 
 
 
-#### isLinearMetrics12+
+## isLinearMetrics12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isLinearMetrics(): boolean
 
@@ -67,6 +71,7 @@ isLinearMetrics(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回字型是否可线性缩放的结果，true表示可线性缩放，false表示不可线性缩放。 |
@@ -75,22 +80,23 @@ isLinearMetrics(): boolean
 **示例：**
 
 ```text
-import {drawing} from '@kit.ArkGraphics2D';
+import { drawing } from '@kit.ArkGraphics2D';
 
 let font: drawing.Font = new drawing.Font();
-font.enableLinearMetrics(true)
+font.enableLinearMetrics(true);
 console.info("values=" + font.isLinearMetrics());
 ```
 
 
 
-#### getSkewX12+
+## getSkewX12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSkewX(): number
 
-获取字型在x轴方向上的倾斜度。
+获取字型在x轴方向上的倾斜比例。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
@@ -98,26 +104,28 @@ getSkewX(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| number | 返回字型在x轴方向上的倾斜度。 |
+| number | 返回字型在x轴方向上的倾斜比例。 |
 
 
 **示例：**
 
 ```text
-import {drawing} from '@kit.ArkGraphics2D';
+import { drawing } from '@kit.ArkGraphics2D';
 
 let font: drawing.Font = new drawing.Font();
-font.setSkewX(-1)
+font.setSkewX(-1);
 console.info("values=" + font.getSkewX());
 ```
 
 
 
-#### isEmbolden12+
+## isEmbolden12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isEmbolden(): boolean
 
@@ -129,6 +137,7 @@ isEmbolden(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回字型是否设置粗体效果的结果，true表示设置了粗体效果，false表示未设置粗体效果。 |
@@ -137,7 +146,7 @@ isEmbolden(): boolean
 **示例：**
 
 ```text
-import {drawing} from '@kit.ArkGraphics2D';
+import { drawing } from '@kit.ArkGraphics2D';
 
 let font: drawing.Font = new drawing.Font();
 font.enableEmbolden(true);
@@ -146,9 +155,10 @@ console.info("values=" + font.isEmbolden());
 
 
 
-#### getScaleX12+
+## getScaleX12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getScaleX(): number
 
@@ -160,6 +170,7 @@ getScaleX(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回字型在x轴方向上的缩放比例。 |
@@ -168,7 +179,7 @@ getScaleX(): number
 **示例：**
 
 ```text
-import {drawing} from '@kit.ArkGraphics2D';
+import { drawing } from '@kit.ArkGraphics2D';
 
 let font: drawing.Font = new drawing.Font();
 font.setScaleX(2);
@@ -177,9 +188,10 @@ console.info("values=" + font.getScaleX());
 
 
 
-#### getHinting12+
+## getHinting12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getHinting(): FontHinting
 
@@ -191,6 +203,7 @@ getHinting(): FontHinting
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | FontHinting | 返回字型轮廓效果。 |
@@ -199,7 +212,7 @@ getHinting(): FontHinting
 **示例：**
 
 ```text
-import {drawing} from '@kit.ArkGraphics2D';
+import { drawing } from '@kit.ArkGraphics2D';
 
 let font: drawing.Font = new drawing.Font();
 console.info("values=" + font.getHinting());
@@ -207,9 +220,10 @@ console.info("values=" + font.getHinting());
 
 
 
-#### getEdging12+
+## getEdging12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEdging(): FontEdging
 
@@ -221,6 +235,7 @@ getEdging(): FontEdging
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | FontEdging | 返回字型边缘效果。 |
@@ -229,7 +244,7 @@ getEdging(): FontEdging
 **示例：**
 
 ```text
-import {drawing} from '@kit.ArkGraphics2D';
+import { drawing } from '@kit.ArkGraphics2D';
 
 let font: drawing.Font = new drawing.Font();
 console.info("values=" + font.getEdging());
@@ -237,9 +252,10 @@ console.info("values=" + font.getEdging());
 
 
 
-#### enableSubpixel
+## enableSubpixel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableSubpixel(isSubpixel: boolean): void
 
@@ -251,6 +267,7 @@ enableSubpixel(isSubpixel: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isSubpixel | boolean | 是 | 表示是否使能字型亚像素级别的文字绘制。true表示使能，false表示不使能。 |
@@ -260,9 +277,10 @@ enableSubpixel(isSubpixel: boolean): void
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 
 **示例：**
@@ -276,9 +294,10 @@ font.enableSubpixel(true);
 
 
 
-#### enableEmbolden
+## enableEmbolden
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableEmbolden(isEmbolden: boolean): void
 
@@ -290,6 +309,7 @@ enableEmbolden(isEmbolden: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isEmbolden | boolean | 是 | 表示是否使能字型粗体。true表示使能，false表示不使能。 |
@@ -299,9 +319,10 @@ enableEmbolden(isEmbolden: boolean): void
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 
 **示例：**
@@ -315,9 +336,10 @@ font.enableEmbolden(true);
 
 
 
-#### enableLinearMetrics
+## enableLinearMetrics
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableLinearMetrics(isLinearMetrics: boolean): void
 
@@ -329,6 +351,7 @@ enableLinearMetrics(isLinearMetrics: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isLinearMetrics | boolean | 是 | 表示是否使能字型的线性缩放。true表示使能，false表示不使能。 |
@@ -338,9 +361,10 @@ enableLinearMetrics(isLinearMetrics: boolean): void
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 
 **示例：**
@@ -354,9 +378,10 @@ font.enableLinearMetrics(true);
 
 
 
-#### setSize
+## setSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setSize(textSize: number): void
 
@@ -368,18 +393,20 @@ setSize(textSize: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| textSize | number | 是 | 字型大小，该参数为浮点数，为负数时字型大小会被置为0。字型大小为0时，绘制的文字不会显示。单位为物理像素px。 |
+| textSize | number | 是 | 字型大小。该参数为浮点数，为负数时会被置为0，为0时绘制的文字不会显示。单位为物理像素px。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 
 **示例：**
@@ -393,9 +420,10 @@ font.setSize(5);
 
 
 
-#### getSize
+## getSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSize(): number
 
@@ -407,9 +435,10 @@ getSize(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| number | 字型大小，浮点数。单位为物理像素px。 |
+| number | 返回字型大小，浮点数。单位为物理像素px。 |
 
 
 **示例：**
@@ -424,9 +453,10 @@ let fontSize = font.getSize();
 
 
 
-#### setTypeface
+## setTypeface
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setTypeface(typeface: Typeface): void
 
@@ -438,6 +468,7 @@ setTypeface(typeface: Typeface): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | typeface | Typeface | 是 | 字体样式，包括字体名称、粗细、斜体等属性。 |
@@ -447,9 +478,10 @@ setTypeface(typeface: Typeface): void
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 
 **示例：**
@@ -463,9 +495,10 @@ font.setTypeface(new drawing.Typeface());
 
 
 
-#### getTypeface
+## getTypeface
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTypeface(): Typeface
 
@@ -476,6 +509,7 @@ getTypeface(): Typeface
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -493,9 +527,10 @@ let typeface = font.getTypeface();
 
 
 
-#### getMetrics
+## getMetrics
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMetrics(): FontMetrics
 
@@ -507,9 +542,10 @@ getMetrics(): FontMetrics
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| FontMetrics | FontMetrics属性。 |
+| FontMetrics | 与字体关联的度量属性对象。 |
 
 
 **示例：**
@@ -523,9 +559,10 @@ let metrics = font.getMetrics();
 
 
 
-#### measureText
+## measureText
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 measureText(text: string, encoding: TextEncoding): number
 
@@ -541,13 +578,15 @@ measureText(text: string, encoding: TextEncoding): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| text | string | 是 | 文本内容。 |
-| encoding | TextEncoding | 是 | 编码格式。 |
+| text | string | 是 | 待测量的文本内容，将按encoding指定的编码方式进行解析。 |
+| encoding | TextEncoding | 是 | 指定文本的编码格式。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -558,9 +597,10 @@ measureText(text: string, encoding: TextEncoding): number
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 
 **示例：**
@@ -574,9 +614,10 @@ font.measureText("drawing", drawing.TextEncoding.TEXT_ENCODING_UTF8);
 
 
 
-#### measureSingleCharacter12+
+## measureSingleCharacter12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 measureSingleCharacter(text: string): number
 
@@ -586,7 +627,8 @@ measureSingleCharacter(text: string): number
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
-**参数**
+**参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -594,6 +636,7 @@ measureSingleCharacter(text: string): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -604,9 +647,10 @@ measureSingleCharacter(text: string): number
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 
 **示例：**
@@ -617,7 +661,6 @@ import { drawing } from '@kit.ArkGraphics2D';
 
 class DrawingRenderNode extends RenderNode {
   draw(context : DrawContext) {
-    const canvas = context.canvas;
     const font = new drawing.Font();
     font.setSize(20);
     let width = font.measureSingleCharacter("你");
@@ -627,9 +670,10 @@ class DrawingRenderNode extends RenderNode {
 
 
 
-#### measureSingleCharacterWithFeatures20+
+## measureSingleCharacterWithFeatures20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 measureSingleCharacterWithFeatures(text: string, features: Array&lt;FontFeature&gt;): number
 
@@ -639,15 +683,17 @@ measureSingleCharacterWithFeatures(text: string, features: Array&lt;FontFeature&
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
-**参数**
+**参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | text | string | 是 | 待测量的单个字符。字符串长度必须为1。 |
-| features | Array&lt;FontFeature&gt; | 是 | 字体特征对象数组。参数为空数组时使用TTF(TrueType Font)文件中预设的字体特征。 |
+| features | Array&lt;FontFeature&gt; | 是 | 字体特征对象数组。参数为空数组时使用TTF（TrueType Font）文件中预设的字体特征。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -657,6 +703,7 @@ measureSingleCharacterWithFeatures(text: string, features: Array&lt;FontFeature&
 **错误码：**
 
 以下错误码的详细介绍请参见[图形绘制与显示错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-drawing)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -682,13 +729,14 @@ class DrawingRenderNode extends RenderNode {
 
 
 
-#### setScaleX12+
+## setScaleX12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setScaleX(scaleX: number): void
 
-设置字型对象在x轴上的缩放比例。
+设置字型在x轴方向上的缩放比例。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
@@ -696,18 +744,20 @@ setScaleX(scaleX: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| scaleX | number | 是 | 文本在x轴上的缩放比例，该参数为浮点数。 |
+| scaleX | number | 是 | 字型在x轴上的缩放比例，该参数为浮点数。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 
 **示例：**
@@ -734,13 +784,14 @@ class DrawingRenderNode extends RenderNode {
 
 
 
-#### setSkewX12+
+## setSkewX12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setSkewX(skewX: number): void
 
-设置字型对象在x轴上的倾斜比例。
+设置字型在x轴方向上的倾斜比例。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
@@ -748,18 +799,20 @@ setSkewX(skewX: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| skewX | number | 是 | 文本在x轴上的倾斜比例，正数表示往左边倾斜，负数表示往右边倾斜，该参数为浮点数。 |
+| skewX | number | 是 | 字型在x轴方向上的倾斜比例，正数表示向左倾斜，负数表示向右倾斜，该参数为浮点数。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 
 **示例：**
@@ -786,9 +839,10 @@ class DrawingRenderNode extends RenderNode {
 
 
 
-#### setEdging12+
+## setEdging12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setEdging(edging: FontEdging): void
 
@@ -800,6 +854,7 @@ setEdging(edging: FontEdging): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | edging | FontEdging | 是 | 字型边缘效果。 |
@@ -809,9 +864,10 @@ setEdging(edging: FontEdging): void
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 
 **示例：**
@@ -825,9 +881,10 @@ font.setEdging(drawing.FontEdging.SUBPIXEL_ANTI_ALIAS);
 
 
 
-#### setHinting12+
+## setHinting12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setHinting(hinting: FontHinting): void
 
@@ -839,6 +896,7 @@ setHinting(hinting: FontHinting): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | hinting | FontHinting | 是 | 字型轮廓效果。 |
@@ -848,9 +906,10 @@ setHinting(hinting: FontHinting): void
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 
 **示例：**
@@ -864,9 +923,10 @@ font.setHinting(drawing.FontHinting.FULL);
 
 
 
-#### countText12+
+## countText12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 countText(text: string): number
 
@@ -878,12 +938,14 @@ countText(text: string): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| text | string | 是 | 文本内容。 |
+| text | string | 是 | 待计数的文本内容。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -894,9 +956,10 @@ countText(text: string): number
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 
 **示例：**
@@ -911,9 +974,10 @@ console.info("count text number: " + resultNumber);
 
 
 
-#### setBaselineSnap12+
+## setBaselineSnap12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setBaselineSnap(isBaselineSnap: boolean): void
 
@@ -925,18 +989,20 @@ setBaselineSnap(isBaselineSnap: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| isBaselineSnap | boolean | 是 | 指示字型基线是否和像素对齐，true表示对齐，false表示不对齐。 |
+| isBaselineSnap | boolean | 是 | 表示字型基线是否与像素对齐，true表示对齐，false表示不对齐。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 
 **示例：**
@@ -951,9 +1017,10 @@ console.info("drawing font isBaselineSnap: " + font.isBaselineSnap());
 
 
 
-#### isBaselineSnap()12+
+## isBaselineSnap12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isBaselineSnap(): boolean
 
@@ -965,9 +1032,10 @@ isBaselineSnap(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 返回字型基线是否与像素对齐，true为对齐，false为没有对齐。 |
+| boolean | 返回字型基线是否与像素对齐，true表示对齐，false表示不对齐。 |
 
 
 **示例：**
@@ -983,13 +1051,14 @@ console.info("drawing font isBaselineSnap: " + font.isBaselineSnap());
 
 
 
-#### setEmbeddedBitmaps12+
+## setEmbeddedBitmaps12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setEmbeddedBitmaps(isEmbeddedBitmaps: boolean): void
 
-设置字型是否转换成位图处理。
+设置字型是否使用字体文件中内嵌的位图字形进行渲染。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
@@ -997,18 +1066,20 @@ setEmbeddedBitmaps(isEmbeddedBitmaps: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| isEmbeddedBitmaps | boolean | 是 | 设置字型是否转换成位图处理，true表示转换成位图处理，false表示不转换成位图处理。 |
+| isEmbeddedBitmaps | boolean | 是 | 设置字型是否使用字体文件中内嵌的位图字形进行渲染，true表示使用内嵌位图字形，false表示不转换成位图处理。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 
 **示例：**
@@ -1024,13 +1095,14 @@ console.info("draw isEmbeddedBitmaps: " + font.isEmbeddedBitmaps());
 
 
 
-#### isEmbeddedBitmaps()12+
+## isEmbeddedBitmaps12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isEmbeddedBitmaps(): boolean
 
-获取字型是否转换成位图处理的结果。
+获取字型是否使用内嵌位图渲染的结果。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
@@ -1038,9 +1110,10 @@ isEmbeddedBitmaps(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 返回字型是否转换成位图处理结果，true表示转换成位图处理，false表示不转换成位图处理。 |
+| boolean | 返回字型是否使用内嵌位图渲染的结果，true表示使用内嵌位图字形，false表示不转换成位图处理。 |
 
 
 **示例：**
@@ -1056,13 +1129,14 @@ console.info("draw isEmbeddedBitmaps: " + font.isEmbeddedBitmaps());
 
 
 
-#### setForceAutoHinting12+
+## setForceAutoHinting12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setForceAutoHinting(isForceAutoHinting: boolean): void
 
-设置是否自动调整字型轮廓。
+设置是否自动调整字型轮廓以优化渲染效果。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
@@ -1070,18 +1144,20 @@ setForceAutoHinting(isForceAutoHinting: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| isForceAutoHinting | boolean | 是 | 是否自动调整字型轮廓，true为自动调整，false为不自动调整。 |
+| isForceAutoHinting | boolean | 是 | 是否自动调整字型轮廓以优化渲染效果，true为自动调整，false为不自动调整。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 
 **示例：**
@@ -1097,13 +1173,14 @@ console.info("drawing isForceAutoHinting:  " + font.isForceAutoHinting());
 
 
 
-#### isForceAutoHinting12+
+## isForceAutoHinting12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isForceAutoHinting(): boolean
 
-获取字型轮廓是否自动调整的结果。
+获取字型是否自动调整轮廓以优化渲染效果的结果。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
@@ -1111,9 +1188,10 @@ isForceAutoHinting(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 返回字型轮廓是否自动调整，true为自动调整，false为不自动调整。 |
+| boolean | 返回字型是否自动调整轮廓以优化渲染效果的结果，true为自动调整，false为不自动调整。 |
 
 
 **示例：**
@@ -1129,9 +1207,10 @@ console.info("drawing isForceAutoHinting:  " + font.isForceAutoHinting());
 
 
 
-#### getWidths12+
+## getWidths12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getWidths(glyphs: Array&lt;number&gt;): Array&lt;number&gt;
 
@@ -1143,6 +1222,7 @@ getWidths(glyphs: Array&lt;number&gt;): Array&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | glyphs | Array&lt;number&gt; | 是 | 字形索引数组，可由textToGlyphs生成。 |
@@ -1150,18 +1230,20 @@ getWidths(glyphs: Array&lt;number&gt;): Array&lt;number&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Array&lt;number&gt; | 返回字形宽度数组。 |
+| Array&lt;number&gt; | 返回字形宽度数组，浮点数。单位为物理像素px。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 
 **示例：**
@@ -1180,9 +1262,10 @@ for (let index = 0; index < fontWidths.length; index++) {
 
 
 
-#### textToGlyphs12+
+## textToGlyphs12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 textToGlyphs(text: string, glyphCount?: number): Array&lt;number&gt;
 
@@ -1194,13 +1277,15 @@ textToGlyphs(text: string, glyphCount?: number): Array&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| text | string | 是 | 文本字符串。 |
-| glyphCount | number | 否 | 文本表示的字符数量，必须与countText获取的值相等，默认为text的字符数量，该参数为整数。 |
+| text | string | 是 | 待转换为字形索引的文本字符串。 |
+| glyphCount | number | 否 | 文本表示的字符数量，该参数为整数。传入时必须与countText获取的值相等，不传入时默认为text表示的字符数量。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1211,9 +1296,10 @@ textToGlyphs(text: string, glyphCount?: number): Array&lt;number&gt;
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 
 **示例：**
@@ -1229,9 +1315,10 @@ console.info("drawing text toglyphs OnTestFunction num =  " + glyphs.length );
 
 
 
-#### getBounds18+
+## getBounds18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBounds(glyphs: Array&lt;number&gt;): Array<common2D.Rect>
 
@@ -1243,12 +1330,14 @@ getBounds(glyphs: Array&lt;number&gt;): Array<common2D.Rect>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | glyphs | Array&lt;number&gt; | 是 | 字形索引数组，可由textToGlyphs生成。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1265,20 +1354,21 @@ let text: string = 'hello world';
 let glyphs: number[] = font.textToGlyphs(text);
 let fontBounds: Array<common2D.Rect> = font.getBounds(glyphs);
 for (let index = 0; index < fontBounds.length; index++) {
-  console.info("get fontWidths[", index, "] left:", fontBounds[index].left, " top:", fontBounds[index].top,
+  console.info("get fontBounds[", index, "] left:", fontBounds[index].left, " top:", fontBounds[index].top,
     " right:", fontBounds[index].right, " bottom:", fontBounds[index].bottom);
 }
 ```
 
 
 
-#### getTextPath18+
+## getTextPath18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTextPath(text: string, byteLength: number, x: number, y: number): Path
 
-获取文字的轮廓路径。
+获取文字的路径轮廓。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
@@ -1286,15 +1376,17 @@ getTextPath(text: string, byteLength: number, x: number, y: number): Path
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| text | string | 是 | 表示存储UTF-8 文本编码的字符。 |
-| byteLength | number | 是 | 表示要获取对应文本路径的字节长度，按传入的字节长度和实际的文本字节大小之间的最小值来获取对应的文本路径。 |
+| text | string | 是 | 表示以UTF-8格式编码的文本字符串。 |
+| byteLength | number | 是 | 表示要获取对应文本路径的字节长度。按传入的字节长度和实际的文本字节大小之间的最小值来获取对应的文本路径。 |
 | x | number | 是 | 表示文本在绘图区域内以原点为起始位置的X坐标。单位为物理像素px。 |
 | y | number | 是 | 表示文本在绘图区域内以原点为起始位置的Y坐标。单位为物理像素px。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1305,9 +1397,10 @@ getTextPath(text: string, byteLength: number, x: number, y: number): Path
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 
 **示例：**
@@ -1332,9 +1425,10 @@ class DrawingRenderNode extends RenderNode {
 
 
 
-#### getTextPathWithFallback
+## getTextPathWithFallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTextPathWithFallback(text: string, byteLength: number, x: number, y: number): Path
 
@@ -1348,9 +1442,10 @@ getTextPathWithFallback(text: string, byteLength: number, x: number, y: number):
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| text | string | 是 | 表示存储UTF-8文本编码的字符。 |
+| text | string | 是 | 表示以UTF-8格式编码的文本字符串。 |
 | byteLength | number | 是 | 表示要获取对应文本路径的字节长度，按传入的字节长度和实际的文本字节大小之间的最小值来获取对应的文本路径。 |
 | x | number | 是 | 表示文本在绘图区域内以原点为起始位置的X坐标。单位为物理像素px。 |
 | y | number | 是 | 表示文本在绘图区域内以原点为起始位置的Y坐标。单位为物理像素px。 |
@@ -1358,9 +1453,10 @@ getTextPathWithFallback(text: string, byteLength: number, x: number, y: number):
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Path | 返回获取到的文本的路径轮廓。创建路径轮廓失败时，返回undefined。 |
+| Path | 返回获取到的文本路径轮廓。路径对象创建失败时返回undefined。 |
 
 
 **示例：**
@@ -1374,7 +1470,7 @@ class DrawingRenderNode extends RenderNode {
   draw(context : DrawContext) {
     const canvas = context.canvas;
     let font = new drawing.Font();
-    font.setSize(50)
+    font.setSize(50);
     let myString: string = "Hello";
     let length = buffer.from(myString).length;
     let path = font.getTextPathWithFallback(myString, length, 0, 100);
@@ -1388,9 +1484,10 @@ class DrawingRenderNode extends RenderNode {
 
 
 
-#### createPathForGlyph18+
+## createPathForGlyph18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPathForGlyph(index: number): Path
 
@@ -1402,12 +1499,14 @@ createPathForGlyph(index: number): Path
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| index | number | 是 | 字形索引。 |
+| index | number | 是 | 字形索引，可由textToGlyphs生成。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1424,12 +1523,12 @@ class DrawingRenderNode extends RenderNode {
   draw(context : DrawContext) {
     const canvas = context.canvas;
     let font = new drawing.Font();
-    font.setSize(50)
+    font.setSize(50);
     let text: string = '你好';
     let glyphs: number[] = font.textToGlyphs(text);
     for (let index = 0; index < glyphs.length; index++) {
-      let path: drawing.Path = font.createPathForGlyph(glyphs[index])
-      canvas.drawPath(path)
+      let path: drawing.Path = font.createPathForGlyph(glyphs[index]);
+      canvas.drawPath(path);
     }
   }
 }
@@ -1437,9 +1536,10 @@ class DrawingRenderNode extends RenderNode {
 
 
 
-#### setThemeFontFollowed15+
+## setThemeFontFollowed15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setThemeFontFollowed(followed: boolean): void
 
@@ -1451,6 +1551,7 @@ setThemeFontFollowed(followed: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | followed | boolean | 是 | 字型中的字体是否跟随主题字体，true表示跟随主题字体，false表示不跟随主题字体。 |
@@ -1460,9 +1561,10 @@ setThemeFontFollowed(followed: boolean): void
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 
 **示例：**
@@ -1477,9 +1579,10 @@ console.info("font is theme font followed: " + font.isThemeFontFollowed());
 
 
 
-#### isThemeFontFollowed()15+
+## isThemeFontFollowed()15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isThemeFontFollowed(): boolean
 
@@ -1490,6 +1593,7 @@ isThemeFontFollowed(): boolean
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |

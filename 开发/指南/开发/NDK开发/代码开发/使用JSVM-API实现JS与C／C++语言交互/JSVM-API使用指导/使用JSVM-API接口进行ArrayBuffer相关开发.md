@@ -1,16 +1,16 @@
 # 使用JSVM-API接口进行ArrayBuffer相关开发
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-about-arraybuffer
 
-#### 简介
+## 简介
 
 ArrayBuffer 是 JavaScript 中的一种数据类型，用于表示通用的、固定长度的原始二进制数据缓冲区。它提供了一种在 JavaScript 中有效地表示和操作原始二进制数据的方式。
  
   
 
-#### 基本概念
+## 基本概念
 
 - **ArrayBuffer**：ArrayBuffer 对象用来表示一个通用的、固定长度的原始二进制数据缓冲区。不能直接操作 ArrayBuffer 的内容，而是需要通过包装成 TypedArray 对象或 DataView 对象来读写。ArrayBuffer 常用于处理固定长度的原始二进制数据，如文件、网络数据包等。
 - **生命周期和内存管理**：在使用 JSVM 处理 ArrayBuffer 时，需要特别注意对象的生命周期管理，确保及时释放内存。
@@ -18,8 +18,9 @@ ArrayBuffer 是 JavaScript 中的一种数据类型，用于表示通用的、�
  
   
 
-#### 接口说明
+## 接口说明
  
+
 | 接口 | 功能说明 |
 | --- | --- |
 | OH_JSVM_GetArraybufferInfo | 检索 ArrayBuffer 的底层数据缓冲区及其长度。 |
@@ -31,13 +32,13 @@ ArrayBuffer 是 JavaScript 中的一种数据类型，用于表示通用的、�
  
   
 
-#### 使用示例
+## 使用示例
 
 JSVM-API 接口开发流程参考[使用JSVM-API实现JS与C/C++语言交互开发流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-process)，本文仅对接口对应 C++ 相关代码进行展示。
  
   
 
-#### OH_JSVM_GetArraybufferInfo
+### OH_JSVM_GetArraybufferInfo
 
 检索 ArrayBuffer 的底层数据缓冲区及其长度。
  
@@ -96,7 +97,7 @@ JSVM GetArraybufferInfo: success
  
   
 
-#### OH_JSVM_IsArraybuffer
+### OH_JSVM_IsArraybuffer
 
 判断一个 JavaScript 对象是否为 ArrayBuffer 类型对象。
  
@@ -151,13 +152,13 @@ JSVM IsArrayBuffer: 1
  
   
 
-#### OH_JSVM_DetachArraybuffer
+### OH_JSVM_DetachArraybuffer
 
 调用 ArrayBuffer 对象的 Detach 操作。
  
   
 
-#### OH_JSVM_IsDetachedArraybuffer
+### OH_JSVM_IsDetachedArraybuffer
 
 检查给定的 ArrayBuffer 是否已被分离。
  
@@ -232,7 +233,7 @@ JSVM IsArrayBuffer: 1
  
   
 
-#### OH_JSVM_CreateArraybuffer
+### OH_JSVM_CreateArraybuffer
 
 创建一个指定大小的 ArrayBuffer 对象。
  

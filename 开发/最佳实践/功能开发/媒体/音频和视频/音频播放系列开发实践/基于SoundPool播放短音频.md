@@ -1,12 +1,12 @@
 # 基于SoundPool播放短音频
 
-更新时间：2026-03-12 08:45:02
+更新时间：2026-09-09 06:06:31
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-playing-short-audio-based-soundpool
 
-#### 概述
+## 概述
 
-SoundPool提供短音频的播放能力，当需要播放一些急促简短的音效（如应用启动音、消息通知音等）时，建议调用SoundPool，应用只需要提供音频资源来源，不负责数据解析和解码就可达成播放效果。指导开发者使用SoundPool开发播放短音频功能，主要涉及基础播放、倍速播放、循环播放、音量调节等开发场景。
+SoundPool提供短音频的播放能力，当需要播放一些急促简短的音效（如应用启动音、消息通知音等）时，建议调用SoundPool，应用只需要提供音频资源来源，SoundPool会自动完成数据解析即可达成播放效果。指导开发者使用SoundPool开发播放短音频功能，主要涉及基础播放、倍速播放、循环播放、音量调节等开发场景。
  
 本文是音频播放系列文章的第5篇，实现的功能效果如下：
  
@@ -16,22 +16,24 @@ SoundPool提供短音频的播放能力，当需要播放一些急促简短的�
  
  
 
-#### 规格与限制
+## 规格与限制
 
-- 支持的文件大小：SoundPool当前支持播放解码后1MB以下的音频资源，解码后大小超过1MB的长音频将截取前面的1MB大小数据进行播放。
+- 支持的文件大小：SoundPool当前支持播放解码后1MB以下的音频资源，解码后大小超过1MB的音频将截取前面的1MB数据进行播放。
 
  
 - 支持的协议如下：
 
   
+
 | 协议类型 | 协议描述 |
 | --- | --- |
-| 本地点播 | 协议格式：支持file descriptor，禁止file path。 |
+| 本地点播 | 协议格式：支持file descriptor，不支持file path。 |
  
  
 - 支持的音频播放格式如下：
 
   
+
 | 音频容器规格 | 编码规格描述 |
 | --- | --- |
 | m4a | 音频格式：AAC |
@@ -49,17 +51,17 @@ API version 18以下版本，创建的SoundPool对象底层为单实例模式，
  
  
 
-#### 实现原理
+## 实现原理
 
 通过创建SoundPool实例，加载和播放对应的音频资源。支持设置音频流的播放速率、音量、循环模式等播放参数。
  
 > [!NOTE]
-> 使用SoundPool播放短音频，且 StreamUsage 指定为Music、Movie、AudioBook等类型时，其申请焦点时默认为并发模式，不会影响其他音频，若开发过程中涉及焦点管理的问题，请参考 音频焦点管理解决方案 。
+> 使用SoundPool播放短音频，且 StreamUsage 指定为Music、Movie、AudioBook等类型时，其申请焦点时默认为并发模式，不会影响其他音频，若开发过程中涉及焦点管理的问题，请参考 短音中断先播音频不恢复问题 。
 
  
  
 
-#### 开发步骤
+## 开发步骤
 
 1. 创建SoundPool实例。
  
@@ -143,7 +145,7 @@ async playSoundPool() {
 }
 ```
  
-7. 开发者可以通过配置播放参数PlayParameters实现不同的播放效果，也可以通过单独调用[setLoop](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-multimedia-soundpool#setloop)、[setPriority](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-multimedia-soundpool#setpriority)、[setvolume](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-multimedia-soundpool#setvolume)、[setRate](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-multimedia-soundpool#setrate-1)等函数来实现不同的播放效果。下面以设置短音频的循环模式为例，其他设置方法的调用方式相同。
+7. 开发者可以通过配置播放参数PlayParameters实现不同的播放效果，也可以通过单独调用[setLoop](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-multimedia-soundpool#setloop)、[setPriority](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-multimedia-soundpool#setpriority)、[setVolume](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-multimedia-soundpool#setvolume)、[setRate](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-multimedia-soundpool#setrate-1)等函数来实现不同的播放效果。下面以设置短音频的循环模式为例，其他设置方法的调用方式相同。
  
 ```ArkTS
 if (!this.soundPool) {
@@ -188,6 +190,6 @@ async release() {
  
  
 
-#### 示例代码
+## 示例代码
 
 - [基于SoundPool播放短音频](https://gitcode.com/HarmonyOS_Samples/soundpool-play-short-audio)

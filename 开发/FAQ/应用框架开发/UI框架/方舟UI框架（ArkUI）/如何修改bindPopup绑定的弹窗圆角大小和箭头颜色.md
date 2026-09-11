@@ -14,7 +14,7 @@ struct BindPopupDemo {
   @State customPopup: boolean = false;
 
 
-  // Popup constructor defines the content of the popup box
+<em>  // Popup constructor defines the content of the popup box</em>
   @Builder
   popupBuilder() {
     Row({ space: 2 }) {

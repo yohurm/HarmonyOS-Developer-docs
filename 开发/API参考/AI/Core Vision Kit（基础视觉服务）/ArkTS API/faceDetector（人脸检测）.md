@@ -1,6 +1,6 @@
 # faceDetector（人脸检测）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/core-vision-face-detector-api
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -12,7 +12,8 @@
 **起始版本：** 5.0.0(12)
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -22,7 +23,8 @@ import { faceDetector } from '@kit.CoreVisionKit';
 
 
 
-#### VisionInfo
+## VisionInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -36,6 +38,7 @@ import { faceDetector } from '@kit.CoreVisionKit';
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | pixelMap | image.PixelMap | 是 | 否 | 待识别的图片。对于图片的要求请参见约束与限制。 |
@@ -43,7 +46,8 @@ import { faceDetector } from '@kit.CoreVisionKit';
 
 
 
-#### FaceRecognitionConfiguration
+## FaceRecognitionConfiguration
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -55,6 +59,7 @@ import { faceDetector } from '@kit.CoreVisionKit';
 
 **起始版本：** 5.0.2(14)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | faceBlock | boolean | 是 | 否 | 是否开启人脸遮挡检测。 true：开启人脸遮挡检测；false：不开启人脸遮挡检测。默认为false。 |
@@ -62,7 +67,8 @@ import { faceDetector } from '@kit.CoreVisionKit';
 
 
 
-#### FaceBlock
+## FaceBlock
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -74,6 +80,7 @@ import { faceDetector } from '@kit.CoreVisionKit';
 
 **起始版本：** 5.0.2(14)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | UNINITIALIZED | -1 | 人脸遮挡检测未开启。 |
@@ -83,7 +90,8 @@ import { faceDetector } from '@kit.CoreVisionKit';
 
 
 
-#### FacePoint
+## FacePoint
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -97,6 +105,7 @@ import { faceDetector } from '@kit.CoreVisionKit';
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | x | number | 是 | 否 | 像素点横向x坐标。 |
@@ -105,7 +114,8 @@ import { faceDetector } from '@kit.CoreVisionKit';
 
 
 
-#### FacePose
+## FacePose
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -119,6 +129,7 @@ import { faceDetector } from '@kit.CoreVisionKit';
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | yaw | number | 是 | 否 | 头型航向，将物体绕Y轴旋转（localRotationY）。取值范围[-180,180]。 |
@@ -128,7 +139,8 @@ import { faceDetector } from '@kit.CoreVisionKit';
 
 
 
-#### FaceRectangle
+## FaceRectangle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -142,6 +154,7 @@ import { faceDetector } from '@kit.CoreVisionKit';
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | left | number | 是 | 否 | 人脸矩形框左上角x坐标。 |
@@ -152,7 +165,8 @@ import { faceDetector } from '@kit.CoreVisionKit';
 
 
 
-#### Face
+## Face
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -163,6 +177,7 @@ import { faceDetector } from '@kit.CoreVisionKit';
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -175,7 +190,8 @@ import { faceDetector } from '@kit.CoreVisionKit';
 
 
 
-#### faceDetector.init
+## faceDetector.init
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -192,6 +208,7 @@ init(): Promise&lt;boolean&gt;
 **起始版本：** 5.0.0(12)
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -239,7 +256,8 @@ struct Page {
 
 
 
-#### faceDetector.init
+## faceDetector.init
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -255,12 +273,14 @@ init(faceRecognitionConfiguration: FaceRecognitionConfiguration): Promise&lt;boo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | faceRecognitionConfiguration | FaceRecognitionConfiguration | 是 | 人脸遮挡检测配置参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -270,6 +290,7 @@ init(faceRecognitionConfiguration: FaceRecognitionConfiguration): Promise&lt;boo
 **错误码：**
 
 以下错误码的详细介绍请参见[Core Vision Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-core-vision)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -320,7 +341,8 @@ struct Page {
 
 
 
-#### faceDetector.release
+## faceDetector.release
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -337,6 +359,7 @@ release(): Promise&lt;void&gt;
 **起始版本：** 5.0.0(12)
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -384,7 +407,8 @@ struct Page {
 
 
 
-#### faceDetector.detect
+## faceDetector.detect
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -402,12 +426,14 @@ detect(visionInfo: VisionInfo): Promise<Array&lt;Face&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | visionInfo | VisionInfo | 是 | 图片实例（包含人脸）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -417,6 +443,7 @@ detect(visionInfo: VisionInfo): Promise<Array&lt;Face&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[Core Vision Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-core-vision)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

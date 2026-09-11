@@ -55,7 +55,7 @@ struct EmitterParam {
   event: emitter.InnerEvent = {
     eventId: 1
   };
-  // 自定义回调方法
+<em>  // 自定义回调方法</em>
   private callback = (eventData: emitter.EventData): void => {
     let arrayBuffer: ArrayBuffer = eventData.data!['buffer'];
     let textDecoder = new util.TextDecoder();
@@ -63,7 +63,7 @@ struct EmitterParam {
     this.getUIContext().getPromptAction().showToast({
       message: `收到数据：${text}`
     });
-    // 使用分段打印到控制台
+   <em> // 使用分段打印到控制台</em>
     printInChunks(text);
   };
 
@@ -73,7 +73,7 @@ struct EmitterParam {
       bufView[i] = this.str.charCodeAt(i);
     }
     this.arrayBuffer = bufView.buffer as ArrayBuffer;
-    emitter.on(this.event, this.callback); // 开启监听
+    emitter.on(this.event, this.callback);<em> </em><em>// 开启监听</em>
   }
 
   build() {
@@ -94,9 +94,9 @@ struct EmitterParam {
 }
 
 
-/*
- * 分段打印日志
- * */
+<em>/*</em>
+<em> * 分段打印日志</em>
+<em> * */</em>
 function printInChunks(str: string, chunkSize = 1000) {
   for (let i = 0; i < str.length; i += chunkSize) {
     console.log(str.substring(i, i + chunkSize));

@@ -55,7 +55,7 @@ setReadOffset(offset: number) {
 this.renderer.on('writeData', (buffer: ArrayBuffer) => {
   let lastLen = this.fileSize - this.readOffset;
   let readLen = lastLen >= buffer.byteLength ? buffer.byteLength : lastLen;
-  // 读取数据
+<em>  // 读取数据</em>
   fileIo.readSync(this.playFile?.fd, buffer, { offset: this.readOffset, length: readLen });
   this.readOffset += readLen;
   if (this.readOffset >= this.fileSize) {
@@ -225,7 +225,7 @@ struct DragSlider {
     this.renderer.on('writeData', (buffer: ArrayBuffer) => {
       let lastLen = this.fileSize - this.readOffset;
       let readLen = lastLen >= buffer.byteLength ? buffer.byteLength : lastLen;
-      // 读取数据
+     <em> // 读取数据</em>
       fileIo.readSync(this.playFile?.fd, buffer, { offset: this.readOffset, length: readLen });
       this.readOffset += readLen;
       if (this.readOffset >= this.fileSize) {
@@ -245,7 +245,7 @@ struct DragSlider {
     }
     let contact = context.getHostContext() as Context;
     let pathDir = contact.filesDir;
-    // 需确保沙箱中有此文件
+  <em>  // 需确保沙箱中有此文件</em>
     let filePath = pathDir + `/test.pcm`;
     if (this.playFile?.path !== filePath) {
       if (this.playFile) {

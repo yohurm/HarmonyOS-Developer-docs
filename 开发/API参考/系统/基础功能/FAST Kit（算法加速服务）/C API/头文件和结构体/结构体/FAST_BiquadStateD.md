@@ -1,11 +1,12 @@
 # FAST_BiquadStateD
 
-更新时间：2026-04-30 02:41:24
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/fast-kit--fast-biquadstated
 **支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -21,16 +22,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | double d1 | 第一个延迟单元（y[n-1]）。 |
@@ -39,13 +43,15 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### d1
+### d1
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -59,7 +65,8 @@ double FAST_BiquadStateD::d1
  
   
 
-#### d2
+### d2
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 

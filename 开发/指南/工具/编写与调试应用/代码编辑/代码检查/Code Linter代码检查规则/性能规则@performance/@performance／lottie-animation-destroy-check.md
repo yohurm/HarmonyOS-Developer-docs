@@ -1,6 +1,6 @@
 # @performance/lottie-animation-destroy-check
 
-更新时间：2026-01-15 06:51:04
+更新时间：2026-08-29 09:41:34
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-lottie-animation-destroy-check
 
@@ -11,26 +11,26 @@
 内存优化场景下，建议优先修改。
  
 
-#### 规则配置
+## 规则配置
 
 ```json
 // code-linter.json5
 {
-  "rules": {
-    "@performance/lottie-animation-destroy-check": "suggestion",
+  <span style="color: rgb(135,16,148);">"rules"</span>: {
+    <span style="color: rgb(135,16,148);">"@performance/lottie-animation-destroy-check"</span>: <span style="color: rgb(6,125,23);">"suggestion"</span>,
   }
 }
 ```
  
  
 
-#### 选项
+## 选项
 
-该规则无需配置额外选项。
+该规则无需配置选项。
  
  
 
-#### 正例1
+## 正例1
 
 ```json
 import lottie from '@ohos/lottie';   //需安装@ohos/lottie依赖后import
@@ -72,7 +72,7 @@ struct LottieAnimation1 {
  
  
 
-#### 正例2
+## 正例2
 
 ```json
 import lottie from '@ohos/lottie';
@@ -130,7 +130,7 @@ struct LottieAnimation2 {
  
  
 
-#### 反例1
+## 反例1
 
 ```json
 import lottie from '@ohos/lottie';
@@ -171,7 +171,7 @@ struct LottieAnimation1 {
  
  
 
-#### 反例2
+## 反例2
 
 ```json
 import lottie from '@ohos/lottie';
@@ -242,7 +242,7 @@ struct LottieAnimation4 {
  
  
 
-#### 反例3
+## 反例3
 
 ```json
 import lottie from '@ohos/lottie';
@@ -302,10 +302,10 @@ struct LottieAnimation5 {
  
  
 
-#### 规则集
+## 规则集
 
 ```text
-plugin:@performance/all
+<span style="color: rgb(106,135,89);">plugin:@performance/all</span>
 ```
  
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-code-linter)。

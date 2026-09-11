@@ -1,18 +1,19 @@
 # NetConn_NetConnCallback
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-netconnection-netconn-netconncallback
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct NetConn_NetConnCallback {...} NetConn_NetConnCallback
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 网络状态监听回调集合，所有回调事件需全部注册，无需关注的回调可以设为空实现。
  
@@ -24,21 +25,24 @@ typedef struct NetConn_NetConnCallback {...} NetConn_NetConnCallback
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 成员变量
+### 成员变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_NetConn_NetworkAvailable onNetworkAvailable | 网络可用回调。 |
 | OH_NetConn_NetCapabilitiesChange onNetCapabilitiesChange | 网络能力集变更回调。 |
 | OH_NetConn_NetConnectionPropertiesChange onConnetionProperties | 网络连接属性变更回调。 |
 | OH_NetConn_NetLost onNetLost | 网络断开回调。 |
-| OH_NetConn_NetUnavailable onNetUnavailable | 网络不可用回调, 在指定的超时时间内网络未激活时触发该回调，如果未设置超时时间则不会触发该回调。 |
+| OH_NetConn_NetUnavailable onNetUnavailable | 网络不可用回调，在指定的超时时间内网络未激活时触发该回调，如果未设置超时时间则不会触发该回调。 |
 | OH_NetConn_NetBlockStatusChange onNetBlockStatusChange | 网络阻塞状态变更回调。 |

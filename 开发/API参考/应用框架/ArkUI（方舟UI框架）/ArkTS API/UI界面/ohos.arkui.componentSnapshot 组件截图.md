@@ -1,9 +1,9 @@
 # @ohos.arkui.componentSnapshot (组件截图)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-componentsnapshot
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供获取组件截图的能力，包括已加载的组件的截图和没有加载的组件的截图。组件截图只能够截取组件大小的区域，如果组件的绘制超出了它的区域，或子组件的绘制超出了父组件的区域，这些在组件区域外绘制的内容不会在截图中呈现。兄弟节点堆叠在组件区域内，截图不会显示兄弟组件。
 
@@ -16,9 +16,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { componentSnapshot } from '@kit.ArkUI';
@@ -26,9 +27,10 @@ import { componentSnapshot } from '@kit.ArkUI';
 
 
 
-#### componentSnapshot.get(deprecated)
+## componentSnapshot.get(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get(id: string, callback: AsyncCallback<image.PixelMap>, options?: SnapshotOptions): void
 
@@ -44,6 +46,7 @@ get(id: string, callback: AsyncCallback<image.PixelMap>, options?: SnapshotOptio
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | string | 是 | 目标组件的组件标识。 |
@@ -54,6 +57,7 @@ get(id: string, callback: AsyncCallback<image.PixelMap>, options?: SnapshotOptio
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -114,9 +118,10 @@ struct SnapshotExample {
 
 
 
-#### componentSnapshot.get(deprecated)
+## componentSnapshot.get(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get(id: string, options?: SnapshotOptions): Promise<image.PixelMap>
 
@@ -132,6 +137,7 @@ get(id: string, options?: SnapshotOptions): Promise<image.PixelMap>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | string | 是 | 目标组件的组件标识。 |
@@ -139,6 +145,7 @@ get(id: string, options?: SnapshotOptions): Promise<image.PixelMap>
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -148,6 +155,7 @@ get(id: string, options?: SnapshotOptions): Promise<image.PixelMap>
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -207,9 +215,10 @@ struct SnapshotExample {
 
 
 
-#### componentSnapshot.createFromBuilder(deprecated)
+## componentSnapshot.createFromBuilder(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createFromBuilder(builder: CustomBuilder, callback: AsyncCallback<image.PixelMap>, delay?: number, checkImageStatus?: boolean, options?: SnapshotOptions): void
 
@@ -225,6 +234,7 @@ createFromBuilder(builder: CustomBuilder, callback: AsyncCallback<image.PixelMap
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | builder | CustomBuilder | 是 | 自定义组件构建函数。 说明： 不支持全局builder。 builder的根组件宽高为0时，截图操作会失败并抛出100001错误码。 |
@@ -237,6 +247,7 @@ createFromBuilder(builder: CustomBuilder, callback: AsyncCallback<image.PixelMap
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[截图错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-snapshot)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -312,14 +323,15 @@ struct OffscreenSnapshotExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/i7Ssw3PXSqWiHHcclA9nYA/zh-cn_image_0000002685927845.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071442Z&HW-CC-Expire=86400&HW-CC-Sign=053D1E6A4A0C92627C791A0A39388DAC016BED1F0CD700F8A1C8A085329DB6FD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/8QwHq3lkT3GOsnbJUztDYw/zh-cn_image_0000002717612366.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=1C5DD8A915107953C056602D9C609EA0688A47C6CCE3144DA9BA0756628AECBE)
 
 
 
 
-#### componentSnapshot.createFromBuilder(deprecated)
+## componentSnapshot.createFromBuilder(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createFromBuilder(builder: CustomBuilder, delay?: number, checkImageStatus?: boolean, options?: SnapshotOptions): Promise<image.PixelMap>
 
@@ -335,6 +347,7 @@ createFromBuilder(builder: CustomBuilder, delay?: number, checkImageStatus?: boo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | builder | CustomBuilder | 是 | 自定义组件构建函数。 说明： 不支持全局builder。 builder的根组件宽高为0时，截图操作会失败并抛出100001错误码。 |
@@ -345,6 +358,7 @@ createFromBuilder(builder: CustomBuilder, delay?: number, checkImageStatus?: boo
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<image.PixelMap> | 截图返回的结果。 |
@@ -353,6 +367,7 @@ createFromBuilder(builder: CustomBuilder, delay?: number, checkImageStatus?: boo
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[截图错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-snapshot)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -426,14 +441,15 @@ struct OffscreenSnapshotExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/f72X1pAlSriE-gHzPhgL6g/zh-cn_image_0000002685927845.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071442Z&HW-CC-Expire=86400&HW-CC-Sign=38A67E1E470A39D201319C1691EB4AEFB5DF5000702C01C8028269857D4AECD2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/YKpd66JPRx20RQFSWZ5Wfg/zh-cn_image_0000002717612366.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=35BDA3A9697342B3A1FA2614539CE7D7D85A26FD0F89F0CEDE08D8E74A5BDA5C)
 
 
 
 
-#### componentSnapshot.getSync12+
+## componentSnapshot.getSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSync(id: string, options?: SnapshotOptions): image.PixelMap
 
@@ -449,6 +465,7 @@ getSync(id: string, options?: SnapshotOptions): image.PixelMap
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | string | 是 | 目标组件的组件标识。 |
@@ -456,6 +473,7 @@ getSync(id: string, options?: SnapshotOptions): image.PixelMap
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -465,6 +483,7 @@ getSync(id: string, options?: SnapshotOptions): image.PixelMap
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[截图错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-snapshot)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -521,14 +540,15 @@ struct SnapshotExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/WXHanifcQCGcq1TvvKsoGg/zh-cn_image_0000002686087673.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071442Z&HW-CC-Expire=86400&HW-CC-Sign=26954ECE19315CF105F908299A79EFB9DCBA3CCFA1BB53A591515067CF93AF9D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/_Ds3KSWxSnGGQSlCGQKLEA/zh-cn_image_0000002717772298.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=D1C0FB0365D33B72E01E1F933954E5229C2559CCD4C28AE64C176610E6921005)
 
 
 
 
-#### SnapshotSizeLimitation
+## SnapshotSizeLimitation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义组件截图的尺寸限制。
 
@@ -540,6 +560,7 @@ struct SnapshotExample {
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | maxWidth | number | 否 | 否 | 组件截图的最大宽度限制。 取值范围：[0, +∞) 单位：px |
@@ -548,17 +569,19 @@ struct SnapshotExample {
 
 
 
-#### SnapshotOptions12+
+## SnapshotOptions12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| scale | number | 否 | 是 | 指定截图时图形侧绘制pixelmap的缩放比例，比例过大时截图时间会变长，或者截图可能会失败。 取值范围：[0, +∞)，当小于等于0时按默认情况处理。 默认值：1 说明： 请不要截取过大尺寸的图片，截图不建议超过屏幕尺寸的大小。当要截取的图片目标长宽超过底层限制时，截图会返回失败，不同设备的底层限制不同，具体限制可通过getSizeLimitation方法获取。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| scale | number | 否 | 是 | 指定截图时图形侧绘制pixelmap的缩放比例，比例过大时截图时间会变长，或者截图可能会失败。 取值范围：[0, +∞)，当小于等于0时按默认情况处理。 默认值：1 说明： 请不要截取过大尺寸的图片，截图不建议超过屏幕尺寸的大小。当要截取的图片目标长宽超过底层限制时，截图会返回失败，不同设备的底层限制不同。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | waitUntilRenderFinished | boolean | 否 | 是 | 设置是否强制系统在截图前等待所有绘制指令执行完毕。true表示强制系统在截图前等待所有绘制指令执行完毕，false表示不强制系统在截图前等待所有绘制指令执行完毕。该选项可尽可能确保截图内容是最新的状态，应尽量开启。需要注意的是，开启后接口可能需要更长的时间返回，具体的时间依赖页面当前时刻需要重绘区域的大小。 默认值：false 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | region15+ | SnapshotRegionType | 否 | 是 | 指定截图的矩形区域范围，默认为整个组件。 元服务API： 从API version 15开始，该接口支持在元服务中使用。 |
 | colorMode23+ | ColorModeOptions | 否 | 是 | 指定截图使用的色彩空间。 默认值：{colorSpace: SRGB, isAuto: false} 元服务API： 从API version 23开始，该接口支持在元服务中使用。 |
@@ -567,9 +590,10 @@ struct SnapshotExample {
 
 
 
-#### ColorModeOptions23+
+## ColorModeOptions23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义截图时所使用的色彩空间。
 
@@ -578,6 +602,7 @@ struct SnapshotExample {
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -633,14 +658,15 @@ struct SnapshotColorModeExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/OuEDtYXjTMeP-x1cFCK76g/zh-cn_image_0000002686087673.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071442Z&HW-CC-Expire=86400&HW-CC-Sign=45B99E204CBD87F687B0D71961D24577CDD5BC241A135965C4E842308A4D4EC5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/rnAanqOwSTOWOYaJdTnDGg/zh-cn_image_0000002717772298.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=2FBF9A4D678B2AD38D6DDF97A46FF8F306189AA33340AEA2C2D68BD26F7A687A)
 
 
 
 
-#### DynamicRangeModeOptions23+
+## DynamicRangeModeOptions23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义截图所使用的动态范围模式。
 
@@ -649,6 +675,7 @@ struct SnapshotColorModeExample {
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -703,14 +730,15 @@ struct SnapshotDynamicRangeExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/YbiMw7Y_SBqYMyjVOqARtA/zh-cn_image_0000002686087673.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071442Z&HW-CC-Expire=86400&HW-CC-Sign=600BBD85A027640338CD217D9A2E1860A3A544349229737A39B0A7B54A5254DF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/fuGMUEBRQJWcDlmzXBoZbA/zh-cn_image_0000002717772298.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=81C1A643F7CD67DE5E8AA2BF99268978ECFCFA88AD319601BD0A90A85E98788D)
 
 
 
 
-#### SnapshotRegionType15+
+## SnapshotRegionType15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type SnapshotRegionType = SnapshotRegion | LocalizedSnapshotRegion
 
@@ -722,6 +750,7 @@ type SnapshotRegionType = SnapshotRegion | LocalizedSnapshotRegion
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | SnapshotRegion | 表示组件截图的矩形区域。 |
@@ -730,9 +759,10 @@ type SnapshotRegionType = SnapshotRegion | LocalizedSnapshotRegion
 
 
 
-#### SnapshotRegion15+
+## SnapshotRegion15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义组件截图的矩形区域。
 
@@ -742,19 +772,21 @@ type SnapshotRegionType = SnapshotRegion | LocalizedSnapshotRegion
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| left | number | 否 | 否 | 截图区域矩形左上角的x轴坐标。 单位：px 取值范围：[0, 组件宽度]。取值超出范围时，截图失败，返回错误码401。 |
-| top | number | 否 | 否 | 截图区域矩形左上角的y轴坐标。 单位：px 取值范围：[0, 组件高度]。取值超出范围时，截图失败，返回错误码401。 |
-| right | number | 否 | 否 | 截图区域矩形右下角的x轴坐标。 单位：px 取值范围：[0, 组件宽度]。取值超出范围时，截图失败，返回错误码401。 |
-| bottom | number | 否 | 否 | 截图区域矩形右下角的y轴坐标。 单位：px 取值范围：[0, 组件高度]。取值超出范围时，截图失败，返回错误码401。 |
+| left | number | 否 | 否 | 截图区域矩形左上角的x轴坐标。 单位：px 取值范围：[0, 组件宽度] |
+| top | number | 否 | 否 | 截图区域矩形左上角的y轴坐标。 单位：px 取值范围：[0, 组件高度] |
+| right | number | 否 | 否 | 截图区域矩形右下角的x轴坐标。 单位：px 取值范围：[0, 组件宽度] |
+| bottom | number | 否 | 否 | 截图区域矩形右下角的y轴坐标。 单位：px 取值范围：[0, 组件高度] |
 
 
 
 
-#### LocalizedSnapshotRegion15+
+## LocalizedSnapshotRegion15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义组件截图的矩形区域，start和end的值在布局方向为LTR时指定为left和right，在布局方向为RTL时指定为right和left。
 
@@ -764,12 +796,13 @@ type SnapshotRegionType = SnapshotRegion | LocalizedSnapshotRegion
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| start | number | 否 | 否 | 布局方向为LTR时表示截图区域矩形左上角的x轴坐标，布局方向为RTL时表示截图区域矩形右上角的x轴坐标。 单位：px 取值范围：[0, 组件宽度]。取值超出范围时，截图失败，返回错误码401。 |
-| top | number | 否 | 否 | 布局方向为LTR时表示截图区域矩形左上角的y轴坐标，布局方向为RTL时表示截图区域矩形右上角的y轴坐标。 单位：px 取值范围：[0, 组件高度]。取值超出范围时，截图失败，返回错误码401。 |
-| end | number | 否 | 否 | 布局方向为LTR时表示截图区域矩形右下角的x轴坐标，布局方向为RTL时表示截图区域矩形左下角的x轴坐标。 单位：px 取值范围：[0, 组件宽度]。取值超出范围时，截图失败，返回错误码401。 |
-| bottom | number | 否 | 否 | 布局方向为LTR时表示截图区域矩形右下角的y轴坐标，布局方向为RTL时表示截图区域矩形左下角的y轴坐标。 单位：px 取值范围：[0, 组件高度]。取值超出范围时，截图失败，返回错误码401。 |
+| start | number | 否 | 否 | 布局方向为LTR时表示截图区域矩形左上角的x轴坐标，布局方向为RTL时表示截图区域矩形右上角的x轴坐标。 单位：px 取值范围：[0, 组件宽度] |
+| top | number | 否 | 否 | 布局方向为LTR时表示截图区域矩形左上角的y轴坐标，布局方向为RTL时表示截图区域矩形右上角的y轴坐标。 单位：px 取值范围：[0, 组件高度] |
+| end | number | 否 | 否 | 布局方向为LTR时表示截图区域矩形右下角的x轴坐标，布局方向为RTL时表示截图区域矩形左下角的x轴坐标。 单位：px 取值范围：[0, 组件宽度] |
+| bottom | number | 否 | 否 | 布局方向为LTR时表示截图区域矩形右下角的y轴坐标，布局方向为RTL时表示截图区域矩形左下角的y轴坐标。 单位：px 取值范围：[0, 组件高度] |
 
 
 > [!NOTE]
@@ -838,4 +871,4 @@ struct SnapshotExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/qhk8Q2cqQnixaQ521EQbEw/zh-cn_image_0000002656008166.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071442Z&HW-CC-Expire=86400&HW-CC-Sign=562521245C59DB27E4781C5D45B00F7C4811BE37F95959A40E1B79520509FCB9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/G0yuxUUGS0SoXOy_QUWWKQ/zh-cn_image_0000002747292319.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=5A529AB3F0C9CC9C2E7179A116F4EE6B9C2FE90958D10D86F76CA23B95243B72)

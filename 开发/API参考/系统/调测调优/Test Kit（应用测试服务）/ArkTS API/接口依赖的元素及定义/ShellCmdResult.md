@@ -1,9 +1,9 @@
 # ShellCmdResult
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-shellcmdresult
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ShellCmdResult是测试框架中用于封装Shell命令执行结果的数据对象，它包含stdResult（标准输出内容）和exitCode（退出码）两个关键属性，为测试脚本提供了结构化的命令执行结果访问方式。
  
@@ -14,9 +14,10 @@ ShellCmdResult是测试框架中用于封装Shell命令执行结果的数据对�
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { abilityDelegatorRegistry } from '@kit.TestKit';
@@ -24,9 +25,10 @@ import { abilityDelegatorRegistry } from '@kit.TestKit';
  
   
 
-#### 使用说明
+## 使用说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 调用abilityDelegator中的[executeShellCommand](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-abilitydelegator#executeshellcommand)方法获取ShellCmdResult实例。调用成功后，返回ShellCmdResult对象，包含Shell命令的标准输出内容（stdResult）和退出码（exitCode）。
  
@@ -53,14 +55,16 @@ abilityDelegator.executeShellCommand(cmd, (error: BusinessError, data) => {
  
   
 
-#### ShellCmdResult
+## ShellCmdResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
  
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | stdResult | string | 否 | 否 | Shell命令的标准输出内容。 |

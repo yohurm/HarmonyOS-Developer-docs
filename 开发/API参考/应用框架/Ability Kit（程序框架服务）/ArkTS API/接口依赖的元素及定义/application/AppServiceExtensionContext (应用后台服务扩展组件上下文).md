@@ -1,9 +1,9 @@
 # AppServiceExtensionContext (应用后台服务扩展组件上下文)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-appserviceextensioncontext
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** PC/2in1
 
 AppServiceExtensionContext模块是[AppServiceExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-appserviceextensionability)的上下文环境，继承自[ExtensionContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-extensioncontext)。
 
@@ -14,9 +14,10 @@ AppServiceExtensionContext提供了连接、断开ServiceExtensionAbility（系�
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 ```text
 import { common } from '@kit.AbilityKit';
@@ -24,9 +25,10 @@ import { common } from '@kit.AbilityKit';
 
 
 
-#### 使用说明
+## 使用说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 在使用AppServiceExtensionContext的功能前，需要通过AppServiceExtensionAbility子类实例获取。
 
@@ -44,15 +46,17 @@ export default class AppServiceExtension extends AppServiceExtensionAbility {
 
 
 
-#### AppServiceExtensionContext
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## AppServiceExtensionContext
 
 
+**支持设备：** PC/2in1
 
-#### startAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### startAbility
+
+
+**支持设备：** PC/2in1
 
 startAbility(want: Want, options?: StartOptions): Promise&lt;void&gt;
 
@@ -62,6 +66,7 @@ startAbility(want: Want, options?: StartOptions): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | Want类型参数，传入需要启动的Ability的信息，如Ability名称、Bundle名称等。 |
@@ -69,6 +74,7 @@ startAbility(want: Want, options?: StartOptions): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -78,6 +84,7 @@ startAbility(want: Want, options?: StartOptions): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -143,9 +150,10 @@ export default class MyAppServiceExtensionAbility extends AppServiceExtensionAbi
 
 
 
-#### connectServiceExtensionAbility
+### connectServiceExtensionAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 connectServiceExtensionAbility(want: Want, callback: ConnectOptions): number
 
@@ -155,6 +163,7 @@ connectServiceExtensionAbility(want: Want, callback: ConnectOptions): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | Want类型参数，传入需要连接的Ability的信息，如Ability名称，Bundle名称等。 |
@@ -162,6 +171,7 @@ connectServiceExtensionAbility(want: Want, callback: ConnectOptions): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -171,6 +181,7 @@ connectServiceExtensionAbility(want: Want, callback: ConnectOptions): number
 **错误码：**
 
 以下错误码详细介绍请参考[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -198,8 +209,8 @@ const TAG: string = '[AppServiceExtensionAbility]';
 export default class AppServiceExtension extends AppServiceExtensionAbility {
   connection: number = 0;
 
-  onCreate(localWant: Want) {
-    let want: Want = {
+  onCreate(want: Want) {
+    let wantInfo: Want = {
       bundleName: 'com.example.myapp',
       abilityName: 'MyAbility'
     };
@@ -218,7 +229,7 @@ export default class AppServiceExtension extends AppServiceExtensionAbility {
 
 
     try {
-      this.connection = this.context.connectServiceExtensionAbility(want, callback);
+      this.connection = this.context.connectServiceExtensionAbility(wantInfo, callback);
     } catch (paramError) {
       commRemote = null;
       // 处理入参错误异常
@@ -243,9 +254,10 @@ export default class AppServiceExtension extends AppServiceExtensionAbility {
 
 
 
-#### disconnectServiceExtensionAbility
+### disconnectServiceExtensionAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 disconnectServiceExtensionAbility(connection: number): Promise&lt;void&gt;
 
@@ -255,12 +267,14 @@ disconnectServiceExtensionAbility(connection: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| connection | number | 是 | 在connectServiceExtensionAbility中返回的连接id。 |
+| connection | number | 是 | 在connectServiceExtensionAbility中返回的连接ID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -270,6 +284,7 @@ disconnectServiceExtensionAbility(connection: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -283,9 +298,10 @@ disconnectServiceExtensionAbility(connection: number): Promise&lt;void&gt;
 
 
 
-#### terminateSelf
+### terminateSelf
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 terminateSelf(): Promise&lt;void&gt;
 
@@ -295,6 +311,7 @@ terminateSelf(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -303,6 +320,7 @@ terminateSelf(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

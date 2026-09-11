@@ -1,6 +1,6 @@
 # @performance/hp-arkui-use-taskpool-for-web-request
 
-更新时间：2026-01-15 06:51:04
+更新时间：2026-08-29 09:41:34
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hp-arkui-use-taskpool-for-web-request
 
@@ -9,7 +9,7 @@
 应用内点击完成时延场景下，建议优先修改。
  
 
-#### 规则配置
+## 规则配置
 
 ```json
 // code-linter.json5
@@ -22,13 +22,13 @@
  
  
 
-#### 选项
+## 选项
 
-该规则无需配置额外选项。
+该规则无需配置选项。
  
  
 
-#### 正例
+## 正例
 
 ```json
 import { http } from '@kit.NetworkKit';
@@ -57,7 +57,7 @@ httpRequest.request("EXAMPLE_URL", async (err: Error, data: http.HttpResponse) =
  
  
 
-#### 反例
+## 反例
 
 ```json
 import { http } from '@kit.NetworkKit';
@@ -78,7 +78,7 @@ httpRequest.request("EXAMPLE_URL", (err: Error, data: http.HttpResponse) => {
  
  
 
-#### 规则集
+## 规则集
 
 ```text
 plugin:@performance/all

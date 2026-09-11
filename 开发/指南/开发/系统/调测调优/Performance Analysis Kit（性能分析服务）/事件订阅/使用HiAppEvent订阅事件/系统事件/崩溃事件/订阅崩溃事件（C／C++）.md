@@ -1,10 +1,10 @@
 # 订阅崩溃事件（C/C++）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-watcher-crash-events-ndk
 
-#### 简介
+## 简介
 
 本文介绍如何使用HiAppEvent提供的C/C++接口订阅应用崩溃事件。详细使用说明请参考[hiappevent.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hiappevent-h)。
 
@@ -14,7 +14,8 @@
 
 
 
-#### 接口说明
+## 接口说明
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -24,11 +25,11 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 
 
 
-#### 添加事件观察者
+### 添加事件观察者
 
 **在应用启动后，在执行业务逻辑前添加事件观察者，以确保订阅到崩溃事件。否则，应用可能因崩溃而退出，无法订阅崩溃事件。**
 
@@ -375,7 +376,7 @@ Button('MergeLogNativeCrash')
 
 
 
-#### 验证观察者是否订阅到崩溃事件
+### 验证观察者是否订阅到崩溃事件
 
 在应用未主动捕获崩溃异常和主动捕获崩溃异常的两种场景中，崩溃事件的回调时机不同。开发者需要在每种情况下验证是否订阅到崩溃事件。
 
@@ -420,7 +421,7 @@ HiAppEvent eventInfo.params.log_over_limit=0
 
 
 
-#### 移除并销毁事件观察者
+### 移除并销毁事件观察者
 1. 移除事件观察者。
 
   

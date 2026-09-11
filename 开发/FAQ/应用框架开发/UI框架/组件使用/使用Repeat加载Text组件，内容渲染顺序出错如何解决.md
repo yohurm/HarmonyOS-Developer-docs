@@ -24,7 +24,7 @@ struct Index {
     for (let i = 0; i < 200; i++) {
       let str: string = `第${i}条：测试数据 index=${i}`;
       let styledString = new MutableStyledString(str);
-      let startStringMatch = str.match(/^第.+?条/); // 匹配第x条，加粗
+      let startStringMatch = str.match(/^第.+?条/); <em>// 匹配第x条，加粗</em>
       if (startStringMatch) {
         styledString.setStyle({
           start: 0,
@@ -121,12 +121,12 @@ struct TextOrder {
 
 
   aboutToAppear(): void {
-    // 创建测试数据
+   <em> // 创建测试数据</em>
     for (let i = 0; i < 200; i++) {
       let str: string = `第${i}条：测试数据 index=${i}`;
       let styledString = new MutableStyledString(str);
-      let startStringMatch = str.match(/^第.+?条/); // 匹配第x条，加粗
-      // 使用正则表达式匹配文本开头的"第x条"部分
+      let startStringMatch = str.match(/^第.+?条/); <em>// 匹配第x条，加粗</em>
+      <em>// 使用正则表达式匹配文本开头的"第x条"部分</em>
       if (startStringMatch) {
         styledString.setStyle({
           start: 0,
@@ -135,16 +135,16 @@ struct TextOrder {
           styledValue: new TextStyle({ fontWeight: 'bold' })
         });
       }
-      // 为整段文本设置段落样式
+     <em> // 为整段文本设置段落样式</em>
       styledString.setStyle({
         start: 0,
         length: str.length,
         styledKey: StyledStringKey.PARAGRAPH_STYLE,
         styledValue: new ParagraphStyle({ textIndent: new LengthMetrics(36) })
       });
-      // 创建文本控制器
+     <em> // 创建文本控制器</em>
       let controller = new TextController();
-      // 将数据添加到对应的数组中
+     <em> // 将数据添加到对应的数组中</em>
       this.textBlockList.push(str);
       this.styledStringList.push(styledString);
       this.controllerList.push(controller);
@@ -164,7 +164,7 @@ struct TextOrder {
                 .copyOption(CopyOptions.LocalDevice)
                 .lineHeight(26)
                 .height('auto')
-                // 当文本组件出现时，为其设置样式
+            <em>    // 当文本组件出现时，为其设置样式</em>
                 .onAppear(() => {
                   this.controllerList[obj.index].setStyledString(this.styledStringList[obj.index]);
                 });

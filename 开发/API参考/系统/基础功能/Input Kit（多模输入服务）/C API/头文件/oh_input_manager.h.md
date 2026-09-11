@@ -1,13 +1,14 @@
 # oh_input_manager.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-input-manager-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供输入事件注入、按键状态查询、设备热插拔监听、事件拦截、快捷键管理、鼠标光标管理、输入设备信息查询、注入权限管理等功能。
 
@@ -23,15 +24,18 @@
 
 
 
-#### 汇总
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 汇总
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 结构体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -53,9 +57,11 @@
 
 
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -74,9 +80,11 @@
 
 
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -269,15 +277,17 @@
 
 
 
-#### 枚举类型说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 枚举类型说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### Input_KeyStateAction
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### Input_KeyStateAction
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Input_KeyStateAction
@@ -288,6 +298,7 @@ enum Input_KeyStateAction
 按键状态的枚举值。
 
 **起始版本：** 12
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -300,9 +311,10 @@ enum Input_KeyStateAction
 
 
 
-#### Input_KeyEventAction
+### Input_KeyEventAction
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Input_KeyEventAction
@@ -314,6 +326,7 @@ enum Input_KeyEventAction
 
 **起始版本：** 12
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | KEY_ACTION_CANCEL = 0 | 按键动作取消。 |
@@ -323,9 +336,10 @@ enum Input_KeyEventAction
 
 
 
-#### Input_MouseEventAction
+### Input_MouseEventAction
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Input_MouseEventAction
@@ -336,6 +350,7 @@ enum Input_MouseEventAction
 鼠标动作的枚举值。
 
 **起始版本：** 12
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -350,9 +365,10 @@ enum Input_MouseEventAction
 
 
 
-#### InputEvent_MouseAxis
+### InputEvent_MouseAxis
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum InputEvent_MouseAxis
@@ -364,6 +380,7 @@ enum InputEvent_MouseAxis
 
 **起始版本：** 12
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | MOUSE_AXIS_SCROLL_VERTICAL = 0 | 垂直滚动轴。 |
@@ -372,9 +389,10 @@ enum InputEvent_MouseAxis
 
 
 
-#### Input_MouseEventButton
+### Input_MouseEventButton
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Input_MouseEventButton
@@ -385,6 +403,7 @@ enum Input_MouseEventButton
 鼠标按键的枚举值。
 
 **起始版本：** 12
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -398,9 +417,10 @@ enum Input_MouseEventButton
 
 
 
-#### Input_TouchEventAction
+### Input_TouchEventAction
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Input_TouchEventAction
@@ -412,6 +432,7 @@ enum Input_TouchEventAction
 
 **起始版本：** 12
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | TOUCH_ACTION_CANCEL = 0 | 触屏取消。 |
@@ -422,9 +443,10 @@ enum Input_TouchEventAction
 
 
 
-#### Input_InjectionStatus
+### Input_InjectionStatus
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Input_InjectionStatus
@@ -436,6 +458,7 @@ enum Input_InjectionStatus
 
 **起始版本：** 20
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | UNAUTHORIZED = 0 | 未授权。 |
@@ -445,9 +468,10 @@ enum Input_InjectionStatus
 
 
 
-#### InputEvent_SourceType
+### InputEvent_SourceType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum InputEvent_SourceType
@@ -459,6 +483,7 @@ enum InputEvent_SourceType
 
 **起始版本：** 12
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | SOURCE_TYPE_MOUSE = 1 | 表示输入源生成鼠标光标移动、按键按下和释放以及滚轮滚动的事件。 |
@@ -468,9 +493,10 @@ enum InputEvent_SourceType
 
 
 
-#### Input_KeyboardType
+### Input_KeyboardType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Input_KeyboardType
@@ -481,6 +507,7 @@ enum Input_KeyboardType
 输入设备的键盘类型。
 
 **起始版本：** 13
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -494,9 +521,10 @@ enum Input_KeyboardType
 
 
 
-#### Input_Result
+### Input_Result
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Input_Result
@@ -508,6 +536,7 @@ enum Input_Result
 
 **起始版本：** 12
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | INPUT_SUCCESS = 0 | 操作成功。 |
@@ -517,23 +546,24 @@ enum Input_Result
 | INPUT_DEVICE_NOT_SUPPORTED = 801 | 表示不支持该功能。 |
 | INPUT_SERVICE_EXCEPTION = 3800001 | 服务异常。 |
 | INPUT_REPEAT_INTERCEPTOR = 4200001 | 应用创建拦截后，再次执行创建拦截的操作。 |
-| INPUT_OCCUPIED_BY_SYSTEM = 4200002 | 已经被系统应用占用。 起始版本： 14。 |
-| INPUT_OCCUPIED_BY_OTHER = 4200003 | 已经被其他应用占用。 起始版本： 14。 |
-| INPUT_KEYBOARD_DEVICE_NOT_EXIST = 3900002 | 未连接键盘设备。 起始版本： 15。 |
-| INPUT_INJECTION_AUTHORIZING = 3900005 | 正在授权中。 起始版本： 20。 |
-| INPUT_INJECTION_OPERATION_FREQUENT = 3900006 | 重复请求。 起始版本： 20。 |
-| INPUT_INJECTION_AUTHORIZED = 3900007 | 当前应用已经授权。 起始版本： 20。 |
-| INPUT_INJECTION_AUTHORIZED_OTHERS = 3900008 | 其它应用已经授权。 起始版本： 20。 |
-| INPUT_APP_NOT_FOCUSED = 3900009 | 当前应用不是焦点应用。 起始版本： 20。 |
-| INPUT_DEVICE_NO_POINTER = 3900010 | 无鼠标类输入外设。 起始版本： 20。 |
-| INPUT_INVALID_WINDOWID = 26500001 | 无效的窗口ID。 起始版本： 22。 |
+| INPUT_OCCUPIED_BY_SYSTEM = 4200002 | 已经被系统应用占用。 起始版本： 14 |
+| INPUT_OCCUPIED_BY_OTHER = 4200003 | 已经被其他应用占用。 起始版本： 14 |
+| INPUT_KEYBOARD_DEVICE_NOT_EXIST = 3900002 | 未连接键盘设备。 起始版本： 15 |
+| INPUT_INJECTION_AUTHORIZING = 3900005 | 正在授权中。 起始版本： 20 |
+| INPUT_INJECTION_OPERATION_FREQUENT = 3900006 | 重复请求。 起始版本： 20 |
+| INPUT_INJECTION_AUTHORIZED = 3900007 | 当前应用已经授权。 起始版本： 20 |
+| INPUT_INJECTION_AUTHORIZED_OTHERS = 3900008 | 其它应用已经授权。 起始版本： 20 |
+| INPUT_APP_NOT_FOCUSED = 3900009 | 当前应用不是焦点应用。 起始版本： 20 |
+| INPUT_DEVICE_NO_POINTER = 3900010 | 无鼠标类输入外设。 起始版本： 20 |
+| INPUT_INVALID_WINDOWID = 26500001 | 无效的窗口ID。 起始版本： 22 |
 
 
 
 
-#### Input_TouchEventToolType
+### Input_TouchEventToolType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Input_TouchEventToolType
@@ -544,6 +574,7 @@ enum Input_TouchEventToolType
 输入设备的触屏事件工具类型。
 
 **起始版本：** 24
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -559,15 +590,17 @@ enum Input_TouchEventToolType
 
 
 
-#### 函数说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 函数说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### Input_HotkeyCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### Input_HotkeyCallback()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*Input_HotkeyCallback)(Input_Hotkey* hotkey)
@@ -581,6 +614,7 @@ typedef void (*Input_HotkeyCallback)(Input_Hotkey* hotkey)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_Hotkey* hotkey | hotkey 快捷键对象的实例。 |
@@ -588,9 +622,10 @@ typedef void (*Input_HotkeyCallback)(Input_Hotkey* hotkey)
 
 
 
-#### Input_KeyEventCallback()
+### Input_KeyEventCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*Input_KeyEventCallback)(const Input_KeyEvent* keyEvent)
@@ -604,6 +639,7 @@ typedef void (*Input_KeyEventCallback)(const Input_KeyEvent* keyEvent)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Input_KeyEvent* keyEvent | 按键事件对象，通过OH_Input_CreateKeyEvent接口可以创建按键事件对象。 使用完需使用OH_Input_DestroyKeyEvent接口销毁按键事件对象。 |
@@ -611,9 +647,10 @@ typedef void (*Input_KeyEventCallback)(const Input_KeyEvent* keyEvent)
 
 
 
-#### Input_MouseEventCallback()
+### Input_MouseEventCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*Input_MouseEventCallback)(const Input_MouseEvent* mouseEvent)
@@ -627,6 +664,7 @@ typedef void (*Input_MouseEventCallback)(const Input_MouseEvent* mouseEvent)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Input_MouseEvent* mouseEvent | 鼠标事件对象，通过OH_Input_CreateMouseEvent接口可以创建鼠标事件对象。 使用完需使用OH_Input_DestroyMouseEvent接口销毁鼠标事件对象。 |
@@ -634,9 +672,10 @@ typedef void (*Input_MouseEventCallback)(const Input_MouseEvent* mouseEvent)
 
 
 
-#### Input_TouchEventCallback()
+### Input_TouchEventCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*Input_TouchEventCallback)(const Input_TouchEvent* touchEvent)
@@ -650,6 +689,7 @@ typedef void (*Input_TouchEventCallback)(const Input_TouchEvent* touchEvent)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Input_TouchEvent* touchEvent | 触屏输入事件对象，通过OH_Input_CreateTouchEvent接口可以创建触屏输入事件对象。 使用完需使用OH_Input_DestroyTouchEvent接口销毁触屏输入事件对象。 |
@@ -657,9 +697,10 @@ typedef void (*Input_TouchEventCallback)(const Input_TouchEvent* touchEvent)
 
 
 
-#### Input_AxisEventCallback()
+### Input_AxisEventCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*Input_AxisEventCallback)(const Input_AxisEvent* axisEvent)
@@ -673,6 +714,7 @@ typedef void (*Input_AxisEventCallback)(const Input_AxisEvent* axisEvent)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Input_AxisEvent* axisEvent | 轴事件对象，通过OH_Input_CreateAxisEvent接口可以创建轴事件对象。 使用完需使用OH_Input_DestroyAxisEvent接口销毁轴事件对象。 |
@@ -680,9 +722,10 @@ typedef void (*Input_AxisEventCallback)(const Input_AxisEvent* axisEvent)
 
 
 
-#### Input_DeviceAddedCallback()
+### Input_DeviceAddedCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*Input_DeviceAddedCallback)(int32_t deviceId)
@@ -696,6 +739,7 @@ typedef void (*Input_DeviceAddedCallback)(int32_t deviceId)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | int32_t deviceId | 输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。 |
@@ -703,9 +747,10 @@ typedef void (*Input_DeviceAddedCallback)(int32_t deviceId)
 
 
 
-#### Input_DeviceRemovedCallback()
+### Input_DeviceRemovedCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*Input_DeviceRemovedCallback)(int32_t deviceId)
@@ -719,6 +764,7 @@ typedef void (*Input_DeviceRemovedCallback)(int32_t deviceId)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | int32_t deviceId | 输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。 |
@@ -726,9 +772,10 @@ typedef void (*Input_DeviceRemovedCallback)(int32_t deviceId)
 
 
 
-#### Input_InjectAuthorizeCallback()
+### Input_InjectAuthorizeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*Input_InjectAuthorizeCallback)(Input_InjectionStatus authorizedStatus)
@@ -742,6 +789,7 @@ typedef void (*Input_InjectAuthorizeCallback)(Input_InjectionStatus authorizedSt
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_InjectionStatus authorizedStatus | 注入权限状态。 |
@@ -749,9 +797,10 @@ typedef void (*Input_InjectAuthorizeCallback)(Input_InjectionStatus authorizedSt
 
 
 
-#### OH_Input_GetKeyState()
+### OH_Input_GetKeyState()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_GetKeyState(struct Input_KeyState* keyState)
@@ -767,12 +816,14 @@ Input_Result OH_Input_GetKeyState(struct Input_KeyState* keyState)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_KeyState* keyState | 按键状态的枚举对象，具体请参考Input_KeyStateAction。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -781,9 +832,10 @@ Input_Result OH_Input_GetKeyState(struct Input_KeyState* keyState)
 
 
 
-#### OH_Input_CreateKeyState()
+### OH_Input_CreateKeyState()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 struct Input_KeyState* OH_Input_CreateKeyState()
@@ -799,6 +851,7 @@ struct Input_KeyState* OH_Input_CreateKeyState()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | struct Input_KeyState* | 操作成功返回一个Input_KeyState指针对象；否则返回空指针。 |
@@ -806,9 +859,10 @@ struct Input_KeyState* OH_Input_CreateKeyState()
 
 
 
-#### OH_Input_DestroyKeyState()
+### OH_Input_DestroyKeyState()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_DestroyKeyState(struct Input_KeyState** keyState)
@@ -824,6 +878,7 @@ void OH_Input_DestroyKeyState(struct Input_KeyState** keyState)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_KeyState** keyState | 按键状态的枚举对象，具体请参考Input_KeyStateAction。 |
@@ -831,9 +886,10 @@ void OH_Input_DestroyKeyState(struct Input_KeyState** keyState)
 
 
 
-#### OH_Input_SetKeyCode()
+### OH_Input_SetKeyCode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_SetKeyCode(struct Input_KeyState* keyState, int32_t keyCode)
@@ -849,17 +905,19 @@ void OH_Input_SetKeyCode(struct Input_KeyState* keyState, int32_t keyCode)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_KeyState* keyState | 按键状态的枚举对象，具体请参考Input_KeyStateAction。 |
-| int32_t keyCode | 按键键值，具体请参考KeyCode。 |
+| int32_t keyCode | 按键键值，具体请参考Input_KeyCode。 |
 
 
 
 
-#### OH_Input_GetKeyCode()
+### OH_Input_GetKeyCode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Input_GetKeyCode(const struct Input_KeyState* keyState)
@@ -875,12 +933,14 @@ int32_t OH_Input_GetKeyCode(const struct Input_KeyState* keyState)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct Input_KeyState* keyState | 按键状态的枚举对象，具体请参考Input_KeyStateAction。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -889,9 +949,10 @@ int32_t OH_Input_GetKeyCode(const struct Input_KeyState* keyState)
 
 
 
-#### OH_Input_SetKeyPressed()
+### OH_Input_SetKeyPressed()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_SetKeyPressed(struct Input_KeyState* keyState, int32_t keyAction)
@@ -907,6 +968,7 @@ void OH_Input_SetKeyPressed(struct Input_KeyState* keyState, int32_t keyAction)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_KeyState* keyState | 按键状态的枚举对象，具体请参考Input_KeyStateAction。 |
@@ -915,9 +977,10 @@ void OH_Input_SetKeyPressed(struct Input_KeyState* keyState, int32_t keyAction)
 
 
 
-#### OH_Input_GetKeyPressed()
+### OH_Input_GetKeyPressed()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Input_GetKeyPressed(const struct Input_KeyState* keyState)
@@ -933,12 +996,14 @@ int32_t OH_Input_GetKeyPressed(const struct Input_KeyState* keyState)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct Input_KeyState* keyState | 按键状态的枚举对象，具体请参考Input_KeyStateAction。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -947,9 +1012,10 @@ int32_t OH_Input_GetKeyPressed(const struct Input_KeyState* keyState)
 
 
 
-#### OH_Input_SetKeySwitch()
+### OH_Input_SetKeySwitch()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_SetKeySwitch(struct Input_KeyState* keyState, int32_t keySwitch)
@@ -965,6 +1031,7 @@ void OH_Input_SetKeySwitch(struct Input_KeyState* keyState, int32_t keySwitch)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_KeyState* keyState | 按键状态的枚举对象，具体请参考Input_KeyStateAction。 |
@@ -973,9 +1040,10 @@ void OH_Input_SetKeySwitch(struct Input_KeyState* keyState, int32_t keySwitch)
 
 
 
-#### OH_Input_GetKeySwitch()
+### OH_Input_GetKeySwitch()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Input_GetKeySwitch(const struct Input_KeyState* keyState)
@@ -991,12 +1059,14 @@ int32_t OH_Input_GetKeySwitch(const struct Input_KeyState* keyState)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct Input_KeyState* keyState | 按键状态的枚举对象，具体请参考Input_KeyStateAction。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1005,9 +1075,10 @@ int32_t OH_Input_GetKeySwitch(const struct Input_KeyState* keyState)
 
 
 
-#### OH_Input_InjectKeyEvent()
+### OH_Input_InjectKeyEvent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 ```text
 int32_t OH_Input_InjectKeyEvent(const struct Input_KeyEvent* keyEvent)
@@ -1035,12 +1106,14 @@ int32_t OH_Input_InjectKeyEvent(const struct Input_KeyEvent* keyEvent)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct Input_KeyEvent* keyEvent | 按键事件对象，通过OH_Input_CreateKeyEvent接口可以创建按键事件对象。并通过OH_Input_SetKeyEventKeyCode、OH_Input_SetKeyEventAction接口可以设置按键事件的键值和按键事件的类型。 使用完需使用OH_Input_DestroyKeyEvent接口销毁按键事件对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1049,9 +1122,10 @@ int32_t OH_Input_InjectKeyEvent(const struct Input_KeyEvent* keyEvent)
 
 
 
-#### OH_Input_CreateKeyEvent()
+### OH_Input_CreateKeyEvent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 struct Input_KeyEvent* OH_Input_CreateKeyEvent()
@@ -1067,6 +1141,7 @@ struct Input_KeyEvent* OH_Input_CreateKeyEvent()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | struct Input_KeyEvent* | 如果操作成功返回一个Input_KeyEvent指针对象，否则返回空指针。 |
@@ -1074,9 +1149,10 @@ struct Input_KeyEvent* OH_Input_CreateKeyEvent()
 
 
 
-#### OH_Input_DestroyKeyEvent()
+### OH_Input_DestroyKeyEvent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_DestroyKeyEvent(struct Input_KeyEvent** keyEvent)
@@ -1092,6 +1168,7 @@ void OH_Input_DestroyKeyEvent(struct Input_KeyEvent** keyEvent)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_KeyEvent** keyEvent | 按键事件对象。 |
@@ -1099,9 +1176,10 @@ void OH_Input_DestroyKeyEvent(struct Input_KeyEvent** keyEvent)
 
 
 
-#### OH_Input_SetKeyEventAction()
+### OH_Input_SetKeyEventAction()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_SetKeyEventAction(struct Input_KeyEvent* keyEvent, int32_t action)
@@ -1117,6 +1195,7 @@ void OH_Input_SetKeyEventAction(struct Input_KeyEvent* keyEvent, int32_t action)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_KeyEvent* keyEvent | 按键事件对象，通过OH_Input_CreateKeyEvent接口可以创建按键事件对象。 使用完需使用OH_Input_DestroyKeyEvent接口销毁按键事件对象。 |
@@ -1125,9 +1204,10 @@ void OH_Input_SetKeyEventAction(struct Input_KeyEvent* keyEvent, int32_t action)
 
 
 
-#### OH_Input_GetKeyEventAction()
+### OH_Input_GetKeyEventAction()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Input_GetKeyEventAction(const struct Input_KeyEvent* keyEvent)
@@ -1143,12 +1223,14 @@ int32_t OH_Input_GetKeyEventAction(const struct Input_KeyEvent* keyEvent)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct Input_KeyEvent* keyEvent | 按键事件对象，通过OH_Input_CreateKeyEvent接口可以创建按键事件对象。 使用完需使用OH_Input_DestroyKeyEvent接口销毁按键事件对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1157,9 +1239,10 @@ int32_t OH_Input_GetKeyEventAction(const struct Input_KeyEvent* keyEvent)
 
 
 
-#### OH_Input_SetKeyEventKeyCode()
+### OH_Input_SetKeyEventKeyCode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_SetKeyEventKeyCode(struct Input_KeyEvent* keyEvent, int32_t keyCode)
@@ -1175,17 +1258,19 @@ void OH_Input_SetKeyEventKeyCode(struct Input_KeyEvent* keyEvent, int32_t keyCod
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_KeyEvent* keyEvent | 按键事件对象，通过OH_Input_CreateKeyEvent接口可以创建按键事件对象。 使用完需使用OH_Input_DestroyKeyEvent接口销毁按键事件对象。 |
-| int32_t keyCode | 按键键值，具体请参考KeyCode。 |
+| int32_t keyCode | 按键键值，具体请参考Input_KeyCode。 |
 
 
 
 
-#### OH_Input_GetKeyEventKeyCode()
+### OH_Input_GetKeyEventKeyCode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Input_GetKeyEventKeyCode(const struct Input_KeyEvent* keyEvent)
@@ -1201,12 +1286,14 @@ int32_t OH_Input_GetKeyEventKeyCode(const struct Input_KeyEvent* keyEvent)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct Input_KeyEvent* keyEvent | 按键事件对象，通过OH_Input_CreateKeyEvent接口可以创建按键事件对象。 使用完需使用OH_Input_DestroyKeyEvent接口销毁按键事件对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1215,9 +1302,10 @@ int32_t OH_Input_GetKeyEventKeyCode(const struct Input_KeyEvent* keyEvent)
 
 
 
-#### OH_Input_SetKeyEventActionTime()
+### OH_Input_SetKeyEventActionTime()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_SetKeyEventActionTime(struct Input_KeyEvent* keyEvent, int64_t actionTime)
@@ -1233,6 +1321,7 @@ void OH_Input_SetKeyEventActionTime(struct Input_KeyEvent* keyEvent, int64_t act
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_KeyEvent* keyEvent | 按键事件对象，通过OH_Input_CreateKeyEvent接口可以创建按键事件对象。 使用完需使用OH_Input_DestroyKeyEvent接口销毁按键事件对象。 |
@@ -1241,9 +1330,10 @@ void OH_Input_SetKeyEventActionTime(struct Input_KeyEvent* keyEvent, int64_t act
 
 
 
-#### OH_Input_GetKeyEventActionTime()
+### OH_Input_GetKeyEventActionTime()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int64_t OH_Input_GetKeyEventActionTime(const struct Input_KeyEvent* keyEvent)
@@ -1259,12 +1349,14 @@ int64_t OH_Input_GetKeyEventActionTime(const struct Input_KeyEvent* keyEvent)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct Input_KeyEvent* keyEvent | 按键事件对象，通过OH_Input_CreateKeyEvent接口可以创建按键事件对象。 使用完需使用OH_Input_DestroyKeyEvent接口销毁按键事件对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1273,9 +1365,10 @@ int64_t OH_Input_GetKeyEventActionTime(const struct Input_KeyEvent* keyEvent)
 
 
 
-#### OH_Input_SetKeyEventWindowId()
+### OH_Input_SetKeyEventWindowId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_SetKeyEventWindowId(struct Input_KeyEvent* keyEvent, int32_t windowId)
@@ -1291,6 +1384,7 @@ void OH_Input_SetKeyEventWindowId(struct Input_KeyEvent* keyEvent, int32_t windo
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_KeyEvent* keyEvent | 按键事件对象，通过OH_Input_CreateKeyEvent接口可以创建按键事件对象。 使用完需使用OH_Input_DestroyKeyEvent接口销毁按键事件对象。 |
@@ -1299,9 +1393,10 @@ void OH_Input_SetKeyEventWindowId(struct Input_KeyEvent* keyEvent, int32_t windo
 
 
 
-#### OH_Input_GetKeyEventWindowId()
+### OH_Input_GetKeyEventWindowId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Input_GetKeyEventWindowId(const struct Input_KeyEvent* keyEvent)
@@ -1317,12 +1412,14 @@ int32_t OH_Input_GetKeyEventWindowId(const struct Input_KeyEvent* keyEvent)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct Input_KeyEvent* keyEvent | 按键事件对象，通过OH_Input_CreateKeyEvent接口可以创建按键事件对象。 使用完需使用OH_Input_DestroyKeyEvent接口销毁按键事件对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1331,9 +1428,10 @@ int32_t OH_Input_GetKeyEventWindowId(const struct Input_KeyEvent* keyEvent)
 
 
 
-#### OH_Input_GetKeyEventDisplayId()
+### OH_Input_GetKeyEventDisplayId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Input_GetKeyEventDisplayId(const struct Input_KeyEvent* keyEvent)
@@ -1349,12 +1447,14 @@ int32_t OH_Input_GetKeyEventDisplayId(const struct Input_KeyEvent* keyEvent)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct Input_KeyEvent* keyEvent | 按键事件对象，通过OH_Input_CreateKeyEvent接口可以创建按键事件对象。 使用完需使用OH_Input_DestroyKeyEvent接口销毁按键事件对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1363,9 +1463,10 @@ int32_t OH_Input_GetKeyEventDisplayId(const struct Input_KeyEvent* keyEvent)
 
 
 
-#### OH_Input_SetKeyEventDisplayId()
+### OH_Input_SetKeyEventDisplayId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_SetKeyEventDisplayId(struct Input_KeyEvent* keyEvent, int32_t displayId)
@@ -1381,6 +1482,7 @@ void OH_Input_SetKeyEventDisplayId(struct Input_KeyEvent* keyEvent, int32_t disp
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_KeyEvent* keyEvent | 按键事件对象，通过OH_Input_CreateKeyEvent接口可以创建按键事件对象。 使用完需使用OH_Input_DestroyKeyEvent接口销毁按键事件对象。 |
@@ -1389,9 +1491,10 @@ void OH_Input_SetKeyEventDisplayId(struct Input_KeyEvent* keyEvent, int32_t disp
 
 
 
-#### OH_Input_CreateMouseEvent()
+### OH_Input_CreateMouseEvent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 struct Input_MouseEvent* OH_Input_CreateMouseEvent()
@@ -1407,6 +1510,7 @@ struct Input_MouseEvent* OH_Input_CreateMouseEvent()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | struct Input_MouseEvent* | 如果操作成功返回一个Input_MouseEvent指针对象，否则返回空指针。 |
@@ -1414,9 +1518,10 @@ struct Input_MouseEvent* OH_Input_CreateMouseEvent()
 
 
 
-#### OH_Input_DestroyMouseEvent()
+### OH_Input_DestroyMouseEvent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_DestroyMouseEvent(struct Input_MouseEvent** mouseEvent)
@@ -1432,6 +1537,7 @@ void OH_Input_DestroyMouseEvent(struct Input_MouseEvent** mouseEvent)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_MouseEvent** mouseEvent | 鼠标事件对象。 |
@@ -1439,9 +1545,10 @@ void OH_Input_DestroyMouseEvent(struct Input_MouseEvent** mouseEvent)
 
 
 
-#### OH_Input_SetMouseEventAction()
+### OH_Input_SetMouseEventAction()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_SetMouseEventAction(struct Input_MouseEvent* mouseEvent, int32_t action)
@@ -1457,6 +1564,7 @@ void OH_Input_SetMouseEventAction(struct Input_MouseEvent* mouseEvent, int32_t a
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_MouseEvent* mouseEvent | 鼠标事件对象，通过OH_Input_CreateMouseEvent接口可以创建鼠标事件对象。 使用完需使用OH_Input_DestroyMouseEvent接口销毁鼠标事件对象。 |
@@ -1465,9 +1573,10 @@ void OH_Input_SetMouseEventAction(struct Input_MouseEvent* mouseEvent, int32_t a
 
 
 
-#### OH_Input_GetMouseEventAction()
+### OH_Input_GetMouseEventAction()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Input_GetMouseEventAction(const struct Input_MouseEvent* mouseEvent)
@@ -1483,12 +1592,14 @@ int32_t OH_Input_GetMouseEventAction(const struct Input_MouseEvent* mouseEvent)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct Input_MouseEvent* mouseEvent | 鼠标事件对象，通过OH_Input_CreateMouseEvent接口可以创建鼠标事件对象。 使用完需使用OH_Input_DestroyMouseEvent接口销毁鼠标事件对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1497,9 +1608,10 @@ int32_t OH_Input_GetMouseEventAction(const struct Input_MouseEvent* mouseEvent)
 
 
 
-#### OH_Input_SetMouseEventDisplayX()
+### OH_Input_SetMouseEventDisplayX()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_SetMouseEventDisplayX(struct Input_MouseEvent* mouseEvent, int32_t displayX)
@@ -1515,6 +1627,7 @@ void OH_Input_SetMouseEventDisplayX(struct Input_MouseEvent* mouseEvent, int32_t
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_MouseEvent* mouseEvent | 鼠标事件对象，通过OH_Input_CreateMouseEvent接口可以创建鼠标事件对象。 使用完需使用OH_Input_DestroyMouseEvent接口销毁鼠标事件对象。 |
@@ -1523,9 +1636,10 @@ void OH_Input_SetMouseEventDisplayX(struct Input_MouseEvent* mouseEvent, int32_t
 
 
 
-#### OH_Input_GetMouseEventDisplayX()
+### OH_Input_GetMouseEventDisplayX()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Input_GetMouseEventDisplayX(const struct Input_MouseEvent* mouseEvent)
@@ -1541,12 +1655,14 @@ int32_t OH_Input_GetMouseEventDisplayX(const struct Input_MouseEvent* mouseEvent
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct Input_MouseEvent* mouseEvent | 鼠标事件对象，通过OH_Input_CreateMouseEvent接口可以创建鼠标事件对象。 使用完需使用OH_Input_DestroyMouseEvent接口销毁鼠标事件对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1555,9 +1671,10 @@ int32_t OH_Input_GetMouseEventDisplayX(const struct Input_MouseEvent* mouseEvent
 
 
 
-#### OH_Input_SetMouseEventDisplayY()
+### OH_Input_SetMouseEventDisplayY()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_SetMouseEventDisplayY(struct Input_MouseEvent* mouseEvent, int32_t displayY)
@@ -1573,6 +1690,7 @@ void OH_Input_SetMouseEventDisplayY(struct Input_MouseEvent* mouseEvent, int32_t
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_MouseEvent* mouseEvent | 鼠标事件对象，通过OH_Input_CreateMouseEvent接口可以创建鼠标事件对象。 使用完需使用OH_Input_DestroyMouseEvent接口销毁鼠标事件对象。 |
@@ -1581,9 +1699,10 @@ void OH_Input_SetMouseEventDisplayY(struct Input_MouseEvent* mouseEvent, int32_t
 
 
 
-#### OH_Input_GetMouseEventDisplayY()
+### OH_Input_GetMouseEventDisplayY()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Input_GetMouseEventDisplayY(const struct Input_MouseEvent* mouseEvent)
@@ -1599,12 +1718,14 @@ int32_t OH_Input_GetMouseEventDisplayY(const struct Input_MouseEvent* mouseEvent
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct Input_MouseEvent* mouseEvent | 鼠标事件对象，通过OH_Input_CreateMouseEvent接口可以创建鼠标事件对象。 使用完需使用OH_Input_DestroyMouseEvent接口销毁鼠标事件对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1613,9 +1734,10 @@ int32_t OH_Input_GetMouseEventDisplayY(const struct Input_MouseEvent* mouseEvent
 
 
 
-#### OH_Input_SetMouseEventButton()
+### OH_Input_SetMouseEventButton()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_SetMouseEventButton(struct Input_MouseEvent* mouseEvent, int32_t button)
@@ -1631,6 +1753,7 @@ void OH_Input_SetMouseEventButton(struct Input_MouseEvent* mouseEvent, int32_t b
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_MouseEvent* mouseEvent | 鼠标事件对象，通过OH_Input_CreateMouseEvent接口可以创建鼠标事件对象。 使用完需使用OH_Input_DestroyMouseEvent接口销毁鼠标事件对象。 |
@@ -1639,9 +1762,10 @@ void OH_Input_SetMouseEventButton(struct Input_MouseEvent* mouseEvent, int32_t b
 
 
 
-#### OH_Input_GetMouseEventButton()
+### OH_Input_GetMouseEventButton()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Input_GetMouseEventButton(const struct Input_MouseEvent* mouseEvent)
@@ -1657,12 +1781,14 @@ int32_t OH_Input_GetMouseEventButton(const struct Input_MouseEvent* mouseEvent)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct Input_MouseEvent* mouseEvent | 鼠标事件对象，通过OH_Input_CreateMouseEvent接口可以创建鼠标事件对象。 使用完需使用OH_Input_DestroyMouseEvent接口销毁鼠标事件对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1671,9 +1797,10 @@ int32_t OH_Input_GetMouseEventButton(const struct Input_MouseEvent* mouseEvent)
 
 
 
-#### OH_Input_SetMouseEventAxisType()
+### OH_Input_SetMouseEventAxisType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_SetMouseEventAxisType(struct Input_MouseEvent* mouseEvent, int32_t axisType)
@@ -1689,6 +1816,7 @@ void OH_Input_SetMouseEventAxisType(struct Input_MouseEvent* mouseEvent, int32_t
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_MouseEvent* mouseEvent | 鼠标事件对象，通过OH_Input_CreateMouseEvent接口可以创建鼠标事件对象。 使用完需使用OH_Input_DestroyMouseEvent接口销毁鼠标事件对象。 |
@@ -1697,9 +1825,10 @@ void OH_Input_SetMouseEventAxisType(struct Input_MouseEvent* mouseEvent, int32_t
 
 
 
-#### OH_Input_GetMouseEventAxisType()
+### OH_Input_GetMouseEventAxisType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Input_GetMouseEventAxisType(const struct Input_MouseEvent* mouseEvent)
@@ -1715,12 +1844,14 @@ int32_t OH_Input_GetMouseEventAxisType(const struct Input_MouseEvent* mouseEvent
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct Input_MouseEvent* mouseEvent | 鼠标事件对象，通过OH_Input_CreateMouseEvent接口可以创建鼠标事件对象。 使用完需使用OH_Input_DestroyMouseEvent接口销毁鼠标事件对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1729,9 +1860,10 @@ int32_t OH_Input_GetMouseEventAxisType(const struct Input_MouseEvent* mouseEvent
 
 
 
-#### OH_Input_SetMouseEventAxisValue()
+### OH_Input_SetMouseEventAxisValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_SetMouseEventAxisValue(struct Input_MouseEvent* mouseEvent, float axisValue)
@@ -1747,6 +1879,7 @@ void OH_Input_SetMouseEventAxisValue(struct Input_MouseEvent* mouseEvent, float 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_MouseEvent* mouseEvent | 鼠标事件对象，通过OH_Input_CreateMouseEvent接口可以创建鼠标事件对象。 使用完需使用OH_Input_DestroyMouseEvent接口销毁鼠标事件对象。 |
@@ -1755,9 +1888,10 @@ void OH_Input_SetMouseEventAxisValue(struct Input_MouseEvent* mouseEvent, float 
 
 
 
-#### OH_Input_GetMouseEventAxisValue()
+### OH_Input_GetMouseEventAxisValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 float OH_Input_GetMouseEventAxisValue(const struct Input_MouseEvent* mouseEvent)
@@ -1773,12 +1907,14 @@ float OH_Input_GetMouseEventAxisValue(const struct Input_MouseEvent* mouseEvent)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct Input_MouseEvent* mouseEvent | 鼠标事件对象，通过OH_Input_CreateMouseEvent接口可以创建鼠标事件对象。 使用完需使用OH_Input_DestroyMouseEvent接口销毁鼠标事件对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1787,9 +1923,10 @@ float OH_Input_GetMouseEventAxisValue(const struct Input_MouseEvent* mouseEvent)
 
 
 
-#### OH_Input_SetMouseEventActionTime()
+### OH_Input_SetMouseEventActionTime()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_SetMouseEventActionTime(struct Input_MouseEvent* mouseEvent, int64_t actionTime)
@@ -1805,6 +1942,7 @@ void OH_Input_SetMouseEventActionTime(struct Input_MouseEvent* mouseEvent, int64
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_MouseEvent* mouseEvent | 鼠标事件对象，通过OH_Input_CreateMouseEvent接口可以创建鼠标事件对象。 使用完需使用OH_Input_DestroyMouseEvent接口销毁鼠标事件对象。 |
@@ -1813,9 +1951,10 @@ void OH_Input_SetMouseEventActionTime(struct Input_MouseEvent* mouseEvent, int64
 
 
 
-#### OH_Input_GetMouseEventActionTime()
+### OH_Input_GetMouseEventActionTime()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int64_t OH_Input_GetMouseEventActionTime(const struct Input_MouseEvent* mouseEvent)
@@ -1831,12 +1970,14 @@ int64_t OH_Input_GetMouseEventActionTime(const struct Input_MouseEvent* mouseEve
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct Input_MouseEvent* mouseEvent | 鼠标事件对象，通过OH_Input_CreateMouseEvent接口可以创建鼠标事件对象。 使用完需使用OH_Input_DestroyMouseEvent接口销毁鼠标事件对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1845,9 +1986,10 @@ int64_t OH_Input_GetMouseEventActionTime(const struct Input_MouseEvent* mouseEve
 
 
 
-#### OH_Input_SetMouseEventWindowId()
+### OH_Input_SetMouseEventWindowId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_SetMouseEventWindowId(struct Input_MouseEvent* mouseEvent, int32_t windowId)
@@ -1863,6 +2005,7 @@ void OH_Input_SetMouseEventWindowId(struct Input_MouseEvent* mouseEvent, int32_t
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_MouseEvent* mouseEvent | 鼠标事件对象，通过OH_Input_CreateMouseEvent接口可以创建鼠标事件对象。 使用完需使用OH_Input_DestroyMouseEvent接口销毁鼠标事件对象。 |
@@ -1871,9 +2014,10 @@ void OH_Input_SetMouseEventWindowId(struct Input_MouseEvent* mouseEvent, int32_t
 
 
 
-#### OH_Input_GetMouseEventWindowId()
+### OH_Input_GetMouseEventWindowId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Input_GetMouseEventWindowId(const struct Input_MouseEvent* mouseEvent)
@@ -1889,12 +2033,14 @@ int32_t OH_Input_GetMouseEventWindowId(const struct Input_MouseEvent* mouseEvent
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct Input_MouseEvent* mouseEvent | 鼠标事件对象，通过OH_Input_CreateMouseEvent接口可以创建鼠标事件对象。 使用完需使用OH_Input_DestroyMouseEvent接口销毁鼠标事件对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1903,9 +2049,10 @@ int32_t OH_Input_GetMouseEventWindowId(const struct Input_MouseEvent* mouseEvent
 
 
 
-#### OH_Input_SetMouseEventDisplayId()
+### OH_Input_SetMouseEventDisplayId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_SetMouseEventDisplayId(struct Input_MouseEvent* mouseEvent, int32_t displayId)
@@ -1921,6 +2068,7 @@ void OH_Input_SetMouseEventDisplayId(struct Input_MouseEvent* mouseEvent, int32_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_MouseEvent* mouseEvent | 鼠标事件对象，通过OH_Input_CreateMouseEvent接口可以创建鼠标事件对象。 使用完需使用OH_Input_DestroyMouseEvent接口销毁鼠标事件对象。 |
@@ -1929,9 +2077,10 @@ void OH_Input_SetMouseEventDisplayId(struct Input_MouseEvent* mouseEvent, int32_
 
 
 
-#### OH_Input_CreateTouchEvent()
+### OH_Input_CreateTouchEvent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 struct Input_TouchEvent* OH_Input_CreateTouchEvent()
@@ -1947,6 +2096,7 @@ struct Input_TouchEvent* OH_Input_CreateTouchEvent()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | struct Input_TouchEvent* | 如果操作成功返回一个Input_TouchEvent指针对象，否则返回空指针。 |
@@ -1954,9 +2104,10 @@ struct Input_TouchEvent* OH_Input_CreateTouchEvent()
 
 
 
-#### OH_Input_DestroyTouchEvent()
+### OH_Input_DestroyTouchEvent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_DestroyTouchEvent(struct Input_TouchEvent** touchEvent)
@@ -1972,6 +2123,7 @@ void OH_Input_DestroyTouchEvent(struct Input_TouchEvent** touchEvent)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_TouchEvent** touchEvent | 触屏输入事件对象。 |
@@ -1979,9 +2131,10 @@ void OH_Input_DestroyTouchEvent(struct Input_TouchEvent** touchEvent)
 
 
 
-#### OH_Input_SetTouchEventAction()
+### OH_Input_SetTouchEventAction()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_SetTouchEventAction(struct Input_TouchEvent* touchEvent, int32_t action)
@@ -1997,6 +2150,7 @@ void OH_Input_SetTouchEventAction(struct Input_TouchEvent* touchEvent, int32_t a
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_TouchEvent* touchEvent | 触屏输入事件对象，通过OH_Input_CreateTouchEvent接口可以创建触屏输入事件对象。 使用完需使用OH_Input_DestroyTouchEvent接口销毁触屏输入事件对象。 |
@@ -2005,9 +2159,10 @@ void OH_Input_SetTouchEventAction(struct Input_TouchEvent* touchEvent, int32_t a
 
 
 
-#### OH_Input_GetTouchEventAction()
+### OH_Input_GetTouchEventAction()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Input_GetTouchEventAction(const struct Input_TouchEvent* touchEvent)
@@ -2023,12 +2178,14 @@ int32_t OH_Input_GetTouchEventAction(const struct Input_TouchEvent* touchEvent)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct Input_TouchEvent* touchEvent | 触屏输入事件对象，通过OH_Input_CreateTouchEvent接口可以创建触屏输入事件对象。 使用完需使用OH_Input_DestroyTouchEvent接口销毁触屏输入事件对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2037,9 +2194,10 @@ int32_t OH_Input_GetTouchEventAction(const struct Input_TouchEvent* touchEvent)
 
 
 
-#### OH_Input_SetTouchEventFingerId()
+### OH_Input_SetTouchEventFingerId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_SetTouchEventFingerId(struct Input_TouchEvent* touchEvent, int32_t id)
@@ -2055,6 +2213,7 @@ void OH_Input_SetTouchEventFingerId(struct Input_TouchEvent* touchEvent, int32_t
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_TouchEvent* touchEvent | 触屏输入事件对象，通过OH_Input_CreateTouchEvent接口可以创建触屏输入事件对象。 使用完需使用OH_Input_DestroyTouchEvent接口销毁触屏输入事件对象。 |
@@ -2063,9 +2222,10 @@ void OH_Input_SetTouchEventFingerId(struct Input_TouchEvent* touchEvent, int32_t
 
 
 
-#### OH_Input_GetTouchEventFingerId()
+### OH_Input_GetTouchEventFingerId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Input_GetTouchEventFingerId(const struct Input_TouchEvent* touchEvent)
@@ -2081,12 +2241,14 @@ int32_t OH_Input_GetTouchEventFingerId(const struct Input_TouchEvent* touchEvent
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct Input_TouchEvent* touchEvent | 触屏输入事件对象，通过OH_Input_CreateTouchEvent接口可以创建触屏输入事件对象。 使用完需使用OH_Input_DestroyTouchEvent接口销毁触屏输入事件对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2095,9 +2257,10 @@ int32_t OH_Input_GetTouchEventFingerId(const struct Input_TouchEvent* touchEvent
 
 
 
-#### OH_Input_SetTouchEventDisplayX()
+### OH_Input_SetTouchEventDisplayX()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_SetTouchEventDisplayX(struct Input_TouchEvent* touchEvent, int32_t displayX)
@@ -2113,6 +2276,7 @@ void OH_Input_SetTouchEventDisplayX(struct Input_TouchEvent* touchEvent, int32_t
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_TouchEvent* touchEvent | 触屏输入事件对象，通过OH_Input_CreateTouchEvent接口可以创建触屏输入事件对象。 使用完需使用OH_Input_DestroyTouchEvent接口销毁触屏输入事件对象。 |
@@ -2121,9 +2285,10 @@ void OH_Input_SetTouchEventDisplayX(struct Input_TouchEvent* touchEvent, int32_t
 
 
 
-#### OH_Input_GetTouchEventDisplayX()
+### OH_Input_GetTouchEventDisplayX()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Input_GetTouchEventDisplayX(const struct Input_TouchEvent* touchEvent)
@@ -2139,12 +2304,14 @@ int32_t OH_Input_GetTouchEventDisplayX(const struct Input_TouchEvent* touchEvent
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct Input_TouchEvent* touchEvent | 触屏输入事件对象，通过OH_Input_CreateTouchEvent接口可以创建触屏输入事件对象。 使用完需使用OH_Input_DestroyTouchEvent接口销毁触屏输入事件对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2153,9 +2320,10 @@ int32_t OH_Input_GetTouchEventDisplayX(const struct Input_TouchEvent* touchEvent
 
 
 
-#### OH_Input_SetTouchEventDisplayY()
+### OH_Input_SetTouchEventDisplayY()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_SetTouchEventDisplayY(struct Input_TouchEvent* touchEvent, int32_t displayY)
@@ -2171,6 +2339,7 @@ void OH_Input_SetTouchEventDisplayY(struct Input_TouchEvent* touchEvent, int32_t
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_TouchEvent* touchEvent | 触屏输入事件对象，通过OH_Input_CreateTouchEvent接口可以创建触屏输入事件对象。 使用完需使用OH_Input_DestroyTouchEvent接口销毁触屏输入事件对象。 |
@@ -2179,9 +2348,10 @@ void OH_Input_SetTouchEventDisplayY(struct Input_TouchEvent* touchEvent, int32_t
 
 
 
-#### OH_Input_GetTouchEventDisplayY()
+### OH_Input_GetTouchEventDisplayY()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Input_GetTouchEventDisplayY(const struct Input_TouchEvent* touchEvent)
@@ -2197,12 +2367,14 @@ int32_t OH_Input_GetTouchEventDisplayY(const struct Input_TouchEvent* touchEvent
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct Input_TouchEvent* touchEvent | 触屏输入事件对象，通过OH_Input_CreateTouchEvent接口可以创建触屏输入事件对象。 使用完需使用OH_Input_DestroyTouchEvent接口销毁触屏输入事件对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2211,9 +2383,10 @@ int32_t OH_Input_GetTouchEventDisplayY(const struct Input_TouchEvent* touchEvent
 
 
 
-#### OH_Input_SetTouchEventActionTime()
+### OH_Input_SetTouchEventActionTime()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_SetTouchEventActionTime(struct Input_TouchEvent* touchEvent, int64_t actionTime)
@@ -2229,6 +2402,7 @@ void OH_Input_SetTouchEventActionTime(struct Input_TouchEvent* touchEvent, int64
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_TouchEvent* touchEvent | 触屏输入事件对象，通过OH_Input_CreateTouchEvent接口可以创建触屏输入事件对象。 使用完需使用OH_Input_DestroyTouchEvent接口销毁触屏输入事件对象。 |
@@ -2237,9 +2411,10 @@ void OH_Input_SetTouchEventActionTime(struct Input_TouchEvent* touchEvent, int64
 
 
 
-#### OH_Input_GetTouchEventActionTime()
+### OH_Input_GetTouchEventActionTime()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int64_t OH_Input_GetTouchEventActionTime(const struct Input_TouchEvent* touchEvent)
@@ -2255,12 +2430,14 @@ int64_t OH_Input_GetTouchEventActionTime(const struct Input_TouchEvent* touchEve
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct Input_TouchEvent* touchEvent | 触屏输入事件对象，通过OH_Input_CreateTouchEvent接口可以创建触屏输入事件对象。 使用完需使用OH_Input_DestroyTouchEvent接口销毁触屏输入事件对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2269,9 +2446,10 @@ int64_t OH_Input_GetTouchEventActionTime(const struct Input_TouchEvent* touchEve
 
 
 
-#### OH_Input_SetTouchEventWindowId()
+### OH_Input_SetTouchEventWindowId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_SetTouchEventWindowId(struct Input_TouchEvent* touchEvent, int32_t windowId)
@@ -2287,6 +2465,7 @@ void OH_Input_SetTouchEventWindowId(struct Input_TouchEvent* touchEvent, int32_t
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_TouchEvent* touchEvent | 触屏输入事件对象，通过OH_Input_CreateTouchEvent接口可以创建触屏输入事件对象。 使用完需使用OH_Input_DestroyTouchEvent接口销毁触屏输入事件对象。 |
@@ -2295,9 +2474,10 @@ void OH_Input_SetTouchEventWindowId(struct Input_TouchEvent* touchEvent, int32_t
 
 
 
-#### OH_Input_GetTouchEventWindowId()
+### OH_Input_GetTouchEventWindowId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Input_GetTouchEventWindowId(const struct Input_TouchEvent* touchEvent)
@@ -2313,12 +2493,14 @@ int32_t OH_Input_GetTouchEventWindowId(const struct Input_TouchEvent* touchEvent
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct Input_TouchEvent* touchEvent | 触屏输入事件对象，通过OH_Input_CreateTouchEvent接口可以创建触屏输入事件对象。 使用完需使用OH_Input_DestroyTouchEvent接口销毁触屏输入事件对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2327,9 +2509,10 @@ int32_t OH_Input_GetTouchEventWindowId(const struct Input_TouchEvent* touchEvent
 
 
 
-#### OH_Input_SetTouchEventDisplayId()
+### OH_Input_SetTouchEventDisplayId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_SetTouchEventDisplayId(struct Input_TouchEvent* touchEvent, int32_t displayId)
@@ -2345,6 +2528,7 @@ void OH_Input_SetTouchEventDisplayId(struct Input_TouchEvent* touchEvent, int32_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_TouchEvent* touchEvent | 触屏输入事件对象，通过OH_Input_CreateTouchEvent接口可以创建触屏输入事件对象。 使用完需使用OH_Input_DestroyTouchEvent接口销毁触屏输入事件对象。 |
@@ -2353,9 +2537,10 @@ void OH_Input_SetTouchEventDisplayId(struct Input_TouchEvent* touchEvent, int32_
 
 
 
-#### OH_Input_GetTouchEventDisplayId()
+### OH_Input_GetTouchEventDisplayId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Input_GetTouchEventDisplayId(const struct Input_TouchEvent* touchEvent)
@@ -2371,12 +2556,14 @@ int32_t OH_Input_GetTouchEventDisplayId(const struct Input_TouchEvent* touchEven
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct Input_TouchEvent* touchEvent | 触屏输入事件对象，通过OH_Input_CreateTouchEvent接口可以创建触屏输入事件对象。 使用完需使用OH_Input_DestroyTouchEvent接口销毁触屏输入事件对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2385,9 +2572,10 @@ int32_t OH_Input_GetTouchEventDisplayId(const struct Input_TouchEvent* touchEven
 
 
 
-#### OH_Input_CancelInjection()
+### OH_Input_CancelInjection()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_CancelInjection()
@@ -2403,9 +2591,10 @@ void OH_Input_CancelInjection()
 
 
 
-#### OH_Input_RequestInjection()
+### OH_Input_RequestInjection()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 ```text
 Input_Result OH_Input_RequestInjection(Input_InjectAuthorizeCallback callback)
@@ -2425,12 +2614,14 @@ Input_Result OH_Input_RequestInjection(Input_InjectAuthorizeCallback callback)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_InjectAuthorizeCallback callback | 授权状态回调，具体请参考Input_InjectAuthorizeCallback。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2439,9 +2630,10 @@ Input_Result OH_Input_RequestInjection(Input_InjectAuthorizeCallback callback)
 
 
 
-#### OH_Input_QueryAuthorizedStatus()
+### OH_Input_QueryAuthorizedStatus()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_QueryAuthorizedStatus(Input_InjectionStatus* status)
@@ -2457,12 +2649,14 @@ Input_Result OH_Input_QueryAuthorizedStatus(Input_InjectionStatus* status)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_InjectionStatus* status | 当前应用注入权限状态。参见Input_InjectionStatus。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2471,9 +2665,10 @@ Input_Result OH_Input_QueryAuthorizedStatus(Input_InjectionStatus* status)
 
 
 
-#### OH_Input_CreateAxisEvent()
+### OH_Input_CreateAxisEvent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_AxisEvent* OH_Input_CreateAxisEvent(void)
@@ -2489,6 +2684,7 @@ Input_AxisEvent* OH_Input_CreateAxisEvent(void)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_AxisEvent* | 成功返回Input_AxisEvent对象实例，失败则返回null。 |
@@ -2496,9 +2692,10 @@ Input_AxisEvent* OH_Input_CreateAxisEvent(void)
 
 
 
-#### OH_Input_DestroyAxisEvent()
+### OH_Input_DestroyAxisEvent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_DestroyAxisEvent(Input_AxisEvent** axisEvent)
@@ -2514,6 +2711,7 @@ Input_Result OH_Input_DestroyAxisEvent(Input_AxisEvent** axisEvent)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_AxisEvent** axisEvent | 轴事件对象实例的指针。 |
@@ -2521,16 +2719,18 @@ Input_Result OH_Input_DestroyAxisEvent(Input_AxisEvent** axisEvent)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Input_Result | 若销毁成功，则返回INPUT_SUCCESS；若axisEvent为NULL或者axisEvent为NULL，则返回INPUT_PARAMETER_ERROR。 |
+| Input_Result | 若销毁成功，则返回INPUT_SUCCESS；若axisEvent为NULL，则返回INPUT_PARAMETER_ERROR。 |
 
 
 
 
-#### OH_Input_SetAxisEventAction()
+### OH_Input_SetAxisEventAction()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_SetAxisEventAction(Input_AxisEvent* axisEvent, InputEvent_AxisAction action)
@@ -2546,6 +2746,7 @@ Input_Result OH_Input_SetAxisEventAction(Input_AxisEvent* axisEvent, InputEvent_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_AxisEvent* axisEvent | 轴事件对象，通过OH_Input_CreateAxisEvent接口可以创建轴事件对象。 使用完需使用OH_Input_DestroyAxisEvent接口销毁轴事件对象。 |
@@ -2554,6 +2755,7 @@ Input_Result OH_Input_SetAxisEventAction(Input_AxisEvent* axisEvent, InputEvent_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | 若设置轴事件的动作成功，则返回INPUT_SUCCESS；若axisEvent为NULL，则返回INPUT_PARAMETER_ERROR。 |
@@ -2561,9 +2763,10 @@ Input_Result OH_Input_SetAxisEventAction(Input_AxisEvent* axisEvent, InputEvent_
 
 
 
-#### OH_Input_GetAxisEventAction()
+### OH_Input_GetAxisEventAction()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_GetAxisEventAction(const Input_AxisEvent* axisEvent, InputEvent_AxisAction *action)
@@ -2579,6 +2782,7 @@ Input_Result OH_Input_GetAxisEventAction(const Input_AxisEvent* axisEvent, Input
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Input_AxisEvent* axisEvent | 轴事件对象，通过OH_Input_CreateAxisEvent接口可以创建轴事件对象。 使用完需使用OH_Input_DestroyAxisEvent接口销毁轴事件对象。 |
@@ -2587,6 +2791,7 @@ Input_Result OH_Input_GetAxisEventAction(const Input_AxisEvent* axisEvent, Input
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | 若获取轴事件的动作成功，则返回INPUT_SUCCESS；若axisEvent或者action为NULL，则返回INPUT_PARAMETER_ERROR。 |
@@ -2594,9 +2799,10 @@ Input_Result OH_Input_GetAxisEventAction(const Input_AxisEvent* axisEvent, Input
 
 
 
-#### OH_Input_SetAxisEventDisplayX()
+### OH_Input_SetAxisEventDisplayX()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_SetAxisEventDisplayX(Input_AxisEvent* axisEvent, float displayX)
@@ -2612,6 +2818,7 @@ Input_Result OH_Input_SetAxisEventDisplayX(Input_AxisEvent* axisEvent, float dis
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_AxisEvent* axisEvent | 轴事件对象，通过OH_Input_CreateAxisEvent接口可以创建轴事件对象。 使用完需使用OH_Input_DestroyAxisEvent接口销毁轴事件对象。 |
@@ -2620,6 +2827,7 @@ Input_Result OH_Input_SetAxisEventDisplayX(Input_AxisEvent* axisEvent, float dis
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | 若设置轴事件的X坐标成功，则返回INPUT_SUCCESS；若axisEvent为NULL，则返回INPUT_PARAMETER_ERROR。 |
@@ -2627,9 +2835,10 @@ Input_Result OH_Input_SetAxisEventDisplayX(Input_AxisEvent* axisEvent, float dis
 
 
 
-#### OH_Input_GetAxisEventDisplayX()
+### OH_Input_GetAxisEventDisplayX()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_GetAxisEventDisplayX(const Input_AxisEvent* axisEvent, float* displayX)
@@ -2645,6 +2854,7 @@ Input_Result OH_Input_GetAxisEventDisplayX(const Input_AxisEvent* axisEvent, flo
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Input_AxisEvent* axisEvent | 轴事件对象，通过OH_Input_CreateAxisEvent接口可以创建轴事件对象。 使用完需使用OH_Input_DestroyAxisEvent接口销毁轴事件对象。 |
@@ -2653,6 +2863,7 @@ Input_Result OH_Input_GetAxisEventDisplayX(const Input_AxisEvent* axisEvent, flo
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | 若获取轴事件的X坐标成功，则返回INPUT_SUCCESS；若axisEvent或者displayX为NULL，则返回INPUT_PARAMETER_ERROR。 |
@@ -2660,9 +2871,10 @@ Input_Result OH_Input_GetAxisEventDisplayX(const Input_AxisEvent* axisEvent, flo
 
 
 
-#### OH_Input_SetAxisEventDisplayY()
+### OH_Input_SetAxisEventDisplayY()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_SetAxisEventDisplayY(Input_AxisEvent* axisEvent, float displayY)
@@ -2678,6 +2890,7 @@ Input_Result OH_Input_SetAxisEventDisplayY(Input_AxisEvent* axisEvent, float dis
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_AxisEvent* axisEvent | 轴事件对象，通过OH_Input_CreateAxisEvent接口可以创建轴事件对象。 使用完需使用OH_Input_DestroyAxisEvent接口销毁轴事件对象。 |
@@ -2686,6 +2899,7 @@ Input_Result OH_Input_SetAxisEventDisplayY(Input_AxisEvent* axisEvent, float dis
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | 若设置轴事件的Y坐标成功，则返回INPUT_SUCCESS；若axisEvent为NULL，则返回INPUT_PARAMETER_ERROR。 |
@@ -2693,9 +2907,10 @@ Input_Result OH_Input_SetAxisEventDisplayY(Input_AxisEvent* axisEvent, float dis
 
 
 
-#### OH_Input_GetAxisEventDisplayY()
+### OH_Input_GetAxisEventDisplayY()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_GetAxisEventDisplayY(const Input_AxisEvent* axisEvent, float* displayY)
@@ -2711,6 +2926,7 @@ Input_Result OH_Input_GetAxisEventDisplayY(const Input_AxisEvent* axisEvent, flo
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Input_AxisEvent* axisEvent | 轴事件对象，通过OH_Input_CreateAxisEvent接口可以创建轴事件对象。 使用完需使用OH_Input_DestroyAxisEvent接口销毁轴事件对象。 |
@@ -2719,6 +2935,7 @@ Input_Result OH_Input_GetAxisEventDisplayY(const Input_AxisEvent* axisEvent, flo
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | 若获取轴事件的Y坐标成功，则返回INPUT_SUCCESS；若axisEvent或者displayY为NULL，则返回INPUT_PARAMETER_ERROR。 |
@@ -2726,9 +2943,10 @@ Input_Result OH_Input_GetAxisEventDisplayY(const Input_AxisEvent* axisEvent, flo
 
 
 
-#### OH_Input_SetAxisEventAxisValue()
+### OH_Input_SetAxisEventAxisValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_SetAxisEventAxisValue(Input_AxisEvent* axisEvent,InputEvent_AxisType axisType, double axisValue)
@@ -2744,6 +2962,7 @@ Input_Result OH_Input_SetAxisEventAxisValue(Input_AxisEvent* axisEvent,InputEven
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_AxisEvent* axisEvent | 轴事件对象，通过OH_Input_CreateAxisEvent接口可以创建轴事件对象。 使用完需使用OH_Input_DestroyAxisEvent接口销毁轴事件对象。 |
@@ -2753,6 +2972,7 @@ Input_Result OH_Input_SetAxisEventAxisValue(Input_AxisEvent* axisEvent,InputEven
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | 若设置轴事件指定轴类型的轴值成功，则返回INPUT_SUCCESS；若axisEvent为NULL，则返回INPUT_PARAMETER_ERROR。 |
@@ -2760,9 +2980,10 @@ Input_Result OH_Input_SetAxisEventAxisValue(Input_AxisEvent* axisEvent,InputEven
 
 
 
-#### OH_Input_GetAxisEventAxisValue()
+### OH_Input_GetAxisEventAxisValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_GetAxisEventAxisValue(const Input_AxisEvent* axisEvent,InputEvent_AxisType axisType, double* axisValue)
@@ -2778,6 +2999,7 @@ Input_Result OH_Input_GetAxisEventAxisValue(const Input_AxisEvent* axisEvent,Inp
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Input_AxisEvent* axisEvent | 轴事件对象，通过OH_Input_CreateAxisEvent接口可以创建轴事件对象。 使用完需使用OH_Input_DestroyAxisEvent接口销毁轴事件对象。 |
@@ -2787,6 +3009,7 @@ Input_Result OH_Input_GetAxisEventAxisValue(const Input_AxisEvent* axisEvent,Inp
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | 若获取轴事件指定轴类型的轴值成功，则返回INPUT_SUCCESS；若axisEvent或者axisValue为NULL，则返回INPUT_PARAMETER_ERROR。 |
@@ -2794,9 +3017,10 @@ Input_Result OH_Input_GetAxisEventAxisValue(const Input_AxisEvent* axisEvent,Inp
 
 
 
-#### OH_Input_SetAxisEventActionTime()
+### OH_Input_SetAxisEventActionTime()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_SetAxisEventActionTime(Input_AxisEvent* axisEvent, int64_t actionTime)
@@ -2812,6 +3036,7 @@ Input_Result OH_Input_SetAxisEventActionTime(Input_AxisEvent* axisEvent, int64_t
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_AxisEvent* axisEvent | 轴事件对象，通过OH_Input_CreateAxisEvent接口可以创建轴事件对象。 使用完需使用OH_Input_DestroyAxisEvent接口销毁轴事件对象。 |
@@ -2820,6 +3045,7 @@ Input_Result OH_Input_SetAxisEventActionTime(Input_AxisEvent* axisEvent, int64_t
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | 若设置轴事件发生的时间成功，则返回INPUT_SUCCESS；若axisEvent为NULL，则返回INPUT_PARAMETER_ERROR。 |
@@ -2827,9 +3053,10 @@ Input_Result OH_Input_SetAxisEventActionTime(Input_AxisEvent* axisEvent, int64_t
 
 
 
-#### OH_Input_GetAxisEventActionTime()
+### OH_Input_GetAxisEventActionTime()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_GetAxisEventActionTime(const Input_AxisEvent* axisEvent, int64_t* actionTime)
@@ -2845,6 +3072,7 @@ Input_Result OH_Input_GetAxisEventActionTime(const Input_AxisEvent* axisEvent, i
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Input_AxisEvent* axisEvent | 轴事件对象，通过OH_Input_CreateAxisEvent接口可以创建轴事件对象。 使用完需使用OH_Input_DestroyAxisEvent接口销毁轴事件对象。 |
@@ -2853,6 +3081,7 @@ Input_Result OH_Input_GetAxisEventActionTime(const Input_AxisEvent* axisEvent, i
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | 若获取轴事件发生的时间成功，则返回INPUT_SUCCESS；若axisEvent或者actionTime为NULL，则返回INPUT_PARAMETER_ERROR。 |
@@ -2860,9 +3089,10 @@ Input_Result OH_Input_GetAxisEventActionTime(const Input_AxisEvent* axisEvent, i
 
 
 
-#### OH_Input_SetAxisEventType()
+### OH_Input_SetAxisEventType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_SetAxisEventType(Input_AxisEvent* axisEvent, InputEvent_AxisEventType axisEventType)
@@ -2878,6 +3108,7 @@ Input_Result OH_Input_SetAxisEventType(Input_AxisEvent* axisEvent, InputEvent_Ax
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_AxisEvent* axisEvent | 轴事件对象，通过OH_Input_CreateAxisEvent接口可以创建轴事件对象。 使用完需使用OH_Input_DestroyAxisEvent接口销毁轴事件对象。 |
@@ -2886,6 +3117,7 @@ Input_Result OH_Input_SetAxisEventType(Input_AxisEvent* axisEvent, InputEvent_Ax
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | 若设置轴事件类型成功，则返回INPUT_SUCCESS；若axisEvent为NULL，则返回INPUT_PARAMETER_ERROR。 |
@@ -2893,9 +3125,10 @@ Input_Result OH_Input_SetAxisEventType(Input_AxisEvent* axisEvent, InputEvent_Ax
 
 
 
-#### OH_Input_GetAxisEventType()
+### OH_Input_GetAxisEventType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_GetAxisEventType(const Input_AxisEvent* axisEvent, InputEvent_AxisEventType* axisEventType)
@@ -2911,6 +3144,7 @@ Input_Result OH_Input_GetAxisEventType(const Input_AxisEvent* axisEvent, InputEv
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Input_AxisEvent* axisEvent | 轴事件对象，通过OH_Input_CreateAxisEvent接口可以创建轴事件对象。 使用完需使用OH_Input_DestroyAxisEvent接口销毁轴事件对象。 |
@@ -2919,6 +3153,7 @@ Input_Result OH_Input_GetAxisEventType(const Input_AxisEvent* axisEvent, InputEv
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | 若获取轴事件类型成功，则返回INPUT_SUCCESS；若axisEvent或者axisEventType为NULL，则返回INPUT_PARAMETER_ERROR。 |
@@ -2926,9 +3161,10 @@ Input_Result OH_Input_GetAxisEventType(const Input_AxisEvent* axisEvent, InputEv
 
 
 
-#### OH_Input_SetAxisEventSourceType()
+### OH_Input_SetAxisEventSourceType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_SetAxisEventSourceType(Input_AxisEvent* axisEvent, InputEvent_SourceType sourceType)
@@ -2944,6 +3180,7 @@ Input_Result OH_Input_SetAxisEventSourceType(Input_AxisEvent* axisEvent, InputEv
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_AxisEvent* axisEvent | 轴事件对象，通过OH_Input_CreateAxisEvent接口可以创建轴事件对象。 使用完需使用OH_Input_DestroyAxisEvent接口销毁轴事件对象。 |
@@ -2952,6 +3189,7 @@ Input_Result OH_Input_SetAxisEventSourceType(Input_AxisEvent* axisEvent, InputEv
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | 若设置轴事件源类型成功，则返回INPUT_SUCCESS；若axisEvent为NULL，则返回INPUT_PARAMETER_ERROR。 |
@@ -2959,9 +3197,10 @@ Input_Result OH_Input_SetAxisEventSourceType(Input_AxisEvent* axisEvent, InputEv
 
 
 
-#### OH_Input_GetAxisEventSourceType()
+### OH_Input_GetAxisEventSourceType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_GetAxisEventSourceType(const Input_AxisEvent* axisEvent, InputEvent_SourceType* sourceType)
@@ -2977,6 +3216,7 @@ Input_Result OH_Input_GetAxisEventSourceType(const Input_AxisEvent* axisEvent, I
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Input_AxisEvent* axisEvent | 轴事件对象，通过OH_Input_CreateAxisEvent接口可以创建轴事件对象。 使用完需使用OH_Input_DestroyAxisEvent接口销毁轴事件对象。 |
@@ -2985,6 +3225,7 @@ Input_Result OH_Input_GetAxisEventSourceType(const Input_AxisEvent* axisEvent, I
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | 若获取轴事件源类型成功，则返回INPUT_SUCCESS；若axisEvent或者sourceType为NULL，则返回INPUT_PARAMETER_ERROR。 |
@@ -2992,9 +3233,10 @@ Input_Result OH_Input_GetAxisEventSourceType(const Input_AxisEvent* axisEvent, I
 
 
 
-#### OH_Input_SetAxisEventWindowId()
+### OH_Input_SetAxisEventWindowId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_SetAxisEventWindowId(Input_AxisEvent* axisEvent, int32_t windowId)
@@ -3010,6 +3252,7 @@ Input_Result OH_Input_SetAxisEventWindowId(Input_AxisEvent* axisEvent, int32_t w
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_AxisEvent* axisEvent | 轴事件对象，通过OH_Input_CreateAxisEvent接口可以创建轴事件对象。 使用完需使用OH_Input_DestroyAxisEvent接口销毁轴事件对象。 |
@@ -3018,6 +3261,7 @@ Input_Result OH_Input_SetAxisEventWindowId(Input_AxisEvent* axisEvent, int32_t w
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | 若设置轴事件的窗口ID成功，则返回INPUT_SUCCESS；若axisEvent为NULL，则返回INPUT_PARAMETER_ERROR。 |
@@ -3025,9 +3269,10 @@ Input_Result OH_Input_SetAxisEventWindowId(Input_AxisEvent* axisEvent, int32_t w
 
 
 
-#### OH_Input_GetAxisEventWindowId()
+### OH_Input_GetAxisEventWindowId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_GetAxisEventWindowId(const Input_AxisEvent* axisEvent, int32_t* windowId)
@@ -3043,6 +3288,7 @@ Input_Result OH_Input_GetAxisEventWindowId(const Input_AxisEvent* axisEvent, int
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Input_AxisEvent* axisEvent | 轴事件对象，通过OH_Input_CreateAxisEvent接口可以创建轴事件对象。 使用完需使用OH_Input_DestroyAxisEvent接口销毁轴事件对象。 |
@@ -3051,6 +3297,7 @@ Input_Result OH_Input_GetAxisEventWindowId(const Input_AxisEvent* axisEvent, int
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | 若获取轴事件的窗口ID成功，则返回INPUT_SUCCESS；若axisEvent或者windowId为NULL，则返回INPUT_PARAMETER_ERROR。 |
@@ -3058,9 +3305,10 @@ Input_Result OH_Input_GetAxisEventWindowId(const Input_AxisEvent* axisEvent, int
 
 
 
-#### OH_Input_SetAxisEventDisplayId()
+### OH_Input_SetAxisEventDisplayId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_SetAxisEventDisplayId(Input_AxisEvent* axisEvent, int32_t displayId)
@@ -3076,6 +3324,7 @@ Input_Result OH_Input_SetAxisEventDisplayId(Input_AxisEvent* axisEvent, int32_t 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_AxisEvent* axisEvent | 轴事件对象，通过OH_Input_CreateAxisEvent接口可以创建轴事件对象。 使用完需使用OH_Input_DestroyAxisEvent接口销毁轴事件对象。 |
@@ -3084,6 +3333,7 @@ Input_Result OH_Input_SetAxisEventDisplayId(Input_AxisEvent* axisEvent, int32_t 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | 若设置轴事件的屏幕ID成功，则返回INPUT_SUCCESS；若axisEvent为NULL，则返回INPUT_PARAMETER_ERROR。 |
@@ -3091,9 +3341,10 @@ Input_Result OH_Input_SetAxisEventDisplayId(Input_AxisEvent* axisEvent, int32_t 
 
 
 
-#### OH_Input_GetAxisEventDisplayId()
+### OH_Input_GetAxisEventDisplayId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_GetAxisEventDisplayId(const Input_AxisEvent* axisEvent, int32_t* displayId)
@@ -3109,6 +3360,7 @@ Input_Result OH_Input_GetAxisEventDisplayId(const Input_AxisEvent* axisEvent, in
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Input_AxisEvent* axisEvent | 轴事件对象，通过OH_Input_CreateAxisEvent接口可以创建轴事件对象。 使用完需使用OH_Input_DestroyAxisEvent接口销毁轴事件对象。 |
@@ -3117,6 +3369,7 @@ Input_Result OH_Input_GetAxisEventDisplayId(const Input_AxisEvent* axisEvent, in
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | 若获取轴事件的屏幕ID成功，则返回INPUT_SUCCESS；若axisEvent或者displayId为NULL，则返回INPUT_PARAMETER_ERROR。 |
@@ -3124,9 +3377,10 @@ Input_Result OH_Input_GetAxisEventDisplayId(const Input_AxisEvent* axisEvent, in
 
 
 
-#### OH_Input_AddKeyEventMonitor()
+### OH_Input_AddKeyEventMonitor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_AddKeyEventMonitor(Input_KeyEventCallback callback)
@@ -3146,12 +3400,14 @@ Input_Result OH_Input_AddKeyEventMonitor(Input_KeyEventCallback callback)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_KeyEventCallback callback | 回调函数，用于接收按键事件。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3160,9 +3416,10 @@ Input_Result OH_Input_AddKeyEventMonitor(Input_KeyEventCallback callback)
 
 
 
-#### OH_Input_AddMouseEventMonitor()
+### OH_Input_AddMouseEventMonitor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_AddMouseEventMonitor(Input_MouseEventCallback callback)
@@ -3184,12 +3441,14 @@ Input_Result OH_Input_AddMouseEventMonitor(Input_MouseEventCallback callback)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_MouseEventCallback callback | 回调函数，用于接收鼠标事件。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3198,9 +3457,10 @@ Input_Result OH_Input_AddMouseEventMonitor(Input_MouseEventCallback callback)
 
 
 
-#### OH_Input_AddTouchEventMonitor()
+### OH_Input_AddTouchEventMonitor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_AddTouchEventMonitor(Input_TouchEventCallback callback)
@@ -3220,12 +3480,14 @@ Input_Result OH_Input_AddTouchEventMonitor(Input_TouchEventCallback callback)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_TouchEventCallback callback | 回调函数，用于接收触屏输入事件。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3234,9 +3496,10 @@ Input_Result OH_Input_AddTouchEventMonitor(Input_TouchEventCallback callback)
 
 
 
-#### OH_Input_AddAxisEventMonitorForAll()
+### OH_Input_AddAxisEventMonitorForAll()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_AddAxisEventMonitorForAll(Input_AxisEventCallback callback)
@@ -3256,12 +3519,14 @@ Input_Result OH_Input_AddAxisEventMonitorForAll(Input_AxisEventCallback callback
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_AxisEventCallback callback | 回调函数，用于接收轴事件。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3270,9 +3535,10 @@ Input_Result OH_Input_AddAxisEventMonitorForAll(Input_AxisEventCallback callback
 
 
 
-#### OH_Input_AddAxisEventMonitor()
+### OH_Input_AddAxisEventMonitor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_AddAxisEventMonitor(InputEvent_AxisEventType axisEventType, Input_AxisEventCallback callback)
@@ -3292,6 +3558,7 @@ Input_Result OH_Input_AddAxisEventMonitor(InputEvent_AxisEventType axisEventType
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | InputEvent_AxisEventType axisEventType | 要监听的轴事件类型，轴事件类型定义在InputEvent_AxisEventType中。 |
@@ -3300,6 +3567,7 @@ Input_Result OH_Input_AddAxisEventMonitor(InputEvent_AxisEventType axisEventType
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | 若添加轴事件监听成功，则返回INPUT_SUCCESS；若权限校验失败，则返回INPUT_PERMISSION_DENIED； 若callback为空，则返回INPUT_PARAMETER_ERROR；若服务异常，则返回INPUT_SERVICE_EXCEPTION。 |
@@ -3307,9 +3575,10 @@ Input_Result OH_Input_AddAxisEventMonitor(InputEvent_AxisEventType axisEventType
 
 
 
-#### OH_Input_RemoveKeyEventMonitor()
+### OH_Input_RemoveKeyEventMonitor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_RemoveKeyEventMonitor(Input_KeyEventCallback callback)
@@ -3329,12 +3598,14 @@ Input_Result OH_Input_RemoveKeyEventMonitor(Input_KeyEventCallback callback)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_KeyEventCallback callback | 指定要被移除的用于按键事件监听的回调函数。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3343,9 +3614,10 @@ Input_Result OH_Input_RemoveKeyEventMonitor(Input_KeyEventCallback callback)
 
 
 
-#### OH_Input_RemoveMouseEventMonitor()
+### OH_Input_RemoveMouseEventMonitor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_RemoveMouseEventMonitor(Input_MouseEventCallback callback)
@@ -3365,12 +3637,14 @@ Input_Result OH_Input_RemoveMouseEventMonitor(Input_MouseEventCallback callback)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_MouseEventCallback callback | 指定要被移除的用于鼠标事件监听的回调函数。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3379,9 +3653,10 @@ Input_Result OH_Input_RemoveMouseEventMonitor(Input_MouseEventCallback callback)
 
 
 
-#### OH_Input_RemoveTouchEventMonitor()
+### OH_Input_RemoveTouchEventMonitor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_RemoveTouchEventMonitor(Input_TouchEventCallback callback)
@@ -3401,12 +3676,14 @@ Input_Result OH_Input_RemoveTouchEventMonitor(Input_TouchEventCallback callback)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_TouchEventCallback callback | 指定要被移除的用于触屏输入事件监听的回调函数。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3415,9 +3692,10 @@ Input_Result OH_Input_RemoveTouchEventMonitor(Input_TouchEventCallback callback)
 
 
 
-#### OH_Input_RemoveAxisEventMonitorForAll()
+### OH_Input_RemoveAxisEventMonitorForAll()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_RemoveAxisEventMonitorForAll(Input_AxisEventCallback callback)
@@ -3437,12 +3715,14 @@ Input_Result OH_Input_RemoveAxisEventMonitorForAll(Input_AxisEventCallback callb
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_AxisEventCallback callback | 指定要被移除的用于所有类型轴事件监听的回调函数。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3451,9 +3731,10 @@ Input_Result OH_Input_RemoveAxisEventMonitorForAll(Input_AxisEventCallback callb
 
 
 
-#### OH_Input_RemoveAxisEventMonitor()
+### OH_Input_RemoveAxisEventMonitor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_RemoveAxisEventMonitor(InputEvent_AxisEventType axisEventType, Input_AxisEventCallback callback)
@@ -3473,6 +3754,7 @@ Input_Result OH_Input_RemoveAxisEventMonitor(InputEvent_AxisEventType axisEventT
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | InputEvent_AxisEventType axisEventType | 指定要移除监听的轴事件类型，轴事件类型定义在InputEvent_AxisEventType中。 |
@@ -3481,6 +3763,7 @@ Input_Result OH_Input_RemoveAxisEventMonitor(InputEvent_AxisEventType axisEventT
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | 若移除轴事件监听成功，则返回INPUT_SUCCESS；若权限校验失败，则返回INPUT_PERMISSION_DENIED； 若callback为空或者没有被添加监听，则返回INPUT_PARAMETER_ERROR；若服务异常，则返回INPUT_SERVICE_EXCEPTION。 |
@@ -3488,9 +3771,10 @@ Input_Result OH_Input_RemoveAxisEventMonitor(InputEvent_AxisEventType axisEventT
 
 
 
-#### OH_Input_AddKeyEventInterceptor()
+### OH_Input_AddKeyEventInterceptor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_AddKeyEventInterceptor(Input_KeyEventCallback callback, Input_InterceptorOptions *option)
@@ -3510,6 +3794,7 @@ Input_Result OH_Input_AddKeyEventInterceptor(Input_KeyEventCallback callback, In
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_KeyEventCallback callback | 回调函数，用于接收按键事件。 |
@@ -3518,6 +3803,7 @@ Input_Result OH_Input_AddKeyEventInterceptor(Input_KeyEventCallback callback, In
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | 若添加按键事件的拦截成功，则返回INPUT_SUCCESS；若权限校验失败，则返回INPUT_PERMISSION_DENIED； 若callback为空，则返回INPUT_PARAMETER_ERROR；若重复添加拦截器，则返回INPUT_REPEAT_INTERCEPTOR； 若服务异常，则返回INPUT_SERVICE_EXCEPTION。 |
@@ -3525,9 +3811,10 @@ Input_Result OH_Input_AddKeyEventInterceptor(Input_KeyEventCallback callback, In
 
 
 
-#### OH_Input_AddInputEventInterceptor()
+### OH_Input_AddInputEventInterceptor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_AddInputEventInterceptor(Input_InterceptorEventCallback *callback,Input_InterceptorOptions *option)
@@ -3547,6 +3834,7 @@ Input_Result OH_Input_AddInputEventInterceptor(Input_InterceptorEventCallback *c
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_InterceptorEventCallback *callback | callback 用于回调输入事件的结构体指针，请参考定义Input_InterceptorEventCallback。 |
@@ -3555,6 +3843,7 @@ Input_Result OH_Input_AddInputEventInterceptor(Input_InterceptorEventCallback *c
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | 若添加输入事件的拦截成功，则返回INPUT_SUCCESS；若权限校验失败，则返回INPUT_PERMISSION_DENIED； 若callback为空，则返回INPUT_PARAMETER_ERROR；若重复添加拦截器，则返回INPUT_REPEAT_INTERCEPTOR； 若服务异常，则返回INPUT_SERVICE_EXCEPTION。 |
@@ -3562,9 +3851,10 @@ Input_Result OH_Input_AddInputEventInterceptor(Input_InterceptorEventCallback *c
 
 
 
-#### OH_Input_RemoveKeyEventInterceptor()
+### OH_Input_RemoveKeyEventInterceptor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_RemoveKeyEventInterceptor(void)
@@ -3584,6 +3874,7 @@ Input_Result OH_Input_RemoveKeyEventInterceptor(void)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | 若移除按键事件拦截成功，则返回INPUT_SUCCESS；若权限校验失败，则返回INPUT_PERMISSION_DENIED； 若服务异常，则返回INPUT_SERVICE_EXCEPTION。 |
@@ -3591,9 +3882,10 @@ Input_Result OH_Input_RemoveKeyEventInterceptor(void)
 
 
 
-#### OH_Input_RemoveInputEventInterceptor()
+### OH_Input_RemoveInputEventInterceptor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_RemoveInputEventInterceptor(void)
@@ -3613,6 +3905,7 @@ Input_Result OH_Input_RemoveInputEventInterceptor(void)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | 若移除输入事件拦截成功，则返回INPUT_SUCCESS；若权限校验失败，则返回INPUT_PERMISSION_DENIED； 若服务异常，则返回INPUT_SERVICE_EXCEPTION。 |
@@ -3620,9 +3913,10 @@ Input_Result OH_Input_RemoveInputEventInterceptor(void)
 
 
 
-#### OH_Input_GetIntervalSinceLastInput()
+### OH_Input_GetIntervalSinceLastInput()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_GetIntervalSinceLastInput(int64_t *timeInterval)
@@ -3638,12 +3932,14 @@ Input_Result OH_Input_GetIntervalSinceLastInput(int64_t *timeInterval)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | int64_t *timeInterval | timeInterval 时间间隔，单位为微秒（μs）。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3652,9 +3948,10 @@ Input_Result OH_Input_GetIntervalSinceLastInput(int64_t *timeInterval)
 
 
 
-#### OH_Input_CreateHotkey()
+### OH_Input_CreateHotkey()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Hotkey *OH_Input_CreateHotkey(void)
@@ -3670,16 +3967,18 @@ Input_Hotkey *OH_Input_CreateHotkey(void)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Input_Hotkey | 如果操作成功，则返回一个Input_Hotkey指针对象。否则，返回一个空指针，可能的原因是内存分配失败。 |
+| Input_Hotkey* | 如果操作成功，则返回一个Input_Hotkey指针对象。否则，返回一个空指针，可能的原因是内存分配失败。 |
 
 
 
 
-#### OH_Input_DestroyHotkey()
+### OH_Input_DestroyHotkey()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_DestroyHotkey(Input_Hotkey **hotkey)
@@ -3695,6 +3994,7 @@ void OH_Input_DestroyHotkey(Input_Hotkey **hotkey)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_Hotkey **hotkey | hotkey 快捷键对象的实例。 |
@@ -3702,9 +4002,10 @@ void OH_Input_DestroyHotkey(Input_Hotkey **hotkey)
 
 
 
-#### OH_Input_SetPreKeys()
+### OH_Input_SetPreKeys()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_SetPreKeys(Input_Hotkey *hotkey, int32_t *preKeys, int32_t size)
@@ -3720,6 +4021,7 @@ void OH_Input_SetPreKeys(Input_Hotkey *hotkey, int32_t *preKeys, int32_t size)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_Hotkey *hotkey | hotkey 快捷键对象的实例。 |
@@ -3729,9 +4031,10 @@ void OH_Input_SetPreKeys(Input_Hotkey *hotkey, int32_t *preKeys, int32_t size)
 
 
 
-#### OH_Input_GetPreKeys()
+### OH_Input_GetPreKeys()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_GetPreKeys(const Input_Hotkey *hotkey, int32_t **preKeys, int32_t *preKeyCount)
@@ -3747,6 +4050,7 @@ Input_Result OH_Input_GetPreKeys(const Input_Hotkey *hotkey, int32_t **preKeys, 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Input_Hotkey *hotkey | hotkey 快捷键对象的实例。 |
@@ -3756,6 +4060,7 @@ Input_Result OH_Input_GetPreKeys(const Input_Hotkey *hotkey, int32_t **preKeys, 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | OH_Input_GetPreKeys 函数返回值。 若获取成功，返回INPUT_SUCCESS；若获取失败，返回INPUT_PARAMETER_ERROR。 |
@@ -3763,9 +4068,10 @@ Input_Result OH_Input_GetPreKeys(const Input_Hotkey *hotkey, int32_t **preKeys, 
 
 
 
-#### OH_Input_SetFinalKey()
+### OH_Input_SetFinalKey()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_SetFinalKey(Input_Hotkey* hotkey, int32_t finalKey)
@@ -3781,6 +4087,7 @@ void OH_Input_SetFinalKey(Input_Hotkey* hotkey, int32_t finalKey)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_Hotkey* hotkey | 快捷键对象的实例。 |
@@ -3789,9 +4096,10 @@ void OH_Input_SetFinalKey(Input_Hotkey* hotkey, int32_t finalKey)
 
 
 
-#### OH_Input_GetFinalKey()
+### OH_Input_GetFinalKey()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_GetFinalKey(const Input_Hotkey* hotkey, int32_t *finalKeyCode)
@@ -3807,6 +4115,7 @@ Input_Result OH_Input_GetFinalKey(const Input_Hotkey* hotkey, int32_t *finalKeyC
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Input_Hotkey* hotkey | 快捷键对象的实例。 |
@@ -3815,6 +4124,7 @@ Input_Result OH_Input_GetFinalKey(const Input_Hotkey* hotkey, int32_t *finalKeyC
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | OH_Input_GetFinalKey 函数返回值。 若获取成功，返回INPUT_SUCCESS； 若获取失败，返回INPUT_PARAMETER_ERROR。 |
@@ -3822,9 +4132,10 @@ Input_Result OH_Input_GetFinalKey(const Input_Hotkey* hotkey, int32_t *finalKeyC
 
 
 
-#### OH_Input_CreateAllSystemHotkeys()
+### OH_Input_CreateAllSystemHotkeys()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 Input_Hotkey **OH_Input_CreateAllSystemHotkeys(int32_t count)
@@ -3842,6 +4153,7 @@ Input_Hotkey **OH_Input_CreateAllSystemHotkeys(int32_t count)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | int32_t count | 创建Input_Hotkey实例的数量。 |
@@ -3849,16 +4161,18 @@ Input_Hotkey **OH_Input_CreateAllSystemHotkeys(int32_t count)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Input_Hotkey | OH_Input_CreateAllSystemHotkeys 函数返回值。 INPUT_SUCCESS 创建实例数组的双指针成功。 |
+| Input_Hotkey** | 如果操作成功，返回创建的Input_Hotkey实例数组的指针；否则返回空指针，可能的原因是内存分配失败。 |
 
 
 
 
-#### OH_Input_DestroyAllSystemHotkeys()
+### OH_Input_DestroyAllSystemHotkeys()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_DestroyAllSystemHotkeys(Input_Hotkey **hotkeys, int32_t count)
@@ -3874,6 +4188,7 @@ void OH_Input_DestroyAllSystemHotkeys(Input_Hotkey **hotkeys, int32_t count)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_Hotkey **hotkeys | hotkeys 指向Input_Hotkey实例数组的双指针。 |
@@ -3882,9 +4197,10 @@ void OH_Input_DestroyAllSystemHotkeys(Input_Hotkey **hotkeys, int32_t count)
 
 
 
-#### OH_Input_GetAllSystemHotkeys()
+### OH_Input_GetAllSystemHotkeys()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 Input_Result OH_Input_GetAllSystemHotkeys(Input_Hotkey **hotkey, int32_t *count)
@@ -3902,6 +4218,7 @@ Input_Result OH_Input_GetAllSystemHotkeys(Input_Hotkey **hotkey, int32_t *count)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_Hotkey **hotkey | hotkey 返回Input_Hotkey 类型实例数组。首次调用可传入NULL，可获取数组长度。 |
@@ -3910,6 +4227,7 @@ Input_Result OH_Input_GetAllSystemHotkeys(Input_Hotkey **hotkey, int32_t *count)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | OH_Input_GetAllSystemHotkeys 函数返回值。 若获取成功，返回INPUT_SUCCESS； 若获取失败，返回INPUT_PARAMETER_ERROR。 |
@@ -3917,9 +4235,10 @@ Input_Result OH_Input_GetAllSystemHotkeys(Input_Hotkey **hotkey, int32_t *count)
 
 
 
-#### OH_Input_SetRepeat()
+### OH_Input_SetRepeat()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_SetRepeat(Input_Hotkey* hotkey, bool isRepeat)
@@ -3935,6 +4254,7 @@ void OH_Input_SetRepeat(Input_Hotkey* hotkey, bool isRepeat)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_Hotkey* hotkey | 快捷键对象的实例。 |
@@ -3943,9 +4263,10 @@ void OH_Input_SetRepeat(Input_Hotkey* hotkey, bool isRepeat)
 
 
 
-#### OH_Input_GetRepeat()
+### OH_Input_GetRepeat()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_GetRepeat(const Input_Hotkey* hotkey, bool *isRepeat)
@@ -3961,6 +4282,7 @@ Input_Result OH_Input_GetRepeat(const Input_Hotkey* hotkey, bool *isRepeat)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Input_Hotkey* hotkey | 快捷键对象的实例。 |
@@ -3969,6 +4291,7 @@ Input_Result OH_Input_GetRepeat(const Input_Hotkey* hotkey, bool *isRepeat)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | OH_Input_GetRepeat 函数返回值。 若获取成功，返回INPUT_SUCCESS； 若获取失败，返回INPUT_PARAMETER_ERROR。 |
@@ -3976,9 +4299,10 @@ Input_Result OH_Input_GetRepeat(const Input_Hotkey* hotkey, bool *isRepeat)
 
 
 
-#### OH_Input_AddHotkeyMonitor()
+### OH_Input_AddHotkeyMonitor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 Input_Result OH_Input_AddHotkeyMonitor(const Input_Hotkey* hotkey, Input_HotkeyCallback callback)
@@ -4000,6 +4324,7 @@ Input_Result OH_Input_AddHotkeyMonitor(const Input_Hotkey* hotkey, Input_HotkeyC
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Input_Hotkey* hotkey | 指定要订阅的快捷键对象。 |
@@ -4008,6 +4333,7 @@ Input_Result OH_Input_AddHotkeyMonitor(const Input_Hotkey* hotkey, Input_HotkeyC
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | OH_Input_AddHotkeyMonitor 函数返回值。 INPUT_SUCCESS 表示订阅组合按键成功。 INPUT_PARAMETER_ERROR 参数检查失败。 INPUT_OCCUPIED_BY_SYSTEM 该快捷键已被系统占用，可以通过接口OH_Input_GetAllSystemHotkeys查询所有的系统快捷键。 INPUT_OCCUPIED_BY_OTHER 已被抢占订阅。 INPUT_DEVICE_NOT_SUPPORTED 表示不支持该功能。 |
@@ -4015,9 +4341,10 @@ Input_Result OH_Input_AddHotkeyMonitor(const Input_Hotkey* hotkey, Input_HotkeyC
 
 
 
-#### OH_Input_RemoveHotkeyMonitor()
+### OH_Input_RemoveHotkeyMonitor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_RemoveHotkeyMonitor(const Input_Hotkey* hotkey, Input_HotkeyCallback callback)
@@ -4033,6 +4360,7 @@ Input_Result OH_Input_RemoveHotkeyMonitor(const Input_Hotkey* hotkey, Input_Hotk
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Input_Hotkey* hotkey | 指定要取消订阅的快捷键对象。 |
@@ -4041,6 +4369,7 @@ Input_Result OH_Input_RemoveHotkeyMonitor(const Input_Hotkey* hotkey, Input_Hotk
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | OH_Input_RemoveHotkeyMonitor 函数返回值。 INPUT_SUCCESS 取消订阅组合按键成功， INPUT_PARAMETER_ERROR 参数检查失败。 |
@@ -4048,9 +4377,10 @@ Input_Result OH_Input_RemoveHotkeyMonitor(const Input_Hotkey* hotkey, Input_Hotk
 
 
 
-#### OH_Input_RegisterDeviceListener()
+### OH_Input_RegisterDeviceListener()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_RegisterDeviceListener(Input_DeviceListener* listener)
@@ -4066,12 +4396,14 @@ Input_Result OH_Input_RegisterDeviceListener(Input_DeviceListener* listener)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_DeviceListener* listener | 指向设备热插拔监听器Input_DeviceListener的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4080,9 +4412,10 @@ Input_Result OH_Input_RegisterDeviceListener(Input_DeviceListener* listener)
 
 
 
-#### OH_Input_UnregisterDeviceListener()
+### OH_Input_UnregisterDeviceListener()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_UnregisterDeviceListener(Input_DeviceListener* listener)
@@ -4098,12 +4431,14 @@ Input_Result OH_Input_UnregisterDeviceListener(Input_DeviceListener* listener)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_DeviceListener* listener | 指向设备热插拔监听器Input_DeviceListener的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4112,9 +4447,10 @@ Input_Result OH_Input_UnregisterDeviceListener(Input_DeviceListener* listener)
 
 
 
-#### OH_Input_UnregisterDeviceListeners()
+### OH_Input_UnregisterDeviceListeners()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_UnregisterDeviceListeners()
@@ -4130,16 +4466,18 @@ Input_Result OH_Input_UnregisterDeviceListeners()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Input_Result | OH_Input_UnregisterDeviceListener 函数返回值。 INPUT_SUCCESS 表示调用成功。 INPUT_SERVICE_EXCEPTION 表示由于服务异常调用失败。 |
+| Input_Result | OH_Input_UnregisterDeviceListeners 函数返回值。 INPUT_SUCCESS 表示调用成功。 INPUT_SERVICE_EXCEPTION 表示由于服务异常调用失败。 |
 
 
 
 
-#### OH_Input_GetDeviceIds()
+### OH_Input_GetDeviceIds()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_GetDeviceIds(int32_t *deviceIds, int32_t inSize, int32_t *outSize)
@@ -4155,6 +4493,7 @@ Input_Result OH_Input_GetDeviceIds(int32_t *deviceIds, int32_t inSize, int32_t *
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | int32_t *deviceIds | deviceIds 保存输入设备ID的列表。 |
@@ -4164,6 +4503,7 @@ Input_Result OH_Input_GetDeviceIds(int32_t *deviceIds, int32_t inSize, int32_t *
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | INPUT_SUCCESS 表示操作成功。 INPUT_PARAMETER_ERROR 表示deviceIds或outSize为空指针或inSize小于0。 |
@@ -4171,9 +4511,10 @@ Input_Result OH_Input_GetDeviceIds(int32_t *deviceIds, int32_t inSize, int32_t *
 
 
 
-#### OH_Input_GetDevice()
+### OH_Input_GetDevice()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_GetDevice(int32_t deviceId, Input_DeviceInfo **deviceInfo)
@@ -4189,6 +4530,7 @@ Input_Result OH_Input_GetDevice(int32_t deviceId, Input_DeviceInfo **deviceInfo)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | int32_t deviceId | 输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。 |
@@ -4197,6 +4539,7 @@ Input_Result OH_Input_GetDevice(int32_t deviceId, Input_DeviceInfo **deviceInfo)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | INPUT_SUCCESS 表示操作成功。 INPUT_PARAMETER_ERROR 表示deviceInfo为空指针或deviceId无效。 可以通过 OH_Input_GetDeviceIds 表示接口查询系统支持的设备ID。 |
@@ -4204,9 +4547,10 @@ Input_Result OH_Input_GetDevice(int32_t deviceId, Input_DeviceInfo **deviceInfo)
 
 
 
-#### OH_Input_CreateDeviceInfo()
+### OH_Input_CreateDeviceInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_DeviceInfo* OH_Input_CreateDeviceInfo(void)
@@ -4222,6 +4566,7 @@ Input_DeviceInfo* OH_Input_CreateDeviceInfo(void)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_DeviceInfo* | 如果操作成功，返回设备信息Input_DeviceInfo实例的指针。否则返回空指针，可能的原因是分配内存失败。 |
@@ -4229,9 +4574,10 @@ Input_DeviceInfo* OH_Input_CreateDeviceInfo(void)
 
 
 
-#### OH_Input_DestroyDeviceInfo()
+### OH_Input_DestroyDeviceInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_DestroyDeviceInfo(Input_DeviceInfo **deviceInfo)
@@ -4247,6 +4593,7 @@ void OH_Input_DestroyDeviceInfo(Input_DeviceInfo **deviceInfo)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_DeviceInfo **deviceInfo | deviceInfo 设备信息的对象。 |
@@ -4254,9 +4601,10 @@ void OH_Input_DestroyDeviceInfo(Input_DeviceInfo **deviceInfo)
 
 
 
-#### OH_Input_GetKeyboardType()
+### OH_Input_GetKeyboardType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_GetKeyboardType(int32_t deviceId, int32_t *keyboardType)
@@ -4272,13 +4620,15 @@ Input_Result OH_Input_GetKeyboardType(int32_t deviceId, int32_t *keyboardType)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | int32_t deviceId | 输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。 |
-| int32_t *keyboardType | keyboardType 指向输入设备的键盘指针。 |
+| int32_t *keyboardType | keyboardType 指向输入设备的键盘类型指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4287,9 +4637,10 @@ Input_Result OH_Input_GetKeyboardType(int32_t deviceId, int32_t *keyboardType)
 
 
 
-#### OH_Input_GetDeviceId()
+### OH_Input_GetDeviceId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_GetDeviceId(Input_DeviceInfo *deviceInfo, int32_t *id)
@@ -4305,6 +4656,7 @@ Input_Result OH_Input_GetDeviceId(Input_DeviceInfo *deviceInfo, int32_t *id)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_DeviceInfo *deviceInfo | deviceInfo 输入设备信息Input_DeviceInfo。 |
@@ -4313,6 +4665,7 @@ Input_Result OH_Input_GetDeviceId(Input_DeviceInfo *deviceInfo, int32_t *id)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | INPUT_SUCCESS 表示操作成功。 INPUT_PARAMETER_ERROR 表示deviceInfo或者ID是空指针。 |
@@ -4320,9 +4673,10 @@ Input_Result OH_Input_GetDeviceId(Input_DeviceInfo *deviceInfo, int32_t *id)
 
 
 
-#### OH_Input_GetDeviceName()
+### OH_Input_GetDeviceName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_GetDeviceName(Input_DeviceInfo *deviceInfo, char **name)
@@ -4338,6 +4692,7 @@ Input_Result OH_Input_GetDeviceName(Input_DeviceInfo *deviceInfo, char **name)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_DeviceInfo *deviceInfo | deviceInfo 输入设备信息Input_DeviceInfo。 |
@@ -4346,6 +4701,7 @@ Input_Result OH_Input_GetDeviceName(Input_DeviceInfo *deviceInfo, char **name)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | INPUT_SUCCESS 表示操作成功。 INPUT_PARAMETER_ERROR 表示deviceInfo或者name是空指针。 |
@@ -4353,9 +4709,10 @@ Input_Result OH_Input_GetDeviceName(Input_DeviceInfo *deviceInfo, char **name)
 
 
 
-#### OH_Input_GetCapabilities()
+### OH_Input_GetCapabilities()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_GetCapabilities(Input_DeviceInfo *deviceInfo, int32_t *capabilities)
@@ -4371,6 +4728,7 @@ Input_Result OH_Input_GetCapabilities(Input_DeviceInfo *deviceInfo, int32_t *cap
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_DeviceInfo *deviceInfo | deviceInfo 输入设备信息Input_DeviceInfo。 |
@@ -4379,6 +4737,7 @@ Input_Result OH_Input_GetCapabilities(Input_DeviceInfo *deviceInfo, int32_t *cap
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | INPUT_SUCCESS 表示操作成功。 INPUT_PARAMETER_ERROR 表示deviceInfo或者capabilities是空指针。 |
@@ -4386,9 +4745,10 @@ Input_Result OH_Input_GetCapabilities(Input_DeviceInfo *deviceInfo, int32_t *cap
 
 
 
-#### OH_Input_GetDeviceVersion()
+### OH_Input_GetDeviceVersion()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_GetDeviceVersion(Input_DeviceInfo *deviceInfo, int32_t *version)
@@ -4404,6 +4764,7 @@ Input_Result OH_Input_GetDeviceVersion(Input_DeviceInfo *deviceInfo, int32_t *ve
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_DeviceInfo *deviceInfo | deviceInfo 输入设备信息Input_DeviceInfo。 |
@@ -4412,6 +4773,7 @@ Input_Result OH_Input_GetDeviceVersion(Input_DeviceInfo *deviceInfo, int32_t *ve
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | INPUT_SUCCESS 表示操作成功。 INPUT_PARAMETER_ERROR 表示deviceInfo或者version是空指针。 |
@@ -4419,9 +4781,10 @@ Input_Result OH_Input_GetDeviceVersion(Input_DeviceInfo *deviceInfo, int32_t *ve
 
 
 
-#### OH_Input_GetDeviceProduct()
+### OH_Input_GetDeviceProduct()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_GetDeviceProduct(Input_DeviceInfo *deviceInfo, int32_t *product)
@@ -4437,6 +4800,7 @@ Input_Result OH_Input_GetDeviceProduct(Input_DeviceInfo *deviceInfo, int32_t *pr
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_DeviceInfo *deviceInfo | deviceInfo 输入设备信息Input_DeviceInfo。 |
@@ -4445,6 +4809,7 @@ Input_Result OH_Input_GetDeviceProduct(Input_DeviceInfo *deviceInfo, int32_t *pr
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | INPUT_SUCCESS 表示操作成功。 INPUT_PARAMETER_ERROR 表示deviceInfo或者product是空指针。 |
@@ -4452,9 +4817,10 @@ Input_Result OH_Input_GetDeviceProduct(Input_DeviceInfo *deviceInfo, int32_t *pr
 
 
 
-#### OH_Input_GetDeviceVendor()
+### OH_Input_GetDeviceVendor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_GetDeviceVendor(Input_DeviceInfo *deviceInfo, int32_t *vendor)
@@ -4470,6 +4836,7 @@ Input_Result OH_Input_GetDeviceVendor(Input_DeviceInfo *deviceInfo, int32_t *ven
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_DeviceInfo *deviceInfo | deviceInfo 输入设备信息Input_DeviceInfo。 |
@@ -4478,6 +4845,7 @@ Input_Result OH_Input_GetDeviceVendor(Input_DeviceInfo *deviceInfo, int32_t *ven
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | INPUT_SUCCESS 表示操作成功。 INPUT_PARAMETER_ERROR 表示deviceInfo或者vendor是空指针。 |
@@ -4485,9 +4853,10 @@ Input_Result OH_Input_GetDeviceVendor(Input_DeviceInfo *deviceInfo, int32_t *ven
 
 
 
-#### OH_Input_GetDeviceAddress()
+### OH_Input_GetDeviceAddress()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_GetDeviceAddress(Input_DeviceInfo *deviceInfo, char **address)
@@ -4503,6 +4872,7 @@ Input_Result OH_Input_GetDeviceAddress(Input_DeviceInfo *deviceInfo, char **addr
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_DeviceInfo *deviceInfo | deviceInfo 输入设备信息Input_DeviceInfo。 |
@@ -4511,6 +4881,7 @@ Input_Result OH_Input_GetDeviceAddress(Input_DeviceInfo *deviceInfo, char **addr
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | INPUT_SUCCESS 表示操作成功。 INPUT_PARAMETER_ERROR 表示deviceInfo或者address是空指针。 |
@@ -4518,9 +4889,10 @@ Input_Result OH_Input_GetDeviceAddress(Input_DeviceInfo *deviceInfo, char **addr
 
 
 
-#### OH_Input_GetFunctionKeyState()
+### OH_Input_GetFunctionKeyState()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_GetFunctionKeyState(int32_t keyCode, int32_t *state)
@@ -4530,9 +4902,12 @@ Input_Result OH_Input_GetFunctionKeyState(int32_t keyCode, int32_t *state)
 
 获取功能键状态。
 
+**系统能力：** SystemCapability.MultimodalInput.Input.Core
+
 **起始版本：** 15
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -4542,6 +4917,7 @@ Input_Result OH_Input_GetFunctionKeyState(int32_t keyCode, int32_t *state)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | OH_Input_GetFunctionKeyState 函数返回值。 INPUT_SUCCESS 表示获取状态成功。 INPUT_PARAMETER_ERROR 表示参数错误。 INPUT_KEYBOARD_DEVICE_NOT_EXIST 表示键盘设备不存在。 |
@@ -4549,9 +4925,10 @@ Input_Result OH_Input_GetFunctionKeyState(int32_t keyCode, int32_t *state)
 
 
 
-#### OH_Input_InjectTouchEvent()
+### OH_Input_InjectTouchEvent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 ```text
 int32_t OH_Input_InjectTouchEvent(const struct Input_TouchEvent* touchEvent)
@@ -4577,12 +4954,14 @@ int32_t OH_Input_InjectTouchEvent(const struct Input_TouchEvent* touchEvent)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct Input_TouchEvent* touchEvent | 触屏输入事件对象，通过OH_Input_CreateTouchEvent接口可以创建触屏输入事件对象。 使用完需使用OH_Input_DestroyTouchEvent接口销毁触屏输入事件对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4591,9 +4970,10 @@ int32_t OH_Input_InjectTouchEvent(const struct Input_TouchEvent* touchEvent)
 
 
 
-#### OH_Input_InjectMouseEvent()
+### OH_Input_InjectMouseEvent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 ```text
 int32_t OH_Input_InjectMouseEvent(const struct Input_MouseEvent* mouseEvent)
@@ -4619,12 +4999,14 @@ int32_t OH_Input_InjectMouseEvent(const struct Input_MouseEvent* mouseEvent)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct Input_MouseEvent* mouseEvent | 鼠标事件对象，通过OH_Input_CreateMouseEvent接口可以创建鼠标事件对象。 使用完需使用OH_Input_DestroyMouseEvent接口销毁鼠标事件对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4633,9 +5015,10 @@ int32_t OH_Input_InjectMouseEvent(const struct Input_MouseEvent* mouseEvent)
 
 
 
-#### OH_Input_GetMouseEventDisplayId()
+### OH_Input_GetMouseEventDisplayId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Input_GetMouseEventDisplayId(const struct Input_MouseEvent* mouseEvent)
@@ -4651,12 +5034,14 @@ int32_t OH_Input_GetMouseEventDisplayId(const struct Input_MouseEvent* mouseEven
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct Input_MouseEvent* mouseEvent | 鼠标事件对象，通过OH_Input_CreateMouseEvent接口可以创建鼠标事件对象。 使用完需使用OH_Input_DestroyMouseEvent接口销毁鼠标事件对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4665,9 +5050,10 @@ int32_t OH_Input_GetMouseEventDisplayId(const struct Input_MouseEvent* mouseEven
 
 
 
-#### OH_Input_QueryMaxTouchPoints()
+### OH_Input_QueryMaxTouchPoints()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_QueryMaxTouchPoints(int32_t *count)
@@ -4681,12 +5067,14 @@ Input_Result OH_Input_QueryMaxTouchPoints(int32_t *count)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | int32_t *count | 设备支持的最大触屏报点数，count取值范围为[0, 10]，-1表示未知数量。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4695,9 +5083,10 @@ Input_Result OH_Input_QueryMaxTouchPoints(int32_t *count)
 
 
 
-#### OH_Input_InjectMouseEventGlobal()
+### OH_Input_InjectMouseEventGlobal()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 ```text
 int32_t OH_Input_InjectMouseEventGlobal(const struct Input_MouseEvent* mouseEvent)
@@ -4721,12 +5110,14 @@ int32_t OH_Input_InjectMouseEventGlobal(const struct Input_MouseEvent* mouseEven
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct Input_MouseEvent* mouseEvent | 鼠标事件对象，通过OH_Input_CreateMouseEvent接口可以创建鼠标事件对象。 使用完需使用OH_Input_DestroyMouseEvent接口销毁鼠标事件对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4735,9 +5126,10 @@ int32_t OH_Input_InjectMouseEventGlobal(const struct Input_MouseEvent* mouseEven
 
 
 
-#### OH_Input_SetMouseEventGlobalX()
+### OH_Input_SetMouseEventGlobalX()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_SetMouseEventGlobalX(struct Input_MouseEvent* mouseEvent, int32_t globalX)
@@ -4751,6 +5143,7 @@ void OH_Input_SetMouseEventGlobalX(struct Input_MouseEvent* mouseEvent, int32_t 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_MouseEvent* mouseEvent | 鼠标事件对象，通过OH_Input_CreateMouseEvent接口可以创建鼠标事件对象。 使用完需使用OH_Input_DestroyMouseEvent接口销毁鼠标事件对象。 |
@@ -4759,9 +5152,10 @@ void OH_Input_SetMouseEventGlobalX(struct Input_MouseEvent* mouseEvent, int32_t 
 
 
 
-#### OH_Input_GetMouseEventGlobalX()
+### OH_Input_GetMouseEventGlobalX()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Input_GetMouseEventGlobalX(const struct Input_MouseEvent* mouseEvent)
@@ -4775,12 +5169,14 @@ int32_t OH_Input_GetMouseEventGlobalX(const struct Input_MouseEvent* mouseEvent)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct Input_MouseEvent* mouseEvent | 鼠标事件对象，通过OH_Input_CreateMouseEvent接口可以创建鼠标事件对象。 使用完需使用OH_Input_DestroyMouseEvent接口销毁鼠标事件对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4789,9 +5185,10 @@ int32_t OH_Input_GetMouseEventGlobalX(const struct Input_MouseEvent* mouseEvent)
 
 
 
-#### OH_Input_SetMouseEventGlobalY()
+### OH_Input_SetMouseEventGlobalY()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_SetMouseEventGlobalY(struct Input_MouseEvent* mouseEvent, int32_t globalY)
@@ -4805,6 +5202,7 @@ void OH_Input_SetMouseEventGlobalY(struct Input_MouseEvent* mouseEvent, int32_t 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_MouseEvent* mouseEvent | 鼠标事件对象，通过OH_Input_CreateMouseEvent接口可以创建鼠标事件对象。 使用完需使用OH_Input_DestroyMouseEvent接口销毁鼠标事件对象。 |
@@ -4813,9 +5211,10 @@ void OH_Input_SetMouseEventGlobalY(struct Input_MouseEvent* mouseEvent, int32_t 
 
 
 
-#### OH_Input_GetMouseEventGlobalY()
+### OH_Input_GetMouseEventGlobalY()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Input_GetMouseEventGlobalY(const struct Input_MouseEvent* mouseEvent)
@@ -4829,12 +5228,14 @@ int32_t OH_Input_GetMouseEventGlobalY(const struct Input_MouseEvent* mouseEvent)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct Input_MouseEvent* mouseEvent | 鼠标事件对象，通过OH_Input_CreateMouseEvent接口可以创建鼠标事件对象。 使用完需使用OH_Input_DestroyMouseEvent接口销毁鼠标事件对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4843,9 +5244,10 @@ int32_t OH_Input_GetMouseEventGlobalY(const struct Input_MouseEvent* mouseEvent)
 
 
 
-#### OH_Input_InjectTouchEventGlobal()
+### OH_Input_InjectTouchEventGlobal()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 ```text
 int32_t OH_Input_InjectTouchEventGlobal(const struct Input_TouchEvent* touchEvent)
@@ -4855,7 +5257,7 @@ int32_t OH_Input_InjectTouchEventGlobal(const struct Input_TouchEvent* touchEven
 
 使用以主屏左上角为原点的全局坐标系的坐标注入触屏输入事件。
 
-如果当前未获得事件注入授权，且调用方未持有ohos.permission.CONTROL_DEVICE权限，调用该接口注入事件不生效。
+如果当前处于用户未授权状态，且调用方未持有ohos.permission.CONTROL_DEVICE权限，调用该接口注入事件不生效。
 
 从API version 20开始，建议先使用[OH_Input_RequestInjection](#oh_input_requestinjection)请求授权。然后通过[OH_Input_QueryAuthorizedStatus](#oh_input_queryauthorizedstatus)查询授权状态，当授权状态为[AUTHORIZED](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-input-manager-h#input_injectionstatus)时，再使用该接口。
 
@@ -4869,12 +5271,14 @@ int32_t OH_Input_InjectTouchEventGlobal(const struct Input_TouchEvent* touchEven
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct Input_TouchEvent* touchEvent | 触屏输入事件对象，通过OH_Input_CreateTouchEvent接口可以创建触屏输入事件对象。 使用完需使用OH_Input_DestroyTouchEvent接口销毁触屏输入事件对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4883,9 +5287,10 @@ int32_t OH_Input_InjectTouchEventGlobal(const struct Input_TouchEvent* touchEven
 
 
 
-#### OH_Input_SetTouchEventGlobalX()
+### OH_Input_SetTouchEventGlobalX()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_SetTouchEventGlobalX(struct Input_TouchEvent* touchEvent, int32_t globalX)
@@ -4899,6 +5304,7 @@ void OH_Input_SetTouchEventGlobalX(struct Input_TouchEvent* touchEvent, int32_t 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_TouchEvent* touchEvent | 触屏输入事件对象，通过OH_Input_CreateTouchEvent接口可以创建触屏输入事件对象。 使用完需使用OH_Input_DestroyTouchEvent接口销毁触屏输入事件对象。 |
@@ -4907,9 +5313,10 @@ void OH_Input_SetTouchEventGlobalX(struct Input_TouchEvent* touchEvent, int32_t 
 
 
 
-#### OH_Input_GetTouchEventGlobalX()
+### OH_Input_GetTouchEventGlobalX()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Input_GetTouchEventGlobalX(const struct Input_TouchEvent* touchEvent)
@@ -4923,12 +5330,14 @@ int32_t OH_Input_GetTouchEventGlobalX(const struct Input_TouchEvent* touchEvent)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct Input_TouchEvent* touchEvent | 触屏输入事件对象，通过OH_Input_CreateTouchEvent接口可以创建触屏输入事件对象。 使用完需使用OH_Input_DestroyTouchEvent接口销毁触屏输入事件对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4937,9 +5346,10 @@ int32_t OH_Input_GetTouchEventGlobalX(const struct Input_TouchEvent* touchEvent)
 
 
 
-#### OH_Input_SetTouchEventGlobalY()
+### OH_Input_SetTouchEventGlobalY()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_SetTouchEventGlobalY(struct Input_TouchEvent* touchEvent, int32_t globalY)
@@ -4953,6 +5363,7 @@ void OH_Input_SetTouchEventGlobalY(struct Input_TouchEvent* touchEvent, int32_t 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_TouchEvent* touchEvent | 触屏输入事件对象，通过OH_Input_CreateTouchEvent接口可以创建触屏输入事件对象。 使用完需使用OH_Input_DestroyTouchEvent接口销毁触屏输入事件对象。 |
@@ -4961,9 +5372,10 @@ void OH_Input_SetTouchEventGlobalY(struct Input_TouchEvent* touchEvent, int32_t 
 
 
 
-#### OH_Input_GetTouchEventGlobalY()
+### OH_Input_GetTouchEventGlobalY()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Input_GetTouchEventGlobalY(const struct Input_TouchEvent* touchEvent)
@@ -4977,12 +5389,14 @@ int32_t OH_Input_GetTouchEventGlobalY(const struct Input_TouchEvent* touchEvent)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct Input_TouchEvent* touchEvent | 触屏输入事件对象，通过OH_Input_CreateTouchEvent接口可以创建触屏输入事件对象。 使用完需使用OH_Input_DestroyTouchEvent接口销毁触屏输入事件对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4991,9 +5405,10 @@ int32_t OH_Input_GetTouchEventGlobalY(const struct Input_TouchEvent* touchEvent)
 
 
 
-#### OH_Input_SetAxisEventGlobalX()
+### OH_Input_SetAxisEventGlobalX()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_SetAxisEventGlobalX(struct Input_AxisEvent* axisEvent, int32_t globalX)
@@ -5007,6 +5422,7 @@ Input_Result OH_Input_SetAxisEventGlobalX(struct Input_AxisEvent* axisEvent, int
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_AxisEvent* axisEvent | 轴事件对象，通过OH_Input_CreateAxisEvent接口可以创建轴事件对象。 使用完需使用OH_Input_DestroyAxisEvent接口销毁轴事件对象。 |
@@ -5015,6 +5431,7 @@ Input_Result OH_Input_SetAxisEventGlobalX(struct Input_AxisEvent* axisEvent, int
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | INPUT_SUCCESS 表示操作成功。 INPUT_PARAMETER_ERROR 表示axisEvent是空指针。 |
@@ -5022,9 +5439,10 @@ Input_Result OH_Input_SetAxisEventGlobalX(struct Input_AxisEvent* axisEvent, int
 
 
 
-#### OH_Input_GetAxisEventGlobalX()
+### OH_Input_GetAxisEventGlobalX()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_GetAxisEventGlobalX(const Input_AxisEvent* axisEvent, int32_t* globalX)
@@ -5038,6 +5456,7 @@ Input_Result OH_Input_GetAxisEventGlobalX(const Input_AxisEvent* axisEvent, int3
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Input_AxisEvent* axisEvent | 轴事件对象，通过OH_Input_CreateAxisEvent接口可以创建轴事件对象。 使用完需使用OH_Input_DestroyAxisEvent接口销毁轴事件对象。 |
@@ -5046,6 +5465,7 @@ Input_Result OH_Input_GetAxisEventGlobalX(const Input_AxisEvent* axisEvent, int3
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | INPUT_SUCCESS 表示操作成功。 INPUT_PARAMETER_ERROR 表示axisEvent或者globalX是空指针。 |
@@ -5053,9 +5473,10 @@ Input_Result OH_Input_GetAxisEventGlobalX(const Input_AxisEvent* axisEvent, int3
 
 
 
-#### OH_Input_SetAxisEventGlobalY()
+### OH_Input_SetAxisEventGlobalY()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_SetAxisEventGlobalY(struct Input_AxisEvent* axisEvent, int32_t globalY)
@@ -5069,6 +5490,7 @@ Input_Result OH_Input_SetAxisEventGlobalY(struct Input_AxisEvent* axisEvent, int
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_AxisEvent* axisEvent | 轴事件对象，通过OH_Input_CreateAxisEvent接口可以创建轴事件对象。 使用完需使用OH_Input_DestroyAxisEvent接口销毁轴事件对象。 |
@@ -5077,6 +5499,7 @@ Input_Result OH_Input_SetAxisEventGlobalY(struct Input_AxisEvent* axisEvent, int
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | INPUT_SUCCESS 表示操作成功。 INPUT_PARAMETER_ERROR 表示axisEvent是空指针。 |
@@ -5084,9 +5507,10 @@ Input_Result OH_Input_SetAxisEventGlobalY(struct Input_AxisEvent* axisEvent, int
 
 
 
-#### OH_Input_GetAxisEventGlobalY()
+### OH_Input_GetAxisEventGlobalY()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_GetAxisEventGlobalY(const Input_AxisEvent* axisEvent, int32_t* globalY)
@@ -5100,6 +5524,7 @@ Input_Result OH_Input_GetAxisEventGlobalY(const Input_AxisEvent* axisEvent, int3
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Input_AxisEvent* axisEvent | 轴事件对象，通过OH_Input_CreateAxisEvent接口可以创建轴事件对象。 使用完需使用OH_Input_DestroyAxisEvent接口销毁轴事件对象。 |
@@ -5108,6 +5533,7 @@ Input_Result OH_Input_GetAxisEventGlobalY(const Input_AxisEvent* axisEvent, int3
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | INPUT_SUCCESS 表示操作成功。 INPUT_PARAMETER_ERROR 表示axisEvent或者globalY是空指针。 |
@@ -5115,9 +5541,10 @@ Input_Result OH_Input_GetAxisEventGlobalY(const Input_AxisEvent* axisEvent, int3
 
 
 
-#### OH_Input_GetPointerLocation()
+### OH_Input_GetPointerLocation()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 Input_Result OH_Input_GetPointerLocation(int32_t *displayId, double *displayX, double *displayY)
@@ -5135,6 +5562,7 @@ Input_Result OH_Input_GetPointerLocation(int32_t *displayId, double *displayX, d
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | int32_t *displayId | 当前屏幕的屏幕ID。 |
@@ -5144,6 +5572,7 @@ Input_Result OH_Input_GetPointerLocation(int32_t *displayId, double *displayX, d
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | OH_Input_GetPointerLocation 函数返回值： INPUT_SUCCESS 表示查询成功。 INPUT_PARAMETER_ERROR 表示参数错误。 INPUT_SERVICE_EXCEPTION 表示服务异常。 INPUT_APP_NOT_FOCUSED 表示当前应用不是焦点应用。 INPUT_DEVICE_NO_POINTER 表示无鼠标类输入外设。 |
@@ -5151,9 +5580,10 @@ Input_Result OH_Input_GetPointerLocation(int32_t *displayId, double *displayX, d
 
 
 
-#### OH_Input_GetKeyEventId()
+### OH_Input_GetKeyEventId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_GetKeyEventId(const struct Input_KeyEvent* keyEvent, int32_t* eventId)
@@ -5167,13 +5597,15 @@ Input_Result OH_Input_GetKeyEventId(const struct Input_KeyEvent* keyEvent, int32
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
-| Input_KeyEvent* keyEvent | 按键事件对象，通过OH_Input_CreateKeyEvent接口可以创建按键事件对象。 使用完需使用OH_Input_DestroyKeyEvent接口销毁按键事件对象。 |
+| const struct Input_KeyEvent* keyEvent | 按键事件对象，通过OH_Input_CreateKeyEvent接口可以创建按键事件对象。 使用完需使用OH_Input_DestroyKeyEvent接口销毁按键事件对象。 |
 | int32_t* eventId | 按键事件的ID。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5182,9 +5614,10 @@ Input_Result OH_Input_GetKeyEventId(const struct Input_KeyEvent* keyEvent, int32
 
 
 
-#### OH_Input_AddKeyEventHook()
+### OH_Input_AddKeyEventHook()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 Input_Result OH_Input_AddKeyEventHook(Input_KeyEventCallback callback)
@@ -5206,12 +5639,14 @@ Input_Result OH_Input_AddKeyEventHook(Input_KeyEventCallback callback)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_KeyEventCallback callback | 钩子函数，用于拦截待分发的所有按键事件。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5220,9 +5655,10 @@ Input_Result OH_Input_AddKeyEventHook(Input_KeyEventCallback callback)
 
 
 
-#### OH_Input_RemoveKeyEventHook()
+### OH_Input_RemoveKeyEventHook()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_RemoveKeyEventHook(Input_KeyEventCallback callback)
@@ -5238,12 +5674,14 @@ Input_Result OH_Input_RemoveKeyEventHook(Input_KeyEventCallback callback)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_KeyEventCallback callback | 钩子函数，用于拦截待分发的所有按键事件。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5252,9 +5690,10 @@ Input_Result OH_Input_RemoveKeyEventHook(Input_KeyEventCallback callback)
 
 
 
-#### OH_Input_DispatchToNextHandler()
+### OH_Input_DispatchToNextHandler()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 Input_Result OH_Input_DispatchToNextHandler(int32_t eventId)
@@ -5280,12 +5719,14 @@ Input_Result OH_Input_DispatchToNextHandler(int32_t eventId)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | int32_t eventId | 按键事件的ID。可以通过OH_Input_GetKeyEventId接口获取。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5294,9 +5735,10 @@ Input_Result OH_Input_DispatchToNextHandler(int32_t eventId)
 
 
 
-#### OH_Input_SetPointerVisible()
+### OH_Input_SetPointerVisible()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 Input_Result OH_Input_SetPointerVisible(bool visible)
@@ -5312,12 +5754,14 @@ Input_Result OH_Input_SetPointerVisible(bool visible)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | bool visible | 鼠标光标是否显示。true表示显示，false表示不显示。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5326,9 +5770,10 @@ Input_Result OH_Input_SetPointerVisible(bool visible)
 
 
 
-#### OH_Input_GetPointerStyle()
+### OH_Input_GetPointerStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 Input_Result OH_Input_GetPointerStyle(int32_t windowId, int32_t *pointerStyle)
@@ -5344,6 +5789,7 @@ Input_Result OH_Input_GetPointerStyle(int32_t windowId, int32_t *pointerStyle)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | int32_t windowId | 窗口ID。取值范围为大于等于-1的整数，取值为-1时表示全局窗口。 仅支持传入当前窗口和全局窗口的ID，传入其他ID返回全局窗口的默认光标样式，当前窗口ID可以通过getWindowProperties获取。 |
@@ -5352,6 +5798,7 @@ Input_Result OH_Input_GetPointerStyle(int32_t windowId, int32_t *pointerStyle)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | OH_Input_GetPointerStyle 函数返回值： INPUT_SUCCESS 表示操作成功。 INPUT_PARAMETER_ERROR 表示参数检查失败。 INPUT_SERVICE_EXCEPTION 表示服务异常，请重试。 |
@@ -5359,9 +5806,10 @@ Input_Result OH_Input_GetPointerStyle(int32_t windowId, int32_t *pointerStyle)
 
 
 
-#### OH_Input_SetPointerStyle()
+### OH_Input_SetPointerStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 Input_Result OH_Input_SetPointerStyle(int32_t windowId, int32_t pointerStyle)
@@ -5377,6 +5825,7 @@ Input_Result OH_Input_SetPointerStyle(int32_t windowId, int32_t pointerStyle)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | int32_t windowId | 窗口ID。取值范围为大于等于0的整数。 仅支持传入当前窗口的光标样式，传入其他窗口ID本接口可以运行成功但设置不生效，当前窗口ID可以通过getWindowProperties获取。 |
@@ -5385,6 +5834,7 @@ Input_Result OH_Input_SetPointerStyle(int32_t windowId, int32_t pointerStyle)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | OH_Input_SetPointerStyle 函数返回值： INPUT_SUCCESS 表示操作成功。 INPUT_PARAMETER_ERROR 表示参数检查失败。 INPUT_SERVICE_EXCEPTION 表示服务异常，请重试。 |
@@ -5392,9 +5842,10 @@ Input_Result OH_Input_SetPointerStyle(int32_t windowId, int32_t pointerStyle)
 
 
 
-#### OH_Input_CustomCursor_Create()
+### OH_Input_CustomCursor_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_CustomCursor* OH_Input_CustomCursor_Create(OH_PixelmapNative* pixelMap, int32_t anchorX, int32_t anchorY)
@@ -5408,6 +5859,7 @@ Input_CustomCursor* OH_Input_CustomCursor_Create(OH_PixelmapNative* pixelMap, in
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative* pixelMap | OH_PixelmapNative自定义鼠标光标像素图。最小限制为资源图本身的最小限制。最大限制为256 x 256px。 |
@@ -5417,6 +5869,7 @@ Input_CustomCursor* OH_Input_CustomCursor_Create(OH_PixelmapNative* pixelMap, in
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_CustomCursor* | Input_CustomCursor对象。操作成功时返回自定义鼠标光标资源对象的指针。异常时返回空指针。 |
@@ -5424,9 +5877,10 @@ Input_CustomCursor* OH_Input_CustomCursor_Create(OH_PixelmapNative* pixelMap, in
 
 
 
-#### OH_Input_CustomCursor_Destroy()
+### OH_Input_CustomCursor_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_CustomCursor_Destroy(Input_CustomCursor** customCursor)
@@ -5440,6 +5894,7 @@ void OH_Input_CustomCursor_Destroy(Input_CustomCursor** customCursor)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_CustomCursor** customCursor | 自定义鼠标光标资源Input_CustomCursor。 |
@@ -5447,9 +5902,10 @@ void OH_Input_CustomCursor_Destroy(Input_CustomCursor** customCursor)
 
 
 
-#### OH_Input_CustomCursor_GetPixelMap()
+### OH_Input_CustomCursor_GetPixelMap()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_CustomCursor_GetPixelMap(Input_CustomCursor* customCursor, OH_PixelmapNative** pixelMap)
@@ -5463,6 +5919,7 @@ Input_Result OH_Input_CustomCursor_GetPixelMap(Input_CustomCursor* customCursor,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_CustomCursor* customCursor | 自定义鼠标光标资源Input_CustomCursor。 |
@@ -5471,6 +5928,7 @@ Input_Result OH_Input_CustomCursor_GetPixelMap(Input_CustomCursor* customCursor,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | OH_Input_CustomCursor_GetPixelMap 函数返回值： INPUT_SUCCESS 表示操作成功。 INPUT_PARAMETER_ERROR 表示参数检查失败。 |
@@ -5478,9 +5936,10 @@ Input_Result OH_Input_CustomCursor_GetPixelMap(Input_CustomCursor* customCursor,
 
 
 
-#### OH_Input_CustomCursor_GetAnchor()
+### OH_Input_CustomCursor_GetAnchor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_CustomCursor_GetAnchor(Input_CustomCursor* customCursor, int32_t* anchorX, int32_t* anchorY)
@@ -5494,6 +5953,7 @@ Input_Result OH_Input_CustomCursor_GetAnchor(Input_CustomCursor* customCursor, i
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_CustomCursor* customCursor | 自定义鼠标光标资源Input_CustomCursor。 |
@@ -5503,6 +5963,7 @@ Input_Result OH_Input_CustomCursor_GetAnchor(Input_CustomCursor* customCursor, i
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | OH_Input_CustomCursor_GetAnchor 函数返回值： INPUT_SUCCESS 表示操作成功。 INPUT_PARAMETER_ERROR 表示参数检查失败。 |
@@ -5510,9 +5971,10 @@ Input_Result OH_Input_CustomCursor_GetAnchor(Input_CustomCursor* customCursor, i
 
 
 
-#### OH_Input_CursorConfig_Create()
+### OH_Input_CursorConfig_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_CursorConfig* OH_Input_CursorConfig_Create(bool followSystem)
@@ -5526,12 +5988,14 @@ Input_CursorConfig* OH_Input_CursorConfig_Create(bool followSystem)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | bool followSystem | 是否根据系统设置调整鼠标光标大小。false表示使用自定义鼠标光标样式大小，true表示根据系统设置调整鼠标光标大小，可调整范围为：[光标资源图大小, 256×256]，单位为像素（px）。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5540,9 +6004,10 @@ Input_CursorConfig* OH_Input_CursorConfig_Create(bool followSystem)
 
 
 
-#### OH_Input_CursorConfig_Destroy()
+### OH_Input_CursorConfig_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_CursorConfig_Destroy(Input_CursorConfig** cursorConfig)
@@ -5556,6 +6021,7 @@ void OH_Input_CursorConfig_Destroy(Input_CursorConfig** cursorConfig)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_CursorConfig** cursorConfig | 自定义鼠标光标配置Input_CursorConfig对象。 |
@@ -5563,9 +6029,10 @@ void OH_Input_CursorConfig_Destroy(Input_CursorConfig** cursorConfig)
 
 
 
-#### OH_Input_CursorConfig_IsFollowSystem()
+### OH_Input_CursorConfig_IsFollowSystem()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_CursorConfig_IsFollowSystem(Input_CursorConfig *cursorConfig, bool *followSystem)
@@ -5579,6 +6046,7 @@ Input_Result OH_Input_CursorConfig_IsFollowSystem(Input_CursorConfig *cursorConf
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_CursorConfig* cursorConfig | 自定义鼠标光标配置Input_CursorConfig。 |
@@ -5587,6 +6055,7 @@ Input_Result OH_Input_CursorConfig_IsFollowSystem(Input_CursorConfig *cursorConf
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | OH_Input_CursorConfig_IsFollowSystem 函数返回值： INPUT_SUCCESS 表示操作成功。 INPUT_PARAMETER_ERROR 表示参数检查失败。 |
@@ -5594,9 +6063,10 @@ Input_Result OH_Input_CursorConfig_IsFollowSystem(Input_CursorConfig *cursorConf
 
 
 
-#### OH_Input_SetCustomCursor()
+### OH_Input_SetCustomCursor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_SetCustomCursor(int32_t windowId, Input_CustomCursor* customCursor, Input_CursorConfig* cursorConfig)
@@ -5612,6 +6082,7 @@ Input_Result OH_Input_SetCustomCursor(int32_t windowId, Input_CustomCursor* cust
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | int32_t windowId | 窗口ID。取值范围为大于等于0的整数，仅支持传入当前窗口的光标样式。 |
@@ -5621,6 +6092,7 @@ Input_Result OH_Input_SetCustomCursor(int32_t windowId, Input_CustomCursor* cust
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | OH_Input_SetCustomCursor 函数返回值： INPUT_SUCCESS 表示操作成功。 INPUT_PARAMETER_ERROR 表示参数检查失败。 INPUT_INVALID_WINDOWID 表示窗口ID无效。 INPUT_DEVICE_NOT_SUPPORTED 表示设备不支持。 INPUT_SERVICE_EXCEPTION 表示服务异常，请重试。 |
@@ -5628,9 +6100,10 @@ Input_Result OH_Input_SetCustomCursor(int32_t windowId, Input_CustomCursor* cust
 
 
 
-#### OH_Input_CursorInfo_Create()
+### OH_Input_CursorInfo_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 struct Input_CursorInfo* OH_Input_CursorInfo_Create()
@@ -5644,6 +6117,7 @@ struct Input_CursorInfo* OH_Input_CursorInfo_Create()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | struct Input_CursorInfo* | 创建成功返回一个Input_CursorInfo对象，否则返回空指针，可能原因是内存分配失败。 |
@@ -5651,9 +6125,10 @@ struct Input_CursorInfo* OH_Input_CursorInfo_Create()
 
 
 
-#### OH_Input_CursorInfo_Destroy()
+### OH_Input_CursorInfo_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_CursorInfo_Destroy(Input_CursorInfo** cursorInfo)
@@ -5667,6 +6142,7 @@ void OH_Input_CursorInfo_Destroy(Input_CursorInfo** cursorInfo)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_CursorInfo** cursorInfo | 鼠标光标信息对象。 |
@@ -5674,9 +6150,10 @@ void OH_Input_CursorInfo_Destroy(Input_CursorInfo** cursorInfo)
 
 
 
-#### OH_Input_CursorInfo_IsVisible()
+### OH_Input_CursorInfo_IsVisible()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_CursorInfo_IsVisible(Input_CursorInfo* cursorInfo, bool* visible)
@@ -5690,6 +6167,7 @@ Input_Result OH_Input_CursorInfo_IsVisible(Input_CursorInfo* cursorInfo, bool* v
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_CursorInfo* cursorInfo | 指定鼠标光标信息对象。可以通过OH_Input_GetMouseEventCursorInfo查询指定鼠标事件的鼠标光标信息、或通过OH_Input_GetCursorInfo接口查询当前的鼠标光标信息。 |
@@ -5698,6 +6176,7 @@ Input_Result OH_Input_CursorInfo_IsVisible(Input_CursorInfo* cursorInfo, bool* v
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | OH_Input_CursorInfo_IsVisible 函数返回值： INPUT_SUCCESS 表示操作成功。 INPUT_PARAMETER_ERROR 表示参数检查失败。 |
@@ -5705,9 +6184,10 @@ Input_Result OH_Input_CursorInfo_IsVisible(Input_CursorInfo* cursorInfo, bool* v
 
 
 
-#### OH_Input_CursorInfo_GetStyle()
+### OH_Input_CursorInfo_GetStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_CursorInfo_GetStyle(Input_CursorInfo* cursorInfo, Input_PointerStyle* style)
@@ -5721,13 +6201,15 @@ Input_Result OH_Input_CursorInfo_GetStyle(Input_CursorInfo* cursorInfo, Input_Po
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_CursorInfo* cursorInfo | 指定鼠标光标信息对象。可以通过OH_Input_GetMouseEventCursorInfo查询指定鼠标事件的鼠标光标信息、或通过OH_Input_GetCursorInfo接口查询当前的鼠标光标信息。 |
-| Input_PointerStyle | 鼠标光标信息的光标样式枚举，具体请参考Input_PointerStyle。 |
+| Input_PointerStyle* style | 鼠标光标信息的光标样式枚举，具体请参考Input_PointerStyle。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5736,9 +6218,10 @@ Input_Result OH_Input_CursorInfo_GetStyle(Input_CursorInfo* cursorInfo, Input_Po
 
 
 
-#### OH_Input_CursorInfo_GetSizeLevel()
+### OH_Input_CursorInfo_GetSizeLevel()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_CursorInfo_GetSizeLevel(Input_CursorInfo* cursorInfo, int32_t* sizeLevel)
@@ -5752,6 +6235,7 @@ Input_Result OH_Input_CursorInfo_GetSizeLevel(Input_CursorInfo* cursorInfo, int3
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_CursorInfo* cursorInfo | 指定鼠标光标信息对象。可以通过OH_Input_GetMouseEventCursorInfo查询指定鼠标事件的鼠标光标信息、或通过OH_Input_GetCursorInfo接口查询当前的鼠标光标信息。 |
@@ -5760,6 +6244,7 @@ Input_Result OH_Input_CursorInfo_GetSizeLevel(Input_CursorInfo* cursorInfo, int3
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | OH_Input_CursorInfo_GetSizeLevel 函数返回值： INPUT_SUCCESS 表示操作成功。 INPUT_PARAMETER_ERROR 表示参数检查失败或者光标不可见。 |
@@ -5767,9 +6252,10 @@ Input_Result OH_Input_CursorInfo_GetSizeLevel(Input_CursorInfo* cursorInfo, int3
 
 
 
-#### OH_Input_CursorInfo_GetColor()
+### OH_Input_CursorInfo_GetColor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_CursorInfo_GetColor(Input_CursorInfo* cursorInfo, uint32_t* color)
@@ -5783,6 +6269,7 @@ Input_Result OH_Input_CursorInfo_GetColor(Input_CursorInfo* cursorInfo, uint32_t
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_CursorInfo* cursorInfo | 指定鼠标光标信息对象。可以通过OH_Input_GetMouseEventCursorInfo查询指定鼠标事件的鼠标光标信息、或通过OH_Input_GetCursorInfo接口查询当前的鼠标光标信息。 |
@@ -5791,6 +6278,7 @@ Input_Result OH_Input_CursorInfo_GetColor(Input_CursorInfo* cursorInfo, uint32_t
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | OH_Input_CursorInfo_GetColor 函数返回值： INPUT_SUCCESS 表示操作成功。 INPUT_PARAMETER_ERROR 表示参数检查失败或者光标不可见。 |
@@ -5798,9 +6286,10 @@ Input_Result OH_Input_CursorInfo_GetColor(Input_CursorInfo* cursorInfo, uint32_t
 
 
 
-#### OH_Input_GetMouseEventCursorInfo()
+### OH_Input_GetMouseEventCursorInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_GetMouseEventCursorInfo(const struct Input_MouseEvent* mouseEvent, Input_CursorInfo* cursorInfo)
@@ -5814,13 +6303,15 @@ Input_Result OH_Input_GetMouseEventCursorInfo(const struct Input_MouseEvent* mou
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
-| const Input_MouseEvent* mouseEvent | 鼠标事件对象。可以通过OH_Input_AddMouseEventMonitor或者OH_Input_AddInputEventInterceptor接口的回调函数中获取鼠标事件对象。 |
+| const struct Input_MouseEvent* mouseEvent | 鼠标事件对象。可以通过OH_Input_AddMouseEventMonitor或者OH_Input_AddInputEventInterceptor接口的回调函数中获取鼠标事件对象。 |
 | Input_CursorInfo* cursorInfo | 鼠标光标信息对象，可以通过OH_Input_CursorInfo_Create接口创建鼠标光标信息对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5829,9 +6320,10 @@ Input_Result OH_Input_GetMouseEventCursorInfo(const struct Input_MouseEvent* mou
 
 
 
-#### OH_Input_GetCursorInfo()
+### OH_Input_GetCursorInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 Input_Result OH_Input_GetCursorInfo(Input_CursorInfo* cursorInfo, OH_PixelmapNative** pixelmap)
@@ -5847,6 +6339,7 @@ Input_Result OH_Input_GetCursorInfo(Input_CursorInfo* cursorInfo, OH_PixelmapNat
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Input_CursorInfo* cursorInfo | 鼠标光标信息对象，可以通过OH_Input_CursorInfo_Create接口创建鼠标光标信息对象。 |
@@ -5855,6 +6348,7 @@ Input_Result OH_Input_GetCursorInfo(Input_CursorInfo* cursorInfo, OH_PixelmapNat
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | OH_Input_GetCursorInfo 函数返回值： INPUT_SUCCESS 表示操作成功。 INPUT_PARAMETER_ERROR 表示参数检查失败。 INPUT_SERVICE_EXCEPTION 表示服务异常，请重试。 |
@@ -5862,9 +6356,10 @@ Input_Result OH_Input_GetCursorInfo(Input_CursorInfo* cursorInfo, OH_PixelmapNat
 
 
 
-#### OH_Input_SetTouchEventPressure()
+### OH_Input_SetTouchEventPressure()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_SetTouchEventPressure(struct Input_TouchEvent* touchEvent, double pressure)
@@ -5878,6 +6373,7 @@ Input_Result OH_Input_SetTouchEventPressure(struct Input_TouchEvent* touchEvent,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_TouchEvent* touchEvent | 触屏输入事件对象，通过OH_Input_CreateTouchEvent接口可以创建触屏输入事件对象。 使用完需使用OH_Input_DestroyTouchEvent接口销毁触屏输入事件对象。 |
@@ -5886,6 +6382,7 @@ Input_Result OH_Input_SetTouchEventPressure(struct Input_TouchEvent* touchEvent,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | OH_Input_SetTouchEventPressure 函数返回值： INPUT_SUCCESS 表示操作成功。 INPUT_PARAMETER_ERROR 表示参数检查失败。 |
@@ -5893,9 +6390,10 @@ Input_Result OH_Input_SetTouchEventPressure(struct Input_TouchEvent* touchEvent,
 
 
 
-#### OH_Input_GetTouchEventPressure()
+### OH_Input_GetTouchEventPressure()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 double OH_Input_GetTouchEventPressure(const struct Input_TouchEvent* touchEvent)
@@ -5909,12 +6407,14 @@ double OH_Input_GetTouchEventPressure(const struct Input_TouchEvent* touchEvent)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct Input_TouchEvent* touchEvent | 触屏输入事件对象，通过OH_Input_CreateTouchEvent接口可以创建触屏输入事件对象。 使用完需使用OH_Input_DestroyTouchEvent接口销毁触屏输入事件对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5923,9 +6423,10 @@ double OH_Input_GetTouchEventPressure(const struct Input_TouchEvent* touchEvent)
 
 
 
-#### OH_Input_SetTouchEventWindowX()
+### OH_Input_SetTouchEventWindowX()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_SetTouchEventWindowX(struct Input_TouchEvent* touchEvent, int32_t windowX)
@@ -5939,6 +6440,7 @@ void OH_Input_SetTouchEventWindowX(struct Input_TouchEvent* touchEvent, int32_t 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_TouchEvent* touchEvent | 触屏输入事件对象，通过OH_Input_CreateTouchEvent接口可以创建触屏输入事件对象。 使用完需使用OH_Input_DestroyTouchEvent接口销毁触屏输入事件对象。 |
@@ -5947,9 +6449,10 @@ void OH_Input_SetTouchEventWindowX(struct Input_TouchEvent* touchEvent, int32_t 
 
 
 
-#### OH_Input_GetTouchEventWindowX()
+### OH_Input_GetTouchEventWindowX()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Input_GetTouchEventWindowX(const struct Input_TouchEvent* touchEvent)
@@ -5963,12 +6466,14 @@ int32_t OH_Input_GetTouchEventWindowX(const struct Input_TouchEvent* touchEvent)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct Input_TouchEvent* touchEvent | 触屏输入事件对象，通过OH_Input_CreateTouchEvent接口可以创建触屏输入事件对象。 使用完需使用OH_Input_DestroyTouchEvent接口销毁触屏输入事件对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5977,9 +6482,10 @@ int32_t OH_Input_GetTouchEventWindowX(const struct Input_TouchEvent* touchEvent)
 
 
 
-#### OH_Input_SetTouchEventWindowY()
+### OH_Input_SetTouchEventWindowY()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_SetTouchEventWindowY(struct Input_TouchEvent* touchEvent, int32_t windowY)
@@ -5993,6 +6499,7 @@ void OH_Input_SetTouchEventWindowY(struct Input_TouchEvent* touchEvent, int32_t 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_TouchEvent* touchEvent | 触屏输入事件对象，通过OH_Input_CreateTouchEvent接口可以创建触屏输入事件对象。 使用完需使用OH_Input_DestroyTouchEvent接口销毁触屏输入事件对象。 |
@@ -6001,9 +6508,10 @@ void OH_Input_SetTouchEventWindowY(struct Input_TouchEvent* touchEvent, int32_t 
 
 
 
-#### OH_Input_GetTouchEventWindowY()
+### OH_Input_GetTouchEventWindowY()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Input_GetTouchEventWindowY(const struct Input_TouchEvent* touchEvent)
@@ -6017,12 +6525,14 @@ int32_t OH_Input_GetTouchEventWindowY(const struct Input_TouchEvent* touchEvent)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct Input_TouchEvent* touchEvent | 触屏输入事件对象，通过OH_Input_CreateTouchEvent接口可以创建触屏输入事件对象。 使用完需使用OH_Input_DestroyTouchEvent接口销毁触屏输入事件对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6031,9 +6541,10 @@ int32_t OH_Input_GetTouchEventWindowY(const struct Input_TouchEvent* touchEvent)
 
 
 
-#### OH_Input_SetTouchEventDownTime()
+### OH_Input_SetTouchEventDownTime()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Input_SetTouchEventDownTime(struct Input_TouchEvent* touchEvent, int64_t downTime)
@@ -6047,6 +6558,7 @@ void OH_Input_SetTouchEventDownTime(struct Input_TouchEvent* touchEvent, int64_t
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_TouchEvent* touchEvent | 触屏输入事件对象，通过OH_Input_CreateTouchEvent接口可以创建触屏输入事件对象。 使用完需使用OH_Input_DestroyTouchEvent接口销毁触屏输入事件对象。 |
@@ -6055,9 +6567,10 @@ void OH_Input_SetTouchEventDownTime(struct Input_TouchEvent* touchEvent, int64_t
 
 
 
-#### OH_Input_GetTouchEventDownTime()
+### OH_Input_GetTouchEventDownTime()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int64_t OH_Input_GetTouchEventDownTime(const struct Input_TouchEvent* touchEvent)
@@ -6071,12 +6584,14 @@ int64_t OH_Input_GetTouchEventDownTime(const struct Input_TouchEvent* touchEvent
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct Input_TouchEvent* touchEvent | 触屏输入事件对象，通过OH_Input_CreateTouchEvent接口可以创建触屏输入事件对象。 使用完需使用OH_Input_DestroyTouchEvent接口销毁触屏输入事件对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6085,9 +6600,10 @@ int64_t OH_Input_GetTouchEventDownTime(const struct Input_TouchEvent* touchEvent
 
 
 
-#### OH_Input_SetTouchEventToolType()
+### OH_Input_SetTouchEventToolType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_SetTouchEventToolType(struct Input_TouchEvent* touchEvent, Input_TouchEventToolType toolType)
@@ -6101,6 +6617,7 @@ Input_Result OH_Input_SetTouchEventToolType(struct Input_TouchEvent* touchEvent,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Input_TouchEvent* touchEvent | 触屏输入事件对象，通过OH_Input_CreateTouchEvent接口可以创建触屏输入事件对象。 使用完需使用OH_Input_DestroyTouchEvent接口销毁触屏输入事件对象。 |
@@ -6109,6 +6626,7 @@ Input_Result OH_Input_SetTouchEventToolType(struct Input_TouchEvent* touchEvent,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Input_Result | OH_Input_SetTouchEventToolType 函数返回值： INPUT_SUCCESS 表示操作成功。 INPUT_PARAMETER_ERROR 表示参数检查失败。 |
@@ -6116,9 +6634,10 @@ Input_Result OH_Input_SetTouchEventToolType(struct Input_TouchEvent* touchEvent,
 
 
 
-#### OH_Input_GetTouchEventToolType()
+### OH_Input_GetTouchEventToolType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_TouchEventToolType OH_Input_GetTouchEventToolType(const struct Input_TouchEvent* touchEvent)
@@ -6132,12 +6651,14 @@ Input_TouchEventToolType OH_Input_GetTouchEventToolType(const struct Input_Touch
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct Input_TouchEvent* touchEvent | 触屏输入事件对象，通过OH_Input_CreateTouchEvent接口可以创建触屏输入事件对象。 使用完需使用OH_Input_DestroyTouchEvent接口销毁触屏输入事件对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6146,9 +6667,10 @@ Input_TouchEventToolType OH_Input_GetTouchEventToolType(const struct Input_Touch
 
 
 
-#### OH_Input_BindInputDeviceToDisplay()
+### OH_Input_BindInputDeviceToDisplay()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Input_Result OH_Input_BindInputDeviceToDisplay(int32_t inputDeviceId, int32_t displayId)
@@ -6166,6 +6688,7 @@ Input_Result OH_Input_BindInputDeviceToDisplay(int32_t inputDeviceId, int32_t di
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | int32_t inputDeviceId | 指定输入设备的设备ID。 |
@@ -6173,6 +6696,7 @@ Input_Result OH_Input_BindInputDeviceToDisplay(int32_t inputDeviceId, int32_t di
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |

@@ -1,6 +1,6 @@
 # TrustedAppService（可信应用服务）
 
-更新时间：2026-08-04 06:06:24
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesecurity-taas-api
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -10,17 +10,19 @@
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
-import { trustedAppService, contentTrustVerify } from '@kit.DeviceSecurityKit';
+import { trustedAppService, mediaAuthVerify } from '@kit.DeviceSecurityKit';
 ```
  
   
 
-#### createAttestKey
+## createAttestKey
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -38,6 +40,7 @@ createAttestKey(options: AttestOptions): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | AttestOptions | 是 | 生成证明密钥的参数，需要指定密钥类型和密钥大小。 |
@@ -45,6 +48,7 @@ createAttestKey(options: AttestOptions): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -54,6 +58,7 @@ createAttestKey(options: AttestOptions): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-taas) **。**
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | The app profile does not have the required permission. Please refer to the "Enabling Device Security Service" section in the Device Security Kit development guide. |
@@ -100,7 +105,8 @@ await trustedAppService.createAttestKey(options)
  
   
 
-#### AttestOptions
+## AttestOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -114,6 +120,7 @@ await trustedAppService.createAttestKey(options)
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | properties | Array&lt;AttestParam&gt; | 否 | 否 | 开发者应用传入的用于生成证明密钥的配置信息。 |
@@ -121,7 +128,8 @@ await trustedAppService.createAttestKey(options)
  
   
 
-#### AttestParam
+## AttestParam
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -135,15 +143,17 @@ await trustedAppService.createAttestKey(options)
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| tag | AttestTag | 否 | 否 | 开发者应用传入的标签，用于生成证明密钥的配置信息。 |
-| value | boolean\|number\|bigint\|Uint8Array | 否 | 否 | 开发者应用传入的标签对应的值，用于生成证明密钥的配置信息。 boolean： 预留参数，暂未使用。 number： 1）tag为ATTEST_TAG_ALGORITHM，其值为AttestKeyAlg类型。 2）tag为ATTEST_TAG_KEY_SIZE，其值为AttestKeySize类型。 3）tag为ATTEST_TAG_DEVICE_TYPE，其值为AttestType类型。 bigint： tag为ATTEST_TAG_DEVICE_ID，其值为设备ID，取值范围int64类型的随机值。 Uint8Array： 预留参数，暂未使用。 |
+| tag | AttestTag | 否 | 否 | 应用传入的标签，用于生成证明密钥的配置信息。 |
+| value | boolean \| number \| bigint \| Uint8Array | 否 | 否 | 应用传入的标签对应的值，用于生成证明密钥的配置信息。 boolean： 预留参数，暂未使用。 number： 1. tag为ATTEST_TAG_ALGORITHM，其值为AttestKeyAlg类型。 2. tag为ATTEST_TAG_KEY_SIZE，其值为AttestKeySize类型。 3. tag为ATTEST_TAG_DEVICE_TYPE，其值为AttestType类型。 bigint： tag为ATTEST_TAG_DEVICE_ID，其值为设备ID，取值范围为int64类型的随机值。 Uint8Array： 预留参数，暂未使用。 |
  
  
   
 
-#### AttestTag
+## AttestTag
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -157,18 +167,20 @@ await trustedAppService.createAttestKey(options)
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| ATTEST_TAG_INVALID | AttestTagType.ATTEST_TAG_TYPE_INVALID\|0 | 不合法标签。 |
-| ATTEST_TAG_ALGORITHM | AttestTagType.ATTEST_TAG_TYPE_UINT\|1 | 算法标签。 |
-| ATTEST_TAG_KEY_SIZE | AttestTagType.ATTEST_TAG_TYPE_UINT\|2 | 密钥大小标签。 |
-| ATTEST_TAG_DEVICE_TYPE | AttestTagType.ATTEST_TAG_TYPE_UINT\|3 | 设备类型标签。 |
-| ATTEST_TAG_DEVICE_ID | AttestTagType.ATTEST_TAG_TYPE_UINT\|4 | 设备序列号标签。 |
+| ATTEST_TAG_INVALID | AttestTagType.ATTEST_TAG_TYPE_INVALID \| 0 | 不合法标签。 |
+| ATTEST_TAG_ALGORITHM | AttestTagType.ATTEST_TAG_TYPE_UINT \| 1 | 算法标签。 |
+| ATTEST_TAG_KEY_SIZE | AttestTagType.ATTEST_TAG_TYPE_UINT \| 2 | 密钥大小标签。 |
+| ATTEST_TAG_DEVICE_TYPE | AttestTagType.ATTEST_TAG_TYPE_UINT \| 3 | 设备类型标签。 |
+| ATTEST_TAG_DEVICE_ID | AttestTagType.ATTEST_TAG_TYPE_UINT \| 4 | 设备序列号标签。 |
  
  
   
 
-#### AttestTagType
+## AttestTagType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -182,6 +194,7 @@ await trustedAppService.createAttestKey(options)
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ATTEST_TAG_TYPE_INVALID | 0<<28 | 不合法标签类型。 |
@@ -194,7 +207,8 @@ await trustedAppService.createAttestKey(options)
  
   
 
-#### AttestKeyAlg
+## AttestKeyAlg
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -208,6 +222,7 @@ await trustedAppService.createAttestKey(options)
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ATTEST_ALG_ECC | 1 | ECC算法类型。 |
@@ -215,7 +230,8 @@ await trustedAppService.createAttestKey(options)
  
   
 
-#### AttestKeySize
+## AttestKeySize
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -229,6 +245,7 @@ await trustedAppService.createAttestKey(options)
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ATTEST_ECC_KEY_SIZE_256 | 256 | 证明密钥长度，256位。 |
@@ -237,7 +254,8 @@ await trustedAppService.createAttestKey(options)
  
   
 
-#### destroyAttestKey
+## destroyAttestKey
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -257,6 +275,7 @@ destroyAttestKey(): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-taas) **。**
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | The app profile does not have the required permission. Please refer to the "Enabling Device Security Service" section in the Device Security Kit development guide. |
@@ -267,6 +286,7 @@ destroyAttestKey(): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -293,7 +313,8 @@ await trustedAppService.destroyAttestKey().then(
  
   
 
-#### initializeAttestContext
+## initializeAttestContext
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -311,6 +332,7 @@ initializeAttestContext(userData: string, options: AttestOptions): Promise&lt;At
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | userData | string | 是 | 打开证明会话的参数，传入的用户数据，长度在16到127字节之间。 |
@@ -319,15 +341,17 @@ initializeAttestContext(userData: string, options: AttestOptions): Promise&lt;At
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;AttestReturnResult&gt; | 生成的匿名证书链。 |
+| Promise&lt;AttestReturnResult&gt; | Promise对象，返回生成的匿名证书链。 |
  
  
 **错误码：**
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-taas) **。**
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | The app profile does not have the required permission. Please refer to the "Enabling Device Security Service" section in the Device Security Kit development guide. |
@@ -342,9 +366,42 @@ initializeAttestContext(userData: string, options: AttestOptions): Promise&lt;At
 | 1011500011 | initialize secure camera failed. |
  
  
+**示例：**
+ 
+```text
+import { trustedAppService } from '@kit.DeviceSecurityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+// 以安全地理位置场景为例
+const deviceId = 0;
+const initProperties: Array<trustedAppService.AttestParam> = [
+  {
+    tag: trustedAppService.AttestTag.ATTEST_TAG_DEVICE_TYPE,
+    value: trustedAppService.AttestType.ATTEST_TYPE_LOCATION
+  },
+  {
+    tag: trustedAppService.AttestTag.ATTEST_TAG_DEVICE_ID,
+    value: BigInt(deviceId) // 此参数在安全地理位置场景下不生效
+  }
+];
+const initOptions: trustedAppService.AttestOptions = {
+  properties: initProperties
+};
+let userData = 'trusted_app_service_default_userdata'; // 示例值，实际值请自行生成，长度在16到127 Bytes之间
+// 初始化话证明会话
+try {
+  const certChainResult = await trustedAppService.initializeAttestContext(userData, initOptions);
+} catch (err) {
+  const error = err as BusinessError;
+  console.error(`Failed to initialize attest context, code:${error.code}, message:${error.message}`);
+}
+```
+ 
   
 
-#### AttestType
+## AttestType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -356,6 +413,7 @@ initializeAttestContext(userData: string, options: AttestOptions): Promise&lt;At
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ATTEST_TYPE_LOCATION | 1 | 安全地理位置类型。 元服务API： 从版本5.0.2(14)开始，该接口支持在元服务中使用。 |
@@ -365,7 +423,8 @@ initializeAttestContext(userData: string, options: AttestOptions): Promise&lt;At
  
   
 
-#### AttestReturnResult
+## AttestReturnResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -379,6 +438,7 @@ initializeAttestContext(userData: string, options: AttestOptions): Promise&lt;At
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | certChains | Array&lt;string&gt; | 否 | 否 | 打开证明会话成功之后返回的匿名证书链 |
@@ -425,7 +485,8 @@ await trustedAppService.initializeAttestContext(user_data, options2).then(
  
   
 
-#### AttestExceptionErrCode
+## AttestExceptionErrCode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -437,6 +498,7 @@ await trustedAppService.initializeAttestContext(user_data, options2).then(
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ATTEST_ERROR_NO_PERMISSION | 201 | 权限校验失败。 元服务API： 从版本5.0.2(14)开始，该接口支持在元服务中使用。 |
@@ -463,7 +525,8 @@ await trustedAppService.initializeAttestContext(user_data, options2).then(
  
   
 
-#### finalizeAttestContext
+## finalizeAttestContext
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -481,6 +544,7 @@ finalizeAttestContext(options: AttestOptions): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | AttestOptions | 是 | 关闭证明会话的参数，需要指定设备类型。 |
@@ -488,6 +552,7 @@ finalizeAttestContext(options: AttestOptions): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -497,6 +562,7 @@ finalizeAttestContext(options: AttestOptions): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-taas) **。**
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | The app profile does not have the required permission. Please refer to the "Enabling Device Security Service" section in the Device Security Kit development guide. |
@@ -536,7 +602,8 @@ await trustedAppService.finalizeAttestContext(options).then(
  
   
 
-#### getCurrentSecureLocation
+## getCurrentSecureLocation
+
 
 **支持设备：** Phone | Tablet
 
@@ -556,6 +623,7 @@ getCurrentSecureLocation(timeout : number, priority: LocatingPriority): Promise&
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | timeout | number | 是 | 单次位置请求的超时时间，单位：毫秒（milliseconds），最小为1000毫秒。取值范围为大于等于1000。 |
@@ -564,15 +632,17 @@ getCurrentSecureLocation(timeout : number, priority: LocatingPriority): Promise&
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;SecureLocation&gt; | 获取的安全位置 |
+| Promise&lt;SecureLocation&gt; | Promise对象，返回获取的安全位置。 |
  
  
 **错误码：**
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-taas) **。**
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | has no permission. |
@@ -584,9 +654,29 @@ getCurrentSecureLocation(timeout : number, priority: LocatingPriority): Promise&
 | 1011500016 | Failed to obtain the secure geographical location. |
  
  
+**示例：**
+ 
+```text
+import { trustedAppService } from '@kit.DeviceSecurityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+// 以精度优先模式为例
+const timeout = 5000; // 获取安全地理位置的超时时间，单位为毫秒
+const priority = trustedAppService.LocatingPriority.PRIORITY_ACCURACY;
+let secureLocation: trustedAppService.SecureLocation;
+try {
+  secureLocation = await trustedAppService.getCurrentSecureLocation(timeout, priority);
+} catch (err) {
+  const error = err as BusinessError;
+  console.error(`Failed to get current secure location, code:${error.code},  message:${error.message}`);
+}
+```
+ 
   
 
-#### LocatingPriority
+## LocatingPriority
+
 
 **支持设备：** Phone | Tablet
 
@@ -600,6 +690,7 @@ getCurrentSecureLocation(timeout : number, priority: LocatingPriority): Promise&
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | PRIORITY_ACCURACY | 0 | 精度优先，保证获取最高精度。 |
@@ -608,7 +699,8 @@ getCurrentSecureLocation(timeout : number, priority: LocatingPriority): Promise&
  
   
 
-#### SecureLocation
+## SecureLocation
+
 
 **支持设备：** Phone | Tablet
 
@@ -622,6 +714,7 @@ getCurrentSecureLocation(timeout : number, priority: LocatingPriority): Promise&
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | originalLocation | Location | 否 | 否 | 地理位置信息。 |
@@ -631,7 +724,8 @@ getCurrentSecureLocation(timeout : number, priority: LocatingPriority): Promise&
  
   
 
-#### Location
+## Location
+
 
 **支持设备：** Phone | Tablet
 
@@ -645,6 +739,7 @@ getCurrentSecureLocation(timeout : number, priority: LocatingPriority): Promise&
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | latitude | number | 否 | 否 | 纬度，正值表示北纬，负值表示南纬。取值范围为-90到90。仅支持WGS84坐标系。 |
@@ -672,7 +767,8 @@ try {
  
   
 
-#### procSecImageTransform
+## procSecImageTransform
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -690,6 +786,7 @@ procSecImageTransform(srcSecImage: ArrayBuffer, procParams: SecImageProcParamsAr
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | srcSecImage | ArrayBuffer | 是 | 安全相机返回签名后的安全图像。 |
@@ -698,15 +795,17 @@ procSecImageTransform(srcSecImage: ArrayBuffer, procParams: SecImageProcParamsAr
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;SecImageBuffer&gt; | 返回压缩、裁剪处理后签名的安全图像 |
+| Promise&lt;SecImageBuffer&gt; | Promise对象，返回压缩、裁剪处理后签名的安全图像。 |
  
  
 **错误码：**
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-taas) **。**
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | The app profile does not have the required permission. Please refer to the "Enabling Device Security Service" section in the Device Security Kit development guide. |
@@ -718,156 +817,6 @@ procSecImageTransform(srcSecImage: ArrayBuffer, procParams: SecImageProcParamsAr
 | 1011500018 | secure image process failed. |
  
  
-  
-
-#### SecImageProcParamsArray
-
-**支持设备：** Phone | PC/2in1 | Tablet
-
-[procSecImageTransform](#procsecimagetransform)接口的请求参数。
- 
-**模型约束：** 此接口仅可在Stage模型下使用。
- 
-**系统能力：** SystemCapability.Security.TrustedAppService.Core
- 
-**起始版本：** 5.1.0(18)
-  
-| 名称 | 类型 | 只读 | 可选 | 说明 |
-| --- | --- | --- | --- | --- |
-| properties | Array&lt;SecImageProcParams&gt; | 否 | 否 | 开发者应用传入的用于安全图像压缩、裁剪处理的配置信息。 |
- 
- 
-  
-
-#### SecImageProcParams
-
-**支持设备：** Phone | PC/2in1 | Tablet
-
-[SecImageProcParamsArray](#secimageprocparamsarray)配置信息的内容条目。
- 
-**模型约束：** 此接口仅可在Stage模型下使用。
- 
-**系统能力：** SystemCapability.Security.TrustedAppService.Core
- 
-**起始版本：** 5.1.0(18)
-  
-| 名称 | 类型 | 只读 | 可选 | 说明 |
-| --- | --- | --- | --- | --- |
-| tag | SecImageProcTag | 否 | 否 | 开发者应用传入的标签，用于安全图像压缩、裁剪处理的配置信息。 |
-| value | number \| CropRegion | 否 | 否 | 开发者应用传入的标签对应的值，用于安全图像压缩、裁剪处理的配置信息。 number： 1）tag为SECIMAGE_TAG_SRC_IMAGE_FORMAT或者 SECIMAGE_TAG_DEST_IMAGE_FORMAT ，其值为SecImageProcParamsArray类型； 2）tag为SECIMAGE_TAG_PROC_OPERATION，其值为SecImageProcOperation类型； 3）tag为SECIMAGE_TAG_COMPRESSION_QUALITY，其值为1到100之间； CropRegion： tag为SECIMAGE_TAG_CROP_REGION，其值为CropRegion类型。 |
- 
- 
-  
-
-#### SecImageProcTag
-
-**支持设备：** Phone | PC/2in1 | Tablet
-
-安全图像压缩、裁剪处理的配置信息标签类型，使用[AttestTagType](#attesttagtype)扩展定义。
- 
-**模型约束：** 此接口仅可在Stage模型下使用。
- 
-**系统能力：** SystemCapability.Security.TrustedAppService.Core
- 
-**起始版本：** 5.1.0(18)
-  
-| 名称 | 值 | 说明 |
-| --- | --- | --- |
-| SECIMAGE_TAG_INVALID | AttestTagType.ATTEST_TAG_TYPE_INVALID\|0 | 不合法标签。 |
-| SECIMAGE_TAG_SRC_IMAGE_FORMAT | AttestTagType.ATTEST_TAG_TYPE_UINT\|1 | 原始安全图像的格式。 |
-| SECIMAGE_TAG_DEST_IMAGE_FORMAT | AttestTagType.ATTEST_TAG_TYPE_UINT\|2 | 压缩、裁剪处理后的安全图像的格式。 |
-| SECIMAGE_TAG_PROC_OPERATION | AttestTagType.ATTEST_TAG_TYPE_UINT\|3 | 安全图像的处理命令，支持：压缩命令、裁剪命令、压缩并裁剪命令。 |
-| SECIMAGE_TAG_COMPRESSION_QUALITY | AttestTagType.ATTEST_TAG_TYPE_UINT\|4 | 安全图像压缩处理的压缩质量。 |
-| SECIMAGE_TAG_CROP_REGION | AttestTagType.ATTEST_TAG_TYPE_UINT\|5 | 安全图像裁剪处理的裁剪区域。 |
- 
- 
-  
-
-#### SecImageProcOperation
-
-**支持设备：** Phone | PC/2in1 | Tablet
-
-安全图像的处理命令。
- 
-**模型约束：** 此接口仅可在Stage模型下使用。
- 
-**系统能力：** SystemCapability.Security.TrustedAppService.Core
- 
-**起始版本：** 5.1.0(18)
-  
-| 名称 | 值 | 说明 |
-| --- | --- | --- |
-| SECIMAGE_COMPRESSION | 0 | 安全图像压缩命令。 |
-| SECIMAGE_CROPPING | 1 | 安全图像裁剪命令。 |
-| SECIMAGE_COMPRESSION_AND_CROPPING | 2 | 安全图像压缩并裁剪命令。 |
- 
- 
-  
-
-#### SecImageProcFormat
-
-**支持设备：** Phone | PC/2in1 | Tablet
-
-安全图像的格式。
- 
-**模型约束：** 此接口仅可在Stage模型下使用。
- 
-**系统能力：** SystemCapability.Security.TrustedAppService.Core
- 
-**起始版本：** 5.1.0(18)
-  
-| 名称 | 值 | 说明 |
-| --- | --- | --- |
-| SECIMAGE_FORMAT_INVALID | 0 | 无效的安全图像格式。 |
-| SECIMAGE_FORMAT_YUV_NV21 | 1 | YUV420 NV21格式的安全图像。输入原始安全图像格式，以及裁剪命令返回的安全图像格式均为SECIMAGE_FORMAT_YUV_NV21。 |
-| SECIMAGE_FORMAT_JPEG | 2 | JPEG格式的安全图像。压缩命令、压缩并裁剪命令返回的安全图像格式均为SECIMAGE_FORMAT_JPEG。 |
- 
- 
-  
-
-#### CropRegion
-
-**支持设备：** Phone | PC/2in1 | Tablet
-
-安全图像裁剪处理的裁剪区域。裁剪区域参数作用如下图所示。
- 
-**模型约束：** 此接口仅可在Stage模型下使用。
- 
-**系统能力：** SystemCapability.Security.TrustedAppService.Core
- 
-**起始版本：** 5.1.0(18)
-  
-| 名称 | 类型 | 只读 | 可选 | 说明 |
-| --- | --- | --- | --- | --- |
-| x | number | 否 | 否 | 裁剪区域左上角点在水平方向（横向）上相对于整个图像左边界的偏移量，取值范围在 0 到 640 之间的偶数。单位：像素（pixel）。 |
-| y | number | 否 | 否 | 裁剪区域左上角点在垂直方向（纵向）上相对于整个图像上边界的偏移量，取值范围在 0 到 480 之间的偶数。单位：像素（pixel）。 |
-| width | number | 否 | 否 | 裁剪区域的宽度，即横向的长度，取值范围在 0 到 640 之间的偶数，且需满足 x 与 width 的和不大于 640。单位：像素（pixel）。 |
-| height | number | 否 | 否 | 裁剪区域的高度，即纵向的长度，取值范围在 0 到 480 之间的偶数，且需满足 y 与 height 的和不大于 480。单位：像素（pixel）。 |
- 
- 
-
-![](assets/TrustedAppService（可信应用服务）/file-20260514164517295-0.jpg)
-
- 
-  
-
-#### SecImageBuffer
-
-**支持设备：** Phone | PC/2in1 | Tablet
-
-获得压缩、裁剪处理后签名的安全图像。
- 
-**模型约束：** 此接口仅可在Stage模型下使用。
- 
-**系统能力：** SystemCapability.Security.TrustedAppService.Core
- 
-**起始版本：** 5.1.0(18)
-  
-| 名称 | 类型 | 只读 | 可选 | 说明 |
-| --- | --- | --- | --- | --- |
-| secImage | ArrayBuffer | 否 | 否 | 返回压缩、裁剪处理后签名的安全图像。 |
- 
- 
 **安全图像压缩示例：**
  
 ```text
@@ -875,7 +824,7 @@ import { trustedAppService } from '@kit.DeviceSecurityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 
-const srcSecImageBuffer = new  ArrayBuffer(461844);// 实际使用请替换为Camera Kit获取到的安全图像buffer
+const srcSecImageBuffer = new ArrayBuffer(461844);// 实际使用请替换为Camera Kit获取到的安全图像buffer
 
 let properties: Array<trustedAppService.SecImageProcParams> = [
   {
@@ -917,7 +866,7 @@ import { trustedAppService } from '@kit.DeviceSecurityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 
-const srcSecImageBuffer = new  ArrayBuffer(461844);// 实际使用请替换为Camera Kit获取到的安全图像buffer
+const srcSecImageBuffer = new ArrayBuffer(461844);// 实际使用请替换为Camera Kit获取到的安全图像buffer
 
 let properties: Array<trustedAppService.SecImageProcParams> = [
   {
@@ -930,11 +879,11 @@ let properties: Array<trustedAppService.SecImageProcParams> = [
   },
   {
     tag: trustedAppService.SecImageProcTag.SECIMAGE_TAG_DEST_IMAGE_FORMAT,
-    value: trustedAppService.SecImageProcFormat.SECIMAGE_FORMAT_YUV_NV21, // 安全图像压缩命令返回的图像格式为：JPEG 格式
+    value: trustedAppService.SecImageProcFormat.SECIMAGE_FORMAT_YUV_NV21, // 安全图像裁剪命令返回的图像格式为：YUV420 NV21 格式
   },
   {
     tag: trustedAppService.SecImageProcTag.SECIMAGE_TAG_CROP_REGION,
-    value: { x : 0, y ：0, width : 320, height : 240 }, // 实际使用请替换为业务场景需要的裁剪区域范围
+    value: { x : 0, y : 0, width : 320, height : 240 }, // 实际使用请替换为业务场景需要的裁剪区域范围
   },
 ];
 let procParams: trustedAppService.SecImageProcParamsArray = {
@@ -959,7 +908,7 @@ import { trustedAppService } from '@kit.DeviceSecurityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 
-const srcSecImageBuffer = new  ArrayBuffer(461844);// 实际使用请替换为Camera Kit获取到的安全图像buffer
+const srcSecImageBuffer = new ArrayBuffer(461844);// 实际使用请替换为Camera Kit获取到的安全图像buffer
 
 let properties: Array<trustedAppService.SecImageProcParams> = [
   {
@@ -968,11 +917,11 @@ let properties: Array<trustedAppService.SecImageProcParams> = [
   },
   {
     tag: trustedAppService.SecImageProcTag.SECIMAGE_TAG_SRC_IMAGE_FORMAT,
-    value: trustedAppService.SecImageProcFormat.SECIMAGE_FORMAT_YUV_NV21,
+    value: trustedAppService.SecImageProcFormat.SECIMAGE_FORMAT_YUV_NV21, // 安全图像压缩、裁剪命令输入的原始图像格式都为：YUV420 NV21 格式
   },
   {
     tag: trustedAppService.SecImageProcTag.SECIMAGE_TAG_DEST_IMAGE_FORMAT,
-    value: trustedAppService.SecImageProcFormat.SECIMAGE_FORMAT_JPEG,
+    value: trustedAppService.SecImageProcFormat.SECIMAGE_FORMAT_JPEG, // 安全图像压缩并裁剪命令返回的图像格式为：JPEG 格式
   },
   {
     tag: trustedAppService.SecImageProcTag.SECIMAGE_TAG_COMPRESSION_QUALITY,
@@ -980,27 +929,192 @@ let properties: Array<trustedAppService.SecImageProcParams> = [
   },
   {
     tag: trustedAppService.SecImageProcTag.SECIMAGE_TAG_CROP_REGION,
-    value: { x : 0, y ：0, width : 320, height : 240 }, // 实际使用请替换为业务场景需要的裁剪区域范围
+    value: { x : 0, y : 0, width : 320, height : 240 }, // 实际使用请替换为业务场景需要的裁剪区域范围
   },
 ];
 let procParams: trustedAppService.SecImageProcParamsArray = {
   properties: properties,
 };
-await trustedAppService.procSecImageTransform(srcSecImageBuffer, options).then(
+await trustedAppService.procSecImageTransform(srcSecImageBuffer, procParams).then(
   (returnResult: trustedAppService.SecImageBuffer): void => {
     let returnSecImageBuffer = returnResult.secImage;
   }
 ).catch(
   (error: BusinessError): void => {
     let err = error as BusinessError;
-    hilog.error(0x0000, 'testTag', `Failed to process secureImage cropping, code:${err.code}, message:${err.message}`);
+    hilog.error(0x0000, 'testTag', `Failed to process secureImage compression and cropping, code:${err.code}, message:${err.message}`);
   }
 );
 ```
  
   
 
-#### ImageAuthData
+## SecImageProcParamsArray
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
+
+[procSecImageTransform](#procsecimagetransform)接口的请求参数。
+ 
+**模型约束：** 此接口仅可在Stage模型下使用。
+ 
+**系统能力：** SystemCapability.Security.TrustedAppService.Core
+ 
+**起始版本：** 5.1.0(18)
+  
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| properties | Array&lt;SecImageProcParams&gt; | 否 | 否 | 开发者应用传入的用于安全图像压缩、裁剪处理的配置信息。 |
+ 
+ 
+  
+
+## SecImageProcParams
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
+
+[SecImageProcParamsArray](#secimageprocparamsarray)配置信息的内容条目。
+ 
+**模型约束：** 此接口仅可在Stage模型下使用。
+ 
+**系统能力：** SystemCapability.Security.TrustedAppService.Core
+ 
+**起始版本：** 5.1.0(18)
+  
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| tag | SecImageProcTag | 否 | 否 | 应用传入的标签，用于安全图像压缩、裁剪处理的配置信息。 |
+| value | number \| CropRegion | 否 | 否 | 应用传入的标签对应的值，用于安全图像压缩、裁剪处理的配置信息。 number： 1）tag为SECIMAGE_TAG_SRC_IMAGE_FORMAT或者 SECIMAGE_TAG_DEST_IMAGE_FORMAT ，其值为SecImageProcParamsArray类型； 2）tag为SECIMAGE_TAG_PROC_OPERATION，其值为SecImageProcOperation类型； 3）tag为SECIMAGE_TAG_COMPRESSION_QUALITY，其值为1到100之间； CropRegion： tag为SECIMAGE_TAG_CROP_REGION，其值为CropRegion类型。 |
+ 
+ 
+  
+
+## SecImageProcTag
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
+
+安全图像压缩、裁剪处理的配置信息标签类型，使用[AttestTagType](#attesttagtype)扩展定义。
+ 
+**模型约束：** 此接口仅可在Stage模型下使用。
+ 
+**系统能力：** SystemCapability.Security.TrustedAppService.Core
+ 
+**起始版本：** 5.1.0(18)
+  
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| SECIMAGE_TAG_INVALID | AttestTagType.ATTEST_TAG_TYPE_INVALID \| 0 | 不合法标签。 |
+| SECIMAGE_TAG_SRC_IMAGE_FORMAT | AttestTagType.ATTEST_TAG_TYPE_UINT \| 1 | 原始安全图像的格式。 |
+| SECIMAGE_TAG_DEST_IMAGE_FORMAT | AttestTagType.ATTEST_TAG_TYPE_UINT \| 2 | 压缩、裁剪处理后的安全图像的格式。 |
+| SECIMAGE_TAG_PROC_OPERATION | AttestTagType.ATTEST_TAG_TYPE_UINT \| 3 | 安全图像的处理命令，支持压缩命令、裁剪命令、压缩并裁剪命令。 |
+| SECIMAGE_TAG_COMPRESSION_QUALITY | AttestTagType.ATTEST_TAG_TYPE_UINT \| 4 | 安全图像压缩处理的压缩质量。 |
+| SECIMAGE_TAG_CROP_REGION | AttestTagType.ATTEST_TAG_TYPE_UINT \| 5 | 安全图像裁剪处理的裁剪区域。 |
+ 
+ 
+  
+
+## SecImageProcOperation
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
+
+安全图像的处理命令。
+ 
+**模型约束：** 此接口仅可在Stage模型下使用。
+ 
+**系统能力：** SystemCapability.Security.TrustedAppService.Core
+ 
+**起始版本：** 5.1.0(18)
+  
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| SECIMAGE_COMPRESSION | 0 | 安全图像压缩命令。 |
+| SECIMAGE_CROPPING | 1 | 安全图像裁剪命令。 |
+| SECIMAGE_COMPRESSION_AND_CROPPING | 2 | 安全图像压缩并裁剪命令。 |
+ 
+ 
+  
+
+## SecImageProcFormat
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
+
+安全图像的格式。
+ 
+**模型约束：** 此接口仅可在Stage模型下使用。
+ 
+**系统能力：** SystemCapability.Security.TrustedAppService.Core
+ 
+**起始版本：** 5.1.0(18)
+  
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| SECIMAGE_FORMAT_INVALID | 0 | 无效的安全图像格式。 |
+| SECIMAGE_FORMAT_YUV_NV21 | 1 | YUV420 NV21格式的安全图像。输入原始安全图像格式，以及裁剪命令返回的安全图像格式均为SECIMAGE_FORMAT_YUV_NV21。 |
+| SECIMAGE_FORMAT_JPEG | 2 | JPEG格式的安全图像。压缩命令、压缩并裁剪命令返回的安全图像格式均为SECIMAGE_FORMAT_JPEG。 |
+ 
+ 
+  
+
+## CropRegion
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
+
+安全图像裁剪处理的裁剪区域。裁剪区域参数作用如下图所示。
+ 
+**模型约束：** 此接口仅可在Stage模型下使用。
+ 
+**系统能力：** SystemCapability.Security.TrustedAppService.Core
+ 
+**起始版本：** 5.1.0(18)
+  
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| x | number | 否 | 否 | 裁剪区域左上角点在水平方向（横向）上相对于整个图像左边界的偏移量，取值范围在 0 到 640 之间的偶数。单位：像素（pixel）。 |
+| y | number | 否 | 否 | 裁剪区域左上角点在垂直方向（纵向）上相对于整个图像上边界的偏移量，取值范围在 0 到 480 之间的偶数。单位：像素（pixel）。 |
+| width | number | 否 | 否 | 裁剪区域的宽度，即横向的长度，取值范围在 0 到 640 之间的偶数，且需满足 x 与 width 的和不大于 640。单位：像素（pixel）。 |
+| height | number | 否 | 否 | 裁剪区域的高度，即纵向的长度，取值范围在 0 到 480 之间的偶数，且需满足 y 与 height 的和不大于 480。单位：像素（pixel）。 |
+ 
+ 
+
+![](assets/TrustedAppService（可信应用服务）/file-20260514164517295-0.jpg)
+
+ 
+  
+
+## SecImageBuffer
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
+
+获得压缩、裁剪处理后签名的安全图像。
+ 
+**模型约束：** 此接口仅可在Stage模型下使用。
+ 
+**系统能力：** SystemCapability.Security.TrustedAppService.Core
+ 
+**起始版本：** 5.1.0(18)
+  
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| secImage | ArrayBuffer | 否 | 否 | 返回压缩、裁剪处理后签名的安全图像。 |
+ 
+ 
+  
+
+## ImageAuthData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1012,6 +1126,7 @@ await trustedAppService.procSecImageTransform(srcSecImageBuffer, options).then(
  
 **起始版本：** 26.0.0
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | buffer | Uint8Array | 否 | 否 | 图片数据数组或图片URL。 |
@@ -1022,7 +1137,8 @@ await trustedAppService.procSecImageTransform(srcSecImageBuffer, options).then(
  
   
 
-#### ImageBufferFormat
+## ImageBufferFormat
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1034,6 +1150,7 @@ await trustedAppService.procSecImageTransform(srcSecImageBuffer, options).then(
  
 **起始版本：** 26.0.0
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | IMAGE_DATA_TYPE_DATAFLOW | 0 | 图片类型为数据流。 |
@@ -1042,7 +1159,8 @@ await trustedAppService.procSecImageTransform(srcSecImageBuffer, options).then(
  
   
 
-#### BufferType
+## BufferType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1054,6 +1172,7 @@ await trustedAppService.procSecImageTransform(srcSecImageBuffer, options).then(
  
 **起始版本：** 26.0.0
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | BUFFER_TYPE_DATA | 0 | 数组形式图片。 |
@@ -1062,7 +1181,8 @@ await trustedAppService.procSecImageTransform(srcSecImageBuffer, options).then(
  
   
 
-#### ImageFormat
+## ImageFormat
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1074,6 +1194,7 @@ await trustedAppService.procSecImageTransform(srcSecImageBuffer, options).then(
  
 **起始版本：** 26.0.0
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | IMAGE_TYPE_JPEG | 0 | 图片格式：JPEG。 |
@@ -1083,7 +1204,8 @@ await trustedAppService.procSecImageTransform(srcSecImageBuffer, options).then(
  
   
 
-#### ContentTrustCredentialsErrorCode
+## ContentTrustCredentialsErrorCode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1095,6 +1217,7 @@ await trustedAppService.procSecImageTransform(srcSecImageBuffer, options).then(
  
 **起始版本：** 26.0.0
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CONTENT_TRUST_CREDENTIAL_ERROR_BAD_IMAGE_TYPE | 1027200001 | 错误的图片类型。 |
@@ -1115,7 +1238,8 @@ await trustedAppService.procSecImageTransform(srcSecImageBuffer, options).then(
  
   
 
-#### hasImageSignature
+## hasImageSignature
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1131,6 +1255,7 @@ hasImageSignature(data: ImageAuthData): Promise&lt;boolean&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | ImageAuthData | 是 | 图片数据结构体。 |
@@ -1138,6 +1263,7 @@ hasImageSignature(data: ImageAuthData): Promise&lt;boolean&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象，返回true表示存在证真签名，返回false表示不存在证真签名。 |
@@ -1147,6 +1273,7 @@ hasImageSignature(data: ImageAuthData): Promise&lt;boolean&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[可信服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-taas)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | invalid params type. |
@@ -1161,19 +1288,19 @@ hasImageSignature(data: ImageAuthData): Promise&lt;boolean&gt;
 **示例：**
  
 ```text
-import { contentTrustVerify } from '@kit.DeviceSecurityKit';
+import { mediaAuthVerify } from '@kit.DeviceSecurityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 
 const imageBuffer = new Uint8Array([0xFF, 0xD8, 0xFF, 0xE0, 0x00, 0x10, 0x4A, 0x46, 0x49, 0x46, 0x00, 0x01, 0x01, 0x01, 0x00, 0x60, 0x00, 0x60, 0x00, 0x00, 0xFF, 0xDB, 0x00, 0x43, 0x00, 0x08, 0x06, 0x06, 0x07, 0x06, 0x05, 0x08, 0x07, 0x07, 0x07, 0x09, 0x09, 0x08, 0x0A, 0x0C, 0x14, 0x0D, 0x0C, 0x0B, 0x0B, 0x0C, 0x19, 0x12, 0x13, 0x0F, 0x14, 0x1D, 0x1A, 0x1F, 0x1E, 0x1D, 0x1A, 0x1C, 0x1C, 0x20, 0x24, 0x2E, 0x27, 0x20, 0x22, 0x2C, 0x23, 0x1C, 0x1C, 0x28, 0x37, 0x29, 0x2C, 0x30, 0x31, 0x34, 0x34, 0x34, 0x1F, 0x27, 0x39, 0x3D, 0x38, 0x32, 0x3C, 0x2E, 0x33, 0x34, 0x32, 0xFF, 0xC0, 0x00, 0x0B, 0x08, 0x00, 0x01, 0x00, 0x01, 0x01, 0x01, 0x11, 0x00, 0xFF, 0xC4, 0x00, 0x14, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xFF, 0xC4, 0x00, 0x14, 0x10, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xFF, 0xDA, 0x00, 0x08, 0x01, 0x01, 0x00, 0x00, 0x3F, 0x00, 0x37, 0xFF, 0xD9]); // 数据均为示例值，仅用于展示如何检查是否有签名，实际请使用经过相机签名后的图片。
-const data:contentTrustVerify.ImageAuthData = {
+const data:mediaAuthVerify.ImageAuthData = {
   buffer: imageBuffer,
   imageSize: imageBuffer.length,
-  bufferType: contentTrustVerify.BufferType.BUFFER_TYPE_DATA,
-  imageFormat: contentTrustVerify.ImageFormat.IMAGE_TYPE_JPEG,
+  bufferType: mediaAuthVerify.BufferType.BUFFER_TYPE_DATA,
+  imageFormat: mediaAuthVerify.ImageFormat.IMAGE_TYPE_JPEG,
 };
 try {
-  const result = await contentTrustVerify.hasImageSignature(data);
+  const result = await mediaAuthVerify.hasImageSignature(data);
 } catch (error) {
   let err = error as BusinessError;
   hilog.error(0x0000, 'testTag', `Failed to check image signature, code:${err.code}, message:${err.message}`);
@@ -1182,7 +1309,8 @@ try {
  
   
 
-#### verifyImageSignature
+## verifyImageSignature
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1198,6 +1326,7 @@ verifyImageSignature(data: ImageAuthData): Promise&lt;Uint8Array&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | ImageAuthData | 是 | 图片数据。 |
@@ -1205,6 +1334,7 @@ verifyImageSignature(data: ImageAuthData): Promise&lt;Uint8Array&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Uint8Array&gt; | Promise对象，返回验证签名后manifest数据对象。 |
@@ -1214,6 +1344,7 @@ verifyImageSignature(data: ImageAuthData): Promise&lt;Uint8Array&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[可信服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-taas)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | invalid params type. |
@@ -1232,19 +1363,19 @@ verifyImageSignature(data: ImageAuthData): Promise&lt;Uint8Array&gt;
 **示例：**
  
 ```text
-import { contentTrustVerify } from '@kit.DeviceSecurityKit';
+import { mediaAuthVerify } from '@kit.DeviceSecurityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 
 const imageBuffer = new Uint8Array([0xFF, 0xD8, 0xFF, 0xE0, 0x00, 0x10, 0x4A, 0x46, 0x49, 0x46, 0x00, 0x01, 0x01, 0x01, 0x00, 0x60, 0x00, 0x60, 0x00, 0x00, 0xFF, 0xDB, 0x00, 0x43, 0x00, 0x08, 0x06, 0x06, 0x07, 0x06, 0x05, 0x08, 0x07, 0x07, 0x07, 0x09, 0x09, 0x08, 0x0A, 0x0C, 0x14, 0x0D, 0x0C, 0x0B, 0x0B, 0x0C, 0x19, 0x12, 0x13, 0x0F, 0x14, 0x1D, 0x1A, 0x1F, 0x1E, 0x1D, 0x1A, 0x1C, 0x1C, 0x20, 0x24, 0x2E, 0x27, 0x20, 0x22, 0x2C, 0x23, 0x1C, 0x1C, 0x28, 0x37, 0x29, 0x2C, 0x30, 0x31, 0x34, 0x34, 0x34, 0x1F, 0x27, 0x39, 0x3D, 0x38, 0x32, 0x3C, 0x2E, 0x33, 0x34, 0x32, 0xFF, 0xC0, 0x00, 0x0B, 0x08, 0x00, 0x01, 0x00, 0x01, 0x01, 0x01, 0x11, 0x00, 0xFF, 0xC4, 0x00, 0x14, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xFF, 0xC4, 0x00, 0x14, 0x10, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xFF, 0xDA, 0x00, 0x08, 0x01, 0x01, 0x00, 0x00, 0x3F, 0x00, 0x37, 0xFF, 0xD9]); // 数据均为示例值，仅用于展示如何检查是否有签名，实际请使用经过相机签名后的图片。
-const data:contentTrustVerify.ImageAuthData = {
+const data:mediaAuthVerify.ImageAuthData = {
   buffer: imageBuffer,
   imageSize: imageBuffer.length,
-  bufferType: contentTrustVerify.BufferType.BUFFER_TYPE_DATA,
-  imageFormat: contentTrustVerify.ImageFormat.IMAGE_TYPE_JPEG,
+  bufferType: mediaAuthVerify.BufferType.BUFFER_TYPE_DATA,
+  imageFormat: mediaAuthVerify.ImageFormat.IMAGE_TYPE_JPEG,
 };
 try {
-  const result = await contentTrustVerify.verifyImageSignature(data);
+  const result = await mediaAuthVerify.verifyImageSignature(data);
 } catch (error) {
   let err = error as BusinessError;
   hilog.error(0x0000, 'testTag', `Failed to verify image signature, code:${err.code}, message:${err.message}`);
@@ -1253,7 +1384,8 @@ try {
  
   
 
-#### parseImageMetadata
+## parseImageMetadata
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1269,6 +1401,7 @@ parseImageMetadata(manifests: Uint8Array): Promise&lt;string&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | manifests | Uint8Array | 是 | 图片验证签名后manifest信息。 |
@@ -1276,6 +1409,7 @@ parseImageMetadata(manifests: Uint8Array): Promise&lt;string&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回验证签名后manifest的json格式字符串。 |
@@ -1285,6 +1419,7 @@ parseImageMetadata(manifests: Uint8Array): Promise&lt;string&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[可信服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-taas)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The input argument is invalid. |
@@ -1296,7 +1431,7 @@ parseImageMetadata(manifests: Uint8Array): Promise&lt;string&gt;
 **示例：**
  
 ```text
-import { contentTrustVerify } from '@kit.DeviceSecurityKit';
+import { mediaAuthVerify } from '@kit.DeviceSecurityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { util } from '@kit.ArkTS';
@@ -1304,15 +1439,15 @@ import { util } from '@kit.ArkTS';
 const file = "/data/local/testpic/pics/jpgpic.jpg";// 此路径为示例值，仅用于展示如何传递URL内容，实际请使用正确图片URL。
 let encoder = new util.TextEncoder();
 let imageBuffer = encoder.encodeInto(file);
-const data:contentTrustVerify.ImageAuthData = {
+const data:mediaAuthVerify.ImageAuthData = {
   buffer: imageBuffer,
   imageSize: imageBuffer.length,
-  bufferType: contentTrustVerify.BufferType.BUFFER_TYPE_DATA,
-  imageFormat: contentTrustVerify.ImageFormat.IMAGE_TYPE_JPEG,
+  bufferType: mediaAuthVerify.BufferType.BUFFER_TYPE_DATA,
+  imageFormat: mediaAuthVerify.ImageFormat.IMAGE_TYPE_JPEG,
 };
 try {
-  let manifest = await contentTrustVerify.verifyImageSignature(data);
-  let stringResult = await contentTrustVerify.parseImageMetadata(manifest);
+  let manifest = await mediaAuthVerify.verifyImageSignature(data);
+  let stringResult = await mediaAuthVerify.parseImageMetadata(manifest);
 } catch (error) {
   let err = error as BusinessError;
   hilog.error(0x0000, 'testTag', `Failed to verify image signature, code:${err.code}, message:${err.message}`);

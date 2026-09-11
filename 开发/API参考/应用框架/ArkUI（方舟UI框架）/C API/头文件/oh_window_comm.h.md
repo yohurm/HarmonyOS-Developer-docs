@@ -1,13 +1,14 @@
 # oh_window_comm.h
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-window-comm-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供窗口的公共枚举、公共定义等。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | WindowManager_Rect | WindowManager_Rect | 定义窗口矩形结构体，包含窗口位置和宽高信息。 |
@@ -47,10 +51,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | WindowManager_ErrorCode | WindowManager_ErrorCode | 窗口管理接口返回状态码枚举。 |
@@ -60,10 +66,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | typedef void (*OH_WindowManager_FrameMetricsMeasuredCallback)(int32_t windowId, const OH_WindowManager_FrameMetrics* metrics) | OH_WindowManager_FrameMetricsMeasuredCallback | 帧率指标回调类型。 |
@@ -72,15 +80,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### WindowManager_ErrorCode
+### WindowManager_ErrorCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum WindowManager_ErrorCode
@@ -92,6 +102,7 @@ enum WindowManager_ErrorCode
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OK = 0 | 成功。 |
@@ -99,6 +110,7 @@ enum WindowManager_ErrorCode
 | WINDOW_MANAGER_ERRORCODE_INVALID_PARAM = 401 | 非法参数。 起始版本： 15 |
 | WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED = 801 | 设备不支持。 起始版本： 15 |
 | INVAILD_WINDOW_ID = 1000 | 非法窗口ID。 |
+| INVALID_WINDOW_ID = INVAILD_WINDOW_ID | 非法窗口ID。 起始版本： 26.0.0 |
 | SERVICE_ERROR = 2000 | 服务异常。 |
 | WINDOW_MANAGER_ERRORCODE_STATE_ABNORMAL = 1300002 | 窗口状态异常。 起始版本： 15 |
 | WINDOW_MANAGER_ERRORCODE_SYSTEM_ABNORMAL = 1300003 | 窗口管理器服务异常。 起始版本： 15 |
@@ -112,9 +124,10 @@ enum WindowManager_ErrorCode
  
   
 
-#### WindowManager_AvoidAreaType
+### WindowManager_AvoidAreaType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum WindowManager_AvoidAreaType
@@ -126,6 +139,7 @@ enum WindowManager_AvoidAreaType
  
 **起始版本：** 15
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | WINDOW_MANAGER_AVOID_AREA_TYPE_SYSTEM = 0 | 系统避让区域。 |
@@ -137,9 +151,10 @@ enum WindowManager_AvoidAreaType
  
   
 
-#### WindowManager_WindowType
+### WindowManager_WindowType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum WindowManager_WindowType
@@ -151,6 +166,7 @@ enum WindowManager_WindowType
  
 **起始版本：** 15
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | WINDOW_MANAGER_WINDOW_TYPE_APP = 0 | 子窗口。 |
@@ -161,15 +177,17 @@ enum WindowManager_WindowType
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_WindowManager_FrameMetricsMeasuredCallback()
+### OH_WindowManager_FrameMetricsMeasuredCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_WindowManager_FrameMetricsMeasuredCallback)(
@@ -184,9 +202,10 @@ typedef void (*OH_WindowManager_FrameMetricsMeasuredCallback)(
  
   
 
-#### OH_WindowManager_DensityInfoCallback()
+### OH_WindowManager_DensityInfoCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_WindowManager_DensityInfoCallback)(int32_t windowId, const OH_WindowManager_DensityInfo* info)

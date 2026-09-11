@@ -1,6 +1,6 @@
 # Scan Kit简介
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-introduction
 
@@ -11,7 +11,7 @@ Scan Kit应用了多项计算机视觉技术和AI算法技术，不仅实现了�
 为了方便开发者接入，我们提供了详细的样例工程供参考，推荐参考[示例工程](https://gitcode.com/HarmonyOS_Samples/scankit-samplecode-clientdemo-arkts)接入。
 
 
-#### 场景介绍
+## 场景介绍
 
 Scan Kit提供了系统“扫码直达”、开发者应用内扫码等多种能力。优先接入“扫码直达”能力，通过少量的接入工作即可实现开发者应用服务的一步直达。
 
@@ -28,21 +28,22 @@ Scan Kit提供了系统“扫码直达”、开发者应用内扫码等多种能
 
 
 
-#### 约束与限制
+## 约束与限制
 
 
 
-#### 支持的设备
+### 支持的设备
 
  - 扫码直达能力仅支持Phone、Tablet。
  - 默认界面扫码能力和自定义界面扫码能力仅支持Phone、Tablet、Wearable（从API版本6.1.0(23)开始支持带后置相机的Wearable，可以通过[getSupportedCameras](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-cameramanager#getsupportedcameras)接口查询是否带后置相机）。
  - 图像识码能力仅支持Phone、Tablet、Wearable（从API版本6.1.0(23)开始支持Wearable）。
- - 码图生成能力支持Phone、Tablet、Wearable、PC/2in1、TV（从API版本5.1.0(18)开始支持Wearable、从API版本5.1.1(19)开始支持PC/2in1、TV）。
+ - 码图生成能力支持Phone、Tablet、Wearable、PC/2in1、TV（从API版本5.1.0(18)开始支持Wearable，从API版本5.1.1(19)开始支持PC/2in1、TV）。
 
 
 
 
-#### 功能使用限制
+### 功能使用限制
+
 
 | 能力 | 限制条件 |
 | --- | --- |
@@ -54,7 +55,7 @@ Scan Kit提供了系统“扫码直达”、开发者应用内扫码等多种能
 
 
 
-#### 模拟器支持情况
+## 模拟器支持情况
 
 本Kit支持模拟器，但与真机存在部分能力差异，具体差异如下：
 
@@ -66,11 +67,11 @@ Scan Kit提供了系统“扫码直达”、开发者应用内扫码等多种能
 从API版本6.0.0(20)开始，模拟器支持部分自定义界面扫码接口开发（支持的接口包括[init](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/scan-customscan-api#init)、[start](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/scan-customscan-api#start)、[stop](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/scan-customscan-api#stop)、[release](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/scan-customscan-api#release)、[rescan](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/scan-customscan-api#rescan)），可实现自定义界面扫码能力的基本功能验证。
  - 模拟器自定义界面扫码能力仅支持1280*720分辨率，开发者传入其他分辨率会统一转换成1280*720。
 
-      - 模拟器不支持图像数据识别能力、码图生成能力。
+            - 模拟器不支持图像数据识别能力、码图生成能力。
 
 
 
 
-#### 示例代码
+## 示例代码
 
 Scan Kit提供的[示例工程](https://gitcode.com/HarmonyOS_Samples/scankit-samplecode-clientdemo-arkts)体现了Scan Kit的默认界面扫码、自定义界面扫码、图像识码、码图生成等特性，可参考该工程进行应用的相关内容开发。

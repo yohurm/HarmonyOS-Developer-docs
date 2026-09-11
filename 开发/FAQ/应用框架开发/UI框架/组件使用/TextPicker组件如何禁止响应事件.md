@@ -34,7 +34,7 @@ struct TextPickerExample1 {
         selected: this.select,
         value: this.fruits[this.select]
       })
-        // 核心代码：交互能力（false）
+    <em>    // 核心代码：交互能力（false）</em>
         .enabled(false)
         .margin({ bottom: 30 })
     }
@@ -65,28 +65,28 @@ struct TextPickerExample2 {
         value: this.fruits[this.select]
       })
         .margin({ bottom: 30 })
-          // 核心代码：判断是否为点击事件，使用长按做对比
+       <em>   // 核心代码：判断是否为点击事件，使用长按做对比</em>
         .gesture(
           LongPressGesture()
-            .tag('longPress1') // 设置长按手势标志
+            .tag('longPress1')<em> </em><em>// 设置长按手势标志</em>
             .onAction(() => {
               console.info('长按longPress');
             })
         )
         .gesture(
           TapGesture()
-            .tag('tap1') // 设置点击手势标志
+            .tag('tap1') <em>// 设置点击手势标志</em>
             .onAction(() => {
               console.info('点击tap1');
             })
         )
         .onGestureJudgeBegin((gestureInfo: GestureInfo, event: BaseGestureEvent) => {
           if (gestureInfo.type === GestureControl.GestureType.TAP_GESTURE) {
-            // 返回REJECT会使点击手势失败
+           <em> // 返回REJECT会使点击手势失败</em>
             console.info(`REJECT 点击已禁用  event: ${event}`);
             return GestureJudgeResult.REJECT;
           } else {
-            // 返回CONTINUE将保持系统判定。
+           <em> // 返回CONTINUE将保持系统判定。</em>
             console.info(`CONTINUE 保持系统判定`);
             return GestureJudgeResult.CONTINUE;
           }

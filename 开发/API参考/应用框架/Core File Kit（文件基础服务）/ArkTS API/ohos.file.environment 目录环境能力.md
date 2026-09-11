@@ -1,9 +1,9 @@
 # @ohos.file.environment (目录环境能力)
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-file-environment
-**支持设备：** PC/2in1 | Tablet
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该模块提供用户环境目录能力，用于获取用户的下载目录、桌面目录、文档目录的沙箱路径。上述三个方法分别适用于获取不同类型用户目录的场景，开发者可根据需要选择对应的目录类型。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** PC/2in1 | Tablet
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { Environment } from '@kit.CoreFileKit';
@@ -22,7 +23,8 @@ import { Environment } from '@kit.CoreFileKit';
 
 
 
-#### Environment.getUserDownloadDir
+## Environment.getUserDownloadDir
+
 
 **支持设备：** PC/2in1 | Tablet
 
@@ -46,6 +48,7 @@ getUserDownloadDir(): string
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 返回当前用户的下载目录的沙箱路径。 |
@@ -54,6 +57,7 @@ getUserDownloadDir(): string
 **错误码：**
 
 以下错误码的详细介绍请参见[基础文件IO错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement#基础文件io错误码)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -79,7 +83,8 @@ function getUserDownloadDirExample() {
 
 
 
-#### Environment.getUserDesktopDir
+## Environment.getUserDesktopDir
+
 
 **支持设备：** PC/2in1 | Tablet
 
@@ -103,6 +108,7 @@ getUserDesktopDir(): string
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 返回当前用户的桌面目录的沙箱路径。 |
@@ -111,6 +117,7 @@ getUserDesktopDir(): string
 **错误码：**
 
 以下错误码的详细介绍请参见[基础文件IO错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement#基础文件io错误码)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -136,7 +143,8 @@ function getUserDesktopDirExample() {
 
 
 
-#### Environment.getUserDocumentDir
+## Environment.getUserDocumentDir
+
 
 **支持设备：** PC/2in1 | Tablet
 
@@ -160,6 +168,7 @@ getUserDocumentDir(): string
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 返回当前用户的文档目录的沙箱路径。 |
@@ -168,6 +177,7 @@ getUserDocumentDir(): string
 **错误码：**
 
 以下错误码的详细介绍请参见[基础文件IO错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement#基础文件io错误码)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

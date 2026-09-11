@@ -1,6 +1,6 @@
 # @ohos.data.UdmfComponents (内容卡片)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-data-udmfcomponents
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -19,7 +19,8 @@
 
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -29,7 +30,8 @@ import { ContentFormCard, FormType } from '@kit.ArkData';
  
   
 
-#### 子组件
+## 子组件
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -37,7 +39,8 @@ import { ContentFormCard, FormType } from '@kit.ArkData';
  
   
 
-#### ContentFormCard
+## ContentFormCard
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -49,18 +52,20 @@ ContentFormCard({contentFormData: uniformDataStruct.ContentForm, formType: FormT
  
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
   
+
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | contentFormData | uniformDataStruct.ContentForm | 是 | - | 内容卡片数据，用于设置卡片展示的标题、描述、应用图标、应用名称、跳转链接或内容图片等信息。 |
 | formType | FormType | 是 | @Prop | 内容卡片类型，影响内容卡片的大小。 |
 | formWidth | number | 否 | @Prop | 卡片宽度，其范围在设置的内容卡片类型默认宽度的0.8 ~ 1.2倍之间，当formType为TYPE_SMALL时，其范围在设置的内容卡片类型默认宽度的0.4 ~ 1.2倍之间。单位为vp。省略时使用内容卡片类型的默认宽度。 |
-| formHeight | number | 否 | @Prop | 卡片高度，当contentFormData中的title为空字符串时，卡片高度为传入的值，否则其范围在设置的内容卡片类型默认宽度的0.8 ~ 1.2倍之间，当formType为TYPE_SMALL时，其范围在设置的内容卡片类型默认宽度的0.4 ~ 1.2倍之间。单位为vp。省略时使用内容卡片类型的默认高度。 |
+| formHeight | number | 否 | @Prop | 卡片高度，当contentFormData中的title为空字符串时，卡片高度为传入的值，否则其范围在设置的内容卡片类型默认高度的0.8 ~ 1.2倍之间，当formType为TYPE_SMALL时，其范围在设置的内容卡片类型默认高度的0.4 ~ 1.2倍之间。单位为vp。省略时使用内容卡片类型的默认高度。 |
 | handleOnClick | Function | 否 | - | 点击事件回调函数。用户点击卡片时，会执行传入的回调函数，实现自定义点击行为。 |
  
  
   
 
-#### FormType
+## FormType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -68,16 +73,18 @@ ContentFormCard({contentFormData: uniformDataStruct.ContentForm, formType: FormT
  
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | TYPE_BIG | 0 | 表示 4 x 4 的尺寸。默认卡片宽度为200vp，默认高度为200vp。 |
 | TYPE_MID | 1 | 表示 4 x 2 的尺寸。默认卡片宽度为200vp，默认高度为100vp。 |
-| TYPE_SMALL | 2 | 表示 2 x 1 的尺寸。默认卡片宽度为137vp， 默认高度为83vp。 |
+| TYPE_SMALL | 2 | 表示 2 x 1 的尺寸。默认卡片宽度为137vp，默认高度为83vp。 |
  
  
   
 
-#### 示例
+## 示例
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -154,11 +161,12 @@ struct Index {
  
   
 
-#### 效果呈现
+## 效果呈现
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 本例效果如下：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/8I222tq1QjuipMzgvlQUqg/zh-cn_image_0000002686087671.jpeg?HW-CC-KV=V1&HW-CC-Date=20260730T071434Z&HW-CC-Expire=86400&HW-CC-Sign=CDBB6299E97DB6C94B45D524B04B3CD59233C40F1BA04A1C09E6173FE226DEC1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/kAXRjo6-SLCQjcnMepheag/zh-cn_image_0000002717772296.jpeg?HW-CC-KV=V1&HW-CC-Date=20260911T072852Z&HW-CC-Expire=86400&HW-CC-Sign=7523F6CF32EED5A5FFE1D141D54C0C3115BD88E77BDFD439585B07A3AB31D5BC)

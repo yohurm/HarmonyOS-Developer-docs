@@ -1,18 +1,19 @@
 # Audio错误码
 
-更新时间：2026-08-04 06:06:24
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!TIP]
 > 以下仅介绍本模块特有错误码，通用错误码请参考 通用错误码说明文档 。
 
 
 
-#### 6800101 无效入参
+## 6800101 无效入参
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -32,9 +33,10 @@ Invalid parameter.
 
 
 
-#### 6800102 分配内存失败
+## 6800102 分配内存失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -54,9 +56,10 @@ Memory allocation failed.
 
 
 
-#### 6800103 状态不支持
+## 6800103 状态不支持
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -76,9 +79,10 @@ Operation not permitted at current state.
 
 
 
-#### 6800104 参数选项不支持
+## 6800104 参数选项不支持
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -93,12 +97,15 @@ Unsupported option.
 入参选值不在系统支持规格范围内。
 
 **处理步骤**
-1. 确认当前api支持的枚举或其他入参。
+1. 确认当前API支持的枚举或其他入参。
 2. 改用支持的参数选项。
 
 
 
-#### 6800105 处理超时
+## 6800105 处理超时
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -118,7 +125,10 @@ Timeout.
 
 
 
-#### 6800201 音频流数量达到极限
+## 6800201 音频流数量达到极限
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -138,9 +148,10 @@ Too many audio streams.
 
 
 
-#### 6800301 系统处理异常
+## 6800301 系统处理异常
 
-**支持设备：** PC/2in1 | Phone | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -163,7 +174,10 @@ System error.
 
 
 
-#### 调用createAudioCapturer创建AudioCapturer失败-音频流类型异常
+### 调用createAudioCapturer创建AudioCapturer失败-音频流类型异常
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 调用[createAudioCapturer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-f#audiocreateaudiocapturer8)返回错误码6800301时，根据系统日志按照以下场景进行排查。
 
@@ -187,7 +201,10 @@ AudioCapturerInfo.source不在接口支持的音频源类型范围内。
 
 
 
-#### 调用createAudioCapturer创建AudioCapturer失败-音频流参数异常
+### 调用createAudioCapturer创建AudioCapturer失败-音频流参数异常
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **判断依据**
 
@@ -213,7 +230,10 @@ AudioCapturerInfo.source不在接口支持的音频源类型范围内。
 
 
 
-#### 调用createAudioCapturer创建AudioCapturer失败-麦克风未授权
+### 调用createAudioCapturer创建AudioCapturer失败-麦克风未授权
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 调用[createAudioCapturer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-f#audiocreateaudiocapturer8)返回错误码6800301时，根据系统日志按照以下场景依次排查。
 
@@ -242,7 +262,10 @@ CheckRecorderPermission和CreateAudioProcessInner日志从API版本11开始支�
 
 
 
-#### 调用start启动AudioCapturer失败-AudioCapturer状态异常
+### 调用start启动AudioCapturer失败-AudioCapturer状态异常
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 AudioCapturer创建成功，但调用[start](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiocapturer#start8)返回错误码6800301时，根据系统日志按照以下场景排查。
 
@@ -272,7 +295,10 @@ AudioCapturer创建成功，但调用[start](https://developer.huawei.com/consum
 
 
 
-#### 调用start启动AudioCapturer失败-激活音频焦点失败
+### 调用start启动AudioCapturer失败-激活音频焦点失败
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **判断依据**
 
@@ -296,7 +322,10 @@ AudioCapturer创建成功，但调用[start](https://developer.huawei.com/consum
 
 
 
-#### 调用start启动AudioCapturer失败-底层录音流启动异常
+### 调用start启动AudioCapturer失败-底层录音流启动异常
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **判断依据**
 
@@ -319,7 +348,10 @@ StartAudioStream日志从API版本11开始支持；StartImpl日志从API版本12
 
 
 
-#### AudioSessionManager调用activateAudioSession/deactivateAudioSession/clearSelectedMediaInputDevice处理失败-系统异常
+### AudioSessionManager调用activateAudioSession/deactivateAudioSession/clearSelectedMediaInputDevice处理失败-系统异常
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **判断依据**
 

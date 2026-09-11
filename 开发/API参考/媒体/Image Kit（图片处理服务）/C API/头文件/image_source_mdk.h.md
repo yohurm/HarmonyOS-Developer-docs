@@ -1,13 +1,14 @@
 # image_source_mdk.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-source-mdk-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明将ImageSource解码成像素位图的方法。
 
@@ -23,15 +24,18 @@
 
 
 
-#### 汇总
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 汇总
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 结构体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -50,9 +54,11 @@
 
 
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -61,7 +67,7 @@
 | int32_t OH_ImageSource_CreateFromFd(napi_env env, int32_t fd, struct OhosImageSourceOps* ops, napi_value *res) | 通过给定的文件描述符fd和OhosImageSourceOps结构体，获取JavaScript native层API ImageSource对象。 |
 | int32_t OH_ImageSource_CreateFromData(napi_env env, uint8_t* data, size_t dataSize, struct OhosImageSourceOps* ops, napi_value *res) | 通过给定的图像源缓冲区资源data和OhosImageSourceOps结构体，获取JavaScript native层API ImageSource对象。 |
 | int32_t OH_ImageSource_CreateFromRawFile(napi_env env, RawFileDescriptor rawFile, struct OhosImageSourceOps* ops, napi_value *res) | 通过给定的资源描述符RawFileDescriptor和OhosImageSourceOps结构体，获取JavaScript native层API ImageSource对象。 |
-| int32_t OH_ImageSource_CreateIncremental(napi_env env, struct OhosImageSource* source, struct OhosImageSourceOps* ops, napi_value *res) | 通过给定的信息OhosImageSource和OhosImageSourceOps结构，获取增量类型的JavaScript Native API ImageSource对象，图像数据应通过OH_ImageSource_UpdateData更新。 |
+| int32_t OH_ImageSource_CreateIncremental(napi_env env, struct OhosImageSource* source, struct OhosImageSourceOps* ops, napi_value *res) | 通过OhosImageSource和OhosImageSourceOps结构体，获取增量类型的JavaScript Native API ImageSource对象。图像数据应通过OH_ImageSource_UpdateData更新。 |
 | int32_t OH_ImageSource_CreateIncrementalFromData(napi_env env, uint8_t* data, size_t dataSize, struct OhosImageSourceOps* ops, napi_value *res) | 通过给定的图像源缓冲区资源data和OhosImageSourceOps结构体，获取增量类型的JavaScript Native API ImageSource对象，图像数据应通过OH_ImageSource_UpdateData更新。 |
 | int32_t OH_ImageSource_GetSupportedFormats(struct OhosImageSourceSupportedFormatList* res) | 获取所有支持的解码格式元标记。 |
 | ImageSourceNative* OH_ImageSource_InitNative(napi_env env, napi_value source) | 从输入JavaScript native层ImageSource对象中，转换成ImageSourceNative值。 |
@@ -77,9 +83,11 @@
 
 
 
-#### 变量
+### 变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -101,15 +109,17 @@
 
 
 
-#### 函数说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 函数说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### OH_ImageSource_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### OH_ImageSource_Create()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ImageSource_Create(napi_env env, struct OhosImageSource* src, struct OhosImageSourceOps* ops, napi_value *res)
@@ -127,6 +137,7 @@ int32_t OH_ImageSource_Create(napi_env env, struct OhosImageSource* src, struct 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | napi_env env | 表明JNI环境的指针。 |
@@ -137,6 +148,7 @@ int32_t OH_ImageSource_Create(napi_env env, struct OhosImageSource* src, struct 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 参考IRNdkErrCode： OHOS_IMAGE_RESULT_SUCCESS：操作成功。 IMAGE_RESULT_BAD_PARAMETER：参数错误。 IMAGE_RESULT_JNI_ENV_ABNORMAL：JNI环境异常。 IMAGE_RESULT_INVALID_PARAMETER：参数无效。 IMAGE_RESULT_SOURCE_DATA_INCOMPLETE：图像源数据不完整。 IMAGE_RESULT_SOURCE_DATA：图像源数据错误。 IMAGE_RESULT_GET_DATA_ABNORMAL：图像获取数据错误。 IMAGE_RESULT_TOO_LARGE：图像数据太大。 IMAGE_RESULT_DECODE_FAILED：解码失败。 IMAGE_RESULT_DECODE_HEAD_ABNORMAL：图像解码头错误。 IMAGE_RESULT_DECODE_EXIF_UNSUPPORT：图像解码EXIF不支持。 IMAGE_RESULT_PROPERTY_NOT_EXIST：图像属性不存在。 IMAGE_RESULT_FILE_DAMAGED：文件损坏。 IMAGE_RESULT_FILE_FD_ERROR：文件FD错误。 IMAGE_RESULT_STREAM_SIZE_ERROR：数据流错误。 IMAGE_RESULT_SEEK_FAILED：查找文件失败。 IMAGE_RESULT_PEEK_FAILED：速览文件失败。 IMAGE_RESULT_FREAD_FAILED：读取文件失败。 |
@@ -144,9 +156,10 @@ int32_t OH_ImageSource_Create(napi_env env, struct OhosImageSource* src, struct 
 
 
 
-#### OH_ImageSource_CreateFromUri()
+### OH_ImageSource_CreateFromUri()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ImageSource_CreateFromUri(napi_env env, char* uri, size_t size,struct OhosImageSourceOps* ops, napi_value *res)
@@ -160,6 +173,7 @@ int32_t OH_ImageSource_CreateFromUri(napi_env env, char* uri, size_t size,struct
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | napi_env env | 表明JNI环境的指针。 |
@@ -171,6 +185,7 @@ int32_t OH_ImageSource_CreateFromUri(napi_env env, char* uri, size_t size,struct
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 参考IRNdkErrCode： OHOS_IMAGE_RESULT_SUCCESS：操作成功。 IMAGE_RESULT_BAD_PARAMETER：参数错误。 IMAGE_RESULT_JNI_ENV_ABNORMAL：JNI环境异常。 IMAGE_RESULT_INVALID_PARAMETER：参数无效。 |
@@ -178,9 +193,10 @@ int32_t OH_ImageSource_CreateFromUri(napi_env env, char* uri, size_t size,struct
 
 
 
-#### OH_ImageSource_CreateFromFd()
+### OH_ImageSource_CreateFromFd()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ImageSource_CreateFromFd(napi_env env, int32_t fd,struct OhosImageSourceOps* ops, napi_value *res)
@@ -194,6 +210,7 @@ int32_t OH_ImageSource_CreateFromFd(napi_env env, int32_t fd,struct OhosImageSou
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | napi_env env | 表明JNI环境的指针。 |
@@ -204,6 +221,7 @@ int32_t OH_ImageSource_CreateFromFd(napi_env env, int32_t fd,struct OhosImageSou
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 参考IRNdkErrCode： OHOS_IMAGE_RESULT_SUCCESS：操作成功。 IMAGE_RESULT_BAD_PARAMETER：参数错误。 IMAGE_RESULT_JNI_ENV_ABNORMAL：JNI环境异常。 IMAGE_RESULT_INVALID_PARAMETER：参数无效。 |
@@ -211,9 +229,10 @@ int32_t OH_ImageSource_CreateFromFd(napi_env env, int32_t fd,struct OhosImageSou
 
 
 
-#### OH_ImageSource_CreateFromData()
+### OH_ImageSource_CreateFromData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ImageSource_CreateFromData(napi_env env, uint8_t* data, size_t dataSize,struct OhosImageSourceOps* ops, napi_value *res)
@@ -227,6 +246,7 @@ int32_t OH_ImageSource_CreateFromData(napi_env env, uint8_t* data, size_t dataSi
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | napi_env env | 表明JNI环境的指针。 |
@@ -238,6 +258,7 @@ int32_t OH_ImageSource_CreateFromData(napi_env env, uint8_t* data, size_t dataSi
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 参考IRNdkErrCode： OHOS_IMAGE_RESULT_SUCCESS：操作成功。 IMAGE_RESULT_BAD_PARAMETER：参数错误。 IMAGE_RESULT_JNI_ENV_ABNORMAL：JNI环境异常。 IMAGE_RESULT_INVALID_PARAMETER：参数无效。 |
@@ -245,9 +266,10 @@ int32_t OH_ImageSource_CreateFromData(napi_env env, uint8_t* data, size_t dataSi
 
 
 
-#### OH_ImageSource_CreateFromRawFile()
+### OH_ImageSource_CreateFromRawFile()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ImageSource_CreateFromRawFile(napi_env env, RawFileDescriptor rawFile,struct OhosImageSourceOps* ops, napi_value *res)
@@ -261,6 +283,7 @@ int32_t OH_ImageSource_CreateFromRawFile(napi_env env, RawFileDescriptor rawFile
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | napi_env env | 表明JNI环境的指针。 |
@@ -271,6 +294,7 @@ int32_t OH_ImageSource_CreateFromRawFile(napi_env env, RawFileDescriptor rawFile
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 参考IRNdkErrCode： OHOS_IMAGE_RESULT_SUCCESS：操作成功。 IMAGE_RESULT_BAD_PARAMETER：参数错误。 IMAGE_RESULT_JNI_ENV_ABNORMAL：JNI环境异常。 IMAGE_RESULT_INVALID_PARAMETER：参数无效。 |
@@ -278,9 +302,10 @@ int32_t OH_ImageSource_CreateFromRawFile(napi_env env, RawFileDescriptor rawFile
 
 
 
-#### OH_ImageSource_CreateIncremental()
+### OH_ImageSource_CreateIncremental()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ImageSource_CreateIncremental(napi_env env, struct OhosImageSource* source, struct OhosImageSourceOps* ops, napi_value *res)
@@ -288,7 +313,7 @@ int32_t OH_ImageSource_CreateIncremental(napi_env env, struct OhosImageSource* s
 
 **描述**
 
-通过给定的信息[OhosImageSource](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-ohosimagesource)和[OhosImageSourceOps](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-ohosimagesourceops)结构，获取增量类型的JavaScript Native API ImageSource对象，图像数据应通过[OH_ImageSource_UpdateData](#oh_imagesource_updatedata)更新。
+通过[OhosImageSource](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-ohosimagesource)和[OhosImageSourceOps](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-ohosimagesourceops)结构体，获取增量类型的JavaScript Native API ImageSource对象。图像数据应通过[OH_ImageSource_UpdateData](#oh_imagesource_updatedata)更新。
 
 **起始版本：** 10
 
@@ -297,6 +322,7 @@ int32_t OH_ImageSource_CreateIncremental(napi_env env, struct OhosImageSource* s
 **替代接口：** [OH_ImageSource_CreateIncrementalFromData](#oh_imagesource_createincrementalfromdata)
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -308,6 +334,7 @@ int32_t OH_ImageSource_CreateIncremental(napi_env env, struct OhosImageSource* s
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 参考IRNdkErrCode： OHOS_IMAGE_RESULT_SUCCESS：操作成功。 IMAGE_RESULT_BAD_PARAMETER：参数错误。 IMAGE_RESULT_JNI_ENV_ABNORMAL：JNI环境异常。 IMAGE_RESULT_INVALID_PARAMETER：参数无效。 |
@@ -315,9 +342,10 @@ int32_t OH_ImageSource_CreateIncremental(napi_env env, struct OhosImageSource* s
 
 
 
-#### OH_ImageSource_CreateIncrementalFromData()
+### OH_ImageSource_CreateIncrementalFromData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ImageSource_CreateIncrementalFromData(napi_env env, uint8_t* data, size_t dataSize,struct OhosImageSourceOps* ops, napi_value *res)
@@ -331,6 +359,7 @@ int32_t OH_ImageSource_CreateIncrementalFromData(napi_env env, uint8_t* data, si
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | napi_env env | 表明JNI环境的指针。 |
@@ -342,6 +371,7 @@ int32_t OH_ImageSource_CreateIncrementalFromData(napi_env env, uint8_t* data, si
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 参考IRNdkErrCode： OHOS_IMAGE_RESULT_SUCCESS：操作成功。 IMAGE_RESULT_BAD_PARAMETER：参数错误。 IMAGE_RESULT_JNI_ENV_ABNORMAL：JNI环境异常。 IMAGE_RESULT_INVALID_PARAMETER：参数无效。 |
@@ -349,9 +379,10 @@ int32_t OH_ImageSource_CreateIncrementalFromData(napi_env env, uint8_t* data, si
 
 
 
-#### OH_ImageSource_GetSupportedFormats()
+### OH_ImageSource_GetSupportedFormats()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ImageSource_GetSupportedFormats(struct OhosImageSourceSupportedFormatList* res)
@@ -365,12 +396,14 @@ int32_t OH_ImageSource_GetSupportedFormats(struct OhosImageSourceSupportedFormat
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OhosImageSourceSupportedFormatList* res | 表明指向OhosImageSourceSupportedFormatList结构体的指针。该结构体包含supportedFormatList和size两个属性。 该接口需要调用两次才能正确获取支持的格式列表。 第一次调用需将res->supportedFormatList置空，res->size会获取支持的格式数量。 第二次调用前，需完成内存初始化，首先将res->supportedFormatList初始化为包含res->size个OhosImageSourceSupportedFormat的列表，再为每个OhosImageSourceSupportedFormat申请内存，确保其format属性有足够的空间获取图片格式信息。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -379,9 +412,10 @@ int32_t OH_ImageSource_GetSupportedFormats(struct OhosImageSourceSupportedFormat
 
 
 
-#### OH_ImageSource_InitNative()
+### OH_ImageSource_InitNative()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ImageSourceNative* OH_ImageSource_InitNative(napi_env env, napi_value source)
@@ -395,6 +429,7 @@ ImageSourceNative* OH_ImageSource_InitNative(napi_env env, napi_value source)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | napi_env env | 表明JNI环境的指针。 |
@@ -402,6 +437,7 @@ ImageSourceNative* OH_ImageSource_InitNative(napi_env env, napi_value source)
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -414,9 +450,10 @@ ImageSourceNative* OH_ImageSource_InitNative(napi_env env, napi_value source)
 
 
 
-#### OH_ImageSource_CreatePixelMap()
+### OH_ImageSource_CreatePixelMap()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ImageSource_CreatePixelMap(const ImageSourceNative* native,struct OhosImageDecodingOps* ops, napi_value *res)
@@ -430,6 +467,7 @@ int32_t OH_ImageSource_CreatePixelMap(const ImageSourceNative* native,struct Oho
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ImageSourceNative* native | 表明native层ImageSourceNative值的指针。 |
@@ -439,6 +477,7 @@ int32_t OH_ImageSource_CreatePixelMap(const ImageSourceNative* native,struct Oho
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 参考IRNdkErrCode： OHOS_IMAGE_RESULT_SUCCESS：操作成功。 IMAGE_RESULT_BAD_PARAMETER：参数错误。 IMAGE_RESULT_JNI_ENV_ABNORMAL：JNI环境异常。 IMAGE_RESULT_INVALID_PARAMETER：参数无效。 IMAGE_RESULT_GET_DATA_ABNORMAL：获取图片数据异常。 IMAGE_RESULT_DECODE_FAILED：解码失败。 IMAGE_RESULT_DECODE_HEAD_ABNORMAL：图像解码头错误。 IMAGE_RESULT_CREATE_DECODER_FAILED：创建解码器失败。 IMAGE_RESULT_CREATE_ENCODER_FAILED：创建编码器失败。 IMAGE_RESULT_CHECK_FORMAT_ERROR：检查格式不对。 IMAGE_RESULT_THIRDPART_SKIA_ERROR：skia错误。 IMAGE_RESULT_DATA_ABNORMAL：输入图片数据错误。 IMAGE_RESULT_ERR_SHAMEM_NOT_EXIST：共享内存错误。 IMAGE_RESULT_ERR_SHAMEM_DATA_ABNORMAL：共享内存数据异常。 IMAGE_RESULT_DECODE_ABNORMAL：图片解码异常。 IMAGE_RESULT_MALLOC_ABNORMAL：图像错误。 IMAGE_RESULT_DATA_UNSUPPORT：图片初始化错误。 IMAGE_RESULT_INIT_ABNORMAL：图片输入数据错误。 IMAGE_RESULT_CROP：裁剪错误。 IMAGE_RESULT_UNKNOWN_FORMAT：图片格式未知。 IMAGE_RESULT_PLUGIN_REGISTER_FAILED：注册插件失败。 IMAGE_RESULT_PLUGIN_CREATE_FAILED：创建插件失败。 IMAGE_RESULT_ENCODE_FAILED：增加位图失败。 IMAGE_RESULT_HW_DECODE_UNSUPPORT：不支持图片硬解码。 IMAGE_RESULT_HW_DECODE_FAILED：硬解码失败。 IMAGE_RESULT_ERR_IPC：ipc失败。 IMAGE_RESULT_INDEX_INVALID：索引无效。 IMAGE_RESULT_ALPHA_TYPE_ERROR：硬解码失败。 IMAGE_RESULT_ALLOCATER_TYPE_ERROR：硬解码失败。 |
@@ -446,9 +485,10 @@ int32_t OH_ImageSource_CreatePixelMap(const ImageSourceNative* native,struct Oho
 
 
 
-#### OH_ImageSource_CreatePixelMapList()
+### OH_ImageSource_CreatePixelMapList()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ImageSource_CreatePixelMapList(const ImageSourceNative* native,struct OhosImageDecodingOps* ops, napi_value *res)
@@ -462,6 +502,7 @@ int32_t OH_ImageSource_CreatePixelMapList(const ImageSourceNative* native,struct
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ImageSourceNative* native | 表明native层ImageSourceNative值的指针。 |
@@ -471,6 +512,7 @@ int32_t OH_ImageSource_CreatePixelMapList(const ImageSourceNative* native,struct
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 参考IRNdkErrCode： OHOS_IMAGE_RESULT_SUCCESS：操作成功。 IMAGE_RESULT_BAD_PARAMETER：参数错误。 IMAGE_RESULT_JNI_ENV_ABNORMAL：JNI环境异常。 IMAGE_RESULT_INVALID_PARAMETER：参数无效。 IMAGE_RESULT_GET_DATA_ABNORMAL：获取图片数据异常。 IMAGE_RESULT_DECODE_FAILED：解码失败。 IMAGE_RESULT_DECODE_HEAD_ABNORMAL：图像解码头错误。 IMAGE_RESULT_CREATE_DECODER_FAILED：创建解码器失败。 IMAGE_RESULT_CREATE_ENCODER_FAILED：创建编码器失败。 IMAGE_RESULT_CHECK_FORMAT_ERROR：检查格式不对。 IMAGE_RESULT_THIRDPART_SKIA_ERROR：skia错误。 IMAGE_RESULT_DATA_ABNORMAL：输入图片数据错误。 IMAGE_RESULT_ERR_SHAMEM_NOT_EXIST：共享内存错误。 IMAGE_RESULT_ERR_SHAMEM_DATA_ABNORMAL：共享内存数据异常。 IMAGE_RESULT_DECODE_ABNORMAL：图片解码异常。 IMAGE_RESULT_MALLOC_ABNORMAL：图像错误。 IMAGE_RESULT_DATA_UNSUPPORT：图片初始化错误。 IMAGE_RESULT_INIT_ABNORMAL：图片输入数据错误。 IMAGE_RESULT_CROP：裁剪错误。 IMAGE_RESULT_UNKNOWN_FORMAT：图片格式未知。 IMAGE_RESULT_PLUGIN_REGISTER_FAILED：注册插件失败。 IMAGE_RESULT_PLUGIN_CREATE_FAILED：创建插件失败。 IMAGE_RESULT_ENCODE_FAILED：增加位图失败。 IMAGE_RESULT_HW_DECODE_UNSUPPORT：不支持图片硬解码。 IMAGE_RESULT_HW_DECODE_FAILED：硬解码失败。 IMAGE_RESULT_ERR_IPC：ipc失败。 IMAGE_RESULT_INDEX_INVALID：索引无效。 IMAGE_RESULT_ALPHA_TYPE_ERROR：硬解码失败。 IMAGE_RESULT_ALLOCATER_TYPE_ERROR：硬解码失败。 IMAGE_RESULT_DECODE_EXIF_UNSUPPORT：解码的EXIF不支持。 IMAGE_RESULT_PROPERTY_NOT_EXIST：图片属性不存在。 |
@@ -478,9 +520,10 @@ int32_t OH_ImageSource_CreatePixelMapList(const ImageSourceNative* native,struct
 
 
 
-#### OH_ImageSource_GetDelayTime()
+### OH_ImageSource_GetDelayTime()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ImageSource_GetDelayTime(const ImageSourceNative* native,struct OhosImageSourceDelayTimeList* res)
@@ -494,6 +537,7 @@ int32_t OH_ImageSource_GetDelayTime(const ImageSourceNative* native,struct OhosI
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ImageSourceNative* native | 表明native层ImageSourceNative值的指针。 |
@@ -502,6 +546,7 @@ int32_t OH_ImageSource_GetDelayTime(const ImageSourceNative* native,struct OhosI
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 参考IRNdkErrCode： OHOS_IMAGE_RESULT_SUCCESS：操作成功。 IMAGE_RESULT_BAD_PARAMETER：参数错误。 IMAGE_RESULT_JNI_ENV_ABNORMAL：JNI环境异常。 IMAGE_RESULT_INVALID_PARAMETER：参数无效。 IMAGE_RESULT_GET_DATA_ABNORMAL：获取图片数据异常。 IMAGE_RESULT_DECODE_FAILED：解码失败。 IMAGE_RESULT_DECODE_HEAD_ABNORMAL：图像解码头错误。 IMAGE_RESULT_CREATE_DECODER_FAILED：创建解码器失败。 IMAGE_RESULT_THIRDPART_SKIA_ERROR：skia错误。 IMAGE_RESULT_DATA_ABNORMAL：输入图片数据错误。 IMAGE_RESULT_DECODE_ABNORMAL：图片解码异常。 IMAGE_RESULT_DATA_UNSUPPORT：图片初始化错误。 IMAGE_RESULT_UNKNOWN_FORMAT：图片格式未知。 IMAGE_RESULT_PLUGIN_REGISTER_FAILED：注册插件失败。 IMAGE_RESULT_PLUGIN_CREATE_FAILED：创建插件失败。 IMAGE_RESULT_INDEX_INVALID：索引无效。 IMAGE_RESULT_DECODE_EXIF_UNSUPPORT：解码的EXIF不支持。 IMAGE_RESULT_PROPERTY_NOT_EXIST：图片属性不存在。 |
@@ -509,9 +554,10 @@ int32_t OH_ImageSource_GetDelayTime(const ImageSourceNative* native,struct OhosI
 
 
 
-#### OH_ImageSource_GetFrameCount()
+### OH_ImageSource_GetFrameCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ImageSource_GetFrameCount(const ImageSourceNative* native, uint32_t *res)
@@ -525,6 +571,7 @@ int32_t OH_ImageSource_GetFrameCount(const ImageSourceNative* native, uint32_t *
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ImageSourceNative* native | 表明native层ImageSourceNative值的指针。 |
@@ -533,6 +580,7 @@ int32_t OH_ImageSource_GetFrameCount(const ImageSourceNative* native, uint32_t *
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 参考IRNdkErrCode： OHOS_IMAGE_RESULT_SUCCESS：操作成功。 IMAGE_RESULT_BAD_PARAMETER：参数错误。 IMAGE_RESULT_JNI_ENV_ABNORMAL：JNI环境异常。 IMAGE_RESULT_INVALID_PARAMETER：参数无效。 IMAGE_RESULT_GET_DATA_ABNORMAL：获取图片数据异常。 IMAGE_RESULT_DECODE_FAILED：解码失败。 IMAGE_RESULT_DECODE_HEAD_ABNORMAL：图像解码头错误。 IMAGE_RESULT_CREATE_DECODER_FAILED：创建解码器失败。 IMAGE_RESULT_THIRDPART_SKIA_ERROR：skia错误。 IMAGE_RESULT_DATA_ABNORMAL：输入图片数据错误。 IMAGE_RESULT_DECODE_ABNORMAL：图片解码异常。 IMAGE_RESULT_DATA_UNSUPPORT：图片初始化错误。 IMAGE_RESULT_UNKNOWN_FORMAT：图片格式未知。 IMAGE_RESULT_PLUGIN_REGISTER_FAILED：注册插件失败。 IMAGE_RESULT_PLUGIN_CREATE_FAILED：创建插件失败。 IMAGE_RESULT_INDEX_INVALID：索引无效。 IMAGE_RESULT_DECODE_EXIF_UNSUPPORT：解码的EXIF不支持。 IMAGE_RESULT_PROPERTY_NOT_EXIST：图片属性不存在。 |
@@ -540,9 +588,10 @@ int32_t OH_ImageSource_GetFrameCount(const ImageSourceNative* native, uint32_t *
 
 
 
-#### OH_ImageSource_GetImageInfo()
+### OH_ImageSource_GetImageInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ImageSource_GetImageInfo(const ImageSourceNative* native, int32_t index,struct OhosImageSourceInfo* info)
@@ -556,6 +605,7 @@ int32_t OH_ImageSource_GetImageInfo(const ImageSourceNative* native, int32_t ind
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ImageSourceNative* native | 表明native层ImageSourceNative值的指针。 |
@@ -565,6 +615,7 @@ int32_t OH_ImageSource_GetImageInfo(const ImageSourceNative* native, int32_t ind
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 参考IRNdkErrCode： OHOS_IMAGE_RESULT_SUCCESS：操作成功。 IMAGE_RESULT_BAD_PARAMETER：参数错误。 IMAGE_RESULT_JNI_ENV_ABNORMAL：JNI环境异常。 IMAGE_RESULT_INVALID_PARAMETER：参数无效。 IMAGE_RESULT_GET_DATA_ABNORMAL：获取图片数据异常。 IMAGE_RESULT_DECODE_FAILED：解码失败。 IMAGE_RESULT_DECODE_HEAD_ABNORMAL：图像解码头错误。 IMAGE_RESULT_CREATE_DECODER_FAILED：创建解码器失败。 IMAGE_RESULT_THIRDPART_SKIA_ERROR：skia错误。 IMAGE_RESULT_DATA_ABNORMAL：输入图片数据错误。 IMAGE_RESULT_DECODE_ABNORMAL：图片解码异常。 IMAGE_RESULT_DATA_UNSUPPORT：图片初始化错误。 IMAGE_RESULT_UNKNOWN_FORMAT：图片格式未知。 IMAGE_RESULT_PLUGIN_REGISTER_FAILED：注册插件失败。 IMAGE_RESULT_PLUGIN_CREATE_FAILED：创建插件失败。 IMAGE_RESULT_INDEX_INVALID：索引无效。 IMAGE_RESULT_DECODE_EXIF_UNSUPPORT：解码的EXIF不支持。 IMAGE_RESULT_PROPERTY_NOT_EXIST：图片属性不存在。 |
@@ -572,9 +623,10 @@ int32_t OH_ImageSource_GetImageInfo(const ImageSourceNative* native, int32_t ind
 
 
 
-#### OH_ImageSource_GetImageProperty()
+### OH_ImageSource_GetImageProperty()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ImageSource_GetImageProperty(const ImageSourceNative* native, struct OhosImageSourceProperty* key, struct OhosImageSourceProperty* value)
@@ -588,6 +640,7 @@ int32_t OH_ImageSource_GetImageProperty(const ImageSourceNative* native, struct 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ImageSourceNative* native | 表明native层ImageSourceNative值的指针。 |
@@ -597,6 +650,7 @@ int32_t OH_ImageSource_GetImageProperty(const ImageSourceNative* native, struct 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 参考IRNdkErrCode： OHOS_IMAGE_RESULT_SUCCESS：操作成功。 IMAGE_RESULT_BAD_PARAMETER：参数错误。 IMAGE_RESULT_JNI_ENV_ABNORMAL：JNI环境异常。 IMAGE_RESULT_INVALID_PARAMETER：参数无效。 IMAGE_RESULT_GET_DATA_ABNORMAL：获取图片数据异常。 IMAGE_RESULT_DECODE_FAILED：解码失败。 IMAGE_RESULT_DECODE_HEAD_ABNORMAL：图像解码头错误。 IMAGE_RESULT_CREATE_DECODER_FAILED：创建解码器失败。 IMAGE_RESULT_THIRDPART_SKIA_ERROR：skia错误。 IMAGE_RESULT_DATA_ABNORMAL：输入图片数据错误。 IMAGE_RESULT_DECODE_ABNORMAL：图片解码异常。 IMAGE_RESULT_DATA_UNSUPPORT：图片初始化错误。 IMAGE_RESULT_UNKNOWN_FORMAT：图片格式未知。 IMAGE_RESULT_PLUGIN_REGISTER_FAILED：注册插件失败。 IMAGE_RESULT_PLUGIN_CREATE_FAILED：创建插件失败。 IMAGE_RESULT_INDEX_INVALID：索引无效。 IMAGE_RESULT_DECODE_EXIF_UNSUPPORT：解码的EXIF不支持。 IMAGE_RESULT_PROPERTY_NOT_EXIST：图片属性不存在。 |
@@ -604,9 +658,10 @@ int32_t OH_ImageSource_GetImageProperty(const ImageSourceNative* native, struct 
 
 
 
-#### OH_ImageSource_ModifyImageProperty()
+### OH_ImageSource_ModifyImageProperty()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ImageSource_ModifyImageProperty(const ImageSourceNative* native, struct OhosImageSourceProperty* key, struct OhosImageSourceProperty* value)
@@ -620,6 +675,7 @@ int32_t OH_ImageSource_ModifyImageProperty(const ImageSourceNative* native, stru
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ImageSourceNative* native | 表明native层ImageSourceNative值的指针。 |
@@ -629,6 +685,7 @@ int32_t OH_ImageSource_ModifyImageProperty(const ImageSourceNative* native, stru
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 参考IRNdkErrCode： OHOS_IMAGE_RESULT_SUCCESS：操作成功。 IMAGE_RESULT_BAD_PARAMETER：参数错误。 IMAGE_RESULT_JNI_ENV_ABNORMAL：JNI环境异常。 IMAGE_RESULT_INVALID_PARAMETER：参数无效。 IMAGE_RESULT_GET_DATA_ABNORMAL：获取图片数据异常。 IMAGE_RESULT_DECODE_FAILED：解码失败。 IMAGE_RESULT_DECODE_HEAD_ABNORMAL：图像解码头错误。 IMAGE_RESULT_CREATE_DECODER_FAILED：创建解码器失败。 IMAGE_RESULT_THIRDPART_SKIA_ERROR：skia错误。 IMAGE_RESULT_DATA_ABNORMAL：输入图片数据错误。 IMAGE_RESULT_DECODE_ABNORMAL：图片解码异常。 IMAGE_RESULT_DATA_UNSUPPORT：图片初始化错误。 IMAGE_RESULT_UNKNOWN_FORMAT：图片格式未知。 IMAGE_RESULT_PLUGIN_REGISTER_FAILED：注册插件失败。 IMAGE_RESULT_PLUGIN_CREATE_FAILED：创建插件失败。 IMAGE_RESULT_INDEX_INVALID：索引无效。 IMAGE_RESULT_DECODE_EXIF_UNSUPPORT：解码的EXIF不支持。 IMAGE_RESULT_PROPERTY_NOT_EXIST：图片属性不存在。 |
@@ -636,9 +693,10 @@ int32_t OH_ImageSource_ModifyImageProperty(const ImageSourceNative* native, stru
 
 
 
-#### OH_ImageSource_UpdateData()
+### OH_ImageSource_UpdateData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ImageSource_UpdateData(const ImageSourceNative* native, struct OhosImageSourceUpdateData* data)
@@ -652,6 +710,7 @@ int32_t OH_ImageSource_UpdateData(const ImageSourceNative* native, struct OhosIm
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ImageSourceNative* native | 表明native层ImageSourceNative值的指针。 |
@@ -660,6 +719,7 @@ int32_t OH_ImageSource_UpdateData(const ImageSourceNative* native, struct OhosIm
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 参考IRNdkErrCode： OHOS_IMAGE_RESULT_SUCCESS：操作成功。 IMAGE_RESULT_BAD_PARAMETER：参数错误。 IMAGE_RESULT_JNI_ENV_ABNORMAL：JNI环境异常。 IMAGE_RESULT_INVALID_PARAMETER：参数无效。 IMAGE_RESULT_GET_DATA_ABNORMAL：获取图片数据异常。 IMAGE_RESULT_DECODE_FAILED：解码失败。 IMAGE_RESULT_DECODE_HEAD_ABNORMAL：图像解码头错误。 IMAGE_RESULT_CREATE_DECODER_FAILED：创建解码器失败。 IMAGE_RESULT_CREATE_ENCODER_FAILED：创建编码器失败。 IMAGE_RESULT_CHECK_FORMAT_ERROR：检查格式不对。 IMAGE_RESULT_THIRDPART_SKIA_ERROR：Skia第三方库出错。 IMAGE_RESULT_DATA_ABNORMAL：输入图片数据错误。 IMAGE_RESULT_ERR_SHAMEM_NOT_EXIST：共享内存不存在。 IMAGE_RESULT_ERR_SHAMEM_DATA_ABNORMAL：共享内存数据异常。 IMAGE_RESULT_DECODE_ABNORMAL：图片解码异常。 IMAGE_RESULT_MALLOC_ABNORMAL：图像内存分配异常。 IMAGE_RESULT_DATA_UNSUPPORT：图片初始化错误。 IMAGE_RESULT_INIT_ABNORMAL：图片输入数据错误。 IMAGE_RESULT_CROP：裁剪失败。 IMAGE_RESULT_UNKNOWN_FORMAT：图片格式未知。 IMAGE_RESULT_PLUGIN_REGISTER_FAILED：注册插件失败。 IMAGE_RESULT_PLUGIN_CREATE_FAILED：创建插件失败。 IMAGE_RESULT_ENCODE_FAILED：增加位图失败。 IMAGE_RESULT_HW_DECODE_UNSUPPORT：不支持图片硬解码。 IMAGE_RESULT_HW_DECODE_FAILED：硬解码失败。 IMAGE_RESULT_ERR_IPC：IPC操作失败。 IMAGE_RESULT_INDEX_INVALID：索引无效。 IMAGE_RESULT_ALPHA_TYPE_ERROR：Alpha类型错误。 IMAGE_RESULT_ALLOCATER_TYPE_ERROR：内存分配器类型错误。 |
@@ -667,9 +727,10 @@ int32_t OH_ImageSource_UpdateData(const ImageSourceNative* native, struct OhosIm
 
 
 
-#### OH_ImageSource_Release()
+### OH_ImageSource_Release()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ImageSource_Release(ImageSourceNative* native)
@@ -683,12 +744,14 @@ int32_t OH_ImageSource_Release(ImageSourceNative* native)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ImageSourceNative* native | 表明native层ImageSourceNative值的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |

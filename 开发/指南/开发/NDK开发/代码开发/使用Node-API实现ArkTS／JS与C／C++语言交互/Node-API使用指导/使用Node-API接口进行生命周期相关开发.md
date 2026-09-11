@@ -1,10 +1,10 @@
 # 使用Node-API接口进行生命周期相关开发
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-life-cycle
 
-#### 简介
+## 简介
 
 在Node-API中，napi_value是一个表示ArkTS值的抽象类型，它可以表示任何ArkTS值，包括基本类型（如数字、字符串、布尔值）和复杂对象类型（如数组、函数、对象等）。
  
@@ -16,7 +16,7 @@ napi_ref是一个Node-API类型，用于管理napi_value的生命周期。napi_r
  
   
 
-#### 基本概念
+## 基本概念
 
 Node-API提供了一组功能，使开发人员能够在Node-API模块中创建和操作ArkTS对象，管理引用和生命周期，并注册垃圾回收回调函数等。下面是一些基本概念：
  
@@ -30,10 +30,11 @@ Node-API提供了一组功能，使开发人员能够在Node-API模块中创建�
  
   
 
-#### 场景和功能介绍
+## 场景和功能介绍
 
 以下Node-API接口主要用于ArkTS对象的引用管理，并确保在Node-API模块代码中正确地处理ArkTS对象的生命周期。使用场景如下：
   
+
 | 接口 | 描述 |
 | --- | --- |
 | napi_open_handle_scope、napi_close_handle_scope | 主要用于管理ArkTS对象的生命周期，确保在Node-API模块代码中使用ArkTS对象时能够正确地进行内存管理。当在Node-API模块中处理ArkTS对象时，需要创建一个临时的作用域来存储对象的引用，以便在执行期间正确访问这些对象，并在执行结束后关闭这个handle scope。 |
@@ -47,7 +48,7 @@ Node-API提供了一组功能，使开发人员能够在Node-API模块中创建�
  
   
 
-#### 使用示例
+## 使用示例
 
 Node-API接口开发流程参考[使用Node-API实现跨语言交互开发流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-process)，本文仅对接口对应C++及ArkTS相关代码进行展示。
  
@@ -68,7 +69,7 @@ import testNapi from 'libentry.so';
  
   
 
-#### napi_open_handle_scope、napi_close_handle_scope
+### napi_open_handle_scope、napi_close_handle_scope
 
 通过接口napi_open_handle_scope创建一个上下文环境，并使用napi_close_handle_scope进行关闭。这组接口用于管理ArkTS对象的生命周期，确保在Node-API模块代码处理ArkTS对象时能够正确地管理其句柄，以避免出现对象错误回收的问题。
  
@@ -192,7 +193,7 @@ static napi_value Init(napi_env env, napi_value exports)
  
   
 
-#### napi_open_escapable_handle_scope、napi_close_escapable_handle_scope、napi_escape_handle
+### napi_open_escapable_handle_scope、napi_close_escapable_handle_scope、napi_escape_handle
 
 通过接口napi_open_escapable_handle_scope创建出一个可逃逸的handle scope，可将范围内声明的值返回到父作用域。该作用域需要使用napi_close_escapable_handle_scope进行关闭。napi_escape_handle用于提升传入的ArkTS对象的生命周期到其父作用域。
  
@@ -253,25 +254,25 @@ try {
  
   
 
-#### napi_ref
+### napi_ref
 
 napi_ref 是 napi 中用于管理 ArkTS 对象生命周期的引用类型，分为强引用和弱引用两种类型。当ref计数为0时为弱引用，计数大于0时为强引用。强引用会阻止垃圾回收器回收被引用的对象，适用于需要长期保持对象存活的场景，但必须手动管理引用计数和释放，否则会导致内存泄漏；弱引用则不会阻止垃圾回收，允许对象在不再被其他强引用持有时被正常回收，适用于缓存等临时性引用场景，能够自动失效但需要在获取时检查对象是否仍存活。正确选择强弱引用类型对于平衡内存管理和性能至关重要。
  
   
 
-#### napi_create_reference、napi_delete_reference
+### napi_create_reference、napi_delete_reference
 
 为Object创建一个reference，以延长其生命周期。调用者需要自己管理reference生命周期。可以调用napi_delete_reference删除传入的reference。
  
   
 
-#### napi_reference_ref、napi_reference_unref
+### napi_reference_ref、napi_reference_unref
 
 增加/减少传入的reference的引用计数，并获取新的计数。
  
   
 
-#### napi_get_reference_value
+### napi_get_reference_value
 
 获取与reference相关联的ArkTS Object。
  
@@ -453,7 +454,7 @@ try {
  
   
 
-#### napi_add_finalizer
+### napi_add_finalizer
 
 当ArkTS Object中的对象被垃圾回收时调用注册的napi_add_finalizer回调。
  

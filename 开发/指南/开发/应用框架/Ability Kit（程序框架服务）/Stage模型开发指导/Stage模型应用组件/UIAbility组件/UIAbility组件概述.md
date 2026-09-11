@@ -1,10 +1,10 @@
 # UIAbility组件概述
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-overview
 
-#### 概述
+## 概述
 
 [UIAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability)组件是一种包含UI的应用组件，主要用于和用户交互。例如，图库类应用可以在UIAbility组件中展示图片瀑布流。
 
@@ -32,7 +32,7 @@ UIAbility组件是系统调度的基本单元，为应用提供绘制界面的�
 
 
 
-#### 声明配置
+## 声明配置
 
 为使应用能够正常使用UIAbility，需要在[module.json5配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)的[abilities标签](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#abilities标签)中声明UIAbility的名称、入口、标签等相关信息。
 

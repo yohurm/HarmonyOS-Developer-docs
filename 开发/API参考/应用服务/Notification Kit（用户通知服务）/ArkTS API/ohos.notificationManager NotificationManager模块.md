@@ -1,17 +1,17 @@
 # @ohos.notificationManager (NotificationManager模块)
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-notificationmanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-本模块提供通知管理的能力，应用可使用本模块完成通知的完整生命周期管理。其中涉及通知的发布、更新与取消，通知渠道的创建与查询、通知能力授权状态的查询与申请、应用角标的设置、通知中心存量通知的查询等操作。
+本模块提供通知管理的能力，应用可使用本模块完成通知的完整生命周期管理。其中涉及通知的发布、更新与取消，[通知渠道](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-slot通知渠道)的创建与查询、通知能力授权状态的查询与申请、应用角标的设置、[通知中心](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-center通知中心)存量通知的查询等操作。
 
 **API组合使用关系说明**：
 
 本模块的接口围绕通知的“授权→发布→取消→渠道管理”的完整流程展开，各接口间存在明确的组合使用关系：
 1. **授权查询与申请流程**：发布通知前，先通过isNotificationEnabled查询通知能力的授权状态。如果通知能力未授权，通过requestEnableNotification引导用户开启通知权限。
-2. **通知发布与更新流程**：通过publish发布通知，通知内容通过NotificationRequest指定。如果新发布通知与已有通知的ID和标签相同，将自动更新已有通知。如果新发布通知与已有通知的ID或标签不相同，将创建新的通知。
+2. **通知发布与更新流程**：通过publish发布通知，[通知内容](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-content通知内容)通过NotificationRequest指定。如果新发布通知与已有通知的ID和标签相同，将自动更新已有通知。如果新发布通知与已有通知的ID或标签不相同，将创建新的通知。
 3. **通知取消流程**：通过cancel取消指定ID的通知，通过cancelAll取消本应用所有通知，通过cancelGroup取消指定分组下的通知。
 4. **通知渠道管理流程**：通过addSlot创建通知渠道，通过getSlot/getSlots查询通知渠道配置，通过removeSlot/removeAllSlots删除通知渠道。建议在发布通知前先创建对应类型的通知渠道。除了可以使用addSlot创建通知渠道，还可以在发布通知的[NotificationRequest](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-notification-notificationrequest#notificationrequest-1)中携带notificationSlotType字段，如果对应类型的渠道不存在，会自动创建。
 5. **角标管理流程**：通过setBadgeNumber设置角标数字，或者通过publish接口发布通知时，在[NotificationRequest](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-notification-notificationrequest#notificationrequest-1)的badgeNumber字段里携带需要增加的角标数量。
@@ -22,9 +22,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { notificationManager } from '@kit.NotificationKit';
@@ -32,19 +33,21 @@ import { notificationManager } from '@kit.NotificationKit';
 
 
 
-#### notificationManager.publish
+## notificationManager.publish
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 publish(request: NotificationRequest, callback: AsyncCallback&lt;void&gt;): void
 
 发布通知。使用callback异步回调。
 
-发布通知后，通知将以通知卡片的形式展示在设备的通知中心、状态栏等位置。如果新发布通知与已发布通知的ID和标签都相同，则新通知将取代原有通知，实现通知的更新效果。
+发布通知后，通知将以[通知卡片](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-card通知卡片)的形式展示在设备的[通知中心](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-center通知中心)、状态栏等位置。如果新发布通知与已发布通知的ID和标签都相同，则新通知将取代原有通知，实现通知的更新效果。
 
 **系统能力**：SystemCapability.Notification.Notification
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -55,6 +58,7 @@ publish(request: NotificationRequest, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)、[HTTP错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-http)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -105,19 +109,21 @@ notificationManager.publish(notificationRequest, publishCallback);
 
 
 
-#### notificationManager.publish
+## notificationManager.publish
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 publish(request: NotificationRequest): Promise&lt;void&gt;
 
 发布通知。使用Promise异步回调。
 
-发布通知后，通知将以通知卡片的形式展示在设备的通知中心、状态栏等位置。如果新发布通知与已发布通知的ID和标签都相同，则新通知将取代原有通知，实现通知的更新效果。
+发布通知后，通知将以[通知卡片](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-card通知卡片)的形式展示在设备的[通知中心](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-center通知中心)、状态栏等位置。如果新发布通知与已发布通知的ID和标签都相同，则新通知将取代原有通知，实现通知的更新效果。
 
 **系统能力**：SystemCapability.Notification.Notification
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -125,6 +131,7 @@ publish(request: NotificationRequest): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -134,6 +141,7 @@ publish(request: NotificationRequest): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)、[HTTP错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-http)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -180,21 +188,23 @@ notificationManager.publish(notificationRequest).then(() => {
 
 
 
-#### notificationManager.cancel
+## notificationManager.cancel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancel(id: number, label: string, callback: AsyncCallback&lt;void&gt;): void
 
 根据通知ID和标签label取消已发布的通知。使用callback异步回调。
 
-取消后，对应的通知将从通知中心、状态栏等位置移除，用户不再可见。适用于需要精确取消某一条带有特定标签的通知的场景。
+取消后，对应的通知将从[通知中心](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-center通知中心)、状态栏等位置移除，用户不再可见。适用于需要精确取消某一条带有特定标签的通知的场景。
 
 与仅传入通知ID的[notificationManager.cancel(id, callback)](#notificationmanagercancel-2)相比，此接口额外传入label参数，可精确取消同一ID，不同标签的通知。
 
 **系统能力**：SystemCapability.Notification.Notification
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -206,6 +216,7 @@ cancel(id: number, label: string, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -234,19 +245,21 @@ notificationManager.cancel(0, 'label', cancelCallback);
 
 
 
-#### notificationManager.cancel
+## notificationManager.cancel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancel(id: number, label?: string): Promise&lt;void&gt;
 
 根据通知ID和标签label取消已发布的通知。使用Promise异步回调。
 
-取消后，对应的通知将从通知中心、状态栏等位置移除，用户不再可见。
+取消后，对应的通知将从[通知中心](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-center通知中心)、状态栏等位置移除，用户不再可见。
 
 **系统能力**：SystemCapability.Notification.Notification
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -256,6 +269,7 @@ cancel(id: number, label?: string): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -264,6 +278,7 @@ cancel(id: number, label?: string): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -288,21 +303,23 @@ notificationManager.cancel(0).then(() => {
 
 
 
-#### notificationManager.cancel
+## notificationManager.cancel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancel(id: number, callback: AsyncCallback&lt;void&gt;): void
 
 根据指定的通知ID取消已发布的通知。使用callback异步回调。
 
-取消后，对应的通知将从通知中心、状态栏等位置移除，用户不再可见。
+取消后，对应的通知将从[通知中心](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-center通知中心)、状态栏等位置移除，用户不再可见。
 
 与带label参数的[notificationManager.cancel(id, label, callback)](#notificationmanagercancel)相比，此接口不传入label，将取消与指定ID匹配的通知。当发布通知，label不为空时，则需使用接口notificationManager.cancel(id, label, callback)取消通知。
 
 **系统能力**：SystemCapability.Notification.Notification
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -313,6 +330,7 @@ cancel(id: number, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -341,19 +359,21 @@ notificationManager.cancel(0, cancelCallback);
 
 
 
-#### notificationManager.cancelAll
+## notificationManager.cancelAll
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancelAll(callback: AsyncCallback&lt;void&gt;): void
 
 取消当前应用所有已发布的通知。使用callback异步回调。
 
-取消后，当前应用的所有通知将从通知中心、状态栏等位置移除，用户不再可见。适用于应用退出或用户手动清除全部通知的场景。
+取消后，当前应用的所有通知将从[通知中心](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-center通知中心)、状态栏等位置移除，用户不再可见。适用于应用退出或用户手动清除全部通知的场景。
 
 **系统能力**：SystemCapability.Notification.Notification
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -363,6 +383,7 @@ cancelAll(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -390,19 +411,21 @@ notificationManager.cancelAll(cancelAllCallback);
 
 
 
-#### notificationManager.cancelAll
+## notificationManager.cancelAll
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancelAll(): Promise&lt;void&gt;
 
 取消当前应用所有已发布的通知。使用Promise异步回调。
 
-取消后，当前应用的所有通知将从通知中心、状态栏等位置移除，用户不再可见。适用于应用退出或用户手动清除全部通知的场景。
+取消后，当前应用的所有通知将从[通知中心](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-center通知中心)、状态栏等位置移除，用户不再可见。适用于应用退出或用户手动清除全部通知的场景。
 
 **系统能力**：SystemCapability.Notification.Notification
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -412,6 +435,7 @@ cancelAll(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -434,19 +458,21 @@ notificationManager.cancelAll().then(() => {
 
 
 
-#### notificationManager.addSlot
+## notificationManager.addSlot
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addSlot(type: SlotType, callback: AsyncCallback&lt;void&gt;): void
 
-创建指定类型的通知渠道。使用callback异步回调。
+创建指定类型的[通知渠道](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-slot通知渠道)。使用callback异步回调。
 
 通知渠道[NotificationSlot](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-notification-notificationslot#notificationslot-1)定义了通知的提醒方式（如提示音、振动、横幅等）和级别。发布通知前，应用需先创建对应类型的通知渠道，或者发布通知时系统将自动创建对应类型的通知渠道。同一类型的通知渠道只能创建一个。
 
 **系统能力**：SystemCapability.Notification.Notification
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -457,6 +483,7 @@ addSlot(type: SlotType, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -485,13 +512,14 @@ notificationManager.addSlot(notificationManager.SlotType.SOCIAL_COMMUNICATION, a
 
 
 
-#### notificationManager.addSlot
+## notificationManager.addSlot
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addSlot(type: SlotType): Promise&lt;void&gt;
 
-创建指定类型的通知渠道。使用Promise异步回调。
+创建指定类型的[通知渠道](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-slot通知渠道)。使用Promise异步回调。
 
 通知渠道[NotificationSlot](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-notification-notificationslot#notificationslot-1)定义了通知的提醒方式（如提示音、振动、横幅等）和级别。发布通知前，应用需先创建对应类型的通知渠道，或者发布通知时系统将自动创建对应类型的通知渠道。同一类型的通知渠道只能创建一个。
 
@@ -499,12 +527,14 @@ addSlot(type: SlotType): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SlotType | 是 | 要创建的通知渠道的类型。不同的渠道类型对应不同的默认SlotLevel，影响通知的提醒方式。例如SOCIAL_COMMUNICATION对应LEVEL_HIGH（状态栏图标+横幅+提示音），CONTENT_INFORMATION对应LEVEL_MIN（状态栏不显示图标+无横幅+无提示音）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -514,6 +544,7 @@ addSlot(type: SlotType): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -538,19 +569,21 @@ notificationManager.addSlot(notificationManager.SlotType.SOCIAL_COMMUNICATION).t
 
 
 
-#### notificationManager.getSlot
+## notificationManager.getSlot
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSlot(slotType: SlotType, callback: AsyncCallback&lt;NotificationSlot&gt;): void
 
-获取指定类型的通知渠道。使用callback异步回调。
+获取指定类型的[通知渠道](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-slot通知渠道)。使用callback异步回调。
 
 用于查询已创建的通知渠道的详细配置信息，包括提醒方式、级别、锁屏显示等设置。需先通过[addSlot](#notificationmanageraddslot)创建对应类型的通知渠道，否则获取结果为空。
 
 **系统能力**：SystemCapability.Notification.Notification
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -561,6 +594,7 @@ getSlot(slotType: SlotType, callback: AsyncCallback&lt;NotificationSlot&gt;): vo
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -589,13 +623,14 @@ notificationManager.getSlot(slotType, getSlotCallback);
 
 
 
-#### notificationManager.getSlot
+## notificationManager.getSlot
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSlot(slotType: SlotType): Promise&lt;NotificationSlot&gt;
 
-获取指定类型的通知渠道。使用Promise异步回调。
+获取指定类型的[通知渠道](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-slot通知渠道)。使用Promise异步回调。
 
 用于查询已创建的通知渠道的详细配置信息，包括提醒方式、级别、锁屏显示等设置。需先通过[addSlot](#notificationmanageraddslot)创建对应类型的通知渠道，否则获取结果为空。
 
@@ -603,12 +638,14 @@ getSlot(slotType: SlotType): Promise&lt;NotificationSlot&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | slotType | SlotType | 是 | 通知渠道类型，例如社交通信、服务提醒、内容咨询等类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -618,6 +655,7 @@ getSlot(slotType: SlotType): Promise&lt;NotificationSlot&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -642,19 +680,21 @@ notificationManager.getSlot(slotType).then((data: notificationManager.Notificati
 
 
 
-#### notificationManager.getSlots
+## notificationManager.getSlots
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSlots(callback: AsyncCallback<Array&lt;NotificationSlot&gt;>): void
 
-获取当前应用的所有通知渠道。使用callback异步回调。
+获取当前应用的所有[通知渠道](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-slot通知渠道)。使用callback异步回调。
 
 用于批量查询当前应用已创建的所有通知渠道的配置信息，包括各渠道的类型、提醒方式、级别等设置。适用于需要查看所有渠道配置的场景。需先通过[addSlot](#notificationmanageraddslot)创建对应类型的通知渠道，否则获取结果为空。
 
 **系统能力**：SystemCapability.Notification.Notification
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -664,6 +704,7 @@ getSlots(callback: AsyncCallback<Array&lt;NotificationSlot&gt;>): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -691,19 +732,21 @@ notificationManager.getSlots(getSlotsCallback);
 
 
 
-#### notificationManager.getSlots
+## notificationManager.getSlots
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSlots(): Promise<Array&lt;NotificationSlot&gt;>
 
-获取当前应用的所有通知渠道。使用Promise异步回调。
+获取当前应用的所有[通知渠道](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-slot通知渠道)。使用Promise异步回调。
 
 用于批量查询当前应用已创建的所有通知渠道的配置信息，包括各渠道的类型、提醒方式、级别等设置。适用于需要查看所有渠道配置的场景。需先通过[addSlot](#notificationmanageraddslot)创建对应类型的通知渠道，否则获取结果为空。
 
 **系统能力**：SystemCapability.Notification.Notification
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -713,6 +756,7 @@ getSlots(): Promise<Array&lt;NotificationSlot&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -735,19 +779,21 @@ notificationManager.getSlots().then((data: Array<notificationManager.Notificatio
 
 
 
-#### notificationManager.removeSlot
+## notificationManager.removeSlot
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeSlot(slotType: SlotType, callback: AsyncCallback&lt;void&gt;): void
 
-删除当前应用指定类型的通知渠道。使用callback异步回调。
+删除当前应用指定类型的[通知渠道](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-slot通知渠道)。使用callback异步回调。
 
-删除后，对应类型的通知渠道及其配置将被永久移除，后续发布该类型通知时系统将自动创建默认渠道。已通过该渠道发布的通知不受影响，仍可在通知中心查看。适用于需要重新配置渠道时先删除再创建的场景。
+删除后，对应类型的通知渠道及其配置将被永久移除，后续发布该类型通知时系统将自动创建默认渠道。已通过该渠道发布的通知不受影响，仍可在[通知中心](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-center通知中心)查看。适用于需要重新配置渠道时先删除再创建的场景。
 
 **系统能力**：SystemCapability.Notification.Notification
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -758,6 +804,7 @@ removeSlot(slotType: SlotType, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -786,19 +833,21 @@ notificationManager.removeSlot(slotType, removeSlotCallback);
 
 
 
-#### notificationManager.removeSlot
+## notificationManager.removeSlot
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeSlot(slotType: SlotType): Promise&lt;void&gt;
 
-删除当前应用指定类型的通知渠道。使用Promise异步回调。
+删除当前应用指定类型的[通知渠道](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-slot通知渠道)。使用Promise异步回调。
 
-删除后，对应类型的通知渠道及其配置将被永久移除，后续发布该类型通知时系统将自动创建默认渠道。已通过该渠道发布的通知不受影响，仍可在通知中心查看。适用于需要重新配置渠道时先删除再创建的场景。
+删除后，对应类型的通知渠道及其配置将被永久移除，后续发布该类型通知时系统将自动创建默认渠道。已通过该渠道发布的通知不受影响，仍可在[通知中心](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-center通知中心)查看。适用于需要重新配置渠道时先删除再创建的场景。
 
 **系统能力**：SystemCapability.Notification.Notification
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -806,6 +855,7 @@ removeSlot(slotType: SlotType): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -815,6 +865,7 @@ removeSlot(slotType: SlotType): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -839,19 +890,21 @@ notificationManager.removeSlot(slotType).then(() => {
 
 
 
-#### notificationManager.removeAllSlots
+## notificationManager.removeAllSlots
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeAllSlots(callback: AsyncCallback&lt;void&gt;): void
 
-删除当前应用所有通知渠道。使用callback异步回调。
+删除当前应用所有[通知渠道](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-slot通知渠道)。使用callback异步回调。
 
-删除后，当前应用的所有通知渠道及其配置将被永久移除，后续发布通知时系统将自动创建对应类型的渠道。已通过这些渠道发布的通知不受影响，仍可在通知中心查看。适用于需要一次性清除所有渠道配置的场景。
+删除后，当前应用的所有通知渠道及其配置将被永久移除，后续发布通知时系统将自动创建对应类型的渠道。已通过这些渠道发布的通知不受影响，仍可在[通知中心](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-center通知中心)查看。适用于需要一次性清除所有渠道配置的场景。
 
 **系统能力**：SystemCapability.Notification.Notification
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -861,6 +914,7 @@ removeAllSlots(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -887,19 +941,21 @@ notificationManager.removeAllSlots(removeAllSlotsCallback);
 
 
 
-#### notificationManager.removeAllSlots
+## notificationManager.removeAllSlots
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeAllSlots(): Promise&lt;void&gt;
 
-删除当前应用所有通知渠道。使用Promise异步回调。
+删除当前应用所有[通知渠道](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-slot通知渠道)。使用Promise异步回调。
 
-删除后，当前应用的所有通知渠道及其配置将被永久移除，后续发布通知时系统将自动创建对应类型的渠道。已通过这些渠道发布的通知不受影响，仍可在通知中心查看。适用于需要一次性清除所有渠道配置的场景。
+删除后，当前应用的所有通知渠道及其配置将被永久移除，后续发布通知时系统将自动创建对应类型的渠道。已通过这些渠道发布的通知不受影响，仍可在[通知中心](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-center通知中心)查看。适用于需要一次性清除所有渠道配置的场景。
 
 **系统能力**：SystemCapability.Notification.Notification
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -909,6 +965,7 @@ removeAllSlots(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -931,19 +988,21 @@ notificationManager.removeAllSlots().then(() => {
 
 
 
-#### notificationManager.isNotificationEnabled11+
+## notificationManager.isNotificationEnabled11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isNotificationEnabled(callback: AsyncCallback&lt;boolean&gt;): void
 
-查询当前应用通知授权状态。使用callback异步回调。
+查询当前应用[通知授权](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-authorization通知授权)状态。使用callback异步回调。
 
 用于在发布通知前检查当前应用是否被允许发送通知，避免在通知授权关闭时发布导致失败。
 
 **系统能力**：SystemCapability.Notification.Notification
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -953,6 +1012,7 @@ isNotificationEnabled(callback: AsyncCallback&lt;boolean&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)、[包管理子系统通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bundle)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -982,19 +1042,21 @@ notificationManager.isNotificationEnabled(isNotificationEnabledCallback);
 
 
 
-#### notificationManager.isNotificationEnabled11+
+## notificationManager.isNotificationEnabled11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isNotificationEnabled(): Promise&lt;boolean&gt;
 
-查询当前应用通知授权状态。使用Promise异步回调。
+查询当前应用[通知授权](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-authorization通知授权)状态。使用Promise异步回调。
 
 用于在发布通知前检查当前应用是否被允许发送通知，避免在通知使能关闭时发布导致失败。
 
 **系统能力**：SystemCapability.Notification.Notification
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1004,6 +1066,7 @@ isNotificationEnabled(): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)、[包管理子系统通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bundle)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1028,19 +1091,21 @@ notificationManager.isNotificationEnabled().then((data: boolean) => {
 
 
 
-#### notificationManager.isNotificationEnabledSync12+
+## notificationManager.isNotificationEnabledSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isNotificationEnabledSync(): boolean
 
-同步查询当前应用通知授权状态。
+同步查询当前应用[通知授权](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-authorization通知授权)状态。
 
 用于在发布通知前快速检查当前应用是否被允许发送通知。此接口为同步接口，调用后立即返回结果，适用于需要在同步代码流程中获取使能状态的场景。
 
 **系统能力**：SystemCapability.Notification.Notification
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1050,6 +1115,7 @@ isNotificationEnabledSync(): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1067,9 +1133,10 @@ console.info(`isNotificationEnabledSync success, data is : ${JSON.stringify(enab
 
 
 
-#### notificationManager.setBadgeNumber10+
+## notificationManager.setBadgeNumber10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 setBadgeNumber(badgeNumber: number): Promise&lt;void&gt;
 
@@ -1083,12 +1150,14 @@ setBadgeNumber(badgeNumber: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | badgeNumber | number | 是 | 角标个数。当角标设定个数取值小于或等于0时，清除角标。取值大于99时，通知角标将显示99+。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1098,6 +1167,7 @@ setBadgeNumber(badgeNumber: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1124,9 +1194,10 @@ notificationManager.setBadgeNumber(badgeNumber).then(() => {
 
 
 
-#### notificationManager.setBadgeNumber10+
+## notificationManager.setBadgeNumber10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 setBadgeNumber(badgeNumber: number, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1140,6 +1211,7 @@ setBadgeNumber(badgeNumber: number, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | badgeNumber | number | 是 | 角标个数。当角标设定个数取值小于或等于0时，清除角标。取值大于99时，通知角标将显示99+。 |
@@ -1149,6 +1221,7 @@ setBadgeNumber(badgeNumber: number, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1178,9 +1251,10 @@ notificationManager.setBadgeNumber(badgeNumber, setBadgeNumberCallback);
 
 
 
-#### notificationManager.getBadgeNumber22+
+## notificationManager.getBadgeNumber22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 getBadgeNumber(): Promise&lt;number&gt;
 
@@ -1192,6 +1266,7 @@ getBadgeNumber(): Promise&lt;number&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象，返回当前应用角标数量。（查询的角标数量与当前应用通知开关，桌面角标开关是否开启无关） |
@@ -1200,6 +1275,7 @@ getBadgeNumber(): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1222,19 +1298,21 @@ notificationManager.getBadgeNumber().then((badgeNumber: number) => {
 
 
 
-#### notificationManager.getActiveNotificationCount
+## notificationManager.getActiveNotificationCount
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getActiveNotificationCount(callback: AsyncCallback&lt;number&gt;): void
 
 获取当前应用的通知数量。使用callback异步回调。
 
-用于查询当前应用在通知中心中已发布的存量通知数量。适用于需要展示未读通知数量提示的场景。
+用于查询当前应用在[通知中心](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-center通知中心)中已发布的存量通知数量。适用于需要展示未读通知数量提示的场景。
 
 **系统能力**：SystemCapability.Notification.Notification
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1244,6 +1322,7 @@ getActiveNotificationCount(callback: AsyncCallback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1271,19 +1350,21 @@ notificationManager.getActiveNotificationCount(getActiveNotificationCountCallbac
 
 
 
-#### notificationManager.getActiveNotificationCount
+## notificationManager.getActiveNotificationCount
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getActiveNotificationCount(): Promise&lt;number&gt;
 
 获取当前应用的通知数量。使用Promise异步回调。
 
-用于查询当前应用在通知中心中已发布的存量通知数量。适用于需要展示未读通知数量提示的场景。
+用于查询当前应用在[通知中心](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-center通知中心)中已发布的存量通知数量。适用于需要展示未读通知数量提示的场景。
 
 **系统能力**：SystemCapability.Notification.Notification
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1293,6 +1374,7 @@ getActiveNotificationCount(): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1315,19 +1397,21 @@ notificationManager.getActiveNotificationCount().then((data: number) => {
 
 
 
-#### notificationManager.getActiveNotifications
+## notificationManager.getActiveNotifications
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getActiveNotifications(callback: AsyncCallback<Array&lt;NotificationRequest&gt;>): void
 
 获取当前应用未删除的通知列表。使用callback异步回调。
 
-用于查询当前应用在通知中心中所有存量通知的详细信息列表，包括每条通知的ID、标签、内容、创建时间等。
+用于查询当前应用在[通知中心](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-center通知中心)中所有存量通知的详细信息列表，包括每条通知的ID、标签、内容、创建时间等。
 
 **系统能力**：SystemCapability.Notification.Notification
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1337,6 +1421,7 @@ getActiveNotifications(callback: AsyncCallback<Array&lt;NotificationRequest&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1363,19 +1448,21 @@ notificationManager.getActiveNotifications(getActiveNotificationsCallback);
 
 
 
-#### notificationManager.getActiveNotifications
+## notificationManager.getActiveNotifications
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getActiveNotifications(): Promise<Array&lt;NotificationRequest&gt;>
 
 获取当前应用未删除的通知列表。使用Promise异步回调。
 
-用于查询当前应用在通知中心中所有存量通知的详细信息列表，包括每条通知的ID、标签、内容、创建时间等。
+用于查询当前应用在[通知中心](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-center通知中心)中所有存量通知的详细信息列表，包括每条通知的ID、标签、内容、创建时间等。
 
 **系统能力**：SystemCapability.Notification.Notification
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1385,6 +1472,7 @@ getActiveNotifications(): Promise<Array&lt;NotificationRequest&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1407,9 +1495,10 @@ notificationManager.getActiveNotifications().then((data: Array<notificationManag
 
 
 
-#### notificationManager.getNotificationParameters24+
+## notificationManager.getNotificationParameters24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getNotificationParameters(id: number, label?: string): Promise&lt;NotificationParameters&gt;
 
@@ -1421,6 +1510,7 @@ getNotificationParameters(id: number, label?: string): Promise&lt;NotificationPa
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | number | 是 | 通知ID，用于标识目标通知。该值由发布通知时NotificationRequest的id字段指定。 |
@@ -1428,6 +1518,7 @@ getNotificationParameters(id: number, label?: string): Promise&lt;NotificationPa
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1437,6 +1528,7 @@ getNotificationParameters(id: number, label?: string): Promise&lt;NotificationPa
 **错误码：**
 
 以下错误码的详细介绍请参见[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1462,19 +1554,21 @@ notificationManager.getNotificationParameters(id, label).then((data: notificatio
 
 
 
-#### notificationManager.cancelGroup
+## notificationManager.cancelGroup
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancelGroup(groupName: string, callback: AsyncCallback&lt;void&gt;): void
 
 取消当前应用指定组下的通知。使用callback异步回调。
 
-通知组groupName是在发布通知时通过[NotificationRequest](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-notification-notificationrequest#notificationrequest-1)的groupName字段指定的分组标识。取消后，该组下所有通知将从通知中心移除。适用于需要按业务分组批量取消通知的场景。
+通知组groupName是在发布通知时通过[NotificationRequest](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-notification-notificationrequest#notificationrequest-1)的groupName字段指定的分组标识。取消后，该组下所有通知将从[通知中心](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-center通知中心)移除。适用于需要按业务分组批量取消通知的场景。
 
 **系统能力**：SystemCapability.Notification.Notification
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1485,6 +1579,7 @@ cancelGroup(groupName: string, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1512,19 +1607,21 @@ notificationManager.cancelGroup(groupName, cancelGroupCallback);
 
 
 
-#### notificationManager.cancelGroup
+## notificationManager.cancelGroup
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancelGroup(groupName: string): Promise&lt;void&gt;
 
 取消当前应用指定组下的通知。使用Promise异步回调。
 
-通知组groupName是在发布通知时通过[NotificationRequest](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-notification-notificationrequest#notificationrequest-1)的groupName字段指定的分组标识。取消后，该组下所有通知将从通知中心移除。适用于需要按业务分组批量取消通知的场景。
+通知组groupName是在发布通知时通过[NotificationRequest](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-notification-notificationrequest#notificationrequest-1)的groupName字段指定的分组标识。取消后，该组下所有通知将从[通知中心](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-center通知中心)移除。适用于需要按业务分组批量取消通知的场景。
 
 **系统能力**：SystemCapability.Notification.Notification
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1532,6 +1629,7 @@ cancelGroup(groupName: string): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1541,6 +1639,7 @@ cancelGroup(groupName: string): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1565,9 +1664,10 @@ notificationManager.cancelGroup(groupName).then(() => {
 
 
 
-#### notificationManager.isSupportTemplate
+## notificationManager.isSupportTemplate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isSupportTemplate(templateName: string, callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -1576,6 +1676,7 @@ isSupportTemplate(templateName: string, callback: AsyncCallback&lt;boolean&gt;):
 **系统能力**：SystemCapability.Notification.Notification
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1586,6 +1687,7 @@ isSupportTemplate(templateName: string, callback: AsyncCallback&lt;boolean&gt;):
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1613,9 +1715,10 @@ notificationManager.isSupportTemplate(templateName, isSupportTemplateCallback);
 
 
 
-#### notificationManager.isSupportTemplate
+## notificationManager.isSupportTemplate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isSupportTemplate(templateName: string): Promise&lt;boolean&gt;
 
@@ -1625,12 +1728,14 @@ isSupportTemplate(templateName: string): Promise&lt;boolean&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | templateName | string | 是 | 模板名称。当前仅支持'downloadTemplate'。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1640,6 +1745,7 @@ isSupportTemplate(templateName: string): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1664,13 +1770,14 @@ notificationManager.isSupportTemplate(templateName).then((data: boolean) => {
 
 
 
-#### notificationManager.requestEnableNotification10+
+## notificationManager.requestEnableNotification10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestEnableNotification(context: UIAbilityContext, callback: AsyncCallback&lt;void&gt;): void
 
-应用需要获取用户授权才能发送通知。在通知发布前调用该接口，可以拉起通知授权弹窗，让用户选择是否允许发送通知。使用callback异步回调。
+应用需要获取用户授权才能发送通知。在通知发布前调用该接口，可以拉起[通知授权](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-authorization通知授权)弹窗，让用户选择是否允许发送通知。使用callback异步回调。
 
 > [!NOTE]
 > 仅当应用界面加载完成后（即调用 loadContent 成功），方可使用该接口。 在使用该接口拉起通知授权弹窗后，如果用户拒绝授权，将无法使用该接口再次拉起弹窗。开发者可以调用 openNotificationSettingsWithResult 二次申请授权，拉起通知管理弹窗。
@@ -1682,6 +1789,7 @@ requestEnableNotification(context: UIAbilityContext, callback: AsyncCallback&lt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIAbilityContext | 是 | 通知弹窗绑定Ability的上下文。 |
@@ -1691,6 +1799,7 @@ requestEnableNotification(context: UIAbilityContext, callback: AsyncCallback&lt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1734,13 +1843,14 @@ class MyAbility extends UIAbility {
 
 
 
-#### notificationManager.requestEnableNotification10+
+## notificationManager.requestEnableNotification10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestEnableNotification(context: UIAbilityContext): Promise&lt;void&gt;
 
-应用需要获取用户授权才能发送通知。在通知发布前调用该接口，可以拉起通知授权弹窗，让用户选择是否允许发送通知。使用Promise异步回调。
+应用需要获取用户授权才能发送通知。在通知发布前调用该接口，可以拉起[通知授权](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-authorization通知授权)弹窗，让用户选择是否允许发送通知。使用Promise异步回调。
 
 > [!NOTE]
 > 仅当应用界面加载完成后（即调用 loadContent 成功），方可使用该接口。 在使用该接口拉起通知授权弹窗后，如果用户拒绝授权，将无法使用该接口再次拉起弹窗。开发者可以调用 openNotificationSettingsWithResult 二次申请授权，拉起通知管理弹窗。
@@ -1752,12 +1862,14 @@ requestEnableNotification(context: UIAbilityContext): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIAbilityContext | 是 | 通知弹窗绑定的Ability上下文。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1767,6 +1879,7 @@ requestEnableNotification(context: UIAbilityContext): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1807,9 +1920,10 @@ class MyAbility extends UIAbility {
 
 
 
-#### notificationManager.requestEnableNotification(deprecated)
+## notificationManager.requestEnableNotification(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestEnableNotification(callback: AsyncCallback&lt;void&gt;): void
 
@@ -1823,6 +1937,7 @@ requestEnableNotification(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当应用请求通知使能成功，err为undefined，否则为错误对象。 |
@@ -1831,6 +1946,7 @@ requestEnableNotification(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1859,9 +1975,10 @@ notificationManager.requestEnableNotification(requestEnableNotificationCallback)
 
 
 
-#### notificationManager.requestEnableNotification(deprecated)
+## notificationManager.requestEnableNotification(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestEnableNotification(): Promise&lt;void&gt;
 
@@ -1875,6 +1992,7 @@ requestEnableNotification(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -1883,6 +2001,7 @@ requestEnableNotification(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1907,13 +2026,14 @@ notificationManager.requestEnableNotification().then(() => {
 
 
 
-#### notificationManager.isDistributedEnabled(deprecated)
+## notificationManager.isDistributedEnabled(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isDistributedEnabled(callback: AsyncCallback&lt;boolean&gt;): void
 
-查询设备是否支持跨设备协同通知。使用callback异步回调。
+查询设备是否支持[跨设备协同](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#cross-device-collaboration跨设备协同)通知。使用callback异步回调。
 
 > [!NOTE]
 > 从API version 9开始支持，从API version 26.0.0开始废弃。
@@ -1923,6 +2043,7 @@ isDistributedEnabled(callback: AsyncCallback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;boolean&gt; | 是 | 回调函数。返回true表示支持跨设备协同通知；返回false表示不支持跨设备协同通知；调用失败返回错误对象。 |
@@ -1931,6 +2052,7 @@ isDistributedEnabled(callback: AsyncCallback&lt;boolean&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1959,13 +2081,14 @@ notificationManager.isDistributedEnabled(isDistributedEnabledCallback);
 
 
 
-#### notificationManager.isDistributedEnabled(deprecated)
+## notificationManager.isDistributedEnabled(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isDistributedEnabled(): Promise&lt;boolean&gt;
 
-查询设备是否支持跨设备协同通知。使用Promise异步回调。
+查询设备是否支持[跨设备协同](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#cross-device-collaboration跨设备协同)通知。使用Promise异步回调。
 
 > [!NOTE]
 > 从API version 9开始支持，从API version 26.0.0开始废弃。
@@ -1975,6 +2098,7 @@ isDistributedEnabled(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示支持跨设备协同通知；返回false表示不支持跨设备协同通知。 |
@@ -1983,6 +2107,7 @@ isDistributedEnabled(): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2007,13 +2132,14 @@ notificationManager.isDistributedEnabled().then((data: boolean) => {
 
 
 
-#### notificationManager.openNotificationSettings13+
+## notificationManager.openNotificationSettings13+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 openNotificationSettings(context: UIAbilityContext): Promise&lt;void&gt;
 
-拉起应用的通知设置界面，该页面以半模态形式呈现，可用于设置通知开关、通知提醒方式等。使用Promise异步回调。
+拉起应用的[通知设置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-setting通知设置)界面，该页面以半模态形式呈现，可用于设置通知开关、[通知提醒方式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-reminder-mode通知提醒方式)等。使用Promise异步回调。
 
 适用于用户需要手动修改通知设置的场景，如用户拒绝授权后二次申请，或需要修改通知提醒方式（振动、响铃等）。当[requestEnableNotification](#notificationmanagerrequestenablenotification10)弹窗被用户拒绝后，开发者可调用此接口引导用户前往通知设置页面手动开启。
 
@@ -2023,12 +2149,14 @@ openNotificationSettings(context: UIAbilityContext): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIAbilityContext | 是 | 通知设置页面绑定Ability的上下文。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2038,6 +2166,7 @@ openNotificationSettings(context: UIAbilityContext): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2076,13 +2205,14 @@ class MyAbility extends UIAbility {
 
 
 
-#### notificationManager.openNotificationSettingsWithResult
+## notificationManager.openNotificationSettingsWithResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 openNotificationSettingsWithResult(context: UIAbilityContext): Promise&lt;NotificationSetting&gt;
 
-拉起应用的通知设置界面，该页面以半模态形式呈现，可用于设置通知开关、通知提醒方式等。使用Promise异步回调，当半模态窗口关闭时返回用户设置的状态。
+拉起应用的[通知设置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-setting通知设置)界面，该页面以半模态形式呈现，可用于设置通知开关、[通知提醒方式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-reminder-mode通知提醒方式)等。使用Promise异步回调，当半模态窗口关闭时返回用户设置的状态。
 
 与[openNotificationSettings](#notificationmanageropennotificationsettings13)相比，此接口在半模态窗口关闭时返回[NotificationSetting](#notificationsetting20)对象，开发者可根据返回结果判断用户是否开启了通知权限，从而决定后续逻辑。
 
@@ -2094,12 +2224,14 @@ openNotificationSettingsWithResult(context: UIAbilityContext): Promise&lt;Notifi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIAbilityContext | 是 | 通知设置页面绑定Ability的上下文。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2109,6 +2241,7 @@ openNotificationSettingsWithResult(context: UIAbilityContext): Promise&lt;Notifi
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2147,17 +2280,19 @@ class MyAbility extends UIAbility {
 
 
 
-#### notificationManager.getNotificationSetting20+
+## notificationManager.getNotificationSetting20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getNotificationSetting(): Promise&lt;NotificationSetting&gt;
 
-获取应用的通知设置，包括锁屏通知、横幅通知、桌面角标、振动、铃声等开关状态。使用Promise异步回调。
+获取应用的[通知设置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-setting通知设置)，包括锁屏通知、横幅通知、桌面角标、振动、铃声等开关状态。使用Promise异步回调。
 
 **系统能力**：SystemCapability.Notification.Notification
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2167,6 +2302,7 @@ getNotificationSetting(): Promise&lt;NotificationSetting&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2189,17 +2325,19 @@ notificationManager.getNotificationSetting().then((data: notificationManager.Not
 
 
 
-#### notificationManager.isGeofenceEnabled23+
+## notificationManager.isGeofenceEnabled23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isGeofenceEnabled(): Promise&lt;boolean&gt;
 
-检查地理围栏功能是否已启用。使用Promise异步回调。
+检查[地理围栏](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#geofence地理围栏)功能是否已启用。使用Promise异步回调。
 
 **系统能力**：SystemCapability.Notification.Notification
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2209,6 +2347,7 @@ isGeofenceEnabled(): Promise&lt;boolean&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[通知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-notification)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2233,15 +2372,17 @@ notificationManager.isGeofenceEnabled().then((data: boolean) => {
 
 
 
-#### ContentType
+## ContentType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-通知内容类型。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+[通知内容类型](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#content-type通知内容类型)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2256,15 +2397,17 @@ notificationManager.isGeofenceEnabled().then((data: boolean) => {
 
 
 
-#### SlotLevel
+## SlotLevel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通知级别。
 
 用于定义[NotificationSlot](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-notification-notificationslot)的通知提醒行为级别，影响通知在状态栏的显示方式，是否展示横幅和提示音等。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2277,17 +2420,19 @@ notificationManager.isGeofenceEnabled().then((data: boolean) => {
 
 
 
-#### SlotType
+## SlotType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-通知渠道类型。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+[通知渠道](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-slot通知渠道)类型。
 
 不同类型对应不同的[SlotLevel](#slotlevel)，决定通知的提醒行为。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2302,13 +2447,15 @@ notificationManager.isGeofenceEnabled().then((data: boolean) => {
 
 
 
-#### NotificationSetting20+
+## NotificationSetting20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-通知提醒方式开关的设置状态。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+[通知提醒方式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-reminder-mode通知提醒方式)开关的设置状态。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2322,13 +2469,15 @@ notificationManager.isGeofenceEnabled().then((data: boolean) => {
 
 
 
-#### PriorityNotificationType23+
+## PriorityNotificationType23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述通知的优先级类型。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2341,15 +2490,17 @@ notificationManager.isGeofenceEnabled().then((data: boolean) => {
 
 
 
-#### BundleOption
+## BundleOption
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type BundleOption = _BundleOption
 
 指定应用的包信息。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2358,15 +2509,17 @@ type BundleOption = _BundleOption
 
 
 
-#### NotificationActionButton
+## NotificationActionButton
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type NotificationActionButton = _NotificationActionButton
 
 通知中显示的操作按钮。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2375,15 +2528,17 @@ type NotificationActionButton = _NotificationActionButton
 
 
 
-#### NotificationBasicContent
+## NotificationBasicContent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type NotificationBasicContent = _NotificationBasicContent
 
 普通文本通知。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2392,15 +2547,17 @@ type NotificationBasicContent = _NotificationBasicContent
 
 
 
-#### NotificationContent
+## NotificationContent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type NotificationContent = _NotificationContent
 
-通知内容。
+[通知内容](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-content通知内容)。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2409,15 +2566,17 @@ type NotificationContent = _NotificationContent
 
 
 
-#### NotificationLongTextContent
+## NotificationLongTextContent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type NotificationLongTextContent = _NotificationLongTextContent
 
 长文本通知。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2426,15 +2585,17 @@ type NotificationLongTextContent = _NotificationLongTextContent
 
 
 
-#### NotificationMultiLineContent
+## NotificationMultiLineContent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type NotificationMultiLineContent = _NotificationMultiLineContent
 
 多行文本通知。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2443,15 +2604,17 @@ type NotificationMultiLineContent = _NotificationMultiLineContent
 
 
 
-#### NotificationPictureContent
+## NotificationPictureContent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type NotificationPictureContent = _NotificationPictureContent
 
 附有图片的通知。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2460,15 +2623,17 @@ type NotificationPictureContent = _NotificationPictureContent
 
 
 
-#### NotificationSystemLiveViewContent11+
+## NotificationSystemLiveViewContent11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type NotificationSystemLiveViewContent = _NotificationSystemLiveViewContent
 
-系统实况窗通知内容。
+[系统实况窗](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#system-live-view系统实况窗)[通知内容](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-content通知内容)。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2477,15 +2642,17 @@ type NotificationSystemLiveViewContent = _NotificationSystemLiveViewContent
 
 
 
-#### NotificationRequest
+## NotificationRequest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type NotificationRequest = _NotificationRequest
 
-通知请求。
+[通知请求](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-request通知请求)。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2494,17 +2661,19 @@ type NotificationRequest = _NotificationRequest
 
 
 
-#### NotificationParameters24+
+## NotificationParameters24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type NotificationParameters = _NotificationParameters
 
-描述通知请求中wantAgent的部分信息。
+描述[通知请求](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-request通知请求)中wantAgent的部分信息。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2513,15 +2682,17 @@ type NotificationParameters = _NotificationParameters
 
 
 
-#### DistributedOptions
+## DistributedOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type DistributedOptions = _DistributedOptions
 
 分布式选项。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2530,15 +2701,17 @@ type DistributedOptions = _DistributedOptions
 
 
 
-#### NotificationSlot
+## NotificationSlot
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type NotificationSlot = _NotificationSlot
 
-通知渠道。
+[通知渠道](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-slot通知渠道)。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2547,15 +2720,17 @@ type NotificationSlot = _NotificationSlot
 
 
 
-#### NotificationTemplate
+## NotificationTemplate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type NotificationTemplate = _NotificationTemplate
 
 通知模板。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2564,15 +2739,17 @@ type NotificationTemplate = _NotificationTemplate
 
 
 
-#### NotificationUserInput
+## NotificationUserInput
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type NotificationUserInput = _NotificationUserInput
 
 保存用户输入的通知消息。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2581,15 +2758,17 @@ type NotificationUserInput = _NotificationUserInput
 
 
 
-#### NotificationCapsule11+
+## NotificationCapsule11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type NotificationCapsule = _NotificationCapsule
 
-通知胶囊。
+[通知胶囊](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-capsule通知胶囊)。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2598,15 +2777,17 @@ type NotificationCapsule = _NotificationCapsule
 
 
 
-#### NotificationButton11+
+## NotificationButton11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type NotificationButton = _NotificationButton
 
-通知按钮。
+[通知按钮](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-button通知按钮)。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2615,15 +2796,17 @@ type NotificationButton = _NotificationButton
 
 
 
-#### NotificationTime11+
+## NotificationTime11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type NotificationTime = _NotificationTime
 
 通知计时信息。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2632,15 +2815,17 @@ type NotificationTime = _NotificationTime
 
 
 
-#### NotificationProgress11+
+## NotificationProgress11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type NotificationProgress = _NotificationProgress
 
-通知进度。
+[通知进度](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-progress通知进度)。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 类型 | 说明 |
 | --- | --- |

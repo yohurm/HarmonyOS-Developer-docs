@@ -1,13 +1,14 @@
 # OH_Camera
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-camera
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 为相机模块提供C接口的定义。
 
@@ -35,9 +36,11 @@
 
 
 
-#### 文件汇总
+## 文件汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -51,3 +54,4 @@
 | photo_output.h | 声明拍照输出概念。 |
 | preview_output.h | 声明预览输出概念。 |
 | video_output.h | 声明录像输出概念。 |
+| metadata_object_ext.h | 声明元数据对象扩展概念。 起始版本： 26.0.0 |

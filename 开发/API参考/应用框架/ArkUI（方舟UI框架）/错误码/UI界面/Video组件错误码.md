@@ -1,15 +1,19 @@
 # Video组件错误码
 
-更新时间：2026-03-27 08:08:20
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-video
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 > [!NOTE]
 > 以下仅介绍本模块特有错误码，媒体错误码请参考 Media错误码 ，通用错误码请参考 通用错误码 。
 
 
 
-#### 103601 播放器创建失败
+## 103601 播放器创建失败
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -29,7 +33,10 @@ Failed to create the media player.
 
 
 
-#### 103602 视频资源设置无效
+## 103602 视频资源设置无效
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 

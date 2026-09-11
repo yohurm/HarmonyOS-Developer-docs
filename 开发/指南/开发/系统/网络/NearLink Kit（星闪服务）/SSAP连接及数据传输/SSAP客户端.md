@@ -1,6 +1,6 @@
 # SSAP客户端
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nearlink-ssap-client-connect
 
@@ -9,13 +9,14 @@
 
 
 
-#### 场景介绍
+## 场景介绍
 
 提供设备作为客户端的能力，客户端可连接服务端进行数据传输。
 
 
 
-#### 接口说明
+## 接口说明
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -31,7 +32,7 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 导入相关模块。
 
   
@@ -192,6 +193,6 @@ try {
 
 
 
-#### 示例代码
+## 示例代码
 
 SSAP客户端功能可参考[星闪示例代码](https://gitcode.com/harmonyos_samples/nearlink-kit_-sample-code)，entry/src/main/ets/pages/SsapClientPage.ets中的实现方法。

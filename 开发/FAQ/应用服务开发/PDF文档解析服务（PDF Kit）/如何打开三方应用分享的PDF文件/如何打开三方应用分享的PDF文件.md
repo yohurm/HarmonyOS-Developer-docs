@@ -54,25 +54,25 @@
               "ohos.want.action.home"
             ]
           },
-          // 添加skill配置
+         <em> <span style="color: rgb(128,128,128);">// </span><span style="color: rgb(128,128,128);">添加</span><span style="color: rgb(128,128,128);">skill</span><span style="color: rgb(128,128,128);">配置</span></em>
           {
             "actions": [
-              // 必需，声明数据处理能力
+              <em><span style="color: rgb(128,128,128);">// </span><span style="color: rgb(128,128,128);">必需，声明数据处理能力</span></em>
               "ohos.want.action.viewData",
               "ohos.want.action.sendData"
             ],
             "uris": [
               {
                 "scheme": "file",
-                // 目标应用在配置支持接收的数据类型时，需穷举支持的UTD
+                <em><span style="color: rgb(128,128,128);">// </span><span style="color: rgb(128,128,128);">目标应用在配置支持接收的数据类型时，需穷举支持的</span><span style="color: rgb(128,128,128);">UTD</span></em>
                 "utd": "com.adobe.pdf",
-                // maxFileSupported对于归属指定类型的文件，标识一次支持接收的最大数量。默认为0，代表不支持此类文件的分享
-                "maxFileSupported": 1
+               <em> <span style="color: rgb(128,128,128);">// maxFileSupported</span><span style="color: rgb(128,128,128);">对于归属指定类型的文件，标识一次支持接收的最大数量。默认为</span><span style="color: rgb(128,128,128);">0</span><span style="color: rgb(128,128,128);">，代表不支持此类文件的分享</span></em>
+                "maxFileSupported": <span style="color: rgb(0,0,255);">1</span>
               },
               {
                 "scheme": "file",
                 "utd": "general.object",
-                "maxFileSupported": 1
+                "maxFileSupported": <span style="color: rgb(0,0,255);">1</span>
               }
             ]
           }
@@ -125,7 +125,7 @@ export default class EntryAbility extends UIAbility {
           }
 
           try {
-            // 获取uri，缓存至应用沙箱
+            <em>// </em><em>获取uri，缓存至应用沙箱</em>
             const file = fileIo.openSync(record.uri, fileIo.OpenMode.READ_ONLY);
             const destPath = this.context.cacheDir + '/' + file.name;
             const outFile = fileIo.openSync(destPath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);

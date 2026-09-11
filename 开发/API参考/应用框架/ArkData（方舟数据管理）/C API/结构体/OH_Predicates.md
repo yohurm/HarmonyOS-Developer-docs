@@ -1,18 +1,19 @@
 # OH_Predicates
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-rdb-oh-predicates
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct {...} OH_Predicates
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示谓词。
  
@@ -24,10 +25,12 @@ typedef struct {...} OH_Predicates
  
   
 
-#### 成员变量
+### 成员变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | int64_t id | OH_Predicates结构体的唯一标识符。 |
@@ -35,10 +38,12 @@ typedef struct {...} OH_Predicates
  
   
 
-#### 成员函数
+### 成员函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_Predicates *(*equalTo)(OH_Predicates *predicates, const char *field, OH_VObject *valueObject) | 函数指针，配置谓词以匹配数据字段等于指定值的字段。 |
@@ -69,15 +74,17 @@ typedef struct {...} OH_Predicates
  
   
 
-#### 成员函数说明
+## 成员函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### equalTo()
+### equalTo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Predicates *(*equalTo)(OH_Predicates *predicates, const char *field, OH_VObject *valueObject)
@@ -91,15 +98,17 @@ OH_Predicates *(*equalTo)(OH_Predicates *predicates, const char *field, OH_VObje
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Predicates *predicates | 表示指向OH_Predicates实例的指针。 |
-| const char *field | 数据库表中的列名 |
+| const char *field | 数据库表中的列名，不能为空指针。 |
 | OH_VObject *valueObject | 表示指向OH_VObject实例的指针，指示要与谓词匹配的值。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Predicates * | 返回与指定字段匹配的谓词。 |
@@ -107,9 +116,10 @@ OH_Predicates *(*equalTo)(OH_Predicates *predicates, const char *field, OH_VObje
  
   
 
-#### notEqualTo()
+### notEqualTo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Predicates *(*notEqualTo)(OH_Predicates *predicates, const char *field, OH_VObject *valueObject)
@@ -125,15 +135,17 @@ OH_Predicates *(*notEqualTo)(OH_Predicates *predicates, const char *field, OH_VO
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Predicates *predicates | 表示指向OH_Predicates实例的指针。 |
-| const char *field | 数据库表中的列名，不能为空。 |
+| const char *field | 数据库表中的列名，不能为空指针。 |
 | OH_VObject *valueObject | 表示指向OH_VObject实例的指针，指示要与谓词匹配的值。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Predicates * | 返回与指定字段匹配的谓词。 |
@@ -141,9 +153,10 @@ OH_Predicates *(*notEqualTo)(OH_Predicates *predicates, const char *field, OH_VO
  
   
 
-#### beginWrap()
+### beginWrap()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Predicates *(*beginWrap)(OH_Predicates *predicates)
@@ -159,6 +172,7 @@ OH_Predicates *(*beginWrap)(OH_Predicates *predicates)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Predicates *predicates | 表示指向OH_Predicates实例的指针。 |
@@ -166,6 +180,7 @@ OH_Predicates *(*beginWrap)(OH_Predicates *predicates)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Predicates * | 返回带有左括号的谓词。 |
@@ -173,9 +188,10 @@ OH_Predicates *(*beginWrap)(OH_Predicates *predicates)
  
   
 
-#### endWrap()
+### endWrap()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Predicates *(*endWrap)(OH_Predicates *predicates)
@@ -191,6 +207,7 @@ OH_Predicates *(*endWrap)(OH_Predicates *predicates)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Predicates *predicates | 表示指向OH_Predicates实例的指针。 |
@@ -198,6 +215,7 @@ OH_Predicates *(*endWrap)(OH_Predicates *predicates)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Predicates * | 返回带有右括号的谓词。 |
@@ -205,9 +223,10 @@ OH_Predicates *(*endWrap)(OH_Predicates *predicates)
  
   
 
-#### orOperate()
+### orOperate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Predicates *(*orOperate)(OH_Predicates *predicates)
@@ -223,6 +242,7 @@ OH_Predicates *(*orOperate)(OH_Predicates *predicates)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Predicates *predicates | 表示指向OH_Predicates实例的指针。 |
@@ -230,6 +250,7 @@ OH_Predicates *(*orOperate)(OH_Predicates *predicates)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Predicates * | 返回带有或条件的谓词。 |
@@ -237,9 +258,10 @@ OH_Predicates *(*orOperate)(OH_Predicates *predicates)
  
   
 
-#### andOperate()
+### andOperate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Predicates *(*andOperate)(OH_Predicates *predicates)
@@ -255,6 +277,7 @@ OH_Predicates *(*andOperate)(OH_Predicates *predicates)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Predicates *predicates | 表示指向OH_Predicates实例的指针。 |
@@ -262,6 +285,7 @@ OH_Predicates *(*andOperate)(OH_Predicates *predicates)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Predicates * | 返回带有和条件的谓词。 |
@@ -269,9 +293,10 @@ OH_Predicates *(*andOperate)(OH_Predicates *predicates)
  
   
 
-#### isNull()
+### isNull()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Predicates *(*isNull)(OH_Predicates *predicates, const char *field)
@@ -287,14 +312,16 @@ OH_Predicates *(*isNull)(OH_Predicates *predicates, const char *field)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Predicates *predicates | 表示指向OH_Predicates实例的指针。 |
-| const char *field | 数据库表中的列名，不能为空。 |
+| const char *field | 数据库表中的列名，不能为空指针。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Predicates * | 返回与指定字段匹配的谓词。 |
@@ -302,9 +329,10 @@ OH_Predicates *(*isNull)(OH_Predicates *predicates, const char *field)
  
   
 
-#### isNotNull()
+### isNotNull()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Predicates *(*isNotNull)(OH_Predicates *predicates, const char *field)
@@ -320,14 +348,16 @@ OH_Predicates *(*isNotNull)(OH_Predicates *predicates, const char *field)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Predicates *predicates | 表示指向OH_Predicates实例的指针。 |
-| const char *field | 数据库表中的列名，不能为空。 |
+| const char *field | 数据库表中的列名，不能为空指针。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Predicates * | 返回与指定字段匹配的谓词。 |
@@ -335,9 +365,10 @@ OH_Predicates *(*isNotNull)(OH_Predicates *predicates, const char *field)
  
   
 
-#### like()
+### like()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Predicates *(*like)(OH_Predicates *predicates, const char *field, OH_VObject *valueObject)
@@ -353,15 +384,17 @@ OH_Predicates *(*like)(OH_Predicates *predicates, const char *field, OH_VObject 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Predicates *predicates | 表示指向OH_Predicates实例的指针。 |
-| const char *field | 数据库表中的列名，不能为空。 |
+| const char *field | 数据库表中的列名，不能为空指针。 |
 | OH_VObject *valueObject | 表示指向OH_VObject实例的指针，指示要与谓词匹配的值。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Predicates * | 返回与指定字段匹配的谓词。 |
@@ -369,9 +402,10 @@ OH_Predicates *(*like)(OH_Predicates *predicates, const char *field, OH_VObject 
  
   
 
-#### between()
+### between()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Predicates *(*between)(OH_Predicates *predicates, const char *field, OH_VObject *valueObject)
@@ -387,15 +421,17 @@ OH_Predicates *(*between)(OH_Predicates *predicates, const char *field, OH_VObje
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Predicates *predicates | 表示指向OH_Predicates实例的指针。 |
-| const char *field | 数据库表中的列名，不能为空。 |
+| const char *field | 数据库表中的列名，不能为空指针。 |
 | OH_VObject *valueObject | 表示指向OH_VObject实例的指针，指示要与谓词匹配的值。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Predicates * | 返回与指定字段匹配的谓词。 |
@@ -403,9 +439,10 @@ OH_Predicates *(*between)(OH_Predicates *predicates, const char *field, OH_VObje
  
   
 
-#### notBetween()
+### notBetween()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Predicates *(*notBetween)(OH_Predicates *predicates, const char *field, OH_VObject *valueObject)
@@ -421,15 +458,17 @@ OH_Predicates *(*notBetween)(OH_Predicates *predicates, const char *field, OH_VO
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Predicates *predicates | 表示指向OH_Predicates实例的指针。 |
-| const char *field | 数据库表中的列名，不能为空。 |
+| const char *field | 数据库表中的列名，不能为空指针。 |
 | OH_VObject *valueObject | 表示指向OH_VObject实例的指针，指示要与谓词匹配的值。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Predicates * | 返回与指定字段匹配的谓词。 |
@@ -437,9 +476,10 @@ OH_Predicates *(*notBetween)(OH_Predicates *predicates, const char *field, OH_VO
  
   
 
-#### greaterThan()
+### greaterThan()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Predicates *(*greaterThan)(OH_Predicates *predicates, const char *field, OH_VObject *valueObject)
@@ -455,15 +495,17 @@ OH_Predicates *(*greaterThan)(OH_Predicates *predicates, const char *field, OH_V
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Predicates *predicates | 表示指向OH_Predicates实例的指针。 |
-| const char *field | 数据库表中的列名，不能为空。 |
+| const char *field | 数据库表中的列名，不能为空指针。 |
 | OH_VObject *valueObject | 表示指向OH_VObject实例的指针，指示要与谓词匹配的值。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Predicates * | 返回与指定字段匹配的谓词。 |
@@ -471,9 +513,10 @@ OH_Predicates *(*greaterThan)(OH_Predicates *predicates, const char *field, OH_V
  
   
 
-#### lessThan()
+### lessThan()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Predicates *(*lessThan)(OH_Predicates *predicates, const char *field, OH_VObject *valueObject)
@@ -489,15 +532,17 @@ OH_Predicates *(*lessThan)(OH_Predicates *predicates, const char *field, OH_VObj
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Predicates *predicates | 表示指向OH_Predicates实例的指针。 |
-| const char *field | 数据库表中的列名，不能为空。 |
+| const char *field | 数据库表中的列名，不能为空指针。 |
 | OH_VObject *valueObject | 表示指向OH_VObject实例的指针，指示要与谓词匹配的值。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Predicates * | 返回与指定字段匹配的谓词。 |
@@ -505,9 +550,10 @@ OH_Predicates *(*lessThan)(OH_Predicates *predicates, const char *field, OH_VObj
  
   
 
-#### greaterThanOrEqualTo()
+### greaterThanOrEqualTo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Predicates *(*greaterThanOrEqualTo)(OH_Predicates *predicates, const char *field, OH_VObject *valueObject)
@@ -523,15 +569,17 @@ OH_Predicates *(*greaterThanOrEqualTo)(OH_Predicates *predicates, const char *fi
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Predicates *predicates | 表示指向OH_Predicates实例的指针。 |
-| const char *field | 数据库表中的列名，不能为空。 |
+| const char *field | 数据库表中的列名，不能为空指针。 |
 | OH_VObject *valueObject | 表示指向OH_VObject实例的指针，指示要与谓词匹配的值。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Predicates * | 返回与指定字段匹配的谓词。 |
@@ -539,9 +587,10 @@ OH_Predicates *(*greaterThanOrEqualTo)(OH_Predicates *predicates, const char *fi
  
   
 
-#### lessThanOrEqualTo()
+### lessThanOrEqualTo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Predicates *(*lessThanOrEqualTo)(OH_Predicates *predicates, const char *field, OH_VObject *valueObject)
@@ -557,15 +606,17 @@ OH_Predicates *(*lessThanOrEqualTo)(OH_Predicates *predicates, const char *field
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Predicates *predicates | 表示指向OH_Predicates实例的指针。 |
-| const char *field | 数据库表中的列名，不能为空。 |
+| const char *field | 数据库表中的列名，不能为空指针。 |
 | OH_VObject *valueObject | 表示指向OH_VObject实例的指针，指示要与谓词匹配的值。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Predicates * | 返回与指定字段匹配的谓词。 |
@@ -573,9 +624,10 @@ OH_Predicates *(*lessThanOrEqualTo)(OH_Predicates *predicates, const char *field
  
   
 
-#### orderBy()
+### orderBy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Predicates *(*orderBy)(OH_Predicates *predicates, const char *field, OH_OrderType type)
@@ -591,15 +643,17 @@ OH_Predicates *(*orderBy)(OH_Predicates *predicates, const char *field, OH_Order
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Predicates *predicates | 表示指向OH_Predicates实例的指针。 |
-| const char *field | 数据库表中的列名，不能为空。 |
+| const char *field | 数据库表中的列名，不能为空指针。 |
 | OH_OrderType type | 排序类型。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Predicates * | 返回与指定字段匹配的谓词。 |
@@ -607,9 +661,10 @@ OH_Predicates *(*orderBy)(OH_Predicates *predicates, const char *field, OH_Order
  
   
 
-#### distinct()
+### distinct()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Predicates *(*distinct)(OH_Predicates *predicates)
@@ -625,6 +680,7 @@ OH_Predicates *(*distinct)(OH_Predicates *predicates)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Predicates *predicates | 表示指向OH_Predicates实例的指针。 |
@@ -632,6 +688,7 @@ OH_Predicates *(*distinct)(OH_Predicates *predicates)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Predicates * | 返回可用于过滤重复记录的谓词。 |
@@ -639,9 +696,10 @@ OH_Predicates *(*distinct)(OH_Predicates *predicates)
  
   
 
-#### limit()
+### limit()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Predicates *(*limit)(OH_Predicates *predicates, unsigned int value)
@@ -657,6 +715,7 @@ OH_Predicates *(*limit)(OH_Predicates *predicates, unsigned int value)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Predicates *predicates | 表示指向OH_Predicates实例的指针。 |
@@ -665,6 +724,7 @@ OH_Predicates *(*limit)(OH_Predicates *predicates, unsigned int value)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Predicates * | 返回可用于设置最大数据记录数的谓词。 |
@@ -672,9 +732,10 @@ OH_Predicates *(*limit)(OH_Predicates *predicates, unsigned int value)
  
   
 
-#### offset()
+### offset()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Predicates *(*offset)(OH_Predicates *predicates, unsigned int rowOffset)
@@ -690,6 +751,7 @@ OH_Predicates *(*offset)(OH_Predicates *predicates, unsigned int rowOffset)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Predicates *predicates | 表示指向OH_Predicates实例的指针。 |
@@ -698,6 +760,7 @@ OH_Predicates *(*offset)(OH_Predicates *predicates, unsigned int rowOffset)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Predicates * | 返回具有指定返回结果起始位置的谓词。 |
@@ -705,9 +768,10 @@ OH_Predicates *(*offset)(OH_Predicates *predicates, unsigned int rowOffset)
  
   
 
-#### groupBy()
+### groupBy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Predicates *(*groupBy)(OH_Predicates *predicates, char const *const *fields, int length)
@@ -723,15 +787,17 @@ OH_Predicates *(*groupBy)(OH_Predicates *predicates, char const *const *fields, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Predicates *predicates | 表示指向OH_Predicates实例的指针。 |
-| char const *const *fields | 指定分组依赖的列名，不能为空。 |
+| char const *const *fields | 指定分组依赖的列名，不能为空指针。 |
 | int length | 该参数为输入参数，表示fields数组的长度。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Predicates * | 返回分组查询列的谓词。 |
@@ -739,9 +805,10 @@ OH_Predicates *(*groupBy)(OH_Predicates *predicates, char const *const *fields, 
  
   
 
-#### in()
+### in()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Predicates *(*in)(OH_Predicates *predicates, const char *field, OH_VObject *valueObject)
@@ -757,15 +824,17 @@ OH_Predicates *(*in)(OH_Predicates *predicates, const char *field, OH_VObject *v
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Predicates *predicates | 表示指向OH_Predicates实例的指针。 |
-| const char *field | 表示数据库表中的列名，不能为空。 |
+| const char *field | 表示数据库表中的列名，不能为空指针。 |
 | OH_VObject *valueObject | 表示指向OH_VObject实例的指针，指示要与谓词匹配的值。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Predicates * | 返回与指定字段匹配的谓词。 |
@@ -773,9 +842,10 @@ OH_Predicates *(*in)(OH_Predicates *predicates, const char *field, OH_VObject *v
  
   
 
-#### notIn()
+### notIn()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Predicates *(*notIn)(OH_Predicates *predicates, const char *field, OH_VObject *valueObject)
@@ -791,15 +861,17 @@ OH_Predicates *(*notIn)(OH_Predicates *predicates, const char *field, OH_VObject
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Predicates *predicates | 表示指向OH_Predicates实例的指针。 |
-| const char *field | 表示数据库表中的列名，不能为空。 |
+| const char *field | 表示数据库表中的列名，不能为空指针。 |
 | OH_VObject *valueObject | 表示指向OH_VObject实例的指针，指示要与谓词匹配的值。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Predicates * | 返回与指定字段匹配的谓词。 |
@@ -807,9 +879,10 @@ OH_Predicates *(*notIn)(OH_Predicates *predicates, const char *field, OH_VObject
  
   
 
-#### clear()
+### clear()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Predicates *(*clear)(OH_Predicates *predicates)
@@ -823,6 +896,7 @@ OH_Predicates *(*clear)(OH_Predicates *predicates)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Predicates *predicates | 表示指向OH_Predicates实例的指针。 |
@@ -830,6 +904,7 @@ OH_Predicates *(*clear)(OH_Predicates *predicates)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Predicates * | 返回清空后的谓词。 |
@@ -837,9 +912,10 @@ OH_Predicates *(*clear)(OH_Predicates *predicates)
  
   
 
-#### destroy()
+### destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int (*destroy)(OH_Predicates *predicates)
@@ -853,6 +929,7 @@ int (*destroy)(OH_Predicates *predicates)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Predicates *predicates | 表示指向OH_Predicates实例的指针。 |
@@ -860,6 +937,7 @@ int (*destroy)(OH_Predicates *predicates)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。详细信息请参阅OH_Rdb_ErrCode。 |

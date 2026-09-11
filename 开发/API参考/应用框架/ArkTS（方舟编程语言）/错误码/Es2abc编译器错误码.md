@@ -1,15 +1,19 @@
 # es2abc编译器错误码
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-es2abc
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!TIP]
 > 本节列出 es2abc（ECMAScript to Ark Bytecode）编译器模块的专有错误码说明。通用错误码请参考 通用错误码说明文档 。
 
 
 
-#### 10705000 语法错误
+## 10705000 语法错误
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -39,7 +43,10 @@ SyntaxError: Concurrent function should only use import variable or local variab
 
 
 
-#### 10706001 不支持变更
+## 10706001 不支持变更
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 

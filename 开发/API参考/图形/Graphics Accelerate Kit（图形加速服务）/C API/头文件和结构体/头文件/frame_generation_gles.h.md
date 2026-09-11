@@ -1,11 +1,12 @@
 # frame_generation_gles.h
 
-更新时间：2026-06-05 02:03:20
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/frame__generation__gles_8h
 **支持设备：** Phone | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### 结构体
+### 结构体
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | struct FG_DispatchDescription_GLES | 此结构体描述下发帧生成命令HMS_FG_Dispatch_GLES需要的参数信息，每一帧都需要进行更新。该接口仅适配OpenGL ES图形API平台。 |
@@ -40,10 +44,12 @@
  
   
 
-#### 类型定义
+### 类型定义
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | typedef struct FG_Context_GLES FG_Context_GLES | 此结构体描述超帧上下文，该接口仅适配OpenGL ES图形API平台。 |
@@ -53,10 +59,12 @@
  
   
 
-#### 枚举
+### 枚举
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | FG_ImageFormat_GLES { FG_FORMAT_R8G8B8A8_UNORM = 0, FG_FORMAT_R11G11B10_SFLOAT = 1, FG_FORMAT_R16G16B16A16_SFLOAT = 2 } | 此枚举描述真实渲染帧颜色缓冲区和预测帧缓冲区的图像格式。该接口仅适配OpenGL ES图形API平台。 |
@@ -64,10 +72,12 @@
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | FG_Context_GLES* HMS_FG_CreateContext_GLES(void) | 创建超帧上下文实例，调用成功则返回指向FG_Context_GLES对象的指针，失败返回nullptr。该接口仅适配OpenGL ES图形API平台。 |

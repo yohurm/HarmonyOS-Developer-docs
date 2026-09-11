@@ -1,9 +1,9 @@
 # animate
 
-更新时间：2026-07-09 02:26:55
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-svg-animate
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 > [!NOTE]
 > 该组件从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
@@ -12,26 +12,30 @@
 设置svg组件的属性动画。
   
 
-#### 权限列表
+## 权限列表
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 无
  
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 不支持。
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
  
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | id | string | - | 否 | 组件的唯一标识。 |
@@ -52,9 +56,10 @@
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 <!-- xxx.hml -->
@@ -134,4 +139,4 @@
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/9ZdfpS1ITGqICgVdESWZww/zh-cn_image_0000002677828221.gif?HW-CC-KV=V1&HW-CC-Date=20260723T012002Z&HW-CC-Expire=86400&HW-CC-Sign=40EE12172832DD7585704F224EA858E30CE3DE90F9CD0AA85026EDE3CBE6A7F6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/0Ar97rCsRCGdritmhRxz3Q/zh-cn_image_0000002717613304.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072958Z&HW-CC-Expire=86400&HW-CC-Sign=D65A5444595616236A6B9F44019667AD9B83C7CE302AE97718BB662E7147481B)

@@ -1,13 +1,13 @@
 # 密钥派生(ArkTS)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-key-derivation-arkts
 
 以PBKDF2和HKDF256密钥为例，完成密钥派生。具体的场景介绍及支持的算法规格，请参考[密钥派生支持的算法](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-key-derivation-overview#支持的算法)。
 
 
-#### 开发步骤
+## 开发步骤
 
 **生成密钥**
 1. 指定密钥别名，密钥别名命名规范参考[密钥生成介绍及算法规格](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-key-generation-overview)。
@@ -27,11 +27,17 @@
   可指定参数HUKS_TAG_DERIVED_AGREED_KEY_STORAGE_FLAG（可选），用于标识派生得到的密钥是否由HUKS管理。
 
 | 生成 | 派生 | 规格 |
+
 | --- | --- | --- |
+
 | HUKS_STORAGE_ONLY_USED_IN_HUKS | HUKS_STORAGE_ONLY_USED_IN_HUKS | 密钥由HUKS管理 |
+
 | HUKS_STORAGE_KEY_EXPORT_ALLOWED | HUKS_STORAGE_KEY_EXPORT_ALLOWED | 密钥返回给调用方管理 |
+
 | 未指定TAG具体值 | HUKS_STORAGE_ONLY_USED_IN_HUKS | 密钥由HUKS管理 |
+
 | 未指定TAG具体值 | HUKS_STORAGE_KEY_EXPORT_ALLOWED | 密钥返回给调用方管理 |
+
 | 未指定TAG具体值 | 未指定TAG具体值 | 密钥返回给调用方管理 |
 
   注：派生时指定的TAG值，不可与生成时指定的TAG值冲突。表格中仅列举有效的指定方式。
@@ -45,11 +51,11 @@
 
 
 
-#### 开发案例
+## 开发案例
 
 
 
-#### HKDF
+### HKDF
 
 准备HKDF密钥派生材料
 
@@ -372,7 +378,7 @@ async function testDerive() {
 
 
 
-#### PBKDF2
+### PBKDF2
 
 准备PBKDF2密钥派生材料
 

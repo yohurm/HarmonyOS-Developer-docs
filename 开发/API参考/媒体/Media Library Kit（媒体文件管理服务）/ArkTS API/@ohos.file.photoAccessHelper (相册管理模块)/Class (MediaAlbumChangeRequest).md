@@ -1,9 +1,9 @@
 # Class (MediaAlbumChangeRequest)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-photoaccesshelper-mediaalbumchangerequest
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 MediaAlbumChangeRequest implements [MediaChangeRequest](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-photoaccesshelper-i#mediachangerequest11).
 
@@ -14,9 +14,10 @@ MediaAlbumChangeRequest implements [MediaChangeRequest](https://developer.huawei
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
@@ -24,13 +25,15 @@ import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -39,9 +42,10 @@ import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
 
 
-#### constructor11+
+## constructor11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(album: Album)
 
@@ -51,6 +55,7 @@ constructor(album: Album)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | album | Album | 是 | 需要变更的相册。 |
@@ -59,6 +64,7 @@ constructor(album: Album)
 **错误码：**
 
 接口抛出错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -80,24 +86,29 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
     fetchColumns: [],
     predicates: predicates
   };
-  let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> = await phAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC, fetchOptions);
-  let album: photoAccessHelper.Album = await fetchResult.getFirstObject();
-  let albumChangeRequest: photoAccessHelper.MediaAlbumChangeRequest = new photoAccessHelper.MediaAlbumChangeRequest(album);
+  try {
+    let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> = await phAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC, fetchOptions);
+    let album: photoAccessHelper.Album = await fetchResult.getFirstObject();
+    let albumChangeRequest: photoAccessHelper.MediaAlbumChangeRequest = new photoAccessHelper.MediaAlbumChangeRequest(album);
+  } catch (err) {
+    console.error(`MediaAlbumChangeRequest constructorDemo failed with error: ${err.code}, ${err.message}`);
+  }
 }
 ```
 
 
 
-#### getAlbum11+
+## getAlbum11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAlbum(): Album
 
 获取当前相册变更请求中的相册。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/WCGJJvHgQqGuPse3Vh4l3A/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260624T020414Z&HW-CC-Expire=86400&HW-CC-Sign=3948E261641538A4466928E9AC0F17B380BBCE8DABE0566C0163B581AA62D8E7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/Kz_tPVtyTT6Fn7ndZe17Gg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072444Z&HW-CC-Expire=86400&HW-CC-Sign=ABF20E8802924FDFB7FC8EA4F3AE588FE71B176C2A8E9128574EC6BA4AE33767)
 
 
 对于创建相册的变更请求，在调用接口[applyChanges](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-photoaccesshelper-photoaccesshelper#applychanges11)的提交生效之前，该接口会返回null。
@@ -108,6 +119,7 @@ getAlbum(): Album
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Album | 返回当前相册变更请求中的相册。 |
@@ -116,6 +128,7 @@ getAlbum(): Album
 **错误码：**
 
 接口抛出错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -145,36 +158,29 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### setAlbumName11+
+## setAlbumName11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAlbumName(name: string): void
 
 设置相册名称。
 
-相册名参数规格：
-
- - 相册名字符串长度为1~255。
- - 不允许出现的非法英文字符，包括：
-
-  . \ / : * ? " ' ` < > | { } [ ]
- - 英文字符大小写不敏感。
- - 相册名不允许重名。
-
-
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| name | string | 是 | 待设置的相册名称。 |
+| name | string | 是 | 待设置的相册名称。 相册名字符串长度为1~255。不允许出现的非法英文字符，包括： . \ / : * ? " ' ` < > \| { } [ ] 英文字符大小写不敏感。 相册名不允许重名。 |
 
 
 **错误码：**
 
 接口抛出错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -205,9 +211,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### addAssets11+
+## addAssets11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addAssets(assets: Array&lt;PhotoAsset&gt;): void
 
@@ -217,6 +224,7 @@ addAssets(assets: Array&lt;PhotoAsset&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | assets | Array&lt;PhotoAsset&gt; | 是 | 待添加到相册中的资产数组。 |
@@ -225,6 +233,7 @@ addAssets(assets: Array&lt;PhotoAsset&gt;): void
 **错误码：**
 
 接口抛出错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -265,9 +274,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### removeAssets11+
+## removeAssets11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeAssets(assets: Array&lt;PhotoAsset&gt;): void
 
@@ -277,6 +287,7 @@ removeAssets(assets: Array&lt;PhotoAsset&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | assets | Array&lt;PhotoAsset&gt; | 是 | 待从相册中移除的资产数组。 |
@@ -285,6 +296,7 @@ removeAssets(assets: Array&lt;PhotoAsset&gt;): void
 **错误码：**
 
 接口抛出错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

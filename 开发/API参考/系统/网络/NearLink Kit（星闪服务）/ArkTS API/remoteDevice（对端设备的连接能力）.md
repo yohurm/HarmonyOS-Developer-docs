@@ -1,9 +1,9 @@
 # remoteDevice（对端设备的连接能力）
 
-更新时间：2026-08-04 06:06:24
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-remote-device
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供了查询远端设备信息、发起配对等功能。
  
@@ -12,9 +12,10 @@
 **起始版本：** 5.0.1(13)
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { remoteDevice } from '@kit.NearLinkKit';
@@ -22,9 +23,10 @@ import { remoteDevice } from '@kit.NearLinkKit';
  
   
 
-#### PairingState
+## PairingState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type PairingState = constant.PairingState
  
@@ -36,6 +38,7 @@ type PairingState = constant.PairingState
  
 **起始版本：** 5.0.1(13)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | constant.PairingState | 和远端设备的配对状态。 |
@@ -43,9 +46,10 @@ type PairingState = constant.PairingState
  
   
 
-#### ConnectionState
+## ConnectionState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ConnectionState = constant.ConnectionState
  
@@ -57,6 +61,7 @@ type ConnectionState = constant.ConnectionState
  
 **起始版本：** 5.0.1(13)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | constant.ConnectionState | 和远端设备的连接状态。 |
@@ -64,9 +69,10 @@ type ConnectionState = constant.ConnectionState
  
   
 
-#### DeviceClass
+## DeviceClass
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type DeviceClass = constant.DeviceClass
  
@@ -78,6 +84,7 @@ type DeviceClass = constant.DeviceClass
  
 **起始版本：** 5.0.1(13)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | constant.DeviceClass | 设备类型。 |
@@ -85,9 +92,10 @@ type DeviceClass = constant.DeviceClass
  
   
 
-#### AcbState
+## AcbState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AcbState = constant.AcbState
  
@@ -99,6 +107,7 @@ type AcbState = constant.AcbState
  
 **起始版本：** 5.1.0(18)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | constant.AcbState | 和远端设备的逻辑链路连接状态。 |
@@ -106,9 +115,10 @@ type AcbState = constant.AcbState
  
   
 
-#### createRemoteDevice
+## createRemoteDevice
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createRemoteDevice(address: string): RemoteDevice
  
@@ -122,6 +132,7 @@ createRemoteDevice(address: string): RemoteDevice
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | address | string | 是 | 远端设备地址。地址格式参考：11:22:33:AA:BB:FF。 |
@@ -129,6 +140,7 @@ createRemoteDevice(address: string): RemoteDevice
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | RemoteDevice | 远端设备实例。 |
@@ -138,6 +150,7 @@ createRemoteDevice(address: string): RemoteDevice
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. |
@@ -161,9 +174,10 @@ try {
  
   
 
-#### RemoteDevice
+## RemoteDevice
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 提供远端设备的操作方法，使用前需要使用 remoteDevice.createRemoteDevice 方法创建一个远端设备 RemoteDevice 实例。一个设备只需要创建一次，无需多次创建。
@@ -177,9 +191,10 @@ try {
  
   
 
-#### startPairing
+### startPairing
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startPairing(): Promise&lt;void&gt;
  
@@ -195,6 +210,7 @@ startPairing(): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -204,6 +220,7 @@ startPairing(): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -234,9 +251,10 @@ try {
  
   
 
-#### getPairingState
+### getPairingState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPairingState(): PairingState
  
@@ -252,6 +270,7 @@ getPairingState(): PairingState
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | PairingState | 和远端设备的配对状态。 |
@@ -261,6 +280,7 @@ getPairingState(): PairingState
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -288,9 +308,10 @@ try {
  
   
 
-#### getDeviceName
+### getDeviceName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDeviceName(): string
  
@@ -306,6 +327,7 @@ getDeviceName(): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 远端设备名称。最大长度为30。 |
@@ -315,6 +337,7 @@ getDeviceName(): string
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -342,9 +365,10 @@ try {
  
   
 
-#### getDeviceClass
+### getDeviceClass
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDeviceClass(): DeviceClass
  
@@ -360,6 +384,7 @@ getDeviceClass(): DeviceClass
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DeviceClass | 远端设备类型。 |
@@ -369,6 +394,7 @@ getDeviceClass(): DeviceClass
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -396,9 +422,10 @@ try {
  
   
 
-#### getConnectionState
+### getConnectionState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getConnectionState(): ConnectionState
  
@@ -414,6 +441,7 @@ getConnectionState(): ConnectionState
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ConnectionState | 本端设备和远端设备的连接状态。 |
@@ -423,6 +451,7 @@ getConnectionState(): ConnectionState
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -450,9 +479,10 @@ try {
  
   
 
-#### getAcbState
+### getAcbState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAcbState(): AcbState
  
@@ -468,6 +498,7 @@ getAcbState(): AcbState
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AcbState | 和远端设备的逻辑链路连接状态。 |
@@ -477,6 +508,7 @@ getAcbState(): AcbState
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -504,9 +536,10 @@ try {
  
   
 
-#### getDeviceInformation
+### getDeviceInformation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDeviceInformation(): DeviceInformation
  
@@ -522,6 +555,7 @@ getDeviceInformation(): DeviceInformation
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DeviceInformation | 远端设备的设备信息。 |
@@ -531,6 +565,7 @@ getDeviceInformation(): DeviceInformation
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -560,9 +595,10 @@ try {
  
   
 
-#### DeviceInformation
+## DeviceInformation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示远端设备信息。
  
@@ -572,6 +608,7 @@ try {
  
 **起始版本：** 6.1.1(24)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | manufacturerData | string | 否 | 否 | 厂商信息。 |

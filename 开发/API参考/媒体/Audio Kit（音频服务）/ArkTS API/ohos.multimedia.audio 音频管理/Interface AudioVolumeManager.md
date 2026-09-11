@@ -1,11 +1,11 @@
 # Interface (AudioVolumeManager)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiovolumemanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-音量管理。
+AudioVolumeManager是音频系统中的音量管理模块。本模块提供音频音量管理能力，包括获取和设置应用级音量、获取音频流音量及音量范围、监听系统和应用级音量变化等。当需要精确控制应用音量或响应系统音量变化时，使用本模块接口完成相关操作。
 
 在使用AudioVolumeManager的接口之前，需先通过[getVolumeManager](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiomanager#getvolumemanager9)获取AudioVolumeManager实例。
 
@@ -14,9 +14,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { audio } from '@kit.AudioKit';
@@ -24,9 +25,10 @@ import { audio } from '@kit.AudioKit';
 
 
 
-#### getVolumeGroupManager9+
+## getVolumeGroupManager9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getVolumeGroupManager(groupId: number, callback: AsyncCallback&lt;AudioVolumeGroupManager&gt;): void
 
@@ -36,9 +38,10 @@ getVolumeGroupManager(groupId: number, callback: AsyncCallback&lt;AudioVolumeGro
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| groupId | number | 是 | 音量组id，默认使用DEFAULT_VOLUME_GROUP_ID。 |
+| groupId | number | 是 | 音量组ID，默认使用DEFAULT_VOLUME_GROUP_ID。 |
 | callback | AsyncCallback&lt;AudioVolumeGroupManager&gt; | 是 | 回调函数。当获取音频组音量管理器实例成功，err为undefined，data为获取到的音频组音量管理器实例；否则为错误对象。 |
 
 
@@ -52,19 +55,20 @@ let audioVolumeGroupManager: audio.AudioVolumeGroupManager;
 
 audioVolumeManager.getVolumeGroupManager(groupId, (err: BusinessError, value: audio.AudioVolumeGroupManager) => {
   if (err) {
-    console.error(`Failed to get volume group manager. Code: ${err.code}, message: ${err.message}`);
+    console.error(`Failed to obtain the volume group manager. Code: ${err.code}, message: ${err.message}`);
     return;
   }
-  console.info('Succeeded in getting volume group manager.');
   audioVolumeGroupManager = value;
+  console.info('Succeeded in obtaining the volume group manager.');
 });
 ```
 
 
 
-#### getVolumeGroupManager9+
+## getVolumeGroupManager9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getVolumeGroupManager(groupId: number): Promise&lt;AudioVolumeGroupManager&gt;
 
@@ -74,12 +78,14 @@ getVolumeGroupManager(groupId: number): Promise&lt;AudioVolumeGroupManager&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| groupId | number | 是 | 音量组id，默认使用DEFAULT_VOLUME_GROUP_ID。 |
+| groupId | number | 是 | 音量组ID，默认使用DEFAULT_VOLUME_GROUP_ID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -89,25 +95,25 @@ getVolumeGroupManager(groupId: number): Promise&lt;AudioVolumeGroupManager&gt;
 **示例：**
 
 ```text
-import { audio } from '@kit.AudioKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 let groupId: number = audio.DEFAULT_VOLUME_GROUP_ID;
 let audioVolumeGroupManager: audio.AudioVolumeGroupManager;
 
 audioVolumeManager.getVolumeGroupManager(groupId).then((value: audio.AudioVolumeGroupManager) => {
-  console.info('Succeeded in getting volume group manager.');
   audioVolumeGroupManager = value;
+  console.info('Succeeded in obtaining the volume group manager.');
 }).catch((err: BusinessError) => {
-  console.error(`Failed to get volume group manager. Code: ${err.code}, message: ${err.message}`);
+  console.error(`Failed to obtain the volume group manager. Code: ${err.code}, message: ${err.message}`);
 });
 ```
 
 
 
-#### getVolumeGroupManagerSync10+
+## getVolumeGroupManagerSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getVolumeGroupManagerSync(groupId: number): AudioVolumeGroupManager
 
@@ -119,12 +125,14 @@ getVolumeGroupManagerSync(groupId: number): AudioVolumeGroupManager
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| groupId | number | 是 | 音量组id，默认使用DEFAULT_VOLUME_GROUP_ID。 |
+| groupId | number | 是 | 音量组ID，默认使用DEFAULT_VOLUME_GROUP_ID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -135,9 +143,10 @@ getVolumeGroupManagerSync(groupId: number): AudioVolumeGroupManager
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
 | 6800101 | Parameter verification failed. |
 
 
@@ -148,18 +157,19 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 try {
   let audioVolumeGroupManager: audio.AudioVolumeGroupManager = audioVolumeManager.getVolumeGroupManagerSync(audio.DEFAULT_VOLUME_GROUP_ID);
-  console.info('Succeeded in getting volume group manager.');
+  console.info('Succeeded in obtaining the volume group manager.');
 } catch (err) {
   let error = err as BusinessError;
-  console.error(`Failed to get volume group manager. Code: ${error.code}, message: ${error.message}`);
+  console.error(`Failed to obtain the volume group manager. Code: ${error.code}, message: ${error.message}`);
 }
 ```
 
 
 
-#### getAppVolumePercentage19+
+## getAppVolumePercentage19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAppVolumePercentage(): Promise&lt;number&gt;
 
@@ -171,26 +181,30 @@ getAppVolumePercentage(): Promise&lt;number&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;number&gt; | Promise对象，返回应用的音量。 |
+| Promise&lt;number&gt; | Promise对象，返回应用的音量。 取值范围为[0, 100]，单位为百分号（%）。 |
 
 
 **示例：**
 
 ```text
-import { audio } from '@kit.AudioKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 audioVolumeManager.getAppVolumePercentage().then((value: number) => {
-  console.info(`app volume is ${value}.`);
+  console.info(`Succeeded in obtaining the app volume percentage, appVolumePercentage: ${value}.`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to obtain the app volume percentage. Code: ${err.code}, message: ${err.message}`);
 });
 ```
 
 
 
-#### setAppVolumePercentage19+
+## setAppVolumePercentage19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAppVolumePercentage(volume: number): Promise&lt;void&gt;
 
@@ -202,21 +216,24 @@ setAppVolumePercentage(volume: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| volume | number | 是 | 要设置的音量值。 |
+| volume | number | 是 | 要设置的音量值。 取值范围为[0, 100]，单位为百分号（%）。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -227,18 +244,21 @@ setAppVolumePercentage(volume: number): Promise&lt;void&gt;
 **示例：**
 
 ```text
-import { audio } from '@kit.AudioKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 audioVolumeManager.setAppVolumePercentage(20).then(() => {
-  console.info(`set app volume success.`);
+  console.info('Succeeded in setting the app volume percentage.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to set the app volume percentage. Code: ${err.code}, message: ${err.message}`);
 });
 ```
 
 
 
-#### on('volumeChange')(deprecated)
+## on('volumeChange')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'volumeChange', callback: Callback&lt;VolumeEvent&gt;): void
 
@@ -252,6 +272,7 @@ on(type: 'volumeChange', callback: Callback&lt;VolumeEvent&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'volumeChange'，当系统音量发生变化时，触发该事件。 |
@@ -262,6 +283,7 @@ on(type: 'volumeChange', callback: Callback&lt;VolumeEvent&gt;): void
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
@@ -270,23 +292,22 @@ on(type: 'volumeChange', callback: Callback&lt;VolumeEvent&gt;): void
 
 **示例：**
 
-```text
+```json
 audioVolumeManager.on('volumeChange', (volumeEvent: audio.VolumeEvent) => {
-  console.info(`VolumeType of stream: ${volumeEvent.volumeType} `);
-  console.info(`Volume level: ${volumeEvent.volume} `);
-  console.info(`Whether to updateUI: ${volumeEvent.updateUi} `);
+  console.info(`Volume changed, volumeEvent: ${JSON.stringify(volumeEvent)}.`);
 });
 ```
 
 
 
-#### off('volumeChange')(deprecated)
+## off('volumeChange')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'volumeChange', callback?: Callback&lt;VolumeEvent&gt;): void
 
-取消监听系统音量变化事件。使用callback异步回调。
+取消监听系统音量变化事件。
 
 > [!NOTE]
 > 从API version 12开始支持，从API version 20开始废弃，建议使用 off('streamVolumeChange') 替代。
@@ -296,15 +317,17 @@ off(type: 'volumeChange', callback?: Callback&lt;VolumeEvent&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型，支持的事件为'volumeChange'，当取消监听系统音量变化事件时，触发该事件。 |
-| callback | Callback&lt;VolumeEvent&gt; | 否 | 回调函数，返回变化后的音量信息。 |
+| type | string | 是 | 事件回调类型，支持的事件为'volumeChange'。 |
+| callback | Callback&lt;VolumeEvent&gt; | 否 | 回调函数。传入回调函数时，仅取消该回调对应的监听事件，需与on('volumeChange')绑定同一回调函数；不传参数时，取消此事件类型下所有已订阅的监听事件。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -314,15 +337,13 @@ off(type: 'volumeChange', callback?: Callback&lt;VolumeEvent&gt;): void
 
 **示例：**
 
-```text
+```json
 // 取消该事件的所有监听。
 audioVolumeManager.off('volumeChange');
 
 // 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
 let volumeChangeCallback = (volumeEvent: audio.VolumeEvent) => {
-  console.info(`VolumeType of stream: ${volumeEvent.volumeType} `);
-  console.info(`Volume level: ${volumeEvent.volume} `);
-  console.info(`Whether to updateUI: ${volumeEvent.updateUi} `);
+  console.info(`Volume changed, volumeEvent: ${JSON.stringify(volumeEvent)}.`);
 };
 
 audioVolumeManager.on('volumeChange', volumeChangeCallback);
@@ -332,9 +353,10 @@ audioVolumeManager.off('volumeChange', volumeChangeCallback);
 
 
 
-#### on('appVolumeChange')19+
+## on('appVolumeChange')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'appVolumeChange', callback: Callback&lt;VolumeEvent&gt;): void
 
@@ -343,6 +365,7 @@ on(type: 'appVolumeChange', callback: Callback&lt;VolumeEvent&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Volume
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -354,6 +377,7 @@ on(type: 'appVolumeChange', callback: Callback&lt;VolumeEvent&gt;): void
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 6800101 | Parameter verification failed. |
@@ -361,38 +385,39 @@ on(type: 'appVolumeChange', callback: Callback&lt;VolumeEvent&gt;): void
 
 **示例：**
 
-```text
+```json
 audioVolumeManager.on('appVolumeChange', (volumeEvent: audio.VolumeEvent) => {
-  console.info(`VolumeType of stream: ${volumeEvent.volumeType} `);
-  console.info(`Volume level: ${volumeEvent.volume} `);
-  console.info(`Whether to updateUI: ${volumeEvent.updateUi} `);
+  console.info(`App volume changed, appVolumeEvent: ${JSON.stringify(volumeEvent)}.`);
 });
 ```
 
 
 
-#### off('appVolumeChange')19+
+## off('appVolumeChange')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'appVolumeChange', callback?: Callback&lt;VolumeEvent&gt;): void
 
-取消监听当前应用的应用级音量变化事件。使用callback异步回调。
+取消监听当前应用的应用级音量变化事件。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Volume
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型，支持的事件为'appVolumeChange'，当取消监听当前应用的应用级音量变化事件时，触发该事件。 |
-| callback | Callback&lt;VolumeEvent&gt; | 否 | 回调函数，返回变化后的音量信息。 |
+| type | string | 是 | 事件回调类型，支持的事件为'appVolumeChange'。 |
+| callback | Callback&lt;VolumeEvent&gt; | 否 | 回调函数。传入回调函数时，仅取消该回调对应的监听事件，需与on('appVolumeChange')绑定同一回调函数；不传参数时，取消此事件类型下所有已订阅的监听事件。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 6800101 | Parameter verification failed. |
@@ -400,15 +425,13 @@ off(type: 'appVolumeChange', callback?: Callback&lt;VolumeEvent&gt;): void
 
 **示例：**
 
-```text
+```json
 // 取消该事件的所有监听。
 audioVolumeManager.off('appVolumeChange');
 
 // 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
 let appVolumeChangeCallback = (volumeEvent: audio.VolumeEvent) => {
-  console.info(`VolumeType of stream: ${volumeEvent.volumeType} `);
-  console.info(`Volume level: ${volumeEvent.volume} `);
-  console.info(`Whether to updateUI: ${volumeEvent.updateUi} `);
+  console.info(`App volume changed, appVolumeEvent: ${JSON.stringify(volumeEvent)}.`);
 };
 
 audioVolumeManager.on('appVolumeChange', appVolumeChangeCallback);
@@ -418,9 +441,10 @@ audioVolumeManager.off('appVolumeChange', appVolumeChangeCallback);
 
 
 
-#### getVolumeByStream20+
+## getVolumeByStream20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getVolumeByStream(streamUsage: StreamUsage): number
 
@@ -432,12 +456,14 @@ getVolumeByStream(streamUsage: StreamUsage): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | streamUsage | StreamUsage | 是 | 需要获取音量值的音频流。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -448,6 +474,7 @@ getVolumeByStream(streamUsage: StreamUsage): number
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 6800101 | Parameter verification failed. |
@@ -456,24 +483,24 @@ getVolumeByStream(streamUsage: StreamUsage): number
 **示例：**
 
 ```text
-// 获取指定音频流的音量值。
 import { BusinessError } from '@kit.BasicServicesKit';
-import { audio } from '@kit.AudioKit'
 
+// 获取指定音频流的音量值。
 try {
-  let volume : number = audio.getAudioManager().getVolumeManager().getVolumeByStream(audio.StreamUsage.STREAM_USAGE_MUSIC);
-  console.info(`Obtains the volume of a stream success.`);
+  let volume: number = audio.getAudioManager().getVolumeManager().getVolumeByStream(audio.StreamUsage.STREAM_USAGE_MUSIC);
+  console.info(`Succeeded in obtaining the volume by stream, volume: ${volume}.`);
 } catch (err) {
   let error = err as BusinessError;
-  console.error(`Failed to obtains the volume of a stream, error: ${error}`);
+  console.error(`Failed to obtain the volume by stream. Code: ${error.code}, message: ${error.message}`);
 }
 ```
 
 
 
-#### getMinVolumeByStream20+
+## getMinVolumeByStream20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMinVolumeByStream(streamUsage: StreamUsage): number
 
@@ -485,12 +512,14 @@ getMinVolumeByStream(streamUsage: StreamUsage): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | streamUsage | StreamUsage | 是 | 需要获取的最小音量值的音频流。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -501,6 +530,7 @@ getMinVolumeByStream(streamUsage: StreamUsage): number
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 6800101 | Parameter verification failed. |
@@ -509,24 +539,24 @@ getMinVolumeByStream(streamUsage: StreamUsage): number
 **示例：**
 
 ```text
-// 获取指定音频流的最小音量。
 import { BusinessError } from '@kit.BasicServicesKit';
-import { audio } from '@kit.AudioKit'
 
+// 获取指定音频流的最小音量。
 try {
-  let volume : number = audio.getAudioManager().getVolumeManager().getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_MUSIC);
-  console.info(`Obtains the minimum volume allowed for a stream success.`);
+  let volume: number = audio.getAudioManager().getVolumeManager().getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_MUSIC);
+  console.info(`Succeeded in obtaining the minimum volume by stream, minVolume: ${volume}.`);
 } catch (err) {
   let error = err as BusinessError;
-  console.error(`Failed to obtains the minimum volume allowed for a stream, error: ${error}`);
+  console.error(`Failed to obtain the minimum volume by stream. Code: ${error.code}, message: ${error.message}`);
 }
 ```
 
 
 
-#### getMaxVolumeByStream20+
+## getMaxVolumeByStream20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMaxVolumeByStream(streamUsage: StreamUsage): number
 
@@ -538,12 +568,14 @@ getMaxVolumeByStream(streamUsage: StreamUsage): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | streamUsage | StreamUsage | 是 | 需要获取的最大音量值的音频流。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -554,6 +586,7 @@ getMaxVolumeByStream(streamUsage: StreamUsage): number
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 6800101 | Parameter verification failed. |
@@ -562,24 +595,24 @@ getMaxVolumeByStream(streamUsage: StreamUsage): number
 **示例：**
 
 ```text
-// 获取指定音频流的最大音量。
 import { BusinessError } from '@kit.BasicServicesKit';
-import { audio } from '@kit.AudioKit'
 
+// 获取指定音频流的最大音量。
 try {
-  let volume : number = audio.getAudioManager().getVolumeManager().getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_MUSIC);
-  console.info(`Obtains the maximum volume allowed for a stream success.`);
+  let volume: number = audio.getAudioManager().getVolumeManager().getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_MUSIC);
+  console.info(`Succeeded in obtaining the maximum volume by stream, maxVolume: ${volume}.`);
 } catch (err) {
   let error = err as BusinessError;
-  console.error(`Failed to obtains the maximum volume allowed for a stream, error: ${error}`);
+  console.error(`Failed to obtain the maximum volume by stream. Code: ${error.code}, message: ${error.message}`);
 }
 ```
 
 
 
-#### isSystemMutedForStream20+
+## isSystemMutedForStream20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isSystemMutedForStream(streamUsage: StreamUsage): boolean
 
@@ -589,12 +622,14 @@ isSystemMutedForStream(streamUsage: StreamUsage): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | streamUsage | StreamUsage | 是 | 检查是否为静音的音频流。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -605,6 +640,7 @@ isSystemMutedForStream(streamUsage: StreamUsage): boolean
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 6800101 | Parameter verification failed. |
@@ -613,24 +649,24 @@ isSystemMutedForStream(streamUsage: StreamUsage): boolean
 **示例：**
 
 ```text
-// 检查指定音频流是否静音。
 import { BusinessError } from '@kit.BasicServicesKit';
-import { audio } from '@kit.AudioKit'
 
+// 检查指定音频流是否静音。
 try {
-  let isMuted : boolean = audio.getAudioManager().getVolumeManager().isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_MUSIC);
-  console.info(`Checks whether the system is muted based on the stream success.`);
+  let isMuted: boolean = audio.getAudioManager().getVolumeManager().isSystemMutedForStream(audio.StreamUsage.STREAM_USAGE_MUSIC);
+  console.info(`Succeeded in checking whether the system is muted for the stream, isMuted: ${isMuted}.`);
 } catch (err) {
   let error = err as BusinessError;
-  console.error(`Failed to checks whether the system is muted based on the stream, error: ${error}`);
+  console.error(`Failed to check whether the system is muted for the stream. Code: ${error.code}, message: ${error.message}`);
 }
 ```
 
 
 
-#### getVolumeInUnitOfDbByStream20+
+## getVolumeInUnitOfDbByStream20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getVolumeInUnitOfDbByStream(streamUsage: StreamUsage, volumeLevel: number, device: DeviceType): number
 
@@ -640,14 +676,16 @@ getVolumeInUnitOfDbByStream(streamUsage: StreamUsage, volumeLevel: number, devic
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| streamUsage | StreamUsage | 是 | 音频流。 |
+| streamUsage | StreamUsage | 是 | 音频流类型。 |
 | volumeLevel | number | 是 | 音量等级。 |
 | device | DeviceType | 是 | 设备类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -658,6 +696,7 @@ getVolumeInUnitOfDbByStream(streamUsage: StreamUsage, volumeLevel: number, devic
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 6800101 | Parameter verification failed. |
@@ -666,24 +705,24 @@ getVolumeInUnitOfDbByStream(streamUsage: StreamUsage, volumeLevel: number, devic
 **示例：**
 
 ```text
-// 获取系统通过音频流、音量等级和设备类型计算出的音量dB值。
 import { BusinessError } from '@kit.BasicServicesKit';
-import { audio } from '@kit.AudioKit'
 
+// 获取系统通过音频流、音量等级和设备类型计算出的音量dB值。
 try {
-  let volumeInDb : number = audio.getAudioManager().getVolumeManager().getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_MUSIC, 5, audio.DeviceType.SPEAKER);
-  console.info('Succeeded in getting volume in unit of db by stream.');
+  let volumeInDb: number = audio.getAudioManager().getVolumeManager().getVolumeInUnitOfDbByStream(audio.StreamUsage.STREAM_USAGE_MUSIC, 5, audio.DeviceType.SPEAKER);
+  console.info(`Succeeded in obtaining the volume in dB by stream, volumeInDb: ${volumeInDb}.`);
 } catch (err) {
   let error = err as BusinessError;
-  console.error(`Failed to get volume in unit of db by stream. Code: ${error.code}, message: ${error.message}`);
+  console.error(`Failed to obtain the volume in dB by stream. Code: ${error.code}, message: ${error.message}`);
 }
 ```
 
 
 
-#### on('streamVolumeChange')20+
+## on('streamVolumeChange')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'streamVolumeChange', streamUsage: StreamUsage, callback: Callback&lt;StreamVolumeEvent&gt;): void
 
@@ -693,16 +732,18 @@ on(type: 'streamVolumeChange', streamUsage: StreamUsage, callback: Callback&lt;S
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'streamVolumeChange'，当系统音量发生变化时，触发该事件。 |
-| streamUsage | StreamUsage | 是 | 音频流使用类型。 |
+| streamUsage | StreamUsage | 是 | 需要监听音量变化的音频流类型。 |
 | callback | Callback&lt;StreamVolumeEvent&gt; | 是 | 回调函数，返回变化后的音量信息。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -711,45 +752,43 @@ on(type: 'streamVolumeChange', streamUsage: StreamUsage, callback: Callback&lt;S
 
 **示例：**
 
-```text
+```json
 audioVolumeManager.on('streamVolumeChange', audio.StreamUsage.STREAM_USAGE_MUSIC, (streamVolumeEvent: audio.StreamVolumeEvent) => {
-  console.info(`StreamUsage of stream: ${streamVolumeEvent.streamUsage} `);
-  console.info(`Volume level: ${streamVolumeEvent.volume} `);
-  console.info(`Whether to updateUI: ${streamVolumeEvent.updateUi} `);
+  console.info(`Stream volume changed, streamVolumeEvent: ${JSON.stringify(streamVolumeEvent)}.`);
 });
 ```
 
 
 
-#### off('streamVolumeChange')20+
+## off('streamVolumeChange')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'streamVolumeChange', callback?: Callback&lt;StreamVolumeEvent&gt;): void
 
-取消监听系统音频流音量变化事件（当系统音频流音量发生变化时触发）。使用callback异步回调。
+取消监听系统音频流音量变化事件。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Volume
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型，支持的事件为'streamVolumeChange'，当取消监听系统音量变化事件时，触发该事件。 |
-| callback | Callback&lt;StreamVolumeEvent&gt; | 否 | 回调函数，返回变化后的音量信息。 |
+| type | string | 是 | 事件回调类型，支持的事件为'streamVolumeChange'。 |
+| callback | Callback&lt;StreamVolumeEvent&gt; | 否 | 回调函数。传入回调函数时，仅取消该回调对应的监听事件，需与on('streamVolumeChange')绑定同一回调函数；不传参数时，取消此事件类型下所有已订阅的监听事件。 |
 
 
 **示例：**
 
-```text
+```json
 // 取消该事件的所有监听。
 audioVolumeManager.off('streamVolumeChange');
 
 // 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
 let streamVolumeChangeCallback = (streamVolumeEvent: audio.StreamVolumeEvent) => {
-  console.info(`StreamUsage of stream: ${streamVolumeEvent.streamUsage} `);
-  console.info(`Volume level: ${streamVolumeEvent.volume} `);
-  console.info(`Whether to updateUI: ${streamVolumeEvent.updateUi} `);
+  console.info(`Stream volume changed, streamVolumeEvent: ${JSON.stringify(streamVolumeEvent)}.`);
 };
 
 audioVolumeManager.on('streamVolumeChange', audio.StreamUsage.STREAM_USAGE_MUSIC, streamVolumeChangeCallback);

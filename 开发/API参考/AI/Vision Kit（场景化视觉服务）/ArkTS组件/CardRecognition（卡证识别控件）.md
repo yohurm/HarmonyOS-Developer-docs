@@ -1,6 +1,6 @@
 # CardRecognition（卡证识别控件）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/vision-card-recognition
 **支持设备：** Phone | Tablet
@@ -14,7 +14,8 @@
 
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | Tablet
 
@@ -25,7 +26,8 @@ CardRecognitionConfig, ShootingMode, CardContentConfig, BankCardConfig, IdCardCo
  
   
 
-#### CardRecognition
+## CardRecognition
+
 
 **支持设备：** Phone | Tablet
 
@@ -41,6 +43,7 @@ CardRecognitionConfig, ShootingMode, CardContentConfig, BankCardConfig, IdCardCo
  
 **参数：**
   
+
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | supportType | CardType | 是 | - | 表示需要识别的卡证类型。当前仅支持中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）相关卡证的识别。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
@@ -52,7 +55,8 @@ CardRecognitionConfig, ShootingMode, CardContentConfig, BankCardConfig, IdCardCo
  
   
 
-#### build
+### build
+
 
 **支持设备：** Phone | Tablet
 
@@ -70,7 +74,8 @@ build(): void
  
   
 
-#### CardType
+## CardType
+
 
 **支持设备：** Phone | Tablet
 
@@ -82,6 +87,7 @@ build(): void
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CARD_AUTO | 0 | 自动识别卡证类型，不预设类型。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
@@ -96,7 +102,8 @@ build(): void
  
   
 
-#### CardSide
+## CardSide
+
 
 **支持设备：** Phone | Tablet
 
@@ -110,6 +117,7 @@ build(): void
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | FRONT | 0 | 身份证人像面或其他卡证正面。 |
@@ -119,7 +127,8 @@ build(): void
  
   
 
-#### CallbackParam(deprecated)
+## CallbackParam(deprecated)
+
 
 **支持设备：** Phone | Tablet
 
@@ -137,6 +146,7 @@ build(): void
 > 从5.1.1(19)开始废弃。建议使用 CardRecognitionResult 替代。
 
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | code | number | 否 | 否 | 返回的结果码（200：识别成功，-1：识别失败）。 |
@@ -146,7 +156,8 @@ build(): void
  
   
 
-#### CardRecognitionResult
+## CardRecognitionResult
+
 
 **支持设备：** Phone | Tablet
 
@@ -160,6 +171,7 @@ build(): void
  
 **起始版本：** 5.1.1(19)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | code | number | 否 | 否 | 返回的结果码： 200：识别成功。 1008701001：未识别。 1008701002：识别失败。 1008701003：部分识别失败。 1008701004：未完成识别。 |
@@ -169,7 +181,8 @@ build(): void
  
   
 
-#### CardRecognitionConfig
+## CardRecognitionConfig
+
 
 **支持设备：** Phone | Tablet
 
@@ -181,6 +194,7 @@ build(): void
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | defaultShootingMode | ShootingMode | 否 | 是 | 拍摄模式，默认值：ShootingMode.MANUAL。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
@@ -191,7 +205,8 @@ build(): void
  
   
 
-#### ShootingMode
+## ShootingMode
+
 
 **支持设备：** Phone | Tablet
 
@@ -205,6 +220,7 @@ build(): void
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | AUTO | 0 | 自动拍摄。 |
@@ -213,7 +229,8 @@ build(): void
  
   
 
-#### CardContentConfig
+## CardContentConfig
+
 
 **支持设备：** Phone | Tablet
 
@@ -225,6 +242,7 @@ build(): void
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | bankCard | BankCardConfig | 否 | 是 | 识别银行卡的具体配置。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
@@ -233,7 +251,8 @@ build(): void
  
   
 
-#### BankCardConfig
+## BankCardConfig
+
 
 **支持设备：** Phone | Tablet
 
@@ -247,6 +266,7 @@ build(): void
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | isBankNumberDialogShown | boolean | 否 | 是 | 识别到银行卡后是否弹出银行卡号确认弹框，true为识别后弹出确认弹框，false为识别后不弹出确认弹框，默认值：true。 |
@@ -254,7 +274,8 @@ build(): void
  
   
 
-#### IdCardConfig
+## IdCardConfig
+
 
 **支持设备：** Phone | Tablet
 
@@ -266,6 +287,7 @@ build(): void
  
 **起始版本：** 5.0.2(14)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | isPhotoNeeded | boolean | 否 | 是 | 识别到身份证人像面后是否需要返回身份证的人像图片。 true：需要返回身份证人像照片。 false：不需要返回身份证人像照片。 默认值：false。 |
@@ -274,7 +296,8 @@ build(): void
  
   
 
-#### 卡证信息
+## 卡证信息
+
 
 **支持设备：** Phone | Tablet
 
@@ -284,6 +307,7 @@ build(): void
  
 **起始版本：** 5.0.0(12)
   
+
 | 参数名 | 类型 | 说明 |
 | --- | --- | --- |
 | name | string | 姓名。 |
@@ -306,6 +330,7 @@ build(): void
  
 **起始版本：** 5.0.0(12)
   
+
 | 参数名 | 类型 | 说明 |
 | --- | --- | --- |
 | authority | string | 签发机关。 |
@@ -322,6 +347,7 @@ build(): void
  
 **起始版本：** 5.0.0(12)
   
+
 | 参数名 | 类型 | 说明 |
 | --- | --- | --- |
 | bankNum | string | 银行卡号。 |
@@ -337,6 +363,7 @@ build(): void
  
 **起始版本：** 5.0.0(12)
   
+
 | 参数名 | 类型 | 说明 |
 | --- | --- | --- |
 | cardNum | string | 护照号码。 |
@@ -358,6 +385,7 @@ build(): void
  
 **起始版本：** 5.0.0(12)
   
+
 | 参数名 | 类型 | 说明 |
 | --- | --- | --- |
 | cardNum | string | 证号。 |
@@ -378,6 +406,7 @@ build(): void
  
 **起始版本：** 5.0.0(12)
   
+
 | 参数名 | 类型 | 说明 |
 | --- | --- | --- |
 | cardNum | string | 证号。 |
@@ -392,6 +421,7 @@ build(): void
  
 **起始版本：** 5.0.0(12)
   
+
 | 参数名 | 类型 | 说明 |
 | --- | --- | --- |
 | licensePlateNumber | string | 号牌号码。 |
@@ -412,6 +442,7 @@ build(): void
  
 **起始版本：** 5.0.0(12)
   
+
 | 参数名 | 类型 | 说明 |
 | --- | --- | --- |
 | cardNum | string | 号牌号码。 |
@@ -426,6 +457,7 @@ build(): void
  
 **起始版本：** 6.1.1(24)
   
+
 | 参数名 | 类型 | 说明 |
 | --- | --- | --- |
 | name | string | 姓名。 |
@@ -442,6 +474,7 @@ build(): void
  
 **起始版本：** 6.1.1(24)
   
+
 | 参数名 | 类型 | 说明 |
 | --- | --- | --- |
 | name | string | 身份证姓名。 |
@@ -452,6 +485,7 @@ build(): void
  
 **起始版本：** 6.1.1(24)
   
+
 | 参数名 | 类型 | 说明 |
 | --- | --- | --- |
 | name | string | 姓名。 |
@@ -469,6 +503,7 @@ build(): void
  
 **起始版本：** 6.1.1(24)
   
+
 | 参数名 | 类型 | 说明 |
 | --- | --- | --- |
 | name | string | 身份证姓名。 |

@@ -1,6 +1,6 @@
 # @ohos.net.ethernet (以太网连接管理)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-net-ethernet
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -12,7 +12,8 @@
 
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -22,7 +23,8 @@ import { ethernet } from '@kit.NetworkKit';
  
   
 
-#### HttpProxy10+
+## HttpProxy10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -32,6 +34,7 @@ type HttpProxy = connection.HttpProxy
  
 **系统能力**：SystemCapability.Communication.NetManager.Ethernet
   
+
 | 类型 | 说明 |
 | --- | --- |
 | connection.HttpProxy | 网络代理配置信息。 |
@@ -39,7 +42,8 @@ type HttpProxy = connection.HttpProxy
  
   
 
-#### ethernet.getMacAddress14+
+## ethernet.getMacAddress14+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -53,6 +57,7 @@ getMacAddress(): Promise<Array&lt;MacAddressInfo&gt;>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;MacAddressInfo&gt;> | 以Promise形式返回接口信息。 |
@@ -60,6 +65,7 @@ getMacAddress(): Promise<Array&lt;MacAddressInfo&gt;>
  
 **错误码：**
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -82,7 +88,8 @@ ethernet.getMacAddress().then((data: Array<ethernet.MacAddressInfo>) => {
  
   
 
-#### MacAddressInfo14+
+## MacAddressInfo14+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -90,6 +97,7 @@ ethernet.getMacAddress().then((data: Array<ethernet.MacAddressInfo>) => {
  
 **系统能力**：SystemCapability.Communication.NetManager.Ethernet
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | iface | string | 否 | 否 | 以太网网卡名称。 |

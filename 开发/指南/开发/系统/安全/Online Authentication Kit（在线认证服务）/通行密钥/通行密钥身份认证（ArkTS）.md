@@ -1,12 +1,13 @@
 # 通行密钥身份认证（ArkTS）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/onlineauthentication-passkey-arkts
 
-#### 接口说明
+## 接口说明
 
 通行密钥服务主要接口如下表。
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -18,7 +19,7 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 
 通行密钥服务提供基于FIDO2标准协议的FIDO客户端实现，这里仅演示FIDO客户端相关API的使用，涉及FIDO服务器的相关处理由开发者自行实现，请参考[FIDO2标准协议](https://fidoalliance.org/passkeys/)（见[网站链接免责声明](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/onlineauthentication-website-disclaimer)）。
 1. 需要业务方自行根据FIDO2标准协议部署FIDO服务器。
@@ -34,7 +35,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 3. 注册通行密钥。
 
   
- - 获取能力信息，调用getClientCapabilities接口获取客户端能力列表，并且调用getPlatformAuthenticators接口获取平台认证器能力信息。          
+ - 获取能力信息，调用getClientCapabilities接口获取客户端能力列表，并且调用getPlatformAuthenticators接口获取平台认证器能力信息。         
 ```text
 @Entry
 @Component
@@ -75,7 +76,7 @@ struct Index {
 ```
 
 
-4. 访问FIDO服务器，获取注册报文，调用register接口进行注册。          
+4. 访问FIDO服务器，获取注册报文，调用register接口进行注册。         
 ```text
 private async register(pkOptions: fido2.PublicKeyCredentialCreationOptions) {
   try {
@@ -101,7 +102,7 @@ private async register(pkOptions: fido2.PublicKeyCredentialCreationOptions) {
 5. 应用使用注册结果（publicKeyAttestationCredential）组装注册响应报文，发送至FIDO服务端进行验证，获取注册结果报文。
  - 使用通行密钥进行身份认证。
 
-1. 获取能力信息，调用getClientCapabilities接口获取客户端能力列表，并且调用getPlatformAuthenticators接口获取平台认证器能力信息。          
+1. 获取能力信息，调用getClientCapabilities接口获取客户端能力列表，并且调用getPlatformAuthenticators接口获取平台认证器能力信息。         
 ```text
 @Entry
 @Component
@@ -142,7 +143,7 @@ struct Index {
 ```
 
 
-2. 访问FIDO服务器，获取认证报文，调用authenticate接口进行认证。          
+2. 访问FIDO服务器，获取认证报文，调用authenticate接口进行认证。         
 ```text
 private async authenticate(authPub: fido2.PublicKeyCredentialRequestOptions) {
   try {

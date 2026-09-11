@@ -1,10 +1,10 @@
 # 应用启动框架AppStartup
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-startup
 
-#### 概述
+## 概述
 
 应用启动时通常需要执行一系列初始化启动任务，如果将启动任务都放在[HAP](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hap-package)的[UIAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability)组件的[onCreate](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability#oncreate)生命周期中，那么只能在主线程中依次执行，不但影响应用的启动速度，而且当启动任务过多时，任务之间复杂的依赖关系还会使得代码难以维护。
 
@@ -18,7 +18,7 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 
 
 
-#### 运行机制
+## 运行机制
 
 启动框架支持以自动模式或手动模式执行启动任务，默认采用自动模式。在构造[AbilityStage](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ability-terminology#abilitystage)过程中开始加载开发者配置的启动任务，以自动模式执行启动任务。
 
@@ -38,7 +38,7 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 
 
 
-#### 支持的范围
+## 支持的范围
 
  - HAP：entry类型的HAP支持以自动和手动模式启动。从API version 20开始，feature类型的HAP支持以自动和手动模式启动。
  - HSP/HAR：从API version 18开始，支持在[HSP](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/in-app-hsp)和[HAR](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/har-package)中配置启动任务。HSP和HAR的启动任务、so预加载任务无法主动配置为自动模式，但可以被HAP中自动模式的启动任务、so预加载任务拉起。
@@ -47,7 +47,7 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 
 
 
-#### 约束限制
+## 约束限制
 
  - 使用启动框架必须在[HAP](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hap-package)的[module.json5配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)中开启启动框架。
  - ExtensionAbility组件启动场景单一，使用启动框架会带来额外开销，因此不支持ExtensionAbility组件启动时拉起启动框架。
@@ -56,7 +56,7 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 
 
 
-#### 开发流程
+## 开发流程
 1. [定义启动框架配置文件](#定义启动框架配置文件)：在资源文件目录下创建并定义启动框架配置文件。
 
   
@@ -81,11 +81,11 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 
 
 
-#### 定义启动框架配置文件
+## 定义启动框架配置文件
 
 
 
-#### 创建启动框架配置文件
+### 创建启动框架配置文件
 1. 在[HAP](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hap-package)的“resources/base/profile”路径下，新建启动框架配置文件。文件名可以自定义，本文以"startup_config.json"为例。
 2. 在[module.json5配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)的appStartup标签中，添加启动框架配置文件的索引。
 
@@ -107,7 +107,7 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 
 
 
-#### 定义启动参数配置
+### 定义启动参数配置
 
 在启动框架配置文件startup_config.json中，可以添加启动参数的配置信息。
 1. 在工程的“ets”目录下创建“startup”文件夹，并在“ets/startup”路径下创建启动参数配置文件。本例中，启动参数配置文件的文件名为StartupConfig.ets。
@@ -131,6 +131,7 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 
 **表1** startup_config.json配置文件标签说明
 
+
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |
 | startupTasks | 启动任务配置信息，详见定义启动任务配置。 | 对象数组 | 该标签可缺省，缺省值为空。 |
@@ -140,7 +141,7 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 
 
 
-#### 定义启动任务配置
+### 定义启动任务配置
 
 假设当前应用启动框架共包含6个启动任务，任务之间的依赖关系如下图所示。为了便于并发执行启动任务，单个启动任务文件包含的启动任务应尽量单一，本例中每个启动任务对应一个启动任务文件。
 
@@ -221,6 +222,7 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 
 **表2** startupTasks标签说明
 
+
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |
 | name | 启动任务名称，可自定义，推荐与类名保持一致。 | 字符串 | 该标签不可缺省。 |
@@ -235,14 +237,14 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 
 
 
-#### 定义预加载so任务配置
+### 定义预加载so任务配置
 
 假设当前应用启动框架共包含6个so预加载任务，任务之间的依赖关系如下图所示。不建议应用在so文件的加载回调中运行代码逻辑，so文件的加载不宜过长，否则会影响主线程的运行。
 
 **图5** so预加载任务依赖关系图
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/iFCU3FSnSjCASBD9ugD9eQ/zh-cn_image_0000002704271635.png?HW-CC-KV=V1&HW-CC-Date=20260813T095621Z&HW-CC-Expire=86400&HW-CC-Sign=0D7DC1A0E3E05BC427B4D11C17BD9EE77A93D3BA75ABB01E6FBC218CDF9FC413)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/K_2URF43SfKs_CzQB1GuTg/zh-cn_image_0000002717609894.png?HW-CC-KV=V1&HW-CC-Date=20260911T072333Z&HW-CC-Expire=86400&HW-CC-Sign=AEE4F5B18E641EA052725A1E56624DB3DF9B1F8CD901B3BD88616F7292DD5109)
 
 1. 参考[Node-API](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-process)创建so文件。本例中的6个so文件名称分别为libentry_001.so~libentry_006.so。
 2. 在启动框架配置文件startup_config.json中，添加预加载so任务配置。
@@ -310,6 +312,7 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 
 **表3** appPreloadHintStartupTasks标签说明
 
+
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |
 | name | 预加载so文件名。 | 字符串 | 该标签不可缺省。 |
@@ -322,7 +325,7 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 
 
 
-#### 设置启动参数
+## 设置启动参数
 
 在启动参数配置文件（本文为“ets/startup/StartupConfig.ets”文件）中，使用[StartupConfigEntry](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-appstartup-startupconfigentry)接口实现启动框架公共参数的配置，包括超时时间和启动任务的监听器等参数，其中需要用到如下接口：
 
@@ -362,7 +365,7 @@ export default class MyStartupConfigEntry extends StartupConfigEntry {
 
 
 
-#### 为每个待初始化功能组件添加启动任务
+## 为每个待初始化功能组件添加启动任务
 
 上述操作中已完成启动框架配置文件、启动参数的配置，还需要在每个功能组件对应的启动任务文件中，通过实现[StartupTask](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-appstartup-startuptask)来添加启动任务。其中，需要用到下面的两个方法：
 
@@ -400,17 +403,18 @@ export default class StartupTask_001 extends StartupTask {
 
 
 
-#### 可选操作
+## 可选操作
 
 
 
-#### HSP与HAR中使用启动框架
+### HSP与HAR中使用启动框架
 
 通常大型应用会有多个[HSP](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/in-app-hsp)和[HAR](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/har-package)，本节将提供一个应用示例，以展示如何在HSP包和HAR包中使用启动框架。该示例应用包括两个HSP包（hsp1、hsp2）和一个HAR包（har1），并且包含启动任务和so预加载任务。
 
 假设当前应用存在的启动任务与so预加载任务如下表所示。
 
 **表4** 应用启动任务与so预加载任务说明
+
 
 | 模块 | 启动任务 | so预加载任务 |
 | --- | --- | --- |
@@ -423,7 +427,7 @@ export default class StartupTask_001 extends StartupTask {
 **图6** 启动任务与so预加载依赖关系图
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/lZsXIgq7Q1yXJ7jyQqlCYw/zh-cn_image_0000002674471834.png?HW-CC-KV=V1&HW-CC-Date=20260813T095621Z&HW-CC-Expire=86400&HW-CC-Sign=73AB6147A1728736CD7297CB029DCB186E8F5454C0FE35700CD01290605956B8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/7GlCrRT2S6aMrfhOjkXssA/zh-cn_image_0000002747289845.png?HW-CC-KV=V1&HW-CC-Date=20260911T072333Z&HW-CC-Expire=86400&HW-CC-Sign=6F67A387164ABF4682744351B907B9D9711A3411B1CCCCDAEBC841489E4D8C76)
 
 
 开发步骤如下：
@@ -508,7 +512,7 @@ export default class StartupTask_001 extends StartupTask {
 
 
 
-#### 修改启动模式
+### 修改启动模式
 
 AppStartup分别提供了自动和手动两种方式来执行启动任务，entry模块中默认采用自动模式，开发者可以根据需要修改为手动模式，HSP与HAR只能配置为手动模式。
 
@@ -587,14 +591,14 @@ struct Index {
 
 
 
-#### 添加任务匹配规则
+### 添加任务匹配规则
 
 在通过卡片、通知、意图调用等方式拉起某个页面时，为了实现功能服务一步直达，可以通过添加matchRules匹配规则，仅加载与当前场景相关的部分启动任务，无需加载全部默认的自动启动任务，以提高启动性能。
 
 **图7** 启动任务设置匹配规则
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/Abr3x-U4SLOwwbAl6zz0Sg/zh-cn_image_0000002704391803.png?HW-CC-KV=V1&HW-CC-Date=20260813T095621Z&HW-CC-Expire=86400&HW-CC-Sign=32BB6C980EEC13FA4AB2DB6184FDC6BA0805B80DF76DAC74E22579B217A995C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/Ook5HWNDSH6Rx6KL_iCVBA/zh-cn_image_0000002747209763.png?HW-CC-KV=V1&HW-CC-Date=20260911T072333Z&HW-CC-Expire=86400&HW-CC-Sign=CC52984D1CFA50A1E10165ACF117F08A739734D5CB7558F5EE9BB0795FAA174F)
 
 
 可以通过以下两种方式添加匹配规则：
@@ -605,10 +609,15 @@ struct Index {
   **表5** matchRules标签说明
 
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 | 适用场景 |
+
 | --- | --- | --- | --- | --- |
+
 | uris | 表示自动模式执行的任务的uri取值范围。当UIAbility启动时，会将Want中携带的uri属性，与此处配置的uris数组取值进行匹配。格式为scheme://host/path，uri中的其它内容会被忽略（如port、fragment等）。 | 字符串数组 | 可缺省，缺省值为空。 | 通过特定uri拉起UIAbility的场景。 |
+
 | actions | 表示自动模式执行的任务的action取值范围。当UIAbility启动时，会将Want中携带的action属性，与此处配置的actions数组取值进行匹配。 | 字符串数组 | 可缺省，缺省值为空。 | 通过特定action拉起UIAbility的场景。 |
+
 | insightIntents | 表示自动模式执行的任务的意图名称取值范围。当UIAbility启动时，会将意图名称与此处配置的insightIntents数组取值进行匹配。 | 字符串数组 | 可缺省，缺省值为空。 | 通过特定意图名称拉起UIAbility的场景。 |
+
 | customization | 表示自动模式执行的任务的自定义规则取值范围。通过实现StartupConfigEntry的onRequestCustomMatchRule接口返回自定义规则值。当UIAbility启动时，会将自定义规则值与此处配置的customization数组取值进行匹配。 说明： 仅支持startupTasks中的任务配置。 | 字符串数组 | 可缺省，缺省值为空。 | 如果使用uris、actions、insightIntents字段无法满足要求，可以使用customization自定义规则。 |
 
   
@@ -705,7 +714,7 @@ export default class MyStartupConfigEntry extends StartupConfigEntry {
 
 
 
-#### 设置启动任务调度阶段
+### 设置启动任务调度阶段
 
 从API version 21开始，支持设置启动任务调度阶段。启动任务默认在AbilityStage模块加载后、[AbilityStage.onCreate](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-abilitystage#oncreate)生命周期之前开始执行。对于大型应用，AbilityStage模块的加载可能耗时较长，开发者可以将启动任务的schedulerPhase字段配置为preAbilityStageLoad，使启动任务在AbilityStage模块加载前被调度，并在异步线程中与AbilityStage模块加载并发执行，从而缩短应用启动时间。
 
@@ -716,7 +725,7 @@ export default class MyStartupConfigEntry extends StartupConfigEntry {
 **图8** 设置启动任务提前调度
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/x7Wul2C9T5OXiN_fPHmM7A/zh-cn_image_0000002674631682.png?HW-CC-KV=V1&HW-CC-Date=20260813T095621Z&HW-CC-Expire=86400&HW-CC-Sign=07A12494FFE68DE7A9759505CD37B641351B64BCDEC7EBA57B5C116F5A528B4F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/TGu9I6idREmi1GE-E-oT4Q/zh-cn_image_0000002717769830.png?HW-CC-KV=V1&HW-CC-Date=20260911T072333Z&HW-CC-Expire=86400&HW-CC-Sign=357BD2775F49070CCE68C93D05CE11D1C7255C1ACF1F2B7E43CCFF8FB5E9BDD3)
 
 
 例如，应用首页需要通过网络请求获取Feed流数据，且希望该任务能在异步线程中与AbilityStage模块加载并发执行。假设网络请求任务为[定义启动任务配置](#定义启动任务配置)步骤中的StartupTask_004，开发步骤如下：

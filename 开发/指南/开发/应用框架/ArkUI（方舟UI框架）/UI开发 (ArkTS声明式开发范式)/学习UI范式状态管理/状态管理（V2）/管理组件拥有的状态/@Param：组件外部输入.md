@@ -1,6 +1,6 @@
-# @Param：组件外部输入
+# @Param装饰器：组件外部输入
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-param
 
@@ -13,7 +13,7 @@
 
 
 
-#### 概述
+## 概述
 
 @Param表示组件从外部传入的状态，使得父子组件之间的数据能够进行同步：
 
@@ -28,7 +28,7 @@
 
 
 
-#### 状态管理V1版本接受外部传入的装饰器的局限性
+## 状态管理V1版本接受外部传入的装饰器的局限性
 
 状态管理V1存在多种可接受外部传入的装饰器，常用的有[@State](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state)、[@Prop](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-prop)、[@Link](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-link)、[@ObjectLink](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-observed-and-objectlink)。这些装饰器使用有限制且不易区分，不当使用会导致性能问题。
 
@@ -102,14 +102,15 @@ struct Child {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/zbMFNuBgTPKxyxu-g0aMlw/zh-cn_image_0000002674631888.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=3A44B2626DECDA6333CA16B23CC2F303FB70BEEAC569E09212B86A2DB5D28A74)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/F8pGDw68QOq7RVDTpx3obQ/zh-cn_image_0000002747209973.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=350A8E3E35D3266A4DFC65B303A1077EB3750E7804B96C0F8721C728D4246F89)
 
 
 在上面的示例中，@State仅能在初始化时接收info的引用，改变info之后无法同步。@Prop虽然能够进行单向同步，但是对于较复杂的类型来说，深拷贝性能较差。@Link能够接受传入的引用进行双向同步，但它必须要求数据源也是状态变量，因此无法接受info中的成员属性region。@ObjectLink能够接受类成员属性，但是要求该属性类型必须为@Observed装饰的类。装饰器的不同限制使得父子组件之间的传值规则复杂、不易使用。因此推出@Param装饰器，表示组件从外部传入的状态。
 
 
 
-#### 装饰器说明
+## 装饰器说明
+
 
 | @Param变量装饰器 | 说明 |
 | --- | --- |
@@ -122,7 +123,8 @@ struct Child {
 
 
 
-#### 变量传递
+## 变量传递
+
 
 | 传递规则 | 说明 |
 | --- | --- |
@@ -133,7 +135,7 @@ struct Child {
 
 
 
-#### 观察变化
+## 观察变化
 
 使用@Param装饰的变量具有被观测变化的能力。当装饰的变量发生变化时，会触发该变量绑定的UI组件刷新。
 
@@ -202,7 +204,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/jrbslytCRwmD-xvB04VwTA/zh-cn_image_0000002704271843.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=8E37CADDCBBCA10A89FE1694BECE6AB56FDAA1E86A3972C6371CB4BA7206322C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/oURZHdf0SxyfIYwtaiKSGA/zh-cn_image_0000002717770040.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=D23EE3CDF9791398013908089859CAFF3B285C35798E60A72E792E908A92B471)
 
  - 当装饰的变量类型为类对象时，仅可以观察到对类对象整体赋值的变化，无法直接观察到对类成员属性赋值的变化，对类成员属性的观察依赖[@ObservedV2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-observedv2-and-trace)和[@Trace](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-observedv2-and-trace)装饰器，也可以使用[makeObserved](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-makeobserved)将该对象变为可观察对象。
 
@@ -284,7 +286,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/6XVkxHBYQzGP50-lyhaNnQ/zh-cn_image_0000002674472044.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=7E85DBE9A8D9A5B749389FFD4A574C97DADBD66CDCE397F4CD28A069A606B971)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/dXwkVtzUQDyy_T61RGLeRA/zh-cn_image_0000002717610106.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=669267125A09163E339CFF1BD37A6B256EF959B10806FBB0E848BF3C9F17296A)
 
  - 装饰的变量为简单类型数组时，可观察数组整体或数组项变化。
 
@@ -368,7 +370,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/5xUOzWh9Qi2MbY0eIM2-Eg/zh-cn_image_0000002704392013.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=989B5AB51E150E56C801F170540E7B0F254333912C5E58C0EE629894C0DF2B7E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/SUjVhNxsRfyRFkeLv2ayWQ/zh-cn_image_0000002747290057.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=A7F73E4CA23FDF55C6A175209D5372A0C0306BD2EC4B18D5A72122438D161B99)
 
  - 当装饰的变量是嵌套类或对象数组时，@Param无法观察深层对象属性的变化。对深层对象属性的观测依赖@ObservedV2与@Trace装饰器。
 
@@ -485,21 +487,26 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/BFeiG222TWWk7EZIRKqkEA/zh-cn_image_0000002674631890.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=1843D7A59C19D128BCA54D737628AE964CE651D436C07CEFB19341E44E107BD5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/HpYPTh1RSu-jyr6Q1KYCmQ/zh-cn_image_0000002747209975.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=925B34AB1E3589AA93759367DC4683C3679488296DCA42CA0486027694A50DB8)
 
  - 装饰的变量为内置类型时，可观察变量整体赋值和API调用的变化。
 
 | 类型 | 可观测变化的API |
+
 | --- | --- |
+
 | Array | push, pop, shift, unshift, splice, copyWithin, fill, reverse, sort |
+
 | Date | setFullYear, setMonth, setDate, setHours, setMinutes, setSeconds, setMilliseconds, setTime, setUTCFullYear, setUTCMonth, setUTCDate, setUTCHours, setUTCMinutes, setUTCSeconds, setUTCMilliseconds |
+
 | Map | set, clear, delete |
+
 | Set | add, clear, delete |
 
 
 
 
-#### 限制条件
+## 限制条件
 
 @Param装饰器存在以下使用限制：
 
@@ -606,11 +613,11 @@ struct Child {
 
 
 
-#### 使用场景
+## 使用场景
 
 
 
-#### 从父组件到子组件变量传递与同步
+### 从父组件到子组件变量传递与同步
 
 @Param能够接受父组件@Local或@Param传递的数据并与之变化同步。
 
@@ -701,12 +708,12 @@ struct SubComponent {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/0XPhwC_0SOCs1uYa3ipLyA/zh-cn_image_0000002704271845.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=AC0CC4B5907120C0B3453045ECEE69CA19002E99B5D8CA6C98AEE3A678F21093)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/susD-rqnQ2u1fp-Yzie8hg/zh-cn_image_0000002717770042.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=6016354310013151EC360E9D185A5EDABEB9AE615D18053D5013912DA9A40F13)
 
 
 
 
-#### 装饰Array类型变量
+### 装饰Array类型变量
 
 @Param装饰Array类型变量，可以观察到数据源对Array整体的赋值，以及调用Array的接口push, pop, shift, unshift, splice, copyWithin, fill, reverse, sort带来的变化。
 
@@ -776,12 +783,12 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/bMRmd4hvS4WaT1D-8eR0TA/zh-cn_image_0000002674472046.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=A9076E78EAD135611383EF061FED946F91D254378BE4A33B3554EE5F52814607)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/FuZq8TEXQ1-geZybscmC7A/zh-cn_image_0000002717610108.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=6EA739804098DA63F919BD33564EB4182279B6F45B0375DC873975A5C32039E5)
 
 
 
 
-#### 装饰Date类型变量
+### 装饰Date类型变量
 
 @Param装饰Date类型变量，可以观察到数据源对Date整体的赋值，以及调用Date的接口setFullYear, setMonth, setDate, setHours, setMinutes, setSeconds, setMilliseconds, setTime, setUTCFullYear, setUTCMonth, setUTCDate, setUTCHours, setUTCMinutes, setUTCSeconds, setUTCMilliseconds带来的变化。
 
@@ -847,12 +854,12 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/e4hR-cJESoq6dAKt2Vw-tQ/zh-cn_image_0000002704392015.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=B103E3D4A32A9553B2D93A0D659A08B18D9B34730C6E67627D5ED47B67513E5C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/q3AW1plpQHCbFY98MZwiNA/zh-cn_image_0000002747290059.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=4AE1181E3488F84BC7451A24340905FB25CB7034EA985DA522EA36E733885802)
 
 
 
 
-#### 装饰Map类型变量
+### 装饰Map类型变量
 
 @Param装饰Map类型变量，可以观察到数据源对Map整体的赋值，以及调用Map的接口set, clear, delete带来的变化。
 
@@ -932,12 +939,12 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/4nX1QTOSSsSv7CZPktSjvQ/zh-cn_image_0000002674631892.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=968B7199C95BDADB0E7BA4A68F43B9D4E9D640D01C73F8BB52F56D3AF230DF44)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/FhMO0EQYTmyohjtP_s6lqw/zh-cn_image_0000002747209977.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=228ABF084537AB70DE630B87D122EA354AD29521A1C5949ABA03B3BE57EB4A2A)
 
 
 
 
-#### 装饰Set类型变量
+### 装饰Set类型变量
 
 @Param装饰Set类型变量，可以观察到数据源对Set整体的赋值，以及调用Set的接口add, clear, delete带来的变化。
 
@@ -1007,12 +1014,12 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/_FUHMxM6SM-0moMmJ4OqxQ/zh-cn_image_0000002704271847.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=EB457A3C958872EF28CB1F227FE45C1D3B559B77E39FEBD77977A48AA6DCA29D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/IzCxOJdNRNWx7ZLEUVk4NA/zh-cn_image_0000002717770044.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=2191C48894A91ECFBA6938DD7453DF7612151207E8634CDA8F8D90266AF79387)
 
 
 
 
-#### 联合类型
+### 联合类型
 
 @Param支持null、undefined以及联合类型。以下示例中，count类型为number | undefined，点击改变count的类型时，UI会自动刷新。
 
@@ -1053,4 +1060,4 @@ struct MyComponent {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/G6GzYFx5RlOykSd0ktaY5w/zh-cn_image_0000002674472048.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=280C910723CDB19B286486DA0C8CBDBD8C5A93BD5AA7264B580B8A57411D78C2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/GCQQlonbSSq36NIlquQ-BQ/zh-cn_image_0000002717610110.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=82E62538BC02FCF0E1B25CB2E71C424FA685C38D3AA84F953570CC6CC74E4195)

@@ -1,6 +1,6 @@
 # @BuilderParam装饰器：引用@Builder函数
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-builderparam
 
@@ -13,11 +13,11 @@
 
 
 
-#### 装饰器使用说明
+## 装饰器使用说明
 
 
 
-#### 初始化@BuilderParam装饰的方法
+### 初始化@BuilderParam装饰的方法
 
 @BuilderParam装饰的方法只能被自定义构建函数（@Builder装饰的方法）初始化。
 
@@ -156,7 +156,7 @@ struct Parent {
 
 
 
-#### 限制条件
+## 限制条件
 
  - 使用@BuilderParam装饰的变量只能通过@Builder函数进行初始化。具体参考[@BuilderParam装饰器初始化的值必须为@Builder](#builderparam装饰器初始化的值必须为builder)。
  - 当[@Require装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-require)和@BuilderParam装饰器一起使用时，必须初始化@BuilderParam装饰器。具体参考[@Require装饰器和@BuilderParam装饰器联合使用](#require装饰器和builderparam装饰器联合使用)。
@@ -165,11 +165,11 @@ struct Parent {
 
 
 
-#### 使用场景
+## 使用场景
 
 
 
-#### 参数初始化组件
+### 参数初始化组件
 
 @BuilderParam装饰的方法为有参数或无参数的形式，必须与指向的@Builder方法类型匹配。
 
@@ -234,7 +234,7 @@ struct Parent {
 
 
 
-#### 尾随闭包初始化组件
+### 尾随闭包初始化组件
 
 在自定义组件中，使用@BuilderParam装饰的属性可通过尾随闭包进行初始化。初始化时，组件后需紧跟一个大括号“{}”形成尾随闭包场景。
 
@@ -385,7 +385,7 @@ struct ParentPage {
 
 
 
-#### 使用@BuilderParam隔离多组件对@Builder跳转逻辑的调用
+### 使用@BuilderParam隔离多组件对@Builder跳转逻辑的调用
 
 当@Builder封装的系统组件包含跳转逻辑时，所有调用该@Builder的自定义组件将具备该跳转功能。如果需要禁用特定组件的跳转功能，可使用@BuilderParam来隔离跳转逻辑。
 
@@ -508,7 +508,7 @@ struct HelloWorldPage {
 
 
 
-#### 使用全局和局部@Builder初始化@BuilderParam
+### 使用全局和局部@Builder初始化@BuilderParam
 
 在自定义组件中，使用@BuilderParam装饰的变量接收父组件通过@Builder传递的内容进行初始化，由于父组件的@Builder可以使用箭头函数改变当前的this指向，因此使用@BuilderParam装饰的变量会展示不同的内容。
 
@@ -593,12 +593,12 @@ struct ParentPage {
 示例效果图
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/5iOUcpCbRJSSBL6BBhBHJw/zh-cn_image_0000002704271771.png?HW-CC-KV=V1&HW-CC-Date=20260813T095701Z&HW-CC-Expire=86400&HW-CC-Sign=5B77E166FFF0B573776D2EBA95ADA9BD2296FEAD9602EFCDE2175DD1FC72A97D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/FJPuTwgGTweXyWZ9DE8EQw/zh-cn_image_0000002717769968.png?HW-CC-KV=V1&HW-CC-Date=20260911T072337Z&HW-CC-Expire=86400&HW-CC-Sign=CDFA3E14F48310A2838F2147BEEB1F715B454F6595D38FE085B50005AF9BE68D)
 
 
 
 
-#### 在@ComponentV2装饰的自定义组件中使用@BuilderParam
+### 在@ComponentV2装饰的自定义组件中使用@BuilderParam
 
 使用全局或局部@Builder初始化@ComponentV2装饰的自定义组件中的@BuilderParam属性。
 
@@ -683,16 +683,16 @@ struct ParentPage {
 示例效果图
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/uR-RbC1mRm-eJuXRgxZ0KQ/zh-cn_image_0000002674471972.png?HW-CC-KV=V1&HW-CC-Date=20260813T095701Z&HW-CC-Expire=86400&HW-CC-Sign=335B5FA42AA80083E6101EF280B623EACF2B68FF712F24F04A0EC5029423A012)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/6wroHoqbReuMnqWQD2rOqQ/zh-cn_image_0000002717610034.png?HW-CC-KV=V1&HW-CC-Date=20260911T072337Z&HW-CC-Expire=86400&HW-CC-Sign=4B86C881DE1DB6EAB2452BB9AEC8DDAD9A51453746ADE5E9E7167B15BC874DAB)
 
 
 
 
-#### 常见问题
+## 常见问题
 
 
 
-#### 改变内容UI不刷新
+### 改变内容UI不刷新
 
 调用自定义组件ChildPage时，通过this.componentBuilder传递@Builder参数。this指向自定义组件内部，因此父组件中改变label的值时，ChildPage无法感知这一变化。
 
@@ -801,7 +801,7 @@ struct ParentPage {
 
 
 
-#### @Require装饰器和@BuilderParam装饰器联合使用
+### @Require装饰器和@BuilderParam装饰器联合使用
 
 由于@Require装饰器所装饰的变量需进行初始化，未初始化会导致编译报错。
 
@@ -871,9 +871,9 @@ struct ChildPage {
 
 
 
-#### @BuilderParam装饰器初始化的值必须为@Builder
+### @BuilderParam装饰器初始化的值必须为@Builder
 
-使用@State装饰器装饰的变量，在初始化子组件的@BuilderParam和ChildBuilder变量时，编译时会输出报错信息。
+使用@State装饰器装饰的变量，在初始化子组件@BuilderParam装饰的childBuilder变量时，编译时会输出报错信息。
 
 【反例】
 
@@ -890,25 +890,25 @@ struct CustomBuilderDemo {
 
   build() {
     Column() {
-      // @BuilderParam装饰的变量ChildBuilder接收@State装饰的变量，会出现编译和编辑报错
-      ChildPage({ ChildBuilder: this.message })
+      // @BuilderParam装饰的变量childBuilder接收@State装饰的变量，会出现编译和编辑报错
+      ChildPage({ childBuilder: this.message })
     }
   }
 }
 
 @Component
 struct ChildPage {
-  @BuilderParam ChildBuilder: () => void = globalBuilder;
+  @BuilderParam childBuilder: () => void = globalBuilder;
 
   build() {
     Column() {
-      this.ChildBuilder()
+      this.childBuilder()
     }
   }
 }
 ```
 
-使用全局@Builder装饰的globalBuilder()方法为子组件@BuilderParam装饰的ChildBuilder变量初始化，编译无报错，功能正常。
+使用全局@Builder装饰的globalBuilder()方法为子组件@BuilderParam装饰的childBuilder变量初始化，编译无报错，功能正常。
 
 【正例】
 

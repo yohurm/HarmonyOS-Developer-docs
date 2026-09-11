@@ -1348,13 +1348,13 @@
   {
     "slug": "faqs-crypto-architecture-kit-new-00001",
     "name": "AES128|GCM解密报错convertSymKey key failed",
-    "file": "安全/加解密算法（Crypto Architecture）/AES128|GCM解密报错convertSymKey key failed/AES128｜GCM解密报错convertSymKey key failed.md",
+    "file": "安全/加解密算法（Crypto Architecture）/AES128｜GCM解密报错convertSymKey key failed/AES128｜GCM解密报错convertSymKey key failed.md",
     "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-crypto-architecture-kit-new-00001"
   },
   {
     "slug": "faqs-crypto-architecture-42",
     "name": "AES|GCM没有aad和authTag如何加解密",
-    "file": "安全/加解密算法（Crypto Architecture）/AES|GCM没有aad和authTag如何加解密/AES｜GCM没有aad和authTag如何加解密.md",
+    "file": "安全/加解密算法（Crypto Architecture）/AES｜GCM没有aad和authTag如何加解密/AES｜GCM没有aad和authTag如何加解密.md",
     "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-crypto-architecture-42"
   },
   {

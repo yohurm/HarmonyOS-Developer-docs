@@ -1,6 +1,6 @@
 # tagSession (标准NFC-Tag TagSession)
 
-更新时间：2026-04-28 03:31:56
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-tagsession
 **支持设备：** Phone | Wearable
@@ -12,7 +12,7 @@
 
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/cKXLSDsKRfqVvjV3-pLRvg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260528T025227Z&HW-CC-Expire=86400&HW-CC-Sign=5001AAEA4E9FD5ED48A0A660AFA7CE76D6D3AB496D9B1D81BBBDF28B1E9FB878)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/ne9Xv3uxRReTIPMCMEYohA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072943Z&HW-CC-Expire=86400&HW-CC-Sign=05295A5321F2FBABDFAB0CC3F1EA6CB514FB5E98ADACCFBF195DE24927B7ADBA)
  
  
 导入tag模块编辑器报错，在某个具体设备型号上能力可能超出工程默认设备定义的能力集范围，如需要使用此部分能力需额外配置自定义syscap，参考[syscap开发指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/syscap)。
@@ -20,7 +20,8 @@
 
   
 
-#### **导入模块**
+## **导入模块**
+
 
 **支持设备：** Phone | Wearable
 
@@ -30,19 +31,21 @@ import { tag } from '@kit.ConnectivityKit';
  
   
 
-#### TagSession
+## TagSession
+
 
 **支持设备：** Phone | Wearable
 
-TagSession是所有[nfcTag技术类型](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-nfctech)的基类， 提供建立连接和发送数据等共同接口。
+TagSession是所有nfcTag技术类型[nfctech](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-nfctech)的基类，提供建立连接和发送数据等共同接口。
  
 需要通过其子类来访问以下接口。在下面的示例中 统一用 getXXX()表示获取子类实例的方法。
  
-具体使用时,请根据实际采用的nfcTag技术，选择对应的方法，具体请参见[nfcTag](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-nfctag)文档。
+具体使用时，请根据实际采用的nfcTag技术，选择对应的方法，具体请参见[nfc-Tag](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-nfctag)文档。
  
   
 
-#### getTagInfo(deprecated)
+### getTagInfo(deprecated)
+
 
 **支持设备：** Phone | Wearable
 
@@ -60,6 +63,7 @@ getTagInfo(): tag.TagInfo
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | tag.TagInfo | NFC服务所提供的Tag数据对象。 |
@@ -79,11 +83,12 @@ console.info("tag tagInfo: " + tagInfo);
  
   
 
-#### connectTag(deprecated)
+### connectTag(deprecated)
+
 
 **支持设备：** Phone | Wearable
 
-connectTag(): boolean;
+connectTag(): boolean
  
 和标签建立连接。在从标签读取数据或将数据写入标签之前，必须调用此方法。
  
@@ -97,6 +102,7 @@ connectTag(): boolean;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 连接建立成功返回true，失败返回false。 |
@@ -116,11 +122,12 @@ console.info("connectStatus: " + connectStatus);
  
   
 
-#### connect9+
+### connect9+
+
 
 **支持设备：** Phone | Wearable
 
-connect(): void;
+connect(): void
  
 和标签建立连接。在从标签读取数据或将数据写入标签之前，必须调用此方法。
  
@@ -134,6 +141,7 @@ connect(): void;
  
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -159,7 +167,8 @@ try {
  
   
 
-#### reset()(deprecated)
+### reset()(deprecated)
+
 
 **支持设备：** Phone | Wearable
 
@@ -188,7 +197,8 @@ tag.getIsoDep(tagInfo).reset();
  
   
 
-#### resetConnection()9+
+### resetConnection()9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -206,6 +216,7 @@ resetConnection(): void
  
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -231,7 +242,8 @@ try {
  
   
 
-#### isTagConnected(deprecated)
+### isTagConnected(deprecated)
+
 
 **支持设备：** Phone | Wearable
 
@@ -247,6 +259,7 @@ isTagConnected(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 已建立连接返回 true，未建立连接返回false。 |
@@ -266,7 +279,8 @@ console.info("isTagConnected: " + isTagConnected);
  
   
 
-#### isConnected9+
+### isConnected9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -280,6 +294,7 @@ isConnected(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 已建立连接返回 true，未建立连接返回false。 |
@@ -289,6 +304,7 @@ isConnected(): boolean
  
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. |
@@ -312,7 +328,8 @@ try {
  
   
 
-#### getMaxSendLength(deprecated)
+### getMaxSendLength(deprecated)
+
 
 **支持设备：** Phone | Wearable
 
@@ -330,6 +347,7 @@ getMaxSendLength(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 可以发送到标签的最大数据长度，非负数。 |
@@ -349,7 +367,8 @@ console.info("tag maxSendLen: " + maxSendLen);
  
   
 
-#### getMaxTransmitSize9+
+### getMaxTransmitSize9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -365,6 +384,7 @@ getMaxTransmitSize(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 可以发送到标签的最大数据长度，非负数。 |
@@ -374,6 +394,7 @@ getMaxTransmitSize(): number
  
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -399,7 +420,8 @@ try {
  
   
 
-#### getSendDataTimeout(deprecated)
+### getSendDataTimeout(deprecated)
+
 
 **支持设备：** Phone | Wearable
 
@@ -417,6 +439,7 @@ getSendDataTimeout(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 发送数据到Tag的等待超时时间，单位是毫秒，非负数。 |
@@ -436,7 +459,8 @@ console.info("tag sendDataTimeout: " + sendDataTimeout);
  
   
 
-#### getTimeout9+
+### getTimeout9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -452,6 +476,7 @@ getTimeout(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 发送数据到Tag的等待超时时间，单位是毫秒，非负数。 |
@@ -461,6 +486,7 @@ getTimeout(): number
  
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -486,7 +512,8 @@ try {
  
   
 
-#### setSendDataTimeout(deprecated)
+### setSendDataTimeout(deprecated)
+
 
 **支持设备：** Phone | Wearable
 
@@ -504,6 +531,7 @@ setSendDataTimeout(timeout: number): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | timeout | number | 是 | 超时时间，单位毫秒，非负值。 |
@@ -511,6 +539,7 @@ setSendDataTimeout(timeout: number): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 设置超时时间成功返回true，设置失败返回false。 |
@@ -531,7 +560,8 @@ console.info("tag setSendDataTimeout setStatus: " + setStatus);
  
   
 
-#### setTimeout9+
+### setTimeout9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -547,6 +577,7 @@ setTimeout(timeout: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | timeout | number | 是 | 超时时间，单位毫秒，非负值。 |
@@ -556,6 +587,7 @@ setTimeout(timeout: number): void
  
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -583,7 +615,8 @@ try {
  
   
 
-#### sendData(deprecated)
+### sendData(deprecated)
+
 
 **支持设备：** Phone | Wearable
 
@@ -601,6 +634,7 @@ sendData(data: number[]): Promise<number[]>
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | number[] | 是 | 要发送的指令。每个number十六进制表示，范围是0x00~0xFF。 |
@@ -608,6 +642,7 @@ sendData(data: number[]): Promise<number[]>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<number[]> | Promise对象，返回对端Tag对指令的响应数据，每个number十六进制表示，范围是0x00~0xFF。 |
@@ -616,7 +651,7 @@ sendData(data: number[]): Promise<number[]>
 **示例：**
  
 ```text
-import tag from '@kit.ConnectivityKit';
+import { tag } from '@kit.ConnectivityKit';
 import { BusinessError } from '@ohos.base';
 
 // 参考 @ohos.nfc.tag（标准NFC-Tag）中 tag.TagInfo 接口，tagInfo是nfc服务在分派标签时给出的对象
@@ -633,16 +668,17 @@ function tagSessionDemo() {
 
     let cmdData = [0x01, 0x02, 0x03, 0x04]; // 更改为正确的 data
     tag.getIsoDep(tagInfo).sendData(cmdData).then((response) => {
-    console.info("tagSession sendData Promise response: " + response);
-    }).catch((err : BusinessError)=> {
-    console.error("tagSession sendData Promise err: " + err);
+        console.info("tagSession sendData Promise response: " + response);
+    }).catch((err : BusinessError) => {
+        console.error("tagSession sendData Promise err: " + err);
     });
 }
 ```
  
   
 
-#### sendData(deprecated)
+### sendData(deprecated)
+
 
 **支持设备：** Phone | Wearable
 
@@ -660,6 +696,7 @@ sendData(data: number[], callback: AsyncCallback<number[]>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | number[] | 是 | 要发送的指令。每个number十六进制表示，范围是0x00~0xFF。 |
@@ -684,7 +721,7 @@ function tagSessionDemo() {
     }
 
     let cmdData = [0x01, 0x02, 0x03, 0x04]; // 更改为正确的 data
-    tag.getIsoDep(tagInfo).sendData(cmdData, (err, response)=> {
+    tag.getIsoDep(tagInfo).sendData(cmdData, (err, response) => {
         if (err) {
             console.error("tagSession sendData AsyncCallback err: " + err);
         } else {
@@ -696,7 +733,8 @@ function tagSessionDemo() {
  
   
 
-#### transmit9+
+### transmit9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -712,6 +750,7 @@ transmit(data: number[]): Promise<number[]>
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | number[] | 是 | 要发送的指令。每个number十六进制表示，范围是0x00~0xFF。 |
@@ -719,6 +758,7 @@ transmit(data: number[]): Promise<number[]>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<number[]> | Promise对象，返回对端Tag对指令的响应数据，每个number十六进制表示，范围是0x00~0xFF。 |
@@ -728,6 +768,7 @@ transmit(data: number[]): Promise<number[]>
  
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -747,7 +788,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 // getXXX，可以是getIsoDep、getNdef、getMifareClassic...
 
 function tagSessionDemo() {
-// 如果没有连接，请先连接tag
+    // 如果没有连接，请先连接tag
     try {
         if (!tag.getIsoDep(tagInfo).isConnected()) {
             tag.getIsoDep(tagInfo).connect();
@@ -759,9 +800,9 @@ function tagSessionDemo() {
 
     let cmdData = [0x01, 0x02, 0x03, 0x04]; // 更改为正确的 data
     try {
-    tag.getIsoDep(tagInfo).transmit(cmdData).then((response) => {
+        tag.getIsoDep(tagInfo).transmit(cmdData).then((response) => {
         console.info("tagSession transmit Promise response: " + response);
-    }).catch((err : BusinessError)=> {
+    }).catch((err : BusinessError) => {
         console.error("tagSession transmit Promise err: " + err);
     });
     } catch (businessError) {
@@ -773,7 +814,8 @@ function tagSessionDemo() {
  
   
 
-#### transmit9+
+### transmit9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -789,6 +831,7 @@ transmit(data: number[], callback: AsyncCallback<number[]>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | number[] | 是 | 要发送的指令。每个number十六进制表示，范围是0x00~0xFF。 |
@@ -799,13 +842,14 @@ transmit(data: number[], callback: AsyncCallback<number[]>): void
  
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
 | 401 | The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameters types. 3. Parameter verification failed. |
 | 801 | Capability not supported. |
 | 3100201 | The tag running state is abnormal in the service. |
-| 3100204 | The tag I/O operation failed.. |
+| 3100204 | The tag I/O operation failed. |
  
  
 **示例：**
@@ -829,7 +873,7 @@ function tagSessionDemo() {
 
     let cmdData = [0x01, 0x02, 0x03, 0x04]; // 更改为正确的 data
     try {
-        tag.getIsoDep(tagInfo).transmit(cmdData, (err, response)=> {
+        tag.getIsoDep(tagInfo).transmit(cmdData, (err, response) => {
             if (err) {
                 console.error("tagSession transmit AsyncCallback err: " + err);
             } else {

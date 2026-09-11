@@ -47,7 +47,7 @@ struct DisableSwiperOne {
       })
     }
     .indicator(true)
-    .disableSwipe(true) // 设置禁止手势滑动，点击导航点依旧可以滑动
+    .disableSwipe(true) <em>// 设置禁止手势滑动，点击导航点依旧可以滑动</em>
     .displayCount(1)
     .padding(16)
   }
@@ -70,7 +70,7 @@ struct DisableSwiperOne {
 @Component
 struct DisableSwiperTwo {
   private swiperController: SwiperController = new SwiperController();
-  @State canSwiper: boolean = true; // 设置组件是否可交互
+  @State canSwiper: boolean = true;<em> // 设置组件是否可交互</em>
 
   build() {
     Column() {

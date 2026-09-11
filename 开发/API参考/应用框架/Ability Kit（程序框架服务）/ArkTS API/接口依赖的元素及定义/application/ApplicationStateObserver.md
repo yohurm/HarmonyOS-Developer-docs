@@ -1,9 +1,9 @@
 # ApplicationStateObserver
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-applicationstateobserver
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 应用状态监听器，可以作为入参传入[on('applicationState')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-appmanager#appmanageronapplicationstate14)方法，监听应用的生命周期变化。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { appManager } from '@kit.AbilityKit';
@@ -22,9 +23,10 @@ import { appManager } from '@kit.AbilityKit';
  
   
 
-#### ApplicationStateObserver.onForegroundApplicationChanged
+## ApplicationStateObserver.onForegroundApplicationChanged
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onForegroundApplicationChanged(appStateData: AppStateData): void
  
@@ -34,6 +36,7 @@ onForegroundApplicationChanged(appStateData: AppStateData): void
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | appStateData | AppStateData | 是 | 应用状态信息。 |
@@ -41,9 +44,10 @@ onForegroundApplicationChanged(appStateData: AppStateData): void
  
   
 
-#### ApplicationStateObserver.onAbilityStateChanged
+## ApplicationStateObserver.onAbilityStateChanged
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onAbilityStateChanged(abilityStateData: AbilityStateData): void
  
@@ -53,6 +57,7 @@ Ability状态发生变化时执行的回调函数。
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | abilityStateData | AbilityStateData | 是 | Ability状态信息。 |
@@ -60,9 +65,10 @@ Ability状态发生变化时执行的回调函数。
  
   
 
-#### ApplicationStateObserver.onProcessCreated
+## ApplicationStateObserver.onProcessCreated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onProcessCreated(processData: ProcessData): void
  
@@ -72,6 +78,7 @@ onProcessCreated(processData: ProcessData): void
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | processData | ProcessData | 是 | 进程数据信息。 |
@@ -79,9 +86,10 @@ onProcessCreated(processData: ProcessData): void
  
   
 
-#### ApplicationStateObserver.onProcessDied
+## ApplicationStateObserver.onProcessDied
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onProcessDied(processData: ProcessData): void
  
@@ -91,6 +99,7 @@ onProcessDied(processData: ProcessData): void
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | processData | ProcessData | 是 | 进程数据信息。 |
@@ -98,18 +107,20 @@ onProcessDied(processData: ProcessData): void
  
   
 
-#### ApplicationStateObserver.onProcessStateChanged
+## ApplicationStateObserver.onProcessStateChanged
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onProcessStateChanged(processData: ProcessData): void
  
-进程状态更新时执行的回调函数。
+进程状态发生变化时执行的回调函数。
  
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | processData | ProcessData | 是 | 进程数据信息。 |
@@ -117,9 +128,10 @@ onProcessStateChanged(processData: ProcessData): void
  
   
 
-#### ApplicationStateObserver.onAppStarted
+## ApplicationStateObserver.onAppStarted
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onAppStarted(appStateData: AppStateData): void
  
@@ -129,6 +141,7 @@ onAppStarted(appStateData: AppStateData): void
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | appStateData | AppStateData | 是 | 应用状态信息。 |
@@ -136,9 +149,10 @@ onAppStarted(appStateData: AppStateData): void
  
   
 
-#### ApplicationStateObserver.onAppStopped
+## ApplicationStateObserver.onAppStopped
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onAppStopped(appStateData: AppStateData): void
  
@@ -148,6 +162,7 @@ onAppStopped(appStateData: AppStateData): void
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | appStateData | AppStateData | 是 | 应用状态信息。 |
@@ -155,9 +170,10 @@ onAppStopped(appStateData: AppStateData): void
  
   
 
-#### ProcessData
+## ProcessData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ProcessData = _ProcessData.default
  
@@ -165,6 +181,7 @@ type ProcessData = _ProcessData.default
  
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
   
+
 | 类型 | 说明 |
 | --- | --- |
 | _ProcessData.default | 进程数据信息。 |

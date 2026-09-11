@@ -1,18 +1,19 @@
 # ArkTS API错误码
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/weather-service-error-code
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!TIP]
 > 以下仅介绍本模块特有错误码，通用错误码请参考 通用错误码 说明文档。
 
   
 
-#### 1011900001 未开通天气服务
+## 1011900001 未开通天气服务
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
  
@@ -38,9 +39,10 @@ Capability is not configured.
  
   
 
-#### 1011900002 天气数据缺失
+## 1011900002 天气数据缺失
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
  
@@ -62,9 +64,10 @@ The requested longitude and latitude grid point lacks data.
  
   
 
-#### 1011900003 网络错误
+## 1011900003 网络错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
  
@@ -86,9 +89,10 @@ Network error.
  
   
 
-#### 1011900004 系统内部错误
+## 1011900004 系统内部错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
  
@@ -100,8 +104,12 @@ System error.
  
 **可能原因**
  
-连接服务失败或其他内部错误。
+1、使用[weatherService.getWeather(request)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/weather-service-weatherservice#weatherservicegetweather)接口获取天气信息时，无法自动获取到Context信息。
+ 
+2、连接服务失败或其他内部错误。
  
 **处理步骤**
  
-通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题，华为支持人员会及时处理。
+1、使用[weatherService.getWeatherWithContext(context, request)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/weather-service-weatherservice#weatherservicegetweatherwithcontext)接口替换[weatherService.getWeather(request)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/weather-service-weatherservice#weatherservicegetweather)接口，主动传入Context信息。
+ 
+2、通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题，华为支持人员会及时处理。

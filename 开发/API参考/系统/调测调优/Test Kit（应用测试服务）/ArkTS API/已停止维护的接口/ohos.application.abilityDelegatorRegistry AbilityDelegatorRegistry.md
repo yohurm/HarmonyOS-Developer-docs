@@ -1,20 +1,21 @@
 # @ohos.application.abilityDelegatorRegistry (AbilityDelegatorRegistry)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-application-abilitydelegatorregistry
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 AbilityDelegatorRegistry模块提供用于存储已注册的[AbilityDelegator](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-abilitydelegator)和[AbilityDelegatorArgs](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-abilitydelegatorargs)对象的全局寄存器的能力，包括获取应用程序的AbilityDelegator对象、获取单元测试参数AbilityDelegatorArgs对象。该模块中的接口只能用于测试框架中。
  
 > [!NOTE]
-> 本模块首批接口从API version 8开始支持，从API version 9废弃，替换模块为 @ohos.app.ability.abilityDelegatorRegistry 。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+> 本模块首批接口从API version 8开始支持，从API version 9开始废弃，替换模块为 @ohos.app.ability.abilityDelegatorRegistry 。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
@@ -22,14 +23,16 @@ import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry
  
   
 
-#### AbilityLifecycleState
+## AbilityLifecycleState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Ability生命周期状态。
  
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | UNINITIALIZED | 0 | 表示无效状态。 |
@@ -41,9 +44,10 @@ Ability生命周期状态。
  
   
 
-#### abilityDelegatorRegistry.getAbilityDelegator
+## abilityDelegatorRegistry.getAbilityDelegator
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAbilityDelegator(): AbilityDelegator
  
@@ -53,6 +57,7 @@ getAbilityDelegator(): AbilityDelegator
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityDelegator | AbilityDelegator对象。可以用来调度测试框架相关功能。 |
@@ -68,9 +73,10 @@ let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
  
   
 
-#### abilityDelegatorRegistry.getArguments
+## abilityDelegatorRegistry.getArguments
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getArguments(): AbilityDelegatorArgs
  
@@ -80,6 +86,7 @@ getArguments(): AbilityDelegatorArgs
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityDelegatorArgs | AbilityDelegatorArgs对象。可以用来获取测试参数。 |

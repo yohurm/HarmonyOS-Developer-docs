@@ -1,9 +1,9 @@
 # FolderStack
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-folderstack
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 FolderStack继承自[Stack](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-stack)（层叠布局）控件，新增了[折叠屏悬停](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-folded-hover)能力，通过在FolderStack的配置项[FolderStackOptions](#folderstackoptions18对象说明)的upperItems数组上设置子组件id，使相应子组件自动避让折叠屏折痕区后移到上半屏。FolderStack适用于双折叠设备的悬停态场景，如视频播放、视频会议等应用，实现视频画面自动移至上半屏、控制面板保留在下半屏的布局。该组件能解决双折叠设备适配问题，带来提升用户体验、简化开发者布局适配工作的收益。
 
@@ -12,17 +12,19 @@ FolderStack继承自[Stack](https://developer.huawei.com/consumer/cn/doc/harmony
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 可以包含多个子组件。
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 FolderStack(options?: FolderStackOptions)
 
@@ -38,6 +40,7 @@ FolderStack(options?: FolderStackOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | FolderStackOptions | 否 | FolderStack的配置项，用于设置悬停态时需要移到上半屏的子组件。当需要使用折叠屏悬停能力时，通过upperItems数组指定子组件id；不传入时FolderStack作为普通Stack组件使用，不启用悬停能力，upperItems默认为空数组。 |
@@ -45,9 +48,10 @@ FolderStack(options?: FolderStackOptions)
 
 
 
-#### FolderStackOptions18+对象说明
+## FolderStackOptions18+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 FolderStack悬停态配置项对象，用于描述悬停态状态下需要移到上半屏的子组件相关信息。
 
@@ -61,6 +65,7 @@ FolderStack悬停态配置项对象，用于描述悬停态状态下需要移到
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | upperItems11+ | Array&lt;string&gt; | 否 | 是 | 定义悬停态会被移到上半屏的子组件的id数组。 默认值：[] 当悬停触发时，upperItems数组中的子组件自动避让折叠屏折痕区后移到上半屏，其它组件堆叠在下半屏区域。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
@@ -68,9 +73,10 @@ FolderStack悬停态配置项对象，用于描述悬停态状态下需要移到
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 > [!NOTE]
 > 设置offset和margin属性，可能会导致上下半屏遮挡折痕区，不建议使用。
@@ -80,9 +86,10 @@ FolderStack悬停态配置项对象，用于描述悬停态状态下需要移到
 
 
 
-#### alignContent
+### alignContent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 alignContent(value: Alignment)
 
@@ -100,6 +107,7 @@ alignContent(value: Alignment)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Alignment | 是 | 子组件在容器内的对齐方式，取值包括TopStart、Top、TopEnd、Start、Center、End、BottomStart、Bottom、BottomEnd。 默认值：Alignment.Center 非法值：按默认值处理。 |
@@ -107,9 +115,10 @@ alignContent(value: Alignment)
 
 
 
-#### enableAnimation
+### enableAnimation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 enableAnimation(value: boolean)
 
@@ -127,6 +136,7 @@ enableAnimation(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否使用默认动效。 默认值：true，设置true表示使用默认动效，设置false表示不使用默认动效。 非法值：按默认值处理。 |
@@ -134,9 +144,10 @@ enableAnimation(value: boolean)
 
 
 
-#### autoHalfFold
+### autoHalfFold
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 autoHalfFold(value: boolean)
 
@@ -156,6 +167,7 @@ autoHalfFold(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否开启自动旋转。 默认值：true。设置为true时，FolderStack在半折叠状态（见FoldStatus）进行布局时自动旋转；设置为false时，FolderStack在半折叠状态下不会自动旋转。仅在系统自动旋转关闭时生效；系统自动旋转开启时，此属性不生效，FolderStack遵循系统旋转行为。该参数仅在双折叠设备上生效，当FolderStack的父组件为if/else条件渲染节点时，该参数将失效。 非法值：按默认值处理。 |
@@ -163,17 +175,19 @@ autoHalfFold(value: boolean)
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)外，还支持以下事件：
 
 
 
-#### onFolderStateChange
+### onFolderStateChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 onFolderStateChange(callback: OnFoldStatusChangeCallback)
 
@@ -193,6 +207,7 @@ onFolderStateChange(callback: OnFoldStatusChangeCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | OnFoldStatusChangeCallback | 是 | 当前设备的折叠状态改变时触发的回调。 |
@@ -200,9 +215,10 @@ onFolderStateChange(callback: OnFoldStatusChangeCallback)
 
 
 
-#### onHoverStatusChange12+
+### onHoverStatusChange12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 onHoverStatusChange(handler: OnHoverStatusChangeCallback)
 
@@ -222,6 +238,7 @@ onHoverStatusChange(handler: OnHoverStatusChangeCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handler | OnHoverStatusChangeCallback | 是 | 当前设备的悬停状态改变时触发的回调。 |
@@ -229,9 +246,10 @@ onHoverStatusChange(handler: OnHoverStatusChangeCallback)
 
 
 
-#### OnHoverStatusChangeCallback18+
+## OnHoverStatusChangeCallback18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 type OnHoverStatusChangeCallback = (param: HoverEventParam) => void
 
@@ -245,6 +263,7 @@ type OnHoverStatusChangeCallback = (param: HoverEventParam) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | param | HoverEventParam | 是 | 当前设备与悬停状态相关的参数，包括设备的折叠状态、悬停状态、应用方向以及窗口模式枚举。 |
@@ -252,9 +271,10 @@ type OnHoverStatusChangeCallback = (param: HoverEventParam) => void
 
 
 
-#### OnFoldStatusChangeCallback18+
+## OnFoldStatusChangeCallback18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 type OnFoldStatusChangeCallback = (event: OnFoldStatusChangeInfo) => void
 
@@ -268,6 +288,7 @@ type OnFoldStatusChangeCallback = (event: OnFoldStatusChangeInfo) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | OnFoldStatusChangeInfo | 是 | 折叠状态改变时的信息，仅在横屏状态下生效。 |
@@ -275,9 +296,10 @@ type OnFoldStatusChangeCallback = (event: OnFoldStatusChangeInfo) => void
 
 
 
-#### OnFoldStatusChangeInfo18+
+## OnFoldStatusChangeInfo18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 折叠状态改变时的信息，仅在横屏状态下生效。
 
@@ -291,6 +313,7 @@ type OnFoldStatusChangeCallback = (event: OnFoldStatusChangeInfo) => void
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | foldStatus11+ | FoldStatus | 否 | 否 | 当前设备的折叠状态。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
@@ -298,15 +321,17 @@ type OnFoldStatusChangeCallback = (event: OnFoldStatusChangeInfo) => void
 
 
 
-#### HoverEventParam12+对象说明
+## HoverEventParam12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -318,9 +343,10 @@ type OnFoldStatusChangeCallback = (event: OnFoldStatusChangeInfo) => void
 
 
 
-#### WindowStatusType12+
+## WindowStatusType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 type WindowStatusType = import('../api/@ohos.window').default.WindowStatusType
 
@@ -332,6 +358,7 @@ type WindowStatusType = import('../api/@ohos.window').default.WindowStatusType
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | import('../api/@ohos.window').default.WindowStatusType | 窗口模式枚举。 |
@@ -339,13 +366,17 @@ type WindowStatusType = import('../api/@ohos.window').default.WindowStatusType
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 示例1（FolderStack折叠屏悬停能力）
+
+
+### 示例1（FolderStack折叠屏悬停能力）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例实现了折叠屏悬停能力。
 
@@ -433,7 +464,10 @@ struct Index {
 
 
 
-#### 示例2（使用attributeModifier动态设置FolderStack组件的属性及方法）
+### 示例2（使用attributeModifier动态设置FolderStack组件的属性及方法）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例展示了如何使用attributeModifier动态设置FolderStack组件的onFolderStateChange和onHoverStatusChange方法。
 
@@ -550,4 +584,4 @@ this appRotation:3
 this windowStatusType:1
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/QJB4gsDBRvKReD-yB0Fslg/zh-cn_image_0000002685928609.png?HW-CC-KV=V1&HW-CC-Date=20260730T071519Z&HW-CC-Expire=86400&HW-CC-Sign=909F26085BB57ABCE1E35B800492FB0FB356D61F4716C6152F6E86C8BF1BF3F5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/dqOU_IGZQvq_dympgUG_-g/zh-cn_image_0000002717773084.png?HW-CC-KV=V1&HW-CC-Date=20260911T073112Z&HW-CC-Expire=86400&HW-CC-Sign=9042BE512CEA27C15FF0C7C87B00CB0B5752CC5F2D61A7CBF44F2429855F6CF9)

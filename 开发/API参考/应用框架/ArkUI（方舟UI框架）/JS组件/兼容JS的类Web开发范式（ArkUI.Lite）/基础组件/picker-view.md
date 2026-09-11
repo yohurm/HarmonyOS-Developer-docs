@@ -1,9 +1,9 @@
 # picker-view
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-components-basic-picker-view
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 嵌入页面的滑动选择器。
  
@@ -12,18 +12,21 @@
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 不支持。
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
  
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | type | string | text | 否 | 设置滑动选择器的类型，该属性不支持动态修改，可选项有： - text：文本选择器。 - time：时间选择器。 |
@@ -35,6 +38,7 @@
  
 文本选择器：type=text
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | range | Array | - | 否 | 设置文本选择器的取值范围。 使用时需要使用数据绑定的方式，如range = {{data}}，js中声明相应变量：data：["15", "20", "25"]。 |
@@ -43,6 +47,7 @@
  
 时间选择器：type=time
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | selected | string | 00:00 | 否 | 设置时间选择器的默认取值，格式为 HH:mm； |
@@ -50,12 +55,14 @@
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 type=text：
   
+
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | change | { newValue: newValue, newSelected: newSelected } | 文本选择器选定值后触发该事件。 |
@@ -63,6 +70,7 @@ type=text：
  
 type=time：
   
+
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | change | { hour: hour, minute: minute} | 时间选择器选定值后触发该事件。 |
@@ -70,10 +78,12 @@ type=time：
  
   
 
-#### 样式
+## 样式
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
  
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | color | &lt;color&gt; | #808080 | 否 | 候选项字体颜色。 |
@@ -98,10 +108,12 @@ type=time：
  
   
 
-#### 方法
+## 方法
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
  
+
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | rotation | { focus: boolean } | 控制picker-view是否请求旋转表冠的焦点。设置focus参数为true，picker-view将获取旋转表冠的焦点，允许用户通过旋转表冠来滚动选择器中的选项；设置为false将释放旋转表冠的焦点。该功能仅在picker-view为单列时生效，对于多列picker-view，需通过用户点击来获取焦点以支持旋转表冠操作。 |
@@ -109,9 +121,10 @@ type=time：
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 <!-- xxx.hml -->
@@ -181,4 +194,4 @@ export default {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/ONQbL49CT9-jWUa7YjWwOA/zh-cn_image_0000002686088751.png?HW-CC-KV=V1&HW-CC-Date=20260730T071526Z&HW-CC-Expire=86400&HW-CC-Sign=48EF92757C3A7FFD66E7B682A224762AF3D080CE58CB097323406D56748203C1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/fsVqMn3FR169snmh5Ausxw/zh-cn_image_0000002747213329.png?HW-CC-KV=V1&HW-CC-Date=20260911T073000Z&HW-CC-Expire=86400&HW-CC-Sign=47BD262483FD5096866AC81F513883273715191F36C120EEDEE127E64C7DA1B9)

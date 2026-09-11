@@ -1,6 +1,6 @@
 # 使用Image_NativeModule完成多图对象解码
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-source-picture-c
 
@@ -9,9 +9,10 @@
 Picture是包含主图、辅助图和元数据的多图对象。主图包含主要图像信息，辅助图用于存储与主图相关的附加信息（如HDR增益图GAINMAP），元数据用于存储与图片相关的其他信息。Picture适用于HDR图片处理、HEIF专业格式解码等场景。
 
 
-#### Picture与PixelMap的区别
+## Picture与PixelMap的区别
 
 Picture和PixelMap是两种不同的图片解码对象，适用于不同的场景：
+
 
 | 对象类型 | 适用场景 | 特性 |
 | --- | --- | --- |
@@ -27,11 +28,11 @@ Picture和PixelMap是两种不同的图片解码对象，适用于不同的场�
 
 
 
-#### 开发步骤
+## 开发步骤
 
 
 
-#### 添加链接库
+### 添加链接库
 
 在进行应用开发之前，开发者需要打开native工程的src/main/cpp/CMakeLists.txt，在target_link_libraries依赖中添加libimage_source.so 以及日志依赖libhilog_ndk.z.so。
 
@@ -41,7 +42,7 @@ target_link_libraries(entry PUBLIC libhilog_ndk.z.so libimage_source.so)
 
 
 
-#### Native接口调用
+### Native接口调用
 
 具体接口说明请参考[Image_NativeModule](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-nativemodule)。
 
@@ -138,11 +139,17 @@ napi_value GetJsResult(napi_env env, int result)
   解码时可指定需要解码的辅助图类型。辅助图本身不作为独立图像直接显示，而是作为辅助数据参与图像处理（如HDR合成、深度信息提取等）。常见的辅助图类型包括：
 
 | 辅助图类型 | 说明 |
+
 | --- | --- |
+
 | GAINMAP | 增益图，用于HDR图像的高动态范围渲染。 |
+
 | DEPTH_MAP | 深度图，存储像素距离信息，用于3D重建、背景分离等场景。 |
+
 | UNREFOCUS_MAP | 未重对焦原图，用于人像虚化后期处理。 |
+
 | LINEAR_MAP | 线性图，用于视觉效果增强与色彩后期处理。 |
+
 | FRAGMENT_MAP | 水印裁剪图，用于水印移除、原图恢复等场景。 |
 
   

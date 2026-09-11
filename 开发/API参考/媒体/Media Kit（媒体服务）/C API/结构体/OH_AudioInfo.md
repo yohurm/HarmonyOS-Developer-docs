@@ -1,6 +1,6 @@
 # OH_AudioInfo
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avscreencapture-oh-audioinfo
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -10,7 +10,8 @@ typedef struct OH_AudioInfo {...} OH_AudioInfo
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -28,16 +29,19 @@ OH_AudioInfo作为OH_ScreenCaptureConfig的音频配置成员，包含麦克风�
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_AudioCaptureInfo micCapInfo | 音频麦克风采集信息，用于配置麦克风音频采集的采集参数。 |

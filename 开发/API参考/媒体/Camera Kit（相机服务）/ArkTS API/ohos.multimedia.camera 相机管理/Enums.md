@@ -1,18 +1,19 @@
 # Enums
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-e
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
   
 
-#### CameraPosition
+## CameraPosition
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，相机位置。
  
@@ -20,6 +21,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Camera.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CAMERA_POSITION_UNSPECIFIED | 0 | 相对于设备屏幕没有固定的朝向的相机。 |
@@ -30,9 +32,10 @@
  
   
 
-#### CameraType
+## CameraType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，相机类型。
  
@@ -40,6 +43,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Camera.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CAMERA_TYPE_DEFAULT | 0 | 默认相机类型。 |
@@ -51,9 +55,10 @@
  
   
 
-#### ConnectionType
+## ConnectionType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，相机连接类型。
  
@@ -61,6 +66,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Camera.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CAMERA_CONNECTION_BUILT_IN | 0 | 内置相机。 |
@@ -70,9 +76,10 @@
  
   
 
-#### HostDeviceType15+
+## HostDeviceType15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，远端相机设备类型。
  
@@ -80,6 +87,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Camera.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | UNKNOWN_TYPE | 0 | 未知设备类型。 |
@@ -89,9 +97,10 @@
  
   
 
-#### CameraStatus
+## CameraStatus
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，相机状态。
  
@@ -99,6 +108,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Camera.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CAMERA_STATUS_APPEAR | 0 | 新的相机出现。 |
@@ -109,9 +119,10 @@
  
   
 
-#### FoldStatus12+
+## FoldStatus12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，折叠机折叠状态。
  
@@ -119,6 +130,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Camera.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NON_FOLDABLE | 0 | 表示当前设备不可折叠。 |
@@ -128,9 +140,10 @@
  
   
 
-#### SceneMode11+
+## SceneMode11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，相机模式。
  
@@ -138,6 +151,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Camera.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NORMAL_PHOTO | 1 | 普通拍照模式。详情见PhotoSession。 |
@@ -147,9 +161,10 @@
  
   
 
-#### CameraErrorCode
+## CameraErrorCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 相机错误码。
  
@@ -157,6 +172,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Camera.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | INVALID_ARGUMENT | 7400101 | 参数缺失或者参数类型不对。 元服务API： 从API version 19开始，该接口支持在元服务中使用。 |
@@ -174,9 +190,10 @@
  
   
 
-#### TorchMode11+
+## TorchMode11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，手电筒模式。
  
@@ -184,6 +201,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Camera.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | OFF | 0 | 常关模式。 |
@@ -193,14 +211,16 @@
  
   
 
-#### CameraFormat
+## CameraFormat
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，输出格式。
  
 **系统能力：** SystemCapability.Multimedia.Camera.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CAMERA_FORMAT_RGBA_8888 | 3 | RGBA_8888格式的图片。 元服务API： 从API version 19开始，该接口支持在元服务中使用。 |
@@ -215,9 +235,10 @@
  
   
 
-#### VideoCodecType13+
+## VideoCodecType13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，视频编码类型。
  
@@ -225,6 +246,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Camera.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | AVC | 0 | 视频编码类型AVC。 |
@@ -233,9 +255,10 @@
  
   
 
-#### CameraConcurrentType18+
+## CameraConcurrentType18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，镜头并发类型。
  
@@ -243,6 +266,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Camera.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CAMERA_LIMITED_CAPABILITY | 0 | 镜头受限能力并发。 |
@@ -251,9 +275,10 @@
  
   
 
-#### ImageRotation
+## ImageRotation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，图片旋转角度。
  
@@ -261,6 +286,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Camera.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ROTATION_0 | 0 | 图片旋转0度。 |
@@ -271,9 +297,10 @@
  
   
 
-#### QualityLevel
+## QualityLevel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，图片质量。
  
@@ -281,6 +308,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Camera.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | QUALITY_LEVEL_HIGH | 0 | 图片质量高。 |
@@ -290,14 +318,16 @@
  
   
 
-#### MetadataObjectType
+## MetadataObjectType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，metadata元数据检测类型。
  
 **系统能力：** SystemCapability.Multimedia.Camera.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | FACE_DETECTION | 0 | 元数据的对象类型，用于人脸检测。 元服务API： 从API version 19开始，该接口支持在元服务中使用。 |
@@ -313,9 +343,10 @@
  
   
 
-#### Emotion
+## Emotion
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，人脸检测信息中的情绪类型。
  
@@ -325,6 +356,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Camera.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NEUTRAL | 0 | 平静。 |
@@ -335,9 +367,10 @@
  
   
 
-#### FlashMode
+## FlashMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，闪光灯模式。
  
@@ -345,6 +378,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Camera.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | FLASH_MODE_CLOSE | 0 | 闪光灯关闭。 |
@@ -355,14 +389,16 @@
  
   
 
-#### ExposureMode
+## ExposureMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，曝光模式。
  
 **系统能力：** SystemCapability.Multimedia.Camera.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | EXPOSURE_MODE_UNSPECIFIED24+ | -1 | 曝光模式未指定。 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API version 24开始，该接口支持在元服务中使用。 |
@@ -374,9 +410,10 @@
  
   
 
-#### FocusMode
+## FocusMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，焦距模式。
  
@@ -384,6 +421,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Camera.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | FOCUS_MODE_MANUAL | 0 | 手动对焦。通过手动修改相机焦距来改变对焦位置，不支持对焦点设置。 |
@@ -394,9 +432,10 @@
  
   
 
-#### FocusState
+## FocusState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，焦距状态。
  
@@ -404,6 +443,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Camera.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | FOCUS_STATE_SCAN | 0 | 触发对焦。 |
@@ -413,9 +453,10 @@
  
   
 
-#### VideoStabilizationMode
+## VideoStabilizationMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，视频防抖模式。
  
@@ -423,6 +464,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Camera.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | OFF | 0 | 关闭视频防抖功能。 |
@@ -434,9 +476,10 @@
  
   
 
-#### SmoothZoomMode11+
+## SmoothZoomMode11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 平滑变焦模式。
  
@@ -444,6 +487,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Camera.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NORMAL | 0 | 贝塞尔曲线模式。 |
@@ -451,14 +495,16 @@
  
   
 
-#### PreconfigType12+
+## PreconfigType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，提供预配置的类型。
  
 **系统能力：** SystemCapability.Multimedia.Camera.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | PRECONFIG_720P | 0 | 720P预配置。 元服务API： 从API version 19开始，该接口支持在元服务中使用。 |
@@ -470,9 +516,10 @@
  
   
 
-#### PreconfigRatio12+
+## PreconfigRatio12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，提供预配置的分辨率比例。
  
@@ -480,6 +527,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Camera.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | PRECONFIG_RATIO_1_1 | 0 | 1:1画幅。 |
@@ -489,9 +537,10 @@
  
   
 
-#### QualityPrioritization14+
+## QualityPrioritization14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，录像质量优先级。
  
@@ -499,6 +548,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Camera.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | HIGH_QUALITY | 0 | 高录像质量。 |
@@ -507,9 +557,10 @@
  
   
 
-#### WhiteBalanceMode20+
+## WhiteBalanceMode20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，白平衡模式。
  
@@ -517,6 +568,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Camera.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | AUTO | 0 | 自动 |
@@ -530,9 +582,10 @@
  
   
 
-#### SystemPressureLevel20+
+## SystemPressureLevel20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，系统压力等级。
  
@@ -540,6 +593,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Camera.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SYSTEM_PRESSURE_NORMAL | 0 | 系统压力正常。 |
@@ -551,14 +605,16 @@
  
   
 
-#### ControlCenterEffectType20+
+## ControlCenterEffectType20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，相机控制器支持的效果类型。
  
 **系统能力：** SystemCapability.Multimedia.Camera.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | BEAUTY | 0 | 美颜。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
@@ -569,9 +625,10 @@
  
   
 
-#### PhotoQualityPrioritization21+
+## PhotoQualityPrioritization21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，拍照画质优先策略。
  
@@ -579,6 +636,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Camera.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | HIGH_QUALITY | 0 | 画质优先，拍照需要较长的时间，以输出高画质的图片。 |
@@ -587,9 +645,10 @@
  
   
 
-#### SensorColorFilterArrangement24+
+## SensorColorFilterArrangement24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，传感器颜色滤镜排列方式。
  
@@ -599,6 +658,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Camera.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | BGGR | 0 | 蓝绿绿红（Blue-Green-Green-Red）滤镜排列方式。 |
@@ -609,9 +669,10 @@
  
   
 
-#### FlashState24+
+## FlashState24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，闪光灯状态。
  
@@ -621,6 +682,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Camera.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | FLASH_STATE_UNAVAILABLE | 0 | 闪光灯为不可用状态，为默认值。 |
@@ -630,9 +692,10 @@
  
   
 
-#### ExposureMeteringMode24+
+## ExposureMeteringMode24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，曝光测光模式。
  
@@ -640,6 +703,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Camera.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | MATRIX | 0 | 矩阵测光模式。对画面广泛区域进行测光，适合拍摄自然风光。 |
@@ -649,9 +713,10 @@
  
   
 
-#### OISMode24+
+## OISMode24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，光学防抖（Optical Image Stabilization）模式。
  
@@ -661,6 +726,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Camera.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | OFF | 0 | 光学防抖关闭。 |
@@ -670,9 +736,10 @@
  
   
 
-#### OISAxes24+
+## OISAxes24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，光学防抖（OIS）轴向。
  
@@ -682,6 +749,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Camera.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | PITCH | 0 | 俯仰轴。控制相机机身上下旋转，即机身围绕与镜头水平方向的轴旋转。 |
@@ -690,9 +758,10 @@
  
   
 
-#### ExposureState
+## ExposureState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，曝光状态。
  
@@ -704,6 +773,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Camera.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | EXPOSURE_STATE_SCAN | 0 | 曝光处于扫描状态。 |
@@ -712,9 +782,10 @@
  
   
 
-#### AutomotiveCameraPosition
+## AutomotiveCameraPosition
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示Car设备摄像头位置的枚举。
  
@@ -726,6 +797,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Camera.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | AUTOMOTIVE_CAMERA_POSITION_EXTERIOR_OTHER | 0 | Car设备外部其他位置摄像头。 |

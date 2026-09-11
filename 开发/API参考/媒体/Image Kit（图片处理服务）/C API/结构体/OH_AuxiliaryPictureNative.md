@@ -1,18 +1,19 @@
 # OH_AuxiliaryPictureNative
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-nativemodule-oh-auxiliarypicturenative
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct OH_AuxiliaryPictureNative OH_AuxiliaryPictureNative
 ```
 
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 AuxiliaryPicture结构体类型，用于执行AuxiliaryPicture相关操作。
 
@@ -27,6 +28,7 @@ AuxiliaryPicture结构体类型，用于执行AuxiliaryPicture相关操作。
 资源管理：释放OH_PictureNative对象不会自动释放已经获取出的OH_AuxiliaryPictureNative对象；释放OH_AuxiliaryPictureNative对象也不会从OH_PictureNative对象中移除对应辅助图。通过[OH_AuxiliaryPictureNative_GetInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-picture-native-h#oh_auxiliarypicturenative_getinfo)获取到的OH_AuxiliaryPictureInfo对象由调用方管理，使用完成后应调用[OH_AuxiliaryPictureInfo_Release](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-picture-native-h#oh_auxiliarypictureinfo_release)释放。通过[OH_AuxiliaryPictureNative_GetMetadata](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-picture-native-h#oh_auxiliarypicturenative_getmetadata)获取到的OH_PictureMetadata对象由调用方管理，使用完成后应调用[OH_PictureMetadata_Release](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-common-h#oh_picturemetadata_release)释放。接口返回失败时，输出参数的内容不能在后续流程中继续使用。
 
 OH_AuxiliaryPictureNative结构体内容和操作方式如下：
+
 
 | 字段类型 | 字段名称 | 字段描述 | 操作函数 | 函数描述 |
 | --- | --- | --- | --- | --- |

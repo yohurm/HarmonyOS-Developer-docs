@@ -1,22 +1,23 @@
 # Class (UserAgentBrandVersion)
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-useragentbrandversion
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 UserAgentBrandVersion是ArkWeb框架中用于配置User-Agent客户端提示信息中品牌名称和版本号的数据类，配合[UserAgentMetadata](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-useragentmetadata)使用。在User-Agent Client Hints机制中，浏览器通过Sec-CH-UA-Full-Version-List等请求标头向服务器报告品牌和版本信息，UserAgentBrandVersion用于定义其中的单个品牌条目。
  
-UserAgentBrandVersion提供品牌名称和版本号的设置与获取方法：setBrand/getBrand用于设置和获取品牌名称（如"Chromium"、"ArkWeb"等），setMajorVersion/getMajorVersion用于设置和获取主版本号（如"126"），setFullVersion/getFullVersion用于设置和获取完整版本号（如"126.0.0.0"）。应用可通过修改这些值来定制Web组件向服务器报告的浏览器身份信息。
+UserAgentBrandVersion提供品牌名称和版本号的设置与获取方法：setBrand/getBrand用于设置和获取品牌名称（如“ArkWeb”等），setMajorVersion/getMajorVersion用于设置和获取主版本号（如“126”），setFullVersion/getFullVersion用于设置和获取完整版本号（如“126.0.0.0”）。应用可通过修改这些值来定制Web组件向服务器报告的浏览器身份信息。
  
 > [!NOTE]
 > 本模块首批接口从API version 24开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 本Class首批接口从API version 24开始支持。 示例效果请以真机运行为准。
 
   
 
-#### setBrand
+## setBrand
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setBrand(brand: string): void
  
@@ -28,6 +29,7 @@ setBrand(brand: string): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | brand | string | 是 | 品牌名称，不能为空字符串。 |
@@ -39,9 +41,10 @@ setBrand(brand: string): void
  
   
 
-#### getBrand
+## getBrand
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBrand(): string
  
@@ -53,9 +56,10 @@ getBrand(): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| string | 品牌名称。 |
+| string | 返回品牌名称字符串。 |
  
  
 **示例：**
@@ -64,9 +68,10 @@ getBrand(): string
  
   
 
-#### setMajorVersion
+## setMajorVersion
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMajorVersion(majorVersion: string): void
  
@@ -78,6 +83,7 @@ setMajorVersion(majorVersion: string): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | majorVersion | string | 是 | 主版本号，不能为空字符串。 |
@@ -89,9 +95,10 @@ setMajorVersion(majorVersion: string): void
  
   
 
-#### getMajorVersion
+## getMajorVersion
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMajorVersion(): string
  
@@ -103,9 +110,10 @@ getMajorVersion(): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| string | 主版本号。 |
+| string | 返回主版本号字符串。 |
  
  
 **示例：**
@@ -114,9 +122,10 @@ getMajorVersion(): string
  
   
 
-#### setFullVersion
+## setFullVersion
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setFullVersion(fullVersion: string): void
  
@@ -128,6 +137,7 @@ setFullVersion(fullVersion: string): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fullVersion | string | 是 | 完整版本号，不能为空字符串。 |
@@ -139,9 +149,10 @@ setFullVersion(fullVersion: string): void
  
   
 
-#### getFullVersion
+## getFullVersion
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFullVersion(): string
  
@@ -153,9 +164,10 @@ getFullVersion(): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| string | 完整版本号。 |
+| string | 返回完整版本号字符串。 |
  
  
 **示例：**

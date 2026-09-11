@@ -1,9 +1,9 @@
 # @ohos.security.huks (通用密钥库系统)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-huks
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 向应用提供密钥库能力，包括密钥管理及密钥的密码学操作等功能。
 
@@ -14,9 +14,10 @@ HUKS所管理的密钥可以由应用导入或者由应用调用HUKS接口生成
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 import { huks } from '@kit.UniversalKeystoreKit';
@@ -24,15 +25,17 @@ import { huks } from '@kit.UniversalKeystoreKit';
 
 
 
-#### HuksParam
+## HuksParam
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 调用接口使用的options中的properties数组中的param。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Huks.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -42,15 +45,17 @@ import { huks } from '@kit.UniversalKeystoreKit';
 
 
 
-#### HuksOptions
+## HuksOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 调用接口使用的options。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Huks.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -60,15 +65,17 @@ import { huks } from '@kit.UniversalKeystoreKit';
 
 
 
-#### HuksSessionHandle9+
+## HuksSessionHandle9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 HUKS handle结构体。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Huks.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -78,13 +85,15 @@ HUKS handle结构体。
 
 
 
-#### HuksReturnResult9+
+## HuksReturnResult9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 调用接口返回的result。
 
 **系统能力：** SystemCapability.Security.Huks.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -96,15 +105,17 @@ HUKS handle结构体。
 
 
 
-#### HuksListAliasesReturnResult12+
+## HuksListAliasesReturnResult12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 返回的密钥别名数组。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Security.Huks.Extension
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -113,9 +124,10 @@ HUKS handle结构体。
 
 
 
-#### huks.generateKeyItem9+
+## huks.generateKeyItem9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 generateKeyItem(keyAlias: string, options: HuksOptions, callback: AsyncCallback&lt;void&gt;) : void
 
@@ -133,6 +145,7 @@ generateKeyItem(keyAlias: string, options: HuksOptions, callback: AsyncCallback&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | 密钥别名。密钥别名的最大长度为128字节，建议不包含个人信息等敏感词汇。 |
@@ -143,6 +156,7 @@ generateKeyItem(keyAlias: string, options: HuksOptions, callback: AsyncCallback&
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HUKS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-huks)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -298,9 +312,10 @@ export default {
 
 
 
-#### huks.generateKeyItem9+
+## huks.generateKeyItem9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 generateKeyItem(keyAlias: string, options: HuksOptions) : Promise&lt;void&gt;
 
@@ -318,6 +333,7 @@ generateKeyItem(keyAlias: string, options: HuksOptions) : Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | 密钥别名。密钥别名的最大长度为128字节，建议不包含个人信息等敏感词汇。 |
@@ -325,6 +341,7 @@ generateKeyItem(keyAlias: string, options: HuksOptions) : Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -334,6 +351,7 @@ generateKeyItem(keyAlias: string, options: HuksOptions) : Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HUKS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-huks)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -397,9 +415,10 @@ huks.generateKeyItem(keyAlias, options)
 
 
 
-#### huks.deleteKeyItem9+
+## huks.deleteKeyItem9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 deleteKeyItem(keyAlias: string, options: HuksOptions, callback: AsyncCallback&lt;void&gt;) : void
 
@@ -415,6 +434,7 @@ deleteKeyItem(keyAlias: string, options: HuksOptions, callback: AsyncCallback&lt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | 密钥别名，应为生成key时传入的别名。 |
@@ -425,6 +445,7 @@ deleteKeyItem(keyAlias: string, options: HuksOptions, callback: AsyncCallback&lt
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HUKS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-huks)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -539,9 +560,10 @@ export default {
 
 
 
-#### huks.deleteKeyItem9+
+## huks.deleteKeyItem9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteKeyItem(keyAlias: string, options: HuksOptions) : Promise&lt;void&gt;
 
@@ -557,6 +579,7 @@ deleteKeyItem(keyAlias: string, options: HuksOptions) : Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | 密钥别名，应为生成key时传入的别名。 |
@@ -564,6 +587,7 @@ deleteKeyItem(keyAlias: string, options: HuksOptions) : Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -573,6 +597,7 @@ deleteKeyItem(keyAlias: string, options: HuksOptions) : Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HUKS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-huks)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -606,9 +631,10 @@ huks.deleteKeyItem(keyAlias, emptyOptions)
 
 
 
-#### huks.importKeyItem9+
+## huks.importKeyItem9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 importKeyItem(keyAlias: string, options: HuksOptions, callback: AsyncCallback&lt;void&gt;) : void
 
@@ -616,11 +642,14 @@ importKeyItem(keyAlias: string, options: HuksOptions, callback: AsyncCallback&lt
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
-**系统能力：** SystemCapability.Security.Huks.Core
+**系统能力：**
 
-API version 9-11系统能力为SystemCapability.Security.Huks.Extension；从API version 12开始为SystemCapability.Security.Huks.Core
+ - API版本12+：SystemCapability.Security.Huks.Core
+ - API版本9-11：SystemCapability.Security.Huks.Extension
+
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -632,6 +661,7 @@ API version 9-11系统能力为SystemCapability.Security.Huks.Extension；从API
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HUKS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-huks)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -707,9 +737,10 @@ huks.importKeyItem(keyAlias, options, (error) => {
 
 
 
-#### huks.importKeyItem9+
+## huks.importKeyItem9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 importKeyItem(keyAlias: string, options: HuksOptions) : Promise&lt;void&gt;
 
@@ -721,6 +752,7 @@ importKeyItem(keyAlias: string, options: HuksOptions) : Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | 密钥别名。密钥别名的最大长度为128字节，建议不包含个人信息等敏感词汇。 |
@@ -728,6 +760,7 @@ importKeyItem(keyAlias: string, options: HuksOptions) : Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -737,6 +770,7 @@ importKeyItem(keyAlias: string, options: HuksOptions) : Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HUKS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-huks)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -808,17 +842,14 @@ huks.importKeyItem(keyAlias, huksOptions)
 
 
 
-#### huks.attestKeyItem9+
+## huks.attestKeyItem9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 attestKeyItem(keyAlias: string, options: HuksOptions, callback: AsyncCallback&lt;HuksReturnResult&gt;) : void
 
 获取密钥证书。使用callback异步回调。
-
-> [!NOTE]
-> 获取 HuksKeySecurityLevel 中定义的SE安全级别密钥证书需要 ohos.permission.ACCESS_SE_KEY 权限。
-
 
 > [!TIP]
 > 使用非匿名证书密钥证明时生成的证书链包含设备标识符，设备标识符的使用、留存、销毁由开发者决定，开发者需在隐私声明中对其使用目的，留存策略和销毁方式进行说明。
@@ -830,6 +861,7 @@ attestKeyItem(keyAlias: string, options: HuksOptions, callback: AsyncCallback&lt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | 密钥别名，存放待获取证书密钥的别名。 |
@@ -840,6 +872,7 @@ attestKeyItem(keyAlias: string, options: HuksOptions, callback: AsyncCallback&lt
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HUKS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-huks)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -874,7 +907,7 @@ function stringToUint8Array(str: string) {
 let securityLevel = stringToUint8Array('sec_level');
 let challenge = stringToUint8Array('challenge_data');
 let versionInfo = stringToUint8Array('version_info');
-let keyAliasString = "key attest";
+let keyAliasString = 'key attest';
 
 async function generateKeyThenAttestKey() {
   let aliasString = keyAliasString;
@@ -955,17 +988,14 @@ async function generateKeyThenAttestKey() {
 
 
 
-#### huks.attestKeyItem9+
+## huks.attestKeyItem9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 attestKeyItem(keyAlias: string, options: HuksOptions) : Promise&lt;HuksReturnResult&gt;
 
 获取密钥证书。使用Promise异步回调。
-
-> [!NOTE]
-> 获取 HuksKeySecurityLevel 中定义的SE安全级别密钥证书需要 ohos.permission.ACCESS_SE_KEY 权限。
-
 
 **需要权限：** ohos.permission.ATTEST_KEY，该权限仅系统应用可申请。
 
@@ -977,6 +1007,7 @@ attestKeyItem(keyAlias: string, options: HuksOptions) : Promise&lt;HuksReturnRes
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | 密钥别名，存放待获取证书密钥的别名。 |
@@ -984,6 +1015,7 @@ attestKeyItem(keyAlias: string, options: HuksOptions) : Promise&lt;HuksReturnRes
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -993,6 +1025,7 @@ attestKeyItem(keyAlias: string, options: HuksOptions) : Promise&lt;HuksReturnRes
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HUKS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-huks)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1027,7 +1060,7 @@ function stringToUint8Array(str: string) {
 let securityLevel = stringToUint8Array('sec_level');
 let challenge = stringToUint8Array('challenge_data');
 let versionInfo = stringToUint8Array('version_info');
-let keyAliasString = "key attest";
+let keyAliasString = 'key attest';
 
 /* 1. 生成密钥 */
 async function generateKey(alias: string) {
@@ -1106,15 +1139,20 @@ async function attestKey() {
 
 
 
-#### huks.anonAttestKeyItem11+
+## huks.anonAttestKeyItem11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 anonAttestKeyItem(keyAlias: string, options: HuksOptions, callback: AsyncCallback&lt;HuksReturnResult&gt;) : void
 
 获取匿名化密钥证书。使用callback异步回调。
 
-该操作需要联网进行，且耗时较长。返回12000012错误码时，可能是由于网络异常导致。此时如果没有联网，需要提示用户网络没有连接，如果已经联网，可能是由于网络抖动导致失败，建议重试。
+该操作需要联网进行，且耗时较长。返回12000012错误码时，可能是由于网络异常导致。此时如果没有联网，需要提示用户网络没有连接；如果已经联网，可能是由于网络抖动导致失败，建议重试。
+
+> [!NOTE]
+> 获取 HuksKeySecurityLevel 中定义的SE安全级别密钥证书需要 ohos.permission.ACCESS_SE_KEY 权限。
+
 
 密钥证明证书格式说明请参考[应用真实性证明-密钥证明](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/device-attestation-servers#校验密钥证明证书链)。
 
@@ -1123,6 +1161,7 @@ anonAttestKeyItem(keyAlias: string, options: HuksOptions, callback: AsyncCallbac
 **系统能力：** SystemCapability.Security.Huks.Extension
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1135,8 +1174,10 @@ anonAttestKeyItem(keyAlias: string, options: HuksOptions, callback: AsyncCallbac
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HUKS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-huks)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
+| 201 | The application permissions are insufficient, possibly because the ohos.permission.ACCESS_SE_KEY permission is missing. 适用版本：26.0.0+ |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | api is not supported. |
 | 12000001 | algorithm mode is not supported. |
@@ -1168,7 +1209,7 @@ function stringToUint8Array(str: string): Uint8Array {
 let securityLevel = stringToUint8Array('sec_level');
 let challenge = stringToUint8Array('challenge_data');
 let versionInfo = stringToUint8Array('version_info');
-let keyAliasString = "key anon attest";
+let keyAliasString = 'key anon attest';
 
 async function generateKeyThenAttestKey(): Promise<void> {
   let aliasString = keyAliasString;
@@ -1249,15 +1290,20 @@ async function generateKeyThenAttestKey(): Promise<void> {
 
 
 
-#### huks.anonAttestKeyItem11+
+## huks.anonAttestKeyItem11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 anonAttestKeyItem(keyAlias: string, options: HuksOptions) : Promise&lt;HuksReturnResult&gt;
 
 获取匿名化密钥证书。使用Promise异步回调。
 
-该操作需要联网进行，且耗时较长。返回12000012错误码时，可能是由于网络异常导致。此时如果没有联网，需要提示用户网络没有连接，如果已经联网，可能是由于网络抖动导致失败，建议重试。
+该操作需要联网进行，且耗时较长。返回12000012错误码时，可能是由于网络异常导致。此时如果没有联网，需要提示用户网络没有连接；如果已经联网，可能是由于网络抖动导致失败，建议重试。
+
+> [!NOTE]
+> 获取 HuksKeySecurityLevel 中定义的SE安全级别密钥证书需要 ohos.permission.ACCESS_SE_KEY 权限。
+
 
 密钥证明证书格式说明请参考[应用真实性证明-密钥证明](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/device-attestation-servers#校验密钥证明证书链)。
 
@@ -1267,6 +1313,7 @@ anonAttestKeyItem(keyAlias: string, options: HuksOptions) : Promise&lt;HuksRetur
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | 密钥别名，存放待获取证书密钥的别名。 |
@@ -1274,6 +1321,7 @@ anonAttestKeyItem(keyAlias: string, options: HuksOptions) : Promise&lt;HuksRetur
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1284,8 +1332,10 @@ anonAttestKeyItem(keyAlias: string, options: HuksOptions) : Promise&lt;HuksRetur
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HUKS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-huks)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
+| 201 | The application permissions are insufficient, possibly because the ohos.permission.ACCESS_SE_KEY permission is missing. 适用版本：26.0.0+ |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | api is not supported. |
 | 12000001 | algorithm mode is not supported. |
@@ -1319,7 +1369,7 @@ function stringToUint8Array(str: string): Uint8Array {
 let securityLevel = stringToUint8Array('sec_level');
 let challenge = stringToUint8Array('challenge_data');
 let versionInfo = stringToUint8Array('version_info');
-let keyAliasString = "key anon attest";
+let keyAliasString = 'key anon attest';
 
 /* 1. 生成密钥 */
 async function generateKey(alias: string): Promise<void> {
@@ -1394,9 +1444,10 @@ async function anonAttestKey(): Promise<void> {
 
 
 
-#### huks.anonAttestKeyItemOffline
+## huks.anonAttestKeyItemOffline
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 anonAttestKeyItemOffline(keyAlias: string, params: HuksParam[]) : Promise&lt;HuksReturnResult&gt;
 
@@ -1416,6 +1467,7 @@ anonAttestKeyItemOffline(keyAlias: string, params: HuksParam[]) : Promise&lt;Huk
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | 密钥别名，存放待获取证书密钥的别名。 |
@@ -1423,6 +1475,7 @@ anonAttestKeyItemOffline(keyAlias: string, params: HuksParam[]) : Promise&lt;Huk
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1432,6 +1485,7 @@ anonAttestKeyItemOffline(keyAlias: string, params: HuksParam[]) : Promise&lt;Huk
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HUKS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-huks)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1464,7 +1518,7 @@ function stringToUint8Array(str: string): Uint8Array {
 }
 
 let challenge = stringToUint8Array('challenge_data');
-let keyAliasString = "key anon local attest";
+let keyAliasString = 'key anon local attest';
 
 /* 1. 生成密钥 */
 async function generateKey(alias: string) {
@@ -1519,9 +1573,10 @@ async function anonAttestKeyOffline() {
 
 
 
-#### huks.importWrappedKeyItem9+
+## huks.importWrappedKeyItem9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 importWrappedKeyItem(keyAlias: string, wrappingKeyAlias: string, options: HuksOptions, callback: AsyncCallback&lt;void&gt;) : void
 
@@ -1533,23 +1588,27 @@ importWrappedKeyItem(keyAlias: string, wrappingKeyAlias: string, options: HuksOp
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
-**系统能力：** SystemCapability.Security.Huks.Core
+**系统能力：**
 
-API version 9-11系统能力为SystemCapability.Security.Huks.Extension；从API version 12开始为SystemCapability.Security.Huks.Core
+ - API版本12+：SystemCapability.Security.Huks.Core
+ - API版本9-11：SystemCapability.Security.Huks.Extension
+
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | 密钥别名，存放待导入密钥的别名。 |
 | wrappingKeyAlias | string | 是 | 密钥别名，对应密钥用于解密加密的密钥数据。 |
 | options | HuksOptions | 是 | 用于导入时所需TAG和需要导入的加密的密钥数据。其中密钥使用的算法、密钥用途、密钥长度为必选参数。 |
-| callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。不返回err值时表示接口使用成功时，其他时为错误。 |
+| callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。不返回err值时表示接口使用成功，否则为错误。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HUKS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-huks)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1581,11 +1640,11 @@ API version 9-11系统能力为SystemCapability.Security.Huks.Extension；从API
 ```json
 import { huks } from '@kit.UniversalKeystoreKit';
 
-let alias1 = "importAlias";
-let alias2 = "wrappingKeyAlias";
+let alias1 = 'importAlias';
+let alias2 = 'wrappingKeyAlias';
 
 /* 1. 生成ECC密钥 */
-async function TestGenFunc(alias: string, options: huks.HuksOptions) {
+async function testGenFunc(alias: string, options: huks.HuksOptions) {
   await genKey(alias, options)
     .then(() => {
       console.info(`callback: generateKeyItem success`);
@@ -1605,7 +1664,7 @@ function genKey(alias: string, options: huks.HuksOptions) {
 }
 
 /* 2. 导出公钥 */
-async function TestExportFunc(alias: string, options: huks.HuksOptions) {
+async function testExportFunc(alias: string, options: huks.HuksOptions) {
   await exportKey(alias, options)
     .then((data) => {
       console.info(`callback: exportKeyItem success, data = ${JSON.stringify(data)}`);
@@ -1625,7 +1684,7 @@ function exportKey(alias: string, options: huks.HuksOptions) {
 }
 
 /* 3. 安全导入密钥 */
-async function TestImportWrappedFunc(alias: string, wrappingAlias: string, options: huks.HuksOptions) {
+async function testImportWrappedFunc(alias: string, wrappingAlias: string, options: huks.HuksOptions) {
   await importWrappedKey(alias, wrappingAlias, options)
     .then(() => {
       console.info(`callback: importWrappedKeyItem success`);
@@ -1644,18 +1703,18 @@ function importWrappedKey(alias: string, wrappingAlias: string, options: huks.Hu
   });
 }
 
-async function TestImportWrappedKeyFunc(
+async function testImportWrappedKeyFunc(
   alias: string,
   wrappingAlias: string,
   genOptions: huks.HuksOptions,
   importOptions: huks.HuksOptions
 ) {
-  await TestGenFunc(wrappingAlias, genOptions);
-  await TestExportFunc(wrappingAlias, genOptions);
+  await testGenFunc(wrappingAlias, genOptions);
+  await testExportFunc(wrappingAlias, genOptions);
 
   /* 以下操作不需要调用HUKS接口，此处不给出具体实现：
    * 假设待导入的密钥为keyA。
-   * 1. 生成ECC公私钥keyB，公钥为keyB_pub, 私钥为keyB_pri。
+   * 1. 生成ECC公私钥keyB，公钥为keyB_pub，私钥为keyB_pri。
    * 2. 使用keyB_pri和wrappingAlias密钥中获取的公钥进行密钥协商，协商出共享密钥share_key。
    * 3. 随机生成密钥kek，用于加密keyA，采用AES-GCM加密，加密过程中需要记录：nonce1、aad1、加密后的密文keyA_enc、加密后的tag1。
    * 4. 使用share_key加密kek，采用AES-GCM加密，加密过程中需要记录：nonce2、aad2、加密后的密文kek_enc、加密后的tag2。
@@ -1669,7 +1728,7 @@ async function TestImportWrappedKeyFunc(
   /* 该处为示例代码，实际运行过程中，应使用实际导入密钥数据。数据构造方式由上注释可见说明 */
   let inputKey = new Uint8Array([0x02, 0x00, 0x00, 0x00]);
   importOptions.inData = inputKey;
-  await TestImportWrappedFunc(alias, wrappingAlias, importOptions);
+  await testImportWrappedFunc(alias, wrappingAlias, importOptions);
 }
 
 /* ECC密钥生成的参数集 */
@@ -1739,7 +1798,7 @@ function makeImportOptions() {
 function huksImportWrappedKey() {
   let genOptions = makeGenerateOptions();
   let importOptions = makeImportOptions();
-  TestImportWrappedKeyFunc(
+  testImportWrappedKeyFunc(
     alias1,
     alias2,
     genOptions,
@@ -1750,9 +1809,10 @@ function huksImportWrappedKey() {
 
 
 
-#### huks.importWrappedKeyItem9+
+## huks.importWrappedKeyItem9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 importWrappedKeyItem(keyAlias: string, wrappingKeyAlias: string, options: HuksOptions) : Promise&lt;void&gt;
 
@@ -1768,6 +1828,7 @@ importWrappedKeyItem(keyAlias: string, wrappingKeyAlias: string, options: HuksOp
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | 密钥别名，存放待导入密钥的别名。 |
@@ -1777,6 +1838,7 @@ importWrappedKeyItem(keyAlias: string, wrappingKeyAlias: string, options: HuksOp
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1785,6 +1847,7 @@ importWrappedKeyItem(keyAlias: string, wrappingKeyAlias: string, options: HuksOp
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HUKS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-huks)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1818,7 +1881,7 @@ import { huks } from '@kit.UniversalKeystoreKit';
 
 /* 处理流程与callback类似，主要差异点为如下函数： */
 /* 该处为示例代码，实际运行过程中，应使用实际导入密钥数据。数据构造方式由上注释可见说明 */
-async function TestImportWrappedFunc(alias: string, wrappingAlias: string, options: huks.HuksOptions) {
+async function testImportWrappedFunc(alias: string, wrappingAlias: string, options: huks.HuksOptions) {
   await huks.importWrappedKeyItem(alias, wrappingAlias, options)
     .then(() => {
       console.info(`promise: importWrappedKeyItem success`);
@@ -1828,9 +1891,10 @@ async function TestImportWrappedFunc(alias: string, wrappingAlias: string, optio
 
 
 
-#### huks.exportKeyItem9+
+## huks.exportKeyItem9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 exportKeyItem(keyAlias: string, options: HuksOptions, callback: AsyncCallback&lt;HuksReturnResult&gt;) : void
 
@@ -1842,11 +1906,14 @@ exportKeyItem(keyAlias: string, options: HuksOptions, callback: AsyncCallback&lt
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
-**系统能力：** SystemCapability.Security.Huks.Core
+**系统能力：**
 
-API version 9-11系统能力为SystemCapability.Security.Huks.Extension；从API version 12开始为SystemCapability.Security.Huks.Core
+ - API版本12+：SystemCapability.Security.Huks.Core
+ - API版本9-11：SystemCapability.Security.Huks.Extension
+
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1858,6 +1925,7 @@ API version 9-11系统能力为SystemCapability.Security.Huks.Extension；从API
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HUKS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-huks)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1902,9 +1970,10 @@ huks.exportKeyItem(keyAlias, emptyOptions, (error, data) => {
 
 
 
-#### huks.exportKeyItem9+
+## huks.exportKeyItem9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 exportKeyItem(keyAlias: string, options: HuksOptions) : Promise&lt;HuksReturnResult&gt;
 
@@ -1920,6 +1989,7 @@ exportKeyItem(keyAlias: string, options: HuksOptions) : Promise&lt;HuksReturnRes
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | 密钥别名，应与所用密钥生成时使用的别名相同。 |
@@ -1927,6 +1997,7 @@ exportKeyItem(keyAlias: string, options: HuksOptions) : Promise&lt;HuksReturnRes
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1936,6 +2007,7 @@ exportKeyItem(keyAlias: string, options: HuksOptions) : Promise&lt;HuksReturnRes
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HUKS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-huks)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1977,9 +2049,10 @@ huks.exportKeyItem(keyAlias, emptyOptions)
 
 
 
-#### huks.wrapKeyItem20+
+## huks.wrapKeyItem20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 wrapKeyItem(keyAlias: string, params: HuksOptions): Promise&lt;HuksReturnResult&gt;
 
@@ -1995,6 +2068,7 @@ wrapKeyItem(keyAlias: string, params: HuksOptions): Promise&lt;HuksReturnResult&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | 密钥别名，应与所用密钥生成时使用的别名相同。 |
@@ -2002,6 +2076,7 @@ wrapKeyItem(keyAlias: string, params: HuksOptions): Promise&lt;HuksReturnResult&
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2011,6 +2086,7 @@ wrapKeyItem(keyAlias: string, params: HuksOptions): Promise&lt;HuksReturnResult&
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HUKS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-huks)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2102,9 +2178,10 @@ async function testWrapKey(){
 
 
 
-#### huks.unwrapKeyItem20+
+## huks.unwrapKeyItem20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unwrapKeyItem(keyAlias: string, params: HuksOptions, wrappedKey: Uint8Array): Promise&lt;HuksReturnResult&gt;
 
@@ -2120,6 +2197,7 @@ unwrapKeyItem(keyAlias: string, params: HuksOptions, wrappedKey: Uint8Array): Pr
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | 密钥别名，指定导入密钥的密钥别名。 |
@@ -2129,6 +2207,7 @@ unwrapKeyItem(keyAlias: string, params: HuksOptions, wrappedKey: Uint8Array): Pr
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;HuksReturnResult&gt; | Promise对象，返回调用接口的结果。当调用成功时，HuksReturnResult的outData成员为导入的密钥密文。 |
@@ -2137,6 +2216,7 @@ unwrapKeyItem(keyAlias: string, params: HuksOptions, wrappedKey: Uint8Array): Pr
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HUKS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-huks)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2183,9 +2263,10 @@ async function testUnwrapKey(){
 
 
 
-#### huks.encapsulate
+## huks.encapsulate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 encapsulate(keyAlias: string, params: HuksParam[], sharedKeyAlias?: string, sharedKeyParams?: HuksParam[]): Promise&lt;HuksReturnResult&gt;
 
@@ -2199,6 +2280,7 @@ encapsulate(keyAlias: string, params: HuksParam[], sharedKeyAlias?: string, shar
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | ML-KEM公钥密钥别名。 |
@@ -2209,6 +2291,7 @@ encapsulate(keyAlias: string, params: HuksParam[], sharedKeyAlias?: string, shar
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;HuksReturnResult&gt; | Promise对象，返回调用接口的结果。outData为封装后的密文数据，sharedSecret为共享密钥（sharedKeyAlias非空时sharedSecret为空）。 |
@@ -2217,6 +2300,7 @@ encapsulate(keyAlias: string, params: HuksParam[], sharedKeyAlias?: string, shar
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HUKS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-huks)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2269,9 +2353,10 @@ try {
 
 
 
-#### huks.decapsulate
+## huks.decapsulate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 decapsulate(keyAlias: string, params: HuksParam[], encapData: Uint8Array, sharedKeyAlias?: string, sharedKeyParams?: HuksParam[]): Promise&lt;HuksReturnResult&gt;
 
@@ -2282,6 +2367,7 @@ decapsulate(keyAlias: string, params: HuksParam[], encapData: Uint8Array, shared
 **系统能力：** SystemCapability.Security.Huks.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2294,6 +2380,7 @@ decapsulate(keyAlias: string, params: HuksParam[], encapData: Uint8Array, shared
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;HuksReturnResult&gt; | Promise对象，返回调用接口的结果。sharedSecret为共享密钥（sharedKeyAlias非空时sharedSecret为空）。 |
@@ -2302,6 +2389,7 @@ decapsulate(keyAlias: string, params: HuksParam[], encapData: Uint8Array, shared
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HUKS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-huks)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2355,9 +2443,10 @@ try {
 
 
 
-#### huks.getKeyItemProperties9+
+## huks.getKeyItemProperties9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getKeyItemProperties(keyAlias: string, options: HuksOptions, callback: AsyncCallback&lt;HuksReturnResult&gt;) : void
 
@@ -2369,11 +2458,14 @@ getKeyItemProperties(keyAlias: string, options: HuksOptions, callback: AsyncCall
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
-**系统能力：** SystemCapability.Security.Huks.Core
+**系统能力：**
 
-API version 9-11系统能力为SystemCapability.Security.Huks.Extension；从API version 12开始为SystemCapability.Security.Huks.Core
+ - API版本12+：SystemCapability.Security.Huks.Core
+ - API版本9-11：SystemCapability.Security.Huks.Extension
+
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2385,6 +2477,7 @@ API version 9-11系统能力为SystemCapability.Security.Huks.Extension；从API
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HUKS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-huks)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2427,9 +2520,10 @@ huks.getKeyItemProperties(keyAlias, emptyOptions, (error, data) => {
 
 
 
-#### huks.getKeyItemProperties9+
+## huks.getKeyItemProperties9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getKeyItemProperties(keyAlias: string, options: HuksOptions) : Promise&lt;HuksReturnResult&gt;
 
@@ -2445,6 +2539,7 @@ getKeyItemProperties(keyAlias: string, options: HuksOptions) : Promise&lt;HuksRe
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | 密钥别名，应与所用密钥生成时使用的别名相同。 |
@@ -2452,6 +2547,7 @@ getKeyItemProperties(keyAlias: string, options: HuksOptions) : Promise&lt;HuksRe
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2461,6 +2557,7 @@ getKeyItemProperties(keyAlias: string, options: HuksOptions) : Promise&lt;HuksRe
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HUKS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-huks)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2500,9 +2597,10 @@ huks.getKeyItemProperties(keyAlias, emptyOptions)
 
 
 
-#### huks.isKeyItemExist9+
+## huks.isKeyItemExist9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 isKeyItemExist(keyAlias: string, options: HuksOptions, callback: AsyncCallback&lt;boolean&gt;) : void
 
@@ -2514,6 +2612,7 @@ isKeyItemExist(keyAlias: string, options: HuksOptions, callback: AsyncCallback&l
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | 所需查找的密钥的别名。 |
@@ -2524,6 +2623,7 @@ isKeyItemExist(keyAlias: string, options: HuksOptions, callback: AsyncCallback&l
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HUKS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-huks)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2648,9 +2748,10 @@ export default {
 
 
 
-#### huks.isKeyItemExist9+
+## huks.isKeyItemExist9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isKeyItemExist(keyAlias: string, options: HuksOptions) : Promise&lt;boolean&gt;
 
@@ -2662,6 +2763,7 @@ isKeyItemExist(keyAlias: string, options: HuksOptions) : Promise&lt;boolean&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | 所需查找的密钥的别名。 |
@@ -2669,6 +2771,7 @@ isKeyItemExist(keyAlias: string, options: HuksOptions) : Promise&lt;boolean&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2678,6 +2781,7 @@ isKeyItemExist(keyAlias: string, options: HuksOptions) : Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HUKS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-huks)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2711,9 +2815,10 @@ huks.isKeyItemExist(keyAlias, emptyOptions).then(() => {
 
 
 
-#### huks.hasKeyItem11+
+## huks.hasKeyItem11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hasKeyItem(keyAlias: string, options: HuksOptions, callback: AsyncCallback&lt;boolean&gt;) : void
 
@@ -2727,6 +2832,7 @@ hasKeyItem(keyAlias: string, options: HuksOptions, callback: AsyncCallback&lt;bo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | 所需查找的密钥的别名。 |
@@ -2737,6 +2843,7 @@ hasKeyItem(keyAlias: string, options: HuksOptions, callback: AsyncCallback&lt;bo
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HUKS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-huks)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2777,9 +2884,10 @@ huks.hasKeyItem(keyAlias, emptyOptions, (error, data) => {
 
 
 
-#### huks.hasKeyItem11+
+## huks.hasKeyItem11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hasKeyItem(keyAlias: string, options: HuksOptions) : Promise&lt;boolean&gt;
 
@@ -2793,6 +2901,7 @@ hasKeyItem(keyAlias: string, options: HuksOptions) : Promise&lt;boolean&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | 所需查找的密钥的别名。 |
@@ -2800,6 +2909,7 @@ hasKeyItem(keyAlias: string, options: HuksOptions) : Promise&lt;boolean&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2809,6 +2919,7 @@ hasKeyItem(keyAlias: string, options: HuksOptions) : Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HUKS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-huks)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2845,9 +2956,10 @@ huks.hasKeyItem(keyAlias, emptyOptions).then((data) => {
 
 
 
-#### huks.initSession9+
+## huks.initSession9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 initSession(keyAlias: string, options: HuksOptions, callback: AsyncCallback&lt;HuksSessionHandle&gt;) : void
 
@@ -2865,6 +2977,7 @@ huks.initSession、huks.updateSession、huks.finishSession为三段式接口，�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | initSession操作密钥的别名。 |
@@ -2875,6 +2988,7 @@ huks.initSession、huks.updateSession、huks.finishSession为三段式接口，�
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HUKS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-huks)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2901,9 +3015,10 @@ huks.initSession、huks.updateSession、huks.finishSession为三段式接口，�
 
 
 
-#### huks.initSession9+
+## huks.initSession9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 initSession(keyAlias: string, options: HuksOptions) : Promise&lt;HuksSessionHandle&gt;
 
@@ -2921,6 +3036,7 @@ huks.initSession、huks.updateSession、huks.finishSession为三段式接口，�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | initSession操作密钥的别名。 |
@@ -2928,6 +3044,7 @@ huks.initSession、huks.updateSession、huks.finishSession为三段式接口，�
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2937,6 +3054,7 @@ huks.initSession、huks.updateSession、huks.finishSession为三段式接口，�
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HUKS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-huks)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2963,9 +3081,10 @@ huks.initSession、huks.updateSession、huks.finishSession为三段式接口，�
 
 
 
-#### huks.updateSession9+
+## huks.updateSession9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 updateSession(handle: number, options: HuksOptions, callback: AsyncCallback&lt;HuksReturnResult&gt;) : void
 
@@ -2979,6 +3098,7 @@ huks.initSession、huks.updateSession、huks.finishSession为三段式接口，�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handle | number | 是 | updateSession操作的uint64类型的handle值。 |
@@ -2989,6 +3109,7 @@ huks.initSession、huks.updateSession、huks.finishSession为三段式接口，�
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HUKS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-huks)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3016,9 +3137,10 @@ huks.initSession、huks.updateSession、huks.finishSession为三段式接口，�
 
 
 
-#### huks.updateSession9+
+## huks.updateSession9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateSession(handle: number, options: HuksOptions, token: Uint8Array, callback: AsyncCallback&lt;HuksReturnResult&gt;) : void
 
@@ -3032,6 +3154,7 @@ huks.initSession、huks.updateSession、huks.finishSession为三段式接口，�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handle | number | 是 | updateSession操作的uint64类型的handle值。需要使用initSession接口返回的handle值，以确保操作归属同一个会话上下文。 |
@@ -3043,6 +3166,7 @@ huks.initSession、huks.updateSession、huks.finishSession为三段式接口，�
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HUKS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-huks)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3066,9 +3190,10 @@ huks.initSession、huks.updateSession、huks.finishSession为三段式接口，�
 
 
 
-#### huks.updateSession9+
+## huks.updateSession9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateSession(handle: number, options: HuksOptions, token?: Uint8Array) : Promise&lt;HuksReturnResult&gt;
 
@@ -3082,6 +3207,7 @@ huks.initSession、huks.updateSession、huks.finishSession为三段式接口，�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handle | number | 是 | updateSession操作的uint64类型的handle值。需要使用initSession接口返回的handle值，以确保操作归属同一个会话上下文。 |
@@ -3091,6 +3217,7 @@ huks.initSession、huks.updateSession、huks.finishSession为三段式接口，�
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;HuksReturnResult&gt; | Promise对象，返回调用接口的结果。调用成功时，若使用AES/DES/3DES/SM4密钥加解密时，HuksReturnResult的outData成员将返回加密后的密文或者解密后的明文；否则outData为空。 |
@@ -3099,6 +3226,7 @@ huks.initSession、huks.updateSession、huks.finishSession为三段式接口，�
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HUKS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-huks)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3126,9 +3254,10 @@ huks.initSession、huks.updateSession、huks.finishSession为三段式接口，�
 
 
 
-#### huks.finishSession9+
+## huks.finishSession9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 finishSession(handle: number, options: HuksOptions, callback: AsyncCallback&lt;HuksReturnResult&gt;) : void
 
@@ -3142,6 +3271,7 @@ huks.initSession、huks.updateSession、huks.finishSession为三段式接口，�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handle | number | 是 | finishSession操作的uint64类型的handle值。需要使用initSession接口返回的handle值，以确保操作归属同一个会话上下文。 |
@@ -3152,6 +3282,7 @@ huks.initSession、huks.updateSession、huks.finishSession为三段式接口，�
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HUKS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-huks)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3180,9 +3311,10 @@ huks.initSession、huks.updateSession、huks.finishSession为三段式接口，�
 
 
 
-#### huks.finishSession9+
+## huks.finishSession9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 finishSession(handle: number, options: HuksOptions, token: Uint8Array, callback: AsyncCallback&lt;HuksReturnResult&gt;) : void
 
@@ -3196,6 +3328,7 @@ huks.initSession、huks.updateSession、huks.finishSession为三段式接口，�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handle | number | 是 | finishSession操作的uint64类型的handle值。需要使用initSession接口返回的handle值，以确保操作归属同一个会话上下文。 |
@@ -3207,6 +3340,7 @@ huks.initSession、huks.updateSession、huks.finishSession为三段式接口，�
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HUKS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-huks)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3231,9 +3365,10 @@ huks.initSession、huks.updateSession、huks.finishSession为三段式接口，�
 
 
 
-#### huks.finishSession9+
+## huks.finishSession9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 finishSession(handle: number, options: HuksOptions, token?: Uint8Array) : Promise&lt;HuksReturnResult&gt;
 
@@ -3247,6 +3382,7 @@ huks.initSession、huks.updateSession、huks.finishSession为三段式接口，�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handle | number | 是 | finishSession操作的uint64类型的handle值。需要使用initSession接口返回的handle值，以确保操作归属同一个会话上下文。 |
@@ -3256,6 +3392,7 @@ huks.initSession、huks.updateSession、huks.finishSession为三段式接口，�
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;HuksReturnResult&gt; | Promise对象，返回调用接口的结果。当调用成功时，HuksReturnResult的outData成员为对应操作返回的数据。 |
@@ -3264,6 +3401,7 @@ huks.initSession、huks.updateSession、huks.finishSession为三段式接口，�
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HUKS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-huks)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3292,9 +3430,10 @@ huks.initSession、huks.updateSession、huks.finishSession为三段式接口，�
 
 
 
-#### huks.abortSession9+
+## huks.abortSession9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 abortSession(handle: number, options: HuksOptions, callback: AsyncCallback&lt;void&gt;) : void
 
@@ -3306,6 +3445,7 @@ abortSession终止密钥操作。使用callback异步回调。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handle | number | 是 | abortSession操作的uint64类型的handle值。 |
@@ -3316,6 +3456,7 @@ abortSession终止密钥操作。使用callback异步回调。
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HUKS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-huks)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3345,7 +3486,7 @@ import { huks } from '@kit.UniversalKeystoreKit';
  * 以下以RSA密钥的callback功能使用为例
  */
 
-let keyAlias = "HuksDemoRSA";
+let keyAlias = 'HuksDemoRSA';
 let properties: Array<huks.HuksParam> = []
 let options: huks.HuksOptions = {
   properties: properties,
@@ -3714,9 +3855,10 @@ export default {
 
 
 
-#### huks.abortSession9+
+## huks.abortSession9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 abortSession(handle: number, options: HuksOptions) : Promise&lt;void&gt;
 
@@ -3728,6 +3870,7 @@ abortSession终止密钥操作。使用Promise异步回调。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handle | number | 是 | abortSession操作的uint64类型的handle值。 |
@@ -3735,6 +3878,7 @@ abortSession终止密钥操作。使用Promise异步回调。
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3744,6 +3888,7 @@ abortSession终止密钥操作。使用Promise异步回调。
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HUKS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-huks)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3770,7 +3915,7 @@ import { huks } from '@kit.UniversalKeystoreKit';
  *
  * 以下以RSA密钥的promise功能使用为例
  */
-let keyAlias = "HuksDemoRSA";
+let keyAlias = 'HuksDemoRSA';
 let genProperties: Array<huks.HuksParam> = [{
     tag: huks.HuksTag.HUKS_TAG_ALGORITHM,
     value: huks.HuksKeyAlg.HUKS_ALG_RSA
@@ -3832,9 +3977,10 @@ async function testAbort() {
 
 
 
-#### huks.listAliases12+
+## huks.listAliases12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 listAliases(options: HuksOptions): Promise&lt;HuksListAliasesReturnResult&gt;
 
@@ -3846,12 +3992,14 @@ listAliases(options: HuksOptions): Promise&lt;HuksListAliasesReturnResult&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | HuksOptions | 是 | listAliases操作的参数集合。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3861,6 +4009,7 @@ listAliases(options: HuksOptions): Promise&lt;HuksListAliasesReturnResult&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HUKS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-huks)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3902,15 +4051,15 @@ async function testListAliases() {
 
 
 
-#### HuksExceptionErrCode9+
+## HuksExceptionErrCode9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 表示错误码的枚举以及对应的错误信息，错误码表示错误类型，错误信息展示错误详情。
 
 关于错误码的具体信息，可在[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HUKS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-huks)中查看。
 
-**系统能力：** SystemCapability.Security.Huks.Core
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -3949,74 +4098,70 @@ async function testListAliases() {
 
 
 
-#### HuksKeyPurpose
+## HuksKeyPurpose
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 表示密钥用途。
 
 一个密钥仅能用于单类用途，不能既用于加解密又用于签名验签。
 
-**系统能力：** SystemCapability.Security.Huks.Core
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | HUKS_KEY_PURPOSE_ENCRYPT | 1 | 表示密钥用于对明文进行加密操作。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
 | HUKS_KEY_PURPOSE_DECRYPT | 2 | 表示密钥用于对密文进行解密操作。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
-| HUKS_KEY_PURPOSE_SIGN | 4 | 表示密钥用于对数据进行签名。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_KEY_PURPOSE_VERIFY | 8 | 表示密钥用于验证签名后的数据。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_KEY_PURPOSE_DERIVE | 16 | 表示密钥用于派生密钥。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_KEY_PURPOSE_WRAP | 32 | 表示密钥用于加密导出。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_KEY_PURPOSE_UNWRAP | 64 | 表示密钥用于安全导入。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_KEY_PURPOSE_MAC | 128 | 表示密钥用于生成消息验证码。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_KEY_PURPOSE_AGREE | 256 | 表示密钥用于进行密钥协商。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
+| HUKS_KEY_PURPOSE_SIGN | 4 | 表示密钥用于对数据进行签名。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_KEY_PURPOSE_VERIFY | 8 | 表示密钥用于验证签名后的数据。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_KEY_PURPOSE_DERIVE | 16 | 表示密钥用于派生密钥。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_KEY_PURPOSE_WRAP | 32 | 表示密钥用于加密导出。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_KEY_PURPOSE_UNWRAP | 64 | 表示密钥用于安全导入。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_KEY_PURPOSE_MAC | 128 | 表示密钥用于生成消息验证码。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_KEY_PURPOSE_AGREE | 256 | 表示密钥用于进行密钥协商。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
 
 
 
 
-#### HuksKeyDigest
+## HuksKeyDigest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 表示摘要算法。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
-**系统能力：**
-
- - API version 12+：SystemCapability.Security.Huks.Core
- - API version 8-11：SystemCapability.Security.Huks.Extension
-
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| HUKS_DIGEST_NONE | 0 | 表示无摘要算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_DIGEST_MD5 | 1 | 表示MD5摘要算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_DIGEST_SM39+ | 2 | 表示SM3摘要算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension9-11 |
-| HUKS_DIGEST_SHA1 | 10 | 表示SHA1摘要算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_DIGEST_SHA224 | 11 | 表示SHA224摘要算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_DIGEST_SHA256 | 12 | 表示SHA256摘要算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_DIGEST_SHA384 | 13 | 表示SHA384摘要算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_DIGEST_SHA512 | 14 | 表示SHA512摘要算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
+| HUKS_DIGEST_NONE | 0 | 表示无摘要算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_DIGEST_MD5 | 1 | 表示MD5摘要算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_DIGEST_SM39+ | 2 | 表示SM3摘要算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本9-11：SystemCapability.Security.Huks.Extension |
+| HUKS_DIGEST_SHA1 | 10 | 表示SHA1摘要算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_DIGEST_SHA224 | 11 | 表示SHA224摘要算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_DIGEST_SHA256 | 12 | 表示SHA256摘要算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_DIGEST_SHA384 | 13 | 表示SHA384摘要算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_DIGEST_SHA512 | 14 | 表示SHA512摘要算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
 
 
 
 
-#### HuksKeyPadding
+## HuksKeyPadding
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 表示填充算法。
 
-**系统能力：** SystemCapability.Security.Huks.Core
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | HUKS_PADDING_NONE | 0 | 表示不使用填充算法。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
-| HUKS_PADDING_OAEP | 1 | 表示使用OAEP填充算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_PADDING_PSS | 2 | 表示使用PSS填充算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_PADDING_PKCS1_V1_5 | 3 | 表示使用PKCS1_V1_5填充算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_PADDING_PKCS5 | 4 | 表示使用PKCS5填充算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
+| HUKS_PADDING_OAEP | 1 | 表示使用OAEP填充算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_PADDING_PSS | 2 | 表示使用PSS填充算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_PADDING_PKCS1_V1_5 | 3 | 表示使用PKCS1_V1_5填充算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_PADDING_PKCS5 | 4 | 表示使用PKCS5填充算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
 | HUKS_PADDING_PKCS7 | 5 | 表示使用PKCS7填充算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
 | HUKS_PADDING_ISO_IEC_9796_212+ | 6 | 表示使用ISO_IEC_9796_2填充算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
 | HUKS_PADDING_ISO_IEC_9797_112+ | 7 | 表示使用ISO_IEC_9797_1填充算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
@@ -4024,57 +4169,57 @@ async function testListAliases() {
 
 
 
-#### HuksCipherMode
+## HuksCipherMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 表示加密模式。
 
-**系统能力：** SystemCapability.Security.Huks.Core
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | HUKS_MODE_ECB | 1 | 表示使用ECB加密模式。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
 | HUKS_MODE_CBC | 2 | 表示使用CBC加密模式。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
 | HUKS_MODE_CTR | 3 | 表示使用CTR加密模式。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
-| HUKS_MODE_OFB | 4 | 表示使用OFB加密模式。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
+| HUKS_MODE_OFB | 4 | 表示使用OFB加密模式。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
 | HUKS_MODE_CFB12+ | 5 | 表示使用CFB加密模式。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
-| HUKS_MODE_CCM | 31 | 表示使用CCM加密模式。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
+| HUKS_MODE_CCM | 31 | 表示使用CCM加密模式。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
 | HUKS_MODE_GCM | 32 | 表示使用GCM加密模式。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
 
 
 
 
-#### HuksKeySize
+## HuksKeySize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 表示密钥长度。
 
-**系统能力：** SystemCapability.Security.Huks.Core
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| HUKS_RSA_KEY_SIZE_512 | 512 | 表示使用RSA算法的密钥长度为512bit。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_RSA_KEY_SIZE_768 | 768 | 表示使用RSA算法的密钥长度为768bit。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_RSA_KEY_SIZE_1024 | 1024 | 表示使用RSA算法的密钥长度为1024bit。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_RSA_KEY_SIZE_2048 | 2048 | 表示使用RSA算法的密钥长度为2048bit。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_RSA_KEY_SIZE_3072 | 3072 | 表示使用RSA算法的密钥长度为3072bit。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_RSA_KEY_SIZE_4096 | 4096 | 表示使用RSA算法的密钥长度为4096bit。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_ECC_KEY_SIZE_224 | 224 | 表示使用ECC算法的密钥长度为224bit。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_ECC_KEY_SIZE_256 | 256 | 表示使用ECC算法的密钥长度为256bit。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_ECC_KEY_SIZE_384 | 384 | 表示使用ECC算法的密钥长度为384bit。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_ECC_KEY_SIZE_521 | 521 | 表示使用ECC算法的密钥长度为521bit。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
+| HUKS_RSA_KEY_SIZE_512 | 512 | 表示使用RSA算法的密钥长度为512bit。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_RSA_KEY_SIZE_768 | 768 | 表示使用RSA算法的密钥长度为768bit。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_RSA_KEY_SIZE_1024 | 1024 | 表示使用RSA算法的密钥长度为1024bit。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_RSA_KEY_SIZE_2048 | 2048 | 表示使用RSA算法的密钥长度为2048bit。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_RSA_KEY_SIZE_3072 | 3072 | 表示使用RSA算法的密钥长度为3072bit。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_RSA_KEY_SIZE_4096 | 4096 | 表示使用RSA算法的密钥长度为4096bit。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_ECC_KEY_SIZE_224 | 224 | 表示使用ECC算法的密钥长度为224bit。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_ECC_KEY_SIZE_256 | 256 | 表示使用ECC算法的密钥长度为256bit。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_ECC_KEY_SIZE_384 | 384 | 表示使用ECC算法的密钥长度为384bit。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_ECC_KEY_SIZE_521 | 521 | 表示使用ECC算法的密钥长度为521bit。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
 | HUKS_AES_KEY_SIZE_128 | 128 | 表示使用AES算法的密钥长度为128bit。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
 | HUKS_AES_KEY_SIZE_192 | 192 | 表示使用AES算法的密钥长度为192bit。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
 | HUKS_AES_KEY_SIZE_256 | 256 | 表示使用AES算法的密钥长度为256bit。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
 | HUKS_AES_KEY_SIZE_512(deprecated) | 512 | 表示使用AES算法的密钥长度为512bit。 说明： 从API version 8开始支持，从API version 11开始废弃。 系统能力： SystemCapability.Security.Huks.Core |
-| HUKS_CURVE25519_KEY_SIZE_256 | 256 | 表示使用CURVE25519算法的密钥长度为256bit。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_DH_KEY_SIZE_2048 | 2048 | 表示使用DH算法的密钥长度为2048bit。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_DH_KEY_SIZE_3072 | 3072 | 表示使用DH算法的密钥长度为3072bit。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_DH_KEY_SIZE_4096 | 4096 | 表示使用DH算法的密钥长度为4096bit。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_SM2_KEY_SIZE_2569+ | 256 | 表示SM2算法的密钥长度为256bit。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension9-11 |
-| HUKS_SM4_KEY_SIZE_1289+ | 128 | 表示SM4算法的密钥长度为128bit。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension9-11 |
+| HUKS_CURVE25519_KEY_SIZE_256 | 256 | 表示使用CURVE25519算法的密钥长度为256bit。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_DH_KEY_SIZE_2048 | 2048 | 表示使用DH算法的密钥长度为2048bit。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_DH_KEY_SIZE_3072 | 3072 | 表示使用DH算法的密钥长度为3072bit。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_DH_KEY_SIZE_4096 | 4096 | 表示使用DH算法的密钥长度为4096bit。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_SM2_KEY_SIZE_2569+ | 256 | 表示SM2算法的密钥长度为256bit。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本9-11：SystemCapability.Security.Huks.Extension |
+| HUKS_SM4_KEY_SIZE_1289+ | 128 | 表示SM4算法的密钥长度为128bit。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本9-11：SystemCapability.Security.Huks.Extension |
 | HUKS_DES_KEY_SIZE_6412+ | 64 | 表示DES算法的密钥长度为64bit。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
 | HUKS_3DES_KEY_SIZE_12812+ | 128 | 表示3DES算法的密钥长度为128bit。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
 | HUKS_3DES_KEY_SIZE_19212+ | 192 | 表示3DES算法的密钥长度为192bit。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
@@ -4087,30 +4232,30 @@ async function testListAliases() {
 
 
 
-#### HuksKeyAlg
+## HuksKeyAlg
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 表示密钥使用的算法。
 
-**系统能力：** SystemCapability.Security.Huks.Core
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| HUKS_ALG_RSA | 1 | 表示使用RSA算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_ALG_ECC | 2 | 表示使用ECC算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_ALG_DSA | 3 | 表示使用DSA算法手机、平板、PC/2in1设备、TV、智能穿戴。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
+| HUKS_ALG_RSA | 1 | 表示使用RSA算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_ALG_ECC | 2 | 表示使用ECC算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_ALG_DSA | 3 | 表示使用DSA算法手机、平板、PC/2in1设备、TV、智能穿戴。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
 | HUKS_ALG_AES | 20 | 表示使用AES算法。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
-| HUKS_ALG_HMAC | 50 | 表示使用HMAC算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_ALG_HKDF | 51 | 表示使用HKDF算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_ALG_PBKDF2 | 52 | 表示使用PBKDF2算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_ALG_ECDH | 100 | 表示使用ECDH算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_ALG_X25519 | 101 | 表示使用X25519算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_ALG_ED25519 | 102 | 表示使用ED25519算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_ALG_DH | 103 | 表示使用DH算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_ALG_SM29+ | 150 | 表示使用SM2算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension9-11 |
-| HUKS_ALG_SM39+ | 151 | 表示使用SM3算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension9-11 |
-| HUKS_ALG_SM49+ | 152 | 表示使用SM4算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension9-11 |
+| HUKS_ALG_HMAC | 50 | 表示使用HMAC算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_ALG_HKDF | 51 | 表示使用HKDF算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_ALG_PBKDF2 | 52 | 表示使用PBKDF2算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_ALG_ECDH | 100 | 表示使用ECDH算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_ALG_X25519 | 101 | 表示使用X25519算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_ALG_ED25519 | 102 | 表示使用ED25519算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_ALG_DH | 103 | 表示使用DH算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_ALG_SM29+ | 150 | 表示使用SM2算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本9-11：SystemCapability.Security.Huks.Extension |
+| HUKS_ALG_SM39+ | 151 | 表示使用SM3算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本9-11：SystemCapability.Security.Huks.Extension |
+| HUKS_ALG_SM49+ | 152 | 表示使用SM4算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本9-11：SystemCapability.Security.Huks.Extension |
 | HUKS_ALG_DES12+ | 160 | 表示使用DES算法（API 12开始支持轻量级智能穿戴，API 18开始支持手机、平板、PC/2in1设备、TV、智能穿戴）。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
 | HUKS_ALG_3DES12+ | 161 | 表示使用3DES算法（API 12开始支持轻量级智能穿戴，API 18开始支持手机、平板、PC/2in1设备、TV、智能穿戴）。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
 | HUKS_ALG_CMAC12+ | 162 | 表示使用CMAC算法（API 12开始支持轻量级智能穿戴，API 18开始支持手机、平板、PC/2in1设备、TV、智能穿戴）。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
@@ -4120,17 +4265,21 @@ async function testListAliases() {
 
 
 
-#### HuksKeyGenerateType
+## HuksKeyGenerateType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示生成密钥的类型。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
-**系统能力：** SystemCapability.Security.Huks.Core
+**系统能力：**
 
-API version 8-11系统能力为SystemCapability.Security.Huks.Extension；从API version 12开始为SystemCapability.Security.Huks.Core
+ - API版本12+：SystemCapability.Security.Huks.Core
+ - API版本8-11：SystemCapability.Security.Huks.Extension
+
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -4141,15 +4290,17 @@ API version 8-11系统能力为SystemCapability.Security.Huks.Extension；从API
 
 
 
-#### HuksKeyFlag
+## HuksKeyFlag
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 表示密钥的产生方式。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Huks.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -4161,35 +4312,39 @@ API version 8-11系统能力为SystemCapability.Security.Huks.Extension；从API
 
 
 
-#### HuksKeyStorageType
+## HuksKeyStorageType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 表示密钥存储方式。
 
-**系统能力：** SystemCapability.Security.Huks.Core
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | HUKS_STORAGE_TEMP(deprecated) | 0 | 表示通过本地直接管理密钥。 说明： 从API version 8开始支持，从API version 10开始废弃，由于开发者正常使用密钥管理过程中并不需要使用此TAG，故无替代接口。针对密钥派生场景，可使用HUKS_STORAGE_ONLY_USED_IN_HUKS 与 HUKS_STORAGE_KEY_EXPORT_ALLOWED。 系统能力： SystemCapability.Security.Huks.Core |
 | HUKS_STORAGE_PERSISTENT(deprecated) | 1 | 表示通过HUKS service管理密钥。 说明： 从API version 8开始支持，从API version 10开始废弃，由于开发者正常使用密钥管理过程中并不需要使用此TAG，故无替代接口。针对密钥派生场景，可使用HUKS_STORAGE_ONLY_USED_IN_HUKS 与 HUKS_STORAGE_KEY_EXPORT_ALLOWED。 系统能力： SystemCapability.Security.Huks.Core |
-| HUKS_STORAGE_ONLY_USED_IN_HUKS10+ | 2 | 表示主密钥派生的密钥存储于huks中，由HUKS进行托管。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension10-11 |
-| HUKS_STORAGE_KEY_EXPORT_ALLOWED10+ | 3 | 表示主密钥派生的密钥直接导出给业务方，HUKS不对其进行托管服务。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension10-11 |
+| HUKS_STORAGE_ONLY_USED_IN_HUKS10+ | 2 | 表示主密钥派生的密钥存储于huks中，由HUKS进行托管。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本10-11：SystemCapability.Security.Huks.Extension |
+| HUKS_STORAGE_KEY_EXPORT_ALLOWED10+ | 3 | 表示主密钥派生的密钥直接导出给业务方，HUKS不对其进行托管服务。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本10-11：SystemCapability.Security.Huks.Extension |
 
 
 
 
-#### HuksSendType
+## HuksSendType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示发送tag的方式。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
-**系统能力：** SystemCapability.Security.Huks.Core
+**系统能力：**
 
-API version 8-11系统能力为SystemCapability.Security.Huks.Extension；从API version 12开始为SystemCapability.Security.Huks.Core
+ - API版本12+：SystemCapability.Security.Huks.Core
+ - API版本8-11：SystemCapability.Security.Huks.Extension
+
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -4199,13 +4354,15 @@ API version 8-11系统能力为SystemCapability.Security.Huks.Extension；从API
 
 
 
-#### HuksKeyClassType22+
+## HuksKeyClassType22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示密钥的来源。
 
 **系统能力：** SystemCapability.Security.Huks.Extension
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -4215,15 +4372,19 @@ API version 8-11系统能力为SystemCapability.Security.Huks.Extension；从API
 
 
 
-#### HuksUnwrapSuite9+
+## HuksUnwrapSuite9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示安全导入密钥的算法套件。
 
-**系统能力：** SystemCapability.Security.Huks.Core
+**系统能力：**
 
-API version 9-11系统能力为SystemCapability.Security.Huks.Extension；从API version 12开始为SystemCapability.Security.Huks.Core
+ - API版本12+：SystemCapability.Security.Huks.Core
+ - API版本9-11：SystemCapability.Security.Huks.Extension
+
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -4234,17 +4395,21 @@ API version 9-11系统能力为SystemCapability.Security.Huks.Extension；从API
 
 
 
-#### HuksImportKeyType9+
+## HuksImportKeyType9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 表示导入密钥的密钥类型，默认为导入公钥，导入对称密钥时不需要该字段。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
-**系统能力：** SystemCapability.Security.Huks.Core
+**系统能力：**
 
-API version 9-11系统能力为SystemCapability.Security.Huks.Extension；从API version 12开始为SystemCapability.Security.Huks.Core
+ - API版本12+：SystemCapability.Security.Huks.Core
+ - API版本9-11：SystemCapability.Security.Huks.Extension
+
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -4255,17 +4420,21 @@ API version 9-11系统能力为SystemCapability.Security.Huks.Extension；从API
 
 
 
-#### HuksRsaPssSaltLenType10+
+## HuksRsaPssSaltLenType10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 表示RSA在签名验签、padding为PSS时需指定的salt_len类型。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
-**系统能力：** SystemCapability.Security.Huks.Core
+**系统能力：**
 
-API version 10-11系统能力为SystemCapability.Security.Huks.Extension；从API version 12开始为SystemCapability.Security.Huks.Core
+ - API版本12+：SystemCapability.Security.Huks.Core
+ - API版本10-11：SystemCapability.Security.Huks.Extension
+
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -4275,13 +4444,15 @@ API version 10-11系统能力为SystemCapability.Security.Huks.Extension；从AP
 
 
 
-#### HuksUserAuthType9+
+## HuksUserAuthType9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示用户认证类型。
 
 **系统能力：** SystemCapability.Security.Huks.Extension
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -4293,15 +4464,17 @@ API version 10-11系统能力为SystemCapability.Security.Huks.Extension；从AP
 
 
 
-#### HuksUserAuthMode12+
+## HuksUserAuthMode12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示用户认证模式。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Huks.Extension
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -4311,15 +4484,17 @@ API version 10-11系统能力为SystemCapability.Security.Huks.Extension；从AP
 
 
 
-#### HuksAuthAccessType9+
+## HuksAuthAccessType9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示安全访问控制类型。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Huks.Extension
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -4330,9 +4505,10 @@ API version 10-11系统能力为SystemCapability.Security.Huks.Extension；从AP
 
 
 
-#### HuksChallengeType9+
+## HuksChallengeType9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示密钥使用时生成challenge的类型。
 
@@ -4340,24 +4516,27 @@ API version 10-11系统能力为SystemCapability.Security.Huks.Extension；从AP
 
 **系统能力：** SystemCapability.Security.Huks.Extension
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | HUKS_CHALLENGE_TYPE_NORMAL | 0 | 表示challenge为普通类型，默认32字节。 |
-| HUKS_CHALLENGE_TYPE_CUSTOM | 1 | 表示challenge为用户自定义类型。支持使用多个密钥仅一次认证。 |
+| HUKS_CHALLENGE_TYPE_CUSTOM | 1 | 表示challenge为用户自定义类型。支持多个密钥共享同一次用户认证。 |
 | HUKS_CHALLENGE_TYPE_NONE | 2 | 表示免challenge类型。 |
 
 
 
 
-#### HuksChallengePosition9+
+## HuksChallengePosition9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示challenge类型为用户自定义类型时，生成的challenge有效长度仅为8字节连续的数据，且仅支持4种位置。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Huks.Extension
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -4369,15 +4548,17 @@ API version 10-11系统能力为SystemCapability.Security.Huks.Extension；从AP
 
 
 
-#### HuksSecureSignType9+
+## HuksSecureSignType9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示生成或导入密钥时，指定该密钥的签名类型。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Huks.Extension
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -4386,17 +4567,21 @@ API version 10-11系统能力为SystemCapability.Security.Huks.Extension；从AP
 
 
 
-#### HuksAuthStorageLevel11+
+## HuksAuthStorageLevel11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示生成或导入密钥时，指定该密钥的存储安全等级。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
-**系统能力：** SystemCapability.Security.Huks.Core
+**系统能力：**
 
-API version 11系统能力为SystemCapability.Security.Huks.Extension；从API version 12开始为SystemCapability.Security.Huks.Core
+ - API版本12+：SystemCapability.Security.Huks.Core
+ - API版本11：SystemCapability.Security.Huks.Extension
+
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -4411,15 +4596,17 @@ API version 11系统能力为SystemCapability.Security.Huks.Extension；从API v
 
 
 
-#### HuksKeyWrapType20+
+## HuksKeyWrapType20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示密钥加密类型（加密导出或导入密钥）的枚举。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Huks.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -4428,9 +4615,10 @@ API version 11系统能力为SystemCapability.Security.Huks.Extension；从API v
 
 
 
-#### HuksKeySecurityLevel
+## HuksKeySecurityLevel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示密钥安全级别的枚举。
 
@@ -4440,6 +4628,7 @@ API version 11系统能力为SystemCapability.Security.Huks.Extension；从API v
 
 **系统能力：** SystemCapability.Security.Huks.Core
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | HUKS_KEY_SECURITY_LEVEL_TEE | 0 | 密钥在可信执行环境中生成并使用。 |
@@ -4448,15 +4637,17 @@ API version 11系统能力为SystemCapability.Security.Huks.Extension；从API v
 
 
 
-#### HuksTagType
+## HuksTagType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 表示tag的数据类型。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Huks.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -4470,19 +4661,21 @@ API version 11系统能力为SystemCapability.Security.Huks.Extension；从API v
 
 
 
-#### HuksTag
+## HuksTag
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 表示调用参数的tag。
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| HUKS_TAG_INVALID(deprecated) | HuksTagType.HUKS_TAG_TYPE_INVALID \| 0 | 表示非法的tag。 说明： 从API version 8开始使用，从API version 9开始废弃。 系统能力： SystemCapability.Security.Huks.Core |
+| HUKS_TAG_INVALID(deprecated) | HuksTagType.HUKS_TAG_TYPE_INVALID \| 0 | 表示非法的tag。 说明： 从API version 8开始支持，从API version 9开始废弃。 系统能力： SystemCapability.Security.Huks.Core |
 | HUKS_TAG_ALGORITHM | HuksTagType.HUKS_TAG_TYPE_UINT \| 1 | 表示算法的tag。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
 | HUKS_TAG_PURPOSE | HuksTagType.HUKS_TAG_TYPE_UINT \| 2 | 表示密钥用途的tag。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
 | HUKS_TAG_KEY_SIZE | HuksTagType.HUKS_TAG_TYPE_UINT \| 3 | 表示密钥长度的tag，单位：bit。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
-| HUKS_TAG_DIGEST | HuksTagType.HUKS_TAG_TYPE_UINT \| 4 | 表示摘要算法的tag。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
+| HUKS_TAG_DIGEST | HuksTagType.HUKS_TAG_TYPE_UINT \| 4 | 表示摘要算法的tag。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
 | HUKS_TAG_PADDING | HuksTagType.HUKS_TAG_TYPE_UINT \| 5 | 表示填充模式的tag。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
 | HUKS_TAG_BLOCK_MODE | HuksTagType.HUKS_TAG_TYPE_UINT \| 6 | 表示加密模式的tag。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
 | HUKS_TAG_KEY_TYPE | HuksTagType.HUKS_TAG_TYPE_UINT \| 7 | 表示密钥类型的tag。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
@@ -4490,32 +4683,32 @@ API version 11系统能力为SystemCapability.Security.Huks.Extension；从API v
 | HUKS_TAG_NONCE | HuksTagType.HUKS_TAG_TYPE_BYTES \| 9 | 表示密钥加解密的NONCE字段。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
 | HUKS_TAG_IV | HuksTagType.HUKS_TAG_TYPE_BYTES \| 10 | 表示密钥初始化的向量。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
 | HUKS_TAG_INFO | HuksTagType.HUKS_TAG_TYPE_BYTES \| 11 | 表示密钥派生时的info。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
-| HUKS_TAG_SALT | HuksTagType.HUKS_TAG_TYPE_BYTES \| 12 | 表示密钥派生时的盐值。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
+| HUKS_TAG_SALT | HuksTagType.HUKS_TAG_TYPE_BYTES \| 12 | 表示密钥派生时的盐值。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
 | HUKS_TAG_PWD(deprecated) | HuksTagType.HUKS_TAG_TYPE_BYTES \| 13 | 表示密钥派生时的password。 说明： 从API version 8开始，从API version 9开始废弃。 系统能力： SystemCapability.Security.Huks.Core |
-| HUKS_TAG_ITERATION | HuksTagType.HUKS_TAG_TYPE_UINT \| 14 | 表示密钥派生时的迭代次数。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
+| HUKS_TAG_ITERATION | HuksTagType.HUKS_TAG_TYPE_UINT \| 14 | 表示密钥派生时的迭代次数。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
 | HUKS_TAG_KEY_GENERATE_TYPE | HuksTagType.HUKS_TAG_TYPE_UINT \| 15 | 表示生成密钥类型的tag。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
 | HUKS_TAG_DERIVE_MAIN_KEY(deprecated) | HuksTagType.HUKS_TAG_TYPE_BYTES \| 16 | 表示密钥派生时的主密钥。 说明： 从API version 8开始支持，从API version 9开始废弃。 系统能力： SystemCapability.Security.Huks.Extension |
 | HUKS_TAG_DERIVE_FACTOR(deprecated) | HuksTagType.HUKS_TAG_TYPE_BYTES \| 17 | 表示密钥派生时的派生因子。 说明： 从API version 8开始支持，从API version 9开始废弃。 系统能力： SystemCapability.Security.Huks.Extension |
 | HUKS_TAG_DERIVE_ALG(deprecated) | HuksTagType.HUKS_TAG_TYPE_UINT \| 18 | 表示密钥派生时的算法类型。 说明： 从API version 8开始，从API version 9开始废弃。 系统能力： SystemCapability.Security.Huks.Extension |
-| HUKS_TAG_AGREE_ALG | HuksTagType.HUKS_TAG_TYPE_UINT \| 19 | 表示密钥协商时的算法类型。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_TAG_AGREE_PUBLIC_KEY_IS_KEY_ALIAS | HuksTagType.HUKS_TAG_TYPE_BOOL \| 20 | 表示密钥协商时的公钥别名。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_TAG_AGREE_PRIVATE_KEY_ALIAS | HuksTagType.HUKS_TAG_TYPE_BYTES \| 21 | 表示密钥协商时的私钥别名。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_TAG_AGREE_PUBLIC_KEY | HuksTagType.HUKS_TAG_TYPE_BYTES \| 22 | 表示密钥协商时的公钥。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
+| HUKS_TAG_AGREE_ALG | HuksTagType.HUKS_TAG_TYPE_UINT \| 19 | 表示密钥协商时的算法类型。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_TAG_AGREE_PUBLIC_KEY_IS_KEY_ALIAS | HuksTagType.HUKS_TAG_TYPE_BOOL \| 20 | 表示密钥协商时的公钥别名。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_TAG_AGREE_PRIVATE_KEY_ALIAS | HuksTagType.HUKS_TAG_TYPE_BYTES \| 21 | 表示密钥协商时的私钥别名。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_TAG_AGREE_PUBLIC_KEY | HuksTagType.HUKS_TAG_TYPE_BYTES \| 22 | 表示密钥协商时的公钥。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
 | HUKS_TAG_KEY_ALIAS | HuksTagType.HUKS_TAG_TYPE_BYTES \| 23 | 表示密钥别名。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
-| HUKS_TAG_DERIVE_KEY_SIZE | HuksTagType.HUKS_TAG_TYPE_UINT \| 24 | 表示派生密钥的大小，单位：byte。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_TAG_IMPORT_KEY_TYPE9+ | HuksTagType.HUKS_TAG_TYPE_UINT \| 25 | 表示导入的密钥类型。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension9-11 |
-| HUKS_TAG_UNWRAP_ALGORITHM_SUITE9+ | HuksTagType.HUKS_TAG_TYPE_UINT \| 26 | 表示安全导入密钥的套件。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension9-11 |
-| HUKS_TAG_DERIVED_AGREED_KEY_STORAGE_FLAG10+ | HuksTagType.HUKS_TAG_TYPE_UINT \|29 | 表示派生密钥/协商密钥的存储类型。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension10-11 |
-| HUKS_TAG_RSA_PSS_SALT_LEN_TYPE10+ | HuksTagType.HUKS_TAG_TYPE_UINT \|30 | 表示rsa_pss_salt_length的类型。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension10-11 |
-| HUKS_TAG_ACTIVE_DATETIME(deprecated) | HuksTagType.HUKS_TAG_TYPE_ULONG \| 201 | 原为证书业务预留字段，当前证书管理已独立，此字段废弃，不再预留。 说明： 从API version 9开始废弃，无替代接口。 系统能力： SystemCapability.Security.Huks.Extension |
-| HUKS_TAG_ORIGINATION_EXPIRE_DATETIME(deprecated) | HuksTagType.HUKS_TAG_TYPE_ULONG \| 202 | 原为证书业务预留字段，当前证书管理已独立，此字段废弃，不再预留。 说明： 从API version 9开始废弃，无替代接口。 系统能力： SystemCapability.Security.Huks.Core |
-| HUKS_TAG_USAGE_EXPIRE_DATETIME(deprecated) | HuksTagType.HUKS_TAG_TYPE_ULONG \| 203 | 原为证书业务预留字段，当前证书管理已独立，此字段废弃，不再预留。 说明： 从API version 9开始废弃，无替代接口。 系统能力： SystemCapability.Security.Huks.Core |
-| HUKS_TAG_CREATION_DATETIME(deprecated) | HuksTagType.HUKS_TAG_TYPE_ULONG \| 204 | 原为证书业务预留字段，当前证书管理已独立，此字段废弃，不再预留。 说明： 从API version 9开始废弃，无替代接口。 系统能力： SystemCapability.Security.Huks.Core |
-| HUKS_TAG_ALL_USERS | HuksTagType.HUKS_TAG_TYPE_BOOL \| 301 | 预留。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_TAG_USER_ID | HuksTagType.HUKS_TAG_TYPE_UINT \| 302 | 表示当前密钥属于哪个userID。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_TAG_NO_AUTH_REQUIRED | HuksTagType.HUKS_TAG_TYPE_BOOL \| 303 | 预留。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
+| HUKS_TAG_DERIVE_KEY_SIZE | HuksTagType.HUKS_TAG_TYPE_UINT \| 24 | 表示派生密钥的大小，单位：byte。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_TAG_IMPORT_KEY_TYPE9+ | HuksTagType.HUKS_TAG_TYPE_UINT \| 25 | 表示导入的密钥类型。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本9-11：SystemCapability.Security.Huks.Extension |
+| HUKS_TAG_UNWRAP_ALGORITHM_SUITE9+ | HuksTagType.HUKS_TAG_TYPE_UINT \| 26 | 表示安全导入密钥的套件。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本9-11：SystemCapability.Security.Huks.Extension |
+| HUKS_TAG_DERIVED_AGREED_KEY_STORAGE_FLAG10+ | HuksTagType.HUKS_TAG_TYPE_UINT \|29 | 表示派生密钥/协商密钥的存储类型。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本10-11：SystemCapability.Security.Huks.Extension |
+| HUKS_TAG_RSA_PSS_SALT_LEN_TYPE10+ | HuksTagType.HUKS_TAG_TYPE_UINT \|30 | 表示rsa_pss_salt_length的类型。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本10-11：SystemCapability.Security.Huks.Extension |
+| HUKS_TAG_ACTIVE_DATETIME(deprecated) | HuksTagType.HUKS_TAG_TYPE_ULONG \| 201 | 原为证书业务预留字段，当前证书管理已独立，此字段废弃，不再预留。 说明： 从API version 8开始支持，从API version 9开始废弃，无替代接口。 系统能力： SystemCapability.Security.Huks.Extension |
+| HUKS_TAG_ORIGINATION_EXPIRE_DATETIME(deprecated) | HuksTagType.HUKS_TAG_TYPE_ULONG \| 202 | 原为证书业务预留字段，当前证书管理已独立，此字段废弃，不再预留。 说明： 从API version 8开始支持，从API version 9开始废弃，无替代接口。 系统能力： SystemCapability.Security.Huks.Core |
+| HUKS_TAG_USAGE_EXPIRE_DATETIME(deprecated) | HuksTagType.HUKS_TAG_TYPE_ULONG \| 203 | 原为证书业务预留字段，当前证书管理已独立，此字段废弃，不再预留。 说明： 从API version 8开始支持，从API version 9开始废弃，无替代接口。 系统能力： SystemCapability.Security.Huks.Core |
+| HUKS_TAG_CREATION_DATETIME(deprecated) | HuksTagType.HUKS_TAG_TYPE_ULONG \| 204 | 原为证书业务预留字段，当前证书管理已独立，此字段废弃，不再预留。 说明： 从API version 8开始支持，从API version 9开始废弃，无替代接口。 系统能力： SystemCapability.Security.Huks.Core |
+| HUKS_TAG_ALL_USERS | HuksTagType.HUKS_TAG_TYPE_BOOL \| 301 | 预留。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_TAG_USER_ID | HuksTagType.HUKS_TAG_TYPE_UINT \| 302 | 表示当前密钥属于哪个userID。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_TAG_NO_AUTH_REQUIRED | HuksTagType.HUKS_TAG_TYPE_BOOL \| 303 | 预留。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
 | HUKS_TAG_USER_AUTH_TYPE | HuksTagType.HUKS_TAG_TYPE_UINT \| 304 | 表示用户认证类型。从HuksUserAuthType中选择，需要与安全访问控制类型同时设置。支持同时指定两种用户认证类型，如：安全访问控制类型指定为HUKS_AUTH_ACCESS_INVALID_NEW_BIO_ENROLL时，密钥访问认证类型可以指定以下三种： HUKS_USER_AUTH_TYPE_FACE 、HUKS_USER_AUTH_TYPE_FINGERPRINT、HUKS_USER_AUTH_TYPE_FACE \| HUKS_USER_AUTH_TYPE_FINGERPRINT 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Extension |
-| HUKS_TAG_AUTH_TIMEOUT | HuksTagType.HUKS_TAG_TYPE_UINT \| 305 | 表示auth token单次有效期，单位：秒。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Extension |
+| HUKS_TAG_AUTH_TIMEOUT | HuksTagType.HUKS_TAG_TYPE_UINT \| 305 | 表示auth token单次有效期，单位：s。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Extension |
 | HUKS_TAG_AUTH_TOKEN | HuksTagType.HUKS_TAG_TYPE_BYTES \| 306 | 用于传入authToken的字段。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Extension |
 | HUKS_TAG_KEY_AUTH_ACCESS_TYPE9+ | HuksTagType.HUKS_TAG_TYPE_UINT \| 307 | 表示安全访问控制类型。从HuksAuthAccessType中选择，需要和用户认证类型同时设置。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Extension |
 | HUKS_TAG_KEY_SECURE_SIGN_TYPE9+ | HuksTagType.HUKS_TAG_TYPE_UINT \| 308 | 表示生成或导入密钥时，指定该密钥的签名类型。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Extension |
@@ -4548,38 +4741,39 @@ API version 11系统能力为SystemCapability.Security.Huks.Extension；从API v
 | HUKS_TAG_CONTEXT | HuksTagType.HUKS_TAG_TYPE_BYTES \| 528 | 表示ML-DSA签名验签的context参数。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
 | HUKS_TAG_IS_KEY_ALIAS | HuksTagType.HUKS_TAG_TYPE_BOOL \| 1001 | 表示是否使用生成key时传入的别名的tag。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
 | HUKS_TAG_KEY_STORAGE_FLAG | HuksTagType.HUKS_TAG_TYPE_UINT \| 1002 | 表示密钥存储方式的tag。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
-| HUKS_TAG_IS_ALLOWED_WRAP | HuksTagType.HUKS_TAG_TYPE_BOOL \| 1003 | 预留。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_TAG_KEY_WRAP_TYPE | HuksTagType.HUKS_TAG_TYPE_UINT \| 1004 | 预留。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
+| HUKS_TAG_IS_ALLOWED_WRAP | HuksTagType.HUKS_TAG_TYPE_BOOL \| 1003 | 预留。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_TAG_KEY_WRAP_TYPE | HuksTagType.HUKS_TAG_TYPE_UINT \| 1004 | 预留。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
 | HUKS_TAG_KEY_AUTH_ID | HuksTagType.HUKS_TAG_TYPE_BYTES \| 1005 | 预留。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Extension |
-| HUKS_TAG_KEY_ROLE | HuksTagType.HUKS_TAG_TYPE_UINT \| 1006 | 预留。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
+| HUKS_TAG_KEY_ROLE | HuksTagType.HUKS_TAG_TYPE_UINT \| 1006 | 预留。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
 | HUKS_TAG_KEY_FLAG | HuksTagType.HUKS_TAG_TYPE_UINT \| 1007 | 表示密钥标志的tag。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
-| HUKS_TAG_IS_ASYNCHRONIZED | HuksTagType.HUKS_TAG_TYPE_UINT \| 1008 | 预留。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_TAG_SECURE_KEY_ALIAS(deprecated) | HuksTagType.HUKS_TAG_TYPE_BOOL \| 1009 | 原为预留字段。 说明： 从API version 9开始废弃，无替代接口。 系统能力： SystemCapability.Security.Huks.Core |
-| HUKS_TAG_SECURE_KEY_UUID(deprecated) | HuksTagType.HUKS_TAG_TYPE_BYTES \| 1010 | 原为预留字段。 说明： 从API version 9开始废弃，无替代接口。 系统能力： SystemCapability.Security.Huks.Extension |
+| HUKS_TAG_IS_ASYNCHRONIZED | HuksTagType.HUKS_TAG_TYPE_UINT \| 1008 | 预留。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_TAG_SECURE_KEY_ALIAS(deprecated) | HuksTagType.HUKS_TAG_TYPE_BOOL \| 1009 | 原为预留字段。 说明： 从API version 8开始支持，从API version 9开始废弃，无替代接口。 系统能力： SystemCapability.Security.Huks.Core |
+| HUKS_TAG_SECURE_KEY_UUID(deprecated) | HuksTagType.HUKS_TAG_TYPE_BYTES \| 1010 | 原为预留字段。 说明： 从API version 8开始支持，从API version 9开始废弃，无替代接口。 系统能力： SystemCapability.Security.Huks.Extension |
 | HUKS_TAG_KEY_DOMAIN | HuksTagType.HUKS_TAG_TYPE_UINT \| 1011 | 预留。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
 | HUKS_TAG_IS_DEVICE_PASSWORD_SET11+ | HuksTagType.HUKS_TAG_TYPE_BOOL \| 1012 | 表示密钥锁屏密码访问控制字段，可限制密钥只有在用户设置了锁屏密码时可用。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Extension |
 | HUKS_TAG_PROCESS_NAME(deprecated) | HuksTagType.HUKS_TAG_TYPE_BYTES \| 10001 | 表示进程名称的tag。 说明： 从API version 8开始支持，从API version 9开始废弃。 系统能力： SystemCapability.Security.Huks.Core |
-| HUKS_TAG_PACKAGE_NAME(deprecated) | HuksTagType.HUKS_TAG_TYPE_BYTES \| 10002 | 原为预留字段。 说明： 从API version 9开始废弃，无替代接口。 系统能力： SystemCapability.Security.Huks.Extension |
-| HUKS_TAG_ACCESS_TIME(deprecated) | HuksTagType.HUKS_TAG_TYPE_UINT \| 10003 | 原为预留字段。 说明： 从API version 9开始废弃，无替代接口。 系统能力： SystemCapability.Security.Huks.Extension |
-| HUKS_TAG_USES_TIME(deprecated) | HuksTagType.HUKS_TAG_TYPE_UINT \| 10004 | 原为预留字段。 说明： 从API version 9开始废弃，无替代接口。 系统能力： SystemCapability.Security.Huks.Extension |
-| HUKS_TAG_CRYPTO_CTX(deprecated) | HuksTagType.HUKS_TAG_TYPE_ULONG \| 10005 | 原为预留字段。 说明： 从API version 9开始废弃，无替代接口。 系统能力： SystemCapability.Security.Huks.Extension |
+| HUKS_TAG_PACKAGE_NAME(deprecated) | HuksTagType.HUKS_TAG_TYPE_BYTES \| 10002 | 原为预留字段。 说明： 从API version 8开始支持，从API version 9开始废弃，无替代接口。 系统能力： SystemCapability.Security.Huks.Extension |
+| HUKS_TAG_ACCESS_TIME(deprecated) | HuksTagType.HUKS_TAG_TYPE_UINT \| 10003 | 原为预留字段。 说明： 从API version 8开始支持，从API version 9开始废弃，无替代接口。 系统能力： SystemCapability.Security.Huks.Extension |
+| HUKS_TAG_USES_TIME(deprecated) | HuksTagType.HUKS_TAG_TYPE_UINT \| 10004 | 原为预留字段。 说明： 从API version 8开始支持，从API version 9开始废弃，无替代接口。 系统能力： SystemCapability.Security.Huks.Extension |
+| HUKS_TAG_CRYPTO_CTX(deprecated) | HuksTagType.HUKS_TAG_TYPE_ULONG \| 10005 | 原为预留字段。 说明： 从API version 8开始支持，从API version 9开始废弃，无替代接口。 系统能力： SystemCapability.Security.Huks.Extension |
 | HUKS_TAG_KEY | HuksTagType.HUKS_TAG_TYPE_BYTES \| 10006 | 预留。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
 | HUKS_TAG_KEY_VERSION(deprecated) | HuksTagType.HUKS_TAG_TYPE_UINT \| 10007 | 表示密钥版本的tag。 说明： 从API version 8开始支持，从API version 9开始废弃。 系统能力： SystemCapability.Security.Huks.Extension |
-| HUKS_TAG_PAYLOAD_LEN(deprecated) | HuksTagType.HUKS_TAG_TYPE_UINT \| 10008 | 原为预留字段。 说明： 从API version 9开始废弃，无替代接口。 系统能力： SystemCapability.Security.Huks.Extension |
+| HUKS_TAG_PAYLOAD_LEN(deprecated) | HuksTagType.HUKS_TAG_TYPE_UINT \| 10008 | 原为预留字段。 说明： 从API version 8开始支持，从API version 9开始废弃，无替代接口。 系统能力： SystemCapability.Security.Huks.Extension |
 | HUKS_TAG_AE_TAG | HuksTagType.HUKS_TAG_TYPE_BYTES \| 10009 | 用于传入GCM模式中的AEAD数据的字段。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
-| HUKS_TAG_IS_KEY_HANDLE(deprecated) | HuksTagType.HUKS_TAG_TYPE_ULONG \| 10010 | 原为预留字段。 说明： 从API version 9开始废弃，无替代接口。 系统能力： SystemCapability.Security.Huks.Core |
+| HUKS_TAG_IS_KEY_HANDLE(deprecated) | HuksTagType.HUKS_TAG_TYPE_ULONG \| 10010 | 原为预留字段。 说明： 从API version 8开始支持，从API version 9开始废弃，无替代接口。 系统能力： SystemCapability.Security.Huks.Core |
 | HUKS_TAG_OS_VERSION(deprecated) | HuksTagType.HUKS_TAG_TYPE_UINT \| 10101 | 表示操作系统版本的tag。 说明： 从API version 8开始支持，从API version 9开始废弃。 系统能力： SystemCapability.Security.Huks.Core |
 | HUKS_TAG_OS_PATCHLEVEL(deprecated) | HuksTagType.HUKS_TAG_TYPE_UINT \| 10102 | 表示操作系统补丁级别的tag。 说明： 从API version 8开始支持，从API version 9开始废弃。 系统能力： SystemCapability.Security.Huks.Core |
 | HUKS_TAG_SYMMETRIC_KEY_DATA | HuksTagType.HUKS_TAG_TYPE_BYTES \| 20001 | 预留。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core |
-| HUKS_TAG_ASYMMETRIC_PUBLIC_KEY_DATA | HuksTagType.HUKS_TAG_TYPE_BYTES \| 20002 | 预留。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
-| HUKS_TAG_ASYMMETRIC_PRIVATE_KEY_DATA | HuksTagType.HUKS_TAG_TYPE_BYTES \| 20003 | 预留。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Security.Huks.Core12+ SystemCapability.Security.Huks.Extension8-11 |
+| HUKS_TAG_ASYMMETRIC_PUBLIC_KEY_DATA | HuksTagType.HUKS_TAG_TYPE_BYTES \| 20002 | 预留。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
+| HUKS_TAG_ASYMMETRIC_PRIVATE_KEY_DATA | HuksTagType.HUKS_TAG_TYPE_BYTES \| 20003 | 预留。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： - API版本12+：SystemCapability.Security.Huks.Core - API版本8-11：SystemCapability.Security.Huks.Extension |
 
 
 
 
-#### huks.getSdkVersion(deprecated)
+## huks.getSdkVersion(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSdkVersion(options: HuksOptions) : string
 
@@ -4593,12 +4787,14 @@ getSdkVersion(options: HuksOptions) : string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | HuksOptions | 是 | 空对象（此处传空即可）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4619,9 +4815,10 @@ let result = huks.getSdkVersion(emptyOptions);
 
 
 
-#### huks.generateKey(deprecated)
+## huks.generateKey(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 generateKey(keyAlias: string, options: HuksOptions, callback: AsyncCallback&lt;HuksResult&gt;) : void
 
@@ -4634,6 +4831,7 @@ generateKey(keyAlias: string, options: HuksOptions, callback: AsyncCallback&lt;H
 **系统能力：** SystemCapability.Security.Huks.Extension
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4681,9 +4879,10 @@ huks.generateKey(keyAlias, options, (err, data) => {
 
 
 
-#### huks.generateKey(deprecated)
+## huks.generateKey(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 generateKey(keyAlias: string, options: HuksOptions) : Promise&lt;HuksResult&gt;
 
@@ -4697,6 +4896,7 @@ generateKey(keyAlias: string, options: HuksOptions) : Promise&lt;HuksResult&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | 密钥别名。密钥别名的最大长度为128字节，建议不包含个人信息等敏感词汇。 |
@@ -4704,6 +4904,7 @@ generateKey(keyAlias: string, options: HuksOptions) : Promise&lt;HuksResult&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4744,9 +4945,10 @@ let result = huks.generateKey(keyAlias, options);
 
 
 
-#### huks.deleteKey(deprecated)
+## huks.deleteKey(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteKey(keyAlias: string, options: HuksOptions, callback: AsyncCallback&lt;HuksResult&gt;) : void
 
@@ -4759,6 +4961,7 @@ deleteKey(keyAlias: string, options: HuksOptions, callback: AsyncCallback&lt;Huk
 **系统能力：** SystemCapability.Security.Huks.Extension
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4783,9 +4986,10 @@ huks.deleteKey(keyAlias, emptyOptions, (err, data) => {
 
 
 
-#### huks.deleteKey(deprecated)
+## huks.deleteKey(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteKey(keyAlias: string, options: HuksOptions) : Promise&lt;HuksResult&gt;
 
@@ -4799,6 +5003,7 @@ deleteKey(keyAlias: string, options: HuksOptions) : Promise&lt;HuksResult&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | 密钥别名，应为生成key时传入的别名。 |
@@ -4806,6 +5011,7 @@ deleteKey(keyAlias: string, options: HuksOptions) : Promise&lt;HuksResult&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4826,19 +5032,20 @@ let emptyOptions: huks.HuksOptions = {
 let result = huks.deleteKey(keyAlias, emptyOptions).then((data) => {
   console.info('delete key success');
 }).catch((err: BusinessError) => {
-  console.error("密钥删除失败，错误码是： " + err.code + " 错误码信息： " + err.message);
+  console.error(`密钥删除失败，错误码是：${err.code} 错误码信息：${err.message}`);
 });
 ```
 
 
 
-#### huks.importKey(deprecated)
+## huks.importKey(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 importKey(keyAlias: string, options: HuksOptions, callback: AsyncCallback&lt;HuksResult&gt;) : void
 
-导入明文密钥，使用callback方式回调异步返回结果。
+导入明文密钥。使用callback异步回调。
 
 > [!NOTE]
 > 从API version 8开始支持，从API version 9开始废弃，建议使用 huks.importKeyItem 9+ 替代。
@@ -4847,6 +5054,7 @@ importKey(keyAlias: string, options: HuksOptions, callback: AsyncCallback&lt;Huk
 **系统能力：** SystemCapability.Security.Huks.Extension
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4905,9 +5113,10 @@ huks.importKey(keyAlias, options, (err, data) => {
 
 
 
-#### huks.importKey(deprecated)
+## huks.importKey(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 importKey(keyAlias: string, options: HuksOptions) : Promise&lt;HuksResult&gt;
 
@@ -4921,6 +5130,7 @@ importKey(keyAlias: string, options: HuksOptions) : Promise&lt;HuksResult&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | 密钥别名。密钥别名的最大长度为128字节，建议不包含个人信息等敏感词汇。 |
@@ -4928,6 +5138,7 @@ importKey(keyAlias: string, options: HuksOptions) : Promise&lt;HuksResult&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4984,13 +5195,14 @@ let result = huks.importKey(keyAlias, huksOptions);
 
 
 
-#### huks.exportKey(deprecated)
+## huks.exportKey(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 exportKey(keyAlias: string, options: HuksOptions, callback: AsyncCallback&lt;HuksResult&gt;) : void
 
-导出密钥，使用callback方式回调异步返回的结果。
+导出密钥。使用callback异步回调。
 
 > [!NOTE]
 > 从API version 8开始支持，从API version 9开始废弃，建议使用 huks.exportKeyItem 9+ 替代。
@@ -4999,6 +5211,7 @@ exportKey(keyAlias: string, options: HuksOptions, callback: AsyncCallback&lt;Huk
 **系统能力：** SystemCapability.Security.Huks.Extension
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5023,9 +5236,10 @@ huks.exportKey(keyAlias, emptyOptions, (err, data) => {
 
 
 
-#### huks.exportKey(deprecated)
+## huks.exportKey(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 exportKey(keyAlias: string, options: HuksOptions) : Promise&lt;HuksResult&gt;
 
@@ -5039,6 +5253,7 @@ exportKey(keyAlias: string, options: HuksOptions) : Promise&lt;HuksResult&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | 密钥别名，应与所用密钥生成时使用的别名相同。 |
@@ -5046,6 +5261,7 @@ exportKey(keyAlias: string, options: HuksOptions) : Promise&lt;HuksResult&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5067,9 +5283,10 @@ let result = huks.exportKey(keyAlias, emptyOptions);
 
 
 
-#### huks.getKeyProperties(deprecated)
+## huks.getKeyProperties(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getKeyProperties(keyAlias: string, options: HuksOptions, callback: AsyncCallback&lt;HuksResult&gt;) : void
 
@@ -5082,6 +5299,7 @@ getKeyProperties(keyAlias: string, options: HuksOptions, callback: AsyncCallback
 **系统能力：** SystemCapability.Security.Huks.Extension
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5106,9 +5324,10 @@ huks.getKeyProperties(keyAlias, emptyOptions, (err, data) => {
 
 
 
-#### huks.getKeyProperties(deprecated)
+## huks.getKeyProperties(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getKeyProperties(keyAlias: string, options: HuksOptions) : Promise&lt;HuksResult&gt;
 
@@ -5122,6 +5341,7 @@ getKeyProperties(keyAlias: string, options: HuksOptions) : Promise&lt;HuksResult
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | 密钥别名，应与所用密钥生成时使用的别名相同。 |
@@ -5129,6 +5349,7 @@ getKeyProperties(keyAlias: string, options: HuksOptions) : Promise&lt;HuksResult
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5150,9 +5371,10 @@ let result = huks.getKeyProperties(keyAlias, emptyOptions);
 
 
 
-#### huks.isKeyExist(deprecated)
+## huks.isKeyExist(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isKeyExist(keyAlias: string, options: HuksOptions, callback: AsyncCallback&lt;boolean&gt;) : void
 
@@ -5165,6 +5387,7 @@ isKeyExist(keyAlias: string, options: HuksOptions, callback: AsyncCallback&lt;bo
 **系统能力：** SystemCapability.Security.Huks.Extension
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5189,9 +5412,10 @@ huks.isKeyExist(keyAlias, emptyOptions, (err, data) => {
 
 
 
-#### huks.isKeyExist(deprecated)
+## huks.isKeyExist(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isKeyExist(keyAlias: string, options: HuksOptions) : Promise&lt;boolean&gt;
 
@@ -5205,6 +5429,7 @@ isKeyExist(keyAlias: string, options: HuksOptions) : Promise&lt;boolean&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | 所需查找的密钥的别名。 |
@@ -5212,6 +5437,7 @@ isKeyExist(keyAlias: string, options: HuksOptions) : Promise&lt;boolean&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5233,9 +5459,10 @@ let result = huks.isKeyExist(keyAlias, emptyOptions);
 
 
 
-#### huks.init(deprecated)
+## huks.init(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 init(keyAlias: string, options: HuksOptions, callback: AsyncCallback&lt;HuksHandle&gt;) : void
 
@@ -5251,6 +5478,7 @@ huks.init、huks.update、huks.finish为三段式接口，需要一起使用。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | Init操作密钥的别名。 |
@@ -5260,9 +5488,10 @@ huks.init、huks.update、huks.finish为三段式接口，需要一起使用。
 
 
 
-#### huks.init(deprecated)
+## huks.init(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 init(keyAlias: string, options: HuksOptions) : Promise&lt;HuksHandle&gt;
 
@@ -5278,6 +5507,7 @@ huks.init、huks.update、huks.finish为三段式接口，需要一起使用。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyAlias | string | 是 | Init操作密钥的别名。 |
@@ -5286,6 +5516,7 @@ huks.init、huks.update、huks.finish为三段式接口，需要一起使用。
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;HuksHandle&gt; | Promise对象，返回HuksHandle。HuksHandle的handle返回init生成的handle。 |
@@ -5293,9 +5524,10 @@ huks.init、huks.update、huks.finish为三段式接口，需要一起使用。
 
 
 
-#### huks.update(deprecated)
+## huks.update(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 update(handle: number, token?: Uint8Array, options: HuksOptions, callback: AsyncCallback&lt;HuksResult&gt;) : void
 
@@ -5311,6 +5543,7 @@ huks.init、huks.update、huks.finish为三段式接口，需要一起使用。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handle | number | 是 | Update操作的uint64类型的handle值。 |
@@ -5321,9 +5554,10 @@ huks.init、huks.update、huks.finish为三段式接口，需要一起使用。
 
 
 
-#### huks.update(deprecated)
+## huks.update(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 update(handle: number, token?: Uint8Array, options: HuksOptions) : Promise&lt;HuksResult&gt;
 
@@ -5339,6 +5573,7 @@ huks.init、huks.update、huks.finish为三段式接口，需要一起使用。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handle | number | 是 | Update操作的uint64类型的handle值。 |
@@ -5348,6 +5583,7 @@ huks.init、huks.update、huks.finish为三段式接口，需要一起使用。
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;HuksResult&gt; | Promise对象，返回HuksResult。 |
@@ -5355,9 +5591,10 @@ huks.init、huks.update、huks.finish为三段式接口，需要一起使用。
 
 
 
-#### huks.finish(deprecated)
+## huks.finish(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 finish(handle: number, options: HuksOptions, callback: AsyncCallback&lt;HuksResult&gt;) : void
 
@@ -5373,6 +5610,7 @@ huks.init、huks.update、huks.finish为三段式接口，需要一起使用。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handle | number | 是 | Finish操作的uint64类型的handle值。 |
@@ -5382,9 +5620,10 @@ huks.init、huks.update、huks.finish为三段式接口，需要一起使用。
 
 
 
-#### huks.finish(deprecated)
+## huks.finish(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 finish(handle: number, options: HuksOptions) : Promise&lt;HuksResult&gt;
 
@@ -5400,6 +5639,7 @@ huks.init、huks.update、huks.finish为三段式接口，需要一起使用。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handle | number | 是 | Finish操作的uint64类型的handle值。 |
@@ -5408,6 +5648,7 @@ huks.init、huks.update、huks.finish为三段式接口，需要一起使用。
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;HuksResult&gt; | Promise对象，返回HuksResult。 |
@@ -5415,9 +5656,10 @@ huks.init、huks.update、huks.finish为三段式接口，需要一起使用。
 
 
 
-#### huks.abort(deprecated)
+## huks.abort(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 abort(handle: number, options: HuksOptions, callback: AsyncCallback&lt;HuksResult&gt;) : void
 
@@ -5430,6 +5672,7 @@ abort终止密钥操作。使用callback异步回调。
 **系统能力：** SystemCapability.Security.Huks.Extension
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5449,14 +5692,14 @@ import { huks } from '@kit.UniversalKeystoreKit';
  * 以下以RSA2048密钥的callback操作使用为例
  */
 
-let keyAlias = "HuksDemoRSA";
+let keyAlias = 'HuksDemoRSA';
 let properties: Array<huks.HuksParam> = [];
 let options: huks.HuksOptions = {
   properties: properties,
   inData: new Uint8Array(0)
 };
 let handle: number = 0;
-let resultMessage = "";
+let resultMessage = '';
 
 /* 生成密钥 */
 async function generateKey() {
@@ -5497,25 +5740,25 @@ async function huksInit() {
 }
 
 async function huksUpdate() {
-  options.inData = stringToUint8Array("huksHmacTest");
+  options.inData = stringToUint8Array('huksHmacTest');
   await huks.update(handle, options.inData, options).then((data) => {
     if (data.errorCode === 0) {
-      resultMessage += "update success!";
+      resultMessage += 'update success!';
     } else {
-      resultMessage += "update fail!";
+      resultMessage += 'update fail!';
     }
   });
   console.info(resultMessage);
 }
 
 function huksFinish() {
-  options.inData = stringToUint8Array("HuksDemoHMAC");
+  options.inData = stringToUint8Array('HuksDemoHMAC');
   huks.finish(handle, options).then((data) => {
     if (data.errorCode === 0) {
-      resultMessage = "finish success!";
+      resultMessage = 'finish success!';
       console.info(resultMessage);
     } else {
-      resultMessage = "finish fail errorCode: " + data.errorCode;
+      resultMessage = `finish fail errorCode: ${data.errorCode}`;
       console.error(resultMessage);
     }
   });
@@ -5534,9 +5777,10 @@ async function huksAbort() {
 
 
 
-#### huks.abort(deprecated)
+## huks.abort(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 abort(handle: number, options: HuksOptions) : Promise&lt;HuksResult&gt;
 
@@ -5550,6 +5794,7 @@ abort终止密钥操作。使用Promise异步回调。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handle | number | 是 | Abort操作的uint64类型的handle值。 |
@@ -5557,6 +5802,7 @@ abort终止密钥操作。使用Promise异步回调。
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5573,14 +5819,14 @@ import { huks } from '@kit.UniversalKeystoreKit';
  *
  * 以下以RSA2048密钥的promise操作使用为例
  */
-let keyAlias = "HuksDemoRSA";
+let keyAlias = 'HuksDemoRSA';
 let properties: Array<huks.HuksParam> = [];
 let options: huks.HuksOptions = {
   properties: properties,
   inData: new Uint8Array(0)
 };
 let handle: number = 0;
-let resultMessage = "";
+let resultMessage = '';
 
 function stringToUint8Array(str: string) {
   let arr: number[] = [];
@@ -5611,9 +5857,9 @@ async function generateKey() {
   }];
   huks.generateKey(keyAlias, options, (err, data) => {
     if (data.errorCode === 0) {
-      resultMessage = "generate success!";
+      resultMessage = 'generate success!';
     } else {
-      resultMessage = "generate fail errorCode: " + data.errorCode;
+      resultMessage = `generate fail errorCode: ${data.errorCode}`;
     }
   });
 }
@@ -5623,24 +5869,24 @@ async function huksInit() {
   return new Promise<huks.HuksHandle>((resolve, reject) => {
     huks.init(keyAlias, options, async (err, data) => {
       if (data.errorCode === 0) {
-        resultMessage = "init success!";
+        resultMessage = 'init success!';
         handle = data.handle;
       } else {
-        resultMessage = "init fail errorCode: " + data.errorCode;
+        resultMessage = `init fail errorCode: ${data.errorCode}`;
       }
     });
   });
 }
 
 async function huksUpdate() {
-  options.inData = stringToUint8Array("huksHmacTest");
+  options.inData = stringToUint8Array('huksHmacTest');
   new Promise<huks.HuksResult>((resolve, reject) => {
     huks.update(handle, options.inData, options, (err, data) => {
       if (data.errorCode === 0) {
-        resultMessage += "update success!";
+        resultMessage += 'update success!';
         console.info(resultMessage);
       } else {
-        resultMessage += "update fail!";
+        resultMessage += 'update fail!';
         console.error(resultMessage);
       }
     });
@@ -5648,13 +5894,13 @@ async function huksUpdate() {
 }
 
 async function huksFinish() {
-  options.inData = stringToUint8Array("0");
+  options.inData = stringToUint8Array('0');
   new Promise<huks.HuksResult>((resolve, reject) => {
     huks.finish(handle, options, (err, data) => {
       if (data.errorCode === 0) {
-        resultMessage = "finish success!";
+        resultMessage = 'finish success!';
       } else {
-        resultMessage = "finish fail errorCode: " + data.errorCode;
+        resultMessage = `finish fail errorCode: ${data.errorCode}`;
       }
     });
   });
@@ -5664,9 +5910,9 @@ async function huksFinish() {
 function huksAbort() {
   huks.abort(handle, options).then((data) => {
     if (data.errorCode === 0) {
-      console.info("abort success!");
+      console.info('abort success!');
     } else {
-      console.error("abort fail errorCode: " + data.errorCode);
+      console.error(`abort fail errorCode: ${data.errorCode}`);
     }
   });
 }
@@ -5674,9 +5920,10 @@ function huksAbort() {
 
 
 
-#### HuksHandle(deprecated)
+## HuksHandle(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 HUKS handle结构体。
 
@@ -5684,6 +5931,7 @@ HUKS handle结构体。
 
 > [!NOTE]
 > 从API version 9开始废弃，建议使用 HuksSessionHandle 9+ 替代。
+
 
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -5695,9 +5943,10 @@ HUKS handle结构体。
 
 
 
-#### HuksResult(deprecated)
+## HuksResult(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 调用接口返回的result。
 
@@ -5705,6 +5954,7 @@ HUKS handle结构体。
 
 > [!NOTE]
 > 从API version 8开始，从API version 9开始废弃，建议使用 HuksReturnResult 9+ 替代。 errorCode的具体信息，请参考 HUKS错误码 。
+
 
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -5717,16 +5967,18 @@ HUKS handle结构体。
 
 
 
-#### HuksErrorCode(deprecated)
+## HuksErrorCode(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示错误码的枚举。
 
 **系统能力：** SystemCapability.Security.Huks.Extension
 
 > [!NOTE]
-> 从API version 9开始废弃，建议使用 HuksExceptionErrCode 9+ 替代。
+> 从API version 8开始支持，从API version 9开始废弃，建议使用 HuksExceptionErrCode 9+ 替代。
+
 
 
 | 名称 | 值 | 说明 |

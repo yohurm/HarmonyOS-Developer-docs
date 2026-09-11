@@ -1,13 +1,13 @@
 # 使用UI上下文接口操作界面（UIContext）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface
 
 本文主要介绍了多UI实例涉及的概念，以及使用[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)的方法替换全局接口的原因，并提供了相应的替换方案。
 
 
-#### 基本概念
+## 基本概念
 
 **UI实例：** UI实例是用于管理用户界面的对象，主要负责组件、布局、动画以及交互事件等UI功能的管理。每个窗口对象都会创建并管理一个UI实例。
 
@@ -33,7 +33,7 @@
 
 
 
-#### UI上下文不明确
+## UI上下文不明确
 
 UI上下文不明确是指调用ArkUI全局接口时，调用点无法明确识别UI实例的问题。
 
@@ -53,11 +53,10 @@ UI上下文不明确是指调用ArkUI全局接口时，调用点无法明确识�
 
 
 
-#### UIContext接口替换全局接口的关系
+## UIContext接口替换全局接口的关系
 
 部分多实例替代接口如下表所示，UIContext实例支持的全量接口以[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)中描述为准。
 
-示例代码使用的接口中，[isAvailable](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#isavailable20)从API version 20开始生效，其余接口从API version 18开始生效。
 
 | 全局接口 | 替代接口 | 说明 |
 | --- | --- | --- |
@@ -68,7 +67,7 @@ UI上下文不明确是指调用ArkUI全局接口时，调用点无法明确识�
 | @ohos.arkui.inspector | getUIInspector | 组件布局回调 |
 | @ohos.arkui.observer | getUIObserver | 无感监听 |
 | @ohos.font | getFont | 自定义字体 |
-| @ohos.measure | getMeasureUtil | 文本计算 |
+| @ohos.measure | getMeasureUtils | 文本计算 |
 | @ohos.mediaquery | getMediaQuery | 媒体查询 |
 | @ohos.promptAction | getPromptAction | 弹窗 |
 | @ohos.router | getRouter | 页面路由 |
@@ -80,8 +79,8 @@ UI上下文不明确是指调用ArkUI全局接口时，调用点无法明确识�
 | TextPickerDialog | showTextPickerDialog | 文本滑动选择器弹窗 |
 | ContextMenu | getContextMenuController | 菜单控制 |
 | vp2px/px2vp/fp2px/px2fp/lpx2px/px2lpx | vp2px/px2vp/fp2px/px2fp/lpx2px/px2lpx | 像素单位转换 |
-| focusControl | getFocusControl | 焦点控制 |
-| cursorControl | getCursorControl | 光标控制 |
+| focusControl | getFocusController | 焦点控制 |
+| cursorControl | getCursorController | 光标控制 |
 | getContext | getHostContext | 获取当前的Ability的Context |
 | LocalStorage.getShared | getSharedLocalStorage | 获取Ability传递的Storage |
 | animateTo | animateTo | 显式动画 |
@@ -90,13 +89,13 @@ UI上下文不明确是指调用ArkUI全局接口时，调用点无法明确识�
 
 
 
-#### 常见UIContext接口替换全局接口的场景
+## 常见UIContext接口替换全局接口的场景
 
-以下UIContext接口替换全局接口示例以[像素单位](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-pixel-units)接口为例。
+以下UIContext接口替换全局接口示例以[像素单位](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-pixel-units)接口为例。示例代码使用的接口中，[isAvailable](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#isavailable20)从API版本20开始生效，UIContext.resolveUIContext()、UIContext.getCallingScopeUIContext()、UIContext.getLastFocusedUIContext()、UIContext.getLastForegroundUIContext()、UIContext.getAllUIContexts()以及UIContext()构造函数从API版本22开始生效，其余接口从API版本15开始生效。
 
 
 
-#### 通过自定义组件获取UIContext
+### 通过自定义组件获取UIContext
 
 当全局接口在[自定义组件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-custom-components)的成员方法或组件生命周期方法等其他作用域中，且this指向自定义组件时，可以通过调用自定义组件的成员方法[getUIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-custom-component-api#getuicontext)来获取UIContext对象。
 
@@ -166,7 +165,7 @@ struct Index {
 
 
 
-#### 通过窗口对象获取UIContext对象
+### 通过窗口对象获取UIContext对象
 
 开发者可以通过窗口对象的[getUIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window-window#getuicontext10)方法获取UIContext对象。
 
@@ -275,7 +274,7 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### 通过静态方法获取UIContext对象
+### 通过静态方法获取UIContext对象
 
 从API version 22开始，开发者可以通过UIContext类静态方法如[resolveUIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#resolveuicontext22)获取UIContext对象。
 
@@ -481,7 +480,7 @@ export function GetUIContextByAtomicInterface(): UIContext {
 
 
 
-#### 在封装的接口中获取UI上下文
+### 在封装的接口中获取UI上下文
 
 开发者通常在封装的接口中使用全局接口。对于这类场景，应优先考虑增加UIContext类型的入参。如果应用只有一个窗口，可以使用全局存储对象来保存UIContext。
 
@@ -658,7 +657,7 @@ hilog.info(DOMAIN, 'testTag', `20vp equals to ${pxValue}px`);
 
 
 
-#### 应用存在多窗时，通过最近获焦窗口获取UIContext
+### 应用存在多窗时，通过最近获焦窗口获取UIContext
 
 当应用有多个窗口且无法直接获取UIContext时，可通过最近获得焦点的窗口获取其UIContext。
 
@@ -839,7 +838,7 @@ struct Index {
 
 
 
-#### 执行绑定UI实例的闭包
+### 执行绑定UI实例的闭包
 
 对于UIContext中没有提供替代的接口（例如CalendarPickerDialog），或者开发者自定义实现的业务行为与多实例相关，需要和实例绑定时（例如，一个代码段），可以使用UIContext对象[runScopedTask](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#runscopedtask)方法执行闭包。
 
@@ -879,15 +878,16 @@ struct CalendarPickerDialogPage {
 
 
 
-#### 特殊全局接口替换示例
+## 特殊全局接口替换示例
 
 部分全局接口在替换为UIContext接口时，需要考虑一些特殊的调用场景。
 
 
 
-#### 像素单位转换接口替换为UIContext接口
+### 像素单位转换接口替换为UIContext接口
 
 因为不同的UI实例可以有不同的转换系数，[像素单位](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-pixel-units)接口计算结果依赖UI实例。其中fp2px/px2fp/lpx2px/px2lpx接口在无有效UI上下文时会返回undefined，而vp2px/px2vp接口在无有效UI上下文时，会获取默认屏幕像素密度进行计算。
+
 
 | 像素单位转换接口调用时机 | 接口行为 | 可能与预期不一致的场景 |
 | --- | --- | --- |
@@ -967,9 +967,10 @@ export class PixelUtils {
 
 
 
-#### 获取Ability的Context
+### 获取Ability的Context
 
 [getContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-getcontext)接口用于在UI页面中获取对应UI实例所属Ability的Context，因此依赖于UI实例。
+
 
 | getContext接口的调用时机 | 接口行为 | 可能与预期不一致的场景 |
 | --- | --- | --- |
@@ -1101,7 +1102,7 @@ hilog.info(DOMAIN, 'testTag', `The context is ${context}`);
 
 
 
-#### LocalStorage替换为UIContext的接口
+### LocalStorage替换为UIContext的接口
 
 LocalStorage是页面级的UI状态存储，通过@Entry装饰器接收的参数可以在页面内共享同一个LocalStorage实例。使用全局接口时，开发者使用[getShared](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-state-management#getshareddeprecated)向@Entry装饰器传递LocalStorage对象。使用UIContext接口后，无法直接获取UIContext对象，可以将[EntryOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-entry#entryoptions10)的useSharedStorage参数设置为true，以使用共享的LocalStorage实例对象。
 

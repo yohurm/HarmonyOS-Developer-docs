@@ -1,9 +1,9 @@
 # @ohos.arkui.shape (形状)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-shape
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 @ohos.arkui.shape模块提供了CircleShape、EllipseShape、PathShape、RectShape等多种形状定义，用于在[clipShape](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-sharp-clipping#clipshape12)和[maskShape](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-sharp-clipping#maskshape12)接口中传入对应的形状，实现对组件的裁剪和遮罩效果。适用于需要将组件裁剪为圆形、椭圆、矩形等特定形状，或通过形状遮罩实现视觉效果的场景，如头像裁剪、图标遮罩等。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { CircleShape, EllipseShape, PathShape, RectShape } from '@kit.ArkUI';
@@ -22,9 +23,10 @@ import { CircleShape, EllipseShape, PathShape, RectShape } from '@kit.ArkUI';
  
   
 
-#### CircleShape
+## CircleShape
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于clipShape和maskShape接口的圆形形状。
  
@@ -38,9 +40,10 @@ import { CircleShape, EllipseShape, PathShape, RectShape } from '@kit.ArkUI';
  
   
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(options?: ShapeSize)
  
@@ -54,6 +57,7 @@ constructor(options?: ShapeSize)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ShapeSize | 否 | 形状的大小，包含width（宽度）和height（高度）属性，用于设置形状的尺寸。不传入时使用默认尺寸，默认宽度0vp，默认高度0vp。 |
@@ -61,9 +65,10 @@ constructor(options?: ShapeSize)
  
   
 
-#### EllipseShape
+## EllipseShape
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于clipShape和maskShape接口的椭圆形状。
  
@@ -77,9 +82,10 @@ constructor(options?: ShapeSize)
  
   
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(options?: ShapeSize)
  
@@ -93,6 +99,7 @@ constructor(options?: ShapeSize)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ShapeSize | 否 | 形状的大小，用于自定义椭圆的宽高尺寸。不传入时width和height默认值为0vp。 |
@@ -100,13 +107,12 @@ constructor(options?: ShapeSize)
  
   
 
-#### PathShape
+## PathShape
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-用于clipShape和maskShape接口的路径形状。
- 
-继承自[CommonShapeMethod](#commonshapemethod)。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+用于clipShape和maskShape接口的路径形状，继承自[CommonShapeMethod](#commonshapemethod)。
  
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
  
@@ -116,9 +122,10 @@ constructor(options?: ShapeSize)
  
   
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(options?: PathShapeOptions)
  
@@ -132,20 +139,26 @@ constructor(options?: PathShapeOptions)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| options | PathShapeOptions | 否 | 路径参数。 |
+| options | PathShapeOptions | 否 | 路径参数。不传入时，路径绘制指令默认为空字符串，不绘制路径。 |
  
  
   
 
-#### commands
+### commands
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 commands(commands: string): PathShape
  
-设置路径的绘制指令。
+设置路径的绘制指令，用于定义PathShape的绘制路径。指令遵循SVG路径数据格式，具体支持的绘制命令请参考[commands](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawing-components-path#commands)。
+ 
+> [!NOTE]
+> 必须设置commands（可通过构造函数PathShapeOptions.commands或本方法设置），PathShape才能在clipShape/maskShape接口中产生可见的裁剪或遮罩效果。 未设置commands的PathShape为空路径，不会产生任何裁剪或遮罩效果。 本方法与构造函数PathShapeOptions.commands设置的是同一属性，后调用的设置会覆盖先前的设置。
+
  
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
  
@@ -155,13 +168,15 @@ commands(commands: string): PathShape
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| commands | string | 是 | 路径的绘制指令。 |
+| commands | string | 是 | 路径的绘制指令，格式要求请参考commands支持的绘制命令。传入无效指令时不产生可见路径。 |
  
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | PathShape | 返回设置路径绘制指令后的PathShape对象，可用于链式调用继续配置路径形状。 |
@@ -169,9 +184,10 @@ commands(commands: string): PathShape
  
   
 
-#### RectShape
+## RectShape
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于clipShape和maskShape接口的矩形形状。
  
@@ -185,13 +201,18 @@ commands(commands: string): PathShape
  
   
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(options?: RectShapeOptions | RoundRectShapeOptions)
  
 创建RectShape对象。
+ 
+> [!NOTE]
+> 构造函数参数中的radius/radiusWidth/radiusHeight与radius()/radiusWidth()/radiusHeight()方法设置的是同一属性。 方法调用会覆盖构造函数中设置的对应属性值。 建议优先通过构造函数设置初始参数，再通过方法进行额外配置或覆盖。
+
  
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
  
@@ -201,16 +222,18 @@ constructor(options?: RectShapeOptions | RoundRectShapeOptions)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| options | RectShapeOptions \| RoundRectShapeOptions | 否 | 矩形形状参数。 |
+| options | RectShapeOptions \| RoundRectShapeOptions | 否 | 矩形形状参数。不传入时使用默认尺寸，默认宽度0vp，默认高度0vp，圆角半径默认值0vp。 |
  
  
   
 
-#### radiusWidth
+### radiusWidth
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 radiusWidth(rWidth: number | string): RectShape
  
@@ -224,6 +247,7 @@ radiusWidth(rWidth: number | string): RectShape
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rWidth | number \| string | 是 | 矩形形状圆角半径的宽度。 类型为number时取值范围是[0, +∞)，string时是Length。 单位：vp 取值为异常值时按照0vp处理。 |
@@ -231,6 +255,7 @@ radiusWidth(rWidth: number | string): RectShape
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | RectShape | 返回设置圆角半径后的RectShape对象，可用于链式调用继续配置矩形形状。 |
@@ -238,9 +263,10 @@ radiusWidth(rWidth: number | string): RectShape
  
   
 
-#### radiusHeight
+### radiusHeight
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 radiusHeight(rHeight: number | string): RectShape
  
@@ -254,6 +280,7 @@ radiusHeight(rHeight: number | string): RectShape
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rHeight | number \| string | 是 | 矩形形状圆角半径的高度。 类型为number时取值范围是[0, +∞)，string时是Length。 单位：vp 取值为异常值时按照0vp处理。 |
@@ -261,6 +288,7 @@ radiusHeight(rHeight: number | string): RectShape
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | RectShape | 返回设置圆角半径高度后的RectShape对象，可用于链式调用继续配置矩形形状。 |
@@ -268,13 +296,14 @@ radiusHeight(rHeight: number | string): RectShape
  
   
 
-#### radius
+### radius
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 radius(radius: number | string | Array<number  |  string>): RectShape
  
-设置矩形形状的圆角半径。
+设置矩形形状的圆角半径，设置后各角圆弧宽高相等（圆形弧）。与radiusWidth/radiusHeight分别设置圆弧宽高（允许椭圆弧）不同，radius可通过数组分别指定四个角的圆角半径值；需要圆形圆角时使用radius，需要椭圆形圆角时使用radiusWidth和radiusHeight。
  
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
  
@@ -284,6 +313,7 @@ radius(radius: number | string | Array<number  |  string>): RectShape
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | radius | number \| string \| Array<number \| string> | 是 | 矩形形状的圆角半径。仅接受数组的前四个元素，分别为矩形左上、右上、左下、右下的圆角半径。 类型为number时取值范围是[0, +∞)，string时是Length。 单位：vp 取值为异常值时按照0vp处理。 |
@@ -291,6 +321,7 @@ radius(radius: number | string | Array<number  |  string>): RectShape
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | RectShape | 返回设置圆角半径宽度后的RectShape对象，可用于链式调用继续配置矩形形状。 |
@@ -298,9 +329,10 @@ radius(radius: number | string | Array<number  |  string>): RectShape
  
   
 
-#### ShapeSize
+## ShapeSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 形状的大小参数。
  
@@ -310,6 +342,7 @@ radius(radius: number | string | Array<number  |  string>): RectShape
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | width | number \| string | 否 | 是 | 形状的宽度。 类型为number时取值范围是[0, +∞)，string时是Length。 单位：vp 默认值：0vp 取值为异常值时按照0vp处理。 不设置时默认值为0vp。 |
@@ -318,9 +351,10 @@ radius(radius: number | string | Array<number  |  string>): RectShape
  
   
 
-#### PathShapeOptions
+## PathShapeOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 PathShape的构造函数参数。
  
@@ -330,16 +364,18 @@ PathShape的构造函数参数。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| commands | string | 否 | 是 | 绘制路径的指令。默认值为空字符串，不设置时不绘制路径。更多说明请参考commands支持的绘制命令。 |
+| commands | string | 否 | 是 | 绘制路径的指令。默认值为空字符串，不设置时不绘制路径。 |
  
  
   
 
-#### RectShapeOptions
+## RectShapeOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 RectShape 的构造函数参数。
  
@@ -351,6 +387,7 @@ RectShape 的构造函数参数。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | radius | number \| string \| Array<number \| string> | 否 | 是 | 矩形形状的圆角半径。 类型为number时取值范围是[0, +∞)，string时是Length。 单位：vp 取值为异常值时按照0vp处理。 |
@@ -358,9 +395,10 @@ RectShape 的构造函数参数。
  
   
 
-#### RoundRectShapeOptions
+## RoundRectShapeOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 RectShape 带有圆角半径的构造函数参数。
  
@@ -372,6 +410,7 @@ RectShape 带有圆角半径的构造函数参数。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | radiusWidth | number \| string | 否 | 是 | 矩形形状圆角半径的宽度。 类型为number时取值范围是[0, +∞)，string时是Length。 单位：vp 默认值：0vp 取值为异常值时按照0vp处理。 |
@@ -380,9 +419,10 @@ RectShape 带有圆角半径的构造函数参数。
  
   
 
-#### BaseShape
+## BaseShape
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 继承自[CommonShapeMethod](#commonshapemethod)。
  
@@ -394,9 +434,10 @@ RectShape 带有圆角半径的构造函数参数。
  
   
 
-#### width
+### width
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 width(width: Length): T
  
@@ -410,6 +451,7 @@ width(width: Length): T
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | width | Length | 是 | 形状的宽度。 单位：vp 取值为异常值时按照0vp处理。 |
@@ -417,16 +459,18 @@ width(width: Length): T
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前对象。 |
+| T | 返回当前对象，用于链式调用。 |
  
  
   
 
-#### height
+### height
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 height(height: Length): T
  
@@ -440,6 +484,7 @@ height(height: Length): T
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | height | Length | 是 | 形状的高度。 单位：vp 取值为异常值时按照0vp处理。 |
@@ -447,20 +492,26 @@ height(height: Length): T
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前对象。 |
+| T | 返回当前对象，用于链式调用。 |
  
  
   
 
-#### size
+### size
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 size(size: SizeOptions): T
  
-设置形状的大小。
+设置形状的大小，同时设置宽度和高度。
+ 
+> [!NOTE]
+> size()等同于同时调用width()和height()设置宽高。 后调用的方法会覆盖先前方法设置的对应属性。例如先调用size({width:100, height:200})再调用width(50)，最终宽度为50，高度保持200。
+
  
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
  
@@ -470,23 +521,26 @@ size(size: SizeOptions): T
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| size | SizeOptions | 是 | 形状的大小。 |
+| size | SizeOptions | 是 | 形状的大小。 width和height类型为number时取值范围是[0, +∞)，string类型时参考Length。 单位：vp 取值为异常值时按照0vp处理。 |
  
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前对象。 |
+| T | 返回当前对象，用于链式调用。 |
  
  
   
 
-#### CommonShapeMethod
+## CommonShapeMethod
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供形状的偏移、填充和位置设置等通用方法的基类。
  
@@ -498,13 +552,18 @@ size(size: SizeOptions): T
  
   
 
-#### offset
+### offset
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offset(offset: Position): T
  
 设置相对于组件布局位置的坐标偏移。
+ 
+> [!NOTE]
+> offset()设置相对偏移，position()设置绝对位置，两者定位机制不同。 建议根据场景选择使用其中一种定位方式，避免同时设置导致定位结果难以预测。
+
  
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
  
@@ -514,6 +573,7 @@ offset(offset: Position): T
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | Position | 是 | 相对于组件布局位置的坐标偏移。 |
@@ -521,20 +581,22 @@ offset(offset: Position): T
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前对象。 |
+| T | 返回当前对象，用于链式调用。 |
  
  
   
 
-#### fill
+### fill
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fill(color: ResourceColor): T
  
-设置形状的填充区域的透明度，黑色表示完全透明，白色表示完全不透明。
+设置形状的填充颜色。
  
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
  
@@ -544,27 +606,30 @@ fill(color: ResourceColor): T
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| color | ResourceColor | 是 | 形状的填充区域的透明度，黑色表示完全透明，白色表示完全不透明。 |
+| color | ResourceColor | 是 | 形状的填充区域的透明度，黑色表示完全透明，白色表示完全不透明。在maskShape场景下，填充颜色决定了遮罩的透明度效果。 |
  
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前对象。 |
+| T | 返回当前对象，用于链式调用。 |
  
  
   
 
-#### position
+### position
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 position(position: Position): T
  
-形状的位置坐标。
+设置形状的绝对位置。与offset（相对偏移）不同，position设置的是绝对坐标；需要精确定位形状时使用position，需要在现有布局位置上微调时使用offset。
  
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
  
@@ -574,6 +639,7 @@ position(position: Position): T
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | position | Position | 是 | 形状的位置。 |
@@ -581,16 +647,18 @@ position(position: Position): T
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前对象。 |
+| T | 返回当前对象，用于链式调用。 |
  
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例主要演示通过[clipShape](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-sharp-clipping#clipshape12)和[maskShape](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-sharp-clipping#maskshape12)将图片裁剪和遮罩成不同形状。
  
@@ -634,4 +702,4 @@ struct ShapeExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/xYJM0effTUSqAhuja2yZqA/zh-cn_image_0000002656008170.png?HW-CC-KV=V1&HW-CC-Date=20260730T071443Z&HW-CC-Expire=86400&HW-CC-Sign=ED0183F7A410F4A76DC7CD3685771F8DA5BFAB32A41E271F59A674CDD66E89BD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/iFnGWPt5TJ-AxCJu8Pz5Aw/zh-cn_image_0000002747292323.png?HW-CC-KV=V1&HW-CC-Date=20260911T072837Z&HW-CC-Expire=86400&HW-CC-Sign=B992787A66C3172743BC38E48538263E4D9C07FC1425F81E83F84F7175E7DCA5)

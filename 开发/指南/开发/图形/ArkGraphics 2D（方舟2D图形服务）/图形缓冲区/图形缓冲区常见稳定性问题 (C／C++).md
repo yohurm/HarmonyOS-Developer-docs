@@ -1,13 +1,13 @@
 # 图形缓冲区常见稳定性问题 (C/C++)
 
-更新时间：2026-07-21 07:44:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-common-mistakes
 
 本文档主要针对NativeWindow、NativeBuffer和NativeImage开发过程中的常见问题进行说明，帮助开发者及时避免或定位对应问题，提高应用稳定性。
   
 
-#### OHNativeWindow与NativeWindowBuffer
+## OHNativeWindow与NativeWindowBuffer
 
 OHNativeWindow与NativeWindowBuffer在系统多个模块与应用之间传递，通过增加与减少引用计数的NDK接口实现伪智能指针，由各模块维护自己的引用计数，超过90%的问题都是由于增减引用计数接口未匹配导致的。
  
@@ -57,11 +57,11 @@ int32_t OH_NativeImage_ReleaseNativeWindowBuffer(OH_NativeImage* image,OHNativeW
  
   
 
-#### NativeWindow生命周期问题
+## NativeWindow生命周期问题
 
   
 
-#### 典型崩溃日志及原因
+### 典型崩溃日志及原因
 
 典型崩溃日志如下：
  
@@ -86,13 +86,13 @@ int32_t OH_NativeImage_ReleaseNativeWindowBuffer(OH_NativeImage* image,OHNativeW
  
   
 
-#### 典型错误代码及解决方案
+### 典型错误代码及解决方案
 
 **典型错误代码1**
  
 ```text
 OH_NativeImage *image_ = OH_NativeImage_Create(textureId, GL_TEXTURE_2D);
-OHNativeWindow *nativewindow_ = OH_NativeImage_AcquireNativeWindow();
+OHNativeWindow *nativewindow_ = OH_NativeImage_AcquireNativeWindow(image_);
 
 // 错误：OH_NativeImage_Destroy中会减少OHNativeWindow引用计数，无需再调用OH_NativeWindow_DestroyNativeWindow
 OH_NativeImage_Destroy(image_);
@@ -107,7 +107,7 @@ OH_NativeImage_Destroy中会减少OHNativeWindow引用计数，无需再调用OH
  
 ```text
 OH_NativeImage *image_ = OH_NativeImage_Create(textureId, GL_TEXTURE_2D);
-OHNativeWindow *nativewindow_ = OH_NativeImage_AcquireNativeWindow();
+OHNativeWindow *nativewindow_ = OH_NativeImage_AcquireNativeWindow(image_);
 
 // 释放NativeImage时将image_和nativewindow_置空，防止后续使用野指针
 OH_NativeImage_Destroy(image_);
@@ -204,11 +204,11 @@ void OnSurfaceDestroyedCB(OH_NativeXComponent* component, void* window)
  
   
 
-#### NativeWindowBuffer生命周期问题
+## NativeWindowBuffer生命周期问题
 
   
 
-#### 典型崩溃日志及原因
+### 典型崩溃日志及原因
 
 典型崩溃日志如下：
  
@@ -229,17 +229,17 @@ void OnSurfaceDestroyedCB(OH_NativeXComponent* component, void* window)
  
   
 
-#### 典型错误代码及解决方案
+### 典型错误代码及解决方案
 
 同上述NativeWindow生命周期问题的典型错误代码及解决方案。
  
   
 
-#### NativeWindowBuffer卡死问题
+## NativeWindowBuffer卡死问题
 
   
 
-#### 典型卡死日志及原因
+### 典型卡死日志及原因
 
 典型卡死日志如下：
  
@@ -290,17 +290,17 @@ OH_NativeWindow_NativeWindowFlushBuffer(nativewindow_, buffer, fence, region);
  
   
 
-#### 内存泄漏问题
+## 内存泄漏问题
 
   
 
-#### 典型内存泄漏原因
+### 典型内存泄漏原因
 
 额外执行了增加引用计数接口，未配套执行减少引用计数接口导致泄漏。
  
   
 
-#### 典型错误代码及解决方案
+### 典型错误代码及解决方案
 
 **典型错误代码1**
  
@@ -348,7 +348,7 @@ if (error) {
 }
 
 OH_NativeWindow_NativeWindowFlushBuffer(nativewindow_, buffer, fence, region);
-OH_NativeWindow_NativeObjectReference(buffer);
+OH_NativeWindow_NativeObjectUnreference(buffer);
 ```
  
 **典型错误代码2**

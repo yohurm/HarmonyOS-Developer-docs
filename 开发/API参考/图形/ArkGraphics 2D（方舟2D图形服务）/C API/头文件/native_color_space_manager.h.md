@@ -1,13 +1,14 @@
 # native_color_space_manager.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-color-space-manager-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义创建和使用色彩空间的相关函数。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | ColorSpacePrimaries | ColorSpacePrimaries | 提供色彩原色结构体声明，用于存储色彩空间的红绿蓝三原色和白点的坐标信息。 |
@@ -42,10 +46,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | ColorSpaceName | ColorSpaceName | 色彩空间枚举。 |
@@ -53,10 +59,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_NativeColorSpaceManager* OH_NativeColorSpaceManager_CreateFromName(ColorSpaceName colorSpaceName) | 通过colorSpaceName创建OH_NativeColorSpaceManager实例。 每次调用此函数时，都会创建一个新的OH_NativeColorSpaceManager实例。 |
@@ -69,15 +77,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### ColorSpaceName
+### ColorSpaceName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ColorSpaceName
@@ -89,6 +99,7 @@ enum ColorSpaceName
  
 **起始版本：** 13
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | NONE = 0 | 表示未知的色彩空间。 |
@@ -128,15 +139,17 @@ enum ColorSpaceName
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_NativeColorSpaceManager_CreateFromName()
+### OH_NativeColorSpaceManager_CreateFromName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_NativeColorSpaceManager* OH_NativeColorSpaceManager_CreateFromName(ColorSpaceName colorSpaceName)
@@ -154,6 +167,7 @@ OH_NativeColorSpaceManager* OH_NativeColorSpaceManager_CreateFromName(ColorSpace
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ColorSpaceName colorSpaceName | 表示创建OH_NativeColorSpaceManager的色彩空间名称。 |
@@ -161,6 +175,7 @@ OH_NativeColorSpaceManager* OH_NativeColorSpaceManager_CreateFromName(ColorSpace
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_NativeColorSpaceManager* | 返回一个指向OH_NativeColorSpaceManager实例的指针。内存不足时，会导致创建OH_NativeColorSpaceManager实例失败。 |
@@ -168,9 +183,10 @@ OH_NativeColorSpaceManager* OH_NativeColorSpaceManager_CreateFromName(ColorSpace
  
   
 
-#### OH_NativeColorSpaceManager_CreateFromPrimariesAndGamma()
+### OH_NativeColorSpaceManager_CreateFromPrimariesAndGamma()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_NativeColorSpaceManager* OH_NativeColorSpaceManager_CreateFromPrimariesAndGamma(ColorSpacePrimaries primaries, float gamma)
@@ -188,6 +204,7 @@ OH_NativeColorSpaceManager* OH_NativeColorSpaceManager_CreateFromPrimariesAndGam
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ColorSpacePrimaries primaries | 表示创建OH_NativeColorSpaceManager的色彩原色。 |
@@ -196,6 +213,7 @@ OH_NativeColorSpaceManager* OH_NativeColorSpaceManager_CreateFromPrimariesAndGam
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_NativeColorSpaceManager* | 返回一个指向OH_NativeColorSpaceManager实例的指针。 内存不足时，会导致创建OH_NativeColorSpaceManager实例失败。 |
@@ -203,9 +221,10 @@ OH_NativeColorSpaceManager* OH_NativeColorSpaceManager_CreateFromPrimariesAndGam
  
   
 
-#### OH_NativeColorSpaceManager_Destroy()
+### OH_NativeColorSpaceManager_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_NativeColorSpaceManager_Destroy(OH_NativeColorSpaceManager* nativeColorSpaceManager)
@@ -221,6 +240,7 @@ void OH_NativeColorSpaceManager_Destroy(OH_NativeColorSpaceManager* nativeColorS
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeColorSpaceManager* nativeColorSpaceManager | 表示指向OH_NativeColorSpaceManager实例的指针。 |
@@ -228,9 +248,10 @@ void OH_NativeColorSpaceManager_Destroy(OH_NativeColorSpaceManager* nativeColorS
  
   
 
-#### OH_NativeColorSpaceManager_GetColorSpaceName()
+### OH_NativeColorSpaceManager_GetColorSpaceName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_NativeColorSpaceManager_GetColorSpaceName(OH_NativeColorSpaceManager* nativeColorSpaceManager)
@@ -246,6 +267,7 @@ int OH_NativeColorSpaceManager_GetColorSpaceName(OH_NativeColorSpaceManager* nat
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeColorSpaceManager* nativeColorSpaceManager | 表示指向OH_NativeColorSpaceManager实例的指针。 |
@@ -253,6 +275,7 @@ int OH_NativeColorSpaceManager_GetColorSpaceName(OH_NativeColorSpaceManager* nat
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回色彩空间枚举ColorSpaceName对应的值。其中，当返回值为0时，表示接口操作失败。 |
@@ -260,9 +283,10 @@ int OH_NativeColorSpaceManager_GetColorSpaceName(OH_NativeColorSpaceManager* nat
  
   
 
-#### OH_NativeColorSpaceManager_GetWhitePoint()
+### OH_NativeColorSpaceManager_GetWhitePoint()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 WhitePointArray OH_NativeColorSpaceManager_GetWhitePoint(OH_NativeColorSpaceManager* nativeColorSpaceManager)
@@ -278,6 +302,7 @@ WhitePointArray OH_NativeColorSpaceManager_GetWhitePoint(OH_NativeColorSpaceMana
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeColorSpaceManager* nativeColorSpaceManager | 表示指向OH_NativeColorSpaceManager实例的指针。 |
@@ -285,6 +310,7 @@ WhitePointArray OH_NativeColorSpaceManager_GetWhitePoint(OH_NativeColorSpaceMana
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | WhitePointArray | 返回值为float数组，返回值为<0.0, 0.0>表示接口操作失败，其余返回值表示操作成功。 |
@@ -292,9 +318,10 @@ WhitePointArray OH_NativeColorSpaceManager_GetWhitePoint(OH_NativeColorSpaceMana
  
   
 
-#### OH_NativeColorSpaceManager_GetGamma()
+### OH_NativeColorSpaceManager_GetGamma()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 float OH_NativeColorSpaceManager_GetGamma(OH_NativeColorSpaceManager* nativeColorSpaceManager)
@@ -310,6 +337,7 @@ float OH_NativeColorSpaceManager_GetGamma(OH_NativeColorSpaceManager* nativeColo
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeColorSpaceManager* nativeColorSpaceManager | 表示指向OH_NativeColorSpaceManager实例的指针。 |
@@ -317,6 +345,7 @@ float OH_NativeColorSpaceManager_GetGamma(OH_NativeColorSpaceManager* nativeColo
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | float | 返回值为float类型，返回值为0.0表示接口操作失败，其余返回值表示操作成功。 |

@@ -1,6 +1,6 @@
 # @ohos.multimedia.videoProcessingEngine (视频处理引擎)
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-videoprocessingengine
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -14,7 +14,8 @@
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -24,7 +25,8 @@ import { videoProcessingEngine } from '@kit.ImageKit';
 
 
 
-#### videoProcessingEngine.initializeEnvironment
+## videoProcessingEngine.initializeEnvironment
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -38,6 +40,7 @@ initializeEnvironment(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -45,7 +48,8 @@ initializeEnvironment(): Promise&lt;void&gt;
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[视频处理引擎错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-videoprocessingengine)
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[视频处理引擎错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-videoprocessingengine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -61,13 +65,14 @@ initializeEnvironment(): Promise&lt;void&gt;
 import { videoProcessingEngine } from '@kit.ImageKit';
 
 async function initializeEnvironment() {
-  videoProcessingEngine.initializeEnvironment();
+  await videoProcessingEngine.initializeEnvironment();
 }
 ```
 
 
 
-#### videoProcessingEngine.deinitializeEnvironment
+## videoProcessingEngine.deinitializeEnvironment
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -81,6 +86,7 @@ deinitializeEnvironment(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -88,7 +94,8 @@ deinitializeEnvironment(): Promise&lt;void&gt;
 
 **错误码：**
 
-以下错误码的详细介绍请参见[视频处理引擎错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-videoprocessingengine)
+以下错误码的详细介绍请参见[视频处理引擎错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-videoprocessingengine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -101,14 +108,15 @@ deinitializeEnvironment(): Promise&lt;void&gt;
 import { videoProcessingEngine } from '@kit.ImageKit';
 
 async function deinitializeEnvironment() {
-  videoProcessingEngine.initializeEnvironment();
-  videoProcessingEngine.deinitializeEnvironment();
+  await videoProcessingEngine.initializeEnvironment();
+  await videoProcessingEngine.deinitializeEnvironment();
 }
 ```
 
 
 
-#### videoProcessingEngine.create
+## videoProcessingEngine.create
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -122,6 +130,7 @@ create(): ImageProcessor
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageProcessor | 图片处理模块实例。 |
@@ -129,7 +138,8 @@ create(): ImageProcessor
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[视频处理引擎错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-videoprocessingengine)
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[视频处理引擎错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-videoprocessingengine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -144,14 +154,15 @@ create(): ImageProcessor
 import { videoProcessingEngine } from '@kit.ImageKit';
 
 async function create() {
-  videoProcessingEngine.initializeEnvironment();
+  await videoProcessingEngine.initializeEnvironment();
   let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
 }
 ```
 
 
 
-#### ImageProcessor
+## ImageProcessor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -165,7 +176,8 @@ async function create() {
 
 
 
-#### enhanceDetail
+### enhanceDetail
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -179,6 +191,7 @@ enhanceDetail(sourceImage: image.PixelMap, width: number, height: number, level?
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sourceImage | image.PixelMap | 是 | 输入图像，内存类型需为DMA内存，具体情况请参考PixelMap的内存类型介绍。 |
@@ -189,6 +202,7 @@ enhanceDetail(sourceImage: image.PixelMap, width: number, height: number, level?
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<image.PixelMap> | 异步方法返回PixelMap的Promise实例。 |
@@ -196,7 +210,8 @@ enhanceDetail(sourceImage: image.PixelMap, width: number, height: number, level?
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[视频处理引擎错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-videoprocessingengine)
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[视频处理引擎错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-videoprocessingengine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -211,17 +226,18 @@ enhanceDetail(sourceImage: image.PixelMap, width: number, height: number, level?
 import { image, videoProcessingEngine } from '@kit.ImageKit';
 
 async function enhanceDetail(sourceImage: image.PixelMap, width: number, height: number) {
-  videoProcessingEngine.initializeEnvironment();
+  await videoProcessingEngine.initializeEnvironment();
   let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
   // 示例：width可配置为1024，height可配置为1280。
-  let enhancedPixelmap: Promise<image.PixelMap> =
+  let enhancedPixelMap: Promise<image.PixelMap> =
     imageProcessor.enhanceDetail(sourceImage, width, height, videoProcessingEngine.QualityLevel.HIGH);
 }
 ```
 
 
 
-#### enhanceDetail
+### enhanceDetail
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -235,14 +251,16 @@ enhanceDetail(sourceImage: image.PixelMap, scale: number, level?: QualityLevel):
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sourceImage | image.PixelMap | 是 | 输入图像，内存类型需为DMA内存，具体情况请参考PixelMap的内存类型介绍。 |
-| scale | number | 是 | 目标缩放比例。取值范围(0.0, 32.0]（在满足上述分辨率范围的前提下，最高支持32倍放大）。 |
+| scale | number | 是 | 目标缩放比例。取值范围(0.0, 32.0]。 |
 | level | QualityLevel | 否 | 算法档位（HIGH、MEDIUM、LOW、NONE），默认为NONE。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -251,7 +269,8 @@ enhanceDetail(sourceImage: image.PixelMap, scale: number, level?: QualityLevel):
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[视频处理引擎错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-videoprocessingengine)
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[视频处理引擎错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-videoprocessingengine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -266,17 +285,18 @@ enhanceDetail(sourceImage: image.PixelMap, scale: number, level?: QualityLevel):
 import { image, videoProcessingEngine } from '@kit.ImageKit';
 
 async function enhanceDetail(sourceImage: image.PixelMap, scale: number) {
-  videoProcessingEngine.initializeEnvironment();
+  await videoProcessingEngine.initializeEnvironment();
   let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
   // 示例：scale可配置为2.0。
-  let enhancedPixelmap: Promise<image.PixelMap> =
+  let enhancedPixelMap: Promise<image.PixelMap> =
     imageProcessor.enhanceDetail(sourceImage, scale, videoProcessingEngine.QualityLevel.HIGH);
 }
 ```
 
 
 
-#### enhanceDetailSync
+### enhanceDetailSync
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -290,6 +310,7 @@ enhanceDetailSync(sourceImage: image.PixelMap, width: number, height: number, le
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sourceImage | image.PixelMap | 是 | 输入图像，内存类型需为DMA内存，具体情况请参考PixelMap的内存类型介绍。 |
@@ -300,6 +321,7 @@ enhanceDetailSync(sourceImage: image.PixelMap, width: number, height: number, le
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | image.PixelMap | 成功同步返回PixelMap对象。 |
@@ -307,7 +329,8 @@ enhanceDetailSync(sourceImage: image.PixelMap, width: number, height: number, le
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[视频处理引擎错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-videoprocessingengine)
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[视频处理引擎错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-videoprocessingengine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -322,18 +345,19 @@ enhanceDetailSync(sourceImage: image.PixelMap, width: number, height: number, le
 ```text
 import { image, videoProcessingEngine } from '@kit.ImageKit';
 
-async function enhanceDetailSync(sourceImage: image.PixelMap, width: number, height: number) {
+function enhanceDetailSync(sourceImage: image.PixelMap, width: number, height: number) {
   videoProcessingEngine.initializeEnvironment();
   let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
   // 示例：width可配置为1024，height可配置为1280。
-  let enhancedPixelmap: image.PixelMap = imageProcessor.enhanceDetailSync(
+  let enhancedPixelMap: image.PixelMap = imageProcessor.enhanceDetailSync(
     sourceImage, width, height, videoProcessingEngine.QualityLevel.HIGH);
 }
 ```
 
 
 
-#### enhanceDetailSync
+### enhanceDetailSync
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -347,14 +371,16 @@ enhanceDetailSync(sourceImage: image.PixelMap, scale: number, level?: QualityLev
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sourceImage | image.PixelMap | 是 | 输入图像，内存类型需为DMA内存，具体情况请参考PixelMap的内存类型介绍。 |
-| scale | number | 是 | 目标缩放比例。取值范围(0.0, 32.0]（在满足上述分辨率范围的前提下，最高支持32倍放大）。 |
+| scale | number | 是 | 目标缩放比例。取值范围(0.0, 32.0]。 |
 | level | QualityLevel | 否 | 算法档位（HIGH、MEDIUM、LOW、NONE），默认为NONE。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -363,7 +389,8 @@ enhanceDetailSync(sourceImage: image.PixelMap, scale: number, level?: QualityLev
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[视频处理引擎错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-videoprocessingengine)
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[视频处理引擎错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-videoprocessingengine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -378,18 +405,19 @@ enhanceDetailSync(sourceImage: image.PixelMap, scale: number, level?: QualityLev
 ```text
 import { image, videoProcessingEngine } from '@kit.ImageKit';
 
-async function enhanceDetailSync(sourceImage: image.PixelMap, scale: number) {
+function enhanceDetailSync(sourceImage: image.PixelMap, scale: number) {
   videoProcessingEngine.initializeEnvironment();
   let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
   // 示例：scale可配置为2.0。
-  let enhancedPixelmap: image.PixelMap = imageProcessor.enhanceDetailSync(
+  let enhancedPixelMap: image.PixelMap = imageProcessor.enhanceDetailSync(
     sourceImage, scale, videoProcessingEngine.QualityLevel.HIGH);
 }
 ```
 
 
 
-#### QualityLevel
+## QualityLevel
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -398,6 +426,7 @@ async function enhanceDetailSync(sourceImage: image.PixelMap, scale: number) {
 **卡片能力**：从API version 18开始，该接口支持在ArkTS卡片中使用。
 
 **系统能力：** SystemCapability.Multimedia.VideoProcessingEngine
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

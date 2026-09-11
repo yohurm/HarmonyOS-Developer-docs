@@ -1,6 +1,6 @@
 # 若开发者在游戏中使用Unity Addressables资源管理框架，如何集成游戏资源包后台下载功能
 
-更新时间：2026-05-08 09:27:50
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-accelerate-assetdownload-faq-10
 

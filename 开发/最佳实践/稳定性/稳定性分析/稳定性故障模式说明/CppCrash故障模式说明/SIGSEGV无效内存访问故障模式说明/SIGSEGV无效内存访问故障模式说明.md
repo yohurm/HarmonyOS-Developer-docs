@@ -1,14 +1,14 @@
 # SIGSEGV无效内存访问故障模式说明
 
-更新时间：2026-08-17 09:32:31
+更新时间：2026-08-26 06:47:01
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-cppcrash-sigsegv-fault-mode
 
-#### SEGV_MAPERR不存在的内存地址
+## SEGV_MAPERR不存在的内存地址
 
  
 
-#### 根因描述
+### 根因描述
 
 SEGV_MAPERR是SIGSEGV（Segmentation Fault，段错误）信号中的一种具体错误代码，全称为Segmentation Violation - Map Error。
  
@@ -16,11 +16,11 @@ SEGV_MAPERR表示程序试图访问一个未映射到物理内存或虚拟内存
  
  
 
-#### 问题分析思路
+### 问题分析思路
 
 问题分析的步骤如下：
  1. **确认类型：**根据Reason字段等信息初步确认故障的具体类型。
-2. **调用栈分析：** 根据调用栈，寄存器等信息进一步确认问题原因，缩小分析范围。
+2. **调用栈分析：** 根据调用栈、寄存器等信息进一步确认问题原因，缩小分析范围。
 3. **代码分析：** 查找对应调用栈的具体代码行，结合代码上下文，查找代码中的异常原因，并据此进行防范修改。
 4. **更多日志：** 可以结合更多的流水日志等进行辅助定位，还原故障场景等。
  
@@ -34,7 +34,7 @@ SEGV_MAPERR表示程序试图访问一个未映射到物理内存或虚拟内存
   
 ```text
 int *ptr = nullptr;
-int value = *ptr; // crash：SEGV_MAPERR，fault addr 0x0
+int value = *ptr; // crash: SEGV_MAPERR, fault addr 0x0
 ```
  **特征：** 在故障日志Reason字段中的故障地址通常为0x0、0x4、0x8等极小的值， 同时也会提示probably caused by NULL pointer dereference的字样。
 2. **踩内存问题**。当发生踩内存问题，并且踩踏了指针指向的地址，当被踩踏后的指针指向了一个完全未映射（不存在）的内存区域，就会报SEGV_MAPERR；如果指向的是一个已存在但权限不足或数据损坏的区域，可能会报其他错误（如SEGV_ACCERR）或导致逻辑错误而非立即崩溃。
@@ -56,7 +56,7 @@ int tmp = 1;
 
 3. **数组越界（Out-of-Bounds Access）**。访问数组时索引超出分配的范围，且越界后的地址落在了未分配的内存页中。
 
-  **示例：**详情参见下文案例三。
+  **示例：**详情参见下文案例四。
 
   
 ```text
@@ -66,7 +66,7 @@ char buff[1] = {0};
 ```
  **注意：**如果越界地址仍在合法堆栈或堆内存范围内，可能不会立即崩溃，或者表现为数据错误，此场景建议使用ASan检测内存错误；但如果越界极大，触及未映射页面，则报SEGV_MAPERR。
 
-4. **动态库被提前释放问题**。动态库提前被dlclose释放，释放后调用动态库内的函数，会导致函数指针指向无效地址，调用时触发SEGV_MAPERR。这也是一类特殊的uaf问题。
+4. **动态库被提前释放问题**。动态库提前被dlclose释放，释放后调用动态库内的函数，会导致函数指针指向无效地址，调用时触发SEGV_MAPERR。这也是一类特殊的UAF（Use-After-Free）问题。
 
   **示例：**详情参见下文案例六。
 
@@ -93,7 +93,7 @@ static void RecursiveFunction(int depth)
     }
 }
 ```
- **特征：**故障时操作的地址不在栈空间范围内，一般的Reason字段中会有current thread stack low address = 0x000000xxxxxxxx, probably caused by stack-buffer-overflow的字样。递归调用导致的调用栈中会完全一样，最大显示为255层栈一致。
+ **特征：**故障时操作的地址不在栈空间范围内，一般Reason字段中会有current thread stack low address = 0x000000xxxxxxxx, probably caused by stack-buffer-overflow的字样。递归调用导致的问题调用栈同样最多显示255层栈。
 - **虚拟机多线程**。由于JavaScript本身是单线程的，对JS对象的任何操作都必须在创建该JS线程的原始线程上进行。如果违反了这一规则，就会导致多线程安全问题。
 
   **示例：**详情参见下文案例七。
@@ -106,7 +106,7 @@ callNativeFunc(); // Saving the JS object on the native side.
     ...
     callNativeFunc(); // The saved JS object is used by other threads.
 ```
- **特征：**栈顶是libark_jsruntime.so、stub.an、libace_napi.z.so等会操作js对象的库。
+ **特征：**栈顶是libark_jsruntime.so、stub.an、libace_napi.z.so等会操作JS对象的库。
 - **STL库是非线程安全**。在多线程操作STL容器（如vector、map、set等）的场景中，由于STL容器是非线程安全的，当出现竞争时也会产生异常。
 
   **示例：**详情参见下文案例三。
@@ -126,7 +126,7 @@ std::thread writerThread1(task);
 std::thread writerThread2(task);
 ```
  **特征：**栈顶是在进行容器操作。
-- **栈不可信**当栈上的LR寄存器被踩之后，当前函数退出，需要回到该函数被调用的位置继续向后执行时，读取栈上保存的LR寄存器，进行跳转。此时地址已经非法，触发崩溃。在此场景下，故障日志中的栈帧00和01之后的是不可信。00和01由于是读取的当前寄存器中PC和LR所以是可信的。
+- **栈不可信。**当栈上的LR寄存器被踩之后，当前函数退出，需要回到该函数被调用的位置继续向后执行时，读取栈上保存的LR寄存器，进行跳转。此时地址已经非法，触发崩溃。在此场景下，故障日志中的栈帧00和01之后的是不可信。00和01由于是读取的当前寄存器中PC和LR所以是可信的。
 
   **示例：**详情参见下文案例八。
 
@@ -144,7 +144,7 @@ void Func()
  
  
 
-#### 关键字
+### 关键字
 
 关注CppCrash故障日志中是否有如下关键字。
  
@@ -157,7 +157,7 @@ void Func()
  
  
 
-#### 案例分析
+### 案例分析
 
 **案例一：空指针解引用**
  
@@ -202,7 +202,7 @@ pstate:0000000080001000 esr:0000000000000001
 **故障分析**
  1. 确认类型。
 
-  查看Reason，故障地址为极小值0x1；且有probably caused by NULL pointer dereference 的字样，判定为空指针解引用问题。
+  查看Reason，故障地址为极小值0x1；且有probably caused by NULL pointer dereference的字样，判定为空指针解引用问题。
 2. 调用栈分析。
 
   根据调用栈，对00帧进行反编译（在entry\build\default\intermediates\cmake\default\obj\arm64-v8a目录下获取没有去符号化的二进制文件）。
@@ -217,32 +217,30 @@ pstate:0000000080001000 esr:0000000000000001
  通过汇编代码可以看到问题点在LDR X8, [X8]，访问X8寄存器的值，此时X8寄存器的值为01，属于一个空指针的解引用。**当代码行中有多个指针时，可以通过阅读汇编代码的方式确认访问异常的指针**。
 3. 代码分析。
 
-  通过对00000000000f38a8使用[llvm-addr2line](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)工具进行解析（本例中也可以使用DevEco Studio故障日志的直接跳转功能）可知，指向示例中的p[1] = 1；这也是印证了调用栈分析的结论。在实际问题中不会如同示例中如此明显，需要开发者对指针的生命周期进行检查。
+  参考[C++堆栈解析流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)使用llvm-addr2line工具对00000000000f3484偏移地址进行解析（本例中也可以使用DevEco Studio故障日志的直接跳转功能）可知，指向示例中的p[1] = 1；这也是印证了调用栈分析的结论。在实际问题中不会如同示例中如此明显，需要开发者对指针的生命周期进行检查。
 4. 更多日志。
 
   当前示例无需更多日志辅助分析。实际问题分析时可结合流水日志对指针进行生命周期的分析。
  
-分析结论：由于对空指针进行解引用导致的崩溃。
+分析结论：该问题为对空指针进行解引用导致的崩溃。
  
 
  
 **开发建议**
- 1. 问题排查建议
-- 通过串联业务，查找指针的生命周期是否合理。
+ 
+- 问题排查建议
+通过串联业务，查找指针的生命周期是否合理。
+- 查找是否有多个变量持有同一个裸指针，此场景可以使用shared_ptr。
+- 排查是否会有多线程同时访问的风险，此场景需要对共享资源进行合理的加锁保护。
+- 上述手段无法排查时，可以使用ASan版本进行问题复现。
 
-2. 查找是否有多个变量持有同一个裸指针，此场景可以使用shared_ptr。
+ - 编码建议
+指针在使用前进行有效性判断。
+- 避免使用裸指针。使用C++的RAII机制进行生命周期管理。
+- 裸指针禁止多个位置拷贝保存。
+- 手动管理的指针在内存释放后将指针手动赋值为nullptr。
 
-3. 排查是否会有多线程同时访问的风险，此场景需要对共享资源进行合理的加锁保护。
-
-4. 上述手段无法排查时，可以使用asan版本进行问题复现。
-- 编码建议1. 指针在使用前进行有效性判断。
-
-2. 避免使用裸指针。使用C++的RAII机制进行生命周期管理。
-
-3. 裸指针禁止多个位置拷贝保存。
-
-4. 手动管理的指针在内存释放后将指针手动赋值为nullptr。
-
+ 
  
  
 
@@ -306,35 +304,33 @@ pstate:0000000020001000 esr:006b1e7f9352c001
 .text:00000000000F36A8                 STR             W8, [X9]
 .text:00000000000F36AC                 BRK             #1
 ```
- 通过查看汇编代码可以看到问题点在STR W8, [X9]，这里可以得出结论需要访问x9寄存器的指向的值。X9寄存器的值以6b开头，表明该内存已经被释放过。可以参考[内存问题引发的crash故障](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cppcrash-guidelines#内存问题引发的crash故障)对6b的解释。
+ 通过查看汇编代码可以看到问题点在STR W8, [X9]，这里可以得出结论需要访问x9寄存器的指向的值。X9寄存器的值以6b开头，表明该内存已经被释放过。可以参考[内存问题引发的Crash故障](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cppcrash-guidelines#内存问题引发的crash故障)对6b的解释。
 3. 代码分析。
 
-  通过对00000000000f38a8使用[llvm-addr2line](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)工具进行解析（本例中也可以使用DevEco Studio故障日志的直接跳转功能）可知，指向示例中的**p = 2; 这也是印证了分析结论。
+  参考[C++堆栈解析流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)使用llvm-addr2line工具对00000000000f36a8偏移地址进行解析（本例中也可以使用DevEco Studio故障日志的直接跳转功能）可知，指向示例中的**p = 2; 这也是印证了分析结论。
 4. 更多日志。
 
   实际问题分析中，可以通过hilog日志串联业务流程，辅助分析指针的生命周期，查找不当释放的位置。
  
-分析结论：通过上述的分析，可以得出结论，程序想要访问一片已经释放的内存时触发崩溃。需要对相关的指针进行排查，保证有效的生命周期，防止出现uaf问题。
+分析结论：该问题为访问一片已经释放的内存时触发崩溃。需要对相关的指针进行排查，保证有效的生命周期，防止出现UAF问题。
  
 
  
 **开发建议**
- 1. 问题排查建议
-- 通过串联业务，查找指针的生命周期是否合理。
+ 
+- 问题排查建议
+通过串联业务，查找指针的生命周期是否合理。
+- 排查是否有时序问题，指针已经被提前释放。
+- 查找是否有多个变量持有同一个裸指针。
+- 排查是否会有多线程同时访问的风险，此场景需要对共享资源进行合理的加锁保护。
+- 上述手段无法排查时，可以使用ASan版本进行问题复现。
 
-2. 排查是否有时序问题, 指针已经被提前释放。
+ - 编码建议
+使C++的RAII机制进行生命周期的管理。
+- 手动管理的指针在内存释放后将指针手动赋值为nullptr。
+- 使用智能指针进行内存管理。
 
-3. 查找是否有多个变量持有同一个裸指针。
-
-4. 排查是否会有多线程同时访问的风险，此场景需要对共享资源进行合理的加锁保护。
-
-5. 上述手段无法排查时，可以使用asan版本进行问题复现。
-- 编码建议1. 使用c++的RAII机制进行生命周期的管理。
-
-2. 手动管理的指针在内存释放后将指针手动赋值为nullptr。
-
-3. 使用智能指针进行内存管理。
-
+ 
  
 
  
@@ -427,7 +423,7 @@ Tid:11841, Name:ppcrashanalysis
   通过Reason字段分析，故障地址0xfffffffffffff9d0不是一个有效的内存地址。查看栈顶为memcpy，可以得出结论是给memcpy传入了一个异常的指针导致的问题。
 2. 调用栈分析。
 
-  分析故障线程调用栈，分析传递异常指针的原因。通过使用[llvm-addr2line](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)工具（这里也可以使用DevEco Studio栈帧跳转），可看到09帧是在对vector做push_back操作。鉴于此，出现访问问题的原因考虑是vector内存被踩。由于STL容器是非并发安全，查找其他线程调用栈，11841号线程也在进行vector的访问，推断是并发访问导致的。
+  分析故障线程调用栈，分析传递异常指针的原因。参考[C++堆栈解析流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)使用llvm-addr2line工具解析偏移地址（这里也可以使用DevEco Studio栈帧跳转）可看到09帧是在对vector做push_back操作。鉴于此，出现访问问题的原因考虑是vector内存被踩。由于STL容器是非并发安全，查找其他线程调用栈，11841号线程也在进行vector的访问，推断是并发访问导致的。
 3. 代码分析。
 
   通过对代码进行分析，故障线程和步骤2中是对同一个vector进行访问。到这里可以确认是由于并发访问vector导致的内存问题。
@@ -435,15 +431,20 @@ Tid:11841, Name:ppcrashanalysis
 
   实际业务中，可以结合流水日志梳理业务流程辅助分析问题。
  
+分析结论：该问题为非线程安全的STL vector容器并发操作导致的崩溃。
+ 
 
  
 **开发建议**
- 1. 问题排查建议
-- 在实际问题分析中，由于触发问题时已经不是问题的第一现场，大概率抓不到另外一个线程也在操作vector的堆栈。此时使用Asan版本进行问题复现，依赖Asan版本抓栈进行问题定位。
+ 
+- 问题排查建议
+在实际问题分析中，由于触发问题时已经不是问题的第一现场，大概率抓不到另外一个线程也在操作vector的堆栈。此时使用ASan版本进行问题复现，依赖ASan版本抓栈进行问题定位。
+- 当栈顶是在操作STL容器时，对代码进行排查，看是否是由于并发访问导致。
 
-2. 当栈顶是在操作STL容器时，对代码进行排查，看是否是由于并发访问导致。
-- 编码建议1. STL容器都是非线程安全的，需要并发访问时，需要加锁保护，防止并发。
+ - 编码建议
+STL容器都是非线程安全的，需要并发访问时，需要加锁保护，防止并发。
 
+ 
  
 
  
@@ -556,12 +557,12 @@ f34dc: d65f03c0     	ret
  故障指令为str w8, [x9, x10]，将w8的值拷贝到[x9, x10]所在的内存地址，x9 + x10 = 0x5B7AB10B50，查看Maps内容，该地址不落在任何地址段中，最靠近的地址是native_heap段。分析汇编代码，x9是new出来的栈内存，x9寄存器指向的段，落在5b62521000-5b63321000 rw-p 00000000 [anon:native_heap:jemalloc]段，这是符合预期的。而访问x9 + x10即为访问以x9为基地址的一段内存，最后需要访问的地址是非法地址导致的崩溃。在本例中x10超大，显而易见的是一个超大的非法索引。
 3. 代码分析。
 
-  通过对00000000000f38a8地址使用[llvm-addr2line](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)工具进行解析（本例中也可以使用DevEco Studio故障日志的直接跳转功能）可知，指向示例中的arr[bigSize] = 42代码行，这里是进行数组访问，结合前后的代码可以发现这里是对数组越界的访问，这也符合步骤2中分析的结果。至此可以判定当前问题是数组越界访问。
+  参考[C++堆栈解析流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)使用llvm-addr2line工具对00000000000f34a8偏移地址进行解析（本例中也可以使用DevEco Studio故障日志的直接跳转功能）可知，指向示例中的arr[bigSize] = 42代码行，这里是进行数组访问，结合前后的代码可以发现这里是对数组越界的访问，这也符合步骤2中分析的结果。至此可以判定当前问题是数组越界访问。
 4. 更多日志。
 
   实际业务中，如果是变长数组需要结合日志来判断是否发生了越界。
  
-分析结论：由于数组越界访问导致的崩溃ui。
+分析结论：由于数组越界访问导致的崩溃。
  
 
  
@@ -715,10 +716,10 @@ Maps:
 .text:000000000000C510                 ADD             X0, SP, #0x420+var_418
 .text:000000000000C514                 MOV             W1, WZR
 ```
- 故障指令为STR W0, [SP, #0x420+var_41C]，其操作是将W8寄存器的值进行圧栈，而故障地址为0x0000007e6f57afb4，其地址不在栈空间7e6f57b000-7e6fd79000的范围内，属于栈溢出问题。
+ 故障指令为STR W0, [SP, #0x420+var_41C]，其操作是将W8寄存器的值进行压栈，而故障地址为0x0000007e6f57afb4，其地址不在栈空间7e6f57b000-7e6fd79000的范围内，属于栈溢出问题。
 3. 代码分析。
 
-  查看栈顶代码发现，RecursiveFunction函数出现了递归调用，而且函数中有一个局部变量，大小为1024，当出现递归调用时，进行圧栈会快速消耗栈空间。导致栈溢出。
+  查看栈顶代码发现，RecursiveFunction函数出现了递归调用，而且函数中有一个局部变量，大小为1024，当出现递归调用时，进行压栈会快速消耗栈空间，导致栈溢出。
 4. 更多日志。
 
   实际业务中，需要结合流水日志分析导致递归的原因。为什么没有终止递归，如果经过分析，确实是需要一直递归，那么需要修改递归函数，禁止一直分配栈内存，而改用堆内存。
@@ -736,7 +737,7 @@ Maps:
  - 编码建议
 避免不当的递归调用，设置合理的终止递归的条件。
 - 避免在函数中进行大块的栈内存分配，确实需要大内存可以使用堆内存。针对可复用的内存可以使用参数的引用传递进行共享。
-- 在信号处理函数中，栈空间比较小（典型值为24KB）。禁止在信号处理函数中使用超大栈内存；禁止使用复杂逻辑，函数层次嵌套过深。
+- 在信号处理函数中，栈空间比较小（典型值为24KB）。禁止在信号处理函数中使用超大栈内存；不建议代码实现过于复杂，避免函数层次嵌套过深。
 
  
  
@@ -832,7 +833,7 @@ Maps:
 **故障分析**
  1. 确认类型。
 
-  从Reason字段中只能获取故障地址0x0000007adc3817ac，往下看，该地址为00帧的函数地址，且00帧显示为Not mapped，至此初步将问题定位为动态库被卸载的导致。
+  从Reason字段中只能获取故障地址0x0000007adc3817ac，往下看，该地址为00帧的函数地址，且00帧显示为Not mapped，至此初步判断该问题是由于动态库被卸载导致的。
 2. 调用栈分析。
 
   根据调用栈，对01帧进行反编译（在entry\build\default\intermediates\cmake\default\obj\arm64-v8a目录下获取带符号的二进制文件）。
@@ -854,7 +855,7 @@ Maps:
  通过上述的汇编代码可以找到触发故障的语句为BLR X8，将代码跳转到X8寄存器的地址。这是一个函数调用，直接查看代码。
 3. 代码分析。
 
-  通过对000000000000eef0使用[llvm-addr2line](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)工具进行解析（本例中也可以使用DevEco Studio故障日志的直接跳转功能）可知，指向示例中的int ret = addFunc(value0, value1)，结合步骤2中的汇编代码可知，当前操作是调用动态库的函数指针时发生异常。结合代码前后文可知，函数所在的动态库已经被dlclose。
+  参考[C++堆栈解析流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)使用llvm-addr2line工具对000000000000eef0偏移地址进行解析（本例中也可以使用DevEco Studio故障日志的直接跳转功能），指向示例中的int ret = addFunc(value0, value1)，结合步骤2中的汇编代码可知，当前操作是调用动态库的函数指针时发生异常。结合代码前后文可知，函数所在的动态库已经被dlclose。
 4. 更多日志。
 
   实际问题分析可以结合流水日志分析动态库的生命周期。
@@ -1049,21 +1050,27 @@ pstate:0000000080001000 esr:0000000092000007
   通过Reason字段分析，按照案例1的分析过程，这是一个空指针解引用问题。
 2. 调用栈分析。
 
-  通过对调用栈分析，栈顶是libark_jsruntime.so、stub.an。这里怀疑是Js对象跨线程访问导致。具体可以参考[常见多线程安全问题](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-ark-runtime-detection#section19357830121120)。
-3. 步代码分析。
+  通过对调用栈分析，栈顶是libark_jsruntime.so、stub.an。这里怀疑是JS对象跨线程访问导致。具体可以参考[常见多线程安全问题](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-ark-runtime-detection#section19357830121120)。
+3. 代码分析。
 
   通过DevEco Studio的跳转功能查看业务代码，04帧是dfxNapi.create_object中参数传递的回调函数，08帧是Native层使用napi_call_function进行JS侧函数调用。这里都是JS对象的操作。通过对代码进行分析发现，env被跨线程使用。通过[开启方舟多线程检测](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-ark-runtime-detection#section7199344111510)进行问题复现，可以明确是由运行时上下文跨线程操作导致的问题。
 4. 更多日志。
 
   结合流水日志分析故障场景，可用于复现问题。
  
+分析结论：该问题为JS对象跨线程访问导致的空指针解引用类崩溃。
+ 
 
  
 **开发建议**
- 1. 问题排查建议
-- 当堆栈栈顶是libark_jsruntime.so、stub.an等会操作Js对象的库时，可以考虑是由于运行时上下文跨线程操作导致的问题，开启多线程检测进行问题复现定位。
-- 编码建议1. 检查JS对象在Native侧保存的必要性，是否会跨线程使用。应避免出现跨线程进行运行时访问的场景。
+ 
+- 问题排查建议
+当堆栈栈顶是libark_jsruntime.so、stub.an等会操作Js对象的库时，可以考虑是由于运行时上下文跨线程操作导致的问题，开启多线程检测进行问题复现定位。
 
+ - 编码建议
+检查JS对象在Native侧保存的必要性，是否会跨线程使用。应避免出现跨线程进行运行时访问的场景。
+
+ 
  
 
  
@@ -1193,12 +1200,13 @@ pstate:0000000020001000 esr:0000000092000047
  可以从汇编代码中可以看出19fd0是跳转到cfi检测进行cfi检测，后面紧跟着是函数结束返回。崩溃的栈顶是cfi检测失败，这里是触发了后向cfi检测失败，即返回地址不合法。印证栈上lr寄存器被踩的结论。
 3. 代码分析。
 
-  通过对ec70使用[llvm-addr2line](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)工具进行解析（本例中也可以使用DevEco Studio故障日志的直接跳转功能）可知，代码指向函数return所在行这也符合步骤2中分析的在进行后向cfi检查。
+  参考[C++堆栈解析流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)使用llvm-addr2line工具对0000000000019fd0偏移地址进行解析（本例中也可以使用DevEco Studio故障日志的直接跳转功能），代码指向函数return所在行，这也符合步骤2中分析的在进行后向cfi检查。
 
-  继续分析函数实现，char buff[16]申请栈16字节栈内存，但是memset修改了64KB的内存。由于栈内存布局是向下生长，所以缓冲区的内存地址是小于进入函数时圧栈的寄存器地址，在进行越界写操作时，修改了栈上内存导致的故障。
+  继续分析函数实现，char buff[16]申请栈16字节栈内存，但是memset修改了64KB的内存。由于栈内存布局是向下生长，所以缓冲区的内存地址是小于进入函数时压栈的寄存器地址，在进行越界写操作时，修改了栈上内存导致的故障。
  
-分析结论：不当的缓存操作，踩栈踩到了lr寄存器导致的故障。结合上面步骤2中的汇编代码绘制一下故障时的内存布局如下：
+分析结论：不当的缓存操作，踩栈踩到了lr寄存器导致故障。结合上面步骤2中的汇编代码绘制故障时的内存布局如下：
   
+
 | 内存地址 | 存放内容 |
 | --- | --- |
 | sp + #48 | x29,x30 |
@@ -1208,33 +1216,34 @@ pstate:0000000020001000 esr:0000000092000047
 | sp | 栈顶位置 |
  
  
-通过这个内存布局图可以清晰的看到当操作buff及其往后64字节的空间时会覆盖栈上缓存的x29和x30寄存器的内容，函数栈被踩。
+通过这个内存布局图可以清晰的看到当操作buff及其往后64字节的空间时会覆盖栈上缓存的x29和x30寄存器的内容，导致函数栈被踩。
  
 
  
 **开发建议**
- 1. 问题排查建议
-- 02以及之后的栈帧都是不可信的，谨慎看待。
+ 
+- 问题排查建议
+02以及之后的栈帧都是不可信的，谨慎看待。
+- 遇到栈不可信的问题，排查故障函数是否有对栈上缓存的溢出操作。
 
-2. 遇到栈不可信的问题，排查故障函数是否有对栈上缓存的溢出操作。
-- 编码建议1. 数组等内存的访问需要进行边界判断，禁止越界访问。
+ - 编码建议
+数组等内存的访问需要进行边界判断，禁止越界访问。
 
+ 
  
 
  
 
-#### 常见易错代码预防建议
-1. 对所有外部数据进行合法性校验,常见典型场景有：
-- 作为数组索引：将不可信的数据作为数组索引，可能导致超出数组上限，从而造成非法内存访问。
+### 常见易错代码预防建议
 
-2. 作为内存偏移地址：将不可信数据作为指针偏移访问内存，可能造成非法内存访问，并可以造成进一步的危害，如任意地址读写。
+- 对所有外部数据进行合法性校验，常见典型场景有：
+作为数组索引：将不可信的数据作为数组索引，可能导致超出数组上限，从而造成非法内存访问。
+- 作为内存偏移地址：将不可信数据作为指针偏移访问内存，可能造成非法内存访问，并可以造成进一步的危害，如任意地址读写。
+- 作为内存分配的尺寸参数：使用0长度分配内存可能造成非法内存访问；未限制分配内存大小会造成过度资源消耗。
+- 作为循环条件：将不可信数据作为循环限定条件，可能会引发缓冲区溢出、内存越界读写、死循环等问题。
+- 作为内存复制长度：可能造成缓冲区溢出问题。
 
-3. 作为内存分配的尺寸参数：使用0长度分配内存可能造成非法内存访问；未限制分配内存大小会造成过度资源消耗。
-
-4. 作为循环条件：将不可信数据作为循环限定条件，可能会引发缓冲区溢出、内存越界读写、死循环等问题。
-
-5. 作为内存复制长度：可能造成缓冲区溢出问题。
-- 函数参数需传入单个对象时应以引用取代指针。
+ - 函数参数需传入单个对象时应以引用取代指针。
 - 引用比指针更安全，因为它一定非空，且一定不会再指向其他目标，不需要检查空指针。
 - 如果函数内不修改参数所引用的对象，应当将该参数声明为const引用。
 - 在移动操作后，禁止读取已移动对象的值。
@@ -1257,29 +1266,29 @@ pstate:0000000020001000 esr:0000000092000047
  
  
 
-#### SEGV_ACCERR不可访问的内存地址
+## SEGV_ACCERR不可访问的内存地址
 
  
 
-#### 根因描述
+### 根因描述
 
 SIGSEGV是系统中进程访问无效内存时收到的信号。根据C++ siginfo_t结构体中的si_code字段，可分为两大类：
  1. SEGV_MAPERR：地址未映射，即虚拟地址不在任何VMA（Virtual Memory Area）范围内（如空指针、野指针）。
 2. SEGV_ACCERR：地址已映射，但当前操作违反了该内存区域的访问权限。
  
-SEGV_ACCERR 的核心机制：
+SEGV_ACCERR的核心机制：
  
-CPU的MMU（Memory Management Unit）在进行地址转换时，会检查页表项(PTE)中的权限位（如 R/W、U/S、XD/NX）。当程序试图执行以下操作时，MMU会触发页故障（Page Fault)，操作系统捕获后向进程发送SIGSEGV并置si_code = SEGV_ACCERR。
+CPU的MMU（Memory Management Unit）在进行地址转换时，会检查页表项（PTE）中的权限位（如R/W、U/S、XD/NX）。当程序试图执行以下操作时，MMU会触发页故障（Page Fault），操作系统捕获后向进程发送SIGSEGV并置si_code = SEGV_ACCERR。
  
 关键区别：SEGV_ACCERR表明地址是“存在”的，只是权限不足。这通常不是由空指针直接引起，而是由类型转换错误、常量区写入、代码段踩踏、安全机制被触发等更深层逻辑错误导致。
  
  
 
-#### 问题分析思路
+### 问题分析思路
 
 此类问题通常情况下，会有如下几种可能：
  1. 写只读内存：如修改text段、rodata段、字符串字面量、mmap时指定为PROT_READ的区域。
-2. 执行不可执行内存：现代操作系统普遍启NX(No-eXecute)或DEP(Data Execution Prevention)。若程序跳转至栈、堆或数据段等非可执行区域执行指令，触发此错误。
+2. 执行不可执行内存：现代操作系统普遍开启NX（No-eXecute）或DEP（Data Execution Prevention）。若程序跳转至栈、堆或数据段等非可执行区域执行指令，触发此错误。
 3. 访问被内核保护的内存：如mprotect已将页面权限设为PROT_NONE后继续访问。
 4. 对只读映射写入：如mmap一个文件时参数使用了MAP_PRIVATE但修改了映射内容（触发写时复制前试图写只读页，虽然通常写时复制会处理，但如果页面本身映射为只读且没有写权限，第一次写也会触发保护）。
 5. 踩内存跑飞：如内存读写越界等异常导致的程序执行异常，通常产生随机的崩溃调用栈，进程崩溃时已非问题发生的第一现场，可以借助HWASan等检测工具辅助分析，具体分析方法请参见[地址越界类问题分析方法](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-address-illegal-way)。
@@ -1287,14 +1296,14 @@ CPU的MMU（Memory Management Unit）在进行地址转换时，会检查页表�
 
  
 问题分析的步骤如下：
- 1. **确认类型：**首先确认崩溃信号是否为SIGSEGV，且si_code是否为SEGV_ACCERR，这直接指明了问题的性质。重点关注**访问出错的地址**（fault addr）和**导致崩溃的代码位置**（backtrace)，这是定位问题的物理出发点。
+ 1. **确认类型：**首先确认崩溃信号是否为SIGSEGV，且si_code是否为SEGV_ACCERR，这直接指明了问题的性质。重点关注**访问出错的地址**（fault addr）和**导致崩溃的代码位置**（backtrace），这是定位问题的物理出发点。
 2. **调用栈分析：**找到异常内存访问的调用栈，根据栈帧崩溃文件名，转到业务代码栈帧去查看崩溃的函数。
-3. **代码分析：**通过[llvm-addr2line](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)工具，结合调用栈文件和地址偏移，找到到具体业务代码行。根据代码上下文，分析其中可能存在的逻辑问题，从崩溃点出发逆向分析数据从何而来，是否涉及mmap映射，对应的文件是否存在并发修改，如果是硬件问题，是否有系统日志支持。
+3. **代码分析：**参考[C++堆栈解析流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)，使用llvm-addr2line工具结合调用栈文件和地址偏移，找到具体业务代码行。根据代码上下文，分析其中可能存在的逻辑问题，从崩溃点出发逆向分析数据从何而来，是否涉及mmap映射，对应的文件是否存在并发修改，如果是硬件问题，是否有系统日志支持。
 4. **更多日志：**结合崩溃日志文件中的其他信息，以及hilog日志，还原更多故障现场信息，进行定位。
  
  
 
-#### 关键字
+### 关键字
 
 关注CppCrash故障日志中是否有如下关键字。
  
@@ -1303,13 +1312,13 @@ CPU的MMU（Memory Management Unit）在进行地址转换时，会检查页表�
  
  
 
-#### 案例分析
+### 案例分析
 
-**案例一：修改字符串字面量**
+**案例一：修改字符串导致崩溃**
  
 **问题现象**
  
-触发业务代码调用后，应用触发退出，并生成崩溃文件。
+触发业务代码执行字符串修改后，应用触发退出，并生成崩溃文件。
  
 **问题分析**
  1. 查看崩溃文件内容。
@@ -1381,7 +1390,7 @@ pstate:0000000080001000 esr:000000009200004f
 ```text
 Fault thread info:
 Tid:8180, Name:ppcrashanalysis
-#00 pc 0000000000012c34 /data/storage/el1/bundle/libs/arm64/libentry.so(AccessString(napi_env__*, napi_callback_info__*)+56)(bd43f4c571612e25c0819eb45ff336341094211d)  --> 业务栈帧，访问出错位置
+#00 pc 0000000000012c34 /data/storage/el1/bundle/libs/arm64/libentry.so(AccessString(napi_env__*, napi_callback_info__*)+56)(bd43f4c571612e25c0819eb45ff336341094211d)<span style="color: rgb(255,0,0);">  --</span><span style="color: rgb(255,0,0);">></span><span style="color: rgb(255,0,0);"> 业务栈帧，访问出错位置</span>
 #01 pc 0000000000060430 /system/lib64/platformsdk/libace_napi.z.so(panda::JSValueRef ArkNativeFunctionCallBack<true>(panda::JsiRuntimeCallInfo*)+240)(b4e45f188949f6fb66e496b653c33e6c)
 #02 pc 0000000000e179f4 /system/lib64/module/arkcompiler/stub.an(RTStub_PushCallArgsAndDispatchNative+40)
 #03 pc 0000000000582bf0 /system/lib64/module/arkcompiler/stub.an(BCStub_HandleCallthis0withnameImm8Id16V8StwCopy+396)
@@ -1390,7 +1399,7 @@ Tid:8180, Name:ppcrashanalysis
  说明2：通常认为标准库、系统so较为稳定，因此优先分析崩溃栈帧中的业务部分调用栈。
 3. 找到上下文。
 
-  使用[llvm-addr2line](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)工具定位行号。
+  参考[C++堆栈解析流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)使用llvm-addr2line工具定位行号。
 
   通常用法为llvm-addr2line -Cfie libentry.so 0000005a34709a6a，即可定位到行号，so为带符号版本。
 
@@ -1437,11 +1446,11 @@ napi_value AccessStringFixed(napi_env env, napi_callback_info info)
  
 
  
-**案例二：写只读内存**
+**案例二：写只读内存触发崩溃**
  
 **问题现象**
  
-触发业务代码调用后，应用触发退出，并生成崩溃文件。
+触发业务代码对只读内存执行写操作，应用触发退出，并生成崩溃文件。
  
 **问题分析**
  1. 查看崩溃文件内容。
@@ -1504,7 +1513,7 @@ x28:0000000000000000 x29:0000007e7cdb9370
 lr:0000005a344d2f94 sp:0000007e7cdb9330 pc:0000005a344d2fd8
 pstate:0000000000001000 esr:0000000092000047
 ```
- 说明1：如上故障日志Reason字段，可以看到崩溃类型为 Signal:SIGSEGV(SEGV_ACCERR)@0x0000005a027f8000。后面便为访问出错的地址。
+ 说明1：如上故障日志Reason字段，可以看到崩溃类型为Signal:SIGSEGV(SEGV_ACCERR)@0x0000005a027f8000。后面便为访问出错的地址。
 2. 分析崩溃栈。
 
   证据2：
@@ -1513,7 +1522,7 @@ pstate:0000000000001000 esr:0000000092000047
 ```text
 Fault thread info:
 Tid:16461, Name:ppcrashanalysis
-#00 pc 0000000000012fd8 /data/storage/el1/bundle/libs/arm64/libentry.so(WriteReadableMem(napi_env__*, napi_callback_info__*)+164)(84331389b629ef559552827ec6e4be2ede74e6b7)  --> 业务栈帧，访问出错位置
+#00 pc 0000000000012fd8 /data/storage/el1/bundle/libs/arm64/libentry.so(WriteReadableMem(napi_env__*, napi_callback_info__*)+164)(84331389b629ef559552827ec6e4be2ede74e6b7)<span style="color: rgb(255,0,0);">  --</span><span style="color: rgb(255,0,0);">></span><span style="color: rgb(255,0,0);"> 业务栈帧，访问出错位置</span>
 #01 pc 0000000000060430 /system/lib64/platformsdk/libace_napi.z.so(panda::JSValueRef ArkNativeFunctionCallBack<true>(panda::JsiRuntimeCallInfo*)+240)(b4e45f188949f6fb66e496b653c33e6c)
 #02 pc 0000000000e179f4 /system/lib64/module/arkcompiler/stub.an(RTStub_PushCallArgsAndDispatchNative+40)
 #03 pc 0000000000582bf0 /system/lib64/module/arkcompiler/stub.an(BCStub_HandleCallthis0withnameImm8Id16V8StwCopy+396)
@@ -1522,7 +1531,7 @@ Tid:16461, Name:ppcrashanalysis
  说明2：通常认为标准库、系统so较为稳定，因此优先分析崩溃栈帧中的业务部分调用栈。
 3. 找到上下文。
 
-  使用[llvm-addr2line](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)工具定位行号，通常用法为llvm-addr2line -Cfie libentry.so 0000005a027f8000，即可定位到行号，so为带符号版本。
+  参考[C++堆栈解析流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)使用llvm-addr2line工具定位行号，通常用法为llvm-addr2line -Cfie libentry.so 0000005a027f8000，即可定位到行号，so为带符号版本。
 
   证据3：从上往下跳过C库的调用栈，找到内存访问出错的调用栈，对应#00层调用栈。
 
@@ -1549,7 +1558,7 @@ napi_value WriteReadableMem(napi_env env, napi_callback_info info)
 }
 ```
  说明3：此处可以直接定位到具体访问的变量，排查该变量的地址是否合法。
-4. 排查访问地址的内存段创建时是否为可读。内存地址段底层均通过mmap函数创建，通过mmap函数调用传入的参数是否为 PROT_READ来判断。
+4. 排查访问地址的内存段创建时是否为可读。内存地址段底层均通过mmap函数创建，通过mmap函数调用传入的参数是否为PROT_READ来判断。
  
 **问题结论与总结**
  
@@ -1586,7 +1595,7 @@ napi_value WriteReadableMemFixed(napi_env env, napi_callback_info info)
  
 
  
-**案例三：执行不可执行内存**
+**案例三：执行不可执行内存触发崩溃**
  
 **问题现象**
  
@@ -1664,8 +1673,8 @@ pstate:0000000060001800 esr:000000008200000f
 ```text
 Fault thread info:
 Tid:28938, Name:ppcrashanalysis
-#00 pc 0000000002900000 [anon:native_heap:jemalloc]    --> pc执行跑到了堆上
-#01 pc 00000000000132ec /data/storage/el1/bundle/libs/arm64/libentry.so(RunWithJIT(napi_env__*, napi_callback_info__*)+96)(d10b3e3abc53f4af305eb776f0172e7876cc4aab)   --> 业务栈帧，访问出错位置
+#00 pc 0000000002900000 [anon:native_heap:jemalloc]<span style="color: rgb(255,0,0);">    --</span><span style="color: rgb(255,0,0);">></span><span style="color: rgb(255,0,0);"> pc执行跑到了堆上</span>
+#01 pc 00000000000132ec /data/storage/el1/bundle/libs/arm64/libentry.so(RunWithJIT(napi_env__*, napi_callback_info__*)+96)(d10b3e3abc53f4af305eb776f0172e7876cc4aab)<span style="color: rgb(255,0,0);">   --</span><span style="color: rgb(255,0,0);">></span><span style="color: rgb(255,0,0);"> 业务栈帧，访问出错位置</span>
 #02 pc 0000000000060430 /system/lib64/platformsdk/libace_napi.z.so(panda::JSValueRef ArkNativeFunctionCallBack<true>(panda::JsiRuntimeCallInfo*)+240)(b4e45f188949f6fb66e496b653c33e6c)
 #03 pc 0000000000e179f4 /system/lib64/module/arkcompiler/stub.an(RTStub_PushCallArgsAndDispatchNative+40)
 #04 pc 0000000000582bf0 /system/lib64/module/arkcompiler/stub.an(BCStub_HandleCallthis0withnameImm8Id16V8StwCopy+396)
@@ -1674,7 +1683,7 @@ Tid:28938, Name:ppcrashanalysis
  说明2：通常认为标准库、系统so较为稳定，因此优先分析崩溃栈帧中的业务部分调用栈。
 3. 找到上下文。
 
-  使用[llvm-addr2line](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)工具定位行号，通常用法为llvm-addr2line -Cfie libentry.so 0x0000005a21d9a000，即可定位到行号，so为带符号版本。
+  参考[C++堆栈解析流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)使用llvm-addr2line工具定位行号，通常用法为llvm-addr2line -Cfie libentry.so 0x0000005a21d9a000，即可定位到行号，so为带符号版本。
 
   证据3：从上往下跳过C库的调用栈，找到内存访问出错的调用栈，对应#01层调用栈。
 
@@ -1722,11 +1731,11 @@ void* mem = mmap(NULL, 4096, PROT_READ| PROT_WRITE | PROT_EXEC, MAP_PRIVATE | MA
  
 
  
-**案例四：mprotect保护页访问**
+**案例四：mprotect保护页访问触发崩溃**
  
 **问题现象**
  
-触发业务代码调用后，应用触发退出，并生成崩溃文件。
+触发业务代码访问被mprotect保护的内存页，应用触发退出，并生成崩溃文件。
  
 **问题分析**
  1. 查看崩溃文件内容。
@@ -1789,7 +1798,7 @@ x28:0000000000000000 x29:0000007e7cdb9370
 lr:0000005a344134b4 sp:0000007e7cdb9330 pc:0000005a344134bc
 pstate:0000000000001000 esr:0000000092000047
 ```
- 说明1：如上故障日志Reason字段，可以看到崩溃类型为 Signal:SIGSEGV(SEGV_ACCERR)@0x0000005a027f8000 。后面便为访问出错的地址。
+ 说明1：如上故障日志Reason字段，可以看到崩溃类型为Signal:SIGSEGV(SEGV_ACCERR)@0x0000005a027f8000 。后面便为访问出错的地址。
 2. 分析崩溃栈。
 
   证据2：
@@ -1798,7 +1807,7 @@ pstate:0000000000001000 esr:0000000092000047
 ```text
 Fault thread info:
 Tid:35302, Name:ppcrashanalysis
-#00 pc 00000000000134bc /data/storage/el1/bundle/libs/arm64/libentry.so(AccessProtectedPage(napi_env__*, napi_callback_info__*)+96)(9428eb29b7186a058870d949e1dc991ef96f4d75)  --> 业务栈帧，访问出错位置
+#00 pc 00000000000134bc /data/storage/el1/bundle/libs/arm64/libentry.so(AccessProtectedPage(napi_env__*, napi_callback_info__*)+96)(9428eb29b7186a058870d949e1dc991ef96f4d75)<span style="color: rgb(255,0,0);">  --</span><span style="color: rgb(255,0,0);">></span><span style="color: rgb(255,0,0);"> 业务栈帧，访问出错位置</span>
 #01 pc 0000000000060430 /system/lib64/platformsdk/libace_napi.z.so(panda::JSValueRef ArkNativeFunctionCallBack<true>(panda::JsiRuntimeCallInfo*)+240)(b4e45f188949f6fb66e496b653c33e6c)
 #02 pc 0000000000e179f4 /system/lib64/module/arkcompiler/stub.an(RTStub_PushCallArgsAndDispatchNative+40)
 #03 pc 0000000000582bf0 /system/lib64/module/arkcompiler/stub.an(BCStub_HandleCallthis0withnameImm8Id16V8StwCopy+396)
@@ -1807,7 +1816,7 @@ Tid:35302, Name:ppcrashanalysis
  说明2：通常认为标准库、系统so较为稳定，因此优先分析崩溃栈帧中的业务部分调用栈。
 3. 找到上下文。
 
-  使用[llvm-addr2line](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)工具定位行号。通常用法为llvm-addr2line -Cfie libentry.so 0x0000005a027f8000，即可定位到行号，so为带符号版本。
+  参考[C++堆栈解析流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)使用llvm-addr2line工具定位行号。通常用法为llvm-addr2line -Cfie libentry.so 0x0000005a027f8000，即可定位到行号，so为带符号版本。
 
   证据3：从上往下跳过C库的调用栈，找到内存访问出错的调用栈，对应#00层调用栈。
 
@@ -1830,7 +1839,7 @@ napi_value AccessProtectedPage(napi_env env, napi_callback_info info)
  
 **问题结论与总结**
  
-本案例为程序在通过mprotect保护指定内存段不可被读写后，显式读写该地址区间导致触发 SEGV_ACCERR 崩溃。
+本案例为程序在通过mprotect保护指定内存段不可被读写后，显式读写该地址区间导致触发SEGV_ACCERR崩溃。
  
 **修复建议**
  
@@ -1856,12 +1865,13 @@ napi_value AccessProtectedPageFixed(napi_env env, napi_callback_info info)
  
  
 
-#### 常见易错代码预防建议
+### 常见易错代码预防建议
  
+
 | 错误模式 | 预防措施 |
 | 修改字符串字面量 | 1. 用const char *明确指针只读意图；2. 需要可写字符串时用char[]或std::string；3. 启用编译器警告-Wwrite-strings。 |
 | mmap权限不足 | 1. 封装mmap调用，权限参数与实际操作严格匹配；2. 对映射进行写操作前，检查并确保PROT_WRITE已设置 |
-| 执行不可执行内存 | 1. 绝不将数据指针强转为函数指针并调用；2. 必须动态生成代码时，使用mmap + PROT_EXEC并遵守“写时无执行，执行时无写”原则；3. 开启-fno-allow-store-data-races等安全编译选项。 |
+| 执行不可执行内存 | 1. 绝不将数据指针强转为函数指针并调用；2. 必须动态生成代码时，使用mmap和PROT_EXEC并遵守“写时无执行，执行时无写”原则；3. 开启-fno-allow-store-data-races等安全编译选项。 |
 | 写时复制/只读映射写 | 1. 在mmap文件时，若打算修改内容，必须映射为MAP_PRIVATE \| PROT_WRITE；2. 使用MAP_SHARED时确保文件可写。 |
-| 内存被 mprotect 保护 | 1. 使用自定义内存分配器时，文档明确页面状态；2. 不要随意将页面权限设为PROT_NONE后仍持有指针；3. 使用静态分析或运行时检查。 |
-| 通用编码建议 | 1. 开启-Wall -Wextra -Werror；2. 使用 HWAsan定期检测；3. 代码检视重点关注指针强转和内存权限；4. 模块涉及裸内存操作时，用断言 (assert) 检查边界和权限（如检测地址是否在可写段内）；5. 对于复杂内存布局，使用mprotect设置“守护页”捕获越界（然后正确处理信号）。 |
+| 内存被mprotect保护 | 1. 使用自定义内存分配器时，文档明确页面状态；2. 不要随意将页面权限设为PROT_NONE后仍持有指针；3. 使用静态分析或运行时检查。 |
+| 通用编码建议 | 1. 开启-Wall -Wextra -Werror；2. 使用 HWASan定期检测；3. 代码检视重点关注指针强转和内存权限；4. 模块涉及裸内存操作时，用断言 (assert) 检查边界和权限（如检测地址是否在可写段内）；5. 对于复杂内存布局，使用mprotect设置“守护页”捕获越界（然后正确处理信号）。 |

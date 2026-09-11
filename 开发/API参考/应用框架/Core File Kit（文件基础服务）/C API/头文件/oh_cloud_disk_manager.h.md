@@ -1,11 +1,12 @@
 # oh_cloud_disk_manager.h
 
-更新时间：2026-03-09 02:50:43
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-cloud-disk-manager-h
 **支持设备：** PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
 
 **支持设备：** PC/2in1 | Tablet
 
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** PC/2in1 | Tablet
 
   
 
-#### 结构体
+### 结构体
+
 
 **支持设备：** PC/2in1 | Tablet
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | CloudDisk_PathInfo | CloudDisk_PathInfo/CloudDisk_FileIdInfo/CloudDisk_SyncFolderPath | CloudDisk_PathInfo：文件路径信息。 CloudDisk_FileIdInfo：定义的文件ID。 CloudDisk_SyncFolderPath：定义的同步根路径。 |
@@ -47,10 +51,12 @@
  
   
 
-#### 枚举
+### 枚举
+
 
 **支持设备：** PC/2in1 | Tablet
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | CloudDisk_SyncState | CloudDisk_SyncState | 文件同步状态的枚举值。 |
@@ -61,10 +67,12 @@
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | CloudDisk_ErrorCode OH_CloudDisk_RegisterSyncFolderChanges(const CloudDisk_SyncFolderPath syncFolderPath, void (*callback)(const CloudDisk_SyncFolderPath syncFolderPath, const CloudDisk_ChangeData changeDatas[], size_t bufferLength)) | 应用注册一个回调函数，用于获取同步根路径下文件的变更。 |
@@ -82,13 +90,15 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
+
 
 **支持设备：** PC/2in1 | Tablet
 
   
 
-#### CloudDisk_SyncState
+### CloudDisk_SyncState
+
 
 **支持设备：** PC/2in1 | Tablet
 
@@ -102,6 +112,7 @@ enum CloudDisk_SyncState
  
 **起始版本：** 21
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | IDLE = 0 | 目前处于空闲状态，未执行任何同步操作。 |
@@ -114,7 +125,8 @@ enum CloudDisk_SyncState
  
   
 
-#### CloudDisk_OperationType
+### CloudDisk_OperationType
+
 
 **支持设备：** PC/2in1 | Tablet
 
@@ -128,6 +140,7 @@ enum CloudDisk_OperationType
  
 **起始版本：** 21
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | CREATE = 0 | 创建文件或目录。 |
@@ -140,7 +153,8 @@ enum CloudDisk_OperationType
  
   
 
-#### CloudDisk_ErrorReason
+### CloudDisk_ErrorReason
+
 
 **支持设备：** PC/2in1 | Tablet
 
@@ -154,6 +168,7 @@ enum CloudDisk_ErrorReason
  
 **起始版本：** 21
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | INVALID_ARGUMENT = 0 | 输入的参数无效。 |
@@ -165,7 +180,8 @@ enum CloudDisk_ErrorReason
  
   
 
-#### CloudDisk_SyncFolderState
+### CloudDisk_SyncFolderState
+
 
 **支持设备：** PC/2in1 | Tablet
 
@@ -179,6 +195,7 @@ enum CloudDisk_SyncFolderState
  
 **起始版本：** 21
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | INACTIVE = 0 | 表示同步根路径的状态是未激活的。 |
@@ -187,13 +204,15 @@ enum CloudDisk_SyncFolderState
  
   
 
-#### 函数说明
+## 函数说明
+
 
 **支持设备：** PC/2in1 | Tablet
 
   
 
-#### OH_CloudDisk_RegisterSyncFolderChanges()
+### OH_CloudDisk_RegisterSyncFolderChanges()
+
 
 **支持设备：** PC/2in1 | Tablet
 
@@ -209,6 +228,7 @@ CloudDisk_ErrorCode OH_CloudDisk_RegisterSyncFolderChanges(const CloudDisk_SyncF
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const CloudDisk_SyncFolderPath syncFolderPath | 表示同步根路径，参考：CloudDisk_PathInfo。 |
@@ -217,6 +237,7 @@ CloudDisk_ErrorCode OH_CloudDisk_RegisterSyncFolderChanges(const CloudDisk_SyncF
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | CloudDisk_ErrorCode | 如果接口调用成功，返回CLOUD_DISK_OK；否则返回云盘管理模块的错误码CloudDisk_ErrorCode。 |
@@ -224,7 +245,8 @@ CloudDisk_ErrorCode OH_CloudDisk_RegisterSyncFolderChanges(const CloudDisk_SyncF
  
   
 
-#### OH_CloudDisk_UnregisterSyncFolderChanges()
+### OH_CloudDisk_UnregisterSyncFolderChanges()
+
 
 **支持设备：** PC/2in1 | Tablet
 
@@ -240,6 +262,7 @@ CloudDisk_ErrorCode OH_CloudDisk_UnregisterSyncFolderChanges(const CloudDisk_Syn
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const CloudDisk_SyncFolderPath syncFolderPath | 表示同步根路径，参考：CloudDisk_PathInfo。 |
@@ -247,6 +270,7 @@ CloudDisk_ErrorCode OH_CloudDisk_UnregisterSyncFolderChanges(const CloudDisk_Syn
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | CloudDisk_ErrorCode | 如果接口调用成功，返回CLOUD_DISK_OK；否则返回云盘管理模块的错误码CloudDisk_ErrorCode。 |
@@ -254,7 +278,8 @@ CloudDisk_ErrorCode OH_CloudDisk_UnregisterSyncFolderChanges(const CloudDisk_Syn
  
   
 
-#### OH_CloudDisk_GetSyncFolderChanges()
+### OH_CloudDisk_GetSyncFolderChanges()
+
 
 **支持设备：** PC/2in1 | Tablet
 
@@ -270,6 +295,7 @@ CloudDisk_ErrorCode OH_CloudDisk_GetSyncFolderChanges(const CloudDisk_SyncFolder
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const CloudDisk_SyncFolderPath syncFolderPath | 查询的同步根路径，参考：CloudDisk_PathInfo。 |
@@ -280,6 +306,7 @@ CloudDisk_ErrorCode OH_CloudDisk_GetSyncFolderChanges(const CloudDisk_SyncFolder
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | CloudDisk_ErrorCode | 如果接口调用成功，返回CLOUD_DISK_OK；否则返回云盘管理模块的错误码CloudDisk_ErrorCode。 |
@@ -287,7 +314,8 @@ CloudDisk_ErrorCode OH_CloudDisk_GetSyncFolderChanges(const CloudDisk_SyncFolder
  
   
 
-#### OH_CloudDisk_SetFileSyncStates()
+### OH_CloudDisk_SetFileSyncStates()
+
 
 **支持设备：** PC/2in1 | Tablet
 
@@ -303,6 +331,7 @@ CloudDisk_ErrorCode OH_CloudDisk_SetFileSyncStates(const CloudDisk_SyncFolderPat
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const CloudDisk_SyncFolderPath syncFolderPath | 待设置的同步根路径，参考：CloudDisk_PathInfo。 |
@@ -314,6 +343,7 @@ CloudDisk_ErrorCode OH_CloudDisk_SetFileSyncStates(const CloudDisk_SyncFolderPat
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | CloudDisk_ErrorCode | 如果接口调用成功，返回CLOUD_DISK_OK；否则返回云盘管理模块的错误码CloudDisk_ErrorCode。 |
@@ -321,7 +351,8 @@ CloudDisk_ErrorCode OH_CloudDisk_SetFileSyncStates(const CloudDisk_SyncFolderPat
  
   
 
-#### OH_CloudDisk_GetFileSyncStates()
+### OH_CloudDisk_GetFileSyncStates()
+
 
 **支持设备：** PC/2in1 | Tablet
 
@@ -337,6 +368,7 @@ CloudDisk_ErrorCode OH_CloudDisk_GetFileSyncStates(const CloudDisk_SyncFolderPat
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const CloudDisk_SyncFolderPath syncFolderPath | 待查询的同步根路径，参考：CloudDisk_PathInfo。 |
@@ -348,6 +380,7 @@ CloudDisk_ErrorCode OH_CloudDisk_GetFileSyncStates(const CloudDisk_SyncFolderPat
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | CloudDisk_ErrorCode | 如果接口调用成功，返回CLOUD_DISK_OK；否则返回云盘管理模块的错误码CloudDisk_ErrorCode。 |
@@ -355,7 +388,8 @@ CloudDisk_ErrorCode OH_CloudDisk_GetFileSyncStates(const CloudDisk_SyncFolderPat
  
   
 
-#### OH_CloudDisk_RegisterSyncFolder()
+### OH_CloudDisk_RegisterSyncFolder()
+
 
 **支持设备：** PC/2in1 | Tablet
 
@@ -371,6 +405,7 @@ CloudDisk_ErrorCode OH_CloudDisk_RegisterSyncFolder(const CloudDisk_SyncFolder *
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const CloudDisk_SyncFolder *syncFolder | 待注册的同步根路径，参考：CloudDisk_SyncFolder。 |
@@ -378,6 +413,7 @@ CloudDisk_ErrorCode OH_CloudDisk_RegisterSyncFolder(const CloudDisk_SyncFolder *
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | CloudDisk_ErrorCode | 如果接口调用成功，返回CLOUD_DISK_OK；否则返回云盘管理模块的错误码CloudDisk_ErrorCode。 |
@@ -385,7 +421,8 @@ CloudDisk_ErrorCode OH_CloudDisk_RegisterSyncFolder(const CloudDisk_SyncFolder *
  
   
 
-#### OH_CloudDisk_UnregisterSyncFolder()
+### OH_CloudDisk_UnregisterSyncFolder()
+
 
 **支持设备：** PC/2in1 | Tablet
 
@@ -401,6 +438,7 @@ CloudDisk_ErrorCode OH_CloudDisk_UnregisterSyncFolder(const CloudDisk_SyncFolder
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const CloudDisk_SyncFolderPath syncFolderPath | 需要取消注册的同步根路径，参考：CloudDisk_PathInfo。 |
@@ -408,6 +446,7 @@ CloudDisk_ErrorCode OH_CloudDisk_UnregisterSyncFolder(const CloudDisk_SyncFolder
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | CloudDisk_ErrorCode | 如果接口调用成功，返回CLOUD_DISK_OK；否则返回云盘管理模块的错误码CloudDisk_ErrorCode。 |
@@ -415,7 +454,8 @@ CloudDisk_ErrorCode OH_CloudDisk_UnregisterSyncFolder(const CloudDisk_SyncFolder
  
   
 
-#### OH_CloudDisk_ActiveSyncFolder()
+### OH_CloudDisk_ActiveSyncFolder()
+
 
 **支持设备：** PC/2in1 | Tablet
 
@@ -431,6 +471,7 @@ CloudDisk_ErrorCode OH_CloudDisk_ActiveSyncFolder(const CloudDisk_SyncFolderPath
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const CloudDisk_SyncFolderPath syncFolderPath | 需要激活监听的同步根路径，参考：CloudDisk_PathInfo。 |
@@ -438,6 +479,7 @@ CloudDisk_ErrorCode OH_CloudDisk_ActiveSyncFolder(const CloudDisk_SyncFolderPath
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | CloudDisk_ErrorCode | 如果接口调用成功，返回CLOUD_DISK_OK；否则返回云盘管理模块的错误码CloudDisk_ErrorCode。 |
@@ -445,7 +487,8 @@ CloudDisk_ErrorCode OH_CloudDisk_ActiveSyncFolder(const CloudDisk_SyncFolderPath
  
   
 
-#### OH_CloudDisk_DeactiveSyncFolder()
+### OH_CloudDisk_DeactiveSyncFolder()
+
 
 **支持设备：** PC/2in1 | Tablet
 
@@ -461,6 +504,7 @@ CloudDisk_ErrorCode OH_CloudDisk_DeactiveSyncFolder(const CloudDisk_SyncFolderPa
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const CloudDisk_SyncFolderPath syncFolderPath | 取消激活监听的同步根路径，参考：CloudDisk_PathInfo。 |
@@ -468,6 +512,7 @@ CloudDisk_ErrorCode OH_CloudDisk_DeactiveSyncFolder(const CloudDisk_SyncFolderPa
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | CloudDisk_ErrorCode | 如果接口调用成功，返回CLOUD_DISK_OK；否则返回云盘管理模块的错误码CloudDisk_ErrorCode。 |
@@ -475,7 +520,8 @@ CloudDisk_ErrorCode OH_CloudDisk_DeactiveSyncFolder(const CloudDisk_SyncFolderPa
  
   
 
-#### OH_CloudDisk_GetSyncFolders()
+### OH_CloudDisk_GetSyncFolders()
+
 
 **支持设备：** PC/2in1 | Tablet
 
@@ -491,6 +537,7 @@ CloudDisk_ErrorCode OH_CloudDisk_GetSyncFolders(CloudDisk_SyncFolder **syncFolde
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | CloudDisk_SyncFolder **syncFolders | 输出参数。返回同步根路径数组CloudDisk_SyncFolder。 |
@@ -499,6 +546,7 @@ CloudDisk_ErrorCode OH_CloudDisk_GetSyncFolders(CloudDisk_SyncFolder **syncFolde
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | CloudDisk_ErrorCode | 如果接口调用成功，返回CLOUD_DISK_OK；否则返回云盘管理模块的错误码CloudDisk_ErrorCode。 |
@@ -506,7 +554,8 @@ CloudDisk_ErrorCode OH_CloudDisk_GetSyncFolders(CloudDisk_SyncFolder **syncFolde
  
   
 
-#### OH_CloudDisk_UpdateCustomAlias()
+### OH_CloudDisk_UpdateCustomAlias()
+
 
 **支持设备：** PC/2in1 | Tablet
 
@@ -522,6 +571,7 @@ CloudDisk_ErrorCode OH_CloudDisk_UpdateCustomAlias(const CloudDisk_SyncFolderPat
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const CloudDisk_SyncFolderPath syncFolderPath | 待更新别名的同步根路径，参考：CloudDisk_PathInfo。 |
@@ -531,6 +581,7 @@ CloudDisk_ErrorCode OH_CloudDisk_UpdateCustomAlias(const CloudDisk_SyncFolderPat
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | CloudDisk_ErrorCode | 如果接口调用成功，返回CLOUD_DISK_OK；否则返回云盘管理模块的错误码CloudDisk_ErrorCode。 |

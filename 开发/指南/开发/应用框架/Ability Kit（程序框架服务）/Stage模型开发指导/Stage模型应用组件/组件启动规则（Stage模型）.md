@@ -1,6 +1,6 @@
 # 组件启动规则
 
-更新时间：2026-06-12 06:54:11
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-startup-rules
 
@@ -11,12 +11,12 @@
 
 
 
-#### 组件启动总体规则
+## 组件启动总体规则
 
 为了保证用户具有更好的使用体验，对以下几种易影响用户体验与系统安全的行为做了限制：
 
  - 后台应用任意弹框，如各种广告弹窗，影响用户使用。
- - 后台应用相互唤醒，不合理的占用系统资源，导致系统功耗增加或系统卡顿。
+ - 后台应用相互唤醒，不合理地占用系统资源，导致系统功耗增加或系统卡顿。
  - 前台应用任意跳转至其他应用，如随意跳转到其他应用的支付页面，存在安全风险。
 
 
@@ -38,13 +38,13 @@
 
 
 
-#### 同设备组件启动规则
+## 同设备组件启动规则
 
 设备内启动组件，不同场景下的规则不同，可分为如下三种场景：
 
  - 启动UIAbility。
  - 启动ServiceExtensionAbility、DataShareExtensionAbility。
- - 通过[startAbilityByCall](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext#startabilitybycall)接口启动UIAbility。
+ - 通过[startAbilityByCall()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext#startabilitybycall)接口启动UIAbility。
 
 
 > [!NOTE]
@@ -52,18 +52,18 @@
 
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/flM9J137RTuHnin6GvUAcQ/zh-cn_image_0000002656347343.png?HW-CC-KV=V1&HW-CC-Date=20260624T020724Z&HW-CC-Expire=86400&HW-CC-Sign=106FB651B5EE4F34260DB10390BBD8CBE8F4778C93DB5CE5526532A52385ABC8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/dhPIrc-KR7u9Uk7vK9QVfQ/zh-cn_image_0000002717609888.png?HW-CC-KV=V1&HW-CC-Date=20260911T072718Z&HW-CC-Expire=86400&HW-CC-Sign=EFA56137D9D5FD795D35D085E715A9465CDD70162F14CE6AD8E3950966C2D908)
 
 
 
 
-#### 分布式跨设备组件启动规则
+## 分布式跨设备组件启动规则
 
 跨设备启动组件，不同场景下的规则不同，可分为如下三种场景：
 
  - 启动UIAbility。
  - 启动ServiceExtensionAbility、DataShareExtensionAbility。
- - 通过[startAbilityByCall](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext#startabilitybycall)接口启动UIAbility。
+ - 通过[startAbilityByCall()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext#startabilitybycall)接口启动UIAbility。
 
 
 > [!NOTE]
@@ -71,4 +71,4 @@
 
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/6_rPxUoDQTSC7V1ilhRfVA/zh-cn_image_0000002626227928.png?HW-CC-KV=V1&HW-CC-Date=20260624T020724Z&HW-CC-Expire=86400&HW-CC-Sign=692A15D646FB41DCCC7A4467EBDAF9F743CA85A77DE5C630A104D8A08A3A861B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/NRNJztmFSwuSctY85JBLcA/zh-cn_image_0000002747289839.png?HW-CC-KV=V1&HW-CC-Date=20260911T072718Z&HW-CC-Expire=86400&HW-CC-Sign=6765E22BB8C447430A4E96F34AAF7F00A77C165A015E5D7060248724D3D0058B)

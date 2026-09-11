@@ -86,7 +86,7 @@ struct AnimateToExample {
   };
 
   playLrc() {
-    // 使用关键帧动画
+ <em>   // 使用关键帧动画</em>
     this.uiContext?.keyframeAnimateTo({
       iterations: 1,
       onFinish: () => {
@@ -96,7 +96,7 @@ struct AnimateToExample {
       }
     }, [
       {
-        // 第一段关键帧动画
+      <em>  // 第一段关键帧动画</em>
         duration: 800,
         event: () => {
           this.widthSize = 300;
@@ -104,7 +104,7 @@ struct AnimateToExample {
           this.changeNum++;
         }
       },
-      // 第二段关键帧动画
+   <em>   // 第二段关键帧动画</em>
       {
         duration: 500,
         event: () => {

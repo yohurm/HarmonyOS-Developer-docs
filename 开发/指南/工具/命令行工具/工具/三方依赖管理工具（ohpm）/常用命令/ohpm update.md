@@ -1,13 +1,13 @@
 # ohpm update
 
-更新时间：2026-07-28 12:07:32
+更新时间：2026-08-29 09:41:34
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-update
 
 更新三方库。
  
 
-#### 命令格式
+## 命令格式
 
 ```text
 ohpm update [options] [[<@group>/]<pkg>] ...
@@ -20,28 +20,30 @@ alias: up
  
  
 
-#### 功能描述
+## 功能描述
 
 根据三方库及其依赖版本号的 [semver](https://semver.org/) 规范，将本地安装的三方库更新到最新版本。若未指定三方库名称，则全量更新当前工程的依赖，且会安装缺少的三方库。
  
  
 
-#### Options
+## Options
 
  
 
-#### install_all
+### install_all
 
 - 默认值：true
 - 类型：Boolean
 - 别名：all
 
  
-您可以在 update 命令后面配置 --all或者--install_all 参数，表示更新当前模块指定依赖成功后同时安装当前工程下的所有模块的依赖。
+您可以在 update 命令后面配置 --all或者--install_all参数，表示更新当前模块指定依赖成功后同时安装当前工程下的所有模块的依赖。
+ 
+从ohpm 26.0.0.630版本开始，如无需安装，可配置--no-install_all参数。
  
  
 
-#### prefix
+### prefix
 
 - 默认值：""
 - 类型：string
@@ -51,7 +53,7 @@ alias: up
  
  
 
-#### fetch_timeout
+### fetch_timeout
 
 - 默认值：60000
 - 类型：Number
@@ -62,7 +64,7 @@ alias: up
  
  
 
-#### max_concurrent
+### max_concurrent
 
 - 默认值：50
 - 类型：Number
@@ -73,7 +75,7 @@ alias: up
  
  
 
-#### retry_times
+### retry_times
 
 - 默认值：1
 - 类型：Number
@@ -84,7 +86,7 @@ alias: up
  
  
 
-#### retry_interval
+### retry_interval
 
 - 默认值：1000
 - 类型：Number
@@ -95,17 +97,19 @@ alias: up
  
  
 
-#### strict_ssl
+### strict_ssl
 
 - 默认值：true
 - 类型：Boolean
 
  
-可以在 update 命令后面配置 --strict_ssl true 参数，校验 https 证书；配置 --strict_ssl false 参数，不校验 https 证书。
+可以在update命令后面不配置参数、配置--strict_ssl或--strict_ssl true参数时，开启校验HTTPS证书。
+ 
+从ohpm 26.0.0.630版本开始，如需关闭校验，可配置--no-strict_ssl或--strict_ssl false参数，推荐使用--no-strict_ssl参数。
  
  
 
-#### registry
+### registry
 
 - 默认值：""
 - 类型：URL
@@ -115,7 +119,7 @@ alias: up
  
  
 
-#### all-modules
+### all-modules
 
 - 默认值：false
 - 类型：Boolean
@@ -125,7 +129,7 @@ alias: up
  
  
 
-#### tag-filter
+### tag-filter
 
 - 默认值：无
 - 类型：Regex
@@ -135,17 +139,17 @@ alias: up
  
  
 
-#### experimental-concurrently-safe
+### experimental-concurrently-safe
 
 - 默认值：true
 - 类型：Boolean
 
  
-可以在 update 命令后面配置 --experimental-concurrently-safe 参数，并发安全地安装依赖。这是一个实验性选项。
+可以在 update 命令后面配置 --experimental-concurrently-safe 参数，并发安全地安装依赖。这是一个实验性选项。如无需并发地安装依赖时，配置--no-experimental-concurrently-safe 参数。
  
  
 
-#### log_level
+### log_level
 
 - 默认值：无
 - 类型：String
@@ -155,7 +159,7 @@ alias: up
  
  
 
-#### debug
+### debug
 
 - 默认值：false
 - 类型：Boolean
@@ -165,7 +169,7 @@ alias: up
  
  
 
-#### lockfile_stable_order
+### lockfile_stable_order
 
 - 默认值：false
 - 类型：Boolean
@@ -175,7 +179,7 @@ alias: up
  
  
 
-#### odm_r2_project_root
+### odm_r2_project_root
 
 - 默认值：false
 - 类型：Boolean
@@ -185,7 +189,7 @@ alias: up
  
  
 
-#### resolve_conflict_strict
+### resolve_conflict_strict
 
 - 默认值：false
 - 类型：Boolean
@@ -195,17 +199,19 @@ alias: up
  
  
 
-#### resolve_conflict
+### resolve_conflict
 
 - 默认值：true
 - 类型：Boolean
 
  
-从ohpm 6.0.2.636版本开始，可以在 update 命令后面配置 --resolve_conflict 参数，ohpm会自动处理依赖版本冲突，详情参见[resolve_conflict](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpmrc#section368717475562)。
+从ohpm 6.0.2.636版本开始，可以在update命令后面配置--resolve_conflict参数，ohpm会自动处理依赖版本冲突，详情参见[resolve_conflict](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpmrc#section368717475562)。
+ 
+从ohpm 26.0.0.630版本开始，如无需自动处理时，配置--no-resolve_conflict参数。
  
  
 
-#### cache
+### cache
 
 - 默认值：无
 - 类型：string
@@ -215,7 +221,7 @@ alias: up
  
  
 
-#### 示例
+## 示例
 
 若当前三方库是 APP，且它的依赖项为：dep1 ( dep2，...)，dep1 已发布的版本有：
  
@@ -238,7 +244,7 @@ alias: up
  
  
 
-#### ^ 依赖项
+### ^ 依赖项
 
 使用^符号会更新到版本 x.y.z 中 y 和 z 的最新版本。如果 APP 中 oh-package.json5 文件中 dep1 的版本号为：
  
@@ -252,7 +258,7 @@ ohpm update 则安装 dep1@1.2.2，因为最新版本指向 1.2.2，且1.2.2 满
  
  
 
-#### ~ 依赖项
+### ~ 依赖项
 
 使用~符号会更新到版本 x.y.z 中 z 的最新版本。如果 APP 中 oh-package.json5 文件中 dep1 的版本号为：
  
@@ -266,7 +272,7 @@ ohpm update 则安装 dep1@1.1.2，尽管最新版本指向 1.2.2，但 1.2.2 �
  
  
 
-#### tag 依赖项
+### tag 依赖项
 
 使用 tag 会更新到 tag 对应的版本。如果 APP 中 oh-package.json5 文件中 dep1 的版本号为：
  
@@ -280,7 +286,7 @@ ohpm update 则安装 dep1@1.1.2，尽管最新版本指向 1.2.2，但 1.2.2 �
  
  
 
-#### 低于 1.0.0 版本的 ^ 依赖项
+### 低于 1.0.0 版本的 ^ 依赖项
 
 - 如果 APP 中 dep1 依赖版本号低于 1.0.0 且带有 ^，例如：
 

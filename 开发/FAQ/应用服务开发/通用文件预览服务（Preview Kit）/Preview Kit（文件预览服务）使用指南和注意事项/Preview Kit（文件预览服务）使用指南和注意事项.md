@@ -34,20 +34,20 @@ HarmonyOS提供了[Preview Kit（文件预览服务）](https://developer.huawei
 previewLocalFile() {
     try {
       const filePath = `${this.context.filesDir}/sample.pdf`;
-      // 检查文件是否存在
+     <em> // 检查文件是否存在</em>
       const isExist = fs.accessSync(filePath);
       if (!isExist) {
         console.error('本地文件不存在，请确保文件已放置到应用目录');
         return;
       }
-      // 构建PreviewInfo
+      <em>// 构建PreviewInfo</em>
       let uri = fileUri.getUriFromPath(filePath);
       let fileInfo: filePreview.PreviewInfo = {
         title: 'sample.pdf',
         uri: uri,
         mimeType: 'application/pdf',
       };
-      // 打开文件预览
+     <em> // 打开文件预览</em>
       filePreview.openPreview(this.context, fileInfo).then(() => {
         console.info('Succeeded in opening preview');
       }).catch((err: BusinessError) => {
@@ -64,12 +64,12 @@ previewLocalFile() {
 ```json
 previewRawFile() {
     try {
-      // 预览rawfile文件,需要将文件复制到沙箱目录
+      <em>// 预览rawfile文件,需要将文件复制到沙箱目录</em>
       let filePath = `${this.context.filesDir}/sample.pdf`;
       const resourceMgr = this.context.resourceManager;
       resourceMgr.getRawFileContent('sample.pdf', (err, value) => {
         let myBuffer: ArrayBufferLike = value.buffer;
-        // 创建sample.pdf沙箱路径，并写入数据
+      <em>  // 创建sample.pdf沙箱路径，并写入数据</em>
         let file = fs.openSync(filePath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
         fs.writeSync(file.fd, myBuffer);
         fs.close(file);
@@ -80,7 +80,7 @@ previewRawFile() {
         uri: uri,
         mimeType: 'application/pdf',
       };
-      // 打开文件预览
+   <em>   // 打开文件预览</em>
       filePreview.openPreview(this.context, fileInfo).then(() => {
         console.info('Succeeded in opening preview');
       }).catch((err: BusinessError) => {
@@ -96,14 +96,14 @@ previewRawFile() {
 4. 网络文件预览：需要将网络文件先下载到本地，再进行本地文件预览。代码示例如下：
 ```text
 previewNetworkFile() {
-    // url需替换为实际可用的pdf url
+  <em>  // url需替换为实际可用的pdf url</em>
     const url = 'https://****.com/test.pdf';
     let filePath = `${this.context.filesDir}/sample.pdf`;
     try {
-      // 网络文件下载到本地
+     <em> // 网络文件下载到本地</em>
       let res = fs.accessSync(filePath);
       if (res) {
-        // 本地文件存在，则直接调用预览方法
+     <em>   // 本地文件存在，则直接调用预览方法</em>
         console.info('file exists and ViewFile');
         let uri = fileUri.getUriFromPath(filePath);
         let fileInfo: filePreview.PreviewInfo = {
@@ -111,19 +111,19 @@ previewNetworkFile() {
           uri: uri,
           mimeType: 'application/pdf',
         };
-        // 打开文件预览
+      <em>  // 打开文件预览</em>
         filePreview.openPreview(this.context, fileInfo).then(() => {
           console.info('Succeeded in opening preview');
         }).catch((err: BusinessError) => {
           console.error(`Failed to open preview, err.code = ${err.code}, err.message = ${err.message}`);
         });
       } else {
-        // 文件下载到本地
+    <em>    // 文件下载到本地</em>
         request.downloadFile(this.context, {
           url: url,
           filePath: filePath
         }).then((downloadTask: request.DownloadTask) => {
-          // 下载完成回调
+     <em>     // 下载完成回调</em>
           downloadTask.on('complete', () => {
             console.info('download complete');
             let uri = fileUri.getUriFromPath(filePath);
@@ -132,7 +132,7 @@ previewNetworkFile() {
               uri: uri,
               mimeType: 'application/pdf',
             };
-            // 打开文件预览
+        <em>    // 打开文件预览</em>
             filePreview.openPreview(this.context, fileInfo).then(() => {
               console.info('Succeeded in opening preview');
             }).catch((err: BusinessError) => {
@@ -162,24 +162,24 @@ import { common } from '@kit.AbilityKit';
 @Component
 struct Index {
   context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-  // Start solution1
+ <em> // Start solution1</em>
   previewLocalFile() {
     try {
       const filePath = `${this.context.filesDir}/sample.pdf`;
-      // 检查文件是否存在
+    <em>  // 检查文件是否存在</em>
       const isExist = fs.accessSync(filePath);
       if (!isExist) {
         console.error('本地文件不存在，请确保文件已放置到应用目录');
         return;
       }
-      // 构建PreviewInfo
+   <em>   // 构建PreviewInfo</em>
       let uri = fileUri.getUriFromPath(filePath);
       let fileInfo: filePreview.PreviewInfo = {
         title: 'sample.pdf',
         uri: uri,
         mimeType: 'application/pdf',
       };
-      // 打开文件预览
+     <em> // 打开文件预览</em>
       filePreview.openPreview(this.context, fileInfo).then(() => {
         console.info('Succeeded in opening preview');
       }).catch((err: BusinessError) => {
@@ -189,17 +189,17 @@ struct Index {
       console.error(`预览rawfile文件失败: ${JSON.stringify(error)}`);
     }
   }
-  // End solution1
+<em>  // End solution1</em>
 
-  // Start solution2
+ <em> // Start solution2</em>
   previewRawFile() {
     try {
-      // 预览rawfile文件,需要将文件复制到沙箱目录
+     <em> // 预览rawfile文件,需要将文件复制到沙箱目录</em>
       let filePath = `${this.context.filesDir}/sample.pdf`;
       const resourceMgr = this.context.resourceManager;
       resourceMgr.getRawFileContent('sample.pdf', (err, value) => {
         let myBuffer: ArrayBufferLike = value.buffer;
-        // 创建sample.pdf沙箱路径，并写入数据
+      <em>  // 创建sample.pdf沙箱路径，并写入数据</em>
         let file = fs.openSync(filePath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
         fs.writeSync(file.fd, myBuffer);
         fs.close(file);
@@ -210,7 +210,7 @@ struct Index {
         uri: uri,
         mimeType: 'application/pdf',
       };
-      // 打开文件预览
+    <em>  // 打开文件预览</em>
       filePreview.openPreview(this.context, fileInfo).then(() => {
         console.info('Succeeded in opening preview');
       }).catch((err: BusinessError) => {
@@ -220,18 +220,18 @@ struct Index {
       console.error(`预览rawfile文件失败: ${JSON.stringify(error)}`);
     }
   }
-  // End solution2
+  <em>// End solution2</em>
 
-  // Start solution3
+  <em>// Start solution3</em>
   previewNetworkFile() {
-    // url需替换为实际可用的pdf url
+    <em>// url需替换为实际可用的pdf url</em>
     const url = 'https://****.com/test.pdf';
     let filePath = `${this.context.filesDir}/sample.pdf`;
     try {
-      // 网络文件下载到本地
+    <em>  // 网络文件下载到本地</em>
       let res = fs.accessSync(filePath);
       if (res) {
-        // 本地文件存在，则直接调用预览方法
+        <em>// 本地文件存在，则直接调用预览方法</em>
         console.info('file exists and ViewFile');
         let uri = fileUri.getUriFromPath(filePath);
         let fileInfo: filePreview.PreviewInfo = {
@@ -246,12 +246,12 @@ struct Index {
           console.error(`Failed to open preview, err.code = ${err.code}, err.message = ${err.message}`);
         });
       } else {
-        // 文件下载到本地
+   <em>     // 文件下载到本地</em>
         request.downloadFile(this.context, {
           url: url,
           filePath: filePath
         }).then((downloadTask: request.DownloadTask) => {
-          // 下载完成回调
+      <em>    // 下载完成回调</em>
           downloadTask.on('complete', () => {
             console.info('download complete');
             let uri = fileUri.getUriFromPath(filePath);
@@ -260,7 +260,7 @@ struct Index {
               uri: uri,
               mimeType: 'application/pdf',
             };
-            // 打开文件预览
+         <em>   // 打开文件预览</em>
             filePreview.openPreview(this.context, fileInfo).then(() => {
               console.info('Succeeded in opening preview');
             }).catch((err: BusinessError) => {
@@ -276,7 +276,7 @@ struct Index {
       console.error(`Invoke downloadFile failed, code is ${err.code}, message is ${err.message}`);
     }
   }
-  // End solution3
+<em>  // End solution3</em>
 
   build() {
     Column() {

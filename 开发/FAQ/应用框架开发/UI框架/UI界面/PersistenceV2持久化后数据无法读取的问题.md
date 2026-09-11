@@ -80,7 +80,7 @@ class OptionOneSample {
   @Trace value?: string;
   @Trace num: number = 0;
 
-  // 构建函数赋值
+  <em>// 构建函数赋值</em>
   constructor(value: string, num: number) {
     this.value = value;
     this.num = num;
@@ -117,7 +117,7 @@ import { PersistenceV2 } from '@kit.ArkUI';
 
 @ObservedV2
 class OptionTwoSample {
-  @Trace value: string = ''; // 赋初始值
+  @Trace value: string = ''; <em>// 赋初始值</em>
   @Trace num: number = 0;
 }
 

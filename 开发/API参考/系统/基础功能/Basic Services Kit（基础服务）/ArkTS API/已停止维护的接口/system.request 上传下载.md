@@ -1,9 +1,9 @@
 # @system.request (上传下载)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-system-request
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 system.request部件主要给应用提供上传下载文件的基础能力。
  
@@ -12,9 +12,10 @@ system.request部件主要给应用提供上传下载文件的基础能力。
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { Request } from '@kit.BasicServicesKit';
@@ -22,9 +23,10 @@ import { Request } from '@kit.BasicServicesKit';
  
   
 
-#### request.upload(deprecated)
+## request.upload(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 upload(options: UploadRequestOptions): void
  
@@ -38,6 +40,7 @@ upload(options: UploadRequestOptions): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | UploadRequestOptions | 是 | 上传的配置信息。 |
@@ -82,9 +85,10 @@ try {
  
   
 
-#### UploadRequestOptions(deprecated)
+## UploadRequestOptions(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.MiscServices.Upload
  
@@ -92,6 +96,7 @@ try {
 > 从API version 3开始支持，从API version 9开始废弃。建议使用 UploadConfig 替代。
 
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | url | string | 否 | 否 | 上传服务器地址。 |
@@ -106,12 +111,14 @@ try {
  
   
 
-#### UploadResponse(deprecated)
+## UploadResponse(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.MiscServices.Upload
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | code | number | 否 | 否 | 服务器返回的HTTP状态码。 |
@@ -121,12 +128,14 @@ try {
  
   
 
-#### RequestFile(deprecated)
+## RequestFile(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.MiscServices.Upload
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | filename | string | 否 | 是 | multipart 提交时，请求头中的文件名。 |
@@ -137,12 +146,14 @@ try {
  
   
 
-#### RequestData(deprecated)
+## RequestData(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.MiscServices.Upload
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | name | string | 否 | 否 | 表示form 元素的名称。 |
@@ -151,9 +162,10 @@ try {
  
   
 
-#### request.download(deprecated)
+## request.download(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 download(options: DownloadRequestOptions): void
  
@@ -163,6 +175,7 @@ download(options: DownloadRequestOptions): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | DownloadRequestOptions | 是 | 下载的配置信息。 |
@@ -199,9 +212,10 @@ try {
  
   
 
-#### DownloadRequestOptions(deprecated)
+## DownloadRequestOptions(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.MiscServices.Download
  
@@ -211,6 +225,7 @@ try {
  
 **参数：**
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | url | string | 否 | 否 | 资源地址。 |
@@ -224,12 +239,14 @@ try {
  
   
 
-#### DownloadResponse(deprecated)
+## DownloadResponse(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.MiscServices.Download
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | token | string | 否 | 否 | 表示下载的token，获取下载状态的依据。 |
@@ -237,9 +254,10 @@ try {
  
   
 
-#### request.onDownloadComplete(deprecated)
+## request.onDownloadComplete(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDownloadComplete(options: OnDownloadCompleteOptions): void
  
@@ -249,6 +267,7 @@ onDownloadComplete(options: OnDownloadCompleteOptions): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | OnDownloadCompleteOptions | 是 | 监听下载任务的配置信息。 |
@@ -277,12 +296,14 @@ Request.onDownloadComplete(onDownloadCompleteOptions);
  
   
 
-#### OnDownloadCompleteOptions(deprecated)
+## OnDownloadCompleteOptions(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.MiscServices.Download
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | token | string | 否 | 否 | download 接口返回的结果 token。 |
@@ -293,12 +314,14 @@ Request.onDownloadComplete(onDownloadCompleteOptions);
  
   
 
-#### OnDownloadCompleteResponse(deprecated)
+## OnDownloadCompleteResponse(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.MiscServices.Download
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | uri | string | 否 | 否 | 表示下载文件的uri。 |

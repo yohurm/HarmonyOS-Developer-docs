@@ -70,17 +70,17 @@ struct WebExpandHeightDemo {
   }
 
 
-  // 监听键盘高度
+<em>  // 监听键盘高度</em>
   private listenKeyboard() {
     window.getLastWindow(this.getUIContext().getHostContext()).then(currentWindow => {
-      // 监听键盘高度，处理工具条偏移量
+     <em> // 监听键盘高度，处理工具条偏移量</em>
       currentWindow.on('keyboardHeightChange', (data) => {
         let keyboardHeight = Math.floor(this.getUIContext().px2vp(data));
         if (keyboardHeight > 0) {
-          // 键盘编辑态，偏移量=键盘高度
+         <em> // 键盘编辑态，偏移量=键盘高度</em>
           this.safeExpandHeight = keyboardHeight;
         } else {
-          // 无键盘编辑态，安全区高度
+        <em>  // 无键盘编辑态，安全区高度</em>
           this.safeExpandHeight = 0;
         }
       });
@@ -95,7 +95,7 @@ struct WebExpandHeightDemo {
           .fileAccess(false)
           .geolocationAccess(false)
           .onControllerAttached(() => {
-            // 推荐在此loadUrl、设置自定义用户代理、注入JS对象等
+            <em>// 推荐在此loadUrl、设置自定义用户代理、注入JS对象等</em>
             console.info('onControllerAttached execute');
           })
           .margin({ bottom: this.safeExpandHeight })

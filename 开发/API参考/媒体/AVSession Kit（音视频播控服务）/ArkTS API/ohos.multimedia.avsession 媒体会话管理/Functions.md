@@ -1,18 +1,19 @@
 # Functions
 
-更新时间：2026-07-24 10:38:53
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-avsession-f
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { avSession } from '@kit.AVSessionKit';
@@ -20,16 +21,17 @@ import { avSession } from '@kit.AVSessionKit';
 
 
 
-#### avSession.createAVSession10+
+## avSession.createAVSession10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAVSession(context: Context, tag: string, type: AVSessionType): Promise&lt;AVSession&gt;
 
-创建会话对象，一个应用进程仅允许存在一个会话，重复创建会失败，结果通过Promise异步回调方式返回。
+创建会话对象，一个应用进程仅允许存在一个会话，重复创建会失败，使用Promise异步回调。
 
 > [!NOTE]
-> 在业务执行阶段需要保持avsession对象存活，避免后台管控静音、设备选择异常、通知/锁屏/胶囊播控卡片显示异常等情况。
+> 在业务执行阶段需要保持AVSession对象存活，避免后台管控静音、设备选择异常、通知/锁屏/胶囊播控卡片显示异常等情况。
 
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -37,6 +39,7 @@ createAVSession(context: Context, tag: string, type: AVSessionType): Promise&lt;
 **系统能力：** SystemCapability.Multimedia.AVSession.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -47,14 +50,16 @@ createAVSession(context: Context, tag: string, type: AVSessionType): Promise&lt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;AVSession&gt; | Promise对象。回调返回会话实例对象，可用于获取会话ID，以及设置元数据、播放状态，发送按键事件等操作。 |
+| Promise&lt;AVSession&gt; | Promise对象。返回会话实例对象，可用于获取会话ID，以及设置元数据、播放状态，发送按键事件等操作。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[媒体会话管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avsession)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -96,21 +101,23 @@ struct Index {
 
 
 
-#### avSession.createAVSession10+
+## avSession.createAVSession10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAVSession(context: Context, tag: string, type: AVSessionType, callback: AsyncCallback&lt;AVSession&gt;): void
 
-创建会话对象，一个应用程序仅允许存在一个会话，重复创建会失败，结果通过callback异步回调方式返回。
+创建会话对象，一个应用进程仅允许存在一个会话，重复创建会失败，使用callback异步回调。
 
 > [!NOTE]
-> 在业务执行阶段需要保持avsession对象存活，避免后台管控静音、设备选择异常、通知/锁屏/胶囊播控卡片显示异常等情况。
+> 在业务执行阶段需要保持AVSession对象存活，避免后台管控静音、设备选择异常、通知/锁屏/胶囊播控卡片显示异常等情况。
 
 
 **系统能力：** SystemCapability.Multimedia.AVSession.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -123,6 +130,7 @@ createAVSession(context: Context, tag: string, type: AVSessionType, callback: As
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[媒体会话管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avsession)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -151,6 +159,10 @@ struct Index {
           let sessionId: string;  // 供后续函数入参使用。
 
           avSession.createAVSession(context, tag, "audio", async (err:BusinessError, data: avSession.AVSession) => {
+              if (err) {
+                console.error(`Failed to create AV session, error code: ${err.code}, error message: ${err.message}`);
+                return;
+              }
               currentAVSession = data;
               sessionId = currentAVSession.sessionId;
               console.info(`Succeeded in creating AV session, sessionId: ${sessionId}`);
@@ -165,9 +177,10 @@ struct Index {
 
 
 
-#### avSession.getAVSession22+
+## avSession.getAVSession22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAVSession(context: Context): Promise&lt;AVSession&gt;
 
@@ -181,6 +194,7 @@ getAVSession(context: Context): Promise&lt;AVSession&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 需要使用UIAbilityContext，用于系统获取应用组件的相关信息。 |
@@ -188,14 +202,16 @@ getAVSession(context: Context): Promise&lt;AVSession&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;AVSession&gt; | Promise对象。回调返回会话实例对象，可用于获取会话ID、设置元数据及播放状态、发送按键事件等操作。 |
+| Promise&lt;AVSession&gt; | Promise对象。返回会话实例对象，可用于获取会话ID、设置元数据及播放状态、发送按键事件等操作。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[媒体会话管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avsession)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -238,13 +254,14 @@ struct Index {
 
 
 
-#### avSession.getAllSessionDescriptors23+
+## avSession.getAllSessionDescriptors23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllSessionDescriptors(): Promise<Array<Readonly&lt;AVSessionDescriptor&gt;>>
 
-获取所有设置过媒体信息且注册过控制回调的会话的描述符信息。结果通过Promise异步回调方式返回。
+获取所有设置过媒体信息且注册过控制回调的会话的描述符信息。使用Promise异步回调。
 
 **需要权限：** ohos.permission.MANAGE_MEDIA_RESOURCES 或 ohos.permission.MANAGE_MEDIA_RESOURCES_FOR_PUBLIC
 
@@ -254,6 +271,7 @@ getAllSessionDescriptors(): Promise<Array<Readonly&lt;AVSessionDescriptor&gt;>>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array<Readonly&lt;AVSessionDescriptor&gt;>> | Promise对象。返回所有会话描述的只读对象。 |
@@ -262,6 +280,7 @@ getAllSessionDescriptors(): Promise<Array<Readonly&lt;AVSessionDescriptor&gt;>>
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[媒体会话管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avsession)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -300,9 +319,10 @@ struct Index {
 
 
 
-#### avSession.createController23+
+## avSession.createController23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createController(sessionId: string): Promise&lt;AVSessionController&gt;
 
@@ -316,12 +336,14 @@ createController(sessionId: string): Promise&lt;AVSessionController&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sessionId | string | 是 | 会话ID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -331,6 +353,7 @@ createController(sessionId: string): Promise&lt;AVSessionController&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[媒体会话管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avsession)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -371,9 +394,10 @@ struct Index {
 
 
 
-#### avSession.onSessionCreate23+
+## avSession.onSessionCreate23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onSessionCreate(callback: Callback&lt;AVSessionDescriptor&gt;): void
 
@@ -385,6 +409,7 @@ onSessionCreate(callback: Callback&lt;AVSessionDescriptor&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;AVSessionDescriptor&gt; | 是 | 回调函数。参数为会话相关描述。 |
@@ -393,6 +418,7 @@ onSessionCreate(callback: Callback&lt;AVSessionDescriptor&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[媒体会话管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avsession)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -429,9 +455,10 @@ struct Index {
 
 
 
-#### avSession.onSessionDestroy23+
+## avSession.onSessionDestroy23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onSessionDestroy(callback: Callback&lt;AVSessionDescriptor&gt;): void
 
@@ -443,6 +470,7 @@ onSessionDestroy(callback: Callback&lt;AVSessionDescriptor&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;AVSessionDescriptor&gt; | 是 | 回调函数。参数为会话相关描述。 |
@@ -451,6 +479,7 @@ onSessionDestroy(callback: Callback&lt;AVSessionDescriptor&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[媒体会话管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avsession)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -484,9 +513,10 @@ struct Index {
 
 
 
-#### avSession.onTopSessionChange23+
+## avSession.onTopSessionChange23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onTopSessionChange(callback: Callback&lt;AVSessionDescriptor&gt;): void
 
@@ -498,6 +528,7 @@ onTopSessionChange(callback: Callback&lt;AVSessionDescriptor&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;AVSessionDescriptor&gt; | 是 | 回调函数。参数为会话相关描述。 |
@@ -506,6 +537,7 @@ onTopSessionChange(callback: Callback&lt;AVSessionDescriptor&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[媒体会话管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avsession)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -541,9 +573,10 @@ struct Index {
 
 
 
-#### avSession.offSessionCreate23+
+## avSession.offSessionCreate23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offSessionCreate(callback?: Callback&lt;AVSessionDescriptor&gt;): void
 
@@ -555,14 +588,16 @@ offSessionCreate(callback?: Callback&lt;AVSessionDescriptor&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | Callback&lt;AVSessionDescriptor&gt; | 否 | 回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。 该参数为会话相关描述，为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
+| callback | Callback&lt;AVSessionDescriptor&gt; | 否 | 需要取消的回调函数，与on接口注册时的回调函数保持一致。如果不填写该参数，则取消所有已注册的回调。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[媒体会话管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avsession)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -596,9 +631,10 @@ struct Index {
 
 
 
-#### avSession.offSessionDestroy23+
+## avSession.offSessionDestroy23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offSessionDestroy(callback?: Callback&lt;AVSessionDescriptor&gt;): void
 
@@ -610,14 +646,16 @@ offSessionDestroy(callback?: Callback&lt;AVSessionDescriptor&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | Callback&lt;AVSessionDescriptor&gt; | 否 | 回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。 该参数为会话相关描述，为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
+| callback | Callback&lt;AVSessionDescriptor&gt; | 否 | 需要取消的回调函数，与on接口注册时的回调函数保持一致。如果不填写该参数，则取消所有已注册的回调。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[媒体会话管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avsession)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -651,9 +689,10 @@ struct Index {
 
 
 
-#### avSession.offTopSessionChange23+
+## avSession.offTopSessionChange23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offTopSessionChange(callback?: Callback&lt;AVSessionDescriptor&gt;): void
 
@@ -665,14 +704,16 @@ offTopSessionChange(callback?: Callback&lt;AVSessionDescriptor&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | Callback&lt;AVSessionDescriptor&gt; | 否 | 回调函数。当监听事件取消成功，err为undefined，否则返回错误对象。 该参数为会话相关描述，为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
+| callback | Callback&lt;AVSessionDescriptor&gt; | 否 | 需要取消的回调函数，与on接口注册时的回调函数保持一致。如果不填写该参数，则取消所有已注册的回调。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[媒体会话管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avsession)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -706,9 +747,10 @@ struct Index {
 
 
 
-#### avSession.isDesktopLyricSupported23+
+## avSession.isDesktopLyricSupported23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isDesktopLyricSupported(): Promise&lt;boolean&gt;
 
@@ -720,6 +762,7 @@ isDesktopLyricSupported(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示设备支持桌面歌词功能；返回false表示设备不支持桌面歌词功能。 |
@@ -728,6 +771,7 @@ isDesktopLyricSupported(): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[媒体会话管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avsession)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

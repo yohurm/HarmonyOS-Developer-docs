@@ -1,9 +1,9 @@
 # @ohos.multimedia.cameraPicker (相机选择器)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-camerapicker
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供相机拍照与录制的能力。应用可选择媒体类型实现拍照和录制的功能。调用此类接口时，应用必须在界面UIAbility中调用，否则无法启动cameraPicker应用。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { cameraPicker } from '@kit.CameraKit';
@@ -22,9 +23,10 @@ import { cameraPicker } from '@kit.CameraKit';
 
 
 
-#### cameraPicker.pick
+## cameraPicker.pick
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pick(context: Context, mediaTypes: Array&lt;PickerMediaType&gt;, pickerProfile: PickerProfile): Promise&lt;PickerResult&gt;
 
@@ -40,6 +42,7 @@ pick(context: Context, mediaTypes: Array&lt;PickerMediaType&gt;, pickerProfile: 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文。 |
@@ -48,6 +51,7 @@ pick(context: Context, mediaTypes: Array&lt;PickerMediaType&gt;, pickerProfile: 
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -78,15 +82,17 @@ async function demo(context: Context) {
 
 
 
-#### PickerMediaType
+## PickerMediaType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，相机选择器的媒体类型。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -96,15 +102,17 @@ async function demo(context: Context) {
 
 
 
-#### PickerProfile
+## PickerProfile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 相机选择器的配置信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -115,15 +123,17 @@ async function demo(context: Context) {
 
 
 
-#### PickerResult
+## PickerResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 相机选择器的处理结果。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

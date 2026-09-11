@@ -1,6 +1,6 @@
 # CallerInfoQueryExtensionContext (来去电信息查询扩展Context)
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/callservicekit-callerinfoquery-extension-context
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
@@ -10,7 +10,8 @@ CallerInfoQueryExtensionContext为CallerInfoQueryExtensionAbility的上下文环
 **起始版本：** 5.0.2(14)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -20,7 +21,8 @@ import {CallerInfoQueryExtensionContext} from '@kit.CallServiceKit';
  
   
 
-#### CallerInfoQueryExtensionContext
+## CallerInfoQueryExtensionContext
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 

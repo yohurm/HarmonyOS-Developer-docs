@@ -1,18 +1,21 @@
 # @system.fetch (数据请求)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-04 10:41:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-system-fetch
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
+本模块提供网络数据请求能力，可通过URL发起HTTP/HTTPS请求并获取服务器返回的数据，支持自定义请求头、请求方法和响应类型，适用于应用需要访问网络资源或与后端服务交互的场景，可满足应用内网络通信需求。
+ 
 > [!NOTE]
-> 从API Version 6开始，该接口不再维护，推荐使用新接口 @ohos.net.http 。 本模块首批接口从API version 3开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+> 从API Version 6开始，该接口不再维护，推荐使用新接口 @ohos.net.http (数据请求) 。 本模块首批接口从API version 3开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import fetch from '@system.fetch';
@@ -20,29 +23,23 @@ import fetch from '@system.fetch';
  
   
 
-#### fetch.fetch3+
+## fetch.fetch3+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-fetch(options:{ 
- 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+```text
+fetch(options:{
   url: string;
- 
   data?: string | object;
- 
   header?: Object;
- 
   method?: string;
- 
   responseType?: string;
- 
   success?: (data: FetchResponse) => void;
- 
   fail?: (data: any, code: number) => void;
- 
   complete?: () => void;
- 
- } ): void
+}): void
+```
  
 通过网络获取数据。
  
@@ -50,6 +47,7 @@ fetch(options:{
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | string | 是 | 资源地址。 |
@@ -58,12 +56,13 @@ fetch(options:{
 | method | string | 否 | 请求方法默认为GET，可选值为：OPTIONS、GET、HEAD、POST、PUT、DELETE、TRACE。 |
 | responseType | string | 否 | 默认会根据服务器返回header中的Content-Type确定返回类型，支持文本和json格式。详见success返回值。 |
 | success | Function | 否 | 接口调用成功的回调函数，返回值为FetchResponse。 |
-| fail | Function | 否 | 接口调用失败的回调函数。 |
+| fail | Function | 否 | 接口调用失败的回调函数，返回值为data, code。data固定为undefined，code为错误码，具体含义参考curl错误码。 |
 | complete | Function | 否 | 接口调用结束的回调函数。 |
  
  
 **表1** data与Content-Type关系
   
+
 | data | Content-Type | 说明 |
 | --- | --- | --- |
 | string | 不设置 | Content-Type默认为 text/plain，data值作为请求的body。 |
@@ -74,12 +73,14 @@ fetch(options:{
  
   
 
-#### FetchResponse3+
+## FetchResponse3+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Communication.NetStack
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | code | number | 否 | 否 | 表示服务器的状态code。 |
@@ -89,6 +90,7 @@ fetch(options:{
  
 **表2** responseType与success中data关系
   
+
 | responseType | data | 说明 |
 | --- | --- | --- |
 | 无 | string | 服务器返回的header中的type如果是text/*或application/json、application/javascript、application/xml，值为文本内容。 |
@@ -107,8 +109,8 @@ fetch.fetch({
     console.info('fetch success');
     console.info(JSON.stringify(response));
   },
-  fail: () => {
-    console.error('fetch failed');
+  fail: (data: Object, code) => {
+    console.error('fetch failed, data: ' + JSON.stringify(data) + ', code: =' + code);
   }
 });
 ```
@@ -168,9 +170,9 @@ export default {
                 console.info('fetch success');
                 console.info(JSON.stringify(response));
             },
-            fail: function() {
+            fail: function(data, code) {
                 that.fontColor = '#FF0000';
-                that.result = 'FAILED';
+                that.result = 'FAILED code ' + code;
                 console.error('fetch failed');
             }
         });
@@ -182,7 +184,7 @@ export default {
 > 默认支持https，如果要支持http，需要在config.json里增加network标签，属性标识 "cleartextTraffic": true。
 
  
-```text
+```json
 {
   "deviceConfig": {
     "default": {

@@ -1,10 +1,10 @@
 # 使用Display实现屏幕属性查询及状态监听 (ArkTS)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screenproperty-guideline
 
-#### 场景介绍
+## 场景介绍
 
 [Display](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-display)屏幕属性提供管理设备屏幕的一些基础能力，例如获取默认显示设备的相关信息、获取全部显示设备的信息，此外还能对显示设备的插拔行为进行监听。应用可以根据对应的屏幕信息、屏幕状态变化、屏幕折叠状态等适配不同的UI界面显示。
 
@@ -17,9 +17,10 @@
 
 
 
-#### 接口说明
+## 接口说明
 
 屏幕属性的常用接口如下表所示，更多功能及接口说明和使用请见[@ohos.display (屏幕属性)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-display)。
+
 
 | 接口 | 描述 |
 | --- | --- |
@@ -39,7 +40,7 @@
 
 
 
-#### 获取Display对象
+## 获取Display对象
 
 Display对象，即屏幕实例，提供屏幕相关属性及监听变化的接口。目前有以下几种不同获取Display的方式，开发者可根据具体场景需要选择使用。
 
@@ -63,7 +64,7 @@ try {
 
 
 
-#### 获取屏幕相关属性
+## 获取屏幕相关属性
 1. 确保获取到Display对象之后（具体可见[获取Display对象](#获取display对象)），可以通过相关属性查询屏幕的一些基础信息。
 
   
@@ -128,7 +129,7 @@ try {
 
 
 
-#### 监听屏幕状态变化
+## 监听屏幕状态变化
 1. 可以通过display.on('add'|'remove'|'change')监听设备屏幕变化，支持监听屏幕设备的增加、移除和改变等，可以通过display.off('add'|'remove'|'change')关闭对应的监听。
 
   
@@ -208,7 +209,7 @@ try {
 
 
 
-#### 监听折叠设备状态变化
+## 监听折叠设备状态变化
 1. 可以通过display.isFoldable()接口查询当前设备是不是折叠设备。
 
   

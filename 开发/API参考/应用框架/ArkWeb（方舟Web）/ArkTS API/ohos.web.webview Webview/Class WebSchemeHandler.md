@@ -1,11 +1,11 @@
 # Class (WebSchemeHandler)
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webschemehandler
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-WebSchemeHandler是用于拦截指定scheme（协议）的网络请求的拦截器类。开发者通过实现onRequestStart回调来决定是否拦截某个请求，被拦截的请求可通过WebResourceHandler自定义响应内容。通过WebviewController的[setWebSchemeHandler](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller#setwebschemehandler12)方法将WebSchemeHandler实例注册到指定的scheme上，从而实现对该scheme所有请求的截获和处理。
+WebSchemeHandler是用于拦截指定scheme（协议）的网络请求的拦截器类，支持自定义协议处理、本地资源替换、特定请求拦截等场景。开发者通过实现onRequestStart回调来决定是否拦截某个请求，被拦截的请求可通过WebResourceHandler自定义响应内容。通过WebviewController的[setWebSchemeHandler](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller#setwebschemehandler12)方法将WebSchemeHandler实例注册到指定的scheme上，从而实现对该scheme所有请求的截获和处理。
 
 WebSchemeHandler与[WebSchemeHandlerRequest](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webschemehandlerrequest)、[WebResourceHandler](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webresourcehandler)、[WebSchemeHandlerResponse](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webschemehandlerresponse)配合使用：onRequestStart回调接收WebSchemeHandlerRequest（被拦截的请求信息）和WebResourceHandler（用于返回自定义响应的处理器），返回boolean值表示是否拦截。onRequestStop在请求结束时触发（仅对已拦截的请求），用于资源清理。
 
@@ -14,9 +14,10 @@ WebSchemeHandler与[WebSchemeHandlerRequest](https://developer.huawei.com/consum
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { webview } from '@kit.ArkWeb';
@@ -24,9 +25,10 @@ import { webview } from '@kit.ArkWeb';
 
 
 
-#### onRequestStart12+
+## onRequestStart12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onRequestStart(callback: (request: WebSchemeHandlerRequest, handler: WebResourceHandler) => boolean): void
 
@@ -40,14 +42,16 @@ onRequestStart(callback: (request: WebSchemeHandlerRequest, handler: WebResource
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | (request: WebSchemeHandlerRequest, handler: WebResourceHandler) => boolean | 是 | 拦截对应scheme请求开始时触发的回调。request为请求，handler用于提供自定义的返回头以及返回体给Web组件，返回值表示该请求是否拦截。 |
+| callback | (request: WebSchemeHandlerRequest, handler: WebResourceHandler) => boolean | 是 | 拦截对应scheme请求开始时触发的回调。request为请求，handler用于提供自定义的返回头以及返回体给Web组件，返回值true表示拦截此请求，false表示不拦截此请求，handler失效。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -115,7 +119,7 @@ struct WebComponent {
                 console.error(`[schemeHandler] ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
 
-              // 调用 didFinish/didFail 前需要优先调用 didReceiveResponse 将构造的响应头传递给被拦截的请求。
+              // 调用 didFinish/didFail 前需调用 didReceiveResponse 将构造的响应头传递给被拦截的请求。
               let buf = buffer.from(this.htmlData)
               try {
                 if (buf.length == 0) {
@@ -153,19 +157,21 @@ struct WebComponent {
 
 
 
-#### onRequestStop12+
+## onRequestStop12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onRequestStop(callback: Callback&lt;WebSchemeHandlerRequest&gt;): void
 
 当请求完成时的回调，仅当[onRequestStart](#onrequeststart12)回调决定拦截此请求时触发。触发的时机有以下两点：
 1. WebResourceHandler调用didFail或者didFinish。
-2. 此请求因为其他原因中断。
+2. 此请求因为其他原因中断（如网络错误、系统异常等）。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -175,6 +181,7 @@ onRequestStop(callback: Callback&lt;WebSchemeHandlerRequest&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

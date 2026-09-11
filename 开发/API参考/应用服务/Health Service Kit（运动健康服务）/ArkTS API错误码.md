@@ -1,11 +1,12 @@
 # ArkTS API错误码
 
-更新时间：2026-07-09 02:26:55
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice
 **支持设备：** Phone | Tablet | Wearable | lite_wearable
 
 以下授权相关错误码的详细介绍请参见[华为账号服务ArkTS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account-kit)。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -21,87 +22,8 @@
 
 
 
-#### 201 鉴权失败
+## 1002700001 系统内部错误
 
-**支持设备：** Phone | Tablet | Wearable | lite_wearable
-
-**错误信息**
-
-Permission verification failed.
-
-**错误描述**
-
-鉴权失败。
-
-**可能原因**
-
-1、应用指纹配置不正确。
-
-2、缺少权限。
-
-3、部分接口仅白名单用户可调用。
-
-4、测试用户数已达上限。
-
-**处理步骤**
-
-1、检查AGC上应用的指纹证书，详情请见[添加公钥指纹](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-dev-overview#条件必选添加公钥指纹)。
-
-2、参考[管理用户授权](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-add-permissions)，确认用户已授权相关权限。
-
-3、用户申请成为测试用户失败，请尽快参考[申请验证获取正式权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-verification)，完成管理台应用验收。
-
-4、通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题，华为支持人员会及时处理。
-
-
-
-#### 401 参数不合法
-
-**支持设备：** Phone | Tablet | Wearable
-
-**错误信息**
-
-Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3.Parameter verification failed.
-
-**错误描述**
-
-参数错误。
-
-**可能原因**
-
-参数填写不正确。
-
-**处理步骤**
-
-1、参考文档确认数据必填项、取值范围等是否填写正确。
-
-2、通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题，华为支持人员会及时处理。
-
-
-
-#### 801 该设备不支持此API
-
-**支持设备：** Phone | Tablet | Wearable
-
-**错误信息**
-
-Capability not supported. Failed to call the API due to limited device capabilities.
-
-**错误描述**
-
-该设备不支持此API，因此无法正常调用。
-
-**可能原因**
-
-可能出现该错误码的场景为：该设备已支持该API所属的Syscap, 但是并不支持此API。
-
-**处理步骤**
-
-应避免在该设备上使用此API，或在代码中通过判断来规避异常场景下应用在不同设备上运行所产生的影响。
-
-
-
-#### 1002700001 系统内部错误
 
 **支持设备：** Phone | Tablet | Wearable | lite_wearable
 
@@ -123,7 +45,8 @@ System internal error.
 
 
 
-#### 1002700002 数据库异常
+## 1002700002 数据库异常
+
 
 **支持设备：** Phone | Tablet | Wearable | lite_wearable
 
@@ -141,11 +64,12 @@ Database processing error.
 
 **处理步骤**
 
-通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题，华为支持人员会及时处理。
+重启设备后重试。若仍无法解决，通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题，华为支持人员会及时处理。
 
 
 
-#### 1002701001 网络错误
+## 1002701001 网络错误
+
 
 **支持设备：** Phone | Tablet | Wearable | lite_wearable
 
@@ -169,7 +93,8 @@ Network error. The network is unavailable.
 
 
 
-#### 1002702001 账号未登录
+## 1002702001 账号未登录
+
 
 **支持设备：** Phone | Tablet | Wearable | lite_wearable
 
@@ -193,7 +118,8 @@ Account error. The user has not logged in with HUAWEI ID.
 
 
 
-#### 1002702002 账号异常
+## 1002702002 账号异常
+
 
 **支持设备：** Phone | Tablet | Wearable | lite_wearable
 
@@ -211,11 +137,12 @@ Account error. Failed to obtain account information with HUAWEI ID.
 
 **处理步骤**
 
-通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题，华为支持人员会及时处理。
+重启设备后重试。若仍无法解决，通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题，华为支持人员会及时处理。
 
 
 
-#### 1002703001 用户隐私未同意
+## 1002703001 用户隐私未同意
+
 
 **支持设备：** Phone | Tablet | Wearable | lite_wearable
 
@@ -237,7 +164,8 @@ User privacy is not agreed.
 
 
 
-#### 1009104001 联动已开启
+## 1009104001 联动已开启
+
 
 **支持设备：** Phone | Tablet | Wearable | lite_wearable
 
@@ -261,7 +189,8 @@ Sport service busy. Workout is already started by other application.
 
 
 
-#### 1009104002 不支持运动类型
+## 1009104002 不支持运动类型
+
 
 **支持设备：** Phone | Tablet | Wearable | lite_wearable
 
@@ -283,7 +212,8 @@ Unsupported sport type.
 
 
 
-#### 1009104003 非法指令
+## 1009104003 非法指令
+
 
 **支持设备：** Phone | Tablet | Wearable | lite_wearable
 
@@ -313,7 +243,8 @@ Illegal command.
 
 
 
-#### 1009104004 权限校验异常
+## 1009104004 权限校验异常
+
 
 **支持设备：** Phone | Tablet | Wearable | lite_wearable
 
@@ -335,9 +266,10 @@ Permission verification error. Application has no permission, such as Motion Per
 
 
 
-#### 1009104005 动态库加载异常
+## 1009104005 动态库加载异常
 
-**支持设备：** lite_wearable
+
+**支持设备：** Phone | Tablet | Wearable | lite_wearable
 
 **错误信息**
 
@@ -359,9 +291,10 @@ Failed to load the dynamic library.
 
 
 
-#### 1009104006 动态库卸载异常
+## 1009104006 动态库卸载异常
 
-**支持设备：** lite_wearable
+
+**支持设备：** Phone | Tablet | Wearable | lite_wearable
 
 **错误信息**
 
@@ -383,7 +316,8 @@ Failed to unload the dynamic library.
 
 
 
-#### 1009104999 通用错误码
+## 1009104999 通用错误码
+
 
 **支持设备：** Phone | Tablet | Wearable | lite_wearable
 
@@ -405,9 +339,10 @@ System internal error.
 
 
 
-#### 14500101 服务异常
+## 14500101 服务异常
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet | Wearable | lite_wearable
 
 **错误信息**
 
@@ -423,4 +358,35 @@ Service exception.
 
 **处理步骤**
 
-通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题，华为支持人员会及时处理。
+重启设备后重试。通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题，华为支持人员会及时处理。
+
+
+
+## Health Service Kit调用失败返回201
+
+
+**支持设备：** Phone | Tablet | Wearable | lite_wearable
+
+错误码201是[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal#section201-权限校验失败)，标识参数检查失败。
+
+Health Service Kit出现201错误码时表示鉴权失败，可能由以下情况导致：
+
+**可能原因**
+
+1、应用指纹配置不正确。
+
+2、缺少权限。
+
+3、部分接口仅白名单用户可调用。
+
+4、测试用户数已达上限。
+
+**解决措施**
+
+1、检查AGC上应用的指纹证书，详情请见[添加公钥指纹](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-dev-overview#条件必选添加公钥指纹)。
+
+2、参考[管理用户授权](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-add-permissions)，确认用户已授权相关权限。
+
+3、用户申请成为测试用户失败，请尽快参考[申请验证获取正式权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-verification)，完成管理台应用验收。
+
+4、通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题，华为支持人员会及时处理。

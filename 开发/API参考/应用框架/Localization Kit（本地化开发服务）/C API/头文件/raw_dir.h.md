@@ -1,15 +1,16 @@
 # raw_dir.h
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-raw-dir-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-提供rawfile目录相关功能，包括遍历和关闭rawfile目录。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+提供rawfile目录操作相关的函数，包括遍历目录、获取文件数量、获取文件名称、关闭目录等功能。
  
 **引用文件：** <rawfile/raw_dir.h>
  
@@ -23,45 +24,52 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
-| RawDir | RawDir | 提供对rawfile目录的访问。 |
+| RawDir | RawDir | RawDir表示一个已打开的rawfile目录对象，可用于遍历目录和目录下文件。通过OH_ResourceManager_OpenRawDir函数获取，使用完后须调用OH_ResourceManager_CloseRawDir关闭并释放。 |
  
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
-| const char *OH_ResourceManager_GetRawFileName(RawDir *rawDir, int index) | 通过索引获取rawfile文件名称。可以使用此方法遍历rawfile目录。 |
-| int OH_ResourceManager_GetRawFileCount(RawDir *rawDir) | 获取RawDir中的rawfile数量。通过此方法可以获取OH_ResourceManager_GetRawFileName中可用的索引。 |
-| void OH_ResourceManager_CloseRawDir(RawDir *rawDir) | 关闭已打开的RawDir并释放所有相关联资源。 |
+| const char *OH_ResourceManager_GetRawFileName(RawDir *rawDir, int index) | 通过索引获取rawfile目录中的文件名称。当需要遍历rawfile目录时，可以与OH_ResourceManager_GetRawFileCount搭配使用，通过循环遍历目录。 |
+| int OH_ResourceManager_GetRawFileCount(RawDir *rawDir) | 获取rawfile下子目录和文件数量。当需要遍历rawfile目录时，可以与OH_ResourceManager_GetRawFileName搭配使用，通过循环遍历目录。 |
+| void OH_ResourceManager_CloseRawDir(RawDir *rawDir) | 关闭已打开的RawDir对象并释放所有相关资源。遍历rawfile目录后，须调用此函数关闭目录和释放资源。 |
  
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_ResourceManager_GetRawFileName()
+### OH_ResourceManager_GetRawFileName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 const char *OH_ResourceManager_GetRawFileName(RawDir *rawDir, int index)
@@ -69,23 +77,25 @@ const char *OH_ResourceManager_GetRawFileName(RawDir *rawDir, int index)
  
 **描述**
  
-通过索引获取rawfile文件名称。可以使用此方法遍历rawfile目录。
+通过索引获取rawfile目录中的文件名称。当需要遍历rawfile目录时，可以与[OH_ResourceManager_GetRawFileCount](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-raw-dir-h#oh_resourcemanager_getrawfilecount)搭配使用，通过循环遍历目录。
  
 **起始版本：** 8
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| RawDir *rawDir | 表示指向RawDir的指针。 |
-| int index | 表示文件在RawDir中的索引位置。 |
+| RawDir *rawDir | 输入参数。指向RawDir对象的指针，通过OH_ResourceManager_OpenRawDir获取。 |
+| int index | 输入参数。文件在rawfile目录中的索引，取值范围为[0, 文件总数量-1]。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| const char * | 通过索引返回文件名称，此返回值可以作为OH_ResourceManager_OpenRawFile的输入参数。 如果遍历完所有文件仍未找到，则返回NULL。 |
+| const char * | 返回文件名称字符串指针，可作为OH_ResourceManager_OpenRawFile的输入参数。 失败时返回NULL，可能原因是rawDir为NULL、index超出有效范围或目录为空。 调用OH_ResourceManager_CloseRawDir后，该指针同时会被释放，若需保存文件名，开发者需及时复制字符串内容。 |
  
  
 **参考：**
@@ -94,9 +104,10 @@ const char *OH_ResourceManager_GetRawFileName(RawDir *rawDir, int index)
  
   
 
-#### OH_ResourceManager_GetRawFileCount()
+### OH_ResourceManager_GetRawFileCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_ResourceManager_GetRawFileCount(RawDir *rawDir)
@@ -104,22 +115,24 @@ int OH_ResourceManager_GetRawFileCount(RawDir *rawDir)
  
 **描述**
  
-获取[RawDir](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-rawfile-rawdir)中的rawfile数量。通过此方法可以获取[OH_ResourceManager_GetRawFileName](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-raw-dir-h#oh_resourcemanager_getrawfilename)中可用的索引。
+获取rawfile下子目录和文件数量。当需要遍历rawfile目录时，可以与[OH_ResourceManager_GetRawFileName](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-raw-dir-h#oh_resourcemanager_getrawfilename)搭配使用，通过循环遍历目录。
  
 **起始版本：** 8
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| RawDir *rawDir | 表示指向RawDir的指针。 |
+| RawDir *rawDir | 输入参数。指向RawDir对象的指针，通过OH_ResourceManager_OpenRawDir获取。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回rawDir下的文件个数。如果rawDir为空时返回0。 |
+| int | 返回rawfile子目录和文件数量，不递归统计rawfile子目录下的文件和目录数量。若rawDir为NULL或目录为空，则返回0。 |
  
  
 **参考：**
@@ -128,9 +141,10 @@ int OH_ResourceManager_GetRawFileCount(RawDir *rawDir)
  
   
 
-#### OH_ResourceManager_CloseRawDir()
+### OH_ResourceManager_CloseRawDir()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ResourceManager_CloseRawDir(RawDir *rawDir)
@@ -138,15 +152,16 @@ void OH_ResourceManager_CloseRawDir(RawDir *rawDir)
  
 **描述**
  
-关闭已打开的[RawDir](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-rawfile-rawdir)并释放所有相关联资源。
+关闭已打开的RawDir对象并释放所有相关资源。遍历rawfile目录后，须调用此函数关闭目录和释放资源。
  
 **起始版本：** 8
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| RawDir *rawDir | 表示指向RawDir的指针。 |
+| RawDir *rawDir | 输入参数。指向RawDir对象的指针，通过OH_ResourceManager_OpenRawDir获取。关闭后，该指针失效，不可再用于其他操作。 |
  
  
 **参考：**

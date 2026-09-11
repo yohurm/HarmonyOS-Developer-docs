@@ -1,13 +1,13 @@
 # 绘制几何图形 (Shape)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-geometric-shape-drawing
 
 绘制组件用于在页面绘制图形，Shape组件是绘制组件的父组件，包含所有绘制组件的通用属性。具体用法请参考[Shape](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawing-components-shape)。
 
 
-#### 创建绘制组件
+## 创建绘制组件
 
 绘制组件可以由以下两种形式创建：
 
@@ -45,7 +45,7 @@ Circle({ width: 150, height: 150 })
 
 
 
-#### 形状视口viewPort
+## 形状视口viewPort
 
 ```text
 viewPort(value: { x?: number | string, y?: number | string, width?: number | string, height?: number | string })
@@ -196,7 +196,7 @@ struct ViewPort3 {
 
 
 
-#### 自定义样式
+## 自定义样式
 
 > [!TIP]
 > 示例通过commands来绘制路径，commands参数说明请参考 SVG路径描述规范 。
@@ -487,11 +487,11 @@ struct Mesh {
 
 
 
-#### 场景示例
+## 场景示例
 
 
 
-#### 绘制封闭路径
+### 绘制封闭路径
 
 在Shape的(-80, -5)点绘制一个封闭路径，填充颜色rgb(213, 213, 213)，线条宽度3，边框颜色rgb(39, 135, 217)，拐角样式锐角（默认值）。
 
@@ -530,7 +530,7 @@ struct ShapeExample {
 
 
 
-#### 绘制圆和圆环
+### 绘制圆和圆环
 
 绘制一个直径为150的圆，和一个直径为150、线条为红色虚线的圆环（宽高设置不一致时以短边为直径）。
 
@@ -566,7 +566,7 @@ struct CircleExample {
 
 
 
-#### UI视觉属性作用效果
+### UI视觉属性作用效果
 
 > [!NOTE]
 > backgroundColor 、 linearGradient 等通用属性作用于组件的背景区域，而不会在组件具体的内容区域生效。
@@ -590,4 +590,4 @@ struct CircleExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/YGtEkaouTK-B0qJ97axPYw/zh-cn_image_0000002704272339.jpg?HW-CC-KV=V1&HW-CC-Date=20260813T095715Z&HW-CC-Expire=86400&HW-CC-Sign=6BFDABB0F378761656644815F240CA36CA332569FC73CEBEF7E78E124420BF33)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/FHlQbCWbTJadPlvTfVs58g/zh-cn_image_0000002717610584.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T072503Z&HW-CC-Expire=86400&HW-CC-Sign=AAC83793EE77C87CCFE455E1A0E3A68D3DBFACB3BAF309A0F99C25BA9440957A)

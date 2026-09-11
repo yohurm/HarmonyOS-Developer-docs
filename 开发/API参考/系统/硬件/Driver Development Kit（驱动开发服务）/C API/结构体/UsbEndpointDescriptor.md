@@ -1,6 +1,6 @@
 # UsbEndpointDescriptor
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-usbddk-usbendpointdescriptor
 **支持设备：** PC/2in1
@@ -10,7 +10,8 @@ typedef struct UsbEndpointDescriptor {...} __attribute__((packed)) UsbEndpointDe
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** PC/2in1
 
@@ -24,23 +25,26 @@ typedef struct UsbEndpointDescriptor {...} __attribute__((packed)) UsbEndpointDe
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** PC/2in1
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** PC/2in1
  
+
 | 名称 | 描述 |
 | --- | --- |
-| uint8_t bLength | 该描述符的大小，单位为字节。 |
+| uint8_t bLength | 该描述符的大小，单位：Byte。 |
 | uint8_t bDescriptorType | 描述符类型。 |
 | uint8_t bEndpointAddress | 端点地址，包含端点编号以及端点方向。 |
-| uint8_t bmAttributes | 端点属性，包括传输类型、同步类型、使用类型。 |
-| uint16_t wMaxPacketSize | 该端点所能承载的最大包的大小。 |
-| uint8_t bInterval | 数据传输轮询端点的时间间隔。 |
+| uint8_t bmAttributes | 端点属性，包括传输类型、同步类型和使用类型。 |
+| uint16_t wMaxPacketSize | 该端点所能承载的最大包的大小，单位：Byte。 |
+| uint8_t bInterval | 数据传输时轮询端点的时间间隔。 |
 | uint8_t bRefresh | 用于音频类设备，同步反馈的速率。 |
 | uint8_t bSynchAddress | 用于音频类设备，同步端点的地址。 |

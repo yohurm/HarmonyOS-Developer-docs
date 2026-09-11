@@ -1,9 +1,9 @@
 # @ohos.application.ConfigurationConstant (ConfigurationConstant)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-application-configurationconstant
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ConfigurationConstant模块提供配置信息枚举值定义的能力。
  
@@ -12,9 +12,10 @@ ConfigurationConstant模块提供配置信息枚举值定义的能力。
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import ConfigurationConstant from '@ohos.application.ConfigurationConstant';
@@ -22,14 +23,16 @@ import ConfigurationConstant from '@ohos.application.ConfigurationConstant';
  
   
 
-#### ColorMode
+## ColorMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示颜色模式的枚举。
  
 **系统能力**：SystemCapability.Ability.AbilityBase
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | COLOR_MODE_NOT_SET | -1 | 未设置颜色模式。 |

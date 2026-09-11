@@ -21,9 +21,9 @@
 #### 解决方案
 1. 实现录屏和回调函数。
 ```text
-/*
- * Copyright (c) Huawei Technologies Co., Ltd. 2025-2025. All rights reserved.
- */
+<em>/*</em>
+<em> * Copyright (c) Huawei Technologies Co., Ltd. 2025-2025. All rights reserved.</em>
+<em> */</em>
 #include "napi/native_api.h"
 #include "sample_info.h"
 #include "Recorder.h"
@@ -36,30 +36,30 @@
 #include <multimedia/player_framework/native_avcapability.h>
 #include <multimedia/player_framework/native_avcodec_videoencoder.h>
 
-  // 错误事件发生回调函数OnError()。
+ <em> // 错误事件发生回调函数OnError()。</em>
   void OnError(OH_AVScreenCapture *capture, int32_t errorCode, void *userData) {
   (void)capture;
-  // 应用根据错误码进行事件处理。
+  <em>// 应用根据错误码进行事件处理。</em>
   (void)errorCode;
   (void)userData;
 }
 
-// 状态变更事件处理函数OnStateChange()。
+<em>// </em><em>状态变更事件处理函数OnStateChange()。</em>
 void OnStateChange(struct OH_AVScreenCapture *capture, OH_AVScreenCaptureStateCode stateCode, void *userData) {
   (void)capture;
-  if (stateCode == OH_AVScreenCaptureStateCode::OH_SCREEN_CAPTURE_STATE_CANCELED) { // 按照所需状态自行修改填写。
-    // 处理录屏状态变更。
+  if (stateCode == OH_AVScreenCaptureStateCode::OH_SCREEN_CAPTURE_STATE_CANCELED) { <em>// 按照所需状态自行修改填写。</em>
+   <em> // 处理录屏状态变更。</em>
   }
   (void)userData;
 }
 
-// 获取并处理音视频原始码流数据回调函数OnBufferAvailable()。
+<em>// </em><em>获取并处理音视频原始码流数据回调函数OnBufferAvailable()。</em>
 void OnBufferAvailable(OH_AVScreenCapture *capture, OH_AVBuffer *buffer, OH_AVScreenCaptureBufferType bufferType,
 int64_t timestamp, void *userData) {
-  // 处于录屏取码流状态。
+ <em> // 处于录屏取码流状态。</em>
 }
 
-// 执行回调ArkTS函数，将编码后视频帧回调ArkTS
+<em>// </em><em>执行回调ArkTS函数，将编码后视频帧回调ArkTS</em>
 static void callJS(napi_env env, napi_value js_cb, void *context, void *data) {
   SampleInfo *sampleInfo = reinterpret_cast<SampleInfo *>(data);
   napi_value buffer;
@@ -69,21 +69,21 @@ static void callJS(napi_env env, napi_value js_cb, void *context, void *data) {
   napi_call_function(env, nullptr, callFunc, 1, &buffer, nullptr);
 }
 
-// 开始录屏
+<em>// </em><em>开始录屏</em>
 static napi_value ScreenCapture(napi_env env, napi_callback_info info) {
-  // 获取ArkTS侧传递的回调函数
+ <em> // 获取ArkTS侧传递的回调函数</em>
   size_t argc = 1;
   napi_value args[1] = {nullptr};
   napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
 
-  // 录屏相关配置
+ <em> // 录屏相关配置</em>
   OH_AVScreenCapture *capture = OH_AVScreenCapture_Create();
-  // 设置回调。
+ <em> // 设置回调。</em>
   OH_AVScreenCapture_SetErrorCallback(capture, OnError, nullptr);
   OH_AVScreenCapture_SetStateCallback(capture, OnStateChange, nullptr);
-  // 回调音视频原始码流
+  <em>// 回调音视频原始码流</em>
   OH_AVScreenCapture_SetDataCallback(capture, OnBufferAvailable, nullptr);
-  // OH_AVScreenRecorderConfig配置录屏视频宽高，音频通道数等
+  <em>// OH_AVScreenRecorderConfig</em><em>配置录屏视频宽高，音频通道数等</em>
   OH_AudioCaptureInfo micCapInfo = {.audioSampleRate = 16000, .audioChannels = 2, .audioSource = OH_MIC};
   OH_VideoCaptureInfo videoCapInfo = {
     .videoFrameWidth = 768, .videoFrameHeight = 1280, .videoSource = OH_VIDEO_SOURCE_SURFACE_RGBA};
@@ -94,7 +94,7 @@ static napi_value ScreenCapture(napi_env env, napi_callback_info info) {
   OH_AVScreenCaptureConfig config = {.dataType = OH_ORIGINAL_STREAM, .audioInfo = audioInfo, .videoInfo = videoInfo};
   OH_AVScreenCapture_Init(capture, config);
 
-  // 编码器相关配置
+  <em>// 编码器相关配置</em>
   SampleInfo sampleInfo;
   sampleInfo.videoCodecMime = "video/avc";
   sampleInfo.videoWidth = 768;
@@ -110,25 +110,25 @@ static napi_value ScreenCapture(napi_env env, napi_callback_info info) {
   sampleInfo.audioMaxInputSize = sampleInfo.audioSampleRate * 0.02 * sampleInfo.audioChannelCount * sizeof(short);
   sampleInfo.pixelFormat = AV_PIXEL_FORMAT_RGBA;
 
-  // 保存ArkTS传递的回调函数，在合适时机调用
+  <em>// 保存ArkTS传递的回调函数，在合适时机调用</em>
   napi_create_reference(env, args[0], 1, &sampleInfo.tsRef);
-  // 创建线程安全函数
+  <em>// 创建线程安全函数</em>
   napi_value workName = nullptr;
   napi_create_string_utf8(env, "ScreenCaptureThreadSafeFunc", NAPI_AUTO_LENGTH, &workName);
   napi_threadsafe_function tsfn;
   napi_create_threadsafe_function(env, args[0], nullptr, workName, 0, 1, nullptr, nullptr, nullptr, callJS, &tsfn);
   sampleInfo.tsfn = tsfn;
 
-  // init编码器相关配置
+ <em> // init编码器相关配置</em>
   Recorder::GetInstance().Init(sampleInfo);
-  // 指定surface开始录屏。
+ <em> // 指定surface开始录屏。</em>
   int32_t retStart = OH_AVScreenCapture_StartScreenCaptureWithSurface(capture, sampleInfo.window);
 
   if (retStart != AV_ERR_OK) {
     return nullptr;
   }
   Recorder::GetInstance().Start();
-  // 开始录屏。
+ <em> // 开始录屏。</em>
   OH_AVScreenCapture_SetMicrophoneEnabled(capture, true);
   return nullptr;
 }
@@ -156,9 +156,9 @@ extern "C" __attribute__((constructor)) void RegisterEntryModule(void) { napi_mo
 
 2. OnNewOutputBuffer调用线程安全函数，避免死锁。
 ```text
-/*
- * Copyright (c) Huawei Technologies Co., Ltd. 2025-2025. All rights reserved.
- */
+<em>/*</em>
+<em> * Copyright (c) Huawei Technologies Co., Ltd. 2025-2025. All rights reserved.</em>
+<em> */</em>
 
 #include "sample_callback.h"
 #include "av_codec_sample_log.h"
@@ -166,20 +166,20 @@ extern "C" __attribute__((constructor)) void RegisterEntryModule(void) { napi_mo
 namespace {
   constexpr int LIMIT_LOGD_FREQUENCY = 50;
   constexpr int32_t BYTES_PER_SAMPLE_2 = 2;
-} // namespace
+}<em> </em><em>// namespace</em>
 
-// 自定义写入数据函数
+<em>// </em><em>自定义写入数据函数</em>
 int32_t SampleCallback::OnRenderWriteData(OH_AudioRenderer *renderer, void *userData, void *buffer, int32_t length)
 {
   (void)renderer;
   (void)length;
   CodecUserData *codecUserData = static_cast<CodecUserData *>(userData);
 
-  // 将待播放的数据，按length长度写入buffer
+ <em> // 将待播放的数据，按length长度写入buffer</em>
   uint8_t *dest = (uint8_t *)buffer;
   size_t index = 0;
   std::unique_lock<std::mutex> lock(codecUserData->outputMutex);
-  // 从队列中取出需要播放的长度为length的数据
+  <em>// 从队列中取出需要播放的长度为length的数据</em>
   while (!codecUserData->renderQueue.empty() && index < length) {
     dest[index++] = codecUserData->renderQueue.front();
     codecUserData->renderQueue.pop();
@@ -200,16 +200,16 @@ int32_t SampleCallback::OnRenderWriteData(OH_AudioRenderer *renderer, void *user
   }
   return 0;
 }
-// 自定义音频流事件函数
+<em>// </em><em>自定义音频流事件函数</em>
 int32_t SampleCallback::OnRenderStreamEvent(OH_AudioRenderer *renderer, void *userData, OH_AudioStream_Event event)
 {
   (void)renderer;
   (void)userData;
   (void)event;
-  // 根据event表示的音频流事件信息，更新播放器状态和界面
+ <em> // 根据event表示的音频流事件信息，更新播放器状态和界面</em>
   return 0;
 }
-// 自定义音频中断事件函数
+<em>// </em><em>自定义音频中断事件函数</em>
 int32_t SampleCallback::OnRenderInterruptEvent(OH_AudioRenderer *renderer, void *userData,
   OH_AudioInterrupt_ForceType type, OH_AudioInterrupt_Hint hint)
 {
@@ -217,17 +217,17 @@ int32_t SampleCallback::OnRenderInterruptEvent(OH_AudioRenderer *renderer, void 
   (void)userData;
   (void)type;
   (void)hint;
-  // 根据type和hint表示的音频中断信息，更新播放器状态和界面
+  <em>// </em><em>根据type和hint表示的音频中断信息，更新播放器状态和界面</em>
   return 0;
 }
-// 自定义异常回调函数
+<em>// </em><em>自定义异常回调函数</em>
 int32_t SampleCallback::OnRenderError(OH_AudioRenderer *renderer, void *userData, OH_AudioStream_Result error)
 {
   (void)renderer;
   (void)userData;
   (void)error;
   AVCODEC_SAMPLE_LOGE("OnRenderError");
-  // 根据error表示的音频异常信息，做出相应的处理
+  <em>// 根据error表示的音频异常信息，做出相应的处理</em>
   return 0;
 }
 
@@ -275,13 +275,13 @@ void SampleCallback::OnNewOutputBuffer(OH_AVCodec *codec, uint32_t index, OH_AVB
   std::unique_lock<std::mutex> lock(codecUserData->outputMutex);
   codecUserData->outputBufferInfoQueue.emplace(index, buffer);
 
-  // 回调arkts
+ <em> // 回调arkts</em>
   SampleInfo *sampleInfo = codecUserData->sampleInfo;
   if (sampleInfo) {
     uint8_t *buf = OH_AVBuffer_GetAddr(buffer);
     if (buf) {
       sampleInfo->buf = buf;
-      // 调用线程安全函数
+     <em> // 调用线程安全函数</em>
       napi_acquire_threadsafe_function(sampleInfo->tsfn);
       napi_call_threadsafe_function(sampleInfo->tsfn, (void *)sampleInfo, napi_tsfn_blocking);
     }

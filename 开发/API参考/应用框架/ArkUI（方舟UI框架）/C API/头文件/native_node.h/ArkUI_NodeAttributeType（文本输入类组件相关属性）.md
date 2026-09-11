@@ -1,15 +1,19 @@
 # ArkUI_NodeAttributeType（文本输入类组件相关属性）
 
-更新时间：2026-07-28 11:23:46（官网已下线）
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-node-h-nodeattributetype-textinputcategory
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_NodeAttributeType
 ```
   
 
-#### 概述
+## 概述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义ArkUI在Native侧可以设置的文本输入类组件相关属性样式集合，包含TextInput、TextArea组件属性设置。该属性集合支持光标样式、占位文本、输入过滤、自动填充、文本选中、计数器等多种样式与交互配置，适用于表单输入、搜索框、密码输入、多行文本编辑等场景，便于开发者统一管理文本输入组件的外观与行为。
  
@@ -21,7 +25,10 @@ enum ArkUI_NodeAttributeType
  
   
 
-#### NODE_TEXT_INPUT_PLACEHOLDER
+## NODE_TEXT_INPUT_PLACEHOLDER
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_PLACEHOLDER = MAX_NODE_SCOPE_NUM * ARKUI_NODE_TEXT_INPUT = 7000
@@ -35,6 +42,7 @@ NODE_TEXT_INPUT_PLACEHOLDER = MAX_NODE_SCOPE_NUM * ARKUI_NODE_TEXT_INPUT = 7000
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 默认提示文本的内容。当需要在输入框显示提示信息引导用户输入时设置此属性，例如“请输入用户名”、“请输入密码”等。不设置时输入框无提示文本。 |
@@ -42,6 +50,7 @@ NODE_TEXT_INPUT_PLACEHOLDER = MAX_NODE_SCOPE_NUM * ARKUI_NODE_TEXT_INPUT = 7000
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .string | 默认提示文本的内容。 |
@@ -49,7 +58,10 @@ NODE_TEXT_INPUT_PLACEHOLDER = MAX_NODE_SCOPE_NUM * ARKUI_NODE_TEXT_INPUT = 7000
  
   
 
-#### NODE_TEXT_INPUT_TEXT
+## NODE_TEXT_INPUT_TEXT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_TEXT = 7001
@@ -63,6 +75,7 @@ NODE_TEXT_INPUT_TEXT = 7001
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 输入框的默认文本内容，用于设置输入框初始显示的文本。当需要在输入框中预置文本时设置此属性，例如表单默认值、编辑初始内容等。不设置时输入框为空。 |
@@ -70,6 +83,7 @@ NODE_TEXT_INPUT_TEXT = 7001
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .string | 默认文本的内容。 |
@@ -77,7 +91,10 @@ NODE_TEXT_INPUT_TEXT = 7001
  
   
 
-#### NODE_TEXT_INPUT_CARET_COLOR
+## NODE_TEXT_INPUT_CARET_COLOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_CARET_COLOR = 7002
@@ -91,21 +108,26 @@ NODE_TEXT_INPUT_CARET_COLOR = 7002
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].u32 | 光标颜色数值，0xargb格式，形如 0xFFFF0000 表示红色。 |
+| .value[0].u32 | 光标颜色数值，0xARGB格式，形如 0xFFFF0000 表示红色。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| .value[0].u32 | 光标颜色数值，0xargb格式。 |
+| .value[0].u32 | 光标颜色数值，0xARGB格式。 |
  
  
   
 
-#### NODE_TEXT_INPUT_CARET_STYLE
+## NODE_TEXT_INPUT_CARET_STYLE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_CARET_STYLE = 7003
@@ -119,6 +141,7 @@ NODE_TEXT_INPUT_CARET_STYLE = 7003
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 光标宽度数值，单位为vp。取值范围：[0, +∞)。 |
@@ -126,6 +149,7 @@ NODE_TEXT_INPUT_CARET_STYLE = 7003
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 光标宽度数值，单位为vp。 |
@@ -133,7 +157,10 @@ NODE_TEXT_INPUT_CARET_STYLE = 7003
  
   
 
-#### NODE_TEXT_INPUT_SHOW_UNDERLINE
+## NODE_TEXT_INPUT_SHOW_UNDERLINE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_SHOW_UNDERLINE = 7004
@@ -147,6 +174,7 @@ NODE_TEXT_INPUT_SHOW_UNDERLINE = 7004
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 0表示不展示下划线，1表示展示下划线。默认值0。 |
@@ -154,6 +182,7 @@ NODE_TEXT_INPUT_SHOW_UNDERLINE = 7004
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 0表示不展示下划线，1表示展示下划线。 |
@@ -161,7 +190,10 @@ NODE_TEXT_INPUT_SHOW_UNDERLINE = 7004
  
   
 
-#### NODE_TEXT_INPUT_MAX_LENGTH
+## NODE_TEXT_INPUT_MAX_LENGTH
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_MAX_LENGTH = 7005
@@ -175,6 +207,7 @@ NODE_TEXT_INPUT_MAX_LENGTH = 7005
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 最大文本数，无单位。取值范围：[0, +∞)。 |
@@ -182,6 +215,7 @@ NODE_TEXT_INPUT_MAX_LENGTH = 7005
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 最大文本数，无单位。 |
@@ -189,7 +223,10 @@ NODE_TEXT_INPUT_MAX_LENGTH = 7005
  
   
 
-#### NODE_TEXT_INPUT_ENTER_KEY_TYPE
+## NODE_TEXT_INPUT_ENTER_KEY_TYPE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_ENTER_KEY_TYPE = 7006
@@ -203,6 +240,7 @@ NODE_TEXT_INPUT_ENTER_KEY_TYPE = 7006
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 回车键类型，具体枚举值请参考ArkUI_EnterKeyType。默认值ARKUI_ENTER_KEY_TYPE_DONE，显示为完成样式。 |
@@ -210,6 +248,7 @@ NODE_TEXT_INPUT_ENTER_KEY_TYPE = 7006
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 回车键类型枚举ArkUI_EnterKeyType，用于确定输入框回车键的显示样式。 |
@@ -217,7 +256,10 @@ NODE_TEXT_INPUT_ENTER_KEY_TYPE = 7006
  
   
 
-#### NODE_TEXT_INPUT_PLACEHOLDER_COLOR
+## NODE_TEXT_INPUT_PLACEHOLDER_COLOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_PLACEHOLDER_COLOR = 7007
@@ -231,27 +273,32 @@ NODE_TEXT_INPUT_PLACEHOLDER_COLOR = 7007
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].u32 | 颜色数值，0xargb格式，形如 0xFFFF0000 表示红色。 |
+| .value[0].u32 | 颜色数值，0xARGB格式，形如 0xFFFF0000 表示红色。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| .value[0].u32 | 颜色数值，0xargb格式。 |
+| .value[0].u32 | 颜色数值，0xARGB格式。 |
  
  
   
 
-#### NODE_TEXT_INPUT_PLACEHOLDER_FONT
+## NODE_TEXT_INPUT_PLACEHOLDER_FONT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_PLACEHOLDER_FONT = 7008
 ```
  
-无输入时默认提示文本的字体配置（包括大小、字重、样式、字体列表）属性，支持属性设置，属性重置和属性获取接口。
+无输入时默认提示文本的字体配置（包括大小、字重、样式、字体族）属性，支持属性设置，属性重置和属性获取接口。
  
 作为属性设置方法参数、属性获取方法返回值[ArkUI_AttributeItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-arkui-attributeitem)格式如下。
  
@@ -259,27 +306,32 @@ NODE_TEXT_INPUT_PLACEHOLDER_FONT = 7008
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0]?.f32 | 可选字体大小数值，默认值16.0，单位为fp。取值范围：[0, +∞)。传入负数时不生效。 |
 | .value[1]?.i32 | 可选字体样式，具体枚举值请参考ArkUI_FontStyle。默认值为ARKUI_FONT_STYLE_NORMAL，表示标准字体样式。 |
 | .value[2]?.i32 | 可选字体粗细样式，具体枚举值请参考ArkUI_FontWeight。默认值ARKUI_FONT_WEIGHT_NORMAL，表示正常字体粗细。 |
-| ?.string | 字体族内容，多个字体族之间使用逗号分隔，形如“字重；字体族1，字体族2”。不传入时使用系统默认字体族。 |
+| ?.string | 字体族内容，多个字体族之间使用英文逗号(,)分隔，形如“字体族1,字体族2”。不传入时使用系统默认字体族。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 字体大小数值，单位为fp。 |
 | .value[1].i32 | 字体样式ArkUI_FontStyle。 |
 | .value[2].i32 | 字体粗细样式ArkUI_FontWeight。 |
-| .string | 字体族内容，多个字体族之间使用逗号分隔。 |
+| .string | 字体族内容，多个字体族之间使用英文逗号(,)分隔。 |
  
  
   
 
-#### NODE_TEXT_INPUT_ENABLE_KEYBOARD_ON_FOCUS
+## NODE_TEXT_INPUT_ENABLE_KEYBOARD_ON_FOCUS
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_ENABLE_KEYBOARD_ON_FOCUS = 7009
@@ -293,6 +345,7 @@ NODE_TEXT_INPUT_ENABLE_KEYBOARD_ON_FOCUS = 7009
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 0表示聚焦不拉起输入法，1表示拉起，默认值为1。 |
@@ -300,6 +353,7 @@ NODE_TEXT_INPUT_ENABLE_KEYBOARD_ON_FOCUS = 7009
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 0表示聚焦不拉起输入法，1表示拉起。 |
@@ -307,7 +361,10 @@ NODE_TEXT_INPUT_ENABLE_KEYBOARD_ON_FOCUS = 7009
  
   
 
-#### NODE_TEXT_INPUT_TYPE
+## NODE_TEXT_INPUT_TYPE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_TYPE = 7010
@@ -321,6 +378,7 @@ NODE_TEXT_INPUT_TYPE = 7010
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 输入框类型，具体枚举值请参考ArkUI_TextInputType。默认值为ARKUI_TEXTINPUT_TYPE_NORMAL，表示基本输入模式。 |
@@ -328,6 +386,7 @@ NODE_TEXT_INPUT_TYPE = 7010
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 输入框类型枚举ArkUI_TextInputType，用于确定输入框的输入内容和键盘样式。 |
@@ -335,7 +394,10 @@ NODE_TEXT_INPUT_TYPE = 7010
  
   
 
-#### NODE_TEXT_INPUT_SELECTED_BACKGROUND_COLOR
+## NODE_TEXT_INPUT_SELECTED_BACKGROUND_COLOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_SELECTED_BACKGROUND_COLOR = 7011
@@ -349,21 +411,26 @@ NODE_TEXT_INPUT_SELECTED_BACKGROUND_COLOR = 7011
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].u32 | 颜色数值，0xargb格式，形如 0xFFFF0000 表示红色。 |
+| .value[0].u32 | 颜色数值，0xARGB格式，形如 0xFFFF0000 表示红色。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| .value[0].u32 | 颜色数值，0xargb格式。 |
+| .value[0].u32 | 颜色数值，0xARGB格式。 |
  
  
   
 
-#### NODE_TEXT_INPUT_SHOW_PASSWORD_ICON
+## NODE_TEXT_INPUT_SHOW_PASSWORD_ICON
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_SHOW_PASSWORD_ICON = 7012
@@ -377,6 +444,7 @@ NODE_TEXT_INPUT_SHOW_PASSWORD_ICON = 7012
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 0表示不显示图标，1表示显示图标，默认值为0。 |
@@ -384,6 +452,7 @@ NODE_TEXT_INPUT_SHOW_PASSWORD_ICON = 7012
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 0表示不显示图标，1表示显示图标。 |
@@ -391,7 +460,10 @@ NODE_TEXT_INPUT_SHOW_PASSWORD_ICON = 7012
  
   
 
-#### NODE_TEXT_INPUT_EDITING
+## NODE_TEXT_INPUT_EDITING
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_EDITING = 7013
@@ -405,6 +477,7 @@ NODE_TEXT_INPUT_EDITING = 7013
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 0表示退出编辑态，1表示维持现状。 |
@@ -412,6 +485,7 @@ NODE_TEXT_INPUT_EDITING = 7013
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 0表示退出编辑态，1表示维持现状。 |
@@ -419,7 +493,10 @@ NODE_TEXT_INPUT_EDITING = 7013
  
   
 
-#### NODE_TEXT_INPUT_CANCEL_BUTTON
+## NODE_TEXT_INPUT_CANCEL_BUTTON
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_CANCEL_BUTTON = 7014
@@ -433,27 +510,32 @@ NODE_TEXT_INPUT_CANCEL_BUTTON = 7014
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 按钮样式，具体枚举值请参考ArkUI_CancelButtonStyle。默认值为ARKUI_CANCELBUTTON_STYLE_INPUT，表示清除按钮输入样式。 |
 | .value[1]?.f32 | 图标大小数值，单位为vp。取值范围：[0, +∞)。传入负数时不生效。不传入时使用系统默认图标大小。 |
-| .value[2]?.u32 | 按钮图标颜色数值，0xargb格式，形如 0xFFFF0000 表示红色。不传入时使用系统默认图标颜色。 |
+| .value[2]?.u32 | 按钮图标颜色数值，0xARGB格式，形如 0xFFFF0000 表示红色。不传入时使用系统默认图标颜色。 |
 | ?.string | 按钮图标地址，入参内容为图片本地地址，例如 /pages/icon.png。不传入时使用系统默认清除图标。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 按钮样式ArkUI_CancelButtonStyle。 |
 | .value[1].f32 | 图标大小数值，单位为vp。 |
-| .value[2].u32 | 按钮图标颜色数值，0xargb格式。 |
+| .value[2].u32 | 按钮图标颜色数值，0xARGB格式。 |
 | .string | 按钮图标地址。 |
  
  
   
 
-#### NODE_TEXT_INPUT_TEXT_SELECTION
+## NODE_TEXT_INPUT_TEXT_SELECTION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_TEXT_SELECTION = 7015
@@ -467,6 +549,7 @@ NODE_TEXT_INPUT_TEXT_SELECTION = 7015
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 选中文本的起始位置，取值范围[0, 文本长度]，需小于终止位置才生效。 |
@@ -475,6 +558,7 @@ NODE_TEXT_INPUT_TEXT_SELECTION = 7015
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 选中文本的起始位置。 |
@@ -483,7 +567,10 @@ NODE_TEXT_INPUT_TEXT_SELECTION = 7015
  
   
 
-#### NODE_TEXT_INPUT_UNDERLINE_COLOR
+## NODE_TEXT_INPUT_UNDERLINE_COLOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_UNDERLINE_COLOR = 7016
@@ -497,27 +584,32 @@ NODE_TEXT_INPUT_UNDERLINE_COLOR = 7016
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].u32 | typing下划线颜色，必填，表示键入时的下划线颜色，0xargb类型。 |
-| .value[1].u32 | normal下划线颜色，必填，表示非特殊状态时下划线颜色，0xargb类型。 |
-| .value[2].u32 | error下划线颜色，必填，表示错误时下划线颜色，0xargb类型。 |
-| .value[3].u32 | disable下划线颜色，必填，表示禁用时下划线颜色，0xargb类型。 |
+| .value[0].u32 | typing下划线颜色，必填，表示键入时的下划线颜色，0xARGB类型。 |
+| .value[1].u32 | normal下划线颜色，必填，表示非特殊状态时下划线颜色，0xARGB类型。 |
+| .value[2].u32 | error下划线颜色，必填，表示错误时下划线颜色，0xARGB类型。 |
+| .value[3].u32 | disable下划线颜色，必填，表示禁用时下划线颜色，0xARGB类型。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| .value[0].u32 | typing下划线颜色，表示键入时的下划线颜色，0xargb类型。 |
-| .value[1].u32 | normal下划线颜色，表示非特殊状态时下划线颜色，0xargb类型。 |
-| .value[2].u32 | error下划线颜色，表示错误时下划线颜色，0xargb类型。 |
-| .value[3].u32 | disable下划线颜色，表示禁用时下划线颜色，0xargb类型。 |
+| .value[0].u32 | typing下划线颜色，表示键入时的下划线颜色，0xARGB类型。 |
+| .value[1].u32 | normal下划线颜色，表示非特殊状态时下划线颜色，0xARGB类型。 |
+| .value[2].u32 | error下划线颜色，表示错误时下划线颜色，0xARGB类型。 |
+| .value[3].u32 | disable下划线颜色，表示禁用时下划线颜色，0xARGB类型。 |
  
  
   
 
-#### NODE_TEXT_INPUT_ENABLE_AUTO_FILL
+## NODE_TEXT_INPUT_ENABLE_AUTO_FILL
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_ENABLE_AUTO_FILL = 7017
@@ -531,6 +623,7 @@ NODE_TEXT_INPUT_ENABLE_AUTO_FILL = 7017
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否启用自动填充，默认值1。 0表示不启用，1表示启用。 |
@@ -538,6 +631,7 @@ NODE_TEXT_INPUT_ENABLE_AUTO_FILL = 7017
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否启用自动填充。1表示启用，0表示不启用。 |
@@ -545,7 +639,10 @@ NODE_TEXT_INPUT_ENABLE_AUTO_FILL = 7017
  
   
 
-#### NODE_TEXT_INPUT_CONTENT_TYPE
+## NODE_TEXT_INPUT_CONTENT_TYPE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_CONTENT_TYPE = 7018
@@ -559,6 +656,7 @@ NODE_TEXT_INPUT_CONTENT_TYPE = 7018
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 参数类型ArkUI_TextInputContentType，用于自动填充场景指定内容类型。具体枚举值及适用场景请参考ArkUI_TextInputContentType枚举说明。 |
@@ -566,6 +664,7 @@ NODE_TEXT_INPUT_CONTENT_TYPE = 7018
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 自动填充内容类型枚举ArkUI_TextInputContentType，用于确定自动填充的内容类型。 |
@@ -573,7 +672,10 @@ NODE_TEXT_INPUT_CONTENT_TYPE = 7018
  
   
 
-#### NODE_TEXT_INPUT_PASSWORD_RULES
+## NODE_TEXT_INPUT_PASSWORD_RULES
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_PASSWORD_RULES = 7019
@@ -587,6 +689,7 @@ NODE_TEXT_INPUT_PASSWORD_RULES = 7019
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 定义生成密码的规则，用于在触发自动填充时透传给密码保险箱以控制新密码的生成。 |
@@ -594,6 +697,7 @@ NODE_TEXT_INPUT_PASSWORD_RULES = 7019
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .string | 定义生成密码的规则。 |
@@ -601,13 +705,16 @@ NODE_TEXT_INPUT_PASSWORD_RULES = 7019
  
   
 
-#### NODE_TEXT_INPUT_SELECT_ALL
+## NODE_TEXT_INPUT_SELECT_ALL
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_SELECT_ALL = 7020
 ```
  
-设置当初始状态，是否全选文本。不支持内联模式。
+设置初始状态时是否全选文本。不支持内联模式。
  
 作为属性设置方法参数、属性获取方法返回值[ArkUI_AttributeItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-arkui-attributeitem)格式如下。
  
@@ -615,6 +722,7 @@ NODE_TEXT_INPUT_SELECT_ALL = 7020
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否全选文本，默认值：0。 1表示会全选文本，0表示不会全选文本。 |
@@ -622,6 +730,7 @@ NODE_TEXT_INPUT_SELECT_ALL = 7020
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否全选文本。1表示会全选文本，0表示不会全选文本。 |
@@ -629,7 +738,10 @@ NODE_TEXT_INPUT_SELECT_ALL = 7020
  
   
 
-#### NODE_TEXT_INPUT_INPUT_FILTER
+## NODE_TEXT_INPUT_INPUT_FILTER
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_INPUT_FILTER = 7021
@@ -643,6 +755,7 @@ NODE_TEXT_INPUT_INPUT_FILTER = 7021
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 正则表达式，用于过滤用户输入内容。匹配表达式的输入允许显示，不匹配的输入将被过滤。当需要限制用户只能输入特定格式的字符时设置此属性，例如"^[a-zA-Z]+$"表示只允许字母，"^[0-9]+$"表示只允许数字。不设置时允许所有字符输入。 |
@@ -650,6 +763,7 @@ NODE_TEXT_INPUT_INPUT_FILTER = 7021
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .string | 正则表达式。 |
@@ -657,7 +771,10 @@ NODE_TEXT_INPUT_INPUT_FILTER = 7021
  
   
 
-#### NODE_TEXT_INPUT_STYLE
+## NODE_TEXT_INPUT_STYLE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_STYLE = 7022
@@ -671,6 +788,7 @@ NODE_TEXT_INPUT_STYLE = 7022
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 参数类型ArkUI_TextInputStyle。内联输入风格只支持输入框类型ArkUI_TextInputType设置为ARKUI_TEXTINPUT_TYPE_NORMAL。默认值为ARKUI_TEXTINPUT_STYLE_DEFAULT。 |
@@ -678,6 +796,7 @@ NODE_TEXT_INPUT_STYLE = 7022
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 输入框样式枚举ArkUI_TextInputStyle，用于确定输入框的显示样式。 |
@@ -685,7 +804,10 @@ NODE_TEXT_INPUT_STYLE = 7022
  
   
 
-#### NODE_TEXT_INPUT_CARET_OFFSET
+## NODE_TEXT_INPUT_CARET_OFFSET
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_CARET_OFFSET = 7023
@@ -703,6 +825,7 @@ NODE_TEXT_INPUT_CARET_OFFSET = 7023
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 从字符串开始到光标所在位置的字符长度，取值范围[0, 文本长度]。超出范围时自动修正为边界值。 |
@@ -710,6 +833,7 @@ NODE_TEXT_INPUT_CARET_OFFSET = 7023
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 光标所在位置的索引值。 |
@@ -719,7 +843,10 @@ NODE_TEXT_INPUT_CARET_OFFSET = 7023
  
   
 
-#### NODE_TEXT_INPUT_CONTENT_RECT
+## NODE_TEXT_INPUT_CONTENT_RECT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_CONTENT_RECT = 7024
@@ -733,6 +860,7 @@ NODE_TEXT_INPUT_CONTENT_RECT = 7024
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 水平方向横坐标，单位为px。 |
@@ -743,7 +871,10 @@ NODE_TEXT_INPUT_CONTENT_RECT = 7024
  
   
 
-#### NODE_TEXT_INPUT_CONTENT_LINE_COUNT
+## NODE_TEXT_INPUT_CONTENT_LINE_COUNT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_CONTENT_LINE_COUNT = 7025
@@ -757,6 +888,7 @@ NODE_TEXT_INPUT_CONTENT_LINE_COUNT = 7025
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 已编辑文本内容行数。 |
@@ -764,7 +896,10 @@ NODE_TEXT_INPUT_CONTENT_LINE_COUNT = 7025
  
   
 
-#### NODE_TEXT_INPUT_SELECTION_MENU_HIDDEN
+## NODE_TEXT_INPUT_SELECTION_MENU_HIDDEN
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_SELECTION_MENU_HIDDEN = 7026
@@ -778,6 +913,7 @@ NODE_TEXT_INPUT_SELECTION_MENU_HIDDEN = 7026
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 长按、双击输入框或者右键输入框时，是否不弹出文本选择菜单。默认值0。 设置为1时，单击输入框光标、长按输入框、双击输入框、三击输入框或者右键输入框，隐藏系统文本选择菜单。 设置为0时，显示系统文本选择菜单。 |
@@ -785,6 +921,7 @@ NODE_TEXT_INPUT_SELECTION_MENU_HIDDEN = 7026
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 长按、双击输入框或者右键输入框时，是否不弹出文本选择菜单。1表示不弹出菜单，0表示弹出菜单。 |
@@ -792,7 +929,10 @@ NODE_TEXT_INPUT_SELECTION_MENU_HIDDEN = 7026
  
   
 
-#### NODE_TEXT_INPUT_BLUR_ON_SUBMIT
+## NODE_TEXT_INPUT_BLUR_ON_SUBMIT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_BLUR_ON_SUBMIT = 7027
@@ -806,6 +946,7 @@ NODE_TEXT_INPUT_BLUR_ON_SUBMIT = 7027
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 触发回车键后是否失焦。默认值1。 0表示不失焦，1表示失焦。 |
@@ -813,6 +954,7 @@ NODE_TEXT_INPUT_BLUR_ON_SUBMIT = 7027
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 触发回车键后是否失焦。1表示失焦，0表示不失焦。 |
@@ -820,7 +962,10 @@ NODE_TEXT_INPUT_BLUR_ON_SUBMIT = 7027
  
   
 
-#### NODE_TEXT_INPUT_CUSTOM_KEYBOARD
+## NODE_TEXT_INPUT_CUSTOM_KEYBOARD
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_CUSTOM_KEYBOARD = 7028
@@ -834,6 +979,7 @@ NODE_TEXT_INPUT_CUSTOM_KEYBOARD = 7028
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 自定义键盘，参数类型ArkUI_NodeHandle。 |
@@ -842,6 +988,7 @@ NODE_TEXT_INPUT_CUSTOM_KEYBOARD = 7028
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .object | 自定义键盘，参数类型ArkUI_NodeHandle。 |
@@ -850,7 +997,10 @@ NODE_TEXT_INPUT_CUSTOM_KEYBOARD = 7028
  
   
 
-#### NODE_TEXT_INPUT_WORD_BREAK
+## NODE_TEXT_INPUT_WORD_BREAK
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_WORD_BREAK = 7029
@@ -864,6 +1014,7 @@ NODE_TEXT_INPUT_WORD_BREAK = 7029
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 参数类型ArkUI_WordBreak。仅在内联输入风格编辑态生效。默认值ARKUI_WORD_BREAK_BREAK_WORD。 |
@@ -871,6 +1022,7 @@ NODE_TEXT_INPUT_WORD_BREAK = 7029
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 文本断行规则枚举ArkUI_WordBreak，用于确定文本的断行方式。 |
@@ -878,7 +1030,10 @@ NODE_TEXT_INPUT_WORD_BREAK = 7029
  
   
 
-#### NODE_TEXT_INPUT_SHOW_KEYBOARD_ON_FOCUS
+## NODE_TEXT_INPUT_SHOW_KEYBOARD_ON_FOCUS
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_SHOW_KEYBOARD_ON_FOCUS = 7030
@@ -892,6 +1047,7 @@ NODE_TEXT_INPUT_SHOW_KEYBOARD_ON_FOCUS = 7030
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否弹出键盘。默认值1。 0表示获取焦点时不弹出键盘，1表示获取焦点时弹出键盘。 |
@@ -899,6 +1055,7 @@ NODE_TEXT_INPUT_SHOW_KEYBOARD_ON_FOCUS = 7030
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否弹出键盘。1表示弹出键盘，0表示不弹出键盘。 |
@@ -906,7 +1063,10 @@ NODE_TEXT_INPUT_SHOW_KEYBOARD_ON_FOCUS = 7030
  
   
 
-#### NODE_TEXT_INPUT_NUMBER_OF_LINES
+## NODE_TEXT_INPUT_NUMBER_OF_LINES
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_NUMBER_OF_LINES = 7031
@@ -920,6 +1080,7 @@ NODE_TEXT_INPUT_NUMBER_OF_LINES = 7031
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 设置行数，取值范围[1, +∞)，用于通过该属性计算TextInput组件的高度。例如：设置为3时，组件将默认显示足够容纳3行文本内容的高度。 |
@@ -927,6 +1088,7 @@ NODE_TEXT_INPUT_NUMBER_OF_LINES = 7031
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 设置numberOfLines的值。 |
@@ -934,7 +1096,10 @@ NODE_TEXT_INPUT_NUMBER_OF_LINES = 7031
  
   
 
-#### NODE_TEXT_INPUT_LETTER_SPACING
+## NODE_TEXT_INPUT_LETTER_SPACING
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_LETTER_SPACING = 7032
@@ -948,6 +1113,7 @@ NODE_TEXT_INPUT_LETTER_SPACING = 7032
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 设置letterSpacing的值，默认单位fp。 |
@@ -955,6 +1121,7 @@ NODE_TEXT_INPUT_LETTER_SPACING = 7032
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 获取letterSpacing的值，默认单位fp。 |
@@ -962,7 +1129,10 @@ NODE_TEXT_INPUT_LETTER_SPACING = 7032
  
   
 
-#### NODE_TEXT_INPUT_ENABLE_PREVIEW_TEXT
+## NODE_TEXT_INPUT_ENABLE_PREVIEW_TEXT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_ENABLE_PREVIEW_TEXT = 7033
@@ -978,6 +1148,7 @@ NODE_TEXT_INPUT_ENABLE_PREVIEW_TEXT = 7033
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 设置是否开启输入预上屏。默认值1。 0表示不开启输入预上屏，1表示开启输入预上屏。 |
@@ -985,6 +1156,7 @@ NODE_TEXT_INPUT_ENABLE_PREVIEW_TEXT = 7033
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 获取是否开启输入预上屏。0表示不开启输入预上屏，1表示开启输入预上屏。 |
@@ -992,7 +1164,10 @@ NODE_TEXT_INPUT_ENABLE_PREVIEW_TEXT = 7033
  
   
 
-#### NODE_TEXT_INPUT_HALF_LEADING
+## NODE_TEXT_INPUT_HALF_LEADING
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_HALF_LEADING = 7034
@@ -1006,6 +1181,7 @@ NODE_TEXT_INPUT_HALF_LEADING = 7034
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 设置文本是否将行间距平分至行的顶部与底部。默认值0。 1表示将行间距平分至行的顶部与底部，0表示不平分。 |
@@ -1013,6 +1189,7 @@ NODE_TEXT_INPUT_HALF_LEADING = 7034
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 文本行间距是否平分至行的顶部与底部。1表示平分，0表示不平分。 |
@@ -1020,7 +1197,10 @@ NODE_TEXT_INPUT_HALF_LEADING = 7034
  
   
 
-#### NODE_TEXT_INPUT_KEYBOARD_APPEARANCE
+## NODE_TEXT_INPUT_KEYBOARD_APPEARANCE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_KEYBOARD_APPEARANCE = 7035
@@ -1034,6 +1214,7 @@ NODE_TEXT_INPUT_KEYBOARD_APPEARANCE = 7035
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 键盘样式，参数类型ArkUI_KeyboardAppearance。具体枚举值请参考ArkUI_KeyboardAppearance枚举说明。默认值ARKUI_KEYBOARD_APPEARANCE_NONE_IMMERSIVE，不使用沉浸式样式。 |
@@ -1041,6 +1222,7 @@ NODE_TEXT_INPUT_KEYBOARD_APPEARANCE = 7035
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 键盘样式，参数类型ArkUI_KeyboardAppearance。具体枚举值请参考ArkUI_KeyboardAppearance枚举说明。默认值ARKUI_KEYBOARD_APPEARANCE_NONE_IMMERSIVE。 |
@@ -1048,7 +1230,10 @@ NODE_TEXT_INPUT_KEYBOARD_APPEARANCE = 7035
  
   
 
-#### NODE_TEXT_INPUT_ENABLE_FILL_ANIMATION
+## NODE_TEXT_INPUT_ENABLE_FILL_ANIMATION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_ENABLE_FILL_ANIMATION = 7036
@@ -1062,6 +1247,7 @@ NODE_TEXT_INPUT_ENABLE_FILL_ANIMATION = 7036
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否启用自动填充动效。启用之后，仅输入框类型的枚举ArkUI_TextInputType设置为ARKUI_TEXTINPUT_TYPE_PASSWORD、ARKUI_TEXTINPUT_TYPE_NUMBER_PASSWORD或ARKUI_TEXTINPUT_TYPE_NEW_PASSWORD的输入框在进行自动填充时动效可生效。 1表示启用，0表示不启用。 默认值1。 |
@@ -1069,6 +1255,7 @@ NODE_TEXT_INPUT_ENABLE_FILL_ANIMATION = 7036
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否启用自动填充动效。0表示不启用，1表示启用。启用之后，仅输入框类型的枚举ArkUI_TextInputType设置为ARKUI_TEXTINPUT_TYPE_PASSWORD、ARKUI_TEXTINPUT_TYPE_NUMBER_PASSWORD或ARKUI_TEXTINPUT_TYPE_NEW_PASSWORD的输入框在进行自动填充时动效可生效。 |
@@ -1076,13 +1263,16 @@ NODE_TEXT_INPUT_ENABLE_FILL_ANIMATION = 7036
  
   
 
-#### NODE_TEXT_INPUT_LINE_HEIGHT
+## NODE_TEXT_INPUT_LINE_HEIGHT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_LINE_HEIGHT = 7037
 ```
  
-设置输入框文本的高度，支持属性设置，属性重置和属性获取接口。
+设置输入框文本行高，支持属性设置，属性重置和属性获取接口。
  
 作为属性设置方法参数、属性获取方法返回值[ArkUI_AttributeItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-arkui-attributeitem)格式如下。
  
@@ -1090,21 +1280,26 @@ NODE_TEXT_INPUT_LINE_HEIGHT = 7037
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].i32 | 文本的高度，单位fp。默认值是自适应字体大小。不传入该参数时，文本的高度设置为5fp。 |
+| .value[0].i32 | 文本行高，单位fp。默认值是自适应字体大小。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| .value[0].i32 | 文本的高度，单位fp。 |
+| .value[0].i32 | 文本行高，单位fp。 |
  
  
   
 
-#### NODE_TEXT_INPUT_ENABLE_SELECTED_DATA_DETECTOR
+## NODE_TEXT_INPUT_ENABLE_SELECTED_DATA_DETECTOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_ENABLE_SELECTED_DATA_DETECTOR = 7038
@@ -1118,6 +1313,7 @@ NODE_TEXT_INPUT_ENABLE_SELECTED_DATA_DETECTOR = 7038
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 开启选中词文本识别，1表示开启识别，0表示关闭识别。默认值：1。 |
@@ -1125,6 +1321,7 @@ NODE_TEXT_INPUT_ENABLE_SELECTED_DATA_DETECTOR = 7038
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否开启选中词文本识别。1表示已开启识别，0表示已关闭识别。 |
@@ -1132,7 +1329,10 @@ NODE_TEXT_INPUT_ENABLE_SELECTED_DATA_DETECTOR = 7038
  
   
 
-#### NODE_TEXT_INPUT_SHOW_COUNTER
+## NODE_TEXT_INPUT_SHOW_COUNTER
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_SHOW_COUNTER = 7040
@@ -1146,6 +1346,7 @@ NODE_TEXT_INPUT_SHOW_COUNTER = 7040
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否开启计数器。值为1表示开启计数器，值为0表示不开启计数器。 |
@@ -1156,6 +1357,7 @@ NODE_TEXT_INPUT_SHOW_COUNTER = 7040
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否开启计数器。0表示不开启计数器，1表示开启计数器。 |
@@ -1166,7 +1368,10 @@ NODE_TEXT_INPUT_SHOW_COUNTER = 7040
  
   
 
-#### NODE_TEXT_INPUT_TEXT_CONTENT_CONTROLLER_BASE
+## NODE_TEXT_INPUT_TEXT_CONTENT_CONTROLLER_BASE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_TEXT_CONTENT_CONTROLLER_BASE = 7041
@@ -1180,6 +1385,7 @@ NODE_TEXT_INPUT_TEXT_CONTENT_CONTROLLER_BASE = 7041
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 文本内容基础控制器。参数类型为ArkUI_TextContentBaseController。 |
@@ -1187,6 +1393,7 @@ NODE_TEXT_INPUT_TEXT_CONTENT_CONTROLLER_BASE = 7041
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .object | 文本内容基础控制器。参数类型为ArkUI_TextContentBaseController。 |
@@ -1194,7 +1401,10 @@ NODE_TEXT_INPUT_TEXT_CONTENT_CONTROLLER_BASE = 7041
  
   
 
-#### NODE_TEXT_INPUT_ELLIPSIS_MODE
+## NODE_TEXT_INPUT_ELLIPSIS_MODE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_ELLIPSIS_MODE = 7042
@@ -1215,6 +1425,7 @@ NODE_TEXT_INPUT_ELLIPSIS_MODE = 7042
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 参数类型ArkUI_EllipsisMode。具体枚举值请参考ArkUI_EllipsisMode枚举说明。默认值为ARKUI_ELLIPSIS_MODE_END。 |
@@ -1222,6 +1433,7 @@ NODE_TEXT_INPUT_ELLIPSIS_MODE = 7042
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 文本省略位置枚举ArkUI_EllipsisMode，用于确定文本超长时的省略位置。 |
@@ -1229,7 +1441,10 @@ NODE_TEXT_INPUT_ELLIPSIS_MODE = 7042
  
   
 
-#### NODE_TEXT_INPUT_ORPHAN_CHAR_OPTIMIZATION
+## NODE_TEXT_INPUT_ORPHAN_CHAR_OPTIMIZATION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_ORPHAN_CHAR_OPTIMIZATION = 7043
@@ -1245,6 +1460,7 @@ NODE_TEXT_INPUT_ORPHAN_CHAR_OPTIMIZATION = 7043
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否使能孤字优化。该特性需在ArkUI_WordBreak属性为非ARKUI_WORD_BREAK_BREAK_ALL时生效。1表示使能，0表示不使能。默认值0。 |
@@ -1252,6 +1468,7 @@ NODE_TEXT_INPUT_ORPHAN_CHAR_OPTIMIZATION = 7043
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否使能孤字优化。0表示不使能，1表示使能。 |
@@ -1259,7 +1476,10 @@ NODE_TEXT_INPUT_ORPHAN_CHAR_OPTIMIZATION = 7043
  
   
 
-#### NODE_TEXT_INPUT_COMPRESS_LEADING_PUNCTUATION
+## NODE_TEXT_INPUT_COMPRESS_LEADING_PUNCTUATION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_COMPRESS_LEADING_PUNCTUATION = 7044
@@ -1273,6 +1493,7 @@ NODE_TEXT_INPUT_COMPRESS_LEADING_PUNCTUATION = 7044
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否打开行首标点压缩开关。 1表示开启行首标点压缩，0表示关闭行首标点压缩。默认值0。 |
@@ -1280,6 +1501,7 @@ NODE_TEXT_INPUT_COMPRESS_LEADING_PUNCTUATION = 7044
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否打开行首标点压缩开关。0表示关闭行首标点压缩，1表示开启行首标点压缩。 |
@@ -1287,7 +1509,10 @@ NODE_TEXT_INPUT_COMPRESS_LEADING_PUNCTUATION = 7044
  
   
 
-#### NODE_TEXT_INPUT_INCLUDE_FONT_PADDING
+## NODE_TEXT_INPUT_INCLUDE_FONT_PADDING
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_INCLUDE_FONT_PADDING = 7045
@@ -1301,6 +1526,7 @@ NODE_TEXT_INPUT_INCLUDE_FONT_PADDING = 7045
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 设置输入框内文字是否在首行顶部和尾行底部增加间距以避免文字截断。1表示开启增加间距，0表示关闭增加间距。默认值：0。 |
@@ -1308,6 +1534,7 @@ NODE_TEXT_INPUT_INCLUDE_FONT_PADDING = 7045
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否在首行顶部和尾行底部增加间距。0表示不增加间距，1表示增加间距。 |
@@ -1315,7 +1542,10 @@ NODE_TEXT_INPUT_INCLUDE_FONT_PADDING = 7045
  
   
 
-#### NODE_TEXT_INPUT_FALLBACK_LINE_SPACING
+## NODE_TEXT_INPUT_FALLBACK_LINE_SPACING
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_FALLBACK_LINE_SPACING = 7046
@@ -1329,6 +1559,7 @@ NODE_TEXT_INPUT_FALLBACK_LINE_SPACING = 7046
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 支持行高基于文字实际高度自适应。此接口仅当行高小于文字实际高度时生效。1表示开启自适应，0表示关闭自适应。默认值：0。 |
@@ -1336,6 +1567,7 @@ NODE_TEXT_INPUT_FALLBACK_LINE_SPACING = 7046
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否开启行高基于文字实际高度自适应。0表示关闭自适应，1表示开启自适应。 |
@@ -1343,7 +1575,10 @@ NODE_TEXT_INPUT_FALLBACK_LINE_SPACING = 7046
  
   
 
-#### NODE_TEXT_INPUT_DIRECTION
+## NODE_TEXT_INPUT_DIRECTION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_DIRECTION = 7047
@@ -1357,6 +1592,7 @@ NODE_TEXT_INPUT_DIRECTION = 7047
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 表示文本的排版方向，取ArkUI_TextDirection枚举值。默认值为ARKUI_TEXT_DIRECTION_DEFAULT。 |
@@ -1364,6 +1600,7 @@ NODE_TEXT_INPUT_DIRECTION = 7047
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 表示文本的排版方向，对应取值及含义请参考ArkUI_TextDirection枚举值。 |
@@ -1371,7 +1608,10 @@ NODE_TEXT_INPUT_DIRECTION = 7047
  
   
 
-#### NODE_TEXT_INPUT_SELECTED_DRAG_PREVIEW_STYLE
+## NODE_TEXT_INPUT_SELECTED_DRAG_PREVIEW_STYLE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_SELECTED_DRAG_PREVIEW_STYLE = 7048
@@ -1385,6 +1625,7 @@ NODE_TEXT_INPUT_SELECTED_DRAG_PREVIEW_STYLE = 7048
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 文本选中状态下的拖拽预览样式。参数类型为ArkUI_SelectedDragPreviewStyle。 |
@@ -1392,6 +1633,7 @@ NODE_TEXT_INPUT_SELECTED_DRAG_PREVIEW_STYLE = 7048
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .object | 文本选中状态下的拖拽预览样式。参数类型为ArkUI_SelectedDragPreviewStyle。 |
@@ -1399,7 +1641,10 @@ NODE_TEXT_INPUT_SELECTED_DRAG_PREVIEW_STYLE = 7048
  
   
 
-#### NODE_TEXT_INPUT_LINEAR_GRADIENT
+## NODE_TEXT_INPUT_LINEAR_GRADIENT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_LINEAR_GRADIENT = 7051
@@ -1413,27 +1658,32 @@ NODE_TEXT_INPUT_LINEAR_GRADIENT = 7051
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 线性渐变的起始角度，单位为deg。当线性渐变的方向为ArkUI_LinearGradientDirection的ARKUI_LINEAR_GRADIENT_DIRECTION_CUSTOM时，线性渐变的起始角度属性生效，否则按线性渐变的方向属性为主要布局方式。取值范围为(-∞,+∞)，0点方向顺时针旋转为正向角度，当超过360时，是按照360取余处理，默认值：180。 |
 | .value[1].i32 | 线性渐变的方向，取值为ArkUI_LinearGradientDirection枚举。设置除ARKUI_LINEAR_GRADIENT_DIRECTION_CUSTOM之外的方向后，起始角度不生效。默认值：ARKUI_LINEAR_GRADIENT_DIRECTION_LEFT_BOTTOM。 |
 | .value[2].i32 | 渐变的颜色是否重复着色，0表示不重复着色，1表示重复着色。默认值：0。 |
-| .object | 指定位置处的渐变色颜色，参数类型为ArkUI_ColorStop。 - colors：渐变色颜色数组，元素为0xargb格式，形如0xFFFF0000表示红色。 - stops：指定颜色所处位置的数组，取值范围[0,1.0]，0表示容器开始处，1.0表示结尾处。建议递增设置。 - size：颜色个数，若小于colors数组长度则仅生效前size个颜色。 |
+| .object | 指定位置处的渐变色颜色，参数类型为ArkUI_ColorStop。 - colors：渐变色颜色数组，元素为0xARGB格式，形如0xFFFF0000表示红色。 - stops：指定颜色所处位置的数组，取值范围[0,1.0]，0表示容器开始处，1.0表示结尾处。建议递增设置。 - size：颜色个数，若小于colors数组长度则仅生效前size个颜色。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 线性渐变的起始角度，单位为deg。当线性渐变的方向为ArkUI_LinearGradientDirection的ARKUI_LINEAR_GRADIENT_DIRECTION_CUSTOM时，线性渐变的起始角度为设置值，其他情况均为默认值0。 |
 | .value[1].i32 | 线性渐变的方向。对应取值及含义请参考ArkUI_LinearGradientDirection。 |
 | .value[2].i32 | 渐变的颜色是否重复着色，0表示不重复着色，1表示重复着色。默认值：0。 |
-| .object | 指定位置处的渐变色颜色。参数类型为ArkUI_ColorStop。 colors：渐变色颜色数组，数组元素为0xargb格式，形如0xFFFF0000表示红色。 stops：stops表示指定颜色所处位置的数组，数组元素取值范围为[0,1.0]，0表示需要设置渐变色的容器的开始处，1.0表示容器的结尾处。 size：生效后渐变色的颜色个数。 |
+| .object | 指定位置处的渐变色颜色。参数类型为ArkUI_ColorStop。 colors：渐变色颜色数组，数组元素为0xARGB格式，形如0xFFFF0000表示红色。 stops：stops表示指定颜色所处位置的数组，数组元素取值范围为[0,1.0]，0表示需要设置渐变色的容器的开始处，1.0表示容器的结尾处。 size：生效后渐变色的颜色个数。 |
  
  
   
 
-#### NODE_TEXT_INPUT_RADIAL_GRADIENT
+## NODE_TEXT_INPUT_RADIAL_GRADIENT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_RADIAL_GRADIENT = 7052
@@ -1447,29 +1697,34 @@ NODE_TEXT_INPUT_RADIAL_GRADIENT = 7052
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0]?.f32 | 径向渐变的中心点X轴坐标，即相对于当前文本输入框左上角的X轴坐标，单位为vp。默认值为文本输入框宽度的一半。 |
 | .value[1]?.f32 | 径向渐变的中心点Y轴坐标，即相对于当前文本输入框左上角的Y轴坐标，单位为vp。默认值为文本输入框高度的一半。 |
 | .value[2]?.f32 | 径向渐变的半径，单位为vp。取值范围[0, +∞)，默认值0。传入负数时不生效。 |
 | .value[3]?.i32 | 渐变的颜色是否重复着色，0表示不重复着色，1表示重复着色。默认值：0。 |
-| .object | 指定位置处的渐变色颜色。参数类型为ArkUI_ColorStop。 colors：渐变色数组，元素为0xargb格式，形如0xFFFF0000表示红色。 stops：指定颜色所处位置的数组，取值范围[0,1.0]，0表示容器开始处，1.0表示结尾处。建议递增设置，若后一元素小于前一元素，则按等于前一元素的值处理。 size：颜色个数，若小于colors数组长度则仅生效前size个颜色，不建议设置异常值。 |
+| .object | 指定位置处的渐变色颜色。参数类型为ArkUI_ColorStop。 colors：渐变色数组，元素为0xARGB格式，形如0xFFFF0000表示红色。 stops：指定颜色所处位置的数组，取值范围[0,1.0]，0表示容器开始处，1.0表示结尾处。建议递增设置，若后一元素小于前一元素，则按等于前一元素的值处理。 size：颜色个数，若小于colors数组长度则仅生效前size个颜色，不建议设置异常值。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0]?.f32 | 径向渐变的中心点X轴坐标，即相对于当前文本输入框左上角的X轴坐标，单位为vp。 |
 | .value[1]?.f32 | 径向渐变的中心点Y轴坐标，即相对于当前文本输入框左上角的Y轴坐标，单位为vp。 |
 | .value[2]?.f32 | 径向渐变的半径，单位为vp，默认值0。 |
 | .value[3]?.i32 | 渐变的颜色是否重复着色，0表示不重复着色，1表示重复着色。默认值：0。 |
-| .object | 指定位置处的渐变色颜色。参数类型为ArkUI_ColorStop。 colors：渐变色颜色数组，数组元素为0xargb格式，形如0xFFFF0000表示红色。 stops：stops表示指定颜色所处位置的数组，数组元素取值范围为[0,1.0]，0表示需要设置渐变色的容器的开始处，1.0表示容器的结尾处。 size：生效后渐变色的颜色个数。 |
+| .object | 指定位置处的渐变色颜色。参数类型为ArkUI_ColorStop。 colors：渐变色颜色数组，数组元素为0xARGB格式，形如0xFFFF0000表示红色。 stops：stops表示指定颜色所处位置的数组，数组元素取值范围为[0,1.0]，0表示需要设置渐变色的容器的开始处，1.0表示容器的结尾处。 size：生效后渐变色的颜色个数。 |
  
  
   
 
-#### NODE_TEXT_INPUT_TEXT_OVERFLOW
+## NODE_TEXT_INPUT_TEXT_OVERFLOW
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_TEXT_OVERFLOW = 7049
@@ -1483,6 +1738,7 @@ NODE_TEXT_INPUT_TEXT_OVERFLOW = 7049
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 表示文本超长时的显示方式ArkUI_TextOverflow。内联模式非编辑态下默认值为ARKUI_TEXT_OVERFLOW_ELLIPSIS，内联模式编辑态下默认值为ARKUI_TEXT_OVERFLOW_CLIP。 |
@@ -1490,6 +1746,7 @@ NODE_TEXT_INPUT_TEXT_OVERFLOW = 7049
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 表示文本超长时的显示方式ArkUI_TextOverflow。 |
@@ -1497,7 +1754,10 @@ NODE_TEXT_INPUT_TEXT_OVERFLOW = 7049
  
   
 
-#### NODE_TEXT_INPUT_DECORATION
+## NODE_TEXT_INPUT_DECORATION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_DECORATION = 7050
@@ -1507,10 +1767,11 @@ NODE_TEXT_INPUT_DECORATION = 7050
  
 作为属性设置方法参数、属性获取方法返回值[ArkUI_AttributeItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-arkui-attributeitem)格式如下。
  
-**起始版本：** 24
+**起始版本：** 26.0.0
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 装饰样式配置项，为可选参数。参数类型为OH_ArkUI_DecorationStyleOptions。不传入时不添加装饰线。 |
@@ -1518,6 +1779,7 @@ NODE_TEXT_INPUT_DECORATION = 7050
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .object | 装饰样式配置项。参数类型为OH_ArkUI_DecorationStyleOptions。 |
@@ -1525,7 +1787,10 @@ NODE_TEXT_INPUT_DECORATION = 7050
  
   
 
-#### NODE_TEXT_INPUT_PUNCTUATION_OVERFLOW
+## NODE_TEXT_INPUT_PUNCTUATION_OVERFLOW
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INPUT_PUNCTUATION_OVERFLOW = 7053
@@ -1539,6 +1804,7 @@ NODE_TEXT_INPUT_PUNCTUATION_OVERFLOW = 7053
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否启用行尾标点符号悬挂。1表示启用标点符号悬挂，0表示不启用标点符号悬挂。默认值为0。 |
@@ -1546,6 +1812,7 @@ NODE_TEXT_INPUT_PUNCTUATION_OVERFLOW = 7053
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否启用行尾标点符号悬挂。0表示不启用标点符号悬挂，1表示启用标点符号悬挂。 |
@@ -1553,7 +1820,10 @@ NODE_TEXT_INPUT_PUNCTUATION_OVERFLOW = 7053
  
   
 
-#### NODE_TEXT_AREA_PLACEHOLDER
+## NODE_TEXT_AREA_PLACEHOLDER
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_PLACEHOLDER = MAX_NODE_SCOPE_NUM * ARKUI_NODE_TEXT_AREA = 8000
@@ -1567,6 +1837,7 @@ NODE_TEXT_AREA_PLACEHOLDER = MAX_NODE_SCOPE_NUM * ARKUI_NODE_TEXT_AREA = 8000
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 默认提示文本的内容。当需要在输入框显示提示信息引导用户输入时设置此属性，例如“请输入用户名”、“请输入内容”等。不设置时输入框无提示文本。 |
@@ -1574,6 +1845,7 @@ NODE_TEXT_AREA_PLACEHOLDER = MAX_NODE_SCOPE_NUM * ARKUI_NODE_TEXT_AREA = 8000
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .string | 默认提示文本的内容。 |
@@ -1581,7 +1853,10 @@ NODE_TEXT_AREA_PLACEHOLDER = MAX_NODE_SCOPE_NUM * ARKUI_NODE_TEXT_AREA = 8000
  
   
 
-#### NODE_TEXT_AREA_TEXT
+## NODE_TEXT_AREA_TEXT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_TEXT = 8001
@@ -1595,6 +1870,7 @@ NODE_TEXT_AREA_TEXT = 8001
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 默认文本的内容。 |
@@ -1602,6 +1878,7 @@ NODE_TEXT_AREA_TEXT = 8001
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .string | 默认文本的内容。 |
@@ -1609,7 +1886,10 @@ NODE_TEXT_AREA_TEXT = 8001
  
   
 
-#### NODE_TEXT_AREA_MAX_LENGTH
+## NODE_TEXT_AREA_MAX_LENGTH
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_MAX_LENGTH = 8002
@@ -1623,6 +1903,7 @@ NODE_TEXT_AREA_MAX_LENGTH = 8002
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 最大文本数数值。取值范围[0, +∞)。 |
@@ -1630,6 +1911,7 @@ NODE_TEXT_AREA_MAX_LENGTH = 8002
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 最大文本数的数字。 |
@@ -1637,7 +1919,10 @@ NODE_TEXT_AREA_MAX_LENGTH = 8002
  
   
 
-#### NODE_TEXT_AREA_PLACEHOLDER_COLOR
+## NODE_TEXT_AREA_PLACEHOLDER_COLOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_PLACEHOLDER_COLOR = 8003
@@ -1651,21 +1936,26 @@ NODE_TEXT_AREA_PLACEHOLDER_COLOR = 8003
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].u32 | 颜色数值，0xargb格式，形如 0xFFFF0000 表示红色。 |
+| .value[0].u32 | 颜色数值，0xARGB格式，形如 0xFFFF0000 表示红色。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| .value[0].u32 | 颜色数值，0xargb格式。 |
+| .value[0].u32 | 颜色数值，0xARGB格式。 |
  
  
   
 
-#### NODE_TEXT_AREA_PLACEHOLDER_FONT
+## NODE_TEXT_AREA_PLACEHOLDER_FONT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_PLACEHOLDER_FONT = 8004
@@ -1679,27 +1969,32 @@ NODE_TEXT_AREA_PLACEHOLDER_FONT = 8004
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0]?.f32 | 可选字体大小数值，默认值16.0，单位为fp。取值范围[0, +∞)。 |
 | .value[1]?.i32 | 可选字体样式ArkUI_FontStyle。具体样式值请参考ArkUI_FontStyle枚举。默认值为ARKUI_FONT_STYLE_NORMAL，表示标准字体样式。 |
 | .value[2]?.i32 | 可选字体粗细样式ArkUI_FontWeight。具体字重值请参考ArkUI_FontWeight枚举。默认值为ARKUI_FONT_WEIGHT_NORMAL，表示正常字体粗细。 |
-| ?.string | 字体族内容，多个字体族之间使用逗号分隔，形如“字重；字体族1，字体族2”。不传入时使用系统默认字体族。 |
+| ?.string | 字体族内容，多个字体族之间使用英文逗号(,)分隔，形如“字体族1,字体族2”。不传入时使用系统默认字体族。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 字体大小数值，单位为fp。 |
 | .value[1].i32 | 字体样式ArkUI_FontStyle。 |
 | .value[2].i32 | 字体粗细样式ArkUI_FontWeight。 |
-| .string | 字体族内容，多个字体族之间使用逗号分隔。 |
+| .string | 字体族内容，多个字体族之间使用英文逗号(,)分隔。 |
  
  
   
 
-#### NODE_TEXT_AREA_CARET_COLOR
+## NODE_TEXT_AREA_CARET_COLOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_CARET_COLOR = 8005
@@ -1713,21 +2008,26 @@ NODE_TEXT_AREA_CARET_COLOR = 8005
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].u32 | 光标颜色数值，0xargb格式，形如 0xFFFF0000 表示红色。 |
+| .value[0].u32 | 光标颜色数值，0xARGB格式，形如 0xFFFF0000 表示红色。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| .value[0].u32 | 光标颜色数值，0xargb格式。 |
+| .value[0].u32 | 光标颜色数值，0xARGB格式。 |
  
  
   
 
-#### NODE_TEXT_AREA_EDITING
+## NODE_TEXT_AREA_EDITING
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_EDITING = 8006
@@ -1741,6 +2041,7 @@ NODE_TEXT_AREA_EDITING = 8006
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 0表示退出编辑态，1表示维持现状。 |
@@ -1748,6 +2049,7 @@ NODE_TEXT_AREA_EDITING = 8006
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 0表示退出编辑态，1表示维持现状。 |
@@ -1755,7 +2057,10 @@ NODE_TEXT_AREA_EDITING = 8006
  
   
 
-#### NODE_TEXT_AREA_TYPE
+## NODE_TEXT_AREA_TYPE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_TYPE = 8007
@@ -1769,6 +2074,7 @@ NODE_TEXT_AREA_TYPE = 8007
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 输入框类型枚举ArkUI_TextAreaType。具体值请参考ArkUI_TextAreaType枚举。默认值为ARKUI_TEXTAREA_TYPE_NORMAL。 |
@@ -1776,6 +2082,7 @@ NODE_TEXT_AREA_TYPE = 8007
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 输入框类型枚举ArkUI_TextAreaType，用于确定多行文本输入框的类型。 |
@@ -1783,7 +2090,10 @@ NODE_TEXT_AREA_TYPE = 8007
  
   
 
-#### NODE_TEXT_AREA_SHOW_COUNTER
+## NODE_TEXT_AREA_SHOW_COUNTER
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_SHOW_COUNTER = 8008
@@ -1797,6 +2107,7 @@ NODE_TEXT_AREA_SHOW_COUNTER = 8008
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否开启计数器，值为1时为开启。默认值0。 |
@@ -1807,6 +2118,7 @@ NODE_TEXT_AREA_SHOW_COUNTER = 8008
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否开启计数器。0表示不开启计数器，1表示开启计数器。 |
@@ -1817,7 +2129,10 @@ NODE_TEXT_AREA_SHOW_COUNTER = 8008
  
   
 
-#### NODE_TEXT_AREA_SELECTION_MENU_HIDDEN
+## NODE_TEXT_AREA_SELECTION_MENU_HIDDEN
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_SELECTION_MENU_HIDDEN = 8009
@@ -1831,6 +2146,7 @@ NODE_TEXT_AREA_SELECTION_MENU_HIDDEN = 8009
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 长按、双击输入框或者右键输入框时，是否不弹出文本选择菜单。 设置为1时，单击输入框光标、长按输入框、双击输入框、三击输入框或者右键输入框，隐藏系统文本选择菜单。 设置为0时，显示系统文本选择菜单。 默认值0。 |
@@ -1838,6 +2154,7 @@ NODE_TEXT_AREA_SELECTION_MENU_HIDDEN = 8009
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 长按、双击输入框或者右键输入框时，是否不弹出文本选择菜单。0表示显示系统文本选择菜单，1表示隐藏系统文本选择菜单。 |
@@ -1845,7 +2162,10 @@ NODE_TEXT_AREA_SELECTION_MENU_HIDDEN = 8009
  
   
 
-#### NODE_TEXT_AREA_BLUR_ON_SUBMIT
+## NODE_TEXT_AREA_BLUR_ON_SUBMIT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_BLUR_ON_SUBMIT = 8010
@@ -1859,6 +2179,7 @@ NODE_TEXT_AREA_BLUR_ON_SUBMIT = 8010
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 触发回车键后是否失焦。 0表示触发回车键后不失焦，1表示触发回车键后失焦。 默认值0。 |
@@ -1866,6 +2187,7 @@ NODE_TEXT_AREA_BLUR_ON_SUBMIT = 8010
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 触发回车键后是否失焦。0表示触发回车键后不失焦，1表示触发回车键后失焦。 |
@@ -1873,7 +2195,10 @@ NODE_TEXT_AREA_BLUR_ON_SUBMIT = 8010
  
   
 
-#### NODE_TEXT_AREA_INPUT_FILTER
+## NODE_TEXT_AREA_INPUT_FILTER
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_INPUT_FILTER = 8011
@@ -1887,6 +2212,7 @@ NODE_TEXT_AREA_INPUT_FILTER = 8011
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 正则表达式，用于过滤用户输入内容。匹配表达式的输入允许显示，不匹配的输入将被过滤。当需要限制用户只能输入特定格式的字符时设置此属性，例如“^[a-zA-Z]+$”表示只允许字母，“^[0-9]+$”表示只允许数字。不设置时允许所有字符输入。 |
@@ -1894,6 +2220,7 @@ NODE_TEXT_AREA_INPUT_FILTER = 8011
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .string | 正则表达式。 |
@@ -1901,7 +2228,10 @@ NODE_TEXT_AREA_INPUT_FILTER = 8011
  
   
 
-#### NODE_TEXT_AREA_SELECTED_BACKGROUND_COLOR
+## NODE_TEXT_AREA_SELECTED_BACKGROUND_COLOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_SELECTED_BACKGROUND_COLOR = 8012
@@ -1915,21 +2245,26 @@ NODE_TEXT_AREA_SELECTED_BACKGROUND_COLOR = 8012
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].u32 | 颜色数值，0xargb格式，形如 0xFFFF0000 表示红色。 |
+| .value[0].u32 | 颜色数值，0xARGB格式，形如 0xFFFF0000 表示红色。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| .value[0].u32 | 颜色数值，0xargb格式。 |
+| .value[0].u32 | 颜色数值，0xARGB格式。 |
  
  
   
 
-#### NODE_TEXT_AREA_ENTER_KEY_TYPE
+## NODE_TEXT_AREA_ENTER_KEY_TYPE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_ENTER_KEY_TYPE = 8013
@@ -1943,6 +2278,7 @@ NODE_TEXT_AREA_ENTER_KEY_TYPE = 8013
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 回车键类型，具体枚举值参考ArkUI_EnterKeyType。默认值ARKUI_ENTER_KEY_TYPE_DONE，显示为完成样式。 |
@@ -1950,6 +2286,7 @@ NODE_TEXT_AREA_ENTER_KEY_TYPE = 8013
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 回车键类型枚举ArkUI_EnterKeyType，用于确定输入框回车键的显示样式。 |
@@ -1957,7 +2294,10 @@ NODE_TEXT_AREA_ENTER_KEY_TYPE = 8013
  
   
 
-#### NODE_TEXT_AREA_ENABLE_KEYBOARD_ON_FOCUS
+## NODE_TEXT_AREA_ENABLE_KEYBOARD_ON_FOCUS
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_ENABLE_KEYBOARD_ON_FOCUS = 8014
@@ -1971,6 +2311,7 @@ NODE_TEXT_AREA_ENABLE_KEYBOARD_ON_FOCUS = 8014
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 0表示聚焦不拉起输入法，1表示拉起。默认值为1。 |
@@ -1978,6 +2319,7 @@ NODE_TEXT_AREA_ENABLE_KEYBOARD_ON_FOCUS = 8014
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 0表示聚焦不拉起输入法，1表示拉起。 |
@@ -1985,7 +2327,10 @@ NODE_TEXT_AREA_ENABLE_KEYBOARD_ON_FOCUS = 8014
  
   
 
-#### NODE_TEXT_AREA_CARET_OFFSET
+## NODE_TEXT_AREA_CARET_OFFSET
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_CARET_OFFSET = 8015
@@ -2003,6 +2348,7 @@ NODE_TEXT_AREA_CARET_OFFSET = 8015
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 从字符串开始到光标所在位置的字符长度，取值范围[0, 文本长度]。超出范围时自动修正为边界值。 |
@@ -2010,6 +2356,7 @@ NODE_TEXT_AREA_CARET_OFFSET = 8015
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 光标所在位置的索引值。 |
@@ -2019,7 +2366,10 @@ NODE_TEXT_AREA_CARET_OFFSET = 8015
  
   
 
-#### NODE_TEXT_AREA_CONTENT_RECT
+## NODE_TEXT_AREA_CONTENT_RECT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_CONTENT_RECT = 8016
@@ -2033,6 +2383,7 @@ NODE_TEXT_AREA_CONTENT_RECT = 8016
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 水平方向横坐标，单位为px。 |
@@ -2043,7 +2394,10 @@ NODE_TEXT_AREA_CONTENT_RECT = 8016
  
   
 
-#### NODE_TEXT_AREA_CONTENT_LINE_COUNT
+## NODE_TEXT_AREA_CONTENT_LINE_COUNT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_CONTENT_LINE_COUNT = 8017
@@ -2057,6 +2411,7 @@ NODE_TEXT_AREA_CONTENT_LINE_COUNT = 8017
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 已编辑文本内容行数。 |
@@ -2064,7 +2419,10 @@ NODE_TEXT_AREA_CONTENT_LINE_COUNT = 8017
  
   
 
-#### NODE_TEXT_AREA_TEXT_SELECTION
+## NODE_TEXT_AREA_TEXT_SELECTION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_TEXT_SELECTION = 8018
@@ -2078,6 +2436,7 @@ NODE_TEXT_AREA_TEXT_SELECTION = 8018
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 选中文本的起始位置，取值范围[0, 文本长度]，需小于终止位置才生效。 |
@@ -2086,6 +2445,7 @@ NODE_TEXT_AREA_TEXT_SELECTION = 8018
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 选中文本的起始位置。 |
@@ -2094,7 +2454,10 @@ NODE_TEXT_AREA_TEXT_SELECTION = 8018
  
   
 
-#### NODE_TEXT_AREA_ENABLE_AUTO_FILL
+## NODE_TEXT_AREA_ENABLE_AUTO_FILL
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_ENABLE_AUTO_FILL = 8019
@@ -2108,6 +2471,7 @@ NODE_TEXT_AREA_ENABLE_AUTO_FILL = 8019
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否启用自动填充。 1表示启用，0表示不启用。 默认值1。 |
@@ -2115,6 +2479,7 @@ NODE_TEXT_AREA_ENABLE_AUTO_FILL = 8019
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否启用自动填充。1表示已启用，0表示未启用。 |
@@ -2122,7 +2487,10 @@ NODE_TEXT_AREA_ENABLE_AUTO_FILL = 8019
  
   
 
-#### NODE_TEXT_AREA_CONTENT_TYPE
+## NODE_TEXT_AREA_CONTENT_TYPE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_CONTENT_TYPE = 8020
@@ -2136,6 +2504,7 @@ NODE_TEXT_AREA_CONTENT_TYPE = 8020
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 参数类型ArkUI_TextInputContentType。用于指定自动填充的内容类型，以便系统提供更准确的自动填充建议。 |
@@ -2143,6 +2512,7 @@ NODE_TEXT_AREA_CONTENT_TYPE = 8020
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 参数类型ArkUI_TextInputContentType。用于指定自动填充的内容类型，以便系统提供更准确的自动填充建议。 |
@@ -2150,7 +2520,10 @@ NODE_TEXT_AREA_CONTENT_TYPE = 8020
  
   
 
-#### NODE_TEXT_AREA_SHOW_KEYBOARD_ON_FOCUS
+## NODE_TEXT_AREA_SHOW_KEYBOARD_ON_FOCUS
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_SHOW_KEYBOARD_ON_FOCUS = 8021
@@ -2164,6 +2537,7 @@ NODE_TEXT_AREA_SHOW_KEYBOARD_ON_FOCUS = 8021
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 获取焦点时是否弹出键盘。 1表示弹出键盘，0表示不弹出键盘。 默认值1。 |
@@ -2171,6 +2545,7 @@ NODE_TEXT_AREA_SHOW_KEYBOARD_ON_FOCUS = 8021
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 获取焦点时是否弹出键盘。1表示弹出键盘，0表示不弹出键盘。 |
@@ -2178,7 +2553,10 @@ NODE_TEXT_AREA_SHOW_KEYBOARD_ON_FOCUS = 8021
  
   
 
-#### NODE_TEXT_AREA_NUMBER_OF_LINES
+## NODE_TEXT_AREA_NUMBER_OF_LINES
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_NUMBER_OF_LINES = 8022
@@ -2192,6 +2570,7 @@ NODE_TEXT_AREA_NUMBER_OF_LINES = 8022
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 设置行数，取值范围[1, +∞)。用于通过该属性计算TextArea组件的高度。例如：设置为3时，组件将默认显示足够容纳3行文本内容的高度。 |
@@ -2199,6 +2578,7 @@ NODE_TEXT_AREA_NUMBER_OF_LINES = 8022
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 设置numberOfLines的值。 |
@@ -2206,7 +2586,10 @@ NODE_TEXT_AREA_NUMBER_OF_LINES = 8022
  
   
 
-#### NODE_TEXT_AREA_LETTER_SPACING
+## NODE_TEXT_AREA_LETTER_SPACING
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_LETTER_SPACING = 8023
@@ -2220,6 +2603,7 @@ NODE_TEXT_AREA_LETTER_SPACING = 8023
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 设置letterSpacing的值，取值范围(-∞, +∞)，单位为fp。当取值为负值时，文字会被压缩。负值过小时会将组件内容区大小压缩为0，导致内容无法显示。 |
@@ -2227,6 +2611,7 @@ NODE_TEXT_AREA_LETTER_SPACING = 8023
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 获取letterSpacing的值，取值范围(-∞, +∞)，单位为fp。 |
@@ -2234,7 +2619,10 @@ NODE_TEXT_AREA_LETTER_SPACING = 8023
  
   
 
-#### NODE_TEXT_AREA_ENABLE_PREVIEW_TEXT
+## NODE_TEXT_AREA_ENABLE_PREVIEW_TEXT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_ENABLE_PREVIEW_TEXT = 8024
@@ -2250,6 +2638,7 @@ NODE_TEXT_AREA_ENABLE_PREVIEW_TEXT = 8024
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 设置是否开启输入预上屏。 0表示不开启输入预上屏，1表示开启输入预上屏。 默认值1。 |
@@ -2257,6 +2646,7 @@ NODE_TEXT_AREA_ENABLE_PREVIEW_TEXT = 8024
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否开启输入预上屏。1表示已开启，0表示未开启。 |
@@ -2264,7 +2654,10 @@ NODE_TEXT_AREA_ENABLE_PREVIEW_TEXT = 8024
  
   
 
-#### NODE_TEXT_AREA_HALF_LEADING
+## NODE_TEXT_AREA_HALF_LEADING
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_HALF_LEADING = 8025
@@ -2278,6 +2671,7 @@ NODE_TEXT_AREA_HALF_LEADING = 8025
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 设置文本是否将行间距平分至行的顶部与底部。 1表示将行间距平分至行的顶部与底部，0表示不平分。 默认值0。 |
@@ -2285,6 +2679,7 @@ NODE_TEXT_AREA_HALF_LEADING = 8025
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 文本行间距是否平分至行的顶部与底部。1表示平分，0表示不平分。 |
@@ -2292,7 +2687,10 @@ NODE_TEXT_AREA_HALF_LEADING = 8025
  
   
 
-#### NODE_TEXT_AREA_KEYBOARD_APPEARANCE
+## NODE_TEXT_AREA_KEYBOARD_APPEARANCE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_KEYBOARD_APPEARANCE = 8026
@@ -2306,6 +2704,7 @@ NODE_TEXT_AREA_KEYBOARD_APPEARANCE = 8026
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 键盘样式，参数类型ArkUI_KeyboardAppearance。具体枚举值请参考ArkUI_KeyboardAppearance枚举说明。默认值ARKUI_KEYBOARD_APPEARANCE_NONE_IMMERSIVE。 |
@@ -2313,6 +2712,7 @@ NODE_TEXT_AREA_KEYBOARD_APPEARANCE = 8026
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 键盘样式，参数类型ArkUI_KeyboardAppearance。 |
@@ -2320,7 +2720,10 @@ NODE_TEXT_AREA_KEYBOARD_APPEARANCE = 8026
  
   
 
-#### NODE_TEXT_AREA_MAX_LINES
+## NODE_TEXT_AREA_MAX_LINES
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_MAX_LINES = 8027
@@ -2334,6 +2737,7 @@ NODE_TEXT_AREA_MAX_LINES = 8027
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 内联输入风格编辑态时文本可显示的最大行数。取值范围[1, +∞)。 内联模式下，默认值是3，非内联模式下，默认值是+∞，不限制最大行数。 不传入该参数时，使用默认值。 |
@@ -2341,6 +2745,7 @@ NODE_TEXT_AREA_MAX_LINES = 8027
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 最大行数。 |
@@ -2348,7 +2753,10 @@ NODE_TEXT_AREA_MAX_LINES = 8027
  
   
 
-#### NODE_TEXT_AREA_LINE_SPACING
+## NODE_TEXT_AREA_LINE_SPACING
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_LINE_SPACING = 8028
@@ -2362,6 +2770,7 @@ NODE_TEXT_AREA_LINE_SPACING = 8028
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 文本的行间距，取值范围[0, +∞)，单位为fp。默认值是0。超出范围时自动修正为边界值。 |
@@ -2369,6 +2778,7 @@ NODE_TEXT_AREA_LINE_SPACING = 8028
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 文本的行间距，单位fp。 |
@@ -2376,7 +2786,10 @@ NODE_TEXT_AREA_LINE_SPACING = 8028
  
   
 
-#### NODE_TEXT_AREA_MIN_LINES
+## NODE_TEXT_AREA_MIN_LINES
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_MIN_LINES = 8029
@@ -2390,21 +2803,26 @@ NODE_TEXT_AREA_MIN_LINES = 8029
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].f32 | 最小行数，取值范围[1, +∞)。传入0或负数时参数不生效。 |
+| .value[0].i32 | 最小行数，取值范围[1, +∞)。传入0或负数时参数不生效。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| .value[0].f32 | 最小行数，取值范围[1, +∞)。 |
+| .value[0].i32 | 最小行数，取值范围[1, +∞)。 |
  
  
   
 
-#### NODE_TEXT_AREA_MAX_LINES_WITH_SCROLL
+## NODE_TEXT_AREA_MAX_LINES_WITH_SCROLL
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_MAX_LINES_WITH_SCROLL = 8030
@@ -2418,27 +2836,32 @@ NODE_TEXT_AREA_MAX_LINES_WITH_SCROLL = 8030
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].f32 | 支持滚动时的最大行数。取值范围[1, +∞)。 |
+| .value[0].i32 | 支持滚动时的最大行数。取值范围[1, +∞)。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| .value[0].f32 | 支持滚动时的最大行数。取值范围[1, +∞)。 |
+| .value[0].i32 | 支持滚动时的最大行数。取值范围[1, +∞)。 |
  
  
   
 
-#### NODE_TEXT_AREA_LINE_HEIGHT
+## NODE_TEXT_AREA_LINE_HEIGHT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_LINE_HEIGHT = 8031
 ```
  
-设置输入框文本的高度，支持属性设置，属性重置和属性获取接口。
+设置输入框文本行高，支持属性设置，属性重置和属性获取接口。
  
 作为属性设置方法参数、属性获取方法返回值[ArkUI_AttributeItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-arkui-attributeitem)格式如下。
  
@@ -2446,21 +2869,26 @@ NODE_TEXT_AREA_LINE_HEIGHT = 8031
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].i32 | 文本的高度。默认值是自适应字体大小，单位fp。不传入该参数时，文本的高度设置为5fp。 |
+| .value[0].i32 | 文本行高。默认值是自适应字体大小，单位fp。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| .value[0].i32 | 文本的高度，单位fp。 |
+| .value[0].i32 | 文本行高，单位fp。 |
  
  
   
 
-#### NODE_TEXT_AREA_BAR_STATE
+## NODE_TEXT_AREA_BAR_STATE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_BAR_STATE = 8032
@@ -2474,6 +2902,7 @@ NODE_TEXT_AREA_BAR_STATE = 8032
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 文本控制滚动条状态，具体枚举值请参考ArkUI_BarState。默认值为ARKUI_BAR_STATE_AUTO，按需显示滚动条（在触摸时显示滚动条，2秒后自动消失）。 |
@@ -2481,6 +2910,7 @@ NODE_TEXT_AREA_BAR_STATE = 8032
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 文本控制滚动条状态。参数类型为ArkUI_BarState。 |
@@ -2488,7 +2918,10 @@ NODE_TEXT_AREA_BAR_STATE = 8032
  
   
 
-#### NODE_TEXT_AREA_ENABLE_SELECTED_DATA_DETECTOR
+## NODE_TEXT_AREA_ENABLE_SELECTED_DATA_DETECTOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_ENABLE_SELECTED_DATA_DETECTOR = 8033
@@ -2502,6 +2935,7 @@ NODE_TEXT_AREA_ENABLE_SELECTED_DATA_DETECTOR = 8033
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 开启选中词文本识别。1表示开启识别，0表示关闭识别。默认值：1。 |
@@ -2509,6 +2943,7 @@ NODE_TEXT_AREA_ENABLE_SELECTED_DATA_DETECTOR = 8033
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否开启选中词文本识别。0表示关闭识别，1表示开启识别。 |
@@ -2516,7 +2951,10 @@ NODE_TEXT_AREA_ENABLE_SELECTED_DATA_DETECTOR = 8033
  
   
 
-#### NODE_TEXT_AREA_SCROLL_BAR_COLOR
+## NODE_TEXT_AREA_SCROLL_BAR_COLOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_SCROLL_BAR_COLOR = 8035
@@ -2530,21 +2968,26 @@ NODE_TEXT_AREA_SCROLL_BAR_COLOR = 8035
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].u32 | 滚动条颜色数值。0xargb类型。默认值：0x66182431，显示为灰色。 |
+| .data[0].u32 | 滚动条颜色数值，0xARGB格式。默认值：0x66182431，显示为灰色。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| .value[0].u32 | 滚动条颜色数值，0xargb格式。 |
+| .data[0].u32 | 滚动条颜色数值，0xARGB格式。 |
  
  
   
 
-#### NODE_TEXT_AREA_CUSTOM_KEYBOARD
+## NODE_TEXT_AREA_CUSTOM_KEYBOARD
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_CUSTOM_KEYBOARD = 8036
@@ -2558,13 +3001,16 @@ NODE_TEXT_AREA_CUSTOM_KEYBOARD = 8036
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 自定义键盘，参数类型ArkUI_NodeHandle。 |
 | .value[0]?.i32 | 设置自定义键盘是否支持避让功能。 1表示支持避让，0表示不支持避让。 默认值：0。 |
-| 返回： |  |
  
+ 
+**返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .object | 自定义键盘，参数类型ArkUI_NodeHandle。 |
@@ -2573,7 +3019,10 @@ NODE_TEXT_AREA_CUSTOM_KEYBOARD = 8036
  
   
 
-#### NODE_TEXT_AREA_TEXT_CONTENT_CONTROLLER_BASE
+## NODE_TEXT_AREA_TEXT_CONTENT_CONTROLLER_BASE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_TEXT_CONTENT_CONTROLLER_BASE = 8037
@@ -2587,6 +3036,7 @@ NODE_TEXT_AREA_TEXT_CONTENT_CONTROLLER_BASE = 8037
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 文本内容基础控制器，参数类型为ArkUI_TextContentBaseController。 |
@@ -2594,6 +3044,7 @@ NODE_TEXT_AREA_TEXT_CONTENT_CONTROLLER_BASE = 8037
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .object | 文本内容基础控制器，参数类型为ArkUI_TextContentBaseController。 |
@@ -2601,7 +3052,10 @@ NODE_TEXT_AREA_TEXT_CONTENT_CONTROLLER_BASE = 8037
  
   
 
-#### NODE_TEXT_AREA_ELLIPSIS_MODE
+## NODE_TEXT_AREA_ELLIPSIS_MODE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_ELLIPSIS_MODE = 8038
@@ -2622,6 +3076,7 @@ NODE_TEXT_AREA_ELLIPSIS_MODE = 8038
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 参数类型ArkUI_EllipsisMode。具体枚举值请参考ArkUI_EllipsisMode枚举说明。默认值为ARKUI_ELLIPSIS_MODE_END。 |
@@ -2629,6 +3084,7 @@ NODE_TEXT_AREA_ELLIPSIS_MODE = 8038
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 文本省略位置枚举ArkUI_EllipsisMode，用于确定文本超长时的省略位置。 |
@@ -2636,7 +3092,10 @@ NODE_TEXT_AREA_ELLIPSIS_MODE = 8038
  
   
 
-#### NODE_TEXT_AREA_ORPHAN_CHAR_OPTIMIZATION
+## NODE_TEXT_AREA_ORPHAN_CHAR_OPTIMIZATION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_ORPHAN_CHAR_OPTIMIZATION = 8039
@@ -2650,6 +3109,7 @@ NODE_TEXT_AREA_ORPHAN_CHAR_OPTIMIZATION = 8039
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否使能孤字优化。该特性需在ArkUI_WordBreak属性为非ARKUI_WORD_BREAK_BREAK_ALL时生效。1表示使能，0表示不使能。默认值0。 |
@@ -2657,6 +3117,7 @@ NODE_TEXT_AREA_ORPHAN_CHAR_OPTIMIZATION = 8039
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否使能孤字优化。1表示已使能，0表示未使能。 |
@@ -2664,7 +3125,10 @@ NODE_TEXT_AREA_ORPHAN_CHAR_OPTIMIZATION = 8039
  
   
 
-#### NODE_TEXT_AREA_COMPRESS_LEADING_PUNCTUATION
+## NODE_TEXT_AREA_COMPRESS_LEADING_PUNCTUATION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_COMPRESS_LEADING_PUNCTUATION = 8040
@@ -2678,6 +3142,7 @@ NODE_TEXT_AREA_COMPRESS_LEADING_PUNCTUATION = 8040
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否打开行首标点压缩开关。 1表示开启行首标点压缩，0表示关闭行首标点压缩。默认值0。 |
@@ -2685,6 +3150,7 @@ NODE_TEXT_AREA_COMPRESS_LEADING_PUNCTUATION = 8040
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 行首标点压缩开关状态。1表示已开启，0表示已关闭。 |
@@ -2692,7 +3158,10 @@ NODE_TEXT_AREA_COMPRESS_LEADING_PUNCTUATION = 8040
  
   
 
-#### NODE_TEXT_AREA_INCLUDE_FONT_PADDING
+## NODE_TEXT_AREA_INCLUDE_FONT_PADDING
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_INCLUDE_FONT_PADDING = 8041
@@ -2706,6 +3175,7 @@ NODE_TEXT_AREA_INCLUDE_FONT_PADDING = 8041
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 设置输入框内文字是否在首行和尾行增加间距以避免文字截断。1表示开启增加间距，0表示关闭增加间距。默认值0。 |
@@ -2713,6 +3183,7 @@ NODE_TEXT_AREA_INCLUDE_FONT_PADDING = 8041
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 输入框内文字是否在首行和尾行增加间距。0表示不增加间距，1表示增加间距。 |
@@ -2720,7 +3191,10 @@ NODE_TEXT_AREA_INCLUDE_FONT_PADDING = 8041
  
   
 
-#### NODE_TEXT_AREA_FALLBACK_LINE_SPACING
+## NODE_TEXT_AREA_FALLBACK_LINE_SPACING
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_FALLBACK_LINE_SPACING = 8042
@@ -2734,6 +3208,7 @@ NODE_TEXT_AREA_FALLBACK_LINE_SPACING = 8042
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 支持行高基于文字实际高度自适应。此接口仅当行高小于文字实际高度时生效。1表示开启自适应，0表示关闭自适应。默认值0。 |
@@ -2741,6 +3216,7 @@ NODE_TEXT_AREA_FALLBACK_LINE_SPACING = 8042
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否开启行高基于文字实际高度自适应。0表示关闭自适应，1表示开启自适应。 |
@@ -2748,7 +3224,10 @@ NODE_TEXT_AREA_FALLBACK_LINE_SPACING = 8042
  
   
 
-#### NODE_TEXT_AREA_HORIZONTAL_SCROLLING
+## NODE_TEXT_AREA_HORIZONTAL_SCROLLING
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_HORIZONTAL_SCROLLING = 8043
@@ -2762,6 +3241,7 @@ NODE_TEXT_AREA_HORIZONTAL_SCROLLING = 8043
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否启用水平滚动。1表示启用水平滚动，0表示不启用水平滚动。默认值0。 |
@@ -2769,6 +3249,7 @@ NODE_TEXT_AREA_HORIZONTAL_SCROLLING = 8043
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否启用水平滚动。1表示已启用，0表示未启用。 |
@@ -2776,7 +3257,10 @@ NODE_TEXT_AREA_HORIZONTAL_SCROLLING = 8043
  
   
 
-#### NODE_TEXT_AREA_DIRECTION
+## NODE_TEXT_AREA_DIRECTION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_DIRECTION = 8044
@@ -2790,6 +3274,7 @@ NODE_TEXT_AREA_DIRECTION = 8044
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 表示文本的排版方向，取ArkUI_TextDirection枚举值。默认值为ARKUI_TEXT_DIRECTION_DEFAULT。 |
@@ -2797,6 +3282,7 @@ NODE_TEXT_AREA_DIRECTION = 8044
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 表示文本的排版方向，对应取值及含义请参考ArkUI_TextDirection枚举值。 |
@@ -2804,7 +3290,10 @@ NODE_TEXT_AREA_DIRECTION = 8044
  
   
 
-#### NODE_TEXT_AREA_SELECTED_DRAG_PREVIEW_STYLE
+## NODE_TEXT_AREA_SELECTED_DRAG_PREVIEW_STYLE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_SELECTED_DRAG_PREVIEW_STYLE = 8045
@@ -2818,6 +3307,7 @@ NODE_TEXT_AREA_SELECTED_DRAG_PREVIEW_STYLE = 8045
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 文本选中状态下的拖拽预览样式。参数类型为ArkUI_SelectedDragPreviewStyle。 |
@@ -2825,6 +3315,7 @@ NODE_TEXT_AREA_SELECTED_DRAG_PREVIEW_STYLE = 8045
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .object | 文本选中状态下的拖拽预览样式。参数类型为ArkUI_SelectedDragPreviewStyle。 |
@@ -2832,7 +3323,10 @@ NODE_TEXT_AREA_SELECTED_DRAG_PREVIEW_STYLE = 8045
  
   
 
-#### NODE_TEXT_AREA_TEXT_OVERFLOW
+## NODE_TEXT_AREA_TEXT_OVERFLOW
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_TEXT_OVERFLOW = 8046
@@ -2846,6 +3340,7 @@ NODE_TEXT_AREA_TEXT_OVERFLOW = 8046
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 表示文本超长时的显示方式ArkUI_TextOverflow。默认值为ARKUI_TEXT_OVERFLOW_CLIP。 |
@@ -2853,6 +3348,7 @@ NODE_TEXT_AREA_TEXT_OVERFLOW = 8046
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 表示文本超长时的显示方式ArkUI_TextOverflow。 |
@@ -2860,7 +3356,10 @@ NODE_TEXT_AREA_TEXT_OVERFLOW = 8046
  
   
 
-#### NODE_TEXT_AREA_DECORATION
+## NODE_TEXT_AREA_DECORATION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_DECORATION = 8047
@@ -2870,10 +3369,11 @@ NODE_TEXT_AREA_DECORATION = 8047
  
 作为属性设置方法参数、属性获取方法返回值[ArkUI_AttributeItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-arkui-attributeitem)格式如下。
  
-**起始版本：** 24
+**起始版本：** 26.0.0
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 装饰样式配置项，为可选参数。参数类型为OH_ArkUI_DecorationStyleOptions。不传入时不添加装饰线。 |
@@ -2881,6 +3381,7 @@ NODE_TEXT_AREA_DECORATION = 8047
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .object | 装饰样式配置项。参数类型为OH_ArkUI_DecorationStyleOptions。 |
@@ -2888,7 +3389,10 @@ NODE_TEXT_AREA_DECORATION = 8047
  
   
 
-#### NODE_TEXT_AREA_LINEAR_GRADIENT
+## NODE_TEXT_AREA_LINEAR_GRADIENT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_LINEAR_GRADIENT = 8048
@@ -2902,27 +3406,32 @@ NODE_TEXT_AREA_LINEAR_GRADIENT = 8048
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 线性渐变的起始角度，单位为deg。当线性渐变的方向为ArkUI_LinearGradientDirection的ARKUI_LINEAR_GRADIENT_DIRECTION_CUSTOM时，线性渐变的起始角度属性生效，否则按线性渐变的方向属性为主要布局方式。取值范围为(-∞,+∞)，0点方向顺时针旋转为正向角度，当超过360时，是按照360取余处理，默认值：180。 |
 | .value[1].i32 | 线性渐变的方向。取值为ArkUI_LinearGradientDirection中的枚举。设置除ArkUI_LinearGradientDirection的ARKUI_LINEAR_GRADIENT_DIRECTION_CUSTOM之外的线性渐变方向后，线性渐变的起始角度不生效。默认值：ArkUI_LinearGradientDirection的ARKUI_LINEAR_GRADIENT_DIRECTION_LEFT_BOTTOM |
 | .value[2].i32 | 渐变的颜色是否重复着色，0表示不重复着色，1表示重复着色。默认值：0。 |
-| .object | 指定位置处的渐变色颜色。参数类型为ArkUI_ColorStop。 colors：渐变色颜色数组，数组元素为0xargb格式，形如0xFFFF0000表示红色。 stops：stops表示指定颜色所处位置的数组，数组元素取值范围为[0,1.0]，0表示需要设置渐变色的容器的开始处，1.0表示容器的结尾处。想要实现多个颜色渐变效果时，数组元素建议递增设置，如后一个数组元素比前一个数组元素小的话，按照等于前一个数组元素的值处理。 size：颜色个数，若小于colors数组长度则仅生效前size个颜色，不建议设置大于colors数组长度或小于等于0的值以及异常值。 |
+| .object | 指定位置处的渐变色颜色。参数类型为ArkUI_ColorStop。 colors：渐变色颜色数组，数组元素为0xARGB格式，形如0xFFFF0000表示红色。 stops：stops表示指定颜色所处位置的数组，数组元素取值范围为[0,1.0]，0表示需要设置渐变色的容器的开始处，1.0表示容器的结尾处。想要实现多个颜色渐变效果时，数组元素建议递增设置，如后一个数组元素比前一个数组元素小的话，按照等于前一个数组元素的值处理。 size：颜色个数，若小于colors数组长度则仅生效前size个颜色，不建议设置大于colors数组长度或小于等于0的值以及异常值。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 线性渐变的起始角度，单位为deg。当线性渐变的方向为ArkUI_LinearGradientDirection的ARKUI_LINEAR_GRADIENT_DIRECTION_CUSTOM时，线性渐变的起始角度为设置值，其他情况均为默认值0。 |
 | .value[1].i32 | 线性渐变的方向。对应取值及含义请参考ArkUI_LinearGradientDirection。 |
 | .value[2].i32 | 渐变的颜色是否重复着色，0表示不重复着色，1表示重复着色。默认值：0。 |
-| .object | 指定位置处的渐变色颜色。参数类型为ArkUI_ColorStop。 colors：渐变色颜色数组，数组元素为0xargb格式，形如0xFFFF0000表示红色。 stops：stops表示指定颜色所处位置的数组，数组元素取值范围为[0,1.0]，0表示需要设置渐变色的容器的开始处，1.0表示容器的结尾处。 size：生效后渐变色的颜色个数。 |
+| .object | 指定位置处的渐变色颜色。参数类型为ArkUI_ColorStop。 colors：渐变色颜色数组，数组元素为0xARGB格式，形如0xFFFF0000表示红色。 stops：stops表示指定颜色所处位置的数组，数组元素取值范围为[0,1.0]，0表示需要设置渐变色的容器的开始处，1.0表示容器的结尾处。 size：生效后渐变色的颜色个数。 |
  
  
   
 
-#### NODE_TEXT_AREA_RADIAL_GRADIENT
+## NODE_TEXT_AREA_RADIAL_GRADIENT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_RADIAL_GRADIENT = 8049
@@ -2936,29 +3445,34 @@ NODE_TEXT_AREA_RADIAL_GRADIENT = 8049
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0]?.f32 | 径向渐变的中心点X轴坐标，即相对于当前多行输入框左上角的X轴坐标，单位为vp。默认值为多行输入框宽度的一半。 |
 | .value[1]?.f32 | 径向渐变的中心点Y轴坐标，即相对于当前多行输入框左上角的Y轴坐标，单位为vp。默认值为多行输入框高度的一半。 |
 | .value[2]?.f32 | 径向渐变的半径，取值范围[0, +∞)，默认值0。传入负数时不生效。 |
 | .value[3]?.i32 | 渐变的颜色是否重复着色，0表示不重复着色，1表示重复着色。默认值：0。 |
-| .object | 指定位置处的渐变色颜色。参数类型为ArkUI_ColorStop。 colors：渐变色颜色数组，数组元素为0xargb格式，形如0xFFFF0000表示红色。 stops：stops表示指定颜色所处位置的数组，数组元素取值范围为[0,1.0]，0表示需要设置渐变色的容器的开始处，1.0表示容器的结尾处。想要实现多个颜色渐变效果时，数组元素建议递增设置，如后一个数组元素比前一个数组元素小的话，按照等于前一个数组元素的值处理。 size：颜色个数，若小于colors数组长度则仅生效前size个颜色，不建议设置大于colors数组长度或小于等于0的值以及异常值。 |
+| .object | 指定位置处的渐变色颜色。参数类型为ArkUI_ColorStop。 colors：渐变色颜色数组，数组元素为0xARGB格式，形如0xFFFF0000表示红色。 stops：stops表示指定颜色所处位置的数组，数组元素取值范围为[0,1.0]，0表示需要设置渐变色的容器的开始处，1.0表示容器的结尾处。想要实现多个颜色渐变效果时，数组元素建议递增设置，如后一个数组元素比前一个数组元素小的话，按照等于前一个数组元素的值处理。 size：颜色个数，若小于colors数组长度则仅生效前size个颜色，不建议设置大于colors数组长度或小于等于0的值以及异常值。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0]?.f32 | 径向渐变的中心点X轴坐标，即相对于当前多行输入框左上角的X轴坐标，单位为vp。 |
 | .value[1]?.f32 | 径向渐变的中心点Y轴坐标，即相对于当前多行输入框左上角的Y轴坐标，单位为vp。 |
 | .value[2]?.f32 | 径向渐变的半径，单位为vp，默认值0。 |
 | .value[3]?.i32 | 渐变的颜色是否重复着色，0表示不重复着色，1表示重复着色。默认值：0。 |
-| .object | 指定位置处的渐变色颜色。参数类型为ArkUI_ColorStop。 colors：渐变色颜色数组，数组元素为0xargb格式，形如0xFFFF0000表示红色。 stops：stops表示指定颜色所处位置的数组，数组元素取值范围为[0,1.0]，0表示需要设置渐变色的容器的开始处，1.0表示容器的结尾处。 size：生效后渐变色的颜色个数。 |
+| .object | 指定位置处的渐变色颜色。参数类型为ArkUI_ColorStop。 colors：渐变色颜色数组，数组元素为0xARGB格式，形如0xFFFF0000表示红色。 stops：stops表示指定颜色所处位置的数组，数组元素取值范围为[0,1.0]，0表示需要设置渐变色的容器的开始处，1.0表示容器的结尾处。 size：生效后渐变色的颜色个数。 |
  
  
   
 
-#### NODE_TEXT_AREA_PUNCTUATION_OVERFLOW
+## NODE_TEXT_AREA_PUNCTUATION_OVERFLOW
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_AREA_PUNCTUATION_OVERFLOW = 8050
@@ -2972,6 +3486,7 @@ NODE_TEXT_AREA_PUNCTUATION_OVERFLOW = 8050
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否启用行尾标点符号悬挂。1表示启用标点符号悬挂，0表示不启用标点符号悬挂。默认值0。 |
@@ -2979,6 +3494,7 @@ NODE_TEXT_AREA_PUNCTUATION_OVERFLOW = 8050
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否启用行尾标点符号悬挂。1表示已启用，0表示未启用。 |

@@ -1,9 +1,9 @@
 # text
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-service-widget-basic-text
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文本，用于呈现一段信息。
  
@@ -12,28 +12,32 @@
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持<[span](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-service-widget-basic-span)>。
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-service-widget-common-attributes)。
  
   
 
-#### 样式
+## 样式
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用样式](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-service-widget-common-styles)外，还支持如下样式：
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | color | &lt;color&gt; | - | 否 | 设置文本的颜色。 |
@@ -55,27 +59,29 @@
  
  
 > [!TIP]
-> 字体动态缩放：预设尺寸集合和最小最大字号调节基于是否满足最大行数要求，预设尺寸集合会按照从左到右顺序查看是否满足最大行数要求，最小最大字号调节则基于从大到小顺序查看是否满足最大行数要求。 文本换行：文本可以通过转义字符\r\n进行换行。 文本标签内支持以下转义字符：\a，\b，\f，\n，\r，\t，\v，'，"，\0。 当使用子组件span组成文本段落时，如果span属性样式异常，将导致text段落无法显示。 letter-spacing、text-align、line-height、text-overflow和max-lines样式作用于text及其子组件（span）组成的文本内容。 text组件说明：不支持text内同时存在文本内容和span子组件（如果同时存在，只显示span内的内容）。
+> 字体动态缩放：预设尺寸集合和最小最大字号调节基于是否满足最大行数要求，预设尺寸集合会按照从左到右顺序查看是否满足最大行数要求，最小最大字号调节则基于从大到小顺序查看是否满足最大行数要求。 文本换行：文本可以通过转义字符\r\n进行换行。 文本标签内支持以下转义字符：\a，\b，\f，\n，\r，\t，\v，'，"，\0。 当使用子组件span组成文本段落时，如果span属性样式异常，将导致text段落无法显示。 letter-spacing、text-align、line-height、text-overflow和max-lines样式作用于text及其子组件（span）组成的文本内容。 text组件说明：不支持text内同时存在文本内容和span子组件。（如果同时存在，只显示span内的内容)
 
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-service-widget-common-events)。
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 <div class="container">
     <text class="line_height">
-        这是设置了行高的文本。
+        <span>这是设置了行高的文本。</span>
     </text>
     <text class="letter_spacing">这是设置了字符间距的文本。</text>
     <text class="font_style">这是设置为斜体的文本。</text>
@@ -120,4 +126,4 @@
 **4*4卡片**
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/FdqsMiPLQqmbOAmuGiuedQ/zh-cn_image_0000002655849342.png?HW-CC-KV=V1&HW-CC-Date=20260730T071528Z&HW-CC-Expire=86400&HW-CC-Sign=D5C7DBCC69C9D945FC6B47863EB38AA99AAC6EB63521872B90BE6F3720686508)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/V2-6yIygTIqcg2R6ZkqpEg/zh-cn_image_0000002747293437.png?HW-CC-KV=V1&HW-CC-Date=20260911T073002Z&HW-CC-Expire=86400&HW-CC-Sign=18740FCE97A66B16939D1A23D1E223000E1FF46816B2FE810BDE99844D9CC396)

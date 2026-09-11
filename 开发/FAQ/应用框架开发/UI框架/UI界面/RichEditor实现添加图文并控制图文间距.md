@@ -37,17 +37,17 @@
 ```text
 .onSelectionChange((data) => {
   this.needNewSpan = false;
-  // 根据光标位置获取对应Span信息
+ <em> // 根据光标位置获取对应Span信息</em>
   let span = this.controller.getSpans(data);
   if (span.length != 0) {
     let spanLocation: number = span[0].spanPosition.spanIndex;
     let res = this.isCombinations(spanLocation);
     if (res) {
-      // 判断是否是多选
+   <em>   // 判断是否是多选</em>
       if (data.start != data.end) {
-        // 判断是否是第一次调整多选位置
+     <em>   // 判断是否是第一次调整多选位置</em>
         if (!this.isSetSelection) {
-          // 将组合全选
+        <em>  // 将组合全选</em>
           this.isSetSelection = true;
           if (span[0].spanPosition.spanIndex == this.combinationsLocation[this.needUpdateCombinations][0]) {
             let spanText = this.controller.getSpans({ start: span[0].spanPosition.spanRange[1] + 1 });
@@ -61,7 +61,7 @@
           this.isSetSelection = false;
         }
       } else {
-        // 移动光标至组合末尾
+     <em>   // 移动光标至组合末尾</em>
         this.controller.setCaretOffset(span[0].spanPosition.spanRange[1]);
         this.needNewSpan = true;
       }
@@ -76,7 +76,7 @@
 
   
 ```text
-// 写入Span组合
+<em>// </em><em>写入Span组合</em>
 combinations(text: string, img: PixelMap | ResourceStr) {
   this.controller.addImageSpan(img, { imageStyle: { size: [20, 20], layoutStyle: { margin: { left: 5 } } } });
   this.controller.addTextSpan(text + ' ', { style: { fontColor: Color.Blue, fontSize: 18 } });
@@ -91,22 +91,22 @@ struct Index4RichEditor {
   controller: RichEditorController = new RichEditorController();
   option: RichEditorOptions = { controller: this.controller };
   img: Resource = $r('app.media.startIcon');
-  // 需要组合的Span记录
+ <em> // 需要组合的Span记录</em>
   combinationsLocation: Array<Array<number>> = [[0, 1], [3, 4], [6, 7], [8, 9], [11, 12]];
-  // 当输入的文字处于组合末尾时，需要新建Span
+ <em> // 当输入的文字处于组合末尾时，需要新建Span</em>
   needNewSpan: boolean = false;
-  // 是否需要更新组合Span记录
+ <em> // 是否需要更新组合Span记录</em>
   needUpdateCombinations: number = 0;
-  // 判断是否已经更新过选中区域
+ <em> // 判断是否已经更新过选中区域</em>
   isSetSelection: boolean = false;
 
-  // 写入Span组合
+<em>  // 写入Span组合</em>
   combinations(text: string, img: PixelMap | ResourceStr) {
     this.controller.addImageSpan(img, { imageStyle: { size: [20, 20], layoutStyle: { margin: { left: 5 } } } });
     this.controller.addTextSpan(text + ' ', { style: { fontColor: Color.Blue, fontSize: 18 } });
   }
 
-  // 判断位置是否处于组合内
+ <em> // 判断位置是否处于组合内</em>
   isCombinations(spanLocation: number): boolean {
     for (let index = 0; index < this.combinationsLocation.length; index++) {
       if (spanLocation == this.combinationsLocation[index][0] || spanLocation === this.combinationsLocation[index][1]) {
@@ -119,7 +119,7 @@ struct Index4RichEditor {
     return false;
   }
 
-  // 更新组合所处位置
+<em>  // 更新组合所处位置</em>
   updateCombinationsLocation() {
     for (let index = this.needUpdateCombinations; index < this.combinationsLocation.length; index++) {
       this.combinationsLocation[index][0] += 1;
@@ -143,17 +143,17 @@ struct Index4RichEditor {
         })
         .onSelectionChange((data) => {
           this.needNewSpan = false;
-          // 根据光标位置获取对应Span信息
+        <em>  // 根据光标位置获取对应Span信息</em>
           let span = this.controller.getSpans(data);
           if (span.length != 0) {
             let spanLocation: number = span[0].spanPosition.spanIndex;
             let res = this.isCombinations(spanLocation);
             if (res) {
-              // 判断是否是多选
+           <em>   // 判断是否是多选</em>
               if (data.start != data.end) {
-                // 判断是否是第一次调整多选位置
+            <em>    // 判断是否是第一次调整多选位置</em>
                 if (!this.isSetSelection) {
-                  // 将组合全选
+           <em>       // 将组合全选</em>
                   this.isSetSelection = true;
                   if (span[0].spanPosition.spanIndex == this.combinationsLocation[this.needUpdateCombinations][0]) {
                     let spanText = this.controller.getSpans({ start: span[0].spanPosition.spanRange[1] + 1 });
@@ -167,7 +167,7 @@ struct Index4RichEditor {
                   this.isSetSelection = false;
                 }
               } else {
-                // 移动光标至组合末尾
+            <em>    // 移动光标至组合末尾</em>
                 this.controller.setCaretOffset(span[0].spanPosition.spanRange[1]);
                 this.needNewSpan = true;
               }
@@ -176,12 +176,12 @@ struct Index4RichEditor {
         })
         .aboutToIMEInput((value: RichEditorInsertValue) => {
           if (this.needNewSpan) {
-            // 处理键入文字时光标位于组合末尾，防止与组合内文字Span拼接
+        <em>    // 处理键入文字时光标位于组合末尾，防止与组合内文字Span拼接</em>
             this.controller.addTextSpan(value.insertValue, { offset: value.insertOffset });
             this.updateCombinationsLocation();
             return false;
           } else if (value.insertOffset === 0) {
-            // 处理光标位于行首的特殊情况
+         <em>   // 处理光标位于行首的特殊情况</em>
             this.needUpdateCombinations = 0;
             this.updateCombinationsLocation();
           }

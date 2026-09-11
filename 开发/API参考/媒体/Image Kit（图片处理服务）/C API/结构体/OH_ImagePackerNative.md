@@ -1,18 +1,19 @@
 # OH_ImagePackerNative
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-nativemodule-oh-imagepackernative
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct OH_ImagePackerNative OH_ImagePackerNative
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 OH_ImagePackerNative用于将ImageSource、PixelMap、Picture或PixelMap序列编码为图片数据或文件。
  
@@ -24,6 +25,7 @@ OH_ImagePackerNative用于将ImageSource、PixelMap、Picture或PixelMap序列�
  
 OH_ImagePackerNative支持的编码方式如下：
   
+
 | 输入对象 | 输出位置 | 编码函数 | 描述 |
 | --- | --- | --- | --- |
 | OH_ImageSourceNative | 数据缓冲区 | OH_ImagePackerNative_PackToDataFromImageSource | 将ImageSource编码为指定格式的数据。 |

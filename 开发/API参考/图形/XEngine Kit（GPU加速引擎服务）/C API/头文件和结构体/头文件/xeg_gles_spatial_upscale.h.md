@@ -1,11 +1,12 @@
 # xeg_gles_spatial_upscale.h
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-kit-xeg-gles-spatial-upscale-8h
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -23,16 +24,19 @@ XEngine空域GPU超分特性OpenGL ES接口。使用此头文件的接口前需�
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 宏定义
+### 宏定义
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | XEG_SPATIAL_UPSCALE_SCISSOR 0x1U | 用于设置HMS_XEG_SpatialUpscaleParameter接口的SCISSOR参数。 |
@@ -41,10 +45,12 @@ XEngine空域GPU超分特性OpenGL ES接口。使用此头文件的接口前需�
  
   
 
-#### 类型定义
+### 类型定义
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | typedef void(GL_APIENTRYP PFN_HMS_XEG_SPATIALUPSCALEPARAMETER) (GLenum pname, GLvoid *param) | 设置空域GPU超分输入参数的函数指针定义。 |
@@ -53,10 +59,12 @@ XEngine空域GPU超分特性OpenGL ES接口。使用此头文件的接口前需�
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | GL_APICALL void GL_APIENTRY HMS_XEG_SpatialUpscaleParameter (GLenum pname, GLvoid *param) | 设置空域GPU超分输入参数。 |

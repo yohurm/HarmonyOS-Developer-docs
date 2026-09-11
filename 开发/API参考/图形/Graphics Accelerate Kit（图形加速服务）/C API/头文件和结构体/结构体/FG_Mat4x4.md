@@ -1,11 +1,12 @@
 # FG_Mat4x4
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_f_g___mat4x4
 **支持设备：** Phone | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -19,16 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | float data [16U] | 4x4列主序矩阵元素值组成的一维数组： \| a11 a12 a13 a14 \| \| a21 a22 a23 a24 \| \| a31 a32 a33 a34 \| \| a41 a42 a43 a44 \| data[16] = {a11, a21, a31, a41, a12, a22, a32, a42, a13, a23, a33, a43, a14, a24, a34, a44} |
@@ -36,13 +40,15 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### data
+### data
+
 
 **支持设备：** Phone | Tablet | TV
 

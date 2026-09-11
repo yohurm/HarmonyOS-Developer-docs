@@ -1,10 +1,10 @@
 # 系统字体的信息获取和使用（ArkTS）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/system-font-arkts
 
-#### 场景介绍
+## 场景介绍
 
 系统字体是指操作系统预设的字体，用于在没有指定自定义字体时显示文本，确保文本的可读性和一致性。
 
@@ -14,9 +14,10 @@
 
 
 
-#### 接口说明
+## 接口说明
 
 以下是系统字体相关的常用接口和结构体，ArkTS侧对外接口由ArkUI提供，详细接口说明请见[@ohos.font](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-font)。
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -25,7 +26,7 @@
 
 
 
-#### 获取系统字体信息
+## 获取系统字体信息
 1. 导入依赖的相关模块。
 
   
@@ -74,7 +75,7 @@ for (let i = 0; i < fontConfig.fallbackGroups.length; i++) {
 
 
 
-#### 使用或切换系统字体
+## 使用或切换系统字体
 
 系统字体可以有多种，可以先获取系统字体配置信息，再根据其中的字体家族名（即TextStyle中的fontFamilies）来进行系统字体的切换和使用。
 

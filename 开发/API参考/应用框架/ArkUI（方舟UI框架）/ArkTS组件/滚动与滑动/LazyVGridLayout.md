@@ -1,9 +1,9 @@
 # LazyVGridLayout
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-lazyvgridlayout
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该组件用于实现支持懒加载的网格布局，适用于在滚动容器中按需渲染大量网格项的场景，可减少首帧渲染时间和内存开销。
 
@@ -18,9 +18,10 @@ API版本26.0.0之前，其父组件支持[WaterFlow](https://developer.huawei.c
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 LazyVGridLayout()
 
@@ -34,17 +35,19 @@ LazyVGridLayout()
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
 
 
 
-#### columnsTemplate
+### columnsTemplate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 columnsTemplate(value: string)
 
@@ -74,6 +77,7 @@ auto-fit模式和auto-stretch模式只支持track-size为一个有效列宽值�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string | 是 | 当前网格布局列的数量、固定列宽或最小列宽值。 |
@@ -81,9 +85,10 @@ auto-fit模式和auto-stretch模式只支持track-size为一个有效列宽值�
 
 
 
-#### columnsGap
+### columnsGap
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 columnsGap(value: LengthMetrics): T
 
@@ -97,12 +102,14 @@ columnsGap(value: LengthMetrics): T
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | LengthMetrics | 是 | 列与列的间距。 取值范围：[0, +∞) |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -111,9 +118,10 @@ columnsGap(value: LengthMetrics): T
 
 
 
-#### rowsGap
+### rowsGap
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 rowsGap(value: LengthMetrics): T
 
@@ -127,12 +135,14 @@ rowsGap(value: LengthMetrics): T
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | LengthMetrics | 是 | 行与行的间距。 取值范围：[0, +∞) |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -141,9 +151,10 @@ rowsGap(value: LengthMetrics): T
 
 
 
-#### header
+### header
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 header(builder: CustomBuilder | undefined): T
 
@@ -163,12 +174,14 @@ header(builder: CustomBuilder | undefined): T
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | builder | CustomBuilder \| undefined | 是 | 头部组件构造函数。 方法入参为undefined时，当前LazyVGridLayout不设置头部组件，如果已有头部组件，也会被移除。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -177,9 +190,10 @@ header(builder: CustomBuilder | undefined): T
 
 
 
-#### footer
+### footer
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 footer(builder: CustomBuilder | undefined): T
 
@@ -199,12 +213,14 @@ footer(builder: CustomBuilder | undefined): T
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | builder | CustomBuilder \| undefined | 是 | 尾部组件构造函数。 方法入参为undefined时，当前LazyVGridLayout不设置尾部组件，如果已有尾部组件，也会被移除。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -213,9 +229,10 @@ footer(builder: CustomBuilder | undefined): T
 
 
 
-#### sticky
+### sticky
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sticky(sticky: StickyStyle | undefined): T
 
@@ -237,12 +254,14 @@ sticky(sticky: StickyStyle | undefined): T
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sticky | StickyStyle \| undefined | 是 | 头部组件和尾部组件的吸附模式。sticky属性可以设置为StickyStyle.Header或StickyStyle.Footer，也可以设置为StickyStyle.BOTH，以同时支持头部组件吸顶和尾部组件吸底。 方法入参为undefined时，恢复为默认值StickyStyle.None。 未通过该接口设置时，默认头部组件不吸顶、尾部组件不吸底。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -251,17 +270,19 @@ sticky(sticky: StickyStyle | undefined): T
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)外，还支持以下事件：
 
 
 
-#### onVisibleIndexesChange
+### onVisibleIndexesChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onVisibleIndexesChange(callback: OnVisibleIndexesChangeCallback | undefined): T
 
@@ -281,12 +302,14 @@ onVisibleIndexesChange(callback: OnVisibleIndexesChangeCallback | undefined): T
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | OnVisibleIndexesChangeCallback \| undefined | 是 | onVisibleIndexesChange事件的回调函数。方法入参为undefined时，取消监听。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -295,13 +318,17 @@ onVisibleIndexesChange(callback: OnVisibleIndexesChangeCallback | undefined): T
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（实现懒加载网格布局）
+
+
+### 示例1（实现懒加载网格布局）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[WaterFlow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow)和LazyVGridLayout实现懒加载网格布局，并通过[onVisibleIndexesChange](#onvisibleindexeschange)在可视区域发生变化时触发回调，返回当前可视区域内子组件的起始索引值和结束索引值。
 
@@ -464,12 +491,15 @@ export class MyDataSource<T> extends BasicDataSource<T> {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/uBKXHysoSC23IA9g9y-FbA/zh-cn_image_0000002656008446.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071501Z&HW-CC-Expire=86400&HW-CC-Sign=8EC5F1376FA0EC75363BF8922CD15F43033011CCA5EECBAA1382D4D2B8DAB6B7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/ITjq6l2zRZuwjfkIQnoN3g/zh-cn_image_0000002747212529.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073113Z&HW-CC-Expire=86400&HW-CC-Sign=C3DAFD8DB1AD45E698CE363C1869743A1E6F292D36BFC977F4CE4E96BBAD570C)
 
 
 
 
-#### 示例2（设置头部组件或尾部组件及吸附效果）
+### 示例2（设置头部组件或尾部组件及吸附效果）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[WaterFlow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow)嵌套LazyVGridLayout，并通过[header](#header)、[footer](#footer)、[sticky](#sticky)实现网格顶部和底部吸附效果。滚动过程中header吸附在可视区域顶部，footer吸附在可视区域底部。
 
@@ -548,12 +578,15 @@ struct LazyVGridLayoutStickyDemo {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/MibxuuxDSDOuzKw2qnaCkQ/zh-cn_image_0000002655848524.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071501Z&HW-CC-Expire=86400&HW-CC-Sign=EAEC44145EF68E0F5A9C792BB6E81D04CEB49F0A8DAED8D1B183E8B42D494E2C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/YkiC5ke0RweOH2EtApwDWw/zh-cn_image_0000002717772594.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073113Z&HW-CC-Expire=86400&HW-CC-Sign=217850855AEAEF317B8857CB30B0AE59E702DEE6EC5F15A9FE210FCC6A7AE496)
 
 
 
 
-#### 示例3（设置自适应列数）
+### 示例3（设置自适应列数）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过设置[columnsTemplate](#columnstemplate)属性实现了LazyVGridLayout组件自适应列数，并使用了属性[columnsTemplate](#columnstemplate)中的auto-fill、auto-fit和auto-stretch。
 
@@ -686,4 +719,4 @@ struct LazyVGridLayoutColumnsTemplateDemo {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/ZrCYplCnTIGp1J0R-FvUOg/zh-cn_image_0000002686087953.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071501Z&HW-CC-Expire=86400&HW-CC-Sign=A5A13437FDAB819F6E7F6DDB57328A7941199F46F7C144229D8E5BE964F60197)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/lmTgb4hoTZmvRvNcbEchKQ/zh-cn_image_0000002717612662.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073113Z&HW-CC-Expire=86400&HW-CC-Sign=EC3A2815DDB34F8D11B45842E9E919432502838CA03268263606EA9A5D1A164C)

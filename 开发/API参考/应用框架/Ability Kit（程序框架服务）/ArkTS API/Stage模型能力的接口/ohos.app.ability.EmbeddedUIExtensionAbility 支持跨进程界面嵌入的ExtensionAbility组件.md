@@ -1,9 +1,9 @@
 # @ohos.app.ability.EmbeddedUIExtensionAbility (支持跨进程界面嵌入的ExtensionAbility组件)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-embeddeduiextensionability
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** PC/2in1 | Tablet
 
 EmbeddedUIExtensionAbility为开发者提供了跨进程界面嵌入的能力，继承自[UIExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiextensionability)。
 
@@ -16,9 +16,10 @@ EmbeddedUIExtensionAbility为开发者提供了跨进程界面嵌入的能力，
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 ```text
 import { EmbeddedUIExtensionAbility } from '@kit.AbilityKit';
@@ -26,9 +27,10 @@ import { EmbeddedUIExtensionAbility } from '@kit.AbilityKit';
 
 
 
-#### EmbeddedUIExtensionAbility
+## EmbeddedUIExtensionAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 EmbeddedUIExtensionAbility为开发者提供了跨进程界面嵌入的能力，继承自[UIExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiextensionability)。
 

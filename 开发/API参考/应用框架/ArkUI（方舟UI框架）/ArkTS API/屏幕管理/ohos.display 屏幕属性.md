@@ -1,9 +1,9 @@
 # @ohos.display (屏幕属性)
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-display
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 屏幕属性提供管理显示设备的基础能力，包括获取默认显示设备的信息、获取所有显示设备的信息以及监听显示设备的插拔状态变化等。该模块支持多种显示设备类型的管理，适用于多屏协同、折叠屏适配或屏幕状态监听等场景，帮助开发者实现适配不同显示设备的应用布局、响应屏幕状态变化和优化多屏用户体验等功能。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { display } from '@kit.ArkUI';
@@ -22,15 +23,17 @@ import { display } from '@kit.ArkUI';
 
 
 
-#### DisplayState
+## DisplayState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 显示设备的状态枚举。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -45,15 +48,17 @@ import { display } from '@kit.ArkUI';
 
 
 
-#### Orientation10+
+## Orientation10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 显示设备的显示方向枚举。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -65,15 +70,17 @@ import { display } from '@kit.ArkUI';
 
 
 
-#### DisplaySourceMode19+
+## DisplaySourceMode19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 屏幕显示内容的显示模式枚举。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -86,13 +93,15 @@ import { display } from '@kit.ArkUI';
 
 
 
-#### FoldStatus10+
+## FoldStatus10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 当前可折叠设备的折叠状态枚举。如果是双折轴设备，则在充电口朝下的状态下，从右到左分别是折轴一和折轴二。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -114,15 +123,17 @@ import { display } from '@kit.ArkUI';
 
 
 
-#### FoldDisplayMode10+
+## FoldDisplayMode10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 可折叠设备的屏幕显示模式枚举。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -139,15 +150,17 @@ import { display } from '@kit.ArkUI';
 
 
 
-#### CornerType23+
+## CornerType23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 屏幕圆角类型枚举。
 
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -159,9 +172,10 @@ import { display } from '@kit.ArkUI';
 
 
 
-#### RoundedCorner23+
+## RoundedCorner23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 屏幕圆角定义。
 
@@ -171,24 +185,27 @@ import { display } from '@kit.ArkUI';
 
 **系统能力：** SystemCapability.Window.SessionManager
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | CornerType | 是 | 否 | 圆角类型。 |
 | position | Position | 是 | 否 | 圆角圆心的坐标点。 |
-| radius | number | 是 | 否 | 圆角半径，单位为px。 |
+| radius | number | 是 | 否 | 圆角半径，单位为px，该参数为整数。 |
 
 
 
 
-#### FoldCreaseRegion10+
+## FoldCreaseRegion10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 折叠设备屏幕的折痕区域。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -198,15 +215,17 @@ import { display } from '@kit.ArkUI';
 
 
 
-#### Rect9+
+## Rect9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 矩形区域。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -218,15 +237,17 @@ import { display } from '@kit.ArkUI';
 
 
 
-#### WaterfallDisplayAreaRects9+
+## WaterfallDisplayAreaRects9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 瀑布屏曲面部分显示区域。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -238,15 +259,17 @@ import { display } from '@kit.ArkUI';
 
 
 
-#### CutoutInfo9+
+## CutoutInfo9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 挖孔屏、刘海屏、瀑布屏等不可用屏幕区域信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -256,15 +279,17 @@ import { display } from '@kit.ArkUI';
 
 
 
-#### DisplayPhysicalResolution12+
+## DisplayPhysicalResolution12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设备的显示模式以及对应的物理屏幕分辨率信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -275,27 +300,30 @@ import { display } from '@kit.ArkUI';
 
 
 
-#### BrightnessInfo22+
+## BrightnessInfo22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 屏幕亮度信息。此类型中的信息均来自底层屏幕信息数据。
 
 **系统能力：** SystemCapability.Window.SessionManager
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | currentHeadroom | number | 是 | 否 | 当前亮度动态余量，该参数为大于0的浮点数。默认值为1.0。 元服务API： 从API version 22开始，该接口支持在元服务中使用。 |
 | maxHeadroom | number | 是 | 否 | 当前最大亮度余量，该参数为大于0的浮点数。默认值为1.0。 元服务API： 从API version 22开始，该接口支持在元服务中使用。 |
-| sdrNits | number | 是 | 否 | 屏幕的亮度，该参数为大于0的浮点数。默认值为500.0。 元服务API： 从API version 22开始，该接口支持在元服务中使用。 |
-| brightnessPosition | number | 是 | 是 | 当前屏幕亮度所对应的亮度条位置，该参数为浮点数，取值范围[0.0, 1.0]，默认值为0.0。0.0表示当前屏幕亮度最低，1.0表示当前屏幕亮度最高。该参数返回的亮度条位置与实际可能存在精度为0.01的误差。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
+| sdrNits | number | 是 | 否 | 屏幕的亮度，单位为nit，该参数为大于0的浮点数。默认值为500.0。 元服务API： 从API version 22开始，该接口支持在元服务中使用。 |
+| brightnessPosition | number | 是 | 是 | 当前屏幕亮度所对应的亮度条位置，该参数为浮点数，取值范围[0.0, 1.0]，默认值为0.0。0.0表示当前屏幕亮度最低，1.0表示当前屏幕亮度最高。该参数返回的亮度条位置与实际亮度条位置可能存在精度为0.01的误差。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 
 
 
 
-#### BrightnessCallback22+
+## BrightnessCallback22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type BrightnessCallback<T1, T2> = (data1: T1, data2: T2) => void
 
@@ -305,6 +333,7 @@ type BrightnessCallback<T1, T2> = (data1: T1, data2: T2) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data1 | T1 | 是 | 表示displayId，类型为number。 |
@@ -313,13 +342,15 @@ type BrightnessCallback<T1, T2> = (data1: T1, data2: T2) => void
 
 
 
-#### ScreenShape18+
+## ScreenShape18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 显示设备的屏幕形状枚举。
 
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -329,33 +360,37 @@ type BrightnessCallback<T1, T2> = (data1: T1, data2: T2) => void
 
 
 
-#### VirtualScreenConfig16+
+## VirtualScreenConfig16+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 创建虚拟屏幕的参数。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | name | string | 否 | 否 | 指定虚拟屏幕的名称，用户可自行定义。 |
 | width | number | 否 | 否 | 指定虚拟屏幕的宽度，单位为px，该参数应为正整数。 |
 | height | number | 否 | 否 | 指定虚拟屏幕的高度，单位为px，该参数应为正整数。 |
-| density | number | 否 | 否 | 指定虚拟屏幕的密度，该参数为浮点数。 |
+| density | number | 否 | 否 | 指定虚拟屏幕的逻辑像素密度，该参数为浮点数。 |
 | surfaceId | string | 否 | 否 | 指定虚拟屏幕的surfaceId，用户可自行定义，该参数最大长度为4096个字节，超出最大长度时则取前4096个字节。 |
 | supportsFocus22+ | boolean | 否 | 是 | 指定虚拟屏幕是否可获得焦点。true表示可获焦，false表示不可获焦，默认值为true。 |
 
 
 
 
-#### Position20+
+## Position20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 坐标位置：在全局坐标系中，以主屏左上角为原点。在相对坐标系中，以指定屏幕左上角为原点。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -365,13 +400,15 @@ type BrightnessCallback<T1, T2> = (data1: T1, data2: T2) => void
 
 
 
-#### RelativePosition20+
+## RelativePosition20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 相对坐标系下的坐标位置，以displayId对应的屏幕左上角为原点。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -381,9 +418,10 @@ type BrightnessCallback<T1, T2> = (data1: T1, data2: T2) => void
 
 
 
-#### display.getDisplayByIdSync12+
+## display.getDisplayByIdSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDisplayByIdSync(displayId: number): Display
 
@@ -395,12 +433,14 @@ getDisplayByIdSync(displayId: number): Display
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | displayId | number | 是 | 屏幕ID，应为非负整数。需要确保displayId准确才能成功获取到对应结果。可以通过WindowProperties的displayId属性获取到准确的displayId作为入参。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -410,6 +450,7 @@ getDisplayByIdSync(displayId: number): Display
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -433,9 +474,10 @@ try {
 
 
 
-#### display.getBrightnessInfo22+
+## display.getBrightnessInfo22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBrightnessInfo(displayId: number): BrightnessInfo
 
@@ -447,12 +489,14 @@ getBrightnessInfo(displayId: number): BrightnessInfo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | displayId | number | 是 | 屏幕ID。该参数仅支持整数输入，该参数大于等于0。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -462,6 +506,7 @@ getBrightnessInfo(displayId: number): BrightnessInfo
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -477,15 +522,16 @@ try {
   let brightnessInfo = display.getBrightnessInfo(0);
   console.info(`brightness info: ${JSON.stringify(brightnessInfo)}`);
 } catch (error) {
-  console.error(`Failed to getDisplayBrightness. Code: ${error.code}, message: ${error.message}`);
+  console.error(`Failed to get display brightnessInfo. Code: ${error.code}, message: ${error.message}`);
 }
 ```
 
 
 
-#### display.getAllDisplayPhysicalResolution12+
+## display.getAllDisplayPhysicalResolution12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllDisplayPhysicalResolution(): Promise<Array&lt;DisplayPhysicalResolution&gt;>
 
@@ -497,14 +543,16 @@ getAllDisplayPhysicalResolution(): Promise<Array&lt;DisplayPhysicalResolution&gt
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise<Array&lt;DisplayPhysicalResolution&gt;> | Promise对象。返回当前所有的DisplayPhysicalResolution对象。 |
+| Promise<Array&lt;DisplayPhysicalResolution&gt;> | Promise对象。返回当前所有的DisplayPhysicalResolution对象，对象数组内按物理屏幕分辨率信息从低到高的顺序排列。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -531,9 +579,10 @@ promise.then((resolutionObjects) => {
 
 
 
-#### display.getDefaultDisplaySync9+
+## display.getDefaultDisplaySync9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDefaultDisplaySync(): Display
 
@@ -545,6 +594,7 @@ getDefaultDisplaySync(): Display
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Display | 返回默认的Display对象。 |
@@ -553,6 +603,7 @@ getDefaultDisplaySync(): Display
 **错误码：**
 
 以下错误码的详细介绍请参见[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -572,9 +623,10 @@ try {
 
 
 
-#### display.getPrimaryDisplaySync14+
+## display.getPrimaryDisplaySync14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPrimaryDisplaySync(): Display
 
@@ -586,6 +638,7 @@ getPrimaryDisplaySync(): Display
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Display | 当前设备主屏幕的Display对象。 |
@@ -594,6 +647,7 @@ getPrimaryDisplaySync(): Display
 **错误码：**
 
 以下错误码的详细介绍请参见[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -610,9 +664,10 @@ displayClass = display.getPrimaryDisplaySync();
 
 
 
-#### display.getAllDisplays9+
+## display.getAllDisplays9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllDisplays(callback: AsyncCallback<Array&lt;Display&gt;>): void
 
@@ -624,6 +679,7 @@ getAllDisplays(callback: AsyncCallback<Array&lt;Display&gt;>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<Array&lt;Display&gt;> | 是 | 回调函数。返回当前所有的Display对象。 |
@@ -632,6 +688,7 @@ getAllDisplays(callback: AsyncCallback<Array&lt;Display&gt;>): void
 **错误码：**
 
 以下错误码的详细介绍请参见[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -645,21 +702,22 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 let displayClass: Array<display.Display> = [];
 display.getAllDisplays((err: BusinessError, data: Array<display.Display>) => {
-  displayClass = data;
   const errCode: number = err.code;
   if (errCode) {
     console.error(`Failed to obtain all the display objects. Code: ${err.code}, message: ${err.message}`);
     return;
   }
+  displayClass = data;
   console.info(`Succeeded in obtaining all the display objects. Data: ${JSON.stringify(data)}`);
 });
 ```
 
 
 
-#### display.getAllDisplays9+
+## display.getAllDisplays9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllDisplays(): Promise<Array&lt;Display&gt;>
 
@@ -671,6 +729,7 @@ getAllDisplays(): Promise<Array&lt;Display&gt;>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;Display&gt;> | Promise对象。返回当前所有的Display对象。 |
@@ -679,6 +738,7 @@ getAllDisplays(): Promise<Array&lt;Display&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -690,7 +750,7 @@ getAllDisplays(): Promise<Array&lt;Display&gt;>
 ```json
 import { BusinessError } from '@kit.BasicServicesKit';
 
-let displayClass: Array<display.Display> =[];
+let displayClass: Array<display.Display> = [];
 let promise: Promise<Array<display.Display>> = display.getAllDisplays();
 promise.then((data: Array<display.Display>) => {
   displayClass = data;
@@ -702,11 +762,12 @@ promise.then((data: Array<display.Display>) => {
 
 
 
-#### display.on('add'|'remove'|'change')
+## display.on('add' | 'remove' | 'change')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-on(type: 'add'|'remove'|'change', callback: Callback&lt;number&gt;): void
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+on(type: 'add' | 'remove' | 'change', callback: Callback&lt;number&gt;): void
 
 开启显示设备变化的监听。
 
@@ -715,6 +776,7 @@ on(type: 'add'|'remove'|'change', callback: Callback&lt;number&gt;): void
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -725,6 +787,7 @@ on(type: 'add'|'remove'|'change', callback: Callback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -745,11 +808,12 @@ display.on('add', callback);
 
 
 
-#### display.off('add'|'remove'|'change')
+## display.off('add' | 'remove' | 'change')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-off(type: 'add'|'remove'|'change', callback?: Callback&lt;number&gt;): void
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+off(type: 'add' | 'remove' | 'change', callback?: Callback&lt;number&gt;): void
 
 关闭显示设备变化的监听。
 
@@ -758,6 +822,7 @@ off(type: 'add'|'remove'|'change', callback?: Callback&lt;number&gt;): void
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -769,6 +834,7 @@ off(type: 'add'|'remove'|'change', callback?: Callback&lt;number&gt;): void
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
@@ -777,11 +843,13 @@ off(type: 'add'|'remove'|'change', callback?: Callback&lt;number&gt;): void
 **示例：**
 
 ```text
+import { Callback } from '@kit.BasicServicesKit';
+
 // 如果通过on注册多个callback，同时关闭所有callback监听
 display.off('remove');
 
 let callback: Callback<number> = (data: number) => {
-  console.info(`Succeeded in unregistering the callback for display remove. Data: ${data}`)
+  console.info(`Succeeded in unregistering the callback for display remove. Data: ${data}`);
 };
 // 关闭传入的callback监听
 display.off('remove', callback);
@@ -789,9 +857,10 @@ display.off('remove', callback);
 
 
 
-#### display.onChangeWithAttribute23+
+## display.onChangeWithAttribute23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onChangeWithAttribute(displayAttributeOption: Array&lt;string&gt;, callback: Callback&lt;number&gt;): void
 
@@ -803,6 +872,7 @@ onChangeWithAttribute(displayAttributeOption: Array&lt;string&gt;, callback: Cal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | displayAttributeOption | Array&lt;string&gt; | 是 | 指定需要监听的屏幕属性名称，且仅限于display属性中包含的属性。 |
@@ -813,9 +883,10 @@ onChangeWithAttribute(displayAttributeOption: Array&lt;string&gt;, callback: Cal
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | Capability not supported. Function onChangeWithAttribute can not work correctly due to limited device capabilities. |
+| 801 | Capability not supported. |
 | 1400003 | This display manager service works abnormally. Possible causes: Internal IPC error. |
 
 
@@ -827,15 +898,16 @@ import { Callback } from '@kit.BasicServicesKit';
 let attributesChangeCallback: Callback<number> = (data: number) => {
   console.info(`Listening enabled. Data: ${data}`);
 };
-let attributes: Array<string> = ["rotation", "width"];
+let attributes: Array<string> = ['rotation', 'width'];
 display.onChangeWithAttribute(attributes, attributesChangeCallback);
 ```
 
 
 
-#### display.isFoldable10+
+## display.isFoldable10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isFoldable(): boolean
 
@@ -847,6 +919,7 @@ isFoldable(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | boolean对象，返回当前设备是否可折叠的结果。false表示不可折叠，true表示可折叠。对于外屏只有简单辅助显示作用的小折叠设备，应用无法自定义外屏界面，故其返回值为false。其他可折叠设备的返回值均为true。 |
@@ -855,6 +928,7 @@ isFoldable(): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -870,9 +944,10 @@ ret = display.isFoldable();
 
 
 
-#### display.getFoldStatus10+
+## display.getFoldStatus10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFoldStatus(): FoldStatus
 
@@ -884,6 +959,7 @@ getFoldStatus(): FoldStatus
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | FoldStatus | FoldStatus对象，返回当前可折叠设备的折叠状态。 |
@@ -892,6 +968,7 @@ getFoldStatus(): FoldStatus
 **错误码：**
 
 以下错误码的详细介绍请参见[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -907,9 +984,10 @@ console.info(`Succeeded in obtaining fold status. Data: ${data}`);
 
 
 
-#### display.getFoldDisplayMode10+
+## display.getFoldDisplayMode10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFoldDisplayMode(): FoldDisplayMode
 
@@ -919,9 +997,10 @@ getFoldDisplayMode(): FoldDisplayMode
 
 **系统能力：** SystemCapability.Window.SessionManager
 
-**设备行为差异：** 该接口在PC/2in1设备、非折叠设备中返回0，在其他设备中可正常调用。
+**设备行为差异：** 该接口在支持多种显示模式的设备中可正常调用，在其他设备中返回FoldDisplayMode.FOLD_DISPLAY_MODE_UNKNOWN。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -931,6 +1010,7 @@ getFoldDisplayMode(): FoldDisplayMode
 **错误码：**
 
 以下错误码的详细介绍请参见[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -946,9 +1026,10 @@ console.info(`Succeeded in obtaining fold display mode. Data: ${data}`);
 
 
 
-#### display.getCurrentFoldCreaseRegion10+
+## display.getCurrentFoldCreaseRegion10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCurrentFoldCreaseRegion(): FoldCreaseRegion
 
@@ -962,6 +1043,7 @@ getCurrentFoldCreaseRegion(): FoldCreaseRegion
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | FoldCreaseRegion | FoldCreaseRegion对象，返回折叠设备在当前显示模式下的折痕区域。 |
@@ -970,6 +1052,7 @@ getCurrentFoldCreaseRegion(): FoldCreaseRegion
 **错误码：**
 
 以下错误码的详细介绍请参见[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -985,9 +1068,10 @@ console.info(`Succeeded in obtaining current fold crease region. Data: ${JSON.st
 
 
 
-#### display.on('foldStatusChange')10+
+## display.on('foldStatusChange')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'foldStatusChange', callback: Callback&lt;FoldStatus&gt;): void
 
@@ -1005,6 +1089,7 @@ on(type: 'foldStatusChange', callback: Callback&lt;FoldStatus&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'foldStatusChange'，表示折叠设备折叠状态变化事件。 |
@@ -1014,6 +1099,7 @@ on(type: 'foldStatusChange', callback: Callback&lt;FoldStatus&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1038,9 +1124,10 @@ display.on('foldStatusChange', callback);
 
 
 
-#### display.off('foldStatusChange')10+
+## display.off('foldStatusChange')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'foldStatusChange', callback?: Callback&lt;FoldStatus&gt;): void
 
@@ -1052,6 +1139,7 @@ off(type: 'foldStatusChange', callback?: Callback&lt;FoldStatus&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'foldStatusChange'，表示折叠设备折叠状态变化事件。 |
@@ -1062,6 +1150,7 @@ off(type: 'foldStatusChange', callback?: Callback&lt;FoldStatus&gt;): void
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
@@ -1071,6 +1160,8 @@ off(type: 'foldStatusChange', callback?: Callback&lt;FoldStatus&gt;): void
 **示例：**
 
 ```text
+import { Callback } from '@kit.BasicServicesKit';
+
 // 如果通过on注册多个callback，同时关闭所有callback监听
 display.off('foldStatusChange');
 
@@ -1083,9 +1174,10 @@ display.off('foldStatusChange', callback);
 
 
 
-#### display.on('brightnessInfoChange')22+
+## display.on('brightnessInfoChange')22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'brightnessInfoChange', callback: BrightnessCallback<number, BrightnessInfo>): void
 
@@ -1097,15 +1189,17 @@ on(type: 'brightnessInfoChange', callback: BrightnessCallback<number, Brightness
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'brightnessInfoChange'，表示屏幕亮度信息状态变化事件。 |
-| callback | BrightnessCallback<number, BrightnessInfo> | 是 | 回调函数。返回屏幕亮度信息改变的displayId(参数1)及对应的屏幕亮度信息(参数2)。 |
+| callback | BrightnessCallback<number, BrightnessInfo> | 是 | 回调函数。返回屏幕亮度信息改变的displayId（参数1）及对应的屏幕亮度信息（参数2）。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1123,15 +1217,16 @@ let callback: display.BrightnessCallback<number, display.BrightnessInfo> = (id: 
 try {
   display.on('brightnessInfoChange', callback);
 } catch (error) {
-  console.error(`Failed to register brightnessInfoChange listener. Code ${error.code}, message: ${error.message}`);
+  console.error(`Failed to register brightnessInfoChange listener. Code: ${error.code}, message: ${error.message}`);
 }
 ```
 
 
 
-#### display.off('brightnessInfoChange')22+
+## display.off('brightnessInfoChange')22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'brightnessInfoChange', callback?: BrightnessCallback<number, BrightnessInfo>): void
 
@@ -1143,15 +1238,17 @@ off(type: 'brightnessInfoChange', callback?: BrightnessCallback<number, Brightne
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'brightnessInfoChange'，表示屏幕亮度信息状态变化事件。 |
-| callback | BrightnessCallback<number, BrightnessInfo> | 否 | 需要取消注册的回调函数。表示brightnessInfo状态发生改变。若无此参数，则取消所有注册brightnessInfo状态发生改变的回调函数。参数1为displayId，参数2为屏幕亮度信息。 |
+| callback | BrightnessCallback<number, BrightnessInfo> | 否 | 需要取消注册的回调函数。返回屏幕亮度信息改变的displayId（参数1）及对应的屏幕亮度信息（参数2）。若无此参数，则取消所有注册brightnessInfo状态发生改变的回调函数。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1169,15 +1266,16 @@ let callback: display.BrightnessCallback<number, display.BrightnessInfo> = (id: 
 try {
   display.off('brightnessInfoChange', callback);
 } catch (error) {
-  console.error(`Failed to unregister brightnessInfoChange listener. Code ${error.code}, message: ${error.message}`);
+  console.error(`Failed to unregister brightnessInfoChange listener. Code: ${error.code}, message: ${error.message}`);
 }
 ```
 
 
 
-#### display.on('foldAngleChange')12+
+## display.on('foldAngleChange')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'foldAngleChange', callback: Callback<Array&lt;number&gt;>): void
 
@@ -1189,6 +1287,7 @@ on(type: 'foldAngleChange', callback: Callback<Array&lt;number&gt;>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'foldAngleChange'，表示折叠设备折叠角度变化事件。 |
@@ -1198,6 +1297,7 @@ on(type: 'foldAngleChange', callback: Callback<Array&lt;number&gt;>): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1210,6 +1310,10 @@ on(type: 'foldAngleChange', callback: Callback<Array&lt;number&gt;>): void
 ```text
 import { Callback } from '@kit.BasicServicesKit';
 
+/**
+ * 注册监听的callback参数要采用对象传递。
+ * 若使用匿名函数注册，每次调用会创建一个新的底层对象，引起内存泄漏问题。
+ */
 let callback: Callback<Array<number>> = (angles: Array<number>) => {
   console.info('Listening fold angles length: ' + angles.length);
 };
@@ -1218,9 +1322,10 @@ display.on('foldAngleChange', callback);
 
 
 
-#### display.off('foldAngleChange')12+
+## display.off('foldAngleChange')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'foldAngleChange', callback?: Callback<Array&lt;number&gt;>): void
 
@@ -1232,6 +1337,7 @@ off(type: 'foldAngleChange', callback?: Callback<Array&lt;number&gt;>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'foldAngleChange'表示折叠设备折叠角度变化事件。 |
@@ -1241,6 +1347,7 @@ off(type: 'foldAngleChange', callback?: Callback<Array&lt;number&gt;>): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1265,13 +1372,14 @@ display.off('foldAngleChange', callback);
 
 
 
-#### display.on('captureStatusChange')12+
+## display.on('captureStatusChange')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'captureStatusChange', callback: Callback&lt;boolean&gt;): void
 
-开启设备的屏幕显示信息是否被获取的监听。
+开启设备的屏幕显示信息被获取状态的监听。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1279,15 +1387,17 @@ on(type: 'captureStatusChange', callback: Callback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'captureStatusChange'表示设备的屏幕显示信息被获取的状态变化事件。 |
-| callback | Callback&lt;boolean&gt; | 是 | 回调函数。表示设备的屏幕显示信息是否被获取。true表示设备的屏幕显示信息开始被获取，包括处于截屏、投屏、录屏状态，或创建了虚拟屏幕(虚拟屏幕可能被应用获取屏幕图像)，截屏仅返回一次true；false表示获取结束。 |
+| callback | Callback&lt;boolean&gt; | 是 | 回调函数。返回设备的屏幕显示信息是否被获取。true表示设备的屏幕显示信息开始被获取，包括处于截屏、投屏、录屏状态，或创建了虚拟屏幕(虚拟屏幕可能被应用获取屏幕图像)，截屏仅触发一次true回调；false表示获取结束。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1308,13 +1418,14 @@ display.on('captureStatusChange', callback);
 
 
 
-#### display.off('captureStatusChange')12+
+## display.off('captureStatusChange')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'captureStatusChange', callback?: Callback&lt;boolean&gt;): void
 
-关闭设备的屏幕显示信息是否被获取的监听。
+关闭设备的屏幕显示信息被获取状态的监听。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1322,15 +1433,17 @@ off(type: 'captureStatusChange', callback?: Callback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'captureStatusChange'表示设备的屏幕显示信息被获取的状态变化事件。 |
-| callback | Callback&lt;boolean&gt; | 否 | 需要取消注册的回调函数。表示设备的屏幕显示信息是否被获取。true表示设备的屏幕显示信息开始被获取，包括处于截屏、投屏、录屏状态，或创建了虚拟屏幕(虚拟屏幕可能被应用获取屏幕图像)，截屏仅返回一次true；false表示获取结束。若无此参数，则取消注册设备的屏幕显示信息是否存在被获取监听的所有回调函数。 |
+| callback | Callback&lt;boolean&gt; | 否 | 需要取消注册的回调函数。返回设备的屏幕显示信息是否被获取。true表示设备的屏幕显示信息开始被获取，包括处于截屏、投屏、录屏状态，或创建了虚拟屏幕(虚拟屏幕可能被应用获取屏幕图像)，截屏仅触发一次true回调；false表示获取结束。若无此参数，则取消注册设备的屏幕显示信息被获取状态变化监听的所有回调函数。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1355,9 +1468,10 @@ display.off('captureStatusChange', callback);
 
 
 
-#### display.isCaptured12+
+## display.isCaptured12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isCaptured(): boolean
 
@@ -1369,6 +1483,7 @@ isCaptured(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | boolean值，返回设备的屏幕显示信息是否存在被获取的情况。返回true表示设备的屏幕信息存在被获取的情况，可能为：设备正处于截屏、投屏、录屏状态，或已创建虚拟屏幕(虚拟屏幕可能被应用获取屏幕图像)；返回false则表示设备的屏幕信息不存在被获取的情况。 |
@@ -1377,6 +1492,7 @@ isCaptured(): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1393,9 +1509,10 @@ ret = display.isCaptured();
 
 
 
-#### display.isCaptured
+## display.isCaptured
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isCaptured(bundleNameList: Array&lt;string&gt;): boolean
 
@@ -1411,12 +1528,14 @@ isCaptured(bundleNameList: Array&lt;string&gt;): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleNameList | Array&lt;string&gt; | 是 | 需要检查的应用列表。数组最大长度为100，超过最大长度返回1400004错误码。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1426,6 +1545,7 @@ isCaptured(bundleNameList: Array&lt;string&gt;): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1447,9 +1567,10 @@ try {
 
 
 
-#### display.on('foldDisplayModeChange')10+
+## display.on('foldDisplayModeChange')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | Tablet | TV | Wearable
 
 on(type: 'foldDisplayModeChange', callback: Callback&lt;FoldDisplayMode&gt;): void
 
@@ -1465,6 +1586,7 @@ on(type: 'foldDisplayModeChange', callback: Callback&lt;FoldDisplayMode&gt;): vo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'foldDisplayModeChange'，表示折叠设备屏幕显示模式变化事件。 |
@@ -1474,6 +1596,7 @@ on(type: 'foldDisplayModeChange', callback: Callback&lt;FoldDisplayMode&gt;): vo
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1498,9 +1621,10 @@ display.on('foldDisplayModeChange', callback);
 
 
 
-#### display.off('foldDisplayModeChange')10+
+## display.off('foldDisplayModeChange')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'foldDisplayModeChange', callback?: Callback&lt;FoldDisplayMode&gt;): void
 
@@ -1512,6 +1636,7 @@ off(type: 'foldDisplayModeChange', callback?: Callback&lt;FoldDisplayMode&gt;): 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'foldDisplayModeChange'，表示折叠设备屏幕显示模式变化事件。 |
@@ -1521,6 +1646,7 @@ off(type: 'foldDisplayModeChange', callback?: Callback&lt;FoldDisplayMode&gt;): 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1545,9 +1671,10 @@ display.off('foldDisplayModeChange', callback);
 
 
 
-#### display.createVirtualScreen16+
+## display.createVirtualScreen16+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createVirtualScreen(config:VirtualScreenConfig): Promise&lt;number&gt;
 
@@ -1559,12 +1686,14 @@ createVirtualScreen(config:VirtualScreenConfig): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | config | VirtualScreenConfig | 是 | 用于创建虚拟屏幕的参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1575,11 +1704,12 @@ createVirtualScreen(config:VirtualScreenConfig): Promise&lt;number&gt;
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
-| 801 | Capability not supported.function createVirtualScreen can not work correctly due to limited device capabilities. |
+| 801 | Capability not supported. |
 | 1400001 | Invalid display or screen. |
 
 
@@ -1588,16 +1718,7 @@ createVirtualScreen(config:VirtualScreenConfig): Promise&lt;number&gt;
 ```text
 import { BusinessError } from '@kit.BasicServicesKit';
 
-class VirtualScreenConfig {
-  name : string = '';
-  width : number = 0;
-  height : number = 0;
-  density : number = 0;
-  surfaceId : string = '';
-  supportsFocus ?: boolean = true;
-}
-
-let config: VirtualScreenConfig = {
+let config: display.VirtualScreenConfig = {
   name: 'screen01',
   width: 1080,
   height: 2340,
@@ -1615,9 +1736,10 @@ display.createVirtualScreen(config).then((screenId: number) => {
 
 
 
-#### display.destroyVirtualScreen16+
+## display.destroyVirtualScreen16+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 destroyVirtualScreen(screenId:number): Promise&lt;void&gt;
 
@@ -1629,6 +1751,7 @@ destroyVirtualScreen(screenId:number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | screenId | number | 是 | 屏幕ID，与创建的虚拟屏幕ID保持一致，即使用createVirtualScreen()接口成功创建对应虚拟屏幕时的返回值，该参数仅支持整数输入。 |
@@ -1636,20 +1759,22 @@ destroyVirtualScreen(screenId:number): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | 无返回结果的Promise对象。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
-| 801 | Capability not supported.function destroyVirtualScreen can not work correctly due to limited device capabilities. |
+| 801 | Capability not supported. |
 | 1400001 | Invalid display or screen. |
 | 1400003 | This display manager service works abnormally. |
 
@@ -1670,9 +1795,10 @@ display.destroyVirtualScreen(screenId).then(() => {
 
 
 
-#### display.setVirtualScreenSurface16+
+## display.setVirtualScreenSurface16+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setVirtualScreenSurface(screenId:number, surfaceId: string): Promise&lt;void&gt;
 
@@ -1684,6 +1810,7 @@ setVirtualScreenSurface(screenId:number, surfaceId: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | screenId | number | 是 | 屏幕ID，与创建的虚拟屏幕ID保持一致，即使用createVirtualScreen()接口成功创建对应虚拟屏幕时的返回值，该参数仅支持整数输入。 |
@@ -1692,20 +1819,21 @@ setVirtualScreenSurface(screenId:number, surfaceId: string): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | 无返回结果的Promise对象。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
-| 801 | Capability not supported.function setVirtualScreenSurface can not work correctly due to limited device capabilities. |
 | 1400001 | Invalid display or screen. |
 | 1400003 | This display manager service works abnormally. |
 
@@ -1750,9 +1878,10 @@ struct Index {
 
 
 
-#### display.makeUnique16+
+## display.makeUnique16+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 makeUnique(screenId:number): Promise&lt;void&gt;
 
@@ -1766,6 +1895,7 @@ makeUnique(screenId:number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | screenId | number | 是 | 要设置成异源模式的屏幕ID。其中ID应为大于0的整数，否则返回401错误码。 |
@@ -1773,20 +1903,22 @@ makeUnique(screenId:number): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | 无返回结果的Promise对象。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
-| 801 | Capability not supported.function makeUnique can not work correctly due to limited device capabilities. |
+| 801 | Capability not supported. |
 | 1400001 | Invalid display or screen. |
 | 1400003 | This display manager service works abnormally. |
 
@@ -1807,9 +1939,10 @@ display.makeUnique(screenId).then(() => {
 
 
 
-#### display.convertRelativeToGlobalCoordinate20+
+## display.convertRelativeToGlobalCoordinate20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 convertRelativeToGlobalCoordinate(relativePosition: RelativePosition): Position
 
@@ -1821,12 +1954,14 @@ convertRelativeToGlobalCoordinate(relativePosition: RelativePosition): Position
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | relativePosition | RelativePosition | 是 | 需要转化为全局坐标的相对坐标。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1836,6 +1971,7 @@ convertRelativeToGlobalCoordinate(relativePosition: RelativePosition): Position
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1858,7 +1994,7 @@ let relativePosition: display.RelativePosition = {
 try {
    // 将相对坐标转换为全局坐标
   let position: display.Position = display.convertRelativeToGlobalCoordinate(relativePosition);
-  console.info(`The global coordinate is ${position.x}, ${position.y}`)
+  console.info(`The global coordinate is ${position.x}, ${position.y}`);
 } catch (exception) {
   console.error(`Failed to convert the relative coordinate to the global coordinate. Code: ${exception.code}, message: ${exception.message}`);
 }
@@ -1866,19 +2002,21 @@ try {
 
 
 
-#### display.convertGlobalToRelativeCoordinate20+
+## display.convertGlobalToRelativeCoordinate20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 convertGlobalToRelativeCoordinate(position: Position, displayId?: number): RelativePosition
 
-将主屏左上角为原点的全局坐标转换成displayId指定屏幕左上角为原点的相对坐标。若未传入displayId，默认转换为全局坐标所在屏幕的相对坐标系。若全局坐标不在任何屏幕上，默认转换成主屏的相对坐标。
+将主屏左上角为原点的全局坐标转换成displayId指定屏幕左上角为原点的相对坐标，仅支持主屏和扩展屏的坐标转换。若未传入displayId，默认转换为全局坐标所在屏幕的相对坐标系。若全局坐标不在任何屏幕上，默认转换成主屏的相对坐标。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Window.SessionManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1888,6 +2026,7 @@ convertGlobalToRelativeCoordinate(position: Position, displayId?: number): Relat
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | RelativePosition | 返回对应屏幕的相对坐标。 |
@@ -1896,6 +2035,7 @@ convertGlobalToRelativeCoordinate(position: Position, displayId?: number): Relat
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1915,7 +2055,7 @@ let position: display.Position = {
 try {
   // 将全局坐标转换为相对坐标
   let relPos: display.RelativePosition = display.convertGlobalToRelativeCoordinate(position, 0);
-  console.info(`The relative coordinate is ${relPos.displayId}, ${relPos.position.x}, ${relPos.position.y}`)
+  console.info(`The relative coordinate is ${relPos.displayId}, ${relPos.position.x}, ${relPos.position.y}`);
 } catch (exception) {
   console.error(`Failed to convert the global coordinate to the relative coordinate. Code: ${exception.code}, message: ${exception.message}`);
 }
@@ -1923,9 +2063,10 @@ try {
 
 
 
-#### display.getDefaultDisplay(deprecated)
+## display.getDefaultDisplay(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDefaultDisplay(callback: AsyncCallback&lt;Display&gt;): void
 
@@ -1938,6 +2079,7 @@ getDefaultDisplay(callback: AsyncCallback&lt;Display&gt;): void
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1963,9 +2105,10 @@ display.getDefaultDisplay((err: BusinessError, data: display.Display) => {
 
 
 
-#### display.getDefaultDisplay(deprecated)
+## display.getDefaultDisplay(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDefaultDisplay(): Promise&lt;Display&gt;
 
@@ -1978,6 +2121,7 @@ getDefaultDisplay(): Promise&lt;Display&gt;
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2001,9 +2145,10 @@ promise.then((data: display.Display) => {
 
 
 
-#### display.getAllDisplay(deprecated)
+## display.getAllDisplay(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllDisplay(callback: AsyncCallback<Array&lt;Display&gt;>): void
 
@@ -2016,6 +2161,7 @@ getAllDisplay(callback: AsyncCallback<Array&lt;Display&gt;>): void
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2033,15 +2179,16 @@ display.getAllDisplay((err: BusinessError, data: Array<display.Display>) => {
     console.error(`Failed to obtain all the display objects. Code: ${err.code}, message: ${err.message}`);
     return;
   }
-  console.info(`Succeeded in obtaining the default display objects. Data: ${JSON.stringify(data)}`);
+  console.info(`Succeeded in obtaining all the display objects. Data: ${JSON.stringify(data)}`);
 });
 ```
 
 
 
-#### display.getAllDisplay(deprecated)
+## display.getAllDisplay(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllDisplay(): Promise<Array&lt;Display&gt;>
 
@@ -2055,6 +2202,7 @@ getAllDisplay(): Promise<Array&lt;Display&gt;>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;Display&gt;> | Promise对象。返回当前所有的Display对象。 |
@@ -2067,7 +2215,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 let promise: Promise<Array<display.Display>> = display.getAllDisplay();
 promise.then((data: Array<display.Display>) => {
-  console.info(`Succeeded in obtaining the default display objects. Data: ${JSON.stringify(data)}`);
+  console.info(`Succeeded in obtaining all the display objects. Data: ${JSON.stringify(data)}`);
 }).catch((err: BusinessError) => {
   console.error(`Failed to obtain all the display objects. Code: ${err.code}, message: ${err.message}`);
 });
@@ -2075,9 +2223,10 @@ promise.then((data: Array<display.Display>) => {
 
 
 
-#### Display
+## Display
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 屏幕实例。描述Display对象的属性和方法。
 
@@ -2085,9 +2234,11 @@ promise.then((data: Array<display.Display>) => {
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2099,7 +2250,7 @@ promise.then((data: Array<display.Display>) => {
 | rotation | number | 是 | 否 | 显示设备的屏幕顺时针旋转角度。 值为0时，表示显示设备屏幕顺时针旋转为0°，表示显示设备的标准显示方向； 值为1时，表示显示设备屏幕顺时针旋转为90°； 值为2时，表示显示设备屏幕顺时针旋转为180°； 值为3时，表示显示设备屏幕顺时针旋转为270°。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | width | number | 是 | 否 | 显示设备的屏幕宽度，单位为px，该参数为整数。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | height | number | 是 | 否 | 显示设备的屏幕高度，单位为px，该参数为整数。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
-| densityDPI | number | 是 | 否 | 显示设备的物理像素密度，表示每英寸上的像素点数。该参数为浮点数。一般取值160.0、480.0等，实际能取到的值取决于不同设备设置里提供的可选值。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| densityDPI | number | 是 | 否 | 显示设备的物理像素密度，表示每英寸上的像素点数。该参数为浮点数，一般取值160.0、480.0等，实际能取到的值取决于不同设备设置里提供的可选值。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | orientation10+ | Orientation | 是 | 否 | 表示显示设备当前显示的方向。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | densityPixels | number | 是 | 否 | 显示设备逻辑像素的密度，代表物理像素与逻辑像素的缩放系数，计算方式为： 该参数为浮点数，受densityDPI范围限制，取值范围在[0.5, 4.0]。一般取值1.0、3.0等，实际取值取决于不同设备提供的densityDPI。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | scaledDensity | number | 是 | 否 | 显示设备上的字体的缩放因子。该参数为浮点数，通常与densityPixels相同。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
@@ -2107,20 +2258,21 @@ promise.then((data: Array<display.Display>) => {
 | yDPI | number | 是 | 否 | y轴方向中每英寸屏幕的确切物理像素值，该参数为浮点数。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | colorSpaces11+ | Array<colorSpaceManager.ColorSpace> | 是 | 否 | 显示设备支持的所有色域类型。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | hdrFormats11+ | Array<hdrCapability.HDRFormat> | 是 | 否 | 显示设备支持的所有HDR格式。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| availableWidth12+ | number | 是 | 否 | 显示设备的可用区域宽度，单位为px，该参数为大于0的整数。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 12开始，该接口支持在元服务中使用。 设备行为差异： 在搭载HarmonyOS 7.0.0及以上版本的设备上，该接口可正常调用。 针对低于该版本的设备，该接口在PC/2in1设备、Tablet设备中可正常调用；在其他设备中不可用，请通过width属性获取当前设备屏幕的可用区域宽度。 |
-| availableHeight12+ | number | 是 | 否 | 显示设备的可用区域高度，单位为px，该参数为大于0的整数。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 12开始，该接口支持在元服务中使用。 设备行为差异： 在搭载HarmonyOS 7.0.0及以上版本的设备上，该接口可正常调用。 针对低于该版本的设备，该接口在PC/2in1设备、Tablet设备中可正常调用；在其他设备中不可用，请通过height属性获取当前设备屏幕的可用区域高度。 |
-| screenShape18+ | ScreenShape | 是 | 是 | 显示设备的屏幕形状，默认值为RECTANGLE。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
+| availableWidth12+ | number | 是 | 否 | 显示设备的可用区域宽度，单位为px，该参数为大于0的整数。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 12开始，该接口支持在元服务中使用。 设备行为差异： 在搭载HarmonyOS 7.0.0及以上版本的设备上，该接口可正常调用。 针对HarmonyOS 7.0.0以下版本的设备，该接口在PC/2in1设备、Tablet设备中可正常调用；在其他设备中不可用，请通过width属性获取当前设备屏幕的可用区域宽度。 |
+| availableHeight12+ | number | 是 | 否 | 显示设备的可用区域高度，单位为px，该参数为大于0的整数。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 12开始，该接口支持在元服务中使用。 设备行为差异： 在搭载HarmonyOS 7.0.0及以上版本的设备上，该接口可正常调用。 针对HarmonyOS 7.0.0以下版本的设备，该接口在PC/2in1设备、Tablet设备中可正常调用；在其他设备中不可用，请通过height属性获取当前设备屏幕的可用区域高度。 |
+| screenShape18+ | ScreenShape | 是 | 是 | 显示设备的屏幕形状，默认值为ScreenShape.RECTANGLE。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 | sourceMode19+ | DisplaySourceMode | 是 | 是 | 显示设备的显示模式枚举，默认值为DisplaySourceMode.NONE。 系统能力： SystemCapability.Window.SessionManager 元服务API： 从API version 19开始，该接口支持在元服务中使用。 |
-| x19+ | number | 是 | 是 | 显示设备左上角相对于原点的x轴坐标，原点为主屏左上角，单位为px，该参数为整数，默认值为0。仅DisplaySourceMode为MAIN和EXTEND时返回实际值，其余默认返回默认值0。 系统能力： SystemCapability.Window.SessionManager 元服务API： 从API version 19开始，该接口支持在元服务中使用。 |
-| y19+ | number | 是 | 是 | 显示设备左上角相对于原点的y轴坐标，原点为主屏左上角，单位为px，该参数为整数，默认值为0。仅DisplaySourceMode为MAIN和EXTEND时返回实际值，其余默认返回默认值0。 系统能力： SystemCapability.Window.SessionManager 元服务API： 从API version 19开始，该接口支持在元服务中使用。 |
-| supportedRefreshRates20+ | Array&lt;number&gt; | 是 | 是 | 显示设备支持的所有刷新率，从小到大排序。刷新率值为正整数，单位为Hz。默认为空。 系统能力： SystemCapability.Window.SessionManager 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
+| x19+ | number | 是 | 是 | 显示设备左上角相对于原点的x轴坐标，原点为主屏左上角，单位为px，该参数为整数，默认值为0。仅DisplaySourceMode为MAIN和EXTEND时返回实际值，其余返回默认值0。 系统能力： SystemCapability.Window.SessionManager 元服务API： 从API version 19开始，该接口支持在元服务中使用。 |
+| y19+ | number | 是 | 是 | 显示设备左上角相对于原点的y轴坐标，原点为主屏左上角，单位为px，该参数为整数，默认值为0。仅DisplaySourceMode为MAIN和EXTEND时返回实际值，其余返回默认值0。 系统能力： SystemCapability.Window.SessionManager 元服务API： 从API version 19开始，该接口支持在元服务中使用。 |
+| supportedRefreshRates20+ | Array&lt;number&gt; | 是 | 是 | 显示设备支持的所有刷新率，从小到大排序。刷新率值为正整数，单位为Hz。默认为空数组。 系统能力： SystemCapability.Window.SessionManager 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
 
 
 
 
-#### getRoundedCorner23+
+### getRoundedCorner23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRoundedCorner(): Array&lt;RoundedCorner&gt;
 
@@ -2132,6 +2284,7 @@ getRoundedCorner(): Array&lt;RoundedCorner&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;RoundedCorner&gt; | 返回当前屏幕的圆角信息。 |
@@ -2140,6 +2293,7 @@ getRoundedCorner(): Array&lt;RoundedCorner&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2165,9 +2319,10 @@ try {
 
 
 
-#### getCutoutInfo9+
+### getCutoutInfo9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCutoutInfo(callback: AsyncCallback&lt;CutoutInfo&gt;): void
 
@@ -2179,6 +2334,7 @@ getCutoutInfo(callback: AsyncCallback&lt;CutoutInfo&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;CutoutInfo&gt; | 是 | 回调函数。返回不可用屏幕区域对象。 |
@@ -2187,6 +2343,7 @@ getCutoutInfo(callback: AsyncCallback&lt;CutoutInfo&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2213,9 +2370,10 @@ displayClass.getCutoutInfo((err: BusinessError, data: display.CutoutInfo) => {
 
 
 
-#### getCutoutInfo9+
+### getCutoutInfo9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCutoutInfo(): Promise&lt;CutoutInfo&gt;
 
@@ -2227,6 +2385,7 @@ getCutoutInfo(): Promise&lt;CutoutInfo&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;CutoutInfo&gt; | Promise对象。返回描述不可用屏幕区域的CutoutInfo对象。 |
@@ -2235,6 +2394,7 @@ getCutoutInfo(): Promise&lt;CutoutInfo&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2258,9 +2418,10 @@ promise.then((data: display.CutoutInfo) => {
 
 
 
-#### getAvailableArea12+
+### getAvailableArea12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAvailableArea(): Promise&lt;Rect&gt;
 
@@ -2275,10 +2436,11 @@ getAvailableArea(): Promise&lt;Rect&gt;
 **设备行为差异：**
 
  - 在搭载HarmonyOS 7.0.0及以上版本的设备上，该接口可正常调用。
- - 针对低于该版本的设备，该接口在PC/2in1设备、Tablet设备中可正常调用；在其他设备中不可用，请通过[Display属性](#属性)中的width、height属性获取当前设备屏幕的可用区域。
+ - 针对HarmonyOS 7.0.0以下版本的设备，该接口在PC/2in1设备、Tablet设备中可正常调用；在其他设备中不可用，请通过[Display属性](#属性)中的width、height属性获取当前设备屏幕的可用区域。
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2289,9 +2451,10 @@ getAvailableArea(): Promise&lt;Rect&gt;
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+| 801 | Capability not supported. |
 | 1400001 | Invalid display or screen. Possible cause: 1. This display is abnormal. 2. Internal task error. |
 
 
@@ -2308,7 +2471,7 @@ try {
     console.info(`Succeeded in getting the available area in this display. data: ${JSON.stringify(data)}`);
   }).catch((err: BusinessError) => {
     console.error(`Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
-  })
+  });
 } catch (exception) {
   console.error(`Failed to obtain the default display object. Code: ${exception.code}, message: ${exception.message}`);
 }
@@ -2316,13 +2479,14 @@ try {
 
 
 
-#### on('availableAreaChange')12+
+### on('availableAreaChange')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'availableAreaChange', callback: Callback&lt;Rect&gt;): void
 
-开启当前设备屏幕可用区域的监听。当屏幕旋转、进入/退出自由多窗模式、设置Dock栏/状态栏等系统控件可见性变化时，触发回调函数，返回可用区域信息。
+开启当前设备屏幕可用区域变化的监听。当屏幕旋转、进入/退出自由多窗模式、设置Dock栏/状态栏等系统控件可见性变化时，触发回调函数，返回可用区域信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2331,10 +2495,11 @@ on(type: 'availableAreaChange', callback: Callback&lt;Rect&gt;): void
 **设备行为差异：**
 
  - 在搭载HarmonyOS 7.0.0及以上版本的设备上，该接口可正常调用。
- - 针对低于该版本的设备，该接口在PC/2in1设备、Tablet设备中可正常调用，在其他设备中不生效也不报错。
+ - 针对HarmonyOS 7.0.0以下版本的设备，该接口在PC/2in1设备、Tablet设备中可正常调用，在其他设备中不生效也不报错。
 
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2345,6 +2510,7 @@ on(type: 'availableAreaChange', callback: Callback&lt;Rect&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2371,9 +2537,10 @@ try {
 
 
 
-#### off('availableAreaChange')12+
+### off('availableAreaChange')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'availableAreaChange', callback?: Callback&lt;Rect&gt;): void
 
@@ -2386,10 +2553,11 @@ off(type: 'availableAreaChange', callback?: Callback&lt;Rect&gt;): void
 **设备行为差异：**
 
  - 在搭载HarmonyOS 7.0.0及以上版本的设备上，该接口可正常调用。
- - 针对低于该版本的设备，该接口在PC/2in1设备、Tablet设备中可正常调用，在其他设备中不生效也不报错。
+ - 针对HarmonyOS 7.0.0以下版本的设备，该接口在PC/2in1设备、Tablet设备中可正常调用，在其他设备中不生效也不报错。
 
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2400,6 +2568,7 @@ off(type: 'availableAreaChange', callback?: Callback&lt;Rect&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2426,9 +2595,10 @@ try {
 
 
 
-#### getLiveCreaseRegion20+
+### getLiveCreaseRegion20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLiveCreaseRegion(): FoldCreaseRegion
 
@@ -2437,6 +2607,7 @@ getLiveCreaseRegion(): FoldCreaseRegion
 **系统能力：** SystemCapability.Window.SessionManager
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2447,9 +2618,10 @@ getLiveCreaseRegion(): FoldCreaseRegion
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+| 801 | Capability not supported. |
 | 1400003 | This display manager service works abnormally. |
 
 

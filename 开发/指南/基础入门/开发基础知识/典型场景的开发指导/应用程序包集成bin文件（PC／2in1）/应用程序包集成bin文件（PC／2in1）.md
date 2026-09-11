@@ -1,13 +1,13 @@
 # 应用程序包集成bin文件（PC/2in1）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hap-bin
 
 从API版本24开始，HAP包支持集成、加载并独立运行bin文件，有效拓展了应用的能力边界。开发者可在标准HAP应用内嵌入各类平台二进制工具与可执行程序，依托HarmonyOS运行时环境完成程序调度、脚本解析与任务执行，弥补无法直接调用本地化二进制工具的短板。基于此能力，应用可实现外部脚本解析、第三方工具调用等扩展功能；同时，bin文件的运行全程受系统安全机制管控，兼顾功能拓展性与系统安全性。
 
 
-#### 基本概念
+## 基本概念
 
  - bin文件：二进制程序文件，是ELF格式的可执行程序文件。
  - ELF文件的节：ELF格式文件中用于承载二进制内容的基本单元。
@@ -15,13 +15,13 @@
 
 
 
-#### 权限管控
+## 权限管控
 
 与[应用权限管控](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-permission-mgmt-overview)相似，当应用包内集成的bin文件在运行时需要使用受权限保护的系统能力（例如，加载二进制证书签名的共享库）时，需要声明相应权限。声明后，bin文件在运行过程中可获得授权，在使用受保护的系统能力时不会被权限管控拦截。
 
 
 
-#### 声明bin文件的权限
+### 声明bin文件的权限
 
 bin文件的权限声明存放在二进制程序文件的.permission节中。当bin文件被集成的应用执行时，系统会根据该节中声明的权限进行授权。
 1. .permission节内容
@@ -29,12 +29,16 @@ bin文件的权限声明存放在二进制程序文件的.permission节中。当
   .permission节中存放JSON格式的权限声明数据：
 
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
+
 | --- | --- | --- | --- |
+
 | requestPermissions | 二进制程序声明的权限列表。 | Array&lt;RequestPermission&gt; | 是；缺省时表示该二进制程序不声明权限。 |
 2. RequestPermission标签
 
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
+
 | --- | --- | --- | --- |
+
 | name | bin文件所需使用的权限名称。 | string | 是；缺省时表示该二进制程序不声明权限。 |
 
   
@@ -70,7 +74,7 @@ bin文件的权限声明存放在二进制程序文件的.permission节中。当
 
 
 
-#### bin文件在安装与启动加载时的权限管理
+### bin文件在安装与启动加载时的权限管理
 
 在安装集成了bin文件的HAP时，系统会校验HAP内bin文件声明权限的合法性。
 
@@ -94,7 +98,7 @@ bin文件的权限声明存放在二进制程序文件的.permission节中。当
 
 
 
-#### 在HAP中集成bin文件
+## 在HAP中集成bin文件
 
 bin文件被拉起后，如需使用受保护的系统能力，应独立声明自身所需的权限。
 
@@ -116,9 +120,13 @@ objcopy --add-section .permission=<file> input output
 参数说明：
 
 | 参数 | 说明 |
+
 | --- | --- |
+
 | -file | 内容将作为.permission节的文件 |
+
 | -input | 需要添加.permission节的二进制文件 |
+
 | -output | 添加.permission节后输出的二进制文件 |
 
   示例：
@@ -143,14 +151,14 @@ objcopy --add-section .permission=module.json EXAMPLE EXAMPLE_OUT
 
 
 
-#### 在HAP工程中声明bin文件
+### 在HAP工程中声明bin文件
 
 在HAP工程entry目录下增加libs{abi}目录，{abi}值需要与HAP部署的设备abi类型保持一致。随后，将添加了.permission节的bin文件EXAMPLE放置在该目录下。
 
 例如，需要将HAP部署在abi类型为arm64-v8a的PC/2in1设备上时，bin文件EXAMPLE应放置在如下目录：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/aQfZnPstSMa7rMDzbCt1Hw/zh-cn_image_0000002674471808.png?HW-CC-KV=V1&HW-CC-Date=20260813T100027Z&HW-CC-Expire=86400&HW-CC-Sign=E1800428ECCC6585301A59308327D9AF6E7F3BB4AB1F52813303FC12C678E026)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/OgDdCpt_SoKjmbyGbbzqYg/zh-cn_image_0000002717609866.png?HW-CC-KV=V1&HW-CC-Date=20260911T072754Z&HW-CC-Expire=86400&HW-CC-Sign=E633F12B0C5EA5E18F7B5AD222F1F4CE1167C573FD1686203337D2BF3B7E2FB2)
 
 
 在[module.json5](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)中配置[executablebinarypaths标签](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#executablebinarypaths标签)，用于声明HAP中包含的可执行bin文件。该标签配置bin文件的路径，为相对路径，必须以libs/{abi}/为前缀，其中{abi}为设备CPU架构类型（如arm64-v8a、x86_64、armeabi-v7a）：
@@ -171,7 +179,7 @@ objcopy --add-section .permission=module.json EXAMPLE EXAMPLE_OUT
 
 
 
-#### 编译与打包HAP
+### 编译与打包HAP
 
 将bin文件集成至HAP包中，需完成以下配置：
 1. HAP配置为解压模式
@@ -259,7 +267,7 @@ hvigor.nodesEvaluated(async () => {
 
 
 
-#### 安装含bin文件的HAP
+## 安装含bin文件的HAP
 
 集成bin的HAP包无独立安装包，依托标准HAP包完成安装部署。其内嵌的二进制程序、脚本资源随HAP包一并安装至设备，安装流程与常规应用一致。应用安装后，bin文件文件自动解压至应用安装目录：
 

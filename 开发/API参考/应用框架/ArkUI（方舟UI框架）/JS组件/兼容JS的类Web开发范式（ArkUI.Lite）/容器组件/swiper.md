@@ -1,9 +1,9 @@
 # swiper
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-components-container-swiper
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 滑动容器，提供切换子组件显示的能力。
  
@@ -12,18 +12,21 @@
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持除&lt;list&gt;之外的子组件。
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | index | number | 0 | 否 | 当前在容器中显示的子组件的索引值。 |
@@ -38,10 +41,12 @@
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | change | { index: currentIndex } | 当前显示的组件索引变化时触发该事件。 |
@@ -52,10 +57,12 @@
  
   
 
-#### 样式
+## 样式
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | width | &lt;length&gt; \| &lt;percentage&gt;5+ | - | 否 | 设置组件自身的宽度。 未设置时组件宽度默认为0。 |
@@ -75,10 +82,12 @@
  
   
 
-#### 方法
+## 方法
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | rotation | { focus: boolean } | 控制swiper是否请求旋转表冠的焦点。设置focus参数为true，swiper将获取旋转表冠的焦点，允许用户通过旋转表冠来滚动选择器中的选项；设置为false将释放旋转表冠的焦点。 |
@@ -86,9 +95,10 @@
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 <!-- xxx.hml -->
@@ -146,4 +156,4 @@ export default {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/Qa7JGL-OSPuwpy3OHm4Ybw/zh-cn_image_0000002655849316.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071526Z&HW-CC-Expire=86400&HW-CC-Sign=BAC1163A18C9C8ED40402E50E995E93F131FA161494DE5D862988CC177C6E167)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/1YZ0EB-aTNCdsRY4wpTXEw/zh-cn_image_0000002747293409.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073001Z&HW-CC-Expire=86400&HW-CC-Sign=1CA0288EA89DDCE04E830220126FC5B67F7CC5D9EF289AA86622A3117901AEED)

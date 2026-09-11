@@ -1,9 +1,9 @@
 # @ohos.hiviewdfx.jsLeakWatcher (ArkTS泄漏检测)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-jsleakwatcher
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供了监控ArkTS对象是否发生泄漏的能力，可在应用开发、测试阶段发现并定位ArkTS对象的内存泄漏问题。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { jsLeakWatcher } from '@kit.PerformanceAnalysisKit';
@@ -22,9 +23,10 @@ import { jsLeakWatcher } from '@kit.PerformanceAnalysisKit';
  
   
 
-#### jsLeakWatcher.enable
+## jsLeakWatcher.enable
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enable(isEnable: boolean): void
  
@@ -43,6 +45,7 @@ enable(isEnable: boolean): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isEnable | boolean | 是 | 是否使能jsLeakWatcher。true：使能jsLeakWatcher；false：不使能jsLeakWatcher。 |
@@ -56,9 +59,10 @@ jsLeakWatcher.enable(true);
  
   
 
-#### jsLeakWatcher.watch
+## jsLeakWatcher.watch
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 watch(obj: object, msg: string): void
  
@@ -75,6 +79,7 @@ watch(obj: object, msg: string): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | obj | object | 是 | 需要检测的对象。 说明：可传入任何非null的ArkTS对象，不支持undefined和基本类型。 |
@@ -90,9 +95,10 @@ jsLeakWatcher.watch(obj, "Trace Object");
  
   
 
-#### jsLeakWatcher.check
+## jsLeakWatcher.check
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 check(): string
  
@@ -109,6 +115,7 @@ check(): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 触发GC后未被回收的泄漏对象列表。 说明：check成功，返回JSON格式的泄漏对象列表；check失败，返回空字符串。 |
@@ -122,9 +129,10 @@ let leakObjlist:string = jsLeakWatcher.check();
  
   
 
-#### jsLeakWatcher.dump
+## jsLeakWatcher.dump
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 dump(filePath: string): Array&lt;string&gt;
  
@@ -134,6 +142,7 @@ dump(filePath: string): Array&lt;string&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | filePath | string | 是 | 导出信息生成的文件存放的路径。 说明：从API version 24开始，进程生命周期内，仅保留最新的一份快照信息。 |
@@ -141,6 +150,7 @@ dump(filePath: string): Array&lt;string&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;string&gt; | 导出结果。分别为文件名后缀为.jsleaklist的泄漏列表和文件名后缀为.heapsnapshot虚拟机内存快照文件。 说明：dump成功，返回泄漏列表文件路径和虚拟机内存快照路径；dump失败，返回空数组。 |
@@ -155,9 +165,10 @@ let files: Array<string> = jsLeakWatcher.dump(context?.filesDir);
  
   
 
-#### jsLeakWatcher.enableLeakWatcher20+
+## jsLeakWatcher.enableLeakWatcher20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableLeakWatcher(isEnabled: boolean, configs: Array&lt;string&gt;, callback: Callback<Array&lt;string&gt;>): void
  
@@ -177,6 +188,7 @@ enableLeakWatcher(isEnabled: boolean, configs: Array&lt;string&gt;, callback: Ca
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isEnabled | boolean | 是 | 是否使能ArkTS对象内存泄漏检测功能。true：开启ArkTS内存泄漏检测功能；false：关闭ArkTS内存泄漏检测功能。 |
@@ -188,6 +200,7 @@ enableLeakWatcher(isEnabled: boolean, configs: Array&lt;string&gt;, callback: Ca
  
 以下错误码的详细介绍请参见[JsLeakWatcher错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-jsleakwatcher)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10801001 | The parameter isEnabled is invalid. |
@@ -209,9 +222,10 @@ jsLeakWatcher.enableLeakWatcher(true, config, (filePath: Array<string>) => {
  
   
 
-#### jsLeakWatcher.enableLeakWatcher24+
+## jsLeakWatcher.enableLeakWatcher24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableLeakWatcher(isEnabled: boolean, configs: LeakWatcherConfig, callback: Callback<Array&lt;string&gt;>): void
  
@@ -220,7 +234,7 @@ enableLeakWatcher(isEnabled: boolean, configs: LeakWatcherConfig, callback: Call
 此接口通过一次调用即可检测ArkTS对象的内存泄漏，比之前需要调用四个函数（enable、watch、check、dump）的方法更加简洁；通过configs可配置项参数，自定义设置监测项各属性，相比较之前极大提升了泄漏检测性能。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/3SUYb0w-RtOt_TeFuGF1ug/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071646Z&HW-CC-Expire=86400&HW-CC-Sign=F7C29B6634AA24F08D1F61013DAF25D2B78547702FC55006C979319406265E9C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/JSsrt_CGTqKXmy9r8oHteg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072920Z&HW-CC-Expire=86400&HW-CC-Sign=C10DD4EC409A4DBF4DA8FF67ABE983EBA9804B7A35973A513E743AD183F25A60)
  
  
 当前jsLeakWatcher泄漏检测性能开销较大，会导致应用卡顿，建议增大检测间隔时间，减少卡顿频率。
@@ -240,6 +254,7 @@ enableLeakWatcher(isEnabled: boolean, configs: LeakWatcherConfig, callback: Call
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isEnabled | boolean | 是 | 是否使能ArkTS对象内存泄漏检测功能。 true：开启ArkTS内存泄漏检测功能。 false：关闭ArkTS内存泄漏检测功能。 |
@@ -251,6 +266,7 @@ enableLeakWatcher(isEnabled: boolean, configs: LeakWatcherConfig, callback: Call
  
 以下错误码的详细介绍请参见[JsLeakWatcher错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-jsleakwatcher)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10801001 | The parameter isEnabled is invalid. |
@@ -281,14 +297,16 @@ jsLeakWatcher.enableLeakWatcher(true, config, (filePath : Array<string>) => {
  
   
 
-#### LeakWatcherConfig24+
+## LeakWatcherConfig24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 LeakWatcherConfig对象类型，对象中包含多个用于内存泄漏监测的可配置属性。
  
 **系统能力**：SystemCapability.HiviewDFX.HiChecker
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | monitorObjectTypes | MonitorObjectType | 否 | 否 | 被监测对象类型。 默认监测所有组件类型。 |
@@ -303,14 +321,16 @@ LeakWatcherConfig对象类型，对象中包含多个用于内存泄漏监测的
  
   
 
-#### MonitorObjectType24+
+## MonitorObjectType24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 需要监控的组件对象类型枚举。
  
 **系统能力**：SystemCapability.HiviewDFX.HiChecker
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ALL | -1 | 监测所有组件类型。 |

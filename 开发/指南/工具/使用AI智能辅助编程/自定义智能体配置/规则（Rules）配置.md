@@ -1,6 +1,6 @@
 # 规则（Rules）配置
 
-更新时间：2026-05-14 10:06:01
+更新时间：2026-08-29 09:41:34
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-agent-rules
 
@@ -15,12 +15,8 @@
 
  
 
-#### Global Rules配置
-1. 点击界面右上方
-![](assets/规则（Rules）配置/file-20260514132800635-1.png)
-按钮，或者点击界面右上方**Settings**
-![](assets/规则（Rules）配置/file-20260514132800635-10.png)
-按钮，选择**Rules**，进入配置页面。
+## Global Rules配置
+1. 点击界面右上方![icon](assets/规则（Rules）配置/file-20260514132800635-1.png)按钮，或者点击界面右上方**Settings**![icon](assets/规则（Rules）配置/file-20260514132800635-10.png)按钮，选择**Rules**，进入配置页面。
 
   
 ![](assets/规则（Rules）配置/file-20260514132800635-11.png)
@@ -30,9 +26,7 @@
   
 Quality first：生成代码时遵循更多规则，帮助AI获取更准确答复。
 3. Token efficiency first：生成代码时优先考虑Token长度，节省Token数量。
-4. 以有网络为例，点击
-![](assets/规则（Rules）配置/file-20260514132800635-3.png)
-图标导入规则文件。无网络时操作界面可能存在差异，以实际为准。
+4. 以有网络环境为例，点击![icon](assets/规则（Rules）配置/file-20260514132800635-3.png)图标导入规则文件。无网络时操作界面可能存在差异，以实际为准。
 
   
 ![](assets/规则（Rules）配置/file-20260514132800635-4.png)
@@ -40,19 +34,13 @@ Quality first：生成代码时遵循更多规则，帮助AI获取更准确答�
 5. 选择和管理规则文件。Global Rules列表全量展示了默认规则（Default rule）、自定义规则（Custom rule）和无规则（No rules），当前仅支持选择其中一个规则。若选择No rules，则全局规则不生效。
 
   
-将鼠标悬停在默认规则上，点击
-![](assets/规则（Rules）配置/file-20260514132800635-5.png)
-编辑图标，开发者可查看具体规则内容。
+将鼠标悬停在默认规则上，点击![icon](assets/规则（Rules）配置/file-20260514132800635-5.png)编辑图标，开发者可查看具体规则内容。
 6. 将鼠标悬停在自定义规则上，会出现编辑和删除按钮，方便开发者管理自定义规则。
  
  
 
-#### Project Rules配置
-1. 点击界面右上方
-![](assets/规则（Rules）配置/file-20260514132800635-7.png)
-按钮，或者点击界面右上方**Settings**
-![](assets/规则（Rules）配置/file-20260514132800635-8.png)
-按钮，选择**Rules**，进入配置页面。
+## Project Rules配置
+1. 点击界面右上方![icon](assets/规则（Rules）配置/file-20260514132800635-7.png)按钮，或者点击界面右上方**Settings**![icon](assets/规则（Rules）配置/file-20260514132800635-8.png)按钮，选择**Rules**，进入配置页面。
 2. 创建或导入Rule文件。
 
   
@@ -61,4 +49,4 @@ Quality first：生成代码时遵循更多规则，帮助AI获取更准确答�
 4. 管理规则文件。将鼠标悬停在工程文件上，会出现编辑和删除按钮，方便开发者管理工程规则文件。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/VDnEZfyDRKSlBI-qAQ7TgQ/zh-cn_image_0000002602186013.png?HW-CC-KV=V1&HW-CC-Date=20260528T030637Z&HW-CC-Expire=86400&HW-CC-Sign=8E59724509159CBC36FC289DE9F8152A5EA94F45E086B35F46CAE83CF9333721)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/9nkUOboSTRqaEdu6UloXrA/zh-cn_image_0000002701662672.png?HW-CC-KV=V1&HW-CC-Date=20260911T072808Z&HW-CC-Expire=86400&HW-CC-Sign=D8A058ECDCE736AF96E051E923F3E05442FA7CAA0535D6D75F3B59B1BB60374F)

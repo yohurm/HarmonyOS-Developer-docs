@@ -1,6 +1,6 @@
 # 卡片拉起应用UIAbility到后台（call事件）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widget-event-call
 
@@ -11,10 +11,10 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 创建动态卡片
 
-  新建一个名为WidgetEventCall的ArkTs动态卡片。
+  新建一个名为WidgetEventCall的ArkTS动态卡片。
 2. 页面布局代码实现
 
   按钮A和按钮B分别对应调用funA、funB方法，其中funA携带了formId参数，funB携带了formId和num参数，开发过程中请根据实际需要传参。postCardAction中的method参数为必填参数，用于标识需要调用的方法名称，与步骤3中UIAbility监听的方法一致，其他参数为非必填。
@@ -157,7 +157,7 @@ export default class WidgetEventCallEntryAbility extends UIAbility {
 
 4. 配置后台运行权限
 
-  call事件存在约束限制，卡片提供方应用需要在module.json5下添加后台运行权限([ohos.permission.KEEP_BACKGROUND_RUNNING](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-for-all#ohospermissionkeep_background_running))。
+  call事件存在约束限制，卡片提供方应用需要在module.json5下添加后台运行权限（[ohos.permission.KEEP_BACKGROUND_RUNNING](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-for-all#ohospermissionkeep_background_running)）。
 
   
 ```json

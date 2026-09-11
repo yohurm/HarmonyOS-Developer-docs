@@ -1,6 +1,6 @@
 # quickBarManager（快捷栏管理服务）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/desktop-quickbar-extension-manager
 **支持设备：** PC/2in1
@@ -10,7 +10,8 @@
 **起始版本：** 6.0.2(22)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** PC/2in1
 
@@ -20,7 +21,8 @@ import { quickBarManager } from '@kit.DeskTopExtensionKit';
  
   
 
-#### QuickTaskInfo
+## QuickTaskInfo
+
 
 **支持设备：** PC/2in1
 
@@ -32,6 +34,7 @@ import { quickBarManager } from '@kit.DeskTopExtensionKit';
  
 **起始版本：** 6.0.2(22)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | taskName | string | 否 | 否 | 快捷栏图标菜单任务的任务名称。 字符串长度范围：[1, 512]，且内容不为空。 |
@@ -44,7 +47,8 @@ import { quickBarManager } from '@kit.DeskTopExtensionKit';
  
   
 
-#### QuickTask
+## QuickTask
+
 
 **支持设备：** PC/2in1
 
@@ -56,6 +60,7 @@ import { quickBarManager } from '@kit.DeskTopExtensionKit';
  
 **起始版本：** 6.0.2(22)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | taskId | number | 是 | 否 | 快捷栏图标菜单任务的任务Id。 |
@@ -65,7 +70,8 @@ import { quickBarManager } from '@kit.DeskTopExtensionKit';
  
   
 
-#### ParameterItem
+## ParameterItem
+
 
 **支持设备：** PC/2in1
 
@@ -77,6 +83,7 @@ import { quickBarManager } from '@kit.DeskTopExtensionKit';
  
 **起始版本：** 6.0.2(22)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | key | string | 否 | 否 | 自定义参数的key值。 字符串长度范围：[1, 512]，且内容不为空。 |
@@ -85,7 +92,8 @@ import { quickBarManager } from '@kit.DeskTopExtensionKit';
  
   
 
-#### CustomCategory
+## CustomCategory
+
 
 **支持设备：** PC/2in1
 
@@ -97,6 +105,7 @@ import { quickBarManager } from '@kit.DeskTopExtensionKit';
  
 **起始版本：** 6.0.2(22)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | categoryId | number | 是 | 否 | 快捷栏图标菜单分组的分组Id。 |
@@ -105,7 +114,8 @@ import { quickBarManager } from '@kit.DeskTopExtensionKit';
  
   
 
-#### QuickBarGroup
+## QuickBarGroup
+
 
 **支持设备：** PC/2in1
 
@@ -117,6 +127,7 @@ import { quickBarManager } from '@kit.DeskTopExtensionKit';
  
 **起始版本：** 6.1.0(23)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | groupKey | string | 否 | 否 | 快捷栏分组名称。 字符串长度范围：[1, 512]，且内容不为空。 |
@@ -125,7 +136,8 @@ import { quickBarManager } from '@kit.DeskTopExtensionKit';
  
   
 
-#### quickBarManager.addCustomCategory
+## quickBarManager.addCustomCategory
+
 
 **支持设备：** PC/2in1
 
@@ -141,6 +153,7 @@ addCustomCategory(context: common.Context, categoryName: string): Promise&lt;Cus
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文信息。 |
@@ -149,6 +162,7 @@ addCustomCategory(context: common.Context, categoryName: string): Promise&lt;Cus
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;CustomCategory&gt; | Promise对象，返回菜单分组信息。 |
@@ -158,6 +172,7 @@ addCustomCategory(context: common.Context, categoryName: string): Promise&lt;Cus
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-statusbar-extension)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1020210001 | Maximum number of categories reached. |
@@ -189,7 +204,8 @@ async function addCustomCategory(context: Context) {
  
   
 
-#### quickBarManager.addQuickTask
+## quickBarManager.addQuickTask
+
 
 **支持设备：** PC/2in1
 
@@ -205,6 +221,7 @@ addQuickTask(context: common.Context, categoryId: number, taskInfo: QuickTaskInf
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文信息。 |
@@ -214,6 +231,7 @@ addQuickTask(context: common.Context, categoryId: number, taskInfo: QuickTaskInf
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;QuickTask&gt; | Promise对象，返回菜单任务信息。 |
@@ -223,6 +241,7 @@ addQuickTask(context: common.Context, categoryId: number, taskInfo: QuickTaskInf
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-statusbar-extension)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1020210003 | Category not found. |
@@ -281,7 +300,8 @@ async function addQuickTask(context: Context) {
  
   
 
-#### quickBarManager.getCustomCategories
+## quickBarManager.getCustomCategories
+
 
 **支持设备：** PC/2in1
 
@@ -297,6 +317,7 @@ getCustomCategories(context: common.Context): Promise<CustomCategory[]>
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文信息。 |
@@ -304,6 +325,7 @@ getCustomCategories(context: common.Context): Promise<CustomCategory[]>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<CustomCategory[]> | Promise对象，返回所有菜单分组信息。 |
@@ -313,6 +335,7 @@ getCustomCategories(context: common.Context): Promise<CustomCategory[]>
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-statusbar-extension)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1020210003 | Category not found. |
@@ -342,7 +365,8 @@ async function getCustomCategories(context: Context) {
  
   
 
-#### quickBarManager.getTasksFromCategory
+## quickBarManager.getTasksFromCategory
+
 
 **支持设备：** PC/2in1
 
@@ -358,6 +382,7 @@ getTasksFromCategory(context: common.Context, categoryId: number): Promise<Quick
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文信息。 |
@@ -366,6 +391,7 @@ getTasksFromCategory(context: common.Context, categoryId: number): Promise<Quick
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<QuickTask[]> | Promise对象，返回一个分组下的所有任务信息。 |
@@ -375,6 +401,7 @@ getTasksFromCategory(context: common.Context, categoryId: number): Promise<Quick
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-statusbar-extension)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1020210003 | Category not found. |
@@ -408,7 +435,8 @@ async function getTasksFromCategory(context: Context) {
  
   
 
-#### quickBarManager.updateCustomCategory
+## quickBarManager.updateCustomCategory
+
 
 **支持设备：** PC/2in1
 
@@ -424,6 +452,7 @@ updateCustomCategory(context: common.Context, category: CustomCategory): Promise
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文信息。 |
@@ -432,6 +461,7 @@ updateCustomCategory(context: common.Context, category: CustomCategory): Promise
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回值。 |
@@ -441,6 +471,7 @@ updateCustomCategory(context: common.Context, category: CustomCategory): Promise
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-statusbar-extension)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1020210002 | Duplicate category name. |
@@ -475,7 +506,8 @@ async function updateCustomCategory(context: Context) {
  
   
 
-#### quickBarManager.updateQuickTask
+## quickBarManager.updateQuickTask
+
 
 **支持设备：** PC/2in1
 
@@ -491,6 +523,7 @@ updateQuickTask(context: common.Context, task: QuickTask): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文信息。 |
@@ -499,6 +532,7 @@ updateQuickTask(context: common.Context, task: QuickTask): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回值。 |
@@ -508,6 +542,7 @@ updateQuickTask(context: common.Context, task: QuickTask): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-statusbar-extension)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1020210004 | Quick task not found. |
@@ -569,7 +604,8 @@ async function updateQuickTask(context: Context) {
  
   
 
-#### quickBarManager.deleteQuickTask
+## quickBarManager.deleteQuickTask
+
 
 **支持设备：** PC/2in1
 
@@ -585,6 +621,7 @@ deleteQuickTask(context: common.Context, taskId: number): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文信息。 |
@@ -593,6 +630,7 @@ deleteQuickTask(context: common.Context, taskId: number): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回值。 |
@@ -602,6 +640,7 @@ deleteQuickTask(context: common.Context, taskId: number): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-statusbar-extension)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1020210004 | Quick task not found. |
@@ -631,7 +670,8 @@ async function deleteQuickTask(context: Context) {
  
   
 
-#### quickBarManager.deleteCustomCategory
+## quickBarManager.deleteCustomCategory
+
 
 **支持设备：** PC/2in1
 
@@ -647,6 +687,7 @@ deleteCustomCategory(context: common.Context, categoryId: number): Promise&lt;vo
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文信息。 |
@@ -655,6 +696,7 @@ deleteCustomCategory(context: common.Context, categoryId: number): Promise&lt;vo
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回值。 |
@@ -664,6 +706,7 @@ deleteCustomCategory(context: common.Context, categoryId: number): Promise&lt;vo
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-statusbar-extension)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1020210003 | Category not found. |
@@ -693,7 +736,8 @@ async function deleteCustomCategory(context: Context) {
  
   
 
-#### quickBarManager.addQuickBarGroup
+## quickBarManager.addQuickBarGroup
+
 
 **支持设备：** PC/2in1
 
@@ -709,6 +753,7 @@ addQuickBarGroup(context: common.Context, group: QuickBarGroup): Promise&lt;void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文信息。 |
@@ -717,6 +762,7 @@ addQuickBarGroup(context: common.Context, group: QuickBarGroup): Promise&lt;void
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回值。 |
@@ -726,6 +772,7 @@ addQuickBarGroup(context: common.Context, group: QuickBarGroup): Promise&lt;void
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-statusbar-extension)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1020210005 | Group already exists. |
@@ -764,7 +811,8 @@ try {
  
   
 
-#### quickBarManager.deleteQuickBarGroup
+## quickBarManager.deleteQuickBarGroup
+
 
 **支持设备：** PC/2in1
 
@@ -780,6 +828,7 @@ deleteQuickBarGroup(context: common.Context, groupKey: string): Promise&lt;void&
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文信息。 |
@@ -788,6 +837,7 @@ deleteQuickBarGroup(context: common.Context, groupKey: string): Promise&lt;void&
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回值。 |
@@ -797,6 +847,7 @@ deleteQuickBarGroup(context: common.Context, groupKey: string): Promise&lt;void&
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-statusbar-extension)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1020210006 | Group not found. |
@@ -823,7 +874,8 @@ try {
  
   
 
-#### quickBarManager.getQuickBarGroups
+## quickBarManager.getQuickBarGroups
+
 
 **支持设备：** PC/2in1
 
@@ -839,6 +891,7 @@ getQuickBarGroups(context: common.Context): Promise<QuickBarGroup[]>
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文信息。 |
@@ -846,6 +899,7 @@ getQuickBarGroups(context: common.Context): Promise<QuickBarGroup[]>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<QuickBarGroup[]> | Promise对象，返回所有分组信息。 |
@@ -855,6 +909,7 @@ getQuickBarGroups(context: common.Context): Promise<QuickBarGroup[]>
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-statusbar-extension)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1020210006 | Group not found. |
@@ -881,7 +936,8 @@ try {
  
   
 
-#### quickBarManager.setWindowToGroup
+## quickBarManager.setWindowToGroup
+
 
 **支持设备：** PC/2in1
 
@@ -897,6 +953,7 @@ setWindowToGroup(context: common.Context, windowid: string, groupKey?: string): 
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文信息。 |
@@ -906,6 +963,7 @@ setWindowToGroup(context: common.Context, windowid: string, groupKey?: string): 
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回值。 |
@@ -915,6 +973,7 @@ setWindowToGroup(context: common.Context, windowid: string, groupKey?: string): 
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-statusbar-extension)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1020210006 | Group not found. |
@@ -942,7 +1001,8 @@ try {
  
   
 
-#### ProgressState
+## ProgressState
+
 
 **支持设备：** PC/2in1
 
@@ -954,6 +1014,7 @@ try {
  
 **起始版本：** 26.0.0
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NO_PROGRESS | 0 | 无进度状态。 |
@@ -964,7 +1025,8 @@ try {
  
   
 
-#### quickBarManager.setQuickBarCombineIcon
+## quickBarManager.setQuickBarCombineIcon
+
 
 **支持设备：** PC/2in1
 
@@ -982,6 +1044,7 @@ setQuickBarCombineIcon(context: common.Context, combineIcon: image.PixelMap): Pr
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文信息。 |
@@ -990,6 +1053,7 @@ setQuickBarCombineIcon(context: common.Context, combineIcon: image.PixelMap): Pr
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回值。 |
@@ -999,6 +1063,7 @@ setQuickBarCombineIcon(context: common.Context, combineIcon: image.PixelMap): Pr
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-statusbar-extension)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -1035,7 +1100,8 @@ try {
  
   
 
-#### quickBarManager.setQuickBarLayeredIcon
+## quickBarManager.setQuickBarLayeredIcon
+
 
 **支持设备：** PC/2in1
 
@@ -1053,6 +1119,7 @@ setQuickBarLayeredIcon(context: common.Context, foregroundIcon: image.PixelMap, 
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文信息。 |
@@ -1062,6 +1129,7 @@ setQuickBarLayeredIcon(context: common.Context, foregroundIcon: image.PixelMap, 
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回值。 |
@@ -1071,6 +1139,7 @@ setQuickBarLayeredIcon(context: common.Context, foregroundIcon: image.PixelMap, 
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-statusbar-extension)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -1112,7 +1181,8 @@ try {
  
   
 
-#### quickBarManager.setProgressState
+## quickBarManager.setProgressState
+
 
 **支持设备：** PC/2in1
 
@@ -1130,6 +1200,7 @@ setProgressState(context: common.Context, state: ProgressState): Promise&lt;void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文信息。 |
@@ -1138,6 +1209,7 @@ setProgressState(context: common.Context, state: ProgressState): Promise&lt;void
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回值。 |
@@ -1147,6 +1219,7 @@ setProgressState(context: common.Context, state: ProgressState): Promise&lt;void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-statusbar-extension)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -1176,7 +1249,8 @@ try {
  
   
 
-#### quickBarManager.setProgressValue
+## quickBarManager.setProgressValue
+
 
 **支持设备：** PC/2in1
 
@@ -1194,6 +1268,7 @@ setProgressValue(context: common.Context, completed: number, total: number): Pro
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文信息。 |
@@ -1203,6 +1278,7 @@ setProgressValue(context: common.Context, completed: number, total: number): Pro
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回值。 |
@@ -1212,6 +1288,7 @@ setProgressValue(context: common.Context, completed: number, total: number): Pro
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-statusbar-extension)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -1243,7 +1320,8 @@ try {
  
   
 
-#### quickBarManager.isQuickBarCapabilitySupported
+## quickBarManager.isQuickBarCapabilitySupported
+
 
 **支持设备：** PC/2in1
 
@@ -1259,6 +1337,7 @@ isQuickBarCapabilitySupported(context: common.Context): Promise&lt;boolean&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文信息。 |
@@ -1266,6 +1345,7 @@ isQuickBarCapabilitySupported(context: common.Context): Promise&lt;boolean&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象，返回true表示支持快捷栏功能，返回false表示不支持。 |
@@ -1275,6 +1355,7 @@ isQuickBarCapabilitySupported(context: common.Context): Promise&lt;boolean&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-statusbar-extension)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1020210011 | The API is called too frequently. |

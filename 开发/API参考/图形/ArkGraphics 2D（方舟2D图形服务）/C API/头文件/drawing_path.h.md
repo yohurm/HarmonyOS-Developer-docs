@@ -1,15 +1,22 @@
 # drawing_path.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-path-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-文件中定义了与自定义路径相关的功能函数。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+文件中定义了与自定义路径相关的功能函数，能够高效构建复杂几何路径、支持SVG数据交换实现跨平台兼容，并通过配对创建与销毁机制保障内存安全。主要支持以下能力：
+ 
+- 路径的创建、拷贝与销毁。
+- 添加线段、弧线、贝塞尔曲线、圆锥曲线、矩形、椭圆、圆形、多边形等几何图形。
+- 路径的矩阵变换、偏移、合并与闭合等操作。
+- 路径长度、边界、包含关系等查询和测量能力。
+
  
 本模块为单线程模型策略，需要调用方自行管理线程安全和上下文状态的切换。
  
@@ -27,19 +34,22 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
-| OH_Drawing_PathDirection | OH_Drawing_PathDirection | 添加闭合轮廓方向枚举。 |
+| OH_Drawing_PathDirection | OH_Drawing_PathDirection | 添加闭合路径方向枚举。 |
 | OH_Drawing_PathFillType | OH_Drawing_PathFillType | 定义路径的填充类型枚举。 |
 | OH_Drawing_PathAddMode | OH_Drawing_PathAddMode | 用于指定路径添加模式的枚举类型。 |
 | OH_Drawing_PathOpMode | OH_Drawing_PathOpMode | 路径操作类型枚举。 |
@@ -48,49 +58,51 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* OH_Drawing_PathCreate(void) | 用于创建一个路径对象。 |
-| OH_Drawing_Path* OH_Drawing_PathCopy(OH_Drawing_Path* path) | 创建一个路径对象副本OH_Drawing_Path，用于拷贝一个已有路径对象。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
-| void OH_Drawing_PathDestroy(OH_Drawing_Path* path) | 用于销毁路径对象并回收该对象占有的内存。 |
-| OH_Drawing_ErrorCode OH_Drawing_PathSetPath(OH_Drawing_Path* path, OH_Drawing_Path* other) | 将一个路径对象设置成当前的路径对象。 |
+| OH_Drawing_Path* OH_Drawing_PathCopy(OH_Drawing_Path* path) | 用于拷贝已有路径对象，返回路径对象副本OH_Drawing_Path。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
+| void OH_Drawing_PathDestroy(OH_Drawing_Path* path) | 用于销毁路径对象并回收该对象占用的内存。 |
+| OH_Drawing_ErrorCode OH_Drawing_PathSetPath(OH_Drawing_Path* path, OH_Drawing_Path* other) | 将另一个路径对象的内容设置到当前路径对象中。 |
 | OH_Drawing_ErrorCode OH_Drawing_PathIsEmpty(OH_Drawing_Path* path, bool* isEmpty) | 判断一个路径对象是否为空。 |
 | OH_Drawing_ErrorCode OH_Drawing_PathIsRect(OH_Drawing_Path* path, OH_Drawing_Rect* rect, bool* isRect) | 判断路径对象是否构成一个矩形。 |
 | OH_Drawing_ErrorCode OH_Drawing_PathGetLastPoint(OH_Drawing_Path* path, OH_Drawing_Point2D* point) | 用于获取路径的最后一个点的坐标。 |
-| OH_Drawing_ErrorCode OH_Drawing_PathIsEqual(OH_Drawing_Path* path, OH_Drawing_Path* other, bool* equal) | 用于检查两个路径是否相等。 |
-| void OH_Drawing_PathMoveTo(OH_Drawing_Path* path, float x, float y) | 用于设置自定义路径的起始点位置。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
+| OH_Drawing_ErrorCode OH_Drawing_PathIsEqual(OH_Drawing_Path* path, OH_Drawing_Path* other, bool* equal) | 用于检查两个路径是否相等，即判断两个路径在构成数据上是否一致。 |
+| void OH_Drawing_PathMoveTo(OH_Drawing_Path* path, float x, float y) | 用于设置路径的起始点位置。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
 | void OH_Drawing_PathLineTo(OH_Drawing_Path* path, float x, float y) | 用于添加一条从路径的最后点位置（若路径没有内容则默认为 (0, 0)）到目标点位置的线段。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
-| void OH_Drawing_PathArcTo(OH_Drawing_Path* path,float x1, float y1, float x2, float y2, float startDeg, float sweepDeg) | 用于给路径添加一段弧线，绘制弧线的方式为角度弧，该方式首先会指定一个矩形边框， 矩形边框的内切椭圆将会被用来截取弧线，然后会指定一个起始角度和扫描度数， 从起始角度扫描截取的椭圆周长一部分即为绘制的弧线。若路径有内容则会默认添加一条从路径的最后点位置到弧线起始点位置的线段。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
+| void OH_Drawing_PathArcTo(OH_Drawing_Path* path, float x1, float y1, float x2, float y2, float startDeg, float sweepDeg) | 用于给路径添加一段弧线。绘制方式为角度弧：指定一个矩形边框，其内切椭圆用于截取弧线；再指定起始角度和扫描度数，从起始角度扫描截取的椭圆周长部分即为弧线。若路径已有内容，则默认添加一条从路径最后点位置到弧线起始点位置的线段。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
 | void OH_Drawing_PathQuadTo(OH_Drawing_Path* path, float ctrlX, float ctrlY, float endX, float endY) | 用于添加一条从路径最后点位置（若路径没有内容则默认为 (0, 0)）到目标点位置的二阶贝塞尔曲线。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
-| void OH_Drawing_PathConicTo(OH_Drawing_Path* path, float ctrlX, float ctrlY, float endX, float endY, float weight) | 在当前路径上添加一条路径终点（若路径没有内容则默认为 (0, 0)）到目标点位置的圆锥曲线段，其控制点为 (ctrlX, ctrlY)，结束点为 (endX, endY)。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
-| void OH_Drawing_PathCubicTo(OH_Drawing_Path* path, float ctrlX1, float ctrlY1, float ctrlX2, float ctrlY2, float endX, float endY) | 用于添加一条从路径最后点位置（若路径没有内容则默认为 (0, 0)）到目标点位置的三阶贝塞尔圆滑曲线。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
+| void OH_Drawing_PathConicTo(OH_Drawing_Path* path, float ctrlX, float ctrlY, float endX, float endY, float weight) | 在当前路径上添加一条路径最后点位置（若路径没有内容则默认为(0, 0)）到目标点位置的圆锥曲线段，其控制点为(ctrlX, ctrlY)，结束点为(endX, endY)。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
+| void OH_Drawing_PathCubicTo(OH_Drawing_Path* path, float ctrlX1, float ctrlY1, float ctrlX2, float ctrlY2, float endX, float endY) | 用于添加一条从路径最后点位置到目标点位置的三阶贝塞尔曲线。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
 | void OH_Drawing_PathRMoveTo(OH_Drawing_Path* path, float x, float y) | 用于设置一个相对于当前路径终点（若路径没有内容则默认为 (0, 0)）的路径起始点位置。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
 | void OH_Drawing_PathRLineTo(OH_Drawing_Path* path, float x, float y) | 使用相对位置在当前路径上添加一条当前路径终点（若路径没有内容则默认为 (0, 0)）到目标点位置的线段。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
 | void OH_Drawing_PathRQuadTo(OH_Drawing_Path* path, float ctrlX, float ctrlY, float endX, float endY) | 使用相对位置在当前路径上添加一条当前路径终点（若路径没有内容则默认为 (0, 0)）到目标点位置的二阶贝塞尔曲线。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
-| void OH_Drawing_PathRConicTo(OH_Drawing_Path* path, float ctrlX, float ctrlY, float endX, float endY, float weight) | 使用相对位置在当前路径上添加一条路径终点（若路径没有内容则默认为 (0, 0)）到目标点位置的圆锥曲线段。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
-| void OH_Drawing_PathRCubicTo(OH_Drawing_Path* path, float ctrlX1, float ctrlY1, float ctrlX2, float ctrlY2,float endX, float endY) | 使用相对位置在当前路径上添加一条当前路径终点（若路径没有内容则默认为 (0, 0)）到目标点位置的三阶贝塞尔圆滑曲线。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
-| void OH_Drawing_PathAddRect(OH_Drawing_Path* path, float left, float top, float right, float bottom,OH_Drawing_PathDirection pathDirection) | 按指定方向，将矩形添加到路径中，添加的路径的起始点为矩形左上角。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER； pathDirection不在枚举范围内返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。 |
-| void OH_Drawing_PathAddRectWithInitialCorner(OH_Drawing_Path* path, const OH_Drawing_Rect* rect,OH_Drawing_PathDirection pathDirection, uint32_t start) | 按指定方向，向路径添加矩形轮廓。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path、rect任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER； pathDirection不在枚举范围内返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。 |
-| void OH_Drawing_PathAddRoundRect(OH_Drawing_Path* path,const OH_Drawing_RoundRect* roundRect, OH_Drawing_PathDirection pathDirection) | 按指定方向，向路径添加圆角矩形轮廓。路径添加方向为顺时针时，起始点位于圆角矩形左下方圆角与左边界的交点；路径添加方向为逆时针时，起始点位于圆角矩形左上方圆角与左边界的交点。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path、roundRect任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER； pathDirection不在枚举范围内返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。 |
-| void OH_Drawing_PathAddOvalWithInitialPoint(OH_Drawing_Path* path, const OH_Drawing_Rect* rect,uint32_t start, OH_Drawing_PathDirection pathDirection) | 将椭圆添加到路径中，其中矩形对象作为椭圆的外切矩形区域，绘制方向用来指定绘制时是顺时针或者逆时针方向。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path、rect任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER； pathDirection不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。 |
-| void OH_Drawing_PathAddOval(OH_Drawing_Path* path,const OH_Drawing_Rect* rect, OH_Drawing_PathDirection pathDirection) | 按指定方向，向路径添加椭圆。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path、rect任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER； pathDirection不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。 |
-| void OH_Drawing_PathAddArc(OH_Drawing_Path* path, const OH_Drawing_Rect* rect, float startAngle, float sweepAngle) | 将圆弧添加到路径中，作为新轮廓的起点。从起始角度到扫描角度添加弧，添加的弧是矩形内切椭圆的一部分，如果扫描角度<= -360°，或>= 360°，并且起始角度对90取模接近于0，则添加椭圆而不是弧。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path、rect任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
+| void OH_Drawing_PathRConicTo(OH_Drawing_Path* path, float ctrlX, float ctrlY, float endX, float endY, float weight) | 使用相对位置在当前路径上添加一条路径最后点位置（若路径没有内容则默认为(0, 0)）到目标点位置的圆锥曲线段。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
+| void OH_Drawing_PathRCubicTo(OH_Drawing_Path* path, float ctrlX1, float ctrlY1, float ctrlX2, float ctrlY2, float endX, float endY) | 使用相对位置在当前路径上添加一条当前路径终点（若路径没有内容则默认为(0, 0)）到目标点位置的三阶贝塞尔曲线。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
+| void OH_Drawing_PathAddRect(OH_Drawing_Path* path, float left, float top, float right, float bottom, OH_Drawing_PathDirection pathDirection) | 按指定方向，将矩形添加到路径中，该矩形轮廓的起始点为矩形左上角。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER； pathDirection不在枚举范围内返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。 |
+| void OH_Drawing_PathAddRectWithInitialCorner(OH_Drawing_Path* path, const OH_Drawing_Rect* rect, OH_Drawing_PathDirection pathDirection, uint32_t start) | 按指定方向，向路径添加矩形轮廓。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path、rect任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER； pathDirection不在枚举范围内返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。 |
+| void OH_Drawing_PathAddRoundRect(OH_Drawing_Path* path, const OH_Drawing_RoundRect* roundRect, OH_Drawing_PathDirection pathDirection) | 按指定方向，向路径添加圆角矩形轮廓。路径添加方向为顺时针时，起始点位于圆角矩形左下方圆角与左边界的交点；路径添加方向为逆时针时，起始点位于圆角矩形左上方圆角与左边界的交点。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path、roundRect任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER； pathDirection不在枚举范围内返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。 |
+| void OH_Drawing_PathAddOvalWithInitialPoint(OH_Drawing_Path* path, const OH_Drawing_Rect* rect, uint32_t start, OH_Drawing_PathDirection pathDirection) | 将椭圆添加到路径中，其中矩形对象作为椭圆的外切矩形区域，绘制方向用来指定绘制时是顺时针或者逆时针方向。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path、rect任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER； pathDirection不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。 |
+| void OH_Drawing_PathAddOval(OH_Drawing_Path* path, const OH_Drawing_Rect* rect, OH_Drawing_PathDirection pathDirection) | 按指定方向，向路径添加椭圆，其中矩形对象作为椭圆的外切矩形区域。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path、rect任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER； pathDirection不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。 |
+| void OH_Drawing_PathAddArc(OH_Drawing_Path* path, const OH_Drawing_Rect* rect, float startAngle, float sweepAngle) | 将圆弧添加到路径中，作为新轮廓的起点。从起始角度开始，按扫描度数添加弧，添加的弧是矩形内切椭圆的一部分。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path、rect任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
 | void OH_Drawing_PathAddPath(OH_Drawing_Path* path, const OH_Drawing_Path* src, const OH_Drawing_Matrix* matrix) | 将源路径矩阵变换后，添加到当前路径中。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path、src任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
-| void OH_Drawing_PathAddPathWithMatrixAndMode(OH_Drawing_Path* path, const OH_Drawing_Path* src,const OH_Drawing_Matrix* matrix, OH_Drawing_PathAddMode pathAddMode) | 将源路径矩阵变换后，以规定模式添加到当前路径中。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path、src任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER； pathAddMode不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。 |
-| void OH_Drawing_PathAddPathWithMode(OH_Drawing_Path* path,const OH_Drawing_Path* src, OH_Drawing_PathAddMode pathAddMode) | 将源路径以规定模式添加到当前路径中。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path、src任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER； pathAddMode不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。 |
-| void OH_Drawing_PathAddPathWithOffsetAndMode(OH_Drawing_Path* path, const OH_Drawing_Path* src, float dx, float dy,OH_Drawing_PathAddMode pathAddMode) | 将源路径偏移后，以规定模式添加到当前路径中。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path、src任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER； pathAddMode不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。 |
+| void OH_Drawing_PathAddPathWithMatrixAndMode(OH_Drawing_Path* path, const OH_Drawing_Path* src, const OH_Drawing_Matrix* matrix, OH_Drawing_PathAddMode pathAddMode) | 将源路径矩阵变换后，以规定模式添加到当前路径中。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path、src任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER； pathAddMode不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。 |
+| void OH_Drawing_PathAddPathWithMode(OH_Drawing_Path* path, const OH_Drawing_Path* src, OH_Drawing_PathAddMode pathAddMode) | 将源路径以规定模式添加到当前路径中。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path、src任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER； pathAddMode不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。 |
+| void OH_Drawing_PathAddPathWithOffsetAndMode(OH_Drawing_Path* path, const OH_Drawing_Path* src, float dx, float dy, OH_Drawing_PathAddMode pathAddMode) | 将源路径偏移后，以规定模式添加到当前路径中。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path、src任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER； pathAddMode不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。 |
 | void OH_Drawing_PathAddPolygon(OH_Drawing_Path* path, const OH_Drawing_Point2D* points, uint32_t count, bool isClosed) | 向路径添加多边形。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path、points任意一个为NULL或者count等于0时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
-| void OH_Drawing_PathAddCircle(OH_Drawing_Path* path,float x, float y, float radius, OH_Drawing_PathDirection pathDirection) | 按指定方向，向路径添加圆形。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER； radius小于等于0时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE； pathDirection不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。 |
+| void OH_Drawing_PathAddCircle(OH_Drawing_Path* path, float x, float y, float radius, OH_Drawing_PathDirection pathDirection) | 按指定方向，向路径添加圆形。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER； radius小于等于0时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE； pathDirection不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。 |
 | bool OH_Drawing_PathBuildFromSvgString(OH_Drawing_Path* path, const char* str) | 解析SVG字符串表示的路径。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path、str任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
-| OH_Drawing_ErrorCode OH_Drawing_PathConvertToSvgString(const OH_Drawing_Path* path, char* str, size_t* strSize) | 将路径转换为SVG字符串。 |
-| bool OH_Drawing_PathContains(OH_Drawing_Path* path, float x, float y) | 判断指定坐标点是否被路径包含，判定是否被路径包含的规则参考OH_Drawing_PathFillType。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
-| void OH_Drawing_PathTransform(OH_Drawing_Path* path, const OH_Drawing_Matrix* matrix) | 对路径进行矩阵变换。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path、matrix任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
-| void OH_Drawing_PathTransformWithPerspectiveClip(OH_Drawing_Path* src, const OH_Drawing_Matrix* matrix,OH_Drawing_Path* dst, bool applyPerspectiveClip) | 对路径进行矩阵变换。用转换后的路径替换目标路径，如果目标路径为NULL，则替换源路径。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 src、matrix任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
-| void OH_Drawing_PathSetFillType(OH_Drawing_Path* path, OH_Drawing_PathFillType pathFillType) | 设置路径的填充类型，这个决定了路径内部区域的定义方式。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER； pathFillType不在枚举范围内返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。 |
+| OH_Drawing_ErrorCode OH_Drawing_PathConvertToSvgString(const OH_Drawing_Path* path, char* str, size_t* strSize) | 将路径转换为SVG路径数据字符串。 |
+| bool OH_Drawing_PathContains(OH_Drawing_Path* path, float x, float y) | 判断指定坐标点是否被路径包含，判定规则参考OH_Drawing_PathFillType。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
+| void OH_Drawing_PathTransform(OH_Drawing_Path* path, const OH_Drawing_Matrix* matrix) | 对路径进行矩阵变换，变换结果直接修改当前路径对象。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path、matrix任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
+| void OH_Drawing_PathTransformWithPerspectiveClip(OH_Drawing_Path* src, const OH_Drawing_Matrix* matrix, OH_Drawing_Path* dst, bool applyPerspectiveClip) | 对路径进行矩阵变换。用转换后的路径替换目标路径，如果目标路径为NULL，则替换源路径。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 src、matrix任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
+| void OH_Drawing_PathSetFillType(OH_Drawing_Path* path, OH_Drawing_PathFillType pathFillType) | 设置路径的填充类型，决定路径内部区域的定义方式。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER； pathFillType不在枚举范围内返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。 |
 | OH_Drawing_ErrorCode OH_Drawing_PathGetFillType(OH_Drawing_Path* path, OH_Drawing_PathFillType* pathFillType) | 获取路径的填充类型。 |
 | float OH_Drawing_PathGetLength(OH_Drawing_Path* path, bool forceClosed) | 获取当前路径的长度。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
 | void OH_Drawing_PathGetBounds(OH_Drawing_Path* path, OH_Drawing_Rect* rect) | 获取包含路径的最小边界框。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path、rect任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
@@ -98,31 +110,33 @@
 | void OH_Drawing_PathOffset(OH_Drawing_Path* path, OH_Drawing_Path* dst, float dx, float dy) | 将路径中的所有点沿着x轴和y轴方向偏移一定距离，并将结果存储到目标路径对象中。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
 | void OH_Drawing_PathReset(OH_Drawing_Path* path) | 用于重置自定义路径数据。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
 | bool OH_Drawing_PathIsClosed(OH_Drawing_Path* path, bool forceClosed) | 获取路径是否闭合。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
-| bool OH_Drawing_PathGetPositionTangent(OH_Drawing_Path* path, bool forceClosed,float distance, OH_Drawing_Point2D* position, OH_Drawing_Point2D* tangent) | 获取距路径起始点指定距离的坐标点和切线值。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path、position、tangent任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
-| OH_Drawing_ErrorCode OH_Drawing_PathGetSegment(OH_Drawing_Path* path, bool forceClosed,float start, float stop, bool startWithMoveTo, OH_Drawing_Path* dst, bool* result) | 截取路径的片段并追加到目标路径上。 |
-| bool OH_Drawing_PathOp(OH_Drawing_Path* path, const OH_Drawing_Path* other, OH_Drawing_PathOpMode op) | 将两个路径按照指定的路径操作类型合并。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path、srcPath任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER； op不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。 |
-| bool OH_Drawing_PathGetMatrix(OH_Drawing_Path* path, bool forceClosed,float distance, OH_Drawing_Matrix* matrix, OH_Drawing_PathMeasureMatrixFlags flag) | 获取距路径起始点指定距离的相应变换矩阵。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path、matrix任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER； flag不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。 |
-| OH_Drawing_ErrorCode OH_Drawing_PathApproximate(OH_Drawing_Path* path, float acceptableError, float* vals,uint32_t* count) | 将当前路径转化为由连续直线段构成的近似路径。 |
-| OH_Drawing_ErrorCode OH_Drawing_PathGetVerbData(const OH_Drawing_Path* path, OH_Drawing_PathIteratorVerb* verbs, uint32_t* count) | 获取路径的数据。在路径（path）图元中，指令数据verb用于描述路径构造过程中的基本绘图动作。 |
-| OH_Drawing_ErrorCode OH_Drawing_PathGetPointData(const OH_Drawing_Path* path, OH_Drawing_Point2D* points, uint32_t* count) | 获取路径的点数据。 在路径（path）图元中，点数据以数值序列的形式存在，与指令verb指令一一对应，用来精确指定绘图操作的几何坐标位置。 |
+| bool OH_Drawing_PathGetPositionTangent(OH_Drawing_Path* path, bool forceClosed, float distance, OH_Drawing_Point2D* position, OH_Drawing_Point2D* tangent) | 获取距路径起始点指定距离的坐标点和切线值。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path、position、tangent任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
+| OH_Drawing_ErrorCode OH_Drawing_PathGetSegment(OH_Drawing_Path* path, bool forceClosed, float start, float stop, bool startWithMoveTo, OH_Drawing_Path* dst, bool* result) | 截取路径的片段并追加到目标路径上。 |
+| bool OH_Drawing_PathOp(OH_Drawing_Path* path, const OH_Drawing_Path* other, OH_Drawing_PathOpMode op) | 将两个路径按照指定的路径操作类型合并。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path、other任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER； op不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。 |
+| bool OH_Drawing_PathGetMatrix(OH_Drawing_Path* path, bool forceClosed, float distance, OH_Drawing_Matrix* matrix, OH_Drawing_PathMeasureMatrixFlags flag) | 获取距路径起始点指定距离的相应变换矩阵。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 path、matrix任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER； flag不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。 |
+| OH_Drawing_ErrorCode OH_Drawing_PathApproximate(OH_Drawing_Path* path, float acceptableError, float* vals, uint32_t* count) | 将当前路径转化为由连续直线段构成的近似路径。 |
+| OH_Drawing_ErrorCode OH_Drawing_PathGetVerbData(const OH_Drawing_Path* path, OH_Drawing_PathIteratorVerb* verbs, uint32_t* count) | 获取路径的指令数据(verb)。在路径（path）图元中，指令数据verb用于描述路径构造过程中的基本绘图动作。 |
+| OH_Drawing_ErrorCode OH_Drawing_PathGetPointData(const OH_Drawing_Path* path, OH_Drawing_Point2D* points, uint32_t* count) | 获取路径的点数据。 在路径（path）图元中，点数据以数值序列的形式存在，与verb指令一一对应，用来精确指定绘图操作的几何坐标位置。 |
 | OH_Drawing_ErrorCode OH_Drawing_PathGetConicWeightData(const OH_Drawing_Path* path, float* conicWeights, uint32_t* count) | 获取路径的圆锥曲线权重数据。 路径的圆锥曲线权重数据用于描述路径中圆锥曲线的权重信息。 在路径（path）图元中，圆锥曲线数据采用有理贝塞尔曲线（Rational Bézier Curve）形式表示，其中每个控制点附带一个权重值（weight）。 |
-| OH_Drawing_ErrorCode OH_Drawing_PathInterpolate(OH_Drawing_Path* path, OH_Drawing_Path* other,float weight, bool* success, OH_Drawing_Path* interpolatedPath) | 按照给定权重在当前路径与另一条路径之间进行插值，并将结果存储到目标路径对象中。 两条路径点数相同即可插值成功，目标路径按照当前路径的结构进行创建。 |
-| OH_Drawing_ErrorCode OH_Drawing_PathIsInterpolate(OH_Drawing_Path* path, OH_Drawing_Path* other, bool* result) | 检查当前路径与另一条路径（other）在结构和操作顺序上是否完全一致，以确定两条路径是否兼容插值。 若路径中包含圆锥曲线（Conic）操作，则对应操作的权重值也必须一致，才能视为兼容插值。 |
+| OH_Drawing_ErrorCode OH_Drawing_PathInterpolate(OH_Drawing_Path* path, OH_Drawing_Path* other, float weight, bool* success, OH_Drawing_Path* interpolatedPath) | 按照给定权重在当前路径与另一条路径之间进行插值，并将结果存储到目标路径对象中。 两条路径点数相同即可插值成功，目标路径按照当前路径的结构进行创建。 |
+| OH_Drawing_ErrorCode OH_Drawing_PathIsInterpolate(OH_Drawing_Path* path, OH_Drawing_Path* other, bool* result) | 检查当前路径与另一条路径（other）在结构和操作顺序上是否完全一致，以确定两条路径是否兼容插值，供OH_Drawing_PathInterpolate调用前预检查使用。 若路径中包含圆锥曲线（Conic）操作，则对应操作的权重值也必须一致，才能视为兼容插值。 |
 | OH_Drawing_ErrorCode OH_Drawing_PathIsInverseFillType(const OH_Drawing_Path* path, bool* isInverse) | 检查路径的填充类型是否是取反类型。 取反类型即OH_Drawing_PathFillType中的PATH_FILL_TYPE_INVERSE_WINDING和PATH_FILL_TYPE_INVERSE_EVEN_ODD。 |
-| OH_Drawing_ErrorCode OH_Drawing_PathToggleInverseFillType(OH_Drawing_Path* path) | 切换路径的填充类型为取反类型。 取反类型即OH_Drawing_PathFillType中的PATH_FILL_TYPE_INVERSE_WINDING和PATH_FILL_TYPE_INVERSE_EVEN_ODD。 |
+| OH_Drawing_ErrorCode OH_Drawing_PathToggleInverseFillType(OH_Drawing_Path* path) | 切换路径填充类型的取反状态，即在取反类型与非取反类型之间翻转。 取反类型即OH_Drawing_PathFillType中的PATH_FILL_TYPE_INVERSE_WINDING和PATH_FILL_TYPE_INVERSE_EVEN_ODD。 |
  
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Drawing_PathDirection
+### OH_Drawing_PathDirection
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Drawing_PathDirection
@@ -130,10 +144,11 @@ enum OH_Drawing_PathDirection
  
 **描述**
  
-添加闭合轮廓方向枚举。
+添加闭合路径方向枚举。
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | PATH_DIRECTION_CW | 顺时针方向添加闭合轮廓。 |
@@ -142,9 +157,10 @@ enum OH_Drawing_PathDirection
  
   
 
-#### OH_Drawing_PathFillType
+### OH_Drawing_PathFillType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Drawing_PathFillType
@@ -156,6 +172,7 @@ enum OH_Drawing_PathFillType
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | PATH_FILL_TYPE_WINDING | 绘制区域中的任意一点，向任意方向射出一条射线，对于射线和路径的所有交点，初始计数为0， 遇到每个顺时针的交点（路径从射线的左边向右穿过），计数加1，遇到每个逆时针的交点（路径从射线的右边向左穿过），计数减1，若最终的计数结果不为0，则认为这个点在路径内部，需要被涂色；若计数为0则不被涂色。 |
@@ -166,9 +183,10 @@ enum OH_Drawing_PathFillType
  
   
 
-#### OH_Drawing_PathAddMode
+### OH_Drawing_PathAddMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Drawing_PathAddMode
@@ -180,17 +198,19 @@ enum OH_Drawing_PathAddMode
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | PATH_ADD_MODE_APPEND | 以追加的方式添加路径。 |
-| PATH_ADD_MODE_EXTEND | 如果之前的路径未闭合，则添加直线闭合路径。 |
+| PATH_ADD_MODE_EXTEND | 如果当前路径未闭合，则添加直线闭合当前路径。 |
  
  
   
 
-#### OH_Drawing_PathOpMode
+### OH_Drawing_PathOpMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Drawing_PathOpMode
@@ -202,6 +222,7 @@ enum OH_Drawing_PathOpMode
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | PATH_OP_MODE_DIFFERENCE | 差集操作。 |
@@ -213,9 +234,10 @@ enum OH_Drawing_PathOpMode
  
   
 
-#### OH_Drawing_PathMeasureMatrixFlags
+### OH_Drawing_PathMeasureMatrixFlags
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Drawing_PathMeasureMatrixFlags
@@ -227,6 +249,7 @@ enum OH_Drawing_PathMeasureMatrixFlags
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | GET_POSITION_MATRIX | 获取位置信息对应的矩阵。 |
@@ -236,15 +259,17 @@ enum OH_Drawing_PathMeasureMatrixFlags
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Drawing_PathCreate()
+### OH_Drawing_PathCreate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_Path* OH_Drawing_PathCreate(void)
@@ -260,6 +285,7 @@ OH_Drawing_Path* OH_Drawing_PathCreate(void)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_Path* | 函数会返回一个指针，指针指向创建的路径对象。 |
@@ -267,9 +293,10 @@ OH_Drawing_Path* OH_Drawing_PathCreate(void)
  
   
 
-#### OH_Drawing_PathCopy()
+### OH_Drawing_PathCopy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_Path* OH_Drawing_PathCopy(OH_Drawing_Path* path)
@@ -277,7 +304,7 @@ OH_Drawing_Path* OH_Drawing_PathCopy(OH_Drawing_Path* path)
  
 **描述**
  
-创建一个路径对象副本[OH_Drawing_Path](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-oh-drawing-path)，用于拷贝一个已有路径对象。
+用于拷贝已有路径对象，返回路径对象副本[OH_Drawing_Path](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-oh-drawing-path)。
  
 本接口会产生错误码，可以通过[OH_Drawing_ErrorCodeGet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-error-code-h#oh_drawing_errorcodeget)查看错误码的取值。
  
@@ -289,13 +316,15 @@ path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| OH_Drawing_Path* path | 指向路径对象OH_Drawing_Path的指针。 |
+| OH_Drawing_Path* path | 指向需要拷贝的源路径对象OH_Drawing_Path的指针。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_Path* | 函数返回一个指针，指针指向创建的路径对象副本OH_Drawing_Path。 |
@@ -303,9 +332,10 @@ path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
   
 
-#### OH_Drawing_PathDestroy()
+### OH_Drawing_PathDestroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_PathDestroy(OH_Drawing_Path* path)
@@ -313,7 +343,7 @@ void OH_Drawing_PathDestroy(OH_Drawing_Path* path)
  
 **描述**
  
-用于销毁路径对象并回收该对象占有的内存。
+用于销毁路径对象并回收该对象占用的内存。
  
 **系统能力：** SystemCapability.Graphic.Graphic2D.NativeDrawing
  
@@ -321,6 +351,7 @@ void OH_Drawing_PathDestroy(OH_Drawing_Path* path)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象的指针。 |
@@ -328,9 +359,10 @@ void OH_Drawing_PathDestroy(OH_Drawing_Path* path)
  
   
 
-#### OH_Drawing_PathSetPath()
+### OH_Drawing_PathSetPath()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ErrorCode OH_Drawing_PathSetPath(OH_Drawing_Path* path, OH_Drawing_Path* other)
@@ -338,7 +370,7 @@ OH_Drawing_ErrorCode OH_Drawing_PathSetPath(OH_Drawing_Path* path, OH_Drawing_Pa
  
 **描述**
  
-将一个路径对象设置成当前的路径对象。
+将另一个路径对象的内容设置到当前路径对象中。
  
 **系统能力：** SystemCapability.Graphic.Graphic2D.NativeDrawing
  
@@ -346,24 +378,27 @@ OH_Drawing_ErrorCode OH_Drawing_PathSetPath(OH_Drawing_Path* path, OH_Drawing_Pa
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象OH_Drawing_Path的指针。 |
-| OH_Drawing_Path* other | 用于设置的路径对象OH_Drawing_Path的指针。 |
+| OH_Drawing_Path* other | 指向源路径对象OH_Drawing_Path的指针，其内容将被设置到当前路径对象中。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| OH_Drawing_ErrorCode | 函数返回执行结果。 返回OH_DRAWING_SUCCESS，表示执行成功。 返回OH_DRAWING_ERROR_INVALID_PARAMETER，表示参数path或者other为空。 |
+| OH_Drawing_ErrorCode | 函数返回执行结果。 返回OH_DRAWING_SUCCESS，表示执行成功。 返回OH_DRAWING_ERROR_INVALID_PARAMETER，表示参数path或者other为空指针。 |
  
  
   
 
-#### OH_Drawing_PathIsEmpty()
+### OH_Drawing_PathIsEmpty()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ErrorCode OH_Drawing_PathIsEmpty(OH_Drawing_Path* path, bool* isEmpty)
@@ -379,6 +414,7 @@ OH_Drawing_ErrorCode OH_Drawing_PathIsEmpty(OH_Drawing_Path* path, bool* isEmpty
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象OH_Drawing_Path的指针。 |
@@ -387,6 +423,7 @@ OH_Drawing_ErrorCode OH_Drawing_PathIsEmpty(OH_Drawing_Path* path, bool* isEmpty
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ErrorCode | 函数返回执行结果。 返回OH_DRAWING_SUCCESS，表示执行成功。 返回OH_DRAWING_ERROR_INVALID_PARAMETER，表示参数path或者isEmpty为空。 |
@@ -394,9 +431,10 @@ OH_Drawing_ErrorCode OH_Drawing_PathIsEmpty(OH_Drawing_Path* path, bool* isEmpty
  
   
 
-#### OH_Drawing_PathIsRect()
+### OH_Drawing_PathIsRect()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ErrorCode OH_Drawing_PathIsRect(OH_Drawing_Path* path, OH_Drawing_Rect* rect, bool* isRect)
@@ -412,6 +450,7 @@ OH_Drawing_ErrorCode OH_Drawing_PathIsRect(OH_Drawing_Path* path, OH_Drawing_Rec
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象OH_Drawing_Path的指针。 |
@@ -421,6 +460,7 @@ OH_Drawing_ErrorCode OH_Drawing_PathIsRect(OH_Drawing_Path* path, OH_Drawing_Rec
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ErrorCode | 函数返回执行结果。 返回OH_DRAWING_SUCCESS，表示执行成功。 返回OH_DRAWING_ERROR_INVALID_PARAMETER，表示参数path或者isRect为空。 |
@@ -428,9 +468,10 @@ OH_Drawing_ErrorCode OH_Drawing_PathIsRect(OH_Drawing_Path* path, OH_Drawing_Rec
  
   
 
-#### OH_Drawing_PathGetLastPoint()
+### OH_Drawing_PathGetLastPoint()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ErrorCode OH_Drawing_PathGetLastPoint(OH_Drawing_Path* path, OH_Drawing_Point2D* point)
@@ -444,14 +485,16 @@ OH_Drawing_ErrorCode OH_Drawing_PathGetLastPoint(OH_Drawing_Path* path, OH_Drawi
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象OH_Drawing_Path的指针。 |
-| OH_Drawing_Point2D* point | 指向坐标点对象OH_Drawing_Point2D的指针，用于存储最后一个点。 |
+| OH_Drawing_Point2D* point | 指向坐标点对象OH_Drawing_Point2D的指针，用于存储最后一个点，作为出参使用。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ErrorCode | 函数返回执行错误码。 返回OH_DRAWING_SUCCESS，表示执行成功。 返回OH_DRAWING_ERROR_INCORRECT_PARAMETER，表示参数path或point为空指针，或者path为空路径。 |
@@ -459,9 +502,10 @@ OH_Drawing_ErrorCode OH_Drawing_PathGetLastPoint(OH_Drawing_Path* path, OH_Drawi
  
   
 
-#### OH_Drawing_PathIsEqual()
+### OH_Drawing_PathIsEqual()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ErrorCode OH_Drawing_PathIsEqual(OH_Drawing_Path* path, OH_Drawing_Path* other, bool* equal)
@@ -469,21 +513,23 @@ OH_Drawing_ErrorCode OH_Drawing_PathIsEqual(OH_Drawing_Path* path, OH_Drawing_Pa
  
 **描述**
  
-用于检查两个路径是否相等。
+用于检查两个路径是否相等，即判断两个路径在构成数据上是否一致。
  
 **起始版本：** 26.0.0
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象OH_Drawing_Path的指针。 |
 | OH_Drawing_Path* other | 指向另一个路径对象OH_Drawing_Path的指针。 |
-| bool* equal | 表示两个路径是否相等。作为出参使用。 |
+| bool* equal | 表示两个路径是否相等。true表示两个路径相等，false表示两个路径不相等。作为出参使用。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ErrorCode | 函数返回执行错误码。 返回OH_DRAWING_SUCCESS，表示执行成功。 返回OH_DRAWING_ERROR_INCORRECT_PARAMETER，表示参数path或other为空指针，或者equal为空指针。 |
@@ -491,9 +537,10 @@ OH_Drawing_ErrorCode OH_Drawing_PathIsEqual(OH_Drawing_Path* path, OH_Drawing_Pa
  
   
 
-#### OH_Drawing_PathMoveTo()
+### OH_Drawing_PathMoveTo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_PathMoveTo(OH_Drawing_Path* path, float x, float y)
@@ -501,7 +548,7 @@ void OH_Drawing_PathMoveTo(OH_Drawing_Path* path, float x, float y)
  
 **描述**
  
-用于设置自定义路径的起始点位置。
+用于设置路径的起始点位置。
  
 本接口会产生错误码，可以通过[OH_Drawing_ErrorCodeGet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-error-code-h#oh_drawing_errorcodeget)查看错误码的取值。
  
@@ -513,18 +560,20 @@ path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象的指针。 |
-| float x | 起始点的横坐标。 |
-| float y | 起始点的纵坐标。 |
+| float x | 起始点的横坐标，单位为物理像素px。 |
+| float y | 起始点的纵坐标，单位为物理像素px。 |
  
  
   
 
-#### OH_Drawing_PathLineTo()
+### OH_Drawing_PathLineTo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_PathLineTo(OH_Drawing_Path* path, float x, float y)
@@ -544,30 +593,28 @@ path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象的指针。 |
-| float x | 目标点的横坐标。 |
-| float y | 目标点的纵坐标。 |
+| float x | 目标点的横坐标，单位为物理像素px。 |
+| float y | 目标点的纵坐标，单位为物理像素px。 |
  
  
   
 
-#### OH_Drawing_PathArcTo()
+### OH_Drawing_PathArcTo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-void OH_Drawing_PathArcTo(OH_Drawing_Path* path,float x1, float y1, float x2, float y2, float startDeg, float sweepDeg)
+void OH_Drawing_PathArcTo(OH_Drawing_Path* path, float x1, float y1, float x2, float y2, float startDeg, float sweepDeg)
 ```
  
 **描述**
  
-用于给路径添加一段弧线，绘制弧线的方式为角度弧，该方式首先会指定一个矩形边框，
- 
-矩形边框的内切椭圆将会被用来截取弧线，然后会指定一个起始角度和扫描度数，
- 
-从起始角度扫描截取的椭圆周长一部分即为绘制的弧线。若路径有内容则会默认添加一条从路径的最后点位置到弧线起始点位置的线段。
+用于给路径添加一段弧线。绘制方式为角度弧：指定一个矩形边框，其内切椭圆用于截取弧线；再指定起始角度和扫描度数，从起始角度扫描截取的椭圆周长部分即为弧线。若路径已有内容，则默认添加一条从路径最后点位置到弧线起始点位置的线段。
  
 本接口会产生错误码，可以通过[OH_Drawing_ErrorCodeGet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-error-code-h#oh_drawing_errorcodeget)查看错误码的取值。
  
@@ -579,22 +626,24 @@ path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象的指针。 |
-| float x1 | 包围椭圆的矩形左上角点位置的横坐标。 |
-| float y1 | 包围椭圆的矩形左上角点位置的纵坐标。 |
-| float x2 | 包围椭圆的矩形右下角点位置的横坐标。 |
-| float y2 | 包围椭圆的矩形右下角点位置的纵坐标。 |
-| float startDeg | 起始的角度。角度的起始方向（0°）为x轴正方向。 |
-| float sweepDeg | 扫描的度数，为正数时顺时针扫描，为负数时逆时针扫描。实际扫描的度数为该入参对360取模的结果。 |
+| float x1 | 包围椭圆的矩形左上角点位置的横坐标，单位为物理像素px。 |
+| float y1 | 包围椭圆的矩形左上角点位置的纵坐标，单位为物理像素px。 |
+| float x2 | 包围椭圆的矩形右下角点位置的横坐标，单位为物理像素px。 |
+| float y2 | 包围椭圆的矩形右下角点位置的纵坐标，单位为物理像素px。 |
+| float startDeg | 起始的角度，单位为度。角度的起始方向（0°）为x轴正方向。 |
+| float sweepDeg | 扫描的度数，单位为度，为正数时顺时针扫描，为负数时逆时针扫描。实际扫描的度数为该入参对360°取模的结果。 |
  
  
   
 
-#### OH_Drawing_PathQuadTo()
+### OH_Drawing_PathQuadTo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_PathQuadTo(OH_Drawing_Path* path, float ctrlX, float ctrlY, float endX, float endY)
@@ -614,20 +663,22 @@ path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象的指针。 |
-| float ctrlX | 控制点位置的横坐标。 |
-| float ctrlY | 控制点位置的纵坐标。 |
-| float endX | 目标点位置的横坐标。 |
-| float endY | 目标点位置的纵坐标。 |
+| float ctrlX | 控制点位置的横坐标，单位为物理像素px。 |
+| float ctrlY | 控制点位置的纵坐标，单位为物理像素px。 |
+| float endX | 目标点位置的横坐标，单位为物理像素px。 |
+| float endY | 目标点位置的纵坐标，单位为物理像素px。 |
  
  
   
 
-#### OH_Drawing_PathConicTo()
+### OH_Drawing_PathConicTo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_PathConicTo(OH_Drawing_Path* path, float ctrlX, float ctrlY, float endX, float endY, float weight)
@@ -635,7 +686,7 @@ void OH_Drawing_PathConicTo(OH_Drawing_Path* path, float ctrlX, float ctrlY, flo
  
 **描述**
  
-在当前路径上添加一条路径终点（若路径没有内容则默认为 (0, 0)）到目标点位置的圆锥曲线段，其控制点为 (ctrlX, ctrlY)，结束点为 (endX, endY)。
+在当前路径上添加一条路径最后点位置（若路径没有内容则默认为(0, 0)）到目标点位置的圆锥曲线段，其控制点为(ctrlX, ctrlY)，结束点为(endX, endY)。
  
 本接口会产生错误码，可以通过[OH_Drawing_ErrorCodeGet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-error-code-h#oh_drawing_errorcodeget)查看错误码的取值。
  
@@ -647,21 +698,23 @@ path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象OH_Drawing_Path的指针。 |
-| float ctrlX | 控制点位置的横坐标。 |
-| float ctrlY | 控制点位置的纵坐标。 |
-| float endX | 结束点位置的横坐标。 |
-| float endY | 结束点位置的纵坐标。 |
+| float ctrlX | 控制点位置的横坐标，单位为物理像素px。 |
+| float ctrlY | 控制点位置的纵坐标，单位为物理像素px。 |
+| float endX | 目标点位置的横坐标，单位为物理像素px。 |
+| float endY | 目标点位置的纵坐标，单位为物理像素px。 |
 | float weight | 表示曲线的权重，决定了曲线的形状，越大越接近控制点。 若小于等于0则等同于使用OH_Drawing_PathLineTo添加一条到结束点的线段， 若为1则等同于OH_Drawing_PathQuadTo。 |
  
  
   
 
-#### OH_Drawing_PathCubicTo()
+### OH_Drawing_PathCubicTo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_PathCubicTo(OH_Drawing_Path* path, float ctrlX1, float ctrlY1, float ctrlX2, float ctrlY2, float endX, float endY)
@@ -669,7 +722,7 @@ void OH_Drawing_PathCubicTo(OH_Drawing_Path* path, float ctrlX1, float ctrlY1, f
  
 **描述**
  
-用于添加一条从路径最后点位置（若路径没有内容则默认为 (0, 0)）到目标点位置的三阶贝塞尔圆滑曲线。
+用于添加一条从路径最后点位置到目标点位置的三阶贝塞尔曲线。
  
 本接口会产生错误码，可以通过[OH_Drawing_ErrorCodeGet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-error-code-h#oh_drawing_errorcodeget)查看错误码的取值。
  
@@ -681,22 +734,24 @@ path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象的指针。 |
-| float ctrlX1 | 第一个控制点位置的横坐标。 |
-| float ctrlY1 | 第一个控制点位置的纵坐标。 |
-| float ctrlX2 | 第二个控制点位置的横坐标。 |
-| float ctrlY2 | 第二个控制点位置的纵坐标。 |
-| float endX | 目标点位置的横坐标。 |
-| float endY | 目标点位置的纵坐标。 |
+| float ctrlX1 | 第一个控制点位置的横坐标，单位为物理像素px。 |
+| float ctrlY1 | 第一个控制点位置的纵坐标，单位为物理像素px。 |
+| float ctrlX2 | 第二个控制点位置的横坐标，单位为物理像素px。 |
+| float ctrlY2 | 第二个控制点位置的纵坐标，单位为物理像素px。 |
+| float endX | 目标点位置的横坐标，单位为物理像素px。 |
+| float endY | 目标点位置的纵坐标，单位为物理像素px。 |
  
  
   
 
-#### OH_Drawing_PathRMoveTo()
+### OH_Drawing_PathRMoveTo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_PathRMoveTo(OH_Drawing_Path* path, float x, float y)
@@ -716,18 +771,20 @@ path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象OH_Drawing_Path的指针。 |
-| float x | 相对于当前路径终点的x轴偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移。 |
-| float y | 相对于当前路径终点的y轴偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移。 |
+| float x | 相对于当前路径终点的x轴偏移量，单位为物理像素px，正数往x轴正方向偏移，负数往x轴负方向偏移。 |
+| float y | 相对于当前路径终点的y轴偏移量，单位为物理像素px，正数往y轴正方向偏移，负数往y轴负方向偏移。 |
  
  
   
 
-#### OH_Drawing_PathRLineTo()
+### OH_Drawing_PathRLineTo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_PathRLineTo(OH_Drawing_Path* path, float x, float y)
@@ -747,18 +804,20 @@ path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象OH_Drawing_Path的指针。 |
-| float x | 相对于当前路径终点的x轴偏移量，用于指定目标点的横坐标。 |
-| float y | 相对于当前路径终点的y轴偏移量，用于指定目标点的纵坐标。 |
+| float x | 相对于当前路径终点的x轴偏移量，单位为物理像素px，用于指定目标点的横坐标。 |
+| float y | 相对于当前路径终点的y轴偏移量，单位为物理像素px，用于指定目标点的纵坐标。 |
  
  
   
 
-#### OH_Drawing_PathRQuadTo()
+### OH_Drawing_PathRQuadTo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_PathRQuadTo(OH_Drawing_Path* path, float ctrlX, float ctrlY, float endX, float endY)
@@ -778,20 +837,22 @@ path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象OH_Drawing_Path的指针。 |
-| float ctrlX | 相对于路径终点的x轴偏移量，用于指定控制点的横坐标。 |
-| float ctrlY | 相对于路径终点的y轴偏移量，用于指定控制点的纵坐标。 |
-| float endX | 相对于路径终点的x轴偏移量，用于指定目标点的横坐标。 |
-| float endY | 相对于路径终点的y轴偏移量，用于指定目标点的纵坐标。 |
+| float ctrlX | 相对于路径终点的x轴偏移量，单位为物理像素px，用于指定控制点的横坐标。 |
+| float ctrlY | 相对于路径终点的y轴偏移量，单位为物理像素px，用于指定控制点的纵坐标。 |
+| float endX | 相对于路径终点的x轴偏移量，单位为物理像素px，用于指定目标点的横坐标。 |
+| float endY | 相对于路径终点的y轴偏移量，单位为物理像素px，用于指定目标点的纵坐标。 |
  
  
   
 
-#### OH_Drawing_PathRConicTo()
+### OH_Drawing_PathRConicTo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_PathRConicTo(OH_Drawing_Path* path, float ctrlX, float ctrlY, float endX, float endY, float weight)
@@ -799,7 +860,7 @@ void OH_Drawing_PathRConicTo(OH_Drawing_Path* path, float ctrlX, float ctrlY, fl
  
 **描述**
  
-使用相对位置在当前路径上添加一条路径终点（若路径没有内容则默认为 (0, 0)）到目标点位置的圆锥曲线段。
+使用相对位置在当前路径上添加一条路径最后点位置（若路径没有内容则默认为(0, 0)）到目标点位置的圆锥曲线段。
  
 本接口会产生错误码，可以通过[OH_Drawing_ErrorCodeGet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-error-code-h#oh_drawing_errorcodeget)查看错误码的取值。
  
@@ -811,29 +872,31 @@ path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象OH_Drawing_Path的指针。 |
-| float ctrlX | 相对于路径终点的x轴偏移量，用于指定控制点的横坐标。 |
-| float ctrlY | 相对于路径终点的y轴偏移量，用于指定控制点的纵坐标。 |
-| float endX | 相对于路径终点的x轴偏移量，用于指定目标点的横坐标。 |
-| float endY | 相对于路径终点的y轴偏移量，用于指定目标点的纵坐标。 |
+| float ctrlX | 相对于路径终点的x轴偏移量，单位为物理像素px，用于指定控制点的横坐标。 |
+| float ctrlY | 相对于路径终点的y轴偏移量，单位为物理像素px，用于指定控制点的纵坐标。 |
+| float endX | 相对于路径终点的x轴偏移量，单位为物理像素px，用于指定目标点的横坐标。 |
+| float endY | 相对于路径终点的y轴偏移量，单位为物理像素px，用于指定目标点的纵坐标。 |
 | float weight | 表示曲线的权重，决定了曲线的形状，越大越接近控制点。 若小于等于0则等同于使用OH_Drawing_PathRLineTo添加一条到结束点的线段， 若为1则等同于OH_Drawing_PathRQuadTo。 |
  
  
   
 
-#### OH_Drawing_PathRCubicTo()
+### OH_Drawing_PathRCubicTo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-void OH_Drawing_PathRCubicTo(OH_Drawing_Path* path, float ctrlX1, float ctrlY1, float ctrlX2, float ctrlY2,float endX, float endY)
+void OH_Drawing_PathRCubicTo(OH_Drawing_Path* path, float ctrlX1, float ctrlY1, float ctrlX2, float ctrlY2, float endX, float endY)
 ```
  
 **描述**
  
-使用相对位置在当前路径上添加一条当前路径终点（若路径没有内容则默认为 (0, 0)）到目标点位置的三阶贝塞尔圆滑曲线。
+使用相对位置在当前路径上添加一条当前路径终点（若路径没有内容则默认为(0, 0)）到目标点位置的三阶贝塞尔曲线。
  
 本接口会产生错误码，可以通过[OH_Drawing_ErrorCodeGet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-error-code-h#oh_drawing_errorcodeget)查看错误码的取值。
  
@@ -845,30 +908,32 @@ path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象OH_Drawing_Path的指针。 |
-| float ctrlX1 | 相对于路径终点的x轴偏移量，用于指定第一个控制点的横坐标。 |
-| float ctrlY1 | 相对于路径终点的y轴偏移量，用于指定第一个控制点的纵坐标。 |
-| float ctrlX2 | 相对于路径终点的x轴偏移量，用于指定第二个控制点的横坐标。 |
-| float ctrlY2 | 相对于路径终点的y轴偏移量，用于指定第二个控制点的纵坐标。 |
-| float endX | 相对于路径终点的x轴偏移量，用于指定目标点的横坐标。 |
-| float endY | 相对于路径终点的y轴偏移量，用于指定目标点的纵坐标。 |
+| float ctrlX1 | 相对于路径终点的x轴偏移量，单位为物理像素px，用于指定第一个控制点的横坐标。 |
+| float ctrlY1 | 相对于路径终点的y轴偏移量，单位为物理像素px，用于指定第一个控制点的纵坐标。 |
+| float ctrlX2 | 相对于路径终点的x轴偏移量，单位为物理像素px，用于指定第二个控制点的横坐标。 |
+| float ctrlY2 | 相对于路径终点的y轴偏移量，单位为物理像素px，用于指定第二个控制点的纵坐标。 |
+| float endX | 相对于路径终点的x轴偏移量，单位为物理像素px，用于指定目标点的横坐标。 |
+| float endY | 相对于路径终点的y轴偏移量，单位为物理像素px，用于指定目标点的纵坐标。 |
  
  
   
 
-#### OH_Drawing_PathAddRect()
+### OH_Drawing_PathAddRect()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-void OH_Drawing_PathAddRect(OH_Drawing_Path* path, float left, float top, float right, float bottom,OH_Drawing_PathDirection pathDirection)
+void OH_Drawing_PathAddRect(OH_Drawing_Path* path, float left, float top, float right, float bottom, OH_Drawing_PathDirection pathDirection)
 ```
  
 **描述**
  
-按指定方向，将矩形添加到路径中，添加的路径的起始点为矩形左上角。
+按指定方向，将矩形添加到路径中，该矩形轮廓的起始点为矩形左上角。
  
 本接口会产生错误码，可以通过[OH_Drawing_ErrorCodeGet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-error-code-h#oh_drawing_errorcodeget)查看错误码的取值。
  
@@ -882,24 +947,26 @@ pathDirection不在枚举范围内返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象OH_Drawing_Path的指针。 |
-| float left | 矩形左上角的x轴坐标。 |
-| float top | 矩形左上角的y轴坐标。 |
-| float right | 矩形右下角的x轴坐标。 |
-| float bottom | 矩形右下角的y轴坐标。 |
-| OH_Drawing_PathDirection pathDirection | 路径方向OH_Drawing_PathDirection。 |
+| float left | 矩形左上角的x轴坐标，单位为物理像素px。 |
+| float top | 矩形左上角的y轴坐标，单位为物理像素px。 |
+| float right | 矩形右下角的x轴坐标，单位为物理像素px。 |
+| float bottom | 矩形右下角的y轴坐标，单位为物理像素px。 |
+| OH_Drawing_PathDirection pathDirection | 路径添加方向OH_Drawing_PathDirection，用于指定矩形轮廓的绘制方向。 |
  
  
   
 
-#### OH_Drawing_PathAddRectWithInitialCorner()
+### OH_Drawing_PathAddRectWithInitialCorner()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-void OH_Drawing_PathAddRectWithInitialCorner(OH_Drawing_Path* path, const OH_Drawing_Rect* rect,OH_Drawing_PathDirection pathDirection, uint32_t start)
+void OH_Drawing_PathAddRectWithInitialCorner(OH_Drawing_Path* path, const OH_Drawing_Rect* rect, OH_Drawing_PathDirection pathDirection, uint32_t start)
 ```
  
 **描述**
@@ -918,22 +985,24 @@ pathDirection不在枚举范围内返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象OH_Drawing_Path的指针。 |
 | const OH_Drawing_Rect* rect | 指向矩形对象OH_Drawing_Rect的指针。 |
-| OH_Drawing_PathDirection | 表示绘制方向OH_Drawing_PathDirection。 |
-| uint32_t start | 起始点的位置，表示从矩形的哪个角开始绘制路径。0：左上角，1：右上角，2：右下角，3：左下角。 |
+| OH_Drawing_PathDirection pathDirection | 路径添加方向OH_Drawing_PathDirection，用于指定矩形轮廓的绘制方向。 |
+| uint32_t start | 起始点的位置，表示从矩形的哪个角开始绘制路径。取值范围为[0, 3]，0：左上角，1：右上角，2：右下角，3：左下角。 |
  
  
   
 
-#### OH_Drawing_PathAddRoundRect()
+### OH_Drawing_PathAddRoundRect()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-void OH_Drawing_PathAddRoundRect(OH_Drawing_Path* path,const OH_Drawing_RoundRect* roundRect, OH_Drawing_PathDirection pathDirection)
+void OH_Drawing_PathAddRoundRect(OH_Drawing_Path* path, const OH_Drawing_RoundRect* roundRect, OH_Drawing_PathDirection pathDirection)
 ```
  
 **描述**
@@ -952,21 +1021,23 @@ pathDirection不在枚举范围内返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象OH_Drawing_Path的指针。 |
 | const OH_Drawing_RoundRect* roundRect | 指向圆角矩形对象OH_Drawing_RoundRect的指针。 |
-| OH_Drawing_PathDirection pathDirection | 路径方向OH_Drawing_PathDirection。 |
+| OH_Drawing_PathDirection pathDirection | 路径添加方向OH_Drawing_PathDirection，用于指定圆角矩形轮廓的绘制方向。 |
  
  
   
 
-#### OH_Drawing_PathAddOvalWithInitialPoint()
+### OH_Drawing_PathAddOvalWithInitialPoint()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-void OH_Drawing_PathAddOvalWithInitialPoint(OH_Drawing_Path* path, const OH_Drawing_Rect* rect,uint32_t start, OH_Drawing_PathDirection pathDirection)
+void OH_Drawing_PathAddOvalWithInitialPoint(OH_Drawing_Path* path, const OH_Drawing_Rect* rect, uint32_t start, OH_Drawing_PathDirection pathDirection)
 ```
  
 **描述**
@@ -985,27 +1056,29 @@ pathDirection不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RAN
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象OH_Drawing_Path的指针。 |
-| const OH_Drawing_Rect* rect | 指向矩形对象OH_Drawing_Rect的指针。 |
+| const OH_Drawing_Rect* rect | 指向矩形对象OH_Drawing_Rect的指针，该矩形作为椭圆的外切矩形区域，用于定义椭圆的形状和大小。 |
 | uint32_t start | 表示椭圆初始点的索引。 |
-| OH_Drawing_PathDirection pathDirection | 表示绘制方向OH_Drawing_PathDirection。 |
+| OH_Drawing_PathDirection pathDirection | 路径添加方向OH_Drawing_PathDirection，用于指定椭圆的绘制方向。 |
  
  
   
 
-#### OH_Drawing_PathAddOval()
+### OH_Drawing_PathAddOval()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-void OH_Drawing_PathAddOval(OH_Drawing_Path* path,const OH_Drawing_Rect* rect, OH_Drawing_PathDirection pathDirection)
+void OH_Drawing_PathAddOval(OH_Drawing_Path* path, const OH_Drawing_Rect* rect, OH_Drawing_PathDirection pathDirection)
 ```
  
 **描述**
  
-按指定方向，向路径添加椭圆。
+按指定方向，向路径添加椭圆，其中矩形对象作为椭圆的外切矩形区域。
  
 本接口会产生错误码，可以通过[OH_Drawing_ErrorCodeGet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-error-code-h#oh_drawing_errorcodeget)查看错误码的取值。
  
@@ -1019,18 +1092,20 @@ pathDirection不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RAN
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象OH_Drawing_Path的指针。 |
-| const OH_Drawing_Rect* rect | 指向矩形对象OH_Drawing_Rect的指针。 |
-| OH_Drawing_PathDirection pathDirection | 路径方向OH_Drawing_PathDirection。 |
+| const OH_Drawing_Rect* rect | 指向矩形对象OH_Drawing_Rect的指针，该矩形作为椭圆的外切矩形区域，用于定义椭圆的形状和大小。 |
+| OH_Drawing_PathDirection pathDirection | 路径添加方向OH_Drawing_PathDirection，用于指定椭圆的绘制方向。 |
  
  
   
 
-#### OH_Drawing_PathAddArc()
+### OH_Drawing_PathAddArc()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_PathAddArc(OH_Drawing_Path* path, const OH_Drawing_Rect* rect, float startAngle, float sweepAngle)
@@ -1038,7 +1113,7 @@ void OH_Drawing_PathAddArc(OH_Drawing_Path* path, const OH_Drawing_Rect* rect, f
  
 **描述**
  
-将圆弧添加到路径中，作为新轮廓的起点。从起始角度到扫描角度添加弧，添加的弧是矩形内切椭圆的一部分，如果扫描角度<= -360°，或>= 360°，并且起始角度对90取模接近于0，则添加椭圆而不是弧。
+将圆弧添加到路径中，作为新轮廓的起点。从起始角度开始，按扫描度数添加弧，添加的弧是矩形内切椭圆的一部分。
  
 本接口会产生错误码，可以通过[OH_Drawing_ErrorCodeGet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-error-code-h#oh_drawing_errorcodeget)查看错误码的取值。
  
@@ -1050,19 +1125,21 @@ path、rect任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象OH_Drawing_Path的指针。 |
-| const OH_Drawing_Rect* rect | 指向矩形对象OH_Drawing_Rect的指针。 |
+| const OH_Drawing_Rect* rect | 指向矩形对象OH_Drawing_Rect的指针，该矩形作为弧线的包围矩形，其内切椭圆用于截取弧线。 |
 | float startAngle | 弧的起始角度，单位为度。 |
-| float sweepAngle | 扫描的度数，为正数时顺时针扫描，为负数时逆时针扫描。实际扫描的度数为该入参对360取模的结果。 |
+| float sweepAngle | 扫描的度数，单位为度，为正数时顺时针扫描，为负数时逆时针扫描。实际扫描的度数为该入参对360°取模的结果。 |
  
  
   
 
-#### OH_Drawing_PathAddPath()
+### OH_Drawing_PathAddPath()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_PathAddPath(OH_Drawing_Path* path, const OH_Drawing_Path* src, const OH_Drawing_Matrix* matrix)
@@ -1082,6 +1159,7 @@ path、src任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向当前路径对象OH_Drawing_Path的指针。 |
@@ -1091,12 +1169,13 @@ path、src任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
   
 
-#### OH_Drawing_PathAddPathWithMatrixAndMode()
+### OH_Drawing_PathAddPathWithMatrixAndMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-void OH_Drawing_PathAddPathWithMatrixAndMode(OH_Drawing_Path* path, const OH_Drawing_Path* src,const OH_Drawing_Matrix* matrix, OH_Drawing_PathAddMode pathAddMode)
+void OH_Drawing_PathAddPathWithMatrixAndMode(OH_Drawing_Path* path, const OH_Drawing_Path* src, const OH_Drawing_Matrix* matrix, OH_Drawing_PathAddMode pathAddMode)
 ```
  
 **描述**
@@ -1115,22 +1194,24 @@ pathAddMode不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向当前路径对象OH_Drawing_Path的指针。 |
 | const OH_Drawing_Path* src | 指向源路径对象OH_Drawing_Path的指针。 |
 | const OH_Drawing_Matrix* matrix | 指向矩阵对象OH_Drawing_Matrix的指针，为NULL表示单位矩阵。 |
-| OH_Drawing_PathAddMode pathAddMode | 路径添加模式OH_Drawing_PathAddMode。 |
+| OH_Drawing_PathAddMode pathAddMode | 路径添加模式。 |
  
  
   
 
-#### OH_Drawing_PathAddPathWithMode()
+### OH_Drawing_PathAddPathWithMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-void OH_Drawing_PathAddPathWithMode(OH_Drawing_Path* path,const OH_Drawing_Path* src, OH_Drawing_PathAddMode pathAddMode)
+void OH_Drawing_PathAddPathWithMode(OH_Drawing_Path* path, const OH_Drawing_Path* src, OH_Drawing_PathAddMode pathAddMode)
 ```
  
 **描述**
@@ -1149,21 +1230,23 @@ pathAddMode不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向当前路径对象OH_Drawing_Path的指针。 |
 | const OH_Drawing_Path* src | 指向源路径对象OH_Drawing_Path的指针。 |
-| OH_Drawing_PathAddMode pathAddMode | 路径添加模式OH_Drawing_PathAddMode。 |
+| OH_Drawing_PathAddMode pathAddMode | 路径添加模式。 |
  
  
   
 
-#### OH_Drawing_PathAddPathWithOffsetAndMode()
+### OH_Drawing_PathAddPathWithOffsetAndMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-void OH_Drawing_PathAddPathWithOffsetAndMode(OH_Drawing_Path* path, const OH_Drawing_Path* src, float dx, float dy,OH_Drawing_PathAddMode pathAddMode)
+void OH_Drawing_PathAddPathWithOffsetAndMode(OH_Drawing_Path* path, const OH_Drawing_Path* src, float dx, float dy, OH_Drawing_PathAddMode pathAddMode)
 ```
  
 **描述**
@@ -1182,20 +1265,22 @@ pathAddMode不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向当前路径对象OH_Drawing_Path的指针。 |
 | const OH_Drawing_Path* src | 指向源路径对象OH_Drawing_Path的指针。 |
-| float dx | 添加到目标路径横坐标的偏移量。 |
-| float dy | 添加到目标路径纵坐标的偏移量。 |
-| OH_Drawing_PathAddMode pathAddMode | 路径添加模式OH_Drawing_PathAddMode。 |
+| float dx | 源路径横坐标的偏移量，单位为物理像素px。 |
+| float dy | 源路径纵坐标的偏移量，单位为物理像素px。 |
+| OH_Drawing_PathAddMode pathAddMode | 路径添加模式。 |
  
  
   
 
-#### OH_Drawing_PathAddPolygon()
+### OH_Drawing_PathAddPolygon()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_PathAddPolygon(OH_Drawing_Path* path, const OH_Drawing_Point2D* points, uint32_t count, bool isClosed)
@@ -1215,22 +1300,24 @@ path、points任意一个为NULL或者count等于0时返回OH_DRAWING_ERROR_INVA
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向当前路径对象OH_Drawing_Path的指针。 |
 | const OH_Drawing_Point2D* points | 表示多边形的顶点坐标数组。 |
-| uint32_t count | 表示多边形顶点坐标数组的大小。 |
+| uint32_t count | 表示多边形顶点坐标数组的大小，取值范围>0。 |
 | bool isClosed | 是否添加连接起始点和终止点的线，true表示添加，false表示不添加。 |
  
  
   
 
-#### OH_Drawing_PathAddCircle()
+### OH_Drawing_PathAddCircle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-void OH_Drawing_PathAddCircle(OH_Drawing_Path* path,float x, float y, float radius, OH_Drawing_PathDirection pathDirection)
+void OH_Drawing_PathAddCircle(OH_Drawing_Path* path, float x, float y, float radius, OH_Drawing_PathDirection pathDirection)
 ```
  
 **描述**
@@ -1251,20 +1338,22 @@ pathDirection不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RAN
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象OH_Drawing_Path的指针。 |
-| float x | 表示圆心的x轴坐标。 |
-| float y | 表示圆心的y轴坐标。 |
-| float radius | 表示圆形的半径。 |
-| OH_Drawing_PathDirection pathDirection | 路径方向OH_Drawing_PathDirection。 |
+| float x | 表示圆心的x轴坐标，单位为物理像素px。 |
+| float y | 表示圆心的y轴坐标，单位为物理像素px。 |
+| float radius | 表示圆形的半径，单位为物理像素px。 |
+| OH_Drawing_PathDirection pathDirection | 路径添加方向OH_Drawing_PathDirection，用于指定圆形轮廓的绘制方向。 |
  
  
   
 
-#### OH_Drawing_PathBuildFromSvgString()
+### OH_Drawing_PathBuildFromSvgString()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_Drawing_PathBuildFromSvgString(OH_Drawing_Path* path, const char* str)
@@ -1284,14 +1373,16 @@ path、str任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象OH_Drawing_Path的指针。 |
-| const char* str | 表示SVG字符串。 |
+| const char* str | 表示SVG路径数据字符串，需符合SVG path语法的格式要求。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 函数返回解析SVG字符串是否成功。true表示成功，false表示不成功。 |
@@ -1299,9 +1390,10 @@ path、str任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
   
 
-#### OH_Drawing_PathConvertToSvgString()
+### OH_Drawing_PathConvertToSvgString()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ErrorCode OH_Drawing_PathConvertToSvgString(const OH_Drawing_Path* path, char* str, size_t* strSize)
@@ -1309,21 +1401,23 @@ OH_Drawing_ErrorCode OH_Drawing_PathConvertToSvgString(const OH_Drawing_Path* pa
  
 **描述**
  
-将路径转换为SVG字符串。
+将路径转换为SVG路径数据字符串。
  
 **起始版本：** 26.0.0
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_Drawing_Path* path | 指向OH_Drawing_Path对象的指针。 |
-| char* str | SVG字符串，开发者需要分配和释放对应的内存。可通过传入空指针以获取字符串的内存大小；作为出参使用时，表示路径转换后的SVG字符串结果。 |
+| char* str | SVG字符串，开发者需要分配和释放对应的内存。可通过传入空指针以获取SVG字符串的内存大小；作为出参使用时，表示路径转换后的SVG字符串结果。 |
 | size_t* strSize | SVG字符串内存大小，单位为字节。作为出参使用时，用来获取实际字符串内存大小的值。作为入参使用时，表示str分配的内存大小。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ErrorCode | 返回执行结果。 如果操作成功，则返回OH_DRAWING_SUCCESS。 如果path或strSize为nullptr，或strSize过小时则返回OH_DRAWING_ERROR_INCORRECT_PARAMETER。 |
@@ -1331,9 +1425,10 @@ OH_Drawing_ErrorCode OH_Drawing_PathConvertToSvgString(const OH_Drawing_Path* pa
  
   
 
-#### OH_Drawing_PathContains()
+### OH_Drawing_PathContains()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_Drawing_PathContains(OH_Drawing_Path* path, float x, float y)
@@ -1341,7 +1436,7 @@ bool OH_Drawing_PathContains(OH_Drawing_Path* path, float x, float y)
  
 **描述**
  
-判断指定坐标点是否被路径包含，判定是否被路径包含的规则参考[OH_Drawing_PathFillType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-path-h#oh_drawing_pathfilltype)。
+判断指定坐标点是否被路径包含，判定规则参考[OH_Drawing_PathFillType](#oh_drawing_pathfilltype)。
  
 本接口会产生错误码，可以通过[OH_Drawing_ErrorCodeGet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-error-code-h#oh_drawing_errorcodeget)查看错误码的取值。
  
@@ -1353,15 +1448,17 @@ path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象OH_Drawing_Path的指针。 |
-| float x | x轴上坐标点。 |
-| float y | y轴上坐标点。 |
+| float x | 表示待判断的坐标点的x轴坐标，单位为物理像素px。 |
+| float y | 表示待判断的坐标点的y轴坐标，单位为物理像素px。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 函数返回true表示点在路径内，函数返回false表示点在路径外。 |
@@ -1369,9 +1466,10 @@ path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
   
 
-#### OH_Drawing_PathTransform()
+### OH_Drawing_PathTransform()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_PathTransform(OH_Drawing_Path* path, const OH_Drawing_Matrix* matrix)
@@ -1379,7 +1477,7 @@ void OH_Drawing_PathTransform(OH_Drawing_Path* path, const OH_Drawing_Matrix* ma
  
 **描述**
  
-对路径进行矩阵变换。
+对路径进行矩阵变换，变换结果直接修改当前路径对象。
  
 本接口会产生错误码，可以通过[OH_Drawing_ErrorCodeGet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-error-code-h#oh_drawing_errorcodeget)查看错误码的取值。
  
@@ -1391,20 +1489,22 @@ path、matrix任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象OH_Drawing_Path的指针。 |
-| const OH_Drawing_Matrix* matrix | 指向矩阵对象OH_Drawing_Matrix的指针。 |
+| const OH_Drawing_Matrix* matrix | 指向矩阵对象OH_Drawing_Matrix的指针，用于指定对路径进行变换的矩阵，为NULL时表示单位矩阵（不对路径进行变换）。 |
  
  
   
 
-#### OH_Drawing_PathTransformWithPerspectiveClip()
+### OH_Drawing_PathTransformWithPerspectiveClip()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-void OH_Drawing_PathTransformWithPerspectiveClip(OH_Drawing_Path* src, const OH_Drawing_Matrix* matrix,OH_Drawing_Path* dst, bool applyPerspectiveClip)
+void OH_Drawing_PathTransformWithPerspectiveClip(OH_Drawing_Path* src, const OH_Drawing_Matrix* matrix, OH_Drawing_Path* dst, bool applyPerspectiveClip)
 ```
  
 **描述**
@@ -1421,19 +1521,21 @@ src、matrix任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* src | 指向路径对象OH_Drawing_Path的指针。 |
-| const OH_Drawing_Matrix* matrix | 指向矩阵对象OH_Drawing_Matrix的指针。 |
+| const OH_Drawing_Matrix* matrix | 指向矩阵对象OH_Drawing_Matrix的指针，用于指定对路径进行矩阵变换的变换矩阵。 |
 | OH_Drawing_Path* dst | 指向目标路径对象OH_Drawing_Path的指针。 |
-| bool applyPerspectiveClip | 表示变换路径是否应用透视裁剪。true表示应用透视裁剪，false表示不用透视裁剪。 |
+| bool applyPerspectiveClip | 表示变换路径是否应用透视裁剪。true表示对矩阵变换后的路径应用透视裁剪，保留裁剪后的路径部分；false表示不进行透视裁剪，保留变换后的完整路径。 |
  
  
   
 
-#### OH_Drawing_PathSetFillType()
+### OH_Drawing_PathSetFillType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_PathSetFillType(OH_Drawing_Path* path, OH_Drawing_PathFillType pathFillType)
@@ -1441,7 +1543,7 @@ void OH_Drawing_PathSetFillType(OH_Drawing_Path* path, OH_Drawing_PathFillType p
  
 **描述**
  
-设置路径的填充类型，这个决定了路径内部区域的定义方式。
+设置路径的填充类型，决定路径内部区域的定义方式。
  
 本接口会产生错误码，可以通过[OH_Drawing_ErrorCodeGet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-error-code-h#oh_drawing_errorcodeget)查看错误码的取值。
  
@@ -1455,17 +1557,19 @@ pathFillType不在枚举范围内返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象OH_Drawing_Path的指针。 |
-| OH_Drawing_PathFillType pathFillType | 路径填充规则OH_Drawing_PathFillType。 |
+| OH_Drawing_PathFillType pathFillType | 路径填充类型OH_Drawing_PathFillType，决定路径内部区域的定义方式，即路径的涂色规则。 |
  
  
   
 
-#### OH_Drawing_PathGetFillType()
+### OH_Drawing_PathGetFillType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ErrorCode OH_Drawing_PathGetFillType(OH_Drawing_Path* path, OH_Drawing_PathFillType* pathFillType)
@@ -1481,14 +1585,16 @@ OH_Drawing_ErrorCode OH_Drawing_PathGetFillType(OH_Drawing_Path* path, OH_Drawin
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象OH_Drawing_Path的指针。 |
-| OH_Drawing_PathFillType* pathFillType | 指向路径填充规则OH_Drawing_PathFillType的指针。 |
+| OH_Drawing_PathFillType* pathFillType | 路径填充类型，作为出参使用。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ErrorCode | 函数返回执行结果。 返回OH_DRAWING_SUCCESS，表示执行成功。 返回OH_DRAWING_ERROR_INVALID_PARAMETER，表示参数path或者pathFillType为空。 |
@@ -1496,9 +1602,10 @@ OH_Drawing_ErrorCode OH_Drawing_PathGetFillType(OH_Drawing_Path* path, OH_Drawin
  
   
 
-#### OH_Drawing_PathGetLength()
+### OH_Drawing_PathGetLength()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 float OH_Drawing_PathGetLength(OH_Drawing_Path* path, bool forceClosed)
@@ -1518,6 +1625,7 @@ path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象OH_Drawing_Path的指针。 |
@@ -1526,16 +1634,18 @@ path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| float | 函数返回当前路径的长度。 |
+| float | 函数返回当前路径的长度，单位为物理像素px。 |
  
  
   
 
-#### OH_Drawing_PathGetBounds()
+### OH_Drawing_PathGetBounds()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_PathGetBounds(OH_Drawing_Path* path, OH_Drawing_Rect* rect)
@@ -1555,17 +1665,19 @@ path、rect任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象OH_Drawing_Path的指针。 |
-| OH_Drawing_Rect* rect | 指向矩形对象OH_Drawing_Rect的指针。 |
+| OH_Drawing_Rect* rect | 指向矩形对象OH_Drawing_Rect的指针，存储路径边界框结果，作为出参使用。 |
  
  
   
 
-#### OH_Drawing_PathClose()
+### OH_Drawing_PathClose()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_PathClose(OH_Drawing_Path* path)
@@ -1585,6 +1697,7 @@ path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象OH_Drawing_Path的指针。 |
@@ -1592,9 +1705,10 @@ path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
   
 
-#### OH_Drawing_PathOffset()
+### OH_Drawing_PathOffset()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_PathOffset(OH_Drawing_Path* path, OH_Drawing_Path* dst, float dx, float dy)
@@ -1614,19 +1728,21 @@ path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向当前路径对象OH_Drawing_Path的指针。 |
 | OH_Drawing_Path* dst | 指向目标路径对象OH_Drawing_Path的指针，为NULL时会将结果存储到当前路径对象中。 |
-| float dx | x轴方向的偏移量。 |
-| float dy | y轴方向的偏移量。 |
+| float dx | x轴方向的偏移量，单位为物理像素px。 |
+| float dy | y轴方向的偏移量，单位为物理像素px。 |
  
  
   
 
-#### OH_Drawing_PathReset()
+### OH_Drawing_PathReset()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_PathReset(OH_Drawing_Path* path)
@@ -1646,6 +1762,7 @@ path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象的指针。 |
@@ -1653,9 +1770,10 @@ path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
   
 
-#### OH_Drawing_PathIsClosed()
+### OH_Drawing_PathIsClosed()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_Drawing_PathIsClosed(OH_Drawing_Path* path, bool forceClosed)
@@ -1675,6 +1793,7 @@ path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象OH_Drawing_Path的指针。 |
@@ -1683,6 +1802,7 @@ path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回路径是否闭合。true表示路径的测量结果为已闭合，false表示路径的测量结果为未闭合。 |
@@ -1690,12 +1810,13 @@ path为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
   
 
-#### OH_Drawing_PathGetPositionTangent()
+### OH_Drawing_PathGetPositionTangent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-bool OH_Drawing_PathGetPositionTangent(OH_Drawing_Path* path, bool forceClosed,float distance, OH_Drawing_Point2D* position, OH_Drawing_Point2D* tangent)
+bool OH_Drawing_PathGetPositionTangent(OH_Drawing_Path* path, bool forceClosed, float distance, OH_Drawing_Point2D* position, OH_Drawing_Point2D* tangent)
 ```
  
 **描述**
@@ -1712,17 +1833,19 @@ path、position、tangent任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PA
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象OH_Drawing_Path的指针。 |
 | bool forceClosed | 表示是否按照闭合路径测量，true表示测量时路径会被强制视为已闭合，false表示会根据路径的实际闭合状态测量。 |
-| float distance | 表示距离起始点的距离，小于0时会被视为0处理，大于路径长度时会被视为路径长度处理。 |
-| OH_Drawing_Point2D* position | 表示距路径起始点指定距离的坐标点。 |
-| OH_Drawing_Point2D* tangent | 表示距路径起始点指定距离的切线值，tangent.x表示该点切线的余弦值，tangent.y表示该点切线的正弦值。 |
+| float distance | 表示距离起始点的距离，单位为物理像素px，小于0时会被视为0处理，大于路径长度时会被视为路径长度处理。 |
+| OH_Drawing_Point2D* position | 表示距路径起始点指定距离的坐标点，作为出参使用，用于存储计算得到的坐标点结果。 |
+| OH_Drawing_Point2D* tangent | 表示距路径起始点指定距离的切线值，作为出参使用。tangent.x表示该点切线的余弦值，tangent.y表示该点切线的正弦值。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回测量是否成功。true表示成功，false表示失败。 |
@@ -1730,12 +1853,13 @@ path、position、tangent任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PA
  
   
 
-#### OH_Drawing_PathGetSegment()
+### OH_Drawing_PathGetSegment()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-OH_Drawing_ErrorCode OH_Drawing_PathGetSegment(OH_Drawing_Path* path, bool forceClosed,float start, float stop, bool startWithMoveTo, OH_Drawing_Path* dst, bool* result)
+OH_Drawing_ErrorCode OH_Drawing_PathGetSegment(OH_Drawing_Path* path, bool forceClosed, float start, float stop, bool startWithMoveTo, OH_Drawing_Path* dst, bool* result)
 ```
  
 **描述**
@@ -1748,12 +1872,13 @@ OH_Drawing_ErrorCode OH_Drawing_PathGetSegment(OH_Drawing_Path* path, bool force
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象OH_Drawing_Path的指针。 |
 | bool forceClosed | 表示是否按照闭合路径测量，true表示测量时路径会被强制视为已闭合，false表示会根据路径的实际闭合状态测量。 |
-| float start | 表示与路径起始点的距离，距离路径起始点start距离的位置即为截取路径片段的起始点，小于0时会被视作0，大于等于stop时会截取失败。 |
-| float stop | 表示与路径起始点的距离，距离路径起始点stop距离的位置即为截取路径片段的终点，小于等于start时会截取失败，大于路径长度时会被视作路径长度。 |
+| float start | 表示与路径起始点的距离，单位为物理像素px，距离路径起始点start距离的位置即为截取路径片段的起始点，小于0时会被视作0，大于等于stop时会截取失败。 |
+| float stop | 表示与路径起始点的距离，单位为物理像素px，距离路径起始点stop距离的位置即为截取路径片段的终点，小于等于start时会截取失败，大于路径长度时会被视作路径长度。 |
 | bool startWithMoveTo | 表示是否在目标路径执行OH_Drawing_PathMoveTo移动到截取路径片段的起始点位置。true表示执行，false表示不执行。 |
 | OH_Drawing_Path* dst | 指向目标路径对象OH_Drawing_Path的指针，截取成功时会将得到的路径片段追加到目标路径上，截取失败时不做改变。 |
 | bool* result | 返回是否成功截取路径片段的结果。true表示截取成功，false表示截取失败。作为出参使用。 |
@@ -1761,6 +1886,7 @@ OH_Drawing_ErrorCode OH_Drawing_PathGetSegment(OH_Drawing_Path* path, bool force
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ErrorCode | 函数返回执行错误码。 返回OH_DRAWING_SUCCESS，表示执行成功。 返回OH_DRAWING_ERROR_INVALID_PARAMETER，表示参数path、dst、result至少有一个为空指针。 |
@@ -1768,9 +1894,10 @@ OH_Drawing_ErrorCode OH_Drawing_PathGetSegment(OH_Drawing_Path* path, bool force
  
   
 
-#### OH_Drawing_PathOp()
+### OH_Drawing_PathOp()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_Drawing_PathOp(OH_Drawing_Path* path, const OH_Drawing_Path* other, OH_Drawing_PathOpMode op)
@@ -1782,7 +1909,7 @@ bool OH_Drawing_PathOp(OH_Drawing_Path* path, const OH_Drawing_Path* other, OH_D
  
 本接口会产生错误码，可以通过[OH_Drawing_ErrorCodeGet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-error-code-h#oh_drawing_errorcodeget)查看错误码的取值。
  
-path、srcPath任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER；
+path、other任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER；
  
 op不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。
  
@@ -1792,15 +1919,17 @@ op不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象OH_Drawing_Path的指针，操作完成后的路径结果将会保存在此路径对象中。 |
-| const OH_Drawing_Path* other | 指向路径对象OH_Drawing_Path的指针。 |
-| OH_Drawing_PathOpMode op | 路径操作枚举类型，支持可选的具体模式可见OH_Drawing_PathOpMode枚举。 |
+| const OH_Drawing_Path* other | 指向参与路径操作的路径对象OH_Drawing_Path的指针，与当前路径一起按指定操作类型进行运算。 |
+| OH_Drawing_PathOpMode op | 路径操作枚举类型。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回操作后的路径是否为空。true表示路径不为空，false表示路径为空。 |
@@ -1808,12 +1937,13 @@ op不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。
  
   
 
-#### OH_Drawing_PathGetMatrix()
+### OH_Drawing_PathGetMatrix()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-bool OH_Drawing_PathGetMatrix(OH_Drawing_Path* path, bool forceClosed,float distance, OH_Drawing_Matrix* matrix, OH_Drawing_PathMeasureMatrixFlags flag)
+bool OH_Drawing_PathGetMatrix(OH_Drawing_Path* path, bool forceClosed, float distance, OH_Drawing_Matrix* matrix, OH_Drawing_PathMeasureMatrixFlags flag)
 ```
  
 **描述**
@@ -1832,17 +1962,19 @@ flag不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象OH_Drawing_Path的指针。 |
 | bool forceClosed | 表示是否按照闭合路径测量，true表示测量时路径会被强制视为已闭合，false表示会根据路径的实际闭合状态测量。 |
-| float distance | 表示距离起始点的距离，小于0时会被视为0处理，大于路径长度时会被视为路径长度处理。 |
-| OH_Drawing_Matrix* matrix | 表示要获取的变换矩阵。 |
-| OH_Drawing_PathMeasureMatrixFlags flag | 矩阵信息维度枚举，支持可选的具体模式可见OH_Drawing_PathMeasureMatrixFlags枚举。 |
+| float distance | 表示距离起始点的距离，单位为物理像素px，小于0时会被视为0处理，大于路径长度时会被视为路径长度处理。 |
+| OH_Drawing_Matrix* matrix | 表示要获取的变换矩阵，作为出参使用，用于存储距路径起始点指定距离的变换矩阵结果。 |
+| OH_Drawing_PathMeasureMatrixFlags flag | 矩阵信息维度枚举。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回获取变换矩阵是否成功。true表示获取成功，false表示获取失败，失败的原因可能是path为NULL或者长度为0。 |
@@ -1850,12 +1982,13 @@ flag不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。
  
   
 
-#### OH_Drawing_PathApproximate()
+### OH_Drawing_PathApproximate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-OH_Drawing_ErrorCode OH_Drawing_PathApproximate(OH_Drawing_Path* path, float acceptableError, float* vals,uint32_t* count)
+OH_Drawing_ErrorCode OH_Drawing_PathApproximate(OH_Drawing_Path* path, float acceptableError, float* vals, uint32_t* count)
 ```
  
 **描述**
@@ -1868,16 +2001,18 @@ OH_Drawing_ErrorCode OH_Drawing_PathApproximate(OH_Drawing_Path* path, float acc
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象OH_Drawing_Path的指针。 |
-| float acceptableError | 表示路径上每条线段的可接受误差，不能小于0。 1.当acceptableError为0时，曲线路径被极度细分，会严重影响性能和内存消耗，不建议设置误差值为0。 2.当acceptableError特别大时，路径会极度简化，保留少量关键点，可能会丢失原有形状。 3.对于椭圆等曲线，当acceptableError过大时，拟合结果通常只包含椭圆的分段贝塞尔曲线的起止点，椭圆形会被极度简化为多边形。 |
+| float acceptableError | 表示路径上每条线段的可接受误差，单位为物理像素px，不能小于0。 1.当acceptableError为0时，曲线路径被极度细分，性能和内存消耗显著增加，不建议设置误差值为0。 2.当acceptableError远大于路径尺寸时（即误差容限远超路径几何范围），路径会极度简化，仅保留路径的关键端点，可能会丢失原有形状。 3.对于椭圆等曲线，当acceptableError远大于椭圆半径时（即误差容限远超椭圆几何范围），拟合结果通常只包含椭圆的分段贝塞尔曲线的起止点，椭圆形会被极度简化为多边形。 |
 | float* vals | 返回包含路径近似点的数组。 每个点由三个值组成，分别表示： 1.该点所在的位置距离路径起点的长度比例值。 2.点的x坐标。 3.点的y坐标。 |
-| uint32_t* count | 返回数组的大小，数组大小至少为6。vals为空指针时返回拟合后的点数数组的大小。 |
+| uint32_t* count | 返回数组的大小，数组大小至少为6。vals为空指针时返回拟合后的点数据数组的大小。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ErrorCode | 函数返回执行结果。 返回OH_DRAWING_SUCCESS，表示执行成功。 返回OH_DRAWING_ERROR_INVALID_PARAMETER，表示参数path或者count为空指针。 返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE，表示参数acceptableError小于0。 |
@@ -1885,9 +2020,10 @@ OH_Drawing_ErrorCode OH_Drawing_PathApproximate(OH_Drawing_Path* path, float acc
  
   
 
-#### OH_Drawing_PathGetVerbData()
+### OH_Drawing_PathGetVerbData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ErrorCode OH_Drawing_PathGetVerbData(const OH_Drawing_Path* path, OH_Drawing_PathIteratorVerb* verbs, uint32_t* count)
@@ -1895,28 +2031,30 @@ OH_Drawing_ErrorCode OH_Drawing_PathGetVerbData(const OH_Drawing_Path* path, OH_
  
 **描述**
  
-获取路径的数据。在路径（path）图元中，指令数据verb用于描述路径构造过程中的基本绘图动作。
+获取路径的指令数据(verb)。在路径（path）图元中，指令数据verb用于描述路径构造过程中的基本绘图动作。
  
 指令数据以枚举的形式存在，每个取值对应一种几何操作类型，例如：
  
-- [OH_Drawing_PathMoveTo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-path-h#oh_drawing_pathmoveto)：将当前绘图点移至指定坐标，不产生线段。
-- [OH_Drawing_PathLineTo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-path-h#oh_drawing_pathlineto)：从当前点向指定点绘制直线段。
-- [OH_Drawing_PathQuadTo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-path-h#oh_drawing_pathquadto)：从当前点向指定点绘制二次贝塞尔曲线。
+- [OH_Drawing_PathMoveTo](#oh_drawing_pathmoveto)：将当前绘图点移至指定坐标，不产生线段。
+- [OH_Drawing_PathLineTo](#oh_drawing_pathlineto)：从当前点向指定点绘制直线段。
+- [OH_Drawing_PathQuadTo](#oh_drawing_pathquadto)：从当前点向指定点绘制二阶贝塞尔曲线。
 
  
 **起始版本：** 26.0.0
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_Drawing_Path* path | 指向OH_Drawing_Path对象的指针。 |
-| OH_Drawing_PathIteratorVerb* verbs | 作为出参使用，表示路径的指令数据数组。 |
-| uint32_t* count | 作为出参使用，表示指令数据数组的大小。 |
+| OH_Drawing_PathIteratorVerb* verbs | 作为出参使用，表示路径的指令数据数组。开发者需要分配和释放对应的内存。可通过传入空指针以获取指令数据数组的大小，再根据大小分配内存后再次调用本接口获取完整数据。 |
+| uint32_t* count | 作为出参使用时，表示指令数据数组的大小。作为入参使用时，表示verbs分配的内存大小。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ErrorCode | 函数返回执行结果。 如果操作成功，则返回OH_DRAWING_SUCCESS。 如果path或count为空，则返回OH_DRAWING_ERROR_INCORRECT_PARAMETER。 |
@@ -1924,9 +2062,10 @@ OH_Drawing_ErrorCode OH_Drawing_PathGetVerbData(const OH_Drawing_Path* path, OH_
  
   
 
-#### OH_Drawing_PathGetPointData()
+### OH_Drawing_PathGetPointData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ErrorCode OH_Drawing_PathGetPointData(const OH_Drawing_Path* path, OH_Drawing_Point2D* points, uint32_t* count)
@@ -1936,28 +2075,30 @@ OH_Drawing_ErrorCode OH_Drawing_PathGetPointData(const OH_Drawing_Path* path, OH
  
 获取路径的点数据。
  
-在路径（path）图元中，点数据以数值序列的形式存在，与指令verb指令一一对应，用来精确指定绘图操作的几何坐标位置。
+在路径（path）图元中，点数据以数值序列的形式存在，与verb指令一一对应，用来精确指定绘图操作的几何坐标位置。
  
 点数据的主要类型包括如下：
  
-- 终点坐标：[OH_Drawing_PathMoveTo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-path-h#oh_drawing_pathmoveto)、[OH_Drawing_PathLineTo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-path-h#oh_drawing_pathlineto) 等指令配合，定义线段或移动的目标位置。
-- 控制点坐标：与曲线指令配合，用于定义贝塞尔曲线的形状（如三次曲线需要两个控制点和一个终点）。
-- 闭合点：通常不单独提供坐标，由[OH_Drawing_PathClose](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-path-h#oh_drawing_pathclose)指令隐式使用路径起点。
+- 终点坐标：[OH_Drawing_PathMoveTo](#oh_drawing_pathmoveto)、[OH_Drawing_PathLineTo](#oh_drawing_pathlineto) 等指令配合，定义线段或移动的目标位置。
+- 控制点坐标：与曲线指令配合，用于定义贝塞尔曲线的形状（如三阶贝塞尔曲线需要两个控制点和一个终点）。
+- 闭合点：通常不单独提供坐标，由[OH_Drawing_PathClose](#oh_drawing_pathclose)指令隐式使用路径起点。
 
  
 **起始版本：** 26.0.0
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_Drawing_Path* path | 指向OH_Drawing_Path对象的指针。 |
-| OH_Drawing_Point2D* points | 作为出参使用，表示路径的点数据数组。 |
-| uint32_t* count | 作为出参使用，表示点数据数组的大小。 |
+| OH_Drawing_Point2D* points | 作为出参使用，表示路径的点数据数组。开发者需要分配和释放对应的内存。可通过传入空指针以获取点数据数组的大小，再根据大小分配内存后再次调用本接口获取完整数据。 |
+| uint32_t* count | 作为出参使用时，表示点数据数组的大小。作为入参使用时，表示points分配的内存大小。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ErrorCode | 函数返回执行结果。 如果操作成功，则返回OH_DRAWING_SUCCESS。 如果path或count为空，则返回OH_DRAWING_ERROR_INCORRECT_PARAMETER。 |
@@ -1965,9 +2106,10 @@ OH_Drawing_ErrorCode OH_Drawing_PathGetPointData(const OH_Drawing_Path* path, OH
  
   
 
-#### OH_Drawing_PathGetConicWeightData()
+### OH_Drawing_PathGetConicWeightData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ErrorCode OH_Drawing_PathGetConicWeightData(const OH_Drawing_Path* path, float* conicWeights, uint32_t* count)
@@ -1983,22 +2125,24 @@ OH_Drawing_ErrorCode OH_Drawing_PathGetConicWeightData(const OH_Drawing_Path* pa
  
 - 形状调控：权重值越大，曲线越靠近对应控制点；权重为1时退化为标准贝塞尔曲线；权重为0时该控制点不起作用。
 - 精确表示圆锥曲线：通过组合权重与二次贝塞尔曲线，可以精确表示圆弧、椭圆弧、抛物线等圆锥曲线段，无需使用分段逼近或专用椭圆弧指令。
-- 数据组织：权重通常以数组形式与点数据并列，按顺序对应每个控制点，与相应的指令verb（如[OH_Drawing_PathConicTo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-path-h#oh_drawing_pathconicto)）配合使用。
+- 数据组织：权重通常以数组形式与点数据并列，按顺序对应每个控制点，与相应的指令verb（如[OH_Drawing_PathConicTo](#oh_drawing_pathconicto)）配合使用。
 
  
 **起始版本：** 26.0.0
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_Drawing_Path* path | 指向OH_Drawing_Path对象的指针。 |
-| float* conicWeights | 作为出参使用，表示路径的圆锥曲线权重数据数组。 |
-| uint32_t* count | 作为出参使用，表示圆锥曲线权重数据数组的大小。 |
+| float* conicWeights | 作为出参使用，表示路径的圆锥曲线权重数据数组。开发者需要分配和释放对应的内存。可通过传入空指针以获取权重数据数组的大小，再根据大小分配内存后再次调用本接口获取完整数据。 |
+| uint32_t* count | 作为出参使用时，表示圆锥曲线权重数据数组的大小。作为入参使用时，表示conicWeights分配的内存大小。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ErrorCode | 函数返回执行结果。 如果操作成功，则返回OH_DRAWING_SUCCESS。 如果path或count为空，则返回OH_DRAWING_ERROR_INCORRECT_PARAMETER。 |
@@ -2006,19 +2150,20 @@ OH_Drawing_ErrorCode OH_Drawing_PathGetConicWeightData(const OH_Drawing_Path* pa
  
   
 
-#### OH_Drawing_PathInterpolate()
+### OH_Drawing_PathInterpolate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-OH_Drawing_ErrorCode OH_Drawing_PathInterpolate(OH_Drawing_Path* path, OH_Drawing_Path* other,float weight, bool* success, OH_Drawing_Path* interpolatedPath)
+OH_Drawing_ErrorCode OH_Drawing_PathInterpolate(OH_Drawing_Path* path, OH_Drawing_Path* other, float weight, bool* success, OH_Drawing_Path* interpolatedPath)
 ```
  
 **描述**
  
 按照给定权重在当前路径与另一条路径之间进行插值，并将结果存储到目标路径对象中。
  
- 两条路径点数相同即可插值成功，目标路径按照当前路径的结构进行创建。
+两条路径点数相同即可插值成功，目标路径按照当前路径的结构进行创建。
  
 **系统能力：** SystemCapability.Graphic.Graphic2D.NativeDrawing
  
@@ -2026,17 +2171,19 @@ OH_Drawing_ErrorCode OH_Drawing_PathInterpolate(OH_Drawing_Path* path, OH_Drawin
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象OH_Drawing_Path的指针。 |
 | OH_Drawing_Path* other | 指向用于插值的另一条路径对象OH_Drawing_Path的指针。 |
 | float weight | 表示插值权重，范围为[0, 1]。 |
 | bool* success | 表示插值是否成功。true表示插值成功，false表示插值失败。作为出参使用。 |
-| OH_Drawing_Path* interpolatedPath | 指向用于存储插值结果的路径对象OH_Drawing_Path的指针。 |
+| OH_Drawing_Path* interpolatedPath | 指向用于存储插值结果的路径对象OH_Drawing_Path的指针，作为出参使用。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ErrorCode | 函数返回执行结果。 返回OH_DRAWING_SUCCESS，表示执行成功。 返回OH_DRAWING_ERROR_INVALID_PARAMETER，表示参数path、other、success或者interpolatedPath为空指针。 返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE，表示参数weight不在[0, 1]范围内。 |
@@ -2044,9 +2191,10 @@ OH_Drawing_ErrorCode OH_Drawing_PathInterpolate(OH_Drawing_Path* path, OH_Drawin
  
   
 
-#### OH_Drawing_PathIsInterpolate()
+### OH_Drawing_PathIsInterpolate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ErrorCode OH_Drawing_PathIsInterpolate(OH_Drawing_Path* path, OH_Drawing_Path* other, bool* result)
@@ -2054,7 +2202,7 @@ OH_Drawing_ErrorCode OH_Drawing_PathIsInterpolate(OH_Drawing_Path* path, OH_Draw
  
 **描述**
  
-检查当前路径与另一条路径（other）在结构和操作顺序上是否完全一致，以确定两条路径是否兼容插值。
+检查当前路径与另一条路径（other）在结构和操作顺序上是否完全一致，以确定两条路径是否兼容插值，供[OH_Drawing_PathInterpolate](#oh_drawing_pathinterpolate)调用前预检查使用。
  
  若路径中包含圆锥曲线（Conic）操作，则对应操作的权重值也必须一致，才能视为兼容插值。
  
@@ -2064,6 +2212,7 @@ OH_Drawing_ErrorCode OH_Drawing_PathIsInterpolate(OH_Drawing_Path* path, OH_Draw
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象OH_Drawing_Path的指针。 |
@@ -2073,6 +2222,7 @@ OH_Drawing_ErrorCode OH_Drawing_PathIsInterpolate(OH_Drawing_Path* path, OH_Draw
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ErrorCode | 函数返回执行结果。 返回OH_DRAWING_SUCCESS，表示执行成功。 返回OH_DRAWING_ERROR_INVALID_PARAMETER，表示参数path、other或者result为空指针。 |
@@ -2080,9 +2230,10 @@ OH_Drawing_ErrorCode OH_Drawing_PathIsInterpolate(OH_Drawing_Path* path, OH_Draw
  
   
 
-#### OH_Drawing_PathIsInverseFillType()
+### OH_Drawing_PathIsInverseFillType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ErrorCode OH_Drawing_PathIsInverseFillType(const OH_Drawing_Path* path, bool* isInverse)
@@ -2092,12 +2243,13 @@ OH_Drawing_ErrorCode OH_Drawing_PathIsInverseFillType(const OH_Drawing_Path* pat
  
 检查路径的填充类型是否是取反类型。
  
-取反类型即[OH_Drawing_PathFillType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-path-h#oh_drawing_pathfilltype)中的PATH_FILL_TYPE_INVERSE_WINDING和PATH_FILL_TYPE_INVERSE_EVEN_ODD。
+取反类型即[OH_Drawing_PathFillType](#oh_drawing_pathfilltype)中的PATH_FILL_TYPE_INVERSE_WINDING和PATH_FILL_TYPE_INVERSE_EVEN_ODD。
  
 **起始版本：** 23
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_Drawing_Path* path | 指向路径对象OH_Drawing_Path的指针。 |
@@ -2106,6 +2258,7 @@ OH_Drawing_ErrorCode OH_Drawing_PathIsInverseFillType(const OH_Drawing_Path* pat
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ErrorCode | 函数返回执行结果。 返回OH_DRAWING_SUCCESS，表示执行成功。 返回OH_DRAWING_ERROR_INCORRECT_PARAMETER，表示path或isInverse是空指针。 |
@@ -2113,9 +2266,10 @@ OH_Drawing_ErrorCode OH_Drawing_PathIsInverseFillType(const OH_Drawing_Path* pat
  
   
 
-#### OH_Drawing_PathToggleInverseFillType()
+### OH_Drawing_PathToggleInverseFillType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ErrorCode OH_Drawing_PathToggleInverseFillType(OH_Drawing_Path* path)
@@ -2123,14 +2277,15 @@ OH_Drawing_ErrorCode OH_Drawing_PathToggleInverseFillType(OH_Drawing_Path* path)
  
 **描述**
  
-切换路径的填充类型为取反类型。
+切换路径填充类型的取反状态，即在取反类型与非取反类型之间翻转。
  
-取反类型即[OH_Drawing_PathFillType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-path-h#oh_drawing_pathfilltype)中的PATH_FILL_TYPE_INVERSE_WINDING和PATH_FILL_TYPE_INVERSE_EVEN_ODD。
+取反类型即[OH_Drawing_PathFillType](#oh_drawing_pathfilltype)中的PATH_FILL_TYPE_INVERSE_WINDING和PATH_FILL_TYPE_INVERSE_EVEN_ODD。
  
 **起始版本：** 23
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Path* path | 指向路径对象OH_Drawing_Path的指针。 |
@@ -2138,6 +2293,7 @@ OH_Drawing_ErrorCode OH_Drawing_PathToggleInverseFillType(OH_Drawing_Path* path)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ErrorCode | 函数返回执行结果。 返回OH_DRAWING_SUCCESS，表示执行成功。 返回OH_DRAWING_ERROR_INCORRECT_PARAMETER，表示path是空指针。 |

@@ -1,9 +1,9 @@
 # Interface (Focus)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-focus
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Focus继承自[FocusQuery](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-focusquery)。
  
@@ -14,9 +14,10 @@ Focus继承自[FocusQuery](https://developer.huawei.com/consumer/cn/doc/harmonyo
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { camera } from '@kit.CameraKit';
@@ -24,9 +25,10 @@ import { camera } from '@kit.CameraKit';
  
   
 
-#### setFocusMode11+
+## setFocusMode11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setFocusMode(afMode: FocusMode): void
  
@@ -40,6 +42,7 @@ setFocusMode(afMode: FocusMode): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | afMode | FocusMode | 是 | 指定的焦距模式。传参为null或者undefined，作为0处理，手动对焦模式。 |
@@ -49,6 +52,7 @@ setFocusMode(afMode: FocusMode): void
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400103 | Session not config. |
@@ -72,9 +76,10 @@ function setFocusMode(photoSession: camera.PhotoSession): void {
  
   
 
-#### getFocusMode11+
+## getFocusMode11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFocusMode(): FocusMode
  
@@ -86,6 +91,7 @@ getFocusMode(): FocusMode
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FocusMode | 获取当前设备的焦距模式。接口调用失败会抛出相应错误码并返回undefined，错误码类型CameraErrorCode。 |
@@ -95,6 +101,7 @@ getFocusMode(): FocusMode
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400103 | Session not config. |
@@ -120,9 +127,10 @@ function getFocusMode(photoSession: camera.PhotoSession): camera.FocusMode | und
  
   
 
-#### setFocusPoint11+
+## setFocusPoint11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setFocusPoint(point: Point): void
  
@@ -136,6 +144,7 @@ setFocusPoint(point: Point): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | point | Point | 是 | 焦点。x、y设置范围应在[0，1]之内，超过范围，如果小于0设置0，大于1设置1。 |
@@ -145,6 +154,7 @@ setFocusPoint(point: Point): void
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400103 | Session not config. |
@@ -169,9 +179,10 @@ function setFocusPoint(photoSession: camera.PhotoSession): void {
  
   
 
-#### getFocusPoint11+
+## getFocusPoint11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFocusPoint(): Point
  
@@ -183,6 +194,7 @@ getFocusPoint(): Point
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Point | 用于获取当前的焦点。接口调用失败会返回相应错误码，错误码类型为CameraErrorCode。 |
@@ -192,6 +204,7 @@ getFocusPoint(): Point
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400103 | Session not config. |
@@ -217,9 +230,10 @@ function getFocusPoint(photoSession: camera.PhotoSession): camera.Point | undefi
  
   
 
-#### getFocalLength11+
+## getFocalLength11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFocalLength(): number
  
@@ -231,6 +245,7 @@ getFocalLength(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 用于获取当前焦距，单位mm。接口调用失败会返回相应错误码，错误码类型CameraErrorCode。 |
@@ -240,6 +255,7 @@ getFocalLength(): number
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400103 | Session not config. |
@@ -266,9 +282,10 @@ function getFocalLength(photoSession: camera.PhotoSession): number {
  
   
 
-#### lockFocusTracking
+## lockFocusTracking
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 lockFocusTracking(focusPoint: Point): void
  
@@ -284,6 +301,7 @@ lockFocusTracking(focusPoint: Point): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | focusPoint | Point | 是 | 锁定对焦跟踪点。x、y的取值范围均为 [0, 1]，超出范围则设置不生效。(0, 0)表示画面左上角，(1, 1)表示画面右下角。 |
@@ -293,6 +311,7 @@ lockFocusTracking(focusPoint: Point): void
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400103 | Session not config, only throw in session usage. |
@@ -318,9 +337,10 @@ function lockFocusTracking(photoSession: camera.PhotoSession): void {
  
   
 
-#### unlockFocusTracking
+## unlockFocusTracking
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unlockFocusTracking(): void
  
@@ -338,6 +358,7 @@ unlockFocusTracking(): void
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400103 | Session not config, only throw in session usage. |

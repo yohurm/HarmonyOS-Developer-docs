@@ -1,6 +1,6 @@
 # Asset Store Kit简介
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/asset-store-kit-overview
 
@@ -16,11 +16,11 @@ Asset Store Kit（关键资产存储服务，简称ASSET）用于提供用户短
 ASSET数据存储结构如下图所示：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/uu6dlxaSSo2iE9lAx7JuFw/zh-cn_image_0000002704393055.png?HW-CC-KV=V1&HW-CC-Date=20260813T095748Z&HW-CC-Expire=86400&HW-CC-Sign=70DE82E4E7A69C01F885E6730C3C26BCC5A66394D0B3CBCC3594BA24EA4CB7DF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/QtoYy12xRBaafgqI-E_rJw/zh-cn_image_0000002717611128.png?HW-CC-KV=V1&HW-CC-Date=20260911T072517Z&HW-CC-Expire=86400&HW-CC-Sign=4E6988BBA8E6ADA3D5EC4E4EE2341C8F8271A6AC279B7B209BD7340610916071)
 
 
 
-#### 基本概念
+## 基本概念
 
 关键资产的安全存储，依赖底层的[通用密钥库系统](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-overview)。具体来说，关键资产的加/解密操作以及访问控制校验，都由通用密钥库系统在安全环境（如可信执行环境）中完成，即使系统被攻破，也能保证用户敏感数据不发生泄露。
 
@@ -33,26 +33,26 @@ ASSET数据存储结构如下图所示：
  - 关键资产属主身份（应用的[appId](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/common-problem-of-application#什么是appid)）由ASSET从系统服务中获取，即使业务身份被仿冒，仿冒者也无法获取到其他业务的数据。
  - 关键资产加/解密时，其属主身份参与了完整性保护，即使关键资产属主身份被篡改，攻击者也无法获取到其他业务的数据。
 
-      - **基于群组的访问控制：**
+            - **基于群组的访问控制：**
 
   
 同一开发者开发的多个应用，可配置为同一群组，并在存储关键资产时设置群组共享，以便群组内的多个应用可以互通访问数据。
  - 关键资产所属的群组信息，由开发者ID和群组ID组成。其中，开发者ID无需配置，群组ID在应用开发期配置，参考[配置文件标签说明](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-configuration-file#配置文件标签)。应用发布时使用开发者私钥签名保证群组ID的完整性。
  - 开发者可以为应用配置多个群组，根据关键资产的共享范围，将不同关键资产配置在相应的群组内，从而实现细粒度的群组访问控制。
 
-      - **基于锁屏状态的访问控制：** 分为以下三种保护等级（安全性依次递增），业务可根据实际情况设置任意一种，若不设置，则默认保护等级为“首次解锁后可访问”。
+            - **基于锁屏状态的访问控制：** 分为以下三种保护等级（安全性依次递增），业务可根据实际情况设置任意一种，若不设置，则默认保护等级为“首次解锁后可访问”。
 
   
 开机后可访问：关键资产在开机后被允许访问。
  - 首次解锁后可访问：关键资产在开机首次解锁后被允许访问。
  - 屏幕处于解锁状态时可访问：关键资产仅在处于解锁状态时被允许访问。
 
-      - **基于锁屏密码设置状态的访问控制：** 该访问控制默认不开启，业务可根据实际情况决定是否开启。
+            - **基于锁屏密码设置状态的访问控制：** 该访问控制默认不开启，业务可根据实际情况决定是否开启。
 
   
 在用户设置了锁屏密码后，关键资产才被允许访问。
 
-      - **基于用户认证的访问控制：** 该访问控制默认不开启，业务可根据实际情况决定是否开启。
+            - **基于用户认证的访问控制：** 该访问控制默认不开启，业务可根据实际情况决定是否开启。
 
   
 关键资产在用户身份认证通过后被允许访问。
@@ -63,7 +63,7 @@ ASSET数据存储结构如下图所示：
 
 
 
-#### 约束与限制
+## 约束与限制
 
  - 设备限制
 
@@ -77,7 +77,7 @@ ASSET数据存储结构如下图所示：
  - **不适用于高性能场景：** 关键资产的加解密操作和访问控制校验均在安全环境（如可信执行环境）中完成，相较于常规存储存在更高的性能开销，不适合高频读写、低时延等高性能场景。对性能敏感的业务请勿将ASSET作为常规存储使用。
  - **非短敏感数据不推荐使用ASSET存储：** ASSET侧重安全而非通用存储，将非敏感的常规业务数据存入ASSET既无法发挥其安全优势，又会占用本就有限的存储资源。对于非短敏感数据，请使用系统提供的常规存储能力。
 
-      - 基于别名的访问
+            - 基于别名的访问
 
   关键资产以密文的形式存储在ASSET数据库中，以业务身份（应用的[appId](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/common-problem-of-application#什么是appid)） + 别名作为唯一索引。故业务需要保证每条关键资产的别名唯一。
  - 批量查询关键资产
@@ -89,7 +89,7 @@ ASSET数据存储结构如下图所示：
 ASSET为业务预留了12个关键资产自定义属性，名称以"DATA_LABEL"开头。对于超过12个自定义属性的情况，业务可以将多段数据按照一定的格式（如JSON）拼接到同一个ASSET属性中。
  - ASSET对部分属性会进行完整性保护，这部分属性名称以"DATA_LABEL_CRITICAL"开头，写入后不支持更新。
 
-      - 基于群组的访问控制
+            - 基于群组的访问控制
 
   
 ASSET不支持沙箱应用、应用分身存储或访问群组数据。
@@ -99,7 +99,7 @@ ASSET不支持沙箱应用、应用分身存储或访问群组数据。
 
 
 
-#### 数据生命周期
+## 数据生命周期
 
 关键资产有且仅有以下删除时机：
 
@@ -114,7 +114,7 @@ ASSET不支持沙箱应用、应用分身存储或访问群组数据。
 
 
 
-#### 模拟器支持情况
+## 模拟器支持情况
 
 本Kit支持模拟器。
 
@@ -122,6 +122,6 @@ ASSET不支持沙箱应用、应用分身存储或访问群组数据。
 
 
 
-#### 与相关Kit的关系
+## 与相关Kit的关系
 
 关键资产存储服务仅提供短敏感数据（不超过1KB）的安全存储能力，如业务希望对超长的数据提供保护时，请考虑使用[通用密钥库系统](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-overview)或[加解密算法库框架](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-architecture-kit-intro)保护您的数据。

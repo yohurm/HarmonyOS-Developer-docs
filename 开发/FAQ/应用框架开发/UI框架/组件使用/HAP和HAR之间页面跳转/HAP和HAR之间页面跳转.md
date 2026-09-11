@@ -89,7 +89,7 @@ struct NavigationSolution {
           .height(40)
           .margin(20)
           .onClick(() => {
-            // 跳转至目标testHar模块所在页面
+            <em>// 跳转至目标testHar模块所在页面</em>
             this.pathStack.pushPathByName('CustomPage', null, false);
           });
       }.width('100%').height('100%')
@@ -119,7 +119,7 @@ export struct CustomPage {
       .justifyContent(FlexAlign.Center)
       .onClick(() => {
         try {
-          this.pathStack.pushPathByName('Page', null, false); // 跳转到HAP下的页面
+          this.pathStack.pushPathByName('Page', null, false); <em>// 跳转到HAP下的页面</em>
         } catch (error) {
           console.error(`Failed to route. Code: ${error.code}, message:${error.message}`);
         }
@@ -180,7 +180,7 @@ struct RouterSolution {
       Button('ToHarPage', { stateEffect: true, type: ButtonType.Capsule })
         .width('80%')
         .onClick(() => {
-          // 跳转至目标testHar模块所在页面
+          <em>// 跳转至目标testHar模块所在页面</em>
           this.getUIContext().getRouter().pushNamedRoute({
             name: 'CustomPage'
           });

@@ -1,9 +1,9 @@
 # @ohos.app.ability.InsightIntentEntryExecutor (@InsightIntentEntry的意图执行基类)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-insightintententryexecutor
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供[@InsightIntentEntry](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-insightintentdecorator#insightintententry)装饰器的意图执行基类，必须与@InsightIntentEntry装饰器联合使用。
  
@@ -14,9 +14,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { InsightIntentEntryExecutor } from '@kit.AbilityKit';
@@ -24,20 +25,23 @@ import { InsightIntentEntryExecutor } from '@kit.AbilityKit';
  
   
 
-#### InsightIntentEntryExecutor&lt;T&gt;
+## InsightIntentEntryExecutor&lt;T&gt;
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
  
 **元服务API**：从API version 20开始，该接口支持在元服务中使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | executeMode | insightIntent.ExecuteMode | 否 | 否 | 表示意图执行模式。即拉起绑定的Ability组件时支持的执行模式。 |
@@ -48,9 +52,10 @@ import { InsightIntentEntryExecutor } from '@kit.AbilityKit';
  
   
 
-#### onExecute
+### onExecute
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onExecute(): Promise<insightIntent.IntentResult&lt;T&gt;>
  
@@ -58,6 +63,7 @@ onExecute(): Promise<insightIntent.IntentResult&lt;T&gt;>
  
 该接口的调用时机与意图执行模式的对应关系如下：
   
+
 | 意图执行模式 | 接口调用时机和顺序 |
 | --- | --- |
 | UI_ABILITY_FOREGROUND UIAbility前台模式 | - 若UIAbility冷启动，意图执行时UIAbility生命周期触发顺序：onCreate、onWindowStageCreate、onExecute、onForeground。 - 若UIAbility热启动，且启动时UIAbility处于后台，意图执行时UIAbility生命周期触发顺序：onNewWant、onExecute、onForeground。 - 若UIAbility热启动，且启动时UIAbility处于前台，意图执行时UIAbility生命周期触发顺序：onExecute。 |
@@ -71,6 +77,7 @@ onExecute(): Promise<insightIntent.IntentResult&lt;T&gt;>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<insightIntent.IntentResult&lt;T&gt;> | Promise对象。返回insightIntent.IntentResult&lt;T&gt;对象，表示意图执行结果。 |

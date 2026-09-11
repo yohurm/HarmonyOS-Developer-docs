@@ -1,13 +1,14 @@
 # native_audiostreambuilder.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-audiostreambuilder-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明音频流构造器相关接口。
  
@@ -25,16 +26,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_AudioStream_Result OH_AudioStreamBuilder_Create(OH_AudioStreamBuilder** builder, OH_AudioStream_Type type) | 创建一个输入或者输出类型的音频流构造器。 当构造器不再使用时，需要调用OH_AudioStreamBuilder_Destroy销毁。 |
@@ -69,22 +73,24 @@
 | OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererFastStatusChangeCallback(OH_AudioStreamBuilder* builder, OH_AudioRenderer_OnFastStatusChange callback, void* userData) | 设置音频播放过程中低时延状态改变事件的回调函数。 |
 | OH_AudioStream_Result OH_AudioStreamBuilder_SetCapturerFastStatusChangeCallback(OH_AudioStreamBuilder* builder, OH_AudioCapturer_OnFastStatusChange callback, void* userData) | 设置音频录制过程中低时延状态改变事件的回调函数。 |
 | OH_AudioStream_Result OH_AudioStreamBuilder_SetCapturerLoopbackEffectEnabled(OH_AudioStreamBuilder* builder, bool enabled) | 设置音频录制流是否采集带音频混响效果的音频数据。当音频环回设置为硬件模式并启用混响效果时，低时延模式的采集器可以获取到具备混响效果的录音数据。 |
-| OH_AudioStream_Result OH_AudioStreamBuilder_SetPlaybackCaptureMode(OH_AudioStreamBuilder* builder, uint32_t mode) | 在使用内录（录制设备内部应用的声音）时设置可以录制的音频模式，该模式将决定要录制的音频流类型。此功能仅适用于AudioStream_Type_Capturer类型。该API暂不对外支持。 |
+| OH_AudioStream_Result OH_AudioStreamBuilder_SetPlaybackCaptureMode(OH_AudioStreamBuilder* builder, uint32_t mode) | 在使用内录（录制设备内部应用的声音）时设置可以录制的音频模式，该模式将决定要录制的音频流类型。此功能仅适用于AudioStream_Type_Capturer类型。该API最初仅对特定系统应用可用，从API版本26.0.0开始，支持任意应用使用。 |
 | OH_AudioStream_Result OH_AudioStreamBuilder_SetSensitiveRecordPermitCallback(OH_AudioStreamBuilder* builder, OH_AudioCapturer_SensitiveRecordPermitCallback callback, void* userData) | 设置蜂窝通话下行录音风险提示语播放结束的回调函数。仅在使用OH_AudioStream_SourceType.AUDIOSTREAM_SOURCE_TYPE_VOICE_DOWNLINK录制时需要设置此函数。此回调必须成功设置，否则采集器无法创建。音频采集器创建后，风险提示语将自动添加到发送给通话对方的语音数据中。应用应等待回调结果后再启动采集器，否则OH_AudioCapturer_Start将返回错误。请确保音频采集器在蜂窝通话开始后创建，否则OH_AudioStreamBuilder_GenerateCapturer将返回错误。 |
 | OH_AudioStream_Result OH_AudioStreamBuilder_SetCellularRecordSecurityParams(OH_AudioStreamBuilder* builder, const char* cellularRecordPhoneNum, const char* cellularRecordToken) | 设置蜂窝通话下行录音的电话号码和安全令牌。仅在使用OH_AudioStream_SourceType.AUDIOSTREAM_SOURCE_TYPE_VOICE_DOWNLINK录制时需要设置此函数。电话号码和安全令牌将用于校验蜂窝通话下行采集器是否匹配对应的蜂窝通话，必须成功设置，否则采集器无法创建。 |
  
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AudioStreamBuilder_Create()
+### OH_AudioStreamBuilder_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioStreamBuilder_Create(OH_AudioStreamBuilder** builder, OH_AudioStream_Type type)
@@ -100,6 +106,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_Create(OH_AudioStreamBuilder** build
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamBuilder** builder | 用于接收创建的构造器实例。 |
@@ -108,6 +115,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_Create(OH_AudioStreamBuilder** build
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 |
@@ -115,9 +123,10 @@ OH_AudioStream_Result OH_AudioStreamBuilder_Create(OH_AudioStreamBuilder** build
  
   
 
-#### OH_AudioStreamBuilder_Destroy()
+### OH_AudioStreamBuilder_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioStreamBuilder_Destroy(OH_AudioStreamBuilder* builder)
@@ -133,6 +142,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_Destroy(OH_AudioStreamBuilder* build
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamBuilder* builder | 指向OH_AudioStreamBuilder_Create创建的构造器实例。 |
@@ -140,6 +150,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_Destroy(OH_AudioStreamBuilder* build
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数builder为nullptr。 AUDIOSTREAM_ERROR_ILLEGAL_STATE：执行状态异常。 |
@@ -147,9 +158,10 @@ OH_AudioStream_Result OH_AudioStreamBuilder_Destroy(OH_AudioStreamBuilder* build
  
   
 
-#### OH_AudioStreamBuilder_SetSamplingRate()
+### OH_AudioStreamBuilder_SetSamplingRate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioStreamBuilder_SetSamplingRate(OH_AudioStreamBuilder* builder, int32_t rate)
@@ -163,6 +175,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetSamplingRate(OH_AudioStreamBuilde
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamBuilder* builder | 指向OH_AudioStreamBuilder_Create创建的构造器实例。 |
@@ -171,6 +184,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetSamplingRate(OH_AudioStreamBuilde
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM： 1. 参数builder为nullptr； 2. 参数rate无效。 |
@@ -178,9 +192,10 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetSamplingRate(OH_AudioStreamBuilde
  
   
 
-#### OH_AudioStreamBuilder_SetChannelCount()
+### OH_AudioStreamBuilder_SetChannelCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioStreamBuilder_SetChannelCount(OH_AudioStreamBuilder* builder, int32_t channelCount)
@@ -194,6 +209,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetChannelCount(OH_AudioStreamBuilde
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamBuilder* builder | 指向OH_AudioStreamBuilder_Create创建的构造器实例。 |
@@ -202,6 +218,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetChannelCount(OH_AudioStreamBuilde
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM： 1. 参数builder为nullptr； 2. 参数channelCount无效。 |
@@ -209,9 +226,10 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetChannelCount(OH_AudioStreamBuilde
  
   
 
-#### OH_AudioStreamBuilder_SetSampleFormat()
+### OH_AudioStreamBuilder_SetSampleFormat()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioStreamBuilder_SetSampleFormat(OH_AudioStreamBuilder* builder,OH_AudioStream_SampleFormat format)
@@ -225,6 +243,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetSampleFormat(OH_AudioStreamBuilde
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamBuilder* builder | 指向OH_AudioStreamBuilder_Create创建的构造器实例。 |
@@ -233,6 +252,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetSampleFormat(OH_AudioStreamBuilde
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数builder为nullptr。 |
@@ -240,9 +260,10 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetSampleFormat(OH_AudioStreamBuilde
  
   
 
-#### OH_AudioStreamBuilder_SetEncodingType()
+### OH_AudioStreamBuilder_SetEncodingType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioStreamBuilder_SetEncodingType(OH_AudioStreamBuilder* builder,OH_AudioStream_EncodingType encodingType)
@@ -256,6 +277,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetEncodingType(OH_AudioStreamBuilde
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamBuilder* builder | 指向OH_AudioStreamBuilder_Create创建的构造器实例。 |
@@ -264,6 +286,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetEncodingType(OH_AudioStreamBuilde
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数builder为nullptr。 |
@@ -271,9 +294,10 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetEncodingType(OH_AudioStreamBuilde
  
   
 
-#### OH_AudioStreamBuilder_SetLatencyMode()
+### OH_AudioStreamBuilder_SetLatencyMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioStreamBuilder_SetLatencyMode(OH_AudioStreamBuilder* builder,OH_AudioStream_LatencyMode latencyMode)
@@ -287,6 +311,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetLatencyMode(OH_AudioStreamBuilder
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamBuilder* builder | 指向OH_AudioStreamBuilder_Create创建的构造器实例。 |
@@ -295,6 +320,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetLatencyMode(OH_AudioStreamBuilder
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数builder为nullptr。 |
@@ -302,9 +328,10 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetLatencyMode(OH_AudioStreamBuilder
  
   
 
-#### OH_AudioStreamBuilder_SetChannelLayout()
+### OH_AudioStreamBuilder_SetChannelLayout()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioStreamBuilder_SetChannelLayout(OH_AudioStreamBuilder* builder,OH_AudioChannelLayout channelLayout)
@@ -318,6 +345,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetChannelLayout(OH_AudioStreamBuild
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamBuilder* builder | 指向OH_AudioStreamBuilder_Create创建的构造器实例。 |
@@ -326,6 +354,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetChannelLayout(OH_AudioStreamBuild
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数builder为nullptr。 |
@@ -333,9 +362,10 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetChannelLayout(OH_AudioStreamBuild
  
   
 
-#### OH_AudioStreamBuilder_SetRendererInfo()
+### OH_AudioStreamBuilder_SetRendererInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererInfo(OH_AudioStreamBuilder* builder,OH_AudioStream_Usage usage)
@@ -349,6 +379,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererInfo(OH_AudioStreamBuilde
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamBuilder* builder | 指向OH_AudioStreamBuilder_Create创建的构造器实例。 |
@@ -357,6 +388,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererInfo(OH_AudioStreamBuilde
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM： 1. 参数builder为nullptr； 2. 参数usage无效。 |
@@ -364,9 +396,10 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererInfo(OH_AudioStreamBuilde
  
   
 
-#### OH_AudioStreamBuilder_SetVolumeMode()
+### OH_AudioStreamBuilder_SetVolumeMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioStreamBuilder_SetVolumeMode(OH_AudioStreamBuilder* builder,OH_AudioStream_VolumeMode volumeMode)
@@ -380,6 +413,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetVolumeMode(OH_AudioStreamBuilder*
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamBuilder* builder | 指向OH_AudioStreamBuilder_Create创建的构造器实例。 |
@@ -388,6 +422,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetVolumeMode(OH_AudioStreamBuilder*
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM： 1. 参数builder为nullptr； 2. 参数volumeMode无效。 |
@@ -395,9 +430,10 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetVolumeMode(OH_AudioStreamBuilder*
  
   
 
-#### OH_AudioStreamBuilder_SetCapturerInfo()
+### OH_AudioStreamBuilder_SetCapturerInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioStreamBuilder_SetCapturerInfo(OH_AudioStreamBuilder* builder,OH_AudioStream_SourceType sourceType)
@@ -411,6 +447,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetCapturerInfo(OH_AudioStreamBuilde
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamBuilder* builder | 指向OH_AudioStreamBuilder_Create创建的构造器实例。 |
@@ -419,6 +456,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetCapturerInfo(OH_AudioStreamBuilde
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM： 1. 参数builder为nullptr； 2. 参数sourceType无效。 |
@@ -426,9 +464,10 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetCapturerInfo(OH_AudioStreamBuilde
  
   
 
-#### OH_AudioStreamBuilder_SetRendererCallback()
+### OH_AudioStreamBuilder_SetRendererCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererCallback(OH_AudioStreamBuilder* builder,OH_AudioRenderer_Callbacks callbacks, void* userData)
@@ -450,6 +489,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererCallback(OH_AudioStreamBu
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamBuilder* builder | 指向OH_AudioStreamBuilder_Create创建的构造器实例。 |
@@ -459,6 +499,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererCallback(OH_AudioStreamBu
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM： 1. 参数builder为nullptr； 2. StreamType无效。 |
@@ -466,9 +507,10 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererCallback(OH_AudioStreamBu
  
   
 
-#### OH_AudioStreamBuilder_SetRendererOutputDeviceChangeCallback()
+### OH_AudioStreamBuilder_SetRendererOutputDeviceChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererOutputDeviceChangeCallback(OH_AudioStreamBuilder* builder,OH_AudioRenderer_OutputDeviceChangeCallback callback, void* userData)
@@ -482,6 +524,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererOutputDeviceChangeCallbac
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamBuilder* builder | 指向OH_AudioStreamBuilder_Create创建的构造器实例。 |
@@ -491,6 +534,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererOutputDeviceChangeCallbac
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM： 1. 参数builder为nullptr； 2. StreamType无效。 |
@@ -498,9 +542,10 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererOutputDeviceChangeCallbac
  
   
 
-#### OH_AudioStreamBuilder_SetRendererPrivacy()
+### OH_AudioStreamBuilder_SetRendererPrivacy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererPrivacy(OH_AudioStreamBuilder* builder,OH_AudioStream_PrivacyType privacy)
@@ -514,6 +559,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererPrivacy(OH_AudioStreamBui
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamBuilder* builder | 指向OH_AudioStreamBuilder_Create创建的构造器实例。 |
@@ -522,6 +568,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererPrivacy(OH_AudioStreamBui
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM： 1. 参数builder为nullptr； 2. StreamType无效。 |
@@ -529,9 +576,10 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererPrivacy(OH_AudioStreamBui
  
   
 
-#### OH_AudioStreamBuilder_SetCapturerCallback()
+### OH_AudioStreamBuilder_SetCapturerCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioStreamBuilder_SetCapturerCallback(OH_AudioStreamBuilder* builder,OH_AudioCapturer_Callbacks callbacks, void* userData)
@@ -553,6 +601,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetCapturerCallback(OH_AudioStreamBu
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamBuilder* builder | 指向OH_AudioStreamBuilder_Create创建的构造器实例。 |
@@ -562,6 +611,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetCapturerCallback(OH_AudioStreamBu
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM： 1. 参数builder为nullptr； 2. StreamType无效。 |
@@ -569,9 +619,10 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetCapturerCallback(OH_AudioStreamBu
  
   
 
-#### OH_AudioStreamBuilder_SetWriteDataWithMetadataCallback()
+### OH_AudioStreamBuilder_SetWriteDataWithMetadataCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioStreamBuilder_SetWriteDataWithMetadataCallback(OH_AudioStreamBuilder* builder,OH_AudioRenderer_WriteDataWithMetadataCallback callback, void* userData)
@@ -585,6 +636,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetWriteDataWithMetadataCallback(OH_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamBuilder* builder | 指向OH_AudioStreamBuilder_Create创建的构造器实例。 |
@@ -594,6 +646,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetWriteDataWithMetadataCallback(OH_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM： 1. 参数builder为nullptr； 2. StreamType无效。 |
@@ -601,9 +654,10 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetWriteDataWithMetadataCallback(OH_
  
   
 
-#### OH_AudioStreamBuilder_GenerateRenderer()
+### OH_AudioStreamBuilder_GenerateRenderer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioStreamBuilder_GenerateRenderer(OH_AudioStreamBuilder* builder,OH_AudioRenderer** audioRenderer)
@@ -617,6 +671,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_GenerateRenderer(OH_AudioStreamBuild
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamBuilder* builder | 指向OH_AudioStreamBuilder_Create创建的构造器实例。 |
@@ -625,6 +680,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_GenerateRenderer(OH_AudioStreamBuild
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM： 1. 参数builder为nullptr； 2. StreamType无效； 3. 创建OHAudioRenderer失败。 |
@@ -632,9 +688,10 @@ OH_AudioStream_Result OH_AudioStreamBuilder_GenerateRenderer(OH_AudioStreamBuild
  
   
 
-#### OH_AudioStreamBuilder_GenerateCapturer()
+### OH_AudioStreamBuilder_GenerateCapturer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioStreamBuilder_GenerateCapturer(OH_AudioStreamBuilder* builder,OH_AudioCapturer** audioCapturer)
@@ -648,6 +705,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_GenerateCapturer(OH_AudioStreamBuild
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamBuilder* builder | 指向OH_AudioStreamBuilder_Create创建的构造器实例。 |
@@ -656,6 +714,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_GenerateCapturer(OH_AudioStreamBuild
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM： 1. 参数builder为nullptr； 2. StreamType无效； 3. 创建OHAudioCapturer失败。 |
@@ -663,9 +722,10 @@ OH_AudioStream_Result OH_AudioStreamBuilder_GenerateCapturer(OH_AudioStreamBuild
  
   
 
-#### OH_AudioStreamBuilder_SetFrameSizeInCallback()
+### OH_AudioStreamBuilder_SetFrameSizeInCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioStreamBuilder_SetFrameSizeInCallback(OH_AudioStreamBuilder* builder,int32_t frameSize)
@@ -683,6 +743,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetFrameSizeInCallback(OH_AudioStrea
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamBuilder* builder | 指向OH_AudioStreamBuilder_Create创建的构造器实例。 |
@@ -691,6 +752,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetFrameSizeInCallback(OH_AudioStrea
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数builder为nullptr。 |
@@ -698,9 +760,10 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetFrameSizeInCallback(OH_AudioStrea
  
   
 
-#### OH_AudioStreamBuilder_SetRendererInterruptMode()
+### OH_AudioStreamBuilder_SetRendererInterruptMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererInterruptMode(OH_AudioStreamBuilder* builder,OH_AudioInterrupt_Mode mode)
@@ -714,6 +777,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererInterruptMode(OH_AudioStr
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamBuilder* builder | 指向OH_AudioStreamBuilder_Create创建的构造器实例。 |
@@ -722,6 +786,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererInterruptMode(OH_AudioStr
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM： 1. 参数builder为nullptr； 2. 参数mode无效； 3. StreamType无效。 |
@@ -729,9 +794,10 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererInterruptMode(OH_AudioStr
  
   
 
-#### OH_AudioStreamBuilder_SetRendererWriteDataCallback()
+### OH_AudioStreamBuilder_SetRendererWriteDataCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererWriteDataCallback(OH_AudioStreamBuilder* builder,OH_AudioRenderer_OnWriteDataCallback callback, void* userData)
@@ -747,6 +813,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererWriteDataCallback(OH_Audi
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamBuilder* builder | 指向OH_AudioStreamBuilder_Create创建的构造器实例。 |
@@ -756,6 +823,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererWriteDataCallback(OH_Audi
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM： 1. 参数builder为nullptr； 2. StreamType无效。 |
@@ -763,9 +831,10 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererWriteDataCallback(OH_Audi
  
   
 
-#### OH_AudioStreamBuilder_SetRendererWriteDataCallbackAdvanced()
+### OH_AudioStreamBuilder_SetRendererWriteDataCallbackAdvanced()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererWriteDataCallbackAdvanced(OH_AudioStreamBuilder* builder,OH_AudioRenderer_OnWriteDataCallbackAdvanced callback, void* userData)
@@ -785,6 +854,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererWriteDataCallbackAdvanced
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamBuilder* builder | 指向OH_AudioStreamBuilder_Create创建的构造器实例。 |
@@ -794,6 +864,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererWriteDataCallbackAdvanced
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数非法，比如builder为空指针，等等。 |
@@ -801,9 +872,10 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererWriteDataCallbackAdvanced
  
   
 
-#### OH_AudioStreamBuilder_SetRendererInterruptCallback()
+### OH_AudioStreamBuilder_SetRendererInterruptCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererInterruptCallback(OH_AudioStreamBuilder* builder,OH_AudioRenderer_OnInterruptCallback callback, void* userData)
@@ -819,6 +891,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererInterruptCallback(OH_Audi
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamBuilder* builder | 指向OH_AudioStreamBuilder_Create创建的构造器实例。 |
@@ -828,6 +901,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererInterruptCallback(OH_Audi
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数无效，比如，builder为空指针。 |
@@ -835,9 +909,10 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererInterruptCallback(OH_Audi
  
   
 
-#### OH_AudioStreamBuilder_SetRendererErrorCallback()
+### OH_AudioStreamBuilder_SetRendererErrorCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererErrorCallback(OH_AudioStreamBuilder* builder,OH_AudioRenderer_OnErrorCallback callback, void* userData)
@@ -853,6 +928,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererErrorCallback(OH_AudioStr
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamBuilder* builder | 指向OH_AudioStreamBuilder_Create创建的构造器实例。 |
@@ -862,6 +938,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererErrorCallback(OH_AudioStr
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数无效，比如，builder为空指针。 |
@@ -869,9 +946,10 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererErrorCallback(OH_AudioStr
  
   
 
-#### OH_AudioStreamBuilder_SetCapturerReadDataCallback()
+### OH_AudioStreamBuilder_SetCapturerReadDataCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioStreamBuilder_SetCapturerReadDataCallback(OH_AudioStreamBuilder* builder,OH_AudioCapturer_OnReadDataCallback callback, void* userData)
@@ -887,6 +965,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetCapturerReadDataCallback(OH_Audio
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamBuilder* builder | 指向OH_AudioStreamBuilder_Create创建的构造器实例。 |
@@ -896,6 +975,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetCapturerReadDataCallback(OH_Audio
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数无效，比如，builder为空指针。 |
@@ -903,9 +983,10 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetCapturerReadDataCallback(OH_Audio
  
   
 
-#### OH_AudioStreamBuilder_SetCapturerDeviceChangeCallback()
+### OH_AudioStreamBuilder_SetCapturerDeviceChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioStreamBuilder_SetCapturerDeviceChangeCallback(OH_AudioStreamBuilder* builder,OH_AudioCapturer_OnDeviceChangeCallback callback, void* userData)
@@ -921,6 +1002,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetCapturerDeviceChangeCallback(OH_A
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamBuilder* builder | 指向OH_AudioStreamBuilder_Create创建的构造器实例。 |
@@ -930,6 +1012,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetCapturerDeviceChangeCallback(OH_A
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数无效，比如，builder为空指针。 |
@@ -937,9 +1020,10 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetCapturerDeviceChangeCallback(OH_A
  
   
 
-#### OH_AudioStreamBuilder_SetCapturerInterruptCallback()
+### OH_AudioStreamBuilder_SetCapturerInterruptCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioStreamBuilder_SetCapturerInterruptCallback(OH_AudioStreamBuilder* builder,OH_AudioCapturer_OnInterruptCallback callback, void* userData)
@@ -955,6 +1039,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetCapturerInterruptCallback(OH_Audi
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamBuilder* builder | 指向OH_AudioStreamBuilder_Create创建的构造器实例。 |
@@ -964,6 +1049,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetCapturerInterruptCallback(OH_Audi
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数无效，比如，builder为空指针。 |
@@ -971,9 +1057,10 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetCapturerInterruptCallback(OH_Audi
  
   
 
-#### OH_AudioStreamBuilder_SetCapturerErrorCallback()
+### OH_AudioStreamBuilder_SetCapturerErrorCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioStreamBuilder_SetCapturerErrorCallback(OH_AudioStreamBuilder* builder,OH_AudioCapturer_OnErrorCallback callback, void* userData)
@@ -989,6 +1076,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetCapturerErrorCallback(OH_AudioStr
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamBuilder* builder | 指向OH_AudioStreamBuilder_Create创建的构造器实例。 |
@@ -998,6 +1086,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetCapturerErrorCallback(OH_AudioStr
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数无效，比如，builder为空指针。 |
@@ -1005,9 +1094,10 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetCapturerErrorCallback(OH_AudioStr
  
   
 
-#### OH_AudioStreamBuilder_SetCapturerWillMuteWhenInterrupted()
+### OH_AudioStreamBuilder_SetCapturerWillMuteWhenInterrupted()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioStreamBuilder_SetCapturerWillMuteWhenInterrupted(OH_AudioStreamBuilder* builder,bool muteWhenInterrupted)
@@ -1021,6 +1111,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetCapturerWillMuteWhenInterrupted(O
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamBuilder* builder | 指向OH_AudioStreamBuilder_Create创建的构造器实例。 |
@@ -1029,6 +1120,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetCapturerWillMuteWhenInterrupted(O
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数无效，比如，builder为空指针。 |
@@ -1036,9 +1128,10 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetCapturerWillMuteWhenInterrupted(O
  
   
 
-#### OH_AudioStreamBuilder_SetRendererFastStatusChangeCallback()
+### OH_AudioStreamBuilder_SetRendererFastStatusChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererFastStatusChangeCallback(OH_AudioStreamBuilder* builder,OH_AudioRenderer_OnFastStatusChange callback, void* userData)
@@ -1052,6 +1145,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererFastStatusChangeCallback(
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamBuilder* builder | 指向OH_AudioStreamBuilder_Create创建的构造器实例。 |
@@ -1061,6 +1155,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererFastStatusChangeCallback(
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数无效，比如，builder为空指针。 |
@@ -1068,9 +1163,10 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetRendererFastStatusChangeCallback(
  
   
 
-#### OH_AudioStreamBuilder_SetCapturerFastStatusChangeCallback()
+### OH_AudioStreamBuilder_SetCapturerFastStatusChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioStreamBuilder_SetCapturerFastStatusChangeCallback(OH_AudioStreamBuilder* builder,OH_AudioCapturer_OnFastStatusChange callback, void* userData)
@@ -1084,6 +1180,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetCapturerFastStatusChangeCallback(
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamBuilder* builder | 指向OH_AudioStreamBuilder_Create创建的构造器实例。 |
@@ -1093,6 +1190,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetCapturerFastStatusChangeCallback(
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数无效，比如，builder为空指针。 |
@@ -1100,9 +1198,10 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetCapturerFastStatusChangeCallback(
  
   
 
-#### OH_AudioStreamBuilder_SetCapturerLoopbackEffectEnabled()
+### OH_AudioStreamBuilder_SetCapturerLoopbackEffectEnabled()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioStreamBuilder_SetCapturerLoopbackEffectEnabled(OH_AudioStreamBuilder* builder, bool enabled)
@@ -1116,6 +1215,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetCapturerLoopbackEffectEnabled(OH_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamBuilder* builder | 指向OH_AudioStreamBuilder_Create创建的构造器实例。 |
@@ -1124,6 +1224,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetCapturerLoopbackEffectEnabled(OH_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数无效。如builder为空指针。 |
@@ -1131,9 +1232,10 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetCapturerLoopbackEffectEnabled(OH_
  
   
 
-#### OH_AudioStreamBuilder_SetPlaybackCaptureMode()
+### OH_AudioStreamBuilder_SetPlaybackCaptureMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioStreamBuilder_SetPlaybackCaptureMode(OH_AudioStreamBuilder* builder, uint32_t mode)
@@ -1141,12 +1243,13 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetPlaybackCaptureMode(OH_AudioStrea
  
 **描述**
  
-在使用内录（录制设备内部应用的声音）时设置可以录制的音频模式，该模式将决定要录制的音频流类型。此功能仅适用于[AudioStream_Type_Capturer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-audiostream-base-h#oh_audiostream_type)类型。该API暂不对外支持。
+在使用内录（录制设备内部应用的声音）时设置可以录制的音频模式，该模式将决定要录制的音频流类型。此功能仅适用于[AudioStream_Type_Capturer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-audiostream-base-h#oh_audiostream_type)类型。该API最初仅对特定系统应用可用，从API版本26.0.0开始，支持任意应用使用。
  
 **起始版本：** 23
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamBuilder* builder | 指向OH_AudioStreamBuilder_Create创建的构造器实例。 |
@@ -1155,6 +1258,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetPlaybackCaptureMode(OH_AudioStrea
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数无效。例如，builder为空指针或mode值无效。 |
@@ -1162,9 +1266,10 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetPlaybackCaptureMode(OH_AudioStrea
  
   
 
-#### OH_AudioStreamBuilder_SetSensitiveRecordPermitCallback()
+### OH_AudioStreamBuilder_SetSensitiveRecordPermitCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioStreamBuilder_SetSensitiveRecordPermitCallback(OH_AudioStreamBuilder* builder, OH_AudioCapturer_SensitiveRecordPermitCallback callback, void* userData)
@@ -1178,6 +1283,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetSensitiveRecordPermitCallback(OH_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamBuilder* builder | 指向OH_AudioStreamBuilder_Create创建的构造器实例。 |
@@ -1187,6 +1293,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetSensitiveRecordPermitCallback(OH_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数builder或callback为空指针。 |
@@ -1194,9 +1301,10 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetSensitiveRecordPermitCallback(OH_
  
   
 
-#### OH_AudioStreamBuilder_SetCellularRecordSecurityParams()
+### OH_AudioStreamBuilder_SetCellularRecordSecurityParams()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioStream_Result OH_AudioStreamBuilder_SetCellularRecordSecurityParams(OH_AudioStreamBuilder* builder, const char* cellularRecordPhoneNum, const char* cellularRecordToken)
@@ -1210,6 +1318,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetCellularRecordSecurityParams(OH_A
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamBuilder* builder | 指向OH_AudioStreamBuilder_Create创建的构造器实例。 |
@@ -1219,6 +1328,7 @@ OH_AudioStream_Result OH_AudioStreamBuilder_SetCellularRecordSecurityParams(OH_A
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioStream_Result | AUDIOSTREAM_SUCCESS：函数执行成功。 AUDIOSTREAM_ERROR_INVALID_PARAM：参数builder、cellularRecordPhoneNum或cellularRecordToken为空指针。 |

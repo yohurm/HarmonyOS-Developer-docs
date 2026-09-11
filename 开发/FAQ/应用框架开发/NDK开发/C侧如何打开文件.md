@@ -23,8 +23,8 @@ struct Index {
 
   async open() {
     const photoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
-    photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE; // Filter and select media file type as IMAGE
-    photoSelectOptions.maxSelectNumber = 5; // Select the maximum number of media files
+    photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE; <em>// Filter and select media file type as IMAGE</em>
+    photoSelectOptions.maxSelectNumber = 5; <em>// Select the maximum number of media files</em>
     let uris: Array<string> = [];
     const photoViewPicker = new photoAccessHelper.PhotoViewPicker();
     await photoViewPicker.select(photoSelectOptions).then((photoSelectResult: photoAccessHelper.PhotoSelectResult) => {
@@ -75,11 +75,11 @@ static napi_value OpenFile(unsigned int fd, unsigned int fd2) {
     if (fd != -1) { 
         char buffer[4096]; 
         ssize_t bytesRead; 
-        // Read the file content into the buffer 
+      <em>  // Read the file content into the buffer </em>
         bytesRead = read(fd, buffer, sizeof(buffer)); 
         if (bytesRead == -1) { 
             OH_LOG_INFO(LOG_APP, "fail to read file"); 
-            close(fd); // Close file descriptor 
+            close(fd);<em> // Close file descriptor </em>
             return nullptr; 
         } 
         while (bytesRead != 0) { 
@@ -91,14 +91,14 @@ static napi_value OpenFile(unsigned int fd, unsigned int fd2) {
             bytesWrite = write(fd2, pData1, bytesRead); 
             if (bytesWrite == -1) { 
                 OH_LOG_INFO(LOG_APP, "Writing file failed"); 
-                close(fd2); // Close file descriptor 
+                close(fd2); <em>// Close file descriptor </em>
                 return nullptr; 
             } 
             bytesRead = read(fd, buffer, sizeof(buffer)); 
         } 
-        // Close file descriptor 
+       <em> // Close file descriptor </em>
         close(fd); 
-        close(fd2); // Close file descriptor 
+        close(fd2);<em> // Close file descriptor </em>
     } 
     return nullptr; 
 } 

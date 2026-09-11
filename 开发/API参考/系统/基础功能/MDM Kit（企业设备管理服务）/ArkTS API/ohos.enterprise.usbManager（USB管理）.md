@@ -1,6 +1,6 @@
 # @ohos.enterprise.usbManager（USB管理）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-usbmanager
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -12,7 +12,8 @@
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -22,13 +23,21 @@ import { usbManager } from '@kit.MDMKit';
 
 
 
-#### usbManager.addAllowedUsbDevices
+## usbManager.addAllowedUsbDevices
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 addAllowedUsbDevices(admin: Want, usbDeviceIds: Array&lt;UsbDeviceId&gt;): void
 
 添加USB设备可用名单。
+
+**使用场景**：
+
+ - 企业安全管理场景，需要限制只有特定的USB设备可以接入设备
+ - 设备管理员需要精确控制哪些USB设备能够被识别和使用
+ - 配合[removeAllowedUsbDevices](#usbmanagerremoveallowedusbdevices)接口实现USB设备的动态管理
+
 
 以下情况下，调用本接口会报策略冲突：
 1. 已经通过[setDisallowedPolicy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-restrictions#restrictionssetdisallowedpolicydeprecated)接口禁用了设备USB或者USB转串口能力。
@@ -46,6 +55,7 @@ addAllowedUsbDevices(admin: Want, usbDeviceIds: Array&lt;UsbDeviceId&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -55,6 +65,7 @@ addAllowedUsbDevices(admin: Want, usbDeviceIds: Array&lt;UsbDeviceId&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -91,13 +102,21 @@ try {
 
 
 
-#### usbManager.removeAllowedUsbDevices
+## usbManager.removeAllowedUsbDevices
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 removeAllowedUsbDevices(admin: Want, usbDeviceIds: Array&lt;UsbDeviceId&gt;): void
 
 移除USB设备可用名单。
+
+**使用场景**：
+
+ - 企业安全管理场景，需要撤销某些USB设备的访问权限
+ - 设备管理员需要动态调整允许使用的USB设备列表
+ - 当USB设备不再需要或存在安全风险时，从允许名单中移除
+
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_USB
 
@@ -109,6 +128,7 @@ removeAllowedUsbDevices(admin: Want, usbDeviceIds: Array&lt;UsbDeviceId&gt;): vo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -118,6 +138,7 @@ removeAllowedUsbDevices(admin: Want, usbDeviceIds: Array&lt;UsbDeviceId&gt;): vo
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -152,13 +173,16 @@ try {
 
 
 
-#### usbManager.getAllowedUsbDevices
+## usbManager.getAllowedUsbDevices
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
-getAllowedUsbDevices(admin: Want | null): Array&lt;UsbDeviceId&gt;
+getAllowedUsbDevices(admin: Want): Array&lt;UsbDeviceId&gt;
 
-获取USB设备可用名单。
+获取USB设备可用名单。一般使用场景：在修改策略前，需要先获取现有策略进行评估；管理界面需要展示当前的USB存储设备访问控制状态。
+
+本接口通过传入Want查询对应企业设备管理应用设置的策略，如需查询实际生效的策略，请使用[usbManager.getAllowedUsbDevices](#usbmanagergetallowedusbdevices-1)接口。
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_USB
 
@@ -168,12 +192,14 @@ getAllowedUsbDevices(admin: Want | null): Array&lt;UsbDeviceId&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 当设备存在多个MDM应用时，API版本26.0.0之前，传入Want时查询对应企业设备管理应用设置的策略。从API版本26.0.0开始，新增支持传入null时查询实际生效的策略。 |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -183,6 +209,7 @@ getAllowedUsbDevices(admin: Want | null): Array&lt;UsbDeviceId&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -213,7 +240,70 @@ try {
 
 
 
-#### usbManager.setUsbStorageDeviceAccessPolicy
+## usbManager.getAllowedUsbDevices
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
+
+getAllowedUsbDevices(admin: Want | null): Array&lt;UsbDeviceId&gt;
+
+获取USB设备可用名单。一般使用场景：在修改策略前，需要先获取现有策略进行评估；管理界面需要展示当前的USB存储设备访问控制状态。
+
+**起始版本：** 26.0.0
+
+**需要权限：** ohos.permission.ENTERPRISE_MANAGE_USB
+
+**系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 当设备存在多个MDM应用时，传入Want时查询对应企业设备管理应用设置的策略，传入null时查询实际生效的策略。 |
+
+
+**返回值：**
+
+
+| 类型 | 说明 |
+| --- | --- |
+| Array&lt;UsbDeviceId&gt; | USB设备可用名单的设备ID数组。 |
+
+
+**错误码**：
+
+以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
+
+**示例：**
+
+```json
+import { usbManager } from '@kit.MDMKit';
+
+try {
+  // 参数需根据实际情况进行替换
+  let result: Array<usbManager.UsbDeviceId> = usbManager.getAllowedUsbDevices(null);
+  console.info(`Succeeded in getting allowed USB devices. Result: ${JSON.stringify(result)}`);
+} catch (err) {
+  console.error(`Failed to get allowed USB devices. Code: ${err.code}, message: ${err.message}`);
+}
+```
+
+
+
+## usbManager.setUsbStorageDeviceAccessPolicy
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -247,9 +337,10 @@ setUsbStorageDeviceAccessPolicy(admin: Want, usbPolicy: UsbPolicy): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-**冲突规则：** [从严管控](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则1从严管控), 严格优先级： 禁用 > 只读 > 可读可写。
+**冲突规则：** [从严管控](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则1从严管控)，严格优先级： 禁用 > 只读 > 可读可写。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -260,6 +351,7 @@ setUsbStorageDeviceAccessPolicy(admin: Want, usbPolicy: UsbPolicy): void
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -293,13 +385,16 @@ try {
 
 
 
-#### usbManager.getUsbStorageDeviceAccessPolicy
+## usbManager.getUsbStorageDeviceAccessPolicy
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
-getUsbStorageDeviceAccessPolicy(admin: Want | null): UsbPolicy
+getUsbStorageDeviceAccessPolicy(admin: Want): UsbPolicy
 
 获取USB存储设备（baseClass = 0x08）访问策略。
+
+本接口通过传入Want查询对应企业设备管理应用设置的策略，如需查询实际生效的策略，请使用[usbManager.getUsbStorageDeviceAccessPolicy](#usbmanagergetusbstoragedeviceaccesspolicy-1)接口。
 
 **需要权限：**
 
@@ -313,21 +408,24 @@ getUsbStorageDeviceAccessPolicy(admin: Want | null): UsbPolicy
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 当设备存在多个MDM应用时，API版本26.0.0之前，传入Want时查询对应企业设备管理应用设置的策略。从API版本26.0.0开始，新增支持传入null时查询实际生效的策略。 |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| UsbPolicy | USB存储设备访问策略。 |
+| UsbPolicy | USB存储设备访问策略。设置为READ_WRITE表示允许读写USB存储设备；设置为READ_ONLY表示仅允许读取USB存储设备，禁止写入；设置为DISABLED表示完全禁止访问USB存储设备。 |
 
 
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -358,13 +456,76 @@ try {
 
 
 
-#### usbManager.addDisallowedUsbDevices14+
+## usbManager.getUsbStorageDeviceAccessPolicy
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
+
+getUsbStorageDeviceAccessPolicy(admin: Want | null): UsbPolicy
+
+获取USB存储设备（baseClass = 0x08）访问策略。
+
+**起始版本：** 26.0.0
+
+**需要权限：** ohos.permission.ENTERPRISE_MANAGE_USB 或者 ohos.permission.PERSONAL_MANAGE_RESTRICTIONS（应用调用[adminManager.startAdminProvision](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-adminmanager#adminmanagerstartadminprovision15)接口激活为自带设备管理应用）。
+
+**系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 当设备存在多个MDM应用时，传入Want时查询对应企业设备管理应用设置的策略，传入null时查询实际生效的策略。 |
+
+
+**返回值：**
+
+
+| 类型 | 说明 |
+| --- | --- |
+| UsbPolicy | USB存储设备访问策略。设置为READ_WRITE表示允许读写USB存储设备；设置为READ_ONLY表示仅允许读取USB存储设备，禁止写入；设置为DISABLED表示完全禁止访问USB存储设备。 |
+
+
+**错误码**：
+
+以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
+
+**示例：**
+
+```json
+import { usbManager } from '@kit.MDMKit';
+
+try {
+  // 参数需根据实际情况进行替换
+  let result: usbManager.UsbPolicy = usbManager.getUsbStorageDeviceAccessPolicy(null);
+  console.info(`Succeeded in getting USB storage device access policy. Result: ${JSON.stringify(result)}`);
+} catch (err) {
+  console.error(`Failed to get USB storage device access policy. Code: ${err.code}, message: ${err.message}`);
+}
+```
+
+
+
+## usbManager.addDisallowedUsbDevices14+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 addDisallowedUsbDevices(admin: Want, usbDevices: Array&lt;UsbDeviceType&gt;): void
 
-添加禁止使用的USB设备类型。
+添加禁止使用的USB设备类型。一般使用场景：企业安全管理场景，需要禁用特定类型的USB设备；防止数据泄露：禁用USB存储设备类型；设备管理员需要根据安全策略，禁止使用某些类型的USB设备；配合[removeDisallowedUsbDevices](#usbmanagerremovedisallowedusbdevices14)接口实现USB设备类型的动态管理。
 
 > [!NOTE]
 > 推荐使用 addDisallowedPermissiveUsbDevices 接口。
@@ -386,6 +547,7 @@ addDisallowedUsbDevices(admin: Want, usbDevices: Array&lt;UsbDeviceType&gt;): vo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -395,6 +557,7 @@ addDisallowedUsbDevices(admin: Want, usbDevices: Array&lt;UsbDeviceType&gt;): vo
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -432,13 +595,21 @@ try {
 
 
 
-#### usbManager.removeDisallowedUsbDevices14+
+## usbManager.removeDisallowedUsbDevices14+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 removeDisallowedUsbDevices(admin: Want, usbDevices: Array&lt;UsbDeviceType&gt;): void
 
 移除禁止使用的USB设备类型。
+
+**使用场景**：
+
+ - 企业安全管理场景，需要解除对某些USB设备类型的禁用
+ - 设备管理员需要动态调整禁止使用的USB设备类型列表
+ - 当某些USB设备类型不再存在安全风险时，从禁用名单中移除
+
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_USB
 
@@ -450,6 +621,7 @@ removeDisallowedUsbDevices(admin: Want, usbDevices: Array&lt;UsbDeviceType&gt;):
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -459,6 +631,7 @@ removeDisallowedUsbDevices(admin: Want, usbDevices: Array&lt;UsbDeviceType&gt;):
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -495,13 +668,16 @@ try {
 
 
 
-#### usbManager.getDisallowedUsbDevices14+
+## usbManager.getDisallowedUsbDevices14+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
-getDisallowedUsbDevices(admin: Want | null): Array&lt;UsbDeviceType&gt;
+getDisallowedUsbDevices(admin: Want): Array&lt;UsbDeviceType&gt;
 
-获取禁止使用的USB设备类型。
+获取禁止使用的USB设备类型。一般使用场景：设备管理员需要查看当前禁止使用的USB设备类型列表；在修改禁用名单前，需要先获取现有名单进行比对；管理界面需要展示当前的USB设备类型禁用策略配置。
+
+本接口通过传入Want查询对应企业设备管理应用设置的策略，如需查询实际生效的策略，请使用[usbManager.getDisallowedUsbDevices](#usbmanagergetdisallowedusbdevices)接口。
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_USB
 
@@ -511,12 +687,14 @@ getDisallowedUsbDevices(admin: Want | null): Array&lt;UsbDeviceType&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 当设备存在多个MDM应用时，API版本26.0.0之前，传入Want时查询对应企业设备管理应用设置的策略。从API版本26.0.0开始，新增支持传入null时查询实际生效的策略。 |
+| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -526,6 +704,7 @@ getDisallowedUsbDevices(admin: Want | null): Array&lt;UsbDeviceType&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -556,7 +735,70 @@ try {
 
 
 
-#### usbManager.addDisallowedPermissiveUsbDevices
+## usbManager.getDisallowedUsbDevices
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
+
+getDisallowedUsbDevices(admin: Want | null): Array&lt;UsbDeviceType&gt;
+
+获取禁止使用的USB设备类型。一般使用场景：设备管理员需要查看当前禁止使用的USB设备类型列表；在修改禁用名单前，需要先获取现有名单进行比对；管理界面需要展示当前的USB设备类型禁用策略配置。
+
+**起始版本：** 26.0.0
+
+**需要权限：** ohos.permission.ENTERPRISE_MANAGE_USB
+
+**系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 当设备存在多个MDM应用时，传入Want时查询对应企业设备管理应用设置的策略，传入null时查询实际生效的策略。 |
+
+
+**返回值：**
+
+
+| 类型 | 说明 |
+| --- | --- |
+| Array&lt;UsbDeviceType&gt; | 禁止使用的USB设备类型。 |
+
+
+**错误码**：
+
+以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
+
+**示例：**
+
+```json
+import { usbManager } from '@kit.MDMKit';
+
+try {
+  // 参数需根据实际情况进行替换
+  let result: Array<usbManager.UsbDeviceType> = usbManager.getDisallowedUsbDevices(null);
+  console.info(`Succeeded in getting disallowed USB devices. Result: ${JSON.stringify(result)}`);
+} catch (err) {
+  console.error(`Failed to get disallowed USB devices. Code: ${err.code}, message: ${err.message}`);
+}
+```
+
+
+
+## usbManager.addDisallowedPermissiveUsbDevices
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -582,6 +824,7 @@ addDisallowedPermissiveUsbDevices(admin: Want, usbDevices: Array&lt;PermissiveUs
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -591,6 +834,7 @@ addDisallowedPermissiveUsbDevices(admin: Want, usbDevices: Array&lt;PermissiveUs
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -644,7 +888,8 @@ try {
 
 
 
-#### usbManager.removeDisallowedPermissiveUsbDevices
+## usbManager.removeDisallowedPermissiveUsbDevices
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -664,6 +909,7 @@ removeDisallowedPermissiveUsbDevices(admin: Want, usbDevices: Array&lt;Permissiv
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -673,6 +919,7 @@ removeDisallowedPermissiveUsbDevices(admin: Want, usbDevices: Array&lt;Permissiv
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -706,7 +953,8 @@ try {
 
 
 
-#### usbManager.getDisallowedPermissiveUsbDevices
+## usbManager.getDisallowedPermissiveUsbDevices
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -724,12 +972,14 @@ getDisallowedPermissiveUsbDevices(admin: Want | null): Array&lt;PermissiveUsbDev
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。当取值为null时，表示获取当前设备禁止使用的USB设备类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -739,6 +989,7 @@ getDisallowedPermissiveUsbDevices(admin: Want | null): Array&lt;PermissiveUsbDev
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -768,13 +1019,17 @@ try {
 
 
 
-#### UsbDeviceId
+## UsbDeviceId
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 USB设备ID信息。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -784,7 +1039,8 @@ USB设备ID信息。
 
 
 
-#### UsbDeviceType14+
+## UsbDeviceType14+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -793,6 +1049,9 @@ USB设备类型信息。
 可通过[getDevices](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-usbmanager#usbmanagergetdevices)接口获取已接入主设备的USB设备列表，并从返回值列表中查找当前设备的类型信息。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -804,13 +1063,17 @@ USB设备类型信息。
 
 
 
-#### UsbPolicy
+## UsbPolicy
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 USB读写策略的枚举。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -821,13 +1084,17 @@ USB读写策略的枚举。
 
 
 
-#### Descriptor14+
+## Descriptor14+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 USB存储设备访问策略的枚举。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -837,7 +1104,8 @@ USB存储设备访问策略的枚举。
 
 
 
-#### PermissiveUsbDeviceType
+## PermissiveUsbDeviceType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -852,6 +1120,9 @@ USB设备类型信息，支持部分字段匹配。
 **起始版本：** 26.0.0
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

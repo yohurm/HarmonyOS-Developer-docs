@@ -51,16 +51,16 @@ struct FullWidthSlider {
       Column() {
         Slider({
           value: $$this.sliderValue,
-          style: SliderStyle.OutSet // 保持OutSet样式
+          style: SliderStyle.OutSet <em>// 保持OutSet样式</em>
         })
           .blockSize({ width: this.blockSize, height: this.blockSize })
-          .width(this.deviceWidth + this.blockSize) // 父容器宽度与滑块大小之和，即为Slider的宽度
+          .width(this.deviceWidth + this.blockSize) <em>// 父容器宽度与滑块大小之和，即为Slider的宽度</em>
           .onChange(() => {
             this.blockSize = (this.sliderValue + 10) / 2;
           });
       }
       .onAreaChange((_, newArea) => {
-        this.deviceWidth = newArea.width as number; // 获取父容器宽度
+        this.deviceWidth = newArea.width as number;<em> // 获取父容器宽度</em>
       })
       .width('100%');
     }

@@ -1,9 +1,9 @@
 # 动态SymbolGlyphModifier属性设置
 
-更新时间：2026-07-28 11:23:46（官网已下线）
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-symbolglyphmodifier
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 SymbolGlyphModifier用于动态设置SymbolGlyph组件的属性和样式，支持使用if/else语句根据条件动态调整组件样式，适用于需要根据应用状态或用户交互动态改变图标外观的场景。[SymbolGlyph](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-symbolglyph)是一个用于展示图标符号的组件。
  
@@ -12,9 +12,10 @@ SymbolGlyphModifier用于动态设置SymbolGlyph组件的属性和样式，支�
 
   
 
-#### SymbolGlyphModifier
+## SymbolGlyphModifier
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义SymbolGlyphModifier。
  
@@ -24,9 +25,10 @@ SymbolGlyphModifier用于动态设置SymbolGlyph组件的属性和样式，支�
  
   
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(src?: Resource)
  
@@ -38,6 +40,7 @@ SymbolGlyphModifier的构造函数。
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | src | Resource | 否 | 设置SymbolGlyph组件要展示的符号图标资源。不传入时不加载任何资源。 |
@@ -45,9 +48,10 @@ SymbolGlyphModifier的构造函数。
  
   
 
-#### applyNormalAttribute
+### applyNormalAttribute
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 applyNormalAttribute?(instance: SymbolGlyphAttribute): void
  
@@ -59,6 +63,7 @@ applyNormalAttribute?(instance: SymbolGlyphAttribute): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | instance | SymbolGlyphAttribute | 是 | SymbolGlyphAttribute对象实例，用于动态设置SymbolGlyph组件的属性和样式。 |
@@ -66,9 +71,10 @@ applyNormalAttribute?(instance: SymbolGlyphAttribute): void
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[SymbolGlyphModifier](#symbolglyphmodifier)和TextInput组件的[cancelButton](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textinput#cancelbutton18)属性展示了自定义右侧symbol类型清除按钮样式的效果。
  
@@ -97,4 +103,4 @@ struct Index {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/OqsoLaLATCiAGpW-46P3rQ/zh-cn_image_0000002685928045.png?HW-CC-KV=V1&HW-CC-Date=20260730T071755Z&HW-CC-Expire=86400&HW-CC-Sign=CA9BFF52C5F34CFB2B985F8EBBD5A92C50C06BEB361B74A613AE38C272C98176)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/TBwjK_9KRqKo21CrPlP3sA/zh-cn_image_0000002717612582.png?HW-CC-KV=V1&HW-CC-Date=20260911T073123Z&HW-CC-Expire=86400&HW-CC-Sign=072FAC4F3B117B65FA62329688C7B43618345A5964B287BD7B3EDF65DC07362A)

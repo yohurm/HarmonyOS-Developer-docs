@@ -1,6 +1,6 @@
 # Print_PageSize
 
-更新时间：2026-04-03 09:39:20
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-print-print-pagesize
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -10,11 +10,12 @@ typedef struct {...} Print_PageSize
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
-表示纸张尺寸信息。
+Print_PageSize用于表示打印任务中的纸张尺寸信息，包含纸张 ID、名称、宽度与高度等关键属性，适用于需要在打印配置流程中指定或查询纸张规格的场景。
  
 **起始版本：** 12
  
@@ -24,19 +25,22 @@ typedef struct {...} Print_PageSize
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
-| char *id | 纸张 ID。 |
-| char *name | 纸张名称。 |
-| uint32_t width | 纸张宽度，单位：毫米。 |
-| uint32_t height | 纸张高度，单位：毫米。 |
+| char *id | 纸张尺寸的唯一标识 ID，用于区分不同标准纸张规格。 |
+| char *name | 纸张尺寸的名称，如"A4"、"Letter"等标准纸张规格。 |
+| uint32_t width | 纸张宽度，单位：密尔（千分之一英寸）。取值原则：大于0。 |
+| uint32_t height | 纸张高度，单位：密尔（千分之一英寸）。取值原则：大于0。 |

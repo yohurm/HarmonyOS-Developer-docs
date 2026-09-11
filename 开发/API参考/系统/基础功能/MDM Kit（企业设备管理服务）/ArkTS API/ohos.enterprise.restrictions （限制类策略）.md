@@ -1,18 +1,41 @@
 # @ohos.enterprise.restrictions（限制类策略）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-restrictions
 **支持设备：** Phone | PC/2in1 | Tablet
 
 本模块提供设置通用限制类策略能力。可以全局禁用和解除禁用蓝牙、HDC、USB、Wi-Fi、蜂窝数据、相机、麦克风等特性。
 
+**使用场景**：
+
+ - 企业设备管理场景下，管理员需要对员工设备进行功能限制，防止数据泄露或非授权使用。
+ - BYOD（Bring Your Own Device）场景下，企业空间需要限制设备功能以符合企业安全策略。
+ - 设备安全管控场景下，需要禁用特定功能以保护企业敏感信息。
+
+
+**能解决的问题**：
+
+ - 防止员工通过蓝牙、USB等方式传输企业敏感数据。
+ - 限制设备调试能力（HDC）以提升设备安全性。
+ - 控制网络访问能力（Wi-Fi、蜂窝数据等）以符合企业网络策略。
+ - 管理设备多媒体能力（相机、麦克风等）以保护隐私和企业机密。
+
+
+**带来的收益**：
+
+ - 提升企业设备安全性，降低数据泄露风险。
+ - 满足企业合规要求，符合安全审计标准。
+ - 实现精细化的设备功能管控，平衡安全与使用体验。
+
+
 > [!NOTE]
 > 本模块首批接口从API version 12 开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 本模块接口仅可在Stage模型下使用。 本模块接口仅对设备管理应用开放，且调用接口前需激活设备管理应用，具体请参考 MDM Kit开发指南 。
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -22,13 +45,18 @@ import { restrictions } from '@kit.MDMKit';
 
 
 
-#### restrictions.setDisallowedPolicy(deprecated)
+## restrictions.setDisallowedPolicy(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 setDisallowedPolicy(admin: Want, feature: string, disallow: boolean): void
 
 设置禁用/启用某特性。
+
+> [!NOTE]
+> 本接口为设备级禁用策略，影响设备所有用户。如需针对特定用户设置禁用策略，请使用 setDisallowedPolicyForAccount 接口。
+
 
 **起始版本：** 12
 
@@ -38,6 +66,12 @@ setDisallowedPolicy(admin: Want, feature: string, disallow: boolean): void
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_RESTRICTIONS 或者 ohos.permission.PERSONAL_MANAGE_RESTRICTIONS15+ 或者 ohos.permission.ENTERPRISE_MANAGE_NETWORK（设置不同特性所需权限不同，具体请参考表1）
 
+- 从API version 20开始，支持申请ohos.permission.ENTERPRISE_MANAGE_NETWORK权限。
+
+- 从API version 15开始，支持申请ohos.permission.PERSONAL_MANAGE_RESTRICTIONS权限。
+
+- API version 14及之前的版本，需要申请ohos.permission.ENTERPRISE_MANAGE_RESTRICTIONS权限。
+
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -45,6 +79,7 @@ setDisallowedPolicy(admin: Want, feature: string, disallow: boolean): void
 **冲突规则：** [从严管控](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则1从严管控)。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -54,6 +89,7 @@ setDisallowedPolicy(admin: Want, feature: string, disallow: boolean): void
 
 
 **表1 支持设置的特性清单：**
+
 
 | 特性 | 说明 | 需要权限 |
 | --- | --- | --- |
@@ -68,7 +104,7 @@ setDisallowedPolicy(admin: Want, feature: string, disallow: boolean): void
 | tethering14+ | 网络共享能力（设备已有网络共享给其他设备的能力，即共享热点能力）。 | ohos.permission.ENTERPRISE_MANAGE_RESTRICTIONS 或 ohos.permission.PERSONAL_MANAGE_RESTRICTIONS |
 | inactiveUserFreeze14+ | 非活跃用户运行能力。禁用后，非UIAbility进程一般不会被冻结，UIAbility申请短时任务、长时任务、延迟任务或能效资源等后台运行任务也不会被冻结。当前仅支持PC/2in1设备使用。企业空间场景下，系统切换到企业空间用户，个人空间用户属于非活跃用户。 | ohos.permission.ENTERPRISE_MANAGE_RESTRICTIONS |
 | camera14+ | 设备相机能力。 | ohos.permission.ENTERPRISE_MANAGE_RESTRICTIONS 或 ohos.permission.PERSONAL_MANAGE_RESTRICTIONS |
-| mtpClient18+ | MTP客户端能力（包含读取和写入），当前仅支持PC/2in1设备使用。MTP（MediaTransferProtocol，媒体传输协议），该协议允许用户在移动设备上线性访问媒体文件。当已经通过setDisallowedPolicyForAccount设置了某用户禁用MTP客户端写入能力时，再通过本接口禁用MTP客户端能力，会报策略冲突。 | ohos.permission.ENTERPRISE_MANAGE_RESTRICTIONS |
+| mtpClient18+ | MTP客户端能力（包含读取和写入），当前仅支持PC/2in1设备使用。在配置此特性之前，此设备必须通过HEM商用部署。MTP（Media Transfer Protocol，媒体传输协议），该协议允许用户在移动设备上线性访问媒体文件。当已经通过setDisallowedPolicyForAccount设置了某用户禁用MTP客户端写入能力时，再通过本接口禁用MTP客户端能力，会报策略冲突。 | ohos.permission.ENTERPRISE_MANAGE_RESTRICTIONS |
 | mtpServer18+ | MTP服务端能力，当前仅支持手机、平板设备使用。 | API版本26.0.0之前：ohos.permission.ENTERPRISE_MANAGE_RESTRICTIONS，API版本26.0.0开始：ohos.permission.ENTERPRISE_MANAGE_RESTRICTIONS 或 ohos.permission.PERSONAL_MANAGE_RESTRICTIONS |
 | sambaClient20+ | samba客户端能力，当前仅支持PC/2in1设备使用。samba是在Linux和UNIX系统上实现SMB协议的一个免费软件，由服务器及客户端程序构成。SMB（Server Message Block，信息服务块）是一种在局域网上共享文件和打印机的一种通信协议，它为局域网内的不同计算机之间提供文件及打印机等资源的共享服务。SMB协议是客户机/服务器型协议，客户机通过该协议可以访问服务器上的共享文件系统、打印机及其他资源。 | ohos.permission.ENTERPRISE_MANAGE_RESTRICTIONS |
 | sambaServer20+ | samba服务端能力，当前仅支持PC/2in1设备使用。 | ohos.permission.ENTERPRISE_MANAGE_RESTRICTIONS |
@@ -105,6 +141,7 @@ setDisallowedPolicy(admin: Want, feature: string, disallow: boolean): void
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 9200001 | The application is not an administrator application of the device. |
@@ -136,7 +173,8 @@ try {
 
 
 
-#### restrictions.getDisallowedPolicy(deprecated)
+## restrictions.getDisallowedPolicy(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -152,19 +190,27 @@ getDisallowedPolicy(admin: Want | null, feature: string): boolean
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_RESTRICTIONS 或者 ohos.permission.PERSONAL_MANAGE_RESTRICTIONS15+ 或者 ohos.permission.ENTERPRISE_MANAGE_NETWORK（查询不同特性所需权限不同，具体请参考表2）
 
+- 从API version 20开始，支持申请ohos.permission.ENTERPRISE_MANAGE_NETWORK权限。
+
+- 从API version 15开始，支持申请ohos.permission.PERSONAL_MANAGE_RESTRICTIONS权限。
+
+- API version 14及之前的版本，需要申请ohos.permission.ENTERPRISE_MANAGE_RESTRICTIONS权限。
+
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。API version 20之前，调用本接口查询某特性是否被禁用。当设备存在多个MDM应用时，传入admin查询对应admin设置的策略。从API version 20开始，admin新增支持传入null，传入null时查询整机实际生效的策略。 |
 | feature | string | 是 | 支持查询的特性清单参考下表2。 说明： 从API version 15开始，应用申请权限ohos.permission.PERSONAL_MANAGE_RESTRICTIONS并通过startAdminProvision激活为BDA，可以使用此接口获取以下特性状态：bluetooth、hdc、microphone、usb、wifi、tethering、camera、screenshot、screenRecord、nearLink、resetFactory，从API版本26.0.0开始，新增支持使用此接口获取mtpServer特性状态。 |
 
 
 **表2 支持查询的特性清单：**
+
 
 | 特性 | 说明 | 需要权限 |
 | --- | --- | --- |
@@ -179,7 +225,7 @@ getDisallowedPolicy(admin: Want | null, feature: string): boolean
 | tethering14+ | 网络共享能力（设备已有网络共享给其他设备的能力，即共享热点能力）。 | ohos.permission.ENTERPRISE_MANAGE_RESTRICTIONS 或 ohos.permission.PERSONAL_MANAGE_RESTRICTIONS |
 | inactiveUserFreeze14+ | 非活跃用户运行能力。禁用后，非UIAbility进程一般不会被冻结，UIAbility申请短时任务、长时任务、延迟任务或能效资源等后台运行任务也不会被冻结。当前仅支持PC/2in1设备使用。企业空间场景下，系统切换到企业空间用户，个人空间用户属于非活跃用户。 | ohos.permission.ENTERPRISE_MANAGE_RESTRICTIONS |
 | camera14+ | 设备相机能力。 | ohos.permission.ENTERPRISE_MANAGE_RESTRICTIONS 或 ohos.permission.PERSONAL_MANAGE_RESTRICTIONS |
-| mtpClient18+ | MTP客户端能力（包含读取和写入），当前仅支持PC/2in1设备使用。MTP（MediaTransferProtocol，媒体传输协议），该协议允许用户在移动设备上线性访问媒体文件。 | ohos.permission.ENTERPRISE_MANAGE_RESTRICTIONS |
+| mtpClient18+ | MTP客户端能力（包含读取和写入），当前仅支持PC/2in1设备使用。MTP（Media Transfer Protocol，媒体传输协议），该协议允许用户在移动设备上线性访问媒体文件。 | ohos.permission.ENTERPRISE_MANAGE_RESTRICTIONS |
 | mtpServer18+ | MTP服务端能力，当前仅支持手机、平板设备使用。 | API版本26.0.0之前：ohos.permission.ENTERPRISE_MANAGE_RESTRICTIONS，API版本26.0.0开始：ohos.permission.ENTERPRISE_MANAGE_RESTRICTIONS 或 ohos.permission.PERSONAL_MANAGE_RESTRICTIONS |
 | sambaClient20+ | samba客户端能力，当前仅支持PC/2in1设备使用。samba是在Linux和UNIX系统上实现SMB协议的一个免费软件，由服务器及客户端程序构成。SMB（Server Message Block，信息服务块）是一种在局域网上共享文件和打印机的一种通信协议，它为局域网内的不同计算机之间提供文件及打印机等资源的共享服务。SMB协议是客户机/服务器型协议，客户机通过该协议可以访问服务器上的共享文件系统、打印机及其他资源。 | ohos.permission.ENTERPRISE_MANAGE_RESTRICTIONS |
 | sambaServer20+ | samba服务端能力，当前仅支持PC/2in1设备使用。 | ohos.permission.ENTERPRISE_MANAGE_RESTRICTIONS |
@@ -214,6 +260,7 @@ getDisallowedPolicy(admin: Want | null, feature: string): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回true表示feature对应的某种特性被禁用，false表示feature对应的某种特性未被禁用。 |
@@ -222,6 +269,7 @@ getDisallowedPolicy(admin: Want | null, feature: string): boolean
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -253,7 +301,8 @@ try {
 
 
 
-#### restrictions.setDisallowedPolicyForAccount(deprecated)
+## restrictions.setDisallowedPolicyForAccount(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -277,10 +326,11 @@ setDisallowedPolicyForAccount(admin: Want, feature: string, disallow: boolean, a
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| feature | string | 是 | feature名称。 - fingerprint：设备指纹认证能力，当前仅支持PC/2in1设备使用。使用此参数时有以下规则： 1. 通过setDisallowedPolicy接口禁用了设备指纹认证能力，再使用本接口传入此参数，会报策略冲突。 2. 通过本接口设置禁用/启用指定用户的设备指纹认证能力后，再通过setDisallowedPolicy接口禁用设备指纹认证能力时，后者会覆盖前者的策略。此后再通过setDisallowedPolicy接口启用设备指纹认证能力，则所有用户都允许使用设备指纹认证能力。 - print20+：设备打印能力，在API version 23之前仅支持PC/2in1设备使用，从API version 23开始支持PC/2in1、Phone、Tablet设备。如果使用本接口禁用了指定用户的设备打印能力，再通过setDisallowedPolicy接口启用设备打印能力，该用户下的设备打印能力仍然被禁用。 - mtpClient20+：MTP客户端能力（仅包含写入），当前仅支持PC/2in1设备使用。MTP（MediaTransferProtocol，媒体传输协议），该协议允许用户在移动设备上线性访问媒体文件。当已经通过setDisallowedPolicy接口禁用了设备MTP客户端能力时，再通过本接口禁用某用户MTP客户端写入能力，会报策略冲突。 - usbStorageDeviceWrite20+：USB存储设备写入能力，当前仅支持PC/2in1企业设备使用。 以下三种情况再通过本接口禁用某用户USB存储设备写入能力，会报策略冲突。 1）通过setDisallowedPolicy接口设置了设备USB能力禁用。 2）通过setUsbStorageDeviceAccessPolicy接口设置了USB存储设备访问策略为只读/禁用。 3）通过addDisallowedUsbDevices接口添加了存储类型的USB设备禁用。 - diskRecoveryKey20+：恢复密钥导出能力，当前仅支持PC/2in1设备使用。 - sudo20+：superuser do，表示以超级用户执行，当前仅支持PC/2in1设备使用。禁用后企业空间或个人空间不能以超级用户执行。 - distributedTransmissionOutgoing20+：设备间分布式单向传输数据的能力（仅包含向其他设备传输数据）。当已经通过setDisallowedPolicyForAccount接口禁用了分布式服务，再通过本接口禁用设备间分布式单向传输数据的能力，会报策略冲突。 - openFileBoost23+：文件打开加速，为应用提供文件打开加速状态感知能力。应用可以通过接入对应API，感知文件的加速状态，进而应用可以实现对已加速文件给出独特的UI（user interface）标识等功能，优化用户文件打开体验，当前仅支持PC/2in1设备使用。 |
+| feature | string | 是 | feature名称。 - fingerprint：设备指纹认证能力，当前仅支持PC/2in1设备使用。使用此参数时有以下规则： 1. 通过setDisallowedPolicy接口禁用了设备指纹认证能力，再使用本接口传入此参数，会报策略冲突。 2. 通过本接口设置禁用/启用指定用户的设备指纹认证能力后，再通过setDisallowedPolicy接口禁用设备指纹认证能力时，后者会覆盖前者的策略。此后再通过setDisallowedPolicy接口启用设备指纹认证能力，则所有用户都允许使用设备指纹认证能力。 - print20+：设备打印能力，在API version 23之前仅支持PC/2in1设备使用，从API version 23开始支持PC/2in1、Phone、Tablet设备。如果使用本接口禁用了指定用户的设备打印能力，再通过setDisallowedPolicy接口启用设备打印能力，该用户下的设备打印能力仍然被禁用。 - mtpClient20+：MTP客户端能力（仅包含写入），当前仅支持PC/2in1设备使用。MTP（Media Transfer Protocol，媒体传输协议），该协议允许用户在移动设备上线性访问媒体文件。当已经通过setDisallowedPolicy接口禁用了设备MTP客户端能力时，再通过本接口禁用某用户MTP客户端写入能力，会报策略冲突。 - usbStorageDeviceWrite20+：USB存储设备写入能力，当前仅支持PC/2in1企业设备使用。 以下三种情况再通过本接口禁用某用户USB存储设备写入能力，会报策略冲突。 1）通过setDisallowedPolicy接口设置了设备USB能力禁用。 2）通过setUsbStorageDeviceAccessPolicy接口设置了USB存储设备访问策略为只读/禁用。 3）通过addDisallowedUsbDevices接口添加了存储类型的USB设备禁用。 - diskRecoveryKey20+：恢复密钥导出能力，当前仅支持PC/2in1设备使用。 - sudo20+：superuser do，表示以超级用户执行，当前仅支持PC/2in1设备使用。禁用后企业空间或个人空间不能以超级用户执行。 - distributedTransmissionOutgoing20+：设备间分布式单向传输数据的能力（仅包含向其他设备传输数据）。当已经通过setDisallowedPolicyForAccount接口禁用了分布式服务，再通过本接口禁用设备间分布式单向传输数据的能力，会报策略冲突。 - openFileBoost23+：文件打开加速，为应用提供文件打开加速状态感知能力。应用可以通过接入对应API，感知文件的加速状态，进而应用可以实现对已加速文件给出独特的UI（user interface）标识等功能，优化用户文件打开体验，当前仅支持PC/2in1设备使用。 |
 | disallow | boolean | 是 | true表示禁用，false表示启用。 |
 | accountId | number | 是 | 用户ID，取值范围：大于等于0。 accountId可以通过getOsAccountLocalId等接口来获取。 |
 
@@ -288,6 +338,7 @@ setDisallowedPolicyForAccount(admin: Want, feature: string, disallow: boolean, a
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -320,7 +371,8 @@ try {
 
 
 
-#### restrictions.getDisallowedPolicyForAccount(deprecated)
+## restrictions.getDisallowedPolicyForAccount(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -342,14 +394,16 @@ getDisallowedPolicyForAccount(admin: Want | null, feature: string, accountId: nu
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| feature | string | 是 | feature名称。 - fingerprint：设备指纹认证能力，当前仅支持PC/2in1设备使用。使用此参数时有以下规则：当已经通过setDisallowedPolicyForAccount接口设置禁用/启用指定用户的设备指纹认证能力后，再通过setDisallowedPolicy接口禁用设备指纹认证能力时，后者会覆盖前者的策略。即此时调用本接口结果为false。 - mtpClient20+：MTP客户端能力（仅包含写入），当前仅支持PC/2in1设备使用。MTP（MediaTransferProtocol，媒体传输协议），该协议允许用户在移动设备上线性访问媒体文件。 - usbStorageDeviceWrite20+：USB存储设备写入能力，当前仅支持PC/2in1企业设备使用。 - diskRecoveryKey20+：恢复密钥导出能力，当前仅支持PC/2in1设备使用。 - sudo20+：superuser do，表示以超级用户执行，当前仅支持PC/2in1设备使用。禁用后企业空间或个人空间不能以超级用户执行。 - distributedTransmissionOutgoing20+：设备间单向传输数据的能力（仅包含向其他设备传输数据）。 - print20+：设备打印能力，在API version 23之前仅支持PC/2in1设备使用，从API version 23开始支持PC/2in1、Phone、Tablet设备。如果使用setDisallowedPolicy接口禁用了设备打印能力，再通过setDisallowedPolicyForAccount接口启用某用户下的设备打印能力，通过本接口查询结果是该用户已启用打印能力，但实际打印能力已被禁用。 - openFileBoost23+：文件打开加速，为应用提供文件打开加速状态感知能力。应用可以通过接入对应API，感知文件的加速状态，进而应用可以实现对已加速文件给出独特的UI（user interface）标识等功能，优化用户文件打开体验，当前仅支持PC/2in1设备使用。 |
+| admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。API version 20之前，调用本接口获取指定用户的某特性状态。当设备存在多个MDM应用时，传入admin查询对应admin设置的策略。从API version 20开始，admin新增支持传入null，传入null时查询整机实际生效的策略。 |
+| feature | string | 是 | feature名称。 - fingerprint：设备指纹认证能力，当前仅支持PC/2in1设备使用。使用此参数时有以下规则：当已经通过setDisallowedPolicyForAccount接口设置禁用/启用指定用户的设备指纹认证能力后，再通过setDisallowedPolicy接口禁用设备指纹认证能力时，后者会覆盖前者的策略。即此时调用本接口结果为false。 - mtpClient20+：MTP客户端能力（仅包含写入），当前仅支持PC/2in1设备使用。MTP（Media Transfer Protocol，媒体传输协议），该协议允许用户在移动设备上线性访问媒体文件。 - usbStorageDeviceWrite20+：USB存储设备写入能力，当前仅支持PC/2in1企业设备使用。 - diskRecoveryKey20+：恢复密钥导出能力，当前仅支持PC/2in1设备使用。 - sudo20+：superuser do，表示以超级用户执行，当前仅支持PC/2in1设备使用。禁用后企业空间或个人空间不能以超级用户执行。 - distributedTransmissionOutgoing20+：设备间单向传输数据的能力（仅包含向其他设备传输数据）。 - print20+：设备打印能力，在API version 23之前仅支持PC/2in1设备使用，从API version 23开始支持PC/2in1、Phone、Tablet设备。如果使用setDisallowedPolicy接口禁用了设备打印能力，再通过setDisallowedPolicyForAccount接口启用某用户下的设备打印能力，通过本接口查询结果是该用户已启用打印能力，但实际打印能力已被禁用。 - openFileBoost23+：文件打开加速，为应用提供文件打开加速状态感知能力。应用可以通过接入对应API，感知文件的加速状态，进而应用可以实现对已加速文件给出独特的UI（user interface）标识等功能，优化用户文件打开体验，当前仅支持PC/2in1设备使用。 |
 | accountId | number | 是 | 用户ID，取值范围：大于等于0。 accountId可以通过getOsAccountLocalId等接口来获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -359,6 +413,7 @@ getDisallowedPolicyForAccount(admin: Want | null, feature: string, accountId: nu
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -390,7 +445,8 @@ try {
 
 
 
-#### restrictions.addDisallowedListForAccount14+
+## restrictions.addDisallowedListForAccount14+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -408,6 +464,7 @@ addDisallowedListForAccount(admin: Want, feature: string, list: Array&lt;string&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -419,6 +476,7 @@ addDisallowedListForAccount(admin: Want, feature: string, list: Array&lt;string&
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -452,7 +510,8 @@ try {
 
 
 
-#### restrictions.removeDisallowedListForAccount14+
+## restrictions.removeDisallowedListForAccount14+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -470,6 +529,7 @@ removeDisallowedListForAccount(admin: Want, feature: string, list: Array&lt;stri
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -481,6 +541,7 @@ removeDisallowedListForAccount(admin: Want, feature: string, list: Array&lt;stri
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -514,7 +575,8 @@ try {
 
 
 
-#### restrictions.getDisallowedListForAccount14+
+## restrictions.getDisallowedListForAccount14+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -530,6 +592,7 @@ getDisallowedListForAccount(admin: Want, feature: string, accountId: number): Ar
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -539,6 +602,7 @@ getDisallowedListForAccount(admin: Want, feature: string, accountId: number): Ar
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;string&gt; | 用户已添加的禁用某特征的应用名单。 |
@@ -547,6 +611,7 @@ getDisallowedListForAccount(admin: Want, feature: string, accountId: number): Ar
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -579,7 +644,8 @@ try {
 
 
 
-#### restrictions.setUserRestriction(deprecated)
+## restrictions.setUserRestriction(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -603,16 +669,18 @@ setUserRestriction(admin: Want, settingsItem: string, restricted: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| settingsItem | string | 是 | 行为名称。 - setApn：APN设置，当前仅支持手机、平板使用。 - powerLongPress：长按电源键打开电源菜单，当前仅支持手机、平板使用。 - setEthernetIp：修改以太网IP地址，当前仅支持PC/2in1设备使用。 - setDeviceName：修改设备名称，当前仅支持PC/2in1设备、手机、平板使用。禁用后，PC/2in1设备的设置中以下设备名称无法修改，包括关于本机、蓝牙、多设备协同->星闪。手机、平板设备设置中的关于本机、蓝牙、个人热点的设备名称无法修改。 - setBiometricsAndScreenLock：修改锁屏密码，当前仅支持PC/2in1设备、手机、平板使用。 |
+| settingsItem | string | 是 | 行为名称，仅支持以下值，传入其他值会报错。 - setApn：APN设置，当前仅支持手机、平板使用。 - powerLongPress：长按电源键打开电源菜单，当前仅支持手机、平板使用。 - setEthernetIp：修改以太网IP地址，当前仅支持PC/2in1设备使用。 - setDeviceName：修改设备名称，当前仅支持PC/2in1设备、手机、平板使用。禁用后，PC/2in1设备的设置中以下设备名称无法修改，包括关于本机、蓝牙、多设备协同->星闪。手机、平板设备设置中的关于本机、蓝牙、个人热点的设备名称无法修改。 - setBiometricsAndScreenLock：修改锁屏密码，当前仅支持PC/2in1设备、手机、平板使用。 |
 | restricted | boolean | 是 | 是否禁用行为。true表示禁用，false表示不禁用。 |
 
 
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -644,7 +712,8 @@ try {
 
 
 
-#### restrictions.getUserRestricted(deprecated)
+## restrictions.getUserRestricted(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -666,6 +735,7 @@ getUserRestricted(admin: Want, settingsItem: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -673,6 +743,7 @@ getUserRestricted(admin: Want, settingsItem: string): boolean
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -682,6 +753,7 @@ getUserRestricted(admin: Want, settingsItem: string): boolean
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -713,7 +785,8 @@ try {
 
 
 
-#### restrictions.setUserRestrictionForAccount(deprecated)
+## restrictions.setUserRestrictionForAccount(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -737,10 +810,11 @@ setUserRestrictionForAccount(admin: Want, settingsItem: string, accountId: numbe
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| settingsItem | string | 是 | 行为名称。 - modifyWallpaper：修改壁纸，包含锁屏壁纸和桌面壁纸。调用此接口前，此设备必须通过HEM商用部署。 |
+| settingsItem | string | 是 | 行为名称。 - modifyWallpaper：修改壁纸，包含锁屏壁纸和桌面壁纸。在配置此特性之前，此设备必须通过HEM商用部署。 |
 | accountId | number | 是 | 用户ID，取值范围：大于等于0。 accountId可以通过getOsAccountLocalId等接口来获取。 |
 | restricted | boolean | 是 | 是否禁用行为。true表示禁用，false表示不禁用。 |
 
@@ -748,6 +822,7 @@ setUserRestrictionForAccount(admin: Want, settingsItem: string, accountId: numbe
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -781,7 +856,8 @@ try {
 
 
 
-#### restrictions.getUserRestrictedForAccount(deprecated)
+## restrictions.getUserRestrictedForAccount(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -803,14 +879,16 @@ getUserRestrictedForAccount(admin: Want | null, settingsItem: string, accountId:
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| settingsItem | string | 是 | 指定设置项。 - modifyWallpaper：修改壁纸，包含锁屏壁纸和桌面壁纸。调用此接口前，此设备必须通过HEM商用部署。 |
+| settingsItem | string | 是 | 指定设置项。 - modifyWallpaper：修改壁纸，包含锁屏壁纸和桌面壁纸。 |
 | accountId | number | 是 | 用户ID，取值范围：大于等于0。 accountId可以通过getOsAccountLocalId等接口来获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -820,6 +898,7 @@ getUserRestrictedForAccount(admin: Want | null, settingsItem: string, accountId:
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -854,7 +933,8 @@ try {
 
 
 
-#### restrictions.setDisallowedPolicy24+
+## restrictions.setDisallowedPolicy24+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -872,6 +952,7 @@ setDisallowedPolicy(admin: Want, feature: FeatureForDevice, disallow: boolean): 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -882,6 +963,7 @@ setDisallowedPolicy(admin: Want, feature: FeatureForDevice, disallow: boolean): 
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -915,7 +997,8 @@ try {
 
 
 
-#### restrictions.getDisallowedPolicy24+
+## restrictions.getDisallowedPolicy24+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -931,6 +1014,7 @@ getDisallowedPolicy(admin: Want | null, feature: FeatureForDevice): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -938,6 +1022,7 @@ getDisallowedPolicy(admin: Want | null, feature: FeatureForDevice): boolean
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -947,6 +1032,7 @@ getDisallowedPolicy(admin: Want | null, feature: FeatureForDevice): boolean
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -978,7 +1064,8 @@ try {
 
 
 
-#### restrictions.setDisallowedPolicyForAccount
+## restrictions.setDisallowedPolicyForAccount
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -998,6 +1085,7 @@ setDisallowedPolicyForAccount(admin: Want, feature: FeatureForAccount, disallow:
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -1009,6 +1097,7 @@ setDisallowedPolicyForAccount(admin: Want, feature: FeatureForAccount, disallow:
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1043,7 +1132,8 @@ try {
 
 
 
-#### restrictions.getDisallowedPolicyForAccount
+## restrictions.getDisallowedPolicyForAccount
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1061,14 +1151,16 @@ getDisallowedPolicyForAccount(admin: Want | null, feature: FeatureForAccount, ac
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。当设备存在多个MDM应用时，传入admin查询对应admin设置的策略。传入null时查询整机实际生效的策略。 |
 | feature | FeatureForAccount | 是 | 指定要查询的用户特性。 |
 | accountId | number | 是 | 用户ID，取值范围：大于等于0。 accountId可以通过getOsAccountLocalId等接口来获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1078,6 +1170,7 @@ getDisallowedPolicyForAccount(admin: Want | null, feature: FeatureForAccount, ac
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1102,7 +1195,8 @@ let wantTemp: Want = {
 
 try {
   // 参数需根据实际情况进行替换
-  let result: boolean = restrictions.getDisallowedPolicyForAccount(wantTemp, restrictions.FeatureForAccount.SUPER_HUB, 100);
+  let result: boolean = restrictions.getDisallowedPolicyForAccount(wantTemp,
+    restrictions.FeatureForAccount.SUPER_HUB, 100);
   console.info(`Succeeded in querying whether the super hub is disabled: ${result}`);
 } catch (err) {
   console.error(`Failed to get whether super hub is disabled. Code is ${err.code}, message is ${err.message}`);
@@ -1111,7 +1205,8 @@ try {
 
 
 
-#### restrictions.setUserRestriction
+## restrictions.setUserRestriction
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1129,6 +1224,7 @@ setUserRestriction(admin: Want, settingsItem: SettingsForDevice, restricted: boo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -1139,6 +1235,7 @@ setUserRestriction(admin: Want, settingsItem: SettingsForDevice, restricted: boo
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1170,11 +1267,12 @@ try {
 
 
 
-#### restrictions.getUserRestricted
+## restrictions.getUserRestricted
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
-getUserRestricted(admin: Want, settingsItem: SettingsForDevice): boolean
+getUserRestricted(admin: Want | null, settingsItem: SettingsForDevice): boolean
 
 获取指定设备设置项的禁用状态。
 
@@ -1188,13 +1286,15 @@ getUserRestricted(admin: Want, settingsItem: SettingsForDevice): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 当设备存在多个MDM应用时，传入Want时查询对应企业设备管理应用设置的策略，传入null时查询实际生效的策略。 |
 | settingsItem | SettingsForDevice | 是 | 指定要查询的设备设置项。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1204,6 +1304,7 @@ getUserRestricted(admin: Want, settingsItem: SettingsForDevice): boolean
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1235,7 +1336,8 @@ try {
 
 
 
-#### restrictions.setUserRestrictionForAccount
+## restrictions.setUserRestrictionForAccount
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1253,6 +1355,7 @@ setUserRestrictionForAccount(admin: Want, settingsItem: SettingsForAccount, acco
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -1264,6 +1367,7 @@ setUserRestrictionForAccount(admin: Want, settingsItem: SettingsForAccount, acco
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1297,7 +1401,8 @@ try {
 
 
 
-#### restrictions.getUserRestrictedForAccount
+## restrictions.getUserRestrictedForAccount
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1315,6 +1420,7 @@ getUserRestrictedForAccount(admin: Want | null, settingsItem: SettingsForAccount
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want \| null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -1324,6 +1430,7 @@ getUserRestrictedForAccount(admin: Want | null, settingsItem: SettingsForAccount
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回指定用户设置项的禁用状态，true表示已禁用，false表示未禁用。 |
@@ -1332,6 +1439,7 @@ getUserRestrictedForAccount(admin: Want | null, settingsItem: SettingsForAccount
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1365,7 +1473,8 @@ try {
 
 
 
-#### FeatureForDevice24+
+## FeatureForDevice24+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1374,6 +1483,7 @@ try {
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1394,7 +1504,7 @@ try {
 | TETHERING | 17 | 网络共享能力（设备已有网络共享给其他设备的能力，即共享热点能力）。 起始版本： 26.0.0 |
 | INACTIVE_USER_FREEZE | 18 | 非活跃用户运行能力。禁用后，非UIAbility进程一般不会被冻结，UIAbility申请短时任务、长时任务、延迟任务或能效资源等后台运行任务也不会被冻结。当前仅支持PC/2in1设备使用。企业空间场景下，系统切换到企业空间用户，个人空间用户属于非活跃用户。 起始版本： 26.0.0 |
 | CAMERA | 19 | 设备相机能力。 起始版本： 26.0.0 |
-| MTP_CLIENT | 20 | MTP客户端能力（包含读取和写入），当前仅支持PC/2in1设备使用。MTP（MediaTransferProtocol，媒体传输协议），该协议允许用户在移动设备上线性访问媒体文件。当已经通过setDisallowedPolicyForAccount设置了某用户禁用MTP客户端写入能力时，再禁用MTP客户端能力，会报策略冲突。 起始版本： 26.0.0 |
+| MTP_CLIENT | 20 | MTP客户端能力（包含读取和写入），当前仅支持PC/2in1设备使用。在配置此特性之前，此设备必须通过HEM商用部署。MTP（Media Transfer Protocol，媒体传输协议），该协议允许用户在移动设备上线性访问媒体文件。当已经通过setDisallowedPolicyForAccount设置了某用户禁用MTP客户端写入能力时，再禁用MTP客户端能力，会报策略冲突。 起始版本： 26.0.0 |
 | MTP_SERVER | 21 | MTP服务端能力，当前仅支持手机、平板设备使用。 起始版本： 26.0.0 |
 | SAMBA_CLIENT | 22 | samba客户端能力，当前仅支持PC/2in1设备使用。samba是在Linux和UNIX系统上实现SMB协议的一个免费软件，由服务器及客户端程序构成。SMB（Server Message Block，信息服务块）是一种在局域网上共享文件和打印机的一种通信协议，它为局域网内的不同计算机之间提供文件及打印机等资源的共享服务。SMB协议是客户机/服务器型协议，客户机通过该协议可以访问服务器上的共享文件系统、打印机及其他资源。 起始版本： 26.0.0 |
 | SAMBA_SERVER | 23 | samba服务端能力，当前仅支持PC/2in1设备使用。 起始版本： 26.0.0 |
@@ -1429,7 +1539,8 @@ try {
 
 
 
-#### FeatureForAccount
+## FeatureForAccount
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1441,6 +1552,7 @@ try {
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | MULTI_WINDOW | 0 | 系统多窗口。当前仅支持手机、平板设备使用，禁用后无法使用系统多窗口功能（分屏、一键分屏、智慧多窗、悬浮窗口）。若系统多窗口功能已开启，本次使用不受影响，但关闭后将无法再次使用。 |
@@ -1448,7 +1560,7 @@ try {
 | SUPER_HUB | 2 | 中转站。当前仅支持手机、平板设备使用，禁用后无法使用中转站功能。若中转站已开启，本次使用不受影响，但关闭后将无法再次使用。 |
 | FINGERPRINT | 3 | 设备指纹认证能力，当前仅支持PC/2in1设备使用。使用时有以下规则： 1. 禁用设备指纹认证能力（FeatureForDevice.FINGERPRINT）后，再禁用某用户的设备指纹认证能力，会报策略冲突。 2. 禁用/启用指定用户的设备指纹认证能力后，再禁用设备指纹认证能力（FeatureForDevice.FINGERPRINT）时，后者会覆盖前者的策略。此后再启用设备指纹认证能力（FeatureForDevice.FINGERPRINT），则所有用户都允许使用设备指纹认证能力。 |
 | PRINT | 4 | 设备打印能力。如果禁用了指定用户的设备打印能力，再启用设备打印能力（FeatureForDevice.PRINTER），该用户下的设备打印能力仍然被禁用。 |
-| MTP_CLIENT | 5 | MTP客户端能力（仅包含写入），当前仅支持PC/2in1设备使用。MTP（MediaTransferProtocol，媒体传输协议），该协议允许用户在移动设备上线性访问媒体文件。当已禁用设备MTP客户端能力（FeatureForDevice.MTP_CLIENT）时，再禁用某用户MTP客户端写入能力，会报策略冲突。 |
+| MTP_CLIENT | 5 | MTP客户端能力（仅包含写入），当前仅支持PC/2in1设备使用。MTP（Media Transfer Protocol，媒体传输协议），该协议允许用户在移动设备上线性访问媒体文件。当已禁用设备MTP客户端能力（FeatureForDevice.MTP_CLIENT）时，再禁用某用户MTP客户端写入能力，会报策略冲突。 |
 | USB_STORAGE_DEVICE_WRITE | 6 | USB存储设备写入能力，当前仅支持PC/2in1企业设备使用。 以下三种情况再禁用某用户USB存储设备写入能力，会报策略冲突。 1）已禁用设备USB能力（FeatureForDevice.USB）。 2）通过setUsbStorageDeviceAccessPolicy接口设置了USB存储设备访问策略为只读/禁用。 3）通过addDisallowedUsbDevices接口添加了存储类型的USB设备禁用。 |
 | DISK_RECOVERY_KEY | 7 | 恢复密钥导出能力，当前仅支持PC/2in1设备使用。 |
 | SUDO | 8 | superuser do，表示以超级用户执行，当前仅支持PC/2in1设备使用。禁用后企业空间或个人空间不能以超级用户执行。 |
@@ -1458,7 +1570,8 @@ try {
 
 
 
-#### SettingsForDevice
+## SettingsForDevice
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1469,6 +1582,7 @@ try {
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
 **模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1481,7 +1595,8 @@ try {
 
 
 
-#### SettingsForAccount
+## SettingsForAccount
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1493,6 +1608,7 @@ try {
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| MODIFY_WALLPAPER | 0 | 修改壁纸，包含锁屏壁纸和桌面壁纸。 |
+| MODIFY_WALLPAPER | 0 | 修改壁纸，包含锁屏壁纸和桌面壁纸。在配置此特性之前，此设备必须通过HEM商用部署。 |

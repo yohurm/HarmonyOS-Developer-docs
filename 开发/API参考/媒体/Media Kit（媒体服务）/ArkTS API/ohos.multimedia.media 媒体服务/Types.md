@@ -1,24 +1,26 @@
 # Types
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-t
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 
 
-#### SoundPool10+
+## SoundPool10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type SoundPool = _SoundPool
 
 音频池，提供了系统声音的加载、播放、音量设置、循环设置、停止播放、资源卸载等功能。
 
 **系统能力：** SystemCapability.Multimedia.Media.SoundPool
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -27,15 +29,17 @@ type SoundPool = _SoundPool
 
 
 
-#### PlayParameters10+
+## PlayParameters10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type PlayParameters = _PlayParameters
 
 表示音频池播放参数设置。
 
 **系统能力：** SystemCapability.Multimedia.Media.SoundPool
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -44,9 +48,10 @@ type PlayParameters = _PlayParameters
 
 
 
-#### AVPlayerState9+
+## AVPlayerState9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AVPlayerState = 'idle' | 'initialized' | 'prepared' | 'playing' | 'paused' | 'completed' | 'stopped' | 'released' | 'error'
 
@@ -55,6 +60,7 @@ type AVPlayerState = 'idle' | 'initialized' | 'prepared' | 'playing' | 'paused' 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -71,9 +77,10 @@ type AVPlayerState = 'idle' | 'initialized' | 'prepared' | 'playing' | 'paused' 
 
 
 
-#### OnTrackChangeHandler12+
+## OnTrackChangeHandler12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnTrackChangeHandler = (index: number, isSelected: boolean) => void
 
@@ -85,6 +92,7 @@ track变更事件回调方法。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 当前变更的track索引。 |
@@ -93,9 +101,10 @@ track变更事件回调方法。
 
 
 
-#### OnAVPlayerStateChangeHandle12+
+## OnAVPlayerStateChangeHandle12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnAVPlayerStateChangeHandle = (state: AVPlayerState, reason: StateChangeReason) => void
 
@@ -107,6 +116,7 @@ type OnAVPlayerStateChangeHandle = (state: AVPlayerState, reason: StateChangeRea
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | state | AVPlayerState | 是 | 当前播放状态。 |
@@ -115,9 +125,10 @@ type OnAVPlayerStateChangeHandle = (state: AVPlayerState, reason: StateChangeRea
 
 
 
-#### OnBufferingUpdateHandler12+
+## OnBufferingUpdateHandler12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnBufferingUpdateHandler = (infoType: BufferingInfoType, value: number) => void
 
@@ -129,6 +140,7 @@ type OnBufferingUpdateHandler = (infoType: BufferingInfoType, value: number) => 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | infoType | BufferingInfoType | 是 | 缓存时间类型。 |
@@ -137,9 +149,10 @@ type OnBufferingUpdateHandler = (infoType: BufferingInfoType, value: number) => 
 
 
 
-#### OnVideoSizeChangeHandler12+
+## OnVideoSizeChangeHandler12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnVideoSizeChangeHandler = (width: number, height: number) => void
 
@@ -151,6 +164,7 @@ type OnVideoSizeChangeHandler = (width: number, height: number) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | width | number | 是 | 视频宽度，单位为像素（px）。 |
@@ -159,9 +173,10 @@ type OnVideoSizeChangeHandler = (width: number, height: number) => void
 
 
 
-#### OnSuperResolutionChanged 18+
+## OnSuperResolutionChanged 18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnSuperResolutionChanged = (enabled: boolean) => void
 
@@ -179,6 +194,7 @@ type OnSuperResolutionChanged = (enabled: boolean) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 表示当前超分是否开启。true表示超分开启，false表示超分关闭。 |
@@ -186,9 +202,10 @@ type OnSuperResolutionChanged = (enabled: boolean) => void
 
 
 
-#### OnSeiMessageHandle18+
+## OnSeiMessageHandle18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnSeiMessageHandle = (messages: Array&lt;SeiMessage&gt;, playbackPosition?: number) => void
 
@@ -200,6 +217,7 @@ type OnSeiMessageHandle = (messages: Array&lt;SeiMessage&gt;, playbackPosition?:
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | messages | Array&lt;SeiMessage&gt; | 是 | SEI信息。 |
@@ -208,9 +226,10 @@ type OnSeiMessageHandle = (messages: Array&lt;SeiMessage&gt;, playbackPosition?:
 
 
 
-#### OnPlaybackRateDone20+
+## OnPlaybackRateDone20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnPlaybackRateDone = (rate: number) => void
 
@@ -222,6 +241,7 @@ type OnPlaybackRateDone = (rate: number) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rate | number | 是 | 播放速率。 |
@@ -229,9 +249,10 @@ type OnPlaybackRateDone = (rate: number) => void
 
 
 
-#### OnFrameFetched23+
+## OnFrameFetched23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnFrameFetched = (frameInfo: FrameInfo, err?: BusinessError&lt;void&gt;) => void
 
@@ -243,6 +264,7 @@ type OnFrameFetched = (frameInfo: FrameInfo, err?: BusinessError&lt;void&gt;) =>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | frameInfo | FrameInfo | 是 | 返回的缩略图信息。 |
@@ -251,9 +273,10 @@ type OnFrameFetched = (frameInfo: FrameInfo, err?: BusinessError&lt;void&gt;) =>
 
 
 
-#### AVRecorderState9+
+## AVRecorderState9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AVRecorderState = 'idle' | 'prepared' | 'started' | 'paused' | 'stopped' | 'released' | 'error'
 
@@ -262,6 +285,7 @@ type AVRecorderState = 'idle' | 'prepared' | 'started' | 'paused' | 'stopped' | 
 **元服务API：** 从API version 12 开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -276,9 +300,10 @@ type AVRecorderState = 'idle' | 'prepared' | 'started' | 'paused' | 'stopped' | 
 
 
 
-#### OnAVRecorderStateChangeHandler12+
+## OnAVRecorderStateChangeHandler12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnAVRecorderStateChangeHandler = (state: AVRecorderState, reason: StateChangeReason) => void
 
@@ -290,6 +315,7 @@ type OnAVRecorderStateChangeHandler = (state: AVRecorderState, reason: StateChan
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | state | AVRecorderState | 是 | 当前录制状态。 |
@@ -298,16 +324,17 @@ type OnAVRecorderStateChangeHandler = (state: AVRecorderState, reason: StateChan
 
 
 
-#### SourceOpenCallback18+
+## SourceOpenCallback18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type SourceOpenCallback = (request: MediaSourceLoadingRequest) => number
 
 由应用实现此回调函数，应用需处理传入的资源打开请求，并返回所打开资源对应的唯一句柄。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/Z023RHKtRASSHx7DOcTFwA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071709Z&HW-CC-Expire=86400&HW-CC-Sign=2DD1AA013384109A7ADE4DD6F4CD0609C01FEBB4952343CBCD9E4E9387A0EC0D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/zTgenDTNQYOb_iMSrYSbTQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072442Z&HW-CC-Expire=86400&HW-CC-Sign=762AF760060146586A57CE89EE2F0E8579FB35DA47A3C8FBE4D7ED53DB6EBFDE)
 
 
 客户端在处理完请求后应立刻返回。
@@ -320,12 +347,14 @@ type SourceOpenCallback = (request: MediaSourceLoadingRequest) => number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | MediaSourceLoadingRequest | 是 | 打开请求参数，包含请求资源的具体信息和数据推送方式。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -352,16 +381,17 @@ let sourceOpenCallback: media.SourceOpenCallback = (request: media.MediaSourceLo
 
 
 
-#### SourceReadCallback18+
+## SourceReadCallback18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type SourceReadCallback = (uuid: number, requestedOffset: number, requestedLength: number) => void
 
 由应用实现此回调函数，应用需记录读取请求，并在数据充足时通过对应的MediaSourceLoadingRequest对象的[respondData](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-mediasourceloadingrequest#responddata18)方法推送数据。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/8OO2v4RpQJihBvR-zvgn6w/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071709Z&HW-CC-Expire=86400&HW-CC-Sign=41850A992FE07CBB91136D907144B4E4DCBBC786A26E4D882B47004BA4859C58)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/uRC8dt15Rmekz7eUDReOvw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072442Z&HW-CC-Expire=86400&HW-CC-Sign=8DE3A8405B612604D689DBA5549D429D60732BF93141E406B95A46457B415D77)
 
 
 客户端在处理完请求后应立刻返回。
@@ -373,6 +403,7 @@ type SourceReadCallback = (uuid: number, requestedOffset: number, requestedLengt
 **系统能力：** SystemCapability.Multimedia.Media.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -392,16 +423,17 @@ let sourceReadCallback: media.SourceReadCallback = (uuid: number, requestedOffse
 
 
 
-#### SourceCloseCallback18+
+## SourceCloseCallback18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type SourceCloseCallback = (uuid: number) => void
 
 由应用实现此回调函数，应用应释放相关资源。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/dpiiMqjUQhimYV4ix9NfnQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071709Z&HW-CC-Expire=86400&HW-CC-Sign=03698E4F36437140AB3FEA02B80AA01C8AA556FE16F492E3D9BCF0139986FE7D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/G3AEnLnlQmO9L8pa91FfJQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072442Z&HW-CC-Expire=86400&HW-CC-Sign=5C49F3A33F40288694B7D8CDC65F01BFDF362F570FC42BD54AD4F557C89FF6BF)
 
 
 客户端在处理完请求后应立刻返回。
@@ -413,6 +445,7 @@ type SourceCloseCallback = (uuid: number) => void
 **系统能力：** SystemCapability.Multimedia.Media.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -435,15 +468,17 @@ let sourceCloseCallback: media.SourceCloseCallback = (uuid: number) => {
 
 
 
-#### PlaybackMetrics23+
+## PlaybackMetrics23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type PlaybackMetrics = Record<PlaybackMetricsKey, Object>
 
 提供播放器指标信息键值对的容器定义。
 
 **系统能力：** SystemCapability.Multimedia.Media.Core
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -452,9 +487,10 @@ type PlaybackMetrics = Record<PlaybackMetricsKey, Object>
 
 
 
-#### AudioState(deprecated)
+## AudioState(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AudioState = 'idle' | 'playing' | 'paused' | 'stopped' | 'error'
 
@@ -465,6 +501,7 @@ type AudioState = 'idle' | 'playing' | 'paused' | 'stopped' | 'error'
 
 
 **系统能力：** SystemCapability.Multimedia.Media.AudioPlayer
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -477,9 +514,10 @@ type AudioState = 'idle' | 'playing' | 'paused' | 'stopped' | 'error'
 
 
 
-#### VideoPlayState(deprecated)
+## VideoPlayState(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type VideoPlayState = 'idle' | 'prepared' | 'playing' | 'paused' | 'stopped' | 'error'
 
@@ -490,6 +528,7 @@ type VideoPlayState = 'idle' | 'prepared' | 'playing' | 'paused' | 'stopped' | '
 
 
 **系统能力：** SystemCapability.Multimedia.Media.VideoPlayer
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -503,9 +542,10 @@ type VideoPlayState = 'idle' | 'prepared' | 'playing' | 'paused' | 'stopped' | '
 
 
 
-#### AVDownloadTaskState
+## AVDownloadTaskState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AVDownloadTaskState = 'init' | 'queued' | 'running' | 'completed' | 'paused' | 'removing' | 'error'
 
@@ -516,6 +556,7 @@ type AVDownloadTaskState = 'init' | 'queued' | 'running' | 'completed' | 'paused
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Media.Core
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -530,9 +571,10 @@ type AVDownloadTaskState = 'init' | 'queued' | 'running' | 'completed' | 'paused
 
 
 
-#### OnAVDownloadTaskStateHandle
+## OnAVDownloadTaskStateHandle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnAVDownloadTaskStateHandle = (taskId: string, state: AVDownloadTaskState) => void
 
@@ -546,6 +588,7 @@ type OnAVDownloadTaskStateHandle = (taskId: string, state: AVDownloadTaskState) 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | taskId | string | 是 | 状态变化的离线下载任务ID。 |
@@ -554,9 +597,10 @@ type OnAVDownloadTaskStateHandle = (taskId: string, state: AVDownloadTaskState) 
 
 
 
-#### OnAVDownloadProgressChangeHandle
+## OnAVDownloadProgressChangeHandle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnAVDownloadProgressChangeHandle = (taskId: string, progress: number) => void
 
@@ -570,6 +614,7 @@ type OnAVDownloadProgressChangeHandle = (taskId: string, progress: number) => vo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | taskId | string | 是 | 离线下载任务ID。 |
@@ -578,9 +623,10 @@ type OnAVDownloadProgressChangeHandle = (taskId: string, progress: number) => vo
 
 
 
-#### OnAdsEventLoadingErrorHandle
+## OnAdsEventLoadingErrorHandle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnAdsEventLoadingErrorHandle = (adsId: string, reason: BusinessError) => void
 
@@ -594,6 +640,7 @@ type OnAdsEventLoadingErrorHandle = (adsId: string, reason: BusinessError) => vo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | adsId | string | 是 | 加载失败的广告资源ID。 |
@@ -602,9 +649,10 @@ type OnAdsEventLoadingErrorHandle = (adsId: string, reason: BusinessError) => vo
 
 
 
-#### OnAdsEventAdsStartedHandle
+## OnAdsEventAdsStartedHandle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnAdsEventAdsStartedHandle = (adsId: string, duration: number) => void
 
@@ -617,6 +665,7 @@ type OnAdsEventAdsStartedHandle = (adsId: string, duration: number) => void
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |

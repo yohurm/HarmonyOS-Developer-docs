@@ -20,7 +20,7 @@
 
  
 ```json
-// oh-package.json5
+<em>// oh-package.json5</em>
 {
   "dependencies": {
     "dayjs": "^1.10.4",

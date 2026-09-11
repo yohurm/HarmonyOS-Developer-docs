@@ -1,15 +1,15 @@
 # 使用X963KDF进行密钥派生(ArkTS)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-key-derivation-using-x963kdf
 
-从API version 22开始，算法库支持使用该算法进行密钥派生操作。
+从API版本22开始，算法库支持使用该算法进行密钥派生操作。
 
 对应的算法规格请查看[密钥派生算法规格：X963KDF](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-key-derivation-overview#x963kdf算法)。
 
 
-#### 开发步骤
+## 开发步骤
 1. 构造[X963KdfSpec](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#x963kdfspec22)对象，作为密钥派生参数进行密钥派生。
 
   X963KdfSpec是[KdfSpec](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#kdfspec11)的子类，需要指定：
@@ -32,9 +32,13 @@
   Kdf.generateSecret的多种调用形式如表所示。
 
 | 接口名 | 返回方式 |
+
 | --- | --- |
+
 | generateSecret(params: KdfSpec, callback: AsyncCallback&lt;DataBlob&gt;): void | callback异步生成。 |
+
 | generateSecret(params: KdfSpec): Promise&lt;DataBlob&gt; | Promise异步生成。 |
+
 | generateSecretSync(params: KdfSpec): DataBlob | 同步生成。 |
 
   

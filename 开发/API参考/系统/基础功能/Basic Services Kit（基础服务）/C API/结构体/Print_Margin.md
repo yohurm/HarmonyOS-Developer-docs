@@ -1,6 +1,6 @@
 # Print_Margin
 
-更新时间：2026-04-03 09:39:20
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-print-print-margin
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -10,11 +10,12 @@ typedef struct {...} Print_Margin
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
-表示打印边距。
+Print_Margin用于表示打印页面的边距信息，支持设置左、上、右、下四个方向的边距，控制可打印内容区域。适用于需要在打印时精确控制内容与纸张边缘距离的场景，通过合理配置边距可以避免内容溢出或被裁剪。
  
 **起始版本：** 12
  
@@ -24,19 +25,22 @@ typedef struct {...} Print_Margin
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
-| uint32_t leftMargin | 左边距，单位：毫米。 |
-| uint32_t topMargin | 上边距，单位：毫米。 |
-| uint32_t rightMargin | 右边距，单位：毫米。 |
-| uint32_t bottomMargin | 下边距，单位：毫米。 |
+| uint32_t leftMargin | 左边距，单位：毫米。取值原则：大于0。 |
+| uint32_t topMargin | 上边距，单位：毫米。取值原则：大于0。 |
+| uint32_t rightMargin | 右边距，单位：毫米。取值原则：大于0。 |
+| uint32_t bottomMargin | 下边距，单位：毫米。取值原则：大于0。 |

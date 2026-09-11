@@ -1,11 +1,12 @@
 # ohbattery_info.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohbattery-info-h
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
   
 
-#### 枚举
+### 枚举
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | BatteryInfo_BatteryPluggedType | BatteryInfo_BatteryPluggedType | 定义插入类型。 |
@@ -40,10 +44,12 @@
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | int32_t OH_BatteryInfo_GetCapacity() | 返回当前电池容量百分比。 |
@@ -52,10 +58,12 @@
  
   
 
-#### 变量
+### 变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | static const char * COMMON_EVENT_KEY_CAPACITY = "soc" | 标识电池容量变化后发送的常见事件。 起始版本： 13 |
@@ -65,13 +73,15 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
   
 
-#### BatteryInfo_BatteryPluggedType
+### BatteryInfo_BatteryPluggedType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -85,6 +95,7 @@ enum BatteryInfo_BatteryPluggedType
  
 **起始版本：** 13
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | PLUGGED_TYPE_NONE = 0 | 电源已拔下。 |
@@ -96,13 +107,15 @@ enum BatteryInfo_BatteryPluggedType
  
   
 
-#### 函数说明
+## 函数说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
   
 
-#### OH_BatteryInfo_GetCapacity()
+### OH_BatteryInfo_GetCapacity()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -120,6 +133,7 @@ int32_t OH_BatteryInfo_GetCapacity()
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回介于0和100之间的数字。 |
@@ -127,7 +141,8 @@ int32_t OH_BatteryInfo_GetCapacity()
  
   
 
-#### OH_BatteryInfo_GetPluggedType()
+### OH_BatteryInfo_GetPluggedType()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -145,6 +160,7 @@ BatteryInfo_BatteryPluggedType OH_BatteryInfo_GetPluggedType()
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | BatteryInfo_BatteryPluggedType | PLUGGED_TYPE_NONE 如果电源被拔下。 PLUGGED_TYPE_AC 如果电源是AC充电。 PLUGGED_TYPE_USB 如果电源是USB DC充电。 PLUGGED_TYPE_WIRELESS 如果电源是无线充电。 PLUGGED_TYPE_BUTT 如果类型未知。 |

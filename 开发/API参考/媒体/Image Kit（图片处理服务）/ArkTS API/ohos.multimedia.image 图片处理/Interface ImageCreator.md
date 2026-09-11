@@ -1,9 +1,9 @@
 # Interface (ImageCreator)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-imagecreator
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ImageCreator类，作为图片的生产者，用于将图片写入到Surface中。
  
@@ -16,9 +16,10 @@ ImageCreator类，作为图片的生产者，用于将图片写入到Surface中�
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { image } from '@kit.ImageKit';
@@ -26,12 +27,14 @@ import { image } from '@kit.ImageKit';
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Multimedia.Image.ImageCreator
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | capacity9+ | number | 是 | 否 | 同时访问的图像数。该参数仅作为期望值，实际capacity由设备硬件决定。 |
@@ -40,9 +43,10 @@ import { image } from '@kit.ImageKit';
  
   
 
-#### dequeueImage9+
+## dequeueImage9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 dequeueImage(callback: AsyncCallback&lt;Image&gt;): void
  
@@ -52,6 +56,7 @@ dequeueImage(callback: AsyncCallback&lt;Image&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;Image&gt; | 是 | 回调函数，当获取最新图片成功，err为undefined，data为获取到的最新图片；否则为错误对象。 |
@@ -75,9 +80,10 @@ async function DequeueImage(creator : image.ImageCreator) {
  
   
 
-#### dequeueImage9+
+## dequeueImage9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 dequeueImage(): Promise&lt;Image&gt;
  
@@ -87,6 +93,7 @@ dequeueImage(): Promise&lt;Image&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Image&gt; | Promise对象，返回最新图片。 |
@@ -108,9 +115,10 @@ async function DequeueImage(creator : image.ImageCreator) {
  
   
 
-#### queueImage9+
+## queueImage9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 queueImage(image: Image, callback: AsyncCallback&lt;void&gt;): void
  
@@ -120,6 +128,7 @@ queueImage(image: Image, callback: AsyncCallback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | image | Image | 是 | 绘制好的buffer图像。 |
@@ -156,9 +165,10 @@ async function QueueImage(creator : image.ImageCreator) {
  
   
 
-#### queueImage9+
+## queueImage9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 queueImage(image: Image): Promise&lt;void&gt;
  
@@ -168,6 +178,7 @@ queueImage(image: Image): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | image | Image | 是 | 绘制好的buffer图像。 |
@@ -175,6 +186,7 @@ queueImage(image: Image): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -208,9 +220,10 @@ async function QueueImage(creator : image.ImageCreator) {
  
   
 
-#### on9+
+## on9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'imageRelease', callback: AsyncCallback&lt;void&gt;): void
  
@@ -220,6 +233,7 @@ on(type: 'imageRelease', callback: AsyncCallback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件类型，如'imageRelease'。 |
@@ -244,9 +258,10 @@ async function On(creator : image.ImageCreator) {
  
   
 
-#### off13+
+## off13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'imageRelease', callback?: AsyncCallback&lt;void&gt;): void
  
@@ -256,6 +271,7 @@ off(type: 'imageRelease', callback?: AsyncCallback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件类型，如'imageRelease'。 |
@@ -276,9 +292,10 @@ async function Off(creator : image.ImageCreator) {
  
   
 
-#### release9+
+## release9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(callback: AsyncCallback&lt;void&gt;): void
  
@@ -292,6 +309,7 @@ release(callback: AsyncCallback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数，当图像释放成功，err为undefined，否则为错误对象。 |
@@ -315,9 +333,10 @@ async function Release(creator : image.ImageCreator) {
  
   
 
-#### release9+
+## release9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(): Promise&lt;void&gt;
  
@@ -331,6 +350,7 @@ release(): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |

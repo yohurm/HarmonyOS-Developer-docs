@@ -1,16 +1,16 @@
 # 使用JSVM-API接口操作bigint类型值
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-about-bigint
 
-#### 简介
+## 简介
 
 BigInt是JavaScript中用于表示任意精度整数的数据类型，能够处理比Number类型更大范围的整数值。JSVM-API提供的接口支持在JSVM模块中创建、获取和操作BigInt类型值。
  
   
 
-#### 基本概念
+## 基本概念
 
 使用JSVM-API接口操作BigInt类型值需要理解以下基本概念：
  
@@ -21,8 +21,9 @@ BigInt是JavaScript中用于表示任意精度整数的数据类型，能够处�
  
   
 
-#### 接口说明
+## 接口说明
  
+
 | 接口 | 功能说明 |
 | --- | --- |
 | OH_JSVM_CreateBigintInt64 | 将C int64_t类型的值转换为JavaScript BigInt类型。 |
@@ -35,13 +36,13 @@ BigInt是JavaScript中用于表示任意精度整数的数据类型，能够处�
  
   
 
-#### 使用示例
+## 使用示例
 
 JSVM-API接口开发流程参考[使用JSVM-API实现JS与C/C++语言交互开发流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-process)。本文仅展示接口对应的C++及ArkTS相关代码。
  
   
 
-#### OH_JSVM_GetValueBigintWords
+### OH_JSVM_GetValueBigintWords
 
 获取给定JavaScript BigInt对象的底层数据，即BigInt数据的字词表示。
  
@@ -110,7 +111,7 @@ OH_JSVM_GetValueBigintWords signBit: 0.
  
   
 
-#### OH_JSVM_CreateBigintWords
+### OH_JSVM_CreateBigintWords
 
 根据给定的uint64_t数组创建一个JavaScript BigInt对象。
  
@@ -160,7 +161,7 @@ JSVM OH_JSVM_CreateBigintWords success
  
   
 
-#### OH_JSVM_CreateBigintUint64
+### OH_JSVM_CreateBigintUint64
 
 根据给定的uint64类型对象创建JavaScript BigInt对象。
  
@@ -208,7 +209,7 @@ JSVM OH_JSVM_CreateBigintUint64 success
  
   
 
-#### OH_JSVM_GetValueBigintUint64
+### OH_JSVM_GetValueBigintUint64
 
 获取给定JavaScript BigInt的uint64_t基础类型值。
  
@@ -262,7 +263,7 @@ JSVM GetValueBigintUint64 success
  
   
 
-#### OH_JSVM_CreateBigintInt64
+### OH_JSVM_CreateBigintInt64
 
 根据给定的int64_t类型对象创建JavaScript BigInt对象。
  
@@ -309,7 +310,7 @@ JSVM OH_JSVM_CreateBigintInt64 success
  
   
 
-#### OH_JSVM_GetValueBigintInt64
+### OH_JSVM_GetValueBigintInt64
 
 用于从传入的参数中提取64位整数的BigInt数据，以供后续处理。
  

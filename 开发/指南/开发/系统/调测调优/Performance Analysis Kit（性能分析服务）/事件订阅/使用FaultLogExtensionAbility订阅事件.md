@@ -1,15 +1,15 @@
 # 使用FaultLogExtensionAbility订阅事件
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fault-log-extension-app-events-arkts
 
-从API version 21开始，可以在FaultLogExtensionAbility中使用HiAppEvent事件订阅接口，实现应用故障事件（仅包括[崩溃事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-watcher-crash-events)和[应用冻屏事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-watcher-freeze-events)）的延迟通知。应用因崩溃或冻屏退出后，无法启动或长时间未启动的场景下，可以不依赖应用启动实现故障事件信息的订阅回调。FaultLogExtensionAbility仅用于补充处理故障事件，不能替代[主进程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/process-model-stage#基本进程类型)正常启动时进行故障事件处理。
+从API version 21开始，可以在FaultLogExtensionAbility中使用HiAppEvent事件订阅接口，实现应用故障事件（仅包括[崩溃事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-watcher-crash-events)和[应用冻屏事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-watcher-freeze-events)）的延迟通知。应用因崩溃或冻屏退出后，无法启动或长时间未启动的场景下，可以不依赖应用启动实现故障事件信息的订阅回调。FaultLogExtensionAbility仅用于补充处理故障事件，不能替代[主进程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/process-model-overview#基本进程类型)正常启动时进行故障事件处理。
 
 在应用发生崩溃或者冻屏事件30分钟后，系统拉起FaultLogExtensionAbility进程，实际拉起时间可能会因为系统调度有所延迟。该30分钟是设备在非休眠状态下累积的时间。测试时需要保持测试设备屏幕常亮，防止设备休眠。灭屏状态下设备可能会休眠，导致实际接收到回调的时间延长。
 
 
-#### 原理机制说明
+## 原理机制说明
 
 FaultLogExtensionAbility的原理机制如下图所示：
 
@@ -29,7 +29,7 @@ FaultLogExtensionAbility的原理机制如下图所示：
 
 
 
-#### 约束与限制
+## 约束与限制
 
  - FaultLogExtensionAbility被拉起后只有10s的时间用以完成故障处理。超时没有处理完成可以在[onDisconnect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hiviewdfx-faultlogextensionability#ondisconnect)中保存状态。
  - 从开机或上次拉起FaultLogExtensionAbility后，应用首次触发崩溃或冻屏开始计时。在拉起FaultLogExtensionAbility前反复触发崩溃或冻屏事件均不会重新计时。计时30分钟后拉起FaultLogExtensionAbility进程。
@@ -43,13 +43,14 @@ FaultLogExtensionAbility的原理机制如下图所示：
 
 
 
-#### 接口说明
+## 接口说明
 
 API接口使用说明，包括参数使用限制和具体取值范围。请参考[@ohos.hiviewdfx.FaultLogExtensionAbility (故障延迟通知)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hiviewdfx-faultlogextensionability)。
 
 仅适用于Stage模型。
 
 **订阅接口功能介绍**：
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -60,7 +61,7 @@ API接口使用说明，包括参数使用限制和具体取值范围。请参�
 
 
 
-#### 事件订阅开发指导
+## 事件订阅开发指导
 
 以订阅appfreeze事件为例，说明开发步骤。
 1. 新建一个ArkTS应用工程。编辑工程中的“entry > src > main > ets > pages > Index.ets”文件。构造appfreeze故障的代码示例如下：
@@ -222,7 +223,7 @@ export default class MyFaultLogExtensionAbility extends FaultLogExtensionAbility
 
 
 
-#### 调测验证
+## 调测验证
 
 点击DevEco Studio界面的运行按钮，启动应用工程。在应用界面点击“AppInput”按钮，触发冻屏事件。应用退出后，应用和设备不得重启，等待30分钟左右。
 
@@ -244,11 +245,11 @@ FaultLogExtensionAbility onDisconnect
 
 
 
-#### FaultLogExtensionAbility常见问题
+## FaultLogExtensionAbility常见问题
 
 
 
-#### FaultLogExtensionAbility进程没有接收到回调事件
+### FaultLogExtensionAbility进程没有接收到回调事件
 
 FaultLogExtensionAbility进程启动后，没有收到HiAppEvent订阅的回调。可能是以下原因导致：
 
@@ -258,13 +259,13 @@ FaultLogExtensionAbility进程启动后，没有收到HiAppEvent订阅的回调�
 
 
 
-#### 系统事件重复上报
+### 系统事件重复上报
 
 系统事件将通过HiAppEvent回调通知所有订阅了该事件的事件观察者。当FaultLogExtensionAbility进程与主进程同时存在，并且均订阅了同一个系统事件时，触发该系统事件后，两个进程皆将接收到相应的事件回调。
 
 
 
-#### 部分事件丢失
+### 部分事件丢失
 
 在应用启动之后，事件观察者注册之前发生的事件丢失。检查是否注册了多个同名的事件观察者。
 

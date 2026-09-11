@@ -1,9 +1,9 @@
 # @ohos.arkui.dragController (DragController)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-dragcontroller
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供发起主动拖拽的能力，当应用接收到触摸或长按等事件时可以主动发起拖拽动作，并在拖拽过程中携带拖拽信息，适用于应用需要自主控制拖拽发起时机、拖拽预览效果和拖拽数据传递的场景，帮助应用实现更灵活的自定义拖拽交互。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { dragController } from '@kit.ArkUI';
@@ -22,9 +23,10 @@ import { dragController } from '@kit.ArkUI';
 
 
 
-#### dragController.executeDrag(deprecated)
+## dragController.executeDrag(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 executeDrag(custom: CustomBuilder | DragItemInfo, dragInfo: DragInfo, callback: AsyncCallback&lt;DragEventParam&gt;): void
 
@@ -40,6 +42,7 @@ executeDrag(custom: CustomBuilder | DragItemInfo, dragInfo: DragInfo, callback: 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | custom | CustomBuilder \| DragItemInfo | 是 | 拖拽发起后跟手效果所拖拽的对象。 说明： 不支持全局builder。如果builder中使用了Image组件，应尽量开启同步加载，即配置Image的syncLoad为true。该builder只用于生成当次拖拽中显示的图片。builder的根组件宽高为0时，无法生成拖拽显示的图片导致拖拽失败。builder的修改不会同步到当前正在拖拽的图片，对builder的修改需要在下一次拖拽时生效。 |
@@ -50,6 +53,7 @@ executeDrag(custom: CustomBuilder | DragItemInfo, dragInfo: DragInfo, callback: 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -146,9 +150,10 @@ struct DragControllerPage {
 
 
 
-#### dragController.executeDrag(deprecated)
+## dragController.executeDrag(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 executeDrag(custom: CustomBuilder | DragItemInfo, dragInfo: DragInfo): Promise&lt;DragEventParam&gt;
 
@@ -164,6 +169,7 @@ executeDrag(custom: CustomBuilder | DragItemInfo, dragInfo: DragInfo): Promise&l
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | custom | CustomBuilder \| DragItemInfo | 是 | 拖拽发起后跟手效果所拖拽的对象。 |
@@ -171,6 +177,7 @@ executeDrag(custom: CustomBuilder | DragItemInfo, dragInfo: DragInfo): Promise&l
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -180,6 +187,7 @@ executeDrag(custom: CustomBuilder | DragItemInfo, dragInfo: DragInfo): Promise&l
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -301,18 +309,20 @@ struct DragControllerPage {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/SYdw-3-zQHyxsds88iTa5Q/zh-cn_image_0000002685927847.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071442Z&HW-CC-Expire=86400&HW-CC-Sign=0B0014A83ED87C7B0211C5B2EAFBF33F647D2070C2813933926537C43E20D809)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/ToXmH5kaR1OOKL8vXO-hIg/zh-cn_image_0000002717612368.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=AA518CD791455F6D3D7B3712AF4791064CED21CFB9AD1A776ACDF45243481223)
 
 
 
 
-#### DragInfo
+## DragInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 发起拖拽所需要的属性和拖拽时携带的信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -456,9 +466,10 @@ struct DragInfoAutoHideSample {
 
 
 
-#### dragController.createDragAction(deprecated)
+## dragController.createDragAction(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 createDragAction(customArray: Array<CustomBuilder | DragItemInfo>, dragInfo: DragInfo): DragAction
 
@@ -474,6 +485,7 @@ createDragAction(customArray: Array<CustomBuilder | DragItemInfo>, dragInfo: Dra
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | customArray | Array<CustomBuilder \| DragItemInfo> | 是 | 拖拽发起后跟手效果所拖拽的对象。 |
@@ -481,6 +493,7 @@ createDragAction(customArray: Array<CustomBuilder | DragItemInfo>, dragInfo: Dra
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -490,6 +503,7 @@ createDragAction(customArray: Array<CustomBuilder | DragItemInfo>, dragInfo: Dra
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -608,14 +622,15 @@ struct DragControllerPage {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/sULKh_sKQMGI0-CTnev4Ig/zh-cn_image_0000002656008168.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071442Z&HW-CC-Expire=86400&HW-CC-Sign=06D57733FE47C8F392DE69D427821B10480742C85856CD45E563A1799C9E54D6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/LY1hKCyYTjKAHD_AHCrzjA/zh-cn_image_0000002747292321.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=5EBC284E04867E8DACA41D78EC3D6675531C9674BF3BC3C7C04727C181FAC67F)
 
 
 
 
-#### DragAction11+
+## DragAction11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 监听状态改变，启动拖拽服务的对象。
 
@@ -625,9 +640,10 @@ struct DragControllerPage {
 
 
 
-#### startDrag11+
+### startDrag11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 startDrag(): Promise&lt;void&gt;
 
@@ -639,12 +655,14 @@ startDrag(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -738,7 +756,7 @@ struct ImageExample {
   @State uri: string = '';
   @State blockArr: string[] = [];
   uiContext = this.getUIContext();
-  dataLoadingKey: string = '';
+  udKey: string = '';
 
   @Builder
   DraggingBuilder() {
@@ -774,14 +792,14 @@ struct ImageExample {
                     fileIo.closeSync(file.fd);
                     context.resourceManager.closeRawFdSync('test1.mp4')
                     this.uri = fileUri.getUriFromPath(filePath);
-                    let videoFileUri: uniformDataStruct.FileUri = {
+                    let videoMp: uniformDataStruct.FileUri = {
                       uniformDataType: 'general.file-uri',
                       oriUri: this.uri,
                       fileType: 'general.video',
                     }
                     let unifiedRecord = new unifiedDataChannel.UnifiedRecord();
                     let unifiedData = new unifiedDataChannel.UnifiedData();
-                    unifiedRecord.addEntry(uniformTypeDescriptor.UniformDataType.FILE_URI, videoFileUri);
+                    unifiedRecord.addEntry(uniformTypeDescriptor.UniformDataType.FILE_URI, videoMp);
                     unifiedData.addRecord(unifiedRecord);
                     return unifiedData;
                   }
@@ -869,8 +887,8 @@ struct ImageExample {
               dataProgressListener: progressListener,
             }
             try {
-              this.dataLoadingKey = (event as DragEvent).startDataLoading(options);
-              console.info('dataLoadingKey: ', this.dataLoadingKey);
+              this.udKey = (event as DragEvent).startDataLoading(options);
+              console.info('udKey: ', this.udKey);
             } catch (e) {
               console.error(`startDataLoading errorCode: ${e.code}, errorMessage: ${e.message}`);
             }
@@ -884,7 +902,7 @@ struct ImageExample {
       Button('取消数据传输')
         .onClick(() => {
           try {
-            this.getUIContext().getDragController().cancelDataLoading(this.dataLoadingKey);
+            this.getUIContext().getDragController().cancelDataLoading(this.udKey);
           } catch (e) {
             console.error(`cancelDataLoading errorCode: ${e.code}, errorMessage: ${e.message}`);
           }
@@ -896,14 +914,15 @@ struct ImageExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/3VIS8TxxQLS8xAHEjCXNLg/zh-cn_image_0000002655848248.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071442Z&HW-CC-Expire=86400&HW-CC-Sign=79D1857297B1A6D42204C6B6FC43173250AEBAEB53CFA42928E12281E558F316)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/8afxPWLvQwCDParlpkWs6A/zh-cn_image_0000002747212237.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=E7BC6B7E490FD6CD25C39227222F1B5AD0A9CF6D744FCAF162A4F58CD242D55C)
 
 
 
 
-#### on('statusChange')11+
+### on('statusChange')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 on(type: 'statusChange', callback: Callback<[DragAndDropInfo](#draganddropinfo11)>): void
 
@@ -914,6 +933,7 @@ on(type: 'statusChange', callback: Callback<[DragAndDropInfo](#draganddropinfo11
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -997,9 +1017,10 @@ struct DragControllerPage {
 
 
 
-#### off('statusChange')11+
+### off('statusChange')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 off(type: 'statusChange', callback?: Callback<[DragAndDropInfo](#draganddropinfo11)>): void
 
@@ -1010,6 +1031,7 @@ off(type: 'statusChange', callback?: Callback<[DragAndDropInfo](#draganddropinfo
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1090,15 +1112,17 @@ struct DragControllerPage {
 
 
 
-#### DragAndDropInfo11+
+## DragAndDropInfo11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 拖拽过程中监听到status改变时上报的数据。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1109,15 +1133,17 @@ struct DragControllerPage {
 
 
 
-#### DragStatus11+
+## DragStatus11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 拖拽开始和结束状态。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1127,15 +1153,17 @@ struct DragControllerPage {
 
 
 
-#### AnimationOptions11+
+## AnimationOptions11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 拖拽相关的动效参数。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1145,15 +1173,17 @@ struct DragControllerPage {
 
 
 
-#### DragEventParam12+
+## DragEventParam12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 拖拽结束返回结果的回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1163,9 +1193,10 @@ struct DragControllerPage {
 
 
 
-#### dragController.getDragPreview(deprecated)
+## dragController.getDragPreview(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 getDragPreview(): DragPreview
 
@@ -1181,6 +1212,7 @@ getDragPreview(): DragPreview
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | DragPreview | 一个代表拖拽背板的对象，提供背板样式设置的接口，在onDrop和onDragEnd回调中使用不生效。 |
@@ -1192,9 +1224,10 @@ getDragPreview(): DragPreview
 
 
 
-#### DragPreview11+
+## DragPreview11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 拖拽背板的对象，在onDrop和onDragEnd回调中使用不生效。
 
@@ -1204,9 +1237,10 @@ getDragPreview(): DragPreview
 
 
 
-#### setForegroundColor11+
+### setForegroundColor11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 setForegroundColor(color: ResourceColor): void
 
@@ -1217,6 +1251,7 @@ setForegroundColor(color: ResourceColor): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1229,9 +1264,10 @@ setForegroundColor(color: ResourceColor): void
 
 
 
-#### animate11+
+### animate11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 animate(options: AnimationOptions, handler: () => void): void
 
@@ -1242,6 +1278,7 @@ animate(options: AnimationOptions, handler: () => void): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1279,7 +1316,8 @@ export default class EntryAbility extends UIAbility {
 
     windowStage.loadContent('pages/Index', this.storage, (err, data) => {
       if (err.code) {
-        console.error(`Failed to load the content. Code: ${err.code}, message: ${err.message}`);
+        hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s',
+          `Code is ${err.code}, message is ${err.message}`);
         return;
       }
       hilog.info(0x0000, 'testTag', 'Succeeded in loading the content. Data: %{public}s',
@@ -1298,7 +1336,7 @@ export default class EntryAbility extends UIAbility {
 ```
 
 2. 在Index.ets中通过this.getUIContext().getSharedLocalStorage()获取UI上下文，进而获取DragController对象实施后续操作。       
-```text
+```json
 import { unifiedDataChannel } from '@kit.ArkData';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { dragController, curves, UIContext } from '@kit.ArkUI';
@@ -1333,19 +1371,19 @@ struct DragControllerPage {
         .onDragEnter(() => {
           try {
             let uiContext: UIContext = this.storages?.get<UIContext>('uiContext') as UIContext;
-            let dragPreview: dragController.DragPreview = uiContext.getDragController().getDragPreview();
+            let previewObj: dragController.DragPreview = uiContext.getDragController().getDragPreview();
             let foregroundColor: ResourceColor = Color.Green;
 
             let previewAnimation: dragController.AnimationOptions = {
               curve: curves.cubicBezierCurve(0.2, 0, 0, 1),
             }
-            dragPreview.animate(previewAnimation, () => {
-              dragPreview.setForegroundColor(foregroundColor);
+            previewObj.animate(previewAnimation, () => {
+              previewObj.setForegroundColor(foregroundColor);
             });
           } catch (error) {
-            let message = (error as BusinessError).message;
+            let msg = (error as BusinessError).message;
             let code = (error as BusinessError).code;
-            console.error(`Failed to animate drag preview. Code: ${code}, message: ${message}`);
+            hilog.error(0x0000, `show error code is ${code}, message is ${msg}`, '');
           }
         })
         .onDrop(() => {
@@ -1361,23 +1399,21 @@ struct DragControllerPage {
               data: unifiedData,
               extraParams: ''
             }
+            let eve: DragInfo = new DragInfo();
             this.getUIContext()
               .getDragController()
               .executeDrag(() => { // 建议使用 this.getUIContext().getDragController().executeDrag()接口
                 this.draggingBuilder()
-              }, dragInfo, (err, dragEventParam) => {
-                if (err) {
-                  console.error(`Failed to execute drag. Code: ${err.code}, message: ${err.message}`);
-                  return;
-                }
-                if (dragEventParam && dragEventParam.event) {
-                  if (dragEventParam.event.getResult() == DragResult.DRAG_SUCCESSFUL) {
+              }, dragInfo, (err, eve) => {
+                hilog.info(0x0000, `${JSON.stringify(err)}`, '')
+                if (eve && eve.event) {
+                  if (eve.event.getResult() == DragResult.DRAG_SUCCESSFUL) {
                     hilog.info(0x0000, 'success', '');
-                  } else if (dragEventParam.event.getResult() == DragResult.DRAG_FAILED) {
+                  } else if (eve.event.getResult() == DragResult.DRAG_FAILED) {
                     hilog.info(0x0000, 'failed', '');
-                   }
-                 }
-               })
+                  }
+                }
+              })
           }
         }
       }).margin({ top: 100 })
@@ -1388,20 +1424,22 @@ struct DragControllerPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/ksVW46vFT1Ok8tqNQV7enw/zh-cn_image_0000002686087677.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071442Z&HW-CC-Expire=86400&HW-CC-Sign=7E56D2CDC38F75D96B7B6C91E8AE547CE8C818AA2B06AB25C49FD3859921D72C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/W1hKNyz-QzCGheQu6ri2tg/zh-cn_image_0000002717772302.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=0BFF0952A3CD6D03718D263CBB534BC1164310FEDF5419DE7C11DA73A22DE322)
 
 
 
 
-#### DragStartRequestStatus18+
+## DragStartRequestStatus18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 定义应用是否可以发起拖拽的枚举类型。仅在[onDragStart](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-events-drag-drop#ondragstart)调用时有效。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1411,15 +1449,17 @@ struct DragControllerPage {
 
 
 
-#### DragSpringLoadingState20+
+## DragSpringLoadingState20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 定义拖拽的悬停检测状态的枚举类型。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1431,15 +1471,17 @@ struct DragControllerPage {
 
 
 
-#### DragSpringLoadingConfiguration20+
+## DragSpringLoadingConfiguration20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 定义拖拽的悬停检测配置参数的接口。默认的配置参数通常已能满足需求。可以在绑定[onDragSpringLoading](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-events-drag-drop#ondragspringloading20)时指定配置，或者在BEGIN状态期间使用[updateConfiguration](#updateconfiguration20)方法动态修改该配置参数。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1451,15 +1493,17 @@ struct DragControllerPage {
 
 
 
-#### SpringLoadingDragInfos20+
+## SpringLoadingDragInfos20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 定义触发悬停检测时拖拽事件信息的接口。该接口提供了拖拽数据摘要和拖拽事件额外信息，应用可以据此决定是否响应悬停检测回调。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1469,21 +1513,24 @@ struct DragControllerPage {
 
 
 
-#### SpringLoadingContext20+
+## SpringLoadingContext20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 定义回调上下文信息的类，用于在悬停检测回调中传递给应用，使其能访问拖拽状态、动态刷新UI效果以及访问拖拽数据以确定是否处理拖拽操作。
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1495,13 +1542,14 @@ struct DragControllerPage {
 
 
 
-#### abort20+
+### abort20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 abort(): void
 
-终止后续的悬停检测。该方法应在悬停检测回调中通过SpringLoadingContext对象调用。本方法不会触发CANCEL状态通知，应用需要在执行本方法时进行状态清理。
+终止后续的悬停检测。该方法应在悬停检测回调中通过SpringLoadingContext对象调用。本方法不会触发CANCEL状态通知，应用程序需要在执行本方法时进行状态清理。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
@@ -1509,9 +1557,10 @@ abort(): void
 
 
 
-#### updateConfiguration20+
+### updateConfiguration20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 updateConfiguration(config: DragSpringLoadingConfiguration): void
 
@@ -1522,6 +1571,7 @@ updateConfiguration(config: DragSpringLoadingConfiguration): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |

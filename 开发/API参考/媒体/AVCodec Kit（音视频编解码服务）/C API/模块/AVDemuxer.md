@@ -1,13 +1,14 @@
 # AVDemuxer
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avdemuxer
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 AVDemuxer模块提供从媒体文件码流中提取[sample](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-video-demuxer)的接口。
 
@@ -32,9 +33,11 @@ AVDemuxer模块提供从媒体文件码流中提取[sample](https://developer.hu
 
 
 
-#### 文件汇总
+## 文件汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 描述 |
 | --- | --- |

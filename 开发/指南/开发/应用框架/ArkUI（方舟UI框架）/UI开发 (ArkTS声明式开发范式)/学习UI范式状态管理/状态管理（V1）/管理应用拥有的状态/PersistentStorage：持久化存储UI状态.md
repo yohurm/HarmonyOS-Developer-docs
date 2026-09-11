@@ -1,6 +1,6 @@
 # PersistentStorage：持久化存储UI状态
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-persiststorage
 
@@ -9,7 +9,7 @@ PersistentStorage是应用程序中的可选单例对象。此对象的作用是
 PersistentStorage提供状态变量持久化的能力，但是需要注意，其持久化和读回UI的能力都需要依赖AppStorage。在阅读本文档前，建议提前阅读：[AppStorage](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-appstorage)，[PersistentStorage API文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-state-management#persistentstorage)。
 
 
-#### 概述
+## 概述
 
 PersistentStorage将选定的AppStorage属性保留在设备磁盘上。应用程序通过API，以决定哪些属性应借助PersistentStorage持久化。PersistentStorage和AppStorage中的属性建立了双向同步，UI和业务逻辑不直接访问PersistentStorage中的属性，所有属性访问都是对AppStorage的访问，AppStorage中的更改会自动同步到PersistentStorage。
 
@@ -21,7 +21,7 @@ PersistentStorage功能上耦合了AppStorage，并且数据在不同module中�
 
 
 
-#### 限制条件
+## 限制条件
 
 PersistentStorage允许的类型和值有：
 
@@ -63,11 +63,11 @@ onWindowStageCreate(windowStage: window.WindowStage): void {
 
 
 
-#### 使用场景
+## 使用场景
 
 
 
-#### 从AppStorage中访问PersistentStorage初始化的属性
+### 从AppStorage中访问PersistentStorage初始化的属性
 1. 初始化PersistentStorage：
 
   
@@ -136,10 +136,10 @@ struct TestPageOne {
 
 5. 在TestPageOne组件中创建状态变量@StorageLink('aProp') aProp，和AppStorage中“aProp”双向绑定，在创建的过程中会在AppStorage中查找，成功找到“aProp”，所以使用其在AppStorage找到的值47。
 
-  **图1** PersistProp初始化流程
+  **图1** persistProp初始化流程
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/oLMjtfZDRm-wYekepmP6jA/zh-cn_image_0000002674472036.png?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=59FE543DC0A82DFE97DD58DE3CBC6F34A6AB476C54E80A827E9AC9AA93705158)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/bxp-_WNwQGOgcB5wB8ry7w/zh-cn_image_0000002717610098.png?HW-CC-KV=V1&HW-CC-Date=20260911T072213Z&HW-CC-Expire=86400&HW-CC-Sign=37EF88C51EE6EB994A4EA7CF30F87CC1FC698064B3DF5897347A3F9CE35D88BF)
 
  - 触发点击事件后：
 
@@ -161,7 +161,7 @@ struct TestPageOne {
 
 
 
-#### 在PersistentStorage之前访问AppStorage中的属性
+### 在PersistentStorage之前访问AppStorage中的属性
 
 该示例为反例。在调用PersistentStorage.persistProp或者persistProps之前使用接口访问AppStorage中的属性是错误的，因为这样的调用顺序会丢失上一次应用程序运行中的属性值：
 
@@ -176,7 +176,7 @@ PersistentStorage.persistProp('aProp', 48)：在PersistentStorage中查找到“
 
 
 
-#### 在PersistentStorage之后访问AppStorage中的属性
+### 在PersistentStorage之后访问AppStorage中的属性
 
 开发者可以先判断是否需要覆盖上一次保存在PersistentStorage中的值，如果需要覆盖，再调用AppStorage的接口进行修改，如果不需要覆盖，则不调用AppStorage的接口。
 
@@ -196,7 +196,7 @@ if ((AppStorage.get<number>('aProp') ?? 0) > MAX_NUM) {
 
 
 
-#### 持久化联合类型变量
+### 持久化联合类型变量
 
 PersistentStorage支持联合类型和undefined和null，在下面的示例中，使用persistProp方法初始化“P”为undefined。通过@StorageLink('P')绑定变量p，类型为number | undefined | null，点击Button改变P的值，视图会随之刷新。且P的值被持久化存储。
 
@@ -249,12 +249,12 @@ struct TestCase6 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/g33M5ATAQ-mOCIcRY03PHA/zh-cn_image_0000002704392005.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=4930E63BDAD8231DCECAF5B273425E80FC5B2AD06B51D16CB4588B8B8616897F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/oSVVqFFITKmGKPs2cITpxg/zh-cn_image_0000002747290049.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072213Z&HW-CC-Expire=86400&HW-CC-Sign=7ACCF27111F740BD38F78938798A60E4BF58205C84C62E21C088B63F11712F97)
 
 
 
 
-#### 持久化Date类型变量
+### 持久化Date类型变量
 
 在下面的示例中，@StorageLink装饰的persistedDate类型为Date，点击Button改变persistedDate的值，视图会随之刷新。且persistedDate的值被持久化存储。
 
@@ -320,12 +320,12 @@ struct PersistedDate {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/W5qXXPs6SW-ZJo5jMPcH1Q/zh-cn_image_0000002674631882.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=1F67E67290877CCA770E26404A3A82C28ECB435C842B75CFA80E9EA07B7EB21F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/dNdI-bT7QJWxD7MqPHLhMg/zh-cn_image_0000002747209967.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072213Z&HW-CC-Expire=86400&HW-CC-Sign=311638FCE699B0137C31C28922FE5C1D013F47196B9A5BE4437BB506DA68E6BD)
 
 
 
 
-#### 持久化Map类型变量
+### 持久化Map类型变量
 
 在下面的示例中，@StorageLink装饰的persistedMapString类型为Map<number, string>，点击Button改变persistedMapString的值，视图会随之刷新。且persistedMapString的值被持久化存储。
 
@@ -380,12 +380,12 @@ struct PersistedMap {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/36LKpdESSpeB1QSJ7kY8BA/zh-cn_image_0000002704271837.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=C9A60AD6E5F94455D50C6632669A95883C87AC97925161351D77D53CB15A2355)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/RoFfmomKRt2A_teF5sVfyQ/zh-cn_image_0000002717770034.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072213Z&HW-CC-Expire=86400&HW-CC-Sign=DE58E5E37CA550EBB32380D02816809334F0C7E8E7A70815CF9D383BFA76DE57)
 
 
 
 
-#### 持久化Set类型变量
+### 持久化Set类型变量
 
 在下面的示例中，@StorageLink装饰的persistedSet类型为Set&lt;number&gt;，点击Button改变persistedSet的值，视图会随之刷新。且persistedSet的值被持久化存储。
 
@@ -461,4 +461,4 @@ struct PersistedSet {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/eMTEerpGS2SDoXduGMN-aQ/zh-cn_image_0000002674472038.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=CF827CE85AF064D192E715E3BDBDAA20F69BFA244DC89CD1641527E23FAA0E2A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/n9YqH9L3TEqsKJDmZ_z94w/zh-cn_image_0000002717610100.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072213Z&HW-CC-Expire=86400&HW-CC-Sign=D9B28BD32E140CCE2C83952453D5D80E5C88C5D721C1DDA257FE9E6F973CCC4E)

@@ -1,18 +1,19 @@
 # cloudStorage (云存储模块)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/cloudfoundation-cloudstorage
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供使用云存储对文件进行上传、下载、查询和删除等操作的能力。
  
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { cloudStorage } from '@kit.CloudFoundationKit';
@@ -20,9 +21,10 @@ import { cloudStorage } from '@kit.CloudFoundationKit';
  
   
 
-#### bucket
+## bucket
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 bucket(name?: string): StorageBucket
  
@@ -38,6 +40,7 @@ bucket(name?: string): StorageBucket
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 否 | 存储实例名称。格式受云侧约束，只允许输入小写字母、数字、'-'，以字母或数字开头和结尾，长度为9-63个字符，且不能连续输入两个及以上'-'。 缺省时，将启动异步任务查询云侧默认实例。 非缺省时，请确保当前云侧存在该存储实例，否则后续操作将出现查询存储实例错误。 |
@@ -45,6 +48,7 @@ bucket(name?: string): StorageBucket
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | StorageBucket | 云存储实例。 |
@@ -54,6 +58,7 @@ bucket(name?: string): StorageBucket
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -78,9 +83,10 @@ hilog.info(0x0000, 'testTag', `Succeeded in creating a bucket, result: ${JSON.st
  
   
 
-#### StorageBucket
+## StorageBucket
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 云存储的实例，提供云存储的上传、下载等相关能力，通过[bucket](#bucket)初始化。
  
@@ -94,9 +100,10 @@ hilog.info(0x0000, 'testTag', `Succeeded in creating a bucket, result: ${JSON.st
  
   
 
-#### uploadFile
+### uploadFile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 uploadFile(context: common.BaseContext, parameters: UploadParams): Promise<request.agent.Task>
  
@@ -114,6 +121,7 @@ uploadFile(context: common.BaseContext, parameters: UploadParams): Promise<reque
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.BaseContext | 是 | 应用上下文。 |
@@ -122,6 +130,7 @@ uploadFile(context: common.BaseContext, parameters: UploadParams): Promise<reque
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<request.agent.Task> | Promise对象，返回上传任务。 |
@@ -131,6 +140,7 @@ uploadFile(context: common.BaseContext, parameters: UploadParams): Promise<reque
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cloudfoundation)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | No Internet permission. |
@@ -182,9 +192,10 @@ bucket.uploadFile(context, { // context表示应用上下文
  
   
 
-#### uploadFile
+### uploadFile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 uploadFile(context: common.BaseContext, parameters: UploadParams, callback: AsyncCallback<request.agent.Task>): void
  
@@ -202,6 +213,7 @@ uploadFile(context: common.BaseContext, parameters: UploadParams, callback: Asyn
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.BaseContext | 是 | 应用上下文。 |
@@ -213,6 +225,7 @@ uploadFile(context: common.BaseContext, parameters: UploadParams, callback: Asyn
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cloudfoundation)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | No Internet permission. |
@@ -266,9 +279,10 @@ bucket.uploadFile(context, { // context表示应用上下文
  
   
 
-#### downloadFile
+### downloadFile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 downloadFile(context: common.BaseContext, parameters: DownloadParams): Promise<request.agent.Task>
  
@@ -286,6 +300,7 @@ downloadFile(context: common.BaseContext, parameters: DownloadParams): Promise<r
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.BaseContext | 是 | 应用上下文。 |
@@ -294,6 +309,7 @@ downloadFile(context: common.BaseContext, parameters: DownloadParams): Promise<r
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<request.agent.Task> | Promise对象，返回下载任务。 |
@@ -303,6 +319,7 @@ downloadFile(context: common.BaseContext, parameters: DownloadParams): Promise<r
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cloudfoundation)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | No Internet permission. |
@@ -355,9 +372,10 @@ bucket.downloadFile(context, { // context表示应用上下文
  
   
 
-#### downloadFile
+### downloadFile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 downloadFile(context: common.BaseContext, parameters: DownloadParams, callback: AsyncCallback<request.agent.Task>): void
  
@@ -375,6 +393,7 @@ downloadFile(context: common.BaseContext, parameters: DownloadParams, callback: 
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.BaseContext | 是 | 应用上下文。 |
@@ -386,6 +405,7 @@ downloadFile(context: common.BaseContext, parameters: DownloadParams, callback: 
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cloudfoundation)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | No Internet permission. |
@@ -440,9 +460,10 @@ bucket.downloadFile(context, { // context表示应用上下文
  
   
 
-#### getDownloadURL
+### getDownloadURL
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDownloadURL(cloudPath: string): Promise&lt;string&gt;
  
@@ -460,6 +481,7 @@ getDownloadURL(cloudPath: string): Promise&lt;string&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cloudPath | string | 是 | 云侧文件路径。支持传入“文件目录/文件名”（如“image/demo.jpg”），或仅传入文件名。 |
@@ -467,6 +489,7 @@ getDownloadURL(cloudPath: string): Promise&lt;string&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回云侧文件下载地址。 |
@@ -476,6 +499,7 @@ getDownloadURL(cloudPath: string): Promise&lt;string&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cloudfoundation)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | No Internet permission. |
@@ -504,9 +528,10 @@ bucket.getDownloadURL('cloudPath').then((downloadURL: string) => {
  
   
 
-#### getDownloadURL
+### getDownloadURL
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDownloadURL(cloudPath: string, callback: AsyncCallback&lt;string&gt;): void
  
@@ -524,6 +549,7 @@ getDownloadURL(cloudPath: string, callback: AsyncCallback&lt;string&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cloudPath | string | 是 | 云侧文件路径。支持传入“文件目录/文件名”（如“image/demo.jpg”），或仅传入文件名。 |
@@ -534,6 +560,7 @@ getDownloadURL(cloudPath: string, callback: AsyncCallback&lt;string&gt;): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cloudfoundation)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | No Internet permission. |
@@ -564,9 +591,10 @@ bucket.getDownloadURL('cloudPath', (err: BusinessError, downloadURL: string) => 
  
   
 
-#### deleteFile
+### deleteFile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteFile(cloudPath: string): Promise&lt;void&gt;
  
@@ -584,6 +612,7 @@ deleteFile(cloudPath: string): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cloudPath | string | 是 | 云侧文件路径。支持传入“文件目录/文件名”（如“image/demo.jpg”），或仅传入文件名。 |
@@ -591,6 +620,7 @@ deleteFile(cloudPath: string): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -600,6 +630,7 @@ deleteFile(cloudPath: string): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cloudfoundation)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | No Internet permission. |
@@ -628,9 +659,10 @@ bucket.deleteFile('cloudPath').then(() => {
  
   
 
-#### deleteFile
+### deleteFile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteFile(cloudPath: string, callback: AsyncCallback&lt;void&gt;): void
  
@@ -648,6 +680,7 @@ deleteFile(cloudPath: string, callback: AsyncCallback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cloudPath | string | 是 | 云侧文件路径。支持传入“文件目录/文件名”（如“image/demo.jpg”），或仅传入文件名。 |
@@ -658,6 +691,7 @@ deleteFile(cloudPath: string, callback: AsyncCallback&lt;void&gt;): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cloudfoundation)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | No Internet permission. |
@@ -688,9 +722,10 @@ bucket.deleteFile('cloudPath', (err: BusinessError) => {
  
   
 
-#### list
+### list
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 list(cloudPath: string, options?: ListOptions): Promise&lt;ListResults&gt;
  
@@ -708,6 +743,7 @@ list(cloudPath: string, options?: ListOptions): Promise&lt;ListResults&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cloudPath | string | 是 | 云侧文件路径。 传入''（空字符串）表示获取云侧根路径下的文件列表；传入'some_directory/'表示获取指定文件夹some_directory下的文件列表。 |
@@ -716,6 +752,7 @@ list(cloudPath: string, options?: ListOptions): Promise&lt;ListResults&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;ListResults&gt; | Promise对象，返回列举操作的结果。 |
@@ -725,6 +762,7 @@ list(cloudPath: string, options?: ListOptions): Promise&lt;ListResults&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cloudfoundation)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | No Internet permission. |
@@ -760,9 +798,10 @@ bucket.list('some_directory/').then((result: cloudStorage.ListResults) => {
  
   
 
-#### list
+### list
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 list(cloudPath: string, options: ListOptions, callback: AsyncCallback&lt;ListResults&gt;): void
  
@@ -780,6 +819,7 @@ list(cloudPath: string, options: ListOptions, callback: AsyncCallback&lt;ListRes
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cloudPath | string | 是 | 云侧文件路径。 传入''（空字符串）表示获取云侧根路径下的文件列表；传入'some_directory/'表示获取指定文件夹some_directory下的文件列表。 |
@@ -791,6 +831,7 @@ list(cloudPath: string, options: ListOptions, callback: AsyncCallback&lt;ListRes
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cloudfoundation)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | No Internet permission. |
@@ -830,9 +871,10 @@ bucket.list('some_directory/', {}, (err: BusinessError, result: cloudStorage.Lis
  
   
 
-#### getMetadata
+### getMetadata
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMetadata(cloudPath: string): Promise&lt;Metadata&gt;
  
@@ -850,6 +892,7 @@ getMetadata(cloudPath: string): Promise&lt;Metadata&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cloudPath | string | 是 | 云侧文件路径。支持传入“文件目录/文件名”（如“image/demo.jpg”），或仅传入文件名。 |
@@ -857,6 +900,7 @@ getMetadata(cloudPath: string): Promise&lt;Metadata&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Metadata&gt; | Promise对象，返回云侧文件的元数据信息。 |
@@ -866,6 +910,7 @@ getMetadata(cloudPath: string): Promise&lt;Metadata&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cloudfoundation)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | No Internet permission. |
@@ -894,9 +939,10 @@ bucket.getMetadata('cloudPath').then((data: cloudStorage.Metadata) => {
  
   
 
-#### getMetadata
+### getMetadata
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMetadata(cloudPath: string, callback: AsyncCallback&lt;Metadata&gt;): void
  
@@ -914,6 +960,7 @@ getMetadata(cloudPath: string, callback: AsyncCallback&lt;Metadata&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cloudPath | string | 是 | 云侧文件路径。支持传入“文件目录/文件名”（如“image/demo.jpg”），或仅传入文件名。 |
@@ -924,6 +971,7 @@ getMetadata(cloudPath: string, callback: AsyncCallback&lt;Metadata&gt;): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cloudfoundation)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | No Internet permission. |
@@ -954,9 +1002,10 @@ bucket.getMetadata('cloudPath', (err: BusinessError, data: cloudStorage.Metadata
  
   
 
-#### setMetadata
+### setMetadata
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMetadata(cloudPath: string, metadata: MetadataUpdatable): Promise&lt;Metadata&gt;
  
@@ -974,6 +1023,7 @@ setMetadata(cloudPath: string, metadata: MetadataUpdatable): Promise&lt;Metadata
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cloudPath | string | 是 | 云侧文件路径。支持传入“文件目录/文件名”（如“image/demo.jpg”），或仅传入文件名。 |
@@ -982,6 +1032,7 @@ setMetadata(cloudPath: string, metadata: MetadataUpdatable): Promise&lt;Metadata
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Metadata&gt; | Promise对象，返回云侧文件更新后的完整元数据信息。 |
@@ -991,6 +1042,7 @@ setMetadata(cloudPath: string, metadata: MetadataUpdatable): Promise&lt;Metadata
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cloudfoundation)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | No Internet permission. |
@@ -1024,9 +1076,10 @@ bucket.setMetadata('cloudPath', {
  
   
 
-#### setMetadata
+### setMetadata
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMetadata(cloudPath: string, metadata: MetadataUpdatable, callback: AsyncCallback&lt;Metadata&gt;): void
  
@@ -1044,6 +1097,7 @@ setMetadata(cloudPath: string, metadata: MetadataUpdatable, callback: AsyncCallb
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cloudPath | string | 是 | 云侧文件路径。支持传入“文件目录/文件名”（如“image/demo.jpg”），或仅传入文件名。 |
@@ -1055,6 +1109,7 @@ setMetadata(cloudPath: string, metadata: MetadataUpdatable, callback: AsyncCallb
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cloudfoundation)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | No Internet permission. |
@@ -1090,9 +1145,10 @@ bucket.setMetadata('cloudPath', {
  
   
 
-#### UploadParams
+## UploadParams
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 上传相关参数。
  
@@ -1104,6 +1160,7 @@ bucket.setMetadata('cloudPath', {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | localPath | string | 否 | 否 | 本地文件路径，根路径为cache目录。 |
@@ -1115,9 +1172,10 @@ bucket.setMetadata('cloudPath', {
  
   
 
-#### DownloadParams
+## DownloadParams
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 下载相关参数。
  
@@ -1129,6 +1187,7 @@ bucket.setMetadata('cloudPath', {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | localPath | string | 否 | 否 | 本地文件路径，根路径为cache目录。 |
@@ -1140,9 +1199,10 @@ bucket.setMetadata('cloudPath', {
  
   
 
-#### ListOptions
+## ListOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 列举操作的相关参数。
  
@@ -1154,6 +1214,7 @@ bucket.setMetadata('cloudPath', {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | maxResults | number | 否 | 是 | 列举文件的最大数量，取值范围1-1000，默认则列举所有文件，超出范围则接口报错。 |
@@ -1162,9 +1223,10 @@ bucket.setMetadata('cloudPath', {
  
   
 
-#### ListResults
+## ListResults
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 列举操作的结果。
  
@@ -1176,6 +1238,7 @@ bucket.setMetadata('cloudPath', {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | directories | string[] | 否 | 否 | 列举操作返回的云侧目录列表。 |
@@ -1185,9 +1248,10 @@ bucket.setMetadata('cloudPath', {
  
   
 
-#### MetadataUpdatable
+## MetadataUpdatable
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 可更新参数的元数据信息。
  
@@ -1199,6 +1263,7 @@ bucket.setMetadata('cloudPath', {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | contentType | string | 否 | 是 | 标准HTTP头部的Content-Type。 |
@@ -1211,9 +1276,10 @@ bucket.setMetadata('cloudPath', {
  
   
 
-#### Metadata
+## Metadata
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 完整的元数据信息，继承自[MetadataUpdatable](#metadataupdatable)。
  
@@ -1225,6 +1291,7 @@ bucket.setMetadata('cloudPath', {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | name | string | 否 | 否 | 云侧文件名称。 |

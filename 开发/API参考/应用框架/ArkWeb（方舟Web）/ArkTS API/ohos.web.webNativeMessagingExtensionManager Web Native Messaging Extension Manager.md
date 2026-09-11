@@ -1,9 +1,9 @@
 # @ohos.web.webNativeMessagingExtensionManager (Web Native Messaging Extension Manager)
 
-更新时间：2026-07-17 09:35:24
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-web-webnativemessagingextensionmanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** PC/2in1 | Tablet
 
 webNativeMessagingExtensionManager模块是ArkWeb提供的Web原生消息扩展管理模块，用于在应用侧（调用方）发起并管理到[WebNativeMessagingExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-web-webnativemessagingextensionability)的连接。开发者可通过[connectNative](#webnativemessagingextensionmanagerconnectnative)方法指定目标扩展Ability并建立连接，通过返回的连接ID与[WebExtensionConnectionCallback](#webextensionconnectioncallback)监听连接建立、断开及失败事件，也可通过[disconnectNative](#webnativemessagingextensionmanagerdisconnectnative)主动释放连接。该模块适用于浏览器扩展与应用通信的场景；使用前需申请[ohos.permission.WEB_NATIVE_MESSAGING](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/restricted-permissions#ohospermissionweb_native_messaging)权限，且仅在Stage模型下可用。
 
@@ -12,9 +12,10 @@ webNativeMessagingExtensionManager模块是ArkWeb提供的Web原生消息扩展�
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 ```text
 import { webNativeMessagingExtensionManager } from '@kit.ArkWeb';
@@ -22,9 +23,10 @@ import { webNativeMessagingExtensionManager } from '@kit.ArkWeb';
 
 
 
-#### ConnectionNativeInfo
+## ConnectionNativeInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 表示Web原生消息连接的连接信息。
 
@@ -32,9 +34,10 @@ import { webNativeMessagingExtensionManager } from '@kit.ArkWeb';
 
 **模型约束:** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| connectionId | number | 否 | 否 | 连接ID。 |
+| connectionId | number | 否 | 否 | Web原生消息扩展连接的唯一标识，由connectNative方法返回，用于标识和管理连接。 |
 | bundleName | string | 否 | 否 | Web原生消息扩展应用的包名。 |
 | extensionOrigin | string | 否 | 否 | 浏览器扩展的源URL。 |
 | extensionPid | number | 否 | 否 | Web原生消息扩展的进程ID。 |
@@ -42,13 +45,15 @@ import { webNativeMessagingExtensionManager } from '@kit.ArkWeb';
 
 
 
-#### NmErrorCode
+## NmErrorCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 Native Messaging的错误列表。
 
 **系统能力**：SystemCapability.Web.Webview.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -59,15 +64,21 @@ Native Messaging的错误列表。
 
 
 
-#### WebExtensionConnectionCallback
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## WebExtensionConnectionCallback
 
 
+**支持设备：** PC/2in1 | Tablet
 
-#### onConnect
+作为连接网络原生消息扩展时的输入参数，它用于接收连接期间的状态变化。
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**系统能力:** SystemCapability.Web.Webview.Core
+
+
+
+### onConnect
+
+
+**支持设备：** PC/2in1 | Tablet
 
 onConnect(connection: ConnectionNativeInfo): void
 
@@ -79,9 +90,10 @@ onConnect(connection: ConnectionNativeInfo): void
 
 **参数:**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| connection | ConnectionNativeInfo | 是 | 连接信息。 |
+| connection | ConnectionNativeInfo | 是 | 连接信息，包含连接ID、扩展应用包名、浏览器扩展源URL和扩展进程ID等信息。 |
 
 
 **示例:**
@@ -96,7 +108,7 @@ export default class EntryAbility extends UIAbility {
   onForeground() {
     try {
         let context: common.UIAbilityContext = this.context; // 获取UIAbilityContext
-        let want:Want = {
+        let want: Want = {
           bundleName: 'com.example.app',
           abilityName: 'MyWebNativeMessageExtAbility',
           parameters: {
@@ -131,9 +143,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### onDisconnect
+### onDisconnect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 onDisconnect(connection: ConnectionNativeInfo): void
 
@@ -145,9 +158,10 @@ onDisconnect(connection: ConnectionNativeInfo): void
 
 **参数:**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| connection | ConnectionNativeInfo | 是 | 连接信息。 |
+| connection | ConnectionNativeInfo | 是 | 连接信息，包含连接ID、扩展应用包名、浏览器扩展源URL和扩展进程ID等信息。 |
 
 
 **示例:**
@@ -162,7 +176,7 @@ export default class EntryAbility extends UIAbility {
   onForeground() {
     try {
         let context: common.UIAbilityContext = this.context; // 获取UIAbilityContext
-        let want:Want = {
+        let want: Want = {
           bundleName: 'com.example.app',
           abilityName: 'MyWebNativeMessageExtAbility',
           parameters: {
@@ -197,9 +211,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### onFailed
+### onFailed
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 onFailed(code: NmErrorCode, errMsg: string): void
 
@@ -210,6 +225,7 @@ onFailed(code: NmErrorCode, errMsg: string): void
 **模型约束:** 此接口仅可在Stage模型下使用。
 
 **参数:**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -229,7 +245,7 @@ export default class EntryAbility extends UIAbility {
   onForeground() {
     try {
         let context: common.UIAbilityContext = this.context; // 获取UIAbilityContext
-        let want:Want = {
+        let want: Want = {
           bundleName: 'com.example.app',
           abilityName: 'MyWebNativeMessageExtAbility',
           parameters: {
@@ -264,9 +280,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### webNativeMessagingExtensionManager.connectNative
+## webNativeMessagingExtensionManager.connectNative
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 connectNative(context: UIAbilityContext, want: Want, callback: WebExtensionConnectionCallback): number
 
@@ -280,23 +297,26 @@ connectNative(context: UIAbilityContext, want: Want, callback: WebExtensionConne
 
 **参数:**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIAbilityContext | 是 | 调用方UIAbility的上下文。 |
-| want | Want | 是 | 启动Ability的want信息。 |
+| want | Want | 是 | 启动Ability的want信息，其parameters中需包含'ohos.arkweb.messageReadPipe'（读管道FD）、'ohos.arkweb.messageWritePipe'（写管道FD）和'ohos.arkweb.extensionOrigin'（插件URI）。 |
 | callback | WebExtensionConnectionCallback | 是 | WebExtensionConnection状态的回调对象。 |
 
 
 **返回值:**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| number | 连接标识ID。 |
+| number | 连接的标识ID，由connectNative方法返回，用于唯一标识一次Web原生消息扩展连接。连接建立后需要通过disconnectNative释放。 |
 
 
 **错误码:**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -315,7 +335,7 @@ export default class EntryAbility extends UIAbility {
   onForeground() {
     try {
         let context: common.UIAbilityContext = this.context; // 获取UIAbilityContext
-        let want:Want = {
+        let want: Want = {
           bundleName: 'com.example.app',
           abilityName: 'MyWebNativeMessageExtAbility',
           parameters: {
@@ -350,9 +370,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### webNativeMessagingExtensionManager.disconnectNative
+## webNativeMessagingExtensionManager.disconnectNative
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 disconnectNative(connectionId: number): Promise&lt;void&gt;
 
@@ -366,12 +387,14 @@ disconnectNative(connectionId: number): Promise&lt;void&gt;
 
 **参数:**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| connectionId | number | 是 | 连接的标识ID，用于标识一次Web原生消息扩展连接，由connectNative方法返回。建立连接后需要通过disconnectNative释放。 |
+| connectionId | number | 是 | 连接的标识ID，用于标识一次Web原生消息扩展连接，由connectNative方法返回。建立连接后需要通过disconnectNative释放。需使用由connectNative返回的有效连接ID。 |
 
 
 **返回值:**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -381,6 +404,7 @@ disconnectNative(connectionId: number): Promise&lt;void&gt;
 **错误码:**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

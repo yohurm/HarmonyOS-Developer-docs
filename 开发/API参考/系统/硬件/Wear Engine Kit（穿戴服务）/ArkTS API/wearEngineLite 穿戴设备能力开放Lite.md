@@ -1,6 +1,6 @@
 # wearEngineLite（穿戴设备能力开放）（Lite）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/wearenginelite_api
 **支持设备：** Wearable | lite_wearable
@@ -10,7 +10,8 @@
 **起始版本**：6.1.1(24)
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -20,7 +21,8 @@ import WearEngineLite from '@hms.health.WearEngineLite';
 
 
 
-#### WearEngineLite
+## WearEngineLite
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -28,7 +30,8 @@ import WearEngineLite from '@hms.health.WearEngineLite';
 
 
 
-#### onConnectionStateChange
+### onConnectionStateChange
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -46,6 +49,7 @@ static onConnectionStateChange(callback: MonitorEventCallback): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | MonitorEventCallback | 是 | 回调函数，返回设备状态的变化信息。 |
@@ -57,15 +61,15 @@ static onConnectionStateChange(callback: MonitorEventCallback): void
 let eventCallback = {
     // 事件变化回调（设备连接状态变化时触发）
     eventChange: (data) => {
-      console.info(`设备连接状态事件：${data.event}， 设备连接状态变化：${data.data.data}`);
+      console.info(`Succeeded in subscribing connection status. event: ${data.event}， data: ${data.data.data}`);
     },
 
     success: (code, data) => {
-      console.info(`订阅成功， Code：${code.code}， data：${data.data}`);
+      console.info(`Succeeded in subscribing connection status. Code：${code.code}， data：${data.data}`);
     },
 
     fail: (error, errorMessage) => {
-      console.error(`订阅失败， Code：${error.code}， data：${errorMessage.data}`);
+      console.error(`Failed to subscribe connection status. Code：${error.code}， data：${errorMessage.data}`);
     }
   };
 
@@ -74,7 +78,8 @@ let eventCallback = {
 
 
 
-#### offConnectionStateChange
+### offConnectionStateChange
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -92,9 +97,10 @@ static offConnectionStateChange(callback?: MonitorEventCallback): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | MonitorEventCallback | 否 | 回调函数。返回success表示取消订阅成功，返回fail表示取消订阅失败。 |
+| callback | MonitorEventCallback | 否 | 回调函数，返回MonitorEventCallback类信息。若不填写则成功取消监听事件。 |
 
 
 **示例：**
@@ -102,11 +108,11 @@ static offConnectionStateChange(callback?: MonitorEventCallback): void
 ```text
 let eventCallback = {
     success: (code, data) => {
-      console.info(`取消订阅成功， code：${code.code}， data：${data.data}`);
+      console.info(`Succeeded in unsubscribing connection status. code：${code.code}， data：${data.data}`);
     },
 
     fail: (error, errorMessage) => {
-      console.error(`取消订阅失败， code:${error.code}， data:${errorMessage.data}`);
+      console.error(`Failed to unsubscribe connection status. code:${error.code}， data:${errorMessage.data}`);
     }
   };
 
@@ -115,13 +121,14 @@ let eventCallback = {
 
 
 
-#### onFileReceive
+### onFileReceive
+
 
 **支持设备：** Wearable | lite_wearable
 
 static onFileReceive(remoteAppInfo: AppInfo, callback: FileReceiverCallback): void
 
-订阅对端设备向本端设备发送文件和文件传输进度的事件。
+订阅对端设备向本端设备发送文件和查看文件接收进度的事件，使用callback异步回调
 
 **模型约束：** 此接口仅可在FA模型下使用。
 
@@ -131,10 +138,11 @@ static onFileReceive(remoteAppInfo: AppInfo, callback: FileReceiverCallback): vo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| remoteAppInfo | AppInfo | 是 | 指定的设备侧应用参数。 |
-| callback | FileReceiverCallback | 是 | 回调函数，返回文件对象。 |
+| remoteAppInfo | AppInfo | 是 | 对端设备的应用信息。 |
+| callback | FileReceiverCallback | 是 | 回调函数，返回FileReceiverCallback类信息。 |
 
 
 **示例：**
@@ -151,31 +159,32 @@ static onFileReceive(remoteAppInfo: AppInfo, callback: FileReceiverCallback): vo
  let FileReceiverCallback =
  {
     onReceive: (fileName, filePath, progress)=>{
-        hilog.info(0,'onFileReceive',`onFileReceive is:  ${fileName}, filePath is: ${filePath}, progress is: ${progress}`);
+         console.info(`Succeeded in onFileReceiving, fileName:  ${fileName}, filePath: ${filePath}, progress: ${progress}`);
     },
     success: (code, data) => {
-        hilog.info(0,'onFileReceive',`onFileReceive success code is: ${code}, data is ${data}`);
+         console.info(`Succeeded in onFileReceiving, Code: ${code}, data:  ${data}`);
     },
     fail: (code, data) => {
-        hilog.error(0,'onFileReceive',`onFileReceive fail code: ${code}, data is ${data}`);
+         console.error(`Failed to onFileReceive, Code: ${code}, data: ${data}`);
     }
  };
  try {
     WearEngineLite.onFileReceive(remoteAppInfo, FileReceiverCallback);
-    } catch (error) {
-        hilog.error(0,'onFileReceive',`Failed to onFileReceive. code is ${error.code}, message is ${error.data}.`);
+ } catch (error) {
+    console.error(`Failed to onFileReceive. Code: ${error.code}, message: ${error.data}.`);
  };
 ```
 
 
 
-#### offFileReceive
+### offFileReceive
+
 
 **支持设备：** Wearable | lite_wearable
 
 static offFileReceive(remoteAppInfo: AppInfo, callback?: FileReceiverCallback): void
 
-取消订阅对端设备向本端设备发送文件和文件传输进度的事件。
+取消订阅对端设备向本端设备发送文件和查看文件接收进度的事件，使用callback异步回调。
 
 **模型约束：** 此接口仅可在FA模型下使用。
 
@@ -185,10 +194,11 @@ static offFileReceive(remoteAppInfo: AppInfo, callback?: FileReceiverCallback): 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| remoteAppInfo | AppInfo | 是 | 指定的设备侧应用参数。 |
-| callback | FileReceiverCallback | 否 | 回调函数，返回文件对象。 |
+| remoteAppInfo | AppInfo | 是 | 对端设备的应用信息。 |
+| callback | FileReceiverCallback | 否 | 回调函数，返回FileReceiverCallback类信息。若不填写则成功取消订阅事件。 |
 
 
 **示例：**
@@ -201,28 +211,29 @@ static offFileReceive(remoteAppInfo: AppInfo, callback?: FileReceiverCallback): 
  };
  // 设置需要接收的文件信息回调
  let fileReceiverCallback =
-    {
-        onReceive: (fileName, filePath, progress)=>{
-            hilog.info(0,'offFileReceive',`offFileReceive is:  ${fileName}, filePath is: ${filePath}, progress is: ${progress}`);
-        },
-        success: (code, data) => {
-            hilog.info(0,'offFileReceive',`offFileReceive success code is: ${code}, data is ${data}`);
-        },
-        fail: (code, data) => {
-            hilog.error(0,'offFileReceive',`offFileReceive fail code: ${code}, data is ${data}`);
-        }
-      };
+ {
+     onReceive: (fileName, filePath, progress)=>{
+         console.info(`Succeeded in offFileReceiving, fileName:  ${fileName}, filePath: ${filePath}, progress: ${progress}`);
+     },
+     success: (code, data) => {
+         console.info(`Succeeded in offFileReceiving, Code: ${code}, data: ${data}`);
+     },
+     fail: (code, data) => {
+         console.error(`Failed to offFileReceive, Code: ${code}, data: ${data}`);
+     }
+   };
 
  try {
     WearEngineLite.offFileReceive(remoteAppInfo, fileReceiverCallback);
  } catch (error) {
-    hilog.error(0,'offFileReceive',`Failed to offFileReceive. Code is ${error.code}, message is ${error.data}.`);
+    console.error(`Failed to offFileReceive. Code: ${error.code}, message: ${error.data}.`);
  };
 ```
 
 
 
-#### MonitorEventCallback
+## MonitorEventCallback
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -230,7 +241,8 @@ static offFileReceive(remoteAppInfo: AppInfo, callback?: FileReceiverCallback): 
 
 
 
-#### eventChange
+### eventChange
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -248,6 +260,7 @@ eventChange(data: MonitorEventData): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | MonitorEventData | 是 | 变化后的设备状态信息。 |
@@ -259,7 +272,7 @@ eventChange(data: MonitorEventData): void
 let eventCallback = {
     // 事件变化回调（设备连接状态变化时触发）
     eventChange: (data) => {
-      console.info(`设备连接状态事件：${data.event}， 设备连接状态变化：${data.data.data}`);
+      console.info(`Succeeded in subscribing connection status, event: ${data.event}， data: ${data.data.data}`);
     }
   };
 
@@ -268,7 +281,8 @@ let eventCallback = {
 
 
 
-#### success
+### success
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -286,10 +300,11 @@ success(code: number, data?: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | code | number | 是 | 返回0。 |
-| data | string | 否 | 返回success。 |
+| data | string | 否 | 默认值undefined。 |
 
 
 **示例：**
@@ -297,7 +312,7 @@ success(code: number, data?: string): void
 ```text
 let eventCallback = {
     success: (code, data) => {
-      console.info(`订阅成功， Code：${code.code}， data：${data.data}`);
+      console.info(`Succeeded in subscribing connection status, Code：${code.code}， data：${data.data}`);
     }
   };
 
@@ -306,7 +321,8 @@ let eventCallback = {
 
 
 
-#### fail
+### fail
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -324,10 +340,11 @@ fail(code: number, data?: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| code | number | 是 | 返回401错误码。 |
-| data | string | 否 | 返回fail。 |
+| code | number | 是 | Wearable返回-1，Lite Wearable返回401，表示订阅失败或取消订阅失败。 可能原因是必填参数为空（如eventChange为空）。 |
+| data | string | 否 | 默认值undefined。 |
 
 
 **示例：**
@@ -335,7 +352,7 @@ fail(code: number, data?: string): void
 ```text
 let eventCallback = {
     fail: (error, errorMessage) => {
-      console.error(`订阅失败， Code：${error.code}， data：${errorMessage.data}`);
+      console.error(`Failed to subscribe connection status. Code：${error.code}， data：${errorMessage.data}`);
     }
   };
 
@@ -344,7 +361,8 @@ let eventCallback = {
 
 
 
-#### MonitorData
+## MonitorData
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -356,15 +374,17 @@ let eventCallback = {
 
 **起始版本：** 6.1.1(24)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| code | number | 否 | 否 | 扩展字段。 |
+| code | number | 否 | 否 | 返回0。 |
 | data | string | 否 | 是 | 设备的连接状态，2表示连接成功，3表示连接断开。 |
 
 
 
 
-#### MonitorEventData
+## MonitorEventData
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -376,6 +396,7 @@ let eventCallback = {
 
 **起始版本：** 6.1.1(24)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | event | string | 否 | 否 | 回调函数上报的监听事件。 |
@@ -384,7 +405,8 @@ let eventCallback = {
 
 
 
-#### FileReceiverCallback
+## FileReceiverCallback
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -392,7 +414,8 @@ let eventCallback = {
 
 
 
-#### onReceive
+### onReceive
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -408,11 +431,12 @@ onReceive(fileName: string, filePath: string, progress: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fileName | string | 是 | 接收文件的名称。 |
 | filePath | string | 是 | 接收文件的存储路径。 |
-| progress | number | 是 | 接收文件的传输进度，返回值范围：0-100。 |
+| progress | number | 是 | 接收文件的进度，返回值范围：[0，100]。 |
 
 
 **示例：**
@@ -427,32 +451,33 @@ onReceive(fileName: string, filePath: string, progress: number): void
  let fileReceiverCallback =
  {
     onReceive: (fileName, filePath, progress)=>{
-    hilog.info(0,'onFileReceive',`onFileReceive is:  ${fileName}, filePath is: ${filePath}, progress is: ${progress}`);
- },
- success: (code, data) => {
-    hilog.info(0,'onFileReceive',`onFileReceive success code is: ${code}, data is ${data}`);
- },
+         console.info(`Succeeded in onFileReceiving, fileName:  ${fileName}, filePath: ${filePath}, progress: ${progress}`);
+    },
+    success: (code, data) => {
+         console.info(`Succeeded in onFileReceiving, Code: ${code}, data: ${data}`);
+    },
     fail: (code, data) => {
-        hilog.error(0,'onFileReceive',`onFileReceive fail code: ${code}, data is ${data}`);
+         console.error(`Failed to onFileReceive, Code: ${code}, data: ${data}`);
     }
  };
 
  try {
     WearEngineLite.onFileReceive(remoteAppInfo, fileReceiverCallback);
  } catch (error) {
-    hilog.error(0,'onFileReceive',`Failed to onFileReceive. Code is ${error.code}, message is ${error.data}.`);
+    console.error(`Failed to onFileReceive. Code: ${error.code}, message: ${error.data}.`);
  };
 ```
 
 
 
-#### success
+### success
+
 
 **支持设备：** Wearable | lite_wearable
 
 success(code: number, data?: string): void
 
-表示订阅成功或者是取消订阅成功。
+表示文件接收事件订阅成功或者是取消订阅成功。
 
 **模型约束：** 此接口仅可在FA模型下使用。
 
@@ -462,10 +487,11 @@ success(code: number, data?: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| code | number | 是 | 返回0。 |
-| data | string | 否 | 返回undefined。 |
+| code | number | 是 | 返回0，表示订阅成功或取消订阅成功。 |
+| data | string | 否 | 默认值undefined。 |
 
 
 **示例：**
@@ -480,32 +506,33 @@ success(code: number, data?: string): void
  let fileReceiverCallback =
  {
     onReceive: (fileName, filePath, progress)=>{
-        hilog.info(0,'onFileReceive',`onFileReceive is:  ${fileName}, filePath is: ${filePath}, progress is: ${progress}`);
+        console.info(`Succeeded in onFileReceiving, fileName:  ${fileName}, filePath: ${filePath}, progress: ${progress}`);
     },
     success: (code, data) => {
-        hilog.info(0,'onFileReceive',`onFileReceive success code is: ${code}, data is ${data}`);
+         console.info(`Succeeded in onFileReceiving, Code: ${code}, data: ${data}`);
     },
     fail: (code, data) => {
-        hilog.error(0,'onFileReceive',`onFileReceive fail code: ${code}, data is ${data}`);
+         console.error(`Failed to onFileReceive, Code: ${code}, data: ${data}`);
     }
  };
 
  try {
     WearEngineLite.onFileReceive(remoteAppInfo, fileReceiverCallback);
  } catch (error) {
-    hilog.error(0,'onFileReceive',`Failed to onFileReceive. Code is ${error.code}, message is ${error.data}.`);
+    console.error(`Failed to onFileReceive. Code: ${error.code}, message: ${error.data}.`);
  };
 ```
 
 
 
-#### fail
+### fail
+
 
 **支持设备：** Wearable | lite_wearable
 
 fail(code: number, data?: string): void
 
-表示订阅失败或者是取消订阅失败。
+表示文件接收事件订阅失败或者是取消订阅失败。
 
 **模型约束：** 此接口仅可在FA模型下使用。
 
@@ -515,10 +542,11 @@ fail(code: number, data?: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| code | number | 是 | 返回-1。 |
-| data | string | 否 | 返回undefined。 |
+| code | number | 是 | Wearable返回-1，Lite Wearable返回401，表示订阅失败或取消订阅失败。 可能原因是必填参数为空（如onReceive为空）或参数值范围错误（如包名长度不符合规范）。 |
+| data | string | 否 | 默认值undefined。 |
 
 
 **示例：**
@@ -533,26 +561,27 @@ fail(code: number, data?: string): void
  let fileReceiverCallback =
  {
     onReceive: (fileName, filePath, progress)=>{
-        hilog.info(0,'onFileReceive',`onFileReceive is:  ${fileName}, filePath is: ${filePath}, progress is: ${progress}`);
+        console.info(`Succeeded in onFileReceiving, fileName:  ${fileName}, filePath: ${filePath}, progress: ${progress}`);
     },
     success: (code, data) => {
-        hilog.info(0,'onFileReceive',`onFileReceive success code is: ${code}, data is ${data}`);
+        console.info(`Succeeded in onFileReceiving, Code: ${code}, data: ${data}`);
     },
     fail: (code, data) => {
-        hilog.error(0,'onFileReceive',`onFileReceive fail code: ${code}, data is ${data}`);
+        console.error(`Failed to onFileReceive, Code: ${code}, data: ${data}`);
     }
  };
 
  try {
     WearEngineLite.onFileReceive(remoteAppInfo, fileReceiverCallback);
  } catch (error) {
-    hilog.error(0,'onFileReceive',`Failed to onFileReceive. Code is ${error.code}, message is ${error.data}.`);
+     console.error(`Failed to onFileReceive. Code: ${error.code}, message: ${error.data}.`);
  };
 ```
 
 
 
-#### AppInfo
+## AppInfo
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -564,7 +593,8 @@ fail(code: number, data?: string): void
 
 **起始版本：** 26.0.0
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | bundleName | string | 否 | 否 | 应用名称。 |
-| fingerprint | string | 否 | 否 | 应用指纹，用于标识应用的唯一身份。 |
+| fingerprint | string | 否 | 否 | 应用指纹，用于标识应用的唯一身份。 应用指纹获取请参考如何获取应用指纹。 |

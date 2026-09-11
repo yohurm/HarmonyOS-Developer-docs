@@ -1,18 +1,19 @@
 # Class (TargetedGestureProposal)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-targetedgestureproposal
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 带目标节点的智慧手势处理基类。
  
 **起始版本：** 26.0.0
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **起始版本：** 26.0.0
  
@@ -22,6 +23,7 @@
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | node | FrameNode | 否 | 否 | 处理当前智慧手势的目标节点。 |
@@ -84,4 +86,4 @@ struct SmartGestureControllerExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/_c-OnoHnTUmgqSIdT91ZUA/zh-cn_image_0000002698142269.png?HW-CC-KV=V1&HW-CC-Date=20260811T010214Z&HW-CC-Expire=86400&HW-CC-Sign=57EE2128C7B840C365CDD779EAE20BC7A3062E282AC57E4A4E2CE7D4EC4E22CD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/Ns814DGQRnSeM4aTqJs1ow/zh-cn_image_0000002747212249.png?HW-CC-KV=V1&HW-CC-Date=20260911T072446Z&HW-CC-Expire=86400&HW-CC-Sign=B7DA3326801EE408C24B91FF3E180086C1281A41EE52E1945D8C0909BAB096D4)

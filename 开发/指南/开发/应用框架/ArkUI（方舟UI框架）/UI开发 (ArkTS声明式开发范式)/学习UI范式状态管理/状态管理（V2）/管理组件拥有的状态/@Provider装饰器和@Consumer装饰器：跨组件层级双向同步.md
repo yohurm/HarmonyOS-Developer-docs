@@ -1,6 +1,6 @@
 # @Provider装饰器和@Consumer装饰器：跨组件层级双向同步
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-provider-and-consumer
 
@@ -15,7 +15,7 @@
 
 
 
-#### 概述
+## 概述
 
 @Provider，即数据提供方，其所有的子组件都可以通过@Consumer绑定相同的key来获取@Provider提供的数据。
 
@@ -35,17 +35,18 @@
 
 
 
-#### @Provider和@Consumer vs @Provide和@Consume能力对比
+## @Provider和@Consumer vs @Provide和@Consume能力对比
 
 在状态管理V1版本中，提供跨组件层级双向的装饰器为[@Provide和@Consume](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-provide-and-consume)，当前文档介绍的是状态管理V2装饰器@Provider和@Consumer。虽然两者名字和功能类似，但在特性上还存在一些差异。
 
 如果开发者不了解状态管理V1中的@Provide和@Consume，可以直接跳过本节。
 
+
 | 能力 | V2装饰器@Provider和@Consumer | V1装饰器@Provide和@Consume |
 | --- | --- | --- |
 | @Consume(r) | 必须本地初始化，当找不到@Provider时使用本地默认值。 | API version 20以前，@Consume禁止本地初始化，当找不到对应@Provide的时候，会抛出异常；从API version 20开始，@Consume支持设置默认值，如果没有设置默认值，且找不到对应@Provide时，会抛出异常。 |
 | 支持类型 | 支持function。 | 不支持function。 |
-| 观察能力 | 仅能观察自身赋值变化，如果要观察嵌套场景，配合@Trace一起使用。 | 观察第一层变化，如果要观察嵌套场景，配合@Observed和@ObjectLink一起使用。 |
+| 观察能力 | 仅能观察数据本身的变化，如果要观察嵌套场景，配合@Trace一起使用。 | 观察第一层变化，如果要观察嵌套场景，配合@Observed和@ObjectLink一起使用。 |
 | alias和属性名 | alias是唯一匹配的key，缺省时默认属性名为alias。 | alias和属性名都为key，优先匹配alias，匹配不到可以匹配属性名。 |
 | @Provide(r) 从父组件初始化 | 不允许。 | 允许。 |
 | @Provide(r)支持重载 | 默认开启，即@Provider可以重名，@Consumer向上查找最近的@Provider。 | 默认关闭，即在组件树上不允许有同名@Provide。如果需要重载，则需要配置allowOverride。 |
@@ -53,15 +54,16 @@
 
 
 
-#### 装饰器说明
+## 装饰器说明
 
 
 
-#### 基本规则
+### 基本规则
 
 @Provider语法：
 
 @Provider(aliasName?: string) varName : varType = initValue
+
 
 | @Provider属性装饰器 | 说明 |
 | --- | --- |
@@ -76,6 +78,7 @@
 
 @Consumer(aliasName?: string) varName : varType = initValue
 
+
 | @Consumer属性装饰器 | 说明 |
 | --- | --- |
 | 装饰器参数 | aliasName?: string，别名，缺省时默认为属性名，向上查找最近的@Provider。 |
@@ -87,7 +90,7 @@
 
 
 
-#### aliasName和属性名
+### aliasName和属性名
 
 @Provider和@Consumer接受可选参数aliasName，没有配置参数时，使用属性名作为默认的aliasName。
 
@@ -143,7 +146,8 @@ struct Child {
 
 
 
-#### 变量传递
+## 变量传递
+
 
 | 传递规则 | 说明 |
 | --- | --- |
@@ -153,18 +157,18 @@ struct Child {
 
 
 
-#### 使用限制
+## 使用限制
 1. @Provider和@Consumer为自定义组件的属性装饰器，只能装饰自定义组件内的属性，不能装饰class的属性。
 2. @Provider和@Consumer为状态管理V2装饰器，只能在@ComponentV2中使用，不能在@Component中使用。
 3. @Provider和@Consumer只支持本地初始化，不支持外部传入初始化。
 
 
 
-#### 使用场景
+## 使用场景
 
 
 
-#### @Provider和@Consumer双向同步
+### @Provider和@Consumer双向同步
 
 **建立双向绑定**
 1. 自定义组件Parent和Child初始化：       
@@ -218,7 +222,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/N2Hkt529S3-S_bKbj2ZyDg/zh-cn_image_0000002674631896.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095706Z&HW-CC-Expire=86400&HW-CC-Sign=1C65BBFFCFE42E5B4FD3E579574879FD388B79FA78B0950067593C654C90E862)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/UB508ceAQ4Od5pofL0DH3g/zh-cn_image_0000002747209981.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=35EF541D6BAA522ED79678CC650AD0DE2CA7B2DF1F437754E874E87BAA8CF209)
 
 
   **未建立双向绑定**
@@ -276,12 +280,12 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/ZtJtvqclS3yfYs1SXtxXzw/zh-cn_image_0000002704271851.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095706Z&HW-CC-Expire=86400&HW-CC-Sign=4C6F89F12F6BBE269F0114370465E2DC8E19E33BDC8039ACF1F4986F9F4BBAFD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/0BXNjO7iQ22yrst3GbkLEg/zh-cn_image_0000002717770048.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=BB5CB4D3B95F2B2F318648D583AD674677E8A6F4FCCBC7D9ABE0BC900310707E)
 
 
   
 
-  #### 装饰Array类型变量
+  ### 装饰Array类型变量
 
   当装饰的对象是Array时，可以观察到Array整体的赋值，同时可以通过调用Array的接口push, pop, shift, unshift, splice, copyWithin, fill, reverse, sort更新Array中的数据。
 
@@ -365,12 +369,12 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/FD8ZiiB6QWaigWfevDGv6A/zh-cn_image_0000002674472052.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095706Z&HW-CC-Expire=86400&HW-CC-Sign=6182988DFF3382CCC63C020176FD0D1898D5227DBBCA4D2BC04E340D65B1F55E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/p0aNw3wRQ0axgaEE9zKm8w/zh-cn_image_0000002717610114.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=E872C7974139E325E183DA32875C6DC60DCA3F73F075D66BEE671C0F2DB289A2)
 
 
   
 
-  #### 装饰Date类型变量
+  ### 装饰Date类型变量
 
   当装饰Date类型变量时，可以观察到数据源对Date整体的赋值，以及调用Date的接口setFullYear, setMonth, setDate, setHours, setMinutes, setSeconds, setMilliseconds, setTime, setUTCFullYear, setUTCMonth, setUTCDate, setUTCHours, setUTCMinutes, setUTCSeconds, setUTCMilliseconds带来的变化。
 
@@ -457,12 +461,12 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/ssqa7Z6lR22KNRwA4-6aqA/zh-cn_image_0000002704392021.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095706Z&HW-CC-Expire=86400&HW-CC-Sign=0FD44C6360008966BA796D6B71672E3F41B34BF193D99BB36CB68A663D90CF48)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/xnnCweENSteGvOBKG_vf9w/zh-cn_image_0000002747290065.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=8C49D9965FE7D604D6AF446F5ED7957643DA53B78797ED07419EEB8961F5B73B)
 
 
   
 
-  #### 装饰Map类型变量
+  ### 装饰Map类型变量
 
   当装饰Map类型变量时，可以观察到数据源对Map整体的赋值，以及调用Map的接口set, clear, delete带来的变化。
 
@@ -575,12 +579,12 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/uI4Q1HzZSCe8hKdsnkzklA/zh-cn_image_0000002674631898.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095706Z&HW-CC-Expire=86400&HW-CC-Sign=3290B752240D36A3570664BDB089225F144D0BE08886176B3492E822759E8D78)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/cn7KSwdhRNK7FlO5ZrZO8g/zh-cn_image_0000002747209983.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=D521804DE09430ED73A0D42147B7B223DF8D0580993A774AEA7FFD48E2020724)
 
 
   
 
-  #### 装饰Set类型变量
+  ### 装饰Set类型变量
 
   当装饰Set类型变量时，可以观察到数据源对Set整体的赋值，以及调用Set的接口 add, clear, delete带来的变化。
 
@@ -679,12 +683,12 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/LEbwvYE4T0GQ5gJ5r0twMw/zh-cn_image_0000002704271853.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095706Z&HW-CC-Expire=86400&HW-CC-Sign=DF4C3C055641085D70F92FB61ED48482292DA2D1858B36E8F861A7FA519A1DD0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/DxrigWSYRaS17ulOkz_HfQ/zh-cn_image_0000002717770050.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=D83C9A528D56ECAAD716C8058DC3ED0C47D5E4E9FB508FC37B40F96B907C4A9F)
 
 
   
 
-  #### @Provider和@Consumer装饰回调事件用于组件之间完成行为抽象
+  ### @Provider和@Consumer装饰回调事件用于组件之间完成行为抽象
 
   当需要在父组件中向子组件注册回调函数时，可以使用@Provider和@Consumer装饰回调方法来实现。
 
@@ -731,12 +735,12 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/sQ51UOiiQtitDcgGUrq3uA/zh-cn_image_0000002674472054.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095706Z&HW-CC-Expire=86400&HW-CC-Sign=07B88E6BC8EEEE07831371DE6ACB9615C6B6A9F177F208578B32E692CCBDFE2B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/NjQbx_W6QxSFKGcny8q2OA/zh-cn_image_0000002717610116.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=E2CF12CDECF493B12F8D56B17F0F5FF575C62FFA0C1C7DC00865265E50AB2CFD)
 
 
   
 
-  #### @Provider和@Consumer装饰复杂类型，配合@Trace一起使用
+  ### @Provider和@Consumer装饰复杂类型，配合@Trace一起使用
 
 1. @Provider和@Consumer只能观察到数据本身的变化。如果需要观察其装饰的复杂数据类型的属性变化，可以配合@Trace一起使用，也可以使用[makeObserved](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-makeobserved)将非可观察数据变为可观察数据。
 
@@ -811,12 +815,12 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/HT0M0wh9QC6r8ZGkFXFdWA/zh-cn_image_0000002704392023.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095706Z&HW-CC-Expire=86400&HW-CC-Sign=8A52C5C123C9A030A5978BE3FC54015536A66B80F9A0840B81521CEC02B51320)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/MaTia-ZfSAexu-nxtDyD3Q/zh-cn_image_0000002747290067.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=BD1428982F0C95FF02FE20AD30008A341FB450CC69A48A36B21C6175CCDD99C5)
 
 
   
 
-  #### @Provider重名时，@Consumer向上查找其最近的@Provider
+  ### @Provider重名时，@Consumer向上查找其最近的@Provider
 
   @Provider可以在组件树上重名，@Consumer会向上查找其最近父节点的@Provider的数据。
 
@@ -866,7 +870,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/hErYm8fiQxCY-8DAQubsew/zh-cn_image_0000002674631900.png?HW-CC-KV=V1&HW-CC-Date=20260813T095706Z&HW-CC-Expire=86400&HW-CC-Sign=00C07216B64F4E1746F208FCEDCA6CC69CD62896D8C273102D7F48F90678177B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/inDZqty-TlK_MoyP0W6oSA/zh-cn_image_0000002747209985.png?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=C562D287D20BFD651189863815256F8B7D25A1ECDF90B43E1A24EB014CE576B4)
 
 
   上面的例子中：
@@ -878,7 +882,7 @@ Parent中的@Consumer向上查找，查找到Index中定义的@Provider() val: n
 
 
 
-#### @Provider和@Consumer初始化@Param
+### @Provider和@Consumer初始化@Param
 
 @Provider和@Consumer装饰的变量可以初始化子组件中@Param装饰的变量。
 
@@ -945,7 +949,7 @@ struct Child {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/AZBY61YhRYiWpJCf8LWZ4w/zh-cn_image_0000002704271855.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095706Z&HW-CC-Expire=86400&HW-CC-Sign=B1AC17AD42C2ACDDB4772454CFF62FE7C87D275AFF26FADFEA13977E984A6345)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/bigUO9LuTTalKRDqeG1TBQ/zh-cn_image_0000002717770052.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=D2688F560E1D50086962852AD7001F94CD3FC8ADE90E836C009D11CA016EC985)
 
 
 上面的例子中：
@@ -957,7 +961,7 @@ struct Child {
 
 
 
-#### @Consumer在跨BuilderNode场景下和@Provider建立双向同步过程
+### @Consumer在跨BuilderNode场景下和@Provider建立双向同步过程
 
 > [!NOTE]
 > 从API version 23开始，支持跨BuilderNode配对@Provider和@Consumer。
@@ -1014,6 +1018,7 @@ class TextNodeController extends NodeController {
   disposeNode(): void {
     if (this.rootNode && globalBuilderNode) {
       globalBuilderNode.dispose();
+      globalBuilderNode = null;
     }
   }
 }
@@ -1105,7 +1110,7 @@ struct TestRemove {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/c6bXbFb7QOmNYyawKQYBcQ/zh-cn_image_0000002674472056.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095706Z&HW-CC-Expire=86400&HW-CC-Sign=89113A45EC47412C270C44A36BCFEE9DB4309C25A4898766B868C42826B544C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/dFGtF-HBRTe6R2xKeYFYXw/zh-cn_image_0000002717610118.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=39CB3110A90CB3AD67614AF922CFBF32ABBFF784D7FD2BE2BBBCB1F1AE1AB70A)
 
 
 上面的例子中：

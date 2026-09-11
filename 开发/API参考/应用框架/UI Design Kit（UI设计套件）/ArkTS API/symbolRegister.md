@@ -1,18 +1,19 @@
-# symbolRegister
+# symbolRegister (symbol注册)
 
-更新时间：2026-07-09 02:26:55
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-symbolregister
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+**支持设备：** Phone | PC/2in1 | Tablet
 
 本模块提供自定义Symbol图标资源与动效参数资源注册加载能力。
  
 **起始版本：** 5.1.1(19)
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 import { symbolRegister } from '@kit.UIDesignKit';
@@ -20,9 +21,10 @@ import { symbolRegister } from '@kit.UIDesignKit';
  
   
 
-#### symbolRegister.registerSymbol
+## symbolRegister.registerSymbol
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 registerSymbol(ttfSrc: resourceManager.Resource, jsonSrc: resourceManager.Resource): boolean
  
@@ -36,6 +38,7 @@ registerSymbol(ttfSrc: resourceManager.Resource, jsonSrc: resourceManager.Resour
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ttfSrc | resourceManager.Resource | 是 | 自定义Symbol图标资源。 |
@@ -44,6 +47,7 @@ registerSymbol(ttfSrc: resourceManager.Resource, jsonSrc: resourceManager.Resour
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回注册结果，true：注册成功，false：注册失败。 |
@@ -53,6 +57,7 @@ registerSymbol(ttfSrc: resourceManager.Resource, jsonSrc: resourceManager.Resour
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ui-design)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |

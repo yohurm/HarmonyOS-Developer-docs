@@ -1,6 +1,6 @@
 # XML概述
 
-更新时间：2026-03-09 02:50:43
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xml-overview
 
@@ -30,7 +30,7 @@ XML支持命名空间、实体引用、注释和处理指令，灵活适应各�
 <note importance="high">
     <title>Happy</title>
     <!-- 实体引用 -->
-    <todo>&</todo>
+    <todo>&amp;</todo>
     <!-- 命名空间的声明及统一资源标识符 -->
     <h:table xmlns:h="http://www.w3.org/TR/html4/">
         <h:tr>

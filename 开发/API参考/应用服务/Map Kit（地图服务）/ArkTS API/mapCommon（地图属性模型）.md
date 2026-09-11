@@ -1,6 +1,6 @@
 # mapCommon（地图属性模型）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-common
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
@@ -10,7 +10,8 @@
 **起始版本：** 4.1.0(11)
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -20,7 +21,8 @@ import { mapCommon } from '@kit.MapKit';
 
 
 
-#### MapOptions
+## MapOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -31,6 +33,7 @@ import { mapCommon } from '@kit.MapKit';
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -100,7 +103,8 @@ let mapOptions: mapCommon.MapOptions = {
 
 
 
-#### LatLng
+## LatLng
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -113,6 +117,7 @@ let mapOptions: mapCommon.MapOptions = {
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -131,7 +136,8 @@ let position: mapCommon.LatLng = {
 
 
 
-#### CameraPosition
+## CameraPosition
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -144,6 +150,7 @@ let position: mapCommon.LatLng = {
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -169,7 +176,8 @@ let cameraPosition: mapCommon.CameraPosition = {
 
 
 
-#### LatLngBounds
+## LatLngBounds
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -182,6 +190,7 @@ let cameraPosition: mapCommon.CameraPosition = {
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -206,7 +215,8 @@ let bounds: mapCommon.LatLngBounds = {
 
 
 
-#### PatternItem
+## PatternItem
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -219,6 +229,7 @@ let bounds: mapCommon.LatLngBounds = {
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -237,7 +248,8 @@ let patternItem: mapCommon.PatternItem = {
 
 
 
-#### MyLocationStyle
+## MyLocationStyle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -248,6 +260,7 @@ let patternItem: mapCommon.PatternItem = {
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -273,7 +286,8 @@ let style: mapCommon.MyLocationStyle = {
 
 
 
-#### Poi
+## Poi
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -286,6 +300,7 @@ let style: mapCommon.MyLocationStyle = {
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -309,7 +324,8 @@ let poi: mapCommon.Poi = {
 
 
 
-#### BaseOverlayOptions
+## BaseOverlayOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -323,6 +339,7 @@ let poi: mapCommon.Poi = {
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | visible | boolean | 否 | 是 | 是否可见，默认值为true，异常值按默认值处理。 - true：可见 - false：不可见 |
@@ -331,7 +348,8 @@ let poi: mapCommon.Poi = {
 
 
 
-#### MarkerOptions
+## MarkerOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -342,6 +360,7 @@ let poi: mapCommon.Poi = {
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -406,7 +425,8 @@ let markerOptions: mapCommon.MarkerOptions = {
 
 
 
-#### MapCircleOptions
+## MapCircleOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -419,6 +439,7 @@ let markerOptions: mapCommon.MarkerOptions = {
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -451,7 +472,8 @@ let mapCircleOptions: mapCommon.MapCircleOptions = {
 
 
 
-#### MapPolygonOptions
+## MapPolygonOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -464,6 +486,7 @@ let mapCircleOptions: mapCommon.MapCircleOptions = {
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -503,7 +526,8 @@ let polygonOptions: mapCommon.MapPolygonOptions = {
 
 
 
-#### MapPolylineOptions
+## MapPolylineOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -514,6 +538,7 @@ let polygonOptions: mapCommon.MapPolygonOptions = {
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -562,7 +587,8 @@ let polylineOption: mapCommon.MapPolylineOptions = {
 
 
 
-#### BasePriorityOverlayParams
+## BasePriorityOverlayParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -576,6 +602,7 @@ let polylineOption: mapCommon.MapPolylineOptions = {
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | anchorU | number | 否 | 是 | POI的锚点在水平方向上的位置，值的范围为[0, 1]，默认值为0.5，异常值按默认值处理。 |
@@ -588,7 +615,8 @@ let polylineOption: mapCommon.MapPolylineOptions = {
 
 
 
-#### PointAnnotationParams
+## PointAnnotationParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -599,6 +627,7 @@ let polylineOption: mapCommon.MapPolylineOptions = {
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -645,7 +674,8 @@ let pointAnnotationOptions: mapCommon.PointAnnotationParams = {
 
 
 
-#### BubbleParams
+## BubbleParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -658,6 +688,7 @@ let pointAnnotationOptions: mapCommon.PointAnnotationParams = {
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -688,7 +719,8 @@ let bubbleOptions: mapCommon.BubbleParams = {
 
 
 
-#### Text
+## Text
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -701,6 +733,7 @@ let bubbleOptions: mapCommon.BubbleParams = {
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -727,7 +760,8 @@ let text: mapCommon.Text = {
 
 
 
-#### Padding
+## Padding
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -740,6 +774,7 @@ let text: mapCommon.Text = {
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -761,7 +796,8 @@ let padding: mapCommon.Padding = {
 
 
 
-#### VisibleRegion
+## VisibleRegion
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -774,6 +810,7 @@ VisibleRegion包含四个点，这四个点定义了地图相机的四边形可�
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -794,7 +831,8 @@ let visibleRegion: mapCommon.VisibleRegion = projection.getVisibleRegion();
 
 
 
-#### MapPoint
+## MapPoint
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -807,6 +845,7 @@ let visibleRegion: mapCommon.VisibleRegion = projection.getVisibleRegion();
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -825,7 +864,8 @@ let point: mapCommon.MapPoint = {
 
 
 
-#### CustomMapStyleOptions
+## CustomMapStyleOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -838,6 +878,7 @@ let point: mapCommon.MapPoint = {
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -856,7 +897,8 @@ let param: mapCommon.CustomMapStyleOptions = {
 
 
 
-#### ClusterItem
+## ClusterItem
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -869,6 +911,7 @@ let param: mapCommon.CustomMapStyleOptions = {
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -888,7 +931,8 @@ let clusterItem: mapCommon.ClusterItem = {
 
 
 
-#### ClusterOverlayParams
+## ClusterOverlayParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -902,6 +946,7 @@ let clusterItem: mapCommon.ClusterItem = {
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | clusterItems | Array&lt;ClusterItem&gt; | 否 | 否 | 待聚合节点数组。 |
@@ -909,6 +954,7 @@ let clusterItem: mapCommon.ClusterItem = {
 
 
 接口提供以下方法，支持聚合项自定义图标。
+
 
 | 返回类型 | 方法 |
 | --- | --- |
@@ -939,7 +985,8 @@ let clusterOverlayParams: mapCommon.ClusterOverlayParams = { distance: 40, clust
 
 
 
-#### getCustomIcon
+### getCustomIcon
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -955,12 +1002,14 @@ getCustomIcon?(clusterItems: Array&lt;ClusterItem&gt;): Promise<image.PixelMap>
 
 **起始版本：** 5.0.0(12)
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | clusterItems | Array&lt;ClusterItem&gt; | 是 | 聚合节点数组。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1014,7 +1063,8 @@ export class ClusterOverlayParamsMore implements mapCommon.ClusterOverlayParams 
 
 
 
-#### ImageOverlayParams
+## ImageOverlayParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1027,6 +1077,7 @@ export class ClusterOverlayParamsMore implements mapCommon.ClusterOverlayParams 
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1061,7 +1112,8 @@ let imageOverlayParams: mapCommon.ImageOverlayParams = {
 
 
 
-#### BuildingOverlayParams
+## BuildingOverlayParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1074,6 +1126,7 @@ let imageOverlayParams: mapCommon.ImageOverlayParams = {
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1247,7 +1300,8 @@ let buildingOverlayOptions: mapCommon.BuildingOverlayParams =
 
 
 
-#### BuildingTexture
+## BuildingTexture
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1260,6 +1314,7 @@ let buildingOverlayOptions: mapCommon.BuildingOverlayParams =
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1280,7 +1335,8 @@ let buildingTexture: mapCommon.BuildingTexture = {
 
 
 
-#### TraceOverlayParams
+## TraceOverlayParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1293,6 +1349,7 @@ let buildingTexture: mapCommon.BuildingTexture = {
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1451,7 +1508,8 @@ let traceOverlay = await this.mapController.addTraceOverlay(traceOptions, marker
 
 
 
-#### MapArcParams
+## MapArcParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1464,6 +1522,7 @@ let traceOverlay = await this.mapController.addTraceOverlay(traceOptions, marker
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1503,7 +1562,8 @@ let mapArcParams: mapCommon.MapArcParams = {
 
 
 
-#### CoordinateLatLng
+## CoordinateLatLng
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1516,6 +1576,7 @@ let mapArcParams: mapCommon.MapArcParams = {
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1534,7 +1595,8 @@ let location: mapCommon.CoordinateLatLng = {
 
 
 
-#### TileOverlayParams
+## TileOverlayParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1547,6 +1609,7 @@ let location: mapCommon.CoordinateLatLng = {
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 5.0.3(15)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1568,7 +1631,8 @@ let params: mapCommon.TileOverlayParams = {
 
 
 
-#### TileOverlayOptions
+## TileOverlayOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1579,6 +1643,7 @@ let params: mapCommon.TileOverlayParams = {
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 6.0.0(20)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1608,7 +1673,8 @@ let params: mapCommon.TileOverlayOptions = {
 
 
 
-#### HeatmapParams
+## HeatmapParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1621,6 +1687,7 @@ let params: mapCommon.TileOverlayOptions = {
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 6.0.0(20)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1636,7 +1703,8 @@ let params: mapCommon.TileOverlayOptions = {
 
 
 
-#### RadiusUnit
+## RadiusUnit
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1650,6 +1718,7 @@ let params: mapCommon.TileOverlayOptions = {
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | PIXEL_UNIT | 0 | 像素px。 |
@@ -1658,7 +1727,8 @@ let params: mapCommon.TileOverlayOptions = {
 
 
 
-#### WeightedLatLng
+## WeightedLatLng
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1672,6 +1742,7 @@ let params: mapCommon.TileOverlayOptions = {
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | point | LatLng | 否 | 否 | 经纬度。 |
@@ -1680,7 +1751,8 @@ let params: mapCommon.TileOverlayOptions = {
 
 
 
-#### TileProvider
+## TileProvider
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1696,6 +1768,7 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | x | number | 是 | X坐标。 |
@@ -1705,6 +1778,7 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;ArrayBuffer&gt; | Promise对象，返回瓦片字节。 |
@@ -1712,7 +1786,8 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 
 
-#### MvtOverlayParams
+## MvtOverlayParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1724,6 +1799,7 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | source | MvtSource | 否 | 否 | 矢量图层的来源。 元服务API：从版本6.0.0(20)开始，该接口支持在元服务中使用。 |
@@ -1733,7 +1809,8 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 
 
-#### MvtSource
+## MvtSource
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1747,6 +1824,7 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | tileUrl | string | 否 | 是 | 矢量图层的数据下载URL模板。URL必须包含占位符{x}、{y}和{z}。 说明： 使用在线下载方式添加矢量图层时（即使用tileUrl方式），需要申请访问网络的权限：ohos.permission.INTERNET。 |
@@ -1757,7 +1835,8 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 
 
-#### MvtLayer
+## MvtLayer
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1771,6 +1850,7 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | id | string | 否 | 否 | 唯一标识，用于添加、更新或移除图层。 |
@@ -1781,7 +1861,8 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 
 
-#### MvtPaint
+## MvtPaint
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1795,6 +1876,7 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | fillColor | number \| Expression | 否 | 是 | 填充颜色，默认值：0x000000，异常值按默认值处理。支持： - 十六进制RGB格式。 - 从矢量图层数据的属性中读取。 |
@@ -1803,7 +1885,8 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 
 
-#### MvtLayerType
+## MvtLayerType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1817,6 +1900,7 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | FILL | 'fill' | 填充多边形。 |
@@ -1824,7 +1908,8 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 
 
-#### Expression
+## Expression
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1838,6 +1923,7 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | operator | Operator | 否 | 否 | 操作符。 |
@@ -1846,7 +1932,8 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 
 
-#### Operator
+## Operator
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1860,6 +1947,7 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | GET | 'get' | 获取操作符。 |
@@ -1867,7 +1955,8 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 
 
-#### FlowFieldOverlayParams
+## FlowFieldOverlayParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1881,6 +1970,7 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | data | string | 否 | 否 | 流场图层的数据，数据格式参见流场数据格式参考。 |
@@ -1889,7 +1979,8 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 
 
-#### ParticleStyle
+## ParticleStyle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1903,6 +1994,7 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | count | number | 否 | 是 | 粒子数，默认值：2000，异常值按默认值处理，建议小于10000。 |
@@ -1913,7 +2005,8 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 
 
-#### MassPointItem
+## MassPointItem
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1927,6 +2020,7 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | itemId | string | 否 | 否 | 项目的唯一标识符。 |
@@ -1937,7 +2031,8 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 
 
-#### MassPointOverlayParams
+## MassPointOverlayParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1951,6 +2046,7 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | id | string | 否 | 否 | 海量点的唯一标识。 |
@@ -1962,7 +2058,8 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 
 
-#### LineText
+## LineText
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1975,6 +2072,7 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 26.0.0
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1989,7 +2087,8 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 
 
-#### SphereParams
+## SphereParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2003,6 +2102,7 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 **起始版本：** 26.0.0
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | sunLightEnabled | boolean | 否 | 是 | 是否启用晨昏线。 - true：启用晨昏线。 - false：关闭晨昏线。 默认值：true，异常值按默认值处理。 说明： 晨昏线是地球表面上太阳光照范围的分界线，将地球分为白天和黑夜两个区域。晨昏线在地球上的位置会随着地球自转和公转而不断变化。 |
@@ -2014,7 +2114,8 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 
 
-#### MapSignalParams
+## MapSignalParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2028,6 +2129,7 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 **起始版本：** 26.0.0
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | signalId | string | 否 | 否 | 信号路线ID，空值不处理。 说明： 成功添加信号路线后，Map Kit会在应用进程内存中缓存signalId。删除路线时，默认保留该缓存，以便在应用进程存活期间，可无需网络直接重新添加已缓存的信号路线。 如果需要删除缓存的signalId，请调用removeSignalLineCache接口。 |
@@ -2039,7 +2141,8 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 
 
-#### MapType
+## MapType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2050,6 +2153,7 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2062,7 +2166,8 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 
 
-#### PatternItemType
+## PatternItemType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2076,6 +2181,7 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DASH | 0 | 表示折线、多边形或圆的边框中的短划线。 |
@@ -2085,7 +2191,8 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 
 
-#### JointType
+## JointType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2099,6 +2206,7 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DEFAULT | 0 | 使用尖角连接路径段。 |
@@ -2108,7 +2216,8 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 
 
-#### LogoAlignment
+## LogoAlignment
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2119,6 +2228,7 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2132,7 +2242,8 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 
 
-#### CapStyle
+## CapStyle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2146,6 +2257,7 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | BUTT | 0 | 线的两端是平行线。 |
@@ -2155,7 +2267,8 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 
 
-#### CollisionRule
+## CollisionRule
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2167,6 +2280,7 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NONE | 0 | 名称和图标都不参与碰撞。 元服务API： 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
@@ -2177,7 +2291,8 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 
 
-#### FontStyle
+## FontStyle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2191,6 +2306,7 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | REGULAR | 0 | regular（常规粗细）。 |
@@ -2203,7 +2319,8 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 
 
-#### CoordinateType
+## CoordinateType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2217,6 +2334,7 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | WGS84 | 0 | WGS84坐标系。 |
@@ -2225,7 +2343,8 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 
 
-#### MyLocationDisplayType
+## MyLocationDisplayType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2236,6 +2355,7 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2250,7 +2370,8 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 
 
-#### DayNightMode
+## DayNightMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2264,6 +2385,7 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DAY | 0 | 日间模式。 |
@@ -2273,7 +2395,8 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 
 
-#### ScaleUnit
+## ScaleUnit
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2287,6 +2410,7 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 **起始版本：** 5.1.1(19)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | METRIC_UNIT | 0 | 公制单位。 |
@@ -2295,7 +2419,8 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 
 
-#### TextPosition
+## TextPosition
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2309,6 +2434,7 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DEFAULT | 0 | 默认模式。 |
@@ -2320,7 +2446,8 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 
 
 
-#### MapElementType
+## MapElementType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2333,6 +2460,7 @@ type TileProvider = (x: number, y: number, z: number) => Promise&lt;ArrayBuffer&
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

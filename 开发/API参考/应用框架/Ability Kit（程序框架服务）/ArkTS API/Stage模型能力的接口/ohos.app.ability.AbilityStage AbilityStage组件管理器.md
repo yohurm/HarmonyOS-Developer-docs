@@ -1,9 +1,9 @@
 # @ohos.app.ability.AbilityStage (AbilityStage组件管理器)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-abilitystage
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 AbilityStage是一个[Module](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-package-overview#应用的多module设计机制)级别的组件管理器，用于进行Module级别的资源预加载、线程创建等初始化操作，以及维护Module下的应用状态。AbilityStage与Module一一对应，即一个Module拥有一个AbilityStage。
 
@@ -16,9 +16,10 @@ AbilityStage拥有[onCreate()](#oncreate)、[onDestroy()](#ondestroy12)生命周
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { AbilityStage } from '@kit.AbilityKit';
@@ -26,19 +27,22 @@ import { AbilityStage } from '@kit.AbilityKit';
 
 
 
-#### AbilityStage
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## AbilityStage
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -47,9 +51,10 @@ import { AbilityStage } from '@kit.AbilityKit';
 
 
 
-#### onCreate
+### onCreate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onCreate(): void
 
@@ -75,9 +80,10 @@ export default class MyAbilityStage extends AbilityStage {
 
 
 
-#### onAcceptWant
+### onAcceptWant
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onAcceptWant(want: Want): string
 
@@ -95,12 +101,14 @@ onAcceptWant(want: Want): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| want | Want | 是 | Want类型参数，此处表示调用方传入的启动参数，如Ability名称，Bundle名称等。 |
+| want | Want | 是 | Want类型参数，此处表示调用方传入的启动参数，如Ability名称、Bundle名称等。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -122,9 +130,10 @@ export default class MyAbilityStage extends AbilityStage {
 
 
 
-#### onNewProcessRequest11+
+### onNewProcessRequest11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 onNewProcessRequest(want: Want): string
 
@@ -148,6 +157,7 @@ onNewProcessRequest(want: Want): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | Want类型参数，此处表示调用方传入的启动参数，如UIAbility名称、Bundle名称等。 |
@@ -155,9 +165,10 @@ onNewProcessRequest(want: Want): string
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| string | 返回一个由开发者自行决定的进程字符串标识，如果之前此标识对应的进程已被创建，就让ability在此进程中运行，否则创建新的进程。 |
+| string | 返回一个由开发者自行决定的进程字符串标识，如果之前此标识对应的进程已被创建，就让Ability在此进程中运行，否则创建新的进程。 |
 
 
 **示例：**
@@ -175,9 +186,10 @@ export default class MyAbilityStage extends AbilityStage {
 
 
 
-#### onConfigurationUpdate
+### onConfigurationUpdate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onConfigurationUpdate(newConfig: Configuration): void
 
@@ -192,6 +204,7 @@ onConfigurationUpdate(newConfig: Configuration): void
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -212,9 +225,10 @@ export default class MyAbilityStage extends AbilityStage {
 
 
 
-#### onMemoryLevel
+### onMemoryLevel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onMemoryLevel(level: AbilityConstant.MemoryLevel): void
 
@@ -231,6 +245,7 @@ onMemoryLevel(level: AbilityConstant.MemoryLevel): void
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -251,9 +266,10 @@ export default class MyAbilityStage extends AbilityStage {
 
 
 
-#### onDestroy12+
+### onDestroy12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDestroy(): void
 
@@ -277,16 +293,17 @@ export default class MyAbilityStage extends AbilityStage {
 
 
 
-#### onPrepareTermination15+
+### onPrepareTermination15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 onPrepareTermination(): AbilityConstant.PrepareTermination
 
 当应用被用户关闭时调用，可用于询问用户选择立即执行操作还是取消操作。同步接口，不支持异步回调。
 
 > [!NOTE]
-> 仅当应用正常退出（例如，通过doc栏/托盘关闭应用，或者应用随设备关机而退出）时会调用该接口。如果应用被强制关闭，则不会调用该接口。 当 AbilityStage.onPrepareTerminationAsync 实现时，本回调函数将不执行。
+> 仅当应用正常退出（例如，通过任务栏/托盘关闭应用，或者应用随设备关机而退出）时会调用该接口。如果应用被强制关闭，则不会调用该接口。 当 AbilityStage.onPrepareTerminationAsync 实现时，本回调函数将不执行。
 
 
 **需要权限**：ohos.permission.PREPARE_APP_TERMINATE
@@ -302,6 +319,7 @@ onPrepareTermination(): AbilityConstant.PrepareTermination
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -323,16 +341,17 @@ export default class MyAbilityStage extends AbilityStage {
 
 
 
-#### onPrepareTerminationAsync15+
+### onPrepareTerminationAsync15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 onPrepareTerminationAsync(): Promise<AbilityConstant.PrepareTermination>
 
 当应用被用户关闭时调用，可用于询问用户选择立即执行操作还是取消操作。使用Promise异步回调。
 
 > [!NOTE]
-> 仅当应用正常退出（例如，通过doc栏/托盘关闭应用，或者应用随设备关机而退出）时会调用该接口。如果应用被强制关闭，则不会调用该接口。 若异步回调内发生crash，按超时处理，执行等待超过10秒未响应，应用将被强制关闭。
+> 仅当应用正常退出（例如，通过任务栏/托盘关闭应用，或者应用随设备关机而退出）时会调用该接口。如果应用被强制关闭，则不会调用该接口。 若异步回调内发生crash，按超时处理，执行等待超过10秒未响应，应用将被强制关闭。
 
 
 **需要权限**：ohos.permission.PREPARE_APP_TERMINATE
@@ -348,6 +367,7 @@ onPrepareTerminationAsync(): Promise<AbilityConstant.PrepareTermination>
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -371,9 +391,10 @@ export default class MyAbilityStage extends AbilityStage {
 
 
 
-#### onAcceptWantAsync20+
+### onAcceptWantAsync20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onAcceptWantAsync(want: Want): Promise&lt;string&gt;
 
@@ -387,12 +408,14 @@ onAcceptWantAsync(want: Want): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | Want类型参数，传入需要启动的UIAbility的信息，如UIAbility名称、Bundle名称等。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -402,13 +425,13 @@ onAcceptWantAsync(want: Want): Promise&lt;string&gt;
 **示例：**
 
 ```json
-import { AbilityStage } from '@kit.AbilityKit';
+import { AbilityStage, Want } from '@kit.AbilityKit';
 
 class MyAbilityStage extends AbilityStage {
   async onAcceptWantAsync(want: Want): Promise<string> {
     await new Promise<string>((res, rej) => {
       setTimeout(res, 1000); // 延时1秒后执行
-      console.info(`onNewProcessRequestAsync, want: ${JSON.stringify(want)}`);
+      console.info(`onAcceptWantAsync, want: ${JSON.stringify(want)}`);
     });
     return 'default';
   }
@@ -417,9 +440,10 @@ class MyAbilityStage extends AbilityStage {
 
 
 
-#### onNewProcessRequestAsync20+
+### onNewProcessRequestAsync20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 onNewProcessRequestAsync(want: Want): Promise&lt;string&gt;
 
@@ -435,12 +459,14 @@ onNewProcessRequestAsync(want: Want): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | Want类型参数，此处表示调用方传入的启动参数，如UIAbility名称、Bundle名称等。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -450,7 +476,7 @@ onNewProcessRequestAsync(want: Want): Promise&lt;string&gt;
 **示例：**
 
 ```json
-import { AbilityStage } from '@kit.AbilityKit';
+import { AbilityStage, Want } from '@kit.AbilityKit';
 
 class MyAbilityStage extends AbilityStage {
   async onNewProcessRequestAsync(want: Want): Promise<string> {
@@ -465,9 +491,10 @@ class MyAbilityStage extends AbilityStage {
 
 
 
-#### onLaunchFromHyperSnap24+
+### onLaunchFromHyperSnap24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onLaunchFromHyperSnap(): void
 
@@ -492,15 +519,20 @@ export default class MyAbilityStage extends AbilityStage {
 
 
 
-#### onAboutToCreateAbility24+
+### onAboutToCreateAbility24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onAboutToCreateAbility(): void
 
 当AbilityStage即将创建第一个Ability时调用。
 
 开发者可以通过重写此方法来执行在创建第一个Ability之前的准备工作。
+
+> [!NOTE]
+> 从API版本26.0.0开始，若实现了 AbilityStage.onAboutToCreateAbilityAsync ，则不会触发本回调函数。
+
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
@@ -513,6 +545,57 @@ export default class MyAbilityStage extends AbilityStage {
   onAboutToCreateAbility(): void {
     console.info('About to create first ability, preparing...');
     // 在此添加创建第一个Ability前的准备工作
+  }
+}
+```
+
+
+
+### onAboutToCreateAbilityAsync
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+onAboutToCreateAbilityAsync(): Promise&lt;void&gt;
+
+当AbilityStage即将创建第一个Ability时调用。使用Promise异步回调。
+
+此方法返回的Promise成功resolve后，后续的生命周期回调才会继续执行；否则将被挂起。
+
+开发者可通过重写此方法，在AbilityStage创建首个Ability之前，执行必要的异步初始化与准备工作。
+
+**起始版本：** 26.0.0
+
+> [!NOTE]
+> 若同时实现 onAboutToCreateAbility 和此方法，仅此方法生效。
+
+
+**系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
+**返回值：**
+
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise&lt;void&gt; | Promise对象，无返回值。在Promise成功resolve后，后续的生命周期回调才会继续执行。 |
+
+
+**示例：**
+
+```text
+import { AbilityStage } from '@kit.AbilityKit';
+
+export default class MyAbilityStage extends AbilityStage {
+  async onAboutToCreateAbilityAsync(): Promise<void> {
+    console.info('About to create first ability, preparing...');
+    // 执行异步初始化操作
+    await new Promise<void>((resolve) => {
+      setTimeout(() => {
+        console.info('Async preparation completed');
+        resolve();
+      }, 1000);
+    });
+    // 初始化完成后，才会继续创建Ability
   }
 }
 ```

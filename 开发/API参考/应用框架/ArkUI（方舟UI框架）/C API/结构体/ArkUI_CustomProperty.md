@@ -1,18 +1,19 @@
 # ArkUI_CustomProperty
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-arkui-customproperty
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct ArkUI_CustomProperty ArkUI_CustomProperty
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义表示组件自定义属性的 ArkUI_CustomProperty 结构体。通过相关接口，可以为 ArkUI 组件添加、移除和获取自定义属性，以及获取自定义属性的字符串值。
  
@@ -24,6 +25,7 @@ typedef struct ArkUI_CustomProperty ArkUI_CustomProperty
  
 **相关接口：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_ArkUI_NodeUtils_AddCustomProperty | 添加组件的自定义属性。 |

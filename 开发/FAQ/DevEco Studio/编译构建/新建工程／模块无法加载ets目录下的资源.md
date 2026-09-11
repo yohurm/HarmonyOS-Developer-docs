@@ -15,7 +15,7 @@
 **解决措施**
  1. 将ets目录中的资源文件放置到resources目录中,通过$r的方式引用，参考：
 ```ArkTS
-// xxx.ets
+<em>// xxx.ets</em>
 @Entry
 @Component
 struct VideoPlayer {
@@ -30,16 +30,16 @@ struct VideoPlayer {
         previewUri: this.previewUris,
         controller: this.controller
       })
-        .onUpdate((event) => { // Triggered when the playback progress changes.
+        .onUpdate((event) => { <em>// Triggered when the playback progress changes.</em>
           console.info("Video update.");
         })
-        .onPrepared((event) => { // Triggered when video preparation is complete.
+        .onPrepared((event) => { <em>// Triggered when video preparation is complete.</em>
           console.info("Video prepared.");
         })
-        .onError(() => { // Triggered when the video playback fails.
+        .onError(() => { <em>// Triggered when the video playback fails.</em>
           console.error("Video error.");
         })
-        .onStop(() => { // Triggered when the video playback stops.
+        .onStop(() => { <em>// Triggered when the video playback stops.</em>
           console.info("Video stopped.");
         })
     }
@@ -49,17 +49,17 @@ struct VideoPlayer {
 
 2. 若使用的组件不支持直接使用$r的写法,可以通过resourceManager资源接口获取和使用resources资源目录中的资源，参考：
 ```ArkTS
-// xxx.ets
+<em>// xxx.ets</em>
 @Entry
 @Component
 struct ImageExample {
   private settings: RenderingContextSettings = new RenderingContextSettings(true);
   private context: CanvasRenderingContext2D = new CanvasRenderingContext2D(this.settings);
-  // Replace "common/images/example.jpg" with the image resource file you use.
-  // private img: ImageBitmap = new ImageBitmap("common/images/example.jpg"); // This relative path writing will make it impossible to record pictures in the new template
+  <em>// Replace "common/images/example.jpg" with the image resource file you use.</em>
+  <em>// private img: ImageBitmap = new ImageBitmap("common/images/example.jpg"); // This relative path writing will make it impossible to record pictures in the new template</em>
      private img: ImageBitmap = new ImageBitmap(this.getUIContext().getHostContext()?.resourceManager
     .getDrawableDescriptorByName("example")
-    .getPixelMap()); // You can refer to the interface for using resourceManager
+    .getPixelMap()); <em>// You can refer to the interface for using resourceManager</em>
 
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {

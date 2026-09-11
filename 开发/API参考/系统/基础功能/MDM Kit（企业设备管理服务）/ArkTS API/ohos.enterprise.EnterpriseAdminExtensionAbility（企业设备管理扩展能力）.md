@@ -1,11 +1,22 @@
 # @ohos.enterprise.EnterpriseAdminExtensionAbility（企业设备管理扩展能力）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterpriseadminextensionability
 **支持设备：** Phone | PC/2in1 | Tablet
 
-本模块提供[企业设备管理扩展能力](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-term#enterpriseadminextensionability企业设备管理扩展能力)。
+本模块提供[企业设备管理扩展能力](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-term#enterpriseadminextensionability企业设备管理扩展能力)，是企业设备管理应用的核心组件。
+
+**主要功能**：
+
+ - 提供设备管理应用的生命周期管理能力（激活、解除激活、启动等事件）。
+ - 提供应用生命周期事件监听能力（安装、卸载、启动、停止、更新）。
+ - 提供系统账号管理事件监听能力（账号新增、切换、删除）。
+ - 提供Kiosk模式、按键事件、日志收集、系统更新等系统级事件回调。
+ - 提供策略变更事件监听能力。
+
+
+**使用场景**：企业设备管理应用开发、企业应用生命周期管理、设备安全管控、账号管理、设备运维监控等。
 
 设备管理应用需要存在一个EnterpriseAdminExtensionAbility并重写相关接口，以此具备模块提供的各项能力，比如接收由系统发送的该应用被激活或者解除激活的通知。
 
@@ -14,7 +25,8 @@
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -24,19 +36,24 @@ import { EnterpriseAdminExtensionAbility } from '@kit.MDMKit';
 
 
 
-#### EnterpriseAdminExtensionAbility
+## EnterpriseAdminExtensionAbility
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
-企业设备管理扩展能力组件，是设备管理应用必备组件。当开发者为企业开发设备管理应用时，需继承EnterpriseAdminExtensionAbility，在EnterpriseAdminExtensionAbility实例中实现MDM业务逻辑，EnterpriseAdminExtensionAbility实现了系统管理状态变化通知功能，并定义了管理应用激活、去激活、应用安装、卸载事件等回调接口。
+企业设备管理扩展能力组件，是设备管理应用必备组件。当开发者为企业开发设备管理应用时，需继承EnterpriseAdminExtensionAbility，在EnterpriseAdminExtensionAbility实例中实现MDM业务逻辑，EnterpriseAdminExtensionAbility实现了系统管理状态变化通知功能，并定义了管理应用激活、解除激活、应用安装、卸载事件等回调接口。
 
 
 
-#### 属性
+### 属性
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
-**系统能力**：SystemCapability.Customization.EnterpriseDeviceManager
+**系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -45,13 +62,22 @@ import { EnterpriseAdminExtensionAbility } from '@kit.MDMKit';
 
 
 
-#### onAdminEnabled
+### onAdminEnabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 onAdminEnabled(): void
 
 当前设备管理应用被激活后，触发该回调。企业管理员或者员工部署并激活设备管理应用，系统通知设备管理应用已激活admin权限。设备管理应用可在此回调函数中进行初始化策略设置。无需注册，激活后默认触发该回调。
+
+**与onDeviceAdminEnabled的区别：**
+
+ - onAdminEnabled：设备管理应用自身被激活时触发，用于设备管理应用初始化自己的策略。
+ - onDeviceAdminEnabled：超级设备管理应用监听普通设备管理应用激活事件，用于超级设备管理应用对普通设备管理应用进行管理。
+
+
+开发者应根据应用类型和监听场景选择合适的方法：普通设备管理应用使用onAdminEnabled，超级设备管理应用监听其他应用激活时使用onDeviceAdminEnabled。
 
 **系统能力**：SystemCapability.Customization.EnterpriseDeviceManager
 
@@ -71,7 +97,8 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
 
 
 
-#### onAdminDisabled
+### onAdminDisabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -97,7 +124,8 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
 
 
 
-#### onBundleAdded
+### onBundleAdded
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -110,6 +138,7 @@ onBundleAdded(bundleName: string): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -145,7 +174,8 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
 
 
 
-#### onBundleAdded14+
+### onBundleAdded14+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -158,6 +188,7 @@ onBundleAdded(bundleName: string, accountId: number): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -195,7 +226,8 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
 
 
 
-#### onBundleRemoved
+### onBundleRemoved
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -208,6 +240,7 @@ onBundleRemoved(bundleName: string): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -243,7 +276,8 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
 
 
 
-#### onBundleRemoved14+
+### onBundleRemoved14+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -256,6 +290,7 @@ onBundleRemoved(bundleName: string, accountId: number): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -293,7 +328,8 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
 
 
 
-#### onAppStart
+### onAppStart
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -306,6 +342,7 @@ onAppStart(bundleName: string): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -341,7 +378,8 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
 
 
 
-#### onAppStop
+### onAppStop
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -354,6 +392,7 @@ onAppStop(bundleName: string): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -389,7 +428,8 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
 
 
 
-#### onSystemUpdate
+### onSystemUpdate
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -403,9 +443,10 @@ onSystemUpdate(systemUpdateInfo: systemManager.SystemUpdateInfo): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| systemUpdateInfo | systemManager.SystemUpdateInfo | 是 | 系统更新的版本信息。 |
+| systemUpdateInfo | systemManager.SystemUpdateInfo | 是 | 系统更新的版本信息，用于通知设备管理应用系统版本更新情况。 |
 
 
 **示例：**
@@ -437,7 +478,8 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
 
 
 
-#### onStart
+### onStart
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -463,7 +505,8 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
 
 
 
-#### onAccountAdded18+
+### onAccountAdded18+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -476,6 +519,7 @@ onAccountAdded(accountId: number): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -511,7 +555,8 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
 
 
 
-#### onAccountSwitched18+
+### onAccountSwitched18+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -524,6 +569,7 @@ onAccountSwitched(accountId: number): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -559,7 +605,8 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
 
 
 
-#### onAccountRemoved18+
+### onAccountRemoved18+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -572,6 +619,7 @@ onAccountRemoved(accountId: number): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -607,7 +655,8 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
 
 
 
-#### onKioskModeEntering20+
+### onKioskModeEntering20+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -622,6 +671,7 @@ Kiosk模式为系统层面提供的一种应用运行模式，该模式下会将
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -643,7 +693,8 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
 
 
 
-#### onKioskModeExiting20+
+### onKioskModeExiting20+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -656,6 +707,7 @@ onKioskModeExiting(bundleName: string, accountId: number): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -677,7 +729,8 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
 
 
 
-#### onMarketAppInstallResult22+
+### onMarketAppInstallResult22+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -691,10 +744,11 @@ onMarketAppInstallResult(bundleName: string, result: common.InstallationResult):
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 应用市场应用包名。 |
-| result | common.InstallationResult | 是 | 安装结果。 |
+| result | common.InstallationResult | 是 | 安装结果，表示应用市场应用的安装状态，包含安装成功或失败的状态信息。 |
 
 
 **示例：**
@@ -711,7 +765,8 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
 
 
 
-#### onDeviceAdminEnabled23+
+### onDeviceAdminEnabled23+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -725,6 +780,7 @@ onDeviceAdminEnabled(bundleName: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 被激活应用的包名。 |
@@ -737,13 +793,15 @@ import { EnterpriseAdminExtensionAbility } from '@kit.MDMKit';
 
 export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbility {
   onDeviceAdminEnabled(bundleName: string) {
+    console.info(`Succeeded in calling onDeviceAdminEnabled callback, bundleName:${bundleName}`);
   }
 }
 ```
 
 
 
-#### onDeviceAdminDisabled23+
+### onDeviceAdminDisabled23+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -757,6 +815,7 @@ onDeviceAdminDisabled(bundleName: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 被解除激活应用的包名。 |
@@ -769,13 +828,15 @@ import { EnterpriseAdminExtensionAbility } from '@kit.MDMKit';
 
 export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbility {
   onDeviceAdminDisabled(bundleName: string) {
+    console.info(`Succeeded in calling onDeviceAdminDisabled callback, bundleName:${bundleName}`);
   }
 }
 ```
 
 
 
-#### onKeyEvent23+
+### onKeyEvent23+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -795,9 +856,10 @@ onKeyEvent(keyEvent: systemManager.KeyEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| keyEvent | systemManager.KeyEvent | 是 | 当前发生的按键事件信息。 |
+| keyEvent | systemManager.KeyEvent | 是 | 当前发生的按键事件信息，包含按键码（keyCode）、按键动作（keyAction，如按下/抬起）、触发时间（actionTime）、已按下按键列表（keyItems）等，用于识别和处理用户的按键操作。 |
 
 
 **示例：**
@@ -845,11 +907,11 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
   * 3.3 触发回调
   * 结果：同时按下（电源键先，音量+键后）
   *      onKeyEvent event:{"actionTime": 20991450446, "keyCode": 1, "keyAction": 0,
-  *   "keyItems": [{"pressed": true, "keyCode": 0, "downTime": 20991432293}，
+  *   "keyItems": [{"pressed": true, "keyCode": 0, "downTime": 20991432293},
   *   {"pressed": true, "keyCode": 1, "downTime": 20991450446}]}
   *      同时抬起 （音量+键先，电源键后）
   *      onKeyEvent event:{"actionTime": 20590590293, "keyCode": 1, "keyAction": 1,
-  *   "keyItems": [{"pressed": true, "keyCode": 0, "downTime": 28588682984}，
+  *   "keyItems": [{"pressed": true, "keyCode": 0, "downTime": 28588682984},
   *   {"pressed": false, "keyCode": 1, "downTime": 21588900860}]}
   *
   * 4.用户按组合键触发回调2（以电源键和音量+键为例）
@@ -860,7 +922,7 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
   * 4.3 触发回调
   * 结果：同时按下（音量+键先，电源键后）
   *      onKeyEvent event:{"actionTime": 28991115400, "keyCode": 0, "keyAction": 0,
-  *   "keyItems": [{"pressed": true, "keyCode": 1, "downTime": 28990731985}，
+  *   "keyItems": [{"pressed": true, "keyCode": 1, "downTime": 28990731985},
   *   {"pressed": true, "keyCode": 0, "downTime": 20991115400}]}
   *      同时抬起 （音量+键先，电源键后）
   *      onKeyEvent event:{"actionTime": 28992721560, "keyCode": 0, "keyAction": 1,
@@ -874,11 +936,11 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
   * 5.3 触发回调
   * 结果：同时按下（音量+键先，电源键后）
   *      onKeyEvent event:{"actionTime": 29979014190, "keyCode": 0, "keyAction": 0,
-  *   "keyItems": [{"pressed": true, "keyCode": 1, "downTime": 29978420634}，
+  *   "keyItems": [{"pressed": true, "keyCode": 1, "downTime": 29978420634},
   *   {"pressed": true, "keyCode": 0, "downTime": 29979014190}]}
   *      同时抬起 （电源键先，音量+键后）
   *      onKeyEvent event:{"actionTime": 29982420773, "keyCode": 0, "keyAction": 1,
-  *   "keyItems": [{"pressed": true, "keyCode": 1, "downTime": 29978420634}，
+  *   "keyItems": [{"pressed": true, "keyCode": 1, "downTime": 29978420634},
   *   {"pressed": false, "keyCode": 0, "downTime": 29979014190}]}
   *
   * 6.用户按组合键触发回调4（以电源键和导航键-最近打开为例）
@@ -901,7 +963,8 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
 
 
 
-#### onLogCollected23+
+### onLogCollected23+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -919,9 +982,10 @@ onLogCollected(result: common.Result): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| result | common.Result | 是 | 日志收集结果。 |
+| result | common.Result | 是 | 日志收集结果，用于标识日志收集是否成功，常见值为SUCCESS（收集成功）或FAIL（收集失败），开发者可根据结果判断是否执行后续的日志获取操作。 |
 
 
 **示例：**
@@ -929,7 +993,7 @@ onLogCollected(result: common.Result): void
 ```json
 import { Want } from '@kit.AbilityKit';
 import { EnterpriseAdminExtensionAbility, common, systemManager } from '@kit.MDMKit';
-import { fileIo as fs } from '@kit.CoreFileKit';
+import { fileIo } from '@kit.CoreFileKit';
 
 export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbility {
   /**
@@ -944,10 +1008,10 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
       // 应用沙箱路径，需根据实际情况进行替换
       let targetPath = this.context.tempDir;
       try {
-        let files: string[] = fs.listFileSync(filesDir);
+        let files: string[] = fileIo.listFileSync(filesDir);
         // 从/data/edm/log沙箱目录取走日志
         files.forEach(value => {
-          fs.copyFileSync(filesDir + '/' + value, targetPath + '/' + value);
+          fileIo.copyFileSync(filesDir + '/' + value, targetPath + '/' + value);
         });
         let wantTemp: Want = {
           // 需根据实际情况进行替换
@@ -956,11 +1020,11 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
         };
         systemManager.finishLogCollected(wantTemp);
       } catch (error) {
-        console.info("onLogCollected", "error: " + JSON.stringify(error))
+        console.error("onLogCollected", "error: " + JSON.stringify(error));
       }
     }
     if (result === common.Result.FAIL) {
-      console.error("onLogCollected", "Failed to collect log.")
+      console.error("onLogCollected", "Failed to collect log.");
     }
   }
 }
@@ -968,7 +1032,8 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
 
 
 
-#### onStartupGuideCompleted24+
+### onStartupGuideCompleted24+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -982,9 +1047,10 @@ onStartupGuideCompleted(scene: common.StartupScene): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| scene | common.StartupScene | 是 | 开机向导完成场景。 |
+| scene | common.StartupScene | 是 | 开机向导完成场景，标识触发回调的具体场景类型，如用户设置完成（USER_SETUP）、OTA升级完成（OTA）、设备配置完成（DEVICE_PROVISION）等，开发者可根据不同场景执行相应的业务逻辑。 |
 
 
 **示例：**
@@ -1022,7 +1088,8 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
 
 
 
-#### onDeviceBootCompleted24+
+### onDeviceBootCompleted24+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1063,7 +1130,8 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
 
 
 
-#### onBundleUpdated
+### onBundleUpdated
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1078,6 +1146,7 @@ onBundleUpdated(bundleName: string, accountId: number): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1114,7 +1183,8 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
 
 
 
-#### onAdminPolicyChanged
+### onAdminPolicyChanged
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1130,9 +1200,10 @@ onAdminPolicyChanged(event: common.PolicyChangedEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| event | common.PolicyChangedEvent | 是 | 策略变更事件。 |
+| event | common.PolicyChangedEvent | 是 | 策略变更事件，包含策略变更的详细信息，如变更的应用包名（bundleName）、变更的函数名（functionName）、变更的参数（parameters）和变更时间（time），超级设备管理应用可根据这些信息进行策略审计或同步。 |
 
 
 **示例：**
@@ -1157,7 +1228,7 @@ try {
 
 export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbility {
   onAdminPolicyChanged(event: common.PolicyChangedEvent) {
-    // 例如当MDM应用调用setPasswordPolicy接口设置密码策略时，输出示例为: Policy changed, bundleName : com.example.test, functionName: setPasswordPolicy, parameters: {"policy":{"complexityRegex":"^(?=.*[a-zA-Z])(?=.*\\d).{8},$","validityPeriod":1808309786000,"additionalDescription":"至少8个字符，且包含数字和字母。"}}, time: 1776773305379.
+    // 例如当MDM应用调用setPasswordPolicy接口设置密码策略时，输出示例为： Policy changed, bundleName : com.example.test, functionName: setPasswordPolicy, parameters: {"policy":{"complexityRegex":"^(?=.*[a-zA-Z])(?=.*\\d).{8},$","validityPeriod":1808309786000,"additionalDescription":"至少8个字符，且包含数字和字母。"}}, time: 1776773305379.
     console.info(`Policy changed, bundleName : ${event.bundleName}, functionName: ${event.functionName}, parameters: ${event.parameters}, time: ${event.time}.`);
   }
 }

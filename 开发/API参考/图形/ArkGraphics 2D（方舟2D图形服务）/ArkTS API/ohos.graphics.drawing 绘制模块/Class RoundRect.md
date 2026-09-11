@@ -1,20 +1,21 @@
 # Class (RoundRect)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-graphics-drawing-roundrect
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-圆角矩形对象。
+圆角矩形对象。支持设置和获取指定圆角位置的圆角半径，以及对圆角矩形进行平移操作。
 
 > [!NOTE]
 > 本模块首批接口从API version 11开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 本Class首批接口从API version 12开始支持。 本模块使用屏幕物理像素单位px。 本模块为单线程模型策略，需要调用方自行管理线程安全和上下文状态的切换。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { drawing } from '@kit.ArkGraphics2D';
@@ -22,9 +23,10 @@ import { drawing } from '@kit.ArkGraphics2D';
 
 
 
-#### constructor20+
+## constructor20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(roundRect: RoundRect)
 
@@ -33,6 +35,7 @@ constructor(roundRect: RoundRect)
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -44,39 +47,42 @@ constructor(roundRect: RoundRect)
 ```text
 import { common2D, drawing } from '@kit.ArkGraphics2D';
 
-let rect: common2D.Rect = {left : 100, top : 100, right : 500, bottom : 300};
+let rect: common2D.Rect = {left: 100, top: 100, right: 500, bottom: 300};
 let roundRect = new drawing.RoundRect(rect, 50, 50);
 let roundRect2 = new drawing.RoundRect(roundRect);
 ```
 
 
 
-#### constructor12+
+## constructor12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(rect: common2D.Rect, xRadii: number, yRadii: number)
 
-构造一个圆角矩形对象，当且仅当xRadii和yRadii均大于0时，圆角生效，否则只会构造一个矩形。
+构造一个圆角矩形对象，当且仅当 xRadii 和 yRadii 均大于 0 时，圆角生效，否则只会构造一个矩形。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| rect | common2D.Rect | 是 | 需要创建的圆角矩形区域。 |
-| xRadii | number | 是 | X轴上的圆角半径，该参数为浮点数，小于等于0时无效。单位为物理像素px。 |
-| yRadii | number | 是 | Y轴上的圆角半径，该参数为浮点数，小于等于0时无效。单位为物理像素px。 |
+| rect | common2D.Rect | 是 | 需要创建的圆角矩形的矩形区域。 |
+| xRadii | number | 是 | x轴方向的圆角半径，该参数为浮点数，取值大于0时圆角生效，小于等于0时圆角不生效。单位为物理像素px。 |
+| yRadii | number | 是 | y轴方向的圆角半径，该参数为浮点数，取值大于0时圆角生效，小于等于0时圆角不生效。单位为物理像素px。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 
 **示例：**
@@ -84,15 +90,16 @@ constructor(rect: common2D.Rect, xRadii: number, yRadii: number)
 ```text
 import { common2D, drawing } from '@kit.ArkGraphics2D';
 
-let rect: common2D.Rect = {left : 100, top : 100, right : 500, bottom : 300};
+let rect: common2D.Rect = {left: 100, top: 100, right: 500, bottom: 300};
 let roundRect = new drawing.RoundRect(rect, 50, 50);
 ```
 
 
 
-#### setCorner12+
+## setCorner12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCorner(pos: CornerPos, x: number, y: number): void
 
@@ -102,20 +109,22 @@ setCorner(pos: CornerPos, x: number, y: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pos | CornerPos | 是 | 圆角位置。 |
-| x | number | 是 | x轴方向的圆角半径，该参数为浮点数，小于等于0时无效。单位为物理像素px。 |
-| y | number | 是 | y轴方向的圆角半径，该参数为浮点数，小于等于0时无效。单位为物理像素px。 |
+| x | number | 是 | x轴方向的圆角半径，该参数为浮点数，取值大于0时该圆角半径设置生效，小于等于0时该圆角半径设置不生效。单位为物理像素px。 |
+| y | number | 是 | y轴方向的圆角半径，该参数为浮点数，取值大于0时该圆角半径设置生效，小于等于0时该圆角半径设置不生效。单位为物理像素px。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 
 **示例：**
@@ -123,15 +132,16 @@ setCorner(pos: CornerPos, x: number, y: number): void
 ```text
 import { drawing } from '@kit.ArkGraphics2D';
 
-let roundRect : drawing.RoundRect = new drawing.RoundRect({left: 0, top: 0, right: 300, bottom: 300}, 50, 50);
+let roundRect: drawing.RoundRect = new drawing.RoundRect({left: 0, top: 0, right: 300, bottom: 300}, 50, 50);
 roundRect.setCorner(drawing.CornerPos.TOP_LEFT_POS, 150, 150);
 ```
 
 
 
-#### getCorner12+
+## getCorner12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCorner(pos: CornerPos): common2D.Point
 
@@ -141,12 +151,14 @@ getCorner(pos: CornerPos): common2D.Point
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pos | CornerPos | 是 | 圆角位置。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -157,6 +169,7 @@ getCorner(pos: CornerPos): common2D.Point
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3.Parameter verification failed. |
@@ -167,25 +180,27 @@ getCorner(pos: CornerPos): common2D.Point
 ```text
 import { drawing } from '@kit.ArkGraphics2D';
 
-let roundRect : drawing.RoundRect = new drawing.RoundRect({left: 0, top: 0, right: 300, bottom: 300}, 50, 50);
+let roundRect: drawing.RoundRect = new drawing.RoundRect({left: 0, top: 0, right: 300, bottom: 300}, 50, 50);
 let cornerRadius = roundRect.getCorner(drawing.CornerPos.BOTTOM_LEFT_POS);
-console.info("getCorner---"+cornerRadius.x)
-console.info("getCorner---"+cornerRadius.y)
+console.info("getCorner---" + cornerRadius.x);
+console.info("getCorner---" + cornerRadius.y);
 ```
 
 
 
-#### offset12+
+## offset12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offset(dx: number, dy: number): void
 
-将圆角矩形分别沿x轴方向和y轴方向平移dx,dy。
+将圆角矩形沿x轴方向平移dx、沿y轴方向平移dy。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -197,6 +212,7 @@ offset(dx: number, dy: number): void
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
@@ -207,6 +223,6 @@ offset(dx: number, dy: number): void
 ```text
 import { drawing } from '@kit.ArkGraphics2D';
 
-let roundRect : drawing.RoundRect = new drawing.RoundRect({left: 0, top: 0, right: 300, bottom: 300}, 50, 50);
+let roundRect: drawing.RoundRect = new drawing.RoundRect({left: 0, top: 0, right: 300, bottom: 300}, 50, 50);
 roundRect.offset(100, 100);
 ```

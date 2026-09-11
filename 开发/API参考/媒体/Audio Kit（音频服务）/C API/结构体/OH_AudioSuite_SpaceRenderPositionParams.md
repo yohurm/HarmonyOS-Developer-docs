@@ -1,16 +1,17 @@
 # OH_AudioSuite_SpaceRenderPositionParams
 
-更新时间：2026-06-03 01:38:22（官网已下线）
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohaudiosuite-oh-audiosuite-spacerenderpositionparams
 **支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
-typedef struct {...} OH_AudioSuite_SpaceRenderPositionParams
+typedef struct OH_AudioSuite_SpaceRenderPositionParams {...} OH_AudioSuite_SpaceRenderPositionParams
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -26,16 +27,19 @@ typedef struct {...} OH_AudioSuite_SpaceRenderPositionParams
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | float x | 空间中的X坐标。取值范围为[-5.0, 5.0]，单位为米。 |

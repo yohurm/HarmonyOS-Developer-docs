@@ -1,6 +1,6 @@
 # 读取和编辑图片Exif信息
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-tool
 
@@ -12,6 +12,7 @@ Exif（Exchangeable image file format）是专门为数码相机的照片设定�
 
 系统目前仅支持读取和修改部分Exif信息，具体支持范围请参见[PropertyKey](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-e#propertykey7)。不同图片格式对Exif信息的读写支持情况如下。
 
+
 | 图片格式 | 读取Exif信息 | 修改Exif信息 |
 | --- | --- | --- |
 | JPG/JPEG | 支持 | 支持 |
@@ -22,9 +23,10 @@ Exif（Exchangeable image file format）是专门为数码相机的照片设定�
 
 
 
-#### 接口说明
+## 接口说明
 
 Exif信息的读取与编辑相关的API如下，详细介绍请参考[ImageSource](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-imagesource)。
+
 
 | 接口 | 说明 |
 | --- | --- |
@@ -34,7 +36,7 @@ Exif信息的读取与编辑相关的API如下，详细介绍请参考[ImageSour
 
 
 
-#### 注意事项
+## 注意事项
 
  - 需要先创建[ImageSource](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-imagesource)对象，再读取或编辑Exif信息。
  - 读取图片Exif信息前，需要确保应用对目标图片具有读取权限；修改图片Exif信息前，需要确保应用对目标图片具有写入权限。
@@ -46,7 +48,7 @@ Exif信息的读取与编辑相关的API如下，详细介绍请参考[ImageSour
 
 
 
-#### 开发步骤
+## 开发步骤
 
 获取图片并创建ImageSource对象后，可读取或编辑Exif信息。示例代码如下：
 1. 导入相关模块包。

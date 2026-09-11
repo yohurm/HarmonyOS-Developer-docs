@@ -1,9 +1,9 @@
 # @ohos.util.Queue (线性容器Queue)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-queue
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Queue遵循先进先出原则：在尾部增加元素，在头部删除元素。Queue基于循环队列的数据结构实现。
  
@@ -21,9 +21,10 @@ Queue和[Deque](https://developer.huawei.com/consumer/cn/doc/harmonyos-reference
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { Queue } from '@kit.ArkTS';
@@ -31,20 +32,23 @@ import { Queue } from '@kit.ArkTS';
  
   
 
-#### Queue
+## Queue
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
  
 **系统能力：** SystemCapability.Utils.Lang
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | length | number | 是 | 否 | Queue的元素个数。 |
@@ -52,9 +56,10 @@ import { Queue } from '@kit.ArkTS';
  
   
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
  
@@ -68,6 +73,7 @@ Queue的构造函数，创建一个新的Queue实例，初始长度为0。Queue�
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200012 | The Queue's constructor cannot be directly invoked. |
@@ -83,9 +89,10 @@ console.info("queue length:", queue.length);  // queue length: 0
  
   
 
-#### add
+### add
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 add(element: T): boolean
  
@@ -97,6 +104,7 @@ add(element: T): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | element | T | 是 | 要插入的元素。 |
@@ -104,6 +112,7 @@ add(element: T): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 插入成功返回true，否则返回false。 |
@@ -113,6 +122,7 @@ add(element: T): boolean
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The add method cannot be bound. |
@@ -139,9 +149,10 @@ console.info("result:", queue.length);  // result: 4
  
   
 
-#### pop
+### pop
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pop(): T
  
@@ -153,6 +164,7 @@ pop(): T
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | T | 返回删除的元素。当Queue为空时，返回undefined。 |
@@ -162,6 +174,7 @@ pop(): T
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The pop method cannot be bound. |
@@ -183,9 +196,10 @@ console.info("result:", result);  // result: 2
  
   
 
-#### getFirst
+### getFirst
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFirst(): T
  
@@ -197,6 +211,7 @@ getFirst(): T
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | T | 返回队列的头元素。 |
@@ -206,6 +221,7 @@ getFirst(): T
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The getFirst method cannot be bound. |
@@ -226,9 +242,10 @@ console.info("result:", result);  // result: 2
  
   
 
-#### forEach
+### forEach
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 forEach(callbackFn: (value: T, index?: number, Queue?: Queue&lt;T&gt;) => void, thisArg?: Object): void
  
@@ -240,6 +257,7 @@ forEach(callbackFn: (value: T, index?: number, Queue?: Queue&lt;T&gt;) => void, 
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callbackFn | function | 是 | 对每个元素执行的回调函数。 |
@@ -248,6 +266,7 @@ forEach(callbackFn: (value: T, index?: number, Queue?: Queue&lt;T&gt;) => void, 
  
 callbackFn的参数说明：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | T | 是 | 当前遍历到的元素。 |
@@ -259,6 +278,7 @@ callbackFn的参数说明：
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The forEach method cannot be bound. |
@@ -284,9 +304,10 @@ queue.forEach((value: number, index: number): void => {
  
   
 
-#### [Symbol.iterator]
+### [Symbol.iterator]
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [Symbol.iterator](): IterableIterator&lt;T&gt;
  
@@ -298,6 +319,7 @@ queue.forEach((value: number, index: number): void => {
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator&lt;T&gt; | 返回一个迭代器，用于遍历Queue中的所有元素。 |
@@ -307,6 +329,7 @@ queue.forEach((value: number, index: number): void => {
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The Symbol.iterator method cannot be bound. |

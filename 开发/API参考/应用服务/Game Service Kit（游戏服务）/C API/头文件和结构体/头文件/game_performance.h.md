@@ -1,11 +1,12 @@
 # game_performance.h
 
-更新时间：2026-04-30 02:41:24
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservice-game-performance-h
 **支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 类型定义
+### 类型定义
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | typedef struct GamePerformance_DeviceInfo GamePerformance_DeviceInfo | 定义设备性能信息。 |
@@ -61,10 +65,12 @@
  
   
 
-#### 枚举
+### 枚举
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | GamePerformance_EngineType { GAME_PERFORMANCE_ENGINE_TYPE_UNITY = 1, GAME_PERFORMANCE_ENGINE_TYPE_UNREAL = 2, GAME_PERFORMANCE_ENGINE_TYPE_MESSIAH = 3, GAME_PERFORMANCE_ENGINE_TYPE_COCOS = 4, GAME_PERFORMANCE_ENGINE_TYPE_OTHERS = 200 } | 此枚举描述引擎类型。 |
@@ -81,10 +87,12 @@
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | GamePerformance_ErrorCode HMS_GamePerformance_CreateInitParameters (GamePerformance_InitParameters **initParameters) | 创建GamePerformance_InitParameters实例，该实例在HMS_GamePerformance_Init方法中使用。 |

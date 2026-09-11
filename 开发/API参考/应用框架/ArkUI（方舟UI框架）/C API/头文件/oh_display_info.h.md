@@ -1,13 +1,14 @@
 # oh_display_info.h
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-display-info-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供屏幕的公共枚举、公共定义等。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | NativeDisplayManager_Rect | NativeDisplayManager_Rect | 矩形区域。 |
@@ -46,10 +50,12 @@
  
   
 
-#### 宏定义
+### 宏定义
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_DISPLAY_NAME_LENGTH 32 | 屏幕名称的最大长度。 起始版本： 14 |
@@ -57,10 +63,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | NativeDisplayManager_Rotation | NativeDisplayManager_Rotation | 屏幕顺时针的旋转角度。 |
@@ -73,15 +81,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### NativeDisplayManager_Rotation
+### NativeDisplayManager_Rotation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum NativeDisplayManager_Rotation
@@ -93,19 +103,21 @@ enum NativeDisplayManager_Rotation
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
-| DISPLAY_MANAGER_ROTATION_0 = 0 | 代表屏幕顺时针旋转角度0度。 |
-| DISPLAY_MANAGER_ROTATION_90 = 1 | 代表屏幕顺时针旋转角度90度。 |
-| DISPLAY_MANAGER_ROTATION_180 = 2 | 代表屏幕顺时针旋转角度180度。 |
-| DISPLAY_MANAGER_ROTATION_270 = 3 | 代表屏幕顺时针旋转角度270度。 |
+| DISPLAY_MANAGER_ROTATION_0 = 0 | 表示屏幕顺时针旋转角度0度。 |
+| DISPLAY_MANAGER_ROTATION_90 = 1 | 表示屏幕顺时针旋转角度90度。 |
+| DISPLAY_MANAGER_ROTATION_180 = 2 | 表示屏幕顺时针旋转角度180度。 |
+| DISPLAY_MANAGER_ROTATION_270 = 3 | 表示屏幕顺时针旋转角度270度。 |
  
  
   
 
-#### NativeDisplayManager_Orientation
+### NativeDisplayManager_Orientation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum NativeDisplayManager_Orientation
@@ -117,20 +129,22 @@ enum NativeDisplayManager_Orientation
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | DISPLAY_MANAGER_PORTRAIT = 0 | 表示设备当前以竖屏方式显示。 |
 | DISPLAY_MANAGER_LANDSCAPE = 1 | 表示设备当前以横屏方式显示。 |
 | DISPLAY_MANAGER_PORTRAIT_INVERTED = 2 | 表示设备当前以反向竖屏方式显示。 |
 | DISPLAY_MANAGER_LANDSCAPE_INVERTED = 3 | 表示设备当前以反向横屏方式显示。 |
-| DISPLAY_MANAGER_UNKNOWN | 表示显示未识别屏幕方向。 |
+| DISPLAY_MANAGER_UNKNOWN | 表示显示未识别的屏幕方向。 |
  
  
   
 
-#### NativeDisplayManager_ErrorCode
+### NativeDisplayManager_ErrorCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum NativeDisplayManager_ErrorCode
@@ -142,6 +156,7 @@ enum NativeDisplayManager_ErrorCode
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | DISPLAY_MANAGER_OK = 0 | 成功。 |
@@ -157,9 +172,10 @@ enum NativeDisplayManager_ErrorCode
  
   
 
-#### NativeDisplayManager_FoldDisplayMode
+### NativeDisplayManager_FoldDisplayMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum NativeDisplayManager_FoldDisplayMode
@@ -171,6 +187,7 @@ enum NativeDisplayManager_FoldDisplayMode
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | DISPLAY_MANAGER_FOLD_DISPLAY_MODE_UNKNOWN = 0 | 表示设备当前折叠显示模式未知。 |
@@ -182,9 +199,10 @@ enum NativeDisplayManager_FoldDisplayMode
  
   
 
-#### NativeDisplayManager_DisplayState
+### NativeDisplayManager_DisplayState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum NativeDisplayManager_DisplayState
@@ -196,6 +214,7 @@ enum NativeDisplayManager_DisplayState
  
 **起始版本：** 14
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | DISPLAY_MANAGER_DISPLAY_STATE_UNKNOWN = 0 | 表示显示设备状态未知。 |
@@ -209,9 +228,10 @@ enum NativeDisplayManager_DisplayState
  
   
 
-#### NativeDisplayManager_SourceMode
+### NativeDisplayManager_SourceMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum NativeDisplayManager_SourceMode
@@ -223,6 +243,7 @@ enum NativeDisplayManager_SourceMode
  
 **起始版本：** 20
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | DISPLAY_SOURCE_MODE_NONE = 0 | 表示设备当前未使用。 |

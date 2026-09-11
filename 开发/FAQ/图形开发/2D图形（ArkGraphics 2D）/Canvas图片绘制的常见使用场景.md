@@ -45,28 +45,28 @@ export struct Index1 {
   private context: CanvasRenderingContext2D = new CanvasRenderingContext2D(this.settings);
   private contextFull: CanvasRenderingContext2D = new CanvasRenderingContext2D(this.settings);
   async drawImage() {
-    // 获取媒体内容（这里是启动图标）
+    <em>// 获取媒体内容（这里是启动图标）</em>
     const fileData: Uint8Array =
       this.getUIContext().getHostContext()?.resourceManager.getMediaContentSync($r('app.media.startIcon').id) as Uint8Array;
-    // 将文件数据转换为缓冲区
+  <em>  // 将文件数据转换为缓冲区</em>
     const buffer = fileData.buffer;
-    // 创建图像源对象
+   <em> // 创建图像源对象</em>
     const imageSource: image.ImageSource = image.createImageSource(buffer);
-    // 设置解码选项
+   <em> // 设置解码选项</em>
     let opts: image.DecodingOptions = {
-      // 是否可编辑
+   <em>   // 是否可编辑</em>
       editable: true,
-      // 目标大小
+      <em>// 目标大小</em>
       desiredSize: {
         height: 400,
         width: 400
       }
     };
-    // 创建像素映射对象
+   <em> // 创建像素映射对象</em>
     const pixelMap: image.PixelMap = await imageSource.createPixelMap(opts);
-    // 完整绘制：参数对应绘制区域左上角在x/y轴的位置
+    <em>// 完整绘制：参数对应绘制区域左上角在x/y轴的位置</em>
     this.context.drawImage(pixelMap, 100, 0);
-    // 拉伸绘制：参数对应绘制区域左上角在x/y轴的位置以及绘制区域的宽度和高度
+   <em> // 拉伸绘制：参数对应绘制区域左上角在x/y轴的位置以及绘制区域的宽度和高度</em>
     this.contextFull.drawImage(pixelMap, 0, 0, canvas_width, canvas_heith);
   }
   build() {
@@ -104,7 +104,7 @@ struct Index2 {
   private settings: RenderingContextSettings = new RenderingContextSettings(true);
   private context: CanvasRenderingContext2D = new CanvasRenderingContext2D(this.settings);
   @State picBase64: string = '';
-  // PixelMap转base64实现代码
+ <em> // PixelMap转base64实现代码</em>
   async pixelToBase64(data: PixelMap): Promise<string> {
     const imagePackerApi: image.ImagePacker = image.createImagePacker();
     let packOpts: image.PackingOption = { format: 'image/png', quality: 100 };
@@ -134,9 +134,9 @@ struct Index2 {
             this.context.fillStyle = grad;
             this.context.fillRect(0, 30, 100, 100);
           });
-        // 显示base64字符串
+       <em> // 显示base64字符串</em>
         Text(this.picBase64);
-        // 将base64字符串显示为图片
+      <em>  // 将base64字符串显示为图片</em>
         if (this.picBase64 != '') {
           Image('data:image/png;base64,' + this.picBase64);
         }
@@ -211,7 +211,7 @@ export struct Index3 {
       const pixelMap: image.PixelMap =
         this.offContext.getPixelMap(0, 0, 300, 300);
       const imagePackerApi = image.createImagePacker();
-      // 此处支持jpg、jpeg等格式
+     <em> // 此处支持jpg、jpeg等格式</em>
       const buffer = await imagePackerApi.packToData(pixelMap, { format: 'image/png', quality: 100 });
       const filePath = this.getUIContext().getHostContext()?.filesDir + `/${(new Date).getTime()}.png`;
       try {
@@ -234,11 +234,11 @@ export struct Index3 {
     }
   }
 
-  // 保存到指定路径
+ <em> // 保存到指定路径</em>
   copyToPhoto(srcFilePath: string, destFilePath: string) {
     const srcFile = fileIo.openSync(srcFilePath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
     const destFile = fileIo.openSync(destFilePath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
-    // 读取源文件内容并写入至目的文件
+  <em>  // 读取源文件内容并写入至目的文件</em>
     const stat = fileIo.statSync(srcFilePath);
     const bufSize = stat.size;
     let readSize = 0;
@@ -257,7 +257,7 @@ export struct Index3 {
       readOptions.offset = readSize;
       readLen = fileIo.readSync(srcFile.fd, buf, readOptions);
     }
-    // 关闭文件
+   <em> // 关闭文件</em>
     fileIo.closeSync(srcFile);
     fileIo.closeSync(destFile);
   }

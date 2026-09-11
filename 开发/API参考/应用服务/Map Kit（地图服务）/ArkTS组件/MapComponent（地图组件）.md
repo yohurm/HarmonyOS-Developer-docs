@@ -1,6 +1,6 @@
 # MapComponent（地图组件）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-mapcomponent
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
@@ -10,7 +10,8 @@
 **起始版本：** 4.1.0(11)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -20,7 +21,8 @@ import { MapComponent } from '@kit.MapKit';
  
   
 
-#### MapComponent
+## MapComponent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -38,6 +40,7 @@ MapComponent提供map组件，通过回调获取MapComponentController对象。
  
 **参数**：
   
+
 | 名称 | 类型 | 只读 | 可选 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- | --- |
 | mapOptions | mapCommon.MapOptions | 否 | 是 | NA | 地图初始化参数。 说明： 若未传递该参数，则地图无法创建。 |
@@ -128,7 +131,8 @@ struct MarkerDemo {
  
   
 
-#### build
+### build
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -146,7 +150,8 @@ MapComponent的默认构造函数，无法直接调用此方法。
  
   
 
-#### customInfoWindowCallback
+## customInfoWindowCallback
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -164,6 +169,7 @@ type customInfoWindowCallback = (markerDelegate: map.MarkerDelegate) => void
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | markerDelegate | map.MarkerDelegate | 是 | 用于表示代理对象的标记。 |

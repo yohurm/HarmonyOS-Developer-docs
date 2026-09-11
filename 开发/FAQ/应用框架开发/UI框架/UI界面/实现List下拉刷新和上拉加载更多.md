@@ -85,8 +85,8 @@ struct ListStickyHeaderOne {
       scrollBackward: NestedScrollMode.SELF_FIRST
     })
     .backgroundColor('#ffffffff')
-    // .divider({ strokeWidth: 1, color: 0x222222 })
-    .edgeEffect(EdgeEffect.None); // 必须设置列表为滑动到边缘无效果
+  <em>  // .divider({ strokeWidth: 1, color: 0x222222 })</em>
+    .edgeEffect(EdgeEffect.None); <em>// 必须设置列表为滑动到边缘无效果</em>
   }
 
   @Builder
@@ -99,10 +99,10 @@ struct ListStickyHeaderOne {
           customList: () => {
             this.getListView();
           },
-          // 可选项，下拉刷新回调
+       <em>   // 可选项，下拉刷新回调</em>
           onRefresh: () => {
             return new Promise<string>((resolve) => {
-              // 模拟网络请求操作，请求网络2秒后得到数据，通知组件，变更列表数据
+<em>              // 模拟网络请求操作，请求网络2秒后得到数据，通知组件，变更列表数据</em>
               setTimeout(() => {
                 resolve('刷新成功');
                 let num = this.itemData.length;
@@ -110,7 +110,7 @@ struct ListStickyHeaderOne {
               }, 500);
             });
           },
-          // 可选项，上拉加载更多回调
+        <em>  // 可选项，上拉加载更多回调</em>
           onLoadMore: () => {
             return new Promise<string>((resolve) => {
               setTimeout(() => {
@@ -162,13 +162,13 @@ struct RefreshExample {
         Button('开始刷新')
           .margin(16)
           .onClick(() => {
-            // 手动开始刷新
+        <em>    // 手动开始刷新</em>
             this.isRefreshing = true;
           });
         Button('结束刷新')
           .margin(16)
           .onClick(() => {
-            // 手动停止刷新
+        <em>    // 手动停止刷新</em>
             this.isRefreshing = false;
           });
       };
@@ -190,7 +190,7 @@ struct RefreshExample {
         };
       }
       .onRefreshing(() => {
-        // 2秒后自动结束刷新
+    <em>    // 2秒后自动结束刷新</em>
         setTimeout(() => {
           this.isRefreshing = false;
         }, 2000);
@@ -249,20 +249,20 @@ struct Index {
   build() {
     Column({ space: 10 }) {
       PullToRefresh({
-        // 必传项，列表组件所绑定的数据
+      <em>  // 必传项，列表组件所绑定的数据</em>
         data: $list,
         refreshConfigurator: this.refreshConfigurator,
-        // 必传项，需绑定传入主体布局内的列表或宫格组件
+     <em>   // 必传项，需绑定传入主体布局内的列表或宫格组件</em>
         scroller: this.refreshScroller,
-        // 必传项，自定义主体布局，内部有列表或宫格组件
+       <em> // 必传项，自定义主体布局，内部有列表或宫格组件</em>
         customList: () => {
-          // 一个用@Builder修饰过的UI方法
+     <em>     // 一个用@Builder修饰过的UI方法</em>
           this.getListView();
         },
-        // 可选项，上拉加载更多回调
+     <em>   // 可选项，上拉加载更多回调</em>
         onLoadMore: () => {
           return new Promise<string>((resolve) => {
-            // 模拟网络请求操作，请求网络2秒后得到数据，通知组件，变更列表数据
+        <em>    // 模拟网络请求操作，请求网络2秒后得到数据，通知组件，变更列表数据</em>
             setTimeout(() => {
               resolve('加载更多');
               this.list.push('a2');

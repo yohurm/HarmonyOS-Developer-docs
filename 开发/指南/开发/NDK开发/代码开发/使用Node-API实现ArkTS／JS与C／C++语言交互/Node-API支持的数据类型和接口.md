@@ -1,14 +1,14 @@
 # Node-API支持的数据类型和接口
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-data-types-interfaces
 
-#### Node-API的数据类型
+## Node-API的数据类型
 
 
 
-#### napi_status
+### napi_status
 
 是一个枚举数据类型，表示Node-API接口返回的状态信息。
 
@@ -45,7 +45,7 @@ typedef enum {
 
 
 
-#### napi_extended_error_info
+### napi_extended_error_info
 
 一个结构体，在调用Node-API接口不成功时存储了较为详细的错误信息。
 
@@ -60,13 +60,13 @@ typedef struct {
 
 
 
-#### napi_value
+### napi_value
 
 napi_value是一个C的结构体指针，表示一个ArkTS/JS对象的引用。napi_value持有了ArkTS/JS对象，同时，napi_value受[napi_handle_scope](#内存管理类型)管理，scope中napi_value持有的JS对象不会被释放；出scope后，napi_value将失效，不再持有对应的ArkTS/JS对象。
 
 
 
-#### napi_env
+### napi_env
 
  - 用于表示Node-API执行时的上下文，Native侧函数入参，并传递给函数中的Node-API接口。
  - napi_env与ArkTS/JS线程的上下文环境绑定，每一个napi_env都持有独立的运行时上下文环境，当ArkTS/JS线程退出之后，相应的napi_env将不再有效。
@@ -75,13 +75,13 @@ napi_value是一个C的结构体指针，表示一个ArkTS/JS对象的引用。n
 
 
 
-#### napi_threadsafe_function
+### napi_threadsafe_function
 
 [napi_threadsafe_function](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-thread-safety)用来创建一个线程安全的ArkTS/JS函数，可以在不同的线程中调用。可以用于将异步操作的结果传递给ArkTS/JS环境，例如从另一个线程中读取数据或执行计算密集型操作。线程安全函数回调的执行仅在创建线程安全函数的ArkTS线程中执行。通过使用napi_threadsafe_function，可以实现ArkTS/JS和C++之间的高效通信，同时保持线程安全性。
 
 
 
-#### napi_threadsafe_function_release_mode
+### napi_threadsafe_function_release_mode
 
 该枚举类型定义了两个常量，用于指定以哪一种方式来释放线程安全函数。
 
@@ -107,7 +107,7 @@ napi_release_threadsafe_function(napi_threadsafe_function func,
 
 
 
-#### napi_threadsafe_function_call_mode
+### napi_threadsafe_function_call_mode
 
 该枚举类型定义了两个常量，用于指定线程安全函数的调用模式。
 
@@ -126,7 +126,7 @@ typedef enum {
 
 
 
-#### 内存管理类型
+### 内存管理类型
 
 Node-API包含以下内存管理类型：
 
@@ -189,7 +189,7 @@ napi_critical_scope是Node-API中，用于创建临界接口执行环境的机�
 
 
 
-#### 回调类型
+### 回调类型
 
 Node-API包含以下回调类型：
 
@@ -238,7 +238,7 @@ napi_async_complete_callback用于异步操作完成后的回调。当需要进�
 
 
 
-#### 调度优先级
+### 调度优先级
 
 QoS决定了线程调度的优先级，等级定义如下：
 
@@ -251,6 +251,7 @@ typedef enum {
 } napi_qos_t;
 ```
 
+
 | QoS等级 | 适用场景 |
 | --- | --- |
 | napi_qos_background | 低等级，用户不可见任务，例如数据同步、备份。 |
@@ -261,7 +262,7 @@ typedef enum {
 
 
 
-#### 事件循环模式
+### 事件循环模式
 
 napi提供了运行底层事件循环的两种模式，其定义如下：
 
@@ -272,6 +273,7 @@ typedef enum {
 } napi_event_mode;
 ```
 
+
 | 事件循环运行模式 | 解释说明 |
 | --- | --- |
 | napi_event_mode_default | 阻塞式的运行底层事件循环，直到循环中没有活跃的uv_handle句柄时退出事件循环。 |
@@ -280,9 +282,9 @@ typedef enum {
 
 
 
-#### 线程安全任务优先级
+### 线程安全任务优先级
 
-napi提供了线程安全任务的优先级，底层任务队列中的任务会根据其优先级被依次执行, 优先级的定义如下：
+napi提供了线程安全任务的优先级，底层任务队列中的任务会根据其优先级被依次执行，优先级的定义如下：
 
 ```text
 typedef enum {
@@ -292,6 +294,7 @@ typedef enum {
     napi_priority_idle = 3,
 } napi_task_priority;
 ```
+
 
 | 任务优先级 | 解释说明 |
 | --- | --- |
@@ -303,13 +306,14 @@ typedef enum {
 
 
 
-#### 支持的Node-API接口
+## 支持的Node-API接口
 
 Node-API接口在Node.js提供的原生模块基础上扩展，目前支持部分接口，具体可见下文。
 
 
 
-#### 异步安全线程相关
+### 异步安全线程相关
+
 
 | 接口 | 功能说明 |
 | --- | --- |
@@ -324,7 +328,8 @@ Node-API接口在Node.js提供的原生模块基础上扩展，目前支持部�
 
 
 
-#### buffer相关
+### buffer相关
+
 
 | 接口 | 功能说明 |
 | --- | --- |
@@ -338,7 +343,8 @@ Node-API接口在Node.js提供的原生模块基础上扩展，目前支持部�
 
 
 
-#### string相关
+### string相关
+
 
 | 接口 | 功能说明 |
 | --- | --- |
@@ -354,7 +360,8 @@ Node-API接口在Node.js提供的原生模块基础上扩展，目前支持部�
 
 
 
-#### date相关
+### date相关
+
 
 | 接口 | 功能说明 |
 | --- | --- |
@@ -365,7 +372,8 @@ Node-API接口在Node.js提供的原生模块基础上扩展，目前支持部�
 
 
 
-#### arraybuffer相关
+### arraybuffer相关
+
 
 | 接口 | 功能说明 |
 | --- | --- |
@@ -378,7 +386,8 @@ Node-API接口在Node.js提供的原生模块基础上扩展，目前支持部�
 
 
 
-#### module相关
+### module相关
+
 
 | 接口 | 功能说明 |
 | --- | --- |
@@ -387,7 +396,8 @@ Node-API接口在Node.js提供的原生模块基础上扩展，目前支持部�
 
 
 
-#### 生命周期相关
+### 生命周期相关
+
 
 | 接口 | 功能说明 |
 | --- | --- |
@@ -406,7 +416,8 @@ Node-API接口在Node.js提供的原生模块基础上扩展，目前支持部�
 
 
 
-#### promise相关
+### promise相关
+
 
 | 接口 | 功能说明 |
 | --- | --- |
@@ -418,7 +429,8 @@ Node-API接口在Node.js提供的原生模块基础上扩展，目前支持部�
 
 
 
-#### array相关
+### array相关
+
 
 | 接口 | 功能说明 |
 | --- | --- |
@@ -430,8 +442,8 @@ Node-API接口在Node.js提供的原生模块基础上扩展，目前支持部�
 | napi_get_element | 获取给定Object指定索引处的元素。 |
 | napi_has_element | 若给定Object的指定索引处拥有属性。 |
 | napi_delete_element | 尝试删除给定Object的指定索引处的元素。 |
-| napi_create_typedarray | 通过现有的ArrayBuffer创建一个ArkTS TypedArray。 |
-| napi_is_typedarray | 判断给定ArkTS value是否为TypedArray。 |
+| napi_create_typedarray | 通过现有的ArrayBuffer创建一个ArkTS TypeArray。 |
+| napi_is_typedarray | 判断给定ArkTS value是否为TypeArray。 |
 | napi_get_typedarray_info | 获取给定TypedArray的各种属性（例如：类型，长度，字节偏移量，ArrayBuffer等）。 |
 | napi_create_dataview | 通过现有的ArrayBuffer创建一个ArkTS DataView。 |
 | napi_is_dataview | 判断给定ArkTS value是否为DataView。 |
@@ -440,7 +452,8 @@ Node-API接口在Node.js提供的原生模块基础上扩展，目前支持部�
 
 
 
-#### primitive相关
+### primitive相关
+
 
 | 接口 | 功能说明 |
 | --- | --- |
@@ -456,7 +469,8 @@ Node-API接口在Node.js提供的原生模块基础上扩展，目前支持部�
 
 
 
-#### class相关
+### class相关
+
 
 | 接口 | 功能说明 |
 | --- | --- |
@@ -470,7 +484,8 @@ Node-API接口在Node.js提供的原生模块基础上扩展，目前支持部�
 
 
 
-#### object相关
+### object相关
+
 
 | 接口 | 功能说明 |
 | --- | --- |
@@ -489,7 +504,8 @@ Node-API接口在Node.js提供的原生模块基础上扩展，目前支持部�
 
 
 
-#### 基本数据类型相关
+### 基本数据类型相关
+
 
 | 接口 | 功能说明 |
 | --- | --- |
@@ -506,7 +522,8 @@ Node-API接口在Node.js提供的原生模块基础上扩展，目前支持部�
 
 
 
-#### bigint相关
+### bigint相关
+
 
 | 接口 | 功能说明 |
 | --- | --- |
@@ -520,7 +537,8 @@ Node-API接口在Node.js提供的原生模块基础上扩展，目前支持部�
 
 
 
-#### 异常和错误相关
+### 异常和错误相关
+
 
 | 接口 | 功能说明 |
 | --- | --- |
@@ -536,12 +554,13 @@ Node-API接口在Node.js提供的原生模块基础上扩展，目前支持部�
 | napi_is_exception_pending | 判断是否出现了异常。 |
 | napi_fatal_error | 引发致命错误以立即终止进程。 |
 | napi_get_last_error_info | 获取napi_extended_error_info结构体，其中包含最近一次出现的error信息。 |
-| napi_fatal_exception | 抛出一个致命异常并终止进程，同时产生相应的crash日志。 |
+| napi_fatal_exception | 抛出一个致命异常并终止进程, 同时产生相应的crash日志。 |
 
 
 
 
-#### 属性相关
+### 属性相关
+
 
 | 接口 | 功能说明 |
 | --- | --- |
@@ -560,7 +579,8 @@ Node-API接口在Node.js提供的原生模块基础上扩展，目前支持部�
 
 
 
-#### 异步任务相关
+### 异步任务相关
+
 
 | 接口 | 功能说明 |
 | --- | --- |
@@ -572,7 +592,8 @@ Node-API接口在Node.js提供的原生模块基础上扩展，目前支持部�
 
 
 
-#### 自定义异步操作
+### 自定义异步操作
+
 
 | 接口 | 功能说明 |
 | --- | --- |
@@ -585,7 +606,8 @@ Node-API接口在Node.js提供的原生模块基础上扩展，目前支持部�
 
 
 
-#### uv相关
+### uv相关
+
 
 | 接口 | 功能说明 |
 | --- | --- |
@@ -594,7 +616,8 @@ Node-API接口在Node.js提供的原生模块基础上扩展，目前支持部�
 
 
 
-#### 函数调用
+### 函数调用
+
 
 | 接口 | 功能说明 |
 | --- | --- |
@@ -604,7 +627,8 @@ Node-API接口在Node.js提供的原生模块基础上扩展，目前支持部�
 
 
 
-#### 环境生命周期
+### 环境生命周期
+
 
 | 接口 | 功能说明 |
 | --- | --- |
@@ -614,7 +638,8 @@ Node-API接口在Node.js提供的原生模块基础上扩展，目前支持部�
 
 
 
-#### 对象生命周期管理
+### 对象生命周期管理
+
 
 | 接口 | 功能说明 |
 | --- | --- |
@@ -626,9 +651,10 @@ Node-API接口在Node.js提供的原生模块基础上扩展，目前支持部�
 
 
 
-#### 扩展能力
+### 扩展能力
 
 [Node-API组件扩展的接口](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/napi#node-api组件扩展的接口)
+
 
 | 接口 | 功能说明 |
 | --- | --- |
@@ -671,7 +697,7 @@ Node-API接口在Node.js提供的原生模块基础上扩展，目前支持部�
 | napi_create_strong_sendable_reference | 创建指向Sendable ArkTS对象的Sendable强引用。 |
 | napi_delete_strong_sendable_reference | 删除Sendable强引用。 |
 | napi_get_strong_sendable_reference_value | 根据Sendable强引用获取其关联的ArkTS对象值。 |
-| napi_throw_business_error | 抛出一个带文本信息的ArkTS Error，其错误对象的code属性类型为number。 |
+| napi_throw_business_error | 抛出一个带文本信息的ArkTS Error, 其错误对象的code属性类型为number。 |
 | napi_create_callsite_info | 创建调用点信息句柄，用于缓存属性访问信息。 |
 | napi_delete_callsite_info | 删除调用点信息句柄，释放关联的缓存资源。 |
 | napi_get_property_with_callsite_info | 使用调用点信息快速获取对象属性值。 |
@@ -1045,7 +1071,8 @@ napi_status napi_set_property_with_callsite_info(napi_env env,
 
 
 
-#### 其他实用工具
+### 其他实用工具
+
 
 | 接口 | 功能说明 |
 | --- | --- |

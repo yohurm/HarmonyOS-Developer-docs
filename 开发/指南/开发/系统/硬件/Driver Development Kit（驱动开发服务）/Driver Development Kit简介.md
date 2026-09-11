@@ -1,13 +1,13 @@
 # Driver Development Kit简介
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/driverdevelopment-overview
 
 Driver Development Kit（驱动开发套件）为外设驱动开发者提供高效、安全、丰富的扩展外设驱动开发解决方案ArkTS-API和C-API，支持外设驱动开发者为消费者带来外设即插即用的极致体验。
 
 
-#### 使用场景
+## 使用场景
 
 支持开发者高效、安全开发专业外设或扩展外设增强能力：
 1. 面向专业专用办公外设驱动开发场景。
@@ -19,7 +19,7 @@ Driver Development Kit（驱动开发套件）为外设驱动开发者提供高�
 
 
 
-#### 亮点特征
+## 亮点特征
 
  - 支持开发者开发外设配件的高阶功能，满足消费者高阶使用场景诉求。
  - 扩展驱动框架支持扩展外设驱动生命周期管理，面向扩展设备应用提供扩展外设查询绑定能力接口。
@@ -27,7 +27,7 @@ Driver Development Kit（驱动开发套件）为外设驱动开发者提供高�
 
 
 
-#### 基本概念
+## 基本概念
 
  - 扩展外设驱动客户端：查询驱动并绑定驱动，自定义驱动与设备之间的通信方式以及数据处理方式等，即[带UI界面基础驱动](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/externaldevice-guidelines)。
  - 扩展外设驱动：基于DDK能力开发的专业专用扩展外设驱动或扩展外设增强驱动，即[无UI界面基础驱动](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/driverextensionability)。
@@ -40,7 +40,7 @@ Driver Development Kit（驱动开发套件）为外设驱动开发者提供高�
 
 
 
-#### 实现原理
+## 实现原理
 
 HDF扩展驱动框架为扩展外设驱动开发，提供稳定统一的外设驱动开发接口，支撑用户态扩展外设驱动开发者基于DDK能力开发用户态扩展外设驱动。
 
@@ -48,7 +48,7 @@ HDF扩展驱动框架为扩展外设驱动开发，提供稳定统一的外设�
 
 
 
-#### 扩展外设驱动架构
+### 扩展外设驱动架构
 
 **图1** 扩展外设驱动原理图
 
@@ -58,7 +58,7 @@ HDF扩展驱动框架为扩展外设驱动开发，提供稳定统一的外设�
 
 
 
-#### 运作流程
+### 运作流程
 
 用户插入外设时，外设与驱动的匹配流程如图2所示。
 
@@ -78,11 +78,12 @@ HDF扩展驱动框架为扩展外设驱动开发，提供稳定统一的外设�
 
 
 
-#### 约束与限制
+## 约束与限制
 
 调用Driver Development Kit提供的ArkTS-API或者C-API，开发者需要申请特定权限，才能使用相关接口。
 
 所需权限如下：
+
 
 | API 类型 | DDK类型 | 权限名称 |
 | --- | --- | --- |
@@ -93,9 +94,11 @@ HDF扩展驱动框架为扩展外设驱动开发，提供稳定统一的外设�
 | C-API | ScsiPeripheralDDK | ohos.permission.ACCESS_DDK_SCSI_PERIPHERAL |
 
 
+Driver Development Kit提供的C-API仅支持在DriverExtension进程中使用。在其他进程（包括子进程）中使用可能会出现功能异常，具体可参考[在子进程或非驱动ability中调用ddk的c-api失败](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/externaldevice-faqs#在子进程或非驱动ability中调用ddk的c-api失败)。
 
 
-#### 模拟器支持情况
+
+## 模拟器支持情况
 
 本Kit不支持模拟器。
 
@@ -103,9 +106,10 @@ HDF扩展驱动框架为扩展外设驱动开发，提供稳定统一的外设�
 
 
 
-#### 关联模块
+## 关联模块
 
 在扩展外设驱动开发过程中，需要使用到其他关联模块的部分能力，来协助驱动开发。
+
 
 | 名称 | 作用 |
 | --- | --- |
@@ -117,7 +121,7 @@ HDF扩展驱动框架为扩展外设驱动开发，提供稳定统一的外设�
 
 
 
-#### 驱动应用规格说明
+## 驱动应用规格说明
 
 1.驱动应用定义
 
@@ -138,6 +142,11 @@ HDF扩展驱动框架为扩展外设驱动开发，提供稳定统一的外设�
 
  - ExtensionAbility是基于场景服务的扩展能力的统称，简称为扩展能力（例如用户态扩展驱动、卡片、输入法等）以便满足不同的使用场景。
  - 各类Extension的生命周期由各个SA管理，通过connectAbility启动Extension，并驱动定义的业务接口；业务结束，SA调用disconnectAbility接口断开Extension连接，AMS会根据该Extension是否有SA连接来决定是否销毁该Extension及进程。在用户态扩展驱动开发场景下，管理DriverExtensionAbility生命周期的系统SA为外设扩展服务SA。
+ - DriverExtensionAbility的生命周期取决于外设的接入时间，具体来说表现为：       
+当DriverExtensionAbility配置的“VID + PID”设备列表中的某个外设接入时，其生命周期区间跟该外设接入的时间段一致。
+ - 当DriverExtensionAbility配置的“VID + PID”设备列表中的多个外设依次接入时，其生命周期区间从第一个外设的接入持续到最后一个外设的拔出。
+ - 接入的外设同时出现在多个DriverExtensionAbility配置的“VID + PID”列表中时，该外设只会影响最先安装的驱动Ability的生命周期，详见[多个驱动Ability配置了同一型号外设的情况下，插入该外设只会拉起一个驱动Ability](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/externaldevice-faqs#多个驱动ability配置了同一型号外设的情况下插入该外设只会拉起一个驱动ability)。
+
 
 
 4.在DriverExtensionAbility中API访问安全管控说明

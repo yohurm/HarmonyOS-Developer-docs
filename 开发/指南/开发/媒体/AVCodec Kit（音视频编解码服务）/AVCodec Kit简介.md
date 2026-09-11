@@ -1,6 +1,6 @@
 # AVCodec Kit简介
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avcodec-kit-intro
 
@@ -9,7 +9,7 @@ AVCodec Kit（Audio & Video Codec Kit，音视频编解码，封装，解封装�
 基于性能考虑，AVCodec Kit仅提供C接口。
 
 
-#### 能力范围
+## 能力范围
 
  - 媒体数据输入：媒体应用可以传入文件fd、或者流媒体url，进行后续的媒体信息解封装等处理。
  - 媒体基础能力（Media Foundation）：提供媒体数据处理的公共基础类型，包括[AVBuffer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avbuffer-h)、[AVFormat](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avformat-h)等。
@@ -23,7 +23,7 @@ AVCodec Kit（Audio & Video Codec Kit，音视频编解码，封装，解封装�
 
 
 
-#### 亮点/特征
+## 亮点/特征
 
  - 系统内部数据零拷贝：在视频解码过程，AVCodec通过回调函数提供AVBuffer给应用，由应用将要解码的sample数据写入AVBuffer，在AVCodec中数据不再需要从内存拷入硬件解码器，而是直接送入解码器解码，实现系统内数据零拷贝。
  - 视频编码、解码支持硬件加速：支持H.264、H.265、H.265 10bit的硬件编解码。
@@ -31,7 +31,7 @@ AVCodec Kit（Audio & Video Codec Kit，音视频编解码，封装，解封装�
 
 
 
-#### 基础概念
+## 基础概念
 
  - 媒体文件：携带有音视频、字幕等媒体数据的文件，如.mp4、.m4a。
  - 流媒体：可以边下载，边播放的媒体传输形式，下载协议如HTTP/HTTPS、HLS协议。
@@ -50,7 +50,7 @@ AVCodec Kit（Audio & Video Codec Kit，音视频编解码，封装，解封装�
 
 
 
-#### 使用方式
+## 使用方式
 
  - 视频编解码
 
@@ -95,7 +95,7 @@ AVCodec Kit（Audio & Video Codec Kit，音视频编解码，封装，解封装�
 
 
 
-#### 模拟器支持情况
+## 模拟器支持情况
 
 本Kit支持模拟器，但与真机存在部分能力差异，具体差异如下。
 

@@ -1,10 +1,10 @@
 # 使用硬件熵源生成安全随机数(C/C++)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-generate-random-number-hardware-ndk
 
-从API version 21开始，可以选择使用硬件熵源生成安全随机数。
+从API版本21开始，可以选择使用硬件熵源生成安全随机数。
 
 随机数主要用于临时会话密钥生成和非对称加密算法密钥生成等场景。在加解密场景中，安全随机数生成器需要具备随机性、不可预测性和不可重现性。
 
@@ -32,9 +32,10 @@
 
 
 
-#### 支持的算法与规格
+## 支持的算法与规格
 
 安全随机数生成，设置硬件熵源之后，使用OpenSSL的RAND_priv_bytes接口生成。
+
 
 | 算法 | 长度（Byte） |
 | --- | --- |
@@ -43,7 +44,7 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 调用[OH_CryptoRand_Create](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-crypto-rand-h#oh_cryptorand_create)，创建随机数生成器。
 2. 调用[OH_CryptoRand_EnableHardwareEntropy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-crypto-rand-h#oh_cryptorand_enablehardwareentropy)，开启硬件熵源。
 3. （可选）调用[OH_CryptoRand_SetSeed](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-crypto-rand-h#oh_cryptorand_setseed)，为随机数生成器设置种子。

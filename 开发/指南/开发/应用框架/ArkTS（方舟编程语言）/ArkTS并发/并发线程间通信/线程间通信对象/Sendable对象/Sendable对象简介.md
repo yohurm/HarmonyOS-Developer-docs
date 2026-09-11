@@ -1,6 +1,6 @@
 # Sendable对象简介
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable
 
@@ -21,11 +21,11 @@ Sendable对象可共享，跨线程前后指向同一个JS对象。如果Sendabl
 Sendable对象提供了并发实例间高效的通信能力，即引用传递，适用于开发者自定义大对象需要线程间通信的场景，例如子线程读取数据库数据并返回给宿主线程，具体代码实现可参考[跨并发实例传输大数据场景](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/sendable-guide#跨并发实例传输大数据场景)。
 
 
-#### 基础概念
+## 基础概念
 
 
 
-#### Sendable协议
+### Sendable协议
 
 Sendable协议定义了ArkTS的可共享对象体系及其规格约束。符合Sendable协议的数据（以下简称Sendable数据）可以在ArkTS并发实例间传递。
 
@@ -33,13 +33,13 @@ Sendable协议定义了ArkTS的可共享对象体系及其规格约束。符合S
 
 
 
-#### ISendable
+### ISendable
 
 在ArkTS语言基础库[@arkts.lang](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkts-lang)中引入了interface ISendable，没有任何方法或属性。ISendable是所有Sendable类型（除了null和undefined）的父类型。ISendable主要用于开发者自定义Sendable数据结构的场景中。类装饰器[@Sendable装饰器](#sendable装饰器)是implements ISendable的语法糖。
 
 
 
-#### Sendable class
+### Sendable class
 
 > [!NOTE]
 > 从API version 11开始，支持使用@Sendable装饰器校验Sendable class。
@@ -51,7 +51,7 @@ Sendable class需同时满足以下两个规则：
 
 
 
-#### Sendable function
+### Sendable function
 
 > [!TIP]
 > 针对API version 12的工程，开发者使用@Sendable装饰器校验Sendable function时，需在工程中配置"compatibleSdkVersionStage": "beta3"，否则其Sendable特性将不生效。参考 build-profile.json5配置文件说明 。 针对API version大于12的工程，可直接使用@Sendable装饰器校验Sendable function，无需再进行其他配置。
@@ -63,7 +63,7 @@ Sendable function需同时满足以下两个规则：
 
 
 
-#### Sendable interface
+### Sendable interface
 
 Sendable interface需同时满足以下两个规则：
 1. 当且仅当是[ISendable](#isendable)或者继承了ISendable。
@@ -71,7 +71,7 @@ Sendable interface需同时满足以下两个规则：
 
 
 
-#### Sendable支持的数据类型
+### Sendable支持的数据类型
 
  - ArkTS基本数据类型：boolean、number、string、bigint、null、undefined。
  - ArkTS数据类型：const enum（常量枚举）。
@@ -91,7 +91,7 @@ Sendable interface需同时满足以下两个规则：
  - [资源管理](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-sendable-resource-manager)
  - [Sendable上下文管理](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-sendablecontextmanager)
 
-      - 元素均为Sendable类型的union type数据。
+            - 元素均为Sendable类型的union type数据。
  - 开发者自定义的Native Sendable对象。ArkTS支持开发者自定义Native Sendable对象，详情参见[自定义Native Sendable对象的多线程操作场景](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-define-sendable-object)。
 
 
@@ -163,7 +163,7 @@ struct enumusage {
 
 
 
-#### Sendable的实现原理
+## Sendable的实现原理
 
 为了实现[Sendable数据](#sendable支持的数据类型)在不同并发实例间的引用传递，Sendable共享对象分配在共享堆中，实现跨并发实例的内存共享。
 
@@ -172,16 +172,17 @@ struct enumusage {
 **SharedHeap与LocalHeap关系图**
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/5xtcuL5FQuqZPCH8mVRq8Q/zh-cn_image_0000002704391853.png?HW-CC-KV=V1&HW-CC-Date=20260813T095646Z&HW-CC-Expire=86400&HW-CC-Sign=30E86B7BA191C0E5817090218F523630E31B414C170CB01A79ABD634B2EEAAF0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/RbCPgJ0VQjqJFMQHoKMo3Q/zh-cn_image_0000002747289899.png?HW-CC-KV=V1&HW-CC-Date=20260911T072511Z&HW-CC-Expire=86400&HW-CC-Sign=BD854AE084AB07949DB84FEC1F7048C0B38E443F313FE360DE6B585768FFF364)
 
 
 各个并发实例的LocalHeap是隔离的。SharedHeap是进程级别的堆，可以被所有并发实例共享，但SharedHeap不能引用LocalHeap中的对象。
 
 
 
-#### @Sendable装饰器
+## @Sendable装饰器
 
 声明并校验Sendable class和Sendable function。
+
 
 | @Sendable装饰器 | 说明 |
 | --- | --- |

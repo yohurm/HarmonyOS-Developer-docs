@@ -24,13 +24,13 @@
 ```text
 import { TuanjiePlayerAbilityBase } from '../generated/Mod';
 
-// 定义全局变量用于存储context
+<em>// 定义全局变量用于存储context</em>
 let globalContext: Context | undefined = undefined;
 
-// 继承团结引擎提供的基础Ability类
+<em>// 继承团结引擎提供的基础Ability类</em>
 export default class EntryAbility extends TuanjiePlayerAbilityBase {
   onCreate(want, launchParam) {
-    // 在Ability创建时获取context并赋值给全局变量
+    <em>// 在Ability创建时获取context并赋值给全局变量</em>
     globalContext = this.context;
   }
 }

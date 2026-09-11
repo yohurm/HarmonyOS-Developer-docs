@@ -1,13 +1,14 @@
 # native_audio_session_manager.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-audio-session-manager-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明音频会话管理相关的接口。
  
@@ -25,16 +26,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_AudioSession_DeactivatedEvent | OH_AudioSession_DeactivatedEvent | 音频会话已停用事件。 |
@@ -44,10 +48,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_AudioSession_Scene | OH_AudioSession_Scene | 音频会话场景。 |
@@ -59,10 +65,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | typedef void (*OH_AudioSession_StateChangedCallback)(OH_AudioSession_StateChangedEvent event) | OH_AudioSession_StateChangedCallback | 这个函数指针将指向用于监听音频会话状态变更事件的回调函数。 |
@@ -102,15 +110,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AudioSession_Scene
+### OH_AudioSession_Scene
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AudioSession_Scene
@@ -122,6 +132,7 @@ enum OH_AudioSession_Scene
  
 **起始版本：** 20
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AUDIO_SESSION_SCENE_MEDIA = 0 | 媒体音频会话场景。 |
@@ -131,9 +142,10 @@ enum OH_AudioSession_Scene
  
   
 
-#### OH_AudioSession_StateChangeHint
+### OH_AudioSession_StateChangeHint
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AudioSession_StateChangeHint
@@ -145,6 +157,7 @@ enum OH_AudioSession_StateChangeHint
  
 **起始版本：** 20
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AUDIO_SESSION_STATE_CHANGE_HINT_RESUME = 0 | 提示音频会话恢复，应用可主动触发开始渲染等相关操作。 |
@@ -161,9 +174,10 @@ enum OH_AudioSession_StateChangeHint
  
   
 
-#### OH_AudioSession_OutputDeviceChangeRecommendedAction
+### OH_AudioSession_OutputDeviceChangeRecommendedAction
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AudioSession_OutputDeviceChangeRecommendedAction
@@ -177,6 +191,7 @@ enum OH_AudioSession_OutputDeviceChangeRecommendedAction
  
 **起始版本：** 20
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | DEVICE_CHANGE_RECOMMEND_TO_CONTINUE = 0 | 推荐继续播放（该事件作为播放维持提示，作用是告知应用本次设备变动音频无需停止播放，但不可将其作为启动音频播放的判断依据）。 |
@@ -185,9 +200,10 @@ enum OH_AudioSession_OutputDeviceChangeRecommendedAction
  
   
 
-#### OH_AudioSession_DeactivatedReason
+### OH_AudioSession_DeactivatedReason
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AudioSession_DeactivatedReason
@@ -199,6 +215,7 @@ enum OH_AudioSession_DeactivatedReason
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | DEACTIVATED_LOWER_PRIORITY = 0 | 应用焦点被抢占。 |
@@ -207,9 +224,10 @@ enum OH_AudioSession_DeactivatedReason
  
   
 
-#### OH_AudioSession_BluetoothAndNearlinkPreferredRecordCategory
+### OH_AudioSession_BluetoothAndNearlinkPreferredRecordCategory
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AudioSession_BluetoothAndNearlinkPreferredRecordCategory
@@ -221,6 +239,7 @@ enum OH_AudioSession_BluetoothAndNearlinkPreferredRecordCategory
  
 **起始版本：** 21
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | PREFERRED_NONE = 0 | 无指定设备偏好。 |
@@ -231,15 +250,17 @@ enum OH_AudioSession_BluetoothAndNearlinkPreferredRecordCategory
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AudioSession_StateChangedCallback()
+### OH_AudioSession_StateChangedCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_AudioSession_StateChangedCallback)(OH_AudioSession_StateChangedEvent event)
@@ -253,6 +274,7 @@ typedef void (*OH_AudioSession_StateChangedCallback)(OH_AudioSession_StateChange
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioSession_StateChangedEvent event | 音频会话状态变更事件。 |
@@ -260,9 +282,10 @@ typedef void (*OH_AudioSession_StateChangedCallback)(OH_AudioSession_StateChange
  
   
 
-#### OH_AudioSession_AvailableDeviceChangedCallback()
+### OH_AudioSession_AvailableDeviceChangedCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_AudioSession_AvailableDeviceChangedCallback)(OH_AudioDevice_ChangeType type, OH_AudioDeviceDescriptorArray *audioDeviceDescriptorArray)
@@ -276,6 +299,7 @@ typedef void (*OH_AudioSession_AvailableDeviceChangedCallback)(OH_AudioDevice_Ch
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioDevice_ChangeType type | 设备连接状态类型，已连接或断开。 |
@@ -284,9 +308,10 @@ typedef void (*OH_AudioSession_AvailableDeviceChangedCallback)(OH_AudioDevice_Ch
  
   
 
-#### OH_AudioSession_CurrentInputDeviceChangedCallback()
+### OH_AudioSession_CurrentInputDeviceChangedCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_AudioSession_CurrentInputDeviceChangedCallback)(OH_AudioDeviceDescriptorArray *devices, OH_AudioStream_DeviceChangeReason changeReason)
@@ -300,6 +325,7 @@ typedef void (*OH_AudioSession_CurrentInputDeviceChangedCallback)(OH_AudioDevice
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioDeviceDescriptorArray *devices | 音频设备描述符数组。 不再继续使用devices指针时，请使用OH_AudioSessionManager_ReleaseDevices进行释放。 |
@@ -308,9 +334,10 @@ typedef void (*OH_AudioSession_CurrentInputDeviceChangedCallback)(OH_AudioDevice
  
   
 
-#### OH_AudioSession_CurrentOutputDeviceChangedCallback()
+### OH_AudioSession_CurrentOutputDeviceChangedCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_AudioSession_CurrentOutputDeviceChangedCallback)(OH_AudioDeviceDescriptorArray *devices, OH_AudioStream_DeviceChangeReason changeReason, OH_AudioSession_OutputDeviceChangeRecommendedAction recommendedAction)
@@ -324,6 +351,7 @@ typedef void (*OH_AudioSession_CurrentOutputDeviceChangedCallback)(OH_AudioDevic
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioDeviceDescriptorArray *devices | 音频设备描述符数组，指向OH_AudioDeviceDescriptorArray设置音频设备描述符值的指针变量，不要单独释放audioDeviceDescriptorArray指针，而是调用OH_AudioSessionManager_ReleaseDevices来释放DeviceDescriptor数组。 |
@@ -333,9 +361,10 @@ typedef void (*OH_AudioSession_CurrentOutputDeviceChangedCallback)(OH_AudioDevic
  
   
 
-#### OH_AudioSession_DeactivatedCallback()
+### OH_AudioSession_DeactivatedCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef int32_t (*OH_AudioSession_DeactivatedCallback)(OH_AudioSession_DeactivatedEvent event)
@@ -349,6 +378,7 @@ typedef int32_t (*OH_AudioSession_DeactivatedCallback)(OH_AudioSession_Deactivat
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioSession_DeactivatedEvent event | 音频会话已停用事件。 |
@@ -356,9 +386,10 @@ typedef int32_t (*OH_AudioSession_DeactivatedCallback)(OH_AudioSession_Deactivat
  
   
 
-#### OH_AudioManager_GetAudioSessionManager()
+### OH_AudioManager_GetAudioSessionManager()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioManager_GetAudioSessionManager(OH_AudioSessionManager **audioSessionManager)
@@ -372,6 +403,7 @@ OH_AudioCommon_Result OH_AudioManager_GetAudioSessionManager(OH_AudioSessionMana
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioSessionManager **audioSessionManager | 音频会话管理器实例。 |
@@ -379,6 +411,7 @@ OH_AudioCommon_Result OH_AudioManager_GetAudioSessionManager(OH_AudioSessionMana
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_SYSTEM：系统错误。 |
@@ -386,9 +419,10 @@ OH_AudioCommon_Result OH_AudioManager_GetAudioSessionManager(OH_AudioSessionMana
  
   
 
-#### OH_AudioSessionManager_ActivateAudioSession()
+### OH_AudioSessionManager_ActivateAudioSession()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioSessionManager_ActivateAudioSession(OH_AudioSessionManager *audioSessionManager, const OH_AudioSession_Strategy *strategy)
@@ -402,6 +436,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_ActivateAudioSession(OH_AudioSessio
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioSessionManager *audioSessionManager | 指向OH_AudioManager_GetAudioSessionManager创建的音频会话管理实例。 |
@@ -410,6 +445,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_ActivateAudioSession(OH_AudioSessio
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | 函数返回值： AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM： 1. 参数audioSessionManager为nullptr； 2. 参数strategy无效。 AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE：非法状态。 |
@@ -417,9 +453,10 @@ OH_AudioCommon_Result OH_AudioSessionManager_ActivateAudioSession(OH_AudioSessio
  
   
 
-#### OH_AudioSessionManager_DeactivateAudioSession()
+### OH_AudioSessionManager_DeactivateAudioSession()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioSessionManager_DeactivateAudioSession(OH_AudioSessionManager *audioSessionManager)
@@ -433,6 +470,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_DeactivateAudioSession(OH_AudioSess
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioSessionManager *audioSessionManager | 指向OH_AudioManager_GetAudioSessionManager创建的音频会话管理实例。 |
@@ -440,6 +478,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_DeactivateAudioSession(OH_AudioSess
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM：参数audioSessionManager为nullptr。 AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE：非法状态。 |
@@ -447,9 +486,10 @@ OH_AudioCommon_Result OH_AudioSessionManager_DeactivateAudioSession(OH_AudioSess
  
   
 
-#### OH_AudioSessionManager_IsAudioSessionActivated()
+### OH_AudioSessionManager_IsAudioSessionActivated()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AudioSessionManager_IsAudioSessionActivated(OH_AudioSessionManager *audioSessionManager)
@@ -463,6 +503,7 @@ bool OH_AudioSessionManager_IsAudioSessionActivated(OH_AudioSessionManager *audi
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioSessionManager *audioSessionManager | 指向OH_AudioManager_GetAudioSessionManager创建的音频会话管理实例。 |
@@ -470,6 +511,7 @@ bool OH_AudioSessionManager_IsAudioSessionActivated(OH_AudioSessionManager *audi
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 用于返回当前应用的音频会话是否已激活，true表示已激活，false表示已停用。 |
@@ -477,9 +519,10 @@ bool OH_AudioSessionManager_IsAudioSessionActivated(OH_AudioSessionManager *audi
  
   
 
-#### OH_AudioSessionManager_RegisterSessionDeactivatedCallback()
+### OH_AudioSessionManager_RegisterSessionDeactivatedCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioSessionManager_RegisterSessionDeactivatedCallback(OH_AudioSessionManager *audioSessionManager, OH_AudioSession_DeactivatedCallback callback)
@@ -493,6 +536,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_RegisterSessionDeactivatedCallback(
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioSessionManager *audioSessionManager | 指向OH_AudioManager_GetAudioSessionManager创建的音频会话管理实例。 |
@@ -501,6 +545,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_RegisterSessionDeactivatedCallback(
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM： 1. 参数audioSessionManager为nullptr； 2. 参数callback为nullptr。 |
@@ -508,9 +553,10 @@ OH_AudioCommon_Result OH_AudioSessionManager_RegisterSessionDeactivatedCallback(
  
   
 
-#### OH_AudioSessionManager_UnregisterSessionDeactivatedCallback()
+### OH_AudioSessionManager_UnregisterSessionDeactivatedCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioSessionManager_UnregisterSessionDeactivatedCallback(OH_AudioSessionManager *audioSessionManager, OH_AudioSession_DeactivatedCallback callback)
@@ -524,6 +570,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_UnregisterSessionDeactivatedCallbac
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioSessionManager *audioSessionManager | 指向OH_AudioManager_GetAudioSessionManager创建的音频会话管理实例。 |
@@ -532,6 +579,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_UnregisterSessionDeactivatedCallbac
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM： 1. 参数audioSessionManager为nullptr； 2. 参数callback为nullptr。 |
@@ -539,9 +587,10 @@ OH_AudioCommon_Result OH_AudioSessionManager_UnregisterSessionDeactivatedCallbac
  
   
 
-#### OH_AudioSessionManager_SetScene()
+### OH_AudioSessionManager_SetScene()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioSessionManager_SetScene(OH_AudioSessionManager *audioSessionManager, OH_AudioSession_Scene scene)
@@ -555,6 +604,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_SetScene(OH_AudioSessionManager *au
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioSessionManager *audioSessionManager | 指向OH_AudioManager_GetAudioSessionManager创建的音频会话管理实例。 |
@@ -563,6 +613,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_SetScene(OH_AudioSessionManager *au
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM： 1. 参数audioSessionManager为nullptr； 2. 参数scene为枚举范围外的值。 AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE：系统当前状态下不允许设置，例如audio session未处于ready态。 AUDIOCOMMON_RESULT_ERROR_SYSTEM：系统异常，例如系统服务异常退出等。 |
@@ -570,9 +621,10 @@ OH_AudioCommon_Result OH_AudioSessionManager_SetScene(OH_AudioSessionManager *au
  
   
 
-#### OH_AudioSessionManager_RegisterStateChangeCallback()
+### OH_AudioSessionManager_RegisterStateChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioSessionManager_RegisterStateChangeCallback(OH_AudioSessionManager *audioSessionManager, OH_AudioSession_StateChangedCallback callback)
@@ -586,6 +638,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_RegisterStateChangeCallback(OH_Audi
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioSessionManager *audioSessionManager | 指向OH_AudioManager_GetAudioSessionManager创建的音频会话管理实例。 |
@@ -594,6 +647,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_RegisterStateChangeCallback(OH_Audi
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM： 1. 参数audioSessionManager为nullptr； 2. 参数callback为nullptr。 AUDIOCOMMON_RESULT_ERROR_NO_MEMORY：系统内存申请异常。 AUDIOCOMMON_RESULT_ERROR_SYSTEM：系统异常，例如系统服务异常退出等。 |
@@ -601,9 +655,10 @@ OH_AudioCommon_Result OH_AudioSessionManager_RegisterStateChangeCallback(OH_Audi
  
   
 
-#### OH_AudioSessionManager_UnregisterStateChangeCallback()
+### OH_AudioSessionManager_UnregisterStateChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioSessionManager_UnregisterStateChangeCallback(OH_AudioSessionManager *audioSessionManager, OH_AudioSession_StateChangedCallback callback)
@@ -617,6 +672,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_UnregisterStateChangeCallback(OH_Au
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioSessionManager *audioSessionManager | 指向OH_AudioManager_GetAudioSessionManager创建的音频会话管理实例。 |
@@ -625,6 +681,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_UnregisterStateChangeCallback(OH_Au
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM： 1. 参数audioSessionManager为nullptr； 2. 参数callback为nullptr。 AUDIOCOMMON_RESULT_ERROR_SYSTEM：系统异常，例如系统服务异常退出等。 |
@@ -632,9 +689,10 @@ OH_AudioCommon_Result OH_AudioSessionManager_UnregisterStateChangeCallback(OH_Au
  
   
 
-#### OH_AudioSessionManager_SetDefaultOutputDevice()
+### OH_AudioSessionManager_SetDefaultOutputDevice()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioSessionManager_SetDefaultOutputDevice(OH_AudioSessionManager *audioSessionManager, OH_AudioDevice_Type deviceType)
@@ -654,6 +712,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_SetDefaultOutputDevice(OH_AudioSess
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioSessionManager *audioSessionManager | 指向OH_AudioManager_GetAudioSessionManager创建的音频会话管理实例。 |
@@ -662,6 +721,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_SetDefaultOutputDevice(OH_AudioSess
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM： 1. 参数audioSessionManager为nullptr； 2. 参数deviceType超出枚举OH_AudioDevice_Type范围。 AUDIOCOMMON_RESULT_ERROR_SYSTEM：系统异常，例如系统服务异常退出等。 |
@@ -669,9 +729,10 @@ OH_AudioCommon_Result OH_AudioSessionManager_SetDefaultOutputDevice(OH_AudioSess
  
   
 
-#### OH_AudioSessionManager_GetDefaultOutputDevice()
+### OH_AudioSessionManager_GetDefaultOutputDevice()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioSessionManager_GetDefaultOutputDevice(OH_AudioSessionManager *audioSessionManager, OH_AudioDevice_Type *deviceType)
@@ -685,6 +746,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_GetDefaultOutputDevice(OH_AudioSess
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioSessionManager *audioSessionManager | 指向OH_AudioManager_GetAudioSessionManager创建的音频会话管理实例。 |
@@ -693,6 +755,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_GetDefaultOutputDevice(OH_AudioSess
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM： 1. 参数audioSessionManager为nullptr； 2. 参数deviceType为nullptr。 AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE：系统当前状态下不允许获取默认设备类型，例如audio session未处于ready态。 |
@@ -700,9 +763,10 @@ OH_AudioCommon_Result OH_AudioSessionManager_GetDefaultOutputDevice(OH_AudioSess
  
   
 
-#### OH_AudioSessionManager_ReleaseDevices()
+### OH_AudioSessionManager_ReleaseDevices()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioSessionManager_ReleaseDevices(OH_AudioSessionManager *audioSessionManager, OH_AudioDeviceDescriptorArray *audioDeviceDescriptorArray)
@@ -716,6 +780,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_ReleaseDevices(OH_AudioSessionManag
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioSessionManager *audioSessionManager | 指向OH_AudioManager_GetAudioSessionManager创建的音频会话管理实例。 |
@@ -724,6 +789,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_ReleaseDevices(OH_AudioSessionManag
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM： 1. 参数audioSessionManager为nullptr； 2. 参数audioDeviceDescriptorArray为nullptr。 |
@@ -731,9 +797,10 @@ OH_AudioCommon_Result OH_AudioSessionManager_ReleaseDevices(OH_AudioSessionManag
  
   
 
-#### OH_AudioSessionManager_RegisterCurrentOutputDeviceChangeCallback()
+### OH_AudioSessionManager_RegisterCurrentOutputDeviceChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioSessionManager_RegisterCurrentOutputDeviceChangeCallback(OH_AudioSessionManager *audioSessionManager, OH_AudioSession_CurrentOutputDeviceChangedCallback callback)
@@ -747,6 +814,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_RegisterCurrentOutputDeviceChangeCa
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioSessionManager *audioSessionManager | 指向OH_AudioManager_GetAudioSessionManager创建的音频会话管理实例。 |
@@ -755,6 +823,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_RegisterCurrentOutputDeviceChangeCa
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM： 1. 参数audioSessionManager为nullptr； 2. 参数callback为nullptr。 AUDIOCOMMON_RESULT_ERROR_NO_MEMORY：系统内存申请异常。 AUDIOCOMMON_RESULT_ERROR_SYSTEM：系统异常，例如系统服务异常退出等。 |
@@ -762,9 +831,10 @@ OH_AudioCommon_Result OH_AudioSessionManager_RegisterCurrentOutputDeviceChangeCa
  
   
 
-#### OH_AudioSessionManager_UnregisterCurrentOutputDeviceChangeCallback()
+### OH_AudioSessionManager_UnregisterCurrentOutputDeviceChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioSessionManager_UnregisterCurrentOutputDeviceChangeCallback(OH_AudioSessionManager *audioSessionManager, OH_AudioSession_CurrentOutputDeviceChangedCallback callback)
@@ -778,6 +848,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_UnregisterCurrentOutputDeviceChange
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioSessionManager *audioSessionManager | 指向OH_AudioManager_GetAudioSessionManager创建的音频会话管理实例。 |
@@ -786,6 +857,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_UnregisterCurrentOutputDeviceChange
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM： 1. 参数audioSessionManager为nullptr； 2. 参数callback为nullptr。 AUDIOCOMMON_RESULT_ERROR_SYSTEM：系统异常，例如系统服务异常退出等。 |
@@ -793,9 +865,10 @@ OH_AudioCommon_Result OH_AudioSessionManager_UnregisterCurrentOutputDeviceChange
  
   
 
-#### OH_AudioSessionManager_GetAvailableDevices()
+### OH_AudioSessionManager_GetAvailableDevices()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioSessionManager_GetAvailableDevices(OH_AudioSessionManager *audioSessionManager, OH_AudioDevice_Usage deviceUsage, OH_AudioDeviceDescriptorArray **audioDeviceDescriptorArray)
@@ -809,6 +882,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_GetAvailableDevices(OH_AudioSession
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioSessionManager *audioSessionManager | 指向OH_AudioManager_GetAudioSessionManager创建的音频会话管理实例。 |
@@ -818,16 +892,18 @@ OH_AudioCommon_Result OH_AudioSessionManager_GetAvailableDevices(OH_AudioSession
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM： 1.参数audioSessionManager为nullptr； 2.参数deviceUsage无效; 3.参数audioDeviceDescriptorArray为nullptr。 AUDIOCOMMON_RESULT_ERROR_SYSTEM：系统异常，例如系统服务异常退出等。 |
+| OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM： 1.参数audioSessionManager为nullptr； 2.参数deviceUsage无效； 3.参数audioDeviceDescriptorArray为nullptr。 AUDIOCOMMON_RESULT_ERROR_SYSTEM：系统异常，例如系统服务异常退出等。 |
  
  
   
 
-#### OH_AudioSessionManager_RegisterAvailableDevicesChangeCallback()
+### OH_AudioSessionManager_RegisterAvailableDevicesChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioSessionManager_RegisterAvailableDevicesChangeCallback(OH_AudioSessionManager *audioSessionManager, OH_AudioDevice_Usage deviceUsage, OH_AudioSession_AvailableDeviceChangedCallback callback)
@@ -841,6 +917,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_RegisterAvailableDevicesChangeCallb
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioSessionManager *audioSessionManager | 指向OH_AudioManager_GetAudioSessionManager创建的音频会话管理实例。 |
@@ -850,6 +927,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_RegisterAvailableDevicesChangeCallb
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM： 1. 参数audioSessionManager为nullptr； 2. 参数deviceUsage无效； 3. 参数callback为nullptr。 AUDIOCOMMON_RESULT_ERROR_SYSTEM：系统异常，例如系统服务异常退出等。 |
@@ -857,9 +935,10 @@ OH_AudioCommon_Result OH_AudioSessionManager_RegisterAvailableDevicesChangeCallb
  
   
 
-#### OH_AudioSessionManager_UnregisterAvailableDevicesChangeCallback()
+### OH_AudioSessionManager_UnregisterAvailableDevicesChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioSessionManager_UnregisterAvailableDevicesChangeCallback(OH_AudioSessionManager *audioSessionManager, OH_AudioSession_AvailableDeviceChangedCallback callback)
@@ -873,6 +952,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_UnregisterAvailableDevicesChangeCal
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioSessionManager *audioSessionManager | 指向OH_AudioManager_GetAudioSessionManager创建的音频会话管理实例。 |
@@ -881,6 +961,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_UnregisterAvailableDevicesChangeCal
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM： 1. 参数audioSessionManager为nullptr； 2. 参数callback为nullptr。 AUDIOCOMMON_RESULT_ERROR_SYSTEM：系统异常，例如系统服务异常退出等。 |
@@ -888,9 +969,10 @@ OH_AudioCommon_Result OH_AudioSessionManager_UnregisterAvailableDevicesChangeCal
  
   
 
-#### OH_AudioSessionManager_SelectMediaInputDevice()
+### OH_AudioSessionManager_SelectMediaInputDevice()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioSessionManager_SelectMediaInputDevice(OH_AudioSessionManager *audioSessionManager, OH_AudioDeviceDescriptor *deviceDescriptor)
@@ -908,6 +990,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_SelectMediaInputDevice(OH_AudioSess
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioSessionManager *audioSessionManager | 指向OH_AudioManager_GetAudioSessionManager创建的音频会话管理实例。 |
@@ -916,6 +999,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_SelectMediaInputDevice(OH_AudioSess
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM：参数audioSessionManager为nullptr。 AUDIOCOMMON_RESULT_ERROR_SYSTEM：系统异常，例如系统服务异常退出等。 |
@@ -923,9 +1007,10 @@ OH_AudioCommon_Result OH_AudioSessionManager_SelectMediaInputDevice(OH_AudioSess
  
   
 
-#### OH_AudioSessionManager_GetSelectedMediaInputDevice()
+### OH_AudioSessionManager_GetSelectedMediaInputDevice()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioSessionManager_GetSelectedMediaInputDevice(OH_AudioSessionManager *audioSessionManager, OH_AudioDeviceDescriptor **audioDeviceDescriptor)
@@ -939,6 +1024,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_GetSelectedMediaInputDevice(OH_Audi
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioSessionManager *audioSessionManager | 指向OH_AudioManager_GetAudioSessionManager创建的音频会话管理实例。 |
@@ -947,6 +1033,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_GetSelectedMediaInputDevice(OH_Audi
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM： 1. 参数audioSessionManager为nullptr； 2. 参数audioDeviceDescriptor为nullptr。 AUDIOCOMMON_RESULT_ERROR_SYSTEM：系统异常，例如系统服务异常退出等。 |
@@ -954,9 +1041,10 @@ OH_AudioCommon_Result OH_AudioSessionManager_GetSelectedMediaInputDevice(OH_Audi
  
   
 
-#### OH_AudioSessionManager_SetBluetoothAndNearlinkPreferredRecordCategory()
+### OH_AudioSessionManager_SetBluetoothAndNearlinkPreferredRecordCategory()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioSessionManager_SetBluetoothAndNearlinkPreferredRecordCategory(OH_AudioSessionManager *audioSessionManager, OH_AudioSession_BluetoothAndNearlinkPreferredRecordCategory category)
@@ -974,6 +1062,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_SetBluetoothAndNearlinkPreferredRec
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioSessionManager *audioSessionManager | 指向OH_AudioManager_GetAudioSessionManager创建的音频会话管理实例。 |
@@ -982,6 +1071,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_SetBluetoothAndNearlinkPreferredRec
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM： 1. 参数audioSessionManager为nullptr； 2. 参数category错误。 AUDIOCOMMON_RESULT_ERROR_SYSTEM：系统异常，例如系统服务异常退出等。 |
@@ -989,9 +1079,10 @@ OH_AudioCommon_Result OH_AudioSessionManager_SetBluetoothAndNearlinkPreferredRec
  
   
 
-#### OH_AudioSessionManager_GetBluetoothAndNearlinkPreferredRecordCategory()
+### OH_AudioSessionManager_GetBluetoothAndNearlinkPreferredRecordCategory()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioSessionManager_GetBluetoothAndNearlinkPreferredRecordCategory(OH_AudioSessionManager *audioSessionManager, OH_AudioSession_BluetoothAndNearlinkPreferredRecordCategory *category)
@@ -1005,6 +1096,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_GetBluetoothAndNearlinkPreferredRec
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioSessionManager *audioSessionManager | 指向OH_AudioManager_GetAudioSessionManager创建的音频会话管理实例。 |
@@ -1013,6 +1105,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_GetBluetoothAndNearlinkPreferredRec
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM： 1. 参数audioSessionManager为nullptr； 2. 参数category为nullptr。 AUDIOCOMMON_RESULT_ERROR_SYSTEM：系统异常，例如系统服务异常退出等。 |
@@ -1020,9 +1113,10 @@ OH_AudioCommon_Result OH_AudioSessionManager_GetBluetoothAndNearlinkPreferredRec
  
   
 
-#### OH_AudioSessionManager_RegisterCurrentInputDeviceChangeCallback()
+### OH_AudioSessionManager_RegisterCurrentInputDeviceChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioSessionManager_RegisterCurrentInputDeviceChangeCallback(OH_AudioSessionManager *audioSessionManager, OH_AudioSession_CurrentInputDeviceChangedCallback callback)
@@ -1036,6 +1130,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_RegisterCurrentInputDeviceChangeCal
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioSessionManager *audioSessionManager | 指向OH_AudioManager_GetAudioSessionManager创建的音频会话管理实例。 |
@@ -1044,6 +1139,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_RegisterCurrentInputDeviceChangeCal
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM： 1. 参数audioSessionManager为nullptr； 2. 参数callback为nullptr。 AUDIOCOMMON_RESULT_ERROR_NO_MEMORY：内存不足。 AUDIOCOMMON_RESULT_ERROR_SYSTEM：系统异常，例如系统服务异常退出等。 |
@@ -1051,9 +1147,10 @@ OH_AudioCommon_Result OH_AudioSessionManager_RegisterCurrentInputDeviceChangeCal
  
   
 
-#### OH_AudioSessionManager_UnregisterCurrentInputDeviceChangeCallback()
+### OH_AudioSessionManager_UnregisterCurrentInputDeviceChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioSessionManager_UnregisterCurrentInputDeviceChangeCallback(OH_AudioSessionManager *audioSessionManager, OH_AudioSession_CurrentInputDeviceChangedCallback callback)
@@ -1067,6 +1164,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_UnregisterCurrentInputDeviceChangeC
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioSessionManager *audioSessionManager | 指向OH_AudioManager_GetAudioSessionManager创建的音频会话管理实例。 |
@@ -1075,6 +1173,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_UnregisterCurrentInputDeviceChangeC
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM： 1. 参数audioSessionManager为nullptr； 2. 参数callback为nullptr。 AUDIOCOMMON_RESULT_ERROR_SYSTEM：系统异常，例如系统服务异常退出等。 |
@@ -1082,9 +1181,10 @@ OH_AudioCommon_Result OH_AudioSessionManager_UnregisterCurrentInputDeviceChangeC
  
   
 
-#### OH_AudioSessionManager_ReleaseDevice()
+### OH_AudioSessionManager_ReleaseDevice()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioSessionManager_ReleaseDevice(OH_AudioSessionManager *audioSessionManager, OH_AudioDeviceDescriptor *audioDeviceDescriptor)
@@ -1098,6 +1198,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_ReleaseDevice(OH_AudioSessionManage
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioSessionManager *audioSessionManager | 指向OH_AudioManager_GetAudioSessionManager创建的音频会话管理实例。 |
@@ -1106,6 +1207,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_ReleaseDevice(OH_AudioSessionManage
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM： 1. 参数audioSessionManager为nullptr； 2. 参数audioDeviceDescriptor为nullptr。 |
@@ -1113,9 +1215,10 @@ OH_AudioCommon_Result OH_AudioSessionManager_ReleaseDevice(OH_AudioSessionManage
  
   
 
-#### OH_AudioSessionManager_EnableMuteSuggestionWhenMixWithOthers()
+### OH_AudioSessionManager_EnableMuteSuggestionWhenMixWithOthers()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioSessionManager_EnableMuteSuggestionWhenMixWithOthers(OH_AudioSessionManager *audioSessionManager, bool enable)
@@ -1133,6 +1236,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_EnableMuteSuggestionWhenMixWithOthe
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioSessionManager *audioSessionManager | 指向OH_AudioManager_GetAudioSessionManager创建的音频会话管理实例。 |
@@ -1141,6 +1245,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_EnableMuteSuggestionWhenMixWithOthe
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM：参数audioSessionManager为nullptr。 AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE： 1. 未设置音频会话场景。 2. 音频会话激活后调用此函数。 AUDIOCOMMON_RESULT_ERROR_SYSTEM：系统异常，例如系统服务异常退出等。 |
@@ -1148,9 +1253,10 @@ OH_AudioCommon_Result OH_AudioSessionManager_EnableMuteSuggestionWhenMixWithOthe
  
   
 
-#### OH_AudioSessionManager_SetCaptureMuteHint()
+### OH_AudioSessionManager_SetCaptureMuteHint()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioSessionManager_SetCaptureMuteHint(OH_AudioSessionManager *audioSessionManager, bool mute)
@@ -1164,6 +1270,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_SetCaptureMuteHint(OH_AudioSessionM
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioSessionManager *audioSessionManager | 指向OH_AudioManager_GetAudioSessionManager返回的音频会话管理实例。 |
@@ -1172,6 +1279,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_SetCaptureMuteHint(OH_AudioSessionM
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM：参数audioSessionManager为nullptr。 AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE：操作状态异常，当前进程不存在运行中的录音流。 AUDIOCOMMON_RESULT_ERROR_SYSTEM：系统异常，例如系统服务异常退出等。 |
@@ -1179,9 +1287,10 @@ OH_AudioCommon_Result OH_AudioSessionManager_SetCaptureMuteHint(OH_AudioSessionM
  
   
 
-#### OH_AudioSessionManager_IsOtherMediaPlaying()
+### OH_AudioSessionManager_IsOtherMediaPlaying()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AudioSessionManager_IsOtherMediaPlaying(OH_AudioSessionManager *audioSessionManager)
@@ -1195,6 +1304,7 @@ bool OH_AudioSessionManager_IsOtherMediaPlaying(OH_AudioSessionManager *audioSes
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioSessionManager *audioSessionManager | 指向OH_AudioManager_GetAudioSessionManager创建的音频会话管理实例。 |
@@ -1202,6 +1312,7 @@ bool OH_AudioSessionManager_IsOtherMediaPlaying(OH_AudioSessionManager *audioSes
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 是否有其他应用正在播放媒体类型的音频。true表示有，false表示没有。 |
@@ -1209,9 +1320,10 @@ bool OH_AudioSessionManager_IsOtherMediaPlaying(OH_AudioSessionManager *audioSes
  
   
 
-#### OH_AudioSessionManager_SetBehavior()
+### OH_AudioSessionManager_SetBehavior()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioSessionManager_SetBehavior(OH_AudioSessionManager *audioSessionManager, uint32_t behavior)
@@ -1225,6 +1337,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_SetBehavior(OH_AudioSessionManager 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioSessionManager *audioSessionManager | 指向OH_AudioManager_GetAudioSessionManager创建的音频会话管理实例。 |
@@ -1233,6 +1346,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_SetBehavior(OH_AudioSessionManager 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM：参数为空指针或超出范围。 AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE：非法状态。 |

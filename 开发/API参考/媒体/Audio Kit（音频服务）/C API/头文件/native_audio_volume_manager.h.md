@@ -1,13 +1,14 @@
 # native_audio_volume_manager.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-audio-volume-manager-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明音频音量管理器接口。
  
@@ -25,16 +26,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_AudioVolumeManager | OH_AudioVolumeManager | 声明音频音量管理器。音频音量管理器提供多种函数，供开发人员获取系统音量信息。 |
@@ -42,10 +46,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | typedef void (*OH_AudioVolumeManager_OnStreamVolumeChangeCallback)(void *userData, OH_AudioStream_Usage usage, int32_t volumeLevel, bool updateUi) | OH_AudioVolumeManager_OnStreamVolumeChangeCallback | 音量变化回调函数的原型定义，用于传递给OH_AudioVolumeManager_RegisterStreamVolumeChangeCallback。 |
@@ -64,15 +70,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AudioVolumeManager_OnStreamVolumeChangeCallback()
+### OH_AudioVolumeManager_OnStreamVolumeChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_AudioVolumeManager_OnStreamVolumeChangeCallback)(void *userData, OH_AudioStream_Usage usage, int32_t volumeLevel, bool updateUi)
@@ -86,6 +94,7 @@ typedef void (*OH_AudioVolumeManager_OnStreamVolumeChangeCallback)(void *userDat
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | void *userData | 用户自定义数据指针。 |
@@ -96,9 +105,10 @@ typedef void (*OH_AudioVolumeManager_OnStreamVolumeChangeCallback)(void *userDat
  
   
 
-#### OH_AudioVolumeManager_OnRingerModeChangeCallback()
+### OH_AudioVolumeManager_OnRingerModeChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_AudioVolumeManager_OnRingerModeChangeCallback)(void *userData, OH_AudioRingerMode ringerMode)
@@ -112,6 +122,7 @@ typedef void (*OH_AudioVolumeManager_OnRingerModeChangeCallback)(void *userData,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | void *userData | 用户自定义数据指针。 |
@@ -120,9 +131,10 @@ typedef void (*OH_AudioVolumeManager_OnRingerModeChangeCallback)(void *userData,
  
   
 
-#### OH_AudioManager_GetAudioVolumeManager()
+### OH_AudioManager_GetAudioVolumeManager()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioManager_GetAudioVolumeManager(OH_AudioVolumeManager **volumeManager)
@@ -138,6 +150,7 @@ OH_AudioCommon_Result OH_AudioManager_GetAudioVolumeManager(OH_AudioVolumeManage
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioVolumeManager **volumeManager | 指向OH_AudioVolumeManager指针的地址，用于接收获取的音量管理器实例。 |
@@ -145,6 +158,7 @@ OH_AudioCommon_Result OH_AudioManager_GetAudioVolumeManager(OH_AudioVolumeManage
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM：参数volumeManager为nullptr。 |
@@ -152,9 +166,10 @@ OH_AudioCommon_Result OH_AudioManager_GetAudioVolumeManager(OH_AudioVolumeManage
  
   
 
-#### OH_AudioVolumeManager_GetMaxVolumeByUsage()
+### OH_AudioVolumeManager_GetMaxVolumeByUsage()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioVolumeManager_GetMaxVolumeByUsage(OH_AudioVolumeManager *volumeManager, OH_AudioStream_Usage usage, int32_t *maxVolumeLevel)
@@ -168,6 +183,7 @@ OH_AudioCommon_Result OH_AudioVolumeManager_GetMaxVolumeByUsage(OH_AudioVolumeMa
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioVolumeManager *volumeManager | 指向通过OH_AudioManager_GetAudioVolumeManager获取的音量管理器实例。 |
@@ -177,6 +193,7 @@ OH_AudioCommon_Result OH_AudioVolumeManager_GetMaxVolumeByUsage(OH_AudioVolumeMa
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM：参数volumeManager或maxVolumeLevel为nullptr，或usage是无效值。 AUDIOCOMMON_RESULT_ERROR_SYSTEM：系统处理错误。 |
@@ -184,9 +201,10 @@ OH_AudioCommon_Result OH_AudioVolumeManager_GetMaxVolumeByUsage(OH_AudioVolumeMa
  
   
 
-#### OH_AudioVolumeManager_GetMinVolumeByUsage()
+### OH_AudioVolumeManager_GetMinVolumeByUsage()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioVolumeManager_GetMinVolumeByUsage(OH_AudioVolumeManager *volumeManager, OH_AudioStream_Usage usage, int32_t *minVolumeLevel)
@@ -200,6 +218,7 @@ OH_AudioCommon_Result OH_AudioVolumeManager_GetMinVolumeByUsage(OH_AudioVolumeMa
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioVolumeManager *volumeManager | 指向通过OH_AudioManager_GetAudioVolumeManager获取的音量管理器实例。 |
@@ -209,6 +228,7 @@ OH_AudioCommon_Result OH_AudioVolumeManager_GetMinVolumeByUsage(OH_AudioVolumeMa
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM：参数volumeManager或minVolumeLevel为nullptr，或usage是无效值。 AUDIOCOMMON_RESULT_ERROR_SYSTEM：系统处理错误。 |
@@ -216,9 +236,10 @@ OH_AudioCommon_Result OH_AudioVolumeManager_GetMinVolumeByUsage(OH_AudioVolumeMa
  
   
 
-#### OH_AudioVolumeManager_GetVolumeByUsage()
+### OH_AudioVolumeManager_GetVolumeByUsage()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioVolumeManager_GetVolumeByUsage(OH_AudioVolumeManager *volumeManager, OH_AudioStream_Usage usage, int32_t *volumeLevel)
@@ -232,6 +253,7 @@ OH_AudioCommon_Result OH_AudioVolumeManager_GetVolumeByUsage(OH_AudioVolumeManag
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioVolumeManager *volumeManager | 指向通过OH_AudioManager_GetAudioVolumeManager获取的音量管理器实例。 |
@@ -241,6 +263,7 @@ OH_AudioCommon_Result OH_AudioVolumeManager_GetVolumeByUsage(OH_AudioVolumeManag
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM：参数volumeManager或volumeLevel为nullptr，或usage是无效值。 AUDIOCOMMON_RESULT_ERROR_SYSTEM：系统处理错误。 |
@@ -248,9 +271,10 @@ OH_AudioCommon_Result OH_AudioVolumeManager_GetVolumeByUsage(OH_AudioVolumeManag
  
   
 
-#### OH_AudioVolumeManager_IsMuteByUsage()
+### OH_AudioVolumeManager_IsMuteByUsage()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioVolumeManager_IsMuteByUsage(OH_AudioVolumeManager *volumeManager, OH_AudioStream_Usage usage, bool *muted)
@@ -264,6 +288,7 @@ OH_AudioCommon_Result OH_AudioVolumeManager_IsMuteByUsage(OH_AudioVolumeManager 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioVolumeManager *volumeManager | 指向通过OH_AudioManager_GetAudioVolumeManager获取的音量管理器实例。 |
@@ -273,6 +298,7 @@ OH_AudioCommon_Result OH_AudioVolumeManager_IsMuteByUsage(OH_AudioVolumeManager 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM：参数volumeManager或muted为nullptr，或usage是无效值。 AUDIOCOMMON_RESULT_ERROR_SYSTEM：系统处理错误。 |
@@ -280,9 +306,10 @@ OH_AudioCommon_Result OH_AudioVolumeManager_IsMuteByUsage(OH_AudioVolumeManager 
  
   
 
-#### OH_AudioVolumeManager_RegisterStreamVolumeChangeCallback()
+### OH_AudioVolumeManager_RegisterStreamVolumeChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioVolumeManager_RegisterStreamVolumeChangeCallback(OH_AudioVolumeManager *volumeManager, OH_AudioStream_Usage usage, OH_AudioVolumeManager_OnStreamVolumeChangeCallback callback, void *userData)
@@ -296,6 +323,7 @@ OH_AudioCommon_Result OH_AudioVolumeManager_RegisterStreamVolumeChangeCallback(O
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioVolumeManager *volumeManager | 指向通过OH_AudioManager_GetAudioVolumeManager获取的音量管理器实例。 |
@@ -306,6 +334,7 @@ OH_AudioCommon_Result OH_AudioVolumeManager_RegisterStreamVolumeChangeCallback(O
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM：参数volumeManager、usage或callback为nullptr，或usage是无效值。 AUDIOCOMMON_RESULT_ERROR_SYSTEM：系统处理错误。 |
@@ -313,9 +342,10 @@ OH_AudioCommon_Result OH_AudioVolumeManager_RegisterStreamVolumeChangeCallback(O
  
   
 
-#### OH_AudioVolumeManager_UnregisterStreamVolumeChangeCallback()
+### OH_AudioVolumeManager_UnregisterStreamVolumeChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioVolumeManager_UnregisterStreamVolumeChangeCallback(OH_AudioVolumeManager *volumeManager, OH_AudioVolumeManager_OnStreamVolumeChangeCallback callback)
@@ -329,6 +359,7 @@ OH_AudioCommon_Result OH_AudioVolumeManager_UnregisterStreamVolumeChangeCallback
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioVolumeManager *volumeManager | 指向通过OH_AudioManager_GetAudioVolumeManager获取的音量管理器实例。 |
@@ -337,6 +368,7 @@ OH_AudioCommon_Result OH_AudioVolumeManager_UnregisterStreamVolumeChangeCallback
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM：参数volumeManager或callback为nullptr。 AUDIOCOMMON_RESULT_ERROR_SYSTEM：系统处理错误。 |
@@ -344,9 +376,10 @@ OH_AudioCommon_Result OH_AudioVolumeManager_UnregisterStreamVolumeChangeCallback
  
   
 
-#### OH_AudioVolumeManager_GetRingerMode()
+### OH_AudioVolumeManager_GetRingerMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioVolumeManager_GetRingerMode(OH_AudioVolumeManager *volumeManager, OH_AudioRingerMode *ringerMode)
@@ -360,6 +393,7 @@ OH_AudioCommon_Result OH_AudioVolumeManager_GetRingerMode(OH_AudioVolumeManager 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioVolumeManager *volumeManager | 指向通过OH_AudioManager_GetAudioVolumeManager获取的音量管理器实例。 |
@@ -368,6 +402,7 @@ OH_AudioCommon_Result OH_AudioVolumeManager_GetRingerMode(OH_AudioVolumeManager 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM：参数volumeManager或ringerMode为nullptr。 AUDIOCOMMON_RESULT_ERROR_SYSTEM：系统处理错误。 |
@@ -375,9 +410,10 @@ OH_AudioCommon_Result OH_AudioVolumeManager_GetRingerMode(OH_AudioVolumeManager 
  
   
 
-#### OH_AudioVolumeManager_RegisterRingerModeChangeCallback()
+### OH_AudioVolumeManager_RegisterRingerModeChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioVolumeManager_RegisterRingerModeChangeCallback(OH_AudioVolumeManager *volumeManager, OH_AudioVolumeManager_OnRingerModeChangeCallback callback, void *userData)
@@ -391,6 +427,7 @@ OH_AudioCommon_Result OH_AudioVolumeManager_RegisterRingerModeChangeCallback(OH_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioVolumeManager *volumeManager | 指向通过OH_AudioManager_GetAudioVolumeManager获取的音量管理器实例。 |
@@ -400,6 +437,7 @@ OH_AudioCommon_Result OH_AudioVolumeManager_RegisterRingerModeChangeCallback(OH_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM：参数volumeManager或callback为nullptr。 AUDIOCOMMON_RESULT_ERROR_SYSTEM：系统处理错误。 |
@@ -407,9 +445,10 @@ OH_AudioCommon_Result OH_AudioVolumeManager_RegisterRingerModeChangeCallback(OH_
  
   
 
-#### OH_AudioVolumeManager_UnregisterRingerModeChangeCallback()
+### OH_AudioVolumeManager_UnregisterRingerModeChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioVolumeManager_UnregisterRingerModeChangeCallback(OH_AudioVolumeManager *volumeManager, OH_AudioVolumeManager_OnRingerModeChangeCallback callback)
@@ -423,6 +462,7 @@ OH_AudioCommon_Result OH_AudioVolumeManager_UnregisterRingerModeChangeCallback(O
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioVolumeManager *volumeManager | 指向通过OH_AudioManager_GetAudioVolumeManager获取的音量管理器实例。 |
@@ -431,6 +471,7 @@ OH_AudioCommon_Result OH_AudioVolumeManager_UnregisterRingerModeChangeCallback(O
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM：参数volumeManager或callback为nullptr。 AUDIOCOMMON_RESULT_ERROR_SYSTEM：系统处理错误。 |

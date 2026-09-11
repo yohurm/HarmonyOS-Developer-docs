@@ -1,6 +1,6 @@
 # Web组件在不同的窗口间迁移
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-component-migrate
 

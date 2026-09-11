@@ -1,18 +1,19 @@
 # OH_DecodingOptionsForPicture
 
-更新时间：2026-06-27 10:02:54（官网已下线）
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-nativemodule-oh-decodingoptionsforpicture
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 struct OH_DecodingOptionsForPicture
 ```
 
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Picture解码参数结构体。
 
@@ -23,6 +24,7 @@ Picture解码参数结构体。
 资源管理：释放OH_ImageSourceNative或解码生成的OH_PictureNative对象，不会自动释放OH_DecodingOptionsForPicture对象。OH_DecodingOptionsForPicture释放后，不应继续传入Picture解码接口或调用其字段获取和设置接口。
 
 OH_DecodingOptionsForPicture结构体内容和操作方式如下：
+
 
 | 字段类型 | 字段名称 | 字段描述 | 字段默认值 | 字段获取函数 | 字段设置函数 |
 | --- | --- | --- | --- | --- | --- |

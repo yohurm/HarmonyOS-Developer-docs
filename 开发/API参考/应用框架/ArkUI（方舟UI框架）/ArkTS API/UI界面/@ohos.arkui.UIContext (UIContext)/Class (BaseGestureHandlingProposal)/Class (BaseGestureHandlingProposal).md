@@ -1,18 +1,19 @@
 # Class (BaseGestureHandlingProposal)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-basegesturehandlingproposal
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 智慧手势处理基类。当通过[registerMonitor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-smartgesturecontroller#registermonitor)接口动态自定义智慧手势行为时，其回调参数类型为具体的子类类型实例。
  
 **起始版本：** 26.0.0
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **起始版本：** 26.0.0
  
@@ -22,6 +23,7 @@
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | action | SmartGestureAction | 否 | 否 | 智慧手势最终执行动作。 |
@@ -81,4 +83,4 @@ struct SmartGestureControllerExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/KFKjzit9TMWZNa31gY8Nkg/zh-cn_image_0000002698142269.png?HW-CC-KV=V1&HW-CC-Date=20260811T010214Z&HW-CC-Expire=86400&HW-CC-Sign=3A03434F81932E8C34CAC45E60EAE205C688A1092A671ABC54FA8ED730D2C216)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/jZN8MnAJSLGaQs87gfmZ7w/zh-cn_image_0000002747212249.png?HW-CC-KV=V1&HW-CC-Date=20260911T072445Z&HW-CC-Expire=86400&HW-CC-Sign=EF52A9C181DDCDE769B822C621E29ACB9DDE31D4D058697CA9D4FA4C7863F94F)

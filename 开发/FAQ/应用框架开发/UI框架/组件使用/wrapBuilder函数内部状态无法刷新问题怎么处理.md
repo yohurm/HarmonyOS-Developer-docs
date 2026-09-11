@@ -31,7 +31,7 @@ class Tmp {
   paramA1: string = '';
 }
 
-// 只设置一个参数
+<em>// </em><em>只设置一个参数</em>
 @Builder
 function test(param: Tmp) {
   Column() {
@@ -39,7 +39,7 @@ function test(param: Tmp) {
   };
 }
 
-// 只设置一个参数
+<em>// </em><em>只设置一个参数</em>
 @Builder
 function test2(message: string) {
   Column() {
@@ -88,7 +88,7 @@ struct WrappedBuilderDemoPage {
         Column() {
           Column() {
             Text('Builder呈现的').margin({ bottom: 10 });
-            globalBuilder.builder({ paramA1: this.message }); // 引用传递
+            globalBuilder.builder({ paramA1: this.message }); <em>// 引用传递</em>
           }.alignItems(HorizontalAlign.Start);
         }
         .width('100%')
@@ -99,7 +99,7 @@ struct WrappedBuilderDemoPage {
         Column() {
           Column() {
             Text('Builder呈现的').margin({ bottom: 10 });
-            globalBuilder2.builder(this.message); // 值传递
+            globalBuilder2.builder(this.message); <em>// 值传递</em>
           }.alignItems(HorizontalAlign.Start);
         }
         .width('100%')
@@ -129,7 +129,7 @@ interface HelloComponentParam {
   message2: string;
 }
 
-// 多个参数接收
+<em>// </em><em>多个参数接收</em>
 @Builder
 function test(message: string, message2: string) {
   HelloComponentTwo({
@@ -137,7 +137,7 @@ function test(message: string, message2: string) {
   });
 }
 
-// 一个参数接收
+<em>// </em><em>一个参数接收</em>
 @Builder
 function test2(param: HelloComponentParam) {
   HelloComponentTwo({

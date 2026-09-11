@@ -1,9 +1,9 @@
 # Class (HeifsMetadata)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-heifsmetadata
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 HeifsMetadata implements Metadata
  
@@ -14,9 +14,10 @@ HEIF序列图像元数据类，用于存储图像的元数据。
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { image } from '@kit.ImageKit';
@@ -24,14 +25,16 @@ import { image } from '@kit.ImageKit';
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
  
 **系统能力：** SystemCapability.Multimedia.Image.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | heifsDelayTime | number | 是 | 是 | HEIF序列图片的每帧播放时长。单位为毫秒（ms）。 |
@@ -42,9 +45,10 @@ import { image } from '@kit.ImageKit';
  
   
 
-#### createInstance
+## createInstance
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static createInstance(): HeifsMetadata
  
@@ -56,6 +60,7 @@ static createInstance(): HeifsMetadata
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | HeifsMetadata | 返回HeifsMetadata的空实例。 |
@@ -74,9 +79,10 @@ async function heifsMetadataCreateInstance(context: Context) {
  
   
 
-#### getProperties
+## getProperties
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getProperties(key: Array&lt;string&gt;): Promise<Record<string, string | null>>
  
@@ -90,6 +96,7 @@ getProperties(key: Array&lt;string&gt;): Promise<Record<string, string | null>>
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | Array&lt;string&gt; | 是 | 要获取的值的属性名称。 |
@@ -97,6 +104,7 @@ getProperties(key: Array&lt;string&gt;): Promise<Record<string, string | null>>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Record<string, string \| null>> | Promise对象，返回元数据要获取的属性的值，如果获取失败则返回错误码。 |
@@ -106,6 +114,7 @@ getProperties(key: Array&lt;string&gt;): Promise<Record<string, string | null>>
  
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7600202 | Unsupported metadata. Possible causes: unsupported metadata type. |
@@ -142,9 +151,10 @@ async function heifsMetadataGetProperties(context: Context) {
  
   
 
-#### setProperties
+## setProperties
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setProperties(records: Record<string, string | null>): Promise&lt;void&gt;
  
@@ -158,6 +168,7 @@ setProperties(records: Record<string, string | null>): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | records | Record<string, string \| null> | 是 | 用户要修改HeifsMetadata对象的属性和值的键值对集合。 |
@@ -165,6 +176,7 @@ setProperties(records: Record<string, string | null>): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -174,6 +186,7 @@ setProperties(records: Record<string, string | null>): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7600202 | Unsupported metadata. Possible causes: unsupported metadata type. |
@@ -213,9 +226,10 @@ async function heifsMetadataSetProperties(context: Context) {
  
   
 
-#### getAllProperties
+## getAllProperties
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllProperties(): Promise<Record<string, string | null>>
  
@@ -229,6 +243,7 @@ getAllProperties(): Promise<Record<string, string | null>>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Record<string, string \| null>> | Promise对象，返回元数据拥有的所有属性的值。 |
@@ -266,9 +281,10 @@ async function heifsMetadataGetAllProperties(context: Context) {
  
   
 
-#### clone
+## clone
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clone(): Promise&lt;HeifsMetadata&gt;
  
@@ -280,6 +296,7 @@ clone(): Promise&lt;HeifsMetadata&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;HeifsMetadata&gt; | Promise对象，成功返回Heifs元数据实例。 |
@@ -317,9 +334,10 @@ async function heifsMetadataClone(context: Context) {
  
   
 
-#### getBlob
+## getBlob
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBlob(): Promise&lt;ArrayBuffer&gt;
  
@@ -331,6 +349,7 @@ getBlob(): Promise&lt;ArrayBuffer&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;ArrayBuffer&gt; | Promise对象，返回元数据的二进制数据。 |
@@ -363,9 +382,10 @@ async function heifsMetadataGetBlob(context: Context) {
  
   
 
-#### setBlob
+## setBlob
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setBlob(blob: ArrayBuffer): Promise&lt;void&gt;
  
@@ -377,6 +397,7 @@ setBlob(blob: ArrayBuffer): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | blob | ArrayBuffer | 是 | 要替换的二进制数据。 |
@@ -384,6 +405,7 @@ setBlob(blob: ArrayBuffer): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -393,6 +415,7 @@ setBlob(blob: ArrayBuffer): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7600206 | Invalid parameter. Possible causes: The blob is empty or has a length of 0. |

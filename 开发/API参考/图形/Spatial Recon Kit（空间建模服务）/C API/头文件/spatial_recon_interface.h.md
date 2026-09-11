@@ -1,14 +1,18 @@
 # spatial_recon_interface.h
 
-更新时间：2026-06-12 06:54:11
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-spatial-recon-interface-h
+**支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 3D空间重建任务设计模块，通过处理多视角图像输入来生成立体场景。
  
-**引用文件：** <SpatialReconKit/spatial_recon_interface.h>
+**引用文件：** <spatial/spatial_recon_interface.h>
  
 **库：** libspatial_recon_ndk.z.so
  
@@ -20,12 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 结构体
+### 结构体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | HMS_SpatialRecon_ModelWriteInfo | - | 空间重建模型写入的结构体。 |
@@ -37,8 +48,12 @@
  
   
 
-#### 枚举
+### 枚举
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | HMS_SpatialReconStatus | HMS_SpatialReconStatus | 表示空间重建操作状态的枚举。 |
@@ -51,8 +66,12 @@
  
   
 
-#### 函数
+### 函数
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | typedef void (*HMS_SpatialReconCallbackFunc)(HMS_SpatialReconStatus) | HMS_SpatialReconCallbackFunc | 用于处理空间重建状态更新的回调函数类型定义。当系统提供关于空间重建过程的更新时，会调用此回调。 |
@@ -60,23 +79,31 @@
 | HMS_SpatialReconStatus HMS_SpatialRecon_CreateSession(HMS_SpatialReconModelType type, const char* workPath, HMS_SpatialRecon_Session **outSpatialReconSession) | - | 创建一个新的空间重建会话。 |
 | HMS_SpatialReconStatus HMS_SpatialRecon_DestroySession(HMS_SpatialRecon_Session *spatialReconSession) | - | 销毁一个空间重建会话并释放其资源。该函数终止空间重建会话并释放与其关联的所有内存和系统资源。调用此函数后，提供的会话指针将失效，不应再次使用。 |
 | HMS_SpatialReconStatus HMS_SpatialRecon_PushFrame(HMS_SpatialRecon_Session *spatialReconSession, HMS_SpatialRecon_DataFrame *inputFrame) | - | 将空间重建数据帧推送到空间重建会话中进行处理。该函数将捕获的空间数据帧提交到重建会话中进行处理。会话使用此数据更新或完善其内部空间模型。 |
-| HMS_SpatialReconStatus HMS_SpatialRecon_PushARFrame(HMS_SpatialRecon_Session spatialReconSession, AREngine_ARSession arSession, AREngine_ARFrame *arFrame) | - | 将AREngine会话中的AREngine帧推送到空间重建会话中。该函数将包含摄像头图像、姿态和AR跟踪数据的AREngine帧提交到空间重建会话中。它允许重建系统利用实时的AR跟踪信息（如摄像头姿态、特征点）来提升空间映射效果。 |
-| HMS_SpatialReconStatus HMS_SpatialRecon_StartSession(HMS_SpatialRecon_Session spatialReconSession, HMS_SpatialRecon_ModelWriteInfo writeInfo, HMS_SpatialReconCallbackFunc onSpatialReconFinished) | - | 启动空间重建会话。该操作是异步执行的，完成状态通过回调函数报告。 |
+| HMS_SpatialReconStatus HMS_SpatialRecon_PushARFrame(HMS_SpatialRecon_Session *spatialReconSession, AREngine_ARSession* arSession, AREngine_ARFrame *arFrame) | - | 将AREngine会话中的AREngine帧推送到空间重建会话中。该函数将包含摄像头图像、姿态和AR跟踪数据的AREngine帧提交到空间重建会话中。它允许重建系统利用实时的AR跟踪信息（如摄像头姿态、特征点）来提升空间映射效果。 |
+| HMS_SpatialReconStatus HMS_SpatialRecon_StartSession(HMS_SpatialRecon_Session *spatialReconSession, HMS_SpatialRecon_ModelWriteInfo* writeInfo, HMS_SpatialReconCallbackFunc onSpatialReconFinished) | - | 启动空间重建会话。该操作是异步执行的，完成状态通过回调函数报告。 |
 | HMS_SpatialReconStatus HMS_SpatialRecon_SetRunningMode(HMS_SpatialRecon_Session *spatialReconSession, HMS_SpatialReconRunningMode runningMode) | - | 设置空间重建会话的运行模式。 |
 | HMS_SpatialReconStatus HMS_SpatialRecon_PauseSession(HMS_SpatialRecon_Session *spatialReconSession) | - | 暂停一个正在进行的空间重建会话。 |
 | HMS_SpatialReconStatus HMS_SpatialRecon_ResumeSession(HMS_SpatialRecon_Session *spatialReconSession) | - | 恢复一个被暂停的空间重建会话。 |
-| HMS_SpatialReconStatus HMS_SpatialRecon_GetProgress(HMS_SpatialRecon_Session spatialReconSession, float progress, HMS_SpatialReconStage* stage) | - | 获取当前任务的进度。该函数查询正在进行的任务（即重建或保存）的进度比例，并通过指针变量返回结果。 |
+| HMS_SpatialReconStatus HMS_SpatialRecon_GetProgress(HMS_SpatialRecon_Session *spatialReconSession, float* progress, HMS_SpatialReconStage* stage) | - | 获取当前任务的进度。该函数查询正在进行的任务（即重建或保存）的进度比例，并通过指针变量返回结果。 |
 | HMS_SpatialReconStatus HMS_SpatialRecon_GetRefinedFrame(HMS_SpatialRecon_Session *spatialReconSession, int iFrame, HMS_SpatialRecon_DataFrame *outFrame) | - | 从空间重建会话中获取优化后的相机帧。该函数为指定帧索引提供经过重建处理后的优化相机内外参数。 |
 | HMS_SpatialReconStatus HMS_SpatialRecon_SaveResultToFile(HMS_SpatialRecon_Session *spatialReconSession, HMS_SpatialRecon_ModelWriteInfo *writeInfo, HMS_SpatialReconCallbackFunc onSaved) | - | 将空间重建结果保存到文件。该函数将处理后的空间重建数据导出到指定的文件格式。操作是异步执行的，完成状态通过回调函数报告。 |
+| typedef void (*HMS_SpatialReconNGCallbackFunc)(HMS_SpatialReconStatus, void*) | HMS_SpatialReconNGCallbackFunc | 支持自定义入参的回调函数。 |
+| HMS_SpatialReconStatus HMS_SpatialRecon_RegisterNGCallbackFunc(HMS_SpatialRecon_Session* spatialReconSession, HMS_SpatialReconNGCallbackFunc onTaskFinished, void* data) | - | 注册支持自定义入参的回调函数。 |
  
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### HMS_SpatialReconStatus
+### HMS_SpatialReconStatus
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 enum HMS_SpatialReconStatus
@@ -88,6 +115,7 @@ enum HMS_SpatialReconStatus
  
 **起始版本：** 6.1.0(23)
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | SPATIAL_RECON_STATUS_SUCCESS = 0 | 空间重建成功。 |
@@ -103,7 +131,10 @@ enum HMS_SpatialReconStatus
  
   
 
-#### HMS_SpatialReconOutputFormat
+### HMS_SpatialReconOutputFormat
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 enum HMS_SpatialReconOutputFormat
@@ -115,6 +146,7 @@ enum HMS_SpatialReconOutputFormat
  
 **起始版本：** 6.1.0(23)
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | SPATIAL_RECON_OUTPUT_FORMAT_PLY | PLY格式。 |
@@ -123,7 +155,10 @@ enum HMS_SpatialReconOutputFormat
  
   
 
-#### HMS_SpatialReconRunningMode
+### HMS_SpatialReconRunningMode
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 enum HMS_SpatialReconRunningMode
@@ -139,6 +174,7 @@ enum HMS_SpatialReconRunningMode
  
 **起始版本：** 6.1.0(23)
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | SPATIAL_RECON_RUNNING_FOREGROUND_MODE | 默认前台模式。当空间重建在前台执行时，系统会分配更多资源给重建任务，以确保更快的重建速度。 |
@@ -147,7 +183,10 @@ enum HMS_SpatialReconRunningMode
  
   
 
-#### HMS_SpatialReconStage
+### HMS_SpatialReconStage
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 enum HMS_SpatialReconStage
@@ -159,6 +198,7 @@ enum HMS_SpatialReconStage
  
 **起始版本：** 6.1.0(23)
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | SPATIAL_RECON_STAGE_INIT | 初始化阶段：正在准备资源和环境。 |
@@ -171,7 +211,10 @@ enum HMS_SpatialReconStage
  
   
 
-#### HMS_SpatialReconModelType
+### HMS_SpatialReconModelType
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 enum HMS_SpatialReconModelType
@@ -183,6 +226,7 @@ enum HMS_SpatialReconModelType
  
 **起始版本：** 6.1.0(23)
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | SPATIAL_RECON_MODEL_TYPE_GS | 用于场景重建的3DGS模型。 |
@@ -190,7 +234,10 @@ enum HMS_SpatialReconModelType
  
   
 
-#### HMS_SpatialReconImageDataFormat
+### HMS_SpatialReconImageDataFormat
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 enum HMS_SpatialReconImageDataFormat
@@ -202,6 +249,7 @@ enum HMS_SpatialReconImageDataFormat
  
 **起始版本：** 6.1.0(23)
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | SPATIAL_RECON_IMAGEDATA_FORMAT_RGB | RGB格式，一种基于红、绿、蓝的三通道色彩表示方法。 |
@@ -209,11 +257,17 @@ enum HMS_SpatialReconImageDataFormat
  
   
 
-#### 函数说明
+## 函数说明
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### HMS_SpatialReconCallbackFunc()
+### HMS_SpatialReconCallbackFunc()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 typedef void (*HMS_SpatialReconCallbackFunc)(HMS_SpatialReconStatus)
@@ -227,6 +281,7 @@ typedef void (*HMS_SpatialReconCallbackFunc)(HMS_SpatialReconStatus)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | HMS_SpatialReconStatus | 空间重建过程的当前状态。HMS_SpatialReconStatus用于标识重建结果的状态。 |
@@ -234,7 +289,10 @@ typedef void (*HMS_SpatialReconCallbackFunc)(HMS_SpatialReconStatus)
  
   
 
-#### HMS_SpatialRecon_IsSupport()
+### HMS_SpatialRecon_IsSupport()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 HMS_SpatialReconStatus HMS_SpatialRecon_IsSupport(HMS_SpatialReconModelType type)
@@ -252,6 +310,7 @@ HMS_SpatialReconStatus HMS_SpatialRecon_IsSupport(HMS_SpatialReconModelType type
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | HMS_SpatialReconModelType type | 要检查支持性的空间重建模型类型。 |
@@ -259,6 +318,7 @@ HMS_SpatialReconStatus HMS_SpatialRecon_IsSupport(HMS_SpatialReconModelType type
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | HMS_SpatialReconStatus | HMS_SpatialReconStatus用于指示是否支持该模型类型。 |
@@ -266,7 +326,10 @@ HMS_SpatialReconStatus HMS_SpatialRecon_IsSupport(HMS_SpatialReconModelType type
  
   
 
-#### HMS_SpatialRecon_CreateSession()
+### HMS_SpatialRecon_CreateSession()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 HMS_SpatialReconStatus HMS_SpatialRecon_CreateSession(HMS_SpatialReconModelType type, const char* workPath, HMS_SpatialRecon_Session **outSpatialReconSession)
@@ -284,6 +347,7 @@ HMS_SpatialReconStatus HMS_SpatialRecon_CreateSession(HMS_SpatialReconModelType 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | HMS_SpatialReconModelType type | 要使用的重建模型类型。这决定了重建会话的算法和能力。 |
@@ -293,6 +357,7 @@ HMS_SpatialReconStatus HMS_SpatialRecon_CreateSession(HMS_SpatialReconModelType 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | HMS_SpatialReconStatus | HMS_SpatialReconStatus指示操作结果。 |
@@ -300,7 +365,10 @@ HMS_SpatialReconStatus HMS_SpatialRecon_CreateSession(HMS_SpatialReconModelType 
  
   
 
-#### HMS_SpatialRecon_DestroySession()
+### HMS_SpatialRecon_DestroySession()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 HMS_SpatialReconStatus HMS_SpatialRecon_DestroySession(HMS_SpatialRecon_Session *spatialReconSession)
@@ -311,7 +379,7 @@ HMS_SpatialReconStatus HMS_SpatialRecon_DestroySession(HMS_SpatialRecon_Session 
 销毁一个空间重建会话并释放其资源。该函数终止空间重建会话并释放与其关联的所有内存和系统资源。调用此函数后，提供的会话指针将失效，不应再次使用。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/ehQPWrHuS8mHwMYh77mDkQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260624T020329Z&HW-CC-Expire=86400&HW-CC-Sign=C2A1551C32FFFBDEFE89D0FF092211BE756FA83FE662384F34903053AB47FBC5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/figsx907T4avImz8gszR4w/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072701Z&HW-CC-Expire=86400&HW-CC-Sign=00EF6630E9A26DD2E8ED9F21768D89E001DC702FCF8945A141CEC8FD0EC1F745)
  
  
 一旦销毁会话，将无法恢复。所有未保存的重建数据将会丢失。如果需要数据持久化，请在销毁前调用HMS_SpatialRecon_SaveResultToFile()进行保存。
@@ -322,6 +390,7 @@ HMS_SpatialReconStatus HMS_SpatialRecon_DestroySession(HMS_SpatialRecon_Session 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | HMS_SpatialRecon_Session *spatialReconSession | 指向要销毁的空间重建会话的指针。该会话必须是先前创建的，如果为NULL，则函数无效果。 |
@@ -329,6 +398,7 @@ HMS_SpatialReconStatus HMS_SpatialRecon_DestroySession(HMS_SpatialRecon_Session 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | HMS_SpatialReconStatus | HMS_SpatialReconStatus表示操作的结果。 |
@@ -336,7 +406,10 @@ HMS_SpatialReconStatus HMS_SpatialRecon_DestroySession(HMS_SpatialRecon_Session 
  
   
 
-#### HMS_SpatialRecon_PushFrame()
+### HMS_SpatialRecon_PushFrame()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 HMS_SpatialReconStatus HMS_SpatialRecon_PushFrame(HMS_SpatialRecon_Session *spatialReconSession, HMS_SpatialRecon_DataFrame *inputFrame)
@@ -354,6 +427,7 @@ HMS_SpatialReconStatus HMS_SpatialRecon_PushFrame(HMS_SpatialRecon_Session *spat
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | HMS_SpatialRecon_Session *spatialReconSession | 指向空间重建会话句柄的指针。 |
@@ -362,6 +436,7 @@ HMS_SpatialReconStatus HMS_SpatialRecon_PushFrame(HMS_SpatialRecon_Session *spat
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | HMS_SpatialReconStatus | 状态码，表示操作的结果。 |
@@ -369,7 +444,10 @@ HMS_SpatialReconStatus HMS_SpatialRecon_PushFrame(HMS_SpatialRecon_Session *spat
  
   
 
-#### HMS_SpatialRecon_PushARFrame()
+### HMS_SpatialRecon_PushARFrame()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 HMS_SpatialReconStatus HMS_SpatialRecon_PushARFrame(HMS_SpatialRecon_Session *spatialReconSession, AREngine_ARSession* arSession, AREngine_ARFrame *arFrame)
@@ -387,6 +465,7 @@ HMS_SpatialReconStatus HMS_SpatialRecon_PushARFrame(HMS_SpatialRecon_Session *sp
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | HMS_SpatialRecon_Session *spatialReconSession | 指向空间重建会话句柄的指针。 |
@@ -396,6 +475,7 @@ HMS_SpatialReconStatus HMS_SpatialRecon_PushARFrame(HMS_SpatialRecon_Session *sp
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | HMS_SpatialReconStatus | 状态码，表示操作的结果。 |
@@ -403,7 +483,10 @@ HMS_SpatialReconStatus HMS_SpatialRecon_PushARFrame(HMS_SpatialRecon_Session *sp
  
   
 
-#### HMS_SpatialRecon_StartSession()
+### HMS_SpatialRecon_StartSession()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 HMS_SpatialReconStatus HMS_SpatialRecon_StartSession(HMS_SpatialRecon_Session *spatialReconSession, HMS_SpatialRecon_ModelWriteInfo* writeInfo, HMS_SpatialReconCallbackFunc onSpatialReconFinished)
@@ -417,6 +500,7 @@ HMS_SpatialReconStatus HMS_SpatialRecon_StartSession(HMS_SpatialRecon_Session *s
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | HMS_SpatialRecon_Session *spatialReconSession | 指向空间重建会话句柄的指针。如果spatialReconSession为空，则函数将返回错误码。 |
@@ -426,6 +510,7 @@ HMS_SpatialReconStatus HMS_SpatialRecon_StartSession(HMS_SpatialRecon_Session *s
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | HMS_SpatialReconStatus | HMS_SpatialReconStatus表示成功或特定错误的状态码。 |
@@ -433,7 +518,10 @@ HMS_SpatialReconStatus HMS_SpatialRecon_StartSession(HMS_SpatialRecon_Session *s
  
   
 
-#### HMS_SpatialRecon_SetRunningMode()
+### HMS_SpatialRecon_SetRunningMode()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 HMS_SpatialReconStatus HMS_SpatialRecon_SetRunningMode(HMS_SpatialRecon_Session *spatialReconSession, HMS_SpatialReconRunningMode runningMode)
@@ -451,6 +539,7 @@ HMS_SpatialReconStatus HMS_SpatialRecon_SetRunningMode(HMS_SpatialRecon_Session 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | HMS_SpatialRecon_Session *spatialReconSession | 指向空间重建会话句柄的指针。 |
@@ -459,6 +548,7 @@ HMS_SpatialReconStatus HMS_SpatialRecon_SetRunningMode(HMS_SpatialRecon_Session 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | HMS_SpatialReconStatus | HMS_SpatialReconStatus表示成功或特定错误的状态码。 |
@@ -466,7 +556,10 @@ HMS_SpatialReconStatus HMS_SpatialRecon_SetRunningMode(HMS_SpatialRecon_Session 
  
   
 
-#### HMS_SpatialRecon_PauseSession()
+### HMS_SpatialRecon_PauseSession()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 HMS_SpatialReconStatus HMS_SpatialRecon_PauseSession(HMS_SpatialRecon_Session *spatialReconSession)
@@ -480,6 +573,7 @@ HMS_SpatialReconStatus HMS_SpatialRecon_PauseSession(HMS_SpatialRecon_Session *s
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | HMS_SpatialRecon_Session *spatialReconSession | 指向空间重建会话句柄的指针。 |
@@ -487,6 +581,7 @@ HMS_SpatialReconStatus HMS_SpatialRecon_PauseSession(HMS_SpatialRecon_Session *s
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | HMS_SpatialReconStatus | 状态码，表示操作的结果。如果不存在活动会话，则返回错误。 |
@@ -494,7 +589,10 @@ HMS_SpatialReconStatus HMS_SpatialRecon_PauseSession(HMS_SpatialRecon_Session *s
  
   
 
-#### HMS_SpatialRecon_ResumeSession()
+### HMS_SpatialRecon_ResumeSession()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 HMS_SpatialReconStatus HMS_SpatialRecon_ResumeSession(HMS_SpatialRecon_Session *spatialReconSession)
@@ -508,6 +606,7 @@ HMS_SpatialReconStatus HMS_SpatialRecon_ResumeSession(HMS_SpatialRecon_Session *
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | HMS_SpatialRecon_Session *spatialReconSession | 指向空间重建会话句柄的指针。 |
@@ -515,6 +614,7 @@ HMS_SpatialReconStatus HMS_SpatialRecon_ResumeSession(HMS_SpatialRecon_Session *
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | HMS_SpatialReconStatus | HMS_SpatialReconStatus表示操作的结果。如果会话未被暂停，则返回错误。 |
@@ -522,7 +622,10 @@ HMS_SpatialReconStatus HMS_SpatialRecon_ResumeSession(HMS_SpatialRecon_Session *
  
   
 
-#### HMS_SpatialRecon_GetProgress()
+### HMS_SpatialRecon_GetProgress()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 HMS_SpatialReconStatus HMS_SpatialRecon_GetProgress(HMS_SpatialRecon_Session *spatialReconSession, float* progress, HMS_SpatialReconStage* stage)
@@ -540,6 +643,7 @@ HMS_SpatialReconStatus HMS_SpatialRecon_GetProgress(HMS_SpatialRecon_Session *sp
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | HMS_SpatialRecon_Session *spatialReconSession | 指向空间重建会话实例的指针。 |
@@ -549,6 +653,7 @@ HMS_SpatialReconStatus HMS_SpatialRecon_GetProgress(HMS_SpatialRecon_Session *sp
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | HMS_SpatialReconStatus | HMS_SpatialReconStatus表示成功或特定错误的状态码。 |
@@ -556,7 +661,10 @@ HMS_SpatialReconStatus HMS_SpatialRecon_GetProgress(HMS_SpatialRecon_Session *sp
  
   
 
-#### HMS_SpatialRecon_GetRefinedFrame()
+### HMS_SpatialRecon_GetRefinedFrame()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 HMS_SpatialReconStatus HMS_SpatialRecon_GetRefinedFrame(HMS_SpatialRecon_Session *spatialReconSession, int iFrame, HMS_SpatialRecon_DataFrame *outFrame)
@@ -574,6 +682,7 @@ HMS_SpatialReconStatus HMS_SpatialRecon_GetRefinedFrame(HMS_SpatialRecon_Session
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | HMS_SpatialRecon_Session *spatialReconSession | 指向空间重建会话句柄的指针。 |
@@ -583,6 +692,7 @@ HMS_SpatialReconStatus HMS_SpatialRecon_GetRefinedFrame(HMS_SpatialRecon_Session
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | HMS_SpatialReconStatus | HMS_SpatialReconStatus表示操作成功或失败的状态码。 |
@@ -590,7 +700,10 @@ HMS_SpatialReconStatus HMS_SpatialRecon_GetRefinedFrame(HMS_SpatialRecon_Session
  
   
 
-#### HMS_SpatialRecon_SaveResultToFile()
+### HMS_SpatialRecon_SaveResultToFile()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 HMS_SpatialReconStatus HMS_SpatialRecon_SaveResultToFile(HMS_SpatialRecon_Session *spatialReconSession, HMS_SpatialRecon_ModelWriteInfo *writeInfo, HMS_SpatialReconCallbackFunc onSaved)
@@ -608,6 +721,7 @@ HMS_SpatialReconStatus HMS_SpatialRecon_SaveResultToFile(HMS_SpatialRecon_Sessio
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | HMS_SpatialRecon_Session *spatialReconSession | 指向空间重建会话对象的指针。必须不为 NULL，并且应为有效且活跃的会话。 |
@@ -617,6 +731,7 @@ HMS_SpatialReconStatus HMS_SpatialRecon_SaveResultToFile(HMS_SpatialRecon_Sessio
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | HMS_SpatialReconStatus | 返回HMS_SpatialReconStatus表示初始验证状态或即时错误（例如无效参数）。文件导出的实际结果通过回调函数传递。 |
@@ -624,29 +739,36 @@ HMS_SpatialReconStatus HMS_SpatialRecon_SaveResultToFile(HMS_SpatialRecon_Sessio
  
   
 
-#### HMS_SpatialReconNGCallbackFunc()
+### HMS_SpatialReconNGCallbackFunc()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
-typedef void (*HMS_SpatialReconCallbackFunc)(HMS_SpatialReconStatus status, void* data);
+typedef void (*HMS_SpatialReconNGCallbackFunc)(HMS_SpatialReconStatus, void*);
 ```
  
 **描述**
  
-支持自定义入参的回调函数
+支持自定义入参的回调函数。
  
 **起始版本：** 26.0.0
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| HMS_SpatialReconStatus status | 空间重建过程的当前状态。HMS_SpatialReconStatus用于标识重建结果的状态。 |
-| void* data | 需要传递给回调函数的自定义入参。开发者必须自行保证数据处理过程中的安全性和正确性。 |
+| HMS_SpatialReconStatus | 空间重建过程的当前状态。HMS_SpatialReconStatus用于标识重建结果的状态。 |
+| void* | 需要传递给回调函数的自定义入参。开发者必须自行保证数据处理过程中的安全性和正确性。 |
  
  
   
 
-#### HMS_SpatialRecon_RegisterNGCallbackFunc()
+### HMS_SpatialRecon_RegisterNGCallbackFunc()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 HMS_SpatialReconStatus HMS_SpatialRecon_RegisterNGCallbackFunc(HMS_SpatialRecon_Session* spatialReconSession, HMS_SpatialReconNGCallbackFunc onTaskFinished, void* data);
@@ -664,6 +786,7 @@ HMS_SpatialReconStatus HMS_SpatialRecon_RegisterNGCallbackFunc(HMS_SpatialRecon_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | HMS_SpatialRecon_Session *spatialReconSession | 指向空间重建会话对象的指针。必须不为 NULL，并且应为有效且活跃的会话。 |
@@ -673,6 +796,7 @@ HMS_SpatialReconStatus HMS_SpatialRecon_RegisterNGCallbackFunc(HMS_SpatialRecon_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | HMS_SpatialReconStatus | 返回HMS_SpatialReconStatus表示初始验证状态或即时错误（例如无效参数）。 |

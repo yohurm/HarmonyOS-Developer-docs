@@ -1,18 +1,19 @@
 # OH_AudioCapturer_Callbacks_Struct
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohaudio-oh-audiocapturer-callbacks-struct
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct OH_AudioCapturer_Callbacks_Struct {...} OH_AudioCapturer_Callbacks;
 ```
 
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明用于音频采集器的回调函数指针。
 
@@ -34,15 +35,18 @@ typedef struct OH_AudioCapturer_Callbacks_Struct {...} OH_AudioCapturer_Callback
 
 
 
-#### 汇总
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 汇总
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 成员函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 成员函数
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -54,9 +58,10 @@ typedef struct OH_AudioCapturer_Callbacks_Struct {...} OH_AudioCapturer_Callback
 
 
 
-#### 成员函数说明
+## 成员函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 以下回调接口的返回值没有枚举定义，当前版本实现并不按返回值区分处理，但为保证后续版本可扩展，默认使用0。
@@ -64,9 +69,10 @@ typedef struct OH_AudioCapturer_Callbacks_Struct {...} OH_AudioCapturer_Callback
 
 
 
-#### OH_AudioCapturer_OnReadData()
+### OH_AudioCapturer_OnReadData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*OH_AudioCapturer_OnReadData)(OH_AudioCapturer* capturer,void* userData,void* buffer,int32_t length)
@@ -86,6 +92,7 @@ int32_t (*OH_AudioCapturer_OnReadData)(OH_AudioCapturer* capturer,void* userData
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioCapturer* capturer | 指向OH_AudioStreamBuilder_GenerateCapturer创建的音频流实例。 |
@@ -96,9 +103,10 @@ int32_t (*OH_AudioCapturer_OnReadData)(OH_AudioCapturer* capturer,void* userData
 
 
 
-#### OH_AudioCapturer_OnStreamEvent()
+### OH_AudioCapturer_OnStreamEvent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*OH_AudioCapturer_OnStreamEvent)(OH_AudioCapturer* capturer,void* userData,OH_AudioStream_Event event)
@@ -116,6 +124,7 @@ int32_t (*OH_AudioCapturer_OnStreamEvent)(OH_AudioCapturer* capturer,void* userD
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioCapturer* capturer | 指向OH_AudioStreamBuilder_GenerateCapturer创建的音频流实例。 |
@@ -125,9 +134,10 @@ int32_t (*OH_AudioCapturer_OnStreamEvent)(OH_AudioCapturer* capturer,void* userD
 
 
 
-#### OH_AudioCapturer_OnInterruptEvent()
+### OH_AudioCapturer_OnInterruptEvent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*OH_AudioCapturer_OnInterruptEvent)(OH_AudioCapturer* capturer,void* userData,OH_AudioInterrupt_ForceType type,OH_AudioInterrupt_Hint hint)
@@ -145,6 +155,7 @@ int32_t (*OH_AudioCapturer_OnInterruptEvent)(OH_AudioCapturer* capturer,void* us
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioCapturer* capturer | 指向OH_AudioStreamBuilder_GenerateCapturer创建的音频流实例。 |
@@ -155,9 +166,10 @@ int32_t (*OH_AudioCapturer_OnInterruptEvent)(OH_AudioCapturer* capturer,void* us
 
 
 
-#### OH_AudioCapturer_OnError()
+### OH_AudioCapturer_OnError()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*OH_AudioCapturer_OnError)(OH_AudioCapturer* capturer, void* userData, OH_AudioStream_Result error)
@@ -174,6 +186,7 @@ int32_t (*OH_AudioCapturer_OnError)(OH_AudioCapturer* capturer, void* userData, 
 **替代接口：** [OH_AudioCapturer_OnErrorCallback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-audiocapturer-h#oh_audiocapturer_onerrorcallback)
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |

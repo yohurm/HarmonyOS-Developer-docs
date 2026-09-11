@@ -1,13 +1,10 @@
 # Web加载性能优化
 
-更新时间：2026-08-10 06:55:01
+更新时间：2026-08-26 06:47:01
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-web-develop-optimization
 
-**   
-
-
-#### 概述
+## 概述
 
 ArkWeb是一个Web组件平台，旨在为应用程序提供展示Web页面内容的功能，并为开发者提供丰富的能力，如页面加载、页面交互和页面调试。在当前的数字化时代，页面加载速度直接影响应用的流畅性，进而影响用户对应用的印象和体验。迅速加载并展示页面，可以吸引用户留在应用上，减少等待时间，从而提升用户满意度。
  
@@ -24,11 +21,11 @@ Web页面显示过程包含DNS解析、建立连接等阶段，其速度受网�
 ArkWeb（方舟Web）为开发者提供了优化页面显示速度的方法。采取这些优化方式可以改善应用性能和用户体验，提升用户满意度和留存率。
  
 
-#### Web页面加载性能优化指导
+## Web页面加载性能优化指导
 
  
 
-#### Web页面加载流程
+### Web页面加载流程
 
 Web页面加载流程包括网络连接、资源下载（包括等待网络资源下载）、DOM解析、JavaScript代码编译执行、渲染等。页面加载中，比较关键的节点有网络连接、资源下载和完整的页面渲染，本文将主要对以下关键节点的耗时进行优化。
  
@@ -46,12 +43,14 @@ Web页面加载流程包括网络连接、资源下载（包括等待网络资�
 - 资源拦截替换加速：资源拦截替换加速支持ArrayBuffer格式的入参，开发者可直接使用ArrayBuffer格式的数据进行拦截替换，无需在应用侧进行格式转换。
 
  
-图1 **Web页面加载流程**
+**图1 **Web页面加载流程
+
 ![](assets/Web加载性能优化/file-20260515115035550-0.png)
 
  
 **由于所有的关键点都是建立在预处理的思路上，因此如果用户实际并未打开预处理的Web页面，将会造成额外的资源消耗。**下表列出了各优化方法的具体效果、代价和适用场景对比。
   
+
 | 优化方法 | 效果（优化数据仅供参考） | 适配难度 | 影响 | 适用场景 |
 | --- | --- | --- | --- | --- |
 | 预启动Web渲染进程 | 消除拉起Web渲染进程的耗时，约140ms。 | 低 | 额外的内存、算力。 | 高概率被使用的Web页面。 |
@@ -68,7 +67,7 @@ Web页面加载流程包括网络连接、资源下载（包括等待网络资�
  
  
 
-#### 预启动Web渲染进程
+### 预启动Web渲染进程
 
 **原理介绍**
  
@@ -76,7 +75,8 @@ Web页面加载流程包括网络连接、资源下载（包括等待网络资�
  
 建议在Web页面启动前执行预启动Web渲染进程，例如在应用冷启动阶段或广告展示阶段。如果无法在冷启动期间预启动Web渲染进程，建议在系统空闲时间进行预启动。
  
-图2 **预启动Web渲染流程**
+**图2 **预启动Web渲染流程
+
 ![](assets/Web加载性能优化/file-20260515115035550-1.png)
 
  
@@ -397,6 +397,7 @@ export struct Second {
  
 **总结**
   
+
 | 下一页加载方式 | 耗时(局限不同设备和场景，数据仅供参考) | 说明 |
 | --- | --- | --- |
 | 直接加载Web页面 | 82ms | 页面加载时拉起渲染进程，增加加载时间 |
@@ -404,7 +405,7 @@ export struct Second {
  
  
 
-#### 预解析和预连接优化
+### 预解析和预连接优化
 
 **原理介绍**
  
@@ -415,7 +416,8 @@ export struct Second {
 - 如下图中c节点所示，页面加载完成后，设置用户下一步可能点击页面的URL，进行预解析和预连接，推荐在onPageEnd()及后续时机执行。
 
  
-图3 **预连接优化原理图**
+**图3 **预连接优化原理图
+
 ![](assets/Web加载性能优化/file-20260515115035550-15.png)
 
  
@@ -505,13 +507,14 @@ struct WebComponent {
 ```
  
 
-#### 预下载优化
+### 预下载优化
 
 **原理介绍**
  
 如下图所示，ArkWeb组件运行包含onAppear()、load()、onPageBegin()、onPageEnd()。开发者可以在onPageEnd()设置下一步访问的URL，提前下载所需资源。这种方式适用于Web页面启动和跳转场景，例如，在引导流程完成后，预下载需要跳转的页面。创建ArkWeb组件实例后，可以在当前页面加载完成后，设置URL并进行预下载。本方案可以消除资源下载耗时及资源下载导致的页面DOM解析、JS代码编译执行的阻塞耗时，预估收益在数百毫秒（具体时间依赖当前网络环境）。
  
-图4 **预下载优化原理图**
+**图4 **预下载优化原理图
+
 ![](assets/Web加载性能优化/file-20260515115035550-18.png)
 
  
@@ -548,7 +551,7 @@ struct WebComponent {
 
  
 
-#### 预渲染优化
+### 预渲染优化
 
 **原理介绍**
  
@@ -559,7 +562,8 @@ struct WebComponent {
 2. 创建并绑定[NodeController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-nodecontroller)：实现NodeController接口，管理节点的创建、显示、更新等操作。将NodeController对象放入容器中，等待调用。
 3. 绑定[NodeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-nodecontainer)组件：与NodeController绑定，实现动态页面显示。
  
-图5 **预渲染优化原理图**
+**图5 **预渲染优化原理图
+
 ![](assets/Web加载性能优化/file-20260515115035550-20.png)
 
  
@@ -746,7 +750,7 @@ struct Index {
  
  
 
-#### 预取POST请求优化
+### 预取POST请求优化
 
 **原理介绍**
  
@@ -971,7 +975,7 @@ xhr.send(formData);
 
  
 
-#### 预编译JavaScript生成字节码缓存（Code Cache）
+### 预编译JavaScript生成字节码缓存（Code Cache）
 
 **原理介绍**
  
@@ -1006,7 +1010,7 @@ struct Index {
       Button('加载页面')
         .onClick(() => {
           // Performance dot
-          hiTraceMeter.startTrace('unPrecompileJavaScript', 1);
+          hiTraceMeter.startTrace('getMessageData', 1);
           // Please replace the URL with the real address.
           this.controller?.loadUrl('https://www.example.com/b.html');
         })
@@ -1017,7 +1021,7 @@ struct Index {
         })
         .onPageEnd((event) => {
           // Performance dot
-          hiTraceMeter.finishTrace('unPrecompileJavaScript', 1);
+          hiTraceMeter.finishTrace('getMessageData', 1);
           hilog.info(DOMAIN, TAG, `load page end: ${event?.url}`);
         })
     }
@@ -1025,7 +1029,7 @@ struct Index {
 }
 ```
  
-点击“加载页面”按钮，[性能打点](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hitracemeter)数据如下，getMessageData进程中的Duration为加载页面开始到结束的耗时：
+通过[HiTraceMeter](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hitracemeter)在Web页面加载前后添加性能打点，点击“加载页面”按钮，[查询自定义打点信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-insight-session-time#section1977218292919)获取的Trace数据如下，getMessageData进程中的Duration为加载页面开始到结束的耗时：
  
 
 ![](assets/Web加载性能优化/file-20260515115035550-6.png)
@@ -1114,6 +1118,7 @@ Web({ src: 'https://www.example.com/a.html', controller: this.controller })
  
 **总结**
   
+
 | 页面加载方式 | 耗时(局限不同设备和场景，数据仅供参考) | 说明 |
 | --- | --- | --- |
 | 直接加载Web页面 | 3183ms | 页面加载时才进行JavaScript编译，从而增加了加载时间 |
@@ -1121,7 +1126,7 @@ Web({ src: 'https://www.example.com/a.html', controller: this.controller })
  
  
 
-#### 资源拦截替换的JavaScript生成字节码缓存（Code Cache）
+### 资源拦截替换的JavaScript生成字节码缓存（Code Cache）
 
 **原理介绍**
  
@@ -1131,7 +1136,7 @@ Web({ src: 'https://www.example.com/a.html', controller: this.controller })
 > 建议开发者优先使用 Code Linter扫描工具 进行代码检查，重点关注 @performance/js-code-cache-by-interception-check 规则。若扫描结果中出现该规则相关问题，可参考本章节提供的优化建议进行调整
 
  
-图6 **JS资源编译执行流程
+**图6 **JS资源编译执行流程
  
 
 ![](assets/Web加载性能优化/file-20260525085643751-002.png)
@@ -1467,10 +1472,11 @@ onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
 ![](assets/Web加载性能优化/file-20260525085643753-009.png)
 
  
-**总结****（以拦截替换HTTP协议的JavaScript生成字节码缓存场景性能数据举例）**
+**总结（以拦截替换HTTP协议的JavaScript生成字节码缓存场景性能数据举例）**
  
 构造2.4MB大小的JavaScript文件，进行资源拦截替换，多次测试取平均耗时，具体数据如下：
   
+
 | 资源拦截替换方式 | 耗时（数据基于特定设备和场景，仅供参考） | 说明 |
 | --- | --- | --- |
 | 在资源拦截替换中不设置ResponseDataID | 1469.7ms | 每次页面加载时，编译并缓存JavaScript资源，会增加加载时间。 |
@@ -1478,7 +1484,7 @@ onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
  
  
 
-#### 离线资源免拦截注入
+### 离线资源免拦截注入
 
 **原理介绍**
  
@@ -1651,6 +1657,7 @@ export async function injectOfflineResource(controller: WebviewController, resou
  
 **总结**
   
+
 | 页面加载方式 | 耗时（数据仅供参考） | 说明 |
 | --- | --- | --- |
 | 直接加载Web页面 | 1312ms | 在触发页面加载时才发起资源请求，这会延长页面加载时间。 |
@@ -1658,7 +1665,7 @@ export async function injectOfflineResource(controller: WebviewController, resou
  
  
 
-#### 资源拦截替换加速
+### 资源拦截替换加速
 
 **原理介绍**
  
@@ -1874,6 +1881,7 @@ struct WebComponent {
  
 **总结**
   
+
 | 页面加载方式 | 耗时(局限不同设备和场景，数据仅供参考) | 说明 |
 | --- | --- | --- |
 | 使用String格式的数据做拦截替换 | 15ms | Web组件内部数据传输需要转换为ArrayBuffer，这会增加数据处理步骤和启动耗时 |
@@ -1881,11 +1889,11 @@ struct WebComponent {
  
  
 
-#### JSBridge
+## JSBridge
 
  
 
-#### JSBridge优化解决方案
+### JSBridge优化解决方案
 
 **适用场景**
  
@@ -2381,6 +2389,7 @@ runJS.html作为应用前端页面：
  
 **总结**
   
+
 | 通信方式 | 耗时(局限不同设备和场景，数据仅供参考) | 说明 |
 | --- | --- | --- |
 | ArkWeb实现与前端页面通信 | 7ms~9ms | ArkTS环境冗余切换,耗时较长 |
@@ -2397,7 +2406,7 @@ JSBridge优化方案适用于ArkWeb应用与前端网页通信，开发者可根
  
  
 
-#### 异步JSBridge调用
+### 异步JSBridge调用
 
 **原理介绍**
  
@@ -2622,6 +2631,7 @@ Web({src: $rawfile('index.html'),controller: this.controller})
  
 数据运行结果如下表所示。
   
+
 | 注册方法类型 | 耗时(局限不同设备和场景，数据仅供参考) | 说明 |
 | --- | --- | --- |
 | 同步方法 | 1398ms，2707ms，2705ms | 同步函数调用会阻塞JavaScript线程 |
@@ -2694,13 +2704,13 @@ void RegisterCallback(const char *webTag) {
 ```
  
 
-#### 同层渲染
+## 同层渲染
 
  
 同层渲染是一种优化技术，用于提高Web页面的渲染性能。同层渲染会将位于同一个图层的元素一起渲染，以减少重绘和重排的次数，从而提高页面的渲染效率。关于同层渲染的内容，可以参考[使用同层渲染在Web组件上渲染原生组件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/same-layer-rendering-native-component#使用同层渲染)。
  
 
-#### 总结
+## 总结
 
 本文深入探讨Web页面加载原理及优化方法，为开发者提供重要指导。互联网时代，用户对网页加载速度和体验要求提高，页面加载优化成为开发者必须重视的环节。理解Web页面加载原理，有助于开发者处理加载优化问题，提升应用质量。
  

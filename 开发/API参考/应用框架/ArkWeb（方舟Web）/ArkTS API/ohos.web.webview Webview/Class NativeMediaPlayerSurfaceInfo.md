@@ -1,9 +1,9 @@
 # Class (NativeMediaPlayerSurfaceInfo)
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-nativemediaplayersurfaceinfo
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 NativeMediaPlayerSurfaceInfo 使用[enableNativeMediaPlayer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-attributes#enablenativemediaplayer12)来进行同层渲染的 surface 信息配置。该类允许应用接管网页媒体播放功能，通过配置 surface 的 id 和位置信息，实现网页媒体内容与应用界面的同层渲染融合，提升媒体播放体验。
  
@@ -12,13 +12,15 @@ NativeMediaPlayerSurfaceInfo 使用[enableNativeMediaPlayer](https://developer.h
 
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | id12+ | string | 否 | 否 | surface的id，用于同层渲染的NativeImage的surfaceId。 详见NativeEmbedDataInfo。 |
-| rect12+ | RectEvent | 否 | 否 | surface的位置信息。 |
+| rect12+ | RectEvent | 否 | 否 | surface的位置信息，用于指定同层渲染时surface的显示位置和尺寸。 |

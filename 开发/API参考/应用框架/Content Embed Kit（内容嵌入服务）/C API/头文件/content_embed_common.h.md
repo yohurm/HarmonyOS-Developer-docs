@@ -1,11 +1,12 @@
 # content_embed_common.h
 
-更新时间：2026-05-26 06:48:54
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-content-embed-common-h
 **支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 枚举
+### 枚举
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | ContentEmbed_ErrorCode | ContentEmbed_ErrorCode | 提供内容嵌入模块的错误码定义。 |
@@ -41,10 +45,12 @@
  
   
 
-#### 宏定义
+### 宏定义
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | MAX_OEID_LENGTH (1 * 40) | 表示被嵌入文档的标识符OEID的最大字符串长度。 起始版本： 24 |
@@ -52,13 +58,15 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### ContentEmbed_ErrorCode
+### ContentEmbed_ErrorCode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -72,6 +80,7 @@ enum ContentEmbed_ErrorCode
  
 **起始版本：** 24
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | CE_ERR_OK = 0 | 操作成功。 起始版本： 24 |
@@ -98,7 +107,8 @@ enum ContentEmbed_ErrorCode
  
   
 
-#### ContentEmbed_CapabilityCode
+### ContentEmbed_CapabilityCode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -112,6 +122,7 @@ enum ContentEmbed_CapabilityCode
  
 **起始版本：** 24
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | CE_CAPABILITY_SUPPORT_SNAPSHOT = 1 << 0 | 表示支持获取OE文档的快照图像。 起始版本： 24 |

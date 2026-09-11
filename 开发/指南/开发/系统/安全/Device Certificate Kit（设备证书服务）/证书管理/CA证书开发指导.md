@@ -1,6 +1,6 @@
 # CA证书开发指导
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/certmanager-ca-certs-guidelines
 
@@ -40,8 +40,11 @@ Device Certificate Kit的CA证书管理功能包含如下能力：
 2. 所有用户级的CA证书：设备的所有用户都可以读取，当前只能通过MDM应用在企业设备上进行安装和管理。
 
 | 用户CA证书的作用范围（Scope） | 作用范围说明 | 证书管理方式 | 设备用户可执行的操作 | 应用可执行的操作 | 典型应用场景 |
+
 | --- | --- | --- | --- | --- | --- |
+
 | 当前用户 | 用户间隔离 | 由用户管理 | 安装/卸载/查看 | 读取，拉起安装/卸载对话框 | 在BYOD设备访问企业内部的服务器。 |
+
 | 所有用户 | 所有用户共享 | 由MDM应用管理 | 查看 | 读取 | 在企业设备访问企业内部的服务器。 |
 
  
@@ -50,7 +53,7 @@ Device Certificate Kit的CA证书管理功能包含如下能力：
 
   
 
-#### 基本概念
+## 基本概念
 
 - 商业CA证书：由正规的第三方商业数字证书认证机构（CA）颁发和运营的商用CA证书，具备公开权威公信力。
 - 自建CA证书：企业/组织自行搭建部署的私有数字证书颁发机构（CA）颁发的CA证书，一般用于企业/组织内网服务、测试环境等。
@@ -61,7 +64,7 @@ Device Certificate Kit的CA证书管理功能包含如下能力：
  
   
 
-#### 开发步骤
+## 开发步骤
 1. 权限申请和声明。
 
   MDM应用调用安装和卸载CA证书接口需要申请权限：ohos.permission.ACCESS_ENTERPRISE_USER_TRUSTED_CERT
@@ -105,7 +108,7 @@ import { UIContext } from '@kit.ArkUI';
  
   
 
-#### 样例代码
+## 样例代码
 
 ```ArkTS
 import { certificateManager, certificateManagerDialog } from '@kit.DeviceCertificateKit';

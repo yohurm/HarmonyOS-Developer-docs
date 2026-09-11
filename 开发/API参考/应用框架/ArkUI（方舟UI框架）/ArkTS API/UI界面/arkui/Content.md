@@ -1,9 +1,9 @@
 # Content
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-content
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义ComponentContent和NodeContent的基类，为ArkUI内容承载结构提供统一的内容管理能力，适用于需要动态创建和挂载自定义内容节点的场景。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { Content } from '@kit.ArkUI';
@@ -22,9 +23,10 @@ import { Content } from '@kit.ArkUI';
  
   
 
-#### Content
+## Content
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Content是ArkUI内容承载结构的基类，为[ComponentContent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-componentcontent)和[NodeContent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-nodecontent)提供统一的内容管理能力，适用于需要动态创建和挂载自定义内容节点的场景。
  

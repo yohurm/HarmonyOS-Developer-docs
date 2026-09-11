@@ -100,13 +100,13 @@ aboutToDisappear(): void {
 @Entry
 @Component
 struct SplitNav {
-  @Provide stackPath: NavPathStack = new NavPathStack(); // 声明一个pathStack对象
+  @Provide stackPath: NavPathStack = new NavPathStack(); <em>// 声明一个pathStack对象</em>
 
   build() {
     Column() {
       Column()
         .height(1);
-      // 绑定关系
+      <em>// 绑定关系</em>
       Navigation(this.stackPath) {
         Column() {
           Text('点击跳转')
@@ -130,7 +130,7 @@ struct SplitNav {
   @Builder
   getPageContent(name: string) {
     if (name === 'popup') {
-      // 渲染朋友圈组件
+      <em>// 渲染朋友圈组件</em>
       Popup();
     }
   }
@@ -234,9 +234,9 @@ export struct MessageItem {
         onStateChange: (event) => {
           this.showPopup = event.isVisible;
         },
-        // 设置popup与目标的间隙
+        <em>// 设置popup与目标的间隙</em>
         targetSpace: '1vp',
-        // 设置popup组件相对于目标的显示位置
+        <em>// 设置popup组件相对于目标的显示位置</em>
         placement: Placement.Bottom,
         placementOnTop: true,
         arrowPointPosition: ArrowPointPosition.CENTER,
@@ -258,9 +258,9 @@ export struct MessageItem {
 
   @Builder
   getContent(): void {
-    // 行：设置一行几列
+    <em>// 行：设置一行几列</em>
     GridRow({ columns: 5, gutter: { x: 12, y: 20 } }) {
-      // 列：根据一行几个进行排列位置
+     <em> // 列：根据一行几个进行排列位置</em>
       ForEach(this.popupFilterList, (item: string) => {
         GridCol() {
           Column({ space: 4 }) {

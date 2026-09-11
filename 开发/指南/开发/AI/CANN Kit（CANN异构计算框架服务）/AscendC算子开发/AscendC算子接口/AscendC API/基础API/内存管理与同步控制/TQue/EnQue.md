@@ -1,16 +1,16 @@
 # EnQue
 
-更新时间：2026-06-12 06:54:11
+更新时间：2026-08-18 12:49:55
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-tque-enque
 
-#### 功能说明
+## 功能说明
 
 将Tensor push到队列。
  
   
 
-#### 函数原型
+## 函数原型
 
 - 无需指定源和目的位置
 
@@ -34,10 +34,11 @@ __aicore__ inline bool EnQue(const LocalTensor<T>& tensor)
  
   
 
-#### 参数说明
+## 参数说明
 
 **表1** bool EnQue(LocalTensor&lt;T&gt;& tensor)原型定义参数说明
   
+
 | 参数名称 | 输入/输出 | 含义 |
 | --- | --- | --- |
 | tensor | 输入 | 指定的Tensor。 |
@@ -45,6 +46,7 @@ __aicore__ inline bool EnQue(const LocalTensor<T>& tensor)
  
 **表2** template <TPosition srcUserPos, TPosition dstUserPos> bool EnQue(LocalTensor&lt;T&gt;& tensor)原型定义参数说明
   
+
 | 参数名称 | 输入/输出 | 含义 |
 | --- | --- | --- |
 | srcUserPos | 输入 | 模板参数，开发者指定队列的src position，当前只支持如下通路：GM->VECIN/VECOUT->GM。 |
@@ -60,21 +62,23 @@ __aicore__ inline bool EnQue(const LocalTensor<T>& tensor)
  
   
 
-#### 支持的型号
+## 支持的型号
 
 Kirin9020系列处理器
+ 
+Kirin9030系列处理器
  
 KirinX90系列处理器
  
   
 
-#### 注意事项
+## 注意事项
 
 无
  
   
 
-#### 返回值
+## 返回值
 
 - true：表示Tensor加入Queue成功。
 - false：表示Queue已满，入队失败。
@@ -82,7 +86,7 @@ KirinX90系列处理器
  
   
 
-#### 调用示例
+## 调用示例
 
 ```text
 // 接口: EnQue Tensor

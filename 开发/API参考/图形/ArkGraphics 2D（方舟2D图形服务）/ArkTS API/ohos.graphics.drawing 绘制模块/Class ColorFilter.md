@@ -1,9 +1,9 @@
 # Class (ColorFilter)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-graphics-drawing-colorfilter
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 颜色滤波器。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { drawing } from '@kit.ArkGraphics2D';
@@ -22,9 +23,10 @@ import { drawing } from '@kit.ArkGraphics2D';
 
 
 
-#### createBlendModeColorFilter
+## createBlendModeColorFilter
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createBlendModeColorFilter(color: common2D.Color, mode: BlendMode) : ColorFilter
 
@@ -34,6 +36,7 @@ createBlendModeColorFilter(color: common2D.Color, mode: BlendMode) : ColorFilter
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | common2D.Color | 是 | ARGB格式的颜色，每个颜色通道的值是0到255之间的整数。 |
@@ -41,6 +44,7 @@ createBlendModeColorFilter(color: common2D.Color, mode: BlendMode) : ColorFilter
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -50,6 +54,7 @@ createBlendModeColorFilter(color: common2D.Color, mode: BlendMode) : ColorFilter
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -67,9 +72,10 @@ let colorFilter = drawing.ColorFilter.createBlendModeColorFilter(color, drawing.
 
 
 
-#### createBlendModeColorFilter18+
+## createBlendModeColorFilter18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static createBlendModeColorFilter(color: common2D.Color | number, mode: BlendMode) : ColorFilter
 
@@ -79,6 +85,7 @@ static createBlendModeColorFilter(color: common2D.Color | number, mode: BlendMod
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | common2D.Color \| number | 是 | 颜色，可以用16进制ARGB格式的无符号整数表示。 |
@@ -86,6 +93,7 @@ static createBlendModeColorFilter(color: common2D.Color | number, mode: BlendMod
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -95,6 +103,7 @@ static createBlendModeColorFilter(color: common2D.Color | number, mode: BlendMod
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -111,9 +120,10 @@ let colorFilter = drawing.ColorFilter.createBlendModeColorFilter(0xffff0000, dra
 
 
 
-#### createComposeColorFilter
+## createComposeColorFilter
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createComposeColorFilter(outer: ColorFilter, inner: ColorFilter) : ColorFilter
 
@@ -123,6 +133,7 @@ createComposeColorFilter(outer: ColorFilter, inner: ColorFilter) : ColorFilter
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | outer | ColorFilter | 是 | 组合滤波器中后生效的颜色滤波器。 |
@@ -130,6 +141,7 @@ createComposeColorFilter(outer: ColorFilter, inner: ColorFilter) : ColorFilter
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -139,6 +151,7 @@ createComposeColorFilter(outer: ColorFilter, inner: ColorFilter) : ColorFilter
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -158,9 +171,10 @@ let colorFilter = drawing.ColorFilter.createComposeColorFilter(colorFilter1, col
 
 
 
-#### createLinearToSRGBGamma
+## createLinearToSRGBGamma
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createLinearToSRGBGamma() : ColorFilter
 
@@ -169,6 +183,7 @@ createLinearToSRGBGamma() : ColorFilter
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -185,9 +200,10 @@ let colorFilter = drawing.ColorFilter.createLinearToSRGBGamma();
 
 
 
-#### createSRGBGammaToLinear
+## createSRGBGammaToLinear
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createSRGBGammaToLinear() : ColorFilter
 
@@ -196,6 +212,7 @@ createSRGBGammaToLinear() : ColorFilter
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -212,9 +229,10 @@ let colorFilter = drawing.ColorFilter.createSRGBGammaToLinear();
 
 
 
-#### createLumaColorFilter
+## createLumaColorFilter
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createLumaColorFilter() : ColorFilter
 
@@ -223,6 +241,7 @@ createLumaColorFilter() : ColorFilter
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -239,9 +258,10 @@ let colorFilter = drawing.ColorFilter.createLumaColorFilter();
 
 
 
-#### createMatrixColorFilter12+
+## createMatrixColorFilter12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static createMatrixColorFilter(matrix: Array&lt;number&gt;): ColorFilter
 
@@ -251,12 +271,14 @@ static createMatrixColorFilter(matrix: Array&lt;number&gt;): ColorFilter
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | matrix | Array&lt;number&gt; | 是 | 长度为20的数组，表示用于颜色变换的4*5矩阵。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -266,6 +288,7 @@ static createMatrixColorFilter(matrix: Array&lt;number&gt;): ColorFilter
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -288,9 +311,10 @@ let colorFilter = drawing.ColorFilter.createMatrixColorFilter(matrix);
 
 
 
-#### createLightingColorFilter20+
+## createLightingColorFilter20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static createLightingColorFilter(mutColor: common2D.Color | number, addColor: common2D.Color | number): ColorFilter
 
@@ -300,6 +324,7 @@ static createLightingColorFilter(mutColor: common2D.Color | number, addColor: co
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mutColor | common2D.Color \| number | 是 | 用来进行乘法运算的颜色，ARGB格式的颜色，每个颜色通道是0到255之间的整数。为number类型时必须是16进制ARGB格式的无符号整数。 |
@@ -307,6 +332,7 @@ static createLightingColorFilter(mutColor: common2D.Color | number, addColor: co
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |

@@ -1,11 +1,12 @@
 # @hms.core.account.minorsProtection (华为账号未成年人模式)
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-api-minorsprotection
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 模块概述
+## 模块概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -21,7 +22,10 @@
  
   
 
-#### 基本概念
+### 基本概念
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 - 未成年人
 
@@ -51,13 +55,19 @@
  
   
 
-#### 查询是否支持系统未成年人模式
+### 查询是否支持系统未成年人模式
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 @hms.core.account.minorsProtection模块提供查询是否支持系统未成年人模式能力。开发者可通过接口[supportMinorsMode](#supportminorsmode)查询。如果当前系统登录的华为账号注册地为中国境外、香港特别行政区、澳门特别行政区或中国台湾，或系统处于隐私空间，则不支持系统未成年人模式。
  
   
 
-#### 获取系统未成年人模式开启状态和年龄段信息
+### 获取系统未成年人模式开启状态和年龄段信息
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 @hms.core.account.minorsProtection模块提供获取系统未成年人模式开启状态、年龄段信息能力。开发者可通过接口[getMinorsProtectionInfo](#getminorsprotectioninfo)或[getMinorsProtectionInfoSync](#getminorsprotectioninfosync)主动查询系统未成年人模式的开启状态，从而判断是否需要开启应用的未成年人模式。
  
@@ -72,13 +82,19 @@
  
   
 
-#### 开启/关闭系统未成年人模式
+### 开启/关闭系统未成年人模式
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 @hms.core.account.minorsProtection模块提供开启/关闭系统未成年人模式能力。开发者可通过接口[leadToTurnOnMinorsMode](#leadtoturnonminorsmode)/[leadToTurnOffMinorsMode](#leadtoturnoffminorsmode)拉起开启/关闭系统未成年人模式的引导页，引导用户开启/关闭系统的未成年人模式。
  
   
 
-#### 验证系统未成年人模式密码能力
+### 验证系统未成年人模式密码能力
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 @hms.core.account.minorsProtection模块提供家长身份验证能力。在用户开启系统未成年人模式过程中，系统会引导家长用户设置六位数字密码作为系统未成年人模式状态的指令依据。在系统未成年人模式开启时，开发者可通过接口[verifyMinorsProtectionCredential](#verifyminorsprotectioncredential)拉起系统未成年人模式密码验证页面，当用户输入正确的六位数字密码后，会返回成功结果从而验证家长身份，用于调整应用使用时长限制、内容偏好等设置。
  
@@ -86,7 +102,8 @@
  
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -96,7 +113,8 @@ import { minorsProtection } from '@kit.AccountKit';
  
   
 
-#### MinorsProtectionInfo
+## MinorsProtectionInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -110,6 +128,7 @@ import { minorsProtection } from '@kit.AccountKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | minorsProtectionMode | boolean | 否 | 否 | 系统未成年人模式开启状态。 true：表示系统未成年人模式为开启状态。 false：表示系统未成年人模式为关闭状态。 |
@@ -118,7 +137,8 @@ import { minorsProtection } from '@kit.AccountKit';
  
   
 
-#### AgeGroup
+## AgeGroup
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -132,6 +152,7 @@ import { minorsProtection } from '@kit.AccountKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | lowerAge | number | 否 | 否 | 年龄段下限，包含下限值。单位：周岁。 说明： 该字段取值范围：0、3、8、12或16。 |
@@ -140,7 +161,8 @@ import { minorsProtection } from '@kit.AccountKit';
  
   
 
-#### MinorsModeErrorCode
+## MinorsModeErrorCode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -154,6 +176,7 @@ import { minorsProtection } from '@kit.AccountKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | MINORS_MODE_NOT_ENABLED | 1009900002 | 未成年人模式未开启。 |
@@ -166,7 +189,8 @@ import { minorsProtection } from '@kit.AccountKit';
  
   
 
-#### supportMinorsMode
+## supportMinorsMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -186,6 +210,7 @@ supportMinorsMode(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 是否支持系统未成年人模式。 true：支持系统未成年人模式。 false：不支持系统未成年人模式。 说明： 当登录海外华为账号、系统处于隐私空间均会返回false，其他场景均为true。 |
@@ -195,6 +220,7 @@ supportMinorsMode(): boolean
  
 以下错误码的详细介绍请参见[ArkTS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account-kit)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1001502009 | Internal error. |
@@ -217,7 +243,8 @@ try {
  
   
 
-#### getMinorsProtectionInfoSync
+## getMinorsProtectionInfoSync
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -235,6 +262,7 @@ getMinorsProtectionInfoSync(): MinorsProtectionInfo
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | MinorsProtectionInfo | 返回MinorsProtectionInfo对象。用于获取系统未成年人模式开启状态、年龄段信息。 |
@@ -244,6 +272,7 @@ getMinorsProtectionInfoSync(): MinorsProtectionInfo
  
 以下错误码的详细介绍请参见[ArkTS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account-kit)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1001502009 | Internal error. |
@@ -289,7 +318,8 @@ try {
  
   
 
-#### getMinorsProtectionInfo
+## getMinorsProtectionInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -307,6 +337,7 @@ getMinorsProtectionInfo(): Promise&lt;MinorsProtectionInfo&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;MinorsProtectionInfo&gt; | Promise对象，返回MinorsProtectionInfo对象。用于获取系统未成年人模式开启状态、年龄段信息。 |
@@ -316,6 +347,7 @@ getMinorsProtectionInfo(): Promise&lt;MinorsProtectionInfo&gt;
  
 以下错误码的详细介绍请参见[ArkTS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account-kit)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1001502009 | Internal error. |
@@ -369,7 +401,8 @@ function dealGetMinorsInfoAllError(error: BusinessError<Object>): void {
  
   
 
-#### verifyMinorsProtectionCredential
+## verifyMinorsProtectionCredential
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -387,6 +420,7 @@ verifyMinorsProtectionCredential(context: common.Context): Promise&lt;boolean&gt
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | Context上下文。 应用可支持的Context有：UIAbilityContext和UIExtensionContext。不支持应用在半模态、弹出框、子窗口等非全页面组件中使用UIExtensionContext调用。 元服务可支持的Context有：UIAbilityContext。 |
@@ -394,6 +428,7 @@ verifyMinorsProtectionCredential(context: common.Context): Promise&lt;boolean&gt
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示密码验证通过；返回false表示密码验证未通过。 |
@@ -403,6 +438,7 @@ verifyMinorsProtectionCredential(context: common.Context): Promise&lt;boolean&gt
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account-kit)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
@@ -445,7 +481,8 @@ function dealVerifyAllError(error: BusinessError<Object>): void {
  
   
 
-#### leadToTurnOnMinorsMode
+## leadToTurnOnMinorsMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -463,6 +500,7 @@ leadToTurnOnMinorsMode(context: common.Context): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | Context上下文。 应用可支持的Context有：UIAbilityContext和UIExtensionContext。不支持应用在半模态、弹出框、子窗口等非全页面组件中使用UIExtensionContext调用。 元服务可支持的Context有：UIAbilityContext。 |
@@ -470,6 +508,7 @@ leadToTurnOnMinorsMode(context: common.Context): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果的Promise对象。 |
@@ -479,6 +518,7 @@ leadToTurnOnMinorsMode(context: common.Context): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account-kit)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
@@ -523,7 +563,8 @@ function dealTurnOnAllError(error: BusinessError<Object>): void {
  
   
 
-#### leadToTurnOffMinorsMode
+## leadToTurnOffMinorsMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -541,6 +582,7 @@ leadToTurnOffMinorsMode(context: common.Context): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | Context上下文。 应用可支持的Context有：UIAbilityContext和UIExtensionContext。不支持应用在半模态、弹出框、子窗口等非全页面组件中使用UIExtensionContext调用。 元服务可支持的Context有：UIAbilityContext。 |
@@ -548,6 +590,7 @@ leadToTurnOffMinorsMode(context: common.Context): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果的Promise对象。 |
@@ -557,6 +600,7 @@ leadToTurnOffMinorsMode(context: common.Context): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account-kit)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |

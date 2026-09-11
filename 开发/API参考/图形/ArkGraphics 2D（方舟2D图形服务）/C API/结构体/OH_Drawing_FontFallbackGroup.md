@@ -1,18 +1,19 @@
 # OH_Drawing_FontFallbackGroup
 
-更新时间：2026-07-21 07:44:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-oh-drawing-fontfallbackgroup
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct OH_Drawing_FontFallbackGroup {...} OH_Drawing_FontFallbackGroup
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 备用字体集信息结构体。
  
@@ -24,18 +25,21 @@ typedef struct OH_Drawing_FontFallbackGroup {...} OH_Drawing_FontFallbackGroup
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 成员变量
+### 成员变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
-| char* groupName | 备用字体集所对应的字体集名称，如果值为空，表示可以使用备用字体集列表集所有的字体。 |
+| char* groupName | 备用字体集所对应的字体集名称，如果值为空，表示可以使用备用字体集列表中所有的字体。 |
 | size_t fallbackInfoSize | 备用字体集数量。 |
 | OH_Drawing_FontFallbackInfo* fallbackInfoSet | 备用字体集列表。 |

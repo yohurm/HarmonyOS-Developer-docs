@@ -1,6 +1,6 @@
 # 使用Text组件
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-use-text-component
 
@@ -11,13 +11,13 @@
 
 
 
-#### 创建文本组件
+## 创建文本组件
 
 Text组件是显示文本内容的基础组件，支持多种样式设置和子组件。
 
 
 
-#### 创建基础文本
+### 创建基础文本
 
 使用[createNode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-arkui-nativenodeapi-1#createnode)接口创建Text组件，节点类型为ARKUI_NODE_TEXT。
 
@@ -33,7 +33,7 @@ Manager::nodeAPI_->setAttribute(text, NODE_HEIGHT, &textHeightItem);
 
 
 
-#### 设置文本内容
+### 设置文本内容
 
  - 通过[NODE_TEXT_CONTENT](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-node-h-nodeattributetype-text#node_text_content)属性设置Text组件的基本文本内容。
 
@@ -51,17 +51,18 @@ Manager::nodeAPI_->setAttribute(text2, NODE_TEXT_CONTENT, &contentItem);
 
 
 
-#### 设置文本样式
+## 设置文本样式
 
 Text组件支持丰富的文本样式设置，包括字体、颜色、对齐方式等。
 
 
 
-#### 设置字体属性
+### 设置字体属性
 
 通过如下属性设置字体大小、粗细、样式等基本属性。
 
 **表1** 字体属性
+
 
 | 属性 | 说明 |
 | --- | --- |
@@ -93,11 +94,12 @@ Manager::nodeAPI_->setAttribute(text2, NODE_FONT_WEIGHT, &textWeightItem);
 
 
 
-#### 设置文本对齐
+### 设置文本对齐
 
 通过如下属性设置文本的水平对齐方式和垂直对齐方式。
 
 **表2** 文本对齐属性
+
 
 | 属性 | 说明 |
 | --- | --- |
@@ -105,7 +107,7 @@ Manager::nodeAPI_->setAttribute(text2, NODE_FONT_WEIGHT, &textWeightItem);
 | NODE_TEXT_VERTICAL_ALIGN | 设置文本垂直对齐。 |
 
 
- - 设置文本水平对齐。        
+ - 设置文本水平对齐。       
 ```cpp
 // 水平对齐：居中对齐（ARKUI_TEXT_ALIGNMENT_CENTER）
 ArkUI_NumberValue intVal_0 = {.i32 = ARKUI_TEXT_ALIGNMENT_CENTER};
@@ -113,7 +115,7 @@ ArkUI_AttributeItem textAlignItem = {&intVal_0, VALUE_1};
 Manager::nodeAPI_->setAttribute(text14, NODE_TEXT_ALIGN, &textAlignItem);
 ```
 
- - 设置文本垂直对齐。        
+ - 设置文本垂直对齐。       
 ```cpp
 // 垂直对齐：基线对齐（ARKUI_TEXT_VERTICAL_ALIGNMENT_BASELINE）
 ArkUI_NumberValue vAlignVal = {.i32 = ARKUI_TEXT_VERTICAL_ALIGNMENT_BASELINE};
@@ -125,11 +127,12 @@ Manager::nodeAPI_->setAttribute(text3, NODE_TEXT_VERTICAL_ALIGN, &vAlignItem);
 
 
 
-#### 设置文本装饰线和效果
+### 设置文本装饰线和效果
 
 通过如下属性设置文本装饰线、阴影等效果。
 
 **表3** 文本装饰线和效果属性
+
 
 | 属性 | 说明 |
 | --- | --- |
@@ -137,7 +140,7 @@ Manager::nodeAPI_->setAttribute(text3, NODE_TEXT_VERTICAL_ALIGN, &vAlignItem);
 | NODE_TEXT_TEXT_SHADOW | 设置文字阴影效果。 |
 
 
- - 设置文本装饰线。        
+ - 设置文本装饰线。       
 ```cpp
 // 设置文本装饰线类型：下划线装饰（ARKUI_TEXT_DECORATION_TYPE_UNDERLINE）。文本装饰线样式：单实线（ARKUI_TEXT_DECORATION_STYLE_SOLID）。
 ArkUI_NumberValue textDecoration[] = {
@@ -146,7 +149,7 @@ ArkUI_AttributeItem textDecorationItem = {.value = textDecoration, .size = VALUE
 Manager::nodeAPI_->setAttribute(text3, NODE_TEXT_DECORATION, &textDecorationItem);
 ```
 
- - 设置文字阴影效果。        
+ - 设置文字阴影效果。       
 ```cpp
 // 文字阴影效果属性
 ArkUI_NumberValue textShadow[] = {
@@ -159,13 +162,13 @@ Manager::nodeAPI_->setAttribute(text4, NODE_TEXT_TEXT_SHADOW, &textShadowItem);
 
 
 
-#### 设置文本布局
+## 设置文本布局
 
 Text组件支持多种文本布局设置，包括换行、行高、省略等。
 
 
 
-#### 设置文本换行
+### 设置文本换行
 
 通过[NODE_TEXT_WORD_BREAK](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-node-h-nodeattributetype-text#node_text_word_break)属性设置文本的断行规则。
 
@@ -178,13 +181,14 @@ Manager::nodeAPI_->setAttribute(text3, NODE_TEXT_WORD_BREAK, &wordBreakItem);
 
 
 
-#### 设置行高相关属性
+### 设置行高相关属性
 
 通过如下属性设置文本的行高、行高倍数等属性。
 
 从API version 22开始，Text组件支持使用倍数模式设置行高。
 
 **表4** 行高属性
+
 
 | 属性 | 说明 |
 | --- | --- |
@@ -193,7 +197,7 @@ Manager::nodeAPI_->setAttribute(text3, NODE_TEXT_WORD_BREAK, &wordBreakItem);
 | NODE_TEXT_HALF_LEADING | 设置文本垂直居中。 |
 
 
- - 设置文本行高。        
+ - 设置文本行高。       
 ```cpp
 // 设置文本行高
 ArkUI_NumberValue lineHeight = {.f32 = VALUE_50};
@@ -201,7 +205,7 @@ ArkUI_AttributeItem lineHeightItem = {&lineHeight, VALUE_1};
 Manager::nodeAPI_->setAttribute(text4, NODE_TEXT_LINE_HEIGHT, &lineHeightItem);
 ```
 
- - 设置行高倍数。        
+ - 设置行高倍数。       
 ```cpp
 // 设置行高倍数
 ArkUI_NumberValue value[] = {{.f32 = 2.0}};
@@ -213,11 +217,12 @@ Manager::nodeAPI_->setAttribute(text9, NODE_TEXT_LINE_HEIGHT_MULTIPLE, &item);
 
 
 
-#### 设置文本省略
+### 设置文本省略
 
 通过如下属性设置文本溢出时的省略模式。
 
 **表5** 文本省略属性
+
 
 | 属性 | 说明 |
 | --- | --- |
@@ -245,11 +250,12 @@ Manager::nodeAPI_->setAttribute(text20, NODE_TEXT_ELLIPSIS_MODE, &ellipsisModeIt
 
 
 
-#### 设置文本结尾空格优化
+### 设置文本结尾空格优化
 
 通过如下属性设置每行结尾空格是否优化。从API version 20开始，Text组件支持设置每行结尾空格是否优化处理。
 
 **表6** 每行结尾空格处理属性
+
 
 | 属性 | 说明 |
 | --- | --- |
@@ -264,11 +270,12 @@ Manager::nodeAPI_->setAttribute(text14, NODE_TEXT_OPTIMIZE_TRAILING_SPACE, &opti
 
 
 
-#### 设置首行缩进和标点压缩
+### 设置首行缩进和标点压缩
 
 通过如下属性设置首行缩进和行首标点压缩。从API version 23开始，Text组件支持设置行首标点压缩。
 
 **表7** 首行缩进和标点压缩属性
+
 
 | 属性 | 说明 |
 | --- | --- |
@@ -276,7 +283,7 @@ Manager::nodeAPI_->setAttribute(text14, NODE_TEXT_OPTIMIZE_TRAILING_SPACE, &opti
 | NODE_TEXT_COMPRESS_LEADING_PUNCTUATION | 设置行首标点压缩。从API version 23开始支持。 |
 
 
- - 设置首行缩进。        
+ - 设置首行缩进。       
 ```cpp
 // 设置首行缩进
 ArkUI_NumberValue indentVal = {.f32 = VALUE_30};
@@ -284,7 +291,7 @@ ArkUI_AttributeItem indentItem = {&indentVal, VALUE_1};
 Manager::nodeAPI_->setAttribute(text3, NODE_TEXT_INDENT, &indentItem);
 ```
 
- - 设置行首标点压缩。        
+ - 设置行首标点压缩。       
 ```cpp
 // 设置行首标点压缩
 ArkUI_NumberValue value0[] = {{.i32 = true}};
@@ -296,11 +303,12 @@ Manager::nodeAPI_->setAttribute(text11, NODE_TEXT_COMPRESS_LEADING_PUNCTUATION, 
 
 
 
-#### 设置文本尾部缩进
+### 设置文本尾部缩进
 
 通过如下属性设置文本尾部缩进。从API版本26.0.0开始，Text组件支持设置文本尾部缩进。
 
 **表8** 文本尾部缩进属性
+
 
 | 属性 | 说明 |
 | --- | --- |
@@ -315,13 +323,13 @@ Manager::nodeAPI_->setAttribute(text2, NODE_TEXT_TAIL_INDENTS, &tailIndentItem2)
 
 
 
-#### 添加子组件
+## 添加子组件
 
 Text组件支持添加多种子组件，实现图文混排等复杂效果。
 
 
 
-#### 添加Span
+### 添加Span
 
 通过[addChild](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-arkui-nativenodeapi-1#addchild)在Text中添加文本子组件，用于展示行内文本。Span组件需嵌入在Text组件中才能显示，单独使用时不会显示任何内容。
 
@@ -363,7 +371,7 @@ Manager::nodeAPI_->addChild(text, span);
 
 
 
-#### 添加ImageSpan
+### 添加ImageSpan
 
 通过[addChild](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-arkui-nativenodeapi-1#addchild)在文本中添加图片子组件。
 
@@ -399,17 +407,18 @@ void setText6(ArkUI_NodeHandle &text6)
 
 
 
-#### 设置高级文本效果
+## 设置高级文本效果
 
 Text组件支持多种高级文本效果，如渐变、跑马灯等。
 
 
 
-#### 设置渐变效果
+### 设置渐变效果
 
 通过如下属性设置渐变颜色效果。从API version 20开始，Text组件支持设置渐变颜色效果。
 
 **表9** 渐变效果属性
+
 
 | 属性 | 说明 |
 | --- | --- |
@@ -435,7 +444,7 @@ Manager::nodeAPI_->setAttribute(text5, NODE_TEXT_LINEAR_GRADIENT, &linearGradien
 
 
 
-#### 设置跑马灯效果
+### 设置跑马灯效果
 
 从API version 23开始，Text组件支持通过[NODE_TEXT_MARQUEE_OPTIONS](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-node-h-nodeattributetype-text#node_text_marquee_options)属性设置跑马灯效果。
 
@@ -459,7 +468,7 @@ OH_ArkUI_TextMarqueeOptions_Dispose(marqueeOptions);
 
 
 
-#### 设置文本方向
+### 设置文本方向
 
 从API version 23开始，Text组件支持通过[NODE_TEXT_DIRECTION](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-node-h-nodeattributetype-text#node_text_direction)属性设置文本方向。
 

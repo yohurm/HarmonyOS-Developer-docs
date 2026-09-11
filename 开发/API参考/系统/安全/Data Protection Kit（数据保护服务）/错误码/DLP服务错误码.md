@@ -1,6 +1,6 @@
 # DLP服务错误码
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-dlp
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -10,7 +10,8 @@
 
 
 
-#### 19100001 入参错误
+## 19100001 入参错误
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -39,7 +40,8 @@ Invalid parameter value.
 
 
 
-#### 19100002 加解密出错
+## 19100002 加解密出错
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -61,7 +63,8 @@ Credential service busy due to too many tasks or duplicate tasks.
 
 
 
-#### 19100003 加解密超时
+## 19100003 加解密超时
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -71,7 +74,7 @@ Credential task time out.
 
 **错误描述**
 
-DLP（数据防泄漏，Data Loss Prevention）文件加解密操作在规定时间内未完成，导致操作超时失败。
+DLP（数据防泄露，Data Loss Prevention）文件加解密操作在规定时间内未完成，导致操作超时失败。
 
 **可能原因**
 
@@ -83,7 +86,8 @@ DLP文件加解密时间超过10秒。
 
 
 
-#### 19100004 凭据服务错误
+## 19100004 凭据服务错误
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -105,7 +109,8 @@ DLP凭据服务发生内部错误，无法正常提供凭据相关服务。
 
 
 
-#### 19100005 凭据认证服务器错误
+## 19100005 凭据认证服务器错误
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -127,7 +132,8 @@ Credential authentication server error.
 
 
 
-#### 19100006 非DLP沙箱应用
+## 19100006 非DLP沙箱应用
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -149,7 +155,8 @@ No permission to call this API, which is available only for DLP sandbox applicat
 
 
 
-#### 19100007 DLP沙箱应用不允许调用此接口
+## 19100007 DLP沙箱应用不允许调用此接口
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -171,7 +178,8 @@ No permission to call this API, which is available only for non-DLP sandbox appl
 
 
 
-#### 19100008 非DLP文件
+## 19100008 非DLP文件
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -193,7 +201,8 @@ The file is not a DLP file.
 
 
 
-#### 19100009 操作DLP文件失败
+## 19100009 操作DLP文件失败
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -217,7 +226,8 @@ Failed to operate the DLP file.
 
 
 
-#### 19100011 系统服务工作异常
+## 19100011 系统服务工作异常
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -242,7 +252,10 @@ DLP相关的系统服务无法正常运行，导致相关功能不可用。
 
 
 
-#### 19100012 内存申请失败
+## 19100012 内存申请失败
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 **错误信息**
 
@@ -262,7 +275,8 @@ System memory is insufficient.
 
 
 
-#### 19100013 用户无权限
+## 19100013 用户无权限
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -284,7 +298,8 @@ The user does not have the permission.
 
 
 
-#### 19100014 账号未登录
+## 19100014 账号未登录
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -306,7 +321,8 @@ Account not logged in.
 
 
 
-#### 19100016 want参数中没有uri
+## 19100016 want参数中没有uri
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -328,7 +344,8 @@ The uri field is missing in the want parameter.
 
 
 
-#### 19100017 want参数中parameters内没有displayName
+## 19100017 want参数中parameters内没有displayName
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -350,7 +367,8 @@ The displayName field is missing in the want parameter.
 
 
 
-#### 19100018 应用未授权
+## 19100018 应用未授权
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -368,11 +386,12 @@ The application is not authorized.
 
 **处理步骤**
 
-请申请加入授信应用名单。请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)方式获取技术支持。
+后续不支持新增配置支持的授信应用。
 
 
 
-#### 19100021 设置企业应用策略失败
+## 19100021 设置企业应用策略失败
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -394,7 +413,8 @@ Failed to set the enterprise policy.
 
 
 
-#### 19110001 参数错误
+## 19110001 参数错误
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -418,7 +438,8 @@ Parameter error.
 
 
 
-#### 19110002 文件敏感信息识别超时
+## 19110002 文件敏感信息识别超时
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -440,7 +461,8 @@ Sensitive file content identification timed out.
 
 
 
-#### 19110003 文件不支持
+## 19110003 文件不支持
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -466,7 +488,8 @@ The file is not supported.
 
 
 
-#### 19110004 系统功能运行异常
+## 19110004 系统功能运行异常
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -490,7 +513,8 @@ A system error has occurred.
 
 
 
-#### 19100023 指定的用户ID与当前用户ID不一致
+## 19100023 指定的用户ID与当前用户ID不一致
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -512,7 +536,8 @@ The specified userId is inconsistent with the current userId.
 
 
 
-#### 19100024 个人空间用户不支持设置受控应用
+## 19100024 个人空间用户不支持设置受控应用
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 

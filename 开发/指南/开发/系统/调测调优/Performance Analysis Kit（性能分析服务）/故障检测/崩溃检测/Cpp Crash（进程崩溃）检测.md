@@ -1,16 +1,16 @@
 # Cpp Crash（进程崩溃）检测
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cppcrash-guidelines
 
-#### 简介
+## 简介
 
 进程发生崩溃后，系统首先感知到崩溃，然后抓取崩溃相关的信息，最后生成崩溃日志并上报崩溃事件，为开发者提供详细的维测日志以辅助故障定位。本文分为基本概念、实现原理、约束与限制、日志获取、日志规格五个小节介绍系统提供的CppCrash检测方法。开发者如果想进一步了解如何分析CppCrash问题，请参见[CppCrash类问题分析方法](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-app-crash-cpp-way)。
 
 
 
-#### 基本概念
+## 基本概念
 
  - **信号**
 
@@ -40,7 +40,7 @@
 
 
 
-#### 实现原理
+## 实现原理
 
 系统检测进程崩溃的流程如下：
 1. 进程在运行时发生崩溃，会收到来自内核发送的崩溃信号，由进程在启动时注册的信号处理模块进行处理。
@@ -50,9 +50,10 @@
 
 
 
-#### 系统处理的崩溃信号
+### 系统处理的崩溃信号
 
 系统的进程崩溃检测能力主要基于POSIX信号机制，目前支持对以下崩溃信号的处理：
+
 
 | 信号值(signo) | 信号 | 解释 | 触发原因 |
 | --- | --- | --- | --- |
@@ -70,9 +71,10 @@
 
 
 
-#### SIGILL崩溃类型
+### SIGILL崩溃类型
 
 SIGILL是一个在Unix和类Unix操作系统中的信号，它表示非法指令异常。SIGILL信号通常由以下几种类型的问题场景引起：
+
 
 | 错误码（code） | 信号字符串 | 解释 | 触发原因 |
 | --- | --- | --- | --- |
@@ -89,9 +91,10 @@ SIGILL是一个在Unix和类Unix操作系统中的信号，它表示非法指令
 
 
 
-#### SIGTRAP崩溃类型
+### SIGTRAP崩溃类型
 
 SIGTRAP信号通常用于调试和跟踪程序的执行。下面是SIGTRAP信号类别的问题场景介绍：
+
 
 | 错误码（code） | 信号字符串 | 解释 | 触发原因 |
 | --- | --- | --- | --- |
@@ -103,9 +106,10 @@ SIGTRAP信号通常用于调试和跟踪程序的执行。下面是SIGTRAP信号
 
 
 
-#### SIGBUS崩溃类型
+### SIGBUS崩溃类型
 
 SIGBUS是一种由操作系统向进程发送的信号，通常表示内存访问错误。其中，不同的信号类别表示不同的错误场景：
+
 
 | 错误码（code） | 信号字符串 | 解释 | 触发原因 |
 | --- | --- | --- | --- |
@@ -118,9 +122,10 @@ SIGBUS是一种由操作系统向进程发送的信号，通常表示内存访�
 
 
 
-#### SIGFPE崩溃类型
+### SIGFPE崩溃类型
 
 SIGFPE是一个信号，它表示浮点异常或算术异常。下面是这些SIGFPE信号类别的问题场景：
+
 
 | 错误码（code） | 信号字符串 | 解释 | 触发原因 |
 | --- | --- | --- | --- |
@@ -136,9 +141,10 @@ SIGFPE是一个信号，它表示浮点异常或算术异常。下面是这些SI
 
 
 
-#### SIGSEGV崩溃类型
+### SIGSEGV崩溃类型
 
 SIGSEGV是一种信号，它表示进程试图访问一个不属于它的内存地址，或者试图访问一个已被操作系统标记为不可访问的内存地址。SIGSEGV信号通常是由以下两种情况引起的：
+
 
 | 错误码（code） | 信号字符串 | 解释 | 触发原因 |
 | --- | --- | --- | --- |
@@ -148,9 +154,10 @@ SIGSEGV是一种信号，它表示进程试图访问一个不属于它的内存�
 
 
 
-#### 信号产生原因分类
+### 信号产生原因分类
 
 除了以上根据信号值维度分类，还可以根据信号产生的原因维度分类。所有信号值都可以按照信号产生的原因分类，当前已有信号产生原因分类的code值如下：
+
 
 | 错误码（code） | 信号字符串 | 解释 | 触发原因 |
 | --- | --- | --- | --- |
@@ -166,7 +173,7 @@ SIGSEGV是一种信号，它表示进程试图访问一个不属于它的内存�
 
 
 
-#### 约束与限制
+## 约束与限制
 
  - 不建议进程自己注册信号处理函数，进程崩溃后可能会延迟退出，当处理时间超过5s可能会导致进程无响应问题上报。
  - “/data/log/faultlog/faultlogger”目录下同一进程/应用最多保存10份cppcrash日志，日志数量超限时会从最早生成该进程/应用的cppcrash日志开始删除直至数量不超限。建议开发者在开发调试阶段及时查看cppcrash日志，避免因cppcrash日志被删除而无法获取崩溃信息。
@@ -176,7 +183,7 @@ SIGSEGV是一种信号，它表示进程试图访问一个不属于它的内存�
 
 
 
-#### 日志获取
+## 日志获取
 
 进程崩溃日志是故障日志中的一种，可通过以下方式获取：
 
@@ -194,16 +201,17 @@ HiAppEvent给开发者提供了故障订阅接口，详见[HiAppEvent介绍](htt
 
 
 
-#### 日志规格
+## 日志规格
 
 故障日志的字段信息表如下：
+
 
 | 字段 | 描述 | 起始API版本 | 是否必选项 | 非必选说明 |
 | --- | --- | --- | --- | --- |
 | Device info | 设备信息 | 8 | 是 | - |
 | Build info | 版本信息 | 8 | 是 | - |
-| DeviceDebuggable | 设备的系统版本是否可调试，和开发者选项无关 | 23 | 是 | - |
-| Fingerprint | 故障特征，聚类同类问题的哈希值，不同日志该值相同表示为同一故障原因 | 8 | 是 | - |
+| DeviceDebuggable | 设备的系统版本是否可调试 | 23 | 是 | - |
+| Fingerprint | 故障特征，聚类同类问题的哈希值，哈希值相同即判定为同一故障原因。 | 8 | 是 | - |
 | Enabled app log configs | 使能的配置参数列表 | 20 | 否 | 仅用户配置时打印，详见应用通过HiAppEvent设置崩溃日志配置参数场景日志规格。 |
 | Module name | 模块名 | 8 | 是 | - |
 | ReleaseType | 应用的版本类型 | 23 | 否 | 仅在应用进程提供，release表示应用为release版本应用，debug表示应用为debug版本应用。 |
@@ -219,10 +227,11 @@ HiAppEvent给开发者提供了故障订阅接口，详见[HiAppEvent介绍](htt
 | Uid | 用户ID | 8 | 是 | - |
 | HiTraceId | HiTraceChain唯一跟踪标识 | 20 | 否 | 仅故障线程开启HiTraceChain功能时提供，详见HiTraceChain介绍。 |
 | Process name | 故障进程名 | 8 | 是 | - |
-| App running unique id | 应用运行时唯一关联的id。 | 26.0.0 | 是 | - |
+| App running unique id | 应用运行时唯一关联的ID | 26.0.0 | 是 | - |
 | Process life time | 故障进程存活时间 | 8 | 是 | - |
 | Process Memory(kB) | 故障进程内存占用 | 20 | 是 | - |
 | Device Memory(kB) | 整机内存信息 | 20 | 否 | 依赖维测服务进程，若发生故障时维测服务进程停止或设备重启则无此字段，详见实现原理。 |
+| Log source | 用于标识采集日志的方式，目前有以下几种方式： processdump： 由用户态生成 pdump： 用户态生成cppcrash日志失败时由内核补偿生成 liteprocessdump： render/cpu等低权限进程崩溃时由用户态生成 不同方式下生成日志规格会有差异，详见不同采集方式下日志规格差异。 | 26.0.0 | 是 | - |
 | Reason | 故障原因 | 8 | 是 | - |
 | LastFatalMessage | Fatal消息 | 8 | 否 | 以下几种情况共用此字段： 解析到不可靠的栈帧地址时输出的提示信息。 因ABORT信号崩溃退出时保存最后一条FATAL级Hilog日志。 系统内部的维测信息。 应用通过OH_HiDebug_SetCrashObj设置的字符串信息。 从API版本26.0.0开始，应用若开启模块加载链路调试开关，则此字段包含模块加载链路。 |
 | Fault thread info | 故障线程信息 | 8 | 是 | - |
@@ -259,7 +268,7 @@ HiAppEvent给开发者提供了故障订阅接口，详见[HiAppEvent介绍](htt
 
 
 
-#### 一般故障场景日志规格
+### 一般故障场景日志规格
 
 本节主要介绍崩溃日志的一般日志规格，其余节介绍特殊场景下日志规格，以下是一份DevEco Studio归档在FaultLog的进程崩溃日志的核心内容。
 
@@ -290,6 +299,7 @@ Process name:com.example.myapplication <- 故障进程名
 Process life time:50s <- 故障进程存活时间
 Process Memory(kB): 185430(Rss) <- 故障进程内存占用
 Device Memory(kB): Total 11688288, Free 2427804, Available 5592064 <- 整机内存状态（非必选）
+Log source:processdump <- 用于标识采集日志的方式，processdump表示由用户态生成
 Reason:Signal:SIGSEGV(SI_USER)@0x000000000000303e from:12350:0 <- 故障原因，详见信号值说明
 Fault thread info:           <- 故障线程信息
 Tid:11941, Name:.hiappeventtest  <- 故障线程号，线程名
@@ -419,6 +429,7 @@ HiTraceId：HiTraceChain提供的唯一跟踪标识，参考[HiTraceChain介绍]
 #02 pc 00008909 /data/crasher_cpp(DfxCrasher::ParseAndDoCrash(char const*) const+612)(d6cead5be17c9bb7eee2a9b4df4b7626)
 ```
 
+
 | 序号 | pc在文件内的偏移字节数 | pc属于内存段的文件名 | 函数名 | 函数内偏移的字节数 | BuildID |
 | --- | --- | --- | --- | --- | --- |
 | #00 | 000e8400 | /system/lib/ld-musl-arm.so.1 | raise | 176 | a40044d0acb68107cfc4adb5049c0725 |
@@ -442,7 +453,7 @@ ARM 64位系统支持抓取CPP和JS之间跨语言的调用栈，因此如果在
 
 
 
-#### 空指针解引用故障场景日志规格
+### 空指针解引用故障场景日志规格
 
 空指针解引用通常有以下两个常见的场景：
 
@@ -468,6 +479,7 @@ Process name:./crasher_cpp         <- 故障进程名
 Process life time:1s               <- 故障进程存活时间
 Process Memory(kB): 8286(Rss)     <- 故障进程内存占用
 Device Memory(kB): Total 11688288, Free 2590168, Available 6153216 <- 整机内存状态（非必选）
+Log source:processdump <- 用于标识采集日志的方式，processdump表示由用户态生成
 Reason:Signal:SIGSEGV(SEGV_MAPERR)@0x0000000000000004  probably caused by NULL pointer dereference   <- 故障原因和空指针提示
 Fault thread info:
 Tid:46314, Name:crasher_cpp         <- 故障线程号，线程名
@@ -491,7 +503,7 @@ pstate:0000000060001000 esr:0000000092000005          <-  状态寄存器值（a
 
 
 
-#### 栈溢出故障场景日志规格
+### 栈溢出故障场景日志规格
 
 以下三种场景可能出现栈溢出：
 
@@ -532,6 +544,7 @@ Process name:./crasher_cpp             <- 故障进程名
 Process life time:2s                  <- 故障进程存活时间
 Process Memory(kB): 8306(Rss)     <- 故障进程内存占用
 Device Memory(kB): Total 11688288, Free 2595812, Available 6161408 <- 整机内存状态（非必选）
+Log source:processdump <- 用于标识采集日志的方式，processdump表示由用户态生成
 Reason:Signal:SIGSEGV(SEGV_ACCERR)@0x0000005b517d3fd0  current thread stack low address = 0x0000005b517d4000, probably caused by stack-buffer-overflow    <- 故障原因和栈溢出提示
 Fault thread info:
 Tid:47050, Name:crasher_cpp
@@ -546,7 +559,7 @@ Tid:47050, Name:crasher_cpp
 
 
 
-#### 栈覆盖故障场景日志规格
+### 栈覆盖故障场景日志规格
 
 栈覆盖故障场景是指业务代码运行时改写了原本保存函数调用信息的栈内存，导致无法成功回溯调用栈。系统在回栈失败后尽可能提供开发者信息以分析问题，该场景会在日志中打印信息提示从#xx开始尝试从线程栈内存里解析不可靠的调用栈。之所以说不可靠的调用栈，是因为调用栈可能不是一个完整的函数调用链路，从#xx层往下的调用栈是不可靠的，意味着从#xx层开始相邻两层栈之间可能不存在调用关系，需要开发者结合业务代码分析其中的调用链路，比如下例中正确的调用关系是#05->#04->#03->#01。以下是一份DevEco Studio归档在FaultLog的进程崩溃日志的核心内容。
 
@@ -566,6 +579,7 @@ Process name:./crasher_cpp                <- 故障进程名
 Process life time:1s                      <- 故障进程存活时间
 Process Memory(kB): 8245(Rss)            <- 故障进程内存占用
 Device Memory(kB): Total 11688288, Free 2570076, Available 6149120 <- 整机内存状态（非必选）
+Log source:processdump <- 用于标识采集日志的方式，processdump表示由用户态生成
 Reason:Signal:SIGILL(ILL_ILLOPN)@000000000000000000      <- 故障原因
 LastFatalMessage:Failed to unwind stack, try to get unreliable call stack from #01 by reparsing thread stack. <- #00和#01一般认为是可信的，从#02开始尝试从线程栈内存里解析不可靠的调用栈
 Fault thread info:
@@ -593,7 +607,7 @@ pstate:0000000060001000 esr:0000000000000000
 
 
 
-#### 异步线程栈跟踪故障场景日志规格
+### 异步线程栈跟踪故障场景日志规格
 
 当异步线程发生崩溃后，把提交该异步任务的线程栈也打印出来，帮助定位由于异步任务提交者造成的崩溃问题。崩溃线程的调用栈和其提交线程的调用栈通过SubmitterStacktrace字符串分隔。
 
@@ -653,6 +667,7 @@ Process name:com.example.uv001              <- 故障进程名
 Process life time:42s                        <- 故障进程存活时间
 Process Memory(kB): 151736(Rss)            <- 故障进程内存占用
 Device Memory(kB): Total 11712088, Free 2500232, Available 5275648 <- 整机内存状态（非必选）
+Log source:processdump <- 用于标识采集日志的方式，processdump表示由用户态生成
 Reason:Signal:SIGABRT(SI_TKILL)@0x01317bf600006f05  from:28421:20020214  <- 故障原因
 Fault thread info:
 Tid:29192, Name:OS_FFRT_2_0                 <- 故障线程号，线程名
@@ -686,7 +701,7 @@ Tid:29192, Name:OS_FFRT_2_0                 <- 故障线程号，线程名
 
 
 
-#### 应用通过HiAppEvent设置崩溃日志配置参数场景日志规格
+### 应用通过HiAppEvent设置崩溃日志配置参数场景日志规格
 
 系统提供了通用的崩溃日志生成功能，但部分应用有自定义日志内容的需求。因此从**API version 20**开始，可通过设置[setEventConfig](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-watcher-crash-events#seteventconfig接口说明)接口配置自定义日志内容。
 
@@ -751,7 +766,7 @@ OpenFiles:
 
 
 
-#### 有页面切换轨迹的故障场景日志规格
+### 有页面切换轨迹的故障场景日志规格
 
 针对包含页面切换的应用，自API version 20起，维测进程会记录应用切换历史。应用发生故障后，生成的故障文件将包含页面切换历史轨迹。
 
@@ -796,11 +811,11 @@ leaves foreground：应用在后台运行。
 
 
 
-#### CppCrash聚类
+## CppCrash聚类
 
 
 
-#### 聚类简介
+### 聚类简介
 
 应用程序在不同版本或同一版本的不同时间产生的Cpp Crash可能为同一原因，但在Cpp crash故障日志中生成的大部分信息会随版本、时间等因素变化，无法快速确定是否为重复问题；
 
@@ -812,7 +827,7 @@ Cpp Crash故障信息包含系统侧和应用侧的调用栈，不利于应用�
 
 
 
-#### 聚类信息范围
+### 聚类信息范围
 
 Cpp Crash故障日志信息中的故障线程信息表示业务线程发生故障时代码调用信息，相同的故障线程调用栈信息必然表示相同的故障原因。
 
@@ -839,7 +854,7 @@ Registers:
 
 
 
-#### 提取聚类信息
+### 提取聚类信息
 
 故障线程信息，除线程名和线程号外，主要为调用栈信息，可以通过正则匹配筛选堆栈内容。
 
@@ -848,6 +863,7 @@ Registers:
 建议对每一帧栈帧，执行以下操作：
 
 **Native栈帧标准化：**
+
 
 | 原始栈帧内容 | 标准化后栈帧内容 |
 | --- | --- |
@@ -866,12 +882,14 @@ d. 保留函数完整签名（如 panda::JSValueRef ArkNativeFunctionCallBack&lt
 
 若Native栈帧存在仅有二进制文件名而没有函数名时，可选择保留PC的偏移值与文件路径：
 
+
 | 原始栈帧内容 | 标准化后栈帧内容 |
 | --- | --- |
 | #01 pc 00008cdc /data/storage/el1bundle/libs/arm64/libsample.so(8b74cdc906ea6b2eba95d891bc91c72a) | 00008cdc /data/storage/el1bundle/libs/arm64/libsample.so |
 
 
 **JS栈帧标准化：**
+
 
 | 原始栈帧内容 | 标准化后栈帧内容 |
 | --- | --- |
@@ -890,7 +908,7 @@ d. 保留模块名、依赖模块名、版本号信息（如sample|sample|1.0.0|
 
 
 
-#### 提取聚类特征
+### 提取聚类特征
 
 经过标准化的栈帧可能仍然存在栈帧较多，不利于聚类后存储以及查询的情况，因此开发者需要根据业务情况制定聚类特征提取方法，将栈帧信息进一步简化为聚类特征。
 
@@ -949,9 +967,10 @@ at onPageShow (sample|sample|1.0.0|src/main/ets/pages/Index.ts:381:36)
 
 
 
-#### 生成聚类特征
+### 生成聚类特征
 
 最终生成的聚类特征是一个包含少量标准化栈帧的业务调用栈序列。
+
 
 | 原始故障线程栈 | 最终聚类特征（调用顺序从上到下） |
 | --- | --- |
@@ -964,11 +983,58 @@ at onPageShow (sample|sample|1.0.0|src/main/ets/pages/Index.ts:381:36)
 
 
 
-#### 常见问题
+## 不同采集方式下日志规格差异
+
+
+| 字段 | 描述 | processdump | pdump | liteprocessdump |
+| --- | --- | --- | --- | --- |
+| Device info | 设备信息 | 有 | 有 | 有 |
+| Build info | 版本信息 | 有 | 有 | 有 |
+| DeviceDebuggable | 设备的系统版本是否可调试 | 有 | 有 | 有 |
+| Fingerprint | 故障特征，聚类同类问题的哈希值，哈希值相同即判定为同一故障原因。 | 有 | 有 | 有 |
+| Enabled app log configs | 使能的配置参数列表 | 有 | 无 | 无 |
+| Module name | 模块名 | 有 | 有 | 有 |
+| ReleaseType | 应用的版本类型 | 有 | 有 | 有 |
+| CpuAbi | 二进制接口类型 | 有 | 有 | 有 |
+| Version | 应用版本号(点分格式) | 有 | 有 | 有 |
+| VersionCode | 应用版本号(整数格式) | 有 | 有 | 有 |
+| IsSystemApp | 应用是否为系统应用 | 有 | 有 | 有 |
+| PreInstalled | 是否预置应用 | 有 | 有 | 有 |
+| Foreground | 前后台状态 | 有 | 有 | 有 |
+| Page switch history | 页面切换轨迹 | 有 | 有 | 有 |
+| Timestamp | 故障发生时间戳 | 有 | 有 | 有 |
+| Pid | 进程号 | 有 | 有 | 有 |
+| Uid | 用户ID | 有 | 有 | 有 |
+| HiTraceId | HiTraceChain唯一跟踪标识 | 有 | 无 | 无 |
+| Process name | 故障进程名 | 有 | 有 | 有 |
+| App running unique id | 应用运行时唯一关联的ID | 有 | 无 | 有 |
+| Process life time | 故障进程存活时间 | 有 | 有 | 有 |
+| Process Memory(kB) | 故障进程内存占用 | 有 | 有 | 有 |
+| Device Memory(kB) | 整机内存状态 | 有 | 有 | 有 |
+| Log source | 用于标识采集日志的方式 | 有 | 有 | 有 |
+| Reason | 故障原因 | 有 | 有 | 有 |
+| LastFatalMessage | Fatal消息 | 有 | 无 | 无 |
+| Fault thread info | 故障线程信息 | 有 | 有 | 有 |
+| SubmitterStacktrace | 提交者线程栈 | 有 | 无 | 无 |
+| Registers | 故障现场寄存器 | 有 | 有 | 有 |
+| ExtraCrashInfo | 额外的内存信息 | 有 | 无 | 无 |
+| Other thread info | 其他线程信息 | 有 | 有 | 有 |
+| Memory near registers | 故障现场寄存器附近内存值 | 有 | 有 | 有 |
+| FaultStack | 故障线程栈内存信息 | 有 | 有 | 有 |
+| Maps | 故障时进程的内存空间 | 有 | 有 | 有 |
+| OpenFiles | 故障时进程持有的文件句柄信息 | 有 | 无 | 有 |
+| HiLog | 故障之前打印的流水日志，最多1000行 | 有 | 有 | 有 |
+| [truncated] | 故障日志截断标志 | 有 | 有 | 有 |
+| MergeLog | 三方应用拼接日志标识 | 有 | 无 | 无 |
 
 
 
-#### 故障日志中调用栈出现中断
+
+## 常见问题
+
+
+
+### 故障日志中调用栈出现中断
 
 在HarmonyOS系统中，调用栈获取依赖回栈表（记录调用栈信息的表）和frame pointer（栈帧指针）两种机制，需要保证以下两个编译选项开启：
 
@@ -986,12 +1052,12 @@ at onPageShow (sample|sample|1.0.0|src/main/ets/pages/Index.ts:381:36)
 
 
 
-#### 应用发生SIGPIPE异常退出
+### 应用发生SIGPIPE异常退出
 
 从**API version 24**开始，当应用发生SIGPIPE异常退出时，可开启SIGPIPE信号打印调用栈功能，重启应用后，开发者复现问题场景，可以抓取调用栈信息并输出到HILOG。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/VohaWo1CSLuQE10_WONhkw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071929Z&HW-CC-Expire=86400&HW-CC-Sign=66F6AD7F7548DBC3AF40EE5F2904E638CF92F256F9AA45F2E0FD4FAECABC38FE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/Mbjo6dg5REGv_5JFafAKIg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072721Z&HW-CC-Expire=86400&HW-CC-Sign=DFE5941C31D7643B5D603301BBA89B81CB6F2EFA1A7477A68AEB1F1E3BAFA1C0)
 
 
 此功能只能在[debug版本应用](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/performance-analysis-kit-terminology#debug版本应用)开启。
@@ -1007,7 +1073,9 @@ SIGPIPE异常退出时关键日志如下所示：
  - **SIGPIPE信号说明**
 
 | 信号值(signo) | 信号 | 解释 | 触发原因 |
+
 | --- | --- | --- | --- |
+
 | 13 | SIGPIPE | 非法操作管道或套接字 | - 管道（pipe）或命名管道（FIFO）：写端向管道写入，但读端已经关闭。 - 套接字（socket）：客户端断开连接后，服务端仍尝试往已关闭的连接写数据。 |
  - **打开SIGPIPE调试开关**
 
@@ -1078,7 +1146,7 @@ int testSIGPIPE()
 
 
 
-#### 内存问题引发的Crash故障
+### 内存问题引发的Crash故障
 
 **问题现象**
 
@@ -1131,6 +1199,7 @@ Process name:./test_processdump
 Process life time:1s
 Process Memory(kB): 18497(Rss)
 Device Memory(kB): Total 11688320, Free 704432, Available 6171648
+Log source:processdump <- 用于标识采集日志的方式，processdump表示由用户态生成
 Reason:Signal:SIGTRAP(TRAP_BRKPT)@0x0000005a6cabe068
 LastFatalMessage:This is an unexpected memory usage behavior.may double free   ----> 发生了内存问题触发的Crash。
 Fault thread info:

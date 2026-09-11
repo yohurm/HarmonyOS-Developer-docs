@@ -1,6 +1,6 @@
 # 60180007 服务端通过Authorization Code无法获取到华为账号一键登录手机号如何解决
 
-更新时间：2026-05-12 09:31:20
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-faq-21
 

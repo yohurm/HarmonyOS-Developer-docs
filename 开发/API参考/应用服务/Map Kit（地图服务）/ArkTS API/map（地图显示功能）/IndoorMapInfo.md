@@ -1,13 +1,14 @@
 # Interface (IndoorMapInfo)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-indoormapinfo
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+**支持设备：** Phone | PC/2in1 | Tablet
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 import { map } from '@kit.MapKit';
@@ -15,11 +16,12 @@ import { map } from '@kit.MapKit';
  
   
 
-#### IndoorMapInfo
+## IndoorMapInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-室内图信息。当进入室内图时，会通过[on](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-mapeventmanager#onindoormapenter)方法触发回调，并返回[IndoorMapInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-indoormapinfo)类型的实例。
+**支持设备：** Phone | PC/2in1 | Tablet
+
+室内图信息。当进入室内图时，会通过[on](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-mapeventmanager#onindoormapenter)方法触发回调，并返回[IndoorMapInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-indoormapinfo)类型的实例，从而实现室内导航、楼层切换等功能。
  
 **模型约束：** 此接口仅可在Stage模型下使用。
  
@@ -31,6 +33,7 @@ import { map } from '@kit.MapKit';
  
 **起始版本：** 5.1.1(19)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | buildingId | string | 否 | 否 | 表示建筑物的id。 |

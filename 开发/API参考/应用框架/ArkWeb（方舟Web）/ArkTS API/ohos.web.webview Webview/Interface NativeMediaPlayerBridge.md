@@ -1,29 +1,31 @@
 # Interface (NativeMediaPlayerBridge)
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-nativemediaplayerbridge
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-NativeMediaPlayerBridge 是[CreateNativeMediaPlayerCallback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-t#createnativemediaplayercallback12)回调函数的返回值类型，接管网页媒体的播放器和 ArkWeb 内核之间的一个接口类。ArkWeb 内核通过该接口类的实例对象来控制应用创建的用来接管网页媒体的播放器。该接口允许应用使用自定义的媒体播放器来接管网页中的媒体内容播放，同时，该接口还支持播放器的挂起和恢复机制。
+NativeMediaPlayerBridge是[CreateNativeMediaPlayerCallback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-t#createnativemediaplayercallback12)回调函数的返回值类型，是接管网页媒体的播放器和ArkWeb内核之间的一个接口类。ArkWeb内核通过该接口类的实例对象控制应用创建的用于接管网页媒体的播放器。该接口允许应用使用自定义的媒体播放器接管网页中的媒体内容播放，同时，该接口还支持播放器的挂起和恢复机制。
  
 > [!NOTE]
 > 本模块首批接口从API version 9开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 本Interface首批接口从API version 12开始支持。 示例效果请以真机运行为准。
 
   
 
-#### updateRect12+
+## updateRect12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateRect(x: number, y: number, width: number, height: number): void
  
-向应用通知surface位置信息。
+向应用通知surface位置信息。当网页布局变化、页面滚动或播放区域发生改变时由ArkWeb内核回调此方法，应用需据此更新原生播放器渲染表面的位置和大小。
  
 **系统能力：** SystemCapability.Web.Webview.Core
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | x | number | 是 | surface相对于Web组件的x坐标信息。 单位：px。 |
@@ -38,9 +40,10 @@ updateRect(x: number, y: number, width: number, height: number): void
  
   
 
-#### play12+
+## play12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 play(): void
  
@@ -54,9 +57,10 @@ play(): void
  
   
 
-#### pause12+
+## pause12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pause(): void
  
@@ -70,9 +74,10 @@ pause(): void
  
   
 
-#### seek12+
+## seek12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 seek(targetTime: number): void
  
@@ -82,9 +87,10 @@ seek(targetTime: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| targetTime | number | 是 | 播放跳转到的时间点。 单位：秒。 |
+| targetTime | number | 是 | 播放跳转到的时间点，从媒体开始播放时计算。 单位：秒。 |
  
  
 **示例：**
@@ -93,9 +99,10 @@ seek(targetTime: number): void
  
   
 
-#### setVolume12+
+## setVolume12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setVolume(volume: number): void
  
@@ -105,9 +112,10 @@ setVolume(volume: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| volume | number | 是 | 播放器的音量。 取值范围：[0, 1.0]，其中0表示静音，1.0表示最大音量。 |
+| volume | number | 是 | 播放器的音量。 取值范围：[0, 1.0]，其中0表示静音，1.0表示最大音量。超出取值范围时，按边界值自动修正。 |
  
  
 **示例：**
@@ -116,9 +124,10 @@ setVolume(volume: number): void
  
   
 
-#### setMuted12+
+## setMuted12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMuted(muted: boolean): void
  
@@ -128,6 +137,7 @@ setMuted(muted: boolean): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | muted | boolean | 是 | 是否静音。 true表示静音，false表示未静音。 |
@@ -139,9 +149,10 @@ setMuted(muted: boolean): void
  
   
 
-#### setPlaybackRate12+
+## setPlaybackRate12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setPlaybackRate(playbackRate: number): void
  
@@ -151,9 +162,10 @@ setPlaybackRate(playbackRate: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| playbackRate | number | 是 | 播放速率。 取值范围：[0, 10.0]，其中1表示原速播放。 |
+| playbackRate | number | 是 | 播放速率。 取值范围：[0, 10.0]，其中1表示原速播放。超出取值范围时，按边界值自动修正。 |
  
  
 **示例：**
@@ -162,9 +174,10 @@ setPlaybackRate(playbackRate: number): void
  
   
 
-#### release12+
+## release12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(): void
  
@@ -178,13 +191,14 @@ release(): void
  
   
 
-#### enterFullscreen12+
+## enterFullscreen12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enterFullscreen(): void
  
-播放器进入全屏。
+使播放器进入全屏。
  
 **系统能力：** SystemCapability.Web.Webview.Core
  
@@ -194,13 +208,14 @@ enterFullscreen(): void
  
   
 
-#### exitFullscreen12+
+## exitFullscreen12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 exitFullscreen(): void
  
-播放器退出全屏。
+使播放器退出全屏。
  
 **系统能力：** SystemCapability.Web.Webview.Core
  
@@ -210,9 +225,10 @@ exitFullscreen(): void
  
   
 
-#### resumePlayer12+
+## resumePlayer12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 resumePlayer?(): void
  
@@ -226,9 +242,10 @@ resumePlayer?(): void
  
   
 
-#### suspendPlayer12+
+## suspendPlayer12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 suspendPlayer?(type: SuspendType): void
  
@@ -238,9 +255,10 @@ suspendPlayer?(type: SuspendType): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | SuspendType | 是 | 播放器挂起类型。 |
+| type | SuspendType | 是 | 播放器挂起类型，用于指定播放器挂起的方式。不同SuspendType取值对应不同的挂起场景。 |
  
  
 **示例：**

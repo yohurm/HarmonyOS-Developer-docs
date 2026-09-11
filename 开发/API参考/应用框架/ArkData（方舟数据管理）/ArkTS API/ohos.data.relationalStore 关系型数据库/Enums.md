@@ -1,18 +1,19 @@
 # Enums
 
-更新时间：2026-06-17 08:22:21
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-data-relationalstore-e
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 
 
-#### SecurityLevel
+## SecurityLevel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 数据库的安全级别枚举。请使用枚举名称而非枚举值。数据库的安全等级仅支持由低向高设置，不支持由高向低设置。
 
@@ -21,6 +22,7 @@
 
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -32,13 +34,15 @@
 
 
 
-#### EncryptionAlgo14+
+## EncryptionAlgo14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 数据库的加密方式枚举。请使用枚举名称而非枚举值。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -49,13 +53,15 @@
 
 
 
-#### HmacAlgo14+
+## HmacAlgo14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 数据库的HMAC算法枚举。请使用枚举名称而非枚举值。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -66,13 +72,15 @@
 
 
 
-#### KdfAlgo14+
+## KdfAlgo14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 数据库的PBKDF2算法枚举。请使用枚举名称而非枚举值。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -83,13 +91,15 @@
 
 
 
-#### Tokenizer17+
+## Tokenizer17+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述fts（全文搜索）场景下使用的分词器枚举。请使用枚举名称而非枚举值。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -210,13 +220,15 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### AssetStatus10+
+## AssetStatus10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述资产附件的状态枚举。请使用枚举名称而非枚举值。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -231,11 +243,13 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### SyncMode
+## SyncMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 指数据库同步模式。请使用枚举名称而非枚举值。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -248,13 +262,15 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### Origin11+
+## Origin11+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 表示数据来源。请使用枚举名称而非枚举值。
 
 **系统能力：** SystemCapability.DistributedDataManager.CloudSync.Client
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -265,13 +281,15 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### Field11+
+## Field11+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 用于谓词查询条件的特殊字段。请使用枚举名称而非枚举值。
 
 **系统能力：** SystemCapability.DistributedDataManager.CloudSync.Client
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -286,29 +304,33 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### SubscribeType
+## SubscribeType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述订阅类型。请使用枚举名称而非枚举值。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SUBSCRIBE_TYPE_REMOTE | 0 | 订阅远程数据更改。 系统能力： SystemCapability.DistributedDataManager.RelationalStore.Core |
-| SUBSCRIBE_TYPE_CLOUD10+ | 1 | 订阅云端数据更改。 系统能力： SystemCapability.DistributedDataManager.CloudSync.Client |
-| SUBSCRIBE_TYPE_CLOUD_DETAILS10+ | 2 | 订阅云端数据更改详情。 系统能力： SystemCapability.DistributedDataManager.CloudSync.Client |
+| SUBSCRIBE_TYPE_CLOUD10+ | 1 | 订阅云端数据更改。 需要权限： - API版本12+：N/A - API版本10-11：ohos.permission.DISTRIBUTED_DATASYNC 系统能力： SystemCapability.DistributedDataManager.CloudSync.Client |
+| SUBSCRIBE_TYPE_CLOUD_DETAILS10+ | 2 | 订阅云端数据更改详情。 需要权限： - API版本12+：N/A - API版本10-11：ohos.permission.DISTRIBUTED_DATASYNC 系统能力： SystemCapability.DistributedDataManager.CloudSync.Client |
 | SUBSCRIBE_TYPE_LOCAL_DETAILS12+ | 3 | 订阅本地数据更改详情。 系统能力： SystemCapability.DistributedDataManager.RelationalStore.Core |
 
 
 
 
-#### RebuildType12+
+## RebuildType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述数据库重建类型的枚举。请使用枚举名称而非枚举值。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -319,43 +341,49 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### ChangeType10+
+## ChangeType10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述数据变更类型的枚举。请使用枚举名称而非枚举值。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| DATA_CHANGE | 0 | 表示是数据发生变更。 |
-| ASSET_CHANGE | 1 | 表示是资产附件发生了变更。 |
+| DATA_CHANGE | 0 | 表示是数据发生变更。 需要权限： - API版本12+：N/A - API版本10-11：ohos.permission.DISTRIBUTED_DATASYNC |
+| ASSET_CHANGE | 1 | 表示是资产附件发生了变更。 需要权限： - API版本12+：N/A - API版本10-11：ohos.permission.DISTRIBUTED_DATASYNC |
 
 
 
 
-#### DistributedType10+
+## DistributedType10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述表的分布式类型的枚举。请使用枚举名称而非枚举值。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DISTRIBUTED_DEVICE | 0 | 表示在不同设备之间分布式的数据库表。 系统能力： SystemCapability.DistributedDataManager.RelationalStore.Core |
-| DISTRIBUTED_CLOUD | 1 | 表示在设备和云端之间分布式的数据库表。 系统能力： SystemCapability.DistributedDataManager.CloudSync.Client |
+| DISTRIBUTED_CLOUD | 1 | 表示在设备和云端之间分布式的数据库表。 需要权限： - API版本12+：N/A - API版本10-11：ohos.permission.DISTRIBUTED_DATASYNC 系统能力： SystemCapability.DistributedDataManager.CloudSync.Client |
 
 
 
 
-#### ConflictResolution10+
+## ConflictResolution10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 插入和修改接口的冲突解决模式。请使用枚举名称而非枚举值。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -369,9 +397,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### AssetConflictPolicy
+## AssetConflictPolicy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 资产冲突策略枚举。请使用枚举名称而非枚举值。
 
@@ -380,6 +409,7 @@ export default class EntryAbility extends UIAbility {
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -390,13 +420,15 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### Progress10+
+## Progress10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述端云同步过程的枚举。请使用枚举名称而非枚举值。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -407,13 +439,15 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### ProgressCode10+
+## ProgressCode10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示端云同步过程的状态。请使用枚举名称而非枚举值。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -430,13 +464,15 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### TransactionType14+
+## TransactionType14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述创建事务对象的枚举。请使用枚举名称而非枚举值。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -447,13 +483,15 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### ColumnType18+
+## ColumnType18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述数据库列存储类型的枚举。请使用枚举名称而非枚举值。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -470,15 +508,17 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### DistributedTableType23+
+## DistributedTableType23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 分布式表类型的枚举。请使用枚举名称而非枚举值。此配置项为数据库级配置，如果数据库中有多张分布式表，则所有表必须使用相同的分布式表类型，且不支持切换升级。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **模型约束：** 此接口仅可在Stage模型下可用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -488,9 +528,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### SyncResultCode
+## SyncResultCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述设备同步状态的枚举。请使用枚举名称而非枚举值。
 
@@ -499,6 +540,7 @@ export default class EntryAbility extends UIAbility {
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **模型约束：** 此接口仅在Stage模型下可用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

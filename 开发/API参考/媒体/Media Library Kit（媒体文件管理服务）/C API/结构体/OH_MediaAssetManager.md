@@ -1,24 +1,25 @@
 # OH_MediaAssetManager
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-mediaassetmanager-oh-mediaassetmanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct OH_MediaAssetManager OH_MediaAssetManager
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义媒体资产管理器。
  
 此结构提供了请求媒体库资源的能力。
  
-如果创建失败，则返回空指针。
+创建该结构体实例失败时返回空指针。
  
 **起始版本：** 12
  

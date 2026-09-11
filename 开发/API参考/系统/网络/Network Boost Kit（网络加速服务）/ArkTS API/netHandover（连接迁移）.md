@@ -1,6 +1,6 @@
 # netHandover（连接迁移）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/networkboost-nethandover
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -10,7 +10,8 @@
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -20,7 +21,8 @@ import { netHandover } from '@kit.NetworkBoostKit';
  
   
 
-#### netHandover.on('handoverChange')
+## netHandover.on('handoverChange')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -40,6 +42,7 @@ on(type: 'handoverChange', callback: Callback&lt;HandoverInfo&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定填写"handoverChange"字符串，表示连接迁移变化事件。 |
@@ -50,6 +53,7 @@ on(type: 'handoverChange', callback: Callback&lt;HandoverInfo&gt;): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -79,7 +83,8 @@ try {
  
   
 
-#### netHandover.off('handoverChange')
+## netHandover.off('handoverChange')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -99,6 +104,7 @@ off(type: 'handoverChange', callback?: Callback&lt;HandoverInfo&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定填写"handoverChange"字符串，表示连接状态变化事件。 |
@@ -109,6 +115,7 @@ off(type: 'handoverChange', callback?: Callback&lt;HandoverInfo&gt;): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -130,7 +137,8 @@ try {
  
   
 
-#### netHandover.setHandoverMode
+## netHandover.setHandoverMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -150,6 +158,7 @@ setHandoverMode(mode: HandoverMode): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | HandoverMode | 是 | 表示应用需要通知系统侧的迁移模式。 |
@@ -159,6 +168,7 @@ setHandoverMode(mode: HandoverMode): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -182,7 +192,8 @@ try {
  
   
 
-#### netHandover.getMultiPathQuotaStats
+## netHandover.getMultiPathQuotaStats
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -200,6 +211,7 @@ getMultiPathQuotaStats(): MultiPathQuota
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | MultiPathQuota | 应用配额信息。 |
@@ -209,6 +221,7 @@ getMultiPathQuotaStats(): MultiPathQuota
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-networkboost)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -234,7 +247,8 @@ try {
  
   
 
-#### netHandover.requestMultiPath
+## netHandover.requestMultiPath
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -252,6 +266,7 @@ requestMultiPath(callback: Callback&lt;MultiPathRequestResult&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;MultiPathRequestResult&gt; | 是 | 回调函数，返回发起多网的结果。 |
@@ -261,6 +276,7 @@ requestMultiPath(callback: Callback&lt;MultiPathRequestResult&gt;): void
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-networkboost)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -294,7 +310,8 @@ try {
  
   
 
-#### netHandover.releaseMultiPath
+## netHandover.releaseMultiPath
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -314,6 +331,7 @@ releaseMultiPath(): void
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-networkboost)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -337,7 +355,8 @@ try {
  
   
 
-#### netHandover.on('multiPathStateChange')
+## netHandover.on('multiPathStateChange')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -355,6 +374,7 @@ on(type: 'multiPathStateChange', callback: Callback&lt;MultiPathStateInfo&gt;): 
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定填写"multiPathStateChange"字符串，表示多网状态变化事件。 |
@@ -365,6 +385,7 @@ on(type: 'multiPathStateChange', callback: Callback&lt;MultiPathStateInfo&gt;): 
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-networkboost)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -374,13 +395,17 @@ on(type: 'multiPathStateChange', callback: Callback&lt;MultiPathStateInfo&gt;): 
  
 **示例：**
  
-```json
+```text
 import { BusinessError } from '@kit.BasicServicesKit';
 import { netHandover } from '@kit.NetworkBoostKit';
 try {
   netHandover.on('multiPathStateChange', (data: netHandover.MultiPathStateInfo) => {
     // 回调信息处理
-    console.info("on multiPathStateChange: " + JSON.stringify(data));
+    console.info('on multiPathStateChange multiPathState:', data.multiPathState);
+    console.info('on multiPathStateChange cause:', data.cause);
+    console.info('on multiPathStateChange netHandle:', data.netHandle.netId);
+    console.info('on multiPathStateChange pathState:', data.pathState);
+    console.info('on multiPathStateChange pathType:', data.pathType);
   });
 } catch (err) {
   console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
@@ -389,7 +414,8 @@ try {
  
   
 
-#### netHandover.off('multiPathStateChange')
+## netHandover.off('multiPathStateChange')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -407,6 +433,7 @@ off(type: 'multiPathStateChange', callback?: Callback&lt;MultiPathStateInfo&gt;)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定填写"multiPathStateChange"字符串，表示多网状态变化事件。 |
@@ -417,6 +444,7 @@ off(type: 'multiPathStateChange', callback?: Callback&lt;MultiPathStateInfo&gt;)
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-networkboost)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -438,7 +466,8 @@ try {
  
   
 
-#### netHandover.on('multiPathRecommendation')
+## netHandover.on('multiPathRecommendation')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -456,6 +485,7 @@ on(type: 'multiPathRecommendation', callback: Callback&lt;MultiPathRecommendatio
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定填写"multiPathRecommendation"字符串，表示系统多网建议变化事件。 |
@@ -466,6 +496,7 @@ on(type: 'multiPathRecommendation', callback: Callback&lt;MultiPathRecommendatio
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-networkboost)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -490,7 +521,8 @@ try {
  
   
 
-#### netHandover.off('multiPathRecommendation')
+## netHandover.off('multiPathRecommendation')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -508,6 +540,7 @@ off(type: 'multiPathRecommendation', callback?: Callback&lt;MultiPathRecommendat
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定填写"multiPathRecommendation"字符串，表示系统多网建议变化事件。 |
@@ -518,6 +551,7 @@ off(type: 'multiPathRecommendation', callback?: Callback&lt;MultiPathRecommendat
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-networkboost)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -539,7 +573,8 @@ try {
  
   
 
-#### HandoverInfo
+## HandoverInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -553,6 +588,7 @@ try {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | handoverStart | HandoverStart | 是 | 是 | 表示连接迁移开始信息。 |
@@ -561,7 +597,8 @@ try {
  
   
 
-#### HandoverStart
+## HandoverStart
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -575,6 +612,7 @@ try {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | expires | number | 否 | 否 | 连接迁移全流程的超时时间，单位为s，取值为任意正整数或者0。 |
@@ -583,7 +621,8 @@ try {
  
   
 
-#### HandoverComplete
+## HandoverComplete
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -597,6 +636,7 @@ try {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | result | ErrorResult | 否 | 否 | 连接迁移结果。 |
@@ -611,7 +651,8 @@ try {
  
   
 
-#### DataSpeedAction
+## DataSpeedAction
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -625,6 +666,7 @@ try {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | dataSpeedSimpleAction | netQuality.DataSpeedSimpleAction | 否 | 否 | 应用发包策略的简单建议。 |
@@ -634,7 +676,8 @@ try {
  
   
 
-#### MultiPathStateInfo
+## MultiPathStateInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -646,6 +689,7 @@ try {
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | multiPathState | MultiPathState | 否 | 否 | 多网状态。 |
@@ -657,7 +701,8 @@ try {
  
   
 
-#### MultiPathRecommendationInfo
+## MultiPathRecommendationInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -669,6 +714,7 @@ try {
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | action | MultiPathAction | 否 | 否 | 多网推荐动作。 |
@@ -676,7 +722,8 @@ try {
  
   
 
-#### MultiPathQuota
+## MultiPathQuota
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -688,6 +735,7 @@ try {
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | used | MultiPathQuotaInfo | 是 | 否 | 应用已使用配额信息。 |
@@ -696,7 +744,8 @@ try {
  
   
 
-#### MultiPathQuotaInfo
+## MultiPathQuotaInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -708,6 +757,7 @@ try {
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | count | number | 否 | 否 | 配额次数信息。 |
@@ -716,7 +766,8 @@ try {
  
   
 
-#### MultiPathRequestResult
+## MultiPathRequestResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -728,6 +779,7 @@ try {
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | result | MultiPathErrorResult | 否 | 否 | 多网请求结果。 |
@@ -735,7 +787,8 @@ try {
  
   
 
-#### MultiPathAction
+## MultiPathAction
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -747,6 +800,7 @@ try {
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | MULTIPATH_ACTION_REQUEST | 0 | 建议发起多网请求。 |
@@ -755,7 +809,8 @@ try {
  
   
 
-#### MultiPathErrorResult
+## MultiPathErrorResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -767,6 +822,7 @@ try {
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | MULTIPATH_ERROR_NONE | 0 | 多网建立成功。 |
@@ -777,7 +833,8 @@ try {
  
   
 
-#### MultiPathState
+## MultiPathState
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -789,6 +846,7 @@ try {
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | MULTIPATH_IDLE | 0 | 多网处于空闲状态。 |
@@ -799,7 +857,8 @@ try {
  
   
 
-#### PathState
+## PathState
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -811,6 +870,7 @@ try {
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | PATH_IDLE | 0 | 多网链路处于空闲状态。 |
@@ -820,7 +880,8 @@ try {
  
   
 
-#### MultiPathChangeCause
+## MultiPathChangeCause
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -832,6 +893,7 @@ try {
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | MULTIPATH_CHANGE_CAUSE_REQUEST_NORMAL | 0 | 正常发起多网请求。 |
@@ -851,7 +913,8 @@ try {
  
   
 
-#### HandoverMode
+## HandoverMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -865,6 +928,7 @@ try {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DELEGATION | 0 | 委托模式，表示由系统发起连接迁移。应用未调用setHandoverMode接口则默认为该模式。 |
@@ -873,7 +937,8 @@ try {
  
   
 
-#### ReEstAction
+## ReEstAction
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -887,6 +952,7 @@ try {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DEFAULT | 0 | 表示应用需要使用同样的远端IP，进行重建链路。 |
@@ -898,7 +964,8 @@ try {
  
   
 
-#### ErrorResult
+## ErrorResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -912,6 +979,7 @@ try {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ERROR_NONE | 0 | 表示连接迁移成功。 |

@@ -1,18 +1,19 @@
 # ArkUI_TextCascadePickerRangeContentArray
 
-更新时间：2026-07-28 11:23:46（官网已下线）
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-arkui-textcascadepickerrangecontentarray
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct ArkUI_TextCascadePickerRangeContentArray ArkUI_TextCascadePickerRangeContentArray
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义多列联动文本选择器的选项内容数组。该结构体用于配置多列联动选择器的层级数据，通过索引设置各列选项的文本及子级数据，适用于省市区联动、产品分类选择等需要多列数据联动的场景。
  

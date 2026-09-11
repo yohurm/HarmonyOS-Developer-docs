@@ -1,10 +1,10 @@
 # 通过Function组件拉起智能体
 
-更新时间：2026-06-16 09:03:21
+更新时间：2026-09-07 06:42:31
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hmaf-function
 
-#### 场景介绍
+## 场景介绍
 
  - Function组件分为图标组件和按钮组件，无标题时默认显示图标组件，有标题时默认显示按钮组件。
 
@@ -25,7 +25,7 @@
 
 
 
-#### 开发前准备
+## 开发前准备
 
  - 开发智能体，具体请参见[开发Agent](https://developer.huawei.com/consumer/cn/doc/service/developing-intelligent-agents-0000002435989592)。
  - 关联应用，具体请参见[关联应用](https://developer.huawei.com/consumer/cn/doc/service/related-applications-0000002437785706)。
@@ -34,7 +34,7 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 从项目根目录进入/src/main/ets/pages/Index.ets文件，将FunctionComponent及相关其它类引入到工程。
 
   
@@ -146,7 +146,7 @@ aboutToAppear() {
 
 
 
-#### 开发实例
+## 开发实例
 
 点击按钮，打开智能体对话框。
 

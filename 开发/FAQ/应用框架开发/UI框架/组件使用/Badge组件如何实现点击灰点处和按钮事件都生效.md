@@ -96,7 +96,7 @@ struct BadgeClickTest {
           .align(Alignment.Start)
       }
       .onClick(() => {
-        // 将按钮点击事件迁移至Badge组件
+        <em>// </em><em>将按钮点击事件迁移至Badge组件</em>
         this.badgeCount += 1;
       })
     }

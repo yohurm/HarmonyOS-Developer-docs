@@ -1,18 +1,19 @@
 # OH_Drawing_StrutStyle
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-oh-drawing-strutstyle
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-typedef struct OH_Drawing_StrutStyle {...} OH_Drawing_StrutStyle
+typedef struct {...} OH_Drawing_StrutStyle
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于描述支柱样式的结构体。支柱样式用于控制绘制文本时行之间的间距、基线对齐方式以及其他与行高相关的属性。
  
@@ -24,20 +25,23 @@ typedef struct OH_Drawing_StrutStyle {...} OH_Drawing_StrutStyle
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 成员变量
+### 成员变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_Drawing_FontWeight weight | 计算支柱时使用的字体粗细。 |
-| OH_Drawing_FontStyle style | 计算支柱时使用的字体格式。 |
+| OH_Drawing_FontStyle style | 计算支柱时使用的字体样式。 |
 | double size | 逻辑像素中的上升加下降的大小。 |
 | double heightScale | 行高缩放系数。 |
 | bool heightOverride | 是否启用高度覆盖。true表示启用，false表示不启用。 |

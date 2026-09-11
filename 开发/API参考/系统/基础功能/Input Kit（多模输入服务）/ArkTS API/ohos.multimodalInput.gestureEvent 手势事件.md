@@ -1,9 +1,9 @@
 # @ohos.multimodalInput.gestureEvent (手势事件)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-multimodalinput-gestureevent
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设备上报的手势事件。
  
@@ -12,24 +12,27 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-import { Rotate, Pinch, ThreeFingersSwipe, FourFingersSwipe, ActionType } from '@kit.InputKit';
+import { Rotate, Pinch, ThreeFingersSwipe, FourFingersSwipe, ThreeFingersTap, ActionType } from '@kit.InputKit';
 ```
  
   
 
-#### Pinch
+## Pinch
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 捏合手势事件。
  
 **系统能力**：SystemCapability.MultimodalInput.Input.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | ActionType | 否 | 否 | 手势事件类型，包括手势取消、手势开始、手势更新、手势结束。 |
@@ -38,14 +41,16 @@ import { Rotate, Pinch, ThreeFingersSwipe, FourFingersSwipe, ActionType } from '
  
   
 
-#### Rotate11+
+## Rotate11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 旋转手势事件。
  
 **系统能力**：SystemCapability.MultimodalInput.Input.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | ActionType | 否 | 否 | 手势事件类型。如：手势开始、手势更新、手势结束等。 |
@@ -54,14 +59,16 @@ import { Rotate, Pinch, ThreeFingersSwipe, FourFingersSwipe, ActionType } from '
  
   
 
-#### ThreeFingersSwipe
+## ThreeFingersSwipe
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 三指滑动手势事件。
  
 **系统能力**：SystemCapability.MultimodalInput.Input.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | ActionType | 否 | 否 | 手势事件类型。如：手势开始、手势更新、手势结束等。 |
@@ -71,14 +78,16 @@ import { Rotate, Pinch, ThreeFingersSwipe, FourFingersSwipe, ActionType } from '
  
   
 
-#### FourFingersSwipe
+## FourFingersSwipe
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 四指滑动手势事件。
  
 **系统能力**：SystemCapability.MultimodalInput.Input.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | ActionType | 否 | 否 | 手势事件类型。如：手势开始、手势更新、手势结束等。 |
@@ -88,14 +97,16 @@ import { Rotate, Pinch, ThreeFingersSwipe, FourFingersSwipe, ActionType } from '
  
   
 
-#### ThreeFingersTap11+
+## ThreeFingersTap11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 三指轻点手势事件。
  
 **系统能力**：SystemCapability.MultimodalInput.Input.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | ActionType | 否 | 否 | 手势事件类型。如：手势开始、手势更新、手势结束等。 |
@@ -103,14 +114,16 @@ import { Rotate, Pinch, ThreeFingersSwipe, FourFingersSwipe, ActionType } from '
  
   
 
-#### ActionType
+## ActionType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 手势事件类型。
  
 **系统能力**：SystemCapability.MultimodalInput.Input.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CANCEL | 0 | 手势取消。 |

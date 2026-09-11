@@ -1,9 +1,9 @@
 # Interface (ManualFocus)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-manualfocus
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ManualFocus继承自[ManualFocusQuery](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-manualfocusquery)。
  
@@ -14,9 +14,10 @@ ManualFocus继承自[ManualFocusQuery](https://developer.huawei.com/consumer/cn/
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { camera } from '@kit.CameraKit';
@@ -24,9 +25,10 @@ import { camera } from '@kit.CameraKit';
  
   
 
-#### getFocusDistance24+
+## getFocusDistance24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFocusDistance(): number
  
@@ -38,6 +40,7 @@ getFocusDistance(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 当前对焦距离。取值范围为[0.0, 1.0]。 |
@@ -47,6 +50,7 @@ getFocusDistance(): number
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400102 | Operation not allowed, the inputDevice or the session is abnormal. |
@@ -73,9 +77,10 @@ function getFocusDistance(photoSession: camera.PhotoSession): number {
  
   
 
-#### setFocusDistance24+
+## setFocusDistance24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setFocusDistance(distance: number): void
  
@@ -87,6 +92,7 @@ setFocusDistance(distance: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | distance | number | 是 | 对焦距离。取值范围为[0.0, 1.0]。 |
@@ -96,6 +102,7 @@ setFocusDistance(distance: number): void
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400102 | Operation not allowed, the inputDevice or the session is abnormal. |

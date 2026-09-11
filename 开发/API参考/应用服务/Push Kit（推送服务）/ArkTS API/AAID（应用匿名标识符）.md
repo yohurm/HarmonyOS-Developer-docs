@@ -1,11 +1,11 @@
 # AAID（应用匿名标识符）
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-aaid-api
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-AAID（Anonymous Application Identifier）是应用匿名标识符，标识运行在移动智能终端设备上的应用实例，只有该应用实例才能访问该标识符，它只存在于应用的安装期，总长度36个字符。与无法重置的设备级硬件ID相比，AAID具有更好的隐私权属性。
+AAID（Anonymous Application Identifier）是应用匿名标识符，标识运行在移动智能终端设备上的应用实例，只有该应用实例才能访问该标识符，它只存在于应用的安装期，总长度36个字符。与无法重置的设备级硬件ID相比，AAID具有更好的隐私属性。
  
 AAID具有以下特性：
  
@@ -35,9 +35,10 @@ AAID会在包括但不限于下述场景中发生变化：
 **起始版本：** 4.0.0(10)
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { AAID } from '@kit.PushKit';
@@ -45,9 +46,10 @@ import { AAID } from '@kit.PushKit';
  
   
 
-#### AAID.getAAID
+## AAID.getAAID
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAAID(callback: AsyncCallback&lt;string&gt;): void
  
@@ -65,6 +67,7 @@ getAAID(callback: AsyncCallback&lt;string&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;string&gt; | 是 | 回调函数。当获取AAID成功，err为undefined，aaid为获取到的AAID，字符长度为36；否则为错误对象。 |
@@ -74,6 +77,7 @@ getAAID(callback: AsyncCallback&lt;string&gt;): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-error-code)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
@@ -153,9 +157,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### AAID.getAAID
+## AAID.getAAID
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAAID(): Promise&lt;string&gt;
  
@@ -173,6 +178,7 @@ getAAID(): Promise&lt;string&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回AAID，字符长度为36。 |
@@ -182,6 +188,7 @@ getAAID(): Promise&lt;string&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-error-code)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1000900001 | System internal error. |
@@ -253,9 +260,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### AAID.deleteAAID
+## AAID.deleteAAID
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteAAID(callback: AsyncCallback&lt;void&gt;): void
  
@@ -273,6 +281,7 @@ deleteAAID(callback: AsyncCallback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当删除AAID成功，err为undefined，否则为错误对象。 |
@@ -282,6 +291,7 @@ deleteAAID(callback: AsyncCallback&lt;void&gt;): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-error-code)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
@@ -325,9 +335,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### AAID.deleteAAID
+## AAID.deleteAAID
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteAAID(): Promise&lt;void&gt;
  
@@ -345,6 +356,7 @@ deleteAAID(): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -354,6 +366,7 @@ deleteAAID(): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-error-code)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1000900001 | System internal error. |

@@ -1,9 +1,9 @@
 # @ohos.file.cloudSyncManager (端云同步管理能力)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-file-cloudsyncmanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet
 
 该模块向云盘管理应用提供端云同步管理能力：包括全量下载的状态和停止原因，以及应用本地和云端文件数量信息。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 import { cloudSyncManager } from '@kit.CoreFileKit';
@@ -22,14 +23,16 @@ import { cloudSyncManager } from '@kit.CoreFileKit';
  
   
 
-#### DownloadStopReason20+
+## DownloadStopReason20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 全量下载停止原因的枚举，默认值为NO_STOP。
  
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSyncManager
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NO_STOP | 0 | 下载中未停止。 |
@@ -43,14 +46,16 @@ import { cloudSyncManager } from '@kit.CoreFileKit';
  
   
 
-#### DownloadState20+
+## DownloadState20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 全量下载任务状态的枚举。
  
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSyncManager
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | RUNNING | 0 | 下载中。 |
@@ -60,9 +65,10 @@ import { cloudSyncManager } from '@kit.CoreFileKit';
  
   
 
-#### DownloadProgress20+
+## DownloadProgress20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 全量下载任务的进度信息。
  
@@ -70,8 +76,12 @@ import { cloudSyncManager } from '@kit.CoreFileKit';
  
   
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | state | DownloadState | 否 | 否 | 下载任务的状态。 |
@@ -85,9 +95,10 @@ import { cloudSyncManager } from '@kit.CoreFileKit';
  
   
 
-#### CloudFileInfo20+
+## CloudFileInfo20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 应用本地和云端文件个数以及大小信息。
  
@@ -95,8 +106,12 @@ import { cloudSyncManager } from '@kit.CoreFileKit';
  
   
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | cloudFileCount | number | 否 | 否 | 本地未下载的云端文件总个数，取值范围[0, INT32_MAX]，单位：个。 |

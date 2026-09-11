@@ -1,20 +1,21 @@
 # ArkUI_GestureRecognizer
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-arkui-gesturerecognizer
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct ArkUI_GestureRecognizer ArkUI_GestureRecognizer
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-提供手势组件实例对象定义，用于在ArkUI手势识别接口中表示手势识别器对象。手势识别器绑定到UI组件后监听触摸事件，并在满足对应手势类型的识别条件时通过回调通知开发者；不同类型的识别器可用于敲击、长按、拖动、捏合、旋转和快滑等手势。详细机制和使用方式请参见[native_gesture.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-gesture-h)中的手势接口说明。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+提供手势组件实例对象定义，用于在ArkUI手势识别相关接口中表示手势识别器对象，帮助开发者理解和使用组件手势识别能力。
  
 **起始版本：** 12
  

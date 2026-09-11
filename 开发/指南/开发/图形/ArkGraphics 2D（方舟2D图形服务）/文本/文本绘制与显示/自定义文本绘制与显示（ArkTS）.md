@@ -1,6 +1,6 @@
 # 自定义文本绘制与显示（ArkTS）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/text-custom-arkts
 
@@ -9,11 +9,11 @@
 字体引擎作为图形系统中的核心组件，负责将字符代码转换为可视化的字形，并精确计算每个字形的布局和位置，为自定义文本绘制提供底层支持。通过文本测量接口，开发者可以获取文本的精确尺寸，这是实现精准布局（如居中显示）的基础。
 
 
-#### 文本塑形
+## 文本塑形
 
 
 
-#### 场景介绍
+### 场景介绍
 
 文本塑形是字体引擎提供的一项关键能力，它允许开发者不经过系统默认的文本排版流程，直接获取文本的底层字形信息（如宽度、方向等测量信息）。这使得开发者能够基于这些原始数据，实现完全自定义的排版逻辑、绘制操作以及断行策略。
 
@@ -26,9 +26,10 @@
 
 
 
-#### 接口说明
+### 接口说明
 
-文本塑形中常用接口如下表所示，详细接口说明参考[@ohos.graphics.text (文本模块)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-graphics-text)和[TextBlob](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-graphics-drawing-textblob)。
+文本塑形中常用接口如下表所示，详细接口说明参考[@ohos.graphics.text (文本模块)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-graphics-text)、[TextBlob](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-graphics-drawing-textblob)和[drawTextBlob](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-graphics-drawing-canvas#drawtextblob)。
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -44,7 +45,7 @@
 
 
 
-#### 开发步骤
+### 开发步骤
 
 从API version 18开始，支持获取文字塑形结果能力。从API version 20开始，支持获取文字排版方向和文字字形宽度。关键代码如下：
 1. 导入依赖的相关模块。
@@ -56,7 +57,7 @@ import { drawing } from '@kit.ArkGraphics2D'
 import { common2D } from '@kit.ArkGraphics2D'
 ```
 
-2. 创建段落样式，并使用构造段落生成器ParagraphBuilder生成段落实例。
+2. 创建段落样式，并构造段落生成器ParagraphBuilder实例。
 
   
 ```ArkTS
@@ -90,7 +91,7 @@ let textLine: text.TextLine = lineTypeSet.createLine(0, 11);
 let runs: text.Run[] = textLine.getGlyphRuns();
 ```
 
-5. 该步骤是文本塑形流程中的自定义绘制环节。通过调用getGlyphs()方法获取文本中每个字符对应的字形序号，再结合getFont()方法获取的字体对象，即可唯一确定每个字形的具体图形信息。从 API version 20 开始，新增的getAdvances()方法能够返回一个数组，其中包含了每个字形在绘制时建议占用的宽度和高度。依赖这些精确的测量数据，开发者可以自由地计算并定义每个字形的绘制位置，从而实现复杂的文本布局效果，如自定义字符间距、垂直偏移或特殊排版。
+5. 该步骤是文本塑形流程中的自定义绘制环节。通过调用getGlyphs()方法获取文本中每个字符对应的字形序号，再结合getFont()方法获取的字体对象，即可唯一确定每个字形的具体图形信息。从 API version 20 开始，新增的getAdvances()方法能够返回一个数组，包含范围内每个字形的字形宽度。依赖这些精确的测量数据，开发者可以自由地计算并定义每个字形的绘制位置，从而实现复杂的文本布局效果，如自定义字符间距、垂直偏移或特殊排版。
 
   
 ```ArkTS

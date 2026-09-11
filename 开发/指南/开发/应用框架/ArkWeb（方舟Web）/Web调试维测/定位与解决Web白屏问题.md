@@ -1,6 +1,6 @@
 # 定位与解决Web白屏问题
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-white-screen
 
@@ -11,9 +11,10 @@ Web页面出现白屏的原因众多，本文列举了若干常见白屏问题�
 4. 处理H5代码兼容性问题。
 5. 从日志中排查生命周期和网络加载相关关键字。
 6. 检查是否开启[坚盾守护模式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-secure-shield-mode)，坚盾守护模式开启后相关限制见：[ArkWeb限制的HTML5特性](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-secure-shield-mode#arkweb限制的html5特性)。
+7. 排查WebView缓存协商不一致导致的白屏，详见[webview默认缓存模式下缓存协商与服务端资源更新不一致导致的白屏](#webview默认缓存模式下缓存协商与服务端资源更新不一致导致的白屏)。
 
 
-#### 检查权限和网络状态
+## 检查权限和网络状态
 
 如果应用未开启联网或文件访问权限或者设备网络状态不佳，将导致Web组件加载失败或页面元素缺失，进而引起白屏。
 
@@ -37,7 +38,7 @@ Web页面出现白屏的原因众多，本文列举了若干常见白屏问题�
 
 | domStorageAccess | 设置是否开启文档对象模型存储接口（DOM Storage API）权限。若不开启，无法使用localStorage存储数据，任何调用localStorage的代码都将失效，依赖本地存储的功能会异常。 |
 
-| fileAccess | 设置是否开启应用中文件系统的访问。‌若不开启，文件读写功能完全被阻断，依赖文件读写的模块会遇到访问被拒绝的错误。 |
+| fileAccess | 设置是否开启应用中文件系统的访问。‌若不开启，文件读写功能完全被阻断，依赖文件的模块会崩溃。 |
 
 | imageAccess | 设置是否允许自动加载图片资源。 |
 
@@ -101,7 +102,7 @@ struct WebComponent {
 
 
 
-#### 使用DevTools工具进行页面内容验证
+## 使用DevTools工具进行页面内容验证
 
 在确保网络与权限配置无误后，若仍出现白屏，则应利用DevTools工具调试前端页面以及监听Web相关错误上报接口，来定位具体报错类型。
 1. 查阅控制台的错误信息，定位具体的资源加载失败问题。资源加载失败会导致页面元素缺失，布局紊乱，图片和动画效果失效等，严重时可能导致渲染进程崩溃，页面呈现空白。如图所示，依次排查：
@@ -359,7 +360,7 @@ body.appendChild(element);
 
 
 
-#### 复杂的布局与渲染模式导致白屏
+## 复杂的布局与渲染模式导致白屏
 
 若页面使用了复杂布局或渲染模式，需注意其应用场景和约束条件，不当使用可能导致布局混乱或白屏。
 
@@ -413,7 +414,7 @@ Web组件提供了自适应页面布局的能力，详情见[ Web组件大小自
 
 
 
-#### 处理H5代码兼容性
+## 处理H5代码兼容性
 
 兼容性问题处理不当也会导致页面白屏。
 
@@ -436,11 +437,12 @@ Web组件提供了自适应页面布局的能力，详情见[ Web组件大小自
 
 
 
-#### 监控内存与生命周期
+## 监控内存与生命周期
 
 内存达到阈值会导致渲染进程被终止，从而引发白屏现象；同样，渲染进程创建失败或非正常销毁也会导致白屏。可从日志中排查原因。检查Web组件是否与WebviewController正确绑定，或是否因WebviewController提前释放导致白屏。关注日志中与Render进程相关的信息：是否存在内存泄漏使渲染内存不足。关键字“MEMORY_PRESSURE_LEVEL_CRITICAL”表明内存已达到阈值，此情形下Web可能遭遇黑屏、花屏或闪屏等异常状况，需排查是否存在内存泄漏问题。Render进程是否成功启动或异常退出。
 
 下面列举一些日志中的关键字和对应的情况说明：
+
 
 | 日志关键字 | 说明 |
 | --- | --- |
@@ -457,6 +459,7 @@ Web组件提供了自适应页面布局的能力，详情见[ Web组件大小自
 
 
 ![](assets/定位与解决Web白屏问题/file-20260514130857444-1.png)
+
 
 
 | 日志关键字 | 说明 |
@@ -477,20 +480,36 @@ Web组件提供了自适应页面布局的能力，详情见[ Web组件大小自
 
 
 
-#### 设备的WebView默认加载进程不一致导致加载H5页面白屏
+## 设备的WebView默认加载进程不一致导致加载H5页面白屏
 
-**问题：**
+**问题现象：**
 
 用WebView加载H5在Phone上表现正常，但是在Tablet/PC/2in1上白屏。
 
-**原因：**
+**可能原因：**
 
 Tablet/PC/2in1的WebView默认采用多进程加载，iframe默认使用子进程加载。主进程加载完成后，若子进程尚未加载完成，会导致白屏现象。
 
-**解决方案：**
+**解决措施：**
 
 通过[setRenderProcessMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller#setrenderprocessmode12)设置WebView渲染模式为单进程加载。
 
 ```text
 webview.WebviewController.setRenderProcessMode(webview.RenderProcessMode.SINGLE);
 ```
+
+
+
+## WebView默认缓存模式下缓存协商与服务端资源更新不一致导致的白屏
+
+**问题现象：**
+
+网页在系统自带浏览器访问正常，但是在应用的WebView中加载出现页面白屏。
+
+**可能原因：**
+
+WebView默认的缓存模式CacheMode.Default行为是优先使用缓存。当缓存中存在资源时，WebView会在后续请求中自动附加基于缓存内容的条件请求头If-None-Match（携带缓存的ETag值），向服务端做协商缓存校验。当服务端资源更新导致ETag变化时，条件匹配失败，服务端返回412。WebView收到412后不会自动降级重试，直接判定主资源加载失败，页面白屏。
+
+**解决措施：**
+
+在Web组件上设置[cacheMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-attributes#cachemode)属性为CacheMode.Online（即.cacheMode(CacheMode.Online)）。该模式下，WebView会向服务端发起无条件请求，不携带基于旧缓存的条件头（如If-None-Match），强制从网络获取最新资源、不使用任何缓存，从而绕过缓存协商校验环节，避免主资源因协商失败而加载失败导致白屏。

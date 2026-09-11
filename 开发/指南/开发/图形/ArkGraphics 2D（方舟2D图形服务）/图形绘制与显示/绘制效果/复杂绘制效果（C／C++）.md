@@ -1,6 +1,6 @@
 # 复杂绘制效果（C/C++）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/complex-drawing-effect-c
 
@@ -13,7 +13,7 @@
 
 
 
-#### 混合模式
+## 混合模式
 
 混合模式可以用于画笔或画刷，它定义了如何将源像素（要绘制的内容）与目标像素（已存在于画布上的内容）进行组合。
 
@@ -35,7 +35,7 @@ OH_Drawing_CanvasDrawRect(canvas, rect);
 // 设置源像素颜色
 OH_Drawing_BrushSetColor(brush, OH_Drawing_ColorSetArgb(RGBA_MAX, RGBA_MIN, RGBA_MIN, 0xFF));
 // 设置混合模式为叠加模式
-OH_Drawing_BrushSetBlendMode(brush, OH_Drawing_BlendMode::BLEND_MODE_PLUS);
+OH_Drawing_BrushSetBlendMode(brush, BLEND_MODE_PLUS);
 // 将源像素的画刷效果设置到Canvas中
 OH_Drawing_CanvasAttachBrush(canvas, brush);
 // 创建圆心的点对象
@@ -56,7 +56,7 @@ OH_Drawing_PointDestroy(point);
 
 
 
-#### 路径效果
+## 路径效果
 
 路径效果如虚线效果，只用于画笔。
 
@@ -95,14 +95,15 @@ OH_Drawing_RectDestroy(rect);
 OH_Drawing_PathEffectDestroy(pathEffect);
 ```
 
-| 不设置虚线路径效果的示意图 | 设置虚线效果的示意图 |
+
+| 不设置虚线路径效果的示意图 | 设置虚线路径效果的示意图 |
 | --- | --- |
 |  |  |
 
 
 
 
-#### 着色器效果
+## 着色器效果
 
 着色器效果基于画刷或画笔实现，可使用OH_Drawing_BrushSetShaderEffect()接口设置画刷的着色器效果，或者使用 OH_Drawing_PenSetShaderEffect()接口设置画笔的着色器效果。当前支持不同的着色器效果，如线性渐变着色器效果、径向渐变着色器效果、扇形渐变着色器效果。
 
@@ -110,7 +111,7 @@ OH_Drawing_PathEffectDestroy(pathEffect);
 
 
 
-#### 线性渐变着色器效果
+### 线性渐变着色器效果
 
 可使用OH_Drawing_ShaderEffectCreateLinearGradient()接口创建想要设置的线性渐变着色器效果。接口接受6个参数，分别为开始点、结束点、颜色数组、相对位置数组、颜色数组的大小以及平铺模式。
 
@@ -140,7 +141,7 @@ uint32_t colors[] = {0xFFFFFF00, 0xFFFF0000, 0xFF0000FF};
 float pos[] = {0.0f, 0.5f, 1.0f};
 // 创建线性渐变着色器效果
 OH_Drawing_ShaderEffect *colorShaderEffect =
-    OH_Drawing_ShaderEffectCreateLinearGradient(startPt, endPt, colors, pos, 3, OH_Drawing_TileMode::CLAMP);
+    OH_Drawing_ShaderEffectCreateLinearGradient(startPt, endPt, colors, pos, 3, CLAMP);
 // 创建画刷对象
 OH_Drawing_Brush* brush = OH_Drawing_BrushCreate();
 // 基于画刷设置着色器效果
@@ -168,7 +169,7 @@ OH_Drawing_PointDestroy(endPt);
 
 
 
-#### 径向渐变着色器效果
+### 径向渐变着色器效果
 
 可使用OH_Drawing_ShaderEffectCreateRadialGradient()接口创建想要设置的径向渐变着色器效果。接口接受6个参数，分别为圆心坐标（centerPt）、半径（radius）、颜色数组（colors）、相对位置数组（pos）、颜色和位置的数量（size）以及平铺模式（OH_Drawing_TileMode）。
 
@@ -187,7 +188,7 @@ uint32_t gColors[] = {0xFFFF0000, 0xFF00FF00, 0xFF0000FF};
 float_t gPos[] = {0.0f, 0.25f, 0.75f};
 // 创建径向渐变着色器效果
 OH_Drawing_ShaderEffect *colorShaderEffect =
-    OH_Drawing_ShaderEffectCreateRadialGradient(centerPt, radius, gColors, gPos, 3, OH_Drawing_TileMode::REPEAT);
+    OH_Drawing_ShaderEffectCreateRadialGradient(centerPt, radius, gColors, gPos, 3, REPEAT);
 // 创建画刷对象
 OH_Drawing_Brush* brush = OH_Drawing_BrushCreate();
 // 基于画刷设置着色器效果
@@ -209,12 +210,12 @@ OH_Drawing_PointDestroy(centerPt);
 此例绘制的具有径向渐变着色器效果的矩形如下所示：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/EJ7DxEB6Rme0IxXeShy9Kw/zh-cn_image_0000002674473466.png?HW-CC-KV=V1&HW-CC-Date=20260813T095834Z&HW-CC-Expire=86400&HW-CC-Sign=8D9C1585C117BA7975B39F3EB55EE8C9288EE5972AAC97A8B031A2AB8E87084C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/NP7B-6M0S-mJbl12j_JNNg/zh-cn_image_0000002747291455.png?HW-CC-KV=V1&HW-CC-Date=20260911T072717Z&HW-CC-Expire=86400&HW-CC-Sign=DB00F7E4F8DFBFA467442FCE3A3263D65B986466517BE5139C5008E738B6A114)
 
 
 
 
-#### 扇形渐变着色器效果
+### 扇形渐变着色器效果
 
 可使用OH_Drawing_ShaderEffectCreateSweepGradient()接口创建想要设置的扇形渐变着色器效果。接口接受5个参数，分别是中心点、颜色数组、相对位置数组、颜色和相对位置的数量以及平铺模式。
 
@@ -231,7 +232,7 @@ uint32_t colors[3] = {0xFF00FFFF, 0xFFFF00FF, 0xFFFFFF00};
 float pos[3] = {0.0f, 0.5f, 1.0f};
 // 创建扇形渐变着色器效果
 OH_Drawing_ShaderEffect* colorShaderEffect =
-    OH_Drawing_ShaderEffectCreateSweepGradient(centerPt, colors, pos, 3, OH_Drawing_TileMode::CLAMP);
+    OH_Drawing_ShaderEffectCreateSweepGradient(centerPt, colors, pos, 3, CLAMP);
 // 创建画刷对象
 OH_Drawing_Brush* brush = OH_Drawing_BrushCreate();
 // 基于画刷设置着色器效果
@@ -253,12 +254,12 @@ OH_Drawing_PointDestroy(centerPt);
 此例绘制的具有扇形渐变着色器效果的矩形如下所示：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/pNqWAe1WQgSzIiTfTKcXBg/zh-cn_image_0000002704393431.png?HW-CC-KV=V1&HW-CC-Date=20260813T095834Z&HW-CC-Expire=86400&HW-CC-Sign=82977D128EA951E6FF60B8058E797FBBED788A8FB08AC45E1D4E5DE223FC26F8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/XEsiLeKNT06uM62uv-Jt0w/zh-cn_image_0000002747211373.png?HW-CC-KV=V1&HW-CC-Date=20260911T072717Z&HW-CC-Expire=86400&HW-CC-Sign=DB0AF0C151E0921D8A83C901E61B5B0F627DAB514F015D1BBD6DE9E36B71D8D1)
 
 
 
 
-#### 滤波器效果
+## 滤波器效果
 
 滤波器效果可基于画刷或画笔实现。可使用OH_Drawing_PenSetFilter()接口设置画笔的滤波器效果，或者使用OH_Drawing_BrushSetFilter()接口设置画刷的滤波器效果。当前支持不同的滤波器效果，比如图像滤波器、颜色滤波器、蒙版滤波器。
 
@@ -266,7 +267,7 @@ OH_Drawing_PointDestroy(centerPt);
 
 
 
-#### 颜色滤波器效果
+### 颜色滤波器效果
 
 颜色滤波器可基于画笔或画刷实现，颜色滤波器的相关接口和具体参数的说明请见[drawing_color_filter.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-color-filter-h)。
 
@@ -319,7 +320,7 @@ const float matrix[20] = {
     0, 0, 0.5f, 0.5f, 0
 };
     
-// 创建滤波器颜色
+// 创建颜色滤波器
 OH_Drawing_ColorFilter* colorFilter = OH_Drawing_ColorFilterCreateMatrix(matrix);
 // 创建一个滤波器对象
 OH_Drawing_Filter *filter = OH_Drawing_FilterCreate();
@@ -342,6 +343,7 @@ OH_Drawing_RectDestroy(rect);
 OH_Drawing_FilterDestroy(filter);
 ```
 
+
 | 不设置颜色滤波器效果的示意图 | 设置5x4颜色矩阵的颜色滤波器效果的示意图 |
 | --- | --- |
 |  |  |
@@ -349,7 +351,7 @@ OH_Drawing_FilterDestroy(filter);
 
 
 
-#### 图像滤波器效果
+### 图像滤波器效果
 
 图像滤波器可基于画笔或画刷来实现，图像滤波器的相关接口和具体参数的说明请见[drawing_image_filter.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-image-filter-h)。
 
@@ -378,7 +380,7 @@ OH_Drawing_PenSetColor(pen, 0xffff0000);
 OH_Drawing_PenSetWidth(pen, 20);
 // 创建图像滤波器实现模糊效果
 OH_Drawing_ImageFilter *imageFilter =
-    OH_Drawing_ImageFilterCreateBlur(20.0f, 20.0f, OH_Drawing_TileMode::CLAMP, nullptr);
+    OH_Drawing_ImageFilterCreateBlur(20.0f, 20.0f, CLAMP, nullptr);
 // 创建一个滤波器对象
 OH_Drawing_Filter *filter = OH_Drawing_FilterCreate();
 // 为滤波器对象设置图像滤波器
@@ -400,6 +402,7 @@ OH_Drawing_RectDestroy(rect);
 OH_Drawing_FilterDestroy(filter);
 ```
 
+
 | 不设置图像滤波器效果的示意图 | 设置图像滤波器效果的示意图 |
 | --- | --- |
 |  |  |
@@ -407,7 +410,7 @@ OH_Drawing_FilterDestroy(filter);
 
 
 
-#### 蒙版滤波器效果
+### 蒙版滤波器效果
 
 蒙版滤波器的模糊效果仅对透明度和形状边缘进行模糊处理，相对于图像滤波器的模糊效果来说计算成本更低。
 
@@ -432,7 +435,7 @@ OH_Drawing_PenSetColor(pen, 0xffff0000);
 // 设置画笔线宽为20
 OH_Drawing_PenSetWidth(pen, 20);
 // 创建蒙版滤波器
-OH_Drawing_MaskFilter *maskFilter = OH_Drawing_MaskFilterCreateBlur(OH_Drawing_BlurType::NORMAL, 20, true);
+OH_Drawing_MaskFilter *maskFilter = OH_Drawing_MaskFilterCreateBlur(NORMAL, 20, true);
 // 创建一个滤波器对象
 OH_Drawing_Filter *filter = OH_Drawing_FilterCreate();
 // 为滤波器对象设置蒙版滤波器
@@ -454,6 +457,7 @@ OH_Drawing_RectDestroy(rect);
 OH_Drawing_FilterDestroy(filter);
 ```
 
+
 | 不设置蒙版滤波器效果的示意图 | 设置蒙版滤波器效果的示意图 |
 | --- | --- |
 |  |  |
@@ -461,6 +465,6 @@ OH_Drawing_FilterDestroy(filter);
 
 
 
-#### 示例代码
+## 示例代码
 
  - [图形绘制（C/C++）](https://gitcode.com/HarmonyOS_Samples/guide-snippets/tree/master/ArkGraphics2D/Drawing/NDKGraphicsDraw)

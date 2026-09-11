@@ -1,11 +1,12 @@
 # abr_base.h
 
-更新时间：2026-04-28 03:31:56
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/abr__base_8h
 **支持设备：** Phone | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### 结构体
+### 结构体
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | struct ABR_Vector3 | 此结构体描述ABR三维向量。 |
@@ -41,10 +45,12 @@
  
   
 
-#### 类型定义
+### 类型定义
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | typedef struct ABR_Context ABR_Context | 此结构体描述ABR上下文。 |
@@ -56,10 +62,12 @@
  
   
 
-#### 枚举
+### 枚举
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | ABR_RenderAPI_Type { RENDER_API_GLES = 0 } | 此枚举描述ABR支持的图形API类型。RENDER_API_GLES表示OpenGL ES API。 |
@@ -68,10 +76,12 @@
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | ABR_Context* HMS_ABR_CreateContext(ABR_RenderAPI_Type type) | 创建ABR上下文实例，每次调用会新建ABR_Context对象，并返回指向ABR_Context对象的指针，当前仅支持RENDER_API_GLES类型，其他类型会导致创建上下文失败。 |

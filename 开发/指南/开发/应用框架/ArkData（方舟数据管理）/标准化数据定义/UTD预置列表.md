@@ -1,6 +1,6 @@
 # UTD预置列表
 
-更新时间：2026-07-09 02:26:55
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uniform-data-type-list
 
@@ -11,10 +11,11 @@
 为了方便业务使用，系统中预置了一部分常用类型，从通用性、场景以及归属等角度将预置类型分为三类：[基础类型](#基础类型)，[系统关联类型](#系统关联类型)以及[应用定义类型](#应用定义类型)。
   
 
-#### 基础类型
+## 基础类型
 
 基础类型表示通用数据类型，进行跨应用、跨设备、跨平台交互时，能够被绝大多数应用、设备以及平台识别，标识UTD-ID为general.xxx。当前系统中预定义的通用类型列表如下：
   
+
 | UTD-ID | BelongingTo类型 | 后缀名 | MIMEType类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | general.entity | - | - | - | 所有表示物理存储类型的基类型。 |
@@ -44,7 +45,7 @@
 | general.rgb-image | general.image | .rgb | image/x-rgb | RGB位图类型。 |
 | general.svg-image | general.image | .svg,.svgz | image/svg+xml | 可扩展矢量图形类型。 |
 | general.wbmp-image | general.image | .wbmp | image/vnd.wap.wbmp | 无线位图类型。 |
-| general.xpixmap-image | general.image | .xpm | image/x-xpixmap | XMP图片类型。 |
+| general.xpixmap-image | general.image | .xpm | image/x-xpixmap | XPM图片类型。 |
 | general.xwindowdump-image | general.image | .xwd | image/x-xwindowdump | XWD图片类型。 |
 | general.heif | general.image | .heif, .heifs, .hif | image/heif | 高效图像文件格式。 |
 | general.heic | general.image | .heic, .heics | image/heic | 高效容器图像文件格式。 |
@@ -75,7 +76,7 @@
 | general.pcm | general.audio | .pcm | audio/pcm | PCM音频类型。 |
 | general.flac | general.audio | .flac | audio/flac | FLAC音频类型。 |
 | general.alac | general.audio | .alac | audio/alac | ALAC音频类型。 |
-| general.mp3 | general.audio | .mp3 | audio/mp3 | MPEG-3音频类型。 |
+| general.mp3 | general.audio | .mp3 | audio/mp3 | MPEG-1 Audio Layer 3音频类型。 |
 | general.aac | general.audio | .aac | audio/aac | AAC音频类型。 |
 | general.au-audio | general.audio | .au, .snd | audio/basic, audio/au, audio/snd | Au音频类型。 |
 | general.aifc-audio | general.audio | .aifc, .aif, .aiff | audio/x-aiff | 音频交换文件格式。 |
@@ -221,10 +222,11 @@
  
   
 
-#### 系统关联类型
+## 系统关联类型
 
 系统定义数据类型与具体的平台/操作系统有较为深入的关联，支持系统/平台内的跨应用交互，标识UTD-ID为os-name.xxx。当前系统中预定义的系统关联类型列表如下：
   
+
 | UTD-ID | BelongingTo类型 | 后缀名 | MIMEType类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | openharmony.form | general.object | - | - | HarmonyOS系统定义的Form类型。 |
@@ -251,10 +253,11 @@
  
   
 
-#### 应用定义类型
+## 应用定义类型
 
 应用定义类型表示该类型由具体的应用或者组织进行定义与维护，数据的交互依赖特定的应用进行识别，标识UTD-ID为com.company-name.xxx或org.organization-name.xxx。当前系统中预定义的应用定义类型列表如下：
   
+
 | UTD-ID | BelongingTo类型 | 后缀名 | MIMEType类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | com.microsoft.bmp | general.image | .bmp, .bm | image/bmp, image/x-ms-bmp | WINDOWS位图图像类型。 |
@@ -389,7 +392,7 @@
 | com.sun.java-class | general.executable | .class | - | Java类文件类型。 |
 | com.sun.java-archive | general.archive,general.executable | .jar | application/java-archive | JAVA存档文件类型。 |
 | com.sun.raster | general.image | .ras | image/x-cmu-raster | Sun Raster图像格式。 |
-| org.gnu.gnu-tar-archive | general.archive | .gtar | application/x-gtar | GUN存档文件类型。 |
+| org.gnu.gnu-tar-archive | general.archive | .gtar | application/x-gtar | GNU存档文件类型。 |
 | org.gnu.gnu-zip-archive | general.archive | .gz, .gzip | application/x-gzip, application/gzip | GZIP存档文件类型。 |
 | org.gnu.gnu-zip-tar-archive | general.archive | .tgz | application/x-gtar | GZIP TAR存档文件类型。 |
 | org.gnu.texinfo | general.source-code | .texinfo,.texi | application/x-texinfo | GNU Texinfo源文件类型。 |
@@ -398,7 +401,7 @@
 | com.amazon.azw3 | general.ebook | .azw3 | application/vnd.amazon.mobi8-ebook, application/x-mobi8-ebook | AZW3电子书文件格式类型。 |
 | com.amazon.kfx | general.ebook | .kfx | - | KFX电子书文件格式类型。 |
 | com.autodesk.dwg | general.composite-object | .dwg | image/vnd.dwg | AutoCAD绘图保存格式。 |
-| com.autodesk.dxf | general.composite-object | .dxf | image/vnd.dxf | AutoCAD绘图交换交流格式。 |
+| com.autodesk.dxf | general.composite-object | .dxf | image/vnd.dxf | AutoCAD绘图交换格式。 |
 | com.autodesk.dws | general.composite-object | .dws | - | AutoCAD绘图标准文件模板格式。 |
 | com.autodesk.dwt | general.composite-object | .dwt | - | AutoCAD绘图模板文件。 |
 | com.autodesk.dwf | general.composite-object | .dwf | model/vnd.dwf | AutoCAD网络文件格式。 |
@@ -509,7 +512,7 @@
 | com.microsoft.vbscript | general.script | .vbs | application/x-vbs | VBScript脚本类型。 |
 | com.microsoft.sys | general.object | .sys | - | Windows系统文件类型。 |
 | com.microsoft.powershell-script | general.script | .ps1 | - | Windows PowerShell脚本类型。 |
-| com.microsoft.registry | general.database | .reg | - | DOS批处理文件类型。 |
-| com.microsoft.dos-batch | general.script | .bat | application/x-bat | Windows注册表类型。 |
+| com.microsoft.registry | general.database | .reg | - | Windows注册表类型。 |
+| com.microsoft.dos-batch | general.script | .bat | application/x-bat | DOS批处理文件类型。 |
 | com.microsoft.inf | general.text | .inf | text/plain | 安装信息文件。 |
 | com.microsoft.sccd | general.xml | .sccd | - | 签名自定义功能描述符。 |

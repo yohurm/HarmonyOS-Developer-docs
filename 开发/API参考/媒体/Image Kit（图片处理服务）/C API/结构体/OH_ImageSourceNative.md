@@ -1,22 +1,24 @@
 # OH_ImageSourceNative
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-nativemodule-oh-imagesourcenative
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 struct OH_ImageSourceNative
 ```
 
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 OH_ImageSourceNative是native层封装的ImageSource结构体，用于创建图片数据。OH_ImageSourceNative结构体不可直接操作，而是采用函数调用方式创建、释放结构体以及操作具体字段。
 
 有多种方式创建OH_ImageSourceNative，具体如下：
+
 
 | 函数 | 描述 |
 | --- | --- |
@@ -34,6 +36,7 @@ OH_ImageSourceNative是native层封装的ImageSource结构体，用于创建图�
 资源管理：通过OH_ImageSourceNative解码或获取到的[OH_PixelmapNative](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-nativemodule-oh-pixelmapnative)、[OH_PictureNative](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-nativemodule-oh-picturenative)、[OH_ImageRawData](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-nativemodule-oh-imagerawdata)对象由调用方分别管理。释放OH_ImageSourceNative对象不会自动释放这些对象，需要调用对应接口释放或销毁。
 
 OH_ImageSourceNative结构体内容和操作方式如下：
+
 
 | 字段类型 | 字段名称 | 字段描述 | 操作函数 | 函数描述 |
 | --- | --- | --- | --- | --- |

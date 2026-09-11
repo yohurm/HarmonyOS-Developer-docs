@@ -1,6 +1,6 @@
 # 设置PDF文档预览效果
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pdf-pdfview-preview-method
 
@@ -18,7 +18,8 @@ pdfViewManager为PDF文档提供了丰富的预览特性。
 
 
 
-#### 接口说明
+## 接口说明
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -31,7 +32,7 @@ pdfViewManager为PDF文档提供了丰富的预览特性。
 
 
 
-#### 示例代码
+## 示例代码
 1. 先加载PDF文档。
 2. 调用PdfView预览组件，渲染显示。
 3. 在按钮【setPreviewMode】里，调用setPageLayout、setPageContinuous等方法，设置文档预览效果。

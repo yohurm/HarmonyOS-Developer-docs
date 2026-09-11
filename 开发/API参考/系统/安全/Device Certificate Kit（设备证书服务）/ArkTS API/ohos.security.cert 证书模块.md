@@ -1,9 +1,9 @@
 # @ohos.security.cert (证书模块)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cert
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 证书算法库框架提供证书相关接口。其中，依赖加解密算法库框架的基础算法能力的部分，详细接口说明可参考[@ohos.security.cryptoFramework (加解密算法库框架)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework)。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { cert } from '@kit.DeviceCertificateKit';
@@ -23,13 +24,15 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### CertResult
+## CertResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示执行结果的枚举。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -66,15 +69,17 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### DataBlob
+## DataBlob
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 二进制数据的封装接口，核心字段data为Uint8Array类型。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -83,15 +88,17 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 
 
-#### DataArray
+## DataArray
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-buffer数组的列表。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+数据数组的列表。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -100,15 +107,17 @@ buffer数组的列表。
 
 
 
-#### EncodingFormat
+## EncodingFormat
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示证书编码格式的枚举。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -119,15 +128,17 @@ buffer数组的列表。
 
 
 
-#### EncodingBaseFormat18+
+## EncodingBaseFormat18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示生成证书相关数据的编码格式的枚举。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -137,29 +148,32 @@ buffer数组的列表。
 
 
 
-#### CsrAttribute18+
+## CsrAttribute18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-表示生成CSR的编码格式配置参数中的扩展。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-OpenSSL中规定了扩展类型，例如challengePassword、keyUsage等。
+定义CSR属性。
+
+CSR属性字段，当前仅支持字符串类型的属性字段，属性值添加到CSR中编码为utf-8。常见的type为challengePassword。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| type | string | 否 | 否 | OpenSSL指定的扩展类型。 |
-| value | string | 否 | 否 | 扩展值。 |
+| type | string | 否 | 否 | PKCS #9指定的扩展类型。 |
+| value | string | 否 | 否 | 属性值。 |
 
 
 
 
-#### CsrGenerationConfig18+
+## CsrGenerationConfig18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于生成CSR的配置参数，包含主体名称、扩展、摘要算法、输出格式等。
 
@@ -167,29 +181,32 @@ OpenSSL中规定了扩展类型，例如challengePassword、keyUsage等。
 
 **系统能力：** SystemCapability.Security.Cert
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | subject | X500DistinguishedName | 否 | 否 | 主体名称。 |
-| mdName | string | 否 | 否 | 摘要算法名。 |
+| mdName | string | 否 | 否 | 摘要算法名。当前支持"SHA1"、"SHA256"、"SHA384"、"SHA512"。 |
 | attributes | Array&lt;CsrAttribute&gt; | 否 | 是 | 扩展。 |
-| outFormat | EncodingBaseFormat | 否 | 是 | 输出类型。 |
+| outFormat | EncodingBaseFormat | 否 | 是 | 输出类型。默认值为PEM格式。 |
 
 
 > [!NOTE]
-> subject是X.509定义的Name类型的对象。 mdName是摘要算法名，当前支持SHA1、SHA256、SHA384、SHA512。 attributes是可选参数，指定OpenSSL中规定的扩展类型跟扩展值生成CSR。例如challengePassword、keyUsage等。 outFormat指定输出CSR的格式，若不指定默认为PEM格式。
+> subject是X500DistinguishedName对象。 mdName是摘要算法名，当前支持SHA1、SHA256、SHA384、SHA512。 attributes是可选参数，指定OpenSSL中规定的扩展类型跟扩展值生成CSR。例如challengePassword、keyUsage等。 outFormat指定输出CSR的格式，若不指定默认为PEM格式。
 
 
 
 
-#### CertItemType10+
+## CertItemType10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示获取证书字段的枚举。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -202,53 +219,59 @@ OpenSSL中规定了扩展类型，例如challengePassword、keyUsage等。
 
 
 
-#### ExtensionOidType10+
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-表示获取扩展域中对象标识符类型的枚举。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.Security.Cert
-
-| 名称 | 值 | 说明 |
-| --- | --- | --- |
-| EXTENSION_OID_TYPE_ALL | 0 | 表示获取扩展域中所有的对象标识符。 |
-| EXTENSION_OID_TYPE_CRITICAL | 1 | 表示获取扩展域中critical为true的对象标识符。 |
-| EXTENSION_OID_TYPE_UNCRITICAL | 2 | 表示获取扩展域中critical为false的对象标识符。 |
+## ExtensionOidType10+
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-
-#### ExtensionEntryType10+
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-表示获取扩展域中对象类型的枚举。
+证书扩展OID类型的枚举。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| EXTENSION_ENTRY_TYPE_ENTRY | 0 | 表示获取整个对象。 |
-| EXTENSION_ENTRY_TYPE_ENTRY_CRITICAL | 1 | 表示获取对象的critical属性。 |
-| EXTENSION_ENTRY_TYPE_ENTRY_VALUE | 2 | 表示获取对象的数据。 |
+| EXTENSION_OID_TYPE_ALL | 0 | 所有OID。 |
+| EXTENSION_OID_TYPE_CRITICAL | 1 | critical为true的OID。 |
+| EXTENSION_OID_TYPE_UNCRITICAL | 2 | critical为false的OID。 |
 
 
 
 
-#### EncodingType12+
+## ExtensionEntryType10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+证书扩展项类型的枚举。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Security.Cert
+
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| EXTENSION_ENTRY_TYPE_ENTRY | 0 | 整个扩展项。 |
+| EXTENSION_ENTRY_TYPE_ENTRY_CRITICAL | 1 | 扩展项的critical属性。 |
+| EXTENSION_ENTRY_TYPE_ENTRY_VALUE | 2 | 扩展项的值（扩展特定数据）。 |
+
+
+
+
+## EncodingType12+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示获取编码格式的枚举。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -257,21 +280,17 @@ OpenSSL中规定了扩展类型，例如challengePassword、keyUsage等。
 
 
 
-#### EncodingBlob
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-定义编码格式的二进制数据数组。
+## EncodingBlob
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 属性
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+表示一个编码后的二进制数据块。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -281,21 +300,17 @@ OpenSSL中规定了扩展类型，例如challengePassword、keyUsage等。
 
 
 
-#### CertChainData
+## CertChainData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 证书链数据，在证书链校验时，作为入参传入。
-
-
-
-#### 属性
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -306,15 +321,17 @@ OpenSSL中规定了扩展类型，例如challengePassword、keyUsage等。
 
 
 
-#### GeneralNameType12+
+## GeneralNameType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 X.509中定义的GeneralName类型的枚举，这些类型可出现在“使用者备用名称”（Subject Alternative Name）及其他扩展项中。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -331,15 +348,17 @@ X.509中定义的GeneralName类型的枚举，这些类型可出现在“使用�
 
 
 
-#### GeneralName12+
+## GeneralName12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-用于表示GeneralName。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+表示X.509 GeneralName，定义在RFC 5280中，可出现在Subject Alternative Name等扩展中。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -349,13 +368,15 @@ X.509中定义的GeneralName类型的枚举，这些类型可出现在“使用�
 
 
 
-#### X509CertMatchParameters11+
+## X509CertMatchParameters11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于匹配证书的过滤参数。如果参数中任一项都未指定，则匹配所有证书。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -367,8 +388,8 @@ X.509中定义的GeneralName类型的枚举，这些类型可出现在“使用�
 | subject | Uint8Array | 否 | 是 | 指定证书主体名称，DER编码格式。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | publicKey | DataBlob | 否 | 是 | 指定证书公钥，DER编码格式。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | publicKeyAlgID | string | 否 | 是 | 指定证书公钥的算法。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| subjectAlternativeNames12+ | Array&lt;GeneralName&gt; | 否 | 是 | 指定证书主体名称。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| matchAllSubjectAltNames12+ | boolean | 否 | 是 | 指定是否需要匹配证书主体名称。true为需要，false为不需要。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| subjectAlternativeNames12+ | Array&lt;GeneralName&gt; | 否 | 是 | 指定证书主体备用名称。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| matchAllSubjectAltNames12+ | boolean | 否 | 是 | 指定是否需要匹配证书主体备用名称。true为需要，false为不需要。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | authorityKeyIdentifier12+ | Uint8Array | 否 | 是 | 指定证书颁发机构密钥。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | minPathLenConstraint12+ | number | 否 | 是 | 指定证书CA路径长度。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | extendedKeyUsage12+ | Array&lt;string&gt; | 否 | 是 | 指定证书扩展用途。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
@@ -381,15 +402,17 @@ X.509中定义的GeneralName类型的枚举，这些类型可出现在“使用�
 
 
 
-#### X509CRLMatchParameters11+
+## X509CRLMatchParameters11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于匹配证书吊销列表的过滤参数。如果参数中任一项都未指定，则匹配所有证书吊销列表。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -402,15 +425,17 @@ X.509中定义的GeneralName类型的枚举，这些类型可出现在“使用�
 
 
 
-#### CertChainBuildParameters12+
+## CertChainBuildParameters12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-用于指定证书链创建参数。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+证书链创建参数。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -421,15 +446,17 @@ X.509中定义的GeneralName类型的枚举，这些类型可出现在“使用�
 
 
 
-#### CertChainBuildResult12+
+## CertChainBuildResult12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-用于指定证书链创建结果。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+表示证书链创建结果。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -439,15 +466,17 @@ X.509中定义的GeneralName类型的枚举，这些类型可出现在“使用�
 
 
 
-#### X509TrustAnchor11+
+## X509TrustAnchor11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示X.509信任锚，用于校验证书链。使用信任锚中的证书或者公钥作为可信根，对证书链进行校验。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -459,13 +488,15 @@ X.509中定义的GeneralName类型的枚举，这些类型可出现在“使用�
 
 
 
-#### RevocationCheckOptions12+
+## RevocationCheckOptions12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示证书链在线校验证书吊销状态选项的枚举。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -480,15 +511,17 @@ X.509中定义的GeneralName类型的枚举，这些类型可出现在“使用�
 
 
 
-#### ValidationPolicyType12+
+## ValidationPolicyType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示证书链在线校验策略的枚举。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -498,15 +531,17 @@ X.509中定义的GeneralName类型的枚举，这些类型可出现在“使用�
 
 
 
-#### KeyUsageType12+
+## KeyUsageType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示证书中密钥用途的枚举。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -523,9 +558,10 @@ X.509中定义的GeneralName类型的枚举，这些类型可出现在“使用�
 
 
 
-#### CertRevocationFlag
+## CertRevocationFlag
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示证书吊销检查标志的枚举。
 
@@ -537,19 +573,21 @@ X.509中定义的GeneralName类型的枚举，这些类型可出现在“使用�
 
 **系统能力：** SystemCapability.Security.Cert
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CERT_REVOCATION_PREFER_OCSP | 0 | 优先OCSP检查。仅当CERT_REVOCATION_CRL_CHECK与CERT_REVOCATION_OCSP_CHECK同时设置时，该标志生效。 设置后先执行OCSP检查，未找到响应或超时时回退CRL； 不设置则先执行CRL检查，未找到CRL或超时时回退OCSP。 |
 | CERT_REVOCATION_CRL_CHECK | 1 | 启用CRL检查。使用证书吊销列表检查证书状态。 首先使用X509CertRevokedParams的crls参数，未匹配到CRL且X509CertRevokedParams的allowDownloadCrl参数设置为true则尝试使用证书的CDP扩展下载CRL。 |
-| CERT_REVOCATION_OCSP_CHECK | 2 | 启用OCSP检查。使用在线证书状态协议检查证书状态。 首先使用X509CertRevokedParams的ocspResponses参数，未匹配到响应且X509CertRevokedParams的allowOcspCheckOnline参数设置为true则尝试从证书AIA扩展获取OCSP URL并发送请求获取响应。 始终使系统当前时间校验ocsp响应的有效期，并允许前后5分钟的时间容差。 允许ocsp响应缺少nonce和nextUpdate。 |
+| CERT_REVOCATION_OCSP_CHECK | 2 | 启用OCSP检查。使用在线证书状态协议检查证书状态。 首先使用X509CertRevokedParams的ocspResponses参数，未匹配到响应且X509CertRevokedParams的allowOcspCheckOnline参数设置为true则尝试从证书AIA扩展获取OCSP URL并发送请求获取响应。 始终使用系统当前时间校验ocsp响应的有效期，并允许前后5分钟的时间容差。 始终使用系统当前时间校验ocsp签名者证书链的有效期。 允许ocsp响应缺少nonce和nextUpdate。 |
 | CERT_REVOCATION_CHECK_ALL_CERT | 3 | 检查所有证书的吊销状态。 设置后对证书链中所有证书执行吊销检查（跳过自签名证书）； 不设置则仅检查终端证书（证书链第一个证书）。 |
 
 
 
 
-#### OcspDigest
+## OcspDigest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示OCSP摘要算法的枚举。
 
@@ -560,6 +598,7 @@ X.509中定义的GeneralName类型的枚举，这些类型可出现在“使用�
 **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -572,9 +611,10 @@ X.509中定义的GeneralName类型的枚举，这些类型可出现在“使用�
 
 
 
-#### X509CertRevokedParams
+## X509CertRevokedParams
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示证书吊销检查参数。
 
@@ -586,21 +626,23 @@ X.509中定义的GeneralName类型的枚举，这些类型可出现在“使用�
 
 **系统能力：** SystemCapability.Security.Cert
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | revocationFlags | Array&lt;CertRevocationFlag&gt; | 否 | 否 | 吊销检查标志。数量范围：[1, 4]。数组必须包含CERT_REVOCATION_CRL_CHECK或CERT_REVOCATION_OCSP_CHECK。 |
 | crls | Array&lt;X509CRL&gt; | 否 | 是 | CRL列表。最大数量：100。 |
 | allowDownloadCrl | boolean | 否 | 是 | 是否允许下载CRL，默认值为false。true：尝试使用证书的CDP扩展下载CRL；false：不尝试下载CRL。 |
 | ocspResponses | Array&lt;Uint8Array&gt; | 否 | 是 | OCSP响应数据。预置的OCSP响应数据。最大数量：100。 |
-| allowOcspCheckOnline | boolean | 否 | 是 | 是否允许在线OCSP检查，默认值为false。true：执行在线OCSP检查，即尝试从证书AIA扩展获取OCSP URL并发送请求获取响应；false：不执行在线OCSP检查。 |
+| allowOcspCheckOnline | boolean | 否 | 是 | 是否允许在线OCSP检查，默认值为false。 true：执行在线OCSP检查，即尝试从证书AIA扩展获取OCSP URL并发送请求获取响应； false：不执行在线OCSP检查。 |
 | ocspDigest | OcspDigest | 否 | 是 | OCSP请求使用的摘要算法，默认值为SHA256。 |
 
 
 
 
-#### CertValidationParams
+## CertValidationParams
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示证书验证参数。
 
@@ -612,13 +654,14 @@ X.509中定义的GeneralName类型的枚举，这些类型可出现在“使用�
 
 **系统能力：** SystemCapability.Security.Cert
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | untrustedCerts | Array&lt;X509Cert&gt; | 否 | 是 | 非信任证书列表。仅用于构建证书链的中间证书，不作为信任锚点。最大数量：100。 |
 | trustedCerts | Array&lt;X509Cert&gt; | 否 | 是 | 信任证书列表。指定信任的根证书或中间CA证书，作为验证的信任锚点。最大数量：100。 验证时，证书链须追溯至信任证书，必须设置此参数或将trustSystemCa设为true。 |
-| trustSystemCa | boolean | 否 | 是 | 是否信任系统CA。默认值为false。true：使用系统预置的CA证书库作为信任锚；false：不使用系统预置的CA证书库作为信任锚。 适用于验证公共网站证书，无需手动配置根证书。 |
-| partialChain | boolean | 否 | 是 | 是否允许部分链验证。默认值为false。true：允许使用信任证书中的任意证书作为信任锚，而非必须追溯到根证书；false：构建证书链时必须追溯到根证书。 |
-| allowDownloadIntermediateCa | boolean | 否 | 是 | 是否允许从网络下载中间CA证书。默认值为false。true：当构建证书链缺失中间证书时，尝试使用证书AIA扩展中颁发者地址下载颁发者证书，解决证书链不完整的问题；false：不允许从网络下载中间的CA证书。 |
+| trustSystemCa | boolean | 否 | 是 | 是否信任系统CA。默认值为false。 true：使用系统预置的CA证书库作为信任锚； false：不使用系统预置的CA证书库作为信任锚。 适用于验证公共网站证书，无需手动配置根证书。 |
+| partialChain | boolean | 否 | 是 | 是否允许部分链验证。默认值为false。 true：允许使用信任证书中的任意证书作为信任锚，而非必须追溯到根证书； false：构建证书链时必须追溯到根证书。 |
+| allowDownloadIntermediateCa | boolean | 否 | 是 | 是否允许从网络下载中间CA证书。默认值为false。 true：当构建证书链缺失中间证书时，尝试使用证书AIA扩展中颁发者地址下载颁发者证书，解决证书链不完整的问题； false：不允许从网络下载中间的CA证书。 下载地址从证书的AIA扩展中获取，仅支持HTTP。若要使用网络进行下载，需要申请ohos.permission.INTERNET权限。关于权限配置的详细信息，请参见声明权限Declaring Permissions。 |
 | date | string | 否 | 是 | 校验日期。格式为YYMMDDHHMMSSZ或YYYYMMDDHHMMSSZ，默认使用当前系统时间。 支持自定义验证时间，适用于离线验证历史签名等场景。 |
 | validateDate | boolean | 否 | 是 | 是否校验日期。默认值为true。true：验证证书和CRL有效期；false：不验证证书和CRL有效期。 |
 | ignoreErrs | Array&lt;CertResult&gt; | 否 | 是 | 允许忽略特定的验证错误。最大数量：8。 可忽略的错误包括：ERR_CERT_NOT_YET_VALID、ERR_CERT_HAS_EXPIRED、ERR_UNKNOWN_CRITICAL_EXTENSION、ERR_CRL_NOT_FOUND、ERR_CRL_NOT_YET_VALID、ERR_CRL_HAS_EXPIRED、ERR_OCSP_RESPONSE_NOT_FOUND、ERR_NETWORK_TIMEOUT。 |
@@ -631,9 +674,10 @@ X.509中定义的GeneralName类型的枚举，这些类型可出现在“使用�
 
 
 
-#### CertValidationResult
+## CertValidationResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示证书验证结果。
 
@@ -645,6 +689,7 @@ X.509中定义的GeneralName类型的枚举，这些类型可出现在“使用�
 
 **系统能力：** SystemCapability.Security.Cert
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | certChain | Array&lt;X509Cert&gt; | 是 | 否 | 验证后的证书链。验证成功时返回完整的证书链，从终端证书到信任锚点。可用于后续的证书信息查询或其他验证操作。 |
@@ -652,15 +697,17 @@ X.509中定义的GeneralName类型的枚举，这些类型可出现在“使用�
 
 
 
-#### RevocationCheckParameter12+
+## RevocationCheckParameter12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示证书链校验证书吊销状态的参数。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -675,19 +722,21 @@ X.509中定义的GeneralName类型的枚举，这些类型可出现在“使用�
 
 
 
-#### CertChainValidationParameters11+
+## CertChainValidationParameters11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示证书链校验的参数。
 
 **系统能力：** SystemCapability.Security.Cert
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | date | string | 否 | 是 | 用于检查证书有效性的日期。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | trustAnchors | Array&lt;X509TrustAnchor&gt; | 否 | 否 | 表示信任锚列表。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| trustSystemCa20+ | boolean | 否 | 是 | 表示是否使用系统预置CA证书校验证书链。true表示使用；false表示不使用。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
+| trustSystemCa20+ | boolean | 否 | 是 | 是否信任系统CA。默认值为false。true表示使用系统预置的CA证书库作为信任锚；false表示不使用系统预置的CA证书库作为信任锚。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
 | allowDownloadIntermediateCa23+ | boolean | 否 | 是 | 表示是否允许尝试从网络下载缺失的中间CA证书。 true表示允许；false表示不允许。默认值为false。 下载地址将从证书AIA扩展中获取，仅支持http，如需使用网络下载，需申请ohos.permission.INTERNET权限。配置方式请参见声明权限。 元服务API： 从API version 23开始，该接口支持在元服务中使用。 |
 | certCRLs | Array&lt;CertCRLCollection&gt; | 否 | 是 | 用于检查证书是否被吊销的CRL集合。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | revocationCheckParam12+ | RevocationCheckParameter | 否 | 是 | 表示需要校验证书吊销状态的参数对象。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
@@ -698,15 +747,17 @@ X.509中定义的GeneralName类型的枚举，这些类型可出现在“使用�
 
 
 
-#### CertChainValidationResult11+
+## CertChainValidationResult11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示证书链校验的返回值。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -716,15 +767,17 @@ X.509中定义的GeneralName类型的枚举，这些类型可出现在“使用�
 
 
 
-#### Pkcs12Data18+
+## Pkcs12Data18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 P12（PKCS #12）数据，包含私钥、证书和其他证书。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -735,15 +788,17 @@ P12（PKCS #12）数据，包含私钥、证书和其他证书。
 
 
 
-#### Pkcs12ParsingConfig18+
+## Pkcs12ParsingConfig18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示解析PKCS #12的配置。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -756,15 +811,17 @@ P12（PKCS #12）数据，包含私钥、证书和其他证书。
 
 
 
-#### PbesEncryptionAlgorithm21+
+## PbesEncryptionAlgorithm21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示基于密码的加密算法枚举。
 
 **元服务API：** 从API version 21开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -775,15 +832,17 @@ P12（PKCS #12）数据，包含私钥、证书和其他证书。
 
 
 
-#### PbesParams21+
+## PbesParams21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示基于密码的加密算法参数，当前仅支持PBES2。
 
 **元服务API：** 从API version 21开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -794,15 +853,17 @@ P12（PKCS #12）数据，包含私钥、证书和其他证书。
 
 
 
-#### Pkcs12MacDigestAlgorithm21+
+## Pkcs12MacDigestAlgorithm21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示PKCS #12的MAC摘要算法枚举。
 
 **元服务API：** 从API version 21开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -813,15 +874,17 @@ P12（PKCS #12）数据，包含私钥、证书和其他证书。
 
 
 
-#### Pkcs12CreationConfig21+
+## Pkcs12CreationConfig21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示创建PKCS #12的配置。
 
 **元服务API：** 从API version 21开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -836,13 +899,15 @@ P12（PKCS #12）数据，包含私钥、证书和其他证书。
 
 
 
-#### CmsContentType18+
+## CmsContentType18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示Cms内容类型的枚举。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -852,15 +917,17 @@ P12（PKCS #12）数据，包含私钥、证书和其他证书。
 
 
 
-#### CmsContentDataFormat18+
+## CmsContentDataFormat18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示Cms内容数据格式的枚举。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -870,15 +937,17 @@ P12（PKCS #12）数据，包含私钥、证书和其他证书。
 
 
 
-#### CmsFormat18+
+## CmsFormat18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示CMS编码格式的枚举。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -888,9 +957,10 @@ P12（PKCS #12）数据，包含私钥、证书和其他证书。
 
 
 
-#### CmsRsaSignaturePadding22+
+## CmsRsaSignaturePadding22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示RSA类型CMS签名填充方式的枚举。
 
@@ -898,23 +968,26 @@ P12（PKCS #12）数据，包含私钥、证书和其他证书。
 
 **系统能力：** SystemCapability.Security.Cert
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| PKCS1_PADDING | 0 | PKCS1填充方式。 |
-| PKCS1_PSS_PADDING | 1 | PKCS1 PSS填充方式。 |
+| PKCS1_PADDING | 0 | PKCS #1 v1.5填充方式。 |
+| PKCS1_PSS_PADDING | 1 | PKCS #1 PSS填充方式。 |
 
 
 
 
-#### CmsKeyAgreeRecipientDigestAlgorithm22+
+## CmsKeyAgreeRecipientDigestAlgorithm22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 CMS KeyAgree类型接收者摘要算法的枚举。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -925,15 +998,17 @@ CMS KeyAgree类型接收者摘要算法的枚举。
 
 
 
-#### CmsRecipientEncryptionAlgorithm22+
+## CmsRecipientEncryptionAlgorithm22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 CMS封装数据的内容加密算法的枚举。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -947,15 +1022,17 @@ CMS封装数据的内容加密算法的枚举。
 
 
 
-#### CmsCertType22+
+## CmsCertType22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从CMS中获取证书不同类型的枚举。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -965,15 +1042,17 @@ CMS封装数据的内容加密算法的枚举。
 
 
 
-#### PrivateKeyInfo18+
+## PrivateKeyInfo18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示私钥信息。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -983,18 +1062,20 @@ CMS封装数据的内容加密算法的枚举。
 
 
 
-#### CmsSignerConfig18+
+## CmsSignerConfig18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示Cms签名者的配置选项。
 
 **系统能力：** SystemCapability.Security.Cert
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| mdName | string | 否 | 否 | 消息摘要算法的名称，例如 "SHA384", 当前支持"SHA1"、"SHA256"、"SHA384"、"SHA512"。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
-| rsaSignaturePadding22+ | CmsRsaSignaturePadding | 否 | 是 | RSA 签名填充方式。默认值为：PKCS1_PADDING。 当设置为 PKCS1_PSS_PADDING 时，mdName 必须为 "SHA256"、"SHA384" 或 "SHA512"。 说明：仅当签名者私钥类型为RSA时有效。 元服务API： 从API version 22开始，该接口支持在元服务中使用。 |
+| mdName | string | 否 | 否 | 消息摘要算法的名称，例如 "SHA384"，当前支持"SHA1"、"SHA256"、"SHA384"、"SHA512"。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
+| rsaSignaturePadding22+ | CmsRsaSignaturePadding | 否 | 是 | RSA签名填充方式。默认值为：PKCS1_PADDING。 当设置为 PKCS1_PSS_PADDING 时，mdName 必须为 "SHA256"、"SHA384" 或 "SHA512"。 说明：仅当签名者私钥类型为RSA时有效。 元服务API： 从API version 22开始，该接口支持在元服务中使用。 |
 | addCert | boolean | 否 | 是 | 是否添加证书。默认为true。true为需要，false为不需要。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 | addAttr | boolean | 否 | 是 | 是否添加签名属性。默认为true。true为需要，false为不需要。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 | addSmimeCapAttr | boolean | 否 | 是 | 是否将SMIME能力添加到Cms对象。默认为true。true为需要，false为不需要。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
@@ -1002,15 +1083,17 @@ CMS封装数据的内容加密算法的枚举。
 
 
 
-#### CmsKeyTransRecipientInfo22+
+## CmsKeyTransRecipientInfo22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 CMS封装数据的KeyTrans接收方信息。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1019,15 +1102,17 @@ CMS封装数据的KeyTrans接收方信息。
 
 
 
-#### CmsKeyAgreeRecipientInfo22+
+## CmsKeyAgreeRecipientInfo22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 CMS封装数据的KeyAgree接收方信息。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1037,9 +1122,10 @@ CMS封装数据的KeyAgree接收方信息。
 
 
 
-#### CmsRecipientInfo22+
+## CmsRecipientInfo22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 CMS封装数据的接收者信息。
 
@@ -1051,6 +1137,7 @@ CMS封装数据的接收者信息。
 
 **系统能力：** SystemCapability.Security.Cert
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | keyTransInfo | CmsKeyTransRecipientInfo | 否 | 是 | keyTrans接收者信息。 |
@@ -1059,9 +1146,10 @@ CMS封装数据的接收者信息。
 
 
 
-#### CmsGeneratorOptions18+
+## CmsGeneratorOptions18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示生成CMS消息的配置选项。
 
@@ -1069,24 +1157,27 @@ CMS封装数据的接收者信息。
 
 **系统能力：** SystemCapability.Security.Cert
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | contentDataFormat | CmsContentDataFormat | 否 | 是 | 内容数据的格式。默认为CmsContentDataFormat.BINARY。 |
 | outFormat | CmsFormat | 否 | 是 | Cms最终数据的输出格式。默认为DER。 |
-| isDetached | boolean | 否 | 是 | Cms最终数据是否不包含原始数据。默认为false。true为包含，false为不包含。 |
+| isDetached | boolean | 否 | 是 | Cms最终数据是否不包含原始数据。默认为false。true为不包含，false为包含。 |
 
 
 
 
-#### CmsVerificationConfig22+
+## CmsVerificationConfig22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 CMS验签的配置。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1098,15 +1189,17 @@ CMS验签的配置。
 
 
 
-#### CmsEnvelopedDecryptionConfig22+
+## CmsEnvelopedDecryptionConfig22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 CMS解封装的配置。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1118,9 +1211,10 @@ CMS解封装的配置。
 
 
 
-#### cert.createX509Cert
+## cert.createX509Cert
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createX509Cert(inStream : EncodingBlob, callback : AsyncCallback&lt;X509Cert&gt;) : void
 
@@ -1132,22 +1226,24 @@ createX509Cert(inStream : EncodingBlob, callback : AsyncCallback&lt;X509Cert&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | inStream | EncodingBlob | 是 | X.509证书序列化数据。 |
-| callback | AsyncCallback&lt;X509Cert&gt; | 是 | 回调函数，表示X.509证书对象。 |
+| callback | AsyncCallback&lt;X509Cert&gt; | 是 | 回调函数。当创建X.509证书对象成功时，err为undefined，data为获取到的X509Cert实例；否则为错误对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 801 | this operation is not supported. |
-| 19020001 | memory malloc failed. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 801 | This operation is not supported. |
+| 19020001 | Memory malloc failed. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -1181,7 +1277,7 @@ let encodingBlob: cert.EncodingBlob = {
   encodingFormat: cert.EncodingFormat.FORMAT_PEM
 };
 
-cert.createX509Cert(encodingBlob, (error, x509Cert) => {
+cert.createX509Cert(encodingBlob, (error, _x509Cert) => {
   if (error) {
     console.error(`createX509Cert failed, errCode: ${error.code}, errMsg: ${error.message}`);
   } else {
@@ -1192,9 +1288,10 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
 
 
 
-#### cert.createX509Cert
+## cert.createX509Cert
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createX509Cert(inStream : EncodingBlob) : Promise&lt;X509Cert&gt;
 
@@ -1206,6 +1303,7 @@ createX509Cert(inStream : EncodingBlob) : Promise&lt;X509Cert&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | inStream | EncodingBlob | 是 | X.509证书序列化数据。 |
@@ -1213,21 +1311,23 @@ createX509Cert(inStream : EncodingBlob) : Promise&lt;X509Cert&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;X509Cert&gt; | 表示X.509证书对象。 |
+| Promise&lt;X509Cert&gt; | Promise对象，返回创建的X509Cert实例。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 801 | this operation is not supported. |
-| 19020001 | memory malloc failed. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 801 | This operation is not supported. |
+| 19020001 | Memory malloc failed. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -1262,7 +1362,7 @@ let encodingBlob: cert.EncodingBlob = {
   encodingFormat: cert.EncodingFormat.FORMAT_PEM
 };
 
-cert.createX509Cert(encodingBlob).then(x509Cert => {
+cert.createX509Cert(encodingBlob).then(_x509Cert => {
   console.info('createX509Cert result: success.');
 }).catch((error: BusinessError) => {
   console.error(`createX509Cert failed, errCode: ${error.code}, errMsg: ${error.message}`);
@@ -1271,17 +1371,19 @@ cert.createX509Cert(encodingBlob).then(x509Cert => {
 
 
 
-#### X509Cert
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-X.509证书类。
+## X509Cert
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### verify
+提供用于X.509证书操作的API。
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+### verify
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 verify(key : cryptoFramework.PubKey, callback : AsyncCallback&lt;void&gt;) : void
 
@@ -1293,20 +1395,22 @@ verify(key : cryptoFramework.PubKey, callback : AsyncCallback&lt;void&gt;) : voi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | cryptoFramework.PubKey | 是 | 用于验签的公钥对象。 |
-| callback | AsyncCallback&lt;void&gt; | 是 | 回调函数，使用AsyncCallback的第一个error参数判断是否验签成功，error为null表示成功，不为null表示失败。 |
+| callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当验签成功时，err为undefined，否则为错误对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -1352,7 +1456,7 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
       let pubKey = x509Cert.getPublicKey();
 
       // 验证证书签名。
-      x509Cert.verify(pubKey, (err, data) => {
+      x509Cert.verify(pubKey, (err, _data) => {
         if (err) {
           console.error(`verify failed, errCode: ${err.code}, errMsg: ${err.message}`);
         } else {
@@ -1369,9 +1473,10 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
 
 
 
-#### verify
+### verify
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 verify(key : cryptoFramework.PubKey) : Promise&lt;void&gt;
 
@@ -1383,6 +1488,7 @@ verify(key : cryptoFramework.PubKey) : Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | cryptoFramework.PubKey | 是 | 用于验签的公钥对象。 |
@@ -1390,19 +1496,21 @@ verify(key : cryptoFramework.PubKey) : Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | Promise对象。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -1443,7 +1551,7 @@ cert.createX509Cert(encodingBlob).then(x509Cert => {
   try {
     // 业务需通过上级X509Cert证书对象（或当前证书对象为自签名的证书）的getPublicKey获取PubKey。
     let pubKey = x509Cert.getPublicKey();
-    x509Cert.verify(pubKey).then(result => {
+    x509Cert.verify(pubKey).then(_result => {
       console.info('verify result: success.');
     }).catch((error: BusinessError) => {
       console.error(`verify failed, errCode: ${error.code}, errMsg: ${error.message}`);
@@ -1458,9 +1566,10 @@ cert.createX509Cert(encodingBlob).then(x509Cert => {
 
 
 
-#### getEncoded
+### getEncoded
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEncoded(callback : AsyncCallback&lt;EncodingBlob&gt;) : void
 
@@ -1472,21 +1581,23 @@ getEncoded(callback : AsyncCallback&lt;EncodingBlob&gt;) : void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback&lt;EncodingBlob&gt; | 是 | 回调函数，表示X.509证书序列化数据。 |
+| callback | AsyncCallback&lt;EncodingBlob&gt; | 是 | 回调函数。当获取X.509证书序列化数据成功时，err为undefined，data为获取到的X.509证书序列化数据；否则为错误对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -1525,7 +1636,7 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
     console.error(`createX509Cert failed, errCode: ${error.code}, errMsg: ${error.message}`);
   } else {
     console.info('createX509Cert result: success.');
-    x509Cert.getEncoded((error, data) => {
+    x509Cert.getEncoded((error, _data) => {
       if (error) {
         console.error(`getEncoded failed, errCode: ${error.code}, errMsg: ${error.message}`);
       } else {
@@ -1538,9 +1649,10 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
 
 
 
-#### getEncoded
+### getEncoded
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEncoded() : Promise&lt;EncodingBlob&gt;
 
@@ -1552,21 +1664,23 @@ getEncoded() : Promise&lt;EncodingBlob&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;EncodingBlob&gt; | 表示X.509证书序列化数据。 |
+| Promise&lt;EncodingBlob&gt; | Promise对象，返回X.509证书序列化数据。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -1603,7 +1717,7 @@ let encodingBlob: cert.EncodingBlob = {
 };
 cert.createX509Cert(encodingBlob).then(x509Cert => {
   console.info('createX509Cert result: success.');
-  x509Cert.getEncoded().then(result => {
+  x509Cert.getEncoded().then(_result => {
     console.info('getEncoded result: success.');
   }).catch((error: BusinessError) => {
     console.error(`getEncoded failed, errCode: ${error.code}, errMsg: ${error.message}`);
@@ -1615,9 +1729,10 @@ cert.createX509Cert(encodingBlob).then(x509Cert => {
 
 
 
-#### getPublicKey
+### getPublicKey
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPublicKey() : cryptoFramework.PubKey
 
@@ -1629,6 +1744,7 @@ getPublicKey() : cryptoFramework.PubKey
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | cryptoFramework.PubKey | X.509证书公钥对象：仅用于X509Cert的verify接口。 |
@@ -1638,10 +1754,11 @@ getPublicKey() : cryptoFramework.PubKey
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -1682,7 +1799,7 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
   } else {
     console.info('createX509Cert result: success.');
     try {
-      let pubKey = x509Cert.getPublicKey();
+      x509Cert.getPublicKey();
     } catch (error) {
       let e: BusinessError = error as BusinessError;
       console.error(`getPublicKey failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -1693,9 +1810,10 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
 
 
 
-#### checkValidityWithDate
+### checkValidityWithDate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checkValidityWithDate(date: string) : void
 
@@ -1707,22 +1825,24 @@ checkValidityWithDate(date: string) : void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| date | string | 是 | 日期，为ASN.1时间格式。 |
+| date | string | 是 | 日期，采用ASN.1 UTCTime或GeneralizedTime格式。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19020001 | memory malloc failed. |
-| 19030001 | crypto operation error. |
-| 19030003 | the certificate has not taken effect. |
-| 19030004 | the certificate has expired. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19020001 | Memory malloc failed. |
+| 19030001 | Crypto operation error. |
+| 19030003 | The certificate has not taken effect. |
+| 19030004 | The certificate has expired. |
 
 
 **示例：**
@@ -1777,9 +1897,10 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
 
 
 
-#### getVersion
+### getVersion
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getVersion() : number
 
@@ -1790,6 +1911,7 @@ getVersion() : number
 **系统能力：** SystemCapability.Security.Cert
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1832,15 +1954,17 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
   } else {
     console.info('createX509Cert result: success.');
     let version = x509Cert.getVersion();
+    console.info('version = ' + version);
   }
 });
 ```
 
 
 
-#### getSerialNumber(deprecated)
+### getSerialNumber(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSerialNumber() : number
 
@@ -1853,6 +1977,7 @@ getSerialNumber() : number
 **系统能力：** SystemCapability.Security.Cert
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1896,15 +2021,17 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
   } else {
     console.info('createX509Cert result: success.');
     let serialNumber = x509Cert.getSerialNumber();
+    console.info('serialNumber = ' + serialNumber);
   }
 });
 ```
 
 
 
-#### getCertSerialNumber10+
+### getCertSerialNumber10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCertSerialNumber() : bigint
 
@@ -1916,6 +2043,7 @@ getCertSerialNumber() : bigint
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | bigint | 表示X.509证书序列号。 |
@@ -1925,9 +2053,10 @@ getCertSerialNumber() : bigint
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
 
 
 **示例：**
@@ -1969,6 +2098,7 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
     console.info('createX509Cert result: success.');
     try {
       let serialNumber = x509Cert.getCertSerialNumber();
+      console.info('serialNumber = ' + serialNumber);
     } catch (err) {
       let e: BusinessError = err as BusinessError;
       console.error(`getCertSerialNumber failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -1979,16 +2109,17 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
 
 
 
-#### getIssuerName
+### getIssuerName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getIssuerName() : DataBlob
 
 表示获取X.509证书颁发者名称。
 
 > [!NOTE]
-> 获取到的X.509证书颁发者名称数据带字符串结束符。
+> 获取的X.509证书颁发者名称末尾包含一个NUL终止符（值为0），请根据业务需求决定是否去除该终止符。 获取的证书颁发者名称为ASCII编码，转换为字符串后，是以斜杠（/）开始，以斜杠（/）分隔相对可分辨名称的可分辨名称字符串。
 
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -1996,6 +2127,7 @@ getIssuerName() : DataBlob
 **系统能力：** SystemCapability.Security.Cert
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2006,11 +2138,12 @@ getIssuerName() : DataBlob
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -2052,6 +2185,7 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
     console.info('createX509Cert result: success.');
     try {
       let issuerName = x509Cert.getIssuerName();
+      console.info('issuerName = ' + issuerName.data);
     } catch (err) {
       let e: BusinessError = err as BusinessError;
       console.error(`getIssuerName failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -2062,9 +2196,10 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
 
 
 
-#### getIssuerName20+
+### getIssuerName20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getIssuerName(encodingType: EncodingType): string
 
@@ -2076,12 +2211,14 @@ getIssuerName(encodingType: EncodingType): string
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | encodingType | EncodingType | 是 | 表示编码类型。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2092,12 +2229,13 @@ getIssuerName(encodingType: EncodingType): string
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19020003 | parameter check failed. Possible causes: 1. The value of encodingType is not in the EncodingType enumeration range. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19020003 | Parameter check failed. Possible causes: 1. The value of encodingType is not in the EncodingType enumeration range. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -2162,16 +2300,17 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
 
 
 
-#### getSubjectName
+### getSubjectName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSubjectName(encodingType?: EncodingType) : DataBlob
 
 表示获取X.509证书主体名称。
 
 > [!NOTE]
-> 获取到的X.509证书主体名称数据带字符串结束符。
+> 若不设置encodingType参数，获取的证书主体名称末尾包含一个NUL终止符（值为0），请根据业务需求决定是否去除该终止符。 若不设置encodingType参数，获取的证书主体名称为ASCII编码，转换为字符串后，是以斜杠（/）开始，以斜杠（/）分隔相对可分辨名称的可分辨名称字符串。 建议设置encodingType参数为EncodingType.ENCODING_UTF8，获取的证书主体名称是以逗号（,）分隔相对可分辨名称的可分辨名称字符串。
 
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -2180,6 +2319,7 @@ getSubjectName(encodingType?: EncodingType) : DataBlob
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | encodingType | EncodingType | 否 | 编码类型。设置参数表示获取UTF-8格式编码；不设置默认获取ASCII格式编码。 API 12后支持设置此参数。 |
@@ -2187,21 +2327,23 @@ getSubjectName(encodingType?: EncodingType) : DataBlob
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| DataBlob | 表示X.509证书主体名称，转化成字符串后使用逗号分隔相对可分辨名称。 |
+| DataBlob | 表示X.509证书主体名称。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Incorrect parameter types; 2. Parameter verification failed. 适用版本：12+ |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Incorrect parameter types; 2. Parameter verification failed. 适用版本：12+ |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -2243,12 +2385,14 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
     console.info('createX509Cert result: success.');
     try {
       let subjectName = x509Cert.getSubjectName();
+      console.info('subjectName = ' + subjectName.data);
     } catch (err) {
       let e: BusinessError = err as BusinessError;
       console.error(`getSubjectName failed, errCode: ${e.code}, errMsg: ${e.message}`);
     }
     try {
       let subjectNameutf8 = x509Cert.getSubjectName(cert.EncodingType.ENCODING_UTF8);
+      console.info('subjectNameutf8 = ' + subjectNameutf8.data);
     } catch (err) {
       let e: BusinessError = err as BusinessError;
       console.error(`getSubjectNameUtf8 failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -2259,9 +2403,10 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
 
 
 
-#### getNotBeforeTime
+### getNotBeforeTime
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getNotBeforeTime() : string
 
@@ -2273,20 +2418,22 @@ getNotBeforeTime() : string
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| string | 表示X.509证书有效期起始时间，日期为ASN.1时间格式。 |
+| string | 表示X.509证书生效时间，日期采用ASN.1 UTCTime或GeneralizedTime格式。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -2328,6 +2475,7 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
     console.info('createX509Cert result: success.');
     try {
       let notBefore = x509Cert.getNotBeforeTime();
+      console.info('notBefore = ' + notBefore);
     } catch (err) {
       let e: BusinessError = err as BusinessError;
       console.error(`getNotBeforeTime failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -2338,9 +2486,10 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
 
 
 
-#### getNotAfterTime
+### getNotAfterTime
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getNotAfterTime() : string
 
@@ -2352,20 +2501,22 @@ getNotAfterTime() : string
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| string | 表示X.509证书有效期截止时间，日期为ASN.1时间格式。 |
+| string | 表示X.509证书过期时间，日期采用ASN.1 UTCTime或GeneralizedTime格式。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -2407,6 +2558,7 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
     console.info('createX509Cert result: success.');
     try {
       let notAfter = x509Cert.getNotAfterTime();
+      console.info('notAfter = ' + notAfter);
     } catch (err) {
       let e: BusinessError = err as BusinessError;
       console.error(`getNotAfterTime failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -2417,9 +2569,10 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
 
 
 
-#### getSignature
+### getSignature
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSignature() : DataBlob
 
@@ -2431,6 +2584,7 @@ getSignature() : DataBlob
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | DataBlob | 表示X.509证书签名数据。 |
@@ -2440,11 +2594,12 @@ getSignature() : DataBlob
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -2486,6 +2641,7 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
     console.info('createX509Cert result: success.');
     try {
       let signature = x509Cert.getSignature();
+      console.info('signature = ' + signature.data);
     } catch (err) {
       let e: BusinessError = err as BusinessError;
       console.error(`getSignature failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -2496,9 +2652,10 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
 
 
 
-#### getSignatureAlgName
+### getSignatureAlgName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSignatureAlgName() : string
 
@@ -2510,6 +2667,7 @@ getSignatureAlgName() : string
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 表示X.509证书签名算法名称。 |
@@ -2519,11 +2677,12 @@ getSignatureAlgName() : string
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -2565,6 +2724,7 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
     console.info('createX509Cert result: success.');
     try {
       let sigAlgName = x509Cert.getSignatureAlgName();
+      console.info('sigAlgName = ' + sigAlgName);
     } catch (err) {
       let e: BusinessError = err as BusinessError;
       console.error(`getSignatureAlgName failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -2575,9 +2735,10 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
 
 
 
-#### getSignatureAlgOid
+### getSignatureAlgOid
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSignatureAlgOid() : string
 
@@ -2589,6 +2750,7 @@ getSignatureAlgOid() : string
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 表示X.509证书签名算法对象标识符OID。若OID长度超过127字节，则会被截断。 |
@@ -2598,11 +2760,12 @@ getSignatureAlgOid() : string
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -2644,6 +2807,7 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
     console.info('createX509Cert result: success.');
     try {
       let sigAlgOid = x509Cert.getSignatureAlgOid();
+      console.info('sigAlgOid = ' + sigAlgOid);
     } catch (err) {
       let e: BusinessError = err as BusinessError;
       console.error(`getSignatureAlgOid failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -2654,9 +2818,10 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
 
 
 
-#### getSignatureAlgParams
+### getSignatureAlgParams
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSignatureAlgParams() : DataBlob
 
@@ -2668,6 +2833,7 @@ getSignatureAlgParams() : DataBlob
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | DataBlob | 表示X.509证书签名算法参数。 |
@@ -2677,12 +2843,13 @@ getSignatureAlgParams() : DataBlob
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | this operation is not supported. |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 801 | This operation is not supported. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -2739,6 +2906,7 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
     console.info('createX509Cert result: success.');
     try {
       let sigAlgParams = x509Cert.getSignatureAlgParams();
+      console.info('sigAlgParams = ' + sigAlgParams.data);
     } catch (err) {
       let e: BusinessError = err as BusinessError;
       console.error(`getSignatureAlgParams failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -2749,9 +2917,10 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
 
 
 
-#### getKeyUsage
+### getKeyUsage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getKeyUsage() : DataBlob
 
@@ -2763,6 +2932,7 @@ getKeyUsage() : DataBlob
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | DataBlob | 表示X.509证书密钥用途。 |
@@ -2772,10 +2942,11 @@ getKeyUsage() : DataBlob
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -2827,6 +2998,7 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
     console.info('createX509Cert result: success.');
     try {
       let keyUsage = x509Cert.getKeyUsage();
+      console.info('keyUsage = ' + keyUsage.data);
     } catch (err) {
       let e: BusinessError = err as BusinessError;
       console.error(`getKeyUsage failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -2837,9 +3009,10 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
 
 
 
-#### getExtKeyUsage
+### getExtKeyUsage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getExtKeyUsage() : DataArray
 
@@ -2851,6 +3024,7 @@ getExtKeyUsage() : DataArray
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | DataArray | 表示X.509证书扩展密钥用途。 |
@@ -2860,11 +3034,12 @@ getExtKeyUsage() : DataArray
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -2917,6 +3092,7 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
     console.info('createX509Cert result: success.');
     try {
       let extKeyUsage = x509Cert.getExtKeyUsage();
+      console.info('extKeyUsage = ' + extKeyUsage.data);
     } catch (err) {
       let e: BusinessError = err as BusinessError;
       console.error(`getExtKeyUsage failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -2927,9 +3103,10 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
 
 
 
-#### getBasicConstraints
+### getBasicConstraints
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBasicConstraints() : number
 
@@ -2940,6 +3117,7 @@ getBasicConstraints() : number
 **系统能力：** SystemCapability.Security.Cert
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2983,15 +3161,17 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
   } else {
     console.info('createX509Cert result: success.');
     let basicConstraints = x509Cert.getBasicConstraints();
+    console.info('basicConstraints = ' + basicConstraints);
   }
 });
 ```
 
 
 
-#### getSubjectAltNames
+### getSubjectAltNames
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSubjectAltNames() : DataArray
 
@@ -3007,6 +3187,7 @@ getSubjectAltNames() : DataArray
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | DataArray | 表示X.509证书主体可选名称。 |
@@ -3016,11 +3197,12 @@ getSubjectAltNames() : DataArray
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -3073,6 +3255,7 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
     console.info('createX509Cert result: success.');
     try {
       let subjectAltNames = x509Cert.getSubjectAltNames();
+      console.info('subjectAltNames = ' + subjectAltNames.data);
     } catch (err) {
       let e: BusinessError = err as BusinessError;
       console.error(`getSubjectAltNames failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -3083,9 +3266,10 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
 
 
 
-#### getIssuerAltNames
+### getIssuerAltNames
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getIssuerAltNames() : DataArray
 
@@ -3101,6 +3285,7 @@ getIssuerAltNames() : DataArray
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | DataArray | 表示X.509证书颁发者可选名称。 |
@@ -3110,11 +3295,12 @@ getIssuerAltNames() : DataArray
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -3165,6 +3351,7 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
     console.info('createX509Cert result: success.');
     try {
       let issuerAltNames = x509Cert.getIssuerAltNames();
+      console.info('issuerAltNames = ' + issuerAltNames.data);
     } catch (err) {
       let e: BusinessError = err as BusinessError;
       console.error(`getIssuerAltNames failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -3175,9 +3362,10 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
 
 
 
-#### getItem10+
+### getItem10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getItem(itemType: CertItemType) : DataBlob
 
@@ -3189,12 +3377,14 @@ getItem(itemType: CertItemType) : DataBlob
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | itemType | CertItemType | 是 | 表示需要获取的证书字段。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3205,12 +3395,13 @@ getItem(itemType: CertItemType) : DataBlob
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -3252,7 +3443,9 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
     console.info('createX509Cert result: success.');
     try {
       let tbs = x509Cert.getItem(cert.CertItemType.CERT_ITEM_TYPE_TBS);
+      console.info('tbs = ' + tbs.data);
       let pubKey = x509Cert.getItem(cert.CertItemType.CERT_ITEM_TYPE_PUBLIC_KEY);
+      console.info('pubKey = ' + pubKey.data);
     } catch (err) {
       let e: BusinessError = err as BusinessError;
       console.error(`getItem failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -3263,9 +3456,10 @@ cert.createX509Cert(encodingBlob, (error, x509Cert) => {
 
 
 
-#### match11+
+### match11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 match(param: X509CertMatchParameters): boolean
 
@@ -3277,12 +3471,14 @@ match(param: X509CertMatchParameters): boolean
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | param | X509CertMatchParameters | 是 | 表示需要匹配的参数。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3293,11 +3489,12 @@ match(param: X509CertMatchParameters): boolean
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19020001 | memory malloc failed. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19020001 | Memory malloc failed. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -3316,7 +3513,7 @@ function stringToUint8Array(str: string): Uint8Array {
 }
 
 async function createX509Cert(): Promise<cert.X509Cert> {
-  let certData =  '-----BEGIN CERTIFICATE-----\n' +
+  let certData = '-----BEGIN CERTIFICATE-----\n' +
   'MIIDTTCCAjWgAwIBAgIBAzANBgkqhkiG9w0BAQsFADASMRAwDgYDVQQDDAdSb290\n' +
   'IENBMB4XDTI0MDMxOTAyMDM1NFoXDTM0MDMxNzAyMDM1NFowETEPMA0GA1UEAwwG\n' +
   'ZGV2aWNlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuoGk2J0aKWTP\n' +
@@ -3364,6 +3561,7 @@ async function matchX509Cert() {
       publicKeyAlgID: '1.2.840.113549.1.1.1'
     };
     const result = x509Cert.match(param);
+    console.info('result = ' + result);
     console.info('call x509Cert match result: success.');
   } catch (err) {
     let e: BusinessError = err as BusinessError;
@@ -3374,9 +3572,10 @@ async function matchX509Cert() {
 
 
 
-#### getCRLDistributionPoint12+
+### getCRLDistributionPoint12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCRLDistributionPoint(): DataArray
 
@@ -3388,6 +3587,7 @@ getCRLDistributionPoint(): DataArray
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | DataArray | 表示X.509证书CRL的分发点统一资源标识符。 |
@@ -3397,11 +3597,12 @@ getCRLDistributionPoint(): DataArray
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -3446,6 +3647,7 @@ async function certGetCRLDistributionPoint() {
     x509Cert = await cert.createX509Cert(encodingBlob);
     console.info('createX509Cert result: success.');
     let point = x509Cert.getCRLDistributionPoint();
+    console.info('point = ' + point.data);
   } catch (err) {
     let e: BusinessError = err as BusinessError;
     console.error(`createX509Cert failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -3455,9 +3657,10 @@ async function certGetCRLDistributionPoint() {
 
 
 
-#### getIssuerX500DistinguishedName12+
+### getIssuerX500DistinguishedName12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getIssuerX500DistinguishedName(): X500DistinguishedName
 
@@ -3469,6 +3672,7 @@ getIssuerX500DistinguishedName(): X500DistinguishedName
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | X500DistinguishedName | X.500可分辨对象。 |
@@ -3478,11 +3682,12 @@ getIssuerX500DistinguishedName(): X500DistinguishedName
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -3522,7 +3727,7 @@ let certData = '-----BEGIN CERTIFICATE-----\n' +
   'MnX1BeLxbAcAsTPYHjoeFJIrGkKlydLyt/8hDQzpLRW5uEUTjjqLh7vef0OaOP80\n' +
   'MmADt6ojRYvwdMDHF0ASJyupLQ+hiRLVadciK8Z5W34JGN2jwEw5X3nXyAgErIJZ\n' +
   'pqdTflnFLnSwy5M3QHB+xjYAcS9l1br2LA==\n' +
-  '-----END CERTIFICATE-----\n'
+  '-----END CERTIFICATE-----\n';
 
 // 证书二进制数据，需业务自行赋值。
 let encodingBlob: cert.EncodingBlob = {
@@ -3536,7 +3741,7 @@ async function certGetIssuerX500DistinguishedName() {
   try {
     x509Cert = await cert.createX509Cert(encodingBlob);
     console.info('createX509Cert result: success.');
-    let name = x509Cert.getIssuerX500DistinguishedName();
+    x509Cert.getIssuerX500DistinguishedName();
   } catch (err) {
     let e: BusinessError = err as BusinessError;
     console.error(`createX509Cert failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -3546,9 +3751,10 @@ async function certGetIssuerX500DistinguishedName() {
 
 
 
-#### getSubjectX500DistinguishedName12+
+### getSubjectX500DistinguishedName12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSubjectX500DistinguishedName(): X500DistinguishedName
 
@@ -3560,6 +3766,7 @@ getSubjectX500DistinguishedName(): X500DistinguishedName
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | X500DistinguishedName | X.500可分辨对象。 |
@@ -3569,11 +3776,12 @@ getSubjectX500DistinguishedName(): X500DistinguishedName
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -3613,7 +3821,7 @@ let certData = '-----BEGIN CERTIFICATE-----\n' +
   'MnX1BeLxbAcAsTPYHjoeFJIrGkKlydLyt/8hDQzpLRW5uEUTjjqLh7vef0OaOP80\n' +
   'MmADt6ojRYvwdMDHF0ASJyupLQ+hiRLVadciK8Z5W34JGN2jwEw5X3nXyAgErIJZ\n' +
   'pqdTflnFLnSwy5M3QHB+xjYAcS9l1br2LA==\n' +
-  '-----END CERTIFICATE-----\n'
+  '-----END CERTIFICATE-----\n';
 
 // 证书二进制数据，需业务自行赋值。
 let encodingBlob: cert.EncodingBlob = {
@@ -3627,7 +3835,7 @@ async function certGetSubjectX500DistinguishedName() {
   try {
     x509Cert = await cert.createX509Cert(encodingBlob);
     console.info('createX509Cert result: success.');
-    let name = x509Cert.getSubjectX500DistinguishedName();
+    x509Cert.getSubjectX500DistinguishedName();
   } catch (err) {
     let e: BusinessError = err as BusinessError;
     console.error(`createX509Cert failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -3637,9 +3845,10 @@ async function certGetSubjectX500DistinguishedName() {
 
 
 
-#### toString12+
+### toString12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toString(): string
 
@@ -3651,6 +3860,7 @@ toString(): string
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 对象的字符串类型数据。 |
@@ -3660,11 +3870,12 @@ toString(): string
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -3704,7 +3915,7 @@ let certData = '-----BEGIN CERTIFICATE-----\n' +
   'MnX1BeLxbAcAsTPYHjoeFJIrGkKlydLyt/8hDQzpLRW5uEUTjjqLh7vef0OaOP80\n' +
   'MmADt6ojRYvwdMDHF0ASJyupLQ+hiRLVadciK8Z5W34JGN2jwEw5X3nXyAgErIJZ\n' +
   'pqdTflnFLnSwy5M3QHB+xjYAcS9l1br2LA==\n' +
-  '-----END CERTIFICATE-----\n'
+  '-----END CERTIFICATE-----\n';
 
 // 证书二进制数据，需业务自行赋值。
 let encodingBlob: cert.EncodingBlob = {
@@ -3728,9 +3939,10 @@ async function certToString() {
 
 
 
-#### toString20+
+### toString20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toString(encodingType: EncodingType): string
 
@@ -3742,12 +3954,14 @@ toString(encodingType: EncodingType): string
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | encodingType | EncodingType | 是 | 表示编码类型。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3758,12 +3972,13 @@ toString(encodingType: EncodingType): string
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19020003 | parameter check failed. Possible causes: 1. The value of encodingType is not in the EncodingType enumeration range. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19020003 | Parameter check failed. Possible causes: 1. The value of encodingType is not in the EncodingType enumeration range. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -3825,9 +4040,10 @@ async function certToString() {
 
 
 
-#### hashCode12+
+### hashCode12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hashCode(): Uint8Array
 
@@ -3839,6 +4055,7 @@ hashCode(): Uint8Array
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Uint8Array | DER格式数据的哈希值。 |
@@ -3848,11 +4065,12 @@ hashCode(): Uint8Array
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -3892,7 +4110,7 @@ let certData = '-----BEGIN CERTIFICATE-----\n' +
   'MnX1BeLxbAcAsTPYHjoeFJIrGkKlydLyt/8hDQzpLRW5uEUTjjqLh7vef0OaOP80\n' +
   'MmADt6ojRYvwdMDHF0ASJyupLQ+hiRLVadciK8Z5W34JGN2jwEw5X3nXyAgErIJZ\n' +
   'pqdTflnFLnSwy5M3QHB+xjYAcS9l1br2LA==\n' +
-  '-----END CERTIFICATE-----\n'
+  '-----END CERTIFICATE-----\n';
 
 // 证书二进制数据，需业务自行赋值。
 let encodingBlob: cert.EncodingBlob = {
@@ -3916,13 +4134,14 @@ async function certHashCode() {
 
 
 
-#### getExtensionsObject12+
+### getExtensionsObject12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getExtensionsObject(): CertExtension
 
-获取对应实体的扩展域DER格式数据。
+获取证书扩展对象。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -3930,20 +4149,22 @@ getExtensionsObject(): CertExtension
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| CertExtension | 证书扩展域段类对象。 |
+| CertExtension | 证书扩展对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -3983,7 +4204,7 @@ let certData = '-----BEGIN CERTIFICATE-----\n' +
   'MnX1BeLxbAcAsTPYHjoeFJIrGkKlydLyt/8hDQzpLRW5uEUTjjqLh7vef0OaOP80\n' +
   'MmADt6ojRYvwdMDHF0ASJyupLQ+hiRLVadciK8Z5W34JGN2jwEw5X3nXyAgErIJZ\n' +
   'pqdTflnFLnSwy5M3QHB+xjYAcS9l1br2LA==\n' +
-  '-----END CERTIFICATE-----\n'
+  '-----END CERTIFICATE-----\n';
 
 // 证书二进制数据，需业务自行赋值。
 let encodingBlob: cert.EncodingBlob = {
@@ -3997,7 +4218,7 @@ async function certGetExtensionsObject() {
   try {
     x509Cert = await cert.createX509Cert(encodingBlob);
     console.info('createX509Cert result: success.');
-    let object = x509Cert.getExtensionsObject();
+    x509Cert.getExtensionsObject();
   } catch (err) {
     let e: BusinessError = err as BusinessError;
     console.error(`createX509Cert failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -4007,13 +4228,14 @@ async function certGetExtensionsObject() {
 
 
 
-#### cert.createCertExtension10+
+## cert.createCertExtension10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createCertExtension(inStream : EncodingBlob, callback : AsyncCallback&lt;CertExtension&gt;) : void
 
-表示创建证书扩展域段的对象。使用callback异步回调。
+创建一个证书扩展对象。使用callback异步回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -4021,22 +4243,24 @@ createCertExtension(inStream : EncodingBlob, callback : AsyncCallback&lt;CertExt
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | inStream | EncodingBlob | 是 | 表示序列化的证书扩展数据。 |
-| callback | AsyncCallback&lt;CertExtension&gt; | 是 | 回调函数，表示扩展域段对象。 |
+| callback | AsyncCallback&lt;CertExtension&gt; | 是 | 回调函数。当创建证书扩展对象成功时，err为undefined，data为获取到的CertExtension实例；否则为错误对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 801 | this operation is not supported. |
-| 19020001 | memory malloc failed. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 801 | This operation is not supported. |
+| 19020001 | Memory malloc failed. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -4063,7 +4287,7 @@ let encodingBlob: cert.EncodingBlob = {
   encodingFormat: cert.EncodingFormat.FORMAT_DER
 };
 
-cert.createCertExtension(encodingBlob, (error, certExt) => {
+cert.createCertExtension(encodingBlob, (error, _certExt) => {
   if (error) {
     console.error(`createCertExtension failed, errCode: ${error.code}, errMsg: ${error.message}`);
   } else {
@@ -4074,19 +4298,21 @@ cert.createCertExtension(encodingBlob, (error, certExt) => {
 
 
 
-#### cert.createCertExtension10+
+## cert.createCertExtension10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createCertExtension(inStream : EncodingBlob) : Promise&lt;CertExtension&gt;
 
-表示创建证书扩展域段的对象。使用Promise异步回调。
+创建一个证书扩展对象。使用Promise异步回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4095,21 +4321,23 @@ createCertExtension(inStream : EncodingBlob) : Promise&lt;CertExtension&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;CertExtension&gt; | 表示证书扩展域段对象。 |
+| Promise&lt;CertExtension&gt; | Promise对象，返回创建的CertExtension实例。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 801 | this operation is not supported. |
-| 19020001 | memory malloc failed. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 801 | This operation is not supported. |
+| 19020001 | Memory malloc failed. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -4137,7 +4365,7 @@ let encodingBlob: cert.EncodingBlob = {
   encodingFormat: cert.EncodingFormat.FORMAT_DER
 };
 
-cert.createCertExtension(encodingBlob).then(certExt => {
+cert.createCertExtension(encodingBlob).then(_certExt => {
   console.info('createCertExtension result: success.');
 }).catch((error: BusinessError) => {
   console.error(`createCertExtension failed, errCode: ${error.code}, errMsg: ${error.message}`);
@@ -4146,21 +4374,23 @@ cert.createCertExtension(encodingBlob).then(certExt => {
 
 
 
-#### CertExtension10+
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-证书扩展域段类。
+## CertExtension10+
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### getEncoded10+
+提供操作X.509证书扩展的API。
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+### getEncoded10+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEncoded() : EncodingBlob
 
-表示获取证书扩展域段序列化数据。
+获取证书扩展的序列化数据。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -4168,20 +4398,22 @@ getEncoded() : EncodingBlob
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| EncodingBlob | 表示证书扩展域段序列化数据。 |
+| EncodingBlob | 获取的证书扩展序列化数据。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -4216,6 +4448,7 @@ cert.createCertExtension(encodingBlob, (error, certExt) => {
     console.info('createCertExtension result: success.');
     try {
       let extEncodedBlob = certExt.getEncoded();
+      console.info('extEncodedBlob = ' + extEncodedBlob.data);
     } catch (err) {
       let e: BusinessError = err as BusinessError;
       console.error(`ext getEncoded failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -4226,13 +4459,14 @@ cert.createCertExtension(encodingBlob, (error, certExt) => {
 
 
 
-#### getOidList10+
+### getOidList10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOidList(valueType : ExtensionOidType) : DataArray
 
-表示获取证书扩展域段对象标识符列表。
+获取证书扩展的OID列表。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -4240,28 +4474,31 @@ getOidList(valueType : ExtensionOidType) : DataArray
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| valueType | ExtensionOidType | 是 | 表示证书扩展域段对象标识符类型。 |
+| valueType | ExtensionOidType | 是 | 指定要获取的OID类型。 |
 
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| DataArray | 表示证书扩展域段对象标识符列表。 |
+| DataArray | 获取的证书扩展OID列表。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -4296,6 +4533,7 @@ cert.createCertExtension(encodingBlob, (error, certExt) => {
     console.info('createCertExtension result: success.');
     try {
       let oidList = certExt.getOidList(cert.ExtensionOidType.EXTENSION_OID_TYPE_ALL);
+      console.info('oidList = ' + oidList.data);
     } catch (err) {
       let e: BusinessError = err as BusinessError;
       console.error(`ext getOidList failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -4306,13 +4544,14 @@ cert.createCertExtension(encodingBlob, (error, certExt) => {
 
 
 
-#### getEntry10+
+### getEntry10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEntry(valueType: ExtensionEntryType, oid : DataBlob) : DataBlob
 
-表示获取证书扩展域段对象信息。
+根据OID获取证书扩展项的值。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -4320,29 +4559,32 @@ getEntry(valueType: ExtensionEntryType, oid : DataBlob) : DataBlob
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| valueType | ExtensionEntryType | 是 | 表示证书扩展域段获取的类型。 |
-| oid | DataBlob | 是 | 表示证书扩展域段获取的对象标识符。 |
+| valueType | ExtensionEntryType | 是 | 指定要获取的扩展信息类型。 |
+| oid | DataBlob | 是 | 指定要获取的扩展项OID。 |
 
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| DataBlob | 表示证书扩展域段对象的数据。 |
+| DataBlob | 获取的证书扩展项数据。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -4378,9 +4620,10 @@ cert.createCertExtension(encodingBlob, (error, certExt) => {
     let oid = new Uint8Array([0x32, 0x2e, 0x35, 0x2e, 0x32, 0x39, 0x2e, 0x31, 0x35]);
     let oidBlob: cert.DataBlob = {
       data: oid
-    }
+    };
     try {
       let entry = certExt.getEntry(cert.ExtensionEntryType.EXTENSION_ENTRY_TYPE_ENTRY, oidBlob);
+      console.info('entry = ' + entry.data);
     } catch (err) {
       let e: BusinessError = err as BusinessError;
       console.error(`ext getEntry failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -4391,13 +4634,14 @@ cert.createCertExtension(encodingBlob, (error, certExt) => {
 
 
 
-#### checkCA10+
+### checkCA10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checkCA() : number
 
-表示校验证书是否为CA证书。
+检查证书是否为CA证书。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -4405,20 +4649,22 @@ checkCA() : number
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| number | 当证书扩展域段中密钥用途扩展包含keyCertSign位，并且基本约束中cA字段为true时，表示证书为CA证书。如果不是CA，则返回-1；否则返回基本约束中的路径长度。如果证书是CA证书，但是基本约束中未给定路径长度，则返回-2，表示无路径长度限制。 |
+| number | 当证书扩展中密钥用途扩展包含keyCertSign位，并且基本约束中cA字段为true时，表示证书为CA证书。如果不是CA，则返回-1；否则返回基本约束中的路径长度。如果证书是CA证书，但是基本约束中未给定路径长度，则返回-2，表示无路径长度限制。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -4452,6 +4698,7 @@ cert.createCertExtension(encodingBlob, (error, certExt) => {
     console.info('createCertExtension result: success.');
     try {
       let res = certExt.checkCA();
+      console.info('res = ' + res);
     } catch (err) {
       let e: BusinessError = err as BusinessError;
       console.error(`ext checkCA failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -4462,9 +4709,10 @@ cert.createCertExtension(encodingBlob, (error, certExt) => {
 
 
 
-#### hasUnsupportedCriticalExtension11+
+### hasUnsupportedCriticalExtension11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hasUnsupportedCriticalExtension(): boolean
 
@@ -4476,6 +4724,7 @@ hasUnsupportedCriticalExtension(): boolean
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 当存在不支持的关键扩展时，该方法返回true，否则返回false。 |
@@ -4485,11 +4734,12 @@ hasUnsupportedCriticalExtension(): boolean
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -4516,7 +4766,7 @@ let encodingBlob: cert.EncodingBlob = {
 
 cert.createCertExtension(encodingBlob).then((extensionObj) => {
   console.info('createCertExtension result: success.');
-  const result = extensionObj.hasUnsupportedCriticalExtension()
+  const result = extensionObj.hasUnsupportedCriticalExtension();
   console.info('has unsupported critical extension result =' + result);
 }).catch((err: BusinessError) => {
   console.error(`createCertExtension failed, errCode: ${err.code}, errMsg: ${err.message}`);
@@ -4525,13 +4775,14 @@ cert.createCertExtension(encodingBlob).then((extensionObj) => {
 
 
 
-#### cert.createX509Crl(deprecated)
+## cert.createX509Crl(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createX509Crl(inStream : EncodingBlob, callback : AsyncCallback&lt;X509Crl&gt;) : void
 
-表示创建X.509证书吊销列表的对象。使用callback异步回调。
+表示创建X.509证书吊销列表对象。使用callback异步回调。
 
 > [!NOTE]
 > 从API version 9开始支持，从API version 11开始废弃，建议使用 cert.createX509CRL 替代。
@@ -4541,21 +4792,23 @@ createX509Crl(inStream : EncodingBlob, callback : AsyncCallback&lt;X509Crl&gt;) 
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | inStream | EncodingBlob | 是 | 表示证书吊销列表序列化数据。 |
-| callback | AsyncCallback&lt;X509Crl&gt; | 是 | 回调函数，表示证书吊销列表对象。 |
+| callback | AsyncCallback&lt;X509Crl&gt; | 是 | 回调函数。当创建X.509证书吊销列表对象成功时，err为undefined，data为获取到的X509Crl实例；否则为错误对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 801 | this operation is not supported. |
-| 19020001 | memory malloc failed. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 801 | This operation is not supported. |
+| 19020001 | Memory malloc failed. |
 
 
 **示例：**
@@ -4588,7 +4841,7 @@ let encodingBlob: cert.EncodingBlob = {
   encodingFormat: cert.EncodingFormat.FORMAT_PEM
 };
 
-cert.createX509Crl(encodingBlob, (error, x509Crl) => {
+cert.createX509Crl(encodingBlob, (error, _x509Crl) => {
   if (error) {
     console.error(`createX509Crl failed, errCode: ${error.code}, errMsg: ${error.message}`);
   } else {
@@ -4599,13 +4852,14 @@ cert.createX509Crl(encodingBlob, (error, x509Crl) => {
 
 
 
-#### cert.createX509Crl(deprecated)
+## cert.createX509Crl(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createX509Crl(inStream : EncodingBlob) : Promise&lt;X509Crl&gt;
 
-表示创建X.509证书吊销列表的对象。使用Promise异步回调。
+表示创建X.509证书吊销列表对象。使用Promise异步回调。
 
 > [!NOTE]
 > 从API version 9开始支持，从API version 11开始废弃，建议使用 cert.createX509CRL 替代。
@@ -4615,6 +4869,7 @@ createX509Crl(inStream : EncodingBlob) : Promise&lt;X509Crl&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | inStream | EncodingBlob | 是 | 表示证书吊销列表序列化数据。 |
@@ -4622,20 +4877,22 @@ createX509Crl(inStream : EncodingBlob) : Promise&lt;X509Crl&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;X509Crl&gt; | 表示证书吊销列表对象。 |
+| Promise&lt;X509Crl&gt; | Promise对象，返回创建的X509Crl实例。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 801 | this operation is not supported. |
-| 19020001 | memory malloc failed. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 801 | This operation is not supported. |
+| 19020001 | Memory malloc failed. |
 
 
 **示例：**
@@ -4669,7 +4926,7 @@ let encodingBlob: cert.EncodingBlob = {
   encodingFormat: cert.EncodingFormat.FORMAT_PEM
 };
 
-cert.createX509Crl(encodingBlob).then(x509Crl => {
+cert.createX509Crl(encodingBlob).then(_x509Crl => {
   console.info('createX509Crl result: success.');
 }).catch((error: BusinessError) => {
   console.error(`createX509Crl failed, errCode: ${error.code}, errMsg: ${error.message}`);
@@ -4678,13 +4935,14 @@ cert.createX509Crl(encodingBlob).then(x509Crl => {
 
 
 
-#### cert.createX509CRL11+
+## cert.createX509CRL11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createX509CRL(inStream : EncodingBlob, callback : AsyncCallback&lt;X509CRL&gt;) : void
 
-表示创建X.509证书吊销列表的对象。使用callback异步回调。
+表示创建X.509证书吊销列表对象。使用callback异步回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -4692,21 +4950,23 @@ createX509CRL(inStream : EncodingBlob, callback : AsyncCallback&lt;X509CRL&gt;) 
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | inStream | EncodingBlob | 是 | 表示证书吊销列表序列化数据。当前支持的数据长度不超过8192字节。 |
-| callback | AsyncCallback&lt;X509CRL&gt; | 是 | 回调函数，表示证书吊销列表对象。 |
+| callback | AsyncCallback&lt;X509CRL&gt; | 是 | 回调函数。当创建X.509证书吊销列表对象成功时，err为undefined，data为获取到的X509CRL实例；否则为错误对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 801 | this operation is not supported. |
-| 19020001 | memory malloc failed. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 801 | This operation is not supported. |
+| 19020001 | Memory malloc failed. |
 
 
 **示例：**
@@ -4739,7 +4999,7 @@ let encodingBlob: cert.EncodingBlob = {
   encodingFormat: cert.EncodingFormat.FORMAT_PEM
 };
 
-cert.createX509CRL(encodingBlob, (error, X509CRL) => {
+cert.createX509CRL(encodingBlob, (error, _X509CRL) => {
   if (error) {
     console.error(`createX509CRL failed, errCode: ${error.code}, errMsg: ${error.message}`);
   } else {
@@ -4750,19 +5010,21 @@ cert.createX509CRL(encodingBlob, (error, X509CRL) => {
 
 
 
-#### cert.createX509CRL11+
+## cert.createX509CRL11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createX509CRL(inStream : EncodingBlob) : Promise&lt;X509CRL&gt;
 
-表示创建X.509证书吊销列表的对象。使用Promise异步回调。
+表示创建X.509证书吊销列表对象。使用Promise异步回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4771,20 +5033,22 @@ createX509CRL(inStream : EncodingBlob) : Promise&lt;X509CRL&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;X509CRL&gt; | 表示证书吊销列表对象。 |
+| Promise&lt;X509CRL&gt; | Promise对象，返回创建的X509CRL实例。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 801 | this operation is not supported. |
-| 19020001 | memory malloc failed. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 801 | This operation is not supported. |
+| 19020001 | Memory malloc failed. |
 
 
 **示例：**
@@ -4818,7 +5082,7 @@ let encodingBlob: cert.EncodingBlob = {
   encodingFormat: cert.EncodingFormat.FORMAT_PEM
 };
 
-cert.createX509CRL(encodingBlob).then(X509CRL => {
+cert.createX509CRL(encodingBlob).then(_X509CRL => {
   console.info('createX509CRL result: success.');
 }).catch((error: BusinessError) => {
   console.error(`createX509CRL failed, errCode: ${error.code}, errMsg: ${error.message}`);
@@ -4827,11 +5091,12 @@ cert.createX509CRL(encodingBlob).then(X509CRL => {
 
 
 
-#### X509Crl(deprecated)
+## X509Crl(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-X.509 CRL操作。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+提供用于X.509证书吊销列表操作的API
 
 > [!NOTE]
 > 从API version 9开始支持，从API version 11开始废弃，建议使用 X509CRL 替代。
@@ -4839,9 +5104,10 @@ X.509 CRL操作。
 
 
 
-#### isRevoked(deprecated)
+### isRevoked(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isRevoked(cert : X509Cert) : boolean
 
@@ -4855,12 +5121,14 @@ isRevoked(cert : X509Cert) : boolean
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cert | X509Cert | 是 | 表示被检查的证书对象。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4871,9 +5139,10 @@ isRevoked(cert : X509Cert) : boolean
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 
 **示例：**
@@ -4935,6 +5204,7 @@ cert.createX509Crl(encodingBlob, (error, x509Crl) => {
       } else {
         try {
           let revokedFlag = x509Crl.isRevoked(x509Cert);
+          console.info('revokedFlag = ' + revokedFlag);
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           console.error(`isRevoked failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -4947,9 +5217,10 @@ cert.createX509Crl(encodingBlob, (error, x509Crl) => {
 
 
 
-#### getType(deprecated)
+### getType(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getType() : string
 
@@ -4962,6 +5233,7 @@ getType() : string
 **系统能力：** SystemCapability.Security.Cert
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5004,15 +5276,17 @@ cert.createX509Crl(encodingBlob, (error, x509Crl) => {
   } else {
     console.info('createX509Crl result: success.');
     let type = x509Crl.getType();
+    console.info('type = ' + type);
   }
 });
 ```
 
 
 
-#### getEncoded(deprecated)
+### getEncoded(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEncoded(callback : AsyncCallback&lt;EncodingBlob&gt;) : void
 
@@ -5026,21 +5300,23 @@ getEncoded(callback : AsyncCallback&lt;EncodingBlob&gt;) : void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback&lt;EncodingBlob&gt; | 是 | 回调函数，表示X.509证书吊销列表的序列化数据。 |
+| callback | AsyncCallback&lt;EncodingBlob&gt; | 是 | 回调函数。当获取X.509证书吊销列表序列化数据成功时，err为undefined，data为获取到的X.509证书吊销列表序列化数据；否则为错误对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -5078,7 +5354,7 @@ cert.createX509Crl(encodingBlob, (error, x509Crl) => {
     console.error(`createX509Crl failed, errCode: ${error.code}, errMsg: ${error.message}`);
   } else {
     console.info('createX509Crl result: success.');
-    x509Crl.getEncoded((error, data) => {
+    x509Crl.getEncoded((error, _data) => {
       if (error) {
         console.error(`getEncoded failed, errCode: ${error.code}, errMsg: ${error.message}`);
       } else {
@@ -5091,9 +5367,10 @@ cert.createX509Crl(encodingBlob, (error, x509Crl) => {
 
 
 
-#### getEncoded(deprecated)
+### getEncoded(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEncoded() : Promise&lt;EncodingBlob&gt;
 
@@ -5107,21 +5384,23 @@ getEncoded() : Promise&lt;EncodingBlob&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;EncodingBlob&gt; | 表示X.509证书吊销列表的序列化数据。 |
+| Promise&lt;EncodingBlob&gt; | Promise对象，返回X.509证书吊销列表的序列化数据。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -5157,7 +5436,7 @@ let encodingBlob: cert.EncodingBlob = {
 
 cert.createX509Crl(encodingBlob).then(x509Crl => {
   console.info('createX509Crl result: success.');
-  x509Crl.getEncoded().then(result => {
+  x509Crl.getEncoded().then(_result => {
     console.info('getEncoded result: success.');
   }).catch((error: BusinessError) => {
     console.error(`getEncoded failed, errCode: ${error.code}, errMsg: ${error.message}`);
@@ -5169,9 +5448,10 @@ cert.createX509Crl(encodingBlob).then(x509Crl => {
 
 
 
-#### verify(deprecated)
+### verify(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 verify(key : cryptoFramework.PubKey, callback : AsyncCallback&lt;void&gt;) : void
 
@@ -5185,20 +5465,22 @@ verify(key : cryptoFramework.PubKey, callback : AsyncCallback&lt;void&gt;) : voi
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | cryptoFramework.PubKey | 是 | 表示用于验签的公钥对象。 |
-| callback | AsyncCallback&lt;void&gt; | 是 | 回调函数，使用AsyncCallback的第一个error参数判断是否验签成功，error为null表示成功，error不为null表示失败。 |
+| callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当验签成功时，err为undefined，否则为错误对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -5299,25 +5581,25 @@ cert.createX509Crl(encodingBlob, (error, x509Crl) => {
       let keyGenerator = cryptoFramework.createAsyKeyGenerator('RSA1024|PRIMES_3');
       console.info('createAsyKeyGenerator result: success.');
       let priEncodingBlob: cryptoFramework.DataBlob = {
-        data: priKeyData,
+        data: priKeyData
       };
       let pubEncodingBlob: cryptoFramework.DataBlob = {
-        data: pubKeyData,
+        data: pubKeyData
       };
       keyGenerator.convertKey(pubEncodingBlob, priEncodingBlob, (e, keyPair) => {
         if (e) {
           console.error(`convert key failed, errCode: ${e.code}, errMsg: ${e.message}`);
         } else {
           console.info('convert key result: success.');
-          x509Crl.verify(keyPair.pubKey, (err, data) => {
+          x509Crl.verify(keyPair.pubKey, (err, _data) => {
             if (err) {
               console.error(`verify failed, errCode: ${err.code}, errMsg: ${err.message}`);
-            } else  {
+            } else {
               console.info('verify result: success.');
             }
           });
         }
-      })
+      });
     } catch (error) {
       let e: BusinessError = error as BusinessError;
       console.error(`get pubKey failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -5328,9 +5610,10 @@ cert.createX509Crl(encodingBlob, (error, x509Crl) => {
 
 
 
-#### verify(deprecated)
+### verify(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 verify(key : cryptoFramework.PubKey) : Promise&lt;void&gt;
 
@@ -5344,6 +5627,7 @@ verify(key : cryptoFramework.PubKey) : Promise&lt;void&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | cryptoFramework.PubKey | 是 | 表示用于验签的公钥对象。 |
@@ -5351,26 +5635,28 @@ verify(key : cryptoFramework.PubKey) : Promise&lt;void&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | Promise对象。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
 
 ```text
 import { cert } from '@kit.DeviceCertificateKit';
-import { cryptoFramework } from '@kit.CryptoArchitectureKit'
+import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 // string转Uint8Array。
@@ -5463,14 +5749,14 @@ cert.createX509Crl(encodingBlob).then(x509Crl => {
     let keyGenerator = cryptoFramework.createAsyKeyGenerator('RSA1024|PRIMES_3');
     console.info('createAsyKeyGenerator result: success.');
     let priEncodingBlob: cryptoFramework.DataBlob = {
-      data: priKeyData,
+      data: priKeyData
     };
     let pubEncodingBlob: cryptoFramework.DataBlob = {
-      data: pubKeyData,
+      data: pubKeyData
     };
     keyGenerator.convertKey(pubEncodingBlob, priEncodingBlob).then((keyPair) => {
       console.info('convert key result: success.');
-      x509Crl.verify(keyPair.pubKey).then(result => {
+      x509Crl.verify(keyPair.pubKey).then(_result => {
         console.info('verify result: success.');
       }).catch((error: BusinessError) => {
         console.error(`verify failed, errCode: ${error.code}, errMsg: ${error.message}`);
@@ -5489,9 +5775,10 @@ cert.createX509Crl(encodingBlob).then(x509Crl => {
 
 
 
-#### getVersion(deprecated)
+### getVersion(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getVersion() : number
 
@@ -5504,6 +5791,7 @@ getVersion() : number
 **系统能力：** SystemCapability.Security.Cert
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5546,15 +5834,17 @@ cert.createX509Crl(encodingBlob, (error, x509Crl) => {
   } else {
     console.info('createX509Crl result: success.');
     let version = x509Crl.getVersion();
+    console.info('version = ' + version);
   }
 });
 ```
 
 
 
-#### getIssuerName(deprecated)
+### getIssuerName(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getIssuerName() : DataBlob
 
@@ -5568,6 +5858,7 @@ getIssuerName() : DataBlob
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | DataBlob | 表示X.509证书吊销列表颁发者名称。 |
@@ -5577,11 +5868,12 @@ getIssuerName() : DataBlob
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -5622,6 +5914,7 @@ cert.createX509Crl(encodingBlob, (error, x509Crl) => {
     console.info('createX509Crl result: success.');
     try {
       let issuerName = x509Crl.getIssuerName();
+      console.info('issuerName = ' + issuerName.data);
     } catch (err) {
       let e: BusinessError = err as BusinessError;
       console.error(`getIssuerName failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -5632,13 +5925,14 @@ cert.createX509Crl(encodingBlob, (error, x509Crl) => {
 
 
 
-#### getLastUpdate(deprecated)
+### getLastUpdate(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLastUpdate() : string
 
-表示获取X.509证书吊销列表最后一次更新日期，日期为ASN.1时间格式。
+表示获取X.509证书吊销列表最后一次更新日期。
 
 > [!NOTE]
 > 从API version 9开始支持，从API version 11开始废弃，建议使用 X509CRL.getLastUpdate 替代。
@@ -5648,20 +5942,22 @@ getLastUpdate() : string
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| string | 表示X.509证书吊销列表最后一次更新日期，日期为ASN.1时间格式。 |
+| string | 表示X.509证书吊销列表最后一次更新日期，日期采用ASN.1 UTCTime或GeneralizedTime格式。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -5702,6 +5998,7 @@ cert.createX509Crl(encodingBlob, (error, x509Crl) => {
     console.info('createX509Crl result: success.');
     try {
       let lastUpdate = x509Crl.getLastUpdate();
+      console.info('lastUpdate = ' + lastUpdate);
     } catch (err) {
       let e: BusinessError = err as BusinessError;
       console.error(`getLastUpdate failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -5712,13 +6009,14 @@ cert.createX509Crl(encodingBlob, (error, x509Crl) => {
 
 
 
-#### getNextUpdate(deprecated)
+### getNextUpdate(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getNextUpdate() : string
 
-表示获取证书吊销列表下一次更新的日期，日期为ASN.1时间格式。
+表示获取证书吊销列表下一次更新的日期。
 
 > [!NOTE]
 > 从API version 9开始支持，从API version 11开始废弃，建议使用 X509CRL.getNextUpdate 替代。
@@ -5728,20 +6026,22 @@ getNextUpdate() : string
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| string | 表示X.509证书吊销列表下一次更新的日期，日期为ASN.1时间格式。 |
+| string | 表示X.509证书吊销列表下一次更新的日期，日期采用ASN.1 UTCTime或GeneralizedTime格式。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -5782,6 +6082,7 @@ cert.createX509Crl(encodingBlob, (error, x509Crl) => {
     console.info('createX509Crl result: success.');
     try {
       let nextUpdate = x509Crl.getNextUpdate();
+      console.info('nextUpdate = ' + nextUpdate);
     } catch (err) {
       let e: BusinessError = err as BusinessError;
       console.error(`getNextUpdate failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -5792,9 +6093,10 @@ cert.createX509Crl(encodingBlob, (error, x509Crl) => {
 
 
 
-#### getRevokedCert(deprecated)
+### getRevokedCert(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRevokedCert(serialNumber : number) : X509CrlEntry
 
@@ -5808,12 +6110,14 @@ getRevokedCert(serialNumber : number) : X509CrlEntry
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | serialNumber | number | 是 | 表示证书序列号。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5824,11 +6128,12 @@ getRevokedCert(serialNumber : number) : X509CrlEntry
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19020001 | memory malloc failed. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19020001 | Memory malloc failed. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -5869,7 +6174,7 @@ cert.createX509Crl(encodingBlob, (error, x509Crl) => {
     console.info('createX509Crl result: success.');
     let serialNumber = 1000;
     try {
-      let entry = x509Crl.getRevokedCert(serialNumber);
+      x509Crl.getRevokedCert(serialNumber);
     } catch (error) {
       let e: BusinessError = error as BusinessError;
       console.error(`getRevokedCert failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -5880,9 +6185,10 @@ cert.createX509Crl(encodingBlob, (error, x509Crl) => {
 
 
 
-#### getRevokedCertWithCert(deprecated)
+### getRevokedCertWithCert(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRevokedCertWithCert(cert : X509Cert) : X509CrlEntry
 
@@ -5896,12 +6202,14 @@ getRevokedCertWithCert(cert : X509Cert) : X509CrlEntry
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cert | X509Cert | 是 | 表示证书对象。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5912,11 +6220,12 @@ getRevokedCertWithCert(cert : X509Cert) : X509CrlEntry
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19020001 | memory malloc failed. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19020001 | Memory malloc failed. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -5989,7 +6298,7 @@ cert.createX509Crl(encodingBlob, (error, x509Crl) => {
     // 创建X.509证书对象。
     cert.createX509Cert(certEncodingBlob).then((x509Cert) => {
       try {
-        let entry = x509Crl.getRevokedCertWithCert(x509Cert);
+        x509Crl.getRevokedCertWithCert(x509Cert);
         console.info('getRevokedCertWithCert result: success.');
       } catch (error) {
         let e: BusinessError = error as BusinessError;
@@ -5997,16 +6306,17 @@ cert.createX509Crl(encodingBlob, (error, x509Crl) => {
       }
     }).catch((error: BusinessError) => {
       console.error(`createX509Cert failed, errCode: ${error.code}, errMsg: ${error.message}`);
-    })
+    });
   }
 });
 ```
 
 
 
-#### getRevokedCerts(deprecated)
+### getRevokedCerts(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRevokedCerts(callback : AsyncCallback<Array&lt;X509CrlEntry&gt;>) : void
 
@@ -6020,20 +6330,22 @@ getRevokedCerts(callback : AsyncCallback<Array&lt;X509CrlEntry&gt;>) : void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback<Array&lt;X509CrlEntry&gt;> | 是 | 回调函数，表示获取到的证书吊销条目列表。 |
+| callback | AsyncCallback<Array&lt;X509CrlEntry&gt;> | 是 | 回调函数。当获取证书吊销条目列表成功时，err为undefined，data为获取到的证书吊销条目列表；否则为错误对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-| 19020001 | memory malloc failed. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 19020001 | Memory malloc failed. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -6071,7 +6383,7 @@ cert.createX509Crl(encodingBlob, (error, x509Crl) => {
     console.error(`createX509Crl failed, errCode: ${error.code}, errMsg: ${error.message}`);
   } else {
     console.info('createX509Crl result: success.');
-    x509Crl.getRevokedCerts((error, array) => {
+    x509Crl.getRevokedCerts((error, _array) => {
       if (error) {
         console.error(`getRevokedCerts failed, errCode: ${error.code}, errMsg: ${error.message}`);
       } else {
@@ -6084,9 +6396,10 @@ cert.createX509Crl(encodingBlob, (error, x509Crl) => {
 
 
 
-#### getRevokedCerts(deprecated)
+### getRevokedCerts(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRevokedCerts() : Promise<Array&lt;X509CrlEntry&gt;>
 
@@ -6100,20 +6413,22 @@ getRevokedCerts() : Promise<Array&lt;X509CrlEntry&gt;>
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise<Array&lt;X509CrlEntry&gt;> | 表示证书吊销条目列表。 |
+| Promise<Array&lt;X509CrlEntry&gt;> | Promise对象，返回证书吊销条目列表。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-| 19020001 | memory malloc failed. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 19020001 | Memory malloc failed. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -6149,7 +6464,7 @@ let encodingBlob: cert.EncodingBlob = {
 
 cert.createX509Crl(encodingBlob).then(x509Crl => {
   console.info('createX509Crl result: success.');
-  x509Crl.getRevokedCerts().then(array => {
+  x509Crl.getRevokedCerts().then(_array => {
     console.info('getRevokedCerts result: success.');
   }).catch((error: BusinessError) => {
     console.error(`getRevokedCerts failed, errCode: ${error.code}, errMsg: ${error.message}`);
@@ -6161,9 +6476,10 @@ cert.createX509Crl(encodingBlob).then(x509Crl => {
 
 
 
-#### getTbsInfo(deprecated)
+### getTbsInfo(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTbsInfo() : DataBlob
 
@@ -6177,6 +6493,7 @@ getTbsInfo() : DataBlob
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | DataBlob | 表示证书吊销列表的tbsCertList信息。 |
@@ -6186,11 +6503,12 @@ getTbsInfo() : DataBlob
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -6231,6 +6549,7 @@ cert.createX509Crl(encodingBlob, (error, x509Crl) => {
     console.info('createX509Crl result: success.');
     try {
       let tbsInfo = x509Crl.getTbsInfo();
+      console.info('tbsInfo = ' + tbsInfo.data);
     } catch (error) {
       let e: BusinessError = error as BusinessError;
       console.error(`getTbsInfo failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -6241,9 +6560,10 @@ cert.createX509Crl(encodingBlob, (error, x509Crl) => {
 
 
 
-#### getSignature(deprecated)
+### getSignature(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSignature() : DataBlob
 
@@ -6257,6 +6577,7 @@ getSignature() : DataBlob
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | DataBlob | 表示X.509证书吊销列表的签名数据。 |
@@ -6266,11 +6587,12 @@ getSignature() : DataBlob
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -6311,6 +6633,7 @@ cert.createX509Crl(encodingBlob, (error, x509Crl) => {
     console.info('createX509Crl result: success.');
     try {
       let signature = x509Crl.getSignature();
+      console.info('signature = ' + signature.data);
     } catch (err) {
       let e: BusinessError = err as BusinessError;
       console.error(`getSignature failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -6321,9 +6644,10 @@ cert.createX509Crl(encodingBlob, (error, x509Crl) => {
 
 
 
-#### getSignatureAlgName(deprecated)
+### getSignatureAlgName(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSignatureAlgName() : string
 
@@ -6337,6 +6661,7 @@ getSignatureAlgName() : string
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 表示X.509证书吊销列表签名的算法名。 |
@@ -6346,11 +6671,12 @@ getSignatureAlgName() : string
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -6391,6 +6717,7 @@ cert.createX509Crl(encodingBlob, (error, x509Crl) => {
     console.info('createX509Crl result: success.');
     try {
       let sigAlgName = x509Crl.getSignatureAlgName();
+      console.info('sigAlgName = ' + sigAlgName);
     } catch (err) {
       let e: BusinessError = err as BusinessError;
       console.error(`getSignatureAlgName failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -6401,9 +6728,10 @@ cert.createX509Crl(encodingBlob, (error, x509Crl) => {
 
 
 
-#### getSignatureAlgOid(deprecated)
+### getSignatureAlgOid(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSignatureAlgOid() : string
 
@@ -6417,6 +6745,7 @@ getSignatureAlgOid() : string
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 表示X.509证书吊销列表签名算法的对象标识符OID。 |
@@ -6426,11 +6755,12 @@ getSignatureAlgOid() : string
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -6471,6 +6801,7 @@ cert.createX509Crl(encodingBlob, (error, x509Crl) => {
     console.info('createX509Crl result: success.');
     try {
       let sigAlgOid = x509Crl.getSignatureAlgOid();
+      console.info('sigAlgOid = ' + sigAlgOid);
     } catch (err) {
       let e: BusinessError = err as BusinessError;
       console.error(`getSignatureAlgOid failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -6481,9 +6812,10 @@ cert.createX509Crl(encodingBlob, (error, x509Crl) => {
 
 
 
-#### getSignatureAlgParams(deprecated)
+### getSignatureAlgParams(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSignatureAlgParams() : DataBlob
 
@@ -6497,6 +6829,7 @@ getSignatureAlgParams() : DataBlob
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | DataBlob | 表示X.509证书吊销列表签名的算法参数。 |
@@ -6506,12 +6839,13 @@ getSignatureAlgParams() : DataBlob
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | this operation is not supported. |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 801 | This operation is not supported. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -6552,6 +6886,7 @@ cert.createX509Crl(encodingBlob, (error, x509Crl) => {
     console.info('createX509Crl result: success.');
     try {
       let sigAlgParams = x509Crl.getSignatureAlgParams();
+      console.info('sigAlgParams = ' + sigAlgParams.data);
     } catch (err) {
       let e: BusinessError = err as BusinessError;
       console.error(`getSignatureAlgParams failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -6562,17 +6897,19 @@ cert.createX509Crl(encodingBlob, (error, x509Crl) => {
 
 
 
-#### X509CRL11+
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-X.509 CRL操作。
+## X509CRL11+
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### isRevoked11+
+提供用于X.509证书吊销列表操作的API。
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+### isRevoked11+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isRevoked(cert : X509Cert) : boolean
 
@@ -6584,12 +6921,14 @@ isRevoked(cert : X509Cert) : boolean
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cert | X509Cert | 是 | 表示被检查的证书对象。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6600,9 +6939,10 @@ isRevoked(cert : X509Cert) : boolean
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 
 **示例：**
@@ -6664,6 +7004,7 @@ cert.createX509CRL(encodingBlob, (error, x509CRL) => {
       } else {
         try {
           let revokedFlag = x509CRL.isRevoked(x509Cert);
+          console.info('revokedFlag = ' + revokedFlag);
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           console.error(`isRevoked failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -6676,9 +7017,10 @@ cert.createX509CRL(encodingBlob, (error, x509CRL) => {
 
 
 
-#### getType11+
+### getType11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getType() : string
 
@@ -6689,6 +7031,7 @@ getType() : string
 **系统能力：** SystemCapability.Security.Cert
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6731,15 +7074,17 @@ cert.createX509CRL(encodingBlob, (error, x509CRL) => {
   } else {
     console.info('createX509CRL result: success.');
     let type = x509CRL.getType();
+    console.info('type = ' + type);
   }
 });
 ```
 
 
 
-#### getEncoded11+
+### getEncoded11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEncoded(callback : AsyncCallback&lt;EncodingBlob&gt;) : void
 
@@ -6751,21 +7096,23 @@ getEncoded(callback : AsyncCallback&lt;EncodingBlob&gt;) : void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback&lt;EncodingBlob&gt; | 是 | 回调函数，表示X.509证书吊销列表的序列化数据。 |
+| callback | AsyncCallback&lt;EncodingBlob&gt; | 是 | 回调函数。当获取X.509证书吊销列表序列化数据成功时，err为undefined，data为获取到的X.509证书吊销列表序列化数据；否则为错误对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -6803,7 +7150,7 @@ cert.createX509CRL(encodingBlob, (error, x509CRL) => {
     console.error(`createX509CRL failed, errCode: ${error.code}, errMsg: ${error.message}`);
   } else {
     console.info('createX509CRL result: success.');
-    x509CRL.getEncoded((error, data) => {
+    x509CRL.getEncoded((error, _data) => {
       if (error) {
         console.error(`getEncoded failed, errCode: ${error.code}, errMsg: ${error.message}`);
       } else {
@@ -6816,9 +7163,10 @@ cert.createX509CRL(encodingBlob, (error, x509CRL) => {
 
 
 
-#### getEncoded11+
+### getEncoded11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEncoded() : Promise&lt;EncodingBlob&gt;
 
@@ -6830,21 +7178,23 @@ getEncoded() : Promise&lt;EncodingBlob&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;EncodingBlob&gt; | 表示X.509证书吊销列表的序列化数据。 |
+| Promise&lt;EncodingBlob&gt; | Promise对象，返回X.509证书吊销列表的序列化数据。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -6880,7 +7230,7 @@ let encodingBlob: cert.EncodingBlob = {
 
 cert.createX509CRL(encodingBlob).then(x509CRL => {
   console.info('createX509CRL result: success.');
-  x509CRL.getEncoded().then(result => {
+  x509CRL.getEncoded().then(_result => {
     console.info('getEncoded result: success.');
   }).catch((error: BusinessError) => {
     console.error(`getEncoded failed, errCode: ${error.code}, errMsg: ${error.message}`);
@@ -6892,9 +7242,10 @@ cert.createX509CRL(encodingBlob).then(x509CRL => {
 
 
 
-#### verify11+
+### verify11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 verify(key : cryptoFramework.PubKey, callback : AsyncCallback&lt;void&gt;) : void
 
@@ -6906,20 +7257,22 @@ verify(key : cryptoFramework.PubKey, callback : AsyncCallback&lt;void&gt;) : voi
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | cryptoFramework.PubKey | 是 | 表示用于验签的公钥对象。 |
-| callback | AsyncCallback&lt;void&gt; | 是 | 回调函数，使用AsyncCallback的第一个error参数判断是否验签成功，error为null表示成功，error不为null表示失败。 |
+| callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当验签成功时，err为undefined，否则为错误对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -7020,17 +7373,17 @@ cert.createX509CRL(encodingBlob, (error, x509CRL) => {
       let keyGenerator = cryptoFramework.createAsyKeyGenerator('RSA1024|PRIMES_3');
       console.info('createAsyKeyGenerator result: success.');
       let priEncodingBlob: cryptoFramework.DataBlob = {
-        data: priKeyData,
+        data: priKeyData
       };
       let pubEncodingBlob: cryptoFramework.DataBlob = {
-        data: pubKeyData,
+        data: pubKeyData
       };
       keyGenerator.convertKey(pubEncodingBlob, priEncodingBlob, (e, keyPair) => {
         if (e) {
           console.error(`convert key failed, errCode: ${e.code}, errMsg: ${e.message}`);
         } else {
           console.info('convert key result: success.');
-          x509CRL.verify(keyPair.pubKey, (err, data) => {
+          x509CRL.verify(keyPair.pubKey, (err, _data) => {
             if (err) {
               console.error(`verify failed, errCode: ${err.code}, errMsg: ${err.message}`);
             } else {
@@ -7038,7 +7391,7 @@ cert.createX509CRL(encodingBlob, (error, x509CRL) => {
             }
           });
         }
-      })
+      });
     } catch (error) {
       let e: BusinessError = error as BusinessError;
       console.error(`get pubKey failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -7049,9 +7402,10 @@ cert.createX509CRL(encodingBlob, (error, x509CRL) => {
 
 
 
-#### verify11+
+### verify11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 verify(key : cryptoFramework.PubKey) : Promise&lt;void&gt;
 
@@ -7063,6 +7417,7 @@ verify(key : cryptoFramework.PubKey) : Promise&lt;void&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | cryptoFramework.PubKey | 是 | 表示用于验签的公钥对象。 |
@@ -7070,26 +7425,28 @@ verify(key : cryptoFramework.PubKey) : Promise&lt;void&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | Promise对象。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
 
 ```text
 import { cert } from '@kit.DeviceCertificateKit';
-import { cryptoFramework } from '@kit.CryptoArchitectureKit'
+import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 // string转Uint8Array。
@@ -7182,14 +7539,14 @@ cert.createX509CRL(encodingBlob).then(x509CRL => {
     let keyGenerator = cryptoFramework.createAsyKeyGenerator('RSA1024|PRIMES_3');
     console.info('createAsyKeyGenerator result: success.');
     let priEncodingBlob: cryptoFramework.DataBlob = {
-      data: priKeyData,
+      data: priKeyData
     };
     let pubEncodingBlob: cryptoFramework.DataBlob = {
-      data: pubKeyData,
+      data: pubKeyData
     };
     keyGenerator.convertKey(pubEncodingBlob, priEncodingBlob).then((keyPair) => {
       console.info('convert key result: success.');
-      x509CRL.verify(keyPair.pubKey).then(result => {
+      x509CRL.verify(keyPair.pubKey).then(_result => {
         console.info('verify result: success.');
       }).catch((error: BusinessError) => {
         console.error(`verify failed, errCode: ${error.code}, errMsg: ${error.message}`);
@@ -7208,9 +7565,10 @@ cert.createX509CRL(encodingBlob).then(x509CRL => {
 
 
 
-#### getVersion11+
+### getVersion11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getVersion() : number
 
@@ -7221,6 +7579,7 @@ getVersion() : number
 **系统能力：** SystemCapability.Security.Cert
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7263,15 +7622,17 @@ cert.createX509CRL(encodingBlob, (error, x509CRL) => {
   } else {
     console.info('createX509CRL result: success.');
     let version = x509CRL.getVersion();
+    console.info('version = ' + version);
   }
 });
 ```
 
 
 
-#### getIssuerName11+
+### getIssuerName11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getIssuerName() : DataBlob
 
@@ -7287,6 +7648,7 @@ getIssuerName() : DataBlob
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | DataBlob | 表示X.509证书吊销列表颁发者名称。 |
@@ -7296,11 +7658,12 @@ getIssuerName() : DataBlob
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -7341,6 +7704,7 @@ cert.createX509CRL(encodingBlob, (error, x509CRL) => {
     console.info('createX509CRL result: success.');
     try {
       let issuerName = x509CRL.getIssuerName();
+      console.info('issuerName = ' + issuerName.data);
     } catch (err) {
       let e: BusinessError = err as BusinessError;
       console.error(`getIssuerName failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -7351,9 +7715,10 @@ cert.createX509CRL(encodingBlob, (error, x509CRL) => {
 
 
 
-#### getIssuerName20+
+### getIssuerName20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getIssuerName(encodingType: EncodingType): string
 
@@ -7365,12 +7730,14 @@ getIssuerName(encodingType: EncodingType): string
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | encodingType | EncodingType | 是 | 表示编码类型。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7381,12 +7748,13 @@ getIssuerName(encodingType: EncodingType): string
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19020003 | parameter check failed. Possible causes: 1. The value of encodingType is not in the EncodingType enumeration range. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19020003 | Parameter check failed. Possible causes: 1. The value of encodingType is not in the EncodingType enumeration range. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -7441,13 +7809,14 @@ cert.createX509CRL(encodingBlob, (error, x509CRL) => {
 
 
 
-#### getLastUpdate11+
+### getLastUpdate11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLastUpdate() : string
 
-表示获取X.509证书吊销列表最后一次更新日期，日期为ASN.1时间格式。
+表示获取X.509证书吊销列表最后一次更新日期。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -7455,20 +7824,22 @@ getLastUpdate() : string
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| string | 表示X.509证书吊销列表最后一次更新日期，日期为ASN.1时间格式。 |
+| string | 表示X.509证书吊销列表最后一次更新日期，日期采用ASN.1 UTCTime或GeneralizedTime格式。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -7508,7 +7879,8 @@ cert.createX509CRL(encodingBlob, (error, x509CRL) => {
   } else {
     console.info('createX509CRL result: success.');
     try {
-      let lastUpdate  = x509CRL.getLastUpdate();
+      let lastUpdate = x509CRL.getLastUpdate();
+      console.info('lastUpdate = ' + lastUpdate);
     } catch (err) {
       let e: BusinessError = err as BusinessError;
       console.error(`getLastUpdate failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -7519,13 +7891,14 @@ cert.createX509CRL(encodingBlob, (error, x509CRL) => {
 
 
 
-#### getNextUpdate11+
+### getNextUpdate11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getNextUpdate() : string
 
-表示获取证书吊销列表下一次更新的日期，日期为ASN.1时间格式。
+表示获取证书吊销列表下一次更新的日期。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -7533,20 +7906,22 @@ getNextUpdate() : string
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| string | 表示X.509证书吊销列表下一次更新的日期，日期为ASN.1时间格式。 |
+| string | 表示X.509证书吊销列表下一次更新的日期，日期采用ASN.1 UTCTime或GeneralizedTime格式。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -7587,6 +7962,7 @@ cert.createX509CRL(encodingBlob, (error, x509CRL) => {
     console.info('createX509CRL result: success.');
     try {
       let nextUpdate = x509CRL.getNextUpdate();
+      console.info('nextUpdate = ' + nextUpdate);
     } catch (err) {
       let e: BusinessError = err as BusinessError;
       console.error(`getNextUpdate failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -7597,9 +7973,10 @@ cert.createX509CRL(encodingBlob, (error, x509CRL) => {
 
 
 
-#### getRevokedCert11+
+### getRevokedCert11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRevokedCert(serialNumber : bigint) : X509CRLEntry
 
@@ -7611,12 +7988,14 @@ getRevokedCert(serialNumber : bigint) : X509CRLEntry
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | serialNumber | bigint | 是 | 表示证书序列号。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7627,11 +8006,12 @@ getRevokedCert(serialNumber : bigint) : X509CRLEntry
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19020001 | memory malloc failed. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19020001 | Memory malloc failed. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -7672,7 +8052,7 @@ cert.createX509CRL(encodingBlob, (error, x509CRL) => {
     console.info('createX509CRL result: success.');
     let serialNumber = BigInt(1000);
     try {
-      let entry = x509CRL.getRevokedCert(serialNumber);
+      x509CRL.getRevokedCert(serialNumber);
     } catch (error) {
       let e: BusinessError = error as BusinessError;
       console.error(`getRevokedCert failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -7683,9 +8063,10 @@ cert.createX509CRL(encodingBlob, (error, x509CRL) => {
 
 
 
-#### getRevokedCertWithCert11+
+### getRevokedCertWithCert11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRevokedCertWithCert(cert : X509Cert) : X509CRLEntry
 
@@ -7697,12 +8078,14 @@ getRevokedCertWithCert(cert : X509Cert) : X509CRLEntry
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cert | X509Cert | 是 | 表示证书对象。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7713,11 +8096,12 @@ getRevokedCertWithCert(cert : X509Cert) : X509CRLEntry
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19020001 | memory malloc failed. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19020001 | Memory malloc failed. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -7790,7 +8174,7 @@ cert.createX509CRL(encodingBlob, (error, x509CRL) => {
     // 创建X.509证书对象。
     cert.createX509Cert(certEncodingBlob).then((x509Cert) => {
       try {
-        let entry = x509CRL.getRevokedCertWithCert(x509Cert);
+        x509CRL.getRevokedCertWithCert(x509Cert);
         console.info('getRevokedCertWithCert result: success.');
       } catch (error) {
         let e: BusinessError = error as BusinessError;
@@ -7798,16 +8182,17 @@ cert.createX509CRL(encodingBlob, (error, x509CRL) => {
       }
     }).catch((error: BusinessError) => {
       console.error(`createX509Cert failed, errCode: ${error.code}, errMsg: ${error.message}`);
-    })
+    });
   }
 });
 ```
 
 
 
-#### getRevokedCerts11+
+### getRevokedCerts11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRevokedCerts(callback : AsyncCallback<Array&lt;X509CRLEntry&gt;>) : void
 
@@ -7819,20 +8204,22 @@ getRevokedCerts(callback : AsyncCallback<Array&lt;X509CRLEntry&gt;>) : void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback<Array&lt;X509CRLEntry&gt;> | 是 | 回调函数，表示获取到的证书吊销条目列表。 |
+| callback | AsyncCallback<Array&lt;X509CRLEntry&gt;> | 是 | 回调函数。当获取证书吊销条目列表成功时，err为undefined，data为获取到的证书吊销条目列表；否则为错误对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-| 19020001 | memory malloc failed. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 19020001 | Memory malloc failed. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -7870,7 +8257,7 @@ cert.createX509CRL(encodingBlob, (error, x509CRL) => {
     console.error(`createX509CRL failed, errCode: ${error.code}, errMsg: ${error.message}`);
   } else {
     console.info('createX509CRL result: success.');
-    x509CRL.getRevokedCerts((error, array) => {
+    x509CRL.getRevokedCerts((error, _array) => {
       if (error) {
         console.error(`getRevokedCerts failed, errCode: ${error.code}, errMsg: ${error.message}`);
       } else {
@@ -7883,9 +8270,10 @@ cert.createX509CRL(encodingBlob, (error, x509CRL) => {
 
 
 
-#### getRevokedCerts11+
+### getRevokedCerts11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRevokedCerts() : Promise<Array&lt;X509CRLEntry&gt;>
 
@@ -7897,20 +8285,22 @@ getRevokedCerts() : Promise<Array&lt;X509CRLEntry&gt;>
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise<Array&lt;X509CRLEntry&gt;> | 表示证书吊销条目列表。 |
+| Promise<Array&lt;X509CRLEntry&gt;> | Promise对象，返回证书吊销条目列表。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-| 19020001 | memory malloc failed. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 19020001 | Memory malloc failed. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -7946,7 +8336,7 @@ let encodingBlob: cert.EncodingBlob = {
 
 cert.createX509CRL(encodingBlob).then(x509CRL => {
   console.info('createX509CRL result: success.');
-  x509CRL.getRevokedCerts().then(array => {
+  x509CRL.getRevokedCerts().then(_array => {
     console.info('getRevokedCerts result: success.');
   }).catch((error: BusinessError) => {
     console.error(`getRevokedCerts failed, errCode: ${error.code}, errMsg: ${error.message}`);
@@ -7958,9 +8348,10 @@ cert.createX509CRL(encodingBlob).then(x509CRL => {
 
 
 
-#### getSignature11+
+### getSignature11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSignature() : DataBlob
 
@@ -7972,6 +8363,7 @@ getSignature() : DataBlob
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | DataBlob | 表示X.509证书吊销列表的签名数据。 |
@@ -7981,11 +8373,12 @@ getSignature() : DataBlob
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -8026,6 +8419,7 @@ cert.createX509CRL(encodingBlob, (error, x509CRL) => {
     console.info('createX509CRL result: success.');
     try {
       let signature = x509CRL.getSignature();
+      console.info('signature = ' + signature.data);
     } catch (err) {
       let e: BusinessError = err as BusinessError;
       console.error(`getSignature failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -8036,9 +8430,10 @@ cert.createX509CRL(encodingBlob, (error, x509CRL) => {
 
 
 
-#### getSignatureAlgName11+
+### getSignatureAlgName11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSignatureAlgName() : string
 
@@ -8050,6 +8445,7 @@ getSignatureAlgName() : string
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 表示X.509证书吊销列表签名的算法名。 |
@@ -8059,11 +8455,12 @@ getSignatureAlgName() : string
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -8104,6 +8501,7 @@ cert.createX509CRL(encodingBlob, (error, x509CRL) => {
     console.info('createX509CRL result: success.');
     try {
       let sigAlgName = x509CRL.getSignatureAlgName();
+      console.info('sigAlgName = ' + sigAlgName);
     } catch (err) {
       let e: BusinessError = err as BusinessError;
       console.error(`getSignatureAlgName failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -8114,9 +8512,10 @@ cert.createX509CRL(encodingBlob, (error, x509CRL) => {
 
 
 
-#### getSignatureAlgOid11+
+### getSignatureAlgOid11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSignatureAlgOid() : string
 
@@ -8128,6 +8527,7 @@ getSignatureAlgOid() : string
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 表示X.509证书吊销列表签名算法的对象标识符OID。 |
@@ -8137,11 +8537,12 @@ getSignatureAlgOid() : string
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -8182,6 +8583,7 @@ cert.createX509CRL(encodingBlob, (error, x509CRL) => {
     console.info('createX509CRL result: success.');
     try {
       let sigAlgOid = x509CRL.getSignatureAlgOid();
+      console.info('sigAlgOid = ' + sigAlgOid);
     } catch (err) {
       let e: BusinessError = err as BusinessError;
       console.error(`getSignatureAlgOid failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -8192,9 +8594,10 @@ cert.createX509CRL(encodingBlob, (error, x509CRL) => {
 
 
 
-#### getSignatureAlgParams11+
+### getSignatureAlgParams11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSignatureAlgParams() : DataBlob
 
@@ -8206,6 +8609,7 @@ getSignatureAlgParams() : DataBlob
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | DataBlob | 表示X.509证书吊销列表签名的算法参数。 |
@@ -8215,12 +8619,13 @@ getSignatureAlgParams() : DataBlob
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | this operation is not supported. |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 801 | This operation is not supported. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -8261,6 +8666,7 @@ cert.createX509CRL(encodingBlob, (error, x509CRL) => {
     console.info('createX509CRL result: success.');
     try {
       let sigAlgParams = x509CRL.getSignatureAlgParams();
+      console.info('sigAlgParams = ' + sigAlgParams.data);
     } catch (err) {
       let e: BusinessError = err as BusinessError;
       console.error(`getSignatureAlgParams failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -8271,9 +8677,10 @@ cert.createX509CRL(encodingBlob, (error, x509CRL) => {
 
 
 
-#### getTBSInfo11+
+### getTBSInfo11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTBSInfo() : DataBlob
 
@@ -8285,6 +8692,7 @@ getTBSInfo() : DataBlob
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | DataBlob | 表示证书吊销列表的tbsCertList信息。 |
@@ -8294,11 +8702,12 @@ getTBSInfo() : DataBlob
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -8339,6 +8748,7 @@ cert.createX509CRL(encodingBlob, (error, x509CRL) => {
     console.info('createX509CRL result: success.');
     try {
       let tbsInfo = x509CRL.getTBSInfo();
+      console.info('tbsInfo = ' + tbsInfo.data);
     } catch (error) {
       let e: BusinessError = error as BusinessError;
       console.error(`getTBSInfo failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -8349,9 +8759,10 @@ cert.createX509CRL(encodingBlob, (error, x509CRL) => {
 
 
 
-#### getExtensions11+
+### getExtensions11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getExtensions(): DataBlob
 
@@ -8363,6 +8774,7 @@ getExtensions(): DataBlob
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | DataBlob | 表示CRL扩展的DER格式数据。 |
@@ -8372,11 +8784,12 @@ getExtensions(): DataBlob
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -8420,6 +8833,7 @@ cert.createX509CRL(encodingBlob, (error, x509CRL) => {
     console.info('createX509CRL result: success.');
     try {
       let extensions = x509CRL.getExtensions();
+      console.info('extensions = ' + extensions.data);
     } catch (error) {
       let e: BusinessError = error as BusinessError;
       console.error(`getExtensions failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -8430,9 +8844,10 @@ cert.createX509CRL(encodingBlob, (error, x509CRL) => {
 
 
 
-#### match11+
+### match11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 match(param: X509CRLMatchParameters): boolean
 
@@ -8444,12 +8859,14 @@ match(param: X509CRLMatchParameters): boolean
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | param | X509CRLMatchParameters | 是 | 表示需要匹配的参数。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8460,11 +8877,12 @@ match(param: X509CRLMatchParameters): boolean
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19020001 | memory malloc failed. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19020001 | Memory malloc failed. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -8518,7 +8936,7 @@ const certData = '-----BEGIN CERTIFICATE-----\r\n' +
   '-----END CERTIFICATE-----\r\n';
 const certEncodingBlob: cert.EncodingBlob = {
   data: stringToUint8Array(certData),
-  encodingFormat: cert.EncodingFormat.FORMAT_PEM,
+  encodingFormat: cert.EncodingFormat.FORMAT_PEM
 };
 
 async function crlMatch() {
@@ -8545,8 +8963,9 @@ async function crlMatch() {
             0x06, 0x03, 0x55, 0x04, 0x0B, 0x13, 0x02, 0x74, 0x73, 0x31, 0x0B, 0x30, 0x09, 0x06, 0x03, 0x55, 0x04, 0x03,
             0x13, 0x02, 0x74, 0x73])],
           x509Cert: x509Cert
-        }
+        };
         const result = x509CRL.match(param);
+        console.info('result = ' + result);
       } catch (error) {
         let e: BusinessError = error as BusinessError;
         console.error(`x509CRL match failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -8558,9 +8977,10 @@ async function crlMatch() {
 
 
 
-#### getIssuerX500DistinguishedName12+
+### getIssuerX500DistinguishedName12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getIssuerX500DistinguishedName(): X500DistinguishedName
 
@@ -8572,6 +8992,7 @@ getIssuerX500DistinguishedName(): X500DistinguishedName
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | X500DistinguishedName | X.500可分辨名称对象。 |
@@ -8581,11 +9002,12 @@ getIssuerX500DistinguishedName(): X500DistinguishedName
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -8624,7 +9046,7 @@ async function crlGetIssuerX500DistinguishedName() {
   try {
     x509Crl = await cert.createX509CRL(crlEncodingBlob);
     console.info('createX509CRL result: success.');
-    let name = x509Crl.getIssuerX500DistinguishedName();
+    x509Crl.getIssuerX500DistinguishedName();
   } catch (err) {
     let e: BusinessError = err as BusinessError;
     console.error(`createX509CRL failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -8634,9 +9056,10 @@ async function crlGetIssuerX500DistinguishedName() {
 
 
 
-#### toString12+
+### toString12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toString(): string
 
@@ -8648,6 +9071,7 @@ toString(): string
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 对象的字符串类型数据。 |
@@ -8657,11 +9081,12 @@ toString(): string
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -8710,9 +9135,10 @@ async function crlToString() {
 
 
 
-#### toString20+
+### toString20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toString(encodingType: EncodingType): string
 
@@ -8724,12 +9150,14 @@ toString(encodingType: EncodingType): string
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | encodingType | EncodingType | 是 | 表示编码类型。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8740,12 +9168,13 @@ toString(encodingType: EncodingType): string
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19020003 | parameter check failed. Possible causes: 1. The value of encodingType is not in the EncodingType enumeration range. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19020003 | Parameter check failed. Possible causes: 1. The value of encodingType is not in the EncodingType enumeration range. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -8797,9 +9226,10 @@ async function crlToString() {
 
 
 
-#### hashCode12+
+### hashCode12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hashCode(): Uint8Array
 
@@ -8811,6 +9241,7 @@ hashCode(): Uint8Array
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Uint8Array | DER格式数据的哈希值。 |
@@ -8820,11 +9251,12 @@ hashCode(): Uint8Array
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -8873,9 +9305,10 @@ async function crlHashCode() {
 
 
 
-#### getExtensionsObject12+
+### getExtensionsObject12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getExtensionsObject(): CertExtension
 
@@ -8887,6 +9320,7 @@ getExtensionsObject(): CertExtension
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | CertExtension | CRL扩展对象。 |
@@ -8896,11 +9330,12 @@ getExtensionsObject(): CertExtension
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -8944,7 +9379,7 @@ async function crlGetExtensionsObject() {
   try {
     x509Crl = await cert.createX509CRL(crlEncodingBlob);
     console.info('createX509CRL result: success.');
-    let object = x509Crl.getExtensionsObject();
+    x509Crl.getExtensionsObject();
   } catch (err) {
     let e: BusinessError = err as BusinessError;
     console.error(`createX509CRL failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -8954,9 +9389,10 @@ async function crlGetExtensionsObject() {
 
 
 
-#### cert.createCertChainValidator
+## cert.createCertChainValidator
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createCertChainValidator(algorithm :string) : CertChainValidator
 
@@ -8968,12 +9404,14 @@ createCertChainValidator(algorithm :string) : CertChainValidator
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | algorithm | string | 是 | 表示证书链校验器算法。当前仅支持输入"PKIX"。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8984,13 +9422,14 @@ createCertChainValidator(algorithm :string) : CertChainValidator
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 801 | this operation is not supported. |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 801 | This operation is not supported. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -9000,7 +9439,7 @@ import { cert } from '@kit.DeviceCertificateKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 try {
-  let validator = cert.createCertChainValidator('PKIX');
+  cert.createCertChainValidator('PKIX');
 } catch (error) {
   let e: BusinessError = error as BusinessError;
   console.error(`createCertChainValidator failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -9009,15 +9448,17 @@ try {
 
 
 
-#### CertChainValidator
+## CertChainValidator
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 证书链校验器对象。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Cert
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -9026,9 +9467,10 @@ try {
 
 
 
-#### validate
+### validate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 validate(certChain : CertChainData, callback : AsyncCallback&lt;void&gt;) : void
 
@@ -9042,28 +9484,30 @@ validate(certChain : CertChainData, callback : AsyncCallback&lt;void&gt;) : void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | certChain | CertChainData | 是 | 表示X.509证书链序列化数据。 |
-| callback | AsyncCallback&lt;void&gt; | 是 | 回调函数，使用AsyncCallback的第一个error参数判断是否校验成功，error为null表示成功，error不为null表示失败。 |
+| callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当校验成功时，err为undefined，否则为错误对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
-| 19030002 | the certificate signature verification failed. |
-| 19030003 | the certificate has not taken effect. |
-| 19030004 | the certificate has expired. |
-| 19030005 | failed to obtain the certificate issuer. |
-| 19030006 | the key cannot be used for signing a certificate. |
-| 19030007 | the key cannot be used for a digital signature. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
+| 19030002 | The certificate signature verification failed. |
+| 19030003 | The certificate has not taken effect. |
+| 19030004 | The certificate has expired. |
+| 19030005 | Failed to obtain the certificate issuer. |
+| 19030006 | The key cannot be used for signing a certificate. |
+| 19030007 | The key cannot be used for a digital signature. |
 
 
 **示例：**
@@ -9126,15 +9570,15 @@ let caPem = '-----BEGIN CERTIFICATE-----\n' +
 let certPemData = stringToUint8Array(certPem);
 let caPemData = stringToUint8Array(caPem);
 
-let certPemDataLenData = new Uint8Array(new Uint16Array([certPemData.length]).buffer)
-let caPemDataLenData = new Uint8Array(new Uint16Array([caPemData.length]).buffer)
+let certPemDataLenData = new Uint8Array(new Uint16Array([certPemData.length]).buffer);
+let caPemDataLenData = new Uint8Array(new Uint16Array([caPemData.length]).buffer);
 
 let certChainBuff =
-  new Uint8Array(certPemDataLenData.length + certPemData.length + caPemDataLenData.length + caPemData.length)
-certChainBuff.set(certPemDataLenData)
-certChainBuff.set(certPemData, certPemDataLenData.length)
-certChainBuff.set(caPemDataLenData, certPemDataLenData.length + certPemData.length)
-certChainBuff.set(caPemData, certPemDataLenData.length + certPemData.length + caPemDataLenData.length)
+  new Uint8Array(certPemDataLenData.length + certPemData.length + caPemDataLenData.length + caPemData.length);
+certChainBuff.set(certPemDataLenData);
+certChainBuff.set(certPemData, certPemDataLenData.length);
+certChainBuff.set(caPemDataLenData, certPemDataLenData.length + certPemData.length);
+certChainBuff.set(caPemData, certPemDataLenData.length + certPemData.length + caPemDataLenData.length);
 
 let certChainData: cert.CertChainData = {
   data: certChainBuff,
@@ -9146,7 +9590,7 @@ let certChainData: cert.CertChainData = {
 
 try {
   let validator = cert.createCertChainValidator('PKIX');
-  validator.validate(certChainData, (error, data) => {
+  validator.validate(certChainData, (error, _data) => {
     if (error) {
       console.error(`validate failed, errCode: ${error.code}, errMsg: ${error.message}`);
     } else {
@@ -9161,9 +9605,10 @@ try {
 
 
 
-#### validate
+### validate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 validate(certChain : CertChainData) : Promise&lt;void&gt;
 
@@ -9177,6 +9622,7 @@ validate(certChain : CertChainData) : Promise&lt;void&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | certChain | CertChainData | 是 | 表示X.509证书链序列化数据。 |
@@ -9184,27 +9630,29 @@ validate(certChain : CertChainData) : Promise&lt;void&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | Promise对象。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
-| 19030002 | the certificate signature verification failed. |
-| 19030003 | the certificate has not taken effect. |
-| 19030004 | the certificate has expired. |
-| 19030005 | failed to obtain the certificate issuer. |
-| 19030006 | the key cannot be used for signing a certificate. |
-| 19030007 | the key cannot be used for a digital signature. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
+| 19030002 | The certificate signature verification failed. |
+| 19030003 | The certificate has not taken effect. |
+| 19030004 | The certificate has expired. |
+| 19030005 | Failed to obtain the certificate issuer. |
+| 19030006 | The key cannot be used for signing a certificate. |
+| 19030007 | The key cannot be used for a digital signature. |
 
 
 **示例：**
@@ -9267,15 +9715,15 @@ let caPem = '-----BEGIN CERTIFICATE-----\n' +
 let certPemData = stringToUint8Array(certPem);
 let caPemData = stringToUint8Array(caPem);
 
-let certPemDataLenData = new Uint8Array(new Uint16Array([certPemData.length]).buffer)
-let caPemDataLenData = new Uint8Array(new Uint16Array([caPemData.length]).buffer)
+let certPemDataLenData = new Uint8Array(new Uint16Array([certPemData.length]).buffer);
+let caPemDataLenData = new Uint8Array(new Uint16Array([caPemData.length]).buffer);
 
 let certChainBuff =
-  new Uint8Array(certPemDataLenData.length + certPemData.length + caPemDataLenData.length + caPemData.length)
-certChainBuff.set(certPemDataLenData)
-certChainBuff.set(certPemData, certPemDataLenData.length)
-certChainBuff.set(caPemDataLenData, certPemDataLenData.length + certPemData.length)
-certChainBuff.set(caPemData, certPemDataLenData.length + certPemData.length + caPemDataLenData.length)
+  new Uint8Array(certPemDataLenData.length + certPemData.length + caPemDataLenData.length + caPemData.length);
+certChainBuff.set(certPemDataLenData);
+certChainBuff.set(certPemData, certPemDataLenData.length);
+certChainBuff.set(caPemDataLenData, certPemDataLenData.length + certPemData.length);
+certChainBuff.set(caPemData, certPemDataLenData.length + certPemData.length + caPemDataLenData.length);
 
 let certChainData: cert.CertChainData = {
   data: certChainBuff,
@@ -9287,7 +9735,7 @@ let certChainData: cert.CertChainData = {
 
 try {
   let validator = cert.createCertChainValidator('PKIX');
-  validator.validate(certChainData).then(result => {
+  validator.validate(certChainData).then(_result => {
     console.info('validate result: success.');
   }).catch((error: BusinessError) => {
     console.error(`validate failed, errCode: ${error.code}, errMsg: ${error.message}`);
@@ -9300,9 +9748,10 @@ try {
 
 
 
-#### validateCert
+### validateCert
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 validateCert(cert: X509Cert, params: CertValidationParams): Promise&lt;CertValidationResult&gt;
 
@@ -9325,6 +9774,7 @@ validateCert(cert: X509Cert, params: CertValidationParams): Promise&lt;CertValid
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cert | X509Cert | 是 | 待验证的证书。 |
@@ -9332,6 +9782,7 @@ validateCert(cert: X509Cert, params: CertValidationParams): Promise&lt;CertValid
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -9342,34 +9793,35 @@ validateCert(cert: X509Cert, params: CertValidationParams): Promise&lt;CertValid
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19020003 | parameter check failed. |
-| 19030001 | crypto operation error. |
-| 19030002 | the certificate signature verification failed. |
-| 19030003 | the certificate has not taken effect. |
-| 19030004 | the certificate has expired. |
-| 19030005 | failed to obtain the certificate issuer. |
-| 19030006 | the key cannot be used for signing a certificate. |
-| 19030007 | the key cannot be used for a digital signature. |
-| 19030009 | untrusted certificate. |
-| 19030010 | the certificate has been revoked. |
-| 19030011 | unsupported critical extension. |
-| 19030012 | hostname mismatch in the certificate. |
-| 19030013 | email address mismatch in the certificate. |
-| 19030014 | key usage mismatch in the certificate. |
-| 19030015 | failed to obtain the certificate revocation list. |
-| 19030016 | the certificate revocation list has not taken effect. |
-| 19030017 | the certificate revocation list has expired. |
-| 19030018 | failed to verify the signature of the certificate revocation list. |
-| 19030019 | failed to find the issuer of the certificate revocation list. |
-| 19030020 | failed to obtain the OCSP response. |
-| 19030021 | invalid OCSP response. |
-| 19030022 | failed to verify the OCSP signature. |
-| 19030023 | unknown OCSP certificate status. |
-| 19030024 | network connection timed out. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19020003 | Parameter check failed. |
+| 19030001 | Crypto operation error. |
+| 19030002 | The certificate signature verification failed. |
+| 19030003 | The certificate has not taken effect. |
+| 19030004 | The certificate has expired. |
+| 19030005 | Failed to obtain the certificate issuer. |
+| 19030006 | The key cannot be used for signing a certificate. |
+| 19030007 | The key cannot be used for a digital signature. |
+| 19030009 | Untrusted certificate. |
+| 19030010 | The certificate has been revoked. |
+| 19030011 | Unsupported critical extension. |
+| 19030012 | Hostname mismatch in the certificate. |
+| 19030013 | Email address mismatch in the certificate. |
+| 19030014 | Key usage mismatch in the certificate. |
+| 19030015 | Failed to obtain the certificate revocation list. |
+| 19030016 | The certificate revocation list has not taken effect. |
+| 19030017 | The certificate revocation list has expired. |
+| 19030018 | Failed to verify the signature of the certificate revocation list. |
+| 19030019 | Failed to find the issuer of the certificate revocation list. |
+| 19030020 | Failed to obtain the OCSP response. |
+| 19030021 | Invalid OCSP response. |
+| 19030022 | Failed to verify the OCSP signature. |
+| 19030023 | Unknown OCSP certificate status. |
+| 19030024 | Network connection timed out. |
 
 
 **示例：**
@@ -9490,9 +9942,10 @@ validateCert();
 
 
 
-#### X509CrlEntry(deprecated)
+## X509CrlEntry(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 证书吊销条目。
 
@@ -9502,9 +9955,10 @@ validateCert();
 
 
 
-#### getEncoded(deprecated)
+### getEncoded(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEncoded(callback : AsyncCallback&lt;EncodingBlob&gt;) : void
 
@@ -9518,21 +9972,23 @@ getEncoded(callback : AsyncCallback&lt;EncodingBlob&gt;) : void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback&lt;EncodingBlob&gt; | 是 | 回调函数，表示被吊销证书的序列化数据。 |
+| callback | AsyncCallback&lt;EncodingBlob&gt; | 是 | 回调函数。当获取证书吊销条目序列化数据成功时，err为undefined，data为获取到的证书吊销条目序列化数据；否则为错误对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -9557,7 +10013,7 @@ let crlData = '-----BEGIN X509 CRL-----\n' +
   'J1LaNwiL+gDxI9rMQmlhsUGJmPIPdRs9uYyI+f854lsWYisD2PUEpn3DbEvzwYeQ\n' +
   '5SqQoPDoM+YfZZa23hoTLsu52toXobP74sf/9K501p/+8hm4ROMLBoRT86GQKY6g\n' +
   'eavsH0Q3\n' +
-  '-----END X509 CRL-----\n'
+  '-----END X509 CRL-----\n';
 
 let encodingBlob: cert.EncodingBlob = {
   data: stringToUint8Array(crlData),
@@ -9574,7 +10030,7 @@ cert.createX509Crl(encodingBlob, (err, x509Crl) => {
     try {
       let serialNumber = 1000;
       let crlEntry = x509Crl.getRevokedCert(serialNumber);
-      crlEntry.getEncoded((error, data) => {
+      crlEntry.getEncoded((error, _data) => {
         if (error) {
           console.error(`getEncoded failed, errCode: ${error.code}, errMsg: ${error.message}`);
         } else {
@@ -9586,14 +10042,15 @@ cert.createX509Crl(encodingBlob, (err, x509Crl) => {
       console.error(`getRevokedCert failed, errCode: ${e.code}, errMsg: ${e.message}`);
     }
   }
-})
+});
 ```
 
 
 
-#### getEncoded(deprecated)
+### getEncoded(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEncoded() : Promise&lt;EncodingBlob&gt;
 
@@ -9607,21 +10064,23 @@ getEncoded() : Promise&lt;EncodingBlob&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;EncodingBlob&gt; | 表示被吊销证书的序列化数据。 |
+| Promise&lt;EncodingBlob&gt; | Promise对象，返回被吊销证书的序列化数据。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -9646,7 +10105,7 @@ let crlData = '-----BEGIN X509 CRL-----\n' +
   'J1LaNwiL+gDxI9rMQmlhsUGJmPIPdRs9uYyI+f854lsWYisD2PUEpn3DbEvzwYeQ\n' +
   '5SqQoPDoM+YfZZa23hoTLsu52toXobP74sf/9K501p/+8hm4ROMLBoRT86GQKY6g\n' +
   'eavsH0Q3\n' +
-  '-----END X509 CRL-----\n'
+  '-----END X509 CRL-----\n';
 
 let encodingBlob: cert.EncodingBlob = {
   data: stringToUint8Array(crlData),
@@ -9663,7 +10122,7 @@ cert.createX509Crl(encodingBlob, (err, x509Crl) => {
     try {
       let serialNumber = 1000;
       let crlEntry = x509Crl.getRevokedCert(serialNumber);
-      crlEntry.getEncoded().then(result => {
+      crlEntry.getEncoded().then(_result => {
         console.info('getEncoded result: success.');
       }).catch((error: BusinessError) => {
         console.error(`getEncoded failed, errCode: ${error.code}, errMsg: ${error.message}`);
@@ -9673,14 +10132,15 @@ cert.createX509Crl(encodingBlob, (err, x509Crl) => {
       console.error(`getRevokedCert failed, errCode: ${e.code}, errMsg: ${e.message}`);
     }
   }
-})
+});
 ```
 
 
 
-#### getSerialNumber(deprecated)
+### getSerialNumber(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSerialNumber() : number
 
@@ -9693,6 +10153,7 @@ getSerialNumber() : number
 **系统能力：** SystemCapability.Security.Cert
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -9721,7 +10182,7 @@ let crlData = '-----BEGIN X509 CRL-----\n' +
   'J1LaNwiL+gDxI9rMQmlhsUGJmPIPdRs9uYyI+f854lsWYisD2PUEpn3DbEvzwYeQ\n' +
   '5SqQoPDoM+YfZZa23hoTLsu52toXobP74sf/9K501p/+8hm4ROMLBoRT86GQKY6g\n' +
   'eavsH0Q3\n' +
-  '-----END X509 CRL-----\n'
+  '-----END X509 CRL-----\n';
 
 let encodingBlob: cert.EncodingBlob = {
   data: stringToUint8Array(crlData),
@@ -9739,19 +10200,21 @@ cert.createX509Crl(encodingBlob, (err, x509Crl) => {
       let serialNumber = 1000;
       let crlEntry = x509Crl.getRevokedCert(serialNumber);
       serialNumber = crlEntry.getSerialNumber();
+      console.info('serialNumber = ' + serialNumber);
     } catch (error) {
       let e: BusinessError = error as BusinessError;
       console.error(`getRevokedCert or getSerialNumber failed, errCode: ${e.code}, errMsg: ${e.message}`);
     }
   }
-})
+});
 ```
 
 
 
-#### getCertIssuer(deprecated)
+### getCertIssuer(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCertIssuer() : DataBlob
 
@@ -9765,6 +10228,7 @@ getCertIssuer() : DataBlob
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | DataBlob | 被吊销的证书的颁发者名称。 |
@@ -9774,11 +10238,12 @@ getCertIssuer() : DataBlob
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | this operation is not supported. |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 801 | This operation is not supported. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
 
 
 **示例：**
@@ -9803,7 +10268,7 @@ let crlData = '-----BEGIN X509 CRL-----\n' +
   'J1LaNwiL+gDxI9rMQmlhsUGJmPIPdRs9uYyI+f854lsWYisD2PUEpn3DbEvzwYeQ\n' +
   '5SqQoPDoM+YfZZa23hoTLsu52toXobP74sf/9K501p/+8hm4ROMLBoRT86GQKY6g\n' +
   'eavsH0Q3\n' +
-  '-----END X509 CRL-----\n'
+  '-----END X509 CRL-----\n';
 
 let encodingBlob: cert.EncodingBlob = {
   data: stringToUint8Array(crlData),
@@ -9821,19 +10286,21 @@ cert.createX509Crl(encodingBlob, (err, x509Crl) => {
       let serialNumber = 1000;
       let crlEntry = x509Crl.getRevokedCert(serialNumber);
       let issuer = crlEntry.getCertIssuer();
+      console.info('issuer = ' + issuer.data);
     } catch (error) {
       let e: BusinessError = error as BusinessError;
       console.error(`getRevokedCert or getCertIssuer failed, errCode: ${e.code}, errMsg: ${e.message}`);
     }
   }
-})
+});
 ```
 
 
 
-#### getRevocationDate(deprecated)
+### getRevocationDate(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRevocationDate() : string
 
@@ -9847,20 +10314,22 @@ getRevocationDate() : string
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| string | 表示证书被吊销的日期，日期为ASN.1时间格式。 |
+| string | 表示证书被吊销的日期，日期采用ASN.1 UTCTime或GeneralizedTime格式。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -9885,7 +10354,7 @@ let crlData = '-----BEGIN X509 CRL-----\n' +
   'J1LaNwiL+gDxI9rMQmlhsUGJmPIPdRs9uYyI+f854lsWYisD2PUEpn3DbEvzwYeQ\n' +
   '5SqQoPDoM+YfZZa23hoTLsu52toXobP74sf/9K501p/+8hm4ROMLBoRT86GQKY6g\n' +
   'eavsH0Q3\n' +
-  '-----END X509 CRL-----\n'
+  '-----END X509 CRL-----\n';
 
 let encodingBlob: cert.EncodingBlob = {
   data: stringToUint8Array(crlData),
@@ -9903,27 +10372,30 @@ cert.createX509Crl(encodingBlob, (err, x509Crl) => {
       let serialNumber = 1000;
       let crlEntry = x509Crl.getRevokedCert(serialNumber);
       let date = crlEntry.getRevocationDate();
+      console.info('date = ' + date);
     } catch (error) {
       let e: BusinessError = error as BusinessError;
       console.error(`getRevokedCert or getRevocationDate failed, errCode: ${e.code}, errMsg: ${e.message}`);
     }
   }
-})
+});
 ```
 
 
 
-#### X509CRLEntry11+
+## X509CRLEntry11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 证书吊销条目。
 
 
 
-#### getEncoded11+
+### getEncoded11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEncoded(callback : AsyncCallback&lt;EncodingBlob&gt;) : void
 
@@ -9935,21 +10407,23 @@ getEncoded(callback : AsyncCallback&lt;EncodingBlob&gt;) : void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback&lt;EncodingBlob&gt; | 是 | 回调函数，表示证书吊销条目的序列化数据。 |
+| callback | AsyncCallback&lt;EncodingBlob&gt; | 是 | 回调函数。当获取证书吊销条目序列化数据成功时，err为undefined，data为获取到的证书吊销条目序列化数据；否则为错误对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -9974,7 +10448,7 @@ let crlData = '-----BEGIN X509 CRL-----\n' +
   'J1LaNwiL+gDxI9rMQmlhsUGJmPIPdRs9uYyI+f854lsWYisD2PUEpn3DbEvzwYeQ\n' +
   '5SqQoPDoM+YfZZa23hoTLsu52toXobP74sf/9K501p/+8hm4ROMLBoRT86GQKY6g\n' +
   'eavsH0Q3\n' +
-  '-----END X509 CRL-----\n'
+  '-----END X509 CRL-----\n';
 
 let encodingBlob: cert.EncodingBlob = {
   data: stringToUint8Array(crlData),
@@ -9991,7 +10465,7 @@ cert.createX509CRL(encodingBlob, (err, x509CRL) => {
     try {
       let serialNumber = BigInt(1000);
       let crlEntry = x509CRL.getRevokedCert(serialNumber);
-      crlEntry.getEncoded((error, data) => {
+      crlEntry.getEncoded((error, _data) => {
         if (error) {
           console.error(`getEncoded failed, errCode: ${error.code}, errMsg: ${error.message}`);
         } else {
@@ -10003,14 +10477,15 @@ cert.createX509CRL(encodingBlob, (err, x509CRL) => {
       console.error(`getRevokedCert failed, errCode: ${e.code}, errMsg: ${e.message}`);
     }
   }
-})
+});
 ```
 
 
 
-#### getEncoded11+
+### getEncoded11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEncoded() : Promise&lt;EncodingBlob&gt;
 
@@ -10022,21 +10497,23 @@ getEncoded() : Promise&lt;EncodingBlob&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;EncodingBlob&gt; | 表示证书吊销条目的序列化数据。 |
+| Promise&lt;EncodingBlob&gt; | Promise对象，返回证书吊销条目的序列化数据。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -10061,7 +10538,7 @@ let crlData = '-----BEGIN X509 CRL-----\n' +
   'J1LaNwiL+gDxI9rMQmlhsUGJmPIPdRs9uYyI+f854lsWYisD2PUEpn3DbEvzwYeQ\n' +
   '5SqQoPDoM+YfZZa23hoTLsu52toXobP74sf/9K501p/+8hm4ROMLBoRT86GQKY6g\n' +
   'eavsH0Q3\n' +
-  '-----END X509 CRL-----\n'
+  '-----END X509 CRL-----\n';
 
 let encodingBlob: cert.EncodingBlob = {
   data: stringToUint8Array(crlData),
@@ -10078,7 +10555,7 @@ cert.createX509CRL(encodingBlob, (err, x509CRL) => {
     try {
       let serialNumber = BigInt(1000);
       let crlEntry = x509CRL.getRevokedCert(serialNumber);
-      crlEntry.getEncoded().then(result => {
+      crlEntry.getEncoded().then(_result => {
         console.info('getEncoded result: success.');
       }).catch((error: BusinessError) => {
         console.error(`getEncoded failed, errCode: ${error.code}, errMsg: ${error.message}`);
@@ -10088,14 +10565,15 @@ cert.createX509CRL(encodingBlob, (err, x509CRL) => {
       console.error(`getRevokedCert failed, errCode: ${e.code}, errMsg: ${e.message}`);
     }
   }
-})
+});
 ```
 
 
 
-#### getSerialNumber11+
+### getSerialNumber11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSerialNumber() : bigint
 
@@ -10107,6 +10585,7 @@ getSerialNumber() : bigint
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | bigint | 表示证书吊销条目的序列号。 |
@@ -10116,11 +10595,12 @@ getSerialNumber() : bigint
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -10145,7 +10625,7 @@ let crlData = '-----BEGIN X509 CRL-----\n' +
   'J1LaNwiL+gDxI9rMQmlhsUGJmPIPdRs9uYyI+f854lsWYisD2PUEpn3DbEvzwYeQ\n' +
   '5SqQoPDoM+YfZZa23hoTLsu52toXobP74sf/9K501p/+8hm4ROMLBoRT86GQKY6g\n' +
   'eavsH0Q3\n' +
-  '-----END X509 CRL-----\n'
+  '-----END X509 CRL-----\n';
 
 let encodingBlob: cert.EncodingBlob = {
   data: stringToUint8Array(crlData),
@@ -10163,19 +10643,21 @@ cert.createX509CRL(encodingBlob, (err, x509CRL) => {
       let serialNumber = BigInt(1000);
       let crlEntry = x509CRL.getRevokedCert(serialNumber);
       serialNumber = crlEntry.getSerialNumber();
+      console.info('serialNumber = ' + serialNumber);
     } catch (error) {
       let e: BusinessError = error as BusinessError;
       console.error(`getRevokedCert or getSerialNumber failed, errCode: ${e.code}, errMsg: ${e.message}`);
     }
   }
-})
+});
 ```
 
 
 
-#### getCertIssuer11+
+### getCertIssuer11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCertIssuer() : DataBlob
 
@@ -10191,6 +10673,7 @@ getCertIssuer() : DataBlob
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | DataBlob | 表示被吊销证书的颁发者名称。 |
@@ -10200,12 +10683,13 @@ getCertIssuer() : DataBlob
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | this operation is not supported. |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 801 | This operation is not supported. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -10230,7 +10714,7 @@ let crlData = '-----BEGIN X509 CRL-----\n' +
   'J1LaNwiL+gDxI9rMQmlhsUGJmPIPdRs9uYyI+f854lsWYisD2PUEpn3DbEvzwYeQ\n' +
   '5SqQoPDoM+YfZZa23hoTLsu52toXobP74sf/9K501p/+8hm4ROMLBoRT86GQKY6g\n' +
   'eavsH0Q3\n' +
-  '-----END X509 CRL-----\n'
+  '-----END X509 CRL-----\n';
 
 let encodingBlob: cert.EncodingBlob = {
   data: stringToUint8Array(crlData),
@@ -10248,19 +10732,21 @@ cert.createX509CRL(encodingBlob, (err, x509CRL) => {
       let serialNumber = BigInt(1000);
       let crlEntry = x509CRL.getRevokedCert(serialNumber);
       let issuer = crlEntry.getCertIssuer();
+      console.info('issuer = ' + issuer.data);
     } catch (error) {
       let e: BusinessError = error as BusinessError;
       console.error(`getRevokedCert or getCertIssuer failed, errCode: ${e.code}, errMsg: ${e.message}`);
     }
   }
-})
+});
 ```
 
 
 
-#### getCertIssuer20+
+### getCertIssuer20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCertIssuer(encodingType: EncodingType): string
 
@@ -10272,12 +10758,14 @@ getCertIssuer(encodingType: EncodingType): string
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | encodingType | EncodingType | 是 | 表示编码类型。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -10288,13 +10776,14 @@ getCertIssuer(encodingType: EncodingType): string
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | this operation is not supported. |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19020003 | parameter check failed. Possible causes: 1. The value of encodingType is not in the EncodingType enumeration range. |
-| 19030001 | crypto operation error. |
+| 801 | This operation is not supported. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19020003 | Parameter check failed. Possible causes: 1. The value of encodingType is not in the EncodingType enumeration range. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -10344,14 +10833,15 @@ cert.createX509CRL(encodingBlob, (err, x509CRL) => {
       console.error(`getRevokedCert or getCertIssuer failed, errCode: ${e.code}, errMsg: ${e.message}`);
     }
   }
-})
+});
 ```
 
 
 
-#### getRevocationDate11+
+### getRevocationDate11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRevocationDate() : string
 
@@ -10363,6 +10853,7 @@ getRevocationDate() : string
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 表示证书被吊销的日期。 |
@@ -10372,11 +10863,12 @@ getRevocationDate() : string
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -10401,7 +10893,7 @@ let crlData = '-----BEGIN X509 CRL-----\n' +
   'J1LaNwiL+gDxI9rMQmlhsUGJmPIPdRs9uYyI+f854lsWYisD2PUEpn3DbEvzwYeQ\n' +
   '5SqQoPDoM+YfZZa23hoTLsu52toXobP74sf/9K501p/+8hm4ROMLBoRT86GQKY6g\n' +
   'eavsH0Q3\n' +
-  '-----END X509 CRL-----\n'
+  '-----END X509 CRL-----\n';
 
 let encodingBlob: cert.EncodingBlob = {
   data: stringToUint8Array(crlData),
@@ -10419,19 +10911,21 @@ cert.createX509CRL(encodingBlob, (err, x509CRL) => {
       let serialNumber = BigInt(1000);
       let crlEntry = x509CRL.getRevokedCert(serialNumber);
       let date = crlEntry.getRevocationDate();
+      console.info('date = ' + date);
     } catch (error) {
       let e: BusinessError = error as BusinessError;
       console.error(`getRevokedCert or getRevocationDate failed, errCode: ${e.code}, errMsg: ${e.message}`);
     }
   }
-})
+});
 ```
 
 
 
-#### getExtensions11+
+### getExtensions11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getExtensions(): DataBlob
 
@@ -10443,6 +10937,7 @@ getExtensions(): DataBlob
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | DataBlob | 表示X509CRLEntry扩展用途。 |
@@ -10452,11 +10947,12 @@ getExtensions(): DataBlob
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -10502,19 +10998,21 @@ cert.createX509CRL(encodingBlob, (err, x509CRL) => {
       let serialNumber = BigInt(4);
       let crlEntry = x509CRL.getRevokedCert(serialNumber);
       let extensions = crlEntry.getExtensions();
+      console.info('extensions = ' + extensions.data);
     } catch (error) {
       let e: BusinessError = error as BusinessError;
       console.error(`getRevokedCert or getExtensions failed, errCode: ${e.code}, errMsg: ${e.message}`);
     }
   }
-})
+});
 ```
 
 
 
-#### hasExtensions11+
+### hasExtensions11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hasExtensions(): boolean
 
@@ -10526,6 +11024,7 @@ hasExtensions(): boolean
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回true则表示CRL条目有扩展，返回false则表示无扩展。 |
@@ -10535,11 +11034,12 @@ hasExtensions(): boolean
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -10564,7 +11064,7 @@ let crlData = '-----BEGIN X509 CRL-----\n' +
   'J1LaNwiL+gDxI9rMQmlhsUGJmPIPdRs9uYyI+f854lsWYisD2PUEpn3DbEvzwYeQ\n' +
   '5SqQoPDoM+YfZZa23hoTLsu52toXobP74sf/9K501p/+8hm4ROMLBoRT86GQKY6g\n' +
   'eavsH0Q3\n' +
-  '-----END X509 CRL-----\n'
+  '-----END X509 CRL-----\n';
 
 let encodingBlob: cert.EncodingBlob = {
   data: stringToUint8Array(crlData),
@@ -10582,19 +11082,21 @@ cert.createX509CRL(encodingBlob, (err, x509CRL) => {
       let serialNumber = BigInt(1000);
       let crlEntry = x509CRL.getRevokedCert(serialNumber);
       let hasExtensions = crlEntry.hasExtensions();
+      console.info('hasExtensions = ' + hasExtensions);
     } catch (error) {
       let e: BusinessError = error as BusinessError;
       console.error(`getRevokedCert or hasExtensions failed, errCode: ${e.code}, errMsg: ${e.message}`);
     }
   }
-})
+});
 ```
 
 
 
-#### getCertIssuerX500DistinguishedName12+
+### getCertIssuerX500DistinguishedName12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCertIssuerX500DistinguishedName(): X500DistinguishedName
 
@@ -10606,6 +11108,7 @@ getCertIssuerX500DistinguishedName(): X500DistinguishedName
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | X500DistinguishedName | X.500可分辨名称对象。 |
@@ -10615,11 +11118,12 @@ getCertIssuerX500DistinguishedName(): X500DistinguishedName
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -10644,7 +11148,7 @@ let crlData = '-----BEGIN X509 CRL-----\n' +
   'J1LaNwiL+gDxI9rMQmlhsUGJmPIPdRs9uYyI+f854lsWYisD2PUEpn3DbEvzwYeQ\n' +
   '5SqQoPDoM+YfZZa23hoTLsu52toXobP74sf/9K501p/+8hm4ROMLBoRT86GQKY6g\n' +
   'eavsH0Q3\n' +
-  '-----END X509 CRL-----\n'
+  '-----END X509 CRL-----\n';
 
 let encodingBlob: cert.EncodingBlob = {
   data: stringToUint8Array(crlData),
@@ -10657,7 +11161,7 @@ async function certGetCertIssuerX500DistinguishedName() {
   try {
     x509Crl = await cert.createX509CRL(encodingBlob);
     console.info('createX509CRL result: success.');
-    let name = x509Crl.getRevokedCert(BigInt(1000)).getCertIssuerX500DistinguishedName();
+    x509Crl.getRevokedCert(BigInt(1000)).getCertIssuerX500DistinguishedName();
   } catch (error) {
     let e: BusinessError = error as BusinessError;
     console.error(`createX509CRL failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -10667,9 +11171,10 @@ async function certGetCertIssuerX500DistinguishedName() {
 
 
 
-#### toString12+
+### toString12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toString(): string
 
@@ -10681,6 +11186,7 @@ toString(): string
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 对象的字符串类型数据。 |
@@ -10690,11 +11196,12 @@ toString(): string
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -10719,7 +11226,7 @@ let crlData = '-----BEGIN X509 CRL-----\n' +
   'J1LaNwiL+gDxI9rMQmlhsUGJmPIPdRs9uYyI+f854lsWYisD2PUEpn3DbEvzwYeQ\n' +
   '5SqQoPDoM+YfZZa23hoTLsu52toXobP74sf/9K501p/+8hm4ROMLBoRT86GQKY6g\n' +
   'eavsH0Q3\n' +
-  '-----END X509 CRL-----\n'
+  '-----END X509 CRL-----\n';
 
 let encodingBlob: cert.EncodingBlob = {
   data: stringToUint8Array(crlData),
@@ -10742,9 +11249,10 @@ async function certToString() {
 
 
 
-#### hashCode12+
+### hashCode12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hashCode(): Uint8Array
 
@@ -10756,6 +11264,7 @@ hashCode(): Uint8Array
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Uint8Array | DER格式数据的哈希值。 |
@@ -10765,11 +11274,12 @@ hashCode(): Uint8Array
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -10794,7 +11304,7 @@ let crlData = '-----BEGIN X509 CRL-----\n' +
   'J1LaNwiL+gDxI9rMQmlhsUGJmPIPdRs9uYyI+f854lsWYisD2PUEpn3DbEvzwYeQ\n' +
   '5SqQoPDoM+YfZZa23hoTLsu52toXobP74sf/9K501p/+8hm4ROMLBoRT86GQKY6g\n' +
   'eavsH0Q3\n' +
-  '-----END X509 CRL-----\n'
+  '-----END X509 CRL-----\n';
 
 let encodingBlob: cert.EncodingBlob = {
   data: stringToUint8Array(crlData),
@@ -10817,9 +11327,10 @@ async function certHashCode() {
 
 
 
-#### getExtensionsObject12+
+### getExtensionsObject12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getExtensionsObject(): CertExtension
 
@@ -10831,6 +11342,7 @@ getExtensionsObject(): CertExtension
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | CertExtension | CRL条目的扩展对象。 |
@@ -10840,11 +11352,12 @@ getExtensionsObject(): CertExtension
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -10949,7 +11462,7 @@ async function certGetExtensionsObject() {
   try {
     x509Crl = await cert.createX509CRL(encodingBlob);
     console.info('createX509CRL result: success.');
-    let object = x509Crl.getRevokedCert(BigInt('14091103387070223745671018446433705560')).getExtensionsObject();
+    x509Crl.getRevokedCert(BigInt('14091103387070223745671018446433705560')).getExtensionsObject();
   } catch (error) {
     let e: BusinessError = error as BusinessError;
     console.error(`createX509CRL failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -10959,9 +11472,10 @@ async function certGetExtensionsObject() {
 
 
 
-#### cert.createCertCRLCollection11+
+## cert.createCertCRLCollection11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createCertCRLCollection(certs: Array&lt;X509Cert&gt;, crls?: Array&lt;X509CRL&gt;): CertCRLCollection
 
@@ -10973,6 +11487,7 @@ createCertCRLCollection(certs: Array&lt;X509Cert&gt;, crls?: Array&lt;X509CRL&gt
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | certs | Array&lt;X509Cert&gt; | 是 | X509Cert数组。 |
@@ -10981,19 +11496,21 @@ createCertCRLCollection(certs: Array&lt;X509Cert&gt;, crls?: Array&lt;X509CRL&gt
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| CertCRLCollection | 表示证书和证书吊销列表集合对象。 |
+| CertCRLCollection | 证书和证书吊销列表集合。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19020001 | memory malloc failed. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19020001 | Memory malloc failed. |
 
 
 **示例：**
@@ -11068,7 +11585,7 @@ async function createCollection() {
   const x509Cert = await createX509Cert();
   const x509CRL = await createX509CRL();
   try {
-    const collection: cert.CertCRLCollection = cert.createCertCRLCollection([x509Cert], [x509CRL]);
+    cert.createCertCRLCollection([x509Cert], [x509CRL]);
     console.info('createCertCRLCollection result: success.');
   } catch (err) {
     let e: BusinessError = err as BusinessError;
@@ -11079,17 +11596,19 @@ async function createCollection() {
 
 
 
-#### CertCRLCollection11+
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-证书和证书吊销列表集合对象。
+## CertCRLCollection11+
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### selectCerts11+
+证书和证书吊销列表集合。
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+### selectCerts11+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectCerts(param: X509CertMatchParameters): Promise<Array&lt;X509Cert&gt;>
 
@@ -11101,6 +11620,7 @@ selectCerts(param: X509CertMatchParameters): Promise<Array&lt;X509Cert&gt;>
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | param | X509CertMatchParameters | 是 | 表示证书需匹配的参数。 |
@@ -11108,20 +11628,22 @@ selectCerts(param: X509CertMatchParameters): Promise<Array&lt;X509Cert&gt;>
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise<Array&lt;X509Cert&gt;> | Promise对象。表示匹配到的证书对象数组。 |
+| Promise<Array&lt;X509Cert&gt;> | Promise对象，返回匹配到的证书对象数组。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19020001 | memory malloc failed. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19020001 | Memory malloc failed. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -11174,11 +11696,13 @@ async function selectCerts() {
     const param: cert.X509CertMatchParameters = {
       x509Cert,
       validDate: '20231121074700Z',
-      issuer: new Uint8Array([0x30, 0x1a, 0x31, 0x18, 0x30, 0x16, 0x06, 0x03, 0x55, 0x04, 0x03, 0x0C, 0x0F, 0x45, 0x78, 0x61, 0x6D, 0x70, 0x6C, 0x65, 0x20, 0x52, 0x6F, 0x6F, 0x74, 0x20, 0x43, 0x41]),
-      subject: new Uint8Array([0x30, 0x1a, 0x31, 0x18, 0x30, 0x16, 0x06, 0x03, 0x55, 0x04, 0x03, 0x0C, 0x0F, 0x45, 0x78, 0x61, 0x6D, 0x70, 0x6C, 0x65, 0x20, 0x52, 0x6F, 0x6F, 0x74, 0x20, 0x43, 0x41]),
+      issuer: new Uint8Array([0x30, 0x1a, 0x31, 0x18, 0x30, 0x16, 0x06, 0x03, 0x55, 0x04, 0x03, 0x0C, 0x0F, 0x45, 0x78,
+        0x61, 0x6D, 0x70, 0x6C, 0x65, 0x20, 0x52, 0x6F, 0x6F, 0x74, 0x20, 0x43, 0x41]),
+      subject: new Uint8Array([0x30, 0x1a, 0x31, 0x18, 0x30, 0x16, 0x06, 0x03, 0x55, 0x04, 0x03, 0x0C, 0x0F, 0x45, 0x78,
+        0x61, 0x6D, 0x70, 0x6C, 0x65, 0x20, 0x52, 0x6F, 0x6F, 0x74, 0x20, 0x43, 0x41]),
       publicKeyAlgID: '1.2.840.10045.2.1'
     };
-    const certs = await collection.selectCerts(param);
+    await collection.selectCerts(param);
     console.info('call selectCerts result: success.');
   } catch (err) {
     let e: BusinessError = err as BusinessError;
@@ -11189,9 +11713,10 @@ async function selectCerts() {
 
 
 
-#### selectCerts11+
+### selectCerts11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectCerts(param: X509CertMatchParameters, callback: AsyncCallback<Array&lt;X509Cert&gt;>): void
 
@@ -11203,21 +11728,23 @@ selectCerts(param: X509CertMatchParameters, callback: AsyncCallback<Array&lt;X50
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | param | X509CertMatchParameters | 是 | 表示证书需匹配的参数。 |
-| callback | AsyncCallback<Array&lt;X509Cert&gt;> | 是 | 回调函数，表示匹配到的证书对象数组。 |
+| callback | AsyncCallback<Array&lt;X509Cert&gt;> | 是 | 回调函数。当查找证书对象成功时，err为undefined，data为获取到的匹配的证书对象数组；否则为错误对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19020001 | memory malloc failed. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19020001 | Memory malloc failed. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -11269,11 +11796,13 @@ async function selectCerts() {
   const param: cert.X509CertMatchParameters = {
     x509Cert,
     validDate: '20231121074700Z',
-    issuer: new Uint8Array([0x30, 0x1a, 0x31, 0x18, 0x30, 0x16, 0x06, 0x03, 0x55, 0x04, 0x03, 0x0C, 0x0F, 0x45, 0x78, 0x61, 0x6D, 0x70, 0x6C, 0x65, 0x20, 0x52, 0x6F, 0x6F, 0x74, 0x20, 0x43, 0x41]),
-    subject: new Uint8Array([0x30, 0x1a, 0x31, 0x18, 0x30, 0x16, 0x06, 0x03, 0x55, 0x04, 0x03, 0x0C, 0x0F, 0x45, 0x78, 0x61, 0x6D, 0x70, 0x6C, 0x65, 0x20, 0x52, 0x6F, 0x6F, 0x74, 0x20, 0x43, 0x41]),
+    issuer: new Uint8Array([0x30, 0x1a, 0x31, 0x18, 0x30, 0x16, 0x06, 0x03, 0x55, 0x04, 0x03, 0x0C, 0x0F, 0x45, 0x78,
+      0x61, 0x6D, 0x70, 0x6C, 0x65, 0x20, 0x52, 0x6F, 0x6F, 0x74, 0x20, 0x43, 0x41]),
+    subject: new Uint8Array([0x30, 0x1a, 0x31, 0x18, 0x30, 0x16, 0x06, 0x03, 0x55, 0x04, 0x03, 0x0C, 0x0F, 0x45, 0x78,
+      0x61, 0x6D, 0x70, 0x6C, 0x65, 0x20, 0x52, 0x6F, 0x6F, 0x74, 0x20, 0x43, 0x41]),
     publicKeyAlgID: '1.2.840.10045.2.1'
   };
-  collection.selectCerts(param, (err, certs) => {
+  collection.selectCerts(param, (err, _certs) => {
     if (err) {
       console.error(`selectCerts failed, errCode: ${err.code}, errMsg: ${err.message}`);
     } else {
@@ -11285,9 +11814,10 @@ async function selectCerts() {
 
 
 
-#### selectCRLs11+
+### selectCRLs11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectCRLs(param: X509CRLMatchParameters): Promise<Array&lt;X509CRL&gt;>
 
@@ -11299,6 +11829,7 @@ selectCRLs(param: X509CRLMatchParameters): Promise<Array&lt;X509CRL&gt;>
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | param | X509CRLMatchParameters | 是 | 表示证书吊销列表需匹配的参数。 |
@@ -11306,20 +11837,22 @@ selectCRLs(param: X509CRLMatchParameters): Promise<Array&lt;X509CRL&gt;>
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise<Array&lt;X509CRL&gt;> | Promise对象，表示匹配到的证书吊销列表对象数组。 |
+| Promise<Array&lt;X509CRL&gt;> | Promise对象，返回匹配到的证书吊销列表对象数组。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19020001 | memory malloc failed. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19020001 | Memory malloc failed. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -11384,7 +11917,7 @@ async function createX509Cert(): Promise<cert.X509Cert> {
     '-----END CERTIFICATE-----\r\n';
   const certEncodingBlob: cert.EncodingBlob = {
     data: stringToUint8Array(certData),
-    encodingFormat: cert.EncodingFormat.FORMAT_PEM,
+    encodingFormat: cert.EncodingFormat.FORMAT_PEM
   };
 
   let x509Cert: cert.X509Cert = {} as cert.X509Cert;
@@ -11410,9 +11943,9 @@ async function selectCRLs() {
       0x30, 0x09, 0x06, 0x03, 0x55, 0x04, 0x0A, 0x13, 0x02, 0x74, 0x73, 0x31, 0x0B, 0x30, 0x09, 0x06, 0x03, 0x55, 0x04,
       0x0B, 0x13, 0x02, 0x74, 0x73, 0x31, 0x0B, 0x30, 0x09, 0x06, 0x03, 0x55, 0x04, 0x03, 0x13, 0x02, 0x74, 0x73])],
     x509Cert: x509Cert
-  }
+  };
   try {
-    const crls = await collection.selectCRLs(param);
+    await collection.selectCRLs(param);
     console.info('selectCRLs result: success.');
   } catch (err) {
     let e: BusinessError = err as BusinessError;
@@ -11423,9 +11956,10 @@ async function selectCRLs() {
 
 
 
-#### selectCRLs11+
+### selectCRLs11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectCRLs(param: X509CRLMatchParameters, callback: AsyncCallback<Array&lt;X509CRL&gt;>): void
 
@@ -11437,21 +11971,23 @@ selectCRLs(param: X509CRLMatchParameters, callback: AsyncCallback<Array&lt;X509C
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | param | X509CRLMatchParameters | 是 | 表示证书吊销列表需匹配的参数对象。 |
-| callback | AsyncCallback<Array&lt;X509CRL&gt;> | 是 | 回调函数，表示匹配到的证书吊销列表对象数组。 |
+| callback | AsyncCallback<Array&lt;X509CRL&gt;> | 是 | 回调函数。当查找证书吊销列表成功时，err为undefined，data为获取到的匹配的证书吊销列表对象数组；否则为错误对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19020001 | memory malloc failed. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19020001 | Memory malloc failed. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -11516,7 +12052,7 @@ async function createX509Cert(): Promise<cert.X509Cert> {
     '-----END CERTIFICATE-----\r\n';
   const certEncodingBlob: cert.EncodingBlob = {
     data: stringToUint8Array(certData),
-    encodingFormat: cert.EncodingFormat.FORMAT_PEM,
+    encodingFormat: cert.EncodingFormat.FORMAT_PEM
   };
 
   let x509Cert: cert.X509Cert = {} as cert.X509Cert;
@@ -11542,8 +12078,8 @@ async function selectCRLs() {
       0x30, 0x09, 0x06, 0x03, 0x55, 0x04, 0x0A, 0x13, 0x02, 0x74, 0x73, 0x31, 0x0B, 0x30, 0x09, 0x06, 0x03, 0x55, 0x04,
       0x0B, 0x13, 0x02, 0x74, 0x73, 0x31, 0x0B, 0x30, 0x09, 0x06, 0x03, 0x55, 0x04, 0x03, 0x13, 0x02, 0x74, 0x73])],
     x509Cert: x509Cert
-  }
-  collection.selectCRLs(param, (err, crls) => {
+  };
+  collection.selectCRLs(param, (err, _crls) => {
     if (err) {
       console.error(`selectCRLs failed, errCode: ${err.code}, errMsg: ${err.message}`);
     } else {
@@ -11555,9 +12091,10 @@ async function selectCRLs() {
 
 
 
-#### cert.createX509CertChain11+
+## cert.createX509CertChain11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createX509CertChain(inStream: EncodingBlob): Promise&lt;X509CertChain&gt;
 
@@ -11569,6 +12106,7 @@ createX509CertChain(inStream: EncodingBlob): Promise&lt;X509CertChain&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | inStream | EncodingBlob | 是 | X.509证书序列化数据。 |
@@ -11576,20 +12114,22 @@ createX509CertChain(inStream: EncodingBlob): Promise&lt;X509CertChain&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;X509CertChain&gt; | 表示X.509证书链对象。 |
+| Promise&lt;X509CertChain&gt; | Promise对象，返回创建的X509CertChain实例。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19020001 | memory malloc failed. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19020001 | Memory malloc failed. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -11684,9 +12224,10 @@ createX509CertChain();
 
 
 
-#### cert.createX509CertChain11+
+## cert.createX509CertChain11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createX509CertChain(inStream: EncodingBlob, callback: AsyncCallback&lt;X509CertChain&gt;): void
 
@@ -11698,21 +12239,23 @@ createX509CertChain(inStream: EncodingBlob, callback: AsyncCallback&lt;X509CertC
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | inStream | EncodingBlob | 是 | X.509证书序列化数据。 |
-| callback | AsyncCallback&lt;X509CertChain&gt; | 是 | 回调函数，表示X.509证书链对象。 |
+| callback | AsyncCallback&lt;X509CertChain&gt; | 是 | 回调函数。当创建X.509证书链对象成功时，err为undefined，data为获取到的X509CertChain实例；否则为错误对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19020001 | memory malloc failed. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19020001 | Memory malloc failed. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -11791,7 +12334,7 @@ let encodingBlob: cert.EncodingBlob = {
   encodingFormat: cert.EncodingFormat.FORMAT_PEM
 };
 
-cert.createX509CertChain(encodingBlob, (err, certChain) => {
+cert.createX509CertChain(encodingBlob, (err, _certChain) => {
   if (err) {
     console.error(`createX509CertChain failed, errCode: ${err.code}, errMsg: ${err.message}`);
   } else {
@@ -11802,9 +12345,10 @@ cert.createX509CertChain(encodingBlob, (err, certChain) => {
 
 
 
-#### cert.createX509CertChain11+
+## cert.createX509CertChain11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createX509CertChain(certs: Array&lt;X509Cert&gt;): X509CertChain
 
@@ -11816,12 +12360,14 @@ createX509CertChain(certs: Array&lt;X509Cert&gt;): X509CertChain
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | certs | Array&lt;X509Cert&gt; | 是 | X.509证书对象数组。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -11832,11 +12378,12 @@ createX509CertChain(certs: Array&lt;X509Cert&gt;): X509CertChain
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19020001 | memory malloc failed. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19020001 | Memory malloc failed. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -11899,11 +12446,12 @@ createX509CertChain();
 
 
 
-#### cert.buildX509CertChain12+
+## cert.buildX509CertChain12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-buildX509CertChain(param: [CertChainBuildParameters](#certchainbuildparameters12)): Promise&lt;CertChainBuildResult&gt;
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+buildX509CertChain(param: CertChainBuildParameters): Promise&lt;CertChainBuildResult&gt;
 
 表示使用CertChainBuildParameters对象方式创建X.509证书链对象。使用Promise异步回调。
 
@@ -11913,6 +12461,7 @@ buildX509CertChain(param: [CertChainBuildParameters](#certchainbuildparameters12
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | param | CertChainBuildParameters | 是 | 构建证书链的参数对象。 |
@@ -11920,27 +12469,29 @@ buildX509CertChain(param: [CertChainBuildParameters](#certchainbuildparameters12
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;CertChainBuildResult&gt; | 表示X.509证书链对象。 |
+| Promise&lt;CertChainBuildResult&gt; | Promise对象，返回创建的CertChainBuildResult实例。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
-| 19030002 | the certificate signature verification failed. |
-| 19030003 | the certificate has not taken effect. |
-| 19030004 | the certificate has expired. |
-| 19030005 | failed to obtain the certificate issuer. |
-| 19030006 | the key cannot be used for signing a certificate. |
-| 19030007 | the key cannot be used for a digital signature. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
+| 19030002 | The certificate signature verification failed. |
+| 19030003 | The certificate has not taken effect. |
+| 19030004 | The certificate has expired. |
+| 19030005 | Failed to obtain the certificate issuer. |
+| 19030006 | The key cannot be used for signing a certificate. |
+| 19030007 | The key cannot be used for a digital signature. |
 
 
 **示例：**
@@ -12029,12 +12580,12 @@ async function buildX509CertChain() {
       validationParameters: {
         date: '20240812080000Z',
         certCRLs: [certCrlCollection],
-        trustAnchors: [{ CACert: caCert }, { CACert: caCert }],
+        trustAnchors: [{ CACert: caCert }, { CACert: caCert }]
       }
-    }
+    };
     let certChainBuildResult = await cert.buildX509CertChain(param);
-    console.info("cert issuer name: " + certChainBuildResult.validationResult.entityCert.getIssuerName().data)
-    console.info("ca subject name: " + certChainBuildResult.validationResult.trustAnchor.CACert?.getSubjectName().data)
+    console.info('cert issuer name: ' + certChainBuildResult.validationResult.entityCert.getIssuerName().data);
+    console.info('ca subject name: ' + certChainBuildResult.validationResult.trustAnchor.CACert?.getSubjectName().data);
   } catch (error) {
     let e: BusinessError = error as BusinessError;
     console.error(`createX509CertChain failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -12046,9 +12597,10 @@ buildX509CertChain();
 
 
 
-#### cert.parsePkcs1218+
+## cert.parsePkcs1218+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 parsePkcs12(data: Uint8Array, config: Pkcs12ParsingConfig): Pkcs12Data
 
@@ -12060,6 +12612,7 @@ parsePkcs12(data: Uint8Array, config: Pkcs12ParsingConfig): Pkcs12Data
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | Uint8Array | 是 | DER格式的PKCS #12文件原始数据。 |
@@ -12067,6 +12620,7 @@ parsePkcs12(data: Uint8Array, config: Pkcs12ParsingConfig): Pkcs12Data
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -12077,13 +12631,14 @@ parsePkcs12(data: Uint8Array, config: Pkcs12ParsingConfig): Pkcs12Data
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
-| 19030008 | maybe wrong password. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
+| 19030008 | Maybe wrong password. |
 
 
 **示例：**
@@ -12093,7 +12648,7 @@ import { cert } from '@kit.DeviceCertificateKit';
 
 function doTestParsePkcs12() {
   try {
-    let p12_cert =
+    let p12Cert =
       new Uint8Array([0x30, 0x82, 0x09, 0x51, 0x02, 0x01, 0x03, 0x30, 0x82, 0x09, 0x17, 0x06, 0x09, 0x2a, 0x86, 0x48,
         0x86, 0xf7, 0x0d, 0x01, 0x07, 0x01, 0xa0, 0x82, 0x09, 0x08, 0x04, 0x82, 0x09, 0x04, 0x30, 0x82,
         0x09, 0x00, 0x30, 0x82, 0x03, 0xb7, 0x06, 0x09, 0x2a, 0x86, 0x48, 0x86, 0xf7, 0x0d, 0x01, 0x07,
@@ -12250,12 +12805,12 @@ function doTestParsePkcs12() {
       needsCert: false,
       needsPrivateKey: true,
       privateKeyFormat: cert.EncodingBaseFormat.DER,
-      needsOtherCerts: false,
+      needsOtherCerts: false
     };
-    let p12: cert.Pkcs12Data = cert.parsePkcs12(p12_cert, conf);
+    let p12: cert.Pkcs12Data = cert.parsePkcs12(p12Cert, conf);
     console.info('parsePKCS12 result: success.');
     if (p12.privateKey) {
-      console.info('privateKey:' + p12.privateKey.toString())
+      console.info('privateKey:' + p12.privateKey.toString());
     }
   } catch (error) {
     console.error(`parsePKCS12 failed: errCode: ${error.code}, errMsg: ${error.message}`);
@@ -12265,9 +12820,10 @@ function doTestParsePkcs12() {
 
 
 
-#### cert.parsePkcs1221+
+## cert.parsePkcs1221+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 parsePkcs12(data: Uint8Array, password: string): Promise&lt;Pkcs12Data&gt;
 
@@ -12279,6 +12835,7 @@ parsePkcs12(data: Uint8Array, password: string): Promise&lt;Pkcs12Data&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | Uint8Array | 是 | DER格式的PKCS #12文件原始数据。 |
@@ -12287,22 +12844,24 @@ parsePkcs12(data: Uint8Array, password: string): Promise&lt;Pkcs12Data&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;Pkcs12Data&gt; | Promise对象，返回解析后的PKCS #12数据。返回的Pkcs12Data中的私钥采用PEM编码。 |
+| Promise&lt;Pkcs12Data&gt; | Promise对象，返回解析后的P12数据。返回的Pkcs12Data中的私钥采用PEM编码。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19020003 | parameter check failed. Possible causes: 1. The length of the data is zero or too large; 2. The length of the password is too large. |
-| 19030001 | crypto operation error. |
-| 19030008 | maybe wrong password. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19020003 | Parameter check failed. Possible causes: 1. The length of the data is zero or too large; 2. The length of the password is too large. |
+| 19030001 | Crypto operation error. |
+| 19030008 | Maybe wrong password. |
 
 
 **示例：**
@@ -12312,7 +12871,7 @@ import { cert } from '@kit.DeviceCertificateKit';
 
 async function doTestParsePkcs12() {
   try {
-    let p12_cert =
+    let p12Cert =
       new Uint8Array([0x30, 0x82, 0x09, 0x51, 0x02, 0x01, 0x03, 0x30, 0x82, 0x09, 0x17, 0x06, 0x09, 0x2a, 0x86, 0x48,
         0x86, 0xf7, 0x0d, 0x01, 0x07, 0x01, 0xa0, 0x82, 0x09, 0x08, 0x04, 0x82, 0x09, 0x04, 0x30, 0x82,
         0x09, 0x00, 0x30, 0x82, 0x03, 0xb7, 0x06, 0x09, 0x2a, 0x86, 0x48, 0x86, 0xf7, 0x0d, 0x01, 0x07,
@@ -12464,7 +13023,7 @@ async function doTestParsePkcs12() {
         0x61, 0x09, 0x4f, 0xdc, 0x95, 0xd7, 0x4f, 0x04, 0x08, 0x23, 0xc2, 0xc0, 0xc6, 0x8d, 0x5f, 0x70,
         0x7e, 0x02, 0x02, 0x08, 0x00]);
 
-    let p12: cert.Pkcs12Data = await cert.parsePkcs12(p12_cert, '123456');
+    let p12: cert.Pkcs12Data = await cert.parsePkcs12(p12Cert, '123456');
     console.info('parsePKCS12 result: success.');
     if (p12.privateKey) {
       console.info('privateKey:' + p12.privateKey.toString());
@@ -12488,9 +13047,10 @@ async function doTestParsePkcs12() {
 
 
 
-#### cert.createPkcs1221+
+## cert.createPkcs1221+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPkcs12(data: Pkcs12Data, config: Pkcs12CreationConfig): Promise&lt;Uint8Array&gt;
 
@@ -12502,6 +13062,7 @@ createPkcs12(data: Pkcs12Data, config: Pkcs12CreationConfig): Promise&lt;Uint8Ar
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | Pkcs12Data | 是 | 要打包的PKCS #12数据对象。 |
@@ -12510,21 +13071,23 @@ createPkcs12(data: Pkcs12Data, config: Pkcs12CreationConfig): Promise&lt;Uint8Ar
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;Uint8Array&gt; | Promise对象。返回创建的PKCS #12，DER格式。 |
+| Promise&lt;Uint8Array&gt; | Promise对象，返回创建的P12，DER格式。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19020003 | parameter check failed. Possible causes: 1. The password is too short or too long; 2. The private key does not match the certificate; 3. Invalid encryption algorithm parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19020003 | Parameter check failed. Possible causes: 1. The password is too short or too long; 2. The private key does not match the certificate; 3. Invalid encryption algorithm parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -12561,7 +13124,7 @@ let priKey = '-----BEGIN PRIVATE KEY-----\n' +
   'a20rj9HG4sb8tUIHPBv0dgY=\n' +
   '-----END PRIVATE KEY-----\n';
 
-let othercert = '-----BEGIN CERTIFICATE-----\n' +
+let otherCert = '-----BEGIN CERTIFICATE-----\n' +
   'MIIDZTCCAk0CFAoqA7Irtoo7/3+sfOHy0s91pKkiMA0GCSqGSIb3DQEBCwUAMG8x\n' +
   'CzAJBgNVBAYTAkVOMQ0wCwYDVQQIDARURVNUMQ0wCwYDVQQHDAR4aWFuMQ8wDQYD\n' +
   'VQQKDAZodWF3ZWkxDTALBgNVBAsMBHhpYW4xDTALBgNVBAMMBHhpYW4xEzARBgkq\n' +
@@ -12632,26 +13195,26 @@ async function createX509Cert(certData: string): Promise<cert.X509Cert> {
 }
 
 async function doTestCreatePkcs12() {
-  const caCert = await createX509Cert(othercert);
+  const caCert = await createX509Cert(otherCert);
   const x509Cert = await createX509Cert(certData);
 
   let data: cert.Pkcs12Data = {
     privateKey: priKey,
     cert: x509Cert,
     otherCerts: [caCert]
-  }
+  };
 
   let keyParam: cert.PbesParams = {
     saltLen: 16,
     iterations: 2048,
     encryptionAlgorithm: cert.PbesEncryptionAlgorithm.AES_192_CBC
-  }
+  };
 
   let certParam: cert.PbesParams = {
     saltLen: 16,
     iterations: 2048,
     encryptionAlgorithm: cert.PbesEncryptionAlgorithm.AES_256_CBC
-  }
+  };
 
   let config: cert.Pkcs12CreationConfig = {
     password: '123456',
@@ -12661,7 +13224,7 @@ async function doTestCreatePkcs12() {
     macSaltLen: 16,
     macIterations: 2048,
     macDigestAlgorithm: cert.Pkcs12MacDigestAlgorithm.SHA384
-  }
+  };
   try {
     let p12 = await cert.createPkcs12(data, config);
     console.info('createPkcs12 result: success, p12 = ' + p12);
@@ -12673,9 +13236,10 @@ async function doTestCreatePkcs12() {
 
 
 
-#### cert.createPkcs12Sync21+
+## cert.createPkcs12Sync21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPkcs12Sync(data: Pkcs12Data, config: Pkcs12CreationConfig): Uint8Array
 
@@ -12687,6 +13251,7 @@ createPkcs12Sync(data: Pkcs12Data, config: Pkcs12CreationConfig): Uint8Array
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | Pkcs12Data | 是 | 要打包的PKCS #12数据对象。 |
@@ -12694,6 +13259,7 @@ createPkcs12Sync(data: Pkcs12Data, config: Pkcs12CreationConfig): Uint8Array
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -12704,12 +13270,13 @@ createPkcs12Sync(data: Pkcs12Data, config: Pkcs12CreationConfig): Uint8Array
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19020003 | parameter check failed. Possible causes: 1. The password is too short or too long; 2. The private key does not match the certificate; 3. Invalid encryption algorithm parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19020003 | Parameter check failed. Possible causes: 1. The password is too short or too long; 2. The private key does not match the certificate; 3. Invalid encryption algorithm parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -12746,7 +13313,7 @@ let priKey = '-----BEGIN PRIVATE KEY-----\n' +
   'a20rj9HG4sb8tUIHPBv0dgY=\n' +
   '-----END PRIVATE KEY-----\n';
 
-let othercert = '-----BEGIN CERTIFICATE-----\n' +
+let otherCert = '-----BEGIN CERTIFICATE-----\n' +
   'MIIDZTCCAk0CFAoqA7Irtoo7/3+sfOHy0s91pKkiMA0GCSqGSIb3DQEBCwUAMG8x\n' +
   'CzAJBgNVBAYTAkVOMQ0wCwYDVQQIDARURVNUMQ0wCwYDVQQHDAR4aWFuMQ8wDQYD\n' +
   'VQQKDAZodWF3ZWkxDTALBgNVBAsMBHhpYW4xDTALBgNVBAMMBHhpYW4xEzARBgkq\n' +
@@ -12817,26 +13384,26 @@ async function createX509Cert(certData: string): Promise<cert.X509Cert> {
 }
 
 async function doTestCreatePkcs12Sync() {
-  const caCert = await createX509Cert(othercert);
+  const caCert = await createX509Cert(otherCert);
   const x509Cert = await createX509Cert(certData);
 
   let data: cert.Pkcs12Data = {
     privateKey: priKey,
     cert: x509Cert,
     otherCerts: [caCert]
-  }
+  };
 
   let keyParam: cert.PbesParams = {
     saltLen: 16,
     iterations: 2048,
     encryptionAlgorithm: cert.PbesEncryptionAlgorithm.AES_192_CBC
-  }
+  };
 
   let certParam: cert.PbesParams = {
     saltLen: 16,
     iterations: 2048,
     encryptionAlgorithm: cert.PbesEncryptionAlgorithm.AES_256_CBC
-  }
+  };
 
   let config: cert.Pkcs12CreationConfig = {
     password: '123456',
@@ -12846,7 +13413,7 @@ async function doTestCreatePkcs12Sync() {
     macSaltLen: 16,
     macIterations: 2048,
     macDigestAlgorithm: cert.Pkcs12MacDigestAlgorithm.SHA384
-  }
+  };
   try {
     let p12 = cert.createPkcs12Sync(data, config);
     console.info('createPkcs12Sync result: success, p12 = ' + p12);
@@ -12858,11 +13425,12 @@ async function doTestCreatePkcs12Sync() {
 
 
 
-#### cert.createTrustAnchorsWithKeyStore12+
+## cert.createTrustAnchorsWithKeyStore12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-createTrustAnchorsWithKeyStore(keystore: Uint8Array, pwd: string): Promise<Array<[X509TrustAnchor](#x509trustanchor11)>>
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+createTrustAnchorsWithKeyStore(keystore: Uint8Array, pwd: string): Promise<Array&lt;X509TrustAnchor&gt;>
 
 表示从PKCS #12中读取ca证书来构造[TrustAnchor](#x509trustanchor11)对象数组。使用Promise异步回调。
 
@@ -12872,6 +13440,7 @@ createTrustAnchorsWithKeyStore(keystore: Uint8Array, pwd: string): Promise<Array
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keystore | Uint8Array | 是 | DER格式的PKCS #12文件原始数据。 |
@@ -12880,27 +13449,29 @@ createTrustAnchorsWithKeyStore(keystore: Uint8Array, pwd: string): Promise<Array
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise<Array&lt;X509TrustAnchor&gt;> | 表示X509TrustAnchor对象数组。 |
+| Promise<Array&lt;X509TrustAnchor&gt;> | Promise对象，返回X509TrustAnchor对象数组。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
-| 19030002 | the certificate signature verification failed. |
-| 19030003 | the certificate has not taken effect. |
-| 19030004 | the certificate has expired. |
-| 19030005 | failed to obtain the certificate issuer. |
-| 19030006 | the key cannot be used for signing a certificate. |
-| 19030007 | the key cannot be used for a digital signature. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
+| 19030002 | The certificate signature verification failed. |
+| 19030003 | The certificate has not taken effect. |
+| 19030004 | The certificate has expired. |
+| 19030005 | Failed to obtain the certificate issuer. |
+| 19030006 | The key cannot be used for signing a certificate. |
+| 19030007 | The key cannot be used for a digital signature. |
 
 
 **示例：**
@@ -13015,7 +13586,7 @@ try {
     console.info('createTrustAnchorsWithKeyStore result: success, number of the result = ' + data.length);
   }).catch((err: BusinessError) => {
     console.error(`createTrustAnchorsWithKeyStore failed: errCode: ${err.code}, errMsg: ${err.message}`);
-  })
+  });
 } catch (error) {
   console.error(`createTrustAnchorsWithKeyStore failed: errCode: ${error.code}, errMsg: ${error.message}`);
 }
@@ -13023,17 +13594,19 @@ try {
 
 
 
-#### X509CertChain11+
+## X509CertChain11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 X.509证书链对象。
 
 
 
-#### getCertList11+
+### getCertList11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCertList(): Array&lt;X509Cert&gt;
 
@@ -13045,6 +13618,7 @@ getCertList(): Array&lt;X509Cert&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;X509Cert&gt; | X.509证书数组。 |
@@ -13054,11 +13628,12 @@ getCertList(): Array&lt;X509Cert&gt;
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19020001 | memory malloc failed. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19020001 | Memory malloc failed. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -13144,7 +13719,7 @@ cert.createX509CertChain(encodingBlob, (err, certChain) => {
   } else {
     console.info('createX509CertChain result: success.');
     try {
-      let certList = certChain.getCertList();
+      certChain.getCertList();
     } catch (err) {
       let e: BusinessError = err as BusinessError;
       console.error(`X509CertChain getCertList failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -13155,9 +13730,10 @@ cert.createX509CertChain(encodingBlob, (err, certChain) => {
 
 
 
-#### validate11+
+### validate11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 validate(param: CertChainValidationParameters): Promise&lt;CertChainValidationResult&gt;
 
@@ -13169,12 +13745,14 @@ validate(param: CertChainValidationParameters): Promise&lt;CertChainValidationRe
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | param | CertChainValidationParameters | 是 | 表示校验X.509证书链的参数。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -13185,18 +13763,19 @@ validate(param: CertChainValidationParameters): Promise&lt;CertChainValidationRe
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
-| 19030002 | the certificate signature verification failed. |
-| 19030003 | the certificate has not taken effect. |
-| 19030004 | the certificate has expired. |
-| 19030005 | failed to obtain the certificate issuer. |
-| 19030006 | the key cannot be used for signing a certificate. |
-| 19030007 | the key cannot be used for a digital signature. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
+| 19030002 | The certificate signature verification failed. |
+| 19030003 | The certificate has not taken effect. |
+| 19030004 | The certificate has expired. |
+| 19030005 | Failed to obtain the certificate issuer. |
+| 19030006 | The key cannot be used for signing a certificate. |
+| 19030007 | The key cannot be used for a digital signature. |
 
 
 **示例：**
@@ -13300,11 +13879,11 @@ async function validate() {
         0x64, 0x31, 0x0f, 0x30, 0x0d, 0x06, 0x03, 0x55, 0x04, 0x07, 0x13, 0x06, 0x4c, 0x6f, 0x6e, 0x64, 0x6f, 0x6e,
         0x31, 0x0c, 0x30, 0x0a, 0x06, 0x03, 0x55, 0x04, 0x0a, 0x13, 0x03, 0x74, 0x73, 0x31, 0x31, 0x0c, 0x30, 0x0a,
         0x06, 0x03, 0x55, 0x04, 0x0b, 0x13, 0x03, 0x74, 0x73, 0x31, 0x31, 0x0c, 0x30, 0x0a, 0x06, 0x03, 0x55, 0x04,
-        0x03, 0x13, 0x03, 0x74, 0x73, 0x31]),
+        0x03, 0x13, 0x03, 0x74, 0x73, 0x31])
     }]
-  }
+  };
   try {
-    const validationRes = await certChain.validate(param);
+    await certChain.validate(param);
     console.info('X509CertChain validate result: success.');
   } catch (error) {
     let e: BusinessError = error as BusinessError;
@@ -13317,9 +13896,10 @@ validate();
 
 
 
-#### validate11+
+### validate11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 validate(param: CertChainValidationParameters, callback: AsyncCallback&lt;CertChainValidationResult&gt;): void
 
@@ -13331,28 +13911,30 @@ validate(param: CertChainValidationParameters, callback: AsyncCallback&lt;CertCh
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | param | CertChainValidationParameters | 是 | 表示校验X.509证书链的参数。 |
-| callback | AsyncCallback&lt;CertChainValidationResult&gt; | 是 | 回调函数，返回证书链校验结果。 |
+| callback | AsyncCallback&lt;CertChainValidationResult&gt; | 是 | 回调函数。当校验证书链成功时，err为undefined，data为获取到的证书链校验结果；否则为错误对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
-| 19030002 | the certificate signature verification failed. |
-| 19030003 | the certificate has not taken effect. |
-| 19030004 | the certificate has expired. |
-| 19030005 | failed to obtain the certificate issuer. |
-| 19030006 | the key cannot be used for signing a certificate. |
-| 19030007 | the key cannot be used for a digital signature. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
+| 19030002 | The certificate signature verification failed. |
+| 19030003 | The certificate has not taken effect. |
+| 19030004 | The certificate has expired. |
+| 19030005 | Failed to obtain the certificate issuer. |
+| 19030006 | The key cannot be used for signing a certificate. |
+| 19030007 | The key cannot be used for a digital signature. |
 
 
 **示例：**
@@ -13443,7 +14025,7 @@ let param: cert.CertChainValidationParameters = {
       0x0f, 0x30, 0x0d, 0x06, 0x03, 0x55, 0x04, 0x07, 0x13, 0x06, 0x4c, 0x6f, 0x6e, 0x64, 0x6f, 0x6e, 0x31, 0x0c, 0x30,
       0x0a, 0x06, 0x03, 0x55, 0x04, 0x0a, 0x13, 0x03, 0x74, 0x73, 0x31, 0x31, 0x0c, 0x30, 0x0a, 0x06, 0x03, 0x55, 0x04,
       0x0b, 0x13, 0x03, 0x74, 0x73, 0x31, 0x31, 0x0c, 0x30, 0x0a, 0x06, 0x03, 0x55, 0x04, 0x03, 0x13, 0x03, 0x74, 0x73,
-      0x31]),
+      0x31])
   }]
 };
 
@@ -13452,7 +14034,7 @@ cert.createX509CertChain(encodingBlob, (err, certChain) => {
     console.error(`createX509CertChain failed, errCode: ${err.code}, errMsg: ${err.message}`);
   } else {
     console.info('createX509CertChain result: success.');
-    certChain.validate(param, (error, validationRes) => {
+    certChain.validate(param, (error, _validationRes) => {
       if (error) {
         console.error(`X509CertChain validate failed, errCode: ${error.code}, errMsg: ${error.message}`);
       } else {
@@ -13465,9 +14047,10 @@ cert.createX509CertChain(encodingBlob, (err, certChain) => {
 
 
 
-#### toString12+
+### toString12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toString(): string
 
@@ -13479,6 +14062,7 @@ toString(): string
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 对象的字符串类型数据。 |
@@ -13488,11 +14072,12 @@ toString(): string
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -13599,9 +14184,10 @@ async function certChainToString() {
 
 
 
-#### hashCode12+
+### hashCode12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hashCode(): Uint8Array
 
@@ -13613,6 +14199,7 @@ hashCode(): Uint8Array
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Uint8Array | DER格式数据的哈希值。 |
@@ -13622,11 +14209,12 @@ hashCode(): Uint8Array
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -13733,9 +14321,10 @@ async function certChainHashCode() {
 
 
 
-#### cert.generateCsr18+
+## cert.generateCsr18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 generateCsr(keyInfo: PrivateKeyInfo, config: CsrGenerationConfig): string | Uint8Array
 
@@ -13747,6 +14336,7 @@ generateCsr(keyInfo: PrivateKeyInfo, config: CsrGenerationConfig): string | Uint
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyInfo | PrivateKeyInfo | 是 | 包含私钥跟口令的配置参数。 |
@@ -13754,6 +14344,7 @@ generateCsr(keyInfo: PrivateKeyInfo, config: CsrGenerationConfig): string | Uint
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -13764,13 +14355,14 @@ generateCsr(keyInfo: PrivateKeyInfo, config: CsrGenerationConfig): string | Uint
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
-| 19030008 | maybe wrong password. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
+| 19030008 | Maybe wrong password. |
 
 
 **示例：**
@@ -13781,7 +14373,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 async function createCsrTest() {
   let nameStr = '/CN=John Doe/OU=IT Department/O=ACME Inc./L=San Francisco/ST=California/C=US/CN=ALN C/CN=XTS';
-  let prikeyEnstr: string =
+  let priKeyEnstr: string =
     '-----BEGIN RSA PRIVATE KEY-----\n' +
       'Proc-Type: 4,ENCRYPTED\n' +
       'DEK-Info: AES-128-CBC,B5FFA3AEEE7176106FDDB0988B532F07\n\n' +
@@ -13800,9 +14392,9 @@ async function createCsrTest() {
       'd5Y4a6q13V4O5b73T5INmKl8rEbPGIw7WLR7BNj05QuzNcn5kA1aBFIJqsxQv46l\n' +
       '-----END RSA PRIVATE KEY-----\n';
   let priKeyInfo: cert.PrivateKeyInfo = {
-    key: prikeyEnstr,
+    key: priKeyEnstr,
     password: '123abc'
-  }
+  };
   let keyUsage: cert.CsrAttribute = {
     type: 'keyUsage',
     value: 'digitalSignature, keyEncipherment'
@@ -13823,10 +14415,10 @@ async function createCsrTest() {
       mdName: 'SHA256',
       outFormat: cert.EncodingBaseFormat.PEM,
       attributes: attribute
-    }
+    };
     try {
-      let csrStr = cert.generateCsr(priKeyInfo, conf)
-      console.info('generateCsr result: success, return str is ' + csrStr.toString())
+      let csrStr = cert.generateCsr(priKeyInfo, conf);
+      console.info('generateCsr result: success, return str is ' + csrStr.toString());
     } catch (error) {
       let e: BusinessError = error as BusinessError;
       console.error(`generateCsr failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -13840,9 +14432,10 @@ async function createCsrTest() {
 
 
 
-#### cert.createX500DistinguishedName12+
+## cert.createX500DistinguishedName12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createX500DistinguishedName(nameStr: string): Promise&lt;X500DistinguishedName&gt;
 
@@ -13854,34 +14447,37 @@ createX500DistinguishedName(nameStr: string): Promise&lt;X500DistinguishedName&g
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| nameStr | string | 是 | 使用斜杠'/'分隔可分辨名称字符串格式，每个可分辨名称为“属性=值”形式，常用属性包括CN（通用名）、O（组织名）、OU（组织单位）、C（国家/地区）、ST（省/州）、L（市/区）。例如：/CN=example.com/O=Example/C=CN。 |
+| nameStr | string | 是 | 使用斜杠"/"分隔可分辨名称字符串格式，每个可分辨名称为“属性=值”形式，常用属性包括CN（通用名）、O（组织名）、OU（组织单位）、C（国家/地区）、ST（省/州）、L（市/区）。例如：/CN=example.com/O=Example/C=CN。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;X500DistinguishedName&gt; | 表示X.509的可分辨对象。 |
+| Promise&lt;X500DistinguishedName&gt; | Promise对象，返回X500DistinguishedName实例。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
-| 19030002 | the certificate signature verification failed. |
-| 19030003 | the certificate has not taken effect. |
-| 19030004 | the certificate has expired. |
-| 19030005 | failed to obtain the certificate issuer. |
-| 19030006 | the key cannot be used for signing a certificate. |
-| 19030007 | the key cannot be used for a digital signature. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
+| 19030002 | The certificate signature verification failed. |
+| 19030003 | The certificate has not taken effect. |
+| 19030004 | The certificate has expired. |
+| 19030005 | Failed to obtain the certificate issuer. |
+| 19030006 | The key cannot be used for signing a certificate. |
+| 19030007 | The key cannot be used for a digital signature. |
 
 
 **示例：**
@@ -13903,12 +14499,12 @@ let nameStr = '/CN=John Doe/OU=IT Department/O=ACME Inc./L=San Francisco/ST=Cali
 async function createX500DistinguishedName() {
   try {
     cert.createX500DistinguishedName(nameStr)
-      .then((data) => {
+      .then((_data) => {
         console.info('createX500DistinguishedName result: success.');
       })
       .catch((err: BusinessError) => {
         console.error(`createX500DistinguishedName failed, errCode: ${err.code}, errMsg: ${err.message}`);
-      })
+      });
   } catch (error) {
     let e: BusinessError = error as BusinessError;
     console.error(`createX500DistinguishedName failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -13918,9 +14514,10 @@ async function createX500DistinguishedName() {
 
 
 
-#### cert.createX500DistinguishedName12+
+## cert.createX500DistinguishedName12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createX500DistinguishedName(nameDer: Uint8Array): Promise&lt;X500DistinguishedName&gt;
 
@@ -13932,6 +14529,7 @@ createX500DistinguishedName(nameDer: Uint8Array): Promise&lt;X500DistinguishedNa
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | nameDer | Uint8Array | 是 | DER格式的X.500可分辨名称。 |
@@ -13939,27 +14537,29 @@ createX500DistinguishedName(nameDer: Uint8Array): Promise&lt;X500DistinguishedNa
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;X500DistinguishedName&gt; | 表示X.509的可分辨对象。 |
+| Promise&lt;X500DistinguishedName&gt; | Promise对象，返回X500DistinguishedName实例。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
-| 19030002 | the certificate signature verification failed. |
-| 19030003 | the certificate has not taken effect. |
-| 19030004 | the certificate has expired. |
-| 19030005 | failed to obtain the certificate issuer. |
-| 19030006 | the key cannot be used for signing a certificate. |
-| 19030007 | the key cannot be used for a digital signature. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
+| 19030002 | The certificate signature verification failed. |
+| 19030003 | The certificate has not taken effect. |
+| 19030004 | The certificate has expired. |
+| 19030005 | Failed to obtain the certificate issuer. |
+| 19030006 | The key cannot be used for signing a certificate. |
+| 19030007 | The key cannot be used for a digital signature. |
 
 
 **示例：**
@@ -13975,12 +14575,12 @@ let nameDer =
 async function createX500DistinguishedName() {
   try {
     cert.createX500DistinguishedName(nameDer)
-      .then((data) => {
+      .then((_data) => {
         console.info('createX500DistinguishedName result: success.');
       })
       .catch((err: BusinessError) => {
         console.error(`createX500DistinguishedName failed, errCode: ${err.code}, errMsg: ${err.message}`);
-      })
+      });
   } catch (error) {
     let e: BusinessError = error as BusinessError;
     console.error(`createX500DistinguishedName failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -13990,17 +14590,19 @@ async function createX500DistinguishedName() {
 
 
 
-#### X500DistinguishedName12+
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-X.509定义的Name类型的对象。
+## X500DistinguishedName12+
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### getName12+
+提供X.500可分辨名称操作的API。
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+### getName12+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getName(): string
 
@@ -14012,6 +14614,7 @@ getName(): string
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 可分辨名的字符串。 |
@@ -14021,11 +14624,12 @@ getName(): string
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -14047,7 +14651,7 @@ async function getName() {
       })
       .catch((err: BusinessError) => {
         console.error(`createX500DistinguishedName failed, errCode: ${err.code}, errMsg: ${err.message}`);
-      })
+      });
   } catch (error) {
     let e: BusinessError = error as BusinessError;
     console.error(`createX500DistinguishedName failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -14057,9 +14661,10 @@ async function getName() {
 
 
 
-#### getName12+
+### getName12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getName(type: string): Array&lt;string&gt;
 
@@ -14071,12 +14676,14 @@ getName(type: string): Array&lt;string&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 指定类型的名称。如"CN"、"OU"等。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -14087,12 +14694,13 @@ getName(type: string): Array&lt;string&gt;
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -14111,7 +14719,7 @@ async function getName() {
       })
       .catch((err: BusinessError) => {
         console.error(`createX500DistinguishedName failed, errCode: ${err.code}, errMsg: ${err.message}`);
-      })
+      });
   } catch (error) {
     let e: BusinessError = error as BusinessError;
     console.error(`createX500DistinguishedName failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -14121,9 +14729,10 @@ async function getName() {
 
 
 
-#### getName20+
+### getName20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getName(encodingType: EncodingType): string
 
@@ -14135,12 +14744,14 @@ getName(encodingType: EncodingType): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | encodingType | EncodingType | 是 | 表示编码格式。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -14151,12 +14762,13 @@ getName(encodingType: EncodingType): string
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19020003 | parameter check failed. Possible causes: 1. The value of encodingType is not in the EncodingType enumeration range. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19020003 | Parameter check failed. Possible causes: 1. The value of encodingType is not in the EncodingType enumeration range. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -14175,7 +14787,7 @@ async function getName() {
       })
       .catch((err: BusinessError) => {
         console.error(`createX500DistinguishedName failed, errCode: ${err.code}, errMsg: ${err.message}`);
-      })
+      });
   } catch (error) {
     let e: BusinessError = error as BusinessError;
     console.error(`createX500DistinguishedName failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -14185,9 +14797,10 @@ async function getName() {
 
 
 
-#### getName
+### getName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getName(type: string, encodingType: EncodingType): Array&lt;string&gt;
 
@@ -14203,6 +14816,7 @@ getName(type: string, encodingType: EncodingType): Array&lt;string&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 指定类型的名称。如"CN"、"OU"等。 |
@@ -14210,6 +14824,7 @@ getName(type: string, encodingType: EncodingType): Array&lt;string&gt;
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -14220,12 +14835,13 @@ getName(type: string, encodingType: EncodingType): Array&lt;string&gt;
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19020003 | parameter check failed. Possible causes: 1. The value of encodingType is invalid. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19020003 | Parameter check failed. Possible causes: 1. The value of encodingType is invalid. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -14244,7 +14860,7 @@ async function getName() {
       })
       .catch((err: BusinessError) => {
         console.error(`createX500DistinguishedName failed, errCode: ${err.code}, errMsg: ${err.message}`);
-      })
+      });
   } catch (error) {
     let e: BusinessError = error as BusinessError;
     console.error(`createX500DistinguishedName failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -14254,9 +14870,10 @@ async function getName() {
 
 
 
-#### getEncoded12+
+### getEncoded12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEncoded(): EncodingBlob
 
@@ -14268,6 +14885,7 @@ getEncoded(): EncodingBlob
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | EncodingBlob | X.500可分辨名称的DER编码数据。 |
@@ -14277,11 +14895,12 @@ getEncoded(): EncodingBlob
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -14297,10 +14916,11 @@ async function getEncoded() {
       .then((data) => {
         console.info('createX500DistinguishedName result: success.');
         let encodingBlobData = data.getEncoded();
+        console.info('encodingBlobData = ' + encodingBlobData.data);
       })
       .catch((err: BusinessError) => {
         console.error(`createX500DistinguishedName failed, errCode: ${err.code}, errMsg: ${err.message}`);
-      })
+      });
   } catch (error) {
     let e: BusinessError = error as BusinessError;
     console.error(`createX500DistinguishedName failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -14310,9 +14930,10 @@ async function getEncoded() {
 
 
 
-#### cert.createCmsGenerator18+
+## cert.createCmsGenerator18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createCmsGenerator(contentType: CmsContentType): CmsGenerator
 
@@ -14324,12 +14945,14 @@ createCmsGenerator(contentType: CmsContentType): CmsGenerator
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | contentType | CmsContentType | 是 | 指定CMS内容类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -14340,12 +14963,13 @@ createCmsGenerator(contentType: CmsContentType): CmsGenerator
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -14379,7 +15003,7 @@ function stringToUint8Array(str: string): Uint8Array {
   return new Uint8Array(arr);
 }
 
-function testcreateCmsGenerator() {
+function testCreateCmsGenerator() {
   let certEncodingBlob: cert.EncodingBlob = {
     data: stringToUint8Array(certData),
     // 根据encodingData的格式进行赋值，支持FORMAT_PEM和FORMAT_DER。
@@ -14391,8 +15015,8 @@ function testcreateCmsGenerator() {
     } else {
         try {
           let cmsContentType = cert.CmsContentType.SIGNED_DATA;
-          let cmsGenerator = cert.createCmsGenerator(cmsContentType);
-          console.info('testcreateCmsGenerator createCmsGenerator result: success.');
+          cert.createCmsGenerator(cmsContentType);
+          console.info('testCreateCmsGenerator createCmsGenerator result: success.');
         } catch (err) {
           let e: BusinessError = err as BusinessError;
           console.error(`createCmsGenerator failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -14404,11 +15028,12 @@ function testcreateCmsGenerator() {
 
 
 
-#### CmsGenerator18+
+## CmsGenerator18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-CmsGenerator对象用于生成CMS（Cryptographic Message Syntax）格式的消息。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+提供生成CMS（Cryptographic Message Syntax）消息的API。
 
 > [!WARNING]
 > PKCS #7是用于存储签名或加密数据的标准语法。注意CMS是PKCS #7的扩展，PKCS #7支持的数据类型包括数据、签名数据、封装数据、 签名和封装数据、摘要数据、加密数据。常用于保护数据的完整性和机密性。
@@ -14416,9 +15041,10 @@ CmsGenerator对象用于生成CMS（Cryptographic Message Syntax）格式的消�
 
 
 
-#### addSigner18+
+### addSigner18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addSigner(cert: X509Cert, keyInfo: PrivateKeyInfo, config: CmsSignerConfig): void;
 
@@ -14434,6 +15060,7 @@ addSigner(cert: X509Cert, keyInfo: PrivateKeyInfo, config: CmsSignerConfig): voi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cert | X509Cert | 是 | 指定X.509证书。 |
@@ -14445,13 +15072,14 @@ addSigner(cert: X509Cert, keyInfo: PrivateKeyInfo, config: CmsSignerConfig): voi
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
-| 19030008 | maybe wrong password. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
+| 19030008 | Maybe wrong password. |
 
 
 **示例：**
@@ -14476,7 +15104,7 @@ let certData = '-----BEGIN CERTIFICATE-----\n' +
   'a26pkDJhNeB/E3eBIbeydSY0A/dIGb6vbGo6BSq2KvnWAA==\n' +
   '-----END CERTIFICATE-----\n';
 
-let rsaStr1024: string  =
+let rsaStr1024: string =
   '-----BEGIN RSA PRIVATE KEY-----\n' +
     'Proc-Type: 4,ENCRYPTED\n' +
     'DEK-Info: DES-EDE3-CBC,DB0AC6E3BEE16420\n\n' +
@@ -14528,7 +15156,7 @@ function testAddSigner() {
             addCert:false,
             addAttr:false,
             addSmimeCapAttr:false
-          }
+          };
           cmsGenerator.addSigner(x509Cert, privateKeyInfo, config);
           console.info('testAddSigner addSigner result: success.');
         } catch (err) {
@@ -14542,9 +15170,10 @@ function testAddSigner() {
 
 
 
-#### addCert18+
+### addCert18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addCert(cert: X509Cert): void
 
@@ -14558,6 +15187,7 @@ addCert(cert: X509Cert): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cert | X509Cert | 是 | 要添加的X.509证书。 |
@@ -14567,12 +15197,13 @@ addCert(cert: X509Cert): void
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -14634,9 +15265,10 @@ function testAddCert() {
 
 
 
-#### setRecipientEncryptionAlgorithm22+
+### setRecipientEncryptionAlgorithm22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setRecipientEncryptionAlgorithm(algorithm: CmsRecipientEncryptionAlgorithm): void
 
@@ -14650,6 +15282,7 @@ setRecipientEncryptionAlgorithm(algorithm: CmsRecipientEncryptionAlgorithm): voi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | algorithm | CmsRecipientEncryptionAlgorithm | 是 | 用于CMS封装数据的加密算法。 |
@@ -14659,12 +15292,13 @@ setRecipientEncryptionAlgorithm(algorithm: CmsRecipientEncryptionAlgorithm): voi
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19020003 | parameter check failed. Possible causes: 1. The type of algorithm is invalid or not supported. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19020003 | Parameter check failed. Possible causes: 1. The type of algorithm is invalid or not supported. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -14688,9 +15322,10 @@ function testSetRecipientEncryptionAlgorithm() {
 
 
 
-#### addRecipientInfo22+
+### addRecipientInfo22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addRecipientInfo(recipientInfo: CmsRecipientInfo): Promise&lt;void&gt;
 
@@ -14704,12 +15339,14 @@ addRecipientInfo(recipientInfo: CmsRecipientInfo): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | recipientInfo | CmsRecipientInfo | 是 | 接收者信息。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -14720,12 +15357,13 @@ addRecipientInfo(recipientInfo: CmsRecipientInfo): Promise&lt;void&gt;
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19020003 | parameter check failed. Possible causes: 1. The type of recipient certificate is invalid or not supported; 2. The digestAlgorithm of CmsKeyAgreeRecipientInfo is invalid or not supported; 3. The recipientInfo does not have any recipient info. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19020003 | Parameter check failed. Possible causes: 1. The type of recipient certificate is invalid or not supported; 2. The digestAlgorithm of CmsKeyAgreeRecipientInfo is invalid or not supported; 3. The recipientInfo does not have any recipient info. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -14774,34 +15412,34 @@ function stringToUint8Array(str: string): Uint8Array {
 }
 
 async function testAddRecipientInfo() {
-  let ecccertEncodingBlob: cert.EncodingBlob = {
+  let eccCertEncodingBlob: cert.EncodingBlob = {
     data: stringToUint8Array(eccCertData),
     // 根据encodingData的格式进行赋值，支持FORMAT_PEM和FORMAT_DER。
     encodingFormat: cert.EncodingFormat.FORMAT_PEM
   };
 
-  let rsacertEncodingBlob: cert.EncodingBlob = {
+  let rsaCertEncodingBlob: cert.EncodingBlob = {
     data: stringToUint8Array(rsaCertData),
     // 根据encodingData的格式进行赋值，支持FORMAT_PEM和FORMAT_DER。
     encodingFormat: cert.EncodingFormat.FORMAT_PEM
   };
   try {
-    let eccx509Certcert = await cert.createX509Cert(ecccertEncodingBlob);
-    let rsax509Certcert = await cert.createX509Cert(rsacertEncodingBlob);
+    let eccX509Cert = await cert.createX509Cert(eccCertEncodingBlob);
+    let rsaX509Cert = await cert.createX509Cert(rsaCertEncodingBlob);
     let cmsContentType = cert.CmsContentType.ENVELOPED_DATA;
     let cmsGenerator = cert.createCmsGenerator(cmsContentType);
     console.info(`createCmsGenerator result: success.`);
 
     let eccCert : cert.CmsKeyAgreeRecipientInfo = {
-      cert : eccx509Certcert,
-      digestAlgorithm : cert.CmsKeyAgreeRecipientDigestAlgorithm.SHA256,
+      cert : eccX509Cert,
+      digestAlgorithm : cert.CmsKeyAgreeRecipientDigestAlgorithm.SHA256
     };
     let rsaCert : cert.CmsKeyTransRecipientInfo = {
-      cert : rsax509Certcert,
+      cert : rsaX509Cert
     };
     let recipientInfo: cert.CmsRecipientInfo = {
       keyTransInfo : rsaCert,
-      keyAgreeInfo : eccCert,
+      keyAgreeInfo : eccCert
     };
     await cmsGenerator.addRecipientInfo(recipientInfo);
     console.info(`addRecipientInfo result: success.`);
@@ -14813,9 +15451,10 @@ async function testAddRecipientInfo() {
 
 
 
-#### doFinal18+
+### doFinal18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 doFinal(data: Uint8Array, options?: CmsGeneratorOptions): Promise<Uint8Array | string>
 
@@ -14827,6 +15466,7 @@ doFinal(data: Uint8Array, options?: CmsGeneratorOptions): Promise<Uint8Array | s
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | Uint8Array | 是 | Cms操作的内容。 |
@@ -14834,6 +15474,7 @@ doFinal(data: Uint8Array, options?: CmsGeneratorOptions): Promise<Uint8Array | s
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -14844,12 +15485,13 @@ doFinal(data: Uint8Array, options?: CmsGeneratorOptions): Promise<Uint8Array | s
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -14874,7 +15516,7 @@ let certData = '-----BEGIN CERTIFICATE-----\n' +
   'a26pkDJhNeB/E3eBIbeydSY0A/dIGb6vbGo6BSq2KvnWAA==\n' +
   '-----END CERTIFICATE-----\n';
 
-let rsaStr1024: string  =
+let rsaStr1024: string =
   '-----BEGIN RSA PRIVATE KEY-----\n' +
     'Proc-Type: 4,ENCRYPTED\n' +
     'DEK-Info: DES-EDE3-CBC,DB0AC6E3BEE16420\n\n' +
@@ -14926,12 +15568,12 @@ async function testDoFinalByPromise() {
           addCert:false,
           addAttr:true,
           addSmimeCapAttr:true
-        }
+        };
         cmsGenerator.addSigner(x509Cert, privateKeyInfo, config);
         console.info('testDoFinalByPromise addSigner result: success.');
         cmsGenerator.addCert(x509Cert);
         console.info('testDoFinalByPromise addCert result: success.');
-        let content = new Uint8Array([1,2,3,4]);
+        let content = new Uint8Array([1, 2, 3, 4]);
         let optionsFinal: cert.CmsGeneratorOptions = {
           contentDataFormat : cert.CmsContentDataFormat.BINARY,
           outFormat : cert.CmsFormat.PEM,
@@ -14953,9 +15595,10 @@ async function testDoFinalByPromise() {
 
 
 
-#### doFinalSync18+
+### doFinalSync18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 doFinalSync(data: Uint8Array, options?: CmsGeneratorOptions): Uint8Array | string
 
@@ -14967,6 +15610,7 @@ doFinalSync(data: Uint8Array, options?: CmsGeneratorOptions): Uint8Array | strin
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | Uint8Array | 是 | Cms操作的内容。 |
@@ -14974,6 +15618,7 @@ doFinalSync(data: Uint8Array, options?: CmsGeneratorOptions): Uint8Array | strin
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -14984,12 +15629,13 @@ doFinalSync(data: Uint8Array, options?: CmsGeneratorOptions): Uint8Array | strin
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 401 | Invalid parameters. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -15014,7 +15660,7 @@ let certData = '-----BEGIN CERTIFICATE-----\n' +
   'a26pkDJhNeB/E3eBIbeydSY0A/dIGb6vbGo6BSq2KvnWAA==\n' +
   '-----END CERTIFICATE-----\n';
 
-let rsaStr1024: string  =
+let rsaStr1024: string =
   '-----BEGIN RSA PRIVATE KEY-----\n' +
     'Proc-Type: 4,ENCRYPTED\n' +
     'DEK-Info: DES-EDE3-CBC,DB0AC6E3BEE16420\n\n' +
@@ -15066,19 +15712,19 @@ function testDoFinalSync() {
             addCert:false,
             addAttr:false,
             addSmimeCapAttr:false
-          }
+          };
           cmsGenerator.addSigner(x509Cert, privateKeyInfo, config);
           console.info('testDoFinalSync addSigner result: success.');
           cmsGenerator.addCert(x509Cert);
           console.info('testDoFinalSync addCert result: success.');
-          let content = new Uint8Array([1,2,3,4]);
+          let content = new Uint8Array([1, 2, 3, 4]);
           let optionsFinal: cert.CmsGeneratorOptions = {
             contentDataFormat : cert.CmsContentDataFormat.BINARY,
             outFormat : cert.CmsFormat.DER,
             isDetached : false
           };
           let output = cmsGenerator.doFinalSync(content, optionsFinal);
-          console.info('testDoFinalSync doFinalSync result: success, output = %s.',output);
+          console.info('testDoFinalSync doFinalSync result: success, output = %s.', output);
         } catch (err) {
           let e: BusinessError = err as BusinessError;
           console.error(`testDoFinalSync failed, errCode: ${e.code}, errMsg: ${e.message}`);
@@ -15090,9 +15736,10 @@ function testDoFinalSync() {
 
 
 
-#### getEncryptedContentData22+
+### getEncryptedContentData22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEncryptedContentData(): Promise&lt;Uint8Array&gt;
 
@@ -15106,20 +15753,22 @@ getEncryptedContentData(): Promise&lt;Uint8Array&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;Uint8Array&gt; | Promise对象, 返回加密的数据内容。 |
+| Promise&lt;Uint8Array&gt; | Promise对象，返回加密的数据内容。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -15169,20 +15818,20 @@ function stringToUint8Array(str: string): Uint8Array {
 
 async function testGetEncryptedContentData() {
   try {
-    let ecccertEncodingBlob: cert.EncodingBlob = {
+    let eccCertEncodingBlob: cert.EncodingBlob = {
       data: stringToUint8Array(eccCertData),
       // 根据encodingData的格式进行赋值，支持FORMAT_PEM和FORMAT_DER。
       encodingFormat: cert.EncodingFormat.FORMAT_PEM
     };
 
-    let rsacertEncodingBlob: cert.EncodingBlob = {
+    let rsaCertEncodingBlob: cert.EncodingBlob = {
       data: stringToUint8Array(rsaCertData),
       // 根据encodingData的格式进行赋值，支持FORMAT_PEM和FORMAT_DER。
       encodingFormat: cert.EncodingFormat.FORMAT_PEM
     };
 
-    let eccx509Certcert = await cert.createX509Cert(ecccertEncodingBlob);
-    let rsax509Certcert = await cert.createX509Cert(rsacertEncodingBlob);
+    let eccX509Cert = await cert.createX509Cert(eccCertEncodingBlob);
+    let rsaX509Cert = await cert.createX509Cert(rsaCertEncodingBlob);
 
     let cmsContentType = cert.CmsContentType.ENVELOPED_DATA;
     let cmsGenerator = cert.createCmsGenerator(cmsContentType);
@@ -15191,19 +15840,19 @@ async function testGetEncryptedContentData() {
     cmsGenerator.setRecipientEncryptionAlgorithm(algorithm);
     console.info(`setRecipientEncryptionAlgorithm result: success.`);
     let eccCert : cert.CmsKeyAgreeRecipientInfo = {
-      cert : eccx509Certcert,
-      digestAlgorithm : cert.CmsKeyAgreeRecipientDigestAlgorithm.SHA256,
+      cert : eccX509Cert,
+      digestAlgorithm : cert.CmsKeyAgreeRecipientDigestAlgorithm.SHA256
     };
     let rsaCert : cert.CmsKeyTransRecipientInfo = {
-      cert : rsax509Certcert,
+      cert : rsaX509Cert
     };
     let recipientInfo: cert.CmsRecipientInfo = {
       keyTransInfo : rsaCert,
-      keyAgreeInfo : eccCert,
+      keyAgreeInfo : eccCert
     };
     await cmsGenerator.addRecipientInfo(recipientInfo);
     console.info(`addRecipientInfo result: success.`);
-    let content = new Uint8Array([1,2,3,4]);
+    let content = new Uint8Array([1, 2, 3, 4]);
     let optionsFinal: cert.CmsGeneratorOptions = {
       contentDataFormat : cert.CmsContentDataFormat.BINARY,
       outFormat : cert.CmsFormat.PEM,
@@ -15221,9 +15870,10 @@ async function testGetEncryptedContentData() {
 
 
 
-#### cert.createCmsParser22+
+## cert.createCmsParser22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createCmsParser(): CmsParser
 
@@ -15235,6 +15885,7 @@ createCmsParser(): CmsParser
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | CmsParser | CmsParser对象。 |
@@ -15244,11 +15895,12 @@ createCmsParser(): CmsParser
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -15319,7 +15971,7 @@ function stringToUint8Array(str: string): Uint8Array {
   let arr: Array<number> = [];
   for (let i = 0, j = str.length; i < j; i++) {
     arr.push(str.charCodeAt(i));
-  };
+  }
   return new Uint8Array(arr);
 }
 
@@ -15340,7 +15992,7 @@ async function testCmsVerifyTest() {
     let x509CertRoot: cert.X509Cert = await createX509Cert(ECC_256_PUB_ROOT_CERT);
     let cms: cert.CmsGenerator = cert.createCmsGenerator(cert.CmsContentType.SIGNED_DATA);
     let signerConfig: cert.CmsSignerConfig = {
-      mdName: 'SHA256',
+      mdName: 'SHA256'
     };
     let keyInfo: cert.PrivateKeyInfo = {
       key: ECC_256_PRI_ENTRY_KEY
@@ -15351,7 +16003,7 @@ async function testCmsVerifyTest() {
     cms.addSigner(x509CertEntry, keyInfo, signerConfig);
     let signData = cms.doFinalSync(plainText, option);
     let config: cert.CmsVerificationConfig = {
-      trustCerts: [x509CertRoot, x509CertInter],
+      trustCerts: [x509CertRoot, x509CertInter]
     };
     let verify: cert.CmsParser = cert.createCmsParser();
     await verify.setRawData(signData, cert.CmsFormat.PEM);
@@ -15365,11 +16017,12 @@ async function testCmsVerifyTest() {
 
 
 
-#### CmsParser22+
+## CmsParser22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-CmsParser对象用于对CMS签名或封装数据进行验签或解封装。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+提供解析、验签和解封装CMS消息的API。
 
 > [!WARNING]
 > PKCS #7是用于存储签名或加密数据的标准语法。注意CMS是PKCS #7的扩展，PKCS #7支持的数据类型包括数据、签名数据、封装数据、 签名和封装数据、摘要数据、加密数据。常用于保护数据的完整性和机密性。
@@ -15377,13 +16030,14 @@ CmsParser对象用于对CMS签名或封装数据进行验签或解封装。
 
 
 
-#### setRawData22+
+### setRawData22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setRawData(data: Uint8Array | string, cmsFormat: CmsFormat): Promise&lt;void&gt;
 
-用于把CMS格式的数据转成CMS对象。使用Promise异步回调。
+设置CMS消息数据。使用Promise异步回调。
 
 > [!NOTE]
 > 支持PEM跟DER格式的CMS消息。string对应PEM格式；Uint8Array对应DER格式数据。
@@ -15395,6 +16049,7 @@ setRawData(data: Uint8Array | string, cmsFormat: CmsFormat): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | Uint8Array \| string | 是 | CMS消息内容。 |
@@ -15402,6 +16057,7 @@ setRawData(data: Uint8Array | string, cmsFormat: CmsFormat): Promise&lt;void&gt;
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -15412,12 +16068,13 @@ setRawData(data: Uint8Array | string, cmsFormat: CmsFormat): Promise&lt;void&gt;
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19020003 | parameter check failed. Possible causes: 1. The length of the data is zero or too large; 2. The type of the cmsFormat is invalid or not supported. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19020003 | Parameter check failed. Possible causes: 1. The length of the data is zero or too large; 2. The type of the cmsFormat is invalid or not supported. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -15511,7 +16168,7 @@ async function testCmsVerifyTest() {
     let x509CertRoot: cert.X509Cert = await createX509Cert(ECC_256_PUB_ROOT_CERT);
     let cms: cert.CmsGenerator = cert.createCmsGenerator(cert.CmsContentType.SIGNED_DATA);
     let signerConfig: cert.CmsSignerConfig = {
-      mdName: 'SHA256',
+      mdName: 'SHA256'
     };
     let keyInfo: cert.PrivateKeyInfo = {
       key: ECC_256_PRI_ENTRY_KEY
@@ -15522,7 +16179,7 @@ async function testCmsVerifyTest() {
     cms.addSigner(x509CertEntry, keyInfo, signerConfig);
     let signData = cms.doFinalSync(plainText, option);
     let config: cert.CmsVerificationConfig = {
-      trustCerts: [x509CertRoot, x509CertInter],
+      trustCerts: [x509CertRoot, x509CertInter]
     };
     let verify: cert.CmsParser = cert.createCmsParser();
     await verify.setRawData(signData, cert.CmsFormat.PEM);
@@ -15536,9 +16193,10 @@ async function testCmsVerifyTest() {
 
 
 
-#### getContentType22+
+### getContentType22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getContentType(): CmsContentType
 
@@ -15550,6 +16208,7 @@ getContentType(): CmsContentType
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | CmsContentType | 返回CMS内容类型。 |
@@ -15559,11 +16218,12 @@ getContentType(): CmsContentType
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -15634,7 +16294,7 @@ function stringToUint8Array(str: string): Uint8Array {
   let arr: Array<number> = [];
   for (let i = 0, j = str.length; i < j; i++) {
     arr.push(str.charCodeAt(i));
-  };
+  }
   return new Uint8Array(arr);
 }
 
@@ -15657,7 +16317,7 @@ async function testCmsVerifyTest() {
     let x509CertRoot: cert.X509Cert = await createX509Cert(ECC_256_PUB_ROOT_CERT);
     let cms: cert.CmsGenerator = cert.createCmsGenerator(cert.CmsContentType.SIGNED_DATA);
     let signerConfig: cert.CmsSignerConfig = {
-      mdName: 'SHA256',
+      mdName: 'SHA256'
     };
     let keyInfo: cert.PrivateKeyInfo = {
       key: ECC_256_PRI_ENTRY_KEY
@@ -15668,7 +16328,7 @@ async function testCmsVerifyTest() {
     cms.addSigner(x509CertEntry, keyInfo, signerConfig);
     let signData = cms.doFinalSync(plainText, option);
     let config: cert.CmsVerificationConfig = {
-      trustCerts: [x509CertRoot, x509CertInter],
+      trustCerts: [x509CertRoot, x509CertInter]
     };
     let verify: cert.CmsParser = cert.createCmsParser();
     await verify.setRawData(signData, cert.CmsFormat.PEM);
@@ -15684,9 +16344,10 @@ async function testCmsVerifyTest() {
 
 
 
-#### verifySignedData22+
+### verifySignedData22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 verifySignedData(config: CmsVerificationConfig): Promise&lt;void&gt;
 
@@ -15698,12 +16359,14 @@ verifySignedData(config: CmsVerificationConfig): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | config | CmsVerificationConfig | 是 | CMS验签配置内容。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -15714,15 +16377,16 @@ verifySignedData(config: CmsVerificationConfig): Promise&lt;void&gt;
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19020003 | parameter check failed. Possible causes: 1. The trustCerts of config is empty; 2. The length of the contentData of config is zero or too large; 3. The contentDataFormat of config is invalid or not supported. |
-| 19030001 | crypto operation error. |
-| 19030003 | the certificate has not taken effect. |
-| 19030004 | the certificate has expired. |
-| 19030005 | failed to obtain the certificate issuer. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19020003 | Parameter check failed. Possible causes: 1. The trustCerts of config is empty; 2. The length of the contentData of config is zero or too large; 3. The contentDataFormat of config is invalid or not supported. |
+| 19030001 | Crypto operation error. |
+| 19030003 | The certificate has not taken effect. |
+| 19030004 | The certificate has expired. |
+| 19030005 | Failed to obtain the certificate issuer. |
 
 
 **示例：**
@@ -15793,7 +16457,7 @@ function stringToUint8Array(str: string): Uint8Array {
   let arr: Array<number> = [];
   for (let i = 0, j = str.length; i < j; i++) {
     arr.push(str.charCodeAt(i));
-  };
+  }
   return new Uint8Array(arr);
 }
 
@@ -15815,7 +16479,7 @@ async function testCmsVerifyTest() {
     let x509CertRoot: cert.X509Cert = await createX509Cert(ECC_256_PUB_ROOT_CERT);
     let cms: cert.CmsGenerator = cert.createCmsGenerator(cert.CmsContentType.SIGNED_DATA);
     let signerConfig: cert.CmsSignerConfig = {
-      mdName: 'SHA256',
+      mdName: 'SHA256'
     };
     let keyInfo: cert.PrivateKeyInfo = {
       key: ECC_256_PRI_ENTRY_KEY
@@ -15826,7 +16490,7 @@ async function testCmsVerifyTest() {
     cms.addSigner(x509CertEntry, keyInfo, signerConfig);
     let signData = cms.doFinalSync(plainText, option);
     let config: cert.CmsVerificationConfig = {
-      trustCerts: [x509CertRoot, x509CertInter],
+      trustCerts: [x509CertRoot, x509CertInter]
     };
     let verify: cert.CmsParser = cert.createCmsParser();
     await verify.setRawData(signData, cert.CmsFormat.PEM);
@@ -15840,9 +16504,10 @@ async function testCmsVerifyTest() {
 
 
 
-#### getContentData22+
+### getContentData22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getContentData(): Promise&lt;Uint8Array&gt;
 
@@ -15854,20 +16519,22 @@ getContentData(): Promise&lt;Uint8Array&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;Uint8Array&gt; | Promise对象，返回CMS原始数据。 |
+| Promise&lt;Uint8Array&gt; | Promise对象，返回CMS内容数据。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -15960,7 +16627,7 @@ async function testCmsVerifyTest() {
     let x509CertRoot: cert.X509Cert = await createX509Cert(ECC_256_PUB_ROOT_CERT);
     let cms: cert.CmsGenerator = cert.createCmsGenerator(cert.CmsContentType.SIGNED_DATA);
     let signerConfig: cert.CmsSignerConfig = {
-      mdName: 'SHA256',
+      mdName: 'SHA256'
     };
     let keyInfo: cert.PrivateKeyInfo = {
       key: ECC_256_PRI_ENTRY_KEY
@@ -15971,7 +16638,7 @@ async function testCmsVerifyTest() {
     cms.addSigner(x509CertEntry, keyInfo, signerConfig);
     let signData = cms.doFinalSync(plainText, option);
     let config: cert.CmsVerificationConfig = {
-      trustCerts: [x509CertRoot, x509CertInter],
+      trustCerts: [x509CertRoot, x509CertInter]
     };
     let verify: cert.CmsParser = cert.createCmsParser();
     await verify.setRawData(signData, cert.CmsFormat.PEM);
@@ -15987,11 +16654,12 @@ async function testCmsVerifyTest() {
 
 
 
-#### getCerts22+
+### getCerts22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-getCerts(type: CmsCertType): Promise<Array<[X509Cert](#x509cert)>>
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+getCerts(type: CmsCertType): Promise<Array&lt;X509Cert&gt;>
 
 传入枚举值，用于从签名数据类型的CMS消息中获取证书。当前支持获取签名者证书或全部证书。使用Promise异步回调。
 
@@ -16001,12 +16669,14 @@ getCerts(type: CmsCertType): Promise<Array<[X509Cert](#x509cert)>>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | CmsCertType | 是 | 从cms中获取证书的类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -16017,12 +16687,13 @@ getCerts(type: CmsCertType): Promise<Array<[X509Cert](#x509cert)>>
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19020003 | parameter check failed. Possible causes: 1. The value of type is invalid or not supported. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19020003 | Parameter check failed. Possible causes: 1. The value of type is invalid or not supported. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -16116,7 +16787,7 @@ async function testCmsVerifyTest() {
     let x509CertRoot: cert.X509Cert = await createX509Cert(ECC_256_PUB_ROOT_CERT);
     let cms: cert.CmsGenerator = cert.createCmsGenerator(cert.CmsContentType.SIGNED_DATA);
     let signerConfig: cert.CmsSignerConfig = {
-      mdName: 'SHA256',
+      mdName: 'SHA256'
     };
     let keyInfo: cert.PrivateKeyInfo = {
       key: ECC_256_PRI_ENTRY_KEY
@@ -16127,7 +16798,7 @@ async function testCmsVerifyTest() {
     cms.addSigner(x509CertEntry, keyInfo, signerConfig);
     let signData = cms.doFinalSync(plainText, option);
     let config: cert.CmsVerificationConfig = {
-      trustCerts: [x509CertRoot, x509CertInter],
+      trustCerts: [x509CertRoot, x509CertInter]
     };
     let verify: cert.CmsParser = cert.createCmsParser();
     await verify.setRawData(signData, cert.CmsFormat.PEM);
@@ -16144,9 +16815,10 @@ async function testCmsVerifyTest() {
 
 
 
-#### decryptEnvelopedData22+
+### decryptEnvelopedData22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 decryptEnvelopedData(config: CmsEnvelopedDecryptionConfig): Promise&lt;Uint8Array&gt;
 
@@ -16158,28 +16830,31 @@ decryptEnvelopedData(config: CmsEnvelopedDecryptionConfig): Promise&lt;Uint8Arra
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| config | CmsEnvelopedDecryptionConfig | 是 | CMS解封装的配置。 |
+| config | CmsEnvelopedDecryptionConfig | 是 | CMS解密的配置。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;Uint8Array&gt; | Promise对象，返回解封装结果。 |
+| Promise&lt;Uint8Array&gt; | Promise对象，返回解密结果。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[证书错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cert)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 19020001 | memory malloc failed. |
-| 19020002 | runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
-| 19020003 | parameter check failed. Possible causes: 1. The private key is invalid or not supported; 2. The recipient certificate is invalid or not supported. |
-| 19030001 | crypto operation error. |
+| 19020001 | Memory malloc failed. |
+| 19020002 | Runtime error. Possible causes: 1. Memory copy failed; 2. A null pointer occurs inside the system; 3. Failed to obtain the native object or convert parameters. |
+| 19020003 | Parameter check failed. Possible causes: 1. The private key is invalid or not supported; 2. The recipient certificate is invalid or not supported. |
+| 19030001 | Crypto operation error. |
 
 
 **示例：**
@@ -16253,7 +16928,7 @@ async function testCmsDecryptTest() {
     let config: cert.CmsEnvelopedDecryptionConfig = {
       keyInfo: {
         key: ECC_256_PRIVATE
-      },
+      }
     };
     let cmsDecrypt: cert.CmsParser = cert.createCmsParser();
     await cmsDecrypt.setRawData(envelopeData, cert.CmsFormat.PEM);

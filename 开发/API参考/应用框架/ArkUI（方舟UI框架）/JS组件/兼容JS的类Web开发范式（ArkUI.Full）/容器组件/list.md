@@ -1,9 +1,9 @@
 # list
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-container-list
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
@@ -12,28 +12,32 @@
 列表包含一系列相同宽度的列表项。适合连续、多行呈现同类数据，例如图片和文本。
   
 
-#### 权限列表
+## 权限列表
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
  
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 仅支持<[list-item-group](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-container-list-item-group)>和<[list-item](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-container-list-item)>。
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-attributes)外，还支持如下属性：
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | scrollpage | boolean | false | 否 | 设置为true时，将 list 顶部页面中非 list 部分随 list 一起滑出可视区域，当list方向为row时，不支持此属性。 |
@@ -55,12 +59,14 @@
  
   
 
-#### 样式
+## 样式
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用样式](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-styles)外，还支持如下样式：
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | divider-color5+ | &lt;color&gt; | transparent | 否 | item分隔线颜色，仅当list的divider属性为true时生效。 |
@@ -79,12 +85,14 @@
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-events)外，还支持如下事件：
   
+
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | indexerchange5+ | { local: booleanValue } | 多语言索引条切换事件，仅当indexer属性为true，indexermulti为true时生效。booleanValue取值为true或false： - true: 当前展示本地索引。 - false: 当前展示字母索引。 |
@@ -99,12 +107,14 @@
  
   
 
-#### 方法
+## 方法
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用方法](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-methods)外，还支持如下方法：
   
+
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | scrollTo | { index: number(指定位置) } | list滑动到指定index的item位置。 |
@@ -119,6 +129,7 @@
  
 **表1** currentOffset返回对象属性说明
   
+
 | 名称 | 类型 | 备注 |
 | --- | --- | --- |
 | x | number | 当前x轴滑动偏移量，单位为px。 |
@@ -127,9 +138,10 @@
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 <!-- index.hml -->
@@ -186,4 +198,4 @@ export default {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/xQ4Jptc9RP-R39_LV2-m_g/zh-cn_image_0000002655849090.png?HW-CC-KV=V1&HW-CC-Date=20260730T071523Z&HW-CC-Expire=86400&HW-CC-Sign=DE1AAE7EC8E5A497355F960EA94D4179DE80BDF3761BD75E514ED9D0A71A7DEC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/eT9OM-cXSculUMy9Gq-vbQ/zh-cn_image_0000002747293185.png?HW-CC-KV=V1&HW-CC-Date=20260911T072957Z&HW-CC-Expire=86400&HW-CC-Sign=F88BCAAE14FD0888AFF25DD2D9093C2FD48EE18BDBBA2472046A0DE20FAEC7D7)

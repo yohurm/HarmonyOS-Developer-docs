@@ -1,13 +1,14 @@
 # native_audio_stream_manager.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-audio-stream-manager-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明音频流管理器相关的接口。
  
@@ -25,16 +26,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_AudioStreamManager | OH_AudioStreamManager | 声明音频流管理器。用于管理音频流相关功能。 |
@@ -42,10 +46,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_AudioCommon_Result OH_AudioManager_GetAudioStreamManager(OH_AudioStreamManager **streamManager) | 获取音频流管理器句柄。 |
@@ -61,15 +67,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AudioManager_GetAudioStreamManager()
+### OH_AudioManager_GetAudioStreamManager()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioManager_GetAudioStreamManager(OH_AudioStreamManager **streamManager)
@@ -83,6 +91,7 @@ OH_AudioCommon_Result OH_AudioManager_GetAudioStreamManager(OH_AudioStreamManage
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamManager **streamManager | 音频流管理器句柄。 |
@@ -90,6 +99,7 @@ OH_AudioCommon_Result OH_AudioManager_GetAudioStreamManager(OH_AudioStreamManage
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS = 0：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_SYSTEM = 6800301：系统状态错误。 |
@@ -97,9 +107,10 @@ OH_AudioCommon_Result OH_AudioManager_GetAudioStreamManager(OH_AudioStreamManage
  
   
 
-#### OH_AudioStreamManager_GetDirectPlaybackSupport()
+### OH_AudioStreamManager_GetDirectPlaybackSupport()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioStreamManager_GetDirectPlaybackSupport(OH_AudioStreamManager *audioStreamManager, OH_AudioStreamInfo *streamInfo, OH_AudioStream_Usage usage, OH_AudioStream_DirectPlaybackMode *directPlaybackMode)
@@ -113,6 +124,7 @@ OH_AudioCommon_Result OH_AudioStreamManager_GetDirectPlaybackSupport(OH_AudioStr
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamManager *audioStreamManager | 音频流管理器句柄。通过 OH_AudioManager_GetAudioStreamManager获取句柄。 |
@@ -123,6 +135,7 @@ OH_AudioCommon_Result OH_AudioStreamManager_GetDirectPlaybackSupport(OH_AudioStr
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS = 0：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM = 6800101： 1. 参数audioStreamManager为nullptr； 2. 参数streamInfo为nullptr； 3. 参数usage无效； 4. 参数directPlaybackMode为nullptr。 |
@@ -130,9 +143,10 @@ OH_AudioCommon_Result OH_AudioStreamManager_GetDirectPlaybackSupport(OH_AudioStr
  
   
 
-#### OH_AudioStreamManager_IsAcousticEchoCancelerSupported()
+### OH_AudioStreamManager_IsAcousticEchoCancelerSupported()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioStreamManager_IsAcousticEchoCancelerSupported(OH_AudioStreamManager *streamManager, OH_AudioStream_SourceType sourceType, bool *supported)
@@ -146,6 +160,7 @@ OH_AudioCommon_Result OH_AudioStreamManager_IsAcousticEchoCancelerSupported(OH_A
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamManager *streamManager | 音频流管理器句柄。通过 OH_AudioManager_GetAudioStreamManager获取句柄。 |
@@ -155,6 +170,7 @@ OH_AudioCommon_Result OH_AudioStreamManager_IsAcousticEchoCancelerSupported(OH_A
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS = 0 ：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM = 6800101 ： 1.参数audioStreamManager为nullptr； 2.参数sourceType无效； 3.参数supported为nullptr。 |
@@ -162,9 +178,10 @@ OH_AudioCommon_Result OH_AudioStreamManager_IsAcousticEchoCancelerSupported(OH_A
  
   
 
-#### OH_AudioStreamManager_IsFastPlaybackSupported()
+### OH_AudioStreamManager_IsFastPlaybackSupported()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AudioStreamManager_IsFastPlaybackSupported(OH_AudioStreamManager *streamManager, OH_AudioStreamInfo *streamInfo, OH_AudioStream_Usage usage)
@@ -178,6 +195,7 @@ bool OH_AudioStreamManager_IsFastPlaybackSupported(OH_AudioStreamManager *stream
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamManager *streamManager | 音频流管理器句柄。通过OH_AudioManager_GetAudioStreamManager获取句柄。 |
@@ -187,6 +205,7 @@ bool OH_AudioStreamManager_IsFastPlaybackSupported(OH_AudioStreamManager *stream
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回true时表示支持低时延播放，返回false时表示不支持。 |
@@ -194,9 +213,10 @@ bool OH_AudioStreamManager_IsFastPlaybackSupported(OH_AudioStreamManager *stream
  
   
 
-#### OH_AudioStreamManager_IsFastRecordingSupported()
+### OH_AudioStreamManager_IsFastRecordingSupported()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AudioStreamManager_IsFastRecordingSupported(OH_AudioStreamManager *streamManager, OH_AudioStreamInfo *streamInfo, OH_AudioStream_SourceType source)
@@ -210,6 +230,7 @@ bool OH_AudioStreamManager_IsFastRecordingSupported(OH_AudioStreamManager *strea
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamManager *streamManager | 音频流管理器句柄。通过OH_AudioManager_GetAudioStreamManager获取句柄。 |
@@ -219,6 +240,7 @@ bool OH_AudioStreamManager_IsFastRecordingSupported(OH_AudioStreamManager *strea
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回true时表示支持低时延录制，返回false时表示不支持。 |
@@ -226,9 +248,10 @@ bool OH_AudioStreamManager_IsFastRecordingSupported(OH_AudioStreamManager *strea
  
   
 
-#### OH_AudioStreamManager_IsIntelligentNoiseReductionEnabledForCurrentDevice()
+### OH_AudioStreamManager_IsIntelligentNoiseReductionEnabledForCurrentDevice()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AudioStreamManager_IsIntelligentNoiseReductionEnabledForCurrentDevice(OH_AudioStreamManager *streamManager, OH_AudioStream_SourceType source)
@@ -242,6 +265,7 @@ bool OH_AudioStreamManager_IsIntelligentNoiseReductionEnabledForCurrentDevice(OH
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamManager *streamManager | 音频流管理器句柄。通过OH_AudioManager_GetAudioStreamManager获取句柄。 |
@@ -250,6 +274,7 @@ bool OH_AudioStreamManager_IsIntelligentNoiseReductionEnabledForCurrentDevice(OH
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回true时表示智能降噪开关已打开，返回false时表示开关已关闭。 |
@@ -257,9 +282,10 @@ bool OH_AudioStreamManager_IsIntelligentNoiseReductionEnabledForCurrentDevice(OH
  
   
 
-#### OH_AudioStreamManager_IsMultichannelPlaybackSupported()
+### OH_AudioStreamManager_IsMultichannelPlaybackSupported()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AudioStreamManager_IsMultichannelPlaybackSupported(OH_AudioStreamManager *streamManager, OH_AudioStreamInfo *streamInfo, OH_AudioStream_Usage usage)
@@ -273,6 +299,7 @@ bool OH_AudioStreamManager_IsMultichannelPlaybackSupported(OH_AudioStreamManager
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamManager *streamManager | 音频流管理器句柄。通过OH_AudioManager_GetAudioStreamManager获取句柄。 |
@@ -282,6 +309,7 @@ bool OH_AudioStreamManager_IsMultichannelPlaybackSupported(OH_AudioStreamManager
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回true时表示支持多声道播放，返回false时表示不支持。 |
@@ -289,9 +317,10 @@ bool OH_AudioStreamManager_IsMultichannelPlaybackSupported(OH_AudioStreamManager
  
   
 
-#### OH_AudioStreamManager_IsDirectPlaybackSupported()
+### OH_AudioStreamManager_IsDirectPlaybackSupported()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AudioStreamManager_IsDirectPlaybackSupported(OH_AudioStreamManager *streamManager, OH_AudioStreamInfo *streamInfo, OH_AudioStream_Usage usage)
@@ -305,6 +334,7 @@ bool OH_AudioStreamManager_IsDirectPlaybackSupported(OH_AudioStreamManager *stre
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamManager *streamManager | 音频流管理器句柄。通过OH_AudioManager_GetAudioStreamManager获取句柄。 |
@@ -314,6 +344,7 @@ bool OH_AudioStreamManager_IsDirectPlaybackSupported(OH_AudioStreamManager *stre
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回true时表示支持直通播放，返回false时表示不支持。 |
@@ -321,9 +352,10 @@ bool OH_AudioStreamManager_IsDirectPlaybackSupported(OH_AudioStreamManager *stre
  
   
 
-#### OH_AudioStreamManager_IsOffloadPlaybackSupported()
+### OH_AudioStreamManager_IsOffloadPlaybackSupported()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AudioStreamManager_IsOffloadPlaybackSupported(OH_AudioStreamManager *streamManager, OH_AudioStreamInfo *streamInfo, OH_AudioStream_Usage usage)
@@ -337,6 +369,7 @@ bool OH_AudioStreamManager_IsOffloadPlaybackSupported(OH_AudioStreamManager *str
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioStreamManager *streamManager | 音频流管理器句柄。通过OH_AudioManager_GetAudioStreamManager获取句柄。 |
@@ -346,6 +379,7 @@ bool OH_AudioStreamManager_IsOffloadPlaybackSupported(OH_AudioStreamManager *str
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回true时表示支持低功耗播放，返回false时表示不支持。 |

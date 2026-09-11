@@ -1,13 +1,13 @@
 # rating开发指导
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-components-rating
 
 rating是评分组件，用于展示用户对某项内容的评价等级。具体用法请参考[rating](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-basic-rating)。
 
 
-#### 创建rating组件
+## 创建rating组件
 
 在pages/index目录下的hml文件中创建一个rating组件。
 
@@ -40,7 +40,7 @@ rating是评分组件，用于展示用户对某项内容的评价等级。具�
 
 
 
-#### 设置评分星级
+## 设置评分星级
 
 rating组件通过设置numstars和rating属性设置评分条的星级总数和当前评星数。
 
@@ -74,7 +74,7 @@ rating组件通过设置numstars和rating属性设置评分条的星级总数和
 
 
 
-#### 设置评分样式
+## 设置评分样式
 
 rating组件通过star-background、star-foreground和star-secondary属性设置单个星级未选择、选中和选中的次级背景图片。
 
@@ -126,7 +126,7 @@ export default {
 
 
 
-#### 绑定事件
+## 绑定事件
 
 向rating组件添加change事件，打印当前评分。
 
@@ -170,7 +170,7 @@ export default {
 
 
 
-#### 场景示例
+## 场景示例
 
 开发者可以通过改变开关状态切换星级背景图，通过改变滑动条的值调整星级总数。
 
@@ -254,4 +254,4 @@ export default {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/vLbwrq3eSGOkLIXhioy8VA/zh-cn_image_0000002656006612.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071857Z&HW-CC-Expire=86400&HW-CC-Sign=5EAE0758B8E24B290CA8BF356A17F3689562B70B6F20CB1BE8F3F15DFCE140C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/rjtJ-cQKSlWa1I0fRzAfkw/zh-cn_image_0000002717770738.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073134Z&HW-CC-Expire=86400&HW-CC-Sign=46287DED9D1A4F47DB52CCCA05E124244B6C07C69B44A7FAA381826FB316FB6F)

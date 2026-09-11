@@ -1,11 +1,12 @@
 # oh_environment.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-environment-h
 **支持设备：** PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
 
 **支持设备：** PC/2in1 | Tablet
 
@@ -29,16 +30,19 @@ environment模块接口定义，使用environment提供的native接口，获取�
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** PC/2in1 | Tablet
 
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | FileManagement_ErrCode OH_Environment_GetUserDownloadDir(char **result) | 获取Download根目录沙箱路径。 |
@@ -48,13 +52,15 @@ environment模块接口定义，使用environment提供的native接口，获取�
  
   
 
-#### 函数说明
+## 函数说明
+
 
 **支持设备：** PC/2in1 | Tablet
 
   
 
-#### OH_Environment_GetUserDownloadDir()
+### OH_Environment_GetUserDownloadDir()
+
 
 **支持设备：** PC/2in1 | Tablet
 
@@ -70,6 +76,7 @@ FileManagement_ErrCode OH_Environment_GetUserDownloadDir(char **result)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | char **result | Download根目录路径指针。请引用头文件malloc.h并使用free()进行资源释放。 |
@@ -77,6 +84,7 @@ FileManagement_ErrCode OH_Environment_GetUserDownloadDir(char **result)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FileManagement_ErrCode | 返回FileManagement模块错误码FileManagement_ErrCode。 |
@@ -84,7 +92,8 @@ FileManagement_ErrCode OH_Environment_GetUserDownloadDir(char **result)
  
   
 
-#### OH_Environment_GetUserDesktopDir()
+### OH_Environment_GetUserDesktopDir()
+
 
 **支持设备：** PC/2in1 | Tablet
 
@@ -100,6 +109,7 @@ FileManagement_ErrCode OH_Environment_GetUserDesktopDir(char **result)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | char **result | Desktop根目录路径指针。请引用头文件malloc.h并使用free()进行资源释放。 |
@@ -107,6 +117,7 @@ FileManagement_ErrCode OH_Environment_GetUserDesktopDir(char **result)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FileManagement_ErrCode | 返回FileManagement模块错误码FileManagement_ErrCode。 |
@@ -114,7 +125,8 @@ FileManagement_ErrCode OH_Environment_GetUserDesktopDir(char **result)
  
   
 
-#### OH_Environment_GetUserDocumentDir()
+### OH_Environment_GetUserDocumentDir()
+
 
 **支持设备：** PC/2in1 | Tablet
 
@@ -130,6 +142,7 @@ FileManagement_ErrCode OH_Environment_GetUserDocumentDir(char **result)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | char **result | Document根目录路径指针。请引用头文件malloc.h并使用free()进行资源释放。 |
@@ -137,6 +150,7 @@ FileManagement_ErrCode OH_Environment_GetUserDocumentDir(char **result)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FileManagement_ErrCode | 返回FileManagement模块错误码FileManagement_ErrCode。 |

@@ -1,9 +1,9 @@
 # RichEditor
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持图文混排和文本交互式编辑的组件。
 
@@ -12,23 +12,26 @@
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 不包含子组件。
 
 
 
-#### 接口
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 接口
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### RichEditor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### RichEditor
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 RichEditor(value: RichEditorOptions)
 
@@ -38,6 +41,7 @@ RichEditor(value: RichEditorOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | RichEditorOptions | 是 | 富文本组件初始化选项。 |
@@ -45,9 +49,10 @@ RichEditor(value: RichEditorOptions)
 
 
 
-#### RichEditor12+
+### RichEditor12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 RichEditor(options: RichEditorStyledStringOptions)
 
@@ -57,6 +62,7 @@ RichEditor(options: RichEditorStyledStringOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | RichEditorStyledStringOptions | 是 | 富文本组件初始化选项。 |
@@ -64,9 +70,10 @@ RichEditor(options: RichEditorStyledStringOptions)
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
 
@@ -76,9 +83,10 @@ RichEditor(options: RichEditorStyledStringOptions)
 
 
 
-#### customKeyboard
+### customKeyboard
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 customKeyboard(value: CustomBuilder | ComponentContent | undefined, options?: KeyboardOptions | undefined)
 
@@ -104,6 +112,7 @@ customKeyboard(value: CustomBuilder | ComponentContent | undefined, options?: Ke
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | CustomBuilder \| ComponentContent23+ \| undefined23+ | 是 | 自定义键盘。 传入undefined时默认使用系统键盘。 |
@@ -112,9 +121,10 @@ customKeyboard(value: CustomBuilder | ComponentContent | undefined, options?: Ke
 
 
 
-#### bindSelectionMenu
+### bindSelectionMenu
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 bindSelectionMenu(spanType: RichEditorSpanType, content: CustomBuilder, responseType: ResponseType | RichEditorResponseType, options?: SelectionMenuOptions)
 
@@ -126,6 +136,7 @@ bindSelectionMenu(spanType: RichEditorSpanType, content: CustomBuilder, response
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | spanType | RichEditorSpanType | 是 | 菜单的类型。 默认值：RichEditorSpanType.TEXT |
@@ -136,9 +147,10 @@ bindSelectionMenu(spanType: RichEditorSpanType, content: CustomBuilder, response
 
 
 
-#### copyOptions
+### copyOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 copyOptions(value: CopyOptions)
 
@@ -160,6 +172,7 @@ copyOptions不为CopyOptions.None时，长按组件内容，会弹出文本选�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | CopyOptions | 是 | 文本内容是否支持复制和粘贴。 默认值：CopyOptions.LocalDevice |
@@ -167,9 +180,10 @@ copyOptions不为CopyOptions.None时，长按组件内容，会弹出文本选�
 
 
 
-#### enableDataDetector11+
+### enableDataDetector11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableDataDetector(enable: boolean)
 
@@ -210,6 +224,7 @@ AI菜单选项包括[TextMenuItemId](https://developer.huawei.com/consumer/cn/do
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | boolean | 是 | 是否启用文本识别。 true表示启用文本特殊实体识别，false表示不启用文本特殊实体识别。 默认值： false |
@@ -217,9 +232,10 @@ AI菜单选项包括[TextMenuItemId](https://developer.huawei.com/consumer/cn/do
 
 
 
-#### dataDetectorConfig11+
+### dataDetectorConfig11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 dataDetectorConfig(config: TextDataDetectorConfig)
 
@@ -239,6 +255,7 @@ dataDetectorConfig(config: TextDataDetectorConfig)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | config | TextDataDetectorConfig | 是 | 文本识别配置。 |
@@ -246,9 +263,10 @@ dataDetectorConfig(config: TextDataDetectorConfig)
 
 
 
-#### enableSelectedDataDetector22+
+### enableSelectedDataDetector22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableSelectedDataDetector(enable: boolean | undefined)
 
@@ -268,16 +286,18 @@ AI菜单生效时，选中范围内需包括且仅包括一个完整的AI实体�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| enable | boolean \| undefined | 是 | 是否启用选择文本识别，true表示启用，false表示不启用。 默认值：true。 设置为undefined或null时，取默认值。 |
+| enable | boolean \| undefined | 是 | 是否启用文本选择AI菜单功能，true表示启用，false表示不启用。 默认值：true。 设置为undefined或null时，取默认值。 |
 
 
 
 
-#### enablePreviewText12+
+### enablePreviewText12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enablePreviewText(enable: boolean)
 
@@ -294,6 +314,7 @@ enablePreviewText(enable: boolean)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -313,9 +334,10 @@ enablePreviewText(enable: boolean)
 
 
 
-#### placeholder12+
+### placeholder12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 placeholder(value: ResourceStr, style?: PlaceholderStyle)
 
@@ -333,6 +355,7 @@ placeholder(value: ResourceStr, style?: PlaceholderStyle)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceStr | 是 | 无输入时的提示文本。 |
@@ -341,9 +364,10 @@ placeholder(value: ResourceStr, style?: PlaceholderStyle)
 
 
 
-#### caretColor12+
+### caretColor12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 caretColor(value: ResourceColor)
 
@@ -355,6 +379,7 @@ caretColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 输入框光标、手柄颜色。 默认值：'#007DFF' |
@@ -362,13 +387,14 @@ caretColor(value: ResourceColor)
 
 
 
-#### selectedBackgroundColor12+
+### selectedBackgroundColor12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectedBackgroundColor(value: ResourceColor)
 
-设置文本选中的底板颜色。如果未设置不透明度，默认为20%不透明度。
+设置文本选中高亮颜色。如果未设置不透明度或设置为完全不透明，默认使用20%不透明度。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -376,16 +402,18 @@ selectedBackgroundColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | ResourceColor | 是 | 文本选中的底板颜色。 默认为20%不透明度。 |
+| value | ResourceColor | 是 | 文本选中高亮颜色。 默认为20%不透明度。 |
 
 
 
 
-#### editMenuOptions12+
+### editMenuOptions12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 editMenuOptions(editMenu: EditMenuOptions)
 
@@ -405,6 +433,7 @@ editMenuOptions(editMenu: EditMenuOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | editMenu | EditMenuOptions | 是 | 扩展菜单选项。 |
@@ -412,9 +441,10 @@ editMenuOptions(editMenu: EditMenuOptions)
 
 
 
-#### enterKeyType12+
+### enterKeyType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enterKeyType(value: EnterKeyType)
 
@@ -428,6 +458,7 @@ enterKeyType(value: EnterKeyType)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | EnterKeyType | 是 | 软键盘输入法回车键类型。 默认为EnterKeyType.NEW_LINE。 各枚举值适用场景请参考EnterKeyType枚举说明。 |
@@ -435,9 +466,10 @@ enterKeyType(value: EnterKeyType)
 
 
 
-#### enableKeyboardOnFocus12+
+### enableKeyboardOnFocus12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableKeyboardOnFocus(isEnabled: boolean)
 
@@ -453,6 +485,7 @@ enableKeyboardOnFocus(isEnabled: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isEnabled | boolean | 是 | 通过点击以外的方式获焦时，是否主动拉起软键盘。 true表示主动拉起软键盘，false表示不主动拉起软键盘。 默认值： true |
@@ -460,9 +493,10 @@ enableKeyboardOnFocus(isEnabled: boolean)
 
 
 
-#### barState13+
+### barState13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 barState(state: BarState)
 
@@ -478,6 +512,7 @@ RichEditor滚动条的显示模式。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | state | BarState | 是 | RichEditor滚动条的显示模式。 默认值：BarState.Auto |
@@ -485,9 +520,10 @@ RichEditor滚动条的显示模式。
 
 
 
-#### maxLength18+
+### maxLength18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 maxLength(maxLength: Optional&lt;number&gt;)
 
@@ -499,6 +535,7 @@ maxLength(maxLength: Optional&lt;number&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | maxLength | Optional&lt;number&gt; | 是 | 内容的最大输入长度。当内容（包含文本、图片、Symbol和Builder）的总长度达到此值时，将无法继续添加内容。 默认值：Infinity，可以无限输入。 说明： 取值范围：[0, +∞)。当不设置该属性或设置为undefined或负数时，取默认值Infinity；设置为0时，无法输入内容；设置小数时，取整数部分。 |
@@ -506,9 +543,10 @@ maxLength(maxLength: Optional&lt;number&gt;)
 
 
 
-#### maxLines18+
+### maxLines18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 maxLines(maxLines: Optional&lt;number&gt;)
 
@@ -520,6 +558,7 @@ maxLines(maxLines: Optional&lt;number&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | maxLines | Optional&lt;number&gt; | 是 | 设置富文本可显示的最大行数。maxLines为可显示行数，当设置maxLines时，超出内容可滚动显示。同时设置组件高度和最大行数，组件高度优先生效。 取值范围：(0, UINT32_MAX]。 默认值：UINT32_MAX，可以无限输入。 设置为0、负数、undefined或null时，取默认值。 |
@@ -527,9 +566,10 @@ maxLines(maxLines: Optional&lt;number&gt;)
 
 
 
-#### enableHapticFeedback13+
+### enableHapticFeedback13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableHapticFeedback(isEnabled: boolean)
 
@@ -545,6 +585,7 @@ enableHapticFeedback(isEnabled: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isEnabled | boolean | 是 | 控制触感反馈的开关。 默认值：true。true表示开启触感反馈，false表示关闭触感反馈。 说明： 触感反馈需应用具备ohos.permission.VIBRATE权限，用户已启用触感反馈，且系统硬件支持时才会生效。 不同设备品类对振动硬件的支持情况存在差异，无振动硬件的设备品类上触感反馈功能不可用。 |
@@ -552,9 +593,10 @@ enableHapticFeedback(isEnabled: boolean)
 
 
 
-#### keyboardAppearance15+
+### keyboardAppearance15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 keyboardAppearance(appearance: Optional&lt;KeyboardAppearance&gt;)
 
@@ -568,6 +610,7 @@ keyboardAppearance(appearance: Optional&lt;KeyboardAppearance&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | appearance | Optional&lt;KeyboardAppearance&gt; | 是 | 键盘外观。 默认值：KeyboardAppearance.NONE_IMMERSIVE。 各枚举值适用场景请参考KeyboardAppearance枚举说明。 设置为undefined或null时，取默认值。 |
@@ -575,9 +618,10 @@ keyboardAppearance(appearance: Optional&lt;KeyboardAppearance&gt;)
 
 
 
-#### stopBackPress18+
+### stopBackPress18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopBackPress(isStopped: Optional&lt;boolean&gt;)
 
@@ -589,6 +633,7 @@ stopBackPress(isStopped: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isStopped | Optional&lt;boolean&gt; | 是 | 是否阻止返回键。 true表示阻止，false表示不阻止。 默认值：true。异常值取默认值。 |
@@ -596,9 +641,10 @@ stopBackPress(isStopped: Optional&lt;boolean&gt;)
 
 
 
-#### undoStyle20+
+### undoStyle20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 undoStyle(style: Optional&lt;UndoStyle&gt;)
 
@@ -612,6 +658,7 @@ undoStyle(style: Optional&lt;UndoStyle&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | Optional&lt;UndoStyle&gt; | 是 | 撤销还原是否保留原样式选项。 默认值：UndoStyle.CLEAR_STYLE。 设置为undefined或null时，取默认值。 |
@@ -619,9 +666,10 @@ undoStyle(style: Optional&lt;UndoStyle&gt;)
 
 
 
-#### enableAutoSpacing20+
+### enableAutoSpacing20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableAutoSpacing(enable: Optional&lt;boolean&gt;)
 
@@ -633,6 +681,7 @@ enableAutoSpacing(enable: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | Optional&lt;boolean&gt; | 是 | 是否开启中文与西文的自动间距。 true表示开启自动间距，false表示不开启自动间距。 默认值：false |
@@ -640,9 +689,10 @@ enableAutoSpacing(enable: Optional&lt;boolean&gt;)
 
 
 
-#### scrollBarColor21+
+### scrollBarColor21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scrollBarColor(color: Optional&lt;ColorMetrics&gt;)
 
@@ -654,6 +704,7 @@ scrollBarColor(color: Optional&lt;ColorMetrics&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | Optional&lt;ColorMetrics&gt; | 是 | 设置组件滚动条颜色。 默认值：'#66182431'，显示为灰色。 说明： 设置异常值时按默认值处理。 |
@@ -661,9 +712,10 @@ scrollBarColor(color: Optional&lt;ColorMetrics&gt;)
 
 
 
-#### includeFontPadding23+
+### includeFontPadding23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 includeFontPadding(include: Optional&lt;boolean&gt;)
 
@@ -675,6 +727,7 @@ includeFontPadding(include: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | include | Optional&lt;boolean&gt; | 是 | 是否在首行和尾行增加间距以避免文字截断。 true表示在首行和尾行增加间距，false表示在首行和尾行不增加间距。 默认值：false。 设置为undefined或null时，取默认值。 |
@@ -682,9 +735,10 @@ includeFontPadding(include: Optional&lt;boolean&gt;)
 
 
 
-#### fallbackLineSpacing23+
+### fallbackLineSpacing23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fallbackLineSpacing(enabled: Optional&lt;boolean&gt;)
 
@@ -700,6 +754,7 @@ fallbackLineSpacing(enabled: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | Optional&lt;boolean&gt; | 是 | 行高是否基于文字实际高度自适应。 true表示行高基于文字实际高度自适应，false表示行高不基于文字实际高度自适应。 默认值：false。 设置为undefined或null时，取默认值。 |
@@ -707,9 +762,10 @@ fallbackLineSpacing(enabled: Optional&lt;boolean&gt;)
 
 
 
-#### compressLeadingPunctuation23+
+### compressLeadingPunctuation23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 compressLeadingPunctuation(enabled: Optional&lt;boolean&gt;)
 
@@ -727,6 +783,7 @@ compressLeadingPunctuation(enabled: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | Optional&lt;boolean&gt; | 是 | 是否开启行首标点符号压缩。 true表示开启行首标点符号压缩，false表示不开启行首标点符号压缩。 默认值：false。 设置为undefined或null时，取默认值。 |
@@ -734,9 +791,10 @@ compressLeadingPunctuation(enabled: Optional&lt;boolean&gt;)
 
 
 
-#### selectedDragPreviewStyle23+
+### selectedDragPreviewStyle23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectedDragPreviewStyle(value: SelectedDragPreviewStyle | undefined)
 
@@ -748,6 +806,7 @@ selectedDragPreviewStyle(value: SelectedDragPreviewStyle | undefined)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | SelectedDragPreviewStyle \| undefined | 是 | 拖动预览样式。如果设置为undefined，样式将被重置。 |
@@ -755,9 +814,10 @@ selectedDragPreviewStyle(value: SelectedDragPreviewStyle | undefined)
 
 
 
-#### singleLine23+
+### singleLine23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 singleLine(isEnable: boolean | undefined)
 
@@ -773,6 +833,7 @@ singleLine(isEnable: boolean | undefined)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isEnable | boolean \| undefined | 是 | 是否启用单行模式。 true表示启用单行模式，false表示不启用单行模式。 设置为undefined或null时，按照false处理，不启用单行模式。 |
@@ -780,9 +841,10 @@ singleLine(isEnable: boolean | undefined)
 
 
 
-#### orphanCharOptimization
+### orphanCharOptimization
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 orphanCharOptimization(enabled: Optional&lt;boolean&gt;)
 
@@ -800,6 +862,7 @@ orphanCharOptimization(enabled: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | Optional&lt;boolean&gt; | 是 | 段落最后一行是否启用孤字优化。 true表示启用孤字优化，false表示不启用孤字优化。 默认值：false。设置为undefined或null时，不启用孤字优化。 |
@@ -807,9 +870,10 @@ orphanCharOptimization(enabled: Optional&lt;boolean&gt;)
 
 
 
-#### horizontalScrolling
+### horizontalScrolling
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 horizontalScrolling(enabled: Optional&lt;boolean&gt;)
 
@@ -825,6 +889,7 @@ horizontalScrolling(enabled: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | Optional&lt;boolean&gt; | 是 | 是否启用水平滚动。 true表示启用水平滚动，false表示禁用水平滚动，文本将自动换行。 默认值：false。设置为undefined或null时，不启用水平滚动。 |
@@ -832,9 +897,10 @@ horizontalScrolling(enabled: Optional&lt;boolean&gt;)
 
 
 
-#### punctuationOverflow
+### punctuationOverflow
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 punctuationOverflow(enabled: Optional&lt;boolean&gt;)
 
@@ -852,6 +918,7 @@ punctuationOverflow(enabled: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | Optional&lt;boolean&gt; | 是 | 是否启用行尾标点符号悬挂。 true表示启用行尾标点符号悬挂，false表示不启用行尾标点符号悬挂。 默认值：false。设置为undefined或null时，不启用标点符号悬挂。 |
@@ -859,17 +926,19 @@ punctuationOverflow(enabled: Optional&lt;boolean&gt;)
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)外，还支持[OnDidChangeCallback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#ondidchangecallback12)、[StyledStringChangedListener](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#styledstringchangedlistener12)、[StyledStringChangeValue](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#styledstringchangevalue12)和以下事件：
 
 
 
-#### onReady
+### onReady
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onReady(callback:Callback&lt;void&gt;)
 
@@ -881,6 +950,7 @@ onReady(callback:Callback&lt;void&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;void&gt; | 是 | 订阅富文本组件初始化完成的回调。 |
@@ -888,9 +958,10 @@ onReady(callback:Callback&lt;void&gt;)
 
 
 
-#### onSelect
+### onSelect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onSelect(callback:Callback<[RichEditorSelection](#richeditorselection)>)
 
@@ -908,6 +979,7 @@ onSelect(callback:Callback<[RichEditorSelection](#richeditorselection)>)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;RichEditorSelection&gt; | 是 | RichEditorSelection为选中的所有span信息。 选择时触发的回调。 |
@@ -915,9 +987,10 @@ onSelect(callback:Callback<[RichEditorSelection](#richeditorselection)>)
 
 
 
-#### aboutToIMEInput
+### aboutToIMEInput
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 aboutToIMEInput(callback:Callback<[RichEditorInsertValue](#richeditorinsertvalue), boolean>)
 
@@ -933,6 +1006,7 @@ aboutToIMEInput(callback:Callback<[RichEditorInsertValue](#richeditorinsertvalue
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback<RichEditorInsertValue, boolean> | 是 | RichEditorInsertValue为输入法将要输入内容信息。 true表示组件执行添加内容操作，false表示组件不执行添加内容操作。 输入法输入内容前的回调。 |
@@ -940,9 +1014,10 @@ aboutToIMEInput(callback:Callback<[RichEditorInsertValue](#richeditorinsertvalue
 
 
 
-#### onDidIMEInput12+
+### onDidIMEInput12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDidIMEInput(callback:Callback&lt;TextRange&gt;)
 
@@ -960,6 +1035,7 @@ onDidIMEInput(callback:Callback&lt;TextRange&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;TextRange&gt; | 是 | TextRange为输入法本次输入内容的范围。 输入法完成输入时的回调。 |
@@ -967,9 +1043,10 @@ onDidIMEInput(callback:Callback&lt;TextRange&gt;)
 
 
 
-#### onIMEInputComplete
+### onIMEInputComplete
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onIMEInputComplete(callback:Callback<[RichEditorTextSpanResult](#richeditortextspanresult)>)
 
@@ -985,6 +1062,7 @@ onIMEInputComplete(callback:Callback<[RichEditorTextSpanResult](#richeditortexts
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;RichEditorTextSpanResult&gt; | 是 | RichEditorTextSpanResult为输入法完成输入后的文本Span信息。 输入法完成输入后的回调。 |
@@ -992,9 +1070,10 @@ onIMEInputComplete(callback:Callback<[RichEditorTextSpanResult](#richeditortexts
 
 
 
-#### aboutToDelete
+### aboutToDelete
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 aboutToDelete(callback:Callback<[RichEditorDeleteValue](#richeditordeletevalue), boolean>)
 
@@ -1010,6 +1089,7 @@ aboutToDelete(callback:Callback<[RichEditorDeleteValue](#richeditordeletevalue),
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback<RichEditorDeleteValue, boolean> | 是 | RichEditorDeleteValue为准备删除的内容所在的文本或者图片Span信息。 true表示组件执行删除操作，false表示组件不执行删除操作。 输入法删除内容前的回调，英文预上屏点击候选词时会执行该回调。 |
@@ -1017,9 +1097,10 @@ aboutToDelete(callback:Callback<[RichEditorDeleteValue](#richeditordeletevalue),
 
 
 
-#### onDeleteComplete
+### onDeleteComplete
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDeleteComplete(callback:Callback&lt;void&gt;)
 
@@ -1033,6 +1114,7 @@ onDeleteComplete(callback:Callback&lt;void&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;void&gt; | 是 | 订阅输入法完成删除内容的回调。 |
@@ -1040,9 +1122,10 @@ onDeleteComplete(callback:Callback&lt;void&gt;)
 
 
 
-#### onPaste11+
+### onPaste11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onPaste(callback: [PasteEventCallback](#pasteeventcallback12) )
 
@@ -1056,6 +1139,7 @@ onPaste(callback: [PasteEventCallback](#pasteeventcallback12) )
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | PasteEventCallback | 是 | 订阅粘贴时的回调。 |
@@ -1063,9 +1147,10 @@ onPaste(callback: [PasteEventCallback](#pasteeventcallback12) )
 
 
 
-#### onSelectionChange12+
+### onSelectionChange12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onSelectionChange(callback:Callback<[RichEditorRange](#richeditorrange)>)
 
@@ -1077,6 +1162,7 @@ onSelectionChange(callback:Callback<[RichEditorRange](#richeditorrange)>)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;RichEditorRange&gt; | 是 | RichEditorRange为所有内容的选择区域起始和终止位置。 订阅文本选择区域发生变化或编辑状态下光标位置发生变化时触发的回调。 |
@@ -1084,9 +1170,10 @@ onSelectionChange(callback:Callback<[RichEditorRange](#richeditorrange)>)
 
 
 
-#### onEditingChange12+
+### onEditingChange12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onEditingChange(callback: Callback&lt;boolean&gt;)
 
@@ -1098,6 +1185,7 @@ onEditingChange(callback: Callback&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;boolean&gt; | 是 | 编辑状态变化时触发的回调。 true表示编辑态，false表示非编辑态。 |
@@ -1105,9 +1193,10 @@ onEditingChange(callback: Callback&lt;boolean&gt;)
 
 
 
-#### onSubmit12+
+### onSubmit12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onSubmit(callback: SubmitCallback)
 
@@ -1119,6 +1208,7 @@ onSubmit(callback: SubmitCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | SubmitCallback | 是 | 按下软键盘回车键时的回调，用于接收回车键类型和提交事件信息。 |
@@ -1126,9 +1216,10 @@ onSubmit(callback: SubmitCallback)
 
 
 
-#### onWillChange12+
+### onWillChange12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onWillChange(callback: Callback<[RichEditorChangeValue](#richeditorchangevalue12) , boolean>)
 
@@ -1146,6 +1237,7 @@ onWillChange(callback: Callback<[RichEditorChangeValue](#richeditorchangevalue12
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback<RichEditorChangeValue , boolean> | 是 | RichEditorChangeValue为图文变化信息；boolean表示当前图文是否允许被更改，true：允许图文被更改；false：不允许图文被更改。 |
@@ -1153,9 +1245,10 @@ onWillChange(callback: Callback<[RichEditorChangeValue](#richeditorchangevalue12
 
 
 
-#### onDidChange12+
+### onDidChange12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDidChange(callback: OnDidChangeCallback)
 
@@ -1173,6 +1266,7 @@ onDidChange(callback: OnDidChangeCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | OnDidChangeCallback | 是 | 图文变化后触发的回调，用于获取变化前后的内容范围。 |
@@ -1180,9 +1274,10 @@ onDidChange(callback: OnDidChangeCallback)
 
 
 
-#### onCut12+
+### onCut12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onCut(callback: Callback&lt;CutEvent&gt;)
 
@@ -1196,6 +1291,7 @@ onCut(callback: Callback&lt;CutEvent&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;CutEvent&gt; | 是 | 定义用户剪切事件。 |
@@ -1203,9 +1299,10 @@ onCut(callback: Callback&lt;CutEvent&gt;)
 
 
 
-#### onCopy12+
+### onCopy12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onCopy(callback: Callback&lt;CopyEvent&gt;)
 
@@ -1219,6 +1316,7 @@ onCopy(callback: Callback&lt;CopyEvent&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;CopyEvent&gt; | 是 | 定义用户复制事件。 |
@@ -1226,9 +1324,10 @@ onCopy(callback: Callback&lt;CopyEvent&gt;)
 
 
 
-#### onWillAttachIME22+
+### onWillAttachIME22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onWillAttachIME(callback: Callback&lt;IMEClient&gt; | undefined)
 
@@ -1244,6 +1343,7 @@ onWillAttachIME(callback: Callback&lt;IMEClient&gt; | undefined)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;IMEClient&gt; \| undefined | 是 | 在组件绑定输入法前触发的回调。 值为undefined时清除已绑定的回调事件。 |
@@ -1251,13 +1351,15 @@ onWillAttachIME(callback: Callback&lt;IMEClient&gt; | undefined)
 
 
 
-#### RichEditorInsertValue
+## RichEditorInsertValue
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 插入文本的信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1268,15 +1370,17 @@ onWillAttachIME(callback: Callback&lt;IMEClient&gt; | undefined)
 
 
 
-#### RichEditorDeleteValue
+## RichEditorDeleteValue
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 删除操作和被删除内容的信息。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1288,15 +1392,17 @@ onWillAttachIME(callback: Callback&lt;IMEClient&gt; | undefined)
 
 
 
-#### RichEditorDeleteDirection
+## RichEditorDeleteDirection
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 删除方向。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1306,13 +1412,15 @@ onWillAttachIME(callback: Callback&lt;IMEClient&gt; | undefined)
 
 
 
-#### RichEditorTextSpanResult
+## RichEditorTextSpanResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文本Span信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1329,15 +1437,17 @@ onWillAttachIME(callback: Callback&lt;IMEClient&gt; | undefined)
 
 
 
-#### RichEditorSpanPosition
+## RichEditorSpanPosition
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Span位置信息。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1347,32 +1457,36 @@ Span位置信息。
 
 
 
-#### RichEditorSpanType
+## RichEditorSpanType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Span类型信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | TEXT | 0 | Span类型为文字。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | IMAGE | 1 | Span类型为图像。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | MIXED | 2 | Span类型为图文混合。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
-| BUILDER12+ | 3 | Span类型为BuilderSpan。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| DEFAULT15+ | 4 | 注册此类型的菜单，但未注册TEXT、IMAGE、MIXED、BUILDER菜单时，文字类型、图像类型、图文混合类型、BuilderSpan类型都会触发并显示此类型对应的菜单。 元服务API： 从API version 15开始，该接口支持在元服务中使用。 |
+| BUILDER12+ | 3 | Span类型为自定义布局。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| DEFAULT15+ | 4 | 注册此类型的菜单，但未注册TEXT、IMAGE、MIXED、BUILDER菜单时，文字类型、图像类型、图文混合类型、自定义布局类型都会触发并显示此类型对应的菜单。 元服务API： 从API version 15开始，该接口支持在元服务中使用。 |
 
 
 
 
-#### RichEditorResponseType11+
+## RichEditorResponseType11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 菜单的响应类型。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1384,15 +1498,17 @@ Span类型信息。
 
 
 
-#### UndoStyle20+
+## UndoStyle20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 撤销还原是否保留原样式选项。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1402,13 +1518,15 @@ Span类型信息。
 
 
 
-#### RichEditorTextStyleResult
+## RichEditorTextStyleResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 后端返回的文本样式信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1435,6 +1553,7 @@ Span类型信息。
 
 转换关系如下：
 
+
 | RichEditorTextStyle中的fontWeight | RichEditorTextStyleResult中的fontWeight |
 | --- | --- |
 | 100 | 0 |
@@ -1458,15 +1577,17 @@ RichEditorSymbolSpanStyle和RichEditorSymbolSpanStyleResult中fontWeight的转�
 
 
 
-#### RichEditorSymbolSpanStyleResult11+
+## RichEditorSymbolSpanStyleResult11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 后端返回的SymbolSpan样式信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1479,15 +1600,17 @@ RichEditorSymbolSpanStyle和RichEditorSymbolSpanStyleResult中fontWeight的转�
 
 
 
-#### RichEditorImageSpanResult
+## RichEditorImageSpanResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 后端返回的图片信息。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1500,13 +1623,15 @@ RichEditorSymbolSpanStyle和RichEditorSymbolSpanStyleResult中fontWeight的转�
 
 
 
-#### RichEditorImageSpanStyleResult
+## RichEditorImageSpanStyleResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 后端返回的图片样式信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1518,9 +1643,10 @@ RichEditorSymbolSpanStyle和RichEditorSymbolSpanStyleResult中fontWeight的转�
 
 
 
-#### RichEditorLayoutStyle11+
+## RichEditorLayoutStyle11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 图片布局信息。
 
@@ -1528,23 +1654,26 @@ RichEditorSymbolSpanStyle和RichEditorSymbolSpanStyleResult中fontWeight的转�
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | margin | Dimension \| Margin | 否 | 是 | 外边距类型，用于描述组件不同方向的外边距。 默认值：四个方向外边距均为0。 参数为Dimension类型时，四个方向外边距同时生效。 |
-| borderRadius | Dimension \| BorderRadiuses | 否 | 是 | 圆角类型，用于描述组件边框圆角半径。 默认值：圆角半径为0。 参数为Dimension类型时，不支持以Percentage形式设置 |
+| borderRadius | Dimension \| BorderRadiuses | 否 | 是 | 圆角类型，用于描述组件边框圆角半径。 默认值：圆角半径为0。 参数为Dimension类型时，不支持以Percentage形式设置。 |
 
 
 
 
-#### RichEditorOptions
+## RichEditorOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 RichEditor初始化参数。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1553,15 +1682,17 @@ RichEditor初始化参数。
 
 
 
-#### RichEditorStyledStringOptions12+
+## RichEditorStyledStringOptions12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 RichEditor初始化参数。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1570,15 +1701,17 @@ RichEditor初始化参数。
 
 
 
-#### RichEditorChangeValue12+
+## RichEditorChangeValue12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 图文变化信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1590,17 +1723,19 @@ RichEditor初始化参数。
 
 
 
-#### RichEditorBaseController12+
+## RichEditorBaseController12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 RichEditor组件控制器基类。
 
 
 
-#### getCaretOffset10+
+### getCaretOffset10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCaretOffset(): number
 
@@ -1614,6 +1749,7 @@ getCaretOffset(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 当前光标所在位置。 |
@@ -1621,9 +1757,10 @@ getCaretOffset(): number
 
 
 
-#### setCaretOffset10+
+### setCaretOffset10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCaretOffset(offset: number): boolean
 
@@ -1637,12 +1774,14 @@ setCaretOffset(offset: number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 是 | 光标偏移位置。超出所有内容范围时，设置失败。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1651,9 +1790,10 @@ setCaretOffset(offset: number): boolean
 
 
 
-#### closeSelectionMenu10+
+### closeSelectionMenu10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 closeSelectionMenu(): void
 
@@ -1667,9 +1807,10 @@ closeSelectionMenu(): void
 
 
 
-#### getTypingStyle11+
+### getTypingStyle11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTypingStyle(): RichEditorTextStyle
 
@@ -1681,6 +1822,7 @@ getTypingStyle(): RichEditorTextStyle
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | RichEditorTextStyle | 用户预设的文本输入样式对象，包含字体颜色、大小、粗细等样式属性，可用于查询当前组件的输入文本样式配置。 当controller未绑定组件或绑定controller的组件被释放时，返回undefined。 |
@@ -1688,9 +1830,10 @@ getTypingStyle(): RichEditorTextStyle
 
 
 
-#### setTypingStyle11+
+### setTypingStyle11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setTypingStyle(value: RichEditorTextStyle): void
 
@@ -1704,6 +1847,7 @@ setTypingStyle(value: RichEditorTextStyle): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | RichEditorTextStyle | 是 | 预设的文本输入样式，包含字体颜色、大小、粗细等属性，用于设置后续输入文本的默认样式。 |
@@ -1711,9 +1855,10 @@ setTypingStyle(value: RichEditorTextStyle): void
 
 
 
-#### setTypingParagraphStyle20+
+### setTypingParagraphStyle20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setTypingParagraphStyle(style: RichEditorParagraphStyle): void
 
@@ -1725,6 +1870,7 @@ setTypingParagraphStyle(style: RichEditorParagraphStyle): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | RichEditorParagraphStyle | 是 | 预设段落样式。 |
@@ -1732,9 +1878,10 @@ setTypingParagraphStyle(style: RichEditorParagraphStyle): void
 
 
 
-#### setSelection11+
+### setSelection11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setSelection(selectionStart: number, selectionEnd: number, options?: SelectionOptions): void
 
@@ -1755,6 +1902,7 @@ selectionStart和selectionEnd均为-1时表示全选，均为0时可以清空选
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | selectionStart | number | 是 | 选中开始位置。 |
@@ -1764,9 +1912,10 @@ selectionStart和selectionEnd均为-1时表示全选，均为0时可以清空选
 
 
 
-#### isEditing12+
+### isEditing12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isEditing(): boolean
 
@@ -1778,6 +1927,7 @@ isEditing(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | true表示编辑态，false表示非编辑态。 |
@@ -1785,9 +1935,10 @@ isEditing(): boolean
 
 
 
-#### stopEditing12+
+### stopEditing12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopEditing(): void
 
@@ -1801,9 +1952,10 @@ stopEditing(): void
 
 
 
-#### getLayoutManager12+
+### getLayoutManager12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLayoutManager(): LayoutManager
 
@@ -1815,6 +1967,7 @@ getLayoutManager(): LayoutManager
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | LayoutManager | 布局管理器对象，可用于获取组件内容的布局位置等信息。 当controller未绑定组件或绑定controller的组件被释放时，返回undefined。 |
@@ -1822,9 +1975,10 @@ getLayoutManager(): LayoutManager
 
 
 
-#### getPreviewText12+
+### getPreviewText12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPreviewText(): PreviewText
 
@@ -1836,6 +1990,7 @@ getPreviewText(): PreviewText
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | PreviewText | 预上屏文本信息，包含输入法预显示的候选文本内容及起始位置。 当controller未绑定组件或绑定controller的组件被释放时，返回undefined。 |
@@ -1843,9 +1998,10 @@ getPreviewText(): PreviewText
 
 
 
-#### getCaretRect18+
+### getCaretRect18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCaretRect(): RectResult | undefined
 
@@ -1857,6 +2013,7 @@ getCaretRect(): RectResult | undefined
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | RectResult \| undefined | 当前光标与RichEditor的相对位置。 |
@@ -1864,9 +2021,10 @@ getCaretRect(): RectResult | undefined
 
 
 
-#### deleteBackward23+
+### deleteBackward23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteBackward(): void
 
@@ -1880,9 +2038,10 @@ deleteBackward(): void
 
 
 
-#### setStyledPlaceholder24+
+### setStyledPlaceholder24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setStyledPlaceholder(styledString: StyledString): void
 
@@ -1894,6 +2053,7 @@ setStyledPlaceholder(styledString: StyledString): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | styledString | StyledString | 是 | 设置属性字符串样式的提示文本，其优先级高于placeholder属性设置的提示文本。 提示文本不支持触发属性字符串GestureStyle样式绑定的手势事件，以及UrlStyle样式的超链接跳转能力。 |
@@ -1901,9 +2061,10 @@ setStyledPlaceholder(styledString: StyledString): void
 
 
 
-#### scrollToVisible
+### scrollToVisible
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scrollToVisible(range?: TextRange): void
 
@@ -1919,6 +2080,7 @@ scrollToVisible(range?: TextRange): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | range | TextRange | 否 | 滚动到可视区域的内容范围，包括内容起始位置和终止位置。 起始位置应小于等于结束位置，否则接口调用无效。起始位置小于0视为0，结束位置大于全文长度视为全文长度。 未指定范围时，默认为全部内容。未指定起始位置，默认起始位置为0；未指定结束位置，默认结束位置为全文长度。 |
@@ -1926,9 +2088,10 @@ scrollToVisible(range?: TextRange): void
 
 
 
-#### RichEditorController
+## RichEditorController
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 RichEditor组件的控制器，继承自[RichEditorBaseController](#richeditorbasecontroller12)。
 
@@ -1938,7 +2101,10 @@ RichEditor组件的控制器，继承自[RichEditorBaseController](#richeditorba
 
 
 
-#### 导入对象
+### 导入对象
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 controller: RichEditorController = new RichEditorController();
@@ -1946,9 +2112,10 @@ controller: RichEditorController = new RichEditorController();
 
 
 
-#### addTextSpan
+### addTextSpan
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addTextSpan(content: ResourceStr, options?: RichEditorTextSpanOptions): number
 
@@ -1960,6 +2127,7 @@ addTextSpan(content: ResourceStr, options?: RichEditorTextSpanOptions): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | content | ResourceStr | 是 | 文本内容。 从API version 20开始，支持Resource类型。 |
@@ -1968,6 +2136,7 @@ addTextSpan(content: ResourceStr, options?: RichEditorTextSpanOptions): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 添加完成的TextSpan在所有Span中的索引位置。 |
@@ -1975,9 +2144,10 @@ addTextSpan(content: ResourceStr, options?: RichEditorTextSpanOptions): number
 
 
 
-#### addImageSpan
+### addImageSpan
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addImageSpan(value: PixelMap | ResourceStr, options?: RichEditorImageSpanOptions): number
 
@@ -1991,6 +2161,7 @@ addImageSpan(value: PixelMap | ResourceStr, options?: RichEditorImageSpanOptions
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | PixelMap \| ResourceStr | 是 | 图片内容。 |
@@ -1999,6 +2170,7 @@ addImageSpan(value: PixelMap | ResourceStr, options?: RichEditorImageSpanOptions
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 添加完成的ImageSpan在所有Span中的索引位置。 |
@@ -2006,9 +2178,10 @@ addImageSpan(value: PixelMap | ResourceStr, options?: RichEditorImageSpanOptions
 
 
 
-#### addBuilderSpan11+
+### addBuilderSpan11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addBuilderSpan(value: CustomBuilder, options?: RichEditorBuilderSpanOptions): number
 
@@ -2026,6 +2199,7 @@ addBuilderSpan(value: CustomBuilder, options?: RichEditorBuilderSpanOptions): nu
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | CustomBuilder | 是 | 自定义布局内容，用于在RichEditor中创建BuilderSpan占位组件。 |
@@ -2034,6 +2208,7 @@ addBuilderSpan(value: CustomBuilder, options?: RichEditorBuilderSpanOptions): nu
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 添加完成的builderSpan在所有Span中的索引位置。 |
@@ -2041,9 +2216,10 @@ addBuilderSpan(value: CustomBuilder, options?: RichEditorBuilderSpanOptions): nu
 
 
 
-#### addSymbolSpan11+
+### addSymbolSpan11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addSymbolSpan(value: Resource, options?: RichEditorSymbolSpanOptions ): number
 
@@ -2057,6 +2233,7 @@ SymbolSpan暂不支持手势、复制操作和拖拽处理。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Resource | 是 | SymbolSpan图标资源引用，用于指定系统预置或自定义的Symbol图标。 |
@@ -2065,6 +2242,7 @@ SymbolSpan暂不支持手势、复制操作和拖拽处理。
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 添加完成的SymbolSpan在所有Span中的索引位置。 |
@@ -2072,9 +2250,10 @@ SymbolSpan暂不支持手势、复制操作和拖拽处理。
 
 
 
-#### updateSpanStyle
+### updateSpanStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateSpanStyle(value: RichEditorUpdateTextSpanStyleOptions | RichEditorUpdateImageSpanStyleOptions | RichEditorUpdateSymbolSpanStyleOptions): void
 
@@ -2090,6 +2269,7 @@ updateSpanStyle(value: RichEditorUpdateTextSpanStyleOptions | RichEditorUpdateIm
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | RichEditorUpdateTextSpanStyleOptions \| RichEditorUpdateImageSpanStyleOptions \| RichEditorUpdateSymbolSpanStyleOptions | 是 | 文本、图片或SymbolSpan的样式选项信息。 |
@@ -2101,9 +2281,10 @@ updateSpanStyle(value: RichEditorUpdateTextSpanStyleOptions | RichEditorUpdateIm
 
 
 
-#### updateParagraphStyle11+
+### updateParagraphStyle11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateParagraphStyle(value: RichEditorParagraphStyleOptions): void
 
@@ -2115,6 +2296,7 @@ updateParagraphStyle(value: RichEditorParagraphStyleOptions): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | RichEditorParagraphStyleOptions | 是 | 段落的样式选项信息。 |
@@ -2122,9 +2304,10 @@ updateParagraphStyle(value: RichEditorParagraphStyleOptions): void
 
 
 
-#### getSpans
+### getSpans
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSpans(value?: RichEditorRange): Array<RichEditorImageSpanResult | RichEditorTextSpanResult>
 
@@ -2136,12 +2319,14 @@ getSpans(value?: RichEditorRange): Array<RichEditorImageSpanResult | RichEditorT
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | RichEditorRange | 否 | 需要获取span的范围。 省略时，获取所有span信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2150,9 +2335,10 @@ getSpans(value?: RichEditorRange): Array<RichEditorImageSpanResult | RichEditorT
 
 
 
-#### deleteSpans
+### deleteSpans
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteSpans(value?: RichEditorRange): void
 
@@ -2164,6 +2350,7 @@ deleteSpans(value?: RichEditorRange): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | RichEditorRange | 否 | 删除范围。省略时，删除所有文本和图片。 |
@@ -2171,9 +2358,10 @@ deleteSpans(value?: RichEditorRange): void
 
 
 
-#### getParagraphs11+
+### getParagraphs11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getParagraphs(value?: RichEditorRange): Array&lt;RichEditorParagraphResult&gt;
 
@@ -2185,12 +2373,14 @@ getParagraphs(value?: RichEditorRange): Array&lt;RichEditorParagraphResult&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | RichEditorRange | 否 | 需要获取段落的范围。 省略时，获取所有段落信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2199,9 +2389,10 @@ getParagraphs(value?: RichEditorRange): Array&lt;RichEditorParagraphResult&gt;
 
 
 
-#### getSelection11+
+### getSelection11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSelection(): RichEditorSelection
 
@@ -2213,6 +2404,7 @@ getSelection(): RichEditorSelection
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | RichEditorSelection | 选中区域起始/结束位置及选中文本和图片的详细信息。 当controller未绑定组件或绑定controller的组件被释放时，返回undefined。 |
@@ -2220,9 +2412,10 @@ getSelection(): RichEditorSelection
 
 
 
-#### fromStyledString12+
+### fromStyledString12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fromStyledString(value: StyledString): Array&lt;RichEditorSpan&gt;
 
@@ -2234,12 +2427,14 @@ fromStyledString(value: StyledString): Array&lt;RichEditorSpan&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | StyledString | 是 | 转换前的属性字符串。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2250,6 +2445,7 @@ fromStyledString(value: StyledString): Array&lt;RichEditorSpan&gt;
 
 以下错误码的详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. |
@@ -2257,9 +2453,10 @@ fromStyledString(value: StyledString): Array&lt;RichEditorSpan&gt;
 
 
 
-#### toStyledString12+
+### toStyledString12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toStyledString(value: RichEditorRange): StyledString
 
@@ -2271,12 +2468,14 @@ toStyledString(value: RichEditorRange): StyledString
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | RichEditorRange | 是 | 需要获取的范围。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2287,6 +2486,7 @@ toStyledString(value: RichEditorRange): StyledString
 
 以下错误码的详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. |
@@ -2294,15 +2494,19 @@ toStyledString(value: RichEditorRange): StyledString
 
 
 
-#### RichEditorStyledStringController12+
+## RichEditorStyledStringController12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 使用属性字符串构建的RichEditor组件的控制器，继承自[RichEditorBaseController](#richeditorbasecontroller12)。
 
 
 
-#### 导入对象
+### 导入对象
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 controller: RichEditorStyledStringController = new RichEditorStyledStringController();
@@ -2310,9 +2514,10 @@ controller: RichEditorStyledStringController = new RichEditorStyledStringControl
 
 
 
-#### getSelection12+
+### getSelection12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSelection(): RichEditorRange
 
@@ -2324,6 +2529,7 @@ getSelection(): RichEditorRange
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | RichEditorRange | 选中区域范围。 当controller未绑定组件或绑定controller的组件被释放时，返回undefined。 |
@@ -2331,9 +2537,10 @@ getSelection(): RichEditorRange
 
 
 
-#### setStyledString12+
+### setStyledString12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setStyledString(styledString: StyledString): void
 
@@ -2349,6 +2556,7 @@ setStyledString(styledString: StyledString): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | styledString | StyledString | 是 | 属性字符串。 说明： StyledString的子类MutableStyledString也可以作为入参值。 |
@@ -2356,9 +2564,10 @@ setStyledString(styledString: StyledString): void
 
 
 
-#### getStyledString12+
+### getStyledString12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStyledString(): MutableStyledString
 
@@ -2370,6 +2579,7 @@ getStyledString(): MutableStyledString
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | MutableStyledString | 富文本组件显示的属性字符串。 当controller未绑定组件或绑定controller的组件被释放时，返回undefined。 |
@@ -2377,9 +2587,10 @@ getStyledString(): MutableStyledString
 
 
 
-#### onContentChanged12+
+### onContentChanged12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onContentChanged(listener: StyledStringChangedListener): void
 
@@ -2391,6 +2602,7 @@ onContentChanged(listener: StyledStringChangedListener): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | listener | StyledStringChangedListener | 是 | 文本内容变化回调监听器。 |
@@ -2398,15 +2610,17 @@ onContentChanged(listener: StyledStringChangedListener): void
 
 
 
-#### RichEditorSelection
+## RichEditorSelection
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 选中内容信息。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2416,15 +2630,17 @@ onContentChanged(listener: StyledStringChangedListener): void
 
 
 
-#### RichEditorRange
+## RichEditorRange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义RichEditor的范围。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2434,9 +2650,10 @@ onContentChanged(listener: StyledStringChangedListener): void
 
 
 
-#### RichEditorSpanStyleOptions
+## RichEditorSpanStyleOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文本样式选项。
 
@@ -2448,15 +2665,17 @@ onContentChanged(listener: StyledStringChangedListener): void
 
 
 
-#### RichEditorUpdateTextSpanStyleOptions
+## RichEditorUpdateTextSpanStyleOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文本样式选项。
 
 继承自[RichEditorSpanStyleOptions](#richeditorspanstyleoptions)。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2466,9 +2685,10 @@ onContentChanged(listener: StyledStringChangedListener): void
 
 
 
-#### RichEditorUpdateImageSpanStyleOptions
+## RichEditorUpdateImageSpanStyleOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 图片的样式选项。
 
@@ -2478,6 +2698,7 @@ onContentChanged(listener: StyledStringChangedListener): void
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | imageStyle | RichEditorImageSpanStyle | 否 | 否 | 图片样式。 |
@@ -2485,9 +2706,10 @@ onContentChanged(listener: StyledStringChangedListener): void
 
 
 
-#### RichEditorUpdateSymbolSpanStyleOptions11+
+## RichEditorUpdateSymbolSpanStyleOptions11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 SymbolSpan样式选项。
 
@@ -2497,6 +2719,7 @@ SymbolSpan样式选项。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | symbolStyle | RichEditorSymbolSpanStyle | 否 | 否 | SymbolSpan的样式信息。 |
@@ -2504,9 +2727,10 @@ SymbolSpan样式选项。
 
 
 
-#### RichEditorParagraphStyleOptions11+
+## RichEditorParagraphStyleOptions11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 段落样式选项。
 
@@ -2515,6 +2739,7 @@ SymbolSpan样式选项。
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2527,13 +2752,15 @@ SymbolSpan样式选项。
 
 
 
-#### RichEditorParagraphStyle11+
+## RichEditorParagraphStyle11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 段落样式。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2549,13 +2776,15 @@ SymbolSpan样式选项。
 
 
 
-#### LeadingMarginPlaceholder11+
+## LeadingMarginPlaceholder11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 前导边距占位符，用于表示文本段落左侧与组件边缘之间的距离。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2565,15 +2794,17 @@ SymbolSpan样式选项。
 
 
 
-#### RichEditorParagraphResult11+
+## RichEditorParagraphResult11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 后端返回的段落信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2583,13 +2814,15 @@ SymbolSpan样式选项。
 
 
 
-#### RichEditorTextSpanOptions
+## RichEditorTextSpanOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 添加文本的偏移位置和文本样式信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2602,13 +2835,15 @@ SymbolSpan样式选项。
 
 
 
-#### RichEditorTextStyle
+## RichEditorTextStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文本样式信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2631,15 +2866,17 @@ SymbolSpan样式选项。
 
 
 
-#### PlaceholderStyle12+
+## PlaceholderStyle12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置提示文本的字体样式。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2649,13 +2886,15 @@ SymbolSpan样式选项。
 
 
 
-#### RichEditorImageSpanOptions
+## RichEditorImageSpanOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置图片的偏移位置和图片样式信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2667,13 +2906,15 @@ SymbolSpan样式选项。
 
 
 
-#### RichEditorImageSpanStyle
+## RichEditorImageSpanStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 图片样式。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2685,15 +2926,17 @@ SymbolSpan样式选项。
 
 
 
-#### RichEditorSymbolSpanOptions11+
+## RichEditorSymbolSpanOptions11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置SymbolSpan组件的偏移位置和样式。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2703,15 +2946,17 @@ SymbolSpan样式选项。
 
 
 
-#### RichEditorSymbolSpanStyle11+
+## RichEditorSymbolSpanStyle11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 组件SymbolSpan样式信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2724,13 +2969,15 @@ SymbolSpan样式选项。
 
 
 
-#### RichEditorBuilderSpanOptions11+
+## RichEditorBuilderSpanOptions11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-设置builder的偏移位置和样式。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+设置builder插入的偏移位置和样式。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2740,9 +2987,10 @@ SymbolSpan样式选项。
 
 
 
-#### RichEditorSpan12+
+## RichEditorSpan12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type RichEditorSpan = RichEditorImageSpanResult | RichEditorTextSpanResult
 
@@ -2752,6 +3000,7 @@ RichEditor span信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | RichEditorImageSpanResult | 后端返回的图片信息。 |
@@ -2760,13 +3009,15 @@ RichEditor span信息。
 
 
 
-#### SelectionMenuOptions
+## SelectionMenuOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 菜单的选项。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2780,15 +3031,17 @@ RichEditor span信息。
 
 
 
-#### PreviewMenuOptions18+
+## PreviewMenuOptions18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 预览菜单的选项。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2797,15 +3050,17 @@ RichEditor span信息。
 
 
 
-#### PasteEvent11+
+## PasteEvent11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义用户粘贴事件。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2814,15 +3069,17 @@ RichEditor span信息。
 
 
 
-#### CutEvent12+
+## CutEvent12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义用户剪切事件。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2831,15 +3088,17 @@ RichEditor span信息。
 
 
 
-#### CopyEvent12+
+## CopyEvent12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义用户复制事件。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2848,15 +3107,17 @@ RichEditor span信息。
 
 
 
-#### RichEditorGesture11+
+## RichEditorGesture11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用户手势事件。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2866,15 +3127,17 @@ RichEditor span信息。
 
 
 
-#### KeyboardOptions12+
+## KeyboardOptions12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置自定义键盘是否支持避让功能。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2883,9 +3146,10 @@ RichEditor span信息。
 
 
 
-#### SubmitCallback12+
+## SubmitCallback12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type SubmitCallback = (enterKey: EnterKeyType, event: SubmitEvent) => void
 
@@ -2897,6 +3161,7 @@ type SubmitCallback = (enterKey: EnterKeyType, event: SubmitEvent) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enterKey | EnterKeyType | 是 | 软键盘输入法回车键类型。具体类型见EnterKeyType枚举说明。 |
@@ -2905,9 +3170,10 @@ type SubmitCallback = (enterKey: EnterKeyType, event: SubmitEvent) => void
 
 
 
-#### MenuOnAppearCallback12+
+## MenuOnAppearCallback12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type MenuOnAppearCallback = (start: number, end: number) => void
 
@@ -2919,6 +3185,7 @@ type MenuOnAppearCallback = (start: number, end: number) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | start | number | 是 | 选中内容的起始位置。 |
@@ -2927,9 +3194,10 @@ type MenuOnAppearCallback = (start: number, end: number) => void
 
 
 
-#### MenuCallback15+
+## MenuCallback15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type MenuCallback = (start: number, end: number) => void
 
@@ -2941,6 +3209,7 @@ type MenuCallback = (start: number, end: number) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | start | number | 是 | 选中内容的起始位置。 |
@@ -2949,9 +3218,10 @@ type MenuCallback = (start: number, end: number) => void
 
 
 
-#### PasteEventCallback12+
+## PasteEventCallback12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type PasteEventCallback = (event?: PasteEvent) => void
 
@@ -2963,6 +3233,7 @@ type PasteEventCallback = (event?: PasteEvent) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | PasteEvent | 否 | 定义用户粘贴事件。省略时，不接收粘贴事件信息。 |
@@ -2970,9 +3241,10 @@ type PasteEventCallback = (event?: PasteEvent) => void
 
 
 
-#### OnHoverCallback14+
+## OnHoverCallback14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnHoverCallback = (status: boolean, event: HoverEvent) => void
 
@@ -2984,6 +3256,7 @@ type OnHoverCallback = (status: boolean, event: HoverEvent) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | status | boolean | 是 | 表示鼠标是否悬浮在组件上。true表示鼠标悬浮在组件上，false表示鼠标离开组件。 |
@@ -2992,15 +3265,17 @@ type OnHoverCallback = (status: boolean, event: HoverEvent) => void
 
 
 
-#### RichEditorTextSpan
+## RichEditorTextSpan
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文本Span信息。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -3011,15 +3286,17 @@ type OnHoverCallback = (status: boolean, event: HoverEvent) => void
 
 
 
-#### RichEditorImageSpan
+## RichEditorImageSpan
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 图片Span信息。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -3030,15 +3307,17 @@ type OnHoverCallback = (status: boolean, event: HoverEvent) => void
 
 
 
-#### RichEditorUrlStyle19+
+## RichEditorUrlStyle19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Url信息。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -3047,13 +3326,17 @@ Url信息。
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（更新文本样式）
+
+
+### 示例1（更新文本样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过[updateSpanStyle](#updatespanstyle)接口更新已有文本样式，更改样式后，使用[getSpans](#getspans)获取文本新的样式信息。
 
@@ -3238,7 +3521,10 @@ struct Index {
 
 
 
-#### 示例2（绑定自定义键盘）
+### 示例2（绑定自定义键盘）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过[customKeyboard](#customkeyboard)给组件绑定自定义键盘。
 
@@ -3293,7 +3579,10 @@ struct RichEditorExample {
 
 
 
-#### 示例3（绑定自定义菜单）
+### 示例3（绑定自定义菜单）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过[bindSelectionMenu](#bindselectionmenu)给组件绑定自定义菜单。
 
@@ -3832,7 +4121,10 @@ struct SelectionMenu {
 
 
 
-#### 示例4（更新图片样式）
+### 示例4（更新图片样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过[updateSpanStyle](#updatespanstyle)接口更新图片样式。
 
@@ -4078,7 +4370,10 @@ struct Index {
 
 
 
-#### 示例5（Span绑定手势事件）
+### 示例5（Span绑定手势事件）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 为Span绑定[gesture](#richeditorgesture11)回调。
 
@@ -4183,7 +4478,10 @@ struct Index {
 
 
 
-#### 示例6（更新和获取段落样式）
+### 示例6（更新和获取段落样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过[updateParagraphStyle](#updateparagraphstyle11)接口更新段落样式，通过[getParagraphs](#getparagraphs11)接口获取指定范围段落的信息。
 
@@ -4285,7 +4583,10 @@ struct Index {
 
 
 
-#### 示例7（更新预设样式与缩进）
+### 示例7（更新预设样式与缩进）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过[setTypingStyle](#settypingstyle11)接口更新文本预设样式，通过[updateParagraphStyle](#updateparagraphstyle11)接口设置段落缩进。
 
@@ -4559,7 +4860,10 @@ struct Index {
 
 
 
-#### 示例8（设置文本字重与阴影）
+### 示例8（设置文本字重与阴影）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过[updateSpanStyle](#updatespanstyle)接口设置文本字重与阴影。
 
@@ -4647,7 +4951,10 @@ struct Index {
 
 
 
-#### 示例9（添加用户自定义布局Span）
+### 示例9（添加用户自定义布局Span）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过[addBuilderSpan](#addbuilderspan11)接口添加用户自定义布局Span。
 
@@ -4948,7 +5255,10 @@ struct Index {
 
 
 
-#### 示例10（使用和管理组件内的BuilderSpan）
+### 示例10（使用和管理组件内的BuilderSpan）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过[addBuilderSpan](#addbuilderspan11)接口添加的自定义布局Span，[getSpans](#getspans)、[onWillChange](#onwillchange12)等API不会返回BuilderSpan内部的信息。开发者需要自行维护BuilderSpan的状态，并且在组件内容发生变化时同步更新。
 
@@ -5298,7 +5608,10 @@ struct Index {
 
 
 
-#### 示例11（设置文本识别配置）
+### 示例11（设置文本识别配置）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置[enableDataDetector](#enabledatadetector11)为true时，通过[dataDetectorConfig](#datadetectorconfig11)接口设置文本识别配置。
 
@@ -5366,9 +5679,12 @@ struct TextExample7 {
 
 
 
-#### 示例12（设置光标、手柄和底板颜色）
+### 示例12（设置光标、手柄和高亮颜色）
 
-通过[caretColor](#caretcolor12)属性设置输入框光标、手柄颜色，通过[selectedBackgroundColor](#selectedbackgroundcolor12)属性设置文本选中底板颜色。
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+通过[caretColor](#caretcolor12)属性设置输入框光标、手柄颜色，通过[selectedBackgroundColor](#selectedbackgroundcolor12)属性设置文本选中高亮颜色。
 
 ```text
 @Entry
@@ -5407,7 +5723,10 @@ struct RichEditorDemo {
 
 
 
-#### 示例13（设置行高和字符间距）
+### 示例13（设置行高和字符间距）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过[updateSpanStyle](#updatespanstyle)接口配置文本行高（[lineHeight](#richeditortextstyle)）和字符间距（[letterSpacing](#richeditortextstyle)）。
 
@@ -5535,7 +5854,10 @@ struct RichEditorDemo03 {
 
 
 
-#### 示例14（自定义粘贴事件）
+### 示例14（自定义粘贴事件）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 为组件添加[onPaste](#onpaste11)事件，通过[PasteEvent](#pasteevent11)自定义用户粘贴事件。
 
@@ -5574,7 +5896,10 @@ struct RichEditorDemo {
 
 
 
-#### 示例15（配置文字特性效果）
+### 示例15（配置文字特性效果）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[addTextSpan](#addtextspan)接口设置文字特性效果（[fontFeature](#richeditortextstyle)）。当添加“ss01”特性的FontFeature属性时，数字“0”由原来的椭圆形改变为带有倒圆角形。同时通过[RichEditorTextStyle](#richeditortextstyle)的strokeJoinStyle接口设置文本描边拐角样式。
 
@@ -5630,7 +5955,10 @@ struct RichEditorExample {
 
 
 
-#### 示例16（自定义键盘避让）
+### 示例16（自定义键盘避让）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过[customKeyboard](#customkeyboard)属性绑定自定义键盘，通过参数[KeyboardOptions](#keyboardoptions12)设置自定义键盘是否支持避让功能。
 
@@ -5648,7 +5976,7 @@ struct RichEditorExample {
   CustomKeyboardBuilder() {
     Column() {
       Row() {
-        Button('增加特表情包').onClick(() => {
+        Button('增加表情包').onClick(() => {
           this.controller.addTextSpan("\uD83D\uDE0A",
             {
               style:
@@ -5718,7 +6046,10 @@ struct RichEditorExample {
 
 
 
-#### 示例17（查看编辑状态）
+### 示例17（查看编辑状态）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过[isEditing](#isediting12)接口获取当前富文本的编辑状态。为组件添加[onEditingChange](#oneditingchange12)事件，可通过打印日志，获取当前组件是否在编辑态。
 
@@ -5762,7 +6093,10 @@ struct RichEditorOnEditingChange {
 
 
 
-#### 示例18（配置文本变化回调）
+### 示例18（配置文本变化回调）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 为组件添加[onWillChange](#onwillchange12)事件，能够在组件执行增删操作前，触发回调。
 
@@ -5872,7 +6206,10 @@ struct RichEditorExample {
 
 
 
-#### 示例19（配置输入法回车键功能）
+### 示例19（配置输入法回车键功能）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过[enterKeyType](#enterkeytype12)属性设置软键盘输入法回车键类型。
 
@@ -5911,7 +6248,10 @@ struct SoftKeyboardEnterTypeExample {
 
 
 
-#### 示例20（设置段落折行规则）
+### 示例20（设置段落折行规则）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过[updateParagraphStyle](#updateparagraphstyle11)接口设置折行类型（[lineBreakStrategy](#richeditorparagraphstyle11)），通过[getParagraphs](#getparagraphs11)接口获取当前段落的折行类型。
 
@@ -5994,7 +6334,10 @@ struct LineBreakStrategyExample {
 
 
 
-#### 示例21（属性字符串基本功能）
+### 示例21（属性字符串基本功能）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 20开始，该示例中[属性字符串](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-styled-string)通过[RichEditorStyledStringController](#richeditorstyledstringcontroller12)中的[setStyledString](#setstyledstring12)方法与RichEditor组件绑定。通过[getStyledString](#getstyledstring12)接口获取富文本组件显示的属性字符串。
 
@@ -6197,7 +6540,10 @@ struct Index {
 
 
 
-#### 示例22（获取布局信息）
+### 示例22（获取布局信息）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过[getLayoutManager](#getlayoutmanager12)接口获取布局管理器对象，通过[getLineCount](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#getlinecount12)接口获取组件内容或[placeholder](#placeholder12)的总行数，通过[getGlyphPositionAtCoordinate](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#getglyphpositionatcoordinate12)接口获取较为接近给定坐标的字形的位置信息，通过[getLineMetrics](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#getlinemetrics12)接口获取指定行的行信息、文本样式信息、以及字体属性信息。
 
@@ -6272,7 +6618,10 @@ struct Index {
 
 
 
-#### 示例23（设置系统默认菜单扩展项）
+### 示例23（设置系统默认菜单扩展项）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 20开始，该示例通过[editMenuOptions](#editmenuoptions12)属性设置系统默认菜单的扩展项，允许配置扩展项的文本内容、图标和回调方法。
 
@@ -6372,9 +6721,12 @@ struct RichEditorExample {
 
 
 
-#### 示例24（组件部分常用属性）
+### 示例24（组件部分常用属性）
 
-从API version 18开始，该示例通过[barState](#barstate13)属性设置组件滚动条的显示模式。通过[enableKeyboardOnFocus](#enablekeyboardonfocus12)属性设置组件通过点击以外的方式获焦时，是否主动拉起软键盘。通过[enableHapticFeedback](#enablehapticfeedback13)属性设置组件是否支持触感反馈。通过[getPreviewText](#getpreviewtext12)接口获取组件预上屏信息。通过[stopBackPress](#stopbackpress18)属性设置是否阻止返回键向其它组件或应用侧传递。
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+从API version 18开始，该示例通过[barState](#barstate13)属性设置组件滚动条的显示模式。通过[enableKeyboardOnFocus](#enablekeyboardonfocus12)属性设置组件通过点击以外的方式获焦时，是否主动拉起软键盘。通过[enableHapticFeedback](#enablehapticfeedback13)属性设置组件是否支持触感反馈。通过[getPreviewText](#getpreviewtext12)接口获取组件预上屏信息。通过[stopBackPress](#stopbackpress18)属性设置是否阻止返回键向其他组件或应用侧传递。
 
 从API version 21开始，该示例通过[scrollBarColor](#scrollbarcolor21)属性设置RichEditor组件滚动条颜色。
 
@@ -6469,7 +6821,10 @@ struct RichEditorExample {
 
 
 
-#### 示例25（获取光标相对组件位置的矩形）
+### 示例25（获取光标相对组件位置的矩形）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 18开始，该示例通过RichEditorBaseController的[getCaretRect](#getcaretrect18)方法来获取当前光标相对于组件位置的Rect。
 
@@ -6527,7 +6882,10 @@ struct Index {
 
 
 
-#### 示例26（设置最大行数和最大字符数）
+### 示例26（设置最大行数和最大字符数）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 18开始，该示例通过[maxLength](#maxlength18)设置可输入的最大字符数，通过[maxLines](#maxlines18)设置可输入的最大行数。
 
@@ -6628,7 +6986,10 @@ struct RichEditorExample {
 
 
 
-#### 示例27（文本设置Url样式）
+### 示例27（文本设置Url样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 19开始，该示例通过在addTextSpan和UpdateSpanStyle接口中加入[UrlStyle](#richeditorurlstyle19)，来实现文本点击时跳转到指定链接的功能。
 
@@ -6674,7 +7035,10 @@ struct RichEditorExample {
 
 
 
-#### 示例28（开启带样式的撤销还原能力）
+### 示例28（开启带样式的撤销还原能力）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 20开始，该示例对于不使用属性字符串的富文本组件，可以通过配置[undoStyle](#undostyle20)属性为UndoStyle.KEEP_STYLE，以支持撤销还原时保留原内容的样式。
 
@@ -6818,7 +7182,10 @@ struct StyledUndo {
 
 
 
-#### 示例29（文本设置预设段落样式）
+### 示例29（文本设置预设段落样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 20开始，该示例通过[setTypingParagraphStyle](#settypingparagraphstyle20)接口设置预设段落样式。
 
@@ -6918,7 +7285,10 @@ struct RichEditorExample {
 
 
 
-#### 示例30（设置装饰线粗细和多装饰线）
+### 示例30（设置装饰线粗细和多装饰线）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 20开始，该示例通过[DecorationStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-styled-string#decorationstyle)中的thicknessScale设置装饰线粗细，通过[enableMultiType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-styled-string#decorationoptions20)设置多装饰线。
 
@@ -7052,7 +7422,10 @@ struct Index {
 
 
 
-#### 示例31（设置开启中西文自动间距）
+### 示例31（设置开启中西文自动间距）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 20开始，该示例通过[enableAutoSpacing](#enableautospacing20)属性设置中西文自动间距。
 
@@ -7163,7 +7536,10 @@ struct AutoSpacing {
 
 
 
-#### 示例32（设置文本选择的AI菜单）
+### 示例32（设置文本选择的AI菜单）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 22开始，该示例通过[enableSelectedDataDetector](#enableselecteddatadetector22)，配置文本选择AI菜单功能。
 
@@ -7199,7 +7575,10 @@ struct SelectedDataDetectorDemo {
 
 
 
-#### 示例33（设置监听输入法绑定事件）
+### 示例33（设置监听输入法绑定事件）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 22开始，该示例通过[onWillAttachIME](#onwillattachime22)事件监听输入法绑定事件。
 
@@ -7257,7 +7636,10 @@ struct SetOnWillAttachIME {
 
 
 
-#### 示例34（删除输入框文本尾部字符）
+### 示例34（删除输入框文本尾部字符）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 23开始，该示例通过[deleteBackward](#deletebackward23)事件在编辑态用自定义键盘删除光标前字符。
 
@@ -7318,7 +7700,10 @@ struct RichEditorExample {
 
 
 
-#### 示例35（优化小语种文字显示）
+### 示例35（优化小语种文字显示）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[includeFontPadding](#includefontpadding23)属性，在首行文字顶部和尾行文字底部添加文字内边距，同时通过[fallbackLineSpacing](#fallbacklinespacing23)属性实现行高自适应，基于文字实际高度动态调整。
 
@@ -7410,7 +7795,10 @@ struct RichEditorExample {
 
 
 
-#### 示例36（设置行首标点符号压缩和行尾标点符号悬挂）
+### 示例36（设置行首标点符号压缩和行尾标点符号悬挂）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例通过[compressLeadingPunctuation](#compressleadingpunctuation23)设置行首标点符号压缩，通过[punctuationOverflow](#punctuationoverflow)设置行尾标点符号悬挂。
 
@@ -7468,7 +7856,10 @@ struct PunctuationDemo {
 
 
 
-#### 示例37（设置拖动预览样式）
+### 示例37（设置拖动预览样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[selectedDragPreviewStyle](#selecteddragpreviewstyle23)接口设置拖动预览样式。
 
@@ -7504,7 +7895,10 @@ struct RichEditorDemo {
 
 
 
-#### 示例38（设置单行模式）
+### 示例38（设置单行模式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[singleLine](#singleline23)接口设置单行模式。
 
@@ -7549,7 +7943,10 @@ struct SingleLineDemo {
 
 
 
-#### 示例39（设置属性字符串样式的提示文本）
+### 示例39（设置属性字符串样式的提示文本）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[setStyledPlaceholder](#setstyledplaceholder24)接口设置属性字符串样式的提示文本。
 
@@ -7633,7 +8030,10 @@ struct RichEditorExample {
 
 
 
-#### 示例40（设置孤立字符不成行）
+### 示例40（设置孤立字符不成行）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[orphanCharOptimization](#orphancharoptimization)接口启用孤字优化，确保段落最后一行不出现孤字。
 
@@ -7686,7 +8086,10 @@ struct RichEditorDemo {
 
 
 
-#### 示例41（设置水平滚动）
+### 示例41（设置水平滚动）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例通过[horizontalScrolling](#horizontalscrolling)设置水平滚动。
 
@@ -7734,7 +8137,10 @@ struct HorizontalScrollDemo {
 
 
 
-#### 示例42（设置文本着色器效果）
+### 示例42（设置文本着色器效果）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[RichEditorParagraphStyle](#richeditorparagraphstyle11)中shaderStyle接口实现文本着色效果。
 
@@ -7841,7 +8247,10 @@ struct ShaderColorStyle {
 
 
 
-#### 示例43（将指定范围的文字滚动到可视区内）
+### 示例43（将指定范围的文字滚动到可视区内）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例通过[scrollToVisible](#scrolltovisible)将可视区外的文本滚动到可视区内。
 

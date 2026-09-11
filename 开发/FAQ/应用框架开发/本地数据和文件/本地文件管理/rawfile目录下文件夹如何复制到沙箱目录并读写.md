@@ -50,7 +50,7 @@ struct RawfileToSandbox {
 
   build() {
     Column() {
-      // 方案一：rawfile目录下的文件夹直接复制到resfile目录下（resfile/apps），然后再复制到沙箱。
+      <em>// </em><em>方案一：rawfile目录下的文件夹直接复制到resfile目录下（resfile/apps），然后再复制到沙箱。</em>
       Button('复制resFile目录下文件夹到沙箱目录')
         .height(100)
         .width('50%')
@@ -58,7 +58,7 @@ struct RawfileToSandbox {
           try {
             let srcPath = this.context.resourceDir + '/apps/';
             let destPath = this.context.filesDir + '/apps/';
-            // 判断文件夹是否存在
+            <em>// </em><em>判断文件夹是否存在</em>
             if (!fileIo.accessSync(destPath)) {
               fileIo.mkdirSync(destPath);
             }
@@ -69,13 +69,13 @@ struct RawfileToSandbox {
           }
         });
 
-      // 方案二：把需要复制的目录压缩成zip，复制zip并解压到沙箱目录。
+    <em>  // 方案二：把需要复制的目录压缩成zip，复制zip并解压到沙箱目录。</em>
       Button('复制zip到沙箱，并解压zip')
         .height(100)
         .width('50%')
         .onClick(async () => {
-          // 通过fd来进行拷贝，避免文件过大的内存占用问题
-          // data.fd是hap包的fd，data.offset表示目标文件在hap包中的偏移，data.length表示目标文件的长度
+ <em>         // 通过fd来进行拷贝，避免文件过大的内存占用问题</em>
+<em>          // data.fd是hap包的fd，data.offset表示目标文件在hap包中的偏移，data.length表示目标文件的长度</em>
           this.context.resourceManager.getRawFd('apps.zip', async (err, data) => {
             try {
               let sandboxPath = this.context.filesDir;
@@ -88,7 +88,7 @@ struct RawfileToSandbox {
               let off = 0;
               let readLen = 0;
 
-              // 把rawfile压缩包文件内容复制到沙箱路径
+<em>              // 把rawfile压缩包文件内容复制到沙箱路径</em>
               let len = fileIo.readSync(data.fd, buf, { offset: data.offset + off, length: bufsize });
               while (len) {
                 fileIo.writeSync(dest.fd, buf, { offset: off, length: len });
@@ -104,7 +104,7 @@ struct RawfileToSandbox {
               }
               fileIo.closeSync(dest.fd);
 
-              // 对沙箱路径下的压缩文件进行解压
+             <em> // 对沙箱路径下的压缩文件进行解压</em>
               await zlib.decompressFile(filePath, sandboxPath);
               this.context.resourceManager.closeRawFd('apps.zip');
             } catch (e) {

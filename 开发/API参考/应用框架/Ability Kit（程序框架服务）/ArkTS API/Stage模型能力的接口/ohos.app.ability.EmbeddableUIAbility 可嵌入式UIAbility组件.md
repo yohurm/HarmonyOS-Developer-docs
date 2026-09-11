@@ -1,9 +1,9 @@
 # @ohos.app.ability.EmbeddableUIAbility (可嵌入式UIAbility组件)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-embeddableuiability
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 EmbeddableUIAbility组件是为元服务提供可嵌入式的UIAbility组件，继承自[UIAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability)。
  
@@ -16,9 +16,10 @@ EmbeddableUIAbility组件是为元服务提供可嵌入式的UIAbility组件，�
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { EmbeddableUIAbility } from '@kit.AbilityKit';
@@ -26,14 +27,16 @@ import { EmbeddableUIAbility } from '@kit.AbilityKit';
  
   
 
-#### EmbeddableUIAbility
+## EmbeddableUIAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
  
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | context | EmbeddableUIAbilityContext | 否 | 否 | EmbeddableUIAbility组件的上下文。 |

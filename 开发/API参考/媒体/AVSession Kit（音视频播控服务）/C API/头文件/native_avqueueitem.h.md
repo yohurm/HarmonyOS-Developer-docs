@@ -1,13 +1,14 @@
 # native_avqueueitem.h
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avqueueitem-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供音视频队列元素的定义。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_AVSession_AVQueueItem | OH_AVSession_AVQueueItem | 音视频队列元素的定义。 |
@@ -42,10 +46,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_Create(OH_AVSession_AVMediaDescriptionBuilder** builder) | 创建OH_AVSession_AVMediaDescriptionBuilder实例。当该实例不再被使用时，调用OH_AVSession_AVMediaDescriptionBuilder_Destroy来释放构建器对象。 |
@@ -82,15 +88,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AVSession_AVMediaDescriptionBuilder_Create()
+### OH_AVSession_AVMediaDescriptionBuilder_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_Create(OH_AVSession_AVMediaDescriptionBuilder** builder)
@@ -98,19 +106,21 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_Create(OH_AVSession_AV
  
 **描述**
  
-创建OH_AVSession_AVMediaDescriptionBuilder实例。当该实例不再被使用时，调用[OH_AVSession_AVMediaDescriptionBuilder_Destroy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avqueueitem-h#oh_avsession_avmediadescriptionbuilder_destroy)来释放构建器对象。
+创建OH_AVSession_AVMediaDescriptionBuilder实例。当该实例不再被使用时，调用[OH_AVSession_AVMediaDescriptionBuilder_Destroy](#oh_avsession_avmediadescriptionbuilder_destroy)来释放构建器对象。
  
 **起始版本：** 23
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| OH_AVSession_AVMediaDescriptionBuilder** builder | 指向用于接收创建结果的构建器对象。 |
+| OH_AVSession_AVMediaDescriptionBuilder** builder | 用于接收创建结果的构建器对象指针。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVQueueItem_Result | AVQUEUEITEM_SUCCESS：函数执行成功。 AVQUEUEITEM_ERROR_INVALID_PARAM：参数builder为nullptr。 AVQUEUEITEM_ERROR_NO_MEMORY：内存不足。 |
@@ -118,9 +128,10 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_Create(OH_AVSession_AV
  
   
 
-#### OH_AVSession_AVMediaDescriptionBuilder_Destroy()
+### OH_AVSession_AVMediaDescriptionBuilder_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_Destroy(OH_AVSession_AVMediaDescriptionBuilder* builder)
@@ -134,6 +145,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_Destroy(OH_AVSession_A
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession_AVMediaDescriptionBuilder* builder | 表示音视频媒体描述构建器实例指针。 |
@@ -141,6 +153,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_Destroy(OH_AVSession_A
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVQueueItem_Result | AVQUEUEITEM_SUCCESS：函数执行成功。 AVQUEUEITEM_ERROR_INVALID_PARAM：参数builder为nullptr。 |
@@ -148,9 +161,10 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_Destroy(OH_AVSession_A
  
   
 
-#### OH_AVSession_AVMediaDescriptionBuilder_SetAssetId()
+### OH_AVSession_AVMediaDescriptionBuilder_SetAssetId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetAssetId(OH_AVSession_AVMediaDescriptionBuilder* builder, const char* assetId)
@@ -164,6 +178,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetAssetId(OH_AVSessio
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession_AVMediaDescriptionBuilder* builder | 表示音视频媒体描述构建器实例指针。 |
@@ -172,6 +187,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetAssetId(OH_AVSessio
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVQueueItem_Result | AVQUEUEITEM_SUCCESS：函数执行成功。 AVQUEUEITEM_ERROR_INVALID_PARAM： 1. 参数builder为nullptr。 2. 参数assetId为nullptr。 |
@@ -179,9 +195,10 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetAssetId(OH_AVSessio
  
   
 
-#### OH_AVSession_AVMediaDescriptionBuilder_SetTitle()
+### OH_AVSession_AVMediaDescriptionBuilder_SetTitle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetTitle(OH_AVSession_AVMediaDescriptionBuilder* builder, const char* title)
@@ -195,6 +212,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetTitle(OH_AVSession_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession_AVMediaDescriptionBuilder* builder | 表示音视频媒体描述构建器实例指针。 |
@@ -203,6 +221,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetTitle(OH_AVSession_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVQueueItem_Result | AVQUEUEITEM_SUCCESS：函数执行成功。 AVQUEUEITEM_ERROR_INVALID_PARAM： 1. 参数builder为nullptr。 2. 参数title为nullptr。 |
@@ -210,9 +229,10 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetTitle(OH_AVSession_
  
   
 
-#### OH_AVSession_AVMediaDescriptionBuilder_SetSubTitle()
+### OH_AVSession_AVMediaDescriptionBuilder_SetSubTitle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetSubTitle(OH_AVSession_AVMediaDescriptionBuilder* builder, const char* subtitle)
@@ -226,6 +246,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetSubTitle(OH_AVSessi
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession_AVMediaDescriptionBuilder* builder | 表示音视频媒体描述构建器实例指针。 |
@@ -234,6 +255,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetSubTitle(OH_AVSessi
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVQueueItem_Result | AVQUEUEITEM_SUCCESS：函数执行成功。 AVQUEUEITEM_ERROR_INVALID_PARAM： 1. 参数builder为nullptr。 2. 参数subtitle为nullptr。 |
@@ -241,9 +263,10 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetSubTitle(OH_AVSessi
  
   
 
-#### OH_AVSession_AVMediaDescriptionBuilder_SetArtist()
+### OH_AVSession_AVMediaDescriptionBuilder_SetArtist()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetArtist(OH_AVSession_AVMediaDescriptionBuilder* builder, const char* artist)
@@ -257,6 +280,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetArtist(OH_AVSession
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession_AVMediaDescriptionBuilder* builder | 表示音视频媒体描述构建器实例指针。 |
@@ -265,6 +289,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetArtist(OH_AVSession
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVQueueItem_Result | AVQUEUEITEM_SUCCESS：函数执行成功。 AVQUEUEITEM_ERROR_INVALID_PARAM： 1. 参数builder为nullptr。 2. 参数artist为nullptr。 |
@@ -272,9 +297,10 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetArtist(OH_AVSession
  
   
 
-#### OH_AVSession_AVMediaDescriptionBuilder_SetAlbumCoverUri()
+### OH_AVSession_AVMediaDescriptionBuilder_SetAlbumCoverUri()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetAlbumCoverUri(OH_AVSession_AVMediaDescriptionBuilder* builder, const char* albumCoverUri)
@@ -288,6 +314,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetAlbumCoverUri(OH_AV
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession_AVMediaDescriptionBuilder* builder | 表示音视频媒体描述构建器实例指针。 |
@@ -296,6 +323,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetAlbumCoverUri(OH_AV
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVQueueItem_Result | AVQUEUEITEM_SUCCESS：函数执行成功。 AVQUEUEITEM_ERROR_INVALID_PARAM： 1. 参数builder为nullptr。 2. 参数albumCoverUri为nullptr。 |
@@ -303,9 +331,10 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetAlbumCoverUri(OH_AV
  
   
 
-#### OH_AVSession_AVMediaDescriptionBuilder_SetMediaType()
+### OH_AVSession_AVMediaDescriptionBuilder_SetMediaType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetMediaType(OH_AVSession_AVMediaDescriptionBuilder* builder, const char* mediaType)
@@ -319,6 +348,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetMediaType(OH_AVSess
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession_AVMediaDescriptionBuilder* builder | 表示音视频媒体描述构建器实例指针。 |
@@ -327,6 +357,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetMediaType(OH_AVSess
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVQueueItem_Result | AVQUEUEITEM_SUCCESS：函数执行成功。 AVQUEUEITEM_ERROR_INVALID_PARAM： 1. 参数builder为nullptr。 2. 参数mediaType为nullptr。 |
@@ -334,9 +365,10 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetMediaType(OH_AVSess
  
   
 
-#### OH_AVSession_AVMediaDescriptionBuilder_SetLyricContent()
+### OH_AVSession_AVMediaDescriptionBuilder_SetLyricContent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetLyricContent(OH_AVSession_AVMediaDescriptionBuilder* builder, const char* lyricContent)
@@ -350,14 +382,16 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetLyricContent(OH_AVS
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession_AVMediaDescriptionBuilder* builder | 表示音视频媒体描述构建器实例指针。 |
-| const char* lyricContent | 媒体资源的歌词内容。为LRC（Lyric Reduced Codec）格式。 |
+| const char* lyricContent | 媒体资源的歌词内容，为LRC（Lyric Reduced Codec）格式，需符合标准LRC歌词格式规范。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVQueueItem_Result | AVQUEUEITEM_SUCCESS：函数执行成功。 AVQUEUEITEM_ERROR_INVALID_PARAM： 1. 参数builder为nullptr。 2. 参数lyricContent为nullptr。 |
@@ -365,9 +399,10 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetLyricContent(OH_AVS
  
   
 
-#### OH_AVSession_AVMediaDescriptionBuilder_SetDuration()
+### OH_AVSession_AVMediaDescriptionBuilder_SetDuration()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetDuration(OH_AVSession_AVMediaDescriptionBuilder* builder, const int32_t duration)
@@ -381,6 +416,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetDuration(OH_AVSessi
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession_AVMediaDescriptionBuilder* builder | 表示音视频媒体描述构建器实例指针。 |
@@ -389,6 +425,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetDuration(OH_AVSessi
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVQueueItem_Result | AVQUEUEITEM_SUCCESS：函数执行成功。 AVQUEUEITEM_ERROR_INVALID_PARAM： 1. 参数builder为nullptr。 2. 参数duration为nullptr。 |
@@ -396,9 +433,10 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetDuration(OH_AVSessi
  
   
 
-#### OH_AVSession_AVMediaDescriptionBuilder_SetMediaUri()
+### OH_AVSession_AVMediaDescriptionBuilder_SetMediaUri()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetMediaUri(OH_AVSession_AVMediaDescriptionBuilder* builder, const char* mediaUri)
@@ -412,6 +450,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetMediaUri(OH_AVSessi
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession_AVMediaDescriptionBuilder* builder | 表示音视频媒体描述构建器实例指针。 |
@@ -420,6 +459,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetMediaUri(OH_AVSessi
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVQueueItem_Result | AVQUEUEITEM_SUCCESS：函数执行成功。 AVQUEUEITEM_ERROR_INVALID_PARAM： 1. 参数builder为nullptr。 2. 参数mediaUri为nullptr。 |
@@ -427,9 +467,10 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetMediaUri(OH_AVSessi
  
   
 
-#### OH_AVSession_AVMediaDescriptionBuilder_SetStartPosition()
+### OH_AVSession_AVMediaDescriptionBuilder_SetStartPosition()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetStartPosition(OH_AVSession_AVMediaDescriptionBuilder* builder, const int32_t startPosition)
@@ -443,6 +484,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetStartPosition(OH_AV
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession_AVMediaDescriptionBuilder* builder | 表示音视频媒体描述构建器实例指针。 |
@@ -451,6 +493,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetStartPosition(OH_AV
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVQueueItem_Result | AVQUEUEITEM_SUCCESS：函数执行成功。 AVQUEUEITEM_ERROR_INVALID_PARAM： 1. 参数builder为nullptr。 2. 参数startPosition是无效的。 |
@@ -458,9 +501,10 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetStartPosition(OH_AV
  
   
 
-#### OH_AVSession_AVMediaDescriptionBuilder_SetMediaSize()
+### OH_AVSession_AVMediaDescriptionBuilder_SetMediaSize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetMediaSize(OH_AVSession_AVMediaDescriptionBuilder* builder, const int32_t mediaSize)
@@ -474,6 +518,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetMediaSize(OH_AVSess
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession_AVMediaDescriptionBuilder* builder | 表示音视频媒体描述构建器实例指针。 |
@@ -482,6 +527,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetMediaSize(OH_AVSess
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVQueueItem_Result | AVQUEUEITEM_SUCCESS：函数执行成功。 AVQUEUEITEM_ERROR_INVALID_PARAM： 1. 参数builder为nullptr。 2. 参数mediaSize是无效的。 |
@@ -489,9 +535,10 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetMediaSize(OH_AVSess
  
   
 
-#### OH_AVSession_AVMediaDescriptionBuilder_SetAlbumTitle()
+### OH_AVSession_AVMediaDescriptionBuilder_SetAlbumTitle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetAlbumTitle(OH_AVSession_AVMediaDescriptionBuilder* builder, const char* albumTitle)
@@ -505,6 +552,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetAlbumTitle(OH_AVSes
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession_AVMediaDescriptionBuilder* builder | 表示音视频媒体描述构建器实例指针。 |
@@ -513,6 +561,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetAlbumTitle(OH_AVSes
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVQueueItem_Result | AVQUEUEITEM_SUCCESS：函数执行成功。 AVQUEUEITEM_ERROR_INVALID_PARAM： 1. 参数builder为nullptr。 2. 参数albumTitle为nullptr。 |
@@ -520,9 +569,10 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetAlbumTitle(OH_AVSes
  
   
 
-#### OH_AVSession_AVMediaDescriptionBuilder_SetAppName()
+### OH_AVSession_AVMediaDescriptionBuilder_SetAppName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetAppName(OH_AVSession_AVMediaDescriptionBuilder* builder, const char* appName)
@@ -536,6 +586,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetAppName(OH_AVSessio
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession_AVMediaDescriptionBuilder* builder | 表示音视频媒体描述构建器实例指针。 |
@@ -544,6 +595,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetAppName(OH_AVSessio
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVQueueItem_Result | AVQUEUEITEM_SUCCESS：函数执行成功。 AVQUEUEITEM_ERROR_INVALID_PARAM： 1. 参数builder为nullptr。 2. 参数appName为nullptr。 |
@@ -551,9 +603,10 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetAppName(OH_AVSessio
  
   
 
-#### OH_AVSession_AVMediaDescription_GetAssetId()
+### OH_AVSession_AVMediaDescription_GetAssetId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVQueueItem_Result OH_AVSession_AVMediaDescription_GetAssetId(OH_AVSession_AVMediaDescription* description, char** assetId)
@@ -567,6 +620,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_GetAssetId(OH_AVSession_AVMed
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession_AVMediaDescription* description | 表示音视频媒体描述实例指针。 |
@@ -575,6 +629,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_GetAssetId(OH_AVSession_AVMed
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVQueueItem_Result | AVQUEUEITEM_SUCCESS：函数执行成功。 AVQUEUEITEM_ERROR_INVALID_PARAM： 1. 参数description为nullptr。 2. 参数assetId为nullptr。 |
@@ -582,9 +637,10 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_GetAssetId(OH_AVSession_AVMed
  
   
 
-#### OH_AVSession_AVMediaDescription_GetTitle()
+### OH_AVSession_AVMediaDescription_GetTitle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVQueueItem_Result OH_AVSession_AVMediaDescription_GetTitle(OH_AVSession_AVMediaDescription* description, char** title)
@@ -598,6 +654,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_GetTitle(OH_AVSession_AVMedia
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession_AVMediaDescription* description | 表示音视频媒体描述实例指针。 |
@@ -606,6 +663,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_GetTitle(OH_AVSession_AVMedia
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVQueueItem_Result | AVQUEUEITEM_SUCCESS：函数执行成功。 AVQUEUEITEM_ERROR_INVALID_PARAM： 1. 参数description为nullptr。 2. 参数title为nullptr。 |
@@ -613,9 +671,10 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_GetTitle(OH_AVSession_AVMedia
  
   
 
-#### OH_AVSession_AVMediaDescription_GetSubtitle()
+### OH_AVSession_AVMediaDescription_GetSubtitle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVQueueItem_Result OH_AVSession_AVMediaDescription_GetSubtitle(OH_AVSession_AVMediaDescription* description, char** subtitle)
@@ -629,6 +688,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_GetSubtitle(OH_AVSession_AVMe
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession_AVMediaDescription* description | 表示音视频媒体描述实例指针。 |
@@ -637,6 +697,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_GetSubtitle(OH_AVSession_AVMe
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVQueueItem_Result | AVQUEUEITEM_SUCCESS：函数执行成功。 AVQUEUEITEM_ERROR_INVALID_PARAM： 1. 参数description为nullptr。 2. 参数subtitle为nullptr。 |
@@ -644,9 +705,10 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_GetSubtitle(OH_AVSession_AVMe
  
   
 
-#### OH_AVSession_AVMediaDescription_GetArtist()
+### OH_AVSession_AVMediaDescription_GetArtist()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVQueueItem_Result OH_AVSession_AVMediaDescription_GetArtist(OH_AVSession_AVMediaDescription* description, char** artist)
@@ -660,6 +722,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_GetArtist(OH_AVSession_AVMedi
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession_AVMediaDescription* description | 表示音视频媒体描述实例指针。 |
@@ -668,6 +731,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_GetArtist(OH_AVSession_AVMedi
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVQueueItem_Result | AVQUEUEITEM_SUCCESS：函数执行成功。 AVQUEUEITEM_ERROR_INVALID_PARAM： 1. 参数description为nullptr。 2. 参数artist为nullptr。 |
@@ -675,9 +739,10 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_GetArtist(OH_AVSession_AVMedi
  
   
 
-#### OH_AVSession_AVMediaDescription_GetAlbumCoverUri()
+### OH_AVSession_AVMediaDescription_GetAlbumCoverUri()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVQueueItem_Result OH_AVSession_AVMediaDescription_GetAlbumCoverUri(OH_AVSession_AVMediaDescription* description, char** albumCoverUri)
@@ -691,6 +756,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_GetAlbumCoverUri(OH_AVSession
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession_AVMediaDescription* description | 表示音视频媒体描述实例指针。 |
@@ -699,6 +765,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_GetAlbumCoverUri(OH_AVSession
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVQueueItem_Result | AVQUEUEITEM_SUCCESS：函数执行成功。 AVQUEUEITEM_ERROR_INVALID_PARAM： 1. 参数description为nullptr。 2. 参数albumCoverUri为nullptr。 |
@@ -706,9 +773,10 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_GetAlbumCoverUri(OH_AVSession
  
   
 
-#### OH_AVSession_AVMediaDescription_GetMediaType()
+### OH_AVSession_AVMediaDescription_GetMediaType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVQueueItem_Result OH_AVSession_AVMediaDescription_GetMediaType(OH_AVSession_AVMediaDescription* description, char** mediaType)
@@ -722,6 +790,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_GetMediaType(OH_AVSession_AVM
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession_AVMediaDescription* description | 表示音视频媒体描述实例指针。 |
@@ -730,6 +799,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_GetMediaType(OH_AVSession_AVM
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVQueueItem_Result | AVQUEUEITEM_SUCCESS：函数执行成功。 AVQUEUEITEM_ERROR_INVALID_PARAM： 1. 参数description为nullptr。 2. 参数mediaType为nullptr。 |
@@ -737,9 +807,10 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_GetMediaType(OH_AVSession_AVM
  
   
 
-#### OH_AVSession_AVMediaDescription_GetLyricContent()
+### OH_AVSession_AVMediaDescription_GetLyricContent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVQueueItem_Result OH_AVSession_AVMediaDescription_GetLyricContent(OH_AVSession_AVMediaDescription* description, char** lyricContent)
@@ -753,6 +824,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_GetLyricContent(OH_AVSession_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession_AVMediaDescription* description | 表示音视频媒体描述实例指针。 |
@@ -761,6 +833,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_GetLyricContent(OH_AVSession_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVQueueItem_Result | AVQUEUEITEM_SUCCESS：函数执行成功。 AVQUEUEITEM_ERROR_INVALID_PARAM： 1. 参数description为nullptr。 2. 参数lyricContent为nullptr。 |
@@ -768,9 +841,10 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_GetLyricContent(OH_AVSession_
  
   
 
-#### OH_AVSession_AVMediaDescription_GetDuration()
+### OH_AVSession_AVMediaDescription_GetDuration()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVQueueItem_Result OH_AVSession_AVMediaDescription_GetDuration(OH_AVSession_AVMediaDescription* description, int32_t* duration)
@@ -784,14 +858,16 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_GetDuration(OH_AVSession_AVMe
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession_AVMediaDescription* description | 表示音视频媒体描述实例指针。 |
-| int32_t* duration | 指针变量将返回当前媒体资源的总时长。 |
+| int32_t* duration | 指针变量将返回当前媒体资源的总时长。单位为毫秒（ms）。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVQueueItem_Result | AVQUEUEITEM_SUCCESS：函数执行成功。 AVQUEUEITEM_ERROR_INVALID_PARAM： 1. 参数description为nullptr。 2. 参数duration为nullptr。 |
@@ -799,9 +875,10 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_GetDuration(OH_AVSession_AVMe
  
   
 
-#### OH_AVSession_AVMediaDescription_GetMediaUri()
+### OH_AVSession_AVMediaDescription_GetMediaUri()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVQueueItem_Result OH_AVSession_AVMediaDescription_GetMediaUri(OH_AVSession_AVMediaDescription* description, char** mediaUri)
@@ -815,6 +892,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_GetMediaUri(OH_AVSession_AVMe
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession_AVMediaDescription* description | 表示音视频媒体描述实例指针。 |
@@ -823,6 +901,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_GetMediaUri(OH_AVSession_AVMe
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVQueueItem_Result | AVQUEUEITEM_SUCCESS：函数执行成功。 AVQUEUEITEM_ERROR_INVALID_PARAM： 1. 参数description为nullptr。 2. 参数mediaUri为nullptr。 |
@@ -830,9 +909,10 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_GetMediaUri(OH_AVSession_AVMe
  
   
 
-#### OH_AVSession_AVMediaDescription_GetStartPosition()
+### OH_AVSession_AVMediaDescription_GetStartPosition()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVQueueItem_Result OH_AVSession_AVMediaDescription_GetStartPosition(OH_AVSession_AVMediaDescription* description, int32_t* startPosition)
@@ -846,14 +926,16 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_GetStartPosition(OH_AVSession
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession_AVMediaDescription* description | 表示音视频媒体描述实例指针。 |
-| int32_t* startPosition | 指针变量将返回当前媒体资源开始的位置。 |
+| int32_t* startPosition | 指针变量将返回当前媒体资源开始的位置。单位为毫秒（ms）。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVQueueItem_Result | AVQUEUEITEM_SUCCESS：函数执行成功。 AVQUEUEITEM_ERROR_INVALID_PARAM： 1. 参数description为nullptr。 2. 参数startPosition为nullptr。 |
@@ -861,9 +943,10 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_GetStartPosition(OH_AVSession
  
   
 
-#### OH_AVSession_AVMediaDescription_GetMediaSize()
+### OH_AVSession_AVMediaDescription_GetMediaSize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVQueueItem_Result OH_AVSession_AVMediaDescription_GetMediaSize(OH_AVSession_AVMediaDescription* description, int32_t* mediaSize)
@@ -877,6 +960,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_GetMediaSize(OH_AVSession_AVM
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession_AVMediaDescription* description | 表示音视频媒体描述实例指针。 |
@@ -885,6 +969,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_GetMediaSize(OH_AVSession_AVM
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVQueueItem_Result | AVQUEUEITEM_SUCCESS：函数执行成功。 AVQUEUEITEM_ERROR_INVALID_PARAM： 1. 参数description为nullptr。 2. 参数mediaSize为nullptr。 |
@@ -892,9 +977,10 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_GetMediaSize(OH_AVSession_AVM
  
   
 
-#### OH_AVSession_AVMediaDescription_GetAlbumTitle()
+### OH_AVSession_AVMediaDescription_GetAlbumTitle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVQueueItem_Result OH_AVSession_AVMediaDescription_GetAlbumTitle(OH_AVSession_AVMediaDescription* description, char** albumTitle)
@@ -908,6 +994,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_GetAlbumTitle(OH_AVSession_AV
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession_AVMediaDescription* description | 表示音视频媒体描述实例指针。 |
@@ -916,6 +1003,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_GetAlbumTitle(OH_AVSession_AV
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVQueueItem_Result | AVQUEUEITEM_SUCCESS：函数执行成功。 AVQUEUEITEM_ERROR_INVALID_PARAM： 1. 参数description为nullptr。 2. 参数albumTitle为nullptr。 |
@@ -923,9 +1011,10 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_GetAlbumTitle(OH_AVSession_AV
  
   
 
-#### OH_AVSession_AVMediaDescription_GetAppName()
+### OH_AVSession_AVMediaDescription_GetAppName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVQueueItem_Result OH_AVSession_AVMediaDescription_GetAppName(OH_AVSession_AVMediaDescription* description, char** appName)
@@ -939,6 +1028,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_GetAppName(OH_AVSession_AVMed
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession_AVMediaDescription* description | 表示音视频媒体描述实例指针。 |
@@ -947,6 +1037,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_GetAppName(OH_AVSession_AVMed
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVQueueItem_Result | AVQUEUEITEM_SUCCESS：函数执行成功。 AVQUEUEITEM_ERROR_INVALID_PARAM： 1. 参数description为nullptr。 2. 参数appName为nullptr。 |
@@ -954,9 +1045,10 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_GetAppName(OH_AVSession_AVMed
  
   
 
-#### OH_AVSession_AVMediaDescriptionBuilder_GenerateAVMediaDescription()
+### OH_AVSession_AVMediaDescriptionBuilder_GenerateAVMediaDescription()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_GenerateAVMediaDescription(OH_AVSession_AVMediaDescriptionBuilder* builder, OH_AVSession_AVMediaDescription** avMediaDescription)
@@ -964,12 +1056,13 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_GenerateAVMediaDescrip
  
 **描述**
  
-创建avMediaDescription对象。当该对象不再使用时，调用[OH_AVSession_AVMediaDescription_Destroy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avqueueitem-h#oh_avsession_avmediadescription_destroy)释放avMediaDescription对象。
+创建avMediaDescription对象。当该对象不再使用时，调用[OH_AVSession_AVMediaDescription_Destroy](#oh_avsession_avmediadescription_destroy)释放avMediaDescription对象。
  
 **起始版本：** 23
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession_AVMediaDescriptionBuilder* builder | 表示音视频媒体描述构建器实例指针。 |
@@ -978,6 +1071,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_GenerateAVMediaDescrip
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVQueueItem_Result | AVQUEUEITEM_SUCCESS：函数执行成功。 AVQUEUEITEM_ERROR_NO_MEMORY：内存不足。 AVQUEUEITEM_ERROR_INVALID_PARAM： 1. 参数builder为nullptr。 2. 参数avMediaDescription为nullptr。 |
@@ -985,9 +1079,10 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_GenerateAVMediaDescrip
  
   
 
-#### OH_AVSession_AVMediaDescription_Destroy()
+### OH_AVSession_AVMediaDescription_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVQueueItem_Result OH_AVSession_AVMediaDescription_Destroy(OH_AVSession_AVMediaDescription* avMediaDescription)
@@ -1001,6 +1096,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_Destroy(OH_AVSession_AVMediaD
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession_AVMediaDescription* avMediaDescription | 指向要释放的avMediaDescription对象。 |
@@ -1008,6 +1104,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescription_Destroy(OH_AVSession_AVMediaD
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVQueueItem_Result | AVQUEUEITEM_SUCCESS：函数执行成功。 AVQUEUEITEM_ERROR_INVALID_PARAM：参数avMediaDescription为nullptr。 |

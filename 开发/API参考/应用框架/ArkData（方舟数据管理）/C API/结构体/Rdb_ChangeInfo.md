@@ -1,18 +1,19 @@
 # Rdb_ChangeInfo
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-rdb-rdb-changeinfo
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct Rdb_ChangeInfo {...} Rdb_ChangeInfo
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 记录端云同步过程详情。
  
@@ -24,21 +25,24 @@ typedef struct Rdb_ChangeInfo {...} Rdb_ChangeInfo
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 成员变量
+### 成员变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | int version | 用于唯一标识Rdb_ChangeInfo结构体的版本。 |
 | const char* tableName | 表示发生变化的表的名称。 |
-| int ChangeType | 表示发生变化的数据的类型，数据或者资产附件发生变化。 |
+| int ChangeType | 表示发生变化的数据的类型。0表示数据发生变化，1表示资产附件发生变化。 |
 | Rdb_KeyInfo inserted | 记录插入数据的位置，如果该表的主键是string类型，该值是主键的值，否则该值表示插入数据的行号。 |
 | Rdb_KeyInfo updated | 记录更新数据的位置，如果该表的主键是string类型，该值是主键的值，否则该值表示更新数据的行号。 |
 | Rdb_KeyInfo deleted | 记录删除数据的位置，如果该表的主键是string类型，该值是主键的值，否则该值表示删除数据的行号。 |

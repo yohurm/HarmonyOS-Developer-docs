@@ -1,16 +1,16 @@
 # UI测试框架使用指导
 
-更新时间：2026-08-04 01:38:00
+更新时间：2026-08-29 09:41:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uitest-guidelines
 
-#### 概述
+## 概述
 
 UI测试框架（UITest）为开发者提供UI界面查找和模拟操作能力，可覆盖UI自动化测试的关键场景，包括界面控件精准查找、UI交互操作（如点击、滑动、文本输入等）、外设行为模拟（如键盘输入、鼠标操作、触控板手势、手写笔动作等），助力开发者开发高效可靠的界面自动化测试用例。
  
   
 
-#### 功能全景
+## 功能全景
 
 UITest支持采用ArkTS API与命令行两种方式，为界面自动化测试提供灵活高效的技术支撑，其中：
  
@@ -40,7 +40,7 @@ UITest分为客户端和服务端。
  
   
 
-#### 使用ArkTS接口进行UI测试
+## 使用ArkTS接口进行UI测试
 
 本章节介绍UI测试框架ArkTS API的具体使用方法。
  
@@ -48,7 +48,7 @@ UI测试是在[单元测试](https://developer.huawei.com/consumer/cn/doc/harmon
  
   
 
-#### UI测试示例
+### UI测试示例
 
 下面提供一个UI测试的简单示例，介绍如何在单元测试脚本基础上进行UI测试的增量开发，具体实现功能如下：
  1. 调用[程序框架服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-abilitydelegator)能力，启动目标被测应用，并确认应用运行状态。
@@ -137,7 +137,7 @@ export default function abilityTest() {
  
   
 
-#### 控件查找与操作
+### 控件查找与操作
 
 UITest支持[依据多种属性构造匹配器](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-uitest#on9)进行控件查找；支持查找当前页面符合匹配条件的单个或多个目标控件，并返回控件对象；支持在滚动组件内部进行滚动查找目标控件；支持[对控件对象进行操作或获取控件的属性信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-uitest#component9)。
  
@@ -170,7 +170,7 @@ export default function abilityTest() {
     })
 
     /**
-     * 查找类型为'Image'的控件，并进行对其进行双指放大操作
+     * 查找类型为'Image'的控件，并对其进行双指放大操作
      */
     it('componentPinch', TestType.FUNCTION, async () => {
       let driver: Driver = Driver.create();
@@ -183,7 +183,7 @@ export default function abilityTest() {
  
   
 
-#### 模拟触摸屏手指操作
+### 模拟触摸屏手指操作
 
 UITest支持模拟包括点击、双击、长按、滑动、拖拽、多指操作等事件。
  
@@ -231,7 +231,7 @@ export default function abilityTest() {
  
   
 
-#### 页面加载等待
+### 页面加载等待
 
 在与页面进行交互后，可通过在指定时间内等待某控件的出现或等待页面空闲来判断页面跳转是否完成。
  
@@ -266,7 +266,7 @@ export default function abilityTest() {
  
   
 
-#### 模拟文本输入
+### 模拟文本输入
 
 UITest支持向指定坐标点或指定控件输入文本内容，同时支持[指定输入方式](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-uitest#inputtextmode20)：输入文本时是否以复制粘贴方式输入、是否以追加的方式进行输入。
  
@@ -290,7 +290,7 @@ export default function abilityTest() {
     })
     /**
      * 基于控件的文本输入，指定以复制粘贴方式注入输入指定文本
-     * 指定以追加方式输入，即在输入文本签不清空原有内容
+     * 指定以追加方式输入，即在输入文本前不清空原有内容
      */
     it('componentInputTextAddition', TestType.FUNCTION, async () => {
       let driver = Driver.create();
@@ -340,7 +340,7 @@ export default function abilityTest() {
  
   
 
-#### 截图
+### 截图
 
 > [!NOTE]
 > 指定截图文件保存路径，路径需为当前应用的 沙箱路径 。 测试HAP的 APL等级级别 为normal，对应要求使用用户级加密区的应用沙箱路径。且需指定将文件保存在应用在本设备上存放持久化数据的子目录。
@@ -389,7 +389,7 @@ export default function abilityTest() {
  
   
 
-#### UI事件监听
+### UI事件监听
 
 如下给出UI界面事件的监听的示例，设置监听回调函数，监听toast、dialog等控件的出现，等待事件发生后进行下一步操作。下面代码执行前请参考UI测试示例，实现对应的Index.ets页面代码。
  
@@ -417,7 +417,7 @@ export default function abilityTest() {
  
   
 
-#### 模拟键鼠操作
+### 模拟键鼠操作
 
 如下给出键鼠模拟操作，包括键盘按键、组合键输入操作的示例，包括鼠标点击、移动、拖拽操作和键鼠组合操作等。下面代码执行前请参考UI测试示例，实现对应的Index.ets页面代码。
  
@@ -463,7 +463,7 @@ export default function abilityTest() {
  
   
 
-#### 窗口查找与操作
+### 窗口查找与操作
 
 如下给出窗口查找和操作的示例，根据窗口属性查找窗口，并进行窗口最小化等操作。下面代码执行前请参考UI测试示例，实现对应的Index.ets页面代码。
  
@@ -494,7 +494,7 @@ export default function abilityTest() {
  
   
 
-#### 模拟触摸板操作
+### 模拟触摸板操作
 
 如下给出触摸板模拟操作的示例，触摸板三指上滑返回桌面，三指下滑恢复应用窗口。下面代码执行前请参考UI测试示例，实现对应的Index.ets页面代码。
  
@@ -527,7 +527,7 @@ export default function abilityTest() {
  
   
 
-#### 模拟手写笔操作
+### 模拟手写笔操作
 
 如下给出手写笔模拟操作，包括点击、滑动等操作的示例，支持设置操作时的压力值大小。下面代码执行前请参考UI测试示例，实现对应的Index.ets页面代码。
  
@@ -556,7 +556,7 @@ export default function abilityTest() {
  
   
 
-#### 模拟表冠操作
+### 模拟表冠操作
 
 如下给出表冠模拟操作的示例，包括表冠的顺/逆时针旋转。下面代码执行前请参考UI测试示例，实现对应的Index.ets页面代码。
  
@@ -589,7 +589,7 @@ export default function abilityTest() {
  
   
 
-#### 屏幕显示操作
+### 屏幕显示操作
 
 如下给出屏幕显示操作的示例，包括获取屏幕大小、分辨率等属性和屏幕唤醒、屏幕旋转等操作。下面代码执行前请参考UI测试示例，实现对应的Index.ets页面代码。
  
@@ -618,20 +618,21 @@ export default function abilityTest() {
  
   
 
-#### 基于命令行进行UI测试
+## 基于命令行进行UI测试
 
 在开发阶段，如果需要快速执行截图、界面操作录制、UI模拟操作注入、控件树获取等测试相关操作，可借助命令行实现，提升测试效率。
  
   
 
-#### 环境要求
+### 环境要求
 
 根据hdc命令行工具指导，完成[环境准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hdc#环境准备)。确保设备已成功连接，并执行hdc shell。
  
   
 
-#### 命令列表
+### 命令列表
  
+
 | 命令 | 参数 | 说明 |
 | --- | --- | --- |
 | help | - | 显示UITest工具能够支持的命令信息。 |
@@ -645,12 +646,13 @@ export default function abilityTest() {
  
   
 
-#### 获取截图
+### 获取截图
  
+
 | 参数 | 二级参数 | 说明 |
 | --- | --- | --- |
 | -p | &lt;savePath&gt; | 指定存储路径和文件名，只支持存放在'/data/local/tmp/'下。默认存储路径：'/data/local/tmp'，文件名：'时间戳 + .png'。 |
-| -d | &lt;displayId&gt; | 多屏场景下，获取指定ID屏幕下的截图。 说明： 从API version 20开始支持该命令。 |
+| -d | &lt;displayId&gt; | 多屏场景下，获取指定ID屏幕下的截图。未指定该参数时，默认获取displayId为0的屏幕下的截图。 说明： 从API version 20开始支持该命令。 |
  
  
 ```bash
@@ -662,17 +664,18 @@ hdc shell uitest screenCap -p /data/local/tmp/1.png
  
   
 
-#### 获取控件树
+### 获取控件树
  
+
 | 参数 | 二级参数 | 说明 |
 | --- | --- | --- |
 | -p | &lt;savePath&gt; | 指定存储路径和文件名，只支持存放在'/data/local/tmp/'下。默认存储路径：'/data/local/tmp'，文件名：'时间戳 + .json'。 |
 | -i | - | 不过滤不可见控件，也不做窗口合并。 |
 | -a | - | 保存控件的BackgroundColor、Content、FontColor、FontSize、extraAttrs属性数据。 说明 ：默认不保存上述属性数据， -a和-i不可同时使用。 |
 | -b | &lt;bundleName&gt; | 获取指定包名对应目标窗口的控件树信息。 |
-| -w | &lt;windowId&gt; | 获取指定ID目标窗口的控件树信息。 说明： 可通过hidumper工具获取应用窗口信息, 包含应用对应窗口的id。 |
+| -w | &lt;windowId&gt; | 获取指定ID目标窗口的控件树信息。 说明： 可通过hidumper工具获取应用窗口信息，包含应用对应窗口的id。 |
 | -m | <true\|false> | 指定在获取控件树信息时是否合并窗口信息。true表示合并窗口信息，false表示不合并窗口信息，不设置时默认为true。 |
-| -d | &lt;displayId&gt; | 多屏场景下，获取指定ID屏幕下的控件树。 说明： 1. 从API version 20开始支持该命令。 2. 可通过hidumper工具获取应用窗口信息，包含应用对应窗口的DisplayId。 |
+| -d | &lt;displayId&gt; | 多屏场景下，获取指定ID屏幕下的控件树。未指定该参数时，默认获取displayId为0的屏幕下的控件树。 说明： 1. 从API version 20开始支持该命令。 2. 可通过hidumper工具获取应用窗口信息，包含应用对应窗口的DisplayId。 |
  
  
 ```json
@@ -682,7 +685,7 @@ hdc shell uitest dumpLayout -p /data/local/tmp/1.json
  
   
 
-#### 录制界面操作
+### 录制界面操作
 
 > [!NOTE]
 > 录制过程中，需等待当前操作的识别结果在命令行输出后，再进行下一步操作。
@@ -690,6 +693,7 @@ hdc shell uitest dumpLayout -p /data/local/tmp/1.json
  
 **参数列表**
   
+
 | 参数 | 二级参数 | 说明 |
 | --- | --- | --- |
 | -W | <true/false> | 录制过程中是否保存操作坐标对应的控件信息到/data/local/tmp/record.csv文件中。true表示保存控件信息，false表示仅记录坐标信息，不设置时默认为true。 说明： 从API version 20开始支持该命令。 |
@@ -729,12 +733,12 @@ hdc shell uitest uiRecord read
     "LENGTH": "0", // 总体步长
     "MAX_VEL": "40000", // 最大速度
     "VELO": "0.000000", // 离手速度
-    "W1_BOUNDS": "{"bottom":361,"left":37,"right":118,"top":280}", // 起点控件边界
+    "W1_BOUNDS": "{\"bottom\":361,\"left\":37,\"right\":118,\"top\":280}", // 起点控件边界
     "W1_HIER": "ROOT,3,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0", // 起点控件页面层级
     "W1_ID": "", // 起点控件id
     "W1_Text": "", // 起点控件text
     "W1_Type": "Image", // 起点控件类型
-    "W2_BOUNDS": "{"bottom":361,"left":37,"right":118,"top":280}", // 终点控件边界
+    "W2_BOUNDS": "{\"bottom\":361,\"left\":37,\"right\":118,\"top\":280}", // 终点控件边界
     "W2_HIER": "ROOT,3,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0", // 终点控件页面层级
     "W2_ID": "", // 终点控件id
     "W2_Text": "", // 终点控件text
@@ -752,8 +756,9 @@ hdc shell uitest uiRecord read
  
   
 
-#### 注入UI模拟操作
+### 注入UI模拟操作
  
+
 | 参数 | 说明 |
 | --- | --- |
 | help | uiInput命令相关帮助信息。 |
@@ -772,6 +777,7 @@ hdc shell uitest uiRecord read
 - uiInput-click/doubleClick/longClick使用示例
 
   
+
 | 参数 | 必填 | 说明 |
 | --- | --- | --- |
 | point_x | 是 | 点击x坐标点。 |
@@ -792,6 +798,7 @@ hdc shell uitest uiInput longClick 100 100
 - uiInput fling使用示例
 
   
+
 | 参数 | 必填 | 说明 |
 | --- | --- | --- |
 | from_x | 是 | 滑动起点x坐标。 |
@@ -810,6 +817,7 @@ hdc shell uitest uiInput fling 10 10 200 200 500
 - uiInput swipe/drag使用示例
 
   
+
 | 参数 | 必填 | 说明 |
 | --- | --- | --- |
 | from_x | 是 | 滑动起点x坐标。 |
@@ -830,6 +838,7 @@ hdc shell uitest uiInput drag 10 10 100 100 500
 - uiInput dircFling使用示例
 
   
+
 | 参数 | 必填 | 说明 |
 | --- | --- | --- |
 | direction | 否 | 滑动方向，取值范围：[0,1,2,3]，默认值为0。 0代表向左滑动，1代表向右滑动，2代表向上滑动，3代表向下滑动。 |
@@ -851,6 +860,7 @@ hdc shell uitest uiInput dircFling 3
 - uiInput inputText使用示例
 
   
+
 | 参数 | 必填 | 说明 |
 | --- | --- | --- |
 | point_x | 是 | 输入框x坐标点。 |
@@ -866,6 +876,7 @@ hdc shell uitest uiInput inputText 100 100 hello
 - uiInput text使用示例
 
   
+
 | 参数 | 必填 | 说明 |
 | --- | --- | --- |
 | text | 是 | 输入文本内容。 |
@@ -879,6 +890,7 @@ hdc shell uitest uiInput text hello
 - uiInput keyEvent使用示例
 
   
+
 | 参数 | 必填 | 说明 |
 | --- | --- | --- |
 | keyID1 | 是 | 实体按键对应ID，取值范围：Back、Home、Power、或KeyCode键码值。 当取值为Back、Home或Power时，不支持输入组合键。 当前注入大写锁定键（KeyCode=2074）无效，请使用组合键实现大写字母输入。如“按键shift+按键V”输入大写字母V。 |
@@ -901,7 +913,7 @@ hdc shell uitest uiInput keyEvent 2047 2038
  
   
 
-#### 获取版本信息
+### 获取版本信息
 
 ```bash
 hdc shell uitest --version
@@ -909,7 +921,7 @@ hdc shell uitest --version
  
   
 
-#### 拉起UITest测试进程
+### 拉起UITest测试进程
 
 > [!NOTE]
 > 仅元能力aa test拉起的测试HAP才能调用UITest的能力，且测试HAP的 APL等级级别 需为normal。
@@ -921,11 +933,11 @@ hdc shell uitest start-daemon
  
   
 
-#### 常见问题
+## 常见问题
 
   
 
-#### 失败日志有“uitest-api does not allow calling concurrently”错误信息
+### 失败日志有“uitest-api does not allow calling concurrently”错误信息
 
 **问题描述**
  
@@ -941,7 +953,7 @@ UI测试用例执行失败，查看hilog日志发现日志中有“uitest-api do
  
   
 
-#### 失败日志有“does not exist on current UI! Check if the UI has changed after you got the widget object”错误信息
+### 失败日志有“does not exist on current UI! Check if the UI has changed after you got the widget object”错误信息
 
 **问题描述**
  
@@ -957,7 +969,7 @@ UI测试用例执行失败，查看hilog日志发现日志中有“does not exis
  
   
 
-#### 失败日志有“Cannot connect to AAMS, RET_ERR_CONNECTION_EXIST”错误信息
+### 失败日志有“Cannot connect to AAMS, RET_ERR_CONNECTION_EXIST”错误信息
 
 **问题描述**
  

@@ -1,6 +1,6 @@
 # SafetyDetect（安全检测）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesecurity-safetydetectenhanced-api
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
@@ -10,7 +10,8 @@
 **起始版本：** 5.0.0(12)
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -20,7 +21,8 @@ import { safetyDetect } from '@kit.DeviceSecurityKit';
 
 
 
-#### SysIntegrityRequest
+## SysIntegrityRequest
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -34,6 +36,7 @@ import { safetyDetect } from '@kit.DeviceSecurityKit';
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | nonce | string | 否 | 否 | 开发者应用传入的一个随机生成的nonce值，用于防重放攻击，每个请求应具有唯一性，在检测结果中会包含该值。nonce必须是长度16至66字节之间，有效值为base64编码范围。 |
@@ -41,7 +44,8 @@ import { safetyDetect } from '@kit.DeviceSecurityKit';
 
 
 
-#### SysIntegrityResponse
+## SysIntegrityResponse
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -55,6 +59,7 @@ import { safetyDetect } from '@kit.DeviceSecurityKit';
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | result | string | 否 | 否 | JWS格式的系统完整性检测结果。JWS内容详见系统完整性检测开发步骤。 |
@@ -62,7 +67,8 @@ import { safetyDetect } from '@kit.DeviceSecurityKit';
 
 
 
-#### UrlCheckRequest
+## UrlCheckRequest
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -76,6 +82,7 @@ URL检测请求参数。
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | urls | Array&lt;string&gt; | 否 | 否 | 被检测的URL列表。URL数量最多10个并且每个URL长度不大于4096字节。 |
@@ -83,7 +90,8 @@ URL检测请求参数。
 
 
 
-#### UrlCheckResponse
+## UrlCheckResponse
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -97,6 +105,7 @@ URL检测返回值。
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | results | Array&lt;UrlCheckResult&gt; | 否 | 否 | URL检测返回的检测结果。每个结果包含被检查的URL及其威胁类型。 |
@@ -104,7 +113,8 @@ URL检测返回值。
 
 
 
-#### UrlCheckResult
+## UrlCheckResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -118,6 +128,7 @@ URL检测结果详情。
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | url | string | 否 | 否 | 对应到输入参数中被检测的URL。 |
@@ -126,7 +137,8 @@ URL检测结果详情。
 
 
 
-#### UrlThreatType
+## UrlThreatType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -140,6 +152,7 @@ URL检测结果详情。
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NORMAL | 0 | 未发现威胁。 |
@@ -150,7 +163,8 @@ URL检测结果详情。
 
 
 
-#### safetyDetect.checkSysIntegrity
+## safetyDetect.checkSysIntegrity
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -159,7 +173,7 @@ checkSysIntegrity(req: SysIntegrityRequest): Promise&lt;SysIntegrityResponse&gt;
 获取本设备的系统完整性的在线检测结果。使用Promise异步回调。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/VDRTZ4B6TrOYixYph6TndA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071610Z&HW-CC-Expire=86400&HW-CC-Sign=92CED557E4C70719F8B35C3A30E45A4363D1B6AAF82B509CBFB8142C3EFF7115)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/JLRbTrCBQ-i6E0GE0Alkaw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072732Z&HW-CC-Expire=86400&HW-CC-Sign=8A74CEBE84F6BF4170D56867F15C16E4E21260D7E86204CC71C398720F16348F)
 
 
 该接口涉及端云协同，需要联网等耗时操作，因此不要在UI线程中执行，避免阻塞UI线程。
@@ -176,12 +190,14 @@ checkSysIntegrity(req: SysIntegrityRequest): Promise&lt;SysIntegrityResponse&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | req | SysIntegrityRequest | 是 | 请求参数，包含nonce。 nonce长度必须16至66字节之间，有效值为base64编码范围。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -191,6 +207,7 @@ checkSysIntegrity(req: SysIntegrityRequest): Promise&lt;SysIntegrityResponse&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-safetydetect)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -231,7 +248,8 @@ try {
 
 
 
-#### safetyDetect.checkUrlThreat
+## safetyDetect.checkUrlThreat
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -240,7 +258,7 @@ checkUrlThreat(req: UrlCheckRequest): Promise&lt;UrlCheckResponse&gt;
 检测URL是否为恶意网址。使用Promise异步回调。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/5bLc_lmrTyiSpGk3fUbmbQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071610Z&HW-CC-Expire=86400&HW-CC-Sign=61F1FFDB998AA6BB7F41F0EA74C17C9A64BF2E53BCF2B2440FB781D03ACE243C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/0gpNWPSGQ_eyO5EXwDUg1w/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072732Z&HW-CC-Expire=86400&HW-CC-Sign=193E4C1CF73784210019818F3C54DFE664915F4A5F96252132ECE46A46AF0A34)
 
 
 该接口涉及端云协同，需要联网等耗时操作，因此不要在UI线程中执行，避免阻塞UI线程。
@@ -257,12 +275,14 @@ checkUrlThreat(req: UrlCheckRequest): Promise&lt;UrlCheckResponse&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | req | UrlCheckRequest | 是 | 请求参数，包含被检测的URL列表。 传入的URL数量最多10个并且每个URL长度不大于4096字节。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -272,6 +292,7 @@ checkUrlThreat(req: UrlCheckRequest): Promise&lt;UrlCheckResponse&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-safetydetect)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -312,7 +333,8 @@ try {
 
 
 
-#### safetyDetect.checkSysIntegrityOnLocal
+## safetyDetect.checkSysIntegrityOnLocal
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -330,12 +352,14 @@ checkSysIntegrityOnLocal(): Promise&lt;string&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回JSON格式的本地系统完整性检测结果，格式详见本地系统完整性检测结果JSON结构说明。 |
 
 
 **本地系统完整性检测结果JSON结构说明：**
+
 
 | 字段名 | 类型 | 说明 |
 | --- | --- | --- |
@@ -344,6 +368,7 @@ checkSysIntegrityOnLocal(): Promise&lt;string&gt;
 
 
 **detail字段取值说明：**
+
 
 | 值 | 说明 |
 | --- | --- |
@@ -369,6 +394,7 @@ checkSysIntegrityOnLocal(): Promise&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-safetydetect)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -402,7 +428,8 @@ try {
 
 
 
-#### safetyDetect.checkSysIntegrityEnhanced
+## safetyDetect.checkSysIntegrityEnhanced
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -411,7 +438,7 @@ checkSysIntegrityEnhanced(req: SysIntegrityRequest): Promise&lt;SysIntegrityResp
 获取本设备的系统完整性的在线增强检测结果。使用Promise异步回调。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/P3IGoQXhTB-kTfaNKBDtxg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071610Z&HW-CC-Expire=86400&HW-CC-Sign=E5D4687578A05FBCBDC6BD4716C9478BB4A7565CCA75A9D5518E3B7337C4BD67)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/UtuVR_z8TlmZUdW00cPE1w/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072732Z&HW-CC-Expire=86400&HW-CC-Sign=DDDFBE5D009519E57A448B1E1FE46418527091D80C48830864CA3E75CF1DC1D7)
 
 
 该接口涉及端云协同，需要联网等耗时操作，因此不要在UI线程中执行，避免阻塞UI线程。
@@ -428,12 +455,14 @@ checkSysIntegrityEnhanced(req: SysIntegrityRequest): Promise&lt;SysIntegrityResp
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | req | SysIntegrityRequest | 是 | 请求参数，包含nonce。 nonce长度必须16至66字节之间，有效值为base64编码范围。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -443,6 +472,7 @@ checkSysIntegrityEnhanced(req: SysIntegrityRequest): Promise&lt;SysIntegrityResp
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-safetydetect)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -482,9 +512,10 @@ try {
 
 
 
-#### RiskFactorType
+## RiskFactorType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 枚举风险因子类型。
 
@@ -497,6 +528,7 @@ try {
 **设备行为差异：** 本接口实际支持的设备类型范围（Phone、PC/2in1、Tablet）小于其所属系统能力支持的设备类型范围（Phone、PC/2in1、Tablet、Wearable）。因设备能力受限，该接口在Wearable设备中调用将返回801错误码。
 
 **起始版本：** 26.0.0
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -517,9 +549,10 @@ try {
 
 
 
-#### RiskFactorRequest
+## RiskFactorRequest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 风险因子查询请求参数。
 
@@ -533,6 +566,7 @@ try {
 
 **起始版本：** 26.0.0
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | nonce | string | 否 | 否 | 开发者应用传入的一个随机生成的nonce值，用于防重放攻击，每个请求应具有唯一性，在检测结果中会包含该值。nonce必须是长度16至66字节之间，有效值为base64编码范围。 |
@@ -541,9 +575,10 @@ try {
 
 
 
-#### FactorQuery
+## FactorQuery
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 风险因子查询项。
 
@@ -557,6 +592,7 @@ try {
 
 **起始版本：** 26.0.0
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | factor | RiskFactorType | 否 | 否 | 要查询的风险因子类型。 |
@@ -564,9 +600,10 @@ try {
 
 
 
-#### RiskFactorResponse
+## RiskFactorResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 风险因子查询返回值。
 
@@ -580,6 +617,7 @@ try {
 
 **起始版本：** 26.0.0
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | result | string | 否 | 否 | JWS格式的风险因子查询结果。JWS内容详见统一风控凭证开发步骤。 |
@@ -587,9 +625,10 @@ try {
 
 
 
-#### safetyDetect.queryRiskFactors
+## safetyDetect.queryRiskFactors
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 queryRiskFactors(req: RiskFactorRequest): Promise&lt;RiskFactorResponse&gt;
 
@@ -607,12 +646,14 @@ queryRiskFactors(req: RiskFactorRequest): Promise&lt;RiskFactorResponse&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | req | RiskFactorRequest | 是 | 风险因子查询请求参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -622,6 +663,7 @@ queryRiskFactors(req: RiskFactorRequest): Promise&lt;RiskFactorResponse&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-safetydetect)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

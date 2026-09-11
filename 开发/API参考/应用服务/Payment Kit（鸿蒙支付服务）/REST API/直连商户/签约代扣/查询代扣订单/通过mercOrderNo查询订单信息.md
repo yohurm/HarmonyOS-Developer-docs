@@ -1,10 +1,14 @@
 # 通过mercOrderNo查询订单信息
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-withhold-query-merc-order
+**支持设备：** Phone | PC/2in1 | Tablet
 
-#### 功能介绍
+## 功能介绍
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 开发者可以调用此接口来查询所有通过华为支付方式支付且已成功创建交易订单的订单详细信息。
  
@@ -14,7 +18,10 @@
  
   
 
-#### 场景描述
+## 场景描述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 在产生交易订单前提下，商户可以通过该接口查看某笔订单的支付状态，也可以通过主动查询交易订单状态用以完成下一步的业务逻辑，常见的使用场景：
  
@@ -24,7 +31,10 @@
  
   
 
-#### 接口原型
+## 接口原型
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 - **承载协议：** HTTPS GET
 - **接口方向：** 开发者服务器 -> 华为支付服务器
@@ -38,10 +48,14 @@
  
   
 
-#### 请求参数
+## 请求参数
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 **Request Header**
   
+
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | Content-Type | 是 | String | 取值为：application/json; charset=UTF-8 |
@@ -50,6 +64,7 @@
  
 **Request Path**
   
+
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | mercOrderNo | 是 | String | 商户订单号，由商户自己生成，商户需保证订单信息唯一性。最大长度46。 |
@@ -65,10 +80,14 @@ PayMercAuth: {"callerId":"10132120***","traceId":"202305151047578634337","time":
  
   
 
-#### 响应参数
+## 响应参数
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 **Response Header**
   
+
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | Content-Type | 是 | String | 取值为：application/json; charset=UTF-8 |
@@ -76,6 +95,7 @@ PayMercAuth: {"callerId":"10132120***","traceId":"202305151047578634337","time":
  
 **Response Body**
   
+
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | resultCode | 是 | String | 结果码，“000000”表示成功，其他表示失败。 |
@@ -101,7 +121,10 @@ PayMercAuth: {"callerId":"10132120***","traceId":"202305151047578634337","time":
  
   
 
-#### 响应示例
+## 响应示例
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```json
 HTTP/1.1 200 OK
@@ -127,10 +150,14 @@ Content-Type: application/json; charset=UTF-8
  
   
 
-#### 错误码
+## 错误码
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 **resultCode**非400000的错误码请查看[公共错误码说明](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-error-code-rest#公共错误码说明)。
   
+
 | 返回码 | 错误码 | 错误描述 | 解决方案 |
 | --- | --- | --- | --- |
 | 400000 | UNKNOW_ERROR | 服务暂不可用，请稍后重试 | 稍后重试。 |

@@ -1,0 +1,24 @@
+# GameDevice_DeviceInfo
+
+更新时间：2026-08-29 09:41:17
+
+来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-gamecontroller-gamedevice-deviceinfo
+**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+```text
+typedef struct GameDevice_DeviceInfo GameDevice_DeviceInfo
+```
+  
+
+## 概述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+定义设备信息。
+ 
+**起始版本：** 21
+ 
+**相关模块：** [GameController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-gamecontroller)
+ 
+**所在头文件：** [game_device_event.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-game-device-event-h)

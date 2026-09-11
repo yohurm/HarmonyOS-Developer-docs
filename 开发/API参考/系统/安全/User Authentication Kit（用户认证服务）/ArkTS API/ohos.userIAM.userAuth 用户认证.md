@@ -1,6 +1,6 @@
 # @ohos.userIAM.userAuth (用户认证)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-useriam-userauth
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
@@ -22,13 +22,17 @@
 
 
 
-#### 关键Class/Interface介绍
+## 关键Class/Interface介绍
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 
 
-#### 核心枚举类型
+### 核心枚举类型
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
  - **[UserAuthType](#userauthtype8)**：认证类型枚举（PIN、FACE、FINGERPRINT、COMPANION_DEVICE）。
  - **[AuthTrustLevel](#authtrustlevel8)**：认证信任级别枚举（ATL1-ATL4）。
@@ -39,7 +43,10 @@
 
 
 
-#### 核心接口类型
+### 核心接口类型
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
  - **[AuthParam](#authparam10)**：认证参数接口，包含挑战值、认证类型列表、信任级别、复用信息等。
  - **[WidgetParam](#widgetparam10)**：认证组件显示参数接口，包含标题、导航按钮文本、窗口模式等。
@@ -51,18 +58,22 @@
 
 
 
-#### 核心类
+### 核心类
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
  - **[UserAuthInstance](#userauthinstance10)**：用户认证实例类，提供认证执行、取消、事件订阅等能力。
 
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/vOWNQ3y6TNa65Uxoi3BPHw/zh-cn_image_0000002685929043.png?HW-CC-KV=V1&HW-CC-Date=20260730T071619Z&HW-CC-Expire=86400&HW-CC-Sign=78DCD5BB07EE3A7E50437AE8108F593080D09971DF15FB5F556E7E150E00467C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/6RDGOyUTSyuYtxUI6btjiQ/zh-cn_image_0000002717773520.png?HW-CC-KV=V1&HW-CC-Date=20260911T072946Z&HW-CC-Expire=86400&HW-CC-Sign=6A7A13602DD651D6DF269F0C676679C7F9F589B05903E3C9DF148EA56593E9E5)
 
 
 
 
-#### API组合使用关系说明
+## API组合使用关系说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -113,7 +124,8 @@ if (!lockState.isLocked) {
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -123,11 +135,13 @@ import { userAuth } from '@kit.UserAuthenticationKit';
 
 
 
-#### 常量
+## 常量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
+
 
 | 名称 | 类型 | 值 | 说明 |
 | --- | --- | --- | --- |
@@ -137,7 +151,8 @@ import { userAuth } from '@kit.UserAuthenticationKit';
 
 
 
-#### AuthLockState22+
+## AuthLockState22+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -146,6 +161,7 @@ import { userAuth } from '@kit.UserAuthenticationKit';
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -156,7 +172,8 @@ import { userAuth } from '@kit.UserAuthenticationKit';
 
 
 
-#### UserAuthTipCode20+
+## UserAuthTipCode20+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -165,6 +182,7 @@ import { userAuth } from '@kit.UserAuthenticationKit';
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -179,7 +197,8 @@ import { userAuth } from '@kit.UserAuthenticationKit';
 
 
 
-#### EnrolledState12+
+## EnrolledState12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -189,6 +208,7 @@ import { userAuth } from '@kit.UserAuthenticationKit';
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | credentialDigest | number | 否 | 否 | 注册的凭据摘要，在凭据增加时随机生成。该值用于标识当前注册凭据的版本，当用户新增或删除凭据时该值会变化。应用可保存此值并在后续查询时对比，以判断凭据是否发生变化。 注意：当复用认证结果时，如果之前认证使用的凭据已被删除，返回的credentialDigest可能为0。 |
@@ -197,13 +217,15 @@ import { userAuth } from '@kit.UserAuthenticationKit';
 
 
 
-#### ReuseMode12+
+## ReuseMode12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 复用解锁认证结果的模式。该枚举定义了认证结果复用的四种模式，用于控制何种认证结果可以在何种条件下被复用。应用可根据业务场景选择合适的复用模式，以在安全性和用户体验之间取得平衡。
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -215,7 +237,8 @@ import { userAuth } from '@kit.UserAuthenticationKit';
 
 
 
-#### ReuseUnlockResult12+
+## ReuseUnlockResult12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -229,6 +252,7 @@ import { userAuth } from '@kit.UserAuthenticationKit';
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | reuseMode | ReuseMode | 否 | 否 | 复用解锁认证结果的模式。根据业务场景的安全需求选择合适的复用模式： - AUTH_TYPE_RELEVANT(1)：仅复用匹配认证类型的设备解锁结果，安全性最高。 - AUTH_TYPE_IRRELEVANT(2)：复用任意类型的设备解锁结果，适用于中等安全场景。 - CALLER_IRRELEVANT_AUTH_TYPE_RELEVANT(3)：复用匹配认证类型的任意认证结果，适用于跨应用场景。 - CALLER_IRRELEVANT_AUTH_TYPE_IRRELEVANT(4)：复用任意认证结果，安全性最低但体验最优。 |
@@ -237,7 +261,8 @@ import { userAuth } from '@kit.UserAuthenticationKit';
 
 
 
-#### userAuth.getAuthLockState22+
+## userAuth.getAuthLockState22+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -253,12 +278,14 @@ getAuthLockState(authType: UserAuthType): Promise&lt;AuthLockState&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | authType | UserAuthType | 是 | 认证类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -268,6 +295,7 @@ getAuthLockState(authType: UserAuthType): Promise&lt;AuthLockState&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[用户认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-useriam)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -297,13 +325,14 @@ userAuth.getAuthLockState(queryType)
     console.info('get auth lock state successfully.');
   })
   .catch((err: BusinessError) => {
-    console.info(`get auth lock state failed, err code is : ${err?.code}, err message is : ${err?.message}`);
+    console.error(`get auth lock state failed, err code is : ${err?.code}, err message is : ${err?.message}`);
   })
 ```
 
 
 
-#### userAuth.getEnrolledState12+
+## userAuth.getEnrolledState12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -319,12 +348,14 @@ getEnrolledState(authType: UserAuthType): EnrolledState
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | authType | UserAuthType | 是 | 认证类型。用于指定查询的凭据类型，支持FACE（人脸）、FINGERPRINT（指纹）、PIN（密码）、COMPANION_DEVICE（伴随设备）。查询PIN时返回的是密码的整体状态，而非单个密码的数量。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -334,6 +365,7 @@ getEnrolledState(authType: UserAuthType): EnrolledState
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[用户认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-useriam)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -361,7 +393,8 @@ try {
 
 
 
-#### AuthParam10+
+## AuthParam10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -369,18 +402,20 @@ try {
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | challenge | Uint8Array | 否 | 否 | 随机挑战值，可用于防重放攻击。最大长度为32字节，可传Uint8Array([])。建议使用加解密算法库框架生成的随机数作为挑战值，以增强安全性。认证通过后，挑战值会被包含在认证令牌中，业务可通过验证令牌中的挑战值来确认认证结果的有效性。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | authType | UserAuthType[] | 否 | 否 | 认证类型列表，用来指定用户认证界面提供的认证方法。可同时指定多种认证类型，如[UserAuthType.PIN, UserAuthType.FACE, UserAuthType.FINGERPRINT]，用户可选择任意一种完成认证。认证类型的选择会影响认证结果复用的匹配条件。暂不支持同时发起伴随设备认证和其他认证类型。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | authTrustLevel | AuthTrustLevel | 否 | 否 | 期望达到的认证可信等级。认证可信等级决定了认证的安全强度，应根据业务场景的安全需求选择合适的等级： - ATL1：适用于业务风控、一般个人数据查询等低安全场景。 - ATL2：适用于应用登录、维持设备解锁状态等中等安全场景。 - ATL3：适用于设备解锁等较高安全场景。 - ATL4：适用于小额支付等高安全场景。 典型操作需要的身份认证可信等级，以及身份认证可信等级的划分请参见认证可信等级划分原则。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | reuseUnlockResult12+ | ReuseUnlockResult | 否 | 是 | 表示可以复用解锁认证的结果。配置后，若满足复用条件，系统将直接返回之前的认证结果，无需用户再次进行认证交互。默认为不复用。启用认证结果复用可以提升用户体验，但应根据业务场景的安全需求合理配置复用模式和有效时长。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| skipLockedBiometricAuth20+ | boolean | 否 | 是 | 是否跳过已禁用的认证方式自动切换至其它方式的认证。若无可切换的认证方式则关闭控件，返回认证冻结错误码。 - true：生物认证冻结时，跳过倒计时界面直接切换到其他方式的认证（如从冻结的指纹切换到PIN）。适用于希望快速完成认证的场景。 - false（默认）：不跳过，用户需要等待冻结倒计时结束后才能继续尝试该认证方式或手动切换。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
+| skipLockedBiometricAuth20+ | boolean | 否 | 是 | 是否跳过已禁用的认证方式自动切换至其他方式的认证。若无可切换的认证方式则关闭控件，返回认证冻结错误码。 - true：生物认证冻结时，跳过倒计时界面直接切换到其他方式的认证（如从冻结的指纹切换到PIN）。适用于希望快速完成认证的场景。 - false（默认）：不跳过，用户需要等待冻结倒计时结束后才能继续尝试该认证方式或手动切换。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
 
 
 
 
-#### WidgetParam10+
+## WidgetParam10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -388,16 +423,18 @@ try {
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | title | string | 否 | 否 | 用户认证界面的标题，建议传入认证目的，例如用于支付、登录应用等，不支持传空字串，最大长度为500字符。标题会显示在认证界面，帮助用户理解当前认证的目的，提升用户信任度和配合度。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| navigationButtonText | string | 否 | 是 | 导航按键的说明文本，最大长度为60字符。点击该按钮可触发应用自定义的操作，如跳转到自定义认证页面或取消认证等。在单指纹、单人脸场景下支持，从API 18开始，增加支持人脸+指纹组合认证场景。默认为不展示自定义导航按键。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| uiContext18+ | Context | 否 | 是 | 以模应用弹窗方式显示身份认证对话框，仅支持在2in1设备上使用。传入有效的uiContext后，认证对话框将以模应用弹窗方式显示，认证结果返回后应用需先获取控件释放消息（订阅on('authTip')并等待WIDGET_RELEASED状态）才能弹出其他窗口。如果没有此参数或其他类型的设备，身份认证对话框将以模系统弹窗方式显示，此时控件释放后应用可直接进行后续操作。 默认值： 以模系统弹窗方式显示身份认证对话框。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
+| navigationButtonText | string | 否 | 是 | 导航按键的说明文本，最大长度为60字符。点击该按钮可触发应用自定义的操作，如跳转到自定义认证页面或取消认证等。在单指纹、单人脸场景下支持，从API版本18开始，增加支持人脸+指纹组合认证场景。默认为不展示自定义导航按键。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| uiContext18+ | Context | 否 | 是 | 以模应用弹窗方式显示身份认证对话框，从API版本18开始，支持在2in1设备上使用。传入有效的uiContext后，认证对话框将以模应用弹窗方式显示，认证结果返回后应用需先获取控件释放消息（订阅on('authTip')并等待收到authTipInfo.tipCode为WIDGET_RELEASED的回调）才能弹出其他窗口。如果没有此参数或其他类型的设备，身份认证对话框将以模系统弹窗方式显示，此时控件释放后应用可直接进行后续操作。 默认值： 以模系统弹窗方式显示身份认证对话框。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 
 
 
 
-#### UserAuthResult10+
+## UserAuthResult10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -406,6 +443,7 @@ try {
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -417,7 +455,8 @@ try {
 
 
 
-#### IAuthCallback10+
+## IAuthCallback10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -425,7 +464,8 @@ try {
 
 
 
-#### onResult10+
+### onResult10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -438,6 +478,7 @@ onResult(result: UserAuthResult): void
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -604,7 +645,8 @@ try {
 
 
 
-#### AuthTipInfo20+
+## AuthTipInfo20+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -614,6 +656,7 @@ try {
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | tipType | UserAuthType | 否 | 否 | 中间状态对应的认证类型。表示产生当前中间状态的认证方式，如人脸认证(FACE)、指纹认证(FINGERPRINT)或PIN认证(PIN)。应用可根据认证类型为用户提供针对性的提示。 |
@@ -622,7 +665,8 @@ try {
 
 
 
-#### AuthTipCallback20+
+## AuthTipCallback20+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -635,6 +679,7 @@ type AuthTipCallback = (authTipInfo: AuthTipInfo) => void
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -689,7 +734,8 @@ try {
 
 
 
-#### UserAuthInstance10+
+## UserAuthInstance10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -703,7 +749,8 @@ try {
 
 
 
-#### on('result')10+
+### on('result')10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -721,6 +768,7 @@ on(type: 'result', callback: IAuthCallback): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | 'result' | 是 | 订阅事件类型，表明该事件用来返回认证结果。 |
@@ -730,6 +778,7 @@ on(type: 'result', callback: IAuthCallback): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[用户认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-useriam)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -855,7 +904,8 @@ struct Index {
 
 
 
-#### off('result')10+
+### off('result')10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -873,6 +923,7 @@ off(type: 'result', callback?: IAuthCallback): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | 'result' | 是 | 订阅事件类型，表明该事件用来返回认证结果。 |
@@ -882,6 +933,7 @@ off(type: 'result', callback?: IAuthCallback): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[用户认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-useriam)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -935,7 +987,8 @@ try {
 
 
 
-#### start10+
+### start10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -960,6 +1013,7 @@ start(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[用户认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-useriam)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1020,7 +1074,8 @@ try {
 
 
 
-#### cancel10+
+### cancel10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1039,6 +1094,7 @@ cancel(): void
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1092,7 +1148,8 @@ try {
 
 
 
-#### on('authTip')20+
+### on('authTip')20+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1110,6 +1167,7 @@ on(type: 'authTip', callback: AuthTipCallback): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅事件类型，支持的事件为'authTip'，当start()调用完成，发起身份认证，触发该事件。 |
@@ -1119,6 +1177,7 @@ on(type: 'authTip', callback: AuthTipCallback): void
 **错误码：**
 
 以下错误码的详细介绍请参见[用户认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-useriam)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1172,7 +1231,8 @@ try {
 
 
 
-#### off('authtip')20+
+### off('authtip')20+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1190,6 +1250,7 @@ off(type: 'authTip', callback?: AuthTipCallback): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 取消订阅的事件类型，支持的事件为'authTip'，当start()调用完成，发起身份认证并调用on('authTip')订阅该事件后，调用该方法可取消订阅，不会再触发该事件。 |
@@ -1199,6 +1260,7 @@ off(type: 'authTip', callback?: AuthTipCallback): void
 **错误码：**
 
 以下错误码的详细介绍请参见[用户认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-useriam)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1249,7 +1311,8 @@ try {
 
 
 
-#### userAuth.getUserAuthInstance10+
+## userAuth.getUserAuthInstance10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1267,6 +1330,7 @@ getUserAuthInstance(authParam: AuthParam, widgetParam: WidgetParam): UserAuthIns
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | authParam | AuthParam | 是 | 用户认证相关参数。包含挑战值、认证类型列表、认证可信等级、认证结果复用配置等。挑战值建议使用加密框架生成的随机数，认证类型可指定多种供用户选择，认证可信等级应根据业务场景安全需求选择。 |
@@ -1274,6 +1338,7 @@ getUserAuthInstance(authParam: AuthParam, widgetParam: WidgetParam): UserAuthIns
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1283,6 +1348,7 @@ getUserAuthInstance(authParam: AuthParam, widgetParam: WidgetParam): UserAuthIns
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[用户认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-useriam)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1332,7 +1398,8 @@ try {
 
 
 
-#### AuthResultInfo(deprecated)
+## AuthResultInfo(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1344,6 +1411,7 @@ try {
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | result | number | 否 | 否 | 认证结果。 |
@@ -1354,7 +1422,8 @@ try {
 
 
 
-#### TipInfo(deprecated)
+## TipInfo(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1366,6 +1435,7 @@ try {
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | module | number | 否 | 否 | 发送提示信息的模块标识。 |
@@ -1374,7 +1444,8 @@ try {
 
 
 
-#### EventInfo(deprecated)
+## EventInfo(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1390,6 +1461,7 @@ type EventInfo = AuthResultInfo | TipInfo
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | AuthResultInfo | 获取到的认证结果信息。 |
@@ -1398,7 +1470,8 @@ type EventInfo = AuthResultInfo | TipInfo
 
 
 
-#### AuthEventKey(deprecated)
+## AuthEventKey(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1414,6 +1487,7 @@ type AuthEventKey = 'result' | 'tip'
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | 'result' | on接口第一个参数为"result"时，callback回调返回认证的结果信息。 |
@@ -1422,7 +1496,8 @@ type AuthEventKey = 'result' | 'tip'
 
 
 
-#### AuthEvent(deprecated)
+## AuthEvent(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1434,7 +1509,8 @@ type AuthEventKey = 'result' | 'tip'
 
 
 
-#### callback(deprecated)
+### callback(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1449,6 +1525,7 @@ callback(result : EventInfo) : void
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1504,7 +1581,8 @@ try {
 
 
 
-#### AuthInstance(deprecated)
+## AuthInstance(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1516,7 +1594,8 @@ try {
 
 
 
-#### on(deprecated)
+### on(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1532,6 +1611,7 @@ on : (name : AuthEventKey, callback : AuthEvent) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | AuthEventKey | 是 | 表示认证事件类型，取值为"result"时，回调函数返回认证结果；取值为"tip"时，回调函数返回认证过程中的提示信息。 |
@@ -1541,6 +1621,7 @@ on : (name : AuthEventKey, callback : AuthEvent) => void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[用户认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-useriam)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1589,7 +1670,8 @@ try {
 
 
 
-#### off(deprecated)
+### off(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1603,6 +1685,7 @@ off : (name : AuthEventKey) => void
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | AuthEventKey | 是 | 表示认证事件类型，取值为"result"时，取消订阅认证结果；取值为"tip"时，取消订阅认证过程中的提示信息。 |
@@ -1611,6 +1694,7 @@ off : (name : AuthEventKey) => void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[用户认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-useriam)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1645,7 +1729,8 @@ try {
 
 
 
-#### start(deprecated)
+### start(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1664,6 +1749,7 @@ start : () => void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[用户认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-useriam)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1700,7 +1786,8 @@ try {
 
 
 
-#### cancel(deprecated)
+### cancel(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1719,6 +1806,7 @@ cancel : () => void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[用户认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-useriam)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1747,7 +1835,8 @@ try {
 
 
 
-#### userAuth.getAuthInstance(deprecated)
+## userAuth.getAuthInstance(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1763,6 +1852,7 @@ getAuthInstance(challenge : Uint8Array, authType : UserAuthType, authTrustLevel 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | challenge | Uint8Array | 是 | 挑战值，最大长度为32字节，可以传Uint8Array([])。 |
@@ -1772,6 +1862,7 @@ getAuthInstance(challenge : Uint8Array, authType : UserAuthType, authTrustLevel 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | AuthInstance | 认证器对象。 |
@@ -1780,6 +1871,7 @@ getAuthInstance(challenge : Uint8Array, authType : UserAuthType, authTrustLevel 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[用户认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-useriam)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1808,7 +1900,8 @@ try {
 
 
 
-#### userAuth.getAvailableStatus9+
+## userAuth.getAvailableStatus9+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1824,6 +1917,7 @@ getAvailableStatus(authType : UserAuthType, authTrustLevel : AuthTrustLevel): vo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | authType | UserAuthType | 是 | 认证类型。用于指定查询的认证类型，支持FACE（人脸）、FINGERPRINT（指纹）、PIN（密码）、COMPANION_DEVICE（伴随设备）。 说明： 从API version 11开始支持PIN查询。 从API版本26.0.0开始支持COMPANION_DEVICE查询。 |
@@ -1835,7 +1929,7 @@ getAvailableStatus(authType : UserAuthType, authTrustLevel : AuthTrustLevel): vo
 
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/cnGvNqfzTnioFXfezvfygA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071619Z&HW-CC-Expire=86400&HW-CC-Sign=08347F56D76C3253BDCE3B0366EF77C04175C77E583BECC369806D1BBBFD7D67)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/FFkT7LAVTf-zNeGqHHb9OA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072946Z&HW-CC-Expire=86400&HW-CC-Sign=752FA5E58E9D2381CB6AC3E1E7526A30D7E7325E49A29575A70D958008224EDD)
 
 
 若用户注册的锁屏口令是4位PIN时，其认证可信等级为ATL3，调用该接口查询是否支持ATL4级别的密码认证时，需返回12500010。
@@ -1845,6 +1939,7 @@ getAvailableStatus(authType : UserAuthType, authTrustLevel : AuthTrustLevel): vo
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[用户认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-useriam)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1872,13 +1967,15 @@ try {
 
 
 
-#### UserAuthResultCode9+
+## UserAuthResultCode9+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 表示返回码的枚举。该枚举定义了用户认证操作可能返回的所有结果码，包括成功码和各类错误码。应用可根据返回码判断认证结果，并采取相应的处理措施。
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1899,7 +1996,8 @@ try {
 
 
 
-#### UserAuth(deprecated)
+## UserAuth(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1907,7 +2005,8 @@ try {
 
 
 
-#### constructor(deprecated)
+### constructor(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1931,7 +2030,8 @@ let auth = new userAuth.UserAuth();
 
 
 
-#### getVersion(deprecated)
+### getVersion(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1948,6 +2048,7 @@ getVersion() : number
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1966,7 +2067,8 @@ console.info(`auth version = ${version}`);
 
 
 
-#### getAvailableStatus(deprecated)
+### getAvailableStatus(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1984,6 +2086,7 @@ getAvailableStatus(authType : UserAuthType, authTrustLevel : AuthTrustLevel) : n
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | authType | UserAuthType | 是 | 认证类型，当前支持FACE和FINGERPRINT。 |
@@ -1991,6 +2094,7 @@ getAvailableStatus(authType : UserAuthType, authTrustLevel : AuthTrustLevel) : n
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2013,7 +2117,8 @@ if (checkCode == userAuth.ResultCode.SUCCESS) {
 
 
 
-#### auth(deprecated)
+### auth(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2031,6 +2136,7 @@ auth(challenge: Uint8Array, authType: UserAuthType, authTrustLevel: AuthTrustLev
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | challenge | Uint8Array | 是 | 挑战值，可以传Uint8Array([])。 |
@@ -2040,6 +2146,7 @@ auth(challenge: Uint8Array, authType: UserAuthType, authTrustLevel: AuthTrustLev
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2071,7 +2178,8 @@ auth.auth(challenge, userAuth.UserAuthType.FACE, userAuth.AuthTrustLevel.ATL1, {
 
 
 
-#### cancelAuth(deprecated)
+### cancelAuth(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2089,12 +2197,14 @@ cancelAuth(contextID : Uint8Array) : number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | contextID | Uint8Array | 是 | 上下文的标识，通过auth接口获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2119,7 +2229,8 @@ if (cancelCode == userAuth.ResultCode.SUCCESS) {
 
 
 
-#### IUserAuthCallback(deprecated)
+## IUserAuthCallback(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2131,7 +2242,8 @@ if (cancelCode == userAuth.ResultCode.SUCCESS) {
 
 
 
-#### onResult(deprecated)
+### onResult(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2146,6 +2258,7 @@ onResult: (result : number, extraInfo : AuthResult) => void
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2178,7 +2291,8 @@ auth.auth(challenge, userAuth.UserAuthType.FACE, userAuth.AuthTrustLevel.ATL1, {
 
 
 
-#### onAcquireInfo(deprecated)
+### onAcquireInfo(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2193,6 +2307,7 @@ onAcquireInfo ?: (module : number, acquire : number, extraInfo : any) => void
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2233,7 +2348,8 @@ auth.auth(challenge, userAuth.UserAuthType.FACE, userAuth.AuthTrustLevel.ATL1, {
 
 
 
-#### AuthResult(deprecated)
+## AuthResult(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2245,6 +2361,7 @@ auth.auth(challenge, userAuth.UserAuthType.FACE, userAuth.AuthTrustLevel.ATL1, {
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | token | Uint8Array | 否 | 是 | 认证通过的令牌信息。 |
@@ -2254,7 +2371,8 @@ auth.auth(challenge, userAuth.UserAuthType.FACE, userAuth.AuthTrustLevel.ATL1, {
 
 
 
-#### ResultCode(deprecated)
+## ResultCode(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2265,6 +2383,7 @@ auth.auth(challenge, userAuth.UserAuthType.FACE, userAuth.AuthTrustLevel.ATL1, {
 
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2283,7 +2402,8 @@ auth.auth(challenge, userAuth.UserAuthType.FACE, userAuth.AuthTrustLevel.ATL1, {
 
 
 
-#### FaceTips(deprecated)
+## FaceTips(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2294,6 +2414,7 @@ auth.auth(challenge, userAuth.UserAuthType.FACE, userAuth.AuthTrustLevel.ATL1, {
 
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2312,7 +2433,8 @@ auth.auth(challenge, userAuth.UserAuthType.FACE, userAuth.AuthTrustLevel.ATL1, {
 
 
 
-#### FingerprintTips(deprecated)
+## FingerprintTips(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2323,6 +2445,7 @@ auth.auth(challenge, userAuth.UserAuthType.FACE, userAuth.AuthTrustLevel.ATL1, {
 
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2336,13 +2459,15 @@ auth.auth(challenge, userAuth.UserAuthType.FACE, userAuth.AuthTrustLevel.ATL1, {
 
 
 
-#### UserAuthType8+
+## UserAuthType8+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 表示身份认证的凭据类型枚举。该枚举定义了系统支持的认证类型，包括锁屏密码认证（PIN）、生物特征认证（人脸、指纹）等。应用在发起认证时需指定认证类型列表，用户可选择其中任意一种完成认证。不同认证类型具有不同的安全强度和用户体验特点，应用应根据业务场景选择合适的认证类型。
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2354,7 +2479,8 @@ auth.auth(challenge, userAuth.UserAuthType.FACE, userAuth.AuthTrustLevel.ATL1, {
 
 
 
-#### AuthTrustLevel8+
+## AuthTrustLevel8+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2366,17 +2492,19 @@ auth.auth(challenge, userAuth.UserAuthType.FACE, userAuth.AuthTrustLevel.ATL1, {
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| ATL1 | 10000 | 认证结果的信任等级级别1，表示该认证方案能够识别用户个体，具备基本的活体检测能力（如简单的动作检测）。安全强度较低，认证结果可能存在一定风险。适用于业务风控、一般个人数据查询、非敏感信息访问等低安全场景。建议配合其他安全措施使用。 |
-| ATL2 | 20000 | 认证结果的信任等级级别2，表示该认证方案能够精确识别用户个体，具备标准的活体检测能力（如眨眼、点头等动作检测）。安全强度中等，可有效防御简单的伪造攻击。适用于维持设备解锁状态、应用登录、一般敏感操作确认等中等安全场景。 |
-| ATL3 | 30000 | 认证结果的信任等级级别3，表示该认证方案能够精确识别用户个体，具备较强的活体检测能力（如3D人脸识别、多帧分析等）。安全强度较高，可有效防御照片、视频等常见伪造攻击。适用于设备解锁、重要敏感操作确认、企业级应用登录等较高安全场景。3D人脸识别设备可支持此等级。 |
-| ATL4 | 40000 | 认证结果的信任等级级别4，表示该认证方案能够高精度识别用户个体，具备很强的活体检测能力（如深度分析、多维度验证等）。安全强度最高，可有效防御各类高级伪造攻击。适用于小额支付、金融交易、高敏感数据访问等高安全场景。仅少数高安全认证方案可支持此等级。 |
+| ATL1 | 10000 | 认证结果的信任等级级别1，表示该认证方案能够识别用户个体，具备基本的活体检测能力。安全强度较低，认证结果可能存在一定风险。适用于业务风控、一般个人数据查询、非敏感信息访问等低安全场景。建议配合其他安全措施使用。 |
+| ATL2 | 20000 | 认证结果的信任等级级别2，表示该认证方案能够精确识别用户个体，具备标准的活体检测能力。安全强度中等，可有效防御简单的伪造攻击。适用于维持设备解锁状态、应用登录、一般敏感操作确认等中等安全场景。 |
+| ATL3 | 30000 | 认证结果的信任等级级别3，表示该认证方案能够精确识别用户个体，具备较强的活体检测能力。安全强度较高，可有效防御照片、视频等常见伪造攻击。适用于设备解锁、重要敏感操作确认、企业级应用登录等较高安全场景。 |
+| ATL4 | 40000 | 认证结果的信任等级级别4，表示该认证方案能够高精度识别用户个体，具备很强的活体检测能力。安全强度最高，可有效防御各类高级伪造攻击。适用于小额支付、金融交易、高敏感数据访问等高安全场景。仅少数高安全认证方案可支持此等级。 |
 
 
 
 
-#### SecureLevel(deprecated)
+## SecureLevel(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2390,6 +2518,7 @@ type SecureLevel = string
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 表示类型为字符，认证的安全级别包括：'S1' \| 'S2'\|'S3'\|'S4'。 - 'S1'：认证结果的信任等级级别1，代表该认证方案能够识别用户个体，有一定的活体检测能力。常用的业务场景有业务风控、一般个人数据查询等。 - 'S2'：认证结果的信任等级级别2，代表该认证方案能够精确识别用户个体，有一定的活体检测能力。常用的业务场景有维持设备解锁状态，应用登录等。 - 'S3'：认证结果的信任等级级别3，代表该认证方案能够精确识别用户个体，有较强的活体检测能力。常用的业务场景有设备解锁等。 - 'S4'：认证结果的信任等级级别4，代表该认证方案能够高精度的识别用户个体，有很强的活体检测能力。常用的业务场景有小额支付等。 |
@@ -2397,7 +2526,8 @@ type SecureLevel = string
 
 
 
-#### AuthType(deprecated)
+## AuthType(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2411,6 +2541,7 @@ type AuthType = string
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 表示认证类型为字符，认证类型包括：'ALL'\|'FACE_ONLY'。 - 'ALL'：预留参数，当前版本暂不支持ALL类型的认证。 - 'FACE_ONLY'：人脸认证。 |
@@ -2418,7 +2549,8 @@ type AuthType = string
 
 
 
-#### userAuth.getAuthenticator(deprecated)
+## userAuth.getAuthenticator(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2433,6 +2565,7 @@ getAuthenticator(): Authenticator
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2449,7 +2582,8 @@ let authenticator = userAuth.getAuthenticator();
 
 
 
-#### Authenticator(deprecated)
+## Authenticator(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2461,7 +2595,8 @@ let authenticator = userAuth.getAuthenticator();
 
 
 
-#### execute(deprecated)
+### execute(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2478,6 +2613,7 @@ execute(type: AuthType, level: SecureLevel, callback: AsyncCallback&lt;number&gt
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2503,7 +2639,8 @@ authenticator.execute('FACE_ONLY', 'S2', (error, code)=>{
 
 
 
-#### execute(deprecated)
+### execute(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2521,6 +2658,7 @@ execute(type : AuthType, level : SecureLevel): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | AuthType | 是 | 认证类型，当前只支持"FACE_ONLY"。 ALL为预留参数。当前版本暂不支持ALL类型的认证。 |
@@ -2528,6 +2666,7 @@ execute(type : AuthType, level : SecureLevel): Promise&lt;number&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2551,7 +2690,8 @@ try {
 
 
 
-#### AuthenticationResult(deprecated)
+## AuthenticationResult(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2562,6 +2702,7 @@ try {
 
 
 **系统能力：** SystemCapability.UserIAM.UserAuth.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

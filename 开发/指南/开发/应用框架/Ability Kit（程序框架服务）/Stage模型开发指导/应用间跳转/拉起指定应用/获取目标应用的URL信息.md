@@ -1,10 +1,10 @@
 # 获取目标应用的URL信息
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/obtaining-target-app-url-info
 
-#### 场景介绍
+## 场景介绍
 
 开发者在使用[UIAbilityContext.openLink](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext#openlink12)接口拉起目标应用时，需要传入目标应用的URL信息。本章节主要介绍如何获取目标应用的URL信息。
 
@@ -36,13 +36,13 @@
 
 
 
-#### 环境要求
+## 环境要求
 
 开发者需要先获取[hdc工具](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hdc)。
 
 
 
-#### 操作步骤
+## 操作步骤
 1. 使用[bm工具](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bm-tool)获取目标应用的bundleName。
 
   
@@ -138,10 +138,15 @@ scheme://host:port/path
 以目标应用为例，其URL构成如下：
 
 | 配置项 | 值 |
+
 | --- | --- |
+
 | scheme | appurl |
+
 | host | www.example.com |
+
 | port | 未指定（可选） |
+
 | path | path1 |
 
   根据上述参数，拼接得到的完整URL为：
@@ -204,4 +209,4 @@ struct SpecifiedPage {
   **图1** 拉起目标应用演示
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/4YekCnH_TUaYHfQhbtPVuA/zh-cn_image_0000002704271639.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095622Z&HW-CC-Expire=86400&HW-CC-Sign=4F3E88DB420CCD7330D780680757C5AB62CF7258B61EC739111BE377A166847D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/KMIM2aQ9SD6YBYBPRCps0w/zh-cn_image_0000002747209769.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073026Z&HW-CC-Expire=86400&HW-CC-Sign=F89E228DE430FAA251D6FAEAA10A4FB5A7378DE3208C42ACD8B80F40963244AA)

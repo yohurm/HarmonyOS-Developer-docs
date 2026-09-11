@@ -1,13 +1,14 @@
 # native_audio_session_base.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-audio-session-base-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明音频会话基础数据结构。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_AudioSession_Strategy | OH_AudioSession_Strategy | 音频会话策略。 |
@@ -40,10 +44,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_AudioSession_BehaviorFlags | OH_AudioSession_BehaviorFlags | 音频会话行为标志。 |
@@ -52,15 +58,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AudioSession_BehaviorFlags
+### OH_AudioSession_BehaviorFlags
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AudioSession_BehaviorFlags
@@ -72,6 +80,7 @@ enum OH_AudioSession_BehaviorFlags
  
 **起始版本：** 24
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | DEFAULT_BEHAVIOR = 0x00000000 | 默认行为，用于清除会话行为标记。 起始版本： 24 |
@@ -81,9 +90,10 @@ enum OH_AudioSession_BehaviorFlags
  
   
 
-#### OH_AudioSession_ConcurrencyMode
+### OH_AudioSession_ConcurrencyMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AudioSession_ConcurrencyMode
@@ -99,6 +109,7 @@ enum OH_AudioSession_ConcurrencyMode
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | CONCURRENCY_DEFAULT = 0 | 默认使用系统策略。 |

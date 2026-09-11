@@ -1,6 +1,6 @@
 # DlpAntiPeep（防窥保护）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesecurity-dlpantipeep-api
 **支持设备：** Phone
@@ -10,7 +10,8 @@
 **起始版本：** 6.0.0(20)
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone
 
@@ -20,7 +21,8 @@ import { dlpAntiPeep } from '@kit.DeviceSecurityKit';
 
 
 
-#### DlpAntiPeepStatus
+## DlpAntiPeepStatus
+
 
 **支持设备：** Phone
 
@@ -32,6 +34,7 @@ import { dlpAntiPeep } from '@kit.DeviceSecurityKit';
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | PASS | 0 | 表示当前设备屏幕无人在窥视。 |
@@ -40,7 +43,8 @@ import { dlpAntiPeep } from '@kit.DeviceSecurityKit';
 
 
 
-#### isDlpAntiPeepSwitchOn
+## isDlpAntiPeepSwitchOn
+
 
 **支持设备：** Phone
 
@@ -58,6 +62,7 @@ isDlpAntiPeepSwitchOn(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象，返回当前应用是否开启了防窥保护，true代表开启，false代表未开启，默认值为false。 |
@@ -66,6 +71,7 @@ isDlpAntiPeepSwitchOn(): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-dlpantipeep)**。**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -89,7 +95,8 @@ try {
 
 
 
-#### on("dlpAntiPeep")
+## on("dlpAntiPeep")
+
 
 **支持设备：** Phone
 
@@ -98,7 +105,7 @@ on(type: 'dlpAntiPeep', callback: Callback&lt;DlpAntiPeepStatus&gt;): void
 订阅防窥保护通知。使用callback异步回调。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/maRCekeRQFWzWSEb32nGpA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095505Z&HW-CC-Expire=86400&HW-CC-Sign=3839BDC8851CD16C2B5B7AC5B97C5AFD21ACEDEF4243710A8240680DB8B41A10)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/qttLQX4SSKSPtHn0JXrSiA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072732Z&HW-CC-Expire=86400&HW-CC-Sign=4937FA4A1C78201D2406F6DF84882E69C4FD93E641C611061D218E975CAFDC72)
 
 
 请在满足[开发前置条件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurity-dlpantipeep#开发前置条件)后再调用此接口，避免无法触发防窥回调。调用接口成功后，并且应用在前台可见时才会收到防窥回调。
@@ -115,6 +122,7 @@ on(type: 'dlpAntiPeep', callback: Callback&lt;DlpAntiPeepStatus&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 表示需要订阅的事件'dlpAntiPeep'，取值为固定字符串'dlpAntiPeep'。 |
@@ -124,6 +132,7 @@ on(type: 'dlpAntiPeep', callback: Callback&lt;DlpAntiPeepStatus&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-dlpantipeep)**。**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -148,7 +157,8 @@ try {
 
 
 
-#### off("dlpAntiPeep")
+## off("dlpAntiPeep")
+
 
 **支持设备：** Phone
 
@@ -166,6 +176,7 @@ off(type: 'dlpAntiPeep', callback?: Callback&lt;DlpAntiPeepStatus&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 表示需要解订阅的事件'dlpAntiPeep'，取值为固定字符串'dlpAntiPeep'。 |
@@ -175,6 +186,7 @@ off(type: 'dlpAntiPeep', callback?: Callback&lt;DlpAntiPeepStatus&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-dlpantipeep)**。**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -199,7 +211,8 @@ try {
 
 
 
-#### getDlpAntiPeepInfo
+## getDlpAntiPeepInfo
+
 
 **支持设备：** Phone
 
@@ -217,6 +230,7 @@ getDlpAntiPeepInfo(): DlpAntiPeepStatus
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | DlpAntiPeepStatus | 表示窥视状态。 |
@@ -225,6 +239,7 @@ getDlpAntiPeepInfo(): DlpAntiPeepStatus
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-dlpantipeep)**。**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -248,7 +263,8 @@ try {
 
 
 
-#### passDlpAntiPeepInfo
+## passDlpAntiPeepInfo
+
 
 **支持设备：** Phone
 
@@ -259,7 +275,7 @@ passDlpAntiPeepInfo(): void
 若应用在生命周期内不再需要接受窥视状态，可直接调用[off("dlpAntiPeep")](#offdlpantipeep)接口解注册，若仍想接受放通后的非窥视状态，则可以调用该接口。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/QVxa-AJWTa-cNuwLikKqMg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095505Z&HW-CC-Expire=86400&HW-CC-Sign=49103B42E8EB7744C0A2BA5F2DA76E71E88D1D21F69F865072D4803388C90F51)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/tG1ZiBdqTyCjhkc6UDGgQA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072732Z&HW-CC-Expire=86400&HW-CC-Sign=90616BA5F51B71231AC76B2FA88CBF283A556B095B70979809514E940CEC36F1)
 
 
 请在满足[开发前置条件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurity-dlpantipeep#开发前置条件)并调用[on("dlpAntiPeep")](#ondlpantipeep)接口注册后再调用该接口，可用于在应用注册的生命周期内将回调状态变更为非防窥状态，直到应用退出或设备锁屏。
@@ -277,6 +293,7 @@ passDlpAntiPeepInfo(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-dlpantipeep)**。**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -300,7 +317,8 @@ try {
 
 
 
-#### setAntiPeepMaskLayer
+## setAntiPeepMaskLayer
+
 
 **支持设备：** Phone
 
@@ -309,7 +327,7 @@ setAntiPeepMaskLayer(windowId: number): Promise&lt;void&gt;
 对指定窗口设置系统级蒙层，使用Promise异步回调。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/PQSaWASlRUWvTicL-9Al7Q/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095505Z&HW-CC-Expire=86400&HW-CC-Sign=DE35911EF24627B6CA4E2C487C01CA5FA592DE7E6B40BF008EBD6E84F92CED7C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/Wlzl0JoxQgirrym4i-oMBg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072732Z&HW-CC-Expire=86400&HW-CC-Sign=12EBE9DB6D1451BD1E8AEA08669953C03FDFC52D37F2ABE20B8B809A759BB093)
 
 
 该接口调用后会拉起蒙层，覆盖应用窗口，建议开发者在检测到窥视状态后调用一次即可，频繁调用可能对用户体验造成影响。
@@ -326,12 +344,14 @@ setAntiPeepMaskLayer(windowId: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | windowId | number | 是 | 应用需要覆盖保护的窗口ID，该参数取值范围为大于0的整数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -341,6 +361,7 @@ setAntiPeepMaskLayer(windowId: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-dlpantipeep)**。**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -371,7 +392,8 @@ try {
 
 
 
-#### requestAntiPeepOptions
+## requestAntiPeepOptions
+
 
 **支持设备：** Phone
 
@@ -389,12 +411,14 @@ requestAntiPeepOptions(context: Context): Promise&lt;AntiPeepOptionsResult&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 请求权限的UIAbility/UIExtensionAbility的Context。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -404,6 +428,7 @@ requestAntiPeepOptions(context: Context): Promise&lt;AntiPeepOptionsResult&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-dlpantipeep)**。**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -429,7 +454,8 @@ dlpAntiPeep.requestAntiPeepOptions(context).then((data: dlpAntiPeep.AntiPeepOpti
 
 
 
-#### AntiPeepOptionsResult
+## AntiPeepOptionsResult
+
 
 **支持设备：** Phone
 
@@ -441,6 +467,7 @@ dlpAntiPeep.requestAntiPeepOptions(context).then((data: dlpAntiPeep.AntiPeepOpti
 
 **起始版本：** 6.1.0(23)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SUCCESS | 0 | 表示防窥保护开关开启成功。 |
@@ -450,7 +477,8 @@ dlpAntiPeep.requestAntiPeepOptions(context).then((data: dlpAntiPeep.AntiPeepOpti
 
 
 
-#### publishAntiPeepInformation
+## publishAntiPeepInformation
+
 
 **支持设备：** Phone
 
@@ -470,6 +498,7 @@ publishAntiPeepInformation(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -478,6 +507,7 @@ publishAntiPeepInformation(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-dlpantipeep)**。**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

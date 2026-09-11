@@ -1,11 +1,12 @@
 # neural_network_runtime_type.h
 
-更新时间：2026-07-17 09:35:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-neural-network-runtime-type-h
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -23,16 +24,19 @@ Neural Network Runtime定义的结构体和枚举值。
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 结构体
+### 结构体
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_NN_UInt32Array | OH_NN_UInt32Array | 该结构体用于存储32位无符号整型数组。 |
@@ -49,10 +53,12 @@ Neural Network Runtime定义的结构体和枚举值。
  
   
 
-#### 枚举
+### 枚举
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_NN_PerformanceMode | OH_NN_PerformanceMode | 硬件的性能模式。 |
@@ -68,10 +74,12 @@ Neural Network Runtime定义的结构体和枚举值。
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | typedef void (*NN_OnRunDone)(void *userData, OH_NN_ReturnCode errCode, void *outputTensor[], int32_t outputCount) | NN_OnRunDone | 异步推理结束后的回调处理函数句柄。 使用参数userData来查询希望获取的那次异步推理执行。userData与调用异步推理OH_NNExecutor_RunAsync接口时传入的参数userData是一致的。使用参数errCode（OH_NN_ReturnCode类型）来获取该次异步推理的返回状态。 |
@@ -80,13 +88,15 @@ Neural Network Runtime定义的结构体和枚举值。
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### OH_NN_PerformanceMode
+### OH_NN_PerformanceMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -100,18 +110,20 @@ enum OH_NN_PerformanceMode
  
 **起始版本：** 9
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_NN_PERFORMANCE_NONE = 0 | 无性能模式偏好。 |
-| OH_NN_PERFORMANCE_LOW = 1 | 低能耗模式。 |
+| OH_NN_PERFORMANCE_LOW = 1 | 低性能模式。 |
 | OH_NN_PERFORMANCE_MEDIUM = 2 | 中性能模式。 |
 | OH_NN_PERFORMANCE_HIGH = 3 | 高性能模式。 |
-| OH_NN_PERFORMANCE_EXTREME = 4 | 极致性能模式。 |
+| OH_NN_PERFORMANCE_EXTREME = 4 | 最高性能模式。 |
  
  
   
 
-#### OH_NN_Priority
+### OH_NN_Priority
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -125,6 +137,7 @@ enum OH_NN_Priority
  
 **起始版本：** 9
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_NN_PRIORITY_NONE = 0 | 无优先级偏好。 |
@@ -135,7 +148,8 @@ enum OH_NN_Priority
  
   
 
-#### OH_NN_ReturnCode
+### OH_NN_ReturnCode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -149,6 +163,7 @@ Neural Network Runtime 定义的错误码类型。
  
 **起始版本：** 9
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_NN_SUCCESS = 0 | 操作成功。 |
@@ -170,7 +185,8 @@ Neural Network Runtime 定义的错误码类型。
  
   
 
-#### OH_NN_FuseType
+### OH_NN_FuseType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -184,6 +200,7 @@ Neural Network Runtime 融合算子中激活函数的类型。
  
 **起始版本：** 9
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_NN_FUSED_NONE = 0 | 未指定融合激活函数。 |
@@ -193,7 +210,8 @@ Neural Network Runtime 融合算子中激活函数的类型。
  
   
 
-#### OH_NN_Format
+### OH_NN_Format
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -207,6 +225,7 @@ enum OH_NN_Format
  
 **起始版本：** 9
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_NN_FORMAT_NONE = 0 | 当张量没有特定的排布类型时（如标量或矢量），使用本枚举值。 |
@@ -217,7 +236,8 @@ enum OH_NN_Format
  
   
 
-#### OH_NN_DeviceType
+### OH_NN_DeviceType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -231,6 +251,7 @@ Neural Network Runtime 支持的设备类型。
  
 **起始版本：** 9
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_NN_OTHERS = 0 | 不属于CPU、GPU、专用加速器的设备。 |
@@ -241,7 +262,8 @@ Neural Network Runtime 支持的设备类型。
  
   
 
-#### OH_NN_DataType
+### OH_NN_DataType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -255,6 +277,7 @@ Neural Network Runtime 支持的数据类型。
  
 **起始版本：** 9
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_NN_UNKNOWN = 0 | 张量数据类型未知。 |
@@ -274,7 +297,8 @@ Neural Network Runtime 支持的数据类型。
  
   
 
-#### OH_NN_OperationType
+### OH_NN_OperationType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -288,6 +312,7 @@ Neural Network Runtime 支持算子的类型。
  
 **起始版本：** 9
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_NN_OPS_ADD = 1 | 返回两个输入张量对应元素相加的和的张量。 输入： input1，第一个输入的张量，数据类型要求为布尔值或者数字。 input2，第二个输入的张量，数据类型和形状需要和第一个输入保持一致。 参数： activationType，是一个整型常量，且必须是OH_NN_FuseType中含有的值。在输出之前调用指定的激活。输出： output，input1和input2的和，数据形状与输入broadcast之后一样，数据类型与较高精度的输入精度一致。 |
@@ -402,7 +427,8 @@ Neural Network Runtime 支持算子的类型。
  
   
 
-#### OH_NN_TensorType
+### OH_NN_TensorType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -420,6 +446,7 @@ enum OH_NN_TensorType
  
 **起始版本：** 9
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_NN_TENSOR = 0 | 当张量作为模型（或算子）的输入或输出时，使用本枚举值。 |
@@ -589,13 +616,15 @@ enum OH_NN_TensorType
  
   
 
-#### 函数说明
+## 函数说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### NN_OnRunDone()
+### NN_OnRunDone()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -613,6 +642,7 @@ typedef void (*NN_OnRunDone)(void *userData, OH_NN_ReturnCode errCode, void *out
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | void *userData | 异步推理执行的标识符，与调用异步推理OH_NNExecutor_RunAsync接口时传入的参数userData一致。 |
@@ -623,7 +653,8 @@ typedef void (*NN_OnRunDone)(void *userData, OH_NN_ReturnCode errCode, void *out
  
   
 
-#### NN_OnServiceDied()
+### NN_OnServiceDied()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -643,6 +674,7 @@ typedef void (*NN_OnServiceDied)(void *userData)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | void *userData | 异步推理执行的标识符，与调用异步推理OH_NNExecutor_RunAsync接口时传入的参数userData一致。 |

@@ -1,24 +1,26 @@
 # Interfaces (其他)
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-i
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 
 
-#### AVFileDescriptor9+
+## AVFileDescriptor9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 音视频文件资源描述，一种特殊资源的播放方式，使用场景：应用中的音频资源被连续存储在同一个文件中，需要根据偏移量和长度进行播放。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Media.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -29,15 +31,17 @@
 
 
 
-#### AVDataSrcDescriptor10+
+## AVDataSrcDescriptor10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 音视频文件资源描述，用于DataSource播放方式，使用场景：应用在未获取完整音视频资源时，允许用户创建播放实例并开始播放，达到提前播放的目的。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -47,15 +51,17 @@
 
 
 
-#### SubtitleInfo12+
+## SubtitleInfo12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 外挂字幕信息，使用场景：订阅外挂字幕事件，回调返回外挂字幕详细信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Media.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -66,15 +72,17 @@
 
 
 
-#### SeiMessage18+
+## SeiMessage18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 SEI信息内容，描述SEI信息的负载类型和数据。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Media.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -84,15 +92,17 @@ SEI信息内容，描述SEI信息的负载类型和数据。
 
 
 
-#### MediaDescription8+
+## MediaDescription8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过key-value方式获取媒体信息。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Media.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -133,13 +143,15 @@ media.createAVPlayer((err: BusinessError, player: media.AVPlayer) => {
 
 
 
-#### PlaybackInfo12+
+## PlaybackInfo12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过key-value方式获取播放信息。
 
 **系统能力：** SystemCapability.Multimedia.Media.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -148,9 +160,10 @@ media.createAVPlayer((err: BusinessError, player: media.AVPlayer) => {
 
 
 
-#### WatermarkConfiguration
+## WatermarkConfiguration
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 添加水印的配置参数。水印位置以视频左上角为原点计算。
 
@@ -159,6 +172,7 @@ media.createAVPlayer((err: BusinessError, player: media.AVPlayer) => {
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Media.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -170,15 +184,17 @@ media.createAVPlayer((err: BusinessError, player: media.AVPlayer) => {
 
 
 
-#### AVRecorderConfig9+
+## AVRecorderConfig9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示音视频录制的参数设置。
 
 通过audioSourceType和videoSourceType区分纯音频录制、纯视频录制或音视频录制。纯音频录制时，仅需要设置audioSourceType；纯视频录制时，仅需要设置videoSourceType；音视频录制时，audioSourceType和videoSourceType均需要设置。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -195,13 +211,15 @@ media.createAVPlayer((err: BusinessError, player: media.AVPlayer) => {
 
 
 
-#### AVRecorderProfile9+
+## AVRecorderProfile9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 音视频录制的配置文件。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -223,9 +241,13 @@ media.createAVPlayer((err: BusinessError, player: media.AVPlayer) => {
 
 
 
-#### 音频参数配置对照表
+### 音频参数配置对照表
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 此处提供音频参数配置的对照表，每项的具体释义，可查看下述字段解释。
+
 
 | 编码格式 | 封装格式 | 采样率 | 比特率 | 声道数 |
 | --- | --- | --- | --- | --- |
@@ -238,13 +260,15 @@ media.createAVPlayer((err: BusinessError, player: media.AVPlayer) => {
 
 
 
-#### Location
+## Location
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 视频录制的地理位置。
 
 **系统能力：** SystemCapability.Multimedia.Media.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -254,13 +278,15 @@ media.createAVPlayer((err: BusinessError, player: media.AVPlayer) => {
 
 
 
-#### EncoderInfo11+
+## EncoderInfo11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 编码器和规格参数。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -276,13 +302,15 @@ media.createAVPlayer((err: BusinessError, player: media.AVPlayer) => {
 
 
 
-#### Range11+
+## Range11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示一个类型的范围。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -292,13 +320,15 @@ media.createAVPlayer((err: BusinessError, player: media.AVPlayer) => {
 
 
 
-#### AVTranscoderConfig12+
+## AVTranscoderConfig12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 表示视频转码的参数设置。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVTranscoder
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -315,13 +345,15 @@ media.createAVPlayer((err: BusinessError, player: media.AVPlayer) => {
 
 
 
-#### AVMetadata11+
+## AVMetadata11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 音视频元数据，包含各个元数据字段。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVMetadataExtractor
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -353,9 +385,13 @@ media.createAVPlayer((err: BusinessError, player: media.AVPlayer) => {
 
 
 
-#### AVMetadata.tracks支持的MediaDescriptionKey8+说明
+### AVMetadata.tracks支持的MediaDescriptionKey8+说明
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 AVMetadata.tracks支持的[MediaDescriptionKey](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-e#mediadescriptionkey8)的范围如下：
+
 
 | 名称 | 值 | 适用的轨道类型 |
 | --- | --- | --- |
@@ -376,13 +412,15 @@ AVMetadata.tracks支持的[MediaDescriptionKey](https://developer.huawei.com/con
 
 
 
-#### PixelMapParams12+
+## PixelMapParams12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 获取视频缩略图时，输出缩略图的格式参数。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVImageGenerator
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -392,13 +430,15 @@ AVMetadata.tracks支持的[MediaDescriptionKey](https://developer.huawei.com/con
 
 
 
-#### OutputSize20+
+## OutputSize20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于获取视频缩略图时，来定义输出图像大小。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVImageGenerator
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -408,15 +448,17 @@ AVMetadata.tracks支持的[MediaDescriptionKey](https://developer.huawei.com/con
 
 
 
-#### FrameInfo23+
+## FrameInfo23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 批量获取视频缩略图操作的返回值，包含请求抽帧的时间点、实际抽帧的时间点、从视频中输出缩略图的格式参数和获取单张缩略图操作的结果。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVMetadataExtractor
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -428,15 +470,17 @@ AVMetadata.tracks支持的[MediaDescriptionKey](https://developer.huawei.com/con
 
 
 
-#### MediaStream19+
+## MediaStream19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 媒体流数据信息。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Media.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -448,15 +492,17 @@ AVMetadata.tracks支持的[MediaDescriptionKey](https://developer.huawei.com/con
 
 
 
-#### MediaSourceLoader18+
+## MediaSourceLoader18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于定义媒体数据加载器，需要应用程序对其进行实现。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Media.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -507,13 +553,15 @@ async function setupPlayer() {
 
 
 
-#### PlaybackStrategy12+
+## PlaybackStrategy12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 播放策略。
 
 **系统能力：** SystemCapability.Multimedia.Media.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -533,13 +581,15 @@ async function setupPlayer() {
 
 
 
-#### AVScreenCaptureStrategy20+
+## AVScreenCaptureStrategy20+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 录屏策略。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVScreenCapture
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -551,13 +601,15 @@ async function setupPlayer() {
 
 
 
-#### AVScreenCaptureRecordConfig12+
+## AVScreenCaptureRecordConfig12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 表示录屏参数配置。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVScreenCapture
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -576,13 +628,15 @@ async function setupPlayer() {
 
 
 
-#### AVMetricsEvent23+
+## AVMetricsEvent23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述指标事件的信息。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -594,9 +648,10 @@ async function setupPlayer() {
 
 
 
-#### VideoSize
+## VideoSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述视频尺寸。
 
@@ -606,6 +661,7 @@ async function setupPlayer() {
 
 **系统能力：** SystemCapability.Multimedia.Media.Core
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | width | number | 否 | 是 | 视频分辨率的宽度。 取值约束：该值必须为正整数。 单位为像素。 |
@@ -614,9 +670,10 @@ async function setupPlayer() {
 
 
 
-#### TrackSelectionFilter
+## TrackSelectionFilter
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述轨道选择的过滤条件。
 
@@ -625,6 +682,7 @@ async function setupPlayer() {
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Media.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -645,9 +703,10 @@ async function setupPlayer() {
 
 
 
-#### AudioRecorderConfig(deprecated)
+## AudioRecorderConfig(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 6开始支持，从API version 9开始废弃，建议使用 AVRecorderConfig 替代。
@@ -656,6 +715,7 @@ async function setupPlayer() {
 表示音频的录音配置。
 
 **系统能力：** SystemCapability.Multimedia.Media.AudioRecorder
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -672,9 +732,10 @@ async function setupPlayer() {
 
 
 
-#### AVTimedMetaData
+## AVTimedMetaData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述基于时间的元数据的信息。
 
@@ -683,6 +744,7 @@ async function setupPlayer() {
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Media.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

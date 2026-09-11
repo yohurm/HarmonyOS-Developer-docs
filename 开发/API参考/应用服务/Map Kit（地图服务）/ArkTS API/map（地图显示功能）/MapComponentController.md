@@ -1,11 +1,12 @@
 # Class (MapComponentController)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-mapcomponentcontroller
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -15,7 +16,8 @@ import { map, mapCommon } from '@kit.MapKit';
 
 
 
-#### MapComponentController
+## MapComponentController
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -96,7 +98,8 @@ struct HuaweiMapDemo {
 
 
 
-#### animateCamera
+### animateCamera
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -113,6 +116,7 @@ animateCamera(update: CameraUpdate, duration?: number): void
 **起始版本：** 4.1.0(11)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -139,7 +143,8 @@ this.mapController.animateCamera(cameraUpdate, 1000);
 
 
 
-#### animateCameraStatus
+### animateCameraStatus
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -157,6 +162,7 @@ animateCameraStatus(update: CameraUpdate, duration?: number): Promise&lt;Animate
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | update | CameraUpdate | 是 | 相机状态将要发生的变化，异常值返回401错误码。 |
@@ -164,6 +170,7 @@ animateCameraStatus(update: CameraUpdate, duration?: number): Promise&lt;Animate
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -173,6 +180,7 @@ animateCameraStatus(update: CameraUpdate, duration?: number): Promise&lt;Animate
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -198,7 +206,8 @@ let animateResult = await this.mapController.animateCameraStatus(cameraUpdate, 1
 
 
 
-#### animateCameraWithMarker
+### animateCameraWithMarker
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -216,6 +225,7 @@ animateCameraWithMarker(update: CameraUpdate, marker: Marker, duration: number):
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | update | CameraUpdate | 是 | 相机状态将要发生的变化，异常值不处理。 |
@@ -224,6 +234,7 @@ animateCameraWithMarker(update: CameraUpdate, marker: Marker, duration: number):
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -262,7 +273,8 @@ await this.mapController.animateCameraWithMarker(cameraUpdate, marker, 1000);
 
 
 
-#### animateCameraWithMarkers
+### animateCameraWithMarkers
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -280,6 +292,7 @@ animateCameraWithMarkers(update: CameraUpdate, markers: Array&lt;Marker&gt;, dur
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | update | CameraUpdate | 是 | 相机状态将要发生的变化，异常值返回401错误码。 |
@@ -289,6 +302,7 @@ animateCameraWithMarkers(update: CameraUpdate, markers: Array&lt;Marker&gt;, dur
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;AnimateResult&gt; | Promise对象，返回AnimateResult。 |
@@ -297,6 +311,7 @@ animateCameraWithMarkers(update: CameraUpdate, markers: Array&lt;Marker&gt;, dur
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -348,7 +363,8 @@ await this.mapController.animateCameraWithMarkers(cameraUpdate, [marker1, marker
 
 
 
-#### stopAnimation
+### stopAnimation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -372,7 +388,8 @@ this.mapController.stopAnimation();
 
 
 
-#### clear
+### clear
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -396,7 +413,8 @@ this.mapController.clear();
 
 
 
-#### moveCamera
+### moveCamera
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -413,6 +431,7 @@ moveCamera(update: CameraUpdate): void
 **起始版本：** 4.1.0(11)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -438,7 +457,8 @@ this.mapController.moveCamera(cameraUpdate);
 
 
 
-#### getCameraPosition
+### getCameraPosition
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -456,6 +476,7 @@ getCameraPosition(): mapCommon.CameraPosition
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | mapCommon.CameraPosition | 相机的当前状态信息。 |
@@ -469,7 +490,8 @@ let cameraPosition: mapCommon.CameraPosition = this.mapController.getCameraPosit
 
 
 
-#### setLatLngBounds
+### setLatLngBounds
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -486,6 +508,7 @@ setLatLngBounds(bounds: mapCommon.LatLngBounds): void
 **起始版本：** 4.1.0(11)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -510,7 +533,8 @@ this.mapController.setLatLngBounds(bounds);
 
 
 
-#### setPointToCenter
+### setPointToCenter
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -527,6 +551,7 @@ setPointToCenter(point: mapCommon.MapPoint): void
 **起始版本：** 4.1.0(11)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -545,7 +570,8 @@ this.mapController.setPointToCenter(point);
 
 
 
-#### setMaxZoom
+### setMaxZoom
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -563,6 +589,7 @@ setMaxZoom(maxZoom: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | maxZoom | number | 是 | 相机最大缩放级别。取值范围：[2, 20]，超出此范围时，系统自动调整为边界值。 在取值范围内，传入的值小于当前minZoom，最大缩放级别和最小缩放级别都会被设置为当前传入的值。异常值不处理。 |
@@ -576,7 +603,8 @@ this.mapController.setMaxZoom(10);
 
 
 
-#### setMinZoom
+### setMinZoom
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -594,6 +622,7 @@ setMinZoom(minZoom: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | minZoom | number | 是 | 相机最小缩放级别。取值范围：[2, 20]，超出此范围时，系统自动调整为边界值。 在取值范围内，传入的值大于当前maxZoom，最大缩放级别和最小缩放级别都会被设置为当前传入的值。异常值不处理。 |
@@ -607,7 +636,8 @@ this.mapController.setMinZoom(3);
 
 
 
-#### getMaxZoom
+### getMaxZoom
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -625,6 +655,7 @@ getMaxZoom(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 相机最大缩放级别。 |
@@ -638,7 +669,8 @@ let maxZoom: number = this.mapController.getMaxZoom();
 
 
 
-#### getMinZoom
+### getMinZoom
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -656,6 +688,7 @@ getMinZoom(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 相机最小缩放级别。 |
@@ -669,7 +702,8 @@ let minZoom: number = this.mapController.getMinZoom();
 
 
 
-#### setTrafficEnabled
+### setTrafficEnabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -687,6 +721,7 @@ setTrafficEnabled(enabled: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 打开或关闭路况图层，异常值不处理。 - true：打开路况图层 - false：关闭路况图层 |
@@ -700,7 +735,8 @@ this.mapController.setTrafficEnabled(true);
 
 
 
-#### isTrafficEnabled
+### isTrafficEnabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -718,6 +754,7 @@ isTrafficEnabled(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | - true：路况图层为开启状态 - false：路况图层为关闭状态 |
@@ -731,7 +768,8 @@ let isTrafficEnabled: boolean = this.mapController.isTrafficEnabled();
 
 
 
-#### setBuildingEnabled
+### setBuildingEnabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -749,6 +787,7 @@ setBuildingEnabled(enabled: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 打开或者关闭3D建筑图层，异常值不处理。 - true：打开3D建筑图层 - false：关闭3D建筑图层 说明： 打开3D建筑图层后将地图缩放层级调整为16级或以上，即可展现3D图层效果。 |
@@ -762,7 +801,8 @@ this.mapController.setBuildingEnabled(true);
 
 
 
-#### isBuildingEnabled
+### isBuildingEnabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -780,6 +820,7 @@ isBuildingEnabled(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | - true：3D建筑图层为开启状态 - false：3D建筑图层为关闭状态 |
@@ -793,7 +834,8 @@ let isBuildingEnabled: boolean = this.mapController.isBuildingEnabled();
 
 
 
-#### setMyLocationEnabled
+### setMyLocationEnabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -811,6 +853,7 @@ setMyLocationEnabled(myLocationEnabled: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | myLocationEnabled | boolean | 是 | 我的位置图层功能开关，异常值不处理。 - true：启用我的位置图层 - false：禁用我的位置图层 |
@@ -824,7 +867,8 @@ this.mapController.setMyLocationEnabled(true);
 
 
 
-#### setMyLocation
+### setMyLocation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -841,6 +885,7 @@ Map Kit默认使用系统的连续定位能力显示用户位置，如果您希�
 **起始版本：** 4.1.0(11)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -859,7 +904,8 @@ this.mapController.setMyLocation(location);
 
 
 
-#### setMyLocationStyle
+### setMyLocationStyle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -877,12 +923,14 @@ setMyLocationStyle(style: mapCommon.MyLocationStyle): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | mapCommon.MyLocationStyle | 是 | 用户的位置样式，异常值不处理。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -904,7 +952,8 @@ await this.mapController.setMyLocationStyle(style);
 
 
 
-#### isMyLocationEnabled
+### isMyLocationEnabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -922,6 +971,7 @@ isMyLocationEnabled(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 我的位置图层的开启状态。 - true：我的位置图层为已启用状态 - false：我的位置图层为已禁用状态 |
@@ -935,7 +985,8 @@ let isMyLocationEnabled: boolean = this.mapController.isMyLocationEnabled();
 
 
 
-#### setZoomGesturesEnabled
+### setZoomGesturesEnabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -963,6 +1014,7 @@ setZoomGesturesEnabled(enabled: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 设置是否启用缩放手势，异常值不处理。 - true：启用缩放手势 - false：禁用缩放手势 |
@@ -976,7 +1028,8 @@ this.mapController.setZoomGesturesEnabled(true);
 
 
 
-#### isZoomGesturesEnabled
+### isZoomGesturesEnabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -994,6 +1047,7 @@ isZoomGesturesEnabled(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 缩放手势功能的启用状态。 - true：缩放手势为已启用状态 - false：缩放手势为已禁用状态 |
@@ -1007,7 +1061,8 @@ let isZoomGesturesEnabled: boolean = this.mapController.isZoomGesturesEnabled();
 
 
 
-#### setScrollGesturesEnabled
+### setScrollGesturesEnabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1029,6 +1084,7 @@ setScrollGesturesEnabled(enabled: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 设置是否启用滚动手势，异常值不处理。 - true：启用滚动手势 - false：禁用滚动手势 |
@@ -1042,7 +1098,8 @@ this.mapController.setScrollGesturesEnabled(true);
 
 
 
-#### isScrollGesturesEnabled
+### isScrollGesturesEnabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1060,6 +1117,7 @@ isScrollGesturesEnabled(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 滚动手势的启用状态。 - true：滚动手势为已启用状态 - false：滚动手势为已禁用状态 |
@@ -1073,7 +1131,8 @@ let isScrollGesturesEnabled: boolean = this.mapController.isScrollGesturesEnable
 
 
 
-#### setRotateGesturesEnabled
+### setRotateGesturesEnabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1095,6 +1154,7 @@ setRotateGesturesEnabled(enabled: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 设置是否启用旋转手势，异常值不处理。 - true：启用旋转手势 - false：禁用旋转手势 |
@@ -1108,7 +1168,8 @@ this.mapController.setRotateGesturesEnabled(true);
 
 
 
-#### isRotateGesturesEnabled
+### isRotateGesturesEnabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1126,6 +1187,7 @@ isRotateGesturesEnabled(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 旋转手势的启用状态。 - true：旋转手势为已启用状态 - false：旋转手势为已禁用状态 |
@@ -1139,7 +1201,8 @@ let isRotateGesturesEnabled: boolean = this.mapController.isRotateGesturesEnable
 
 
 
-#### setTiltGesturesEnabled
+### setTiltGesturesEnabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1161,6 +1224,7 @@ setTiltGesturesEnabled(enabled: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 设置是否启用倾斜手势，异常值不处理。 - true：启用倾斜手势 - false：禁用倾斜手势 |
@@ -1174,7 +1238,8 @@ this.mapController.setTiltGesturesEnabled(true);
 
 
 
-#### isTiltGesturesEnabled
+### isTiltGesturesEnabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1192,6 +1257,7 @@ isTiltGesturesEnabled(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 倾斜手势的启用状态。 - true：倾斜手势为已启用状态 - false：倾斜手势为已禁用状态 |
@@ -1205,7 +1271,8 @@ let isTiltGesturesEnabled: boolean = this.mapController.isTiltGesturesEnabled();
 
 
 
-#### setZoomControlsEnabled
+### setZoomControlsEnabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1227,6 +1294,7 @@ setZoomControlsEnabled(enabled: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 设置是否启用缩放控制器，异常值不处理。 - true：启用缩放控制器 - false：禁用缩放控制器 |
@@ -1240,7 +1308,8 @@ this.mapController.setZoomControlsEnabled(true);
 
 
 
-#### isZoomControlsEnabled
+### isZoomControlsEnabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1258,6 +1327,7 @@ isZoomControlsEnabled(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 缩放控制器的启用状态。 - true：缩放控制器为已启用状态 - false：缩放控制器为已禁用状态 |
@@ -1271,7 +1341,8 @@ let isZoomControlsEnabled: boolean = this.mapController.isZoomControlsEnabled();
 
 
 
-#### setMyLocationControlsEnabled
+### setMyLocationControlsEnabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1289,6 +1360,7 @@ setMyLocationControlsEnabled(enabled: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 设置是否启用我的位置按钮，异常值不处理。 - true：启用我的位置按钮 - false：禁用我的位置按钮 |
@@ -1302,7 +1374,8 @@ this.mapController.setMyLocationControlsEnabled(true);
 
 
 
-#### isMyLocationControlsEnabled
+### isMyLocationControlsEnabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1320,6 +1393,7 @@ isMyLocationControlsEnabled(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 我的位置按钮的启用状态。 - true：我的位置按钮为已启用状态 - false：我的位置按钮为已禁用状态 |
@@ -1333,7 +1407,8 @@ let isMyLocationControlsEnabled: boolean = this.mapController.isMyLocationContro
 
 
 
-#### setScaleControlsEnabled
+### setScaleControlsEnabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1351,6 +1426,7 @@ setScaleControlsEnabled(enabled: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 设置是否启用比例尺，异常值不处理。 - true：启用比例尺 - false：禁用比例尺 |
@@ -1364,7 +1440,8 @@ this.mapController.setScaleControlsEnabled(true);
 
 
 
-#### isScaleControlsEnabled
+### isScaleControlsEnabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1382,6 +1459,7 @@ isScaleControlsEnabled(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 比例尺的启用状态。 - true：比例尺为已启用状态 - false：比例尺为已禁用状态 |
@@ -1395,7 +1473,8 @@ let isScaleControlsEnabled: boolean = this.mapController.isScaleControlsEnabled(
 
 
 
-#### setCompassControlsEnabled
+### setCompassControlsEnabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1413,6 +1492,7 @@ setCompassControlsEnabled(enabled: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 设置是否启用指南针，异常值不处理。 - true：启用指南针 - false：禁用指南针 |
@@ -1426,7 +1506,8 @@ this.mapController.setCompassControlsEnabled(true);
 
 
 
-#### isCompassControlsEnabled
+### isCompassControlsEnabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1444,6 +1525,7 @@ isCompassControlsEnabled(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 指南针的启用状态。 - true：指南针为已启用状态 - false：指南针为已禁用状态 |
@@ -1457,7 +1539,8 @@ let isCompassControlsEnabled: boolean = this.mapController.isCompassControlsEnab
 
 
 
-#### setGestureScaleByMapCenter
+### setGestureScaleByMapCenter
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1479,6 +1562,7 @@ setGestureScaleByMapCenter(enabled: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 设置以固定屏幕中心点进行缩放功能是否可用，异常值不处理。 - true：启用，地图将以传入的固定屏幕点进行缩放。 - false：禁用，地图将以手指点击的位置为中心进行缩放。 |
@@ -1492,7 +1576,8 @@ this.mapController.setGestureScaleByMapCenter(true);
 
 
 
-#### isGestureScaleByMapCenter
+### isGestureScaleByMapCenter
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1510,6 +1595,7 @@ isGestureScaleByMapCenter(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 以固定屏幕中心点进行缩放功能的开启状态。 - true：以固定屏幕中心点进行缩放功能为启用状态 - false：以固定屏幕中心点进行缩放功能为禁用状态 |
@@ -1523,7 +1609,8 @@ let isGestureScaleByMapCenter: boolean = this.mapController.isGestureScaleByMapC
 
 
 
-#### setLogoAlignment
+### setLogoAlignment
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1541,6 +1628,7 @@ setLogoAlignment(alignment: mapCommon.LogoAlignment): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | alignment | mapCommon.LogoAlignment | 是 | 地图Logo的对齐方式，异常值不处理。 |
@@ -1554,7 +1642,8 @@ this.mapController.setLogoAlignment(mapCommon.LogoAlignment.BOTTOM_START);
 
 
 
-#### setLogoPadding
+### setLogoPadding
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1581,6 +1670,7 @@ setLogoPadding(padding: mapCommon.Padding): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | padding | mapCommon.Padding | 是 | 地图边界与Logo之间的间距，异常值不处理。 |
@@ -1598,7 +1688,8 @@ this.mapController.setLogoPadding(padding);
 
 
 
-#### getScalePerPixel
+### getScalePerPixel
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1616,6 +1707,7 @@ getScalePerPixel(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 地图上1个像素点对应的长度，单位：m。当地图对象不存在或者销毁时返回0。 |
@@ -1629,7 +1721,8 @@ let scalePerPixel: number = this.mapController.getScalePerPixel();
 
 
 
-#### addMarker
+### addMarker
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1647,12 +1740,14 @@ addMarker(options: mapCommon.MarkerOptions): Promise&lt;Marker&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | mapCommon.MarkerOptions | 是 | 标记的属性设置。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1662,6 +1757,7 @@ addMarker(options: mapCommon.MarkerOptions): Promise&lt;Marker&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1697,7 +1793,8 @@ let marker: map.Marker = await this.mapController.addMarker(markerOptions);
 
 
 
-#### addCircle
+### addCircle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1715,12 +1812,14 @@ addCircle(options: mapCommon.MapCircleOptions): Promise&lt;MapCircle&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | mapCommon.MapCircleOptions | 是 | 圆的属性设置。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1730,6 +1829,7 @@ addCircle(options: mapCommon.MapCircleOptions): Promise&lt;MapCircle&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1768,7 +1868,8 @@ let mapCircle: map.MapCircle = await this.mapController.addCircle(mapCircleOptio
 
 
 
-#### addPolyline
+### addPolyline
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1786,12 +1887,14 @@ addPolyline(options: mapCommon.MapPolylineOptions): Promise&lt;MapPolyline&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | mapCommon.MapPolylineOptions | 是 | 折线的属性设置。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1801,6 +1904,7 @@ addPolyline(options: mapCommon.MapPolylineOptions): Promise&lt;MapPolyline&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1838,7 +1942,8 @@ let mapPolyline: map.MapPolyline = await this.mapController.addPolyline(polyline
 
 
 
-#### addPolygon
+### addPolygon
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1856,12 +1961,14 @@ addPolygon(options: mapCommon.MapPolygonOptions): Promise&lt;MapPolygon&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | mapCommon.MapPolygonOptions | 是 | 多边形的属性设置。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1871,6 +1978,7 @@ addPolygon(options: mapCommon.MapPolygonOptions): Promise&lt;MapPolygon&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1912,7 +2020,8 @@ let mapPolygon: map.MapPolygon = await this.mapController.addPolygon(polygonOpti
 
 
 
-#### addPointAnnotation
+### addPointAnnotation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1930,12 +2039,14 @@ addPointAnnotation(params: mapCommon.PointAnnotationParams): Promise&lt;PointAnn
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | mapCommon.PointAnnotationParams | 是 | 点注释的属性设置。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1945,6 +2056,7 @@ addPointAnnotation(params: mapCommon.PointAnnotationParams): Promise&lt;PointAnn
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2006,7 +2118,8 @@ let pointAnnotation: map.PointAnnotation = await this.mapController.addPointAnno
 
 
 
-#### addBubble
+### addBubble
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2024,12 +2137,14 @@ addBubble(params: mapCommon.BubbleParams): Promise&lt;Bubble&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | mapCommon.BubbleParams | 是 | 气泡的属性设置。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2039,6 +2154,7 @@ addBubble(params: mapCommon.BubbleParams): Promise&lt;Bubble&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2077,7 +2193,8 @@ let bubble: map.Bubble = await this.mapController.addBubble(bubbleOptions);
 
 
 
-#### setPadding
+### setPadding
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2094,6 +2211,7 @@ setPadding(padding?: mapCommon.Padding): void
 **起始版本：** 4.1.0(11)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2113,7 +2231,8 @@ this.mapController.setPadding(padding);
 
 
 
-#### getProjection
+### getProjection
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2131,6 +2250,7 @@ getProjection(): Projection
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Projection | Projection对象。 |
@@ -2144,7 +2264,8 @@ let projection: map.Projection = this.mapController.getProjection();
 
 
 
-#### setCustomMapStyle
+### setCustomMapStyle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2162,12 +2283,14 @@ setCustomMapStyle(customMapStyleOptions: mapCommon.CustomMapStyleOptions): Promi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | customMapStyleOptions | mapCommon.CustomMapStyleOptions | 是 | 自定义样式参数，异常值不处理。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2177,6 +2300,7 @@ setCustomMapStyle(customMapStyleOptions: mapCommon.CustomMapStyleOptions): Promi
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2196,7 +2320,8 @@ await this.mapController.setCustomMapStyle(param);
 
 
 
-#### getDayNightMode
+### getDayNightMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2214,6 +2339,7 @@ getDayNightMode(): mapCommon.DayNightMode
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | mapCommon.DayNightMode | 日间夜间模式。 - DayNightMode.DAY：日间模式。 - DayNightMode.NIGHT：夜间模式。 - DayNightMode.AUTO：自动模式，如果系统打开深色开关，显示夜间模式，否则显示日间模式。 当地图对象不存在或者销毁时，返回mapCommon.DayNightMode.DAY。 |
@@ -2227,7 +2353,8 @@ let mode = this.mapController.getDayNightMode();
 
 
 
-#### setDayNightMode
+### setDayNightMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2245,6 +2372,7 @@ setDayNightMode(mode: mapCommon.DayNightMode): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | mapCommon.DayNightMode | 是 | 日间夜间模式，异常值不处理。 |
@@ -2258,7 +2386,8 @@ this.mapController.setDayNightMode(mapCommon.DayNightMode.AUTO);
 
 
 
-#### getMapType
+### getMapType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2276,6 +2405,7 @@ getMapType(): mapCommon.MapType
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | mapCommon.MapType | 查询地图的类型，当地图对象不存在或者销毁时，返回mapCommon.MapType.STANDARD。 |
@@ -2289,7 +2419,8 @@ let mapType = this.mapController.getMapType();
 
 
 
-#### setMapType
+### setMapType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2307,6 +2438,7 @@ setMapType(mapType: mapCommon.MapType): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mapType | mapCommon.MapType | 是 | 地图类型，异常值不处理。 |
@@ -2320,7 +2452,8 @@ this.mapController.setMapType(mapCommon.MapType.TERRAIN);
 
 
 
-#### setScalePosition
+### setScalePosition
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2337,6 +2470,7 @@ setScalePosition(point: mapCommon.MapPoint): void
 **起始版本：** 5.0.0(12)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2357,7 +2491,8 @@ this.mapController.setScalePosition(point);
 
 
 
-#### getScaleLevel
+### getScaleLevel
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2375,6 +2510,7 @@ getScaleLevel(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 接口返回比例尺上的文本数字，单位：m。当地图对象不存在或者销毁时，返回0。 |
@@ -2388,7 +2524,8 @@ let level = this.mapController.getScaleLevel();
 
 
 
-#### setCompassPosition
+### setCompassPosition
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2405,6 +2542,7 @@ setCompassPosition(point: mapCommon.MapPoint): void
 **起始版本：** 5.0.0(12)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2423,7 +2561,8 @@ this.mapController.setCompassPosition(point);
 
 
 
-#### setAllGesturesEnabled
+### setAllGesturesEnabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2441,6 +2580,7 @@ setAllGesturesEnabled(enabled: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 提供禁用所有手势的接口，异常值不处理。 - true：启用手势 - false：禁用手势 |
@@ -2454,7 +2594,8 @@ this.mapController.setAllGesturesEnabled(true);
 
 
 
-#### getScaleControlsHeight
+### getScaleControlsHeight
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2472,6 +2613,7 @@ getScaleControlsHeight(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 比例尺控件的高度，单位：vp。 |
@@ -2485,7 +2627,8 @@ let height = this.mapController.getScaleControlsHeight();
 
 
 
-#### getScaleControlsWidth
+### getScaleControlsWidth
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2503,6 +2646,7 @@ getScaleControlsWidth(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 比例尺控件的宽度，单位：vp。 |
@@ -2516,7 +2660,8 @@ let width = this.mapController.getScaleControlsWidth();
 
 
 
-#### setAlwaysShowScaleEnabled
+### setAlwaysShowScaleEnabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2534,6 +2679,7 @@ setAlwaysShowScaleEnabled(enabled: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 设置是否始终显示比例尺，异常值不处理。 - true：始终显示 - false：关闭始终显示，比例尺显示2秒后关闭 |
@@ -2547,7 +2693,8 @@ this.mapController.setAlwaysShowScaleEnabled(true);
 
 
 
-#### isAlwaysShowScaleEnabled
+### isAlwaysShowScaleEnabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2565,6 +2712,7 @@ isAlwaysShowScaleEnabled(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | - true: 始终显示 - false: 关闭始终显示 |
@@ -2578,7 +2726,8 @@ let scaleEnabled: boolean = this.mapController.isAlwaysShowScaleEnabled();
 
 
 
-#### addClusterOverlay
+### addClusterOverlay
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2596,12 +2745,14 @@ addClusterOverlay(params: mapCommon.ClusterOverlayParams): Promise&lt;ClusterOve
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | mapCommon.ClusterOverlayParams | 是 | 聚合图层参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2611,6 +2762,7 @@ addClusterOverlay(params: mapCommon.ClusterOverlayParams): Promise&lt;ClusterOve
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2643,7 +2795,8 @@ let clusterOverlay: map.ClusterOverlay = await this.mapController.addClusterOver
 
 
 
-#### addImageOverlay
+### addImageOverlay
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2661,12 +2814,14 @@ addImageOverlay(params: mapCommon.ImageOverlayParams): Promise&lt;ImageOverlay&g
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | mapCommon.ImageOverlayParams | 是 | 覆盖物参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2676,6 +2831,7 @@ addImageOverlay(params: mapCommon.ImageOverlayParams): Promise&lt;ImageOverlay&g
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2706,7 +2862,8 @@ let imageOverlay = await this.mapController?.addImageOverlay(imageOverlayParams)
 
 
 
-#### snapshot
+### snapshot
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2724,6 +2881,7 @@ snapshot(): Promise<image.PixelMap>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<image.PixelMap> | Promise对象，返回image.PixelMap。 |
@@ -2739,7 +2897,8 @@ let image: image.PixelMap = await this.mapController.snapshot();
 
 
 
-#### addBuildingOverlay
+### addBuildingOverlay
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2757,12 +2916,14 @@ addBuildingOverlay(params: mapCommon.BuildingOverlayParams): Promise&lt;Building
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | mapCommon.BuildingOverlayParams | 是 | 3D建筑相关属性。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2772,6 +2933,7 @@ addBuildingOverlay(params: mapCommon.BuildingOverlayParams): Promise&lt;Building
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2949,7 +3111,8 @@ let buildingOverlay: map.BuildingOverlay = await this.mapController?.addBuilding
 
 
 
-#### addTraceOverlay
+### addTraceOverlay
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2967,6 +3130,7 @@ addTraceOverlay(params: mapCommon.TraceOverlayParams, markers?: Array&lt;Marker&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | mapCommon.TraceOverlayParams | 是 | 动态轨迹参数。 |
@@ -2974,6 +3138,7 @@ addTraceOverlay(params: mapCommon.TraceOverlayParams, markers?: Array&lt;Marker&
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2983,6 +3148,7 @@ addTraceOverlay(params: mapCommon.TraceOverlayParams, markers?: Array&lt;Marker&
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3136,7 +3302,8 @@ let traceOverlay: map.TraceOverlay = await this.mapController.addTraceOverlay(tr
 
 
 
-#### addArc
+### addArc
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3154,12 +3321,14 @@ addArc(params: mapCommon.MapArcParams): MapArc
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | mapCommon.MapArcParams | 是 | 弧线的相关属性。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3169,6 +3338,7 @@ addArc(params: mapCommon.MapArcParams): MapArc
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3207,7 +3377,8 @@ this.mapController.addArc(mapArcParams);
 
 
 
-#### show
+### show
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3237,7 +3408,8 @@ onPageShow(): void {
 
 
 
-#### hide
+### hide
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3267,7 +3439,8 @@ onPageHide(): void {
 
 
 
-#### getEventManager
+### getEventManager
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3285,6 +3458,7 @@ getEventManager(): MapEventManager
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | MapEventManager | 地图监听事件管理器。 |
@@ -3298,7 +3472,8 @@ let mapEventManager: map.MapEventManager = this.mapController.getEventManager();
 
 
 
-#### setDisplayOrder
+### setDisplayOrder
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3316,6 +3491,7 @@ setDisplayOrder(types: Array<mapCommon.MapElementType>): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | types | Array<mapCommon.MapElementType> | 是 | 四类地图元素的显示顺序，默认顺序为[1, 2, 3, 4]。 入参的长度必须是4，且必须是mapCommon.MapElementType的4个取值，如果不满足，则返回错误码401。 |
@@ -3324,6 +3500,7 @@ setDisplayOrder(types: Array<mapCommon.MapElementType>): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3343,7 +3520,8 @@ this.mapController.setDisplayOrder(mapElementTypeArr);
 
 
 
-#### setLogoScale
+### setLogoScale
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3361,6 +3539,7 @@ setLogoScale(logoScale: number): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | logoScale | number | 是 | Logo缩放比例，取值范围：[0.8, 1]。异常值返回401错误码。 |
@@ -3369,6 +3548,7 @@ setLogoScale(logoScale: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3383,7 +3563,8 @@ this.mapController.setLogoScale(0.9);
 
 
 
-#### getLogoScale
+### getLogoScale
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3401,6 +3582,7 @@ getLogoScale(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | Logo缩放比例。 |
@@ -3414,7 +3596,8 @@ let logoScale: number = this.mapController.getLogoScale();
 
 
 
-#### isSphereEnabled
+### isSphereEnabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3432,6 +3615,7 @@ isSphereEnabled(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | - true：3D地球为开启状态 - false：3D地球为关闭状态 |
@@ -3445,7 +3629,8 @@ let result: boolean = this.mapController.isSphereEnabled();
 
 
 
-#### setSphereEnabled
+### setSphereEnabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3463,6 +3648,7 @@ setSphereEnabled(enabled: boolean): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 以动画形式切换2D或3D地球，异常值不处理。取值范围： - true：开启3D地球 - false：开启2D地球 |
@@ -3476,7 +3662,8 @@ this.mapController.setSphereEnabled(true);
 
 
 
-#### setSphereEnabled
+### setSphereEnabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3494,6 +3681,7 @@ setSphereEnabled(enabled: boolean, animateDuration: number): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 以动画形式切换2D或3D地球，异常值不处理。取值范围： - true：开启3D地球 - false：开启2D地球 |
@@ -3508,7 +3696,8 @@ this.mapController.setSphereEnabled(true, 1000);
 
 
 
-#### setSphereEnabled
+### setSphereEnabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3526,6 +3715,7 @@ setSphereEnabled(enabled: boolean, animateDuration: number, cityLight: boolean):
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 以动画形式切换2D或3D地球，异常值不处理。取值范围： - true：开启3D地球 - false：开启2D地球 |
@@ -3541,7 +3731,8 @@ this.mapController.setSphereEnabled(true, 1000, true);
 
 
 
-#### setSphereMapEnabled
+### setSphereMapEnabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3559,6 +3750,7 @@ setSphereMapEnabled(enabled: boolean, params?: mapCommon.SphereParams): Promise&
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 以动画形式切换2D或3D地球，异常值不处理。取值范围： - true：开启3D地球 - false：开启2D地球 |
@@ -3566,6 +3758,7 @@ setSphereMapEnabled(enabled: boolean, params?: mapCommon.SphereParams): Promise&
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3592,7 +3785,8 @@ await this.mapController.setSphereMapEnabled(true, mSphereOptions);
 
 
 
-#### addHeatmap
+### addHeatmap
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3610,12 +3804,14 @@ addHeatmap(params: mapCommon.HeatmapParams): Promise&lt;Heatmap&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | mapCommon.HeatmapParams | 是 | 添加热力图的参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3625,6 +3821,7 @@ addHeatmap(params: mapCommon.HeatmapParams): Promise&lt;Heatmap&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3661,7 +3858,8 @@ await this.mapController?.addHeatmap(heatMapOptions)
 
 
 
-#### addMvtOverlay
+### addMvtOverlay
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3679,12 +3877,14 @@ addMvtOverlay(params: mapCommon.MvtOverlayParams): MvtOverlay
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | mapCommon.MvtOverlayParams | 是 | 矢量图层的参数。 说明： 使用在线下载方式添加矢量图层时（即使用mapCommon.MvtOverlayParams中mapCommon.MvtSource参数的tileUrl方式），需要申请访问网络的权限：ohos.permission.INTERNET。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3694,6 +3894,7 @@ addMvtOverlay(params: mapCommon.MvtOverlayParams): MvtOverlay
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3730,7 +3931,8 @@ let mvtOverlay = this.mapController?.addMvtOverlay(params);
 
 
 
-#### setFramePerSecond
+### setFramePerSecond
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3748,6 +3950,7 @@ setFramePerSecond(fps: number): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fps | number | 是 | 每秒期望的帧数，取值范围：[1, 60]。异常值返回401错误码。 |
@@ -3761,7 +3964,8 @@ this.mapController?.setFramePerSecond(60);
 
 
 
-#### addFlowFieldOverlay
+### addFlowFieldOverlay
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3779,12 +3983,14 @@ addFlowFieldOverlay(params: mapCommon.FlowFieldOverlayParams): Promise&lt;FlowFi
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | mapCommon.FlowFieldOverlayParams | 是 | 流场图层的参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3794,6 +4000,7 @@ addFlowFieldOverlay(params: mapCommon.FlowFieldOverlayParams): Promise&lt;FlowFi
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3812,7 +4019,8 @@ let fieldOverlay = await this.mapController.addFlowFieldOverlay(params);
 
 
 
-#### addMassPointOverlay
+### addMassPointOverlay
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3830,12 +4038,14 @@ addMassPointOverlay(params: mapCommon.MassPointOverlayParams): Promise&lt;MassPo
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | mapCommon.MassPointOverlayParams | 是 | 海量点图层的参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3845,6 +4055,7 @@ addMassPointOverlay(params: mapCommon.MassPointOverlayParams): Promise&lt;MassPo
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3878,7 +4089,8 @@ let massPointOverlay = await this.mapController?.addMassPointOverlay(params);
 
 
 
-#### setLanguage
+### setLanguage
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3896,6 +4108,7 @@ setLanguage(language: string): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | language | string | 是 | 地图语言，异常值不处理。语种取值请参见地图组件支持语言列表。 |
@@ -3909,7 +4122,8 @@ this.mapController?.setLanguage('ja');
 
 
 
-#### getLanguage
+### getLanguage
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3927,6 +4141,7 @@ getLanguage(): string
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 地图语言。语种取值请参见地图组件支持语言列表。 |
@@ -3940,7 +4155,8 @@ let language = this.mapController?.getLanguage();
 
 
 
-#### changeMyLocationLayerOrder
+### changeMyLocationLayerOrder
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3958,6 +4174,7 @@ changeMyLocationLayerOrder(isBelow: boolean): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isBelow | boolean | 是 | 我的位置图层是否位于覆盖物之下，异常值不处理。 - true：我的位置图层位于覆盖物之下 - false：我的位置图层位于覆盖物之上 说明： 该接口对Marker、MapPolyline、MapPolygon、MapCircle、PointAnnotation、Bubble、ImageOverlay、MapArc、TraceOverlay、底图Poi生效。 |
@@ -3971,7 +4188,8 @@ this.mapController?.changeMyLocationLayerOrder(true);
 
 
 
-#### addTileOverlay
+### addTileOverlay
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3989,12 +4207,14 @@ addTileOverlay(params: mapCommon.TileOverlayParams | mapCommon.TileOverlayOption
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | mapCommon.TileOverlayParams \| mapCommon.TileOverlayOptions | 是 | 瓦片图层参数。 说明： 从6.0.0(20)版本开始，params属性支持mapCommon.TileOverlayOptions类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4004,6 +4224,7 @@ addTileOverlay(params: mapCommon.TileOverlayParams | mapCommon.TileOverlayOption
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4033,7 +4254,8 @@ let tileOverlay: map.TileOverlay = this.mapController?.addTileOverlay(params);
 
 
 
-#### on('cameraChange')
+### on('cameraChange')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4053,6 +4275,7 @@ on(type: 'cameraChange', callback: Callback<mapCommon.LatLng>): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'cameraChange'：监听地图相机状态变化事件。 |
@@ -4069,7 +4292,8 @@ this.mapController.on("cameraChange", (position) => {
 
 
 
-#### off('cameraChange')
+### off('cameraChange')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4089,6 +4313,7 @@ off(type: 'cameraChange', callback: Callback&lt;void&gt;): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'cameraChange'：监听地图相机状态变化事件。 |
@@ -4105,7 +4330,8 @@ this.mapController.off("cameraChange", (position) => {
 
 
 
-#### on('cameraIdle')
+### on('cameraIdle')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4125,6 +4351,7 @@ on(type: 'cameraIdle', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'cameraIdle'：监听相机移动结束事件。 |
@@ -4141,7 +4368,8 @@ this.mapController.on("cameraIdle", () => {
 
 
 
-#### off('cameraIdle')
+### off('cameraIdle')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4161,6 +4389,7 @@ off(type: 'cameraIdle', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'cameraIdle'：监听相机移动结束事件。 |
@@ -4177,7 +4406,8 @@ this.mapController.off("cameraIdle", () => {
 
 
 
-#### on('cameraMoveCancel')
+### on('cameraMoveCancel')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4197,6 +4427,7 @@ on(type: 'cameraMoveCancel', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'cameraMoveCancel'：监听地图相机移动取消事件。 |
@@ -4213,7 +4444,8 @@ this.mapController.on("cameraMoveCancel", () => {
 
 
 
-#### off('cameraMoveCancel')
+### off('cameraMoveCancel')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4233,6 +4465,7 @@ off(type: 'cameraMoveCancel', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'cameraMoveCancel'：监听地图相机移动取消事件。 |
@@ -4249,7 +4482,8 @@ this.mapController.off("cameraMoveCancel", () => {
 
 
 
-#### on('cameraMove')
+### on('cameraMove')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4269,6 +4503,7 @@ on(type: 'cameraMove', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'cameraMove'：监听相机移动事件。 |
@@ -4285,7 +4520,8 @@ this.mapController.on("cameraMove", () => {
 
 
 
-#### off('cameraMove')
+### off('cameraMove')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4305,6 +4541,7 @@ off(type: 'cameraMove', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'cameraMove'：监听相机移动事件。 |
@@ -4321,7 +4558,8 @@ this.mapController.off("cameraMove", () => {
 
 
 
-#### on('cameraMoveStart')
+### on('cameraMoveStart')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4341,6 +4579,7 @@ on(type: 'cameraMoveStart', callback: Callback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'cameraMoveStart'：监听相机移动开始事件。 |
@@ -4357,7 +4596,8 @@ this.mapController.on("cameraMoveStart", (reason) => {
 
 
 
-#### off('cameraMoveStart')
+### off('cameraMoveStart')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4377,6 +4617,7 @@ off(type: 'cameraMoveStart', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'cameraMoveStart'：监听相机移动开始事件。 |
@@ -4393,7 +4634,8 @@ this.mapController.off("cameraMoveStart", () => {
 
 
 
-#### on('mapClick')
+### on('mapClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4413,6 +4655,7 @@ on(type: 'mapClick', callback: Callback<mapCommon.LatLng>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'mapClick'：监听地图点击事件。 |
@@ -4429,7 +4672,8 @@ this.mapController.on("mapClick", (position) => {
 
 
 
-#### off('mapClick')
+### off('mapClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4449,6 +4693,7 @@ off(type: 'mapClick', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'mapClick'：监听地图点击事件。 |
@@ -4465,7 +4710,8 @@ this.mapController.off("mapClick", () => {
 
 
 
-#### on('mapLoad')
+### on('mapLoad')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4485,6 +4731,7 @@ on(type: 'mapLoad', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'mapLoad'：监听地图加载事件。 |
@@ -4501,7 +4748,8 @@ this.mapController.on("mapLoad", () => {
 
 
 
-#### off('mapLoad')
+### off('mapLoad')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4521,6 +4769,7 @@ off(type: 'mapLoad', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'mapLoad'：监听地图加载事件。 |
@@ -4537,7 +4786,8 @@ this.mapController.off("mapLoad", () => {
 
 
 
-#### on('mapLongClick')
+### on('mapLongClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4557,6 +4807,7 @@ on(type: 'mapLongClick', callback: Callback<mapCommon.LatLng>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'mapLongClick'：监听地图长按事件。 |
@@ -4573,7 +4824,8 @@ this.mapController.on("mapLongClick", () => {
 
 
 
-#### off('mapLongClick')
+### off('mapLongClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4593,6 +4845,7 @@ off(type: 'mapLongClick', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'mapLongClick'：监听地图长按事件。 |
@@ -4609,7 +4862,8 @@ this.mapController.off("mapLongClick", () => {
 
 
 
-#### on('myLocationButtonClick')
+### on('myLocationButtonClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4629,6 +4883,7 @@ on(type: 'myLocationButtonClick', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'myLocationButtonClick'：监听我的位置按钮点击事件。 |
@@ -4645,7 +4900,8 @@ this.mapController.on("myLocationButtonClick", () => {
 
 
 
-#### off('myLocationButtonClick')
+### off('myLocationButtonClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4665,6 +4921,7 @@ off(type: 'myLocationButtonClick', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'myLocationButtonClick'：监听我的位置按钮点击事件。 |
@@ -4681,7 +4938,8 @@ this.mapController.off("myLocationButtonClick", () => {
 
 
 
-#### on('myLocationClick')
+### on('myLocationClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4701,6 +4959,7 @@ on(type: 'myLocationClick', callback: Callback<mapCommon.LatLng>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'myLocationClick'：监听我的位置点击事件。 |
@@ -4717,7 +4976,8 @@ this.mapController.on("myLocationClick", (position) => {
 
 
 
-#### off('myLocationClick')
+### off('myLocationClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4737,6 +4997,7 @@ off(type: 'myLocationClick', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'myLocationClick'：监听我的位置点击事件。 |
@@ -4753,7 +5014,8 @@ this.mapController.off("myLocationClick", () => {
 
 
 
-#### on('poiClick')
+### on('poiClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4773,6 +5035,7 @@ on(type: 'poiClick', callback: Callback<mapCommon.Poi>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'poiClick'：监听POI点击事件。 |
@@ -4789,7 +5052,8 @@ this.mapController.on("poiClick", (poi) => {
 
 
 
-#### off('poiClick')
+### off('poiClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4809,6 +5073,7 @@ off(type: 'poiClick', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'poiClick'：监听POI点击事件。 |
@@ -4825,7 +5090,8 @@ this.mapController.off("poiClick", () => {
 
 
 
-#### on('markerClick')
+### on('markerClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4845,6 +5111,7 @@ on(type: 'markerClick', callback: Callback&lt;Marker&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'markerClick'：监听标记点击事件。 |
@@ -4861,7 +5128,8 @@ this.mapController.on("markerClick", (marker) => {
 
 
 
-#### off('markerClick')
+### off('markerClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4881,6 +5149,7 @@ off(type: 'markerClick', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'markerClick'：监听标记点击事件。 |
@@ -4897,7 +5166,8 @@ this.mapController.off("markerClick", () => {
 
 
 
-#### on('markerDragStart')
+### on('markerDragStart')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4917,6 +5187,7 @@ on(type: 'markerDragStart', callback: Callback&lt;Marker&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'markerDragStart'：监听标记开始拖拽事件。 |
@@ -4933,7 +5204,8 @@ this.mapController.on("markerDragStart", (marker) => {
 
 
 
-#### off('markerDragStart')
+### off('markerDragStart')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4953,6 +5225,7 @@ off(type: 'markerDragStart', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'markerDragStart'：监听标记开始拖拽事件。 |
@@ -4969,7 +5242,8 @@ this.mapController.off("markerDragStart", () => {
 
 
 
-#### on('markerDrag')
+### on('markerDrag')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4989,6 +5263,7 @@ on(type: 'markerDrag', callback: Callback&lt;Marker&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'markerDrag'：监听标记拖拽事件。 |
@@ -5005,7 +5280,8 @@ this.mapController.on("markerDrag", (marker) => {
 
 
 
-#### off('markerDrag')
+### off('markerDrag')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5025,6 +5301,7 @@ off(type: 'markerDrag', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'markerDrag'：监听标记拖拽事件。 |
@@ -5041,7 +5318,8 @@ this.mapController.off("markerDrag", () => {
 
 
 
-#### on('markerDragEnd')
+### on('markerDragEnd')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5061,6 +5339,7 @@ on(type: 'markerDragEnd', callback: Callback&lt;Marker&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'markerDragEnd'：监听标记拖拽结束事件。 |
@@ -5077,7 +5356,8 @@ this.mapController.on("markerDragEnd", (marker) => {
 
 
 
-#### off('markerDragEnd')
+### off('markerDragEnd')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5097,6 +5377,7 @@ off(type: 'markerDragEnd', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'markerDragEnd'：监听标记拖动结束事件。 |
@@ -5113,7 +5394,8 @@ this.mapController.off("markerDragEnd", () => {
 
 
 
-#### on('circleClick')
+### on('circleClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5133,6 +5415,7 @@ on(type: 'circleClick', callback: Callback&lt;MapCircle&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'circleClick'：监听圆点击事件。 |
@@ -5149,7 +5432,8 @@ this.mapController.on("circleClick", (position) => {
 
 
 
-#### off('circleClick')
+### off('circleClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5169,6 +5453,7 @@ off(type: 'circleClick', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'circleClick'：监听圆点击事件。 |
@@ -5185,7 +5470,8 @@ this.mapController.off("circleClick", () => {
 
 
 
-#### on('polylineClick')
+### on('polylineClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5205,6 +5491,7 @@ on(type: 'polylineClick', callback: Callback&lt;MapPolyline&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'polylineClick'：监听折线点击事件。 |
@@ -5221,7 +5508,8 @@ this.mapController.on("polylineClick", (polyline) => {
 
 
 
-#### off('polylineClick')
+### off('polylineClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5241,6 +5529,7 @@ off(type: 'polylineClick', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'polylineClick'：监听折线点击事件。 |
@@ -5257,7 +5546,8 @@ this.mapController.off("polylineClick", () => {
 
 
 
-#### on('polygonClick')
+### on('polygonClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5277,6 +5567,7 @@ on(type: 'polygonClick', callback: Callback&lt;MapPolygon&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'polygonClick'：监听多边形点击事件。 |
@@ -5293,7 +5584,8 @@ this.mapController.on("polygonClick", (polygon) => {
 
 
 
-#### off('polygonClick')
+### off('polygonClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5313,6 +5605,7 @@ off(type: 'polygonClick', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'polygonClick'：监听多边形点击事件。 |
@@ -5329,7 +5622,8 @@ this.mapController.off("polygonClick", () => {
 
 
 
-#### on('infoWindowClick')
+### on('infoWindowClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5349,6 +5643,7 @@ on(type: 'infoWindowClick', callback: Callback&lt;Marker&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'infoWindowClick'：监听信息窗点击事件。 |
@@ -5365,7 +5660,8 @@ this.mapController.on("infoWindowClick", (infoWindow) => {
 
 
 
-#### off('infoWindowClick')
+### off('infoWindowClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5385,6 +5681,7 @@ off(type: 'infoWindowClick', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'infoWindowClick'：监听信息窗点击事件。 |
@@ -5401,7 +5698,8 @@ this.mapController.off("infoWindowClick", () => {
 
 
 
-#### on('infoWindowClose')
+### on('infoWindowClose')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5421,6 +5719,7 @@ on(type: 'infoWindowClose', callback: Callback&lt;Marker&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'infoWindowClose'：监听信息窗关闭事件。 |
@@ -5437,7 +5736,8 @@ this.mapController.on("infoWindowClose", (infoWindowClose) => {
 
 
 
-#### off('infoWindowClose')
+### off('infoWindowClose')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5457,6 +5757,7 @@ off(type: 'infoWindowClose', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'infoWindowClose'：监听信息窗关闭事件。 |
@@ -5473,7 +5774,8 @@ this.mapController.off("infoWindowClose", () => {
 
 
 
-#### on('pointAnnotationClick')
+### on('pointAnnotationClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5493,6 +5795,7 @@ on(type: 'pointAnnotationClick', callback: Callback&lt;PointAnnotation&gt;): voi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'pointAnnotationClick'：监听点注释点击事件。 |
@@ -5509,7 +5812,8 @@ this.mapController.on("pointAnnotationClick", (pointAnnotation) => {
 
 
 
-#### off('pointAnnotationClick')
+### off('pointAnnotationClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5529,6 +5833,7 @@ off(type: 'pointAnnotationClick', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'pointAnnotationClick'：监听点注释点击事件。 |
@@ -5545,7 +5850,8 @@ this.mapController.off("pointAnnotationClick", () => {
 
 
 
-#### on('bubbleClick')
+### on('bubbleClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5565,6 +5871,7 @@ on(type: 'bubbleClick', callback: Callback&lt;Bubble&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'bubbleClick'：监听气泡点击事件。 |
@@ -5581,7 +5888,8 @@ this.mapController.on("bubbleClick", (bubble) => {
 
 
 
-#### off('bubbleClick')
+### off('bubbleClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5601,6 +5909,7 @@ off(type: 'bubbleClick', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'bubbleClick'：监听气泡点击事件。 |
@@ -5617,7 +5926,8 @@ this.mapController.off("bubbleClick", () => {
 
 
 
-#### on('imageOverlayClick')
+### on('imageOverlayClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5637,6 +5947,7 @@ on(type: 'imageOverlayClick', callback: Callback&lt;ImageOverlay&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'imageOverlayClick'：监听覆盖物点击事件。 |
@@ -5655,7 +5966,8 @@ this.mapController.on("imageOverlayClick", imageOverlayCallback)
 
 
 
-#### off('imageOverlayClick')
+### off('imageOverlayClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5675,6 +5987,7 @@ off(type: 'imageOverlayClick', callback?: Callback&lt;ImageOverlay&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'imageOverlayClick'：监听覆盖物点击事件。 |
@@ -5692,7 +6005,8 @@ this.mapController.off("imageOverlayClick", imageOverlayCallback);
 
 
 
-#### on('error')
+### on('error')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5712,6 +6026,7 @@ on(type: 'error', callback: ErrorCallback): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'error'：监听发生的异常。 |
@@ -5728,7 +6043,8 @@ this.mapController.on("error", (error) => {
 
 
 
-#### off('error')
+### off('error')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5748,6 +6064,7 @@ off(type: 'error', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'error'：监听发生的异常。 |
@@ -5764,9 +6081,10 @@ this.mapController.off("error", () => {
 
 
 
-#### setIndoorMapEnabled
+### setIndoorMapEnabled
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 setIndoorMapEnabled(enabled: boolean): void
 
@@ -5784,6 +6102,7 @@ setIndoorMapEnabled(enabled: boolean): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 是否启用室内图，异常值不处理。取值范围： - true：启用室内图 - false：关闭室内图 |
@@ -5792,6 +6111,7 @@ setIndoorMapEnabled(enabled: boolean): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5807,9 +6127,10 @@ this.mapController.setIndoorMapEnabled(true);
 
 
 
-#### isIndoorMapEnabled
+### isIndoorMapEnabled
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 isIndoorMapEnabled(): boolean
 
@@ -5827,6 +6148,7 @@ isIndoorMapEnabled(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | - true：室内图为开启状态 - false：室内图为关闭状态 |
@@ -5835,6 +6157,7 @@ isIndoorMapEnabled(): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5849,9 +6172,10 @@ let isIndoorMapEnabled = this.mapController.isIndoorMapEnabled();
 
 
 
-#### switchIndoorMapFloor
+### switchIndoorMapFloor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 switchIndoorMapFloor(buildingId: string, floorName: string): void
 
@@ -5869,6 +6193,7 @@ switchIndoorMapFloor(buildingId: string, floorName: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | buildingId | string | 是 | 建筑物的ID。从on('indoorMapEnter')方法的回调函数中获得，异常值不处理。 |
@@ -5878,6 +6203,7 @@ switchIndoorMapFloor(buildingId: string, floorName: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5892,9 +6218,10 @@ this.mapController?.switchIndoorMapFloor('822588304363886720', '3F');
 
 
 
-#### setFloorControlsPosition
+### setFloorControlsPosition
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 setFloorControlsPosition(point: mapCommon.MapPoint): void
 
@@ -5912,6 +6239,7 @@ setFloorControlsPosition(point: mapCommon.MapPoint): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | point | mapCommon.MapPoint | 是 | 设置楼层调节控件的位置，单位：px，异常值不处理。 |
@@ -5920,6 +6248,7 @@ setFloorControlsPosition(point: mapCommon.MapPoint): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5937,7 +6266,8 @@ this.mapController?.setFloorControlsPosition({
 
 
 
-#### isApproveNumberEnabled
+### isApproveNumberEnabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5955,6 +6285,7 @@ isApproveNumberEnabled(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | - true：显示审图号 - false：隐藏审图号 |
@@ -5968,7 +6299,8 @@ let isApproveNumberEnabled = this.mapController?.isApproveNumberEnabled();
 
 
 
-#### setApproveNumberEnabled
+### setApproveNumberEnabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5986,6 +6318,7 @@ setApproveNumberEnabled(enabled: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 设置是否显示审图号，只有路由地在中国才会显示，异常值不处理。 - true：显示审图号 - false：隐藏审图号 |
@@ -5999,7 +6332,8 @@ this.mapController?.setApproveNumberEnabled(true);
 
 
 
-#### addSignalLine
+### addSignalLine
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6017,12 +6351,14 @@ addSignalLine(signalParams: mapCommon.MapSignalParams): Promise&lt;MapSignalLine
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | signalParams | mapCommon.MapSignalParams | 是 | 信号路线管理对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6032,6 +6368,7 @@ addSignalLine(signalParams: mapCommon.MapSignalParams): Promise&lt;MapSignalLine
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6062,7 +6399,8 @@ let mapSignalLine1 = await mapController.addSignalLine(mapSignalParams);
 
 
 
-#### removeSignalLineCache
+### removeSignalLineCache
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6079,6 +6417,7 @@ removeSignalLineCache(signalLineId?: string): void
 **起始版本：** 26.0.0
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |

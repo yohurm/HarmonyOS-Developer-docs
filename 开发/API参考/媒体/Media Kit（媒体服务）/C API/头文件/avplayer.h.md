@@ -1,13 +1,14 @@
 # avplayer.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avplayer-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 AVPlayer是音视频播放组件，提供完整的播放控制和高级功能（多轨道、字幕、DRM等），适用于视频播放器、音频播放器、直播应用等场景，为开发者提供高性能、低延迟的媒体播放能力，降低开发复杂度。
  
@@ -25,16 +26,19 @@ AVPlayer是音视频播放组件，提供完整的播放控制和高级功能（
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | MediaKeySession | MediaKeySession | MediaKeySession类型。 |
@@ -44,10 +48,12 @@ AVPlayer是音视频播放组件，提供完整的播放控制和高级功能（
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | typedef void (*Player_MediaKeySystemInfoCallback)(OH_AVPlayer player, DRM_MediaKeySystemInfo mediaKeySystemInfo) | Player_MediaKeySystemInfoCallback | 播放器DRM信息更新时调用。 |
@@ -136,15 +142,17 @@ AVPlayer是音视频播放组件，提供完整的播放控制和高级功能（
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### Player_MediaKeySystemInfoCallback()
+### Player_MediaKeySystemInfoCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*Player_MediaKeySystemInfoCallback)(OH_AVPlayer *player, DRM_MediaKeySystemInfo* mediaKeySystemInfo)
@@ -158,6 +166,7 @@ typedef void (*Player_MediaKeySystemInfoCallback)(OH_AVPlayer *player, DRM_Media
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -166,9 +175,10 @@ typedef void (*Player_MediaKeySystemInfoCallback)(OH_AVPlayer *player, DRM_Media
  
   
 
-#### OH_AVPlayer_Create()
+### OH_AVPlayer_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVPlayer *OH_AVPlayer_Create(void)
@@ -188,6 +198,7 @@ OH_AVPlayer *OH_AVPlayer_Create(void)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVPlayer * | 如果创建成功返回指向OH_AVPlayer实例的指针，否则返回空指针。 可能的失败原因： 1.PlayerFactory::CreatePlayer执行失败。 2.new PlayerObject执行失败。 |
@@ -195,9 +206,10 @@ OH_AVPlayer *OH_AVPlayer_Create(void)
  
   
 
-#### OH_AVPlayer_SetURLSource()
+### OH_AVPlayer_SetURLSource()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_SetURLSource(OH_AVPlayer *player, const char *url)
@@ -213,6 +225,7 @@ OH_AVErrCode OH_AVPlayer_SetURLSource(OH_AVPlayer *player, const char *url)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -221,6 +234,7 @@ OH_AVErrCode OH_AVPlayer_SetURLSource(OH_AVPlayer *player, const char *url)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：设置成功。 AV_ERR_INVALID_VAL：输入player为空指针，url为空或者player SetUrlSource执行失败。 |
@@ -228,9 +242,10 @@ OH_AVErrCode OH_AVPlayer_SetURLSource(OH_AVPlayer *player, const char *url)
  
   
 
-#### OH_AVPlayer_SetFDSource()
+### OH_AVPlayer_SetFDSource()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_SetFDSource(OH_AVPlayer *player, int32_t fd, int64_t offset, int64_t size)
@@ -246,6 +261,7 @@ OH_AVErrCode OH_AVPlayer_SetFDSource(OH_AVPlayer *player, int32_t fd, int64_t of
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -256,6 +272,7 @@ OH_AVErrCode OH_AVPlayer_SetFDSource(OH_AVPlayer *player, int32_t fd, int64_t of
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：fd设置成功。 AV_ERR_INVALID_VAL：输入player为空指针，或者player SetFdSource执行失败。 |
@@ -263,9 +280,10 @@ OH_AVErrCode OH_AVPlayer_SetFDSource(OH_AVPlayer *player, int32_t fd, int64_t of
  
   
 
-#### OH_AVPlayer_SetDataSource()
+### OH_AVPlayer_SetDataSource()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_SetDataSource(OH_AVPlayer *player, OH_AVDataSourceExt* datasrc, void* userData)
@@ -281,6 +299,7 @@ OH_AVErrCode OH_AVPlayer_SetDataSource(OH_AVPlayer *player, OH_AVDataSourceExt* 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -290,6 +309,7 @@ OH_AVErrCode OH_AVPlayer_SetDataSource(OH_AVPlayer *player, OH_AVDataSourceExt* 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：设置成功。 AV_ERR_INVALID_VAL：输入player为空指针，或者输入datasrc为空指针。 |
@@ -297,9 +317,10 @@ OH_AVErrCode OH_AVPlayer_SetDataSource(OH_AVPlayer *player, OH_AVDataSourceExt* 
  
   
 
-#### OH_AVPlayer_Prepare()
+### OH_AVPlayer_Prepare()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_Prepare(OH_AVPlayer *player)
@@ -317,6 +338,7 @@ OH_AVErrCode OH_AVPlayer_Prepare(OH_AVPlayer *player)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -324,6 +346,7 @@ OH_AVErrCode OH_AVPlayer_Prepare(OH_AVPlayer *player)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：输入player为空指针，或者player Prepare执行失败。 |
@@ -331,9 +354,10 @@ OH_AVErrCode OH_AVPlayer_Prepare(OH_AVPlayer *player)
  
   
 
-#### OH_AVPlayer_Play()
+### OH_AVPlayer_Play()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_Play(OH_AVPlayer *player)
@@ -353,6 +377,7 @@ OH_AVErrCode OH_AVPlayer_Play(OH_AVPlayer *player)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -360,6 +385,7 @@ OH_AVErrCode OH_AVPlayer_Play(OH_AVPlayer *player)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：输入player为空指针，或者player Play执行失败。 |
@@ -367,9 +393,10 @@ OH_AVErrCode OH_AVPlayer_Play(OH_AVPlayer *player)
  
   
 
-#### OH_AVPlayer_Pause()
+### OH_AVPlayer_Pause()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_Pause(OH_AVPlayer *player)
@@ -385,6 +412,7 @@ OH_AVErrCode OH_AVPlayer_Pause(OH_AVPlayer *player)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -392,6 +420,7 @@ OH_AVErrCode OH_AVPlayer_Pause(OH_AVPlayer *player)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：输入player为空指针，或者player Pause执行失败。 |
@@ -399,9 +428,10 @@ OH_AVErrCode OH_AVPlayer_Pause(OH_AVPlayer *player)
  
   
 
-#### OH_AVPlayer_Stop()
+### OH_AVPlayer_Stop()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_Stop(OH_AVPlayer *player)
@@ -417,6 +447,7 @@ OH_AVErrCode OH_AVPlayer_Stop(OH_AVPlayer *player)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -424,6 +455,7 @@ OH_AVErrCode OH_AVPlayer_Stop(OH_AVPlayer *player)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：输入player为空指针，或者player Stop执行失败。 |
@@ -431,9 +463,10 @@ OH_AVErrCode OH_AVPlayer_Stop(OH_AVPlayer *player)
  
   
 
-#### OH_AVPlayer_Reset()
+### OH_AVPlayer_Reset()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_Reset(OH_AVPlayer *player)
@@ -451,6 +484,7 @@ OH_AVErrCode OH_AVPlayer_Reset(OH_AVPlayer *player)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -458,6 +492,7 @@ OH_AVErrCode OH_AVPlayer_Reset(OH_AVPlayer *player)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：输入player为空指针，或者player Reset执行失败。 |
@@ -465,9 +500,10 @@ OH_AVErrCode OH_AVPlayer_Reset(OH_AVPlayer *player)
  
   
 
-#### OH_AVPlayer_Release()
+### OH_AVPlayer_Release()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_Release(OH_AVPlayer *player)
@@ -485,6 +521,7 @@ OH_AVErrCode OH_AVPlayer_Release(OH_AVPlayer *player)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -492,6 +529,7 @@ OH_AVErrCode OH_AVPlayer_Release(OH_AVPlayer *player)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：输入player为空指针，或者player Release执行失败。 |
@@ -499,9 +537,10 @@ OH_AVErrCode OH_AVPlayer_Release(OH_AVPlayer *player)
  
   
 
-#### OH_AVPlayer_ReleaseSync()
+### OH_AVPlayer_ReleaseSync()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_ReleaseSync(OH_AVPlayer *player)
@@ -519,6 +558,7 @@ OH_AVErrCode OH_AVPlayer_ReleaseSync(OH_AVPlayer *player)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -526,6 +566,7 @@ OH_AVErrCode OH_AVPlayer_ReleaseSync(OH_AVPlayer *player)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：输入player为空指针，或者player ReleaseSync执行失败。 |
@@ -533,9 +574,10 @@ OH_AVErrCode OH_AVPlayer_ReleaseSync(OH_AVPlayer *player)
  
   
 
-#### OH_AVPlayer_SetVolume()
+### OH_AVPlayer_SetVolume()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_SetVolume(OH_AVPlayer *player, float leftVolume, float rightVolume)
@@ -553,6 +595,7 @@ OH_AVErrCode OH_AVPlayer_SetVolume(OH_AVPlayer *player, float leftVolume, float 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -562,6 +605,7 @@ OH_AVErrCode OH_AVPlayer_SetVolume(OH_AVPlayer *player, float leftVolume, float 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：成功设置音量。 AV_ERR_INVALID_VAL：输入player为空指针，或者player SetVolume执行失败。 |
@@ -569,9 +613,10 @@ OH_AVErrCode OH_AVPlayer_SetVolume(OH_AVPlayer *player, float leftVolume, float 
  
   
 
-#### OH_AVPlayer_SetLoudnessGain()
+### OH_AVPlayer_SetLoudnessGain()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_SetLoudnessGain(OH_AVPlayer *player, float loudnessGain)
@@ -593,6 +638,7 @@ OH_AVErrCode OH_AVPlayer_SetLoudnessGain(OH_AVPlayer *player, float loudnessGain
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针，需在prepared/playing/paused/completed/stopped状态时使用。 |
@@ -601,6 +647,7 @@ OH_AVErrCode OH_AVPlayer_SetLoudnessGain(OH_AVPlayer *player, float loudnessGain
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：成功设置响度。 AV_ERR_INVALID_VAL：输入player为空指针，或者输入的loudnessGain是无效参数。 AV_ERR_INVALID_STATE：函数在不正常的状态下调用，或者audioRendererInfo的usage参数不是 OH_AudioStream_Usage.AUDIOSTREAM_USAGE_MUSIC， OH_AudioStream_Usage.AUDIOSTREAM_USAGE_MOVIE和 OH_AudioStream_Usage.AUDIOSTREAM_USAGE_AUDIOBOOK之一。 AV_ERR_SERVICE_DIED：系统错误。 |
@@ -608,9 +655,10 @@ OH_AVErrCode OH_AVPlayer_SetLoudnessGain(OH_AVPlayer *player, float loudnessGain
  
   
 
-#### OH_AVPlayer_Seek()
+### OH_AVPlayer_Seek()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_Seek(OH_AVPlayer *player, int32_t mSeconds, AVPlayerSeekMode mode)
@@ -628,6 +676,7 @@ OH_AVErrCode OH_AVPlayer_Seek(OH_AVPlayer *player, int32_t mSeconds, AVPlayerSee
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -637,6 +686,7 @@ OH_AVErrCode OH_AVPlayer_Seek(OH_AVPlayer *player, int32_t mSeconds, AVPlayerSee
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：输入player为空指针，或者player Seek执行失败。 |
@@ -644,9 +694,10 @@ OH_AVErrCode OH_AVPlayer_Seek(OH_AVPlayer *player, int32_t mSeconds, AVPlayerSee
  
   
 
-#### OH_AVPlayer_GetCurrentTime()
+### OH_AVPlayer_GetCurrentTime()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_GetCurrentTime(OH_AVPlayer *player, int32_t *currentTime)
@@ -662,6 +713,7 @@ OH_AVErrCode OH_AVPlayer_GetCurrentTime(OH_AVPlayer *player, int32_t *currentTim
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -670,6 +722,7 @@ OH_AVErrCode OH_AVPlayer_GetCurrentTime(OH_AVPlayer *player, int32_t *currentTim
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：成功获取当前播放位置。 AV_ERR_INVALID_VAL：输入player为空指针，或者player GetCurrentTime执行失败。 |
@@ -677,9 +730,10 @@ OH_AVErrCode OH_AVPlayer_GetCurrentTime(OH_AVPlayer *player, int32_t *currentTim
  
   
 
-#### OH_AVPlayer_GetVideoWidth()
+### OH_AVPlayer_GetVideoWidth()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_GetVideoWidth(OH_AVPlayer *player, int32_t *videoWidth)
@@ -695,6 +749,7 @@ OH_AVErrCode OH_AVPlayer_GetVideoWidth(OH_AVPlayer *player, int32_t *videoWidth)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -703,6 +758,7 @@ OH_AVErrCode OH_AVPlayer_GetVideoWidth(OH_AVPlayer *player, int32_t *videoWidth)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：成功获取视频宽度。 AV_ERR_INVALID_VAL：输入player为空指针。 |
@@ -710,9 +766,10 @@ OH_AVErrCode OH_AVPlayer_GetVideoWidth(OH_AVPlayer *player, int32_t *videoWidth)
  
   
 
-#### OH_AVPlayer_GetVideoHeight()
+### OH_AVPlayer_GetVideoHeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_GetVideoHeight(OH_AVPlayer *player, int32_t *videoHeight)
@@ -728,6 +785,7 @@ OH_AVErrCode OH_AVPlayer_GetVideoHeight(OH_AVPlayer *player, int32_t *videoHeigh
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -736,6 +794,7 @@ OH_AVErrCode OH_AVPlayer_GetVideoHeight(OH_AVPlayer *player, int32_t *videoHeigh
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：成功获取视频高度。 AV_ERR_INVALID_VAL：输入player为空指针。 |
@@ -743,9 +802,10 @@ OH_AVErrCode OH_AVPlayer_GetVideoHeight(OH_AVPlayer *player, int32_t *videoHeigh
  
   
 
-#### OH_AVPlayer_SetPlaybackSpeed()
+### OH_AVPlayer_SetPlaybackSpeed()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_SetPlaybackSpeed(OH_AVPlayer *player, AVPlaybackSpeed speed)
@@ -761,6 +821,7 @@ OH_AVErrCode OH_AVPlayer_SetPlaybackSpeed(OH_AVPlayer *player, AVPlaybackSpeed s
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -769,6 +830,7 @@ OH_AVErrCode OH_AVPlayer_SetPlaybackSpeed(OH_AVPlayer *player, AVPlaybackSpeed s
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：成功设置播放速率。 AV_ERR_INVALID_VAL：输入player为空指针。 |
@@ -776,9 +838,10 @@ OH_AVErrCode OH_AVPlayer_SetPlaybackSpeed(OH_AVPlayer *player, AVPlaybackSpeed s
  
   
 
-#### OH_AVPlayer_SetPlaybackRate()
+### OH_AVPlayer_SetPlaybackRate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_SetPlaybackRate(OH_AVPlayer *player, float rate)
@@ -796,6 +859,7 @@ OH_AVErrCode OH_AVPlayer_SetPlaybackRate(OH_AVPlayer *player, float rate)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -804,6 +868,7 @@ OH_AVErrCode OH_AVPlayer_SetPlaybackRate(OH_AVPlayer *player, float rate)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：成功设置播放速率。 AV_ERR_OPERATE_NOT_PERMIT：在不支持的状态下或在直播期间调用这个方法。 AV_ERR_INVALID_VAL：输入player为空指针，或者设置速率超出范围。 |
@@ -811,9 +876,10 @@ OH_AVErrCode OH_AVPlayer_SetPlaybackRate(OH_AVPlayer *player, float rate)
  
   
 
-#### OH_AVPlayer_GetPlaybackSpeed()
+### OH_AVPlayer_GetPlaybackSpeed()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_GetPlaybackSpeed(OH_AVPlayer *player, AVPlaybackSpeed *speed)
@@ -829,6 +895,7 @@ OH_AVErrCode OH_AVPlayer_GetPlaybackSpeed(OH_AVPlayer *player, AVPlaybackSpeed *
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -837,6 +904,7 @@ OH_AVErrCode OH_AVPlayer_GetPlaybackSpeed(OH_AVPlayer *player, AVPlaybackSpeed *
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：成功获取播放速率。 AV_ERR_INVALID_VAL：输入player为空指针，或者player GetPlaybackSpeed执行失败。 |
@@ -844,9 +912,10 @@ OH_AVErrCode OH_AVPlayer_GetPlaybackSpeed(OH_AVPlayer *player, AVPlaybackSpeed *
  
   
 
-#### OH_AVPlayer_GetPlaybackRate()
+### OH_AVPlayer_GetPlaybackRate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_GetPlaybackRate(OH_AVPlayer *player, float *rate)
@@ -860,6 +929,7 @@ OH_AVErrCode OH_AVPlayer_GetPlaybackRate(OH_AVPlayer *player, float *rate)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -868,6 +938,7 @@ OH_AVErrCode OH_AVPlayer_GetPlaybackRate(OH_AVPlayer *player, float *rate)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：成功获取当前播放器的播放速率； AV_ERR_INVALID_VAL：输入player为空指针，或者GetPlaybackRate执行失败。 |
@@ -875,9 +946,10 @@ OH_AVErrCode OH_AVPlayer_GetPlaybackRate(OH_AVPlayer *player, float *rate)
  
   
 
-#### OH_AVPlayer_SetAudioRendererInfo()
+### OH_AVPlayer_SetAudioRendererInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_SetAudioRendererInfo(OH_AVPlayer *player, OH_AudioStream_Usage streamUsage)
@@ -893,6 +965,7 @@ OH_AVErrCode OH_AVPlayer_SetAudioRendererInfo(OH_AVPlayer *player, OH_AudioStrea
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -901,6 +974,7 @@ OH_AVErrCode OH_AVPlayer_SetAudioRendererInfo(OH_AVPlayer *player, OH_AudioStrea
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：成功设置音频流类型。 AV_ERR_INVALID_VAL：输入player为空指针或者streamUsage值无效。 |
@@ -908,9 +982,10 @@ OH_AVErrCode OH_AVPlayer_SetAudioRendererInfo(OH_AVPlayer *player, OH_AudioStrea
  
   
 
-#### OH_AVPlayer_SetVolumeMode()
+### OH_AVPlayer_SetVolumeMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_SetVolumeMode(OH_AVPlayer *player, OH_AudioStream_VolumeMode volumeMode)
@@ -926,6 +1001,7 @@ OH_AVErrCode OH_AVPlayer_SetVolumeMode(OH_AVPlayer *player, OH_AudioStream_Volum
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -934,6 +1010,7 @@ OH_AVErrCode OH_AVPlayer_SetVolumeMode(OH_AVPlayer *player, OH_AudioStream_Volum
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：成功设置音频流音量模式。 AV_ERR_INVALID_VAL： 输入player为空指针或者volumeMode值无效。 AV_ERR_INVALID_STATE：函数在无效状态下调用，应先处于准备状态。 AV_ERR_SERVICE_DIED：系统错误。 |
@@ -941,9 +1018,10 @@ OH_AVErrCode OH_AVPlayer_SetVolumeMode(OH_AVPlayer *player, OH_AudioStream_Volum
  
   
 
-#### OH_AVPlayer_SetAudioInterruptMode()
+### OH_AVPlayer_SetAudioInterruptMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_SetAudioInterruptMode(OH_AVPlayer *player, OH_AudioInterrupt_Mode interruptMode)
@@ -959,6 +1037,7 @@ OH_AVErrCode OH_AVPlayer_SetAudioInterruptMode(OH_AVPlayer *player, OH_AudioInte
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -967,6 +1046,7 @@ OH_AVErrCode OH_AVPlayer_SetAudioInterruptMode(OH_AVPlayer *player, OH_AudioInte
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：成功设置音频流的打断模式。 AV_ERR_INVALID_VAL：输入player为空指针，或者interruptMode值无效。 |
@@ -974,9 +1054,10 @@ OH_AVErrCode OH_AVPlayer_SetAudioInterruptMode(OH_AVPlayer *player, OH_AudioInte
  
   
 
-#### OH_AVPlayer_SetAudioEffectMode()
+### OH_AVPlayer_SetAudioEffectMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_SetAudioEffectMode(OH_AVPlayer *player, OH_AudioStream_AudioEffectMode effectMode)
@@ -992,6 +1073,7 @@ OH_AVErrCode OH_AVPlayer_SetAudioEffectMode(OH_AVPlayer *player, OH_AudioStream_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -1000,6 +1082,7 @@ OH_AVErrCode OH_AVPlayer_SetAudioEffectMode(OH_AVPlayer *player, OH_AudioStream_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：成功设置音频流的音效模式。 AV_ERR_INVALID_VAL：输入player为空指针，或者effectMode值无效。 |
@@ -1007,9 +1090,10 @@ OH_AVErrCode OH_AVPlayer_SetAudioEffectMode(OH_AVPlayer *player, OH_AudioStream_
  
   
 
-#### OH_AVPlayer_SelectBitRate()
+### OH_AVPlayer_SelectBitRate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_SelectBitRate(OH_AVPlayer *player, uint32_t bitRate)
@@ -1029,6 +1113,7 @@ OH_AVErrCode OH_AVPlayer_SelectBitRate(OH_AVPlayer *player, uint32_t bitRate)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -1037,6 +1122,7 @@ OH_AVErrCode OH_AVPlayer_SelectBitRate(OH_AVPlayer *player, uint32_t bitRate)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：成功设置码率。 AV_ERR_INVALID_VAL：输入player为空指针，或者player SelectBitRate执行失败。 |
@@ -1044,9 +1130,10 @@ OH_AVErrCode OH_AVPlayer_SelectBitRate(OH_AVPlayer *player, uint32_t bitRate)
  
   
 
-#### OH_AVPlayer_SetVideoSurface()
+### OH_AVPlayer_SetVideoSurface()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_SetVideoSurface(OH_AVPlayer *player, OHNativeWindow *window)
@@ -1064,6 +1151,7 @@ OH_AVErrCode OH_AVPlayer_SetVideoSurface(OH_AVPlayer *player, OHNativeWindow *wi
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -1072,6 +1160,7 @@ OH_AVErrCode OH_AVPlayer_SetVideoSurface(OH_AVPlayer *player, OHNativeWindow *wi
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：成功设置播放画面窗口。 AV_ERR_INVALID_VAL：输入player为空指针，输入window为空指针或者player SetVideoSurface执行失败。 |
@@ -1079,9 +1168,10 @@ OH_AVErrCode OH_AVPlayer_SetVideoSurface(OH_AVPlayer *player, OHNativeWindow *wi
  
   
 
-#### OH_AVPlayer_GetDuration()
+### OH_AVPlayer_GetDuration()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_GetDuration(OH_AVPlayer *player, int32_t *duration)
@@ -1097,6 +1187,7 @@ OH_AVErrCode OH_AVPlayer_GetDuration(OH_AVPlayer *player, int32_t *duration)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -1105,6 +1196,7 @@ OH_AVErrCode OH_AVPlayer_GetDuration(OH_AVPlayer *player, int32_t *duration)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：成功获取媒体文件时长。 AV_ERR_INVALID_VAL：输入player为空指针，或者player GetDuration执行失败。 |
@@ -1112,9 +1204,10 @@ OH_AVErrCode OH_AVPlayer_GetDuration(OH_AVPlayer *player, int32_t *duration)
  
   
 
-#### OH_AVPlayer_GetState()
+### OH_AVPlayer_GetState()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_GetState(OH_AVPlayer *player, AVPlayerState *state)
@@ -1130,6 +1223,7 @@ OH_AVErrCode OH_AVPlayer_GetState(OH_AVPlayer *player, AVPlayerState *state)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -1138,6 +1232,7 @@ OH_AVErrCode OH_AVPlayer_GetState(OH_AVPlayer *player, AVPlayerState *state)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：成功获取当前播放状态。 AV_ERR_INVALID_VAL：输入player为空指针，或者player GetState执行失败。 |
@@ -1145,9 +1240,10 @@ OH_AVErrCode OH_AVPlayer_GetState(OH_AVPlayer *player, AVPlayerState *state)
  
   
 
-#### OH_AVPlayer_IsPlaying()
+### OH_AVPlayer_IsPlaying()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AVPlayer_IsPlaying(OH_AVPlayer *player)
@@ -1163,6 +1259,7 @@ bool OH_AVPlayer_IsPlaying(OH_AVPlayer *player)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -1170,6 +1267,7 @@ bool OH_AVPlayer_IsPlaying(OH_AVPlayer *player)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 如果正在播放，则返回true；如果不在播放或者输入player为空指针则返回false。 |
@@ -1177,9 +1275,10 @@ bool OH_AVPlayer_IsPlaying(OH_AVPlayer *player)
  
   
 
-#### OH_AVPlayer_IsLooping()
+### OH_AVPlayer_IsLooping()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AVPlayer_IsLooping(OH_AVPlayer *player)
@@ -1195,6 +1294,7 @@ bool OH_AVPlayer_IsLooping(OH_AVPlayer *player)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -1202,6 +1302,7 @@ bool OH_AVPlayer_IsLooping(OH_AVPlayer *player)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 如果是循环播放，则返回true；如果不是循环播放或者输入player为空指针则返回false。 |
@@ -1209,9 +1310,10 @@ bool OH_AVPlayer_IsLooping(OH_AVPlayer *player)
  
   
 
-#### OH_AVPlayer_SetLooping()
+### OH_AVPlayer_SetLooping()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_SetLooping(OH_AVPlayer *player, bool loop)
@@ -1227,6 +1329,7 @@ OH_AVErrCode OH_AVPlayer_SetLooping(OH_AVPlayer *player, bool loop)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -1235,6 +1338,7 @@ OH_AVErrCode OH_AVPlayer_SetLooping(OH_AVPlayer *player, bool loop)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：成功设置循环播放。 AV_ERR_INVALID_VAL：输入player为空指针，或者player SetLooping执行失败。 |
@@ -1242,9 +1346,10 @@ OH_AVErrCode OH_AVPlayer_SetLooping(OH_AVPlayer *player, bool loop)
  
   
 
-#### OH_AVPlayer_SetPlayerCallback()
+### OH_AVPlayer_SetPlayerCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_SetPlayerCallback(OH_AVPlayer *player, AVPlayerCallback callback)
@@ -1268,6 +1373,7 @@ OH_AVErrCode OH_AVPlayer_SetPlayerCallback(OH_AVPlayer *player, AVPlayerCallback
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -1276,6 +1382,7 @@ OH_AVErrCode OH_AVPlayer_SetPlayerCallback(OH_AVPlayer *player, AVPlayerCallback
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：成功设置播放器回调。 AV_ERR_INVALID_VAL：输入player为空指针，callback.onInfo或onError为空，或者player SetPlayerCallback执行失败。 |
@@ -1283,9 +1390,10 @@ OH_AVErrCode OH_AVPlayer_SetPlayerCallback(OH_AVPlayer *player, AVPlayerCallback
  
   
 
-#### OH_AVPlayer_SelectTrack()
+### OH_AVPlayer_SelectTrack()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_SelectTrack(OH_AVPlayer *player, int32_t index)
@@ -1305,6 +1413,7 @@ OH_AVErrCode OH_AVPlayer_SelectTrack(OH_AVPlayer *player, int32_t index)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -1313,6 +1422,7 @@ OH_AVErrCode OH_AVPlayer_SelectTrack(OH_AVPlayer *player, int32_t index)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：输入player为空指针，或者player SelectTrack执行失败。 |
@@ -1320,9 +1430,10 @@ OH_AVErrCode OH_AVPlayer_SelectTrack(OH_AVPlayer *player, int32_t index)
  
   
 
-#### OH_AVPlayer_DeselectTrack()
+### OH_AVPlayer_DeselectTrack()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_DeselectTrack(OH_AVPlayer *player, int32_t index)
@@ -1338,6 +1449,7 @@ OH_AVErrCode OH_AVPlayer_DeselectTrack(OH_AVPlayer *player, int32_t index)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -1346,6 +1458,7 @@ OH_AVErrCode OH_AVPlayer_DeselectTrack(OH_AVPlayer *player, int32_t index)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：输入player为空指针，或者player DeselectTrack执行失败。 |
@@ -1353,9 +1466,10 @@ OH_AVErrCode OH_AVPlayer_DeselectTrack(OH_AVPlayer *player, int32_t index)
  
   
 
-#### OH_AVPlayer_GetCurrentTrack()
+### OH_AVPlayer_GetCurrentTrack()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_GetCurrentTrack(OH_AVPlayer *player, int32_t trackType, int32_t *index)
@@ -1371,6 +1485,7 @@ OH_AVErrCode OH_AVPlayer_GetCurrentTrack(OH_AVPlayer *player, int32_t trackType,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -1380,6 +1495,7 @@ OH_AVErrCode OH_AVPlayer_GetCurrentTrack(OH_AVPlayer *player, int32_t trackType,
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：成功获取轨道索引。 AV_ERR_INVALID_VAL：输入player为空指针，或者player GetCurrentTrack执行失败。 |
@@ -1387,9 +1503,10 @@ OH_AVErrCode OH_AVPlayer_GetCurrentTrack(OH_AVPlayer *player, int32_t trackType,
  
   
 
-#### OH_AVPlayer_SetMediaKeySystemInfoCallback()
+### OH_AVPlayer_SetMediaKeySystemInfoCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_SetMediaKeySystemInfoCallback(OH_AVPlayer *player, Player_MediaKeySystemInfoCallback callback)
@@ -1405,6 +1522,7 @@ OH_AVErrCode OH_AVPlayer_SetMediaKeySystemInfoCallback(OH_AVPlayer *player, Play
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -1413,6 +1531,7 @@ OH_AVErrCode OH_AVPlayer_SetMediaKeySystemInfoCallback(OH_AVPlayer *player, Play
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：输入player/callback为空指针，或者SetDrmSystemInfoCallback执行失败。 |
@@ -1420,9 +1539,10 @@ OH_AVErrCode OH_AVPlayer_SetMediaKeySystemInfoCallback(OH_AVPlayer *player, Play
  
   
 
-#### OH_AVPlayer_GetMediaKeySystemInfo()
+### OH_AVPlayer_GetMediaKeySystemInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_GetMediaKeySystemInfo(OH_AVPlayer *player, DRM_MediaKeySystemInfo *mediaKeySystemInfo)
@@ -1438,6 +1558,7 @@ OH_AVErrCode OH_AVPlayer_GetMediaKeySystemInfo(OH_AVPlayer *player, DRM_MediaKey
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -1446,6 +1567,7 @@ OH_AVErrCode OH_AVPlayer_GetMediaKeySystemInfo(OH_AVPlayer *player, DRM_MediaKey
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：输入player为空指针或者内存不足。 |
@@ -1453,9 +1575,10 @@ OH_AVErrCode OH_AVPlayer_GetMediaKeySystemInfo(OH_AVPlayer *player, DRM_MediaKey
  
   
 
-#### OH_AVPlayer_SetDecryptionConfig()
+### OH_AVPlayer_SetDecryptionConfig()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_SetDecryptionConfig(OH_AVPlayer *player, MediaKeySession *mediaKeySession, bool secureVideoPath)
@@ -1471,6 +1594,7 @@ OH_AVErrCode OH_AVPlayer_SetDecryptionConfig(OH_AVPlayer *player, MediaKeySessio
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -1480,6 +1604,7 @@ OH_AVErrCode OH_AVPlayer_SetDecryptionConfig(OH_AVPlayer *player, MediaKeySessio
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：输入player为空指针或者player SetDecryptionConfig执行失败。 |
@@ -1487,9 +1612,10 @@ OH_AVErrCode OH_AVPlayer_SetDecryptionConfig(OH_AVPlayer *player, MediaKeySessio
  
   
 
-#### OH_AVPlayer_SetOnInfoCallback()
+### OH_AVPlayer_SetOnInfoCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_SetOnInfoCallback(OH_AVPlayer *player, OH_AVPlayerOnInfoCallback callback, void *userData)
@@ -1505,6 +1631,7 @@ OH_AVErrCode OH_AVPlayer_SetOnInfoCallback(OH_AVPlayer *player, OH_AVPlayerOnInf
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -1514,6 +1641,7 @@ OH_AVErrCode OH_AVPlayer_SetOnInfoCallback(OH_AVPlayer *player, OH_AVPlayerOnInf
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_NO_MEMORY：内存分配失败。请释放内存后重试。 AV_ERR_INVALID_VAL： 输入player为空指针或者函数执行失败。 |
@@ -1521,9 +1649,10 @@ OH_AVErrCode OH_AVPlayer_SetOnInfoCallback(OH_AVPlayer *player, OH_AVPlayerOnInf
  
   
 
-#### OH_AVPlayer_SetOnErrorCallback()
+### OH_AVPlayer_SetOnErrorCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_SetOnErrorCallback(OH_AVPlayer *player, OH_AVPlayerOnErrorCallback callback, void *userData)
@@ -1539,6 +1668,7 @@ OH_AVErrCode OH_AVPlayer_SetOnErrorCallback(OH_AVPlayer *player, OH_AVPlayerOnEr
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -1548,6 +1678,7 @@ OH_AVErrCode OH_AVPlayer_SetOnErrorCallback(OH_AVPlayer *player, OH_AVPlayerOnEr
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_NO_MEMORY：内存分配失败。 AV_ERR_INVALID_VAL： 输入player为空指针或者函数执行失败。 |
@@ -1555,9 +1686,10 @@ OH_AVErrCode OH_AVPlayer_SetOnErrorCallback(OH_AVPlayer *player, OH_AVPlayerOnEr
  
   
 
-#### OH_AVPlayer_GetMediaDescription()
+### OH_AVPlayer_GetMediaDescription()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVFormat *OH_AVPlayer_GetMediaDescription(OH_AVPlayer *player)
@@ -1575,6 +1707,7 @@ OH_AVFormat *OH_AVPlayer_GetMediaDescription(OH_AVPlayer *player)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -1582,6 +1715,7 @@ OH_AVFormat *OH_AVPlayer_GetMediaDescription(OH_AVPlayer *player)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVFormat * | 执行成功返回播放器媒体信息，否则返回nullptr。 可能故障原因： 1. 传入player指针不合法。 2. 设置的播放资源不合法。 |
@@ -1589,9 +1723,10 @@ OH_AVFormat *OH_AVPlayer_GetMediaDescription(OH_AVPlayer *player)
  
   
 
-#### OH_AVPlayer_GetTrackDescription()
+### OH_AVPlayer_GetTrackDescription()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVFormat *OH_AVPlayer_GetTrackDescription(OH_AVPlayer *player, uint32_t index)
@@ -1609,6 +1744,7 @@ OH_AVFormat *OH_AVPlayer_GetTrackDescription(OH_AVPlayer *player, uint32_t index
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -1617,6 +1753,7 @@ OH_AVFormat *OH_AVPlayer_GetTrackDescription(OH_AVPlayer *player, uint32_t index
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVFormat * | 执行成功按索引下标返回轨道信息，否则返回nullptr。 可能故障原因： 1. 传入player指针不合法。 2. 设置的播放资源不合法。 3. 轨道索引下标超出播放源文件数组界限。 |
@@ -1624,9 +1761,10 @@ OH_AVFormat *OH_AVPlayer_GetTrackDescription(OH_AVPlayer *player, uint32_t index
  
   
 
-#### OH_AVPlayer_AddFdSubtitleSource()
+### OH_AVPlayer_AddFdSubtitleSource()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_AddFdSubtitleSource(OH_AVPlayer *player, int32_t fd, int64_t offset, int64_t size)
@@ -1640,6 +1778,7 @@ OH_AVErrCode OH_AVPlayer_AddFdSubtitleSource(OH_AVPlayer *player, int32_t fd, in
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -1650,6 +1789,7 @@ OH_AVErrCode OH_AVPlayer_AddFdSubtitleSource(OH_AVPlayer *player, int32_t fd, in
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示输入的player为空指针。 |
@@ -1657,9 +1797,10 @@ OH_AVErrCode OH_AVPlayer_AddFdSubtitleSource(OH_AVPlayer *player, int32_t fd, in
  
   
 
-#### OH_AVPlayer_AddUrlSubtitleSource()
+### OH_AVPlayer_AddUrlSubtitleSource()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_AddUrlSubtitleSource(OH_AVPlayer *player, const char *url)
@@ -1673,6 +1814,7 @@ OH_AVErrCode OH_AVPlayer_AddUrlSubtitleSource(OH_AVPlayer *player, const char *u
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -1681,6 +1823,7 @@ OH_AVErrCode OH_AVPlayer_AddUrlSubtitleSource(OH_AVPlayer *player, const char *u
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示输入的player为空指针。 |
@@ -1688,9 +1831,10 @@ OH_AVErrCode OH_AVPlayer_AddUrlSubtitleSource(OH_AVPlayer *player, const char *u
  
   
 
-#### OH_AVPlayer_SetPlaybackRange()
+### OH_AVPlayer_SetPlaybackRange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_SetPlaybackRange(OH_AVPlayer *player, int32_t mSecondsStart, int32_t mSecondsEnd, bool closestRange)
@@ -1704,6 +1848,7 @@ OH_AVErrCode OH_AVPlayer_SetPlaybackRange(OH_AVPlayer *player, int32_t mSecondsS
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -1714,6 +1859,7 @@ OH_AVErrCode OH_AVPlayer_SetPlaybackRange(OH_AVPlayer *player, int32_t mSecondsS
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示输入的player为空指针。 AV_ERR_OPERATE_NOT_PERMIT：表示操作不允许。 |
@@ -1721,9 +1867,10 @@ OH_AVErrCode OH_AVPlayer_SetPlaybackRange(OH_AVPlayer *player, int32_t mSecondsS
  
   
 
-#### OH_AVPlayer_SetMediaMuted()
+### OH_AVPlayer_SetMediaMuted()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_SetMediaMuted(OH_AVPlayer *player, OH_MediaType mediaType, bool muted)
@@ -1737,6 +1884,7 @@ OH_AVErrCode OH_AVPlayer_SetMediaMuted(OH_AVPlayer *player, OH_MediaType mediaTy
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -1746,6 +1894,7 @@ OH_AVErrCode OH_AVPlayer_SetMediaMuted(OH_AVPlayer *player, OH_MediaType mediaTy
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示输入参数无效。 AV_ERR_OPERATE_NOT_PERMIT：表示操作不允许。 |
@@ -1753,9 +1902,10 @@ OH_AVErrCode OH_AVPlayer_SetMediaMuted(OH_AVPlayer *player, OH_MediaType mediaTy
  
   
 
-#### OH_AVPlayer_GetPlaybackPosition()
+### OH_AVPlayer_GetPlaybackPosition()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_AVPlayer_GetPlaybackPosition(OH_AVPlayer *player)
@@ -1769,6 +1919,7 @@ int32_t OH_AVPlayer_GetPlaybackPosition(OH_AVPlayer *player)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -1776,6 +1927,7 @@ int32_t OH_AVPlayer_GetPlaybackPosition(OH_AVPlayer *player)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回以毫秒为单位的播放位置。 若player为空指针或无效，则返回-1。 |
@@ -1783,9 +1935,10 @@ int32_t OH_AVPlayer_GetPlaybackPosition(OH_AVPlayer *player)
  
   
 
-#### OH_AVPlayer_IsSeekContinuousSupported()
+### OH_AVPlayer_IsSeekContinuousSupported()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AVPlayer_IsSeekContinuousSupported(OH_AVPlayer *player)
@@ -1799,6 +1952,7 @@ bool OH_AVPlayer_IsSeekContinuousSupported(OH_AVPlayer *player)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -1806,6 +1960,7 @@ bool OH_AVPlayer_IsSeekContinuousSupported(OH_AVPlayer *player)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | true表示支持连续跳转。 false表示不支持连续跳转或支持状态不确定。 |
@@ -1813,9 +1968,10 @@ bool OH_AVPlayer_IsSeekContinuousSupported(OH_AVPlayer *player)
  
   
 
-#### OH_AVPlayer_SelectTrackWithMode()
+### OH_AVPlayer_SelectTrackWithMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_SelectTrackWithMode(OH_AVPlayer *player, int32_t index, AVPlayerTrackSwitchMode mode)
@@ -1829,6 +1985,7 @@ OH_AVErrCode OH_AVPlayer_SelectTrackWithMode(OH_AVPlayer *player, int32_t index,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -1838,6 +1995,7 @@ OH_AVErrCode OH_AVPlayer_SelectTrackWithMode(OH_AVPlayer *player, int32_t index,
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示输入参数无效。 AV_ERR_OPERATE_NOT_PERMIT：表示操作不允许。 |
@@ -1845,9 +2003,10 @@ OH_AVErrCode OH_AVPlayer_SelectTrackWithMode(OH_AVPlayer *player, int32_t index,
  
   
 
-#### OH_AVPlayer_SetAmplitudeUpdateCallback()
+### OH_AVPlayer_SetAmplitudeUpdateCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_SetAmplitudeUpdateCallback(OH_AVPlayer *player, OH_AVPlayerOnAmplitudeUpdateCallback callback, void *userData)
@@ -1861,6 +2020,7 @@ OH_AVErrCode OH_AVPlayer_SetAmplitudeUpdateCallback(OH_AVPlayer *player, OH_AVPl
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -1870,6 +2030,7 @@ OH_AVErrCode OH_AVPlayer_SetAmplitudeUpdateCallback(OH_AVPlayer *player, OH_AVPl
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示输入的player为空指针。 |
@@ -1877,9 +2038,10 @@ OH_AVErrCode OH_AVPlayer_SetAmplitudeUpdateCallback(OH_AVPlayer *player, OH_AVPl
  
   
 
-#### OH_AVPlayer_SetSeiReceivedCallback()
+### OH_AVPlayer_SetSeiReceivedCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_SetSeiReceivedCallback(OH_AVPlayer *player, const int32_t *payloadTypes, uint32_t typeNum, OH_AVPlayerOnSeiMessageReceivedCallback callback, void *userData)
@@ -1893,6 +2055,7 @@ OH_AVErrCode OH_AVPlayer_SetSeiReceivedCallback(OH_AVPlayer *player, const int32
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针，需在prepare之前调用。 |
@@ -1904,6 +2067,7 @@ OH_AVErrCode OH_AVPlayer_SetSeiReceivedCallback(OH_AVPlayer *player, const int32
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示输入的player为空指针。 |
@@ -1911,9 +2075,10 @@ OH_AVErrCode OH_AVPlayer_SetSeiReceivedCallback(OH_AVPlayer *player, const int32
  
   
 
-#### OH_AVSeiMessage_GetSeiCount()
+### OH_AVSeiMessage_GetSeiCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 uint32_t OH_AVSeiMessage_GetSeiCount(OH_AVSeiMessageArray *message)
@@ -1927,6 +2092,7 @@ uint32_t OH_AVSeiMessage_GetSeiCount(OH_AVSeiMessageArray *message)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSeiMessageArray *message | 指向OH_AVSeiMessageArray实例的指针。 |
@@ -1934,6 +2100,7 @@ uint32_t OH_AVSeiMessage_GetSeiCount(OH_AVSeiMessageArray *message)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | uint32_t | SEI消息数组中的消息项数量。 |
@@ -1941,9 +2108,10 @@ uint32_t OH_AVSeiMessage_GetSeiCount(OH_AVSeiMessageArray *message)
  
   
 
-#### OH_AVSeiMessage_GetSei()
+### OH_AVSeiMessage_GetSei()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVFormat *OH_AVSeiMessage_GetSei(OH_AVSeiMessageArray *message, uint32_t index)
@@ -1957,6 +2125,7 @@ OH_AVFormat *OH_AVSeiMessage_GetSei(OH_AVSeiMessageArray *message, uint32_t inde
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSeiMessageArray *message | 指向OH_AVSeiMessageArray实例的指针。 |
@@ -1965,6 +2134,7 @@ OH_AVFormat *OH_AVSeiMessage_GetSei(OH_AVSeiMessageArray *message, uint32_t inde
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVFormat * | 返回该消息项的SEI。若message为空指针或index无效，则返回空指针。 |
@@ -1972,9 +2142,10 @@ OH_AVFormat *OH_AVSeiMessage_GetSei(OH_AVSeiMessageArray *message, uint32_t inde
  
   
 
-#### OH_AVPlayer_SetTargetVideoWindowSize()
+### OH_AVPlayer_SetTargetVideoWindowSize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_SetTargetVideoWindowSize(OH_AVPlayer *player, int32_t width, int32_t height)
@@ -1988,6 +2159,7 @@ OH_AVErrCode OH_AVPlayer_SetTargetVideoWindowSize(OH_AVPlayer *player, int32_t w
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -1997,6 +2169,7 @@ OH_AVErrCode OH_AVPlayer_SetTargetVideoWindowSize(OH_AVPlayer *player, int32_t w
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示输入的player为空指针或参数错误。 AV_ERR_OPERATE_NOT_PERMIT：表示操作不允许。 AV_ERR_SUPER_RESOLUTION_UNSUPPORTED：表示不支持超分辨率。 AV_ERR_SUPER_RESOLUTION_NOT_ENABLED：表示未在OH_AVPlaybackStrategy中启用超分辨率功能。 |
@@ -2004,9 +2177,10 @@ OH_AVErrCode OH_AVPlayer_SetTargetVideoWindowSize(OH_AVPlayer *player, int32_t w
  
   
 
-#### OH_AVPlayer_SetVideoSuperResolutionEnable()
+### OH_AVPlayer_SetVideoSuperResolutionEnable()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_SetVideoSuperResolutionEnable(OH_AVPlayer *player, bool enabled)
@@ -2020,6 +2194,7 @@ OH_AVErrCode OH_AVPlayer_SetVideoSuperResolutionEnable(OH_AVPlayer *player, bool
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -2028,6 +2203,7 @@ OH_AVErrCode OH_AVPlayer_SetVideoSuperResolutionEnable(OH_AVPlayer *player, bool
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示输入的player为空指针或参数错误。 AV_ERR_OPERATE_NOT_PERMIT：表示操作不允许。 AV_ERR_SUPER_RESOLUTION_UNSUPPORTED：表示不支持超分辨率。 AV_ERR_SUPER_RESOLUTION_NOT_ENABLED：表示未在OH_AVPlaybackStrategy中启用超分辨率功能。 |
@@ -2035,9 +2211,10 @@ OH_AVErrCode OH_AVPlayer_SetVideoSuperResolutionEnable(OH_AVPlayer *player, bool
  
   
 
-#### OH_AVPlaybackStrategy_Create()
+### OH_AVPlaybackStrategy_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVPlaybackStrategy *OH_AVPlaybackStrategy_Create(void)
@@ -2051,6 +2228,7 @@ OH_AVPlaybackStrategy *OH_AVPlaybackStrategy_Create(void)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVPlaybackStrategy * | 一个播放策略实例，失败时返回空指针。 |
@@ -2058,9 +2236,10 @@ OH_AVPlaybackStrategy *OH_AVPlaybackStrategy_Create(void)
  
   
 
-#### OH_AVPlaybackStrategy_Destroy()
+### OH_AVPlaybackStrategy_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlaybackStrategy_Destroy(OH_AVPlaybackStrategy *strategy)
@@ -2074,6 +2253,7 @@ OH_AVErrCode OH_AVPlaybackStrategy_Destroy(OH_AVPlaybackStrategy *strategy)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlaybackStrategy *strategy | 指向OH_AVPlaybackStrategy播放策略实例的指针，用于指定要释放的播放策略对象。 |
@@ -2081,6 +2261,7 @@ OH_AVErrCode OH_AVPlaybackStrategy_Destroy(OH_AVPlaybackStrategy *strategy)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示输入的strategy为空指针。 |
@@ -2088,9 +2269,10 @@ OH_AVErrCode OH_AVPlaybackStrategy_Destroy(OH_AVPlaybackStrategy *strategy)
  
   
 
-#### OH_AVPlaybackStrategy_SetPreferredWidth()
+### OH_AVPlaybackStrategy_SetPreferredWidth()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlaybackStrategy_SetPreferredWidth(OH_AVPlaybackStrategy *strategy, int32_t width)
@@ -2104,6 +2286,7 @@ OH_AVErrCode OH_AVPlaybackStrategy_SetPreferredWidth(OH_AVPlaybackStrategy *stra
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlaybackStrategy *strategy | AVPlayer使用的OH_AVPlaybackStrategy。 |
@@ -2112,6 +2295,7 @@ OH_AVErrCode OH_AVPlaybackStrategy_SetPreferredWidth(OH_AVPlaybackStrategy *stra
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示输入的strategy为空指针。 |
@@ -2119,9 +2303,10 @@ OH_AVErrCode OH_AVPlaybackStrategy_SetPreferredWidth(OH_AVPlaybackStrategy *stra
  
   
 
-#### OH_AVPlaybackStrategy_SetPreferredHeight()
+### OH_AVPlaybackStrategy_SetPreferredHeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlaybackStrategy_SetPreferredHeight(OH_AVPlaybackStrategy *strategy, int32_t height)
@@ -2135,6 +2320,7 @@ OH_AVErrCode OH_AVPlaybackStrategy_SetPreferredHeight(OH_AVPlaybackStrategy *str
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlaybackStrategy *strategy | avplayer使用的OH_AVPlaybackStrategy。 |
@@ -2143,6 +2329,7 @@ OH_AVErrCode OH_AVPlaybackStrategy_SetPreferredHeight(OH_AVPlaybackStrategy *str
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示输入的strategy为空指针。 |
@@ -2150,9 +2337,10 @@ OH_AVErrCode OH_AVPlaybackStrategy_SetPreferredHeight(OH_AVPlaybackStrategy *str
  
   
 
-#### OH_AVPlaybackStrategy_SetPreferredBufferDuration()
+### OH_AVPlaybackStrategy_SetPreferredBufferDuration()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlaybackStrategy_SetPreferredBufferDuration(OH_AVPlaybackStrategy *strategy, int32_t ms)
@@ -2166,6 +2354,7 @@ OH_AVErrCode OH_AVPlaybackStrategy_SetPreferredBufferDuration(OH_AVPlaybackStrat
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlaybackStrategy *strategy | avplayer使用的OH_AVPlaybackStrategy。 |
@@ -2174,6 +2363,7 @@ OH_AVErrCode OH_AVPlaybackStrategy_SetPreferredBufferDuration(OH_AVPlaybackStrat
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示输入的strategy为空指针。 |
@@ -2181,9 +2371,10 @@ OH_AVErrCode OH_AVPlaybackStrategy_SetPreferredBufferDuration(OH_AVPlaybackStrat
  
   
 
-#### OH_AVPlaybackStrategy_SetPreferredHdr()
+### OH_AVPlaybackStrategy_SetPreferredHdr()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlaybackStrategy_SetPreferredHdr(OH_AVPlaybackStrategy *strategy, bool enabled)
@@ -2197,6 +2388,7 @@ OH_AVErrCode OH_AVPlaybackStrategy_SetPreferredHdr(OH_AVPlaybackStrategy *strate
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlaybackStrategy *strategy | 指向OH_AVPlaybackStrategy的指针。 |
@@ -2205,6 +2397,7 @@ OH_AVErrCode OH_AVPlaybackStrategy_SetPreferredHdr(OH_AVPlaybackStrategy *strate
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示输入的strategy为空指针。 |
@@ -2212,9 +2405,10 @@ OH_AVErrCode OH_AVPlaybackStrategy_SetPreferredHdr(OH_AVPlaybackStrategy *strate
  
   
 
-#### OH_AVPlaybackStrategy_SetPreferredSubtitleLanguage()
+### OH_AVPlaybackStrategy_SetPreferredSubtitleLanguage()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlaybackStrategy_SetPreferredSubtitleLanguage(OH_AVPlaybackStrategy *strategy, const char *lang)
@@ -2228,6 +2422,7 @@ OH_AVErrCode OH_AVPlaybackStrategy_SetPreferredSubtitleLanguage(OH_AVPlaybackStr
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlaybackStrategy *strategy | 指向OH_AVPlaybackStrategy的指针。 |
@@ -2236,6 +2431,7 @@ OH_AVErrCode OH_AVPlaybackStrategy_SetPreferredSubtitleLanguage(OH_AVPlaybackStr
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示输入的strategy为空指针。 |
@@ -2243,9 +2439,10 @@ OH_AVErrCode OH_AVPlaybackStrategy_SetPreferredSubtitleLanguage(OH_AVPlaybackStr
  
   
 
-#### OH_AVPlaybackStrategy_SetPreferredAudioLanguage()
+### OH_AVPlaybackStrategy_SetPreferredAudioLanguage()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlaybackStrategy_SetPreferredAudioLanguage(OH_AVPlaybackStrategy *strategy, const char *lang)
@@ -2259,6 +2456,7 @@ OH_AVErrCode OH_AVPlaybackStrategy_SetPreferredAudioLanguage(OH_AVPlaybackStrate
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlaybackStrategy *strategy | 指向OH_AVPlaybackStrategy的指针。 |
@@ -2267,6 +2465,7 @@ OH_AVErrCode OH_AVPlaybackStrategy_SetPreferredAudioLanguage(OH_AVPlaybackStrate
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示输入的strategy为空指针。 |
@@ -2274,9 +2473,10 @@ OH_AVErrCode OH_AVPlaybackStrategy_SetPreferredAudioLanguage(OH_AVPlaybackStrate
  
   
 
-#### OH_AVPlaybackStrategy_SetMutedMediaType()
+### OH_AVPlaybackStrategy_SetMutedMediaType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlaybackStrategy_SetMutedMediaType(OH_AVPlaybackStrategy *strategy, OH_MediaType mediaType)
@@ -2290,6 +2490,7 @@ OH_AVErrCode OH_AVPlaybackStrategy_SetMutedMediaType(OH_AVPlaybackStrategy *stra
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlaybackStrategy *strategy | 指向OH_AVPlaybackStrategy的指针。 |
@@ -2298,6 +2499,7 @@ OH_AVErrCode OH_AVPlaybackStrategy_SetMutedMediaType(OH_AVPlaybackStrategy *stra
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示输入的strategy为空指针。 |
@@ -2305,9 +2507,10 @@ OH_AVErrCode OH_AVPlaybackStrategy_SetMutedMediaType(OH_AVPlaybackStrategy *stra
  
   
 
-#### OH_AVPlaybackStrategy_SetShowFirstFrameOnPrepare()
+### OH_AVPlaybackStrategy_SetShowFirstFrameOnPrepare()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlaybackStrategy_SetShowFirstFrameOnPrepare(OH_AVPlaybackStrategy *strategy, bool enabled)
@@ -2321,6 +2524,7 @@ OH_AVErrCode OH_AVPlaybackStrategy_SetShowFirstFrameOnPrepare(OH_AVPlaybackStrat
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlaybackStrategy *strategy | 指向OH_AVPlaybackStrategy的指针。 |
@@ -2329,6 +2533,7 @@ OH_AVErrCode OH_AVPlaybackStrategy_SetShowFirstFrameOnPrepare(OH_AVPlaybackStrat
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示输入的strategy为空指针。 |
@@ -2336,9 +2541,10 @@ OH_AVErrCode OH_AVPlaybackStrategy_SetShowFirstFrameOnPrepare(OH_AVPlaybackStrat
  
   
 
-#### OH_AVPlaybackStrategy_SetThresholdForAutoQuickPlay()
+### OH_AVPlaybackStrategy_SetThresholdForAutoQuickPlay()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlaybackStrategy_SetThresholdForAutoQuickPlay(OH_AVPlaybackStrategy *strategy, double seconds)
@@ -2352,6 +2558,7 @@ OH_AVErrCode OH_AVPlaybackStrategy_SetThresholdForAutoQuickPlay(OH_AVPlaybackStr
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlaybackStrategy *strategy | 指向OH_AVPlaybackStrategy的指针。 |
@@ -2360,6 +2567,7 @@ OH_AVErrCode OH_AVPlaybackStrategy_SetThresholdForAutoQuickPlay(OH_AVPlaybackStr
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示输入的strategy为空指针。 |
@@ -2367,9 +2575,10 @@ OH_AVErrCode OH_AVPlaybackStrategy_SetThresholdForAutoQuickPlay(OH_AVPlaybackStr
  
   
 
-#### OH_AVPlaybackStrategy_SetSuperResolutionEnable()
+### OH_AVPlaybackStrategy_SetSuperResolutionEnable()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlaybackStrategy_SetSuperResolutionEnable(OH_AVPlaybackStrategy *strategy, bool enabled)
@@ -2383,6 +2592,7 @@ OH_AVErrCode OH_AVPlaybackStrategy_SetSuperResolutionEnable(OH_AVPlaybackStrateg
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlaybackStrategy *strategy | 指向OH_AVPlaybackStrategy的指针。 |
@@ -2391,6 +2601,7 @@ OH_AVErrCode OH_AVPlaybackStrategy_SetSuperResolutionEnable(OH_AVPlaybackStrateg
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示输入的strategy为空指针。 |
@@ -2398,9 +2609,10 @@ OH_AVErrCode OH_AVPlaybackStrategy_SetSuperResolutionEnable(OH_AVPlaybackStrateg
  
   
 
-#### OH_AVPlaybackStrategy_SetPreferredBufferDurationForPlaying()
+### OH_AVPlaybackStrategy_SetPreferredBufferDurationForPlaying()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlaybackStrategy_SetPreferredBufferDurationForPlaying(OH_AVPlaybackStrategy *strategy, double seconds)
@@ -2414,6 +2626,7 @@ OH_AVErrCode OH_AVPlaybackStrategy_SetPreferredBufferDurationForPlaying(OH_AVPla
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlaybackStrategy *strategy | 指向OH_AVPlaybackStrategy的指针。 |
@@ -2422,6 +2635,7 @@ OH_AVErrCode OH_AVPlaybackStrategy_SetPreferredBufferDurationForPlaying(OH_AVPla
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示输入的strategy为空指针。 |
@@ -2429,9 +2643,10 @@ OH_AVErrCode OH_AVPlaybackStrategy_SetPreferredBufferDurationForPlaying(OH_AVPla
  
   
 
-#### OH_AVPlaybackStrategy_SetKeepDecodingOnMute()
+### OH_AVPlaybackStrategy_SetKeepDecodingOnMute()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlaybackStrategy_SetKeepDecodingOnMute(OH_AVPlaybackStrategy *strategy, bool enabled)
@@ -2445,6 +2660,7 @@ OH_AVErrCode OH_AVPlaybackStrategy_SetKeepDecodingOnMute(OH_AVPlaybackStrategy *
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlaybackStrategy *strategy | 指向OH_AVPlaybackStrategy的指针。 |
@@ -2453,6 +2669,7 @@ OH_AVErrCode OH_AVPlaybackStrategy_SetKeepDecodingOnMute(OH_AVPlaybackStrategy *
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示输入的strategy为空指针。 |
@@ -2460,9 +2677,10 @@ OH_AVErrCode OH_AVPlaybackStrategy_SetKeepDecodingOnMute(OH_AVPlaybackStrategy *
  
   
 
-#### OH_AVPlayer_SetPlaybackStrategy()
+### OH_AVPlayer_SetPlaybackStrategy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_SetPlaybackStrategy(OH_AVPlayer *player, OH_AVPlaybackStrategy *strategy)
@@ -2476,6 +2694,7 @@ OH_AVErrCode OH_AVPlayer_SetPlaybackStrategy(OH_AVPlayer *player, OH_AVPlaybackS
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针，需在初始化状态时调用。 |
@@ -2484,6 +2703,7 @@ OH_AVErrCode OH_AVPlayer_SetPlaybackStrategy(OH_AVPlayer *player, OH_AVPlaybackS
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示输入的player为空指针。 AV_ERR_OPERATE_NOT_PERMIT：表示操作不允许。 |
@@ -2491,9 +2711,10 @@ OH_AVErrCode OH_AVPlayer_SetPlaybackStrategy(OH_AVPlayer *player, OH_AVPlaybackS
  
   
 
-#### OH_AVPlayer_GetPlaybackInfo()
+### OH_AVPlayer_GetPlaybackInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVFormat* OH_AVPlayer_GetPlaybackInfo(OH_AVPlayer *player)
@@ -2507,6 +2728,7 @@ OH_AVFormat* OH_AVPlayer_GetPlaybackInfo(OH_AVPlayer *player)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针，需在prepared、playing或者paused状态时调用。 |
@@ -2514,6 +2736,7 @@ OH_AVFormat* OH_AVPlayer_GetPlaybackInfo(OH_AVPlayer *player)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVFormat * | 返回指向OH_AVFormat实例的指针。 若player为空指针或无效，则返回空指针。 |
@@ -2521,9 +2744,10 @@ OH_AVFormat* OH_AVPlayer_GetPlaybackInfo(OH_AVPlayer *player)
  
   
 
-#### OH_AVPlayer_SetMediaSource()
+### OH_AVPlayer_SetMediaSource()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_SetMediaSource(OH_AVPlayer *player, OH_AVMediaSource *source)
@@ -2537,6 +2761,7 @@ OH_AVErrCode OH_AVPlayer_SetMediaSource(OH_AVPlayer *player, OH_AVMediaSource *s
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -2545,6 +2770,7 @@ OH_AVErrCode OH_AVPlayer_SetMediaSource(OH_AVPlayer *player, OH_AVMediaSource *s
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示输入的player或者source为空指针，或player设置URL源失败。 |
@@ -2552,9 +2778,10 @@ OH_AVErrCode OH_AVPlayer_SetMediaSource(OH_AVPlayer *player, OH_AVMediaSource *s
  
   
 
-#### OH_AVPlayer_GetTrackCount()
+### OH_AVPlayer_GetTrackCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 uint32_t OH_AVPlayer_GetTrackCount(OH_AVPlayer *player)
@@ -2568,6 +2795,7 @@ uint32_t OH_AVPlayer_GetTrackCount(OH_AVPlayer *player)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -2575,6 +2803,7 @@ uint32_t OH_AVPlayer_GetTrackCount(OH_AVPlayer *player)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | uint32_t | 返回播放器媒体源的轨道数量。若player为空指针或无效，则返回0。 |
@@ -2582,9 +2811,10 @@ uint32_t OH_AVPlayer_GetTrackCount(OH_AVPlayer *player)
  
   
 
-#### OH_AVPlayer_GetTrackFormat()
+### OH_AVPlayer_GetTrackFormat()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVFormat *OH_AVPlayer_GetTrackFormat(OH_AVPlayer *player, uint32_t trackIndex)
@@ -2600,6 +2830,7 @@ OH_AVFormat *OH_AVPlayer_GetTrackFormat(OH_AVPlayer *player, uint32_t trackIndex
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -2608,6 +2839,7 @@ OH_AVFormat *OH_AVPlayer_GetTrackFormat(OH_AVPlayer *player, uint32_t trackIndex
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVFormat * | 返回指向OH_AVFormat实例的指针。 若player为空指针或无效，或trackIndex无效，则返回空指针。 |
@@ -2615,9 +2847,10 @@ OH_AVFormat *OH_AVPlayer_GetTrackFormat(OH_AVPlayer *player, uint32_t trackIndex
  
   
 
-#### OH_AVPlayer_GetPlaybackStatisticMetrics()
+### OH_AVPlayer_GetPlaybackStatisticMetrics()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVFormat *OH_AVPlayer_GetPlaybackStatisticMetrics(OH_AVPlayer *player)
@@ -2633,6 +2866,7 @@ OH_AVFormat *OH_AVPlayer_GetPlaybackStatisticMetrics(OH_AVPlayer *player)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -2640,6 +2874,7 @@ OH_AVFormat *OH_AVPlayer_GetPlaybackStatisticMetrics(OH_AVPlayer *player)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVFormat * | 执行成功返回播放器的统计指标信息（键值详情请参考avplayer_base.h中的变量信息），否则返回nullptr。 可能的失败原因：传入player指针不合法。 |
@@ -2647,9 +2882,10 @@ OH_AVFormat *OH_AVPlayer_GetPlaybackStatisticMetrics(OH_AVPlayer *player)
  
   
 
-#### OH_AVPlayer_SetPCMOutputCallback()
+### OH_AVPlayer_SetPCMOutputCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_SetPCMOutputCallback(OH_AVPlayer *player, OH_AVPlayerPCMOutputCallback callback, void *userData)
@@ -2663,6 +2899,7 @@ OH_AVErrCode OH_AVPlayer_SetPCMOutputCallback(OH_AVPlayer *player, OH_AVPlayerPC
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针，需在idle或initialized状态时调用。 |
@@ -2672,6 +2909,7 @@ OH_AVErrCode OH_AVPlayer_SetPCMOutputCallback(OH_AVPlayer *player, OH_AVPlayerPC
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示输入的player为空指针，或player SetPCMOutputCallback失败。 AV_ERR_OPERATE_NOT_PERMIT：表示在不支持的状态下调用。 |
@@ -2679,9 +2917,10 @@ OH_AVErrCode OH_AVPlayer_SetPCMOutputCallback(OH_AVPlayer *player, OH_AVPlayerPC
  
   
 
-#### OH_AVPlayer_SetVideoSideOutput()
+### OH_AVPlayer_SetVideoSideOutput()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVPlayerVideoOutput* OH_AVPlayer_SetVideoSideOutput(OH_AVPlayer *player, OHNativeWindow *window)
@@ -2695,6 +2934,7 @@ OH_AVPlayerVideoOutput* OH_AVPlayer_SetVideoSideOutput(OH_AVPlayer *player, OHNa
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针，需在idle或initialized状态时调用。 |
@@ -2703,6 +2943,7 @@ OH_AVPlayerVideoOutput* OH_AVPlayer_SetVideoSideOutput(OH_AVPlayer *player, OHNa
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVPlayerVideoOutput* | 返回指向OH_AVPlayerVideoOutput实例的指针，nullptr表示失败。 可能故障原因： 1. 传入player指针不合法。 2. 传入window指针不合法。 |
@@ -2710,9 +2951,10 @@ OH_AVPlayerVideoOutput* OH_AVPlayer_SetVideoSideOutput(OH_AVPlayer *player, OHNa
  
   
 
-#### OH_AVPlayerVideoOutput_GetNewestVideoSample()
+### OH_AVPlayerVideoOutput_GetNewestVideoSample()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_VideoOutputResult OH_AVPlayerVideoOutput_GetNewestVideoSample(OH_AVPlayerVideoOutput *videoOutput)
@@ -2726,6 +2968,7 @@ OH_VideoOutputResult OH_AVPlayerVideoOutput_GetNewestVideoSample(OH_AVPlayerVide
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayerVideoOutput *videoOutput | 指向OH_AVPlayer_SetVideoSideOutput返回的OH_AVPlayerVideoOutput实例的指针。 |
@@ -2733,6 +2976,7 @@ OH_VideoOutputResult OH_AVPlayerVideoOutput_GetNewestVideoSample(OH_AVPlayerVide
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_VideoOutputResult | OH_VIDEO_OUTPUT_OK（对应数值）：获得一个视频解码帧。 OH_VIDEO_OUTPUT_NO_IMAGE（对应数值）：没有可渲染的帧。 |
@@ -2740,9 +2984,10 @@ OH_VideoOutputResult OH_AVPlayerVideoOutput_GetNewestVideoSample(OH_AVPlayerVide
  
   
 
-#### OH_AVPlayer_SetPCMProcessorCallback()
+### OH_AVPlayer_SetPCMProcessorCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_SetPCMProcessorCallback(OH_AVPlayer *player, OH_AVPlayerPCMProcessorCallback callback, void *userData)
@@ -2756,6 +3001,7 @@ OH_AVErrCode OH_AVPlayer_SetPCMProcessorCallback(OH_AVPlayer *player, OH_AVPlaye
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -2765,6 +3011,7 @@ OH_AVErrCode OH_AVPlayer_SetPCMProcessorCallback(OH_AVPlayer *player, OH_AVPlaye
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示输入的player为空指针，或player SetPCMProcessorCallback失败。 AV_ERR_OPERATE_NOT_PERMIT：表示在不支持的状态下调用。 |
@@ -2772,9 +3019,10 @@ OH_AVErrCode OH_AVPlayer_SetPCMProcessorCallback(OH_AVPlayer *player, OH_AVPlaye
  
   
 
-#### OH_AVPlayer_SetPCMProcessorMaxLen()
+### OH_AVPlayer_SetPCMProcessorMaxLen()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVPlayer_SetPCMProcessorMaxLen(OH_AVPlayer *player, int32_t maxProcessedPCMLen)
@@ -2790,6 +3038,7 @@ OH_AVErrCode OH_AVPlayer_SetPCMProcessorMaxLen(OH_AVPlayer *player, int32_t maxP
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVPlayer *player | 指向OH_AVPlayer实例的指针。 |
@@ -2798,6 +3047,7 @@ OH_AVErrCode OH_AVPlayer_SetPCMProcessorMaxLen(OH_AVPlayer *player, int32_t maxP
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示输入的player为空指针，或maxProcessedPCMLen参数无效。 AV_ERR_OPERATE_NOT_PERMIT：表示在不支持的状态下调用。 |

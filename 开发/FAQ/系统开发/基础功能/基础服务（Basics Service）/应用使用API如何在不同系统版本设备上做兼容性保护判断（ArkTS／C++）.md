@@ -18,11 +18,11 @@
 ```text
 NavDestination() {
   Column() {
-    // Regarding the proprietary interfaces of HarmonyOS, specifically the interfaces marked as since M.F.S(N).
-    // Compatibility judgment, the value corresponding to version 6.0.0(20) is 60000,
-    // which is derived from the new interface's since field 6*10000 + 0*100 + 0.
+    <em>// Regarding the proprietary interfaces of HarmonyOS, specifically the interfaces marked as since M.F.S(N).</em>
+    <em>// Compatibility judgment, the value corresponding to version 6.0.0(20) is 60000,</em>
+    <em>// which is derived from the new interface's since field 6*10000 + 0*100 + 0.</em>
     if (deviceInfo.distributionOSApiVersion >= 60000) {
-      // Component that calls the API of version 6.0.0(20)
+      <em>// Component that calls the API of version 6.0.0(20)</em>
       HdsActionBar({
         startButtons: [new ActionBarButton({
           baseIcon: $r('sys.symbol.stopwatch_fill')
@@ -33,7 +33,7 @@ NavDestination() {
         // ...
       })
     } else {
-      // Downgrading plan
+      <em>// Downgrading plan</em>
       Row({ space: 25 }) {
         // ...
       }
@@ -56,10 +56,10 @@ std::shared_ptr<ArkUIBaseNode> CreateButtonExample()
 {
     auto textNode = std::make_shared<ArkUIButtonNode>();
     textNode->SetTextContent(std::string("Hello World"));
-    // ...
-    // Regarding the proprietary interfaces of HarmonyOS, specifically the interfaces marked as since M.F.S(N).
-    // Compatibility judgment, the value corresponding to version 5.1.1(19) is 50101,
-    // which is derived from the new interface's since field 5*10000 + 1*100 + 1.
+    <em>// ...</em>
+    <em>// Regarding the proprietary interfaces of HarmonyOS, specifically the interfaces marked as since M.F.S(N).</em>
+    <em>// Compatibility judgment, the value corresponding to version 5.1.1(19) is 50101,</em>
+    <em>// which is derived from the new interface's since field 5*10000 + 1*100 + 1.</em>
     if (OH_GetDistributionOSApiVersion() >= MIN_API_VERSION_5_1_1) {
         textNode->SetButtonType(ARKUI_BUTTON_ROUNDED_RECTANGLE);
     } else {

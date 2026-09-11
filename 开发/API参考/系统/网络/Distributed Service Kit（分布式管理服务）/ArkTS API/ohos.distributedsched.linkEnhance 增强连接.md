@@ -1,9 +1,9 @@
 # @ohos.distributedsched.linkEnhance (增强连接)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-link-enhance
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 linkEnhance模块提供高效的蓝牙连接和数据传输功能，增强设备间连接的稳定性。使用多通道合并算法解决传统蓝牙连接不稳定、连接数量受限等问题，提升跨设备数据传输能力，改善用户使用体验。
 
@@ -12,9 +12,10 @@ linkEnhance模块提供高效的蓝牙连接和数据传输功能，增强设备
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { linkEnhance } from '@kit.DistributedServiceKit';
@@ -22,9 +23,10 @@ import { linkEnhance } from '@kit.DistributedServiceKit';
 
 
 
-#### linkEnhance.createServer
+## linkEnhance.createServer
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createServer(name: string): Server
 
@@ -40,12 +42,14 @@ createServer(name: string): Server
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 自定义的非空字符串，标识应用的服务名，最大长度255字节。超出长度限制或传入空字符串时返回错误码32390206。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -55,6 +59,7 @@ createServer(name: string): Server
 **错误码：**
 
 以下错误码的详细介绍请参考[增强连接错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-link-enhance)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -86,9 +91,10 @@ try {
 
 
 
-#### linkEnhance.createConnection
+## linkEnhance.createConnection
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createConnection(deviceId: string, name: string): Connection
 
@@ -104,6 +110,7 @@ createConnection(deviceId: string, name: string): Connection
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 连接的对端设备的deviceId，即对端设备的BLE MAC地址。BLE MAC的获取方法，请参考查找设备。 |
@@ -111,6 +118,7 @@ createConnection(deviceId: string, name: string): Connection
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -120,6 +128,7 @@ createConnection(deviceId: string, name: string): Connection
 **错误码：**
 
 以下错误码的详细介绍请参考[增强连接错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-link-enhance)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -151,9 +160,10 @@ try {
 
 
 
-#### Server
+## Server
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 服务对象，提供启动服务、停止服务、关闭服务、注册/取消注册服务端回调等方法。
 
@@ -165,9 +175,10 @@ try {
 
 
 
-#### start()
+### start()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 start(): void
 
@@ -184,6 +195,7 @@ start(): void
 **错误码：**
 
 以下错误码的详细介绍请参考[增强连接错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-link-enhance)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -214,9 +226,10 @@ try {
 
 
 
-#### stop()
+### stop()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stop(): void
 
@@ -233,6 +246,7 @@ stop(): void
 **错误码：**
 
 以下错误码的详细介绍请参考[增强连接错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-link-enhance)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -262,9 +276,10 @@ try {
 
 
 
-#### close()
+### close()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(): void
 
@@ -281,6 +296,7 @@ close(): void
 **错误码：**
 
 以下错误码的详细介绍请参考[增强连接错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-link-enhance)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -310,9 +326,10 @@ try {
 
 
 
-#### on('connectionAccepted')
+### on('connectionAccepted')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'connectionAccepted', callback: Callback&lt;Connection&gt;): void
 
@@ -328,6 +345,7 @@ on(type: 'connectionAccepted', callback: Callback&lt;Connection&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'connectionAccepted'，收到对端连接，触发该事件。 |
@@ -337,6 +355,7 @@ on(type: 'connectionAccepted', callback: Callback&lt;Connection&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参考[增强连接错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-link-enhance)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -373,9 +392,10 @@ try {
 
 
 
-#### off('connectionAccepted')
+### off('connectionAccepted')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'connectionAccepted', callback?: Callback&lt;Connection&gt;): void
 
@@ -391,6 +411,7 @@ off(type: 'connectionAccepted', callback?: Callback&lt;Connection&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'connectionAccepted'，收到对端连接，触发该事件。 |
@@ -400,6 +421,7 @@ off(type: 'connectionAccepted', callback?: Callback&lt;Connection&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参考[增强连接错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-link-enhance)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -436,9 +458,10 @@ try {
 
 
 
-#### on('serverStopped')
+### on('serverStopped')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'serverStopped', callback: Callback&lt;number&gt;): void
 
@@ -454,6 +477,7 @@ on(type: 'serverStopped', callback: Callback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'serverStopped'，底层服务异常时触发。 |
@@ -463,6 +487,7 @@ on(type: 'serverStopped', callback: Callback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参考[增强连接错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-link-enhance)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -499,9 +524,10 @@ try {
 
 
 
-#### off('serverStopped')
+### off('serverStopped')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'serverStopped', callback?: Callback&lt;number&gt;): void
 
@@ -517,6 +543,7 @@ off(type: 'serverStopped', callback?: Callback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'serverStopped'，底层服务异常时触发。 |
@@ -526,6 +553,7 @@ off(type: 'serverStopped', callback?: Callback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参考[增强连接错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-link-enhance)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -562,9 +590,10 @@ try {
 
 
 
-#### ConnectResult
+## ConnectResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 客户端调用connect()后，返回的连接结果。
 
@@ -573,6 +602,7 @@ try {
 **设备行为差异**: 该接口在不支持分布式业务的Wearable设备上无法调用到，在企业管控设备中调用无效果，在其他设备类型可以正常调用。
 
 **模型约束**：此接口仅可在Stage模型下使用
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -583,9 +613,10 @@ try {
 
 
 
-#### Connection
+## Connection
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 连接对象，提供连接、断连、获取对端设备ID、发送数据、注册/取消注册回调等方法。
 
@@ -595,9 +626,10 @@ try {
 
 
 
-#### connect()
+### connect()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 connect(): void
 
@@ -614,6 +646,7 @@ connect(): void
 **错误码：**
 
 以下错误码的详细介绍请参考[增强连接错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-link-enhance)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -651,9 +684,10 @@ try {
 
 
 
-#### disconnect()
+### disconnect()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 disconnect(): void
 
@@ -670,6 +704,7 @@ disconnect(): void
 **错误码：**
 
 以下错误码的详细介绍请参考[增强连接错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-link-enhance)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -704,9 +739,10 @@ try {
 
 
 
-#### close()
+### close()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(): void
 
@@ -723,6 +759,7 @@ close(): void
 **错误码：**
 
 以下错误码的详细介绍请参考[增强连接错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-link-enhance)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -757,9 +794,10 @@ try {
 
 
 
-#### getPeerDeviceId()
+### getPeerDeviceId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPeerDeviceId(): string
 
@@ -775,6 +813,7 @@ getPeerDeviceId(): string
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 对端设备的deviceId，即对端设备的BLE MAC地址。如果获取失败返回空字符串。 |
@@ -783,6 +822,7 @@ getPeerDeviceId(): string
 **错误码：**
 
 以下错误码的详细介绍请参考[增强连接错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-link-enhance)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -811,9 +851,10 @@ try {
 
 
 
-#### sendData()
+### sendData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sendData(data: ArrayBuffer): void
 
@@ -829,6 +870,7 @@ sendData(data: ArrayBuffer): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | ArrayBuffer | 是 | 需要发送的数据，最大发送长度为1024字节。超出长度限制时返回错误码32390206。 |
@@ -837,6 +879,7 @@ sendData(data: ArrayBuffer): void
 **错误码：**
 
 以下错误码的详细介绍请参考[增强连接错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-link-enhance)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -878,9 +921,10 @@ try {
 
 
 
-#### on('connectResult')
+### on('connectResult')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'connectResult', callback: Callback&lt;ConnectResult&gt;): void
 
@@ -896,6 +940,7 @@ on(type: 'connectResult', callback: Callback&lt;ConnectResult&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'connectResult'，完成connect()调用，触发该事件。 |
@@ -905,6 +950,7 @@ on(type: 'connectResult', callback: Callback&lt;ConnectResult&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参考[增强连接错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-link-enhance)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -940,9 +986,10 @@ try {
 
 
 
-#### off('connectResult')
+### off('connectResult')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'connectResult', callback?: Callback&lt;ConnectResult&gt;): void
 
@@ -958,6 +1005,7 @@ off(type: 'connectResult', callback?: Callback&lt;ConnectResult&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'connectResult'，完成connect()调用，触发该事件。 |
@@ -967,6 +1015,7 @@ off(type: 'connectResult', callback?: Callback&lt;ConnectResult&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参考[增强连接错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-link-enhance)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1002,9 +1051,10 @@ try {
 
 
 
-#### on('disconnected')
+### on('disconnected')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'disconnected', callback: Callback&lt;number&gt;): void
 
@@ -1020,6 +1070,7 @@ on(type: 'disconnected', callback: Callback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'disconnected'，连接被动断开或底层异常断开时，触发该事件。 |
@@ -1029,6 +1080,7 @@ on(type: 'disconnected', callback: Callback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参考[增强连接错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-link-enhance)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1061,9 +1113,10 @@ try {
 
 
 
-#### off('disconnected')
+### off('disconnected')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'disconnected', callback?: Callback&lt;number&gt;): void
 
@@ -1079,6 +1132,7 @@ off(type: 'disconnected', callback?: Callback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'disconnected'，连接被动断开或底层异常断开时，触发该事件。 |
@@ -1088,6 +1142,7 @@ off(type: 'disconnected', callback?: Callback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参考[增强连接错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-link-enhance)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1123,9 +1178,10 @@ try {
 
 
 
-#### on('dataReceived')
+### on('dataReceived')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'dataReceived', callback: Callback&lt;ArrayBuffer&gt;): void
 
@@ -1141,6 +1197,7 @@ on(type: 'dataReceived', callback: Callback&lt;ArrayBuffer&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'dataReceived'，收到数据时，触发该事件。 |
@@ -1150,6 +1207,7 @@ on(type: 'dataReceived', callback: Callback&lt;ArrayBuffer&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参考[增强连接错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-link-enhance)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1184,9 +1242,10 @@ try {
 
 
 
-#### off('dataReceived')
+### off('dataReceived')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'dataReceived', callback?: Callback&lt;ArrayBuffer&gt;): void
 
@@ -1202,6 +1261,7 @@ off(type: 'dataReceived', callback?: Callback&lt;ArrayBuffer&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'dataReceived'，收到数据时，触发该事件。 |
@@ -1211,6 +1271,7 @@ off(type: 'dataReceived', callback?: Callback&lt;ArrayBuffer&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参考[增强连接错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-link-enhance)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

@@ -1,20 +1,21 @@
 # HalfScreenLaunchComponent
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-atomicservice-halfscreenlaunchcomponent
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 半屏嵌入式启动元服务组件，当被拉起方未授权嵌入式运行元服务时，宿主将使用跳出式拉起元服务。
 
 > [!NOTE]
-> 该组件从API version 18开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 如果需要在该组件中实现一个可嵌入式运行的元服务时，元服务必须继承自 EmbeddableUIAbility 。若不继承自EmbeddableUIAbility，系统无法确保元服务正常运行。
+> 该组件从API version 18开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 当需要在该组件中实现一个可嵌入式运行的元服务时，元服务必须继承自 EmbeddableUIAbility 。若不继承自EmbeddableUIAbility，系统无法确保元服务正常运行。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { HalfScreenLaunchComponent } from '@kit.ArkUI';
@@ -22,25 +23,28 @@ import { HalfScreenLaunchComponent } from '@kit.ArkUI';
 
 
 
-#### 子组件
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-无
+## 子组件
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 属性
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-不支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)
+无。
 
 
 
-#### HalfScreenLaunchComponent
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+不支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)。
+
+
+
+## HalfScreenLaunchComponent
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 HalfScreenLaunchComponent({ content: Callback&lt;void&gt;, appId: string, options?: AtomicServiceOptions, onError?: ErrorCallback, onTerminated?: Callback&lt;TerminationInfo&gt;, onReceive?: Callback<Record<string, Object>> })
 
@@ -52,25 +56,27 @@ HalfScreenLaunchComponent({ content: Callback&lt;void&gt;, appId: string, option
 
 **参数：**
 
+
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | content | Callback&lt;void&gt; | 是 | @BuilderParam | 组件显示内容。 |
 | appId | string | 是 | - | 元服务appId。 |
-| options | AtomicServiceOptions | 否 | - | 拉起元服务参数，默认为空。 |
-| onError | ErrorCallback | 否 | - | 被拉起的元服务扩展在运行过程中发生异常时触发本回调。 |
-| onTerminated | Callback&lt;TerminationInfo&gt; | 否 | - | 被拉起的嵌入式运行元服务通过点击元服务退出按钮、手势侧滑、调用terminateSelfWithResult或者terminateSelf正常退出时，触发本回调函数。 |
-| onReceive20+ | Callback<Record<string, Object>> | 否 | - | 被拉起的嵌入式运行元服务通过@ohos.window (窗口)调用API时，触发本回调。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
+| options | AtomicServiceOptions | 否 | - | 拉起元服务参数。不填时使用默认参数拉起元服务。 |
+| onError | ErrorCallback | 否 | - | 被拉起的元服务在运行过程中发生异常时触发本回调。 |
+| onTerminated | Callback&lt;TerminationInfo&gt; | 否 | - | 被拉起的嵌入式运行元服务通过点击元服务退出按钮、手势侧滑、调用terminateSelfWithResult或者terminateSelf正常退出时，触发本回调。 |
+| onReceive20+ | Callback<Record<string, Object>> | 否 | - | 被拉起的嵌入式运行元服务通过@ohos.window (窗口)调用相关API时，触发本回调。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
 
 
 > [!NOTE]
-> 若元服务通过调用 terminateSelfWithResult 退出，其携带的信息会传给回调函数的入参； 若元服务通过调用 terminateSelf 退出，上述回调函数的入参中，"code"取默认值"0"，"want"为"undefined"。
+> 若元服务通过调用 terminateSelfWithResult 退出，该方法携带的信息会传给回调函数的入参； 若元服务通过调用 terminateSelf 退出，上述回调函数的入参中，"code"取默认值"0"，"want"为"undefined"。
 
 
 
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示如何嵌入式拉起手机充值服务。
 
@@ -84,27 +90,27 @@ import { HalfScreenLaunchComponent } from '@kit.ArkUI';
 @Entry
 @Component
 struct Index {
-  appId: string = "576****************"; // 元服务appId。
+  appId: string = '576****************'; // 元服务appId。
 
   build() {
     Column() {
       HalfScreenLaunchComponent({
         appId: this.appId,
         options: {},
-        onTerminated:  (info:TerminationInfo)=> {
-          console.info('onTerminated info = '+ info.want);
+        onTerminated: (info: TerminationInfo) => {
+          console.info('onTerminated info = ' + info.want);
         },
-        onError: (err) => {
-          console.error(" onError code: " + err.code + ", message: ", err.message);
+        onError: (err: BusinessError) => {
+          console.error(`onError code: ${err.code}, message: ${err.message}`);
         },
-        onReceive: (data) => {
-          console.info("onReceive, data: " + data['ohos.atomicService.window']);
+        onReceive: (data: Record<string, Object>) => {
+          console.info('onReceive, data: ' + data['ohos.atomicService.window']);
         }
       }) {
         Column() {
           Image($r('app.media.app_icon'))
           Text('拉起手机充值')
-        }.width("80vp").height("80vp").margin({bottom:30})
+        }.width('80vp').height('80vp').margin({bottom:30})
       } // 通过尾随闭包形式传入content。
     }
   }

@@ -1,6 +1,6 @@
-# 属性字符串（StyledString/MutableStyledString）
+# 属性字符串 (StyledString/MutableStyledString)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-styled-string
 
@@ -9,7 +9,7 @@
 属性字符串提供多种类型样式对象，涵盖各种常见的文本样式格式，例如文本装饰线样式、文本行高样式、文本阴影样式等。也可以自行创建[CustomSpan](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-styled-string#customspan)，以应用自定义样式。
 
 
-#### 创建并应用StyledString和MutableStyledString
+## 创建并应用StyledString和MutableStyledString
 
 可以通过[TextController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#textcontroller11)提供的[setStyledString](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#setstyledstring12)方法，将属性字符串附加到文本组件，并推荐在[onPageShow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-custom-component-lifecycle#onpageshow)或者文本组件的[onAppear](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-events-show-hide#onappear)回调中触发绑定。
 
@@ -56,7 +56,7 @@ struct styled_string_demo1 {
 
 
 
-#### 设置文本样式
+## 设置文本样式
 
 属性字符串目前提供了多种Style对象，包括[TextStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-styled-string#textstyle)、[TextShadowStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-styled-string#textshadowstyle)、[DecorationStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-styled-string#decorationstyle)、[BaselineOffsetStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-styled-string#baselineoffsetstyle)、[LineHeightStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-styled-string#lineheightstyle)、[LetterSpacingStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-styled-string#letterspacingstyle)，用于设置文本的各类样式。
 
@@ -343,9 +343,9 @@ struct styled_string_demo7 {
 
 
 
-#### 设置段落样式
+## 设置段落样式
 
-可通过[ParagraphStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-styled-string#paragraphstyle)设置段落样式布局。下图显示了如何分割文本中的段落，段落以换行符 \n 结尾。
+可通过[ParagraphStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-styled-string#paragraphstyle)设置段落样式布局。下图显示了如何分割文本中的段落，段落之间以换行符\n分隔。
 
 
 ![](assets/属性字符串（StyledString／MutableStyledString）/file-20260514130624309-2.png)
@@ -513,11 +513,11 @@ struct Index {
 
 
 
-#### 支持将属性字符串转换成Paragraph
+## 支持将属性字符串转换成Paragraph
 
 可通过[getParagraphs](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-measureutils#getparagraphs20)将属性字符串根据文本布局选项转换成对应的[Paragraph](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-graphics-text#paragraph)数组。
 
- - 以下示例展示了通过[MeasureUtils](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-measureutils)的getParagraphs方法测算文本，当内容超出最大显示行数的时候，截断文本显示并展示“...全文”的效果。
+ - 以下示例展示了通过getParagraphs方法将属性字符串转换为Paragraph对象，进而通过Paragraph对象实现文本测算功能。当内容超出最大显示行数的时候，截断文本显示并展示“...全文”的效果。
 
   
 ```ArkTS
@@ -734,7 +734,7 @@ struct Index {
 
 
 
-#### 使用图片
+## 使用图片
 
 可通过[ImageAttachment](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-styled-string#imageattachment)来添加图片。
 
@@ -924,9 +924,9 @@ struct StyledStringImageAttachment {
 
 
 
-#### 设置事件
+## 设置事件
 
-可通过[GestureStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-styled-string#gesturestyle)设置onClick、onLongPress事件来使文本响应点击长按事件。
+可通过[GestureStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-styled-string#gesturestyle)设置onClick、onLongPress事件来使文本响应点击、长按事件。
 
 除了初始化属性字符串对象即初始样式对象，亦可通过[setStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-styled-string#setstyle)接口再叠加新样式或更新已有样式，同时需要在附加的文本组件controller上主动触发更新绑定的属性字符串。
 
@@ -1087,9 +1087,9 @@ struct StyledStringGestureStyle {
 
 
 
-#### 格式转换
+## 格式转换
 
-可以通过[toHtml](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-styled-string#tohtml14)、[fromHtml](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-styled-string#fromhtml)接口实现属性字符串与HTML格式字符串的相关转换，当前支持转换的HTML标签范围：&lt;p&gt;、&lt;span&gt;、&lt;img&gt;、&lt;br&gt;、&lt;strong&gt;、&lt;b&gt;、&lt;a&gt;、&lt;i&gt;、&lt;em&gt;、&lt;s&gt;、&lt;u&gt;、&lt;del&gt;、&lt;sup&gt;、&lt;sub&gt;。
+可以通过[toHtml](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-styled-string#tohtml14)、[fromHtml](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-styled-string#fromhtml)接口实现属性字符串与HTML格式字符串的相关转换，支持转换的HTML标签部分范围：&lt;p&gt;、&lt;span&gt;、&lt;img&gt;、&lt;br&gt;、&lt;strong&gt;、&lt;b&gt;、&lt;a&gt;、&lt;i&gt;、&lt;em&gt;、&lt;s&gt;、&lt;u&gt;、&lt;del&gt;、&lt;sup&gt;、&lt;sub&gt;，完整范围参见[fromHtml](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-styled-string#fromhtml)的接口说明。
 
  - 以下示例展示了如何将属性字符串转换成HTML格式，并展示了如何从HTML格式转换回属性字符串。
 
@@ -1195,7 +1195,7 @@ struct StyledStringHtml {
 @Component
 struct HtmlSpanStringDemo {
   @State html: string =
-    "<p>This is <b>b</b> <strong>strong</strong> em <i>i</i> <u>u</u> <del>del</del> <s>s</s>  <a href='https://www.example.com'>www.example</a>  red span <sup>superscript</sup> and <sub>subscript</sub></p>";
+    "<p>This is <b>b</b> <strong>strong</strong> <em>em</em> <i>i</i> <u>u</u> <del>del</del> <s>s</s> <span style =   \"foreground-color:blue\"> <a href='https://www.example.com'>www.example</a> </span> <span   style=\"background-color: red;\">red span</span> <sup>superscript</sup> and <sub>subscript</sub></p>";
   @State spanString: StyledString | undefined = undefined;
   @State resultText: string = ''; // 保存结果文本的状态
   controller: TextController = new TextController;
@@ -1248,7 +1248,7 @@ struct HtmlSpanStringDemo {
       // 请将$r('app.string.Reset')替换为实际资源文件，在本示例中该资源文件的value值为"Reset"
       Button($r('app.string.Reset')).onClick(() => {
         this.html =
-          "<p>This is <b>b</b> <strong>strong</strong> em <i>i</i> <u>u</u> <del>del</del> <s>s</s>  <a href='https://www.example.com'>www.example</a>  red span <sup>superscript</sup> and <sub>subscript</sub></p>";
+          "<p>This is <b>b</b> <strong>strong</strong> <em>em</em> <i>i</i> <u>u</u> <del>del</del> <s>s</s> <span   style = \"foreground-color:blue\"> <a href='https://www.example.com'>www.example</a> </span> <span   style=\"background-color: red;\">red span</span> <sup>superscript</sup> and <sub>subscript</sub></p>";
         this.spanString = undefined;
         this.controller.setStyledString(new StyledString('')); // 使用空的StyledString实例
         this.resultText = 'Reset HTML and SpanString successfully.';
@@ -1258,13 +1258,13 @@ struct HtmlSpanStringDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/pld2AIcMSRSNVp9yvo5cbg/zh-cn_image_0000002674632242.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095712Z&HW-CC-Expire=86400&HW-CC-Sign=BD6DE4CF9F209739862E5AD8BED65DA2ABC6CE0039D6603E44F451823D161F4E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/Ua1dpg0sSPaAb94k6luYJA/zh-cn_image_0000002717610458.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072242Z&HW-CC-Expire=86400&HW-CC-Sign=D57CCBE10B5A650714C0640F47D43C04C5E5D8A939CB05A600FB1B5DA3A3F95F)
 
 
 
 
 
-#### 场景示例
+## 场景示例
 
 该示例通过[ParagraphStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-styled-string#paragraphstyle)、[LineHeightStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-styled-string#lineheightstyle)、[TextStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-styled-string#textstyle)对象展示了会员过期提示的效果。
 
@@ -1432,4 +1432,4 @@ struct StyledStringSceneExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/4ymGaxOaTmStSJWCJk3jIw/zh-cn_image_0000002704272197.png?HW-CC-KV=V1&HW-CC-Date=20260813T095712Z&HW-CC-Expire=86400&HW-CC-Sign=360689B8738B1A790082150B63B0B69C9541B3F0F6DD14FD659041D8D9AD0047)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/-v8gw70oQkWbgGZlsy6o-g/zh-cn_image_0000002747290411.png?HW-CC-KV=V1&HW-CC-Date=20260911T072242Z&HW-CC-Expire=86400&HW-CC-Sign=E9EB3B482618245EBBFF9E13DD89230413D38FBE4DA610DB7D2F8F78CC6D9587)

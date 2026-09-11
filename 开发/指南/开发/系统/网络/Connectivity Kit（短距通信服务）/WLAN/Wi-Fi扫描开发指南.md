@@ -1,16 +1,16 @@
 # Wi-Fi扫描开发指南
 
-更新时间：2026-03-09 02:50:43
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-development-guide
 
-#### 简介
+## 简介
 
 Wi-Fi扫描是指设备（如手机、电脑、路由器等）搜索周围可用Wi-Fi网络的过程。通过扫描，设备可以获取附近网络的基本信息（如网络名称、信号强度、加密方式等），从而实现连接、管理或分析周围网络。
 
 
 
-#### 场景介绍
+## 场景介绍
 
  - [Wi-Fi扫描](#wi-fi扫描)
  - [PNO扫描](#pno扫描)
@@ -20,11 +20,12 @@ Wi-Fi扫描是指设备（如手机、电脑、路由器等）搜索周围可用
 
 
 
-#### 接口说明
+## 接口说明
 
 完整的JS API说明以及示例代码请参考：[SCAN接口](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-wifimanager)。
 
 接口具体说明如下表所示。
+
 
 | 接口名 | 功能描述 |
 | --- | --- |
@@ -35,11 +36,11 @@ Wi-Fi扫描是指设备（如手机、电脑、路由器等）搜索周围可用
 
 
 
-#### 开发步骤
+## 开发步骤
 
 
 
-#### Wi-Fi扫描
+### Wi-Fi扫描
 1. 导入需要的Wi-Fi模块。
 2. 需要SystemCapability.Communication.WiFi.STA系统能力。
 3. 需要权限ohos.permission.GET_WIFI_INFO。
@@ -100,7 +101,7 @@ try {
 
 
 
-#### PNO扫描
+### PNO扫描
 
 PNO扫描即首选分流网络扫描（Preferred Network Offload scanning），是一种用于降低移动设备功耗的Wi-Fi扫描技术。
 
@@ -108,7 +109,7 @@ PNO扫描即首选分流网络扫描（Preferred Network Offload scanning），�
 
 
 
-#### 周期扫描
+### 周期扫描
 
 WiFi周期扫描是指无线设备（如智能手机、平板电脑、笔记本电脑等）按照一定的时间间隔，自动搜索周围可用的WiFi网络的过程。
 
@@ -118,7 +119,7 @@ WiFi周期扫描是指无线设备（如智能手机、平板电脑、笔记本�
 
 
 
-#### 扫描管控
+### 扫描管控
 
 WiFi扫描管控是指对无线设备扫描WiFi网络的行为进行管理和控制。
 

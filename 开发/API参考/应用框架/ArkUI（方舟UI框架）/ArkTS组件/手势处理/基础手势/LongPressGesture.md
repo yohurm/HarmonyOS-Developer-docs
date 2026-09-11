@@ -1,9 +1,9 @@
 # LongPressGesture
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-gestures-longpressgesture
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于触发长按手势事件，触发长按手势的最少手指数为1，默认最短长按时间为500毫秒。可配置duration参数控制最短长按时长，适用于需要通过用户长按操作触发组件交互的场景。
  
@@ -12,21 +12,23 @@
 
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### LongPressGesture
+### LongPressGesture
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 LongPressGesture(value?: { fingers?: number; repeat?: boolean; duration?: number })
  
 创建长按手势对象。继承自[GestureInterface&lt;T&gt;](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-gesture-common#gestureinterfacet11)。
  
-当组件默认支持可拖拽时，如Text、TextInput、TextArea、HyperLink、Image和RichEditor等组件，长按手势与拖拽会出现冲突，事件优先级如下：
+当组件默认支持可拖拽时，如Text、TextInput、TextArea、Hyperlink、Image和RichEditor等组件，长按手势与拖拽会出现冲突，事件优先级如下：
  
 当长按触发时间小于500毫秒时，系统优先响应长按事件而非拖拽事件。
  
@@ -38,22 +40,24 @@ LongPressGesture(value?: { fingers?: number; repeat?: boolean; duration?: number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | { fingers?: number; repeat?: boolean; duration?: number } | 否 | 设置长按手势参数。当需要自定义长按手势的触发手指数、是否连续触发回调或最短长按时间时传入；不传入时，使用默认配置创建长按手势。 - fingers：触发长按的最少手指数，最小值为1，最大值为10，超出范围时使用默认值；当需要多指长按触发时设置为大于1的值，默认值：1。 - repeat：是否连续触发事件回调。true表示连续触发事件回调，适用于长按期间需要持续响应的场景；false表示不连续触发事件回调，适用于仅需响应一次长按识别成功的场景，默认值：false。 - duration：触发长按的最短时间，单位为毫秒（ms），取值范围为[0, +∞)，当设置值小于0时使用默认值。当需要调整长按识别灵敏度时设置，默认值：500。 |
+| value | { fingers?: number; repeat?: boolean; duration?: number } | 否 | 设置长按手势参数。 - fingers：触发长按的最少手指数，最小值为1， 最大值为10。 默认值：1 - repeat：是否连续触发事件回调。true表示连续触发事件回调，false表示不连续触发事件回调。 默认值：false - duration：触发长按的最短时间，单位为毫秒（ms）。 默认值：500 |
  
  
   
 
-#### LongPressGesture15+
+### LongPressGesture15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 LongPressGesture(options?: LongPressGestureHandlerOptions)
  
 创建长按手势对象。与[LongPressGesture](#longpressgesture-1)相比，options参数新增了对isFingerCountLimited参数，表示是否检查触摸屏幕的手指数量。
  
-当组件默认支持可拖拽时，如Text、TextInput、TextArea、HyperLink、Image和RichEditor等组件，长按手势与拖拽会出现冲突，事件优先级如下：
+当组件默认支持可拖拽时，如Text、TextInput、TextArea、Hyperlink、Image和RichEditor等组件，长按手势与拖拽会出现冲突，事件优先级如下：
  
 当长按触发时间小于500毫秒时，系统优先响应长按事件而非拖拽事件。
  
@@ -67,6 +71,7 @@ LongPressGesture(options?: LongPressGestureHandlerOptions)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | LongPressGestureHandlerOptions | 否 | 长按手势处理器配置参数。当需要自定义长按手势的处理器配置（如是否检查触摸屏幕的手指数量、手势识别参数等）时传入；不传入时，使用长按手势的默认处理器配置。 |
@@ -74,9 +79,10 @@ LongPressGesture(options?: LongPressGestureHandlerOptions)
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!TIP]
 > 在 GestureEvent 的fingerList元素中，手指索引编号与位置相对应，即fingerList[index]的id为index。对于先按下但未参与当前手势触发的手指，fingerList中对应的位置为空。建议优先使用fingerInfos。 长按手势触发后， GestureEvent 中fingerList和fingerInfos的信息仅在有手指按下时才会更新，手指抬起时不会更新。
@@ -84,9 +90,10 @@ LongPressGesture(options?: LongPressGestureHandlerOptions)
  
   
 
-#### onAction
+### onAction
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onAction(event: (event: GestureEvent) => void)
  
@@ -98,6 +105,7 @@ onAction(event: (event: GestureEvent) => void)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | (event: GestureEvent) => void | 是 | 长按手势识别成功回调函数，用于在长按手势识别成功时接收GestureEvent手势事件信息。 |
@@ -105,9 +113,10 @@ onAction(event: (event: GestureEvent) => void)
  
   
 
-#### onActionEnd
+### onActionEnd
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onActionEnd(event: (event: GestureEvent) => void)
  
@@ -119,6 +128,7 @@ onActionEnd(event: (event: GestureEvent) => void)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | (event: GestureEvent) => void | 是 | 长按手势结束回调函数，用于在长按手势识别成功后最后一根手指抬起时接收GestureEvent手势事件信息。 |
@@ -126,9 +136,10 @@ onActionEnd(event: (event: GestureEvent) => void)
  
   
 
-#### onActionCancel
+### onActionCancel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onActionCancel(event: () => void)
  
@@ -140,6 +151,7 @@ onActionCancel(event: () => void)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | () => void | 是 | 长按手势取消回调函数。 |
@@ -147,9 +159,10 @@ onActionCancel(event: () => void)
  
   
 
-#### onActionCancel18+
+### onActionCancel18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onActionCancel(event: Callback&lt;GestureEvent&gt;)
  
@@ -163,6 +176,7 @@ onActionCancel(event: Callback&lt;GestureEvent&gt;)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | Callback&lt;GestureEvent&gt; | 是 | 长按手势取消回调函数，用于在长按手势识别成功后接收到触摸取消事件时接收GestureEvent手势事件信息。 |
@@ -170,9 +184,10 @@ onActionCancel(event: Callback&lt;GestureEvent&gt;)
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过LongPressGesture实现了长按手势的识别。从API version 22开始，支持通过[LongPressGestureHandlerOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-gesturehandler#longpressgesturehandleroptions)的allowableMovement属性设置识别手势的最大移动距离。
  
@@ -212,4 +227,4 @@ struct LongPressGestureExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/pGQYdjEZQRy0pH9zC8z7mA/zh-cn_image_0000002655848448.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071458Z&HW-CC-Expire=86400&HW-CC-Sign=FFC33F961D208EAEB4310E3B407CA0C35C7FD91BA82162520EE62205F603B05C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/6Trn1pP-SyWY09BTQIM2fA/zh-cn_image_0000002747212453.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073109Z&HW-CC-Expire=86400&HW-CC-Sign=DD4FF6E2975042CFBEC3CBE72F2821FB408CDB6C531F5A3D7D5CF3DA76D21C8B)

@@ -1,13 +1,14 @@
 # context.h
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-context-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供了Context相关的接口，可以配置运行时信息，该接口是非线程安全的。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_AI_ContextHandle | void* | MindSpore Lite上下文信息的指针，该指针会指向Context。 |
@@ -41,10 +45,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_AI_API OH_AI_ContextHandle OH_AI_ContextCreate() | 创建一个上下文的对象。注意：此接口需跟OH_AI_ContextDestroy配套使用。 |
@@ -88,15 +94,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AI_ContextCreate()
+### OH_AI_ContextCreate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_ContextHandle OH_AI_ContextCreate()
@@ -110,6 +118,7 @@ OH_AI_API OH_AI_ContextHandle OH_AI_ContextCreate()
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_ContextHandle | 指向上下文信息的OH_AI_ContextHandle。 |
@@ -117,9 +126,10 @@ OH_AI_API OH_AI_ContextHandle OH_AI_ContextCreate()
  
   
 
-#### OH_AI_ContextDestroy()
+### OH_AI_ContextDestroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API void OH_AI_ContextDestroy(OH_AI_ContextHandle *context)
@@ -133,6 +143,7 @@ OH_AI_API void OH_AI_ContextDestroy(OH_AI_ContextHandle *context)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_ContextHandle *context | 指向OH_AI_ContextHandle的二级指针，上下文销毁后会对context置为空指针。 |
@@ -140,9 +151,10 @@ OH_AI_API void OH_AI_ContextDestroy(OH_AI_ContextHandle *context)
  
   
 
-#### OH_AI_ContextSetThreadNum()
+### OH_AI_ContextSetThreadNum()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API void OH_AI_ContextSetThreadNum(OH_AI_ContextHandle context, int32_t thread_num)
@@ -156,6 +168,7 @@ OH_AI_API void OH_AI_ContextSetThreadNum(OH_AI_ContextHandle context, int32_t th
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_ContextHandle context | 指向上下文信息实例的OH_AI_ContextHandle。 |
@@ -164,9 +177,10 @@ OH_AI_API void OH_AI_ContextSetThreadNum(OH_AI_ContextHandle context, int32_t th
  
   
 
-#### OH_AI_ContextGetThreadNum()
+### OH_AI_ContextGetThreadNum()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API int32_t OH_AI_ContextGetThreadNum(const OH_AI_ContextHandle context)
@@ -180,6 +194,7 @@ OH_AI_API int32_t OH_AI_ContextGetThreadNum(const OH_AI_ContextHandle context)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_AI_ContextHandle context | 指向上下文信息实例的OH_AI_ContextHandle。 |
@@ -187,6 +202,7 @@ OH_AI_API int32_t OH_AI_ContextGetThreadNum(const OH_AI_ContextHandle context)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API int32_t | 当前的线程数量。 |
@@ -194,9 +210,10 @@ OH_AI_API int32_t OH_AI_ContextGetThreadNum(const OH_AI_ContextHandle context)
  
   
 
-#### OH_AI_ContextSetThreadAffinityMode()
+### OH_AI_ContextSetThreadAffinityMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API void OH_AI_ContextSetThreadAffinityMode(OH_AI_ContextHandle context, int mode)
@@ -210,6 +227,7 @@ OH_AI_API void OH_AI_ContextSetThreadAffinityMode(OH_AI_ContextHandle context, i
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_ContextHandle context | 指向上下文信息实例的OH_AI_ContextHandle。 |
@@ -218,9 +236,10 @@ OH_AI_API void OH_AI_ContextSetThreadAffinityMode(OH_AI_ContextHandle context, i
  
   
 
-#### OH_AI_ContextGetThreadAffinityMode()
+### OH_AI_ContextGetThreadAffinityMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API int OH_AI_ContextGetThreadAffinityMode(const OH_AI_ContextHandle context)
@@ -234,6 +253,7 @@ OH_AI_API int OH_AI_ContextGetThreadAffinityMode(const OH_AI_ContextHandle conte
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_AI_ContextHandle context | 指向上下文信息实例的OH_AI_ContextHandle。 |
@@ -241,6 +261,7 @@ OH_AI_API int OH_AI_ContextGetThreadAffinityMode(const OH_AI_ContextHandle conte
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API int | 绑核策略。一共有三种策略，0为不绑核，1为大核优先，2为中核优先。 |
@@ -248,9 +269,10 @@ OH_AI_API int OH_AI_ContextGetThreadAffinityMode(const OH_AI_ContextHandle conte
  
   
 
-#### OH_AI_ContextSetThreadAffinityCoreList()
+### OH_AI_ContextSetThreadAffinityCoreList()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API void OH_AI_ContextSetThreadAffinityCoreList(OH_AI_ContextHandle context, const int32_t *core_list,size_t core_num)
@@ -270,6 +292,7 @@ OH_AI_API void OH_AI_ContextSetThreadAffinityCoreList(OH_AI_ContextHandle contex
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_ContextHandle context | 指向上下文信息实例的OH_AI_ContextHandle。 |
@@ -279,9 +302,10 @@ OH_AI_API void OH_AI_ContextSetThreadAffinityCoreList(OH_AI_ContextHandle contex
  
   
 
-#### OH_AI_ContextGetThreadAffinityCoreList()
+### OH_AI_ContextGetThreadAffinityCoreList()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API const int32_t *OH_AI_ContextGetThreadAffinityCoreList(const OH_AI_ContextHandle context, size_t *core_num)
@@ -295,6 +319,7 @@ OH_AI_API const int32_t *OH_AI_ContextGetThreadAffinityCoreList(const OH_AI_Cont
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_AI_ContextHandle context | 指向上下文信息实例的OH_AI_ContextHandle。 |
@@ -303,6 +328,7 @@ OH_AI_API const int32_t *OH_AI_ContextGetThreadAffinityCoreList(const OH_AI_Cont
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API const int32_t * | CPU绑核列表。此列表对象由OH_AI_ContextHandle管理，调用者无须手动释放。 |
@@ -310,9 +336,10 @@ OH_AI_API const int32_t *OH_AI_ContextGetThreadAffinityCoreList(const OH_AI_Cont
  
   
 
-#### OH_AI_ContextSetEnableParallel()
+### OH_AI_ContextSetEnableParallel()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API void OH_AI_ContextSetEnableParallel(OH_AI_ContextHandle context, bool is_parallel)
@@ -326,6 +353,7 @@ OH_AI_API void OH_AI_ContextSetEnableParallel(OH_AI_ContextHandle context, bool 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_ContextHandle context | 指向上下文信息实例的OH_AI_ContextHandle。 |
@@ -334,9 +362,10 @@ OH_AI_API void OH_AI_ContextSetEnableParallel(OH_AI_ContextHandle context, bool 
  
   
 
-#### OH_AI_ContextGetEnableParallel()
+### OH_AI_ContextGetEnableParallel()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API bool OH_AI_ContextGetEnableParallel(const OH_AI_ContextHandle context)
@@ -350,6 +379,7 @@ OH_AI_API bool OH_AI_ContextGetEnableParallel(const OH_AI_ContextHandle context)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_AI_ContextHandle context | 指向上下文信息实例的OH_AI_ContextHandle。 |
@@ -357,6 +387,7 @@ OH_AI_API bool OH_AI_ContextGetEnableParallel(const OH_AI_ContextHandle context)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API bool | 是否支持并行。true为支持并行，false为不支持并行。 |
@@ -364,9 +395,10 @@ OH_AI_API bool OH_AI_ContextGetEnableParallel(const OH_AI_ContextHandle context)
  
   
 
-#### OH_AI_ContextAddDeviceInfo()
+### OH_AI_ContextAddDeviceInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API void OH_AI_ContextAddDeviceInfo(OH_AI_ContextHandle context, OH_AI_DeviceInfoHandle device_info)
@@ -380,6 +412,7 @@ OH_AI_API void OH_AI_ContextAddDeviceInfo(OH_AI_ContextHandle context, OH_AI_Dev
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_ContextHandle context | 指向上下文信息实例的OH_AI_ContextHandle。 |
@@ -388,9 +421,10 @@ OH_AI_API void OH_AI_ContextAddDeviceInfo(OH_AI_ContextHandle context, OH_AI_Dev
  
   
 
-#### OH_AI_DeviceInfoCreate()
+### OH_AI_DeviceInfoCreate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_DeviceInfoHandle OH_AI_DeviceInfoCreate(OH_AI_DeviceType device_type)
@@ -404,6 +438,7 @@ OH_AI_API OH_AI_DeviceInfoHandle OH_AI_DeviceInfoCreate(OH_AI_DeviceType device_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_DeviceType device_type | 设备类型，具体见OH_AI_DeviceType。 |
@@ -411,6 +446,7 @@ OH_AI_API OH_AI_DeviceInfoHandle OH_AI_DeviceInfoCreate(OH_AI_DeviceType device_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_DeviceInfoHandle | 指向设备信息实例的OH_AI_DeviceInfoHandle。 |
@@ -418,9 +454,10 @@ OH_AI_API OH_AI_DeviceInfoHandle OH_AI_DeviceInfoCreate(OH_AI_DeviceType device_
  
   
 
-#### OH_AI_DeviceInfoDestroy()
+### OH_AI_DeviceInfoDestroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API void OH_AI_DeviceInfoDestroy(OH_AI_DeviceInfoHandle *device_info)
@@ -434,6 +471,7 @@ OH_AI_API void OH_AI_DeviceInfoDestroy(OH_AI_DeviceInfoHandle *device_info)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_DeviceInfoHandle *device_info | 指向设备信息实例的OH_AI_DeviceInfoHandle。 |
@@ -441,9 +479,10 @@ OH_AI_API void OH_AI_DeviceInfoDestroy(OH_AI_DeviceInfoHandle *device_info)
  
   
 
-#### OH_AI_DeviceInfoSetProvider()
+### OH_AI_DeviceInfoSetProvider()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API void OH_AI_DeviceInfoSetProvider(OH_AI_DeviceInfoHandle device_info, const char *provider)
@@ -457,6 +496,7 @@ OH_AI_API void OH_AI_DeviceInfoSetProvider(OH_AI_DeviceInfoHandle device_info, c
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_DeviceInfoHandle device_info | 指向设备信息实例的OH_AI_DeviceInfoHandle。 |
@@ -465,9 +505,10 @@ OH_AI_API void OH_AI_DeviceInfoSetProvider(OH_AI_DeviceInfoHandle device_info, c
  
   
 
-#### OH_AI_DeviceInfoGetProvider()
+### OH_AI_DeviceInfoGetProvider()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API const char *OH_AI_DeviceInfoGetProvider(const OH_AI_DeviceInfoHandle device_info)
@@ -481,6 +522,7 @@ OH_AI_API const char *OH_AI_DeviceInfoGetProvider(const OH_AI_DeviceInfoHandle d
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_AI_DeviceInfoHandle device_info | 指向设备信息实例的OH_AI_DeviceInfoHandle。 |
@@ -488,6 +530,7 @@ OH_AI_API const char *OH_AI_DeviceInfoGetProvider(const OH_AI_DeviceInfoHandle d
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API const char * | 生产商的名称。 |
@@ -495,9 +538,10 @@ OH_AI_API const char *OH_AI_DeviceInfoGetProvider(const OH_AI_DeviceInfoHandle d
  
   
 
-#### OH_AI_DeviceInfoSetProviderDevice()
+### OH_AI_DeviceInfoSetProviderDevice()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API void OH_AI_DeviceInfoSetProviderDevice(OH_AI_DeviceInfoHandle device_info, const char *device)
@@ -511,6 +555,7 @@ OH_AI_API void OH_AI_DeviceInfoSetProviderDevice(OH_AI_DeviceInfoHandle device_i
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_DeviceInfoHandle device_info | 指向设备信息实例的OH_AI_DeviceInfoHandle。 |
@@ -519,9 +564,10 @@ OH_AI_API void OH_AI_DeviceInfoSetProviderDevice(OH_AI_DeviceInfoHandle device_i
  
   
 
-#### OH_AI_DeviceInfoGetProviderDevice()
+### OH_AI_DeviceInfoGetProviderDevice()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API const char *OH_AI_DeviceInfoGetProviderDevice(const OH_AI_DeviceInfoHandle device_info)
@@ -535,6 +581,7 @@ OH_AI_API const char *OH_AI_DeviceInfoGetProviderDevice(const OH_AI_DeviceInfoHa
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_AI_DeviceInfoHandle device_info | 指向设备信息实例的OH_AI_DeviceInfoHandle。 |
@@ -542,6 +589,7 @@ OH_AI_API const char *OH_AI_DeviceInfoGetProviderDevice(const OH_AI_DeviceInfoHa
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API const char * | 生产商设备的名称。 |
@@ -549,9 +597,10 @@ OH_AI_API const char *OH_AI_DeviceInfoGetProviderDevice(const OH_AI_DeviceInfoHa
  
   
 
-#### OH_AI_DeviceInfoGetDeviceType()
+### OH_AI_DeviceInfoGetDeviceType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_DeviceType OH_AI_DeviceInfoGetDeviceType(const OH_AI_DeviceInfoHandle device_info)
@@ -565,6 +614,7 @@ OH_AI_API OH_AI_DeviceType OH_AI_DeviceInfoGetDeviceType(const OH_AI_DeviceInfoH
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_AI_DeviceInfoHandle device_info | 指向设备信息实例的OH_AI_DeviceInfoHandle。 |
@@ -572,6 +622,7 @@ OH_AI_API OH_AI_DeviceType OH_AI_DeviceInfoGetDeviceType(const OH_AI_DeviceInfoH
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_DeviceType | 生产商设备类型。 |
@@ -579,9 +630,10 @@ OH_AI_API OH_AI_DeviceType OH_AI_DeviceInfoGetDeviceType(const OH_AI_DeviceInfoH
  
   
 
-#### OH_AI_DeviceInfoSetEnableFP16()
+### OH_AI_DeviceInfoSetEnableFP16()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API void OH_AI_DeviceInfoSetEnableFP16(OH_AI_DeviceInfoHandle device_info, bool is_fp16)
@@ -595,6 +647,7 @@ OH_AI_API void OH_AI_DeviceInfoSetEnableFP16(OH_AI_DeviceInfoHandle device_info,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_DeviceInfoHandle device_info | 指向设备信息实例的OH_AI_DeviceInfoHandle。 |
@@ -603,9 +656,10 @@ OH_AI_API void OH_AI_DeviceInfoSetEnableFP16(OH_AI_DeviceInfoHandle device_info,
  
   
 
-#### OH_AI_DeviceInfoGetEnableFP16()
+### OH_AI_DeviceInfoGetEnableFP16()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API bool OH_AI_DeviceInfoGetEnableFP16(const OH_AI_DeviceInfoHandle device_info)
@@ -619,6 +673,7 @@ OH_AI_API bool OH_AI_DeviceInfoGetEnableFP16(const OH_AI_DeviceInfoHandle device
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_AI_DeviceInfoHandle device_info | 指向设备信息实例的OH_AI_DeviceInfoHandle。 |
@@ -626,6 +681,7 @@ OH_AI_API bool OH_AI_DeviceInfoGetEnableFP16(const OH_AI_DeviceInfoHandle device
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API bool | 是否开启float16推理模式。true为开启float16推理模式，false为不开启float16推理模式。 |
@@ -633,9 +689,10 @@ OH_AI_API bool OH_AI_DeviceInfoGetEnableFP16(const OH_AI_DeviceInfoHandle device
  
   
 
-#### OH_AI_DeviceInfoSetFrequency()
+### OH_AI_DeviceInfoSetFrequency()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API void OH_AI_DeviceInfoSetFrequency(OH_AI_DeviceInfoHandle device_info, int frequency)
@@ -649,6 +706,7 @@ OH_AI_API void OH_AI_DeviceInfoSetFrequency(OH_AI_DeviceInfoHandle device_info, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_DeviceInfoHandle device_info | 指向设备信息实例的OH_AI_DeviceInfoHandle。 |
@@ -657,9 +715,10 @@ OH_AI_API void OH_AI_DeviceInfoSetFrequency(OH_AI_DeviceInfoHandle device_info, 
  
   
 
-#### OH_AI_DeviceInfoGetFrequency()
+### OH_AI_DeviceInfoGetFrequency()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API int OH_AI_DeviceInfoGetFrequency(const OH_AI_DeviceInfoHandle device_info)
@@ -673,6 +732,7 @@ OH_AI_API int OH_AI_DeviceInfoGetFrequency(const OH_AI_DeviceInfoHandle device_i
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_AI_DeviceInfoHandle device_info | 指向设备信息实例的OH_AI_DeviceInfoHandle。 |
@@ -680,6 +740,7 @@ OH_AI_API int OH_AI_DeviceInfoGetFrequency(const OH_AI_DeviceInfoHandle device_i
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API int | NPU的频率类型。取值范围为0-4，0表示不设置，由系统调节；1表示低功耗；2表示平衡；3表示高性能；4表示超高性能。 |
@@ -687,9 +748,10 @@ OH_AI_API int OH_AI_DeviceInfoGetFrequency(const OH_AI_DeviceInfoHandle device_i
  
   
 
-#### OH_AI_GetAllNNRTDeviceDescs()
+### OH_AI_GetAllNNRTDeviceDescs()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API NNRTDeviceDesc *OH_AI_GetAllNNRTDeviceDescs(size_t *num)
@@ -703,6 +765,7 @@ OH_AI_API NNRTDeviceDesc *OH_AI_GetAllNNRTDeviceDescs(size_t *num)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | size_t *num | 输出参数，返回设备数量。 |
@@ -710,6 +773,7 @@ OH_AI_API NNRTDeviceDesc *OH_AI_GetAllNNRTDeviceDescs(size_t *num)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API NNRTDeviceDesc * | 指向NNRt设备描述信息实例数组的指针。当获取失败时，返回NULL。 |
@@ -717,9 +781,10 @@ OH_AI_API NNRTDeviceDesc *OH_AI_GetAllNNRTDeviceDescs(size_t *num)
  
   
 
-#### OH_AI_GetElementOfNNRTDeviceDescs()
+### OH_AI_GetElementOfNNRTDeviceDescs()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API NNRTDeviceDesc *OH_AI_GetElementOfNNRTDeviceDescs(NNRTDeviceDesc *descs, size_t index)
@@ -733,6 +798,7 @@ OH_AI_API NNRTDeviceDesc *OH_AI_GetElementOfNNRTDeviceDescs(NNRTDeviceDesc *desc
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | NNRTDeviceDesc *descs | NNRt设备描述信息数组。 |
@@ -741,6 +807,7 @@ OH_AI_API NNRTDeviceDesc *OH_AI_GetElementOfNNRTDeviceDescs(NNRTDeviceDesc *desc
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API NNRTDeviceDesc * | NNRt设备描述信息类型指针。 |
@@ -748,9 +815,10 @@ OH_AI_API NNRTDeviceDesc *OH_AI_GetElementOfNNRTDeviceDescs(NNRTDeviceDesc *desc
  
   
 
-#### OH_AI_DestroyAllNNRTDeviceDescs()
+### OH_AI_DestroyAllNNRTDeviceDescs()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API void OH_AI_DestroyAllNNRTDeviceDescs(NNRTDeviceDesc **desc)
@@ -764,6 +832,7 @@ OH_AI_API void OH_AI_DestroyAllNNRTDeviceDescs(NNRTDeviceDesc **desc)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | NNRTDeviceDesc **desc | 指向NNRt设备描述信息实例数组的二重指针。销毁结束，desc指向内容会被置为NULL。 |
@@ -771,9 +840,10 @@ OH_AI_API void OH_AI_DestroyAllNNRTDeviceDescs(NNRTDeviceDesc **desc)
  
   
 
-#### OH_AI_GetDeviceIdFromNNRTDeviceDesc()
+### OH_AI_GetDeviceIdFromNNRTDeviceDesc()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API size_t OH_AI_GetDeviceIdFromNNRTDeviceDesc(const NNRTDeviceDesc *desc)
@@ -787,6 +857,7 @@ OH_AI_API size_t OH_AI_GetDeviceIdFromNNRTDeviceDesc(const NNRTDeviceDesc *desc)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const NNRTDeviceDesc *desc | 指向NNRt设备描述信息实例的指针。 |
@@ -794,6 +865,7 @@ OH_AI_API size_t OH_AI_GetDeviceIdFromNNRTDeviceDesc(const NNRTDeviceDesc *desc)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API size_t | NNRt设备ID。 |
@@ -801,9 +873,10 @@ OH_AI_API size_t OH_AI_GetDeviceIdFromNNRTDeviceDesc(const NNRTDeviceDesc *desc)
  
   
 
-#### OH_AI_GetNameFromNNRTDeviceDesc()
+### OH_AI_GetNameFromNNRTDeviceDesc()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API const char *OH_AI_GetNameFromNNRTDeviceDesc(const NNRTDeviceDesc *desc)
@@ -817,6 +890,7 @@ OH_AI_API const char *OH_AI_GetNameFromNNRTDeviceDesc(const NNRTDeviceDesc *desc
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const NNRTDeviceDesc *desc | 指向NNRt设备描述信息实例的指针。 |
@@ -824,6 +898,7 @@ OH_AI_API const char *OH_AI_GetNameFromNNRTDeviceDesc(const NNRTDeviceDesc *desc
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API const char * | NNRt设备名称，指向一个常量字符串的指针，该常量字符串由desc持有，调用者无需单独释放此指针。 |
@@ -831,9 +906,10 @@ OH_AI_API const char *OH_AI_GetNameFromNNRTDeviceDesc(const NNRTDeviceDesc *desc
  
   
 
-#### OH_AI_GetTypeFromNNRTDeviceDesc()
+### OH_AI_GetTypeFromNNRTDeviceDesc()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_NNRTDeviceType OH_AI_GetTypeFromNNRTDeviceDesc(const NNRTDeviceDesc *desc)
@@ -847,6 +923,7 @@ OH_AI_API OH_AI_NNRTDeviceType OH_AI_GetTypeFromNNRTDeviceDesc(const NNRTDeviceD
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const NNRTDeviceDesc *desc | 指向NNRt设备描述信息实例的指针。 |
@@ -854,6 +931,7 @@ OH_AI_API OH_AI_NNRTDeviceType OH_AI_GetTypeFromNNRTDeviceDesc(const NNRTDeviceD
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_NNRTDeviceType | OH_AI_NNRTDeviceType NNRt设备类型。 |
@@ -861,9 +939,10 @@ OH_AI_API OH_AI_NNRTDeviceType OH_AI_GetTypeFromNNRTDeviceDesc(const NNRTDeviceD
  
   
 
-#### OH_AI_CreateNNRTDeviceInfoByName()
+### OH_AI_CreateNNRTDeviceInfoByName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_DeviceInfoHandle OH_AI_CreateNNRTDeviceInfoByName(const char *name)
@@ -877,6 +956,7 @@ OH_AI_API OH_AI_DeviceInfoHandle OH_AI_CreateNNRTDeviceInfoByName(const char *na
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *name | 目标NNRt设备名。字符串长度跟随系统限制。 |
@@ -884,6 +964,7 @@ OH_AI_API OH_AI_DeviceInfoHandle OH_AI_CreateNNRTDeviceInfoByName(const char *na
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_DeviceInfoHandle | 指向设备信息实例的OH_AI_DeviceInfoHandle。 |
@@ -891,9 +972,10 @@ OH_AI_API OH_AI_DeviceInfoHandle OH_AI_CreateNNRTDeviceInfoByName(const char *na
  
   
 
-#### OH_AI_CreateNNRTDeviceInfoByType()
+### OH_AI_CreateNNRTDeviceInfoByType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_DeviceInfoHandle OH_AI_CreateNNRTDeviceInfoByType(OH_AI_NNRTDeviceType type)
@@ -907,6 +989,7 @@ OH_AI_API OH_AI_DeviceInfoHandle OH_AI_CreateNNRTDeviceInfoByType(OH_AI_NNRTDevi
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_NNRTDeviceType type | OH_AI_NNRTDeviceType 目标NNRt设备类型。 |
@@ -914,6 +997,7 @@ OH_AI_API OH_AI_DeviceInfoHandle OH_AI_CreateNNRTDeviceInfoByType(OH_AI_NNRTDevi
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_DeviceInfoHandle | 指向设备信息实例的OH_AI_DeviceInfoHandle。 |
@@ -921,9 +1005,10 @@ OH_AI_API OH_AI_DeviceInfoHandle OH_AI_CreateNNRTDeviceInfoByType(OH_AI_NNRTDevi
  
   
 
-#### OH_AI_DeviceInfoSetDeviceId()
+### OH_AI_DeviceInfoSetDeviceId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API void OH_AI_DeviceInfoSetDeviceId(OH_AI_DeviceInfoHandle device_info, size_t device_id)
@@ -937,6 +1022,7 @@ OH_AI_API void OH_AI_DeviceInfoSetDeviceId(OH_AI_DeviceInfoHandle device_info, s
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_DeviceInfoHandle device_info | 指向设备信息实例的OH_AI_DeviceInfoHandle。 |
@@ -945,9 +1031,10 @@ OH_AI_API void OH_AI_DeviceInfoSetDeviceId(OH_AI_DeviceInfoHandle device_info, s
  
   
 
-#### OH_AI_DeviceInfoGetDeviceId()
+### OH_AI_DeviceInfoGetDeviceId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API size_t OH_AI_DeviceInfoGetDeviceId(const OH_AI_DeviceInfoHandle device_info)
@@ -961,6 +1048,7 @@ OH_AI_API size_t OH_AI_DeviceInfoGetDeviceId(const OH_AI_DeviceInfoHandle device
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_AI_DeviceInfoHandle device_info | 指向设备信息实例的OH_AI_DeviceInfoHandle。 |
@@ -968,6 +1056,7 @@ OH_AI_API size_t OH_AI_DeviceInfoGetDeviceId(const OH_AI_DeviceInfoHandle device
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API size_t | NNRt设备ID。 |
@@ -975,9 +1064,10 @@ OH_AI_API size_t OH_AI_DeviceInfoGetDeviceId(const OH_AI_DeviceInfoHandle device
  
   
 
-#### OH_AI_DeviceInfoSetPerformanceMode()
+### OH_AI_DeviceInfoSetPerformanceMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API void OH_AI_DeviceInfoSetPerformanceMode(OH_AI_DeviceInfoHandle device_info, OH_AI_PerformanceMode mode)
@@ -991,6 +1081,7 @@ OH_AI_API void OH_AI_DeviceInfoSetPerformanceMode(OH_AI_DeviceInfoHandle device_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_DeviceInfoHandle device_info | 指向设备信息实例的OH_AI_DeviceInfoHandle。 |
@@ -999,9 +1090,10 @@ OH_AI_API void OH_AI_DeviceInfoSetPerformanceMode(OH_AI_DeviceInfoHandle device_
  
   
 
-#### OH_AI_DeviceInfoGetPerformanceMode()
+### OH_AI_DeviceInfoGetPerformanceMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_PerformanceMode OH_AI_DeviceInfoGetPerformanceMode(const OH_AI_DeviceInfoHandle device_info)
@@ -1015,6 +1107,7 @@ OH_AI_API OH_AI_PerformanceMode OH_AI_DeviceInfoGetPerformanceMode(const OH_AI_D
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_AI_DeviceInfoHandle device_info | 指向设备信息实例的OH_AI_DeviceInfoHandle。 |
@@ -1022,6 +1115,7 @@ OH_AI_API OH_AI_PerformanceMode OH_AI_DeviceInfoGetPerformanceMode(const OH_AI_D
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_PerformanceMode | OH_AI_PerformanceMode NNRt性能模式。 |
@@ -1029,9 +1123,10 @@ OH_AI_API OH_AI_PerformanceMode OH_AI_DeviceInfoGetPerformanceMode(const OH_AI_D
  
   
 
-#### OH_AI_DeviceInfoSetPriority()
+### OH_AI_DeviceInfoSetPriority()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API void OH_AI_DeviceInfoSetPriority(OH_AI_DeviceInfoHandle device_info, OH_AI_Priority priority)
@@ -1045,6 +1140,7 @@ OH_AI_API void OH_AI_DeviceInfoSetPriority(OH_AI_DeviceInfoHandle device_info, O
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_DeviceInfoHandle device_info | 指向设备信息实例的OH_AI_DeviceInfoHandle。 |
@@ -1053,9 +1149,10 @@ OH_AI_API void OH_AI_DeviceInfoSetPriority(OH_AI_DeviceInfoHandle device_info, O
  
   
 
-#### OH_AI_DeviceInfoGetPriority()
+### OH_AI_DeviceInfoGetPriority()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_Priority OH_AI_DeviceInfoGetPriority(const OH_AI_DeviceInfoHandle device_info)
@@ -1069,6 +1166,7 @@ OH_AI_API OH_AI_Priority OH_AI_DeviceInfoGetPriority(const OH_AI_DeviceInfoHandl
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_AI_DeviceInfoHandle device_info | 指向设备信息实例的OH_AI_DeviceInfoHandle。 |
@@ -1076,6 +1174,7 @@ OH_AI_API OH_AI_Priority OH_AI_DeviceInfoGetPriority(const OH_AI_DeviceInfoHandl
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_Priority | OH_AI_Priority NNRt任务优先级。 |
@@ -1083,9 +1182,10 @@ OH_AI_API OH_AI_Priority OH_AI_DeviceInfoGetPriority(const OH_AI_DeviceInfoHandl
  
   
 
-#### OH_AI_DeviceInfoAddExtension()
+### OH_AI_DeviceInfoAddExtension()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_Status OH_AI_DeviceInfoAddExtension(OH_AI_DeviceInfoHandle device_info, const char *name,const char *value, size_t value_size)
@@ -1111,6 +1211,7 @@ OH_AI_API OH_AI_Status OH_AI_DeviceInfoAddExtension(OH_AI_DeviceInfoHandle devic
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_DeviceInfoHandle device_info | 指向设备信息实例的OH_AI_DeviceInfoHandle。 |
@@ -1121,6 +1222,7 @@ OH_AI_API OH_AI_Status OH_AI_DeviceInfoAddExtension(OH_AI_DeviceInfoHandle devic
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_Status | OH_AI_Status 执行状态码，若成功返回OH_AI_STATUS_SUCCESS，失败则返回具体错误码。 |

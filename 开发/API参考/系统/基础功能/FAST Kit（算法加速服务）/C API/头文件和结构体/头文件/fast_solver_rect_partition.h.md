@@ -1,13 +1,14 @@
 # fast_solver_rect_partition.h
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/fast-kit-fast-solver-rect-partition-8h
 **支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 矩形划分求解器相关数据结构及函数定义。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | struct FAST_Rect | 定义矩形的数据结构（坐标系说明：X轴从左到右递增，Y轴从上到下递增）。 |
@@ -40,10 +44,12 @@
  
   
 
-#### 类型定义
+### 类型定义
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | typedef struct FAST_Rect FAST_Rect | 定义矩形的数据结构。 |
@@ -52,10 +58,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | FAST_EXPORT FAST_ErrorCode HMS_FAST_RectPartition_CreateConfig (FAST_RectPartitionConfig **config) | 创建矩形划分求解器的不透明配置。 |

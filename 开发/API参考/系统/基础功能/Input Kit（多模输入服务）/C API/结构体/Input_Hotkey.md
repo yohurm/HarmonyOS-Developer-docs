@@ -1,18 +1,19 @@
 # Input_Hotkey
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-input-input-hotkey
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct Input_Hotkey Input_Hotkey
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义快捷键结构体，用于描述快捷键的按键组合、触发条件和回调处理等设计逻辑，支持应用注册和管理自定义快捷键。
  
@@ -24,6 +25,7 @@ typedef struct Input_Hotkey Input_Hotkey
  
 **相关接口：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_Input_CreateHotkey | 创建快捷键对象。通过调用OH_Input_DestroyHotkey销毁快捷键对象。 |

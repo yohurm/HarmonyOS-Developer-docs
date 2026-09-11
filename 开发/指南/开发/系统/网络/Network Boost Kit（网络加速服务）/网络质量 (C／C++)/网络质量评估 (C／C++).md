@@ -1,18 +1,19 @@
 # 网络质量评估 (C/C++)
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/networkboost-qoscallback-c
 
-#### 场景介绍
+## 场景介绍
 
 应用在订阅网络质量Qos评估后，系统按照一定的周期或Qos变化后回调给应用。回调的Qos信息包括数据传输的链路类型、上下行空口实时带宽、上下行空口实时速率、RTT时延等。
 
 
 
-#### 接口说明
+## 接口说明
 
 具体API说明详见[接口文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/network-boost-c-overview)。
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -22,7 +23,7 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 导入Network Boost Kit模块。
 
   
@@ -65,7 +66,7 @@ int32_t RegisterNetQualityCallback()
 {
     HMS_NetworkBoost_NetQosChange callback;
     callback = onNetworkQoSChanged;
-    // 注册回调，获取回调Id
+    // 注册回调，获取回调Id，该Id由系统返回并用于后续取消注册操作
     int32_t ret = HMS_NetworkBoost_RegisterNetQosCallback(callback, &callbackId);
     printf("注册网络质量结果: %d, Id：%d\n", ret, callbackId);
     return ret;

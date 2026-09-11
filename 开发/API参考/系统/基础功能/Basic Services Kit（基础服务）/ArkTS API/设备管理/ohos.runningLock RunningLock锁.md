@@ -1,9 +1,9 @@
 # @ohos.runningLock (RunningLock锁)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-runninglock
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该模块为RunningLock锁相关操作的接口，提供使能接近光亮灭屏或者设备熄屏后阻止进入睡眠的能力，包括创建、查询、持锁、释放锁等操作，类型详情见[RunningLockType](#runninglocktype)。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import {runningLock} from '@kit.BasicServicesKit';
@@ -22,9 +23,10 @@ import {runningLock} from '@kit.BasicServicesKit';
 
 
 
-#### runningLock.isSupported9+
+## runningLock.isSupported9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isSupported(type: RunningLockType): boolean
 
@@ -34,12 +36,14 @@ isSupported(type: RunningLockType): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | RunningLockType | 是 | 需要查询的锁的类型；该参数必须是一个枚举类。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -49,6 +53,7 @@ isSupported(type: RunningLockType): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -68,9 +73,10 @@ try {
 
 
 
-#### runningLock.create9+
+## runningLock.create9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 create(name: string, type: RunningLockType, callback: AsyncCallback&lt;RunningLock&gt;): void
 
@@ -82,6 +88,7 @@ create(name: string, type: RunningLockType, callback: AsyncCallback&lt;RunningLo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 锁的名字；该参数必须为字符串类型。 |
@@ -92,6 +99,7 @@ create(name: string, type: RunningLockType, callback: AsyncCallback&lt;RunningLo
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -113,9 +121,10 @@ runningLock.create('running_lock_test', runningLock.RunningLockType.PROXIMITY_SC
 
 
 
-#### runningLock.create9+
+## runningLock.create9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 create(name: string, type: RunningLockType): Promise&lt;RunningLock&gt;
 
@@ -127,6 +136,7 @@ create(name: string, type: RunningLockType): Promise&lt;RunningLock&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 锁的名字；该参数必须为字符串类型。 |
@@ -134,6 +144,7 @@ create(name: string, type: RunningLockType): Promise&lt;RunningLock&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -143,6 +154,7 @@ create(name: string, type: RunningLockType): Promise&lt;RunningLock&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -164,9 +176,10 @@ runningLock.create('running_lock_test', runningLock.RunningLockType.PROXIMITY_SC
 
 
 
-#### runningLock.isRunningLockTypeSupported(deprecated)
+## runningLock.isRunningLockTypeSupported(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isRunningLockTypeSupported(type: RunningLockType, callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -179,6 +192,7 @@ isRunningLockTypeSupported(type: RunningLockType, callback: AsyncCallback&lt;boo
 **系统能力：** SystemCapability.PowerManager.PowerManager.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -200,9 +214,10 @@ runningLock.isRunningLockTypeSupported(runningLock.RunningLockType.BACKGROUND, (
 
 
 
-#### runningLock.isRunningLockTypeSupported(deprecated)
+## runningLock.isRunningLockTypeSupported(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isRunningLockTypeSupported(type: RunningLockType): Promise&lt;boolean&gt;
 
@@ -216,12 +231,14 @@ isRunningLockTypeSupported(type: RunningLockType): Promise&lt;boolean&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | RunningLockType | 是 | 需要查询的锁的类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -242,9 +259,10 @@ runningLock.isRunningLockTypeSupported(runningLock.RunningLockType.BACKGROUND)
 
 
 
-#### runningLock.createRunningLock(deprecated)
+## runningLock.createRunningLock(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createRunningLock(name: string, type: RunningLockType, callback: AsyncCallback&lt;RunningLock&gt;): void
 
@@ -259,6 +277,7 @@ createRunningLock(name: string, type: RunningLockType, callback: AsyncCallback&l
 **需要权限：** ohos.permission.RUNNING_LOCK
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -281,9 +300,10 @@ runningLock.createRunningLock('running_lock_test', runningLock.RunningLockType.B
 
 
 
-#### runningLock.createRunningLock(deprecated)
+## runningLock.createRunningLock(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createRunningLock(name: string, type: RunningLockType): Promise&lt;RunningLock&gt;
 
@@ -299,6 +319,7 @@ createRunningLock(name: string, type: RunningLockType): Promise&lt;RunningLock&g
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 锁的名字。建议使用包名或类名加后缀的方式命名。 |
@@ -306,6 +327,7 @@ createRunningLock(name: string, type: RunningLockType): Promise&lt;RunningLock&g
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -326,17 +348,19 @@ runningLock.createRunningLock('running_lock_test', runningLock.RunningLockType.B
 
 
 
-#### RunningLock
+## RunningLock
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 阻止系统睡眠的锁。
 
 
 
-#### hold9+
+### hold9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hold(timeout: number): void
 
@@ -348,6 +372,7 @@ hold(timeout: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | timeout | number | 是 | 锁定和持有RunningLock的时长，单位：毫秒。 该参数必须为数字类型： -1：永久持锁，需要主动释放。 0：默认3s后超时释放。 >0：按传入值超时释放。 |
@@ -356,6 +381,7 @@ hold(timeout: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -396,9 +422,10 @@ class RunningLockTest {
 
 
 
-#### unhold9+
+### unhold9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unhold(): void
 
@@ -411,6 +438,7 @@ unhold(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -450,9 +478,10 @@ class RunningLockTest {
 
 
 
-#### isHolding9+
+### isHolding9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isHolding(): boolean
 
@@ -461,6 +490,7 @@ isHolding(): boolean
 **系统能力：** SystemCapability.PowerManager.PowerManager.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -496,9 +526,10 @@ class RunningLockTest {
 
 
 
-#### lock(deprecated)
+### lock(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 lock(timeout: number): void
 
@@ -513,6 +544,7 @@ lock(timeout: number): void
 **需要权限：** ohos.permission.RUNNING_LOCK
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -534,9 +566,10 @@ runningLock.createRunningLock('running_lock_test', runningLock.RunningLockType.B
 
 
 
-#### unlock(deprecated)
+### unlock(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unlock(): void
 
@@ -565,9 +598,10 @@ runningLock.createRunningLock('running_lock_test', runningLock.RunningLockType.B
 
 
 
-#### isUsed(deprecated)
+### isUsed(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isUsed(): boolean
 
@@ -580,6 +614,7 @@ isUsed(): boolean
 **系统能力：** SystemCapability.PowerManager.PowerManager.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -601,13 +636,15 @@ runningLock.createRunningLock('running_lock_test', runningLock.RunningLockType.B
 
 
 
-#### RunningLockType
+## RunningLockType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 RunningLock锁的类型。
 
 **系统能力：** SystemCapability.PowerManager.PowerManager.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

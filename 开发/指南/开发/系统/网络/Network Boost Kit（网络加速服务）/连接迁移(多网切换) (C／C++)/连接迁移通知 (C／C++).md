@@ -1,18 +1,19 @@
 # 连接迁移通知 (C/C++)
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/networkboost-nethandovercallback-c
 
-#### 场景介绍
+## 场景介绍
 
 在弱网环境下，系统发起多网迁移（Wi-Fi与蜂窝网络切换，主卡与副卡切换等）的过程中，给应用提供连接迁移开始和完成通知，应用根据连接迁移通知的建议进行网络连接重建，快速恢复业务，给用户带来平滑、高速、低时延的上网体验。
 
 
 
-#### 接口说明
+## 接口说明
 
 具体API说明详见[接口文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/network-boost-c-overview)。
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -22,7 +23,7 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 导入Network Boost Kit模块。
 
   
@@ -58,7 +59,7 @@ int32_t RegisterNetworkHandoverCallback()
     HMS_NetworkBoost_HandoverCallback callback;
     callback.onNetworkHandoverStart = onNetworkHandoverStart;
     callback.onNetworkHandoverComplete = onNetworkHandoverComplete;
-    // 注册回调，获取回调Id
+    // 注册回调，获取回调Id，该Id由系统返回并用于后续取消注册操作
     int32_t ret = HMS_NetworkBoost_RegisterHandoverChangeCallback(&callback, &callbackId);
     printf("注册连接迁移结果: %d, Id：%d\n", ret, callbackId);
     return ret;

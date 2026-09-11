@@ -1,9 +1,9 @@
 # @ohos.calendarManager (日程管理能力)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-calendarmanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供日历与日程管理能力，包括日历和日程的创建、删除、修改、查询等。
 
@@ -17,6 +17,7 @@
 
 申请对应权限之后，支持的相关操作可见下表。
 
+
 | 申请的权限 | 支持的日历账户操作范围 | 支持的日程操作范围 |
 | --- | --- | --- |
 | ohos.permission.READ_CALENDAR | - 读取系统默认日历账户 - 读取当前应用创建的日历账户 | - 读取系统默认日历账户下当前应用创建的日程 - 读取当前应用创建的日历账户下当前应用创建的日程 |
@@ -26,9 +27,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { calendarManager } from '@kit.CalendarKit';
@@ -36,9 +38,10 @@ import { calendarManager } from '@kit.CalendarKit';
 
 
 
-#### calendarManager.getCalendarManager
+## calendarManager.getCalendarManager
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCalendarManager(context: Context): CalendarManager
 
@@ -52,12 +55,14 @@ getCalendarManager(context: Context): CalendarManager
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -77,12 +82,10 @@ getCalendarManager(context: Context): CalendarManager
 // 文档后续示例代码都需要配置此文件才能正常运行
 import {
   abilityAccessCtrl,
-  AbilityConstant,
   common,
   PermissionRequestResult,
   Permissions,
-  UIAbility,
-  Want
+  UIAbility
 } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { calendarManager } from '@kit.CalendarKit';
@@ -140,9 +143,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### CalendarManager
+## CalendarManager
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 下列API示例中需先通过[getCalendarManager()](#calendarmanagergetcalendarmanager)方法获取CalendarManager对象，再通过此对象调用对应方法，进行Calendar的创建、删除、修改、查询等操作。
 
@@ -150,9 +154,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### createCalendar
+### createCalendar
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createCalendar(calendarAccount: CalendarAccount, callback: AsyncCallback&lt;Calendar&gt;): void
 
@@ -168,6 +173,7 @@ createCalendar(calendarAccount: CalendarAccount, callback: AsyncCallback&lt;Cale
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | calendarAccount | CalendarAccount | 是 | 日历账户信息。 |
@@ -177,6 +183,7 @@ createCalendar(calendarAccount: CalendarAccount, callback: AsyncCallback&lt;Cale
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[日历服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-calendarmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -214,9 +221,10 @@ try {
 
 
 
-#### createCalendar
+### createCalendar
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createCalendar(calendarAccount: CalendarAccount): Promise&lt;Calendar&gt;
 
@@ -232,12 +240,14 @@ createCalendar(calendarAccount: CalendarAccount): Promise&lt;Calendar&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | calendarAccount | CalendarAccount | 是 | 日历账户信息。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -247,6 +257,7 @@ createCalendar(calendarAccount: CalendarAccount): Promise&lt;Calendar&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[日历服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-calendarmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -279,9 +290,10 @@ calendarMgr?.createCalendar(calendarAccount).then((data: calendarManager.Calenda
 
 
 
-#### deleteCalendar
+### deleteCalendar
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteCalendar(calendar: Calendar, callback: AsyncCallback&lt;void&gt;): void
 
@@ -290,12 +302,13 @@ deleteCalendar(calendar: Calendar, callback: AsyncCallback&lt;void&gt;): void
 **需要权限**：
 
  - API版本21+：ohos.permission.WRITE_CALENDAR 或 ohos.permission.WRITE_WHOLE_CALENDAR
- - API版本10-20：ohos.permission.WRITE_CALENDAR
+ - API版本10-20：ohos.permission.WRITE_CALENDAR权限
 
 
 **系统能力**： SystemCapability.Applications.CalendarData
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -306,6 +319,7 @@ deleteCalendar(calendar: Calendar, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[日历服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-calendarmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -352,9 +366,10 @@ calendarMgr?.createCalendar(calendarAccount).then((data: calendarManager.Calenda
 
 
 
-#### deleteCalendar
+### deleteCalendar
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteCalendar(calendar: Calendar): Promise&lt;void&gt;
 
@@ -370,12 +385,14 @@ deleteCalendar(calendar: Calendar): Promise&lt;void&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | calendar | Calendar | 是 | 即将删除的Calendar对象。无法删除默认账户。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -385,6 +402,7 @@ deleteCalendar(calendar: Calendar): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[日历服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-calendarmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -428,9 +446,10 @@ calendarMgr?.createCalendar(calendarAccount).then((data: calendarManager.Calenda
 
 
 
-#### getCalendar
+### getCalendar
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCalendar(callback: AsyncCallback&lt;Calendar&gt;): void
 
@@ -448,6 +467,7 @@ getCalendar(callback: AsyncCallback&lt;Calendar&gt;): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;Calendar&gt; | 是 | 回调函数，当查询账户成功时，err为undefined，data为查询到的Calendar；否则为错误对象。 |
@@ -456,6 +476,7 @@ getCalendar(callback: AsyncCallback&lt;Calendar&gt;): void
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[日历服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-calendarmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -485,9 +506,10 @@ calendarMgr?.getCalendar((err: BusinessError, data:calendarManager.Calendar) => 
 
 
 
-#### getCalendar
+### getCalendar
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCalendar(calendarAccount: CalendarAccount, callback: AsyncCallback&lt;Calendar&gt;): void
 
@@ -505,6 +527,7 @@ getCalendar(calendarAccount: CalendarAccount, callback: AsyncCallback&lt;Calenda
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | calendarAccount | CalendarAccount | 是 | 指定日历账户信息。 |
@@ -514,6 +537,7 @@ getCalendar(calendarAccount: CalendarAccount, callback: AsyncCallback&lt;Calenda
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[日历服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-calendarmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -554,9 +578,10 @@ calendarMgr?.createCalendar(calendarAccount).then((data: calendarManager.Calenda
 
 
 
-#### getCalendar
+### getCalendar
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCalendar(calendarAccount?: CalendarAccount): Promise&lt;Calendar&gt;
 
@@ -574,12 +599,14 @@ getCalendar(calendarAccount?: CalendarAccount): Promise&lt;Calendar&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | calendarAccount | CalendarAccount | 否 | 指定日历账户信息，用来获取指定Calendar对象，不填时，表示获取默认Calendar对象。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -589,6 +616,7 @@ getCalendar(calendarAccount?: CalendarAccount): Promise&lt;Calendar&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[日历服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-calendarmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -617,9 +645,10 @@ calendarMgr?.getCalendar().then((data: calendarManager.Calendar) => {
 
 
 
-#### getAllCalendars
+### getAllCalendars
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllCalendars(callback: AsyncCallback<Calendar[]>): void
 
@@ -635,6 +664,7 @@ getAllCalendars(callback: AsyncCallback<Calendar[]>): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<Calendar[]> | 是 | 回调函数，当查询账户成功时，err为undefined，data为查询到的Calendar数组；否则为错误对象。 |
@@ -643,6 +673,7 @@ getAllCalendars(callback: AsyncCallback<Calendar[]>): void
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[日历服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-calendarmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -675,9 +706,10 @@ calendarMgr?.getAllCalendars((err: BusinessError, data: calendarManager.Calendar
 
 
 
-#### getAllCalendars
+### getAllCalendars
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllCalendars(): Promise<Calendar[]>
 
@@ -693,6 +725,7 @@ getAllCalendars(): Promise<Calendar[]>
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Calendar[]> | Promise对象，返回查询到的Calendar对象数组。 |
@@ -701,6 +734,7 @@ getAllCalendars(): Promise<Calendar[]>
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[日历服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-calendarmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -733,9 +767,10 @@ calendarMgr?.getAllCalendars().then((data: calendarManager.Calendar[]) => {
 
 
 
-#### editEvent12+
+### editEvent12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 editEvent(event: Event): Promise&lt;number&gt;
 
@@ -749,12 +784,14 @@ editEvent(event: Event): Promise&lt;number&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | Event | 是 | Event对象。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -782,9 +819,10 @@ calendarMgr?.editEvent(event).then((eventId: number): void => {
 
 
 
-#### Calendar
+## Calendar
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 下列API示例中需先通过[createCalendar()](#createcalendar)、[getCalendar()](#getcalendar)中任一方法获取Calendar对象，再通过此对象调用对应方法，对该Calendar下的日程进行创建、删除、修改、查询等操作。
 
@@ -792,13 +830,15 @@ calendarMgr?.editEvent(event).then((eventId: number): void => {
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Applications.CalendarData
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -807,9 +847,10 @@ calendarMgr?.editEvent(event).then((eventId: number): void => {
 
 
 
-#### addEvent
+### addEvent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addEvent(event: Event, callback: AsyncCallback&lt;number&gt;): void
 
@@ -827,6 +868,7 @@ addEvent(event: Event, callback: AsyncCallback&lt;number&gt;): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | Event | 是 | Event对象。 |
@@ -836,6 +878,7 @@ addEvent(event: Event, callback: AsyncCallback&lt;number&gt;): void
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[日历服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-calendarmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -877,9 +920,10 @@ calendarMgr?.getCalendar().then((data: calendarManager.Calendar) => {
 
 
 
-#### addEvent
+### addEvent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addEvent(event: Event): Promise&lt;number&gt;
 
@@ -897,12 +941,14 @@ addEvent(event: Event): Promise&lt;number&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | Event | 是 | Event对象。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -912,6 +958,7 @@ addEvent(event: Event): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[日历服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-calendarmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -953,9 +1000,10 @@ calendarMgr?.getCalendar((err: BusinessError, data:calendarManager.Calendar) => 
 
 
 
-#### addEvents
+### addEvents
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addEvents(events: Event[], callback: AsyncCallback&lt;void&gt;): void
 
@@ -971,6 +1019,7 @@ addEvents(events: Event[], callback: AsyncCallback&lt;void&gt;): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | events | Event[] | 是 | Event对象数组。 |
@@ -980,6 +1029,7 @@ addEvents(events: Event[], callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[日历服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-calendarmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1030,9 +1080,10 @@ calendarMgr?.getCalendar((err: BusinessError, data:calendarManager.Calendar) => 
 
 
 
-#### addEvents
+### addEvents
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addEvents(events: Event[]): Promise&lt;void&gt;
 
@@ -1048,12 +1099,14 @@ addEvents(events: Event[]): Promise&lt;void&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | events | Event[] | 是 | Event对象数组。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1063,6 +1116,7 @@ addEvents(events: Event[]): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[日历服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-calendarmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1103,7 +1157,7 @@ calendarMgr?.getCalendar((err: BusinessError, data:calendarManager.Calendar) => 
       console.info('Succeeded in adding events');
     }).catch((err: BusinessError) => {
       // 检查权限是否已成功申请或者参数是否正确。
-      console.error(`Failed to add event. Code: ${err.code}, message: ${err.message}`);
+      console.error(`Failed to add events. Code: ${err.code}, message: ${err.message}`);
     });
   }
 });
@@ -1111,9 +1165,10 @@ calendarMgr?.getCalendar((err: BusinessError, data:calendarManager.Calendar) => 
 
 
 
-#### deleteEvent
+### deleteEvent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteEvent(id: number, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1124,6 +1179,7 @@ deleteEvent(id: number, callback: AsyncCallback&lt;void&gt;): void
 **系统能力**： SystemCapability.Applications.CalendarData
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1175,9 +1231,10 @@ calendarMgr?.getCalendar(async (err: BusinessError, data:calendarManager.Calenda
 
 
 
-#### deleteEvent
+### deleteEvent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteEvent(id: number): Promise&lt;void&gt;
 
@@ -1187,12 +1244,14 @@ deleteEvent(id: number): Promise&lt;void&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | number | 是 | 日程id。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1241,9 +1300,10 @@ calendarMgr?.getCalendar(async (err: BusinessError, data:calendarManager.Calenda
 
 
 
-#### deleteEvents
+### deleteEvents
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteEvents(ids: number[], callback: AsyncCallback&lt;void&gt;): void
 
@@ -1254,6 +1314,7 @@ deleteEvents(ids: number[], callback: AsyncCallback&lt;void&gt;): void
 **系统能力**： SystemCapability.Applications.CalendarData
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1318,9 +1379,10 @@ calendarMgr?.getCalendar(async (err: BusinessError, data:calendarManager.Calenda
 
 
 
-#### deleteEvents
+### deleteEvents
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteEvents(ids: number[]): Promise&lt;void&gt;
 
@@ -1330,12 +1392,14 @@ deleteEvents(ids: number[]): Promise&lt;void&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ids | number[] | 是 | 日程id数组。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1397,9 +1461,10 @@ calendarMgr?.getCalendar(async (err: BusinessError, data:calendarManager.Calenda
 
 
 
-#### updateEvent
+### updateEvent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateEvent(event: Event, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1408,6 +1473,7 @@ updateEvent(event: Event, callback: AsyncCallback&lt;void&gt;): void
 **系统能力**： SystemCapability.Applications.CalendarData
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1461,9 +1527,10 @@ calendarMgr?.getCalendar(async (err: BusinessError, data:calendarManager.Calenda
 
 
 
-#### updateEvent
+### updateEvent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateEvent(event: Event): Promise&lt;void&gt;
 
@@ -1473,12 +1540,14 @@ updateEvent(event: Event): Promise&lt;void&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | Event | 是 | Event对象。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1529,9 +1598,10 @@ calendarMgr?.getCalendar(async (err: BusinessError, data:calendarManager.Calenda
 
 
 
-#### getEvents
+### getEvents
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEvents(callback: AsyncCallback<Event[]>): void
 
@@ -1549,6 +1619,7 @@ API version 20之前，默认查询字段包括id、type、title、startTime、e
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<Event[]> | 是 | 回调函数，当查询日程成功时，err为undefined，data为查询到的Event数组；否则为错误对象。 |
@@ -1557,6 +1628,7 @@ API version 20之前，默认查询字段包括id、type、title、startTime、e
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[日历服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-calendarmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1593,9 +1665,10 @@ calendarMgr?.getCalendar((err: BusinessError, data:calendarManager.Calendar) => 
 
 
 
-#### getEvents
+### getEvents
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEvents(eventFilter: EventFilter, eventKey: (keyof Event)[], callback: AsyncCallback<Event[]>):void
 
@@ -1611,6 +1684,7 @@ getEvents(eventFilter: EventFilter, eventKey: (keyof Event)[], callback: AsyncCa
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | eventFilter | EventFilter | 是 | 查询条件。 |
@@ -1621,6 +1695,7 @@ getEvents(eventFilter: EventFilter, eventKey: (keyof Event)[], callback: AsyncCa
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[日历服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-calendarmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1658,13 +1733,15 @@ calendarMgr?.getCalendar(async (err: BusinessError, data:calendarManager.Calenda
     console.info(`Succeeded in getting calendar, data -> ${JSON.stringify(data)}`);
     calendar = data;
     await calendar.addEvent(event1).then((data: number) => {
-      console.info(`Succeeded in adding event, id -> ${data}`);
+      console.info(`Succeeded in adding event, id1 -> ${data}`);
+      id1 = data;
     }).catch((err: BusinessError) => {
       // 检查权限是否已成功申请或者参数是否正确。
       console.error(`Failed to add event. Code: ${err.code}, message: ${err.message}`);
     });
     await calendar.addEvent(event2).then((data: number) => {
-      console.info(`Succeeded in adding event, id -> ${data}`);
+      console.info(`Succeeded in adding event, id2 -> ${data}`);
+      id2 =data;
     }).catch((err: BusinessError) => {
       // 检查参数是否正确。
       console.error(`Failed to add event. Code: ${err.code}, message: ${err.message}`);
@@ -1684,9 +1761,10 @@ calendarMgr?.getCalendar(async (err: BusinessError, data:calendarManager.Calenda
 
 
 
-#### getEvents
+### getEvents
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEvents(eventFilter?: EventFilter, eventKey?: (keyof Event)[]): Promise<Event[]>
 
@@ -1706,6 +1784,7 @@ getEvents(eventFilter?: EventFilter, eventKey?: (keyof Event)[]): Promise<Event[
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | eventFilter | EventFilter | 否 | 查询条件。 |
@@ -1713,6 +1792,7 @@ getEvents(eventFilter?: EventFilter, eventKey?: (keyof Event)[]): Promise<Event[
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1722,6 +1802,7 @@ getEvents(eventFilter?: EventFilter, eventKey?: (keyof Event)[]): Promise<Event[
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[日历服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-calendarmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1772,9 +1853,10 @@ calendarMgr?.getCalendar(async (err: BusinessError, data:calendarManager.Calenda
 
 
 
-#### getConfig
+### getConfig
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getConfig(): CalendarConfig
 
@@ -1783,6 +1865,7 @@ getConfig(): CalendarConfig
 **系统能力**： SystemCapability.Applications.CalendarData
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1813,9 +1896,10 @@ calendarMgr?.getCalendar((err: BusinessError, data:calendarManager.Calendar) => 
 
 
 
-#### setConfig
+### setConfig
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setConfig(config: CalendarConfig, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1824,6 +1908,7 @@ setConfig(config: CalendarConfig, callback: AsyncCallback&lt;void&gt;): void
 **系统能力**： SystemCapability.Applications.CalendarData
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1834,6 +1919,7 @@ setConfig(config: CalendarConfig, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码详细介绍请参考[日历服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-calendarmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1874,9 +1960,10 @@ calendarMgr?.getCalendar((err: BusinessError, data:calendarManager.Calendar) => 
 
 
 
-#### setConfig
+### setConfig
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setConfig(config: CalendarConfig): Promise&lt;void&gt;
 
@@ -1886,12 +1973,14 @@ setConfig(config: CalendarConfig): Promise&lt;void&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | config | CalendarConfig | 是 | 日历配置信息。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1901,6 +1990,7 @@ setConfig(config: CalendarConfig): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[日历服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-calendarmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1939,9 +2029,10 @@ calendarMgr?.getCalendar((err: BusinessError, data:calendarManager.Calendar) => 
 
 
 
-#### getAccount
+### getAccount
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAccount(): CalendarAccount
 
@@ -1950,6 +2041,7 @@ getAccount(): CalendarAccount
 **系统能力**： SystemCapability.Applications.CalendarData
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1980,9 +2072,10 @@ calendarMgr?.getCalendar((err: BusinessError, data:calendarManager.Calendar) => 
 
 
 
-#### queryEventInstances18+
+### queryEventInstances18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 queryEventInstances(start: number, end: number, ids?: number[], eventKey?: (keyof Event)[]): Promise<Event[]>
 
@@ -2000,15 +2093,17 @@ queryEventInstances(start: number, end: number, ids?: number[], eventKey?: (keyo
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| start | number | 是 | 日程开始时间，类型为13位时间戳。 |
-| end | number | 是 | 日程结束时间，类型为13位时间戳。 |
+| start | number | 是 | 查询日程开始时间，类型为13位时间戳。 |
+| end | number | 是 | 查询日程结束时间，类型为13位时间戳。 |
 | ids | number[] | 否 | 需要查询的日程id数组，可为空数组或undefined。 |
 | eventKey | (keyof Event)[] | 否 | 所有查询日程的字段。不填时，默认查询字段为：id、title、startTime、endTime、instanceStartTime、instanceEndTime、isAllDay、description、timeZone、location、service。若查询字段为空，则不返回该字段。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2018,6 +2113,7 @@ queryEventInstances(start: number, end: number, ids?: number[], eventKey?: (keyo
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[日历服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-calendarmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2067,9 +2163,10 @@ calendarMgr?.getCalendar(async (err: BusinessError, data:calendarManager.Calenda
 
 
 
-#### openEventEditPage
+### openEventEditPage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 openEventEditPage(id: number): Promise&lt;void&gt;
 
@@ -2087,12 +2184,14 @@ openEventEditPage(id: number): Promise&lt;void&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | number | 是 | 传入的日程id为整数，表示日历中已存在的日程id，是日程的唯一标识符。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2102,6 +2201,7 @@ openEventEditPage(id: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[日历服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-calendarmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2162,15 +2262,17 @@ calendarMgr?.getCalendar(async (err: BusinessError, data: calendarManager.Calend
 
 
 
-#### CalendarAccount
+## CalendarAccount
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 日历账户信息。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Applications.CalendarData
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2181,13 +2283,15 @@ calendarMgr?.getCalendar(async (err: BusinessError, data: calendarManager.Calend
 
 
 
-#### CalendarConfig
+## CalendarConfig
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 日历配置信息。
 
 **系统能力**：SystemCapability.Applications.CalendarData
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2197,13 +2301,15 @@ calendarMgr?.getCalendar(async (err: BusinessError, data: calendarManager.Calend
 
 
 
-#### Event
+## Event
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 日程对象，包含日程标题、开始时间、结束时间等信息。
 
 **系统能力**：SystemCapability.Applications.CalendarData
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2228,15 +2334,17 @@ calendarMgr?.getCalendar(async (err: BusinessError, data: calendarManager.Calend
 
 
 
-#### CalendarType
+## CalendarType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 账户类型枚举。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Applications.CalendarData
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2249,15 +2357,17 @@ calendarMgr?.getCalendar(async (err: BusinessError, data: calendarManager.Calend
 
 
 
-#### Location
+## Location
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 日程地点。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Applications.CalendarData
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2268,9 +2378,10 @@ calendarMgr?.getCalendar(async (err: BusinessError, data: calendarManager.Calend
 
 
 
-#### EventFilter
+## EventFilter
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 日程过滤器，查询日程时进行筛选过滤，获取符合条件的日程。
 
@@ -2280,9 +2391,10 @@ calendarMgr?.getCalendar(async (err: BusinessError, data: calendarManager.Calend
 
 
 
-#### filterById
+### filterById
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static filterById(ids: number[]): EventFilter
 
@@ -2292,12 +2404,14 @@ static filterById(ids: number[]): EventFilter
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ids | number[] | 是 | 日程id数组，日程id需为整数。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2360,9 +2474,10 @@ calendarMgr?.getCalendar(async (err: BusinessError, data:calendarManager.Calenda
 
 
 
-#### filterByTime
+### filterByTime
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static filterByTime(start: number, end: number): EventFilter
 
@@ -2372,6 +2487,7 @@ static filterByTime(start: number, end: number): EventFilter
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | start | number | 是 | 开始时间。格式为13位时间戳。 |
@@ -2379,6 +2495,7 @@ static filterByTime(start: number, end: number): EventFilter
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2436,9 +2553,10 @@ calendarMgr?.getCalendar(async (err: BusinessError, data:calendarManager.Calenda
 
 
 
-#### filterByTitle
+### filterByTitle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static filterByTitle(title: string): EventFilter
 
@@ -2448,12 +2566,14 @@ static filterByTitle(title: string): EventFilter
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | title | string | 是 | 日程标题。长度建议为[0,5000]字符。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2501,15 +2621,17 @@ calendarMgr?.getCalendar(async (err: BusinessError, data:calendarManager.Calenda
 
 
 
-#### EventType
+## EventType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 日程类型枚举。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Applications.CalendarData
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2519,13 +2641,15 @@ calendarMgr?.getCalendar(async (err: BusinessError, data:calendarManager.Calenda
 
 
 
-#### RecurrenceRule
+## RecurrenceRule
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 重复日程重复规则。
 
 **系统能力**：SystemCapability.Applications.CalendarData
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2544,15 +2668,17 @@ calendarMgr?.getCalendar(async (err: BusinessError, data:calendarManager.Calenda
 
 
 
-#### RecurrenceFrequency
+## RecurrenceFrequency
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 日程重复规则类型枚举。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Applications.CalendarData
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2564,13 +2690,15 @@ calendarMgr?.getCalendar(async (err: BusinessError, data:calendarManager.Calenda
 
 
 
-#### Attendee
+## Attendee
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 会议日程参与者。
 
 **系统能力**：SystemCapability.Applications.CalendarData
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2583,15 +2711,17 @@ calendarMgr?.getCalendar(async (err: BusinessError, data:calendarManager.Calenda
 
 
 
-#### EventService
+## EventService
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 日程服务。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Applications.CalendarData
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2602,15 +2732,17 @@ calendarMgr?.getCalendar(async (err: BusinessError, data:calendarManager.Calenda
 
 
 
-#### ServiceType
+## ServiceType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 日程服务类型枚举。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Applications.CalendarData
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2627,15 +2759,17 @@ calendarMgr?.getCalendar(async (err: BusinessError, data:calendarManager.Calenda
 
 
 
-#### AttendeeRole12+
+## AttendeeRole12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 会议日程参与者角色类型枚举。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Applications.CalendarData
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2645,15 +2779,17 @@ calendarMgr?.getCalendar(async (err: BusinessError, data:calendarManager.Calenda
 
 
 
-#### AttendeeStatus18+
+## AttendeeStatus18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 会议日程参与者状态类型枚举。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Applications.CalendarData
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2666,15 +2802,17 @@ calendarMgr?.getCalendar(async (err: BusinessError, data:calendarManager.Calenda
 
 
 
-#### AttendeeType18+
+## AttendeeType18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 会议日程参与者受邀类型枚举。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Applications.CalendarData
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

@@ -1,13 +1,14 @@
 # image_native.h
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-native-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明图像的剪辑矩形、大小和组件数据的接口函数。
 
@@ -23,15 +24,18 @@
 
 
 
-#### 汇总
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 汇总
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 结构体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -41,9 +45,11 @@
 
 
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -62,15 +68,17 @@
 
 
 
-#### 函数说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 函数说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### OH_ImageNative_GetImageSize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### OH_ImageNative_GetImageSize()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageNative_GetImageSize(OH_ImageNative *image, Image_Size *size)
@@ -88,6 +96,7 @@ OH_ImageNative对象所存储的数据是预览流还是拍照流，取决于应
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageNative *image | 表示OH_ImageNative native对象的指针。 |
@@ -96,6 +105,7 @@ OH_ImageNative对象所存储的数据是预览流还是拍照流，取决于应
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 IMAGE_UNKNOWN_ERROR：未知原因错误。 |
@@ -103,9 +113,10 @@ OH_ImageNative对象所存储的数据是预览流还是拍照流，取决于应
 
 
 
-#### OH_ImageNative_GetComponentTypes()
+### OH_ImageNative_GetComponentTypes()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageNative_GetComponentTypes(OH_ImageNative *image,uint32_t **types, size_t *typeSize)
@@ -119,6 +130,7 @@ Image_ErrorCode OH_ImageNative_GetComponentTypes(OH_ImageNative *image,uint32_t 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageNative *image | 表示OH_ImageNative native对象的指针。 |
@@ -128,6 +140,7 @@ Image_ErrorCode OH_ImageNative_GetComponentTypes(OH_ImageNative *image,uint32_t 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -135,9 +148,10 @@ Image_ErrorCode OH_ImageNative_GetComponentTypes(OH_ImageNative *image,uint32_t 
 
 
 
-#### OH_ImageNative_GetByteBuffer()
+### OH_ImageNative_GetByteBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageNative_GetByteBuffer(OH_ImageNative *image,uint32_t componentType, OH_NativeBuffer **nativeBuffer)
@@ -151,6 +165,7 @@ Image_ErrorCode OH_ImageNative_GetByteBuffer(OH_ImageNative *image,uint32_t comp
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageNative *image | 表示OH_ImageNative native对象的指针。 |
@@ -160,6 +175,7 @@ Image_ErrorCode OH_ImageNative_GetByteBuffer(OH_ImageNative *image,uint32_t comp
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -167,9 +183,10 @@ Image_ErrorCode OH_ImageNative_GetByteBuffer(OH_ImageNative *image,uint32_t comp
 
 
 
-#### OH_ImageNative_GetBufferSize()
+### OH_ImageNative_GetBufferSize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageNative_GetBufferSize(OH_ImageNative *image,uint32_t componentType, size_t *size)
@@ -183,6 +200,7 @@ Image_ErrorCode OH_ImageNative_GetBufferSize(OH_ImageNative *image,uint32_t comp
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageNative *image | 表示OH_ImageNative native对象的指针。 |
@@ -192,6 +210,7 @@ Image_ErrorCode OH_ImageNative_GetBufferSize(OH_ImageNative *image,uint32_t comp
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -199,9 +218,10 @@ Image_ErrorCode OH_ImageNative_GetBufferSize(OH_ImageNative *image,uint32_t comp
 
 
 
-#### OH_ImageNative_GetRowStride()
+### OH_ImageNative_GetRowStride()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageNative_GetRowStride(OH_ImageNative *image,uint32_t componentType, int32_t *rowStride)
@@ -217,6 +237,7 @@ Image_ErrorCode OH_ImageNative_GetRowStride(OH_ImageNative *image,uint32_t compo
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageNative *image | 表示OH_ImageNative native对象的指针。 |
@@ -226,6 +247,7 @@ Image_ErrorCode OH_ImageNative_GetRowStride(OH_ImageNative *image,uint32_t compo
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -233,9 +255,10 @@ Image_ErrorCode OH_ImageNative_GetRowStride(OH_ImageNative *image,uint32_t compo
 
 
 
-#### OH_ImageNative_GetPixelStride()
+### OH_ImageNative_GetPixelStride()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageNative_GetPixelStride(OH_ImageNative *image,uint32_t componentType, int32_t *pixelStride)
@@ -249,6 +272,7 @@ Image_ErrorCode OH_ImageNative_GetPixelStride(OH_ImageNative *image,uint32_t com
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageNative *image | 表示OH_ImageNative native对象的指针。 |
@@ -258,6 +282,7 @@ Image_ErrorCode OH_ImageNative_GetPixelStride(OH_ImageNative *image,uint32_t com
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -265,9 +290,10 @@ Image_ErrorCode OH_ImageNative_GetPixelStride(OH_ImageNative *image,uint32_t com
 
 
 
-#### OH_ImageNative_GetTimestamp()
+### OH_ImageNative_GetTimestamp()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageNative_GetTimestamp(OH_ImageNative *image, int64_t *timestamp)
@@ -285,6 +311,7 @@ Image_ErrorCode OH_ImageNative_GetTimestamp(OH_ImageNative *image, int64_t *time
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageNative *image | 表示OH_ImageNative native对象的指针。 |
@@ -293,6 +320,7 @@ Image_ErrorCode OH_ImageNative_GetTimestamp(OH_ImageNative *image, int64_t *time
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -300,9 +328,10 @@ Image_ErrorCode OH_ImageNative_GetTimestamp(OH_ImageNative *image, int64_t *time
 
 
 
-#### OH_ImageNative_Release()
+### OH_ImageNative_Release()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageNative_Release(OH_ImageNative *image)
@@ -316,12 +345,14 @@ Image_ErrorCode OH_ImageNative_Release(OH_ImageNative *image)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageNative *image | 表示OH_ImageNative native对象的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -330,9 +361,10 @@ Image_ErrorCode OH_ImageNative_Release(OH_ImageNative *image)
 
 
 
-#### OH_ImageNative_GetColorSpace()
+### OH_ImageNative_GetColorSpace()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageNative_GetColorSpace(OH_ImageNative *image, int32_t *colorSpaceName)
@@ -346,6 +378,7 @@ Image_ErrorCode OH_ImageNative_GetColorSpace(OH_ImageNative *image, int32_t *col
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageNative *image | 表示OH_ImageNative native对象的指针。 |
@@ -354,6 +387,7 @@ Image_ErrorCode OH_ImageNative_GetColorSpace(OH_ImageNative *image, int32_t *col
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -361,9 +395,10 @@ Image_ErrorCode OH_ImageNative_GetColorSpace(OH_ImageNative *image, int32_t *col
 
 
 
-#### OH_ImageNative_GetFormat()
+### OH_ImageNative_GetFormat()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageNative_GetFormat(OH_ImageNative *image, OH_NativeBuffer_Format *format)
@@ -377,6 +412,7 @@ Image_ErrorCode OH_ImageNative_GetFormat(OH_ImageNative *image, OH_NativeBuffer_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageNative *image | 表示OH_ImageNative native对象的指针。 |
@@ -385,6 +421,7 @@ Image_ErrorCode OH_ImageNative_GetFormat(OH_ImageNative *image, OH_NativeBuffer_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -392,9 +429,10 @@ Image_ErrorCode OH_ImageNative_GetFormat(OH_ImageNative *image, OH_NativeBuffer_
 
 
 
-#### OH_ImageNative_GetBufferData()
+### OH_ImageNative_GetBufferData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageNative_GetBufferData(OH_ImageNative *image, OH_ImageBufferData *imageBufferData)
@@ -408,6 +446,7 @@ Image_ErrorCode OH_ImageNative_GetBufferData(OH_ImageNative *image, OH_ImageBuff
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageNative *image | 表示OH_ImageNative native对象的指针。 |
@@ -415,6 +454,7 @@ Image_ErrorCode OH_ImageNative_GetBufferData(OH_ImageNative *image, OH_ImageBuff
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |

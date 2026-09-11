@@ -1,11 +1,12 @@
 # AREngine_ARSemanticDensePointData
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-struct-arsemanticdensepointdata
 **支持设备：** Phone | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -21,16 +22,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | int32_t id | 当前点的ID。 |
@@ -46,13 +50,15 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### id
+### id
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -66,7 +72,8 @@ int32_t AREngine_ARSemanticDensePointData::id
  
   
 
-#### x
+### x
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -80,7 +87,8 @@ float AREngine_ARSemanticDensePointData::x
  
   
 
-#### y
+### y
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -94,7 +102,8 @@ float AREngine_ARSemanticDensePointData::y
  
   
 
-#### z
+### z
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -108,7 +117,8 @@ float AREngine_ARSemanticDensePointData::z
  
   
 
-#### r
+### r
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -122,7 +132,8 @@ int32_t AREngine_ARSemanticDensePointData::r
  
   
 
-#### g
+### g
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -136,7 +147,8 @@ int32_t AREngine_ARSemanticDensePointData::g
  
   
 
-#### b
+### b
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -150,7 +162,8 @@ int32_t AREngine_ARSemanticDensePointData::b
  
   
 
-#### a
+### a
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -164,7 +177,8 @@ int32_t AREngine_ARSemanticDensePointData::a
  
   
 
-#### confidence
+### confidence
+
 
 **支持设备：** Phone | Tablet | TV
 

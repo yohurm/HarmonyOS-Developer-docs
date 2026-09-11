@@ -1,9 +1,9 @@
 # @ohos.worker (启动一个Worker)
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-worker
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Worker是与宿主线程并行的独立线程。创建Worker的线程称为宿主线程，Worker自身的线程称为Worker线程。创建Worker时传入的URL文件在Worker线程中执行，可以处理耗时操作，但不能直接操作UI。
 
@@ -18,9 +18,10 @@ Worker的上下文环境和UI线程的上下文环境是独立的，Worker线程
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { worker } from '@kit.ArkTS';
@@ -28,11 +29,13 @@ import { worker } from '@kit.ArkTS';
 
 
 
-#### 常量
+## 常量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Utils.Lang
+
 
 | 名称 | 类型 | 只读 | 说明 |
 | --- | --- | --- | --- |
@@ -42,13 +45,15 @@ import { worker } from '@kit.ArkTS';
 
 
 
-#### WorkerOptions
+## WorkerOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Worker构造函数的选项，用于为Worker添加其他信息。
 
 **系统能力：** SystemCapability.Utils.Lang
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -60,13 +65,15 @@ Worker构造函数的选项，用于为Worker添加其他信息。
 
 
 
-#### ThreadWorkerPriority18+
+## ThreadWorkerPriority18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Worker线程的优先级枚举，各优先级对应关系请参考[QoS等级定义](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/qos-guidelines#qos等级定义)。
 
 **系统能力：** SystemCapability.Utils.Lang
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -80,27 +87,30 @@ Worker线程的优先级枚举，各优先级对应关系请参考[QoS等级定�
 
 
 
-#### ThreadWorker9+
+## ThreadWorker9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 使用以下方法前，需先构造ThreadWorker实例。ThreadWorker类继承自[WorkerEventTarget](#workereventtarget9)。
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Utils.Lang
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| onexit9+ | (code: number) => void | 否 | 是 | 回调函数。表示Worker线程销毁时被调用的事件处理程序，该处理程序在宿主线程中执行。回调函数的code参数类型为number，异常退出时code为1，正常退出时code为0。默认值为undefined。 元服务API：从API version 11开始，该属性支持在元服务中使用。 |
-| onerror9+ | (err: ErrorEvent) => void | 否 | 是 | 回调函数，用于处理onmessage回调函数中同步代码产生的异常，处理程序在宿主线程中执行。回调函数的err类型为ErrorEvent，表示收到的异常数据。默认值为undefined。 元服务API：从API version 11开始，该属性支持在元服务中使用。 |
-| onAllErrors18+ | ErrorCallback | 否 | 是 | 回调函数。表示Worker线程生命周期内发生异常被调用的事件处理程序，处理程序在宿主线程中执行。默认值为undefined。 元服务API：从API version 18开始，该属性支持在元服务中使用。 |
-| onmessage9+ | (event: MessageEvents) => void | 否 | 是 | 回调函数。表示宿主线程接收到来自其创建的Worker通过workerPort.postMessage或workerPort.postMessageWithSharedSendable接口发送的消息时被调用的事件处理程序，处理程序在宿主线程中执行。其中回调函数中event类型为MessageEvents，表示收到的Worker线程发送的消息数据。默认值为undefined。 元服务API：从API version 11开始，该属性支持在元服务中使用。 |
-| onmessageerror9+ | (event: MessageEvents) => void | 否 | 是 | 回调函数。用于处理Worker对象接收到的无法被序列化的消息。该处理程序在宿主线程中执行，event类型为MessageEvents，表示收到的Worker消息数据。默认值为undefined。 元服务API：从API version 11开始，该属性支持在元服务中使用。 |
+| onexit9+ | (code: number) => void | 否 | 是 | 回调函数。表示Worker线程销毁时被调用的事件处理程序，该处理程序在宿主线程中执行。回调函数的code参数类型为number，异常退出时code为1，正常退出时code为0。默认值为undefined。 以下错误码的详细介绍请参见语言基础类库错误码。 - 10200004：The Worker instance is not running. - 10200005：The called API is not supported in the worker thread. 元服务API：从API version 11开始，该属性支持在元服务中使用。 |
+| onerror9+ | (err: ErrorEvent) => void | 否 | 是 | 回调函数，用于处理onmessage回调函数中同步代码产生的异常，处理程序在宿主线程中执行。回调函数的err类型为ErrorEvent，表示收到的异常数据。默认值为undefined。 以下错误码的详细介绍请参见语言基础类库错误码。 - 10200004：The Worker instance is not running. - 10200005：The called API is not supported in the worker thread. 元服务API：从API version 11开始，该属性支持在元服务中使用。 |
+| onAllErrors18+ | ErrorCallback | 否 | 是 | 回调函数。表示Worker线程生命周期内发生异常被调用的事件处理程序，处理程序在宿主线程中执行。默认值为undefined。 以下错误码的详细介绍请参见语言基础类库错误码。 - 10200004：The Worker instance is not running. - 10200005：The called API is not supported in the worker thread. 元服务API：从API version 18开始，该属性支持在元服务中使用。 |
+| onmessage9+ | (event: MessageEvents) => void | 否 | 是 | 回调函数。表示宿主线程接收到来自其创建的Worker通过workerPort.postMessage或workerPort.postMessageWithSharedSendable接口发送的消息时被调用的事件处理程序，处理程序在宿主线程中执行。其中回调函数中event类型为MessageEvents，表示收到的Worker线程发送的消息数据。默认值为undefined。 以下错误码的详细介绍请参见语言基础类库错误码。 - 10200004：The Worker instance is not running. - 10200005：The called API is not supported in the worker thread. 元服务API：从API version 11开始，该属性支持在元服务中使用。 |
+| onmessageerror9+ | (event: MessageEvents) => void | 否 | 是 | 回调函数。用于处理Worker对象接收到的无法被序列化的消息。该处理程序在宿主线程中执行，event类型为MessageEvents，表示收到的Worker消息数据。默认值为undefined。 以下错误码的详细介绍请参见语言基础类库错误码。 - 10200004：The Worker instance is not running. - 10200005：The called API is not supported in the worker thread. 元服务API：从API version 11开始，该属性支持在元服务中使用。 |
 
 
 使用Worker模块时，API version 18及之后的版本建议在宿主线程中注册onAllErrors回调，以捕获Worker线程生命周期内的各种异常。API version 18之前的版本应注册onerror回调。如果未注册onAllErrors或onerror回调，当Worker线程出现异常时会发生崩溃问题。注意，onerror接口仅能捕获onmessage回调中的同步异常，捕获异常后，Worker线程将进入销毁流程，无法继续使用。
@@ -126,9 +136,10 @@ onAllErrors接口与onerror接口之间的行为差异如下：
 
 
 
-#### constructor9+
+### constructor9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(scriptURL: string, options?: WorkerOptions)
 
@@ -140,6 +151,7 @@ ThreadWorker构造函数。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scriptURL | string | 是 | Worker线程文件的路径。 路径规则详细参考文件路径注意事项。 |
@@ -149,6 +161,7 @@ ThreadWorker构造函数。
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -170,9 +183,10 @@ const workerInstance = new worker.ThreadWorker('entry/ets/workers/worker.ets', {
 
 
 
-#### postMessage9+
+### postMessage9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 postMessage(message: Object, transfer: ArrayBuffer[]): void
 
@@ -184,6 +198,7 @@ postMessage(message: Object, transfer: ArrayBuffer[]): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | message | Object | 是 | 发送至Worker的数据，该数据对象必须是可序列化对象，序列化支持类型见序列化支持类型。 |
@@ -193,6 +208,7 @@ postMessage(message: Object, transfer: ArrayBuffer[]): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -277,9 +293,10 @@ struct Index {
 
 
 
-#### postMessage9+
+### postMessage9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 postMessage(message: Object, options?: PostMessageOptions): void
 
@@ -291,6 +308,7 @@ postMessage(message: Object, options?: PostMessageOptions): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | message | Object | 是 | 发送至Worker的数据，该数据对象必须是可序列化对象，序列化支持类型见序列化支持类型。 |
@@ -300,6 +318,7 @@ postMessage(message: Object, options?: PostMessageOptions): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -324,9 +343,10 @@ workerInstance.postMessage(buffer, {transfer: [buffer]});
 
 
 
-#### postMessageWithSharedSendable12+
+### postMessageWithSharedSendable12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 postMessageWithSharedSendable(message: Object, transfer?: ArrayBuffer[]): void
 
@@ -338,6 +358,7 @@ postMessageWithSharedSendable(message: Object, transfer?: ArrayBuffer[]): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | message | Object | 是 | 发送至Worker的数据，该数据对象必须是可序列化对象，序列化支持类型见序列化支持类型。如果需要共享数据，支持类型见Sendable支持的数据类型。 |
@@ -347,6 +368,7 @@ postMessageWithSharedSendable(message: Object, transfer?: ArrayBuffer[]): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -399,9 +421,10 @@ workerPort.onmessage = (e: MessageEvents) => {
 
 
 
-#### on9+
+### on9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: string, listener: WorkerEventListener): void
 
@@ -413,6 +436,7 @@ on(type: string, listener: WorkerEventListener): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件类型。 |
@@ -422,6 +446,7 @@ on(type: string, listener: WorkerEventListener): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -448,9 +473,10 @@ workerInstance.dispatchEvent({type: "alert", timeStamp: 0}); // timeStamp暂未�
 
 
 
-#### once9+
+### once9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: string, listener: WorkerEventListener): void
 
@@ -462,6 +488,7 @@ once(type: string, listener: WorkerEventListener): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件类型。 |
@@ -471,6 +498,7 @@ once(type: string, listener: WorkerEventListener): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -495,9 +523,10 @@ workerInstance.dispatchEvent({type: "alert", timeStamp: 0}); // timeStamp暂未�
 
 
 
-#### off9+
+### off9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: string, listener?: WorkerEventListener): void
 
@@ -509,6 +538,7 @@ off(type: string, listener?: WorkerEventListener): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 需要删除的事件类型。事件类型通过on9+设置。 |
@@ -518,6 +548,7 @@ off(type: string, listener?: WorkerEventListener): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -555,9 +586,10 @@ workerInstance.off("alert");
 
 
 
-#### registerGlobalCallObject11+
+### registerGlobalCallObject11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 registerGlobalCallObject(instanceName: string, globalCallObject: Object): void
 
@@ -569,6 +601,7 @@ registerGlobalCallObject(instanceName: string, globalCallObject: Object): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | instanceName | string | 是 | 注册对象时使用的键，调用时通过该键值找到被注册的对象。 |
@@ -578,6 +611,7 @@ registerGlobalCallObject(instanceName: string, globalCallObject: Object): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -633,9 +667,10 @@ workerPort.onmessage = (e: MessageEvents): void => {
 
 
 
-#### unregisterGlobalCallObject11+
+### unregisterGlobalCallObject11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unregisterGlobalCallObject(instanceName?: string): void
 
@@ -647,6 +682,7 @@ unregisterGlobalCallObject(instanceName?: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | instanceName | string | 否 | 注册对象时使用的键。此参数不填时，会释放ThreadWorker实例中所有已注册的对象。 |
@@ -655,6 +691,7 @@ unregisterGlobalCallObject(instanceName?: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -687,9 +724,10 @@ workerInstance.postMessage("start worker");
 
 
 
-#### terminate9+
+### terminate9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 terminate(): void
 
@@ -702,6 +740,7 @@ terminate(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -720,9 +759,10 @@ workerInstance.terminate();
 
 
 
-#### addEventListener9+
+### addEventListener9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addEventListener(type: string, listener: WorkerEventListener): void
 
@@ -734,6 +774,7 @@ addEventListener(type: string, listener: WorkerEventListener): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件类型。 |
@@ -743,6 +784,7 @@ addEventListener(type: string, listener: WorkerEventListener): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -768,9 +810,10 @@ workerInstance.dispatchEvent({type: "alert", timeStamp: 0}); // timeStamp暂未�
 
 
 
-#### removeEventListener9+
+### removeEventListener9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeEventListener(type: string, callback?: WorkerEventListener): void
 
@@ -782,6 +825,7 @@ removeEventListener(type: string, callback?: WorkerEventListener): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 需要删除的监听事件类型。事件类型通过addEventListener9+设置。 |
@@ -791,6 +835,7 @@ removeEventListener(type: string, callback?: WorkerEventListener): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -816,9 +861,10 @@ workerInstance.removeEventListener("alert");
 
 
 
-#### dispatchEvent9+
+### dispatchEvent9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 dispatchEvent(event: Event): boolean
 
@@ -830,12 +876,14 @@ dispatchEvent(event: Event): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | Event | 是 | 需要分发的事件。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -845,6 +893,7 @@ dispatchEvent(event: Event): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -872,9 +921,10 @@ console.info("dispatchEvent result is: ", result);
 
 
 
-#### removeAllListener9+
+### removeAllListener9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeAllListener(): void
 
@@ -887,6 +937,7 @@ removeAllListener(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -908,17 +959,19 @@ workerInstance.removeAllListener();
 
 
 
-#### WorkerEventTarget9+
+## WorkerEventTarget9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于管理Worker的监听事件。
 
 
 
-#### addEventListener9+
+### addEventListener9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addEventListener(type: string, listener: WorkerEventListener): void
 
@@ -930,6 +983,7 @@ addEventListener(type: string, listener: WorkerEventListener): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件类型。 |
@@ -939,6 +993,7 @@ addEventListener(type: string, listener: WorkerEventListener): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -963,9 +1018,10 @@ workerPort.onmessage = (event: MessageEvents) => {
 
 
 
-#### removeEventListener9+
+### removeEventListener9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeEventListener(type: string, callback?: WorkerEventListener): void
 
@@ -977,6 +1033,7 @@ removeEventListener(type: string, callback?: WorkerEventListener): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 需要删除的监听事件类型。事件类型通过addEventListener9+设置。 |
@@ -986,6 +1043,7 @@ removeEventListener(type: string, callback?: WorkerEventListener): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1011,9 +1069,10 @@ workerPort.onmessage = (event: MessageEvents) => {
 
 
 
-#### dispatchEvent9+
+### dispatchEvent9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 dispatchEvent(event: Event): boolean
 
@@ -1025,12 +1084,14 @@ dispatchEvent(event: Event): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | Event | 是 | 需要分发的事件。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1040,6 +1101,7 @@ dispatchEvent(event: Event): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1067,9 +1129,10 @@ workerPort.onmessage = (event: MessageEvents) => {
 
 
 
-#### removeAllListener9+
+### removeAllListener9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeAllListener(): void
 
@@ -1082,6 +1145,7 @@ removeAllListener(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1107,19 +1171,22 @@ workerPort.onmessage = (event: MessageEvents) => {
 
 
 
-#### ThreadWorkerGlobalScope9+
+## ThreadWorkerGlobalScope9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Worker线程用于与宿主线程通信的类。ThreadWorkerGlobalScope类继承[GlobalScope](#globalscope9)。
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Utils.Lang
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1129,9 +1196,10 @@ Worker线程用于与宿主线程通信的类。ThreadWorkerGlobalScope类继承
 
 
 
-#### postMessage9+
+### postMessage9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 postMessage(messageObject: Object, transfer: ArrayBuffer[]): void;
 
@@ -1143,6 +1211,7 @@ Worker线程通过转移对象所有权的方式向宿主线程发送消息。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | messageObject | Object | 是 | 发送至宿主线程的数据，该数据对象必须是可序列化对象，序列化支持类型见序列化支持类型。 |
@@ -1152,6 +1221,7 @@ Worker线程通过转移对象所有权的方式向宿主线程发送消息。
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1185,9 +1255,10 @@ workerPort.onmessage = (e: MessageEvents): void => {
 
 
 
-#### postMessage9+
+### postMessage9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 postMessage(messageObject: Object, options?: PostMessageOptions): void
 
@@ -1199,6 +1270,7 @@ Worker线程通过转移对象所有权或拷贝数据的方式向宿主线程�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | messageObject | Object | 是 | 发送至宿主线程的数据，该数据对象必须是可序列化对象，序列化支持类型见序列化支持类型。 |
@@ -1208,6 +1280,7 @@ Worker线程通过转移对象所有权或拷贝数据的方式向宿主线程�
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1240,9 +1313,10 @@ workerPort.onmessage = (e: MessageEvents): void => {
 
 
 
-#### postMessageWithSharedSendable12+
+### postMessageWithSharedSendable12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 postMessageWithSharedSendable(message: Object, transfer?: ArrayBuffer[]): void
 
@@ -1254,6 +1328,7 @@ Worker线程向宿主线程发送消息，消息中的[Sendable对象](https://d
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | message | Object | 是 | 发送至宿主线程的数据，该数据对象必须是可序列化或可共享，序列化支持类型见序列化支持类型，共享支持类型见Sendable支持的数据类型。 |
@@ -1263,6 +1338,7 @@ Worker线程向宿主线程发送消息，消息中的[Sendable对象](https://d
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1314,9 +1390,10 @@ workerInstance.onmessage = (e: MessageEvents) => {
 
 
 
-#### callGlobalCallObjectMethod11+
+### callGlobalCallObjectMethod11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 callGlobalCallObjectMethod(instanceName: string, methodName: string, timeout: number, ...args: Object[]): Object
 
@@ -1328,6 +1405,7 @@ Worker线程调用宿主线程上注册的对象的指定方法，此调用对Wo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | instanceName | string | 是 | 注册对象时使用的键，用于在宿主线程中查找对象。 |
@@ -1338,6 +1416,7 @@ Worker线程调用宿主线程上注册的对象的指定方法，此调用对Wo
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Object | 返回值为调用方法在宿主线程的返回值，该返回值必须是可序列化的，具体可见序列化支持类型。 |
@@ -1346,6 +1425,7 @@ Worker线程调用宿主线程上注册的对象的指定方法，此调用对Wo
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1405,9 +1485,10 @@ workerPort.onmessage = (e: MessageEvents): void => {
 
 
 
-#### close9+
+### close9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(): void
 
@@ -1420,6 +1501,7 @@ close(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1448,9 +1530,10 @@ workerPort.onmessage = (e: MessageEvents): void => {
 
 
 
-#### postMessageAtFront
+### postMessageAtFront
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 postMessageAtFront?(message: Object, priority: Priority, transfer?: ArrayBuffer[]): void
 
@@ -1470,6 +1553,7 @@ Worker线程向宿主线程发送插队消息，消息中的[Sendable对象](htt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | message | Object | 是 | 发送至宿主线程的数据，该数据对象必须是可序列化或可共享，序列化支持类型见序列化支持类型，共享支持类型见Sendable支持的数据类型。 |
@@ -1480,6 +1564,7 @@ Worker线程向宿主线程发送插队消息，消息中的[Sendable对象](htt
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1571,17 +1656,19 @@ workerPort.onmessage = (e: MessageEvents) => {
 
 
 
-#### WorkerEventListener9+
+## WorkerEventListener9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 事件监听类。
 
 
 
-#### (event: Event)9+
+### (event: Event)9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 (event: Event): void | Promise&lt;void&gt;
 
@@ -1593,12 +1680,14 @@ workerPort.onmessage = (e: MessageEvents) => {
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | Event | 是 | 回调的事件类。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1608,6 +1697,7 @@ workerPort.onmessage = (e: MessageEvents) => {
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1633,15 +1723,17 @@ workerInstance.dispatchEvent(eventToDispatch);
 
 
 
-#### GlobalScope9+
+## GlobalScope9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Worker线程自身的运行环境，GlobalScope类继承[WorkerEventTarget](#workereventtarget9)。
 
 **元服务API**： 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1652,15 +1744,17 @@ Worker线程自身的运行环境，GlobalScope类继承[WorkerEventTarget](#wor
 
 
 
-#### MessageEvents9+
+## MessageEvents9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 消息类，持有Worker线程间传递的数据，MessageEvents类继承[Event](#event)。
 
 **元服务API**： 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1669,9 +1763,10 @@ Worker线程自身的运行环境，GlobalScope类继承[WorkerEventTarget](#wor
 
 
 
-#### MessageType
+## MessageType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type MessageType = 'message' | 'messageerror'
 
@@ -1681,6 +1776,7 @@ type MessageType = 'message' | 'messageerror'
 
 **系统能力：** SystemCapability.Utils.Lang
 
+
 | 类型 | 说明 |
 | --- | --- |
 | 'message' | 表示消息类型为message，值固定为'message'字符串。 |
@@ -1689,9 +1785,10 @@ type MessageType = 'message' | 'messageerror'
 
 
 
-#### ErrorCallback18+
+## ErrorCallback18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ErrorCallback = (err: ErrorEvent) => void
 
@@ -1703,6 +1800,7 @@ type ErrorCallback = (err: ErrorEvent) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | err | ErrorEvent | 是 | 错误事件类，表示Worker执行过程中出现的异常信息。 |
@@ -1710,9 +1808,10 @@ type ErrorCallback = (err: ErrorEvent) => void
 
 
 
-#### Worker(deprecated)
+## Worker(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 使用以下方法前，均需先构造Worker实例，Worker类继承[EventTarget](#eventtargetdeprecated)。
 
@@ -1722,11 +1821,13 @@ type ErrorCallback = (err: ErrorEvent) => void
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Utils.Lang
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1738,9 +1839,10 @@ type ErrorCallback = (err: ErrorEvent) => void
 
 
 
-#### constructor(deprecated)
+### constructor(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(scriptURL: string, options?: WorkerOptions)
 
@@ -1753,6 +1855,7 @@ Worker构造函数。
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1774,9 +1877,10 @@ const workerInstance = new worker.Worker('entry/ets/workers/worker.ets', {name: 
 
 
 
-#### postMessage(deprecated)
+### postMessage(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 postMessage(message: Object, transfer: ArrayBuffer[]): void
 
@@ -1789,6 +1893,7 @@ postMessage(message: Object, transfer: ArrayBuffer[]): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1810,9 +1915,10 @@ workerInstance.postMessage(buffer, [buffer]);
 
 
 
-#### postMessage(deprecated)
+### postMessage(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 postMessage(message: Object, options?: PostMessageOptions): void
 
@@ -1825,6 +1931,7 @@ postMessage(message: Object, options?: PostMessageOptions): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1848,9 +1955,10 @@ workerInstance.postMessage(buffer, [buffer]);
 
 
 
-#### on(deprecated)
+### on(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: string, listener: EventListener): void
 
@@ -1863,6 +1971,7 @@ on(type: string, listener: EventListener): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1884,9 +1993,10 @@ workerInstance.on("alert", () => {
 
 
 
-#### once(deprecated)
+### once(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: string, listener: EventListener): void
 
@@ -1899,6 +2009,7 @@ once(type: string, listener: EventListener): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1920,9 +2031,10 @@ workerInstance.once("alert", () => {
 
 
 
-#### off(deprecated)
+### off(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: string, listener?: EventListener): void
 
@@ -1935,6 +2047,7 @@ off(type: string, listener?: EventListener): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1955,9 +2068,10 @@ workerInstance.off("alert");
 
 
 
-#### terminate(deprecated)
+### terminate(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 terminate(): void
 
@@ -1981,9 +2095,10 @@ workerInstance.terminate();
 
 
 
-#### EventTarget(deprecated)
+## EventTarget(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 7开始支持，从API version 9开始废弃，建议使用 WorkerEventTarget 9+ 替代。
@@ -1991,9 +2106,10 @@ workerInstance.terminate();
 
 
 
-#### addEventListener(deprecated)
+### addEventListener(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addEventListener(type: string, listener: EventListener): void
 
@@ -2006,6 +2122,7 @@ addEventListener(type: string, listener: EventListener): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2028,9 +2145,10 @@ workerPort.addEventListener("alert", () => {
 
 
 
-#### removeEventListener(deprecated)
+### removeEventListener(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeEventListener(type: string, callback?: EventListener): void
 
@@ -2043,6 +2161,7 @@ removeEventListener(type: string, callback?: EventListener): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2067,9 +2186,10 @@ workerPort.removeEventListener('alert');
 
 
 
-#### dispatchEvent(deprecated)
+### dispatchEvent(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 dispatchEvent(event: Event): boolean
 
@@ -2083,12 +2203,14 @@ dispatchEvent(event: Event): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | Event | 是 | 需要分发的事件。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2140,9 +2262,10 @@ workerPort.onmessage = (event: MessageEvents) => {
 
 
 
-#### removeAllListener(deprecated)
+### removeAllListener(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeAllListener(): void
 
@@ -2171,9 +2294,10 @@ workerPort.removeAllListener();
 
 
 
-#### DedicatedWorkerGlobalScope(deprecated)
+## DedicatedWorkerGlobalScope(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Worker线程用于与宿主线程通信的类。DedicatedWorkerGlobalScope类继承[WorkerGlobalScope](#workerglobalscopedeprecated)。
 
@@ -2183,11 +2307,13 @@ Worker线程用于与宿主线程通信的类。DedicatedWorkerGlobalScope类继
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Utils.Lang
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2197,9 +2323,10 @@ Worker线程用于与宿主线程通信的类。DedicatedWorkerGlobalScope类继
 
 
 
-#### postMessage(deprecated)
+### postMessage(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 postMessage(messageObject: Object, transfer: Transferable[]): void
 
@@ -2213,6 +2340,7 @@ Worker线程通过转移对象所有权的方式向宿主线程发送消息。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | messageObject | Object | 是 | 发送至宿主线程的数据，该数据对象必须是可序列化对象，序列化支持类型见序列化支持类型。 |
@@ -2221,9 +2349,10 @@ Worker线程通过转移对象所有权的方式向宿主线程发送消息。
 
 
 
-#### postMessage(deprecated)
+### postMessage(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 postMessage(messageObject: Object, transfer: ArrayBuffer[]): void
 
@@ -2236,6 +2365,7 @@ Worker线程通过转移对象所有权的方式向宿主线程发送消息。
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2272,9 +2402,10 @@ workerPort.onmessage = (): void => {
 
 
 
-#### postMessage(deprecated)
+### postMessage(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 postMessage(messageObject: Object, options?: PostMessageOptions): void
 
@@ -2287,6 +2418,7 @@ Worker线程通过转移对象所有权或者拷贝数据的方式向宿主线�
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2319,9 +2451,10 @@ parentPort.onmessage = (e: MessageEvents) => {
 
 
 
-#### close(deprecated)
+### close(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(): void
 
@@ -2355,15 +2488,17 @@ parentPort.onmessage = (): void => {
 
 
 
-#### PostMessageOptions
+## PostMessageOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 明确数据传递过程中需要转移所有权的对象，这些对象必须是ArrayBuffer，在发送方的上下文中将变为不可用，仅在接收方可用。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2372,15 +2507,17 @@ parentPort.onmessage = (): void => {
 
 
 
-#### Event
+## Event
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 事件类。
 
 **元服务API**： 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2390,9 +2527,10 @@ parentPort.onmessage = (): void => {
 
 
 
-#### EventListener(deprecated)
+## EventListener(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 事件监听类用于处理事件。
 
@@ -2402,9 +2540,10 @@ parentPort.onmessage = (): void => {
 
 
 
-#### (evt: Event)(deprecated)
+### (evt: Event)(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 (evt: Event): void | Promise&lt;void&gt;
 
@@ -2416,12 +2555,14 @@ parentPort.onmessage = (): void => {
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | evt | Event | 是 | 回调的事件类。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2442,15 +2583,17 @@ workerInstance.addEventListener("alert", ()=>{
 
 
 
-#### ErrorEvent
+## ErrorEvent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 错误事件类用于表示Worker执行过程中出现异常的详细信息，该类继承[Event](#event)。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2463,15 +2606,17 @@ workerInstance.addEventListener("alert", ()=>{
 
 
 
-#### MessageEvent&lt;T&gt;
+## MessageEvent&lt;T&gt;
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 消息类，持有Worker线程间传递的数据，MessageEvent类继承[Event](#event)。
 
 **元服务API**： 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2480,9 +2625,10 @@ workerInstance.addEventListener("alert", ()=>{
 
 
 
-#### WorkerGlobalScope(deprecated)
+## WorkerGlobalScope(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Worker线程自身的运行环境，WorkerGlobalScope类继承[EventTarget](#eventtargetdeprecated)。
 
@@ -2491,6 +2637,7 @@ Worker线程自身的运行环境，WorkerGlobalScope类继承[EventTarget](#eve
 
 
 **系统能力：** SystemCapability.Utils.Lang
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2501,9 +2648,10 @@ Worker线程自身的运行环境，WorkerGlobalScope类继承[EventTarget](#eve
 
 
 
-#### Priority
+## Priority
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示发送消息时的优先级。
 
@@ -2515,6 +2663,7 @@ Worker线程自身的运行环境，WorkerGlobalScope类继承[EventTarget](#eve
 
 **系统能力：** SystemCapability.Utils.Lang
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | IMMEDIATE | 1 | 立即执行优先级。表示消息优先于HIGH优先级发送。 |
@@ -2525,13 +2674,17 @@ Worker线程自身的运行环境，WorkerGlobalScope类继承[EventTarget](#eve
 
 
 
-#### 其他说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 其他说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 序列化支持类型
+
+
+### 序列化支持类型
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 序列化支持类型包括：除Symbol之外的基础类型、Date、String、RegExp、Array、Map、Set、Object（仅限简单对象，比如通过"{}"或者"new Object"创建，普通对象仅支持传递属性，不支持传递其原型及方法）、ArrayBuffer、TypedArray。
 
@@ -2584,7 +2737,10 @@ workerPort.onerror = (err: ErrorEvent) => {
 
 
 
-#### 内存模型
+### 内存模型
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Worker基于Actor并发模型实现。在Worker的交互流程中，宿主线程可以创建多个Worker子线程，各个Worker线程间运行环境相互隔离，并通过序列化、引用传递或转移所有权的方式传递对象，等到Worker线程完成计算任务，再把结果返回给宿主线程。
 
@@ -2592,9 +2748,10 @@ Actor并发模型的交互原理：各个Actor并发地处理宿主线程任务�
 
 
 
-#### 完整示例
+## 完整示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!WARNING]
 > API version 8及之前的版本仅支持FA模型，如需使用，注意更换构造Worker的接口和创建Worker线程中与宿主线程通信的对象的两个方法。
@@ -2602,7 +2759,10 @@ Actor并发模型的交互原理：各个Actor并发地处理宿主线程任务�
 
 
 
-#### FA模型
+### FA模型
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 此处以API version 9的工程为例。
 
@@ -2675,7 +2835,10 @@ workerPort.onerror = (err: ErrorEvent) => {
 
 
 
-#### Stage模型
+### Stage模型
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 此处以API version 18的工程为例。
 
@@ -2761,7 +2924,10 @@ workerPort.onerror = (err: ErrorEvent) => {
 
 
 
-#### 分发事件与监听接口搭配使用示例
+### 分发事件与监听接口搭配使用示例
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```ArkTS
 // Index.ets

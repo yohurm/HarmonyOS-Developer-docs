@@ -1,10 +1,10 @@
 # Vulkan平台
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-accelerate-fg-ai-vulkan
 
-#### 业务流程
+## 业务流程
 
 AI超帧调用流程上依赖系统送显模式功能，但与基本的系统送显模式相比，无需调用新方法，只需要在传输帧信息的时候不传输深度信息即可。
 
@@ -26,7 +26,7 @@ AI超帧调用流程上依赖系统送显模式功能，但与基本的系统送
 
 
 
-#### 开发步骤
+## 开发步骤
 
 本节阐述基于Vulkan图形API平台的系统送显模式调用示例。详细代码请参考[图形开发Sample（超帧Vulkan）](https://gitcode.com/harmonyos_samples/frame-generation-vulkan-samplecode-clientdemo-cpp)。
 1. 设置meta-data。在应用的module.json5中声明meta-data以支持系统送显模式。
@@ -166,7 +166,7 @@ VulkanFG::Image m_sceneColor{};
 // 创建真实帧颜色缓冲区图像实例
 m_ffSceneColor = HMS_FG_CreateImage_VK(m_context, m_sceneColor.GetNativeImage(), m_sceneColor.GetNativeImageView());
 if (!m_ffSceneColor) {
-    GOLOGE("HMS_FG_RegisterImage_VK m_ffSceneColor execution failed.");
+    GOLOGE("HMS_FG_CreateImage_VK m_ffSceneColor execution failed.");
     return false;
 }
 ```
@@ -232,6 +232,7 @@ if (runPrediction) { // 预测帧渲染阶段
 
 10. 调用[HMS_FG_DestroyContext_VK](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_graphics_accelerate#hms_fg_destroycontext_vk)接口销毁超帧实例，释放内存资源。
 
+  
 ```text
 // 销毁超帧上下文实例并释放内存资源
 errorCode = HMS_FG_DestroyContext_VK(&m_context);

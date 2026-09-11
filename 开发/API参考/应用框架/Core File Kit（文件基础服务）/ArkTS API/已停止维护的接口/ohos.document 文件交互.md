@@ -1,6 +1,6 @@
 # @ohos.document (文件交互)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-document
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -10,7 +10,8 @@
 
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -20,7 +21,8 @@ import document from '@ohos.document';
  
   
 
-#### document.choose(deprecated)
+## document.choose(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -32,6 +34,7 @@ choose(types?: string[]): Promise&lt;string&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | types | string[] | 否 | 限定文件选择的类型 |
@@ -39,6 +42,7 @@ choose(types?: string[]): Promise&lt;string&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | 异步返回文件URI（注：当前返回错误码） |
@@ -53,7 +57,8 @@ document.choose(types);
  
   
 
-#### document.choose(deprecated)
+## document.choose(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -65,6 +70,7 @@ choose(callback:AsyncCallback&lt;string&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;string&gt; | 是 | 异步获取对应文件URI（注：当前返回错误码） |
@@ -81,7 +87,8 @@ document.choose((err: TypeError, uri: string) => {
  
   
 
-#### document.choose(deprecated)
+## document.choose(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -93,6 +100,7 @@ choose(types:string[], callback:AsyncCallback&lt;string&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | types | string[] | 是 | 限定选择文件的类型 |
@@ -111,7 +119,8 @@ document.choose(types, (err: TypeError, uri: string) => {
  
   
 
-#### document.show(deprecated)
+## document.show(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -123,6 +132,7 @@ show(uri:string, type:string):Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uri | string | 是 | 待打开的文件URI |
@@ -131,6 +141,7 @@ show(uri:string, type:string):Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise回调返回void表示成功打开文件（注：当前返回错误码） |
@@ -146,7 +157,8 @@ document.show(uri, type);
  
   
 
-#### document.show(deprecated)
+## document.show(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -158,6 +170,7 @@ show(uri:string, type:string, callback:AsyncCallback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uri | string | 是 | 待打开的文件URI |

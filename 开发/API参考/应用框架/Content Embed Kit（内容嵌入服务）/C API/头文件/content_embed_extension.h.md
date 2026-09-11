@@ -1,11 +1,12 @@
 # content_embed_extension.h
 
-更新时间：2026-05-26 06:48:54
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-content-embed-extension-h
 **支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -23,15 +24,18 @@
 
 
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 
 
-#### 结构体
+### 结构体
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -46,9 +50,11 @@
 
 
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -88,13 +94,15 @@
 
 
 
-#### 函数说明
+## 函数说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 
 
-#### OH_ContentEmbed_Extension_GetContentEmbedContext()
+### OH_ContentEmbed_Extension_GetContentEmbedContext()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -110,6 +118,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_GetContentEmbedContext(ContentE
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_ExtensionInstanceHandle ceInstance | OE Extension实例对象的指针。 |
@@ -118,6 +127,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_GetContentEmbedContext(ContentE
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_NULL_POINTER：表示返回空指针。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -125,7 +135,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_GetContentEmbedContext(ContentE
 
 
 
-#### OH_ContentEmbed_Extension_GetContext()
+### OH_ContentEmbed_Extension_GetContext()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -141,6 +152,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_GetContext(ContentEmbed_Extensi
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_ExtensionContextHandle ceContext | OE Extension上下文对象的指针。 |
@@ -149,6 +161,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_GetContext(ContentEmbed_Extensi
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_NULL_POINTER：表示返回空指针。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -156,7 +169,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_GetContext(ContentEmbed_Extensi
 
 
 
-#### OH_ContentEmbed_Extension_GetExtensionInstance()
+### OH_ContentEmbed_Extension_GetExtensionInstance()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -172,6 +186,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_GetExtensionInstance(AbilityRun
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_ExtensionInstanceHandle baseInstance | AbilityRuntime_ExtensionInstanceHandle实例。 |
@@ -180,6 +195,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_GetExtensionInstance(AbilityRun
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_NULL_POINTER：表示返回空指针。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -187,7 +203,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_GetExtensionInstance(AbilityRun
 
 
 
-#### OH_ContentEmbed_Extension_OnCreateFunc()
+### OH_ContentEmbed_Extension_OnCreateFunc()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -205,6 +222,7 @@ OE Extension实例创建时的生命周期函数类型。
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_ExtensionInstanceHandle instance | OE Extension实例对象的指针。 |
@@ -213,7 +231,8 @@ OE Extension实例创建时的生命周期函数类型。
 
 
 
-#### OH_ContentEmbed_Extension_OnDestroyFunc()
+### OH_ContentEmbed_Extension_OnDestroyFunc()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -231,6 +250,7 @@ OE Extension实例销毁时的生命周期函数类型。
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_ExtensionInstanceHandle instance | OE Extension实例对象的指针。 |
@@ -238,7 +258,8 @@ OE Extension实例销毁时的生命周期函数类型。
 
 
 
-#### OH_ContentEmbed_Extension_OnObjectAttachFunc()
+### OH_ContentEmbed_Extension_OnObjectAttachFunc()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -256,6 +277,7 @@ typedef void (*OH_ContentEmbed_Extension_OnObjectAttachFunc)(ContentEmbed_Extens
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_ExtensionInstanceHandle instance | OE Extension实例对象的指针。 |
@@ -264,7 +286,8 @@ typedef void (*OH_ContentEmbed_Extension_OnObjectAttachFunc)(ContentEmbed_Extens
 
 
 
-#### OH_ContentEmbed_Extension_OnObjectDetachFunc()
+### OH_ContentEmbed_Extension_OnObjectDetachFunc()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -282,6 +305,7 @@ typedef void (*OH_ContentEmbed_Extension_OnObjectDetachFunc)(ContentEmbed_Extens
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_ExtensionInstanceHandle instance | OE Extension实例对象的指针。 |
@@ -290,7 +314,8 @@ typedef void (*OH_ContentEmbed_Extension_OnObjectDetachFunc)(ContentEmbed_Extens
 
 
 
-#### OH_ContentEmbed_Extension_OnWriteToDataStreamFunc()
+### OH_ContentEmbed_Extension_OnWriteToDataStreamFunc()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -308,6 +333,7 @@ typedef void (*OH_ContentEmbed_Extension_OnWriteToDataStreamFunc)(ContentEmbed_O
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_ObjectHandle object | ContentEmbed_ObjectHandle实例。 |
@@ -315,7 +341,8 @@ typedef void (*OH_ContentEmbed_Extension_OnWriteToDataStreamFunc)(ContentEmbed_O
 
 
 
-#### OH_ContentEmbed_Extension_OnGetSnapshotFunc()
+### OH_ContentEmbed_Extension_OnGetSnapshotFunc()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -333,6 +360,7 @@ typedef void (*OH_ContentEmbed_Extension_OnGetSnapshotFunc)(ContentEmbed_ObjectH
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_ObjectHandle object | ContentEmbed_ObjectHandle实例。 |
@@ -340,7 +368,8 @@ typedef void (*OH_ContentEmbed_Extension_OnGetSnapshotFunc)(ContentEmbed_ObjectH
 
 
 
-#### OH_ContentEmbed_Extension_OnDoEditFunc()
+### OH_ContentEmbed_Extension_OnDoEditFunc()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -358,6 +387,7 @@ typedef void (*OH_ContentEmbed_Extension_OnDoEditFunc)(ContentEmbed_ObjectHandle
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_ObjectHandle object | ContentEmbed_ObjectHandle实例。 |
@@ -365,7 +395,8 @@ typedef void (*OH_ContentEmbed_Extension_OnDoEditFunc)(ContentEmbed_ObjectHandle
 
 
 
-#### OH_ContentEmbed_Extension_OnGetEditStatusFunc()
+### OH_ContentEmbed_Extension_OnGetEditStatusFunc()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -383,6 +414,7 @@ typedef void (*OH_ContentEmbed_Extension_OnGetEditStatusFunc)(ContentEmbed_Objec
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_ObjectHandle object | ContentEmbed_ObjectHandle实例。 |
@@ -392,7 +424,8 @@ typedef void (*OH_ContentEmbed_Extension_OnGetEditStatusFunc)(ContentEmbed_Objec
 
 
 
-#### OH_ContentEmbed_Extension_OnGetCapabilityFunc()
+### OH_ContentEmbed_Extension_OnGetCapabilityFunc()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -410,6 +443,7 @@ typedef void (*OH_ContentEmbed_Extension_OnGetCapabilityFunc)(ContentEmbed_Objec
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_ObjectHandle object | ContentEmbed_ObjectHandle实例。 |
@@ -418,7 +452,8 @@ typedef void (*OH_ContentEmbed_Extension_OnGetCapabilityFunc)(ContentEmbed_Objec
 
 
 
-#### OH_ContentEmbed_Extension_RegisterOnCreateFunc()
+### OH_ContentEmbed_Extension_RegisterOnCreateFunc()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -434,6 +469,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_RegisterOnCreateFunc(ContentEmb
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_ExtensionInstanceHandle instance | 指向OE Extension实例对象的指针。 |
@@ -442,6 +478,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_RegisterOnCreateFunc(ContentEmb
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -449,7 +486,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_RegisterOnCreateFunc(ContentEmb
 
 
 
-#### OH_ContentEmbed_Extension_RegisterOnDestroyFunc()
+### OH_ContentEmbed_Extension_RegisterOnDestroyFunc()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -465,6 +503,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_RegisterOnDestroyFunc(ContentEm
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_ExtensionInstanceHandle instance | 指向OE Extension实例对象的指针。 |
@@ -473,6 +512,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_RegisterOnDestroyFunc(ContentEm
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -480,7 +520,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_RegisterOnDestroyFunc(ContentEm
 
 
 
-#### OH_ContentEmbed_Extension_RegisterOnObjectAttachFunc()
+### OH_ContentEmbed_Extension_RegisterOnObjectAttachFunc()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -498,6 +539,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_RegisterOnObjectAttachFunc(Cont
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_ExtensionInstanceHandle instance | 指向OE Extension实例对象的指针。 |
@@ -506,6 +548,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_RegisterOnObjectAttachFunc(Cont
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -513,7 +556,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_RegisterOnObjectAttachFunc(Cont
 
 
 
-#### OH_ContentEmbed_Extension_UnRegisterOnObjectAttachFunc()
+### OH_ContentEmbed_Extension_UnRegisterOnObjectAttachFunc()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -529,12 +573,14 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_UnRegisterOnObjectAttachFunc(Co
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_ExtensionInstanceHandle instance | 指向OE Extension实例对象的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -543,7 +589,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_UnRegisterOnObjectAttachFunc(Co
 
 
 
-#### OH_ContentEmbed_Extension_RegisterOnObjectDetachFunc()
+### OH_ContentEmbed_Extension_RegisterOnObjectDetachFunc()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -561,6 +608,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_RegisterOnObjectDetachFunc(Cont
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_ExtensionInstanceHandle instance | 指向OE Extension实例对象的指针。 |
@@ -569,6 +617,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_RegisterOnObjectDetachFunc(Cont
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -576,7 +625,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_RegisterOnObjectDetachFunc(Cont
 
 
 
-#### OH_ContentEmbed_Extension_UnRegisterOnObjectDetachFunc()
+### OH_ContentEmbed_Extension_UnRegisterOnObjectDetachFunc()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -592,12 +642,14 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_UnRegisterOnObjectDetachFunc(Co
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_ExtensionInstanceHandle instance | 指向OE Extension实例对象的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -606,7 +658,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_UnRegisterOnObjectDetachFunc(Co
 
 
 
-#### OH_ContentEmbed_Extension_RegisterOnWriteToDataStreamFunc()
+### OH_ContentEmbed_Extension_RegisterOnWriteToDataStreamFunc()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -622,6 +675,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_RegisterOnWriteToDataStreamFunc
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_ObjectHandle object | ContentEmbed_ObjectHandle实例。 |
@@ -630,6 +684,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_RegisterOnWriteToDataStreamFunc
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -637,7 +692,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_RegisterOnWriteToDataStreamFunc
 
 
 
-#### OH_ContentEmbed_Extension_RegisterOnGetSnapshotFunc()
+### OH_ContentEmbed_Extension_RegisterOnGetSnapshotFunc()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -653,6 +709,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_RegisterOnGetSnapshotFunc(Conte
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_ObjectHandle object | ContentEmbed_ObjectHandle实例。 |
@@ -661,6 +718,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_RegisterOnGetSnapshotFunc(Conte
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -668,7 +726,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_RegisterOnGetSnapshotFunc(Conte
 
 
 
-#### OH_ContentEmbed_Extension_RegisterOnDoEditFunc()
+### OH_ContentEmbed_Extension_RegisterOnDoEditFunc()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -684,6 +743,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_RegisterOnDoEditFunc(ContentEmb
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_ObjectHandle object | ContentEmbed_ObjectHandle实例。 |
@@ -692,6 +752,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_RegisterOnDoEditFunc(ContentEmb
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -699,7 +760,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_RegisterOnDoEditFunc(ContentEmb
 
 
 
-#### OH_ContentEmbed_Extension_RegisterOnGetEditStatusFunc()
+### OH_ContentEmbed_Extension_RegisterOnGetEditStatusFunc()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -715,6 +777,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_RegisterOnGetEditStatusFunc(Con
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_ObjectHandle object | ContentEmbed_ObjectHandle实例。 |
@@ -723,6 +786,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_RegisterOnGetEditStatusFunc(Con
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -730,7 +794,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_RegisterOnGetEditStatusFunc(Con
 
 
 
-#### OH_ContentEmbed_Extension_RegisterOnGetCapabilityFunc()
+### OH_ContentEmbed_Extension_RegisterOnGetCapabilityFunc()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -746,6 +811,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_RegisterOnGetCapabilityFunc(Con
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_ObjectHandle object | ContentEmbed_ObjectHandle实例。 |
@@ -754,6 +820,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_RegisterOnGetCapabilityFunc(Con
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -761,7 +828,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_RegisterOnGetCapabilityFunc(Con
 
 
 
-#### OH_ContentEmbed_Extension_GetContentEmbedDocument()
+### OH_ContentEmbed_Extension_GetContentEmbedDocument()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -777,6 +845,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_GetContentEmbedDocument(Content
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_ObjectHandle object | ContentEmbed_ObjectHandle实例。 |
@@ -785,6 +854,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_GetContentEmbedDocument(Content
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_NULL_POINTER：表示返回空指针。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -792,7 +862,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_GetContentEmbedDocument(Content
 
 
 
-#### OH_ContentEmbed_Extension_CallbackToOnUpdate()
+### OH_ContentEmbed_Extension_CallbackToOnUpdate()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -808,12 +879,14 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_CallbackToOnUpdate(ContentEmbed
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_ObjectHandle object | ContentEmbed_ObjectHandle实例。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -822,7 +895,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_CallbackToOnUpdate(ContentEmbed
 
 
 
-#### OH_ContentEmbed_Extension_CallbackToOnError()
+### OH_ContentEmbed_Extension_CallbackToOnError()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -838,6 +912,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_CallbackToOnError(ContentEmbed_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_ObjectHandle object | ContentEmbed_ObjectHandle实例。 |
@@ -846,6 +921,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_CallbackToOnError(ContentEmbed_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_NULL_POINTER：表示返回空指针。 CE_ERR_CLIENT_CALLBACK_NOT_REGISTERED：表示客户端回调未注册。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_CLIENT_CALLBACK_FAILED：表示客户端回调执行失败。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -853,7 +929,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_CallbackToOnError(ContentEmbed_
 
 
 
-#### OH_ContentEmbed_Extension_CallbackToOnEditingFinished()
+### OH_ContentEmbed_Extension_CallbackToOnEditingFinished()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -869,6 +946,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_CallbackToOnEditingFinished(Con
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_ObjectHandle object | ContentEmbed_ObjectHandle实例。 |
@@ -877,6 +955,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_CallbackToOnEditingFinished(Con
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_NULL_POINTER：表示返回空指针。 CE_ERR_CLIENT_CALLBACK_NOT_REGISTERED：表示客户端回调未注册。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_CLIENT_CALLBACK_FAILED：表示客户端回调执行失败。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -884,7 +963,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_CallbackToOnEditingFinished(Con
 
 
 
-#### OH_ContentEmbed_Extension_CallbackToOnExtensionStopped()
+### OH_ContentEmbed_Extension_CallbackToOnExtensionStopped()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -900,12 +980,14 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_CallbackToOnExtensionStopped(Co
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_ExtensionInstanceHandle instance | 指向OE Extension实例对象的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -914,7 +996,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_CallbackToOnExtensionStopped(Co
 
 
 
-#### OH_ContentEmbed_Extension_SetSnapshot()
+### OH_ContentEmbed_Extension_SetSnapshot()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -930,6 +1013,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_SetSnapshot(ContentEmbed_Object
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_ObjectHandle object | ContentEmbed_ObjectHandle实例。 |
@@ -938,6 +1022,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_SetSnapshot(ContentEmbed_Object
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_NULL_POINTER：表示返回空指针。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 CE_ERR_IMAGE_PACKER_OPERATION_FAILED：表示图像操作失败。 |
@@ -945,7 +1030,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_SetSnapshot(ContentEmbed_Object
 
 
 
-#### OH_ContentEmbed_Extension_ContextStartSelfUIAbility()
+### OH_ContentEmbed_Extension_ContextStartSelfUIAbility()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -961,6 +1047,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_ContextStartSelfUIAbility(Conte
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_ExtensionContextHandle context | 指向OE Extension上下文对象的指针。 |
@@ -969,6 +1056,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_ContextStartSelfUIAbility(Conte
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_NULL_POINTER：表示返回空指针。 CE_ERR_SYSTEM_ABNORMAL：表示系统服务异常。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -976,7 +1064,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_ContextStartSelfUIAbility(Conte
 
 
 
-#### OH_ContentEmbed_Extension_ContextStartSelfUIAbilityWithStartOptions()
+### OH_ContentEmbed_Extension_ContextStartSelfUIAbilityWithStartOptions()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -992,6 +1081,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_ContextStartSelfUIAbilityWithSt
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_ExtensionContextHandle context | 指向OE Extension上下文对象的指针。 |
@@ -1001,6 +1091,7 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_ContextStartSelfUIAbilityWithSt
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ContentEmbed_ErrorCode | 返回特定的错误码： CE_ERR_OK：表示操作成功。 CE_ERR_PARAM_INVALID：表示参数检查失败。 CE_ERR_NULL_POINTER：表示返回空指针。 CE_ERR_SYSTEM_ABNORMAL：表示系统服务异常。 CE_ERR_DEVICE_NOT_SUPPORTED：表示设备不支持。 CE_ERR_IN_DLP_SANDBOX：表示应用在DLP沙箱中，不支持此操作。 |
@@ -1008,7 +1099,8 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_ContextStartSelfUIAbilityWithSt
 
 
 
-#### OH_ContentEmbed_Extension_ContextTerminateAbility()
+### OH_ContentEmbed_Extension_ContextTerminateAbility()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1024,12 +1116,14 @@ ContentEmbed_ErrorCode OH_ContentEmbed_Extension_ContextTerminateAbility(Content
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ContentEmbed_ExtensionContextHandle context | 指向OE Extension上下文对象的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |

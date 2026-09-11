@@ -1,10 +1,10 @@
 # 使用AppServiceExtensionAbility组件实现后台服务
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-service-extension-ability
 
-#### 概述
+## 概述
 
 从API version 20开始，支持开发者使用[AppServiceExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-appserviceextensionability)组件，为应用提供后台服务能力，其他三方应用可通过启动或连接该AppServiceExtensionAbility组件获取相应的服务。
 
@@ -16,17 +16,17 @@
 
 
 
-#### 约束与限制
+## 约束与限制
 
 
 
-#### 设备限制
+### 设备限制
 
 AppServiceExtensionAbility组件当前仅支持2in1设备。
 
 
 
-#### 规格限制
+### 规格限制
 
  - 应用集成AppServiceExtensionAbility组件需要申请ACL权限（ohos.permission.SUPPORT_APP_SERVICE_EXTENSION）。该ACL权限当前只对企业普通应用开放申请。
  - 针对AppServiceExtensionAbility接口调用限制，详情请参考 [@ohos.app.ability.AppServiceExtensionAbility (应用后台服务扩展组件)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-appserviceextensionability) 的约束限制。
@@ -34,7 +34,7 @@ AppServiceExtensionAbility组件当前仅支持2in1设备。
 
 
 
-#### 运作机制
+## 运作机制
 
 开发者可以在[UIAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability)中以启动（[startAppServiceExtensionAbility()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext#startappserviceextensionability20)）或连接（[connectAppServiceExtensionAbility()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext#connectappserviceextensionability20)）的方式来拉起AppServiceExtensionAbility组件。
 
@@ -46,6 +46,7 @@ AppServiceExtensionAbility组件当前仅支持2in1设备。
 
 > [!NOTE]
 > “客户端是否可信”为是时，表示客户端属于服务端所属应用或已配置在appIdentifierAllowList中。为否时，表示客户端不属于服务端所属应用且未配置在appIdentifierAllowList中。
+
 
 
 | 客户端操作 | 服务端状态 | 客户端是否可信 | 结果说明 |
@@ -62,14 +63,14 @@ AppServiceExtensionAbility组件当前仅支持2in1设备。
 
 
 
-#### 实现一个后台服务
+## 实现一个后台服务
 
 在DevEco Studio工程中手动新建一个AppServiceExtensionAbility组件，具体步骤如下：
 1. 在工程Module对应的ets目录下，右键选择“New > Directory”，新建一个目录并命名为myappserviceextability。
 2. 在myappserviceextability目录，右键选择“New > ArkTS File”，新建一个文件并命名为MyAppServiceExtAbility.ets。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/YsL0q0toQq6DeezOeE8BRw/zh-cn_image_0000002704271625.png?HW-CC-KV=V1&HW-CC-Date=20260813T095619Z&HW-CC-Expire=86400&HW-CC-Sign=0AD0B208BC4A04B9CE5B48C4296F14E5AD927711A0FDA17CC3FEDFF67C760735)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/Bhd9p66mQHSDoRMvv_M-1w/zh-cn_image_0000002717769818.png?HW-CC-KV=V1&HW-CC-Date=20260911T072319Z&HW-CC-Expire=86400&HW-CC-Sign=C1A140BDB90D86F063855E5562202EB6DC79F2200A1AE7D1B04DE856691EEFCF)
 
 
   其目录结构如下所示：
@@ -161,7 +162,7 @@ export default class MyAppServiceExtAbility extends AppServiceExtensionAbility {
 
 
 
-#### 启动一个后台服务
+## 启动一个后台服务
 
 应用通过[startAppServiceExtensionAbility()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext#startappserviceextensionability20)方法启动一个后台服务，服务的[onRequest()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-appserviceextensionability#onrequest)回调就会被调用，并在该回调方法中接收到调用者传递过来的[Want](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-want)对象。后台服务启动后，其生命周期独立于客户端，即使客户端已经销毁，该后台服务仍可继续运行。因此，后台服务需要在其工作完成时通过调用[AppServiceExtensionContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-appserviceextensioncontext)的[terminateSelf()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-appserviceextensioncontext#terminateself)来自行停止，或者由另一个组件调用[stopAppServiceExtensionAbility()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext#stopappserviceextensionability20)来将其停止。
 
@@ -306,11 +307,11 @@ export default class MyAppServiceExtAbility extends AppServiceExtensionAbility {
 
 
 
-#### 连接一个后台服务
+## 连接一个后台服务
 
 
 
-#### 客户端连接服务端
+### 客户端连接服务端
 
 客户端可以通过[connectAppServiceExtensionAbility()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext#connectappserviceextensionability20)连接服务端（在Want对象中指定连接的目标服务），服务端的[onConnect()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-appserviceextensionability#onconnect)就会被调用，并在该回调方法中接收到客户端传递过来的[Want](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-want)对象。
 
@@ -441,7 +442,7 @@ struct DisConnectAppServiceExt {
 
 
 
-#### 客户端与服务端通信
+### 客户端与服务端通信
 
 客户端在[onConnect()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-ability-connectoptions#onconnect)中获取到[rpc.IRemoteObject](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-rpc#iremoteobject)对象后便可与服务端进行通信。
 
@@ -583,7 +584,7 @@ export default class MyAppServiceExtAbility extends AppServiceExtensionAbility {
 
 
 
-#### 服务端对客户端身份校验
+### 服务端对客户端身份校验
 
 部分开发者需要使用AppServiceExtensionAbility组件提供一些较为敏感的服务，可以通过如下方式对客户端身份进行校验。
 

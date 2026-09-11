@@ -1,6 +1,6 @@
 # @ReusableV2装饰器：V2组件复用
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-reusablev2
 
@@ -13,7 +13,7 @@
 
 
 
-#### 概述
+## 概述
 
 @ReusableV2用于装饰V2的自定义组件，表明该自定义组件具有被复用的能力：
 
@@ -28,7 +28,8 @@
 
 
 
-#### 装饰器说明
+## 装饰器说明
+
 
 | @ReusableV2装饰器 | 说明 |
 | --- | --- |
@@ -52,7 +53,7 @@ struct ReusableV2Component {
 
 
 
-#### 接口说明
+## 接口说明
 
 reuse、ReuseOptions、ReuseIdCallback的接口说明参考API文档：[复用选项](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-reuse)。
 
@@ -81,7 +82,7 @@ struct ReusableV2Component {
 
 
 
-#### 使用限制
+## 使用限制
 
  - 仅能将@ReusableV2装饰的自定义组件作为V2自定义组件的子组件使用。如果在V1的自定义组件中使用V2的复用组件将导致编译期报错，编译期无法校验到的复杂场景下将会有运行时报错。
 
@@ -115,10 +116,15 @@ function V2ReusableBuilder() {
   下文提到的描述对应关系如下表：
 
 | 描述 | 对应组件类型 |
+
 | --- | --- |
+
 | V1普通组件 | @Component装饰的struct。 |
+
 | V2普通组件 | @ComponentV2装饰的struct。 |
+
 | V1复用组件 | @Reusable@Component装饰的struct。 |
+
 | V2复用组件 | @ReusableV2@ComponentV2装饰的struct。 |
 
   下面的表展示了V1和V2的混用支持关系，每行的含义为第一列作为父组件，能否将后面列的组件作为子组件。
@@ -126,10 +132,15 @@ function V2ReusableBuilder() {
   以第一行V1普通组件为例，可以将V1普通组件、V2普通组件以及V1复用组件作为子组件，但无法将V2复用组件作为子组件。
 
 | 混用支持关系 | V1普通组件 | V2普通组件 | V1复用组件 | V2复用组件 |
+
 | --- | --- | --- | --- | --- |
+
 | V1普通组件 | 支持 | 支持 | 支持 | 不支持，编译报错 |
+
 | V2普通组件 | 支持 | 支持 | 不支持，编译告警，实际使用子组件不创建 | 支持 |
+
 | V1复用组件 | 支持 | 支持，需要使用API version 18及以上的SDK，否则会有运行时报错，从API version 23开始，将返回错误码140113 | 支持 | 不支持，编译报错 |
+
 | V2复用组件 | 支持 | 支持 | 不支持，编译报错 | 支持 |
 
   根据上表，仅支持12种可能的父子关系，不推荐开发者高度嵌套可复用组件，这会造成复用效率降低。
@@ -193,7 +204,7 @@ struct ReusableV2Component {
 
 
 
-#### 回收与复用的生命周期
+## 回收与复用的生命周期
 
 @ReusableV2提供了aboutToRecycle以及aboutToReuse的生命周期，当组件被回收时触发aboutToRecycle，当组件被复用时触发aboutToReuse。
 
@@ -293,7 +304,7 @@ struct ReusableV2Component {
 
 
 
-#### 复用阶段的冻结
+## 复用阶段的冻结
 
 在之前的复用中，V1组件在复用池中仍能响应更新，这会对性能带来一定的负面影响，需要开发者使用组件冻结能力，才能够使V1组件在复用池中时不响应更新。针对这一点，V2组件在复用时将会被自动冻结，不会响应在回收期间发生的变化。这一个期间包括aboutToRecycle，即aboutToRecycle中的修改不会刷新到UI上，也不会触发@Computed以及@Monitor。冻结状态将持续到aboutToReuse前，即aboutToReuse及之后的变量更改，才会正常触发UI刷新、@Computed重新计算以及@Monitor的调用。
 
@@ -388,11 +399,12 @@ struct ReusableV2Component {
 
 
 
-#### 复用前的组件内状态变量重置
+## 复用前的组件内状态变量重置
 
 与@Reusable不同的是，@ReusableV2在复用前会重置组件中的状态变量以及相关的@Computed、@Monitor的内容。在复用的过程当中，所有的V2自定义组件，无论是否被标记了@ReusableV2，都会经历这一个重置过程。
 
 重置会按照变量在组件中定义的顺序按照下面的规则依次进行：
+
 
 | 装饰器 | 重置方法 |
 | --- | --- |
@@ -656,11 +668,11 @@ struct ReusableV2Component {
 
 
 
-#### 使用场景
+## 使用场景
 
 
 
-#### 在if组件中使用
+### 在if组件中使用
 
 通过改变if组件的条件可以控制组件回收/复用。
 
@@ -717,7 +729,7 @@ struct ReusableV2Component {
 
 
 
-#### 在Repeat组件中使用
+### 在Repeat组件中使用
 
 [Repeat](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-rendering-control-repeat)组件懒加载场景中，将会优先使用Repeat组件的缓存池，正常滑动场景、更新场景不涉及组件的回收与复用。当Repeat的缓存池需要扩充时将会向自定义组件要求新的子组件，此时如果复用池中有可复用的节点，将会进行复用。
 
@@ -803,7 +815,7 @@ struct ReusableV2Component {
 
 
 
-#### 在Repeat组件非懒加载场景的each属性中使用
+### 在Repeat组件非懒加载场景的each属性中使用
 
 Repeat组件非懒加载场景中，会在删除/创建子树时触发回收/复用。
 
@@ -891,7 +903,7 @@ struct ReusableV2Component {
 
 
 
-#### 在ForEach组件中使用
+### 在ForEach组件中使用
 
 > [!NOTE]
 > 推荐开发者使用Repeat组件的非懒加载场景代替 ForEach 组件。
@@ -958,7 +970,7 @@ struct ReusableV2Component {
 
 
 
-#### 在LazyForEach组件中使用
+### 在LazyForEach组件中使用
 
 > [!NOTE]
 > 推荐开发者使用Repeat组件的懒加载场景代替 LazyForEach 组件。
@@ -1125,4 +1137,4 @@ struct ChildComponent {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/EPyZQaaVTxyfQ4H0QVHknw/zh-cn_image_0000002704271727.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095659Z&HW-CC-Expire=86400&HW-CC-Sign=EEC2148C2DA6CCFBD21BC06DAB8B06376A87602CF046B8F2E2FBF495AF325DEC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/KVZg0VHnSwKD0QmPc6-o2g/zh-cn_image_0000002717769924.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=0393B40977B650112E102EC7D328B035FD420B6E84F71B08A5B20B2863ACC16D)

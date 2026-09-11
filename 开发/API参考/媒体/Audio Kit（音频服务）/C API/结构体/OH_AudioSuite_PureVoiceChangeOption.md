@@ -1,16 +1,17 @@
 # OH_AudioSuite_PureVoiceChangeOption
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohaudiosuite-oh-audiosuite-purevoicechangeoption
 **支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
-typedef struct {...} OH_AudioSuite_PureVoiceChangeOption
+typedef struct OH_AudioSuite_PureVoiceChangeOption {...} OH_AudioSuite_PureVoiceChangeOption
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -24,16 +25,19 @@ typedef struct {...} OH_AudioSuite_PureVoiceChangeOption
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_AudioSuite_PureVoiceChangeGenderOption optionGender | 指定传统变声性别。 |

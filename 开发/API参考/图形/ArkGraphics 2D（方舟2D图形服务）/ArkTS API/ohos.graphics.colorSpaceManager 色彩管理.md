@@ -1,9 +1,9 @@
 # @ohos.graphics.colorSpaceManager (色彩管理)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-colorspacemanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供管理抽象化色域对象的基础能力，包括创建标准色域对象（如SRGB、DCI-P3、BT2020等）和自定义色域对象，获取色域类型、白点值、gamma值等属性。适用于需要保证色彩一致性的场景，如图像处理、视频渲染、跨设备色彩显示等，帮助开发者实现准确的色彩管理和转换，提升应用在色彩显示方面的用户体验。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { colorSpaceManager } from '@kit.ArkGraphics2D';
@@ -22,13 +23,15 @@ import { colorSpaceManager } from '@kit.ArkGraphics2D';
 
 
 
-#### ColorSpace
+## ColorSpace
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 色域类型枚举。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -69,13 +72,15 @@ import { colorSpaceManager } from '@kit.ArkGraphics2D';
 
 
 
-#### ColorSpacePrimaries
+## ColorSpacePrimaries
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 色域标准三原色（红、绿、蓝）和白色，基于现实世界的色度，使用(x, y)表示其在色彩空间中的位置。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -91,9 +96,10 @@ import { colorSpaceManager } from '@kit.ArkGraphics2D';
 
 
 
-#### colorSpaceManager.create
+## colorSpaceManager.create
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 create(colorSpaceName: ColorSpace): ColorSpaceManager
 
@@ -103,12 +109,14 @@ create(colorSpaceName: ColorSpace): ColorSpaceManager
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | colorSpaceName | ColorSpace | 是 | 标准色域类型枚举值。 UNKNOWN与CUSTOM不可用于直接创建色域对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -118,6 +126,7 @@ create(colorSpaceName: ColorSpace): ColorSpaceManager
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[色彩管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-colorspace-manager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -138,9 +147,10 @@ try {
 
 
 
-#### colorSpaceManager.create
+## colorSpaceManager.create
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 create(primaries: ColorSpacePrimaries, gamma: number): ColorSpaceManager
 
@@ -150,6 +160,7 @@ create(primaries: ColorSpacePrimaries, gamma: number): ColorSpaceManager
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | primaries | ColorSpacePrimaries | 是 | 色域标准三原色。 |
@@ -157,6 +168,7 @@ create(primaries: ColorSpacePrimaries, gamma: number): ColorSpaceManager
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -166,6 +178,7 @@ create(primaries: ColorSpacePrimaries, gamma: number): ColorSpaceManager
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[色彩管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-colorspace-manager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -199,9 +212,10 @@ try {
 
 
 
-#### ColorSpaceManager
+## ColorSpaceManager
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 当前色域对象实例。
 
@@ -209,9 +223,10 @@ try {
 
 
 
-#### getColorSpaceName
+### getColorSpaceName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getColorSpaceName(): ColorSpace
 
@@ -221,6 +236,7 @@ getColorSpaceName(): ColorSpace
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ColorSpace | 返回色域类型枚举值。 |
@@ -229,6 +245,7 @@ getColorSpaceName(): ColorSpace
 **错误码：**
 
 以下错误码的详细介绍请参见[色彩管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-colorspace-manager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -249,9 +266,10 @@ try {
 
 
 
-#### getWhitePoint
+### getWhitePoint
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getWhitePoint(): Array&lt;number&gt;
 
@@ -261,6 +279,7 @@ getWhitePoint(): Array&lt;number&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;number&gt; | 返回色域白点值[x, y]。 |
@@ -269,6 +288,7 @@ getWhitePoint(): Array&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[色彩管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-colorspace-manager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -289,9 +309,10 @@ try {
 
 
 
-#### getGamma
+### getGamma
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getGamma(): number
 
@@ -301,6 +322,7 @@ getGamma(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回色域gamma值。 |
@@ -309,6 +331,7 @@ getGamma(): number
 **错误码：**
 
 以下错误码的详细介绍请参见[色彩管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-colorspace-manager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

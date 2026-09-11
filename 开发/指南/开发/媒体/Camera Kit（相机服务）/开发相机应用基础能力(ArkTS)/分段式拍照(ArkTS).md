@@ -1,6 +1,6 @@
 # 分段式拍照(ArkTS)
 
-更新时间：2026-06-03 01:38:22
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-deferred-capture
 
@@ -23,7 +23,7 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 
 详细的API说明请参考[@ohos.multimedia.camera (相机管理)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera)。
 1. 导入依赖，需要导入相机框架、媒体库、图片相关领域依赖。
@@ -67,7 +67,7 @@ function getPhotoOutput(cameraManager: camera.CameraManager,
 3. 设置拍照photoAssetAvailable的回调。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/Ccq7ILcJSrCQEn0zXROvKQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260604T012639Z&HW-CC-Expire=86400&HW-CC-Sign=0FD980B3E37FE38EEAF7DE743C6FD1653B4A309383DBA8CF364187694587043D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/HChCMEBmT0uQOFlrMUqGPg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072530Z&HW-CC-Expire=86400&HW-CC-Sign=AC6529C13EBEBABFFCEC2D680EC6676BF9EE8FC7E0FE83C501D1BB76821E0F5A)
  
 
   如果已经注册了photoAssetAvailable回调，并且在Session开始之后又注册了photoAvailable回调，photoAssetAvailable和photoAvailable同时注册，会导致流被重启，仅photoAssetAvailable生效。
@@ -139,7 +139,7 @@ async function mediaLibRequestBuffer(photoAsset: photoAccessHelper.PhotoAsset, c
 
 
 
-#### 状态监听
+## 状态监听
 
 在相机应用开发过程中，可以随时监听拍照输出流状态，包括拍照流开始、拍照帧的开始与结束、拍照输出流的错误。
 

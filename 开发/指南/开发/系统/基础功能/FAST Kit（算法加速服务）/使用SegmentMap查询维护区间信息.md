@@ -1,21 +1,20 @@
 # 使用SegmentMap查询维护区间信息
 
-更新时间：2026-05-28 03:37:50
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fast-segment-map
 
 FAST Kit提供Segment Map用于查询维护区间信息，实现数据序列区间段的快速更新和快速查询。线段表（Segment Map）是一种用于高效处理区间段信息的数据结构，适用于需要频繁对数据序列的某个区间段进行统计或修改的场景。其典型操作包括单点修改、区间修改、区间查询等。
 
-线段表有多种实现方式，其中最常见的是使用二分树的方案，也被称为线段树（Segment Tree）。与直接遍历区间相比，线段表能将许多区间操作的时间复杂度从 
-![](assets/使用SegmentMap查询维护区间信息/file-20260514131319063-0.png)
- 优化至
+线段表有多种实现方式，其中最常见的是使用二分树的方案，也被称为线段树（Segment Tree）。与直接遍历区间相比，线段表能将许多区间操作的时间复杂度从 ![icon](assets/使用SegmentMap查询维护区间信息/file-20260514131319063-0.png) 优化至
 ![](assets/使用SegmentMap查询维护区间信息/file-20260514131319063-1.png)
 ，在处理大规模数据时优势显著，为构建高性能、响应迅速的应用程序提供数据结构基础。
 
 
-#### 接口说明
+## 接口说明
 
 具体API说明详见[接口文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/fast-kit-fast)。
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -31,7 +30,7 @@ FAST Kit提供Segment Map用于查询维护区间信息，实现数据序列区�
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 在CMake脚本中链接相关动态库。
 
   

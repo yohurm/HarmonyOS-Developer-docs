@@ -1,6 +1,6 @@
 # LoginPanel (华为账号Panel登录组件)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-api-loginpanel
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -12,7 +12,8 @@ LoginPanel需要配合[loginComponentManager](https://developer.huawei.com/consu
 **起始版本：** 4.1.0(11)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -22,7 +23,8 @@ import { LoginPanel, loginComponentManager } from '@kit.AccountKit';
  
   
 
-#### LoginPanel
+## LoginPanel
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -42,6 +44,7 @@ import { LoginPanel, loginComponentManager } from '@kit.AccountKit';
  
 **参数：**
   
+
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | show | boolean | 是 | @Link | 该参数用于控制LoginPanel组件是否展示。 false表示不展示该组件。 true表示展示该组件，当业务需要使用LoginPanel组件时设置值为true。 说明： - 该参数必须是@State装饰的局部变量。 - LoginPanel仅支持在页面中使用，弹框、子窗口等场景暂不支持。 |
@@ -51,7 +54,8 @@ import { LoginPanel, loginComponentManager } from '@kit.AccountKit';
  
   
 
-#### build
+### build
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -197,7 +201,7 @@ struct PreviewLoginPanelPage {
               appName: '应用名称'
             },
             privacyText: this.privacyText,
-            // 参考华为账号开发指南获取匿名手机号
+            // 此处匿名手机号仅作示例，请参考华为账号开发指南获取匿名手机号
             anonymousPhoneNumber: '139******99',
             loginType: loginComponentManager.LoginType.QUICK_LOGIN,
             // optionalLoginAreaAttr和optionalLoginButtonAttr同时存在时优先展示optionalLoginAreaAttr

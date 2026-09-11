@@ -1,9 +1,9 @@
 # AbilityStateData
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-abilitystatedata
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 AbilityStateData是Ability状态信息的数据结构。使用[on](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-appmanager#appmanageronapplicationstate14)注册生命周期变化监听后，可以通过[ApplicationStateObserver](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-applicationstateobserver)的onAbilityStateChanged回调的入参获取该数据结构。
 
@@ -12,9 +12,10 @@ AbilityStateData是Ability状态信息的数据结构。使用[on](https://devel
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { appManager } from '@kit.AbilityKit';
@@ -22,11 +23,13 @@ import { appManager } from '@kit.AbilityKit';
 
 
 
-#### AbilityStateData
+## AbilityStateData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -44,7 +47,11 @@ import { appManager } from '@kit.AbilityKit';
 
 
 
-#### UIAbility状态
+### UIAbility状态
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 值 | 说明 |
 | --- | --- |
@@ -58,7 +65,11 @@ import { appManager } from '@kit.AbilityKit';
 
 
 
-#### ExtensionAbility状态
+### ExtensionAbility状态
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 值 | 说明 |
 | --- | --- |
@@ -72,7 +83,11 @@ import { appManager } from '@kit.AbilityKit';
 
 
 
-#### UIExtensionAbility状态
+### UIExtensionAbility状态
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 值 | 说明 |
 | --- | --- |
@@ -85,7 +100,11 @@ import { appManager } from '@kit.AbilityKit';
 
 
 
-#### Ability状态
+### Ability状态
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 值 | 说明 |
 | --- | --- |
@@ -101,7 +120,11 @@ import { appManager } from '@kit.AbilityKit';
 
 
 
-#### Ability类型
+### Ability类型
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 值 | 说明 |
 | --- | --- |

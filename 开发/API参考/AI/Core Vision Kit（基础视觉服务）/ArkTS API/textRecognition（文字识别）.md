@@ -1,6 +1,6 @@
 # textRecognition（文字识别）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/core-vision-text-recognition-api
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -12,7 +12,8 @@
 **起始版本：** 4.0.0(10)
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -22,7 +23,8 @@ import { textRecognition } from '@kit.CoreVisionKit';
 
 
 
-#### TextRecognitionConfiguration
+## TextRecognitionConfiguration
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -34,6 +36,7 @@ import { textRecognition } from '@kit.CoreVisionKit';
 
 **起始版本：** 4.0.0(10)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | isDirectionDetectionSupported | boolean | 否 | 是 | 表示是否支持文字朝向检测。 true：表示支持朝向检测；false：表示不支持朝向检测。 默认是true，支持朝向检测。如果能判断当前图片是正向的，则可考虑将该属性设置为false，以提升性能。 |
@@ -41,7 +44,8 @@ import { textRecognition } from '@kit.CoreVisionKit';
 
 
 
-#### VisionInfo
+## VisionInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -53,6 +57,7 @@ import { textRecognition } from '@kit.CoreVisionKit';
 
 **起始版本：** 4.0.0(10)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | pixelMap | image.PixelMap | 是 | 否 | 待识别的图片。对于图片的要求请参见约束与限制。 |
@@ -60,7 +65,8 @@ import { textRecognition } from '@kit.CoreVisionKit';
 
 
 
-#### PixelPoint
+## PixelPoint
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -72,6 +78,7 @@ import { textRecognition } from '@kit.CoreVisionKit';
 
 **起始版本：** 4.0.0(10)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | x | number | 是 | 否 | 像素点横向x坐标。 |
@@ -80,7 +87,8 @@ import { textRecognition } from '@kit.CoreVisionKit';
 
 
 
-#### TextWord
+## TextWord
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -92,6 +100,7 @@ import { textRecognition } from '@kit.CoreVisionKit';
 
 **起始版本：** 4.0.0(10)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | value | string | 是 | 否 | 单词的文本内容。 |
@@ -100,7 +109,8 @@ import { textRecognition } from '@kit.CoreVisionKit';
 
 
 
-#### TextLine
+## TextLine
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -112,6 +122,7 @@ import { textRecognition } from '@kit.CoreVisionKit';
 
 **起始版本：** 4.0.0(10)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | value | string | 是 | 否 | 文本行的文本内容。 |
@@ -121,7 +132,8 @@ import { textRecognition } from '@kit.CoreVisionKit';
 
 
 
-#### TextBlock
+## TextBlock
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -133,6 +145,7 @@ import { textRecognition } from '@kit.CoreVisionKit';
 
 **起始版本：** 4.0.0(10)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | value | string | 是 | 否 | 段落的文本内容。 |
@@ -141,7 +154,8 @@ import { textRecognition } from '@kit.CoreVisionKit';
 
 
 
-#### TextRecognitionResult
+## TextRecognitionResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -153,6 +167,7 @@ import { textRecognition } from '@kit.CoreVisionKit';
 
 **起始版本：** 4.0.0(10)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | value | string | 是 | 否 | 所识别的文本内容。 |
@@ -161,7 +176,8 @@ import { textRecognition } from '@kit.CoreVisionKit';
 
 
 
-#### textRecognition.init
+## textRecognition.init
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -176,6 +192,7 @@ init(): Promise&lt;boolean&gt;
 **起始版本：** 5.0.0(12)
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -224,7 +241,8 @@ struct Page {
 
 
 
-#### textRecognition.release
+## textRecognition.release
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -239,6 +257,7 @@ release(): Promise&lt;void&gt;
 **起始版本：** 5.0.0(12)
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -287,7 +306,8 @@ struct Page {
 
 
 
-#### textRecognition.recognizeText
+## textRecognition.recognizeText
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -303,6 +323,7 @@ recognizeText(visionInfo: VisionInfo, callback: AsyncCallback&lt;TextRecognition
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | visionInfo | VisionInfo | 是 | 待识别的视觉信息。 |
@@ -312,6 +333,7 @@ recognizeText(visionInfo: VisionInfo, callback: AsyncCallback&lt;TextRecognition
 **错误码：**
 
 以下错误码的详细介绍请参见[Core Vision Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-core-vision)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -395,7 +417,8 @@ struct Page {
 
 
 
-#### textRecognition.recognizeText
+## textRecognition.recognizeText
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -411,6 +434,7 @@ recognizeText(visionInfo: VisionInfo, configuration ?: TextRecognitionConfigurat
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | visionInfo | VisionInfo | 是 | 待识别的视觉信息。 |
@@ -418,6 +442,7 @@ recognizeText(visionInfo: VisionInfo, configuration ?: TextRecognitionConfigurat
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -427,6 +452,7 @@ recognizeText(visionInfo: VisionInfo, configuration ?: TextRecognitionConfigurat
 **错误码：**
 
 以下错误码的详细介绍请参见[Core Vision Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-core-vision)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -505,7 +531,8 @@ struct Page {
 
 
 
-#### textRecognition.recognizeText
+## textRecognition.recognizeText
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -521,6 +548,7 @@ recognizeText(visionInfo: VisionInfo, configuration: TextRecognitionConfiguratio
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | visionInfo | VisionInfo | 是 | 待识别的视觉信息。 |
@@ -531,6 +559,7 @@ recognizeText(visionInfo: VisionInfo, configuration: TextRecognitionConfiguratio
 **错误码：**
 
 以下错误码的详细介绍请参见[Core Vision Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-core-vision)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -621,7 +650,8 @@ struct Page {
 
 
 
-#### textRecognition.getSupportedLanguages
+## textRecognition.getSupportedLanguages
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -637,6 +667,7 @@ getSupportedLanguages(): Promise<Array&lt;string&gt;>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;string&gt;> | Promise对象，返回所支持的语言类型列表。 |
@@ -645,6 +676,7 @@ getSupportedLanguages(): Promise<Array&lt;string&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[Core Vision Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-core-vision)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -659,20 +691,25 @@ import { textRecognition } from '@kit.CoreVisionKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
-// 获取支持的语言类型列表
-textRecognition.getSupportedLanguages().then((data: Array<string>) => {
-  let languageString = data.join(', ');
-  hilog.info(0x0000, 'OCRDemo', `Succeeded in obtaining the language: ${languageString}`);
-}, (err: BusinessError) => {
-  hilog.error(0x0000, 'OCRDemo', `Failed to obtain the language. Code: ${err.code}, message: ${err.message}`);
-});
-
 @Entry
 @Component
 struct Page {
+  @State supportedLanguages: string[] = [];
+
+  aboutToAppear() {
+    // 获取支持的语言类型列表
+    textRecognition.getSupportedLanguages().then((data: Array<string>) => {
+      this.supportedLanguages = data;
+      let languageString = data.join(', ');
+      hilog.info(0x0000, 'OCRDemo', `Succeeded in obtaining the language: ${languageString}`);
+    }, (err: BusinessError) => {
+      hilog.error(0x0000, 'OCRDemo', `Failed to obtain the language. Code: ${err.code}, message: ${err.message}`);
+    });
+  }
 
   build() {
-    Column(){
+    Column() {
+      Text(this.supportedLanguages.join(', '))
     }
   }
 }
@@ -680,7 +717,8 @@ struct Page {
 
 
 
-#### textRecognition.getSupportedLanguages
+## textRecognition.getSupportedLanguages
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -696,6 +734,7 @@ getSupportedLanguages(callback: AsyncCallback<Array&lt;string&gt;>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<Array&lt;string&gt;> | 是 | 回调函数，当识别成功时err为undefined，返回所支持的语言类型列表；否则为错误对象。 |
@@ -704,6 +743,7 @@ getSupportedLanguages(callback: AsyncCallback<Array&lt;string&gt;>): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Core Vision Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-core-vision)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -718,21 +758,26 @@ import { textRecognition } from '@kit.CoreVisionKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
-// 获取支持的语言类型列表
-textRecognition.getSupportedLanguages((error: BusinessError, data: Array<string>) => {
-  if (!error) {
-    hilog.info(0x0000, 'OCRDemo', `Succeeded in obtaining the language: ${data}`);
-  } else {
-    hilog.error(0x0000, 'OCRDemo', `Failed to obtain the language. Code: ${error.code}, message: ${error.message}`);
-  }
-});
-
 @Entry
 @Component
 struct Page {
+  @State supportedLanguages: string[] = [];
+
+  aboutToAppear() {
+    // 获取支持的语言类型列表
+    textRecognition.getSupportedLanguages((error: BusinessError, data: Array<string>) => {
+      if (!error) {
+        this.supportedLanguages = data;
+        hilog.info(0x0000, 'OCRDemo', `Succeeded in obtaining the language: ${data}`);
+      } else {
+        hilog.error(0x0000, 'OCRDemo', `Failed to obtain the language. Code: ${error.code}, message: ${error.message}`);
+      }
+    });
+  }
 
   build() {
-    Column(){
+    Column() {
+      Text(this.supportedLanguages.join(', '))
     }
   }
 }
@@ -740,9 +785,11 @@ struct Page {
 
 
 
-#### 语言类型列表
+## 语言类型列表
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
+
 
 | 语言（英） | 语言（中） |
 | --- | --- |

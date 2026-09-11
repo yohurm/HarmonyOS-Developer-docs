@@ -1,9 +1,9 @@
 # postCardAction
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-postcardaction
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于卡片内部和提供方应用间的交互，当前支持router、message和call三种类型的事件，仅在卡片中可以调用。
 
@@ -12,9 +12,10 @@
 
 
 
-#### postCardAction
+## postCardAction
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 postCardAction(component: Object, action: Object): void
 
@@ -30,6 +31,7 @@ postCardAction(component: Object, action: Object): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | component | Object | 是 | 当前自定义组件的实例，通常传入this。 |
@@ -37,6 +39,7 @@ postCardAction(component: Object, action: Object): void
 
 
 action参数说明：
+
 
 | 参数名 | 类型 | 必填 | 取值说明 |
 | --- | --- | --- | --- |

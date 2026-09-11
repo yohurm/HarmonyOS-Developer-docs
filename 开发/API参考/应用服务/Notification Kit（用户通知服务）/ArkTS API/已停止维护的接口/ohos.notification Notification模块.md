@@ -1,20 +1,21 @@
 # @ohos.notification (Notification模块)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-notification
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供通知管理的能力，包括发布、取消发布通知，创建、获取、移除通知通道，订阅、取消订阅通知，获取通知的使能状态、角标使能状态，获取通知的相关信息等。
 
 > [!NOTE]
-> 从API version 9开始，该模块不再维护，建议使用 @ohos.notificationManager 替代。 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 通知订阅和取消订阅仅对系统应用开放。
+> 从API version 9开始，该模块不再维护，建议使用 @ohos.notificationManager 替代。 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 通知订阅 和取消订阅仅对系统应用开放。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import Notification from '@ohos.notification';
@@ -22,9 +23,10 @@ import Notification from '@ohos.notification';
 
 
 
-#### Notification.publish
+## Notification.publish
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 publish(request: NotificationRequest, callback: AsyncCallback&lt;void&gt;): void
 
@@ -33,6 +35,7 @@ publish(request: NotificationRequest, callback: AsyncCallback&lt;void&gt;): void
 **系统能力**：SystemCapability.Notification.Notification
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -71,9 +74,10 @@ Notification.publish(notificationRequest, publishCallback);
 
 
 
-#### Notification.publish
+## Notification.publish
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 publish(request: NotificationRequest): Promise&lt;void&gt;
 
@@ -83,12 +87,14 @@ publish(request: NotificationRequest): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | NotificationRequest | 是 | 用于设置要发布通知的内容和相关配置信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -122,9 +128,10 @@ Notification.publish(notificationRequest).then(() => {
 
 
 
-#### Notification.cancel
+## Notification.cancel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancel(id: number, label: string, callback: AsyncCallback&lt;void&gt;): void
 
@@ -133,6 +140,7 @@ cancel(id: number, label: string, callback: AsyncCallback&lt;void&gt;): void
 **系统能力**：SystemCapability.Notification.Notification
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -159,9 +167,10 @@ Notification.cancel(0, "label", cancelCallback);
 
 
 
-#### Notification.cancel
+## Notification.cancel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancel(id: number, label?: string): Promise&lt;void&gt;
 
@@ -171,6 +180,7 @@ cancel(id: number, label?: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | number | 是 | 通知ID。 |
@@ -178,6 +188,7 @@ cancel(id: number, label?: string): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -198,9 +209,10 @@ Notification.cancel(0).then(() => {
 
 
 
-#### Notification.cancel
+## Notification.cancel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancel(id: number, callback: AsyncCallback&lt;void&gt;): void
 
@@ -209,6 +221,7 @@ cancel(id: number, callback: AsyncCallback&lt;void&gt;): void
 **系统能力**：SystemCapability.Notification.Notification
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -234,9 +247,10 @@ Notification.cancel(0, cancelCallback);
 
 
 
-#### Notification.cancelAll
+## Notification.cancelAll
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancelAll(callback: AsyncCallback&lt;void&gt;): void
 
@@ -245,6 +259,7 @@ cancelAll(callback: AsyncCallback&lt;void&gt;): void
 **系统能力**：SystemCapability.Notification.Notification
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -269,9 +284,10 @@ Notification.cancelAll(cancelAllCallback);
 
 
 
-#### Notification.cancelAll
+## Notification.cancelAll
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancelAll(): Promise&lt;void&gt;
 
@@ -280,6 +296,7 @@ cancelAll(): Promise&lt;void&gt;
 **系统能力**：SystemCapability.Notification.Notification
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -300,9 +317,10 @@ Notification.cancelAll().then(() => {
 
 
 
-#### Notification.addSlot
+## Notification.addSlot
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addSlot(type: SlotType, callback: AsyncCallback&lt;void&gt;): void
 
@@ -311,6 +329,7 @@ addSlot(type: SlotType, callback: AsyncCallback&lt;void&gt;): void
 **系统能力**：SystemCapability.Notification.Notification
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -336,9 +355,10 @@ Notification.addSlot(Notification.SlotType.SOCIAL_COMMUNICATION, addSlotCallBack
 
 
 
-#### Notification.addSlot
+## Notification.addSlot
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addSlot(type: SlotType): Promise&lt;void&gt;
 
@@ -348,12 +368,14 @@ addSlot(type: SlotType): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SlotType | 是 | 要创建的通知通道的类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -374,9 +396,10 @@ Notification.addSlot(Notification.SlotType.SOCIAL_COMMUNICATION).then(() => {
 
 
 
-#### Notification.getSlot
+## Notification.getSlot
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSlot(slotType: SlotType, callback: AsyncCallback&lt;NotificationSlot&gt;): void
 
@@ -385,6 +408,7 @@ getSlot(slotType: SlotType, callback: AsyncCallback&lt;NotificationSlot&gt;): vo
 **系统能力**：SystemCapability.Notification.Notification
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -411,9 +435,10 @@ Notification.getSlot(slotType, getSlotCallback);
 
 
 
-#### Notification.getSlot
+## Notification.getSlot
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSlot(slotType: SlotType): Promise&lt;NotificationSlot&gt;
 
@@ -423,12 +448,14 @@ getSlot(slotType: SlotType): Promise&lt;NotificationSlot&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | slotType | SlotType | 是 | 通知渠道类型，目前分为社交通信、服务提醒、内容咨询和其他类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -450,9 +477,10 @@ Notification.getSlot(slotType).then((data) => {
 
 
 
-#### Notification.getSlots
+## Notification.getSlots
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSlots(callback: AsyncCallback<Array&lt;NotificationSlot&gt;>): void
 
@@ -461,6 +489,7 @@ getSlots(callback: AsyncCallback<Array&lt;NotificationSlot&gt;>): void
 **系统能力**：SystemCapability.Notification.Notification
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -485,9 +514,10 @@ Notification.getSlots(getSlotsCallback);
 
 
 
-#### Notification.getSlots
+## Notification.getSlots
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSlots(): Promise<Array&lt;NotificationSlot&gt;>
 
@@ -496,6 +526,7 @@ getSlots(): Promise<Array&lt;NotificationSlot&gt;>
 **系统能力**：SystemCapability.Notification.Notification
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -516,9 +547,10 @@ Notification.getSlots().then((data) => {
 
 
 
-#### Notification.removeSlot
+## Notification.removeSlot
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeSlot(slotType: SlotType, callback: AsyncCallback&lt;void&gt;): void
 
@@ -527,6 +559,7 @@ removeSlot(slotType: SlotType, callback: AsyncCallback&lt;void&gt;): void
 **系统能力**：SystemCapability.Notification.Notification
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -553,9 +586,10 @@ Notification.removeSlot(slotType, removeSlotCallback);
 
 
 
-#### Notification.removeSlot
+## Notification.removeSlot
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeSlot(slotType: SlotType): Promise&lt;void&gt;
 
@@ -565,12 +599,14 @@ removeSlot(slotType: SlotType): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | slotType | SlotType | 是 | 通知渠道类型,目前分为社交通信、服务提醒、内容咨询和其他类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -592,9 +628,10 @@ Notification.removeSlot(slotType).then(() => {
 
 
 
-#### Notification.removeAllSlots
+## Notification.removeAllSlots
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeAllSlots(callback: AsyncCallback&lt;void&gt;): void
 
@@ -603,6 +640,7 @@ removeAllSlots(callback: AsyncCallback&lt;void&gt;): void
 **系统能力**：SystemCapability.Notification.Notification
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -626,9 +664,10 @@ Notification.removeAllSlots(removeAllCallBack);
 
 
 
-#### Notification.removeAllSlots
+## Notification.removeAllSlots
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeAllSlots(): Promise&lt;void&gt;
 
@@ -637,6 +676,7 @@ removeAllSlots(): Promise&lt;void&gt;
 **系统能力**：SystemCapability.Notification.Notification
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -657,9 +697,10 @@ Notification.removeAllSlots().then(() => {
 
 
 
-#### Notification.getActiveNotificationCount
+## Notification.getActiveNotificationCount
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getActiveNotificationCount(callback: AsyncCallback&lt;number&gt;): void
 
@@ -668,6 +709,7 @@ getActiveNotificationCount(callback: AsyncCallback&lt;number&gt;): void
 **系统能力**：SystemCapability.Notification.Notification
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -692,9 +734,10 @@ Notification.getActiveNotificationCount(getActiveNotificationCountCallback);
 
 
 
-#### Notification.getActiveNotificationCount
+## Notification.getActiveNotificationCount
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getActiveNotificationCount(): Promise&lt;number&gt;
 
@@ -703,6 +746,7 @@ getActiveNotificationCount(): Promise&lt;number&gt;
 **系统能力**：SystemCapability.Notification.Notification
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -723,9 +767,10 @@ Notification.getActiveNotificationCount().then((data: number) => {
 
 
 
-#### Notification.getActiveNotifications
+## Notification.getActiveNotifications
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getActiveNotifications(callback: AsyncCallback<Array&lt;NotificationRequest&gt;>): void
 
@@ -734,6 +779,7 @@ getActiveNotifications(callback: AsyncCallback<Array&lt;NotificationRequest&gt;>
 **系统能力**：SystemCapability.Notification.Notification
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -759,9 +805,10 @@ Notification.getActiveNotifications(getActiveNotificationsCallback);
 
 
 
-#### Notification.getActiveNotifications
+## Notification.getActiveNotifications
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getActiveNotifications(): Promise<Array<[NotificationRequest](#notificationrequest)>>
 
@@ -770,6 +817,7 @@ getActiveNotifications(): Promise<Array<[NotificationRequest](#notificationreque
 **系统能力**：SystemCapability.Notification.Notification
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -791,9 +839,10 @@ Notification.getActiveNotifications().then((data: NotificationManager.Notificati
 
 
 
-#### Notification.cancelGroup8+
+## Notification.cancelGroup8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancelGroup(groupName: string, callback: AsyncCallback&lt;void&gt;): void
 
@@ -802,6 +851,7 @@ cancelGroup(groupName: string, callback: AsyncCallback&lt;void&gt;): void
 **系统能力**：SystemCapability.Notification.Notification
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -829,9 +879,10 @@ Notification.cancelGroup(groupName, cancelGroupCallback);
 
 
 
-#### Notification.cancelGroup8+
+## Notification.cancelGroup8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancelGroup(groupName: string): Promise&lt;void&gt;
 
@@ -841,12 +892,14 @@ cancelGroup(groupName: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | groupName | string | 是 | 通知组名称。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -868,17 +921,19 @@ Notification.cancelGroup(groupName).then(() => {
 
 
 
-#### Notification.isSupportTemplate8+
+## Notification.isSupportTemplate8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isSupportTemplate(templateName: string, callback: AsyncCallback&lt;boolean&gt;): void
 
-在使用[通知模板](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-notification-notificationtemplate)发布通知前，可以通过该接口查询是否支持对应的通知模板。使用callback异步回调。
+在使用通知模板[NotificationTemplate](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-notification-notificationtemplate)发布通知前，可以通过该接口查询是否支持对应的通知模板。使用callback异步回调。
 
 **系统能力**：SystemCapability.Notification.Notification
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -905,17 +960,19 @@ Notification.isSupportTemplate(templateName, isSupportTemplateCallback);
 
 
 
-#### Notification.isSupportTemplate8+
+## Notification.isSupportTemplate8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isSupportTemplate(templateName: string): Promise&lt;boolean&gt;
 
-在使用[通知模板](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-notification-notificationtemplate)发布通知前，可以通过该接口查询是否支持对应的通知模板。使用callback异步回调。
+在使用通知模板[NotificationTemplate](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-notification-notificationtemplate)发布通知前，可以通过该接口查询是否支持对应的通知模板。使用callback异步回调。
 
 **系统能力**：SystemCapability.Notification.Notification
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -923,6 +980,7 @@ isSupportTemplate(templateName: string): Promise&lt;boolean&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -944,9 +1002,10 @@ Notification.isSupportTemplate(templateName).then((data: boolean) => {
 
 
 
-#### Notification.requestEnableNotification8+
+## Notification.requestEnableNotification8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestEnableNotification(callback: AsyncCallback&lt;void&gt;): void
 
@@ -955,6 +1014,7 @@ requestEnableNotification(callback: AsyncCallback&lt;void&gt;): void
 **系统能力**：SystemCapability.Notification.Notification
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -979,9 +1039,10 @@ Notification.requestEnableNotification(requestEnableNotificationCallback);
 
 
 
-#### Notification.requestEnableNotification8+
+## Notification.requestEnableNotification8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestEnableNotification(): Promise&lt;void&gt;
 
@@ -990,6 +1051,7 @@ requestEnableNotification(): Promise&lt;void&gt;
 **系统能力**：SystemCapability.Notification.Notification
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1010,17 +1072,19 @@ Notification.requestEnableNotification().then(() => {
 
 
 
-#### Notification.isDistributedEnabled8+
+## Notification.isDistributedEnabled8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 isDistributedEnabled(callback: AsyncCallback&lt;boolean&gt;): void
 
-查询设备是否支持分布式通知（Callback形式）。
+查询设备是否支持[分布式通知](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#distributed-notification分布式通知)（Callback形式）。
 
 **系统能力**：SystemCapability.Notification.Notification
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1045,17 +1109,19 @@ Notification.isDistributedEnabled(isDistributedEnabledCallback);
 
 
 
-#### Notification.isDistributedEnabled8+
+## Notification.isDistributedEnabled8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 isDistributedEnabled(): Promise&lt;boolean&gt;
 
-查询设备是否支持分布式通知（Promise形式）。
+查询设备是否支持[分布式通知](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#distributed-notification分布式通知)（Promise形式）。
 
 **系统能力**：SystemCapability.Notification.Notification
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1076,11 +1142,13 @@ Notification.isDistributedEnabled().then((data: boolean) => {
 
 
 
-#### ContentType
+## ContentType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1093,11 +1161,13 @@ Notification.isDistributedEnabled().then((data: boolean) => {
 
 
 
-#### SlotLevel
+## SlotLevel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1110,14 +1180,16 @@ Notification.isDistributedEnabled().then((data: boolean) => {
 
 
 
-#### BundleOptiondeprecated
+## BundleOptiondeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.Notification.Notification
 
 > [!NOTE]
 > 从 API version 7开始支持，从API version 9开始废弃。建议使用 notificationManager.BundleOption 替代。
+
 
 
 | 名称 | 类型 | 必填 | 说明 |
@@ -1128,14 +1200,16 @@ Notification.isDistributedEnabled().then((data: boolean) => {
 
 
 
-#### NotificationKeydeprecated
+## NotificationKeydeprecated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.Notification.Notification
 
 > [!NOTE]
 > 从 API version 7开始支持，从API version 9开始废弃。
+
 
 
 | 名称 | 类型 | 可读 | 可写 | 说明 |
@@ -1146,11 +1220,13 @@ Notification.isDistributedEnabled().then((data: boolean) => {
 
 
 
-#### SlotType
+## SlotType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1163,13 +1239,15 @@ Notification.isDistributedEnabled().then((data: boolean) => {
 
 
 
-#### NotificationActionButton
+## NotificationActionButton
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述通知中显示的操作按钮。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 名称 | 类型 | 可读 | 可写 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1181,13 +1259,15 @@ Notification.isDistributedEnabled().then((data: boolean) => {
 
 
 
-#### NotificationBasicContent
+## NotificationBasicContent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述普通文本通知。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 名称 | 类型 | 可读 | 可写 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1198,13 +1278,15 @@ Notification.isDistributedEnabled().then((data: boolean) => {
 
 
 
-#### NotificationLongTextContent
+## NotificationLongTextContent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述长文本通知。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 名称 | 类型 | 可读 | 可写 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1218,13 +1300,15 @@ Notification.isDistributedEnabled().then((data: boolean) => {
 
 
 
-#### NotificationMultiLineContent
+## NotificationMultiLineContent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述多行文本通知。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 名称 | 类型 | 可读 | 可写 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1238,13 +1322,15 @@ Notification.isDistributedEnabled().then((data: boolean) => {
 
 
 
-#### NotificationPictureContent
+## NotificationPictureContent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述附有图片的通知。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 名称 | 类型 | 可读 | 可写 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1258,13 +1344,15 @@ Notification.isDistributedEnabled().then((data: boolean) => {
 
 
 
-#### NotificationContent
+## NotificationContent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述通知类型。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 名称 | 类型 | 可读 | 可写 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1277,13 +1365,15 @@ Notification.isDistributedEnabled().then((data: boolean) => {
 
 
 
-#### NotificationRequest
+## NotificationRequest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述通知的请求。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 名称 | 类型 | 可读 | 可写 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1324,13 +1414,15 @@ Notification.isDistributedEnabled().then((data: boolean) => {
 
 
 
-#### DistributedOptions8+
+## DistributedOptions8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述分布式选项。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 名称 | 类型 | 可读 | 可写 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1341,13 +1433,15 @@ Notification.isDistributedEnabled().then((data: boolean) => {
 
 
 
-#### NotificationSlot
+## NotificationSlot
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述通知槽
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 名称 | 类型 | 可读 | 可写 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1367,13 +1461,15 @@ Notification.isDistributedEnabled().then((data: boolean) => {
 
 
 
-#### NotificationTemplate8+
+## NotificationTemplate8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通知模板。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 名称 | 类型 | 可读 | 可写 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1383,13 +1479,15 @@ Notification.isDistributedEnabled().then((data: boolean) => {
 
 
 
-#### NotificationUserInput8+
+## NotificationUserInput8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 保存用户输入的通知消息。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 名称 | 类型 | 可读 | 可写 | 说明 |
 | --- | --- | --- | --- | --- |

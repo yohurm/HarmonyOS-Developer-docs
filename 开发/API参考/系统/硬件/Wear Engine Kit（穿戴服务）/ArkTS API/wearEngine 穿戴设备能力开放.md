@@ -1,6 +1,6 @@
 # wearEngine（穿戴设备能力开放）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/wearengine_api
 **支持设备：** Phone | Tablet | Wearable
@@ -18,7 +18,8 @@
 **起始版本**：5.0.0(12)
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -28,9 +29,10 @@ import { wearEngine } from '@kit.WearEngine';
 
 
 
-#### wearEngine.getAuthClient
+## wearEngine.getAuthClient
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 getAuthClient(context: common.Context): AuthClient
 
@@ -46,12 +48,14 @@ getAuthClient(context: common.Context): AuthClient
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | Context上下文，仅支持包含connectServiceExtensionAbility方法的Context（例：UIAbilityContext）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -61,6 +65,7 @@ getAuthClient(context: common.Context): AuthClient
 **错误码：**
 
 以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wearengine)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -80,9 +85,10 @@ console.info(`Succeeded in getting auth client`);
 
 
 
-#### AuthClient
+## AuthClient
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 权限管理客户端类，由[wearEngine.getAuthClient](#wearenginegetauthclient)返回得到。
 
@@ -94,9 +100,10 @@ console.info(`Succeeded in getting auth client`);
 
 
 
-#### requestAuthorization
+### requestAuthorization
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 requestAuthorization(request: AuthorizationRequest): Promise&lt;AuthorizationResponse&gt;
 
@@ -112,12 +119,14 @@ requestAuthorization(request: AuthorizationRequest): Promise&lt;AuthorizationRes
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | AuthorizationRequest | 是 | 权限请求类。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -127,6 +136,7 @@ requestAuthorization(request: AuthorizationRequest): Promise&lt;AuthorizationRes
 **错误码：**
 
 以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wearengine)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -162,9 +172,10 @@ authClient.requestAuthorization(request).then(result => {
 
 
 
-#### getAuthorization
+### getAuthorization
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 getAuthorization(): Promise&lt;AuthorizationResponse&gt;
 
@@ -180,6 +191,7 @@ getAuthorization(): Promise&lt;AuthorizationResponse&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;AuthorizationResponse&gt; | Promise对象，返回权限响应类。 |
@@ -188,6 +200,7 @@ getAuthorization(): Promise&lt;AuthorizationResponse&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wearengine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -218,9 +231,10 @@ authClient.getAuthorization().then(result => {
 
 
 
-#### AuthorizationBase
+## AuthorizationBase
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 权限控制模块输入输出的基类。
 
@@ -230,6 +244,7 @@ authClient.getAuthorization().then(result => {
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | permissions | Permission[] | 否 | 否 | 权限枚举类型的数组。 |
@@ -237,9 +252,10 @@ authClient.getAuthorization().then(result => {
 
 
 
-#### Permission
+## Permission
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 权限枚举类型。
 
@@ -248,6 +264,7 @@ authClient.getAuthorization().then(result => {
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -259,9 +276,10 @@ authClient.getAuthorization().then(result => {
 
 
 
-#### AuthorizationRequest
+## AuthorizationRequest
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 权限请求类，继承自[AuthorizationBase](#authorizationbase)。
 
@@ -273,9 +291,10 @@ authClient.getAuthorization().then(result => {
 
 
 
-#### AuthorizationResponse
+## AuthorizationResponse
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 权限响应类，继承自[AuthorizationBase](#authorizationbase)。
 
@@ -287,7 +306,8 @@ authClient.getAuthorization().then(result => {
 
 
 
-#### wearEngine.getDeviceClient
+## wearEngine.getDeviceClient
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -303,12 +323,14 @@ getDeviceClient(context: common.Context): DeviceClient
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | Context上下文，仅支持包含connectServiceExtensionAbility方法的Context（例：UIAbilityContext）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -318,6 +340,7 @@ getDeviceClient(context: common.Context): DeviceClient
 **错误码：**
 
 以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wearengine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -336,7 +359,8 @@ console.info(`Succeeded in getting device client.`);
 
 
 
-#### DeviceClient
+## DeviceClient
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -350,7 +374,8 @@ Device客户端类。由接口[wearEngine.getDeviceClient](#wearenginegetdevicec
 
 
 
-#### getConnectedDevices
+### getConnectedDevices
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -366,6 +391,7 @@ getConnectedDevices(): Promise<Device[]>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Device[]> | Promise对象，返回设备列表。 |
@@ -374,6 +400,7 @@ getConnectedDevices(): Promise<Device[]>
 **错误码：**
 
 以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wearengine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -401,7 +428,8 @@ deviceClient.getConnectedDevices().then((devices) => {
 
 
 
-#### Device
+## Device
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -415,7 +443,11 @@ deviceClient.getConnectedDevices().then((devices) => {
 
 
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | Tablet | Wearable
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -430,9 +462,10 @@ deviceClient.getConnectedDevices().then((devices) => {
 
 
 
-#### isWearEngineCapabilitySupported
+### isWearEngineCapabilitySupported
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 isWearEngineCapabilitySupported(capability: WearEngineCapability): Promise&lt;boolean&gt;
 
@@ -448,12 +481,14 @@ isWearEngineCapabilitySupported(capability: WearEngineCapability): Promise&lt;bo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | capability | WearEngineCapability | 是 | 指定的WearEngine能力。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -463,6 +498,7 @@ isWearEngineCapabilitySupported(capability: WearEngineCapability): Promise&lt;bo
 **错误码：**
 
 以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wearengine)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -506,9 +542,10 @@ try {
 
 
 
-#### isDeviceCapabilitySupported
+### isDeviceCapabilitySupported
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 isDeviceCapabilitySupported(capability: DeviceCapability): Promise&lt;boolean&gt;
 
@@ -524,12 +561,14 @@ isDeviceCapabilitySupported(capability: DeviceCapability): Promise&lt;boolean&gt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | capability | DeviceCapability | 是 | 指定的Device能力。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -539,6 +578,7 @@ isDeviceCapabilitySupported(capability: DeviceCapability): Promise&lt;boolean&gt
 **错误码：**
 
 以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wearengine)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -581,9 +621,10 @@ try {
 
 
 
-#### getSerialNumber
+### getSerialNumber
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 getSerialNumber(): Promise&lt;string&gt;
 
@@ -599,6 +640,7 @@ getSerialNumber(): Promise&lt;string&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回设备SN。 |
@@ -607,6 +649,7 @@ getSerialNumber(): Promise&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wearengine)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -649,9 +692,10 @@ try {
 
 
 
-#### WearEngineCapability
+## WearEngineCapability
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 WearEngine能力集枚举类型。
 
@@ -660,6 +704,7 @@ WearEngine能力集枚举类型。
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -671,9 +716,10 @@ WearEngine能力集枚举类型。
 
 
 
-#### DeviceCapability
+## DeviceCapability
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 Device能力集枚举类型。
 
@@ -683,6 +729,7 @@ Device能力集枚举类型。
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | APP_INSTALLATION | 14 | 支持应用安装能力。 |
@@ -691,9 +738,10 @@ Device能力集枚举类型。
 
 
 
-#### DeviceCategory
+## DeviceCategory
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 设备类型枚举类。
 
@@ -702,6 +750,7 @@ Device能力集枚举类型。
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -713,9 +762,10 @@ Device能力集枚举类型。
 
 
 
-#### OsCategory
+## OsCategory
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Wearable
 
 设备的操作系统类型枚举类。
 
@@ -724,6 +774,7 @@ Device能力集枚举类型。
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.1.0(18)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -734,7 +785,8 @@ Device能力集枚举类型。
 
 
 
-#### wearEngine.getMonitorClient
+## wearEngine.getMonitorClient
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -752,12 +804,14 @@ getMonitorClient(context: common.Context): MonitorClient
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | Context上下文，仅支持包含connectServiceExtensionAbility方法的Context（例：UIAbilityContext）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -767,6 +821,7 @@ getMonitorClient(context: common.Context): MonitorClient
 **错误码：**
 
 以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wearengine)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -786,7 +841,8 @@ console.info(`Succeeded in getting monitor client.`);
 
 
 
-#### MonitorClient
+## MonitorClient
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -800,9 +856,10 @@ Monitor客户端类。由接口[wearEngine.getMonitorClient](#wearenginegetmonit
 
 
 
-#### queryStatus
+### queryStatus
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 queryStatus(deviceRandomId: string, item: MonitorItem): Promise&lt;MonitorData&gt;
 
@@ -818,6 +875,7 @@ queryStatus(deviceRandomId: string, item: MonitorItem): Promise&lt;MonitorData&g
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceRandomId | string | 是 | Device的随机标识符，用于指定本次查询的设备。 |
@@ -825,6 +883,7 @@ queryStatus(deviceRandomId: string, item: MonitorItem): Promise&lt;MonitorData&g
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -834,6 +893,7 @@ queryStatus(deviceRandomId: string, item: MonitorItem): Promise&lt;MonitorData&g
 **错误码：**
 
 以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wearengine)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -880,7 +940,8 @@ try {
 
 
 
-#### subscribeEvent
+### subscribeEvent
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -898,6 +959,7 @@ subscribeEvent(deviceRandomId: string, type: MonitorEvent, callback: Callback&lt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceRandomId | string | 是 | Device的随机标识符，用于指定本次订阅的设备。 |
@@ -907,6 +969,7 @@ subscribeEvent(deviceRandomId: string, type: MonitorEvent, callback: Callback&lt
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -915,6 +978,7 @@ subscribeEvent(deviceRandomId: string, type: MonitorEvent, callback: Callback&lt
 **错误码：**
 
 以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wearengine)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -968,7 +1032,8 @@ try {
 
 
 
-#### unsubscribeEvent
+### unsubscribeEvent
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -986,6 +1051,7 @@ unsubscribeEvent(deviceRandomId: string, type: MonitorEvent, callback: Callback&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceRandomId | string | 是 | Device的随机标识符，用于指定本次取消订阅的设备。 |
@@ -995,6 +1061,7 @@ unsubscribeEvent(deviceRandomId: string, type: MonitorEvent, callback: Callback&
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1003,6 +1070,7 @@ unsubscribeEvent(deviceRandomId: string, type: MonitorEvent, callback: Callback&
 **错误码：**
 
 以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wearengine)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1067,9 +1135,10 @@ try {
 
 
 
-#### MonitorItem
+## MonitorItem
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 设备状态的枚举类。
 
@@ -1078,6 +1147,7 @@ try {
 **系统能力：** SystemCapability.Health.WearEngine
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1091,7 +1161,8 @@ try {
 
 
 
-#### MonitorEvent
+## MonitorEvent
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1102,6 +1173,7 @@ try {
 **系统能力：** SystemCapability.Health.WearEngine
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1115,7 +1187,8 @@ try {
 
 
 
-#### MonitorData
+## MonitorData
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1127,6 +1200,7 @@ try {
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | code | number | 否 | 否 | 当使用queryStatus接口查询设备状态时，返回值含义请见MonitorItem。 当使用subscribeEvent接口订阅监听时，返回值含义请见MonitorEvent。 |
@@ -1135,7 +1209,8 @@ try {
 
 
 
-#### MonitorEventData
+## MonitorEventData
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1147,6 +1222,7 @@ try {
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | event | MonitorEvent | 否 | 否 | 回调函数注册的订阅监听事件枚举值。 |
@@ -1155,7 +1231,8 @@ try {
 
 
 
-#### wearEngine.getP2pClient
+## wearEngine.getP2pClient
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1171,12 +1248,14 @@ getP2pClient(context: common.Context): P2pClient
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | Context上下文，仅支持包含connectServiceExtensionAbility方法的Context（例：UIAbilityContext）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1186,6 +1265,7 @@ getP2pClient(context: common.Context): P2pClient
 **错误码：**
 
 以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wearengine)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1204,7 +1284,8 @@ console.info(`Succeeded in getting p2p client.`);
 
 
 
-#### P2pClient
+## P2pClient
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1218,7 +1299,8 @@ P2p客户端类。由接口[wearEngine.getP2pClient](#wearenginegetp2pclient)返
 
 
 
-#### isRemoteAppInstalled
+### isRemoteAppInstalled
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1234,6 +1316,7 @@ isRemoteAppInstalled(deviceRandomId: string, remoteBundleName: string): Promise&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceRandomId | string | 是 | Device的随机标识符，用于指定本次订阅的设备。 |
@@ -1241,6 +1324,7 @@ isRemoteAppInstalled(deviceRandomId: string, remoteBundleName: string): Promise&
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1250,6 +1334,7 @@ isRemoteAppInstalled(deviceRandomId: string, remoteBundleName: string): Promise&
 **错误码：**
 
 以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wearengine)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1308,7 +1393,8 @@ try {
 
 
 
-#### getRemoteAppVersion
+### getRemoteAppVersion
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1326,6 +1412,7 @@ getRemoteAppVersion(deviceRandomId: string, remoteBundleName: string): Promise&l
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceRandomId | string | 是 | Device的随机标识符，用于指定本次订阅的设备。 |
@@ -1333,6 +1420,7 @@ getRemoteAppVersion(deviceRandomId: string, remoteBundleName: string): Promise&l
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1342,6 +1430,7 @@ getRemoteAppVersion(deviceRandomId: string, remoteBundleName: string): Promise&l
 **错误码：**
 
 以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wearengine)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1401,9 +1490,10 @@ try {
 
 
 
-#### startRemoteApp
+### startRemoteApp
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 startRemoteApp(deviceRandomId: string, remoteBundleName: string, transformLocalBundleName?: boolean): Promise&lt;P2pResult&gt;
 
@@ -1419,6 +1509,7 @@ startRemoteApp(deviceRandomId: string, remoteBundleName: string, transformLocalB
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceRandomId | string | 是 | Device的随机标识符，用于指定本次订阅的设备。 |
@@ -1428,6 +1519,7 @@ startRemoteApp(deviceRandomId: string, remoteBundleName: string, transformLocalB
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;P2pResult&gt; | Promise对象，返回P2p通信的结果。 属性中的code字段表示本次拉起应用的结果。其中，返回203表示穿戴设备应用未在module.json5文件的metadata字段中正确配置wearEngineRemoteAppNameList属性，配置方式请参考对端应用通过startRemoteApp拉起穿戴侧应用。 |
@@ -1436,6 +1528,7 @@ startRemoteApp(deviceRandomId: string, remoteBundleName: string, transformLocalB
 **错误码：**
 
 以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wearengine)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1496,9 +1589,10 @@ try {
 
 
 
-#### startRemoteApp
+### startRemoteApp
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Wearable
 
 startRemoteApp(deviceRandomId: string, remoteApp: AppInfo, startConfig: StartConfig): Promise&lt;P2pResult&gt;
 
@@ -1514,6 +1608,7 @@ startRemoteApp(deviceRandomId: string, remoteApp: AppInfo, startConfig: StartCon
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceRandomId | string | 是 | Device的随机标识符，用于指定本次订阅的设备。 |
@@ -1523,6 +1618,7 @@ startRemoteApp(deviceRandomId: string, remoteApp: AppInfo, startConfig: StartCon
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;P2pResult&gt; | Promise对象，返回P2pResult对象。 其属性中的code字段表示本次消息发送的结果。其中，返回203表示entryName不符合规范要求。 |
@@ -1531,6 +1627,7 @@ startRemoteApp(deviceRandomId: string, remoteApp: AppInfo, startConfig: StartCon
 **错误码：**
 
 以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wearengine)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1588,7 +1685,8 @@ try {
 
 
 
-#### sendMessage
+### sendMessage
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1604,6 +1702,7 @@ sendMessage(deviceRandomId: string, appParam: P2pAppParam, message: P2pMessage):
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceRandomId | string | 是 | Device的随机标识符，用于指定本次订阅的设备。 |
@@ -1613,6 +1712,7 @@ sendMessage(deviceRandomId: string, appParam: P2pAppParam, message: P2pMessage):
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;P2pResult&gt; | Promise对象，返回P2pResult对象。 其属性中的code字段表示本次消息发送的结果。 |
@@ -1621,6 +1721,7 @@ sendMessage(deviceRandomId: string, appParam: P2pAppParam, message: P2pMessage):
 **错误码：**
 
 以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wearengine)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1695,7 +1796,8 @@ try {
 
 
 
-#### transferFile
+### transferFile
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1711,6 +1813,7 @@ transferFile(deviceRandomId: string, appParam: P2pAppParam, file: P2pFile, callb
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceRandomId | string | 是 | Device的随机标识符，用于指定本次订阅的设备。 |
@@ -1722,6 +1825,7 @@ transferFile(deviceRandomId: string, appParam: P2pAppParam, file: P2pFile, callb
 **错误码：**
 
 以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wearengine)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1827,9 +1931,10 @@ try {
 
 
 
-#### cancelFileTransfer
+### cancelFileTransfer
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 cancelFileTransfer(deviceRandomId: string, appParam: P2pAppParam, file: P2pFile): Promise&lt;P2pResult&gt;
 
@@ -1845,6 +1950,7 @@ cancelFileTransfer(deviceRandomId: string, appParam: P2pAppParam, file: P2pFile)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceRandomId | string | 是 | Device的随机标识符，用于指定本次订阅的设备。 |
@@ -1854,6 +1960,7 @@ cancelFileTransfer(deviceRandomId: string, appParam: P2pAppParam, file: P2pFile)
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;P2pResult&gt; | Promise对象，返回P2p通信的结果。 属性中的code字段表示本次取消文件发送的结果。 |
@@ -1862,6 +1969,7 @@ cancelFileTransfer(deviceRandomId: string, appParam: P2pAppParam, file: P2pFile)
 **错误码：**
 
 以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wearengine)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1943,7 +2051,8 @@ try {
 
 
 
-#### registerMessageReceiver
+### registerMessageReceiver
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1959,6 +2068,7 @@ registerMessageReceiver(deviceRandomId: string, appParam: P2pAppParam, callback:
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceRandomId | string | 是 | Device的随机标识符，用于指定本次订阅的设备。 |
@@ -1968,6 +2078,7 @@ registerMessageReceiver(deviceRandomId: string, appParam: P2pAppParam, callback:
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1976,6 +2087,7 @@ registerMessageReceiver(deviceRandomId: string, appParam: P2pAppParam, callback:
 **错误码：**
 
 以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wearengine)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2048,7 +2160,8 @@ try {
 
 
 
-#### registerFileReceiver
+### registerFileReceiver
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2064,6 +2177,7 @@ registerFileReceiver(deviceRandomId: string, appParam: P2pAppParam, callback: Ca
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceRandomId | string | 是 | Device的随机标识符，用于指定本次订阅的设备。 |
@@ -2073,6 +2187,7 @@ registerFileReceiver(deviceRandomId: string, appParam: P2pAppParam, callback: Ca
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -2081,6 +2196,7 @@ registerFileReceiver(deviceRandomId: string, appParam: P2pAppParam, callback: Ca
 **错误码：**
 
 以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wearengine)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2153,7 +2269,8 @@ try {
 
 
 
-#### registerFileReceiverWithProgress
+### registerFileReceiverWithProgress
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2171,6 +2288,7 @@ registerFileReceiverWithProgress(deviceRandomId: string, appParam: P2pAppParam, 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceRandomId | string | 是 | Device的随机标识符，用于指定本次订阅的设备。 |
@@ -2180,6 +2298,7 @@ registerFileReceiverWithProgress(deviceRandomId: string, appParam: P2pAppParam, 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -2188,6 +2307,7 @@ registerFileReceiverWithProgress(deviceRandomId: string, appParam: P2pAppParam, 
 **错误码：**
 
 以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wearengine)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2263,7 +2383,8 @@ try {
 
 
 
-#### unregisterMessageReceiver
+### unregisterMessageReceiver
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2279,6 +2400,7 @@ unregisterMessageReceiver(deviceRandomId: string, appParam: P2pAppParam, callbac
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceRandomId | string | 是 | Device的随机标识符，用于指定本次订阅的设备。 |
@@ -2288,6 +2410,7 @@ unregisterMessageReceiver(deviceRandomId: string, appParam: P2pAppParam, callbac
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -2296,6 +2419,7 @@ unregisterMessageReceiver(deviceRandomId: string, appParam: P2pAppParam, callbac
 **错误码：**
 
 以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wearengine)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2373,7 +2497,8 @@ try {
 
 
 
-#### unregisterFileReceiver
+### unregisterFileReceiver
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2389,6 +2514,7 @@ unregisterFileReceiver(deviceRandomId: string, appParam: P2pAppParam, callback: 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceRandomId | string | 是 | Device的随机标识符，用于指定本次订阅的设备。 |
@@ -2398,6 +2524,7 @@ unregisterFileReceiver(deviceRandomId: string, appParam: P2pAppParam, callback: 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -2406,6 +2533,7 @@ unregisterFileReceiver(deviceRandomId: string, appParam: P2pAppParam, callback: 
 **错误码：**
 
 以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wearengine)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2483,7 +2611,8 @@ try {
 
 
 
-#### AppInfo
+## AppInfo
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2495,15 +2624,17 @@ try {
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | bundleName | string | 否 | 否 | 应用名称。 |
-| fingerprint | string | 否 | 否 | 应用指纹，用于标识应用的唯一身份。 |
+| fingerprint | string | 否 | 否 | 应用指纹，用于标识应用的唯一身份。 应用指纹获取请参考如何获取应用指纹。 |
 
 
 
 
-#### P2pResultCode
+## P2pResultCode
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2514,6 +2645,7 @@ try {
 **系统能力：** SystemCapability.Health.WearEngine
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2527,7 +2659,8 @@ try {
 
 
 
-#### P2pResult
+## P2pResult
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2539,6 +2672,7 @@ try {
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | code | number | 否 | 是 | 用于返回除文件传输外的P2p通信结果，返回值含义见P2pResultCode。 |
@@ -2547,7 +2681,8 @@ try {
 
 
 
-#### P2pMessage
+## P2pMessage
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2559,6 +2694,7 @@ try {
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | content | Uint8Array | 否 | 否 | 传输消息的内容，格式为Uint8Array（二进制字节数组）类型数据。 |
@@ -2566,7 +2702,8 @@ try {
 
 
 
-#### P2pFile
+## P2pFile
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2578,6 +2715,7 @@ try {
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | file | fs.File | 否 | 否 | 文件对象。 |
@@ -2586,7 +2724,8 @@ try {
 
 
 
-#### P2pAppParam
+## P2pAppParam
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2598,6 +2737,7 @@ P2p通信过程中可用的设备侧应用参数类。
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | remoteApp | AppInfo | 否 | 否 | 设备侧应用信息类。 |
@@ -2606,9 +2746,10 @@ P2p通信过程中可用的设备侧应用参数类。
 
 
 
-#### StartConfig
+## StartConfig
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Wearable
 
 待拉起的对端设备应用的配置参数。
 
@@ -2618,6 +2759,7 @@ P2p通信过程中可用的设备侧应用参数类。
 
 **起始版本：** 6.1.1(24)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | entryType | EntryType | 否 | 否 | 需要拉起的对端设备应用的组件类型。 |
@@ -2626,9 +2768,10 @@ P2p通信过程中可用的设备侧应用参数类。
 
 
 
-#### EntryType
+## EntryType
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Wearable
 
 待拉起的对端设备应用的组件类型。
 
@@ -2637,6 +2780,7 @@ P2p通信过程中可用的设备侧应用参数类。
 **系统能力：** SystemCapability.Health.WearEngine
 
 **起始版本：** 6.1.1(24)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2647,9 +2791,10 @@ P2p通信过程中可用的设备侧应用参数类。
 
 
 
-#### wearEngine.getNotifyClient
+## wearEngine.getNotifyClient
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 getNotifyClient(context: common.Context): NotifyClient
 
@@ -2665,12 +2810,14 @@ getNotifyClient(context: common.Context): NotifyClient
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | Context上下文，仅支持包含connectServiceExtensionAbility方法的Context（例：UIAbilityContext）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2680,6 +2827,7 @@ getNotifyClient(context: common.Context): NotifyClient
 **错误码：**
 
 以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wearengine)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2699,9 +2847,10 @@ console.info(`Succeeded in getting notify client`);
 
 
 
-#### NotifyClient
+## NotifyClient
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 Notify客户端类，由[wearEngine.getNotifyClient](#wearenginegetnotifyclient)返回得到。
 
@@ -2713,9 +2862,10 @@ Notify客户端类，由[wearEngine.getNotifyClient](#wearenginegetnotifyclient)
 
 
 
-#### notify
+### notify
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 notify(deviceRandomId: string, options: NotificationOptions): Promise&lt;void&gt;
 
@@ -2731,6 +2881,7 @@ notify(deviceRandomId: string, options: NotificationOptions): Promise&lt;void&gt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceRandomId | string | 是 | Device的随机标识符，用于指定本次查询的设备。 |
@@ -2738,6 +2889,7 @@ notify(deviceRandomId: string, options: NotificationOptions): Promise&lt;void&gt
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2747,6 +2899,7 @@ notify(deviceRandomId: string, options: NotificationOptions): Promise&lt;void&gt
 **错误码：**
 
 以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wearengine)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2811,9 +2964,10 @@ try {
 
 
 
-#### NotificationOptions
+## NotificationOptions
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 模板化通知的配置参数类。
 
@@ -2825,7 +2979,11 @@ try {
 
 
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | Tablet
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2834,9 +2992,10 @@ try {
 
 
 
-#### onAction
+### onAction
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 onAction(feedback: NotificationFeedback): void
 
@@ -2852,6 +3011,7 @@ onAction(feedback: NotificationFeedback): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | feedback | NotificationFeedback | 是 | 设备侧操作通知的反馈类。 |
@@ -2859,9 +3019,10 @@ onAction(feedback: NotificationFeedback): void
 
 
 
-#### Notification
+## Notification
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 模板化通知的通知体参数类。
 
@@ -2871,10 +3032,11 @@ onAction(feedback: NotificationFeedback): void
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | NotificationType | 否 | 否 | 通知的模板类型。 |
-| bundleName | string | 否 | 否 | 发送通知应用的包名。 |
+| bundleName | string | 否 | 否 | 发送通知应用的包名，取值范围：[1，28]，单位Byte。 |
 | title | string | 否 | 否 | 通知的标题，取值范围：[1，28)，单位Byte。 |
 | text | string | 否 | 否 | 通知的内容，取值范围：[1，400)，单位Byte。 |
 | buttons | NotificationButton[] | 否 | 是 | 通知按钮信息类，若未填写，默认为空。 |
@@ -2882,9 +3044,10 @@ onAction(feedback: NotificationFeedback): void
 
 
 
-#### NotificationType
+## NotificationType
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 模板化通知的模板类型枚举类。
 
@@ -2893,6 +3056,7 @@ onAction(feedback: NotificationFeedback): void
 **系统能力：** SystemCapability.Health.WearEngine
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2904,9 +3068,10 @@ onAction(feedback: NotificationFeedback): void
 
 
 
-#### NotificationButton
+## NotificationButton
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 通知按钮信息类。
 
@@ -2916,6 +3081,7 @@ onAction(feedback: NotificationFeedback): void
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | buttonId | ButtonId | 否 | 否 | 按钮Id枚举类。 |
@@ -2924,9 +3090,10 @@ onAction(feedback: NotificationFeedback): void
 
 
 
-#### ButtonId
+## ButtonId
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 模板化通知的按钮Id枚举类。
 
@@ -2935,6 +3102,7 @@ onAction(feedback: NotificationFeedback): void
 **系统能力：** SystemCapability.Health.WearEngine
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2945,9 +3113,10 @@ onAction(feedback: NotificationFeedback): void
 
 
 
-#### NotificationFeedback
+## NotificationFeedback
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 设备侧操作通知的反馈类。
 
@@ -2957,6 +3126,7 @@ onAction(feedback: NotificationFeedback): void
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | action | NotificationAction | 否 | 是 | 设备侧对通知的操作反馈枚举类。 |
@@ -2965,9 +3135,10 @@ onAction(feedback: NotificationFeedback): void
 
 
 
-#### NotificationAction
+## NotificationAction
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 设备侧对通知的操作反馈枚举类。
 
@@ -2976,6 +3147,7 @@ onAction(feedback: NotificationFeedback): void
 **系统能力：** SystemCapability.Health.WearEngine
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2988,9 +3160,10 @@ onAction(feedback: NotificationFeedback): void
 
 
 
-#### NotificationErrorCode
+## NotificationErrorCode
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 通知在设备侧发生错误的反馈枚举类。
 
@@ -3000,6 +3173,7 @@ onAction(feedback: NotificationFeedback): void
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | INTERNAL_ERROR | 255 | Wear Engine内部错误。通过在线提单提交问题，华为支持人员会及时处理。 |
@@ -3007,9 +3181,10 @@ onAction(feedback: NotificationFeedback): void
 
 
 
-#### wearEngine.getSensorClient
+## wearEngine.getSensorClient
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 getSensorClient(context: common.Context): SensorClient
 
@@ -3025,12 +3200,14 @@ getSensorClient(context: common.Context): SensorClient
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | Context上下文，仅支持包含connectServiceExtensionAbility方法的Context（例：UIAbilityContext）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3040,6 +3217,7 @@ getSensorClient(context: common.Context): SensorClient
 **错误码：**
 
 以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wearengine)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3059,9 +3237,10 @@ console.info(`Succeeded in getting sensor client`);
 
 
 
-#### SensorClient
+## SensorClient
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 Sensor客户端类。由接口[wearEngine.getSensorClient](#wearenginegetsensorclient)返回得到。
 
@@ -3073,9 +3252,10 @@ Sensor客户端类。由接口[wearEngine.getSensorClient](#wearenginegetsensorc
 
 
 
-#### getSensorList
+### getSensorList
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 getSensorList(deviceRandomId: string): Promise<Sensor[]>
 
@@ -3091,12 +3271,14 @@ getSensorList(deviceRandomId: string): Promise<Sensor[]>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceRandomId | string | 是 | Device的随机标识符，用于指定设备。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3106,6 +3288,7 @@ getSensorList(deviceRandomId: string): Promise<Sensor[]>
 **错误码：**
 
 以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wearengine)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3152,9 +3335,10 @@ try {
 
 
 
-#### subscribeSensor
+### subscribeSensor
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 subscribeSensor(deviceRandomId: string, type: SensorType, callback: Callback&lt;SensorResult&gt;): Promise&lt;void&gt;
 
@@ -3170,6 +3354,7 @@ subscribeSensor(deviceRandomId: string, type: SensorType, callback: Callback&lt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceRandomId | string | 是 | Device的随机标识符，用于指定本次订阅的设备。 |
@@ -3179,6 +3364,7 @@ subscribeSensor(deviceRandomId: string, type: SensorType, callback: Callback&lt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -3187,6 +3373,7 @@ subscribeSensor(deviceRandomId: string, type: SensorType, callback: Callback&lt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wearengine)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3246,9 +3433,10 @@ try {
 
 
 
-#### unsubscribeSensor
+### unsubscribeSensor
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 unsubscribeSensor(deviceRandomId: string, type: SensorType, callback: Callback&lt;SensorResult&gt;): Promise&lt;void&gt;
 
@@ -3264,6 +3452,7 @@ unsubscribeSensor(deviceRandomId: string, type: SensorType, callback: Callback&l
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceRandomId | string | 是 | Device的随机标识符，用于指定本次取消订阅的设备。 |
@@ -3273,6 +3462,7 @@ unsubscribeSensor(deviceRandomId: string, type: SensorType, callback: Callback&l
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -3281,6 +3471,7 @@ unsubscribeSensor(deviceRandomId: string, type: SensorType, callback: Callback&l
 **错误码：**
 
 以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wearengine)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3350,9 +3541,10 @@ try {
 
 
 
-#### SensorType
+## SensorType
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 传感器类型。
 
@@ -3361,6 +3553,7 @@ try {
 **系统能力：** SystemCapability.Health.WearEngine
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -3374,9 +3567,10 @@ try {
 
 
 
-#### Sensor
+## Sensor
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 传感器信息类。
 
@@ -3385,6 +3579,7 @@ try {
 **系统能力：** SystemCapability.Health.WearEngine
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -3398,9 +3593,10 @@ try {
 
 
 
-#### SensorData
+## SensorData
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 传感器上报数据类。
 
@@ -3409,6 +3605,7 @@ try {
 **系统能力：** SystemCapability.Health.WearEngine
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -3421,9 +3618,10 @@ try {
 
 
 
-#### SensorErrorCode
+## SensorErrorCode
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 传感器上报在设备侧发生错误的反馈枚举类。
 
@@ -3432,6 +3630,7 @@ try {
 **系统能力：** SystemCapability.Health.WearEngine
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -3444,9 +3643,10 @@ try {
 
 
 
-#### SensorResult
+## SensorResult
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 传感器上报结果。
 
@@ -3456,6 +3656,7 @@ try {
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | data | SensorData[] | 否 | 是 | 传感器正常上报的数据内容。 |
@@ -3464,13 +3665,15 @@ try {
 
 
 
-#### on/off订阅事件
+## on/off订阅事件
+
 
 **支持设备：** Phone | Tablet | Wearable
 
 
 
-#### wearEngine.on
+### wearEngine.on
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -3486,6 +3689,7 @@ on(type: 'serviceDie', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件类型，仅支持serviceDie，表示服务端消亡事件。 |
@@ -3495,6 +3699,7 @@ on(type: 'serviceDie', callback: Callback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wearengine)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3523,7 +3728,8 @@ try {
 
 
 
-#### wearEngine.off
+### wearEngine.off
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -3539,6 +3745,7 @@ off(type: 'serviceDie', callback?: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件类型，仅支持serviceDie，表示服务端消亡事件。 |
@@ -3548,6 +3755,7 @@ off(type: 'serviceDie', callback?: Callback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wearengine)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3577,7 +3785,8 @@ try {
 
 
 
-#### wearEngine.destroy
+## wearEngine.destroy
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -3593,6 +3802,7 @@ destroy(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -3601,6 +3811,7 @@ destroy(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Wear Engine ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wearengine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

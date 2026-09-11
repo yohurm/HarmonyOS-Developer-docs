@@ -11,7 +11,7 @@ Neon扩展从ARMv7开始被采用，目前在Cortex-A7、Cortex-A12、Cortex-A15
 ARMv8a架构CPU默认集成Neon扩展，在AArch64与AArch32两种状态下都支持，详细请参考ARM官方文档《[Learn the architecture - Introducing Neon](https://developer.arm.com/documentation/102474/0100/Fundamentals-of-Armv8-Neon-technology)》。
   
 
-#### HarmonyOS架构支持情况
+## HarmonyOS架构支持情况
 
 在HarmonyOS系统中，arm64-v8a ABI下默认已经开启了对Neon扩展的支持；在armeabi-v7a ABI下，为了能够尽可能地支持ARMv7a架构设备，默认不开启Neon扩展。
  
@@ -39,7 +39,7 @@ ARMv8a架构CPU默认集成Neon扩展，在AArch64与AArch32两种状态下都�
  
   
 
-#### 如何使用
+## 如何使用
 
 使用Neon扩展的主要通过如下几种方式：
  
@@ -52,7 +52,7 @@ ARMv8a架构CPU默认集成Neon扩展，在AArch64与AArch32两种状态下都�
  
   
 
-#### 举例说明
+## 举例说明
 
 下面举例说明在一个armeabi-v7a HarmonyOS C++工程中如何使用Neon intrinsics。
  1. 使用Neon intrinsics需要在源码包含arm_neon.h头文件，由于该特性与CPU架构强相关，在包含该头文件时，推荐用cpu features等宏括起来。

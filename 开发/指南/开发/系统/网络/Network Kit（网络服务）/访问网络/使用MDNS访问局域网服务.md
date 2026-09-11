@@ -1,10 +1,10 @@
 # 使用MDNS访问局域网服务
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/net-mdns
 
-#### 简介
+## 简介
 
 MDNS即多播DNS（Multicast DNS），提供局域网内的本地服务添加、移除、发现、解析等能力。
 
@@ -18,7 +18,7 @@ MDNS管理的典型场景有：
 
 
 > [!NOTE]
-> 为了保证应用的运行效率，大部分API调用都是异步的，对于异步调用的API均提供了callback和Promise两种方式，以下示例均采用promise函数，更多方式可以查阅 @ohos.net.mdns (MDNS管理) 。
+> 为了保证应用的运行效率，大部分API调用都是异步的，对于异步调用的API均提供了callback和Promise两种方式，以下示例均采用Promise函数，更多方式可以查阅 @ohos.net.mdns (MDNS管理) 。
 
 
 以下分别介绍具体开发方式。
@@ -29,9 +29,9 @@ MDNS管理的典型场景有：
 
 
 
-#### 管理本地服务
-1. 设备连接WiFi。
-2. 从@kit.NetworkKit里导入mdns、错误码、以及[common命名空间](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-common)。
+## 管理本地服务
+1. 设备连接Wi-Fi。
+2. 从@kit.NetworkKit里导入mdns、错误码、以及[common](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-common)命名空间。
 
   
 ```ArkTS
@@ -91,7 +91,7 @@ mdns.removeLocalService(context, this.localServiceInfo).then((data: mdns.LocalSe
 
 
 
-#### 发现本地服务
+## 发现本地服务
 1. 设备连接WiFi。
 2. 从@kit.NetworkKit里导入mdns的命名空间。
 

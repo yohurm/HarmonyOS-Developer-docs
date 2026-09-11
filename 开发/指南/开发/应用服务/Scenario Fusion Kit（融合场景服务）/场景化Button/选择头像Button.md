@@ -1,10 +1,10 @@
 # 选择头像Button
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusion-button-chooseavatar
 
-#### 场景介绍
+## 场景介绍
 
 选择头像Button功能可以帮助开发者调用对应Button组件快速拉起头像选择页面，供用户完成华为账号头像或其他头像的选择与展示。
 
@@ -12,7 +12,7 @@
 
 
 
-#### 前提条件
+## 前提条件
 
 应用开发前提条件，参见[开发前提](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-get-avatar-nickname#开发前提)。
 
@@ -20,11 +20,11 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 导入Scenario Fusion Kit模块以及相关公共模块。
 
   
-```text
+```ArkTS
 import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 ```
@@ -32,7 +32,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 2. 在容器中声明FunctionalButton，指定Button的openType，并设置对应的回调函数，代码如下：
 
   
-```text
+```ArkTS
 @Entry
 @Component
 struct Index {

@@ -1,9 +1,9 @@
 # OffscreenCanvasRenderingContext2D
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-offscreencanvasrenderingcontext2d
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 使用OffscreenCanvasRenderingContext2D在Canvas上进行离屏绘制，绘制对象可以是形状、文本、图片等。离屏绘制是指将需要绘制的内容先绘制在缓冲区，然后将其转换成图片，一次性绘制到Canvas上。离屏绘制使用CPU进行绘制，绘制速度较慢，对绘制速度有要求的场景应避免使用离屏绘制。
 
@@ -12,9 +12,10 @@
 
 
 
-#### constructor
+## constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(width: number, height: number, settings?: RenderingContextSettings)
 
@@ -28,6 +29,7 @@ constructor(width: number, height: number, settings?: RenderingContextSettings)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | width | number | 是 | 离屏画布的宽度，默认单位：vp 异常值NaN和Infinity按无效值处理。 |
@@ -37,9 +39,10 @@ constructor(width: number, height: number, settings?: RenderingContextSettings)
 
 
 
-#### constructor12+
+## constructor12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(width: number, height: number, settings?: RenderingContextSettings, unit?: LengthMetricsUnit)
 
@@ -55,6 +58,7 @@ constructor(width: number, height: number, settings?: RenderingContextSettings, 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | width | number | 是 | 离屏画布的宽度，默认单位：vp 异常值NaN和Infinity按无效值处理。 |
@@ -65,9 +69,10 @@ constructor(width: number, height: number, settings?: RenderingContextSettings, 
 
 
 
-#### toDataURL
+## toDataURL
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toDataURL(type?: string, quality?: any): string
 
@@ -81,6 +86,7 @@ toDataURL(type?: string, quality?: any): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 否 | 用于指定图像格式。 可选参数为："image/png"，"image/jpeg"，"image/webp"。 异常值undefined或null按默认值处理。 默认值：image/png |
@@ -88,6 +94,7 @@ toDataURL(type?: string, quality?: any): string
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -131,9 +138,10 @@ struct ToDataURL {
 
 
 
-#### transferToImageBitmap
+## transferToImageBitmap
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 transferToImageBitmap(): ImageBitmap
 
@@ -146,6 +154,7 @@ transferToImageBitmap(): ImageBitmap
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |

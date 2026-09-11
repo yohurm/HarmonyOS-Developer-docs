@@ -1,13 +1,14 @@
 # arkweb_type.h
 
-更新时间：2026-07-17 09:35:24
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkweb-type-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供ArkWeb在Native侧的公共类型定义。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | ArkWeb_JavaScriptBridgeData | ArkWeb_JavaScriptBridgeData | 定义JavaScript Bridge数据的基础结构。 |
@@ -45,19 +49,21 @@
 | ArkWeb_ProxyObject | ArkWeb_ProxyObject | 注入的Proxy对象通用结构体。 |
 | ArkWeb_ProxyObjectWithResult | ArkWeb_ProxyObjectWithResult | 注入的Proxy对象通用结构体。 |
 | ArkWeb_ControllerAPI | ArkWeb_ControllerAPI | Controller相关的Native API结构体。在调用接口前建议通过ARKWEB_MEMBER_MISSING校验该函数结构体是否有对应函数指针，避免SDK与设备ROM不匹配导致崩溃。Controller相关接口需在UI线程中调用OH_ArkWeb_GetNativeAPI方法获取。 |
-| ArkWeb_ComponentAPI | ArkWeb_ComponentAPI | Component相关的Native API结构体。 |
+| ArkWeb_ComponentAPI | ArkWeb_ComponentAPI | Component相关的Native API结构体。在调用接口前建议通过ARKWEB_MEMBER_MISSING校验该函数结构体是否有对应函数指针，避免SDK与设备ROM不匹配导致崩溃。Component相关接口需在UI线程中调用OH_ArkWeb_GetNativeAPI方法获取。 |
 | ArkWeb_WebMessagePortAPI | ArkWeb_WebMessagePortAPI | Post Message相关的Native API结构体。在调用接口前建议通过ARKWEB_MEMBER_MISSING校验该函数结构体是否有对应函数指针，避免SDK与设备ROM不匹配导致崩溃。WebMessagePort相关接口需在UI线程中调用OH_ArkWeb_GetNativeAPI方法获取。 |
 | ArkWeb_WebMessageAPI | ArkWeb_WebMessageAPI | Post Message数据相关的Native API结构体。在调用接口前建议通过ARKWEB_MEMBER_MISSING校验该函数结构体是否有对应函数指针，避免SDK与设备ROM不匹配导致崩溃。WebMessage相关接口需在UI线程中调用OH_ArkWeb_GetNativeAPI方法获取。 |
 | ArkWeb_CookieManagerAPI | ArkWeb_CookieManagerAPI | 定义了ArkWeb的CookieManager接口。在调用接口之前，建议使用ARKWEB_MEMBER_MISSING检查函数结构体是否有对应的函数指针，避免SDK与设备ROM不匹配导致崩溃。CookieManager相关接口需在UI线程中调用OH_ArkWeb_GetNativeAPI方法获取。 |
-| ArkWeb_JavaScriptValueAPI | ArkWeb_JavaScriptValueAPI | 定义了ArkWeb的JavaScriptValue接口。在调用接口之前，建议使用ARKWEB_MEMBER_MISSING检查函数结构体是否有对应的函数指针，避免SDK与设备ROM不匹配导致崩溃。 |
+| ArkWeb_JavaScriptValueAPI | ArkWeb_JavaScriptValueAPI | 定义了ArkWeb的JavaScriptValue接口。在调用接口之前，建议使用ARKWEB_MEMBER_MISSING检查函数结构体是否有对应的函数指针，避免SDK与设备ROM不匹配导致崩溃。JavaScriptValue相关接口需在UI线程中调用OH_ArkWeb_GetNativeAPI方法获取。 |
  
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | ArkWeb_WebMessageType | ArkWeb_WebMessageType | Post Message数据类型。 |
@@ -66,26 +72,30 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | typedef void (*ArkWeb_OnJavaScriptCallback)(const char* webTag, const ArkWeb_JavaScriptBridgeData* data, void* userData) | ArkWeb_OnJavaScriptCallback | 注入的JavaScript执行完成的回调。 |
 | typedef void (*ArkWeb_OnJavaScriptProxyCallback)(const char* webTag, const ArkWeb_JavaScriptBridgeData* dataArray, size_t arraySize, void* userData) | ArkWeb_OnJavaScriptProxyCallback | Proxy方法被执行的回调。 |
 | typedef ArkWeb_JavaScriptValuePtr (*ArkWeb_OnJavaScriptProxyCallbackWithResult)(const char* webTag, const ArkWeb_JavaScriptBridgeData* dataArray, size_t arraySize, void* userData) | ArkWeb_OnJavaScriptProxyCallbackWithResult | Proxy方法被执行的回调。 |
 | typedef void (*ArkWeb_OnComponentCallback)(const char* webTag, void* userData) | ArkWeb_OnComponentCallback | 组件事件通知相关的通用回调。 |
-| typedef void (*ArkWeb_OnScrollCallback)(const char* webTag, void* userData, double x, double y) | ArkWeb_OnScrollCallback | 定义Web组件滚动时的回调函数的类型。 |
+| typedef void (*ArkWeb_OnScrollCallback)(const char* webTag, void* userData, double x, double y) | ArkWeb_OnScrollCallback | Web组件滚动时的回调函数类型。 |
 | typedef void (*ArkWeb_OnMessageEventHandler)(const char* webTag, const ArkWeb_WebMessagePortPtr port, const ArkWeb_WebMessagePtr message, void* userData) | ArkWeb_OnMessageEventHandler | 处理HTML发送过来的Post Message数据。 |
  
  
   
 
-#### 宏定义
+### 宏定义
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | ARKWEB_MEMBER_EXISTS(s, f) ((intptr_t) & ((s)->f) - (intptr_t)(s) + sizeof((s)->f) <= *(size_t *)(s)) | 检查结构体中是否存在该成员变量。 起始版本： 12 |
@@ -94,15 +104,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### ArkWeb_WebMessageType
+### ArkWeb_WebMessageType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkWeb_WebMessageType
@@ -114,6 +126,7 @@ Post Message数据类型。
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ARKWEB_NONE = 0 | 错误数据。 |
@@ -123,9 +136,10 @@ Post Message数据类型。
  
   
 
-#### ArkWeb_JavaScriptValueType
+### ArkWeb_JavaScriptValueType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkWeb_JavaScriptValueType
@@ -137,24 +151,27 @@ JavaScript数据类型。
  
 **起始版本：** 18
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ARKWEB_JAVASCRIPT_NONE = 0 | 错误数据。 |
 | ARKWEB_JAVASCRIPT_STRING | 字符串数据类型。 |
-| ARKWEB_JAVASCRIPT_BOOL | bool数据类型。 |
+| ARKWEB_JAVASCRIPT_BOOL | 布尔数据类型。 |
  
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### ArkWeb_OnJavaScriptCallback()
+### ArkWeb_OnJavaScriptCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*ArkWeb_OnJavaScriptCallback)(const char* webTag, const ArkWeb_JavaScriptBridgeData* data, void* userData)
@@ -162,12 +179,13 @@ typedef void (*ArkWeb_OnJavaScriptCallback)(const char* webTag, const ArkWeb_Jav
  
 **描述**
  
-注入的JavaScript执行完成的回调。
+注入的JavaScript执行完成的回调。用于获取JavaScript代码在Web组件中的执行结果，例如在需要根据JavaScript返回的数据更新原生UI或执行后续逻辑的场景中使用。
  
 **起始版本：** 12
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char* webTag | Web组件名称。 |
@@ -177,9 +195,10 @@ typedef void (*ArkWeb_OnJavaScriptCallback)(const char* webTag, const ArkWeb_Jav
  
   
 
-#### ArkWeb_OnJavaScriptProxyCallback()
+### ArkWeb_OnJavaScriptProxyCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*ArkWeb_OnJavaScriptProxyCallback)(const char* webTag, const ArkWeb_JavaScriptBridgeData* dataArray, size_t arraySize, void* userData)
@@ -187,12 +206,13 @@ typedef void (*ArkWeb_OnJavaScriptProxyCallback)(const char* webTag, const ArkWe
  
 **描述**
  
-Proxy方法被执行的回调。
+Proxy方法被执行的回调。Proxy方法用于Native侧与JavaScript侧的对象交互和自定义操作。
  
 **起始版本：** 12
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char* webTag | Web组件名称。 |
@@ -203,9 +223,10 @@ Proxy方法被执行的回调。
  
   
 
-#### ArkWeb_OnJavaScriptProxyCallbackWithResult()
+### ArkWeb_OnJavaScriptProxyCallbackWithResult()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef ArkWeb_JavaScriptValuePtr (*ArkWeb_OnJavaScriptProxyCallbackWithResult)(const char* webTag, const ArkWeb_JavaScriptBridgeData* dataArray, size_t arraySize, void* userData)
@@ -213,12 +234,13 @@ typedef ArkWeb_JavaScriptValuePtr (*ArkWeb_OnJavaScriptProxyCallbackWithResult)(
  
 **描述**
  
-Proxy方法被执行的回调。
+Proxy方法被执行的回调（有返回值）。用于在JavaScript调用注入的Proxy方法时接收通知并返回执行结果，适用于实现JavaScript与原生代码的桥接通信场景，例如拦截JavaScript调用、执行原生逻辑、计算结果并将结果返回给JavaScript。
  
 **起始版本：** 18
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char* webTag | Web组件名称。 |
@@ -229,9 +251,10 @@ Proxy方法被执行的回调。
  
   
 
-#### ArkWeb_OnComponentCallback()
+### ArkWeb_OnComponentCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*ArkWeb_OnComponentCallback)(const char* webTag, void* userData)
@@ -239,12 +262,13 @@ typedef void (*ArkWeb_OnComponentCallback)(const char* webTag, void* userData)
  
 **描述**
  
-组件事件通知相关的通用回调。
+接收Web组件事件通知的回调。用于接收Web组件生命周期事件通知，例如页面加载完成、页面销毁、组件可见性变化等场景下的状态变更通知。
  
 **起始版本：** 12
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char* webTag | Web组件名称。 |
@@ -253,9 +277,10 @@ typedef void (*ArkWeb_OnComponentCallback)(const char* webTag, void* userData)
  
   
 
-#### ArkWeb_OnScrollCallback()
+### ArkWeb_OnScrollCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*ArkWeb_OnScrollCallback)(const char* webTag, void* userData, double x, double y)
@@ -263,12 +288,13 @@ typedef void (*ArkWeb_OnScrollCallback)(const char* webTag, void* userData, doub
  
 **描述**
  
-定义Web组件滚动时的回调函数的类型。
+Web组件滚动时的回调函数。
  
 **起始版本：** 18
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char* webTag | Web组件名称。 |
@@ -279,9 +305,10 @@ typedef void (*ArkWeb_OnScrollCallback)(const char* webTag, void* userData, doub
  
   
 
-#### ArkWeb_OnMessageEventHandler()
+### ArkWeb_OnMessageEventHandler()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*ArkWeb_OnMessageEventHandler)(const char* webTag, const ArkWeb_WebMessagePortPtr port, const ArkWeb_WebMessagePtr message, void* userData)
@@ -295,9 +322,10 @@ typedef void (*ArkWeb_OnMessageEventHandler)(const char* webTag, const ArkWeb_We
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char* webTag | Web组件名称。 |
 | const ArkWeb_WebMessagePortPtr port | Post Message端口。 |
 | const ArkWeb_WebMessagePtr message | Post Message数据。 |
-| void* userData | 用户自定义数据。 |
+| void* userData | 用户自定义的数据。 |

@@ -1,6 +1,6 @@
 # promotionService(营销服务)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-promotionservice
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -16,7 +16,8 @@
 **起始版本：** 6.1.0(23)
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -26,7 +27,8 @@ import { promotionService } from '@kit.PaymentKit';
 
 
 
-#### UserAction
+## UserAction
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -40,6 +42,7 @@ import { promotionService } from '@kit.PaymentKit';
 
 **起始版本：** 6.1.0(23)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | doNothing | boolean | 否 | 否 | 表示是否关闭组件。 - true:是 - false：否（默认）。 |
@@ -49,7 +52,8 @@ import { promotionService } from '@kit.PaymentKit';
 
 
 
-#### OrderContext
+## OrderContext
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -63,6 +67,7 @@ import { promotionService } from '@kit.PaymentKit';
 
 **起始版本：** 6.1.0(23)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | mercNo | string | 否 | 否 | 商户号。获取商户号请参见查询商户号信息。 |
@@ -74,7 +79,8 @@ import { promotionService } from '@kit.PaymentKit';
 
 
 
-#### CouponCategory
+## CouponCategory
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -88,6 +94,7 @@ import { promotionService } from '@kit.PaymentKit';
 
 **起始版本：** 6.1.0(23)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | PLATFORM_COUPON | 0 | 平台券。 |
@@ -95,7 +102,8 @@ import { promotionService } from '@kit.PaymentKit';
 
 
 
-#### CouponType
+## CouponType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -109,6 +117,7 @@ import { promotionService } from '@kit.PaymentKit';
 
 **起始版本：** 6.1.0(23)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | VOUCHER | 0 | 满减券类型。 |
@@ -116,7 +125,8 @@ import { promotionService } from '@kit.PaymentKit';
 
 
 
-#### CouponDetail
+## CouponDetail
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -129,6 +139,7 @@ import { promotionService } from '@kit.PaymentKit';
 **系统能力：** SystemCapability.Payment.Promotion
 
 **起始版本：** 6.1.0(23)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -145,7 +156,8 @@ import { promotionService } from '@kit.PaymentKit';
 
 
 
-#### PromotionComponentController
+## PromotionComponentController
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -161,7 +173,8 @@ import { promotionService } from '@kit.PaymentKit';
 
 
 
-#### constructor
+### constructor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -178,6 +191,7 @@ constructor(context: UIContext)
 **起始版本：** 6.1.0(23)
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -199,7 +213,8 @@ struct StartPromotionEntryDialogDemo {
 
 
 
-#### startPromotionEntryDialog
+### startPromotionEntryDialog
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -217,6 +232,7 @@ startPromotionEntryDialog(mercNo: string, offset?: number): Promise&lt;UserActio
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mercNo | string | 是 | 商户号。 |
@@ -224,6 +240,7 @@ startPromotionEntryDialog(mercNo: string, offset?: number): Promise&lt;UserActio
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -233,6 +250,7 @@ startPromotionEntryDialog(mercNo: string, offset?: number): Promise&lt;UserActio
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-payment)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -273,7 +291,8 @@ struct StartPromotionEntryDialogDemo {
 
 
 
-#### startUserChooseCouponsPopup
+## startUserChooseCouponsPopup
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -291,6 +310,7 @@ startUserChooseCouponsPopup(context: common.Context, orderContext: OrderContext)
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文。 |
@@ -298,6 +318,7 @@ startUserChooseCouponsPopup(context: common.Context, orderContext: OrderContext)
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -307,6 +328,7 @@ startUserChooseCouponsPopup(context: common.Context, orderContext: OrderContext)
 **错误码**：
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-payment)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -355,7 +377,8 @@ export struct StartUserChooseCouponsPopupDemo {
 
 
 
-#### startPromotionDetailPopup
+## startPromotionDetailPopup
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -373,6 +396,7 @@ startPromotionDetailPopup(context: common.Context, mercNo: string): Promise&lt;U
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文。 |
@@ -380,6 +404,7 @@ startPromotionDetailPopup(context: common.Context, mercNo: string): Promise&lt;U
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -389,6 +414,7 @@ startPromotionDetailPopup(context: common.Context, mercNo: string): Promise&lt;U
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-payment)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -427,7 +453,8 @@ export struct StartPromotionDetailPopupDemo {
 
 
 
-#### getOrderAvailableCoupons
+## getOrderAvailableCoupons
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -445,6 +472,7 @@ getOrderAvailableCoupons(context: common.Context, orderContext: OrderContext): P
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文。 |
@@ -452,6 +480,7 @@ getOrderAvailableCoupons(context: common.Context, orderContext: OrderContext): P
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -461,6 +490,7 @@ getOrderAvailableCoupons(context: common.Context, orderContext: OrderContext): P
 **错误码**：
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-payment)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

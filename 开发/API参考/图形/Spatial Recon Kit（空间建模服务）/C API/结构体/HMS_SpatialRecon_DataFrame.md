@@ -1,15 +1,19 @@
 # HMS_SpatialRecon_DataFrame
 
-更新时间：2026-05-08 09:27:50
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-spatialrecon-hms-spatialrecon-dataframe
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 typedef struct HMS_SpatialRecon_DataFrame {...} HMS_SpatialRecon_DataFrame
 ```
   
 
-#### 概述
+## 概述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 定义HMS（Huawei Mobile Services）空间重建数据帧的结构体，包含用于空间重建的相机内参、姿态信息、时间戳和图像数据。
  
@@ -21,12 +25,19 @@ typedef struct HMS_SpatialRecon_DataFrame {...} HMS_SpatialRecon_DataFrame
  
   
 
-#### 汇总
+## 汇总
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 成员变量
+### 成员变量
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | float focalX = 0.0f | X轴方向的焦距，单位：px。 |

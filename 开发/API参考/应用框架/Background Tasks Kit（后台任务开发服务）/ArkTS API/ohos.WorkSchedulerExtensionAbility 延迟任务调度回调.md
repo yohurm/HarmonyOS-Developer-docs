@@ -1,9 +1,9 @@
 # @ohos.WorkSchedulerExtensionAbility (延迟任务调度回调)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-workschedulerextensionability
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供延迟任务回调能力。开发者可重写模块接口，在延迟任务触发时，系统可通过本模块接口回调应用，在回调里处理任务逻辑。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { WorkSchedulerExtensionAbility } from '@kit.BackgroundTasksKit';
@@ -22,9 +23,10 @@ import { WorkSchedulerExtensionAbility } from '@kit.BackgroundTasksKit';
 
 
 
-#### 约束限制
+## 约束限制
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 为保障系统安全性和稳定性，防止WorkSchedulerExtensionAbility滥用系统资源，系统对其能力进行管控，不支持以下模块的引用：
 
@@ -40,15 +42,17 @@ import { WorkSchedulerExtensionAbility } from '@kit.BackgroundTasksKit';
 
 
 
-#### WorkSchedulerExtensionContext10+
+## WorkSchedulerExtensionContext10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type WorkSchedulerExtensionContext = _WorkSchedulerExtensionContext
 
 WorkSchedulerExtensionContext是WorkSchedulerExtensionAbility的上下文环境，继承自[ExtensionContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-extensioncontext)。
 
 **系统能力：** SystemCapability.ResourceSchedule.WorkScheduler
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -57,19 +61,22 @@ WorkSchedulerExtensionContext是WorkSchedulerExtensionAbility的上下文环境�
 
 
 
-#### WorkSchedulerExtensionAbility
+## WorkSchedulerExtensionAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 延迟任务回调，当满足调度条件或调度结束时，系统会回调应用WorkSchedulerExtensionAbility中[onWorkStart()](#onworkstart)或[onWorkStop()](#onworkstop)的方法。
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.ResourceSchedule.WorkScheduler
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -78,9 +85,10 @@ WorkSchedulerExtensionContext是WorkSchedulerExtensionAbility的上下文环境�
 
 
 
-#### onWorkStart
+### onWorkStart
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onWorkStart(work: workScheduler.WorkInfo): void
 
@@ -89,6 +97,7 @@ onWorkStart(work: workScheduler.WorkInfo): void
 **系统能力：** SystemCapability.ResourceSchedule.WorkScheduler
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -111,9 +120,10 @@ export default class MyWorkSchedulerExtensionAbility extends WorkSchedulerExtens
 
 
 
-#### onWorkStop
+### onWorkStop
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onWorkStop(work: workScheduler.WorkInfo): void
 
@@ -122,6 +132,7 @@ onWorkStop(work: workScheduler.WorkInfo): void
 **系统能力：** SystemCapability.ResourceSchedule.WorkScheduler
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |

@@ -1,6 +1,6 @@
 # 空域AI超分
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xengine-kit-ai-spatial-upscaling
 
@@ -9,7 +9,7 @@
 XEngine Kit提供空域AI超分特性，基于单帧图像使用AI推理生成滤波参数进行超采样，通过GPU、NPU协同工作，实现比空域GPU超分更好的画质，建议超分倍率在1.5倍以下时使用。
 
 
-#### 约束与限制
+## 约束与限制
 
  - 支持的设备类型：Phone，从5.1.0(18)版本开始新增支持Tablet、PC/2in1设备，从5.1.1(19)版本开始新增支持TV设备。
  - 可通过以下方式查询相关扩展特性是否支持：
@@ -24,11 +24,12 @@ XEngine Kit提供空域AI超分特性，基于单帧图像使用AI推理生成�
 
 
 
-#### 接口说明
+## 接口说明
 
 以下为空域AI超分特性需要使用的接口，详细说明请参考[接口文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-kit-xengine)。
 
 **OpenGL ES接口：**
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -38,6 +39,7 @@ XEngine Kit提供空域AI超分特性，基于单帧图像使用AI推理生成�
 
 
 **Vulkan接口：**
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -49,7 +51,7 @@ XEngine Kit提供空域AI超分特性，基于单帧图像使用AI推理生成�
 
 
 
-#### 业务流程
+## 业务流程
 
  - 下面是基于OpenGL ES图形API平台集成空域AI超分的主要业务流程
 
@@ -69,7 +71,7 @@ XEngine Kit提供空域AI超分特性，基于单帧图像使用AI推理生成�
  - 下面是基于Vulkan图形API平台集成空域AI超分的主要业务流程
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/m4x1m8GATyaGI8UEtF9PFw/zh-cn_image_0000002686086913.jpg?HW-CC-KV=V1&HW-CC-Date=20260730T071952Z&HW-CC-Expire=86400&HW-CC-Sign=842025EFBD28656A40599C754BE4969BAB50F788A4154F579BB8B36DE359F300)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/m0cmHMiQRN6LPXQwEUu2SQ/zh-cn_image_0000002717771536.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T073151Z&HW-CC-Expire=86400&HW-CC-Sign=6BC6AA65EF09A661B5FF697767BA269020F19C0A32EB6CA37CA3684CC3B76415)
 
 
 1. 当用户进入游戏场景时，调用[HMS_XEG_EnumerateDeviceExtensionProperties](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-kit-xengine#hms_xeg_enumeratedeviceextensionproperties)接口查询XEngine Kit支持的特性列表。
@@ -82,13 +84,13 @@ XEngine Kit提供空域AI超分特性，基于单帧图像使用AI推理生成�
 
 
 
-#### 开发步骤
+## 开发步骤
 
 本章以OpenGL ES和Vulkan图形API集成为例，说明XEngine Kit空域AI超分特性集成操作过程。
 
 
 
-#### 配置项目
+### 配置项目
 
 编译HAP包时，Native层so编译需要依赖NDK中的libxengine.so。
 
@@ -97,7 +99,7 @@ XEngine Kit提供空域AI超分特性，基于单帧图像使用AI推理生成�
   若需使用OpenGL ES空域AI超分特性，请引入以下头文件。
 
   
-```text
+```cpp
 #include "xengine/xeg_gles_extension.h"
 // ...
 #include "xengine/xeg_gles_neural_upscale.h"
@@ -105,7 +107,7 @@ XEngine Kit提供空域AI超分特性，基于单帧图像使用AI推理生成�
 若需使用Vulkan空域AI超分特性，请引入以下头文件。
 
   
-```text
+```cpp
 #include "xengine/xeg_vulkan_extension.h"
 // ...
 #include "xengine/xeg_vulkan_neural_upscale.h"
@@ -213,7 +215,7 @@ target_link_libraries(nativerender PUBLIC
 
 
 
-#### 集成XEngine Kit空域AI超分（OpenGL ES）
+### 集成XEngine Kit空域AI超分（OpenGL ES）
 
 Native层实现使用OpenGL ES和XEngine Kit图形API搭建图像渲染管线并集成空域AI超分，渲染结果通过[XComponent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-xcomponent)组件显示到屏幕。
 
@@ -225,7 +227,7 @@ Native层实现使用OpenGL ES和XEngine Kit图形API搭建图像渲染管线并
   调用[HMS_XEG_GetString](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-kit-xengine#hms_xeg_getstring)接口，获取XEngine支持的扩展信息。仅当返回结果中包含[XEG_NEURAL_UPSCALE_EXTENSION_NAME](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-kit-xengine#xeg_neural_upscale_extension_name)或[XEG_NEURAL_UPSCALE2_EXTENSION_NAME](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-kit-xengine#xeg_neural_upscale2_extension_name)时，才可以使用空域AI超分的相关接口。
 
   
-```text
+```cpp
 // 查询XEngine支持的GLES扩展信息
 std::string extensionStr = (const char*)HMS_XEG_GetString(XEG_EXTENSIONS);
 std::vector<std::string> extensions;
@@ -265,7 +267,7 @@ if (std::find(extensions.begin(), extensions.end(), XEG_NEURAL_UPSCALE2_EXTENSIO
 4. 调用[HMS_XEG_NeuralUpscaleParameter](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-kit-xengine#hms_xeg_neuralupscaleparameter)接口，设置空域AI超分的输入参数。
 
   
-```text
+```cpp
 // m_sharpness为用户自定义超分锐化参数
 HMS_XEG_NeuralUpscaleParameter(XEG_NEURAL_UPSCALE_SHARPNESS, &m_sharpness);
 // upscaleScissor为超分输入纹理的裁剪窗口参数
@@ -280,7 +282,7 @@ if (isSupportNeural) {
 5. 调用[HMS_XEG_RenderNeuralUpscale](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-kit-xengine#hms_xeg_renderneuralupscale)接口，执行空域AI超分。
 
   
-```text
+```cpp
 // 绑定绘制超分结果的帧缓冲，m_upscaleFBO为用户自定义创建的framebuffer
 glBindFramebuffer(GL_FRAMEBUFFER, m_upscaleFBO);
 // m_highResWidth和m_highResHeight分别为用户自定义超分宽度和超分高度
@@ -299,7 +301,7 @@ if (isSupportNeural) {
 6. 不需要进行超分渲染时，销毁相关资源。
 
   
-```text
+```cpp
 // 当支持XEG_NEURAL_UPSCALE_EXTENSION_NAME时，销毁相关资源
 if (m_eglImage != nullptr) {
     eglDestroyImageKHR(eglGetCurrentDisplay(), m_eglImage);
@@ -322,7 +324,7 @@ glDeleteTextures(1, &m_lowLightColorTexture);
 
 
 
-#### 集成XEngine Kit空域AI超分（Vulkan）
+### 集成XEngine Kit空域AI超分（Vulkan）
 
 使用Vulkan图形API搭建图像渲染管线并集成空域AI超分在Native层实现，渲染结果通过[XComponent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-xcomponent)组件显示到屏幕。
 
@@ -334,7 +336,7 @@ glDeleteTextures(1, &m_lowLightColorTexture);
   只有在支持XEG_NEURAL_UPSCALE_EXTENSION_NAME扩展时才可以使用空域AI超分的相关接口。
 
   
-```text
+```cpp
 // 查询XEngine支持的Vulkan扩展列表
 std::vector<std::string> supportedExtensions;
 uint32_t pPropertyCount;
@@ -361,14 +363,14 @@ if (std::find(supportedExtensions.begin(), supportedExtensions.end(), XEG_NEURAL
 2. 声明实例句柄。
 
   
-```text
+```cpp
 XEG_NeuralUpscale xegNeuralUpscale = nullptr;
 ```
 
 3. 调用[HMS_XEG_CreateNeuralUpscale](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-kit-xengine#hms_xeg_createneuralupscale)接口，创建超分实例。
 
   
-```text
+```cpp
 // VkRect2D为Vulkan指定的二维区域结构
 // srcRect2D为超分输入纹理区域，用户可自定义
 VkRect2D srcRect2D;
@@ -410,7 +412,7 @@ if (res != VK_SUCCESS) {
 4. 调用[HMS_XEG_CmdRenderNeuralUpscale](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-kit-xengine#hms_xeg_cmdrenderneuralupscale)接口下发超分，每帧都需要调用。
 
   
-```text
+```cpp
 XEG_NeuralUpscaleDescription xegDescription{};
 xegDescription.sType = XEG_STRUCTURE_TYPE_NEURAL_UPSCALE_DESCRIPTION;
 xegDescription.pNext = nullptr;
@@ -431,6 +433,6 @@ if (result != VK_SUCCESS) {
 5. 调用[HMS_XEG_DestroyNeuralUpscale](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-kit-xengine#hms_xeg_destroyneuralupscale)接口销毁实例。
 
   
-```text
+```cpp
 HMS_XEG_DestroyNeuralUpscale(xegNeuralUpscale);
 ```

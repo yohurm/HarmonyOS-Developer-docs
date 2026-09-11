@@ -1,6 +1,6 @@
 # Sendable对象冻结
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/sendable-freeze
 
@@ -11,7 +11,7 @@ Sendable对象支持冻结操作。冻结后，对象变为只读，不能修改
 
   
 
-#### 使用示例
+## 使用示例
 1. 提供ts文件封装Object.freeze方法。
 
   
@@ -71,6 +71,7 @@ struct Index {
   
 ```ArkTS
 import { MessageEvents, ThreadWorkerGlobalScope, worker } from '@kit.ArkTS';
+// import { GlobalConfig } from '../pages/Index';
 import { GlobalConfig } from '../managers/SendableFreeze';
 
 const workerPort: ThreadWorkerGlobalScope = worker.workerPort;

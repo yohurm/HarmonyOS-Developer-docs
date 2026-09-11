@@ -1,9 +1,9 @@
 # LoadingProgress
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-loadingprogress
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 LoadingProgress是用于显示加载进度条的组件，在数据加载过程中为用户提供视觉反馈，提升用户体验。该组件支持设置前景色、控制动画显示状态等特性，适用于需要在应用内展示加载进度的场景。
  
@@ -14,17 +14,19 @@ LoadingProgress是用于显示加载进度条的组件，在数据加载过程�
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
  
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 LoadingProgress()
  
@@ -38,9 +40,10 @@ LoadingProgress()
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
  
@@ -50,9 +53,10 @@ LoadingProgress()
  
   
 
-#### color
+### color
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 color(value: ResourceColor)
  
@@ -66,6 +70,7 @@ color(value: ResourceColor)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 加载进度条的前景色。 默认值： API version 10及以下：'#99666666' API version 11及以上：'#ff666666' |
@@ -73,9 +78,10 @@ color(value: ResourceColor)
  
   
 
-#### enableLoading10+
+### enableLoading10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableLoading(value: boolean)
  
@@ -89,6 +95,7 @@ enableLoading(value: boolean)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | LoadingProgress动画是否显示。 默认值：true，true表示显示LoadingProgress动画，false表示不显示LoadingProgress动画。 |
@@ -96,9 +103,10 @@ enableLoading(value: boolean)
  
   
 
-#### contentModifier12+
+### contentModifier12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contentModifier(modifier: ContentModifier&lt;LoadingProgressConfiguration&gt;)
  
@@ -112,6 +120,7 @@ contentModifier(modifier: ContentModifier&lt;LoadingProgressConfiguration&gt;)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | modifier | ContentModifier&lt;LoadingProgressConfiguration&gt; | 是 | 在LoadingProgress组件上，定制内容区的方法。 modifier：内容修改器，开发者需要自定义class实现ContentModifier接口。 |
@@ -119,17 +128,19 @@ contentModifier(modifier: ContentModifier&lt;LoadingProgressConfiguration&gt;)
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)。
  
   
 
-#### LoadingProgressConfiguration12+对象说明
+## LoadingProgressConfiguration12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 开发者需要自定义class实现ContentModifier接口。继承自[CommonConfiguration](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-content-modifier#commonconfigurationt)。
  
@@ -139,6 +150,7 @@ contentModifier(modifier: ContentModifier&lt;LoadingProgressConfiguration&gt;)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | enableLoading | boolean | 否 | 否 | LoadingProgress动画是否显示。 默认值：true，true表示显示LoadingProgress动画，false表示不显示LoadingProgress动画。 |
@@ -146,9 +158,10 @@ contentModifier(modifier: ContentModifier&lt;LoadingProgressConfiguration&gt;)
  
   
 
-#### LoadingProgressStyle枚举说明
+## LoadingProgressStyle枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示LoadingProgress的样式类型，不推荐使用。
  
@@ -158,6 +171,7 @@ contentModifier(modifier: ContentModifier&lt;LoadingProgressConfiguration&gt;)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | Default | 1 | 默认加载样式。API version 8及以后不支持设置。 |
@@ -167,13 +181,17 @@ contentModifier(modifier: ContentModifier&lt;LoadingProgressConfiguration&gt;)
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 示例1（设置颜色）
+### 示例1（设置颜色）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[color](#color)接口，实现了设置加载进度条颜色的功能。
  
@@ -194,14 +212,17 @@ struct LoadingProgressExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/CKCRMKBfTvWdop6F-9vTRA/zh-cn_image_0000002686088241.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071508Z&HW-CC-Expire=86400&HW-CC-Sign=37F01EF8FC1955F5912ABF0957F65AF038AD6168D4DE2BA658FD61635D65DBFB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/okZ7EXFPTZqzNXf4UcJdRg/zh-cn_image_0000002747212817.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073105Z&HW-CC-Expire=86400&HW-CC-Sign=9ADE9158DD852050364A797E1B3547566CC99863E0821FCDA71169E2E22D9AE2)
 
  
   
 
-#### 示例2（设置定制内容区）
+### 示例2（设置定制内容区）
 
-该示例通过[contentModifier](#contentmodifier12)接口，实现了定制内容区的功能，并通过[enableLoading](#enableloading10)接口实现了通过按钮切换是否显示LoadingProgress的效果。
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+该示例通过[contentModifier](#contentmodifier12)接口，实现了定制内容区的功能，并展示了如何基于[LoadingProgressConfiguration](#loadingprogressconfiguration12对象说明)的[enableLoading](#enableloading10)属性切换自定义内容的显示效果。
  
 ```ArkTS
 // xxx.ets
@@ -319,7 +340,6 @@ function buildLoadingProgress(config: LoadingProgressConfiguration) {
 struct LoadingProgressDemoExample {
   @State loadingProgressList: (boolean | undefined | null)[] = [undefined, true, null, false];
   @State loadingProgressIndex: number = 0;
-  @State clickFlag: number = 0;
   scroller: Scroller = new Scroller();
 
   build() {
@@ -336,7 +356,6 @@ struct LoadingProgressDemoExample {
       }.height('85%')
 
       Button('点击切换config.enableLoading').onClick(() => {
-        this.clickFlag++;
         this.loadingProgressIndex = (this.loadingProgressIndex + 1) % this.loadingProgressList.length;
         console.info('enableLoading:' + this.loadingProgressList[this.loadingProgressIndex]);
       }).margin(20)
@@ -347,4 +366,4 @@ struct LoadingProgressDemoExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/AP20e_v_TN6afvh8OUM_Kg/zh-cn_image_0000002685928411.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071508Z&HW-CC-Expire=86400&HW-CC-Sign=55BABA52BABBFD006502D50ECB372583F7306702A5453A22C9DCD60DC80ADF66)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/6tM7o9ctSjyqjsuWP8BuKQ/zh-cn_image_0000002717772882.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073105Z&HW-CC-Expire=86400&HW-CC-Sign=C86B4A78645132900F3F1A16730800626638F25C732E9F5046EC7DCE41EA13F9)

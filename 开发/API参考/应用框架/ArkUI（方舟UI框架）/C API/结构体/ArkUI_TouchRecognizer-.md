@@ -1,20 +1,21 @@
 # ArkUI_TouchRecognizerHandle
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-arkui-touchrecognizerhandle
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef ArkUI_TouchRecognizer* ArkUI_TouchRecognizerHandle
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-定义触摸识别器句柄，用于表示触摸识别器对象，并在手势打断、手势收集拦截等接口中传递该对象。具体接口请参见[native_gesture.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-gesture-h)。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+定义触摸识别器句柄，用于表示触摸识别器对象，并在触摸识别或手势处理接口中传递和管理该对象。适用于自定义手势识别、多点触控事件处理，以及需要对触摸事件进行精细化拦截和分发控制的场景。
  
 **起始版本：** 15
  

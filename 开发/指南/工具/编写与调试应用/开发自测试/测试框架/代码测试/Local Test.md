@@ -1,6 +1,6 @@
 # Local Test
 
-更新时间：2026-07-28 12:07:32
+更新时间：2026-08-29 09:41:34
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-local-test
 
@@ -9,8 +9,8 @@
 
  
 
-#### 创建Local Test测试用例
-1. 在工程目录下打开待测试模块（支持HAP、HAR、HSP模块）下的ets文件，将光标置于代码中任意位置，单击**右键 > Show Context Actions**** > Create Local Test**或快捷键**Alt+Enter****（macOS为Option+Enter） > Create Local Test**创建测试类。
+## 创建Local Test测试用例
+1. 在工程目录下打开待测试模块（支持HAP、HAR、HSP模块）下的ets文件，将光标置于代码中任意位置，单击**右键 > Show Context Actions > Create Local Test**或快捷键**Alt+Enter（macOS为Option+Enter） > Create Local Test**创建测试类。
 
   
 ![](assets/Local%20Test/file-20260514133037800-1.png)
@@ -33,17 +33,20 @@
 
   
 
-  #### 运行Local Test测试用例
+  ## 运行Local Test测试用例
 
   
 
-  #### 运行模式
+  ### 运行模式
 
   可以采用运行工程目录（test）、测试文件（如Index.test.ets）、测试套件（describe）、测试方法（it）的方式来执行Local Test，各级别测试执行入口如下。
 
 |  |  |
+
 | 目录级 | 文件级 |
+
 |  |  |
+
 | 套件级 | 方法级 |
 
   以文件级别为例，在工程目录中，选中文件，单击**右键 > Run'测试文件名称'**，执行测试。
@@ -54,9 +57,7 @@
 
   也可以通过如下方式，执行Local Test：
 在工具栏主菜单单击**Run > Run'测试名称'**。
-- 在DevEco Studio的右上角，选择一项测试任务的配置，然后单击右侧的
-![](assets/Local%20Test/file-20260514133037800-17.png)
-按钮，执行Local Test。
+- 在DevEco Studio的右上角，选择一项测试任务的配置，然后单击右侧的![icon](assets/Local%20Test/file-20260514133037800-17.png)按钮，执行Local Test。
 ![](assets/Local%20Test/file-20260514133037800-2.png)
 
 
@@ -70,7 +71,7 @@
  
  
 
-#### 调试模式
+### 调试模式
 
 调试模式相比运行模式增加了断点管理功能。在断点命中时，可以选择单步执行、步入步出、进入下个断点等方式进行调试，另外可以使用线程堆栈可视化、变量和表达式可视化功能，快速定位问题。
  
@@ -102,7 +103,7 @@
  
  
 
-#### 覆盖率统计模式
+### 覆盖率统计模式
 
 在LocalTest运行的基础上支持代码覆盖率统计，当前仅支持ArkTS工程。
  
@@ -117,17 +118,15 @@
  
 
  
-- 方式二：在DevEco Studio的右上角，选择测试任务，然后单击右侧的
-![](assets/Local%20Test/file-20260514133037800-9.png)
-按钮，执行测试。
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/f6YR3o-wQaaysFPrKqaTLw/zh-cn_image_0000002648077152.png?HW-CC-KV=V1&HW-CC-Date=20260730T071819Z&HW-CC-Expire=86400&HW-CC-Sign=3C6EA9E52D7A5C594F07CAFE360C92C0F5A1FE6510B47F633B0E6867AA9D4ED6)
+- 方式二：在DevEco Studio的右上角，选择测试任务，然后单击右侧的![icon](assets/Local%20Test/file-20260514133037800-9.png)按钮，执行测试。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/YgYUIvwsQgu9auDsHFebxQ/zh-cn_image_0000002731383045.png?HW-CC-KV=V1&HW-CC-Date=20260911T072816Z&HW-CC-Expire=86400&HW-CC-Sign=4347D7FB02A44D3C9350923012A63AF71D0B180D8F76159F9A1B4CFBBB1EE930)
 
 
  
 启动测试后，进行编译构建，底部将出现Cover窗口，构建结束后自动拉起Cover窗口，测试任务结束后，窗口中会打印测试报告的路径。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/hEPp_XCfQ36L1Mufsl78_Q/zh-cn_image_0000002648077132.png?HW-CC-KV=V1&HW-CC-Date=20260730T071819Z&HW-CC-Expire=86400&HW-CC-Sign=8A77F0C1F7F9286F258927B6BF78FA4483ABC7023A0576A6D1B020B9DA630005)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/SfqvRNUBRlaTlK0iPRJmYg/zh-cn_image_0000002731543003.png?HW-CC-KV=V1&HW-CC-Date=20260911T072816Z&HW-CC-Expire=86400&HW-CC-Sign=1D804F281F8FE1332E27D85DD410D13C0FD8B6268C0E97CD019C666B212748DD)
 
  
 
@@ -135,44 +134,45 @@
 点击链接可打开报告，查看代码覆盖率详情，关于覆盖率的计算方式请参考[查看覆盖率报告](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ui-test#section10394362109)。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/6YQkOBpcRnKm5aQoIL07vg/zh-cn_image_0000002648077130.png?HW-CC-KV=V1&HW-CC-Date=20260730T071819Z&HW-CC-Expire=86400&HW-CC-Sign=DC06BAE227AFD1FEA2D9BF152F81FEBB800D77FEC168A2F32E5B3C2633826244)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/zAlmk_3gQ1SIv1rU-IK1rA/zh-cn_image_0000002731543007.png?HW-CC-KV=V1&HW-CC-Date=20260911T072816Z&HW-CC-Expire=86400&HW-CC-Sign=AEF29CB674791BE8D6E7D5EB4B5EB75AF12D3A8BF3ACCD9F7E119966A4764E3B)
 
  
 在Cover窗口中，单击rerun按钮可以按照之前的设置，重新执行覆盖率用例。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/H1cO1FDZSaWzxrdNpsNNHg/zh-cn_image_0000002647917232.png?HW-CC-KV=V1&HW-CC-Date=20260730T071819Z&HW-CC-Expire=86400&HW-CC-Sign=540F6FD463CD3227F7183778619E2D65B8D0A14EB53A2AADCA7E5398F9E62B9E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/uuzuA0AqSiS29NEPv3j_fw/zh-cn_image_0000002701823752.png?HW-CC-KV=V1&HW-CC-Date=20260911T072816Z&HW-CC-Expire=86400&HW-CC-Sign=598AC1013FC48775484750A53552F9AA5F8A79DABC439FD4D5BA314B3B43F2B1)
 
  
  
 
-#### （可选）自定义测试用例运行任务
+## （可选）自定义测试用例运行任务
 
 默认情况下，测试用例可直接运行。如果需要自定义测试用例运行任务，可通过如下方法进行设置。
  1. 在工具栏主菜单单击**Run**>**Edit Configurations**，进入Run/Debug Configurations界面。
 2. 在**Run/Debug Configurations**界面，单击**+**按钮，在弹出的下拉菜单中，单击**Local Test**。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/_3cm2bV5Q3O9hIfYTsZEyw/zh-cn_image_0000002647917224.png?HW-CC-KV=V1&HW-CC-Date=20260730T071819Z&HW-CC-Expire=86400&HW-CC-Sign=D64608AE94218968A94EFC701D8D2A12E8D84E4B787F814793FAA976C84CF6C8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/oiTk4goiSoOyd_Ckmn17gA/zh-cn_image_0000002701663802.png?HW-CC-KV=V1&HW-CC-Date=20260911T072816Z&HW-CC-Expire=86400&HW-CC-Sign=C6365B886FAFA69EFDB50B2C6A86ED621B80EABB42226997FEED4AA8AE76294C)
 
 3. 根据实际情况，配置Local Test的运行参数。 然后单击**OK**，完成配置。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/yQF7ntxfSp2s1sAfl9Vm8Q/zh-cn_image_0000002678156843.png?HW-CC-KV=V1&HW-CC-Date=20260730T071819Z&HW-CC-Expire=86400&HW-CC-Sign=FBED2689AE219B00A9FD23963669158F9DFE2DB1EA5660DEEA6C1ED00B17BC00)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/kEHcdEQYTSSLFRxR-OiyeA/zh-cn_image_0000002701823734.png?HW-CC-KV=V1&HW-CC-Date=20260911T072816Z&HW-CC-Expire=86400&HW-CC-Sign=14E6782F22BC7C1AB34171A3B42C5CDE115638BF61453993756BAB2D0EA1C752)
 
  
  
 
-#### 使用命令行执行Local Test
+## 使用命令行执行测试
 
 通过命令行方式执行Local Test，在工程根目录下执行命令：
 ```bash
-hvigorw test -p module={moduleName} -p coverage={true | false} -p scope={suiteName}#{methodName}
+hvigorw test -p module={moduleName} -p coverage={true | false} -p scope={suiteName}#{methodName} -p patch={patchPath}
 ```
  
 - module：执行测试的模块。缺省默认是执行所有模块的用例。
 - coverage：是否生成覆盖率报告，缺省默认是true，在<module-path>/.test/default/outputs/test/reports路径下生成两份报告，一份是html格式（index.html），一份是json格式（coverageReport.json），具体参考[查看覆盖率报告](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ui-test#section10394362109)。
 - scope：格式为{suiteName}#{methodName}或{suiteName}，分别表示测试用例级别或测试套件级别的测试，缺省默认是执行当前模块的所有用例。
+- patch：可选参数，指定代码补丁文件路径，用于统计增量代码覆盖率。仅支持绝对路径，后缀必须为.patch或.diff，可以通过git diff等命令生成。从26.0.0版本开始支持。
 
  
 > [!NOTE]

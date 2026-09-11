@@ -1,11 +1,12 @@
 # class (SpatialRelationUtil)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-spatialrelationutil
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -15,7 +16,8 @@ import { map, mapCommon } from '@kit.MapKit';
  
   
 
-#### SpatialRelationUtil
+## SpatialRelationUtil
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -31,7 +33,8 @@ import { map, mapCommon } from '@kit.MapKit';
  
   
 
-#### isPointContainedInPolygon
+### isPointContainedInPolygon
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -49,6 +52,7 @@ static isPointContainedInPolygon(points: Array<mapCommon.LatLng>, point: mapComm
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | points | Array<mapCommon.LatLng> | 是 | 多边形区域坐标。 |
@@ -57,6 +61,7 @@ static isPointContainedInPolygon(points: Array<mapCommon.LatLng>, point: mapComm
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 点是否在多边形区域内。 - true：在区域内 - false：不在区域内 |
@@ -66,6 +71,7 @@ static isPointContainedInPolygon(points: Array<mapCommon.LatLng>, point: mapComm
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid input parameter. |

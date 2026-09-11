@@ -1,9 +1,9 @@
 # RemoteLocationExtensionAbility（定位扩展Ability）
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-location-ability
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet
 
 > [!NOTE]
 > 定位扩展Ability目前为预留能力，暂未开放使用。
@@ -27,17 +27,19 @@ RemoteLocationExtensionAbility为定位扩展Ability，提供获取消息数据�
 **起始版本：** 4.1.0(11)
   
 
-#### 约束限制
+## 约束限制
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 为保障系统安全性和稳定性，防止RemoteLocationExtensionAbility滥用系统资源，系统对其能力进行管控， 不支持部分模块的引用，详情请参考[附录](#附录)。
  
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 import { RemoteLocationExtensionAbility } from '@kit.PushKit';
@@ -45,9 +47,10 @@ import { RemoteLocationExtensionAbility } from '@kit.PushKit';
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 **模型约束：** 属性仅可在Stage模型下使用。
  
@@ -57,6 +60,7 @@ import { RemoteLocationExtensionAbility } from '@kit.PushKit';
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | context | RemoteLocationExtensionContext | 否 | 否 | RemoteLocationExtensionAbility的上下文环境，继承自ExtensionContext。 |
@@ -64,9 +68,10 @@ import { RemoteLocationExtensionAbility } from '@kit.PushKit';
  
   
 
-#### onReceiveMessage
+## onReceiveMessage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 onReceiveMessage(payload: pushCommon.PushPayload): Promise&lt;void&gt;
  
@@ -82,6 +87,7 @@ onReceiveMessage(payload: pushCommon.PushPayload): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | payload | pushCommon.PushPayload | 是 | 位置共享消息数据。 |
@@ -89,6 +95,7 @@ onReceiveMessage(payload: pushCommon.PushPayload): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -140,9 +147,10 @@ export default class RemoteLocationExtAbility extends RemoteLocationExtensionAbi
  
   
 
-#### onDestroy
+## onDestroy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 onDestroy(): void
  
@@ -191,12 +199,14 @@ export default class RemoteLocationExtAbility extends RemoteLocationExtensionAbi
  
   
 
-#### 附录
+## 附录
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 RemoteLocationExtensionAbility不支持以下模块的引用。
   
+
 | Kit | 模块 |
 | --- | --- |
 | Notification Kit | @ohos.notification (Notification模块) @ohos.notificationManager (NotificationManager模块) |

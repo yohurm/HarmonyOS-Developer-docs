@@ -1,18 +1,19 @@
 # 订阅应用终止事件（ArkTS）
 
-更新时间：2026-07-09 02:26:55
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-watcher-app-killed-events-arkts
 
-#### 应用终止事件规格说明
+## 应用终止事件规格说明
 
 请参考[应用终止事件介绍](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-watcher-app-killed-events)。
 
 
 
-#### 接口说明
+## 接口说明
 
 API接口的具体使用说明（参数使用限制、具体取值范围等）请参考[@ohos.hiviewdfx.hiAppEvent (应用事件打点)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hiviewdfx-hiappevent)。
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -22,7 +23,7 @@ API接口的具体使用说明（参数使用限制、具体取值范围等）�
 
 
 
-#### 开发步骤
+## 开发步骤
 
 为确保开发阶段顺利接收事件回调，建议采用以下方案：创建新的Native C++工程，在ArkTS代码中实现订阅，搭配C++代码的故障注入代码构造故障以触发应用终止事件。
 1. 编辑工程中的“entry > src > main > ets > entryability > EntryAbility.ets”文件，导入依赖模块：
@@ -35,7 +36,7 @@ import { hiAppEvent } from '@kit.PerformanceAnalysisKit';
 2. 编辑工程中的“entry > src > main > ets > entryability > EntryAbility.ets”文件，在onCreate函数中添加系统事件的订阅，示例代码如下：
 
   
-```text
+```json
 hiAppEvent.addWatcher({
   // 开发者可以自定义观察者名称，系统会使用名称来标识不同的观察者
   name: "watcher",
@@ -64,6 +65,7 @@ hiAppEvent.addWatcher({
         hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.reason=${eventInfo.params['reason']}`);
         hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.app_running_unique_id=${eventInfo.params['app_running_unique_id']}`);
         hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.bundle_version=${eventInfo.params['bundle_version']}`);
+        hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.last_exit_detail_info=${JSON.stringify(eventInfo.params['last_exit_detail_info'])}`);
       }
     }
   }
@@ -166,4 +168,5 @@ HiAppEvent eventInfo.params.reason="RssThresholdKiller"
 HiAppEvent eventInfo.params.foreground=true
 HiAppEvent eventInfo.params.app_running_unique_id=207544
 HiAppEvent eventInfo.params.bundle_version=1000000
+HiAppEvent eventInfo.params.last_exit_detail_info={"exit_msg":"THREAD_BLOCK_6S","kill_reason":"ThreadBlock6S","pid":"28549","process_name":"com.samples.freezedebug","process_state":"2","pss":"0","rss":"0","timestamp":"1785743803766","uid":"20020204"}
 ```

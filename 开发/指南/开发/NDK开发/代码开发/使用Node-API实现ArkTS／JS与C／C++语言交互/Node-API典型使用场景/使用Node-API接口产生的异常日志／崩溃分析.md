@@ -1,6 +1,6 @@
 # 使用Node-API接口产生的异常日志/崩溃分析
 
-更新时间：2026-06-12 06:54:11
+更新时间：2026-08-21 10:52:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-about-crash
 
@@ -9,11 +9,11 @@
 若无特殊说明，本章节描述的维测手段会在启用ArkTS运行时多线程检测开关的情况下，立即中断进程。
   
 
-#### 数据在使用时，与创建该数据时所使用的env不一致
+## 数据在使用时，与创建该数据时所使用的env不一致
 
   
 
-#### 各问题场景的关键日志
+### 各问题场景的关键日志
 
 该维测手段主要包含以下两种场景：
  1. 调用napi方法的入参napi_env与创建napi数据结构时所使用的napi_env不一致。
@@ -48,7 +48,7 @@
   
   
 
-#### 案例及示例代码
+### 案例及示例代码
 
 
 ![](assets/使用Node-API接口产生的异常日志／崩溃分析/file-20260514132715447-0.png)
@@ -242,7 +242,7 @@ napi_value TriggerDFXDelRef(napi_env, napi_callback_info info)
         napi_value obj = nullptr;
         STRICT_NAPI_CALL(napi_create_object(localEnv, &obj));
         napi_ref ref = nullptr;
-        // 在使用完成后调用napi_delete_reference来释放引用，避免内存泄露
+        // 在使用完成后调用napi_delete_reference来释放引用，避免内存泄漏
         napi_create_reference(localEnv, obj, 1, &ref);
         if (!localEnv.RecreateSame()) {
             if (ref != nullptr) {
@@ -368,11 +368,11 @@ EXPAND_THREADSAFE_FUNCTION_CASE(TriggerDFXTsfnRelease,
  
   
 
-#### 跨线程调用
+## 跨线程调用
 
   
 
-#### 覆盖范围及关键日志
+### 覆盖范围及关键日志
 
 大多数napi接口都不是多线程安全的，因此为这些错误用法额外增加了定位手段。
  
@@ -393,7 +393,7 @@ current napi interface cannot run in multi-thread, thread id: <env tid>, current
   
   
 
-#### 案例及示例代码
+### 案例及示例代码
 
 
 ![](assets/使用Node-API接口产生的异常日志／崩溃分析/file-20260514132715447-1.png)
@@ -537,11 +537,11 @@ napi_value TriggerDFXInsGetXT(napi_env env, napi_callback_info info)
  
   
 
-#### 异步任务回调及引用回调崩溃
+## 异步任务回调及引用回调崩溃
 
   
 
-#### 覆盖范围及关键日志
+### 覆盖范围及关键日志
 
 当回调函数存在空指针解引用或数组越界等逻辑错误时会导致应用崩溃。若发生崩溃且启用了编译优化，崩溃调用栈仅显示调用回调函数的函数，而不会显示实际调用的回调函数具体来自哪个so共享库。开发者可通过以下步骤定位问题：
  1. 获取打印的回调函数指针（十进制）。
@@ -560,10 +560,10 @@ Crash occurred on <function name>, callback: <callback ptr>
  
   
 
-#### 案例及示例代码
+### 案例及示例代码
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/z_nxGXXVRuSfKzS4e-VSsg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260624T020946Z&HW-CC-Expire=86400&HW-CC-Sign=544476C2121C57B3DED214C8EEA7343E5B87C77C19BE650D42C548B353F7D26E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/FuSjAWiVQ8q3uBvFr5XBAA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T073138Z&HW-CC-Expire=86400&HW-CC-Sign=8BA542051D35C2A420CAE5BD397212B3FF19F801040788F76B2FEBE4E67BBC04)
  
  
 下面的代码仅用于构造异常场景，触发异常分支的DFX日志。在充分理解其意图前，请勿将其直接应用到业务场景中。

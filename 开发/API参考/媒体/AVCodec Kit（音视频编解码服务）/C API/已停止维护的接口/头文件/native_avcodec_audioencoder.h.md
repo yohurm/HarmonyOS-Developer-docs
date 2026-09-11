@@ -1,13 +1,14 @@
 # native_avcodec_audioencoder.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avcodec-audioencoder-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 音频编码Native API的声明。
  
@@ -27,16 +28,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_AVCodec *OH_AudioEncoder_CreateByMime(const char *mime) | 根据MIME类型创建音频编码器实例，大多数场景下建议使用此方式。(API11废弃) |
@@ -58,15 +62,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AudioEncoder_CreateByMime()
+### OH_AudioEncoder_CreateByMime()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVCodec *OH_AudioEncoder_CreateByMime(const char *mime)
@@ -86,6 +92,7 @@ OH_AVCodec *OH_AudioEncoder_CreateByMime(const char *mime)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *mime | mime类型描述字符串，请参阅AVCODEC_MIMETYPE。 |
@@ -93,6 +100,7 @@ OH_AVCodec *OH_AudioEncoder_CreateByMime(const char *mime)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVCodec * | 返回指向OH_AVCodec实例的指针。 |
@@ -100,9 +108,10 @@ OH_AVCodec *OH_AudioEncoder_CreateByMime(const char *mime)
  
   
 
-#### OH_AudioEncoder_CreateByName()
+### OH_AudioEncoder_CreateByName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVCodec *OH_AudioEncoder_CreateByName(const char *name)
@@ -122,6 +131,7 @@ OH_AVCodec *OH_AudioEncoder_CreateByName(const char *name)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *name | 音频编码器名称。 |
@@ -129,6 +139,7 @@ OH_AVCodec *OH_AudioEncoder_CreateByName(const char *name)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVCodec * | 返回指向OH_AVCodec实例的指针。 |
@@ -136,9 +147,10 @@ OH_AVCodec *OH_AudioEncoder_CreateByName(const char *name)
  
   
 
-#### OH_AudioEncoder_Destroy()
+### OH_AudioEncoder_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AudioEncoder_Destroy(OH_AVCodec *codec)
@@ -158,6 +170,7 @@ OH_AVErrCode OH_AudioEncoder_Destroy(OH_AVCodec *codec)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向OH_AVCodec实例的指针。 |
@@ -165,6 +178,7 @@ OH_AVErrCode OH_AudioEncoder_Destroy(OH_AVCodec *codec)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 如果执行成功，则返回AV_ERR_OK，否则返回特定错误代码。 |
@@ -172,9 +186,10 @@ OH_AVErrCode OH_AudioEncoder_Destroy(OH_AVCodec *codec)
  
   
 
-#### OH_AudioEncoder_SetCallback()
+### OH_AudioEncoder_SetCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AudioEncoder_SetCallback(OH_AVCodec *codec, OH_AVCodecAsyncCallback callback, void *userData)
@@ -194,6 +209,7 @@ OH_AVErrCode OH_AudioEncoder_SetCallback(OH_AVCodec *codec, OH_AVCodecAsyncCallb
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向OH_AVCodec实例的指针。 |
@@ -203,6 +219,7 @@ OH_AVErrCode OH_AudioEncoder_SetCallback(OH_AVCodec *codec, OH_AVCodecAsyncCallb
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 如果执行成功，则返回AV_ERR_OK，否则返回特定错误代码。 |
@@ -210,9 +227,10 @@ OH_AVErrCode OH_AudioEncoder_SetCallback(OH_AVCodec *codec, OH_AVCodecAsyncCallb
  
   
 
-#### OH_AudioEncoder_Configure()
+### OH_AudioEncoder_Configure()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AudioEncoder_Configure(OH_AVCodec *codec, OH_AVFormat *format)
@@ -232,6 +250,7 @@ OH_AVErrCode OH_AudioEncoder_Configure(OH_AVCodec *codec, OH_AVFormat *format)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向OH_AVCodec实例的指针。 |
@@ -240,6 +259,7 @@ OH_AVErrCode OH_AudioEncoder_Configure(OH_AVCodec *codec, OH_AVFormat *format)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 如果执行成功，则返回AV_ERR_OK，否则返回特定错误代码。 |
@@ -247,9 +267,10 @@ OH_AVErrCode OH_AudioEncoder_Configure(OH_AVCodec *codec, OH_AVFormat *format)
  
   
 
-#### OH_AudioEncoder_Prepare()
+### OH_AudioEncoder_Prepare()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AudioEncoder_Prepare(OH_AVCodec *codec)
@@ -269,6 +290,7 @@ OH_AVErrCode OH_AudioEncoder_Prepare(OH_AVCodec *codec)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向OH_AVCodec实例的指针。 |
@@ -276,6 +298,7 @@ OH_AVErrCode OH_AudioEncoder_Prepare(OH_AVCodec *codec)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 如果执行成功，则返回AV_ERR_OK，否则返回特定错误代码。 |
@@ -283,9 +306,10 @@ OH_AVErrCode OH_AudioEncoder_Prepare(OH_AVCodec *codec)
  
   
 
-#### OH_AudioEncoder_Start()
+### OH_AudioEncoder_Start()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AudioEncoder_Start(OH_AVCodec *codec)
@@ -305,6 +329,7 @@ OH_AVErrCode OH_AudioEncoder_Start(OH_AVCodec *codec)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向OH_AVCodec实例的指针。 |
@@ -312,6 +337,7 @@ OH_AVErrCode OH_AudioEncoder_Start(OH_AVCodec *codec)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 如果执行成功，则返回AV_ERR_OK，否则返回特定错误代码。 |
@@ -319,9 +345,10 @@ OH_AVErrCode OH_AudioEncoder_Start(OH_AVCodec *codec)
  
   
 
-#### OH_AudioEncoder_Stop()
+### OH_AudioEncoder_Stop()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AudioEncoder_Stop(OH_AVCodec *codec)
@@ -341,6 +368,7 @@ OH_AVErrCode OH_AudioEncoder_Stop(OH_AVCodec *codec)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向OH_AVCodec实例的指针。 |
@@ -348,6 +376,7 @@ OH_AVErrCode OH_AudioEncoder_Stop(OH_AVCodec *codec)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 如果执行成功，则返回AV_ERR_OK，否则返回特定错误代码。 |
@@ -355,9 +384,10 @@ OH_AVErrCode OH_AudioEncoder_Stop(OH_AVCodec *codec)
  
   
 
-#### OH_AudioEncoder_Flush()
+### OH_AudioEncoder_Flush()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AudioEncoder_Flush(OH_AVCodec *codec)
@@ -379,6 +409,7 @@ OH_AVErrCode OH_AudioEncoder_Flush(OH_AVCodec *codec)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向OH_AVCodec实例的指针。 |
@@ -386,6 +417,7 @@ OH_AVErrCode OH_AudioEncoder_Flush(OH_AVCodec *codec)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 如果执行成功，则返回AV_ERR_OK，否则返回特定错误代码。 |
@@ -393,9 +425,10 @@ OH_AVErrCode OH_AudioEncoder_Flush(OH_AVCodec *codec)
  
   
 
-#### OH_AudioEncoder_Reset()
+### OH_AudioEncoder_Reset()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AudioEncoder_Reset(OH_AVCodec *codec)
@@ -415,6 +448,7 @@ OH_AVErrCode OH_AudioEncoder_Reset(OH_AVCodec *codec)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向OH_AVCodec实例的指针。 |
@@ -422,6 +456,7 @@ OH_AVErrCode OH_AudioEncoder_Reset(OH_AVCodec *codec)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 如果执行成功，则返回AV_ERR_OK，否则返回特定错误代码。 |
@@ -429,9 +464,10 @@ OH_AVErrCode OH_AudioEncoder_Reset(OH_AVCodec *codec)
  
   
 
-#### OH_AudioEncoder_GetOutputDescription()
+### OH_AudioEncoder_GetOutputDescription()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVFormat *OH_AudioEncoder_GetOutputDescription(OH_AVCodec *codec)
@@ -451,6 +487,7 @@ OH_AVFormat *OH_AudioEncoder_GetOutputDescription(OH_AVCodec *codec)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向OH_AVCodec实例的指针。 |
@@ -458,6 +495,7 @@ OH_AVFormat *OH_AudioEncoder_GetOutputDescription(OH_AVCodec *codec)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVFormat * | 返回OH_AVFormat句柄指针。 |
@@ -465,9 +503,10 @@ OH_AVFormat *OH_AudioEncoder_GetOutputDescription(OH_AVCodec *codec)
  
   
 
-#### OH_AudioEncoder_SetParameter()
+### OH_AudioEncoder_SetParameter()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AudioEncoder_SetParameter(OH_AVCodec *codec, OH_AVFormat *format)
@@ -489,6 +528,7 @@ OH_AVErrCode OH_AudioEncoder_SetParameter(OH_AVCodec *codec, OH_AVFormat *format
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向OH_AVCodec实例的指针。 |
@@ -497,6 +537,7 @@ OH_AVErrCode OH_AudioEncoder_SetParameter(OH_AVCodec *codec, OH_AVFormat *format
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 如果执行成功，则返回AV_ERR_OK，否则返回特定错误代码。 |
@@ -504,9 +545,10 @@ OH_AVErrCode OH_AudioEncoder_SetParameter(OH_AVCodec *codec, OH_AVFormat *format
  
   
 
-#### OH_AudioEncoder_PushInputData()
+### OH_AudioEncoder_PushInputData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AudioEncoder_PushInputData(OH_AVCodec *codec, uint32_t index, OH_AVCodecBufferAttr attr)
@@ -530,6 +572,7 @@ OH_AVErrCode OH_AudioEncoder_PushInputData(OH_AVCodec *codec, uint32_t index, OH
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向OH_AVCodec实例的指针。 |
@@ -539,6 +582,7 @@ OH_AVErrCode OH_AudioEncoder_PushInputData(OH_AVCodec *codec, uint32_t index, OH
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 如果执行成功，则返回AV_ERR_OK，否则返回特定错误代码。 |
@@ -546,9 +590,10 @@ OH_AVErrCode OH_AudioEncoder_PushInputData(OH_AVCodec *codec, uint32_t index, OH
  
   
 
-#### OH_AudioEncoder_FreeOutputData()
+### OH_AudioEncoder_FreeOutputData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AudioEncoder_FreeOutputData(OH_AVCodec *codec, uint32_t index)
@@ -568,6 +613,7 @@ OH_AVErrCode OH_AudioEncoder_FreeOutputData(OH_AVCodec *codec, uint32_t index)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向OH_AVCodec实例的指针。 |
@@ -576,6 +622,7 @@ OH_AVErrCode OH_AudioEncoder_FreeOutputData(OH_AVCodec *codec, uint32_t index)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 如果执行成功，则返回AV_ERR_OK，否则返回特定错误代码。 |
@@ -583,9 +630,10 @@ OH_AVErrCode OH_AudioEncoder_FreeOutputData(OH_AVCodec *codec, uint32_t index)
  
   
 
-#### OH_AudioEncoder_IsValid()
+### OH_AudioEncoder_IsValid()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AudioEncoder_IsValid(OH_AVCodec *codec, bool *isValid)
@@ -605,6 +653,7 @@ OH_AVErrCode OH_AudioEncoder_IsValid(OH_AVCodec *codec, bool *isValid)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向OH_AVCodec实例的指针。 |
@@ -613,6 +662,7 @@ OH_AVErrCode OH_AudioEncoder_IsValid(OH_AVCodec *codec, bool *isValid)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 如果执行成功，则返回AV_ERR_OK，否则返回特定错误代码。 |

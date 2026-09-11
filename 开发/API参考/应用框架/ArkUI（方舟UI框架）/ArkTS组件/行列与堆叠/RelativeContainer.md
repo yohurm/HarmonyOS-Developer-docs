@@ -1,9 +1,9 @@
 # RelativeContainer
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-relativecontainer
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 相对布局组件，用于复杂场景中元素对齐的布局。通过设置子组件的对齐规则，实现子组件相对于容器或其他子组件的对齐，适用于需要灵活布局、减少嵌套层级的复杂界面。
 
@@ -14,17 +14,19 @@
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持多个子组件。
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 RelativeContainer()
 
@@ -38,9 +40,10 @@ RelativeContainer()
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持如下属性：
 
@@ -50,9 +53,10 @@ RelativeContainer()
 
 
 
-#### guideLine12+
+### guideLine12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 guideLine(value: Array&lt;GuideLineStyle&gt;)
 
@@ -66,6 +70,7 @@ guideLine(value: Array&lt;GuideLineStyle&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Array&lt;GuideLineStyle&gt; | 是 | RelativeContainer容器内的辅助线，定义guideLine的id、方向和位置，用于辅助定位子组件。 |
@@ -73,9 +78,10 @@ guideLine(value: Array&lt;GuideLineStyle&gt;)
 
 
 
-#### barrier12+
+### barrier12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 barrier(value: Array&lt;BarrierStyle&gt;)
 
@@ -89,6 +95,7 @@ barrier(value: Array&lt;BarrierStyle&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Array&lt;BarrierStyle&gt; | 是 | RelativeContainer容器内的屏障，用于定义屏障的id、方向和依赖组件，子组件可以以屏障为锚点进行对齐定位。 |
@@ -96,9 +103,10 @@ barrier(value: Array&lt;BarrierStyle&gt;)
 
 
 
-#### barrier12+
+### barrier12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 barrier(barrierStyle: Array&lt;LocalizedBarrierStyle&gt;)
 
@@ -112,6 +120,7 @@ barrier(barrierStyle: Array&lt;LocalizedBarrierStyle&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | barrierStyle | Array&lt;LocalizedBarrierStyle&gt; | 是 | RelativeContainer容器内的屏障，支持定义镜像模式的屏障线。 |
@@ -119,9 +128,10 @@ barrier(barrierStyle: Array&lt;LocalizedBarrierStyle&gt;)
 
 
 
-#### GuideLineStyle12+对象说明
+## GuideLineStyle12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 guideLine参数，用于定义一条guideLine的id、方向和位置，辅助子组件在RelativeContainer中进行定位和对齐。
 
@@ -130,6 +140,7 @@ guideLine参数，用于定义一条guideLine的id、方向和位置，辅助子
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -140,9 +151,10 @@ guideLine参数，用于定义一条guideLine的id、方向和位置，辅助子
 
 
 
-#### GuideLinePosition12+对象说明
+## GuideLinePosition12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 guideLine位置参数，用于定义guideLine的位置。
 
@@ -152,6 +164,7 @@ guideLine位置参数，用于定义guideLine的位置。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | start | Dimension | 否 | 是 | guideLine距离容器左侧或者顶部的距离。单位：vp。 默认值：0。与end二选一，若同时声明则仅start生效。若容器的width被声明为"auto"，则Axis.Vertical类型的guideLine只能使用start方式声明（不允许使用百分比）；若容器的height被声明为"auto"，则Axis.Horizontal类型的guideLine只能使用start方式声明（不允许使用百分比）。 |
@@ -160,9 +173,10 @@ guideLine位置参数，用于定义guideLine的位置。
 
 
 
-#### BarrierStyle12+对象说明
+## BarrierStyle12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 barrier参数，用于定义一条barrier的id、方向和生成时所依赖的组件，子组件可通过barrier的id引用屏障作为锚点进行对齐定位。
 
@@ -171,6 +185,7 @@ barrier参数，用于定义一条barrier的id、方向和生成时所依赖的�
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -181,9 +196,10 @@ barrier参数，用于定义一条barrier的id、方向和生成时所依赖的�
 
 
 
-#### BarrierDirection12+枚举说明
+## BarrierDirection12+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义屏障线的方向。
 
@@ -192,6 +208,7 @@ barrier参数，用于定义一条barrier的id、方向和生成时所依赖的�
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -203,9 +220,10 @@ barrier参数，用于定义一条barrier的id、方向和生成时所依赖的�
 
 
 
-#### LocalizedBarrierStyle12+对象说明
+## LocalizedBarrierStyle12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 barrier参数，用于定义一条支持镜像模式的barrier的id、方向和生成时所依赖的组件，子组件可通过barrier的id引用屏障作为锚点进行对齐定位。
 
@@ -214,6 +232,7 @@ barrier参数，用于定义一条支持镜像模式的barrier的id、方向和�
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -224,9 +243,10 @@ barrier参数，用于定义一条支持镜像模式的barrier的id、方向和�
 
 
 
-#### LocalizedBarrierDirection12+枚举说明
+## LocalizedBarrierDirection12+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义支持镜像模式的屏障线的方向。
 
@@ -235,6 +255,7 @@ barrier参数，用于定义一条支持镜像模式的barrier的id、方向和�
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -246,21 +267,26 @@ barrier参数，用于定义一条支持镜像模式的barrier的id、方向和�
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)。
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（以容器和容器内组件作为锚点进行布局）
+
+
+### 示例1（以容器和容器内组件作为锚点进行布局）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例通过alignRules接口实现了以容器和容器内组件作为锚点进行布局的功能。
 
@@ -349,7 +375,10 @@ struct Index {
 
 
 
-#### 示例2（子组件设置外边距）
+### 示例2（子组件设置外边距）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例展示容器内子组件设置外边距的方法。
 
@@ -429,7 +458,10 @@ struct Index {
 
 
 
-#### 示例3（设置容器大小自适应内容）
+### 示例3（设置容器大小自适应内容）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例展示了容器大小适应内容（声明width或height为"auto"）的用法。
 
@@ -503,7 +535,10 @@ struct Index {
 
 
 
-#### 示例4（设置偏移）
+### 示例4（设置偏移）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例通过[bias](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#bias11对象说明)实现了子组件的位置在垂直方向的两个锚点间偏移的效果。
 
@@ -542,7 +577,10 @@ struct Index {
 
 
 
-#### 示例5（设置辅助线）
+### 示例5（设置辅助线）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例展示了相对布局组件通过[guideLine](#guideline12)接口设置辅助线，子组件以辅助线为锚点的功能。
 
@@ -581,7 +619,10 @@ struct Index {
 
 
 
-#### 示例6（设置屏障）
+### 示例6（设置屏障）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例展示了相对布局组件通过[barrier](#barrier12)接口设置屏障，子组件以屏障为锚点的用法。
 
@@ -658,7 +699,10 @@ struct Index {
 
 
 
-#### 示例7（设置链）
+### 示例7（设置链）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例通过[chainMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-location#chainmode12)接口从上至下分别实现了水平方向的[SPREAD](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-location#chainstyle12)链、[SPREAD_INSIDE](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-location#chainstyle12)链和[PACKED](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-location#chainstyle12)链。
 
@@ -813,7 +857,10 @@ struct Index {
 
 
 
-#### 示例8（链中设置偏移）
+### 示例8（链中设置偏移）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例通过[chainMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-location#chainmode12)和[bias](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#bias11对象说明)接口实现了水平方向的带偏移的[PACKED](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-location#chainstyle12)链。
 
@@ -883,7 +930,10 @@ struct Index {
 
 
 
-#### 示例9（设置镜像模式）
+### 示例9（设置镜像模式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例展示了在镜像模式（direction声明Direction.Rtl）下以屏障为锚点时使用[LocalizedAlignRuleOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-location#localizedalignruleoptions12对象说明)和[LocalizedBarrierDirection](#localizedbarrierdirection12枚举说明)设置对齐方式的用法。
 
@@ -961,7 +1011,10 @@ struct Index {
 
 
 
-#### 示例10（设置链中节点权重）
+### 示例10（设置链中节点权重）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例展示了链中节点使用[chainWeight](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-location#chainweight14)设置尺寸权重的用法。
 

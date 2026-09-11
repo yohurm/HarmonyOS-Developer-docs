@@ -1,14 +1,14 @@
 # 长时任务(ArkTS)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/continuous-task
 
-#### 概述
+## 概述
 
 
 
-#### 功能介绍
+### 功能介绍
 
 应用退至后台后，在后台需要长时间运行用户可感知的任务，如播放音乐、导航等。为防止应用进程被挂起，导致对应功能异常，可以申请长时任务，使应用在后台长时间运行。在长时任务中，支持同时申请多种类型的任务，也可以对任务类型进行更新。应用退至后台执行业务时，系统会做一致性校验，确保应用在执行相应的长时任务。应用在申请长时任务成功后，通知栏会显示与长时任务相关联的消息，用户删除通知栏消息时，系统会自动停止长时任务。
 
@@ -18,11 +18,12 @@
 
 
 
-#### 使用场景
+### 使用场景
 
-下表给出了当前长时任务支持的类型，包含数据传输、音视频播放、录制、定位导航、蓝牙相关业务、多设备互联、音视频通话和计算任务。可以参考下表中的场景举例，选择合适的长时任务类型。
+下表给出了当前长时任务支持的类型，包含数据传输、音视频播放、录制、定位导航、蓝牙相关业务、多设备互联、音视频通话和计算任务等类型。可以参考下表中的场景举例，选择合适的长时任务类型。
 
 **表1** 长时任务类型
+
 
 | 参数名 | 描述 | 配置项 | 场景举例 |
 | --- | --- | --- | --- |
@@ -68,8 +69,8 @@
 
 如果应用仅申请了星闪长时任务，因设备远离等原因导致星闪断连，系统将取消应用的星闪长时任务。为确保星闪接续使用体验，在断连后的1-10分钟内（具体时长受系统负载影响），系统允许满足如下条件的应用在恢复连接时重新保活，实现在后台长时间运行。
 1. 主动注册长时任务暂停监听的事件以避免星闪断连之后长时任务被系统直接取消，可参考[on('continuousTaskSuspend')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-resourceschedule-backgroundtaskmanager#backgroundtaskmanageroncontinuoustasksuspend20)，这样在星闪断连时系统不会立即取消长时任务，而是将其标记为暂停态。
-2. 为保证在星闪断连之后能及时恢复连接，本端设备应用在星闪连接之后订阅星闪扫描结果，断连之后，本端设备主动发起星闪扫描，对端设备发送星闪广播。
-3. 本端设备成功扫描到对端设备之后，需要向对端设备发起连接。如无其他业务扫描需求，本端设备可停止星闪扫描。
+2. 为保证在星闪断连之后能及时恢复连接，本端设备应用在星闪连接之后通过[onDeviceFound](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-nearlink-scan#scanondevicefound)订阅星闪扫描结果，断连之后，本端设备通过[startScan](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-nearlink-scan#scanstartscan)主动发起星闪扫描，对端设备则通过[startAdvertising](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-nearlink-advertising#advertisingstartadvertising)发送星闪广播。
+3. 本端设备成功扫描到对端设备之后，需要通过[connect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-nearlink-ssap#connect)向对端设备发起连接。如无其他业务扫描需求，本端设备可使用[stopScan](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-nearlink-scan#scanstopscan)停止星闪扫描。
 
 关于长时任务通知说明：
 
@@ -77,7 +78,7 @@
 
 
 
-#### 约束与限制
+### 约束与限制
 
 **申请限制**：Stage模型中，长时任务仅支持UIAbility申请；FA模型中，长时任务仅支持ServiceAbility申请。长时任务支持设备当前应用申请，也支持跨设备或跨应用申请，跨设备或跨应用仅对系统应用开放。
 
@@ -102,11 +103,12 @@
 
 
 
-#### 接口说明
+## 接口说明
 
 **表2** 主要接口
 
 以下是长时任务开发使用的相关接口，下表均以Promise形式为例，更多接口及使用方式请见[后台任务管理](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-resourceschedule-backgroundtaskmanager)。
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -118,7 +120,7 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 
 本文以申请一个音视频播放类型长时任务为例，实现如下功能：
 
@@ -128,7 +130,7 @@
 
 
 
-#### Stage模型
+### Stage模型
 1. 需要申请ohos.permission.KEEP_BACKGROUND_RUNNING权限，配置方式请参见[声明权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions)。
 2. 声明后台模式类型。
 

@@ -1,6 +1,6 @@
 # 集成态HSP
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/integrated-hsp
 
@@ -11,13 +11,13 @@
 
   
 
-#### 使用场景
+## 使用场景
 
 如果存在多个应用包含相同的基础能力，例如日志打印模块，为节约开发成本并实现代码和资源的共享，多个应用可以共用一个日志模块。此时，可以通过应用内HSP方式提供能力。由于应用内HSP的限制，每个应用在使用前都需要调整其bundleName，并使用当前应用的签名重新签名，构建一个新的HSP提供给当前应用使用。这意味着，每增加一个应用，就需要进行一次调整bundleName和重新签名的操作，导致签名和打包过程繁琐。而集成态HSP在DevEco Studio编译过程中，bundleName和重签名的动作会自动完成，开发者无需关注重复签名的操作，可以专注于功能业务的开发。
  
   
 
-#### 约束限制
+## 约束限制
 
 - 集成态HSP只支持[Stage模型](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-package-structure-stage)。
 - 从API version 12开始，支持使用集成态HSP。
@@ -26,11 +26,11 @@
  
   
 
-#### 开发使用说明
+## 开发使用说明
 
   
 
-#### 配置集成态HSP
+### 配置集成态HSP
 1. 工程配置：配置工程级的build-profile.json5文件，将useNormalizedOHMUrl字段设置为true。
 
   
@@ -89,14 +89,14 @@
   (2) 配置release模式。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/kiuAcbzlS-u9tq5t2z1xqA/zh-cn_image_0000002704271609.png?HW-CC-KV=V1&HW-CC-Date=20260813T095611Z&HW-CC-Expire=86400&HW-CC-Sign=759F8D142AA5106E33C21FFCE451EF09E188DDEEDD8728052A61B0A900855FB9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/IWXU_CC2SeqoP8v6sXDbpA/zh-cn_image_0000002717769800.png?HW-CC-KV=V1&HW-CC-Date=20260911T072825Z&HW-CC-Expire=86400&HW-CC-Sign=DA5213D23ACA581407B5C22C394CC736DFC91DE9AC79A01726E24048095E6BBC)
 
 
   (3) 选择library目录，执行Build -> Make Module 'library'。
  
   
 
-#### 使用方集成
+### 使用方集成
 1. 创建目录并拷贝文件：在entry目录下新建libs目录，将集成态打包产物tgz包拷贝到libs目录下。
 2. 工程依赖配置：在使用方主模块的oh-package.json5配置文件中添加依赖。
 

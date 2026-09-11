@@ -1,13 +1,14 @@
 # Core
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-core
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Core模块提供用于媒体系统的基础骨干能力，包含内存、错误码、媒体数据结构等相关函数。作为多媒体框架的骨干支撑，本模块定义了媒体数据在内存中的组织形式、音视频参数的标准化描述方式以及统一的错误码规范，为上层音视频编解码、封装解封装等业务提供公共基础能力。
  
@@ -29,10 +30,12 @@ Core模块提供用于媒体系统的基础骨干能力，包含内存、错误�
  
   
 
-#### 文件汇总
+## 文件汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | media_types.h | 声明了常见媒体类型的定义。 |

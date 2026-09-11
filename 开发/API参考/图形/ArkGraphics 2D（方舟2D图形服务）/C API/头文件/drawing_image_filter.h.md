@@ -1,13 +1,14 @@
 # drawing_image_filter.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-image-filter-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明与绘图模块中的图像滤波器对象相关的函数。
  
@@ -25,16 +26,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_Drawing_ImageFilter* OH_Drawing_ImageFilterCreateBlur(float sigmaX, float sigmaY, OH_Drawing_TileMode tileMode,OH_Drawing_ImageFilter* imageFilter) | 创建具有模糊效果的图像滤波器。 |
@@ -47,15 +51,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Drawing_ImageFilterCreateBlur()
+### OH_Drawing_ImageFilterCreateBlur()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ImageFilter* OH_Drawing_ImageFilterCreateBlur(float sigmaX, float sigmaY, OH_Drawing_TileMode tileMode,OH_Drawing_ImageFilter* imageFilter)
@@ -71,6 +77,7 @@ OH_Drawing_ImageFilter* OH_Drawing_ImageFilterCreateBlur(float sigmaX, float sig
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | float sigmaX | 表示沿x轴方向上高斯模糊的标准差，必须大于0。 |
@@ -81,6 +88,7 @@ OH_Drawing_ImageFilter* OH_Drawing_ImageFilterCreateBlur(float sigmaX, float sig
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ImageFilter* | 函数会返回一个指针，指针指向创建的图像滤波器对象OH_Drawing_ImageFilter。如果对象返回NULL，表示创建失败；可能的原因是可用内存为空。 |
@@ -88,9 +96,10 @@ OH_Drawing_ImageFilter* OH_Drawing_ImageFilterCreateBlur(float sigmaX, float sig
  
   
 
-#### OH_Drawing_ImageFilterCreateBlurWithCrop()
+### OH_Drawing_ImageFilterCreateBlurWithCrop()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ImageFilter* OH_Drawing_ImageFilterCreateBlurWithCrop(float sigmaX, float sigmaY, OH_Drawing_TileMode tileMode, OH_Drawing_ImageFilter* input, const OH_Drawing_Rect* rect)
@@ -108,6 +117,7 @@ OH_Drawing_ImageFilter* OH_Drawing_ImageFilterCreateBlurWithCrop(float sigmaX, f
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | float sigmaX | 表示沿x轴方向上高斯模糊的标准差，必须大于0.0。 |
@@ -119,6 +129,7 @@ OH_Drawing_ImageFilter* OH_Drawing_ImageFilterCreateBlurWithCrop(float sigmaX, f
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ImageFilter* | 函数会返回一个指针，指针指向创建的图像滤波器对象OH_Drawing_ImageFilter。如果对象返回NULL，表示创建失败；可能的原因是可用内存为空。 |
@@ -126,9 +137,10 @@ OH_Drawing_ImageFilter* OH_Drawing_ImageFilterCreateBlurWithCrop(float sigmaX, f
  
   
 
-#### OH_Drawing_ImageFilterCreateFromColorFilter()
+### OH_Drawing_ImageFilterCreateFromColorFilter()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ImageFilter* OH_Drawing_ImageFilterCreateFromColorFilter(OH_Drawing_ColorFilter* colorFilter,OH_Drawing_ImageFilter* imageFilter)
@@ -144,6 +156,7 @@ OH_Drawing_ImageFilter* OH_Drawing_ImageFilterCreateFromColorFilter(OH_Drawing_C
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_ColorFilter* colorFilter | 指向具有颜色变换效果的颜色滤波器对象OH_Drawing_ColorFilter。 |
@@ -152,6 +165,7 @@ OH_Drawing_ImageFilter* OH_Drawing_ImageFilterCreateFromColorFilter(OH_Drawing_C
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ImageFilter* | 函数会返回一个指针，指针指向创建的图像滤波器对象OH_Drawing_ImageFilter。如果对象返回NULL，表示创建失败；可能的原因是可用内存为空，或者是colorFilter为NULL。 |
@@ -159,9 +173,10 @@ OH_Drawing_ImageFilter* OH_Drawing_ImageFilterCreateFromColorFilter(OH_Drawing_C
  
   
 
-#### OH_Drawing_ImageFilterCreateOffset()
+### OH_Drawing_ImageFilterCreateOffset()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ImageFilter* OH_Drawing_ImageFilterCreateOffset(float x, float y, OH_Drawing_ImageFilter* imageFilter)
@@ -177,6 +192,7 @@ OH_Drawing_ImageFilter* OH_Drawing_ImageFilterCreateOffset(float x, float y, OH_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | float x | 水平方向的平移距离。 |
@@ -186,6 +202,7 @@ OH_Drawing_ImageFilter* OH_Drawing_ImageFilterCreateOffset(float x, float y, OH_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ImageFilter* | 函数会返回一个指针，指针指向创建的图像滤波器对象OH_Drawing_ImageFilter。如果对象返回NULL，表示创建失败，可能原因为可用内存为空。 |
@@ -193,9 +210,10 @@ OH_Drawing_ImageFilter* OH_Drawing_ImageFilterCreateOffset(float x, float y, OH_
  
   
 
-#### OH_Drawing_ImageFilterCreateFromShaderEffect()
+### OH_Drawing_ImageFilterCreateFromShaderEffect()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ImageFilter* OH_Drawing_ImageFilterCreateFromShaderEffect(OH_Drawing_ShaderEffect* shaderEffect)
@@ -211,6 +229,7 @@ OH_Drawing_ImageFilter* OH_Drawing_ImageFilterCreateFromShaderEffect(OH_Drawing_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_ShaderEffect* shaderEffect | 表示要应用于图像的着色器效果。 |
@@ -218,6 +237,7 @@ OH_Drawing_ImageFilter* OH_Drawing_ImageFilterCreateFromShaderEffect(OH_Drawing_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ImageFilter* | 函数会返回一个指针，指针指向创建的图像滤波器对象OH_Drawing_ImageFilter。如果结果返回NULL，表示创建失败，可能原因为可用内存为空。 |
@@ -225,9 +245,10 @@ OH_Drawing_ImageFilter* OH_Drawing_ImageFilterCreateFromShaderEffect(OH_Drawing_
  
   
 
-#### OH_Drawing_ImageFilterDestroy()
+### OH_Drawing_ImageFilterDestroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_ImageFilterDestroy(OH_Drawing_ImageFilter* imageFilter)
@@ -243,6 +264,7 @@ void OH_Drawing_ImageFilterDestroy(OH_Drawing_ImageFilter* imageFilter)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_ImageFilter* imageFilter | 指向图像滤波器对象OH_Drawing_ImageFilter的指针。 |

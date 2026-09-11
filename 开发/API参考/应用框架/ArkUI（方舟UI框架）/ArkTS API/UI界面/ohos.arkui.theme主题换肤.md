@@ -1,9 +1,9 @@
 # @ohos.arkui.theme(主题换肤)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-theme
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持自定义主题风格，实现App组件风格跟随Theme切换。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { Theme, ThemeControl, CustomColors, Colors, CustomTheme, CustomDarkColors } from '@kit.ArkUI';
@@ -22,15 +23,17 @@ import { Theme, ThemeControl, CustomColors, Colors, CustomTheme, CustomDarkColor
 
 
 
-#### Theme
+## Theme
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 当前生效的主题风格对象，可从[onWillApplyTheme](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-custom-component-lifecycle#onwillapplytheme12)中获取。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -39,9 +42,10 @@ import { Theme, ThemeControl, CustomColors, Colors, CustomTheme, CustomDarkColor
 
 
 
-#### Colors
+## Colors
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 主题颜色资源。
 
@@ -49,6 +53,7 @@ import { Theme, ThemeControl, CustomColors, Colors, CustomTheme, CustomDarkColor
 
 > [!NOTE]
 > 颜色对应的组件可参考 文本色与图标色 。
+
 
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -111,25 +116,28 @@ import { Theme, ThemeControl, CustomColors, Colors, CustomTheme, CustomDarkColor
 
 
 
-#### CustomTheme
+## CustomTheme
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 自定义主题风格对象。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | colors | CustomColors | 否 | 是 | 自定义浅色主题颜色资源。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| darkColors20+ | CustomDarkColors | 否 | 是 | 自定义深色主题颜色资源。 说明：如果未设置darkColors，则使用浅色模式下的colors配置，并且不会随着系统深浅色模式的切换而变化；如果对应颜色通过dark目录下的资源进行设置，则会优先使用dark目录下的资源。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
+| darkColors20+ | CustomDarkColors | 否 | 是 | 自定义深色主题颜色资源。 说明：如果未设置darkColors，颜色值将与浅色模式下的colors配置相同，并且不会随着颜色模式的变化而变化，除非该颜色是通过dark目录下的资源进行设置的。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
 
 
 
 
-#### CustomColors
+## CustomColors
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type CustomColors = Partial&lt;Colors&gt;
 
@@ -139,6 +147,7 @@ type CustomColors = Partial&lt;Colors&gt;
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Partial&lt;Colors&gt; | 自定义主题颜色资源类型。 |
@@ -146,9 +155,10 @@ type CustomColors = Partial&lt;Colors&gt;
 
 
 
-#### CustomDarkColors20+
+## CustomDarkColors20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type CustomDarkColors = Partial&lt;Colors&gt;
 
@@ -158,6 +168,7 @@ type CustomDarkColors = Partial&lt;Colors&gt;
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Partial&lt;Colors&gt; | 自定义深色主题颜色资源类型。 |
@@ -165,9 +176,10 @@ type CustomDarkColors = Partial&lt;Colors&gt;
 
 
 
-#### ThemeControl
+## ThemeControl
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ThemeControl将自定义Theme应用于App组件内，实现App组件风格跟随Theme切换。
 
@@ -177,13 +189,14 @@ ThemeControl将自定义Theme应用于App组件内，实现App组件风格跟随
 
 
 
-#### setDefaultTheme
+### setDefaultTheme
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-setDefaultTheme(theme: [CustomTheme](#customtheme)): void
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-将用户自定义Theme设置为应用级默认主题，以实现应用风格跟随Theme切换。若在页面中使用此接口设置应用级默认主题，需确保该接口在页面build前执行。若在UIAbility中使用此接口设置应用级默认主题，需确保该接口在onWindowStageCreate阶段里windowStage.[loadContent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window-windowstage#loadcontent9)接口调用完成的回调函数中执行。详细代码可参考[设置应用内组件自定义主题色](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/theme_skinning#设置应用内组件自定义主题色)。
+setDefaultTheme(theme: CustomTheme): void
+
+将用户自定义Theme设置应用级默认主题，以实现应用风格跟随Theme切换。若在页面中使用此接口设置应用级默认主题，需确保该接口在页面build前执行。若在UIAbility中使用此接口设置应用级默认主题，需确保该接口在onWindowStageCreate阶段里windowStage.[loadContent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window-windowstage#loadcontent9)接口调用完成的回调函数中执行。详细代码可参考[设置应用内组件自定义主题色](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/theme_skinning#设置应用内组件自定义主题色)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -191,20 +204,25 @@ setDefaultTheme(theme: [CustomTheme](#customtheme)): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| theme | CustomTheme | 是 | 自定义主题风格对象。 |
+| theme | CustomTheme | 是 | 表示设置的自定义主题风格。 |
 
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（使用setDefaultTheme）
+
+
+### 示例1（使用setDefaultTheme）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例主要演示[ThemeControl](#themecontrol).[setDefaultTheme](#setdefaulttheme)的使用。
 
@@ -212,9 +230,9 @@ setDefaultTheme(theme: [CustomTheme](#customtheme)): void
 import { CustomTheme, CustomColors, ThemeControl } from '@kit.ArkUI';
 // 自定义主题颜色
 class BlueColors implements CustomColors {
-  fontPrimary = '#FF707070'; // 一级文本字体颜色
-  backgroundPrimary = '#FF2787D9'; // 一级背景颜色
-  brand = '#FFEEAAFF'; // 品牌色
+  fontPrimary = "#FF707070";
+  backgroundPrimary = "#FF2787D9";
+  brand = "#FFEEAAFF"; // 品牌色
 }
 
 class PageCustomTheme implements CustomTheme {
@@ -225,9 +243,9 @@ class PageCustomTheme implements CustomTheme {
   }
 }
 // 创建实例
-const blueColorsTheme = new PageCustomTheme(new BlueColors());
-// 在页面build之前执行ThemeControl.setDefaultTheme，设置App默认样式风格为blueColorsTheme。
-ThemeControl.setDefaultTheme(blueColorsTheme);
+const BlueColorsTheme = new PageCustomTheme(new BlueColors());
+// 在页面build之前执行ThemeControl.setDefaultTheme，设置App默认样式风格为BlueColorsTheme。
+ThemeControl.setDefaultTheme(BlueColorsTheme);
 
 @Entry
 @Component
@@ -268,7 +286,10 @@ struct Index {
 
 
 
-#### 示例2（设置组件主题色）
+### 示例2（设置组件主题色）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例主要演示使用[Colors](#colors)中的brand、primary、onPrimary和container设置组件主题色。
 
@@ -291,11 +312,11 @@ class AppColors implements CustomColors {
   }
 }
 
-@Entry({ routeName: 'text' })
+@Entry({ routeName: "text" })
 @Component
 struct TextPage {
   @State appColors: AppColors = new AppColors(
-    '#ff0000', '#0000ff', '#00ff00', '#ff00ff'
+    "#ff0000", "#0000ff", "#00ff00", "#ff00ff"
   );
   controller: TextClockController = new TextClockController();
   @State accumulateTime: number = 0;
@@ -329,4 +350,4 @@ struct TextPage {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/LlJ82A27RzOuHtoIkJSSow/zh-cn_image_0000002704394303.png?HW-CC-KV=V1&HW-CC-Date=20260813T095444Z&HW-CC-Expire=86400&HW-CC-Sign=A93C3FBE7379211C43725D4D00852B7F77C285C5BC613175B6662F209AD808F6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/BtmaoacBR42jQYKbP2LNkA/zh-cn_image_0000002717612372.png?HW-CC-KV=V1&HW-CC-Date=20260911T072837Z&HW-CC-Expire=86400&HW-CC-Sign=00772D6938EFA6F74A978E3BDE09B85973C5AC8E19E39BF6FA3B7423EA966356)

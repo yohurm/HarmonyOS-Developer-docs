@@ -41,7 +41,7 @@ class InfoOne {
     this.phoneNumber = phoneNumber;
   }
 
-  // @Monitor可以写在Class中监听属性变化。
+<em>  // @Monitor可以写在Class中监听属性变化。</em>
   @Monitor('phoneNumber')
   phoneNumberChange(monitor: IMonitor) {
     let lastValue: number = monitor.value()?.before as number;
@@ -55,7 +55,7 @@ class PersonOne {
   @Trace name: string = '小明';
   @Trace info: InfoOne = new InfoOne(123456789);
 
-  // 监听嵌套类中属性
+ <em> // 监听嵌套类中属性</em>
   @Monitor('info.phoneNumber')
   phoneNumberChange(monitor: IMonitor) {
     let lastValue: number = monitor.value()?.before as number;
@@ -63,7 +63,7 @@ class PersonOne {
     console.info(`在Person类中监听嵌套Info类中的phoneNumber属性的变化，变之前的值：${lastValue}，变后的值：${curValue}。`);
   }
 
-  // 监听自身多个属性变化。
+ <em> // 监听自身多个属性变化。</em>
   @Monitor('name', 'info')
   personPropertyChange(monitor: IMonitor) {
     monitor.dirty.forEach((path: string) => {
@@ -77,7 +77,7 @@ class PersonOne {
 struct SceneOne {
   @Local person: PersonOne = new PersonOne();
 
-  // 多个属性变化。
+ <em> // 多个属性变化。</em>
   @Monitor('person.name', 'person.info', 'person.info.phoneNumber', 'person')
   propertyChange(monitor: IMonitor) {
     monitor.dirty.forEach((path: string) => {
@@ -154,7 +154,7 @@ class PersonTwo {
 struct SceneTwo {
   @Local personArr: PersonTwo[] = [new PersonTwo()];
 
-  // 多个属性变化，对于数组而言，对数组某一项的监听不是通过“[]”表述索引位置，而是通过“.”获取索引位置。
+  <em>// 多个属性变化，对于数组而言，对数组某一项的监听不是通过“[]”表述索引位置，而是通过“.”获取索引位置。</em>
   @Monitor('personArr.0.name', 'personArr.0.info', 'personArr.0.info.phoneNumber', 'personArr.0')
   propertyChange(monitor: IMonitor) {
     monitor.dirty.forEach((path: string) => {
@@ -162,7 +162,7 @@ struct SceneTwo {
     });
   }
 
-  // 监听数组长度变化。
+  <em>// 监听数组长度变化。</em>
   @Monitor('personArr.length')
   arrChange(monitor: IMonitor) {
     monitor.dirty.forEach((path: string) => {
@@ -175,20 +175,20 @@ struct SceneTwo {
       Button('修改InfoTwo实例化的属性')
         .fontWeight(FontWeight.Bold)
         .onClick(() => {
-          // 以第一项为例
+         <em> // 以第一项为例</em>
           this.personArr[0].info.phoneNumber = 999999999;
         });
       Button('修改PersonTwo实例化的属性')
         .fontWeight(FontWeight.Bold)
         .onClick(() => {
-          // 以第一项为例
+        <em>  // 以第一项为例</em>
           this.personArr[0].info = new InfoTwo(666666666);
           this.personArr[0].name = '小王';
         });
       Button('修改PersonTwo')
         .fontWeight(FontWeight.Bold)
         .onClick(() => {
-          // 以第一项为例
+        <em>  // 以第一项为例</em>
           this.personArr[0] = new PersonTwo();
         });
       Button('修改增加项数组')
@@ -229,7 +229,7 @@ class InfoThree {
     this.phoneNumber = phoneNumber;
   }
 
-  // 若需要监听Map/Set内对象的属性变化，建议在Class中实现
+  <em>// 若需要监听Map/Set内对象的属性变化，建议在Class中实现</em>
   @Monitor('phoneNumber')
   phoneNumberChange(monitor: IMonitor) {
     let lastValue: number = monitor.value()?.before as number;
@@ -244,7 +244,7 @@ struct SceneThree {
   @Local memberMap: Map<string, InfoThree> = new Map([['小明', new InfoThree(123456789)]]);
   @Local memberSet: Set<InfoThree> = new Set([new InfoThree(123456789)]);
 
-  // 监听Map大小变化。
+  <em>// 监听Map大小变化。</em>
   @Monitor('memberMap.size')
   mapChange(monitor: IMonitor) {
     monitor.dirty.forEach((path: string) => {
@@ -252,7 +252,7 @@ struct SceneThree {
     });
   }
 
-  // 监听Set大小变化。
+  <em>// 监听Set大小变化。</em>
   @Monitor('memberSet.size')
   setChange(monitor: IMonitor) {
     monitor.dirty.forEach((path: string) => {
@@ -265,10 +265,10 @@ struct SceneThree {
       Button('Map修改小明电话号码')
         .fontWeight(FontWeight.Bold)
         .onClick(() => {
-          // Map
+        <em>  // Map</em>
           let tempMap: InfoThree = this.memberMap.get('小明') as InfoThree;
           tempMap.phoneNumber = 999999999;
-          // Set
+         <em> // Set</em>
           let tempSet: InfoThree = this.memberSet.values().next().value;
           tempSet.phoneNumber = 888888888;
         });

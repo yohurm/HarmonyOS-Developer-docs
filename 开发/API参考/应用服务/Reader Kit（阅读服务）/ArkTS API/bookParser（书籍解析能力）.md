@@ -1,6 +1,6 @@
 # bookParser（书籍解析能力）
 
-更新时间：2026-06-12 06:54:11
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/reader-book-parser
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -10,7 +10,8 @@
 **起始版本：** 5.0.4(16)
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -20,7 +21,8 @@ import { bookParser } from '@kit.ReaderKit';
 
 
 
-#### BookInfo
+## BookInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -33,6 +35,7 @@ import { bookParser } from '@kit.ReaderKit';
 **系统能力：** SystemCapability.Reader.ReaderService.BookParser
 
 **起始版本：** 5.0.4(16)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -51,7 +54,8 @@ import { bookParser } from '@kit.ReaderKit';
 
 
 
-#### SpineItem
+## SpineItem
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -65,6 +69,7 @@ import { bookParser } from '@kit.ReaderKit';
 
 **起始版本：** 5.0.4(16)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | idRef | string | 否 | 否 | 内容节点资源标识，唯一标识一个正文内容文件。 |
@@ -75,7 +80,8 @@ import { bookParser } from '@kit.ReaderKit';
 
 
 
-#### CatalogItem
+## CatalogItem
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -88,6 +94,7 @@ import { bookParser } from '@kit.ReaderKit';
 **系统能力：** SystemCapability.Reader.ReaderService.BookParser
 
 **起始版本：** 5.0.4(16)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -106,7 +113,8 @@ import { bookParser } from '@kit.ReaderKit';
 
 
 
-#### CallbackRes
+## CallbackRes
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -124,12 +132,14 @@ type CallbackRes<T, V> = (data: T) => V
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | T | 是 | 资源请求接口中的参数。例如：获取自定义字体时，该字段代表需要获取字体的名称。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -154,13 +164,13 @@ struct Reader {
     this.registerListener();
   }
 
-  private async registerListener(){
+  private async registerListener() {
     let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-    await this.readerComponentController.init(context)
+    await this.readerComponentController.init(context);
     this.readerComponentController.on('resourceRequest', this.resourceRequest);
   }
 
-  private resourceRequest: bookParser.CallbackRes<string,ArrayBuffer> = (fileName: string): ArrayBuffer => {
+  private resourceRequest: bookParser.CallbackRes<string, ArrayBuffer> = (fileName: string): ArrayBuffer => {
     if (this.isFont(fileName)) {
       let res = $rawfile(this.selectFontPath);
       let context = this.getUIContext().getHostContext();
@@ -175,7 +185,7 @@ struct Reader {
   }
 
   private isFont(filePath: string): boolean {
-    let options = [".ttf", ".woff2", ".otf"];
+    let options = ['.ttf', '.woff2', '.otf'];
     let path = filePath.toLowerCase();
     let result = path.indexOf(options[0]) != -1 || path.indexOf(options[1]) != -1 || path.indexOf(options[2]) != -1;
     hilog.info(0x0000, 'testTag', 'isFont = ' + result);
@@ -197,7 +207,8 @@ struct Reader {
 
 
 
-#### getDefaultHandler
+## getDefaultHandler
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -215,6 +226,7 @@ getDefaultHandler(path: string): Promise&lt;BookParserHandler&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 本地书籍文件路径（仅支持当前应用下的应用沙箱目录）。 |
@@ -222,12 +234,14 @@ getDefaultHandler(path: string): Promise&lt;BookParserHandler&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;BookParserHandler&gt; | Promise对象，返回BookParserHandler类。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -268,7 +282,8 @@ struct Reader {
 
 
 
-#### BookParserHandler
+## BookParserHandler
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -284,7 +299,8 @@ struct Reader {
 
 
 
-#### getBookInfo
+### getBookInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -302,12 +318,14 @@ getBookInfo(): BookInfo
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | BookInfo | 书籍基本信息。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -347,7 +365,8 @@ struct Reader {
 
 
 
-#### getCatalogList
+### getCatalogList
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -365,6 +384,7 @@ getCatalogList(): CatalogItem[]
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | CatalogItem[] | 目录节点列表。 |
@@ -372,11 +392,12 @@ getCatalogList(): CatalogItem[]
 
 **错误码：**
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 1017000001 | Book parser is not initialized |
-| 1017000999 | Other error |
-| 1017010002 | Invalid request |
+| 1017000001 | Book parser is not initialized. |
+| 1017000999 | Other error. |
+| 1017010002 | Invalid request. |
 
 
 **示例：**
@@ -410,7 +431,8 @@ struct Reader {
 
 
 
-#### getSpineList
+### getSpineList
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -428,12 +450,14 @@ getSpineList(): SpineItem[]
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | SpineItem[] | 内容节点列表。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -473,7 +497,8 @@ struct Reader {
 
 
 
-#### getSpineItemContent
+### getSpineItemContent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -491,6 +516,7 @@ getSpineItemContent(spineIndex: number): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | spineIndex | number | 是 | 内容资源索引SpineItem.index。 |
@@ -498,12 +524,14 @@ getSpineItemContent(spineIndex: number): Promise&lt;string&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回单个书脊内容字符串。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -546,7 +574,8 @@ struct Reader {
 
 
 
-#### getResourceContent
+### getResourceContent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -568,6 +597,7 @@ getResourceContent(spineIndex: number, filePath: string): ArrayBuffer
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | spineIndex | number | 是 | 内容资源索引SpineItem.index。如果传负数，如-1，代表获取书封。 |
@@ -576,12 +606,14 @@ getResourceContent(spineIndex: number, filePath: string): ArrayBuffer
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArrayBuffer | 返回文件的二进制数据。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -626,7 +658,8 @@ struct Reader {
 
 
 
-#### getDomPosByCatalogHref
+### getDomPosByCatalogHref
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -644,6 +677,7 @@ getDomPosByCatalogHref(href: string): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | href | string | 是 | 目录节点带锚点的内容资源路径CatalogItem.href。 |
@@ -651,12 +685,14 @@ getDomPosByCatalogHref(href: string): string
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 章节的domPos信息。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -699,7 +735,8 @@ struct Reader {
 
 
 
-#### getAbsoluteResourcePath
+### getAbsoluteResourcePath
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -721,6 +758,7 @@ getAbsoluteResourcePath(spineIndex: number): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | spineIndex | number | 是 | 内容资源索引SpineItem.index。 |
@@ -728,12 +766,14 @@ getAbsoluteResourcePath(spineIndex: number): string
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 资源的完整路径 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

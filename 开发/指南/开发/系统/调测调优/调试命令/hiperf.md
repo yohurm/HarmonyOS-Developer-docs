@@ -1,6 +1,6 @@
 # hiperf
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiperf
 
@@ -11,7 +11,7 @@ hiperf是一款集成多种性能分析功能的命令行工具，可用于分�
 本文档详细说明了hiperf命令行工具的使用方法，帮助开发者借助该工具进行详细的性能分析。
 
 
-#### 环境要求
+## 环境要求
 
  - 根据hdc命令行工具指导，完成[环境准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hdc#环境准备)。
  - 确保设备已连接，然后执行hdc shell。
@@ -19,13 +19,14 @@ hiperf是一款集成多种性能分析功能的命令行工具，可用于分�
 
 
 
-#### 命令行说明
+## 命令行说明
 
 使用hiperf --help可以列出hiperf所有的命令，包括dump、list、record、report、stat等。
 
 ```bash
 $ hiperf --help
 ```
+
 
 | 命令 | 命令说明 |
 | --- | --- |
@@ -76,11 +77,11 @@ See 'hiperf help [command]' for more information on a specific command.
 
 
 
-#### 常用命令
+## 常用命令
 
 
 
-#### 性能数据采样记录
+### 性能数据采样记录
 1. 对进程ID为1234的进程采样10秒，设置回栈方式为fp（栈指针），采样频率1000次/秒，事件类型为hw-cpu-cycles和hw-instructions，采样文件保存至/data/local/tmp/perf.data。
 
   
@@ -114,7 +115,7 @@ Hiperf is not running as root mode. Do not need load kernel syms
 
 
 
-#### 性能数据统计
+### 性能数据统计
 1. 对进程ID为1745和1910的进程进行计数，计数时长为10s。
 
   
@@ -184,11 +185,12 @@ hw-instructions id:1378(c-1:p1990) timeEnabled:187833 timeRunning:187833 value:4
 
 
 
-#### list命令
+## list命令
 
 展示当前系统支持的性能事件类型，事件类型可用于record和stat命令-e选项的参数。
 
 **参数**：
+
 
 | 参数名 | 说明 |
 | --- | --- |
@@ -226,7 +228,7 @@ Supported events for hardware:
 
 
 
-#### record命令
+## record命令
 
 采集指定进程或指定应用的性能数据，包括CPU周期、指令数、函数调用等信息，并且将采样数据保存到指定的文件中（默认路径以设备上运行 hiperf record -h/--help 时显示的 -o 参数说明为准）。
 
@@ -243,6 +245,7 @@ Supported events for hardware:
 
 
 **record命令参数说明**
+
 
 | 参数 | 参数说明 |
 | --- | --- |
@@ -306,7 +309,7 @@ $ hiperf record -p 267 -d 10 -s dwarf
 
 
 
-#### stat命令
+## stat命令
 
 监听用户指定的目标程序，周期性打印性能计数器的值。
 
@@ -323,6 +326,7 @@ $ hiperf record -p 267 -d 10 -s dwarf
 
 
 **stat命令参数说明**
+
 
 | 参数 | 参数说明 |
 | --- | --- |
@@ -360,11 +364,12 @@ $ hiperf stat -p 1745 -d 3 -c 0
 
 
 
-#### dump命令
+## dump命令
 
 此命令用于将不同格式的性能数据文件（如perf.data）转换为内容易读的明文，便于开发和测试人员核对其中原始采样数据的正确性。
 
 **dump命令参数说明**
+
 
 | 参数 | 参数说明 |
 | --- | --- |
@@ -394,11 +399,12 @@ $ hiperf dump -i /data/local/tmp/perf.data -o /data/local/tmp/perf.dump
 
 
 
-#### report命令
+## report命令
 
 此命令主要用于将采样数据（perf.data）转换为用户指定的格式（例如Json或者ProtoBuf），并可以将属于相同进程、线程、函数的样本分组到同一样本条目中，根据样本条目的事件计数对样本条目进行排序，并以报告的形式进行展示。
 
 **report命令参数说明**
+
 
 | 参数 | 参数说明 |
 | --- | --- |
@@ -433,11 +439,11 @@ $ hiperf report -i /data/local/tmp/perf.data --limit-percent 1
 
 
 
-#### 常见问题
+## 常见问题
 
 
 
-#### hiperf采集没有debug证书签名的应用失败
+### hiperf采集没有debug证书签名的应用失败
 
 **现象描述**
 

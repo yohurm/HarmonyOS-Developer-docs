@@ -1,13 +1,14 @@
 # avimage_generator_base.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avimage-generator-base-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义AVImageGenerator的枚举。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_AVImageGenerator_QueryOptions | OH_AVImageGenerator_QueryOptions | 指定查询视频帧时，时间点与帧对应关系选项的枚举类型。 |
@@ -40,15 +44,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AVImageGenerator_QueryOptions
+### OH_AVImageGenerator_QueryOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AVImageGenerator_QueryOptions
@@ -62,6 +68,7 @@ enum OH_AVImageGenerator_QueryOptions
  
 **起始版本：** 18
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_AVIMAGE_GENERATOR_QUERY_NEXT_SYNC = 0 | 此选项用于选取传入时间点或之后的关键帧。 |

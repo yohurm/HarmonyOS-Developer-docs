@@ -1,13 +1,14 @@
 # loop.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-loop-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明事件循环的C接口。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | ffrt_loop_t | loop句柄，用于标识不同的loop。 |
@@ -40,10 +44,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | FFRT_C_API ffrt_loop_t ffrt_loop_create(ffrt_queue_t queue) | 在指定的队列上创建loop，用于运行事件循环。 |
@@ -57,15 +63,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### ffrt_loop_create()
+### ffrt_loop_create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API ffrt_loop_t ffrt_loop_create(ffrt_queue_t queue)
@@ -79,6 +87,7 @@ FFRT_C_API ffrt_loop_t ffrt_loop_create(ffrt_queue_t queue)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_queue_t queue | 队列。 |
@@ -86,6 +95,7 @@ FFRT_C_API ffrt_loop_t ffrt_loop_create(ffrt_queue_t queue)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API ffrt_loop_t | loop创建成功时返回非空的loop句柄； 否则返回空指针。 |
@@ -93,9 +103,10 @@ FFRT_C_API ffrt_loop_t ffrt_loop_create(ffrt_queue_t queue)
  
   
 
-#### ffrt_loop_destroy()
+### ffrt_loop_destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API int ffrt_loop_destroy(ffrt_loop_t loop)
@@ -109,6 +120,7 @@ FFRT_C_API int ffrt_loop_destroy(ffrt_loop_t loop)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_loop_t loop | loop句柄。 |
@@ -116,6 +128,7 @@ FFRT_C_API int ffrt_loop_destroy(ffrt_loop_t loop)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API int | loop销毁成功时返回0； 否则返回-1。 |
@@ -123,9 +136,10 @@ FFRT_C_API int ffrt_loop_destroy(ffrt_loop_t loop)
  
   
 
-#### ffrt_loop_run()
+### ffrt_loop_run()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API int ffrt_loop_run(ffrt_loop_t loop)
@@ -139,6 +153,7 @@ FFRT_C_API int ffrt_loop_run(ffrt_loop_t loop)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_loop_t loop | loop句柄。 |
@@ -146,6 +161,7 @@ FFRT_C_API int ffrt_loop_run(ffrt_loop_t loop)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API int | loop运行成功时返回0； 否则返回-1。 |
@@ -157,9 +173,10 @@ FFRT_C_API int ffrt_loop_run(ffrt_loop_t loop)
  
   
 
-#### ffrt_loop_stop()
+### ffrt_loop_stop()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API void ffrt_loop_stop(ffrt_loop_t loop)
@@ -173,6 +190,7 @@ FFRT_C_API void ffrt_loop_stop(ffrt_loop_t loop)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_loop_t loop | loop句柄。 |
@@ -184,9 +202,10 @@ FFRT_C_API void ffrt_loop_stop(ffrt_loop_t loop)
  
   
 
-#### ffrt_loop_epoll_ctl()
+### ffrt_loop_epoll_ctl()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API int ffrt_loop_epoll_ctl(ffrt_loop_t loop, int op, int fd, uint32_t events, void *data, ffrt_poller_cb cb)
@@ -200,6 +219,7 @@ FFRT_C_API int ffrt_loop_epoll_ctl(ffrt_loop_t loop, int op, int fd, uint32_t ev
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_loop_t loop | loop句柄。 |
@@ -212,6 +232,7 @@ FFRT_C_API int ffrt_loop_epoll_ctl(ffrt_loop_t loop, int op, int fd, uint32_t ev
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API int | 操作成功时返回0； 否则返回-1。 |
@@ -219,9 +240,10 @@ FFRT_C_API int ffrt_loop_epoll_ctl(ffrt_loop_t loop, int op, int fd, uint32_t ev
  
   
 
-#### ffrt_loop_timer_start()
+### ffrt_loop_timer_start()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API ffrt_timer_t ffrt_loop_timer_start(ffrt_loop_t loop, uint64_t timeout, void* data, ffrt_timer_cb cb, bool repeat)
@@ -235,6 +257,7 @@ FFRT_C_API ffrt_timer_t ffrt_loop_timer_start(ffrt_loop_t loop, uint64_t timeout
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_loop_t loop | loop句柄。 |
@@ -246,6 +269,7 @@ FFRT_C_API ffrt_timer_t ffrt_loop_timer_start(ffrt_loop_t loop, uint64_t timeout
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API ffrt_timer_t | 定时器句柄；若loop或cb为空则返回-1。 |
@@ -257,9 +281,10 @@ FFRT_C_API ffrt_timer_t ffrt_loop_timer_start(ffrt_loop_t loop, uint64_t timeout
  
   
 
-#### ffrt_loop_timer_stop()
+### ffrt_loop_timer_stop()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API int ffrt_loop_timer_stop(ffrt_loop_t loop, ffrt_timer_t handle)
@@ -273,6 +298,7 @@ FFRT_C_API int ffrt_loop_timer_stop(ffrt_loop_t loop, ffrt_timer_t handle)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_loop_t loop | loop句柄。 |
@@ -281,6 +307,7 @@ FFRT_C_API int ffrt_loop_timer_stop(ffrt_loop_t loop, ffrt_timer_t handle)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API int | 操作成功时返回0； 否则返回-1。 |

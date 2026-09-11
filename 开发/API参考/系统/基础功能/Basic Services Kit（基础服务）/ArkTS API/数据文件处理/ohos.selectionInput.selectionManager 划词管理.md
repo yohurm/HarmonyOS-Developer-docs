@@ -1,6 +1,6 @@
 # @ohos.selectionInput.selectionManager (划词管理)
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-selectioninput-selectionmanager
 **支持设备：** PC/2in1
@@ -20,7 +20,8 @@
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** PC/2in1
 
@@ -30,7 +31,8 @@ import { selectionManager } from '@kit.BasicServicesKit';
 
 
 
-#### selectionManager
+## selectionManager
+
 
 **支持设备：** PC/2in1
 
@@ -40,7 +42,8 @@ import { selectionManager } from '@kit.BasicServicesKit';
 
 
 
-#### selectionManager.on('selectionCompleted')
+### selectionManager.on('selectionCompleted')
+
 
 **支持设备：** PC/2in1
 
@@ -54,6 +57,7 @@ on(type: 'selectionCompleted', callback: Callback&lt;SelectionInfo&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 设置监听类型，固定取值为'selectionCompleted'。 |
@@ -63,6 +67,7 @@ on(type: 'selectionCompleted', callback: Callback&lt;SelectionInfo&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[划词服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-selection)，未标明的通用错误码请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -86,7 +91,8 @@ try {
 
 
 
-#### selectionManager.off('selectionCompleted')
+### selectionManager.off('selectionCompleted')
+
 
 **支持设备：** PC/2in1
 
@@ -99,6 +105,7 @@ off(type: 'selectionCompleted', callback?: Callback&lt;SelectionInfo&gt;): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -128,7 +135,8 @@ try {
 
 
 
-#### getSelectionContent()
+### getSelectionContent()
+
 
 **支持设备：** PC/2in1
 
@@ -142,6 +150,7 @@ getSelectionContent(): Promise&lt;string&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回当前选中文本的内容。 |
@@ -150,6 +159,7 @@ getSelectionContent(): Promise&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[划词服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-selection)，未标明的通用错误码请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -180,7 +190,8 @@ selectionManager.on('selectionCompleted', async (info: selectionManager.Selectio
 
 
 
-#### createPanel
+### createPanel
+
 
 **支持设备：** PC/2in1
 
@@ -196,6 +207,7 @@ createPanel(ctx: Context, info: PanelInfo): Promise&lt;Panel&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ctx | Context | 是 | 当前划词面板依赖的上下文信息，需使用SelectionExtensionAbility提供的上下文。 |
@@ -203,6 +215,7 @@ createPanel(ctx: Context, info: PanelInfo): Promise&lt;Panel&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -212,6 +225,7 @@ createPanel(ctx: Context, info: PanelInfo): Promise&lt;Panel&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[划词服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-selection)，未标明的通用错误码请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -267,7 +281,8 @@ export default ServiceExtAbility;
 
 
 
-#### destroyPanel
+### destroyPanel
+
 
 **支持设备：** PC/2in1
 
@@ -281,12 +296,14 @@ destroyPanel(panel: Panel): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | panel | Panel | 是 | 要销毁的面板对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -296,6 +313,7 @@ destroyPanel(panel: Panel): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[划词服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-selection)，未标明的通用错误码请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -362,7 +380,8 @@ export default ServiceExtAbility;
 
 
 
-#### SelectionInfo
+## SelectionInfo
+
 
 **支持设备：** PC/2in1
 
@@ -371,6 +390,7 @@ export default ServiceExtAbility;
 **系统能力：** SystemCapability.SelectionInput.Selection
 
 **模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -390,7 +410,8 @@ export default ServiceExtAbility;
 
 
 
-#### Panel
+## Panel
+
 
 **支持设备：** PC/2in1
 
@@ -404,7 +425,8 @@ export default ServiceExtAbility;
 
 
 
-#### setUiContent
+### setUiContent
+
 
 **支持设备：** PC/2in1
 
@@ -418,12 +440,14 @@ setUiContent(path: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 要加载到面板中的页面内容的路径，Stage模型下该路径需添加到工程的resources/base/profile/main_pages.json文件中，不支持FA模型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -433,6 +457,7 @@ setUiContent(path: string): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[划词服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-selection)，未标明的通用错误码请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -459,7 +484,8 @@ try {
 
 
 
-#### show
+### show
+
 
 **支持设备：** PC/2in1
 
@@ -473,6 +499,7 @@ show(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -481,6 +508,7 @@ show(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[划词服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-selection)，未标明的通用错误码请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -503,7 +531,8 @@ selectionPanel.show().then(() => {
 
 
 
-#### hide
+### hide
+
 
 **支持设备：** PC/2in1
 
@@ -517,6 +546,7 @@ hide(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -525,6 +555,7 @@ hide(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[划词服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-selection)，未标明的通用错误码请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -547,7 +578,8 @@ selectionPanel.hide().then(() => {
 
 
 
-#### startMoving
+### startMoving
+
 
 **支持设备：** PC/2in1
 
@@ -561,6 +593,7 @@ startMoving(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -569,6 +602,7 @@ startMoving(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[划词服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-selection)，未标明的通用错误码请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -603,7 +637,8 @@ RelativeContainer() {
 
 
 
-#### moveToGlobalDisplay
+### moveToGlobalDisplay
+
 
 **支持设备：** PC/2in1
 
@@ -617,6 +652,7 @@ moveToGlobalDisplay(x: number, y: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | x | number | 是 | 目标位置在屏幕全局坐标系下的x轴坐标，单位为px。全局坐标系以主屏幕左上角为原点，x轴正方向向右；扩展屏的x坐标视屏幕布局可能为负值。 |
@@ -624,6 +660,7 @@ moveToGlobalDisplay(x: number, y: number): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -633,6 +670,7 @@ moveToGlobalDisplay(x: number, y: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[划词服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-selection)，未标明的通用错误码请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -659,7 +697,8 @@ try {
 
 
 
-#### on('destroyed')
+### on('destroyed')
+
 
 **支持设备：** PC/2in1
 
@@ -672,6 +711,7 @@ on(type: 'destroyed', callback: Callback&lt;void&gt;): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -694,7 +734,8 @@ try {
 
 
 
-#### off('destroyed')
+### off('destroyed')
+
 
 **支持设备：** PC/2in1
 
@@ -707,6 +748,7 @@ off(type: 'destroyed', callback?: Callback&lt;void&gt;): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -727,7 +769,8 @@ try {
 
 
 
-#### on('hidden')
+### on('hidden')
+
 
 **支持设备：** PC/2in1
 
@@ -740,6 +783,7 @@ on(type: 'hidden', callback: Callback&lt;void&gt;): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -762,7 +806,8 @@ try {
 
 
 
-#### off('hidden')
+### off('hidden')
+
 
 **支持设备：** PC/2in1
 
@@ -775,6 +820,7 @@ off(type: 'hidden', callback?: Callback&lt;void&gt;): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -795,7 +841,8 @@ try {
 
 
 
-#### SelectionType
+## SelectionType
+
 
 **支持设备：** PC/2in1
 
@@ -804,6 +851,7 @@ try {
 **系统能力：** SystemCapability.SelectionInput.Selection
 
 **模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

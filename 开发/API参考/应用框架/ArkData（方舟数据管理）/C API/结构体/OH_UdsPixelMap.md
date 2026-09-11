@@ -1,6 +1,6 @@
 # OH_UdsPixelMap
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-udmf-oh-udspixelmap
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -10,11 +10,12 @@ typedef struct OH_UdsPixelMap OH_UdsPixelMap
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-描述像素图片类型的统一数据结构。
+描述像素图类型的统一数据结构。
  
 **起始版本：** 13
  

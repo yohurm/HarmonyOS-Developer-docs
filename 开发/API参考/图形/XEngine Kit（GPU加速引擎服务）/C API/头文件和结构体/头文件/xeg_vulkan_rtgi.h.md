@@ -1,11 +1,12 @@
 # xeg_vulkan_rtgi.h
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-kit-xeg-vulkan-rtgi-8h
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -23,16 +24,19 @@ XEngine光线追踪全局光照特性Vulkan接口，提供动态漫反射全局�
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 结构体
+### 结构体
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | struct XEG_DDGIVolumeEntryParameters | 此结构体描述每一个DDGI体积的必要参数。 |
@@ -44,10 +48,12 @@ XEngine光线追踪全局光照特性Vulkan接口，提供动态漫反射全局�
  
   
 
-#### 类型定义
+### 类型定义
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | VK_DEFINE_HANDLE(XEG_RTGI) | XEG_RTGI的句柄。 |
@@ -59,10 +65,12 @@ XEngine光线追踪全局光照特性Vulkan接口，提供动态漫反射全局�
  
   
 
-#### 枚举
+### 枚举
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | XEG_RTGIQualityMode { XEG_RTGI_QUALITY_MODE_QUALITY = 0, XEG_RTGI_QUALITY_MODE_BALANCED = 1, XEG_RTGI_QUALITY_MODE_PERFORMANCE = 2 } | 输出图像质量模式的枚举。 |
@@ -70,10 +78,12 @@ XEngine光线追踪全局光照特性Vulkan接口，提供动态漫反射全局�
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | VKAPI_ATTR VkResult VKAPI_CALL HMS_XEG_CreateRTGI (VkDevice device, const void *pCreateInfo, XEG_RTGI *pRtGI) | 创建XEG_RTGI对象。 |

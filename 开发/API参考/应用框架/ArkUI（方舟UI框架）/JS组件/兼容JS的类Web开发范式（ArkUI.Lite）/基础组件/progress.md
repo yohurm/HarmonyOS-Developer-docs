@@ -1,9 +1,9 @@
 # progress
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-components-basic-progress
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 进度条，用于显示内容加载或操作处理进度。
  
@@ -12,18 +12,21 @@
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 不支持。
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | type | string | horizontal | 否 | 设置进度条的类型，该属性不支持动态修改，可选值为： - horizontal：线性进度条； - arc：弧形进度条。 |
@@ -38,21 +41,27 @@
 - 类型为horizontal时，支持如下属性：
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
+
 | --- | --- | --- | --- | --- |
+
 | percent | number | 0 | 否 | 当前进度。取值范围为0-100。 |
 - 类型为arc时，支持如下属性：
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
+
 | --- | --- | --- | --- | --- |
+
 | percent | number | 0 | 否 | 当前进度。取值范围为0-100。 |
 
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | click | - | 点击动作触发该事件。 |
@@ -62,32 +71,46 @@
  
   
 
-#### 样式
+## 样式
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 - type为horizontal，支持如下样式：
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
+
 | --- | --- | --- | --- | --- |
+
 | color | &lt;color&gt; | #6b9ac7 | 否 | 设置进度条的颜色。 |
+
 | stroke-width | &lt;length&gt; | 321-4 \| 45+px | 否 | 设置进度条的宽度。 |
 - type为arc，支持如下样式：
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
+
 | --- | --- | --- | --- | --- |
+
 | color | &lt;color&gt; | - | 否 | 弧形进度条的颜色。 |
+
 | background-color | &lt;color&gt; | - | 否 | 弧形进度条的背景色。 |
+
 | stroke-width | &lt;length&gt; | - | 否 | 弧形进度条的宽度。 进度条宽度越大，进度条越靠近圆心。即进度条始终在半径区域内。 |
+
 | start-angle | &lt;deg&gt; | 240 | 否 | 弧形进度条起始角度，以时钟0点为基线。范围为0到360（顺时针）。 |
+
 | total-angle | &lt;deg&gt; | 240 | 否 | 弧形进度条总长度，范围为-360到360，负数表示起点到终点为逆时针。 |
+
 | center-x | &lt;length&gt; | - | 否 | 弧形进度条中心位置，（坐标原点为组件左上角顶点）。该样式需要和center-y和radius一起。 |
+
 | center-y | &lt;length&gt; | - | 否 | 弧形进度条中心位置，（坐标原点为组件左上角顶点）。该样式需要和center-x和radius一起。 |
+
 | radius | &lt;length&gt; | - | 否 | 弧形进度条半径，该样式需要和center-x和center-y一起。 |
 
  
 除上述样式之外，还支持如下样式：
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | width | &lt;length&gt; \| &lt;percentage&gt;5+ | - | 否 | 设置组件自身的宽度。 未设置时组件宽度默认为0。 |
@@ -105,9 +128,10 @@
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 <!-- xxx.hml -->
@@ -148,4 +172,4 @@ export default {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/cHFt4cqrQcW6tGmCvKDGTQ/zh-cn_image_0000002685928919.png?HW-CC-KV=V1&HW-CC-Date=20260730T071526Z&HW-CC-Expire=86400&HW-CC-Sign=0FAF6D0BA5C890776FA77250D7C7034AD1C9FB6EC42F698C0877D7D0917BCF32)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/hdSpdHWYS7OXAlSWDYf3Og/zh-cn_image_0000002717773396.png?HW-CC-KV=V1&HW-CC-Date=20260911T073000Z&HW-CC-Expire=86400&HW-CC-Sign=EADD3E9FA6A182C2F8E1B275BDFC05AE134A9C278CB74819A8B7419A4D6C687D)

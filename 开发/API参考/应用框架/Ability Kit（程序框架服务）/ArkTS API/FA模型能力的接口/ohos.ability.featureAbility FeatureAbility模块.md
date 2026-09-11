@@ -1,28 +1,30 @@
 # @ohos.ability.featureAbility (FeatureAbility模块)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-ability-featureability
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-FeatureAbility模块提供与用户进行交互的Ability的能力，包括启动新的Ability、停止Ability、获取dataAbilityHelper对象、获取当前Ability对应的窗口，连接断连Service等。
+FeatureAbility模块提供与用户进行交互的Ability的能力，包括启动新的Ability、停止Ability、获取dataAbilityHelper对象、获取当前Ability对应的窗口，连接/断连ServiceAbility等。
 
 > [!NOTE]
 > 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 本模块接口仅可在FA模型下使用。
 
 
 
-#### 使用限制
+## 使用限制
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 FeatureAbility模块的接口只能在Page类型的Ability中调用。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { featureAbility } from '@kit.AbilityKit';
@@ -30,9 +32,10 @@ import { featureAbility } from '@kit.AbilityKit';
 
 
 
-#### featureAbility.startAbility
+## featureAbility.startAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startAbility(parameter: StartAbilityParameter, callback: AsyncCallback&lt;number&gt;): void
 
@@ -47,6 +50,7 @@ startAbility(parameter: StartAbilityParameter, callback: AsyncCallback&lt;number
 **系统能力**：SystemCapability.Ability.AbilityRuntime.FAModel
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -86,9 +90,10 @@ featureAbility.startAbility(
 
 
 
-#### featureAbility.startAbility
+## featureAbility.startAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startAbility(parameter: StartAbilityParameter): Promise&lt;number&gt;
 
@@ -104,12 +109,14 @@ startAbility(parameter: StartAbilityParameter): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | parameter | StartAbilityParameter | 是 | 表示被启动的Ability。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -143,9 +150,10 @@ featureAbility.startAbility(
 
 
 
-#### featureAbility.acquireDataAbilityHelper7+
+## featureAbility.acquireDataAbilityHelper7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 acquireDataAbilityHelper(uri: string): DataAbilityHelper
 
@@ -161,12 +169,14 @@ acquireDataAbilityHelper(uri: string): DataAbilityHelper
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uri | string | 是 | 表示要打开的文件的路径。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -185,9 +195,10 @@ let dataAbilityHelper = featureAbility.acquireDataAbilityHelper(
 
 
 
-#### featureAbility.startAbilityForResult7+
+## featureAbility.startAbilityForResult7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startAbilityForResult(parameter: StartAbilityParameter, callback: AsyncCallback&lt;AbilityResult&gt;): void
 
@@ -207,6 +218,7 @@ startAbilityForResult(parameter: StartAbilityParameter, callback: AsyncCallback&
 **系统能力**：SystemCapability.Ability.AbilityRuntime.FAModel
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -246,9 +258,10 @@ featureAbility.startAbilityForResult(
 
 
 
-#### featureAbility.startAbilityForResult7+
+## featureAbility.startAbilityForResult7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startAbilityForResult(parameter: StartAbilityParameter): Promise&lt;AbilityResult&gt;
 
@@ -269,12 +282,14 @@ startAbilityForResult(parameter: StartAbilityParameter): Promise&lt;AbilityResul
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | parameter | StartAbilityParameter | 是 | 表示被启动的Ability。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -319,9 +334,10 @@ featureAbility.startAbilityForResult(
 
 
 
-#### featureAbility.terminateSelfWithResult7+
+## featureAbility.terminateSelfWithResult7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 terminateSelfWithResult(parameter: AbilityResult, callback: AsyncCallback&lt;void&gt;): void
 
@@ -332,6 +348,7 @@ terminateSelfWithResult(parameter: AbilityResult, callback: AsyncCallback&lt;voi
 **系统能力**：SystemCapability.Ability.AbilityRuntime.FAModel
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -378,9 +395,10 @@ featureAbility.terminateSelfWithResult(
 
 
 
-#### featureAbility.terminateSelfWithResult7+
+## featureAbility.terminateSelfWithResult7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 terminateSelfWithResult(parameter: AbilityResult): Promise&lt;void&gt;
 
@@ -392,12 +410,14 @@ terminateSelfWithResult(parameter: AbilityResult): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | parameter | AbilityResult | 是 | 表示停止Ability之后返回的结果。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -442,9 +462,10 @@ featureAbility.terminateSelfWithResult(
 
 
 
-#### featureAbility.hasWindowFocus7+
+## featureAbility.hasWindowFocus7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hasWindowFocus(callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -456,9 +477,10 @@ hasWindowFocus(callback: AsyncCallback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback&lt;boolean&gt; | 是 | 回调函数。 如果此Ability当前具有视窗焦点，则返回true；否则返回false。 |
+| callback | AsyncCallback&lt;boolean&gt; | 是 | 回调函数。 如果此Ability当前具有窗口焦点，则返回true；否则返回false。 |
 
 
 **示例：**
@@ -477,9 +499,10 @@ featureAbility.hasWindowFocus((error, data) => {
 
 
 
-#### featureAbility.hasWindowFocus7+
+## featureAbility.hasWindowFocus7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hasWindowFocus(): Promise&lt;boolean&gt;
 
@@ -491,9 +514,10 @@ hasWindowFocus(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;boolean&gt; | Promise对象。如果此Ability当前具有视窗焦点，则返回true；否则返回false。 |
+| Promise&lt;boolean&gt; | Promise对象。如果此Ability当前具有窗口焦点，则返回true；否则返回false。 |
 
 
 **示例：**
@@ -508,9 +532,10 @@ featureAbility.hasWindowFocus().then((data) => {
 
 
 
-#### featureAbility.getWant
+## featureAbility.getWant
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getWant(callback: AsyncCallback&lt;Want&gt;): void
 
@@ -521,6 +546,7 @@ getWant(callback: AsyncCallback&lt;Want&gt;): void
 **系统能力**：SystemCapability.Ability.AbilityRuntime.FAModel
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -543,9 +569,10 @@ featureAbility.getWant((error, data) => {
 
 
 
-#### featureAbility.getWant
+## featureAbility.getWant
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getWant(): Promise&lt;Want&gt;
 
@@ -556,6 +583,7 @@ getWant(): Promise&lt;Want&gt;
 **系统能力**：SystemCapability.Ability.AbilityRuntime.FAModel
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -574,9 +602,10 @@ featureAbility.getWant().then((data) => {
 
 
 
-#### featureAbility.getContext
+## featureAbility.getContext
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getContext(): Context
 
@@ -587,6 +616,7 @@ getContext(): Context
 **系统能力**：SystemCapability.Ability.AbilityRuntime.FAModel
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -610,9 +640,10 @@ context.getBundleName((error, data) => {
 
 
 
-#### featureAbility.terminateSelf7+
+## featureAbility.terminateSelf7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 terminateSelf(callback: AsyncCallback&lt;void&gt;): void
 
@@ -623,6 +654,7 @@ terminateSelf(callback: AsyncCallback&lt;void&gt;): void
 **系统能力**：SystemCapability.Ability.AbilityRuntime.FAModel
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -643,9 +675,10 @@ featureAbility.terminateSelf(
 
 
 
-#### featureAbility.terminateSelf7+
+## featureAbility.terminateSelf7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 terminateSelf(): Promise&lt;void&gt;
 
@@ -656,6 +689,7 @@ terminateSelf(): Promise&lt;void&gt;
 **系统能力**：SystemCapability.Ability.AbilityRuntime.FAModel
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -677,9 +711,10 @@ featureAbility.terminateSelf().then(() => {
 
 
 
-#### featureAbility.connectAbility7+
+## featureAbility.connectAbility7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 connectAbility(request: Want, options:ConnectOptions): number
 
@@ -695,6 +730,7 @@ connectAbility(request: Want, options:ConnectOptions): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | Want | 是 | 表示被连接的ServiceAbility。 |
@@ -702,6 +738,7 @@ connectAbility(request: Want, options:ConnectOptions): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -736,9 +773,10 @@ let connectId = featureAbility.connectAbility(
 
 
 
-#### featureAbility.disconnectAbility7+
+## featureAbility.disconnectAbility7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 disconnectAbility(connection: number, callback:AsyncCallback&lt;void&gt;): void
 
@@ -749,6 +787,7 @@ disconnectAbility(connection: number, callback:AsyncCallback&lt;void&gt;): void
 **系统能力**：SystemCapability.Ability.AbilityRuntime.FAModel
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -791,9 +830,10 @@ featureAbility.disconnectAbility(connectId, (error) => {
 
 
 
-#### featureAbility.disconnectAbility7+
+## featureAbility.disconnectAbility7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 disconnectAbility(connection: number): Promise&lt;void&gt;
 
@@ -805,12 +845,14 @@ disconnectAbility(connection: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | connection | number | 是 | 表示断开连接的ServiceAbility的ID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -851,9 +893,10 @@ featureAbility.disconnectAbility(connectId).then(() => {
 
 
 
-#### featureAbility.getWindow7+
+## featureAbility.getWindow7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getWindow(callback: AsyncCallback<window.Window>): void
 
@@ -864,6 +907,7 @@ getWindow(callback: AsyncCallback<window.Window>): void
 **系统能力**：SystemCapability.Ability.AbilityRuntime.FAModel
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -888,9 +932,10 @@ featureAbility.getWindow((error: BusinessError, data: window.Window) => {
 
 
 
-#### featureAbility.getWindow7+
+## featureAbility.getWindow7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getWindow(): Promise<window.Window>
 
@@ -901,6 +946,7 @@ getWindow(): Promise<window.Window>
 **系统能力**：SystemCapability.Ability.AbilityRuntime.FAModel
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -923,15 +969,17 @@ featureAbility.getWindow().then((data: window.Window) => {
 
 
 
-#### AbilityWindowConfiguration7+
+## AbilityWindowConfiguration7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示当前Ability对应的窗口配置项，使用时通过featureAbility.AbilityWindowConfiguration获取。
 
 **模型约束**：此接口仅可在FA模型下使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.FAModel
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -952,9 +1000,10 @@ featureAbility.AbilityWindowConfiguration.WINDOW_MODE_UNDEFINED
 
 
 
-#### AbilityStartSetting7+
+## AbilityStartSetting7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示当前Ability对应的窗口属性，abilityStartSetting属性是一个定义为[key: string]: any的对象，key对应设定类型为：AbilityStartSetting枚举类型，value对应设定类型为：AbilityWindowConfiguration枚举类型。
 
@@ -963,6 +1012,7 @@ featureAbility.AbilityWindowConfiguration.WINDOW_MODE_UNDEFINED
 **模型约束**：此接口仅可在FA模型下使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.FAModel
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -981,9 +1031,10 @@ featureAbility.AbilityStartSetting.BOUNDS_KEY
 
 
 
-#### ErrorCode7+
+## ErrorCode7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义启动Ability时返回的错误码。
 
@@ -991,25 +1042,28 @@ featureAbility.AbilityStartSetting.BOUNDS_KEY
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.FAModel
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NO_ERROR | 0 | 没有异常。 |
 | INVALID_PARAMETER | -1 | 无效的参数。 |
-| ABILITY_NOT_FOUND | -2 | 找不到ABILITY。 |
+| ABILITY_NOT_FOUND | -2 | 找不到Ability。 |
 | PERMISSION_DENY | -3 | 权限拒绝。 |
 
 
 
 
-#### DataAbilityOperationType7+
+## DataAbilityOperationType7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示数据的操作类型。DataAbility批量操作数据时可以通过该枚举值指定操作类型。
 
 **模型约束**：此接口仅可在FA模型下使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.FAModel
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1021,9 +1075,10 @@ featureAbility.AbilityStartSetting.BOUNDS_KEY
 
 
 
-#### Context9+
+## Context9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Context = _Context
 
@@ -1033,6 +1088,7 @@ Context模块。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _Context | Context模块。 |
@@ -1040,9 +1096,10 @@ Context模块。
 
 
 
-#### AppVersionInfo9+
+## AppVersionInfo9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AppVersionInfo = _AppVersionInfo
 
@@ -1052,6 +1109,7 @@ type AppVersionInfo = _AppVersionInfo
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _AppVersionInfo | 应用版本信息。 |
@@ -1059,9 +1117,10 @@ type AppVersionInfo = _AppVersionInfo
 
 
 
-#### ProcessInfo9+
+## ProcessInfo9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ProcessInfo = _ProcessInfo
 
@@ -1070,6 +1129,7 @@ type ProcessInfo = _ProcessInfo
 **模型约束**：此接口仅可在FA模型下使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 类型 | 说明 |
 | --- | --- |

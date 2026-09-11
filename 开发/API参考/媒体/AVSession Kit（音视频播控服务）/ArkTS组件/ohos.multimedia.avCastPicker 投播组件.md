@@ -1,18 +1,19 @@
 # @ohos.multimedia.avCastPicker (投播组件)
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-multimedia-avcastpicker
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-本模块提供创建投播组件AVCastPicker的功能，提供设备发现连接的统一入口。
+本模块提供投播组件AVCastPicker，该组件提供设备发现连接的统一入口。
 
 > [!NOTE]
-> 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 示例效果请以真机为准，当前DevEco Studio预览器无实际投播功能。
+> 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 示例效果请以真机为准，当前DevEco Studio预览器无实际投播功能。 本模块从API版本26.0.0开始支持Wearable设备。
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -22,7 +23,8 @@ import { AVCastPicker } from '@kit.AVSessionKit';
 
 
 
-#### 属性
+## 属性
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -30,7 +32,8 @@ import { AVCastPicker } from '@kit.AVSessionKit';
 
 
 
-#### AVCastPicker
+## AVCastPicker
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -56,20 +59,22 @@ AVCastPicker({
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVCast
 
+
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | normalColor11+ | Color \| number \| string | 否 | @Prop | 正常状态下投播组件的颜色。 未设置时，将采用colorMode下的颜色设置。 |
-| activeColor11+ | Color \| number \| string | 否 | @Prop | 设备连接成功状态下投播组件的颜色。 未设置时，系统将优先根据normalColor的颜色匹配；如果normalColor也未设置，将采用colorMode下的颜色设置。 |
-| pickerStyle12+ | AVCastPickerStyle | 否 | @Prop | 投播样式。 - 当sessionType是audio或者video时，默认值为STYLE_PANEL。 - 当sessionType是voice_call或者video_call时，默认值为STYLE_MENU，且不可修改为STYLE_PANEL。 |
+| activeColor11+ | Color \| number \| string | 否 | @Prop | 设备连接成功状态下投播组件的颜色。 未设置activeColor时，如果normalColor已设置，则使用normalColor的颜色；如果normalColor也未设置，将采用colorMode下的颜色设置。 |
+| pickerStyle12+ | AVCastPickerStyle | 否 | @Prop | 投播样式。 - STYLE_PANEL：显示面板样式的投播组件。 - STYLE_MENU：显示菜单样式的投播组件。 - 当sessionType是audio或者video时，默认值为STYLE_PANEL。 - 当sessionType是voice_call或者video_call时，默认值为STYLE_MENU，且不可修改为STYLE_PANEL。 |
 | colorMode12+ | AVCastPickerColorMode | 否 | @Prop | 显示模式。默认值为AUTO。 - 当colorMode设置为AUTO时，跟随系统的深浅色模式的默认色值。 - 当colorMode设置为DARK、LIGHT时，使用对应模式的系统预设色值。 |
-| sessionType12+ | string | 否 | @Prop | 会话类型，可参考AVSessionType。默认值为当前应用创建的AVSessionType。 |
+| sessionType12+ | string | 否 | @Prop | 会话类型，有效值参考AVSessionType。默认值为当前应用创建的AVSessionType。 |
 | customPicker12+ | CustomBuilder | 否 | @Prop | 自定义样式。建议使用自定义组件样式，可有效提升组件显示速度。 |
-| onStateChange11+ | (state: AVCastPickerState) => void | 否 | - | 投播状态更改回调。 |
+| onStateChange11+ | (state: AVCastPickerState) => void | 否 | - | 投播状态更改回调。投播组件状态变化时触发，state为STATE_APPEARING表示组件开始显示，STATE_DISAPPEARING表示组件结束显示。 |
 
 
 
 
-#### 事件
+## 事件
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -77,7 +82,8 @@ AVCastPicker({
 
 
 
-#### 示例
+## 示例
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 

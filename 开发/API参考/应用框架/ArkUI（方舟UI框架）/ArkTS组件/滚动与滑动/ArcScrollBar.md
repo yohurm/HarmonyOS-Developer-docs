@@ -1,9 +1,9 @@
 # ArcScrollBar
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-arcscrollbar
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 弧形滚动条组件ArcScrollBar，适用于圆形屏幕等需要弧形滚动条的场景，用于配合可滚动组件使用，如[ArcList](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arclist)、[List](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)、[Grid](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid)、[Scroll](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll)、[WaterFlow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow)。
  
@@ -12,17 +12,19 @@
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 不包含子组件。
  
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ArcScrollBar(options: ArcScrollBarOptions)
  
@@ -34,6 +36,7 @@ ArcScrollBar的构造函数。
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ArcScrollBarOptions | 是 | ArcScrollBar的配置参数，用于指定绑定的可滚动组件控制器和滚动条状态。 |
@@ -41,9 +44,10 @@ ArcScrollBar的构造函数。
  
   
 
-#### ArcScrollBarOptions
+## ArcScrollBarOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ArcScrollBar的构造函数参数。
  
@@ -51,6 +55,7 @@ ArcScrollBar的构造函数参数。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Circle
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | scroller | Scroller | 否 | 否 | 可滚动组件的控制器，用于与可滚动组件进行绑定。设置前需先创建Scroller对象，并传入对应可滚动组件。 |
@@ -63,9 +68,10 @@ ArcScrollBar的构造函数参数。
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过ArcScrollBar与[Scroll](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll)组件联动，设置了弧形外置滚动条。
  
@@ -108,4 +114,4 @@ struct ArcScrollBarExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/dA9YSOp4RA6zu-L45RCU7w/zh-cn_image_0000002686087963.png?HW-CC-KV=V1&HW-CC-Date=20260730T071502Z&HW-CC-Expire=86400&HW-CC-Sign=6496EF6FB354E707C68E00DFF9B72179C7FC6BBF8DF1D97A1348C5A5BA391E40)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/cfLyP7kXTHK5KpXVi4QjrQ/zh-cn_image_0000002717612672.png?HW-CC-KV=V1&HW-CC-Date=20260911T073103Z&HW-CC-Expire=86400&HW-CC-Sign=AF352AF8D0832067B9C4022C9F2B593323F910CDF8CFCC69982BA2264F99F744)

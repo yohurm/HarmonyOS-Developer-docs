@@ -1,6 +1,6 @@
 # 基础自定义弹出框 (CustomDialog)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-components-custom-dialog
 
@@ -15,9 +15,10 @@ CustomDialog是自定义弹出框，可用于广告、中奖、警告、软件�
 当isModal为true时，弹出框为模态弹窗，且弹窗周围的蒙层区不支持透传。isModal为false时，弹出框为非模态弹窗，且弹窗周围的蒙层区可以透传。因此如果需要同时允许弹出框的交互和弹出框外页面的交互行为，需要将弹出框设置为非模态。
 
 
-#### 生命周期
+## 生命周期
 
 从API version 19开始，自定义弹出框提供了生命周期函数用于通知用户该弹出框的生命周期。生命周期的触发时序依次为：onWillAppear -> onDidAppear -> onWillDisappear -> onDidDisappear。
+
 
 | 名称 | 类型 | 说明 |
 | --- | --- | --- |
@@ -29,7 +30,7 @@ CustomDialog是自定义弹出框，可用于广告、中奖、警告、软件�
 
 
 
-#### 创建自定义弹出框
+## 创建自定义弹出框
 1. 使用@CustomDialog装饰器装饰自定义弹出框，可在此装饰器内自定义弹出框内容。CustomDialogController需在@Component内定义。
 
   
@@ -90,7 +91,7 @@ export struct CreateCustomDialogNew {
 
 
 
-#### 弹出框的交互
+## 弹出框的交互
 
 弹出框可用于数据交互，完成用户一系列响应操作。
 1. 在@CustomDialog装饰器内添加按钮和数据函数。
@@ -173,6 +174,7 @@ export struct DialogInteractionUseConstructor {
 ```ArkTS
 @CustomDialog
 struct CustomDialogExample {
+  // 数据监听仅支持@Link或@Consume，其他方式如@Prop、@ObjectLink不适用此场景
   @Link textValue: string;
   controller?: CustomDialogController;
   cancel: () => void = () => {
@@ -302,7 +304,7 @@ struct IndexNew {
 
 
 
-#### 弹出框的动画
+## 弹出框的动画
 
 弹出框通过定义[CustomDialogControllerOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-custom-dialog-box#customdialogcontrolleroptions对象说明)中的openAnimation属性控制出现动画的持续时间，速度等参数。
 
@@ -370,7 +372,7 @@ export struct DialogAnimationNew {
 
 
 
-#### 弹出框的样式
+## 弹出框的样式
 
 通过定义弹出框的宽度、高度、背景色、阴影等参数，控制其样式。
 
@@ -439,7 +441,7 @@ export struct DialogStyleNew {
 
 
 
-#### 嵌套自定义弹出框
+## 嵌套自定义弹出框
 
 通过第一个弹出框打开第二个弹出框时，最好将第二个弹出框定义在第一个弹出框的父组件处，通过父组件传给第一个弹出框的回调来打开第二个弹出框。
 
@@ -557,7 +559,7 @@ export struct NestDialogNew {
 
 
 
-#### 实现弹出框的物理返回拦截
+## 实现弹出框的物理返回拦截
 
 执行点击遮障层关闭、侧滑（左滑或右滑）、三键Back、键盘ESC关闭等交互操作时，如果注册了[CustomDialogControllerOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-custom-dialog-box#customdialogcontrolleroptions对象说明)中的onWillDismiss回调函数，弹出框不会立即关闭。在回调函数中，通过[DismissDialogAction](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-custom-dialog-box#dismissdialogaction12)中的reason属性获取阻拦关闭弹出框的操作类型，根据原因决定是否关闭弹出框。
 
@@ -666,7 +668,7 @@ export struct DialogWithPhysicalBack {
 
 
 
-#### 设置弹出框避让软键盘的距离
+## 设置弹出框避让软键盘的距离
 
 为显示弹出框的独立性，弹出框弹出时会与周边进行避让，包括状态栏、导航条以及键盘等留有间距。故当软键盘弹出时，默认情况下，弹出框会自动避开软键盘，并与之保持16vp的距离。从API version 15开始，开发者可以利用[CustomDialogControllerOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-custom-dialog-box#customdialogcontrolleroptions对象说明)中的keyboardAvoidMode和keyboardAvoidDistance这两个配置项，来设置弹出框在软键盘弹出时的行为，包括是否需要避开软键盘以及与软键盘之间的距离。
 
@@ -735,7 +737,7 @@ export struct DialogAvoidSoftKeyboard {
 
 
 
-#### 获取弹出框的状态
+## 获取弹出框的状态
 
 在业务模块中，页面上可能会同时出现多个弹出框。为避免重复打开相同的弹出框，建议在显示弹出框前，先通过控制器检查其当前状态。如果弹出框已处于显示状态，则不应再次打开。
 
@@ -765,8 +767,8 @@ struct CustomDialogExample {
         .onClick(() => {
           hilog.info(DOMAIN, 'testTag', 'state:' + this.controller?.getState());
         }).margin(20)
-      // 请将$r('app.string.close_widows')替换为实际资源文件，在本示例中该资源文件的value值为"点我关闭弹窗"
-      Button($r('app.string.close_widows'))
+      // 请将$r('app.string.close_windows')替换为实际资源文件，在本示例中该资源文件的value值为"点我关闭弹窗"
+      Button($r('app.string.close_windows'))
         .onClick(() => {
           if (this.getDialogController() !== undefined) {
             this.getDialogController().close()
@@ -802,4 +804,4 @@ export struct GetDialogStatus {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/631QFLm5ReWwkjyDUWMydg/zh-cn_image_0000002704392445.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095713Z&HW-CC-Expire=86400&HW-CC-Sign=8AABA6AD9FD5708D46EE3C4E5CACB39376016B2D46491EC12BADED2B00A6178A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/GQFLQ76JTvWWQ2OUZxCMNg/zh-cn_image_0000002717610540.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072242Z&HW-CC-Expire=86400&HW-CC-Sign=98B91B648303A83B92A8B39073866BC05D90D9118F596DB9D78C570A43410D2E)

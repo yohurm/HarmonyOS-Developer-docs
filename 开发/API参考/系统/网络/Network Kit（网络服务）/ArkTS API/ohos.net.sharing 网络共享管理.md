@@ -1,9 +1,9 @@
 # @ohos.net.sharing (网络共享管理)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-net-sharing
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 网络共享管理模块用于将设备网络连接共享给其他连接设备。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { sharing } from '@kit.NetworkKit';
@@ -22,9 +23,10 @@ import { sharing } from '@kit.NetworkKit';
  
   
 
-#### NetHandle
+## NetHandle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type NetHandle = connection.NetHandle
  
@@ -32,6 +34,7 @@ type NetHandle = connection.NetHandle
  
 **系统能力**：SystemCapability.Communication.NetManager.Core
   
+
 | 类型 | 说明 |
 | --- | --- |
 | connection.NetHandle | 网络链路信息。 |

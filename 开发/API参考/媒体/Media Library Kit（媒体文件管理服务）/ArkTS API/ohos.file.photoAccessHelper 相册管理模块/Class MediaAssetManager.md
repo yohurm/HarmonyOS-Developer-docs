@@ -1,9 +1,9 @@
 # Class (MediaAssetManager)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-photoaccesshelper-mediaassetmanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 媒体资产管理类，管理媒体资源读取。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
@@ -22,9 +23,10 @@ import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
 
 
-#### requestImage11+
+## requestImage11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static requestImage(context: Context, asset: PhotoAsset, requestOptions: RequestOptions, dataHandler: MediaAssetDataHandler<image.ImageSource>): Promise&lt;string&gt;
 
@@ -40,6 +42,7 @@ static requestImage(context: Context, asset: PhotoAsset, requestOptions: Request
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 传入Ability实例的上下文。 |
@@ -50,6 +53,7 @@ static requestImage(context: Context, asset: PhotoAsset, requestOptions: Request
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回请求id，可用于cancelRequest取消请求。 |
@@ -58,6 +62,7 @@ static requestImage(context: Context, asset: PhotoAsset, requestOptions: Request
 **错误码：**
 
 接口抛出错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -97,6 +102,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
   const handler = new MediaHandler();
 
   phAccessHelper.getAssets(fetchOptions, async (err, fetchResult) => {
+    if (err) {
+      console.error(`Failed to get assets. Code: ${err.code}, message: ${err.message}`);
+      return;
+    }
     console.info('fetchResult success');
     let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
     if (photoAsset === undefined) {
@@ -111,13 +120,14 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
 
 
 
-#### requestImageData11+
+## requestImageData11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static requestImageData(context: Context, asset: PhotoAsset, requestOptions: RequestOptions, dataHandler: MediaAssetDataHandler&lt;ArrayBuffer&gt;): Promise&lt;string&gt;
 
-根据不同的策略模式，请求图片资源数据。使用Promise异步回调。
+根据不同的策略模式，请求图片资源数据，适用于图片上传、滤镜处理等需要获取原始数据的场景。使用Promise异步回调。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -129,15 +139,17 @@ static requestImageData(context: Context, asset: PhotoAsset, requestOptions: Req
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 传入Ability实例的上下文。 |
 | asset | PhotoAsset | 是 | 待请求的媒体文件对象。 |
 | requestOptions | RequestOptions | 是 | 图片请求策略模式配置项。 |
-| dataHandler | MediaAssetDataHandler&lt;ArrayBuffer&gt; | 是 | 媒体资源处理器，当所请求的图片资源准备完成时会触发回调。 |
+| dataHandler | MediaAssetDataHandler&lt;ArrayBuffer&gt; | 是 | 媒体资源处理器，请求完成时触发回调。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -147,6 +159,7 @@ static requestImageData(context: Context, asset: PhotoAsset, requestOptions: Req
 **错误码：**
 
 接口抛出错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -185,6 +198,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
   const handler = new MediaDataHandler();
 
   phAccessHelper.getAssets(fetchOptions, async (err, fetchResult) => {
+    if (err) {
+      console.error(`Failed to get assets. Code: ${err.code}, message: ${err.message}`);
+      return;
+    }
       console.info('fetchResult success');
       let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
       if (photoAsset === undefined) {
@@ -199,13 +216,14 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
 
 
 
-#### requestMovingPhoto12+
+## requestMovingPhoto12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static requestMovingPhoto(context: Context, asset: PhotoAsset, requestOptions: RequestOptions, dataHandler: MediaAssetDataHandler&lt;MovingPhoto&gt;): Promise&lt;string&gt;
 
-根据不同的策略模式，请求动态照片对象（动态照片对象可用于请求动态照片的资源数据）。使用Promise异步回调。
+根据不同的策略模式，请求动态照片对象，适用于查看动态照片。使用Promise异步回调。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -217,6 +235,7 @@ static requestMovingPhoto(context: Context, asset: PhotoAsset, requestOptions: R
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 传入Ability实例的上下文。 |
@@ -227,6 +246,7 @@ static requestMovingPhoto(context: Context, asset: PhotoAsset, requestOptions: R
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回请求id，可用于cancelRequest取消请求。 |
@@ -235,6 +255,7 @@ static requestMovingPhoto(context: Context, asset: PhotoAsset, requestOptions: R
 **错误码：**
 
 接口抛出错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -270,6 +291,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
   };
   // 请确保图库内存在动态照片。
   let assetResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOptions);
+  if (!assetResult) {
+    console.error('Failed to get assets');
+    return;
+  }
   let asset: photoAccessHelper.PhotoAsset = await assetResult.getFirstObject();
   let requestOptions: photoAccessHelper.RequestOptions = {
     deliveryMode: photoAccessHelper.DeliveryMode.FAST_MODE,
@@ -279,20 +304,21 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
     let requestId: string = await photoAccessHelper.MediaAssetManager.requestMovingPhoto(context, asset, requestOptions, handler);
     console.info("moving photo requested successfully, requestId: " + requestId);
   } catch (err) {
-    console.error(`failed to request moving photo, error code is ${err.code}, message is ${err.message}`);
+    console.error(`Failed to request moving photo. Code: ${err.code}, message: ${err.message}`);
   }
 }
 ```
 
 
 
-#### requestVideoFile12+
+## requestVideoFile12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static requestVideoFile(context: Context, asset: PhotoAsset, requestOptions: RequestOptions, fileUri: string, dataHandler: MediaAssetDataHandler&lt;boolean&gt;): Promise&lt;string&gt;
 
-根据不同的策略模式，请求视频资源数据到沙箱路径。使用Promise异步回调。
+根据不同的策略模式，请求视频资源数据到沙箱路径，适用于视频上传到服务器或播放器播放等场景。使用Promise异步回调。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -303,6 +329,7 @@ static requestVideoFile(context: Context, asset: PhotoAsset, requestOptions: Req
 
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -315,6 +342,7 @@ static requestVideoFile(context: Context, asset: PhotoAsset, requestOptions: Req
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回请求id，可用于cancelRequest取消请求。 |
@@ -323,6 +351,7 @@ static requestVideoFile(context: Context, asset: PhotoAsset, requestOptions: Req
 **错误码：**
 
 接口抛出错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -358,6 +387,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
   const handler = new MediaDataHandler();
   let fileUri = 'file://com.example.temptest/data/storage/el2/base/haps/entry/files/test.mp4';
   phAccessHelper.getAssets(fetchOptions, async (err, fetchResult) => {
+    if (err) {
+      console.error(`Failed to get assets. Code: ${err.code}, message: ${err.message}`);
+      return;
+    }
       console.info('fetchResult success');
       let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
       await photoAccessHelper.MediaAssetManager.requestVideoFile(context, photoAsset, requestOptions, fileUri, handler);
@@ -368,9 +401,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
 
 
 
-#### cancelRequest12+
+## cancelRequest12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static cancelRequest(context: Context, requestId: string): Promise&lt;void&gt;
 
@@ -382,13 +416,15 @@ static cancelRequest(context: Context, requestId: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 传入Ability实例的上下文。 |
-| requestId | string | 是 | 需要取消的请求id，requestImage等接口返回的有效请求id。 |
+| requestId | string | 是 | 需要取消的请求id，requestImage等接口返回的有效请求id。传入后会取消对应的请求操作，释放已分配的资源，该请求对应的回调将不会被触发。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -398,6 +434,7 @@ static cancelRequest(context: Context, requestId: string): Promise&lt;void&gt;
 **错误码：**
 
 接口抛出错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -417,16 +454,17 @@ async function example(context: Context) {
     await photoAccessHelper.MediaAssetManager.cancelRequest(context, requestId);
     console.info("request cancelled successfully");
   } catch (err) {
-    console.error(`cancelRequest failed with error: ${err.code}, ${err.message}`);
+    console.error(`Failed to cancel request. Code: ${err.code}, message: ${err.message}`);
   }
 }
 ```
 
 
 
-#### loadMovingPhoto12+
+## loadMovingPhoto12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static loadMovingPhoto(context: Context, imageFileUri: string, videoFileUri: string): Promise&lt;MovingPhoto&gt;
 
@@ -438,14 +476,16 @@ static loadMovingPhoto(context: Context, imageFileUri: string, videoFileUri: str
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 传入AbilityContext或者UIExtensionContext的实例。 |
-| imageFileUri | string | 是 | 应用沙箱动态照片的图片uri。 示例：'file://com.example.temptest/data/storage/el2/base/haps/ImageFile.jpg' |
-| videoFileUri | string | 是 | 应用沙箱动态照片的视频uri。 示例：'file://com.example.temptest/data/storage/el2/base/haps/VideoFile.mp4' |
+| imageFileUri | string | 是 | 应用沙箱动态照片的图片URI，用于创建动态照片对象的图像组件。 示例：'file://com.example.temptest/data/storage/el2/base/haps/ImageFile.jpg' |
+| videoFileUri | string | 是 | 应用沙箱动态照片的视频URI，用于创建动态照片对象的视频组件。 示例：'file://com.example.temptest/data/storage/el2/base/haps/VideoFile.mp4' |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -455,6 +495,7 @@ static loadMovingPhoto(context: Context, imageFileUri: string, videoFileUri: str
 **错误码：**
 
 接口抛出错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -471,20 +512,21 @@ async function example(context: Context) {
     let videoFileUri: string = 'file://com.example.temptest/data/storage/el2/base/haps/VideoFile.mp4'; // 应用沙箱动态照片的视频uri。
     let movingPhoto: photoAccessHelper.MovingPhoto = await photoAccessHelper.MediaAssetManager.loadMovingPhoto(context, imageFileUri, videoFileUri);
   } catch (err) {
-    console.error(`loadMovingPhoto failed with error: ${err.code}, ${err.message}`);
+    console.error(`Failed to load moving photo. Code: ${err.code}, message: ${err.message}`);
   }
 }
 ```
 
 
 
-#### quickRequestImage13+
+## quickRequestImage13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static quickRequestImage(context: Context, asset: PhotoAsset, requestOptions: RequestOptions, dataHandler: QuickImageDataHandler<image.Picture>): Promise&lt;string&gt;
 
-根据不同的策略模式，快速请求图片资源。使用Promise异步回调。
+根据不同的策略模式，快速请求图片资源。适用于图片列表缩略图加载等对加载速度要求高的场景。使用Promise异步回调。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -494,6 +536,7 @@ static quickRequestImage(context: Context, asset: PhotoAsset, requestOptions: Re
 
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -505,6 +548,7 @@ static quickRequestImage(context: Context, asset: PhotoAsset, requestOptions: Re
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回请求id，可用于cancelRequest取消请求。 |
@@ -513,6 +557,7 @@ static quickRequestImage(context: Context, asset: PhotoAsset, requestOptions: Re
 **错误码：**
 
 接口抛出错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -548,6 +593,10 @@ async function example(context: Context) {
   const handler = new MediaHandler();
   let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
   phAccessHelper.getAssets(fetchOptions, async (err, fetchResult) => {
+    if (err) {
+      console.error(`Failed to get assets. Code: ${err.code}, message: ${err.message}`);
+      return;
+    }
       console.info('fetchResult success');
       let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
       await photoAccessHelper.MediaAssetManager.quickRequestImage(context, photoAsset, requestOptions, handler);

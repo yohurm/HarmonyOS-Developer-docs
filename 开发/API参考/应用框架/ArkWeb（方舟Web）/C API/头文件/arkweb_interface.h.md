@@ -1,13 +1,14 @@
 # arkweb_interface.h
 
-更新时间：2026-07-09 02:26:55
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkweb-interface-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 arkweb_interface.h是ArkWeb在Native侧（C/C++）的核心入口头文件：它定义了基础Native API类型[ArkWeb_AnyNativeAPI](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-web-arkweb-anynativeapi)与API类型枚举[ArkWeb_NativeAPIVariantKind](#arkweb_nativeapivariantkind)，并提供[OH_ArkWeb_GetNativeAPI](#oh_arkweb_getnativeapi)接口用于按需获取Controller、Component、CookieManager等具体Native API结构体，同时提供[OH_ArkWeb_RegisterScrollCallback](#oh_arkweb_registerscrollcallback)用于注册Web组件滚动事件回调；当开发者需要在Native代码中控制Web组件行为（如执行JavaScript、管理Cookie、监听组件生命周期或滚动事件）时，应首先通过本头文件获取对应的Native API，而页面渲染显示等能力仍需由ArkTS侧的Web组件提供。
  
@@ -23,16 +24,19 @@ arkweb_interface.h是ArkWeb在Native侧（C/C++）的核心入口头文件：它
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | ArkWeb_AnyNativeAPI | ArkWeb_AnyNativeAPI | 定义基础Native API类型。 |
@@ -40,10 +44,12 @@ arkweb_interface.h是ArkWeb在Native侧（C/C++）的核心入口头文件：它
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | ArkWeb_NativeAPIVariantKind | ArkWeb_NativeAPIVariantKind | 定义Native API的类型枚举。 |
@@ -51,10 +57,12 @@ arkweb_interface.h是ArkWeb在Native侧（C/C++）的核心入口头文件：它
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | ArkWeb_AnyNativeAPI* OH_ArkWeb_GetNativeAPI(ArkWeb_NativeAPIVariantKind type) | 根据传入的API类型，获取对应的Native API结构体。 |
@@ -63,15 +71,17 @@ arkweb_interface.h是ArkWeb在Native侧（C/C++）的核心入口头文件：它
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### ArkWeb_NativeAPIVariantKind
+### ArkWeb_NativeAPIVariantKind
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkWeb_NativeAPIVariantKind
@@ -83,27 +93,30 @@ enum ArkWeb_NativeAPIVariantKind
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
-| ARKWEB_NATIVE_COMPONENT | component相关API类型。 |
-| ARKWEB_NATIVE_CONTROLLER | controller相关API类型。 |
-| ARKWEB_NATIVE_WEB_MESSAGE_PORT | webMessagePort相关API类型。 |
-| ARKWEB_NATIVE_WEB_MESSAGE | webMessage相关API类型。 |
-| ARKWEB_NATIVE_COOKIE_MANAGER | cookieManager相关API类型。 |
+| ARKWEB_NATIVE_COMPONENT | Component相关API类型。 |
+| ARKWEB_NATIVE_CONTROLLER | Controller相关API类型。 |
+| ARKWEB_NATIVE_WEB_MESSAGE_PORT | WebMessagePort相关API类型。 |
+| ARKWEB_NATIVE_WEB_MESSAGE | WebMessage相关API类型。 |
+| ARKWEB_NATIVE_COOKIE_MANAGER | CookieManager相关API类型。 |
 | ARKWEB_NATIVE_JAVASCRIPT_VALUE | JavaScriptValue相关API类型。 起始版本： 18 |
  
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_ArkWeb_GetNativeAPI()
+### OH_ArkWeb_GetNativeAPI()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkWeb_AnyNativeAPI* OH_ArkWeb_GetNativeAPI(ArkWeb_NativeAPIVariantKind type)
@@ -111,7 +124,7 @@ ArkWeb_AnyNativeAPI* OH_ArkWeb_GetNativeAPI(ArkWeb_NativeAPIVariantKind type)
  
 **描述：**
  
-根据传入的API类型，获取对应的Native API结构体。
+根据传入的API类型，获取对应的Native API结构体。用于在Native代码中获取Controller以控制Web组件行为、获取CookieManager以管理Cookie、获取WebMessagePort以实现消息通信、获取JavaScriptValue以操作JavaScript对象等场景。该接口可能返回空指针，开发者在使用返回值前必须进行判空处理，避免空指针解引用导致应用崩溃。
  
 **系统能力：** SystemCapability.Web.Webview.Core
  
@@ -119,23 +132,26 @@ ArkWeb_AnyNativeAPI* OH_ArkWeb_GetNativeAPI(ArkWeb_NativeAPIVariantKind type)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| ArkWeb_NativeAPIVariantKind type | ArkWeb支持的Native API类型。 |
+| ArkWeb_NativeAPIVariantKind type | ArkWeb支持的Native API类型，不同API类型可能需要不同系统版本支持，详见枚举类型说明。 返回值使用说明：返回的指针由系统管理，无需开发者手动释放；多次调用相同参数可能返回同一指针；返回的Native API结构体在Web组件生命周期内有效；使用时请确保线程安全。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| ArkWeb_AnyNativeAPI* | 根据传入的API类型，返回对应的Native API结构体指针，结构体第一个成员为当前结构体的大小。 |
+| ArkWeb_AnyNativeAPI* | 根据传入的API类型，返回对应的Native API结构体指针，结构体第一个成员为当前结构体的大小，可用于访问Controller、Component、CookieManager等具体的Native API功能。若传入的API类型在当前系统版本不支持（如ARKWEB_NATIVE_JAVASCRIPT_VALUE在18以下版本不可用），则返回NULL。 |
  
  
   
 
-#### OH_ArkWeb_RegisterScrollCallback()
+### OH_ArkWeb_RegisterScrollCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_ArkWeb_RegisterScrollCallback(const char* webTag, ArkWeb_OnScrollCallback callback, void* userData)
@@ -143,7 +159,7 @@ bool OH_ArkWeb_RegisterScrollCallback(const char* webTag, ArkWeb_OnScrollCallbac
  
 **描述：**
  
-注册组件滚动时的回调函数。
+注册组件滚动时的回调函数。用于监测用户滚动行为以实现懒加载、检测滚动位置以实现回到顶部功能、记录用户浏览行为用于数据分析、实现滚动时的视觉特效等场景。
  
 **系统能力：** SystemCapability.Web.Webview.Core
  
@@ -151,6 +167,7 @@ bool OH_ArkWeb_RegisterScrollCallback(const char* webTag, ArkWeb_OnScrollCallbac
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char* webTag | Web组件的名称。 |
@@ -160,6 +177,7 @@ bool OH_ArkWeb_RegisterScrollCallback(const char* webTag, ArkWeb_OnScrollCallbac
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 如果回调设置成功，则返回true，否则返回false。 |

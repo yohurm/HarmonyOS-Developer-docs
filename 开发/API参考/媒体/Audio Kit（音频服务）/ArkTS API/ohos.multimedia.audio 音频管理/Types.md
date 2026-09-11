@@ -1,18 +1,19 @@
 # Types
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-t
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
   
 
-#### AudioRendererChangeInfoArray9+
+## AudioRendererChangeInfoArray9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AudioRendererChangeInfoArray = Array<Readonly&lt;AudioRendererChangeInfo&gt;>
  
@@ -20,6 +21,7 @@ type AudioRendererChangeInfoArray = Array<Readonly&lt;AudioRendererChangeInfo&gt
  
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Array<Readonly&lt;AudioRendererChangeInfo&gt;> | 数组类型，AudioRendererChangeInfo数组，只读。 |
@@ -27,9 +29,10 @@ type AudioRendererChangeInfoArray = Array<Readonly&lt;AudioRendererChangeInfo&gt
  
   
 
-#### AudioCapturerChangeInfoArray9+
+## AudioCapturerChangeInfoArray9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AudioCapturerChangeInfoArray = Array<Readonly&lt;AudioCapturerChangeInfo&gt;>
  
@@ -37,6 +40,7 @@ type AudioCapturerChangeInfoArray = Array<Readonly&lt;AudioCapturerChangeInfo&gt
  
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Array<Readonly&lt;AudioCapturerChangeInfo&gt;> | 数组类型，AudioCapturerChangeInfo数组，只读。 |
@@ -44,9 +48,10 @@ type AudioCapturerChangeInfoArray = Array<Readonly&lt;AudioCapturerChangeInfo&gt
  
   
 
-#### AudioEffectInfoArray10+
+## AudioEffectInfoArray10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AudioEffectInfoArray = Array<Readonly&lt;AudioEffectMode&gt;>
  
@@ -54,6 +59,7 @@ ContentType和StreamUsage组合场景下的音效模式数组类型，[AudioEffe
  
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Array<Readonly&lt;AudioEffectMode&gt;> | ContentType和StreamUsage组合场景下的音效模式数组类型，AudioEffectMode数组，只读。 |
@@ -61,9 +67,10 @@ ContentType和StreamUsage组合场景下的音效模式数组类型，[AudioEffe
  
   
 
-#### AudioDeviceDescriptors
+## AudioDeviceDescriptors
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AudioDeviceDescriptors = Array<Readonly&lt;AudioDeviceDescriptor&gt;>
  
@@ -73,6 +80,7 @@ type AudioDeviceDescriptors = Array<Readonly&lt;AudioDeviceDescriptor&gt;>
  
 **系统能力：** SystemCapability.Multimedia.Audio.Device
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Array<Readonly&lt;AudioDeviceDescriptor&gt;> | 设备属性数组类型，为AudioDeviceDescriptor的数组，只读。 |
@@ -80,9 +88,10 @@ type AudioDeviceDescriptors = Array<Readonly&lt;AudioDeviceDescriptor&gt;>
  
   
 
-#### AudioRendererWriteDataCallback12+
+## AudioRendererWriteDataCallback12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AudioRendererWriteDataCallback = (data: ArrayBuffer) => AudioDataCallbackResult | void
  
@@ -92,6 +101,7 @@ type AudioRendererWriteDataCallback = (data: ArrayBuffer) => AudioDataCallbackRe
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | ArrayBuffer | 是 | 待写入缓冲区的数据。 |
@@ -99,6 +109,7 @@ type AudioRendererWriteDataCallback = (data: ArrayBuffer) => AudioDataCallbackRe
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AudioDataCallbackResult \| void | 如果返回 void 或 AudioDataCallbackResult.VALID：表示数据有效，将播放音频数据；如果返回 AudioDataCallbackResult.INVALID：表示数据无效，且音频数据不播放。 |
@@ -106,9 +117,10 @@ type AudioRendererWriteDataCallback = (data: ArrayBuffer) => AudioDataCallbackRe
  
   
 
-#### DeviceTypeArray
+## DeviceTypeArray
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type DeviceTypeArray = Array&lt;DeviceType&gt;
  
@@ -120,6 +132,7 @@ type DeviceTypeArray = Array&lt;DeviceType&gt;
  
 **系统能力：** SystemCapability.Multimedia.Audio.Device
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Array< DeviceType> | DeviceType数组。 |

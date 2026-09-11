@@ -1,24 +1,28 @@
 # http请求requestInStream接口如何使用
 
-更新时间：2026-06-26 07:48:29
+更新时间：2026-08-26 00:50:37
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-network-81
 
-#### 问题现象
+## 问题现象
 
-http请求requestInStream接口如何获取响应数据？
+- 场景一：http请求requestInStream接口如何获取响应数据？
+- 场景二：使用requestInStream流式请求时，on('headersReceive')偶尔出现无回调的情况。
+
  
  
 
-#### 背景知识
+## 背景知识
 
 [requestInStream](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-http#requestinstream10)可以根据URL地址，发起http网络请求并返回流式响应。
  
  
 
-#### 解决方案
+## 解决方案
 
-使用[requestInStream](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-http#requestinstream10)接口需要注意，callback回调返回的是number类型的数据，也就是响应码，不会返回具体的数据，可通过[on("dataReceive")](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-http#ondatareceive10)接收响应数据，当订阅成功时，error为undefined，data为接收到的http流式数据，类型为ArrayBuffer；否则为错误对象。
+- 场景一：使用[requestInStream](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-http#requestinstream10)接口需要注意，callback回调返回的是number类型的数据，也就是响应码，不会返回具体的数据，可通过[on("dataReceive")](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-http#ondatareceive10)接收响应数据，当订阅成功时，error为undefined，data为接收到的http流式数据，类型为ArrayBuffer；否则为错误对象。
+
+  
 ```json
 import { http } from '@kit.NetworkKit';
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -34,18 +38,18 @@ class Header {
 function createAndRequest() {
   let httpRequest = http.createHttp();
   let options: http.HttpRequestOptions = {
-    method: http.RequestMethod.POST, // 可选，默认为http.RequestMethod.GET。
-    // 当使用POST请求时此字段用于传递请求体内容，具体格式与服务端协商确定。
+    method: http.RequestMethod.POST,<em> // 可选，默认为http.RequestMethod.GET。</em>
+   <em> // 当使用POST请求时此字段用于传递请求体内容，具体格式与服务端协商确定。</em>
     extraData: 'data to send',
-    expectDataType: http.HttpDataType.STRING, // 可选，指定返回数据的类型。
-    usingCache: true, // 可选，默认为true。
-    priority: 1, // 可选，默认为1。
-    // 开发者根据自身业务需要添加header字段。
+    expectDataType: http.HttpDataType.STRING,<em> // 可选，指定返回数据的类型。</em>
+    usingCache: true, <em>// 可选，默认为true。</em>
+    priority: 1, <em>// 可选，默认为1。</em>
+  <em>  // 开发者根据自身业务需要添加header字段。</em>
     header: new Header('application/json'),
-    readTimeout: 60000, // 可选，默认为60000ms。
-    connectTimeout: 60000, // 可选，默认为60000ms。
-    usingProtocol: http.HttpProtocol.HTTP1_1, // 可选，协议类型默认值由系统自动指定。
-    usingProxy: false, // 可选，默认不使用网络代理，自API 10开始支持该属性。
+    readTimeout: 60000, <em>// 可选，默认为60000ms。</em>
+    connectTimeout: 60000,<em> // 可选，默认为60000ms。</em>
+    usingProtocol: http.HttpProtocol.HTTP1_1, <em>// 可选，协议类型默认值由系统自动指定。</em>
+    usingProxy: false, <em>// 可选，默认不使用网络代理，自API 10开始支持该属性。</em>
   };
   httpRequest.requestInStream('EXAMPLE_URL', options, (err: BusinessError<void>, data: number) => {
     if (!err) {
@@ -85,19 +89,46 @@ struct Index {
   }
 }
 ```
- 
- 
-当所有数据接收完毕后，on('dataEnd', () => {})方法会被调用，标志着数据接收完成。在使用完http请求对象后，调用destroy()方法来主动销毁这个对象，避免资源泄露。
+ 当所有数据接收完毕后，on('dataEnd', () => {})方法会被调用，标志着数据接收完成。在使用完http请求对象后，调用destroy()方法来主动销毁这个对象，避免资源泄露。
+- 场景二：确保[on('headersReceive')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-http#onheadersreceive8)在requestInStream之前同步执行，且无异步间隙：
+
+  
+```json
+let httpRequest = http.createHttp();
+httpRequest.on('headersReceive', (header: Object) => {
+  console.info(`header: ${JSON.stringify(header)}`);
+});
+<em>// 之后再调用requestInStream</em>
+httpRequest.requestInStream("EXAMPLE_URL", options).then(...);
+```
+ 另外，可采取以下措施避免回调丢失：
+
+  方式一：避免复用HttpRequest对象。每次请求都新建一个[http.createHttp()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-http#httpcreatehttp)实例，并在请求结束后调用destroy()释放资源。
+
+  方式二：使用[once('headersReceive')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-http#onceheadersreceive8)替代on('headersReceive')。如果只需要一次回调，可改用once避免重复订阅带来的潜在问题。
+
+  方式三：增加错误处理与日志。在requestInStream的catch中打印错误码和错误信息，判断是否因超时或网络异常导致：
+
+  
+```json
+httpRequest.requestInStream("EXAMPLE_URL", options)
+  .then(...)
+  .catch((err: BusinessError) => {
+    console.error(`requestInStream ERROR : err = ${JSON.stringify(err)}`);
+  });
+```
+
+
  
  
 
-#### 总结
+## 总结
 
 requestInStream接口是用于处理http请求返回的流式数据的方法。在HarmonyOS中，当http请求的响应数据量较大时，比如超过5M、100M，使用requestInStream可以有效地处理这些数据，避免内存溢出等问题。
  
  
 
-#### 常见FAQ
+## 常见FAQ
 
 Q：http发起的requestInStream流式请求，dataReceiveProgress无回调。
  

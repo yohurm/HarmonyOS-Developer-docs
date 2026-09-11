@@ -1,9 +1,9 @@
 # @ohos.request.cacheDownload (缓存下载)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-request-cachedownload
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 request部件主要给应用提供上传下载文件、后台传输代理的基础能力。
 
@@ -17,9 +17,10 @@ request部件主要给应用提供上传下载文件、后台传输代理的基�
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { cacheDownload } from '@kit.BasicServicesKit';
@@ -27,13 +28,15 @@ import { cacheDownload } from '@kit.BasicServicesKit';
 
 
 
-#### SslType21+
+## SslType21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示安全通信协议的枚举。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -43,13 +46,15 @@ import { cacheDownload } from '@kit.BasicServicesKit';
 
 
 
-#### ErrorCode23+
+## ErrorCode23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示错误返回信息的特定类型枚举。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -62,13 +67,15 @@ import { cacheDownload } from '@kit.BasicServicesKit';
 
 
 
-#### CacheStrategy23+
+## CacheStrategy23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示缓存刷新策略的枚举。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -78,9 +85,10 @@ import { cacheDownload } from '@kit.BasicServicesKit';
 
 
 
-#### TimeoutOptions
+## TimeoutOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 任务超时配置选项。包括检查网络可用的超时时间和完成HTTP请求的超时时间。
 
@@ -90,6 +98,7 @@ import { cacheDownload } from '@kit.BasicServicesKit';
 
 **系统能力：** SystemCapability.Request.FileTransferAgent
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | networkCheckTimeout | number | 否 | 是 | 检查网络可用的超时时间，单位为秒。默认值为20，最小值为0（取值为0时表示不进行网络可用检查），最大值为20，超出取值范围时抛出异常。 检查网络需要权限：ohos.permission.GET_NETWORK_INFO，无权限时网络检查失败直到超时。 |
@@ -98,9 +107,10 @@ import { cacheDownload } from '@kit.BasicServicesKit';
 
 
 
-#### RetryOptions
+## RetryOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 任务重试配置选项。设置任务的最大重试次数。
 
@@ -110,6 +120,7 @@ import { cacheDownload } from '@kit.BasicServicesKit';
 
 **系统能力：** SystemCapability.Request.FileTransferAgent
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | maxRetryCount | number | 否 | 是 | 任务失败时的最大重试次数。默认值为1，最小值为0，最大值为10，超出取值范围时抛出异常。 |
@@ -117,13 +128,15 @@ import { cacheDownload } from '@kit.BasicServicesKit';
 
 
 
-#### CacheDownloadOptions
+## CacheDownloadOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 缓存下载的配置选项。包括HTTP选项、传输选项和任务选项。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -137,13 +150,15 @@ import { cacheDownload } from '@kit.BasicServicesKit';
 
 
 
-#### ResourceInfo20+
+## ResourceInfo20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 预下载的资源信息。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -152,13 +167,15 @@ import { cacheDownload } from '@kit.BasicServicesKit';
 
 
 
-#### NetworkInfo20+
+## NetworkInfo20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 预下载的网络信息。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -168,13 +185,15 @@ import { cacheDownload } from '@kit.BasicServicesKit';
 
 
 
-#### PerformanceInfo20+
+## PerformanceInfo20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 预下载的性能信息。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -189,13 +208,15 @@ import { cacheDownload } from '@kit.BasicServicesKit';
 
 
 
-#### DownloadInfo20+
+## DownloadInfo20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 预下载的下载信息。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -206,13 +227,15 @@ import { cacheDownload } from '@kit.BasicServicesKit';
 
 
 
-#### DownloadError23+
+## DownloadError23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 预下载错误回调的返回信息。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -222,9 +245,10 @@ import { cacheDownload } from '@kit.BasicServicesKit';
 
 
 
-#### cacheDownload.download
+## cacheDownload.download
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 download(url: string, options: CacheDownloadOptions): void
 
@@ -242,6 +266,7 @@ download(url: string, options: CacheDownloadOptions): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | string | 是 | 目标资源的地址。支持HTTP和HTTPS协议，长度不超过8192字节。 |
@@ -251,6 +276,7 @@ download(url: string, options: CacheDownloadOptions): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -287,9 +313,10 @@ try {
 
 
 
-#### cacheDownload.cancel
+## cacheDownload.cancel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancel(url: string): void
 
@@ -303,6 +330,7 @@ cancel(url: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | string | 是 | 目标资源的地址。支持HTTP和HTTPS协议，长度不超过8192字节。 |
@@ -311,6 +339,7 @@ cancel(url: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -346,9 +375,10 @@ try {
 
 
 
-#### cacheDownload.setMemoryCacheSize
+## cacheDownload.setMemoryCacheSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMemoryCacheSize(bytes: number): void
 
@@ -362,6 +392,7 @@ setMemoryCacheSize(bytes: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bytes | number | 是 | 设置的缓存上限。默认值为0B，最小值为0，最大值不超过1073741824B（即1GB）。若bytes设置为0，将清除所有已缓存的内存缓存内容。 |
@@ -370,6 +401,7 @@ setMemoryCacheSize(bytes: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -392,9 +424,10 @@ try {
 
 
 
-#### cacheDownload.setFileCacheSize
+## cacheDownload.setFileCacheSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setFileCacheSize(bytes: number): void
 
@@ -409,6 +442,7 @@ setFileCacheSize(bytes: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bytes | number | 是 | 设置的缓存上限。默认值为104857600B（即100MB），最小值为0，最大值不超过4294967296B（即4GB）。 |
@@ -417,6 +451,7 @@ setFileCacheSize(bytes: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -443,9 +478,10 @@ try {
 
 
 
-#### cacheDownload.setDownloadInfoListSize20+
+## cacheDownload.setDownloadInfoListSize20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setDownloadInfoListSize(size: number): void
 
@@ -459,6 +495,7 @@ setDownloadInfoListSize(size: number): void
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -481,9 +518,10 @@ try {
 
 
 
-#### cacheDownload.getDownloadInfo20+
+## cacheDownload.getDownloadInfo20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDownloadInfo(url: string): DownloadInfo | undefined
 
@@ -501,12 +539,14 @@ getDownloadInfo(url: string): DownloadInfo | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | string | 是 | 待查询的url，支持HTTP和HTTPS协议，最大长度为8192字节，超出长度限制时抛出异常。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -516,6 +556,7 @@ getDownloadInfo(url: string): DownloadInfo | undefined
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -562,9 +603,10 @@ try {
 
 
 
-#### cacheDownload.clearMemoryCache23+
+## cacheDownload.clearMemoryCache23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clearMemoryCache(): void
 
@@ -582,9 +624,10 @@ cacheDownload.clearMemoryCache();
 
 
 
-#### cacheDownload.clearFileCache23+
+## cacheDownload.clearFileCache23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clearFileCache(): void
 
@@ -602,9 +645,10 @@ cacheDownload.clearFileCache();
 
 
 
-#### cacheDownload.onDownloadSuccess23+
+## cacheDownload.onDownloadSuccess23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDownloadSuccess(url: string, callback: Callback&lt;void&gt;): void
 
@@ -613,6 +657,7 @@ onDownloadSuccess(url: string, callback: Callback&lt;void&gt;): void
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -641,9 +686,10 @@ try {
 
 
 
-#### cacheDownload.onDownloadError23+
+## cacheDownload.onDownloadError23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDownloadError(url: string, callback: Callback&lt;DownloadError&gt;): void
 
@@ -652,6 +698,7 @@ onDownloadError(url: string, callback: Callback&lt;DownloadError&gt;): void
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -680,9 +727,10 @@ try {
 
 
 
-#### cacheDownload.offDownloadSuccess23+
+## cacheDownload.offDownloadSuccess23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offDownloadSuccess(url: string, callback?: Callback&lt;void&gt;): void
 
@@ -691,6 +739,7 @@ offDownloadSuccess(url: string, callback?: Callback&lt;void&gt;): void
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -721,9 +770,10 @@ try {
 
 
 
-#### cacheDownload.offDownloadError23+
+## cacheDownload.offDownloadError23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offDownloadError(url: string, callback?: Callback&lt;DownloadError&gt;): void
 
@@ -732,6 +782,7 @@ offDownloadError(url: string, callback?: Callback&lt;DownloadError&gt;): void
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -762,9 +813,10 @@ try {
 
 
 
-#### cacheDownload.setGlobalRetryOptions
+## cacheDownload.setGlobalRetryOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setGlobalRetryOptions(options?: RetryOptions): void
 
@@ -777,6 +829,7 @@ setGlobalRetryOptions(options?: RetryOptions): void
 **系统能力：** SystemCapability.Request.FileTransferAgent
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -802,9 +855,10 @@ try {
 
 
 
-#### cacheDownload.setGlobalTimeoutOptions
+## cacheDownload.setGlobalTimeoutOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setGlobalTimeoutOptions(options?: TimeoutOptions): void
 
@@ -817,6 +871,7 @@ setGlobalTimeoutOptions(options?: TimeoutOptions): void
 **系统能力：** SystemCapability.Request.FileTransferAgent
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |

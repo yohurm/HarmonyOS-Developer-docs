@@ -1,6 +1,6 @@
 # JSVM_ScriptOrigin
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-jsvm-jsvm-scriptorigin
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
@@ -10,7 +10,8 @@ typedef struct {...} JSVM_ScriptOrigin
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -26,16 +27,19 @@ typedef struct {...} JSVM_ScriptOrigin
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | const char* sourceMapUrl | Sourcemap 路径。 |

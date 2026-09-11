@@ -1,10 +1,10 @@
 # 添加图像效果 (C/C++)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/effectkit-filter-c
 
-#### 场景介绍
+## 场景介绍
 
 在离线处理图像时，可以进行一些图像效果的设置以获取视觉上的不同呈现，比如设置图像模糊程度、调节图像亮度和灰度、设置图像反色等。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 接口说明
+## 接口说明
 
 使用滤镜（Filter）设置图像效果的常用接口如下表所示，详细使用和参数请见[effect_filter](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-effect-filter-h)。
+
 
 | 接口 | 描述 |
 | --- | --- |
@@ -29,7 +30,7 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 在Native工程的src/main/cpp/CMakeLists.txt中添加如下链接库：
 
   
@@ -150,9 +151,15 @@ EffectErrorCode errCodeRelease = OH_Filter_Release(filter);
 绘制效果如下：
 
 | 图像处理 | 绘制效果 |
+
 | --- | --- |
+
 | 原始图像 |  |
+
 | 添加模糊效果 |  |
+
 | 添加提亮效果 |  |
+
 | 添加灰度效果 |  |
+
 | 添加反色效果 |  |

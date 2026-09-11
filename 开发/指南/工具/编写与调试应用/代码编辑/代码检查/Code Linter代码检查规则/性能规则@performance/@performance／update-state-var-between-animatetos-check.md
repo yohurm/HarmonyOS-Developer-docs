@@ -1,13 +1,13 @@
 # @performance/update-state-var-between-animatetos-check
 
-更新时间：2026-01-15 06:51:04
+更新时间：2026-08-29 09:41:34
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-update-state-var-between-animatetos-check
 
 如果多个animateTo之间存在状态更新，会导致执行下一个animateTo之前又存在需要更新的脏节点，可能造成冗余更新。因此不建议在两次animateTo之间进行状态变量更新。
  
 
-#### 规则配置
+## 规则配置
 
 ```json
 // code-linter.json5
@@ -20,13 +20,13 @@
  
  
 
-#### 选项
+## 选项
 
-该规则无需配置额外选项。
+该规则无需配置选项。
  
  
 
-#### 正例
+## 正例
 
 ```text
 @Entry
@@ -94,7 +94,7 @@ struct UpdateMultipleProperties {
  
  
 
-#### 反例
+## 反例
 
 ```text
 @Entry
@@ -144,11 +144,11 @@ struct UpdateMultipleProperties {
  
  
 
-#### 规则集
+## 规则集
 
 ```text
-plugin:@performance/recommended
-plugin:@performance/all
+<span style="color: rgb(80,160,79);">plugin:@performance/</span><span style="color: rgb(0,0,255);">recommended</span>
+<span style="color: rgb(80,160,79);">plugin:@performance/all</span>
 ```
  
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-code-linter)。

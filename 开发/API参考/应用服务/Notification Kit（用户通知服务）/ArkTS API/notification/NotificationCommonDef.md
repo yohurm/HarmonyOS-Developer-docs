@@ -1,9 +1,9 @@
 # NotificationCommonDef
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-notification-notificationcommondef
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 NotificationCommonDef中定义了通知相关接口中使用的通用数据结构。
 
@@ -12,13 +12,15 @@ NotificationCommonDef中定义了通知相关接口中使用的通用数据结�
 
 
 
-#### BundleOption
+## BundleOption
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述BundleOption信息，即应用的包信息。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -28,13 +30,15 @@ NotificationCommonDef中定义了通知相关接口中使用的通用数据结�
 
 
 
-#### GrantedBundleInfo22+
+## GrantedBundleInfo22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述已授权的包信息。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -45,9 +49,10 @@ NotificationCommonDef中定义了通知相关接口中使用的通用数据结�
 
 
 
-#### UserGrantSetting
+## UserGrantSetting
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述用户授权的设置信息。
 
@@ -56,6 +61,7 @@ NotificationCommonDef中定义了通知相关接口中使用的通用数据结�
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

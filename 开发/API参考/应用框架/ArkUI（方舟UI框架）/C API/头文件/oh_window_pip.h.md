@@ -1,13 +1,14 @@
 # oh_window_pip.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-window-pip-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义画中画功能的相关接口，包含创建、删除画中画控制器，以及启动、停止画中画等。主要用于视频播放、直播、视频通话或视频会议场景下，以小窗（画中画）模式呈现内容。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | PictureInPicture_PipConfig | 画中画参数配置器。 |
@@ -40,10 +44,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | PictureInPicture_PipTemplateType | PictureInPicture_PipTemplateType | 画中画模板类型。 |
@@ -55,10 +61,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | typedef void (*WebPipStartPipCallback)(uint32_t controllerId, uint8_t requestId, uint64_t surfaceId) | WebPipStartPipCallback | 定义画中画窗口创建完成的回调函数。 |
@@ -94,19 +102,22 @@
 | int32_t OH_PictureInPicture_SetPipInitialSurfaceRect(uint32_t controllerId, int32_t positionX, int32_t positionY,uint32_t width, uint32_t height) | - | 设置画中画拉起动效开始时的位置和大小，可用于实现一镜到底效果。 |
 | int32_t OH_PictureInPicture_UnsetPipInitialSurfaceRect(uint32_t controllerId) | - | 取消已设置的画中画拉起动效的起始位置和大小。 |
 | int32_t OH_PictureInPicture_SetParentWindowId(uint32_t controllerId, uint32_t windowId) | - | 设置画中画主窗口ID。 |
+| int32_t OH_PictureInPicture_SetAutoStartEnabled(uint32_t controllerId, bool enabled) | - | 设置在拉起画中画的应用主窗退后台时是否自动启动画中画，默认不自动拉起。在开启自动拉起的情况下，当应用主窗为智慧多窗悬浮窗状态且被收入侧边栏时，应用主窗虽退后台，但不会自动拉起画中画。 |
  
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### PictureInPicture_PipTemplateType
+### PictureInPicture_PipTemplateType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum PictureInPicture_PipTemplateType
@@ -118,6 +129,7 @@ enum PictureInPicture_PipTemplateType
  
 **起始版本：** 20
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | VIDEO_PLAY = 0 | 表示将要切换为画中画播放的媒体类型是视频，系统依此加载视频播放模板。 |
@@ -128,9 +140,10 @@ enum PictureInPicture_PipTemplateType
  
   
 
-#### PictureInPicture_PipControlGroup
+### PictureInPicture_PipControlGroup
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum PictureInPicture_PipControlGroup
@@ -142,6 +155,7 @@ enum PictureInPicture_PipControlGroup
  
 **起始版本：** 20
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | VIDEO_PLAY_VIDEO_PREVIOUS_NEXT = 101 | 视频播放模板的视频上一个/下一个控件组。与视频快进/后退控件组为互斥控件组。如添加视频快进/后退控件组，则不可添加该控件组。 |
@@ -160,9 +174,10 @@ enum PictureInPicture_PipControlGroup
  
   
 
-#### PictureInPicture_PipControlType
+### PictureInPicture_PipControlType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum PictureInPicture_PipControlType
@@ -174,6 +189,7 @@ enum PictureInPicture_PipControlType
  
 **起始版本：** 20
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | VIDEO_PLAY_PAUSE = 0 | 播放/暂停控件。 |
@@ -189,9 +205,10 @@ enum PictureInPicture_PipControlType
  
   
 
-#### PictureInPicture_PipControlStatus
+### PictureInPicture_PipControlStatus
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum PictureInPicture_PipControlStatus
@@ -203,6 +220,7 @@ enum PictureInPicture_PipControlStatus
  
 **起始版本：** 20
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | PLAY = 1 | 视频播放状态。 |
@@ -213,9 +231,10 @@ enum PictureInPicture_PipControlStatus
  
   
 
-#### PictureInPicture_PipState
+### PictureInPicture_PipState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum PictureInPicture_PipState
@@ -227,6 +246,7 @@ enum PictureInPicture_PipState
  
 **起始版本：** 20
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ABOUT_TO_START = 1 | 表示画中画将要启动。 |
@@ -239,15 +259,17 @@ enum PictureInPicture_PipState
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### WebPipStartPipCallback()
+### WebPipStartPipCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*WebPipStartPipCallback)(uint32_t controllerId, uint8_t requestId, uint64_t surfaceId)
@@ -261,6 +283,7 @@ typedef void (*WebPipStartPipCallback)(uint32_t controllerId, uint8_t requestId,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t controllerId | 画中画控制器ID，为非负整数。 |
@@ -270,9 +293,10 @@ typedef void (*WebPipStartPipCallback)(uint32_t controllerId, uint8_t requestId,
  
   
 
-#### WebPipLifecycleCallback()
+### WebPipLifecycleCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*WebPipLifecycleCallback)(uint32_t controllerId, PictureInPicture_PipState state, int32_t errcode)
@@ -286,6 +310,7 @@ typedef void (*WebPipLifecycleCallback)(uint32_t controllerId, PictureInPicture_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t controllerId | 画中画控制器ID，为非负整数。 |
@@ -295,9 +320,10 @@ typedef void (*WebPipLifecycleCallback)(uint32_t controllerId, PictureInPicture_
  
   
 
-#### WebPipControlEventCallback()
+### WebPipControlEventCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*WebPipControlEventCallback)(uint32_t controllerId, PictureInPicture_PipControlType controlType, PictureInPicture_PipControlStatus status)
@@ -311,6 +337,7 @@ typedef void (*WebPipControlEventCallback)(uint32_t controllerId, PictureInPictu
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t controllerId | 画中画控制器ID，为非负整数。 |
@@ -320,9 +347,10 @@ typedef void (*WebPipControlEventCallback)(uint32_t controllerId, PictureInPictu
  
   
 
-#### WebPipResizeCallback()
+### WebPipResizeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*WebPipResizeCallback)(uint32_t controllerId, uint32_t width, uint32_t height, double scale)
@@ -336,6 +364,7 @@ typedef void (*WebPipResizeCallback)(uint32_t controllerId, uint32_t width, uint
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t controllerId | 画中画控制器ID，为非负整数。 |
@@ -346,9 +375,10 @@ typedef void (*WebPipResizeCallback)(uint32_t controllerId, uint32_t width, uint
  
   
 
-#### OH_PictureInPicture_CreatePipConfig()
+### OH_PictureInPicture_CreatePipConfig()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_PictureInPicture_CreatePipConfig(PictureInPicture_PipConfig* pipConfig)
@@ -362,13 +392,15 @@ int32_t OH_PictureInPicture_CreatePipConfig(PictureInPicture_PipConfig* pipConfi
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| PictureInPicture_PipConfig* pipConfig | 用于接受创建的画中画参数配置器。 |
+| PictureInPicture_PipConfig* pipConfig | 用于接收创建的画中画参数配置器。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回结果代码。 返回OK，表示函数调用成功。 返回WINDOW_MANAGER_ERRORCODE_INCORRECT_PARAM，表示参数错误。 |
@@ -376,9 +408,10 @@ int32_t OH_PictureInPicture_CreatePipConfig(PictureInPicture_PipConfig* pipConfi
  
   
 
-#### OH_PictureInPicture_DestroyPipConfig()
+### OH_PictureInPicture_DestroyPipConfig()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_PictureInPicture_DestroyPipConfig(PictureInPicture_PipConfig* pipConfig)
@@ -392,6 +425,7 @@ int32_t OH_PictureInPicture_DestroyPipConfig(PictureInPicture_PipConfig* pipConf
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | PictureInPicture_PipConfig* pipConfig | 画中画参数配置器。 |
@@ -399,6 +433,7 @@ int32_t OH_PictureInPicture_DestroyPipConfig(PictureInPicture_PipConfig* pipConf
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回结果代码。 返回OK，表示函数调用成功。 返回WINDOW_MANAGER_ERRORCODE_INCORRECT_PARAM，表示参数错误。 |
@@ -406,9 +441,10 @@ int32_t OH_PictureInPicture_DestroyPipConfig(PictureInPicture_PipConfig* pipConf
  
   
 
-#### OH_PictureInPicture_SetPipMainWindowId()
+### OH_PictureInPicture_SetPipMainWindowId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_PictureInPicture_SetPipMainWindowId(PictureInPicture_PipConfig pipConfig, uint32_t mainWindowId)
@@ -422,6 +458,7 @@ int32_t OH_PictureInPicture_SetPipMainWindowId(PictureInPicture_PipConfig pipCon
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | PictureInPicture_PipConfig pipConfig | 画中画参数配置器。 |
@@ -430,6 +467,7 @@ int32_t OH_PictureInPicture_SetPipMainWindowId(PictureInPicture_PipConfig pipCon
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回结果代码。 返回OK，表示函数调用成功。 返回WINDOW_MANAGER_ERRORCODE_INCORRECT_PARAM，表示参数错误。 返回WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED，表示设备不支持画中画。 |
@@ -437,9 +475,10 @@ int32_t OH_PictureInPicture_SetPipMainWindowId(PictureInPicture_PipConfig pipCon
  
   
 
-#### OH_PictureInPicture_SetPipTemplateType()
+### OH_PictureInPicture_SetPipTemplateType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_PictureInPicture_SetPipTemplateType(PictureInPicture_PipConfig pipConfig, PictureInPicture_PipTemplateType pipTemplateType)
@@ -453,6 +492,7 @@ int32_t OH_PictureInPicture_SetPipTemplateType(PictureInPicture_PipConfig pipCon
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | PictureInPicture_PipConfig pipConfig | 画中画参数配置器。 |
@@ -461,6 +501,7 @@ int32_t OH_PictureInPicture_SetPipTemplateType(PictureInPicture_PipConfig pipCon
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回结果代码。 返回OK，表示函数调用成功。 返回WINDOW_MANAGER_ERRORCODE_INCORRECT_PARAM，表示参数错误。 返回WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED，表示设备不支持画中画。 |
@@ -468,9 +509,10 @@ int32_t OH_PictureInPicture_SetPipTemplateType(PictureInPicture_PipConfig pipCon
  
   
 
-#### OH_PictureInPicture_SetPipRect()
+### OH_PictureInPicture_SetPipRect()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_PictureInPicture_SetPipRect(PictureInPicture_PipConfig pipConfig, uint32_t width, uint32_t height)
@@ -484,6 +526,7 @@ int32_t OH_PictureInPicture_SetPipRect(PictureInPicture_PipConfig pipConfig, uin
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | PictureInPicture_PipConfig pipConfig | 画中画参数配置器。 |
@@ -493,6 +536,7 @@ int32_t OH_PictureInPicture_SetPipRect(PictureInPicture_PipConfig pipConfig, uin
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回结果代码。 返回OK，表示函数调用成功。 返回WINDOW_MANAGER_ERRORCODE_INCORRECT_PARAM，表示参数错误。 返回WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED，表示设备不支持画中画。 |
@@ -500,9 +544,10 @@ int32_t OH_PictureInPicture_SetPipRect(PictureInPicture_PipConfig pipConfig, uin
  
   
 
-#### OH_PictureInPicture_SetPipControlGroup()
+### OH_PictureInPicture_SetPipControlGroup()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_PictureInPicture_SetPipControlGroup(PictureInPicture_PipConfig pipConfig, PictureInPicture_PipControlGroup* controlGroup, uint8_t controlGroupLength)
@@ -516,6 +561,7 @@ int32_t OH_PictureInPicture_SetPipControlGroup(PictureInPicture_PipConfig pipCon
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | PictureInPicture_PipConfig pipConfig | 画中画参数配置器。 |
@@ -525,6 +571,7 @@ int32_t OH_PictureInPicture_SetPipControlGroup(PictureInPicture_PipConfig pipCon
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回结果代码。 返回OK，表示函数调用成功。 返回WINDOW_MANAGER_ERRORCODE_INCORRECT_PARAM，表示参数错误。 返回WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED，表示设备不支持画中画。 |
@@ -532,9 +579,10 @@ int32_t OH_PictureInPicture_SetPipControlGroup(PictureInPicture_PipConfig pipCon
  
   
 
-#### OH_PictureInPicture_SetPipNapiEnv()
+### OH_PictureInPicture_SetPipNapiEnv()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_PictureInPicture_SetPipNapiEnv(PictureInPicture_PipConfig pipConfig, void* env)
@@ -548,6 +596,7 @@ int32_t OH_PictureInPicture_SetPipNapiEnv(PictureInPicture_PipConfig pipConfig, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | PictureInPicture_PipConfig pipConfig | 画中画参数配置器。 |
@@ -556,6 +605,7 @@ int32_t OH_PictureInPicture_SetPipNapiEnv(PictureInPicture_PipConfig pipConfig, 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回结果代码。 返回OK，表示函数调用成功。 返回WINDOW_MANAGER_ERRORCODE_INCORRECT_PARAM，表示参数错误。 返回WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED，表示设备不支持画中画。 |
@@ -563,9 +613,10 @@ int32_t OH_PictureInPicture_SetPipNapiEnv(PictureInPicture_PipConfig pipConfig, 
  
   
 
-#### OH_PictureInPicture_CreatePip()
+### OH_PictureInPicture_CreatePip()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_PictureInPicture_CreatePip(PictureInPicture_PipConfig pipConfig, uint32_t* controllerId)
@@ -579,6 +630,7 @@ int32_t OH_PictureInPicture_CreatePip(PictureInPicture_PipConfig pipConfig, uint
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | PictureInPicture_PipConfig pipConfig | 画中画参数配置器。 |
@@ -587,6 +639,7 @@ int32_t OH_PictureInPicture_CreatePip(PictureInPicture_PipConfig pipConfig, uint
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回结果代码。 返回OK，表示函数调用成功。 返回WINDOW_MANAGER_ERRORCODE_INCORRECT_PARAM，表示参数错误。 返回WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED，表示设备不支持画中画。 返回WINDOW_MANAGER_ERRORCODE_PIP_INTERNAL_ERROR，表示画中画内部错误。 |
@@ -594,9 +647,10 @@ int32_t OH_PictureInPicture_CreatePip(PictureInPicture_PipConfig pipConfig, uint
  
   
 
-#### OH_PictureInPicture_DeletePip()
+### OH_PictureInPicture_DeletePip()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_PictureInPicture_DeletePip(uint32_t controllerId)
@@ -610,6 +664,7 @@ int32_t OH_PictureInPicture_DeletePip(uint32_t controllerId)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t controllerId | 画中画控制器ID，为非负整数。 |
@@ -617,6 +672,7 @@ int32_t OH_PictureInPicture_DeletePip(uint32_t controllerId)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回结果代码。 返回OK，表示函数调用成功。 返回WINDOW_MANAGER_ERRORCODE_INCORRECT_PARAM，表示参数错误。 |
@@ -624,9 +680,10 @@ int32_t OH_PictureInPicture_DeletePip(uint32_t controllerId)
  
   
 
-#### OH_PictureInPicture_StartPip()
+### OH_PictureInPicture_StartPip()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_PictureInPicture_StartPip(uint32_t controllerId)
@@ -640,6 +697,7 @@ int32_t OH_PictureInPicture_StartPip(uint32_t controllerId)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t controllerId | 画中画控制器ID，为非负整数。 |
@@ -647,6 +705,7 @@ int32_t OH_PictureInPicture_StartPip(uint32_t controllerId)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回结果代码。 返回OK，表示函数调用成功。 返回WINDOW_MANAGER_ERRORCODE_PIP_STATE_ABNORMAL，表示画中画窗口状态异常。 返回WINDOW_MANAGER_ERRORCODE_PIP_CREATE_FAILED，表示画中画窗口创建失败。 返回WINDOW_MANAGER_ERRORCODE_PIP_INTERNAL_ERROR，表示画中画内部错误。 返回WINDOW_MANAGER_ERRORCODE_PIP_REPEATED_OPERATION，表示画中画窗口重复操作。 返回WINDOW_MANAGER_ERRORCODE_INCORRECT_PARAM，表示参数错误。 |
@@ -654,9 +713,10 @@ int32_t OH_PictureInPicture_StartPip(uint32_t controllerId)
  
   
 
-#### OH_PictureInPicture_StopPip()
+### OH_PictureInPicture_StopPip()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_PictureInPicture_StopPip(uint32_t controllerId)
@@ -670,6 +730,7 @@ int32_t OH_PictureInPicture_StopPip(uint32_t controllerId)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t controllerId | 画中画控制器ID，为非负整数。 |
@@ -677,6 +738,7 @@ int32_t OH_PictureInPicture_StopPip(uint32_t controllerId)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回结果代码。 返回OK，表示函数调用成功。 返回WINDOW_MANAGER_ERRORCODE_PIP_DESTROY_FAILED，表示画中画窗口销毁失败。 返回WINDOW_MANAGER_ERRORCODE_PIP_STATE_ABNORMAL，表示画中画窗口状态异常。 返回WINDOW_MANAGER_ERRORCODE_PIP_INTERNAL_ERROR，表示画中画内部错误。 返回WINDOW_MANAGER_ERRORCODE_PIP_REPEATED_OPERATION，表示画中画窗口重复操作。 返回WINDOW_MANAGER_ERRORCODE_INCORRECT_PARAM，表示参数错误。 |
@@ -684,9 +746,10 @@ int32_t OH_PictureInPicture_StopPip(uint32_t controllerId)
  
   
 
-#### OH_PictureInPicture_UpdatePipContentSize()
+### OH_PictureInPicture_UpdatePipContentSize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_PictureInPicture_UpdatePipContentSize(uint32_t controllerId, uint32_t width, uint32_t height)
@@ -702,6 +765,7 @@ int32_t OH_PictureInPicture_UpdatePipContentSize(uint32_t controllerId, uint32_t
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t controllerId | 画中画控制器ID，为非负整数。 |
@@ -711,6 +775,7 @@ int32_t OH_PictureInPicture_UpdatePipContentSize(uint32_t controllerId, uint32_t
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回结果代码。 返回OK，表示函数调用成功。 返回WINDOW_MANAGER_ERRORCODE_INCORRECT_PARAM，表示参数错误。 返回WINDOW_MANAGER_ERRORCODE_PIP_INTERNAL_ERROR，表示画中画内部错误。 |
@@ -718,9 +783,10 @@ int32_t OH_PictureInPicture_UpdatePipContentSize(uint32_t controllerId, uint32_t
  
   
 
-#### OH_PictureInPicture_UpdatePipControlStatus()
+### OH_PictureInPicture_UpdatePipControlStatus()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_PictureInPicture_UpdatePipControlStatus(uint32_t controllerId, PictureInPicture_PipControlType controlType, PictureInPicture_PipControlStatus status)
@@ -734,6 +800,7 @@ int32_t OH_PictureInPicture_UpdatePipControlStatus(uint32_t controllerId, Pictur
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t controllerId | 画中画控制器ID，为非负整数。 |
@@ -743,6 +810,7 @@ int32_t OH_PictureInPicture_UpdatePipControlStatus(uint32_t controllerId, Pictur
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回结果代码。 返回OK，表示函数调用成功。 返回WINDOW_MANAGER_ERRORCODE_INCORRECT_PARAM，表示参数错误。 返回WINDOW_MANAGER_ERRORCODE_PIP_INTERNAL_ERROR，表示画中画内部错误。 |
@@ -750,9 +818,10 @@ int32_t OH_PictureInPicture_UpdatePipControlStatus(uint32_t controllerId, Pictur
  
   
 
-#### OH_PictureInPicture_SetPipControlEnabled()
+### OH_PictureInPicture_SetPipControlEnabled()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_PictureInPicture_SetPipControlEnabled(uint32_t controllerId, PictureInPicture_PipControlType controlType, bool enabled)
@@ -766,6 +835,7 @@ int32_t OH_PictureInPicture_SetPipControlEnabled(uint32_t controllerId, PictureI
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t controllerId | 画中画控制器ID，为非负整数。 |
@@ -775,6 +845,7 @@ int32_t OH_PictureInPicture_SetPipControlEnabled(uint32_t controllerId, PictureI
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回结果代码。 返回OK，表示函数调用成功。 返回WINDOW_MANAGER_ERRORCODE_INCORRECT_PARAM，表示参数错误。 返回WINDOW_MANAGER_ERRORCODE_PIP_INTERNAL_ERROR，表示画中画内部错误。 |
@@ -782,9 +853,10 @@ int32_t OH_PictureInPicture_SetPipControlEnabled(uint32_t controllerId, PictureI
  
   
 
-#### OH_PictureInPicture_RegisterStartPipCallback()
+### OH_PictureInPicture_RegisterStartPipCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_PictureInPicture_RegisterStartPipCallback(uint32_t controllerId, WebPipStartPipCallback callback)
@@ -798,6 +870,7 @@ int32_t OH_PictureInPicture_RegisterStartPipCallback(uint32_t controllerId, WebP
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t controllerId | 画中画控制器ID，为非负整数。 |
@@ -806,6 +879,7 @@ int32_t OH_PictureInPicture_RegisterStartPipCallback(uint32_t controllerId, WebP
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回结果代码。 返回OK，表示函数调用成功。 返回WINDOW_MANAGER_ERRORCODE_INCORRECT_PARAM，表示参数错误。 返回WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED，表示设备不支持画中画。 返回WINDOW_MANAGER_ERRORCODE_PIP_INTERNAL_ERROR，表示画中画内部错误。 |
@@ -813,9 +887,10 @@ int32_t OH_PictureInPicture_RegisterStartPipCallback(uint32_t controllerId, WebP
  
   
 
-#### OH_PictureInPicture_UnregisterStartPipCallback()
+### OH_PictureInPicture_UnregisterStartPipCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_PictureInPicture_UnregisterStartPipCallback(uint32_t controllerId, WebPipStartPipCallback callback)
@@ -829,6 +904,7 @@ int32_t OH_PictureInPicture_UnregisterStartPipCallback(uint32_t controllerId, We
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t controllerId | 画中画控制器ID，为非负整数。 |
@@ -837,6 +913,7 @@ int32_t OH_PictureInPicture_UnregisterStartPipCallback(uint32_t controllerId, We
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回结果代码。 返回OK，表示函数调用成功。 返回WINDOW_MANAGER_ERRORCODE_INCORRECT_PARAM，表示参数错误。 返回WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED，表示设备不支持画中画。 返回WINDOW_MANAGER_ERRORCODE_PIP_INTERNAL_ERROR，表示画中画内部错误。 |
@@ -844,9 +921,10 @@ int32_t OH_PictureInPicture_UnregisterStartPipCallback(uint32_t controllerId, We
  
   
 
-#### OH_PictureInPicture_UnregisterAllStartPipCallbacks()
+### OH_PictureInPicture_UnregisterAllStartPipCallbacks()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_PictureInPicture_UnregisterAllStartPipCallbacks(uint32_t controllerId)
@@ -860,6 +938,7 @@ int32_t OH_PictureInPicture_UnregisterAllStartPipCallbacks(uint32_t controllerId
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t controllerId | 画中画控制器ID，为非负整数。 |
@@ -867,6 +946,7 @@ int32_t OH_PictureInPicture_UnregisterAllStartPipCallbacks(uint32_t controllerId
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回结果代码。 返回OK，表示函数调用成功。 返回WINDOW_MANAGER_ERRORCODE_INCORRECT_PARAM，表示参数错误。 返回WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED，表示设备不支持画中画。 返回WINDOW_MANAGER_ERRORCODE_PIP_INTERNAL_ERROR，表示画中画内部错误。 |
@@ -874,9 +954,10 @@ int32_t OH_PictureInPicture_UnregisterAllStartPipCallbacks(uint32_t controllerId
  
   
 
-#### OH_PictureInPicture_RegisterLifecycleListener()
+### OH_PictureInPicture_RegisterLifecycleListener()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_PictureInPicture_RegisterLifecycleListener(uint32_t controllerId, WebPipLifecycleCallback callback)
@@ -890,6 +971,7 @@ int32_t OH_PictureInPicture_RegisterLifecycleListener(uint32_t controllerId, Web
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t controllerId | 画中画控制器ID，为非负整数。 |
@@ -898,6 +980,7 @@ int32_t OH_PictureInPicture_RegisterLifecycleListener(uint32_t controllerId, Web
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回结果代码。 返回OK，表示函数调用成功。 返回WINDOW_MANAGER_ERRORCODE_INCORRECT_PARAM，表示参数错误。 返回WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED，表示设备不支持画中画。 返回WINDOW_MANAGER_ERRORCODE_PIP_INTERNAL_ERROR，表示画中画内部错误。 |
@@ -905,9 +988,10 @@ int32_t OH_PictureInPicture_RegisterLifecycleListener(uint32_t controllerId, Web
  
   
 
-#### OH_PictureInPicture_UnregisterLifecycleListener()
+### OH_PictureInPicture_UnregisterLifecycleListener()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_PictureInPicture_UnregisterLifecycleListener(uint32_t controllerId, WebPipLifecycleCallback callback)
@@ -921,6 +1005,7 @@ int32_t OH_PictureInPicture_UnregisterLifecycleListener(uint32_t controllerId, W
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t controllerId | 画中画控制器ID，为非负整数。 |
@@ -929,6 +1014,7 @@ int32_t OH_PictureInPicture_UnregisterLifecycleListener(uint32_t controllerId, W
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回结果代码。 返回OK，表示函数调用成功。 返回WINDOW_MANAGER_ERRORCODE_INCORRECT_PARAM，表示参数错误。 返回WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED，表示设备不支持画中画。 返回WINDOW_MANAGER_ERRORCODE_PIP_INTERNAL_ERROR，表示画中画内部错误。 |
@@ -936,9 +1022,10 @@ int32_t OH_PictureInPicture_UnregisterLifecycleListener(uint32_t controllerId, W
  
   
 
-#### OH_PictureInPicture_UnregisterAllLifecycleListeners()
+### OH_PictureInPicture_UnregisterAllLifecycleListeners()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_PictureInPicture_UnregisterAllLifecycleListeners(uint32_t controllerId)
@@ -952,6 +1039,7 @@ int32_t OH_PictureInPicture_UnregisterAllLifecycleListeners(uint32_t controllerI
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t controllerId | 画中画控制器ID，为非负整数。 |
@@ -959,6 +1047,7 @@ int32_t OH_PictureInPicture_UnregisterAllLifecycleListeners(uint32_t controllerI
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回结果代码。 返回OK，表示函数调用成功。 返回WINDOW_MANAGER_ERRORCODE_INCORRECT_PARAM，表示参数错误。 返回WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED，表示设备不支持画中画。 返回WINDOW_MANAGER_ERRORCODE_PIP_INTERNAL_ERROR，表示画中画内部错误。 |
@@ -966,9 +1055,10 @@ int32_t OH_PictureInPicture_UnregisterAllLifecycleListeners(uint32_t controllerI
  
   
 
-#### OH_PictureInPicture_RegisterControlEventListener()
+### OH_PictureInPicture_RegisterControlEventListener()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_PictureInPicture_RegisterControlEventListener(uint32_t controllerId, WebPipControlEventCallback callback)
@@ -982,6 +1072,7 @@ int32_t OH_PictureInPicture_RegisterControlEventListener(uint32_t controllerId, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t controllerId | 画中画控制器ID，为非负整数。 |
@@ -990,6 +1081,7 @@ int32_t OH_PictureInPicture_RegisterControlEventListener(uint32_t controllerId, 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回结果代码。 返回OK，表示函数调用成功。 返回WINDOW_MANAGER_ERRORCODE_INCORRECT_PARAM，表示参数错误。 返回WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED，表示设备不支持画中画。 返回WINDOW_MANAGER_ERRORCODE_PIP_INTERNAL_ERROR，表示画中画内部错误。 |
@@ -997,9 +1089,10 @@ int32_t OH_PictureInPicture_RegisterControlEventListener(uint32_t controllerId, 
  
   
 
-#### OH_PictureInPicture_UnregisterControlEventListener()
+### OH_PictureInPicture_UnregisterControlEventListener()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_PictureInPicture_UnregisterControlEventListener(uint32_t controllerId, WebPipControlEventCallback callback)
@@ -1013,6 +1106,7 @@ int32_t OH_PictureInPicture_UnregisterControlEventListener(uint32_t controllerId
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t controllerId | 画中画控制器ID，为非负整数。 |
@@ -1021,6 +1115,7 @@ int32_t OH_PictureInPicture_UnregisterControlEventListener(uint32_t controllerId
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回结果代码。 返回OK，表示函数调用成功。 返回WINDOW_MANAGER_ERRORCODE_INCORRECT_PARAM，表示参数错误。 返回WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED，表示设备不支持画中画。 返回WINDOW_MANAGER_ERRORCODE_PIP_INTERNAL_ERROR，表示画中画内部错误。 |
@@ -1028,9 +1123,10 @@ int32_t OH_PictureInPicture_UnregisterControlEventListener(uint32_t controllerId
  
   
 
-#### OH_PictureInPicture_UnregisterAllControlEventListeners()
+### OH_PictureInPicture_UnregisterAllControlEventListeners()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_PictureInPicture_UnregisterAllControlEventListeners(uint32_t controllerId)
@@ -1044,6 +1140,7 @@ int32_t OH_PictureInPicture_UnregisterAllControlEventListeners(uint32_t controll
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t controllerId | 画中画控制器ID，为非负整数。 |
@@ -1051,6 +1148,7 @@ int32_t OH_PictureInPicture_UnregisterAllControlEventListeners(uint32_t controll
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回结果代码。 返回OK，表示函数调用成功。 返回WINDOW_MANAGER_ERRORCODE_INCORRECT_PARAM，表示参数错误。 返回WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED，表示设备不支持画中画。 返回WINDOW_MANAGER_ERRORCODE_PIP_INTERNAL_ERROR，表示画中画内部错误。 |
@@ -1058,9 +1156,10 @@ int32_t OH_PictureInPicture_UnregisterAllControlEventListeners(uint32_t controll
  
   
 
-#### OH_PictureInPicture_RegisterResizeListener()
+### OH_PictureInPicture_RegisterResizeListener()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_PictureInPicture_RegisterResizeListener(uint32_t controllerId, WebPipResizeCallback callback)
@@ -1074,6 +1173,7 @@ int32_t OH_PictureInPicture_RegisterResizeListener(uint32_t controllerId, WebPip
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t controllerId | 画中画控制器ID，为非负整数。 |
@@ -1082,6 +1182,7 @@ int32_t OH_PictureInPicture_RegisterResizeListener(uint32_t controllerId, WebPip
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回结果代码。 返回OK，表示函数调用成功。 返回WINDOW_MANAGER_ERRORCODE_INCORRECT_PARAM，表示参数错误。 返回WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED，表示设备不支持画中画。 返回WINDOW_MANAGER_ERRORCODE_PIP_INTERNAL_ERROR，表示画中画内部错误。 |
@@ -1089,9 +1190,10 @@ int32_t OH_PictureInPicture_RegisterResizeListener(uint32_t controllerId, WebPip
  
   
 
-#### OH_PictureInPicture_UnregisterResizeListener()
+### OH_PictureInPicture_UnregisterResizeListener()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_PictureInPicture_UnregisterResizeListener(uint32_t controllerId, WebPipResizeCallback callback)
@@ -1105,6 +1207,7 @@ int32_t OH_PictureInPicture_UnregisterResizeListener(uint32_t controllerId, WebP
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t controllerId | 画中画控制器ID，为非负整数。 |
@@ -1113,6 +1216,7 @@ int32_t OH_PictureInPicture_UnregisterResizeListener(uint32_t controllerId, WebP
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回结果代码。 返回OK，表示函数调用成功。 返回WINDOW_MANAGER_ERRORCODE_INCORRECT_PARAM，表示参数错误。 返回WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED，表示设备不支持画中画。 返回WINDOW_MANAGER_ERRORCODE_PIP_INTERNAL_ERROR，表示画中画内部错误。 |
@@ -1120,9 +1224,10 @@ int32_t OH_PictureInPicture_UnregisterResizeListener(uint32_t controllerId, WebP
  
   
 
-#### OH_PictureInPicture_UnregisterAllResizeListeners()
+### OH_PictureInPicture_UnregisterAllResizeListeners()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_PictureInPicture_UnregisterAllResizeListeners(uint32_t controllerId)
@@ -1136,6 +1241,7 @@ int32_t OH_PictureInPicture_UnregisterAllResizeListeners(uint32_t controllerId)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t controllerId | 画中画控制器ID，为非负整数。 |
@@ -1143,6 +1249,7 @@ int32_t OH_PictureInPicture_UnregisterAllResizeListeners(uint32_t controllerId)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回结果代码。 返回OK，表示函数调用成功。 返回WINDOW_MANAGER_ERRORCODE_INCORRECT_PARAM，表示参数错误。 返回WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED，表示设备不支持画中画。 返回WINDOW_MANAGER_ERRORCODE_PIP_INTERNAL_ERROR，表示画中画内部错误。 |
@@ -1150,9 +1257,10 @@ int32_t OH_PictureInPicture_UnregisterAllResizeListeners(uint32_t controllerId)
  
   
 
-#### OH_PictureInPicture_SetPipInitialSurfaceRect()
+### OH_PictureInPicture_SetPipInitialSurfaceRect()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_PictureInPicture_SetPipInitialSurfaceRect(uint32_t controllerId, int32_t positionX, int32_t positionY,uint32_t width, uint32_t height)
@@ -1166,6 +1274,7 @@ int32_t OH_PictureInPicture_SetPipInitialSurfaceRect(uint32_t controllerId, int3
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t controllerId | 画中画控制器ID，为非负整数。 |
@@ -1177,6 +1286,7 @@ int32_t OH_PictureInPicture_SetPipInitialSurfaceRect(uint32_t controllerId, int3
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回结果代码。 返回OK，表示函数调用成功。 返回WINDOW_MANAGER_ERRORCODE_INCORRECT_PARAM，表示参数错误。 返回WINDOW_MANAGER_ERRORCODE_PIP_INTERNAL_ERROR，表示画中画内部错误。 |
@@ -1184,9 +1294,10 @@ int32_t OH_PictureInPicture_SetPipInitialSurfaceRect(uint32_t controllerId, int3
  
   
 
-#### OH_PictureInPicture_UnsetPipInitialSurfaceRect()
+### OH_PictureInPicture_UnsetPipInitialSurfaceRect()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 int32_t OH_PictureInPicture_UnsetPipInitialSurfaceRect(uint32_t controllerId)
@@ -1200,6 +1311,7 @@ int32_t OH_PictureInPicture_UnsetPipInitialSurfaceRect(uint32_t controllerId)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t controllerId | 画中画控制器ID，为非负整数。 |
@@ -1207,6 +1319,7 @@ int32_t OH_PictureInPicture_UnsetPipInitialSurfaceRect(uint32_t controllerId)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回结果代码。 返回OK，表示函数调用成功。 返回WINDOW_MANAGER_ERRORCODE_INCORRECT_PARAM，表示参数错误。 返回WINDOW_MANAGER_ERRORCODE_PIP_INTERNAL_ERROR，表示画中画内部错误。 |
@@ -1214,9 +1327,10 @@ int32_t OH_PictureInPicture_UnsetPipInitialSurfaceRect(uint32_t controllerId)
  
   
 
-#### OH_PictureInPicture_SetParentWindowId()
+### OH_PictureInPicture_SetParentWindowId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 ```text
 int32_t OH_PictureInPicture_SetParentWindowId(uint32_t controllerId, uint32_t windowId)
@@ -1236,6 +1350,7 @@ int32_t OH_PictureInPicture_SetParentWindowId(uint32_t controllerId, uint32_t wi
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t controllerId | 画中画控制器ID，为非负整数。 |
@@ -1244,6 +1359,43 @@ int32_t OH_PictureInPicture_SetParentWindowId(uint32_t controllerId, uint32_t wi
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回结果代码。 返回OK，表示函数调用成功。 返回WINDOW_MANAGER_ERRORCODE_INCORRECT_PARAM，表示参数错误。 返回WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED，表示设备不支持画中画。 返回WINDOW_MANAGER_ERRORCODE_PIP_INTERNAL_ERROR，表示画中画内部错误。 |
+ 
+ 
+  
+
+### OH_PictureInPicture_SetAutoStartEnabled()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+```text
+int32_t OH_PictureInPicture_SetAutoStartEnabled(uint32_t controllerId, bool enabled)
+```
+ 
+**描述**
+ 
+设置在拉起画中画的应用主窗退后台时是否自动启动画中画，默认不自动拉起。
+ 
+在开启自动拉起的情况下，当应用主窗为[智慧多窗悬浮窗](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/multi-window-intro#悬浮窗)状态且被收入侧边栏时，应用主窗虽退后台，但不会自动拉起画中画。
+ 
+**起始版本：** 26.0.0
+ 
+**参数：**
+  
+
+| 参数项 | 描述 |
+| --- | --- |
+| uint32_t controllerId | 画中画控制器ID。取值为非负整数。 |
+| bool enabled | 如应用主窗退后台时需自动启动画中画，则该参数配置为true，否则为false。若设置-系统-智慧多窗-自动启动画中画开关为关闭状态，就算该参数配置为true，应用主窗退后台时也不会自动启动画中画窗口。 |
+ 
+ 
+**返回：**
+  
+
+| 类型 | 说明 |
+| --- | --- |
+| int32_t | 返回结果码。 返回OK，表示函数调用成功。 返回WINDOW_MANAGER_ERRORCODE_INCORRECT_PARAM，表示参数错误。可能原因：找不到controllerId对应的画中画控制器。 返回WINDOW_MANAGER_ERRORCODE_PIP_INTERNAL_ERROR，表示画中画内部错误。可能原因：画中画控制器已被销毁。 |

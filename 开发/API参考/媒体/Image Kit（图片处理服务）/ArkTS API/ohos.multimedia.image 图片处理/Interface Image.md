@@ -1,9 +1,9 @@
 # Interface (Image)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-image
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Image类，供ImageReceiver和ImageCreator使用，用于传输图片对象，其实际内容由生产者决定。如相机预览流提供的Image对象存储了YUV数据、相机拍照提供的Image对象存储了JPEG文件。
 
@@ -18,9 +18,10 @@ Image的属性仅支持在创建时初始化，后续无法再修改，且其属
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { image } from '@kit.ImageKit';
@@ -28,11 +29,13 @@ import { image } from '@kit.ImageKit';
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -45,9 +48,10 @@ import { image } from '@kit.ImageKit';
 
 
 
-#### getComponent9+
+## getComponent9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getComponent(componentType: ComponentType, callback: AsyncCallback&lt;Component&gt;): void
 
@@ -56,6 +60,7 @@ getComponent(componentType: ComponentType, callback: AsyncCallback&lt;Component&
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -81,9 +86,10 @@ async function GetComponent(img : image.Image) {
 
 
 
-#### getComponent9+
+## getComponent9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getComponent(componentType: ComponentType): Promise&lt;Component&gt;
 
@@ -93,12 +99,14 @@ getComponent(componentType: ComponentType): Promise&lt;Component&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | componentType | ComponentType | 是 | 图像的组件类型（目前仅支持ComponentType:JPEG，实际返回格式由生产者决定，如相机）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -121,9 +129,10 @@ async function GetComponent(img : image.Image) {
 
 
 
-#### release9+
+## release9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(callback: AsyncCallback&lt;void&gt;): void
 
@@ -138,6 +147,7 @@ release(callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -162,9 +172,10 @@ async function Release(img : image.Image) {
 
 
 
-#### release9+
+## release9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(): Promise&lt;void&gt;
 
@@ -179,6 +190,7 @@ release(): Promise&lt;void&gt;
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -201,16 +213,17 @@ async function Release(img : image.Image) {
 
 
 
-#### getBufferData23+
+## getBufferData23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBufferData(): ImageBufferData | null
 
 从图像中获取ImageBufferData。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/OnqI07VARNiimMqXGxlNkg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260624T020239Z&HW-CC-Expire=86400&HW-CC-Sign=F7BF780885381377C2B5289EC6AE3F0FD8432A021385487E76CC91479409D16B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/dvYf-k7RRjaFFpUuPNaMjQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072435Z&HW-CC-Expire=86400&HW-CC-Sign=809E22389633B4014647035FC38DD775BC4012D0398E6E752AA5825EE114B891)
 
 
 ImageBufferData中的byteBuffer是对内部缓存的浅拷贝，当Image的生命周期结束时，便不能对byteBuffer做任何操作，否则会导致未定义行为。
@@ -222,6 +235,7 @@ ImageBufferData中的byteBuffer是对内部缓存的浅拷贝，当Image的生�
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -243,9 +257,10 @@ function GetBufferData(img: image.Image) {
 
 
 
-#### getMetadata23+
+## getMetadata23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMetadata(key: HdrMetadataKey): HdrMetadataValue | null
 
@@ -257,12 +272,14 @@ getMetadata(key: HdrMetadataKey): HdrMetadataValue | null
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | HdrMetadataKey | 是 | HDR元数据的关键字，可用于查询对应值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -272,6 +289,7 @@ getMetadata(key: HdrMetadataKey): HdrMetadataValue | null
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

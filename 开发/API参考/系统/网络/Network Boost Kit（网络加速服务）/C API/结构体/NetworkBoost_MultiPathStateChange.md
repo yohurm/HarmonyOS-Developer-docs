@@ -1,11 +1,12 @@
 # NetworkBoost_MultiPathStateChange
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/network-boost-c-struct-multipath_statechange
 **支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -19,16 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | NetworkBoost_MultiPathState multiPathState | 多网状态。 |
@@ -40,13 +44,15 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### multiPathState
+## multiPathState
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -60,7 +66,8 @@ NetworkBoost_MultiPathState NetworkBoost_MultiPathStateChange::multiPathState
  
   
 
-#### changeCause
+## changeCause
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -74,7 +81,8 @@ NetworkBoost_MultiPathChangeCause NetworkBoost_MultiPathStateChange::changeCause
  
   
 
-#### netHandle
+## netHandle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -88,7 +96,8 @@ NetworkBoost_NetHandle NetworkBoost_MultiPathStateChange::netHandle
  
   
 
-#### pathState
+## pathState
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -102,7 +111,8 @@ NetworkBoost_PathState NetworkBoost_MultiPathStateChange::pathState
  
   
 
-#### pathType
+## pathType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 

@@ -1,6 +1,6 @@
 # 页面路由 (@ohos.router)(不推荐)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-routing
 
@@ -11,7 +11,7 @@
 
 
 
-#### 页面跳转
+## 页面跳转
 
 页面跳转是开发过程中的一个重要组成部分。在使用应用程序时，通常需要在不同的页面之间跳转，有时还需要将数据从一个页面传递到另一个页面。
 
@@ -229,7 +229,7 @@ private age: number = this.params.info.age; // 获取age属性的值
 
 
 
-#### 页面返回
+## 页面返回
 
 当用户在一个页面完成操作后，通常需要返回到上一个页面或者指定页面，这就需要用到页面返回功能。在返回的过程中，可能需要将数据传递给目标页面，这就需要用到数据传递功能。
 
@@ -329,7 +329,7 @@ struct Home {
 
 
 
-#### 生命周期
+## 生命周期
 
 [router](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-router)页面生命周期，即被[@Entry](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-custom-components#entry)装饰的组件生命周期，提供以下生命周期接口，其中onPageShow和onPageHide的生命周期时序图可参考Router切换Navigation中的[生命周期](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-router-to-navigation#生命周期)：
 
@@ -430,13 +430,13 @@ struct Page {
 
 
 
-#### 自定义转场
+## 自定义转场
 
 router自定义转场可以通过[pageTransition](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-custom-component-lifecycle#pagetransition9)实现，具体参考[页面间转场 (pageTransition)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-page-transition-animation)。
 
 
 
-#### 页面返回前增加一个询问框
+## 页面返回前增加一个询问框
 
 在开发应用时，为了避免用户误操作或者丢失数据，有时候需要在用户从一个页面返回到另一个页面之前，弹出一个询问框，让用户确认是否要执行这个操作。
 
@@ -445,12 +445,12 @@ router自定义转场可以通过[pageTransition](https://developer.huawei.com/c
 **图3** 页面返回前增加一个询问框
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/nO2cY9WzTMi3wP8WaQemng/zh-cn_image_0000002674632040.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095710Z&HW-CC-Expire=86400&HW-CC-Sign=889425DF170C129C721A2F165B55CD608D9BA3CC8F64A97FF97986FD187BA915)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/XUGxlDI4QceYEjvOWqPSRw/zh-cn_image_0000002717610256.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072511Z&HW-CC-Expire=86400&HW-CC-Sign=1C90D063EC7609FB5FDF116E20427B672F009A63932E4866D2A4261D57EB09DE)
 
 
 
 
-#### 系统默认询问框
+### 系统默认询问框
 
 为了实现这个功能，可以使用页面路由Router模块提供的两个方法：[showAlertBeforeBackPage](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-router#showalertbeforebackpage)和[back](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-router#back)来实现这个功能。
 
@@ -495,7 +495,7 @@ message：string类型，表示询问框的内容。
 
 
 
-#### 自定义询问框
+### 自定义询问框
 
 自定义询问框的方式，可以使用弹窗[showDialog](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-promptaction#showdialog-1)或者自定义弹窗实现。这样可以让应用界面与系统默认询问框有所区别，提高应用的用户体验度。本文以弹窗为例，介绍如何实现自定义询问框。
 
@@ -552,14 +552,14 @@ onBackClick() {
 
 
 
-#### 命名路由
+## 命名路由
 
 在开发中为了跳转到共享包[HAR](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/har-package)或者[HSP](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/in-app-hsp)中的页面（即共享包中路由跳转），可以使用[pushNamedRoute](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-router#pushnamedroute)来实现。
 
 **图4** 命名路由跳转
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/VWmTsC_5TWSFw-QFb1qO1Q/zh-cn_image_0000002704271993.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095710Z&HW-CC-Expire=86400&HW-CC-Sign=2CCAE94968540E45FCCF5479653254151B0C1132E781078F23E77CFA202C3E9C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/LOrXuhmRSiey8TqMY6Lb9Q/zh-cn_image_0000002747290207.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072511Z&HW-CC-Expire=86400&HW-CC-Sign=2DEFF29629781B21919892B613BE5611A7E1BFD684FE4A3EA9CC0914F2772921)
 
 
 在想要跳转到的共享包[HAR](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/har-package)或者[HSP](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/in-app-hsp)页面里，给[@Entry](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-custom-components#entry)装饰的自定义组件EntryOptions命名：

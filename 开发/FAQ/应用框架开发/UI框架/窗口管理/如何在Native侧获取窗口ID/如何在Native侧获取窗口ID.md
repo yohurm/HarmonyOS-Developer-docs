@@ -31,9 +31,9 @@ ArkTS与Native跨语言交互开发详见[使用Node-API实现跨语言交互开
  1. 由于在Native侧无法直接获取window实例，需要在ArkTS侧EntryAbility的onWindowStageCreate生命周期中获取。
 ```json
 onWindowStageCreate(windowStage: window.WindowStage): void {
-  // Main window is created,set main page for this ability
+ <em> // Main window is created,set main page for this ability</em>
   hilog.info(0x0000, 'testTag', '%{public}s','Ability onWindowStageCreate');
-  // 1.获取应用主窗口。
+<em>  // 1.获取应用主窗口。</em>
   let windowClass: window.Window | null = null;
   windowStage.getMainWindow((err: BusinessError, data) => {
     let errCode: number = err.code;
@@ -42,7 +42,7 @@ onWindowStageCreate(windowStage: window.WindowStage): void {
       return;
     }
     windowClass = data;
-    // 通过windowClass的getWindowProperties方法获取id信息
+  <em>  // 通过windowClass的getWindowProperties方法获取id信息</em>
     this.windowID = windowClass.getWindowProperties().id;
     AppStorage.setOrCreate<number>('windowID', this.windowID);
     console.info(`Succeeded in obtaining the main window. Result:${data}`);
@@ -124,9 +124,9 @@ export default class EntryAbility extends UIAbility {
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onDestroy');
   }
   onWindowStageCreate(windowStage: window.WindowStage): void {
-    // Main window is created,set main page for this ability
+ <em>   // Main window is created,set main page for this ability</em>
     hilog.info(0x0000, 'testTag', '%{public}s','Ability onWindowStageCreate');
-    // 1.获取应用主窗口。
+  <em>  // 1.获取应用主窗口。</em>
     let windowClass: window.Window | null = null;
     windowStage.getMainWindow((err: BusinessError, data) => {
       let errCode: number = err.code;
@@ -135,7 +135,7 @@ export default class EntryAbility extends UIAbility {
         return;
       }
       windowClass = data;
-      // 通过windowClass的getWindowProperties方法获取id信息
+   <em>   // 通过windowClass的getWindowProperties方法获取id信息</em>
       this.windowID = windowClass.getWindowProperties().id;
       AppStorage.setOrCreate<number>('windowID', this.windowID);
       console.info(`Succeeded in obtaining the main window. Result:${data}`);
@@ -150,17 +150,17 @@ export default class EntryAbility extends UIAbility {
   }
 
   onWindowStageDestroy(): void {
-    // Main window is destroyed, release UI related resources
+   <em> // Main window is destroyed, release UI related resources</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
   }
 
   onForeground(): void {
-    // Ability has brought to foreground
+ <em>   // Ability has brought to foreground</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onForeground');
   }
 
   onBackground(): void {
-    // Ability has back to background
+  <em>  // Ability has back to background</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onBackground');
   }
 };

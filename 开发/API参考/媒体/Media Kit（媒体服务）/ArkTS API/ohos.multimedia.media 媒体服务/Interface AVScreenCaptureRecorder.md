@@ -1,6 +1,6 @@
 # Interface (AVScreenCaptureRecorder)
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avscreencapturerecorder
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -14,7 +14,8 @@
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -24,7 +25,8 @@ import { media } from '@kit.MediaKit';
 
 
 
-#### init12+
+## init12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -36,12 +38,14 @@ init(config: AVScreenCaptureRecordConfig): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | config | AVScreenCaptureRecordConfig | 是 | 配置录屏的相关参数。关键配置项包括：fd（文件描述符）、frameWidth（视频宽度）、frameHeight（视频高度）等。详细配置说明请参考AVScreenCaptureRecordConfig。文件（通常是MP4）需要先由开发者创建，并赋予写权限，再将文件fd传给此参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -52,9 +56,10 @@ init(config: AVScreenCaptureRecordConfig): Promise&lt;void&gt;
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. Return by promise. |
 | 5400103 | IO error. Return by promise. |
 | 5400105 | Service died. Return by promise. |
 
@@ -94,7 +99,8 @@ async function testInit() {
 
 
 
-#### startRecording12+
+## startRecording12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -106,6 +112,7 @@ startRecording(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -114,6 +121,7 @@ startRecording(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -146,7 +154,8 @@ async function testStartRecording() {
 
 
 
-#### stopRecording12+
+## stopRecording12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -158,6 +167,7 @@ stopRecording(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -166,6 +176,7 @@ stopRecording(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -198,9 +209,10 @@ async function testStopRecording() {
 
 
 
-#### pauseRecording
+## pauseRecording
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pauseRecording(): Promise&lt;void&gt;
 
@@ -216,6 +228,7 @@ pauseRecording(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -225,9 +238,10 @@ pauseRecording(): Promise&lt;void&gt;
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 5400102 | Operation not allowed. Return by promise. |
+| 5400102 | Operation not be permitted. Return by promise. |
 | 5400103 | IO error. Return by promise. |
 | 5400105 | Service died. Return by promise. |
 
@@ -257,9 +271,10 @@ async function testPauseRecording() {
 
 
 
-#### resumeRecording
+## resumeRecording
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 resumeRecording(): Promise&lt;void&gt;
 
@@ -275,6 +290,7 @@ resumeRecording(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -284,9 +300,10 @@ resumeRecording(): Promise&lt;void&gt;
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 5400102 | Operation not allowed. Return by promise. |
+| 5400102 | Operation not be permitted. Return by promise. |
 | 5400103 | IO error. Return by promise. |
 | 5400105 | Service died. Return by promise. |
 
@@ -316,7 +333,8 @@ async function testResumeRecording() {
 
 
 
-#### addWatermark
+## addWatermark
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -336,6 +354,7 @@ addWatermark(watermark: image.PixelMap, config: WatermarkConfiguration): Promise
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | watermark | image.PixelMap | 是 | 水印图像，取值原则：PixelMap对象不能为空。支持透明度设置。图像格式和尺寸要求请参考image.PixelMap。 |
@@ -343,6 +362,7 @@ addWatermark(watermark: image.PixelMap, config: WatermarkConfiguration): Promise
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -352,6 +372,7 @@ addWatermark(watermark: image.PixelMap, config: WatermarkConfiguration): Promise
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -390,7 +411,8 @@ async function testAddWaterMark() {
 
 
 
-#### skipPrivacyMode12+
+## skipPrivacyMode12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -404,12 +426,14 @@ skipPrivacyMode(windowIDs: Array&lt;number&gt;): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | windowIDs | Array&lt;number&gt; | 是 | 需要豁免隐私的窗口列表，包括主窗口id和子窗口id，窗口属性获取方法可以参考getWindowProperties。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -419,6 +443,7 @@ skipPrivacyMode(windowIDs: Array&lt;number&gt;): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -452,7 +477,8 @@ async function testSkipPrivacyMode() {
 
 
 
-#### setMicEnabled12+
+## setMicEnabled12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -468,12 +494,14 @@ setMicEnabled(enable: boolean): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | boolean | 是 | 麦克风开关控制，true代表麦克风打开，false代表麦克风关闭。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -483,6 +511,7 @@ setMicEnabled(enable: boolean): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -515,7 +544,8 @@ async function testSetMicEnable() {
 
 
 
-#### setPickerMode22+
+## setPickerMode22+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -529,12 +559,14 @@ setPickerMode(pickerMode: PickerMode): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pickerMode | PickerMode | 是 | 选择Picker模式。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -544,6 +576,7 @@ setPickerMode(pickerMode: PickerMode): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -577,7 +610,8 @@ async function testSetPickerMode() {
 
 
 
-#### excludePickerWindows22+
+## excludePickerWindows22+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -591,12 +625,14 @@ excludePickerWindows(excludedWindows: Array&lt;number&gt;): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | excludedWindows | Array&lt;number&gt; | 是 | 需要在Picker中隐藏的窗口列表，窗口属性获取方法可以参考getWindowProperties。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -606,6 +642,7 @@ excludePickerWindows(excludedWindows: Array&lt;number&gt;): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -641,7 +678,8 @@ async function testExcludePickerWindows() {
 
 
 
-#### presentPicker22+
+## presentPicker22+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -659,6 +697,7 @@ presentPicker(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -667,6 +706,7 @@ presentPicker(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -700,7 +740,8 @@ async function testPresentPicker() {
 
 
 
-#### setContentAutoRotation
+## setContentAutoRotation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -720,12 +761,14 @@ setContentAutoRotation(enable: boolean): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | boolean | 是 | 表示是否启用自动旋转，默认值为false。true表示启用自动旋转，输出帧中的图像内容将自动保持直立。false表示不启用自动旋转，输出帧中的图像内容将不自动保持直立。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -735,6 +778,7 @@ setContentAutoRotation(enable: boolean): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -767,7 +811,8 @@ async function testSetContentAutoRotation() {
 
 
 
-#### release12+
+## release12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -781,6 +826,7 @@ release(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -789,6 +835,7 @@ release(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -821,7 +868,8 @@ async function testRelease() {
 
 
 
-#### on('stateChange')12+
+## on('stateChange')12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -832,6 +880,7 @@ on(type: 'stateChange', callback: Callback&lt;AVScreenCaptureStateCode&gt;): voi
 **系统能力：** SystemCapability.Multimedia.Media.AVScreenCapture
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -861,7 +910,8 @@ async function testOnStateChange() {
 
 
 
-#### on('error')12+
+## on('error')12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -873,6 +923,7 @@ on(type: 'error', callback: ErrorCallback): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 错误事件回调类型，支持的事件：'error'。 |
@@ -882,6 +933,7 @@ on(type: 'error', callback: ErrorCallback): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -913,7 +965,8 @@ async function testOnError() {
 
 
 
-#### off('stateChange')12+
+## off('stateChange')12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -924,6 +977,7 @@ off(type: 'stateChange', callback?: Callback&lt;AVScreenCaptureStateCode&gt;): v
 **系统能力：** SystemCapability.Multimedia.Media.AVScreenCapture
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -951,7 +1005,8 @@ async function testOffStateChange() {
 
 
 
-#### off('error')12+
+## off('error')12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -962,6 +1017,7 @@ off(type: 'error', callback?: ErrorCallback): void
 **系统能力：** SystemCapability.Multimedia.Media.AVScreenCapture
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |

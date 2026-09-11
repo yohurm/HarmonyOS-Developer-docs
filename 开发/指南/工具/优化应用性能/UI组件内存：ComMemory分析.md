@@ -1,10 +1,10 @@
 # UI组件内存：ComMemory分析
 
-更新时间：2026-06-12 06:54:33
+更新时间：2026-08-29 09:41:34
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-commemory
 
-#### 功能介绍
+## 功能介绍
 
 
 从DevEco Studio 6.1.1 Beta1版本开始，DevEco Profiler新增ComMemory模板，可以分析UI界面各组件内存的分配情况，帮助定位UI组件内存泄漏问题。
@@ -20,21 +20,17 @@ ComMemory模板支持的泳道包括：Memory、ArkUI Snapshot、ArkTS Snapshot�
 
 
 
-#### 查看组件树和组件信息
-1. 开始录制后观察**Memory**泳道的内存使用情况，在需要定位的时刻单击任务左上角的
-![](assets/UI组件内存：ComMemory分析/file-20260514133151487-1.png)
-启动一次快照，一次快照完成后会在**ArkUI Snapshot**泳道出现紫色区块。
+## 查看组件树和组件信息
+1. 开始录制后观察**Memory**泳道的内存使用情况，在需要定位的时刻单击任务左上角的![icon](assets/UI组件内存：ComMemory分析/file-20260514133151487-1.png)启动一次快照，一次快照完成后会在**ArkUI Snapshot**泳道出现紫色区块。
 
   **Details**区域显示当前快照的详细信息，点击**Open**，将在[ArkUI Inspector](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-arkui-inspector)中打开相应的.arkli文件。
 
   
 ![](assets/UI组件内存：ComMemory分析/file-20260514133151487-2.png)
 
-2. 在ArkUI Inspector中查看组件树。26.0.0 Beta1版本新增Show Free-Node Components。
+2. 在ArkUI Inspector中查看组件树。26.0.0版本新增Show Free-Node Components。
 
-  默认勾选**Show Component Size**和**Show Free-Node Components**，Show Component Size显示各组件的内存占用情况，Show Free-Node Components显示游离组件（未在组件树上的组件）。点击
-![](assets/UI组件内存：ComMemory分析/file-20260514133151487-3.png)
-，勾选**Show Recursive Size**，显示各组件为根的子树的内存占用情况。
+  默认勾选**Show Component Size**和**Show Free-Node Components**，Show Component Size显示各组件的内存占用情况，Show Free-Node Components显示游离组件（未在组件树上的组件）。点击![icon](assets/UI组件内存：ComMemory分析/file-20260514133151487-3.png)，勾选**Show Recursive Size**，显示各组件为根的子树的内存占用情况。
 
   
 ![](assets/UI组件内存：ComMemory分析/file-20260514133151487-4.png)
@@ -55,24 +51,20 @@ ShowAllocationDetail：显示当前组件的Allocation详情。
 11. ShowSnapshotDetail：显示当前组件的Snapshot详情，系统组件不显示该项。
 12. ShowRecursiveAllocationDetail：显示当前组件及其子组件的Allocation详情。
 13. ShowRecursiveSnapshotDetail：显示当前组件及其子组件的Snapshot详情。
-14. 在ArkUI Inspector的**Memory** >** State****s**中，查看UI组件的状态变量内存。         memory字段表示该状态变量在对应组件的ArkTS堆快照中的Retained Size，更多请参考[查看UI组件的状态变量](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-arkui-inspector#section19923158103412)。
+14. 在ArkUI Inspector的**Memory** >** States**中，查看UI组件的状态变量内存。         memory字段表示该状态变量在对应组件的ArkTS堆快照中的Retained Size，更多请参考[查看UI组件的状态变量](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-arkui-inspector#section19923158103412)。
 
   
 ![](assets/UI组件内存：ComMemory分析/file-20260514133151487-7.png)
 
-15. 在中间栏点击
-![](assets/UI组件内存：ComMemory分析/file-20260514133151487-8.png)
-可以将包含内存信息的组件树快照导出到本地。
+15. 在中间栏点击![icon](assets/UI组件内存：ComMemory分析/file-20260514133151487-8.png)可以将包含内存信息的组件树快照导出到本地。
 
 
 
-#### .arkli文件对比
+## .arkli文件对比
 
-从26.0.0 Beta1版本开始，支持对比.arkli文件，通过对比快速定位异常增多的组件。
+从26.0.0版本开始，支持对比.arkli文件，通过对比快速定位异常增多的组件。
 
-1. 开始录制后观察**Memory**泳道的内存使用情况，在需要定位的时刻单击任务左上角的
-![](assets/UI组件内存：ComMemory分析/file-20260514133151487-9.png)
-启动一次快照，一次快照完成后会在**ArkUI Snapshot**泳道出现紫色区块。
+1. 开始录制后观察**Memory**泳道的内存使用情况，在需要定位的时刻单击任务左上角的![icon](assets/UI组件内存：ComMemory分析/file-20260514133151487-9.png)启动一次快照，一次快照完成后会在**ArkUI Snapshot**泳道出现紫色区块。
 
   **Details**区域显示当前快照的详细信息，点击**Open**，将在[ArkUI Inspector](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-arkui-inspector)中打开相应的.arkli文件。
 

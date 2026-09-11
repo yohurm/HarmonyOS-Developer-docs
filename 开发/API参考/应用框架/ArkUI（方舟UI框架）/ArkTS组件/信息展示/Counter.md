@@ -1,9 +1,9 @@
 # Counter
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-counter
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 计数器组件，提供增加或减少的计数操作。适用于商品数量选择、参数调整等需要频繁修改数值的场景，帮助用户快速直观地调整数值。
  
@@ -12,17 +12,19 @@
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 可以包含子组件。
  
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Counter()
  
@@ -34,17 +36,19 @@ Counter()
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性。
  
   
 
-#### enableInc10+
+### enableInc10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableInc(value: boolean)
  
@@ -58,6 +62,7 @@ enableInc(value: boolean)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | “增加”按钮禁用或使能。 默认值：true，true表示使能“增加”按钮，false表示禁用“增加”按钮。 |
@@ -65,9 +70,10 @@ enableInc(value: boolean)
  
   
 
-#### enableDec10+
+### enableDec10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableDec(value: boolean)
  
@@ -81,6 +87,7 @@ enableDec(value: boolean)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | “减少”按钮禁用或使能。 默认值：true，true表示使能“减少”按钮，false表示禁用“减少”按钮。 |
@@ -88,17 +95,19 @@ enableDec(value: boolean)
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)外，还支持以下事件：
  
   
 
-#### onInc
+### onInc
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onInc(event: VoidCallback)
  
@@ -112,6 +121,7 @@ onInc(event: VoidCallback)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | VoidCallback | 是 | Counter 数值增加的回调函数。 |
@@ -119,9 +129,10 @@ onInc(event: VoidCallback)
  
   
 
-#### onDec
+### onDec
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDec(event: VoidCallback)
  
@@ -135,6 +146,7 @@ onDec(event: VoidCallback)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | VoidCallback | 是 | Counter 数值减少的回调函数。 |
@@ -142,9 +154,10 @@ onDec(event: VoidCallback)
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示了Counter组件的基本使用方法。点击+、-按钮可以修改计数器的数值。
  
@@ -188,4 +201,4 @@ struct CounterExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/xs2eeuRaRCeLKUdHFyyrfA/zh-cn_image_0000002685928403.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071508Z&HW-CC-Expire=86400&HW-CC-Sign=5213341441105E730576E70D6CC97B987F090A21AC3AED6108EF1644E3E602A5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/I9oCaum2RY2u42P8ESaGwg/zh-cn_image_0000002717772874.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073112Z&HW-CC-Expire=86400&HW-CC-Sign=5F52024CD21E3464210EA9DFA066D3B329DCF7C45A83932416346824E12FAF95)

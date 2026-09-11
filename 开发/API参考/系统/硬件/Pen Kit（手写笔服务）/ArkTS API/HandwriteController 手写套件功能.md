@@ -1,6 +1,6 @@
 # HandwriteController (手写套件功能)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/pen-handwritecontroller
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -10,7 +10,8 @@
 **起始版本：** 5.0.0(12)
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -18,22 +19,25 @@
 import { HandwriteController } from '@kit.Penkit';
 ```
 
-本模块提供以下方法，完成手写内容的加载和保存等功能。
-
-| 方法名称 | 说明 |
-| --- | --- |
-| load | 从指定路径加载笔记文件。 |
-| save | 保存手写内容。 |
-| onLoad | 加载完成时的回调接口。 |
-| getContentRange | 获取笔迹范围。 |
-| getThumbnail | 获取缩略图数据。 |
-| Rect | Rect信息参数，表示矩形区域。 |
-| scrollTo | 设置长画布的滚动位置。 |
 
 
+## HandwriteController
 
 
-#### load
+**支持设备：** Phone | PC/2in1 | Tablet
+
+手写套件的主要功能入口类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Stylus.Handwrite
+
+**起始版本：** 5.0.0(12)
+
+
+
+### load
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -49,6 +53,7 @@ load(path: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 加载文件的路径。 path应为实际存在的文件路径，若路径不存在，则会创建一份新的笔记文件。 |
@@ -57,6 +62,7 @@ load(path: string): void
 **错误码**：
 
 以下错误码的详细介绍请参见[ArkTS API 错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pen)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -69,7 +75,8 @@ load(path: string): void
 
 
 
-#### save
+### save
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -85,12 +92,14 @@ save(path: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 保存文件的路径。 |
 
 
 **返回值**:
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -100,6 +109,7 @@ save(path: string): Promise&lt;void&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[ArkTS API 错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pen)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -112,7 +122,8 @@ save(path: string): Promise&lt;void&gt;
 
 
 
-#### onLoad
+### onLoad
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -128,6 +139,7 @@ onLoad(callback: AsyncCallback&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;string&gt; | 是 | 回调函数。当加载成功时，err的message为load success；加载失败时，err的message为load failed；string为加载的路径。 |
@@ -137,6 +149,7 @@ onLoad(callback: AsyncCallback&lt;string&gt;): void
 
 以下错误码的详细介绍请参见[ArkTS API 错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pen)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1010400001 | load failed. |
@@ -144,7 +157,8 @@ onLoad(callback: AsyncCallback&lt;string&gt;): void
 
 
 
-#### getContentRange
+### getContentRange
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -160,6 +174,7 @@ getContentRange(): Rect
 
 **返回值**:
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Rect | Rect信息参数，表示内容涵盖的矩形区域。 |
@@ -167,7 +182,8 @@ getContentRange(): Rect
 
 
 
-#### getThumbnail
+### getThumbnail
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -183,12 +199,14 @@ getThumbnail(rect: Rect): Promise&lt;PixelMap&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rect | Rect | 是 | Rect信息参数，表示缩略图包含的矩形区域。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -197,29 +215,8 @@ getThumbnail(rect: Rect): Promise&lt;PixelMap&gt;
 
 
 
-#### Rect
+### scrollTo
 
-**支持设备：** Phone | PC/2in1 | Tablet
-
-Rect信息参数，表示矩形区域。
-
-**模型约束：** 此接口仅可在Stage模型下使用。
-
-**系统能力：** SystemCapability.Stylus.Handwrite
-
-**起始版本：** 6.0.0(20)
-
-| 名称 | 类型 | 说明 |
-| --- | --- | --- |
-| left | number | 矩形左侧的位置。单位：手写套件组件HandwriteComponent宽度的1/1000。 |
-| top | number | 矩形顶部的位置。单位：手写套件组件HandwriteComponent宽度的1/1000。 |
-| right | number | 矩形右侧的位置。单位：手写套件组件HandwriteComponent宽度的1/1000。 |
-| bottom | number | 矩形底部的位置。单位：手写套件组件HandwriteComponent宽度的1/1000。 |
-
-
-
-
-#### scrollTo
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -235,6 +232,7 @@ scrollTo(yOffset: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | yOffset | number | 是 | 滚动位置的纵坐标绝对值。单位vp。当前可滚动最大距离为px2vp(1000000)减去list组件高度。超出范围取边界值。 |
@@ -246,7 +244,32 @@ scrollTo(yOffset: number): void
 
 
 
-#### **示例**
+## Rect
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
+
+Rect信息参数，表示矩形区域。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Stylus.Handwrite
+
+**起始版本：** 6.0.0(20)
+
+
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| left | number | 矩形左侧的位置。单位：手写套件组件HandwriteComponent宽度的1/1000。 |
+| top | number | 矩形顶部的位置。单位：手写套件组件HandwriteComponent宽度的1/1000。 |
+| right | number | 矩形右侧的位置。单位：手写套件组件HandwriteComponent宽度的1/1000。 |
+| bottom | number | 矩形底部的位置。单位：手写套件组件HandwriteComponent宽度的1/1000。 |
+
+
+
+
+## **示例**
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 

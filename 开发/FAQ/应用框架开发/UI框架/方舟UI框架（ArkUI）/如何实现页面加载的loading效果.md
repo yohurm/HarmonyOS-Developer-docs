@@ -13,7 +13,7 @@ struct PageLoading {
   @State isLoading: boolean = true;
 
   aboutToAppear(): void {
-    // Simulate network request operation, request data from the network 3 seconds later, notify the component, and change the list data
+   <em> // Simulate network request operation, request data from the network 3 seconds later, notify the component, and change the list data</em>
     setTimeout(() => {
       this.isLoading = false;
     }, 3000);

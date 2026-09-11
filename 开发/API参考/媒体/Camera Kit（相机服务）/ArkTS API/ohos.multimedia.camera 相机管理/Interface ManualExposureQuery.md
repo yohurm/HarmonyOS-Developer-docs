@@ -1,9 +1,9 @@
 # Interface (ManualExposureQuery)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-manualexposurequery
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 手动曝光查询对象。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { camera } from '@kit.CameraKit';
@@ -22,9 +23,10 @@ import { camera } from '@kit.CameraKit';
  
   
 
-#### getSupportedExposureDurationRange24+
+## getSupportedExposureDurationRange24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSupportedExposureDurationRange(): Array&lt;number&gt;
  
@@ -36,6 +38,7 @@ getSupportedExposureDurationRange(): Array&lt;number&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;number&gt; | 支持的手动曝光时长范围。 |
@@ -45,6 +48,7 @@ getSupportedExposureDurationRange(): Array&lt;number&gt;
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400102 | Operation not allowed, session or inputdevice maybe abnormal. |
@@ -70,9 +74,10 @@ function getSupportedExposureDurationRange(photoSession: camera.PhotoSession): A
  
   
 
-#### getExposureBiasStep24+
+## getExposureBiasStep24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getExposureBiasStep(): number
  
@@ -86,6 +91,7 @@ getExposureBiasStep(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 曝光偏置步长。 |
@@ -95,6 +101,7 @@ getExposureBiasStep(): number
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400102 | Operation not allowed, session or inputdevice maybe abnormal. |

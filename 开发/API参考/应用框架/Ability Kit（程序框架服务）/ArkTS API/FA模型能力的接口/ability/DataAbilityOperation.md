@@ -1,9 +1,9 @@
 # DataAbilityOperation
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-ability-dataabilityoperation
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义DataAbility数据操作方式，可以作为[executeBatch](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-ability-dataabilityhelper#dataabilityhelperexecutebatch)的入参，操作数据库的信息。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import ability from '@ohos.ability.ability';
@@ -22,18 +23,20 @@ import ability from '@ohos.ability.ability';
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.FAModel
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | uri | string | 否 | 否 | 指示待处理的DataAbility。例：'dataability:///com.example.xxx.xxxx'。 |
 | type | featureAbility.DataAbilityOperationType | 否 | 否 | 指示数据操作类型。 |
 | valuesBucket | rdb.ValuesBucket | 否 | 是 | 指示要操作的数据值。 |
-| valueBackReferences | rdb.ValuesBucket | 否 | 是 | 指示包含一组键值对的valuesBucket对象。 |
+| valueBackReferences | rdb.ValuesBucket | 否 | 是 | 指示数据值的反向引用，用于应用批处理中前一步操作生成的键值。 |
 | predicates | dataAbility.DataAbilityPredicates | 否 | 是 | 指示要设置的筛选条件。如果此参数为空，则操作所有数据记录。 |
 | predicatesBackReferences | Map<number, number> | 否 | 是 | 指示用作谓词中筛选条件的反向引用。 |
 | interrupted | boolean | 否 | 是 | 指示是否可以中断批处理操作。true表示可以中断批处理操作，false表示不可中断批处理操作。 |

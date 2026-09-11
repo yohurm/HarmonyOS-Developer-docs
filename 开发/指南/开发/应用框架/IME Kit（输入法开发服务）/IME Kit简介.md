@@ -1,19 +1,19 @@
 # IME Kit简介
 
-更新时间：2026-04-24 08:10:21
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ime-kit-intro
 
 IME Kit 负责建立编辑框所在应用与输入法应用之间的通信通道，确保两者可以共同协作提供文本输入功能，也为系统应用提供管理输入法应用的能力。
 
 
-#### Kit使用场景
+## 使用场景
 
 IME Kit提供输入法框架和输入法服务两类API。用于实现输入法应用，也可以用于实现自绘编辑框以及实现对输入法应用的控制。
 
 
 
-#### 框架原理
+## 框架原理
 
 
 ![](assets/IME%20Kit简介/file-20260514130954819-0.png)
@@ -21,7 +21,7 @@ IME Kit提供输入法框架和输入法服务两类API。用于实现输入法�
 
 
 
-#### 功能特点
+## 功能特点
 
  - 输入法应用：
 
@@ -33,7 +33,7 @@ IME Kit提供输入法框架和输入法服务两类API。用于实现输入法�
 
 
 
-#### 能力范围
+## 能力范围
 
  - 提供输入法服务相关API，用于输入法应用，包括：创建软键盘窗口、插入/删除字符、选中文本、监听物理键盘按键事件等。
  - 提供输入法框架相关API，可用于自绘编辑框，包括绑定输入法，实现输入、删除、选中、光标移动等。
@@ -42,19 +42,19 @@ IME Kit提供输入法框架和输入法服务两类API。用于实现输入法�
 
 
 
-#### 与相关Kit的关系
+## 与相关Kit的关系
 
 ArkUI: IME Kit在输入法软键盘和自绘编辑框时使用ArkUI提供的部分组件、事件、动效、状态管理等能力，例如Text、Button组件，onClick点击事件。
 
 
 
-#### 约束限制
+## 约束限制
 
 针对切换输入法应用的系统API，需要申请系统权限，部分API仅支持当前输入法应用调用。
 
 
 
-#### 模拟器支持情况
+## 模拟器支持情况
 
 本Kit支持模拟器。
 
@@ -62,7 +62,7 @@ ArkUI: IME Kit在输入法软键盘和自绘编辑框时使用ArkUI提供的部�
 
 
 
-#### IME Kit API参考
+## IME Kit API参考
 
  - [inputMethodEngine](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inputmethodengine)
  - [inputMethod](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inputmethod)

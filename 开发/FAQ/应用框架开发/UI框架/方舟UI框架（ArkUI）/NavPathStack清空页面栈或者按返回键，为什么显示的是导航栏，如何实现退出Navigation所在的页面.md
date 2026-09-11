@@ -60,7 +60,7 @@ struct NavPathStackExitsTheNavigationPage {
     .titleMode(NavigationTitleMode.Mini)
     .navDestination(this.myRouter)
     .hideBackButton(true)
-    .hideNavBar(true) // Set the Navigation property's hideNavBar to true.
+    .hideNavBar(true) <em>// Set the Navigation property's hideNavBar to true.</em>
   }
 }
 
@@ -83,7 +83,7 @@ export struct PageOne {
     }
     .title('PageOne')
     .onBackPressed(() => {
-      this.getUIContext().getRouter().back(); // Override the return button logic to exit the navigation page.
+      this.getUIContext().getRouter().back(); <em>// Override the return button logic to exit the navigation page.</em>
       return true;
     })
   }

@@ -1,6 +1,6 @@
 # ImageEffect_FilterDelegate
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imageeffect-imageeffect-filterdelegate
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -10,7 +10,8 @@ typedef struct ImageEffect_FilterDelegate {...} ImageEffect_FilterDelegate
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -24,16 +25,19 @@ typedef struct ImageEffect_FilterDelegate {...} ImageEffect_FilterDelegate
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_EffectFilterDelegate_SetValue setValue | 参数设置函数指针。 |

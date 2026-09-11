@@ -1,9 +1,9 @@
 # Blank
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-blank
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 空白填充组件，在容器主轴方向上，空白填充组件具有自动填充容器空余部分的能力。仅当父组件为[Row](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-row)/[Column](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-column)/[Flex](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-flex)时生效。
  
@@ -12,17 +12,19 @@
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 不支持设置子组件。
  
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Blank(min?: number | string)
  
@@ -43,6 +45,7 @@ Blank(min?: number | string)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | min | number \| string | 否 | 空白填充组件在容器主轴上的最小大小。 默认值：0，number类型单位为vp，string类型可以显式指定像素单位，如'10px'。不指定像素单位时，默认单位vp，如'10'，等同于10vp。 非法值：按默认值处理。 说明： 不支持设置百分比。负值使用默认值。当最小值大于容器可用空间时，使用最小值作为自身大小并超出容器。 |
@@ -50,17 +53,19 @@ Blank(min?: number | string)
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
  
   
 
-#### color
+### color
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 color(value: ResourceColor)
  
@@ -74,6 +79,7 @@ color(value: ResourceColor)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 空白填充的填充颜色。 默认值：Color.Transparent 非法值：按默认值处理。 |
@@ -81,21 +87,26 @@ color(value: ResourceColor)
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)。
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 示例1（占满空余空间）
+### 示例1（占满空余空间）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Blank组件在横竖屏占满空余空间效果。
  
@@ -130,7 +141,10 @@ struct BlankExample {
  
   
 
-#### 示例2（填充固定宽度）
+### 示例2（填充固定宽度）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Blank组件的父组件未设置宽度时，min参数的使用效果。
  
@@ -163,4 +177,4 @@ struct BlankExample {
 Blank父组件未设置宽度时，子组件间无空白填充，使用min参数设置填充尺寸
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/mXjniuW7SXuXRxhJPyuUyQ/zh-cn_image_0000002659102021.png?HW-CC-KV=V1&HW-CC-Date=20260701T014344Z&HW-CC-Expire=86400&HW-CC-Sign=FEA79A5B2B7351AAC9E3DF350C353A33084494599B6F351E775A52565106F6E1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/utvHo4tDT2WQJt77NwVgJA/zh-cn_image_0000002717612964.png?HW-CC-KV=V1&HW-CC-Date=20260911T073103Z&HW-CC-Expire=86400&HW-CC-Sign=50E43F76F51C4BC6FDA979A0F3FFDCDF99D1E720F48CB0FA5E4C6F7FF836387E)

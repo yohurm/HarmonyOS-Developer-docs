@@ -1,13 +1,13 @@
 # 消息认证码计算CMAC(ArkTS)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-compute-cmac
 
 CMAC通过使用分组密码（如AES）和一个密钥生成认证码，确保消息在传输过程中未被篡改。
 
 
-#### 开发步骤
+## 开发步骤
 
 在调用update接口传入数据时，可以[一次性传入所有数据](#cmac一次性传入数据)，也可以把数据人工分段，然后[分段update](#分段cmac)。对于同一段数据而言，是否分段，计算结果没有差异。对于数据量较大的数据，开发者可以根据实际需求选择是否分段传入。
 
@@ -15,7 +15,7 @@ CMAC通过使用分组密码（如AES）和一个密钥生成认证码，确保�
 
 
 
-#### CMAC（一次性传入数据）
+### CMAC（一次性传入数据）
 1. 调用[cryptoFramework.createMac](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#cryptoframeworkcreatemac18)，指定消息认证码算法为CMAC，指定对称算法为AES128，生成消息认证码实例（Mac）。
 2. 调用[cryptoFramework.createSymKeyGenerator](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#cryptoframeworkcreatesymkeygenerator)和[SymKeyGenerator.convertKey](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#convertkey-1)，生成密钥算法为AES128的对称密钥（SymKey）。
 
@@ -97,7 +97,7 @@ function doCmacBySync() {
 
 
 
-#### 分段CMAC
+### 分段CMAC
 1. 调用[cryptoFramework.createMac](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#cryptoframeworkcreatemac18)，指定消息认证码算法CMAC，对称算法AES128，生成消息认证码实例（Mac）。
 2. 调用[cryptoFramework.createSymKeyGenerator](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#cryptoframeworkcreatesymkeygenerator)、[SymKeyGenerator.convertKey](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#convertkey-1)，生成密钥算法为AES128的对称密钥（SymKey）。
 

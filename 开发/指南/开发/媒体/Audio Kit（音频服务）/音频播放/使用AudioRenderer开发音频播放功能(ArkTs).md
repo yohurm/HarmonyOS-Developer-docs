@@ -1,13 +1,13 @@
 # 使用AudioRenderer开发音频播放功能(ArkTS)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-audiorenderer-for-playback
 
 AudioRenderer是音频渲染器，用于播放PCM（Pulse Code Modulation）音频数据，相比[AVPlayer](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-avplayer-for-playback)而言，可以在输入前添加数据预处理，更适合有音频开发经验的开发者，以实现更灵活的播放功能。
 
 
-#### 开发指导
+## 开发指导
 
 使用AudioRenderer播放音频涉及到AudioRenderer实例的创建、音频渲染参数的配置、渲染的开始与停止、资源的释放等。本开发指导将以一次渲染音频数据的过程为例，向开发者讲解如何使用AudioRenderer进行音频渲染，建议搭配[AudioRenderer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer)的API说明阅读。
 
@@ -34,7 +34,7 @@ AudioRenderer是音频渲染器，用于播放PCM（Pulse Code Modulation）音�
 
 
 
-#### 开发步骤及注意事项
+### 开发步骤及注意事项
 
 以下各步骤示例为代码片段，可通过示例代码右下方链接获取[完整示例](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/Media/Audio/AudioRendererSampleJS)。
 1. 配置音频渲染参数并创建AudioRenderer实例，音频渲染参数的详细信息可以查看[AudioRendererOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-i#audiorendereroptions8)。
@@ -171,7 +171,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
   
 
-  #### 选择正确的StreamUsage
+  ### 选择正确的StreamUsage
 
   创建AudioRenderer实例时，开发者需要根据应用场景指定播放器的StreamUsage，选择正确的StreamUsage可以避免用户遇到不符合预期的行为。
 
@@ -186,7 +186,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 
 
-#### 配置合适的音频采样率
+### 配置合适的音频采样率
 
 采样率：指音频每秒单个声道样点数，单位为Hz。
 
@@ -200,7 +200,7 @@ AudioRenderer支持枚举类型[AudioSamplingRate](https://developer.huawei.com/
 
 
 
-#### 完整示例
+### 完整示例
 
 下面展示了使用AudioRenderer渲染音频文件的示例代码。
 

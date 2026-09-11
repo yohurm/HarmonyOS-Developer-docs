@@ -1,20 +1,21 @@
 # AtomicServiceSearch
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-04 10:41:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-atomicservice-atomicservicesearch
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 AtomicServiceSearch为开发者提供满足定制化需求的功能，内容包括默认显示的搜索区、可自定义的选择区和功能区（最多两个）。
  
 > [!NOTE]
-> 该组件从API version 18开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+> 该组件从API version 18开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { AtomicServiceSearch } from '@kit.ArkUI';
@@ -22,9 +23,10 @@ import { AtomicServiceSearch } from '@kit.ArkUI';
  
   
 
-#### AtomicServiceSearch
+## AtomicServiceSearch
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AtomicServiceSearch({
@@ -45,6 +47,7 @@ AtomicServiceSearch({
  
 **参数：**
   
+
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | value | ResourceStr | 否 | @Prop | 设置当前显示的搜索文本内容。默认值为空字符串。 |
@@ -52,14 +55,15 @@ AtomicServiceSearch({
 | controller | SearchController | 否 | - | Search组件控制器，用于设置输入光标的位置、退出编辑态等操作。默认值为undefined。 |
 | select | SelectParams | 否 | @Prop | select选择区的内容、事件及样式。默认值为undefined。 |
 | search | SearchParams | 否 | @Prop | search搜索区可支持的事件及样式。默认值为undefined。 |
-| operation | OperationParams | 否 | - | 选择区（右侧）的功能设置项。默认值为undefined。 |
+| operation | OperationParams | 否 | - | 功能区（右侧）的功能设置项。默认值为undefined。 |
  
  
   
 
-#### SelectParams
+## SelectParams
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 AtomicServiceSearch中“选择区”的可选属性。
  
@@ -67,6 +71,7 @@ AtomicServiceSearch中“选择区”的可选属性。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | options | Array&lt;SelectOption&gt; | 否 | 是 | 下拉选项内容。默认值为undefined。 |
@@ -74,18 +79,18 @@ AtomicServiceSearch中“选择区”的可选属性。
 | selectValue | ResourceStr | 否 | 是 | 设置下拉按钮本身的文本内容。默认值为undefined。 |
 | onSelect | OnSelectCallback | 否 | 是 | 下拉菜单选中某一项的回调。默认值为undefined。 |
 | menuItemContentModifier | ContentModifier&lt;MenuItemConfiguration&gt; | 否 | 是 | 在Select组件上，定制下拉菜单项内容区的方法。在应用了该属性后，下拉菜单的内容将完全由开发者自定义，此时为选择区设置的下拉菜单分割线、背景色及字体样式等属性将不再生效。 modifier: 内容修改器，开发者需要自定义class实现ContentModifier接口。默认值为undefined。 |
-| divider | Optional&lt;DividerOptions&gt; \| null | 否 | 是 | 1.设置DividerOptions，则按设置的样式显示分割线。默认值：{strokeWidth: '1px', color: '#33182431'}。 2.设置为null时，不显示分割线。 3.strokeWidth设置过宽时，会覆盖文字。分割线会从每一个Item底部开始，同时向上向下画分割线。 4.startMargin和endMargin的默认值与不设置divider属性时的分割线样式保持一致。startMargin和endMargin的和与optionWidth的值相等时，不显示分割线。 startMargin和endMargin的和超过optionWidth的值时，按照默认样式显示分割线。 |
+| divider | Optional&lt;DividerOptions&gt; \| null | 否 | 是 | 1.设置DividerOptions，则按设置的样式显示分割线。默认值：{strokeWidth: '1px', color: '#33182431'}。当设置了menuItemContentModifier属性时，本属性不生效。 2.设置为null时，不显示分割线。 3.strokeWidth设置过宽时，会覆盖文字。分割线会从每一个Item底部开始，同时向上向下画分割线。 4.startMargin和endMargin的默认值与不设置divider属性时的分割线样式保持一致。startMargin和endMargin的和与optionWidth的值相等时，不显示分割线。 startMargin和endMargin的和超过optionWidth的值时，按照默认样式显示分割线。 |
 | font | Font | 否 | 是 | 下拉按钮本身的文本样式。默认值：{size: \$r('sys.float.ohos_id_text_size_body1')}。 |
-| fontColor | ResourceColor | 否 | 是 | 下拉菜单选中项的文本颜色。默认值：{fontColor: \$r('sys.color.ohos_id_color_text_primary')}。 |
-| selectedOptionBgColor | ResourceColor | 否 | 是 | 下拉菜单选中项的背景色。默认值：\$r('sys.color.ohos_id_color_component_activated')混合\$r('sys.color.ohos_id_alpha_highlight_bg')的透明度。 |
-| selectedOptionFont | Font | 否 | 是 | 下拉菜单选中项的文本样式。默认值：{size: \$r('sys.color.ohos_id_text_size_body1'), weight: FontWeight.Regular}。 |
-| selectedOptionFontColor | ResourceColor | 否 | 是 | 下拉菜单选中项的文本颜色。默认值：\$r('sys.color.ohos_id_color_text_primary_activated')。 |
-| optionBgColor | ResourceColor | 否 | 是 | 下拉菜单项的背景色。默认值：Color.Transparent。 |
-| optionFont | Font | 否 | 是 | 下拉菜单项的文本样式。默认值：{size: \$r('sys.float.ohos_id_text_size_body1'), weight: FontWeight.Regular}。 |
-| optionFontColor | ResourceColor | 否 | 是 | 下拉菜单项的文本颜色。默认值：\$r('sys.color.ohos_id_color_text_primary')。 |
-| optionWidth | Dimension \| OptionWidthMode | 否 | 是 | 设置下拉菜单项的宽度，不支持设置百分比。OptionWidthMode类型为枚举类型，OptionWidthMode决定下拉菜单是否继承下拉按钮宽度。当设置为异常值或小于最小宽度56vp时，属性不生效，菜单项宽度设为默认值，即菜单默认宽度为2栅格。 |
-| optionHeight | Dimension | 否 | 是 | 设置下拉菜单显示的最大高度，不支持设置百分比。下拉菜单的默认最大高度是屏幕可用高度的80%，设置的菜单最大高度不能超过默认最大高度。 |
-| space | Length | 否 | 是 | 下拉菜单项的文本与箭头之间的间距。默认值：8。 |
+| fontColor | ResourceColor | 否 | 是 | 下拉按钮本身的文本颜色。默认值：{fontColor: \$r('sys.color.ohos_id_color_text_primary')}。 |
+| selectedOptionBgColor | ResourceColor | 否 | 是 | 下拉菜单选中项的背景色。默认值：\$r('sys.color.ohos_id_color_component_activated')混合\$r('sys.color.ohos_id_alpha_highlight_bg')的透明度。当设置了menuItemContentModifier属性时，本属性不生效。 |
+| selectedOptionFont | Font | 否 | 是 | 下拉菜单选中项的文本样式。默认值：{size: \$r('sys.float.ohos_id_text_size_body1'), weight: FontWeight.Regular}。当设置了menuItemContentModifier属性时，本属性不生效。 |
+| selectedOptionFontColor | ResourceColor | 否 | 是 | 下拉菜单选中项的文本颜色。默认值：\$r('sys.color.ohos_id_color_text_primary_activated')。当设置了menuItemContentModifier属性时，本属性不生效。 |
+| optionBgColor | ResourceColor | 否 | 是 | 下拉菜单项的背景色。默认值：Color.Transparent。当设置了menuItemContentModifier属性时，本属性不生效。 |
+| optionFont | Font | 否 | 是 | 下拉菜单项的文本样式。默认值：{size: \$r('sys.float.ohos_id_text_size_body1'), weight: FontWeight.Regular}。当设置了menuItemContentModifier属性时，本属性不生效。 |
+| optionFontColor | ResourceColor | 否 | 是 | 下拉菜单项的文本颜色。默认值：\$r('sys.color.ohos_id_color_text_primary')。当设置了menuItemContentModifier属性时，本属性不生效。 |
+| optionWidth | Dimension \| OptionWidthMode | 否 | 是 | 设置下拉菜单项的宽度，不支持设置百分比。单位：vp。OptionWidthMode为枚举类型，决定下拉菜单是否继承下拉按钮宽度。当设置为异常值或小于最小宽度56vp时，属性不生效，菜单项宽度设为默认值，即菜单默认宽度为2栅格。 |
+| optionHeight | Dimension | 否 | 是 | 设置下拉菜单显示的最大高度，不支持设置百分比。单位：vp。下拉菜单的默认最大高度是屏幕可用高度的80%，设置的菜单最大高度不能超过默认最大高度，超过时属性不生效，按默认最大高度显示。 |
+| space | Length | 否 | 是 | 下拉菜单项的文本与箭头之间的间距。默认值：8。单位：vp。 |
 | arrowPosition | ArrowPosition | 否 | 是 | 下拉菜单项的文本与箭头之间的对齐方式。默认值：ArrowPosition.END。 |
 | menuAlign | MenuAlignParams | 否 | 是 | 设置下拉按钮与下拉菜单间的对齐方式。默认值：{alignType: MenuAlignType.START, offset: {dx: 0, dy: 0}}。 |
 | menuBackgroundColor | ResourceColor | 否 | 是 | 下拉菜单的背景色。默认值：Color.Transparent。 |
@@ -94,9 +99,10 @@ AtomicServiceSearch中“选择区”的可选属性。
  
   
 
-#### SearchParams
+## SearchParams
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 AtomicServiceSearch中“搜索区”的可选属性。
  
@@ -104,15 +110,16 @@ AtomicServiceSearch中“搜索区”的可选属性。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| searchKey | ResourceStr | 否 | 是 | 用作找到一个唯一的search组件。默认值：undefined。 |
+| searchKey | ResourceStr | 否 | 是 | 用作标识内部search组件的唯一键值，便于外部通过该键值引用或查找对应的Search组件。默认值：undefined。 |
 | componentBackgroundColor | ResourceColor | 否 | 是 | 设置组件的背景色。默认值：\$r('sys.color.ohos_id_color_text_field_sub_bg')。 |
 | pressedBackgroundColor | ResourceColor | 否 | 是 | 设置组件按压态的背景色。默认值：\$r('sys.color.ohos_id_color_click_effect')。 |
-| searchButton | SearchButtonParams | 否 | 是 | 设置搜索框末尾搜索按钮。点击搜索按钮，同时触发onSubmit与onClick回调。 -value：搜索框末尾搜索按钮文本内容。 -option: 配置搜索框文本样式。默认值：{fontSize: '16fp', fontColor: '#ff3f97e9'}。 |
+| searchButton | SearchButtonParams | 否 | 是 | 设置搜索框末尾搜索按钮。点击搜索按钮，触发onSubmit回调。默认值为undefined -searchButtonValue: 搜索框末尾搜索按钮文本内容。 -options: 配置搜索框文本样式。默认值：{fontSize: '16fp', fontColor: '#ff3f97e9'}。 |
 | placeholderColor | ResourceColor | 否 | 是 | placeholder文本颜色。默认值：\$r('sys.color.ohos_id_color_text_secondary')。 |
-| placeholderFont | Font | 否 | 是 | 设置placeholder文本样式，包括字体大小，字体粗细，字体族，字体风格。默认值：{size: \$r('sys_float.ohos_id_text_size_body1')}。 |
-| textFont | Font | 否 | 是 | 设置搜索框内输入文本样式，包括字体大小，字体粗细，字体族，字体风格。目前仅支持默认字体族。默认值：{size: \$r('sys_float.ohos_id_text_size_body1')}。 |
+| placeholderFont | Font | 否 | 是 | 设置placeholder文本样式，包括字体大小、字体粗细、字体族、字体风格。目前仅支持默认字体族。默认值：{size: \$r('sys.float.ohos_id_text_size_body1')}。 |
+| textFont | Font | 否 | 是 | 设置搜索框内输入文本样式，包括字体大小、字体粗细、字体族、字体风格。目前仅支持默认字体族。默认值：{size: \$r('sys.float.ohos_id_text_size_body1')}。 |
 | textAlign | TextAlign | 否 | 是 | 文本在搜索框中的对齐方式。默认值：TextAlign.Start。 |
 | copyOptions | CopyOptions | 否 | 是 | 输入的文本是否可复制。默认值：CopyOptions.LocalDevice，支持设备内复制。 |
 | searchIcon | IconOptions \| SymbolGlyphModifier | 否 | 是 | 左侧搜索图标样式。 浅色模式默认值：{size: '16vp', color: '#99182431', src: ' '}。 深色模式默认值：{size: '16vp', color: '#99ffffff', src: ' '}。 |
@@ -120,40 +127,41 @@ AtomicServiceSearch中“搜索区”的可选属性。
 | fontColor | ResourceColor | 否 | 是 | 输入文本的字体颜色。默认值：\$r('sys.color.ohos_id_color_text_secondary')。 |
 | caretStyle | CaretStyle | 否 | 是 | 光标样式。默认值：{width: '1.5vp', color: '#007DFF'}。 |
 | enableKeyboardOnFocus | boolean | 否 | 是 | Search获焦时，是否主动拉起软键盘。true表示Search获焦时主动拉起软键盘。false表示Search获焦时不主动拉起键盘。默认值：true。 |
-| hideSelectionMenu | boolean | 否 | 是 | 是否不弹出系统文本选择菜单。 设置为true时，单击输入框光标、长按输入框、双击输入框、三击输入框或者右键输入框，不弹出系统文本选择菜单。设置为false时，弹出系统文本选择菜单。默认值：false。 |
+| hideSelectionMenu | boolean | 否 | 是 | 是否隐藏系统文本选择菜单。 设置为true时，单击输入框光标、长按输入框、双击输入框、三击输入框或者右键输入框，不弹出系统文本选择菜单。设置为false时，弹出系统文本选择菜单。默认值：false。 |
 | type | SearchType | 否 | 是 | 输入框类型。默认值：SearchType.Normal。 |
 | maxLength | number | 否 | 是 | 设置文本的最大输入字符数。默认不设置最大输入字符数限制。到达文本最大字符限制，将无法继续输入字符。默认值：-1。 |
 | enterKeyType | EnterKeyType | 否 | 是 | 输入法回车键类型。默认值：EnterKeyType.Search。 |
 | decoration | TextDecorationOptions | 否 | 是 | 文本装饰线对象。默认值：{type: TextDecorationType.None, color: Color.Black, style: TextDecorationStyle.SOLID}。 |
 | letterSpacing | number \| string \| Resource | 否 | 是 | 设置文本字符间距。正数拉开字符距离，负数则拉近字符距离。浮点数默认值为0.0，单位为物理像素px。若输入类型非number且无法解析为数字，则使用默认值。 |
 | fontFeature | ResourceStr | 否 | 是 | 设置文字特性效果，比如数字等宽的特性。 格式为：normal \| <feature-tag-value> <feature-tag-value>的格式为：&lt;string&gt; [ &lt;integer&gt; \| on \| off ] <feature-tag-value>的个数可以有多个，中间用','隔开。 例如，使用等宽数字的输入格式为："ss01" on。默认值为undefined。 |
-| selectedBackgroundColor | ResourceColor | 否 | 是 | 文本选中底板颜色。默认为20%不透明度。 |
+| selectedBackgroundColor | ResourceColor | 否 | 是 | 文本选中高亮颜色。默认值：系统默认高亮颜色，20%不透明度。 |
 | inputFilter | InputFilterParams | 否 | 是 | 通过正则表达式设置输入过滤器。匹配表达式的输入允许显示，不匹配的输入将被过滤。仅支持单个字符匹配，不支持字符串匹配。默认值为undefined。 -value: 正则表达式。 -error: 正则匹配失败时，返回被过滤的内容。 |
-| textIndent | Dimension | 否 | 是 | 首行文本缩进。默认值：0。 |
-| minFontSize | number \| string \| Resource | 否 | 是 | 设置文本最小显示字号。需要配合maxFontSize以及布局大小限制使用，单独设置不生效。默认值为undefined。 |
-| maxFontSize | number \| string \| Resource | 否 | 是 | 设置文本最大显示字号。需要配合minFontSize以及布局大小限制使用，单独设置不生效。默认值为undefined。 |
+| textIndent | Dimension | 否 | 是 | 首行文本缩进。默认值：0。单位：vp。 |
+| minFontSize | number \| string \| Resource | 否 | 是 | 设置文本最小显示字号。需要配合maxFontSize以及布局大小限制使用，单独设置不生效。默认值为undefined。取值为number类型时，单位：fp。 |
+| maxFontSize | number \| string \| Resource | 否 | 是 | 设置文本最大显示字号。需要配合minFontSize以及布局大小限制使用，单独设置不生效。默认值为undefined。取值为number类型时，单位：fp。 |
 | editMenuOptions | EditMenuOptions | 否 | 是 | 设置自定义菜单扩展项，允许用户设置扩展项的文本内容、图标、回调方法。默认值为undefined。 |
 | enablePreviewText | boolean | 否 | 是 | 是否开启输入预上屏。true表示开启输入预上屏。false表示不开启输入预上屏。默认值：true。 需要配合开启输入法的预上屏功能。预上屏内容定义为文字暂存态，目前不支持文字拦截功能，因此该值为true时不触发onWillInsert、onDidInsert回调。 |
 | enableHapticFeedback | boolean | 否 | 是 | 是否开启触控反馈。true表示开启触控反馈。false表示不开启触控反馈。默认值：true。 |
-| onSubmit | Callback&lt;string&gt; \| SearchSubmitCallback | 否 | 是 | 点击搜索图标、搜索按钮或者按下软键盘搜索按钮时触发该回调。默认值为undefined。 |
+| onSubmit | Callback&lt;string&gt; \| SearchSubmitCallback | 否 | 是 | 点击搜索图标、搜索按钮或者按下软键盘搜索按钮时触发该回调。string为当前搜索框中输入的文本内容。默认值为undefined。 |
 | onChange | EditableTextOnChangeCallback | 否 | 是 | 输入内容发生变化时，触发该回调。默认值为undefined。 |
-| onCopy | Callback&lt;string&gt; | 否 | 是 | 进行复制操作时，触发该回调。默认值为undefined。 |
-| onCut | Callback&lt;string&gt; | 否 | 是 | 进行剪切操作时，触发该回调。默认值为undefined。 |
+| onCopy | Callback&lt;string&gt; | 否 | 是 | 进行复制操作时，触发该回调，string为被复制的文本内容。默认值为undefined。 |
+| onCut | Callback&lt;string&gt; | 否 | 是 | 进行剪切操作时，触发该回调，string为被剪切的文本内容。默认值为undefined。 |
 | onPaste | OnPasteCallback | 否 | 是 | 进行粘贴操作时，触发该回调。默认值为undefined。 |
 | onTextSelectionChange | OnTextSelectionChangeCallback | 否 | 是 | 文本选择的位置发生变化或编辑状态下光标位置发生变化时，触发该回调。默认值为undefined。 |
 | onContentScroll | OnContentScrollCallback | 否 | 是 | 文本内容滚动时，触发该回调。默认值为undefined。 |
 | onEditChange | Callback&lt;boolean&gt; | 否 | 是 | 输入状态变化时，触发该回调。有光标时为编辑态，无光标时为非编辑态。isEditing为true表示正在输入。默认值为undefined。 |
-| onWillInsert | Callback<InsertValue, boolean> | 否 | 是 | 在将要输入时，触发该回调。true表示将输入内容正常插入结果字符串，false表示不插入。默认值为undefined。 |
-| onDidInsert | Callback&lt;InsertValue&gt; | 否 | 是 | 在输入完成时，触发该回调。默认值为undefined。 |
+| onWillInsert | Callback<InsertValue, boolean> | 否 | 是 | 在将要输入时，触发该回调。true表示将输入内容正常插入结果字符串，false表示不插入。默认值为undefined。当enablePreviewText为true时，不触发本回调。 |
+| onDidInsert | Callback&lt;InsertValue&gt; | 否 | 是 | 在输入完成时触发该回调，在onWillInsert之后触发。当onWillInsert返回false拦截插入操作时，该回调不触发。默认值为undefined。当enablePreviewText为true时，不触发本回调。 |
 | onWillDelete | Callback<DeleteValue, boolean> | 否 | 是 | 在将要删除时，触发该回调。true表示正常删除，false表示不删除。默认值为undefined。 |
-| onDidDelete | Callback&lt;DeleteValue&gt; | 否 | 是 | 在删除完成时，触发该回调。默认值为undefined。 |
+| onDidDelete | Callback&lt;DeleteValue&gt; | 否 | 是 | 在删除完成时触发该回调，在onWillDelete之后触发。当onWillDelete返回false拦截删除操作时，该回调不触发。默认值为undefined。 |
  
  
   
 
-#### OperationParams
+## OperationParams
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 AtomicServiceSearch中“功能区”的初始化参数。
  
@@ -161,6 +169,7 @@ AtomicServiceSearch中“功能区”的初始化参数。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | auxiliaryItem | OperationOption | 否 | 是 | 附属于搜索区（右侧）的功能位。默认值为undefined。 |
@@ -169,9 +178,10 @@ AtomicServiceSearch中“功能区”的初始化参数。
  
   
 
-#### InputFilterParams
+## InputFilterParams
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 搜索框过滤设置项。
  
@@ -179,17 +189,19 @@ AtomicServiceSearch中“功能区”的初始化参数。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| inputFilterValue | ResourceStr | 否 | 否 | 正则表达式。 |
+| inputFilterValue | ResourceStr | 否 | 否 | 正则表达式。仅支持单个字符匹配，不支持字符串匹配。 |
 | error | Callback&lt;string&gt; | 否 | 是 | 正则匹配失败时，返回被过滤的内容。默认值为undefined。 |
  
  
   
 
-#### SearchButtonParams
+## SearchButtonParams
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 搜索框末尾搜索按钮设置项。
  
@@ -197,6 +209,7 @@ AtomicServiceSearch中“功能区”的初始化参数。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | searchButtonValue | ResourceStr | 否 | 否 | 搜索框末尾搜索按钮文本内容。 |
@@ -205,9 +218,10 @@ AtomicServiceSearch中“功能区”的初始化参数。
  
   
 
-#### MenuAlignParams
+## MenuAlignParams
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 下拉按钮与下拉菜单间的对齐方式设置项。
  
@@ -215,6 +229,7 @@ AtomicServiceSearch中“功能区”的初始化参数。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | alignType | MenuAlignType | 否 | 否 | 对齐方式类型。默认值：MenuAlignType.START。 |
@@ -223,9 +238,10 @@ AtomicServiceSearch中“功能区”的初始化参数。
  
   
 
-#### OnSelectCallback
+## OnSelectCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnSelectCallback = (index: number, selectValue: string) => void
  
@@ -237,6 +253,7 @@ type OnSelectCallback = (index: number, selectValue: string) => void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 选中项的索引，索引从0开始。 |
@@ -245,9 +262,10 @@ type OnSelectCallback = (index: number, selectValue: string) => void
  
   
 
-#### OnPasteCallback
+## OnPasteCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnPasteCallback = (pasteValue: string, event: PasteEvent) => void
  
@@ -259,6 +277,7 @@ type OnPasteCallback = (pasteValue: string, event: PasteEvent) => void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pasteValue | string | 是 | 要粘贴的文本内容。 |
@@ -267,9 +286,10 @@ type OnPasteCallback = (pasteValue: string, event: PasteEvent) => void
  
   
 
-#### OnTextSelectionChangeCallback
+## OnTextSelectionChangeCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnTextSelectionChangeCallback = (selectionStart: number, selectionEnd: number) => void
  
@@ -281,6 +301,7 @@ type OnTextSelectionChangeCallback = (selectionStart: number, selectionEnd: numb
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | selectionStart | number | 是 | 文本选择区域的起始位置。 |
@@ -289,9 +310,10 @@ type OnTextSelectionChangeCallback = (selectionStart: number, selectionEnd: numb
  
   
 
-#### OnContentScrollCallback
+## OnContentScrollCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnContentScrollCallback = (totalOffsetX: number, totalOffsetY: number) => void
  
@@ -303,21 +325,26 @@ type OnContentScrollCallback = (totalOffsetX: number, totalOffsetY: number) => v
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| totalOffsetX | number | 是 | 文本左上角横坐标相较于整个内容输入区左上角横坐标的偏移量。 |
-| totalOffsetY | number | 是 | 文本左上角纵坐标相较于整个内容输入区左上角纵坐标的偏移量。 |
+| totalOffsetX | number | 是 | 文本左上角横坐标相较于整个内容输入区左上角横坐标的偏移量。单位：px。 |
+| totalOffsetY | number | 是 | 文本左上角纵坐标相较于整个内容输入区左上角纵坐标的偏移量。单位：px。 |
  
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 示例1（AtomicServiceSearch添加选择区）
+### 示例1（AtomicServiceSearch添加选择区）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过select参数为AtomicServiceSearch组件添加左侧选择区。
  
@@ -338,10 +365,10 @@ struct Index {
       AtomicServiceSearch({
         select: {
           options: [
-            { value: 'Select1', icon: $r("app.media.sweep") }, // 自定义资源
-            { value: 'Select2', icon: $r("app.media.sweep") }, // 自定义资源
-            { value: 'Select3', icon: $r("app.media.sweep") }, // 自定义资源
-            { value: 'Select4', icon: $r("app.media.sweep") } // 自定义资源
+            { value: 'Select1', icon: $r('app.media.sweep') }, // 自定义资源
+            { value: 'Select2', icon: $r('app.media.sweep') }, // 自定义资源
+            { value: 'Select3', icon: $r('app.media.sweep') }, // 自定义资源
+            { value: 'Select4', icon: $r('app.media.sweep') } // 自定义资源
           ],
           selected: -1,
           selectValue: 'Select1',
@@ -373,7 +400,10 @@ struct Index {
  
   
 
-#### 示例2（AtomicServiceSearch添加功能位）
+### 示例2（AtomicServiceSearch添加功能位）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过operation参数为AtomicServiceSearch组件添加右侧功能位。
  
@@ -395,14 +425,14 @@ struct Index {
         operation: {
           // 附属于Search组件的功能位
           auxiliaryItem: {
-            value: $r("app.media.sweep"), // 自定义资源
+            value: $r('app.media.sweep'), // 自定义资源
             action: () => {
               this.alert('扫一扫'); // 自定义事件
             }
           },
           // 独立于Search组件的功能位
           independentItem: {
-            value: $r("app.media.dingding"), // 自定义资源
+            value: $r('app.media.dingding'), // 自定义资源
             action: () => {
               this.alert('通知'); // 自定义事件
             }
@@ -424,7 +454,10 @@ struct Index {
  
   
 
-#### 示例3（AtomicServiceSearch添加选择区及功能位）
+### 示例3（AtomicServiceSearch添加选择区及功能位）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例中为AtomicServiceSearch组件同时添加左侧选择区和右侧功能位。
  
@@ -445,10 +478,10 @@ struct Index {
       AtomicServiceSearch({
         select: {
           options: [
-            { value: 'Select1', icon: $r("app.media.sweep") }, // 自定义资源
-            { value: 'Select2', icon: $r("app.media.sweep") }, // 自定义资源
-            { value: 'Select3', icon: $r("app.media.sweep") }, // 自定义资源
-            { value: 'Select4', icon: $r("app.media.sweep") } // 自定义资源
+            { value: 'Select1', icon: $r('app.media.sweep') }, // 自定义资源
+            { value: 'Select2', icon: $r('app.media.sweep') }, // 自定义资源
+            { value: 'Select3', icon: $r('app.media.sweep') }, // 自定义资源
+            { value: 'Select4', icon: $r('app.media.sweep') } // 自定义资源
           ],
           selected: -1,
           selectValue: 'Select1',
@@ -466,13 +499,13 @@ struct Index {
         },
         operation: {
           auxiliaryItem: {
-            value: $r("app.media.sweep"), // 自定义资源
+            value: $r('app.media.sweep'), // 自定义资源
             action: () => {
               this.alert('扫一扫'); // 自定义事件
             }
           },
           independentItem: {
-            value: $r("app.media.dingding"), // 自定义资源
+            value: $r('app.media.dingding'), // 自定义资源
             action: () => {
               this.alert('通知'); // 自定义事件
             }
@@ -494,7 +527,10 @@ struct Index {
  
   
 
-#### 示例4（search回调事件）
+### 示例4（search回调事件）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过onWillInsert、onDidInsert、onWillDelete、onDidDelete接口实现了插入和删除的功能。
  
@@ -508,8 +544,8 @@ import { AtomicServiceSearch } from '@kit.ArkUI';
 @Entry
 @Component
 struct Index {
-  @State insertValue: string = "";
-  @State deleteValue: string = "";
+  @State insertValue: string = '';
+  @State deleteValue: string = '';
   @State insertOffset: number = 0;
   @State deleteOffset: number = 0;
   @State deleteDirection: number = 0;
@@ -518,9 +554,8 @@ struct Index {
   @State offsetX: number = 0;
   @State offsetY: number = 0;
   @State changeValue: string = '';
-  @State value: string = 'false';
+  @State editingState: string = 'false';
   @State submitValue: string = '';
-  @State text: string = 'Search editMenuOptions';
 
   build() {
     Column({ space: 6 }) {
@@ -531,7 +566,7 @@ struct Index {
       }).margin({ top: 20, bottom: 20 })
 
       Column({ space: 6 }) {
-        Text('editing: ' + this.value).width('100%').height(25).borderRadius(15).padding({ left: 15 })
+        Text('editing: ' + this.editingState).width('100%').height(25).borderRadius(15).padding({ left: 15 })
           .backgroundColor('rgba(0, 0, 0, 0.1)').maxLines(1).textOverflow({ overflow: TextOverflow.MARQUEE });
         Text('onSubmit:' + this.submitValue).width('100%').height(25).borderRadius(15).padding({ left: 15 })
           .backgroundColor('rgba(0, 0, 0, 0.1)').maxLines(1).textOverflow({ overflow: TextOverflow.MARQUEE });
@@ -539,22 +574,22 @@ struct Index {
           .backgroundColor('rgba(0, 0, 0, 0.1)').maxLines(1).textOverflow({ overflow: TextOverflow.MARQUEE });
         Text('offset x:' + this.offsetX + ' y:' + this.offsetY).width('100%').height(25).borderRadius(15).padding({ left: 15 })
           .backgroundColor('rgba(0, 0, 0, 0.1)').maxLines(1).textOverflow({ overflow: TextOverflow.MARQUEE });
-        Text("insertValue:" + this.insertValue + "  insertOffset:" + this.insertOffset).width('100%').height(25)
+        Text('insertValue:' + this.insertValue + '  insertOffset:' + this.insertOffset).width('100%').height(25)
           .borderRadius(15).padding({ left: 15 }).backgroundColor('rgba(0, 0, 0, 0.1)').maxLines(1)
           .textOverflow({ overflow: TextOverflow.MARQUEE });
-        Text("deleteValue:" + this.deleteValue + "  deleteOffset:" + this.deleteOffset).width('100%').height(25)
+        Text('deleteValue:' + this.deleteValue + '  deleteOffset:' + this.deleteOffset).width('100%').height(25)
           .borderRadius(15).padding({ left: 15 }).backgroundColor('rgba(0, 0, 0, 0.1)').maxLines(1)
           .textOverflow({ overflow: TextOverflow.MARQUEE });
-        Text("deleteDirection:" + (this.deleteDirection == 0 ? "BACKWARD" : "FORWARD")).width('100%').height(25)
+        Text('deleteDirection:' + (this.deleteDirection == 0 ? 'BACKWARD' : 'FORWARD')).width('100%').height(25)
           .borderRadius(15).padding({ left: 15 }).backgroundColor('rgba(0, 0, 0, 0.1)').maxLines(1)
           .textOverflow({ overflow: TextOverflow.MARQUEE });
         AtomicServiceSearch({
           select: {
             options: [
-              { value: 'Select1', icon: $r("app.media.sweep") },
-              { value: 'Select2', icon: $r("app.media.sweep") },
-              { value: 'Select3', icon: $r("app.media.sweep") },
-              { value: 'Select4', icon: $r("app.media.sweep") }
+              { value: 'Select1', icon: $r('app.media.sweep') },
+              { value: 'Select2', icon: $r('app.media.sweep') },
+              { value: 'Select3', icon: $r('app.media.sweep') },
+              { value: 'Select4', icon: $r('app.media.sweep') }
             ],
             selected: -1,
             selectValue: 'Select1',
@@ -572,10 +607,10 @@ struct Index {
           },
           search: {
             onSubmit: (value: string) => {
-              this.submitValue = value
+              this.submitValue = value;
             },
             onChange: (value: string) => {
-              this.changeValue = value
+              this.changeValue = value;
             },
             onCopy: () => {
               this.alert('onCopy');
@@ -587,31 +622,30 @@ struct Index {
               this.alert('onPaste');
             },
             onTextSelectionChange: (selectionStart: number, selectionEnd: number) => {
-              this.startIndex = selectionStart
-              this.endIndex = selectionEnd
+              this.startIndex = selectionStart;
+              this.endIndex = selectionEnd;
             },
             onContentScroll: (totalOffsetX: number, totalOffsetY: number) => {
-              this.offsetX = totalOffsetX
-              this.offsetY = totalOffsetY
+              this.offsetX = totalOffsetX;
+              this.offsetY = totalOffsetY;
             },
             onEditChange: (data: boolean) => {
-              this.value = data ? 'true' : 'false'
+              this.editingState = data ? 'true' : 'false';
             },
             onWillInsert: (info: InsertValue) => {
-              this.insertValue = info.insertValue
+              this.insertValue = info.insertValue;
               return true;
             },
             onDidInsert: (info: InsertValue) => {
-              this.insertOffset = info.insertOffset
+              this.insertOffset = info.insertOffset;
             },
             onWillDelete: (info: DeleteValue) => {
-              this.deleteValue = info.deleteValue
-              info.direction
+              this.deleteValue = info.deleteValue;
               return true;
             },
             onDidDelete: (info: DeleteValue) => {
-              this.deleteOffset = info.deleteOffset
-              this.deleteDirection = info.direction
+              this.deleteOffset = info.deleteOffset;
+              this.deleteDirection = info.direction;
             }
           }
         })
@@ -631,7 +665,10 @@ struct Index {
  
   
 
-#### 示例5（AtomicServiceSearch修改样式）
+### 示例5（AtomicServiceSearch修改样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过search、select、value、placeholder参数实现了AtomicServiceSearch组件样式的自定义。
  
@@ -646,10 +683,10 @@ struct Index {
   @State private search?: SearchParams = {};
   @State private select?: SelectParams = {
     options: [
-      { value: 'Select1', icon: $r("app.media.sweep") },
-      { value: 'Select2', icon: $r("app.media.sweep") },
-      { value: 'Select3', icon: $r("app.media.sweep") },
-      { value: 'Select4', icon: $r("app.media.sweep") }
+      { value: 'Select1', icon: $r('app.media.sweep') },
+      { value: 'Select2', icon: $r('app.media.sweep') },
+      { value: 'Select3', icon: $r('app.media.sweep') },
+      { value: 'Select4', icon: $r('app.media.sweep') }
     ],
     selected: -1,
     selectValue: 'Select1',
@@ -681,14 +718,14 @@ struct Index {
         search: this.search,
         operation: {
           independentItem: {
-            value: $r(`app.media.dingding`),
+            value: $r('app.media.dingding'),
             action: () => {
               this.alert('通知');
             }
           }
         }
       })
-      Button("修改placeholder")
+      Button('修改placeholder')
         .width('100%')
         .type(ButtonType.Normal)
         .borderRadius(20)
@@ -699,7 +736,7 @@ struct Index {
             this.placeholder = 'Search...';
           }
         });
-      Button("修改defaultValue")
+      Button('修改defaultValue')
         .width('100%')
         .type(ButtonType.Normal)
         .borderRadius(20)
@@ -710,15 +747,15 @@ struct Index {
             this.defaultValue = 'value';
           }
         });
-      Button("修改Select样式")
+      Button('修改Select样式')
         .width('100%')
         .type(ButtonType.Normal)
         .borderRadius(20)
         .onClick(() => {
           this.select = {
             options: [
-              { value: '选项1', icon: $r("app.media.dingding") },
-              { value: '选项2', icon: $r("app.media.dingding") },
+              { value: '选项1', icon: $r('app.media.dingding') },
+              { value: '选项2', icon: $r('app.media.dingding') },
             ],
             selected: -1,
             selectValue: '选项1',
@@ -732,7 +769,7 @@ struct Index {
           };
         });
 
-      Button("修改Search样式")
+      Button('修改Search样式')
         .width('100%')
         .type(ButtonType.Normal)
         .borderRadius(20)
@@ -756,7 +793,10 @@ struct Index {
  
   
 
-#### 示例6（通过controller实现光标位置的设置）
+### 示例6（通过controller实现光标位置的设置）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过controller参数实现了光标位置的设置、选择指定区域中的内容及关闭编辑状态的功能。
  
@@ -776,8 +816,7 @@ struct Index {
         style: TextDecorationStyle.SOLID
       }).margin({ top: 20, bottom: 20 })
 
-      AtomicServiceSearch(
-        {
+      AtomicServiceSearch({
           value: 'Default Value',
           placeholder: 'Type to Search...',
           controller: this.controller,
@@ -796,13 +835,9 @@ struct Index {
         this.controller.stopEditing();
       }).width('100%')
       Button('Selection [0,3]').onClick(() => {
-        this.controller.setTextSelection(0, 3)
+        this.controller.setTextSelection(0, 3);
       }).width('100%')
     }.padding({ left: 16, right: 16 })
-  }
-
-  public alert(message: string): void {
-    this.getUIContext().showAlertDialog({ message: message });
   }
 }
 ```
@@ -813,7 +848,10 @@ struct Index {
  
   
 
-#### 示例7（设置输入法回车键类型）
+### 示例7（设置输入法回车键类型）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过enterKeyType属性实现了动态切换输入法回车键的效果。
  
@@ -823,8 +861,8 @@ import { AtomicServiceSearch } from '@kit.ArkUI';
 @Entry
 @Component
 struct Index {
-  @State enterTypes: Array<EnterKeyType> = [EnterKeyType.Go, EnterKeyType.Search, EnterKeyType.Send, EnterKeyType.Done, EnterKeyType.Next, EnterKeyType.PREVIOUS, EnterKeyType.NEW_LINE]
-  @State index: number = 0
+  @State enterTypes: Array<EnterKeyType> = [EnterKeyType.Go, EnterKeyType.Search, EnterKeyType.Send, EnterKeyType.Done, EnterKeyType.Next, EnterKeyType.PREVIOUS, EnterKeyType.NEW_LINE];
+  @State index: number = 0;
 
   build() {
     Column({ space : 10 }) {
@@ -847,10 +885,6 @@ struct Index {
 
     }.padding({ left: 16, right: 16 })
   }
-
-  public alert(message: string): void {
-    this.getUIContext().showAlertDialog({ message: message });
-  }
 }
 ```
  
@@ -860,7 +894,10 @@ struct Index {
  
   
 
-#### 示例8（设置文字特性效果）
+### 示例8（设置文字特性效果）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过fontFeature属性实现了文本在不同文字特性下的展示效果。
  
@@ -881,35 +918,31 @@ struct Index {
       AtomicServiceSearch({
         value: 'This is ss01 on : 0123456789',
         search: {
-          fontFeature: "\"ss01\" on"
+          fontFeature: '"ss01" on'
         }
       });
 
       AtomicServiceSearch({
         value: 'This is ss01 off : 0123456789',
         search: {
-          fontFeature: "\"ss01\" off"
+          fontFeature: '"ss01" off'
         }
       });
 
       AtomicServiceSearch({
         value: 'fiabc1234567DEFGHIJKLMN',
         search: {
-          fontFeature: "\"frac\" on"
+          fontFeature: '"frac" on'
         }
       });
 
       AtomicServiceSearch({
         value: 'fiabc1234567DEFGHIJKLMN',
         search: {
-          fontFeature: "\"frac\" off"
+          fontFeature: '"frac" off'
         }
       });
     }.padding({ left: 16, right: 16 })
-  }
-
-  public alert(message: string): void {
-    this.getUIContext().showAlertDialog({ message: message });
   }
 }
 ```
@@ -920,7 +953,10 @@ struct Index {
  
   
 
-#### 示例9（设置文本自适应）
+### 示例9（设置文本自适应）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过minFontSize、maxFontSize属性展示了文本自适应字号的效果。
  
@@ -951,10 +987,6 @@ struct Index {
       }).width('80%').height(40).borderWidth(1).borderRadius(20)
     }.padding({ left: 16, right: 16 })
   }
-
-  public alert(message: string): void {
-    this.getUIContext().showAlertDialog({ message: message });
-  }
 }
 ```
  
@@ -964,7 +996,10 @@ struct Index {
  
   
 
-#### 示例10（文本扩展自定义菜单）
+### 示例10（文本扩展自定义菜单）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过editMenuOptions接口实现了文本设置自定义菜单扩展项的文本内容、图标以及回调的功能。
  
@@ -975,7 +1010,7 @@ import { AtomicServiceSearch, TextMenuController } from '@kit.ArkUI';
 @Component
 struct Index {
   aboutToAppear(): void {
-    TextMenuController.disableMenuItems([TextMenuItemId.AI_WRITER])
+    TextMenuController.disableMenuItems([TextMenuItemId.AI_WRITER]);
   }
 
   onCreateMenu = (menuItems: Array<TextMenuItem>) => {
@@ -983,34 +1018,34 @@ struct Index {
       content: 'custom1',
       icon: $r('app.media.startIcon'),
       id: TextMenuItemId.of('custom1'),
-    }
+    };
     let item2: TextMenuItem = {
       content: 'custom2',
       id: TextMenuItemId.of('custom2'),
       icon: $r('app.media.startIcon'),
-    }
-    menuItems.push(item1)
-    menuItems.unshift(item2)
-    return menuItems
+    };
+    menuItems.push(item1);
+    menuItems.unshift(item2);
+    return menuItems;
   }
   onMenuItemClick = (menuItem: TextMenuItem, textRange: TextRange) => {
     if (menuItem.id.equals(TextMenuItemId.of('custom2'))) {
-      console.info('拦截 id: custom2 start:' + textRange.start + '; end:' + textRange.end)
-      return true
+      console.info('拦截 id: custom2 start:' + textRange.start + '; end:' + textRange.end);
+      return true;
     }
     if (menuItem.id.equals(TextMenuItemId.COPY)) {
-      console.info('拦截 COPY start:' + textRange.start + '; end:' + textRange.end)
-      return true
+      console.info('拦截 COPY start:' + textRange.start + '; end:' + textRange.end);
+      return true;
     }
     if (menuItem.id.equals(TextMenuItemId.SELECT_ALL)) {
-      console.info('不拦截 SELECT_ALL start:' + textRange.start + '; end:' + textRange.end)
-      return false
+      console.info('不拦截 SELECT_ALL start:' + textRange.start + '; end:' + textRange.end);
+      return false;
     }
-    return false
+    return false;
   }
   @State editMenuOptions: EditMenuOptions = {
     onCreateMenu: this.onCreateMenu, onMenuItemClick: this.onMenuItemClick
-  }
+  };
 
   build() {
     Column({ space: 10 }) {
@@ -1028,10 +1063,6 @@ struct Index {
       })
     }.padding({ left: 16, right: 16 })
   }
-
-  public alert(message: string): void {
-    this.getUIContext().showAlertDialog({ message: message });
-  }
 }
 ```
  
@@ -1041,7 +1072,10 @@ struct Index {
  
   
 
-#### 示例11（设置文本水平对齐/光标样式/选中背景色）
+### 示例11（设置文本水平对齐/光标样式/选中背景色）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过textAlign、caretStyle、selectedBackgroundColor属性展示如何设置文本的水平对齐、光标样式和选中背景色。
  
@@ -1052,7 +1086,7 @@ import { AtomicServiceSearch, TextMenuController } from '@kit.ArkUI';
 @Component
 struct Index {
   aboutToAppear(): void {
-    TextMenuController.disableMenuItems([TextMenuItemId.AI_WRITER])
+    TextMenuController.disableMenuItems([TextMenuItemId.AI_WRITER]);
   }
 
   build() {
@@ -1073,10 +1107,6 @@ struct Index {
       })
     }.padding({ left: 16, right: 16 })
   }
-
-  public alert(message: string): void {
-    this.getUIContext().showAlertDialog({ message: message });
-  }
 }
 ```
  
@@ -1086,7 +1116,10 @@ struct Index {
  
   
 
-#### 示例12（对输入的文本进行过滤）
+### 示例12（对输入的文本进行过滤）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过inputFilter属性展示如何对输入的文本进行内容的过滤，以限制输入内容。
  
@@ -1111,7 +1144,7 @@ struct Index {
           search: {
             inputFilter: {
               inputFilterValue : '[a-z]',
-              error: (filterValue: string) => {this.filterValue = filterValue}
+              error: (filterValue: string) => {this.filterValue = filterValue;}
             }
           }
         })
@@ -1120,12 +1153,8 @@ struct Index {
       }
     }.padding({ left: 16, right: 16 })
   }
-
-  public alert(message: string): void {
-    this.getUIContext().showAlertDialog({ message: message });
-  }
 }
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/NNjC0OM8SA2kOauUt_YJqQ/zh-cn_image_0000002656008892.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071516Z&HW-CC-Expire=86400&HW-CC-Sign=384545B0ECDBD2608FD10D8E8E99B5CECE00CB63828B9F1A4CF563CBF22E8441)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/A0bqJfb8QmW4891Slb8LgA/zh-cn_image_0000002717773046.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073030Z&HW-CC-Expire=86400&HW-CC-Sign=A844DE72CA432A0D72F86950ADBECEEC9551CE948009F27D9E9B6A423034BA80)

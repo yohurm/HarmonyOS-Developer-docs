@@ -84,16 +84,16 @@ static napi_value CheckUndefined(napi_env env, napi_callback_info info)
     }
 
 
-    // 检查abilityAccessCtrlModule是否为undefined
+    <em>// 检查abilityAccessCtrlModule是否为undefined</em>
     napi_valuetype value_type;
     napi_typeof(env, abilityAccessCtrlModule, &value_type);
     if (value_type == napi_undefined) {
-        // 这是undefined类型
+        <em>// 这是undefined类型</em>
         return res;
     }
 
 
-    // 不是undefined类型，继续执行其他操作
+   <em> // 不是undefined类型，继续执行其他操作</em>
     napi_value createAtManagerMethod;
     status = napi_get_named_property(env, abilityAccessCtrlModule, "createAtManager", &createAtManagerMethod);
     if (status != napi_ok) {

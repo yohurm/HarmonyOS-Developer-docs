@@ -1,11 +1,12 @@
 # ServiceCollaboration
 
-更新时间：2026-05-26 06:48:54
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/servicecollaboration-capi-module
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -17,16 +18,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 文件
+### 文件
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | service_collaboration_api.h | 跨设备互通的接口以及相关类型的定义。 |
@@ -34,10 +38,12 @@
  
   
 
-#### 结构体
+### 结构体
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | struct ServiceCollaboration_CollaborationDeviceInfo | 跨设备互通获取的设备信息对象，包含设备的基本信息和能力类型。 |
@@ -49,10 +55,12 @@
  
   
 
-#### 宏定义
+### 宏定义
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | COLLABORATIONDEVICEINFO_DEVICENETWORKID_MAXLENGTH 65 | 设备network Id最大长度。 |
@@ -62,10 +70,12 @@
  
   
 
-#### 类型定义
+### 类型定义
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | typedef enum ServiceCollaborationFilterType ServiceCollaborationFilterType | 跨设备互通能力类型枚举。 |
@@ -81,10 +91,12 @@
  
   
 
-#### 枚举
+### 枚举
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | ServiceCollaborationFilterType { TAKE_PHOTO = 1, SCAN_DOCUMENT = 2, IMAGE_PICKER = 3, VIDEO_PICKER = 5, IMAGE_VIDEO_PICKER = 6 } | 跨设备互通能力类型的枚举。 |
@@ -95,10 +107,12 @@
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | ServiceCollaboration_CollaborationDeviceInfoSets* HMS_ServiceCollaboration_GetCollaborationDeviceInfos( uint32_t fileterNum, ServiceCollaborationFilterType serviceFileterTypes[]) | 获取支持相关能力的设备列表。 |
@@ -110,13 +124,15 @@
  
   
 
-#### 宏定义说明
+## 宏定义说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### COLLABORATIONDEVICEINFO_DEVICENETWORKID_MAXLENGTH
+### COLLABORATIONDEVICEINFO_DEVICENETWORKID_MAXLENGTH
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -132,7 +148,8 @@
  
   
 
-#### COLLABORATIONDEVICEINFO_DEVICENAME_MAXLENGTH
+### COLLABORATIONDEVICEINFO_DEVICENAME_MAXLENGTH
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -148,7 +165,8 @@
  
   
 
-#### SERVICE_COLLABORATION_URI_MAXLENGTH
+### SERVICE_COLLABORATION_URI_MAXLENGTH
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -164,13 +182,15 @@
  
   
 
-#### 类型定义说明
+## 类型定义说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### ServiceCollaboration_CollaborationDeviceInfo
+### ServiceCollaboration_CollaborationDeviceInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -186,7 +206,8 @@ typedef struct ServiceCollaboration_CollaborationDeviceInfo ServiceCollaboration
  
   
 
-#### ServiceCollaboration_CollaborationDeviceInfoSets
+### ServiceCollaboration_CollaborationDeviceInfoSets
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -202,7 +223,8 @@ typedef struct ServiceCollaboration_CollaborationDeviceInfoSets ServiceCollabora
  
   
 
-#### ServiceCollaboration_SelectInfo
+### ServiceCollaboration_SelectInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -218,7 +240,8 @@ typedef struct ServiceCollaboration_SelectInfo ServiceCollaboration_SelectInfo
  
   
 
-#### ServiceCollaborationCallback
+### ServiceCollaborationCallback
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -234,7 +257,8 @@ typedef struct ServiceCollaborationCallback ServiceCollaborationCallback
  
   
 
-#### ServiceCollaborationFilterType
+### ServiceCollaborationFilterType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -250,7 +274,8 @@ typedef enum ServiceCollaborationFilterType ServiceCollaborationFilterType
  
   
 
-#### ServiceCollaborationDataType
+### ServiceCollaborationDataType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -266,7 +291,8 @@ typedef enum ServiceCollaborationDataType ServiceCollaborationDataType
  
   
 
-#### ServiceCollaborationEventCode
+### ServiceCollaborationEventCode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -282,7 +308,8 @@ typedef enum ServiceCollaborationEventCode ServiceCollaborationEventCode
  
   
 
-#### ServiceCollaboration_SelectInfoV2
+### ServiceCollaboration_SelectInfoV2
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -298,13 +325,15 @@ typedef struct ServiceCollaboration_SelectInfoV2 ServiceCollaboration_SelectInfo
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### ServiceCollaborationFilterType
+### ServiceCollaborationFilterType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -318,6 +347,7 @@ enum ServiceCollaborationFilterType
  
 **起始版本：** 5.0.0(12)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | TAKE_PHOTO = 1 | 拍照。 |
@@ -329,7 +359,8 @@ enum ServiceCollaborationFilterType
  
   
 
-#### CollaborationDeviceFilterType
+### CollaborationDeviceFilterType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -343,6 +374,7 @@ enum CollaborationDeviceFilterType
  
 **起始版本：** 6.1.0(23)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | PHONE | Phone。 |
@@ -352,7 +384,8 @@ enum CollaborationDeviceFilterType
  
   
 
-#### ServiceCollaborationDataType
+### ServiceCollaborationDataType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -366,6 +399,7 @@ enum ServiceCollaborationDataType
  
 **起始版本：** 5.0.0(12)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | IMAGE = 1 | 图片。 |
@@ -374,7 +408,8 @@ enum ServiceCollaborationDataType
  
   
 
-#### ServiceCollaborationEventCode
+### ServiceCollaborationEventCode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -388,6 +423,7 @@ enum ServiceCollaborationEventCode
  
 **起始版本：** 5.0.0(12)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | LAST_DATA_BACK = 1001202000 | 已收到最后一个数据包。 |
@@ -409,15 +445,17 @@ enum ServiceCollaborationEventCode
  
   
 
-#### 函数说明
+## 函数说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### HMS_ServiceCollaboration_GetCollaborationDeviceInfos
+### HMS_ServiceCollaboration_GetCollaborationDeviceInfos
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** PC/2in1 | Tablet | TV
 
 ```text
 ServiceCollaboration_CollaborationDeviceInfoSets* HMS_ServiceCollaboration_GetCollaborationDeviceInfos(
@@ -432,6 +470,7 @@ ServiceCollaboration_CollaborationDeviceInfoSets* HMS_ServiceCollaboration_GetCo
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | uint32_t fileterNum | 服务能力类型总数。 |
@@ -444,7 +483,8 @@ ServiceCollaboration_CollaborationDeviceInfoSets* HMS_ServiceCollaboration_GetCo
  
   
 
-#### HMS_ServiceCollaboration_GetCollaborationDeviceInfosV2
+### HMS_ServiceCollaboration_GetCollaborationDeviceInfosV2
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -461,6 +501,7 @@ ServiceCollaboration_CollaborationDeviceInfoSets* HMS_ServiceCollaboration_GetCo
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | uint32_t deviceFilterNum | 设备类型总数。 |
@@ -475,9 +516,10 @@ ServiceCollaboration_CollaborationDeviceInfoSets* HMS_ServiceCollaboration_GetCo
  
   
 
-#### HMS_ServiceCollaboration_StartCollaboration
+### HMS_ServiceCollaboration_StartCollaboration
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** PC/2in1 | Tablet | TV
 
 ```text
 uint32_t HMS_ServiceCollaboration_StartCollaboration(
@@ -492,6 +534,7 @@ uint32_t HMS_ServiceCollaboration_StartCollaboration(
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | const ServiceCollaboration_SelectInfo* selectService | 被选择的设备信息。 |
@@ -504,7 +547,8 @@ uint32_t HMS_ServiceCollaboration_StartCollaboration(
  
   
 
-#### HMS_ServiceCollaboration_StopCollaboration
+### HMS_ServiceCollaboration_StopCollaboration
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -520,6 +564,7 @@ int32_t HMS_ServiceCollaboration_StopCollaboration(uint32_t collaborationId);
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | uint32_t collaborationId | 跨设备互通唯一标识，这个唯一标识通过HMS_ServiceCollaboration_StartCollaboration或 HMS_ServiceCollaboration_StartCollaborationV2的返回值获取。 |
@@ -531,7 +576,8 @@ int32_t HMS_ServiceCollaboration_StopCollaboration(uint32_t collaborationId);
  
   
 
-#### HMS_ServiceCollaboration_StartCollaborationV2
+### HMS_ServiceCollaboration_StartCollaborationV2
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -548,6 +594,7 @@ uint32_t HMS_ServiceCollaboration_StartCollaborationV2(
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | const ServiceCollaboration_SelectInfoV2* selectService | 被选择的设备信息。 |

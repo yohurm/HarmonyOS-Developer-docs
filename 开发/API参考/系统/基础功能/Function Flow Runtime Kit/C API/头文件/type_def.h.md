@@ -1,13 +1,14 @@
 # type_def.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-type-def-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义通用类型。
  
@@ -23,29 +24,34 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 变量
+### 变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
-| int | ffrt_qos_t | QoS类型，用于设置任务的Qos等级。 |
+| int | ffrt_qos_t | QoS类型，用于设置任务的QoS等级。 |
 | int | ffrt_timer_t | 定时器句柄，用于标识已创建的定时器。 |
 | using qos = int | - | QoS类型。 起始版本： 10 |
  
  
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | ffrt_function_header_t | ffrt_function_header_t | 任务执行体，用于定义任务的执行和销毁回调。exec回调在任务被调度时调用，destroy回调在任务完成后被调用以释放任务相关资源。两者共同管理FFRT任务的完整生命周期。 |
@@ -65,10 +71,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | ffrt_queue_priority_t | ffrt_queue_priority_t | 并发队列中用于排序任务调度的任务优先级类型枚举。 |
@@ -83,10 +91,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | typedef void(*ffrt_function_t)(void*) | ffrt_function_t | 任务执行函数指针类型。函数指针定义了FFRT任务的入口点。FFRT在调度执行任务时调用该函数，并通过参数传入用户数据指针。 |
@@ -96,15 +106,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### ffrt_queue_priority_t
+### ffrt_queue_priority_t
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ffrt_queue_priority_t
@@ -116,6 +128,7 @@ enum ffrt_queue_priority_t
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ffrt_queue_priority_immediate = 0 | 最高优先级。任务尽快被调度（句柄时间等于提交时间）；优先于high被调度。 |
@@ -126,9 +139,10 @@ enum ffrt_queue_priority_t
  
   
 
-#### ffrt_qos_default_t
+### ffrt_qos_default_t
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ffrt_qos_default_t
@@ -140,6 +154,7 @@ enum ffrt_qos_default_t
  
 **起始版本：** 10
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ffrt_qos_inherit = -1 | 继承。 继承调用线程的QoS。用于任务需要采用创建者优先级的场景。 |
@@ -154,9 +169,10 @@ enum ffrt_qos_default_t
  
   
 
-#### ffrt_storage_size_t
+### ffrt_storage_size_t
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ffrt_storage_size_t
@@ -168,6 +184,7 @@ enum ffrt_storage_size_t
  
 **起始版本：** 10
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ffrt_task_attr_storage_size = 128 | 任务属性存储大小，单位是字节。 |
@@ -181,9 +198,10 @@ enum ffrt_storage_size_t
  
   
 
-#### ffrt_function_kind_t
+### ffrt_function_kind_t
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ffrt_function_kind_t
@@ -195,6 +213,7 @@ enum ffrt_function_kind_t
  
 **起始版本：** 10
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ffrt_function_kind_general | 通用任务。任务可提交到FFRT调度器并发执行。 |
@@ -203,9 +222,10 @@ enum ffrt_function_kind_t
  
   
 
-#### ffrt_dependence_type_t
+### ffrt_dependence_type_t
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ffrt_dependence_type_t
@@ -217,6 +237,7 @@ enum ffrt_dependence_type_t
  
 **起始版本：** 10
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ffrt_dependence_data | 数据依赖类型。任务仅在所引用的数据就绪后被调度。 |
@@ -225,9 +246,10 @@ enum ffrt_dependence_type_t
  
   
 
-#### ffrt_error_t
+### ffrt_error_t
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ffrt_error_t
@@ -239,6 +261,7 @@ enum ffrt_error_t
  
 **起始版本：** 10
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ffrt_error = -1 | 通用错误。 |
@@ -251,9 +274,10 @@ enum ffrt_error_t
  
   
 
-#### ffrt_mutex_type
+### ffrt_mutex_type
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ffrt_mutex_type
@@ -265,6 +289,7 @@ enum ffrt_mutex_type
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ffrt_mutex_normal = 0 | 普通互斥锁类型。 |
@@ -274,9 +299,10 @@ enum ffrt_mutex_type
  
   
 
-#### qos_default
+### qos_default
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum qos_default
@@ -288,6 +314,7 @@ enum qos_default
  
 **起始版本：** 10
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | qos_inherit = ffrt_qos_inherit | 继承。 继承调用线程的QoS。用于任务需要采用创建者优先级的场景。 |
@@ -302,15 +329,17 @@ enum qos_default
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### ffrt_function_t()
+### ffrt_function_t()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void(*ffrt_function_t)(void*)
@@ -324,9 +353,10 @@ typedef void(*ffrt_function_t)(void*)
  
   
 
-#### ffrt_poller_cb()
+### ffrt_poller_cb()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*ffrt_poller_cb)(void* data, uint32_t event)
@@ -340,6 +370,7 @@ poller回调函数类型。当poller检测到已注册事件时调用该回调�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | void* data | 指向poller注册时传入的用户数据指针。 |
@@ -348,9 +379,10 @@ poller回调函数类型。当poller检测到已注册事件时调用该回调�
  
   
 
-#### ffrt_timer_cb()
+### ffrt_timer_cb()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*ffrt_timer_cb)(void* data)
@@ -364,6 +396,7 @@ typedef void (*ffrt_timer_cb)(void* data)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | void* data | 指向定时器注册时传入的用户数据指针。 |

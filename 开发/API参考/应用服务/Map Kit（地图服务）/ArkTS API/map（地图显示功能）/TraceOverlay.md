@@ -1,11 +1,12 @@
 # Interface (TraceOverlay)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-04 10:41:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-traceoverlay
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -15,11 +16,12 @@ import { map, mapCommon } from '@kit.MapKit';
  
   
 
-#### TraceOverlay
+## TraceOverlay
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-动态轨迹。
+动态轨迹。在调用map.[MapComponentController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-mapcomponentcontroller)类的[addTraceOverlay](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-mapcomponentcontroller#addtraceoverlay)方法时会返回该类型的实例。
  
 **模型约束：** 此接口仅可在Stage模型下使用。
  
@@ -175,7 +177,8 @@ let traceOverlay: map.TraceOverlay = await this.mapController.addTraceOverlay(tr
  
   
 
-#### getId
+### getId
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -193,6 +196,7 @@ getId(): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 返回动态轨迹的ID。 |
@@ -206,7 +210,8 @@ let id: string = traceOverlay.getId();
  
   
 
-#### remove
+### remove
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -230,7 +235,8 @@ traceOverlay.remove();
  
   
 
-#### pause
+### pause
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -254,7 +260,8 @@ traceOverlay.pause();
  
   
 
-#### resume
+### resume
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 

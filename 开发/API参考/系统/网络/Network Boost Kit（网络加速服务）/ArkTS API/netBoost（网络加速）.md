@@ -1,6 +1,6 @@
 # netBoost（网络加速）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/networkboost-netboost
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -10,7 +10,8 @@
 **起始版本：** 6.0.0(20)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -20,7 +21,8 @@ import { netBoost } from '@kit.NetworkBoostKit';
  
   
 
-#### netBoost.setSceneDesc
+## netBoost.setSceneDesc
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -40,6 +42,7 @@ setSceneDesc(sceneDesc : SceneDesc): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sceneDesc | SceneDesc | 是 | 要设置的业务场景信息。 |
@@ -49,6 +52,7 @@ setSceneDesc(sceneDesc : SceneDesc): void
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-networkboost)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -63,6 +67,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { netBoost } from '@kit.NetworkBoostKit';
 try {
   let sceneDesc : netBoost.SceneDesc = {
+    // scene: 'realtimeVoice' 表示实时语音业务场景，可通过业务需求配置; sceneEvent: SCENE_EVENT_ENTER 表示进入场景事件
     scene : 'realtimeVoice',
     sceneEvent : netBoost.SceneEvent.SCENE_EVENT_ENTER
   }
@@ -74,7 +79,8 @@ try {
  
   
 
-#### netBoost.setLowPowerMode
+## netBoost.setLowPowerMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -92,6 +98,7 @@ setLowPowerMode(isEnable : boolean): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isEnable | boolean | 是 | 待设置的低功耗模式开关。 - true表示打开低功耗模式开关。 - false表示关闭低功耗模式开关，默认为false。 |
@@ -101,6 +108,7 @@ setLowPowerMode(isEnable : boolean): void
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-networkboost)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -123,7 +131,8 @@ try {
  
   
 
-#### netBoost.setDataFlowDesc
+## netBoost.setDataFlowDesc
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -143,6 +152,7 @@ setDataFlowDesc(dataFlowDesc : DataFlowDesc): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dataFlowDesc | DataFlowDesc | 是 | 待设置的数据流描述。 |
@@ -152,6 +162,7 @@ setDataFlowDesc(dataFlowDesc : DataFlowDesc): void
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-networkboost)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -199,7 +210,8 @@ try {
  
   
 
-#### SceneDesc
+## SceneDesc
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -215,6 +227,7 @@ try {
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scene | netQuality.ServiceType | 是 | 表示业务场景类型。 |
@@ -225,7 +238,8 @@ try {
  
   
 
-#### DataFlowDesc
+## DataFlowDesc
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -239,6 +253,7 @@ try {
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dataFlowInfo | DataFlowInfo \| SocketFd | 是 | 数据流信息，可以唯一表示数据流的参数。 |
@@ -249,7 +264,8 @@ try {
  
   
 
-#### DataFlowInfo
+## DataFlowInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -263,6 +279,7 @@ try {
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | protocol | ProtocolType | 是 | 协议类型。 |
@@ -272,7 +289,8 @@ try {
  
   
 
-#### NetAddress
+## NetAddress
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -286,6 +304,7 @@ try {
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | address | string | 是 | IP地址。 |
@@ -294,7 +313,8 @@ try {
  
   
 
-#### ExpectedDescription
+## ExpectedDescription
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -308,6 +328,7 @@ try {
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uplinkBandwidth | number | 否 | 预期上行带宽，单位为Kbps。 |
@@ -320,7 +341,8 @@ try {
  
   
 
-#### SocketFd
+## SocketFd
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -334,6 +356,7 @@ Socket文件描述符。
  
 **起始版本：** 26.0.0
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | Socket文件描述符。 |
@@ -341,7 +364,8 @@ Socket文件描述符。
  
   
 
-#### SceneEvent
+## SceneEvent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -355,6 +379,7 @@ Socket文件描述符。
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SCENE_EVENT_ENTER | 0 | 进入业务场景。 |
@@ -364,7 +389,8 @@ Socket文件描述符。
  
   
 
-#### ProtocolType
+## ProtocolType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -376,6 +402,7 @@ Socket文件描述符。
  
 **起始版本：** 26.0.0
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | PROTOCOL_UDP | 0 | UDP网络协议。 |
@@ -384,7 +411,8 @@ Socket文件描述符。
  
   
 
-#### PriorityLevel
+## PriorityLevel
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -396,6 +424,7 @@ Socket文件描述符。
  
 **起始版本：** 26.0.0
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | PRIO_NORMAL | 0 | 普通优先级。 |

@@ -1,9 +1,9 @@
 # Class (UserAgentMetadata)
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-useragentmetadata
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 UserAgentMetadata是ArkWeb框架中用于配置User-Agent Client Hints（UA客户端提示）完整元数据的类。User-Agent Client Hints是一种现代化的HTTP请求标头机制，通过一组Sec-CH-UA系列标头向服务器报告客户端信息，替代传统User-Agent字符串实现更安全、更细粒度的浏览器身份标识。通过UserAgentMetadata，应用可以自定义Web组件向服务器报告的所有客户端信息字段。
 
@@ -12,9 +12,10 @@ UserAgentMetadata是ArkWeb框架中用于配置User-Agent Client Hints（UA客�
 
 
 
-#### setBrandVersionList
+## setBrandVersionList
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setBrandVersionList(brandVersionList: Array&lt;UserAgentBrandVersion&gt;): void
 
@@ -25,6 +26,7 @@ setBrandVersionList(brandVersionList: Array&lt;UserAgentBrandVersion&gt;): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -37,9 +39,10 @@ setBrandVersionList(brandVersionList: Array&lt;UserAgentBrandVersion&gt;): void
 
 
 
-#### getBrandVersionList
+## getBrandVersionList
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBrandVersionList(): Array&lt;UserAgentBrandVersion&gt;
 
@@ -50,6 +53,7 @@ getBrandVersionList(): Array&lt;UserAgentBrandVersion&gt;
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -62,9 +66,10 @@ getBrandVersionList(): Array&lt;UserAgentBrandVersion&gt;
 
 
 
-#### setArchitecture
+## setArchitecture
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setArchitecture(arch: string): void
 
@@ -75,6 +80,7 @@ setArchitecture(arch: string): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -87,9 +93,10 @@ setArchitecture(arch: string): void
 
 
 
-#### getArchitecture
+## getArchitecture
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getArchitecture(): string
 
@@ -100,6 +107,7 @@ getArchitecture(): string
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -112,9 +120,10 @@ getArchitecture(): string
 
 
 
-#### setBitness
+## setBitness
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setBitness(bitness: string): void
 
@@ -125,6 +134,7 @@ setBitness(bitness: string): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -137,9 +147,10 @@ setBitness(bitness: string): void
 
 
 
-#### getBitness
+## getBitness
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBitness(): string
 
@@ -150,6 +161,7 @@ getBitness(): string
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -162,9 +174,10 @@ getBitness(): string
 
 
 
-#### setFormFactors
+## setFormFactors
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setFormFactors(formFactors: Array&lt;UserAgentFormFactor&gt;): void
 
@@ -175,6 +188,7 @@ setFormFactors(formFactors: Array&lt;UserAgentFormFactor&gt;): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -187,19 +201,21 @@ setFormFactors(formFactors: Array&lt;UserAgentFormFactor&gt;): void
 
 
 
-#### getFormFactors
+## getFormFactors
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFormFactors(): Array&lt;UserAgentFormFactor&gt;
 
-获取设备形态信息，如手机、平板等。不调用对应的[setFormFactors](#setformfactors)进行设置时，形态信息默认值：手机："Mobile"，手表："Watch"，车机："Automotive"，PC："Desktop"，平板："Tablet"。
+获取设备形态信息，如手机、平板等。不调用对应的[setFormFactors](#setformfactors)进行设置时，形态信息默认值：手机："Mobile"、手表："Watch"、车机："Automotive"、PC："Desktop"、平板："Tablet"。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -212,9 +228,10 @@ getFormFactors(): Array&lt;UserAgentFormFactor&gt;
 
 
 
-#### setFullVersion
+## setFullVersion
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setFullVersion(fullVersion: string): void
 
@@ -225,6 +242,7 @@ setFullVersion(fullVersion: string): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -237,9 +255,10 @@ setFullVersion(fullVersion: string): void
 
 
 
-#### getFullVersion
+## getFullVersion
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFullVersion(): string
 
@@ -250,6 +269,7 @@ getFullVersion(): string
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -262,9 +282,10 @@ getFullVersion(): string
 
 
 
-#### setMobile
+## setMobile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMobile(isMobile: boolean): void
 
@@ -275,6 +296,7 @@ setMobile(isMobile: boolean): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -287,9 +309,10 @@ setMobile(isMobile: boolean): void
 
 
 
-#### getMobile
+## getMobile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMobile(): boolean
 
@@ -300,6 +323,7 @@ getMobile(): boolean
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -312,9 +336,10 @@ getMobile(): boolean
 
 
 
-#### setModel
+## setModel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setModel(model: string): void
 
@@ -325,6 +350,7 @@ setModel(model: string): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -337,19 +363,21 @@ setModel(model: string): void
 
 
 
-#### getModel
+## getModel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getModel(): string
 
-获取设备型号。不调用对应的[setModel](#setmodel)设置时，型号默认值：手机根据const.product.model取设备型号，手表、大屏、车机、PC、平板：""。
+获取设备型号。不调用对应的[setModel](#setmodel)设置时，型号默认值：手机根据const.product.model取设备型号；手表、大屏、车机、PC、平板：""。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -362,9 +390,10 @@ getModel(): string
 
 
 
-#### setPlatform
+## setPlatform
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setPlatform(platform: string): void
 
@@ -375,6 +404,7 @@ setPlatform(platform: string): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -387,9 +417,10 @@ setPlatform(platform: string): void
 
 
 
-#### getPlatform
+## getPlatform
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPlatform(): string
 
@@ -400,6 +431,7 @@ getPlatform(): string
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -412,9 +444,10 @@ getPlatform(): string
 
 
 
-#### setPlatformVersion
+## setPlatformVersion
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setPlatformVersion(platformVersion: string): void
 
@@ -425,6 +458,7 @@ setPlatformVersion(platformVersion: string): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -437,9 +471,10 @@ setPlatformVersion(platformVersion: string): void
 
 
 
-#### getPlatformVersion
+## getPlatformVersion
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPlatformVersion(): string
 
@@ -450,6 +485,7 @@ getPlatformVersion(): string
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -462,9 +498,10 @@ getPlatformVersion(): string
 
 
 
-#### setWow64
+## setWow64
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setWow64(isWow64: boolean): void
 
@@ -475,6 +512,7 @@ setWow64(isWow64: boolean): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -487,9 +525,10 @@ setWow64(isWow64: boolean): void
 
 
 
-#### getWow64
+## getWow64
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getWow64(): boolean
 
@@ -500,6 +539,7 @@ getWow64(): boolean
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |

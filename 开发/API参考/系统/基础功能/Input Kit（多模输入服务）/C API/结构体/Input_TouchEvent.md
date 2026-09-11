@@ -1,18 +1,19 @@
 # Input_TouchEvent
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-input-input-touchevent
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct Input_TouchEvent Input_TouchEvent
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 触屏输入事件对象，用于表示触屏输入的详细信息，包括触摸点位置、触摸状态、时间戳等。
  
@@ -24,6 +25,7 @@ typedef struct Input_TouchEvent Input_TouchEvent
  
 **相关接口：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_Input_CreateTouchEvent | 创建触屏输入事件对象。通过调用OH_Input_DestroyTouchEvent销毁触屏输入事件对象。 |

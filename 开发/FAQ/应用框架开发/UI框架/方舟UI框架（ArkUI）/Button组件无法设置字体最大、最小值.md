@@ -19,7 +19,7 @@ struct FontSizeButtonExample {
       Button(this.text)
         .width(this.widthShortSize)
         .height(100)
-        //// Set the font size range to 20-40vp，Automatically adjust during actual rendering.
+       <em> //// Set the font size range to 20-40vp，Automatically adjust during actual rendering.</em>
         .labelStyle({
           overflow: TextOverflow.Clip,
           maxLines: 1,

@@ -1,6 +1,6 @@
 # Web组件焦点管理
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-focus
 
@@ -21,7 +21,7 @@
 
 
 
-#### 基础概念
+## 基础概念
 
 Web组件焦点、焦点链和走焦的详情说明请参考[ArkUI焦点基础概念](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-events-focus-event#基础概念)。
 
@@ -37,13 +37,13 @@ Web组件焦点、焦点链和走焦的详情说明请参考[ArkUI焦点基础�
 
 
 
-#### Web组件走焦规范
+## Web组件走焦规范
 
 根据走焦的触发方式，可以分为主动走焦和被动走焦，Web组件走焦规范详情参考[ArkUI走焦规范](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-events-focus-event#走焦规范)。
 
 
 
-#### 主动走焦
+### 主动走焦
 
 指开发者或用户主观行为导致的焦点移动。包括：使用requestFocus申请焦点、外接键盘的按键走焦（Tab键/Shift+Tab键）、点击申请焦点（手势/鼠标/触摸板）等导致的焦点转移。
 
@@ -56,14 +56,14 @@ Web组件焦点、焦点链和走焦的详情说明请参考[ArkUI焦点基础�
 支持Web组件与其他组件通过Tab键、Shift+Tab键走焦。
  - 支持Web组件内部网页元素通过Tab键、Shift+Tab键走焦，网页元素走焦完成后，抛回ArkUI继续框架侧走焦。
 
-      - 点击申请获焦
+            - 点击申请获焦
 
   开发者或用户可通过手势、鼠标或触摸板点击Web组件，使其主动获得焦点。当具体点击到Web组件内的某个元素时，该元素能够获得焦点，例如：点击网页内的输入框，可使其从不可编辑状态转变为可编辑状态，并激活输入法。
 
 
 
 
-#### 被动走焦
+### 被动走焦
 
 被动走焦指焦点因系统或其他操作而转移，无需开发者直接干预，是焦点系统的默认行为。
 
@@ -79,7 +79,7 @@ Web组件焦点、焦点链和走焦的详情说明请参考[ArkUI焦点基础�
 
 
 
-#### Web组件与ArkUI组件焦点控制
+## Web组件与ArkUI组件焦点控制
 
  - 应用侧通用获焦回调接口[onFocus](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-focus-event#onfocus)，获焦事件回调，绑定该接口的组件获焦时，回调响应。
  - 应用侧通用失焦回调接口[onBlur](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-focus-event#onblur)，失焦事件回调，绑定该接口的组件失焦时，回调响应。
@@ -162,7 +162,7 @@ struct WebComponent {
 
 
 
-#### Web组件内H5元素焦点控制
+## Web组件内H5元素焦点控制
 
  - W3C标准事件focus，前端感知网页获焦
 

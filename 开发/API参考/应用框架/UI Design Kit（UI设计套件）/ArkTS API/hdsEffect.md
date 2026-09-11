@@ -1,6 +1,6 @@
-# hdsEffect
+# hdsEffect (hds高级视效)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdseffect
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -10,7 +10,8 @@
 **起始版本：** 6.0.0(20)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -20,7 +21,8 @@ import { hdsEffect } from '@kit.UIDesignKit';
  
   
 
-#### HdsEffectBuilder
+## HdsEffectBuilder
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -34,7 +36,8 @@ import { hdsEffect } from '@kit.UIDesignKit';
  
   
 
-#### constructor
+### constructor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -50,7 +53,8 @@ HdsEffectBuilder的构造函数。
  
   
 
-#### pointLight
+### pointLight
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -66,6 +70,7 @@ pointLight(value: PointLightEffect): HdsEffectBuilder
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | PointLightEffect | 是 | 设置组件点光源属性。通过设置光源和被照亮的类型，实现点光源照亮周围组件的UI效果。 说明：光源位置初始化为组件正中心，不会跟着组件的位移而变化位置，因此不建议在滚动组件中使用点光源效果。 |
@@ -73,6 +78,7 @@ pointLight(value: PointLightEffect): HdsEffectBuilder
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | HdsEffectBuilder | 返回HdsEffectBuilder对象。 |
@@ -147,7 +153,8 @@ struct Index {
  
   
 
-#### pressShadow
+### pressShadow
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -163,6 +170,7 @@ pressShadow(type: PressShadowType): HdsEffectBuilder
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | PressShadowType | 是 | 设置组件按压阴影效果。 |
@@ -170,6 +178,7 @@ pressShadow(type: PressShadowType): HdsEffectBuilder
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | HdsEffectBuilder | 返回HdsEffectBuilder对象。 |
@@ -230,7 +239,8 @@ struct PressShadowExample {
  
   
 
-#### shaderEffect
+### shaderEffect
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -246,6 +256,7 @@ shaderEffect(params: ShaderEffectParams): HdsEffectBuilder
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | ShaderEffectParams | 是 | shader视效参数。 |
@@ -253,6 +264,7 @@ shaderEffect(params: ShaderEffectParams): HdsEffectBuilder
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | HdsEffectBuilder | 返回HdsEffectBuilder对象。 |
@@ -303,6 +315,28 @@ struct Index {
       .clip(true)
       .height(200)
       .backgroundColor('#383838')
+      Row() {
+        // 开始执行视效
+        Button('play').onClick((event: ClickEvent) => {
+          this.controller.play();
+        })
+        // 暂停视效
+        Button('pause').onClick((event: ClickEvent) => {
+          this.controller.pause();
+        })
+        // 继续执行视效
+        Button('resume').onClick((event: ClickEvent) => {
+          this.controller.resume();
+        })
+        // 反转视效
+        Button('reverse').onClick((event: ClickEvent) => {
+          this.controller.reverse();
+        })
+        // 停止视效
+        Button('stop').onClick((event: ClickEvent) => {
+          this.controller.stop();
+        })
+      }
     }
     .justifyContent(FlexAlign.Center)
     .backgroundColor(Color.Black)
@@ -318,7 +352,8 @@ struct Index {
  
   
 
-#### buildEffect
+### buildEffect
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -334,6 +369,7 @@ buildEffect(): VisualEffect
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | VisualEffect | 返回带有各种视觉效果的VisualEffect。 |
@@ -341,7 +377,8 @@ buildEffect(): VisualEffect
  
   
 
-#### ShaderEffectParams
+## ShaderEffectParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -353,6 +390,7 @@ shaderEffect视效配置。
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | effectType | EffectType | 否 | 否 | 视效类型。 |
@@ -363,7 +401,8 @@ shaderEffect视效配置。
  
   
 
-#### EffectType
+## EffectType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -377,6 +416,7 @@ shaderEffect视效配置。
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DUAL_EDGE_FLOW_LIGHT | 0 | 双边边缘流光。 |
@@ -385,7 +425,8 @@ shaderEffect视效配置。
  
   
 
-#### AnimationParams
+## AnimationParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -397,6 +438,7 @@ shaderEffect视效配置。
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | duration | number | 否 | 是 | 视效动画播放一次时间，单位为ms(毫秒)。 默认值：1000。 说明： - 设置小于0的值时按0处理。 - 设置浮点型类型的值时，向下取整。例如，设置值为1.2，按照1处理。 |
@@ -410,7 +452,8 @@ shaderEffect视效配置。
  
   
 
-#### OnFinishCallback
+## OnFinishCallback
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -426,7 +469,8 @@ type OnFinishCallback = () => void
  
   
 
-#### ExpectedFrameRateRange
+## ExpectedFrameRateRange
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -438,6 +482,7 @@ type OnFinishCallback = () => void
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | expected | FrameRateType | 否 | 否 | 目标帧率。 |
@@ -447,7 +492,8 @@ type OnFinishCallback = () => void
  
   
 
-#### FrameRateType
+## FrameRateType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -459,6 +505,7 @@ type OnFinishCallback = () => void
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | FRAME_RATE_15 | 15 | 帧率15FPS。 |
@@ -468,7 +515,8 @@ type OnFinishCallback = () => void
  
   
 
-#### EffectParams
+## EffectParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -482,6 +530,7 @@ type EffectParams = DualEdgeFlowLightParam | UVFlowLightColorParam
  
 **起始版本：** 6.0.0(20)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DualEdgeFlowLightParam | 双边边缘流光视效参数。 |
@@ -490,7 +539,8 @@ type EffectParams = DualEdgeFlowLightParam | UVFlowLightColorParam
  
   
 
-#### DualEdgeFlowLightParam
+## DualEdgeFlowLightParam
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -502,6 +552,7 @@ type EffectParams = DualEdgeFlowLightParam | UVFlowLightColorParam
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | firstEdgeFlowLight | EdgeFlowLightParam | 否 | 否 | 第一条流光参数配置。 |
@@ -510,7 +561,8 @@ type EffectParams = DualEdgeFlowLightParam | UVFlowLightColorParam
  
   
 
-#### UVFlowLightColorParam
+## UVFlowLightColorParam
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -522,6 +574,7 @@ UV流光视效参数。
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | colorSource | Array&lt;ResourceColor&gt; | 否 | 否 | 背景流光颜色。 |
@@ -530,7 +583,8 @@ UV流光视效参数。
  
   
 
-#### EdgeFlowLightParam
+## EdgeFlowLightParam
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -542,6 +596,7 @@ UV流光视效参数。
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | startPos | number | 否 | 否 | 流光开始位置。以视效容器的上边缘的中点为起始点，取值单位为起始点沿着容器边缘至目标位置的距离与容器周长的比值。沿着容器边缘逆时针为正方向，顺时针为负方向。 |
@@ -551,7 +606,8 @@ UV流光视效参数。
  
   
 
-#### ShaderEffectController
+## ShaderEffectController
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -565,7 +621,8 @@ UV流光视效参数。
  
   
 
-#### constructor
+### constructor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -581,7 +638,8 @@ ShaderEffectController的构造函数。
  
   
 
-#### play
+### play
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -597,7 +655,8 @@ play(): void
  
   
 
-#### pause
+### pause
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -613,7 +672,8 @@ pause(): void
  
   
 
-#### resume
+### resume
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -629,7 +689,8 @@ resume(): void
  
   
 
-#### reverse
+### reverse
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -645,7 +706,8 @@ reverse(): void
  
   
 
-#### stop
+### stop
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -661,7 +723,8 @@ stop(): void
  
   
 
-#### setEffectParams
+### setEffectParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -675,6 +738,7 @@ setEffectParams(params: EffectParams): void
  
 **起始版本：** 6.0.0(20)
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | EffectParams | 是 | shaders视效参数。 |
@@ -682,7 +746,8 @@ setEffectParams(params: EffectParams): void
  
   
 
-#### PointLightEffect
+## PointLightEffect
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -694,6 +759,7 @@ setEffectParams(params: EffectParams): void
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | sourceType | PointLightSourceType | 否 | 是 | 组件发光效果类型，发光会影响到周围标记为可以被照亮的组件，并在组件上产生光效。 默认值：NONE，不发光。 |
@@ -707,7 +773,8 @@ setEffectParams(params: EffectParams): void
  
   
 
-#### PointLightSourceType
+## PointLightSourceType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -719,6 +786,7 @@ setEffectParams(params: EffectParams): void
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NONE | 0 | 组件光源类型：点光源不生效，组件无发光效果。 |
@@ -728,7 +796,8 @@ setEffectParams(params: EffectParams): void
  
   
 
-#### PointLightIlluminatedType
+## PointLightIlluminatedType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -740,6 +809,7 @@ setEffectParams(params: EffectParams): void
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NONE | 0 | 组件受光类型：不被照亮。 |
@@ -751,7 +821,8 @@ setEffectParams(params: EffectParams): void
  
   
 
-#### PointLightOptions
+## PointLightOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -763,6 +834,7 @@ setEffectParams(params: EffectParams): void
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | color | ResourceColor | 否 | 是 | 光源颜色。 默认值：Color.White。 |
@@ -773,7 +845,8 @@ setEffectParams(params: EffectParams): void
  
   
 
-#### PressShadowType
+## PressShadowType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -785,6 +858,7 @@ setEffectParams(params: EffectParams): void
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NONE | 0 | 无按压阴影效果。 |

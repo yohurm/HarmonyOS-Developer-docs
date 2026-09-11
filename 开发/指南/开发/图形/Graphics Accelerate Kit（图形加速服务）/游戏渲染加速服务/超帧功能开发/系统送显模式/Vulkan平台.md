@@ -1,10 +1,10 @@
 # Vulkan平台
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-accelerate-fg-systempresent-vulkan
 
-#### 业务流程
+## 业务流程
 
 基于Vulkan图形API平台，系统送显模式的主要业务流程如下：
 
@@ -29,7 +29,7 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 
 本节阐述基于Vulkan图形API平台的系统送显模式调用示例。详细代码请参考[图形开发Sample（超帧Vulkan）](https://gitcode.com/harmonyos_samples/frame-generation-vulkan-samplecode-clientdemo-cpp)。
 1. 设置meta-data。在应用的module.json5中声明meta-data以支持系统送显模式。
@@ -159,14 +159,14 @@ VulkanFG::Image m_sceneDepthStencil{};
 // 创建真实帧颜色缓冲区图像实例
 m_ffSceneColor = HMS_FG_CreateImage_VK(m_context, m_sceneColor.GetNativeImage(), m_sceneColor.GetNativeImageView());
 if (!m_ffSceneColor) {
-    GOLOGE("HMS_FG_RegisterImage_VK m_ffSceneColor execution failed.");
+    GOLOGE("HMS_FG_CreateImage_VK m_ffSceneColor execution failed.");
     return false;
 }
 // 创建真实帧深度模板缓冲区图像实例
 m_ffDepthStencil = HMS_FG_CreateImage_VK(m_context, m_sceneDepthStencil.GetNativeImage(),
                                          m_sceneDepthStencil.GetNativeImageView());
 if (!m_ffDepthStencil) {
-    GOLOGE("HMS_FG_RegisterImage_VK m_ffDepthStencil execution failed.");
+    GOLOGE("HMS_FG_CreateImage_VK m_ffDepthStencil execution failed.");
     return false;
 }
 ```

@@ -1,13 +1,13 @@
 # picker开发指导
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-components-picker
 
 picker是滑动选择器组件，类型支持普通选择器、日期选择器、时间选择器、时间日期选择器和多列文本选择器。具体用法请参考[picker](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-basic-picker)。
 
 
-#### 创建picker组件
+## 创建picker组件
 
 在pages/index目录下的hml文件中创建一个picker组件。
 
@@ -36,7 +36,7 @@ picker是滑动选择器组件，类型支持普通选择器、日期选择器�
 
 
 
-#### 设置picker类型
+## 设置picker类型
 
 通过设置picker的type属性来选择滑动选择器类型，如定义picker为日期选择器。
 
@@ -84,7 +84,7 @@ export default {
 
 
 
-#### 设置时间显示格式
+## 设置时间显示格式
 
 picker组件的hours属性用于设置时间显示格式，支持12小时制和24小时制两种模式。
 
@@ -123,7 +123,7 @@ picker组件的hours属性用于设置时间显示格式，支持12小时制和2
 
 
 
-#### 添加响应事件
+## 添加响应事件
 
 为picker组件添加change和cancel事件，可以处理用户的选择确定和取消操作。
 
@@ -174,12 +174,12 @@ export default {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/WV10z979Q22ACZsZZwsVSQ/zh-cn_image_0000002686086113.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071856Z&HW-CC-Expire=86400&HW-CC-Sign=2F8E21F011198DAD15E34B13583726DDA1371E2856EC43494630BA9F552FE13C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/qxUHX7XnQhayo1GdjsR8rw/zh-cn_image_0000002747290749.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073134Z&HW-CC-Expire=86400&HW-CC-Sign=34B1DA82C721353451F1A84A5EDCEF8C04A4E0519271292F4EBCBA7F36BC7DC0)
 
 
 
 
-#### 场景示例
+## 场景示例
 
 在本场景中，开发者可以自定义填写健康情况以完成打卡。
 
@@ -305,4 +305,4 @@ export default {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/yN6f9G5OS3SQzvb73oIHkg/zh-cn_image_0000002685926285.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071856Z&HW-CC-Expire=86400&HW-CC-Sign=04FDBD74AC2B62D4B2CB314569FC35345BC1742BA0E237E5C2CCDACB203BDD99)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/1zNOGWVyT3mH9pRuO5xFEA/zh-cn_image_0000002747210667.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073134Z&HW-CC-Expire=86400&HW-CC-Sign=1E10907F6CC50F059E7D393A133B2697745BBD3637DFC37D8B6961F4FF4D8E0B)

@@ -1,9 +1,9 @@
 # TabContent
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TabContent组件用于在[Tabs](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs)中定义每个页签的内容视图，支持单个子组件渲染、内容裁切控制、页签样式自定义等特性。适用于需要多页签切换的应用场景，如分类导航、功能模块切换等，帮助开发者快速实现内容分页展示和交互。
 
@@ -12,9 +12,10 @@ TabContent组件用于在[Tabs](https://developer.huawei.com/consumer/cn/doc/har
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持单个子组件。
 
@@ -24,9 +25,10 @@ TabContent组件用于在[Tabs](https://developer.huawei.com/consumer/cn/doc/har
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TabContent()
 
@@ -42,17 +44,19 @@ TabContent()
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
 
 
 
-#### tabBar
+### tabBar
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 tabBar(options: string | Resource | CustomBuilder | TabBarOptions)
 
@@ -66,6 +70,7 @@ tabBar(options: string | Resource | CustomBuilder | TabBarOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | string \| Resource \| CustomBuilder8+\| TabBarOptions18+ | 是 | TabBar上显示内容。 CustomBuilder： 构造器，内部可以传入组件（API version 8版本以上适用）。 |
@@ -73,15 +78,16 @@ tabBar(options: string | Resource | CustomBuilder | TabBarOptions)
 
 
 
-#### tabBar9+
+### tabBar9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 tabBar(value: SubTabBarStyle | BottomTabBarStyle)
 
-设置TabBar上显示内容。底部样式没有下划线效果。当图标资源加载失败或不存在时，显示灰色图块。
+设置TabBar上显示内容。底部样式没有下划线效果。icon异常时显示灰色图块。
 
-如果icon采用svg格式图源，需删除其内置的宽高属性。否则，icon大小将使用svg图源内置的宽高属性值。
+如果icon采用svg格式图源，需删除svg图源内置的宽高属性。否则，icon大小将使用svg图源内置的宽高属性值。
 
 设置的内容超出TabBar页签时进行裁切。
 
@@ -95,22 +101,24 @@ tabBar(value: SubTabBarStyle | BottomTabBarStyle)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | SubTabBarStyle \| BottomTabBarStyle | 是 | TabBar上显示的内容，支持子页签样式或底部页签样式。 SubTabBarStyle： 子页签样式。 BottomTabBarStyle： 底部页签和侧边页签样式，底部样式没有下划线效果。 |
+| value | SubTabBarStyle \| BottomTabBarStyle | 是 | TabBar上显示内容。 SubTabBarStyle： 子页签样式。 BottomTabBarStyle： 底部页签和侧边页签样式，底部样式没有下划线效果。 |
 
 
 
 
-#### tabBar18+
+### tabBar18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 tabBar(content: ComponentContent | SubTabBarStyle | BottomTabBarStyle | string | Resource | CustomBuilder | TabBarOptions)
 
 设置TabBar上显示内容。
 
-使用BottomTabBarStyle或TabBarOptions类型作为入参并设置icon，当图标资源加载失败或不存在时，显示灰色图块。如果icon采用svg格式图源，需删除其内置的宽高属性。否则，icon大小将使用svg图源内置的宽高属性值。
+使用BottomTabBarStyle或TabBarOptions类型作为入参并设置icon，icon异常时显示灰色图块。如果icon采用svg格式图源，需删除svg图源内置的宽高属性。否则，icon大小将使用svg图源内置的宽高属性值。
 
 设置的内容超出TabBar页签时进行裁切。
 
@@ -122,20 +130,22 @@ tabBar(content: ComponentContent | SubTabBarStyle | BottomTabBarStyle | string |
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | content | ComponentContent \| SubTabBarStyle \|BottomTabBarStyle \| string \| Resource \| CustomBuilder\| TabBarOptions | 是 | TabBar上显示内容。 ComponentContent： 组件内容的实体封装，可以设置自定义内容。 说明： 1.自定义内容不支持labelStyle属性。 2.自定义内容超出页签范围，则不显示超出部分。 3.自定义内容小于页签范围，则会居中对齐。 4.自定义内容异常或无可用显示组件，则显示空白。 SubTabBarStyle： 子页签样式。 BottomTabBarStyle： 底部页签和侧边页签样式，底部样式没有下划线效果。 string： 字符串类型。 Resource： 资源引用类型，引入系统资源或者应用资源中的字符串。 CustomBuilder： 构造器，内部可以传入组件。 TabBarOptions： 设置页签内的图片和文字内容。 |
 
 
 > [!NOTE]
-> TabContent组件不支持设置通用宽度属性，其宽度默认为Tabs父组件的宽度。 TabContent组件不支持设置通用高度属性，其高度由Tabs父组件高度与TabBar组件高度决定。 vertical属性为false时，上述2个限制交换。 TabContent组件不支持内容过长时页面的滑动，如需页面滑动，可嵌套List使用。 建议对Tabs组件的所有TabContent子组件的tabBar属性，采用统一的参数类型。 若TabContent内部有可获焦组件，Tabs组件内TabContent组件和TabBar组件之间的走焦，仅支持通过键盘的方向键控制。 TabBar的属性动态修改后，会重新进行渲染，更新相关属性并重置所有页签位置。
+> TabContent组件不支持设置通用宽度属性，其宽度默认撑满Tabs父组件。 TabContent组件不支持设置通用高度属性，其高度由Tabs父组件高度与TabBar组件高度决定。 vertical属性为false时，上述2个限制交换。 TabContent组件不支持内容过长时页面的滑动，如需页面滑动，可嵌套List使用。 建议对Tabs组件的所有TabContent子组件的tabBar属性，采用统一的参数类型。 若TabContent内部有可获焦组件，Tabs组件内TabContent组件和TabBar组件之间的走焦，仅支持通过键盘的方向键控制。 TabBar的属性动态修改后，会重新进行渲染，更新相关属性并重置所有页签位置。
 
 
 
 
-#### TabBarOptions18+对象说明
+## TabBarOptions18+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置页签内的图片和文字内容。
 
@@ -149,25 +159,28 @@ tabBar(content: ComponentContent | SubTabBarStyle | BottomTabBarStyle | string |
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| icon7+ | string \| Resource | 否 | 是 | 页签内的图片内容。未设置时不显示图片。如果icon采用svg格式图源，需删除其内置的宽高属性。否则，icon大小将使用svg图源内置的宽高属性值。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| icon7+ | string \| Resource | 否 | 是 | 页签内的图片内容。未设置时不显示图片。如果icon采用svg格式图源，需删除svg图源内置的宽高属性。否则，icon大小将使用svg图源内置的宽高属性值。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | text7+ | string \| Resource | 否 | 是 | 页签内的文字内容。未设置时不显示文字。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 
 
 
 
-#### SubTabBarStyle9+
+## SubTabBarStyle9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 子页签样式。打开后在切换页签时会播放跳转动画。
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(content: ResourceStr)
 
@@ -179,6 +192,7 @@ SubTabBarStyle的构造函数。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | content | ResourceStr | 是 | 页签内的文字内容。 |
@@ -186,9 +200,10 @@ SubTabBarStyle的构造函数。
 
 
 
-#### constructor12+
+### constructor12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(content: ResourceStr | ComponentContent)
 
@@ -202,6 +217,7 @@ SubTabBarStyle的构造函数。支持ComponentContent设置自定义内容。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | content | ResourceStr \| ComponentContent | 是 | 页签内的内容。 说明： 1.自定义内容不支持labelStyle属性。 2.自定义内容超出页签范围，则不显示超出部分。 3.自定义内容小于页签范围，则会居中对齐。 4.自定义内容异常或无可用显示组件，则显示空白。 |
@@ -209,9 +225,10 @@ SubTabBarStyle的构造函数。支持ComponentContent设置自定义内容。
 
 
 
-#### of10+
+### of10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static of(content: ResourceStr): SubTabBarStyle
 
@@ -225,12 +242,14 @@ SubTabBarStyle的静态构造函数。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | content | ResourceStr | 是 | 页签内的文字内容。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -239,9 +258,10 @@ SubTabBarStyle的静态构造函数。
 
 
 
-#### of12+
+### of12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static of(content: ResourceStr | ComponentContent): SubTabBarStyle
 
@@ -255,12 +275,14 @@ SubTabBarStyle的静态构造函数。支持ComponentContent设置自定义内�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | content | ResourceStr \| ComponentContent | 是 | 页签内的内容。支持ComponentContent设置自定义内容。 说明： 1.自定义内容不支持labelStyle属性。 2.自定义内容超出页签范围，则不显示超出部分。 3.自定义内容小于页签范围，则会居中对齐。 4.自定义内容异常或无可用显示组件，则显示空白。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -269,9 +291,10 @@ SubTabBarStyle的静态构造函数。支持ComponentContent设置自定义内�
 
 
 
-#### indicator10+
+### indicator10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 indicator(value: IndicatorStyle): SubTabBarStyle
 
@@ -285,12 +308,14 @@ indicator(value: IndicatorStyle): SubTabBarStyle
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | IndicatorStyle | 是 | 选中子页签的下划线风格对象，用于设置下划线的颜色、高度、宽度、圆角半径等样式。 |
+| value | IndicatorStyle | 是 | 选中子页签的下划线风格对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -299,9 +324,10 @@ indicator(value: IndicatorStyle): SubTabBarStyle
 
 
 
-#### indicator22+
+### indicator22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 indicator(value: IndicatorStyle | DrawableTabBarIndicator): SubTabBarStyle
 
@@ -315,6 +341,7 @@ indicator(value: IndicatorStyle | DrawableTabBarIndicator): SubTabBarStyle
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | IndicatorStyle \| DrawableTabBarIndicator | 是 | 选中子页签的下划线风格对象。 IndicatorStyle：一般形式的下划线样式。 DrawableTabBarIndicator：图片形式的下划线样式。 |
@@ -326,6 +353,7 @@ indicator(value: IndicatorStyle | DrawableTabBarIndicator): SubTabBarStyle
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | SubTabBarStyle | 返回SubTabBarStyle对象本身，用于链式调用。 |
@@ -333,9 +361,10 @@ indicator(value: IndicatorStyle | DrawableTabBarIndicator): SubTabBarStyle
 
 
 
-#### selectedMode10+
+### selectedMode10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectedMode(value: SelectedMode): SubTabBarStyle
 
@@ -349,12 +378,14 @@ selectedMode(value: SelectedMode): SubTabBarStyle
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | SelectedMode | 是 | 选中子页签的显示方式，用于控制子页签的选中效果样式。可选值：SelectedMode.INDICATOR（使用下划线模式，适用于需要明确指示选中状态的场景）、SelectedMode.BOARD（使用背板模式，适用于需要突出选中页签的场景）。 默认值：SelectedMode.INDICATOR |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -363,9 +394,10 @@ selectedMode(value: SelectedMode): SubTabBarStyle
 
 
 
-#### board10+
+### board10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 board(value: BoardStyle): SubTabBarStyle
 
@@ -379,12 +411,14 @@ board(value: BoardStyle): SubTabBarStyle
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | BoardStyle | 是 | 选中子页签的背板风格对象，用于设置背板的圆角半径等样式。 |
+| value | BoardStyle | 是 | 选中子页签的背板风格对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -393,9 +427,10 @@ board(value: BoardStyle): SubTabBarStyle
 
 
 
-#### labelStyle10+
+### labelStyle10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 labelStyle(value: LabelStyle): SubTabBarStyle
 
@@ -409,12 +444,14 @@ labelStyle(value: LabelStyle): SubTabBarStyle
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | LabelStyle | 是 | 子页签的label文本和字体的样式对象，用于设置文字的颜色、大小、字体、行数等属性。 |
+| value | LabelStyle | 是 | 子页签的label文本和字体的样式对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -423,9 +460,10 @@ labelStyle(value: LabelStyle): SubTabBarStyle
 
 
 
-#### padding10+
+### padding10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 padding(value: Padding | Dimension): SubTabBarStyle
 
@@ -439,12 +477,14 @@ padding(value: Padding | Dimension): SubTabBarStyle
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | Padding \| Dimension | 是 | 子页签的内边距属性（不支持百分比设置），用于调整页签内容与边界的距离。 取值范围：[0, +∞] 异常值时取默认值。 默认值：{left:8.0vp,right:8.0vp,top:17.0vp,bottom:18.0vp} 说明： 从API version 12开始，新增padding12+方法支持LocalizedPadding类型，支持镜像能力。 |
+| value | Padding \| Dimension | 是 | 子页签的内边距属性（不支持百分比设置）。 取值范围：[0, +∞] 异常值时取默认值。 默认值：{left:8.0vp,right:8.0vp,top:17.0vp,bottom:18.0vp} 说明： 从API version 12开始，参数支持LocalizedPadding类型，支持镜像能力。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -453,9 +493,10 @@ padding(value: Padding | Dimension): SubTabBarStyle
 
 
 
-#### padding12+
+### padding12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 padding(padding: LocalizedPadding): SubTabBarStyle
 
@@ -469,12 +510,14 @@ padding(padding: LocalizedPadding): SubTabBarStyle
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| padding | LocalizedPadding | 是 | 子页签的内边距属性（不支持百分比设置），用于调整页签内容与边界的距离，支持镜像能力。 取值范围：[0, +∞] 异常值时取默认值。 默认值：{start:LengthMetrics.vp(8),end:LengthMetrics.vp(8), top:LengthMetrics.vp(17),bottom:LengthMetrics.vp(18)} |
+| padding | LocalizedPadding | 是 | 子页签的内边距属性。 取值范围：[0, +∞] 异常值时取默认值。 默认值：{start:LengthMetrics.vp(8),end:LengthMetrics.vp(8), top:LengthMetrics.vp(17),bottom:LengthMetrics.vp(18)} |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -483,13 +526,14 @@ padding(padding: LocalizedPadding): SubTabBarStyle
 
 
 
-#### id11+
+### id11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 id(value: string): SubTabBarStyle
 
-设置子页签的id。可用于通过TabsController查找或控制指定页签，以及在状态管理和事件处理中标识不同的页签。
+设置子页签的id。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -499,12 +543,14 @@ id(value: string): SubTabBarStyle
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | string | 是 | 子页签的id，用于标识和区分不同的页签。当需要通过代码控制特定页签的显示、隐藏或进行其他操作时，可设置此参数。id值需在同一Tabs组件内保持唯一。 |
+| value | string | 是 | 子页签的id。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -513,9 +559,10 @@ id(value: string): SubTabBarStyle
 
 
 
-#### IndicatorStyle10+对象说明
+## IndicatorStyle10+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 下划线风格对象。
 
@@ -524,6 +571,7 @@ id(value: string): SubTabBarStyle
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -536,9 +584,10 @@ id(value: string): SubTabBarStyle
 
 
 
-#### DrawableTabBarIndicator22+对象说明
+## DrawableTabBarIndicator22+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 使用图片资源作为下划线的对象。
 
@@ -547,6 +596,7 @@ id(value: string): SubTabBarStyle
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -559,9 +609,10 @@ id(value: string): SubTabBarStyle
 
 
 
-#### DrawableDescriptor22+
+## DrawableDescriptor22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type DrawableDescriptor = DrawableDescriptor
 
@@ -573,6 +624,7 @@ type DrawableDescriptor = DrawableDescriptor
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | DrawableDescriptor | 返回一个DrawableDescriptor对象。 |
@@ -580,9 +632,10 @@ type DrawableDescriptor = DrawableDescriptor
 
 
 
-#### SelectedMode10+枚举说明
+## SelectedMode10+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 选中子页签的显示模式枚举。
 
@@ -592,6 +645,7 @@ type DrawableDescriptor = DrawableDescriptor
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | INDICATOR | 0 | 使用下划线模式。适用于需要明确指示选中状态的场景，如新闻资讯类应用。 |
@@ -600,9 +654,10 @@ type DrawableDescriptor = DrawableDescriptor
 
 
 
-#### BoardStyle10+对象说明
+## BoardStyle10+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 背板风格对象。
 
@@ -612,6 +667,7 @@ type DrawableDescriptor = DrawableDescriptor
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | borderRadius | Length | 否 | 是 | 背板的圆角半径（不支持百分比设置）。 默认值：8.0 单位：vp 取值范围：[0, +∞)。异常值时取默认值。 |
@@ -619,15 +675,17 @@ type DrawableDescriptor = DrawableDescriptor
 
 
 
-#### LabelStyle10+对象说明
+## LabelStyle10+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 label文本和字体的样式对象。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -643,17 +701,19 @@ label文本和字体的样式对象。
 
 
 
-#### BottomTabBarStyle9+
+## BottomTabBarStyle9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 底部页签和侧边页签样式。
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(icon: ResourceStr | TabBarSymbol, text: ResourceStr)
 
@@ -665,17 +725,19 @@ BottomTabBarStyle的构造函数。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| icon | ResourceStr \| TabBarSymbol12+ | 是 | 页签内的图片内容。当图标资源加载失败或不存在时，显示灰色图块。如果icon采用svg格式图源，需删除其内置的宽高属性。否则，icon大小将使用svg图源内置的宽高属性值。 |
+| icon | ResourceStr \| TabBarSymbol12+ | 是 | 页签内的图片内容。异常时显示灰色图块。如果icon采用svg格式图源，需删除svg图源内置的宽高属性。否则，icon大小将使用svg图源内置的宽高属性值。 |
 | text | ResourceStr | 是 | 页签内的文字内容。 |
 
 
 
 
-#### of10+
+### of10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static of(icon: ResourceStr | TabBarSymbol, text: ResourceStr): BottomTabBarStyle
 
@@ -689,24 +751,27 @@ BottomTabBarStyle的静态构造函数。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| icon | ResourceStr \| TabBarSymbol12+ | 是 | 页签内的图片内容。当图标资源加载失败或不存在时，显示灰色图块。如果icon采用svg格式图源，需删除其内置的宽高属性。否则，icon大小将使用svg图源内置的宽高属性值。 |
+| icon | ResourceStr \| TabBarSymbol12+ | 是 | 页签内的图片内容。异常时显示灰色图块。如果icon采用svg格式图源，需删除svg图源内置的宽高属性。否则，icon大小将使用svg图源内置的宽高属性值。 |
 | text | ResourceStr | 是 | 页签内的文字内容。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| BottomTabBarStyle | 返回创建的BottomTabBarStyle对象，用于设置底部页签和侧边页签样式。 |
+| BottomTabBarStyle | 返回创建的BottomTabBarStyle对象。 |
 
 
 
 
-#### padding10+
+### padding10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 padding(value: Padding | Dimension | LocalizedPadding): BottomTabBarStyle
 
@@ -720,6 +785,7 @@ padding(value: Padding | Dimension | LocalizedPadding): BottomTabBarStyle
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Padding \| Dimension \| LocalizedPadding12+ | 是 | 底部页签的内边距，用于设置页签内容与边界的距离（不支持百分比设置）。当需要调整页签内部空间分布、优化视觉效果时传入自定义值。 取值范围：[0, +∞] 默认值：{left:4.0vp,right:4.0vp,top:0.0vp,bottom:0.0vp} 使用LocalizedPadding时，支持镜像能力。 默认值：{start:LengthMetrics.vp(4),end:LengthMetrics.vp(4), top:LengthMetrics.vp(0),bottom:LengthMetrics.vp(0)} |
@@ -727,16 +793,18 @@ padding(value: Padding | Dimension | LocalizedPadding): BottomTabBarStyle
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| BottomTabBarStyle | 返回BottomTabBarStyle对象本身，用于链式调用。 |
+| BottomTabBarStyle | 返回BottomTabBarStyle对象本身。 |
 
 
 
 
-#### verticalAlign10+
+### verticalAlign10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 verticalAlign(value: VerticalAlign): BottomTabBarStyle
 
@@ -750,6 +818,7 @@ verticalAlign(value: VerticalAlign): BottomTabBarStyle
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | VerticalAlign | 是 | 底部页签的图片、文字在垂直方向上的对齐格式。 默认值：VerticalAlign.Center |
@@ -757,16 +826,18 @@ verticalAlign(value: VerticalAlign): BottomTabBarStyle
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| BottomTabBarStyle | 返回BottomTabBarStyle对象本身，用于链式调用。 |
+| BottomTabBarStyle | 返回BottomTabBarStyle对象本身。 |
 
 
 
 
-#### layoutMode10+
+### layoutMode10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 layoutMode(value: LayoutMode): BottomTabBarStyle
 
@@ -780,6 +851,7 @@ layoutMode(value: LayoutMode): BottomTabBarStyle
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | LayoutMode | 是 | 底部页签的图片、文字排布的方式，具体参照LayoutMode枚举。 默认值：LayoutMode.VERTICAL |
@@ -787,16 +859,18 @@ layoutMode(value: LayoutMode): BottomTabBarStyle
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| BottomTabBarStyle | 返回BottomTabBarStyle对象本身，用于链式调用。 |
+| BottomTabBarStyle | 返回BottomTabBarStyle对象本身。 |
 
 
 
 
-#### symmetricExtensible10+
+### symmetricExtensible10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 symmetricExtensible(value: boolean): BottomTabBarStyle
 
@@ -810,6 +884,7 @@ symmetricExtensible(value: boolean): BottomTabBarStyle
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 底部页签的图片、文字是否可以对称借用左右底部页签的空余位置中的最小值。传入true启用对称借用功能（当需要优化页签布局、充分利用空间时选择），传入false禁用对称借用功能（当需要保持页签固定布局、避免页签内容位置变化时选择）。 默认值：false。 |
@@ -817,16 +892,18 @@ symmetricExtensible(value: boolean): BottomTabBarStyle
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| BottomTabBarStyle | 返回BottomTabBarStyle对象本身，用于链式调用。 |
+| BottomTabBarStyle | 返回BottomTabBarStyle对象本身。 |
 
 
 
 
-#### labelStyle10+
+### labelStyle10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 labelStyle(value: LabelStyle): BottomTabBarStyle
 
@@ -840,27 +917,30 @@ labelStyle(value: LabelStyle): BottomTabBarStyle
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | LabelStyle | 是 | 底部页签的label文本和字体的样式，用于设置文字的颜色、大小、字体、行数等属性。 |
+| value | LabelStyle | 是 | 底部页签的label文本和字体的样式。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| BottomTabBarStyle | 返回BottomTabBarStyle对象本身，用于链式调用。 |
+| BottomTabBarStyle | 返回BottomTabBarStyle对象本身。 |
 
 
 
 
-#### id11+
+### id11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 id(value: string): BottomTabBarStyle
 
-底部页签的id。
+设置底部页签的id。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -870,23 +950,26 @@ id(value: string): BottomTabBarStyle
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | string | 是 | 底部页签的id。 |
+| value | string | 是 | 设置底部页签的id。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| BottomTabBarStyle | 返回BottomTabBarStyle对象本身，用于链式调用。 |
+| BottomTabBarStyle | 返回BottomTabBarStyle对象本身。 |
 
 
 
 
-#### iconStyle12+
+### iconStyle12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 iconStyle(style: TabBarIconStyle): BottomTabBarStyle
 
@@ -900,23 +983,26 @@ iconStyle(style: TabBarIconStyle): BottomTabBarStyle
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| style | TabBarIconStyle | 是 | 底部页签图标的样式，用于设置图标的选中态和未选中态颜色。 |
+| style | TabBarIconStyle | 是 | 底部页签图标的样式。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| BottomTabBarStyle | 返回BottomTabBarStyle对象本身，用于链式调用。 |
+| BottomTabBarStyle | 返回BottomTabBarStyle对象本身。 |
 
 
 
 
-#### TabBarSymbol12+对象说明
+## TabBarSymbol12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 页签内symbol图标样式对象。
 
@@ -926,6 +1012,7 @@ iconStyle(style: TabBarIconStyle): BottomTabBarStyle
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | normal | SymbolGlyphModifier | 否 | 否 | 页签内symbol图标普通态样式。 默认值： fontColor：#66182431 renderingStrategy：SymbolRenderingStrategy.MULTIPLE_OPACITY fontSize：24vp |
@@ -934,9 +1021,10 @@ iconStyle(style: TabBarIconStyle): BottomTabBarStyle
 
 
 
-#### LayoutMode10+枚举说明
+## LayoutMode10+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 页签内容排布方式枚举。
 
@@ -946,18 +1034,20 @@ iconStyle(style: TabBarIconStyle): BottomTabBarStyle
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| AUTO | 0 | 若页签宽度大于104vp，页签内容为左右排布（图标在左，文字在右），否则页签内容为上下排布（图标在上，文字在下）。仅TabBar为垂直模式或Fixed水平模式时有效。 |
-| VERTICAL | 1 | 页签内容上下排布，图标在上，文字在下。适用于页签宽度有限、需要节省空间的场景。 |
-| HORIZONTAL | 2 | 页签内容左右排布，图标在左，文字在右。适用于页签宽度充足、需要展示更多内容的场景。 |
+| AUTO | 0 | 若页签宽度大于104vp，页签内容为左右排布，否则页签内容为上下排布。仅TabBar为垂直模式或Fixed水平模式时有效。 |
+| VERTICAL | 1 | 页签内容上下排布。适用于页签宽度有限、需要节省空间的场景。 |
+| HORIZONTAL | 2 | 页签内容左右排布。适用于页签宽度充足、需要展示更多内容的场景。 |
 
 
 
 
-#### TabBarIconStyle12+对象说明
+## TabBarIconStyle12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 页签图标样式对象。
 
@@ -967,6 +1057,7 @@ iconStyle(style: TabBarIconStyle): BottomTabBarStyle
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | unselectedColor | ResourceColor | 否 | 是 | 设置图标未选中时的颜色。 默认值：#33182431 说明： 仅对svg图源生效，设置后会替换svg图片的填充颜色。 |
@@ -975,17 +1066,19 @@ iconStyle(style: TabBarIconStyle): BottomTabBarStyle
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)外，还支持以下事件：
 
 
 
-#### onWillShow12+
+### onWillShow12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onWillShow(event: VoidCallback)
 
@@ -1003,6 +1096,7 @@ onWillShow(event: VoidCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | VoidCallback | 是 | TabContent将要显示的回调函数。 |
@@ -1010,9 +1104,10 @@ onWillShow(event: VoidCallback)
 
 
 
-#### onWillHide12+
+### onWillHide12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onWillHide(event: VoidCallback)
 
@@ -1030,6 +1125,7 @@ onWillHide(event: VoidCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | VoidCallback | 是 | TabContent将要隐藏的回调函数。 |
@@ -1037,13 +1133,17 @@ onWillHide(event: VoidCallback)
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（自定义页签切换联动）
+
+
+### 示例1（自定义页签切换联动）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例通过[onAnimationStart](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#onanimationstart11)、[onChange](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#onchange)实现切换时自定义tabBar和TabContent的联动。
 
@@ -1174,7 +1274,10 @@ struct TabContentExample {
 
 
 
-#### 示例2（自定义侧边页签）
+### 示例2（自定义侧边页签）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例通过[vertical](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#vertical)、[barPosition](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#barposition9)实现侧边页签。
 
@@ -1191,10 +1294,8 @@ struct TabContentExample {
   @State selectedFontColor: string = '#007DFF';
   @State currentIndex: number = 0;
   @State selectedIndex: number = 0;
-  // 创建Tabs控制器，用于控制TabContent切换
   private controller: TabsController = new TabsController();
 
-  // 自定义TabBar构建器，根据选中状态切换图标和文字颜色
   @Builder tabBuilder(index: number) {
     Column() {
       // common目录与pages同级
@@ -1255,7 +1356,10 @@ struct TabContentExample {
 
 
 
-#### 示例3（子页签/底部页签/侧边页签样式对比）
+### 示例3（子页签/底部页签/侧边页签样式对比）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例使用了[SubTabBarStyle](#subtabbarstyle9)、[BottomTabBarStyle](#bottomtabbarstyle9)实现了子页签、底部页签和侧边页签。
 
@@ -1436,7 +1540,10 @@ struct TabBarStyleExample {
 
 
 
-#### 示例4（设置子页签下划线基本属性）
+### 示例4（设置子页签下划线基本属性）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例通过SubTabBarStyle中的[indicator](#indicator10)属性，实现了子页签下划线基本属性的展示。
 
@@ -1678,7 +1785,10 @@ struct TabsAttr {
 
 
 
-#### 示例5（设置子页签文本自适应高度属性）
+### 示例5（设置子页签文本自适应高度属性）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例通过[heightAdaptivePolicy](#labelstyle10对象说明)实现了子页签文本高度自适应。
 
@@ -1770,7 +1880,10 @@ struct TabsTextOverflow {
 
 
 
-#### 示例6（设置底部页签基本属性）
+### 示例6（设置底部页签基本属性）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例通过[padding](#padding10)、[verticalAlign](#verticalalign10)、[layoutMode](#layoutmode10)、[symmetricExtensible](#symmetricextensible10)实现了底部页签基本属性的展示。
 
@@ -1926,7 +2039,10 @@ struct TabContentExample6 {
 
 
 
-#### 示例7（设置子页签/底部页签文本颜色）
+### 示例7（设置子页签/底部页签文本颜色）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例通过[LabelStyle](#labelstyle10对象说明)中的unselectedColor和selectedColor改变底部页签以及子页签的文本颜色。
 
@@ -2030,7 +2146,10 @@ struct TabBarStyleExample {
 
 
 
-#### 示例8（设置底部页签使用symbol图标）
+### 示例8（设置底部页签使用symbol图标）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例实现了[BottomTabBarStyle](#bottomtabbarstyle9)图片传入Symbol。
 
@@ -2118,7 +2237,10 @@ struct Index {
 
 
 
-#### 示例9（通过ComponentContent设置TabBar）
+### 示例9（通过ComponentContent设置TabBar）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例实现了通过[ComponentContent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-componentcontent#componentcontent-1)封装组件内容，设置[TabBar](#tabbar18)。通过ComponentContent的[update](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-componentcontent#update)函数更新TabBar。
 
@@ -2228,7 +2350,10 @@ struct Index {
 
 
 
-#### 示例10（通过ComponentContent预加载子节点）
+### 示例10（通过ComponentContent预加载子节点）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例实现了通过ComponentContent设置TabBar，使用TabsController的[preloadItems](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#preloaditems12)预加载子节点。
 
@@ -2403,12 +2528,15 @@ struct MyComponent {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/m5p6z4l2TQeZ8byY8uhmXQ/zh-cn_image_0000002686087997.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071503Z&HW-CC-Expire=86400&HW-CC-Sign=0E5F1BBA02A4B73471911F531BEFA82A0EAAC3F1E2D6ADA830BEB8AB21A21DD8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/WL69koYYROCMjitxtwodYw/zh-cn_image_0000002717612706.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073115Z&HW-CC-Expire=86400&HW-CC-Sign=48BA4EC1F51CCCB55698641774B4374531B6C56628939FF0A85FA81F929D1810)
 
 
 
 
-#### 示例11（设置子页签indicator为图片）
+### 示例11（设置子页签indicator为图片）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过SubTabBarStyle中的[indicator](#indicator22)属性，实现了图片格式的子页签下划线风格。
 
@@ -2473,4 +2601,4 @@ struct TabsIndicatorExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/8ZbwQwYtSK-fK7xGg7sZFg/zh-cn_image_0000002685928169.png?HW-CC-KV=V1&HW-CC-Date=20260730T071503Z&HW-CC-Expire=86400&HW-CC-Sign=FCAB2A58976B508D3E590716A8C326B95F8776A9D4D1E81B2AD9C88DA0015CA1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/ambjdBarQtSjdnkxYxigCA/zh-cn_image_0000002747292659.png?HW-CC-KV=V1&HW-CC-Date=20260911T073115Z&HW-CC-Expire=86400&HW-CC-Sign=95E3EE323BCC76814828C7031E49358E88A383DA904F11EEE5038C2F95087D3E)

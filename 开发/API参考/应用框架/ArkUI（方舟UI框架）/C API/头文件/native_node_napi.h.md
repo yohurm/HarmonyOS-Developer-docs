@@ -1,13 +1,14 @@
 # native_node_napi.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-node-napi-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供ArkTS侧[FrameNode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode)、[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)、NodeContent、DrawableDescriptor等对象与Native侧对象的转换，以及Navigation、Router页面信息查询、帧回调/空闲回调注册和事件直通启用或禁用等能力，适用于ArkTS与Native侧进行ArkUI节点、上下文、资源和页面状态联动的场景。
 
@@ -25,15 +26,18 @@
 
 
 
-#### 汇总
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 汇总
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 函数
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -64,15 +68,17 @@
 
 
 
-#### 函数说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 函数说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### OH_ArkUI_GetNodeHandleFromNapiValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### OH_ArkUI_GetNodeHandleFromNapiValue()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_GetNodeHandleFromNapiValue(napi_env env, napi_value frameNode, ArkUI_NodeHandle* handle)
@@ -86,6 +92,7 @@ int32_t OH_ArkUI_GetNodeHandleFromNapiValue(napi_env env, napi_value frameNode, 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | napi_env env | Node-API的环境指针。 |
@@ -95,6 +102,7 @@ int32_t OH_ArkUI_GetNodeHandleFromNapiValue(napi_env env, napi_value frameNode, 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常，请检查传入的env、frameNode和handle是否有效。 |
@@ -102,9 +110,10 @@ int32_t OH_ArkUI_GetNodeHandleFromNapiValue(napi_env env, napi_value frameNode, 
 
 
 
-#### OH_ArkUI_GetContextFromNapiValue()
+### OH_ArkUI_GetContextFromNapiValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_GetContextFromNapiValue(napi_env env, napi_value value, ArkUI_ContextHandle* context)
@@ -118,6 +127,7 @@ int32_t OH_ArkUI_GetContextFromNapiValue(napi_env env, napi_value value, ArkUI_C
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | napi_env env | Node-API的环境指针。 |
@@ -127,6 +137,7 @@ int32_t OH_ArkUI_GetContextFromNapiValue(napi_env env, napi_value value, ArkUI_C
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常，请检查传入的env、value和context是否有效。 |
@@ -134,9 +145,10 @@ int32_t OH_ArkUI_GetContextFromNapiValue(napi_env env, napi_value value, ArkUI_C
 
 
 
-#### OH_ArkUI_GetNodeContentFromNapiValue()
+### OH_ArkUI_GetNodeContentFromNapiValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_GetNodeContentFromNapiValue(napi_env env, napi_value value, ArkUI_NodeContentHandle* content)
@@ -150,6 +162,7 @@ int32_t OH_ArkUI_GetNodeContentFromNapiValue(napi_env env, napi_value value, Ark
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | napi_env env | Node-API的环境指针。 |
@@ -159,6 +172,7 @@ int32_t OH_ArkUI_GetNodeContentFromNapiValue(napi_env env, napi_value value, Ark
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常，请检查传入的env、value和content是否有效。 |
@@ -166,9 +180,10 @@ int32_t OH_ArkUI_GetNodeContentFromNapiValue(napi_env env, napi_value value, Ark
 
 
 
-#### OH_ArkUI_GetDrawableDescriptorFromNapiValue()
+### OH_ArkUI_GetDrawableDescriptorFromNapiValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_GetDrawableDescriptorFromNapiValue(napi_env env, napi_value value, ArkUI_DrawableDescriptor** drawableDescriptor)
@@ -182,6 +197,7 @@ int32_t OH_ArkUI_GetDrawableDescriptorFromNapiValue(napi_env env, napi_value val
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | napi_env env | Node-API的环境指针。 |
@@ -191,6 +207,7 @@ int32_t OH_ArkUI_GetDrawableDescriptorFromNapiValue(napi_env env, napi_value val
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常，请检查传入的env、value和drawableDescriptor是否有效。 |
@@ -198,9 +215,10 @@ int32_t OH_ArkUI_GetDrawableDescriptorFromNapiValue(napi_env env, napi_value val
 
 
 
-#### OH_ArkUI_GetDrawableDescriptorFromResourceNapiValue()
+### OH_ArkUI_GetDrawableDescriptorFromResourceNapiValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_GetDrawableDescriptorFromResourceNapiValue(napi_env env, napi_value value, ArkUI_DrawableDescriptor** drawableDescriptor)
@@ -214,6 +232,7 @@ int32_t OH_ArkUI_GetDrawableDescriptorFromResourceNapiValue(napi_env env, napi_v
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | napi_env env | Node-API的环境指针。 |
@@ -223,6 +242,7 @@ int32_t OH_ArkUI_GetDrawableDescriptorFromResourceNapiValue(napi_env env, napi_v
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常，请检查传入的env、value和drawableDescriptor是否有效。 |
@@ -230,9 +250,10 @@ int32_t OH_ArkUI_GetDrawableDescriptorFromResourceNapiValue(napi_env env, napi_v
 
 
 
-#### OH_ArkUI_GetNavigationId()
+### OH_ArkUI_GetNavigationId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_GetNavigationId(ArkUI_NodeHandle node, char* buffer, int32_t bufferSize, int32_t* writeLength)
@@ -246,6 +267,7 @@ ArkUI_ErrorCode OH_ArkUI_GetNavigationId(ArkUI_NodeHandle node, char* buffer, in
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 指定的节点。 |
@@ -256,6 +278,7 @@ ArkUI_ErrorCode OH_ArkUI_GetNavigationId(ArkUI_NodeHandle node, char* buffer, in
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_GET_INFO_FAILED 查询信息失败，可能因为当前节点未挂载在页面下。 ARKUI_ERROR_CODE_BUFFER_SIZE_ERROR 数据大小超过指定的缓冲区大小。 |
@@ -263,9 +286,10 @@ ArkUI_ErrorCode OH_ArkUI_GetNavigationId(ArkUI_NodeHandle node, char* buffer, in
 
 
 
-#### OH_ArkUI_GetNavDestinationName()
+### OH_ArkUI_GetNavDestinationName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_GetNavDestinationName(ArkUI_NodeHandle node, char* buffer, int32_t bufferSize, int32_t* writeLength)
@@ -279,6 +303,7 @@ ArkUI_ErrorCode OH_ArkUI_GetNavDestinationName(ArkUI_NodeHandle node, char* buff
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 指定的节点。 |
@@ -289,6 +314,7 @@ ArkUI_ErrorCode OH_ArkUI_GetNavDestinationName(ArkUI_NodeHandle node, char* buff
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_GET_INFO_FAILED 查询信息失败，可能因为当前节点未挂载在页面下。 ARKUI_ERROR_CODE_BUFFER_SIZE_ERROR 给定的buffer size小于可以容纳目标的最小缓冲区大小。 |
@@ -296,9 +322,10 @@ ArkUI_ErrorCode OH_ArkUI_GetNavDestinationName(ArkUI_NodeHandle node, char* buff
 
 
 
-#### OH_ArkUI_GetNavStackLength()
+### OH_ArkUI_GetNavStackLength()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_GetNavStackLength(ArkUI_NodeHandle node, int32_t* length)
@@ -312,6 +339,7 @@ ArkUI_ErrorCode OH_ArkUI_GetNavStackLength(ArkUI_NodeHandle node, int32_t* lengt
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 指定的节点。 |
@@ -320,6 +348,7 @@ ArkUI_ErrorCode OH_ArkUI_GetNavStackLength(ArkUI_NodeHandle node, int32_t* lengt
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_GET_INFO_FAILED 查询信息失败，可能因为当前节点未挂载在页面下。 |
@@ -327,9 +356,10 @@ ArkUI_ErrorCode OH_ArkUI_GetNavStackLength(ArkUI_NodeHandle node, int32_t* lengt
 
 
 
-#### OH_ArkUI_GetNavDestinationNameByIndex()
+### OH_ArkUI_GetNavDestinationNameByIndex()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_GetNavDestinationNameByIndex(ArkUI_NodeHandle node, int32_t index, char* buffer, int32_t bufferSize, int32_t* writeLength)
@@ -343,6 +373,7 @@ ArkUI_ErrorCode OH_ArkUI_GetNavDestinationNameByIndex(ArkUI_NodeHandle node, int
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 指定的节点。 |
@@ -354,6 +385,7 @@ ArkUI_ErrorCode OH_ArkUI_GetNavDestinationNameByIndex(ArkUI_NodeHandle node, int
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_NODE_INDEX_INVALID index为非法值。 ARKUI_ERROR_CODE_GET_INFO_FAILED 查询信息失败，可能因为当前节点未挂载在页面下。 ARKUI_ERROR_CODE_BUFFER_SIZE_ERROR 给定的buffer size小于可以容纳目标的最小缓冲区大小。 |
@@ -361,9 +393,10 @@ ArkUI_ErrorCode OH_ArkUI_GetNavDestinationNameByIndex(ArkUI_NodeHandle node, int
 
 
 
-#### OH_ArkUI_GetNavDestinationId()
+### OH_ArkUI_GetNavDestinationId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_GetNavDestinationId(ArkUI_NodeHandle node, char* buffer, int32_t bufferSize, int32_t* writeLength)
@@ -377,6 +410,7 @@ ArkUI_ErrorCode OH_ArkUI_GetNavDestinationId(ArkUI_NodeHandle node, char* buffer
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 指定的节点。 |
@@ -387,6 +421,7 @@ ArkUI_ErrorCode OH_ArkUI_GetNavDestinationId(ArkUI_NodeHandle node, char* buffer
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_GET_INFO_FAILED 查询信息失败，可能因为当前节点未挂载在页面下。 ARKUI_ERROR_CODE_BUFFER_SIZE_ERROR 数据大小超过指定的缓冲区大小。 |
@@ -394,9 +429,10 @@ ArkUI_ErrorCode OH_ArkUI_GetNavDestinationId(ArkUI_NodeHandle node, char* buffer
 
 
 
-#### OH_ArkUI_GetNavDestinationState()
+### OH_ArkUI_GetNavDestinationState()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_GetNavDestinationState(ArkUI_NodeHandle node, ArkUI_NavDestinationState* state)
@@ -410,6 +446,7 @@ ArkUI_ErrorCode OH_ArkUI_GetNavDestinationState(ArkUI_NodeHandle node, ArkUI_Nav
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 指定的节点。 |
@@ -418,6 +455,7 @@ ArkUI_ErrorCode OH_ArkUI_GetNavDestinationState(ArkUI_NodeHandle node, ArkUI_Nav
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_GET_INFO_FAILED 查询信息失败，可能因为当前节点未挂载在页面下。 |
@@ -425,9 +463,10 @@ ArkUI_ErrorCode OH_ArkUI_GetNavDestinationState(ArkUI_NodeHandle node, ArkUI_Nav
 
 
 
-#### OH_ArkUI_GetNavDestinationIndex()
+### OH_ArkUI_GetNavDestinationIndex()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_GetNavDestinationIndex(ArkUI_NodeHandle node, int32_t* index)
@@ -441,6 +480,7 @@ ArkUI_ErrorCode OH_ArkUI_GetNavDestinationIndex(ArkUI_NodeHandle node, int32_t* 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 指定的节点。 |
@@ -449,6 +489,7 @@ ArkUI_ErrorCode OH_ArkUI_GetNavDestinationIndex(ArkUI_NodeHandle node, int32_t* 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_GET_INFO_FAILED 查询信息失败，可能因为当前节点未挂载在页面下。 |
@@ -456,9 +497,10 @@ ArkUI_ErrorCode OH_ArkUI_GetNavDestinationIndex(ArkUI_NodeHandle node, int32_t* 
 
 
 
-#### OH_ArkUI_GetNavDestinationParam()
+### OH_ArkUI_GetNavDestinationParam()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 napi_value OH_ArkUI_GetNavDestinationParam(ArkUI_NodeHandle node)
@@ -472,12 +514,14 @@ napi_value OH_ArkUI_GetNavDestinationParam(ArkUI_NodeHandle node)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 指定的节点。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -486,9 +530,10 @@ napi_value OH_ArkUI_GetNavDestinationParam(ArkUI_NodeHandle node)
 
 
 
-#### OH_ArkUI_GetRouterPageIndex()
+### OH_ArkUI_GetRouterPageIndex()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_GetRouterPageIndex(ArkUI_NodeHandle node, int32_t* index)
@@ -502,6 +547,7 @@ ArkUI_ErrorCode OH_ArkUI_GetRouterPageIndex(ArkUI_NodeHandle node, int32_t* inde
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 指定的节点。 |
@@ -510,6 +556,7 @@ ArkUI_ErrorCode OH_ArkUI_GetRouterPageIndex(ArkUI_NodeHandle node, int32_t* inde
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 指定的节点或传递的索引异常。 ARKUI_ERROR_CODE_GET_INFO_FAILED 查询信息失败，可能因为当前节点未挂载在页面下。 |
@@ -517,9 +564,10 @@ ArkUI_ErrorCode OH_ArkUI_GetRouterPageIndex(ArkUI_NodeHandle node, int32_t* inde
 
 
 
-#### OH_ArkUI_GetRouterPageName()
+### OH_ArkUI_GetRouterPageName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_GetRouterPageName(ArkUI_NodeHandle node, char* buffer, int32_t bufferSize, int32_t* writeLength)
@@ -533,6 +581,7 @@ ArkUI_ErrorCode OH_ArkUI_GetRouterPageName(ArkUI_NodeHandle node, char* buffer, 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 指定的节点。 |
@@ -543,6 +592,7 @@ ArkUI_ErrorCode OH_ArkUI_GetRouterPageName(ArkUI_NodeHandle node, char* buffer, 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_GET_INFO_FAILED 查询信息失败。 ARKUI_ERROR_CODE_BUFFER_SIZE_ERROR 给定的buffer size小于可以容纳目标的最小缓冲区大小。 |
@@ -550,9 +600,10 @@ ArkUI_ErrorCode OH_ArkUI_GetRouterPageName(ArkUI_NodeHandle node, char* buffer, 
 
 
 
-#### OH_ArkUI_GetRouterPagePath()
+### OH_ArkUI_GetRouterPagePath()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_GetRouterPagePath(ArkUI_NodeHandle node, char* buffer, int32_t bufferSize, int32_t* writeLength)
@@ -566,6 +617,7 @@ ArkUI_ErrorCode OH_ArkUI_GetRouterPagePath(ArkUI_NodeHandle node, char* buffer, 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 指定的节点。 |
@@ -576,6 +628,7 @@ ArkUI_ErrorCode OH_ArkUI_GetRouterPagePath(ArkUI_NodeHandle node, char* buffer, 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_GET_INFO_FAILED 查询信息失败。 ARKUI_ERROR_CODE_BUFFER_SIZE_ERROR 给定的buffer size小于可以容纳目标的最小缓冲区大小。 |
@@ -583,9 +636,10 @@ ArkUI_ErrorCode OH_ArkUI_GetRouterPagePath(ArkUI_NodeHandle node, char* buffer, 
 
 
 
-#### OH_ArkUI_GetRouterPageState()
+### OH_ArkUI_GetRouterPageState()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_GetRouterPageState(ArkUI_NodeHandle node, ArkUI_RouterPageState* state)
@@ -599,6 +653,7 @@ ArkUI_ErrorCode OH_ArkUI_GetRouterPageState(ArkUI_NodeHandle node, ArkUI_RouterP
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 指定的节点。 |
@@ -607,6 +662,7 @@ ArkUI_ErrorCode OH_ArkUI_GetRouterPageState(ArkUI_NodeHandle node, ArkUI_RouterP
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_GET_INFO_FAILED 查询信息失败。 |
@@ -614,9 +670,10 @@ ArkUI_ErrorCode OH_ArkUI_GetRouterPageState(ArkUI_NodeHandle node, ArkUI_RouterP
 
 
 
-#### OH_ArkUI_GetRouterPageId()
+### OH_ArkUI_GetRouterPageId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_GetRouterPageId(ArkUI_NodeHandle node, char* buffer, int32_t bufferSize, int32_t* writeLength)
@@ -630,6 +687,7 @@ ArkUI_ErrorCode OH_ArkUI_GetRouterPageId(ArkUI_NodeHandle node, char* buffer, in
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 指定的节点。 |
@@ -640,6 +698,7 @@ ArkUI_ErrorCode OH_ArkUI_GetRouterPageId(ArkUI_NodeHandle node, char* buffer, in
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_GET_INFO_FAILED 查询信息失败。 ARKUI_ERROR_CODE_BUFFER_SIZE_ERROR 数据大小超过指定的缓冲区大小。 |
@@ -647,9 +706,10 @@ ArkUI_ErrorCode OH_ArkUI_GetRouterPageId(ArkUI_NodeHandle node, char* buffer, in
 
 
 
-#### OH_ArkUI_InitModuleForArkTSEnv()
+### OH_ArkUI_InitModuleForArkTSEnv()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_InitModuleForArkTSEnv(napi_env env)
@@ -663,12 +723,14 @@ ArkUI_ErrorCode OH_ArkUI_InitModuleForArkTSEnv(napi_env env)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | napi_env env | Node-API的环境指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -677,9 +739,10 @@ ArkUI_ErrorCode OH_ArkUI_InitModuleForArkTSEnv(napi_env env)
 
 
 
-#### OH_ArkUI_NotifyArkTSEnvDestroy()
+### OH_ArkUI_NotifyArkTSEnvDestroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_NotifyArkTSEnvDestroy(napi_env env)
@@ -693,6 +756,7 @@ void OH_ArkUI_NotifyArkTSEnvDestroy(napi_env env)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | napi_env env | Node-API的环境指针。 |
@@ -700,9 +764,10 @@ void OH_ArkUI_NotifyArkTSEnvDestroy(napi_env env)
 
 
 
-#### OH_ArkUI_PostFrameCallback()
+### OH_ArkUI_PostFrameCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_PostFrameCallback(ArkUI_ContextHandle uiContext, void* userData, void (*callback)(uint64_t nanoTimestamp, uint32_t frameCount, void* userData))
@@ -716,16 +781,16 @@ int32_t OH_ArkUI_PostFrameCallback(ArkUI_ContextHandle uiContext, void* userData
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_ContextHandle uiContext | UIContext对象指针，用以绑定实例。 |
 | void* userData | 自定义事件参数，当事件触发时在回调参数中携带回来。 |
-| callback | 自定义回调函数，签名为void (*callback)(uint64_t nanoTimestamp, uint32_t frameCount, void* userData)，用于在下一帧渲染时执行。其中nanoTimestamp表示帧信号的时间戳，frameCount表示帧号，userData表示注册时传入并在回调触发时携带回来的自定义数据。 |
-| uint64_t nanoTimestamp | 帧信号的时间戳，单位：ns。 |
-| uint32_t frameCount | 帧号。 |
+| void (*callback)(uint64_t nanoTimestamp, uint32_t frameCount, void* userData) | 自定义回调函数，签名为void (*callback)(uint64_t nanoTimestamp, uint32_t frameCount, void* userData)，用于在下一帧渲染时执行。其中nanoTimestamp表示帧信号的时间戳，frameCount表示帧号，userData表示注册时传入并在回调触发时携带回来的自定义数据。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -734,9 +799,10 @@ int32_t OH_ArkUI_PostFrameCallback(ArkUI_ContextHandle uiContext, void* userData
 
 
 
-#### OH_ArkUI_PostIdleCallback()
+### OH_ArkUI_PostIdleCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_PostIdleCallback(ArkUI_ContextHandle uiContext, void* userData, void (*callback)(uint64_t nanoTimeLeft, uint32_t frameCount, void* userData))
@@ -750,16 +816,16 @@ int32_t OH_ArkUI_PostIdleCallback(ArkUI_ContextHandle uiContext, void* userData,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_ContextHandle uiContext | UIContext对象指针，用以绑定实例。 |
 | void* userData | 自定义事件参数，当自定义回调函数触发时在回调参数中携带回来。 |
-| callback | 自定义回调函数，签名为void (*callback)(uint64_t nanoTimeLeft, uint32_t frameCount, void* userData)，用于在下一帧渲染结束后，剩余时间大于1ms时执行。其中nanoTimeLeft表示距离当前帧截止时间的剩余时间，frameCount表示帧号，userData表示注册时传入并在回调触发时携带回来的自定义数据。 |
-| uint64_t nanoTimeLeft | 距离当前帧截止时间的剩余时间，单位：ns。 |
-| uint32_t frameCount | 帧号。 |
+| void (*callback)(uint64_t nanoTimeLeft, uint32_t frameCount, void* userData) | 自定义回调函数，签名为void (*callback)(uint64_t nanoTimeLeft, uint32_t frameCount, void* userData)，用于在下一帧渲染结束后，剩余时间大于1ms时执行。其中nanoTimeLeft表示距离当前帧截止时间的剩余时间，frameCount表示帧号，userData表示注册时传入并在回调触发时携带回来的自定义数据。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -768,9 +834,10 @@ int32_t OH_ArkUI_PostIdleCallback(ArkUI_ContextHandle uiContext, void* userData,
 
 
 
-#### OH_ArkUI_EnableEventPassthrough()
+### OH_ArkUI_EnableEventPassthrough()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_EnableEventPassthrough(ArkUI_ContextHandle uiContext, bool enabled, ArkUI_RawInputEventType type)
@@ -784,6 +851,7 @@ ArkUI_ErrorCode OH_ArkUI_EnableEventPassthrough(ArkUI_ContextHandle uiContext, b
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_ContextHandle uiContext | UIContext对象，用以绑定实例。 |
@@ -792,6 +860,7 @@ ArkUI_ErrorCode OH_ArkUI_EnableEventPassthrough(ArkUI_ContextHandle uiContext, b
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |

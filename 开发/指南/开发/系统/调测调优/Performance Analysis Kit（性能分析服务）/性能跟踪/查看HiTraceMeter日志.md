@@ -1,16 +1,16 @@
 # 查看HiTraceMeter日志
 
-更新时间：2026-07-09 02:26:55
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hitracemeter-view
 
-#### 通过DevEco Studio可视化界面查看
+## 通过DevEco Studio可视化界面查看
 
 使用DevEco Studio Profiler工具可以可视化展示HiTraceMeter日志内容，分析应用或服务的CPU使用率和线程运行状态，查看指定时间段内程序在CPU上的执行耗时。具体使用指导请参考[CPU活动分析](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-insight-session-cpu)。
 
 
 
-#### 通过命令行工具查看
+## 通过命令行工具查看
 1. 根据hdc命令行工具指导，完成[hdc环境准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hdc#环境准备)，确保可以使用“hdc shell”命令正常连接设备。
 2. 在DevEco Studio Terminal窗口或主机命令行窗口执行“hdc shell”命令连接设备，然后在设备上执行[hitrace](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hitrace)命令，开启HiTraceMeter日志抓取服务。
 
@@ -44,7 +44,7 @@ PS D:\xxx\xxx> hdc file recv /data/local/tmp/trace.ftrace ./
 
   
 
-  #### 用户态trace格式说明
+  ## 用户态trace格式说明
 
   开发者可以通过[hitrace](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hitrace)命令采集用户通过HiTraceMeter接口生成的用户态trace日志，从而对应用进行性能分析。本章节将详细介绍用户态trace的格式和扩展规则，包括同步、异步和整数值跟踪等类型。每种trace的字段组成、含义及与打点入参的关系都会逐一说明，并提供[具体样例](#各场景trace日志样例)供参考。
 
@@ -52,7 +52,7 @@ PS D:\xxx\xxx> hdc file recv /data/local/tmp/trace.ftrace ./
 
   
 
-  #### 当前版本用户态trace格式
+  ### 当前版本用户态trace格式
 
   **同步跟踪**
 
@@ -88,7 +88,7 @@ PS D:\xxx\xxx> hdc file recv /data/local/tmp/trace.ftrace ./
 
 
 
-#### 字段说明
+### 字段说明
 
 本小节将详细介绍用户态trace的各个字段，包括字段组成、含义，字段与打点入参之间的关系，使用[@ohos.hiTraceMeter (性能打点)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hitracemeter)作为参考。
 
@@ -103,7 +103,7 @@ B：开启一个同步时间片跟踪事件。
  - F：结束一个异步时间片跟踪事件。
  - C：整数跟踪事件。
 
-      - **分布式跟踪链路ID**
+            - **分布式跟踪链路ID**
 
   开启HiTraceChain（分布式跟踪）时，会将[HiTraceId](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hitrace-hitraceid)核心信息记录在trace打点中，格式为[ChainId,SpanId,ParentSpanId]，结尾使用#分隔符与内容字段区分。
 
@@ -116,7 +116,7 @@ ChainId：HiTraceId的跟踪链标识。
 
 
 HiTraceChain具体使用指导请参考[使用HiTraceChain打点（ArkTS）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hitracechain-guidelines-arkts)与[使用HiTraceChain打点（C/C++）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hitracechain-guidelines-ndk)。
-      - **内容**
+            - **内容**
 
   表示打点名称或整数变量名。对应[@ohos.hiTraceMeter (性能打点)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hitracemeter)接口的name入参。
  - **异步任务ID**
@@ -153,13 +153,14 @@ HiTraceChain具体使用指导请参考[使用HiTraceChain打点（ArkTS）](htt
 
 
 
-#### 字段扩展规则
+### 字段扩展规则
 
 API version 19及后续版本的新增字段，均以**竖线+字段**的方式，追加在当前用户态trace格式的末尾。
 
 
 
-#### 各场景trace日志样例
+### 各场景trace日志样例
+
 
 | 打点类型 | 开启HiTraceChain时格式 | 未开启HiTraceChain时格式 |
 | --- | --- | --- |
@@ -178,7 +179,7 @@ API version 19及后续版本的新增字段，均以**竖线+字段**的方式�
 
 
 
-#### 字段为空情况说明
+### 字段为空情况说明
 
 如果用户态trace格式中间字段对应接口参数传入内容为空，用户态trace格式将保留|分隔符，如果尾部字段为空，用户态trace格式将不保留|分隔符。以[hiTraceMeter.startAsyncTrace()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hitracemeter#hitracemeterstartasynctrace19)和[hiTraceMeter.startSyncTrace()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hitracemeter#hitracemeterstartsynctrace19)接口的自定义聚类名称和自定义键值对参数为例，对应的格式参考如下。
 
@@ -200,7 +201,7 @@ B|[进程号]|H:[分布式跟踪链路ID]#[内容]|[级别与所属Tag集合]
 ```
 
 
-      - 开始异步trace打点。
+            - 开始异步trace打点。
 
   
 自定义聚类名称和自定义键值对字段均不为空字符串。
@@ -236,9 +237,10 @@ S|[进程号]|H:[分布式跟踪链路ID]#[内容]|[异步任务ID]|[级别与�
 
 
 
-#### HiTraceMeter Tag
+### HiTraceMeter Tag
 
 以下为HiTraceMeter用户态Tag集合，其中Tag值为实际代码层面基于数字1的左移值。用户态Tag释义可通过[hitrace](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hitrace#查看hitrace包含的tag)命令行工具查看，其中always和commercial分别为系统侧默认常开Tag和商用版本场景定制Tag。
+
 
 | Tag名称 | 代码层常量值 | Tag值 |
 | --- | --- | --- |
@@ -304,7 +306,8 @@ S|[进程号]|H:[分布式跟踪链路ID]#[内容]|[异步任务ID]|[级别与�
 
 
 
-#### HiTraceOutputLevel
+### HiTraceOutputLevel
+
 
 | trace输出级别枚举名称（C/C++） | trace输出级别枚举名称（ArkTS） | 枚举值 | trace级别 |
 | --- | --- | --- | --- |
@@ -316,7 +319,7 @@ S|[进程号]|H:[分布式跟踪链路ID]#[内容]|[异步任务ID]|[级别与�
 
 
 
-#### API version 19前用户态trace格式
+### API version 19前用户态trace格式
 
 **同步跟踪**
 
@@ -341,7 +344,8 @@ S|[进程号]|H:[分布式跟踪链路ID]#[内容]|[异步任务ID]|[级别与�
 
 
 
-#### API version 19前各场景trace日志样例
+### API version 19前各场景trace日志样例
+
 
 | 打点类型 | 开启HiTraceChain时格式 | 未开启HiTraceChain时格式 |
 | --- | --- | --- |

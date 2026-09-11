@@ -1,11 +1,12 @@
 # neural_network_runtime.h
 
-更新时间：2026-07-17 09:35:24
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-neural-network-runtime-h
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -25,16 +26,19 @@ Neural Network Runtime的接口目前均不支持多线程并发调用。
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | NN_QuantParam *OH_NNQuantParam_Create() | 创建一个NN_QuantParam量化参数实例。 |
@@ -66,13 +70,15 @@ Neural Network Runtime的接口目前均不支持多线程并发调用。
  
   
 
-#### 函数说明
+## 函数说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### OH_NNQuantParam_Create()
+### OH_NNQuantParam_Create()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -90,6 +96,7 @@ NN_QuantParam *OH_NNQuantParam_Create()
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NN_QuantParam * | 指向NN_QuantParam实例的指针，如果创建失败就返回NULL。 |
@@ -97,7 +104,8 @@ NN_QuantParam *OH_NNQuantParam_Create()
  
   
 
-#### OH_NNQuantParam_SetScales()
+### OH_NNQuantParam_SetScales()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -115,6 +123,7 @@ OH_NN_ReturnCode OH_NNQuantParam_SetScales(NN_QuantParam *quantParams, const dou
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | NN_QuantParam *quantParams | 指向NN_QuantParam实例的指针。 |
@@ -124,6 +133,7 @@ OH_NN_ReturnCode OH_NNQuantParam_SetScales(NN_QuantParam *quantParams, const dou
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_NN_ReturnCode | 函数执行的结果状态。执行成功返回OH_NN_SUCCESS；失败返回具体错误码，具体失败错误码可参考OH_NN_ReturnCode。 |
@@ -131,7 +141,8 @@ OH_NN_ReturnCode OH_NNQuantParam_SetScales(NN_QuantParam *quantParams, const dou
  
   
 
-#### OH_NNQuantParam_SetZeroPoints()
+### OH_NNQuantParam_SetZeroPoints()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -149,6 +160,7 @@ OH_NN_ReturnCode OH_NNQuantParam_SetZeroPoints(NN_QuantParam *quantParams, const
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | NN_QuantParam *quantParams | 指向NN_QuantParam实例的指针。 |
@@ -158,6 +170,7 @@ OH_NN_ReturnCode OH_NNQuantParam_SetZeroPoints(NN_QuantParam *quantParams, const
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_NN_ReturnCode | 函数执行的结果状态。执行成功返回OH_NN_SUCCESS；失败返回具体错误码，具体失败错误码可参考OH_NN_ReturnCode。 |
@@ -165,7 +178,8 @@ OH_NN_ReturnCode OH_NNQuantParam_SetZeroPoints(NN_QuantParam *quantParams, const
  
   
 
-#### OH_NNQuantParam_SetNumBits()
+### OH_NNQuantParam_SetNumBits()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -183,6 +197,7 @@ OH_NN_ReturnCode OH_NNQuantParam_SetNumBits(NN_QuantParam *quantParams, const ui
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | NN_QuantParam *quantParams | 指向NN_QuantParam实例的指针。 |
@@ -192,6 +207,7 @@ OH_NN_ReturnCode OH_NNQuantParam_SetNumBits(NN_QuantParam *quantParams, const ui
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_NN_ReturnCode | 函数执行的结果状态。执行成功返回OH_NN_SUCCESS；失败返回具体错误码，具体失败错误码可参考OH_NN_ReturnCode。 |
@@ -199,7 +215,8 @@ OH_NN_ReturnCode OH_NNQuantParam_SetNumBits(NN_QuantParam *quantParams, const ui
  
   
 
-#### OH_NNQuantParam_Destroy()
+### OH_NNQuantParam_Destroy()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -219,6 +236,7 @@ OH_NN_ReturnCode OH_NNQuantParam_Destroy(NN_QuantParam **quantParams)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | NN_QuantParam **quantParams | 指向NN_QuantParam实例的二级指针。 |
@@ -226,6 +244,7 @@ OH_NN_ReturnCode OH_NNQuantParam_Destroy(NN_QuantParam **quantParams)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_NN_ReturnCode | 函数执行的结果状态。执行成功返回OH_NN_SUCCESS；失败返回具体错误码，具体失败错误码可参考OH_NN_ReturnCode。 |
@@ -233,7 +252,8 @@ OH_NN_ReturnCode OH_NNQuantParam_Destroy(NN_QuantParam **quantParams)
  
   
 
-#### OH_NNModel_Construct()
+### OH_NNModel_Construct()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -253,6 +273,7 @@ OH_NNModel *OH_NNModel_Construct(void)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_NNModel * | 返回一个指向OH_NNModel实例的指针，如果创建失败就返回NULL。 |
@@ -260,7 +281,8 @@ OH_NNModel *OH_NNModel_Construct(void)
  
   
 
-#### OH_NNModel_AddTensorToModel()
+### OH_NNModel_AddTensorToModel()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -282,6 +304,7 @@ Neural Network Runtime支持动态形状的输入和输出张量。在添加动�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NNModel *model | 指向OH_NNModel实例的指针。 |
@@ -290,6 +313,7 @@ Neural Network Runtime支持动态形状的输入和输出张量。在添加动�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_NN_ReturnCode | 函数执行的结果状态。执行成功返回OH_NN_SUCCESS；失败返回具体错误码，具体失败错误码可参考OH_NN_ReturnCode。 |
@@ -297,7 +321,8 @@ Neural Network Runtime支持动态形状的输入和输出张量。在添加动�
  
   
 
-#### OH_NNModel_SetTensorData()
+### OH_NNModel_SetTensorData()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -315,6 +340,7 @@ OH_NN_ReturnCode OH_NNModel_SetTensorData(OH_NNModel *model, uint32_t index, con
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NNModel *model | 指向OH_NNModel实例的指针。 |
@@ -325,6 +351,7 @@ OH_NN_ReturnCode OH_NNModel_SetTensorData(OH_NNModel *model, uint32_t index, con
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_NN_ReturnCode | 函数执行的结果状态。执行成功返回OH_NN_SUCCESS；失败返回具体错误码，具体失败错误码可参考OH_NN_ReturnCode。 |
@@ -332,7 +359,8 @@ OH_NN_ReturnCode OH_NNModel_SetTensorData(OH_NNModel *model, uint32_t index, con
  
   
 
-#### OH_NNModel_SetTensorQuantParams()
+### OH_NNModel_SetTensorQuantParams()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -348,6 +376,7 @@ OH_NN_ReturnCode OH_NNModel_SetTensorQuantParams(OH_NNModel *model, uint32_t ind
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NNModel *model | 指向OH_NNModel实例的指针。 |
@@ -357,6 +386,7 @@ OH_NN_ReturnCode OH_NNModel_SetTensorQuantParams(OH_NNModel *model, uint32_t ind
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_NN_ReturnCode | 函数执行的结果状态。执行成功返回OH_NN_SUCCESS；失败返回具体错误码，具体失败错误码可参考OH_NN_ReturnCode。 |
@@ -364,7 +394,8 @@ OH_NN_ReturnCode OH_NNModel_SetTensorQuantParams(OH_NNModel *model, uint32_t ind
  
   
 
-#### OH_NNModel_SetTensorType()
+### OH_NNModel_SetTensorType()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -380,6 +411,7 @@ OH_NN_ReturnCode OH_NNModel_SetTensorType(OH_NNModel *model, uint32_t index, OH_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NNModel *model | 指向OH_NNModel实例的指针。 |
@@ -389,6 +421,7 @@ OH_NN_ReturnCode OH_NNModel_SetTensorType(OH_NNModel *model, uint32_t index, OH_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_NN_ReturnCode | 函数执行的结果状态。执行成功返回OH_NN_SUCCESS；失败返回具体错误码，具体失败错误码可参考OH_NN_ReturnCode |
@@ -396,7 +429,8 @@ OH_NN_ReturnCode OH_NNModel_SetTensorType(OH_NNModel *model, uint32_t index, OH_
  
   
 
-#### OH_NNModel_AddOperation()
+### OH_NNModel_AddOperation()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -424,6 +458,7 @@ paramIndices、inputIndices和outputIndices中存储的是张量的索引值，�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NNModel *model | 指向OH_NNModel实例的指针。 |
@@ -435,6 +470,7 @@ paramIndices、inputIndices和outputIndices中存储的是张量的索引值，�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_NN_ReturnCode | 函数执行的结果状态。执行成功返回OH_NN_SUCCESS；失败返回具体错误码，具体失败错误码可参考OH_NN_ReturnCode。 |
@@ -442,7 +478,8 @@ paramIndices、inputIndices和outputIndices中存储的是张量的索引值，�
  
   
 
-#### OH_NNModel_SpecifyInputsAndOutputs()
+### OH_NNModel_SpecifyInputsAndOutputs()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -462,6 +499,7 @@ OH_NN_ReturnCode OH_NNModel_SpecifyInputsAndOutputs(OH_NNModel *model,const OH_N
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NNModel *model | 指向OH_NNModel实例的指针。 |
@@ -471,6 +509,7 @@ OH_NN_ReturnCode OH_NNModel_SpecifyInputsAndOutputs(OH_NNModel *model,const OH_N
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_NN_ReturnCode | 函数执行的结果状态。执行成功返回OH_NN_SUCCESS；失败返回具体错误码，具体失败错误码可参考OH_NN_ReturnCode。 |
@@ -478,7 +517,8 @@ OH_NN_ReturnCode OH_NNModel_SpecifyInputsAndOutputs(OH_NNModel *model,const OH_N
  
   
 
-#### OH_NNModel_Finish()
+### OH_NNModel_Finish()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -500,6 +540,7 @@ OH_NN_ReturnCode OH_NNModel_Finish(OH_NNModel *model)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NNModel *model | 指向OH_NNModel实例的指针。 |
@@ -507,6 +548,7 @@ OH_NN_ReturnCode OH_NNModel_Finish(OH_NNModel *model)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_NN_ReturnCode | 函数执行的结果状态。执行成功返回OH_NN_SUCCESS；失败返回具体错误码，具体失败错误码可参考OH_NN_ReturnCode。 |
@@ -514,7 +556,8 @@ OH_NN_ReturnCode OH_NNModel_Finish(OH_NNModel *model)
  
   
 
-#### OH_NNModel_Destroy()
+### OH_NNModel_Destroy()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -534,6 +577,7 @@ void OH_NNModel_Destroy(OH_NNModel **model)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NNModel **model | 指向OH_NNModel实例的二级指针。模型实例销毁后，该接口会将*model主动设置为空指针。 |
@@ -541,7 +585,8 @@ void OH_NNModel_Destroy(OH_NNModel **model)
  
   
 
-#### OH_NNModel_GetAvailableOperations()
+### OH_NNModel_GetAvailableOperations()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -563,6 +608,7 @@ OH_NN_ReturnCode OH_NNModel_GetAvailableOperations(OH_NNModel *model,size_t devi
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NNModel *model | 指向OH_NNModel实例的指针。 |
@@ -573,6 +619,7 @@ OH_NN_ReturnCode OH_NNModel_GetAvailableOperations(OH_NNModel *model,size_t devi
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_NN_ReturnCode | 函数执行的结果状态。执行成功返回OH_NN_SUCCESS；失败返回具体错误码，具体失败错误码可参考OH_NN_ReturnCode。 |
@@ -580,7 +627,8 @@ OH_NN_ReturnCode OH_NNModel_GetAvailableOperations(OH_NNModel *model,size_t devi
  
   
 
-#### OH_NNModel_AddTensor()
+### OH_NNModel_AddTensor()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -608,6 +656,7 @@ Neural Network Runtime支持动态形状输入和输出。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NNModel *model | 指向OH_NNModel实例的指针。 |
@@ -616,6 +665,7 @@ Neural Network Runtime支持动态形状输入和输出。
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_NN_ReturnCode | 函数执行的结果状态。执行成功返回OH_NN_SUCCESS；失败返回具体错误码，具体失败错误码可参考OH_NN_ReturnCode。 |
@@ -623,7 +673,8 @@ Neural Network Runtime支持动态形状输入和输出。
  
   
 
-#### OH_NNExecutor_SetInput()
+### OH_NNExecutor_SetInput()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -655,6 +706,7 @@ inputIndex指定设置的输入，tensor用于设置输入张量的形状、数�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NNExecutor *executor | 指向OH_NNExecutor实例的指针。 |
@@ -666,6 +718,7 @@ inputIndex指定设置的输入，tensor用于设置输入张量的形状、数�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_NN_ReturnCode | 函数执行的结果状态。执行成功返回OH_NN_SUCCESS；失败返回具体错误码，具体失败错误码可参考OH_NN_ReturnCode。 |
@@ -673,7 +726,8 @@ inputIndex指定设置的输入，tensor用于设置输入张量的形状、数�
  
   
 
-#### OH_NNExecutor_SetOutput()
+### OH_NNExecutor_SetOutput()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -701,6 +755,7 @@ OH_NN_ReturnCode OH_NNExecutor_SetOutput(OH_NNExecutor *executor,uint32_t output
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NNExecutor *executor | 指向OH_NNExecutor实例的指针。 |
@@ -711,6 +766,7 @@ OH_NN_ReturnCode OH_NNExecutor_SetOutput(OH_NNExecutor *executor,uint32_t output
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_NN_ReturnCode | 函数执行的结果状态。执行成功返回OH_NN_SUCCESS；失败返回具体错误码，具体失败错误码可参考OH_NN_ReturnCode。 |
@@ -718,7 +774,8 @@ OH_NN_ReturnCode OH_NNExecutor_SetOutput(OH_NNExecutor *executor,uint32_t output
  
   
 
-#### OH_NNExecutor_Run()
+### OH_NNExecutor_Run()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -738,6 +795,7 @@ OH_NN_ReturnCode OH_NNExecutor_Run(OH_NNExecutor *executor)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NNExecutor *executor | 指向OH_NNExecutor实例的指针。 |
@@ -745,6 +803,7 @@ OH_NN_ReturnCode OH_NNExecutor_Run(OH_NNExecutor *executor)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_NN_ReturnCode | 函数执行的结果状态。执行成功返回OH_NN_SUCCESS；失败返回具体错误码，具体失败错误码可参考OH_NN_ReturnCode。 |
@@ -752,7 +811,8 @@ OH_NN_ReturnCode OH_NNExecutor_Run(OH_NNExecutor *executor)
  
   
 
-#### OH_NNExecutor_AllocateInputMemory()
+### OH_NNExecutor_AllocateInputMemory()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -776,6 +836,7 @@ Neural Network Runtime 提供主动申请硬件共享内存的方法。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NNExecutor *executor | 指向OH_NNExecutor实例的指针。 |
@@ -785,6 +846,7 @@ Neural Network Runtime 提供主动申请硬件共享内存的方法。
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_NN_Memory * | 指向OH_NN_Memory实例的指针，如果创建失败就返回NULL。 |
@@ -792,7 +854,8 @@ Neural Network Runtime 提供主动申请硬件共享内存的方法。
  
   
 
-#### OH_NNExecutor_AllocateOutputMemory()
+### OH_NNExecutor_AllocateOutputMemory()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -816,6 +879,7 @@ Neural Network Runtime 提供主动申请硬件共享内存的方法。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NNExecutor *executor | 指向OH_NNExecutor实例的指针。 |
@@ -825,6 +889,7 @@ Neural Network Runtime 提供主动申请硬件共享内存的方法。
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_NN_Memory * | 指向OH_NN_Memory实例的指针，如果创建失败就返回NULL。 |
@@ -832,7 +897,8 @@ Neural Network Runtime 提供主动申请硬件共享内存的方法。
  
   
 
-#### OH_NNExecutor_DestroyInputMemory()
+### OH_NNExecutor_DestroyInputMemory()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -856,6 +922,7 @@ inputIndex和memory的对应关系需要和创建内存实例时保持一致。 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NNExecutor *executor | 指向OH_NNExecutor实例的指针。 |
@@ -865,7 +932,8 @@ inputIndex和memory的对应关系需要和创建内存实例时保持一致。 
  
   
 
-#### OH_NNExecutor_DestroyOutputMemory()
+### OH_NNExecutor_DestroyOutputMemory()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -891,6 +959,7 @@ outputIndex和memory的对应关系需要和创建内存实例时保持一致。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NNExecutor *executor | 指向OH_NNExecutor实例的指针。 |
@@ -900,7 +969,8 @@ outputIndex和memory的对应关系需要和创建内存实例时保持一致。
  
   
 
-#### OH_NNExecutor_SetInputWithMemory()
+### OH_NNExecutor_SetInputWithMemory()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -926,6 +996,7 @@ OH_NN_ReturnCode OH_NNExecutor_SetInputWithMemory(OH_NNExecutor *executor,uint32
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NNExecutor *executor | 指向OH_NNExecutor实例的指针。 |
@@ -936,6 +1007,7 @@ OH_NN_ReturnCode OH_NNExecutor_SetInputWithMemory(OH_NNExecutor *executor,uint32
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_NN_ReturnCode | 函数执行的结果状态。执行成功返回OH_NN_SUCCESS；失败返回具体错误码，具体失败错误码可参考OH_NN_ReturnCode。 |
@@ -943,7 +1015,8 @@ OH_NN_ReturnCode OH_NNExecutor_SetInputWithMemory(OH_NNExecutor *executor,uint32
  
   
 
-#### OH_NNExecutor_SetOutputWithMemory()
+### OH_NNExecutor_SetOutputWithMemory()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -969,6 +1042,7 @@ OH_NN_ReturnCode OH_NNExecutor_SetOutputWithMemory(OH_NNExecutor *executor,uint3
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NNExecutor *executor | 执行器。 |
@@ -978,6 +1052,7 @@ OH_NN_ReturnCode OH_NNExecutor_SetOutputWithMemory(OH_NNExecutor *executor,uint3
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_NN_ReturnCode | 函数执行的结果状态。执行成功返回OH_NN_SUCCESS；失败返回具体错误码，具体失败错误码可参考OH_NN_ReturnCode。 |

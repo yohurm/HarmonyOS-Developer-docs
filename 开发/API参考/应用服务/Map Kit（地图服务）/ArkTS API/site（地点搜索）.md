@@ -1,6 +1,6 @@
 # site（地点搜索）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-site
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
@@ -10,7 +10,8 @@
 **起始版本：** 4.1.0(11)
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -20,7 +21,8 @@ import { site } from '@kit.MapKit';
 
 
 
-#### searchByText
+## searchByText
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -38,12 +40,14 @@ searchByText(searchByTextParams: SearchByTextParams): Promise&lt;SearchByTextRes
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | searchByTextParams | SearchByTextParams | 是 | 关键字搜索的参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -53,6 +57,7 @@ searchByText(searchByTextParams: SearchByTextParams): Promise&lt;SearchByTextRes
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -82,7 +87,8 @@ console.info("Succeeded in searching by text.");
 
 
 
-#### searchByText
+## searchByText
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -100,6 +106,7 @@ searchByText(context: common.Context, searchByTextParams: SearchByTextParams): P
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | Context上下文。 |
@@ -107,6 +114,7 @@ searchByText(context: common.Context, searchByTextParams: SearchByTextParams): P
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -116,6 +124,7 @@ searchByText(context: common.Context, searchByTextParams: SearchByTextParams): P
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -145,7 +154,8 @@ console.info("Succeeded in searching by text.");
 
 
 
-#### nearbySearch
+## nearbySearch
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -163,12 +173,14 @@ nearbySearch(nearbySearchParams: NearbySearchParams): Promise&lt;NearbySearchRes
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | nearbySearchParams | NearbySearchParams | 是 | 周边搜索的参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -178,6 +190,7 @@ nearbySearch(nearbySearchParams: NearbySearchParams): Promise&lt;NearbySearchRes
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -192,10 +205,10 @@ nearbySearch(nearbySearchParams: NearbySearchParams): Promise&lt;NearbySearchRes
 **示例：**
 
 ```text
-let params: site.Nea| cityId | string | 否 | 是 rbySearchParams = {
+let params: site.NearbySearchParams = {
   location: {
-    latitude:51.50811219132287,
-    longitude:-0.07594896472392065
+    latitude: 51.50811219132287,
+    longitude: -0.07594896472392065
   },
   poiTypes: [
     "Watch_Store",
@@ -211,7 +224,8 @@ console.info(`Succeeded in searching nearby. result is ${result}`);
 
 
 
-#### nearbySearch
+## nearbySearch
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -229,6 +243,7 @@ nearbySearch(context: common.Context, nearbySearchParams: NearbySearchParams): P
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | Context上下文。 |
@@ -236,6 +251,7 @@ nearbySearch(context: common.Context, nearbySearchParams: NearbySearchParams): P
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -245,6 +261,7 @@ nearbySearch(context: common.Context, nearbySearchParams: NearbySearchParams): P
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -278,7 +295,8 @@ console.info(`Succeeded in searching nearby. result is ${result}`);
 
 
 
-#### queryAutoComplete
+## queryAutoComplete
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -296,12 +314,14 @@ queryAutoComplete(queryAutoCompleteParams: QueryAutoCompleteParams): Promise&lt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | queryAutoCompleteParams | QueryAutoCompleteParams | 是 | 自动补全的参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -311,6 +331,7 @@ queryAutoComplete(queryAutoCompleteParams: QueryAutoCompleteParams): Promise&lt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -340,7 +361,8 @@ console.info("Succeeded in querying.");
 
 
 
-#### queryAutoComplete
+## queryAutoComplete
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -358,6 +380,7 @@ queryAutoComplete(context: common.Context, queryAutoCompleteParams: QueryAutoCom
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | Context上下文。 |
@@ -365,6 +388,7 @@ queryAutoComplete(context: common.Context, queryAutoCompleteParams: QueryAutoCom
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -374,6 +398,7 @@ queryAutoComplete(context: common.Context, queryAutoCompleteParams: QueryAutoCom
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -403,7 +428,8 @@ console.info("Succeeded in querying.");
 
 
 
-#### searchById
+## searchById
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -421,12 +447,14 @@ searchById(searchByIdParams: SearchByIdParams): Promise&lt;SearchByIdResult&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | searchByIdParams | SearchByIdParams | 是 | 地点详情的参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -436,6 +464,7 @@ searchById(searchByIdParams: SearchByIdParams): Promise&lt;SearchByIdResult&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -461,7 +490,8 @@ console.info("Succeeded in searching by id.");
 
 
 
-#### searchById
+## searchById
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -479,6 +509,7 @@ searchById(context: common.Context, searchByIdParams: SearchByIdParams): Promise
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | Context上下文。 |
@@ -486,6 +517,7 @@ searchById(context: common.Context, searchByIdParams: SearchByIdParams): Promise
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -495,6 +527,7 @@ searchById(context: common.Context, searchByIdParams: SearchByIdParams): Promise
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -520,7 +553,8 @@ console.info("Succeeded in searching by id.");
 
 
 
-#### geocode
+## geocode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -542,12 +576,14 @@ geocode(geocodeParams: GeocodeParams): Promise&lt;GeocodeResult&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | geocodeParams | GeocodeParams | 是 | 正地理编码的参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -557,6 +593,7 @@ geocode(geocodeParams: GeocodeParams): Promise&lt;GeocodeResult&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -581,7 +618,8 @@ console.info("Succeeded in geocoding.");
 
 
 
-#### geocode
+## geocode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -603,6 +641,7 @@ geocode(context: common.Context, geocodeParams: GeocodeParams): Promise&lt;Geoco
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | Context上下文。 |
@@ -610,6 +649,7 @@ geocode(context: common.Context, geocodeParams: GeocodeParams): Promise&lt;Geoco
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -619,6 +659,7 @@ geocode(context: common.Context, geocodeParams: GeocodeParams): Promise&lt;Geoco
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -643,7 +684,8 @@ console.info("Succeeded in geocoding.");
 
 
 
-#### reverseGeocode
+## reverseGeocode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -661,12 +703,14 @@ reverseGeocode(reverseGeocodeParams: ReverseGeocodeParams): Promise&lt;ReverseGe
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | reverseGeocodeParams | ReverseGeocodeParams | 是 | 逆地理编码的参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -676,6 +720,7 @@ reverseGeocode(reverseGeocodeParams: ReverseGeocodeParams): Promise&lt;ReverseGe
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -704,7 +749,8 @@ console.info("Succeeded in reversing geocode.");
 
 
 
-#### reverseGeocode
+## reverseGeocode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -722,6 +768,7 @@ reverseGeocode(context: common.Context, reverseGeocodeParams: ReverseGeocodePara
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | Context上下文。 |
@@ -729,6 +776,7 @@ reverseGeocode(context: common.Context, reverseGeocodeParams: ReverseGeocodePara
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -738,6 +786,7 @@ reverseGeocode(context: common.Context, reverseGeocodeParams: ReverseGeocodePara
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -766,7 +815,8 @@ console.info("Succeeded in reversing geocode.");
 
 
 
-#### SortRule
+## SortRule
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -780,6 +830,7 @@ console.info("Succeeded in reversing geocode.");
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | COMPOSITE | 0 | 综合排序。 |
@@ -788,7 +839,8 @@ console.info("Succeeded in reversing geocode.");
 
 
 
-#### SearchByTextParams
+## SearchByTextParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -801,6 +853,7 @@ SearchByTextParams定义了搜索关键字的参数。
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -819,7 +872,8 @@ SearchByTextParams定义了搜索关键字的参数。
 
 
 
-#### NearbySearchParams
+## NearbySearchParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -830,6 +884,7 @@ SearchByTextParams定义了搜索关键字的参数。
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -845,7 +900,8 @@ SearchByTextParams定义了搜索关键字的参数。
 
 
 
-#### QueryAutoCompleteParams
+## QueryAutoCompleteParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -858,6 +914,7 @@ SearchByTextParams定义了搜索关键字的参数。
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -873,7 +930,8 @@ SearchByTextParams定义了搜索关键字的参数。
 
 
 
-#### SearchByIdParams
+## SearchByIdParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -887,6 +945,7 @@ SearchByTextParams定义了搜索关键字的参数。
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | siteId | string | 否 | 否 | 地址ID，参数的长度范围：[1, 256]。 |
@@ -896,7 +955,8 @@ SearchByTextParams定义了搜索关键字的参数。
 
 
 
-#### ReverseGeocodeParams
+## ReverseGeocodeParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -907,6 +967,7 @@ SearchByTextParams定义了搜索关键字的参数。
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -921,7 +982,8 @@ SearchByTextParams定义了搜索关键字的参数。
 
 
 
-#### GeocodeParams
+## GeocodeParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -935,6 +997,7 @@ SearchByTextParams定义了搜索关键字的参数。
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | query | string | 否 | 否 | 地址信息，参数的长度范围：[1, 512]。 |
@@ -944,7 +1007,8 @@ SearchByTextParams定义了搜索关键字的参数。
 
 
 
-#### SearchByTextResult
+## SearchByTextResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -958,6 +1022,7 @@ SearchByTextParams定义了搜索关键字的参数。
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | totalCount | number | 否 | 否 | 如果查询成功，返回满足搜索条件的记录总数。 |
@@ -966,7 +1031,8 @@ SearchByTextParams定义了搜索关键字的参数。
 
 
 
-#### NearbySearchResult
+## NearbySearchResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -980,6 +1046,7 @@ SearchByTextParams定义了搜索关键字的参数。
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | totalCount | number | 否 | 否 | 如果查询成功，返回满足搜索条件的记录总数。 |
@@ -988,7 +1055,8 @@ SearchByTextParams定义了搜索关键字的参数。
 
 
 
-#### QueryAutoCompleteResult
+## QueryAutoCompleteResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1002,6 +1070,7 @@ SearchByTextParams定义了搜索关键字的参数。
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | sites | Array&lt;Site&gt; | 否 | 是 | 如果查询成功，返回搜索结果。 |
@@ -1009,7 +1078,8 @@ SearchByTextParams定义了搜索关键字的参数。
 
 
 
-#### SearchByIdResult
+## SearchByIdResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1023,6 +1093,7 @@ SearchByTextParams定义了搜索关键字的参数。
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | site | Site | 否 | 是 | 如果查询成功，返回地点详情。 |
@@ -1030,7 +1101,8 @@ SearchByTextParams定义了搜索关键字的参数。
 
 
 
-#### ReverseGeocodeResult
+## ReverseGeocodeResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1044,6 +1116,7 @@ SearchByTextParams定义了搜索关键字的参数。
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | addressComponent | AddressComponent | 否 | 否 | 地址详细信息。 |
@@ -1056,7 +1129,8 @@ SearchByTextParams定义了搜索关键字的参数。
 
 
 
-#### GeocodeResult
+## GeocodeResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1070,6 +1144,7 @@ SearchByTextParams定义了搜索关键字的参数。
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | sites | Array&lt;Site&gt; | 否 | 是 | 如果查询成功，返回搜索结果。 |
@@ -1077,7 +1152,8 @@ SearchByTextParams定义了搜索关键字的参数。
 
 
 
-#### Site
+## Site
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1088,6 +1164,7 @@ SearchByTextParams定义了搜索关键字的参数。
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1105,7 +1182,8 @@ SearchByTextParams定义了搜索关键字的参数。
 
 
 
-#### AddressComponent
+## AddressComponent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1118,6 +1196,7 @@ SearchByTextParams定义了搜索关键字的参数。
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1140,7 +1219,8 @@ SearchByTextParams定义了搜索关键字的参数。
 
 
 
-#### City
+## City
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1154,6 +1234,7 @@ SearchByTextParams定义了搜索关键字的参数。
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | cityCode | string | 否 | 是 | 城市码。 |
@@ -1163,7 +1244,8 @@ SearchByTextParams定义了搜索关键字的参数。
 
 
 
-#### StreetNumber
+## StreetNumber
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1177,6 +1259,7 @@ SearchByTextParams定义了搜索关键字的参数。
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | direction | string | 否 | 是 | 该输入点在街道的方向。 |
@@ -1189,7 +1272,8 @@ SearchByTextParams定义了搜索关键字的参数。
 
 
 
-#### Poi
+## Poi
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1202,6 +1286,7 @@ POI信息。
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1225,7 +1310,8 @@ POI信息。
 
 
 
-#### OpeningHours
+## OpeningHours
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1239,6 +1325,7 @@ POI信息。
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | texts | Array&lt;string&gt; | 否 | 是 | 每个星期的开放时间段的描述。 |
@@ -1247,7 +1334,8 @@ POI信息。
 
 
 
-#### Period
+## Period
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1261,6 +1349,7 @@ POI信息。
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | open | TimeOfWeek | 否 | 是 | 开放时间。 |
@@ -1269,7 +1358,8 @@ POI信息。
 
 
 
-#### TimeOfWeek
+## TimeOfWeek
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1283,6 +1373,7 @@ POI信息。
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | week | number | 否 | 是 | 0：星期日 1：星期一 2：星期二 3：星期三 4：星期四 5：星期五 6：星期六 |
@@ -1291,7 +1382,8 @@ POI信息。
 
 
 
-#### ChildNode
+## ChildNode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1305,6 +1397,7 @@ POI的子节点信息。
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | siteId | string | 否 | 是 | 位置ID。 |
@@ -1316,7 +1409,8 @@ POI的子节点信息。
 
 
 
-#### Comment
+## Comment
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1330,6 +1424,7 @@ POI的评论信息。
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | averageRating | number | 否 | 是 | 平均分。 |
@@ -1338,7 +1433,8 @@ POI的评论信息。
 
 
 
-#### Aoi
+## Aoi
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1349,6 +1445,7 @@ Aoi面信息。
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1363,7 +1460,8 @@ Aoi面信息。
 
 
 
-#### ReverseGeocodePoi
+## ReverseGeocodePoi
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1376,6 +1474,7 @@ Aoi面信息。
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1390,7 +1489,8 @@ Aoi面信息。
 
 
 
-#### Road
+## Road
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1404,6 +1504,7 @@ Aoi面信息。
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | direction | string | 否 | 是 | 该输入点在道路的方向。 |
@@ -1415,7 +1516,8 @@ Aoi面信息。
 
 
 
-#### Intersection
+## Intersection
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1428,6 +1530,7 @@ Aoi面信息。
 **系统能力：** SystemCapability.Map.Core
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

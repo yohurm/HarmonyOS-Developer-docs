@@ -1,11 +1,12 @@
 # @hms.utilityApplication.screenTimeGuard.guardService（屏幕时间守护服务）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/screentimeguard-guardservice
 **支持设备：** Phone | Tablet
 
-#### 模块概述
+## 模块概述
+
 
 **支持设备：** Phone | Tablet
 
@@ -20,7 +21,10 @@
  
   
 
-#### 用户授权管理
+### 用户授权管理
+
+
+**支持设备：** Phone | Tablet
 
 用户授权管理能力指用户为管控应用授予权限的相关功能。应用授权是使用本Kit所有功能的前提条件，出于隐私保护考虑，管控应用必须先获得用户的明确授权，才能使用本Kit提供的管控能力。
  
@@ -37,7 +41,10 @@ guardService.revokeUserAuth(); // 取消授权
  
   
 
-#### 应用访问管理
+### 应用访问管理
+
+
+**支持设备：** Phone | Tablet
 
 应用访问管理能力指限制用户访问指定应用的相关功能，用户将无法打开被限制访问的应用。当前支持通过策略和直接两种方式来实现访问限制:
  
@@ -73,7 +80,8 @@ guardService.removeGuardStrategy(guardStrategy.name); // 删除守护策略，�
  
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | Tablet
 
@@ -83,7 +91,8 @@ import { guardService } from '@kit.ScreenTimeGuardKit';
  
   
 
-#### GuardServiceErrorCode
+## GuardServiceErrorCode
+
 
 **支持设备：** Phone | Tablet
 
@@ -95,6 +104,7 @@ import { guardService } from '@kit.ScreenTimeGuardKit';
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | INTERNAL_ERROR | 1019000001 | 内部错误。 |
@@ -112,7 +122,8 @@ import { guardService } from '@kit.ScreenTimeGuardKit';
  
   
 
-#### requestUserAuth
+## requestUserAuth
+
 
 **支持设备：** Phone | Tablet
 
@@ -130,6 +141,7 @@ requestUserAuth(context: common.UIAbilityContext): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | UIAbility的上下文环境。 |
@@ -137,6 +149,7 @@ requestUserAuth(context: common.UIAbilityContext): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -146,6 +159,7 @@ requestUserAuth(context: common.UIAbilityContext): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-screentimeguard)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. |
@@ -182,7 +196,8 @@ struct TestPage {
  
   
 
-#### requestUserAuth
+## requestUserAuth
+
 
 **支持设备：** Phone | Tablet
 
@@ -200,6 +215,7 @@ requestUserAuth(context: common.UIAbilityContext, appConfig: AppConfig): Promise
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | UIAbility的上下文环境。 |
@@ -208,6 +224,7 @@ requestUserAuth(context: common.UIAbilityContext, appConfig: AppConfig): Promise
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -217,6 +234,7 @@ requestUserAuth(context: common.UIAbilityContext, appConfig: AppConfig): Promise
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-screentimeguard)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. |
@@ -257,7 +275,8 @@ struct TestPage {
  
   
 
-#### AppConfig
+## AppConfig
+
 
 **支持设备：** Phone | Tablet
 
@@ -269,6 +288,7 @@ struct TestPage {
  
 **起始版本：** 6.1.1(24)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | isSupportAppUninstall | boolean | 否 | 否 | 是否支持应用可卸载。 true: 在管控生效期间支持卸载管控应用。 false: 在管控生效期间禁止卸载管控应用。 说明： 1. 卸载管控应用后，该应用设置的管控规则立即失效。 2. 卸载后重新安装应用需要重新申请授权，否则无法调用管控相关接口。 |
@@ -276,7 +296,8 @@ struct TestPage {
  
   
 
-#### revokeUserAuth
+## revokeUserAuth
+
 
 **支持设备：** Phone | Tablet
 
@@ -294,6 +315,7 @@ revokeUserAuth(): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -303,6 +325,7 @@ revokeUserAuth(): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-screentimeguard)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. |
@@ -325,7 +348,8 @@ function testRevokeUserAuth() {
  
   
 
-#### getUserAuthStatus
+## getUserAuthStatus
+
 
 **支持设备：** Phone | Tablet
 
@@ -343,6 +367,7 @@ getUserAuthStatus(): Promise&lt;AuthStatus&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;AuthStatus&gt; | Promise对象，返回用户授权状态。 |
@@ -352,6 +377,7 @@ getUserAuthStatus(): Promise&lt;AuthStatus&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-screentimeguard)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. |
@@ -375,7 +401,8 @@ function testGetUserAuthStatus() {
  
   
 
-#### AuthStatus
+## AuthStatus
+
 
 **支持设备：** Phone | Tablet
 
@@ -387,6 +414,7 @@ function testGetUserAuthStatus() {
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | AUTH_INIT | -1 | 初始状态 |
@@ -396,7 +424,8 @@ function testGetUserAuthStatus() {
  
   
 
-#### AppInfo
+## AppInfo
+
 
 **支持设备：** Phone | Tablet
 
@@ -408,6 +437,7 @@ function testGetUserAuthStatus() {
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | appTokens | string[] | 否 | 否 | 应用token数组。 数组数量上限：100。 说明： 1. appTokens数组中存在错误的token，若只是部分错误，则取其中正常的token做显示和应用。 2. 该数组可以为空数组，即用户不设置任何应用在禁止/许可清单中，是正常场景。 |
@@ -415,7 +445,8 @@ function testGetUserAuthStatus() {
  
   
 
-#### addGuardStrategy
+## addGuardStrategy
+
 
 **支持设备：** Phone | Tablet
 
@@ -433,6 +464,7 @@ addGuardStrategy(guardStrategy: GuardStrategy): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | guardStrategy | GuardStrategy | 是 | 守护策略。 说明： 添加守护策略时策略数量的上限为50条。若超过50条，接口将抛出1019000004错误码。 |
@@ -440,6 +472,7 @@ addGuardStrategy(guardStrategy: GuardStrategy): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -449,6 +482,7 @@ addGuardStrategy(guardStrategy: GuardStrategy): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-screentimeguard)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. |
@@ -480,7 +514,7 @@ function testAddGuardStrategy() {
       name: 'TestStrategy',
       timeStrategy: time,
       appInfo: info,
-      appRestrictionType: guardService.RestrictionType.BLOCKLIST_TYPE // 使用禁止清单类型，表示限制除指定应用外的所有应用访问
+      appRestrictionType: guardService.RestrictionType.BLOCKLIST_TYPE // 使用禁止清单类型，表示限制appInfo内的应用访问
    };
    guardService.addGuardStrategy(strategy)
       .then(() => {
@@ -491,7 +525,8 @@ function testAddGuardStrategy() {
  
   
 
-#### GuardStrategy
+## GuardStrategy
+
 
 **支持设备：** Phone | Tablet
 
@@ -503,6 +538,7 @@ function testAddGuardStrategy() {
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | name | string | 否 | 否 | 策略名称。长度不超过64个字符，仅支持字母、数字和下划线。 |
@@ -513,7 +549,8 @@ function testAddGuardStrategy() {
  
   
 
-#### TimeStrategy
+## TimeStrategy
+
 
 **支持设备：** Phone | Tablet
 
@@ -525,6 +562,7 @@ function testAddGuardStrategy() {
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | TimeStrategyType | 否 | 否 | 时间策略类型。 |
@@ -536,7 +574,8 @@ function testAddGuardStrategy() {
  
   
 
-#### TimeStrategyType
+## TimeStrategyType
+
 
 **支持设备：** Phone | Tablet
 
@@ -548,6 +587,7 @@ function testAddGuardStrategy() {
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | START_END_TIME_TYPE | 1 | 起始时间策略类型，表示策略在配置的起始时间和结束时间内生效。如果为此类型，则TimeStrategy接口中的startTime、endTime必填，totalDuration非必填。 |
@@ -557,7 +597,8 @@ function testAddGuardStrategy() {
  
   
 
-#### RestrictionType
+## RestrictionType
+
 
 **支持设备：** Phone | Tablet
 
@@ -569,6 +610,7 @@ function testAddGuardStrategy() {
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | TRUSTLIST_TYPE | 1 | 许可清单类型。 |
@@ -577,7 +619,8 @@ function testAddGuardStrategy() {
  
   
 
-#### updateGuardStrategy
+## updateGuardStrategy
+
 
 **支持设备：** Phone | Tablet
 
@@ -595,6 +638,7 @@ updateGuardStrategy(strategyName: string, guardStrategy: GuardStrategy): Promise
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | strategyName | string | 是 | 待更新的时间守护策略名称。长度不超过64个字符，仅支持字母、数字和下划线。 |
@@ -603,6 +647,7 @@ updateGuardStrategy(strategyName: string, guardStrategy: GuardStrategy): Promise
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -612,6 +657,7 @@ updateGuardStrategy(strategyName: string, guardStrategy: GuardStrategy): Promise
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-screentimeguard)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. |
@@ -642,7 +688,7 @@ function testUpdateGuardService() {
       name: 'TestStrategyChanged',
       timeStrategy: time,
       appInfo: info,
-      appRestrictionType: guardService.RestrictionType.BLOCKLIST_TYPE // 使用禁止清单类型，表示限制除指定应用外的所有应用访问
+      appRestrictionType: guardService.RestrictionType.BLOCKLIST_TYPE // 使用禁止清单类型，表示限制appInfo内的应用访问
    };
    // TestStrategy策略需提前通过addGuardStrategy接口添加
    guardService.updateGuardStrategy('TestStrategy', strategy)
@@ -654,7 +700,8 @@ function testUpdateGuardService() {
  
   
 
-#### queryGuardStrategies
+## queryGuardStrategies
+
 
 **支持设备：** Phone | Tablet
 
@@ -672,6 +719,7 @@ queryGuardStrategies(): Promise<GuardStrategy[]>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<GuardStrategy[]> | Promise对象，返回该应用下所有守护策略的数组。 |
@@ -681,6 +729,7 @@ queryGuardStrategies(): Promise<GuardStrategy[]>
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-screentimeguard)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. |
@@ -704,7 +753,8 @@ function testQueryGuardService() {
  
   
 
-#### removeGuardStrategy
+## removeGuardStrategy
+
 
 **支持设备：** Phone | Tablet
 
@@ -722,6 +772,7 @@ removeGuardStrategy(strategyName: string): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | strategyName | string | 是 | 守护策略名称。长度不超过64个字符，仅支持字母、数字和下划线。 |
@@ -729,6 +780,7 @@ removeGuardStrategy(strategyName: string): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -738,6 +790,7 @@ removeGuardStrategy(strategyName: string): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-screentimeguard)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. |
@@ -763,7 +816,8 @@ function testRemoveGuardService() {
  
   
 
-#### startGuardStrategy
+## startGuardStrategy
+
 
 **支持设备：** Phone | Tablet
 
@@ -781,6 +835,7 @@ startGuardStrategy(strategyName: string): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | strategyName | string | 是 | 守护策略名称。长度不超过64个字符，仅支持字母、数字和下划线。 |
@@ -788,6 +843,7 @@ startGuardStrategy(strategyName: string): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -797,6 +853,7 @@ startGuardStrategy(strategyName: string): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-screentimeguard)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. |
@@ -823,7 +880,8 @@ function testStartGuardStrategy() {
  
   
 
-#### startGuardStrategy
+## startGuardStrategy
+
 
 **支持设备：** Phone | Tablet
 
@@ -841,6 +899,7 @@ startGuardStrategy(strategyName: string, startDate: Date): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | strategyName | string | 是 | 守护策略名称。长度不超过64个字符，仅支持字母、数字和下划线。 |
@@ -849,6 +908,7 @@ startGuardStrategy(strategyName: string, startDate: Date): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -858,6 +918,7 @@ startGuardStrategy(strategyName: string, startDate: Date): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-screentimeguard)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. |
@@ -887,7 +948,8 @@ function testStartStrategyAtSpecificTime() {
  
   
 
-#### stopGuardStrategy
+## stopGuardStrategy
+
 
 **支持设备：** Phone | Tablet
 
@@ -905,6 +967,7 @@ stopGuardStrategy(strategyName: string): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | strategyName | string | 是 | 守护策略名称。长度不超过64个字符，仅支持字母、数字和下划线。 |
@@ -912,6 +975,7 @@ stopGuardStrategy(strategyName: string): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -921,6 +985,7 @@ stopGuardStrategy(strategyName: string): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-screentimeguard)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. |
@@ -947,7 +1012,8 @@ function testStopGuardService() {
  
   
 
-#### setAppsRestriction
+## setAppsRestriction
+
 
 **支持设备：** Phone | Tablet
 
@@ -965,6 +1031,7 @@ setAppsRestriction(appInfo: AppInfo, restrictionType: RestrictionType): Promise&
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | appInfo | AppInfo | 是 | 被选择的应用token。 |
@@ -973,6 +1040,7 @@ setAppsRestriction(appInfo: AppInfo, restrictionType: RestrictionType): Promise&
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -982,6 +1050,7 @@ setAppsRestriction(appInfo: AppInfo, restrictionType: RestrictionType): Promise&
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-screentimeguard)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. |
@@ -999,7 +1068,7 @@ import { guardService } from '@kit.ScreenTimeGuardKit';
 function testSetAppsRestriction() {
    let selectedTokens: string[] = []; // 可以通过调用startAppPicker接口获取相应的应用token并填充，本次初始化为空数组，表示未指定任何应用
    let appInfo: guardService.AppInfo = { appTokens: selectedTokens };
-   let restrictionType: guardService.RestrictionType = guardService.RestrictionType.BLOCKLIST_TYPE; // 使用禁止清单类型，表示限制除指定应用外的所有应用访问
+   let restrictionType: guardService.RestrictionType = guardService.RestrictionType.BLOCKLIST_TYPE; // 使用禁止清单类型，表示限制appInfo内的应用访问
    guardService.setAppsRestriction(appInfo, restrictionType)
       .then(() => {
          console.info('setAppsRestriction invoke success');
@@ -1009,7 +1078,8 @@ function testSetAppsRestriction() {
  
   
 
-#### releaseAppsRestriction
+## releaseAppsRestriction
+
 
 **支持设备：** Phone | Tablet
 
@@ -1027,6 +1097,7 @@ releaseAppsRestriction(appInfo: AppInfo, restrictionType: RestrictionType): Prom
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | appInfo | AppInfo | 是 | 被选择的应用token集合，是一个字符串数组。 |
@@ -1035,6 +1106,7 @@ releaseAppsRestriction(appInfo: AppInfo, restrictionType: RestrictionType): Prom
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1044,6 +1116,7 @@ releaseAppsRestriction(appInfo: AppInfo, restrictionType: RestrictionType): Prom
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-screentimeguard)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. |
@@ -1061,7 +1134,7 @@ import { guardService } from '@kit.ScreenTimeGuardKit';
 function testReleaseAppsRestriction() {
    let selectedTokens: string[] = []; // 可以通过调用startAppPicker接口获取相应的应用token并填充，本次初始化为空数组，表示未指定任何应用
    let appInfo: guardService.AppInfo = { appTokens: selectedTokens };
-   let restrictionType: guardService.RestrictionType = guardService.RestrictionType.BLOCKLIST_TYPE; // 使用禁止清单类型，表示解除除指定应用外的所有应用访问限制
+   let restrictionType: guardService.RestrictionType = guardService.RestrictionType.BLOCKLIST_TYPE; // 使用禁止清单类型，表示解除appInfo内的应用访问限制
    guardService.releaseAppsRestriction(appInfo, restrictionType)
       .then(() => {
          console.info('releaseAppsRestriction invoke success');
@@ -1071,7 +1144,8 @@ function testReleaseAppsRestriction() {
  
   
 
-#### GuardStrategyData
+## GuardStrategyData
+
 
 **支持设备：** Phone | Tablet
 
@@ -1083,6 +1157,7 @@ function testReleaseAppsRestriction() {
  
 **起始版本：** 26.0.0
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | usageDuration | number | 否 | 否 | 策略已使用时长，单位为s。 |
@@ -1090,7 +1165,8 @@ function testReleaseAppsRestriction() {
  
   
 
-#### queryGuardStrategyData
+## queryGuardStrategyData
+
 
 **支持设备：** Phone | Tablet
 
@@ -1108,6 +1184,7 @@ queryGuardStrategyData(strategyName: string): Promise&lt;GuardStrategyData&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | strategyName | string | 是 | 守护策略名称。长度不超过64个字符，仅支持字母、数字和下划线。 |
@@ -1115,6 +1192,7 @@ queryGuardStrategyData(strategyName: string): Promise&lt;GuardStrategyData&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;GuardStrategyData&gt; | Promise对象，返回该管控策略的运行数据，包括策略已使用时长。 |
@@ -1124,6 +1202,7 @@ queryGuardStrategyData(strategyName: string): Promise&lt;GuardStrategyData&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-screentimeguard)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. |

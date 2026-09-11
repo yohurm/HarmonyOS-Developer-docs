@@ -1,9 +1,9 @@
 # Interface (WhiteBalance)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-whitebalance
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 WhiteBalance继承自[WhiteBalanceQuery](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-whitebalancequery)。
  
@@ -14,9 +14,10 @@ WhiteBalance继承自[WhiteBalanceQuery](https://developer.huawei.com/consumer/c
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { camera } from '@kit.CameraKit';
@@ -24,9 +25,10 @@ import { camera } from '@kit.CameraKit';
  
   
 
-#### setWhiteBalanceMode20+
+## setWhiteBalanceMode20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setWhiteBalanceMode(mode: WhiteBalanceMode): void
  
@@ -38,6 +40,7 @@ setWhiteBalanceMode(mode: WhiteBalanceMode): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | WhiteBalanceMode | 是 | 白平衡模式。 |
@@ -47,6 +50,7 @@ setWhiteBalanceMode(mode: WhiteBalanceMode): void
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400101 | Parameter missing or parameter type incorrect. |
@@ -70,9 +74,10 @@ function setWhiteBalanceMode(session: camera.PhotoSession | camera.VideoSession)
  
   
 
-#### getWhiteBalanceMode20+
+## getWhiteBalanceMode20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getWhiteBalanceMode(): WhiteBalanceMode
  
@@ -84,6 +89,7 @@ getWhiteBalanceMode(): WhiteBalanceMode
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | WhiteBalanceMode | 获取当前白平衡模式。若接口调用失败，返回undefined。 |
@@ -93,6 +99,7 @@ getWhiteBalanceMode(): WhiteBalanceMode
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400103 | Session not config. |
@@ -117,9 +124,10 @@ function getWhiteBalanceMode(session: camera.PhotoSession | camera.VideoSession)
  
   
 
-#### setWhiteBalance20+
+## setWhiteBalance20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setWhiteBalance(whiteBalance: number): void
  
@@ -133,6 +141,7 @@ setWhiteBalance(whiteBalance: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | whiteBalance | number | 是 | 设置手动白平衡值，单位为K（Kelvin，温度单位）。 |
@@ -142,6 +151,7 @@ setWhiteBalance(whiteBalance: number): void
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400101 | Parameter missing or parameter type incorrect. |
@@ -166,9 +176,10 @@ function setWhiteBalance(session: camera.PhotoSession | camera.VideoSession): vo
  
   
 
-#### getWhiteBalance20+
+## getWhiteBalance20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getWhiteBalance(): number
  
@@ -180,6 +191,7 @@ getWhiteBalance(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回当前白平衡值，单位为K（Kelvin，温度单位）。 |
@@ -189,6 +201,7 @@ getWhiteBalance(): number
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400103 | Session not config. |
@@ -213,9 +226,10 @@ function getWhiteBalance(session: camera.PhotoSession | camera.VideoSession): nu
  
   
 
-#### setColorTint
+## setColorTint
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setColorTint(colorTint: number): void
  
@@ -233,6 +247,7 @@ setColorTint(colorTint: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | colorTint | number | 是 | 设置手动白平衡色调调节值。 |
@@ -242,6 +257,7 @@ setColorTint(colorTint: number): void
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400103 | Session not config. |
@@ -265,9 +281,10 @@ function setColorTint(session: camera.PhotoSession | camera.VideoSession): void 
  
   
 
-#### getColorTint
+## getColorTint
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getColorTint(): number
  
@@ -283,6 +300,7 @@ getColorTint(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回当前白平衡色调调节值。 |
@@ -292,6 +310,7 @@ getColorTint(): number
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400103 | Session not config. |

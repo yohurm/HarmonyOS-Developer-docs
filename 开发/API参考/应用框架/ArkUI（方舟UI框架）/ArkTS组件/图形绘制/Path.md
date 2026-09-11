@@ -1,9 +1,9 @@
 # Path
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawing-components-path
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 路径绘制组件，根据绘制路径生成封闭的自定义形状，支持通过SVG路径描述规范定义复杂的几何形状。
  
@@ -12,23 +12,26 @@
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
  
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### Path
+### Path
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 new Path(options?: PathOptions)
  
@@ -42,6 +45,7 @@ new Path(options?: PathOptions)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | PathOptions | 否 | Path组件绘制属性的配置对象。 省略时不设置绘制属性，组件按默认尺寸显示。默认尺寸根据路径内容自动计算宽度和高度。 异常值undefined和null按照无效值处理，本次设置不生效。 **说明：**从API version 18开始，使用PathOptions参数时需在Stage模型下使用。 |
@@ -49,9 +53,10 @@ new Path(options?: PathOptions)
  
   
 
-#### Path
+### Path
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Path(options?: PathOptions)
  
@@ -65,6 +70,7 @@ Path(options?: PathOptions)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | PathOptions | 否 | Path组件绘制属性的配置对象。 省略时不设置绘制属性，组件按默认尺寸显示。默认尺寸根据路径内容自动计算宽度和高度。 异常值undefined和null按照无效值处理，本次设置不生效。 **说明：**从API version 18开始，使用PathOptions参数时需在Stage模型下使用。 |
@@ -72,9 +78,10 @@ Path(options?: PathOptions)
  
   
 
-#### PathOptions18+对象说明
+## PathOptions18+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于描述Path组件绘制属性。
  
@@ -90,6 +97,7 @@ Path(options?: PathOptions)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | width7+ | Length | 否 | 是 | 路径所在矩形的宽度。取值范围≥0。 值为异常值或缺省时按照路径内容自动计算宽度。 默认单位：vp 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -99,17 +107,19 @@ Path(options?: PathOptions)
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)以及[图形绘制通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawing-components-common)外，还支持以下属性：
  
   
 
-#### commands
+### commands
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 commands(value: ResourceStr)
  
@@ -123,6 +133,7 @@ commands(value: ResourceStr)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceStr | 是 | 路径绘制的命令字符串，需符合SVG路径描述规范，单位为px。 默认值：空字符串 异常值undefined和null按照默认值处理。 |
@@ -130,12 +141,14 @@ commands(value: ResourceStr)
  
   
 
-#### SVG路径描述规范
+## SVG路径描述规范
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 SVG路径描述规范支持的命令如下：
   
+
 | 命令 | 名称 | 参数 | 说明 |
 | --- | --- | --- | --- |
 | M | moveto | x：起始点的x轴坐标。 y：起始点的y轴坐标。 | 在给定的(x, y)坐标处开始一个新的子路径。例如，M 0 0表示将(0, 0)点作为新子路径的起始点。 |
@@ -154,13 +167,17 @@ SVG路径描述规范支持的命令如下：
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 示例1（组件属性绘制）
+### 示例1（组件属性绘制）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过commands、fillOpacity、stroke属性分别绘制路径、透明度、边框颜色。
  
@@ -249,7 +266,10 @@ struct PathExample {
  
   
 
-#### 示例2（使用不同参数类型绘制路径）
+### 示例2（使用不同参数类型绘制路径）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 width、height、commands属性分别使用不同的长度类型绘制图形。
  
@@ -285,12 +305,15 @@ struct PathTypeExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/Sg9NfOoKT4mTT4--S6LfCA/zh-cn_image_0000002704394951.png?HW-CC-KV=V1&HW-CC-Date=20260813T095449Z&HW-CC-Expire=86400&HW-CC-Sign=94701919EFB9C0ACAF287B16D658177D0E11DA2FACB1F0DF99114DD37719EEAA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/a7g6-DJ6Rw2HOP3BgL20Zg/zh-cn_image_0000002747212901.png?HW-CC-KV=V1&HW-CC-Date=20260911T073117Z&HW-CC-Expire=86400&HW-CC-Sign=E335A5FEF327235DA49AC8894C9D95E01F51B9C9028CA05B952AF45C850E612F)
 
  
   
 
-#### 示例3（使用attributeModifier动态设置Path组件的属性）
+### 示例3（使用attributeModifier动态设置Path组件的属性）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 以下示例展示了如何使用attributeModifier动态设置Path组件的commands、fill、fillOpacity、stroke、strokeDashArray、strokeDashOffset、strokeLineCap、strokeLineJoin、strokeMiterLimit、strokeOpacity、strokeWidth和antiAlias属性。
  
@@ -330,4 +353,4 @@ struct PathModifierDemo {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/f-97KLmmRkWMuuZxJoK1iA/zh-cn_image_0000002674634830.png?HW-CC-KV=V1&HW-CC-Date=20260813T095449Z&HW-CC-Expire=86400&HW-CC-Sign=020AA60C886DC3346AAA2E220AF923EC36DF95A52C6224EE96E95950905842BE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/IBMKfqyeS3a7DRf2djpJWA/zh-cn_image_0000002717772966.png?HW-CC-KV=V1&HW-CC-Date=20260911T073117Z&HW-CC-Expire=86400&HW-CC-Sign=F4757AB0250CCD75A61225DD097C6B4DDE800911CB2F2A2C0AA402A22AC8FD10)

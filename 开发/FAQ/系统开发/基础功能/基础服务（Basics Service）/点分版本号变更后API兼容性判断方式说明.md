@@ -16,9 +16,9 @@
 ```text
 getTestData(): void {
   if (deviceInfo.sdkApiVersion >= 24 && deviceInfo.apiAvailable('26.0.0')) {
-    // Calling APIs of 26.0.0
+    <em>// Calling APIs of 26.0.0</em>
   } else {
-    // Downgrade Scheme
+    <em>// Downgrade Scheme</em>
   }
 }
 ```
@@ -30,7 +30,7 @@ getTestData(): void {
 ```text
 void testFunction(){
     if(APIAVAILABLE(24, 0, 0)){
-        // method invocation
+        <em>// method invocation</em>
     }
 }
 ```
@@ -41,7 +41,7 @@ void testFunction(){
 
   在点分版本号变更后，可支持使用三位数字的版本号参数。（仅支持ArkTS，从API 22版本开始支持。）
 ```text
-// HarmonyOS
+<em>// HarmonyOS</em>
 @Available({ minApiVersion: 'HarmonyOS 7.0.0' })
 function  func2(){}
 ```
@@ -49,7 +49,7 @@ function  func2(){}
 
   
 ```text
-// OpenHarmony
+<em>// OpenHarmony</em>
 @Available({ minApiVersion: '26' })
 function  func1(){
   func2()

@@ -1,6 +1,6 @@
 # ArkGraphics 3D场景动画控制以及管理
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-04 10:41:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkgraphics3d-animation
 
@@ -9,7 +9,7 @@
 ArkGraphics 3D提供播放并控制场景动画的能力，支持开发者灵活地控制动画的状态，达到预期的渲染效果。
   
 
-#### 开发步骤
+## 开发步骤
 1. 导入相关模块。
 
   在页面脚本中导入ArkGraphics 3D提供的核心类型，用于创建和控制3D场景、相机以及动画资源。
@@ -53,7 +53,7 @@ Scene.load($rawfile('gltf/BrainStem/glTF/BrainStem.glb'))
   
 ```ArkTS
 // create a new camera.
-this.cam = await rf.createCamera({ 'name': 'Camera' });
+this.cam = await rf.createCamera({ name: 'Camera' });
 // set the camera.
 this.cam.enabled = true;
 this.cam.position.z = 5;
@@ -82,7 +82,7 @@ this.sceneOpt = { scene: this.scene, modelType: ModelType.SURFACE } as SceneOpti
 
   
 
-  #### 示例代码
+  ## 示例代码
 
   
 [基于3D引擎接口实现3D图形渲染功能（ArkTS）](https://gitcode.com/HarmonyOS_Samples/Graphics3D)

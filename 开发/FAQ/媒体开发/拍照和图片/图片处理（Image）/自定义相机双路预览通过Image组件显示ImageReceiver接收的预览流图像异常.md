@@ -10,17 +10,17 @@
  
 ```text
 Column() {
-  // this.imagePixelMap为ImageReceiver接收的预览流数据
+  <em>// this.imagePixelMap</em><em>为ImageReceiver接收的预览流数据</em>
   Image(this.imagePixelMap)
     .width('100%')
     .height('100%')
-    .rotate({ angle: -90 })       // 组件逆时针旋转90度，用于适应相机预览流的旋转角度
-    .objectFit(ImageFit.Contain)  // 设置图片的填充，使得预览流画面在Image组件中完整显示
+    .rotate({ angle: -90 })     <em>  </em><em>// 组件逆时针旋转90度，用于适应相机预览流的旋转角度</em>
+    .objectFit(ImageFit.Contain)  <em>// </em><em>设置图片的填充，使得预览流画面在Image组件中完整显示</em>
     .backgroundColor(Color.Black)
 }
 .clip(true)
-.width(this.floatWindowWidth)     // 组件宽
-.height(this.floatWindowHeight)   // 组件高
+.width(this.floatWindowWidth)    <em> </em><em>// 组件宽</em>
+.height(this.floatWindowHeight)  <em> </em><em>// 组件高</em>
 ```
  
  

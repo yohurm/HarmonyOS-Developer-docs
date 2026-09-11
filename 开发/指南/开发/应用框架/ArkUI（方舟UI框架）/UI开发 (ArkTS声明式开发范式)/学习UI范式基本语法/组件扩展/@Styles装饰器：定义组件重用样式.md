@@ -1,6 +1,6 @@
 # @Styles装饰器：定义组件重用样式
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-style
 
@@ -13,10 +13,10 @@
 
 
 
-#### 装饰器使用说明
+## 装饰器使用说明
 
  - 当前@Styles仅支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)和[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)。
- - @Styles可以定义在组件内或全局，在全局定义时需在方法名前面添加function关键字，组件内定义时则不需要添加function关键字。请参考用例[组件内styles和全局styles的用法](#组件内styles和全局styles的用法)。
+ - @Styles可以定义在组件内或全局，在全局定义时需在方法名前面添加function关键字，组件内定义时则不需要添加function关键字。请参考用例[组件内@Styles和全局@Styles的用法](#组件内styles和全局styles的用法)。
  - 组件内@Styles的优先级高于全局@Styles。框架优先找当前组件内的@Styles，如果找不到，则会全局查找。
 
 
@@ -54,12 +54,12 @@ struct FancyUse {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/kPIkqWMiShCPvRT1jbT0hA/zh-cn_image_0000002674471976.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095702Z&HW-CC-Expire=86400&HW-CC-Sign=64DC6A0732DE171804E3628FF54DD1A116AC5226B35E9B83956968ECAE4677AB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/9l9RF1aETM2LiMgCIG6GKQ/zh-cn_image_0000002717610038.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072512Z&HW-CC-Expire=86400&HW-CC-Sign=D4F931E3AD4D0C928B0F517A062258F4029D2FC268BB5CAA438C28AAC11AFB54)
 
 
 
 
-#### 限制条件
+## 限制条件
 
  - @Styles方法不支持传入参数，编译期会报错。
 
@@ -75,12 +75,12 @@ struct FancyUse {
 ```ArkTS
 // 正确写法
   @Styles
-  function globalFancy () {
+  function globalFancy() {
     .width(100)
   }
 ```
 
- - 不支持在@Styles方法内使用逻辑组件，逻辑组件内的属性不生效。
+ - 不支持在@Styles方法内使用条件渲染语句，条件渲染语句内的属性不生效。
 
 
 ```text
@@ -103,11 +103,11 @@ struct FancyUse {
 
 
 
-#### 使用场景
+## 使用场景
 
 
 
-#### 组件内@Styles和全局@Styles的用法
+### 组件内@Styles和全局@Styles的用法
 
 ```ArkTS
 // 定义在全局的@Styles封装的样式
@@ -151,4 +151,4 @@ struct GlobalFancy {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/iIuvdISbQ1KEp3l9qG_G-w/zh-cn_image_0000002704391945.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095702Z&HW-CC-Expire=86400&HW-CC-Sign=D794899CC96354F878F5EC56FDAA572D5A93CEEE1C4789340A4AEF78CE8A4D1C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/RTsB6btvSG6QkNL-Xta32g/zh-cn_image_0000002747289989.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072512Z&HW-CC-Expire=86400&HW-CC-Sign=8533A39321F9EB207BD6DD378B747F2E702DBDBEEBBB6E2CEEBCDFDA9B697F4B)

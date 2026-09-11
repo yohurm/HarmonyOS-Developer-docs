@@ -1,9 +1,9 @@
 # @ohos.app.ability.ActionExtensionAbility (支持业务操作自定义的ExtensionAbility组件)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-actionextensionability
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ActionExtensionAbility是为开发者提供的自定义操作业务模板，继承自[UIExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiextensionability)。
  
@@ -16,9 +16,10 @@ ActionExtensionAbility是为开发者提供的自定义操作业务模板，继�
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { ActionExtensionAbility } from '@kit.AbilityKit';
@@ -26,9 +27,10 @@ import { ActionExtensionAbility } from '@kit.AbilityKit';
  
   
 
-#### ActionExtensionAbility(deprecated)
+## ActionExtensionAbility(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ActionExtensionAbility是为开发者提供的自定义操作业务模板，继承自[UIExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiextensionability)。
  

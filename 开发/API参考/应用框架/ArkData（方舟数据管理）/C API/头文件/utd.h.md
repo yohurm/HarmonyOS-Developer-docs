@@ -1,11 +1,12 @@
 # utd.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-utd-h
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 结构体
+### 结构体
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_Utd | OH_Utd | 统一数据类型描述符。 |
@@ -40,10 +44,12 @@
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_Utd* OH_Utd_Create(const char* typeId) | 创建统一数据类型OH_Utd指针及实例对象。 |
@@ -66,13 +72,15 @@
  
   
 
-#### 函数说明
+## 函数说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### OH_Utd_Create()
+### OH_Utd_Create()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -88,6 +96,7 @@ OH_Utd* OH_Utd_Create(const char* typeId)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char* typeId | 表示统一数据类型ID。 |
@@ -95,6 +104,7 @@ OH_Utd* OH_Utd_Create(const char* typeId)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Utd* | 执行成功则返回一个指向统一数据类型OH_Utd实例对象的指针，否则返回nullptr。 当不再需要使用指针时，请使用OH_Utd_Destroy销毁实例对象，否则会导致内存泄漏。 |
@@ -102,7 +112,8 @@ OH_Utd* OH_Utd_Create(const char* typeId)
  
   
 
-#### OH_Utd_Destroy()
+### OH_Utd_Destroy()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -118,6 +129,7 @@ void OH_Utd_Destroy(OH_Utd* pThis)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Utd* pThis | 表示指向统一数据类型OH_Utd实例的指针。 |
@@ -125,7 +137,8 @@ void OH_Utd_Destroy(OH_Utd* pThis)
  
   
 
-#### OH_Utd_GetTypeId()
+### OH_Utd_GetTypeId()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -141,6 +154,7 @@ const char* OH_Utd_GetTypeId(OH_Utd* pThis)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Utd* pThis | 表示一个指向统一数据类型OH_Utd对象的指针。 |
@@ -148,6 +162,7 @@ const char* OH_Utd_GetTypeId(OH_Utd* pThis)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | const char* | 当入参有效时返回指向类型ID的字符串指针，否则返回nullptr。 |
@@ -155,7 +170,8 @@ const char* OH_Utd_GetTypeId(OH_Utd* pThis)
  
   
 
-#### OH_Utd_GetDescription()
+### OH_Utd_GetDescription()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -171,6 +187,7 @@ const char* OH_Utd_GetDescription(OH_Utd* pThis)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Utd* pThis | 表示一个指向统一数据类型OH_Utd对象的指针。 |
@@ -178,6 +195,7 @@ const char* OH_Utd_GetDescription(OH_Utd* pThis)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | const char* | 当入参有效时返回指向描述信息的字符串指针，否则返回nullptr。 |
@@ -185,7 +203,8 @@ const char* OH_Utd_GetDescription(OH_Utd* pThis)
  
   
 
-#### OH_Utd_GetReferenceUrl()
+### OH_Utd_GetReferenceUrl()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -201,6 +220,7 @@ const char* OH_Utd_GetReferenceUrl(OH_Utd* pThis)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Utd* pThis | 表示一个指向统一数据类型OH_Utd对象的指针。 |
@@ -208,6 +228,7 @@ const char* OH_Utd_GetReferenceUrl(OH_Utd* pThis)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | const char* | 当入参有效时返回指向URL信息的字符串指针，否则返回nullptr。 |
@@ -215,7 +236,8 @@ const char* OH_Utd_GetReferenceUrl(OH_Utd* pThis)
  
   
 
-#### OH_Utd_GetIconFile()
+### OH_Utd_GetIconFile()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -231,6 +253,7 @@ const char* OH_Utd_GetIconFile(OH_Utd* pThis)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Utd* pThis | 表示一个指向统一数据类型OH_Utd对象的指针。 |
@@ -238,6 +261,7 @@ const char* OH_Utd_GetIconFile(OH_Utd* pThis)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | const char* | 当入参有效时返回指向默认图标文件路径的字符串指针，否则返回nullptr。 |
@@ -245,7 +269,8 @@ const char* OH_Utd_GetIconFile(OH_Utd* pThis)
  
   
 
-#### OH_Utd_GetBelongingToTypes()
+### OH_Utd_GetBelongingToTypes()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -261,6 +286,7 @@ const char** OH_Utd_GetBelongingToTypes(OH_Utd* pThis, unsigned int* count)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Utd* pThis | 表示一个指向统一数据类型OH_Utd对象的指针。 |
@@ -269,6 +295,7 @@ const char** OH_Utd_GetBelongingToTypes(OH_Utd* pThis, unsigned int* count)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | const char** | 当入参有效时返回归属关系结果集的字符串指针列表，否则返回nullptr。 当不再需要使用指针时，请及时使用OH_Utd_DestroyStringList销毁对应的实例，否则会导致内存泄漏。 |
@@ -276,7 +303,8 @@ const char** OH_Utd_GetBelongingToTypes(OH_Utd* pThis, unsigned int* count)
  
   
 
-#### OH_Utd_GetFilenameExtensions()
+### OH_Utd_GetFilenameExtensions()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -292,6 +320,7 @@ const char** OH_Utd_GetFilenameExtensions(OH_Utd* pThis, unsigned int* count)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Utd* pThis | 表示一个指向统一数据类型OH_Utd对象的指针。 |
@@ -300,6 +329,7 @@ const char** OH_Utd_GetFilenameExtensions(OH_Utd* pThis, unsigned int* count)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | const char** | 当入参有效时返回文件名后缀结果集的字符串指针列表，否则返回nullptr。 当不再需要使用指针时，请及时使用OH_Utd_DestroyStringList销毁对应的实例，否则会导致内存泄漏。 |
@@ -307,7 +337,8 @@ const char** OH_Utd_GetFilenameExtensions(OH_Utd* pThis, unsigned int* count)
  
   
 
-#### OH_Utd_GetMimeTypes()
+### OH_Utd_GetMimeTypes()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -323,6 +354,7 @@ const char** OH_Utd_GetMimeTypes(OH_Utd* pThis, unsigned int* count)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Utd* pThis | 表示一个指向统一数据类型OH_Utd对象的指针。 |
@@ -331,6 +363,7 @@ const char** OH_Utd_GetMimeTypes(OH_Utd* pThis, unsigned int* count)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | const char** | 当入参有效时返回MIME类型结果集的字符串指针列表，否则返回nullptr。 当不再需要使用指针时，请及时使用OH_Utd_DestroyStringList销毁对应的实例，否则会导致内存泄漏。 |
@@ -338,7 +371,8 @@ const char** OH_Utd_GetMimeTypes(OH_Utd* pThis, unsigned int* count)
  
   
 
-#### OH_Utd_GetTypesByFilenameExtension()
+### OH_Utd_GetTypesByFilenameExtension()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -354,6 +388,7 @@ const char** OH_Utd_GetTypesByFilenameExtension(const char* extension, unsigned 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char* extension | 表示文件名后缀。 |
@@ -362,6 +397,7 @@ const char** OH_Utd_GetTypesByFilenameExtension(const char* extension, unsigned 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | const char** | 当入参有效时返回标准数据描述类型结果集字符串列表，否则返回nullptr。 当不再需要使用指针时，请及时使用OH_Utd_DestroyStringList销毁对应的实例，否则会导致内存泄漏。 |
@@ -369,7 +405,8 @@ const char** OH_Utd_GetTypesByFilenameExtension(const char* extension, unsigned 
  
   
 
-#### OH_Utd_GetTypesByMimeType()
+### OH_Utd_GetTypesByMimeType()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -385,6 +422,7 @@ const char** OH_Utd_GetTypesByMimeType(const char* mimeType, unsigned int* count
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char* mimeType | 表示MIME类型字符串。 |
@@ -393,6 +431,7 @@ const char** OH_Utd_GetTypesByMimeType(const char* mimeType, unsigned int* count
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | const char** | 当入参有效时返回标准数据描述类型结果集字符串列表，否则返回nullptr。 当不再需要使用指针时，请及时使用OH_Utd_DestroyStringList销毁对应的实例，否则会导致内存泄漏。 |
@@ -400,7 +439,8 @@ const char** OH_Utd_GetTypesByMimeType(const char* mimeType, unsigned int* count
  
   
 
-#### OH_Utd_BelongsTo()
+### OH_Utd_BelongsTo()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -416,6 +456,7 @@ bool OH_Utd_BelongsTo(const char* srcTypeId, const char* destTypeId)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char* srcTypeId | 表示原标准化数据类型。 |
@@ -424,6 +465,7 @@ bool OH_Utd_BelongsTo(const char* srcTypeId, const char* destTypeId)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | false表示原类型不属于目标类型，true表示原类型属于目标类型。 |
@@ -431,7 +473,8 @@ bool OH_Utd_BelongsTo(const char* srcTypeId, const char* destTypeId)
  
   
 
-#### OH_Utd_IsLower()
+### OH_Utd_IsLower()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -447,6 +490,7 @@ bool OH_Utd_IsLower(const char* srcTypeId, const char* destTypeId)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char* srcTypeId | 表示原标准化数据类型。 |
@@ -455,6 +499,7 @@ bool OH_Utd_IsLower(const char* srcTypeId, const char* destTypeId)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | false表示原类型不低于目标类型；true表示原类型低于目标类型。 |
@@ -462,7 +507,8 @@ bool OH_Utd_IsLower(const char* srcTypeId, const char* destTypeId)
  
   
 
-#### OH_Utd_IsHigher()
+### OH_Utd_IsHigher()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -478,6 +524,7 @@ bool OH_Utd_IsHigher(const char* srcTypeId, const char* destTypeId)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char* srcTypeId | 表示原标准化数据类型。 |
@@ -486,6 +533,7 @@ bool OH_Utd_IsHigher(const char* srcTypeId, const char* destTypeId)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | false表示原类型不高于目标类型，true表示原类型高于目标类型。 |
@@ -493,7 +541,8 @@ bool OH_Utd_IsHigher(const char* srcTypeId, const char* destTypeId)
  
   
 
-#### OH_Utd_Equals()
+### OH_Utd_Equals()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -509,6 +558,7 @@ bool OH_Utd_Equals(OH_Utd* utd1, OH_Utd* utd2)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Utd* utd1 | 表示一个指向标准化数据描述类型OH_Utd对象的指针。 |
@@ -517,6 +567,7 @@ bool OH_Utd_Equals(OH_Utd* utd1, OH_Utd* utd2)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | false表示两种类型不相等，true表示两种类型相等。 |
@@ -524,7 +575,8 @@ bool OH_Utd_Equals(OH_Utd* utd1, OH_Utd* utd2)
  
   
 
-#### OH_Utd_DestroyStringList()
+### OH_Utd_DestroyStringList()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -540,6 +592,7 @@ void OH_Utd_DestroyStringList(const char** list, unsigned int count)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char** list | 表示字符串列表指针。 |

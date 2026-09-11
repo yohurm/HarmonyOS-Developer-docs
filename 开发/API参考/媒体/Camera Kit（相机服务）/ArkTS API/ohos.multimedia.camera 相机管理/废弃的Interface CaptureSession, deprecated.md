@@ -1,9 +1,9 @@
 # 废弃的Interface (CaptureSession, deprecated)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-capturesession
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 拍照会话类，保存一次相机运行所需要的所有资源[CameraInput](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-camerainput)、[CameraOutput](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-cameraoutput)，并向相机设备申请完成相机功能(录像，拍照)。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { camera } from '@kit.CameraKit';
@@ -22,9 +23,10 @@ import { camera } from '@kit.CameraKit';
 
 
 
-#### beginConfig(deprecated)
+## beginConfig(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 beginConfig(): void
 
@@ -39,6 +41,7 @@ beginConfig(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -63,9 +66,10 @@ function beginConfig(captureSession: camera.CaptureSession): void {
 
 
 
-#### commitConfig(deprecated)
+## commitConfig(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 commitConfig(callback: AsyncCallback&lt;void&gt;): void
 
@@ -79,6 +83,7 @@ commitConfig(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当提交配置信息成功，err为undefined，否则为错误对象。错误码类型CameraErrorCode |
@@ -87,6 +92,7 @@ commitConfig(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -112,9 +118,10 @@ function commitConfig(captureSession: camera.CaptureSession): void {
 
 
 
-#### commitConfig(deprecated)
+## commitConfig(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 commitConfig(): Promise&lt;void&gt;
 
@@ -128,6 +135,7 @@ commitConfig(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -136,6 +144,7 @@ commitConfig(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -160,9 +169,10 @@ function commitConfig(captureSession: camera.CaptureSession): void {
 
 
 
-#### addInput(deprecated)
+## addInput(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addInput(cameraInput: CameraInput): void
 
@@ -176,6 +186,7 @@ addInput(cameraInput: CameraInput): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cameraInput | CameraInput | 是 | 需要添加的CameraInput实例。 |
@@ -184,6 +195,7 @@ addInput(cameraInput: CameraInput): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -209,9 +221,10 @@ function addInput(captureSession: camera.CaptureSession, cameraInput: camera.Cam
 
 
 
-#### removeInput(deprecated)
+## removeInput(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeInput(cameraInput: CameraInput): void
 
@@ -225,6 +238,7 @@ removeInput(cameraInput: CameraInput): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cameraInput | CameraInput | 是 | 需要移除的CameraInput实例。 |
@@ -233,6 +247,7 @@ removeInput(cameraInput: CameraInput): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -258,9 +273,10 @@ function removeInput(captureSession: camera.CaptureSession, cameraInput: camera.
 
 
 
-#### addOutput(deprecated)
+## addOutput(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addOutput(cameraOutput: CameraOutput): void
 
@@ -274,6 +290,7 @@ addOutput(cameraOutput: CameraOutput): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cameraOutput | CameraOutput | 是 | 需要添加的CameraOutput实例。 |
@@ -282,6 +299,7 @@ addOutput(cameraOutput: CameraOutput): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -307,9 +325,10 @@ function addOutput(captureSession: camera.CaptureSession, cameraOutput: camera.C
 
 
 
-#### removeOutput(deprecated)
+## removeOutput(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeOutput(cameraOutput: CameraOutput): void
 
@@ -323,6 +342,7 @@ removeOutput(cameraOutput: CameraOutput): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cameraOutput | CameraOutput | 是 | 需要移除的CameraOutput实例。 |
@@ -331,6 +351,7 @@ removeOutput(cameraOutput: CameraOutput): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -356,9 +377,10 @@ function removeOutput(captureSession: camera.CaptureSession, previewOutput: came
 
 
 
-#### start(deprecated)
+## start(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 start(callback: AsyncCallback&lt;void&gt;): void
 
@@ -372,6 +394,7 @@ start(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当开始会话工作成功，err为undefined，否则为错误对象。错误码类型CameraErrorCode。 |
@@ -380,6 +403,7 @@ start(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -405,9 +429,10 @@ function startCaptureSession(captureSession: camera.CaptureSession): void {
 
 
 
-#### start(deprecated)
+## start(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 start(): Promise&lt;void&gt;
 
@@ -421,6 +446,7 @@ start(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -429,6 +455,7 @@ start(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -452,9 +479,10 @@ function startCaptureSession(captureSession: camera.CaptureSession): void {
 
 
 
-#### stop(deprecated)
+## stop(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stop(callback: AsyncCallback&lt;void&gt;): void
 
@@ -468,6 +496,7 @@ stop(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当停止会话工作成功，err为undefined，否则为错误对象。错误码类型CameraErrorCode。 |
@@ -476,6 +505,7 @@ stop(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -500,9 +530,10 @@ function stopCaptureSession(captureSession: camera.CaptureSession): void {
 
 
 
-#### stop(deprecated)
+## stop(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stop(): Promise&lt;void&gt;
 
@@ -516,6 +547,7 @@ stop(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -524,6 +556,7 @@ stop(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -546,9 +579,10 @@ function stopCaptureSession(captureSession: camera.CaptureSession): void {
 
 
 
-#### release(deprecated)
+## release(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(callback: AsyncCallback&lt;void&gt;): void
 
@@ -562,6 +596,7 @@ release(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当释放会话资源成功，err为undefined，否则为错误对象。错误码类型CameraErrorCode。 |
@@ -570,6 +605,7 @@ release(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -594,9 +630,10 @@ function releaseCaptureSession(captureSession: camera.CaptureSession): void {
 
 
 
-#### release(deprecated)
+## release(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(): Promise&lt;void&gt;
 
@@ -610,6 +647,7 @@ release(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -618,6 +656,7 @@ release(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -640,9 +679,10 @@ function releaseCaptureSession(captureSession: camera.CaptureSession): void {
 
 
 
-#### hasFlash(deprecated)
+## hasFlash(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hasFlash(): boolean
 
@@ -656,6 +696,7 @@ hasFlash(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 设备支持闪光灯。true表示支持，false表示不支持。接口调用失败会返回相应错误码，错误码类型CameraErrorCode。 |
@@ -664,6 +705,7 @@ hasFlash(): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -690,9 +732,10 @@ function hasFlash(captureSession: camera.CaptureSession): boolean {
 
 
 
-#### isFlashModeSupported(deprecated)
+## isFlashModeSupported(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isFlashModeSupported(flashMode: FlashMode): boolean
 
@@ -706,12 +749,14 @@ isFlashModeSupported(flashMode: FlashMode): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | flashMode | FlashMode | 是 | 指定闪光灯模式。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -721,6 +766,7 @@ isFlashModeSupported(flashMode: FlashMode): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -747,9 +793,10 @@ function isFlashModeSupported(captureSession: camera.CaptureSession): boolean {
 
 
 
-#### setFlashMode(deprecated)
+## setFlashMode(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setFlashMode(flashMode: FlashMode): void
 
@@ -767,6 +814,7 @@ setFlashMode(flashMode: FlashMode): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | flashMode | FlashMode | 是 | 指定闪光灯模式。 |
@@ -775,6 +823,7 @@ setFlashMode(flashMode: FlashMode): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -799,9 +848,10 @@ function setFlashMode(captureSession: camera.CaptureSession): void {
 
 
 
-#### getFlashMode(deprecated)
+## getFlashMode(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFlashMode(): FlashMode
 
@@ -815,6 +865,7 @@ getFlashMode(): FlashMode
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | FlashMode | 获取当前设备的闪光灯模式。接口调用失败会返回相应错误码，错误码类型CameraErrorCode。 |
@@ -823,6 +874,7 @@ getFlashMode(): FlashMode
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -849,9 +901,10 @@ function getFlashMode(captureSession: camera.CaptureSession): camera.FlashMode |
 
 
 
-#### isExposureModeSupported(deprecated)
+## isExposureModeSupported(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isExposureModeSupported(aeMode: ExposureMode): boolean
 
@@ -865,12 +918,14 @@ isExposureModeSupported(aeMode: ExposureMode): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | aeMode | ExposureMode | 是 | 曝光模式。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -880,6 +935,7 @@ isExposureModeSupported(aeMode: ExposureMode): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -906,9 +962,10 @@ function isExposureModeSupported(captureSession: camera.CaptureSession): boolean
 
 
 
-#### getExposureMode(deprecated)
+## getExposureMode(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getExposureMode(): ExposureMode
 
@@ -922,6 +979,7 @@ getExposureMode(): ExposureMode
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ExposureMode | 获取当前曝光模式。接口调用失败会返回相应错误码，错误码类型CameraErrorCode。 |
@@ -930,6 +988,7 @@ getExposureMode(): ExposureMode
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -956,9 +1015,10 @@ function getExposureMode(captureSession: camera.CaptureSession): camera.Exposure
 
 
 
-#### setExposureMode(deprecated)
+## setExposureMode(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setExposureMode(aeMode: ExposureMode): void
 
@@ -972,6 +1032,7 @@ setExposureMode(aeMode: ExposureMode): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | aeMode | ExposureMode | 是 | 曝光模式。 |
@@ -980,6 +1041,7 @@ setExposureMode(aeMode: ExposureMode): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1004,9 +1066,10 @@ function setExposureMode(captureSession: camera.CaptureSession): void {
 
 
 
-#### getMeteringPoint(deprecated)
+## getMeteringPoint(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMeteringPoint(): Point
 
@@ -1020,6 +1083,7 @@ getMeteringPoint(): Point
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Point | 获取当前曝光点。接口调用失败会返回相应错误码，错误码类型CameraErrorCode。 |
@@ -1028,6 +1092,7 @@ getMeteringPoint(): Point
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1054,9 +1119,10 @@ function getMeteringPoint(captureSession: camera.CaptureSession): camera.Point |
 
 
 
-#### setMeteringPoint(deprecated)
+## setMeteringPoint(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMeteringPoint(point: Point): void
 
@@ -1072,6 +1138,7 @@ setMeteringPoint(point: Point): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | point | Point | 是 | 曝光点，x,y设置范围应在[0,1]之内，超过范围，如果小于0设置0，大于1设置1。 |
@@ -1080,6 +1147,7 @@ setMeteringPoint(point: Point): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1105,9 +1173,10 @@ function setMeteringPoint(captureSession: camera.CaptureSession): void {
 
 
 
-#### getExposureBiasRange(deprecated)
+## getExposureBiasRange(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getExposureBiasRange(): Array&lt;number&gt;
 
@@ -1121,6 +1190,7 @@ getExposureBiasRange(): Array&lt;number&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;number&gt; | 获取补偿范围的数组。接口调用失败会返回相应错误码，错误码类型CameraErrorCode。 |
@@ -1129,6 +1199,7 @@ getExposureBiasRange(): Array&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1155,9 +1226,10 @@ function getExposureBiasRange(captureSession: camera.CaptureSession): Array<numb
 
 
 
-#### setExposureBias(deprecated)
+## setExposureBias(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setExposureBias(exposureBias: number): void
 
@@ -1173,6 +1245,7 @@ setExposureBias(exposureBias: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | exposureBias | number | 是 | 曝光补偿，getExposureBiasRange查询支持的范围，如果设置超过支持范围的值，自动匹配到就近临界点。曝光补偿存在步长，如步长为0.5。则设置1.2时，获取到实际生效曝光补偿为1.0。接口调用失败会返回相应错误码，错误码类型CameraErrorCode。传参为null或者undefined，作为0处理，曝光补偿设置0。 |
@@ -1181,6 +1254,7 @@ setExposureBias(exposureBias: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1208,9 +1282,10 @@ function setExposureBias(captureSession: camera.CaptureSession, biasRangeArray: 
 
 
 
-#### getExposureValue(deprecated)
+## getExposureValue(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getExposureValue(): number
 
@@ -1224,6 +1299,7 @@ getExposureValue(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 获取曝光值。曝光补偿存在步长，如步长为0.5。则设置1.2时，获取到实际生效曝光补偿为1.0。接口调用失败会返回相应错误码，错误码类型CameraErrorCode。 |
@@ -1232,6 +1308,7 @@ getExposureValue(): number
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1259,9 +1336,10 @@ function getExposureValue(captureSession: camera.CaptureSession): number {
 
 
 
-#### isFocusModeSupported(deprecated)
+## isFocusModeSupported(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isFocusModeSupported(afMode: FocusMode): boolean
 
@@ -1275,12 +1353,14 @@ isFocusModeSupported(afMode: FocusMode): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | afMode | FocusMode | 是 | 指定的焦距模式。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1290,6 +1370,7 @@ isFocusModeSupported(afMode: FocusMode): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1316,9 +1397,10 @@ function isFocusModeSupported(captureSession: camera.CaptureSession): boolean {
 
 
 
-#### setFocusMode(deprecated)
+## setFocusMode(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setFocusMode(afMode: FocusMode): void
 
@@ -1334,6 +1416,7 @@ setFocusMode(afMode: FocusMode): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | afMode | FocusMode | 是 | 指定的焦距模式。 |
@@ -1342,6 +1425,7 @@ setFocusMode(afMode: FocusMode): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1366,9 +1450,10 @@ function setFocusMode(captureSession: camera.CaptureSession): void {
 
 
 
-#### getFocusMode(deprecated)
+## getFocusMode(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFocusMode(): FocusMode
 
@@ -1382,6 +1467,7 @@ getFocusMode(): FocusMode
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | FocusMode | 获取当前设备的焦距模式。接口调用失败会返回相应错误码，错误码类型CameraErrorCode。 |
@@ -1390,6 +1476,7 @@ getFocusMode(): FocusMode
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1416,9 +1503,10 @@ function getFocusMode(captureSession: camera.CaptureSession): camera.FocusMode |
 
 
 
-#### setFocusPoint(deprecated)
+## setFocusPoint(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setFocusPoint(point: Point): void
 
@@ -1434,6 +1522,7 @@ setFocusPoint(point: Point): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | point | Point | 是 | 焦点。x,y设置范围应在[0,1]之内，超过范围，如果小于0设置0，大于1设置1。 |
@@ -1442,6 +1531,7 @@ setFocusPoint(point: Point): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1467,9 +1557,10 @@ function setFocusPoint(captureSession: camera.CaptureSession): void {
 
 
 
-#### getFocusPoint(deprecated)
+## getFocusPoint(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFocusPoint(): Point
 
@@ -1483,6 +1574,7 @@ getFocusPoint(): Point
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Point | 用于获取当前焦点。接口调用失败会返回相应错误码，错误码类型CameraErrorCode。 |
@@ -1491,6 +1583,7 @@ getFocusPoint(): Point
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1517,9 +1610,10 @@ function getFocusPoint(captureSession: camera.CaptureSession): camera.Point | un
 
 
 
-#### getFocalLength(deprecated)
+## getFocalLength(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFocalLength(): number
 
@@ -1533,6 +1627,7 @@ getFocalLength(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 用于获取当前焦距。接口调用失败会返回相应错误码，错误码类型CameraErrorCode。 |
@@ -1541,6 +1636,7 @@ getFocalLength(): number
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1568,9 +1664,10 @@ function getFocalLength(captureSession: camera.CaptureSession): number {
 
 
 
-#### getZoomRatioRange(deprecated)
+## getZoomRatioRange(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getZoomRatioRange(): Array&lt;number&gt;
 
@@ -1584,6 +1681,7 @@ getZoomRatioRange(): Array&lt;number&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;number&gt; | 用于获取可变焦距比范围，返回的数组包括其最小值和最大值。接口调用失败会返回相应错误码，错误码类型CameraErrorCode。 |
@@ -1592,6 +1690,7 @@ getZoomRatioRange(): Array&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1618,9 +1717,10 @@ function getZoomRatioRange(captureSession: camera.CaptureSession): Array<number>
 
 
 
-#### setZoomRatio(deprecated)
+## setZoomRatio(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setZoomRatio(zoomRatio: number): void
 
@@ -1634,6 +1734,7 @@ setZoomRatio(zoomRatio: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | zoomRatio | number | 是 | 可变焦距比，通过getZoomRatioRange获取支持的变焦范围，如果设置超过支持范围的值，则只保留精度范围内数值。传参为null或者undefined，作为0处理，变焦设置最小值。 |
@@ -1642,6 +1743,7 @@ setZoomRatio(zoomRatio: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1670,9 +1772,10 @@ function setZoomRatio(captureSession: camera.CaptureSession, zoomRatioRange: Arr
 
 
 
-#### getZoomRatio(deprecated)
+## getZoomRatio(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getZoomRatio(): number
 
@@ -1686,6 +1789,7 @@ getZoomRatio(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 获取当前的变焦比结果。接口调用失败会返回相应错误码，错误码类型CameraErrorCode。 |
@@ -1694,6 +1798,7 @@ getZoomRatio(): number
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1721,9 +1826,10 @@ function getZoomRatio(captureSession: camera.CaptureSession): number {
 
 
 
-#### isVideoStabilizationModeSupported(deprecated)
+## isVideoStabilizationModeSupported(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isVideoStabilizationModeSupported(vsMode: VideoStabilizationMode): boolean
 
@@ -1737,12 +1843,14 @@ isVideoStabilizationModeSupported(vsMode: VideoStabilizationMode): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | vsMode | VideoStabilizationMode | 是 | 视频防抖模式。传参为null或者undefined，作为0处理，超级防抖模式关闭。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1752,6 +1860,7 @@ isVideoStabilizationModeSupported(vsMode: VideoStabilizationMode): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1778,9 +1887,10 @@ function isVideoStabilizationModeSupported(captureSession: camera.CaptureSession
 
 
 
-#### getActiveVideoStabilizationMode(deprecated)
+## getActiveVideoStabilizationMode(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getActiveVideoStabilizationMode(): VideoStabilizationMode
 
@@ -1794,6 +1904,7 @@ getActiveVideoStabilizationMode(): VideoStabilizationMode
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | VideoStabilizationMode | 视频防抖是否正在使用。接口调用失败会返回相应错误码，错误码类型CameraErrorCode。 |
@@ -1802,6 +1913,7 @@ getActiveVideoStabilizationMode(): VideoStabilizationMode
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1828,9 +1940,10 @@ function getActiveVideoStabilizationMode(captureSession: camera.CaptureSession):
 
 
 
-#### setVideoStabilizationMode(deprecated)
+## setVideoStabilizationMode(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setVideoStabilizationMode(mode: VideoStabilizationMode): void
 
@@ -1844,6 +1957,7 @@ setVideoStabilizationMode(mode: VideoStabilizationMode): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | VideoStabilizationMode | 是 | 需要设置的视频防抖模式。传参为null或者undefined，作为0处理，超级防抖模式关闭。 |
@@ -1852,6 +1966,7 @@ setVideoStabilizationMode(mode: VideoStabilizationMode): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1876,9 +1991,10 @@ function setVideoStabilizationMode(captureSession: camera.CaptureSession): void 
 
 
 
-#### on('focusStateChange')(deprecated)
+## on('focusStateChange')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'focusStateChange', callback: AsyncCallback&lt;FocusState&gt;): void
 
@@ -1891,6 +2007,7 @@ on(type: 'focusStateChange', callback: AsyncCallback&lt;FocusState&gt;): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1916,9 +2033,10 @@ function registerFocusStateChange(captureSession: camera.CaptureSession): void {
 
 
 
-#### off('focusStateChange')(deprecated)
+## off('focusStateChange')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'focusStateChange', callback?: AsyncCallback&lt;FocusState&gt;): void
 
@@ -1931,6 +2049,7 @@ off(type: 'focusStateChange', callback?: AsyncCallback&lt;FocusState&gt;): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1948,9 +2067,10 @@ function unregisterFocusStateChange(captureSession: camera.CaptureSession): void
 
 
 
-#### on('error')(deprecated)
+## on('error')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'error', callback: ErrorCallback): void
 
@@ -1963,6 +2083,7 @@ on(type: 'error', callback: ErrorCallback): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1984,9 +2105,10 @@ function registerCaptureSessionError(captureSession: camera.CaptureSession): voi
 
 
 
-#### off('error')(deprecated)
+## off('error')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'error', callback?: ErrorCallback): void
 
@@ -1999,6 +2121,7 @@ off(type: 'error', callback?: ErrorCallback): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |

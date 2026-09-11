@@ -111,7 +111,7 @@ export struct XLayerItem {
 
   build() {
     Stack() {
-      // 使用pixelmap
+   <em>   // 使用pixelmap</em>
       Image(this.layer?.pixelMap).width(90)
         .height(90);
 

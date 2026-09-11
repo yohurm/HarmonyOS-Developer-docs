@@ -40,13 +40,13 @@ const TAG: string = 'ReaderKitJumpCatalogItem';
 struct Index {
   private defaultHandler: bookParser.BookParserHandler | null = null;
   private readerComponentController: readerCore.ReaderComponentController = new readerCore.ReaderComponentController();
-  /**
-   * Display dialog box
-   */
+  <em>/**</em>
+<em>   * Display dialog box</em>
+<em>   */</em>
   @State showModalBanner: boolean = false;
-  /**
-   * Menu bar type index, 0 : catalog list, 1 : setting, 1 : close dialog
-   */
+  <em>/**</em>
+<em>   * Menu bar type index, 0 : catalog list, 1 : setting, 1 : close dialog</em>
+<em>   */</em>
   @State currentIndex: number = -1;
   @State catalogItemList: bookParser.CatalogItem[] = [];
   @State bookTitle: string = '';
@@ -88,7 +88,7 @@ struct Index {
   }
 
   aboutToAppear(): void {
-    // 代码正常运行需要在entry\src\main\resources\rawfile目录下新增名称为test.txt的小说文本文件
+   <em> // 代码正常运行需要在entry\src\main\resources\rawfile目录下新增名称为test.txt的小说文本文件</em>
     let filePath = this.copyRawfileToSanBox(this.getUIContext().getHostContext() as common.UIAbilityContext, 'test.txt');
     let resourceIndex = 0;
     let domPos = '';
@@ -144,7 +144,7 @@ struct Index {
     hilog.info(0x0000, TAG, 'catalog list length: ' + this.catalogItemList.length);
   }
 
-  // 跳转目录函数
+ <em> // 跳转目录函数</em>
   private async jumpToCatalogItem(catalogItem: bookParser.CatalogItem) {
     const domPos = await this.getDomPos(catalogItem);
     const resourceIndex = this.getResourceItemByCatalog(catalogItem).index;
@@ -154,7 +154,7 @@ struct Index {
     this.closeModal();
   }
 
-  // 获取dompos
+ <em> // 获取dompos</em>
   private async getDomPos(catalogItem: bookParser.CatalogItem): Promise<string> {
     try {
       const domPos: string = this.defaultHandler?.getDomPosByCatalogHref(catalogItem.href || '') || '';
@@ -165,7 +165,7 @@ struct Index {
     return Promise.reject();
   }
 
-  // 获取spineIndex
+<em>  // 获取spineIndex</em>
   private getResourceItemByCatalog(catalogItem: bookParser.CatalogItem): bookParser.SpineItem {
     let resourceFile = catalogItem.resourceFile || '';
     try {
@@ -201,7 +201,7 @@ struct Index {
     this.readerComponentController.releaseBook();
   }
 
-  // 目录列表
+ <em> // 目录列表</em>
   @Builder
   private buildCatalogItemList() {
     Column() {
@@ -288,7 +288,7 @@ struct Index {
         Column() {
           Column() {
             Column() {
-              // 目录列表显示
+          <em>    // 目录列表显示</em>
               this.buildCatalogItemList();
             }
             .padding({ bottom: 100 })

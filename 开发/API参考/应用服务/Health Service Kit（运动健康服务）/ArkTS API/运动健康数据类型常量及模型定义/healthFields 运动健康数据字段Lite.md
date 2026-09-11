@@ -1,6 +1,6 @@
 # healthFields (运动健康数据字段)(Lite)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/health-api-healthfields-lite
 **支持设备：** lite_wearable
@@ -10,7 +10,8 @@
 **起始版本：** 6.1.1(24)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** lite_wearable
 
@@ -24,7 +25,8 @@ import healthStore from '@hms.health.store';
  
   
 
-#### Altitude
+## Altitude
+
 
 **支持设备：** lite_wearable
 
@@ -36,6 +38,7 @@ import healthStore from '@hms.health.store';
  
 **模型约束：** 此接口仅可在FA模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | altitude | number | 否 | 否 | 海拔。 单位：m |
@@ -43,7 +46,8 @@ import healthStore from '@hms.health.store';
  
   
 
-#### ExerciseHeartRate
+## ExerciseHeartRate
+
 
 **支持设备：** lite_wearable
 
@@ -55,6 +59,7 @@ import healthStore from '@hms.health.store';
  
 **模型约束：** 此接口仅可在FA模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | bpm | number | 否 | 否 | 运动心率详情。 单位：次/分钟 取值范围：(0, 255) |
@@ -62,7 +67,8 @@ import healthStore from '@hms.health.store';
  
   
 
-#### Speed
+## Speed
+
 
 **支持设备：** lite_wearable
 
@@ -74,6 +80,7 @@ import healthStore from '@hms.health.store';
  
 **模型约束：** 此接口仅可在FA模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | speed | number | 否 | 否 | 速度详情。 单位：米/秒 取值范围：[0, ∞) |
@@ -81,7 +88,8 @@ import healthStore from '@hms.health.store';
  
   
 
-#### GroupSummary
+## GroupSummary
+
 
 **支持设备：** lite_wearable
 
@@ -93,6 +101,7 @@ import healthStore from '@hms.health.store';
  
 **模型约束：** 此接口仅可在FA模型下使用。
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | trainingWeight | number[] | 是 | 训练重量，数组长度最大为10。 |
@@ -102,7 +111,8 @@ import healthStore from '@hms.health.store';
  
   
 
-#### ActionSummary
+## ActionSummary
+
 
 **支持设备：** lite_wearable
 
@@ -114,6 +124,7 @@ import healthStore from '@hms.health.store';
  
 **模型约束：** 此接口仅可在FA模型下使用。
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | actionName | string | 是 | 动作名称，长度不能超过50个字节。 |
@@ -126,7 +137,8 @@ import healthStore from '@hms.health.store';
  
   
 
-#### BadmintonDetail
+## BadmintonDetail
+
 
 **支持设备：** lite_wearable
 
@@ -138,6 +150,7 @@ import healthStore from '@hms.health.store';
  
 **模型约束：** 此接口仅可在FA模型下使用。
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | exerciseHeartRate | ExerciseHeartRate[] | 否 | 运动心率详情列表，若未填写，默认为空。 |
@@ -145,7 +158,8 @@ import healthStore from '@hms.health.store';
  
   
 
-#### BadmintonSummary
+## BadmintonSummary
+
 
 **支持设备：** lite_wearable
 
@@ -157,6 +171,7 @@ import healthStore from '@hms.health.store';
  
 **模型约束：** 此接口仅可在FA模型下使用。
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | startTime | number | 是 | 运动开始时间，Unix时间戳，单位：ms。 |
@@ -187,7 +202,8 @@ import healthStore from '@hms.health.store';
  
   
 
-#### SoccerDetail
+## SoccerDetail
+
 
 **支持设备：** lite_wearable
 
@@ -199,6 +215,7 @@ import healthStore from '@hms.health.store';
  
 **模型约束：** 此接口仅可在FA模型下使用。
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | exerciseHeartRate | ExerciseHeartRate[] | 否 | 运动心率详情列表，若未填写，默认为空。 |
@@ -206,7 +223,8 @@ import healthStore from '@hms.health.store';
  
   
 
-#### SoccerSummary
+## SoccerSummary
+
 
 **支持设备：** lite_wearable
 
@@ -218,6 +236,7 @@ import healthStore from '@hms.health.store';
  
 **模型约束：** 此接口仅可在FA模型下使用。
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | startTime | number | 是 | 运动开始时间，Unix时间戳，单位：ms。 |
@@ -240,7 +259,8 @@ import healthStore from '@hms.health.store';
  
   
 
-#### StrengthTrainingSummary
+## StrengthTrainingSummary
+
 
 **支持设备：** lite_wearable
 
@@ -252,6 +272,7 @@ import healthStore from '@hms.health.store';
  
 **模型约束：** 此接口仅可在FA模型下使用。
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | startTime | number | 是 | 运动开始时间，Unix时间戳，单位：ms。 |
@@ -277,7 +298,8 @@ import healthStore from '@hms.health.store';
  
   
 
-#### StrengthTrainingDetail
+## StrengthTrainingDetail
+
 
 **支持设备：** lite_wearable
 
@@ -289,6 +311,7 @@ import healthStore from '@hms.health.store';
  
 **模型约束：** 此接口仅可在FA模型下使用。
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | heartRate | ExerciseHeartRate[] | 否 | 运动心率详情列表，若未填写，默认为空。 |
@@ -296,7 +319,8 @@ import healthStore from '@hms.health.store';
  
   
 
-#### TennisSummary
+## TennisSummary
+
 
 **支持设备：** lite_wearable
 
@@ -308,6 +332,7 @@ import healthStore from '@hms.health.store';
  
 **模型约束：** 此接口仅可在FA模型下使用。
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | startTime | number | 是 | 运动开始时间，Unix时间戳，单位：ms。 |
@@ -332,7 +357,8 @@ import healthStore from '@hms.health.store';
  
   
 
-#### TennisDetail
+## TennisDetail
+
 
 **支持设备：** lite_wearable
 
@@ -344,6 +370,7 @@ import healthStore from '@hms.health.store';
  
 **模型约束：** 此接口仅可在FA模型下使用。
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | exerciseHeartRate | ExerciseHeartRate[] | 否 | 运动心率详情列表，若未填写，默认为空。 |
@@ -351,7 +378,8 @@ import healthStore from '@hms.health.store';
  
   
 
-#### StairClimbSummary
+## StairClimbSummary
+
 
 **支持设备：** lite_wearable
 
@@ -363,6 +391,7 @@ import healthStore from '@hms.health.store';
  
 **模型约束：** 此接口仅可在FA模型下使用。
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | startTime | number | 是 | 运动开始时间，Unix时间戳，单位：ms。 |
@@ -387,7 +416,8 @@ import healthStore from '@hms.health.store';
  
   
 
-#### StairClimbDetail
+## StairClimbDetail
+
 
 **支持设备：** lite_wearable
 
@@ -399,6 +429,7 @@ import healthStore from '@hms.health.store';
  
 **模型约束：** 此接口仅可在FA模型下使用。
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | exerciseHeartRate | ExerciseHeartRate[] | 否 | 运动心率详情列表，若未填写，默认为空。 |
@@ -406,7 +437,8 @@ import healthStore from '@hms.health.store';
  
   
 
-#### PickleBallSummary
+## PickleBallSummary
+
 
 **支持设备：** lite_wearable
 
@@ -418,6 +450,7 @@ import healthStore from '@hms.health.store';
  
 **模型约束：** 此接口仅可在FA模型下使用。
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | startTime | number | 是 | 运动开始时间，Unix时间戳，单位：ms。 |
@@ -442,7 +475,8 @@ import healthStore from '@hms.health.store';
  
   
 
-#### PickleBallDetail
+## PickleBallDetail
+
 
 **支持设备：** lite_wearable
 
@@ -454,6 +488,7 @@ import healthStore from '@hms.health.store';
  
 **模型约束：** 此接口仅可在FA模型下使用。
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | exerciseHeartRate | ExerciseHeartRate[] | 否 | 运动心率详情列表，若未填写，默认为空。 |

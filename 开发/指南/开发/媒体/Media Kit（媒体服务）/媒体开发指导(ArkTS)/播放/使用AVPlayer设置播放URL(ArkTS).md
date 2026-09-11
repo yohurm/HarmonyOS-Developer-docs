@@ -1,6 +1,6 @@
 # 使用AVPlayer设置播放URL(ArkTS)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/playback-url-setting-method
 
@@ -15,7 +15,7 @@
 
 
 
-#### 流媒体播放场景下设置URL
+## 流媒体播放场景下设置URL
 
 **情况一：播放HTTP/HTTPS媒体资源**
 
@@ -157,7 +157,7 @@ import { media } from '@kit.MediaKit';
 
 
 
-#### 本地raw文件播放场景下设置URL
+## 本地raw文件播放场景下设置URL
 
 **情况一：应用沙箱文件播放**
 
@@ -213,7 +213,7 @@ import { media } from '@kit.MediaKit';
 
 
 
-#### 运行完整示例
+## 运行完整示例
 1. 新建工程，下载[示例工程](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/Media/AVPlayer/AVPlayerArkTSURL)（也可直接运行），并将示例工程的以下资源复制到对应目录。
 
   

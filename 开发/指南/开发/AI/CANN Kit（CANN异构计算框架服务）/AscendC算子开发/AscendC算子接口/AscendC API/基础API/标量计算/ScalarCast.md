@@ -1,16 +1,16 @@
 # ScalarCast
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-08-18 12:49:55
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-scalarcast
 
-#### 功能说明
+## 功能说明
 
 将一个scalar的类型转换为指定的类型。
  
   
 
-#### 函数原型
+## 函数原型
 
 ```text
 template <typename srcT, typename dstT, RoundMode roundMode> 
@@ -19,10 +19,11 @@ __aicore__ inline dstT ScalarCast(srcT valueIn)
  
   
 
-#### 参数说明
+## 参数说明
 
 **表1** 参数说明
   
+
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
 | valueIn | 输入 | 被转换的scalar。 |
@@ -33,27 +34,29 @@ __aicore__ inline dstT ScalarCast(srcT valueIn)
  
   
 
-#### 返回值
+## 返回值
 
 dstT类型的valueIn。
  
   
 
-#### 支持的型号
+## 支持的型号
 
 Kirin9020系列处理器
+ 
+Kirin9030系列处理器
  
 KirinX90系列处理器
  
   
 
-#### 约束说明
+## 约束说明
 
 无。
  
   
 
-#### 调用示例
+## 调用示例
 
 ```text
 float valueIn = 2.5;

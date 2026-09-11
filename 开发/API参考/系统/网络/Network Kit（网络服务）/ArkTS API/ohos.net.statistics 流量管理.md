@@ -1,9 +1,9 @@
 # @ohos.net.statistics (流量管理)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-net-statistics
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 流量管理模块提供获取设备网络流量数据的能力。该模块支持从多个维度查询数据包的流量使用情况，例如：
 
@@ -19,9 +19,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { statistics } from '@kit.NetworkKit';
@@ -29,9 +30,10 @@ import { statistics } from '@kit.NetworkKit';
 
 
 
-#### statistics.getIfaceRxBytes
+## statistics.getIfaceRxBytes
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getIfaceRxBytes(nic: string, callback: AsyncCallback&lt;number&gt;): void
 
@@ -40,6 +42,7 @@ getIfaceRxBytes(nic: string, callback: AsyncCallback&lt;number&gt;): void
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -50,6 +53,7 @@ getIfaceRxBytes(nic: string, callback: AsyncCallback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍参见[流量管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-statistics)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -78,9 +82,10 @@ statistics.getIfaceRxBytes("wlan0", (error: BusinessError, stats: number) => {
 
 
 
-#### statistics.getIfaceRxBytes
+## statistics.getIfaceRxBytes
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getIfaceRxBytes(nic: string): Promise&lt;number&gt;
 
@@ -90,12 +95,14 @@ getIfaceRxBytes(nic: string): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | nic | string | 是 | 指定查询的网卡名。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -105,6 +112,7 @@ getIfaceRxBytes(nic: string): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍参见[流量管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-statistics)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -131,9 +139,10 @@ statistics.getIfaceRxBytes("wlan0").then((stats: number) => {
 
 
 
-#### statistics.getIfaceTxBytes
+## statistics.getIfaceTxBytes
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getIfaceTxBytes(nic: string, callback: AsyncCallback&lt;number&gt;): void
 
@@ -142,6 +151,7 @@ getIfaceTxBytes(nic: string, callback: AsyncCallback&lt;number&gt;): void
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -152,6 +162,7 @@ getIfaceTxBytes(nic: string, callback: AsyncCallback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍参见[流量管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-statistics)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -180,9 +191,10 @@ statistics.getIfaceTxBytes("wlan0", (error: BusinessError, stats: number) => {
 
 
 
-#### statistics.getIfaceTxBytes
+## statistics.getIfaceTxBytes
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getIfaceTxBytes(nic: string): Promise&lt;number&gt;
 
@@ -192,12 +204,14 @@ getIfaceTxBytes(nic: string): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | nic | string | 是 | 指定查询的网卡名。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -207,6 +221,7 @@ getIfaceTxBytes(nic: string): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍参见[流量管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-statistics)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -233,9 +248,10 @@ statistics.getIfaceTxBytes("wlan0").then((stats: number) => {
 
 
 
-#### statistics.getCellularRxBytes
+## statistics.getCellularRxBytes
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCellularRxBytes(callback: AsyncCallback&lt;number&gt;): void
 
@@ -249,6 +265,7 @@ getCellularRxBytes(callback: AsyncCallback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;number&gt; | 是 | 回调函数。当成功获取到流量数据时，error为undefined，否则为错误对象。 |
@@ -257,6 +274,7 @@ getCellularRxBytes(callback: AsyncCallback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍参见[流量管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-statistics)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -284,9 +302,10 @@ statistics.getCellularRxBytes((error: BusinessError, stats: number) => {
 
 
 
-#### statistics.getCellularRxBytes
+## statistics.getCellularRxBytes
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCellularRxBytes(): Promise&lt;number&gt;
 
@@ -300,6 +319,7 @@ getCellularRxBytes(): Promise&lt;number&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象。返回指定网卡从最近一次开机开始至接口调用时刻的下行流量总和（单位：字节）。 |
@@ -308,6 +328,7 @@ getCellularRxBytes(): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍参见[流量管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-statistics)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -332,9 +353,10 @@ statistics.getCellularRxBytes().then((stats: number) => {
 
 
 
-#### statistics.getCellularTxBytes
+## statistics.getCellularTxBytes
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCellularTxBytes(callback: AsyncCallback&lt;number&gt;): void
 
@@ -348,6 +370,7 @@ getCellularTxBytes(callback: AsyncCallback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;number&gt; | 是 | 回调函数。当成功获取到流量数据时，error为undefined，否则为错误对象。 |
@@ -356,6 +379,7 @@ getCellularTxBytes(callback: AsyncCallback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍参见[流量管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-statistics)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -383,9 +407,10 @@ statistics.getCellularTxBytes((error: BusinessError, stats: number) => {
 
 
 
-#### statistics.getCellularTxBytes
+## statistics.getCellularTxBytes
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCellularTxBytes(): Promise&lt;number&gt;
 
@@ -399,6 +424,7 @@ getCellularTxBytes(): Promise&lt;number&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象。返回从最近一次开机开始到现在，蜂窝上所消耗的上行流量总和（单位：字节）。 |
@@ -407,6 +433,7 @@ getCellularTxBytes(): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍参见[流量管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-statistics)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -431,19 +458,21 @@ statistics.getCellularTxBytes().then((stats: number) => {
 
 
 
-#### statistics.getAllRxBytes
+## statistics.getAllRxBytes
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllRxBytes(callback: AsyncCallback&lt;number&gt;): void
 
-获取所有网卡从最近一次开机开始至接口调用时刻的下行流量总和(单位:字节)。使用callback异步回调。
+获取所有网卡从最近一次开机开始至接口调用时刻的下行流量总和（单位：字节）。使用callback异步回调。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -453,6 +482,7 @@ getAllRxBytes(callback: AsyncCallback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍参见[流量管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-statistics)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -479,9 +509,10 @@ statistics.getAllRxBytes((error: BusinessError, stats: number) => {
 
 
 
-#### statistics.getAllRxBytes
+## statistics.getAllRxBytes
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllRxBytes(): Promise&lt;number&gt;
 
@@ -493,6 +524,7 @@ getAllRxBytes(): Promise&lt;number&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象。返回所有网卡从最近一次开机开始到现在的下行流量总和（单位：字节）。 |
@@ -501,6 +533,7 @@ getAllRxBytes(): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍参见[流量管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-statistics)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -524,9 +557,10 @@ statistics.getAllRxBytes().then((stats: number) => {
 
 
 
-#### statistics.getAllTxBytes
+## statistics.getAllTxBytes
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllTxBytes(callback: AsyncCallback&lt;number&gt;): void
 
@@ -538,6 +572,7 @@ getAllTxBytes(callback: AsyncCallback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;number&gt; | 是 | 回调函数。当成功获取到流量数据时，error为undefined，否则为错误对象。 |
@@ -546,6 +581,7 @@ getAllTxBytes(callback: AsyncCallback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍参见[流量管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-statistics)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -572,9 +608,10 @@ statistics.getAllTxBytes((error: BusinessError, stats: number) => {
 
 
 
-#### statistics.getAllTxBytes
+## statistics.getAllTxBytes
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllTxBytes(): Promise&lt;number&gt;
 
@@ -586,6 +623,7 @@ getAllTxBytes(): Promise&lt;number&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | 以Promise 形式返回获取结果。返回所有网卡实时上行流量（单位：字节）。 |
@@ -594,6 +632,7 @@ getAllTxBytes(): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍参见[流量管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-statistics)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -615,9 +654,10 @@ statistics.getAllTxBytes().then((stats: number) => {
 
 
 
-#### statistics.getUidRxBytes
+## statistics.getUidRxBytes
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUidRxBytes(uid: number, callback: AsyncCallback&lt;number&gt;): void
 
@@ -637,6 +677,7 @@ getUidRxBytes(uid: number, callback: AsyncCallback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uid | number | 是 | 指定查询的应用 uid。 |
@@ -646,6 +687,7 @@ getUidRxBytes(uid: number, callback: AsyncCallback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍参见[流量管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-statistics)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -675,9 +717,10 @@ statistics.getUidRxBytes(uid, (error: BusinessError, stats: number) => {
 
 
 
-#### statistics.getUidRxBytes
+## statistics.getUidRxBytes
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUidRxBytes(uid: number): Promise&lt;number&gt;
 
@@ -697,12 +740,14 @@ getUidRxBytes(uid: number): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uid | number | 是 | 指定查询的应用 uid。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -712,6 +757,7 @@ getUidRxBytes(uid: number): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍参见[流量管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-statistics)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -736,9 +782,10 @@ statistics.getUidRxBytes(uid).then((stats: number) => {
 
 
 
-#### statistics.getUidTxBytes
+## statistics.getUidTxBytes
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUidTxBytes(uid: number, callback: AsyncCallback&lt;number&gt;): void
 
@@ -758,15 +805,17 @@ getUidTxBytes(uid: number, callback: AsyncCallback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uid | number | 是 | 指定查询的应用 uid。 |
-| callback | AsyncCallback&lt;number&gt; | 是 | 回调函数。当成功获取应用实时上行流量时，error为undefined，stats为获取到的应用上行流量(单位:字节)；否则为错误对象。 |
+| callback | AsyncCallback&lt;number&gt; | 是 | 回调函数。当成功获取应用实时上行流量时，error为undefined，stats为获取到的应用上行流量（单位：字节）；否则为错误对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍参见[流量管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-statistics)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -796,9 +845,10 @@ statistics.getUidTxBytes(uid, (error: BusinessError, stats: number) => {
 
 
 
-#### statistics.getUidTxBytes
+## statistics.getUidTxBytes
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUidTxBytes(uid: number): Promise&lt;number&gt;
 
@@ -818,12 +868,14 @@ getUidTxBytes(uid: number): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uid | number | 是 | 指定查询的应用 uid。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -833,6 +885,7 @@ getUidTxBytes(uid: number): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍参见[流量管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-statistics)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -857,9 +910,10 @@ statistics.getUidTxBytes(uid).then((stats: number) => {
 
 
 
-#### statistics.getSockfdRxBytes11+
+## statistics.getSockfdRxBytes11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSockfdRxBytes(sockfd: number, callback: AsyncCallback&lt;number&gt;): void
 
@@ -873,6 +927,7 @@ getSockfdRxBytes(sockfd: number, callback: AsyncCallback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sockfd | number | 是 | 指定查询的Socket的FD(file description)。 |
@@ -882,6 +937,7 @@ getSockfdRxBytes(sockfd: number, callback: AsyncCallback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍参见[流量管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-statistics)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -909,9 +965,10 @@ statistics.getSockfdRxBytes(sockfd, (error: BusinessError, stats: number) => {
 
 
 
-#### statistics.getSockfdRxBytes11+
+## statistics.getSockfdRxBytes11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSockfdRxBytes(sockfd: number): Promise&lt;number&gt;
 
@@ -925,12 +982,14 @@ getSockfdRxBytes(sockfd: number): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sockfd | number | 是 | 指定查询的Socket的FD(file description)。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -940,6 +999,7 @@ getSockfdRxBytes(sockfd: number): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍参见[流量管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-statistics)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -965,9 +1025,10 @@ statistics.getSockfdRxBytes(sockfd).then((stats: number) => {
 
 
 
-#### statistics.getSockfdTxBytes11+
+## statistics.getSockfdTxBytes11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSockfdTxBytes(sockfd: number, callback: AsyncCallback&lt;number&gt;): void
 
@@ -981,6 +1042,7 @@ getSockfdTxBytes(sockfd: number, callback: AsyncCallback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sockfd | number | 是 | 指定查询的Socket的FD(file description)。 |
@@ -990,6 +1052,7 @@ getSockfdTxBytes(sockfd: number, callback: AsyncCallback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍参见[流量管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-statistics)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1017,9 +1080,10 @@ statistics.getSockfdTxBytes(sockfd, (error: BusinessError, stats: number) => {
 
 
 
-#### statistics.getSockfdTxBytes11+
+## statistics.getSockfdTxBytes11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSockfdTxBytes(sockfd: number): Promise&lt;number&gt;
 
@@ -1033,12 +1097,14 @@ getSockfdTxBytes(sockfd: number): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sockfd | number | 是 | 指定查询的Socket的FD(file description)。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1048,6 +1114,7 @@ getSockfdTxBytes(sockfd: number): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍参见[流量管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-statistics)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1073,9 +1140,10 @@ statistics.getSockfdTxBytes(sockfd).then((stats: number) => {
 
 
 
-#### statistics.getSelfTrafficStats22+
+## statistics.getSelfTrafficStats22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSelfTrafficStats(networkInfo: NetworkInfo): Promise&lt;NetStatsInfo&gt;
 
@@ -1089,12 +1157,14 @@ getSelfTrafficStats(networkInfo: NetworkInfo): Promise&lt;NetStatsInfo&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | networkInfo | NetworkInfo | 是 | 指定查询的网络信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1104,6 +1174,7 @@ getSelfTrafficStats(networkInfo: NetworkInfo): Promise&lt;NetStatsInfo&gt;
 **错误码：**
 
 以下错误码的详细介绍参见[流量管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-statistics)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1136,15 +1207,17 @@ statistics.getSelfTrafficStats(networkInfo).then((stats: statistics.NetStatsInfo
 
 
 
-#### NetBearType12+
+## NetBearType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type NetBearType = connection.NetBearType
 
 网络类型。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1153,13 +1226,15 @@ type NetBearType = connection.NetBearType
 
 
 
-#### NetworkInfo22+
+## NetworkInfo22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 网络信息。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1171,13 +1246,15 @@ type NetBearType = connection.NetBearType
 
 
 
-#### NetStatsInfo22+
+## NetStatsInfo22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 获取的历史流量信息。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

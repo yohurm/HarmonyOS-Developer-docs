@@ -1,10 +1,10 @@
 # 选择发票抬头Button
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusion-button-invoice-title
 
-#### 场景介绍
+## 场景介绍
 
 选择发票抬头Button功能可以帮助开发者调用对应Button组件跳转发票抬头选择页面，供用户完成已保存发票抬头的选择。
 
@@ -12,7 +12,7 @@
 
 
 
-#### 前提条件
+## 前提条件
 
 应用开发前提条件，参见[开发前提](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-select-invoice-title#开发前提)。
 
@@ -20,11 +20,11 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 导入Scenario Fusion Kit模块以及相关公共模块。
 
   
-```text
+```ArkTS
 import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 ```
@@ -32,7 +32,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 2. 在容器中声明FunctionalButton，指定Button的openType，并设置对应的回调函数，代码如下：
 
   
-```text
+```ArkTS
 @Entry
 @Component
 struct Index {

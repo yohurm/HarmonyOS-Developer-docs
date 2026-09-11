@@ -1,6 +1,6 @@
 # 数据防泄漏服务开发指导(C/C++)
 
-更新时间：2026-04-28 03:31:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/dlp-guidelines-ndk
 
@@ -13,9 +13,10 @@
 
 
 
-#### 接口说明
+## 接口说明
 
-数据防泄漏服务关键接口如下表所示。具体API说明详见[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-dlp-permission-api-h)
+数据防泄漏服务关键接口如下表所示。具体API说明详见[dlp_permission_api.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-dlp-permission-api-h)
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -29,11 +30,12 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 在CMakeLists.txt中导入数据防泄漏的共享库，并链接该库。
 
   
 ```cpp
+# the minimum version of CMake.
 cmake_minimum_required(VERSION 3.5.0)
 project(DlpApiTest)
 
@@ -66,8 +68,8 @@ target_link_libraries(entry PUBLIC libace_napi.z.so libohdlp_permission.so)
 ```text
 static napi_value GetDlpPermissionInfo(napi_env env, napi_callback_info info)
 {
-    DLP_FileAccess dlpFileAccess = NO_PERMISSION;
-    uint32_t flags = 0;
+    DLP_FileAccess dlpFileAccess = NO_PERMISSION; // 表示DLP文件授权类型
+    uint32_t flags = 0; // 表示DLP文件的详细操作权限
     DLP_ErrCode ret = OH_DLP_GetDlpPermissionInfo(&dlpFileAccess, &flags);
     if (ret == DLP_ErrCode::ERR_OH_SUCCESS) {
         napi_value result[2] = {nullptr};
@@ -87,8 +89,8 @@ static napi_value GetDlpPermissionInfo(napi_env env, napi_callback_info info)
 ```text
 static napi_value GetOriginalFileName(napi_env env, napi_callback_info info)
 {
-    const char *fileName = "test.txt.dlp";
-    char *originalFileName = nullptr;
+    const char *fileName = "test.txt.dlp"; // 表示DLP文件名，用以获取原始文件名
+    char *originalFileName = nullptr; // 表示原始文件名
     DLP_ErrCode ret = OH_DLP_GetOriginalFileName(fileName, &originalFileName);
     if (ret == DLP_ErrCode::ERR_OH_SUCCESS) {
         napi_value result = nullptr;
@@ -97,7 +99,7 @@ static napi_value GetOriginalFileName(napi_env env, napi_callback_info info)
     }
     napi_value result = nullptr;
     napi_create_int32(env, ret, &result);
-    free(originalFileName);
+    free(originalFileName); // 处理完后手动释放originalFileName
     return result;
 }
 ```
@@ -108,7 +110,7 @@ static napi_value GetOriginalFileName(napi_env env, napi_callback_info info)
 ```text
 static napi_value IsInSandbox(napi_env env, napi_callback_info info)
 {
-    bool isInSandbox = false;
+    bool isInSandbox = false; // true表示当前应用在沙箱中，false表示应用不在沙箱
     DLP_ErrCode ret = OH_DLP_IsInSandbox(&isInSandbox);
     if (ret == DLP_ErrCode::ERR_OH_SUCCESS) {
         napi_value result = nullptr;
@@ -124,12 +126,12 @@ static napi_value IsInSandbox(napi_env env, napi_callback_info info)
 6. 设置沙箱应用配置信息。
 
   
-```text
+```json
 static napi_value SetSandboxAppConfig(napi_env env, napi_callback_info info)
 {
-    const char *configInfo = "configInfo";
+    const char *configInfo = "configInfo"; // 沙箱应用配置信息，用户可将配置信息json化后传入
     DLP_ErrCode ret = OH_DLP_SetSandboxAppConfig(configInfo);
- 
+    
     napi_value result = nullptr;
     napi_create_int32(env, ret, &result);
     return result;
@@ -139,10 +141,10 @@ static napi_value SetSandboxAppConfig(napi_env env, napi_callback_info info)
 7. 获取沙箱应用配置信息。
 
   
-```text
+```json
 static napi_value GetSandboxAppConfig(napi_env env, napi_callback_info info)
 {
-    char *configInfo = nullptr;
+    char *configInfo = nullptr; // 输出json化后的沙箱应用配置信息
     DLP_ErrCode ret = OH_DLP_GetSandboxAppConfig(&configInfo);
     if (ret == DLP_ErrCode::ERR_OH_SUCCESS) {
         napi_value result = nullptr;
@@ -151,7 +153,7 @@ static napi_value GetSandboxAppConfig(napi_env env, napi_callback_info info)
     }
     napi_value result = nullptr;
     napi_create_int32(env, ret, &result);
-    free(configInfo);
+    free(configInfo); // 处理完后手动释放configInfo
     return result;
 }
 ```
@@ -163,7 +165,7 @@ static napi_value GetSandboxAppConfig(napi_env env, napi_callback_info info)
 static napi_value CleanSandboxAppConfig(napi_env env, napi_callback_info info)
 {
     DLP_ErrCode ret = OH_DLP_CleanSandboxAppConfig();
- 
+    
     napi_value result = nullptr;
     napi_create_int32(env, ret, &result);
     return result;

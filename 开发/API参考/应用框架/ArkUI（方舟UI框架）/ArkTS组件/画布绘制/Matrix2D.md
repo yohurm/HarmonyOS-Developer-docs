@@ -1,9 +1,9 @@
 # Matrix2D
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-matrix2d
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于[CanvasRenderingContext2D](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-canvasrenderingcontext2d)、[OffscreenCanvasRenderingContext2D](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-offscreencanvasrenderingcontext2d)、[CanvasPattern](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-canvaspattern)和[Path2D](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-path2d)图形变换的矩阵对象，可以对矩阵进行缩放、旋转和平移等变换。
  
@@ -17,9 +17,10 @@ Matrix2D的使用场景包括：
 
   
 
-#### constructor10+
+## constructor10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
  
@@ -35,9 +36,10 @@ constructor()
  
   
 
-#### constructor12+
+## constructor12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(unit: LengthMetricsUnit)
  
@@ -53,6 +55,7 @@ constructor(unit: LengthMetricsUnit)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | unit | LengthMetricsUnit | 是 | 用来配置Matrix2D对象的单位模式，配置后无法动态更改，配置方法同CanvasRenderingContext2D。 默认值：DEFAULT 异常值NaN和Infinity按默认值处理。 |
@@ -60,9 +63,10 @@ constructor(unit: LengthMetricsUnit)
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
  
@@ -70,6 +74,7 @@ constructor(unit: LengthMetricsUnit)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | scaleX | number | 否 | 是 | 水平缩放系数，取值范围无限制。值大于1时放大，小于1时缩小，负值时水平翻转。 默认值：1 异常值undefined按无效值处理，NaN和Infinity会导致Matrix2D异常，设置后绘制内容不显示。 |
@@ -125,9 +130,10 @@ struct Parameter {
  
   
 
-#### identity
+## identity
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 identity(): Matrix2D
  
@@ -141,6 +147,7 @@ identity(): Matrix2D
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Matrix2D | 单位矩阵，可用于初始化或重置图形变换状态。 |
@@ -182,9 +189,10 @@ struct Identity {
  
   
 
-#### invert
+## invert
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 invert(): Matrix2D
  
@@ -198,6 +206,7 @@ invert(): Matrix2D
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Matrix2D | 逆矩阵结果，可用于反向变换或撤销之前的变换操作。 |
@@ -245,9 +254,10 @@ struct Invert {
  
   
 
-#### multiply(deprecated)
+## multiply(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 multiply(other?: Matrix2D): Matrix2D
  
@@ -259,6 +269,7 @@ multiply(other?: Matrix2D): Matrix2D
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | other | Matrix2D | 否 | 目标矩阵。 异常值undefined和null按无效值处理。 默认值：null |
@@ -266,6 +277,7 @@ multiply(other?: Matrix2D): Matrix2D
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Matrix2D | 此接口为空实现，返回值无实际意义。 |
@@ -273,9 +285,10 @@ multiply(other?: Matrix2D): Matrix2D
  
   
 
-#### rotate(deprecated)
+## rotate(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 rotate(rx?: number, ry?: number): Matrix2D
  
@@ -289,6 +302,7 @@ rotate(rx?: number, ry?: number): Matrix2D
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rx | number | 否 | 旋转点的水平方向坐标，取值范围无限制。 默认单位：vp 异常值undefined和null按无效值处理，NaN和Infinity会导致Matrix2D异常。 默认值：0 |
@@ -297,6 +311,7 @@ rotate(rx?: number, ry?: number): Matrix2D
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Matrix2D | 旋转后结果矩阵对象，可用于对图形进行旋转变换。 |
@@ -344,9 +359,10 @@ struct Rotate {
  
   
 
-#### rotate10+
+## rotate10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 rotate(degree: number, rx?: number, ry?: number): Matrix2D
  
@@ -360,6 +376,7 @@ rotate(degree: number, rx?: number, ry?: number): Matrix2D
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | degree | number | 是 | 旋转角度（弧度值），取值范围无限制。顺时针方向为正值，可以通过角度 * Math.PI / 180将角度转换为弧度值传入该接口。 异常值undefined和null按无效值处理，NaN和Infinity会导致Matrix2D异常。 默认单位：弧度 |
@@ -369,6 +386,7 @@ rotate(degree: number, rx?: number, ry?: number): Matrix2D
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Matrix2D | 旋转后结果矩阵对象，可用于对图形进行旋转变换。 |
@@ -411,14 +429,15 @@ struct Rotate {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/qStNLDApT-qM_Zznq86xkQ/zh-cn_image_0000002686088271.png?HW-CC-KV=V1&HW-CC-Date=20260730T071510Z&HW-CC-Expire=86400&HW-CC-Sign=C4EA19D11B9E297DBC1BF80A05ACA6901A0510802686DB065F21809182C046ED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/8Ezv7nGwSES8chjk8Ov9bg/zh-cn_image_0000002747212847.png?HW-CC-KV=V1&HW-CC-Date=20260911T073111Z&HW-CC-Expire=86400&HW-CC-Sign=87989B572C1733895A42096661FCE54EDEE1EB36A1A46FB7931F309BC91E3F9E)
 
  
   
 
-#### translate
+## translate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 translate(tx?: number, ty?: number): Matrix2D
  
@@ -432,6 +451,7 @@ translate(tx?: number, ty?: number): Matrix2D
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | tx | number | 否 | 水平方向平移距离，取值范围无限制。 异常值undefined和null按无效值处理，NaN和Infinity会导致Matrix2D异常。 默认单位：vp 默认值：0 |
@@ -440,6 +460,7 @@ translate(tx?: number, ty?: number): Matrix2D
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Matrix2D | 平移后结果矩阵对象，可用于对图形进行平移变换。 |
@@ -482,14 +503,15 @@ struct Translate {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/wPOfWlyVROS5rFzDr7Nk5A/zh-cn_image_0000002685928441.png?HW-CC-KV=V1&HW-CC-Date=20260730T071510Z&HW-CC-Expire=86400&HW-CC-Sign=1926FB86D7CF38417EFAE86422E0FB338C951DD1CD9D7CC6D53411C5C99BC20C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/MPcb3805QNqC8xaEs-SKZg/zh-cn_image_0000002717772912.png?HW-CC-KV=V1&HW-CC-Date=20260911T073111Z&HW-CC-Expire=86400&HW-CC-Sign=CD6FD081C601840A9C95206AAAE149972464C59B046F875EE4427E49A0D17AAA)
 
  
   
 
-#### scale
+## scale
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scale(sx?: number, sy?: number): Matrix2D
  
@@ -503,6 +525,7 @@ scale(sx?: number, sy?: number): Matrix2D
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sx | number | 否 | 水平缩放比例系数，取值范围无限制。值大于1时放大，小于1时缩小，负值时水平翻转。 异常值undefined和null按无效值处理，NaN和Infinity会导致Matrix2D异常。 默认值：1.0 |
@@ -511,6 +534,7 @@ scale(sx?: number, sy?: number): Matrix2D
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Matrix2D | 缩放结果矩阵对象，可用于对图形进行缩放变换。 |
@@ -553,4 +577,4 @@ struct Scale {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/2KyWTqi_R6u2bpUQDTNLMw/zh-cn_image_0000002656008764.png?HW-CC-KV=V1&HW-CC-Date=20260730T071510Z&HW-CC-Expire=86400&HW-CC-Sign=8292F53FECA9567471068051C51651F3947F06F23B433B26E892ABD7745E63CE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/KAr9yfs2SgODBuuTtSPJMw/zh-cn_image_0000002717612980.png?HW-CC-KV=V1&HW-CC-Date=20260911T073111Z&HW-CC-Expire=86400&HW-CC-Sign=D4B3B8F15DA6C88E804B3983FA4318CCB5EC0DA5AF02D0D326DB40AAED645D3A)

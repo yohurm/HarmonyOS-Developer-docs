@@ -1,9 +1,9 @@
 # list
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-service-widget-container-list
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 列表包含一系列相同宽度的列表项。适合连续、多行呈现同类数据，例如图片和文本。
  
@@ -12,20 +12,23 @@
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 仅支持<[list-item](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-service-widget-container-list-item)>子组件。
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-service-widget-common-attributes)外，还支持如下属性：
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | cachedcount | number | 0 | 否 | 长列表延迟加载时list-item最少缓存数量。 |
@@ -41,12 +44,14 @@
  
   
 
-#### 样式
+## 样式
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用样式](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-service-widget-common-styles)外，还支持如下样式：
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | divider-color | &lt;color&gt; | transparent | 否 | item分隔线颜色，仅当list的divider属性为true时生效。 |
@@ -65,17 +70,19 @@
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-service-widget-common-events)。
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 <!-- index.html -->
@@ -133,4 +140,4 @@
 **4*4卡片**
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/66HZE8y1R02C0eRtf5MfaA/zh-cn_image_0000002685928933.png?HW-CC-KV=V1&HW-CC-Date=20260730T071527Z&HW-CC-Expire=86400&HW-CC-Sign=D9F8E62C8C00C3DE08DFC8E58924BB1BD8CE51E9C9F91B7D8D9B9BC0E9BD0C0F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/TzVaHzNOR4qemTL4Tk5Mrg/zh-cn_image_0000002717773410.png?HW-CC-KV=V1&HW-CC-Date=20260911T073002Z&HW-CC-Expire=86400&HW-CC-Sign=8CD1DCAF8A788361A5879CABC146A3FDECD8C545394DDC2E832BAE3816654EBD)

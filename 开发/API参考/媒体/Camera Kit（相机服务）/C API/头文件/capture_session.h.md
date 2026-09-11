@@ -1,13 +1,14 @@
 # capture_session.h
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-capture-session-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明捕获会话概念。
 
@@ -23,15 +24,18 @@
 
 
 
-#### 汇总
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 汇总
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 结构体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -41,9 +45,11 @@
 
 
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -95,9 +101,9 @@
 | Camera_ErrorCode OH_CaptureSession_GetSupportedPhysicalApertures(const Camera_CaptureSession* session, OH_Camera_PhysicalAperture** apertures, uint32_t* size) | - | 获取支持的物理光圈列表。调用OH_CaptureSession_DeletePhysicalApertures删除支持的物理光圈列表。 |
 | Camera_ErrorCode OH_CaptureSession_DeletePhysicalApertures(const Camera_CaptureSession* session, OH_Camera_PhysicalAperture* apertures, uint32_t size) | - | 删除支持的物理光圈列表。 |
 | Camera_ErrorCode OH_CaptureSession_GetPhysicalAperture(const Camera_CaptureSession* session, double* aperture) | - | 获取当前物理光圈值。 |
-| Camera_ErrorCode OH_CaptureSession_SetPhysicalAperture(const Camera_CaptureSession* session, double aperture) | - | 设置物理光圈值。 |
+| Camera_ErrorCode OH_CaptureSession_SetPhysicalAperture(const Camera_CaptureSession* session, double aperture) | - | 设置物理光圈值。设置前，建议通过OH_CaptureSession_GetSupportedPhysicalApertures获取支持的物理光圈列表。 |
 | Camera_ErrorCode OH_CaptureSession_GetExposureBiasRange(Camera_CaptureSession* session, float* minExposureBias, float* maxExposureBias, float* step) | - | 查询曝光补偿范围。 |
-| Camera_ErrorCode OH_CaptureSession_SetExposureBias(Camera_CaptureSession* session, float exposureBias) | - | 设置曝光补偿。 |
+| Camera_ErrorCode OH_CaptureSession_SetExposureBias(Camera_CaptureSession* session, float exposureBias) | - | 设置曝光补偿。设置前，建议通过OH_CaptureSession_GetExposureBiasRange获取支持配置的曝光补偿范围。 |
 | Camera_ErrorCode OH_CaptureSession_GetExposureBias(Camera_CaptureSession* session, float* exposureBias) | - | 获取当前曝光补偿。 |
 | Camera_ErrorCode OH_CaptureSession_GetSupportedExposureDurationRange(const Camera_CaptureSession* session, int32_t* minExposureDuration, int32_t* maxExposureDuration) | - | 获取支持的曝光时间范围。单位：微秒。 |
 | Camera_ErrorCode OH_CaptureSession_SetExposureDuration(const Camera_CaptureSession* session, int32_t exposureDuration) | - | 设置曝光时间。单位：微秒。若传感器无法精确使用该曝光时间，系统会自动调整为最近的支持值，并通过OH_CaptureSession_OnExposureDurationChange回调通知。仅在ExposureMode.EXPOSURE_MODE_MANUAL手动曝光模式下设置生效。 |
@@ -112,7 +118,7 @@
 | Camera_ErrorCode OH_CaptureSession_SetFocusPoint(Camera_CaptureSession* session, Camera_Point focusPoint) | - | 设置焦点。 |
 | Camera_ErrorCode OH_CaptureSession_GetZoomRatioRange(Camera_CaptureSession* session, float* minZoom, float* maxZoom) | - | 获取所有支持的缩放比例范围。 |
 | Camera_ErrorCode OH_CaptureSession_GetZoomRatio(Camera_CaptureSession* session, float* zoom) | - | 获取当前缩放比例。 |
-| Camera_ErrorCode OH_CaptureSession_SetZoomRatio(Camera_CaptureSession* session, float zoom) | - | 设置缩放比例。 |
+| Camera_ErrorCode OH_CaptureSession_SetZoomRatio(Camera_CaptureSession* session, float zoom) | - | 设置缩放比例。设置前，建议通过OH_CaptureSession_GetZoomRatioRange获取支持的缩放比例范围。 |
 | Camera_ErrorCode OH_CaptureSession_IsVideoStabilizationModeSupported(Camera_CaptureSession* session, Camera_VideoStabilizationMode mode, bool* isSupported) | - | 检查是否支持指定的录像防抖模式。 |
 | Camera_ErrorCode OH_CaptureSession_GetVideoStabilizationMode(Camera_CaptureSession* session, Camera_VideoStabilizationMode* mode) | - | 获取当前录像防抖模式。 |
 | Camera_ErrorCode OH_CaptureSession_SetVideoStabilizationMode(Camera_CaptureSession* session, Camera_VideoStabilizationMode mode) | - | 设置录像防抖模式。 |
@@ -133,7 +139,7 @@
 | Camera_ErrorCode OH_CaptureSession_GetSupportedColorSpaces(Camera_CaptureSession* session, OH_NativeBuffer_ColorSpace** colorSpace, uint32_t* size) | - | 获取支持的色彩空间列表。 |
 | Camera_ErrorCode OH_CaptureSession_DeleteColorSpaces(Camera_CaptureSession* session, OH_NativeBuffer_ColorSpace* colorSpace) | - | 删除色彩空间列表。 |
 | Camera_ErrorCode OH_CaptureSession_GetActiveColorSpace(Camera_CaptureSession* session, OH_NativeBuffer_ColorSpace* colorSpace) | - | 获取当前色彩空间。 |
-| Camera_ErrorCode OH_CaptureSession_SetActiveColorSpace(Camera_CaptureSession* session, OH_NativeBuffer_ColorSpace colorSpace) | - | 设置当前色彩空间。 |
+| Camera_ErrorCode OH_CaptureSession_SetActiveColorSpace(Camera_CaptureSession* session, OH_NativeBuffer_ColorSpace colorSpace) | - | 设置当前色彩空间。设置的值需在OH_CaptureSession_GetSupportedColorSpaces获取的支持列表中。 |
 | Camera_ErrorCode OH_CaptureSession_RegisterAutoDeviceSwitchStatusCallback(Camera_CaptureSession* session, OH_CaptureSession_OnAutoDeviceSwitchStatusChange autoDeviceSwitchStatusChange) | - | 注册设备切换事件回调。 |
 | Camera_ErrorCode OH_CaptureSession_UnregisterAutoDeviceSwitchStatusCallback(Camera_CaptureSession* session, OH_CaptureSession_OnAutoDeviceSwitchStatusChange autoDeviceSwitchStatusChange) | - | 注销设备切换事件回调。 |
 | Camera_ErrorCode OH_CaptureSession_IsAutoDeviceSwitchSupported(Camera_CaptureSession* session, bool* isSupported) | - | 检查是否支持自动设备切换。 |
@@ -170,7 +176,7 @@
 | Camera_ErrorCode OH_CaptureSession_GetCurrentOISMode(const Camera_CaptureSession* session, OH_Camera_OISMode* oisMode) | - | 获取当前光学防抖（OIS）模式。 |
 | Camera_ErrorCode OH_CaptureSession_GetCurrentCustomOISBias(const Camera_CaptureSession* session, float* pitchBias, float* yawBias) | - | 获取所有光学防抖轴当前的自定义偏移值。 |
 | Camera_ErrorCode OH_CaptureSession_SetOISMode(const Camera_CaptureSession* session, OH_Camera_OISMode oisMode) | - | 设置光学防抖（OIS）模式。 |
-| Camera_ErrorCode OH_CaptureSession_SetOISModeCustom(const Camera_CaptureSession* session, float pitchBias, float yawBias) | - | 为对应轴设置自定义光学防抖偏移值。 |
+| Camera_ErrorCode OH_CaptureSession_SetOISModeCustom(const Camera_CaptureSession* session, float pitchBias, float yawBias) | - | 为对应轴设置自定义光学防抖偏移值。设置前，建议通过OH_CaptureSession_GetSupportedOISBiasRange获取对应轴支持的偏移范围。 |
 | typedef void (*OH_CaptureSession_OnExposureStateChange)(void* context, OH_Camera_ExposureState exposureState) | OH_CaptureSession_OnExposureStateChange | 定义曝光状态变更时的回调函数。 |
 | Camera_ErrorCode OH_CaptureSession_RegisterExposureStateChangeCallback(const Camera_CaptureSession* session, void* context, OH_CaptureSession_OnExposureStateChange callback) | - | 注册曝光状态变化的回调。注册此回调后，当捕获会话中的曝光状态发生变化时，将调用该回调。 |
 | Camera_ErrorCode OH_CaptureSession_UnregisterExposureStateChangeCallback(const Camera_CaptureSession* session, void* context, OH_CaptureSession_OnExposureStateChange callback) | - | 注销曝光状态变更时的回调函数。 |
@@ -183,15 +189,17 @@
 
 
 
-#### 函数说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 函数说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### OH_CaptureSession_OnFocusStateChange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### OH_CaptureSession_OnFocusStateChange()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_CaptureSession_OnFocusStateChange)(Camera_CaptureSession* session, Camera_FocusState focusState)
@@ -205,6 +213,7 @@ typedef void (*OH_CaptureSession_OnFocusStateChange)(Camera_CaptureSession* sess
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | 传递回调的Camera_CaptureSession实例。 |
@@ -213,9 +222,10 @@ typedef void (*OH_CaptureSession_OnFocusStateChange)(Camera_CaptureSession* sess
 
 
 
-#### OH_CaptureSession_OnError()
+### OH_CaptureSession_OnError()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_CaptureSession_OnError)(Camera_CaptureSession* session, Camera_ErrorCode errorCode)
@@ -229,6 +239,7 @@ typedef void (*OH_CaptureSession_OnError)(Camera_CaptureSession* session, Camera
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | 传递回调的Camera_CaptureSession实例。 |
@@ -241,9 +252,10 @@ typedef void (*OH_CaptureSession_OnError)(Camera_CaptureSession* session, Camera
 
 
 
-#### OH_CaptureSession_OnSmoothZoomInfo()
+### OH_CaptureSession_OnSmoothZoomInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_CaptureSession_OnSmoothZoomInfo)(Camera_CaptureSession* session, Camera_SmoothZoomInfo* smoothZoomInfo)
@@ -257,6 +269,7 @@ typedef void (*OH_CaptureSession_OnSmoothZoomInfo)(Camera_CaptureSession* sessio
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | 传递回调的Camera_CaptureSession实例。 |
@@ -265,9 +278,10 @@ typedef void (*OH_CaptureSession_OnSmoothZoomInfo)(Camera_CaptureSession* sessio
 
 
 
-#### OH_CaptureSession_OnAutoDeviceSwitchStatusChange()
+### OH_CaptureSession_OnAutoDeviceSwitchStatusChange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_CaptureSession_OnAutoDeviceSwitchStatusChange)(Camera_CaptureSession* session, Camera_AutoDeviceSwitchStatusInfo* autoDeviceSwitchStatusInfo)
@@ -281,6 +295,7 @@ typedef void (*OH_CaptureSession_OnAutoDeviceSwitchStatusChange)(Camera_CaptureS
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | 传递回调的Camera_CaptureSession实例。 |
@@ -289,9 +304,10 @@ typedef void (*OH_CaptureSession_OnAutoDeviceSwitchStatusChange)(Camera_CaptureS
 
 
 
-#### OH_CaptureSession_OnSystemPressureLevelChange()
+### OH_CaptureSession_OnSystemPressureLevelChange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_CaptureSession_OnSystemPressureLevelChange)(Camera_CaptureSession* session, Camera_SystemPressureLevel systemPressureLevel)
@@ -305,6 +321,7 @@ typedef void (*OH_CaptureSession_OnSystemPressureLevelChange)(Camera_CaptureSess
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | 传递回调的Camera_CaptureSession实例。 |
@@ -313,9 +330,10 @@ typedef void (*OH_CaptureSession_OnSystemPressureLevelChange)(Camera_CaptureSess
 
 
 
-#### OH_CaptureSession_OnControlCenterEffectStatusChange()
+### OH_CaptureSession_OnControlCenterEffectStatusChange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_CaptureSession_OnControlCenterEffectStatusChange)(Camera_CaptureSession* session, Camera_ControlCenterStatusInfo* controlCenterStatusInfo)
@@ -329,6 +347,7 @@ typedef void (*OH_CaptureSession_OnControlCenterEffectStatusChange)(Camera_Captu
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | 传递回调的Camera_CaptureSession实例。 |
@@ -337,9 +356,10 @@ typedef void (*OH_CaptureSession_OnControlCenterEffectStatusChange)(Camera_Captu
 
 
 
-#### OH_CaptureSession_RegisterCallback()
+### OH_CaptureSession_RegisterCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_RegisterCallback(Camera_CaptureSession* session, CaptureSession_Callbacks* callback)
@@ -353,6 +373,7 @@ Camera_ErrorCode OH_CaptureSession_RegisterCallback(Camera_CaptureSession* sessi
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | 传递回调的Camera_CaptureSession实例。 |
@@ -361,6 +382,7 @@ Camera_ErrorCode OH_CaptureSession_RegisterCallback(Camera_CaptureSession* sessi
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -368,9 +390,10 @@ Camera_ErrorCode OH_CaptureSession_RegisterCallback(Camera_CaptureSession* sessi
 
 
 
-#### OH_CaptureSession_UnregisterCallback()
+### OH_CaptureSession_UnregisterCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_UnregisterCallback(Camera_CaptureSession* session, CaptureSession_Callbacks* callback)
@@ -384,6 +407,7 @@ Camera_ErrorCode OH_CaptureSession_UnregisterCallback(Camera_CaptureSession* ses
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | 传递回调的Camera_CaptureSession实例。 |
@@ -392,6 +416,7 @@ Camera_ErrorCode OH_CaptureSession_UnregisterCallback(Camera_CaptureSession* ses
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -399,9 +424,10 @@ Camera_ErrorCode OH_CaptureSession_UnregisterCallback(Camera_CaptureSession* ses
 
 
 
-#### OH_CaptureSession_RegisterSmoothZoomInfoCallback()
+### OH_CaptureSession_RegisterSmoothZoomInfoCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_RegisterSmoothZoomInfoCallback(Camera_CaptureSession* session, OH_CaptureSession_OnSmoothZoomInfo smoothZoomInfoCallback)
@@ -415,6 +441,7 @@ Camera_ErrorCode OH_CaptureSession_RegisterSmoothZoomInfoCallback(Camera_Capture
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | 传递回调的Camera_CaptureSession实例。 |
@@ -423,6 +450,7 @@ Camera_ErrorCode OH_CaptureSession_RegisterSmoothZoomInfoCallback(Camera_Capture
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -430,9 +458,10 @@ Camera_ErrorCode OH_CaptureSession_RegisterSmoothZoomInfoCallback(Camera_Capture
 
 
 
-#### OH_CaptureSession_UnregisterSmoothZoomInfoCallback()
+### OH_CaptureSession_UnregisterSmoothZoomInfoCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_UnregisterSmoothZoomInfoCallback(Camera_CaptureSession* session, OH_CaptureSession_OnSmoothZoomInfo smoothZoomInfoCallback)
@@ -446,6 +475,7 @@ Camera_ErrorCode OH_CaptureSession_UnregisterSmoothZoomInfoCallback(Camera_Captu
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | 传递回调的Camera_CaptureSession实例。 |
@@ -454,6 +484,7 @@ Camera_ErrorCode OH_CaptureSession_UnregisterSmoothZoomInfoCallback(Camera_Captu
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -461,9 +492,10 @@ Camera_ErrorCode OH_CaptureSession_UnregisterSmoothZoomInfoCallback(Camera_Captu
 
 
 
-#### OH_CaptureSession_SetSessionMode()
+### OH_CaptureSession_SetSessionMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_SetSessionMode(Camera_CaptureSession* session, Camera_SceneMode sceneMode)
@@ -481,6 +513,7 @@ Camera_ErrorCode OH_CaptureSession_SetSessionMode(Camera_CaptureSession* session
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -489,6 +522,7 @@ Camera_ErrorCode OH_CaptureSession_SetSessionMode(Camera_CaptureSession* session
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许。 CAMERA_SESSION_CONFIG_LOCKED：会话配置已锁定。 |
@@ -496,9 +530,10 @@ Camera_ErrorCode OH_CaptureSession_SetSessionMode(Camera_CaptureSession* session
 
 
 
-#### OH_CaptureSession_AddSecureOutput()
+### OH_CaptureSession_AddSecureOutput()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_AddSecureOutput(Camera_CaptureSession* session, Camera_PreviewOutput* previewOutput)
@@ -512,6 +547,7 @@ Camera_ErrorCode OH_CaptureSession_AddSecureOutput(Camera_CaptureSession* sessio
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -520,6 +556,7 @@ Camera_ErrorCode OH_CaptureSession_AddSecureOutput(Camera_CaptureSession* sessio
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许。 CAMERA_SESSION_CONFIG_LOCKED：会话配置已锁定。 |
@@ -527,9 +564,10 @@ Camera_ErrorCode OH_CaptureSession_AddSecureOutput(Camera_CaptureSession* sessio
 
 
 
-#### OH_CaptureSession_BeginConfig()
+### OH_CaptureSession_BeginConfig()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_BeginConfig(Camera_CaptureSession* session)
@@ -543,12 +581,14 @@ Camera_ErrorCode OH_CaptureSession_BeginConfig(Camera_CaptureSession* session)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -557,9 +597,10 @@ Camera_ErrorCode OH_CaptureSession_BeginConfig(Camera_CaptureSession* session)
 
 
 
-#### OH_CaptureSession_CommitConfig()
+### OH_CaptureSession_CommitConfig()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_CommitConfig(Camera_CaptureSession* session)
@@ -573,12 +614,14 @@ Camera_ErrorCode OH_CaptureSession_CommitConfig(Camera_CaptureSession* session)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -587,9 +630,10 @@ Camera_ErrorCode OH_CaptureSession_CommitConfig(Camera_CaptureSession* session)
 
 
 
-#### OH_CaptureSession_AddInput()
+### OH_CaptureSession_AddInput()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_AddInput(Camera_CaptureSession* session, Camera_Input* cameraInput)
@@ -603,6 +647,7 @@ Camera_ErrorCode OH_CaptureSession_AddInput(Camera_CaptureSession* session, Came
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -611,6 +656,7 @@ Camera_ErrorCode OH_CaptureSession_AddInput(Camera_CaptureSession* session, Came
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许。 |
@@ -618,9 +664,10 @@ Camera_ErrorCode OH_CaptureSession_AddInput(Camera_CaptureSession* session, Came
 
 
 
-#### OH_CaptureSession_RemoveInput()
+### OH_CaptureSession_RemoveInput()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_RemoveInput(Camera_CaptureSession* session, Camera_Input* cameraInput)
@@ -634,6 +681,7 @@ Camera_ErrorCode OH_CaptureSession_RemoveInput(Camera_CaptureSession* session, C
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -642,6 +690,7 @@ Camera_ErrorCode OH_CaptureSession_RemoveInput(Camera_CaptureSession* session, C
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许。 |
@@ -649,9 +698,10 @@ Camera_ErrorCode OH_CaptureSession_RemoveInput(Camera_CaptureSession* session, C
 
 
 
-#### OH_CaptureSession_AddPreviewOutput()
+### OH_CaptureSession_AddPreviewOutput()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_AddPreviewOutput(Camera_CaptureSession* session, Camera_PreviewOutput* previewOutput)
@@ -665,6 +715,7 @@ Camera_ErrorCode OH_CaptureSession_AddPreviewOutput(Camera_CaptureSession* sessi
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -673,6 +724,7 @@ Camera_ErrorCode OH_CaptureSession_AddPreviewOutput(Camera_CaptureSession* sessi
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许。 |
@@ -680,9 +732,10 @@ Camera_ErrorCode OH_CaptureSession_AddPreviewOutput(Camera_CaptureSession* sessi
 
 
 
-#### OH_CaptureSession_RemovePreviewOutput()
+### OH_CaptureSession_RemovePreviewOutput()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_RemovePreviewOutput(Camera_CaptureSession* session, Camera_PreviewOutput* previewOutput)
@@ -696,6 +749,7 @@ Camera_ErrorCode OH_CaptureSession_RemovePreviewOutput(Camera_CaptureSession* se
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -704,6 +758,7 @@ Camera_ErrorCode OH_CaptureSession_RemovePreviewOutput(Camera_CaptureSession* se
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许。 |
@@ -711,9 +766,10 @@ Camera_ErrorCode OH_CaptureSession_RemovePreviewOutput(Camera_CaptureSession* se
 
 
 
-#### OH_CaptureSession_AddPhotoOutput()
+### OH_CaptureSession_AddPhotoOutput()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_AddPhotoOutput(Camera_CaptureSession* session, Camera_PhotoOutput* photoOutput)
@@ -727,6 +783,7 @@ Camera_ErrorCode OH_CaptureSession_AddPhotoOutput(Camera_CaptureSession* session
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -735,6 +792,7 @@ Camera_ErrorCode OH_CaptureSession_AddPhotoOutput(Camera_CaptureSession* session
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许。 |
@@ -742,9 +800,10 @@ Camera_ErrorCode OH_CaptureSession_AddPhotoOutput(Camera_CaptureSession* session
 
 
 
-#### OH_CaptureSession_RemovePhotoOutput()
+### OH_CaptureSession_RemovePhotoOutput()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_RemovePhotoOutput(Camera_CaptureSession* session, Camera_PhotoOutput* photoOutput)
@@ -758,6 +817,7 @@ Camera_ErrorCode OH_CaptureSession_RemovePhotoOutput(Camera_CaptureSession* sess
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -766,6 +826,7 @@ Camera_ErrorCode OH_CaptureSession_RemovePhotoOutput(Camera_CaptureSession* sess
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许。 |
@@ -773,9 +834,10 @@ Camera_ErrorCode OH_CaptureSession_RemovePhotoOutput(Camera_CaptureSession* sess
 
 
 
-#### OH_CaptureSession_AddVideoOutput()
+### OH_CaptureSession_AddVideoOutput()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_AddVideoOutput(Camera_CaptureSession* session, Camera_VideoOutput* videoOutput)
@@ -789,6 +851,7 @@ Camera_ErrorCode OH_CaptureSession_AddVideoOutput(Camera_CaptureSession* session
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -797,6 +860,7 @@ Camera_ErrorCode OH_CaptureSession_AddVideoOutput(Camera_CaptureSession* session
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许。 |
@@ -804,9 +868,10 @@ Camera_ErrorCode OH_CaptureSession_AddVideoOutput(Camera_CaptureSession* session
 
 
 
-#### OH_CaptureSession_RemoveVideoOutput()
+### OH_CaptureSession_RemoveVideoOutput()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_RemoveVideoOutput(Camera_CaptureSession* session, Camera_VideoOutput* videoOutput)
@@ -820,6 +885,7 @@ Camera_ErrorCode OH_CaptureSession_RemoveVideoOutput(Camera_CaptureSession* sess
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -828,6 +894,7 @@ Camera_ErrorCode OH_CaptureSession_RemoveVideoOutput(Camera_CaptureSession* sess
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许。 |
@@ -835,9 +902,10 @@ Camera_ErrorCode OH_CaptureSession_RemoveVideoOutput(Camera_CaptureSession* sess
 
 
 
-#### OH_CaptureSession_AddMetadataOutput()
+### OH_CaptureSession_AddMetadataOutput()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_AddMetadataOutput(Camera_CaptureSession* session, Camera_MetadataOutput* metadataOutput)
@@ -851,6 +919,7 @@ Camera_ErrorCode OH_CaptureSession_AddMetadataOutput(Camera_CaptureSession* sess
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -859,6 +928,7 @@ Camera_ErrorCode OH_CaptureSession_AddMetadataOutput(Camera_CaptureSession* sess
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许。 |
@@ -866,9 +936,10 @@ Camera_ErrorCode OH_CaptureSession_AddMetadataOutput(Camera_CaptureSession* sess
 
 
 
-#### OH_CaptureSession_RemoveMetadataOutput()
+### OH_CaptureSession_RemoveMetadataOutput()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_RemoveMetadataOutput(Camera_CaptureSession* session, Camera_MetadataOutput* metadataOutput)
@@ -882,6 +953,7 @@ Camera_ErrorCode OH_CaptureSession_RemoveMetadataOutput(Camera_CaptureSession* s
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -890,6 +962,7 @@ Camera_ErrorCode OH_CaptureSession_RemoveMetadataOutput(Camera_CaptureSession* s
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许。 |
@@ -897,9 +970,10 @@ Camera_ErrorCode OH_CaptureSession_RemoveMetadataOutput(Camera_CaptureSession* s
 
 
 
-#### OH_CaptureSession_Start()
+### OH_CaptureSession_Start()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_Start(Camera_CaptureSession* session)
@@ -913,12 +987,14 @@ Camera_ErrorCode OH_CaptureSession_Start(Camera_CaptureSession* session)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | 要启动的Camera_CaptureSession实例。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -927,9 +1003,10 @@ Camera_ErrorCode OH_CaptureSession_Start(Camera_CaptureSession* session)
 
 
 
-#### OH_CaptureSession_Stop()
+### OH_CaptureSession_Stop()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_Stop(Camera_CaptureSession* session)
@@ -943,12 +1020,14 @@ Camera_ErrorCode OH_CaptureSession_Stop(Camera_CaptureSession* session)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | 要停止的Camera_CaptureSession实例。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -957,9 +1036,10 @@ Camera_ErrorCode OH_CaptureSession_Stop(Camera_CaptureSession* session)
 
 
 
-#### OH_CaptureSession_Release()
+### OH_CaptureSession_Release()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_Release(Camera_CaptureSession* session)
@@ -973,12 +1053,14 @@ Camera_ErrorCode OH_CaptureSession_Release(Camera_CaptureSession* session)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | 要释放的Camera_CaptureSession实例。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -987,9 +1069,10 @@ Camera_ErrorCode OH_CaptureSession_Release(Camera_CaptureSession* session)
 
 
 
-#### OH_CaptureSession_HasFlash()
+### OH_CaptureSession_HasFlash()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_HasFlash(Camera_CaptureSession* session, bool* hasFlash)
@@ -1003,6 +1086,7 @@ Camera_ErrorCode OH_CaptureSession_HasFlash(Camera_CaptureSession* session, bool
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -1011,6 +1095,7 @@ Camera_ErrorCode OH_CaptureSession_HasFlash(Camera_CaptureSession* session, bool
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -1018,9 +1103,10 @@ Camera_ErrorCode OH_CaptureSession_HasFlash(Camera_CaptureSession* session, bool
 
 
 
-#### OH_CaptureSession_IsFlashModeSupported()
+### OH_CaptureSession_IsFlashModeSupported()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_IsFlashModeSupported(Camera_CaptureSession* session, Camera_FlashMode flashMode, bool* isSupported)
@@ -1034,6 +1120,7 @@ Camera_ErrorCode OH_CaptureSession_IsFlashModeSupported(Camera_CaptureSession* s
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -1043,6 +1130,7 @@ Camera_ErrorCode OH_CaptureSession_IsFlashModeSupported(Camera_CaptureSession* s
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -1050,9 +1138,10 @@ Camera_ErrorCode OH_CaptureSession_IsFlashModeSupported(Camera_CaptureSession* s
 
 
 
-#### OH_CaptureSession_GetFlashMode()
+### OH_CaptureSession_GetFlashMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_GetFlashMode(Camera_CaptureSession* session, Camera_FlashMode* flashMode)
@@ -1066,6 +1155,7 @@ Camera_ErrorCode OH_CaptureSession_GetFlashMode(Camera_CaptureSession* session, 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -1074,6 +1164,7 @@ Camera_ErrorCode OH_CaptureSession_GetFlashMode(Camera_CaptureSession* session, 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -1081,9 +1172,10 @@ Camera_ErrorCode OH_CaptureSession_GetFlashMode(Camera_CaptureSession* session, 
 
 
 
-#### OH_CaptureSession_SetFlashMode()
+### OH_CaptureSession_SetFlashMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_SetFlashMode(Camera_CaptureSession* session, Camera_FlashMode flashMode)
@@ -1097,6 +1189,7 @@ Camera_ErrorCode OH_CaptureSession_SetFlashMode(Camera_CaptureSession* session, 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -1105,6 +1198,7 @@ Camera_ErrorCode OH_CaptureSession_SetFlashMode(Camera_CaptureSession* session, 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -1112,9 +1206,10 @@ Camera_ErrorCode OH_CaptureSession_SetFlashMode(Camera_CaptureSession* session, 
 
 
 
-#### OH_CaptureSession_OnFlashStateChange()
+### OH_CaptureSession_OnFlashStateChange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_CaptureSession_OnFlashStateChange)(const Camera_CaptureSession* session, OH_Camera_FlashState flashState)
@@ -1128,6 +1223,7 @@ typedef void (*OH_CaptureSession_OnFlashStateChange)(const Camera_CaptureSession
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_CaptureSession* session | 传递回调的Camera_CaptureSession指针。 |
@@ -1136,9 +1232,10 @@ typedef void (*OH_CaptureSession_OnFlashStateChange)(const Camera_CaptureSession
 
 
 
-#### OH_CaptureSession_RegisterFlashStateChangeCallback()
+### OH_CaptureSession_RegisterFlashStateChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_RegisterFlashStateChangeCallback(const Camera_CaptureSession* session, OH_CaptureSession_OnFlashStateChange flashStateChange)
@@ -1152,6 +1249,7 @@ Camera_ErrorCode OH_CaptureSession_RegisterFlashStateChangeCallback(const Camera
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_CaptureSession* session | Camera_CaptureSession实例指针。 |
@@ -1160,6 +1258,7 @@ Camera_ErrorCode OH_CaptureSession_RegisterFlashStateChangeCallback(const Camera
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或者参数不正确。 |
@@ -1167,9 +1266,10 @@ Camera_ErrorCode OH_CaptureSession_RegisterFlashStateChangeCallback(const Camera
 
 
 
-#### OH_CaptureSession_UnregisterFlashStateChangeCallback()
+### OH_CaptureSession_UnregisterFlashStateChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_UnregisterFlashStateChangeCallback(const Camera_CaptureSession* session, OH_CaptureSession_OnFlashStateChange flashStateChange)
@@ -1183,6 +1283,7 @@ Camera_ErrorCode OH_CaptureSession_UnregisterFlashStateChangeCallback(const Came
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_CaptureSession* session | Camera_CaptureSession实例指针。 |
@@ -1191,6 +1292,7 @@ Camera_ErrorCode OH_CaptureSession_UnregisterFlashStateChangeCallback(const Came
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或者参数不正确。 |
@@ -1198,9 +1300,10 @@ Camera_ErrorCode OH_CaptureSession_UnregisterFlashStateChangeCallback(const Came
 
 
 
-#### OH_CaptureSession_IsExposureModeSupported()
+### OH_CaptureSession_IsExposureModeSupported()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_IsExposureModeSupported(Camera_CaptureSession* session, Camera_ExposureMode exposureMode, bool* isSupported)
@@ -1214,6 +1317,7 @@ Camera_ErrorCode OH_CaptureSession_IsExposureModeSupported(Camera_CaptureSession
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -1223,6 +1327,7 @@ Camera_ErrorCode OH_CaptureSession_IsExposureModeSupported(Camera_CaptureSession
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -1230,9 +1335,10 @@ Camera_ErrorCode OH_CaptureSession_IsExposureModeSupported(Camera_CaptureSession
 
 
 
-#### OH_CaptureSession_GetExposureMode()
+### OH_CaptureSession_GetExposureMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_GetExposureMode(Camera_CaptureSession* session, Camera_ExposureMode* exposureMode)
@@ -1246,6 +1352,7 @@ Camera_ErrorCode OH_CaptureSession_GetExposureMode(Camera_CaptureSession* sessio
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -1254,6 +1361,7 @@ Camera_ErrorCode OH_CaptureSession_GetExposureMode(Camera_CaptureSession* sessio
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -1261,9 +1369,10 @@ Camera_ErrorCode OH_CaptureSession_GetExposureMode(Camera_CaptureSession* sessio
 
 
 
-#### OH_CaptureSession_SetExposureMode()
+### OH_CaptureSession_SetExposureMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_SetExposureMode(Camera_CaptureSession* session, Camera_ExposureMode exposureMode)
@@ -1277,6 +1386,7 @@ Camera_ErrorCode OH_CaptureSession_SetExposureMode(Camera_CaptureSession* sessio
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -1285,6 +1395,7 @@ Camera_ErrorCode OH_CaptureSession_SetExposureMode(Camera_CaptureSession* sessio
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -1292,9 +1403,10 @@ Camera_ErrorCode OH_CaptureSession_SetExposureMode(Camera_CaptureSession* sessio
 
 
 
-#### OH_CaptureSession_GetMeteringPoint()
+### OH_CaptureSession_GetMeteringPoint()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_GetMeteringPoint(Camera_CaptureSession* session, Camera_Point* point)
@@ -1308,6 +1420,7 @@ Camera_ErrorCode OH_CaptureSession_GetMeteringPoint(Camera_CaptureSession* sessi
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -1316,6 +1429,7 @@ Camera_ErrorCode OH_CaptureSession_GetMeteringPoint(Camera_CaptureSession* sessi
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -1323,9 +1437,10 @@ Camera_ErrorCode OH_CaptureSession_GetMeteringPoint(Camera_CaptureSession* sessi
 
 
 
-#### OH_CaptureSession_SetMeteringPoint()
+### OH_CaptureSession_SetMeteringPoint()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_SetMeteringPoint(Camera_CaptureSession* session, Camera_Point point)
@@ -1339,6 +1454,7 @@ Camera_ErrorCode OH_CaptureSession_SetMeteringPoint(Camera_CaptureSession* sessi
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -1347,6 +1463,7 @@ Camera_ErrorCode OH_CaptureSession_SetMeteringPoint(Camera_CaptureSession* sessi
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -1354,9 +1471,10 @@ Camera_ErrorCode OH_CaptureSession_SetMeteringPoint(Camera_CaptureSession* sessi
 
 
 
-#### OH_CaptureSession_IsExposureMeteringModeSupported()
+### OH_CaptureSession_IsExposureMeteringModeSupported()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_IsExposureMeteringModeSupported(const Camera_CaptureSession* session, OH_Camera_ExposureMeteringMode exposureMeteringMode, bool* isSupported)
@@ -1370,6 +1488,7 @@ Camera_ErrorCode OH_CaptureSession_IsExposureMeteringModeSupported(const Camera_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_CaptureSession* session | Camera_CaptureSession实例指针。 |
@@ -1379,6 +1498,7 @@ Camera_ErrorCode OH_CaptureSession_IsExposureMeteringModeSupported(const Camera_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -1386,9 +1506,10 @@ Camera_ErrorCode OH_CaptureSession_IsExposureMeteringModeSupported(const Camera_
 
 
 
-#### OH_CaptureSession_GetExposureMeteringMode()
+### OH_CaptureSession_GetExposureMeteringMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_GetExposureMeteringMode(const Camera_CaptureSession* session, OH_Camera_ExposureMeteringMode* exposureMeteringMode)
@@ -1402,6 +1523,7 @@ Camera_ErrorCode OH_CaptureSession_GetExposureMeteringMode(const Camera_CaptureS
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_CaptureSession* session | Camera_CaptureSession实例指针。 |
@@ -1410,6 +1532,7 @@ Camera_ErrorCode OH_CaptureSession_GetExposureMeteringMode(const Camera_CaptureS
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许，会话或相机状态异常。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -1417,9 +1540,10 @@ Camera_ErrorCode OH_CaptureSession_GetExposureMeteringMode(const Camera_CaptureS
 
 
 
-#### OH_CaptureSession_SetExposureMeteringMode()
+### OH_CaptureSession_SetExposureMeteringMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_SetExposureMeteringMode(const Camera_CaptureSession* session, OH_Camera_ExposureMeteringMode exposureMeteringMode)
@@ -1433,6 +1557,7 @@ Camera_ErrorCode OH_CaptureSession_SetExposureMeteringMode(const Camera_CaptureS
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_CaptureSession* session | Camera_CaptureSession实例指针。 |
@@ -1441,6 +1566,7 @@ Camera_ErrorCode OH_CaptureSession_SetExposureMeteringMode(const Camera_CaptureS
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许，会话或相机状态异常。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -1448,9 +1574,10 @@ Camera_ErrorCode OH_CaptureSession_SetExposureMeteringMode(const Camera_CaptureS
 
 
 
-#### OH_CaptureSession_GetSupportedISORange()
+### OH_CaptureSession_GetSupportedISORange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_GetSupportedISORange(const Camera_CaptureSession* session, int32_t *minIsoValue, int32_t *maxIsoValue)
@@ -1464,6 +1591,7 @@ Camera_ErrorCode OH_CaptureSession_GetSupportedISORange(const Camera_CaptureSess
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -1473,6 +1601,7 @@ Camera_ErrorCode OH_CaptureSession_GetSupportedISORange(const Camera_CaptureSess
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许，会话或相机状态异常。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -1480,9 +1609,10 @@ Camera_ErrorCode OH_CaptureSession_GetSupportedISORange(const Camera_CaptureSess
 
 
 
-#### OH_CaptureSession_GetIso()
+### OH_CaptureSession_GetIso()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_GetIso(const Camera_CaptureSession* session, int32_t* isoValue)
@@ -1496,6 +1626,7 @@ Camera_ErrorCode OH_CaptureSession_GetIso(const Camera_CaptureSession* session, 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_CaptureSession* session | Camera_CaptureSession实例指针。 |
@@ -1504,6 +1635,7 @@ Camera_ErrorCode OH_CaptureSession_GetIso(const Camera_CaptureSession* session, 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许，会话或相机状态异常。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -1511,9 +1643,10 @@ Camera_ErrorCode OH_CaptureSession_GetIso(const Camera_CaptureSession* session, 
 
 
 
-#### OH_CaptureSession_SetIso()
+### OH_CaptureSession_SetIso()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_SetIso(const Camera_CaptureSession* session, int32_t isoValue)
@@ -1527,6 +1660,7 @@ Camera_ErrorCode OH_CaptureSession_SetIso(const Camera_CaptureSession* session, 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_CaptureSession* session | Camera_CaptureSession实例指针。 |
@@ -1535,6 +1669,7 @@ Camera_ErrorCode OH_CaptureSession_SetIso(const Camera_CaptureSession* session, 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许，会话或相机状态异常。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -1542,9 +1677,10 @@ Camera_ErrorCode OH_CaptureSession_SetIso(const Camera_CaptureSession* session, 
 
 
 
-#### OH_CaptureSession_GetSupportedPhysicalApertures()
+### OH_CaptureSession_GetSupportedPhysicalApertures()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_GetSupportedPhysicalApertures(const Camera_CaptureSession* session, OH_Camera_PhysicalAperture** apertures, uint32_t* size)
@@ -1558,6 +1694,7 @@ Camera_ErrorCode OH_CaptureSession_GetSupportedPhysicalApertures(const Camera_Ca
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -1567,6 +1704,7 @@ Camera_ErrorCode OH_CaptureSession_GetSupportedPhysicalApertures(const Camera_Ca
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许，会话或相机状态异常。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -1574,9 +1712,10 @@ Camera_ErrorCode OH_CaptureSession_GetSupportedPhysicalApertures(const Camera_Ca
 
 
 
-#### OH_CaptureSession_DeletePhysicalApertures()
+### OH_CaptureSession_DeletePhysicalApertures()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_DeletePhysicalApertures(const Camera_CaptureSession* session, OH_Camera_PhysicalAperture* apertures, uint32_t size)
@@ -1590,6 +1729,7 @@ Camera_ErrorCode OH_CaptureSession_DeletePhysicalApertures(const Camera_CaptureS
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_CaptureSession* session | Camera_CaptureSession实例指针。 |
@@ -1599,6 +1739,7 @@ Camera_ErrorCode OH_CaptureSession_DeletePhysicalApertures(const Camera_CaptureS
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -1606,9 +1747,10 @@ Camera_ErrorCode OH_CaptureSession_DeletePhysicalApertures(const Camera_CaptureS
 
 
 
-#### OH_CaptureSession_GetPhysicalAperture()
+### OH_CaptureSession_GetPhysicalAperture()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_GetPhysicalAperture(const Camera_CaptureSession* session, double* aperture)
@@ -1622,6 +1764,7 @@ Camera_ErrorCode OH_CaptureSession_GetPhysicalAperture(const Camera_CaptureSessi
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -1630,6 +1773,7 @@ Camera_ErrorCode OH_CaptureSession_GetPhysicalAperture(const Camera_CaptureSessi
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许，会话或相机状态异常。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -1637,9 +1781,10 @@ Camera_ErrorCode OH_CaptureSession_GetPhysicalAperture(const Camera_CaptureSessi
 
 
 
-#### OH_CaptureSession_SetPhysicalAperture()
+### OH_CaptureSession_SetPhysicalAperture()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_SetPhysicalAperture(const Camera_CaptureSession* session, double aperture)
@@ -1649,9 +1794,12 @@ Camera_ErrorCode OH_CaptureSession_SetPhysicalAperture(const Camera_CaptureSessi
 
 设置物理光圈值。
 
+设置前，建议通过[OH_CaptureSession_GetSupportedPhysicalApertures](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-capture-session-h#oh_capturesession_getsupportedphysicalapertures)获取支持的物理光圈列表。
+
 **起始版本：** 24
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -1661,6 +1809,7 @@ Camera_ErrorCode OH_CaptureSession_SetPhysicalAperture(const Camera_CaptureSessi
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许，会话或相机状态异常。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -1668,9 +1817,10 @@ Camera_ErrorCode OH_CaptureSession_SetPhysicalAperture(const Camera_CaptureSessi
 
 
 
-#### OH_CaptureSession_GetExposureBiasRange()
+### OH_CaptureSession_GetExposureBiasRange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_GetExposureBiasRange(Camera_CaptureSession* session, float* minExposureBias, float* maxExposureBias, float* step)
@@ -1684,6 +1834,7 @@ Camera_ErrorCode OH_CaptureSession_GetExposureBiasRange(Camera_CaptureSession* s
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -1694,6 +1845,7 @@ Camera_ErrorCode OH_CaptureSession_GetExposureBiasRange(Camera_CaptureSession* s
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -1701,9 +1853,10 @@ Camera_ErrorCode OH_CaptureSession_GetExposureBiasRange(Camera_CaptureSession* s
 
 
 
-#### OH_CaptureSession_SetExposureBias()
+### OH_CaptureSession_SetExposureBias()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_SetExposureBias(Camera_CaptureSession* session, float exposureBias)
@@ -1713,9 +1866,12 @@ Camera_ErrorCode OH_CaptureSession_SetExposureBias(Camera_CaptureSession* sessio
 
 设置曝光补偿。
 
+设置前，建议通过[OH_CaptureSession_GetExposureBiasRange](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-capture-session-h#oh_capturesession_getexposurebiasrange)获取支持配置的曝光补偿范围。
+
 **起始版本：** 11
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -1725,6 +1881,7 @@ Camera_ErrorCode OH_CaptureSession_SetExposureBias(Camera_CaptureSession* sessio
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -1732,9 +1889,10 @@ Camera_ErrorCode OH_CaptureSession_SetExposureBias(Camera_CaptureSession* sessio
 
 
 
-#### OH_CaptureSession_GetExposureBias()
+### OH_CaptureSession_GetExposureBias()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_GetExposureBias(Camera_CaptureSession* session, float* exposureBias)
@@ -1748,6 +1906,7 @@ Camera_ErrorCode OH_CaptureSession_GetExposureBias(Camera_CaptureSession* sessio
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -1756,6 +1915,7 @@ Camera_ErrorCode OH_CaptureSession_GetExposureBias(Camera_CaptureSession* sessio
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -1763,9 +1923,10 @@ Camera_ErrorCode OH_CaptureSession_GetExposureBias(Camera_CaptureSession* sessio
 
 
 
-#### OH_CaptureSession_GetSupportedExposureDurationRange()
+### OH_CaptureSession_GetSupportedExposureDurationRange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_GetSupportedExposureDurationRange(const Camera_CaptureSession* session, int32_t* minExposureDuration, int32_t* maxExposureDuration)
@@ -1779,6 +1940,7 @@ Camera_ErrorCode OH_CaptureSession_GetSupportedExposureDurationRange(const Camer
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_CaptureSession* session | Camera_CaptureSession实例指针。 |
@@ -1788,6 +1950,7 @@ Camera_ErrorCode OH_CaptureSession_GetSupportedExposureDurationRange(const Camer
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或者参数不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -1795,9 +1958,10 @@ Camera_ErrorCode OH_CaptureSession_GetSupportedExposureDurationRange(const Camer
 
 
 
-#### OH_CaptureSession_SetExposureDuration()
+### OH_CaptureSession_SetExposureDuration()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_SetExposureDuration(const Camera_CaptureSession* session, int32_t exposureDuration)
@@ -1811,6 +1975,7 @@ Camera_ErrorCode OH_CaptureSession_SetExposureDuration(const Camera_CaptureSessi
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_CaptureSession* session | Camera_CaptureSession实例指针。 |
@@ -1819,6 +1984,7 @@ Camera_ErrorCode OH_CaptureSession_SetExposureDuration(const Camera_CaptureSessi
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或者参数不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许，会话或相机状态异常。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -1826,9 +1992,10 @@ Camera_ErrorCode OH_CaptureSession_SetExposureDuration(const Camera_CaptureSessi
 
 
 
-#### OH_CaptureSession_GetExposureDuration()
+### OH_CaptureSession_GetExposureDuration()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_GetExposureDuration(const Camera_CaptureSession* session, int32_t* exposureDuration)
@@ -1842,6 +2009,7 @@ Camera_ErrorCode OH_CaptureSession_GetExposureDuration(const Camera_CaptureSessi
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_CaptureSession* session | Camera_CaptureSession实例指针。 |
@@ -1850,6 +2018,7 @@ Camera_ErrorCode OH_CaptureSession_GetExposureDuration(const Camera_CaptureSessi
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或者参数不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许，会话或相机状态异常。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -1857,9 +2026,10 @@ Camera_ErrorCode OH_CaptureSession_GetExposureDuration(const Camera_CaptureSessi
 
 
 
-#### OH_CaptureSession_OnExposureDurationChange()
+### OH_CaptureSession_OnExposureDurationChange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_CaptureSession_OnExposureDurationChange)(const Camera_CaptureSession* session, int32_t exposureDuration)
@@ -1873,6 +2043,7 @@ typedef void (*OH_CaptureSession_OnExposureDurationChange)(const Camera_CaptureS
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_CaptureSession* session | 传递回调的Camera_CaptureSession指针。 |
@@ -1881,9 +2052,10 @@ typedef void (*OH_CaptureSession_OnExposureDurationChange)(const Camera_CaptureS
 
 
 
-#### OH_CaptureSession_RegisterExposureInfoChangeCallback()
+### OH_CaptureSession_RegisterExposureInfoChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_RegisterExposureInfoChangeCallback(const Camera_CaptureSession* session, OH_CaptureSession_OnExposureDurationChange exposureDurationChange)
@@ -1897,6 +2069,7 @@ Camera_ErrorCode OH_CaptureSession_RegisterExposureInfoChangeCallback(const Came
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_CaptureSession* session | Camera_CaptureSession实例指针。 |
@@ -1905,6 +2078,7 @@ Camera_ErrorCode OH_CaptureSession_RegisterExposureInfoChangeCallback(const Came
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或者参数不正确。 |
@@ -1912,9 +2086,10 @@ Camera_ErrorCode OH_CaptureSession_RegisterExposureInfoChangeCallback(const Came
 
 
 
-#### OH_CaptureSession_UnregisterExposureInfoChangeCallback()
+### OH_CaptureSession_UnregisterExposureInfoChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_UnregisterExposureInfoChangeCallback(const Camera_CaptureSession* session, OH_CaptureSession_OnExposureDurationChange exposureDurationChange)
@@ -1928,6 +2103,7 @@ Camera_ErrorCode OH_CaptureSession_UnregisterExposureInfoChangeCallback(const Ca
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_CaptureSession* session | Camera_CaptureSession实例指针。 |
@@ -1936,6 +2112,7 @@ Camera_ErrorCode OH_CaptureSession_UnregisterExposureInfoChangeCallback(const Ca
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或者参数不正确。 |
@@ -1943,9 +2120,10 @@ Camera_ErrorCode OH_CaptureSession_UnregisterExposureInfoChangeCallback(const Ca
 
 
 
-#### OH_CaptureSession_IsFocusModeSupported()
+### OH_CaptureSession_IsFocusModeSupported()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_IsFocusModeSupported(Camera_CaptureSession* session, Camera_FocusMode focusMode, bool* isSupported)
@@ -1959,6 +2137,7 @@ Camera_ErrorCode OH_CaptureSession_IsFocusModeSupported(Camera_CaptureSession* s
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -1968,6 +2147,7 @@ Camera_ErrorCode OH_CaptureSession_IsFocusModeSupported(Camera_CaptureSession* s
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -1975,9 +2155,10 @@ Camera_ErrorCode OH_CaptureSession_IsFocusModeSupported(Camera_CaptureSession* s
 
 
 
-#### OH_CaptureSession_GetFocusMode()
+### OH_CaptureSession_GetFocusMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_GetFocusMode(Camera_CaptureSession* session, Camera_FocusMode* focusMode)
@@ -1991,6 +2172,7 @@ Camera_ErrorCode OH_CaptureSession_GetFocusMode(Camera_CaptureSession* session, 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -1999,6 +2181,7 @@ Camera_ErrorCode OH_CaptureSession_GetFocusMode(Camera_CaptureSession* session, 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -2006,9 +2189,10 @@ Camera_ErrorCode OH_CaptureSession_GetFocusMode(Camera_CaptureSession* session, 
 
 
 
-#### OH_CaptureSession_SetFocusMode()
+### OH_CaptureSession_SetFocusMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_SetFocusMode(Camera_CaptureSession* session, Camera_FocusMode focusMode)
@@ -2022,6 +2206,7 @@ Camera_ErrorCode OH_CaptureSession_SetFocusMode(Camera_CaptureSession* session, 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -2030,6 +2215,7 @@ Camera_ErrorCode OH_CaptureSession_SetFocusMode(Camera_CaptureSession* session, 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -2037,9 +2223,10 @@ Camera_ErrorCode OH_CaptureSession_SetFocusMode(Camera_CaptureSession* session, 
 
 
 
-#### OH_CaptureSession_GetFocusPoint()
+### OH_CaptureSession_GetFocusPoint()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_GetFocusPoint(Camera_CaptureSession* session, Camera_Point* focusPoint)
@@ -2053,6 +2240,7 @@ Camera_ErrorCode OH_CaptureSession_GetFocusPoint(Camera_CaptureSession* session,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -2061,6 +2249,7 @@ Camera_ErrorCode OH_CaptureSession_GetFocusPoint(Camera_CaptureSession* session,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -2068,9 +2257,10 @@ Camera_ErrorCode OH_CaptureSession_GetFocusPoint(Camera_CaptureSession* session,
 
 
 
-#### OH_CaptureSession_SetFocusPoint()
+### OH_CaptureSession_SetFocusPoint()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_SetFocusPoint(Camera_CaptureSession* session, Camera_Point focusPoint)
@@ -2084,6 +2274,7 @@ Camera_ErrorCode OH_CaptureSession_SetFocusPoint(Camera_CaptureSession* session,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -2092,6 +2283,7 @@ Camera_ErrorCode OH_CaptureSession_SetFocusPoint(Camera_CaptureSession* session,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -2099,9 +2291,10 @@ Camera_ErrorCode OH_CaptureSession_SetFocusPoint(Camera_CaptureSession* session,
 
 
 
-#### OH_CaptureSession_GetZoomRatioRange()
+### OH_CaptureSession_GetZoomRatioRange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_GetZoomRatioRange(Camera_CaptureSession* session, float* minZoom, float* maxZoom)
@@ -2115,6 +2308,7 @@ Camera_ErrorCode OH_CaptureSession_GetZoomRatioRange(Camera_CaptureSession* sess
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -2124,6 +2318,7 @@ Camera_ErrorCode OH_CaptureSession_GetZoomRatioRange(Camera_CaptureSession* sess
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -2131,9 +2326,10 @@ Camera_ErrorCode OH_CaptureSession_GetZoomRatioRange(Camera_CaptureSession* sess
 
 
 
-#### OH_CaptureSession_GetZoomRatio()
+### OH_CaptureSession_GetZoomRatio()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_GetZoomRatio(Camera_CaptureSession* session, float* zoom)
@@ -2147,6 +2343,7 @@ Camera_ErrorCode OH_CaptureSession_GetZoomRatio(Camera_CaptureSession* session, 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -2155,6 +2352,7 @@ Camera_ErrorCode OH_CaptureSession_GetZoomRatio(Camera_CaptureSession* session, 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -2162,9 +2360,10 @@ Camera_ErrorCode OH_CaptureSession_GetZoomRatio(Camera_CaptureSession* session, 
 
 
 
-#### OH_CaptureSession_SetZoomRatio()
+### OH_CaptureSession_SetZoomRatio()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_SetZoomRatio(Camera_CaptureSession* session, float zoom)
@@ -2174,9 +2373,12 @@ Camera_ErrorCode OH_CaptureSession_SetZoomRatio(Camera_CaptureSession* session, 
 
 设置缩放比例。
 
+设置前，建议通过[OH_CaptureSession_GetZoomRatioRange](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-capture-session-h#oh_capturesession_getzoomratiorange)获取支持的缩放比例范围。
+
 **起始版本：** 11
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -2186,6 +2388,7 @@ Camera_ErrorCode OH_CaptureSession_SetZoomRatio(Camera_CaptureSession* session, 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -2193,9 +2396,10 @@ Camera_ErrorCode OH_CaptureSession_SetZoomRatio(Camera_CaptureSession* session, 
 
 
 
-#### OH_CaptureSession_IsVideoStabilizationModeSupported()
+### OH_CaptureSession_IsVideoStabilizationModeSupported()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_IsVideoStabilizationModeSupported(Camera_CaptureSession* session, Camera_VideoStabilizationMode mode, bool* isSupported)
@@ -2209,6 +2413,7 @@ Camera_ErrorCode OH_CaptureSession_IsVideoStabilizationModeSupported(Camera_Capt
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -2218,6 +2423,7 @@ Camera_ErrorCode OH_CaptureSession_IsVideoStabilizationModeSupported(Camera_Capt
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -2225,9 +2431,10 @@ Camera_ErrorCode OH_CaptureSession_IsVideoStabilizationModeSupported(Camera_Capt
 
 
 
-#### OH_CaptureSession_GetVideoStabilizationMode()
+### OH_CaptureSession_GetVideoStabilizationMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_GetVideoStabilizationMode(Camera_CaptureSession* session, Camera_VideoStabilizationMode* mode)
@@ -2241,6 +2448,7 @@ Camera_ErrorCode OH_CaptureSession_GetVideoStabilizationMode(Camera_CaptureSessi
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -2249,6 +2457,7 @@ Camera_ErrorCode OH_CaptureSession_GetVideoStabilizationMode(Camera_CaptureSessi
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -2256,9 +2465,10 @@ Camera_ErrorCode OH_CaptureSession_GetVideoStabilizationMode(Camera_CaptureSessi
 
 
 
-#### OH_CaptureSession_SetVideoStabilizationMode()
+### OH_CaptureSession_SetVideoStabilizationMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_SetVideoStabilizationMode(Camera_CaptureSession* session, Camera_VideoStabilizationMode mode)
@@ -2272,6 +2482,7 @@ Camera_ErrorCode OH_CaptureSession_SetVideoStabilizationMode(Camera_CaptureSessi
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -2280,6 +2491,7 @@ Camera_ErrorCode OH_CaptureSession_SetVideoStabilizationMode(Camera_CaptureSessi
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -2287,9 +2499,10 @@ Camera_ErrorCode OH_CaptureSession_SetVideoStabilizationMode(Camera_CaptureSessi
 
 
 
-#### OH_CaptureSession_CanAddInput()
+### OH_CaptureSession_CanAddInput()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_CanAddInput(Camera_CaptureSession* session, Camera_Input* cameraInput, bool* isSuccessful)
@@ -2303,6 +2516,7 @@ Camera_ErrorCode OH_CaptureSession_CanAddInput(Camera_CaptureSession* session, C
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -2312,6 +2526,7 @@ Camera_ErrorCode OH_CaptureSession_CanAddInput(Camera_CaptureSession* session, C
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -2319,9 +2534,10 @@ Camera_ErrorCode OH_CaptureSession_CanAddInput(Camera_CaptureSession* session, C
 
 
 
-#### OH_CaptureSession_CanAddPreviewOutput()
+### OH_CaptureSession_CanAddPreviewOutput()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_CanAddPreviewOutput(Camera_CaptureSession* session, Camera_PreviewOutput* cameraOutput, bool* isSuccessful)
@@ -2335,6 +2551,7 @@ Camera_ErrorCode OH_CaptureSession_CanAddPreviewOutput(Camera_CaptureSession* se
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -2344,6 +2561,7 @@ Camera_ErrorCode OH_CaptureSession_CanAddPreviewOutput(Camera_CaptureSession* se
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -2351,9 +2569,10 @@ Camera_ErrorCode OH_CaptureSession_CanAddPreviewOutput(Camera_CaptureSession* se
 
 
 
-#### OH_CaptureSession_CanAddPhotoOutput()
+### OH_CaptureSession_CanAddPhotoOutput()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_CanAddPhotoOutput(Camera_CaptureSession* session, Camera_PhotoOutput* cameraOutput, bool* isSuccessful)
@@ -2367,6 +2586,7 @@ Camera_ErrorCode OH_CaptureSession_CanAddPhotoOutput(Camera_CaptureSession* sess
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -2376,6 +2596,7 @@ Camera_ErrorCode OH_CaptureSession_CanAddPhotoOutput(Camera_CaptureSession* sess
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -2383,9 +2604,10 @@ Camera_ErrorCode OH_CaptureSession_CanAddPhotoOutput(Camera_CaptureSession* sess
 
 
 
-#### OH_CaptureSession_CanAddVideoOutput()
+### OH_CaptureSession_CanAddVideoOutput()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_CanAddVideoOutput(Camera_CaptureSession* session, Camera_VideoOutput* cameraOutput, bool* isSuccessful)
@@ -2399,6 +2621,7 @@ Camera_ErrorCode OH_CaptureSession_CanAddVideoOutput(Camera_CaptureSession* sess
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -2408,6 +2631,7 @@ Camera_ErrorCode OH_CaptureSession_CanAddVideoOutput(Camera_CaptureSession* sess
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -2415,9 +2639,10 @@ Camera_ErrorCode OH_CaptureSession_CanAddVideoOutput(Camera_CaptureSession* sess
 
 
 
-#### OH_CaptureSession_CanPreconfig()
+### OH_CaptureSession_CanPreconfig()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_CanPreconfig(Camera_CaptureSession* session, Camera_PreconfigType preconfigType, bool* canPreconfig)
@@ -2431,6 +2656,7 @@ Camera_ErrorCode OH_CaptureSession_CanPreconfig(Camera_CaptureSession* session, 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -2440,6 +2666,7 @@ Camera_ErrorCode OH_CaptureSession_CanPreconfig(Camera_CaptureSession* session, 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -2447,9 +2674,10 @@ Camera_ErrorCode OH_CaptureSession_CanPreconfig(Camera_CaptureSession* session, 
 
 
 
-#### OH_CaptureSession_CanPreconfigWithRatio()
+### OH_CaptureSession_CanPreconfigWithRatio()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_CanPreconfigWithRatio(Camera_CaptureSession* session, Camera_PreconfigType preconfigType, Camera_PreconfigRatio preconfigRatio, bool* canPreconfig)
@@ -2463,6 +2691,7 @@ Camera_ErrorCode OH_CaptureSession_CanPreconfigWithRatio(Camera_CaptureSession* 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -2473,6 +2702,7 @@ Camera_ErrorCode OH_CaptureSession_CanPreconfigWithRatio(Camera_CaptureSession* 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -2480,9 +2710,10 @@ Camera_ErrorCode OH_CaptureSession_CanPreconfigWithRatio(Camera_CaptureSession* 
 
 
 
-#### OH_CaptureSession_Preconfig()
+### OH_CaptureSession_Preconfig()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_Preconfig(Camera_CaptureSession* session, Camera_PreconfigType preconfigType)
@@ -2496,6 +2727,7 @@ Camera_ErrorCode OH_CaptureSession_Preconfig(Camera_CaptureSession* session, Cam
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -2504,6 +2736,7 @@ Camera_ErrorCode OH_CaptureSession_Preconfig(Camera_CaptureSession* session, Cam
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -2511,9 +2744,10 @@ Camera_ErrorCode OH_CaptureSession_Preconfig(Camera_CaptureSession* session, Cam
 
 
 
-#### OH_CaptureSession_PreconfigWithRatio()
+### OH_CaptureSession_PreconfigWithRatio()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_PreconfigWithRatio(Camera_CaptureSession* session, Camera_PreconfigType preconfigType, Camera_PreconfigRatio preconfigRatio)
@@ -2527,6 +2761,7 @@ Camera_ErrorCode OH_CaptureSession_PreconfigWithRatio(Camera_CaptureSession* ses
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -2536,6 +2771,7 @@ Camera_ErrorCode OH_CaptureSession_PreconfigWithRatio(Camera_CaptureSession* ses
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -2543,9 +2779,10 @@ Camera_ErrorCode OH_CaptureSession_PreconfigWithRatio(Camera_CaptureSession* ses
 
 
 
-#### OH_CaptureSession_GetExposureValue()
+### OH_CaptureSession_GetExposureValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_GetExposureValue(Camera_CaptureSession* session, float* exposureValue)
@@ -2559,6 +2796,7 @@ Camera_ErrorCode OH_CaptureSession_GetExposureValue(Camera_CaptureSession* sessi
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -2567,6 +2805,7 @@ Camera_ErrorCode OH_CaptureSession_GetExposureValue(Camera_CaptureSession* sessi
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -2574,9 +2813,10 @@ Camera_ErrorCode OH_CaptureSession_GetExposureValue(Camera_CaptureSession* sessi
 
 
 
-#### OH_CaptureSession_GetFocalLength()
+### OH_CaptureSession_GetFocalLength()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_GetFocalLength(Camera_CaptureSession* session, float* focalLength)
@@ -2590,6 +2830,7 @@ Camera_ErrorCode OH_CaptureSession_GetFocalLength(Camera_CaptureSession* session
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -2598,6 +2839,7 @@ Camera_ErrorCode OH_CaptureSession_GetFocalLength(Camera_CaptureSession* session
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -2605,9 +2847,10 @@ Camera_ErrorCode OH_CaptureSession_GetFocalLength(Camera_CaptureSession* session
 
 
 
-#### OH_CaptureSession_GetFocusDistance()
+### OH_CaptureSession_GetFocusDistance()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_GetFocusDistance(const Camera_CaptureSession* session, float* focusDistance)
@@ -2621,6 +2864,7 @@ Camera_ErrorCode OH_CaptureSession_GetFocusDistance(const Camera_CaptureSession*
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_CaptureSession* session | Camera_CaptureSession实例指针。 |
@@ -2629,6 +2873,7 @@ Camera_ErrorCode OH_CaptureSession_GetFocusDistance(const Camera_CaptureSession*
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或者参数不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许，会话或输入设备可能异常。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -2636,9 +2881,10 @@ Camera_ErrorCode OH_CaptureSession_GetFocusDistance(const Camera_CaptureSession*
 
 
 
-#### OH_CaptureSession_SetFocusDistance()
+### OH_CaptureSession_SetFocusDistance()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_SetFocusDistance(const Camera_CaptureSession* session, float focusDistance)
@@ -2652,6 +2898,7 @@ Camera_ErrorCode OH_CaptureSession_SetFocusDistance(const Camera_CaptureSession*
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_CaptureSession* session | Camera_CaptureSession实例指针。 |
@@ -2660,6 +2907,7 @@ Camera_ErrorCode OH_CaptureSession_SetFocusDistance(const Camera_CaptureSession*
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或者参数不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许，会话或输入设备可能异常。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -2667,9 +2915,10 @@ Camera_ErrorCode OH_CaptureSession_SetFocusDistance(const Camera_CaptureSession*
 
 
 
-#### OH_CaptureSession_IsFocusDistanceSupported()
+### OH_CaptureSession_IsFocusDistanceSupported()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_IsFocusDistanceSupported(const Camera_CaptureSession* session, bool* isSupported)
@@ -2683,6 +2932,7 @@ Camera_ErrorCode OH_CaptureSession_IsFocusDistanceSupported(const Camera_Capture
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_CaptureSession* session | Camera_CaptureSession实例指针。 |
@@ -2691,6 +2941,7 @@ Camera_ErrorCode OH_CaptureSession_IsFocusDistanceSupported(const Camera_Capture
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或者参数不正确。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -2698,9 +2949,10 @@ Camera_ErrorCode OH_CaptureSession_IsFocusDistanceSupported(const Camera_Capture
 
 
 
-#### OH_CaptureSession_SetSmoothZoom()
+### OH_CaptureSession_SetSmoothZoom()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_SetSmoothZoom(Camera_CaptureSession* session, float targetZoom, Camera_SmoothZoomMode smoothZoomMode)
@@ -2714,14 +2966,16 @@ Camera_ErrorCode OH_CaptureSession_SetSmoothZoom(Camera_CaptureSession* session,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
-| float targetZoom | 要设置的目标变焦比。 |
+| float targetZoom | 要设置的目标变焦比。取值范围需通过OH_CaptureSession_GetZoomRatioRange获取。 |
 | Camera_SmoothZoomMode smoothZoomMode | 平滑变焦模式。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2730,9 +2984,10 @@ Camera_ErrorCode OH_CaptureSession_SetSmoothZoom(Camera_CaptureSession* session,
 
 
 
-#### OH_CaptureSession_GetSupportedColorSpaces()
+### OH_CaptureSession_GetSupportedColorSpaces()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_GetSupportedColorSpaces(Camera_CaptureSession* session, OH_NativeBuffer_ColorSpace** colorSpace, uint32_t* size)
@@ -2746,6 +3001,7 @@ Camera_ErrorCode OH_CaptureSession_GetSupportedColorSpaces(Camera_CaptureSession
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -2755,6 +3011,7 @@ Camera_ErrorCode OH_CaptureSession_GetSupportedColorSpaces(Camera_CaptureSession
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -2762,9 +3019,10 @@ Camera_ErrorCode OH_CaptureSession_GetSupportedColorSpaces(Camera_CaptureSession
 
 
 
-#### OH_CaptureSession_DeleteColorSpaces()
+### OH_CaptureSession_DeleteColorSpaces()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_DeleteColorSpaces(Camera_CaptureSession* session, OH_NativeBuffer_ColorSpace* colorSpace)
@@ -2778,6 +3036,7 @@ Camera_ErrorCode OH_CaptureSession_DeleteColorSpaces(Camera_CaptureSession* sess
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -2786,6 +3045,7 @@ Camera_ErrorCode OH_CaptureSession_DeleteColorSpaces(Camera_CaptureSession* sess
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -2793,9 +3053,10 @@ Camera_ErrorCode OH_CaptureSession_DeleteColorSpaces(Camera_CaptureSession* sess
 
 
 
-#### OH_CaptureSession_GetActiveColorSpace()
+### OH_CaptureSession_GetActiveColorSpace()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_GetActiveColorSpace(Camera_CaptureSession* session, OH_NativeBuffer_ColorSpace* colorSpace)
@@ -2809,6 +3070,7 @@ Camera_ErrorCode OH_CaptureSession_GetActiveColorSpace(Camera_CaptureSession* se
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -2817,6 +3079,7 @@ Camera_ErrorCode OH_CaptureSession_GetActiveColorSpace(Camera_CaptureSession* se
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -2824,9 +3087,10 @@ Camera_ErrorCode OH_CaptureSession_GetActiveColorSpace(Camera_CaptureSession* se
 
 
 
-#### OH_CaptureSession_SetActiveColorSpace()
+### OH_CaptureSession_SetActiveColorSpace()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_SetActiveColorSpace(Camera_CaptureSession* session, OH_NativeBuffer_ColorSpace colorSpace)
@@ -2836,9 +3100,12 @@ Camera_ErrorCode OH_CaptureSession_SetActiveColorSpace(Camera_CaptureSession* se
 
 设置当前色彩空间。
 
+设置的值需在[OH_CaptureSession_GetSupportedColorSpaces](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-capture-session-h#oh_capturesession_getsupportedcolorspaces)获取的支持列表中。
+
 **起始版本：** 12
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -2848,6 +3115,7 @@ Camera_ErrorCode OH_CaptureSession_SetActiveColorSpace(Camera_CaptureSession* se
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -2855,9 +3123,10 @@ Camera_ErrorCode OH_CaptureSession_SetActiveColorSpace(Camera_CaptureSession* se
 
 
 
-#### OH_CaptureSession_RegisterAutoDeviceSwitchStatusCallback()
+### OH_CaptureSession_RegisterAutoDeviceSwitchStatusCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_RegisterAutoDeviceSwitchStatusCallback(Camera_CaptureSession* session, OH_CaptureSession_OnAutoDeviceSwitchStatusChange autoDeviceSwitchStatusChange)
@@ -2871,6 +3140,7 @@ Camera_ErrorCode OH_CaptureSession_RegisterAutoDeviceSwitchStatusCallback(Camera
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -2879,6 +3149,7 @@ Camera_ErrorCode OH_CaptureSession_RegisterAutoDeviceSwitchStatusCallback(Camera
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -2886,9 +3157,10 @@ Camera_ErrorCode OH_CaptureSession_RegisterAutoDeviceSwitchStatusCallback(Camera
 
 
 
-#### OH_CaptureSession_UnregisterAutoDeviceSwitchStatusCallback()
+### OH_CaptureSession_UnregisterAutoDeviceSwitchStatusCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_UnregisterAutoDeviceSwitchStatusCallback(Camera_CaptureSession* session, OH_CaptureSession_OnAutoDeviceSwitchStatusChange autoDeviceSwitchStatusChange)
@@ -2902,6 +3174,7 @@ Camera_ErrorCode OH_CaptureSession_UnregisterAutoDeviceSwitchStatusCallback(Came
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -2910,6 +3183,7 @@ Camera_ErrorCode OH_CaptureSession_UnregisterAutoDeviceSwitchStatusCallback(Came
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -2917,9 +3191,10 @@ Camera_ErrorCode OH_CaptureSession_UnregisterAutoDeviceSwitchStatusCallback(Came
 
 
 
-#### OH_CaptureSession_IsAutoDeviceSwitchSupported()
+### OH_CaptureSession_IsAutoDeviceSwitchSupported()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_IsAutoDeviceSwitchSupported(Camera_CaptureSession* session, bool* isSupported)
@@ -2933,6 +3208,7 @@ Camera_ErrorCode OH_CaptureSession_IsAutoDeviceSwitchSupported(Camera_CaptureSes
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -2941,6 +3217,7 @@ Camera_ErrorCode OH_CaptureSession_IsAutoDeviceSwitchSupported(Camera_CaptureSes
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -2948,9 +3225,10 @@ Camera_ErrorCode OH_CaptureSession_IsAutoDeviceSwitchSupported(Camera_CaptureSes
 
 
 
-#### OH_CaptureSession_EnableAutoDeviceSwitch()
+### OH_CaptureSession_EnableAutoDeviceSwitch()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_EnableAutoDeviceSwitch(Camera_CaptureSession* session, bool enabled)
@@ -2964,6 +3242,7 @@ Camera_ErrorCode OH_CaptureSession_EnableAutoDeviceSwitch(Camera_CaptureSession*
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -2972,6 +3251,7 @@ Camera_ErrorCode OH_CaptureSession_EnableAutoDeviceSwitch(Camera_CaptureSession*
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -2979,9 +3259,10 @@ Camera_ErrorCode OH_CaptureSession_EnableAutoDeviceSwitch(Camera_CaptureSession*
 
 
 
-#### OH_CaptureSession_RegisterSystemPressureLevelChangeCallback()
+### OH_CaptureSession_RegisterSystemPressureLevelChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_RegisterSystemPressureLevelChangeCallback(Camera_CaptureSession* session, OH_CaptureSession_OnSystemPressureLevelChange systemPressureLevelChange)
@@ -2995,6 +3276,7 @@ Camera_ErrorCode OH_CaptureSession_RegisterSystemPressureLevelChangeCallback(Cam
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | 传递回调的Camera_CaptureSession实例。 |
@@ -3003,6 +3285,7 @@ Camera_ErrorCode OH_CaptureSession_RegisterSystemPressureLevelChangeCallback(Cam
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -3010,9 +3293,10 @@ Camera_ErrorCode OH_CaptureSession_RegisterSystemPressureLevelChangeCallback(Cam
 
 
 
-#### OH_CaptureSession_UnregisterSystemPressureLevelChangeCallback()
+### OH_CaptureSession_UnregisterSystemPressureLevelChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_UnregisterSystemPressureLevelChangeCallback(Camera_CaptureSession* session, OH_CaptureSession_OnSystemPressureLevelChange systemPressureLevelChange)
@@ -3026,6 +3310,7 @@ Camera_ErrorCode OH_CaptureSession_UnregisterSystemPressureLevelChangeCallback(C
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | 传递回调的Camera_CaptureSession实例。 |
@@ -3034,6 +3319,7 @@ Camera_ErrorCode OH_CaptureSession_UnregisterSystemPressureLevelChangeCallback(C
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -3041,9 +3327,10 @@ Camera_ErrorCode OH_CaptureSession_UnregisterSystemPressureLevelChangeCallback(C
 
 
 
-#### OH_CaptureSession_SetQualityPrioritization()
+### OH_CaptureSession_SetQualityPrioritization()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_SetQualityPrioritization(Camera_CaptureSession* session, Camera_QualityPrioritization qualityPrioritization)
@@ -3059,6 +3346,7 @@ Camera_ErrorCode OH_CaptureSession_SetQualityPrioritization(Camera_CaptureSessio
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -3067,6 +3355,7 @@ Camera_ErrorCode OH_CaptureSession_SetQualityPrioritization(Camera_CaptureSessio
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -3074,9 +3363,10 @@ Camera_ErrorCode OH_CaptureSession_SetQualityPrioritization(Camera_CaptureSessio
 
 
 
-#### OH_CaptureSession_IsMacroSupported()
+### OH_CaptureSession_IsMacroSupported()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_IsMacroSupported(Camera_CaptureSession* session, bool* isSupported)
@@ -3090,6 +3380,7 @@ Camera_ErrorCode OH_CaptureSession_IsMacroSupported(Camera_CaptureSession* sessi
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -3098,6 +3389,7 @@ Camera_ErrorCode OH_CaptureSession_IsMacroSupported(Camera_CaptureSession* sessi
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK = 0：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -3105,9 +3397,10 @@ Camera_ErrorCode OH_CaptureSession_IsMacroSupported(Camera_CaptureSession* sessi
 
 
 
-#### OH_CaptureSession_EnableMacro()
+### OH_CaptureSession_EnableMacro()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_EnableMacro(Camera_CaptureSession* session, bool enabled)
@@ -3121,6 +3414,7 @@ Camera_ErrorCode OH_CaptureSession_EnableMacro(Camera_CaptureSession* session, b
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -3129,6 +3423,7 @@ Camera_ErrorCode OH_CaptureSession_EnableMacro(Camera_CaptureSession* session, b
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK = 0：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 CAMERA_OPERATION_NOT_ALLOWED：不允许操作。 |
@@ -3136,9 +3431,10 @@ Camera_ErrorCode OH_CaptureSession_EnableMacro(Camera_CaptureSession* session, b
 
 
 
-#### OH_CaptureSession_SetWhiteBalance()
+### OH_CaptureSession_SetWhiteBalance()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_SetWhiteBalance(Camera_CaptureSession* session, int32_t colorTemperature)
@@ -3154,6 +3450,7 @@ Camera_ErrorCode OH_CaptureSession_SetWhiteBalance(Camera_CaptureSession* sessio
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -3162,6 +3459,7 @@ Camera_ErrorCode OH_CaptureSession_SetWhiteBalance(Camera_CaptureSession* sessio
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：设置成功。 CAMERA_INVALID_ARGUMENT：参数缺失或者参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：相机会话未配置。 |
@@ -3169,9 +3467,10 @@ Camera_ErrorCode OH_CaptureSession_SetWhiteBalance(Camera_CaptureSession* sessio
 
 
 
-#### OH_CaptureSession_GetColorTintRange()
+### OH_CaptureSession_GetColorTintRange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_GetColorTintRange(const Camera_CaptureSession* session, int32_t *minColorTint, int32_t *maxColorTint)
@@ -3185,6 +3484,7 @@ Camera_ErrorCode OH_CaptureSession_GetColorTintRange(const Camera_CaptureSession
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -3194,6 +3494,7 @@ Camera_ErrorCode OH_CaptureSession_GetColorTintRange(const Camera_CaptureSession
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：当调用该方法时，捕获会话未配置。 |
@@ -3201,9 +3502,10 @@ Camera_ErrorCode OH_CaptureSession_GetColorTintRange(const Camera_CaptureSession
 
 
 
-#### OH_CaptureSession_GetColorTint()
+### OH_CaptureSession_GetColorTint()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_GetColorTint(const Camera_CaptureSession* session, int32_t *colorTint)
@@ -3217,6 +3519,7 @@ Camera_ErrorCode OH_CaptureSession_GetColorTint(const Camera_CaptureSession* ses
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -3225,6 +3528,7 @@ Camera_ErrorCode OH_CaptureSession_GetColorTint(const Camera_CaptureSession* ses
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：当调用该方法时，捕获会话未配置。 |
@@ -3232,9 +3536,10 @@ Camera_ErrorCode OH_CaptureSession_GetColorTint(const Camera_CaptureSession* ses
 
 
 
-#### OH_CaptureSession_SetColorTint()
+### OH_CaptureSession_SetColorTint()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_SetColorTint(Camera_CaptureSession* session, int32_t colorTint)
@@ -3248,13 +3553,15 @@ Camera_ErrorCode OH_CaptureSession_SetColorTint(Camera_CaptureSession* session, 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
-| const Camera_CaptureSession* session | Camera_CaptureSession实例。 |
+| Camera_CaptureSession* session | Camera_CaptureSession实例。 |
 | int32_t colorTint | 色调调节值。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3263,9 +3570,10 @@ Camera_ErrorCode OH_CaptureSession_SetColorTint(Camera_CaptureSession* session, 
 
 
 
-#### OH_CaptureSession_GetWhiteBalance()
+### OH_CaptureSession_GetWhiteBalance()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_GetWhiteBalance(Camera_CaptureSession* session, int32_t *colorTemperature)
@@ -3279,6 +3587,7 @@ Camera_ErrorCode OH_CaptureSession_GetWhiteBalance(Camera_CaptureSession* sessio
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -3287,6 +3596,7 @@ Camera_ErrorCode OH_CaptureSession_GetWhiteBalance(Camera_CaptureSession* sessio
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：函数调用成功。 CAMERA_INVALID_ARGUMENT：参数缺失或者参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：相机会话未配置。 |
@@ -3294,9 +3604,10 @@ Camera_ErrorCode OH_CaptureSession_GetWhiteBalance(Camera_CaptureSession* sessio
 
 
 
-#### OH_CaptureSession_GetWhiteBalanceMode()
+### OH_CaptureSession_GetWhiteBalanceMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_GetWhiteBalanceMode(Camera_CaptureSession* session, Camera_WhiteBalanceMode* whiteBalanceMode)
@@ -3310,6 +3621,7 @@ Camera_ErrorCode OH_CaptureSession_GetWhiteBalanceMode(Camera_CaptureSession* se
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -3318,6 +3630,7 @@ Camera_ErrorCode OH_CaptureSession_GetWhiteBalanceMode(Camera_CaptureSession* se
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：函数调用成功。 CAMERA_INVALID_ARGUMENT：参数缺失或者参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：相机会话未配置。 |
@@ -3325,9 +3638,10 @@ Camera_ErrorCode OH_CaptureSession_GetWhiteBalanceMode(Camera_CaptureSession* se
 
 
 
-#### OH_CaptureSession_IsWhiteBalanceModeSupported()
+### OH_CaptureSession_IsWhiteBalanceModeSupported()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_IsWhiteBalanceModeSupported(Camera_CaptureSession* session, Camera_WhiteBalanceMode whiteBalanceMode, bool* isSupported)
@@ -3341,6 +3655,7 @@ Camera_ErrorCode OH_CaptureSession_IsWhiteBalanceModeSupported(Camera_CaptureSes
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -3350,6 +3665,7 @@ Camera_ErrorCode OH_CaptureSession_IsWhiteBalanceModeSupported(Camera_CaptureSes
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：函数调用成功。 CAMERA_INVALID_ARGUMENT：参数缺失或者参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：相机会话未配置。 |
@@ -3357,9 +3673,10 @@ Camera_ErrorCode OH_CaptureSession_IsWhiteBalanceModeSupported(Camera_CaptureSes
 
 
 
-#### OH_CaptureSession_SetWhiteBalanceMode()
+### OH_CaptureSession_SetWhiteBalanceMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_SetWhiteBalanceMode(Camera_CaptureSession* session, Camera_WhiteBalanceMode whiteBalanceMode)
@@ -3373,6 +3690,7 @@ Camera_ErrorCode OH_CaptureSession_SetWhiteBalanceMode(Camera_CaptureSession* se
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -3381,6 +3699,7 @@ Camera_ErrorCode OH_CaptureSession_SetWhiteBalanceMode(Camera_CaptureSession* se
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：设置成功。 CAMERA_INVALID_ARGUMENT：参数缺失或者参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：相机会话未配置。 |
@@ -3388,9 +3707,10 @@ Camera_ErrorCode OH_CaptureSession_SetWhiteBalanceMode(Camera_CaptureSession* se
 
 
 
-#### OH_CaptureSession_GetWhiteBalanceRange()
+### OH_CaptureSession_GetWhiteBalanceRange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_GetWhiteBalanceRange(Camera_CaptureSession* session, int32_t *minColorTemperature, int32_t *maxColorTemperature)
@@ -3404,6 +3724,7 @@ Camera_ErrorCode OH_CaptureSession_GetWhiteBalanceRange(Camera_CaptureSession* s
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -3413,6 +3734,7 @@ Camera_ErrorCode OH_CaptureSession_GetWhiteBalanceRange(Camera_CaptureSession* s
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：函数调用成功。 CAMERA_INVALID_ARGUMENT：参数缺失或者参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：相机会话未配置。 |
@@ -3420,9 +3742,10 @@ Camera_ErrorCode OH_CaptureSession_GetWhiteBalanceRange(Camera_CaptureSession* s
 
 
 
-#### OH_CaptureSession_IsControlCenterSupported()
+### OH_CaptureSession_IsControlCenterSupported()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_IsControlCenterSupported(Camera_CaptureSession* session, bool* isSupported)
@@ -3436,6 +3759,7 @@ Camera_ErrorCode OH_CaptureSession_IsControlCenterSupported(Camera_CaptureSessio
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -3444,6 +3768,7 @@ Camera_ErrorCode OH_CaptureSession_IsControlCenterSupported(Camera_CaptureSessio
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK = 0：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -3451,9 +3776,10 @@ Camera_ErrorCode OH_CaptureSession_IsControlCenterSupported(Camera_CaptureSessio
 
 
 
-#### OH_CaptureSession_GetSupportedEffectTypes()
+### OH_CaptureSession_GetSupportedEffectTypes()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_GetSupportedEffectTypes(Camera_CaptureSession* session, Camera_ControlCenterEffectType** types, uint32_t* size)
@@ -3467,6 +3793,7 @@ Camera_ErrorCode OH_CaptureSession_GetSupportedEffectTypes(Camera_CaptureSession
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -3476,6 +3803,7 @@ Camera_ErrorCode OH_CaptureSession_GetSupportedEffectTypes(Camera_CaptureSession
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -3483,9 +3811,10 @@ Camera_ErrorCode OH_CaptureSession_GetSupportedEffectTypes(Camera_CaptureSession
 
 
 
-#### OH_CaptureSession_DeleteSupportedEffectTypes()
+### OH_CaptureSession_DeleteSupportedEffectTypes()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_DeleteSupportedEffectTypes(Camera_CaptureSession* session, Camera_ControlCenterEffectType* types, uint32_t size)
@@ -3499,6 +3828,7 @@ Camera_ErrorCode OH_CaptureSession_DeleteSupportedEffectTypes(Camera_CaptureSess
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -3508,6 +3838,7 @@ Camera_ErrorCode OH_CaptureSession_DeleteSupportedEffectTypes(Camera_CaptureSess
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -3515,9 +3846,10 @@ Camera_ErrorCode OH_CaptureSession_DeleteSupportedEffectTypes(Camera_CaptureSess
 
 
 
-#### OH_CaptureSession_EnableControlCenter()
+### OH_CaptureSession_EnableControlCenter()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_EnableControlCenter(Camera_CaptureSession* session, bool enabled)
@@ -3531,6 +3863,7 @@ Camera_ErrorCode OH_CaptureSession_EnableControlCenter(Camera_CaptureSession* se
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -3539,6 +3872,7 @@ Camera_ErrorCode OH_CaptureSession_EnableControlCenter(Camera_CaptureSession* se
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK = 0：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -3546,9 +3880,10 @@ Camera_ErrorCode OH_CaptureSession_EnableControlCenter(Camera_CaptureSession* se
 
 
 
-#### OH_CaptureSession_RegisterControlCenterEffectStatusChangeCallback()
+### OH_CaptureSession_RegisterControlCenterEffectStatusChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_RegisterControlCenterEffectStatusChangeCallback(Camera_CaptureSession* session, OH_CaptureSession_OnControlCenterEffectStatusChange controlCenterEffectStatusChange)
@@ -3562,6 +3897,7 @@ Camera_ErrorCode OH_CaptureSession_RegisterControlCenterEffectStatusChangeCallba
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | 传递回调的Camera_CaptureSession实例。 |
@@ -3570,6 +3906,7 @@ Camera_ErrorCode OH_CaptureSession_RegisterControlCenterEffectStatusChangeCallba
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -3577,9 +3914,10 @@ Camera_ErrorCode OH_CaptureSession_RegisterControlCenterEffectStatusChangeCallba
 
 
 
-#### OH_CaptureSession_UnregisterControlCenterEffectStatusChangeCallback()
+### OH_CaptureSession_UnregisterControlCenterEffectStatusChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_UnregisterControlCenterEffectStatusChangeCallback(Camera_CaptureSession* session, OH_CaptureSession_OnControlCenterEffectStatusChange controlCenterEffectStatusChange)
@@ -3593,6 +3931,7 @@ Camera_ErrorCode OH_CaptureSession_UnregisterControlCenterEffectStatusChangeCall
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | 传递回调的Camera_CaptureSession实例。 |
@@ -3601,6 +3940,7 @@ Camera_ErrorCode OH_CaptureSession_UnregisterControlCenterEffectStatusChangeCall
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -3608,9 +3948,10 @@ Camera_ErrorCode OH_CaptureSession_UnregisterControlCenterEffectStatusChangeCall
 
 
 
-#### OH_CaptureSession_OnMacroStatusChange()
+### OH_CaptureSession_OnMacroStatusChange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_CaptureSession_OnMacroStatusChange)(Camera_CaptureSession* session, bool isMacroDetected)
@@ -3624,6 +3965,7 @@ typedef void (*OH_CaptureSession_OnMacroStatusChange)(Camera_CaptureSession* ses
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | 指向Camera_CaptureSession实例的指针。 |
@@ -3632,9 +3974,10 @@ typedef void (*OH_CaptureSession_OnMacroStatusChange)(Camera_CaptureSession* ses
 
 
 
-#### OH_CaptureSession_RegisterMacroStatusChangeCallback()
+### OH_CaptureSession_RegisterMacroStatusChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_RegisterMacroStatusChangeCallback(Camera_CaptureSession* session, OH_CaptureSession_OnMacroStatusChange macroStatusChange)
@@ -3648,6 +3991,7 @@ Camera_ErrorCode OH_CaptureSession_RegisterMacroStatusChangeCallback(Camera_Capt
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | 指向Camera_CaptureSession实例的指针。 |
@@ -3656,6 +4000,7 @@ Camera_ErrorCode OH_CaptureSession_RegisterMacroStatusChangeCallback(Camera_Capt
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -3663,9 +4008,10 @@ Camera_ErrorCode OH_CaptureSession_RegisterMacroStatusChangeCallback(Camera_Capt
 
 
 
-#### OH_CaptureSession_UnregisterMacroStatusChangeCallback()
+### OH_CaptureSession_UnregisterMacroStatusChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_UnregisterMacroStatusChangeCallback(Camera_CaptureSession* session, OH_CaptureSession_OnMacroStatusChange macroStatusChange)
@@ -3679,6 +4025,7 @@ Camera_ErrorCode OH_CaptureSession_UnregisterMacroStatusChangeCallback(Camera_Ca
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | 指向Camera_CaptureSession实例的指针。 |
@@ -3687,6 +4034,7 @@ Camera_ErrorCode OH_CaptureSession_UnregisterMacroStatusChangeCallback(Camera_Ca
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -3694,9 +4042,10 @@ Camera_ErrorCode OH_CaptureSession_UnregisterMacroStatusChangeCallback(Camera_Ca
 
 
 
-#### OH_CaptureSession_OnIsoChange()
+### OH_CaptureSession_OnIsoChange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_CaptureSession_OnIsoChange)(Camera_CaptureSession* session, int32_t isoValue)
@@ -3710,6 +4059,7 @@ typedef void (*OH_CaptureSession_OnIsoChange)(Camera_CaptureSession* session, in
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | 指向Camera_CaptureSession的指针。 |
@@ -3718,9 +4068,10 @@ typedef void (*OH_CaptureSession_OnIsoChange)(Camera_CaptureSession* session, in
 
 
 
-#### OH_CaptureSession_RegisterIsoChangeCallback()
+### OH_CaptureSession_RegisterIsoChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_RegisterIsoChangeCallback(Camera_CaptureSession* session, OH_CaptureSession_OnIsoChange isoChange)
@@ -3734,6 +4085,7 @@ Camera_ErrorCode OH_CaptureSession_RegisterIsoChangeCallback(Camera_CaptureSessi
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | 指向Camera_CaptureSession实例的指针。 |
@@ -3742,6 +4094,7 @@ Camera_ErrorCode OH_CaptureSession_RegisterIsoChangeCallback(Camera_CaptureSessi
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数缺失或者参数类型不正确。 |
@@ -3749,9 +4102,10 @@ Camera_ErrorCode OH_CaptureSession_RegisterIsoChangeCallback(Camera_CaptureSessi
 
 
 
-#### OH_CaptureSession_UnregisterIsoChangeCallback()
+### OH_CaptureSession_UnregisterIsoChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_UnregisterIsoChangeCallback(Camera_CaptureSession* session, OH_CaptureSession_OnIsoChange isoChange)
@@ -3765,6 +4119,7 @@ Camera_ErrorCode OH_CaptureSession_UnregisterIsoChangeCallback(Camera_CaptureSes
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | 指向Camera_CaptureSession实例的指针。 |
@@ -3773,6 +4128,7 @@ Camera_ErrorCode OH_CaptureSession_UnregisterIsoChangeCallback(Camera_CaptureSes
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数缺失或者参数类型不正确。 |
@@ -3780,9 +4136,10 @@ Camera_ErrorCode OH_CaptureSession_UnregisterIsoChangeCallback(Camera_CaptureSes
 
 
 
-#### OH_CaptureSession_GetRAWCaptureZoomRatioRange()
+### OH_CaptureSession_GetRAWCaptureZoomRatioRange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_GetRAWCaptureZoomRatioRange(const Camera_CaptureSession* session, float* minZoom, float* maxZoom)
@@ -3796,6 +4153,7 @@ Camera_ErrorCode OH_CaptureSession_GetRAWCaptureZoomRatioRange(const Camera_Capt
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -3805,6 +4163,7 @@ Camera_ErrorCode OH_CaptureSession_GetRAWCaptureZoomRatioRange(const Camera_Capt
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或者参数不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许,会话或相机状态异常。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -3812,9 +4171,10 @@ Camera_ErrorCode OH_CaptureSession_GetRAWCaptureZoomRatioRange(const Camera_Capt
 
 
 
-#### OH_CaptureSession_IsOISModeSupported()
+### OH_CaptureSession_IsOISModeSupported()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_IsOISModeSupported(const Camera_CaptureSession* session, OH_Camera_OISMode oisMode, bool* isSupported)
@@ -3828,6 +4188,7 @@ Camera_ErrorCode OH_CaptureSession_IsOISModeSupported(const Camera_CaptureSessio
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_CaptureSession* session | Camera_CaptureSession实例指针。 |
@@ -3837,6 +4198,7 @@ Camera_ErrorCode OH_CaptureSession_IsOISModeSupported(const Camera_CaptureSessio
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或者参数不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -3844,9 +4206,10 @@ Camera_ErrorCode OH_CaptureSession_IsOISModeSupported(const Camera_CaptureSessio
 
 
 
-#### OH_CaptureSession_GetSupportedOISBiasRange()
+### OH_CaptureSession_GetSupportedOISBiasRange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_GetSupportedOISBiasRange(const Camera_CaptureSession* session, OH_Camera_OISAxes oisAxis, float* minBias, float* maxBias, float* step)
@@ -3860,6 +4223,7 @@ Camera_ErrorCode OH_CaptureSession_GetSupportedOISBiasRange(const Camera_Capture
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_CaptureSession* session | Camera_CaptureSession实例指针。 |
@@ -3871,6 +4235,7 @@ Camera_ErrorCode OH_CaptureSession_GetSupportedOISBiasRange(const Camera_Capture
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或者参数不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -3878,9 +4243,10 @@ Camera_ErrorCode OH_CaptureSession_GetSupportedOISBiasRange(const Camera_Capture
 
 
 
-#### OH_CaptureSession_GetCurrentOISMode()
+### OH_CaptureSession_GetCurrentOISMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_GetCurrentOISMode(const Camera_CaptureSession* session, OH_Camera_OISMode* oisMode)
@@ -3894,6 +4260,7 @@ Camera_ErrorCode OH_CaptureSession_GetCurrentOISMode(const Camera_CaptureSession
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_CaptureSession* session | Camera_CaptureSession实例指针。 |
@@ -3902,6 +4269,7 @@ Camera_ErrorCode OH_CaptureSession_GetCurrentOISMode(const Camera_CaptureSession
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或者参数不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -3909,9 +4277,10 @@ Camera_ErrorCode OH_CaptureSession_GetCurrentOISMode(const Camera_CaptureSession
 
 
 
-#### OH_CaptureSession_GetCurrentCustomOISBias()
+### OH_CaptureSession_GetCurrentCustomOISBias()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_GetCurrentCustomOISBias(const Camera_CaptureSession* session, float* pitchBias, float* yawBias)
@@ -3925,6 +4294,7 @@ Camera_ErrorCode OH_CaptureSession_GetCurrentCustomOISBias(const Camera_CaptureS
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_CaptureSession* session | Camera_CaptureSession实例指针。 |
@@ -3934,6 +4304,7 @@ Camera_ErrorCode OH_CaptureSession_GetCurrentCustomOISBias(const Camera_CaptureS
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或者参数不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -3941,9 +4312,10 @@ Camera_ErrorCode OH_CaptureSession_GetCurrentCustomOISBias(const Camera_CaptureS
 
 
 
-#### OH_CaptureSession_SetOISMode()
+### OH_CaptureSession_SetOISMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_SetOISMode(const Camera_CaptureSession* session, OH_Camera_OISMode oisMode)
@@ -3957,6 +4329,7 @@ Camera_ErrorCode OH_CaptureSession_SetOISMode(const Camera_CaptureSession* sessi
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_CaptureSession* session | Camera_CaptureSession实例指针。 |
@@ -3965,6 +4338,7 @@ Camera_ErrorCode OH_CaptureSession_SetOISMode(const Camera_CaptureSession* sessi
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或者参数不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -3972,9 +4346,10 @@ Camera_ErrorCode OH_CaptureSession_SetOISMode(const Camera_CaptureSession* sessi
 
 
 
-#### OH_CaptureSession_SetOISModeCustom()
+### OH_CaptureSession_SetOISModeCustom()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_SetOISModeCustom(const Camera_CaptureSession* session, float pitchBias, float yawBias)
@@ -3984,9 +4359,12 @@ Camera_ErrorCode OH_CaptureSession_SetOISModeCustom(const Camera_CaptureSession*
 
 为对应轴设置自定义光学防抖偏移值。
 
+设置前，建议通过[OH_CaptureSession_GetSupportedOISBiasRange](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-capture-session-h#oh_capturesession_getsupportedoisbiasrange)获取对应轴支持的偏移范围。
+
 **起始版本：** 24
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -3997,6 +4375,7 @@ Camera_ErrorCode OH_CaptureSession_SetOISModeCustom(const Camera_CaptureSession*
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或者参数不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -4004,9 +4383,10 @@ Camera_ErrorCode OH_CaptureSession_SetOISModeCustom(const Camera_CaptureSession*
 
 
 
-#### OH_CaptureSession_OnExposureStateChange()
+### OH_CaptureSession_OnExposureStateChange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_CaptureSession_OnExposureStateChange)(void* context, OH_Camera_ExposureState exposureState)
@@ -4020,17 +4400,19 @@ typedef void (*OH_CaptureSession_OnExposureStateChange)(void* context, OH_Camera
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
-| (void* context | 指向自定义上下文的指针。 |
+| void* context | 指向自定义上下文的指针。 |
 | OH_Camera_ExposureState exposureState | 当前曝光状态。 |
 
 
 
 
-#### OH_CaptureSession_RegisterExposureStateChangeCallback()
+### OH_CaptureSession_RegisterExposureStateChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_RegisterExposureStateChangeCallback(const Camera_CaptureSession* session, void* context, OH_CaptureSession_OnExposureStateChange callback)
@@ -4044,6 +4426,7 @@ Camera_ErrorCode OH_CaptureSession_RegisterExposureStateChangeCallback(const Cam
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -4053,6 +4436,7 @@ Camera_ErrorCode OH_CaptureSession_RegisterExposureStateChangeCallback(const Cam
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数缺失或参数类型不正确。 |
@@ -4060,9 +4444,10 @@ Camera_ErrorCode OH_CaptureSession_RegisterExposureStateChangeCallback(const Cam
 
 
 
-#### OH_CaptureSession_UnregisterExposureStateChangeCallback()
+### OH_CaptureSession_UnregisterExposureStateChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_UnregisterExposureStateChangeCallback(const Camera_CaptureSession* session, void* context, OH_CaptureSession_OnExposureStateChange callback)
@@ -4076,6 +4461,7 @@ Camera_ErrorCode OH_CaptureSession_UnregisterExposureStateChangeCallback(const C
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_CaptureSession* session | Camera_CaptureSession实例。 |
@@ -4085,6 +4471,7 @@ Camera_ErrorCode OH_CaptureSession_UnregisterExposureStateChangeCallback(const C
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数缺失或参数类型不正确。 |
@@ -4092,9 +4479,10 @@ Camera_ErrorCode OH_CaptureSession_UnregisterExposureStateChangeCallback(const C
 
 
 
-#### OH_CaptureSession_GetZoomPointInfos()
+### OH_CaptureSession_GetZoomPointInfos()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_GetZoomPointInfos(const Camera_CaptureSession* session, uint32_t* size, OH_Camera_ZoomPointInfo** zoomPointInfo)
@@ -4110,6 +4498,7 @@ Camera_ErrorCode OH_CaptureSession_GetZoomPointInfos(const Camera_CaptureSession
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_CaptureSession* session | 捕获会话对象的实例指针。 |
@@ -4119,6 +4508,7 @@ Camera_ErrorCode OH_CaptureSession_GetZoomPointInfos(const Camera_CaptureSession
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或者参数不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 |
@@ -4126,9 +4516,10 @@ Camera_ErrorCode OH_CaptureSession_GetZoomPointInfos(const Camera_CaptureSession
 
 
 
-#### OH_CaptureSession_DeleteZoomPointInfos()
+### OH_CaptureSession_DeleteZoomPointInfos()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_DeleteZoomPointInfos(const Camera_CaptureSession* session, OH_Camera_ZoomPointInfo* zoomPointInfo)
@@ -4142,6 +4533,7 @@ Camera_ErrorCode OH_CaptureSession_DeleteZoomPointInfos(const Camera_CaptureSess
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_CaptureSession* session | 捕获会话对象的实例指针。 |
@@ -4150,6 +4542,7 @@ Camera_ErrorCode OH_CaptureSession_DeleteZoomPointInfos(const Camera_CaptureSess
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或者参数不正确。 |
@@ -4157,9 +4550,10 @@ Camera_ErrorCode OH_CaptureSession_DeleteZoomPointInfos(const Camera_CaptureSess
 
 
 
-#### OH_CaptureSession_IsLockFocusTrackingSupported()
+### OH_CaptureSession_IsLockFocusTrackingSupported()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_CaptureSession_IsLockFocusTrackingSupported(const Camera_CaptureSession* session)
@@ -4173,12 +4567,14 @@ bool OH_CaptureSession_IsLockFocusTrackingSupported(const Camera_CaptureSession*
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_CaptureSession* session | 指向Camera_CaptureSession实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4187,9 +4583,10 @@ bool OH_CaptureSession_IsLockFocusTrackingSupported(const Camera_CaptureSession*
 
 
 
-#### OH_CaptureSession_LockFocusTracking()
+### OH_CaptureSession_LockFocusTracking()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_LockFocusTracking(Camera_CaptureSession* session, Camera_Point focusPoint)
@@ -4203,6 +4600,7 @@ Camera_ErrorCode OH_CaptureSession_LockFocusTracking(Camera_CaptureSession* sess
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_CaptureSession* session | 指向Camera_CaptureSession实例的指针。 |
@@ -4211,6 +4609,7 @@ Camera_ErrorCode OH_CaptureSession_LockFocusTracking(Camera_CaptureSession* sess
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或者参数不正确。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -4218,9 +4617,10 @@ Camera_ErrorCode OH_CaptureSession_LockFocusTracking(Camera_CaptureSession* sess
 
 
 
-#### OH_CaptureSession_UnlockFocusTracking()
+### OH_CaptureSession_UnlockFocusTracking()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CaptureSession_UnlockFocusTracking(Camera_CaptureSession* session)
@@ -4234,12 +4634,14 @@ Camera_ErrorCode OH_CaptureSession_UnlockFocusTracking(Camera_CaptureSession* se
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
-| const Camera_CaptureSession* session | 指向Camera_CaptureSession实例的指针。 |
+| Camera_CaptureSession* session | 指向Camera_CaptureSession实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |

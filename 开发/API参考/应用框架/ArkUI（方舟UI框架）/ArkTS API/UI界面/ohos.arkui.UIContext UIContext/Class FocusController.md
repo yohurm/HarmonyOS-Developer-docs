@@ -1,9 +1,9 @@
 # Class (FocusController)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-focuscontroller
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供控制焦点的能力，如清除、移动和激活焦点等功能，适用于需要管理页面或组件焦点状态、控制焦点流转的场景，可帮助开发者优化键盘等输入方式下的焦点交互体验。
 
@@ -12,9 +12,10 @@
 
 
 
-#### clearFocus12+
+## clearFocus12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clearFocus(): void
 
@@ -76,19 +77,21 @@ struct ClearFocusExample {
 
 
 
-#### requestFocus12+
+## requestFocus12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestFocus(key: string): void
 
-通过组件的id将焦点转移到组件树对应的实体节点，当前帧生效，适用于需要在表单校验、页面初始化或键盘操作流程中主动将焦点定位到指定组件的场景。
+通过组件的id将焦点转移到组件树对应的实体节点，当前帧生效。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -98,6 +101,7 @@ requestFocus(key: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[焦点错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-focus)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -151,7 +155,7 @@ struct RequestExample {
             try {
               this.getUIContext().getFocusController().requestFocus('eee');
             } catch (error) {
-              console.error(`Failed to request focus. Code: ${error.code}, message: ${error.message}`);
+              console.error(`requestFocus failed code is ${error.code} message is ${error.message}`);
             }
           })
       }
@@ -164,9 +168,10 @@ struct RequestExample {
 
 
 
-#### activate14+
+## activate14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 activate(isActive: boolean, autoInactive?: boolean): void
 
@@ -177,6 +182,7 @@ activate(isActive: boolean, autoInactive?: boolean): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -223,13 +229,14 @@ struct ActivateExample {
 
 
 
-#### isActive20+
+## isActive20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isActive(): boolean
 
-返回UI实例的焦点激活态。适用于需要根据当前焦点激活状态决定是否启用方向键走焦或更新焦点提示的场景。
+返回UI实例的焦点激活态。
 
 焦点激活态可参考[基础概念：焦点激活态](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-events-focus-event#基础概念)。
 
@@ -238,6 +245,7 @@ isActive(): boolean
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -251,7 +259,7 @@ isActive(): boolean
 ```text
 @Entry
 @Component
-struct IsActiveExample {
+struct ClearFocusExample {
   @State btColor: Color = Color.Blue;
 
   build() {
@@ -296,9 +304,10 @@ struct IsActiveExample {
 
 
 
-#### setAutoFocusTransfer14+
+## setAutoFocusTransfer14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAutoFocusTransfer(isAutoFocusTransfer: boolean): void
 
@@ -309,6 +318,7 @@ setAutoFocusTransfer(isAutoFocusTransfer: boolean): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -369,19 +379,21 @@ struct CustomDialogUser {
 
 
 
-#### setKeyProcessingMode15+
+## setKeyProcessingMode15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setKeyProcessingMode(mode: KeyProcessingMode): void
 
-设置按键事件处理的优先级，适用于父子组件都需要处理按键事件时，开发者需要控制按键事件优先分发策略的场景。
+设置按键事件处理的模式。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |

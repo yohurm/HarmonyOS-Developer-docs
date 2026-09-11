@@ -1,9 +1,9 @@
 # 时间滑动选择器弹窗 (TimePickerDialog)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-timepicker-dialog
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 以24小时的时间区间创建时间滑动选择器，展示在弹窗上。适用于需要用户选择时间的场景，如设置闹钟、日程安排、预约时间等。该组件提供直观的时间选择交互，支持12小时制和24小时制切换，并可自定义样式和布局，帮助应用快速实现时间选择功能，提升用户体验。
 
@@ -12,15 +12,17 @@
 
 
 
-#### TimePickerDialog
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## TimePickerDialog
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### show(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### show(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 static show(options?: TimePickerDialogOptions)
 
@@ -38,6 +40,7 @@ static show(options?: TimePickerDialogOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | TimePickerDialogOptions | 否 | 配置时间选择器弹窗的参数。参数缺省时不弹出弹窗。 |
@@ -45,9 +48,10 @@ static show(options?: TimePickerDialogOptions)
 
 
 
-#### TimePickerDialogOptions对象说明
+## TimePickerDialogOptions对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 时间选择器弹窗选项。
 
@@ -56,6 +60,7 @@ static show(options?: TimePickerDialogOptions)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -66,7 +71,7 @@ static show(options?: TimePickerDialogOptions)
 | acceptButtonStyle12+ | PickerDialogButtonStyle | 否 | 是 | 设置确认按钮显示样式、重要程度、角色、背景色、圆角、文本颜色、字号、字体粗细、字体样式、字体列表、按钮是否默认响应Enter键。 默认值：请参考PickerDialogButtonStyle。 说明： 1.acceptButtonStyle与cancelButtonStyle中最多只能有一个primary字段配置为true，如果同时设置为true，则primary字段不生效，保持默认值false。 2.按钮高度默认40vp，borderRadius单位为vp。在关怀模式-大字体场景下高度不变，即使按钮样式设置为圆角矩形ROUNDED_RECTANGLE，呈现效果依然是胶囊型按钮Capsule。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | cancelButtonStyle12+ | PickerDialogButtonStyle | 否 | 是 | 设置取消按钮显示样式、重要程度、角色、背景色、圆角、文本颜色、字号、字体粗细、字体样式、字体列表、按钮是否默认响应Enter键。 默认值：请参考PickerDialogButtonStyle。 说明： 1.acceptButtonStyle与cancelButtonStyle中最多只能有一个primary字段配置为true，如果同时设置为true，则primary字段不生效，保持默认值false。 2.按钮高度默认40vp，borderRadius单位为vp。在关怀模式-大字体场景下高度不变，即使按钮样式设置为圆角矩形ROUNDED_RECTANGLE，呈现效果依然是胶囊型按钮Capsule。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | alignment10+ | DialogAlignment | 否 | 是 | 设置弹窗在垂直方向上的对齐方式。 默认值：DialogAlignment.Default 元服务API： 从API version 11开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
-| offset10+ | Offset | 否 | 是 | 设置弹窗相对alignment所在位置的偏移量。 默认值：{ dx: 0 , dy: 0 } 元服务API： 从API version 11开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
+| offset10+ | Offset | 否 | 是 | 设置弹窗相对alignment所在位置的偏移量。 默认值：{ dx: 0 , dy: 0 } 单位：vp 元服务API： 从API version 11开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | maskRect10+ | Rectangle | 否 | 是 | 弹窗遮蔽层区域，在遮蔽层区域内的事件不透传，在遮蔽层区域外的事件透传。 默认值：{ x: 0, y: 0, width: '100%', height: '100%' } 元服务API： 从API version 11开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | onAccept | (value: TimePickerResult) => void | 否 | 是 | 点击弹窗中的“确定”按钮时触发该回调。回调参数为当前选中的时间值，类型为TimePickerResult。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | onCancel | () => void | 否 | 是 | 点击弹窗中的“取消”按钮时触发该回调，该回调无参数。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -91,9 +96,10 @@ static show(options?: TimePickerDialogOptions)
 
 
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 > [!NOTE]
 > 推荐通过使用 UIContext 中的 showTimePickerDialog 来明确UI的执行上下文。
@@ -101,7 +107,10 @@ static show(options?: TimePickerDialogOptions)
 
 
 
-#### 示例1（设置时间格式）
+### 示例1（设置时间格式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例通过useMilitaryTime、dateTimeOptions、format设置时间格式。
 
@@ -174,7 +183,10 @@ struct TimePickerDialogExample {
 
 
 
-#### 示例2（自定义样式）
+### 示例2（自定义样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例通过配置disappearTextStyle、textStyle、selectedTextStyle、acceptButtonStyle、cancelButtonStyle实现了自定义文本以及按钮样式。
 
@@ -237,7 +249,10 @@ struct TimePickerDialogExample {
 
 
 
-#### 示例3（悬停态弹窗）
+### 示例3（悬停态弹窗）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例展示了在折叠屏悬停态下设置dialog布局区域的效果。
 
@@ -297,7 +312,10 @@ struct TimePickerDialogExample {
 
 
 
-#### 示例4（设置弹窗位置）
+### 示例4（设置弹窗位置）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例通过alignment和offset设置弹窗的位置。
 
@@ -336,7 +354,10 @@ struct TimePickerDialogExample {
 
 
 
-#### 示例5（设置遮蔽区）
+### 示例5（设置遮蔽区）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例通过maskRect设置遮蔽区。
 
@@ -374,7 +395,10 @@ struct TimePickerDialogExample {
 
 
 
-#### 示例6（设置弹窗背板）
+### 示例6（设置弹窗背板）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例通过配置[backgroundColor](#timepickerdialogoptions对象说明)和[shadow](#timepickerdialogoptions对象说明)，实现自定义背景效果。
 
@@ -414,7 +438,10 @@ struct TimePickerDialogExample {
 
 
 
-#### 示例7（设置时间滑动选择器弹窗的起始时间）
+### 示例7（设置时间滑动选择器弹窗的起始时间）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例设置TimePickerDialog的起始时间。
 
@@ -455,7 +482,10 @@ struct TimePickerDialogExample {
 
 
 
-#### 示例8（设置时间滑动选择器弹窗的结束时间）
+### 示例8（设置时间滑动选择器弹窗的结束时间）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例设置TimePickerDialog的结束时间。
 
@@ -496,7 +526,10 @@ struct TimePickerDialogExample {
 
 
 
-#### 示例9（设置上午下午跟随时间联动）
+### 示例9（设置上午下午跟随时间联动）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例通过配置enableCascade实现12小时制时上午下午跟随时间联动。
 
@@ -531,12 +564,15 @@ struct TimePickerDialogExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/OfoI595yTQaMZO3B2dvDzg/zh-cn_image_0000002674634880.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095450Z&HW-CC-Expire=86400&HW-CC-Sign=9195D4EDC82BBD2EEF04ADF981432C327E7C3B21FA56DAFFD489BE40DFAD7395)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/KGC0ZfKsTyaBQrrYoMnBIA/zh-cn_image_0000002717613088.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073119Z&HW-CC-Expire=86400&HW-CC-Sign=FD34A70F2132C22672BA9450A22813C85C0BE5CCDFADEB3692B08DC709DB0805)
 
 
 
 
-#### 示例10（自定义背景模糊效果参数）
+### 示例10（自定义背景模糊效果参数）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 从API version 19开始，该示例通过配置[backgroundBlurStyleOptions](#timepickerdialogoptions对象说明)，实现自定义背景模糊效果。
 
@@ -570,12 +606,15 @@ struct TimePickerDialogExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/m_2v8_kiT2KuZjy3rPYAFw/zh-cn_image_0000002704274833.png?HW-CC-KV=V1&HW-CC-Date=20260813T095450Z&HW-CC-Expire=86400&HW-CC-Sign=62AB4BFD9F369EA224F20B1F04A6E47D3DF7613DF00A77005AF54492F4208B91)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/Wr_idiG3TvmSpLPnOnAPag/zh-cn_image_0000002747293039.png?HW-CC-KV=V1&HW-CC-Date=20260911T073119Z&HW-CC-Expire=86400&HW-CC-Sign=A9FD192268B753063975682ACF93E6B425ABD2C049A22EF430BF3463642044CD)
 
 
 
 
-#### 示例11（自定义背景效果参数）
+### 示例11（自定义背景效果参数）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 从API version 19开始，该示例通过配置[backgroundEffect](#timepickerdialogoptions对象说明)，实现自定义背景效果。
 
@@ -610,4 +649,41 @@ struct TimePickerDialogExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/53vT9Q9HQn-QCT4zFxhwbA/zh-cn_image_0000002674475042.png?HW-CC-KV=V1&HW-CC-Date=20260813T095450Z&HW-CC-Expire=86400&HW-CC-Sign=DC2C9C45F867881D25E8860F8CAEB5E13F0FAE22169074E677759967F65686BE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/WuYEnT70T0KAQrV97-e9bA/zh-cn_image_0000002747212955.png?HW-CC-KV=V1&HW-CC-Date=20260911T073119Z&HW-CC-Expire=86400&HW-CC-Sign=84A16B6A6CB667C6CDAC44F42BEAE4A5F444EF1A5B2597341FC678D7E2D63222)
+
+
+
+
+### 示例12（设置系统材质）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+该示例通过配置[systemMaterial](#timepickerdialogoptions对象说明)，实现系统材质效果。
+
+从API版本26.0.0开始，在TimePickerDialogOptions中新增了systemMaterial属性。
+
+```text
+import { uiMaterial } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct DatePickerDialogExample {
+  build() {
+    Stack({ alignContent: Alignment.Top }) {
+      Column() {
+        Button('TimePickerDialog')
+          .margin(20)
+          .onClick(() => {
+            this.getUIContext().showTimePickerDialog({
+              systemMaterial: new uiMaterial.ImmersiveMaterial({ style: uiMaterial.ImmersiveStyle.ULTRA_THICK })
+            });
+          })
+      }.width('100%')
+    }
+  }
+}
+```
+
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/wA007ekKTumZ8utAgbzvNg/zh-cn_image_0000002717773020.png?HW-CC-KV=V1&HW-CC-Date=20260911T073119Z&HW-CC-Expire=86400&HW-CC-Sign=F85D0DF5D496E6B0E257C914ABF2509B243CEE503048671DA6B193322CAA8461)

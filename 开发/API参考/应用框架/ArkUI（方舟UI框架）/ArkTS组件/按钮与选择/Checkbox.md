@@ -1,9 +1,9 @@
 # Checkbox
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-checkbox
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供多选框组件，用于在多个选项中进行选择。
 
@@ -12,17 +12,19 @@
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Checkbox(options?: CheckboxOptions)
 
@@ -36,6 +38,7 @@ Checkbox(options?: CheckboxOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | CheckboxOptions | 否 | 配置多选框的参数。不传入该参数时，多选框使用默认配置。 |
@@ -43,13 +46,15 @@ Checkbox(options?: CheckboxOptions)
 
 
 
-#### CheckboxOptions对象说明
+## CheckboxOptions对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 多选框的信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -60,17 +65,19 @@ Checkbox(options?: CheckboxOptions)
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
 
 
 
-#### select
+### select
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 select(value: boolean)
 
@@ -88,6 +95,7 @@ select(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 多选框是否选中。 默认值：false 值为true时，多选框被选中。值为false时，多选框未选中。 |
@@ -95,9 +103,10 @@ select(value: boolean)
 
 
 
-#### select18+
+### select18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 select(isSelected: Optional&lt;boolean&gt;)
 
@@ -115,6 +124,7 @@ select(isSelected: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isSelected | Optional&lt;boolean&gt; | 是 | 多选框是否选中。 当isSelected的值为undefined时取默认值false。 值为true时，多选框被选中。值为false时，多选框未选中。 |
@@ -122,9 +132,10 @@ select(isSelected: Optional&lt;boolean&gt;)
 
 
 
-#### selectedColor
+### selectedColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectedColor(value: ResourceColor)
 
@@ -138,6 +149,7 @@ selectedColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 多选框选中状态颜色。 默认值：\$r('sys.color.ohos_id_color_text_primary_activated') 异常值按照默认值处理。 |
@@ -145,9 +157,10 @@ selectedColor(value: ResourceColor)
 
 
 
-#### selectedColor18+
+### selectedColor18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectedColor(resColor: Optional&lt;ResourceColor&gt;)
 
@@ -163,6 +176,7 @@ selectedColor(resColor: Optional&lt;ResourceColor&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resColor | Optional&lt;ResourceColor&gt; | 是 | 多选框选中状态颜色。 当resColor的值为undefined时取默认值\$r('sys.color.ohos_id_color_text_primary_activated')。 异常值按照默认值处理。 |
@@ -170,9 +184,10 @@ selectedColor(resColor: Optional&lt;ResourceColor&gt;)
 
 
 
-#### unselectedColor10+
+### unselectedColor10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unselectedColor(value: ResourceColor)
 
@@ -186,6 +201,7 @@ unselectedColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 多选框非选中状态边框颜色。 默认值：\$r('sys.color.ohos_id_color_switch_outline_off') |
@@ -193,9 +209,10 @@ unselectedColor(value: ResourceColor)
 
 
 
-#### unselectedColor18+
+### unselectedColor18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unselectedColor(resColor: Optional&lt;ResourceColor&gt;)
 
@@ -209,6 +226,7 @@ unselectedColor(resColor: Optional&lt;ResourceColor&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resColor | Optional&lt;ResourceColor&gt; | 是 | 多选框非选中状态边框颜色。 当resColor的值为undefined时取默认值\$r('sys.color.ohos_id_color_switch_outline_off') |
@@ -216,9 +234,10 @@ unselectedColor(resColor: Optional&lt;ResourceColor&gt;)
 
 
 
-#### mark10+
+### mark10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 mark(value: MarkStyle)
 
@@ -232,6 +251,7 @@ mark(value: MarkStyle)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | MarkStyle | 是 | 多选框内部图标样式。 从API version 12开始，设置了indicatorBuilder时，按照indicatorBuilder中的内容显示。 默认值：{ strokeColor : \$r('sys.color.ohos_id_color_foreground_contrary'), strokeWidth: \$r('sys.float.ohos_id_checkbox_stroke_width'), size: '20vp' } |
@@ -239,9 +259,10 @@ mark(value: MarkStyle)
 
 
 
-#### mark18+
+### mark18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 mark(style: Optional&lt;MarkStyle&gt;)
 
@@ -255,6 +276,7 @@ mark(style: Optional&lt;MarkStyle&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | Optional&lt;MarkStyle&gt; | 是 | 多选框内部图标样式。 设置了indicatorBuilder时，按照indicatorBuilder中的内容显示。 当style的值为undefined时，默认值：{ strokeColor : \$r('sys.color.ohos_id_color_foreground_contrary'), strokeWidth: \$r('sys.float.ohos_id_checkbox_stroke_width'), size: '20vp' } |
@@ -262,9 +284,10 @@ mark(style: Optional&lt;MarkStyle&gt;)
 
 
 
-#### shape11+
+### shape11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 shape(value: CheckBoxShape)
 
@@ -280,6 +303,7 @@ shape(value: CheckBoxShape)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | CheckBoxShape | 是 | Checkbox组件形状，包括圆形和圆角方形。 默认值：CheckBoxShape.CIRCLE |
@@ -287,9 +311,10 @@ shape(value: CheckBoxShape)
 
 
 
-#### shape18+
+### shape18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 shape(shape: Optional&lt;CheckBoxShape&gt;)
 
@@ -305,6 +330,7 @@ shape(shape: Optional&lt;CheckBoxShape&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | shape | Optional&lt;CheckBoxShape&gt; | 是 | Checkbox组件形状，包括圆形和圆角方形。 当shape的值为undefined时，默认值为CheckBoxShape.CIRCLE。 |
@@ -312,9 +338,10 @@ shape(shape: Optional&lt;CheckBoxShape&gt;)
 
 
 
-#### contentModifier12+
+### contentModifier12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contentModifier(modifier: ContentModifier&lt;CheckBoxConfiguration&gt;)
 
@@ -328,6 +355,7 @@ contentModifier(modifier: ContentModifier&lt;CheckBoxConfiguration&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | modifier | ContentModifier&lt;CheckBoxConfiguration&gt; | 是 | 在Checkbox组件上，定制内容区的方法。 modifier：内容修改器，开发者需要自定义class实现ContentModifier接口。 |
@@ -335,9 +363,10 @@ contentModifier(modifier: ContentModifier&lt;CheckBoxConfiguration&gt;)
 
 
 
-#### contentModifier18+
+### contentModifier18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contentModifier(modifier: Optional<ContentModifier&lt;CheckBoxConfiguration&gt;>)
 
@@ -351,6 +380,7 @@ contentModifier(modifier: Optional<ContentModifier&lt;CheckBoxConfiguration&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | modifier | Optional<ContentModifier&lt;CheckBoxConfiguration&gt;> | 是 | 在Checkbox组件上，定制内容区的方法。 modifier：内容修改器，开发者需要自定义class实现ContentModifier接口。 当modifier的值为undefined时，不使用内容修改器。 |
@@ -358,17 +388,19 @@ contentModifier(modifier: Optional<ContentModifier&lt;CheckBoxConfiguration&gt;>
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)外，还支持以下事件：
 
 
 
-#### onChange
+### onChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onChange(callback: OnCheckboxChangeCallback)
 
@@ -382,6 +414,7 @@ onChange(callback: OnCheckboxChangeCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | OnCheckboxChangeCallback | 是 | 返回选中的状态，true表示已选中，false表示未选中。 |
@@ -389,9 +422,10 @@ onChange(callback: OnCheckboxChangeCallback)
 
 
 
-#### onChange18+
+### onChange18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onChange(callback: Optional&lt;OnCheckboxChangeCallback&gt;)
 
@@ -407,6 +441,7 @@ onChange(callback: Optional&lt;OnCheckboxChangeCallback&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Optional&lt;OnCheckboxChangeCallback&gt; | 是 | 返回选中的状态，true表示已选中，false表示未选中。 当callback的值为undefined时，不使用回调函数。 |
@@ -414,9 +449,10 @@ onChange(callback: Optional&lt;OnCheckboxChangeCallback&gt;)
 
 
 
-#### OnCheckboxChangeCallback18+
+## OnCheckboxChangeCallback18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnCheckboxChangeCallback = (value: boolean) => void
 
@@ -432,6 +468,7 @@ type OnCheckboxChangeCallback = (value: boolean) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 返回true表示已选中。返回false表示未选中。 |
@@ -439,9 +476,10 @@ type OnCheckboxChangeCallback = (value: boolean) => void
 
 
 
-#### CheckBoxConfiguration12+对象说明
+## CheckBoxConfiguration12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 开发者需要自定义class实现ContentModifier接口。继承自[CommonConfiguration](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-content-modifier#commonconfigurationt)。
 
@@ -450,6 +488,7 @@ type OnCheckboxChangeCallback = (value: boolean) => void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -460,13 +499,17 @@ type OnCheckboxChangeCallback = (value: boolean) => void
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（设置多选框形状）
+
+
+### 示例1（设置多选框形状）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置CheckBoxShape实现圆形和圆角方形多选框样式。
 
@@ -502,7 +545,10 @@ struct CheckboxExample {
 
 
 
-#### 示例2（设置多选框颜色）
+### 示例2（设置多选框颜色）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置mark实现自定义多选框的颜色。
 
@@ -557,7 +603,10 @@ struct Index {
 
 
 
-#### 示例3（自定义多选框样式）
+### 示例3（自定义多选框样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[contentModifier](#contentmodifier12)属性实现自定义多选框样式，自定义样式实现了一个五边形多选框。选中时，内部显示红色三角图案，标题显示"选中"；取消选中时，红色三角图案消失，标题显示"非选中"。
 
@@ -652,7 +701,10 @@ struct Index {
 
 
 
-#### 示例4（设置文本多选框样式）
+### 示例4（设置文本多选框样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置indicatorBuilder实现选中样式为Text。
 
@@ -713,7 +765,10 @@ struct CheckboxExample {
 
 
 
-#### 示例5（获取多选框选中信息）
+### 示例5（获取多选框选中信息）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过选中Checkbox以及CheckboxGroup多选框来获取选中的信息。
 
@@ -877,7 +932,10 @@ struct CheckboxExample {
 
 
 
-#### 示例6（设置滑动多选）
+### 示例6（设置滑动多选）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过设置手势事件实现Checkbox滑动多选。
 
@@ -1089,4 +1147,4 @@ enum SelectedState {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/IqNKIDpERAmd_YKzfC1UXg/zh-cn_image_0000002655848578.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071503Z&HW-CC-Expire=86400&HW-CC-Sign=BB4888E75809AA59B59C455CA108EF4925B4D1783F92C4FF77B06B330A3BA61B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/eKxDt6v5RsSHmOl-6lNuHw/zh-cn_image_0000002747212585.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073103Z&HW-CC-Expire=86400&HW-CC-Sign=4B11A130BC7DB60F969383032C1894C548F657811BB4B9C782BF6AD8C5E2C9A8)

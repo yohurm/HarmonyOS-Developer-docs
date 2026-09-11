@@ -11,7 +11,7 @@ export struct ArrayBufferConversionArray {
   private tempData: number[] = [];
 
   aboutToAppear(): void {
-    // Convert ArrayBuffer to a number array
+   <em> // Convert ArrayBuffer to a number array</em>
     let arrayBuffer: ArrayBuffer = new ArrayBuffer(this.fileLength);
     let dataView: DataView = new DataView(arrayBuffer);
     for (let index = 0; index < this.fileLength; index++) {

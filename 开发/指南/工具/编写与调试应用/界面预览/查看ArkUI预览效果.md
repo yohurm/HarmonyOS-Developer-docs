@@ -1,23 +1,17 @@
 # 查看ArkUI预览效果
 
-更新时间：2026-06-12 06:54:33
+更新时间：2026-08-29 09:41:34
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-previewer-arkui
 
-ArkUI预览支持页面预览、组件预览、多断点预览和卡片预览，下图中左侧图标
-![](assets/查看ArkUI预览效果/file-20260514132934419-0.png)
-为页面预览，中间图标
-![](assets/查看ArkUI预览效果/file-20260514132934419-1.png)
-为组件预览，右侧图标
-![](assets/查看ArkUI预览效果/file-20260514132934419-2.png)
-为多断点预览，卡片预览在创建卡片文件后可直接预览。
+ArkUI预览支持页面预览、组件预览、多断点预览和卡片预览，下图中左侧图标![icon](assets/查看ArkUI预览效果/file-20260514132934419-0.png)为页面预览，中间图标![icon](assets/查看ArkUI预览效果/file-20260514132934419-1.png)为组件预览，右侧图标![icon](assets/查看ArkUI预览效果/file-20260514132934419-2.png)为多断点预览，卡片预览在创建卡片文件后可直接预览。
  
 
 ![](assets/查看ArkUI预览效果/file-20260514132934419-3.gif)
 
  
 
-#### 页面预览
+## 页面预览
 
 ArkTS应用/元服务支持页面预览。页面预览通过在工程的ets文件头部添加@Entry实现。
  
@@ -45,7 +39,7 @@ struct Index {
  
  
 
-#### 组件预览
+## 组件预览
 
 ArkTS应用/元服务支持组件预览。组件预览支持实时预览，不支持动态图和动态预览。组件预览通过在组件前添加注解@Preview实现，在单个源文件中，最多可以使用10个@Preview装饰自定义组件。
  
@@ -113,9 +107,9 @@ struct TitlePreview {
  
  
 
-#### 多断点预览
+## 多断点预览
 
-从26.0.0 Beta1版本开始，ArkTS应用/元服务支持多断点预览，可以同时展示8个典型档位[断点](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-device-responsive-layout#section1532120147301)的预览画面。在多断点预览模式下，不支持实时预览和极速预览；如果图片太大或图片太多，预览时可能无法显示。
+从26.0.0版本开始，ArkTS应用/元服务支持多断点预览，可以同时展示8个典型档位[断点](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-device-responsive-layout#section1532120147301)的预览画面。在多断点预览模式下，不支持实时预览和极速预览；如果图片太大或图片太多，预览时可能无法显示。
  
 多断点预览通过在工程的ets文件头部添加@Entry实现，示例如下：
  
@@ -142,12 +136,10 @@ struct Index {
 以上示例的多断点预览效果如下图所示，会展示8个典型档位断点下的预览效果：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/DrY9DFbqS1y5QCCLBTUBAg/zh-cn_image_0000002594474968.gif?HW-CC-KV=V1&HW-CC-Date=20260624T020709Z&HW-CC-Expire=86400&HW-CC-Sign=00515E1393C87D64E664D6C63909BD3F670B9CC9888E440B029AACC63A17C778)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/MOtOF8PeSk2eHKktWHCrxg/zh-cn_image_0000002701823664.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072818Z&HW-CC-Expire=86400&HW-CC-Sign=2A818C179CDEB4029C0A51ED88E88236B50403E1EE5BAD7DB43EF768ED51B2EE)
 
  
-每个断点预览画面上均可点击
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/UwZfdJwYRGScDhuUA910xg/zh-cn_image_0000002624994331.png?HW-CC-KV=V1&HW-CC-Date=20260624T020709Z&HW-CC-Expire=86400&HW-CC-Sign=98998C0F834FEAD003F719DCE594116F87B119B5DB133E27C7F636A55F495AC0)
-查看该断点档位下的组件树。
+每个断点预览画面上均可点击![icon](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/srBa3uEdSRy1vpVCsiNzNA/zh-cn_image_0000002701823662.png?HW-CC-KV=V1&HW-CC-Date=20260911T072818Z&HW-CC-Expire=86400&HW-CC-Sign=69716FCBAB10368AAE5FCEBC2D4F3F5DBE7F4178C55DCE53D6A3E95298E47356)查看该断点档位下的组件树。
  
 支持代码编辑器、UI界面和组件树三者之间的联动：
 - 选中预览器UI界面中的组件，则组件树上对应的组件将被选中，同时代码编辑器中的布局文件中对应的代码块高亮显示。
@@ -158,14 +150,14 @@ struct Index {
  
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/y4GpZDxFQCiPNl3OzLYi0A/zh-cn_image_0000002594634896.gif?HW-CC-KV=V1&HW-CC-Date=20260624T020709Z&HW-CC-Expire=86400&HW-CC-Sign=3D1C9FD47508EAD9ABE3F97E97A5672DBED6BA953D06D7AACBDC67042CA08FB3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/OtSvSYVyRLm0yJhdQzWv8g/zh-cn_image_0000002701663740.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072818Z&HW-CC-Expire=86400&HW-CC-Sign=69DF78B203DA861EED4E392275C64989428E52B76C79937F7F7F2537BC5A12A1)
 
  
  
 
-#### 卡片预览
+## 卡片预览
 
 创建卡片并选中卡片文件后，点击右侧边栏**Previewer**按钮即可预览卡片。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/TL3v9ogvT2yMzZgNsYNGPg/zh-cn_image_0000002594634890.png?HW-CC-KV=V1&HW-CC-Date=20260624T020709Z&HW-CC-Expire=86400&HW-CC-Sign=76F9ED164C070D2AAACDB63BA54F9A90CAF7993F24DB4DC26AAFB12EE355F938)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/pOaYDpRiTrKs_CRtk2nLLw/zh-cn_image_0000002701663742.png?HW-CC-KV=V1&HW-CC-Date=20260911T072818Z&HW-CC-Expire=86400&HW-CC-Sign=B3099B9AC6549AE01AAC6088373C9A36A2644CD217C241F1A8461B0C2CAE2D1D)

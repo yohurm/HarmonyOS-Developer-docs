@@ -1,20 +1,21 @@
 # Class (ScreenCaptureHandler)
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-screencapturehandler
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-ScreenCaptureHandler 是 Web 组件提供的屏幕捕获权限处理类，用于响应网页发起的屏幕捕获请求。该类允许开发者通过 grant 或 deny 方法控制是否授予网页屏幕捕获权限，并通过 getOrigin 方法获取请求来源信息，帮助开发者在保护用户隐私的同时，灵活处理网页的屏幕捕获访问需求。示例代码参考[onScreenCaptureRequest](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-events#onscreencapturerequest10)事件。
+ScreenCaptureHandler是Web组件提供的屏幕捕获权限处理类，用于响应网页发起的屏幕捕获请求。该类适用于在线教育、远程会议、屏幕共享等需要获取用户屏幕内容的应用场景。该类允许开发者通过grant或deny方法控制是否授予网页屏幕捕获权限，并通过getOrigin方法获取请求来源信息，帮助开发者在保护用户隐私的同时，灵活处理网页的屏幕捕获访问需求，提升应用的安全性和用户体验。示例代码参考[onScreenCaptureRequest](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-events#onscreencapturerequest10)事件。
  
 > [!NOTE]
-> 该组件首批接口从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 本Class首批接口从API version 10开始支持。 示例效果请以真机运行为准。
+> 该组件从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 本Class从API version 10开始支持。 示例效果请以真机运行为准。 grant ()与 deny ()方法互斥，对同一个ScreenCaptureHandler实例的同一请求只能调用其中一个。 调用后不应再对同一请求调用另一个方法。
 
   
 
-#### constructor10+
+## constructor10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
  
@@ -24,53 +25,54 @@ ScreenCaptureHandler的构造函数。
  
   
 
-#### deny10+
+## deny10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deny(): void
  
-拒绝网页所请求的屏幕捕获操作。
+拒绝网页发起的屏幕捕获操作。用于用户选择不允许，或出于安全原因需要阻止屏幕捕获时调用。调用后将终止当前的屏幕捕获请求，系统会通知网页屏幕捕获权限被拒绝。拒绝操作不影响后续新的屏幕捕获请求。
  
 **系统能力：** SystemCapability.Web.Webview.Core
  
   
 
-#### getOrigin10+
+## getOrigin10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOrigin(): string
  
-获取网页来源。
+获取网页来源。用于验证请求来源的可信度，或实现白名单机制以控制哪些网页可以进行屏幕捕获。
  
 **系统能力：** SystemCapability.Web.Webview.Core
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| string | 当前请求权限网页的来源。 |
+| string | 当前发起屏幕捕获请求的网页的来源。 |
  
  
   
 
-#### grant10+
+## grant10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 grant(config: ScreenCaptureConfig): void
  
-对网页访问的屏幕捕获操作进行授权。
- 
-> [!NOTE]
-> 需要配置权限：ohos.permission.MICROPHONE。
-
+对网页访问的屏幕捕获操作进行授权。该方法会根据提供的配置参数授予屏幕捕获权限，授权后网页可以按照配置的参数进行屏幕捕获。配置参数会被验证，确保符合系统安全要求。用于用户同意网页的屏幕捕获请求后调用，或根据业务策略自动授权可信网页时使用。
  
 **系统能力：** SystemCapability.Web.Webview.Core
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| config | ScreenCaptureConfig | 是 | 屏幕捕获配置。 |
+| config | ScreenCaptureConfig | 是 | 屏幕捕获配置，用于设置屏幕捕获的相关参数。 |

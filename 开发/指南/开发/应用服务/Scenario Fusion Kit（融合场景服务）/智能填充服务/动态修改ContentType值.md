@@ -1,13 +1,13 @@
 # 动态修改ContentType值
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusion-intelligentfilling-amend
 
 在填写实名信息表单的场景，表单中存在身份证和其他证件输入，其中，多种证件号共用一个输入框，ContentType.ID_CARD_NUMBER目前只支持身份证号的推荐、填充，不支持其他类型的证件，需要开发者根据输入场景动态配置输入框的ContentType，只在身份证输入场景下使用ContentType.ID_CARD_NUMBER。
   
 
-#### 效果图
+## 效果图
 
 
 ![](assets/动态修改ContentType值/file-20260514132147482-0.png)
@@ -15,9 +15,9 @@
  
   
 
-#### 示例代码
+## 示例代码
 
-```text
+```ArkTS
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { autoFillManager } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -40,13 +40,13 @@ struct SmartFill {
             .value('身份证')
             .onSelect((index: number, value: string) => {
               // 当用户选择ID类型时，更改与证件号码输入组件对应的ContentType值。
-              hilog.info(0x000, 'testTag', 'Select item changed, value: ' + value + ', index: ' + index);
+              hilog.info(0x0000, 'testTag', 'Select item changed, value: ' + value + ', index: ' + index);
               if (value === '身份证') {
                 this.type = ContentType.ID_CARD_NUMBER;
               } else if (value === '港澳通行证') {
                 this.type = undefined;
               }
-              hilog.info(0x000, 'testTag', 'ContentType changed, current type: ' + this.type);
+              hilog.info(0x0000, 'testTag', 'ContentType changed, current type: ' + this.type);
             })
         }
 
@@ -73,7 +73,7 @@ struct SmartFill {
                 autoFillManager.requestAutoSave(this.getUIContext())
               } catch (err) {
                 let e: BusinessError = err as BusinessError;
-                hilog.error(0x0000, 'DemoTest', 'error: %{public}d %{public}s', e.code, e.message);
+                hilog.error(0x0000, 'testTag', 'error: %{public}d %{public}s', e.code, e.message);
               }
               this.isClicked = true;
               // 设置超时时间以防止重复点击按钮保存历史表单输入。

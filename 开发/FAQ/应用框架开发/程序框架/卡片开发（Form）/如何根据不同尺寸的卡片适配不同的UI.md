@@ -56,10 +56,10 @@ export default class EntryFormAbility extends FormExtensionAbility {
 
 
   onAddForm(want: Want) {
-    // Called to return a FormBindingData object.
+ <em>   // Called to return a FormBindingData object.</em>
     let dimension: string = '';
     if (want.parameters) {
-      dimension = JSON.stringify(want.parameters[formInfo.FormParam.DIMENSION_KEY]); // 获取要创建的卡片的尺寸
+      dimension = JSON.stringify(want.parameters[formInfo.FormParam.DIMENSION_KEY]);<em> // 获取要创建的卡片的尺寸</em>
       console.info('dimension=' + dimension);
     }
     let obj: Record<string, string> = {
@@ -70,32 +70,32 @@ export default class EntryFormAbility extends FormExtensionAbility {
 
 
   onCastToNormalForm(formId: string) {
-    // Called when the form provider is notified that a temporary form is successfully
-    // converted to a normal form.
+   <em> // Called when the form provider is notified that a temporary form is successfully</em>
+<em>    // converted to a normal form.</em>
     console.info('onCastToNormalForm', formId);
   }
 
 
   onUpdateForm(formId: string) {
-    // Called to notify the form provider to update a specified form.
+ <em>   // Called to notify the form provider to update a specified form.</em>
     console.info('onUpdateForm', formId);
   }
 
 
   onFormEvent(formId: string, message: string) {
-    // Called when a specified message event defined by the form provider is triggered.
+  <em>  // Called when a specified message event defined by the form provider is triggered.</em>
     console.info('onFormEvent', formId, message);
   }
 
 
   onRemoveForm(formId: string) {
-    // Called to notify the form provider that a specified form has been destroyed.
+  <em>  // Called to notify the form provider that a specified form has been destroyed.</em>
     console.info('onRemoveForm', formId, formId);
   }
 
 
   onAcquireFormState(want: Want) {
-    // Called to return a {@link FormState} object.
+ <em>   // Called to return a {@link FormState} object.</em>
     console.info('onAcquireFormState', want.bundleName);
     return formInfo.FormState.READY;
   }
@@ -111,7 +111,7 @@ let storageUpdateByMsg = new LocalStorage();
 @Entry(storageUpdateByMsg)
 @Component
 export struct WidgetCard {
-  // 卡片页面接收尺寸信息
+<em>  // 卡片页面接收尺寸信息</em>
   @LocalStorageProp("dimension") dimension: string = '';
 
 

@@ -1,11 +1,12 @@
 # Interface (MvtOverlay)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-mvtoverlay
 **支持设备：** Phone | PC/2in1 | Tablet
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -15,7 +16,8 @@ import { map, mapCommon } from '@kit.MapKit';
  
   
 
-#### MvtOverlay
+## MvtOverlay
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -61,7 +63,8 @@ let mvtOverlay = this.mapController?.addMvtOverlay(params);
  
   
 
-#### addLayers
+### addLayers
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -79,6 +82,7 @@ addLayers(layers: mapCommon.MvtLayer[]): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | layers | mapCommon.MvtLayer[] | 是 | 矢量图层，建议矢量图层少于2000层，确保矢量图层的流畅度。 |
@@ -114,7 +118,8 @@ mvtOverlay.addLayers(renderLayers);
  
   
 
-#### removeLayers
+### removeLayers
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -132,6 +137,7 @@ removeLayers(layerIds: string[]): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | layerIds | string[] | 是 | 需要删除的图层ID。 |
@@ -146,7 +152,8 @@ mvtOverlay.removeLayers(layerIds);
  
   
 
-#### changeLayers
+### changeLayers
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -164,6 +171,7 @@ changeLayers(addedLayers: mapCommon.MvtLayer[], removedLayerIds: string[]): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | addedLayers | mapCommon.MvtLayer[] | 是 | 矢量图层。 |
@@ -200,7 +208,8 @@ mvtOverlay.changeLayers(renderLayers, layerIds);
  
   
 
-#### setBlur
+### setBlur
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -218,6 +227,7 @@ setBlur(blurIntensity: number | Record<number, number>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | blurIntensity | number \| Record<number, number> | 是 | 矢量图层的模糊度，不支持3D地球。 模糊度范围：[0, 20]，小数向下取整，默认值为0，异常值按默认值处理。 若传数字，表示所有缩放层级按同一模糊度处理。 若传键值对，key为缩放层级，value为模糊度，有效层级范围：[2，20]，层级异常值大于20取20，小于2取2。例如：{ 5: 5, 10: 8, 18: 15 }，2到4层级为0，默认不模糊，5到9层级模糊度为5，10到17层级模糊度为8，18到20层级模糊度为15。 |
@@ -231,7 +241,8 @@ mvtOverlay.setBlur(8);
  
   
 
-#### getBlur
+### getBlur
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -249,6 +260,7 @@ getBlur(): number | Record<number, number>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number \| Record<number, number> | 矢量图层的模糊度。 模糊度范围：[0, 20]。 若为数字，表示所有缩放层级按同一模糊度处理。 若为键值对，key为缩放层级，value为模糊度，有效层级范围：[2，20]。例如：{ 5: 5, 10: 8, 18: 15 }，2到4层级为0，默认不模糊，5到9层级模糊度为5，10到17层级模糊度为8，18到20层级模糊度为15。 |

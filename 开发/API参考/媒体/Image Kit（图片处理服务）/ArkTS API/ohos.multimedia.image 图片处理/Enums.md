@@ -1,9 +1,9 @@
 # Enums
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-e
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式、透明度类型、图片元数据、图片属性信息（Exif及各格式图片属性）、辅助图类型、缩放模式、裁剪与缩放策略、动态范围、HDR元数据、内存分配、插值算法、图片方向、焦点模式、颜色模式、XMP标签类型等，用于在图片编解码、处理和显示场景中指定各类配置参数。
 
@@ -12,13 +12,15 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 
 
 
-#### PixelMapFormat7+
+## PixelMapFormat7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示图片像素格式的枚举，包含像素数据的颜色通道排列和位深信息。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -43,9 +45,10 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 
 
 
-#### AlphaType9+
+## AlphaType9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示图像的透明度类型的枚举。
 
@@ -54,6 +57,7 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -65,9 +69,10 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 
 
 
-#### AuxiliaryPictureType13+
+## AuxiliaryPictureType13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示辅助图的图像类型的枚举。
 
@@ -76,6 +81,7 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 在获取和使用特定辅助图前，应首先调用Picture的[getAuxiliaryPicture](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-picture#getauxiliarypicture13)方法尝试获取该辅助图。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -89,13 +95,15 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 
 
 
-#### MetadataType13+
+## MetadataType13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示图片元数据类型的枚举。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -114,9 +122,10 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 
 
 
-#### ScaleMode9+
+## ScaleMode9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示图像的缩放模式的枚举。
 
@@ -126,6 +135,7 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CENTER_CROP | 1 | 中心裁剪模式。表示将图像等比缩放至刚好铺满目标区域的尺寸（短边对齐），然后居中裁剪超出区域的部分。 |
@@ -134,9 +144,10 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 
 
 
-#### PropertyKey7+
+## PropertyKey7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示Exif（Exchangeable image file format）图像信息的枚举。
 
@@ -149,6 +160,7 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 值 | 说明 | 格式示例 |
 | --- | --- | --- | --- |
@@ -336,13 +348,15 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 
 
 
-#### FragmentMapPropertyKey13+
+## FragmentMapPropertyKey13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示水印裁剪图图片信息的枚举。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -354,13 +368,15 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 
 
 
-#### GifPropertyKey20+
+## GifPropertyKey20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示GIF图片信息的枚举。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -375,15 +391,17 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 
 
 
-#### HeifsPropertyKey23+
+## HeifsPropertyKey23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示HEIF序列图片信息的枚举。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -395,15 +413,17 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 
 
 
-#### WebPPropertyKey24+
+## WebPPropertyKey24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示WebP图片信息的枚举。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -416,9 +436,10 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 
 
 
-#### DngPropertyKey24+
+## DngPropertyKey24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示DNG图片信息的枚举。
 
@@ -429,6 +450,7 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -525,9 +547,10 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 
 
 
-#### PngPropertyKey
+## PngPropertyKey
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示PNG图片信息的枚举。
 
@@ -540,6 +563,7 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -563,9 +587,10 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 
 
 
-#### JfifPropertyKey
+## JfifPropertyKey
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示JFIF图片信息的枚举。
 
@@ -579,6 +604,7 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DENSITY_UNIT | 'JfifDensityUnit' | 用于定义JfifXDensity（水平像素密度）和JfifYDensity（垂直像素密度）的物理度量单位。 - 0表示无单位（仅像素宽高比）。 - 1表示每英寸像素数（DPI）。 - 2表示每厘米像素数（DPC）。 该值为正整数。 |
@@ -590,9 +616,10 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 
 
 
-#### TiffPropertyKey
+## TiffPropertyKey
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示TIFF图片信息的枚举。
 
@@ -605,6 +632,7 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -632,9 +660,10 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 
 
 
-#### AvisPropertyKey
+## AvisPropertyKey
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示AVIS图片信息的枚举。
 
@@ -648,6 +677,7 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DELAY_TIME | 'AvisDelayTime' | AVIS图片的每帧播放时长。 单位：毫秒（ms）。 |
@@ -655,13 +685,15 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 
 
 
-#### ImageFormat9+
+## ImageFormat9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示图片格式的枚举。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -671,13 +703,15 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 
 
 
-#### ComponentType9+
+## ComponentType9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示图像的组件类型的枚举。
 
 **系统能力：** SystemCapability.Multimedia.Image.ImageReceiver
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -689,13 +723,15 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 
 
 
-#### DecodingDynamicRange12+
+## DecodingDynamicRange12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述解码时期望的图像动态范围。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -706,13 +742,15 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 
 
 
-#### PackingDynamicRange12+
+## PackingDynamicRange12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述编码时期望的图像动态范围。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -722,9 +760,10 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 
 
 
-#### CropAndScaleStrategy18+
+## CropAndScaleStrategy18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示裁剪与缩放的先后策略的枚举。
 
@@ -740,6 +779,7 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SCALE_FIRST | 1 | 解码参数如果同时设置desiredRegion与desiredSize，先根据desiredSize进行缩放，再根据desiredRegion进行区域裁剪。 |
@@ -748,13 +788,15 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 
 
 
-#### HdrMetadataKey12+
+## HdrMetadataKey12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示[PixelMap](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-pixelmap)使用的HDR相关元数据信息的关键字的枚举。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -766,13 +808,15 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 
 
 
-#### HdrMetadataType12+
+## HdrMetadataType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示[HdrMetadataKey](#hdrmetadatakey12)中HDR_METADATA_TYPE关键字对应的值的枚举。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -784,15 +828,17 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 
 
 
-#### AntiAliasingLevel12+
+## AntiAliasingLevel12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 缩放时的插值算法。可根据缩放质量和性能需求选择合适的级别。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -804,13 +850,15 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 
 
 
-#### AllocatorType15+
+## AllocatorType15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示用于图像解码的内存类型的枚举。开发者可根据场景选择合适的内存申请类型。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -821,15 +869,17 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 
 
 
-#### Orientation23+
+## Orientation23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示图像方向类型的枚举。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -845,15 +895,17 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 
 
 
-#### FocusMode23+
+## FocusMode23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示焦点模式类型的枚举。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -865,15 +917,17 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 
 
 
-#### XmageColorMode23+
+## XmageColorMode23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示XMAGE颜色模式类型的枚举。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -885,9 +939,10 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 
 
 
-#### XMPTagType
+## XMPTagType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示XMP标签类型的枚举。
 
@@ -896,6 +951,7 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

@@ -1,10 +1,10 @@
 # ohpm config错误码
 
-更新时间：2026-07-21 01:13:31
+更新时间：2026-08-29 09:41:34
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-config-errorcode
 
-#### 00602001 未配置子命令
+## 00602001 未配置子命令
 
 **错误信息**
  
@@ -24,7 +24,7 @@ Config子命令为空。
  
  
 
-#### 00602002 配置的子命令不支持
+## 00602002 Config子命令不支持。
 
 **错误信息**
  
@@ -32,7 +32,7 @@ Config Subcommand Not Support.
  
 **错误描述**
  
-Config配置的子命令不支持。
+Config子命令不支持。
  
 **可能原因**
  
@@ -44,7 +44,7 @@ ohpm config配置的子命令不支持。
  
  
 
-#### 00602003 set命令参数缺失
+## 00602003 set命令参数缺失
 
 **错误信息**
  
@@ -60,11 +60,11 @@ set命令参数错误。
  
 **处理步骤**
  
-确保命令输入格式为"ohpm config set &lt;key&gt; &lt;value&gt;"。
+确保命令输入格式为ohpm config set &lt;key&gt; &lt;value&gt;。
  
  
 
-#### 00602004 get命令参数错误
+## 00602004 get命令参数错误
 
 **错误信息**
  
@@ -80,11 +80,11 @@ get命令参数错误。
  
 **处理步骤**
  
-命令只允许输入一个key，确保命令输入格式为"ohpm config get &lt;key&gt;"，如ohpm config get registry。
+命令只允许输入一个key，确保命令输入格式为ohpm config get &lt;key&gt;，如ohpm config get registry。
  
  
 
-#### 00602005 delete命令参数错误
+## 00602005 delete命令参数错误
 
 **错误信息**
  
@@ -96,15 +96,15 @@ delete命令参数错误。
  
 **可能原因**
  
-输入ohpm config delete命令。
+直接执行ohpm config delete命令，未输入&lt;key&gt;参数。
  
 **处理步骤**
  
-确保命令输入格式为"ohpm config delete &lt;key&gt;"。
+确保命令输入格式为ohpm config delete &lt;key&gt;。
  
  
 
-#### 00602006 list参数无效
+## 00602006 list参数无效
 
 **错误信息**
  
@@ -120,11 +120,11 @@ list参数无效。
  
 **处理步骤**
  
-确保命令输入格式为"ohpm config list  [-j|--json]"。
+确保命令输入格式为ohpm config list  [-j|--json]。
  
  
 
-#### 00602007 获取受保护的键名
+## 00602007 获取受保护的键名
 
 **错误信息**
  
@@ -144,7 +144,7 @@ Protected Key.
  
  
 
-#### 00602008 键不存在
+## 00602008 键不存在
 
 **错误信息**
  
@@ -160,11 +160,11 @@ Key Not Exist.
  
 **处理步骤**
  
-运行"ohpm config list"查看所有可用的配置键，再执行"ohpm config delete &lt;key&gt;"。
+运行ohpm config list查看所有可用的键值，再执行ohpm config delete &lt;key&gt;。
  
  
 
-#### 00602009 重复加载配置
+## 00602009 重复加载配置
 
 **错误信息**
  
@@ -184,7 +184,7 @@ ohpm重复加载参数和配置。
  
  
 
-#### 00602010 保存时未加载配置文件
+## 00602010 保存时未加载配置文件
 
 **错误信息**
  
@@ -204,7 +204,7 @@ Not Loaded When Saving.
  
  
 
-#### 00602011 设置时未加载配置的数据
+## 00602011 设置时未加载配置的数据
 
 **错误信息**
  
@@ -224,7 +224,7 @@ Not Loaded When Setting.
  
  
 
-#### 00602012 Encrypt命令参数错误
+## 00602012 Encrypt命令参数错误
 
 **错误信息**
  
@@ -232,19 +232,19 @@ Config Encrypt Command Param Error.
  
 **错误描述**
  
-Encrypt命令参数配置错误。
+Encrypt命令参数错误。
  
 **可能原因**
  
-执行ohpm config encrypt &lt;string&gt;命令，未配置加密组件路径参数--crypto_path。
+执行ohpm config encrypt &lt;string&gt;命令，未配置加密组件路径--crypto_path参数。
  
 **处理步骤**
  
-检查和确保命令格式为"ohpm config encrypt --crypto_path &lt;string&gt;"。
+检查和确保命令格式为ohpm config encrypt --crypto_path &lt;string&gt;。
  
  
 
-#### 00602013 加密组件路径为空
+## 00602013 加密组件路径为空
 
 **错误信息**
  
@@ -261,12 +261,12 @@ Crypto Path Is Empty.
 **处理步骤**
  
 - 方式一：在.ohpmrc文件中配置crypto_path路径后，再执行ohpm config encrypt命令。
-- 方式二：在执行命令时指定加密路径"ohpm config encrypt --crypto_path &lt;string&gt;"。
+- 方式二：在执行命令时指定加密路径ohpm config encrypt --crypto_path &lt;string&gt;。
 
  
  
 
-#### 00602014 加密组件路径错误
+## 00602014 加密组件路径错误
 
 **错误信息**
  
@@ -286,7 +286,7 @@ Crypto Component Not Directory.
  
  
 
-#### 00602015 无效的加密组件
+## 00602015 无效的加密组件
 
 **错误信息**
  
@@ -298,15 +298,15 @@ Invalid Crypto Component.
  
 **可能原因**
  
-加密组件文件夹不为空，其中的加密文件被损坏，或存在不是加密组件的文件。
+加密组件文件夹不为空，但其中的加密文件被损坏，或文件夹中不是加密组件的文件。
  
 **处理步骤**
  
-运行命令ohpm config encrypt --crypto_path &lt;string&gt;生成有效的加密组件目录，string需符合加密组件的要求，具体请参考[crypto_path](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpmrc#section18322038185010)。
+运行命令ohpm config encrypt --crypto_path &lt;string&gt;生成有效的加密组件目录。string需符合加密组件的要求，具体请参考[crypto_path](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpmrc#section18322038185010)。
  
  
 
-#### 00602016 加密路径未配置
+## 00602016 加密路径未配置
 
 **错误信息**
  
@@ -314,7 +314,7 @@ Crypto Path Not Configured.
  
 **错误描述**
  
-加密路径配置不正确。
+加密路径未配置。
  
 **可能原因**
  

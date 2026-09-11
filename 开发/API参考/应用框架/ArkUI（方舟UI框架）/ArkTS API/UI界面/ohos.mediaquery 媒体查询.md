@@ -1,9 +1,9 @@
 # @ohos.mediaquery (媒体查询)
 
-更新时间：2026-06-16 09:03:21
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-mediaquery
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供根据不同媒体类型定义不同的样式。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { mediaquery } from '@kit.ArkUI';
@@ -22,9 +23,10 @@ import { mediaquery } from '@kit.ArkUI';
 
 
 
-#### mediaquery.matchMediaSync(deprecated)
+## mediaquery.matchMediaSync(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 matchMediaSync(condition: string): MediaQueryListener
 
@@ -42,12 +44,14 @@ matchMediaSync(condition: string): MediaQueryListener
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | condition | string | 是 | 媒体查询的匹配条件，具体可参考媒体查询语法规则。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -64,9 +68,10 @@ let listener: mediaquery.MediaQueryListener = mediaquery.matchMediaSync('(orient
 
 
 
-#### MediaQueryListener
+## MediaQueryListener
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 媒体查询的句柄，并包含了申请句柄时的首次查询结果。媒体查询根据设置的条件语句，比如'(width <= 600vp)'，比较系统信息，若首次查询时相关信息未初始化，matches返回false。
 
@@ -80,9 +85,10 @@ let listener: mediaquery.MediaQueryListener = mediaquery.matchMediaSync('(orient
 
 
 
-#### on('change')
+### on('change')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'change', callback: Callback&lt;MediaQueryResult&gt;): void
 
@@ -100,6 +106,7 @@ on(type: 'change', callback: Callback&lt;MediaQueryResult&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 必须填写字符串'change'。 |
@@ -112,9 +119,10 @@ on(type: 'change', callback: Callback&lt;MediaQueryResult&gt;): void
 
 
 
-#### off('change')
+### off('change')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'change', callback?: Callback&lt;MediaQueryResult&gt;): void
 
@@ -127,6 +135,7 @@ off(type: 'change', callback?: Callback&lt;MediaQueryResult&gt;): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -153,9 +162,10 @@ listener.off('change', onPortrait) // 注销回调
 
 
 
-#### MediaQueryResult
+## MediaQueryResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于表示媒体查询的结果。
 
@@ -167,7 +177,11 @@ listener.off('change', onPortrait) // 注销回调
 
 
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -177,7 +191,10 @@ listener.off('change', onPortrait) // 注销回调
 
 
 
-#### 示例
+### 示例
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 推荐通过使用 UIContext 中的 getMediaQuery 方法获取当前UI上下文关联的 MediaQuery 对象。
@@ -224,4 +241,4 @@ struct MediaQueryExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/MTgtqXa5QMa9UDFbk_bvPA/zh-cn_image_0000002659101497.png?HW-CC-KV=V1&HW-CC-Date=20260701T014315Z&HW-CC-Expire=86400&HW-CC-Sign=2F2EAE8BDF48FE514DA6F24CF9C5C0C53CDA85C25EB3D39D510096D5B47BDA00)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/pyGrHqA2T7eJBA7MIzAm_A/zh-cn_image_0000002747212277.png?HW-CC-KV=V1&HW-CC-Date=20260911T072922Z&HW-CC-Expire=86400&HW-CC-Sign=DF8523B0C38FD52A08E12A58A8CC4B53C6B85DF00E2E0B8A95235A434968B9C4)

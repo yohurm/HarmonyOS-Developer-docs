@@ -1,13 +1,14 @@
 # avmedia_source.h
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avmedia-source-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义AVMediaSource的结构体和枚举类型。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_AVHttpHeader | OH_AVHttpHeader | 声明HTTP头部类型。 |
@@ -43,10 +47,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | AVLoadingRequestError | AVLoadingRequestError | 网络加载请求的错误码枚举。 |
@@ -54,10 +60,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_AVHttpHeader *OH_AVHttpHeader_Create(void) | - | 创建一个HTTP头部实例。 |
@@ -88,15 +96,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### AVLoadingRequestError
+### AVLoadingRequestError
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum AVLoadingRequestError
@@ -108,6 +118,7 @@ enum AVLoadingRequestError
  
 **起始版本：** 23
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AV_LOADING_ERROR_SUCCESS = 0 | 资源成功下载。 |
@@ -121,15 +132,17 @@ enum AVLoadingRequestError
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AVHttpHeader_Create()
+### OH_AVHttpHeader_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVHttpHeader *OH_AVHttpHeader_Create(void)
@@ -143,6 +156,7 @@ OH_AVHttpHeader *OH_AVHttpHeader_Create(void)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVHttpHeader * | 成功时返回指向OH_AVHttpHeader实例的指针，失败时返回空指针。 |
@@ -150,9 +164,10 @@ OH_AVHttpHeader *OH_AVHttpHeader_Create(void)
  
   
 
-#### OH_AVHttpHeader_Destroy()
+### OH_AVHttpHeader_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVHttpHeader_Destroy(OH_AVHttpHeader *header)
@@ -166,6 +181,7 @@ OH_AVErrCode OH_AVHttpHeader_Destroy(OH_AVHttpHeader *header)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVHttpHeader *header | 指向OH_AVHttpHeader实例的指针。 |
@@ -173,6 +189,7 @@ OH_AVErrCode OH_AVHttpHeader_Destroy(OH_AVHttpHeader *header)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示header为空指针或实例销毁失败。 |
@@ -180,9 +197,10 @@ OH_AVErrCode OH_AVHttpHeader_Destroy(OH_AVHttpHeader *header)
  
   
 
-#### OH_AVHttpHeader_GetCount()
+### OH_AVHttpHeader_GetCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVHttpHeader_GetCount(OH_AVHttpHeader *header, uint32_t *count)
@@ -196,6 +214,7 @@ OH_AVErrCode OH_AVHttpHeader_GetCount(OH_AVHttpHeader *header, uint32_t *count)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVHttpHeader *header | 指向OH_AVHttpHeader实例的指针。 |
@@ -204,6 +223,7 @@ OH_AVErrCode OH_AVHttpHeader_GetCount(OH_AVHttpHeader *header, uint32_t *count)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示header为空指针。 |
@@ -211,9 +231,10 @@ OH_AVErrCode OH_AVHttpHeader_GetCount(OH_AVHttpHeader *header, uint32_t *count)
  
   
 
-#### OH_AVHttpHeader_AddRecord()
+### OH_AVHttpHeader_AddRecord()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVHttpHeader_AddRecord(OH_AVHttpHeader *header, const char *key, const char *value)
@@ -227,6 +248,7 @@ OH_AVErrCode OH_AVHttpHeader_AddRecord(OH_AVHttpHeader *header, const char *key,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVHttpHeader *header | 指向OH_AVHttpHeader实例的指针。 |
@@ -236,6 +258,7 @@ OH_AVErrCode OH_AVHttpHeader_AddRecord(OH_AVHttpHeader *header, const char *key,
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示任一参数为空指针。 |
@@ -243,9 +266,10 @@ OH_AVErrCode OH_AVHttpHeader_AddRecord(OH_AVHttpHeader *header, const char *key,
  
   
 
-#### OH_AVHttpHeader_GetRecord()
+### OH_AVHttpHeader_GetRecord()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVHttpHeader_GetRecord(OH_AVHttpHeader *header, uint32_t index, const char **key, const char **value)
@@ -259,6 +283,7 @@ OH_AVErrCode OH_AVHttpHeader_GetRecord(OH_AVHttpHeader *header, uint32_t index, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVHttpHeader *header | 指向OH_AVHttpHeader实例的指针。 |
@@ -269,6 +294,7 @@ OH_AVErrCode OH_AVHttpHeader_GetRecord(OH_AVHttpHeader *header, uint32_t index, 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示header为空指针或索引越界。 |
@@ -276,9 +302,10 @@ OH_AVErrCode OH_AVHttpHeader_GetRecord(OH_AVHttpHeader *header, uint32_t index, 
  
   
 
-#### OH_AVMediaSource_CreateWithUrl()
+### OH_AVMediaSource_CreateWithUrl()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVMediaSource *OH_AVMediaSource_CreateWithUrl(const char *url, OH_AVHttpHeader *header)
@@ -292,6 +319,7 @@ OH_AVMediaSource *OH_AVMediaSource_CreateWithUrl(const char *url, OH_AVHttpHeade
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *url | 媒体源的URL。支持以下流媒体格式：HLS、HTTP-FLV、DASH和HTTPS。 |
@@ -300,6 +328,7 @@ OH_AVMediaSource *OH_AVMediaSource_CreateWithUrl(const char *url, OH_AVHttpHeade
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVMediaSource * | 成功时返回指向OH_AVMediaSource实例的指针，失败时返回空指针。 |
@@ -307,9 +336,10 @@ OH_AVMediaSource *OH_AVMediaSource_CreateWithUrl(const char *url, OH_AVHttpHeade
  
   
 
-#### OH_AVMediaSource_CreateWithDataSource()
+### OH_AVMediaSource_CreateWithDataSource()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVMediaSource *OH_AVMediaSource_CreateWithDataSource(OH_AVDataSource *dataSource)
@@ -323,6 +353,7 @@ OH_AVMediaSource *OH_AVMediaSource_CreateWithDataSource(OH_AVDataSource *dataSou
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVDataSource *dataSource | 指向OH_AVDataSource的指针。 |
@@ -330,6 +361,7 @@ OH_AVMediaSource *OH_AVMediaSource_CreateWithDataSource(OH_AVDataSource *dataSou
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVMediaSource * | 成功时返回指向OH_AVMediaSource实例的指针，失败时返回空指针。 |
@@ -337,9 +369,10 @@ OH_AVMediaSource *OH_AVMediaSource_CreateWithDataSource(OH_AVDataSource *dataSou
  
   
 
-#### OH_AVMediaSource_CreateWithFd()
+### OH_AVMediaSource_CreateWithFd()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVMediaSource *OH_AVMediaSource_CreateWithFd(int32_t fd, int64_t offset, int64_t size)
@@ -353,6 +386,7 @@ OH_AVMediaSource *OH_AVMediaSource_CreateWithFd(int32_t fd, int64_t offset, int6
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | int32_t fd | 数据源的文件描述符。 |
@@ -362,6 +396,7 @@ OH_AVMediaSource *OH_AVMediaSource_CreateWithFd(int32_t fd, int64_t offset, int6
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVMediaSource * | 成功时返回指向OH_AVMediaSource实例的指针，失败时返回空指针。 |
@@ -369,9 +404,10 @@ OH_AVMediaSource *OH_AVMediaSource_CreateWithFd(int32_t fd, int64_t offset, int6
  
   
 
-#### OH_AVMediaSource_Destroy()
+### OH_AVMediaSource_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVMediaSource_Destroy(OH_AVMediaSource *source)
@@ -385,6 +421,7 @@ OH_AVErrCode OH_AVMediaSource_Destroy(OH_AVMediaSource *source)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMediaSource *source | 指向OH_AVMediaSource实例的指针。 |
@@ -392,6 +429,7 @@ OH_AVErrCode OH_AVMediaSource_Destroy(OH_AVMediaSource *source)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示source为空指针或释放失败。 |
@@ -399,9 +437,10 @@ OH_AVErrCode OH_AVMediaSource_Destroy(OH_AVMediaSource *source)
  
   
 
-#### OH_AVMediaSource_SetMimeType()
+### OH_AVMediaSource_SetMimeType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVMediaSource_SetMimeType(OH_AVMediaSource *source, const char *mimetype)
@@ -415,6 +454,7 @@ OH_AVErrCode OH_AVMediaSource_SetMimeType(OH_AVMediaSource *source, const char *
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMediaSource *source | 指向OH_AVMediaSource的指针。 |
@@ -423,6 +463,7 @@ OH_AVErrCode OH_AVMediaSource_SetMimeType(OH_AVMediaSource *source, const char *
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示source或mimetype为空指针。 AV_ERR_UNSUPPORTED_FORMAT：表示不支持该mimetype。 |
@@ -430,9 +471,10 @@ OH_AVErrCode OH_AVMediaSource_SetMimeType(OH_AVMediaSource *source, const char *
  
   
 
-#### OH_AVMediaSourceLoadingRequest_GetUrl()
+### OH_AVMediaSourceLoadingRequest_GetUrl()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVMediaSourceLoadingRequest_GetUrl(OH_AVMediaSourceLoadingRequest *request, const char **url)
@@ -446,6 +488,7 @@ OH_AVErrCode OH_AVMediaSourceLoadingRequest_GetUrl(OH_AVMediaSourceLoadingReques
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMediaSourceLoadingRequest *request | OH_AVMediaSourceLoadingRequest实例。 |
@@ -454,6 +497,7 @@ OH_AVErrCode OH_AVMediaSourceLoadingRequest_GetUrl(OH_AVMediaSourceLoadingReques
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示request为空指针或不存在URL。 |
@@ -461,9 +505,10 @@ OH_AVErrCode OH_AVMediaSourceLoadingRequest_GetUrl(OH_AVMediaSourceLoadingReques
  
   
 
-#### OH_AVMediaSourceLoadingRequest_GetHttpHeader()
+### OH_AVMediaSourceLoadingRequest_GetHttpHeader()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVMediaSourceLoadingRequest_GetHttpHeader(OH_AVMediaSourceLoadingRequest *request, OH_AVHttpHeader **header)
@@ -477,6 +522,7 @@ OH_AVErrCode OH_AVMediaSourceLoadingRequest_GetHttpHeader(OH_AVMediaSourceLoadin
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMediaSourceLoadingRequest *request | OH_AVMediaSourceLoadingRequest实例。 |
@@ -485,6 +531,7 @@ OH_AVErrCode OH_AVMediaSourceLoadingRequest_GetHttpHeader(OH_AVMediaSourceLoadin
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示request为空指针。 |
@@ -492,9 +539,10 @@ OH_AVErrCode OH_AVMediaSourceLoadingRequest_GetHttpHeader(OH_AVMediaSourceLoadin
  
   
 
-#### OH_AVMediaSourceLoadingRequest_RespondData()
+### OH_AVMediaSourceLoadingRequest_RespondData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_AVMediaSourceLoadingRequest_RespondData(OH_AVMediaSourceLoadingRequest *request, int64_t uuid, int64_t offset, const uint8_t *data, uint64_t dataSize)
@@ -508,6 +556,7 @@ int32_t OH_AVMediaSourceLoadingRequest_RespondData(OH_AVMediaSourceLoadingReques
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMediaSourceLoadingRequest *request | 资源打开请求的参数。 |
@@ -519,6 +568,7 @@ int32_t OH_AVMediaSourceLoadingRequest_RespondData(OH_AVMediaSourceLoadingReques
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 当前读取操作接受的字节数。返回值小于零表示失败； -2 表示播放器不再需要当前数据，客户端应停止当前读取过程； -3 表示播放器缓冲区已满，客户端应等待下一次读取。 |
@@ -526,9 +576,10 @@ int32_t OH_AVMediaSourceLoadingRequest_RespondData(OH_AVMediaSourceLoadingReques
  
   
 
-#### OH_AVMediaSourceLoadingRequest_RespondHeader()
+### OH_AVMediaSourceLoadingRequest_RespondHeader()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_AVMediaSourceLoadingRequest_RespondHeader(OH_AVMediaSourceLoadingRequest *request, int64_t uuid, OH_AVHttpHeader *header, const char *redirectUrl)
@@ -542,6 +593,7 @@ void OH_AVMediaSourceLoadingRequest_RespondHeader(OH_AVMediaSourceLoadingRequest
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMediaSourceLoadingRequest *request | 资源打开请求的参数。 |
@@ -552,9 +604,10 @@ void OH_AVMediaSourceLoadingRequest_RespondHeader(OH_AVMediaSourceLoadingRequest
  
   
 
-#### OH_AVMediaSourceLoadingRequest_FinishLoading()
+### OH_AVMediaSourceLoadingRequest_FinishLoading()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_AVMediaSourceLoadingRequest_FinishLoading(OH_AVMediaSourceLoadingRequest *request, int64_t uuid, AVLoadingRequestError error)
@@ -568,6 +621,7 @@ void OH_AVMediaSourceLoadingRequest_FinishLoading(OH_AVMediaSourceLoadingRequest
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMediaSourceLoadingRequest *request | 资源打开请求的参数。 |
@@ -577,9 +631,10 @@ void OH_AVMediaSourceLoadingRequest_FinishLoading(OH_AVMediaSourceLoadingRequest
  
   
 
-#### OH_AVMediaSourceLoader_Create()
+### OH_AVMediaSourceLoader_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVMediaSourceLoader *OH_AVMediaSourceLoader_Create(void)
@@ -593,9 +648,10 @@ OH_AVMediaSourceLoader *OH_AVMediaSourceLoader_Create(void)
  
   
 
-#### OH_AVMediaSourceLoader_Destroy()
+### OH_AVMediaSourceLoader_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVMediaSourceLoader_Destroy(OH_AVMediaSourceLoader *loader)
@@ -609,6 +665,7 @@ OH_AVErrCode OH_AVMediaSourceLoader_Destroy(OH_AVMediaSourceLoader *loader)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMediaSourceLoader *loader | 待释放的OH_AVMediaSourceLoader实例。 |
@@ -616,6 +673,7 @@ OH_AVErrCode OH_AVMediaSourceLoader_Destroy(OH_AVMediaSourceLoader *loader)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示loader为空指针或释放失败。 |
@@ -623,9 +681,10 @@ OH_AVErrCode OH_AVMediaSourceLoader_Destroy(OH_AVMediaSourceLoader *loader)
  
   
 
-#### OH_AVMediaSource_SetMediaSourceLoader()
+### OH_AVMediaSource_SetMediaSourceLoader()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVMediaSource_SetMediaSourceLoader(OH_AVMediaSource *source, OH_AVMediaSourceLoader *loader)
@@ -639,6 +698,7 @@ OH_AVErrCode OH_AVMediaSource_SetMediaSourceLoader(OH_AVMediaSource *source, OH_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMediaSource *source | 需要网络代理的OH_AVMediaSource。 |
@@ -647,6 +707,7 @@ OH_AVErrCode OH_AVMediaSource_SetMediaSourceLoader(OH_AVMediaSource *source, OH_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示source或loader为空指针，或操作失败。 |
@@ -654,9 +715,10 @@ OH_AVErrCode OH_AVMediaSource_SetMediaSourceLoader(OH_AVMediaSource *source, OH_
  
   
 
-#### OH_AVMediaSourceLoaderOnSourceOpenedCallback()
+### OH_AVMediaSourceLoaderOnSourceOpenedCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef int64_t (*OH_AVMediaSourceLoaderOnSourceOpenedCallback)(OH_AVMediaSourceLoadingRequest *request, void *userData)
@@ -670,6 +732,7 @@ typedef int64_t (*OH_AVMediaSourceLoaderOnSourceOpenedCallback)(OH_AVMediaSource
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMediaSourceLoadingRequest *request | 资源打开请求的参数，包含所请求资源的详细信息及数据推送方式。 |
@@ -678,6 +741,7 @@ typedef int64_t (*OH_AVMediaSourceLoaderOnSourceOpenedCallback)(OH_AVMediaSource
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int64_t | 当前资源打开请求的句柄，该句柄对请求对象是唯一的。 大于0的值表示请求成功； 小于或等于0的值表示失败。 |
@@ -685,9 +749,10 @@ typedef int64_t (*OH_AVMediaSourceLoaderOnSourceOpenedCallback)(OH_AVMediaSource
  
   
 
-#### OH_AVMediaSourceLoaderOnSourceReadCallback()
+### OH_AVMediaSourceLoaderOnSourceReadCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_AVMediaSourceLoaderOnSourceReadCallback)(int64_t uuid, int64_t requestedOffset, int64_t requestedLength, void *userData)
@@ -701,6 +766,7 @@ typedef void (*OH_AVMediaSourceLoaderOnSourceReadCallback)(int64_t uuid, int64_t
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | int64_t uuid | 资源句柄的ID。 |
@@ -711,9 +777,10 @@ typedef void (*OH_AVMediaSourceLoaderOnSourceReadCallback)(int64_t uuid, int64_t
  
   
 
-#### OH_AVMediaSourceLoaderOnSourceClosedCallback()
+### OH_AVMediaSourceLoaderOnSourceClosedCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_AVMediaSourceLoaderOnSourceClosedCallback)(int64_t uuid, void *userData)
@@ -727,6 +794,7 @@ typedef void (*OH_AVMediaSourceLoaderOnSourceClosedCallback)(int64_t uuid, void 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | int64_t uuid | 资源句柄的ID。 |
@@ -735,9 +803,10 @@ typedef void (*OH_AVMediaSourceLoaderOnSourceClosedCallback)(int64_t uuid, void 
  
   
 
-#### OH_AVMediaSourceLoader_SetSourceOpenCallback()
+### OH_AVMediaSourceLoader_SetSourceOpenCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVMediaSourceLoader_SetSourceOpenCallback(OH_AVMediaSourceLoader *loader, OH_AVMediaSourceLoaderOnSourceOpenedCallback callback, void *userData)
@@ -751,6 +820,7 @@ OH_AVErrCode OH_AVMediaSourceLoader_SetSourceOpenCallback(OH_AVMediaSourceLoader
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMediaSourceLoader *loader | 要设置回调函数的OH_AVMediaSourceLoader实例。 |
@@ -760,6 +830,7 @@ OH_AVErrCode OH_AVMediaSourceLoader_SetSourceOpenCallback(OH_AVMediaSourceLoader
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示loader为空指针或操作失败。 |
@@ -767,9 +838,10 @@ OH_AVErrCode OH_AVMediaSourceLoader_SetSourceOpenCallback(OH_AVMediaSourceLoader
  
   
 
-#### OH_AVMediaSourceLoader_SetSourceReadCallback()
+### OH_AVMediaSourceLoader_SetSourceReadCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVMediaSourceLoader_SetSourceReadCallback(OH_AVMediaSourceLoader *loader, OH_AVMediaSourceLoaderOnSourceReadCallback callback, void *userData)
@@ -783,6 +855,7 @@ OH_AVErrCode OH_AVMediaSourceLoader_SetSourceReadCallback(OH_AVMediaSourceLoader
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMediaSourceLoader *loader | 要设置回调函数的OH_AVMediaSourceLoader实例。 |
@@ -792,6 +865,7 @@ OH_AVErrCode OH_AVMediaSourceLoader_SetSourceReadCallback(OH_AVMediaSourceLoader
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示loader为空指针或操作失败。 |
@@ -799,9 +873,10 @@ OH_AVErrCode OH_AVMediaSourceLoader_SetSourceReadCallback(OH_AVMediaSourceLoader
  
   
 
-#### OH_AVMediaSourceLoader_SetSourceCloseCallback()
+### OH_AVMediaSourceLoader_SetSourceCloseCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVMediaSourceLoader_SetSourceCloseCallback(OH_AVMediaSourceLoader *loader, OH_AVMediaSourceLoaderOnSourceClosedCallback callback, void *userData)
@@ -815,6 +890,7 @@ OH_AVErrCode OH_AVMediaSourceLoader_SetSourceCloseCallback(OH_AVMediaSourceLoade
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMediaSourceLoader *loader | 要设置回调函数的OH_AVMediaSourceLoader实例。 |
@@ -824,6 +900,7 @@ OH_AVErrCode OH_AVMediaSourceLoader_SetSourceCloseCallback(OH_AVMediaSourceLoade
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：表示loader为空指针或操作失败。 |

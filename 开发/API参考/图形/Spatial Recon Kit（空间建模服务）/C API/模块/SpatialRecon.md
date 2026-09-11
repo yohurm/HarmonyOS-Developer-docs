@@ -1,10 +1,14 @@
 # SpatialRecon
 
-更新时间：2026-05-08 09:27:50
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-spatialrecon
+**支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 提供与3D空间重建任务相关的API，包括空间重建会话管理、多视角与AR帧输入、3DGS（3D Gaussian Splatting）场景建模、任务控制、进度查询、相机参数获取以及三维模型文件导出等能力。
  
@@ -12,8 +16,12 @@
  
   
 
-#### 文件汇总
+## 文件汇总
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | spatial_recon_interface.h | 3D空间重建任务设计模块，通过处理多视角图像输入来生成三维场景。 |

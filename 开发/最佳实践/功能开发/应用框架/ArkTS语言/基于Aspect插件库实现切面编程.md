@@ -1,14 +1,14 @@
 # 基于Aspect插件库实现切面编程
 
-更新时间：2026-06-10 07:05:30
+更新时间：2026-08-26 06:47:01
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-aspect-implements-aop
 
-#### 概述
+## 概述
 
-[Aspect](https://gitcode.com/OpenHarmony-ApplicationTPC/aspect)是面向HarmonyOS应用工程的AOP（面向切面编程）插件库，允许开发者在不修改业务核心代码的情况下，对代码进行增强。在实际开发中，开发者可以使用Aspect来模块化实现生命周期函数插桩、事件监听、API调用替换等通用功能。本文主要以实际开发中的各项场景为例，介绍Aspect插件的最佳实践。如需了解如何安装配置与快速上手，可参考[Aspect快速开始](https://gitcode.com/OpenHarmony-ApplicationTPC/aspect/blob/master/README.md)。
+[Aspect](https://gitcode.com/OpenHarmony-ApplicationTPC/aspect)是面向HarmonyOS应用工程的AOP（面向切面编程）插件库，允许开发者在不修改业务核心代码的情况下，对代码进行增强。在实际开发中，开发者可以使用Aspect来模块化实现生命周期函数插桩、事件监听、API调用替换等通用功能。本文主要以实际开发中的各项场景为例，介绍Aspect插件的最佳实践。如需了解如何安装配置与快速上手，可参考Aspect[快速开始](https://gitcode.com/CPF-ApplicationTPC/aspect/blob/master/README.md#快速开始)。
  
-Aspect插件库底层对[AbcKit方舟字节码工具库](https://gitcode.com/openharmony/arkcompiler_runtime_core/blob/master/libabckit/README_zh.md)进行了封装，帮助开发者减少对字节码查找和修改细节内容的关注，提高插桩开发效率。其主要功能特性包括：
+Aspect插件库底层对[AbcKit](https://gitcode.com/openharmony/arkcompiler_runtime_core/blob/master/libabckit/README_zh.md)方舟字节码工具库进行了封装，帮助开发者减少对字节码查找和修改细节内容的关注，提高插桩开发效率。其主要功能特性包括：
 - 装饰器标记：使用装饰器标记自定义切面类和切面方法，配置插桩任务，实现字节码插桩。
 - 方法定义点插桩：支持方法定义点的前置和后置插桩。
 - API调用点插桩：支持API调用点的前置、后置和替换插桩。
@@ -33,7 +33,7 @@ Aspect插件库底层对[AbcKit方舟字节码工具库](https://gitcode.com/ope
  
  
 
-#### 开发流程
+## 开发流程
 
 开发者要使用Aspect插件对HarmonyOS工程进行插桩，需要进行编写切面类和注册切面类两个步骤。其中切面类的编写会因场景不同而略有差异，本文将在[不同应用场景的切面类开发](#section7558828115214)中详细介绍。
  
@@ -43,7 +43,7 @@ Aspect插件库底层对[AbcKit方舟字节码工具库](https://gitcode.com/ope
  
  
 
-#### 编写切面类
+### 编写切面类
 
 切面类可以写在工程源码的模块里，也可以写在另外创建的自定义模块里。此处的切面类选择写在自定义MyAspect模块里。
 ```ArkTS
@@ -69,7 +69,7 @@ Aspect插件库底层对[AbcKit方舟字节码工具库](https://gitcode.com/ope
  
  
 
-#### 注册切面类
+### 注册切面类
 
 切面类编写完成后，需要进行注册才可以生效，原因是源码在编译构建过程中，如果文件（这里为声明的切面类）未被引用，编译器的优化操作会导致字节码中不包含该文件内容。
  
@@ -117,12 +117,11 @@ onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
 
   
 ```json
-{ProjectRootDir} 
 . 
-├── ... 
-├── build-profile.json5 
-├── oh-package.json5 
-└── aspect.json
+├──... 
+├──build-profile.json5 
+├──oh-package.json5 
+└──aspect.json
 ```
  其中key值对应插桩目标模块名（通常为entry或hsp模块），value值对应切面类路径的列表。
 
@@ -139,11 +138,11 @@ onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
  
  
 
-#### 不同应用场景的切面类开发
+## 不同应用场景的切面类开发
 
  
 
-#### ArkUI组件生命周期函数埋点
+### ArkUI组件生命周期函数埋点
 
 **场景描述**
  
@@ -165,14 +164,8 @@ struct CompA {
   build() {
     Column() {
       Button(`CompA`)
-        .stateStyles({
-          normal: {
-            .backgroundColor($r('sys.color.comp_background_tertiary'))
-            .fontColor($r('sys.color.font_emphasize'))
-          }
-        })
-        .attributeModifier(new ButtonStyles())
-    }
+        .attributeModifier(new ButtonStyles());
+    };
   }
 }
 ```
@@ -197,7 +190,7 @@ struct CompA {
 
   
 
-  #### 隐私API调用监控
+  ### 隐私API调用监控
 
   **场景描述**
 
@@ -251,7 +244,7 @@ insertType: InsertType.CALL：指定切面插入类型为调用点。
 
   
 
-  #### API调用点替换增强
+  ### API调用点替换增强
 
   **场景描述**
 
@@ -266,7 +259,8 @@ insertType: InsertType.CALL：指定切面插入类型为调用点。
 getLocationAddress(): void {
   this.logList.push(ResourceUtil.getFormatString(this.getUIContext(), $r('app.string.card_location_start'),
     TimeUtil.getNowWithHMS()));
-  // Aspect will replace: entire statement geoLocationManager.getCurrentLocation with MyCallAspect.replaceGet(this.request)
+  // Aspect will replace: entire statement geoLocationManager.getCurrentLocation
+  // with MyCallAspect.replaceGet(this.request)
   geoLocationManager.getCurrentLocation(this.request).then((location: geoLocationManager.Location) => {
     this.longitude = location.longitude;
     this.latitude = location.latitude;
@@ -309,7 +303,7 @@ insertType: InsertType.CALL：指定切面插入类型为调用点。
 
   
 
-  #### API Promise.then回调函数替换
+  ### API Promise.then回调函数替换
 
   **场景描述**
 
@@ -361,7 +355,7 @@ insertType: InsertType.CALLBACK：指定切面插入类型为异步回调函数�
 
   
 
-  #### UI组件事件监听
+  ### UI组件事件监听
 
   **场景描述**
 
@@ -404,7 +398,7 @@ insertType: InsertType.EVENT_CALLBACK：指定切面插入类型为事件回调�
 
   
 
-  #### 总结
+  ## 总结
 
   本文主要介绍了开发者如何使用Aspect插件库，通过编写和注册切面类，实现不同场景下的字节码插桩。其核心在于根据不同场景的需要编写切面类、切面方法，并配置相应的装饰器入参。如需进一步了解如何使用Aspect插件库，可以参考以下文档：
 
@@ -412,11 +406,10 @@ insertType: InsertType.EVENT_CALLBACK：指定切面插入类型为事件回调�
 [装饰器使用指南](https://gitcode.com/CPF-ApplicationTPC/aspect/blob/master/docs/AnnotationGuide.md)
 - [常见问题](https://gitcode.com/CPF-ApplicationTPC/aspect/blob/master/docs/FAQ.md)
 - [获取切入点上下文信息](https://gitcode.com/CPF-ApplicationTPC/aspect/blob/master/docs/JoinPointGuide.md)
-- [从源码构建插件](https://gitcode.com/CPF-ApplicationTPC/aspect/blob/master/docs/BuildFromSource_win.md)
 
  
  
 
-#### 示例代码
+## 示例代码
 
 [基于Aspect插件库实现切面编程](https://gitcode.com/HarmonyOS_Samples/aspect/tree/master)

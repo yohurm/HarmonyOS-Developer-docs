@@ -1,6 +1,6 @@
 # healthService (运动健康联动服务)(Lite)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-04 10:41:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/health-api-healthservice-lite
 **支持设备：** lite_wearable
@@ -10,7 +10,8 @@
 **起始版本：** 6.1.1(24)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** lite_wearable
 
@@ -20,7 +21,8 @@ import healthService from '@hms.health.service';
  
   
 
-#### SampleReal
+## SampleReal
+
 
 **支持设备：** lite_wearable
 
@@ -34,6 +36,7 @@ SampleReal<K extends Record<string, [healthStore.HealthValueType](https://develo
  
 **模型约束：** 此接口仅可在FA模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | dataType | healthStore.DataType | 否 | 否 | 实时融合数据类型。 |
@@ -44,7 +47,8 @@ SampleReal<K extends Record<string, [healthStore.HealthValueType](https://develo
  
   
 
-#### workout
+## workout
+
 
 **支持设备：** lite_wearable
 
@@ -58,7 +62,8 @@ SampleReal<K extends Record<string, [healthStore.HealthValueType](https://develo
  
   
 
-#### ConfigType
+### ConfigType
+
 
 **支持设备：** lite_wearable
 
@@ -72,6 +77,7 @@ type ConfigType = number | string | boolean
  
 **模型约束：** 此接口仅可在FA模型下使用。
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 表示值类型为数字，可取任意值。 |
@@ -81,7 +87,8 @@ type ConfigType = number | string | boolean
  
   
 
-#### DeviceState
+### DeviceState
+
 
 **支持设备：** lite_wearable
 
@@ -93,6 +100,7 @@ type ConfigType = number | string | boolean
  
 **模型约束：** 此接口仅可在FA模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | deviceId | string | 否 | 否 | 设备ID。 |
@@ -102,7 +110,8 @@ type ConfigType = number | string | boolean
  
   
 
-#### Goal
+### Goal
+
 
 **支持设备：** lite_wearable
 
@@ -114,6 +123,7 @@ type ConfigType = number | string | boolean
  
 **模型约束：** 此接口仅可在FA模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | number | 否 | 否 | 目标类型，取值参考：TargetType。 |
@@ -122,7 +132,8 @@ type ConfigType = number | string | boolean
  
   
 
-#### LinkageType
+### LinkageType
+
 
 **支持设备：** lite_wearable
 
@@ -134,6 +145,7 @@ type ConfigType = number | string | boolean
  
 **模型约束：** 此接口仅可在FA模型下使用。
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | COURSE_LINK | 0 | 课程联动。 |
@@ -142,7 +154,8 @@ type ConfigType = number | string | boolean
  
   
 
-#### StartCode
+### StartCode
+
 
 **支持设备：** lite_wearable
 
@@ -154,6 +167,7 @@ type ConfigType = number | string | boolean
  
 **模型约束：** 此接口仅可在FA模型下使用。
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SUCCESS | 0 | 联动开启成功。 |
@@ -164,7 +178,8 @@ type ConfigType = number | string | boolean
  
   
 
-#### StartResult
+### StartResult
+
 
 **支持设备：** lite_wearable
 
@@ -176,6 +191,7 @@ type ConfigType = number | string | boolean
  
 **模型约束：** 此接口仅可在FA模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | startCode | StartCode | 否 | 否 | 联动开启结果码。 |
@@ -184,7 +200,8 @@ type ConfigType = number | string | boolean
  
   
 
-#### TargetType
+### TargetType
+
 
 **支持设备：** lite_wearable
 
@@ -196,6 +213,7 @@ type ConfigType = number | string | boolean
  
 **模型约束：** 此接口仅可在FA模型下使用。
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NONE | 0 | 无目标。 |
@@ -207,7 +225,8 @@ type ConfigType = number | string | boolean
  
   
 
-#### WorkoutConfig
+### WorkoutConfig
+
 
 **支持设备：** lite_wearable
 
@@ -219,6 +238,7 @@ type ConfigType = number | string | boolean
  
 **模型约束：** 此接口仅可在FA模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | linkageType | LinkageType | 否 | 否 | 联动类型。 |
@@ -229,7 +249,8 @@ type ConfigType = number | string | boolean
  
   
 
-#### DynamicLibResult
+### DynamicLibResult
+
 
 **支持设备：** lite_wearable
 
@@ -241,6 +262,7 @@ type ConfigType = number | string | boolean
  
 **模型约束：** 此接口仅可在FA模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | operationCode | DynamicLibErrorCode | 否 | 否 | 加载算法库操作结果码。 |
@@ -248,7 +270,8 @@ type ConfigType = number | string | boolean
  
   
 
-#### DynamicLibErrorCode
+### DynamicLibErrorCode
+
 
 **支持设备：** lite_wearable
 
@@ -260,18 +283,20 @@ type ConfigType = number | string | boolean
  
 **模型约束：** 此接口仅可在FA模型下使用。
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | OPERATION_SUCCESS | 0 | 操作成功。 |
 | FILE_NOT_FOUND | 1 | 算法库文件未找到。 |
 | SERVICE_BUSY | 2 | 算法库文件已被加载。 |
 | OPERATION_FAILED | 3 | 操作失败。 |
-| SYSTEM_INTERNAL_ERROR | 4 | 未知错误。 |
+| SYSTEM_INTERNAL_ERROR | 4 | 系统内部错误。 |
  
  
   
 
-#### workout.config
+### workout.config
+
 
 **支持设备：** lite_wearable
 
@@ -287,6 +312,7 @@ config(workoutConfig: WorkoutConfig): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | workoutConfig | WorkoutConfig | 是 | 联动配置项。 |
@@ -296,10 +322,11 @@ config(workoutConfig: WorkoutConfig): void
  
 以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. Please ensure that the app has applied for the Health Service Kit, selected the product type, enabled the corresponding data read and write permissions, and the user has completed authorization. |
-| 1009104003 | Illegal command. Called when workout not in stoped or idle state. |
+| 1009104003 | Illegal command. Called when workout not in stopped or idle state. |
 | 1009104999 | System internal error. |
  
  
@@ -322,7 +349,8 @@ try {
  
   
 
-#### workout.start
+### workout.start
+
 
 **支持设备：** lite_wearable
 
@@ -342,6 +370,7 @@ start(): StartResult
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | StartResult | 返回联动开启结果。 |
@@ -351,6 +380,7 @@ start(): StartResult
  
 以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. Please ensure that the app has applied for the Health Service Kit, selected the product type, enabled the corresponding data read and write permissions, and the user has completed authorization. |
@@ -376,7 +406,8 @@ try {
  
   
 
-#### workout.pause
+### workout.pause
+
 
 **支持设备：** lite_wearable
 
@@ -398,11 +429,12 @@ pause(): void
  
 以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. Please ensure that the app has applied for the Health Service Kit, selected the product type, enabled the corresponding data read and write permissions, and the user has completed authorization. |
 | 1009104001 | Sport service busy. Workout is already started by other application. |
-| 1009104003 | Illegal command. Called when workout in ready, paused or stoped state. |
+| 1009104003 | Illegal command. Called when workout in ready, paused or stopped state. |
 | 1009104999 | System internal error. |
  
  
@@ -420,7 +452,8 @@ try {
  
   
 
-#### workout.resume
+### workout.resume
+
 
 **支持设备：** lite_wearable
 
@@ -442,6 +475,7 @@ resume(): void
  
 以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. Please ensure that the app has applied for the Health Service Kit, selected the product type, enabled the corresponding data read and write permissions, and the user has completed authorization. |
@@ -464,7 +498,8 @@ try {
  
   
 
-#### workout.stop
+### workout.stop
+
 
 **支持设备：** lite_wearable
 
@@ -486,6 +521,7 @@ stop(): void
  
 以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. Please ensure that the app has applied for the Health Service Kit, selected the product type, enabled the corresponding data read and write permissions, and the user has completed authorization. |
@@ -507,7 +543,8 @@ try {
  
   
 
-#### workout.onData(deprecated)
+### workout.onData(deprecated)
+
 
 **支持设备：** lite_wearable
 
@@ -531,6 +568,7 @@ onData(dataType: undefined, listener: Callback<SampleReal[]>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dataType | undefined | 是 | 监听所有联动运动数据类型。 |
@@ -541,6 +579,7 @@ onData(dataType: undefined, listener: Callback<SampleReal[]>): void
  
 以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. Please ensure that the app has applied for the Health Service Kit, selected the product type, enabled the corresponding data read and write permissions, and the user has completed authorization. |
@@ -566,7 +605,8 @@ try {
  
   
 
-#### workout.onData
+### workout.onData
+
 
 **支持设备：** lite_wearable
 
@@ -586,6 +626,7 @@ onData(listener: Callback<SampleReal[]>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | listener | Callback<SampleReal[]> | 是 | 回调函数，返回联动运动数据。 |
@@ -595,6 +636,7 @@ onData(listener: Callback<SampleReal[]>): void
  
 以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. For the app, ensure that you have requested Health Service Kit, selected the product type, and enabled required data read and write permissions, and that the user has granted authorization. |
@@ -620,7 +662,8 @@ try {
  
   
 
-#### workout.offData(deprecated)
+### workout.offData(deprecated)
+
 
 **支持设备：** lite_wearable
 
@@ -644,9 +687,10 @@ offData(dataType: undefined, listener?: Callback<SampleReal[]>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| dataType | undefined | 是 | 监听所有联动运动数据类型。 |
+| dataType | undefined | 是 | 取消监听所有联动运动数据类型。 |
 | listener | Callback<SampleReal[]> | 否 | 需要取消订阅的回调函数，若不填写则代表取消所有监听。 |
  
  
@@ -654,6 +698,7 @@ offData(dataType: undefined, listener?: Callback<SampleReal[]>): void
  
 以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. Please ensure that the app has applied for the Health Service Kit, selected the product type, enabled the corresponding data read and write permissions, and the user has completed authorization. |
@@ -678,7 +723,8 @@ try {
  
   
 
-#### workout.offData
+### workout.offData
+
 
 **支持设备：** lite_wearable
 
@@ -698,6 +744,7 @@ offData(listener?: Callback<SampleReal[]>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | listener | Callback<SampleReal[]> | 否 | 需要取消订阅的回调函数，若不填写则代表取消所有监听。 |
@@ -707,6 +754,7 @@ offData(listener?: Callback<SampleReal[]>): void
  
 以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. For the app, ensure that you have requested Health Service Kit, selected the product type, and enabled required data read and write permissions, and that the user has granted authorization. |
@@ -731,7 +779,8 @@ try {
  
   
 
-#### workout.sendData
+### workout.sendData
+
 
 **支持设备：** lite_wearable
 
@@ -751,6 +800,7 @@ sendData(sampleReal: SampleReal[]): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sampleReal | SampleReal[] | 是 | 融合运动数据。 |
@@ -760,6 +810,7 @@ sendData(sampleReal: SampleReal[]): void
  
 以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. Please ensure that the app has applied for the Health Service Kit, selected the product type, enabled the corresponding data read and write permissions, and the user has completed authorization. |
@@ -789,7 +840,8 @@ try {
  
   
 
-#### workout.load
+### workout.load
+
 
 **支持设备：** lite_wearable
 
@@ -805,6 +857,7 @@ load(path: string): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 算法库文件在代码工程中存放的路径，例如：common/dynamic_example.so。 |
@@ -814,6 +867,7 @@ load(path: string): void
  
 以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. Please ensure that the app has applied for the Health Service Kit, selected the product type, enabled the corresponding data read and write permissions, and the user has completed authorization. |
@@ -839,7 +893,8 @@ try {
  
   
 
-#### workout.load
+### workout.load
+
 
 **支持设备：** lite_wearable
 
@@ -855,6 +910,7 @@ load(path: string, callback: Callback<[DynamicLibResult](#dynamiclibresult)>): v
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 算法库文件在代码工程中存放的路径，例如：common/dynamic_example.so。 |
@@ -865,6 +921,7 @@ load(path: string, callback: Callback<[DynamicLibResult](#dynamiclibresult)>): v
  
 以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. Please ensure that the app has applied for the Health Service Kit, selected the product type, enabled the corresponding data read and write permissions, and the user has completed authorization. |
@@ -907,7 +964,8 @@ try {
  
   
 
-#### workout.unload
+### workout.unload
+
 
 **支持设备：** lite_wearable
 
@@ -923,6 +981,7 @@ unload(path: string): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 算法库文件在代码工程中存放的路径，例如：common/dynamic_example.so。 |
@@ -932,6 +991,7 @@ unload(path: string): void
  
 以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. Please ensure that the app has applied for the Health Service Kit, selected the product type, enabled the corresponding data read and write permissions, and the user has completed authorization. |
@@ -957,7 +1017,8 @@ try {
  
   
 
-#### workout.unload
+### workout.unload
+
 
 **支持设备：** lite_wearable
 
@@ -973,6 +1034,7 @@ unload(path: string, callback: Callback<[DynamicLibResult](#dynamiclibresult)>):
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 算法库文件在代码工程中存放的路径，例如：common/dynamic_example.so。 |
@@ -983,6 +1045,7 @@ unload(path: string, callback: Callback<[DynamicLibResult](#dynamiclibresult)>):
  
 以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. Please ensure that the app has applied for the Health Service Kit, selected the product type, enabled the corresponding data read and write permissions, and the user has completed authorization. |

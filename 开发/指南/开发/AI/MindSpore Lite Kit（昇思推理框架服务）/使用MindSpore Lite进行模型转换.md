@@ -1,25 +1,26 @@
 # 使用MindSpore Lite进行模型转换
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-lite-converter-guidelines
 
-#### 场景介绍
+## 场景介绍
 
 MindSpore Lite AI模型部署流程是：
- 1. 开发者首先将原始模型（如：ONNX、CAFFE等）用MindSpore Lite模型转换工具，生成后缀为.ms的模型文件。MindSpore Lite Kit所支持的ONNX算子，可查询[MindSpore Lite Kit算子支持列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-lite-supported-operators)，以确保模型转换成功。
+ 1. 开发者首先将原始模型（如：ONNX、CAFFE等）用MindSpore Lite模型转换工具，生成后缀为.ms的模型文件。MindSpore Lite Kit所支持的ONNX[算子](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-lite-term#operator算子)，可查询[MindSpore Lite Kit算子支持列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-lite-supported-operators)，以确保模型转换成功。
 2. 然后在代码中调用MindSpore Lite推理引擎接口，执行[模型推理](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-lite-guidelines)。
  
   
 
-#### 获取模型转换工具
+## 获取模型转换工具
 
 对于MindSpore Lite模型转换工具，有以下两种方式可以获取：
  
   
 
-#### 通过下载获取
+### 通过下载获取
  
+
 | 组件 | 硬件平台 | 操作系统 | 链接 | SHA-256 |
 | --- | --- | --- | --- | --- |
 | 端侧推理和训练benchmark工具、converter工具、cropper工具 | CPU | Linux-x86_64 | mindspore-lite-2.7.0-linux-x64.tar.gz | 8bb1097100c9fec12675670ba2d4264a2cd6da3a9be093eb56631d00fc0c455b |
@@ -27,10 +28,10 @@ MindSpore Lite AI模型部署流程是：
  
   
 
-#### 通过源码编译
+### 通过源码编译
 
 > [!WARNING]
-> 由于支持转换PyTorch模型的编译选项默认关闭，因此下载的安装包不支持转换PyTorch模型，只能通过源码编译方式获取。 模型中有transpose与convolution算子融合，需要通过源码编译方式获取。否则可能会发生类似警告：node infer shape failed, node is Default/Conv2DFusion-xxx。 当指定NPU后端进行推理时，需要自定义 关闭clip算子融合 ，模型转换工具需要通过源码编译方式获取。否则可能会发生类似报错：BuildKirinNPUModel# Create full model kernel failed。
+> 由于支持转换PyTorch模型的编译选项默认关闭，因此下载的安装包不支持转换PyTorch模型，只能通过源码编译方式获取。 模型中有transpose与convolution 算子融合 ，需要通过源码编译方式获取。否则可能会发生类似警告：node infer shape failed, node is Default/Conv2DFusion-xxx。 当指定 NPU 后端进行推理时，需要自定义 关闭clip算子融合 ，模型转换工具需要通过源码编译方式获取。否则可能会发生类似报错：BuildKirinNPUModel# Create full model kernel failed。
 
 1. 编译环境要求如下：
 
@@ -59,7 +60,7 @@ bash build.sh -I x86_64 -j 8
 
   
 
-  #### 配置环境变量
+  ## 配置环境变量
 
   获取到模型转换工具之后，还需要将转换工具需要的动态链接库加入环境变量LD_LIBRARY_PATH。
 
@@ -71,25 +72,38 @@ export LD_LIBRARY_PATH=${PACKAGE_PATH}/tools/converter/lib:${LD_LIBRARY_PATH}
 
   
 
-  #### 参数说明
+  ## 参数说明
 
   MindSpore Lite模型转换工具提供了多种参数设置，用户可根据需要来选择使用。此外，用户可输入./converter_lite --help获取实时帮助。
 
   下面提供详细的参数说明。
 
 | 参数 | 是否必选 | 参数说明 | 取值范围 |
+
 | --- | --- | --- | --- |
+
 | --help | 否 | 打印全部帮助信息。 | - |
+
 | --fmk | 是 | 输入模型的原始格式。只有在MS模型转换为Micro代码场景时，才支持设置为MSLITE。 | MINDIR、CAFFE、TFLITE、TF、ONNX、PYTORCH、MSLITE |
+
 | --modelFile | 是 | 输入模型的路径。 | - |
+
 | --outputFile | 是 | 输出模型的路径，不需加后缀，可自动生成.ms后缀。 | - |
+
 | --weightFile | 转换CAFFE模型时必选 | 输入模型权重文件的路径。 | - |
+
 | --configFile | 否 | 1）可作为训练后量化配置文件路径；2）可作为扩展功能配置文件路径。 | - |
+
 | --fp16 | 否 | 设定在模型序列化时是否需要将float32数据格式的权重存储为float16数据格式。 默认值为off。 | on、off |
-| --inputShape | 否 | 设定模型输入的维度，输入维度的顺序和原始模型保持一致。对某些特定的模型可以进一步优化模型结构，但是转化后的模型将可能失去动态shape的特性。输入名和shape之间用:分割，多个输入用;分割，同时加上双引号""。例如配置为"inTensorName_1: 1,32,32,4;inTensorName_2:1,64,64,4;"。 | - |
+
+| --inputShape | 否 | 设定模型输入的维度，输入维度的顺序和原始模型保持一致。对某些特定的模型可以进一步优化模型结构，但是转换后的模型将可能失去动态shape的特性。输入名和shape之间用:分割，多个输入用;分割，同时加上双引号""。例如配置为"inTensorName_1: 1,32,32,4;inTensorName_2:1,64,64,4;"。 | - |
+
 | --inputDataFormat | 否 | 设定导出模型的输入format，只对四维输入有效。 默认值为NHWC。 | NHWC、NCHW |
+
 | --inputDataType | 否 | 设定量化模型输入tensor的数据类型。仅当模型输入tensor的量化参数（scale和zero point）配置时有效。默认与原始模型输入tensor的数据类型保持一致。 默认值为DEFAULT。 | FLOAT32、INT8、UINT8、DEFAULT |
+
 | --outputDataType | 否 | 设定量化模型输出tensor的数据类型。仅当模型输出tensor的量化参数（scale和zero point）配置时有效。默认与原始模型输出tensor的数据类型保持一致。 默认值为DEFAULT。 | FLOAT32、INT8、UINT8、DEFAULT |
+
 | --outputDataFormat | 否 | 设定导出模型的输出format，只对四维输出有效。 默认值为NHWC。 | NHWC、NCHW |
 
   
@@ -99,7 +113,7 @@ export LD_LIBRARY_PATH=${PACKAGE_PATH}/tools/converter/lib:${LD_LIBRARY_PATH}
 
   
 
-  #### 使用示例
+  ## 使用示例
 
   以CAFFE模型LeNet为例，执行转换命令。
 
@@ -115,19 +129,19 @@ export LD_LIBRARY_PATH=${PACKAGE_PATH}/tools/converter/lib:${LD_LIBRARY_PATH}
 ```bash
 CONVERT RESULT SUCCESS:0
 ```
- 这表示已经成功将CAFFE模型转化为MindSpore Lite模型，获得新文件lenet.ms。
+ 这表示已经成功将CAFFE模型转换为MindSpore Lite模型，获得新文件lenet.ms。
 
   
 
-  #### 离线模型转换（可选）
+  ## 离线模型转换（可选）
 
-  当部署场景对加载时延要求严格时，开发者希望进一步降低加载时延，可采用另一种部署方案，即基于离线模型的推理。离线模型是使用硬件厂商的离线模型转换工具转换得到的模型，由硬件厂商负责解析和推理。
+  当部署场景对加载时延要求严格时，开发者希望进一步降低加载时延，可采用另一种部署方案，即基于[离线模型](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-lite-term#offline-model离线模型)的推理。离线模型是使用硬件厂商的离线模型转换工具转换得到的模型，由硬件厂商负责解析和推理。
 
   执行推理时，MindSpore Lite会直接将离线模型传给接入NNRt的 AI 硬件，无需在线构图即可加载，大幅降低模型加载时延，并且可携带额外的硬件特定信息，协助AI硬件推理。
 
   
 
-  #### 约束与限制
+  ### 约束与限制
 
   
 离线模型仅支持在NNRt后端推理，硬件厂商需接入NNRt且支持离线模型推理。
@@ -138,7 +152,7 @@ CONVERT RESULT SUCCESS:0
  
   
 
-#### 扩展配置文件说明
+### 扩展配置文件说明
 
 扩展配置样例如下：
  
@@ -176,11 +190,11 @@ extended_parameters=key_foo:value_foo;key_bar:value_bar
  
   
 
-#### 附录
+## 附录
 
   
 
-#### 关闭指定算子融合
+### 关闭指定算子融合
 
 如果用户需要关闭指定算子融合功能，可新建配置文件，如converter.cfg，配置文件内容如下：
  

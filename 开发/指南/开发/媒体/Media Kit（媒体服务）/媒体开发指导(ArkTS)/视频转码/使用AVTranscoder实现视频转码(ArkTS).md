@@ -1,6 +1,6 @@
-# 使用AVTranscoder实现音视频转码(ArkTS)
+# 使用AVTranscoder实现视频转码(ArkTS)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-avtranscoder-for-transcodering
 
@@ -9,7 +9,7 @@
 本开发指导将以“开始转码-暂停转码-恢复转码-转码完成”的一次流程为示例，向开发者讲解AVTranscoder视频转码相关功能。
 
 
-#### 开发步骤及注意事项
+## 开发步骤及注意事项
 
 详细的API说明请参考[AVTranscoder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avtranscoder)。
 
@@ -30,9 +30,13 @@ this.avTranscoder = await media.createAVTranscoder();
 2. 设置业务需要的监听事件，监听状态变化及错误上报。
 
 | 事件类型 | 说明 |
+
 | --- | --- |
+
 | complete | 必要事件，监听AVTranscoder的转码完成。 |
+
 | error | 必要事件，监听AVTranscoder的错误信息。 |
+
 | progressUpdate | 监听AVTranscoder的进度。 |
 
   
@@ -191,7 +195,7 @@ async test() {
 }
 ```
 
-5. 配置音视频转码参数，调用prepare()接口。
+5. 配置视频转码参数，调用prepare()接口。
 
   
 > [!WARNING]
@@ -297,7 +301,7 @@ async releaseTranscoderingProcess() {
 }
 ```
 
-10. 完整的【开始转码-暂停转码-恢复转码-转码完成】流程。
+10. 完整的【开始转码-暂停转码-恢复转码-转码完成】流程
 
   
 ```text
@@ -311,7 +315,7 @@ async avTranscoderDemo() {
 
 
 
-#### 运行示例工程
+## 运行示例工程
 
 参考以下示例，完成“开始转码-暂停转码-恢复转码-转码完成”的完整流程。
 1. 新建工程，下载[完整示例工程](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/Media/AVTranscoder/AVTranscoderArkTS)，并将示例工程的资源复制到对应目录。       

@@ -1,18 +1,19 @@
 # Camera错误码
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!TIP]
 > 以下仅介绍本模块特有错误码，通用错误码请参考 通用错误码说明文档 。
 
 
 
-#### 7400101 无效入参
+## 7400101 无效入参
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -32,9 +33,10 @@ Parameter missing or parameter type incorrect.
 
 
 
-#### 7400102 非法操作
+## 7400102 非法操作
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -54,9 +56,10 @@ Operation not allowed.
 
 
 
-#### 7400103 会话未配置
+## 7400103 会话未配置
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -76,9 +79,10 @@ Session not config.
 
 
 
-#### 7400104 会话未运行
+## 7400104 会话未运行
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -98,9 +102,10 @@ Session not running.
 
 
 
-#### 7400105 会话配置被锁定
+## 7400105 会话配置被锁定
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -120,7 +125,10 @@ Session config locked.
 
 
 
-#### 7400106 设备配置被锁定
+## 7400106 设备配置被锁定
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -140,9 +148,10 @@ Device setting locked.
 
 
 
-#### 7400107 相机冲突
+## 7400107 相机冲突
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -162,9 +171,10 @@ Can not use camera cause of conflict.
 
 
 
-#### 7400108 安全策略无法使用相机
+## 7400108 安全策略无法使用相机
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -184,7 +194,10 @@ Camera disabled cause of security reason.
 
 
 
-#### 7400109 相机设备被抢占
+## 7400109 相机设备被抢占
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -204,9 +217,10 @@ Can not use camera cause of preempted.
 
 
 
-#### 7400110 与当前配置存在冲突
+## 7400110 与当前配置存在冲突
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -226,9 +240,10 @@ Unresolved conflicts with current configurations.
 
 
 
-#### 7400201 相机服务异常
+## 7400201 相机服务异常
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 

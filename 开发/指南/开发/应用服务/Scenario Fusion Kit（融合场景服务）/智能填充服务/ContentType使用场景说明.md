@@ -1,11 +1,12 @@
 # ContentType使用场景说明
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusion-intelligentfilling-appendix
 
 华为账号昵称
   
+
 | 名称 | 说明 |
 | --- | --- |
 | NICKNAME | 昵称，如“Vivian”。 |
@@ -13,6 +14,7 @@
  
 用户姓名
   
+
 | 名称 | 说明 |
 | --- | --- |
 | PERSON_FULL_NAME | 姓名，如“张三”。 |
@@ -26,14 +28,16 @@
  
 联系方式
   
+
 | 名称 | 说明 |
 | --- | --- |
-| PHONE_NUMBER | 手机号，如“188******88”。 |
+| PHONE_NUMBER | 手机号，如“188********”。 |
 | EMAIL_ADDRESS | 邮箱地址，如“a****t@huawei.com”。 |
  
  
 身份信息
   
+
 | 名称 | 说明 |
 | --- | --- |
 | ID_CARD_NUMBER | 身份证号，如“3201***********123”。 |
@@ -45,6 +49,7 @@
  
 护照信息
   
+
 | 名称 | 说明 |
 | --- | --- |
 | COUNTRY_ADDRESS | 国籍，如“中国”。 |
@@ -59,6 +64,7 @@
  
 车牌信息
   
+
 | 名称 | 说明 |
 | --- | --- |
 | LICENSE_PLATE | 车牌号，如“粤A*****1”。 |
@@ -66,6 +72,7 @@
  
 地址信息
   
+
 | 名称 | 说明 |
 | --- | --- |
 | FULL_STREET_ADDRESS | 带街道详细地址，如“雨花街道玉兰路98号”。 |
@@ -76,6 +83,7 @@
  
 发票抬头信息
   
+
 | 名称 | 说明 |
 | --- | --- |
 | ORGANIZATION | 名称，如“深圳市xx公司”。 |

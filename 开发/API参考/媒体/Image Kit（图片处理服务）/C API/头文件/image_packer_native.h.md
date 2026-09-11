@@ -1,13 +1,14 @@
 # image_packer_native.h
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-packer-native-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 图片编码API。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_ImagePackerNative | OH_ImagePackerNative | ImagePacker结构体类型，用于执行ImagePacker相关操作。 |
@@ -42,10 +46,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | IMAGE_PACKER_DYNAMIC_RANGE | IMAGE_PACKER_DYNAMIC_RANGE | 编码指定动态范围。 |
@@ -53,10 +59,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | Image_ErrorCode OH_PackingOptions_Create(OH_PackingOptions **options) | 创建PackingOptions结构体的指针。 |
@@ -95,15 +103,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### IMAGE_PACKER_DYNAMIC_RANGE
+### IMAGE_PACKER_DYNAMIC_RANGE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum IMAGE_PACKER_DYNAMIC_RANGE
@@ -115,6 +125,7 @@ enum IMAGE_PACKER_DYNAMIC_RANGE
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | IMAGE_PACKER_DYNAMIC_RANGE_AUTO = 0 | 编码动态范围根据图像信息自适应。 |
@@ -123,15 +134,17 @@ enum IMAGE_PACKER_DYNAMIC_RANGE
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_PackingOptions_Create()
+### OH_PackingOptions_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PackingOptions_Create(OH_PackingOptions **options)
@@ -149,6 +162,7 @@ Image_ErrorCode OH_PackingOptions_Create(OH_PackingOptions **options)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PackingOptions **options | 用于操作的PackingOptions指针。 |
@@ -156,6 +170,7 @@ Image_ErrorCode OH_PackingOptions_Create(OH_PackingOptions **options)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -163,9 +178,10 @@ Image_ErrorCode OH_PackingOptions_Create(OH_PackingOptions **options)
  
   
 
-#### OH_PackingOptions_GetMimeType()
+### OH_PackingOptions_GetMimeType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PackingOptions_GetMimeType(OH_PackingOptions *options,Image_MimeType *format)
@@ -183,6 +199,7 @@ Image_ErrorCode OH_PackingOptions_GetMimeType(OH_PackingOptions *options,Image_M
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PackingOptions *options | 被操作的OH_PackingOptions指针。 |
@@ -191,6 +208,7 @@ Image_ErrorCode OH_PackingOptions_GetMimeType(OH_PackingOptions *options,Image_M
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -198,9 +216,10 @@ Image_ErrorCode OH_PackingOptions_GetMimeType(OH_PackingOptions *options,Image_M
  
   
 
-#### OH_PackingOptions_GetMimeTypeWithNull()
+### OH_PackingOptions_GetMimeTypeWithNull()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PackingOptions_GetMimeTypeWithNull(OH_PackingOptions *options,Image_MimeType *format)
@@ -220,6 +239,7 @@ Image_ErrorCode OH_PackingOptions_GetMimeTypeWithNull(OH_PackingOptions *options
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PackingOptions *options | 编码参数指针。 |
@@ -228,6 +248,7 @@ Image_ErrorCode OH_PackingOptions_GetMimeTypeWithNull(OH_PackingOptions *options
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_PACKER_INVALID_PARAMETER：options或format为空。 |
@@ -235,9 +256,10 @@ Image_ErrorCode OH_PackingOptions_GetMimeTypeWithNull(OH_PackingOptions *options
  
   
 
-#### OH_PackingOptions_SetMimeType()
+### OH_PackingOptions_SetMimeType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PackingOptions_SetMimeType(OH_PackingOptions *options,Image_MimeType *format)
@@ -257,6 +279,7 @@ Image_ErrorCode OH_PackingOptions_SetMimeType(OH_PackingOptions *options,Image_M
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PackingOptions *options | 被操作的OH_PackingOptions指针。 |
@@ -265,6 +288,7 @@ Image_ErrorCode OH_PackingOptions_SetMimeType(OH_PackingOptions *options,Image_M
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -272,9 +296,10 @@ Image_ErrorCode OH_PackingOptions_SetMimeType(OH_PackingOptions *options,Image_M
  
   
 
-#### OH_PackingOptions_GetQuality()
+### OH_PackingOptions_GetQuality()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PackingOptions_GetQuality(OH_PackingOptions *options,uint32_t *quality)
@@ -290,6 +315,7 @@ Image_ErrorCode OH_PackingOptions_GetQuality(OH_PackingOptions *options,uint32_t
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PackingOptions *options | 被操作的OH_PackingOptions指针。 |
@@ -298,6 +324,7 @@ Image_ErrorCode OH_PackingOptions_GetQuality(OH_PackingOptions *options,uint32_t
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -305,9 +332,10 @@ Image_ErrorCode OH_PackingOptions_GetQuality(OH_PackingOptions *options,uint32_t
  
   
 
-#### OH_PackingOptions_SetQuality()
+### OH_PackingOptions_SetQuality()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PackingOptions_SetQuality(OH_PackingOptions *options,uint32_t quality)
@@ -323,6 +351,7 @@ Image_ErrorCode OH_PackingOptions_SetQuality(OH_PackingOptions *options,uint32_t
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PackingOptions *options | 被操作的OH_PackingOptions指针。 |
@@ -331,6 +360,7 @@ Image_ErrorCode OH_PackingOptions_SetQuality(OH_PackingOptions *options,uint32_t
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -338,9 +368,10 @@ Image_ErrorCode OH_PackingOptions_SetQuality(OH_PackingOptions *options,uint32_t
  
   
 
-#### OH_PackingOptions_GetNeedsPackProperties()
+### OH_PackingOptions_GetNeedsPackProperties()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PackingOptions_GetNeedsPackProperties(OH_PackingOptions *options,bool *needsPackProperties)
@@ -356,6 +387,7 @@ Image_ErrorCode OH_PackingOptions_GetNeedsPackProperties(OH_PackingOptions *opti
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PackingOptions *options | 被操作的OH_PackingOptions指针。 |
@@ -364,6 +396,7 @@ Image_ErrorCode OH_PackingOptions_GetNeedsPackProperties(OH_PackingOptions *opti
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -371,9 +404,10 @@ Image_ErrorCode OH_PackingOptions_GetNeedsPackProperties(OH_PackingOptions *opti
  
   
 
-#### OH_PackingOptions_SetNeedsPackProperties()
+### OH_PackingOptions_SetNeedsPackProperties()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PackingOptions_SetNeedsPackProperties(OH_PackingOptions *options,bool needsPackProperties)
@@ -391,6 +425,7 @@ Image_ErrorCode OH_PackingOptions_SetNeedsPackProperties(OH_PackingOptions *opti
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PackingOptions *options | 被操作的OH_PackingOptions指针。 |
@@ -399,6 +434,7 @@ Image_ErrorCode OH_PackingOptions_SetNeedsPackProperties(OH_PackingOptions *opti
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -406,9 +442,10 @@ Image_ErrorCode OH_PackingOptions_SetNeedsPackProperties(OH_PackingOptions *opti
  
   
 
-#### OH_PackingOptions_GetDesiredDynamicRange()
+### OH_PackingOptions_GetDesiredDynamicRange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PackingOptions_GetDesiredDynamicRange(OH_PackingOptions *options, int32_t* desiredDynamicRange)
@@ -424,6 +461,7 @@ Image_ErrorCode OH_PackingOptions_GetDesiredDynamicRange(OH_PackingOptions *opti
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PackingOptions *options | 被操作的OH_PackingOptions指针。 |
@@ -432,6 +470,7 @@ Image_ErrorCode OH_PackingOptions_GetDesiredDynamicRange(OH_PackingOptions *opti
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -439,9 +478,10 @@ Image_ErrorCode OH_PackingOptions_GetDesiredDynamicRange(OH_PackingOptions *opti
  
   
 
-#### OH_PackingOptions_SetDesiredDynamicRange()
+### OH_PackingOptions_SetDesiredDynamicRange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PackingOptions_SetDesiredDynamicRange(OH_PackingOptions *options, int32_t desiredDynamicRange)
@@ -457,6 +497,7 @@ Image_ErrorCode OH_PackingOptions_SetDesiredDynamicRange(OH_PackingOptions *opti
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PackingOptions *options | 被操作的OH_PackingOptions指针。 |
@@ -465,6 +506,7 @@ Image_ErrorCode OH_PackingOptions_SetDesiredDynamicRange(OH_PackingOptions *opti
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -472,9 +514,10 @@ Image_ErrorCode OH_PackingOptions_SetDesiredDynamicRange(OH_PackingOptions *opti
  
   
 
-#### OH_PackingOptions_Release()
+### OH_PackingOptions_Release()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PackingOptions_Release(OH_PackingOptions *options)
@@ -492,6 +535,7 @@ Image_ErrorCode OH_PackingOptions_Release(OH_PackingOptions *options)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PackingOptions *options | 被操作的OH_PackingOptions指针。 |
@@ -499,6 +543,7 @@ Image_ErrorCode OH_PackingOptions_Release(OH_PackingOptions *options)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -506,9 +551,10 @@ Image_ErrorCode OH_PackingOptions_Release(OH_PackingOptions *options)
  
   
 
-#### OH_PackingOptionsForSequence_Create()
+### OH_PackingOptionsForSequence_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PackingOptionsForSequence_Create(OH_PackingOptionsForSequence **options)
@@ -526,6 +572,7 @@ Image_ErrorCode OH_PackingOptionsForSequence_Create(OH_PackingOptionsForSequence
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PackingOptionsForSequence **options | 用于操作的OH_PackingOptionsForSequence指针。 |
@@ -533,6 +580,7 @@ Image_ErrorCode OH_PackingOptionsForSequence_Create(OH_PackingOptionsForSequence
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -540,9 +588,10 @@ Image_ErrorCode OH_PackingOptionsForSequence_Create(OH_PackingOptionsForSequence
  
   
 
-#### OH_PackingOptionsForSequence_SetFrameCount()
+### OH_PackingOptionsForSequence_SetFrameCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PackingOptionsForSequence_SetFrameCount(OH_PackingOptionsForSequence *options,uint32_t frameCount)
@@ -558,6 +607,7 @@ Image_ErrorCode OH_PackingOptionsForSequence_SetFrameCount(OH_PackingOptionsForS
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PackingOptionsForSequence *options | 用于操作的OH_PackingOptionsForSequence指针。 |
@@ -566,6 +616,7 @@ Image_ErrorCode OH_PackingOptionsForSequence_SetFrameCount(OH_PackingOptionsForS
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -573,9 +624,10 @@ Image_ErrorCode OH_PackingOptionsForSequence_SetFrameCount(OH_PackingOptionsForS
  
   
 
-#### OH_PackingOptionsForSequence_GetFrameCount()
+### OH_PackingOptionsForSequence_GetFrameCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PackingOptionsForSequence_GetFrameCount(OH_PackingOptionsForSequence *options,uint32_t *frameCount)
@@ -591,6 +643,7 @@ Image_ErrorCode OH_PackingOptionsForSequence_GetFrameCount(OH_PackingOptionsForS
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PackingOptionsForSequence *options | 用于操作的OH_PackingOptionsForSequence指针。 |
@@ -599,6 +652,7 @@ Image_ErrorCode OH_PackingOptionsForSequence_GetFrameCount(OH_PackingOptionsForS
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -606,9 +660,10 @@ Image_ErrorCode OH_PackingOptionsForSequence_GetFrameCount(OH_PackingOptionsForS
  
   
 
-#### OH_PackingOptionsForSequence_SetDelayTimeList()
+### OH_PackingOptionsForSequence_SetDelayTimeList()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PackingOptionsForSequence_SetDelayTimeList(OH_PackingOptionsForSequence *options,int32_t *delayTimeList, size_t delayTimeListLength)
@@ -626,6 +681,7 @@ Image_ErrorCode OH_PackingOptionsForSequence_SetDelayTimeList(OH_PackingOptionsF
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PackingOptionsForSequence *options | 用于操作的OH_PackingOptionsForSequence指针。 |
@@ -635,6 +691,7 @@ Image_ErrorCode OH_PackingOptionsForSequence_SetDelayTimeList(OH_PackingOptionsF
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -642,9 +699,10 @@ Image_ErrorCode OH_PackingOptionsForSequence_SetDelayTimeList(OH_PackingOptionsF
  
   
 
-#### OH_PackingOptionsForSequence_GetDelayTimeList()
+### OH_PackingOptionsForSequence_GetDelayTimeList()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PackingOptionsForSequence_GetDelayTimeList(OH_PackingOptionsForSequence *options,int32_t *delayTimeList, size_t delayTimeListLength)
@@ -660,6 +718,7 @@ Image_ErrorCode OH_PackingOptionsForSequence_GetDelayTimeList(OH_PackingOptionsF
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PackingOptionsForSequence *options | 用于操作的OH_PackingOptionsForSequence指针。 |
@@ -669,6 +728,7 @@ Image_ErrorCode OH_PackingOptionsForSequence_GetDelayTimeList(OH_PackingOptionsF
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -676,9 +736,10 @@ Image_ErrorCode OH_PackingOptionsForSequence_GetDelayTimeList(OH_PackingOptionsF
  
   
 
-#### OH_PackingOptionsForSequence_SetDisposalTypes()
+### OH_PackingOptionsForSequence_SetDisposalTypes()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PackingOptionsForSequence_SetDisposalTypes(OH_PackingOptionsForSequence *options,uint32_t *disposalTypes, size_t disposalTypesLength)
@@ -696,6 +757,7 @@ Image_ErrorCode OH_PackingOptionsForSequence_SetDisposalTypes(OH_PackingOptionsF
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PackingOptionsForSequence *options | 用于操作的OH_PackingOptionsForSequence指针。 |
@@ -705,6 +767,7 @@ Image_ErrorCode OH_PackingOptionsForSequence_SetDisposalTypes(OH_PackingOptionsF
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -712,9 +775,10 @@ Image_ErrorCode OH_PackingOptionsForSequence_SetDisposalTypes(OH_PackingOptionsF
  
   
 
-#### OH_PackingOptionsForSequence_GetDisposalTypes()
+### OH_PackingOptionsForSequence_GetDisposalTypes()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PackingOptionsForSequence_GetDisposalTypes(OH_PackingOptionsForSequence *options,uint32_t *disposalTypes, size_t disposalTypesLength)
@@ -730,6 +794,7 @@ Image_ErrorCode OH_PackingOptionsForSequence_GetDisposalTypes(OH_PackingOptionsF
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PackingOptionsForSequence *options | 用于操作的OH_PackingOptionsForSequence指针。 |
@@ -739,6 +804,7 @@ Image_ErrorCode OH_PackingOptionsForSequence_GetDisposalTypes(OH_PackingOptionsF
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -746,9 +812,10 @@ Image_ErrorCode OH_PackingOptionsForSequence_GetDisposalTypes(OH_PackingOptionsF
  
   
 
-#### OH_PackingOptionsForSequence_SetLoopCount()
+### OH_PackingOptionsForSequence_SetLoopCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PackingOptionsForSequence_SetLoopCount(OH_PackingOptionsForSequence *options, uint32_t loopCount)
@@ -764,6 +831,7 @@ Image_ErrorCode OH_PackingOptionsForSequence_SetLoopCount(OH_PackingOptionsForSe
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PackingOptionsForSequence *options | 用于操作的OH_PackingOptionsForSequence指针。 |
@@ -772,6 +840,7 @@ Image_ErrorCode OH_PackingOptionsForSequence_SetLoopCount(OH_PackingOptionsForSe
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -779,9 +848,10 @@ Image_ErrorCode OH_PackingOptionsForSequence_SetLoopCount(OH_PackingOptionsForSe
  
   
 
-#### OH_PackingOptionsForSequence_GetLoopCount()
+### OH_PackingOptionsForSequence_GetLoopCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PackingOptionsForSequence_GetLoopCount(OH_PackingOptionsForSequence *options, uint32_t *loopCount)
@@ -797,6 +867,7 @@ Image_ErrorCode OH_PackingOptionsForSequence_GetLoopCount(OH_PackingOptionsForSe
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PackingOptionsForSequence *options | 用于操作的OH_PackingOptionsForSequence指针。 |
@@ -805,6 +876,7 @@ Image_ErrorCode OH_PackingOptionsForSequence_GetLoopCount(OH_PackingOptionsForSe
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -812,9 +884,10 @@ Image_ErrorCode OH_PackingOptionsForSequence_GetLoopCount(OH_PackingOptionsForSe
  
   
 
-#### OH_PackingOptionsForSequence_Release()
+### OH_PackingOptionsForSequence_Release()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PackingOptionsForSequence_Release(OH_PackingOptionsForSequence *options)
@@ -832,6 +905,7 @@ Image_ErrorCode OH_PackingOptionsForSequence_Release(OH_PackingOptionsForSequenc
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PackingOptionsForSequence *options | 用于操作的OH_PackingOptionsForSequence指针。 |
@@ -839,6 +913,7 @@ Image_ErrorCode OH_PackingOptionsForSequence_Release(OH_PackingOptionsForSequenc
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -846,9 +921,10 @@ Image_ErrorCode OH_PackingOptionsForSequence_Release(OH_PackingOptionsForSequenc
  
   
 
-#### OH_ImagePackerNative_Create()
+### OH_ImagePackerNative_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImagePackerNative_Create(OH_ImagePackerNative **imagePacker)
@@ -868,6 +944,7 @@ Image_ErrorCode OH_ImagePackerNative_Create(OH_ImagePackerNative **imagePacker)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImagePackerNative **imagePacker | 被操作的OH_ImagePackerNative指针。 |
@@ -875,6 +952,7 @@ Image_ErrorCode OH_ImagePackerNative_Create(OH_ImagePackerNative **imagePacker)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -882,9 +960,10 @@ Image_ErrorCode OH_ImagePackerNative_Create(OH_ImagePackerNative **imagePacker)
  
   
 
-#### OH_ImagePackerNative_PackToDataFromImageSource()
+### OH_ImagePackerNative_PackToDataFromImageSource()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImagePackerNative_PackToDataFromImageSource(OH_ImagePackerNative *imagePacker,OH_PackingOptions *options, OH_ImageSourceNative *imageSource, uint8_t *outData, size_t *size)
@@ -904,6 +983,7 @@ Image_ErrorCode OH_ImagePackerNative_PackToDataFromImageSource(OH_ImagePackerNat
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImagePackerNative *imagePacker | 被操作的OH_ImagePackerNative指针。 |
@@ -915,6 +995,7 @@ Image_ErrorCode OH_ImagePackerNative_PackToDataFromImageSource(OH_ImagePackerNat
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 IMAGE_DECODE_FAILED：解码失败。 IMAGE_ALLOC_FAILED：申请内存失败。 IMAGE_TOO_LARGE：数据或图片过大。 IMAGE_UNKNOWN_ERROR：未知错误。 |
@@ -922,9 +1003,10 @@ Image_ErrorCode OH_ImagePackerNative_PackToDataFromImageSource(OH_ImagePackerNat
  
   
 
-#### OH_ImagePackerNative_PackToDataFromPixelmap()
+### OH_ImagePackerNative_PackToDataFromPixelmap()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImagePackerNative_PackToDataFromPixelmap(OH_ImagePackerNative *imagePacker,OH_PackingOptions *options, OH_PixelmapNative *pixelmap, uint8_t *outData, size_t *size)
@@ -944,6 +1026,7 @@ Image_ErrorCode OH_ImagePackerNative_PackToDataFromPixelmap(OH_ImagePackerNative
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImagePackerNative *imagePacker | 被操作的OH_ImagePackerNative指针。 |
@@ -955,6 +1038,7 @@ Image_ErrorCode OH_ImagePackerNative_PackToDataFromPixelmap(OH_ImagePackerNative
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 IMAGE_DECODE_FAILED：解码失败。 IMAGE_ALLOC_FAILED：申请内存失败。 IMAGE_TOO_LARGE：数据或图片过大。 IMAGE_UNKNOWN_ERROR：未知错误。 |
@@ -962,9 +1046,10 @@ Image_ErrorCode OH_ImagePackerNative_PackToDataFromPixelmap(OH_ImagePackerNative
  
   
 
-#### OH_ImagePackerNative_PackToDataFromPicture()
+### OH_ImagePackerNative_PackToDataFromPicture()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImagePackerNative_PackToDataFromPicture(OH_ImagePackerNative *imagePacker,OH_PackingOptions *options, OH_PictureNative *picture, uint8_t *outData, size_t *size)
@@ -982,6 +1067,7 @@ Image_ErrorCode OH_ImagePackerNative_PackToDataFromPicture(OH_ImagePackerNative 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImagePackerNative *imagePacker | 被操作的OH_ImagePackerNative指针。 |
@@ -993,6 +1079,7 @@ Image_ErrorCode OH_ImagePackerNative_PackToDataFromPicture(OH_ImagePackerNative 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 IMAGE_DECODE_FAILED：解码失败。 |
@@ -1000,9 +1087,10 @@ Image_ErrorCode OH_ImagePackerNative_PackToDataFromPicture(OH_ImagePackerNative 
  
   
 
-#### OH_ImagePackerNative_PackToDataFromPixelmapSequence()
+### OH_ImagePackerNative_PackToDataFromPixelmapSequence()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImagePackerNative_PackToDataFromPixelmapSequence(OH_ImagePackerNative *imagePacker,OH_PackingOptionsForSequence *options, OH_PixelmapNative **pixelmapSequence,size_t sequenceLength, uint8_t *outData, size_t *outDataSize)
@@ -1022,6 +1110,7 @@ Image_ErrorCode OH_ImagePackerNative_PackToDataFromPixelmapSequence(OH_ImagePack
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImagePackerNative *imagePacker | 被操作的OH_ImagePackerNative指针，不允许为NULL。 |
@@ -1034,6 +1123,7 @@ Image_ErrorCode OH_ImagePackerNative_PackToDataFromPixelmapSequence(OH_ImagePack
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 IMAGE_DECODE_FAILED：解码失败。 |
@@ -1041,9 +1131,10 @@ Image_ErrorCode OH_ImagePackerNative_PackToDataFromPixelmapSequence(OH_ImagePack
  
   
 
-#### OH_ImagePackerNative_PackToFileFromImageSource()
+### OH_ImagePackerNative_PackToFileFromImageSource()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImagePackerNative_PackToFileFromImageSource(OH_ImagePackerNative *imagePacker,OH_PackingOptions *options, OH_ImageSourceNative *imageSource, int32_t fd)
@@ -1063,6 +1154,7 @@ Image_ErrorCode OH_ImagePackerNative_PackToFileFromImageSource(OH_ImagePackerNat
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImagePackerNative *imagePacker | 被操作的OH_ImagePackerNative指针。 |
@@ -1073,6 +1165,7 @@ Image_ErrorCode OH_ImagePackerNative_PackToFileFromImageSource(OH_ImagePackerNat
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 IMAGE_DECODE_FAILED：解码失败。 IMAGE_UNKNOWN_ERROR：未知错误。 |
@@ -1080,9 +1173,10 @@ Image_ErrorCode OH_ImagePackerNative_PackToFileFromImageSource(OH_ImagePackerNat
  
   
 
-#### OH_ImagePackerNative_PackToFileFromPixelmap()
+### OH_ImagePackerNative_PackToFileFromPixelmap()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImagePackerNative_PackToFileFromPixelmap(OH_ImagePackerNative *imagePacker,OH_PackingOptions *options, OH_PixelmapNative *pixelmap, int32_t fd)
@@ -1102,6 +1196,7 @@ Image_ErrorCode OH_ImagePackerNative_PackToFileFromPixelmap(OH_ImagePackerNative
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImagePackerNative *imagePacker | 被操作的OH_ImagePackerNative指针。 |
@@ -1112,6 +1207,7 @@ Image_ErrorCode OH_ImagePackerNative_PackToFileFromPixelmap(OH_ImagePackerNative
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 IMAGE_DECODE_FAILED：解码失败。 IMAGE_UNKNOWN_ERROR：未知错误。 |
@@ -1119,9 +1215,10 @@ Image_ErrorCode OH_ImagePackerNative_PackToFileFromPixelmap(OH_ImagePackerNative
  
   
 
-#### OH_ImagePackerNative_PackToFileFromPicture()
+### OH_ImagePackerNative_PackToFileFromPicture()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImagePackerNative_PackToFileFromPicture(OH_ImagePackerNative *imagePacker,OH_PackingOptions *options, OH_PictureNative *picture, int32_t fd)
@@ -1139,6 +1236,7 @@ Image_ErrorCode OH_ImagePackerNative_PackToFileFromPicture(OH_ImagePackerNative 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImagePackerNative *imagePacker | 被操作的OH_ImagePackerNative指针。 |
@@ -1149,6 +1247,7 @@ Image_ErrorCode OH_ImagePackerNative_PackToFileFromPicture(OH_ImagePackerNative 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 IMAGE_DECODE_FAILED：解码失败。 IMAGE_UNKNOWN_ERROR：未知错误。 |
@@ -1156,9 +1255,10 @@ Image_ErrorCode OH_ImagePackerNative_PackToFileFromPicture(OH_ImagePackerNative 
  
   
 
-#### OH_ImagePackerNative_PackToFileFromPixelmapSequence()
+### OH_ImagePackerNative_PackToFileFromPixelmapSequence()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImagePackerNative_PackToFileFromPixelmapSequence(OH_ImagePackerNative *imagePacker,OH_PackingOptionsForSequence *options, OH_PixelmapNative **pixelmapSequence, size_t sequenceLength, int32_t fd)
@@ -1176,6 +1276,7 @@ Image_ErrorCode OH_ImagePackerNative_PackToFileFromPixelmapSequence(OH_ImagePack
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImagePackerNative *imagePacker | 被操作的OH_ImagePackerNative指针，不允许为NULL。 |
@@ -1187,6 +1288,7 @@ Image_ErrorCode OH_ImagePackerNative_PackToFileFromPixelmapSequence(OH_ImagePack
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 IMAGE_DECODE_FAILED：解码失败。 |
@@ -1194,9 +1296,10 @@ Image_ErrorCode OH_ImagePackerNative_PackToFileFromPixelmapSequence(OH_ImagePack
  
   
 
-#### OH_ImagePackerNative_GetSupportedFormats()
+### OH_ImagePackerNative_GetSupportedFormats()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImagePackerNative_GetSupportedFormats(Image_MimeType **supportedFormats, size_t *length)
@@ -1216,6 +1319,7 @@ Image_ErrorCode OH_ImagePackerNative_GetSupportedFormats(Image_MimeType **suppor
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Image_MimeType **supportedFormats | 支持编码的图片格式。 |
@@ -1224,6 +1328,7 @@ Image_ErrorCode OH_ImagePackerNative_GetSupportedFormats(Image_MimeType **suppor
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：操作成功。 IMAGE_PACKER_INVALID_PARAMETER：参数异常，supportedFormats或length为空。 |
@@ -1231,9 +1336,10 @@ Image_ErrorCode OH_ImagePackerNative_GetSupportedFormats(Image_MimeType **suppor
  
   
 
-#### OH_ImagePackerNative_Release()
+### OH_ImagePackerNative_Release()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImagePackerNative_Release(OH_ImagePackerNative *imagePacker)
@@ -1251,6 +1357,7 @@ Image_ErrorCode OH_ImagePackerNative_Release(OH_ImagePackerNative *imagePacker)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImagePackerNative *imagePacker | 被操作的OH_ImagePackerNative指针。 |
@@ -1258,6 +1365,7 @@ Image_ErrorCode OH_ImagePackerNative_Release(OH_ImagePackerNative *imagePacker)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |

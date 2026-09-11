@@ -1,9 +1,9 @@
 # @ohos.app.ability.abilityDelegatorRegistry (AbilityDelegatorRegistry)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-abilitydelegatorregistry
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 AbilityDelegatorRegistry是自动化测试框架的注册模块，用于获取[AbilityDelegator](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-abilitydelegator)和[AbilityDelegatorArgs](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-abilitydelegatorargs)对象。通过该模块，开发者可以利用[AbilityDelegator](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-abilitydelegator)对象添加[AbilityMonitor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-abilitymonitor#abilitymonitor-1)对象，实现对指定Ability生命周期状态变化的监视；同时，借助[AbilityDelegatorArgs](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-abilitydelegatorargs)对象便捷地读取当前运行的测试参数。
 
@@ -12,9 +12,10 @@ AbilityDelegatorRegistry是自动化测试框架的注册模块，用于获取[A
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { abilityDelegatorRegistry } from '@kit.TestKit';
@@ -22,15 +23,17 @@ import { abilityDelegatorRegistry } from '@kit.TestKit';
 
 
 
-#### AbilityLifecycleState
+## AbilityLifecycleState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-Ability生命周期状态，可配合[AbilityDelegator](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-abilitydelegator)的[getAbilityState](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-abilitydelegator#getabilitystate9)方法返回对应Ability的生命周期状态。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+Ability生命周期状态，可配合[AbilityDelegator](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-abilitydelegator)的[getAbilityState](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-abilitydelegator#getabilitystate)方法返回对应Ability的生命周期状态。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
-**系统能力**：以下各项对应的系统能力均为SystemCapability.Ability.AbilityRuntime.Core
+**系统能力：** SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -43,9 +46,10 @@ Ability生命周期状态，可配合[AbilityDelegator](https://developer.huawei
 
 
 
-#### abilityDelegatorRegistry.getAbilityDelegator
+## abilityDelegatorRegistry.getAbilityDelegator
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAbilityDelegator(): AbilityDelegator
 
@@ -57,6 +61,7 @@ getAbilityDelegator(): AbilityDelegator
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityDelegator | 用来调度测试框架相关功能。 |
@@ -64,9 +69,10 @@ getAbilityDelegator(): AbilityDelegator
 
 **示例：**
 
-```json
+```text
 import { abilityDelegatorRegistry } from '@kit.TestKit';
 import { Want } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 // 获取应用程序的AbilityDelegator对象
 let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
@@ -77,9 +83,9 @@ let want: Want = {
 };
 
 // 启动指定Ability
-abilityDelegator.startAbility(want, (err) => {
+abilityDelegator.startAbility(want, (err: BusinessError) => {
   if (err) {
-    console.error(`Failed start ability, error: ${JSON.stringify(err)}`);
+    console.error(`Failed start ability. code: ${err.code}, message: ${err.message}`);
   } else {
     console.info('Success start ability.');
   }
@@ -88,9 +94,10 @@ abilityDelegator.startAbility(want, (err) => {
 
 
 
-#### abilityDelegatorRegistry.getArguments
+## abilityDelegatorRegistry.getArguments
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getArguments(): AbilityDelegatorArgs
 
@@ -101,6 +108,7 @@ getArguments(): AbilityDelegatorArgs
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -123,9 +131,10 @@ console.info(`getArguments testRunnerClassName: ${args.testRunnerClassName}`);
 
 
 
-#### AbilityDelegator
+## AbilityDelegator
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AbilityDelegator = _AbilityDelegator
 
@@ -135,6 +144,7 @@ type AbilityDelegator = _AbilityDelegator
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _AbilityDelegator | AbilityDelegator模块。 |
@@ -142,9 +152,10 @@ type AbilityDelegator = _AbilityDelegator
 
 
 
-#### AbilityDelegatorArgs
+## AbilityDelegatorArgs
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AbilityDelegatorArgs = _AbilityDelegatorArgs
 
@@ -154,6 +165,7 @@ type AbilityDelegatorArgs = _AbilityDelegatorArgs
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _AbilityDelegatorArgs | AbilityDelegatorArgs模块。 |
@@ -161,17 +173,19 @@ type AbilityDelegatorArgs = _AbilityDelegatorArgs
 
 
 
-#### AbilityMonitor
+## AbilityMonitor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AbilityMonitor = _AbilityMonitor
 
-作为[addAbilityMonitor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-abilitydelegator#addabilitymonitor9)的入参，用于监听指定UIAbility的生命周期变化。
+作为[addAbilityMonitor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-abilitydelegator#addabilitymonitor)的入参，用于监听指定UIAbility的生命周期变化。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -180,9 +194,10 @@ type AbilityMonitor = _AbilityMonitor
 
 
 
-#### ShellCmdResult
+## ShellCmdResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ShellCmdResult = _ShellCmdResult
 
@@ -192,6 +207,7 @@ type ShellCmdResult = _ShellCmdResult
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _ShellCmdResult | ShellCmdResult模块。 |
@@ -199,17 +215,19 @@ type ShellCmdResult = _ShellCmdResult
 
 
 
-#### AbilityStageMonitor14+
+## AbilityStageMonitor14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AbilityStageMonitor = _AbilityStageMonitor
 
-提供监听指定[AbilityStage](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-abilitystage)对象的能力。开发者可以将AbilityStageMonitor作为[abilityDelegator.waitAbilityStageMonitor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-abilitydelegator#waitabilitystagemonitor9)的入参来注册监听。
+提供监听指定[AbilityStage](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-abilitystage)对象的能力。开发者可以将AbilityStageMonitor作为[abilityDelegator.waitAbilityStageMonitor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-abilitydelegator#waitabilitystagemonitor)的入参来注册监听。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 类型 | 说明 |
 | --- | --- |

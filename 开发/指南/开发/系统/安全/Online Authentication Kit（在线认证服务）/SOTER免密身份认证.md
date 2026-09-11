@@ -1,33 +1,24 @@
-# SOTER免密身份认证
+# SOTER免密认证
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/onlineauthentication-soter
 
 SOTER旨在提供一套生物认证平台和标准，使得业务可以采用设备上的传感器（如人脸传感器/指纹传感器）进行安全、高效的免密登录、免密支付等操作，当前已广泛应用于微信小程序/公众号、指纹支付等业务场景。
 
 
-#### 场景介绍
+## 场景介绍
 
-用户可以利用生物特征来代替传统的密码验证，实现免密身份认证。
+用户可以利用生物特征来代替传统的密码验证，实现免密认证。
 
- - 开通：提供移动端开通SOTER生物特征（指纹/3D人脸）免密身份认证的能力。
- - 认证：提供移动端采用生物特征（指纹/3D人脸）进行SOTER免密身份认证的能力。
- - 注销：提供移动端注销SOTER生物特征（指纹/3D人脸）免密身份认证的能力。
-
-
-
-
-#### 相关权限
-
- - 获取网络权限：ohos.permission.INTERNET。
- - 获取振动权限：ohos.permission.VIBRATE。
- - 获取生物识别权限：ohos.permission.ACCESS_BIOMETRIC。
+ - 开通：提供移动端开通SOTER生物特征（指纹/3D人脸）免密认证的能力。
+ - 认证：提供移动端采用生物特征（指纹/3D人脸）进行SOTER免密认证的能力。
+ - 注销：提供移动端注销SOTER生物特征（指纹/3D人脸）免密认证的能力。
 
 
 
 
-#### 约束与限制
+## 约束与限制
 
  - 开发者应用需要部署SOTER服务器。
  - 移动端设备需要支持生物特征（指纹/3D人脸），查询当前移动端设备是否支持ATL4级别的认证可信等级。
@@ -51,35 +42,55 @@ function getAvailableStatus() {
 ```
 
  - 移动端设备使用此服务时需要处于联网状态。
- - SOTER服务会将匿名化的指纹ID和面容ID等个人信息返回至三方应用，以提供绑定具体生物特征的免密认证能力。应用将个人信息上云前，需要向用户明示并且取得同意，详细请参考[个人数据处理说明](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/onlineauthentication-personal-data-processing-description)。
+ - SOTER服务会将匿名化的指纹ID和面容ID等个人信息返回至应用，以提供绑定具体生物特征的免密认证能力。应用将个人信息上云前，需要向用户明示并且取得同意，详细请参考[个人数据处理说明](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/onlineauthentication-personal-data-processing-description)。
 
 
 
 
-#### 业务流程
+## 业务流程
 
 
 ![](assets/SOTER免密身份认证/file-20260514131155607-0.png)
 
 
+**生成应用密钥流程说明：**
+1. 应用客户端调用[generateAppSecureKey](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/onlineauthentication-soter-api#sotergenerateappsecurekey)接口生成应用密钥。
+2. 应用客户端将应用密钥上传至应用服务端，应用服务端校验后返回校验结果。
+
+**生成认证密钥流程说明：**
+1. 应用客户端调用[generateAuthKey](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/onlineauthentication-soter-api#sotergenerateauthkey)接口生成认证密钥。
+2. 应用客户端将认证密钥上传至应用服务端，应用服务端校验后返回校验结果。
+
+**认证流程说明：**
+1. 应用客户端向应用服务端请求数据。
+2. 应用客户端调用[generateChallengeSync](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/onlineauthentication-soter-api#sotergeneratechallengesync)接口生成challenge。
+3. 应用客户端请求身份认证，完成生物特征认证。
+4. 应用客户端调用[signWithAuthKeySync](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/onlineauthentication-soter-api#sotersignwithauthkeysync)接口进行SOTER认证，获取签名结果。
+5. 应用客户端将签名结果上传至应用服务端，应用服务端校验后返回校验结果。
+
+**关闭免密支付流程说明：**
+
+应用客户端调用[deleteAuthKey](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/onlineauthentication-soter-api#soterdeleteauthkey)接口删除认证密钥。
 
 
-#### 接口说明
 
-**表1** 开通、认证、注销的所需要的接口
+## 接口说明
+
+以下是开通、认证、注销的所需要的接口，具体API说明详见[接口文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/onlineauthentication-soter-api#sotergenerateappsecurekey)。
+
 
 | 接口名 | 描述 |
 | --- | --- |
-| generateAppSecureKey(keyType: KeyType): Promise&lt;Uint8Array&gt; | 生成应用密钥。 |
-| generateAuthKey(keyAlias: string, keyType: KeyType): Promise&lt;SignedResult&gt; | 生成认证密钥。 |
-| generateChallengeSync(keyAlias: string): Uint8Array | 生成Challenge。 |
-| signWithAuthKeySync(keyAlias: string, authToken: Uint8Array, info: string): SignedResult | 使用认证密钥对业务数据签名。 |
-| deleteAuthKey(keyAlias: string): Promise&lt;void&gt; | 删除认证密钥。 |
+| generateAppSecureKey(keyType: KeyType): Promise&lt;Uint8Array&gt; | 生成App应用密钥，使用Promise异步回调。 |
+| generateAuthKey(keyAlias: string, keyType: KeyType): Promise&lt;SignedResult&gt; | 生成authKey，使用Promise异步回调。 |
+| generateChallengeSync(keyAlias: string): Uint8Array | 生成Challenge，同步返回结果。 |
+| signWithAuthKeySync(keyAlias: string, authToken: Uint8Array, info: string): SignedResult | SOTER免密认证，同步返回签名的报文。 |
+| deleteAuthKey(keyAlias: string): Promise&lt;void&gt; | 删除AuthKey，使用Promise异步回调 |
 
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 导入SOTER模块。
 
   

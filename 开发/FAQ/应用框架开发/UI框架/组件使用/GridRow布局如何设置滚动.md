@@ -36,7 +36,7 @@ struct GridRowExample {
 
   build() {
     Column() {
-      // 使用Scroll组件包裹GridRow使其可以进行滚动
+   <em>   // 使用Scroll组件包裹GridRow使其可以进行滚动</em>
       Scroll() {
         GridRow({
           columns: 5,

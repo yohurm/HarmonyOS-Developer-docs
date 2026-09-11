@@ -1,10 +1,14 @@
 # FIDO2_PublicKeyAssertionCredential
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_f_i_d_o2___public_key_assertion_credential
+**支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 定义获取认证结果结构体。
  
@@ -16,29 +20,42 @@
  
   
 
-#### 汇总
+## 汇总
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 成员变量
+### 成员变量
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | Uint8Buff rawId | 原始凭据标识符。 |
 | const char * id | 凭据的标识符。对于每种类型的凭据，标识符的要求都是不同的。 |
 | const char * type | 该属性以JSON字符串形式返回接口对象中用于指定凭据类型的插槽。该插槽用于指定此对象所表示的凭据类型。 |
 | FIDO2_AuthenticatorResponse response | 认证器断言响应。 |
-| FIDO2_AuthenticatorAttachment authenticatorAttachment | 认证器信息（FIDO2_PLATFORM表示平台，FIDO2_ROAMING表示漫游）。默认值为FIDO2_PLATFORM。可选。 |
+| FIDO2_AuthenticatorAttachment authenticatorAttachment | 认证器信息（FIDO2_PLATFORM表示平台，FIDO2_CROSS_PLATFORM表示漫游）。默认值为FIDO2_PLATFORM。可选。 |
 | AuthenticationExtensionsClientOutputs clientExtensionResults | 客户端扩展结果。当前版本不支持扩展，因此占位符始终为NULL，必须将clientExtensionResults键对应的值解析为{}。 |
  
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### authenticatorAttachment
+### authenticatorAttachment
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FIDO2_AuthenticatorAttachment FIDO2_PublicKeyAssertionCredential::authenticatorAttachment
@@ -46,11 +63,14 @@ FIDO2_AuthenticatorAttachment FIDO2_PublicKeyAssertionCredential::authenticatorA
  
 **描述**
  
-认证器信息（平台、漫游）。可选。
+认证器信息（平台、漫游）。默认值为FIDO2_PLATFORM。可选。
  
   
 
-#### clientExtensionResults
+### clientExtensionResults
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 AuthenticationExtensionsClientOutputs FIDO2_PublicKeyAssertionCredential::clientExtensionResults
@@ -62,7 +82,10 @@ AuthenticationExtensionsClientOutputs FIDO2_PublicKeyAssertionCredential::client
  
   
 
-#### id
+### id
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 const char* FIDO2_PublicKeyAssertionCredential::id
@@ -74,7 +97,10 @@ const char* FIDO2_PublicKeyAssertionCredential::id
  
   
 
-#### rawId
+### rawId
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 Uint8Buff FIDO2_PublicKeyAssertionCredential::rawId
@@ -86,7 +112,10 @@ Uint8Buff FIDO2_PublicKeyAssertionCredential::rawId
  
   
 
-#### response
+### response
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FIDO2_AuthenticatorResponse FIDO2_PublicKeyAssertionCredential::response
@@ -98,7 +127,10 @@ FIDO2_AuthenticatorResponse FIDO2_PublicKeyAssertionCredential::response
  
   
 
-#### type
+### type
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 const char* FIDO2_PublicKeyAssertionCredential::type

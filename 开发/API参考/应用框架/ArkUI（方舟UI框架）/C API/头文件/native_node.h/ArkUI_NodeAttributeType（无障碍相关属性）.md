@@ -1,15 +1,19 @@
 # ArkUI_NodeAttributeType（无障碍相关属性）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-node-h-nodeattributetype-accessibility
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_NodeAttributeType
 ```
   
 
-#### 概述
+## 概述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义ArkUI在Native侧可以设置的无障碍相关属性集合，包含无障碍文本、说明、模式、状态、值等属性设置。
  
@@ -21,7 +25,10 @@ enum ArkUI_NodeAttributeType
  
   
 
-#### NODE_ACCESSIBILITY_GROUP
+## NODE_ACCESSIBILITY_GROUP
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_ACCESSIBILITY_GROUP = 62
@@ -35,6 +42,7 @@ NODE_ACCESSIBILITY_GROUP = 62
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 为1时表示该组件及其所有子组件为一整个可以选中的组件，无障碍服务将不再关注其子组件内容；为0时表示子组件各自独立可被选中，无障碍服务将分别关注其各子组件内容。参数取值为1或0，传入非法值时该设置不生效。 |
@@ -42,14 +50,18 @@ NODE_ACCESSIBILITY_GROUP = 62
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| .value[0].i32 | 为1时表示该组件及其所有子组件为一整个可以选中的组件。无障碍服务将不再关注其子组件内容。参数取值为1或0。 |
+| .value[0].i32 | 为1时表示该组件及其所有子组件合并为一个可被无障碍服务整体聚焦的组件，无障碍服务将不再单独关注其子组件内容；为0时表示不启用无障碍分组，各子组件可被无障碍服务单独关注。参数取值为1或0。 |
  
  
   
 
-#### NODE_ACCESSIBILITY_TEXT
+## NODE_ACCESSIBILITY_TEXT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_ACCESSIBILITY_TEXT = 63
@@ -63,6 +75,7 @@ NODE_ACCESSIBILITY_TEXT = 63
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 无障碍文本，无长度限制。 |
@@ -70,6 +83,7 @@ NODE_ACCESSIBILITY_TEXT = 63
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .string | 组件的无障碍文本内容，用于在无障碍服务中朗读或展示该组件的文本描述。 |
@@ -77,7 +91,10 @@ NODE_ACCESSIBILITY_TEXT = 63
  
   
 
-#### NODE_ACCESSIBILITY_MODE
+## NODE_ACCESSIBILITY_MODE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_ACCESSIBILITY_MODE = 64
@@ -91,6 +108,7 @@ NODE_ACCESSIBILITY_MODE = 64
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 辅助服务模式，参数类型为ArkUI_AccessibilityMode。 |
@@ -98,6 +116,7 @@ NODE_ACCESSIBILITY_MODE = 64
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 辅助服务模式，参数类型ArkUI_AccessibilityMode。 |
@@ -105,7 +124,10 @@ NODE_ACCESSIBILITY_MODE = 64
  
   
 
-#### NODE_ACCESSIBILITY_DESCRIPTION
+## NODE_ACCESSIBILITY_DESCRIPTION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_ACCESSIBILITY_DESCRIPTION = 65
@@ -119,6 +141,7 @@ NODE_ACCESSIBILITY_DESCRIPTION = 65
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 无障碍说明，无长度限制。 |
@@ -126,6 +149,7 @@ NODE_ACCESSIBILITY_DESCRIPTION = 65
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .string | 组件的无障碍说明内容，用于向无障碍服务补充描述该组件的详细用途或操作指引。 |
@@ -133,7 +157,10 @@ NODE_ACCESSIBILITY_DESCRIPTION = 65
  
   
 
-#### NODE_ACCESSIBILITY_ID
+## NODE_ACCESSIBILITY_ID
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_ACCESSIBILITY_ID = 87
@@ -147,6 +174,7 @@ NODE_ACCESSIBILITY_ID = 87
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 无障碍自定义标识ID。 |
@@ -154,7 +182,10 @@ NODE_ACCESSIBILITY_ID = 87
  
   
 
-#### NODE_ACCESSIBILITY_ACTIONS
+## NODE_ACCESSIBILITY_ACTIONS
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_ACCESSIBILITY_ACTIONS = 88
@@ -168,6 +199,7 @@ NODE_ACCESSIBILITY_ACTIONS = 88
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].u32 | 配置无障碍操作类型，参数类型ArkUI_AccessibilityActionType。 |
@@ -175,6 +207,7 @@ NODE_ACCESSIBILITY_ACTIONS = 88
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].u32 | 配置无障碍操作类型，参数类型ArkUI_AccessibilityActionType。 |
@@ -182,7 +215,10 @@ NODE_ACCESSIBILITY_ACTIONS = 88
  
   
 
-#### NODE_ACCESSIBILITY_ROLE
+## NODE_ACCESSIBILITY_ROLE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_ACCESSIBILITY_ROLE = 89
@@ -196,6 +232,7 @@ NODE_ACCESSIBILITY_ROLE = 89
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].u32 | 无障碍角色，参数类型ArkUI_NodeType。 |
@@ -203,6 +240,7 @@ NODE_ACCESSIBILITY_ROLE = 89
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].u32 | 无障碍组件类型，参数类型ArkUI_NodeType。 |
@@ -210,7 +248,10 @@ NODE_ACCESSIBILITY_ROLE = 89
  
   
 
-#### NODE_ACCESSIBILITY_STATE
+## NODE_ACCESSIBILITY_STATE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_ACCESSIBILITY_STATE = 90
@@ -224,21 +265,26 @@ NODE_ACCESSIBILITY_STATE = 90
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| .object | 无障碍状态属性，无障碍状态信息，参数类型ArkUI_AccessibilityState。 |
+| .object | 无障碍状态信息，参数类型ArkUI_AccessibilityState。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| .object | 参数类型为ArkUI_AccessibilityState。 |
+| .object | 返回值类型为ArkUI_AccessibilityState。 |
  
  
   
 
-#### NODE_ACCESSIBILITY_VALUE
+## NODE_ACCESSIBILITY_VALUE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_ACCESSIBILITY_VALUE = 91
@@ -252,13 +298,15 @@ NODE_ACCESSIBILITY_VALUE = 91
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| .object | 无障碍信息属性，无障碍值信息，参数类型为ArkUI_AccessibilityValue。 |
+| .object | 无障碍值信息，参数类型为ArkUI_AccessibilityValue。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| .object | 参数类型为ArkUI_AccessibilityValue。 |
+| .object | 返回值类型为ArkUI_AccessibilityValue。 |

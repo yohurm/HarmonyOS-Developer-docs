@@ -1,9 +1,9 @@
 # UIAbilityContext
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 UIAbilityContext是[UIAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability)组件的上下文，继承自[Context](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-context)。各类Context之间的关联与差异详见[应用上下文Context](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-context-stage)。
 
@@ -14,9 +14,10 @@ UIAbilityContext是[UIAbility](https://developer.huawei.com/consumer/cn/doc/harm
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { common } from '@kit.AbilityKit';
@@ -24,17 +25,20 @@ import { common } from '@kit.AbilityKit';
 
 
 
-#### UIAbilityContext
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## UIAbilityContext
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -46,9 +50,10 @@ import { common } from '@kit.AbilityKit';
 
 
 
-#### startAbility
+### startAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startAbility(want: Want, callback: AsyncCallback&lt;void&gt;): void
 
@@ -64,6 +69,7 @@ startAbility(want: Want, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | 启动UIAbility的必要信息。 |
@@ -73,6 +79,7 @@ startAbility(want: Want, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -140,9 +147,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### startAbility
+### startAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startAbility(want: Want, options: StartOptions, callback: AsyncCallback&lt;void&gt;): void
 
@@ -158,6 +166,7 @@ startAbility(want: Want, options: StartOptions, callback: AsyncCallback&lt;void&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | 启动UIAbility的必要信息。 |
@@ -168,6 +177,7 @@ startAbility(want: Want, options: StartOptions, callback: AsyncCallback&lt;void&
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -243,9 +253,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### startAbility
+### startAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startAbility(want: Want, options?: StartOptions): Promise&lt;void&gt;
 
@@ -261,6 +272,7 @@ startAbility(want: Want, options?: StartOptions): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | 启动UIAbility的必要信息。 |
@@ -268,6 +280,7 @@ startAbility(want: Want, options?: StartOptions): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -277,6 +290,7 @@ startAbility(want: Want, options?: StartOptions): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -351,9 +365,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### startAbilityForResult
+### startAbilityForResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startAbilityForResult(want: Want, callback: AsyncCallback&lt;AbilityResult&gt;): void
 
@@ -376,6 +391,7 @@ UIAbility被启动后，有如下情况：
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | 启动Ability的必要信息。 |
@@ -385,6 +401,7 @@ UIAbility被启动后，有如下情况：
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -453,9 +470,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### startAbilityForResult
+### startAbilityForResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startAbilityForResult(want: Want, options: StartOptions, callback: AsyncCallback&lt;AbilityResult&gt;): void
 
@@ -478,6 +496,7 @@ UIAbility被启动后，有如下情况：
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | 启动Ability的必要信息。 |
@@ -488,6 +507,7 @@ UIAbility被启动后，有如下情况：
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -559,9 +579,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### startAbilityForResult
+### startAbilityForResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startAbilityForResult(want: Want, options?: StartOptions): Promise&lt;AbilityResult&gt;
 
@@ -584,6 +605,7 @@ UIAbility被启动后，有如下情况：
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | 启动Ability的必要信息。 |
@@ -591,6 +613,7 @@ UIAbility被启动后，有如下情况：
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -600,6 +623,7 @@ UIAbility被启动后，有如下情况：
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -670,9 +694,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### terminateSelf
+### terminateSelf
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 terminateSelf(callback: AsyncCallback&lt;void&gt;): void
 
@@ -688,6 +713,7 @@ terminateSelf(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数，当销毁UIAbility自身成功，err中code为0；否则err会返回对应的错误码和错误信息。 |
@@ -696,6 +722,7 @@ terminateSelf(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -758,9 +785,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### terminateSelf
+### terminateSelf
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 terminateSelf(): Promise&lt;void&gt;
 
@@ -776,6 +804,7 @@ terminateSelf(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -784,6 +813,7 @@ terminateSelf(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -845,9 +875,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### terminateSelfWithResult
+### terminateSelfWithResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 terminateSelfWithResult(parameter: AbilityResult, callback: AsyncCallback&lt;void&gt;): void
 
@@ -865,6 +896,7 @@ terminateSelfWithResult(parameter: AbilityResult, callback: AsyncCallback&lt;voi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | parameter | AbilityResult | 是 | 返回给startAbilityForResult 接口调用方的相关信息。 |
@@ -874,6 +906,7 @@ terminateSelfWithResult(parameter: AbilityResult, callback: AsyncCallback&lt;voi
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -927,9 +960,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### terminateSelfWithResult
+### terminateSelfWithResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 terminateSelfWithResult(parameter: AbilityResult): Promise&lt;void&gt;
 
@@ -947,12 +981,14 @@ terminateSelfWithResult(parameter: AbilityResult): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | parameter | AbilityResult | 是 | 返回给startAbilityForResult 接口调用方的信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -962,6 +998,7 @@ terminateSelfWithResult(parameter: AbilityResult): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1015,21 +1052,23 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### connectServiceExtensionAbility
+### connectServiceExtensionAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 connectServiceExtensionAbility(want: Want, options: ConnectOptions): number
 
 将当前UIAbility连接到一个[ServiceExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/extensionability-overview)，通过返回的proxy与ServiceExtensionAbility进行通信，以使用ServiceExtensionAbility对外提供的能力。仅支持在主线程调用。
 
 > [!NOTE]
-> 组件启动规则详见： 组件启动规则（Stage模型） 。 该接口不支持应用分身。
+> 组件启动规则详见： 组件启动规则（Stage模型） 。
 
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1039,6 +1078,7 @@ connectServiceExtensionAbility(want: Want, options: ConnectOptions): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回连接id，调用方可以通过disconnectServiceExtensionAbility传入该连接id来断开连接。 |
@@ -1047,6 +1087,7 @@ connectServiceExtensionAbility(want: Want, options: ConnectOptions): number
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1109,9 +1150,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### disconnectServiceExtensionAbility
+### disconnectServiceExtensionAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 disconnectServiceExtensionAbility(connection: number): Promise&lt;void&gt;
 
@@ -1121,12 +1163,14 @@ disconnectServiceExtensionAbility(connection: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | connection | number | 是 | 连接的ServiceExtensionAbility的标识id，即connectServiceExtensionAbility返回的connectionId。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1136,6 +1180,7 @@ disconnectServiceExtensionAbility(connection: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1179,9 +1224,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### disconnectServiceExtensionAbility
+### disconnectServiceExtensionAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 disconnectServiceExtensionAbility(connection: number, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1190,6 +1236,7 @@ disconnectServiceExtensionAbility(connection: number, callback: AsyncCallback&lt
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1200,6 +1247,7 @@ disconnectServiceExtensionAbility(connection: number, callback: AsyncCallback&lt
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1245,9 +1293,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### startAbilityByCall
+### startAbilityByCall
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startAbilityByCall(want: Want): Promise&lt;Caller&gt;
 
@@ -1269,12 +1318,14 @@ startAbilityByCall(want: Want): Promise&lt;Caller&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | 传入需要启动的UIAbility信息，包含abilityName、moduleName、bundleName、deviceId、parameters（可选）。将parameters中的'ohos.aafwk.param.callAbilityToForeground'配置为true可将UIAbility拉起到前台；否则表示将UIAbility拉起到后台。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1284,6 +1335,7 @@ startAbilityByCall(want: Want): Promise&lt;Caller&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1438,9 +1490,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### setMissionLabel
+### setMissionLabel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMissionLabel(label: string, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1452,6 +1505,7 @@ setMissionLabel(label: string, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | label | string | 是 | 任务的名称。 |
@@ -1461,6 +1515,7 @@ setMissionLabel(label: string, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1486,9 +1541,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### setMissionLabel
+### setMissionLabel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMissionLabel(label: string): Promise&lt;void&gt;
 
@@ -1500,12 +1556,14 @@ setMissionLabel(label: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | label | string | 是 | 任务的名称。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1515,6 +1573,7 @@ setMissionLabel(label: string): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1544,9 +1603,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### setMissionContinueState10+
+### setMissionContinueState10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMissionContinueState(state: AbilityConstant.ContinueState, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1560,6 +1620,7 @@ setMissionContinueState(state: AbilityConstant.ContinueState, callback: AsyncCal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | state | AbilityConstant.ContinueState | 是 | 流转状态。 |
@@ -1569,6 +1630,7 @@ setMissionContinueState(state: AbilityConstant.ContinueState, callback: AsyncCal
 **错误码：**
 
 错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1594,9 +1656,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### setMissionContinueState10+
+### setMissionContinueState10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMissionContinueState(state: AbilityConstant.ContinueState): Promise&lt;void&gt;
 
@@ -1610,12 +1673,14 @@ setMissionContinueState(state: AbilityConstant.ContinueState): Promise&lt;void&g
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | state | AbilityConstant.ContinueState | 是 | 流转状态。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1625,6 +1690,7 @@ setMissionContinueState(state: AbilityConstant.ContinueState): Promise&lt;void&g
 **错误码：**
 
 错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1652,9 +1718,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### restoreWindowStage
+### restoreWindowStage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 restoreWindowStage(localStorage: LocalStorage): void
 
@@ -1666,6 +1733,7 @@ restoreWindowStage(localStorage: LocalStorage): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | localStorage | LocalStorage | 是 | 用于恢复window stage的存储数据。 |
@@ -1674,6 +1742,7 @@ restoreWindowStage(localStorage: LocalStorage): void
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1697,9 +1766,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### isTerminating
+### isTerminating
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isTerminating(): boolean
 
@@ -1711,6 +1781,7 @@ isTerminating(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 表示是否处于消亡中状态。true表示处于消亡中状态，false表示不处于消亡中状态。 |
@@ -1719,6 +1790,7 @@ isTerminating(): boolean
 **错误码：**
 
 以下错误码详细介绍请参考[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1740,21 +1812,23 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### requestDialogService
+### requestDialogService
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestDialogService(want: Want, result: AsyncCallback<dialogRequest.RequestResult>): void
 
 启动一个支持模态弹框的ServiceExtensionAbility。ServiceExtensionAbility被启动后，应用弹出模态弹框，通过调用[setRequestResult](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-dialogrequest#requestcallbacksetrequestresult)接口返回结果给调用者。使用callback异步回调。仅支持在主线程调用。
 
 > [!NOTE]
-> 组件启动规则详见： 组件启动规则（Stage模型） 。 该接口不支持应用分身。
+> 组件启动规则详见： 组件启动规则（Stage模型） 。
 
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1765,6 +1839,7 @@ requestDialogService(want: Want, result: AsyncCallback<dialogRequest.RequestResu
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1823,21 +1898,23 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### requestDialogService
+### requestDialogService
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestDialogService(want: Want): Promise<dialogRequest.RequestResult>
 
 启动一个支持模态弹框的ServiceExtensionAbility。ServiceExtensionAbility被启动后，应用弹出模态弹框，通过调用[setRequestResult](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-dialogrequest#requestcallbacksetrequestresult)接口返回结果给调用者。使用Promise异步回调。仅支持在主线程调用。
 
 > [!NOTE]
-> 组件启动规则详见： 组件启动规则（Stage模型） 。 该接口不支持应用分身。
+> 组件启动规则详见： 组件启动规则（Stage模型） 。
 
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1845,6 +1922,7 @@ requestDialogService(want: Want): Promise<dialogRequest.RequestResult>
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1854,6 +1932,7 @@ requestDialogService(want: Want): Promise<dialogRequest.RequestResult>
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1911,9 +1990,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### reportDrawnCompleted10+
+### reportDrawnCompleted10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reportDrawnCompleted(callback: AsyncCallback&lt;void&gt;): void
 
@@ -1925,6 +2005,7 @@ reportDrawnCompleted(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数，当通知系统UIAbility对应的窗口内容已经绘制完成的操作成功，err中code为0；否则err会返回对应的错误码和错误信息。 |
@@ -1933,6 +2014,7 @@ reportDrawnCompleted(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码详细介绍请参考[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1978,9 +2060,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### startAbilityByType11+
+### startAbilityByType11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startAbilityByType(type: string, wantParam: Record<string, Object>, abilityStartCallback: AbilityStartCallback, callback: AsyncCallback&lt;void&gt;) : void
 
@@ -1991,6 +2074,7 @@ startAbilityByType(type: string, wantParam: Record<string, Object>, abilityStart
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2003,6 +2087,7 @@ startAbilityByType(type: string, wantParam: Record<string, Object>, abilityStart
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2027,7 +2112,7 @@ export default class EntryAbility extends UIAbility {
     };
     let abilityStartCallback: common.AbilityStartCallback = {
       onError: (code: number, name: string, message: string) => {
-        console.info(`code:` + code + `name:` + name + `message:` + message);
+        console.error(`code:` + code + `name:` + name + `message:` + message);
       },
       onResult: (abilityResult: common.AbilityResult) => {
         console.info(`resultCode:` + abilityResult.resultCode + `bundleName:` + abilityResult.want?.bundleName);
@@ -2047,9 +2132,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### startAbilityByType11+
+### startAbilityByType11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startAbilityByType(type: string, wantParam: Record<string, Object>, abilityStartCallback: AbilityStartCallback) : Promise&lt;void&gt;
 
@@ -2061,6 +2147,7 @@ startAbilityByType(type: string, wantParam: Record<string, Object>, abilityStart
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 启动的UIExtensionAbility类型，取值详见通过startAbilityByType接口拉起垂类面板。 |
@@ -2070,6 +2157,7 @@ startAbilityByType(type: string, wantParam: Record<string, Object>, abilityStart
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，包含接口执行结果。 |
@@ -2078,6 +2166,7 @@ startAbilityByType(type: string, wantParam: Record<string, Object>, abilityStart
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2103,7 +2192,7 @@ export default class EntryAbility extends UIAbility {
     };
     let abilityStartCallback: common.AbilityStartCallback = {
       onError: (code: number, name: string, message: string) => {
-        console.info(`code:` + code + `name:` + name + `message:` + message);
+        console.error(`code:` + code + `name:` + name + `message:` + message);
       },
       onResult: (abilityResult: common.AbilityResult) => {
         console.info(`resultCode:` + abilityResult.resultCode + `bundleName:` + abilityResult.want?.bundleName);
@@ -2121,9 +2210,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### showAbility12+
+### showAbility12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 showAbility(): Promise&lt;void&gt;
 
@@ -2137,6 +2227,7 @@ showAbility(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，包含接口执行结果。 |
@@ -2145,6 +2236,7 @@ showAbility(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2228,9 +2320,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### hideAbility12+
+### hideAbility12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 hideAbility(): Promise&lt;void&gt;
 
@@ -2244,6 +2337,7 @@ hideAbility(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，包含接口执行结果。 |
@@ -2252,6 +2346,7 @@ hideAbility(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2335,9 +2430,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### moveAbilityToBackground12+
+### moveAbilityToBackground12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | Tablet | TV | Wearable
 
 moveAbilityToBackground(): Promise&lt;void&gt;
 
@@ -2359,6 +2455,7 @@ moveAbilityToBackground(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，包含接口执行结果。 |
@@ -2367,6 +2464,7 @@ moveAbilityToBackground(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2413,9 +2511,10 @@ struct Index {
 
 
 
-#### openAtomicService12+
+### openAtomicService12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 openAtomicService(appId: string, options?: AtomicServiceOptions): Promise&lt;AbilityResult&gt;
 
@@ -2438,6 +2537,7 @@ openAtomicService(appId: string, options?: AtomicServiceOptions): Promise&lt;Abi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | appId | string | 是 | 应用的唯一标识，由云端统一分配。 |
@@ -2445,6 +2545,7 @@ openAtomicService(appId: string, options?: AtomicServiceOptions): Promise&lt;Abi
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2454,6 +2555,7 @@ openAtomicService(appId: string, options?: AtomicServiceOptions): Promise&lt;Abi
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2504,9 +2606,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### openLink12+
+### openLink12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 openLink(link: string, options?: OpenLinkOptions, callback?: AsyncCallback&lt;AbilityResult&gt;): Promise&lt;void&gt;
 
@@ -2533,6 +2636,7 @@ openLink(link: string, options?: OpenLinkOptions, callback?: AsyncCallback&lt;Ab
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | link | string | 是 | 指示要打开的标准格式URL。 |
@@ -2542,6 +2646,7 @@ openLink(link: string, options?: OpenLinkOptions, callback?: AsyncCallback&lt;Ab
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，包含接口执行结果。 |
@@ -2550,6 +2655,7 @@ openLink(link: string, options?: OpenLinkOptions, callback?: AsyncCallback&lt;Ab
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2612,7 +2718,7 @@ struct Index {
             });
           }
           catch (e) {
-            hilog.error(DOMAIN, TAG, `exception occured, errCode ${JSON.stringify(e.code)}`);
+            hilog.error(DOMAIN, TAG, `exception occurred, errCode ${JSON.stringify(e.code)}`);
           }
         })
     }
@@ -2624,9 +2730,10 @@ struct Index {
 
 
 
-#### backToCallerAbilityWithResult12+
+### backToCallerAbilityWithResult12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 backToCallerAbilityWithResult(abilityResult: AbilityResult, requestCode: string): Promise&lt;void&gt;
 
@@ -2638,6 +2745,7 @@ backToCallerAbilityWithResult(abilityResult: AbilityResult, requestCode: string)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | abilityResult | AbilityResult | 是 | 包含目标方返回给拉起方的结果。 |
@@ -2645,6 +2753,7 @@ backToCallerAbilityWithResult(abilityResult: AbilityResult, requestCode: string)
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2654,6 +2763,7 @@ backToCallerAbilityWithResult(abilityResult: AbilityResult, requestCode: string)
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2668,7 +2778,7 @@ backToCallerAbilityWithResult(abilityResult: AbilityResult, requestCode: string)
 
 **示例：**
 
-调用方通过startAbilityForResult接口拉起目标方, 目标方再调用backToCallerAbilityWithResult接口返回到调用方。
+调用方通过startAbilityForResult接口拉起目标方，目标方再调用backToCallerAbilityWithResult接口返回到调用方。
 
 ```ArkTS
 // 调用方
@@ -2779,9 +2889,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### setRestoreEnabled14+
+### setRestoreEnabled14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | Tablet | TV | Wearable
 
 setRestoreEnabled(enabled: boolean): void
 
@@ -2799,6 +2910,7 @@ setRestoreEnabled(enabled: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 表示是否启用恢复。true表示启用，false表示不启用。 |
@@ -2807,6 +2919,7 @@ setRestoreEnabled(enabled: boolean): void
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2836,16 +2949,17 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### startUIServiceExtensionAbility14+
+### startUIServiceExtensionAbility14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 startUIServiceExtensionAbility(want: Want): Promise&lt;void&gt;
 
 启动一个UIServiceExtensionAbility。使用Promise异步回调。
 
 > [!NOTE]
-> 组件启动规则详见： 组件启动规则（Stage模型） 。 该接口不支持应用分身。
+> 组件启动规则详见： 组件启动规则（Stage模型） 。
 
 
 **元服务API**：从API version 14开始，该接口支持在元服务中使用。
@@ -2856,12 +2970,14 @@ startUIServiceExtensionAbility(want: Want): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | 启动UIServiceExtensionAbility的必要信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2871,6 +2987,7 @@ startUIServiceExtensionAbility(want: Want): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2916,10 +3033,10 @@ struct Index {
               context.startUIServiceExtensionAbility(startWant).then(() => {
                 console.info('startUIServiceExtensionAbility success');
               }).catch((error: BusinessError) => {
-                console.info('startUIServiceExtensionAbility error', JSON.stringify(error));
+                console.error('startUIServiceExtensionAbility error', JSON.stringify(error));
               })
             } catch (err) {
-              console.info('startUIServiceExtensionAbility failed', JSON.stringify(err));
+              console.error('startUIServiceExtensionAbility failed', JSON.stringify(err));
             }
           })
       }
@@ -2930,16 +3047,17 @@ struct Index {
 
 
 
-#### connectUIServiceExtensionAbility14+
+### connectUIServiceExtensionAbility14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 connectUIServiceExtensionAbility(want: Want, callback: UIServiceExtensionConnectCallback) : Promise&lt;UIServiceProxy&gt;
 
 连接一个UIServiceExtensionAbility。使用Promise异步回调。
 
 > [!NOTE]
-> 组件启动规则详见： 组件启动规则（Stage模型） 。 该接口不支持应用分身。
+> 组件启动规则详见： 组件启动规则（Stage模型） 。
 
 
 **元服务API**：从API version 14开始，该接口支持在元服务中使用。
@@ -2950,6 +3068,7 @@ connectUIServiceExtensionAbility(want: Want, callback: UIServiceExtensionConnect
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | 连接UIServiceExtensionAbility的必要信息。 |
@@ -2957,6 +3076,7 @@ connectUIServiceExtensionAbility(want: Want, callback: UIServiceExtensionConnect
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2966,6 +3086,7 @@ connectUIServiceExtensionAbility(want: Want, callback: UIServiceExtensionConnect
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3051,9 +3172,10 @@ struct UIServiceExtensionAbility {
 
 
 
-#### disconnectUIServiceExtensionAbility14+
+### disconnectUIServiceExtensionAbility14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 disconnectUIServiceExtensionAbility(proxy: UIServiceProxy): Promise&lt;void&gt;
 
@@ -3069,12 +3191,14 @@ disconnectUIServiceExtensionAbility(proxy: UIServiceProxy): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | proxy | UIServiceProxy | 是 | connectUIServiceExtensionAbility执行返回的Proxy。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3084,6 +3208,7 @@ disconnectUIServiceExtensionAbility(proxy: UIServiceProxy): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3153,9 +3278,10 @@ struct UIServiceExtensionAbility {
 
 
 
-#### setAbilityInstanceInfo15+
+### setAbilityInstanceInfo15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 setAbilityInstanceInfo(label: string, icon: image.PixelMap): Promise&lt;void&gt;
 
@@ -3169,6 +3295,7 @@ setAbilityInstanceInfo(label: string, icon: image.PixelMap): Promise&lt;void&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | label | string | 是 | 新的图标标签。标签长度不超过1024字节，且不可为空字符串。 |
@@ -3176,6 +3303,7 @@ setAbilityInstanceInfo(label: string, icon: image.PixelMap): Promise&lt;void&gt;
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3185,6 +3313,7 @@ setAbilityInstanceInfo(label: string, icon: image.PixelMap): Promise&lt;void&gt;
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3224,12 +3353,19 @@ export default class EntryAbility extends UIAbility {
         editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 512, width: 512 }
       };
       let imagePixelMap: image.PixelMap = await image.createPixelMap(color, opts);
-      this.context.setAbilityInstanceInfo(newLabel, imagePixelMap)
-        .then(() => {
-          console.info('setAbilityInstanceInfo success');
-        }).catch((err: BusinessError) => {
-        console.error(`setAbilityInstanceInfo failed, code is ${err.code}, message is ${err.message}`);
-      });
+      // 设置UIAbility实例的图标和标签信息
+      try {
+        this.context.setAbilityInstanceInfo(newLabel, imagePixelMap)
+          .then(() => {
+            console.info('setAbilityInstanceInfo success');
+          }).catch((err: BusinessError) => {
+            console.error(`setAbilityInstanceInfo failed, code is ${err.code}, message is ${err.message}`);
+          });
+      } catch (paramError) {
+        let code = (paramError as BusinessError).code;
+        let message = (paramError as BusinessError).message;
+        console.error(`setAbilityInstanceInfo failed, code is ${code}, message is ${message}`);
+      }
     });
   }
 }
@@ -3237,9 +3373,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### revokeDelegator17+
+### revokeDelegator17+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 revokeDelegator(): Promise&lt;void&gt;
 
@@ -3255,6 +3392,7 @@ revokeDelegator(): Promise&lt;void&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，包含接口执行结果。 |
@@ -3263,6 +3401,7 @@ revokeDelegator(): Promise&lt;void&gt;
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3318,9 +3457,10 @@ export default class DelegatorAbility extends UIAbility {
 
 
 
-#### setColorMode18+
+### setColorMode18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setColorMode(colorMode: ConfigurationConstant.ColorMode): void
 
@@ -3336,14 +3476,16 @@ setColorMode(colorMode: ConfigurationConstant.ColorMode): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| colorMode | ConfigurationConstant.ColorMode | 是 | 设置颜色模式，包括: - COLOR_MODE_DARK：深色模式 - COLOR_MODE_LIGHT：浅色模式 - COLOR_MODE_NOT_SET：不设置（跟随系统或应用） |
+| colorMode | ConfigurationConstant.ColorMode | 是 | 设置颜色模式，包括： - COLOR_MODE_DARK：深色模式 - COLOR_MODE_LIGHT：浅色模式 - COLOR_MODE_NOT_SET：不设置（跟随系统或应用） |
 
 
 **错误码**：
 
 以下错误码详细介绍请参考[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3373,9 +3515,10 @@ export default class MyAbility extends UIAbility {
 
 
 
-#### startAppServiceExtensionAbility20+
+### startAppServiceExtensionAbility20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 startAppServiceExtensionAbility(want: Want): Promise&lt;void&gt;
 
@@ -3391,12 +3534,14 @@ startAppServiceExtensionAbility(want: Want): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | 启动AppServiceExtensionAbility的Want信息。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3406,6 +3551,7 @@ startAppServiceExtensionAbility(want: Want): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3460,16 +3606,17 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### stopAppServiceExtensionAbility20+
+### stopAppServiceExtensionAbility20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 stopAppServiceExtensionAbility(want: Want): Promise&lt;void&gt;
 
 停止[AppServiceExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-appserviceextensionability)实例。使用Promise异步回调。
 
 > [!NOTE]
-> 该接口的调用方必须为 AppServiceExtensionAbility 所属应用或者在AppServiceExtensionAbility支持的应用清单（即 extensionAbilities标签 的appIdentifierAllowList属性）中的应用。 该接口不支持应用分身。
+> 该接口的调用方必须为 AppServiceExtensionAbility 所属应用或者在AppServiceExtensionAbility支持的应用清单（即 extensionAbilities标签 的appIdentifierAllowList属性）中的应用。
 
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
@@ -3478,12 +3625,14 @@ stopAppServiceExtensionAbility(want: Want): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | 停止AppServiceExtensionAbility的Want信息。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3493,6 +3642,7 @@ stopAppServiceExtensionAbility(want: Want): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3543,16 +3693,17 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### connectAppServiceExtensionAbility20+
+### connectAppServiceExtensionAbility20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 connectAppServiceExtensionAbility(want: Want, callback: ConnectOptions): number
 
 将当前UIAbility连接到[AppServiceExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-appserviceextensionability)。通过返回的proxy与AppServiceExtensionAbility进行通信，以使用AppServiceExtensionAbility对外提供的能力。仅支持在主线程调用。
 
 > [!NOTE]
-> 如果 AppServiceExtensionAbility 实例未启动，该接口的调用方必须为AppServiceExtensionAbility所属应用或者在AppServiceExtensionAbility支持的应用清单（即 extensionAbilities标签 的appIdentifierAllowList属性）中的应用。 该接口不支持应用分身。
+> 如果 AppServiceExtensionAbility 实例未启动，该接口的调用方必须为AppServiceExtensionAbility所属应用或者在AppServiceExtensionAbility支持的应用清单（即 extensionAbilities标签 的appIdentifierAllowList属性）中的应用。
 
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
@@ -3560,6 +3711,7 @@ connectAppServiceExtensionAbility(want: Want, callback: ConnectOptions): number
 **设备行为差异**：该接口仅在PC/2in1设备中可正常调用，在其他设备中返回801错误码。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3569,6 +3721,7 @@ connectAppServiceExtensionAbility(want: Want, callback: ConnectOptions): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回连接id，disconnectAppServiceExtensionAbility根据该连接id断开连接。 |
@@ -3577,6 +3730,7 @@ connectAppServiceExtensionAbility(want: Want, callback: ConnectOptions): number
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3635,9 +3789,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### disconnectAppServiceExtensionAbility20+
+### disconnectAppServiceExtensionAbility20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 disconnectAppServiceExtensionAbility(connection: number): Promise&lt;void&gt;
 
@@ -3651,12 +3806,14 @@ disconnectAppServiceExtensionAbility(connection: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | connection | number | 是 | 在connectAppServiceExtensionAbility返回的连接id。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3666,6 +3823,7 @@ disconnectAppServiceExtensionAbility(connection: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3709,9 +3867,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### setOnNewWantSkipScenarios20+
+### setOnNewWantSkipScenarios20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setOnNewWantSkipScenarios(scenarios: number): Promise&lt;void&gt;
 
@@ -3727,12 +3886,14 @@ setOnNewWantSkipScenarios(scenarios: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scenarios | number | 是 | 取值范围请参考Scenarios。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3742,6 +3903,7 @@ setOnNewWantSkipScenarios(scenarios: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3780,16 +3942,17 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### startSelfUIAbilityInCurrentProcess22+
+### startSelfUIAbilityInCurrentProcess22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 startSelfUIAbilityInCurrentProcess(want: Want, specifiedFlag: string, options?: StartOptions): Promise&lt;void&gt;
 
 在当前进程中启动应用程序自己的UIAbility。
 
 > [!NOTE]
-> 只能冷启动目标UIAbility，如果目标UIAbility实例已经启动过，则启动失败。 通过该接口启动的UIAbility实例，将运行在调用方所在的进程中。其他关于目标UIAbility的进程相关的策略（例如在 module.json5配置文件 中通过isolationProcess或isolationMode字段来指定进程），均不会生效。 该接口不支持应用分身。
+> 只能冷启动目标UIAbility，如果目标UIAbility实例已经启动过，则启动失败。 通过该接口启动的UIAbility实例，将运行在调用方所在的进程中。其他关于目标UIAbility的进程相关的策略（例如在 module.json5配置文件 中通过isolationProcess或isolationMode字段来指定进程），均不会生效。
 
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
@@ -3802,6 +3965,7 @@ startSelfUIAbilityInCurrentProcess(want: Want, specifiedFlag: string, options?: 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | 启动Ability的必要信息。只支持显式启动，不支持隐式启动。 |
@@ -3811,6 +3975,7 @@ startSelfUIAbilityInCurrentProcess(want: Want, specifiedFlag: string, options?: 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -3819,6 +3984,7 @@ startSelfUIAbilityInCurrentProcess(want: Want, specifiedFlag: string, options?: 
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3870,9 +4036,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### restartApp22+
+### restartApp22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone
 
 restartApp(want: Want): Promise&lt;void&gt;
 
@@ -3881,7 +4048,7 @@ restartApp(want: Want): Promise&lt;void&gt;
 如果指定UIAbility就是当前UIAbility，则会刷新窗口至初始状态；如果是其他UIAbility，则会跳转并打开新的UIAbility窗口。
 
 > [!NOTE]
-> 通过该接口重启进程时，不会触发进程中Ability的onDestroy生命周期回调。 在元服务调用本接口成功后的3秒内，再次调用本接口、 restartSelfAtomicService() 或 ApplicationContext.restartApp() 接口中的任一接口，系统将返回错误码16000064。 在应用调用本接口成功后的3秒内，若再次调用本接口或 ApplicationContext.restartApp() 接口中的任一接口，系统将返回错误码16000064。 该接口不支持通过Want指定appCloneIndex来切换分身，仅支持在当前分身内重启。
+> 通过该接口重启进程时，不会触发进程中Ability的onDestroy生命周期回调。 在元服务调用本接口成功后的3秒内，再次调用本接口、 restartSelfAtomicService() 或 ApplicationContext.restartApp() 接口中的任一接口，系统将返回错误码16000064。 在应用调用本接口成功后的3秒内，若再次调用本接口或 ApplicationContext.restartApp() 接口中的任一接口，系统将返回错误码16000064。
 
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
@@ -3892,12 +4059,14 @@ restartApp(want: Want): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | Want类型参数，传入需要启动的UIAbility的信息，校验bundleName、abilityName。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3907,6 +4076,7 @@ restartApp(want: Want): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3960,9 +4130,10 @@ struct Index {
 
 
 
-#### setMissionWindowIcon22+
+### setMissionWindowIcon22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 setMissionWindowIcon(windowIcon: image.PixelMap): Promise&lt;void&gt;
 
@@ -3978,12 +4149,14 @@ setMissionWindowIcon(windowIcon: image.PixelMap): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | windowIcon | image.PixelMap | 是 | 在应用窗口、任务中心应用卡片、快捷栏窗口快照显示的Ability图标。图标必须为正方形，且大小不能超过128M，否则返回401参数错误。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3993,6 +4166,7 @@ setMissionWindowIcon(windowIcon: image.PixelMap): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4039,9 +4213,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### startSelf
+### startSelf
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 startSelf(): Promise&lt;void&gt;
 
@@ -4059,6 +4234,7 @@ startSelf(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -4067,6 +4243,7 @@ startSelf(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4105,16 +4282,17 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### startSelfUIAbilityInChildProcess
+### startSelfUIAbilityInChildProcess
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 startSelfUIAbilityInChildProcess(want: Want, specifiedFlag: string): Promise&lt;void&gt;
 
 在子进程中启动当前应用的UIAbility，子进程中的UIAbility支持加载Native模块。使用Promise异步回调。
 
 > [!NOTE]
-> 子进程生命周期跟随父进程，父进程退出时子进程自动退出。 该接口不支持应用分身。
+> 子进程生命周期跟随父进程，父进程退出时子进程自动退出。
 
 
 **起始版本：** 26.0.0
@@ -4127,11 +4305,13 @@ startSelfUIAbilityInChildProcess(want: Want, specifiedFlag: string): Promise&lt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | 启动Ability的必要信息。只支持显式启动，不支持隐式启动。 |
 | specifiedFlag | string | 是 | 开发者自定义的UIAbility标识。该标识不能与已启动的UIAbility标识相同，否则将返回错误。 说明： 当通过该接口拉起启动模式为specified的UIAbility时，将不会触发onAcceptWant回调。 |
 | 返回值： |  |  |  |
+
 
 
 | 类型 | 说明 |
@@ -4142,6 +4322,7 @@ startSelfUIAbilityInChildProcess(want: Want, specifiedFlag: string): Promise&lt;
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

@@ -1,13 +1,14 @@
 # avmetadata_extractor.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avmetadata-extractor-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义AVMetadataExtractor接口。使用其Native API从媒体资源中获取元数据。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_AVMetadataExtractor | OH_AVMetadataExtractor | 定义OH_AVMetadataExtractor类型。 |
@@ -40,10 +44,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_AVMetadataExtractor_OutputParam* OH_AVMetadataExtractor_OutputParam_Create() | 创建OH_AVMetadataExtractor_OutputParam实例。 |
@@ -65,15 +71,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AVMetadataExtractor_OutputParam_Create()
+### OH_AVMetadataExtractor_OutputParam_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVMetadataExtractor_OutputParam* OH_AVMetadataExtractor_OutputParam_Create()
@@ -87,6 +95,7 @@ OH_AVMetadataExtractor_OutputParam* OH_AVMetadataExtractor_OutputParam_Create()
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVMetadataExtractor_OutputParam * | 返回指向OH_AVMetadataExtractor_OutputParam实例的指针。 |
@@ -94,9 +103,10 @@ OH_AVMetadataExtractor_OutputParam* OH_AVMetadataExtractor_OutputParam_Create()
  
   
 
-#### OH_AVMetadataExtractor_OutputParam_Destroy()
+### OH_AVMetadataExtractor_OutputParam_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_AVMetadataExtractor_OutputParam_Destroy(OH_AVMetadataExtractor_OutputParam* outputParam)
@@ -110,6 +120,7 @@ void OH_AVMetadataExtractor_OutputParam_Destroy(OH_AVMetadataExtractor_OutputPar
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMetadataExtractor_OutputParam* outputParam | 指向OH_AVMetadataExtractor_OutputParam实例的指针。 |
@@ -117,9 +128,10 @@ void OH_AVMetadataExtractor_OutputParam_Destroy(OH_AVMetadataExtractor_OutputPar
  
   
 
-#### OH_AVMetadataExtractor_OutputParam_SetSize()
+### OH_AVMetadataExtractor_OutputParam_SetSize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AVMetadataExtractor_OutputParam_SetSize(OH_AVMetadataExtractor_OutputParam* outputParam, int32_t width, int32_t height)
@@ -133,6 +145,7 @@ bool OH_AVMetadataExtractor_OutputParam_SetSize(OH_AVMetadataExtractor_OutputPar
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMetadataExtractor_OutputParam* outputParam | 指向OH_AVMetadataExtractor_OutputParam实例的指针。 |
@@ -142,6 +155,7 @@ bool OH_AVMetadataExtractor_OutputParam_SetSize(OH_AVMetadataExtractor_OutputPar
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 成功返回true，失败返回false。 可能失败的原因：输入的outputParam为空指针。 |
@@ -149,9 +163,10 @@ bool OH_AVMetadataExtractor_OutputParam_SetSize(OH_AVMetadataExtractor_OutputPar
  
   
 
-#### OH_AVMetadataExtractor_FetchFrameByTime()
+### OH_AVMetadataExtractor_FetchFrameByTime()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVMetadataExtractor_FetchFrameByTime(OH_AVMetadataExtractor *extractor, int64_t timeUs, OH_AVMedia_SeekMode seekMode, const OH_AVMetadataExtractor_OutputParam* outputParam, OH_PixelmapNative** pixelMap)
@@ -165,6 +180,7 @@ OH_AVErrCode OH_AVMetadataExtractor_FetchFrameByTime(OH_AVMetadataExtractor *ext
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMetadataExtractor *extractor | 指向OH_AVMetadataExtractor实例的指针。 |
@@ -176,6 +192,7 @@ OH_AVErrCode OH_AVMetadataExtractor_FetchFrameByTime(OH_AVMetadataExtractor *ext
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：输入参数无效。 AV_ERR_OPERATE_NOT_PERMIT：操作不允许。 AV_ERR_UNSUPPORTED_FORMAT：格式不支持。 AV_ERR_SERVICE_DIED：服务已终止。 AV_ERR_IO_CLEARTEXT_NOT_PERMITTED：不允许HTTP明文流量。 |
@@ -183,9 +200,10 @@ OH_AVErrCode OH_AVMetadataExtractor_FetchFrameByTime(OH_AVMetadataExtractor *ext
  
   
 
-#### OH_AVMetadataExtractor_OnFrameFetched()
+### OH_AVMetadataExtractor_OnFrameFetched()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_AVMetadataExtractor_OnFrameFetched)(OH_AVMetadataExtractor *extractor, const OH_AVMetadataExtractor_FrameInfo* frameInfo, OH_AVErrCode code, void* userData)
@@ -199,9 +217,10 @@ typedef void (*OH_AVMetadataExtractor_OnFrameFetched)(OH_AVMetadataExtractor *ex
  
   
 
-#### OH_AVMetadataExtractor_FetchFramesByTimes()
+### OH_AVMetadataExtractor_FetchFramesByTimes()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVMetadataExtractor_FetchFramesByTimes(OH_AVMetadataExtractor *extractor, int64_t timesUs[], uint16_t timesUsSize, OH_AVMedia_SeekMode seekMode, const OH_AVMetadataExtractor_OutputParam* outputParam, OH_AVMetadataExtractor_OnFrameFetched onFrameInfoCallback, void* userData)
@@ -215,6 +234,7 @@ OH_AVErrCode OH_AVMetadataExtractor_FetchFramesByTimes(OH_AVMetadataExtractor *e
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMetadataExtractor *extractor | 指向OH_AVMetadataExtractor实例的指针。 |
@@ -228,6 +248,7 @@ OH_AVErrCode OH_AVMetadataExtractor_FetchFramesByTimes(OH_AVMetadataExtractor *e
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：输入参数无效。 AV_ERR_SERVICE_DIED：服务已终止。 AV_ERR_IO_CLEARTEXT_NOT_PERMITTED：不允许HTTP明文流量。 AV_ERR_OPERATE_NOT_PERMIT：操作不允许。由onFrameInfoCallback返回。 AV_ERR_UNSUPPORTED_FORMAT：格式不支持。由onFrameInfoCallback返回。 AV_ERR_TIMEOUT：执行超时。由onFrameInfoCallback返回。 |
@@ -235,9 +256,10 @@ OH_AVErrCode OH_AVMetadataExtractor_FetchFramesByTimes(OH_AVMetadataExtractor *e
  
   
 
-#### OH_AVMetadataExtractor_CancelAllFetchFrames()
+### OH_AVMetadataExtractor_CancelAllFetchFrames()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_AVMetadataExtractor_CancelAllFetchFrames(OH_AVMetadataExtractor *extractor)
@@ -251,6 +273,7 @@ void OH_AVMetadataExtractor_CancelAllFetchFrames(OH_AVMetadataExtractor *extract
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMetadataExtractor *extractor | 指向OH_AVMetadataExtractor实例的指针。 |
@@ -258,9 +281,10 @@ void OH_AVMetadataExtractor_CancelAllFetchFrames(OH_AVMetadataExtractor *extract
  
   
 
-#### OH_AVMetadataExtractor_GetTrackDescription()
+### OH_AVMetadataExtractor_GetTrackDescription()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVFormat *OH_AVMetadataExtractor_GetTrackDescription(OH_AVMetadataExtractor *extractor, uint32_t index)
@@ -274,6 +298,7 @@ OH_AVFormat *OH_AVMetadataExtractor_GetTrackDescription(OH_AVMetadataExtractor *
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMetadataExtractor *extractor | 指向OH_AVMetadataExtractor实例的指针。 |
@@ -282,6 +307,7 @@ OH_AVFormat *OH_AVMetadataExtractor_GetTrackDescription(OH_AVMetadataExtractor *
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVFormat * | 成功时返回包含轨道描述信息的OH_AVFormat实例指针，失败时返回空指针。 可能失败的原因： 1. extractor为空指针。 2. 未设置媒体源。 3. 格式不支持。 注意：用户需要使用OH_AVFormat_Destroy在使用OH_AVFormat后将其释放。 |
@@ -289,9 +315,10 @@ OH_AVFormat *OH_AVMetadataExtractor_GetTrackDescription(OH_AVMetadataExtractor *
  
   
 
-#### OH_AVMetadataExtractor_GetCustomInfo()
+### OH_AVMetadataExtractor_GetCustomInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVFormat *OH_AVMetadataExtractor_GetCustomInfo(OH_AVMetadataExtractor *extractor)
@@ -305,6 +332,7 @@ OH_AVFormat *OH_AVMetadataExtractor_GetCustomInfo(OH_AVMetadataExtractor *extrac
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMetadataExtractor *extractor | 指向OH_AVMetadataExtractor实例的指针。 |
@@ -312,6 +340,7 @@ OH_AVFormat *OH_AVMetadataExtractor_GetCustomInfo(OH_AVMetadataExtractor *extrac
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVFormat * | 成功时返回包含自定义元数据的OH_AVFormat实例指针，失败时返回空指针。 可能失败的原因： 1. extractor为空指针。 2. 未设置媒体源。 3. 未找到自定义信息。 注意：用户需要使用OH_AVFormat_Destroy在使用OH_AVFormat后将其释放。 |
@@ -319,9 +348,10 @@ OH_AVFormat *OH_AVMetadataExtractor_GetCustomInfo(OH_AVMetadataExtractor *extrac
  
   
 
-#### OH_AVMetadataExtractor_SetMediaSource()
+### OH_AVMetadataExtractor_SetMediaSource()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVMetadataExtractor_SetMediaSource(OH_AVMetadataExtractor *extractor, OH_AVMediaSource *source)
@@ -335,6 +365,7 @@ OH_AVErrCode OH_AVMetadataExtractor_SetMediaSource(OH_AVMetadataExtractor *extra
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMetadataExtractor *extractor | 指向OH_AVMetadataExtractor实例的指针。 |
@@ -343,6 +374,7 @@ OH_AVErrCode OH_AVMetadataExtractor_SetMediaSource(OH_AVMetadataExtractor *extra
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | 函数执行结果。 AV_ERR_OK：表示执行成功。 AV_ERR_INVALID_VAL：输入的extractor为空指针或输入的source无效。 |
@@ -350,9 +382,10 @@ OH_AVErrCode OH_AVMetadataExtractor_SetMediaSource(OH_AVMetadataExtractor *extra
  
   
 
-#### OH_AVMetadataExtractor_Create()
+### OH_AVMetadataExtractor_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVMetadataExtractor* OH_AVMetadataExtractor_Create(void)
@@ -368,6 +401,7 @@ OH_AVMetadataExtractor* OH_AVMetadataExtractor_Create(void)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVMetadataExtractor* | 创建成功时返回指向OH_AVMetadataExtractor实例的指针，否则返回空指针。 可能的失败原因：HstEngineFactory::CreateAVMetadataHelperEngine执行失败。 |
@@ -375,9 +409,10 @@ OH_AVMetadataExtractor* OH_AVMetadataExtractor_Create(void)
  
   
 
-#### OH_AVMetadataExtractor_SetFDSource()
+### OH_AVMetadataExtractor_SetFDSource()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVMetadataExtractor_SetFDSource(OH_AVMetadataExtractor* extractor, int32_t fd, int64_t offset, int64_t size)
@@ -393,6 +428,7 @@ OH_AVErrCode OH_AVMetadataExtractor_SetFDSource(OH_AVMetadataExtractor* extracto
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMetadataExtractor* extractor | 指向OH_AVMetadataExtractor实例的指针。 |
@@ -403,6 +439,7 @@ OH_AVErrCode OH_AVMetadataExtractor_SetFDSource(OH_AVMetadataExtractor* extracto
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL： 输入的extractor为空指针或参数无效。 AV_ERR_OPERATE_NOT_PERMIT：操作被禁止。 AV_ERR_NO_MEMORY：内部内存分配失败。 |
@@ -410,9 +447,10 @@ OH_AVErrCode OH_AVMetadataExtractor_SetFDSource(OH_AVMetadataExtractor* extracto
  
   
 
-#### OH_AVMetadataExtractor_FetchMetadata()
+### OH_AVMetadataExtractor_FetchMetadata()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVMetadataExtractor_FetchMetadata(OH_AVMetadataExtractor* extractor, OH_AVFormat* avMetadata)
@@ -430,6 +468,7 @@ OH_AVErrCode OH_AVMetadataExtractor_FetchMetadata(OH_AVMetadataExtractor* extrac
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMetadataExtractor* extractor | 指向OH_AVMetadataExtractor实例的指针。 |
@@ -438,6 +477,7 @@ OH_AVErrCode OH_AVMetadataExtractor_FetchMetadata(OH_AVMetadataExtractor* extrac
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL： 输入的extractor为空指针或参数无效。 AV_ERR_OPERATE_NOT_PERMIT：操作被禁止。 AV_ERR_UNSUPPORTED_FORMAT：格式不支持。 AV_ERR_NO_MEMORY：内部内存分配失败。 AV_ERR_IO_CLEARTEXT_NOT_PERMITTED：（API version 23新增）不允许HTTP明文流量。 |
@@ -445,9 +485,10 @@ OH_AVErrCode OH_AVMetadataExtractor_FetchMetadata(OH_AVMetadataExtractor* extrac
  
   
 
-#### OH_AVMetadataExtractor_FetchAlbumCover()
+### OH_AVMetadataExtractor_FetchAlbumCover()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVMetadataExtractor_FetchAlbumCover(OH_AVMetadataExtractor* extractor, OH_PixelmapNative** pixelMap)
@@ -465,6 +506,7 @@ OH_AVErrCode OH_AVMetadataExtractor_FetchAlbumCover(OH_AVMetadataExtractor* extr
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMetadataExtractor* extractor | 指向OH_AVMetadataExtractor实例的指针。 |
@@ -473,6 +515,7 @@ OH_AVErrCode OH_AVMetadataExtractor_FetchAlbumCover(OH_AVMetadataExtractor* extr
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL： 输入的extractor为空指针或参数无效。 AV_ERR_OPERATE_NOT_PERMIT：操作被禁止。 AV_ERR_UNSUPPORTED_FORMAT：格式不支持。 AV_ERR_NO_MEMORY：内部内存分配失败。 |
@@ -480,9 +523,10 @@ OH_AVErrCode OH_AVMetadataExtractor_FetchAlbumCover(OH_AVMetadataExtractor* extr
  
   
 
-#### OH_AVMetadataExtractor_Release()
+### OH_AVMetadataExtractor_Release()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVMetadataExtractor_Release(OH_AVMetadataExtractor* extractor)
@@ -498,6 +542,7 @@ OH_AVErrCode OH_AVMetadataExtractor_Release(OH_AVMetadataExtractor* extractor)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMetadataExtractor* extractor | 指向OH_AVMetadataExtractor实例的指针。 |
@@ -505,6 +550,7 @@ OH_AVErrCode OH_AVMetadataExtractor_Release(OH_AVMetadataExtractor* extractor)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL： 输入的extractor为空指针或参数无效。 |

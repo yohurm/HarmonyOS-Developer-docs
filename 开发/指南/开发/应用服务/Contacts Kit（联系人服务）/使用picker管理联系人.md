@@ -1,11 +1,12 @@
 # 使用picker管理联系人
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/contacts-addcontactviaui
 
-#### 接口说明
+## 接口说明
  
+
 | 接口名 | 描述 |
 | --- | --- |
 | addContactViaUI(context: Context, contact: Contact): Promise&lt;number&gt; | 调用新建联系人接口，打开新建联系人UI界面，新建完成。使用Promise异步回调。 |
@@ -14,7 +15,7 @@
  
   
 
-#### 使用picker新建联系人
+## 使用picker新建联系人
 
 调用新建联系人接口，打开新建联系人UI界面，用户可在UI界面中填写并新建联系人。
  
@@ -58,7 +59,7 @@ struct Index {
  
   
 
-#### 使用picker更新联系人信息
+## 使用picker更新联系人信息
 
 可以通过拉起picker，将选中的联系人信息更新到现有联系人中。
  

@@ -1,6 +1,6 @@
 # Web深色模式适配
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-set-dark-mode
 
@@ -9,7 +9,7 @@
 ArkWeb提供灵活控制Web组件深色模式的能力，支持独立于系统进行设置。此外，ArkWeb还可以强制不同网页适配深色模式，以兼容不同的系统主题。
 
 
-#### 网页深色模式适配
+## 网页深色模式适配
 
 在网页开发过程中，可以使用color-scheme和prefers-color-scheme属性进行深色模式适配。
 
@@ -106,7 +106,7 @@ color-scheme可声明网页配色方案，切换网页元素的默认样式。�
 
 
 
-#### Web深色模式设置
+## Web深色模式设置
 
 通过[darkMode()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-attributes#darkmode9)接口可以配置Web深色模式，默认状态为关闭。应用可设置[WebDarkMode.Auto](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-e#webdarkmode9)，表示Web深色模式跟随系统设置。也可以手动设置[WebDarkMode.On](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-e#webdarkmode9)或[WebDarkMode.Off](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-e#webdarkmode9)来控制深色模式的开启与关闭。
 
@@ -121,6 +121,7 @@ color-scheme可声明网页配色方案，切换网页元素的默认样式。�
 
 
 **表1** 深色模式/强制深色模式/color-scheme三者关系
+
 
 | 深色模式 | 强制深色模式 | color-scheme | 预期结果 |
 | --- | --- | --- | --- |
@@ -181,12 +182,12 @@ darkModePage.html页面在深色模式关闭、深色模式开启及强制深色
 **图3** Web深色模式和强制深色模式效果图
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/K18hhpjmSLaYeiJSUGzRjA/zh-cn_image_0000002679805252.png?HW-CC-KV=V1&HW-CC-Date=20260818T063543Z&HW-CC-Expire=86400&HW-CC-Sign=0F2D1E3F6090A1A4F119F3CE7C031DEFCDB8AC9ADD66C176D743D0AD9864252E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/Rx-9bg8cSXu2574HJovy9g/zh-cn_image_0000002747290861.png?HW-CC-KV=V1&HW-CC-Date=20260911T073149Z&HW-CC-Expire=86400&HW-CC-Sign=842185A04787AB807E04C5D3B7F9E151E4BDBFDAF2B64B0BDE29FF621112724B)
 
 
 
 
-#### Web组件背景色适配
+## Web组件背景色适配
 
 Web组件发生旋转或大小改变等事件时，Web网页尺寸改变，变化过程中可能会漏出Web组件的背景色。深色模式下，建议将Web组件背景色置为黑色，与网页背景保持一致，以提升用户体验。
 
@@ -274,11 +275,11 @@ struct WebComponent {
 
 
 
-#### 常见问题
+## 常见问题
 
 
 
-#### 网页未切换为深色样式
+### 网页未切换为深色样式
 
 **问题现象**
 
@@ -293,7 +294,7 @@ struct WebComponent {
 
 
 
-#### 强制深色模式开启后，网页样式异常
+### 强制深色模式开启后，网页样式异常
 
 **问题现象**
 
@@ -305,7 +306,7 @@ struct WebComponent {
 
 
 
-#### 未开启深色模式，但Web网页背景变深
+### 未开启深色模式，但Web网页背景变深
 
 **问题现象**
 

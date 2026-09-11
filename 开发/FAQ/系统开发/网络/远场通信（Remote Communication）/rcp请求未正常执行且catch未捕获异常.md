@@ -14,13 +14,13 @@
 import { rcp } from '@kit.RemoteCommunicationKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
-// 1.定义请求地址
+<em>// 1.</em><em>定义请求地址</em>
 const getAccessTokenUrl = 'https：123123123123';
 
-// 2.创建会话
+<em>// 2.</em><em>创建会话</em>
 const session = rcp.createSession();
 
-// 3.构建请求参数对象
+<em>// 3.</em><em>构建请求参数对象</em>
 interface GeneratedObjectLiteralInterface_1 {
   clientID: string;
   clientSecret: string;
@@ -31,11 +31,11 @@ const request: GeneratedObjectLiteralInterface_1 = {
   clientSecret: '123456789'
 };
 
-// 4.发起POST请求获取Access Token
+<em>// 4.</em><em>发起POST请求获取Access Token</em>
 session.post(getAccessTokenUrl, JSON.stringify(request))
   .then((response) => {
     console.info(`请求成功，响应内容: ${response}`);
-    // 可选：解析JSON响应
+    <em>// 可选：解析JSON响应</em>
     try {
       const data = JSON.stringify(response);
       console.info(`解析后的 Token 数据:`, data);
@@ -87,11 +87,11 @@ struct Transform {
       Button('POST请求')
         .onClick(() => {
           try {
-            // 定义请求地址，使用时请变更为所需地址
+           <em> // 定义请求地址，使用时请变更为所需地址</em>
             const getAccessTokenUrl = 'https：123123123123';
-            // 创建会话
+        <em>    // 创建会话</em>
             const session = rcp.createSession();
-            // 发起POST请求获取Access Token
+           <em> // 发起POST请求获取Access Token</em>
             session.post(getAccessTokenUrl)
               .then((response) => {
                 console.info(`Succeeded in getting the response ${response}`);

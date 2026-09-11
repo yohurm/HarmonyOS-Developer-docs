@@ -1,13 +1,14 @@
 # start_options.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-start-options-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供应用启动参数数据结构[AbilityRuntime_StartOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-abilityruntime-startoptions)以及设置和获取相关函数。
 
@@ -23,15 +24,18 @@
 
 
 
-#### 汇总
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 汇总
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 结构体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -40,9 +44,11 @@
 
 
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -78,7 +84,7 @@
 | AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsWindowWidth(AbilityRuntime_StartOptions *startOptions,int32_t &windowWidth) | 获取启动Ability时的窗口宽度，单位为px。仅支持C++编译；若需在C语言环境中调用，请使用AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsWindowWidthValue(AbilityRuntime_StartOptions *startOptions, int32_t *windowWidth)。 |
 | AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsStartVisibility(AbilityRuntime_StartOptions *startOptions,AbilityRuntime_StartVisibility startVisibility) | 设置启动Ability时窗口和dock栏图标的显示模式。 |
 | AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsStartVisibility(AbilityRuntime_StartOptions *startOptions,AbilityRuntime_StartVisibility &startVisibility) | 获取启动Ability时窗口和dock栏图标的显示模式。仅支持C++编译；若需在C语言环境中调用，请使用AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsStartVisibilityValue(AbilityRuntime_StartOptions *startOptions, AbilityRuntime_StartVisibility *startVisibility)。 |
-| AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsStartWindowIcon(AbilityRuntime_StartOptions *startOptions,OH_PixelmapNative *startWindowIcon) | 设置启动Ability时的窗口启动图标。图片数据大小限制为600M。 |
+| AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsStartWindowIcon(AbilityRuntime_StartOptions *startOptions,OH_PixelmapNative *startWindowIcon) | 设置启动Ability时的窗口启动图标。图片数据大小限制为600MB。 |
 | AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsStartWindowIcon(AbilityRuntime_StartOptions *startOptions,OH_PixelmapNative **startWindowIcon) | 获取启动Ability时的窗口启动图标。 |
 | AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsStartWindowBackgroundColor(AbilityRuntime_StartOptions *startOptions, const char *startWindowBackgroundColor) | 设置启动Ability时的窗口背景颜色。如果未设置该字段，则默认采用module.json5配置文件中abilities标签的startWindowBackground字段的配置。 |
 | AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsStartWindowBackgroundColor(AbilityRuntime_StartOptions *startOptions, char **startWindowBackgroundColor, size_t &size) | 获取启动Ability时的窗口背景颜色。仅支持C++编译；若需在C语言环境中调用，请使用AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsStartWindowBackgroundColorValue(AbilityRuntime_StartOptions *startOptions, char **startWindowBackgroundColor, size_t *size)。 |
@@ -96,15 +102,17 @@
 
 
 
-#### 函数说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 函数说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### OH_AbilityRuntime_GetStartOptionsWindowModeValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### OH_AbilityRuntime_GetStartOptionsWindowModeValue()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsWindowModeValue(AbilityRuntime_StartOptions *startOptions, AbilityRuntime_WindowMode *windowMode)
@@ -118,6 +126,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsWindowModeValue(Abilit
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -125,6 +134,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsWindowModeValue(Abilit
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -157,9 +167,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_GetStartOptionsDisplayIdValue()
+### OH_AbilityRuntime_GetStartOptionsDisplayIdValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsDisplayIdValue(AbilityRuntime_StartOptions *startOptions, int32_t *displayId)
@@ -173,6 +184,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsDisplayIdValue(Ability
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -180,6 +192,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsDisplayIdValue(Ability
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -212,9 +225,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_GetStartOptionsWithAnimationValue()
+### OH_AbilityRuntime_GetStartOptionsWithAnimationValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsWithAnimationValue(AbilityRuntime_StartOptions *startOptions, bool *withAnimation)
@@ -228,6 +242,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsWithAnimationValue(Abi
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -235,6 +250,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsWithAnimationValue(Abi
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -267,9 +283,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_GetStartOptionsWindowLeftValue()
+### OH_AbilityRuntime_GetStartOptionsWindowLeftValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsWindowLeftValue(AbilityRuntime_StartOptions *startOptions, int32_t *windowLeft)
@@ -283,6 +300,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsWindowLeftValue(Abilit
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -290,6 +308,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsWindowLeftValue(Abilit
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -322,9 +341,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_GetStartOptionsWindowTopValue()
+### OH_AbilityRuntime_GetStartOptionsWindowTopValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsWindowTopValue(AbilityRuntime_StartOptions *startOptions, int32_t *windowTop)
@@ -338,6 +358,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsWindowTopValue(Ability
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -345,6 +366,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsWindowTopValue(Ability
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -377,9 +399,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_GetStartOptionsWindowHeightValue()
+### OH_AbilityRuntime_GetStartOptionsWindowHeightValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsWindowHeightValue(AbilityRuntime_StartOptions *startOptions, int32_t *windowHeight)
@@ -393,6 +416,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsWindowHeightValue(Abil
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -400,6 +424,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsWindowHeightValue(Abil
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -432,9 +457,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_GetStartOptionsWindowWidthValue()
+### OH_AbilityRuntime_GetStartOptionsWindowWidthValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsWindowWidthValue(AbilityRuntime_StartOptions *startOptions, int32_t *windowWidth)
@@ -448,6 +474,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsWindowWidthValue(Abili
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -455,6 +482,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsWindowWidthValue(Abili
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -487,9 +515,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_GetStartOptionsStartVisibilityValue()
+### OH_AbilityRuntime_GetStartOptionsStartVisibilityValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsStartVisibilityValue(AbilityRuntime_StartOptions *startOptions, AbilityRuntime_StartVisibility *startVisibility)
@@ -503,6 +532,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsStartVisibilityValue(A
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -510,6 +540,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsStartVisibilityValue(A
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -542,9 +573,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_GetStartOptionsStartWindowBackgroundColorValue()
+### OH_AbilityRuntime_GetStartOptionsStartWindowBackgroundColorValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsStartWindowBackgroundColorValue(AbilityRuntime_StartOptions *startOptions, char **startWindowBackgroundColor, size_t *size)
@@ -558,6 +590,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsStartWindowBackgroundC
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -566,6 +599,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsStartWindowBackgroundC
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -608,9 +642,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_GetStartOptionsSupportedWindowModesValue()
+### OH_AbilityRuntime_GetStartOptionsSupportedWindowModesValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsSupportedWindowModesValue(AbilityRuntime_StartOptions *startOptions, AbilityRuntime_SupportedWindowMode **supportedWindowModes, size_t *size)
@@ -624,6 +659,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsSupportedWindowModesVa
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -632,6 +668,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsSupportedWindowModesVa
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -673,9 +710,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_GetStartOptionsMinWindowWidthValue()
+### OH_AbilityRuntime_GetStartOptionsMinWindowWidthValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsMinWindowWidthValue(AbilityRuntime_StartOptions *startOptions, int32_t *minWindowWidth)
@@ -689,6 +727,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsMinWindowWidthValue(Ab
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -696,6 +735,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsMinWindowWidthValue(Ab
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -728,9 +768,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_GetStartOptionsMaxWindowWidthValue()
+### OH_AbilityRuntime_GetStartOptionsMaxWindowWidthValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsMaxWindowWidthValue(AbilityRuntime_StartOptions *startOptions, int32_t *maxWindowWidth)
@@ -744,6 +785,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsMaxWindowWidthValue(Ab
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -751,6 +793,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsMaxWindowWidthValue(Ab
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -783,9 +826,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_GetStartOptionsMinWindowHeightValue()
+### OH_AbilityRuntime_GetStartOptionsMinWindowHeightValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsMinWindowHeightValue(AbilityRuntime_StartOptions *startOptions, int32_t *minWindowHeight)
@@ -799,6 +843,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsMinWindowHeightValue(A
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -806,6 +851,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsMinWindowHeightValue(A
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -838,9 +884,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_GetStartOptionsMaxWindowHeightValue()
+### OH_AbilityRuntime_GetStartOptionsMaxWindowHeightValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsMaxWindowHeightValue(AbilityRuntime_StartOptions *startOptions, int32_t *maxWindowHeight)
@@ -854,6 +901,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsMaxWindowHeightValue(A
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -861,6 +909,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsMaxWindowHeightValue(A
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -893,9 +942,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_CreateStartOptions()
+### OH_AbilityRuntime_CreateStartOptions()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_StartOptions* OH_AbilityRuntime_CreateStartOptions(void)
@@ -908,6 +958,7 @@ AbilityRuntime_StartOptions* OH_AbilityRuntime_CreateStartOptions(void)
 **起始版本：** 17
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -934,9 +985,10 @@ void createStartOptionsTest()
 
 
 
-#### OH_AbilityRuntime_DestroyStartOptions()
+### OH_AbilityRuntime_DestroyStartOptions()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_DestroyStartOptions(AbilityRuntime_StartOptions **startOptions)
@@ -950,12 +1002,14 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_DestroyStartOptions(AbilityRuntime_St
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions **startOptions | 需要销毁的AbilityRuntime_StartOptions对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -982,9 +1036,10 @@ void destroyStartOptionsTest()
 
 
 
-#### OH_AbilityRuntime_SetStartOptionsWindowMode()
+### OH_AbilityRuntime_SetStartOptionsWindowMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsWindowMode(AbilityRuntime_StartOptions *startOptions,AbilityRuntime_WindowMode windowMode)
@@ -998,6 +1053,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsWindowMode(AbilityRunt
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -1005,6 +1061,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsWindowMode(AbilityRunt
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1036,9 +1093,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_GetStartOptionsWindowMode()
+### OH_AbilityRuntime_GetStartOptionsWindowMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsWindowMode(AbilityRuntime_StartOptions *startOptions,AbilityRuntime_WindowMode &windowMode)
@@ -1056,6 +1114,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsWindowMode(AbilityRunt
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -1063,6 +1122,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsWindowMode(AbilityRunt
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1094,9 +1154,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_SetStartOptionsDisplayId()
+### OH_AbilityRuntime_SetStartOptionsDisplayId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsDisplayId(AbilityRuntime_StartOptions *startOptions,int32_t displayId)
@@ -1110,6 +1171,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsDisplayId(AbilityRunti
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -1117,6 +1179,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsDisplayId(AbilityRunti
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1147,9 +1210,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_GetStartOptionsDisplayId()
+### OH_AbilityRuntime_GetStartOptionsDisplayId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsDisplayId(AbilityRuntime_StartOptions *startOptions,int32_t &displayId)
@@ -1167,6 +1231,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsDisplayId(AbilityRunti
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -1174,6 +1239,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsDisplayId(AbilityRunti
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1205,9 +1271,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_SetStartOptionsWithAnimation()
+### OH_AbilityRuntime_SetStartOptionsWithAnimation()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsWithAnimation(AbilityRuntime_StartOptions *startOptions,bool withAnimation)
@@ -1221,6 +1288,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsWithAnimation(AbilityR
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -1228,6 +1296,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsWithAnimation(AbilityR
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1258,9 +1327,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_GetStartOptionsWithAnimation()
+### OH_AbilityRuntime_GetStartOptionsWithAnimation()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsWithAnimation(AbilityRuntime_StartOptions *startOptions,bool &withAnimation)
@@ -1278,6 +1348,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsWithAnimation(AbilityR
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -1285,6 +1356,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsWithAnimation(AbilityR
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1316,9 +1388,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_SetStartOptionsWindowLeft()
+### OH_AbilityRuntime_SetStartOptionsWindowLeft()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsWindowLeft(AbilityRuntime_StartOptions *startOptions,int32_t windowLeft)
@@ -1332,6 +1405,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsWindowLeft(AbilityRunt
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -1339,6 +1413,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsWindowLeft(AbilityRunt
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1369,9 +1444,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_GetStartOptionsWindowLeft()
+### OH_AbilityRuntime_GetStartOptionsWindowLeft()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsWindowLeft(AbilityRuntime_StartOptions *startOptions,int32_t &windowLeft)
@@ -1389,6 +1465,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsWindowLeft(AbilityRunt
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -1396,6 +1473,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsWindowLeft(AbilityRunt
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1427,9 +1505,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_SetStartOptionsWindowTop()
+### OH_AbilityRuntime_SetStartOptionsWindowTop()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsWindowTop(AbilityRuntime_StartOptions *startOptions,int32_t windowTop)
@@ -1443,6 +1522,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsWindowTop(AbilityRunti
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -1450,6 +1530,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsWindowTop(AbilityRunti
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1480,9 +1561,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_GetStartOptionsWindowTop()
+### OH_AbilityRuntime_GetStartOptionsWindowTop()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsWindowTop(AbilityRuntime_StartOptions *startOptions,int32_t &windowTop)
@@ -1500,6 +1582,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsWindowTop(AbilityRunti
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -1507,6 +1590,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsWindowTop(AbilityRunti
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1538,9 +1622,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_SetStartOptionsWindowHeight()
+### OH_AbilityRuntime_SetStartOptionsWindowHeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsWindowHeight(AbilityRuntime_StartOptions *startOptions,int32_t windowHeight)
@@ -1554,6 +1639,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsWindowHeight(AbilityRu
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -1561,6 +1647,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsWindowHeight(AbilityRu
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1591,9 +1678,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_GetStartOptionsWindowHeight()
+### OH_AbilityRuntime_GetStartOptionsWindowHeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsWindowHeight(AbilityRuntime_StartOptions *startOptions,int32_t &windowHeight)
@@ -1611,6 +1699,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsWindowHeight(AbilityRu
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -1618,6 +1707,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsWindowHeight(AbilityRu
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1649,9 +1739,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_SetStartOptionsWindowWidth()
+### OH_AbilityRuntime_SetStartOptionsWindowWidth()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsWindowWidth(AbilityRuntime_StartOptions *startOptions,int32_t windowWidth)
@@ -1665,6 +1756,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsWindowWidth(AbilityRun
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -1672,6 +1764,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsWindowWidth(AbilityRun
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1702,9 +1795,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_GetStartOptionsWindowWidth()
+### OH_AbilityRuntime_GetStartOptionsWindowWidth()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsWindowWidth(AbilityRuntime_StartOptions *startOptions,int32_t &windowWidth)
@@ -1722,6 +1816,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsWindowWidth(AbilityRun
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -1729,6 +1824,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsWindowWidth(AbilityRun
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1760,9 +1856,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_SetStartOptionsStartVisibility()
+### OH_AbilityRuntime_SetStartOptionsStartVisibility()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsStartVisibility(AbilityRuntime_StartOptions *startOptions,AbilityRuntime_StartVisibility startVisibility)
@@ -1776,6 +1873,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsStartVisibility(Abilit
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | StartOptions结构体。 |
@@ -1783,6 +1881,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsStartVisibility(Abilit
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1814,9 +1913,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_GetStartOptionsStartVisibility()
+### OH_AbilityRuntime_GetStartOptionsStartVisibility()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsStartVisibility(AbilityRuntime_StartOptions *startOptions,AbilityRuntime_StartVisibility &startVisibility)
@@ -1834,6 +1934,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsStartVisibility(Abilit
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | StartOptions结构体。 |
@@ -1841,6 +1942,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsStartVisibility(Abilit
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1872,9 +1974,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_SetStartOptionsStartWindowIcon()
+### OH_AbilityRuntime_SetStartOptionsStartWindowIcon()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsStartWindowIcon(AbilityRuntime_StartOptions *startOptions,OH_PixelmapNative *startWindowIcon)
@@ -1882,19 +1985,21 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsStartWindowIcon(Abilit
 
 **描述**
 
-设置启动Ability时的窗口启动图标。图片数据大小限制为600M。
+设置启动Ability时的窗口启动图标。图片数据大小限制为600MB。
 
 **起始版本：** 17
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
-| OH_PixelmapNative *startWindowIcon | 启动Ability时的窗口启动图标。图片数据大小限制为600M。 |
+| OH_PixelmapNative *startWindowIcon | 启动Ability时的窗口启动图标。图片数据大小限制为600MB。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1962,9 +2067,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_GetStartOptionsStartWindowIcon()
+### OH_AbilityRuntime_GetStartOptionsStartWindowIcon()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsStartWindowIcon(AbilityRuntime_StartOptions *startOptions,OH_PixelmapNative **startWindowIcon)
@@ -1978,6 +2084,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsStartWindowIcon(Abilit
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -1985,6 +2092,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsStartWindowIcon(Abilit
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2020,9 +2128,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_SetStartOptionsStartWindowBackgroundColor()
+### OH_AbilityRuntime_SetStartOptionsStartWindowBackgroundColor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsStartWindowBackgroundColor(AbilityRuntime_StartOptions *startOptions, const char *startWindowBackgroundColor)
@@ -2030,11 +2139,12 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsStartWindowBackgroundC
 
 **描述**
 
-设置启动Ability时的窗口背景颜色。启动UIAbility时，启动页所显示的背景颜色如果未设置该字段，则默认采用[module.json5配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)中[abilities标签](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#abilities标签)的startWindowBackground字段的配置。
+设置启动Ability时的窗口背景颜色。如果未设置，则默认采用[module.json5配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)中[abilities标签](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#abilities标签)的startWindowBackground字段的配置。
 
 **起始版本：** 17
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -2043,6 +2153,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsStartWindowBackgroundC
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2074,9 +2185,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_GetStartOptionsStartWindowBackgroundColor()
+### OH_AbilityRuntime_GetStartOptionsStartWindowBackgroundColor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsStartWindowBackgroundColor(AbilityRuntime_StartOptions *startOptions, char **startWindowBackgroundColor, size_t &size)
@@ -2094,6 +2206,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsStartWindowBackgroundC
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -2102,6 +2215,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsStartWindowBackgroundC
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2144,9 +2258,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_SetStartOptionsSupportedWindowModes()
+### OH_AbilityRuntime_SetStartOptionsSupportedWindowModes()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsSupportedWindowModes(AbilityRuntime_StartOptions *startOptions, AbilityRuntime_SupportedWindowMode *supportedWindowModes,size_t size)
@@ -2154,11 +2269,12 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsSupportedWindowModes(A
 
 **描述**
 
-设置启动Ability时的组件所支持的窗口模式。
+设置启动Ability时的组件所支持的窗口模式。如果未配置该字段，则默认采用该UIAbility对应的module.json5配置文件中，abilities标签的supportWindowMode字段的取值。
 
 **起始版本：** 17
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -2168,6 +2284,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsSupportedWindowModes(A
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2206,9 +2323,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_GetStartOptionsSupportedWindowModes()
+### OH_AbilityRuntime_GetStartOptionsSupportedWindowModes()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsSupportedWindowModes(AbilityRuntime_StartOptions *startOptions, AbilityRuntime_SupportedWindowMode **supportedWindowModes,size_t &size)
@@ -2226,6 +2344,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsSupportedWindowModes(A
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -2234,6 +2353,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsSupportedWindowModes(A
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2275,9 +2395,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_SetStartOptionsMinWindowWidth()
+### OH_AbilityRuntime_SetStartOptionsMinWindowWidth()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsMinWindowWidth(AbilityRuntime_StartOptions *startOptions, int32_t minWindowWidth)
@@ -2291,6 +2412,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsMinWindowWidth(Ability
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -2298,6 +2420,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsMinWindowWidth(Ability
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2329,9 +2452,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_GetStartOptionsMinWindowWidth()
+### OH_AbilityRuntime_GetStartOptionsMinWindowWidth()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsMinWindowWidth(AbilityRuntime_StartOptions *startOptions, int32_t &minWindowWidth)
@@ -2349,6 +2473,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsMinWindowWidth(Ability
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -2356,6 +2481,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsMinWindowWidth(Ability
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2388,9 +2514,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_SetStartOptionsMaxWindowWidth()
+### OH_AbilityRuntime_SetStartOptionsMaxWindowWidth()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsMaxWindowWidth(AbilityRuntime_StartOptions *startOptions, int32_t maxWindowWidth)
@@ -2404,6 +2531,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsMaxWindowWidth(Ability
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -2411,6 +2539,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsMaxWindowWidth(Ability
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2442,9 +2571,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_GetStartOptionsMaxWindowWidth()
+### OH_AbilityRuntime_GetStartOptionsMaxWindowWidth()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsMaxWindowWidth(AbilityRuntime_StartOptions *startOptions, int32_t &maxWindowWidth)
@@ -2462,6 +2592,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsMaxWindowWidth(Ability
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -2469,6 +2600,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsMaxWindowWidth(Ability
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2501,9 +2633,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_SetStartOptionsMinWindowHeight()
+### OH_AbilityRuntime_SetStartOptionsMinWindowHeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsMinWindowHeight(AbilityRuntime_StartOptions *startOptions, int32_t minWindowHeight)
@@ -2517,6 +2650,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsMinWindowHeight(Abilit
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -2524,6 +2658,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsMinWindowHeight(Abilit
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2555,9 +2690,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_GetStartOptionsMinWindowHeight()
+### OH_AbilityRuntime_GetStartOptionsMinWindowHeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsMinWindowHeight(AbilityRuntime_StartOptions *startOptions, int32_t &minWindowHeight)
@@ -2575,6 +2711,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsMinWindowHeight(Abilit
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -2582,6 +2719,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsMinWindowHeight(Abilit
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2614,9 +2752,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_SetStartOptionsMaxWindowHeight()
+### OH_AbilityRuntime_SetStartOptionsMaxWindowHeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsMaxWindowHeight(AbilityRuntime_StartOptions *startOptions, int32_t maxWindowHeight)
@@ -2630,6 +2769,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsMaxWindowHeight(Abilit
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -2637,6 +2777,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_SetStartOptionsMaxWindowHeight(Abilit
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2668,9 +2809,10 @@ void demo()
 
 
 
-#### OH_AbilityRuntime_GetStartOptionsMaxWindowHeight()
+### OH_AbilityRuntime_GetStartOptionsMaxWindowHeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsMaxWindowHeight(AbilityRuntime_StartOptions *startOptions, int32_t &maxWindowHeight)
@@ -2688,6 +2830,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsMaxWindowHeight(Abilit
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_StartOptions *startOptions | AbilityRuntime_StartOptions对象。 |
@@ -2695,6 +2838,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_GetStartOptionsMaxWindowHeight(Abilit
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |

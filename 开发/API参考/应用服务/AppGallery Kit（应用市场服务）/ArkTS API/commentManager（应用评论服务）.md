@@ -1,6 +1,6 @@
 # commentManager（应用评论服务）
 
-更新时间：2026-06-12 06:54:11
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/appgallery-commentmanager
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -14,7 +14,8 @@
 **起始版本：** 6.0.0(20)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -24,7 +25,8 @@ import { commentManager } from '@kit.AppGalleryKit';
  
   
 
-#### commentManager.showCommentDialog
+## commentManager.showCommentDialog
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -40,6 +42,7 @@ showCommentDialog(context: common.UIExtensionContext | common.UIAbilityContext):
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIExtensionContext \| common.UIAbilityContext | 是 | 应用上下文。 |
@@ -47,6 +50,7 @@ showCommentDialog(context: common.UIExtensionContext | common.UIAbilityContext):
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -56,6 +60,7 @@ showCommentDialog(context: common.UIExtensionContext | common.UIAbilityContext):
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-appgallery)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1021500001 | Internal system error. |

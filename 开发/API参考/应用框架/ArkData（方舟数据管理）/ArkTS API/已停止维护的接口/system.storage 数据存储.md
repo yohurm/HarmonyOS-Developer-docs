@@ -1,6 +1,6 @@
 # @system.storage (数据存储)
 
-更新时间：2026-07-17 09:35:24
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-system-storage
 **支持设备：** Wearable | lite_wearable
@@ -10,7 +10,8 @@
 
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -20,7 +21,8 @@ import storage from '@system.storage';
  
   
 
-#### storage.get
+## storage.get
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -32,6 +34,7 @@ get(options: GetStorageOptions): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | GetStorageOptions | 是 | 接口配置信息。 |
@@ -122,7 +125,8 @@ export default {
  
   
 
-#### storage.set
+## storage.set
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -134,6 +138,7 @@ set(options: SetStorageOptions): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | SetStorageOptions | 是 | 接口配置信息。 |
@@ -223,7 +228,8 @@ export default {
  
   
 
-#### storage.clear
+## storage.clear
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -235,6 +241,7 @@ clear(options?: ClearStorageOptions): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ClearStorageOptions | 否 | 接口配置信息。 |
@@ -320,7 +327,8 @@ export default {
  
   
 
-#### storage.delete
+## storage.delete
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -332,6 +340,7 @@ delete(options: DeleteStorageOptions): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | DeleteStorageOptions | 是 | 接口配置信息。 |
@@ -419,12 +428,14 @@ export default {
  
   
 
-#### GetStorageOptions
+## GetStorageOptions
+
 
 **支持设备：** Wearable | lite_wearable
 
 **系统能力：** SystemCapability.DistributedDataManager.Preferences.Core.Lite
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 内容索引。 |
@@ -436,12 +447,14 @@ export default {
  
   
 
-#### SetStorageOptions
+## SetStorageOptions
+
 
 **支持设备：** Wearable | lite_wearable
 
 **系统能力：** SystemCapability.DistributedDataManager.Preferences.Core.Lite
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 要修改的存储值的索引。 |
@@ -453,12 +466,14 @@ export default {
  
   
 
-#### ClearStorageOptions
+## ClearStorageOptions
+
 
 **支持设备：** Wearable | lite_wearable
 
 **系统能力：** SystemCapability.DistributedDataManager.Preferences.Core.Lite
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | success | () => void | 否 | 接口调用成功的回调函数。 |
@@ -468,12 +483,14 @@ export default {
  
   
 
-#### DeleteStorageOptions
+## DeleteStorageOptions
+
 
 **支持设备：** Wearable | lite_wearable
 
 **系统能力：** SystemCapability.DistributedDataManager.Preferences.Core.Lite
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 内容索引。 |

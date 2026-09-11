@@ -1,16 +1,17 @@
 # NativeVSync开发指导 (C/C++)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-vsync-guidelines
 
-#### 场景介绍
+## 场景介绍
 
 NativeVSync模块用于获取系统VSync信号，提供OH_NativeVSync实例的创建、销毁及设置VSync回调函数的功能。VSync信号触发时，将调用已设置的回调函数。
 
 
 
-#### 接口说明
+## 接口说明
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -24,7 +25,7 @@ NativeVSync模块用于获取系统VSync信号，提供OH_NativeVSync实例的�
 
 
 
-#### 开发步骤
+## 开发步骤
 
 以下步骤描述如何使用NativeVSync提供的Native API接口创建和销毁OH_NativeVSync实例，以及如何设置VSync回调函数。
 

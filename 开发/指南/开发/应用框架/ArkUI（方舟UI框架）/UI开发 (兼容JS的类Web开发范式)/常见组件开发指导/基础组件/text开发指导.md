@@ -1,13 +1,13 @@
 # text开发指导
 
-更新时间：2026-04-13 09:29:20
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-components-text
 
 text是文本组件，用于呈现一段文本信息。具体用法请参考[text](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-basic-text)的API文档。
 
 
-#### 创建text组件
+## 创建text组件
 
 在pages/index目录下的hml文件中创建一个text组件。
 
@@ -36,11 +36,11 @@ text是文本组件，用于呈现一段文本信息。具体用法请参考[tex
 
 
 
-#### 设置text组件样式和属性
+## 设置text组件样式和属性
 
  - 添加文本样式
 
-  设置color、font-size、allow-scale、word-spacing、text-align属性分别为文本添加颜色、大小、缩放、文本之间的间距和文本在水平方向的对齐方式。
+  设置color、font-size、allow-scale、word-spacing、text-align属性分别为文本添加颜色、大小、是否允许缩放、文本之间的间距和文本在水平方向的对齐方式。
 
   
 ```text
@@ -72,7 +72,7 @@ text是文本组件，用于呈现一段文本信息。具体用法请参考[tex
 
  - 添加划线
 
-  设置text-decoration和text-decoration-color属性为文本添加划线和划线颜色，text-decoration枚举值请参考 text自有样式。
+  设置text-decoration和text-decoration-color属性为文本添加划线和划线颜色，text-decoration枚举值请参考text自有样式。
 
   
 ```text
@@ -151,10 +151,10 @@ text{
     This is a passage
   </text>
   <text style="font-size: 45px;">
-    This       1
-       
-     is a           1        
-      passage 
+    <span style="color: aqua;">This </span><span style="color: #F1F3F5;">      1
+    </span>   
+    <span style="color: blue;"> is a </span>    <span style="color: #F1F3F5;">      1    </span>    
+    <span style="color: red;">  passage </span>
   </text>
 </div>
 ```
@@ -170,7 +170,7 @@ text{
 
 
 
-#### 场景示例
+## 场景示例
 
 text组件通过数据绑定展示文本内容，span组件通过设置show属性来实现文本内容的隐藏和显示。
 
@@ -184,11 +184,11 @@ text组件通过数据绑定展示文本内容，span组件通过设置show属�
     <switch checked="true" onchange="test"></switch>
   </div>
   <text class="span-container" style="color: #ff00ff;">
-      {{ content  }}  
-    
+    <span show="{{isShow}}">  {{ content  }}  </span>
+    <span style="color: white;">
         1
-    
-    Hide clip 
+    </span>
+    <span style="color: #f76160">Hide clip </span>
   </text>
 </div>
 ```
@@ -226,4 +226,4 @@ export default {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/F3En7X0cRryuuZY0bDaCGQ/zh-cn_image_0000002611833997.gif?HW-CC-KV=V1&HW-CC-Date=20260528T030426Z&HW-CC-Expire=86400&HW-CC-Sign=FB819BD0B9EE4EFA2FFB6E5F5AE08F758669BEE5B43FC0AE9E2D8F267D9D80B9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/V6o725-dTTi8Q2ODZyVnmw/zh-cn_image_0000002747290743.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073134Z&HW-CC-Expire=86400&HW-CC-Sign=2DF76C505015AC4B9DAD03D939C694B6D1C3715CB9E439CE7EBB74F18EC25E4D)

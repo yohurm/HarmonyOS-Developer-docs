@@ -1,13 +1,14 @@
 # avrecorder.h
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avrecorder-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义AVRecorder接口。AVRecorder提供媒体录制能力，支持音视频数据的采集与录制、完整的状态管理与回调监听、灵活的编码器选择与参数配置等，适用于需要将音视频内容录制保存为文件的场景。
 
@@ -23,15 +24,18 @@
 
 
 
-#### 汇总
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 汇总
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 函数
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -57,15 +61,17 @@
 
 
 
-#### 函数说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 函数说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### OH_AVRecorder_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### OH_AVRecorder_Create()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVRecorder *OH_AVRecorder_Create(void)
@@ -81,16 +87,18 @@ OH_AVRecorder *OH_AVRecorder_Create(void)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| OH_AVRecorder | 成功时返回指向OH_AVRecorder实例的指针，用于后续的录制操作（如Prepare、Start、Pause等）；失败时返回nullptr。 |
+| OH_AVRecorder * | 成功时返回指向OH_AVRecorder实例的指针，用于后续的录制操作（如Prepare、Start、Pause等）；失败时返回nullptr。 |
 
 
 
 
-#### OH_AVRecorder_Prepare()
+### OH_AVRecorder_Prepare()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVRecorder_Prepare(OH_AVRecorder *recorder, OH_AVRecorder_Config *config)
@@ -108,6 +116,7 @@ OH_AVErrCode OH_AVRecorder_Prepare(OH_AVRecorder *recorder, OH_AVRecorder_Config
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVRecorder *recorder | 指向OH_AVRecorder实例的指针。 |
@@ -116,6 +125,7 @@ OH_AVErrCode OH_AVRecorder_Prepare(OH_AVRecorder *recorder, OH_AVRecorder_Config
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：输入的recorder/config为nullptr或准备失败。 |
@@ -123,9 +133,10 @@ OH_AVErrCode OH_AVRecorder_Prepare(OH_AVRecorder *recorder, OH_AVRecorder_Config
 
 
 
-#### OH_AVRecorder_GetAVRecorderConfig()
+### OH_AVRecorder_GetAVRecorderConfig()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVRecorder_GetAVRecorderConfig(OH_AVRecorder *recorder, OH_AVRecorder_Config **config)
@@ -143,6 +154,7 @@ OH_AVErrCode OH_AVRecorder_GetAVRecorderConfig(OH_AVRecorder *recorder, OH_AVRec
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVRecorder *recorder | 指向OH_AVRecorder实例的指针。 |
@@ -151,6 +163,7 @@ OH_AVErrCode OH_AVRecorder_GetAVRecorderConfig(OH_AVRecorder *recorder, OH_AVRec
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：输入的recorder为nullptr或*config不为nullptr。 AV_ERR_NO_MEMORY：内存不足，*config内存分配失败，请释放资源后重试。 |
@@ -158,9 +171,10 @@ OH_AVErrCode OH_AVRecorder_GetAVRecorderConfig(OH_AVRecorder *recorder, OH_AVRec
 
 
 
-#### OH_AVRecorder_GetInputSurface()
+### OH_AVRecorder_GetInputSurface()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVRecorder_GetInputSurface(OH_AVRecorder *recorder, OHNativeWindow **window)
@@ -180,6 +194,7 @@ OH_AVErrCode OH_AVRecorder_GetInputSurface(OH_AVRecorder *recorder, OHNativeWind
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVRecorder *recorder | 指向OH_AVRecorder实例的指针。 |
@@ -188,6 +203,7 @@ OH_AVErrCode OH_AVRecorder_GetInputSurface(OH_AVRecorder *recorder, OHNativeWind
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：输入的recorder为nullptr或*window不为nullptr。 |
@@ -195,9 +211,10 @@ OH_AVErrCode OH_AVRecorder_GetInputSurface(OH_AVRecorder *recorder, OHNativeWind
 
 
 
-#### OH_AVRecorder_UpdateRotation()
+### OH_AVRecorder_UpdateRotation()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVRecorder_UpdateRotation(OH_AVRecorder *recorder, int32_t rotation)
@@ -213,6 +230,7 @@ OH_AVErrCode OH_AVRecorder_UpdateRotation(OH_AVRecorder *recorder, int32_t rotat
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVRecorder *recorder | 指向OH_AVRecorder实例的指针。 |
@@ -221,6 +239,7 @@ OH_AVErrCode OH_AVRecorder_UpdateRotation(OH_AVRecorder *recorder, int32_t rotat
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：输入的recorder为nullptr或输入的rotation不符合要求或更新视频旋转角度失败。 |
@@ -228,9 +247,10 @@ OH_AVErrCode OH_AVRecorder_UpdateRotation(OH_AVRecorder *recorder, int32_t rotat
 
 
 
-#### OH_AVRecorder_Start()
+### OH_AVRecorder_Start()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVRecorder_Start(OH_AVRecorder *recorder)
@@ -246,12 +266,14 @@ OH_AVErrCode OH_AVRecorder_Start(OH_AVRecorder *recorder)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVRecorder *recorder | 指向OH_AVRecorder实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -260,9 +282,10 @@ OH_AVErrCode OH_AVRecorder_Start(OH_AVRecorder *recorder)
 
 
 
-#### OH_AVRecorder_Pause()
+### OH_AVRecorder_Pause()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVRecorder_Pause(OH_AVRecorder *recorder)
@@ -280,12 +303,14 @@ OH_AVErrCode OH_AVRecorder_Pause(OH_AVRecorder *recorder)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVRecorder *recorder | 指向OH_AVRecorder实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -294,9 +319,10 @@ OH_AVErrCode OH_AVRecorder_Pause(OH_AVRecorder *recorder)
 
 
 
-#### OH_AVRecorder_Resume()
+### OH_AVRecorder_Resume()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVRecorder_Resume(OH_AVRecorder *recorder)
@@ -312,12 +338,14 @@ OH_AVErrCode OH_AVRecorder_Resume(OH_AVRecorder *recorder)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVRecorder *recorder | 指向OH_AVRecorder实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -326,9 +354,10 @@ OH_AVErrCode OH_AVRecorder_Resume(OH_AVRecorder *recorder)
 
 
 
-#### OH_AVRecorder_Stop()
+### OH_AVRecorder_Stop()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVRecorder_Stop(OH_AVRecorder *recorder)
@@ -350,12 +379,14 @@ OH_AVErrCode OH_AVRecorder_Stop(OH_AVRecorder *recorder)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVRecorder *recorder | 指向OH_AVRecorder实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -364,9 +395,10 @@ OH_AVErrCode OH_AVRecorder_Stop(OH_AVRecorder *recorder)
 
 
 
-#### OH_AVRecorder_Reset()
+### OH_AVRecorder_Reset()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVRecorder_Reset(OH_AVRecorder *recorder)
@@ -386,12 +418,14 @@ OH_AVErrCode OH_AVRecorder_Reset(OH_AVRecorder *recorder)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVRecorder *recorder | 指向OH_AVRecorder实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -400,9 +434,10 @@ OH_AVErrCode OH_AVRecorder_Reset(OH_AVRecorder *recorder)
 
 
 
-#### OH_AVRecorder_Release()
+### OH_AVRecorder_Release()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVRecorder_Release(OH_AVRecorder *recorder)
@@ -420,12 +455,14 @@ OH_AVErrCode OH_AVRecorder_Release(OH_AVRecorder *recorder)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVRecorder *recorder | 指向OH_AVRecorder实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -434,9 +471,10 @@ OH_AVErrCode OH_AVRecorder_Release(OH_AVRecorder *recorder)
 
 
 
-#### OH_AVRecorder_GetAvailableEncoder()
+### OH_AVRecorder_GetAvailableEncoder()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVRecorder_GetAvailableEncoder(OH_AVRecorder *recorder, OH_AVRecorder_EncoderInfo **info, int32_t *length)
@@ -454,6 +492,7 @@ OH_AVErrCode OH_AVRecorder_GetAvailableEncoder(OH_AVRecorder *recorder, OH_AVRec
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVRecorder *recorder | 指向OH_AVRecorder实例的指针。 |
@@ -463,6 +502,7 @@ OH_AVErrCode OH_AVRecorder_GetAvailableEncoder(OH_AVRecorder *recorder, OH_AVRec
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：输入的recorder为nullptr或*info不为nullptr。 AV_ERR_NO_MEMORY：内存不足，*info内存分配失败，请释放资源后重试。 |
@@ -470,9 +510,10 @@ OH_AVErrCode OH_AVRecorder_GetAvailableEncoder(OH_AVRecorder *recorder, OH_AVRec
 
 
 
-#### OH_AVRecorder_SetStateCallback()
+### OH_AVRecorder_SetStateCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVRecorder_SetStateCallback(OH_AVRecorder *recorder, OH_AVRecorder_OnStateChange callback, void *userData)
@@ -490,6 +531,7 @@ OH_AVErrCode OH_AVRecorder_SetStateCallback(OH_AVRecorder *recorder, OH_AVRecord
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVRecorder *recorder | 指向OH_AVRecorder实例的指针。 |
@@ -499,6 +541,7 @@ OH_AVErrCode OH_AVRecorder_SetStateCallback(OH_AVRecorder *recorder, OH_AVRecord
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：输入的recorder为nullptr或回调函数为nullptr。 |
@@ -506,9 +549,10 @@ OH_AVErrCode OH_AVRecorder_SetStateCallback(OH_AVRecorder *recorder, OH_AVRecord
 
 
 
-#### OH_AVRecorder_SetErrorCallback()
+### OH_AVRecorder_SetErrorCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVRecorder_SetErrorCallback(OH_AVRecorder *recorder, OH_AVRecorder_OnError callback, void *userData)
@@ -526,6 +570,7 @@ OH_AVErrCode OH_AVRecorder_SetErrorCallback(OH_AVRecorder *recorder, OH_AVRecord
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVRecorder *recorder | 指向OH_AVRecorder实例的指针。 |
@@ -535,6 +580,7 @@ OH_AVErrCode OH_AVRecorder_SetErrorCallback(OH_AVRecorder *recorder, OH_AVRecord
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：输入的recorder为nullptr或回调函数为nullptr。 |
@@ -542,9 +588,10 @@ OH_AVErrCode OH_AVRecorder_SetErrorCallback(OH_AVRecorder *recorder, OH_AVRecord
 
 
 
-#### OH_AVRecorder_SetUriCallback()
+### OH_AVRecorder_SetUriCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVRecorder_SetUriCallback(OH_AVRecorder *recorder, OH_AVRecorder_OnUri callback, void *userData)
@@ -562,6 +609,7 @@ OH_AVErrCode OH_AVRecorder_SetUriCallback(OH_AVRecorder *recorder, OH_AVRecorder
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVRecorder *recorder | 指向OH_AVRecorder实例的指针。 |
@@ -571,6 +619,7 @@ OH_AVErrCode OH_AVRecorder_SetUriCallback(OH_AVRecorder *recorder, OH_AVRecorder
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：输入的recorder为nullptr或回调函数为nullptr。 |
@@ -578,9 +627,10 @@ OH_AVErrCode OH_AVRecorder_SetUriCallback(OH_AVRecorder *recorder, OH_AVRecorder
 
 
 
-#### OH_AVRecorder_SetWillMuteWhenInterrupted()
+### OH_AVRecorder_SetWillMuteWhenInterrupted()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVRecorder_SetWillMuteWhenInterrupted(OH_AVRecorder *recorder, bool muteWhenInterrupted)
@@ -596,6 +646,7 @@ OH_AVErrCode OH_AVRecorder_SetWillMuteWhenInterrupted(OH_AVRecorder *recorder, b
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVRecorder *recorder | 指向OH_AVRecorder实例的指针。 |
@@ -604,6 +655,7 @@ OH_AVErrCode OH_AVRecorder_SetWillMuteWhenInterrupted(OH_AVRecorder *recorder, b
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：输入的recorder为nullptr。 AV_ERR_INVALID_STATE：函数不支持在当前状态下调用，应当在OH_AVRecorder_Prepare之前调用。 |
@@ -611,9 +663,10 @@ OH_AVErrCode OH_AVRecorder_SetWillMuteWhenInterrupted(OH_AVRecorder *recorder, b
 
 
 
-#### OH_AVRecorder_GetAudioCapturerMaxAmplitude()
+### OH_AVRecorder_GetAudioCapturerMaxAmplitude()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVRecorder_GetAudioCapturerMaxAmplitude(OH_AVRecorder *recorder, int32_t *amplitude)
@@ -629,6 +682,7 @@ OH_AVErrCode OH_AVRecorder_GetAudioCapturerMaxAmplitude(OH_AVRecorder *recorder,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVRecorder *recorder | 指向OH_AVRecorder实例的指针。 |
@@ -637,6 +691,7 @@ OH_AVErrCode OH_AVRecorder_GetAudioCapturerMaxAmplitude(OH_AVRecorder *recorder,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：输入的参数recorder或amplitude为nullptr。 AV_ERR_INVALID_STATE：不支持在当前状态下调用，应当在OH_AVRecorder_Prepare和OH_AVRecorder_Stop之间调用。 AV_ERR_NO_MEMORY：内存不足，请释放资源后重试。 AV_ERR_UNKNOWN：未知错误，请查看日志获取详细信息。 |
@@ -644,9 +699,10 @@ OH_AVErrCode OH_AVRecorder_GetAudioCapturerMaxAmplitude(OH_AVRecorder *recorder,
 
 
 
-#### OH_AVRecorder_SetMetadata()
+### OH_AVRecorder_SetMetadata()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVRecorder_SetMetadata(OH_AVRecorder *recorder, const OH_AVFormat *metadata)
@@ -662,6 +718,7 @@ OH_AVErrCode OH_AVRecorder_SetMetadata(OH_AVRecorder *recorder, const OH_AVForma
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVRecorder *recorder | 指向OH_AVRecorder实例的指针。 |
@@ -669,6 +726,7 @@ OH_AVErrCode OH_AVRecorder_SetMetadata(OH_AVRecorder *recorder, const OH_AVForma
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |

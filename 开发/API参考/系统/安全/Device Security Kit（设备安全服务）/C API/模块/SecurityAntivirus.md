@@ -1,11 +1,12 @@
 # SecurityAntivirus
 
-更新时间：2026-04-24 08:10:21
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesecurity-capi-securityantivirus
 **支持设备：** PC/2in1
 
-#### 概述
+## 概述
+
 
 **支持设备：** PC/2in1
 
@@ -17,16 +18,19 @@ SecurityAntivirus模块用于管理三方病毒防护服务应用。
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** PC/2in1
 
   
 
-#### 文件
+### 文件
+
 
 **支持设备：** PC/2in1
  
+
 | 名称 | 描述 |
 | --- | --- |
 | security_antivirus.h | 定义病毒防护服务应用调用的API接口。 |
@@ -34,10 +38,12 @@ SecurityAntivirus模块用于管理三方病毒防护服务应用。
  
   
 
-#### 结构体
+### 结构体
+
 
 **支持设备：** PC/2in1
  
+
 | 名称 | 描述 |
 | --- | --- |
 | struct SecurityAntivirus_Antivirus | 定义病毒防护服务应用信息，包含包名、当前版本号、上次更新时间、病毒防护开关状态、用户ID。 |
@@ -45,10 +51,12 @@ SecurityAntivirus模块用于管理三方病毒防护服务应用。
  
   
 
-#### 枚举
+### 枚举
+
 
 **支持设备：** PC/2in1
  
+
 | 名称 | 描述 |
 | --- | --- |
 | SecurityAntivirus_ErrCode{ SECURITY_ANTIVIRUS_SUCCESS = 0, SECURITY_ANTIVIRUS_PERMISSION_NOT_GRANTED = 201, SECURITY_ANTIVIRUS_PARAM_INVALID = 1019900001, SECURITY_ANTIVIRUS_NO_REGISTER = 1019900002, SECURITY_ANTIVIRUS_INNER_ERROR = 1019900003 } | 定义病毒防护服务管理错误码。 |
@@ -56,10 +64,12 @@ SecurityAntivirus模块用于管理三方病毒防护服务应用。
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** PC/2in1
  
+
 | 名称 | 描述 |
 | --- | --- |
 | SecurityAntivirus_ErrCode HMS_SecurityAntivirus_RegisterAntivirus(const char* bundleName) | 三方EDR（Endpoint Detection and Response）应用向HarmonyOS安全防护服务注册。 |
@@ -75,13 +85,15 @@ SecurityAntivirus模块用于管理三方病毒防护服务应用。
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
+
 
 **支持设备：** PC/2in1
 
   
 
-#### SecurityAntivirus_ErrCode
+### SecurityAntivirus_ErrCode
+
 
 **支持设备：** PC/2in1
 
@@ -99,6 +111,7 @@ enum SecurityAntivirus_ErrCode
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | SECURITY_ANTIVIRUS_SUCCESS | 接口调用成功。 |
@@ -110,13 +123,15 @@ enum SecurityAntivirus_ErrCode
  
   
 
-#### 函数说明
+## 函数说明
+
 
 **支持设备：** PC/2in1
 
   
 
-#### HMS_SecurityAntivirus_RegisterAntivirus()
+### HMS_SecurityAntivirus_RegisterAntivirus()
+
 
 **支持设备：** PC/2in1
 
@@ -132,6 +147,7 @@ SecurityAntivirus_ErrCode HMS_SecurityAntivirus_RegisterAntivirus(const char* bu
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | const char* bundleName | 三方EDR包名。 |
@@ -147,7 +163,8 @@ ohos.permission.REGISTER_ANTIVIRUS
  
   
 
-#### HMS_SecurityAntivirus_UnregisterAntivirus()
+### HMS_SecurityAntivirus_UnregisterAntivirus()
+
 
 **支持设备：** PC/2in1
 
@@ -163,6 +180,7 @@ SecurityAntivirus_ErrCode HMS_SecurityAntivirus_UnregisterAntivirus(const char* 
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | const char* bundleName | 三方EDR包名。 |
@@ -178,7 +196,8 @@ ohos.permission.REGISTER_ANTIVIRUS
  
   
 
-#### HMS_SecurityAntivirus_UpdateAntivirus()
+### HMS_SecurityAntivirus_UpdateAntivirus()
+
 
 **支持设备：** PC/2in1
 
@@ -194,6 +213,7 @@ SecurityAntivirus_ErrCode HMS_SecurityAntivirus_UpdateAntivirus(const SecurityAn
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | const SecurityAntivirus_Antivirus* antivirus | 三方EDR更新信息（包含包名、当前版本号、上次更新时间、病毒防护开关状态、用户ID）。 |
@@ -209,7 +229,8 @@ ohos.permission.REGISTER_ANTIVIRUS
  
   
 
-#### HMS_SecurityAntivirus_QueryAntivirus()
+### HMS_SecurityAntivirus_QueryAntivirus()
+
 
 **支持设备：** PC/2in1
 
@@ -225,6 +246,7 @@ SecurityAntivirus_ErrCode HMS_SecurityAntivirus_QueryAntivirus(SecurityAntivirus
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | SecurityAntivirus_Antivirus** list | 三方EDR注册信息列表。 |
@@ -241,7 +263,8 @@ ohos.permission.MANAGE_ANTIVIRUS
  
   
 
-#### HMS_SecurityAntivirus_QueryPreinstalledAntivirus()
+### HMS_SecurityAntivirus_QueryPreinstalledAntivirus()
+
 
 **支持设备：** PC/2in1
 
@@ -257,6 +280,7 @@ MDM应用向HarmonyOS安全防护服务查询所有用户系统防病毒功能�
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | SecurityAntivirus_Antivirus** list | HarmonyOS安全防护服务所有用户的防病毒功能状态信息列表。 |
@@ -273,7 +297,8 @@ ohos.permission.MANAGE_PREINSTALLED_ANTIVIRUS
  
   
 
-#### HMS_SecurityAntivirus_EnablePreinstalledAntivirus()
+### HMS_SecurityAntivirus_EnablePreinstalledAntivirus()
+
 
 **支持设备：** PC/2in1
 
@@ -297,7 +322,8 @@ ohos.permission.MANAGE_PREINSTALLED_ANTIVIRUS
  
   
 
-#### HMS_SecurityAntivirus_DisablePreinstalledAntivirus()
+### HMS_SecurityAntivirus_DisablePreinstalledAntivirus()
+
 
 **支持设备：** PC/2in1
 
@@ -321,7 +347,8 @@ ohos.permission.MANAGE_PREINSTALLED_ANTIVIRUS
  
   
 
-#### HMS_SecurityAntivirus_EnablePreinstalledAntivirusByAccount()
+### HMS_SecurityAntivirus_EnablePreinstalledAntivirusByAccount()
+
 
 **支持设备：** PC/2in1
 
@@ -337,6 +364,7 @@ MDM应用启用HarmonyOS安全防护服务中用户ID为accountId的防病毒功
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | int32_t accountId | 用户ID。 |
@@ -352,7 +380,8 @@ ohos.permission.MANAGE_PREINSTALLED_ANTIVIRUS
  
   
 
-#### HMS_SecurityAntivirus_DisablePreinstalledAntivirusByAccount()
+### HMS_SecurityAntivirus_DisablePreinstalledAntivirusByAccount()
+
 
 **支持设备：** PC/2in1
 
@@ -368,6 +397,7 @@ MDM应用禁用HarmonyOS安全防护服务中用户ID为accountId的防病毒功
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | int32_t accountId | 用户ID。 |

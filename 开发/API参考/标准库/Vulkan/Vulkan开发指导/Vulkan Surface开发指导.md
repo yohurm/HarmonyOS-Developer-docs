@@ -1,10 +1,14 @@
 # Vulkan Surface开发指导
 
-更新时间：2026-03-09 02:50:43
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/vulkan-guidelines
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 场景介绍
+## 场景介绍
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 在HarmonyOS中，扩展VK_OHOS_surface相关的API创建出来的VkSurfaceKHR会对接到本机窗口（OHNativeWindow）模块，实现本机缓冲区（OHNativeBuffer）的轮转，用于屏幕显示。
 
@@ -12,7 +16,11 @@
 
 
 
-#### 接口说明
+## 接口说明
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -23,7 +31,10 @@
 
 
 
-#### 开发步骤
+## 开发步骤
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 以下步骤说明了如何创建一个VkSurfaceKHR对象。
 

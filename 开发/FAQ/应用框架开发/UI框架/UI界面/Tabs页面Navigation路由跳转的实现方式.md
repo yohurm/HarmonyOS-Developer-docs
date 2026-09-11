@@ -185,8 +185,8 @@ struct TempPage {
 
   build() {
     Column() {
-      // solution start
-      // 将Navigation放到Tabs外层
+     <em> // solution start</em>
+<em>      // 将Navigation放到Tabs外层</em>
       Navigation(this.appPathStack) {
         Tabs({ barPosition: BarPosition.Start, index: this.currentIndex, controller: this.controller }) {
           ForEach(['待办', '已办', '已发'], (item: string, index: number) => {
@@ -208,7 +208,7 @@ struct TempPage {
         .margin({ top: 0, bottom: 0 });
       }
       .hideToolBar(true);
-      // solution end
+   <em>   // solution end</em>
     }
     .height('100%')
     .width('100%');

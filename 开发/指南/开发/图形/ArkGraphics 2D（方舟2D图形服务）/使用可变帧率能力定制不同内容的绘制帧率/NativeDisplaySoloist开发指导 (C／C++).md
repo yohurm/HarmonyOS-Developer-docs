@@ -1,6 +1,6 @@
 # NativeDisplaySoloist开发指导 (C/C++)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/displaysoloist-native-guidelines
 
@@ -9,7 +9,8 @@
 开发者可以选择多个DisplaySoloist实例共享一个线程，也可以选择每个DisplaySoloist实例独占一个线程。
 
 
-#### 接口说明
+## 接口说明
+
 
 | 函数名称 | 说明 |
 | --- | --- |
@@ -24,13 +25,13 @@
 
 
 
-#### 开发示例
+## 开发示例
 
 本范例是通过Drawing在Native侧实现图形的绘制，通过异步线程设置期望的帧率，再根据帧率进行图形的绘制并将其呈现在NativeWindow上，图形绘制部分可参考[使用Drawing实现图形绘制与显示](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphic-drawing-overview)。
 
 
 
-#### 添加开发依赖
+### 添加开发依赖
 
 **添加动态链接库**
 
@@ -66,7 +67,7 @@ target_link_libraries(entry PUBLIC libace_napi.z.so libnative_drawing.so libnati
 
 
 
-#### 开发步骤
+### 开发步骤
 1. 定义ArkTS接口文件XComponentContext.ts，用来对接Native层。
 
   

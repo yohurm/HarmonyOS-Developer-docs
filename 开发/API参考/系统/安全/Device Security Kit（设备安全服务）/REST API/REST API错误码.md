@@ -1,15 +1,19 @@
 # REST API错误码
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesecurity-restapi-errcode
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 以下仅介绍云服务特有错误码及原因分析。
 
   
 
-#### InvalidBundleName
+## InvalidBundleName
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
  
@@ -37,7 +41,10 @@ bundleName缺失或不合法。
  
   
 
-#### InvalidDeviceToken
+## InvalidDeviceToken
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
  
@@ -61,7 +68,10 @@ deviceToken缺失或不合法。
  
   
 
-#### DeviceTokenExpired
+## DeviceTokenExpired
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
  
@@ -85,7 +95,10 @@ deviceToken有效期为1小时，重新生成token后尝试即可。
  
   
 
-#### InvalidTimeStamp
+## InvalidTimeStamp
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
  
@@ -109,7 +122,10 @@ timeStamp缺失或不合法。
  
   
 
-#### NotFound
+## NotFound
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
  
@@ -135,7 +151,10 @@ timeStamp缺失或不合法。
  
   
 
-#### InvalidMode
+## InvalidMode
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
  
@@ -159,7 +178,10 @@ mode不合法。
  
   
 
-#### InvalidBits
+## InvalidBits
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
  
@@ -183,7 +205,10 @@ bit值缺失或不合法。
  
   
 
-#### InternalServerError
+## InternalServerError
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
  

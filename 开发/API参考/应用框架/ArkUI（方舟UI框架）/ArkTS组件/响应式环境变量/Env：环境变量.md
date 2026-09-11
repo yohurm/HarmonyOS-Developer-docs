@@ -1,9 +1,9 @@
 # @Env：环境变量
 
-更新时间：2026-08-04 06:06:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-env-system-property
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 @Env装饰器用于获取系统环境变量，帮助开发者感知系统环境变化并动态调整UI显示。
 
@@ -14,9 +14,10 @@
 开发者指南见：[@Env开发者指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-env-system-property)。
 
 
-#### @Env
+## @Env
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Env&lt;T&gt;(key: SystemEnvKey&lt;T&gt; | SystemProperties): PropertyDecorator
 
@@ -30,12 +31,14 @@ Env&lt;T&gt;(key: SystemEnvKey&lt;T&gt; | SystemProperties): PropertyDecorator
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | SystemEnvKey&lt;T&gt; \| SystemProperties | 是 | 环境变量key。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -64,9 +67,10 @@ struct Index {
 
 
 
-#### EnvDecorator
+## EnvDecorator
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type EnvDecorator = (value: SystemProperties) => PropertyDecorator
 
@@ -80,12 +84,14 @@ type EnvDecorator = (value: SystemProperties) => PropertyDecorator
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | SystemProperties | 是 | 环境变量属性名，用于指定要获取的系统环境变量。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -96,6 +102,7 @@ type EnvDecorator = (value: SystemProperties) => PropertyDecorator
 
 详细介绍请参见[环境变量错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-env)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 140000 | Invalid key for @Env |
@@ -103,13 +110,15 @@ type EnvDecorator = (value: SystemProperties) => PropertyDecorator
 
 
 
-#### SystemProperties
+## SystemProperties
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义环境变量枚举值，用于通过[@Env](#env)装饰器获取系统环境变量。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -122,17 +131,19 @@ type EnvDecorator = (value: SystemProperties) => PropertyDecorator
 
 
 
-#### SystemEnvKey&lt;T&gt;
+## SystemEnvKey&lt;T&gt;
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 系统环境变量Key对应的类型。
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **起始版本：** 26.0.0
 
@@ -142,6 +153,7 @@ type EnvDecorator = (value: SystemProperties) => PropertyDecorator
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | T | 否 | 是 | 系统环境变量Key对应值的数据类型，默认值为undefined。 |
@@ -149,9 +161,10 @@ type EnvDecorator = (value: SystemProperties) => PropertyDecorator
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 protected constructor()
 
@@ -167,9 +180,10 @@ protected constructor()
 
 
 
-#### WritableSystemEnvKey&lt;T&gt;
+## WritableSystemEnvKey&lt;T&gt;
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义可写的系统环境变量Key，继承自[SystemEnvKey&lt;T&gt;](#systemenvkeyt)。
 
@@ -183,9 +197,10 @@ protected constructor()
 
 
 
-#### ReadonlySystemEnvKey&lt;T&gt;
+## ReadonlySystemEnvKey&lt;T&gt;
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义只读的系统环境变量Key，继承自[SystemEnvKey&lt;T&gt;](#systemenvkeyt)。
 
@@ -199,9 +214,10 @@ protected constructor()
 
 
 
-#### WritableEnvKey
+## WritableEnvKey
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义可写的系统环境变量Key集合，用于通过@Env装饰器获取对应的系统环境变量。可通过[WithEnv](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-with-env)中的[env](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-with-env#env)方法设置局部环境变量值以影响后代组件渲染，具体示例请参见[示例2（设置局部布局方向）](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-with-env#示例2设置局部布局方向)。
 
@@ -213,6 +229,7 @@ protected constructor()
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | DIRECTION | WritableSystemEnvKey&lt;Direction&gt; | 是 | 否 | @Env变量参数，通过@Env(WritableEnvKey.DIRECTION)可获取Direction枚举类型的值。 当该装饰器声明在@Component或@ComponentV2中时，用于获取窗口所在屏幕的布局方向。 |
@@ -221,9 +238,10 @@ protected constructor()
 
 
 
-#### ReadonlyEnvKey
+## ReadonlyEnvKey
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义只读的系统环境变量key集合，用于通过@Env装饰器获取对应的系统环境变量。
 
@@ -237,7 +255,11 @@ protected constructor()
 
 
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -247,5 +269,5 @@ protected constructor()
 | WINDOW_SIZE_PX | ReadonlySystemEnvKey<window.Size> | 是 | 否 | @Env变量参数，通过@Env(ReadonlyEnvKey.WINDOW_SIZE_PX)可获取Size实例。 当该装饰器声明在@Component或@ComponentV2中时，用于获取当前自定义组件所在窗口的大小信息，单位为px。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | WINDOW_DISPLAY_ID | ReadonlySystemEnvKey&lt;number&gt; | 是 | 否 | @Env变量参数，通过@Env(ReadonlyEnvKey.WINDOW_DISPLAY_ID)可获取number类型的值。 当该装饰器声明在@Component或@ComponentV2中时，用于获取当前自定义组件所在窗口的屏幕ID。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | WINDOW_SYSTEM_DENSITY | ReadonlySystemEnvKey&lt;number&gt; | 是 | 否 | @Env变量参数，通过@Env(ReadonlyEnvKey.WINDOW_SYSTEM_DENSITY)可获取number类型的值。 当该装饰器声明在@Component或@ComponentV2中时，用于获取当前自定义组件所在窗口的系统显示大小缩放系数。该参数为浮点数，取值范围为[0.5, 4.0]或-1.0。4.0表示窗口可显示的最大显示大小缩放系数，-1.0表示窗口使用系统显示大小缩放系数。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
-| WINDOW_IS_FOCUSED | ReadonlySystemEnvKey&lt;boolean&gt; | 是 | 否 | @Env变量参数，通过@Env(ReadonlyEnvKey.WINDOW_IS_FOCUSED)可获取boolean类型的值。 当该装饰器声明在@Component或@ComponentV2中时，用于获取当前自定义组件所在窗口是否处于获焦状态，true表示当前处于获焦状态，false表示当前不处于获焦状态。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
-| WINDOW_IS_HIGHLIGHTED | ReadonlySystemEnvKey&lt;boolean&gt; | 是 | 否 | @Env变量参数，通过@Env(ReadonlyEnvKey.WINDOW_IS_HIGHLIGHTED)可获取boolean类型的值。 当该装饰器声明在@Component或@ComponentV2中时，用于获取当前自定义组件所在窗口是否处于高亮状态，true表示当前处于高亮状态，false表示当前不处于高亮状态。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
+| WINDOW_IS_FOCUSED | ReadonlySystemEnvKey&lt;boolean&gt; | 是 | 否 | @Env变量参数，通过@Env(ReadonlyEnvKey.WINDOW_IS_FOCUSED)可获取boolean类型的值。 当该装饰器声明在@Component或@ComponentV2中时，用于获取当前自定义组件所在窗口是否处于获焦状态，true表示当前处于获焦状态，false表示当前不处于获焦状态。 起始版本： 26.0.0 模型约束： 此接口仅可在Stage模型下使用。 |
+| WINDOW_IS_HIGHLIGHTED | ReadonlySystemEnvKey&lt;boolean&gt; | 是 | 否 | @Env变量参数，通过@Env(ReadonlyEnvKey.WINDOW_IS_HIGHLIGHTED)可获取boolean类型的值。 当该装饰器声明在@Component或@ComponentV2中时，用于获取当前自定义组件所在窗口是否处于高亮状态，true表示当前处于高亮状态，false表示当前不处于高亮状态。 起始版本： 26.0.0 模型约束： 此接口仅可在Stage模型下使用。 |

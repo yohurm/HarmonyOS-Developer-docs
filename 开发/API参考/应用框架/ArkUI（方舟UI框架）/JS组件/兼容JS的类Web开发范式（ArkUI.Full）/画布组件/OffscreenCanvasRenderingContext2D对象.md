@@ -1,9 +1,9 @@
 # OffscreenCanvasRenderingContext2D对象
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-offscreencanvasrenderingcontext2d
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 > [!NOTE]
 > 从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
@@ -12,12 +12,14 @@
 使用OffscreenCanvasRenderingContext2D在[OffscreenCanvas对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-canvas-offscreencanvas)上进行绘制，绘制对象可以是矩形、文本、图片等。
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 除支持与[CanvasRenderingContext2D对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-canvas-canvasrenderingcontext2d)相同的属性外，还支持如下属性：
   
+
 | 属性 | 类型 | 描述 |
 | --- | --- | --- |
 | filter | string | 设置图像的滤镜。 支持的滤镜效果如下： - blur：给图像设置高斯模糊。 - brightness：给图片应用一种线性乘法，使其看起来更亮或更暗。 - contrast：调整图像的对比度。 - drop-shadow：给图像设置一个阴影效果。 - grayscale：将图像转换为灰度图像。 - hue-rotate：给图像应用色相旋转。 - invert：反转输入图像。 - opacity：调整图像的透明程度。 - saturate：转换图像饱和度。 - sepia：将图像转换为深褐色。 |
@@ -84,17 +86,19 @@ export default {
  
   
 
-#### 方法
+## 方法
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 除支持与CanvasRenderingContext2D对象相同的方法外，还支持如下方法：
  
   
 
-#### isPointInPath
+### isPointInPath
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 isPointInPath(path?: Path2D, x: number, y: number): boolean
  
@@ -102,6 +106,7 @@ isPointInPath(path?: Path2D, x: number, y: number): boolean
  
 **参数：**
   
+
 | 参数名 | 参数类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | path | Path2D | 否 | 可选对象，指定用来判断的路径。若没有设置，则使用当前路径。 |
@@ -111,6 +116,7 @@ isPointInPath(path?: Path2D, x: number, y: number): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 指定点是否在路径的区域内。返回true时，指定点在路径区域内。返回false时，指定点不在路径区域内。 |
@@ -177,9 +183,10 @@ export default {
  
   
 
-#### isPointInStroke
+### isPointInStroke
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 isPointInStroke(path?: Path2D, x: number, y: number): boolean
  
@@ -187,6 +194,7 @@ isPointInStroke(path?: Path2D, x: number, y: number): boolean
  
 **参数：**
   
+
 | 参数名 | 参数类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | path | Path2D | 否 | 可选对象，指定用来判断的路径。若没有设置，则使用当前路径。 |
@@ -196,6 +204,7 @@ isPointInStroke(path?: Path2D, x: number, y: number): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 指定点是否位于路径描边区域内。返回true时，指定点在路径描边区域内。返回false时，指定点不在路径描边区域内。 |
@@ -262,9 +271,10 @@ export default {
  
   
 
-#### resetTransform
+### resetTransform
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 resetTransform(): void
  
@@ -333,4 +343,4 @@ export default {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/1fgFAQcoQTyBHo4wIJnzag/zh-cn_image_0000002656350351.png?HW-CC-KV=V1&HW-CC-Date=20260624T015941Z&HW-CC-Expire=86400&HW-CC-Sign=0D8C03CDFF5D2C1D653C5BC0A5367EC25BA613F4D854A5FF20A89A717B8E51E5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/qUNuMv40RK-AQnSqi7-WiQ/zh-cn_image_0000002747213157.png?HW-CC-KV=V1&HW-CC-Date=20260911T073001Z&HW-CC-Expire=86400&HW-CC-Sign=2805D84CE45374EBCC89DE3B0EADF1BC5C2DF71701B7E5D8CA2E93385CBE4ECC)

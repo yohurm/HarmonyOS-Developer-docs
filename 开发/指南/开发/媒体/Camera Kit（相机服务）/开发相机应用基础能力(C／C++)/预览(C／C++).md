@@ -1,13 +1,13 @@
 # 预览(C/C++)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera-preview
 
 预览是启动相机后看见的画面，通常在拍照和录像前执行。
 
 
-#### 开发步骤
+## 开发步骤
 
 详细的API说明请参考[OH_Camera](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-camera)。
 1. 导入NDK接口，接口中提供了相机相关的属性和方法，导入方法如下。
@@ -129,7 +129,7 @@ Camera_ErrorCode NDKCamera::SessionStop(void)
 
 
 
-#### 状态监听
+## 状态监听
 
 在相机应用开发过程中，可以随时监听预览输出流状态，包括预览流启动、预览流结束、预览流输出错误。
 

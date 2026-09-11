@@ -1,14 +1,14 @@
 # 设置overlay模式的侧边栏
 
-更新时间：2026-05-07 09:37:20
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-sidebar-overlay-mode
 
-#### 场景介绍
+## 场景介绍
 
 从6.0.0(20)版本开始，新增支持设置overlay模式的侧边栏。
 
-[HdsSideBar](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdssidebar)提供可以显示和隐藏的侧边栏容器，通过子组件定义侧边栏和内容区，第一个子组件表示侧边栏，第二个子组件表示内容区，通过设置[sideBarContainerType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-sidebarcontainer#sidebarcontainertype枚举说明)的值为SideBarContainerType.Overlay，使得当前HdsSideBar为悬浮样式。
+[HdsSideBar (侧边栏)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdssidebar)提供可以显示和隐藏的侧边栏容器，通过子组件定义侧边栏和内容区，第一个子组件表示侧边栏，第二个子组件表示内容区，通过设置[sideBarContainerType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-sidebarcontainer#sidebarcontainertype枚举说明)的值为SideBarContainerType.Overlay，使得当前HdsSideBar为悬浮样式。
 
 
 ![](assets/设置overlay模式的侧边栏/file-20260514131013075-0.png)
@@ -16,7 +16,7 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 导入相关模块。
 
   

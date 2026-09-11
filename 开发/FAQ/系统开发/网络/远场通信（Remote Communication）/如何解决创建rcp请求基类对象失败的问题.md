@@ -23,7 +23,7 @@ class RcpClass {
   async post(){
     return await this.session.post(this.url,this.content);
   }
-  // 继续封装其他方法get、fetch、put等
+<em>  // 继续封装其他方法get、fetch、put等</em>
 }
 ```
  
@@ -62,7 +62,7 @@ class RcpClass {
 import { rcp } from "@kit.RemoteCommunicationKit";
 
 
-// 单例模式实现全局session
+<em>// </em><em>单例模式实现全局session</em>
 export class SessionManager {
   static session: rcp.Session;
 
@@ -81,14 +81,14 @@ async function testInterceptor(url: string) {
     console.error(`Response is: ${response}`);
   });
 }
-// 单例模式实现全局session
+<em>// </em><em>单例模式实现全局session</em>
 
 
 @Entry
 @Component
 struct Index {
   private message: string = 'Hello World';
-  private url: string[] = ['url1.xxx', 'url2.xxx'];  // 请根据实际业务情况传url。
+  private url: string[] = ['url1.xxx', 'url2.xxx']; <em> </em><em>// 请根据实际业务情况传url。</em>
   private urlIndex = 0;
 
   build() {

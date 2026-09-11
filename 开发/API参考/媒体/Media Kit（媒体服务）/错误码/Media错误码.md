@@ -1,18 +1,19 @@
 # Media错误码
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!TIP]
 > 以下仅介绍本模块特有错误码，通用错误码请参考 通用错误码说明文档 。
 
 
 
-#### 5400101 内存分配失败
+## 5400101 内存分配失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -32,15 +33,20 @@ No memory.
 
 
 
-#### 5400102 当前状态不支持此操作
+## 5400102 当前状态不支持此操作
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
 Operation not allowed.
 
 **错误描述**
+
+当前操作不允许。
+
+**可能原因**
 1. 当前状态不支持此操作。
 2. 此应用录屏当前实例数量超过2个或此设备创建录屏实例数超过16个。
 
@@ -48,13 +54,43 @@ Operation not allowed.
 1. 先确认当前状态是否支持此操作，再把实例切换到正确状态进行正确操作。
 2. 释放所有已经创建的实例。
 
+以下为SoundPool业务返回错误码5400102时的常见问题案例。
+
+
+
+### 触发场景1：调用load加载音频失败-传入无效的资源
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+调用[load](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-multimedia-soundpool#load)返回错误码5400102时，根据系统日志按照以下场景进行排查。
+
+**判断依据**
+
+应用进程日志出现如下报错信息：
+
+```text
+Failed to load sound, the resource path is invalid, please check input parameters
+```
+
+以上报错信息，从API版本23开始支持。
+
+**可能原因**
+
+资源不存在或提供的路径有误。
+
 **处理步骤**
 
-确认当前状态是否支持当前操作，把实例切换到正确的状态进行正确的操作。
+确认所需音频资源存在，且路径拼写正确无误。
+
+以下为AVPlayer业务返回错误码5400102时的常见问题案例。
 
 
 
-#### 触发场景1：更换资源播放失败
+### 触发场景1：更换资源播放失败
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **可能原因**
 1. 播放器当前处于非idle状态（如prepared、playing、paused、completed、stopped等），直接设置新的播放资源（url/fdSrc/dataSrc）导致操作不允许。AVPlayer要求更换资源时必须先将播放器重置到idle状态。
@@ -69,7 +105,10 @@ Operation not allowed.
 
 
 
-#### 触发场景2：文件播放失败
+### 触发场景2：文件播放失败
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **可能原因**
 1. 播放的媒体文件结尾包含不符合格式的数据或尾部信息已损坏的文件，导致解封装器在解析到文件末尾时触发状态异常，进而产生操作不允许错误。
@@ -94,9 +133,10 @@ Operation not allowed.
 
 
 
-#### 5400103 出现IO错误
+## 5400103 出现IO错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -116,7 +156,10 @@ I/O error.
 
 
 
-#### 触发场景1：音频渲染器启动失败
+### 触发场景1：音频渲染器启动失败
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -140,7 +183,10 @@ I/O error: audio render failed.
 
 
 
-#### 触发场景2：视频解码器启动/解码失败
+### 触发场景2：视频解码器启动/解码失败
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -167,7 +213,10 @@ I/O error: video decode failed.
 
 
 
-#### 触发场景3：视频解码器初始化失败
+### 触发场景3：视频解码器初始化失败
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -191,7 +240,10 @@ I/O error: video mimeType Decode create failed.
 
 
 
-#### 触发场景4：文件打开失败
+### 触发场景4：文件打开失败
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -219,7 +271,10 @@ I/O error: open file failed.
 
 
 
-#### 触发场景5：文件读写失败
+### 触发场景5：文件读写失败
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -247,7 +302,10 @@ I/O error: file access failed.
 
 
 
-#### 触发场景6：HTTP数据源IO错误
+### 触发场景6：HTTP数据源IO错误
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -275,7 +333,10 @@ HTTP数据源I/O（Input/Output）错误。
 
 
 
-#### 触发场景7：解封装缓存满
+### 触发场景7：解封装缓存满
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -301,7 +362,10 @@ I/O error: demuxer buffer malloc failed.
 
 
 
-#### 触发场景8：Surface操作失败
+### 触发场景8：Surface操作失败
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -328,7 +392,10 @@ Surface操作失败。
 
 
 
-#### 触发场景9：未知错误兜底
+### 触发场景9：未知错误兜底
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -354,9 +421,10 @@ I/O error: unknown error.
 
 
 
-#### 5400104 操作超时
+## 5400104 操作超时
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -376,9 +444,10 @@ Operation timeout.
 
 
 
-#### 5400105 播放服务死亡
+## 5400105 播放服务死亡
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -398,9 +467,10 @@ Service died.
 
 
 
-#### 5400106 不支持的规格
+## 5400106 不支持的规格
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -422,7 +492,10 @@ Unsupported format.
 
 
 
-#### 触发场景：解封装失败
+### 触发场景：解封装失败
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -460,9 +533,10 @@ unsupport container format type.
 
 
 
-#### 5400107 音频焦点冲突
+## 5400107 音频焦点冲突
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -482,9 +556,10 @@ Audio interrupted.
 
 
 
-#### 5400108 参数超过取值范围
+## 5400108 参数超过取值范围
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -504,9 +579,10 @@ The parameter check failed, parameter value out of range.
 
 
 
-#### 5411001 解析或链接服务端地址错误
+## 5411001 解析或链接服务端地址错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -526,9 +602,10 @@ Can not find host.
 
 
 
-#### 5411002 网络连接超时
+## 5411002 网络连接超时
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -548,9 +625,10 @@ Connection timeout.
 
 
 
-#### 5411003 网络异常导致的数据或链路异常
+## 5411003 网络异常导致的数据或链路异常
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -570,9 +648,10 @@ Network abnormal.
 
 
 
-#### 5411004 网络被禁用
+## 5411004 网络被禁用
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -592,9 +671,10 @@ Network unavailable.
 
 
 
-#### 5411005 无权限，访问被拒绝
+## 5411005 无权限，访问被拒绝
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -614,9 +694,10 @@ No permission.
 
 
 
-#### 5411006 客户端请求参数错误或超出处理能力
+## 5411006 客户端请求参数错误或超出处理能力
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -636,9 +717,10 @@ Network access denied.
 
 
 
-#### 5411007 无可用资源
+## 5411007 无可用资源
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -658,9 +740,10 @@ Cannot find available network resources.
 
 
 
-#### 5411008 服务端校验客户端证书失败
+## 5411008 服务端校验客户端证书失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -680,9 +763,10 @@ SSL客户端不可信，服务端校验客户端证书失败。
 
 
 
-#### 5411009 SSL连接失败
+## 5411009 SSL连接失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -702,9 +786,10 @@ SSL链接失败。
 
 
 
-#### 5411010 客户端校验服务端证书失败
+## 5411010 客户端校验服务端证书失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -724,9 +809,10 @@ SSL服务端不可信，客户端校验服务端证书失败。
 
 
 
-#### 5411011 网络协议的原因导致请求不受支持
+## 5411011 网络协议的原因导致请求不受支持
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -746,9 +832,10 @@ Unsupported request.
 
 
 
-#### 5411012 HTTP明文拦截导致请求不受支持
+## 5411012 HTTP明文拦截导致请求不受支持
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -768,9 +855,10 @@ Http cleartext traffic is not permitted.
 
 
 
-#### 5410002 不支持SEEK_CONTINUOUS模式的Seek
+## 5410002 不支持SEEK_CONTINUOUS模式的Seek
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -789,9 +877,10 @@ Seek continuous is unsupported.
 
 
 
-#### 5410003 不支持超分
+## 5410003 不支持超分
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -811,9 +900,10 @@ Super resolution not supported.
 
 
 
-#### 5410004 未使能超分
+## 5410004 未使能超分
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 

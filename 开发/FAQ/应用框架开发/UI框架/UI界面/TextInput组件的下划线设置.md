@@ -42,7 +42,7 @@ struct PageOne {
           .maxLength(9)
           .showPasswordIcon(true)
           .backgroundColor('#00000000')
-          // 设置下划线
+       <em>   // 设置下划线</em>
           .outline({
             width: { bottom: 1 },
             color: Color.Black,
@@ -81,7 +81,7 @@ struct PageTwo {
           .onFocus(() => {
             setInterval(() => {
               this.bottomColor = this.bottomColor === Color.Red ? Color.Blue : Color.Red;
-            }, 500); // 每500毫秒改变一次颜色
+            }, 500); <em>// 每500毫秒改变一次颜色</em>
           });
       }
       .width('100%')

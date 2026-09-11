@@ -41,7 +41,7 @@ struct VideoDemo1 {
   private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
   private windowClass = (this.context as common.UIAbilityContext).windowStage.getMainWindowSync();
 
-  // 窗口方向切换（横竖屏切换）
+ <em> // 窗口方向切换（横竖屏切换）</em>
   private setOrientation(orientation: Orientation) {
     this.windowClass.setPreferredOrientation(orientation).then(() => {
       console.info('setWindowOrientation: ' + orientation + ' Succeeded.');
@@ -53,20 +53,20 @@ struct VideoDemo1 {
   build() {
     Column() {
       Video({
-        src: $rawfile('video1.mp4'), // 替换为您的本地视频文件路径
+        src: $rawfile('video1.mp4'), <em>// 替换为您的本地视频文件路径</em>
         controller: this.controller
       })
         .width('100%')
         .height(300)
-        .controls(true) // 使用默认控制栏
+        .controls(true) <em>// </em><em>使用默认控制栏</em>
         .objectFit(ImageFit.Contain)
-          // 全屏状态变化时自动切换横竖屏
-          // 当视频切换到全屏播放时，若没有将窗口切换到横屏，将会是一个竖屏全屏播放效果
+          <em>// 全屏状态变化时自动切换横竖屏</em>
+<em>          // 当视频切换到全屏播放时，若没有将窗口切换到横屏，将会是一个竖屏全屏播放效果</em>
         .onFullscreenChange((event) => {
           if (event.fullscreen) {
-            this.setOrientation(window.Orientation.LANDSCAPE); // 横屏
+            this.setOrientation(window.Orientation.LANDSCAPE); <em>// 横屏</em>
           } else {
-            this.setOrientation(window.Orientation.PORTRAIT); // 竖屏
+            this.setOrientation(window.Orientation.PORTRAIT); <em>// </em><em>竖屏</em>
           }
         });
     }
@@ -88,13 +88,13 @@ struct VideoDemo2 {
   private controller = new VideoController();
   private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
   private windowClass = (this.context as common.UIAbilityContext).windowStage.getMainWindowSync();
-  // 记录当前是否全屏状态
+<em>  // 记录当前是否全屏状态</em>
   @State private isFullScreen: boolean = false;
 
   build() {
     Stack() {
       Video({
-        src: $rawfile('video1.mp4'), // 替换为您的本地视频文件路径
+        src: $rawfile('video1.mp4'), <em>// 替换为您的本地视频文件路径</em>
         controller: this.controller
       })
         .width('100%')
@@ -103,7 +103,7 @@ struct VideoDemo2 {
         .autoPlay(true)
         .loop(true)
         .controls(false);
-      // 自定义的控制器，全屏切换
+     <em> // 自定义的控制器，全屏切换</em>
       Row() {
         Text(this.isFullScreen ? '退出全屏' : '进入全屏')
           .fontColor(Color.White);
@@ -120,28 +120,28 @@ struct VideoDemo2 {
     .width('100%');
   }
 
-  // 切换窗口方向、设置窗口全屏布局、控制避让区显隐
+ <em> // 切换窗口方向、设置窗口全屏布局、控制避让区显隐</em>
   private toggleWindowOrientationAndFullscreen(isFullScreen: boolean) {
-    // 1. 窗口方向切换（横竖屏切换）
+   <em> // 1. 窗口方向切换（横竖屏切换）</em>
     let orientation = isFullScreen ? window.Orientation.LANDSCAPE : window.Orientation.PORTRAIT;
     this.windowClass.setPreferredOrientation(orientation).then(() => {
       console.info('setWindowOrientation: ' + orientation + ' Succeeded.');
     }).catch((err: BusinessError<void>) => {
       console.info('setWindowOrientation: ' + orientation + ' Failed. Cause: ' + err.message);
     });
-    // 2. 设置窗口全屏布局
+   <em> // 2. 设置窗口全屏布局</em>
     this.windowClass.setWindowLayoutFullScreen(isFullScreen).then(() => {
       console.info('Succeeded in setting the window layout to full-screen mode.');
     }).catch((err: BusinessError<void>) => {
       console.error(`Failed to set the window layout to full-screen mode. Code is ${err.code}, message is ${err.message}`);
     });
-    // 3. 设置状态栏显隐
+    <em>// 3. 设置状态栏显隐</em>
     this.windowClass.setSpecificSystemBarEnabled('status', !isFullScreen).then(() => {
       console.info('Succeeded in setting the status bar to be invisible.');
     }).catch((err: BusinessError<void>) => {
       console.error(`Failed to set the status bar to be invisible. Code is ${err.code}, message is ${err.message}`);
     });
-    // 4. 设置导航区域显隐
+   <em> // 4. 设置导航区域显隐</em>
     this.windowClass.setSpecificSystemBarEnabled('navigationIndicator', !isFullScreen).then(() => {
       console.info('Succeeded in setting the navigation indicator to be invisible.');
     }).catch((err: BusinessError<void>) => {
@@ -173,9 +173,9 @@ struct TabsView {
 
   build() {
     Tabs() {
-      // todo
+    <em>  // todo</em>
     }
-    .visibility(this.isFullScreen ? Visibility.None : Visibility.Visible); // 需要使用None，隐藏但不参与布局，不进行占位。
+    .visibility(this.isFullScreen ? Visibility.None : Visibility.Visible); <em>// </em><em>需要使用None，隐藏但不参与布局，不进行占位。</em>
   }
 }
 ```

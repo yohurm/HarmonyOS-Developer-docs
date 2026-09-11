@@ -1,10 +1,10 @@
 # pac.json5隐私清单文件
 
-更新时间：2026-07-28 12:07:32
+更新时间：2026-09-08 02:53:31
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-pac
 
-#### 概述
+## 概述
 
 若您开发App，您在AppGallery Connect上架应用时需要提供应用的隐私标签，建议您在项目工程中创建pac.json5配置文件，在文件中声明处理的个人数据类型、使用目的等信息。编译构建时，如您集成的HSP/HAR中的pac.json5同步声明了隐私保护信息，信息将自动汇总至此文件并随软件打包，上架时AppGallery Connect可基于此文件内容自动生成隐私标签。
  
@@ -16,7 +16,7 @@
  
  
 
-#### 创建pac.json5文件
+## 创建pac.json5文件
 
 - 开发App情况下，选中AppScope目录新建pac.json5文件。
 ![](assets/pac.json5隐私清单文件/file-20260514133055868-1.png)
@@ -24,13 +24,13 @@
 
  
 - 开发HSP或HAR情况下，选中HSP或HAR模块目录新建pac.json5文件。
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/lw_-sZXySzCiiVhRTsTddQ/zh-cn_image_0000002647916952.png?HW-CC-KV=V1&HW-CC-Date=20260730T071820Z&HW-CC-Expire=86400&HW-CC-Sign=21EBAB7BC8F097FF17B7C685E620C61ADADD416E3F458762973A15B33ED54C14)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/9qOWM4mVQGmRDBEM9Eol1A/zh-cn_image_0000002731542307.png?HW-CC-KV=V1&HW-CC-Date=20260911T072127Z&HW-CC-Expire=86400&HW-CC-Sign=099EE17936F8FE9C57148C3F8D5A524310F59B7A7725A1E2512834FEC68C70F7)
 
 
  
  
 
-#### 配置文件结构
+## 配置文件结构
 
 pac.json5隐私清单文件整体的结构如下。
 ```text
@@ -51,10 +51,11 @@ specialAPIs
  
  
 
-#### 配置文件字段说明
+## 配置文件字段说明
 
 pac.json5隐私清单配置文件包括以下字段。
   
+
 | 字段名称 | 可选/必选 | 类型 | 含义 |
 | --- | --- | --- | --- |
 | dataProcess | 可选 | 数组 | 声明应用收集的个人数据。 |
@@ -67,10 +68,11 @@ pac.json5隐私清单配置文件包括以下字段。
  
  
 
-#### dataProcess
+## dataProcess
 
 dataProcess是声明应用收集的个人数据，包括数据类型、数据项和使用目的。
   
+
 | 字段名称 | 可选/必选 | 类型 | 含义 |
 | --- | --- | --- | --- |
 | dataType | 必选 | 字符串 | 应用收集个人数据的类型。 |
@@ -78,6 +80,7 @@ dataProcess是声明应用收集的个人数据，包括数据类型、数据项
  
  
   
+
 | 数据类型 | 含义 |
 | --- | --- |
 | Identifiers | 标识符 |
@@ -95,10 +98,11 @@ dataProcess是声明应用收集的个人数据，包括数据类型、数据项
  
  
 
-#### dataLabels
+### dataLabels
 
 dataLabels是声明应用收集的个人数据项和目的。
   
+
 | 字段名称 | 可选/必选 | 类型 | 含义 |
 | --- | --- | --- | --- |
 | label | 必选 | 字符串 | 应用收集的个人数据项。 |
@@ -108,6 +112,7 @@ dataLabels是声明应用收集的个人数据项和目的。
  
  
   
+
 | 个人数据项 | 含义 | 数据类型 |
 | --- | --- | --- |
 | ICCID | ICCID | Identifiers |
@@ -202,6 +207,7 @@ dataLabels是声明应用收集的个人数据项和目的。
 | Other personal data | 其他个人数据 | Other personal data |
  
   
+
 | 个人数据收集的目的 | 目的详细描述 |
 | --- | --- |
 | App functionality | 应用提供基本功能、安全防护功能、确保应用正常运营以及客户支持。 |
@@ -214,10 +220,11 @@ dataLabels是声明应用收集的个人数据项和目的。
  
  
 
-#### specialAPIs
+## specialAPIs
 
 specialAPIs是声明应用调用的可用于生成设备指纹的API信息，包含API类型和调用原因。
   
+
 | 字段名称 | 可选/必选 | 类型 | 含义 |
 | --- | --- | --- | --- |
 | apiType | 必选 | 字符串 | API类型 |
@@ -225,6 +232,7 @@ specialAPIs是声明应用调用的可用于生成设备指纹的API信息，包
  
  
   
+
 | API类型 | API介绍 | API列表 |
 | --- | --- | --- |
 | File timestamp APIs | 用于获取文件的创建、修改或访问时间戳，有助于管理文件和数据同步。 | ctime mtime fs.getxattr fs.getxattrSync fs.stat file.get fs.lstat cloudStorage.bucket().getMetadata |
@@ -234,6 +242,7 @@ specialAPIs是声明应用调用的可用于生成设备指纹的API信息，包
 | User preferences APIs | 用于存储和检索用户首选项，如应用配置或最近使用的项目，有助于提高用户体验和应用的个性化。 | preferences.getPreferences sendablePreferences.getPreferences |
  
   
+
 | API调用原因 | 目的详细描述 | API类型 |
 | --- | --- | --- |
 | Display to user on-device | 用于向用户显示文件的时间戳，如文件的创建、修改和访问时间。 | File timestamp APIs |
@@ -254,27 +263,27 @@ specialAPIs是声明应用调用的可用于生成设备指纹的API信息，包
  
  
 
-#### pac.json5文件示例
+## pac.json5文件示例
 
 ```text
 {
-  "dataProcess": [
+  <span style="color: rgb(132,63,161);">"dataProcess"</span><span style="color: rgb(181,106,1);">: </span>[
     {
-      "dataType": "Identifiers",
-      "dataLabels": [
+      <span style="color: rgb(132,63,161);">"dataType"</span><span style="color: rgb(181,106,1);">: </span><span style="color: rgb(80,160,79);">"Identifiers"</span><span style="color: rgb(181,106,1);">,</span>
+      <span style="color: rgb(132,63,161);">"dataLabels"</span><span style="color: rgb(181,106,1);">: </span>[
         {
-          "label": "MAC",
-          "purposes": ["App functionality"],
-          "userLinked": true,
+        <span style="color: rgb(132,63,161);">  "label"</span><span style="color: rgb(181,106,1);">: </span><span style="color: rgb(80,160,79);">"MAC"</span><span style="color: rgb(181,106,1);">,</span>
+        <span style="color: rgb(132,63,161);">  "purposes"</span><span style="color: rgb(181,106,1);">: </span>[<span style="color: rgb(80,160,79);">"App functionality"</span>]<span style="color: rgb(181,106,1);">,</span>
+          "userLinked": true<span style="color: rgb(181,106,1);">,</span>
           "tracking": true
         }
       ]
     }
-  ],
-  "specialAPIs": [
+  ]<span style="color: rgb(181,106,1);">,</span>
+  <span style="color: rgb(132,63,161);">"specialAPIs"</span><span style="color: rgb(181,106,1);">: </span>[
     {
-      "apiType": "File timestamp APIs",
-      "reasons": ["Display to user on-device","Access file metadata in-app"]
+      <span style="color: rgb(132,63,161);">"apiType"</span><span style="color: rgb(181,106,1);">: </span><span style="color: rgb(80,160,79);">"File timestamp APIs"</span><span style="color: rgb(181,106,1);">,</span>
+      <span style="color: rgb(132,63,161);">"reasons"</span><span style="color: rgb(181,106,1);">: </span>[<span style="color: rgb(80,160,79);">"Display to user on-device"</span><span style="color: rgb(181,106,1);">,</span><span style="color: rgb(80,160,79);">"Access file metadata in-app"</span>]
     }
   ]
 }

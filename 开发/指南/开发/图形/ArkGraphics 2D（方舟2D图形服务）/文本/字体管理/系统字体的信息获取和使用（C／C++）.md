@@ -1,10 +1,10 @@
 # 系统字体的信息获取和使用（C/C++）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/system-font-c
 
-#### 场景介绍
+## 场景介绍
 
 系统字体是指操作系统预设的字体，用于在没有指定自定义字体时显示文本，确保文本的可读性和一致性。默认的系统字体为“HarmonyOS Sans”。
 
@@ -14,18 +14,20 @@
 
 
 
-#### 接口说明
+## 接口说明
 
 以下是系统字体相关的常用接口和结构体，详细接口说明请参考[Drawing](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing)。
 
+
 | 接口名 | 描述 |
 | --- | --- |
-| OH_Drawing_FontConfigInfo* OH_Drawing_GetSystemFontConfigInfo(OH_Drawing_FontConfigInfoErrorCode*) | 获取系统字体配置信息，返回系统字体配置信息结构体OH_Drawing_FontConfigInfo。 |
-| void OH_Drawing_DestroySystemFontConfigInfo(OH_Drawing_FontConfigInfo*) | 释放系统字体配置信息占用的内存。 |
+| OH_Drawing_FontConfigInfo* OH_Drawing_GetSystemFontConfigInfo(OH_Drawing_FontConfigInfoErrorCode* errorCode) | 获取系统字体配置信息，返回系统字体配置信息结构体OH_Drawing_FontConfigInfo。 |
+| void OH_Drawing_DestroySystemFontConfigInfo(OH_Drawing_FontConfigInfo* drawFontCfgInfo) | 释放系统字体配置信息占用的内存。 |
 | OH_Drawing_FontCollection* OH_Drawing_CreateSharedFontCollection(void) | 创建可共享的字体集对象OH_Drawing_FontCollection。 |
 | OH_Drawing_TextStyle* OH_Drawing_CreateTextStyle(void) | 创建指向OH_Drawing_TextStyle对象的指针，用于设置文本样式。 |
-| OH_Drawing_SetTextStyleFontFamilies (OH_Drawing_TextStyle *, int, const char *fontFamilies[]) | 设置指定文本样式的字体家族类型。 |
+| OH_Drawing_SetTextStyleFontFamilies(OH_Drawing_TextStyle* style, int fontFamiliesNumber, const char *fontFamilies[]) | 设置指定文本样式的字体家族类型。 |
 | void OH_Drawing_DisableFontCollectionSystemFont(OH_Drawing_FontCollection* fontCollection) | 禁用系统字体。 |
+
 
 
 | 结构体名 | 描述 |
@@ -37,7 +39,7 @@
 
 
 
-#### 获取系统字体信息
+## 获取系统字体信息
 1. 在工程的src/main/cpp/CMakeLists.txt文件中添加以下lib。
 
   
@@ -85,7 +87,7 @@ OH_Drawing_DestroySystemFontConfigInfo(fontConfigInfo);
 
 
 
-#### 使用或切换系统字体
+## 使用或切换系统字体
 
 系统字体可以有多种，可以先获取系统字体配置信息，再根据其中的字体家族名来进行系统字体的切换和使用。
 
@@ -111,7 +113,7 @@ libnative_drawing.so
 
   
 > [!NOTE]
-> 使用OH_Drawing_CreateFontCollection和OH_Drawing_CreateSharedFontCollection均可创建字体管理器OH_Drawing_FontCollection对象，但前者创建的字体集指针对象只能被一个段落生成器OH_Drawing_TypographyCreate对象使用，无法被多个段落生成器OH_Drawing_TypographyCreate对象共享使用。如需在多个段落生成器OH_Drawing_TypographyCreate对象间共享使用，请使用后者创建可共享的字体集对象。
+> 使用OH_Drawing_CreateFontCollection和OH_Drawing_CreateSharedFontCollection均可创建字体集OH_Drawing_FontCollection对象，但前者创建的字体集指针对象只能被一个段落生成器OH_Drawing_TypographyCreate对象使用，无法被多个段落生成器OH_Drawing_TypographyCreate对象共享使用。如需在多个段落生成器OH_Drawing_TypographyCreate对象间共享使用，请使用后者创建可共享的字体集对象。
 
 
   
@@ -169,7 +171,7 @@ OH_Drawing_TypographyPaint(typography, cCanvas_, 0, height_ / 2.0);
 
 
 
-#### 禁用系统字体
+## 禁用系统字体
 
 当自定义字体不存在时，不禁用系统字体，系统则会自动回退到默认字体。通过禁用系统字体，开发者可以在任何场景避免字体回退为系统默认字体，确保文本渲染符合设计预期，从而统一应用的视觉风格。
 
@@ -213,7 +215,7 @@ OH_Drawing_DisableFontCollectionSystemFont(fontCollection);
 6. 创建文本样式对象，使用注册成功的自定义字体。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/UmeCs1rjTKW0DITtwsZlBQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095835Z&HW-CC-Expire=86400&HW-CC-Sign=236F3FA330B5BF907EE687C0C90AA57484B4B995F677A380E75A4FA4FE3AE1B5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/66AaQSSlSe21ZGSDNxu5BA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T073101Z&HW-CC-Expire=86400&HW-CC-Sign=DFFFF1247D0C7464E8D574659E5D9A3FF0241841D37A506AA0D38C0BE9786308)
  
 
   若不设置字体，文本会默认使用系统字体，而系统字体禁用后若不设置使用自定义字体，文本将无法正常显示。

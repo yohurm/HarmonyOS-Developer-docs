@@ -1,13 +1,14 @@
 # native_avcodec_videodecoder.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avcodec-videodecoder-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明用于视频解码的Native API。
 
@@ -27,11 +28,13 @@
 
 
 
-#### 接口状态矩阵
+### 接口状态矩阵
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 下方是不同状态下是否可以调用接口的情况概览，√表示可以调用，×表示不可调用。解码器状态流转及完整解码流程请参见[视频解码](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-decoding)。
+
 
 | 接口 | Initialized | Configured | Prepared | Flushed | Running | EndOfStream | Error | Released |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -61,15 +64,18 @@
 
 
 
-#### 汇总
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 汇总
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 结构体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -78,9 +84,11 @@
 
 
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -115,15 +123,17 @@
 
 
 
-#### 函数说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 函数说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### OH_VideoDecoder_CreateByMime()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### OH_VideoDecoder_CreateByMime()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVCodec *OH_VideoDecoder_CreateByMime(const char *mime)
@@ -139,12 +149,14 @@ OH_AVCodec *OH_VideoDecoder_CreateByMime(const char *mime)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *mime | MIME类型描述字符串，请参阅AVCODEC_MIME_TYPE类型变量。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -153,9 +165,10 @@ OH_AVCodec *OH_VideoDecoder_CreateByMime(const char *mime)
 
 
 
-#### OH_VideoDecoder_CreateByName()
+### OH_VideoDecoder_CreateByName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVCodec *OH_VideoDecoder_CreateByName(const char *name)
@@ -173,12 +186,14 @@ OH_AVCodec *OH_VideoDecoder_CreateByName(const char *name)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *name | 视频解码器名称。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -187,9 +202,10 @@ OH_AVCodec *OH_VideoDecoder_CreateByName(const char *name)
 
 
 
-#### OH_VideoDecoder_Destroy()
+### OH_VideoDecoder_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoDecoder_Destroy(OH_AVCodec *codec)
@@ -205,12 +221,14 @@ OH_AVErrCode OH_VideoDecoder_Destroy(OH_AVCodec *codec)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频解码实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -219,9 +237,10 @@ OH_AVErrCode OH_VideoDecoder_Destroy(OH_AVCodec *codec)
 
 
 
-#### OH_VideoDecoder_SetCallback()
+### OH_VideoDecoder_SetCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoDecoder_SetCallback(OH_AVCodec *codec, OH_AVCodecAsyncCallback callback, void *userData)
@@ -241,6 +260,7 @@ OH_AVErrCode OH_VideoDecoder_SetCallback(OH_AVCodec *codec, OH_AVCodecAsyncCallb
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频解码实例的指针。 |
@@ -250,6 +270,7 @@ OH_AVErrCode OH_VideoDecoder_SetCallback(OH_AVCodec *codec, OH_AVCodecAsyncCallb
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_NO_MEMORY：输入的解码器实例已经销毁。 AV_ERR_INVALID_VAL：输入的codec指针为非解码器实例，或者为空指针。 AV_ERR_UNKNOWN：未知错误。 AV_ERR_OPERATE_NOT_PERMIT：操作不允许。 |
@@ -257,9 +278,10 @@ OH_AVErrCode OH_VideoDecoder_SetCallback(OH_AVCodec *codec, OH_AVCodecAsyncCallb
 
 
 
-#### OH_VideoDecoder_RegisterCallback()
+### OH_VideoDecoder_RegisterCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoDecoder_RegisterCallback(OH_AVCodec *codec, OH_AVCodecCallback callback, void *userData)
@@ -275,6 +297,7 @@ OH_AVErrCode OH_VideoDecoder_RegisterCallback(OH_AVCodec *codec, OH_AVCodecCallb
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频解码器实例的指针。 |
@@ -284,6 +307,7 @@ OH_AVErrCode OH_VideoDecoder_RegisterCallback(OH_AVCodec *codec, OH_AVCodecCallb
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_NO_MEMORY：输入的解码器实例已经销毁。 AV_ERR_INVALID_VAL：输入的codec指针为非解码器实例，或者为空指针。 AV_ERR_UNKNOWN：未知错误。 AV_ERR_OPERATE_NOT_PERMIT：操作不允许。 |
@@ -291,9 +315,10 @@ OH_AVErrCode OH_VideoDecoder_RegisterCallback(OH_AVCodec *codec, OH_AVCodecCallb
 
 
 
-#### OH_VideoDecoder_SetSurface()
+### OH_VideoDecoder_SetSurface()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoDecoder_SetSurface(OH_AVCodec *codec, OHNativeWindow *window)
@@ -311,6 +336,7 @@ OH_AVErrCode OH_VideoDecoder_SetSurface(OH_AVCodec *codec, OHNativeWindow *windo
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频解码实例的指针。 |
@@ -319,6 +345,7 @@ OH_AVErrCode OH_VideoDecoder_SetSurface(OH_AVCodec *codec, OHNativeWindow *windo
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_NO_MEMORY：输入的解码器实例已经销毁。 AV_ERR_OPERATE_NOT_PERMIT：本接口仅支持在Surface模式下调用， 如果在Buffer模式调用， 则返回此错误码。 AV_ERR_INVALID_VAL：1. 输入的codec指针为非解码器实例，或者为空指针；2. window为空指针。 AV_ERR_UNKNOWN：未知错误。 AV_ERR_INVALID_STATE：当前解码器状态不支持调用本接口。 |
@@ -326,9 +353,10 @@ OH_AVErrCode OH_VideoDecoder_SetSurface(OH_AVCodec *codec, OHNativeWindow *windo
 
 
 
-#### OH_VideoDecoder_Configure()
+### OH_VideoDecoder_Configure()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoDecoder_Configure(OH_AVCodec *codec, OH_AVFormat *format)
@@ -343,6 +371,7 @@ OH_AVErrCode OH_VideoDecoder_Configure(OH_AVCodec *codec, OH_AVFormat *format)
 设置OH_MD_KEY_VIDEO_ENABLE_LOW_LATENCY接口时如果当前平台不支持，不报错，走正常解码流程。
 
 参数校验规则：
+
 
 | Key | 配置正常范围的值 | 配置超出范围的值 | 不配置该参数 |
 | --- | --- | --- | --- |
@@ -363,6 +392,7 @@ OH_AVErrCode OH_VideoDecoder_Configure(OH_AVCodec *codec, OH_AVFormat *format)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频解码实例的指针。 |
@@ -371,6 +401,7 @@ OH_AVErrCode OH_VideoDecoder_Configure(OH_AVCodec *codec, OH_AVFormat *format)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_NO_MEMORY：输入的解码器实例已经销毁。 AV_ERR_INVALID_VAL：1. 输入的codec指针为非解码器实例，或者为空指针；2. 输入format参数不支持。 AV_ERR_UNKNOWN：未知错误。 AV_ERR_OPERATE_NOT_PERMIT：操作不允许。 AV_ERR_INVALID_STATE：本接口必须在OH_VideoDecoder_Prepare接口前调用，如果在其他状态时调用，则返回此错误码。 AV_ERR_VIDEO_UNSUPPORTED_COLOR_SPACE_CONVERSION：不支持色彩空间转换功能。 AV_ERR_UNSUPPORT：不支持的像素格式。 |
@@ -378,9 +409,10 @@ OH_AVErrCode OH_VideoDecoder_Configure(OH_AVCodec *codec, OH_AVFormat *format)
 
 
 
-#### OH_VideoDecoder_Prepare()
+### OH_VideoDecoder_Prepare()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoDecoder_Prepare(OH_AVCodec *codec)
@@ -396,12 +428,14 @@ OH_AVErrCode OH_VideoDecoder_Prepare(OH_AVCodec *codec)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频解码实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -410,9 +444,10 @@ OH_AVErrCode OH_VideoDecoder_Prepare(OH_AVCodec *codec)
 
 
 
-#### OH_VideoDecoder_Start()
+### OH_VideoDecoder_Start()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoDecoder_Start(OH_AVCodec *codec)
@@ -428,12 +463,14 @@ OH_AVErrCode OH_VideoDecoder_Start(OH_AVCodec *codec)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频解码实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -442,9 +479,10 @@ OH_AVErrCode OH_VideoDecoder_Start(OH_AVCodec *codec)
 
 
 
-#### OH_VideoDecoder_Stop()
+### OH_VideoDecoder_Stop()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoDecoder_Stop(OH_AVCodec *codec)
@@ -462,12 +500,14 @@ OH_AVErrCode OH_VideoDecoder_Stop(OH_AVCodec *codec)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频解码实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -476,9 +516,10 @@ OH_AVErrCode OH_VideoDecoder_Stop(OH_AVCodec *codec)
 
 
 
-#### OH_VideoDecoder_Flush()
+### OH_VideoDecoder_Flush()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoDecoder_Flush(OH_AVCodec *codec)
@@ -496,12 +537,14 @@ OH_AVErrCode OH_VideoDecoder_Flush(OH_AVCodec *codec)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频解码实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -510,9 +553,10 @@ OH_AVErrCode OH_VideoDecoder_Flush(OH_AVCodec *codec)
 
 
 
-#### OH_VideoDecoder_Reset()
+### OH_VideoDecoder_Reset()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoDecoder_Reset(OH_AVCodec *codec)
@@ -528,12 +572,14 @@ OH_AVErrCode OH_VideoDecoder_Reset(OH_AVCodec *codec)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频解码实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -542,9 +588,10 @@ OH_AVErrCode OH_VideoDecoder_Reset(OH_AVCodec *codec)
 
 
 
-#### OH_VideoDecoder_GetOutputDescription()
+### OH_VideoDecoder_GetOutputDescription()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVFormat *OH_VideoDecoder_GetOutputDescription(OH_AVCodec *codec)
@@ -562,12 +609,14 @@ OH_AVFormat *OH_VideoDecoder_GetOutputDescription(OH_AVCodec *codec)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频解码实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -576,9 +625,10 @@ OH_AVFormat *OH_VideoDecoder_GetOutputDescription(OH_AVCodec *codec)
 
 
 
-#### OH_VideoDecoder_SetParameter()
+### OH_VideoDecoder_SetParameter()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoDecoder_SetParameter(OH_AVCodec *codec, OH_AVFormat *format)
@@ -596,6 +646,7 @@ OH_AVErrCode OH_VideoDecoder_SetParameter(OH_AVCodec *codec, OH_AVFormat *format
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频解码实例的指针。 |
@@ -604,6 +655,7 @@ OH_AVErrCode OH_VideoDecoder_SetParameter(OH_AVCodec *codec, OH_AVFormat *format
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_NO_MEMORY：输入的解码器实例已经销毁。 AV_ERR_INVALID_VAL：1. 输入的codec指针为非解码器实例，或者为空指针；2. 输入format参数不支持。 AV_ERR_UNKNOWN：未知错误。 AV_ERR_INVALID_STATE：当前解码器状态不支持调用本接口。 AV_ERR_OPERATE_NOT_PERMIT：操作不允许。 |
@@ -611,9 +663,10 @@ OH_AVErrCode OH_VideoDecoder_SetParameter(OH_AVCodec *codec, OH_AVFormat *format
 
 
 
-#### OH_VideoDecoder_PushInputData()
+### OH_VideoDecoder_PushInputData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoDecoder_PushInputData(OH_AVCodec *codec, uint32_t index, OH_AVCodecBufferAttr attr)
@@ -635,6 +688,7 @@ OH_AVErrCode OH_VideoDecoder_PushInputData(OH_AVCodec *codec, uint32_t index, OH
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频解码实例的指针。 |
@@ -644,6 +698,7 @@ OH_AVErrCode OH_VideoDecoder_PushInputData(OH_AVCodec *codec, uint32_t index, OH
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_NO_MEMORY：输入的解码器实例已经销毁。 AV_ERR_INVALID_VAL： 1. 输入的codec指针为非解码器实例，或者为空指针； 2. index非法，该错误不影响后续解码流程。 AV_ERR_UNKNOWN：未知错误。 AV_ERR_INVALID_STATE：当前解码器状态不支持调用本接口。 AV_ERR_OPERATE_NOT_PERMIT：操作不允许。 |
@@ -651,9 +706,10 @@ OH_AVErrCode OH_VideoDecoder_PushInputData(OH_AVCodec *codec, uint32_t index, OH
 
 
 
-#### OH_VideoDecoder_RenderOutputData()
+### OH_VideoDecoder_RenderOutputData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoDecoder_RenderOutputData(OH_AVCodec *codec, uint32_t index)
@@ -675,6 +731,7 @@ OH_AVErrCode OH_VideoDecoder_RenderOutputData(OH_AVCodec *codec, uint32_t index)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频解码实例的指针。 |
@@ -683,6 +740,7 @@ OH_AVErrCode OH_VideoDecoder_RenderOutputData(OH_AVCodec *codec, uint32_t index)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_NO_MEMORY：输入的解码器实例已经销毁。 AV_ERR_INVALID_VAL： 1. 输入的codec指针为非解码器实例，或者为空指针； 2. index非法，该错误不影响后续解码流程。 AV_ERR_UNKNOWN：未知错误。 AV_ERR_INVALID_STATE：当前解码器状态不支持调用本接口。 AV_ERR_OPERATE_NOT_PERMIT：操作不允许。 |
@@ -690,9 +748,10 @@ OH_AVErrCode OH_VideoDecoder_RenderOutputData(OH_AVCodec *codec, uint32_t index)
 
 
 
-#### OH_VideoDecoder_FreeOutputData()
+### OH_VideoDecoder_FreeOutputData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoDecoder_FreeOutputData(OH_AVCodec *codec, uint32_t index)
@@ -712,6 +771,7 @@ OH_AVErrCode OH_VideoDecoder_FreeOutputData(OH_AVCodec *codec, uint32_t index)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频解码实例的指针。 |
@@ -720,6 +780,7 @@ OH_AVErrCode OH_VideoDecoder_FreeOutputData(OH_AVCodec *codec, uint32_t index)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_NO_MEMORY：输入的解码器实例已经销毁。 AV_ERR_INVALID_VAL： 1. 输入的codec指针为非解码器实例，或者为空指针； 2. index非法，该错误不影响后续解码流程。 AV_ERR_UNKNOWN：未知错误。 AV_ERR_INVALID_STATE：当前解码器状态不支持调用本接口。 AV_ERR_OPERATE_NOT_PERMIT：操作不允许。 |
@@ -727,9 +788,10 @@ OH_AVErrCode OH_VideoDecoder_FreeOutputData(OH_AVCodec *codec, uint32_t index)
 
 
 
-#### OH_VideoDecoder_PushInputBuffer()
+### OH_VideoDecoder_PushInputBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoDecoder_PushInputBuffer(OH_AVCodec *codec, uint32_t index)
@@ -749,6 +811,7 @@ OH_AVErrCode OH_VideoDecoder_PushInputBuffer(OH_AVCodec *codec, uint32_t index)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频解码实例的指针。 |
@@ -757,6 +820,7 @@ OH_AVErrCode OH_VideoDecoder_PushInputBuffer(OH_AVCodec *codec, uint32_t index)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_NO_MEMORY：输入的解码器实例已经销毁。 AV_ERR_INVALID_VAL： 1. 输入的codec指针为非解码器实例，或者为空指针； 2. index非法，该错误不影响后续解码流程。 AV_ERR_UNKNOWN：未知错误。 AV_ERR_INVALID_STATE：当前解码器状态不支持调用本接口。 AV_ERR_OPERATE_NOT_PERMIT：操作不允许。 AV_ERR_DRM_DECRYPT_FAILED：受DRM保护的视频缓冲区解密失败，建议查看日志。 |
@@ -764,9 +828,10 @@ OH_AVErrCode OH_VideoDecoder_PushInputBuffer(OH_AVCodec *codec, uint32_t index)
 
 
 
-#### OH_VideoDecoder_RenderOutputBuffer()
+### OH_VideoDecoder_RenderOutputBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoDecoder_RenderOutputBuffer(OH_AVCodec *codec, uint32_t index)
@@ -784,6 +849,7 @@ OH_AVErrCode OH_VideoDecoder_RenderOutputBuffer(OH_AVCodec *codec, uint32_t inde
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频解码实例的指针。 |
@@ -792,6 +858,7 @@ OH_AVErrCode OH_VideoDecoder_RenderOutputBuffer(OH_AVCodec *codec, uint32_t inde
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_NO_MEMORY：输入的解码器实例已经销毁。 AV_ERR_INVALID_VAL： 1. 输入的codec指针为非解码器实例，或者为空指针； 2. index非法，该错误不影响后续解码流程。 AV_ERR_UNKNOWN：未知错误。 AV_ERR_INVALID_STATE：当前解码器状态不支持调用本接口。 AV_ERR_OPERATE_NOT_PERMIT：操作不允许。 |
@@ -799,9 +866,10 @@ OH_AVErrCode OH_VideoDecoder_RenderOutputBuffer(OH_AVCodec *codec, uint32_t inde
 
 
 
-#### OH_VideoDecoder_RenderOutputBufferAtTime()
+### OH_VideoDecoder_RenderOutputBufferAtTime()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoDecoder_RenderOutputBufferAtTime(OH_AVCodec *codec, uint32_t index, int64_t renderTimestampNs)
@@ -829,6 +897,7 @@ OH_AVErrCode OH_VideoDecoder_RenderOutputBufferAtTime(OH_AVCodec *codec, uint32_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频解码实例的指针。 |
@@ -838,6 +907,7 @@ OH_AVErrCode OH_VideoDecoder_RenderOutputBufferAtTime(OH_AVCodec *codec, uint32_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_NO_MEMORY：输入的解码器实例已经销毁。 AV_ERR_INVALID_VAL： 1. 输入的codec指针为非解码器实例，或者为空指针； 2. index非法，该错误不影响后续解码流程。 AV_ERR_UNKNOWN：未知错误。 AV_ERR_INVALID_STATE：当前解码器状态不支持调用本接口。 AV_ERR_OPERATE_NOT_PERMIT：操作不允许。 |
@@ -845,9 +915,10 @@ OH_AVErrCode OH_VideoDecoder_RenderOutputBufferAtTime(OH_AVCodec *codec, uint32_
 
 
 
-#### OH_VideoDecoder_FreeOutputBuffer()
+### OH_VideoDecoder_FreeOutputBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoDecoder_FreeOutputBuffer(OH_AVCodec *codec, uint32_t index)
@@ -865,6 +936,7 @@ OH_AVErrCode OH_VideoDecoder_FreeOutputBuffer(OH_AVCodec *codec, uint32_t index)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频解码实例的指针。 |
@@ -873,6 +945,7 @@ OH_AVErrCode OH_VideoDecoder_FreeOutputBuffer(OH_AVCodec *codec, uint32_t index)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_NO_MEMORY：输入的解码器实例已经销毁。 AV_ERR_INVALID_VAL：1. 输入的codec指针为非解码器实例，或者为空指针；2. index非法或者连续给同一个index，该错误不影响后续解码流程。 AV_ERR_UNKNOWN：未知错误。 AV_ERR_INVALID_STATE：当前解码器状态不支持调用本接口。 AV_ERR_OPERATE_NOT_PERMIT：操作不允许。 |
@@ -880,9 +953,10 @@ OH_AVErrCode OH_VideoDecoder_FreeOutputBuffer(OH_AVCodec *codec, uint32_t index)
 
 
 
-#### OH_VideoDecoder_IsValid()
+### OH_VideoDecoder_IsValid()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoDecoder_IsValid(OH_AVCodec *codec, bool *isValid)
@@ -898,6 +972,7 @@ OH_AVErrCode OH_VideoDecoder_IsValid(OH_AVCodec *codec, bool *isValid)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频解码实例的指针。 |
@@ -906,6 +981,7 @@ OH_AVErrCode OH_VideoDecoder_IsValid(OH_AVCodec *codec, bool *isValid)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：输入的codec指针为非解码器实例，或者为空指针。 |
@@ -913,9 +989,10 @@ OH_AVErrCode OH_VideoDecoder_IsValid(OH_AVCodec *codec, bool *isValid)
 
 
 
-#### OH_VideoDecoder_SetDecryptionConfig()
+### OH_VideoDecoder_SetDecryptionConfig()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoDecoder_SetDecryptionConfig(OH_AVCodec *codec, MediaKeySession *mediaKeySession, bool secureVideoPath)
@@ -931,6 +1008,7 @@ OH_AVErrCode OH_VideoDecoder_SetDecryptionConfig(OH_AVCodec *codec, MediaKeySess
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频解码实例的指针。 |
@@ -940,6 +1018,7 @@ OH_AVErrCode OH_VideoDecoder_SetDecryptionConfig(OH_AVCodec *codec, MediaKeySess
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_OPERATE_NOT_PERMIT：1. 操作不允许；2. 解码服务进程异常；3. 媒体密钥会话服务处于错误状态。 AV_ERR_INVALID_VAL：1. 输入的codec指针为非解码器实例或为空指针；2. mediaKeySession为nullptr或无效。 AV_ERR_NO_MEMORY：输入的解码器实例已经销毁。 |
@@ -947,9 +1026,10 @@ OH_AVErrCode OH_VideoDecoder_SetDecryptionConfig(OH_AVCodec *codec, MediaKeySess
 
 
 
-#### OH_VideoDecoder_QueryInputBuffer()
+### OH_VideoDecoder_QueryInputBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoDecoder_QueryInputBuffer(struct OH_AVCodec *codec, uint32_t *index, int64_t timeoutUs)
@@ -969,6 +1049,7 @@ OH_AVErrCode OH_VideoDecoder_QueryInputBuffer(struct OH_AVCodec *codec, uint32_t
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVCodec *codec | 指向视频解码实例的指针。 |
@@ -978,6 +1059,7 @@ OH_AVErrCode OH_VideoDecoder_QueryInputBuffer(struct OH_AVCodec *codec, uint32_t
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_NO_MEMORY：输入的解码器实例已经销毁。 AV_ERR_INVALID_VAL：输入的codec指针为非解码器实例，或者为空指针。 AV_ERR_UNKNOWN：未知错误。 AV_ERR_INVALID_STATE：当前解码器状态不支持调用本接口。 AV_ERR_OPERATE_NOT_PERMIT：禁止异步模式下使用。 AV_ERR_TRY_AGAIN_LATER：查询失败，建议等待短暂间隔后重试。 |
@@ -985,9 +1067,10 @@ OH_AVErrCode OH_VideoDecoder_QueryInputBuffer(struct OH_AVCodec *codec, uint32_t
 
 
 
-#### OH_VideoDecoder_GetInputBuffer()
+### OH_VideoDecoder_GetInputBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVBuffer *OH_VideoDecoder_GetInputBuffer(struct OH_AVCodec *codec, uint32_t index)
@@ -1005,6 +1088,7 @@ OH_AVBuffer *OH_VideoDecoder_GetInputBuffer(struct OH_AVCodec *codec, uint32_t i
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVCodec *codec | 指向视频解码实例的指针。 |
@@ -1013,6 +1097,7 @@ OH_AVBuffer *OH_VideoDecoder_GetInputBuffer(struct OH_AVCodec *codec, uint32_t i
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVBuffer * | 如果执行成功，则返回一个指向OH_AVBuffer实例的指针，否则返回NULL。 |
@@ -1020,9 +1105,10 @@ OH_AVBuffer *OH_VideoDecoder_GetInputBuffer(struct OH_AVCodec *codec, uint32_t i
 
 
 
-#### OH_VideoDecoder_QueryOutputBuffer()
+### OH_VideoDecoder_QueryOutputBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoDecoder_QueryOutputBuffer(struct OH_AVCodec *codec, uint32_t *index, int64_t timeoutUs)
@@ -1048,6 +1134,7 @@ OH_AVErrCode OH_VideoDecoder_QueryOutputBuffer(struct OH_AVCodec *codec, uint32_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVCodec *codec | 指向视频解码实例的指针。 |
@@ -1057,6 +1144,7 @@ OH_AVErrCode OH_VideoDecoder_QueryOutputBuffer(struct OH_AVCodec *codec, uint32_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_NO_MEMORY：输入的解码器实例已经销毁。 AV_ERR_INVALID_VAL：输入的codec指针为非解码器实例，或者为空指针。 AV_ERR_UNKNOWN：未知错误。 AV_ERR_INVALID_STATE：当前解码器状态不支持调用本接口。 AV_ERR_OPERATE_NOT_PERMIT：禁止异步模式下使用。 AV_ERR_STREAM_CHANGED：流格式已变更，可以通过调用OH_VideoDecoder_GetOutputDescription接口获取新的流信息。 AV_ERR_TRY_AGAIN_LATER：查询失败，建议等待短暂间隔后重试。 |
@@ -1064,9 +1152,10 @@ OH_AVErrCode OH_VideoDecoder_QueryOutputBuffer(struct OH_AVCodec *codec, uint32_
 
 
 
-#### OH_VideoDecoder_GetOutputBuffer()
+### OH_VideoDecoder_GetOutputBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVBuffer *OH_VideoDecoder_GetOutputBuffer(struct OH_AVCodec *codec, uint32_t index)
@@ -1082,6 +1171,7 @@ OH_AVBuffer *OH_VideoDecoder_GetOutputBuffer(struct OH_AVCodec *codec, uint32_t 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVCodec *codec | 指向视频解码实例的指针。 |
@@ -1089,6 +1179,7 @@ OH_AVBuffer *OH_VideoDecoder_GetOutputBuffer(struct OH_AVCodec *codec, uint32_t 
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |

@@ -1,10 +1,10 @@
-# @LocalBuilder装饰器： 维持组件关系
+# @LocalBuilder装饰器：维持组件关系
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-localbuilder
 
-当开发者使用局部@Builder进行引用数据传递时，需要考虑组件的父子关系。然而在使用.bind(this)的方式更改函数调用上下文后，会出现组件的父子关系与状态管理的父子关系不一致的问题。为了解决这一问题，引入[@LocalBuilder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-localbuilder#localbuilder)装饰器。@LocalBuilder拥有和局部@Builder相同的功能，且比局部@Builder能够更好的确定组件的父子关系和状态管理的父子关系。
+当开发者使用局部@Builder进行引用数据传递时，需要考虑组件的父子关系。然而在使用.bind(this)的方式更改函数调用上下文后，会出现组件的父子关系与状态管理的父子关系不一致的问题。为了解决这一问题，引入[@LocalBuilder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-localbuilder#localbuilder)装饰器。@LocalBuilder拥有和局部@Builder相同的功能，且比局部@Builder能够更好地确定组件的父子关系和状态管理的父子关系。
 
 在阅读本文档前，建议提前阅读：[@Builder](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-builder)。
 
@@ -13,11 +13,11 @@
 
 
 
-#### 装饰器使用说明
+## 装饰器使用说明
 
 
 
-#### 自定义组件内自定义构建函数
+### 自定义组件内自定义构建函数
 
 定义的语法：
 
@@ -41,7 +41,7 @@ this.myBuilderFunction()
 
 
 
-#### @LocalBuilder和局部@Builder使用区别
+## @LocalBuilder和局部@Builder使用区别
 
 跨组件传递局部@Builder函数时，会使用.bind(this)更改函数上下文，但这可能会导致组件的父子关系与状态管理的父子关系不一致。而@LocalBuilder无论是否使用.bind(this)，都不会改变组件的父子关系，即@LocalBuilder中定义组件所属的父组件是确定的，无法被改变。
 
@@ -109,7 +109,7 @@ struct Parent {
 
 
 
-#### 限制条件
+## 限制条件
 
  - @LocalBuilder只能在所属组件内声明，不允许全局声明。
  - @LocalBuilder不能与内置装饰器或自定义装饰器一起使用。
@@ -119,7 +119,7 @@ struct Parent {
 
 
 
-#### 参数传递规则
+## 参数传递规则
 
 @LocalBuilder函数的参数传递有[按回调传递](#按回调传递参数)，[按引用传递](#按引用传递参数)和[按值传递](#按值传递参数)，均需遵守以下规则：
 
@@ -131,9 +131,9 @@ struct Parent {
 
 
 
-#### 按回调传递参数
+### 按回调传递参数
 
-从API version 20开始，开发者可以通过使用UIUtils.makeBinding()函数、Binding类和MutableBinding类实现@Builder函数中状态变量的刷新。详情请参考[makeBinding](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-statemanagement#makebinding20)。
+从API version 20开始，开发者可以通过使用UIUtils.makeBinding()函数、Binding类和MutableBinding类实现@LocalBuilder函数中状态变量的刷新。详情请参考[makeBinding](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-statemanagement#makebinding20)。
 
 ```ArkTS
 import { UIUtils, Binding } from '@kit.ArkUI';
@@ -174,7 +174,7 @@ struct Parent {
 
 
 
-#### 按引用传递参数
+### 按引用传递参数
 
 按引用传递参数时，传递的参数可为状态变量，且状态变量的改变会引起@LocalBuilder函数内的UI刷新。
 
@@ -280,7 +280,7 @@ struct Parent {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/6uomsTf3Rr-G4e1D84pE5g/zh-cn_image_0000002674631810.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095701Z&HW-CC-Expire=86400&HW-CC-Sign=416E601A4F7E8E444AD5E9E510C85684F58D93468458AD5913C24CFF1660911B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/df_PSb3eRB6qxWxaMhnD1Q/zh-cn_image_0000002747209895.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072149Z&HW-CC-Expire=86400&HW-CC-Sign=19A2F04AD5A5B0D5235536EFE46E139A321FD971EEE76394637E082551C13A4D)
 
 
 当子组件引用父组件的@LocalBuilder函数并传入状态变量时，状态变量的改变不会触发@LocalBuilder函数内的UI刷新。这是因为调用@LocalBuilder装饰的函数创建出来的组件绑定于父组件，而状态变量的刷新机制仅作用于当前组件及其子组件，对父组件无效。而使用@Builder修饰函数可触发UI刷新，原因在于@Builder改变了函数的this指向，使创建出来的组件绑定到子组件上，从而在子组件修改变量能够实现@Builder中的UI刷新。
@@ -384,12 +384,12 @@ struct Child {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/nX_4tUXRRb-kRRGEwX3AjA/zh-cn_image_0000002704271765.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095701Z&HW-CC-Expire=86400&HW-CC-Sign=4D432D5B42BAA54FD42F87000398C56D465CE1E091CCFDE219DD5C04C5F35F63)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/bAyjGVEGR9mYaY0d38FtBw/zh-cn_image_0000002717769962.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072149Z&HW-CC-Expire=86400&HW-CC-Sign=998D6C7B495E1A42A1F9BB1B7E7D035E1D8DAA4E81DBC19444F2542347EBE02F)
 
 
 
 
-#### 按值传递参数
+### 按值传递参数
 
 调用@LocalBuilder装饰的函数默认按值传递。当传递的参数为状态变量时，状态变量的改变不会引起@LocalBuilder函数内的UI刷新。所以当使用状态变量的时候，推荐使用[按回调传递](#按回调传递参数)或[按引用传递](#按引用传递参数)。
 
@@ -423,16 +423,16 @@ struct Parent {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/z1jDH4EoS7qWJJv7ij6rKQ/zh-cn_image_0000002674471966.png?HW-CC-KV=V1&HW-CC-Date=20260813T095701Z&HW-CC-Expire=86400&HW-CC-Sign=B2E918EE50F813209286B65479E018DCEF4EB5F98FDAE94F08F5C40A4CF9E8E4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/0SOeFa4tRyea26Feb_UzYg/zh-cn_image_0000002717610028.png?HW-CC-KV=V1&HW-CC-Date=20260911T072149Z&HW-CC-Expire=86400&HW-CC-Sign=227DFDF6BE6D1F17CD0AF8A7AA4586E6887768B532E610207F34A897A68DD0B7)
 
 
 
 
-#### 使用场景
+## 使用场景
 
 
 
-#### @LocalBuilder在@ComponentV2修饰的自定义组件中使用
+### @LocalBuilder在@ComponentV2修饰的自定义组件中使用
 
 在[@ComponentV2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-custom-components#componentv2)装饰的自定义组件中使用局部的@LocalBuilder，修改变量时会触发UI刷新。
 
@@ -521,16 +521,16 @@ struct ParentPage {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/DJgq--anTrmtZrt1TLGtBw/zh-cn_image_0000002704391935.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095701Z&HW-CC-Expire=86400&HW-CC-Sign=131EACC7D7FD709109A620D675DF354C2F81E3EE544DEBEE4821C9047ACA3008)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/lX3tdjw3Q9W0RLgKfIgHPA/zh-cn_image_0000002747289979.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072149Z&HW-CC-Expire=86400&HW-CC-Sign=58A4B16662405ACE82206485D688350021B689F0C3D1B46C6D8145494953EC53)
 
 
 
 
-#### 常见问题
+## 常见问题
 
 
 
-#### @LocalBuilder函数和$$参数一起使用UI不刷新
+### @LocalBuilder函数和$$参数一起使用UI不刷新
 
 若@LocalBuilder函数和$$参数一起使用，子组件调用父组件的@LocalBuilder函数，子组件传入的参数发生变化，不会引起@LocalBuilder函数内的UI刷新。
 
@@ -631,12 +631,12 @@ struct Child {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/NuGurhkpRiGPo-6pGpWWBA/zh-cn_image_0000002674631812.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095701Z&HW-CC-Expire=86400&HW-CC-Sign=4B630B684DFA4AE1A61395F1BC05992B2C096D493AE860A3AE3C3F03445CD5F7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/7-OysQmfQJWMrUOzbSrf5g/zh-cn_image_0000002747209897.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072149Z&HW-CC-Expire=86400&HW-CC-Sign=95D6AFA4FA961841A876BCF2A4D0ED7D94AE5FB165CE97D25F0F68DCE21190E4)
 
 
 
 
-#### @LocalBuilder函数在参数处直接调用出现布局错乱
+### @LocalBuilder函数在参数处直接调用出现布局错乱
 
 @LocalBuilder装饰的函数作为参数时，直接传递函数的执行结果，会导致布局和预期效果有偏差。
 
@@ -675,7 +675,7 @@ struct Page {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/x1N1h48AQ_mUCJfzhDFylQ/zh-cn_image_0000002704271767.png?HW-CC-KV=V1&HW-CC-Date=20260813T095701Z&HW-CC-Expire=86400&HW-CC-Sign=EC64656F594C6940DF2AA6D238E010A348D4D31BC6504B19D03AF7D7E3881442)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/BFLDTAOJSSmAbhmktbQ9zQ/zh-cn_image_0000002717769964.png?HW-CC-KV=V1&HW-CC-Date=20260911T072149Z&HW-CC-Expire=86400&HW-CC-Sign=A7B87D6FAD4668B51853153ACBB453B14BFFE381DB7DA7DB5D6002B42E7FAC5A)
 
 
 【正例】
@@ -715,4 +715,4 @@ struct Page {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/QvCoZCCuTzaviGYCWU1-sw/zh-cn_image_0000002674471968.png?HW-CC-KV=V1&HW-CC-Date=20260813T095701Z&HW-CC-Expire=86400&HW-CC-Sign=DA945C482A892DB30B449DE5EFFAF8EF22D1AD86C7159B45D86A328733646A44)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/W2TZBOABQv2kvg_A8eXlmw/zh-cn_image_0000002717610030.png?HW-CC-KV=V1&HW-CC-Date=20260911T072149Z&HW-CC-Expire=86400&HW-CC-Sign=CFE0D33F5A8FFB73141A9765E971CEA9B75EDB272F7A949BF2CEFF3CF13662A4)

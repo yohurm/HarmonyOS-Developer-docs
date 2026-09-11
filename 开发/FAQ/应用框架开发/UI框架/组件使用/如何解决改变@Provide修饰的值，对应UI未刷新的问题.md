@@ -208,7 +208,7 @@ struct Index {
             middle: { anchor: '__container__', align: HorizontalAlign.Center }
           })
           .onClick(() => {
-            // 需要修改的是状态变量，以实现驱动UI更新的效果
+           <em> // 需要修改的是状态变量，以实现驱动UI更新的效果</em>
             player.playNew(this.playInfo as PlayInfo);
           });
       }

@@ -1,9 +1,9 @@
 # Timer (定时器)
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-timer
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 本模块提供基础的定时器能力，支持按照指定的时间执行对应函数。
  
@@ -12,9 +12,10 @@
 
   
 
-#### setTimeout
+## setTimeout
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 setTimeout(handler: Function | string, delay?: number, ...arguments: any[]): number
  
@@ -28,15 +29,17 @@ setTimeout(handler: Function | string, delay?: number, ...arguments: any[]): num
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handler | Function \| string | 是 | 类型为Function表示定时器到期后执行函数； 类型为string则通过Error方式打印string中内容，不进行其他处理。 |
-| delay | number | 否 | 延迟的毫秒数，函数的调用会在该延迟之后发生。建议传入整数，若传入小数，会被向下取整。 如果省略该参数，delay取默认值0。 注意： 1. 该计时器非精准计时器，实际延迟可能会与预期延迟存在误差。 2. 如果值小于1，会被默认取0。 3. delay值受系统限制，超出2^31 - 1时会溢出，delay值为0。 |
+| delay | number | 否 | 延迟的毫秒数，函数的调用会在该延迟之后发生。建议传入整数，若传入小数，会被向下取整。 如果省略该参数，delay取默认值0。 注意： 1. 该定时器非精准定时器，实际延迟可能会与预期延迟存在误差。 2. 如果值小于1，会被默认取0。 3. delay值受系统限制，超出2^31 - 1时会溢出，delay值为0。 |
 | ...arguments | any[] | 否 | 附加参数，仅当handler类型为Function时生效，作为参数传递给handler。 arguments参数数量少于handler函数参数数量时，未被arguments覆盖的参数会被设为undefined。 arguments参数数量多于handler函数参数数量时，多余的arguments参数会被忽略，但可通过handler函数内部的arguments对象访问。 |
  
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 该定时器的ID，定时器ID为进程共享，是从0开始顺序增加的整数，无重复值。 |
@@ -89,9 +92,10 @@ setTimeout(myFunction, 1000, 'hello');
  
   
 
-#### clearTimeout
+## clearTimeout
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 clearTimeout(timeoutID?: number): void
  
@@ -105,6 +109,7 @@ clearTimeout(timeoutID?: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | timeoutID | number | 否 | 要取消定时器的ID，需要与调用setTimeout()设置定时器的返回值一致。如果省略该参数或指定的定时器ID不存在时，不会取消任何定时任务。 |
@@ -121,9 +126,10 @@ clearTimeout(timeoutID);
  
   
 
-#### setInterval
+## setInterval
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 setInterval(handler: Function | string, delay: number, ...arguments: any[]): number
  
@@ -137,15 +143,17 @@ setInterval(handler: Function | string, delay: number, ...arguments: any[]): num
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handler | Function \| string | 是 | 类型为Function表示定时器到期后执行函数； 类型为string则通过Error方式打印string中内容，不进行其他处理。 |
-| delay | number | 是 | 延迟的毫秒数，函数的调用会在该延迟之后发生。建议传入整数，若传入小数，会被向下取整。 注意： 1. 该计时器非精准计时器，实际延迟可能会与预期延迟存在误差。 2. 如果值小于1，将被默认设置为0。 3. delay值受系统限制，超出2^31 - 1时会溢出，delay值为0。 |
+| delay | number | 是 | 延迟的毫秒数，函数的调用会在该延迟之后发生。建议传入整数，若传入小数，会被向下取整。 注意： 1. 该定时器非精准定时器，实际延迟可能会与预期延迟存在误差。 2. 如果值小于1，将被默认设置为0。 3. delay值受系统限制，超出2^31 - 1时会溢出，delay值为0。 |
 | ...arguments | any[] | 否 | 附加参数，仅当handler类型为Function时生效，作为参数传递给handler。 arguments参数数量少于handler函数参数数量时，未被arguments覆盖的参数会被设为undefined。 arguments参数数量多于handler函数参数数量时，多余的arguments参数会被忽略，但可通过handler函数内部的arguments对象访问。 |
  
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 该定时器的ID，定时器ID为进程共享，是从0开始顺序增加的整数，无重复值。 |
@@ -161,9 +169,10 @@ setInterval(() => {
  
   
 
-#### clearInterval
+## clearInterval
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 clearInterval(intervalID?: number): void
  
@@ -177,6 +186,7 @@ clearInterval(intervalID?: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | intervalID | number | 否 | 要取消的重复定时器的ID，需要与调用setInterval设置重复定时器的返回值一致。如果省略该参数或指定的重复定时器ID不存在时，不会取消任何定时任务。 |
@@ -193,13 +203,17 @@ clearInterval(intervalID);
  
   
 
-#### 其他说明
+## 其他说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
   
 
-#### 超时延迟
+### 超时延迟
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 如果页面正忙于其他任务，超时可能比预期晚。setTimeout的函数或代码片段在下一个时间周期执行。例如：
  
@@ -219,18 +233,27 @@ OH test foo is called
  
   
 
-#### 最大延迟值
+### 最大延迟值
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 定时器内部使用32位带符号整数存储延时。因此，当延时超过2147483647毫秒（约24.8天）时，定时器会溢出并立即执行。
  
   
 
-#### 定时器冻结
+### 定时器冻结
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 定时器的触发受底层任务调度。当前应用被切换到后台后，定时器到期不会触发。应用被重新拉起到前台后，到期定时器会按序触发。可以使用trace查看进程是否还存在调度，如果没有调度，定时器会被冻结。
  
   
 
-#### 定时器ID
+### 定时器ID
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 setTimeout()和setInterval()使用相同的ID池，因此技术上可以互相调用clearTimeout()和clearInterval()来清除。然而，为了提高代码的可读性和可维护性，建议分别使用各自对应的清除方法，以避免混淆。

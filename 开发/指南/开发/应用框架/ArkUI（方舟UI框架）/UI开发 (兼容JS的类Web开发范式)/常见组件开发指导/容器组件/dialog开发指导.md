@@ -1,13 +1,13 @@
 # dialog开发指导
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-components-dialog
 
 dialog组件用于创建自定义弹窗，通常用来展示用户当前需要或用户必须关注的信息或操作。具体用法请参考[dialog API](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-container-dialog)。
 
 
-#### 创建dialog组件
+## 创建dialog组件
 
 在pages/index目录下的hml文件中创建一个dialog组件，并添加Button组件来触发dialog。dialog组件仅支持width、height、margin、margin-[left|top|right|bottom]、margin-[start|end]样式。
 
@@ -72,7 +72,7 @@ export default {
 
 
 
-#### 设置弹窗响应
+## 设置弹窗响应
 
 开发者点击页面上非dialog的区域时，将触发cancel事件而关闭弹窗。同时也可以通过对dialog添加show和close方法来显示和关闭弹窗。
 
@@ -156,7 +156,7 @@ export default {
 
 
 
-#### 场景示例
+## 场景示例
 
 在本场景中，开发者可以通过dialog组件实现一个日程表。弹窗在打开状态下，利用[textarea](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-basic-textarea)组件输入当前日程，点击确认按钮后获取当前时间并保存输入文本。最后以列表形式将各日程进行展示。
 
@@ -164,7 +164,7 @@ export default {
 <!-- xxx.hml -->
 <div class="doc-page">
   <text style="margin-top: 60px;margin-left: 30px;">
-    {{date}} events
+    <span>{{date}} events</span>
   </text>
   <div class="btnDiv">
     <button type="circle" class="btn" onclick="addSchedule">+</button>
@@ -312,4 +312,4 @@ export default {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/xG3F0zX_RCqCACc-RVfGbA/zh-cn_image_0000002686086095.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071856Z&HW-CC-Expire=86400&HW-CC-Sign=FC1FA91B8AA37A39714B60DA10C10CD8C80F77A3631E8325E6AB91A8857BB57F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/AEKfV4GxQ4qWfTAy33EPmw/zh-cn_image_0000002747290731.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073133Z&HW-CC-Expire=86400&HW-CC-Sign=395B8074C187F21BDD817B38182EC4DA75137550D1842873876F1509648981B4)

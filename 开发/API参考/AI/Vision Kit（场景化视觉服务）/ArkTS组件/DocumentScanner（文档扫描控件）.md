@@ -1,6 +1,6 @@
 # DocumentScanner（文档扫描控件）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/vision-document-scanner
 **支持设备：** Phone | Tablet
@@ -10,7 +10,8 @@
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | Tablet
 
@@ -20,7 +21,8 @@ import { DocType, DocumentScanner, DocumentScannerConfig, SaveOption, FilterId, 
  
   
 
-#### DocumentScanner
+## DocumentScanner
+
 
 **支持设备：** Phone | Tablet
 
@@ -38,6 +40,7 @@ import { DocType, DocumentScanner, DocumentScannerConfig, SaveOption, FilterId, 
  
 **参数：**
   
+
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | scannerConfig | DocumentScannerConfig | 是 | - | 文档扫描能力配置。 |
@@ -46,7 +49,8 @@ import { DocType, DocumentScanner, DocumentScannerConfig, SaveOption, FilterId, 
  
   
 
-#### build
+### build
+
 
 **支持设备：** Phone | Tablet
 
@@ -64,7 +68,8 @@ build(): void
  
   
 
-#### DocumentScannerConfig
+## DocumentScannerConfig
+
 
 **支持设备：** Phone | Tablet
 
@@ -78,6 +83,7 @@ build(): void
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | maxShotCount | number | 否 | 是 | 文档扫描最大支持张数。默认值1，最大值50。 取值范围：[1,50]的整数。 |
@@ -93,7 +99,8 @@ build(): void
  
   
 
-#### DocType
+## DocType
+
 
 **支持设备：** Phone | Tablet
 
@@ -107,6 +114,7 @@ build(): void
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DOC | 0 | 文档类型。 |
@@ -115,7 +123,8 @@ build(): void
  
   
 
-#### FilterId
+## FilterId
+
 
 **支持设备：** Phone | Tablet
 
@@ -129,6 +138,7 @@ build(): void
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ORIGINAL | 0 | 原图滤镜。 |
@@ -138,7 +148,8 @@ build(): void
  
   
 
-#### ShootingMode
+## ShootingMode
+
 
 **支持设备：** Phone | Tablet
 
@@ -152,6 +163,7 @@ build(): void
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | AUTO | 0 | 自动拍照模式。 |
@@ -160,7 +172,8 @@ build(): void
  
   
 
-#### EditTab
+## EditTab
+
 
 **支持设备：** Phone | Tablet
 
@@ -174,6 +187,7 @@ Tab栏按钮枚举。
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ROTATE_TAB | 0 | 旋转按钮。 |
@@ -183,7 +197,8 @@ Tab栏按钮枚举。
  
   
 
-#### SaveOption
+## SaveOption
+
 
 **支持设备：** Phone | Tablet
 
@@ -197,6 +212,7 @@ Tab栏按钮枚举。
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | JPG | 0 | JPEG格式。（仅用于文档类型的保存格式） |
@@ -206,7 +222,8 @@ Tab栏按钮枚举。
  
   
 
-#### DocumentScannerResultCallback
+## DocumentScannerResultCallback
+
 
 **支持设备：** Phone | Tablet
 
@@ -224,6 +241,7 @@ type DocumentScannerResultCallback = (code: number, saveType: SaveOption, uris: 
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | code | number | 是 | 返回的结果码： -1：无结果返回 200：识别成功 1008601001：uris无效 说明： 从5.0.5(17)开始支持状态码1008601001 |
@@ -233,7 +251,8 @@ type DocumentScannerResultCallback = (code: number, saveType: SaveOption, uris: 
  
   
 
-#### DocumentScannerController
+## DocumentScannerController
+
 
 **支持设备：** Phone | Tablet
 
@@ -249,7 +268,8 @@ type DocumentScannerResultCallback = (code: number, saveType: SaveOption, uris: 
  
   
 
-#### isSheetDetectionSupported
+### isSheetDetectionSupported
+
 
 **支持设备：** Phone | Tablet
 
@@ -267,6 +287,7 @@ isSheetDetectionSupported(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 如果当前设备支持表格提取功能，则返回true；否则返回false。 |

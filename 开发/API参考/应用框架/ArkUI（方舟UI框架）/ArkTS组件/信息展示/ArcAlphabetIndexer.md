@@ -1,23 +1,24 @@
 # ArcAlphabetIndexer
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arc-alphabet-indexer
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-弧形索引条是一种弧形排列、可按字母顺序快速定位的组件，可与容器组件联动，按逻辑结构快速定位至容器显示区域，适用于手表等圆形屏幕设备。
+弧形索引条是一种弧形的、可按字母顺序排序进行快速定位的组件，可以与容器组件联动，按逻辑结构快速定位至容器显示区域。
 
 > [!NOTE]
 > 该组件从API version 18开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 该组件支持在Phone、PC/2in1、Tablet、TV、Wearable设备上使用。API version 22及以前版本，在Phone、PC/2in1、Tablet、TV上使用会编译告警，但可以正常运行。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
-> ArcAlphabetIndexerAttribute是用于配置ArcAlphabetIndexer组件属性的关键接口。API version 21及之前版本，导入ArcAlphabetIndexer组件后需要开发者手动导入ArcAlphabetIndexerAttribute，否则会编译报错。从API version 22开始，编译工具链识别到导入ArcAlphabetIndexer组件后，会自动导入ArcAlphabetIndexerAttribute，无需开发者手动导入ArcAlphabetIndexerAttribute。 如果开发者手动导入ArcAlphabetIndexerAttribute，DevEco Studio会将该导入语句显示为置灰状态，API version 21及之前版本删除会编译报错，API version 22开始，删除对功能无影响。
+> ArcAlphabetIndexerAttribute是用于配置ArcAlphabetIndexer组件属性的关键接口。API version 21及之前版本，导入ArcAlphabetIndexer组件后需要开发者手动导入ArcAlphabetIndexerAttribute，否则会编译报错。从API version 22开始，编译工具链识别到导入ArcAlphabetIndexer组件后，会自动导入ArcAlphabetIndexerAttribute，无需开发者手动导入ArcAlphabetIndexerAttribute。 如果开发者手动导入ArcAlphabetIndexerAttribute，DevEco Studio会显示置灰，API version 21及之前版本删除会编译报错，API version 22开始，删除对功能无影响。
 
 
 API version 21及之前版本：
@@ -34,46 +35,51 @@ import { ArcAlphabetIndexer } from '@kit.ArkUI';
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ArcAlphabetIndexer(info: ArcAlphabetIndexerInitInfo)
 
-创建并初始化弧形索引条组件。
+创建弧形索引条实例，传入弧形索引条配置项参数。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Circle
 
-**参数：**
+**参数：** 参数内容为设置弧形索引条索引项字符串数组、初始选中项索引位置。
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| info | ArcAlphabetIndexerInitInfo | 是 | 定义弧形字母索引条的初始化参数，包含字母索引字符串数组和初始选中项索引值。 |
+| info | ArcAlphabetIndexerInitInfo | 是 | 定义弧形字母索引条的初始化参数。 |
 
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
 
 
 
-#### color
+### color
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 color(color: Optional&lt;ColorMetrics&gt;)
 
@@ -85,6 +91,7 @@ color(color: Optional&lt;ColorMetrics&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | Optional&lt;ColorMetrics&gt; | 是 | 文字颜色。 默认值：0xFFFFFF，显示为白色。 |
@@ -92,9 +99,10 @@ color(color: Optional&lt;ColorMetrics&gt;)
 
 
 
-#### selectedColor
+### selectedColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectedColor(color: Optional&lt;ColorMetrics&gt;)
 
@@ -106,6 +114,7 @@ selectedColor(color: Optional&lt;ColorMetrics&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | Optional&lt;ColorMetrics&gt; | 是 | 选中项文字颜色。 默认值：0xFFFFFF，显示为白色。 |
@@ -113,9 +122,10 @@ selectedColor(color: Optional&lt;ColorMetrics&gt;)
 
 
 
-#### popupColor
+### popupColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 popupColor(color: Optional&lt;ColorMetrics&gt;)
 
@@ -127,6 +137,7 @@ popupColor(color: Optional&lt;ColorMetrics&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | Optional&lt;ColorMetrics&gt; | 是 | 提示弹窗文字颜色。 默认值：0xFFFFFF，显示为白色。 |
@@ -134,9 +145,10 @@ popupColor(color: Optional&lt;ColorMetrics&gt;)
 
 
 
-#### selectedBackgroundColor
+### selectedBackgroundColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectedBackgroundColor(color: Optional&lt;ColorMetrics&gt;)
 
@@ -148,6 +160,7 @@ selectedBackgroundColor(color: Optional&lt;ColorMetrics&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | Optional&lt;ColorMetrics&gt; | 是 | 选中项背景颜色。 默认值：0x1F71FF，显示为深蓝色。 |
@@ -155,9 +168,10 @@ selectedBackgroundColor(color: Optional&lt;ColorMetrics&gt;)
 
 
 
-#### popupBackground
+### popupBackground
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 popupBackground(color: Optional&lt;ColorMetrics&gt;)
 
@@ -168,6 +182,7 @@ popupBackground(color: Optional&lt;ColorMetrics&gt;)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Circle
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -180,9 +195,10 @@ popupBackground(color: Optional&lt;ColorMetrics&gt;)
 
 
 
-#### usePopup
+### usePopup
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 usePopup(enabled: Optional&lt;boolean&gt;)
 
@@ -194,6 +210,7 @@ usePopup(enabled: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | Optional&lt;boolean&gt; | 是 | 是否使用提示弹窗。 true表示使用提示弹窗；false表示不使用提示弹窗。 默认值：false |
@@ -201,9 +218,10 @@ usePopup(enabled: Optional&lt;boolean&gt;)
 
 
 
-#### selectedFont
+### selectedFont
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectedFont(font: Optional&lt;Font&gt;)
 
@@ -215,16 +233,18 @@ selectedFont(font: Optional&lt;Font&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| font | Optional&lt;Font&gt; | 是 | 选中项文字样式，用于设置索引条中被选中字母的显示效果，包括文字大小、粗细、倾斜角度和字体族等。 默认值：{ size:'13.0fp', style:FontStyle.Normal, weight:500, family:'HarmonyOS Sans' } |
+| font | Optional&lt;Font&gt; | 是 | 选中项文字样式。 默认值：{ size:'13.0fp', style:FontStyle.Normal, weight:500, family:'HarmonyOS Sans' } |
 
 
 
 
-#### popupFont
+### popupFont
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 popupFont(font: Optional&lt;Font&gt;)
 
@@ -236,20 +256,22 @@ popupFont(font: Optional&lt;Font&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| font | Optional&lt;Font&gt; | 是 | 提示弹窗字体样式，用于设置提示弹窗中显示的当前选中字母的显示效果，包括文字大小、粗细、倾斜角度和字体族等。 默认值： { size:'19.0fp', style:FontStyle.Normal, weight:500, family:'HarmonyOS Sans' } |
+| font | Optional&lt;Font&gt; | 是 | 提示弹窗字体样式。 默认值： { size:'19.0fp', style:FontStyle.Normal, weight:500, family:'HarmonyOS Sans' } |
 
 
 
 
-#### font
+### font
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 font(font: Optional&lt;Font&gt;)
 
-设置弧形字母索引条默认字体样式，即未选中状态下索引项的字体样式。
+设置字母索引条默认字体样式。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -257,20 +279,22 @@ font(font: Optional&lt;Font&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| font | Optional&lt;Font&gt; | 是 | 字母索引条默认字体样式，用于设置索引条上所有字母的显示效果，包括文字大小、粗细、倾斜角度和字体族等。 默认值： { size:'13.0fp', style:FontStyle.Normal, weight:500, family:'HarmonyOS Sans' } |
+| font | Optional&lt;Font&gt; | 是 | 字母索引条默认字体样式。 默认值： { size:'13.0fp', style:FontStyle.Normal, weight:500, family:'HarmonyOS Sans' } |
 
 
 
 
-#### itemSize
+### itemSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 itemSize(size: Optional&lt;LengthMetrics&gt;)
 
-设置弧形索引条索引项区域大小。
+设置字母索引条字母区域大小。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -278,16 +302,18 @@ itemSize(size: Optional&lt;LengthMetrics&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| size | Optional&lt;LengthMetrics&gt; | 是 | 弧形索引条索引项区域大小（圆形区域的直径）。不支持设置为百分比。 默认值：24.0 单位：vp |
+| size | Optional&lt;LengthMetrics&gt; | 是 | 字母索引条字母区域大小，字母区域为圆形，即圆形直径。不支持设置为百分比。 默认值：24.0 单位：vp |
 
 
 
 
-#### selected
+### selected
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selected(index: Optional&lt;number&gt;)
 
@@ -299,26 +325,29 @@ selected(index: Optional&lt;number&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| index | Optional&lt;number&gt; | 是 | 选中项索引值。若超出有效索引范围，则取默认值0。 默认值：0 该参数支持!!双向绑定变量。 |
+| index | Optional&lt;number&gt; | 是 | 选中项索引值。 默认值：0 该参数支持!!双向绑定变量。 |
 
 
 
 
-#### autoCollapse
+### autoCollapse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 autoCollapse(enable: Optional&lt;boolean&gt;)
 
-设置是否使用自适应折叠模式。当索引项过多时，组件会根据可用显示空间自动调整索引项的显示布局。
+设置是否使用自适应折叠模式。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Circle
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -327,9 +356,10 @@ autoCollapse(enable: Optional&lt;boolean&gt;)
 
 
 
-#### popupBackgroundBlurStyle
+### popupBackgroundBlurStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 popupBackgroundBlurStyle(style: Optional&lt;BlurStyle&gt;)
 
@@ -345,24 +375,27 @@ popupBackgroundBlurStyle(style: Optional&lt;BlurStyle&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| style | Optional&lt;BlurStyle&gt; | 是 | 设置提示弹窗的背景模糊材质。 默认值：BlurStyle.NONE。 设置此属性后不建议再设置popupBackground属性。 |
+| style | Optional&lt;BlurStyle&gt; | 是 | 设置提示弹窗的背景模糊材质。 |
 
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)外，还支持以下事件：
 
 
 
-#### onSelect
+### onSelect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onSelect(handler: Optional&lt;OnSelectCallback&gt;)
 
@@ -374,22 +407,25 @@ onSelect(handler: Optional&lt;OnSelectCallback&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| handler | Optional&lt;OnSelectCallback&gt; | 是 | 回调函数，用于处理索引条选中事件。当用户点击或滑动索引条选中某项时触发，回调中返回当前选中项的索引值。 |
+| handler | Optional&lt;OnSelectCallback&gt; | 是 | 回调函数类型。 |
 
 
 
 
-#### ArcAlphabetIndexerInitInfo对象说明
+## ArcAlphabetIndexerInitInfo对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义弧形字母索引条的初始化参数。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Circle
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -399,9 +435,10 @@ onSelect(handler: Optional&lt;OnSelectCallback&gt;)
 
 
 
-#### OnSelectCallback
+## OnSelectCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnSelectCallback = (index: number) => void
 
@@ -413,6 +450,7 @@ type OnSelectCallback = (index: number) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 选中项索引值。 |
@@ -420,13 +458,17 @@ type OnSelectCallback = (index: number) => void
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（设置联动控制和定位）
+
+
+### 示例1（设置联动控制和定位）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例实现了弧形索引条和弧形列表联动控制和定位。
 
@@ -442,7 +484,7 @@ import {
   ArcAlphabetIndexer,
   ArcAlphabetIndexerAttribute
 } from '@kit.ArkUI';
-// 本示例代码兼容API version 21及之前版本，因此手动导入了ArcListAttribute、ArcListItemAttribute、ArcAlphabetIndexerAttribute。从API version 22开始，无需手动导入这些Attribute类型。具体请参考ArcList、ArcListItem、ArcAlphabetIndexer的导入模块说明。
+// 从API version 22开始，无需手动导入ArcListAttribute、ArcListItemAttribute、ArcAlphabetIndexerAttribute。具体请参考ArcList、ArcListItem、ArcAlphabetIndexer的导入模块说明。
 
 @Entry
 @Component
@@ -467,7 +509,7 @@ struct ArcListAndIndexer {
     Column() {
       Row() {
         Stack() {
-          ArcList({ scroller: this.scrollerForList, initialIndex: 0 }) {
+          ArcList({ scroller : this.scrollerForList, initialIndex: 0 }) {
             ForEach(this.arrName, (itemName: string, index: number) => {
               ArcListItem() {
                 Text(itemName)
@@ -528,12 +570,15 @@ struct ArcListAndIndexer {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/OTmLg7_dSnGaCiH16Azb6g/zh-cn_image_0000002679967144.gif?HW-CC-KV=V1&HW-CC-Date=20260818T063503Z&HW-CC-Expire=86400&HW-CC-Sign=CF1EC227F3C3BE9FCAE9DB3FC7C3C152671543528AE32F5C5CEC36ED037784D7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/i14PJR08Tsmq50msU2w8LQ/zh-cn_image_0000002747212807.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073111Z&HW-CC-Expire=86400&HW-CC-Sign=0E9041D87B9EC36285B87848FF3CECC41D3C2AB3FD8598B7E6EC8CAB0F85B224)
 
 
 
 
-#### 示例2（设置弹窗显示）
+### 示例2（设置弹窗显示）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[popupColor](#popupcolor)和[popupBackground](#popupbackground)接口实现了提示弹窗的显示背景颜色和文字颜色。
 
@@ -630,4 +675,4 @@ struct ArcListAndIndexer {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/kx0PfGTRRrm0is-eM_SwnQ/zh-cn_image_0000002709646953.gif?HW-CC-KV=V1&HW-CC-Date=20260818T063503Z&HW-CC-Expire=86400&HW-CC-Sign=E101A732AA8C6BBD2C16D9CC105A6FED9DA32DCEFD45C97FC540BAA554D5F95E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/-peuSsmgSr-MzOIJdqH6XA/zh-cn_image_0000002717772872.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073111Z&HW-CC-Expire=86400&HW-CC-Sign=6EBF9653D86362EEC96C0777E1301CB05FEC2F925AC5F2285D0C7EA3779B9DE5)

@@ -1,9 +1,9 @@
 # CollaborationCamera (跨设备互通组件)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/servicecollaboration-collaborationcamera
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+**支持设备：** PC/2in1 | Tablet
 
 该模块提供了组件[createCollaborationCameraMenuItems](#createcollaborationcameramenuitemsdeprecated)和[CollaborationCameraStateDialog](#collaborationcamerastatedialogdeprecated)，两者需要配合使用，完成分布式跨端能力，如在PC/2in1端跨端调用Phone端拍照。
 
@@ -14,9 +14,10 @@
 **起始版本：** 4.0.0(10)
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 ```text
 import { CollaborationCameraStateDialog, createCollaborationCameraMenuItems, CollaborationCameraBusinessFilter} from '@kit.ServiceCollaborationKit';
@@ -24,9 +25,10 @@ import { CollaborationCameraStateDialog, createCollaborationCameraMenuItems, Col
 
 
 
-#### createCollaborationCameraMenuItems(deprecated)
+## createCollaborationCameraMenuItems(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 createCollaborationCameraMenuItems(businessFilter?: Array&lt;CollaborationCameraBusinessFilter&gt;): void
 
@@ -48,6 +50,7 @@ createCollaborationCameraMenuItems(businessFilter?: Array&lt;CollaborationCamera
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | businessFilter | Array&lt;CollaborationCameraBusinessFilter&gt; | 否 | 传入能力类型，支持匹配跨端拍照、扫描、图库。 默认值为ALL，匹配所有业务。 |
@@ -66,9 +69,10 @@ myTestMenu() {
 
 
 
-#### CollaborationCameraBusinessFilter(deprecated)
+## CollaborationCameraBusinessFilter(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 能力类型枚举值。
 
@@ -81,6 +85,7 @@ myTestMenu() {
 **设备行为差异：** 该接口在PC/2in1、Tablet可正常调用，在其他设备类型上无法展示设备列表，无法使用跨设备互通能力。
 
 **起始版本：** 4.0.0(10)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -103,9 +108,10 @@ myTestMenu() {
 
 
 
-#### CollaborationCameraStateDialog(deprecated)
+## CollaborationCameraStateDialog(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 弹窗组件，用于提示对端应用状态。
 
@@ -127,9 +133,10 @@ myTestMenu() {
 
 
 
-#### onState(deprecated)
+### onState(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 onState: (stateCode: number, buffer: ArrayBuffer) => void
 
@@ -147,6 +154,7 @@ onState: (stateCode: number, buffer: ArrayBuffer) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | stateCode | number | 是 | 标识业务完成状态，含义详见下面错误码。 |
@@ -156,6 +164,7 @@ onState: (stateCode: number, buffer: ArrayBuffer) => void
 **错误码：**
 
 以下错误码的详细介绍请参见[错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-servicecollaboration)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -170,9 +179,10 @@ onState: (stateCode: number, buffer: ArrayBuffer) => void
 
 
 
-#### build(deprecated)
+### build(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 build(): void
 

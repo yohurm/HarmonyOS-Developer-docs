@@ -1,9 +1,9 @@
 # IAP
 
-更新时间：2026-08-04 06:06:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-iap
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 应用内购买（In-App Purchase，IAP）模块为HarmonyOS应用提供数字商品（虚拟商品）的全链路支付能力，包括商品查询、购买、发货确认、订阅管理及退款等。
 
@@ -25,9 +25,10 @@
 **起始版本：** 4.0.0(10)
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { iap } from '@kit.IAPKit';
@@ -35,9 +36,10 @@ import { iap } from '@kit.IAPKit';
 
 
 
-#### ProductType
+## ProductType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 商品类型。
 
@@ -46,6 +48,7 @@ import { iap } from '@kit.IAPKit';
 **系统能力：** SystemCapability.Payment.IAP
 
 **起始版本：** 4.0.0(10)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -57,9 +60,10 @@ import { iap } from '@kit.IAPKit';
 
 
 
-#### PurchaseQueryType
+## PurchaseQueryType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 查询购买信息的类型。
 
@@ -71,6 +75,7 @@ import { iap } from '@kit.IAPKit';
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ALL | 0 | 所有历史购买记录，包括消耗型商品、非消耗型商品、自动续期订阅商品和非续期订阅商品。 |
@@ -80,9 +85,10 @@ import { iap } from '@kit.IAPKit';
 
 
 
-#### PeriodUnit
+## PeriodUnit
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 自动续期订阅商品的周期单位。
 
@@ -93,6 +99,7 @@ import { iap } from '@kit.IAPKit';
 **系统能力：** SystemCapability.Payment.IAP
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -105,9 +112,10 @@ import { iap } from '@kit.IAPKit';
 
 
 
-#### OfferPaymentMode
+## OfferPaymentMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 促销的付费方式。
 
@@ -116,6 +124,7 @@ import { iap } from '@kit.IAPKit';
 **系统能力：** SystemCapability.Payment.IAP
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -127,9 +136,10 @@ import { iap } from '@kit.IAPKit';
 
 
 
-#### OfferType
+## OfferType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 促销类型。
 
@@ -141,6 +151,7 @@ import { iap } from '@kit.IAPKit';
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | INTRODUCTORY | 0 | 推介促销。 |
@@ -149,9 +160,10 @@ import { iap } from '@kit.IAPKit';
 
 
 
-#### IAPErrorCode
+## IAPErrorCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 错误码枚举。
 
@@ -160,6 +172,7 @@ import { iap } from '@kit.IAPKit';
 **系统能力：** SystemCapability.Payment.IAP
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -188,9 +201,10 @@ import { iap } from '@kit.IAPKit';
 
 
 
-#### WindowScreenMode
+## WindowScreenMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 界面窗口模式。
 
@@ -202,6 +216,7 @@ import { iap } from '@kit.IAPKit';
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DIALOG_BOX | 1 | 界面窗口弹窗模式。 |
@@ -210,9 +225,10 @@ import { iap } from '@kit.IAPKit';
 
 
 
-#### ProductStatus
+## ProductStatus
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 商品状态枚举。
 
@@ -224,6 +240,7 @@ import { iap } from '@kit.IAPKit';
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | VALID | 0 | 生效状态。 |
@@ -233,9 +250,10 @@ import { iap } from '@kit.IAPKit';
 
 
 
-#### iap.queryEnvironmentStatus
+## iap.queryEnvironmentStatus
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 queryEnvironmentStatus(context: common.Context): Promise&lt;void&gt;
 
@@ -253,12 +271,14 @@ queryEnvironmentStatus(context: common.Context): Promise&lt;void&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文。建议使用UIAbilityContext。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -268,6 +288,7 @@ queryEnvironmentStatus(context: common.Context): Promise&lt;void&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-iap)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -308,9 +329,10 @@ struct Index {
 
 
 
-#### iap.queryEnvironmentStatus
+## iap.queryEnvironmentStatus
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 queryEnvironmentStatus(context: common.Context, callback: AsyncCallback&lt;void&gt;): void
 
@@ -326,6 +348,7 @@ queryEnvironmentStatus(context: common.Context, callback: AsyncCallback&lt;void&
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文。建议使用UIAbilityContext。 |
@@ -335,6 +358,7 @@ queryEnvironmentStatus(context: common.Context, callback: AsyncCallback&lt;void&
 **错误码**：
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-iap)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -376,9 +400,10 @@ struct Index {
 
 
 
-#### iap.queryProducts
+## iap.queryProducts
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 queryProducts(context: common.UIAbilityContext, parameter: QueryProductsParameter): Promise<Array&lt;Product&gt;>
 
@@ -394,6 +419,7 @@ queryProducts(context: common.UIAbilityContext, parameter: QueryProductsParamete
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | UIAbility上下文。 |
@@ -401,6 +427,7 @@ queryProducts(context: common.UIAbilityContext, parameter: QueryProductsParamete
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -410,6 +437,7 @@ queryProducts(context: common.UIAbilityContext, parameter: QueryProductsParamete
 **错误码**：
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-iap)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -460,9 +488,10 @@ struct Index {
 
 
 
-#### iap.queryProducts
+## iap.queryProducts
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 queryProducts(context: common.UIAbilityContext, parameter: QueryProductsParameter, callback: AsyncCallback<Array&lt;Product&gt;>): void
 
@@ -476,6 +505,7 @@ queryProducts(context: common.UIAbilityContext, parameter: QueryProductsParamete
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | UIAbility上下文。 |
@@ -486,6 +516,7 @@ queryProducts(context: common.UIAbilityContext, parameter: QueryProductsParamete
 **错误码**：
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-iap)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -538,9 +569,10 @@ struct Index {
 
 
 
-#### iap.queryProducts
+## iap.queryProducts
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 queryProducts(context: common.UIAbilityContext, productIds: string[]): Promise<Array&lt;Product&gt;>
 
@@ -556,6 +588,7 @@ queryProducts(context: common.UIAbilityContext, productIds: string[]): Promise<A
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | UIAbility上下文。 |
@@ -563,6 +596,7 @@ queryProducts(context: common.UIAbilityContext, productIds: string[]): Promise<A
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -572,6 +606,7 @@ queryProducts(context: common.UIAbilityContext, productIds: string[]): Promise<A
 **错误码**：
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-iap)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -614,9 +649,10 @@ struct Index {
 
 
 
-#### iap.purchase(deprecated)
+## iap.purchase(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 purchase(context: common.UIAbilityContext, parameter: PurchaseParameter): Promise&lt;PurchaseResult&gt;
 
@@ -636,6 +672,7 @@ purchase(context: common.UIAbilityContext, parameter: PurchaseParameter): Promis
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | UIAbility上下文。 |
@@ -643,6 +680,7 @@ purchase(context: common.UIAbilityContext, parameter: PurchaseParameter): Promis
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -652,6 +690,7 @@ purchase(context: common.UIAbilityContext, parameter: PurchaseParameter): Promis
 **错误码**：
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-iap)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -702,9 +741,10 @@ struct Index {
 
 
 
-#### iap.purchase(deprecated)
+## iap.purchase(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 purchase(context: common.UIAbilityContext, parameter: PurchaseParameter, callback: AsyncCallback&lt;PurchaseResult&gt;): void
 
@@ -724,6 +764,7 @@ purchase(context: common.UIAbilityContext, parameter: PurchaseParameter, callbac
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | UIAbility上下文。 |
@@ -734,6 +775,7 @@ purchase(context: common.UIAbilityContext, parameter: PurchaseParameter, callbac
 **错误码**：
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-iap)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -786,9 +828,10 @@ struct Index {
 
 
 
-#### iap.createPurchase
+## iap.createPurchase
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPurchase(context: common.UIAbilityContext, parameter: PurchaseParameter): Promise&lt;CreatePurchaseResult&gt;
 
@@ -806,6 +849,7 @@ createPurchase(context: common.UIAbilityContext, parameter: PurchaseParameter): 
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | UIAbility上下文。 |
@@ -813,6 +857,7 @@ createPurchase(context: common.UIAbilityContext, parameter: PurchaseParameter): 
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -822,6 +867,7 @@ createPurchase(context: common.UIAbilityContext, parameter: PurchaseParameter): 
 **错误码**：
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-iap)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -877,9 +923,10 @@ struct Index {
 
 
 
-#### iap.createPurchase
+## iap.createPurchase
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPurchase(context: common.UIAbilityContext, parameter: PurchaseParameter, callback: AsyncCallback&lt;CreatePurchaseResult&gt;): void
 
@@ -895,6 +942,7 @@ createPurchase(context: common.UIAbilityContext, parameter: PurchaseParameter, c
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | UIAbility上下文。 |
@@ -905,6 +953,7 @@ createPurchase(context: common.UIAbilityContext, parameter: PurchaseParameter, c
 **错误码**：
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-iap)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -962,9 +1011,10 @@ struct Index {
 
 
 
-#### iap.consumePurchase(deprecated)
+## iap.consumePurchase(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 consumePurchase(context: common.UIAbilityContext, parameter: ConsumePurchaseParameter): Promise&lt;ConsumeResult&gt;
 
@@ -982,6 +1032,7 @@ consumePurchase(context: common.UIAbilityContext, parameter: ConsumePurchasePara
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | UIAbility上下文。 |
@@ -989,6 +1040,7 @@ consumePurchase(context: common.UIAbilityContext, parameter: ConsumePurchasePara
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -998,6 +1050,7 @@ consumePurchase(context: common.UIAbilityContext, parameter: ConsumePurchasePara
 **错误码**：
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-iap)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1043,9 +1096,10 @@ struct Index {
 
 
 
-#### iap.consumePurchase(deprecated)
+## iap.consumePurchase(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 consumePurchase(context: common.UIAbilityContext, parameter: ConsumePurchaseParameter, callback: AsyncCallback&lt;ConsumeResult&gt;): void
 
@@ -1063,6 +1117,7 @@ consumePurchase(context: common.UIAbilityContext, parameter: ConsumePurchasePara
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | UIAbility上下文。 |
@@ -1073,6 +1128,7 @@ consumePurchase(context: common.UIAbilityContext, parameter: ConsumePurchasePara
 **错误码**：
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-iap)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1120,9 +1176,10 @@ struct Index {
 
 
 
-#### iap.finishPurchase
+## iap.finishPurchase
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 finishPurchase(context: common.UIAbilityContext, parameter: FinishPurchaseParameter): Promise&lt;void&gt;
 
@@ -1138,6 +1195,7 @@ finishPurchase(context: common.UIAbilityContext, parameter: FinishPurchaseParame
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | UIAbility上下文。 |
@@ -1145,6 +1203,7 @@ finishPurchase(context: common.UIAbilityContext, parameter: FinishPurchaseParame
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1154,6 +1213,7 @@ finishPurchase(context: common.UIAbilityContext, parameter: FinishPurchaseParame
 **错误码**：
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-iap)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1204,9 +1264,10 @@ struct Index {
 
 
 
-#### iap.finishPurchase
+## iap.finishPurchase
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 finishPurchase(context: common.UIAbilityContext, parameter: FinishPurchaseParameter, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1220,6 +1281,7 @@ finishPurchase(context: common.UIAbilityContext, parameter: FinishPurchaseParame
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | UIAbility上下文。 |
@@ -1230,6 +1292,7 @@ finishPurchase(context: common.UIAbilityContext, parameter: FinishPurchaseParame
 **错误码**：
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-iap)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1282,9 +1345,10 @@ struct Index {
 
 
 
-#### iap.queryOwnedPurchases(deprecated)
+## iap.queryOwnedPurchases(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 queryOwnedPurchases(context: common.UIAbilityContext, parameter: QueryPurchasesParameter): Promise&lt;QueryPurchasesResult&gt;
 
@@ -1308,6 +1372,7 @@ queryOwnedPurchases(context: common.UIAbilityContext, parameter: QueryPurchasesP
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | UIAbility上下文。 |
@@ -1315,6 +1380,7 @@ queryOwnedPurchases(context: common.UIAbilityContext, parameter: QueryPurchasesP
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1324,6 +1390,7 @@ queryOwnedPurchases(context: common.UIAbilityContext, parameter: QueryPurchasesP
 **错误码**：
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-iap)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1368,9 +1435,10 @@ struct Index {
 
 
 
-#### iap.queryOwnedPurchases(deprecated)
+## iap.queryOwnedPurchases(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 queryOwnedPurchases(context: common.UIAbilityContext, parameter: QueryPurchasesParameter, callback: AsyncCallback&lt;QueryPurchasesResult&gt;): void
 
@@ -1394,6 +1462,7 @@ queryOwnedPurchases(context: common.UIAbilityContext, parameter: QueryPurchasesP
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | UIAbility上下文。 |
@@ -1404,6 +1473,7 @@ queryOwnedPurchases(context: common.UIAbilityContext, parameter: QueryPurchasesP
 **错误码**：
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-iap)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1450,9 +1520,10 @@ struct Index {
 
 
 
-#### iap.queryPurchaseRecords(deprecated)
+## iap.queryPurchaseRecords(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 queryPurchaseRecords(context: common.UIAbilityContext, parameter: QueryPurchasesParameter): Promise&lt;QueryPurchasesResult&gt;
 
@@ -1470,6 +1541,7 @@ queryPurchaseRecords(context: common.UIAbilityContext, parameter: QueryPurchases
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | UIAbility上下文。 |
@@ -1477,6 +1549,7 @@ queryPurchaseRecords(context: common.UIAbilityContext, parameter: QueryPurchases
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1486,6 +1559,7 @@ queryPurchaseRecords(context: common.UIAbilityContext, parameter: QueryPurchases
 **错误码**：
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-iap)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1526,9 +1600,10 @@ struct Index {
 
 
 
-#### iap.queryPurchaseRecords(deprecated)
+## iap.queryPurchaseRecords(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 queryPurchaseRecords(context: common.UIAbilityContext, parameter: QueryPurchasesParameter, callback: AsyncCallback&lt;QueryPurchasesResult&gt;): void
 
@@ -1546,6 +1621,7 @@ queryPurchaseRecords(context: common.UIAbilityContext, parameter: QueryPurchases
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | UIAbility上下文。 |
@@ -1556,6 +1632,7 @@ queryPurchaseRecords(context: common.UIAbilityContext, parameter: QueryPurchases
 **错误码**：
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-iap)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1598,9 +1675,10 @@ struct Index {
 
 
 
-#### iap.queryPurchases
+## iap.queryPurchases
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 queryPurchases(context: common.UIAbilityContext, parameter: QueryPurchasesParameter): Promise&lt;QueryPurchaseResult&gt;
 
@@ -1622,6 +1700,7 @@ queryPurchases(context: common.UIAbilityContext, parameter: QueryPurchasesParame
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | UIAbility上下文。 |
@@ -1629,6 +1708,7 @@ queryPurchases(context: common.UIAbilityContext, parameter: QueryPurchasesParame
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1638,6 +1718,7 @@ queryPurchases(context: common.UIAbilityContext, parameter: QueryPurchasesParame
 **错误码**：
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-iap)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1681,9 +1762,10 @@ struct Index {
 
 
 
-#### iap.queryPurchases
+## iap.queryPurchases
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 queryPurchases(context: common.UIAbilityContext, parameter: QueryPurchasesParameter, callback: AsyncCallback&lt;QueryPurchaseResult&gt;): void
 
@@ -1703,6 +1785,7 @@ queryPurchases(context: common.UIAbilityContext, parameter: QueryPurchasesParame
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | UIAbility上下文。 |
@@ -1713,6 +1796,7 @@ queryPurchases(context: common.UIAbilityContext, parameter: QueryPurchasesParame
 **错误码**：
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-iap)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1758,9 +1842,10 @@ struct Index {
 
 
 
-#### iap.showManagedSubscriptions
+## iap.showManagedSubscriptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 showManagedSubscriptions(context: common.Context, uiParameter: UIWindowParameter, groupId?: string): Promise&lt;void&gt;
 
@@ -1778,6 +1863,7 @@ showManagedSubscriptions(context: common.Context, uiParameter: UIWindowParameter
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文。建议使用UIAbilityContext。 |
@@ -1787,6 +1873,7 @@ showManagedSubscriptions(context: common.Context, uiParameter: UIWindowParameter
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1795,6 +1882,7 @@ showManagedSubscriptions(context: common.Context, uiParameter: UIWindowParameter
 **错误码**：
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-iap)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1838,9 +1926,10 @@ struct Index {
 
 
 
-#### iap.isSandboxActivated
+## iap.isSandboxActivated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isSandboxActivated(context: common.Context): Promise&lt;boolean&gt;
 
@@ -1856,12 +1945,14 @@ isSandboxActivated(context: common.Context): Promise&lt;boolean&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文。建议使用UIAbilityContext。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1871,6 +1962,7 @@ isSandboxActivated(context: common.Context): Promise&lt;boolean&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-iap)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1912,9 +2004,10 @@ struct Index {
 
 
 
-#### iap.createRefundRequest
+## iap.createRefundRequest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 createRefundRequest(context: common.Context, purchaseOrderId: string): Promise&lt;void&gt;
 
@@ -1932,6 +2025,7 @@ createRefundRequest(context: common.Context, purchaseOrderId: string): Promise&l
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文。建议使用UIAbilityContext。 |
@@ -1939,6 +2033,7 @@ createRefundRequest(context: common.Context, purchaseOrderId: string): Promise&l
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1948,6 +2043,7 @@ createRefundRequest(context: common.Context, purchaseOrderId: string): Promise&l
 **错误码**：
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-iap)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1997,7 +2093,8 @@ struct IapTest {
 
 
 
-#### iap.showManagedInvoices
+## iap.showManagedInvoices
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2017,6 +2114,7 @@ showManagedInvoices(context: common.Context, purchaseOrderId: string): Promise&l
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文。建议使用UIAbilityContext。 |
@@ -2024,6 +2122,7 @@ showManagedInvoices(context: common.Context, purchaseOrderId: string): Promise&l
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2033,6 +2132,7 @@ showManagedInvoices(context: common.Context, purchaseOrderId: string): Promise&l
 **错误码**：
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-iap)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2079,9 +2179,10 @@ struct IapTest {
 
 
 
-#### QueryProductsParameter
+## QueryProductsParameter
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [queryProducts](#iapqueryproducts)接口的请求参数。
 
@@ -2093,6 +2194,7 @@ struct IapTest {
 
 **起始版本：** 4.0.0(10)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | productType | ProductType | 否 | 否 | 需要查询的商品类型。 - CONSUMABLE：消耗型商品 - NONCONSUMABLE：非消耗型商品 - AUTORENEWABLE：自动续期订阅商品 - NONRENEWABLE：非续期订阅商品 |
@@ -2101,9 +2203,10 @@ struct IapTest {
 
 
 
-#### Product
+## Product
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 包含单个商品详细信息。
 
@@ -2112,6 +2215,7 @@ struct IapTest {
 **系统能力：** SystemCapability.Payment.IAP
 
 **起始版本：** 4.0.0(10)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2133,9 +2237,10 @@ struct IapTest {
 
 
 
-#### PromotionalOffer
+## PromotionalOffer
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 订阅商品支持的自定义优惠信息。
 
@@ -2146,6 +2251,7 @@ struct IapTest {
 **系统能力：** SystemCapability.Payment.IAP
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2159,9 +2265,10 @@ struct IapTest {
 
 
 
-#### SubscriptionInfo
+## SubscriptionInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 订阅信息。
 
@@ -2172,6 +2279,7 @@ struct IapTest {
 **系统能力：** SystemCapability.Payment.IAP
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2185,9 +2293,10 @@ struct IapTest {
 
 
 
-#### SubscriptionOffer
+## SubscriptionOffer
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 促销信息。
 
@@ -2198,6 +2307,7 @@ struct IapTest {
 **系统能力：** SystemCapability.Payment.IAP
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2211,9 +2321,10 @@ struct IapTest {
 
 
 
-#### PurchaseParameter
+## PurchaseParameter
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [purchase](#iappurchasedeprecated)接口和[createPurchase](#iapcreatepurchase)接口的请求参数。
 
@@ -2222,6 +2333,7 @@ struct IapTest {
 **系统能力：** SystemCapability.Payment.IAP
 
 **起始版本：** 4.0.0(10)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2237,9 +2349,10 @@ struct IapTest {
 
 
 
-#### PurchaseResult(deprecated)
+## PurchaseResult(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 [purchase](#iappurchasedeprecated)接口的返回结果。
 
@@ -2251,6 +2364,7 @@ struct IapTest {
 
 **起始版本：** 4.0.0(10)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | inAppPurchaseData | string | 否 | 否 | 订单数据的JSON字符串，包含的参数请参见InAppPurchaseData。 |
@@ -2260,9 +2374,10 @@ struct IapTest {
 
 
 
-#### CreatePurchaseResult
+## CreatePurchaseResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [createPurchase](#iapcreatepurchase)接口的返回结果。
 
@@ -2274,6 +2389,7 @@ struct IapTest {
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | purchaseData | string | 否 | 否 | 包含支付结果的JSON字符串，包含的参数请参见PurchaseData。 |
@@ -2281,9 +2397,10 @@ struct IapTest {
 
 
 
-#### ConsumePurchaseParameter(deprecated)
+## ConsumePurchaseParameter(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 [consumePurchase](#iapconsumepurchasedeprecated)接口的请求参数。
 
@@ -2295,6 +2412,7 @@ struct IapTest {
 
 **起始版本：** 4.0.0(10)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | purchaseToken | string | 否 | 否 | 用户购买商品的标识，在支付完成时由IAP服务器生成。 说明： purchaseToken需从购买数据InAppPurchaseData中获取。支付成功或者请求queryOwnedPurchases接口均会返回InAppPurchaseData的JSON字符串。 |
@@ -2303,9 +2421,10 @@ struct IapTest {
 
 
 
-#### ConsumeResult(deprecated)
+## ConsumeResult(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 [consumePurchase](#iapconsumepurchasedeprecated)接口的返回结果。
 
@@ -2317,6 +2436,7 @@ struct IapTest {
 
 **起始版本：** 4.0.0(10)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | consumedPurchaseData | string | 否 | 否 | 包含消耗结果数据的JSON字符串。字符串中包含参数请参见InAppPurchaseData。 |
@@ -2326,9 +2446,10 @@ struct IapTest {
 
 
 
-#### FinishPurchaseParameter
+## FinishPurchaseParameter
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [finishPurchase](#iapfinishpurchase)接口请求参数。
 
@@ -2340,6 +2461,7 @@ struct IapTest {
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | productType | ProductType | 否 | 否 | 商品类型。 - CONSUMABLE：消耗型商品 - NONCONSUMABLE：非消耗型商品 - AUTORENEWABLE：自动续期订阅商品 - NONRENEWABLE：非续期订阅商品 |
@@ -2349,9 +2471,10 @@ struct IapTest {
 
 
 
-#### QueryPurchasesParameter
+## QueryPurchasesParameter
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [queryOwnedPurchases](#iapqueryownedpurchasesdeprecated)、[queryPurchaseRecords](#iapquerypurchaserecordsdeprecated)和[queryPurchases](#iapquerypurchases)接口的请求参数。
 
@@ -2363,6 +2486,7 @@ struct IapTest {
 
 **起始版本：** 4.0.0(10)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | productType | ProductType | 否 | 否 | 需要查询的商品类型。 - CONSUMABLE：消耗型商品 - NONCONSUMABLE：非消耗型商品 - AUTORENEWABLE：自动续期订阅商品 - NONRENEWABLE：非续期订阅商品 |
@@ -2372,9 +2496,10 @@ struct IapTest {
 
 
 
-#### QueryPurchasesResult(deprecated)
+## QueryPurchasesResult(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 [queryOwnedPurchases](#iapqueryownedpurchasesdeprecated)和[queryPurchaseRecords](#iapquerypurchaserecordsdeprecated)接口的返回结果。
 
@@ -2385,6 +2510,7 @@ struct IapTest {
 **系统能力：** SystemCapability.Payment.IAP
 
 **起始版本：** 4.0.0(10)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2397,9 +2523,10 @@ struct IapTest {
 
 
 
-#### QueryPurchaseResult
+## QueryPurchaseResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [queryPurchases](#iapquerypurchases)接口的返回结果。
 
@@ -2411,6 +2538,7 @@ struct IapTest {
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | purchaseDataList | string[] | 否 | 否 | PurchaseData字符串的数组。 |
@@ -2419,9 +2547,10 @@ struct IapTest {
 
 
 
-#### UIWindowParameter
+## UIWindowParameter
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [iap.showManagedSubscriptions](#iapshowmanagedsubscriptions)接口界面窗口参数。
 
@@ -2432,6 +2561,7 @@ struct IapTest {
 **系统能力：** SystemCapability.Payment.IAP
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

@@ -1,9 +1,9 @@
 # urpc（高性能rpc通信库）
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-communication-urpcapi
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供URPC功能。应用程序可通过URPC提供的生成代码接口发起RPC请求。常见的URPC方法包括[urpcStubCreate](#urpcstubcreate)、[UrpcCall](#urpccall)、[UrpcCancel](#urpccancel)、[UrpcDestroy](#urpcdestroy)。
  
@@ -12,19 +12,21 @@
 **起始版本：** 5.0.1(13)
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-import { urpc } from "@kit.RemoteCommunicationKit";
+import { urpc } from '@kit.RemoteCommunicationKit';
 ```
  
   
 
-#### FlowbufType
+## FlowbufType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type FlowbufType =
  
@@ -38,6 +40,7 @@ type FlowbufType =
  
 **起始版本：** 5.0.1(13)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | 'INT8' | 表示参数类型为'INT8'。 |
@@ -83,9 +86,10 @@ type FlowbufType =
  
   
 
-#### FlowbufElement&lt;T&gt;
+## FlowbufElement&lt;T&gt;
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 FlowbufElement&lt;T&gt;用于定义非数组的URPC入参和返回值类型。
  
@@ -95,6 +99,7 @@ FlowbufElement&lt;T&gt;用于定义非数组的URPC入参和返回值类型。
  
 **起始版本：** 5.0.1(13)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | FlowbufType | 否 | 否 | 表示通过URPC通信允许传入和接收返回值的类型。 |
@@ -105,16 +110,17 @@ FlowbufElement&lt;T&gt;用于定义非数组的URPC入参和返回值类型。
 **示例：**
  
 ```text
-import { urpc } from "@kit.RemoteCommunicationKit"
+import { urpc } from '@kit.RemoteCommunicationKit';
 
-let version: urpc.FlowbufElement<number> = {type: 'INT8', value: 0, name: ""};
+let version: urpc.FlowbufElement<number> = {type: 'INT8', value: 0, name: ''};
 ```
  
   
 
-#### FlowbufArrayElement&lt;T&gt;
+## FlowbufArrayElement&lt;T&gt;
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 FlowbufArrayElement&lt;T&gt;用于定义数组类型的URPC入参和返回值类型。
  
@@ -124,6 +130,7 @@ FlowbufArrayElement&lt;T&gt;用于定义数组类型的URPC入参和返回值类
  
 **起始版本：** 5.0.1(13)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | FlowbufType | 否 | 否 | 表示通过URPC通信允许传入和接收返回值的类型。 |
@@ -134,16 +141,17 @@ FlowbufArrayElement&lt;T&gt;用于定义数组类型的URPC入参和返回值类
 **示例：**
  
 ```text
-import { urpc } from "@kit.RemoteCommunicationKit"
+import { urpc } from '@kit.RemoteCommunicationKit';
 
 let version: urpc.FlowbufArrayElement<number> = {type: 'ARRAY_INT8', value: [1,2,3], length: 3};
 ```
  
   
 
-#### urpcStubCreate
+## urpcStubCreate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 urpcStubCreate(config: UrpcInitConfiguration, funcList: string | string[]): Promise&lt;UrpcStub&gt;
  
@@ -159,6 +167,7 @@ urpcStubCreate(config: UrpcInitConfiguration, funcList: string | string[]): Prom
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | config | UrpcInitConfiguration | 是 | stub配置。 |
@@ -167,6 +176,7 @@ urpcStubCreate(config: UrpcInitConfiguration, funcList: string | string[]): Prom
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;UrpcStub&gt; | Promise对象，返回可用于发出URPC请求的对象。 |
@@ -176,6 +186,7 @@ urpcStubCreate(config: UrpcInitConfiguration, funcList: string | string[]): Prom
  
 错误码的详细介绍请参见[API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-remote-communication)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -187,7 +198,7 @@ urpcStubCreate(config: UrpcInitConfiguration, funcList: string | string[]): Prom
  
 ```text
 import { BusinessError } from '@kit.BasicServicesKit';
-import { urpc } from "@kit.RemoteCommunicationKit";
+import { urpc } from '@kit.RemoteCommunicationKit';
 
 // 下面IP地址仅作为示意
 let node: urpc.IpAndPort = {
@@ -204,7 +215,7 @@ let config: urpc.UrpcInitConfiguration = {
   connect: connect
 }
 
-const funcList:string[] = ["uploadFile"];
+const funcList:string[] = ['uploadFile'];
 urpc.urpcStubCreate(config, funcList).then((urpcStub: urpc.UrpcStub) => {
   urpcStub.destroy();
 }).catch((err: BusinessError<string>) => {
@@ -214,9 +225,10 @@ urpc.urpcStubCreate(config, funcList).then((urpcStub: urpc.UrpcStub) => {
  
   
 
-#### UrpcCall
+## UrpcCall
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type UrpcCall = (funcName: string, request: object, returnValue: object, config?: CallingOption) => UrpcPromise
  
@@ -230,6 +242,7 @@ type UrpcCall = (funcName: string, request: object, returnValue: object, config?
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | funcName | string | 是 | URPC请求函数名。 |
@@ -240,6 +253,7 @@ type UrpcCall = (funcName: string, request: object, returnValue: object, config?
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | UrpcPromise | Promise对象，返回来自服务器的响应对象。 |
@@ -249,9 +263,10 @@ type UrpcCall = (funcName: string, request: object, returnValue: object, config?
  
   
 
-#### UrpcCancel
+## UrpcCancel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type UrpcCancel = (callingId?: number | number[]) => void
  
@@ -265,6 +280,7 @@ type UrpcCancel = (callingId?: number | number[]) => void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callingId | number \| number[] | 否 | 取消指定callingId的请求。如果不填该字段表示取消本次UrpcStub对应的所有请求，取值范围[0, 2147483647]。 |
@@ -274,9 +290,10 @@ type UrpcCancel = (callingId?: number | number[]) => void
  
   
 
-#### UrpcDestroy
+## UrpcDestroy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type UrpcDestroy = () => void
  
@@ -292,9 +309,10 @@ type UrpcDestroy = () => void
  
   
 
-#### UrpcStub
+## UrpcStub
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示可用于发出URPC请求的通信会话。它提供了各种远程调用方法（call、cancel、destroy）。
  
@@ -306,6 +324,7 @@ type UrpcDestroy = () => void
  
 **属性：**
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | id | number | 是 | 否 | UrpcStub的唯一标识id。 |
@@ -316,9 +335,10 @@ type UrpcDestroy = () => void
  
   
 
-#### UrpcInitConfiguration
+## UrpcInitConfiguration
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义会话的配置参数，为开发者提供了对HTTP会话各个方面的详细控制。
  
@@ -328,6 +348,7 @@ type UrpcDestroy = () => void
  
 **起始版本：** 5.0.1(13)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | mode | UrpcMode | 否 | 是 | URPC的运行模式，默认值为'client'，表示client模式。 |
@@ -338,7 +359,7 @@ type UrpcDestroy = () => void
 **示例：**
  
 ```text
-import { urpc } from "@kit.RemoteCommunicationKit";
+import { urpc } from '@kit.RemoteCommunicationKit';
 
 // 下面IP地址仅作为示意
 let node: urpc.IpAndPort = {
@@ -358,9 +379,10 @@ let config: urpc.UrpcInitConfiguration = {
  
   
 
-#### UrpcMode
+## UrpcMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type UrpcMode = 'client'
  
@@ -372,6 +394,7 @@ type UrpcMode = 'client'
  
 **起始版本：** 5.0.1(13)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | 'client' | 表示URPC节点的模式，值固定为'client'。 |
@@ -379,9 +402,10 @@ type UrpcMode = 'client'
  
   
 
-#### UrpcConnectConfiguration
+## UrpcConnectConfiguration
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 UrpcConnectConfiguration配置URPC连接的关键信息，可以配置连接的ip和端口号，以及传输协议等可选参数。
  
@@ -391,6 +415,7 @@ UrpcConnectConfiguration配置URPC连接的关键信息，可以配置连接的i
  
 **起始版本：** 5.0.1(13)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | node | IpAndPort | 否 | 否 | 连接的IP和端口配置。 |
@@ -404,7 +429,7 @@ UrpcConnectConfiguration配置URPC连接的关键信息，可以配置连接的i
 **示例：**
  
 ```text
-import { urpc } from "@kit.RemoteCommunicationKit"
+import { urpc } from '@kit.RemoteCommunicationKit';
 
 // 下面IP地址仅作为示意
 let node: urpc.IpAndPort = {
@@ -416,16 +441,17 @@ let connect: urpc.UrpcConnectConfiguration = {
   protocol: 'eat',
   multiPath: false,
   flags: 0,
-  host: "192.168.1.1",
-  caPath: "data/single_urpc/eat.pem"
+  host: '192.168.1.1',
+  caPath: 'data/single_urpc/eat.pem'
 }
 ```
  
   
 
-#### IpAndPort
+## IpAndPort
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 IpAndPort用于配置URPC的连接IP和端口号。
  
@@ -435,6 +461,7 @@ IpAndPort用于配置URPC的连接IP和端口号。
  
 **起始版本：** 5.0.1(13)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | ip | string | 否 | 否 | 指定URPC的IPv4或IPv6地址。 |
@@ -444,7 +471,7 @@ IpAndPort用于配置URPC的连接IP和端口号。
 **示例：**
  
 ```text
-import { urpc } from "@kit.RemoteCommunicationKit"
+import { urpc } from '@kit.RemoteCommunicationKit';
 
 // 下面IP地址仅作为示意
 let node: urpc.IpAndPort = {
@@ -455,9 +482,10 @@ let node: urpc.IpAndPort = {
  
   
 
-#### UrpcPromise
+## UrpcPromise
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示URPC请求的返回值
  
@@ -467,6 +495,7 @@ let node: urpc.IpAndPort = {
  
 **起始版本：** 5.0.1(13)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | promise | Promise&lt;Object&gt; | 否 | 否 | URPC请求的响应对象。 |
@@ -475,9 +504,10 @@ let node: urpc.IpAndPort = {
  
   
 
-#### UrpcProtocol
+## UrpcProtocol
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type UrpcProtocol = 'eat'
  
@@ -489,6 +519,7 @@ type UrpcProtocol = 'eat'
  
 **起始版本：** 5.0.1(13)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | 'eat' | 表示URPC节点的协议类型，值固定为'eat'。 |
@@ -496,9 +527,10 @@ type UrpcProtocol = 'eat'
  
   
 
-#### CallingOption
+## CallingOption
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于配置URPC请求的优先级。
  
@@ -508,6 +540,7 @@ type UrpcProtocol = 'eat'
  
 **起始版本：** 5.0.1(13)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | priority | number | 否 | 是 | 配置URPC请求的优先级，默认为0，最大取值为3，表示优先级最高，优先级高的可以优先传输。该字段为预留字段，当前版本并不生效。 |

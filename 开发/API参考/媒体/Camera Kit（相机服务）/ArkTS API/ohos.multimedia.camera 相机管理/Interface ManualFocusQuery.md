@@ -1,9 +1,9 @@
 # Interface (ManualFocusQuery)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-manualfocusquery
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 手动对焦查询对象。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { camera } from '@kit.CameraKit';
@@ -22,9 +23,10 @@ import { camera } from '@kit.CameraKit';
  
   
 
-#### isFocusDistanceSupported24+
+## isFocusDistanceSupported24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isFocusDistanceSupported(): boolean
  
@@ -36,6 +38,7 @@ isFocusDistanceSupported(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 表示是否支持对焦距离。返回true表示支持，返回false表示不支持。 |
@@ -45,6 +48,7 @@ isFocusDistanceSupported(): boolean
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400103 | Session not config, only throw in session usage. |

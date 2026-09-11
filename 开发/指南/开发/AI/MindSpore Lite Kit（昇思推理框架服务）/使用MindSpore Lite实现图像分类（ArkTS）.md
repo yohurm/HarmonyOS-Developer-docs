@@ -1,32 +1,23 @@
 # 使用MindSpore Lite实现图像分类 (ArkTS)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-07 06:42:31
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-guidelines-based-js
 
-#### 场景说明
+## 场景说明
 
 开发者可以使用[@ohos.ai.mindSporeLite](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-mindsporelite)，在UI代码中集成MindSpore Lite能力，快速部署AI算法，进行AI模型推理，实现图像分类的应用。
 
 图像分类可实现对图像中物体的识别，在医学影像分析、自动驾驶、电子商务、人脸识别等领域有广泛的应用。
 
-若需基于本Demo适配自有模型，请优先选择静态Shape模型。由于ArkTS暂不支持动态Shape，如确有相关需求，请参考[使用MindSpore Lite实现图像分类（C/C++）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-guidelines-based-native)，通过Native侧的[OH_AI_ModelResize](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-model-h#oh_ai_modelresize)接口对模型inputs进行动态调整。
+若需基于本Demo适配自有模型，请优先选择静态Shape模型。注意：ArkTS接口不支持NPU后端动态Shape模型推理。
 
 
 
-#### 基本概念
-
-在进行开发前，请先了解以下概念。
-
-**张量**：它与数组和矩阵非常相似，是MindSpore Lite网络运算中的基本数据结构。
-
-**Float16推理模式**： Float16又称半精度，它使用16比特表示一个数。Float16推理模式表示推理的时候用半精度进行推理。
-
-
-
-#### 接口说明
+## 接口说明
 
 这里给出MindSpore Lite推理的通用开发流程中涉及的一些接口，具体请见下列表格。更多接口及详细内容，请见[@ohos.ai.mindSporeLite (端侧AI框架)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-mindsporelite)。
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -40,19 +31,19 @@
 
 
 
-#### 开发流程
+## 开发流程
 1. 选择图像分类模型。
 2. 在端侧使用MindSpore Lite推理模型，实现对选择的图片进行分类。
 
 
 
-#### 开发步骤
+## 开发步骤
 
 本文以对相册的一张图片进行推理为例，提供使用MindSpore Lite实现图像分类的开发指导。
 
 
 
-#### 选择模型
+### 选择模型
 
 本示例程序中使用的图像分类模型文件为[mobilenetv2.ms](https://download.mindspore.cn/model_zoo/official/lite/mobilenetv2_openimage_lite/1.5/mobilenetv2.ms)，放置在entry/src/main/resources/rawfile工程目录下。
 
@@ -60,7 +51,7 @@
 
 
 
-#### 编写推理代码
+### 编写推理代码
 1. 工程默认设备定义的能力集可能不包含MindSporeLite。需在DevEco Studio工程的entry/src/main目录下，手动创建syscap.json文件，内容如下：
 
   
@@ -83,7 +74,7 @@
 2. 调用[@ohos.ai.mindSporeLite](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-mindsporelite)实现端侧推理。具体开发过程及细节如下：
 
   
- - 创建上下文，设置线程数、设备类型等参数。本样例模型，不支持使用NNRt推理。
+ - 创建上下文，设置线程数、设备类型等参数。本样例模型，不支持使用[NNRt](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-lite-term#nnrt神经网络运行时)推理。
 
 3. 加载模型。本文从内存加载模型。
 
@@ -130,7 +121,7 @@ export default async function modelPredict(
 
 
 
-#### 实现图像输入和预处理，并执行推理
+### 实现图像输入和预处理，并执行推理
 1. 此处以获取相册图片为例，调用[@ohos.file.picker](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-file-picker) 实现相册图片文件的选择。
 2. 根据模型的输入尺寸，调用[@ohos.multimedia.image](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image)（实现图片处理）、[@ohos.file.fs](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-file-fs)（实现基础文件操作）API对选择图片进行裁剪、获取图片buffer数据，并进行标准化处理。
 3. 加载模型文件，调用推理函数，对相册选择的图片进行推理，并对推理结果进行处理。
@@ -344,7 +335,7 @@ struct Index {
 
 
 
-#### 调测验证
+### 调测验证
 1. 在DevEco Studio中连接设备，点击Run entry，编译Hap，有如下显示：
 
   
@@ -378,7 +369,7 @@ $ hdc shell aa start -a EntryAbility -b com.samples.mindsporelitearktsdemo
 
 
 
-#### 效果示意
+### 效果示意
 
 在设备上，点击photo按钮，选择相册中的一张图片，点击确定。在图片下方显示此图片占比前4的分类信息。
 
@@ -396,6 +387,6 @@ $ hdc shell aa start -a EntryAbility -b com.samples.mindsporelitearktsdemo
 
 
 
-#### 示例代码
+## 示例代码
 
  - [基于MindSporeLite接口实现图像分类（ArkTS）](https://gitcode.com/HarmonyOS_Samples/guide-snippets/tree/master/MindSporeLiteKit/MindSporeLiteArkTSDemo)

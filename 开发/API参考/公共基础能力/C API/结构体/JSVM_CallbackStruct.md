@@ -1,6 +1,6 @@
 # JSVM_CallbackStruct
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-jsvm-jsvm-callbackstruct
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
@@ -10,7 +10,8 @@ typedef struct {...} JSVM_CallbackStruct
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -30,16 +31,19 @@ typedef struct {...} JSVM_CallbackStruct
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | void* data | 用户提供的Native回调函数的数据。 |
@@ -47,10 +51,12 @@ typedef struct {...} JSVM_CallbackStruct
  
   
 
-#### 成员函数
+### 成员函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | JSVM_Value(JSVM_CDECL* callback)(JSVM_Env env, JSVM_CallbackInfo info) | 用户提供的Native回调函数的指针。 |
@@ -58,13 +64,15 @@ typedef struct {...} JSVM_CallbackStruct
  
   
 
-#### 成员函数说明
+## 成员函数说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
   
 
-#### callback()
+### callback()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 

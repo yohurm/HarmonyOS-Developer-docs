@@ -33,11 +33,11 @@ struct WhitePage {
 
   build() {
     Stack() {
-      Image($r('app.media.startIcon')) // 此图片仅作示例参考
+      Image($r('app.media.startIcon')) <em>// 此图片仅作示例参考</em>
         .width('50%')
         .height('50%')
         .opacity(0.2)
-        .syncLoad(true); // 设置图片为同步加载
+        .syncLoad(true); <em>// 设置图片为同步加载</em>
       Text('Hello World');
     }
     .width('100%')

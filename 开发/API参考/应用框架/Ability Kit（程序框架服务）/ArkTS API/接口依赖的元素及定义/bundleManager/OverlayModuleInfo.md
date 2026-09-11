@@ -1,9 +1,9 @@
 # OverlayModuleInfo
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bundlemanager-overlaymoduleinfo
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 OverlayModuleInfo信息，可以通过[overlay.getOverlayModuleInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-overlay#overlaygetoverlaymoduleinfo)接口获取当前应用中具有overlay特征模块的OverlayModuleInfo信息。
  
@@ -12,9 +12,10 @@ OverlayModuleInfo信息，可以通过[overlay.getOverlayModuleInfo](https://dev
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { overlay } from '@kit.AbilityKit';
@@ -22,12 +23,14 @@ import { overlay } from '@kit.AbilityKit';
  
   
 
-#### OverlayModuleInfo
+## OverlayModuleInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | bundleName | string | 是 | 否 | overlay特征模块所属应用的bundle名称。 |

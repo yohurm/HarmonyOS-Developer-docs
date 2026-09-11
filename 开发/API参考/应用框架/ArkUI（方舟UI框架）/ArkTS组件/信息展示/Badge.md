@@ -1,9 +1,9 @@
 # Badge
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-badge
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 信息标记容器组件，可以附加在单个组件上用于信息提醒。支持数字、字符串和圆点三种标记形式，可自定义标记样式（文本颜色、大小、标记颜色和大小）和显示位置。适用于需要提示用户有新消息或未读消息的场景，例如未读消息计数、新功能提示等，帮助用户快速识别和关注重要信息，提升用户体验。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持单个子组件。
 
@@ -24,15 +25,17 @@
 
 
 
-#### 接口
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 接口
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### Badge
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### Badge
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Badge(value: BadgeParamWithNumber)
 
@@ -46,6 +49,7 @@ Badge(value: BadgeParamWithNumber)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | BadgeParamWithNumber | 是 | 数字标记组件参数，用于配置根据数字创建的Badge组件，包含消息数、显示位置和样式等属性。 |
@@ -53,9 +57,10 @@ Badge(value: BadgeParamWithNumber)
 
 
 
-#### Badge
+### Badge
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Badge(value: BadgeParamWithString)
 
@@ -69,6 +74,7 @@ Badge(value: BadgeParamWithString)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | BadgeParamWithString | 是 | 字符串标记组件参数。 |
@@ -76,9 +82,10 @@ Badge(value: BadgeParamWithString)
 
 
 
-#### BadgeParam对象说明
+## BadgeParam对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 包含用于创建Badge组件的基础参数。
 
@@ -88,6 +95,7 @@ Badge(value: BadgeParamWithString)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | position | BadgePosition\|Position10+ | 否 | 是 | 设置标记显示位置。 默认值：BadgePosition.RightTop 说明： Position作为入参，不支持设置百分比；设置为非法值时，按(0,0)处理，(0,0)为组件左上角位置。 BadgePosition作为入参时，会跟随Direction属性控制镜像显示。 |
@@ -96,9 +104,10 @@ Badge(value: BadgeParamWithString)
 
 
 
-#### BadgeParamWithNumber对象说明
+## BadgeParamWithNumber对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 BadgeParamWithNumber继承自[BadgeParam](#badgeparam对象说明)，具有BadgeParam的全部属性。
 
@@ -108,6 +117,7 @@ BadgeParamWithNumber继承自[BadgeParam](#badgeparam对象说明)，具有Badge
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | count | number | 否 | 否 | 设置提醒消息数。 说明： 当该值小于等于0且小于maxCount时不显示信息标记。 取值范围：[-2147483648, 2147483647]。超出范围时会加上或减去4294967296，使得值仍在范围内，非整数时会舍去小数部分取整数部分，如5.5取5。 |
@@ -116,9 +126,10 @@ BadgeParamWithNumber继承自[BadgeParam](#badgeparam对象说明)，具有Badge
 
 
 
-#### BadgeParamWithString对象说明
+## BadgeParamWithString对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 BadgeParamWithString继承自[BadgeParam](#badgeparam对象说明)，具有BadgeParam的全部属性。
 
@@ -128,6 +139,7 @@ BadgeParamWithString继承自[BadgeParam](#badgeparam对象说明)，具有Badge
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | value | ResourceStr | 否 | 否 | 提示内容的文本字符串。 说明： value为空字符串时不显示文本，仅显示圆点标记。 从API version 20开始，支持ResourceStr类型。 |
@@ -135,9 +147,10 @@ BadgeParamWithString继承自[BadgeParam](#badgeparam对象说明)，具有Badge
 
 
 
-#### BadgePosition枚举说明
+## BadgePosition枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 标记显示位置。
 
@@ -146,6 +159,7 @@ BadgeParamWithString继承自[BadgeParam](#badgeparam对象说明)，具有Badge
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -156,13 +170,15 @@ BadgeParamWithString继承自[BadgeParam](#badgeparam对象说明)，具有Badge
 
 
 
-#### BadgeStyle对象说明
+## BadgeStyle对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Badge的样式。包括文本颜色、大小、字重、标记颜色和标记大小。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -184,29 +200,35 @@ Badge的样式。包括文本颜色、大小、字重、标记颜色和标记大
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)。
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)。
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（设置标记组件内容）
+
+
+### 示例1（设置标记组件内容）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[BadgeParamWithNumber](#badgeparamwithnumber对象说明)的入参count、[BadgeParamWithString](#badgeparamwithstring对象说明)的入参value，实现了传入空值、字符、数字时标记组件展现不同的效果。
 
@@ -369,7 +391,10 @@ struct BadgeExample {
 
 
 
-#### 示例2（设置数字控制标记显隐）
+### 示例2（设置数字控制标记显隐）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过count属性，实现了设置数字0和1时标记组件的隐藏和显示效果。
 
@@ -410,7 +435,10 @@ struct Index {
 
 
 
-#### 示例3（设置外描边和文本延伸方式）
+### 示例3（设置外描边和文本延伸方式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 22开始，该示例使用outerBorderColor和outerBorderWidth属性设置外描边，通过enableAutoAvoidance属性控制增加角标文本延伸显示时是否避让。
 

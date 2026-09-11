@@ -1,13 +1,14 @@
 # crypto_common.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-crypto-common-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 定义加解密通用的数据结构和错误码。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | Crypto_DataBlob | Crypto_DataBlob | 加解密数据结构体。 |
@@ -40,10 +44,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_Crypto_ErrCode | OH_Crypto_ErrCode | 枚举错误码。 |
@@ -52,10 +58,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | void OH_Crypto_FreeDataBlob(Crypto_DataBlob *dataBlob) | 释放数据Blob的内存。 |
@@ -63,15 +71,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Crypto_ErrCode
+### OH_Crypto_ErrCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Crypto_ErrCode
@@ -81,6 +91,7 @@ enum OH_Crypto_ErrCode
  
 枚举错误码。
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | CRYPTO_SUCCESS = 0 | 表示操作成功。 起始版本： 12 |
@@ -94,9 +105,10 @@ enum OH_Crypto_ErrCode
  
   
 
-#### Crypto_CipherMode
+### Crypto_CipherMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Crypto_CipherMode
@@ -108,6 +120,7 @@ enum Crypto_CipherMode
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | CRYPTO_ENCRYPT_MODE = 0 | 表示加密操作。 |
@@ -116,15 +129,17 @@ enum Crypto_CipherMode
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Crypto_FreeDataBlob()
+### OH_Crypto_FreeDataBlob()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Crypto_FreeDataBlob(Crypto_DataBlob *dataBlob)
@@ -138,6 +153,7 @@ void OH_Crypto_FreeDataBlob(Crypto_DataBlob *dataBlob)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Crypto_DataBlob *dataBlob | [in] 待释放的数据Blob。 |

@@ -1,9 +1,9 @@
 # @ohos.window.floatingBall (闪控球窗口)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-floatingball
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该模块提供闪控球的基础功能，包括判断设备是否支持闪控球功能，以及创建闪控球控制器来启动、更新或停止闪控球。适用于跨应用的题目搜索、账单记录、商品比价、抢单、翻译场景，以及金融类应用的实时盯盘场景，以小窗模式呈现内容。闪控球以悬浮小组件形式显示在其他应用之上，即时呈现应用的关键信息。
 
@@ -26,9 +26,10 @@
 本模块可与[@ohos.window.floatView](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-floatview)（闪控窗）联合使用。通过[floatView.bind](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-floatview#floatviewbind)接口将闪控窗控制器与闪控球控制器绑定后，用户点击闪控球可展开为闪控窗，点击闪控窗左上角的缩小按钮可收起为闪控球，实现两种窗口形态的相互切换。
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { floatingBall } from '@kit.ArkUI';
@@ -36,9 +37,10 @@ import { floatingBall } from '@kit.ArkUI';
 
 
 
-#### floatingBall.isFloatingBallEnabled
+## floatingBall.isFloatingBallEnabled
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isFloatingBallEnabled(): boolean
 
@@ -47,6 +49,7 @@ isFloatingBallEnabled(): boolean
 **系统能力：** SystemCapability.Window.SessionManager
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -63,9 +66,10 @@ console.info('Floating ball enabled is: ' + enable);
 
 
 
-#### floatingBall.create
+## floatingBall.create
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 create(config: FloatingBallConfiguration): Promise&lt;FloatingBallController&gt;
 
@@ -77,12 +81,14 @@ create(config: FloatingBallConfiguration): Promise&lt;FloatingBallController&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | config | FloatingBallConfiguration | 是 | 创建闪控球控制器的参数。该参数不能为空，并且构造该参数的context不能为空。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -92,6 +98,7 @@ create(config: FloatingBallConfiguration): Promise&lt;FloatingBallController&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -130,13 +137,15 @@ try {
 
 
 
-#### FloatingBallConfiguration
+## FloatingBallConfiguration
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 创建闪控球控制器时需要提供的参数配置。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -145,9 +154,10 @@ try {
 
 
 
-#### FloatingBallController
+## FloatingBallController
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 闪控球控制器实例，用于启动、更新、停止闪控球以及注册回调等操作。
 
@@ -157,9 +167,10 @@ try {
 
 
 
-#### startFloatingBall
+### startFloatingBall
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 startFloatingBall(params: FloatingBallParams): Promise&lt;void&gt;
 
@@ -171,12 +182,14 @@ startFloatingBall(params: FloatingBallParams): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | FloatingBallParams | 是 | 启动闪控球的参数，用于配置闪控球的标题、内容或背景色等。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -186,6 +199,7 @@ startFloatingBall(params: FloatingBallParams): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -225,9 +239,10 @@ try {
 
 
 
-#### updateFloatingBall
+### updateFloatingBall
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 updateFloatingBall(params: FloatingBallParams): Promise&lt;void&gt;
 
@@ -237,12 +252,14 @@ updateFloatingBall(params: FloatingBallParams): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | FloatingBallParams | 是 | 更新闪控球的参数，用于更新闪控球的标题、内容或背景色等。调用此接口更新闪控球时，模板类型template字段不可更改。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -252,6 +269,7 @@ updateFloatingBall(params: FloatingBallParams): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -291,9 +309,10 @@ try {
 
 
 
-#### stopFloatingBall
+### stopFloatingBall
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 stopFloatingBall(): Promise&lt;void&gt;
 
@@ -303,6 +322,7 @@ stopFloatingBall(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -311,6 +331,7 @@ stopFloatingBall(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -334,9 +355,10 @@ floatingBallController.stopFloatingBall().then(() => {
 
 
 
-#### on('stateChange')
+### on('stateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 on(type: 'stateChange', callback: Callback&lt;FloatingBallState&gt;): void
 
@@ -345,6 +367,7 @@ on(type: 'stateChange', callback: Callback&lt;FloatingBallState&gt;): void
 **系统能力：** SystemCapability.Window.SessionManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -355,6 +378,7 @@ on(type: 'stateChange', callback: Callback&lt;FloatingBallState&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -381,9 +405,10 @@ try {
 
 
 
-#### off('stateChange')
+### off('stateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 off(type: 'stateChange', callback?: Callback&lt;FloatingBallState&gt;): void
 
@@ -392,6 +417,7 @@ off(type: 'stateChange', callback?: Callback&lt;FloatingBallState&gt;): void
 **系统能力：** SystemCapability.Window.SessionManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -402,6 +428,7 @@ off(type: 'stateChange', callback?: Callback&lt;FloatingBallState&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -427,9 +454,10 @@ try {
 
 
 
-#### on('click')
+### on('click')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 on(type: 'click', callback: Callback&lt;void&gt;): void
 
@@ -438,6 +466,7 @@ on(type: 'click', callback: Callback&lt;void&gt;): void
 **系统能力：** SystemCapability.Window.SessionManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -448,6 +477,7 @@ on(type: 'click', callback: Callback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -474,9 +504,10 @@ try {
 
 
 
-#### off('click')
+### off('click')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 off(type: 'click', callback?: Callback&lt;void&gt;): void
 
@@ -485,6 +516,7 @@ off(type: 'click', callback?: Callback&lt;void&gt;): void
 **系统能力：** SystemCapability.Window.SessionManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -495,6 +527,7 @@ off(type: 'click', callback?: Callback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -520,9 +553,10 @@ try {
 
 
 
-#### getFloatingBallWindowInfo
+### getFloatingBallWindowInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 getFloatingBallWindowInfo(): Promise&lt;FloatingBallWindowInfo&gt;
 
@@ -532,6 +566,7 @@ getFloatingBallWindowInfo(): Promise&lt;FloatingBallWindowInfo&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;FloatingBallWindowInfo&gt; | Promise对象，返回闪控球窗口信息。 |
@@ -540,6 +575,7 @@ getFloatingBallWindowInfo(): Promise&lt;FloatingBallWindowInfo&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -566,9 +602,10 @@ floatingBallController.getFloatingBallWindowInfo().then((data: floatingBall.Floa
 
 
 
-#### restoreMainWindow
+### restoreMainWindow
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 restoreMainWindow(want: Want): Promise&lt;void&gt;
 
@@ -580,12 +617,14 @@ restoreMainWindow(want: Want): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | 加载指定页面的Want。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -595,6 +634,7 @@ restoreMainWindow(want: Want): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -634,9 +674,10 @@ try {
 
 
 
-#### setFloatingBallVisibilityInApp24+
+### setFloatingBallVisibilityInApp24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 setFloatingBallVisibilityInApp(isVisible: boolean): Promise&lt;void&gt;
 
@@ -653,12 +694,14 @@ setFloatingBallVisibilityInApp(isVisible: boolean): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isVisible | boolean | 是 | true表示闪控球在应用内可见；false表示闪控球在应用内不可见。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -668,6 +711,7 @@ setFloatingBallVisibilityInApp(isVisible: boolean): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -691,9 +735,10 @@ floatingBallController?.setFloatingBallVisibilityInApp(false).then(() => {
 
 
 
-#### onDestroy
+### onDestroy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 onDestroy(callback: Callback&lt;string&gt;): void
 
@@ -707,6 +752,7 @@ onDestroy(callback: Callback&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;string&gt; | 是 | 回调函数。返回闪控球停止的原因。停止原因包括： - "APP_STOP"：应用主动停止。 - "DUMPSTER_STOP"：拖动到垃圾桶触发停止。 - "LONG_PRESS_SINGLE_STOP"：长按单个闪控球触发停止。 - "LONG_PRESS_ALL_STOP"：长按全部闪控球触发停止。 - "MAIN_WINDOW_DESTROY_STOP"：context关联的主窗口被销毁后触发停止。 - "SQUEEZE"：超出设备闪控球数量上限，被其他闪控球挤占停止。 - "FLOAT_VIEW_STOP"：与闪控窗绑定后，绑定状态下跟随闪控窗停止。 - "STOP_IN_SIDEBAR"：在侧边栏中被停止。 |
@@ -715,6 +761,7 @@ onDestroy(callback: Callback&lt;string&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -741,9 +788,10 @@ try {
 
 
 
-#### offDestroy
+### offDestroy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 offDestroy(callback?: Callback&lt;string&gt;): void
 
@@ -757,6 +805,7 @@ offDestroy(callback?: Callback&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;string&gt; | 否 | 回调函数。若传入参数，则取消该监听；若未传入参数，则取消所有闪控球销毁事件的监听。 |
@@ -765,6 +814,7 @@ offDestroy(callback?: Callback&lt;string&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -796,13 +846,15 @@ try {
 
 
 
-#### FloatingBallParams
+## FloatingBallParams
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 启动和更新闪控球的配置参数。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -818,13 +870,15 @@ try {
 
 
 
-#### FloatingBallState
+## FloatingBallState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 闪控球生命周期状态的枚举。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -834,13 +888,15 @@ try {
 
 
 
-#### FloatingBallTemplate
+## FloatingBallTemplate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 闪控球模板类型的枚举。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -852,13 +908,15 @@ try {
 
 
 
-#### FloatingBallWindowInfo
+## FloatingBallWindowInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 闪控球窗口信息。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -867,9 +925,10 @@ try {
 
 
 
-#### FloatingBallTextUpdateAnimationType
+## FloatingBallTextUpdateAnimationType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 闪控球文本更新动画类型的枚举。
 
@@ -878,6 +937,7 @@ try {
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本**：26.0.0
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

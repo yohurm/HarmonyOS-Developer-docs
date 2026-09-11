@@ -1,9 +1,9 @@
 # xcomponent
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-basic-xcomponent
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 该组件从API version 8 开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
@@ -12,28 +12,32 @@
  用于显示写入了EGL/OpenGLES或媒体数据的组件，支持surface（内容单独送显，直接合成到屏幕）和component（与其他组件合成后统一送显）两种类型，适用于相机预览等需要显示EGL/OpenGLES渲染内容或媒体数据的场景。
   
 
-#### 权限列表
+## 权限列表
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
  无
  
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
  不支持。
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-attributes)外，还支持如下属性：
   
+
 | 名称 | 参数类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | id | string | 是 | 组件的唯一标识，最大字符串长度为128。 |
@@ -43,20 +47,23 @@
  
   
 
-#### 样式
+## 样式
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用样式](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-styles)。
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-events)外，还支持如下事件：
   
+
 | 名称 | 功能描述 |
 | --- | --- |
 | onLoad(context?: object) => void | 插件（通过libraryname属性加载的Native动态库）加载完成时回调事件。 context：开发者扩展的xcomponent方法的实例对象，context对象的接口由开发者自定义。 |
@@ -65,12 +72,14 @@
  
   
 
-#### 方法
+## 方法
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用方法](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-methods)外，还支持如下方法：
   
+
 | 名称 | 参数 | 返回值类型 | 描述 |
 | --- | --- | --- | --- |
 | getXComponentSurfaceId | - | string | 获取xcomponent对应Surface的ID，供@ohos接口使用，比如camera相关接口。需在onLoad回调后调用。 |
@@ -80,9 +89,10 @@
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供surface类型xcomponent，支持相机预览等能力。
  

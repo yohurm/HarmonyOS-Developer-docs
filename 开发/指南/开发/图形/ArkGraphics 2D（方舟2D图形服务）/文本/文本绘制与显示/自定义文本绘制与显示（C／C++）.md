@@ -1,6 +1,6 @@
 # 自定义文本绘制与显示（C/C++）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/text-custom-c
 
@@ -9,11 +9,11 @@
 字体引擎作为图形系统中的核心组件，负责将字符代码转换为可视化的字形，并精确计算每个字形的布局和位置，为自定义文本绘制提供底层支持。通过文本测量接口，开发者可以获取文本的精确尺寸，这是实现精准布局（如居中显示）的基础。
 
 
-#### 文本塑形
+## 文本塑形
 
 
 
-#### 场景介绍
+### 场景介绍
 
 文本塑形是字体引擎提供的一项关键能力，它允许开发者不经过系统默认的文本排版流程，直接获取文本的底层字形信息（如宽度、方向等测量信息）。这使得开发者能够基于这些原始数据，实现完全自定义的排版逻辑、绘制操作以及断行策略。
 
@@ -26,9 +26,10 @@
 
 
 
-#### 接口说明
+### 接口说明
 
-文本塑形中常用接口如下表所示，详细接口说明参考[drawing_text_typography.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-text-typography-h)和[drawing_text_blob.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-text-blob-h)。
+文本塑形中常用接口如下表所示，详细接口说明参考[drawing_text_lineTypography.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-text-linetypography-h)、[drawing_text_line.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-text-line-h)、[drawing_text_run.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-text-run-h)、[drawing_text_blob.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-text-blob-h)和[drawing_canvas.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-canvas-h)。
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -37,7 +38,7 @@
 | OH_Drawing_Array* OH_Drawing_TextLineGetGlyphRuns(OH_Drawing_TextLine* line) | 获取文本行对象中的文本渲染单元数组。 |
 | OH_Drawing_Array* OH_Drawing_GetRunGlyphs(OH_Drawing_Run* run, int64_t start, int64_t length) | 获取渲染单元指定范围内的字形数组。 |
 | OH_Drawing_Font* OH_Drawing_GetRunFont(OH_Drawing_Run* run) | 获取渲染单元字体对象。 |
-| OH_Drawing_Array* OH_Drawing_GetRunGlyphAdvances(OH_Drawing_Run* run, uint32_t start, uint32_t length) | 获取渲染单元字体宽度数组。 |
+| OH_Drawing_Array* OH_Drawing_GetRunGlyphAdvances(OH_Drawing_Run* run, uint32_t start, uint32_t length) | 获取渲染单元字形宽度数组。 |
 | OH_Drawing_TextBlobBuilder* OH_Drawing_TextBlobBuilderCreate(void) | 用于创建一个文本构造器对象。 |
 | OH_Drawing_TextBlob* OH_Drawing_TextBlobBuilderMake(OH_Drawing_TextBlobBuilder* textBlobBuilder) | 用于从文本构造器中创建文本对象。 |
 | void OH_Drawing_CanvasDrawTextBlob(OH_Drawing_Canvas* canvas, const OH_Drawing_TextBlob* textBlob, float x, float y) | 用于画一段文字。 |
@@ -45,7 +46,7 @@
 
 
 
-#### 开发步骤
+### 开发步骤
 
 从API version 18开始，支持获取文字塑形结果能力。从API version 20开始，支持获取文字排版方向和文字字形宽度。关键代码如下：
 1. 在工程的src/main/cpp/CMakeLists.txt文件中添加以下lib。
@@ -69,7 +70,7 @@ libnative_drawing.so
 #include <native_drawing/drawing_point.h>
 ```
 
-3. 创建段落样式，并使用构造段落生成器ParagraphBuilder生成段落实例。
+3. 创建段落样式，并使用OH_Drawing_CreateTypographyHandler创建排版处理器，用于生成段落实例。
 
   
 ```cpp
@@ -111,7 +112,7 @@ OH_Drawing_Array *runs = OH_Drawing_TextLineGetGlyphRuns(textLine);
 
 6. 该步骤是文本塑形流程中的自定义绘制环节。通过调用OH_Drawing_GetRunGlyphs()方法获取文本中每个字符对应的字形序号，再结合OH_Drawing_GetRunFont()方法获取的字体对象，即可唯一确定每个字形的具体图形信息。
 
-  从 API version 20 开始，新增的OH_Drawing_GetRunGlyphAdvances()方法能够返回一个数组，其中包含了每个字形在绘制时建议占用的宽度和高度。依赖这些精确的测量数据，开发者可以自由地计算并定义每个字形的绘制位置，从而实现复杂的文本布局效果，如自定义字符间距、垂直偏移或特殊排版。
+  从 API version 20 开始，新增的OH_Drawing_GetRunGlyphAdvances()方法能够返回一个数组，包含范围内每个字形的字形宽度。依赖这些精确的测量数据，开发者可以自由地计算并定义每个字形的绘制位置，从而实现复杂的文本布局效果，如自定义字符间距、垂直偏移或特殊排版。
 
   
 ```cpp

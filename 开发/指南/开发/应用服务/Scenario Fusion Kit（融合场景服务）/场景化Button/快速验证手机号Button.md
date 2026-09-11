@@ -1,10 +1,10 @@
 # 快速验证手机号Button
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusion-button-getphonenumber
 
-#### 场景介绍
+## 场景介绍
 
 快速验证手机号Button功能用于帮助开发者向用户发起手机号申请，应用在满足《[常见类型移动互联网应用程序必要个人信息范围规定](http://www.cac.gov.cn/2021-03/22/c_1617990997054277.htm)》（对第三方网站的内容，华为公司不承担任何责任）中使用手机号的必要业务场景，经用户同意后，应用可获取手机号，为用户提供相应服务（详见获取手机号[场景介绍](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-get-phonenumber#场景介绍)）。
 
@@ -12,7 +12,7 @@
 
 
 
-#### 约束与限制
+## 约束与限制
 
 快速验证手机号Button支持Phone、Tablet和PC/2in1设备，并且从5.1.0(18)版本开始，新增支持TV设备。
 
@@ -22,7 +22,7 @@
 
 
 
-#### 前提条件
+## 前提条件
 
 应用开发前提条件，参见[开发前提](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-get-phonenumber#开发前提)。
 
@@ -30,11 +30,11 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 导入Scenario Fusion Kit模块以及相关公共模块。
 
   
-```text
+```ArkTS
 import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 ```
@@ -42,7 +42,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 2. 在容器中声明FunctionalButton，指定Button的openType，并设置对应的回调函数，代码如下：
 
   
-```text
+```ArkTS
 @Entry
 @Component
 struct Index {

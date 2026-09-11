@@ -1,9 +1,9 @@
 # @ohos.app.ability.appRecovery (应用故障恢复)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-apprecovery
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 appRecovery模块提供了应用在故障状态下的恢复能力。从API version 11开始，支持应用崩溃（JS_CRASH）、应用冻屏（APP_FREEZE）故障场景下的应用自恢复；从API version 24开始，支持进程崩溃（CPP_CRASH）故障场景下的应用自恢复。同时，支持应用状态保存及恢复功能，帮助开发者提升应用稳定性。
  
@@ -12,9 +12,10 @@ appRecovery模块提供了应用在故障状态下的恢复能力。从API versi
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { appRecovery } from '@kit.AbilityKit';
@@ -22,14 +23,16 @@ import { appRecovery } from '@kit.AbilityKit';
  
   
 
-#### RestartFlag
+## RestartFlag
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 应用重启标志，[enableAppRecovery](#apprecoveryenableapprecovery)接口重启选项参数，该类型为枚举。
  
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ALWAYS_RESTART | 0 | 总是重启应用。 元服务API：从API version 11开始，该接口支持在元服务中使用。 |
@@ -41,9 +44,10 @@ import { appRecovery } from '@kit.AbilityKit';
  
   
 
-#### SaveOccasionFlag
+## SaveOccasionFlag
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 保存条件标志，[enableAppRecovery](#apprecoveryenableapprecovery)接口状态保存时的选项参数，该类型为枚举。
  
@@ -51,6 +55,7 @@ import { appRecovery } from '@kit.AbilityKit';
  
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SAVE_WHEN_ERROR | 0x0001 | 当发生应用故障时保存。 |
@@ -59,9 +64,10 @@ import { appRecovery } from '@kit.AbilityKit';
  
   
 
-#### SaveModeFlag
+## SaveModeFlag
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 状态保存标志，[enableAppRecovery](#apprecoveryenableapprecovery)接口状态保存方式的参数，该类型为枚举。
  
@@ -69,6 +75,7 @@ import { appRecovery } from '@kit.AbilityKit';
  
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SAVE_WITH_FILE | 0x0001 | 每次状态保存都会写入到本地文件缓存。 |
@@ -77,9 +84,10 @@ import { appRecovery } from '@kit.AbilityKit';
  
   
 
-#### appRecovery.enableAppRecovery
+## appRecovery.enableAppRecovery
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableAppRecovery(restart?: [RestartFlag](#restartflag), saveOccasion?: [SaveOccasionFlag](#saveoccasionflag), saveMode?: [SaveModeFlag](#savemodeflag)) : void
  
@@ -93,6 +101,7 @@ enableAppRecovery(restart?: [RestartFlag](#restartflag), saveOccasion?: [SaveOcc
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | restart | RestartFlag | 否 | 枚举类型，发生对应故障时是否重启。默认值为ALWAYS_RESTART，即总是重启应用。 |
@@ -118,9 +127,10 @@ export default class MyAbilityStage extends AbilityStage {
  
   
 
-#### appRecovery.restartApp
+## appRecovery.restartApp
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 restartApp(): void
  
@@ -164,9 +174,10 @@ try {
  
   
 
-#### appRecovery.saveAppState
+## appRecovery.saveAppState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 saveAppState(): boolean
  
@@ -180,6 +191,7 @@ saveAppState(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 保存成功与否。true：保存成功，false：保存失败。 |
@@ -207,9 +219,10 @@ try {
  
   
 
-#### appRecovery.saveAppState10+
+## appRecovery.saveAppState10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 saveAppState(context?: UIAbilityContext): boolean
  
@@ -223,6 +236,7 @@ saveAppState(context?: UIAbilityContext): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIAbilityContext | 否 | 需要保存状态的UIAbility所对应的context。 |
@@ -230,6 +244,7 @@ saveAppState(context?: UIAbilityContext): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 保存成功与否。true：保存成功，false：保存失败。 |
@@ -258,9 +273,10 @@ try {
  
   
 
-#### appRecovery.setRestartWant10+
+## appRecovery.setRestartWant10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setRestartWant(want: Want): void
  
@@ -274,6 +290,7 @@ setRestartWant(want: Want): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | 通过设置Want中"bundleName"和"abilityName"字段来指定恢复重启的Ability。需配合enableAppRecovery接口设置适当的RestartFlag，以确定何时触发重启。setRestartWant仅指定重启拉起的Ability，是否重启由RestartFlag决定。 |

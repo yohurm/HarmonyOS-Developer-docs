@@ -1,9 +1,9 @@
 # 页面间转场 (pageTransition)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-page-transition-animation
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 当路由（[router](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-router)）进行切换时，可以通过在[pageTransition](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-custom-component-lifecycle#pagetransition9)函数中自定义页面入场和页面退场的转场动效。详细指导请参考[页面转场动画](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-page-transition-animation)。
 
@@ -12,21 +12,23 @@
 
 
 
-#### PageTransitionEnter
+## PageTransitionEnter
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义PageTransitionEnter组件。
 
 
 
-#### PageTransitionEnter
+### PageTransitionEnter
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 PageTransitionEnter(value: PageTransitionOptions)
 
-设置当前页面的自定义入场动效。继承自[CommonTransition](#commontransition)。
+设置当前页面的自定义入场动效，需在pageTransition()函数中配置，继承自[CommonTransition](#commontransition)。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -34,20 +36,22 @@ PageTransitionEnter(value: PageTransitionOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | PageTransitionOptions | 是 | 配置入场动效的参数，包含页面转场效果的路由类型(type)、动画时长(duration)、动画曲线(curve)、动画延迟时长(delay)等配置项。 |
+| value | PageTransitionOptions | 是 | 配置入场动效的参数，包含页面转场效果的路由类型(type)、动画时长(duration)、动画曲线(curve)、动画延迟时长(delay)配置项。 |
 
 
 
 
-#### onEnter
+### onEnter
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onEnter(event: PageTransitionCallback): PageTransitionEnterInterface
 
-逐帧回调，直到入场动画结束，progress从0变化到1。
+逐帧回调，直到入场动画结束，progress从0变化到1。与slide、translate、scale、opacity等预设动效方法配合使用时，onEnter在预设动效基础上提供逐帧自定义逻辑；也可单独使用onEnter实现完全自定义的入场动画效果。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -55,9 +59,10 @@ onEnter(event: PageTransitionCallback): PageTransitionEnterInterface
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| event | PageTransitionCallback | 是 | 入场动画的逐帧回调直到入场动画结束，progress从0变化到1。 |
+| event | PageTransitionCallback | 是 | 入场动画的逐帧回调，直到动画结束，progress从0变化到1。该回调仅在配置的type与实际路由类型匹配时触发。 |
 
 
 **示例：**
@@ -74,21 +79,23 @@ pageTransition() {
 
 
 
-#### PageTransitionExit
+## PageTransitionExit
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义PageTransitionExit组件。
 
 
 
-#### PageTransitionExit
+### PageTransitionExit
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 PageTransitionExit(value: PageTransitionOptions)
 
-设置当前页面的自定义退场动效。继承自[CommonTransition](#commontransition)。
+设置当前页面的自定义退场动效，需在pageTransition()函数中配置，继承自[CommonTransition](#commontransition)。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -96,20 +103,22 @@ PageTransitionExit(value: PageTransitionOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | PageTransitionOptions | 是 | 配置退场动效的参数，包含页面转场效果的路由类型(type)、动画时长(duration)、动画曲线(curve)、动画延迟时长(delay)等配置项。 |
+| value | PageTransitionOptions | 是 | 配置退场动效的参数，包含页面转场效果的路由类型(type)、动画时长(duration)、动画曲线(curve)、动画延迟时长(delay)配置项。 |
 
 
 
 
-#### onExit
+### onExit
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onExit(event: PageTransitionCallback): PageTransitionExitInterface
 
-逐帧回调，直到退场动画结束，progress从0变化到1。
+逐帧回调，直到退场动画结束，progress从0变化到1。与slide、translate、scale、opacity等预设动效方法配合使用时，onExit在预设动效基础上提供逐帧自定义逻辑；也可单独使用onExit实现完全自定义的退场动画效果。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -117,9 +126,10 @@ onExit(event: PageTransitionCallback): PageTransitionExitInterface
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| event | PageTransitionCallback | 是 | 退场动画的逐帧回调直到退场动画结束，progress从0变化到1。 |
+| event | PageTransitionCallback | 是 | 退场动画的逐帧回调，直到动画结束，progress从0变化到1。该回调仅在配置的type与实际路由类型匹配时触发。 |
 
 
 **示例：**
@@ -127,7 +137,7 @@ onExit(event: PageTransitionCallback): PageTransitionExitInterface
 ```text
 pageTransition() {
     PageTransitionExit({ duration: 1200, curve: Curve.Linear })
-      // 转场动画时出场动画 type 为路由类型 ，progress为从0到1逐渐变大
+      // 转场动画时退场动画 type 为路由类型 ，progress为从0到1逐渐变大
       .onExit((type: RouteType, progress: number) => {
         // 业务逻辑代码
       })
@@ -136,9 +146,10 @@ pageTransition() {
 
 
 
-#### PageTransitionOptions对象说明
+## PageTransitionOptions对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 退场/入场动效的参数。
 
@@ -146,21 +157,23 @@ pageTransition() {
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| type | RouteType | 否 | 是 | 页面转场效果生效的路由类型。 默认值：RouteType.None。 说明： 当pageTransition函数中配置了多个PageTransitionEnter或PageTransitionExit时，按照RouteType匹配规则生效：系统会根据当前路由操作类型（Push或Pop）从所有配置的PageTransitionEnter/PageTransitionExit中选择最后一个匹配的组件生效。如果存在多个匹配相同RouteType的PageTransitionEnter，则最后配置的生效；如果存在多个匹配相同RouteType的PageTransitionExit，则最后配置的生效。RouteType.None与所有路由类型均匹配。 |
+| type | RouteType | 否 | 是 | 页面转场效果生效的路由类型。 默认值：RouteType.None。 说明： 当pageTransition函数中配置了多个PageTransitionEnter或PageTransitionExit时，按照RouteType匹配规则生效：系统会根据当前路由操作类型（Push或Pop）从所有配置的PageTransitionEnter/PageTransitionExit中选择最后一个匹配的组件生效；若没有匹配的组件，则使用系统默认的页面转场效果（根据设备可能会有差异）。如果存在多个匹配相同RouteType的PageTransitionEnter，则最后配置的生效；如果存在多个匹配相同RouteType的PageTransitionExit，则最后配置的生效。RouteType.None与所有路由类型均匹配。 取值原则：None表示对所有路由类型生效；Push仅对push路由生效；Pop仅对pop路由生效。 |
 | duration | number | 否 | 是 | 动画的时长。 单位：毫秒 默认值：1000 取值范围：[0, +∞) |
 | curve | Curve \| string \| ICurve10+ | 否 | 是 | 动画曲线。 推荐以Curve或ICurve形式指定。 当类型为string时，为动画插值曲线，取值参考AnimateParam的curve参数。 默认值：Curve.Linear |
-| delay | number | 否 | 是 | 动画延迟时长。 单位：毫秒 默认值：0 说明： 没有匹配时使用系统默认的页面转场效果（根据设备可能会有差异），如需禁用系统默认页面转场效果，可以指定duration为0。 |
+| delay | number | 否 | 是 | 动画延迟时长。 单位：毫秒 默认值：0 |
 
 
 
 
-#### CommonTransition
+## CommonTransition
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-页面转场通用动效。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+页面转场通用动效，通过[PageTransitionEnter](#pagetransitionenter)和[PageTransitionExit](#pagetransitionexit)继承使用，需在pageTransition()函数中配置，slide与translate均涉及位置移动：slide适用于需要沿预置方向（左/右/上/下/START/END）滑入滑出的场景，使用简单；translate适用于需要自定义平移距离的场景，灵活性更高。当slide和translate同时设置时，默认生效slide。scale、opacity分别设置缩放和透明度效果，可与上述效果组合使用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -168,9 +181,10 @@ pageTransition() {
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -182,19 +196,21 @@ constructor()
 
 
 
-#### slide
+### slide
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 slide(value: SlideEffect): T
 
-设置页面转场时的滑入滑出效果。
+设置页面转场时的滑入滑出效果，和translate同时设置时默认生效slide。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -203,16 +219,18 @@ slide(value: SlideEffect): T
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 
 
 
-#### translate
+### translate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 translate(value: TranslateOptions): T
 
@@ -224,6 +242,7 @@ translate(value: TranslateOptions): T
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | TranslateOptions | 是 | 设置页面转场时的平移效果，为入场时起点和退场时终点的值，和slide同时设置时默认生效slide。 - x：横向的平移距离。 - y：纵向的平移距离。 - z：竖向的平移距离。 |
@@ -231,16 +250,18 @@ translate(value: TranslateOptions): T
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 
 
 
-#### scale
+### scale
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scale(value: ScaleOptions): T
 
@@ -252,6 +273,7 @@ scale(value: ScaleOptions): T
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ScaleOptions | 是 | 设置页面转场时的缩放效果，为入场时起点和退场时终点的值。 - x：横向放大倍数（或缩小比例）。 - y：纵向放大倍数（或缩小比例）。 - z：竖向放大倍数（或缩小比例）。 - centerX、centerY缩放中心点。centerX和centerY默认值是"50%"，即默认以页面的中心点为缩放中心点。 - 中心点为(0, 0)代表页面的左上角。 |
@@ -259,16 +281,18 @@ scale(value: ScaleOptions): T
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 
 
 
-#### opacity
+### opacity
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 opacity(value: number): T
 
@@ -280,6 +304,7 @@ opacity(value: number): T
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 设置入场的起点透明度值或者退场的终点透明度值。 取值范围：[0, 1] |
@@ -287,16 +312,18 @@ opacity(value: number): T
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 
 
 
-#### PageTransitionCallback18+
+## PageTransitionCallback18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type PageTransitionCallback = (type: RouteType, progress: number) => void
 
@@ -310,6 +337,7 @@ type PageTransitionCallback = (type: RouteType, progress: number) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | RouteType | 是 | 页面转场效果生效的路由类型。 |
@@ -318,9 +346,10 @@ type PageTransitionCallback = (type: RouteType, progress: number) => void
 
 
 
-#### RouteType枚举说明
+## RouteType枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 页面转场类型。
 
@@ -328,24 +357,25 @@ type PageTransitionCallback = (type: RouteType, progress: number) => void
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| None | 0 | 页面未重定向。如Push和Pop描述中RouteType为None的情形，即页面进场时PageTransitionEnter的转场效果生效；退场时PageTransitionExit的转场效果生效。 |
-| Push | 1 | 跳转到下一页面。PageA跳转到下一个新的界面PageB。对于PageA，指定RouteType为None或者Push的PageTransitionExit组件样式生效，对于PageB，指定RouteType为None或者Push的PageTransitionEnter组件样式生效。 |
-| Pop | 2 | 重定向指定页面。从PageB回退到之前的页面PageA。对于PageB，指定RouteType为None或者Pop的PageTransitionExit组件样式生效，对于PageA，指定RouteType为None或者Pop的PageTransitionEnter组件样式生效。 |
+| None | 0 | 页面未重定向。如Push和Pop描述中RouteType为None的情形，即页面入场时PageTransitionEnter的转场效果生效；退场时PageTransitionExit的转场效果生效。 |
+| Push | 1 | 跳转到下一页面，例如从PageA跳转到PageB。对于PageA，指定RouteType为None或Push的PageTransitionExit组件样式生效；对于PageB，指定RouteType为None或Push的PageTransitionEnter组件样式生效。 |
+| Pop | 2 | 回退到上一页面，例如从PageB回退到PageA。对于PageB，指定RouteType为None或Pop的PageTransitionExit组件样式生效；对于PageA，指定RouteType为None或Pop的PageTransitionEnter组件样式生效。 |
 
 
 
 
-#### SlideEffect枚举说明
+## SlideEffect枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 页面转场时的滑入滑出效果。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -359,13 +389,17 @@ type PageTransitionCallback = (type: RouteType, progress: number) => void
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（设置退入场动画）
+
+
+### 示例1（设置退入场动画）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 自定义方式1：通过不同的退入场类型配置不同的退场和入场动画。
 
@@ -374,8 +408,8 @@ type PageTransitionCallback = (type: RouteType, progress: number) => void
 @Entry
 @Component
 struct Index {
-  @State scale1: number = 1;
-  @State opacity1: number = 1;
+  @State pageScale: number = 1;
+  @State pageOpacity: number = 1;
 
   build() {
     Column() {
@@ -384,8 +418,8 @@ struct Index {
     }
     .width('100%')
     .height('100%')
-    .scale({ x: this.scale1 })
-    .opacity(this.opacity1)
+    .scale({ x: this.pageScale })
+    .opacity(this.pageOpacity)
     .onClick(() => {
       this.getUIContext().getRouter().pushUrl({ url: 'pages/Page1' });
     })
@@ -395,15 +429,15 @@ struct Index {
     PageTransitionEnter({ duration: 1200, curve: Curve.Linear })
       .onEnter((type: RouteType, progress: number) => {
         if (type == RouteType.Push || type == RouteType.Pop) {
-          this.scale1 = progress;
-          this.opacity1 = progress;
+          this.pageScale = progress;
+          this.pageOpacity = progress;
         }
       })
     PageTransitionExit({ duration: 1200, curve: Curve.Ease })
       .onExit((type: RouteType, progress: number) => {
         if (type == RouteType.Push) {
-          this.scale1 = 1 - progress;
-          this.opacity1 = 1 - progress;
+          this.pageScale = 1 - progress;
+          this.pageOpacity = 1 - progress;
         }
       })
   }
@@ -415,8 +449,8 @@ struct Index {
 @Entry
 @Component
 struct Page1 {
-  @State scale2: number = 1;
-  @State opacity2: number = 1;
+  @State pageScale: number = 1;
+  @State pageOpacity: number = 1;
 
   build() {
     Column() {
@@ -425,8 +459,8 @@ struct Page1 {
     }
     .width('100%')
     .height('100%')
-    .scale({ x: this.scale2 })
-    .opacity(this.opacity2)
+    .scale({ x: this.pageScale })
+    .opacity(this.pageOpacity)
     .onClick(() => {
       this.getUIContext().getRouter().pushUrl({ url: 'pages/Index' });
     })
@@ -436,15 +470,15 @@ struct Page1 {
     PageTransitionEnter({ duration: 1200, curve: Curve.Linear })
       .onEnter((type: RouteType, progress: number) => {
         if (type == RouteType.Push || type == RouteType.Pop) {
-          this.scale2 = progress;
+          this.pageScale = progress;
         }
-        this.opacity2 = progress;
+        this.pageOpacity = progress;
       })
     PageTransitionExit({ duration: 1200, curve: Curve.Ease })
       .onExit((type: RouteType, progress: number) => {
         if (type == RouteType.Pop) {
-          this.scale2 = 1 - progress;
-          this.opacity2 = 1 - progress;
+          this.pageScale = 1 - progress;
+          this.pageOpacity = 1 - progress;
         }
       })
   }
@@ -519,7 +553,10 @@ struct Page1 {
 
 
 
-#### 示例2（设置退入场平移效果）
+### 示例2（设置退入场平移效果）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 自定义方式1：配置提供的不同退入场平移效果，将系统语言排版模式改为RTL。
 
@@ -528,8 +565,8 @@ struct Page1 {
 @Entry
 @Component
 struct Index {
-  @State scale1: number = 1;
-  @State opacity1: number = 1;
+  @State pageScale: number = 1;
+  @State pageOpacity: number = 1;
 
   build() {
     Column() {
@@ -545,8 +582,8 @@ struct Index {
         .fontSize(36)
         .textAlign(TextAlign.Center)
     }
-    .scale({ x: this.scale1 })
-    .opacity(this.opacity1)
+    .scale({ x: this.pageScale })
+    .opacity(this.pageOpacity)
     .height("100%")
     .width("100%")
     .justifyContent(FlexAlign.Center)
@@ -559,7 +596,7 @@ struct Index {
       .slide(SlideEffect.START)
     // 设置退场动效
     PageTransitionExit({ delay: 100 })
-      .slide(SlideEffect.START) //Left
+      .slide(SlideEffect.START) // Left
   }
 }
 ```
@@ -569,8 +606,8 @@ struct Index {
 @Entry
 @Component
 struct Page1 {
-  @State scale1: number = 1;
-  @State opacity1: number = 1;
+  @State pageScale: number = 1;
+  @State pageOpacity: number = 1;
 
   build() {
     Column() {
@@ -586,8 +623,8 @@ struct Page1 {
         .fontSize(36)
         .textAlign(TextAlign.Center)
     }
-    .scale({ x: this.scale1 })
-    .opacity(this.opacity1)
+    .scale({ x: this.pageScale })
+    .opacity(this.pageOpacity)
     .height("100%")
     .width("100%")
     .justifyContent(FlexAlign.Center)
@@ -596,9 +633,9 @@ struct Page1 {
   // 自定义方式2：使用系统提供的多种默认效果（平移、缩放、透明度等）
   pageTransition() {
     PageTransitionEnter({ duration: 200 })
-      .slide(SlideEffect.END) //Right
+      .slide(SlideEffect.END) // Right
     PageTransitionExit({ delay: 100 })
-      .slide(SlideEffect.END) //Right
+      .slide(SlideEffect.END)
   }
 }
 ```
@@ -614,8 +651,8 @@ struct Page1 {
 @Entry
 @Component
 struct Index {
-  @State scale1: number = 1;
-  @State opacity1: number = 1;
+  @State pageScale: number = 1;
+  @State pageOpacity: number = 1;
 
   build() {
     Column() {
@@ -628,8 +665,8 @@ struct Index {
         .height(60)
         .fontSize(36)
     }
-    .scale({ x: this.scale1 })
-    .opacity(this.opacity1)
+    .scale({ x: this.pageScale })
+    .opacity(this.pageOpacity)
     .height("100%")
     .width("100%")
     .justifyContent(FlexAlign.Center)
@@ -642,8 +679,8 @@ struct Index {
 @Entry
 @Component
 struct Page1 {
-  @State scale1: number = 1;
-  @State opacity1: number = 1;
+  @State pageScale: number = 1;
+  @State pageOpacity: number = 1;
 
   build() {
     Column() {
@@ -656,8 +693,8 @@ struct Page1 {
         .height(60)
         .fontSize(36)
     }
-    .scale({ x: this.scale1 })
-    .opacity(this.opacity1)
+    .scale({ x: this.pageScale })
+    .opacity(this.pageOpacity)
     .height("100%")
     .width("100%")
     .justifyContent(FlexAlign.Center)
@@ -666,4 +703,4 @@ struct Page1 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/Tq-OBz-LTnyEmRaF0JWrjA/zh-cn_image_0000002704274795.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095449Z&HW-CC-Expire=86400&HW-CC-Sign=AD5FAEADF8D682191739F26FBE3190BC91593594F39D0CE153D294D3286D95AB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/jedwuchaSTS1T77ASZHZhg/zh-cn_image_0000002717613046.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073119Z&HW-CC-Expire=86400&HW-CC-Sign=49A613F158730E0BFA95E0A8DBE549AAD663D4B826776D6DBE2707DAF4CB5206)

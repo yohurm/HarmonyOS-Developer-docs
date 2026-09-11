@@ -1,20 +1,22 @@
 # Interfaces (其他)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-data-relationalstore-i
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 
 
-#### StoreConfig
+## StoreConfig
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 管理关系数据库配置。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -37,13 +39,15 @@
 
 
 
-#### CryptoParam14+
+## CryptoParam14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 数据库加密参数配置。此配置只有在StoreConfig的encrypt选项设置为true或密钥非空时有效。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -57,13 +61,15 @@
 
 
 
-#### Asset10+
+## Asset10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 记录资产附件（文件、图片、视频等类型文件）的相关信息。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -78,13 +84,15 @@
 
 
 
-#### ChangeInfo10+
+## ChangeInfo10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 记录端云同步过程详情。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -97,13 +105,15 @@
 
 
 
-#### DistributedConfig10+
+## DistributedConfig10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 记录表的分布式配置信息。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -119,13 +129,15 @@
 
 
 
-#### Statistic10+
+## Statistic10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述数据库表的端云同步过程的统计信息。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -137,13 +149,15 @@
 
 
 
-#### TableDetails10+
+## TableDetails10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述数据库表执行端云同步任务上传和下载的统计信息。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -153,13 +167,15 @@
 
 
 
-#### ProgressDetails10+
+## ProgressDetails10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述数据库整体执行端云同步任务上传和下载的统计信息。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -171,7 +187,8 @@
 
 
 
-#### CloudSyncConfig
+## CloudSyncConfig
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -183,6 +200,7 @@
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | mode | SyncMode | 否 | 否 | 数据库同步模式。 |
@@ -192,13 +210,15 @@
 
 
 
-#### SqlExecutionInfo12+
+## SqlExecutionInfo12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述数据库执行的SQL语句的统计信息。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -211,13 +231,15 @@
 
 
 
-#### SqlInfo20+
+## SqlInfo20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述数据库执行的SQL语句的详细信息。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -227,13 +249,15 @@
 
 
 
-#### ExceptionMessage20+
+## ExceptionMessage20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述数据库执行的SQL语句的错误信息。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -244,13 +268,15 @@
 
 
 
-#### TransactionOptions14+
+## TransactionOptions14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 事务对象的配置信息。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -259,9 +285,10 @@
 
 
 
-#### pluginLibs的使用约束和示例
+## pluginLibs的使用约束和示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **使用约束：**
 
@@ -317,8 +344,8 @@ export default class EntryAbility extends UIAbility {
       console.info("CREATE VIRTUAL TABLE OK");
       await rdbStore.executeSql("INSERT INTO pages(keywords, title, body) VALUES('歌曲', 'xxx', '1234歌曲，像北哈升');");
       console.info("INSERT VIRTUAL TABLE OK, body is '1234歌曲，像北哈升'");
-      await rdbStore.executeSql("INSERT INTO pages(keywords, title, body) VALUES('歌曲', 'xxx', '我爱北京天安门, 天安门上太阳升');");
-      console.info("INSERT VIRTUAL TABLE OK, body is '我爱北京天安门, 天安门上太阳升'");
+      await rdbStore.executeSql("INSERT INTO pages(keywords, title, body) VALUES('歌曲', 'xxx', '我爱北京天安门，天安门上太阳升');");
+      console.info("INSERT VIRTUAL TABLE OK, body is '我爱北京天安门，天安门上太阳升'");
       let resultSet = await rdbStore.querySql("select * from pages where body match '天安门';");
       while (resultSet.goToNextRow()) {
         console.info(`query result success, match body:${resultSet.getString(resultSet.getColumnIndex("body"))}`);
@@ -334,15 +361,17 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### ReturningConfig23+
+## ReturningConfig23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 指定returning相关接口操作后需要返回的字段名列表和结果集中允许包含的最大记录数。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **模型约束：** 此接口仅在Stage模型下可用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -352,15 +381,17 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### Result23+
+## Result23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 记录受影响的数据行数量和结果集。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **模型约束：** 此接口仅在Stage模型下可用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -370,9 +401,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### SyncResult
+## SyncResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示设备同步结果。
 
@@ -381,6 +413,7 @@ export default class EntryAbility extends UIAbility {
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **模型约束：** 此接口仅在Stage模型下可用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

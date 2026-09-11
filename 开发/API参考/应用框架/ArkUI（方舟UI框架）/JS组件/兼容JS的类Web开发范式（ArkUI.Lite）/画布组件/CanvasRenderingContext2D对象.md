@@ -1,9 +1,9 @@
 # CanvasRenderingContext2D对象
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-components-canvas-canvasrenderingcontext2d
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 使用CanvasRenderingContext2D在canvas画布组件上进行绘制，绘制对象可以是矩形、文本。
  
@@ -39,14 +39,16 @@ export default {
 
   
 
-#### fillRect()
+## fillRect()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 填充一个矩形。
  
 **参数：**
   
+
 | 参数 | 类型 | 描述 |
 | --- | --- | --- |
 | x | number | 指定矩形左上角点的x坐标。 |
@@ -67,14 +69,16 @@ ctx.fillRect(20, 20, 200, 150);
  
   
 
-#### fillStyle
+## fillStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 指定绘制的填充色。
  
 **参数：**
   
+
 | 参数 | 类型 | 描述 |
 | --- | --- | --- |
 | color | &lt;color&gt; | 设置填充区域的颜色。 |
@@ -93,14 +97,16 @@ ctx.fillRect(20, 20, 150, 100);
  
   
 
-#### strokeRect()
+## strokeRect()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 绘制具有边框的矩形，矩形内部不填充。
  
 **参数：**
   
+
 | 参数 | 类型 | 描述 |
 | --- | --- | --- |
 | x | number | 指定矩形的左上角x坐标。 |
@@ -121,14 +127,16 @@ ctx.strokeRect(30, 30, 200, 150);
  
   
 
-#### fillText()
+## fillText()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 绘制填充类文本。
  
 **参数：**
   
+
 | 参数 | 类型 | 描述 |
 | --- | --- | --- |
 | text | string | 需要绘制的文本内容。 |
@@ -149,14 +157,16 @@ ctx.fillText("Hello World!", 20, 60);
  
   
 
-#### lineWidth
+## lineWidth
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 指定绘制线条的宽度值。
  
 **参数：**
   
+
 | 参数 | 类型 | 描述 |
 | --- | --- | --- |
 | lineWidth | number | 设置绘制线条的宽度。 |
@@ -175,14 +185,16 @@ ctx.strokeRect(25, 25, 85, 105);
  
   
 
-#### strokeStyle
+## strokeStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 设置描边的颜色。
  
 **参数：**
   
+
 | 参数 | 类型 | 描述 |
 | --- | --- | --- |
 | color | &lt;color&gt; | 指定描边使用的颜色 |
@@ -202,9 +214,10 @@ ctx.strokeRect(25, 25, 155, 105);
  
   
 
-#### stroke()5+
+### stroke()5+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 进行边框绘制操作。
  
@@ -223,9 +236,10 @@ ctx.stroke();
  
   
 
-#### beginPath()5+
+### beginPath()5+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 创建一个新的绘制路径。
  
@@ -246,14 +260,16 @@ ctx.stroke();
  
   
 
-#### moveTo()5+
+### moveTo()5+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 路径从当前点移动到指定点。
  
 **参数：**
   
+
 | 参数 | 类型 | 描述 |
 | --- | --- | --- |
 | x | number | 指定位置的x坐标。 |
@@ -275,14 +291,16 @@ ctx.stroke();
  
   
 
-#### lineTo()5+
+### lineTo()5+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 从当前点到指定点进行路径连接。
  
 **参数：**
   
+
 | 参数 | 类型 | 描述 |
 | --- | --- | --- |
 | x | number | 指定位置的x坐标。 |
@@ -304,9 +322,10 @@ ctx.stroke();
  
   
 
-#### closePath()5+
+### closePath()5+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 结束当前路径形成一个封闭路径。
  
@@ -327,14 +346,16 @@ ctx.stroke();
  
   
 
-#### font
+## font
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 设置文本绘制中的字体样式。
  
 **参数：**
   
+
 | 参数 | 类型 | 描述 |
 | --- | --- | --- |
 | value | string | 字体样式支持：sans-serif, serif, monospace，该属性默认值为30px HYQiHei-65S。 |
@@ -353,14 +374,16 @@ ctx.fillText("Hello World", 20, 60);
  
   
 
-#### textAlign
+## textAlign
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 设置文本绘制中的文本对齐方式。
  
 **参数：**
   
+
 | 参数 | 类型 | 描述 |
 | --- | --- | --- |
 | align | string | 可选值为： - left（默认）：文本左对齐； - right：文本右对齐； - center：文本居中对齐； |
@@ -391,14 +414,16 @@ ctx.fillText('textAlign=right',140, 140);
  
   
 
-#### arc()5+
+## arc()5+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 绘制弧线路径。
  
 **参数：**
   
+
 | 参数 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | x | number | 是 | 弧线圆心的x坐标值，单位：vp。 |
@@ -423,14 +448,16 @@ ctx.stroke();
  
   
 
-#### rect()5+
+### rect()5+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 创建矩形路径。
  
 **参数：**
   
+
 | 参数 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | x | number | 是 | 指定矩形的左上角x坐标值，单位：vp。 |
@@ -442,7 +469,7 @@ ctx.stroke();
 **示例：**
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/gi-Yv6A4T9-IXOJuUSsGIA/zh-cn_image_0000002674635262.png?HW-CC-KV=V1&HW-CC-Date=20260813T095451Z&HW-CC-Expire=86400&HW-CC-Sign=0C7768986728DBBC3094DD560068D4975B0E2C06610C7E1FFF3E92600C217B87)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/n3J2Xsb1TC-RHYjAYEc4Bw/zh-cn_image_0000002717773406.png?HW-CC-KV=V1&HW-CC-Date=20260911T073000Z&HW-CC-Expire=86400&HW-CC-Sign=2B3D226B9DACDBB57311047333FFD440C7927B519205E7C1BB9BFF476A27F7D4)
 
  
 ```text

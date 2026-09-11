@@ -1,19 +1,19 @@
 # 使用Emitter进行线程间通信
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/itc-with-emitter
 
 Emitter是一种作用在进程内的事件处理机制，为应用程序提供订阅事件、发布事件、取消事件订阅的能力。
 
 
-#### 场景介绍
+## 场景介绍
 
 Emitter用于同一进程内相同线程或不同线程间的事件处理，事件异步执行。使用时需要先订阅一个事件，然后发布该事件，发布完成后Emitter会将已发布的事件分发给订阅者，订阅者就会执行该事件订阅时设置的回调方法。当不需要订阅该事件时应及时取消订阅释放Emitter资源。
 
 
 
-#### 运作机制
+## 运作机制
 
 Emitter通过维护一个内部事件队列，来进行任务分发。应用需要先订阅某个事件并设置好该事件的回调方法，当应用程序发布事件后，就会往队列里面插入一个事件。任务队列会串行执行队列里面的任务，执行任务时会调用该任务订阅者的回调方法进行事件处理。
 
@@ -23,9 +23,10 @@ Emitter通过维护一个内部事件队列，来进行任务分发。应用需�
 
 
 
-#### 接口说明
+## 接口说明
 
 详细请参见[@ohos.events.emitter](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-emitter)。
+
 
 | 接口名 | 用途 | 说明 |
 | --- | --- | --- |
@@ -37,7 +38,7 @@ Emitter通过维护一个内部事件队列，来进行任务分发。应用需�
 
 
 
-#### 开发步骤
+## 开发步骤
 
 使用Emitter实现事件订阅、事件发送以及事件删除，开发步骤如下。
 1. 导入模块。
@@ -58,7 +59,7 @@ let event: emitter.InnerEvent = {
   eventId: 1
 };
 // 定义一个事件的回调处理函数，当收到对应的事件后执行回调函数
-let callback: Callback = (eventData: emitter.EventData) => {
+let callback: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
   this.messageOn = eventData.data!.content
   console.info(`eventData: ${JSON.stringify(eventData)}`);
 }

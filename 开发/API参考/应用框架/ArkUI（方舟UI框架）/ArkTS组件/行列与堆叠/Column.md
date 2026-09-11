@@ -1,9 +1,9 @@
 # Column
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-column
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 沿垂直方向布局的容器。适用于需要将多个子组件按垂直方向依次排列的场景，如列表项、表单项、卡片内容等。支持设置子组件间距、对齐方式等属性，能够快速实现垂直方向的线性布局。
  
@@ -12,23 +12,26 @@
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 可以包含子组件。
  
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### Column
+### Column
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Column(options?: ColumnOptions)
  
@@ -46,6 +49,7 @@ Column(options?: ColumnOptions)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options18+ | ColumnOptions | 否 | Column组件的间距配置选项。通过space属性设置纵向布局元素垂直方向间距。当需要为子组件设置固定垂直间距时传入此参数；省略时不设置子组件间距。 模型约束： 此接口仅可在Stage模型下使用。 |
@@ -53,9 +57,10 @@ Column(options?: ColumnOptions)
  
   
 
-#### Column18+
+### Column18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Column(options?: ColumnOptions | ColumnOptionsV2)
  
@@ -75,6 +80,7 @@ Column(options?: ColumnOptions | ColumnOptionsV2)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ColumnOptions \| ColumnOptionsV2 | 否 | Column组件的间距配置选项。通过space属性设置纵向布局元素垂直方向间距，space支持设置number、string或Resource类型。当需要为子组件设置固定垂直间距时传入此参数；省略时不设置子组件间距。 |
@@ -82,9 +88,10 @@ Column(options?: ColumnOptions | ColumnOptionsV2)
  
   
 
-#### ColumnOptions18+对象说明
+## ColumnOptions18+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置Column组件的子组件间距属性。
  
@@ -100,16 +107,18 @@ Column(options?: ColumnOptions | ColumnOptionsV2)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| space7+ | string \| number | 否 | 是 | 纵向布局元素垂直方向间距。 space为负数或者justifyContent设置为FlexAlign.SpaceBetween、FlexAlign.SpaceAround、FlexAlign.SpaceEvenly时，space不生效。 取值范围：[0, +∞) 默认值：0 非法值：按默认值处理。 单位：vp 说明： space取值是大于等于0的数字，或者可以转换为非负数字的字符串。 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| space7+ | string \| number | 否 | 是 | 纵向布局元素垂直方向间距。 space为负数或者justifyContent设置为FlexAlign.SpaceBetween、FlexAlign.SpaceAround、FlexAlign.SpaceEvenly时，space不生效。 取值范围：[0, +∞) 默认值：0 非法值：按默认值处理。 单位：vp 说明： space取值是大于等于0的数字，或者可以转换为非负数字的字符串，不支持设置百分比。 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
  
  
   
 
-#### ColumnOptionsV218+对象说明
+## ColumnOptionsV218+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置Column组件的子组件间距属性。间距类型SpaceType支持number、string或Resource类型。
  
@@ -121,16 +130,18 @@ Column(options?: ColumnOptions | ColumnOptionsV2)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| space | SpaceType | 否 | 是 | 设置纵向布局元素垂直方向间距。 space为负数或者justifyContent设置为FlexAlign.SpaceBetween、FlexAlign.SpaceAround、FlexAlign.SpaceEvenly时，space不生效。 取值范围：[0, +∞) 默认值：0 单位：vp 非法值：按默认值处理。 说明： space取值是大于等于0的数字，或者可以转换为非负数字的字符串，或者可以转换为数字的Resource类型数据。 |
+| space | SpaceType | 否 | 是 | 设置纵向布局元素垂直方向间距。 space为负数或者justifyContent设置为FlexAlign.SpaceBetween、FlexAlign.SpaceAround、FlexAlign.SpaceEvenly时，space不生效。 取值范围：[0, +∞) 默认值：0 单位：vp 非法值：按默认值处理。 说明： space取值是大于等于0的数字，或者可以转换为非负数字的字符串，或者可以转换为数字的Resource类型数据，不支持设置百分比。 |
  
  
   
 
-#### SpaceType18+
+## SpaceType18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type SpaceType = string | number | Resource
  
@@ -144,6 +155,7 @@ Column组件构造函数中space支持的数据类型，取值类型为下表类
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 表示类型为数字，取值为大于等于0的数字。取负数或非法值时，按默认值0处理。 |
@@ -153,17 +165,19 @@ Column组件构造函数中space支持的数据类型，取值类型为下表类
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
  
   
 
-#### alignItems
+### alignItems
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 alignItems(value: HorizontalAlign)
  
@@ -177,6 +191,7 @@ alignItems(value: HorizontalAlign)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | HorizontalAlign | 是 | 子组件在水平方向上的对齐格式。 默认值：HorizontalAlign.Center |
@@ -184,9 +199,10 @@ alignItems(value: HorizontalAlign)
  
   
 
-#### justifyContent8+
+### justifyContent8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 justifyContent(value: FlexAlign)
  
@@ -200,6 +216,7 @@ justifyContent(value: FlexAlign)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | FlexAlign | 是 | 子组件在垂直方向上的对齐格式。 默认值：FlexAlign.Start 说明： 若子组件不设置flexShrink，FlexAlign.Center和FlexAlign.End可能失效，详见下方说明。设置为FlexAlign.SpaceBetween、FlexAlign.SpaceAround、FlexAlign.SpaceEvenly时，space属性不生效。 |
@@ -211,9 +228,10 @@ justifyContent(value: FlexAlign)
  
   
 
-#### reverse12+
+### reverse12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reverse(isReversed: Optional&lt;boolean&gt;)
  
@@ -229,6 +247,7 @@ reverse(isReversed: Optional&lt;boolean&gt;)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isReversed | Optional&lt;boolean&gt; | 是 | 子组件在垂直方向上的排列是否反转。 默认值：true。设置true表示子组件在垂直方向上反转排列，设置false表示子组件在垂直方向上正序排列。 |
@@ -240,21 +259,26 @@ reverse(isReversed: Optional&lt;boolean&gt;)
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)。
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 示例1（设置Column组件的布局属性）
+### 示例1（设置Column组件的布局属性）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例展示设置Column组件的布局属性，如间距、对齐方式等属性后的效果。
  
@@ -330,12 +354,15 @@ struct ColumnExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/RSklBEK4Rh2rEk2eI-tS5Q/zh-cn_image_0000002674474558.png?HW-CC-KV=V1&HW-CC-Date=20260813T095448Z&HW-CC-Expire=86400&HW-CC-Sign=1F0164A12B46B110F268C8D0A2BC8C8F79E3956745E9BBC97BC58A8492DBCE9F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/ZYtm8MZbQZCYjHAPtnJBoQ/zh-cn_image_0000002717772530.png?HW-CC-KV=V1&HW-CC-Date=20260911T073112Z&HW-CC-Expire=86400&HW-CC-Sign=2BA2D5C5DD02FDABAFBB3AE0D84AFEBB979E93A31FC7ABD8E1C29A0906F31F74)
 
  
   
 
-#### 示例2（设置反转属性）
+### 示例2（设置反转属性）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例展示设置Column组件的reverse属性后的效果。
  
@@ -364,4 +391,4 @@ struct ColumnReverseSample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/hAvdJxYxSBmNqEMdUCdYUQ/zh-cn_image_0000002704394515.png?HW-CC-KV=V1&HW-CC-Date=20260813T095448Z&HW-CC-Expire=86400&HW-CC-Sign=1CA8B5550F1BD9C3C5F0A46163DBA9D158D7CF81481665654F34AE2894241B21)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/SkL4BUC5RreYhhsKHbgGUQ/zh-cn_image_0000002717612598.png?HW-CC-KV=V1&HW-CC-Date=20260911T073112Z&HW-CC-Expire=86400&HW-CC-Sign=FFB0371D1FECE1C8C2821534CA6027F85C3ADA2BAA526CF95938321A5B11535E)

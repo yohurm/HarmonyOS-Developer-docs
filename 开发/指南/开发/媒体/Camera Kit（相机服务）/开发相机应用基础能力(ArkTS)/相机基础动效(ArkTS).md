@@ -1,6 +1,6 @@
 # 相机基础动效(ArkTS)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-animation
 
@@ -18,19 +18,19 @@
   图片为从前置相机切换为后置相机的效果。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/XgoJP-AtTYWq57AvHVXJyg/zh-cn_image_0000002704273157.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095824Z&HW-CC-Expire=86400&HW-CC-Sign=B5227DC0711AA5B338E1D6A1A54D69262A185CBE8AC3F938AFB1E8F48A5B8E68)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/QPFbpIJtR-SuagLYKCnh-g/zh-cn_image_0000002747291351.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072530Z&HW-CC-Expire=86400&HW-CC-Sign=9E7E8D3CE1D81325E118BE8529A769ED65DA33330E53EE9CD6729CBDAB21748D)
 
  - 拍照闪黑动效，使用闪黑组件覆盖预览流实现闪黑动效过渡。
 
   图片为点击完成拍摄的效果。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/QarSMN06Q2aHjWWxYqQjug/zh-cn_image_0000002674473360.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095824Z&HW-CC-Expire=86400&HW-CC-Sign=D4912DAB3F0909B9378F68F5BBCDF880A7831462F78C17B8B3F4C1ED174DC400)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/ez-PzPYJT7eqHDgoFZNLcg/zh-cn_image_0000002747211269.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072530Z&HW-CC-Expire=86400&HW-CC-Sign=55236B279B2F203B329442B2E9C5188089BF5665CBBC64A877CE73A464E6D7E7)
 
 
 
 
-#### 闪黑动效
+## 闪黑动效
 
 使用组件覆盖的形式实现闪黑效果。
 
@@ -118,7 +118,7 @@ onCaptureClick(): void {
 
 
 
-#### 模糊动效
+## 模糊动效
 
 通过预览流截图，实现模糊动效，从而完成模式切换，或是前后置切换的动效。
 
@@ -224,7 +224,7 @@ if (this.isShowBlur) {
   模糊出现动效：用户点击或触控事件触发预览流截图，显示截图组件，截图清晰到模糊，覆盖旧预览流。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/oJMhZg3BRHOCQb-DnGv84A/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095824Z&HW-CC-Expire=86400&HW-CC-Sign=D9852E4EDAAF6812588320234EC497036617D9D26C81FA42CDFC0295156122CB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/tsXymhiASjOVWTmLPzgG-w/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072530Z&HW-CC-Expire=86400&HW-CC-Sign=EDD3F0F825EA4A350BAEFED7C96006D5800637746C430D88C7CF6A78ACB2DB8F)
  
 
   由于图形提供的[image.createPixelMapFromSurface](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-f#imagecreatepixelmapfromsurface11)接口是通过截取surface内容获取[PixelMap](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-pixelmap)，其内容和[XComponent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-xcomponent)组件绘制逻辑不同，需要根据**前后置**镜头做不同的**图片内容旋转补偿**和**组件旋转补偿**。

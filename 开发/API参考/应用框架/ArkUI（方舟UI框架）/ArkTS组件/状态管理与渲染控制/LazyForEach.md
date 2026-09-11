@@ -1,9 +1,9 @@
 # LazyForEach
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-rendering-control-lazyforeach
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
@@ -14,15 +14,17 @@
 LazyForEach是一种懒加载渲染控制组件，从提供的数据源中按需迭代数据并创建相应组件。在大量子组件的场景下，LazyForEach与缓存列表项、动态预加载、组件复用等方法配合使用，可以进一步提升滑动帧率并降低应用内存占用。最佳实践请参考[优化长列表加载慢丢帧问题](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-best-practices-long-list)。
 
 
-#### 接口
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 接口
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### LazyForEach
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### LazyForEach
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 LazyForEach(dataSource: IDataSource, itemGenerator: (item: any, index: number) => void, keyGenerator?: (item: any, index: number) => string)
 
@@ -36,6 +38,7 @@ LazyForEach从提供的数据源中按需迭代数据，并在每次迭代过程
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dataSource | IDataSource | 是 | LazyForEach数据源，需要开发者实现相关接口。 |
@@ -45,9 +48,10 @@ LazyForEach从提供的数据源中按需迭代数据，并在每次迭代过程
 
 
 
-#### LazyForEach
+### LazyForEach
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 LazyForEach(dataSource: IDataSource, itemGenerator: (item: any, index: number) => void, keyGenerator?: (item: any, index: number) => string, options?: LazyForEachOptions)
 
@@ -67,6 +71,7 @@ LazyForEach从提供的数据源中按需迭代数据，并在每次迭代过程
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dataSource | IDataSource | 是 | LazyForEach数据源，需要开发者实现相关接口。 |
@@ -77,17 +82,19 @@ LazyForEach从提供的数据源中按需迭代数据，并在每次迭代过程
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[拖拽排序](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-drag-sorting)属性。
 
 
 
-#### IDataSource
+## IDataSource
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 LazyForEach的数据源，开发者需要实现该接口以提供数据访问和数据变化通知能力，包括获取数据总数、按索引获取数据、注册和注销数据变化监听器等。
 
@@ -97,9 +104,10 @@ LazyForEach的数据源，开发者需要实现该接口以提供数据访问和
 
 
 
-#### totalCount
+### totalCount
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 totalCount(): number
 
@@ -111,6 +119,7 @@ totalCount(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 获得数据总数，由数据源决定实际大小。 |
@@ -118,9 +127,10 @@ totalCount(): number
 
 
 
-#### getData
+### getData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getData(index: number): any
 
@@ -132,12 +142,14 @@ getData(index: number): any
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 获取数据对应的索引值。取值范围是[0, 数据源长度-1]。超出取值范围时行为由数据源实现决定，建议开发者做边界检查。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -150,9 +162,10 @@ getData(index: number): any
 
 
 
-#### registerDataChangeListener
+### registerDataChangeListener
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 registerDataChangeListener(listener: DataChangeListener): void
 
@@ -164,6 +177,7 @@ registerDataChangeListener(listener: DataChangeListener): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | listener | DataChangeListener | 是 | 数据变化监听器，用于在数据源发生变化时通知组件刷新。 |
@@ -171,9 +185,10 @@ registerDataChangeListener(listener: DataChangeListener): void
 
 
 
-#### unregisterDataChangeListener
+### unregisterDataChangeListener
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unregisterDataChangeListener(listener: DataChangeListener): void
 
@@ -185,6 +200,7 @@ unregisterDataChangeListener(listener: DataChangeListener): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | listener | DataChangeListener | 是 | 数据变化监听器，用于在数据源发生变化时通知组件刷新。 |
@@ -192,9 +208,10 @@ unregisterDataChangeListener(listener: DataChangeListener): void
 
 
 
-#### DataChangeListener
+## DataChangeListener
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 数据变化监听器，用于在数据源发生变化时通知LazyForEach组件进行相应的渲染更新，支持数据添加、删除、改变、移动、交换、重载等多种数据变化类型的监听。
 
@@ -208,9 +225,10 @@ unregisterDataChangeListener(listener: DataChangeListener): void
 
 
 
-#### onDataReloaded
+### onDataReloaded
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDataReloaded(): void
 
@@ -226,9 +244,10 @@ onDataReloaded(): void
 
 
 
-#### onDataAdded(deprecated)
+### onDataAdded(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDataAdded(index: number): void
 
@@ -242,6 +261,7 @@ onDataAdded(index: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 数据添加位置的索引值。取值范围是[0, 数据源长度-1]。 小于0时取值为0，大于数据源长度-1时取值为数据源长度-1。 |
@@ -249,9 +269,10 @@ onDataAdded(index: number): void
 
 
 
-#### onDataMoved(deprecated)
+### onDataMoved(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDataMoved(from: number, to: number): void
 
@@ -265,6 +286,7 @@ onDataMoved(from: number, to: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | from | number | 是 | 数据移动起始位置。取值范围是[0, 数据源长度-1]。 小于0时取值为0，大于数据源长度-1时取值为数据源长度-1。 |
@@ -273,9 +295,10 @@ onDataMoved(from: number, to: number): void
 
 
 
-#### onDataDeleted(deprecated)
+### onDataDeleted(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDataDeleted(index: number): void
 
@@ -289,6 +312,7 @@ onDataDeleted(index: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 数据删除位置的索引值。取值范围是[0, 数据源长度-1]。 小于0时取值为0，大于数据源长度-1时取值为数据源长度-1。 |
@@ -296,9 +320,10 @@ onDataDeleted(index: number): void
 
 
 
-#### onDataChanged(deprecated)
+### onDataChanged(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDataChanged(index: number): void
 
@@ -312,6 +337,7 @@ onDataChanged(index: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 数据变化位置的索引值。取值范围是[0, 数据源长度-1]。 小于0时取值为0，大于数据源长度-1时取值为数据源长度-1。 |
@@ -319,9 +345,10 @@ onDataChanged(index: number): void
 
 
 
-#### onDataAdd8+
+### onDataAdd8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDataAdd(index: number): void
 
@@ -337,6 +364,7 @@ onDataAdd(index: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 数据添加位置的索引值。取值范围是[0, 数据源长度-1]。 小于0时取值为0，大于数据源长度-1时取值为数据源长度-1。 |
@@ -344,9 +372,10 @@ onDataAdd(index: number): void
 
 
 
-#### onDataMove8+
+### onDataMove8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDataMove(from: number, to: number): void
 
@@ -362,6 +391,7 @@ onDataMove(from: number, to: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | from | number | 是 | 数据移动起始位置。取值范围是[0, 数据源长度-1]。 小于0时取值为0，大于数据源长度-1时取值为数据源长度-1。 |
@@ -370,9 +400,10 @@ onDataMove(from: number, to: number): void
 
 
 
-#### onDataDelete8+
+### onDataDelete8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDataDelete(index: number): void
 
@@ -388,6 +419,7 @@ onDataDelete(index: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 数据删除位置的索引值。取值范围是[0, 数据源长度-1]。 小于0时取值为0，大于数据源长度-1时取值为数据源长度-1。 |
@@ -395,9 +427,10 @@ onDataDelete(index: number): void
 
 
 
-#### onDataChange8+
+### onDataChange8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDataChange(index: number): void
 
@@ -413,6 +446,7 @@ onDataChange(index: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 数据变化位置的索引值。取值范围是[0, 数据源长度-1]。 小于0时取值为0，大于数据源长度-1时取值为数据源长度-1。 |
@@ -420,9 +454,10 @@ onDataChange(index: number): void
 
 
 
-#### onDatasetChange12+
+### onDatasetChange12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDatasetChange(dataOperations: DataOperation[]): void
 
@@ -440,6 +475,7 @@ onDatasetChange(dataOperations: DataOperation[]): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dataOperations | DataOperation[] | 是 | 一次批量处理数据的操作集合，开发者将需要处理的数据操作（添加、删除、改变、移动、交换、重载等）放入该数组，组件按照数组中的操作顺序刷新展示内容。 |
@@ -447,9 +483,10 @@ onDatasetChange(dataOperations: DataOperation[]): void
 
 
 
-#### DataOperation12+
+## DataOperation12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type DataOperation = DataAddOperation | DataDeleteOperation | DataChangeOperation | DataMoveOperation | DataExchangeOperation | DataReloadOperation
 
@@ -465,9 +502,10 @@ type DataOperation = DataAddOperation | DataDeleteOperation | DataChangeOperatio
 
 
 
-#### DataAddOperation12+
+### DataAddOperation12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 添加数据操作。
 
@@ -476,6 +514,7 @@ type DataOperation = DataAddOperation | DataDeleteOperation | DataChangeOperatio
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -487,9 +526,10 @@ type DataOperation = DataAddOperation | DataDeleteOperation | DataChangeOperatio
 
 
 
-#### DataDeleteOperation12+
+### DataDeleteOperation12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 删除数据操作。
 
@@ -498,6 +538,7 @@ type DataOperation = DataAddOperation | DataDeleteOperation | DataChangeOperatio
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -508,9 +549,10 @@ type DataOperation = DataAddOperation | DataDeleteOperation | DataChangeOperatio
 
 
 
-#### DataChangeOperation12+
+### DataChangeOperation12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 改变数据操作。
 
@@ -519,6 +561,7 @@ type DataOperation = DataAddOperation | DataDeleteOperation | DataChangeOperatio
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -529,9 +572,10 @@ type DataOperation = DataAddOperation | DataDeleteOperation | DataChangeOperatio
 
 
 
-#### DataMoveOperation12+
+### DataMoveOperation12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 移动数据操作。
 
@@ -540,6 +584,7 @@ type DataOperation = DataAddOperation | DataDeleteOperation | DataChangeOperatio
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -550,9 +595,10 @@ type DataOperation = DataAddOperation | DataDeleteOperation | DataChangeOperatio
 
 
 
-#### DataExchangeOperation12+
+### DataExchangeOperation12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 交换数据操作。
 
@@ -561,6 +607,7 @@ type DataOperation = DataAddOperation | DataDeleteOperation | DataChangeOperatio
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -571,9 +618,10 @@ type DataOperation = DataAddOperation | DataDeleteOperation | DataChangeOperatio
 
 
 
-#### DataReloadOperation12+
+### DataReloadOperation12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 重载所有数据操作。当onDatasetChange含有DataOperationType.RELOAD操作时，其余操作全部失效，框架会自己调用keyGenerator进行键值比对。
 
@@ -583,6 +631,7 @@ type DataOperation = DataAddOperation | DataDeleteOperation | DataChangeOperatio
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | DataOperationType.RELOAD | 否 | 否 | 数据全部重载类型。 |
@@ -590,9 +639,10 @@ type DataOperation = DataAddOperation | DataDeleteOperation | DataChangeOperatio
 
 
 
-#### DataOperationType12+
+### DataOperationType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举类型，数据操作说明。
 
@@ -601,6 +651,7 @@ type DataOperation = DataAddOperation | DataDeleteOperation | DataChangeOperatio
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -614,15 +665,17 @@ type DataOperation = DataAddOperation | DataDeleteOperation | DataChangeOperatio
 
 
 
-#### MoveIndex12+
+## MoveIndex12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -632,15 +685,17 @@ type DataOperation = DataAddOperation | DataDeleteOperation | DataChangeOperatio
 
 
 
-#### ExchangeIndex12+
+## ExchangeIndex12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -650,15 +705,17 @@ type DataOperation = DataAddOperation | DataDeleteOperation | DataChangeOperatio
 
 
 
-#### ExchangeKey12+
+## ExchangeKey12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -668,9 +725,10 @@ type DataOperation = DataAddOperation | DataDeleteOperation | DataChangeOperatio
 
 
 
-#### LazyForEachOptions
+## LazyForEachOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于配置LazyForEach的资源释放策略、内存优化策略，以及是否使能自定义组件冻结。
 
@@ -686,6 +744,7 @@ type DataOperation = DataAddOperation | DataDeleteOperation | DataChangeOperatio
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | customComponentFreezeMode | LazyForEachCustomComponentFreezeMode | 否 | 是 | 选择是否使能自定义组件冻结。仅在LazyForEach下直接使用自定义组件时生效，其他情况不适用。 默认为AUTO。 |
@@ -695,9 +754,10 @@ type DataOperation = DataAddOperation | DataDeleteOperation | DataChangeOperatio
 
 
 
-#### LazyForEachCustomComponentFreezeMode
+## LazyForEachCustomComponentFreezeMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 选择是否使能自定义组件冻结。
 
@@ -713,6 +773,7 @@ type DataOperation = DataAddOperation | DataDeleteOperation | DataChangeOperatio
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | AUTO | 0 | 跟随module.json5配置文件中metadata的设置。 |
@@ -722,9 +783,10 @@ type DataOperation = DataAddOperation | DataDeleteOperation | DataChangeOperatio
 
 
 
-#### LazyForEachReleaseStrategy
+## LazyForEachReleaseStrategy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 选择LazyForEach的资源释放策略。
 
@@ -736,6 +798,7 @@ type DataOperation = DataAddOperation | DataDeleteOperation | DataChangeOperatio
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | BATCH | 0 | BATCH为默认使用的资源释放策略，该策略在当前帧释放掉所有废弃节点资源。如果存在节点复用，此时能够最大化节点复用率，但如果存在组件层级较深、子组件数量较多的节点，单节点资源释放耗时较长。大量节点在当前帧释放可能会导致超大帧，影响性能。 |
@@ -744,9 +807,10 @@ type DataOperation = DataAddOperation | DataDeleteOperation | DataChangeOperatio
 
 
 
-#### LazyForEachMemOptStrategy
+## LazyForEachMemOptStrategy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 LazyForEach内存优化策略枚举。
 
@@ -758,21 +822,26 @@ LazyForEach内存优化策略枚举。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DEFAULT | 0 | 无内存优化策略。 |
-| ENABLE_AUTO_CACHE_OPTIMIZATION | 1 << 0 | 自动内存优化策略，当LazyForEach承载的列表项数量较多（例如达到数百项以上）或单项子组件结构复杂（例如包含多层嵌套或数十个子节点），导致内存占用偏高（可通过性能分析工具检测内存占用情况）时，建议使用此策略以降低内存使用量。 当应用退后台时、LazyForEach所在组件不可见时（visibility属性设置为Visible以外的值，或组件面积为0，不考虑遮挡）、整机低内存时（MemoryLevel达到MEMORY_LEVEL_LOW或MEMORY_LEVEL_CRITICAL），释放预加载区域内的部分节点，直至上下预加载区域内的节点数量均不超过2。 当应用恢复前台时、LazyForEach所在组件恢复显示时，LazyForEach发生滑动时，恢复预加载区域内的节点。 在释放和恢复节点时，会触发自定义组件生命周期。 |
+| ENABLE_AUTO_CACHE_OPTIMIZATION | 1 << 0 | 自动内存优化策略，当LazyForEach承载的列表项数量较多（例如达到数百项以上）或单项子组件结构复杂（例如包含多层嵌套或数十个子节点），导致内存占用偏高（可通过性能分析工具检测内存占用情况）时，建议使用此策略以降低内存使用量。 当应用退后台时、LazyForEach所在组件不可见时（visibility属性设置为Visible以外的值，或组件面积为0，不考虑遮挡）、整机低内存时（MemoryLevel达到MEMORY_LEVEL_LOW或MEMORY_LEVEL_CRITICAL），对于内存大于6G的设备，释放预加载区域内的部分节点，直至上下预加载区域内的节点数量均不超过2；对于内存小于等于6G的设备，释放预加载区域内的全部节点。 当应用恢复前台时、LazyForEach所在组件恢复显示时，LazyForEach发生滑动时，恢复预加载区域内的节点。 在释放和恢复节点时，会触发自定义组件生命周期。 |
 
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（使用自动内存优化策略）
+
+
+### 示例1（使用自动内存优化策略）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 以下示例中，通过[LazyForEachOptions](#lazyforeachoptions)的memoryOptimizationStrategy属性使用了自动内存优化策略。应用退后台时，清理缓存。应用恢复前台时，恢复缓存。
 

@@ -1,9 +1,9 @@
 # @ohos.hiTraceMeter (性能打点)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hitracemeter
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供了跟踪进程轨迹，度量程序执行性能的打点能力，支持异步耗时任务跟踪、同步耗时任务跟踪、整数变量跟踪等多种性能分析场景。本模块打点的数据供HiTraceMeter工具分析使用，能够帮助开发者快速定位性能瓶颈，优化应用性能。
 
@@ -14,9 +14,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { hiTraceMeter } from '@kit.PerformanceAnalysisKit';
@@ -24,9 +25,10 @@ import { hiTraceMeter } from '@kit.PerformanceAnalysisKit';
 
 
 
-#### hiTraceMeter.startTrace
+## hiTraceMeter.startTrace
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startTrace(name: string, taskId: number): void
 
@@ -48,6 +50,7 @@ startTrace(name: string, taskId: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 要跟踪的任务名称。 由于单条trace记录的总长度限制为512Byte，超过的部分将会被截断，建议该参数的长度不要超过420Byte。 |
@@ -62,9 +65,10 @@ hiTraceMeter.startTrace("myTestFunc", 1);  // 开始异步跟踪任务
 
 
 
-#### hiTraceMeter.finishTrace
+## hiTraceMeter.finishTrace
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 finishTrace(name: string, taskId: number): void
 
@@ -79,6 +83,7 @@ finishTrace(name: string, taskId: number): void
 **系统能力**：SystemCapability.HiviewDFX.HiTrace
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -112,9 +117,10 @@ hiTraceMeter.finishTrace("myTestFunc", 1);
 
 
 
-#### hiTraceMeter.traceByValue
+## hiTraceMeter.traceByValue
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 traceByValue(name: string, count: number): void
 
@@ -129,6 +135,7 @@ traceByValue(name: string, count: number): void
 **系统能力**：SystemCapability.HiviewDFX.HiTrace
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -148,9 +155,10 @@ hiTraceMeter.traceByValue("myTestCount", traceCount);  // 当myTestCount发生�
 
 
 
-#### HiTraceOutputLevel19+
+## HiTraceOutputLevel19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，跟踪输出级别。
 
@@ -161,6 +169,7 @@ hiTraceMeter.traceByValue("myTestCount", traceCount);  // 当myTestCount发生�
 **元服务API**：从API version 19开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.HiviewDFX.HiTrace
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -173,9 +182,10 @@ hiTraceMeter.traceByValue("myTestCount", traceCount);  // 当myTestCount发生�
 
 
 
-#### hiTraceMeter.startAsyncTrace19+
+## hiTraceMeter.startAsyncTrace19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startAsyncTrace(level: HiTraceOutputLevel, name: string, taskId: number, customCategory: string, customArgs?: string): void
 
@@ -190,6 +200,7 @@ startAsyncTrace(level: HiTraceOutputLevel, name: string, taskId: number, customC
 **系统能力**：SystemCapability.HiviewDFX.HiTrace
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -215,9 +226,10 @@ hiTraceMeter.startAsyncTrace(COMMERCIAL, "myTestFunc", 4, "categoryTest", "key1=
 
 
 
-#### hiTraceMeter.finishAsyncTrace19+
+## hiTraceMeter.finishAsyncTrace19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 finishAsyncTrace(level: HiTraceOutputLevel, name: string, taskId: number): void
 
@@ -232,6 +244,7 @@ finishAsyncTrace(level: HiTraceOutputLevel, name: string, taskId: number): void
 **系统能力**：SystemCapability.HiviewDFX.HiTrace
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -281,9 +294,10 @@ hiTraceMeter.finishAsyncTrace(COMMERCIAL, "myTestFunc", 1);
 
 
 
-#### hiTraceMeter.startSyncTrace19+
+## hiTraceMeter.startSyncTrace19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startSyncTrace(level: HiTraceOutputLevel, name: string, customArgs?: string): void
 
@@ -298,6 +312,7 @@ startSyncTrace(level: HiTraceOutputLevel, name: string, customArgs?: string): vo
 **系统能力**：SystemCapability.HiviewDFX.HiTrace
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -320,9 +335,10 @@ hiTraceMeter.startSyncTrace(COMMERCIAL, "myTestFunc", "key1=value1,key2=value2")
 
 
 
-#### hiTraceMeter.finishSyncTrace19+
+## hiTraceMeter.finishSyncTrace19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 finishSyncTrace(level: HiTraceOutputLevel): void
 
@@ -337,6 +353,7 @@ finishSyncTrace(level: HiTraceOutputLevel): void
 **系统能力**：SystemCapability.HiviewDFX.HiTrace
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -368,9 +385,10 @@ hiTraceMeter.finishSyncTrace(COMMERCIAL);
 
 
 
-#### hiTraceMeter.traceByValue19+
+## hiTraceMeter.traceByValue19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 traceByValue(level: HiTraceOutputLevel, name: string, count: number): void
 
@@ -381,6 +399,7 @@ traceByValue(level: HiTraceOutputLevel, name: string, count: number): void
 **系统能力**：SystemCapability.HiviewDFX.HiTrace
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -402,9 +421,10 @@ hiTraceMeter.traceByValue(COMMERCIAL, "myTestCount", traceCount);
 
 
 
-#### hiTraceMeter.isTraceEnabled19+
+## hiTraceMeter.isTraceEnabled19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isTraceEnabled(): boolean
 
@@ -415,6 +435,7 @@ isTraceEnabled(): boolean
 **系统能力**：SystemCapability.HiviewDFX.HiTrace
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -433,9 +454,10 @@ if (hiTraceMeter.isTraceEnabled()) {
 
 
 
-#### TraceEventListener22+
+## TraceEventListener22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type TraceEventListener = (traceStatus: boolean) => void
 
@@ -447,6 +469,7 @@ type TraceEventListener = (traceStatus: boolean) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | traceStatus | boolean | 是 | 当前应用trace捕获开关状态。 true：开启；false：关闭。 |
@@ -454,9 +477,10 @@ type TraceEventListener = (traceStatus: boolean) => void
 
 
 
-#### hiTraceMeter.registerTraceListener22+
+## hiTraceMeter.registerTraceListener22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 registerTraceListener(callback: TraceEventListener): number
 
@@ -472,12 +496,14 @@ registerTraceListener(callback: TraceEventListener): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | TraceEventListener | 是 | 注册的回调函数，用于监听应用trace捕获开关状态变化。当trace捕获开关状态发生变化时（从开启变为关闭或从关闭变为开启），会触发此回调并传入当前的trace状态。注册成功后会立即执行一次回调，后续每次trace捕获开关状态变化都会触发回调。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -507,9 +533,10 @@ if (index < 0) {
 
 
 
-#### hiTraceMeter.unregisterTraceListener22+
+## hiTraceMeter.unregisterTraceListener22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unregisterTraceListener(index: number): number
 
@@ -521,12 +548,14 @@ unregisterTraceListener(index: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 已注册回调函数索引，取值范围[0, 9]，即registerTraceListener()调用成功时的返回值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |

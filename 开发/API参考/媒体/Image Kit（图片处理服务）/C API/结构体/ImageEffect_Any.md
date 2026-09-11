@@ -1,6 +1,6 @@
 # ImageEffect_Any
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imageeffect-imageeffect-any
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -10,7 +10,8 @@ typedef struct ImageEffect_Any {...} ImageEffect_Any
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -24,18 +25,21 @@ typedef struct ImageEffect_Any {...} ImageEffect_Any
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 **支持C++语言语法的声明如下：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | ImageEffect_DataType dataType = ImageEffect_DataType::EFFECT_DATA_TYPE_UNKNOWN | 参数类型，默认为未定义类型。 |
@@ -44,6 +48,7 @@ typedef struct ImageEffect_Any {...} ImageEffect_Any
  
 **支持C语言语法的声明如下：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | ImageEffect_DataType dataType | 参数类型。 |

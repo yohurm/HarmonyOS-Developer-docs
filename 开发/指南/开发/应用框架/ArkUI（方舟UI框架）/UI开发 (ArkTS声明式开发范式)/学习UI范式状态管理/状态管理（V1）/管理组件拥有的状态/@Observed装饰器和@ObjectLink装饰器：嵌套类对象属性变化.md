@@ -1,6 +1,6 @@
 # @Observed装饰器和@ObjectLink装饰器：嵌套类对象属性变化
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-observed-and-objectlink
 
@@ -13,7 +13,7 @@
 
 
 
-#### 概述
+## 概述
 
 @ObjectLink和@Observed类装饰器配合使用，可实现嵌套对象或数组的双向数据同步，使用方式如下：
 
@@ -26,7 +26,8 @@
 
 
 
-#### 装饰器说明
+## 装饰器说明
+
 
 | @Observed类装饰器 | 说明 |
 | --- | --- |
@@ -34,10 +35,11 @@
 | 类装饰器 | 装饰class。需要放在class的定义前，使用new创建类对象。 |
 
 
+
 | @ObjectLink变量装饰器 | 说明 |
 | --- | --- |
 | 装饰器参数 | 无。 |
-| 允许装饰的变量类型 | 支持继承Date、Array的class实例。 API version 11及以后支持继承Map、Set的class实例以及@Observed装饰类和undefined或null组成的联合类型，比如ClassA \| ClassB、 ClassA \| undefined 或者 ClassA \| null, 示例请参考@ObjectLink支持联合类型。 API version 19之前，必须为被@Observed装饰的class实例。 API version 19及以后，@ObjectLink可以被复杂类型初始化，即class、object或built-in类型。但当观察嵌套类型时，仍需其接收@Observed装饰的类实例或makeV1Observed的返回值。 说明： @ObjectLink不支持简单类型，如果开发者需要使用简单类型，可以使用@Prop。 |
+| 允许装饰的变量类型 | 支持继承Date、Array的class实例。 API version 11及以后支持继承Map、Set的class实例以及@Observed装饰类和undefined或null组成的联合类型，比如ClassA \| ClassB、 ClassA \| undefined 或者 ClassA \| null，示例请参考@ObjectLink支持联合类型。 API version 19之前，必须为被@Observed装饰的class实例。 API version 19及以后，@ObjectLink可以被复杂类型初始化，即class、object或built-in类型。但当观察嵌套类型时，仍需其接收@Observed装饰的类实例或makeV1Observed的返回值。 说明： @ObjectLink不支持简单类型，如果开发者需要使用简单类型，可以使用@Prop。 |
 | 被装饰变量的初始值 | 禁止本地初始化。 |
 
 
@@ -56,7 +58,8 @@ this.objLink= ...
 
 
 
-#### 变量的传递/访问规则说明
+## 变量的传递/访问规则说明
+
 
 | @ObjectLink传递/访问 | 说明 |
 | --- | --- |
@@ -73,11 +76,11 @@ this.objLink= ...
 
 
 
-#### 观察变化和行为表现
+## 观察变化和行为表现
 
 
 
-#### 观察变化
+### 观察变化
 
 API version 19之前，如果需要观察嵌套场景的变化，如嵌套类，二维数组，对象数组等，那么内层的数据类型也需要被@Observed装饰。API version 19及以后，也可以通过使用[makeV1Observed](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-statemanagement#makev1observed19)来使内层数据可观察。内层数据需要传递给@ObjectLink，使其在UI上可观察。示例请参考[嵌套对象](#嵌套对象)。
 
@@ -171,7 +174,7 @@ struct Parent {
 
 
 
-#### 框架行为
+### 框架行为
 1. 初始渲染：
 
   a. @Observed装饰的class的实例会被代理对象包装，代理了class上的属性的setter和getter方法。
@@ -181,13 +184,13 @@ struct Parent {
 
 
 
-#### 限制条件
+## 限制条件
 1. 使用@Observed装饰class会改变class原始的原型链，@Observed和其他类装饰器装饰同一个class可能会带来问题。
 2. @ObjectLink装饰器不建议在[@Entry](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-custom-components#entry)装饰的自定义组件中使用，编译时会产生告警。
 3. @ObjectLink装饰的类型必须是复杂类型，否则会有编译时报错。
 4. API version 19前，@ObjectLink装饰的变量类型必须是显式地由@Observed装饰的类。如果未指定类型，或不是@Observed装饰的class，编译时报错。
 
-  API version 19及以后，@ObjectLink也可以被[makeV1Observed](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-statemanagement#makev1observed19)的返回值初始化，若@ObjectLink接收未使用@Observed装饰的class或makeV1Observed返回值进行初始化，则会有运行时告警日志。
+  API version 19及以后，@ObjectLink也可以被[makeV1Observed](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-statemanagement#makev1observed19)的返回值初始化，若@ObjectLink接收的初始化值既不是@Observed装饰的class实例，也不是makeV1Observed的返回值，则会有运行时告警日志。
 
   
 ```text
@@ -343,11 +346,11 @@ struct Parent {
 
 
 
-#### 使用场景
+## 使用场景
 
 
 
-#### 对象类型
+### 对象类型
 
 该场景包含built-in类型（Array、Map、Set和Date）和普通class。从API version 19开始，@ObjectLink接收@State传递built-in类型和普通class对象，可以观察其API调用和第一层变化，无需额外添加@Observed装饰。因为@State等状态变量装饰器，会给对象（外层对象）添加一层“代理”包装，其功能等同于添加@Observed装饰。
 
@@ -402,7 +405,7 @@ struct Index {
 
 
 
-#### 嵌套对象
+### 嵌套对象
 
 ```ArkTS
 @Observed
@@ -482,7 +485,7 @@ struct Index {
 
 
 
-#### 对象数组
+### 对象数组
 
 对象数组是一种常用的数据结构。以下示例展示了对象数组的用法。
 
@@ -602,7 +605,7 @@ struct Parent {
 
 
 
-#### 二维数组
+### 二维数组
 
 使用@Observed观察二维数组的变化。可以声明一个被@Observed装饰的继承Array的子类。
 
@@ -764,7 +767,7 @@ struct IndexPage {
 
 
 
-#### 继承Map类
+### 继承Map类
 
 > [!NOTE]
 > 从API version 11开始，@ObjectLink支持@Observed装饰Map类型和继承Map类的类型。
@@ -864,7 +867,7 @@ struct MapSampleNestedChild {
 
 
 
-#### 继承Set类
+### 继承Set类
 
 > [!NOTE]
 > 从API version 11开始，@ObjectLink支持@Observed装饰Set类型和继承Set类的类型。
@@ -956,7 +959,7 @@ struct SetSampleNestedChild {
 
 
 
-#### @ObjectLink支持联合类型
+### @ObjectLink支持联合类型
 
 @ObjectLink支持@Observed装饰类和undefined或null组成的联合类型，在下面的示例中，count类型为Source | Data | undefined，点击父组件Parent中的Button改变count的属性或者类型，Child组件中对应的Text组件刷新。
 
@@ -1054,11 +1057,11 @@ struct Child {
 
 
 
-#### 常见问题
+## 常见问题
 
 
 
-#### 基础嵌套对象属性更改失效
+### 基础嵌套对象属性更改失效
 
 在应用开发中，有很多嵌套对象场景，例如，开发者更新了某个属性，但UI没有进行对应的更新。
 
@@ -1163,7 +1166,7 @@ struct MyView {
 
   
 构造一个子组件，用于单独渲染Child的实例。 该子组件可以使用@ObjectLink child : Child或@Prop child : Child。通常会使用@ObjectLink，除非子组件需要对其Child对象进行本地修改。
- - 嵌套的Child必须用@Observed装饰。当在Cousin中创建Child对象时（本示例中的Cousin(10, 20, 30）)，它将被包装在ES6代理中，当Child属性更改时（this.cousin.child.childId += 1），该代码将修改通知到@ObjectLink变量。
+ - 嵌套的Child必须用@Observed装饰。当在Cousin中创建Child对象时（本示例中的Cousin(10, 20, 30)），它将被包装在ES6代理中，当Child属性更改时（this.cousin.child.childId += 1），该代码将修改通知到@ObjectLink变量。
 
 
 
@@ -1298,7 +1301,7 @@ struct MyView {
 
 
 
-#### 复杂嵌套对象属性更改失效
+### 复杂嵌套对象属性更改失效
 
 【反例】
 
@@ -1610,7 +1613,7 @@ struct ParentComp {
 
 
 
-#### @Prop与@ObjectLink的差异
+### @Prop与@ObjectLink的差异
 
 @Prop和@ObjectLink都可以接收@Observed装饰的类对象实例。@Prop对对象进行深拷贝，修改深拷贝后的对象不会影响原对象及其关联的组件。@ObjectLink获取对象的引用，修改引用对象会影响原对象及其关联的组件。
 
@@ -1685,12 +1688,12 @@ struct UserChild {
 上面的示例关系如图所示：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/tvIibB6oRV2c973J-tgCSQ/zh-cn_image_0000002674631860.jpg?HW-CC-KV=V1&HW-CC-Date=20260813T095704Z&HW-CC-Expire=86400&HW-CC-Sign=730441BE3AD863393EE8D1FBF72D104A45D23A44F7D0F5B549E1A9C466AF3BD2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/visMq-uSS8O421-csGz0cw/zh-cn_image_0000002747209945.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T072510Z&HW-CC-Expire=86400&HW-CC-Sign=183761FCB4413AD0DEE89B6985953F15087793CEC721A7932E204EAEF6702E6C)
 
 
 
 
-#### 在@Observed装饰类的构造函数中延时更改成员变量
+### 在@Observed装饰类的构造函数中延时更改成员变量
 
 在状态管理中，使用@Observed装饰类后，会给该类使用一层“代理”进行包装。当在组件中改变该类的成员变量时，会被该代理进行拦截，在更改数据源中值的同时，也会将变化通知给绑定的组件，从而实现观测变化与触发刷新。
 
@@ -1787,7 +1790,7 @@ struct DelayedChangeIndex {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/UY9IQ0slQw6gwy73_uyHvw/zh-cn_image_0000002704271815.png?HW-CC-KV=V1&HW-CC-Date=20260813T095704Z&HW-CC-Expire=86400&HW-CC-Sign=61045F17C581D9F6135676A4337F91C4B7BE4F261EC58E23DA7C65E686703AA4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/0FOX1OwHTpm_lEwxCCY4Yg/zh-cn_image_0000002717770012.png?HW-CC-KV=V1&HW-CC-Date=20260911T072510Z&HW-CC-Expire=86400&HW-CC-Sign=4D3CEFFB030071162089FEF7DB76D9F1C3005EA173E6B2052D8317E9BBBB57D8)
 
 
 上文的示例代码将定时器修改移入到组件内，此时界面显示时会先显示“The value of renderClass is: false”。待定时器触发时，renderClass的值改变，触发[@Watch](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-watch)回调，此时界面刷新显示“The value of renderClass is: true”，日志输出“The value of renderClass is changed to: true”。
@@ -1796,7 +1799,7 @@ struct DelayedChangeIndex {
 
 
 
-#### @ObjectLink数据源更新时机
+### @ObjectLink数据源更新时机
 
 ```ArkTS
 import { hilog } from '@kit.PerformanceAnalysisKit';
@@ -1886,7 +1889,7 @@ struct Child {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/QwDF537WQm28U_Sp3Njt6Q/zh-cn_image_0000002674472016.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095704Z&HW-CC-Expire=86400&HW-CC-Sign=268CCC6A0DD2F0AA864AFAFCD8ABD2E45BDD8028C7A9336B541B8F8DF8C32EE5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/L9QzB2e8S8mZ-R01kz0S4Q/zh-cn_image_0000002717610078.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072510Z&HW-CC-Expire=86400&HW-CC-Sign=E6E7C376B115135BD895151AB57A188C334407AAF45F9CEDC9257AD4502D1669)
 
 
 @ObjectLink的数据源更新依赖其父组件，当父组件中数据源改变引起父组件刷新时，会重新设置子组件@ObjectLink的数据源。这个过程不是在父组件数据源变化后立刻发生的，而是在父组件实际刷新时才会进行。上述示例中，Parent包含Child，Parent传递箭头函数给Child，在点击时，日志打印顺序是1-2-3-4-5，打印到日志4时，点击事件流程结束，此时仅仅是将子组件Child标记为需要父组件更新的节点，因此日志4打印的this.per.name的值仍为Bob，等到父组件真正更新时，才会更新Child的数据源。
@@ -1920,7 +1923,7 @@ Child({
 
 
 
-#### @Observed装饰的类，在构造函数中使用this赋值属性，不触发UI更新
+### @Observed装饰的类，在构造函数中使用this赋值属性，不触发UI更新
 
 @Observed类的构造函数中对成员变量进行赋值或者修改时，此修改不会经过代理，无法被观测到。
 
@@ -1992,12 +1995,12 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/C8RvZnx7SWSuZ5b2CBSwow/zh-cn_image_0000002704391985.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095704Z&HW-CC-Expire=86400&HW-CC-Sign=FB22C4F1065756F5441E38D9CD408564BA1BD936462FD00F22847EAE0D71D94E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/tcDZXi7wTa6mfWz4Qb6vDg/zh-cn_image_0000002747290029.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072510Z&HW-CC-Expire=86400&HW-CC-Sign=6E3579D645BAAEF3050D2ECCB0E4883857A579282223F2613453C273BB86581B)
 
 
 
 
-#### LazyForEach和@ObjectLink一起使用时，替换数组数据后UI不刷新
+### LazyForEach和@ObjectLink一起使用时，替换数组数据后UI不刷新
 
 @Observed装饰的类的数组，用[LazyForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-lazyforeach)展开显示的时候，可能会出现替换数组数据后，修改数组数据不刷新UI的问题。改变数组数据后，需要调用onDataChange通知LazyForEach组件重新绑定状态变量，否则就会出现上述问题。
 
@@ -2251,7 +2254,7 @@ struct MyComponent {
 @Reusable
 @Component
 struct ChildComponent {
-  // 使用@ObjectLink接受@Observed类数据
+  // 使用@ObjectLink接收@Observed类数据
   @ObjectLink data: StringData;
 
   aboutToAppear(): void {
@@ -2281,4 +2284,4 @@ struct ChildComponent {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/3iKOgwZfR46xUTAt5MtRsA/zh-cn_image_0000002674631862.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095704Z&HW-CC-Expire=86400&HW-CC-Sign=BA52644CB67CA57FC9D3EB6A79060614EF67774B0A996F4094A9508DA325DD13)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/OaWioseUT0-3dztKi2FgzQ/zh-cn_image_0000002747209947.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072510Z&HW-CC-Expire=86400&HW-CC-Sign=F1F32FACE160F977A05FEB7C28B5A6B0CBCE1C4909FE8E4FBC2B43349EF3D8AD)

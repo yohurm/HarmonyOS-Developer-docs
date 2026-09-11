@@ -1,13 +1,14 @@
 # Rcp_Request
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_rcp___request
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 网络请求。
  
@@ -19,16 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 成员变量
+### 成员变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | char id [RCP_MAX_REQUEST_ID_LEN] | 每个请求的唯一ID。由系统生成。 |
@@ -44,15 +48,17 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### configuration
+### configuration
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Rcp_Configuration* Rcp_Request::configuration
@@ -64,9 +70,10 @@ Rcp_Configuration* Rcp_Request::configuration
  
   
 
-#### content
+### content
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Rcp_RequestContent* Rcp_Request::content
@@ -78,9 +85,10 @@ Rcp_RequestContent* Rcp_Request::content
  
   
 
-#### cookies
+### cookies
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Rcp_RequestCookies* Rcp_Request::cookies
@@ -92,9 +100,10 @@ Rcp_RequestCookies* Rcp_Request::cookies
  
   
 
-#### headers
+### headers
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Rcp_Headers* Rcp_Request::headers
@@ -106,9 +115,10 @@ Rcp_Headers* Rcp_Request::headers
  
   
 
-#### id
+### id
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 char Rcp_Request::id[RCP_MAX_REQUEST_ID_LEN]
@@ -120,9 +130,10 @@ char Rcp_Request::id[RCP_MAX_REQUEST_ID_LEN]
  
   
 
-#### method
+### method
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 const char* Rcp_Request::method
@@ -134,9 +145,10 @@ const char* Rcp_Request::method
  
   
 
-#### requestPrivate
+### requestPrivate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void* Rcp_Request::requestPrivate
@@ -148,9 +160,10 @@ void* Rcp_Request::requestPrivate
  
   
 
-#### transferRange
+### transferRange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Rcp_TransferRange* Rcp_Request::transferRange
@@ -162,9 +175,10 @@ HTTP传输范围。该设置将转换为HTTP Range标头。
  
   
 
-#### url
+### url
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 char* Rcp_Request::url

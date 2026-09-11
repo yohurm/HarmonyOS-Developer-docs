@@ -1,9 +1,9 @@
 # XComponent
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-xcomponent
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供用于图形绘制和媒体数据写入的Surface，XComponent负责将其嵌入到视图中，支持应用自定义Surface位置和大小。同时支持AI图像分析、HDR视频亮度调节、防截屏录屏隐私保护、画布自绘制等能力，适用于视频播放、相机预览、游戏渲染、图像AI识别等需要高性能自绘制和媒体内容展示的场景。具体指南请参考[自定义渲染（XComponent）文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-xcomponent-guidelines)。
 
@@ -12,23 +12,26 @@
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
 
 
 
-#### 接口
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 接口
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### XComponent19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### XComponent19+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 XComponent(params: NativeXComponentParameters)
 
@@ -42,6 +45,7 @@ XComponent(params: NativeXComponentParameters)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | NativeXComponentParameters | 是 | XComponent的配置参数，用于在Native侧获取XComponent节点实例并注册Surface生命周期回调和组件事件回调。 |
@@ -49,9 +53,10 @@ XComponent(params: NativeXComponentParameters)
 
 
 
-#### XComponent12+
+### XComponent12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 XComponent(options: XComponentOptions)
 
@@ -65,6 +70,7 @@ XComponent(options: XComponentOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | XComponentOptions | 是 | XComponent的配置选项，用于在ArkTS侧获取SurfaceId、注册Surface生命周期回调和组件事件回调，以及配置AI分析功能。 |
@@ -72,9 +78,10 @@ XComponent(options: XComponentOptions)
 
 
 
-#### XComponent10+
+### XComponent10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 XComponent(value: {id: string, type: XComponentType, libraryname?: string, controller?: XComponentController})
 
@@ -90,6 +97,7 @@ XComponent(value: {id: string, type: XComponentType, libraryname?: string, contr
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | string | 是 | 组件的唯一标识，字符串长度不超过128个字符，超出时无效。 |
@@ -100,9 +108,10 @@ XComponent(value: {id: string, type: XComponentType, libraryname?: string, contr
 
 
 
-#### XComponent(deprecated)
+### XComponent(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 XComponent(value: {id: string, type: string, libraryname?: string, controller?: XComponentController})
 
@@ -114,6 +123,7 @@ XComponent(value: {id: string, type: string, libraryname?: string, controller?: 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | string | 是 | 组件的唯一标识，字符串长度不超过128个字符，超出时无效。 |
@@ -124,9 +134,10 @@ XComponent(value: {id: string, type: string, libraryname?: string, controller?: 
 
 
 
-#### XComponentOptions12+
+## XComponentOptions12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义XComponent的具体配置参数。
 
@@ -135,6 +146,7 @@ XComponent(value: {id: string, type: string, libraryname?: string, controller?: 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -145,9 +157,10 @@ XComponent(value: {id: string, type: string, libraryname?: string, controller?: 
 
 
 
-#### NativeXComponentParameters19+
+## NativeXComponentParameters19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义XComponent的具体配置参数。通过这种构造参数创建的XComponent，可以将其对应的[FrameNode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode)对象传递至Native侧，使用NDK接口进行Surface生命周期的相关设置和[添加事件监听](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-add-component-events)。
 
@@ -157,17 +170,19 @@ XComponent(value: {id: string, type: string, libraryname?: string, controller?: 
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | XComponentType | 否 | 否 | 用于指定XComponent组件类型。 |
-| imageAIOptions | ImageAIOptions | 否 | 是 | 给组件设置一个AI分析选项，通过此项可配置分析类型或绑定一个分析控制器。未设置时不配置AI分析选项，仅类型为SURFACE或TEXTURE时有效。 |
+| imageAIOptions | ImageAIOptions | 否 | 是 | 给组件设置一个AI分析选项，通过此项可配置分析类型或绑定一个分析控制器，仅类型为SURFACE或TEXTURE时有效。未设置时不配置AI分析选项，可通过enableAnalyzer属性单独启用AI分析。 |
 
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持通用属性外，还支持以下属性：
 
@@ -177,9 +192,10 @@ XComponent(value: {id: string, type: string, libraryname?: string, controller?: 
 
 
 
-#### enableAnalyzer12+
+### enableAnalyzer12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableAnalyzer(enable: boolean)
 
@@ -197,6 +213,7 @@ enableAnalyzer(enable: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | boolean | 是 | 是否启用AI分析功能。 true：开启AI分析；false：关闭AI分析。 默认值：false |
@@ -208,9 +225,10 @@ enableAnalyzer(enable: boolean)
 
 
 
-#### enableSecure13+
+### enableSecure13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableSecure(isSecure: boolean)
 
@@ -224,6 +242,7 @@ enableSecure(isSecure: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isSecure | boolean | 是 | 是否开启隐私图层模式。 true：开启隐私图层模式；false：关闭隐私图层模式。 默认值：false |
@@ -235,9 +254,10 @@ enableSecure(isSecure: boolean)
 
 
 
-#### hdrBrightness20+
+### hdrBrightness20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hdrBrightness(brightness: number)
 
@@ -255,6 +275,7 @@ hdrBrightness(brightness: number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | brightness | number | 是 | HDR视频的亮度。 默认值：1.0 取值范围：[0.0, 1.0]。小于0.0的值按0.0处理，大于1.0的值按1.0处理，其他异常值按1.0处理。 0.0表示视频按照SDR亮度显示，1.0表示视频按照当前允许的最高HDR亮度显示。 |
@@ -262,9 +283,10 @@ hdrBrightness(brightness: number)
 
 
 
-#### hdrBrightness24+
+### hdrBrightness24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hdrBrightness(brightness: number, type?: HdrType)
 
@@ -275,6 +297,7 @@ hdrBrightness(brightness: number, type?: HdrType)
 仅当hdrFormats包含对应的HDRFormat时，当前设备才支持对应的HDR类型，参数设置才会生效；否则将使用默认值[HdrType](#hdrtype24枚举说明).DEFAULT。
 
 其映射关系如下：
+
 
 | type取值 | hdrFormats需包含的HDRFormat |
 | --- | --- |
@@ -293,6 +316,7 @@ hdrBrightness(brightness: number, type?: HdrType)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | brightness | number | 是 | HDR内容的亮度。 默认值：1.0 取值范围：[0.0, 1.0]。小于0.0的值按0.0处理，大于1.0的值按1.0处理，其他异常值按1.0处理。 0.0表示内容按照SDR亮度显示，1.0表示内容按照当前允许的最高HDR亮度显示。 |
@@ -301,15 +325,17 @@ hdrBrightness(brightness: number, type?: HdrType)
 
 
 
-#### HdrType24+枚举说明
+## HdrType24+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 HDR内容的高动态范围渲染类型。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -319,9 +345,10 @@ HDR内容的高动态范围渲染类型。
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 12开始，type为SURFACE或TEXTURE时，支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)。
 
@@ -333,13 +360,14 @@ HDR内容的高动态范围渲染类型。
 
 
 
-#### onLoad
+### onLoad
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onLoad(callback: OnNativeLoadCallback)
 
-插件加载完成时回调事件。
+Native加载完成时回调事件。
 
 > [!NOTE]
 > 仅当XComponent设置了libraryname参数时，会触发该回调；当未设置libraryname参数时，请使用 onSurfaceCreated 等相关回调。
@@ -351,20 +379,22 @@ onLoad(callback: OnNativeLoadCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | OnNativeLoadCallback | 是 | 插件加载完成时回调事件，用于获取XComponent实例对象的context。 |
+| callback | OnNativeLoadCallback | 是 | Native加载完成时回调事件，用于获取XComponent实例对象的context。 |
 
 
 
 
-#### onDestroy
+### onDestroy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDestroy(event: VoidCallback)
 
-插件卸载完成时回调事件。与[onSurfaceDestroyed](#onsurfacedestroyed12)的区别：onDestroy适用于设置libraryname参数的场景，回调无参数；onSurfaceDestroyed适用于未设置libraryname参数的场景，回调参数为surfaceId。
+Native卸载完成时回调事件。与[onSurfaceDestroyed](#onsurfacedestroyed12)的区别：onDestroy适用于设置libraryname参数的场景，回调无参数；onSurfaceDestroyed适用于未设置libraryname参数的场景，回调参数为surfaceId。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -372,16 +402,18 @@ onDestroy(event: VoidCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| event | VoidCallback | 是 | 插件卸载完成时回调事件。 |
+| event | VoidCallback | 是 | Native卸载完成时回调事件。 |
 
 
 
 
-#### OnNativeLoadCallback18+
+## OnNativeLoadCallback18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnNativeLoadCallback = (event?: object) => void
 
@@ -395,6 +427,7 @@ XComponent的Native加载完成后回调事件，用于向开发者传递XCompon
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | object | 否 | 获取XComponent实例对象的context，context上挂载的方法由开发者在Native层定义。不传该参数时无法获取context。当需要在回调中使用Native层定义的方法时传入此参数；不传入时，回调中无法获取context对象。 |
@@ -402,9 +435,10 @@ XComponent的Native加载完成后回调事件，用于向开发者传递XCompon
 
 
 
-#### XComponentController
+## XComponentController
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 XComponent组件的控制器，可以将此对象绑定至XComponent组件，然后通过控制器来调用组件方法。
 
@@ -414,9 +448,10 @@ XComponent组件的控制器，可以将此对象绑定至XComponent组件，然
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -434,9 +469,10 @@ xComponentController: XComponentController = new XComponentController();
 
 
 
-#### getXComponentSurfaceId9+
+### getXComponentSurfaceId9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getXComponentSurfaceId(): string
 
@@ -447,6 +483,7 @@ getXComponentSurfaceId(): string
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -484,9 +521,10 @@ getXComponentSurfaceId(): string
 
 
 
-#### setXComponentSurfaceSize(deprecated)
+### setXComponentSurfaceSize(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setXComponentSurfaceSize(value: {surfaceWidth: number, surfaceHeight: number}): void
 
@@ -500,6 +538,7 @@ setXComponentSurfaceSize(value: {surfaceWidth: number, surfaceHeight: number}): 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | surfaceWidth | number | 是 | XComponent持有Surface的宽度，取值范围为大于0且不超过8192，单位：px。传入0、负数或其他异常值时接口不生效。 |
@@ -508,9 +547,10 @@ setXComponentSurfaceSize(value: {surfaceWidth: number, surfaceHeight: number}): 
 
 
 
-#### getXComponentContext
+### getXComponentContext
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getXComponentContext(): Object
 
@@ -522,6 +562,7 @@ getXComponentContext(): Object
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Object | 获取XComponent实例对象的context，context包含的具体接口方法由开发者自定义，context内容与onLoad回调中的第一个参数一致。 |
@@ -529,9 +570,10 @@ getXComponentContext(): Object
 
 
 
-#### setXComponentSurfaceRect12+
+### setXComponentSurfaceRect12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setXComponentSurfaceRect(rect: SurfaceRect): void
 
@@ -545,6 +587,7 @@ setXComponentSurfaceRect(rect: SurfaceRect): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rect | SurfaceRect | 是 | XComponent持有Surface的显示区域。 |
@@ -556,9 +599,10 @@ setXComponentSurfaceRect(rect: SurfaceRect): void
 
 
 
-#### getXComponentSurfaceRect12+
+### getXComponentSurfaceRect12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getXComponentSurfaceRect(): SurfaceRect
 
@@ -572,6 +616,7 @@ getXComponentSurfaceRect(): SurfaceRect
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | SurfaceRect | 获取XComponent持有Surface的显示区域。 |
@@ -579,9 +624,10 @@ getXComponentSurfaceRect(): SurfaceRect
 
 
 
-#### onSurfaceCreated12+
+### onSurfaceCreated12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onSurfaceCreated(surfaceId: string): void
 
@@ -595,6 +641,7 @@ onSurfaceCreated(surfaceId: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | surfaceId | string | 是 | 回调该方法的时候，绑定XComponent持有Surface的ID。 |
@@ -606,9 +653,10 @@ onSurfaceCreated(surfaceId: string): void
 
 
 
-#### onSurfaceChanged12+
+### onSurfaceChanged12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onSurfaceChanged(surfaceId: string, rect: SurfaceRect): void
 
@@ -622,6 +670,7 @@ onSurfaceChanged(surfaceId: string, rect: SurfaceRect): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | surfaceId | string | 是 | 回调该方法的时候，绑定XComponent持有Surface的ID。 |
@@ -634,9 +683,10 @@ onSurfaceChanged(surfaceId: string, rect: SurfaceRect): void
 
 
 
-#### onSurfaceDestroyed12+
+### onSurfaceDestroyed12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onSurfaceDestroyed(surfaceId: string): void
 
@@ -650,6 +700,7 @@ onSurfaceDestroyed(surfaceId: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | surfaceId | string | 是 | 回调该方法的时候，绑定XComponent持有Surface的ID。 |
@@ -661,13 +712,14 @@ onSurfaceDestroyed(surfaceId: string): void
 
 
 
-#### startImageAnalyzer12+
+### startImageAnalyzer12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startImageAnalyzer(config: ImageAnalyzerConfig): Promise&lt;void&gt;
 
-配置AI分析并启动AI分析功能，使用前需先启用图像AI分析能力[enableAnalyzer](#enableanalyzer12)，仅type为SURFACE或TEXTURE时有效。使用Promise异步回调。
+配置AI分析并启动AI分析功能，使用前需先启用图像AI分析能力[enableAnalyzer](#enableanalyzer12)，仅XComponent类型为SURFACE或TEXTURE时有效。使用Promise异步回调。
 
 该方法调用时，将截取调用时刻的画面帧进行分析，使用时需注意启动分析的时机，避免出现画面和分析内容不一致的情况。
 
@@ -685,12 +737,14 @@ startImageAnalyzer(config: ImageAnalyzerConfig): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | config | ImageAnalyzerConfig | 是 | 执行AI分析所需要的入参，用于配置AI分析功能。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -701,6 +755,7 @@ startImageAnalyzer(config: ImageAnalyzerConfig): Promise&lt;void&gt;
 
 以下错误码的详细介绍请参见[图像AI分析错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image-analyzer)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 110001 | Image analysis feature is unsupported. |
@@ -710,13 +765,14 @@ startImageAnalyzer(config: ImageAnalyzerConfig): Promise&lt;void&gt;
 
 
 
-#### stopImageAnalyzer12+
+### stopImageAnalyzer12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopImageAnalyzer(): void
 
-停止AI分析功能，AI分析展示的内容将被销毁。仅type为SURFACE或TEXTURE时有效。
+停止AI分析功能，仅XComponent类型为SURFACE或TEXTURE时有效，须先调用[enableAnalyzer](#enableanalyzer12)和[startImageAnalyzer](#startimageanalyzer12)启用AI分析能力。调用后AI分析展示的内容将被销毁。
 
 > [!NOTE]
 > 在startImageAnalyzer方法未返回结果时调用本方法，会触发其错误回调。 该特性依赖设备能力。
@@ -730,9 +786,10 @@ stopImageAnalyzer(): void
 
 
 
-#### setXComponentSurfaceRotation12+
+### setXComponentSurfaceRotation12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setXComponentSurfaceRotation(rotationOptions: SurfaceRotationOptions): void
 
@@ -746,6 +803,7 @@ setXComponentSurfaceRotation(rotationOptions: SurfaceRotationOptions): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rotationOptions | SurfaceRotationOptions | 是 | 设置XComponent持有Surface在屏幕旋转时是否锁定方向。 |
@@ -757,9 +815,10 @@ setXComponentSurfaceRotation(rotationOptions: SurfaceRotationOptions): void
 
 
 
-#### getXComponentSurfaceRotation12+
+### getXComponentSurfaceRotation12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getXComponentSurfaceRotation(): Required&lt;SurfaceRotationOptions&gt;
 
@@ -773,6 +832,7 @@ getXComponentSurfaceRotation(): Required&lt;SurfaceRotationOptions&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Required&lt;SurfaceRotationOptions&gt; | 获取XComponent持有Surface在屏幕旋转时是否锁定方向的设置。 |
@@ -780,9 +840,10 @@ getXComponentSurfaceRotation(): Required&lt;SurfaceRotationOptions&gt;
 
 
 
-#### lockCanvas20+
+### lockCanvas20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 lockCanvas(): DrawingCanvas | null
 
@@ -796,9 +857,10 @@ lockCanvas(): DrawingCanvas | null
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| DrawingCanvas \| null | 可用于向XComponent区域绘制的画布对象或者空对象null。 |
+| DrawingCanvas \| null | 可用于向XComponent区域绘制的画布对象；当无法获取画布对象时（如Surface未创建完成或画布已被占用未释放）返回null。 |
 
 
 > [!NOTE]
@@ -807,9 +869,10 @@ lockCanvas(): DrawingCanvas | null
 
 
 
-#### unlockCanvasAndPost20+
+### unlockCanvasAndPost20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unlockCanvasAndPost(canvas: DrawingCanvas): void
 
@@ -823,6 +886,7 @@ unlockCanvasAndPost(canvas: DrawingCanvas): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | canvas | DrawingCanvas | 是 | 之前调用lockCanvas方法返回的画布对象。 |
@@ -834,9 +898,10 @@ unlockCanvasAndPost(canvas: DrawingCanvas): void
 
 
 
-#### setXComponentSurfaceConfig22+
+### setXComponentSurfaceConfig22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setXComponentSurfaceConfig(config: SurfaceConfig): void
 
@@ -854,6 +919,7 @@ setXComponentSurfaceConfig(config: SurfaceConfig): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | config | SurfaceConfig | 是 | Surface配置选项，用于设置XComponent持有的Surface在渲染时是否需要被视为不透明。 |
@@ -861,9 +927,10 @@ setXComponentSurfaceConfig(config: SurfaceConfig): void
 
 
 
-#### SurfaceRotationOptions12+对象说明
+## SurfaceRotationOptions12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于描述XComponent持有Surface在屏幕旋转时是否锁定方向的设置。
 
@@ -873,6 +940,7 @@ setXComponentSurfaceConfig(config: SurfaceConfig): void
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | lock | boolean | 否 | 是 | Surface在屏幕旋转时是否锁定方向，未设置时默认取值为false，即不锁定方向。 true：锁定方向；false：不锁定方向。 |
@@ -880,9 +948,10 @@ setXComponentSurfaceConfig(config: SurfaceConfig): void
 
 
 
-#### SurfaceRect12+对象说明
+## SurfaceRect12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于描述XComponent持有Surface的显示区域。
 
@@ -891,6 +960,7 @@ setXComponentSurfaceConfig(config: SurfaceConfig): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -906,9 +976,10 @@ setXComponentSurfaceConfig(config: SurfaceConfig): void
 
 
 
-#### SurfaceConfig22+对象说明
+## SurfaceConfig22+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于描述XComponent持有的Surface在渲染时是否需要被视为不透明。
 
@@ -918,6 +989,7 @@ setXComponentSurfaceConfig(config: SurfaceConfig): void
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | isOpaque | boolean | 否 | 是 | XComponent持有的Surface在渲染时是否需要被视为不透明，未设置时默认取值为false，即在渲染时会应用Surface中绘制内容像素的透明度。 true表示需要被视为不透明，false表示不需要被视为不透明。 默认值：false |
@@ -925,15 +997,19 @@ setXComponentSurfaceConfig(config: SurfaceConfig): void
 
 
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 示例效果请以真机运行为准，当前DevEco Studio预览器不支持。
 
 
 
-#### 示例1（图像AI分析功能）
+### 示例1（图像AI分析功能）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 使用enableAnalyzer属性开启图像AI分析功能。可通过XComponentController控制开始、停止图像AI分析。
 
@@ -1006,8 +1082,9 @@ struct XComponentExample {
           let surfaceId = this.xComponentController.getXComponentSurfaceId();
           nativeRender.ChangeColor(BigInt(surfaceId));
           let hasChangeColor: boolean = false;
-          if (nativeRender.GetXComponentStatus(BigInt(surfaceId))) {
-            hasChangeColor = nativeRender.GetXComponentStatus(BigInt(surfaceId)).hasChangeColor;
+          let status = nativeRender.GetXComponentStatus(BigInt(surfaceId));
+          if (status) {
+            hasChangeColor = status.hasChangeColor;
           }
           if (hasChangeColor) {
             this.currentStatus = "change color";
@@ -1046,8 +1123,9 @@ struct XComponentExample {
             console.info(`surface rect is ${this.xComponentController.getXComponentSurfaceRect()}`);
             nativeRender.DrawPattern(BigInt(surfaceId));
             let hasDraw: boolean = false;
-            if (nativeRender.GetXComponentStatus(BigInt(surfaceId))) {
-              hasDraw = nativeRender.GetXComponentStatus(BigInt(surfaceId)).hasDraw;
+            let status = nativeRender.GetXComponentStatus(BigInt(surfaceId));
+            if (status) {
+              hasDraw = status.hasDraw;
             }
             if (hasDraw) {
               this.currentStatus = "draw star";
@@ -1056,18 +1134,21 @@ struct XComponentExample {
           .margin(2)
       }.justifyContent(FlexAlign.Center)
     }
-    .width("100%")
+    .width('100%')
   }
 }
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/vuqOa19hSpWUp6LqORpQ0w/zh-cn_image_0000002686088331.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071512Z&HW-CC-Expire=86400&HW-CC-Sign=594108765393F5056A7F4ED6CAA2A1D04AD33C9545B0E2B272673EF1D69A868F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/5Tmj0LFrRi2eiA7c9Tivcw/zh-cn_image_0000002747212905.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073109Z&HW-CC-Expire=86400&HW-CC-Sign=FA24E2DF8CE8F12AE95F709A7A1210A3204DB352392FA820A45310061D2E693E)
 
 
 
 
-#### 示例2（在Surface旋转过程中锁定）
+### 示例2（在Surface旋转过程中锁定）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过setXComponentSurfaceRotation设置Surface在屏幕旋转过程中锁定方向，不跟随屏幕进行旋转。
 
@@ -1131,7 +1212,10 @@ struct Index {
 
 
 
-#### 示例3（使用画布对象在XComponent上绘制内容）
+### 示例3（使用画布对象在XComponent上绘制内容）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 20开始，该示例通过调用[lockCanvas](#lockcanvas20)返回画布对象，通过画布对象调用对应的绘制接口，再调用[unlockCanvasAndPost](#unlockcanvasandpost20)在XComponent上绘制内容。
 
@@ -1180,12 +1264,15 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/Ch45b0VWSc-otGfPn7sHfA/zh-cn_image_0000002685928499.png?HW-CC-KV=V1&HW-CC-Date=20260730T071512Z&HW-CC-Expire=86400&HW-CC-Sign=43ADEB4C035EDB5EADA40BEAFCC3B7AF74F0CB0949ACB3D5307C7E06587769FD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/mB-EJ4qpReO1TFwIqnDfCQ/zh-cn_image_0000002717772970.png?HW-CC-KV=V1&HW-CC-Date=20260911T073109Z&HW-CC-Expire=86400&HW-CC-Sign=AB96419187391AFD9C342A9FB9F91E2ABB913C81ACE561EDA01417860D13606E)
 
 
 
 
-#### 示例4（XComponent实现沉浸式效果）
+### 示例4（XComponent实现沉浸式效果）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 20开始，在示例3的基础上，调用setXComponentSurfaceRect接口主动设置Surface显示区域达到沉浸式效果。
 
@@ -1212,8 +1299,8 @@ struct Index {
   build() {
     Column() {
       XComponent({ type: XComponentType.SURFACE, controller: this.xcController })
-        .width("100%")
-        .height("100%")
+        .width('100%')
+        .height('100%')
         .onLoad(() => {
           // 请在此处设置Surface大小，过大可能会导致绘制时间长
           this.xcController.setXComponentSurfaceRect({surfaceWidth: this.screenWidth, surfaceHeight: this.screenHeight, offsetX: 0, offsetY: 0});
@@ -1232,12 +1319,15 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/fgO_VZY5TfitTf8_k_jpIA/zh-cn_image_0000002656008822.jpeg?HW-CC-KV=V1&HW-CC-Date=20260730T071512Z&HW-CC-Expire=86400&HW-CC-Sign=44DF1255E7ACE8C4E77EF905E4C52149CF4AA31D4FC8AC9C002C32E67BEE29DA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/25LZciP5QYuUxv-vx_YerQ/zh-cn_image_0000002717613038.jpeg?HW-CC-KV=V1&HW-CC-Date=20260911T073109Z&HW-CC-Expire=86400&HW-CC-Sign=11E2A8560CDB4119F6F81CBBEEDBEFB490C78A0FC9157CDF434F62E04564EAD0)
 
 
 
 
-#### 示例5（设置XComponent持有Surface在渲染时是否需要被视为不透明）
+### 示例5（设置XComponent持有Surface在渲染时是否需要被视为不透明）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 22开始，该示例通过调用[setXComponentSurfaceConfig](#setxcomponentsurfaceconfig22)接口设置XComponent持有的Surface在渲染时是否需要被视为不透明。
 
@@ -1293,8 +1383,9 @@ struct Index {
         let surfaceId = this.xComponentController.getXComponentSurfaceId();
         nativeRender.ChangeColor(BigInt(surfaceId));
         let hasChangeColor: boolean = false;
-        if (nativeRender.GetXComponentStatus(BigInt(surfaceId))) {
-          hasChangeColor = nativeRender.GetXComponentStatus(BigInt(surfaceId)).hasChangeColor;
+        let status = nativeRender.GetXComponentStatus(BigInt(surfaceId));
+        if (status) {
+          hasChangeColor = status.hasChangeColor;
         }
         if (hasChangeColor) {
           this.currentStatus = "change color";
@@ -1316,8 +1407,9 @@ struct Index {
             let surfaceId = this.xComponentController.getXComponentSurfaceId();
             nativeRender.DrawPattern(BigInt(surfaceId));
             let hasDraw: boolean = false;
-            if (nativeRender.GetXComponentStatus(BigInt(surfaceId))) {
-              hasDraw = nativeRender.GetXComponentStatus(BigInt(surfaceId)).hasDraw;
+            let status = nativeRender.GetXComponentStatus(BigInt(surfaceId));
+            if (status) {
+              hasDraw = status.hasDraw;
             }
             if (hasDraw) {
               this.currentStatus = "draw star";
@@ -1338,4 +1430,4 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/-fSF5olMRImbSHgumNhVKg/zh-cn_image_0000002655848902.jpeg?HW-CC-KV=V1&HW-CC-Date=20260730T071512Z&HW-CC-Expire=86400&HW-CC-Sign=B502534D29ABFC7F92031BE26E832A9D93C396305511799985EB1C23F8A29718)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/asrpl7ZKSgmy5Qg9mD7Uew/zh-cn_image_0000002747292991.jpeg?HW-CC-KV=V1&HW-CC-Date=20260911T073109Z&HW-CC-Expire=86400&HW-CC-Sign=898057C6912DF258F56EBD91CF9264632C00FA9A1840BCE1BC643524D660A4B4)

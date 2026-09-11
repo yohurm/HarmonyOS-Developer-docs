@@ -1,16 +1,16 @@
 # 监听设备上下线（C/C++）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/game-controller-monitor-device
 
-#### 功能介绍
+## 功能介绍
 
 Game Controller Kit提供设备上下线事件监听和查询在线设备信息的功能。注册监听事件后，设备拔插时可获取实时回调通知，同时支持查询当前所有在线设备的具体信息。
 
 
 
-#### 业务流程
+## 业务流程
 
 
 ![](assets/监听设备上下线（C／C++）/file-20260514131901601-0.png)
@@ -26,9 +26,10 @@ Game Controller Kit提供设备上下线事件监听和查询在线设备信息�
 
 
 
-#### 接口说明
+## 接口说明
 
 接口详细介绍请参考[GameController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-gamecontroller)。
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -39,11 +40,11 @@ Game Controller Kit提供设备上下线事件监听和查询在线设备信息�
 
 
 
-#### 开发步骤
+## 开发步骤
 
 
 
-#### 链接动态库
+### 链接动态库
 
 ```text
 target_link_libraries(entry PUBLIC libohgame_controller.z.so)
@@ -51,7 +52,7 @@ target_link_libraries(entry PUBLIC libohgame_controller.z.so)
 
 
 
-#### 导入模块
+### 导入模块
 
 ```text
 #include <GameControllerKit/game_device.h>
@@ -59,7 +60,7 @@ target_link_libraries(entry PUBLIC libohgame_controller.z.so)
 
 
 
-#### 注册设备上下线监听
+### 注册设备上下线监听
 
 调用[OH_GameDevice_RegisterDeviceMonitor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-game-device-h#oh_gamedevice_registerdevicemonitor)接口注册设备状态变化监听，获取设备上下线的回调通知。
 
@@ -91,7 +92,7 @@ void DeviceApi::OnDeviceChanged(const struct GameDevice_DeviceEvent *deviceEvent
 
 
 
-#### 取消注册设备上下线监听
+### 取消注册设备上下线监听
 
 如果不再需要订阅，可以调用[OH_GameDevice_UnregisterDeviceMonitor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-game-device-h#oh_gamedevice_unregisterdevicemonitor)接口取消设备状态变化事件的监听。
 
@@ -112,7 +113,7 @@ napi_value DeviceApi::UnregisterDeviceMonitor(napi_env env, napi_callback_info i
 
 
 
-#### 查询所有在线设备
+### 查询所有在线设备
 
 调用[OH_GameDevice_GetAllDeviceInfos](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-game-device-h#oh_gamedevice_getalldeviceinfos)接口，查询所有在线游戏设备的信息。
 

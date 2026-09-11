@@ -1,26 +1,27 @@
 # 基于标准化数据结构的控件 (ArkTS)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/components-based-on-uniform-data-structure
 
-#### 场景介绍
+## 场景介绍
 
 我们提供了部分标准化数据结构的预置卡片，当需要展示标准化数据结构数据时，可以直接引用提供的预置卡片，快捷地展示数据。
 
 
 
-#### 内容卡片控件
+## 内容卡片控件
 
-在需要展示内容（标题、描述、图片、应用信息）并在点击后跳转至对应来源时，可以使用内容卡片快速的展示信息。开发者只需要调用[ContentFormCard](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-data-udmfcomponents#contentformcard)接口，传入[ContentForm](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-data-uniformdatastruct#contentform14)数据、卡片宽高、点击事件回调函数即可获得良好的展示效果。
+在需要展示内容（标题、描述、图片、应用信息）并在点击后跳转至对应来源时，可以使用内容卡片快速地展示信息。开发者只需要调用[ContentFormCard](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-data-udmfcomponents#contentformcard)接口，传入[ContentForm](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-data-uniformdatastruct#contentform14)数据、卡片宽高、点击事件回调函数即可获得良好的展示效果。
 
-从API version 20开始，支持使用[内容卡片控件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-data-udmfcomponents)。
+从API version 20开始，支持使用内容卡片控件[UdmfComponents](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-data-udmfcomponents)。
 
 
 
-#### 接口说明
+### 接口说明
 
 以下为内容卡片接口介绍：
+
 
 | 接口名称 | 描述 |
 | --- | --- |
@@ -29,7 +30,7 @@
 
 
 
-#### 开发示例
+### 开发示例
 
 ```ArkTS
 // 1. 导入需要的模块
@@ -61,9 +62,9 @@ struct Index {
       this.contentForm = {
         uniformDataType: 'general.content-form',
         title: 'Content form title',
-        thumbData: appIcon,
+        thumbData: thumbImage,
         description: 'Content form description',
-        appIcon: thumbImage,
+        appIcon: appIcon,
         appName: 'com.test.demo'
       };
     } catch (err) {

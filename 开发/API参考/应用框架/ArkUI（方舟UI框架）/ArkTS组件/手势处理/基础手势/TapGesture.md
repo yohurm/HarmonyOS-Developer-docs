@@ -1,9 +1,9 @@
 # TapGesture
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-gestures-tapgesture
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持单击、双击和多次点击事件的识别，适用于为组件绑定点击交互、区分不同点击次数并触发对应业务逻辑的场景。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TapGesture(value?: TapGestureParameters)
  
@@ -28,6 +29,7 @@ TapGesture(value?: TapGestureParameters)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | TapGestureParameters | 否 | 点击手势的相关参数。用于配置连续点击次数、触发点击的手指数、点击手势移动阈值等点击识别条件；当需要自定义点击手势识别条件时传入。不传入时使用TapGestureParameters中各参数的默认配置。 |
@@ -35,9 +37,10 @@ TapGesture(value?: TapGestureParameters)
  
   
 
-#### TapGestureParameters12+对象说明
+## TapGestureParameters12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 为规范匿名对象的定义，API 12版本修改了此处的元素定义。其中，保留了历史匿名对象的起始版本信息，会出现外层元素@since版本号高于内层元素版本号的情况，但这不影响接口的使用。
@@ -49,6 +52,7 @@ TapGesture(value?: TapGestureParameters)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | count11+ | number | 否 | 是 | 识别的连续点击次数。当设置的值小于1或不设置时，会被转化为默认值。 默认值：1 取值范围：[0, +∞) 说明： 1. 当配置多击时，上一次的最后一根手指抬起和下一次的第一根手指按下的超时时间为300毫秒。 2. 当上次点击的位置与当前点击的位置距离超过60vp时，手势识别失败。在多指情况下，点击的位置为所有参与手势响应的手指的平均位置。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -58,9 +62,10 @@ TapGesture(value?: TapGestureParameters)
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!TIP]
 > 组件通过手势事件绑定不同GestureType的手势对象，各手势对象在响应手势操作的事件回调中提供手势相关信息。下面通过TapGesture手势对象的 onAction 事件响应点击事件，获取事件相关信息。其余手势对象的事件定义见各个手势对象章节。 若需绑定多种手势，请使用 GestureGroup 。 在 GestureEvent 的fingerList元素中，手指索引编号与位置相对应，即fingerList[index]的id为index。对于先按下但未参与当前手势触发的手指，fingerList中对应的位置为空。建议优先使用fingerInfos。
@@ -68,9 +73,10 @@ TapGesture(value?: TapGestureParameters)
  
   
 
-#### onAction
+### onAction
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onAction(event: (event: GestureEvent) => void)
  
@@ -82,6 +88,7 @@ onAction(event: (event: GestureEvent) => void)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | (event: GestureEvent) => void | 是 | 手势事件回调函数，用于在点击手势识别成功时接收手势事件信息。回调参数event表示点击手势事件对象，包含手势触发位置、手指信息等事件相关数据。 |
@@ -89,22 +96,25 @@ onAction(event: (event: GestureEvent) => void)
  
   
 
-#### EventLocationInfo20+
+## EventLocationInfo20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于点击手势获取点击位置坐标。
  
   
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | x | number | 否 | 否 | 相对于组件左上角的X坐标。 取值范围：[0, +∞) 单位：vp 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
@@ -119,9 +129,10 @@ onAction(event: (event: GestureEvent) => void)
  
   
 
-#### getCurrentLocalPosition
+### getCurrentLocalPosition
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCurrentLocalPosition?(): Coordinate2D
  
@@ -137,6 +148,7 @@ getCurrentLocalPosition?(): Coordinate2D
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Coordinate2D | 返回Coordinate2D对象，用于表示点击位置相对于当前组件实时位置左上角的二维坐标。 |
@@ -144,13 +156,17 @@ getCurrentLocalPosition?(): Coordinate2D
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 示例1（双击手势识别）
+### 示例1（双击手势识别）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过TapGesture实现了双击手势的识别。
  
@@ -185,12 +201,15 @@ struct TapGestureExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/4sKe9p21QZSfK_3vuM8Vrw/zh-cn_image_0000002685928047.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071458Z&HW-CC-Expire=86400&HW-CC-Sign=5F70F17C2D85FF5CDC39972B53BF9A53ADD8A8623CE2FB940B6F5E4A3A805B83)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/7d7s_ObnT4aalhs7BTFOJQ/zh-cn_image_0000002717612584.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073110Z&HW-CC-Expire=86400&HW-CC-Sign=91FDBB1D9D276EF3432329EBC909AED75D881FA124DB956E9E617C6B07C88B5C)
 
  
   
 
-#### 示例2（获取单击手势坐标）
+### 示例2（获取单击手势坐标）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过TapGesture获取单击手势点击位置的坐标。
  
@@ -230,12 +249,15 @@ struct TapGestureExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/Ruq1utryRmeqSxd_CHt-Cw/zh-cn_image_0000002656008368.png?HW-CC-KV=V1&HW-CC-Date=20260730T071458Z&HW-CC-Expire=86400&HW-CC-Sign=72509F381CB2D65BDED04144FA75032DE7BE92EAB259E935989B6671F3665416)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/Akh4uE50TDyJ5LX4dcUfhQ/zh-cn_image_0000002747292537.png?HW-CC-KV=V1&HW-CC-Date=20260911T073110Z&HW-CC-Expire=86400&HW-CC-Sign=6455F9049622A9490509F2FCE820300FE09641F1E8279F6DFBD5B7AFB9AECC61)
 
  
   
 
-#### 示例3（获取组件实时位置）
+### 示例3（获取组件实时位置）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[getCurrentLocalPosition](#getcurrentlocalposition)方法获取点击位置相对于当前组件实时位置左上角的坐标。
  
@@ -273,4 +295,4 @@ struct GetCurrentLocalPositionExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/Ic0mnChjQQSnETUapycMoQ/zh-cn_image_0000002686087747.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071458Z&HW-CC-Expire=86400&HW-CC-Sign=72E4172A2617F9731DCA620B9A755CDB70EF57708F1EF81A7821A43EFA282AA6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/ieFBT92eTY293sZeNbksWg/zh-cn_image_0000002747292405.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073110Z&HW-CC-Expire=86400&HW-CC-Sign=25ED0C9403525FD09D4BE5C38C30387D9DF65F244531B70E3CE3AA4234E194AD)

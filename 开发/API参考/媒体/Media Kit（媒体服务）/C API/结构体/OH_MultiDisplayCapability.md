@@ -1,6 +1,6 @@
 # OH_MultiDisplayCapability
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avscreencapture-oh-multidisplaycapability
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -10,7 +10,8 @@ typedef struct OH_MultiDisplayCapability {...} OH_MultiDisplayCapability
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -24,16 +25,19 @@ typedef struct OH_MultiDisplayCapability {...} OH_MultiDisplayCapability
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | bool isMultiDisplaySupport | 是否支持多屏幕联合录制，true表示支持多屏幕联合录制，此时width和height为联合录制区域尺寸；false表示不支持多屏幕联合录制，此时width和height无效。 |

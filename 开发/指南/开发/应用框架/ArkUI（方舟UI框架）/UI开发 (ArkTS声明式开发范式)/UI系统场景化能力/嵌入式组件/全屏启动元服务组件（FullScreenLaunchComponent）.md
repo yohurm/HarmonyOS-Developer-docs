@@ -1,6 +1,6 @@
-# 全屏启动元服务组件（FullScreenLaunchComponent）
+# 全屏启动元服务 (FullScreenLaunchComponent)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-fullscreencomponent
 
@@ -11,7 +11,7 @@ FullScreenLaunchComponent允许开发者以全屏方式拉起元服务，使得�
 
 
 
-#### 基本概念
+## 基本概念
 
  - [FullScreenLaunchComponent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-fullscreenlaunchcomponent)组件
 
@@ -23,7 +23,7 @@ FullScreenLaunchComponent允许开发者以全屏方式拉起元服务，使得�
 
 
 
-#### 实现原理
+## 实现原理
 
 FullScreenLaunchComponent提供的一种全屏启动元服务的能力。需要拉起元服务时，拉起方向AMS查询被拉起方是否授权使用方可以嵌入式运行元服务。已授权时，使用方全屏嵌入式运行元服务；未授权时，使用方跳出式拉起元服务。
 
@@ -35,11 +35,11 @@ FullScreenLaunchComponent提供的一种全屏启动元服务的能力。需要�
 
 
 
-#### 能力范围
+## 能力范围
 
 
 
-#### 组件基本能力
+### 组件基本能力
 
  - 当被拉起方授权使用方可以嵌入式运行元服务时，使用方全屏嵌入式运行元服务
  - 当被拉起方未授权使用方可以嵌入式运行元服务时，使用方跳出式拉起元服务
@@ -48,7 +48,7 @@ FullScreenLaunchComponent提供的一种全屏启动元服务的能力。需要�
 
 
 
-#### EmbeddableUIAbility进程应用可用能力范围
+### EmbeddableUIAbility进程应用可用能力范围
 
 FullScreenLaunchComponent为了实现跨应用的能力共享，存在较开放的灵活性，通过跨进程的方式拉起提供方应用提供的能力供当前使用方（宿主方）使用。在运行机制上，是两个进程之间的业务交互行为，和一般组件和宿主方存在根本上的差异。
 
@@ -70,6 +70,7 @@ FullScreenLaunchComponent为了实现跨应用的能力共享，存在较开放�
 
 
 详情如下：
+
 
 | 组件 | 能力规格 | 功能说明 | 规格补充说明 |
 | --- | --- | --- | --- |
@@ -97,6 +98,7 @@ Native API接口提供能力，在FullScreenLaunchComponent场景下也需要考
 
 详情如下：
 
+
 | 模块 | 能力规格 | 功能说明 | 规格补充说明 |
 | --- | --- | --- | --- |
 | 页面间转场 | 不支持 | 当路由进行切换时，可以通过在pageTransition函数中自定义页面入场和页面退场的转场动效。 | — |
@@ -111,11 +113,11 @@ Native API接口提供能力，在FullScreenLaunchComponent场景下也需要考
 
 
 
-#### 约束与限制
+## 约束与限制
 
 
 
-#### 安全能力约束
+### 安全能力约束
 
 FullScreenLaunchComponent组件（使用方）可以访问调用集成了EmbeddableUIAbility的应用（提供方），提供了一种通用应用共享能力。FullScreenLaunchComponent能力无法独立提供安全保障机制，作为提供服务的应用（提供方）需要结合使用其他ArkUI的能力进行安全保护，以保护自己不被使用方应用攻击。
 
@@ -131,13 +133,13 @@ FullScreenLaunchComponent组件（使用方）可以访问调用集成了Embedda
 
 
 
-#### 嵌套约束
+### 嵌套约束
 
 FullScreenLaunchComponent暂不支持嵌套，比如A应用(UIAbility)->B应用(EmbeddableUIAbility)->C应用(EmbeddableUIAbility)这种嵌套能力依赖。
 
 
 
-#### 事件处理机制约束
+### 事件处理机制约束
 
 FullScreenLaunchComponent不支持通用事件，会将事件经过坐标转换后传递给提供方EmbeddableUIAbility处理。
 
@@ -150,6 +152,7 @@ FullScreenLaunchComponent不支持通用事件，会将事件经过坐标转换�
 应用开发者使用FullScreenLaunchComponent能力时，需要遵守如下设计场景约束：
 
 异步处理的事件场景：FullScreenLaunchComponent组件以及宿主应用侧组件可以同时收到事件。需要应用开发者结合应用场景进行处理，如宿主应用侧组件不做事件处理。如果无法避免，建议替换FullScreenLaunchComponent组件来保障交互体验。
+
 
 | 场景 | 分类 | 是否支持 | 同步/异步（宿主与提供方） | 备注 |
 | --- | --- | --- | --- | --- |
@@ -165,7 +168,7 @@ FullScreenLaunchComponent不支持通用事件，会将事件经过坐标转换�
 
 
 
-#### 页面渲染效果体验约束
+### 页面渲染效果体验约束
 
 由于FullScreenLaunchComponent是一种跨进程的应用调用，使用方应用进程和提供方应用进程的处理不能实现同步，会导致在交互体验上存在和一般组件不同的体验问题。应用开发者应知悉本组件存在跨多个进程渲染页面的性能约束，从而进行针对性的处理。
 
@@ -176,7 +179,7 @@ FullScreenLaunchComponent不支持通用事件，会将事件经过坐标转换�
 应用开发者（提供方）需要考虑如下设计约束：
 
  - 尽量使用布局变化少的场景。
- - 当由布局变化时，提供方js线程尽量少的执行任务，确保js线程能够及时响应布局变化的任务。
+ - 当有布局变化时，提供方js线程尽量少的执行任务，确保js线程能够及时响应布局变化的任务。
 
 
 应用开发者（使用方）可以通过如下方式消减闪白问题：
@@ -188,7 +191,7 @@ FullScreenLaunchComponent不支持通用事件，会将事件经过坐标转换�
 
 
 
-#### 其他约束
+### 其他约束
 
  - 不支持在运行过程中修改切换后端拉起的元服务EmbeddableUIAbility。
  - 不支持预览，不在开发DevEco Studio中提供预览能力。

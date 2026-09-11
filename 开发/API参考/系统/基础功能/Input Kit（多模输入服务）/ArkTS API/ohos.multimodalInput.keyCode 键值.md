@@ -1,9 +1,9 @@
 # @ohos.multimodalInput.keyCode (键值)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-keycode
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 按键设备的键值，按键设备包括键盘、光盘、游戏手柄等。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { KeyCode } from '@kit.InputKit';
@@ -22,14 +23,16 @@ import { KeyCode } from '@kit.InputKit';
  
   
 
-#### KeyCode
+## KeyCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 键值。
  
 **系统能力：** SystemCapability.MultimodalInput.Input.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | KEYCODE_FN | 0 | 功能（Fn）键。 |

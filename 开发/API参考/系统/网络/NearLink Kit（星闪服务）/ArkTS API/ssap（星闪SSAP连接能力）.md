@@ -1,18 +1,19 @@
 # ssap（星闪SSAP连接能力）
 
-更新时间：2026-08-04 06:06:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-ssap
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供了SSAP（SparkLink Service Access Protocol）连接功能。
 
 **起始版本：** 5.0.1(13)
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { ssap } from '@kit.NearLinkKit';
@@ -20,9 +21,10 @@ import { ssap } from '@kit.NearLinkKit';
 
 
 
-#### ConnectionState
+## ConnectionState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ConnectionState = constant.ConnectionState
 
@@ -34,6 +36,7 @@ type ConnectionState = constant.ConnectionState
 
 **起始版本：** 5.0.1(13)
 
+
 | 类型 | 说明 |
 | --- | --- |
 | constant.ConnectionState | 和远端设备的连接状态。 |
@@ -41,9 +44,10 @@ type ConnectionState = constant.ConnectionState
 
 
 
-#### createClient
+## createClient
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createClient(address: string): Client
 
@@ -59,12 +63,14 @@ createClient(address: string): Client
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | address | string | 是 | 远端服务端设备地址。地址格式参考：11:22:33:AA:BB:FF。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -74,6 +80,7 @@ createClient(address: string): Client
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -102,9 +109,10 @@ try {
 
 
 
-#### createServer
+## createServer
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createServer(): Server
 
@@ -120,6 +128,7 @@ createServer(): Server
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Server | ssap服务端实例。 |
@@ -128,6 +137,7 @@ createServer(): Server
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -154,9 +164,10 @@ try {
 
 
 
-#### Client
+## Client
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 提供和远端设备ssap数据交互操作方法，使用前需要使用 ssap.createClient 方法创建一个 Client 实例。 一个应用针对一个远端设备只需要创建一次实例。
@@ -170,9 +181,10 @@ try {
 
 
 
-#### connect
+### connect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 connect(): Promise&lt;void&gt;
 
@@ -188,6 +200,7 @@ connect(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -196,6 +209,7 @@ connect(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -227,9 +241,10 @@ try {
 
 
 
-#### disconnect
+### disconnect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 disconnect(): Promise&lt;void&gt;
 
@@ -245,6 +260,7 @@ disconnect(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -253,6 +269,7 @@ disconnect(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -289,9 +306,10 @@ try {
 
 
 
-#### close
+### close
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(): void
 
@@ -308,6 +326,7 @@ close(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -335,9 +354,10 @@ try {
 
 
 
-#### getServices
+### getServices
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getServices(): Promise<Array&lt;Service&gt;>
 
@@ -353,14 +373,16 @@ getServices(): Promise<Array&lt;Service&gt;>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise‌<‌Array‌<‌Service‌>‌> | Promise对象，返回服务端支持的服务列表。 |
+| Promise‌<‌Array‌&lt;‌Service‌&gt;‌> | Promise对象，返回服务端支持的服务列表。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -400,9 +422,10 @@ try {
 
 
 
-#### readProperty
+### readProperty
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readProperty(property: Property): Promise&lt;Property&gt;
 
@@ -418,12 +441,14 @@ readProperty(property: Property): Promise&lt;Property&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | property | Property | 是 | 服务端属性。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -433,6 +458,7 @@ readProperty(property: Property): Promise&lt;Property&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -482,9 +508,10 @@ try {
 
 
 
-#### writeProperty
+### writeProperty
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeProperty(property: Property, writeType: PropertyWriteType): Promise&lt;void&gt;
 
@@ -500,6 +527,7 @@ writeProperty(property: Property, writeType: PropertyWriteType): Promise&lt;void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | property | Property | 是 | 服务端属性。 |
@@ -507,6 +535,7 @@ writeProperty(property: Property, writeType: PropertyWriteType): Promise&lt;void
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -516,6 +545,7 @@ writeProperty(property: Property, writeType: PropertyWriteType): Promise&lt;void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -566,9 +596,10 @@ try {
 
 
 
-#### setPropertyNotification
+### setPropertyNotification
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setPropertyNotification(property: Property, enable: boolean): Promise&lt;void&gt;
 
@@ -584,13 +615,15 @@ setPropertyNotification(property: Property, enable: boolean): Promise&lt;void&gt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | property | Property | 是 | 服务端属性。 |
-| enable | boolean | 是 | true: 打开通知功能。false: 关闭通知功能。 |
+| enable | boolean | 是 | true表示打开通知功能。false表示关闭通知功能。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -600,6 +633,7 @@ setPropertyNotification(property: Property, enable: boolean): Promise&lt;void&gt
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -649,9 +683,10 @@ try {
 
 
 
-#### requestMtuSize
+### requestMtuSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestMtuSize(mtu: number): Promise&lt;void&gt;
 
@@ -667,12 +702,14 @@ requestMtuSize(mtu: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mtu | number | 是 | MTU参数，取值范围[22, 512]，单位：字节。默认值256。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -682,6 +719,7 @@ requestMtuSize(mtu: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -720,9 +758,10 @@ try {
 
 
 
-#### on( 'propertyChange')
+### on( 'propertyChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'propertyChange', callback: Callback&lt;Property&gt;): void
 
@@ -738,6 +777,7 @@ on(type: 'propertyChange', callback: Callback&lt;Property&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'propertyChange'，表示Property变化事件。 当client端收到server端属性内容变更的通知时，触发该事件。 |
@@ -747,6 +787,7 @@ on(type: 'propertyChange', callback: Callback&lt;Property&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -776,9 +817,10 @@ try {
 
 
 
-#### off( 'propertyChange')
+### off( 'propertyChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'propertyChange', callback?: Callback&lt;Property&gt;): void
 
@@ -794,6 +836,7 @@ off(type: 'propertyChange', callback?: Callback&lt;Property&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'propertyChange'，表示Property变化事件。 |
@@ -803,6 +846,7 @@ off(type: 'propertyChange', callback?: Callback&lt;Property&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -832,9 +876,10 @@ try {
 
 
 
-#### on( 'connectionStateChange')
+### on( 'connectionStateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'connectionStateChange', callback: Callback&lt;ConnectionChangeState&gt;): void
 
@@ -850,6 +895,7 @@ on(type: 'connectionStateChange', callback: Callback&lt;ConnectionChangeState&gt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'connectionStateChange'，表示连接状态变化事件。 当client和server端之间的连接状态发生变化时，触发该事件。 当client端调用Client.connect或Client.disconnect时，可能引起连接状态生变化。 |
@@ -859,6 +905,7 @@ on(type: 'connectionStateChange', callback: Callback&lt;ConnectionChangeState&gt
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -888,9 +935,10 @@ try {
 
 
 
-#### off( 'connectionStateChange')
+### off( 'connectionStateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'connectionStateChange', callback?: Callback&lt;ConnectionChangeState&gt;): void
 
@@ -906,6 +954,7 @@ off(type: 'connectionStateChange', callback?: Callback&lt;ConnectionChangeState&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'connectionStateChange'，表示连接状态变化事件。 |
@@ -915,6 +964,7 @@ off(type: 'connectionStateChange', callback?: Callback&lt;ConnectionChangeState&
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -944,9 +994,10 @@ try {
 
 
 
-#### on( 'mtuChange')
+### on( 'mtuChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'mtuChange', callback: Callback&lt;number&gt;): void
 
@@ -962,6 +1013,7 @@ on(type: 'mtuChange', callback: Callback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'mtuChange'，表示MTU变化事件。 当调用Client.requestMtuSize方法，client端发起MTU大小协商后，会触发该事件。 |
@@ -971,6 +1023,7 @@ on(type: 'mtuChange', callback: Callback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1000,9 +1053,10 @@ try {
 
 
 
-#### off( 'mtuChange')
+### off( 'mtuChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'mtuChange', callback?: Callback&lt;number&gt;): void
 
@@ -1018,6 +1072,7 @@ off(type: 'mtuChange', callback?: Callback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'mtuChange'，表示MTU变化事件。 |
@@ -1027,6 +1082,7 @@ off(type: 'mtuChange', callback?: Callback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1056,9 +1112,10 @@ try {
 
 
 
-#### Server
+## Server
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 提供和远端设备ssap数据交互操作方法，使用前需要使用createServer方法创建一个Server实例。 一个应用针对一个远端设备只需要创建一次实例。
@@ -1072,9 +1129,10 @@ try {
 
 
 
-#### addService
+### addService
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addService(service: Service): void
 
@@ -1090,6 +1148,7 @@ addService(service: Service): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | service | Service | 是 | 服务端提供的服务信息，支持添加多个服务，根据不同的UUID区分。 |
@@ -1098,6 +1157,7 @@ addService(service: Service): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1164,9 +1224,10 @@ try {
 
 
 
-#### removeService
+### removeService
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeService(serviceUuid: string): void
 
@@ -1182,6 +1243,7 @@ removeService(serviceUuid: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | serviceUuid | string | 是 | 服务UUID，用户添加服务时的UUID号，例如：37bea880-fc70-11ea-b720-000000004386。UUID格式参考星闪标准服务UUID。 |
@@ -1190,6 +1252,7 @@ removeService(serviceUuid: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1219,9 +1282,10 @@ try {
 
 
 
-#### close
+### close
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(): void
 
@@ -1238,6 +1302,7 @@ close(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1264,9 +1329,10 @@ try {
 
 
 
-#### notifyPropertyChanged
+### notifyPropertyChanged
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 notifyPropertyChanged(address: string, property: Property): Promise&lt;void&gt;
 
@@ -1282,6 +1348,7 @@ notifyPropertyChanged(address: string, property: Property): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | address | string | 是 | 客户端设备地址。地址格式参考：11:22:33:AA:BB:FF。 |
@@ -1289,6 +1356,7 @@ notifyPropertyChanged(address: string, property: Property): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1298,6 +1366,7 @@ notifyPropertyChanged(address: string, property: Property): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1354,9 +1423,10 @@ try {
 
 
 
-#### sendResponse
+### sendResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sendResponse(response: ServerResponse): void
 
@@ -1372,6 +1442,7 @@ sendResponse(response: ServerResponse): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | response | ServerResponse | 是 | 回复客户端的响应数据。 |
@@ -1380,6 +1451,7 @@ sendResponse(response: ServerResponse): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1418,9 +1490,10 @@ try {
 
 
 
-#### on('connectionStateChange')
+### on('connectionStateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'connectionStateChange', callback: Callback&lt;ConnectionChangeState&gt;): void
 
@@ -1436,6 +1509,7 @@ on(type: 'connectionStateChange', callback: Callback&lt;ConnectionChangeState&gt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'connectionStateChange'，表示连接状态变化事件。 当client和server端之间的连接状态发生变化时，触发该事件。 例如：收到连接请求或者断连请求时，可能引起连接状态发生变化。 |
@@ -1445,6 +1519,7 @@ on(type: 'connectionStateChange', callback: Callback&lt;ConnectionChangeState&gt
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1473,9 +1548,10 @@ try {
 
 
 
-#### off( 'connectionStateChange')
+### off( 'connectionStateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'connectionStateChange', callback?: Callback&lt;ConnectionChangeState&gt;): void
 
@@ -1491,6 +1567,7 @@ off(type: 'connectionStateChange', callback?: Callback&lt;ConnectionChangeState&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'connectionStateChange'，表示连接状态变化事件。 |
@@ -1500,6 +1577,7 @@ off(type: 'connectionStateChange', callback?: Callback&lt;ConnectionChangeState&
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1528,9 +1606,10 @@ try {
 
 
 
-#### on( 'propertyRead')
+### on( 'propertyRead')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'propertyRead', callback: Callback&lt;PropertyReadRequest&gt;): void
 
@@ -1546,6 +1625,7 @@ on(type: 'propertyRead', callback: Callback&lt;PropertyReadRequest&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'propertyRead'，表示读属性请求事件。 当收到client端设备的读属性请求时，触发该事件。 |
@@ -1555,6 +1635,7 @@ on(type: 'propertyRead', callback: Callback&lt;PropertyReadRequest&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1583,9 +1664,10 @@ try {
 
 
 
-#### off( 'propertyRead')
+### off( 'propertyRead')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'propertyRead', callback?: Callback&lt;PropertyReadRequest&gt;): void
 
@@ -1601,6 +1683,7 @@ off(type: 'propertyRead', callback?: Callback&lt;PropertyReadRequest&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'propertyRead'，表示读属性请求事件。 |
@@ -1610,6 +1693,7 @@ off(type: 'propertyRead', callback?: Callback&lt;PropertyReadRequest&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1638,9 +1722,10 @@ try {
 
 
 
-#### on( 'propertyWrite')
+### on( 'propertyWrite')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'propertyWrite', callback: Callback&lt;PropertyWriteRequest&gt;): void
 
@@ -1656,6 +1741,7 @@ on(type: 'propertyWrite', callback: Callback&lt;PropertyWriteRequest&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'propertyWrite'，表示写属性请求事件。 当收到client端设备的写属性请求时，触发该事件。 |
@@ -1665,6 +1751,7 @@ on(type: 'propertyWrite', callback: Callback&lt;PropertyWriteRequest&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1693,9 +1780,10 @@ try {
 
 
 
-#### off( 'propertyWrite')
+### off( 'propertyWrite')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'propertyWrite', callback?: Callback&lt;PropertyWriteRequest&gt;): void
 
@@ -1711,6 +1799,7 @@ off(type: 'propertyWrite', callback?: Callback&lt;PropertyWriteRequest&gt;): voi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'propertyWrite'，表示写属性请求事件。 |
@@ -1720,6 +1809,7 @@ off(type: 'propertyWrite', callback?: Callback&lt;PropertyWriteRequest&gt;): voi
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1748,9 +1838,10 @@ try {
 
 
 
-#### on( 'mtuChange')
+### on( 'mtuChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'mtuChange', callback: Callback&lt;number&gt;): void
 
@@ -1766,6 +1857,7 @@ on(type: 'mtuChange', callback: Callback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'mtuChange'，表示MTU变化事件。 当收到了client端发起了MTU协商请求时，触发该事件。 |
@@ -1775,6 +1867,7 @@ on(type: 'mtuChange', callback: Callback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1803,9 +1896,10 @@ try {
 
 
 
-#### off( 'mtuChange')
+### off( 'mtuChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'mtuChange', callback?: Callback&lt;number&gt;): void
 
@@ -1821,6 +1915,7 @@ off(type: 'mtuChange', callback?: Callback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'mtuChange'，表示MTU变化事件。 |
@@ -1830,6 +1925,7 @@ off(type: 'mtuChange', callback?: Callback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1858,9 +1954,10 @@ try {
 
 
 
-#### Service
+## Service
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示星闪服务。
 
@@ -1870,6 +1967,7 @@ try {
 
 **起始版本：** 5.0.1(13)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | serviceUuid | string | 否 | 否 | 表示服务UUID例如：37bea880-fc70-11ea-b720-000000004386。UUID格式参考星闪标准服务UUID。 |
@@ -1878,9 +1976,10 @@ try {
 
 
 
-#### Property
+## Property
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示服务的Property。
 
@@ -1889,6 +1988,7 @@ try {
 **系统能力：** SystemCapability.Communication.NearLink.Core
 
 **起始版本：** 5.0.1(13)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1901,9 +2001,10 @@ try {
 
 
 
-#### PropertyDescriptor
+## PropertyDescriptor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示Property的描述符。
 
@@ -1913,20 +2014,22 @@ try {
 
 **起始版本：** 5.0.1(13)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | serviceUuid | string | 否 | 否 | 表示服务UUID，例如：37bea880-fc70-11ea-b720-000000004386。UUID格式参考星闪标准服务UUID。 |
 | propertyUuid | string | 否 | 否 | 表示Property的UUID，数据格式同serviceUuid。 |
 | value | ArrayBuffer | 否 | 否 | 表示描述符的数据值。 |
 | descriptorType | PropertyDescriptorType | 否 | 否 | 表示Property的描述符类型。 |
-| isWriteable | boolean | 否 | 是 | 表示描述符是否是可写的。true：可写，false：不可写。默认值为true。 |
+| isWriteable | boolean | 否 | 是 | 表示描述符是否是可写的。true表示可写，false表示不可写。默认值为true。 |
 
 
 
 
-#### PropertyReadRequest
+## PropertyReadRequest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示客户端的Property读请求参数。
 
@@ -1935,6 +2038,7 @@ try {
 **系统能力：** SystemCapability.Communication.NearLink.Core
 
 **起始版本：** 5.0.1(13)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1946,9 +2050,10 @@ try {
 
 
 
-#### PropertyWriteRequest
+## PropertyWriteRequest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示客户端的Property写请求参数。
 
@@ -1957,6 +2062,7 @@ try {
 **系统能力：** SystemCapability.Communication.NearLink.Core
 
 **起始版本：** 5.0.1(13)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1970,9 +2076,10 @@ try {
 
 
 
-#### ServerResponse
+## ServerResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示回复客户端请求的响应。
 
@@ -1981,6 +2088,7 @@ try {
 **系统能力：** SystemCapability.Communication.NearLink.Core
 
 **起始版本：** 5.0.1(13)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1991,9 +2099,10 @@ try {
 
 
 
-#### ConnectionChangeState
+## ConnectionChangeState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示连接状态上报参数。
 
@@ -2003,6 +2112,7 @@ try {
 
 **起始版本：** 5.0.1(13)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | address | string | 否 | 否 | 表示远端设备地址。地址格式参考：11:22:33:AA:BB:FF。 |
@@ -2011,9 +2121,10 @@ try {
 
 
 
-#### PropertyDescriptorType
+## PropertyDescriptorType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示Property的描述符类型，为枚举值。
 
@@ -2022,6 +2133,7 @@ try {
 **系统能力：** SystemCapability.Communication.NearLink.Core
 
 **起始版本：** 5.0.1(13)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2034,9 +2146,10 @@ try {
 
 
 
-#### Operation
+## Operation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示Property支持的操作类型，为枚举值。
 
@@ -2045,6 +2158,7 @@ try {
 **系统能力：** SystemCapability.Communication.NearLink.Core
 
 **起始版本：** 5.0.1(13)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2056,9 +2170,10 @@ try {
 
 
 
-#### PropertyWriteType
+## PropertyWriteType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示Property支持的写类型，为枚举值。
 
@@ -2067,6 +2182,7 @@ try {
 **系统能力：** SystemCapability.Communication.NearLink.Core
 
 **起始版本：** 5.0.1(13)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

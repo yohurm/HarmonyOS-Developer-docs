@@ -1,18 +1,19 @@
 # Enums
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-photoaccesshelper-e
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
@@ -20,15 +21,17 @@ import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
 
 
-#### PhotoType
+## PhotoType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，媒体文件类型。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -38,15 +41,17 @@ import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
 
 
-#### PhotoSubtype12+
+## PhotoSubtype12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 PhotoSubtype是不同[PhotoAsset](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-photoaccesshelper-photoasset)类型的枚举。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -57,13 +62,15 @@ PhotoSubtype是不同[PhotoAsset](https://developer.huawei.com/consumer/cn/doc/h
 
 
 
-#### DynamicRangeType12+
+## DynamicRangeType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，媒体文件的动态范围类型。
 
-**系统能力**: SystemCapability.FileManagement.PhotoAccessHelper.Core
+**系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -73,13 +80,15 @@ PhotoSubtype是不同[PhotoAsset](https://developer.huawei.com/consumer/cn/doc/h
 
 
 
-#### AlbumType
+## AlbumType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，相册类型。例如，用户相册、系统预置相册或由应用创建的相册。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -90,13 +99,15 @@ PhotoSubtype是不同[PhotoAsset](https://developer.huawei.com/consumer/cn/doc/h
 
 
 
-#### AlbumSubtype
+## AlbumSubtype
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，相册子类型，表示具体的相册类型。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -111,13 +122,15 @@ PhotoSubtype是不同[PhotoAsset](https://developer.huawei.com/consumer/cn/doc/h
 
 
 
-#### PositionType16+
+## PositionType16+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，文件位置，表示文件在本地或云端。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -128,76 +141,82 @@ PhotoSubtype是不同[PhotoAsset](https://developer.huawei.com/consumer/cn/doc/h
 
 
 
-#### PhotoKeys
+## PhotoKeys
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，图片和视频文件关键信息。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | URI | 'uri' | 文件uri。 注意： 查询照片时，该字段仅支持使用DataSharePredicates.equalTo谓词。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
 | PHOTO_TYPE | 'media_type' | 媒体文件类型。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
 | DISPLAY_NAME | 'display_name' | 显示名字。规格为： - 应包含有效文件主名和图片或视频扩展名。 - 文件名字符串长度的取值范围为[1, 255]。 - 文件主名中不允许出现的非法英文字符，包括：. .. \ / : * ? " ' ` < > \| { } [ ]。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
-| SIZE | 'size' | 文件大小（单位：字节）。动态照片的size包括图片和视频的总大小。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
-| DATE_ADDED | 'date_added' | 文件创建时的Unix时间戳（单位：秒）。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
-| DATE_MODIFIED | 'date_modified' | 文件修改时的Unix时间戳（单位：秒）。修改文件名不会改变此值，当文件内容发生修改时才会更新。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
-| DURATION | 'duration' | 持续时间（单位：毫秒）。在API version 23之前，动态照片的duration将返回0；在API version 23及之后，返回动态照片附带视频片段的时长，异常场景返回-1。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
-| WIDTH | 'width' | 图片宽度（单位：像素）。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
-| HEIGHT | 'height' | 图片高度（单位：像素）。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
-| DATE_TAKEN | 'date_taken' | 拍摄时的Unix时间戳（单位：秒）。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
-| ORIENTATION | 'orientation' | 文件的旋转角度，单位为度。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
+| SIZE | 'size' | 文件大小，单位：字节（Byte）。动态照片的size包括图片和视频的总大小。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
+| DATE_ADDED | 'date_added' | 文件创建时的Unix时间戳，单位：秒（s）。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
+| DATE_MODIFIED | 'date_modified' | 文件修改时的Unix时间戳，单位：秒（s）。修改文件名不会改变此值，当文件内容发生修改时才会更新。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
+| DURATION | 'duration' | 持续时间，单位：毫秒（ms）。在API version 23之前，动态照片的duration将返回0；在API version 23及之后，返回动态照片附带视频片段的时长，异常场景返回-1。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
+| WIDTH | 'width' | 图片宽度，单位：像素（px）。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
+| HEIGHT | 'height' | 图片高度，单位：像素（px）。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
+| DATE_TAKEN | 'date_taken' | 拍摄时的Unix时间戳，单位：秒（s）。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
+| ORIENTATION | 'orientation' | 文件的旋转角度，单位：度（°）。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
 | FAVORITE | 'is_favorite' | 收藏。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
 | TITLE | 'title' | 文件标题。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
-| DATE_ADDED_MS12+ | 'date_added_ms' | 文件创建时的Unix时间戳（单位：毫秒）。 注意： 查询照片时，不支持基于该字段排序。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
-| DATE_MODIFIED_MS12+ | 'date_modified_ms' | 文件修改时的Unix时间戳（单位：毫秒）。修改文件名不会改变此值，当文件内容发生修改时才会更新。 注意： 查询照片时，不支持基于该字段排序。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
+| DATE_ADDED_MS12+ | 'date_added_ms' | 文件创建时的Unix时间戳，单位：毫秒（ms）。 注意： 查询照片时，不支持基于该字段排序。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
+| DATE_MODIFIED_MS12+ | 'date_modified_ms' | 文件修改时的Unix时间戳，单位：毫秒（ms）。修改文件名不会改变此值，当文件内容发生修改时才会更新。 注意： 查询照片时，不支持基于该字段排序。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
 | PHOTO_SUBTYPE12+ | 'subtype' | 媒体文件的子类型。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
 | DYNAMIC_RANGE_TYPE12+ | 'dynamic_range_type' | 媒体文件的动态范围类型。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
-| COVER_POSITION12+ | 'cover_position' | 动态照片的封面位置，具体表示封面帧所对应的视频时间戳（单位：微秒）。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
+| COVER_POSITION12+ | 'cover_position' | 动态照片的封面位置，具体表示封面帧所对应的视频时间戳，单位：微秒（μs）。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
 | BURST_KEY12+ | 'burst_key' | 一组连拍照片的唯一标识：uuid。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
 | LCD_SIZE12+ | 'lcd_size' | LCD图片的宽高，值为width:height拼接而成的字符串。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
 | THM_SIZE12+ | 'thm_size' | THUMB图片的宽高，值为width:height拼接而成的字符串。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
 | DETAIL_TIME13+ | 'detail_time' | 大图浏览时间，值为拍摄时对应时区的时间的字符串，不会跟随时区变化。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
-| DATE_TAKEN_MS13+ | 'date_taken_ms' | 拍摄时的Unix时间戳（单位：毫秒）。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
+| DATE_TAKEN_MS13+ | 'date_taken_ms' | 拍摄时的Unix时间戳，单位：毫秒（ms）。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
 | POSITION16+ | 'position' | 文件位置类型。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
 | MEDIA_SUFFIX18+ | 'media_suffix' | 文件的后缀名。 |
 | OWNER_ALBUM_ID22+ | 'owner_album_id' | 照片所属的相册id。 |
 | ASPECT_RATIO22+ | 'aspect_ratio' | 图片和视频的宽高比。 ​模型约束：此接口仅可在Stage模型下使用。 |
-| CHANGE_TIME23+ | 'change_time' | 照片的更改时间（单位：秒）。 |
-| LOCAL_ASSET_SIZE | 'local_asset_size' | 本地文件的实际大小（单位：字节）。 - 该属性仅表示本地文件大小，默认值为0表示纯云文件或尚未识别的本地文件大小。 - 当本地文件为动态照片且模式发生变化时，该属性会发生变化。例如：当图库中的动态照片处于“关闭动态”状态时，该属性仅表示封面帧大小。 起始版本： 26.0.0 ​模型约束： 此接口仅可在Stage模型下使用。 |
+| CHANGE_TIME23+ | 'change_time' | 照片的更改时间，单位：秒（s）。 |
+| LOCAL_ASSET_SIZE | 'local_asset_size' | 本地文件的实际大小，单位：字节（Byte）。 - 该属性仅表示本地文件大小，默认值为0表示纯云文件或尚未识别的本地文件大小。 - 当本地文件为动态照片且模式发生变化时，该属性会发生变化。例如：当图库中的动态照片处于“关闭动态”状态时，该属性仅表示封面帧大小。 起始版本： 26.0.0 ​模型约束： 此接口仅可在Stage模型下使用。 |
 
 
 
 
-#### AlbumKeys
+## AlbumKeys
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，相册关键信息。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | URI | 'uri' | 相册uri。 |
 | ALBUM_NAME | 'album_name' | 相册名字。 |
 | ALBUM_LPATH23+ | 'lpath' | 相册的虚拟路径。 支持的相册及对应的lpath值： - 相机应用相册：'/DCIM/Camera' - 截图应用相册：'/Pictures/Screenshots' - 屏幕录制应用相册：'/Pictures/Screenrecords' - 用户创建的相册：'/Pictures/Users/{用户自定义相册名称}' |
-| CHANGE_TIME23+ | 'change_time' | 相册的更改时间（单位：秒）。 |
+| CHANGE_TIME23+ | 'change_time' | 相册内容更改的时间戳，单位：秒（s）。 |
 
 
 
 
-#### ResourceType11+
+## ResourceType11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，写入资源的类型。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -207,13 +226,15 @@ PhotoSubtype是不同[PhotoAsset](https://developer.huawei.com/consumer/cn/doc/h
 
 
 
-#### ImageFileType13+
+## ImageFileType13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，图片保存类型。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -223,13 +244,15 @@ PhotoSubtype是不同[PhotoAsset](https://developer.huawei.com/consumer/cn/doc/h
 
 
 
-#### NotifyType
+## NotifyType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，通知事件的类型。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -242,29 +265,33 @@ PhotoSubtype是不同[PhotoAsset](https://developer.huawei.com/consumer/cn/doc/h
 
 
 
-#### DefaultChangeUri
+## DefaultChangeUri
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，DefaultChangeUri子类型。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| DEFAULT_PHOTO_URI | 'file://media/Photo' | 默认PhotoAsset的uri，与forSubUri{true}一起使用，将接收所有PhotoAsset的更改通知。 |
-| DEFAULT_ALBUM_URI | 'file://media/PhotoAlbum' | 默认相册的uri，与forSubUri{true}一起使用，将接收所有相册的更改通知。 |
+| DEFAULT_PHOTO_URI | 'file://media/Photo' | 默认PhotoAsset的URI。使用时需要将forSubUri参数设置为true，才能接收所有PhotoAsset的更改通知。如果forSubUri设置为false或不设置，将不会接收更改通知。 |
+| DEFAULT_ALBUM_URI | 'file://media/PhotoAlbum' | 默认相册的URI。使用时需要将forSubUri参数设置为true，才能接收所有相册的更改通知。如果forSubUri设置为false或不设置，将不会接收更改通知。 |
 
 
 
 
-#### PhotoViewMIMETypes
+## PhotoViewMIMETypes
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，可选择的媒体文件类型。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -276,13 +303,15 @@ PhotoSubtype是不同[PhotoAsset](https://developer.huawei.com/consumer/cn/doc/h
 
 
 
-#### RecommendationType11+
+## RecommendationType11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，推荐的图片类型。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -328,15 +357,17 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### SingleSelectionMode18+
+## SingleSelectionMode18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，单选模式类型。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -347,15 +378,17 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### FilterOperator19+
+## FilterOperator19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，支持进行过滤的操作符。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -370,9 +403,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### DeliveryMode11+
+## DeliveryMode11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，资源分发模式。
 
@@ -380,22 +414,25 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| FAST_MODE | 0 | 快速模式。 针对分段式拍照或视频场景，若当前存在高质量图或视频，则立即返回高质量图或视频的请求结果回调；若当前存在低质量图或视频，则立即返回低质量图或视频的请求结果回调。 |
-| HIGH_QUALITY_MODE | 1 | 高质量模式。 针对分段式拍照或视频场景，若当前存在高质量图或视频，则立即返回高质量图或视频的请求结果回调；若当前存在低质量图或视频，则申请高质量图或视频的生成任务，待高质量图或视频生成后，返回高质量图或视频的请求结果回调。 |
-| BALANCE_MODE | 2 | 均衡模式。 - 针对分段式拍照场景，若当前存在高质量图，则立即返回高质量图的请求结果回调；若当前存在低质量图，则立即返回低质量图的请求结果回调，并申请高质量图生成任务，待高质量图生成后，再次返回高质量图的请求结果回调。 - 针对分段式视频场景，若当前存在高质量视频，则立即返回高质量视频的请求结果回调；若当前存在低质量视频，则立即返回低质量视频的请求结果回调。 |
+| FAST_MODE | 0 | 快速模式，优先返回当前可用的资源。 针对分段式拍照或视频场景，若当前存在高质量图或视频，则立即返回高质量图或视频的请求结果回调；若当前存在低质量图或视频，则立即返回低质量图或视频的请求结果回调。 |
+| HIGH_QUALITY_MODE | 1 | 高质量模式，确保返回高质量资源。 针对分段式拍照或视频场景，若当前存在高质量图或视频，则立即返回高质量图或视频的请求结果回调；若当前存在低质量图或视频，则申请高质量图或视频的生成任务，待高质量图或视频生成后，返回高质量图或视频的请求结果回调。 |
+| BALANCE_MODE | 2 | 均衡模式，在平衡性能和质量的基础上返回资源。 - 针对分段式拍照场景，若当前存在高质量图，则立即返回高质量图的请求结果回调；若当前存在低质量图，则立即返回低质量图的请求结果回调，并申请高质量图生成任务，待高质量图生成后，再次返回高质量图的请求结果回调。 - 针对分段式视频场景，若当前存在高质量视频，则立即返回高质量视频的请求结果回调；若当前存在低质量视频，则立即返回低质量视频的请求结果回调。 |
 
 
 
 
-#### CompatibleMode15+
+## CompatibleMode15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 配置转码模式。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -405,13 +442,15 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### CompleteButtonText14+
+## CompleteButtonText14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 配置完成按钮显示内容。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -422,13 +461,15 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### NotifyChangeType20+
+## NotifyChangeType20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，媒体资产（图片/视频）或相册变更事件的通知类型。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -439,13 +480,15 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### PhotoSource20+
+## PhotoSource20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，图片或者视频数据的来源类型。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -456,15 +499,17 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### MovingPhotoBadgeStateType22+
+## MovingPhotoBadgeStateType22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，动态照片状态。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -475,9 +520,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### SceneType23+
+## SceneType23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，动态照片播放的场景。
 
@@ -487,6 +533,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | GRID_TO_PHOTO_BROWSER | 0 | 从宫格点击进入大图。 |
@@ -495,9 +542,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### PlayMode23+
+## PlayMode23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，是否支持动态照片自动播放。
 
@@ -507,6 +555,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DEFAULT | 0 | 不支持动态照片自动播放。 |
@@ -515,25 +564,30 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### VideoMode22+
+## VideoMode22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-枚举，视频文件的log模式。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-**系统能力**: SystemCapability.FileManagement.PhotoAccessHelper.Core
+表示视频文件的log模式类型的枚举。
+
+视频入库后，系统会异步判断其是否为log模式。判断完成前，取值为DEFAULT；判断完成后，log模式视频的取值会更新为LOG_VIDEO。由于取值可能变化，不建议将VideoMode作为查询条件。
+
+**系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| DEFAULT | 0 | 默认类型。 取值为0表示当前视频非log模式或未判断类型，后续部分视频判断后字段会更新为1，因此不建议使用此字段进行查询。 |
-| LOG_VIDEO | 1 | log模式视频的文件类型。 |
+| DEFAULT | 0 | 非log模式视频，或尚未完成log模式判断的视频。 |
+| LOG_VIDEO | 1 | log模式视频。 |
 
 
 
 
-#### OperationType22+
+## OperationType22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示各类谓词的枚举。
 
@@ -542,6 +596,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -563,9 +618,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### GridLevel23+
+## GridLevel23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举类型，用于设置拉起picker后的宫格列数档位。
 
@@ -574,6 +630,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 **模型约束**： 此接口仅可在Stage模型下使用。
 
 **系统能力**: SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -584,9 +641,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### GridPinchModeType23+
+## GridPinchModeType23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，宫格捏合模式类型。
 
@@ -596,6 +654,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 **系统能力**: SystemCapability.FileManagement.PhotoAccessHelper.Core
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | FULL_FUNCTION_GRID | 0 | 宫格支持捏合，捏合后支持选中、点击进大图操纵。 |
@@ -603,9 +662,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### AvailabilityStatus
+## AvailabilityStatus
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，媒体库可用性状态。
 
@@ -615,6 +675,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | AVAILABLE | 'available' | 媒体库可用。 |
@@ -623,9 +684,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### MediaAssetPermissionState
+## MediaAssetPermissionState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，媒体库资产读权限状态。
 
@@ -634,6 +696,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -645,9 +708,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### PreferredCompatibleMode
+## PreferredCompatibleMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，根据配置的资产兼容性执行转码。
 
@@ -659,8 +723,9 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| DEFAULT | 0 | 根据配置的资产兼容性功能执行转码。 |
+| DEFAULT | 0 | 根据系统的资产兼容性配置自动判断是否执行转码。如果当前设备不支持资产的原始格式，则会自动转码为兼容格式。 |
 | CURRENT | 1 | 不进行转码。资产将以其原始格式返回。 |
 | COMPATIBLE | 2 | 所有资产都被转码为最广泛兼容的格式（如JPEG）。 |

@@ -1,10 +1,10 @@
 # 能耗诊断：Energy分析
 
-更新时间：2026-07-28 12:07:32
+更新时间：2026-08-29 09:41:34
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-profiler-energy
 
-#### 功能介绍
+## 功能介绍
 
  
 从DevEco Studio 5.1.0 Release版本开始，DevEco Profiler提供Energy模板，帮助用户在应用运行过程中查看能耗信息，包括不同器件的能耗、整机温度以及能耗异常帧，从而方便用户对能耗问题进行调优。
@@ -21,7 +21,7 @@ Energy模板支持的泳道包括：Energy Anomaly、Temperature、Energy、Fram
 
  
 
-#### 定位能耗问题
+## 定位能耗问题
 
 录制结束等待处理数据完成。默认包含Energy Anomaly、Temperature以及Energy三条能耗相关泳道。
  
@@ -29,7 +29,7 @@ Energy模板支持的泳道包括：Energy Anomaly、Temperature、Energy、Fram
  
 **Energy Anomaly泳道**
  
-用于展示能耗相关的异常帧信息。该泳道暂不支持在Wearable设备和2in1设备上进行应用性能分析。其中，从26.0.0 Beta2版本开始，不支持2in1设备。
+用于展示能耗相关的异常帧信息。该泳道暂不支持在Wearable设备和2in1设备上进行应用性能分析。其中，从26.0.0版本开始，不支持2in1设备。
  
 - 将鼠标悬浮于泳道上，可以查看空跑的渲染帧数（RS Empty Run）、不能正常调用动态系统合成器（DSS）合成而直接使用GPU进行渲染导致能耗恶化的帧的次数（GPU Consumption）、UI空跑次数（UI Empty Run）、CPU高负载异常次数（High CPU Load）。下方**Details**区域，可以看到所选范围内的能耗异常类型、开始时间、结束时间、能耗异常信息、能耗异常原因、能耗异常数量。
 ![](assets/能耗诊断：Energy分析/file-20260514133152477-1.png)
@@ -50,7 +50,7 @@ Energy模板支持的泳道包括：Energy Anomaly、Temperature、Energy、Fram
  
 用于展示整机的温度信息。该泳道暂不支持在2in1设备上进行应用性能分析。
  
-- 将鼠标悬浮于泳道上可以查看对应时间范围的温度、温度等级，帮助用户明确温度是否有明显上升，从而进行进一步的能耗定位。下方**Detail****s**区域，可以看到所选范围内的最大温度、最小温度、平均温度。
+- 将鼠标悬浮于泳道上可以查看对应时间范围的温度、温度等级，帮助用户明确温度是否有明显上升，从而进行进一步的能耗定位。下方**Details**区域，可以看到所选范围内的最大温度、最小温度、平均温度。
 ![](assets/能耗诊断：Energy分析/file-20260514133152477-4.png)
 
 
@@ -63,4 +63,4 @@ Energy模板支持的泳道包括：Energy Anomaly、Temperature、Energy、Fram
  
 - 可在Energy泳道中查看录制范围内具体器件消耗的电量，器件包含：CPU、*Display（屏幕显示耗电量）、GPU、Location（定位模块耗电量）、Camera（相机耗电量）、Bluetooth（蓝牙功能耗电量）、Flashlight（闪光灯功能耗电量）、Audio（声音模块耗电量）、Wifi（无线功能耗电量）、Modem（信号模块耗电量）。*Device表示整机电流消耗情况。
 - 框选Energy泳道数据，**Energy Detail**中呈现框选时间段内的详情信息，根据不同器件的消耗可结合Callstack泳道的调用栈信息进行进一步分析。
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/Kdkmz2Z7RA2zTDAd_YSFfw/zh-cn_image_0000002648076708.png?HW-CC-KV=V1&HW-CC-Date=20260730T071823Z&HW-CC-Expire=86400&HW-CC-Sign=969250DAB71F4F15B32073260F3F78076D960A7ECEA64DD181AC3929B2D2DBD1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/aLZZP2OGRwemDWAeqoUR5Q/zh-cn_image_0000002701822854.png?HW-CC-KV=V1&HW-CC-Date=20260911T072818Z&HW-CC-Expire=86400&HW-CC-Sign=3B4CF7F22B6A2D8596B579DF31F0790438E9F960C33550C79FF297B558348381)

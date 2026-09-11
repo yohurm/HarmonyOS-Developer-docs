@@ -1,18 +1,19 @@
 # HiDebug Trace错误码
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-hiviewdfx-hidebug-trace
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!TIP]
 > 以下仅介绍本模块特有错误码，通用错误码请参考 通用错误码说明文档 。
 
 
 
-#### 11400102 重复采集
+## 11400102 重复采集
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -32,9 +33,10 @@ Capture trace already enabled.
 
 
 
-#### 11400103 权限校验失败
+## 11400103 权限校验失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -54,9 +56,10 @@ No write permission on the file.
 
 
 
-#### 11400104 内部异常
+## 11400104 内部异常
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -80,9 +83,10 @@ Abnormal trace status.
 
 
 
-#### 11400105 未开启trace采集
+## 11400105 未开启trace采集
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -102,9 +106,10 @@ No capture trace running.
 
 
 
-#### 11400106 接口调用配额已超出
+## 11400106 接口调用配额已超出
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -124,9 +129,10 @@ Quota exceeded.
 
 
 
-#### 11400120 trace文件存储达到限制
+## 11400120 trace文件存储达到限制
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -146,9 +152,10 @@ Trace storage limit reached.
 
 
 
-#### 11400302 trace采集超出资源配额
+## 11400302 trace采集超出资源配额
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 

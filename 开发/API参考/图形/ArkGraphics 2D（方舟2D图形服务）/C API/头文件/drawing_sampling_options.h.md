@@ -1,13 +1,14 @@
 # drawing_sampling_options.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-sampling-options-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文件中定义了与采样相关的功能函数。用于图片或者纹理等图像的采样。
  
@@ -25,16 +26,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_Drawing_FilterMode | OH_Drawing_FilterMode | 过滤模式枚举。 |
@@ -43,10 +47,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_Drawing_SamplingOptions* OH_Drawing_SamplingOptionsCreate(OH_Drawing_FilterMode filterMode,OH_Drawing_MipmapMode mipmapMode) | 创建一个采样选项对象。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 mipmapMode不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。 |
@@ -56,15 +62,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Drawing_FilterMode
+### OH_Drawing_FilterMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Drawing_FilterMode
@@ -76,6 +84,7 @@ enum OH_Drawing_FilterMode
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | FILTER_MODE_NEAREST | 邻近过滤模式。 |
@@ -84,9 +93,10 @@ enum OH_Drawing_FilterMode
  
   
 
-#### OH_Drawing_MipmapMode
+### OH_Drawing_MipmapMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Drawing_MipmapMode
@@ -98,6 +108,7 @@ enum OH_Drawing_MipmapMode
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | MIPMAP_MODE_NONE | 忽略多级渐远纹理级别。 |
@@ -107,15 +118,17 @@ enum OH_Drawing_MipmapMode
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Drawing_SamplingOptionsCreate()
+### OH_Drawing_SamplingOptionsCreate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_SamplingOptions* OH_Drawing_SamplingOptionsCreate(OH_Drawing_FilterMode filterMode,OH_Drawing_MipmapMode mipmapMode)
@@ -135,6 +148,7 @@ mipmapMode不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_FilterMode filterMode | 过滤采样模式OH_Drawing_FilterMode。 |
@@ -143,6 +157,7 @@ mipmapMode不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_SamplingOptions* | 函数会返回一个指针，指针指向创建的采样选项对象OH_Drawing_SamplingOptions。 |
@@ -150,9 +165,10 @@ mipmapMode不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE�
  
   
 
-#### OH_Drawing_SamplingOptionsCopy()
+### OH_Drawing_SamplingOptionsCopy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_SamplingOptions* OH_Drawing_SamplingOptionsCopy(OH_Drawing_SamplingOptions* samplingOptions)
@@ -172,6 +188,7 @@ samplingOptions为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_SamplingOptions* samplingOptions | 指向采样选项对象OH_Drawing_SamplingOptions的指针。 |
@@ -179,6 +196,7 @@ samplingOptions为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_SamplingOptions* | 函数会返回一个指针，指针指向创建的采样选项对象副本OH_Drawing_SamplingOptions。如果对象返回NULL，表示创建失败；可能的原因是可用内存为空，或者是samplingOptions为NULL。 |
@@ -186,9 +204,10 @@ samplingOptions为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
   
 
-#### OH_Drawing_SamplingOptionsDestroy()
+### OH_Drawing_SamplingOptionsDestroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_SamplingOptionsDestroy(OH_Drawing_SamplingOptions* samplingOptions)
@@ -204,6 +223,7 @@ void OH_Drawing_SamplingOptionsDestroy(OH_Drawing_SamplingOptions* samplingOptio
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_SamplingOptions* samplingOptions | 指向采样选项对象OH_Drawing_SamplingOptions的指针。 |

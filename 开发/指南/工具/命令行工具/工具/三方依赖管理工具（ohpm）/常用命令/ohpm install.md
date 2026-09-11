@@ -1,13 +1,13 @@
 # ohpm install
 
-更新时间：2026-07-28 12:07:32
+更新时间：2026-08-29 09:41:34
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-install
 
 安装三方库。
  
 
-#### 命令格式
+## 命令格式
 
 ```text
 ohpm install [options] [[<@group>/]<pkg>[@<version> | @tag:<tag>]] ...
@@ -22,7 +22,7 @@ alias: i
  
  
 
-#### 功能描述
+## 功能描述
 
 用于安装指定组件或 oh-package.json5 文件中所有的依赖。如果存在 oh-package-lock.json5 文件，安装将取决于 oh-package-lock.json5 文件中锁定的版本。
  
@@ -61,22 +61,24 @@ ohpm install ./package.har
  
  
 
-#### Options
+## Options
 
  
 
-#### install_all
+### install_all
 
 - 默认值：true
 - 类型：Boolean
 - 别名：all
 
  
-可以在 install 命令后面配置 --all或者--install_all 参数，安装您项目下所有模块在其 oh-package.json5 中配置的全部依赖项。
+可以在install命令后面不配置参数、配置--all或者--install_all 参数，安装您项目下所有模块在其oh-package.json5中配置的全部依赖项。
+ 
+从ohpm 26.0.0.630版本开始，如无需安装，可配置--no-install_all参数。
  
  
 
-#### save-dynamic
+### save-dynamic
 
 - 默认值：false
 - 类型：Boolean
@@ -86,7 +88,7 @@ ohpm install ./package.har
  
  
 
-#### save-dev
+### save-dev
 
 - 默认值：false
 - 类型：Boolean
@@ -96,7 +98,7 @@ ohpm install ./package.har
  
  
 
-#### save-prod
+### save-prod
 
 - 默认值：true
 - 类型：Boolean
@@ -106,17 +108,17 @@ ohpm install ./package.har
  
  
 
-#### no-save
+### no-save
 
 - 默认值：true
 - 类型：Boolean
 
  
-可以在 install 命令后面配置 --no-save 参数，安装的三方库信息将不会写入 oh-package.json5 文件中。
+可以在install命令后面配置--no-save参数，安装的三方库信息将不会写入 oh-package.json5 文件中。不配置参数时，安装的三方库信息将写入oh-package.json5文件中。
  
  
 
-#### prefix
+### prefix
 
 - 默认值：""
 - 类型：string
@@ -126,7 +128,7 @@ ohpm install ./package.har
  
  
 
-#### parameterFile
+### parameterFile
 
 - 默认值：无
 - 类型：string
@@ -137,7 +139,7 @@ ohpm install ./package.har
  
  
 
-#### registry
+### registry
 
 - 默认值：""
 - 类型：URL
@@ -147,7 +149,7 @@ ohpm install ./package.har
  
  
 
-#### fetch_timeout
+### fetch_timeout
 
 - 默认值：60000
 - 类型：Number
@@ -158,17 +160,19 @@ ohpm install ./package.har
  
  
 
-#### strict_ssl
+### strict_ssl
 
 - 默认值：true
 - 类型：Boolean
 
  
-可以在 install 命令后面配置 --strict_ssl true 参数，校验 https 证书；配置 --strict_ssl false 参数，不校验 https 证书。
+在install命令后面不配置参数、配置--strict_ssl或--strict_ssl true参数时，开启校验HTTPS证书。
+ 
+从ohpm 26.0.0.630版本开始，如需关闭校验，可配置--no-strict_ssl或--strict_ssl false参数，推荐使用--no-strict_ssl参数。
  
  
 
-#### max_concurrent
+### max_concurrent
 
 - 默认值：50
 - 类型：Number
@@ -179,7 +183,7 @@ ohpm install ./package.har
  
  
 
-#### retry_times
+### retry_times
 
 - 默认值：1
 - 类型：Number
@@ -190,7 +194,7 @@ ohpm install ./package.har
  
  
 
-#### retry_interval
+### retry_interval
 
 - 默认值：1000
 - 类型：Number
@@ -201,7 +205,7 @@ ohpm install ./package.har
  
  
 
-#### experimental-concurrently-safe
+### experimental-concurrently-safe
 
 - 默认值：true
 - 类型：Boolean
@@ -211,17 +215,17 @@ ohpm install ./package.har
  
  
 
-#### target_path
+### target_path
 
 - 默认值：无
 - 类型：string
 
  
-可以在 install 命令后面配置 --target_path &lt;string&gt; 参数，用来指定在特定目标产物target语境下各模块的依赖配置文件（oh-package.json5）的路径。在执行ohpm install时，ohpm会优先安装&lt;target_path&gt;/&lt;moduleName&gt;/oh-package.json5文件中依赖。详情参见[target_path](#section79331822125611)。
+可以在 install 命令后面配置 --target_path &lt;string&gt; 参数，用来指定在特定目标产物target语境下各模块的依赖配置文件（oh-package.json5）的路径。在执行ohpm install时，ohpm会优先安装&lt;target_path&gt;/&lt;moduleName&gt;/oh-package.json5文件中的依赖。详情参见[target_path](#section79331822125611)。
  
  
 
-#### log_level
+### log_level
 
 - 默认值：无
 - 类型：String
@@ -231,7 +235,7 @@ ohpm install ./package.har
  
  
 
-#### debug
+### debug
 
 - 默认值：false
 - 类型：Boolean
@@ -241,7 +245,7 @@ ohpm install ./package.har
  
  
 
-#### lockfile_stable_order
+### lockfile_stable_order
 
 - 默认值：false
 - 类型：Boolean
@@ -251,7 +255,7 @@ ohpm install ./package.har
  
  
 
-#### odm_r2_project_root
+### odm_r2_project_root
 
 - 默认值：false
 - 类型：Boolean
@@ -261,7 +265,7 @@ ohpm install ./package.har
  
  
 
-#### enable_cross_process_lock
+### enable_cross_process_lock
 
 - 默认值：false
 - 类型：Boolean
@@ -271,7 +275,7 @@ ohpm install ./package.har
  
  
 
-#### resolve_conflict_strict
+### resolve_conflict_strict
 
 - 默认值：false
 - 类型：Boolean
@@ -281,17 +285,19 @@ ohpm install ./package.har
  
  
 
-#### resolve_conflict
+### resolve_conflict
 
 - 默认值：true
 - 类型：Boolean
 
  
-从ohpm 6.0.2.636版本开始，可以在 install 命令后面配置 --resolve_conflict 参数，ohpm会自动处理依赖版本冲突，详情参见[resolve_conflict](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpmrc#section368717475562)。
+从ohpm 6.0.2.636版本开始，可以在 install 命令后面不配置参数或配置--resolve_conflict参数，ohpm会自动处理依赖版本冲突，详情参见[resolve_conflict](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpmrc#section368717475562)。
+ 
+从ohpm 26.0.0.630版本开始，如无需自动处理时，配置--no-resolve_conflict参数。
  
  
 
-#### cache
+### cache
 
 - 默认值：无
 - 类型：String
@@ -301,7 +307,7 @@ ohpm install ./package.har
  
  
 
-#### auto_skip_install
+### auto_skip_install
 
 - 默认值：false
 - 类型：Boolean
@@ -311,7 +317,7 @@ ohpm install ./package.har
  
  
 
-#### metadata_cache
+### metadata_cache
 
 - 默认值：false
 - 类型：Boolean
@@ -321,7 +327,17 @@ ohpm install ./package.har
  
  
 
-#### 示例
+### symlink_for_local_dep
+
+- 默认值：false
+- 类型：Boolean
+
+ 
+从ohpm 26.0.0.630版本开始，可以在install命令后面配置--symlink_for_local_dep参数，设置后会对本地HAR依赖解压后的路径，创建软链接。详情参见[symlink_for_local_dep](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpmrc#section10418162818277)。
+ 
+ 
+
+## 示例
 
 安装 lottie 三方库，执行以下命令：
  
@@ -337,23 +353,23 @@ ohpm install @ohos/lottie
  
  
 
-#### oh_modules 
+## oh_modules
 
  
 
-#### ohpm 1.0.0~1.3.0
+### ohpm 1.0.0~1.3.0
 
 使用 ohpm 安装时，项目中各 Module 的依赖项被统一安装在 Module 根目录下的 oh_modules 目录中，Module 中所有直接依赖和间接依赖都以平铺的方式存储在 oh_modules 目录下的 .ohpm 目录中，Module 的直接依赖则以软链接的方式添加进 oh_modules 文件夹的根目录中。因此，相同依赖项只会安装一次，从而减少磁盘使用空间，加快安装速度。
  
  
 
-#### ohpm 1.4.x
+### ohpm 1.4.x
 
 ohpm 客户端从 1.4.0 版本开始，同一项目下所有 Module 的依赖都会被统一安装在项目根目录下的 oh_modules 目录中，同时会在项目各 Module 根目录下的 oh_modules 中生成该 Module 的直接依赖的软链接，这些软链接会指向**项目根目录**下 oh_modules 中的 .ohpm 目录下依赖实际存储目录。
  
  
 
-#### target_path
+## target_path
 
 为了支持在构建过程中针对不同的产物定制不同的依赖，Hvigor会在构建时根据目标产物target为各模块自动生成定制的依赖配置文件（oh-package.json5），开发者可以在ohpm install时使用target_path选项来指定在特定目标产物target语境下各模块的依赖配置文件（oh-package.json5）的路径。
  
@@ -401,7 +417,7 @@ dependencyMap.json5内容示例：
 4、overrides中的依赖版本优先级高于&lt;target_path&gt;/moduleName/oh-package.json5中对应的依赖版本。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/SdPCpZutRpm7iOokvEkeDw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071813Z&HW-CC-Expire=86400&HW-CC-Sign=6721377808890660457625AA902C371D6C7CD03DA76A942392BC310E2671A40A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/SU3wwSAQSSGRI48AZC9kwA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072817Z&HW-CC-Expire=86400&HW-CC-Sign=602CFEC5CA76A0E2E01FE273E4DD28E8E44ED39EA5FAD4AFD62C72BA004FD6D3)
  
 
 仅当&lt;target_path&gt;/dependencyMap.json5中targetName的值不为空且不等于'default'时，&lt;project_root&gt;/moduleName目录下生成的lock文件名才会变更为：oh-package-targetName-lock.json5。

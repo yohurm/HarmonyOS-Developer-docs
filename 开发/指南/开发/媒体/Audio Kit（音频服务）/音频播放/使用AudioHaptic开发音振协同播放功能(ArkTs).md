@@ -1,6 +1,6 @@
 # 使用AudioHaptic开发音振协同播放功能(ArkTS)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-audiohaptic-for-playback
 
@@ -9,13 +9,13 @@
 AudioHaptic提供音频与振动协同播放及管理的方法，适用于需要在播放音频时同步发起振动的场景，如来电铃声随振、键盘按键反馈、消息通知反馈等。
 
 
-#### 开发指导
+## 开发指导
 
 使用AudioHaptic开发音频与振动协同播放功能，涉及到音频及振动资源的管理、音频时延模式及音频流使用类型的配置、音振播放器的创建及管理等。本文将以一次音振协同播放的过程为例，讲解如何使用AudioHaptic开发音振协同播放功能，建议结合[audioHaptic](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-audiohaptic)API接口文档一起阅读。
 
 
 
-#### 权限申请
+### 权限申请
 
 如果应用创建的AudioHapticPlayer需要触发振动，则需要校验应用是否拥有该权限：ohos.permission.VIBRATE。
 1. 请参考[声明权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions)指导，声明该振动权限。
@@ -23,7 +23,7 @@ AudioHaptic提供音频与振动协同播放及管理的方法，适用于需要
 
 
 
-#### 开发步骤及注意事项
+### 开发步骤及注意事项
 1. 获取音振管理器实例，并注册音频及振动资源，单个应用最多支持同时注册128个资源，播放器支持的音频和振动资源格式，请查看[registerSource](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-audiohaptic#registersource)文档中的描述。开发者可通过如下两种方式注册资源：
 
   

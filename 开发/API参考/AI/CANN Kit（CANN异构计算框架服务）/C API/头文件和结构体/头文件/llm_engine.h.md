@@ -1,13 +1,14 @@
 # llm_engine.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/cannkit-llm-engine
 **支持设备：** PC/2in1
 
-#### 概述
+## 概述
 
-**支持设备：** PC/2in1
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 定义用于LLM模型推理的API。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** PC/2in1
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 类型定义
+### 类型定义
 
-**支持设备：** PC/2in1
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | typedef struct HMS_LLMEngine_Context HMS_LLMEngine_Context | 定义LLM引擎上下文的别名。 |
@@ -43,10 +47,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** PC/2in1
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | HMS_LLMEngine_InferPerfMode { HMS_LLMENGINE_INFERPERF_UNSET = 0, HMS_LLMENGINE_INFERPERF_LOW, HMS_LLMENGINE_INFERPERF_MIDDLE, HMS_LLMENGINE_INFERPERF_HIGH, HMS_LLMENGINE_INFERPERF_EXTREME_HIGH } | 推断性能模式。 |
@@ -54,10 +60,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** PC/2in1
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | HMS_LLMEngine_Executor * HMS_LLMEngineExecutor_CreateFromExecutorJson (const char *jsonFile) | 通过JSON配置文件创建LLM引擎执行器句柄。 |

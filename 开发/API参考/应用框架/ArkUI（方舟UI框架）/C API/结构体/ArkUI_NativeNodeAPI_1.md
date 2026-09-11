@@ -1,18 +1,19 @@
 # ArkUI_NativeNodeAPI_1
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-arkui-nativenodeapi-1
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct {...} ArkUI_NativeNodeAPI_1
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ArkUI提供的Native侧Node类型接口集合，支持组件节点的创建与销毁、节点树操作、属性与事件管理、测量和布局等能力，适用于使用Native API构建和操作ArkUI组件节点的场景。Node模块相关接口需要在主线程上调用。
  
@@ -24,16 +25,19 @@ ArkUI提供的Native侧Node类型接口集合，支持组件节点的创建与�
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 成员变量
+### 成员变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | int32_t version | 结构体版本，当前使用的ArkUI_NativeNodeAPI_1结构体的版本编号，由系统提供，开发者无需修改。 |
@@ -41,10 +45,12 @@ ArkUI提供的Native侧Node类型接口集合，支持组件节点的创建与�
  
   
 
-#### 成员函数
+### 成员函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle (*createNode)(ArkUI_NodeType type) | 基于ArkUI_NodeType生成对应的组件并返回组件对象指针。 |
@@ -91,15 +97,17 @@ ArkUI提供的Native侧Node类型接口集合，支持组件节点的创建与�
  
   
 
-#### 成员函数说明
+## 成员函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### createNode()
+### createNode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_NodeHandle (*createNode)(ArkUI_NodeType type)
@@ -113,6 +121,7 @@ ArkUI_NodeHandle (*createNode)(ArkUI_NodeType type)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeType type | 创建指定类型的UI组件节点。 |
@@ -120,6 +129,7 @@ ArkUI_NodeHandle (*createNode)(ArkUI_NodeType type)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_NodeHandle | 返回创建完成的组件对象指针，如果创建失败返回NULL。组件对象不再使用时，应调用disposeNode销毁；未正确管理生命周期可能导致Use After Free、进程崩溃或内存泄漏。 |
@@ -127,9 +137,10 @@ ArkUI_NodeHandle (*createNode)(ArkUI_NodeType type)
  
   
 
-#### disposeNode()
+### disposeNode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void (*disposeNode)(ArkUI_NodeHandle node)
@@ -143,6 +154,7 @@ void (*disposeNode)(ArkUI_NodeHandle node)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 组件指针对象。 |
@@ -150,9 +162,10 @@ void (*disposeNode)(ArkUI_NodeHandle node)
  
   
 
-#### addChild()
+### addChild()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*addChild)(ArkUI_NodeHandle parent, ArkUI_NodeHandle child)
@@ -166,6 +179,7 @@ int32_t (*addChild)(ArkUI_NodeHandle parent, ArkUI_NodeHandle child)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle parent | 父节点指针。 |
@@ -174,6 +188,7 @@ int32_t (*addChild)(ArkUI_NodeHandle parent, ArkUI_NodeHandle child)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_ARKTS_NODE_NOT_SUPPORTED 不支持对ArkTS创建的节点执行对应的操作。 ARKUI_ERROR_CODE_NODE_IS_ADOPTED 节点已被接纳为附属节点。从API version 22开始支持。 |
@@ -181,9 +196,10 @@ int32_t (*addChild)(ArkUI_NodeHandle parent, ArkUI_NodeHandle child)
  
   
 
-#### removeChild()
+### removeChild()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*removeChild)(ArkUI_NodeHandle parent, ArkUI_NodeHandle child)
@@ -197,6 +213,7 @@ int32_t (*removeChild)(ArkUI_NodeHandle parent, ArkUI_NodeHandle child)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle parent | 父节点指针。 |
@@ -205,6 +222,7 @@ int32_t (*removeChild)(ArkUI_NodeHandle parent, ArkUI_NodeHandle child)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_ARKTS_NODE_NOT_SUPPORTED 不支持对ArkTS创建的节点执行对应的操作。 ARKUI_ERROR_CODE_ADAPTER_EXIST NodeAdapter已经存在。 |
@@ -212,9 +230,10 @@ int32_t (*removeChild)(ArkUI_NodeHandle parent, ArkUI_NodeHandle child)
  
   
 
-#### insertChildAfter()
+### insertChildAfter()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*insertChildAfter)(ArkUI_NodeHandle parent, ArkUI_NodeHandle child, ArkUI_NodeHandle sibling)
@@ -228,6 +247,7 @@ int32_t (*insertChildAfter)(ArkUI_NodeHandle parent, ArkUI_NodeHandle child, Ark
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle parent | 父节点指针。 |
@@ -237,6 +257,7 @@ int32_t (*insertChildAfter)(ArkUI_NodeHandle parent, ArkUI_NodeHandle child, Ark
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_ARKTS_NODE_NOT_SUPPORTED 不支持对ArkTS创建的节点执行对应的操作。 ARKUI_ERROR_CODE_NODE_IS_ADOPTED 节点已被接纳为附属节点。从API version 22开始支持。 |
@@ -244,9 +265,10 @@ int32_t (*insertChildAfter)(ArkUI_NodeHandle parent, ArkUI_NodeHandle child, Ark
  
   
 
-#### insertChildBefore()
+### insertChildBefore()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*insertChildBefore)(ArkUI_NodeHandle parent, ArkUI_NodeHandle child, ArkUI_NodeHandle sibling)
@@ -260,6 +282,7 @@ int32_t (*insertChildBefore)(ArkUI_NodeHandle parent, ArkUI_NodeHandle child, Ar
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle parent | 父节点指针。 |
@@ -269,6 +292,7 @@ int32_t (*insertChildBefore)(ArkUI_NodeHandle parent, ArkUI_NodeHandle child, Ar
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_ARKTS_NODE_NOT_SUPPORTED 不支持对ArkTS创建的节点执行对应的操作。 ARKUI_ERROR_CODE_NODE_IS_ADOPTED 节点已被接纳为附属节点。从API version 22开始支持。 |
@@ -276,9 +300,10 @@ int32_t (*insertChildBefore)(ArkUI_NodeHandle parent, ArkUI_NodeHandle child, Ar
  
   
 
-#### insertChildAt()
+### insertChildAt()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*insertChildAt)(ArkUI_NodeHandle parent, ArkUI_NodeHandle child, int32_t position)
@@ -292,6 +317,7 @@ int32_t (*insertChildAt)(ArkUI_NodeHandle parent, ArkUI_NodeHandle child, int32_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle parent | 父节点指针。 |
@@ -301,6 +327,7 @@ int32_t (*insertChildAt)(ArkUI_NodeHandle parent, ArkUI_NodeHandle child, int32_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_ARKTS_NODE_NOT_SUPPORTED 不支持对ArkTS创建的节点执行对应的操作。 ARKUI_ERROR_CODE_NODE_IS_ADOPTED 节点已被接纳为附属节点。从API version 22开始支持。 |
@@ -308,9 +335,10 @@ int32_t (*insertChildAt)(ArkUI_NodeHandle parent, ArkUI_NodeHandle child, int32_
  
   
 
-#### setAttribute()
+### setAttribute()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*setAttribute)(ArkUI_NodeHandle node, ArkUI_NodeAttributeType attribute, const ArkUI_AttributeItem* item)
@@ -326,6 +354,7 @@ int32_t (*setAttribute)(ArkUI_NodeHandle node, ArkUI_NodeAttributeType attribute
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 需要设置属性的节点对象。 |
@@ -335,6 +364,7 @@ int32_t (*setAttribute)(ArkUI_NodeHandle node, ArkUI_NodeAttributeType attribute
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_ATTRIBUTE_OR_EVENT_NOT_SUPPORTED 组件不支持该属性。 ARKUI_ERROR_CODE_ARKTS_NODE_NOT_SUPPORTED 不支持对ArkTS创建的节点执行对应的操作。 ARKUI_ERROR_CODE_ADAPTER_EXIST NodeAdapter已经存在。 |
@@ -342,9 +372,10 @@ int32_t (*setAttribute)(ArkUI_NodeHandle node, ArkUI_NodeAttributeType attribute
  
   
 
-#### getAttribute()
+### getAttribute()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 const ArkUI_AttributeItem* (*getAttribute)(ArkUI_NodeHandle node, ArkUI_NodeAttributeType attribute)
@@ -358,6 +389,7 @@ const ArkUI_AttributeItem* (*getAttribute)(ArkUI_NodeHandle node, ArkUI_NodeAttr
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 需要获取属性的节点对象。 |
@@ -366,6 +398,7 @@ const ArkUI_AttributeItem* (*getAttribute)(ArkUI_NodeHandle node, ArkUI_NodeAttr
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | const ArkUI_AttributeItem* | 当前属性类型的属性值，失败返回空指针。 |
@@ -373,9 +406,10 @@ const ArkUI_AttributeItem* (*getAttribute)(ArkUI_NodeHandle node, ArkUI_NodeAttr
  
   
 
-#### resetAttribute()
+### resetAttribute()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*resetAttribute)(ArkUI_NodeHandle node, ArkUI_NodeAttributeType attribute)
@@ -389,6 +423,7 @@ int32_t (*resetAttribute)(ArkUI_NodeHandle node, ArkUI_NodeAttributeType attribu
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 需要重置属性的节点对象。 |
@@ -397,6 +432,7 @@ int32_t (*resetAttribute)(ArkUI_NodeHandle node, ArkUI_NodeAttributeType attribu
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_ATTRIBUTE_OR_EVENT_NOT_SUPPORTED 组件不支持该属性。 ARKUI_ERROR_CODE_ARKTS_NODE_NOT_SUPPORTED 不支持对ArkTS创建的节点执行对应的操作。 |
@@ -404,9 +440,10 @@ int32_t (*resetAttribute)(ArkUI_NodeHandle node, ArkUI_NodeAttributeType attribu
  
   
 
-#### registerNodeEvent()
+### registerNodeEvent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*registerNodeEvent)(ArkUI_NodeHandle node, ArkUI_NodeEventType eventType, int32_t targetId, void* userData)
@@ -420,6 +457,7 @@ int32_t (*registerNodeEvent)(ArkUI_NodeHandle node, ArkUI_NodeEventType eventTyp
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 需要注册事件的节点对象。 |
@@ -430,6 +468,7 @@ int32_t (*registerNodeEvent)(ArkUI_NodeHandle node, ArkUI_NodeEventType eventTyp
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_ATTRIBUTE_OR_EVENT_NOT_SUPPORTED 组件不支持该事件。 ARKUI_ERROR_CODE_ARKTS_NODE_NOT_SUPPORTED 不支持对ArkTS创建的节点执行对应的操作。 |
@@ -437,9 +476,10 @@ int32_t (*registerNodeEvent)(ArkUI_NodeHandle node, ArkUI_NodeEventType eventTyp
  
   
 
-#### unregisterNodeEvent()
+### unregisterNodeEvent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void (*unregisterNodeEvent)(ArkUI_NodeHandle node, ArkUI_NodeEventType eventType)
@@ -453,6 +493,7 @@ void (*unregisterNodeEvent)(ArkUI_NodeHandle node, ArkUI_NodeEventType eventType
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 需要反注册事件的节点对象。 |
@@ -461,9 +502,10 @@ void (*unregisterNodeEvent)(ArkUI_NodeHandle node, ArkUI_NodeEventType eventType
  
   
 
-#### registerNodeEventReceiver()
+### registerNodeEventReceiver()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void (*registerNodeEventReceiver)(void (*eventReceiver)(ArkUI_NodeEvent* event))
@@ -485,6 +527,7 @@ void (*registerNodeEventReceiver)(void (*eventReceiver)(ArkUI_NodeEvent* event))
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | void (*eventReceiver)(ArkUI_NodeEvent* event) | 事件回调统一入口函数。 |
@@ -492,9 +535,10 @@ void (*registerNodeEventReceiver)(void (*eventReceiver)(ArkUI_NodeEvent* event))
  
   
 
-#### unregisterNodeEventReceiver()
+### unregisterNodeEventReceiver()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void (*unregisterNodeEventReceiver)()
@@ -508,9 +552,10 @@ void (*unregisterNodeEventReceiver)()
  
   
 
-#### markDirty()
+### markDirty()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void (*markDirty)(ArkUI_NodeHandle node, ArkUI_NodeDirtyFlag dirtyFlag)
@@ -524,6 +569,7 @@ void (*markDirty)(ArkUI_NodeHandle node, ArkUI_NodeDirtyFlag dirtyFlag)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 需要重新测量、布局或绘制的节点对象。 |
@@ -532,9 +578,10 @@ void (*markDirty)(ArkUI_NodeHandle node, ArkUI_NodeDirtyFlag dirtyFlag)
  
   
 
-#### getTotalChildCount()
+### getTotalChildCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 uint32_t (*getTotalChildCount)(ArkUI_NodeHandle node)
@@ -548,6 +595,7 @@ uint32_t (*getTotalChildCount)(ArkUI_NodeHandle node)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 目标节点对象。 |
@@ -555,6 +603,7 @@ uint32_t (*getTotalChildCount)(ArkUI_NodeHandle node)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | uint32_t | 子节点的个数；如果没有子节点，则返回0。 |
@@ -562,9 +611,10 @@ uint32_t (*getTotalChildCount)(ArkUI_NodeHandle node)
  
   
 
-#### getChildAt()
+### getChildAt()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_NodeHandle (*getChildAt)(ArkUI_NodeHandle node, int32_t position)
@@ -578,6 +628,7 @@ ArkUI_NodeHandle (*getChildAt)(ArkUI_NodeHandle node, int32_t position)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 目标节点对象。 |
@@ -586,6 +637,7 @@ ArkUI_NodeHandle (*getChildAt)(ArkUI_NodeHandle node, int32_t position)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_NodeHandle | 指定索引位置的子节点指针；如果该位置不存在子节点，则返回NULL。 |
@@ -593,9 +645,10 @@ ArkUI_NodeHandle (*getChildAt)(ArkUI_NodeHandle node, int32_t position)
  
   
 
-#### getFirstChild()
+### getFirstChild()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_NodeHandle (*getFirstChild)(ArkUI_NodeHandle node)
@@ -609,6 +662,7 @@ ArkUI_NodeHandle (*getFirstChild)(ArkUI_NodeHandle node)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 目标节点对象。 |
@@ -616,6 +670,7 @@ ArkUI_NodeHandle (*getFirstChild)(ArkUI_NodeHandle node)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_NodeHandle | 第一个子节点指针；如果没有子节点，则返回NULL。 |
@@ -623,9 +678,10 @@ ArkUI_NodeHandle (*getFirstChild)(ArkUI_NodeHandle node)
  
   
 
-#### getLastChild()
+### getLastChild()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_NodeHandle (*getLastChild)(ArkUI_NodeHandle node)
@@ -639,6 +695,7 @@ ArkUI_NodeHandle (*getLastChild)(ArkUI_NodeHandle node)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 目标节点对象。 |
@@ -646,6 +703,7 @@ ArkUI_NodeHandle (*getLastChild)(ArkUI_NodeHandle node)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_NodeHandle | 最后一个子节点指针；如果没有子节点，则返回NULL。 |
@@ -653,9 +711,10 @@ ArkUI_NodeHandle (*getLastChild)(ArkUI_NodeHandle node)
  
   
 
-#### getPreviousSibling()
+### getPreviousSibling()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_NodeHandle (*getPreviousSibling)(ArkUI_NodeHandle node)
@@ -669,6 +728,7 @@ ArkUI_NodeHandle (*getPreviousSibling)(ArkUI_NodeHandle node)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 目标节点对象。 |
@@ -676,6 +736,7 @@ ArkUI_NodeHandle (*getPreviousSibling)(ArkUI_NodeHandle node)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_NodeHandle | 上一个兄弟节点指针；如果不存在上一个兄弟节点，则返回NULL。 |
@@ -683,9 +744,10 @@ ArkUI_NodeHandle (*getPreviousSibling)(ArkUI_NodeHandle node)
  
   
 
-#### getNextSibling()
+### getNextSibling()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_NodeHandle (*getNextSibling)(ArkUI_NodeHandle node)
@@ -699,6 +761,7 @@ ArkUI_NodeHandle (*getNextSibling)(ArkUI_NodeHandle node)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 目标节点对象。 |
@@ -706,6 +769,7 @@ ArkUI_NodeHandle (*getNextSibling)(ArkUI_NodeHandle node)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_NodeHandle | 下一个兄弟节点指针；如果不存在下一个兄弟节点，则返回NULL。 |
@@ -713,9 +777,10 @@ ArkUI_NodeHandle (*getNextSibling)(ArkUI_NodeHandle node)
  
   
 
-#### registerNodeCustomEvent()
+### registerNodeCustomEvent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*registerNodeCustomEvent)(ArkUI_NodeHandle node, ArkUI_NodeCustomEventType eventType, int32_t targetId, void* userData)
@@ -729,6 +794,7 @@ int32_t (*registerNodeCustomEvent)(ArkUI_NodeHandle node, ArkUI_NodeCustomEventT
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 需要注册事件的节点对象。 |
@@ -739,6 +805,7 @@ int32_t (*registerNodeCustomEvent)(ArkUI_NodeHandle node, ArkUI_NodeCustomEventT
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_ATTRIBUTE_OR_EVENT_NOT_SUPPORTED 组件不支持该事件。 |
@@ -746,9 +813,10 @@ int32_t (*registerNodeCustomEvent)(ArkUI_NodeHandle node, ArkUI_NodeCustomEventT
  
   
 
-#### unregisterNodeCustomEvent()
+### unregisterNodeCustomEvent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void (*unregisterNodeCustomEvent)(ArkUI_NodeHandle node, ArkUI_NodeCustomEventType eventType)
@@ -762,6 +830,7 @@ void (*unregisterNodeCustomEvent)(ArkUI_NodeHandle node, ArkUI_NodeCustomEventTy
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 需要反注册事件的节点对象。 |
@@ -770,9 +839,10 @@ void (*unregisterNodeCustomEvent)(ArkUI_NodeHandle node, ArkUI_NodeCustomEventTy
  
   
 
-#### registerNodeCustomEventReceiver()
+### registerNodeCustomEventReceiver()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void (*registerNodeCustomEventReceiver)(void (*eventReceiver)(ArkUI_NodeCustomEvent* event))
@@ -794,6 +864,7 @@ void (*registerNodeCustomEventReceiver)(void (*eventReceiver)(ArkUI_NodeCustomEv
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | void (*eventReceiver)(ArkUI_NodeCustomEvent* event) | 事件回调统一入口函数。 |
@@ -801,9 +872,10 @@ void (*registerNodeCustomEventReceiver)(void (*eventReceiver)(ArkUI_NodeCustomEv
  
   
 
-#### unregisterNodeCustomEventReceiver()
+### unregisterNodeCustomEventReceiver()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void (*unregisterNodeCustomEventReceiver)()
@@ -817,9 +889,10 @@ void (*unregisterNodeCustomEventReceiver)()
  
   
 
-#### setMeasuredSize()
+### setMeasuredSize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*setMeasuredSize)(ArkUI_NodeHandle node, int32_t width, int32_t height)
@@ -833,6 +906,7 @@ int32_t (*setMeasuredSize)(ArkUI_NodeHandle node, int32_t width, int32_t height)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 目标节点对象。 |
@@ -842,6 +916,7 @@ int32_t (*setMeasuredSize)(ArkUI_NodeHandle node, int32_t width, int32_t height)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -849,9 +924,10 @@ int32_t (*setMeasuredSize)(ArkUI_NodeHandle node, int32_t width, int32_t height)
  
   
 
-#### setLayoutPosition()
+### setLayoutPosition()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*setLayoutPosition)(ArkUI_NodeHandle node, int32_t positionX, int32_t positionY)
@@ -865,6 +941,7 @@ int32_t (*setLayoutPosition)(ArkUI_NodeHandle node, int32_t positionX, int32_t p
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 目标节点对象。 |
@@ -874,6 +951,7 @@ int32_t (*setLayoutPosition)(ArkUI_NodeHandle node, int32_t positionX, int32_t p
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -881,9 +959,10 @@ int32_t (*setLayoutPosition)(ArkUI_NodeHandle node, int32_t positionX, int32_t p
  
   
 
-#### getMeasuredSize()
+### getMeasuredSize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_IntSize (*getMeasuredSize)(ArkUI_NodeHandle node)
@@ -897,6 +976,7 @@ ArkUI_IntSize (*getMeasuredSize)(ArkUI_NodeHandle node)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 目标节点对象。 |
@@ -904,6 +984,7 @@ ArkUI_IntSize (*getMeasuredSize)(ArkUI_NodeHandle node)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_IntSize | ArkUI_IntSize 组件的宽高。 |
@@ -911,9 +992,10 @@ ArkUI_IntSize (*getMeasuredSize)(ArkUI_NodeHandle node)
  
   
 
-#### getLayoutPosition()
+### getLayoutPosition()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_IntOffset (*getLayoutPosition)(ArkUI_NodeHandle node)
@@ -927,6 +1009,7 @@ ArkUI_IntOffset (*getLayoutPosition)(ArkUI_NodeHandle node)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 目标节点对象。 |
@@ -934,6 +1017,7 @@ ArkUI_IntOffset (*getLayoutPosition)(ArkUI_NodeHandle node)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_IntOffset | 组件布局完成后相对于父节点的偏移，单位为px。 |
@@ -941,9 +1025,10 @@ ArkUI_IntOffset (*getLayoutPosition)(ArkUI_NodeHandle node)
  
   
 
-#### measureNode()
+### measureNode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*measureNode)(ArkUI_NodeHandle node, ArkUI_LayoutConstraint* Constraint)
@@ -957,6 +1042,7 @@ int32_t (*measureNode)(ArkUI_NodeHandle node, ArkUI_LayoutConstraint* Constraint
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 目标节点对象。 |
@@ -965,6 +1051,7 @@ int32_t (*measureNode)(ArkUI_NodeHandle node, ArkUI_LayoutConstraint* Constraint
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -972,9 +1059,10 @@ int32_t (*measureNode)(ArkUI_NodeHandle node, ArkUI_LayoutConstraint* Constraint
  
   
 
-#### layoutNode()
+### layoutNode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*layoutNode)(ArkUI_NodeHandle node, int32_t positionX, int32_t positionY)
@@ -988,6 +1076,7 @@ int32_t (*layoutNode)(ArkUI_NodeHandle node, int32_t positionX, int32_t position
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 目标节点对象。 |
@@ -997,6 +1086,7 @@ int32_t (*layoutNode)(ArkUI_NodeHandle node, int32_t positionX, int32_t position
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1004,9 +1094,10 @@ int32_t (*layoutNode)(ArkUI_NodeHandle node, int32_t positionX, int32_t position
  
   
 
-#### addNodeEventReceiver()
+### addNodeEventReceiver()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*addNodeEventReceiver)(ArkUI_NodeHandle node, void (*eventReceiver)(ArkUI_NodeEvent* event))
@@ -1026,6 +1117,7 @@ int32_t (*addNodeEventReceiver)(ArkUI_NodeHandle node, void (*eventReceiver)(Ark
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 用于添加组件事件回调函数的对象。 |
@@ -1034,6 +1126,7 @@ int32_t (*addNodeEventReceiver)(ArkUI_NodeHandle node, void (*eventReceiver)(Ark
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1041,9 +1134,10 @@ int32_t (*addNodeEventReceiver)(ArkUI_NodeHandle node, void (*eventReceiver)(Ark
  
   
 
-#### removeNodeEventReceiver()
+### removeNodeEventReceiver()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*removeNodeEventReceiver)(ArkUI_NodeHandle node, void (*eventReceiver)(ArkUI_NodeEvent* event))
@@ -1057,6 +1151,7 @@ int32_t (*removeNodeEventReceiver)(ArkUI_NodeHandle node, void (*eventReceiver)(
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 用于删除组件事件回调函数的对象。 |
@@ -1065,6 +1160,7 @@ int32_t (*removeNodeEventReceiver)(ArkUI_NodeHandle node, void (*eventReceiver)(
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1072,9 +1168,10 @@ int32_t (*removeNodeEventReceiver)(ArkUI_NodeHandle node, void (*eventReceiver)(
  
   
 
-#### addNodeCustomEventReceiver()
+### addNodeCustomEventReceiver()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*addNodeCustomEventReceiver)(ArkUI_NodeHandle node, void (*eventReceiver)(ArkUI_NodeCustomEvent* event))
@@ -1094,6 +1191,7 @@ int32_t (*addNodeCustomEventReceiver)(ArkUI_NodeHandle node, void (*eventReceive
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 用于添加组件自定义事件回调函数的对象。 |
@@ -1102,6 +1200,7 @@ int32_t (*addNodeCustomEventReceiver)(ArkUI_NodeHandle node, void (*eventReceive
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1109,9 +1208,10 @@ int32_t (*addNodeCustomEventReceiver)(ArkUI_NodeHandle node, void (*eventReceive
  
   
 
-#### removeNodeCustomEventReceiver()
+### removeNodeCustomEventReceiver()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*removeNodeCustomEventReceiver)(ArkUI_NodeHandle node, void (*eventReceiver)(ArkUI_NodeCustomEvent* event))
@@ -1125,6 +1225,7 @@ int32_t (*removeNodeCustomEventReceiver)(ArkUI_NodeHandle node, void (*eventRece
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 用于删除组件自定义事件回调函数的对象。 |
@@ -1133,6 +1234,7 @@ int32_t (*removeNodeCustomEventReceiver)(ArkUI_NodeHandle node, void (*eventRece
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1140,9 +1242,10 @@ int32_t (*removeNodeCustomEventReceiver)(ArkUI_NodeHandle node, void (*eventRece
  
   
 
-#### setUserData()
+### setUserData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*setUserData)(ArkUI_NodeHandle node, void* userData)
@@ -1156,6 +1259,7 @@ int32_t (*setUserData)(ArkUI_NodeHandle node, void* userData)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 用于保存自定义数据的组件。 |
@@ -1164,6 +1268,7 @@ int32_t (*setUserData)(ArkUI_NodeHandle node, void* userData)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1171,9 +1276,10 @@ int32_t (*setUserData)(ArkUI_NodeHandle node, void* userData)
  
   
 
-#### getUserData()
+### getUserData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void* (*getUserData)(ArkUI_NodeHandle node)
@@ -1187,6 +1293,7 @@ void* (*getUserData)(ArkUI_NodeHandle node)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 保存了自定义数据的组件。 |
@@ -1194,6 +1301,7 @@ void* (*getUserData)(ArkUI_NodeHandle node)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | void* | 此前通过setUserData保存在该组件上的自定义数据指针。 |
@@ -1201,9 +1309,10 @@ void* (*getUserData)(ArkUI_NodeHandle node)
  
   
 
-#### setLengthMetricUnit()
+### setLengthMetricUnit()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*setLengthMetricUnit)(ArkUI_NodeHandle node, ArkUI_LengthMetricUnit unit)
@@ -1217,6 +1326,7 @@ int32_t (*setLengthMetricUnit)(ArkUI_NodeHandle node, ArkUI_LengthMetricUnit uni
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 用于指定单位的组件。 |
@@ -1225,6 +1335,7 @@ int32_t (*setLengthMetricUnit)(ArkUI_NodeHandle node, ArkUI_LengthMetricUnit uni
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1232,9 +1343,10 @@ int32_t (*setLengthMetricUnit)(ArkUI_NodeHandle node, ArkUI_LengthMetricUnit uni
  
   
 
-#### getParent()
+### getParent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_NodeHandle (*getParent)(ArkUI_NodeHandle node)
@@ -1248,6 +1360,7 @@ ArkUI_NodeHandle (*getParent)(ArkUI_NodeHandle node)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 目标节点对象。 |
@@ -1255,6 +1368,7 @@ ArkUI_NodeHandle (*getParent)(ArkUI_NodeHandle node)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_NodeHandle | 父节点指针；如果不存在父节点，则返回NULL。 |
@@ -1262,9 +1376,10 @@ ArkUI_NodeHandle (*getParent)(ArkUI_NodeHandle node)
  
   
 
-#### removeAllChildren()
+### removeAllChildren()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*removeAllChildren)(ArkUI_NodeHandle parent)
@@ -1278,6 +1393,7 @@ int32_t (*removeAllChildren)(ArkUI_NodeHandle parent)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle parent | 父节点指针。 |
@@ -1285,6 +1401,7 @@ int32_t (*removeAllChildren)(ArkUI_NodeHandle parent)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |

@@ -1,6 +1,6 @@
 # 图片区域解码与下采样(ArkTS)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-region-and-downsampling
 
@@ -12,6 +12,7 @@
 
 **适用场景**：
 
+
 | 场景 | 推荐方式 | 说明 |
 | --- | --- | --- |
 | 图片局部放大查看 | 区域解码 | 只解码需要查看的区域。 |
@@ -20,13 +21,13 @@
 
 
 
-#### 区域解码
+## 区域解码
 
 区域解码通过设置解码参数desiredRegion，指定需要解码的矩形区域。解码器仅解码该区域的数据。参数详情请参考[Region](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-i#region8)。
 
 
 
-#### 开发步骤
+### 开发步骤
 1. 参考[使用ImageSource完成图片解码](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-decoding)创建ImageSource实例。
 2. 设置desiredRegion参数执行区域解码。
 
@@ -55,7 +56,7 @@ async DecodeRegion(imageSource: image.ImageSource): Promise<image.PixelMap | und
 
 
 
-#### 使用限制
+### 使用限制
 
  - 区域坐标和大小必须在原图范围内。
  - 区域大小必须为正整数。
@@ -63,7 +64,7 @@ async DecodeRegion(imageSource: image.ImageSource): Promise<image.PixelMap | und
 
 
 
-#### 下采样解码
+## 下采样解码
 
 下采样解码通过设置解码参数desiredSize，指定期望输出的图片尺寸。解码器会根据期望尺寸输出PixelMap，减少最终的内存占用。
 
@@ -77,7 +78,7 @@ async DecodeRegion(imageSource: image.ImageSource): Promise<image.PixelMap | und
 
 
 
-#### 开发步骤
+### 开发步骤
 1. 参考[使用ImageSource完成图片解码](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-decoding)创建ImageSource实例。
 2. 设置desiredSize参数执行下采样解码。
 
@@ -102,13 +103,14 @@ async DownsampleDecode(imageSource: image.ImageSource): Promise<image.PixelMap |
 
 
 
-#### 区域解码与下采样组合使用
+## 区域解码与下采样组合使用
 
 当同时设置desiredRegion和desiredSize时，需要通过cropAndScaleStrategy参数指定裁剪与缩放的先后顺序。
 
 
 
-#### cropAndScaleStrategy策略
+### cropAndScaleStrategy策略
+
 
 | 策略 | 常量值 | 操作顺序 | 说明 |
 | --- | --- | --- | --- |
@@ -122,7 +124,7 @@ async DownsampleDecode(imageSource: image.ImageSource): Promise<image.PixelMap |
 
 
 
-#### 开发步骤
+### 开发步骤
 1. 参考[使用ImageSource完成图片解码](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-decoding)创建ImageSource实例。
 2. 同时设置desiredRegion、desiredSize和cropAndScaleStrategy参数。
 
@@ -153,7 +155,7 @@ async CombinedDecode(imageSource: image.ImageSource): Promise<image.PixelMap | u
 
 
 
-#### 注意事项
+## 注意事项
 
  - 同时设置desiredRegion和desiredSize时，建议设置cropAndScaleStrategy为CROP_FIRST，以保证解码效果一致。
  - 对于原始像素内存超过2GB的图片，建议使用下采样解码避免内存溢出。

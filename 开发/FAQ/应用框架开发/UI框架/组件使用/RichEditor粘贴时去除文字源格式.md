@@ -46,20 +46,20 @@ struct richEditorPage {
         .width(300)
         .height(400)
         .backgroundColor('#fafafa')
-        // 粘贴时，触发回调。
+       <em> // 粘贴时，触发回调。</em>
         .onPaste((event?: PasteEvent) => {
           if (event !== undefined && event.preventDefault) {
-            // 阻止默认粘贴行为
+           <em> // 阻止默认粘贴行为</em>
             event.preventDefault();
-            // 获取系统剪贴板实例
+          <em>  // 获取系统剪贴板实例</em>
             let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
-            // 获取剪贴板数据
+          <em>  // 获取剪贴板数据</em>
             systemPasteboard.getData((err: BusinessError, pasteData: pasteboard.PasteData) => {
               if (err) {
                 console.error(`Failed to get PasteData. Code:${err.code} ,message:${err.message}`);
                 return;
               }
-              // 提取纯文本内容
+            <em>  // 提取纯文本内容</em>
               let text: string = pasteData.getPrimaryText();
               this.controller.addTextSpan(text, { style: { fontSize: 16, fontColor: Color.Gray } });
             });

@@ -1,9 +1,9 @@
 # @ohos.app.ability.wantAgent (WantAgent模块)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-wantagent
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 WantAgent模块封装了[Want](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-want)对象，允许应用程序在未来的某个时间点触发WantAgent实例执行指定操作（如启动Ability、发送公共事件等）。
 
@@ -14,9 +14,10 @@ WantAgent模块封装了[Want](https://developer.huawei.com/consumer/cn/doc/harm
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { wantAgent } from '@kit.AbilityKit';
@@ -24,9 +25,10 @@ import { wantAgent } from '@kit.AbilityKit';
 
 
 
-#### wantAgent.getWantAgent
+## wantAgent.getWantAgent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getWantAgent(info: WantAgentInfo, callback: AsyncCallback&lt;WantAgent&gt;): void
 
@@ -38,6 +40,7 @@ getWantAgent(info: WantAgentInfo, callback: AsyncCallback&lt;WantAgent&gt;): voi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | info | WantAgentInfo | 是 | 表示创建WantAgent所需的配置信息，包括目标UIAbility、操作类型、请求码等。三方应用在WantAgentInfo中只能设置本应用的UIAbility。 |
@@ -47,6 +50,7 @@ getWantAgent(info: WantAgentInfo, callback: AsyncCallback&lt;WantAgent&gt;): voi
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -111,9 +115,10 @@ wantAgent.getWantAgent(wantAgentInfo, getWantAgentCallback);
 
 
 
-#### wantAgent.getWantAgent
+## wantAgent.getWantAgent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getWantAgent(info: WantAgentInfo): Promise&lt;WantAgent&gt;
 
@@ -125,12 +130,14 @@ getWantAgent(info: WantAgentInfo): Promise&lt;WantAgent&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | info | WantAgentInfo | 是 | 表示创建WantAgent所需的配置信息，包括目标UIAbility、操作类型、请求码等。三方应用在WantAgentInfo中只能设置本应用的UIAbility。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -140,6 +147,7 @@ getWantAgent(info: WantAgentInfo): Promise&lt;WantAgent&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -198,9 +206,10 @@ try {
 
 
 
-#### wantAgent.getBundleName
+## wantAgent.getBundleName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBundleName(agent: WantAgent, callback: AsyncCallback&lt;string&gt;): void
 
@@ -212,6 +221,7 @@ getBundleName(agent: WantAgent, callback: AsyncCallback&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | agent | WantAgent | 是 | WantAgent对象。 |
@@ -221,6 +231,7 @@ getBundleName(agent: WantAgent, callback: AsyncCallback&lt;string&gt;): void
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -300,9 +311,10 @@ try {
 
 
 
-#### wantAgent.getBundleName
+## wantAgent.getBundleName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBundleName(agent: WantAgent): Promise&lt;string&gt;
 
@@ -314,12 +326,14 @@ getBundleName(agent: WantAgent): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | agent | WantAgent | 是 | WantAgent对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -329,6 +343,7 @@ getBundleName(agent: WantAgent): Promise&lt;string&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -403,9 +418,10 @@ try {
 
 
 
-#### wantAgent.getUid
+## wantAgent.getUid
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUid(agent: WantAgent, callback: AsyncCallback&lt;number&gt;): void
 
@@ -417,6 +433,7 @@ getUid(agent: WantAgent, callback: AsyncCallback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | agent | WantAgent | 是 | WantAgent对象。 |
@@ -426,6 +443,7 @@ getUid(agent: WantAgent, callback: AsyncCallback&lt;number&gt;): void
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -509,9 +527,10 @@ try {
 
 
 
-#### wantAgent.getUid
+## wantAgent.getUid
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUid(agent: WantAgent): Promise&lt;number&gt;
 
@@ -523,12 +542,14 @@ getUid(agent: WantAgent): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | agent | WantAgent | 是 | WantAgent对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -538,6 +559,7 @@ getUid(agent: WantAgent): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -617,9 +639,10 @@ try {
 
 
 
-#### wantAgent.cancel
+## wantAgent.cancel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancel(agent: WantAgent, callback: AsyncCallback&lt;void&gt;): void
 
@@ -631,6 +654,7 @@ cancel(agent: WantAgent, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | agent | WantAgent | 是 | WantAgent对象。 |
@@ -640,6 +664,7 @@ cancel(agent: WantAgent, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -723,9 +748,10 @@ try {
 
 
 
-#### wantAgent.cancel
+## wantAgent.cancel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancel(agent: WantAgent): Promise&lt;void&gt;
 
@@ -737,12 +763,14 @@ cancel(agent: WantAgent): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | agent | WantAgent | 是 | WantAgent对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -752,6 +780,7 @@ cancel(agent: WantAgent): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -831,9 +860,10 @@ try {
 
 
 
-#### wantAgent.trigger
+## wantAgent.trigger
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 trigger(agent: WantAgent, triggerInfo: TriggerInfo, callback?: AsyncCallback&lt;CompleteData&gt;): void
 
@@ -847,6 +877,7 @@ trigger(agent: WantAgent, triggerInfo: TriggerInfo, callback?: AsyncCallback&lt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | agent | WantAgent | 是 | WantAgent对象。 |
@@ -857,6 +888,7 @@ trigger(agent: WantAgent, triggerInfo: TriggerInfo, callback?: AsyncCallback&lt;
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -942,9 +974,10 @@ try {
 
 
 
-#### wantAgent.equal
+## wantAgent.equal
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 equal(agent: WantAgent, otherAgent: WantAgent, callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -958,6 +991,7 @@ equal(agent: WantAgent, otherAgent: WantAgent, callback: AsyncCallback&lt;boolea
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | agent | WantAgent | 是 | WantAgent对象。 |
@@ -968,6 +1002,7 @@ equal(agent: WantAgent, otherAgent: WantAgent, callback: AsyncCallback&lt;boolea
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1047,9 +1082,10 @@ try {
 
 
 
-#### wantAgent.equal
+## wantAgent.equal
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 equal(agent: WantAgent, otherAgent: WantAgent): Promise&lt;boolean&gt;
 
@@ -1063,6 +1099,7 @@ equal(agent: WantAgent, otherAgent: WantAgent): Promise&lt;boolean&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | agent | WantAgent | 是 | WantAgent对象。 |
@@ -1070,6 +1107,7 @@ equal(agent: WantAgent, otherAgent: WantAgent): Promise&lt;boolean&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1079,6 +1117,7 @@ equal(agent: WantAgent, otherAgent: WantAgent): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1154,9 +1193,10 @@ try {
 
 
 
-#### wantAgent.getOperationType
+## wantAgent.getOperationType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOperationType(agent: WantAgent, callback: AsyncCallback&lt;number&gt;): void
 
@@ -1168,6 +1208,7 @@ getOperationType(agent: WantAgent, callback: AsyncCallback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | agent | WantAgent | 是 | WantAgent对象。 |
@@ -1177,6 +1218,7 @@ getOperationType(agent: WantAgent, callback: AsyncCallback&lt;number&gt;): void
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1257,9 +1299,10 @@ try {
 
 
 
-#### wantAgent.getOperationType
+## wantAgent.getOperationType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOperationType(agent: WantAgent): Promise&lt;number&gt;
 
@@ -1271,12 +1314,14 @@ getOperationType(agent: WantAgent): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | agent | WantAgent | 是 | WantAgent对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1286,6 +1331,7 @@ getOperationType(agent: WantAgent): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1362,15 +1408,17 @@ try {
 
 
 
-#### WantAgentFlags
+## WantAgentFlags
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示WantAgent行为控制标志，用于配置WantAgent的创建和触发行为。
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1388,15 +1436,17 @@ try {
 
 
 
-#### OperationType
+## OperationType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示WantAgent支持的操作类型。
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1409,15 +1459,17 @@ try {
 
 
 
-#### CompleteData
+## CompleteData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示主动触发WantAgent返回的数据。
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1430,9 +1482,10 @@ try {
 
 
 
-#### TriggerInfo
+## TriggerInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type TriggerInfo = _TriggerInfo
 
@@ -1442,6 +1495,7 @@ TriggerInfo对象。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _TriggerInfo | TriggerInfo对象。 |
@@ -1449,9 +1503,10 @@ TriggerInfo对象。
 
 
 
-#### WantAgentInfo
+## WantAgentInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type WantAgentInfo = _WantAgentInfo
 
@@ -1461,6 +1516,7 @@ WantAgentInfo对象。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _WantAgentInfo | WantAgentInfo对象。 |
@@ -1468,15 +1524,17 @@ WantAgentInfo对象。
 
 
 
-#### WantAgent
+## WantAgent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type WantAgent = object
 
 WantAgent对象。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 类型 | 说明 |
 | --- | --- |

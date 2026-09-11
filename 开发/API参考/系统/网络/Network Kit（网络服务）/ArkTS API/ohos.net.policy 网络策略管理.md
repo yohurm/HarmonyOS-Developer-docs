@@ -1,9 +1,9 @@
 # @ohos.net.policy (网络策略管理)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-net-policy
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供网络策略管理能力，采用防火墙技术对用户使用数据流量进行控制管理。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { policy } from '@kit.NetworkKit';
@@ -22,15 +23,17 @@ import { policy } from '@kit.NetworkKit';
 
 
 
-#### NetBearType
+## NetBearType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type NetBearType = connection.NetBearType
 
 网络类型。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -39,9 +42,10 @@ type NetBearType = connection.NetBearType
 
 
 
-#### policy.showAppNetPolicySettings22+
+## policy.showAppNetPolicySettings22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | Tablet
 
 showAppNetPolicySettings(context: Context): Promise&lt;void&gt;
 
@@ -55,12 +59,14 @@ showAppNetPolicySettings(context: Context): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | Stage模型的应用上下文（仅支持UIAbilityContext和ExtensionContext）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -88,9 +94,10 @@ policy.showAppNetPolicySettings(context).then(() => {
 
 
 
-#### policy.getNetAccessPolicy
+## policy.getNetAccessPolicy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getNetAccessPolicy(): Promise&lt;NetAccessPolicy&gt;
 
@@ -104,6 +111,7 @@ getNetAccessPolicy(): Promise&lt;NetAccessPolicy&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;NetAccessPolicy&gt; | Promise对象。返回应用自身联网策略。 |
@@ -112,6 +120,7 @@ getNetAccessPolicy(): Promise&lt;NetAccessPolicy&gt;
 **错误码：**
 
 以下错误码的详细介绍参见[策略管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-policy)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -134,9 +143,10 @@ policy.getNetAccessPolicy().then((policyInfo: policy.NetAccessPolicy) => {
 
 
 
-#### NetAccessPolicy
+## NetAccessPolicy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 应用联网策略信息。
 
@@ -145,6 +155,7 @@ policy.getNetAccessPolicy().then((policyInfo: policy.NetAccessPolicy) => {
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

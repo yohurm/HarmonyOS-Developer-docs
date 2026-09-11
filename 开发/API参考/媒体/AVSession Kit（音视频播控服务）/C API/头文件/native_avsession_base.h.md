@@ -1,13 +1,14 @@
 # native_avsession_base.h
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avsession-base-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明AVSession基本信息。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | AVSession_Type | AVSession_Type | 会话类型枚举。 |
@@ -52,15 +56,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### AVSession_Type
+### AVSession_Type
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum AVSession_Type
@@ -72,20 +78,22 @@ enum AVSession_Type
  
 **起始版本：** 13
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | SESSION_TYPE_AUDIO = 0 | 音频会话类型（指媒体类音频，如音乐）。 |
 | SESSION_TYPE_VIDEO = 1 | 视频会话类型（指媒体类投屏视频）。 |
-| SESSION_TYPE_VOICE_CALL = 2 | 音频通话会话类型（指人机交互相关的音频，如语音助手）。 |
+| SESSION_TYPE_VOICE_CALL = 2 | 音频通话会话类型（指语音通话）。 |
 | SESSION_TYPE_VIDEO_CALL = 3 | 视频通话会话类型（指视频电话）。 |
 | SESSION_TYPE_PHOTO = 4 | 相片会话类型。 |
  
  
   
 
-#### AVSession_PlaybackState
+### AVSession_PlaybackState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum AVSession_PlaybackState
@@ -97,6 +105,7 @@ enum AVSession_PlaybackState
  
 **起始版本：** 13
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | PLAYBACK_STATE_INITIAL = 0 | 初始状态。 |
@@ -116,9 +125,10 @@ enum AVSession_PlaybackState
  
   
 
-#### AVSession_LoopMode
+### AVSession_LoopMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum AVSession_LoopMode
@@ -130,20 +140,22 @@ enum AVSession_LoopMode
  
 **起始版本：** 13
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | LOOP_MODE_SEQUENCE = 0 | 按顺序播放。 |
 | LOOP_MODE_SINGLE = 1 | 单曲循环。 |
-| LOOP_MODE_LIST = 2 | 按表单循环。 |
+| LOOP_MODE_LIST = 2 | 列表循环。 |
 | LOOP_MODE_SHUFFLE = 3 | 随机播放。 |
 | LOOP_MODE_CUSTOM = 4 | 自定义播放。 |
  
  
   
 
-#### AVSession_ControlCommand
+### AVSession_ControlCommand
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum AVSession_ControlCommand
@@ -155,6 +167,7 @@ enum AVSession_ControlCommand
  
 **起始版本：** 13
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | CONTROL_CMD_INVALID = -1 | 无效控制命令。 |
@@ -167,9 +180,10 @@ enum AVSession_ControlCommand
  
   
 
-#### AVMetadata_SkipIntervals
+### AVMetadata_SkipIntervals
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum AVMetadata_SkipIntervals
@@ -181,6 +195,7 @@ enum AVMetadata_SkipIntervals
  
 **起始版本：** 13
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | SECONDS_10 = 10 | 时间间隔为10秒。 |
@@ -190,9 +205,10 @@ enum AVMetadata_SkipIntervals
  
   
 
-#### AVMetadata_DisplayTag
+### AVMetadata_DisplayTag
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum AVMetadata_DisplayTag
@@ -204,6 +220,7 @@ enum AVMetadata_DisplayTag
  
 **起始版本：** 13
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AVSESSION_DISPLAYTAG_AUDIO_VIVID = 1 | 高清音频。 |
@@ -211,9 +228,10 @@ enum AVMetadata_DisplayTag
  
   
 
-#### AVSession_ConnectionState
+### AVSession_ConnectionState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum AVSession_ConnectionState
@@ -225,18 +243,20 @@ enum AVSession_ConnectionState
  
 **起始版本：** 23
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | STATE_CONNECTING = 0 | 表示设备正处于连接状态。 |
 | STATE_CONNECTED = 1 | 表示设备处于已连接状态。 |
-| STATE_DISCONNECTED = 6 | 表示设备已处于断开默认连接的状态。 |
+| STATE_DISCONNECTED = 6 | 表示设备已断开连接。 |
  
  
   
 
-#### AVSession_AVCastCategory
+### AVSession_AVCastCategory
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum AVSession_AVCastCategory
@@ -248,6 +268,7 @@ enum AVSession_AVCastCategory
  
 **起始版本：** 23
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | CATEGORY_LOCAL = 0 | 默认投播类别是本地。默认投屏类型为本地。媒体本地路由支持内置扬声器、音频插孔、A2DP（Advanced Audio Distribution Profile）设备。 |
@@ -256,9 +277,10 @@ enum AVSession_AVCastCategory
  
   
 
-#### AVSession_DeviceType
+### AVSession_DeviceType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum AVSession_DeviceType
@@ -270,19 +292,21 @@ enum AVSession_DeviceType
  
 **起始版本：** 23
   
+
 | 枚举项 | 描述 |
 | --- | --- |
-| DEVICE_TYPE_LOCAL = 0 | 一种设备类型，标识音频路由为设备自身的内置扬声器或音频插孔。 |
-| DEVICE_TYPE_TV = 2 | 一种设备类型，标识音频路由为电视端。 |
-| DEVICE_TYPE_SMART_SPEAKER = 3 | 一种设备类型，标识音频路由为智能音箱端。 |
-| DEVICE_TYPE_BLUETOOTH = 10 | 一种设备类型，标识音频路由为蓝牙设备端。 |
+| DEVICE_TYPE_LOCAL = 0 | 标识音频路由为设备自身的内置扬声器或音频插孔。 |
+| DEVICE_TYPE_TV = 2 | 标识音频路由为电视端。 |
+| DEVICE_TYPE_SMART_SPEAKER = 3 | 标识音频路由为智能音箱端。 |
+| DEVICE_TYPE_BLUETOOTH = 10 | 标识音频路由为蓝牙设备端。 |
  
  
   
 
-#### AVSession_ProtocolType
+### AVSession_ProtocolType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum AVSession_ProtocolType
@@ -294,19 +318,21 @@ enum AVSession_ProtocolType
  
 **起始版本：** 23
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | TYPE_LOCAL = 0 | 默认为本地设备。包括设备本身的内置扬声器或音频插孔，A2DP（Advanced Audio Distribution Profile）设备。 |
-| TYPE_CAST_PLUS_STREAM = 2 | Cast+的Stream模式。表示媒体正在其他设备上展示，应用需要一个AVCastController来控制远程播放。 |
-| TYPE_DLNA = 4 | DLNA（DIGITAL LIVING NETWORK ALLIANCE）协议。表示设备支持DLNA协议，应用需要一个AVCastController来控制远程播放。 |
+| TYPE_CAST_PLUS_STREAM = 2 | Cast+的Stream模式。表示媒体正在其他设备上展示，应用需要一个OH_AVCastController来控制远程播放。 |
+| TYPE_DLNA = 4 | DLNA（DIGITAL LIVING NETWORK ALLIANCE）协议。表示设备支持DLNA协议，应用需要一个OH_AVCastController来控制远程播放。 |
 | TYPE_CAST_PLUS_AUDIO = 8 | 表示该设备支持高清晰度的音频投播，以获得更好的音质。 |
  
  
   
 
-#### AVSession_AVCastControlCommandType
+### AVSession_AVCastControlCommandType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum AVSession_AVCastControlCommandType
@@ -318,6 +344,7 @@ enum AVSession_AVCastControlCommandType
  
 **起始版本：** 23
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | CAST_CONTROL_CMD_PLAY = 0 | 播放命令。 |
@@ -334,9 +361,10 @@ enum AVSession_AVCastControlCommandType
  
   
 
-#### AVSession_PlaybackSpeed
+### AVSession_PlaybackSpeed
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum AVSession_PlaybackSpeed
@@ -348,6 +376,7 @@ enum AVSession_PlaybackSpeed
  
 **起始版本：** 23
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | SPEED_FORWARD_0_75_X = 0 | 以正常播速的0.75倍速播放音视频。 |
@@ -361,9 +390,10 @@ enum AVSession_PlaybackSpeed
  
   
 
-#### AVSession_PlaybackFilter
+### AVSession_PlaybackFilter
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum AVSession_PlaybackFilter
@@ -375,6 +405,7 @@ enum AVSession_PlaybackFilter
  
 **起始版本：** 23
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | FILTER_STATE = 1 << 0 | 过滤状态。 |

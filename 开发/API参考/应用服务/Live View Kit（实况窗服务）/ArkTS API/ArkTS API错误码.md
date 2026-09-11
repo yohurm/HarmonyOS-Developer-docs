@@ -1,6 +1,6 @@
 # ArkTS API错误码
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/liveview-error-code
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -10,7 +10,8 @@
 
   
 
-#### 1003500001 系统错误
+## 1003500001 系统错误
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -32,7 +33,8 @@ Internal error.
  
   
 
-#### 1003500002 序列化或反序列化失败
+## 1003500002 序列化或反序列化失败
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -54,7 +56,8 @@ Marshalling or unmarshalling error.
  
   
 
-#### 1003500003 连接服务失败
+## 1003500003 连接服务失败
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -76,7 +79,8 @@ Failed to connect service.
  
   
 
-#### 1003500004 实况窗开关关闭
+## 1003500004 实况窗开关关闭
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -98,7 +102,8 @@ LiveView is not enabled.
  
   
 
-#### 1003500005 实况窗权益未申请
+## 1003500005 实况窗权益未申请
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -116,11 +121,12 @@ The right of liveView is not enabled.
  
 **处理步骤**
  
-若已申请实况窗权益，请确认event字段与开通权益的场景匹配；若未申请实况窗权益，请到AGC平台开通实况窗权益。
+若已申请实况窗权益，请确认event字段与开通权益的场景匹配；若未申请实况窗权益，请参考[开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/liveview-preparations)，完成实况窗权益申请。
  
   
 
-#### 1003500006 实况窗已存在
+## 1003500006 实况窗已存在
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -142,7 +148,8 @@ The liveView already exists.
  
   
 
-#### 1003500007 无法连接服务器
+## 1003500007 无法连接服务器
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -164,7 +171,8 @@ Couldn't connect to server.
  
   
 
-#### 1003500008 实况窗频度超过限制
+## 1003500008 实况窗频度超过限制
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -186,7 +194,8 @@ Over max number liveViews per second.
  
   
 
-#### 1003500009 实况窗id不存在
+## 1003500009 实况窗id不存在
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -208,7 +217,8 @@ The liveView does not exist.
  
   
 
-#### 1003500010 实况窗已结束
+## 1003500010 实况窗已结束
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -230,7 +240,8 @@ The liveView has ended.
  
   
 
-#### 1003500011 实况窗顺序不正确
+## 1003500011 实况窗顺序不正确
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -252,107 +263,8 @@ The liveView sequence is incorrect.
  
   
 
-#### 1003500012 订阅次数超出限制
+## 1003500017 超过条件实况窗次数限制
 
-**错误信息**
- 
-The number of subscription times exceeds the upper limit of 2000.
- 
-**错误描述**
- 
-订阅次数超出限制。
- 
-**可能原因**
- 
-单个用户每个应用最多有2000个订阅关系。
- 
-**处理步骤**
- 
-请调整订阅次数。
- 
-  
-
-#### 1003500013 无效的实况窗订阅场景
-
-**错误信息**
- 
-Invalid event type.
- 
-**错误描述**
- 
-无效的实况窗订阅场景。
- 
-**可能原因**
- 
-event传值不正确。
- 
-**处理步骤**
- 
-请检查event参数。
- 
-  
-
-#### 1003500014 实况窗提醒时间距当前时间过长
-
-**错误信息**
- 
-Time exceeds valid period.
- 
-**错误描述**
- 
-实况窗提醒时间距当前时间过长。
- 
-**可能原因**
- 
-当前时间距离alertTime超过30天。
- 
-**处理步骤**
- 
-请检查alertTime、startTime参数。
- 
-  
-
-#### 1003500015 实况窗订阅失败
-
-**错误信息**
- 
-Subscribe failed.
- 
-**错误描述**
- 
-实况窗订阅失败。
- 
-**可能原因**
- 
-云侧内部异常。
- 
-**处理步骤**
- 
-进行重试操作或通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
- 
-  
-
-#### 1003500016 请求频次超限
-
-**错误信息**
- 
-Request subscribe liveView exceed.
- 
-**错误描述**
- 
-请求频次超限。
- 
-**可能原因**
- 
-短时间内订阅次数过多。
- 
-**处理步骤**
- 
-请调整订阅频次。
- 
-  
-
-#### 1003500017 超过条件实况窗次数限制
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -374,7 +286,8 @@ Over max number liveViews by trigger.
  
   
 
-#### 1003500018 基于地理位置的实况窗提醒开关关闭
+## 1003500018 基于地理位置的实况窗提醒开关关闭
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -396,7 +309,8 @@ Geofencing-based liveView is not enabled.
  
   
 
-#### 1003500019 位置功能的开关关闭
+## 1003500019 位置功能的开关关闭
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -418,7 +332,8 @@ The location switch is off.
  
   
 
-#### 1003500020 感知与提醒的开关关闭
+## 1003500020 感知与提醒的开关关闭
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -440,7 +355,8 @@ The "Awareness & suggestions" switch of the location-based service is turned off
  
   
 
-#### 1003500021 系统无法找到实况窗卡片自定义扩展区的ExtensionAbility
+## 1003500021 系统无法找到实况窗卡片自定义扩展区的ExtensionAbility
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 

@@ -1,11 +1,12 @@
 # frame_generation_vk.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/frame__generation__vk_8h
 **支持设备：** Phone | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### 结构体
+### 结构体
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | struct FG_ContextDescription_VK | 此结构体描述创建超帧上下文实例FG_Context_VK所需的属性信息，该接口仅适配Vulkan图形API平台。 |
@@ -44,10 +48,12 @@
  
   
 
-#### 类型定义
+### 类型定义
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | typedef struct FG_Context_VK FG_Context_VK | 此结构体描述超帧上下文，该接口仅适配Vulkan图形API平台。 |
@@ -61,10 +67,12 @@
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | FG_Context_VK* HMS_FG_CreateContext_VK(const FG_ContextDescription_VK* contextDescription) | 创建超帧上下文实例，调用成功则返回指向FG_Context_VK对象的指针，失败返回nullptr。该接口仅适配Vulkan图形API平台。 |

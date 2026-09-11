@@ -1,11 +1,12 @@
 # detectBarcode (图像识码)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/scan-imagedecode
 **支持设备：** Phone | Tablet | Wearable
 
-#### 模块概述
+## 模块概述
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -17,7 +18,8 @@ detectBarcode模块提供图像识码能力，支持通过本地图片路径或�
  
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -27,7 +29,8 @@ import { detectBarcode } from '@kit.ScanKit';
  
   
 
-#### InputImage
+## InputImage
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -41,6 +44,7 @@ import { detectBarcode } from '@kit.ScanKit';
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | uri | string | 否 | 否 | 图片路径，例如file://media/Photo/x/xxx.jpg。 |
@@ -75,7 +79,8 @@ photoPicker.select(photoSelectOptions).then((data: photoAccessHelper.PhotoSelect
  
   
 
-#### decode
+## decode
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -93,6 +98,7 @@ decode(inputImage: InputImage, options?: scanBarcode.ScanOptions): Promise<Array
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | inputImage | InputImage | 是 | 待识别的图片信息。 |
@@ -101,6 +107,7 @@ decode(inputImage: InputImage, options?: scanBarcode.ScanOptions): Promise<Array
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array<scanBarcode.ScanResult>> | Promise对象，返回识码结果对象数组。 |
@@ -110,6 +117,7 @@ decode(inputImage: InputImage, options?: scanBarcode.ScanOptions): Promise<Array
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-scan)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
@@ -118,7 +126,7 @@ decode(inputImage: InputImage, options?: scanBarcode.ScanOptions): Promise<Array
  
 **示例：**
  
-```json
+```text
 import { scanCore, scanBarcode, detectBarcode } from '@kit.ScanKit';
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
@@ -126,19 +134,19 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 // 定义识码参数options
 let options: scanBarcode.ScanOptions = { scanTypes: [scanCore.ScanType.ALL], enableMultiMode: true, enableAlbum: true };
-// 通过picker拉起图库并选择图片
+// 通过PhotoViewPicker拉起图库并选择图片
 let photoOption = new photoAccessHelper.PhotoSelectOptions();
 photoOption.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
 photoOption.maxSelectNumber = 1;
 let photoPicker = new photoAccessHelper.PhotoViewPicker();
 photoPicker.select(photoOption).then((data) => {
-  // 定义识码参数inputImage，其中uri为picker选择图片
+  // 定义识码参数inputImage，其中uri为PhotoViewPicker选择的图片路径
   let inputImage: detectBarcode.InputImage = { uri: data.photoUris[0] };
   try {
     // 调用图片识码接口
     detectBarcode.decode(inputImage, options).then((data: Array<scanBarcode.ScanResult>) => {
       hilog.info(0x0001, '[Scan Sample]',
-        `Succeeded in getting ScanResult by promise with options, result is ${JSON.stringify(data)}`);
+        `Succeeded in getting ScanResult by promise with options, result length: ${data.length}`);
     }).catch((err: BusinessError) => {
       hilog.error(0x0001, '[Scan Sample]',
         `Failed to get ScanResult by promise with options. Code: ${err.code}, message: ${err.message}`);
@@ -154,7 +162,8 @@ photoPicker.select(photoOption).then((data) => {
  
   
 
-#### decode
+## decode
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -172,6 +181,7 @@ decode(inputImage: InputImage, options: scanBarcode.ScanOptions, callback: Async
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | inputImage | InputImage | 是 | 待识别的图片信息。 |
@@ -183,6 +193,7 @@ decode(inputImage: InputImage, options: scanBarcode.ScanOptions, callback: Async
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-scan)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
@@ -191,7 +202,7 @@ decode(inputImage: InputImage, options: scanBarcode.ScanOptions, callback: Async
  
 **示例：**
  
-```json
+```text
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
 import { scanCore, scanBarcode, detectBarcode } from '@kit.ScanKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
@@ -199,13 +210,13 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 // 定义识码参数options
 let options: scanBarcode.ScanOptions = { scanTypes: [scanCore.ScanType.ALL], enableMultiMode: true, enableAlbum: true };
-// 通过picker拉起图库并选择图片
+// 通过PhotoViewPicker拉起图库并选择图片
 let photoOption = new photoAccessHelper.PhotoSelectOptions();
 photoOption.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
 photoOption.maxSelectNumber = 1;
 let photoPicker = new photoAccessHelper.PhotoViewPicker();
 photoPicker.select(photoOption).then((data) => {
-  // 定义识码参数inputImage，其中uri为picker选择图片
+  // 定义识码参数inputImage，其中uri为PhotoViewPicker选择的图片路径
   let inputImage: detectBarcode.InputImage = { uri: data.photoUris[0] };
   try {
     // 调用图片识码接口
@@ -216,7 +227,7 @@ photoPicker.select(photoOption).then((data) => {
         return;
       }
       hilog.info(0x0001, '[Scan Sample]',
-        `Succeeded in getting ScanResult by callback with options, result is ${JSON.stringify(data)}`);
+        `Succeeded in getting ScanResult by callback with options, result length: ${data.length}`);
     });
   } catch (err) {
     hilog.error(0x0001, '[Scan Sample]',
@@ -229,7 +240,8 @@ photoPicker.select(photoOption).then((data) => {
  
   
 
-#### decode
+## decode
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -247,6 +259,7 @@ decode(inputImage: InputImage, callback: AsyncCallback<Array<scanBarcode.ScanRes
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | inputImage | InputImage | 是 | 待识别的图片信息。 |
@@ -257,6 +270,7 @@ decode(inputImage: InputImage, callback: AsyncCallback<Array<scanBarcode.ScanRes
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-scan)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
@@ -265,19 +279,19 @@ decode(inputImage: InputImage, callback: AsyncCallback<Array<scanBarcode.ScanRes
  
 **示例：**
  
-```json
+```text
 import { scanBarcode, detectBarcode } from '@kit.ScanKit';
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
-// 通过picker拉起图库并选择图片
+// 通过PhotoViewPicker拉起图库并选择图片
 let photoOption = new photoAccessHelper.PhotoSelectOptions();
 photoOption.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
 photoOption.maxSelectNumber = 1;
 let photoPicker = new photoAccessHelper.PhotoViewPicker();
 photoPicker.select(photoOption).then((data) => {
-  // 定义识码参数inputImage，其中uri为picker选择图片
+  // 定义识码参数inputImage，其中uri为PhotoViewPicker选择的图片路径
   let inputImage: detectBarcode.InputImage = { uri: data.photoUris[0] };
   try {
     // 调用图片识码接口
@@ -288,7 +302,7 @@ photoPicker.select(photoOption).then((data) => {
         return;
       }
       hilog.info(0x0001, '[Scan Sample]',
-        `Succeeded in getting ScanResult by callback, result is ${JSON.stringify(data)}`);
+        `Succeeded in getting ScanResult by callback, result length: ${data.length}`);
     });
   } catch (err) {
     hilog.error(0x0001, '[Scan Sample]',
@@ -301,7 +315,8 @@ photoPicker.select(photoOption).then((data) => {
  
   
 
-#### ByteImage
+## ByteImage
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -315,6 +330,7 @@ photoPicker.select(photoOption).then((data) => {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | byteBuffer | ArrayBuffer | 否 | 否 | 图像数据。存放图像的字节数组。 |
@@ -341,7 +357,8 @@ let byteImg: detectBarcode.ByteImage = {
  
   
 
-#### ImageFormat
+## ImageFormat
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -355,6 +372,7 @@ let byteImg: detectBarcode.ByteImage = {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NV21 | 0 | 图像的像素格式为NV21。 |
@@ -362,7 +380,8 @@ let byteImg: detectBarcode.ByteImage = {
  
   
 
-#### DetectResult
+## DetectResult
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -376,6 +395,7 @@ let byteImg: detectBarcode.ByteImage = {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | scanResults | Array<scanBarcode.ScanResult> | 否 | 否 | 扫码结果。 |
@@ -384,7 +404,8 @@ let byteImg: detectBarcode.ByteImage = {
  
   
 
-#### decodeImage
+## decodeImage
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -402,6 +423,7 @@ decodeImage(image: ByteImage, options?: scanBarcode.ScanOptions): Promise&lt;Det
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | image | ByteImage | 是 | 待识别的图像数据。 |
@@ -410,6 +432,7 @@ decodeImage(image: ByteImage, options?: scanBarcode.ScanOptions): Promise&lt;Det
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;DetectResult&gt; | Promise对象，返回图像数据识码结果对象。 |
@@ -419,6 +442,7 @@ decodeImage(image: ByteImage, options?: scanBarcode.ScanOptions): Promise&lt;Det
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-scan)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
@@ -429,7 +453,7 @@ decodeImage(image: ByteImage, options?: scanBarcode.ScanOptions): Promise&lt;Det
  
 示例中的buffer可通过相机预览流数据获取，参见[双路预览](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-dual-channel-preview)。
  
-```json
+```text
 import { scanCore, scanBarcode, detectBarcode } from '@kit.ScanKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -449,7 +473,7 @@ let options: scanBarcode.ScanOptions = {
 try {
   detectBarcode.decodeImage(byteImg, options).then((data: detectBarcode.DetectResult) => {
     hilog.info(0x0001, '[Scan Sample]',
-      `Succeeded in getting DetectResult by promise with options, result is ${JSON.stringify(data)}`);
+      `Succeeded in getting DetectResult by promise with options, result length: ${data.scanResults.length}, zoomValue: ${data.zoomValue}`);
   }).catch((err: BusinessError) => {
     hilog.error(0x0001, '[Scan Sample]',
       `Failed to get DetectResult by promise with options. Code: ${err.code}, message: ${err.message}`);

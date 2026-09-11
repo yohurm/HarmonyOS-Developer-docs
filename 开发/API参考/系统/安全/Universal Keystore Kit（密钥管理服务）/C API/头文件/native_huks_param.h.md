@@ -1,13 +1,14 @@
 # native_huks_param.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-huks-param-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供参数集构造、使用和销毁的API。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | struct OH_Huks_Result OH_Huks_InitParamSet(struct OH_Huks_ParamSet **paramSet) | 初始化参数集，无参数信息，分配参数集默认可用内存空间。初始化后的参数集需要通过OH_Huks_FreeParamSet释放。添加参数的参数集需要使用OH_Huks_AddParams添加参数并且必须使用OH_Huks_BuildParamSet构造参数集。 |
@@ -50,15 +54,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Huks_InitParamSet()
+### OH_Huks_InitParamSet()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 struct OH_Huks_Result OH_Huks_InitParamSet(struct OH_Huks_ParamSet **paramSet)
@@ -72,6 +78,7 @@ struct OH_Huks_Result OH_Huks_InitParamSet(struct OH_Huks_ParamSet **paramSet)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_Huks_ParamSet **paramSet | 指向要初始化的参数集的指针地址。 |
@@ -79,6 +86,7 @@ struct OH_Huks_Result OH_Huks_InitParamSet(struct OH_Huks_ParamSet **paramSet)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | struct OH_Huks_Result | 可能的返回码（errorCode）： OH_HUKS_SUCCESS = 0 ：初始化操作成功。 OH_HUKS_ERR_CODE_INSUFFICIENT_MEMORY = 12000014 ：内存不足。 OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT = 401 ：参数paramSet无效。 |
@@ -86,9 +94,10 @@ struct OH_Huks_Result OH_Huks_InitParamSet(struct OH_Huks_ParamSet **paramSet)
  
   
 
-#### OH_Huks_AddParams()
+### OH_Huks_AddParams()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 struct OH_Huks_Result OH_Huks_AddParams(struct OH_Huks_ParamSet *paramSet, const struct OH_Huks_Param *params, uint32_t paramCnt)
@@ -102,6 +111,7 @@ struct OH_Huks_Result OH_Huks_AddParams(struct OH_Huks_ParamSet *paramSet, const
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_Huks_ParamSet *paramSet | 指向要被添加参数的参数集的指针，需要通过OH_Huks_InitParamSet初始化。 |
@@ -111,6 +121,7 @@ struct OH_Huks_Result OH_Huks_AddParams(struct OH_Huks_ParamSet *paramSet, const
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | struct OH_Huks_Result | 可能的返回码（errorCode）： OH_HUKS_SUCCESS = 0 ：操作成功。 OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT = 401 ：params为null或者paramSet无效。 |
@@ -118,9 +129,10 @@ struct OH_Huks_Result OH_Huks_AddParams(struct OH_Huks_ParamSet *paramSet, const
  
   
 
-#### OH_Huks_BuildParamSet()
+### OH_Huks_BuildParamSet()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 struct OH_Huks_Result OH_Huks_BuildParamSet(struct OH_Huks_ParamSet **paramSet)
@@ -134,6 +146,7 @@ struct OH_Huks_Result OH_Huks_BuildParamSet(struct OH_Huks_ParamSet **paramSet)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_Huks_ParamSet **paramSet | 指向要被正式构造的参数集的指针地址。 |
@@ -141,6 +154,7 @@ struct OH_Huks_Result OH_Huks_BuildParamSet(struct OH_Huks_ParamSet **paramSet)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | struct OH_Huks_Result | 可能的返回码（errorCode）： OH_HUKS_SUCCESS = 0 ：操作成功。 OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT = 401 ：参数paramSet无效。 OH_HUKS_ERR_CODE_INSUFFICIENT_MEMORY = 12000014 ：内存不足。 |
@@ -148,9 +162,10 @@ struct OH_Huks_Result OH_Huks_BuildParamSet(struct OH_Huks_ParamSet **paramSet)
  
   
 
-#### OH_Huks_FreeParamSet()
+### OH_Huks_FreeParamSet()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Huks_FreeParamSet(struct OH_Huks_ParamSet **paramSet)
@@ -164,6 +179,7 @@ void OH_Huks_FreeParamSet(struct OH_Huks_ParamSet **paramSet)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_Huks_ParamSet **paramSet | 指向要被销毁的参数集的指针地址。 |
@@ -171,9 +187,10 @@ void OH_Huks_FreeParamSet(struct OH_Huks_ParamSet **paramSet)
  
   
 
-#### OH_Huks_CopyParamSet()
+### OH_Huks_CopyParamSet()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 struct OH_Huks_Result OH_Huks_CopyParamSet(const struct OH_Huks_ParamSet *fromParamSet, uint32_t fromParamSetSize, struct OH_Huks_ParamSet **paramSet)
@@ -187,6 +204,7 @@ struct OH_Huks_Result OH_Huks_CopyParamSet(const struct OH_Huks_ParamSet *fromPa
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct OH_Huks_ParamSet *fromParamSet | 指向要被复制的参数集的指针。 |
@@ -196,6 +214,7 @@ struct OH_Huks_Result OH_Huks_CopyParamSet(const struct OH_Huks_ParamSet *fromPa
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | struct OH_Huks_Result | 可能的返回码（errorCode）： OH_HUKS_SUCCESS = 0 ：操作成功。 OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT = 401 ：参数fromParamSet、fromParamSetSize、paramSet有一个无效。 OH_HUKS_ERR_CODE_INSUFFICIENT_MEMORY = 12000014 ：内存不足。 |
@@ -203,9 +222,10 @@ struct OH_Huks_Result OH_Huks_CopyParamSet(const struct OH_Huks_ParamSet *fromPa
  
   
 
-#### OH_Huks_GetParam()
+### OH_Huks_GetParam()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 struct OH_Huks_Result OH_Huks_GetParam(const struct OH_Huks_ParamSet *paramSet, uint32_t tag, struct OH_Huks_Param **param)
@@ -219,6 +239,7 @@ struct OH_Huks_Result OH_Huks_GetParam(const struct OH_Huks_ParamSet *paramSet, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct OH_Huks_ParamSet *paramSet | 指向参数集的指针。 |
@@ -228,6 +249,7 @@ struct OH_Huks_Result OH_Huks_GetParam(const struct OH_Huks_ParamSet *paramSet, 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | struct OH_Huks_Result | 可能的返回码（errorCode）： OH_HUKS_SUCCESS = 0 ：操作成功。 OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT = 401 ：参数paramSet或者param无效，或者参数param不在paramSet里面。 |
@@ -235,9 +257,10 @@ struct OH_Huks_Result OH_Huks_GetParam(const struct OH_Huks_ParamSet *paramSet, 
  
   
 
-#### OH_Huks_FreshParamSet()
+### OH_Huks_FreshParamSet()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 struct OH_Huks_Result OH_Huks_FreshParamSet(struct OH_Huks_ParamSet *paramSet, bool isCopy)
@@ -251,6 +274,7 @@ struct OH_Huks_Result OH_Huks_FreshParamSet(struct OH_Huks_ParamSet *paramSet, b
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_Huks_ParamSet *paramSet | 指向参数集的指针。 |
@@ -259,6 +283,7 @@ struct OH_Huks_Result OH_Huks_FreshParamSet(struct OH_Huks_ParamSet *paramSet, b
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | struct OH_Huks_Result | 可能的返回码（errorCode）： OH_HUKS_SUCCESS = 0 ：操作成功。 OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT = 401 ：参数paramSet无效。 OH_HUKS_ERR_CODE_INSUFFICIENT_MEMORY = 12000014 ：内存不足。 |
@@ -266,9 +291,10 @@ struct OH_Huks_Result OH_Huks_FreshParamSet(struct OH_Huks_ParamSet *paramSet, b
  
   
 
-#### OH_Huks_IsParamSetTagValid()
+### OH_Huks_IsParamSetTagValid()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 struct OH_Huks_Result OH_Huks_IsParamSetTagValid(const struct OH_Huks_ParamSet *paramSet)
@@ -282,6 +308,7 @@ struct OH_Huks_Result OH_Huks_IsParamSetTagValid(const struct OH_Huks_ParamSet *
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct OH_Huks_ParamSet *paramSet | 指向参数集的指针。 |
@@ -289,6 +316,7 @@ struct OH_Huks_Result OH_Huks_IsParamSetTagValid(const struct OH_Huks_ParamSet *
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | struct OH_Huks_Result | 可能的返回码（errorCode）： OH_HUKS_SUCCESS = 0 ：paramSet中的参数都有效。 OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT = 401 ：参数paramSet无效或者参数集中有无效、重复、不正确的标签。 |
@@ -296,9 +324,10 @@ struct OH_Huks_Result OH_Huks_IsParamSetTagValid(const struct OH_Huks_ParamSet *
  
   
 
-#### OH_Huks_IsParamSetValid()
+### OH_Huks_IsParamSetValid()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 struct OH_Huks_Result OH_Huks_IsParamSetValid(const struct OH_Huks_ParamSet *paramSet, uint32_t size)
@@ -312,6 +341,7 @@ struct OH_Huks_Result OH_Huks_IsParamSetValid(const struct OH_Huks_ParamSet *par
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct OH_Huks_ParamSet *paramSet | 指向参数集的指针。 |
@@ -320,6 +350,7 @@ struct OH_Huks_Result OH_Huks_IsParamSetValid(const struct OH_Huks_ParamSet *par
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | struct OH_Huks_Result | 可能的返回码（errorCode）： OH_HUKS_SUCCESS = 0 ：参数集大小合法。 OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT = 401 ：参数paramSet、size存在无效参数。 |
@@ -327,9 +358,10 @@ struct OH_Huks_Result OH_Huks_IsParamSetValid(const struct OH_Huks_ParamSet *par
  
   
 
-#### OH_Huks_CheckParamMatch()
+### OH_Huks_CheckParamMatch()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 struct OH_Huks_Result OH_Huks_CheckParamMatch(const struct OH_Huks_Param *baseParam, const struct OH_Huks_Param *param)
@@ -343,6 +375,7 @@ struct OH_Huks_Result OH_Huks_CheckParamMatch(const struct OH_Huks_Param *basePa
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct OH_Huks_Param *baseParam | 指向被比较的参数的指针。 |
@@ -351,6 +384,7 @@ struct OH_Huks_Result OH_Huks_CheckParamMatch(const struct OH_Huks_Param *basePa
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | struct OH_Huks_Result | 可能的返回码（errorCode）： OH_HUKS_SUCCESS = 0 ：比较的两个参数相同。 OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT = 401 ：其中一个参数是无效的，或者参数不匹配。 |
@@ -358,9 +392,10 @@ struct OH_Huks_Result OH_Huks_CheckParamMatch(const struct OH_Huks_Param *basePa
  
   
 
-#### OH_Huks_FreeKeyAliasSet()
+### OH_Huks_FreeKeyAliasSet()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Huks_FreeKeyAliasSet(struct OH_Huks_KeyAliasSet *keyAliasSet)
@@ -374,6 +409,7 @@ void OH_Huks_FreeKeyAliasSet(struct OH_Huks_KeyAliasSet *keyAliasSet)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_Huks_KeyAliasSet *keyAliasSet | 指向要被销毁的密钥别名集的指针。 |

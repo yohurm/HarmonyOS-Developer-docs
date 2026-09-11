@@ -1,6 +1,6 @@
 # textProcessing（文本处理）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/natural-language-text-processing-api
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -12,7 +12,8 @@
 **起始版本：** 5.0.0(12)
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -22,7 +23,8 @@ import { textProcessing, EntityType } from '@kit.NaturalLanguageKit';
 
 
 
-#### WordSegment
+## WordSegment
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -34,6 +36,7 @@ import { textProcessing, EntityType } from '@kit.NaturalLanguageKit';
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | word | string | 否 | 否 | 词语。从getWordSegment方法中获取到的结果中的词语。 |
@@ -42,7 +45,8 @@ import { textProcessing, EntityType } from '@kit.NaturalLanguageKit';
 
 
 
-#### EntityConfig
+## EntityConfig
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -54,15 +58,17 @@ import { textProcessing, EntityType } from '@kit.NaturalLanguageKit';
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| entityTypes | EntityType[] | 否 | 是 | 实体的类别。若未指定，则默认识别所有支持的实体类型。 不能为空数组。 |
-| timestamp | number | 否 | 是 | 参考时间戳，用于指定实体识别的时间上下文。单位为ms。值为整数。若未指定，则使用当前系统时间。 起始版本： 26.0.0 |
+| entityTypes | EntityType[] | 否 | 是 | 实体的类别。若未指定，则默认识别所有支持的实体类型。 |
+| timestamp | number | 否 | 是 | 参考时间戳，用于指定实体识别的时间上下文。取值为从1970年1月1日开始的毫秒数（整数）。若未指定，则使用当前系统时间。 起始版本： 26.0.0 |
 
 
 
 
-#### Entity
+## Entity
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -74,6 +80,7 @@ import { textProcessing, EntityType } from '@kit.NaturalLanguageKit';
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | text | string | 否 | 否 | 实体原文本。 |
@@ -84,7 +91,8 @@ import { textProcessing, EntityType } from '@kit.NaturalLanguageKit';
 
 
 
-#### textProcessing.getWordSegment
+## textProcessing.getWordSegment
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -100,12 +108,14 @@ getWordSegment(text: string): Promise<Array&lt;WordSegment&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | text | string | 是 | 输入待分析的文本内容。相关规格参考约束与限制。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -115,6 +125,7 @@ getWordSegment(text: string): Promise<Array&lt;WordSegment&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[Natural Language Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-natural-language)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -172,7 +183,8 @@ struct Page {
 
 
 
-#### textProcessing.getEntity
+## textProcessing.getEntity
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -188,6 +200,7 @@ getEntity(text: string, entityConfig?: EntityConfig): Promise<Array&lt;Entity&gt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | text | string | 是 | 输入的字符串。相关规格参考约束与限制。 |
@@ -195,6 +208,7 @@ getEntity(text: string, entityConfig?: EntityConfig): Promise<Array&lt;Entity&gt
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -204,6 +218,7 @@ getEntity(text: string, entityConfig?: EntityConfig): Promise<Array&lt;Entity&gt
 **错误码：**
 
 以下错误码的详细介绍请参见[Natural Language Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-natural-language)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -272,7 +287,8 @@ struct Page {
 
 
 
-#### textProcessing.init
+## textProcessing.init
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -292,6 +308,7 @@ init(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象，true表示初始化成功，false表示初始化失败。 |
@@ -300,6 +317,7 @@ init(): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Natural Language Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-natural-language)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -334,7 +352,8 @@ struct Page {
 
 
 
-#### textProcessing.release
+## textProcessing.release
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -350,6 +369,7 @@ release(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象，true表示释放引擎成功，false表示释放引擎失败。 |
@@ -358,6 +378,7 @@ release(): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Natural Language Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-natural-language)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

@@ -1,13 +1,14 @@
 # want.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-want-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Want是对象间信息传递的载体，可以用于应用组件间的信息传递。 Want的使用场景之一是作为startAbility的参数，其包含了指定的启动目标，以及启动时需携带的相关数据，如bundleName和abilityName字段分别指明目标Ability所在应用的Bundle名称以及对应包内的Ability名称。当Ability A需要启动Ability B并传入一些数据时，可使用Want作为载体将这些数据传递给Ability B。
  
@@ -23,16 +24,19 @@ Want是对象间信息传递的载体，可以用于应用组件间的信息传�
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | AbilityBase_Element | AbilityBase_Element | 声明Want中Element结构体。 |
@@ -41,10 +45,12 @@ Want是对象间信息传递的载体，可以用于应用组件间的信息传�
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | AbilityBase_Want* OH_AbilityBase_CreateWant(AbilityBase_Element element) | 创建Want。 |
@@ -52,7 +58,7 @@ Want是对象间信息传递的载体，可以用于应用组件间的信息传�
 | AbilityBase_ErrorCode OH_AbilityBase_SetWantElement(AbilityBase_Want* want, AbilityBase_Element element) | 设置Want中由bundleName、moduleName与abilityName组成的Element结构体。 |
 | AbilityBase_ErrorCode OH_AbilityBase_GetWantElement(AbilityBase_Want* want, AbilityBase_Element* element) | 获取Want中由bundleName、moduleName与abilityName组成的Element结构体。 |
 | AbilityBase_ErrorCode OH_AbilityBase_SetWantCharParam(AbilityBase_Want* want, const char* key, const char* value) | 设置Want Param参数。 |
-| AbilityBase_ErrorCode OH_AbilityBase_GetWantCharParam(AbilityBase_Want* want, const char* key,char* value, size_t valueSize) | 获取Want Param参数。 |
+| AbilityBase_ErrorCode OH_AbilityBase_GetWantCharParam(AbilityBase_Want* want, const char* key, char* value, size_t valueSize) | 获取Want Param参数。 |
 | AbilityBase_ErrorCode OH_AbilityBase_AddWantFd(AbilityBase_Want* want, const char* key, int32_t fd) | 添加Want文件描述符。 |
 | AbilityBase_ErrorCode OH_AbilityBase_GetWantFd(AbilityBase_Want* want, const char* key, int32_t* fd) | 获取Want文件描述符。 |
 | AbilityBase_ErrorCode OH_AbilityBase_SetWantUri(AbilityBase_Want* want, const char* uri) | 设置Want中URI字符串。 |
@@ -67,15 +73,17 @@ Want是对象间信息传递的载体，可以用于应用组件间的信息传�
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AbilityBase_CreateWant()
+### OH_AbilityBase_CreateWant()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityBase_Want* OH_AbilityBase_CreateWant(AbilityBase_Element element)
@@ -89,6 +97,7 @@ AbilityBase_Want* OH_AbilityBase_CreateWant(AbilityBase_Element element)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityBase_Element element | Element数据结构。 |
@@ -96,6 +105,7 @@ AbilityBase_Want* OH_AbilityBase_CreateWant(AbilityBase_Element element)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityBase_Want* | 返回want数据结构。 |
@@ -103,9 +113,10 @@ AbilityBase_Want* OH_AbilityBase_CreateWant(AbilityBase_Element element)
  
   
 
-#### OH_AbilityBase_DestroyWant()
+### OH_AbilityBase_DestroyWant()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityBase_ErrorCode OH_AbilityBase_DestroyWant(AbilityBase_Want* want)
@@ -119,6 +130,7 @@ AbilityBase_ErrorCode OH_AbilityBase_DestroyWant(AbilityBase_Want* want)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityBase_Want* want | Want指针。 |
@@ -126,6 +138,7 @@ AbilityBase_ErrorCode OH_AbilityBase_DestroyWant(AbilityBase_Want* want)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityBase_ErrorCode | 返回执行结果。 ABILITY_BASE_ERROR_CODE_NO_ERROR - 销毁want成功。 ABILITY_BASE_ERROR_CODE_PARAM_INVALID - want参数无效。 |
@@ -133,9 +146,10 @@ AbilityBase_ErrorCode OH_AbilityBase_DestroyWant(AbilityBase_Want* want)
  
   
 
-#### OH_AbilityBase_SetWantElement()
+### OH_AbilityBase_SetWantElement()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityBase_ErrorCode OH_AbilityBase_SetWantElement(AbilityBase_Want* want, AbilityBase_Element element)
@@ -149,6 +163,7 @@ AbilityBase_ErrorCode OH_AbilityBase_SetWantElement(AbilityBase_Want* want, Abil
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityBase_Want* want | Want指针。 |
@@ -157,6 +172,7 @@ AbilityBase_ErrorCode OH_AbilityBase_SetWantElement(AbilityBase_Want* want, Abil
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityBase_ErrorCode | 返回执行结果。 ABILITY_BASE_ERROR_CODE_NO_ERROR - 设置element成功。 ABILITY_BASE_ERROR_CODE_PARAM_INVALID - want为空，element参数无效。 |
@@ -164,9 +180,10 @@ AbilityBase_ErrorCode OH_AbilityBase_SetWantElement(AbilityBase_Want* want, Abil
  
   
 
-#### OH_AbilityBase_GetWantElement()
+### OH_AbilityBase_GetWantElement()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityBase_ErrorCode OH_AbilityBase_GetWantElement(AbilityBase_Want* want, AbilityBase_Element* element)
@@ -180,6 +197,7 @@ AbilityBase_ErrorCode OH_AbilityBase_GetWantElement(AbilityBase_Want* want, Abil
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityBase_Want* want | Want指针。 |
@@ -188,6 +206,7 @@ AbilityBase_ErrorCode OH_AbilityBase_GetWantElement(AbilityBase_Want* want, Abil
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityBase_ErrorCode | 返回执行结果。 ABILITY_BASE_ERROR_CODE_NO_ERROR - 获取element成功。 ABILITY_BASE_ERROR_CODE_PARAM_INVALID - want为空，element参数无效。 |
@@ -195,9 +214,10 @@ AbilityBase_ErrorCode OH_AbilityBase_GetWantElement(AbilityBase_Want* want, Abil
  
   
 
-#### OH_AbilityBase_SetWantCharParam()
+### OH_AbilityBase_SetWantCharParam()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityBase_ErrorCode OH_AbilityBase_SetWantCharParam(AbilityBase_Want* want, const char* key, const char* value)
@@ -211,6 +231,7 @@ AbilityBase_ErrorCode OH_AbilityBase_SetWantCharParam(AbilityBase_Want* want, co
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityBase_Want* want | Want指针。 |
@@ -220,6 +241,7 @@ AbilityBase_ErrorCode OH_AbilityBase_SetWantCharParam(AbilityBase_Want* want, co
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityBase_ErrorCode | 返回执行结果。 ABILITY_BASE_ERROR_CODE_NO_ERROR - 设置param成功。 ABILITY_BASE_ERROR_CODE_PARAM_INVALID - want为空或非法入参。 |
@@ -227,12 +249,13 @@ AbilityBase_ErrorCode OH_AbilityBase_SetWantCharParam(AbilityBase_Want* want, co
  
   
 
-#### OH_AbilityBase_GetWantCharParam()
+### OH_AbilityBase_GetWantCharParam()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-AbilityBase_ErrorCode OH_AbilityBase_GetWantCharParam(AbilityBase_Want* want, const char* key,char* value, size_t valueSize)
+AbilityBase_ErrorCode OH_AbilityBase_GetWantCharParam(AbilityBase_Want* want, const char* key, char* value, size_t valueSize)
 ```
  
 **描述**
@@ -243,6 +266,7 @@ AbilityBase_ErrorCode OH_AbilityBase_GetWantCharParam(AbilityBase_Want* want, co
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityBase_Want* want | Want指针。 |
@@ -253,6 +277,7 @@ AbilityBase_ErrorCode OH_AbilityBase_GetWantCharParam(AbilityBase_Want* want, co
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityBase_ErrorCode | 返回执行结果。 ABILITY_BASE_ERROR_CODE_NO_ERROR - 获取param成功。 ABILITY_BASE_ERROR_CODE_PARAM_INVALID - want为空或非法入参。 |
@@ -260,9 +285,10 @@ AbilityBase_ErrorCode OH_AbilityBase_GetWantCharParam(AbilityBase_Want* want, co
  
   
 
-#### OH_AbilityBase_AddWantFd()
+### OH_AbilityBase_AddWantFd()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityBase_ErrorCode OH_AbilityBase_AddWantFd(AbilityBase_Want* want, const char* key, int32_t fd)
@@ -276,6 +302,7 @@ AbilityBase_ErrorCode OH_AbilityBase_AddWantFd(AbilityBase_Want* want, const cha
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityBase_Want* want | Want指针。 |
@@ -285,6 +312,7 @@ AbilityBase_ErrorCode OH_AbilityBase_AddWantFd(AbilityBase_Want* want, const cha
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityBase_ErrorCode | 返回执行结果。 ABILITY_BASE_ERROR_CODE_NO_ERROR - 添加want文件描述符成功。 ABILITY_BASE_ERROR_CODE_PARAM_INVALID - want为空或非法入参。 |
@@ -292,9 +320,10 @@ AbilityBase_ErrorCode OH_AbilityBase_AddWantFd(AbilityBase_Want* want, const cha
  
   
 
-#### OH_AbilityBase_GetWantFd()
+### OH_AbilityBase_GetWantFd()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityBase_ErrorCode OH_AbilityBase_GetWantFd(AbilityBase_Want* want, const char* key, int32_t* fd)
@@ -308,6 +337,7 @@ AbilityBase_ErrorCode OH_AbilityBase_GetWantFd(AbilityBase_Want* want, const cha
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityBase_Want* want | Want指针。 |
@@ -317,6 +347,7 @@ AbilityBase_ErrorCode OH_AbilityBase_GetWantFd(AbilityBase_Want* want, const cha
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityBase_ErrorCode | 返回执行结果。 ABILITY_BASE_ERROR_CODE_NO_ERROR - 获取want文件描述符成功。 ABILITY_BASE_ERROR_CODE_PARAM_INVALID - want为空或非法入参。 |
@@ -324,9 +355,10 @@ AbilityBase_ErrorCode OH_AbilityBase_GetWantFd(AbilityBase_Want* want, const cha
  
   
 
-#### OH_AbilityBase_SetWantUri()
+### OH_AbilityBase_SetWantUri()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityBase_ErrorCode OH_AbilityBase_SetWantUri(AbilityBase_Want* want, const char* uri)
@@ -340,6 +372,7 @@ AbilityBase_ErrorCode OH_AbilityBase_SetWantUri(AbilityBase_Want* want, const ch
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityBase_Want* want | Want指针。 |
@@ -348,6 +381,7 @@ AbilityBase_ErrorCode OH_AbilityBase_SetWantUri(AbilityBase_Want* want, const ch
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityBase_ErrorCode | 返回执行结果。 ABILITY_BASE_ERROR_CODE_NO_ERROR - 设置want中uri字符串成功。 ABILITY_BASE_ERROR_CODE_PARAM_INVALID - want为空或非法入参。 |
@@ -355,9 +389,10 @@ AbilityBase_ErrorCode OH_AbilityBase_SetWantUri(AbilityBase_Want* want, const ch
  
   
 
-#### OH_AbilityBase_GetWantUri()
+### OH_AbilityBase_GetWantUri()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityBase_ErrorCode OH_AbilityBase_GetWantUri(AbilityBase_Want* want, char* uri, size_t uriSize)
@@ -371,6 +406,7 @@ AbilityBase_ErrorCode OH_AbilityBase_GetWantUri(AbilityBase_Want* want, char* ur
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityBase_Want* want | Want指针。 |
@@ -380,6 +416,7 @@ AbilityBase_ErrorCode OH_AbilityBase_GetWantUri(AbilityBase_Want* want, char* ur
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityBase_ErrorCode | 返回执行结果。 ABILITY_BASE_ERROR_CODE_NO_ERROR - 获取want中URI字符串成功。 ABILITY_BASE_ERROR_CODE_PARAM_INVALID - want为空或非法入参。 |
@@ -387,9 +424,10 @@ AbilityBase_ErrorCode OH_AbilityBase_GetWantUri(AbilityBase_Want* want, char* ur
  
   
 
-#### OH_AbilityBase_SetWantInt32Param()
+### OH_AbilityBase_SetWantInt32Param()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityBase_ErrorCode OH_AbilityBase_SetWantInt32Param(AbilityBase_Want* want, const char* key, int32_t value)
@@ -403,6 +441,7 @@ AbilityBase_ErrorCode OH_AbilityBase_SetWantInt32Param(AbilityBase_Want* want, c
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityBase_Want* want | Want指针。 |
@@ -412,6 +451,7 @@ AbilityBase_ErrorCode OH_AbilityBase_SetWantInt32Param(AbilityBase_Want* want, c
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityBase_ErrorCode | 返回执行结果。 ABILITY_BASE_ERROR_CODE_NO_ERROR - 设置want中int32_t类型的值成功。 ABILITY_BASE_ERROR_CODE_PARAM_INVALID - want为空或非法入参。 |
@@ -419,9 +459,10 @@ AbilityBase_ErrorCode OH_AbilityBase_SetWantInt32Param(AbilityBase_Want* want, c
  
   
 
-#### OH_AbilityBase_GetWantInt32Param()
+### OH_AbilityBase_GetWantInt32Param()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityBase_ErrorCode OH_AbilityBase_GetWantInt32Param(AbilityBase_Want* want, const char* key, int32_t* value)
@@ -435,6 +476,7 @@ AbilityBase_ErrorCode OH_AbilityBase_GetWantInt32Param(AbilityBase_Want* want, c
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityBase_Want* want | Want指针。 |
@@ -444,6 +486,7 @@ AbilityBase_ErrorCode OH_AbilityBase_GetWantInt32Param(AbilityBase_Want* want, c
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityBase_ErrorCode | 返回执行结果。 ABILITY_BASE_ERROR_CODE_NO_ERROR - 获取want中int32_t类型的值成功。 ABILITY_BASE_ERROR_CODE_PARAM_INVALID - want为空或非法入参。 |
@@ -451,9 +494,10 @@ AbilityBase_ErrorCode OH_AbilityBase_GetWantInt32Param(AbilityBase_Want* want, c
  
   
 
-#### OH_AbilityBase_SetWantBoolParam()
+### OH_AbilityBase_SetWantBoolParam()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityBase_ErrorCode OH_AbilityBase_SetWantBoolParam(AbilityBase_Want* want, const char* key, bool value)
@@ -467,6 +511,7 @@ AbilityBase_ErrorCode OH_AbilityBase_SetWantBoolParam(AbilityBase_Want* want, co
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityBase_Want* want | Want指针。 |
@@ -476,6 +521,7 @@ AbilityBase_ErrorCode OH_AbilityBase_SetWantBoolParam(AbilityBase_Want* want, co
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityBase_ErrorCode | 返回执行结果。 ABILITY_BASE_ERROR_CODE_NO_ERROR - 设置want中bool类型的值成功。 ABILITY_BASE_ERROR_CODE_PARAM_INVALID - want为空或非法入参。 |
@@ -483,9 +529,10 @@ AbilityBase_ErrorCode OH_AbilityBase_SetWantBoolParam(AbilityBase_Want* want, co
  
   
 
-#### OH_AbilityBase_GetWantBoolParam()
+### OH_AbilityBase_GetWantBoolParam()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityBase_ErrorCode OH_AbilityBase_GetWantBoolParam(AbilityBase_Want* want, const char* key, bool* value)
@@ -499,6 +546,7 @@ AbilityBase_ErrorCode OH_AbilityBase_GetWantBoolParam(AbilityBase_Want* want, co
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityBase_Want* want | Want指针。 |
@@ -508,6 +556,7 @@ AbilityBase_ErrorCode OH_AbilityBase_GetWantBoolParam(AbilityBase_Want* want, co
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityBase_ErrorCode | 返回执行结果。 ABILITY_BASE_ERROR_CODE_NO_ERROR - 获取want中bool类型的值成功。 ABILITY_BASE_ERROR_CODE_PARAM_INVALID - want为空或非法入参。 |
@@ -515,9 +564,10 @@ AbilityBase_ErrorCode OH_AbilityBase_GetWantBoolParam(AbilityBase_Want* want, co
  
   
 
-#### OH_AbilityBase_SetWantDoubleParam()
+### OH_AbilityBase_SetWantDoubleParam()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityBase_ErrorCode OH_AbilityBase_SetWantDoubleParam(AbilityBase_Want* want, const char* key, double value)
@@ -531,6 +581,7 @@ AbilityBase_ErrorCode OH_AbilityBase_SetWantDoubleParam(AbilityBase_Want* want, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityBase_Want* want | Want指针。 |
@@ -540,6 +591,7 @@ AbilityBase_ErrorCode OH_AbilityBase_SetWantDoubleParam(AbilityBase_Want* want, 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityBase_ErrorCode | 返回执行结果。 ABILITY_BASE_ERROR_CODE_NO_ERROR - 设置want中double类型的值成功。 ABILITY_BASE_ERROR_CODE_PARAM_INVALID - want为空或非法入参。 |
@@ -547,9 +599,10 @@ AbilityBase_ErrorCode OH_AbilityBase_SetWantDoubleParam(AbilityBase_Want* want, 
  
   
 
-#### OH_AbilityBase_GetWantDoubleParam()
+### OH_AbilityBase_GetWantDoubleParam()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityBase_ErrorCode OH_AbilityBase_GetWantDoubleParam(AbilityBase_Want* want, const char* key, double* value)
@@ -563,6 +616,7 @@ AbilityBase_ErrorCode OH_AbilityBase_GetWantDoubleParam(AbilityBase_Want* want, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityBase_Want* want | Want指针。 |
@@ -572,6 +626,7 @@ AbilityBase_ErrorCode OH_AbilityBase_GetWantDoubleParam(AbilityBase_Want* want, 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityBase_ErrorCode | 返回执行结果。 ABILITY_BASE_ERROR_CODE_NO_ERROR - 获取want中double类型的值成功。 ABILITY_BASE_ERROR_CODE_PARAM_INVALID - want为空或非法入参。 |

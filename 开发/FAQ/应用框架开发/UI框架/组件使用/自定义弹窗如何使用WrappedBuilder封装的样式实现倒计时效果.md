@@ -58,17 +58,17 @@ function buildText(params: Params) {
 @Entry
 @Component
 struct TimeIndex {
-  // 使用@State装饰器管理状态，记录动态更新的数值
+  <em>// 使用@State装饰器管理状态，记录动态更新的数值</em>
   @State message: number = 10;
   @State isEnabled: boolean = true;
 
   timeout(contentNode: ComponentContent<Params>) {
     let intervalID = setInterval(() => {
-      contentNode.update(new Params(--this.message)); // 使用update方法更新对话框内容
+      contentNode.update(new Params(--this.message)); <em>// </em><em>使用update方法更新对话框内容</em>
       if (this.message === 0 || this.message < 0) {
         this.isEnabled = true;
         clearInterval(intervalID);
-        // 关闭对话框并重置状态
+       <em> // 关闭对话框并重置状态</em>
         this.getUIContext().getPromptAction().closeCustomDialog(contentNode);
         this.message = 10;
       }
@@ -84,12 +84,12 @@ struct TimeIndex {
           .onClick(() => {
             let uiContext = this.getUIContext();
             let promptAction = uiContext.getPromptAction();
-            // 创建自定义组件内容，包含渲染函数和参数
+          <em>  // 创建自定义组件内容，包含渲染函数和参数</em>
             let contentNode = new ComponentContent(uiContext, wrapBuilder(buildText), new Params(this.message));
             try {
 
               this.timeout(contentNode);
-              // 打开自定义对话框
+            <em>  // 打开自定义对话框</em>
               promptAction.openCustomDialog(contentNode, {
                 onWillAppear: () => {
                   this.isEnabled = false;

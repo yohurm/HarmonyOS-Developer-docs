@@ -1,13 +1,14 @@
 # camera_device.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-camera-device-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义相机的基本接口和功能。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | Camera_ErrorCode OH_CameraDevice_GetCameraOrientation(Camera_Device* camera, uint32_t* orientation) | 获取相机设备的传感器方向属性。 |
@@ -54,15 +58,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_CameraDevice_GetCameraOrientation()
+### OH_CameraDevice_GetCameraOrientation()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CameraDevice_GetCameraOrientation(Camera_Device* camera, uint32_t* orientation)
@@ -76,6 +82,7 @@ Camera_ErrorCode OH_CameraDevice_GetCameraOrientation(Camera_Device* camera, uin
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_Device* camera | 用于获取属性的Camera_Device。 |
@@ -84,6 +91,7 @@ Camera_ErrorCode OH_CameraDevice_GetCameraOrientation(Camera_Device* camera, uin
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功，返回传感器方向属性。 CAMERA_CAMERA_INVALID_ARGUMENT：参数丢失或者参数不正确。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -91,9 +99,10 @@ Camera_ErrorCode OH_CameraDevice_GetCameraOrientation(Camera_Device* camera, uin
  
   
 
-#### OH_CameraDevice_GetHostDeviceName()
+### OH_CameraDevice_GetHostDeviceName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CameraDevice_GetHostDeviceName(Camera_Device* camera, char** hostDeviceName)
@@ -107,6 +116,7 @@ Camera_ErrorCode OH_CameraDevice_GetHostDeviceName(Camera_Device* camera, char**
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_Device* camera | 用于获取属性的Camera_Device。 |
@@ -115,6 +125,7 @@ Camera_ErrorCode OH_CameraDevice_GetHostDeviceName(Camera_Device* camera, char**
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功，将返回远程设备名称属性。 CAMERA_CAMERA_INVALID_ARGUMENT：参数丢失或者参数不正确。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -122,9 +133,10 @@ Camera_ErrorCode OH_CameraDevice_GetHostDeviceName(Camera_Device* camera, char**
  
   
 
-#### OH_CameraDevice_GetHostDeviceType()
+### OH_CameraDevice_GetHostDeviceType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CameraDevice_GetHostDeviceType(Camera_Device* camera, Camera_HostDeviceType* hostDeviceType)
@@ -138,6 +150,7 @@ Camera_ErrorCode OH_CameraDevice_GetHostDeviceType(Camera_Device* camera, Camera
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_Device* camera | 用于获取属性的Camera_Device。 |
@@ -146,6 +159,7 @@ Camera_ErrorCode OH_CameraDevice_GetHostDeviceType(Camera_Device* camera, Camera
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功，将返回远程设备名称属性。 CAMERA_CAMERA_INVALID_ARGUMENT：参数丢失或者参数不正确。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -153,9 +167,10 @@ Camera_ErrorCode OH_CameraDevice_GetHostDeviceType(Camera_Device* camera, Camera
  
   
 
-#### OH_CameraDevice_GetLensEquivalentFocalLengths()
+### OH_CameraDevice_GetLensEquivalentFocalLengths()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CameraDevice_GetLensEquivalentFocalLengths(const Camera_Device* camera, uint32_t** equivalentFocalLengths, uint32_t* size)
@@ -169,6 +184,7 @@ Camera_ErrorCode OH_CameraDevice_GetLensEquivalentFocalLengths(const Camera_Devi
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_Device* camera | 用于获取属性的Camera_Device指针。 |
@@ -178,6 +194,7 @@ Camera_ErrorCode OH_CameraDevice_GetLensEquivalentFocalLengths(const Camera_Devi
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或者参数不正确。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -185,9 +202,10 @@ Camera_ErrorCode OH_CameraDevice_GetLensEquivalentFocalLengths(const Camera_Devi
  
   
 
-#### OH_CameraDevice_IsLogicalCamera()
+### OH_CameraDevice_IsLogicalCamera()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CameraDevice_IsLogicalCamera(const Camera_Device* camera, bool* isLogicalCamera)
@@ -201,6 +219,7 @@ Camera_ErrorCode OH_CameraDevice_IsLogicalCamera(const Camera_Device* camera, bo
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_Device* camera | 用于获取属性的Camera_Device指针。 |
@@ -209,6 +228,7 @@ Camera_ErrorCode OH_CameraDevice_IsLogicalCamera(const Camera_Device* camera, bo
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或者参数不正确。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -216,9 +236,10 @@ Camera_ErrorCode OH_CameraDevice_IsLogicalCamera(const Camera_Device* camera, bo
  
   
 
-#### OH_CameraDevice_GetLogicalCameraConstituentCameraDevices()
+### OH_CameraDevice_GetLogicalCameraConstituentCameraDevices()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CameraDevice_GetLogicalCameraConstituentCameraDevices(const Camera_Device* logicalCamera, Camera_Device** constituentCameras, uint32_t* size)
@@ -232,6 +253,7 @@ Camera_ErrorCode OH_CameraDevice_GetLogicalCameraConstituentCameraDevices(const 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_Device* logicalCamera | 逻辑摄像头的Camera_Device指针。 |
@@ -241,6 +263,7 @@ Camera_ErrorCode OH_CameraDevice_GetLogicalCameraConstituentCameraDevices(const 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或者参数不正确。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -248,9 +271,10 @@ Camera_ErrorCode OH_CameraDevice_GetLogicalCameraConstituentCameraDevices(const 
  
   
 
-#### OH_CameraDevice_DeleteConstituentCameraDevices()
+### OH_CameraDevice_DeleteConstituentCameraDevices()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CameraDevice_DeleteConstituentCameraDevices(const Camera_Device* logicalCamera, Camera_Device* constituentCameras, uint32_t size)
@@ -264,6 +288,7 @@ Camera_ErrorCode OH_CameraDevice_DeleteConstituentCameraDevices(const Camera_Dev
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_Device* logicalCamera | 逻辑摄像头的Camera_Device指针。 |
@@ -273,6 +298,7 @@ Camera_ErrorCode OH_CameraDevice_DeleteConstituentCameraDevices(const Camera_Dev
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或者参数不正确。 |
@@ -280,9 +306,10 @@ Camera_ErrorCode OH_CameraDevice_DeleteConstituentCameraDevices(const Camera_Dev
  
   
 
-#### OH_CameraDevice_GetLensFocalLength()
+### OH_CameraDevice_GetLensFocalLength()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CameraDevice_GetLensFocalLength(const Camera_Device* camera, float* lensFocalLength)
@@ -296,6 +323,7 @@ Camera_ErrorCode OH_CameraDevice_GetLensFocalLength(const Camera_Device* camera,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_Device* camera | 用于获取属性的Camera_Device指针。 |
@@ -304,6 +332,7 @@ Camera_ErrorCode OH_CameraDevice_GetLensFocalLength(const Camera_Device* camera,
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或者参数不正确。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -311,9 +340,10 @@ Camera_ErrorCode OH_CameraDevice_GetLensFocalLength(const Camera_Device* camera,
  
   
 
-#### OH_CameraDevice_GetMinimumFocusDistance()
+### OH_CameraDevice_GetMinimumFocusDistance()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CameraDevice_GetMinimumFocusDistance(const Camera_Device* camera, float* minimumFocusDistance)
@@ -327,6 +357,7 @@ Camera_ErrorCode OH_CameraDevice_GetMinimumFocusDistance(const Camera_Device* ca
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_Device* camera | 用于获取属性的Camera_Device指针。 |
@@ -335,6 +366,7 @@ Camera_ErrorCode OH_CameraDevice_GetMinimumFocusDistance(const Camera_Device* ca
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或者参数不正确。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -342,9 +374,10 @@ Camera_ErrorCode OH_CameraDevice_GetMinimumFocusDistance(const Camera_Device* ca
  
   
 
-#### OH_CameraDevice_GetLensDistortion()
+### OH_CameraDevice_GetLensDistortion()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CameraDevice_GetLensDistortion(const Camera_Device* camera, float** lens, uint32_t* size)
@@ -358,6 +391,7 @@ Camera_ErrorCode OH_CameraDevice_GetLensDistortion(const Camera_Device* camera, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_Device* camera | 用于获取属性的Camera_Device指针。 |
@@ -367,6 +401,7 @@ Camera_ErrorCode OH_CameraDevice_GetLensDistortion(const Camera_Device* camera, 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或者参数不正确。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -374,9 +409,10 @@ Camera_ErrorCode OH_CameraDevice_GetLensDistortion(const Camera_Device* camera, 
  
   
 
-#### OH_CameraDevice_GetIntrinsicCalibration()
+### OH_CameraDevice_GetIntrinsicCalibration()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CameraDevice_GetIntrinsicCalibration(const Camera_Device* camera, float** intrinsicCalibration, uint32_t* size)
@@ -390,6 +426,7 @@ Camera_ErrorCode OH_CameraDevice_GetIntrinsicCalibration(const Camera_Device* ca
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_Device* camera | 用于获取属性的Camera_Device指针。 |
@@ -399,6 +436,7 @@ Camera_ErrorCode OH_CameraDevice_GetIntrinsicCalibration(const Camera_Device* ca
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或者参数不正确。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -406,9 +444,10 @@ Camera_ErrorCode OH_CameraDevice_GetIntrinsicCalibration(const Camera_Device* ca
  
   
 
-#### OH_CameraDevice_GetSensorPhysicalSize()
+### OH_CameraDevice_GetSensorPhysicalSize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CameraDevice_GetSensorPhysicalSize(const Camera_Device* camera, float* width, float* height)
@@ -422,6 +461,7 @@ Camera_ErrorCode OH_CameraDevice_GetSensorPhysicalSize(const Camera_Device* came
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_Device* camera | 用于获取属性的Camera_Device指针。 |
@@ -431,6 +471,7 @@ Camera_ErrorCode OH_CameraDevice_GetSensorPhysicalSize(const Camera_Device* came
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或者参数不正确。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -438,9 +479,10 @@ Camera_ErrorCode OH_CameraDevice_GetSensorPhysicalSize(const Camera_Device* came
  
   
 
-#### OH_CameraDevice_GetSensorPixelArraySize()
+### OH_CameraDevice_GetSensorPixelArraySize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CameraDevice_GetSensorPixelArraySize(const Camera_Device* camera, uint32_t* width, uint32_t* height)
@@ -454,6 +496,7 @@ Camera_ErrorCode OH_CameraDevice_GetSensorPixelArraySize(const Camera_Device* ca
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_Device* camera | 用于获取属性的Camera_Device指针。 |
@@ -463,6 +506,7 @@ Camera_ErrorCode OH_CameraDevice_GetSensorPixelArraySize(const Camera_Device* ca
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或者参数不正确。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -470,9 +514,10 @@ Camera_ErrorCode OH_CameraDevice_GetSensorPixelArraySize(const Camera_Device* ca
  
   
 
-#### OH_CameraDevice_GetSensorColorFilterArrangement()
+### OH_CameraDevice_GetSensorColorFilterArrangement()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CameraDevice_GetSensorColorFilterArrangement(const Camera_Device* camera, OH_Camera_SensorColorFilterArrangement* sensorCFA)
@@ -486,6 +531,7 @@ Camera_ErrorCode OH_CameraDevice_GetSensorColorFilterArrangement(const Camera_De
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_Device* camera | 用于获取属性的Camera_Device指针。 |
@@ -494,6 +540,7 @@ Camera_ErrorCode OH_CameraDevice_GetSensorColorFilterArrangement(const Camera_De
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或者参数不正确。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -501,9 +548,10 @@ Camera_ErrorCode OH_CameraDevice_GetSensorColorFilterArrangement(const Camera_De
  
   
 
-#### OH_CameraDevice_GetAutomotiveCameraPosition()
+### OH_CameraDevice_GetAutomotiveCameraPosition()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_CameraDevice_GetAutomotiveCameraPosition(const Camera_Device* camera, OH_Camera_AutomotiveCameraPosition* automotiveCameraPosition)
@@ -517,6 +565,7 @@ Camera_ErrorCode OH_CameraDevice_GetAutomotiveCameraPosition(const Camera_Device
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_Device* camera | 指向用于检索属性的Camera_Device的指针。 |
@@ -525,6 +574,7 @@ Camera_ErrorCode OH_CameraDevice_GetAutomotiveCameraPosition(const Camera_Device
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或者参数不正确。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |

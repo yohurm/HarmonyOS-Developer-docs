@@ -1,9 +1,9 @@
 # @ohos.multimodalInput.keyEvent (按键输入事件)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-keyevent
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设备上报的按键事件，继承自[InputEvent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inputevent)。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { Action, Key, KeyEvent } from '@kit.InputKit';
@@ -22,9 +23,10 @@ import { Action, Key, KeyEvent } from '@kit.InputKit';
  
   
 
-#### Action
+## Action
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 按键事件类型。
  
@@ -32,6 +34,7 @@ import { Action, Key, KeyEvent } from '@kit.InputKit';
  
 **系统能力：** SystemCapability.MultimodalInput.Input.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CANCEL | 0 | 按键取消。 |
@@ -41,9 +44,10 @@ import { Action, Key, KeyEvent } from '@kit.InputKit';
  
   
 
-#### Key
+## Key
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 按键。
  
@@ -51,6 +55,7 @@ import { Action, Key, KeyEvent } from '@kit.InputKit';
  
 **系统能力：** SystemCapability.MultimodalInput.Input.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | code | KeyCode | 否 | 否 | 键值。 |
@@ -60,9 +65,10 @@ import { Action, Key, KeyEvent } from '@kit.InputKit';
  
   
 
-#### KeyEvent
+## KeyEvent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 按键事件。
  
@@ -70,6 +76,7 @@ import { Action, Key, KeyEvent } from '@kit.InputKit';
  
 **系统能力：** SystemCapability.MultimodalInput.Input.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | action | Action | 否 | 否 | 按键事件类型。 |

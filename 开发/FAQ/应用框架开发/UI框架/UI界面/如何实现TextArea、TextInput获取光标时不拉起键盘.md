@@ -31,7 +31,7 @@ struct TextAreaExample {
   controller: TextAreaController = new TextAreaController();
   @State inputValue: string = '';
 
-  // 自定义键盘组件
+ <em> // 自定义键盘组件</em>
   @Builder
   CustomKeyboardBuilder() {
     Column() {

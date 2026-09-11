@@ -1,9 +1,9 @@
 # @ohos.util.Vector (线性容器Vector)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-vector
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Vector是一种线性数据结构，底层基于数组实现，解决了需要动态扩容、高效随机访问的数据存储问题。当Vector的内存用尽时，会自动分配更大的连续内存区，将原先的元素复制到新的内存区，并释放旧的内存区。使用Vector能够高效快速地访问元素，其2倍扩容策略减少了频繁的内存重分配，同时丰富的操作接口提供了更灵活的数据管理能力。
  
@@ -21,9 +21,10 @@ Vector和[ArrayList](https://developer.huawei.com/consumer/cn/doc/harmonyos-refe
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { Vector } from '@kit.ArkTS';
@@ -31,18 +32,21 @@ import { Vector } from '@kit.ArkTS';
  
   
 
-#### Vector
+## Vector
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Utils.Lang
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | length | number | 是 | 否 | Vector的元素个数。 |
@@ -50,9 +54,10 @@ import { Vector } from '@kit.ArkTS';
  
   
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
  
@@ -68,9 +73,10 @@ let vector : Vector<string | number | Array<number>> = new Vector();
  
   
 
-#### add
+### add
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 add(element: T): boolean
  
@@ -80,6 +86,7 @@ add(element: T): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | element | T | 是 | 添加的元素。 |
@@ -87,6 +94,7 @@ add(element: T): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 插入成功返回true，失败返回false。 |
@@ -116,9 +124,10 @@ let result3 = vector.add(personInfo);
  
   
 
-#### insert
+### insert
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 insert(element: T, index: number): void
  
@@ -128,6 +137,7 @@ insert(element: T, index: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | element | T | 是 | 被插入的元素。 |
@@ -149,9 +159,10 @@ vector.insert(true, 2);
  
   
 
-#### has
+### has
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 has(element: T): boolean
  
@@ -161,6 +172,7 @@ has(element: T): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | element | T | 是 | 指定的元素。 |
@@ -168,6 +180,7 @@ has(element: T): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 是否包含指定元素，true表示包含该元素，false表示不包含。 |
@@ -188,9 +201,10 @@ let result1 = vector.has("squirrel");
  
   
 
-#### getIndexOf
+### getIndexOf
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getIndexOf(element: T): number
  
@@ -200,6 +214,7 @@ getIndexOf(element: T): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | element | T | 是 | 指定的元素。 |
@@ -207,6 +222,7 @@ getIndexOf(element: T): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回指定元素第一次出现时的下标值，查找失败返回-1。 |
@@ -228,9 +244,10 @@ let result = vector.getIndexOf(2);
  
   
 
-#### getLastIndexOf
+### getLastIndexOf
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLastIndexOf(element: T): number
  
@@ -240,6 +257,7 @@ getLastIndexOf(element: T): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | element | T | 是 | 指定元素。 |
@@ -247,6 +265,7 @@ getLastIndexOf(element: T): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回指定元素最后一次出现时的下标值，查找失败返回-1。 |
@@ -268,9 +287,10 @@ let result = vector.getLastIndexOf(2);
  
   
 
-#### removeByIndex
+### removeByIndex
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeByIndex(index: number): T
  
@@ -280,6 +300,7 @@ removeByIndex(index: number): T
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 要删除元素的位置下标值。 |
@@ -287,6 +308,7 @@ removeByIndex(index: number): T
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | T | 返回被删除的元素。Vector为空时返回undefined，下标越界时抛出异常。 |
@@ -306,9 +328,10 @@ let result = vector.removeByIndex(2);
  
   
 
-#### remove
+### remove
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 remove(element: T): boolean
  
@@ -318,6 +341,7 @@ remove(element: T): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | element | T | 是 | 指定元素。 |
@@ -325,6 +349,7 @@ remove(element: T): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 删除成功返回true，删除失败返回false。 |
@@ -343,9 +368,10 @@ let result = vector.remove(2);
  
   
 
-#### removeByRange
+### removeByRange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeByRange(fromIndex: number, toIndex: number): void
  
@@ -355,6 +381,7 @@ removeByRange(fromIndex: number, toIndex: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fromIndex | number | 是 | 起始下标，包含该下标对应的元素。 |
@@ -376,9 +403,10 @@ vector.removeByRange(2,4);
  
   
 
-#### replaceAllElements
+### replaceAllElements
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 replaceAllElements(callbackFn: (value: T, index?: number, vector?: Vector&lt;T&gt;) => T, thisArg?: Object): void
  
@@ -388,6 +416,7 @@ replaceAllElements(callbackFn: (value: T, index?: number, vector?: Vector&lt;T&g
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callbackFn | function | 是 | 回调函数，用于操作Vector中的元素，并用操作后的结果替换原元素。 |
@@ -396,6 +425,7 @@ replaceAllElements(callbackFn: (value: T, index?: number, vector?: Vector&lt;T&g
  
 callbackFn的参数说明：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | T | 是 | 当前遍历到的元素。 |
@@ -421,9 +451,10 @@ vector.replaceAllElements((value : number) : number => {
  
   
 
-#### forEach
+### forEach
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 forEach(callbackFn: (value: T, index?: number, vector?: Vector&lt;T&gt;) => void, thisArg?: Object): void
  
@@ -433,6 +464,7 @@ forEach(callbackFn: (value: T, index?: number, vector?: Vector&lt;T&gt;) => void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callbackFn | function | 是 | 回调函数，用于遍历Vector中的每个元素。 |
@@ -441,6 +473,7 @@ forEach(callbackFn: (value: T, index?: number, vector?: Vector&lt;T&gt;) => void
  
 callbackFn的参数说明：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | T | 是 | 当前遍历到的元素。 |
@@ -465,9 +498,10 @@ vector.forEach((value : number, index?: number) : void => {
  
   
 
-#### sort
+### sort
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sort(comparator?: (firstValue: T, secondValue: T) => number): void
  
@@ -477,6 +511,7 @@ sort(comparator?: (firstValue: T, secondValue: T) => number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | comparator | function | 否 | 回调函数，若不传入此参数，则按照默认排序规则对元素进行排序。 |
@@ -484,6 +519,7 @@ sort(comparator?: (firstValue: T, secondValue: T) => number): void
  
 comparator的参数说明：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | firstValue | T | 是 | 前一项元素。 |
@@ -509,9 +545,10 @@ vector.sort();
  
   
 
-#### subVector
+### subVector
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 subVector(fromIndex: number, toIndex: number): Vector&lt;T&gt;
  
@@ -521,6 +558,7 @@ subVector(fromIndex: number, toIndex: number): Vector&lt;T&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fromIndex | number | 是 | 起始下标，取值范围：0 ≤ fromIndex < length。 |
@@ -529,6 +567,7 @@ subVector(fromIndex: number, toIndex: number): Vector&lt;T&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Vector&lt;T&gt; | 返回包含从起始下标到终止下标（不包括终止下标）元素的Vector对象实例。 |
@@ -553,9 +592,10 @@ let result1 = vector.subVector(2,4);
  
   
 
-#### clear
+### clear
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clear(): void
  
@@ -576,9 +616,10 @@ vector.clear();
  
   
 
-#### clone
+### clone
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clone(): Vector&lt;T&gt;
  
@@ -588,6 +629,7 @@ clone(): Vector&lt;T&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Vector&lt;T&gt; | 返回与原实例内容相同的克隆Vector对象实例，修改克隆实例不影响原实例。 |
@@ -606,9 +648,10 @@ let result = vector.clone();
  
   
 
-#### getCapacity
+### getCapacity
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCapacity(): number
  
@@ -618,6 +661,7 @@ getCapacity(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回Vector的容量大小。 |
@@ -636,9 +680,10 @@ let result = vector.getCapacity();
  
   
 
-#### convertToArray
+### convertToArray
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 convertToArray(): Array&lt;T&gt;
  
@@ -648,6 +693,7 @@ convertToArray(): Array&lt;T&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;T&gt; | 返回包含Vector中所有元素的数组。 |
@@ -666,9 +712,10 @@ let result = vector.convertToArray();
  
   
 
-#### isEmpty
+### isEmpty
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isEmpty(): boolean
  
@@ -678,6 +725,7 @@ isEmpty(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 为空返回true，不为空返回false。 |
@@ -696,9 +744,10 @@ let result = vector.isEmpty();
  
   
 
-#### increaseCapacityTo
+### increaseCapacityTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 increaseCapacityTo(newCapacity: number): void
  
@@ -708,6 +757,7 @@ increaseCapacityTo(newCapacity: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | newCapacity | number | 是 | 新容量，需大于或等于当前Vector中的元素个数。传入值小于元素个数时不生效。 |
@@ -730,9 +780,10 @@ vector.increaseCapacityTo(12);
  
   
 
-#### trimToCurrentLength
+### trimToCurrentLength
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 trimToCurrentLength(): void
  
@@ -753,9 +804,10 @@ vector.trimToCurrentLength();
  
   
 
-#### toString
+### toString
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toString(): string
  
@@ -765,6 +817,7 @@ toString(): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 返回用","将Vector中的元素按顺序拼接成的字符串。 |
@@ -783,9 +836,10 @@ let result = vector.toString();
  
   
 
-#### copyToArray
+### copyToArray
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 copyToArray(array: Array&lt;T&gt;): void
  
@@ -795,6 +849,7 @@ copyToArray(array: Array&lt;T&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | array | Array&lt;T&gt; | 是 | 接收复制元素的目标数组。 |
@@ -802,9 +857,10 @@ copyToArray(array: Array&lt;T&gt;): void
  
   
 
-#### getFirstElement
+### getFirstElement
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFirstElement(): T
  
@@ -814,6 +870,7 @@ getFirstElement(): T
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | T | 返回Vector实例中的第一个元素；若Vector为空，返回undefined。 |
@@ -832,9 +889,10 @@ let result = vector.getFirstElement();
  
   
 
-#### getLastElement
+### getLastElement
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLastElement(): T
  
@@ -844,6 +902,7 @@ getLastElement(): T
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | T | 返回Vector实例中的最后一个元素；若Vector为空，返回undefined。 |
@@ -862,9 +921,10 @@ let result = vector.getLastElement();
  
   
 
-#### getLastIndexFrom
+### getLastIndexFrom
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLastIndexFrom(element: T, index: number): number
  
@@ -874,6 +934,7 @@ getLastIndexFrom(element: T, index: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | element | T | 是 | 要查找的元素。 |
@@ -882,6 +943,7 @@ getLastIndexFrom(element: T, index: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回该元素的下标，如果查找失败，则返回-1。 |
@@ -900,9 +962,10 @@ let result = vector.getLastIndexFrom(4,3);
  
   
 
-#### getIndexFrom
+### getIndexFrom
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getIndexFrom(element: T, index: number): number
  
@@ -912,6 +975,7 @@ getIndexFrom(element: T, index: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | element | T | 是 | 要查找的元素。 |
@@ -920,6 +984,7 @@ getIndexFrom(element: T, index: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回该元素的下标，如果查找失败，则返回 -1。 |
@@ -938,9 +1003,10 @@ let result = vector.getIndexFrom(4, 3);
  
   
 
-#### setLength
+### setLength
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setLength(newSize: number): void
  
@@ -950,6 +1016,7 @@ setLength(newSize: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | newSize | number | 是 | 设置的新长度，取值原则：newSize ≥ 0。 |
@@ -969,9 +1036,10 @@ vector.setLength(2);
  
   
 
-#### get
+### get
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get(index: number): T
  
@@ -981,6 +1049,7 @@ get(index: number): T
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 查找的下标值，取值范围：0 ≤ index < length。 |
@@ -988,6 +1057,7 @@ get(index: number): T
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | T | 返回获取到的元素。 |
@@ -1006,9 +1076,10 @@ let result = vector.get(2);
  
   
 
-#### set
+### set
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set(index: number, element: T): T
  
@@ -1018,6 +1089,7 @@ set(index: number, element: T): T
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 查找的下标值，取值范围为[0, length-1]。 |
@@ -1026,6 +1098,7 @@ set(index: number, element: T): T
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | T | 返回被替换位置上的原元素。 |
@@ -1033,9 +1106,10 @@ set(index: number, element: T): T
  
   
 
-#### [Symbol.iterator]
+### [Symbol.iterator]
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [Symbol.iterator](): IterableIterator&lt;T&gt;
  
@@ -1045,6 +1119,7 @@ set(index: number, element: T): T
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator&lt;T&gt; | 返回一个迭代器，用于遍历Vector实例中的元素。 |

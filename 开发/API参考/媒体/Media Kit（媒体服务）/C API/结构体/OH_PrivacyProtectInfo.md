@@ -1,16 +1,17 @@
 # OH_PrivacyProtectInfo
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-04 10:41:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avscreencapture-oh-privacyprotectinfo
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
-typedef struct {...} OH_PrivacyProtectInfo;
+typedef struct {...} OH_PrivacyProtectInfo
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -26,16 +27,19 @@ typedef struct {...} OH_PrivacyProtectInfo;
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | bool systemWindowProtection | 是否开启系统窗口隐私保护。true表示开启隐私保护，false表示关闭隐私保护，默认值为true。系统窗口是指系统级应用（如设置、通知等）的窗口；需在屏幕录制启动前配置该参数，开启后录屏时该类窗口内容将被保护处理。典型场景：在屏幕录制或共享时，开启此项可保护通知栏、弹窗等系统窗口中的隐私信息不被录制或共享出去。 起始版本： 24 |

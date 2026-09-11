@@ -1,6 +1,6 @@
 # @ohos.data.uniformTypeDescriptor (标准化数据定义与描述)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-data-uniformtypedescriptor
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -12,7 +12,8 @@
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -22,7 +23,8 @@ import { uniformTypeDescriptor } from '@kit.ArkData';
 
 
 
-#### UniformDataType
+## UniformDataType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -31,6 +33,7 @@ import { uniformTypeDescriptor } from '@kit.ArkData';
 下表以枚举形式，列举了常用的标准化数据类型定义。
 
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -89,7 +92,7 @@ import { uniformTypeDescriptor } from '@kit.ArkData';
 | EFX_FAX12+ | 'com.js.efx-fax' | 电子传真文件类型，归属类型为FAX。 |
 | XBITMAP_IMAGE12+ | 'general.xbitmap-image' | X Window系统（X11）中使用的位图图像格式，归属类型为IMAGE。 |
 | GIF12+ | 'general.gif' | GIF图像类型，归属类型为IMAGE。 |
-| TGA_IMAGE12+ | 'com.truevision.tga-image' | 标签图形（TaggedGraphics）图像类型，归属类型为IMAGE。 |
+| TGA_IMAGE12+ | 'com.truevision.tga-image' | Truevision Graphics Adapter图像文件格式，归属类型为IMAGE。 |
 | SGI_IMAGE12+ | 'com.sgi.sgi-image' | 硅图（Silicon Graphics）图像类型，归属类型为IMAGE。 |
 | OPENEXR_IMAGE12+ | 'com.ilm.openexr-image' | 开放标准的高动态范围图像格式类型，归属类型为IMAGE。 |
 | FLASHPIX_IMAGE12+ | 'com.kodak.flashpix.image' | FlashPix 图像文件类型，归属类型为IMAGE。 |
@@ -215,7 +218,8 @@ import { uniformTypeDescriptor } from '@kit.ArkData';
 
 
 
-#### TypeDescriptor11+
+## TypeDescriptor11+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -223,11 +227,13 @@ import { uniformTypeDescriptor } from '@kit.ArkData';
 
 
 
-#### 属性
+### 属性
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -242,7 +248,8 @@ import { uniformTypeDescriptor } from '@kit.ArkData';
 
 
 
-#### belongsTo11+
+### belongsTo11+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -260,12 +267,14 @@ belongsTo(type: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 所指定的标准化数据类型（即UTD预置列表中各类型对应的UTD-ID或自定义UTD-ID）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -275,6 +284,7 @@ belongsTo(type: string): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -303,7 +313,8 @@ try {
 
 
 
-#### isLowerLevelType11+
+### isLowerLevelType11+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -322,12 +333,14 @@ isLowerLevelType(type: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 所指定的标准化数据类型（即UTD预置列表中各类型对应的UTD-ID或自定义UTD-ID）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -337,6 +350,7 @@ isLowerLevelType(type: string): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -364,7 +378,8 @@ try {
 
 
 
-#### isHigherLevelType11+
+### isHigherLevelType11+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -383,12 +398,14 @@ isHigherLevelType(type: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 所指定的标准化数据类型（即UTD预置列表中各类型对应的UTD-ID或自定义UTD-ID）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -398,6 +415,7 @@ isHigherLevelType(type: string): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -425,7 +443,8 @@ try {
 
 
 
-#### equals11+
+### equals11+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -444,12 +463,14 @@ equals(typeDescriptor: TypeDescriptor): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | typeDescriptor | TypeDescriptor | 是 | 待比较的标准化数据类型描述类对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -459,6 +480,7 @@ equals(typeDescriptor: TypeDescriptor): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -486,7 +508,8 @@ try {
 
 
 
-#### uniformTypeDescriptor.getTypeDescriptor11+
+## uniformTypeDescriptor.getTypeDescriptor11+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -505,12 +528,14 @@ getTypeDescriptor(typeId: string): TypeDescriptor
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | typeId | string | 是 | 标准化数据类型ID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -520,6 +545,7 @@ getTypeDescriptor(typeId: string): TypeDescriptor
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -556,7 +582,8 @@ try {
 
 
 
-#### uniformTypeDescriptor.getUniformDataTypeByFilenameExtension11+
+## uniformTypeDescriptor.getUniformDataTypeByFilenameExtension11+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -575,6 +602,7 @@ getUniformDataTypeByFilenameExtension(filenameExtension: string, belongsTo?: str
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | filenameExtension | string | 是 | 文件后缀名称，需要包含点号，如'.ts'、'.jpg'等。 |
@@ -582,6 +610,7 @@ getUniformDataTypeByFilenameExtension(filenameExtension: string, belongsTo?: str
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -591,6 +620,7 @@ getUniformDataTypeByFilenameExtension(filenameExtension: string, belongsTo?: str
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -613,7 +643,7 @@ try {
   console.error(`getUniformDataTypeByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
 }
 
-// 根据“.myts”，“general.plain-text”查不到预置数据类型则按返回根据入参信息生成的动态类型。
+// 根据“.myts”，“general.plain-text”查不到预置数据类型则返回根据入参信息生成的动态类型。
 try {
   let typeId = uniformTypeDescriptor.getUniformDataTypeByFilenameExtension('.myts', 'general.plain-text');
   if (typeId) {
@@ -627,7 +657,8 @@ try {
 
 
 
-#### uniformTypeDescriptor.getUniformDataTypeByMIMEType11+
+## uniformTypeDescriptor.getUniformDataTypeByMIMEType11+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -646,6 +677,7 @@ getUniformDataTypeByMIMEType(mimeType: string, belongsTo?: string): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mimeType | string | 是 | MIME类型名称，格式为'type/subtype'，如'image/jpeg'、'text/plain'等。 |
@@ -653,6 +685,7 @@ getUniformDataTypeByMIMEType(mimeType: string, belongsTo?: string): string
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -662,6 +695,7 @@ getUniformDataTypeByMIMEType(mimeType: string, belongsTo?: string): string
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -684,7 +718,7 @@ try {
   console.error(`getUniformDataTypeByMIMEType throws an exception. code is ${error.code}, message is ${error.message} `);
 }
 
-// 根据“image/myimage”, “general.image”查不到预置数据类型则按返回根据入参信息生成的动态类型。
+// 根据“image/myimage”, “general.image”查不到预置数据类型则返回根据入参信息生成的动态类型。
 try {
   let typeId = uniformTypeDescriptor.getUniformDataTypeByMIMEType('image/myimage', 'general.image');
   if (typeId) {
@@ -698,7 +732,8 @@ try {
 
 
 
-#### uniformTypeDescriptor.getUniformDataTypesByFilenameExtension13+
+## uniformTypeDescriptor.getUniformDataTypesByFilenameExtension13+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -717,6 +752,7 @@ getUniformDataTypesByFilenameExtension(filenameExtension: string, belongsTo?: st
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | filenameExtension | string | 是 | 文件后缀名称。 |
@@ -724,6 +760,7 @@ getUniformDataTypesByFilenameExtension(filenameExtension: string, belongsTo?: st
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -733,6 +770,7 @@ getUniformDataTypesByFilenameExtension(filenameExtension: string, belongsTo?: st
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -755,7 +793,7 @@ try {
   console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
 }
 
-// 根据“.myts”，“general.plain-text”查不到预置数据类型则按返回根据入参信息生成的动态类型列表。
+// 根据“.myts”，“general.plain-text”查不到预置数据类型则返回根据入参信息生成的动态类型列表。
 try {
   let flexTypeIds = uniformTypeDescriptor.getUniformDataTypesByFilenameExtension('.myts', 'general.plain-text');
   for (let flexTypeId of flexTypeIds) {
@@ -769,7 +807,8 @@ try {
 
 
 
-#### uniformTypeDescriptor.getUniformDataTypesByMIMEType13+
+## uniformTypeDescriptor.getUniformDataTypesByMIMEType13+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -788,6 +827,7 @@ getUniformDataTypesByMIMEType(mimeType: string, belongsTo?: string): Array&lt;st
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mimeType | string | 是 | MIME类型名称，格式为'type/subtype'，如'image/jpeg'、'text/plain'等。 |
@@ -795,6 +835,7 @@ getUniformDataTypesByMIMEType(mimeType: string, belongsTo?: string): Array&lt;st
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -804,6 +845,7 @@ getUniformDataTypesByMIMEType(mimeType: string, belongsTo?: string): Array&lt;st
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

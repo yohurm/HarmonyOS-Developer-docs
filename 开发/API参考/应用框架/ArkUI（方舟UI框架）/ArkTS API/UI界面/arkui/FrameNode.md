@@ -1,9 +1,9 @@
 # FrameNode
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 FrameNode表示组件树的实体节点，支持节点树操作、自定义绘制与布局、位置查询、动画等能力。[NodeController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-nodecontroller)可通过[BuilderNode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-buildernode)持有的FrameNode将其挂载到[NodeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-nodecontainer)上，也可通过FrameNode获取[RenderNode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode)，挂载到其他FrameNode上。适用于需要通过代码动态创建和管理组件节点树的场景，可实现声明式组件无法直接满足的灵活UI组合与自定义渲染需求。最佳实践请参考[组件动态创建](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-component-dynamic-creation)。
 
@@ -12,9 +12,10 @@ FrameNode表示组件树的实体节点，支持节点树操作、自定义绘�
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { FrameNode, LayoutConstraint, ExpandMode, ChildrenCountMode, typeNode, NodeAdapter } from '@kit.ArkUI';
@@ -22,9 +23,10 @@ import { FrameNode, LayoutConstraint, ExpandMode, ChildrenCountMode, typeNode, N
 
 
 
-#### LayoutConstraint12+
+## LayoutConstraint12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述组件的布局约束。
 
@@ -33,6 +35,7 @@ import { FrameNode, LayoutConstraint, ExpandMode, ChildrenCountMode, typeNode, N
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -43,9 +46,10 @@ import { FrameNode, LayoutConstraint, ExpandMode, ChildrenCountMode, typeNode, N
 
 
 
-#### CrossLanguageOptions15+
+## CrossLanguageOptions15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该接口用于配置或查询FrameNode的跨语言访问权限。例如，针对ArkTS语言创建的节点，可通过该接口控制是否允许通过非ArkTS语言进行属性访问或修改。
 
@@ -55,6 +59,7 @@ import { FrameNode, LayoutConstraint, ExpandMode, ChildrenCountMode, typeNode, N
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | attributeSetting | boolean | 否 | 是 | FrameNode是否支持跨ArkTS语言进行属性设置。 true表示支持跨ArkTS语言进行属性设置，false表示不支持跨ArkTS语言进行属性设置。 默认值为false。 元服务API： 从API version 15开始，该接口支持在元服务中使用。 |
@@ -63,15 +68,17 @@ import { FrameNode, LayoutConstraint, ExpandMode, ChildrenCountMode, typeNode, N
 
 
 
-#### ExpandMode15+
+## ExpandMode15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 子节点展开模式枚举。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -83,9 +90,10 @@ import { FrameNode, LayoutConstraint, ExpandMode, ChildrenCountMode, typeNode, N
 
 
 
-#### ChildrenCountMode
+## ChildrenCountMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 子节点计数模式枚举。用于指定获取子节点数量时的计数方式。
 
@@ -97,6 +105,7 @@ import { FrameNode, LayoutConstraint, ExpandMode, ChildrenCountMode, typeNode, N
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ALL_EXPAND | 0 | 计数展开模式。当遇到懒加载节点（如LazyForEach）时，展开节点并返回所有子节点数量。 是否展开懒加载节点：是 使用场景：需要展开并返回所有子节点数量的场景。 |
@@ -106,9 +115,10 @@ import { FrameNode, LayoutConstraint, ExpandMode, ChildrenCountMode, typeNode, N
 
 
 
-#### InteractionEventBindingInfo19+
+## InteractionEventBindingInfo19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 组件的交互事件绑定状态信息。如果当前节点上绑定了所要查询的交互事件，调用查询接口时返回一个InteractionEventBindingInfo对象，指示事件绑定详细信息。
 
@@ -117,6 +127,7 @@ import { FrameNode, LayoutConstraint, ExpandMode, ChildrenCountMode, typeNode, N
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -128,15 +139,17 @@ import { FrameNode, LayoutConstraint, ExpandMode, ChildrenCountMode, typeNode, N
 
 
 
-#### UIState20+
+## UIState20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 多态样式状态枚举，用于处理多态样式。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -150,9 +163,10 @@ import { FrameNode, LayoutConstraint, ExpandMode, ChildrenCountMode, typeNode, N
 
 
 
-#### UIStatesChangeHandler20+
+## UIStatesChangeHandler20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type UIStatesChangeHandler = (node: FrameNode, currentUIStates: number) => void
 
@@ -166,6 +180,7 @@ type UIStatesChangeHandler = (node: FrameNode, currentUIStates: number) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 触发UI状态变化的节点。 |
@@ -174,15 +189,23 @@ type UIStatesChangeHandler = (node: FrameNode, currentUIStates: number) => void
 
 
 
-#### FrameNode
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## FrameNode
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### constructor
+FrameNode表示组件树的实体节点，支持节点树操作、自定义绘制与布局、位置查询、动画等能力。[NodeController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-nodecontroller)可通过[BuilderNode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-buildernode)持有的FrameNode将其挂载到[NodeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-nodecontainer)上，也可通过FrameNode获取[RenderNode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode)，挂载到其他FrameNode上。适用于需要通过代码动态创建和管理组件节点树的场景，可实现声明式组件无法直接满足的灵活UI组合与自定义渲染需求。[getInspectorInfo返回结果$attrs映射表.xlsx](https://gitcode.com/openharmony/docs/blob/master/zh-cn/application-dev/reference/apis-arkui/figures/getInspectorInfo返回结果$attrs映射表.xlsx)。
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+> [!NOTE]
+> 当前不支持在预览器中使用FrameNode节点。 FrameNode节点暂不支持拖拽。 FrameNode对象不支持使用JSON序列化。 在 UI上下文不明确 的场景中调用 FrameNode 对象的接口时，建议使用 UIContext 的 runScopedTask 接口明确UI上下文，参考 执行绑定UI实例的闭包 示例。 FrameNode的接口中，仅 Optional 类型的必选参数支持传入null或undefined。
+
+
+
+
+### constructor
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(uiContext: UIContext)
 
@@ -196,6 +219,7 @@ FrameNode的构造函数。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uiContext | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -203,9 +227,10 @@ FrameNode的构造函数。
 
 
 
-#### getRenderNode
+### getRenderNode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRenderNode(): RenderNode | null
 
@@ -218,6 +243,7 @@ getRenderNode(): RenderNode | null
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -262,9 +288,10 @@ struct Index {
 
 
 
-#### isModifiable12+
+### isModifiable12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isModifiable(): boolean
 
@@ -278,6 +305,7 @@ isModifiable(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 判断当前节点是否可修改。 true表示当前节点可修改，false表示当前节点不可修改。 当节点为自定义组件节点中的系统组件代理节点或节点已经dispose时返回false。 当返回false时，当前FrameNode不支持appendChild、insertChildAfter、removeChild、clearChildren、createAnimation、cancelAnimations、moveTo、addComponentContent、adoptChild、removeAdoptedChild的操作。 |
@@ -289,9 +317,10 @@ isModifiable(): boolean
 
 
 
-#### appendChild12+
+### appendChild12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 appendChild(node: FrameNode): void
 
@@ -305,6 +334,7 @@ appendChild(node: FrameNode): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 需要添加的FrameNode。 node节点不可以为不可修改的FrameNode（例如通过getFrameNodeById等接口获取的声明式组件节点）。仅BuilderNode通过getFrameNode接口获取的FrameNode可作为声明式子节点添加。若子节点不符合规格，则抛出异常信息。 node节点不可以拥有父节点，否则抛出异常信息。 |
@@ -313,6 +343,7 @@ appendChild(node: FrameNode): void
 **错误码：**
 
 以下错误码的详细介绍请参见[自定义节点错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-node)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -326,9 +357,10 @@ appendChild(node: FrameNode): void
 
 
 
-#### insertChildAfter12+
+### insertChildAfter12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 insertChildAfter(child: FrameNode, sibling: FrameNode | null): void
 
@@ -342,6 +374,7 @@ insertChildAfter(child: FrameNode, sibling: FrameNode | null): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | child | FrameNode | 是 | 需要添加的子节点。 child节点不可以为不可修改的FrameNode（例如通过getFrameNodeById等接口获取的声明式组件节点）。仅BuilderNode通过getFrameNode接口获取的FrameNode可作为声明式子节点添加。若子节点不符合规格，则抛出异常信息。 child节点不可以拥有父节点，否则抛出异常信息。 |
@@ -351,6 +384,7 @@ insertChildAfter(child: FrameNode, sibling: FrameNode | null): void
 **错误码：**
 
 以下错误码的详细介绍请参见[自定义节点错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-node)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -364,9 +398,10 @@ insertChildAfter(child: FrameNode, sibling: FrameNode | null): void
 
 
 
-#### removeChild12+
+### removeChild12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeChild(node: FrameNode): void
 
@@ -380,6 +415,7 @@ removeChild(node: FrameNode): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 需要删除的子节点。 |
@@ -388,6 +424,7 @@ removeChild(node: FrameNode): void
 **错误码：**
 
 以下错误码的详细介绍请参见[自定义节点错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-node)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -400,9 +437,10 @@ removeChild(node: FrameNode): void
 
 
 
-#### clearChildren12+
+### clearChildren12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clearChildren(): void
 
@@ -418,6 +456,7 @@ clearChildren(): void
 
 以下错误码的详细介绍请参见[自定义节点错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-node)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 100021 | The FrameNode is not modifiable. |
@@ -429,9 +468,10 @@ clearChildren(): void
 
 
 
-#### getChild12+
+### getChild12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getChild(index: number): FrameNode | null
 
@@ -445,12 +485,14 @@ getChild(index: number): FrameNode | null
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 需要查询的子节点的序列号。 index取值范围为[0, +∞)，若当前节点有n个子节点，index取值有效范围为[0, n-1]。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -463,9 +505,10 @@ getChild(index: number): FrameNode | null
 
 
 
-#### getChild15+
+### getChild15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getChild(index: number, expandMode?: ExpandMode): FrameNode | null
 
@@ -479,6 +522,7 @@ getChild(index: number, expandMode?: ExpandMode): FrameNode | null
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 需要查询的子节点的序列号。 index取值范围为[0, +∞)，若当前节点有n个子节点，index取值有效范围为[0, n-1]。 |
@@ -486,6 +530,7 @@ getChild(index: number, expandMode?: ExpandMode): FrameNode | null
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -498,9 +543,10 @@ getChild(index: number, expandMode?: ExpandMode): FrameNode | null
 
 
 
-#### getFirstChildIndexWithoutExpand15+
+### getFirstChildIndexWithoutExpand15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFirstChildIndexWithoutExpand(): number
 
@@ -514,6 +560,7 @@ getFirstChildIndexWithoutExpand(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 当前节点第一个在主节点树上的子节点的序列号。 |
@@ -525,9 +572,10 @@ getFirstChildIndexWithoutExpand(): number
 
 
 
-#### getLastChildIndexWithoutExpand15+
+### getLastChildIndexWithoutExpand15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLastChildIndexWithoutExpand(): number
 
@@ -541,6 +589,7 @@ getLastChildIndexWithoutExpand(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 当前节点最后一个在主节点树上的子节点的序列号。 |
@@ -552,9 +601,10 @@ getLastChildIndexWithoutExpand(): number
 
 
 
-#### getFirstChild12+
+### getFirstChild12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFirstChild(): FrameNode | null
 
@@ -568,6 +618,7 @@ getFirstChild(): FrameNode | null
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | FrameNode \| null | 首个子节点。若该FrameNode不包含子节点，则返回空对象null。 |
@@ -579,9 +630,10 @@ getFirstChild(): FrameNode | null
 
 
 
-#### getNextSibling12+
+### getNextSibling12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getNextSibling(): FrameNode | null
 
@@ -595,6 +647,7 @@ getNextSibling(): FrameNode | null
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | FrameNode \| null | 当前FrameNode的下一个同级节点。若该FrameNode不包含下一个同级节点，则返回空对象null。 |
@@ -606,9 +659,10 @@ getNextSibling(): FrameNode | null
 
 
 
-#### getPreviousSibling12+
+### getPreviousSibling12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPreviousSibling(): FrameNode | null
 
@@ -622,6 +676,7 @@ getPreviousSibling(): FrameNode | null
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | FrameNode \| null | 当前FrameNode的上一个同级节点。若该FrameNode不包含上一个同级节点，则返回空对象null。 |
@@ -633,9 +688,10 @@ getPreviousSibling(): FrameNode | null
 
 
 
-#### getParent12+
+### getParent12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getParent(): FrameNode | null
 
@@ -649,6 +705,7 @@ getParent(): FrameNode | null
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | FrameNode \| null | 当前FrameNode的父节点。若该FrameNode不包含父节点，则返回空对象null。 |
@@ -660,9 +717,10 @@ getParent(): FrameNode | null
 
 
 
-#### getChildrenCount12+
+### getChildrenCount12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getChildrenCount(): number
 
@@ -676,6 +734,7 @@ getChildrenCount(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 当前FrameNode的子节点数量。 |
@@ -687,9 +746,10 @@ getChildrenCount(): number
 
 
 
-#### getChildrenCount
+### getChildrenCount
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getChildrenCount(countMode?: ChildrenCountMode): number
 
@@ -705,12 +765,14 @@ getChildrenCount(countMode?: ChildrenCountMode): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | countMode | ChildrenCountMode | 否 | 子节点计数模式。默认值为ChildrenCountMode.ALL_EXPAND。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -944,15 +1006,16 @@ struct Index {
 
 
 
-#### moveTo18+
+### moveTo18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 moveTo(targetParent: FrameNode, index?: number): void
 
 将当前FrameNode移动到目标FrameNode的指定位置。当前FrameNode如果不可修改，抛出异常信息。targetParent为[typeNode](#typenode12)时会校验子组件类型或个数，不满足时抛出异常信息，限制情况请查看[typeNode](#typenode12)描述。
 
-> [!NOTE]
+> [!TIP]
 > 当前仅支持以下类型的 TypedFrameNode 进行移动操作： Stack 、 XComponent 。对于其他类型的节点，移动操作不会生效。 当前仅支持根节点为以下类型组件的 BuilderNode 进行移动操作： Stack 、 XComponent 、 EmbeddedComponent 。对于其他类型的组件，移动操作不会生效。
 
 
@@ -964,6 +1027,7 @@ moveTo(targetParent: FrameNode, index?: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | targetParent | FrameNode | 是 | 目标父节点。 targetParent节点不可以为声明式创建的节点，即不可修改的FrameNode。若目标父节点不符合规格，则抛出异常信息。 |
@@ -973,6 +1037,7 @@ moveTo(targetParent: FrameNode, index?: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[自定义节点错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-node)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -986,9 +1051,10 @@ moveTo(targetParent: FrameNode, index?: number): void
 
 
 
-#### getPositionToWindow12+
+### getPositionToWindow12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPositionToWindow(): Position
 
@@ -1001,6 +1067,7 @@ getPositionToWindow(): Position
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1074,9 +1141,10 @@ struct Index {
 
 
 
-#### getPositionToParent12+
+### getPositionToParent12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPositionToParent(): Position
 
@@ -1089,6 +1157,7 @@ getPositionToParent(): Position
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1163,9 +1232,10 @@ struct Index {
 
 
 
-#### getPositionToScreen12+
+### getPositionToScreen12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPositionToScreen(): Position
 
@@ -1178,6 +1248,7 @@ getPositionToScreen(): Position
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1252,9 +1323,10 @@ struct Index {
 
 
 
-#### getGlobalPositionOnDisplay20+
+### getGlobalPositionOnDisplay20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getGlobalPositionOnDisplay(): Position
 
@@ -1268,6 +1340,7 @@ getGlobalPositionOnDisplay(): Position
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Position | 节点相对于全局屏幕的位置偏移，单位为VP。 |
@@ -1279,9 +1352,10 @@ getGlobalPositionOnDisplay(): Position
 
 
 
-#### getPositionToParentWithTransform12+
+### getPositionToParentWithTransform12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPositionToParentWithTransform(): Position
 
@@ -1294,6 +1368,7 @@ getPositionToParentWithTransform(): Position
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1368,9 +1443,10 @@ struct Index {
 
 
 
-#### getPositionToWindowWithTransform12+
+### getPositionToWindowWithTransform12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPositionToWindowWithTransform(): Position
 
@@ -1383,6 +1459,7 @@ getPositionToWindowWithTransform(): Position
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1456,9 +1533,10 @@ struct Index {
 
 
 
-#### getPositionToScreenWithTransform12+
+### getPositionToScreenWithTransform12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPositionToScreenWithTransform(): Position
 
@@ -1471,6 +1549,7 @@ getPositionToScreenWithTransform(): Position
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1545,9 +1624,10 @@ struct Index {
 
 
 
-#### getMeasuredSize12+
+### getMeasuredSize12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMeasuredSize(): Size
 
@@ -1561,6 +1641,7 @@ getMeasuredSize(): Size
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Size | 节点测量后的大小，单位为PX。 |
@@ -1572,9 +1653,10 @@ getMeasuredSize(): Size
 
 
 
-#### getLayoutPosition12+
+### getLayoutPosition12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLayoutPosition(): Position
 
@@ -1588,6 +1670,7 @@ getLayoutPosition(): Position
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Position | 节点布局后相对于父组件的位置偏移，单位为PX。 |
@@ -1599,9 +1682,10 @@ getLayoutPosition(): Position
 
 
 
-#### getUserConfigBorderWidth12+
+### getUserConfigBorderWidth12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUserConfigBorderWidth(): Edges&lt;LengthMetrics&gt;
 
@@ -1615,6 +1699,7 @@ getUserConfigBorderWidth(): Edges&lt;LengthMetrics&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Edges&lt;LengthMetrics&gt; | 用户设置的边框宽度。 |
@@ -1626,9 +1711,10 @@ getUserConfigBorderWidth(): Edges&lt;LengthMetrics&gt;
 
 
 
-#### getUserConfigPadding12+
+### getUserConfigPadding12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUserConfigPadding(): Edges&lt;LengthMetrics&gt;
 
@@ -1642,6 +1728,7 @@ getUserConfigPadding(): Edges&lt;LengthMetrics&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Edges&lt;LengthMetrics&gt; | 用户设置的内边距。 |
@@ -1653,9 +1740,10 @@ getUserConfigPadding(): Edges&lt;LengthMetrics&gt;
 
 
 
-#### getUserConfigMargin12+
+### getUserConfigMargin12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUserConfigMargin(): Edges&lt;LengthMetrics&gt;
 
@@ -1669,6 +1757,7 @@ getUserConfigMargin(): Edges&lt;LengthMetrics&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Edges&lt;LengthMetrics&gt; | 用户设置的外边距。 |
@@ -1680,9 +1769,10 @@ getUserConfigMargin(): Edges&lt;LengthMetrics&gt;
 
 
 
-#### getUserConfigSize12+
+### getUserConfigSize12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUserConfigSize(): SizeT&lt;LengthMetrics&gt;
 
@@ -1696,6 +1786,7 @@ getUserConfigSize(): SizeT&lt;LengthMetrics&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | SizeT&lt;LengthMetrics&gt; | 用户设置的宽高。 |
@@ -1707,9 +1798,10 @@ getUserConfigSize(): SizeT&lt;LengthMetrics&gt;
 
 
 
-#### getId12+
+### getId12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getId(): string
 
@@ -1723,6 +1815,7 @@ getId(): string
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 用户设置的节点ID（通用属性设置的组件标识）。 |
@@ -1734,9 +1827,10 @@ getId(): string
 
 
 
-#### getUniqueId12+
+### getUniqueId12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUniqueId(): number
 
@@ -1750,6 +1844,7 @@ getUniqueId(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 系统分配的节点唯一标识（UniqueID）。 |
@@ -1761,9 +1856,10 @@ getUniqueId(): number
 
 
 
-#### getNodeType12+
+### getNodeType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getNodeType(): string
 
@@ -1777,6 +1873,7 @@ getNodeType(): string
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 节点的类型。 |
@@ -1788,9 +1885,10 @@ getNodeType(): string
 
 
 
-#### getOpacity12+
+### getOpacity12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOpacity(): number
 
@@ -1804,6 +1902,7 @@ getOpacity(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 节点的不透明度。范围是[0, 1]，值越大透明度越低。 |
@@ -1815,9 +1914,10 @@ getOpacity(): number
 
 
 
-#### isVisible12+
+### isVisible12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isVisible(): boolean
 
@@ -1835,6 +1935,7 @@ isVisible(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 节点是否可见。 true表示节点可见，false表示节点不可见。 |
@@ -1846,9 +1947,10 @@ isVisible(): boolean
 
 
 
-#### isClipToFrame12+
+### isClipToFrame12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isClipToFrame(): boolean
 
@@ -1862,6 +1964,7 @@ isClipToFrame(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 节点是否剪裁到组件区域。 true表示节点剪裁到组件区域，false表示节点未剪裁到组件区域。 |
@@ -1873,9 +1976,10 @@ isClipToFrame(): boolean
 
 
 
-#### isAttached12+
+### isAttached12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isAttached(): boolean
 
@@ -1889,6 +1993,7 @@ isAttached(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 节点是否被挂载到主节点树上。 true表示节点被挂载到主节点树上，false表示节点不是被挂载到主节点树上。 |
@@ -1900,9 +2005,10 @@ isAttached(): boolean
 
 
 
-#### isDisposed20+
+### isDisposed20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isDisposed(): boolean
 
@@ -1916,6 +2022,7 @@ isDisposed(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 后端实体节点是否解除引用。true为节点已与后端实体节点解除引用，false为节点未与后端实体节点解除引用。 |
@@ -1927,9 +2034,10 @@ isDisposed(): boolean
 
 
 
-#### getInspectorInfo12+
+### getInspectorInfo12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getInspectorInfo(): Object
 
@@ -1946,6 +2054,7 @@ getInspectorInfo(): Object
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1984,9 +2093,10 @@ getInspectorInfo(): Object
 
 
 
-#### getCustomProperty12+
+### getCustomProperty12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCustomProperty(name: string): Object | undefined
 
@@ -2000,12 +2110,14 @@ getCustomProperty(name: string): Object | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 自定义属性的名称。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2018,9 +2130,10 @@ getCustomProperty(name: string): Object | undefined
 
 
 
-#### dispose12+
+### dispose12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 dispose(): void
 
@@ -2125,14 +2238,15 @@ struct Index {
 ```
 
 
-![](assets/FrameNode/file-20260514163848188-5.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/PE5ecAX-RUuTP4VtGI-U3g/zh-cn_image_0000002747292385.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072835Z&HW-CC-Expire=86400&HW-CC-Sign=88461B32542789C7D5A717E337962389B58A63ED2DA27AE6FC79AE70572F7A66)
 
 
 
 
-#### commonAttribute12+
+### commonAttribute12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get commonAttribute(): CommonAttribute
 
@@ -2152,6 +2266,7 @@ get commonAttribute(): CommonAttribute
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | CommonAttribute | 获取FrameNode中持有的CommonAttribute接口，用于设置通用属性和通用事件。 |
@@ -2163,9 +2278,10 @@ get commonAttribute(): CommonAttribute
 
 
 
-#### commonEvent12+
+### commonEvent12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get commonEvent(): UICommonEvent
 
@@ -2181,6 +2297,7 @@ LazyForEach场景下，由于存在节点的销毁重建，对于重建的节点
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | UICommonEvent | UICommonEvent对象，用于设置基础事件。 |
@@ -2192,9 +2309,10 @@ LazyForEach场景下，由于存在节点的销毁重建，对于重建的节点
 
 
 
-#### gestureEvent14+
+### gestureEvent14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get gestureEvent(): UIGestureEvent
 
@@ -2210,6 +2328,7 @@ LazyForEach场景下，由于存在节点的销毁重建，对于重建的节点
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | UIGestureEvent | UIGestureEvent对象，用于设置组件绑定的手势。 |
@@ -2221,9 +2340,10 @@ LazyForEach场景下，由于存在节点的销毁重建，对于重建的节点
 
 
 
-#### onDraw12+
+### onDraw12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDraw?(context: DrawContext): void
 
@@ -2239,6 +2359,7 @@ FrameNode的自绘制方法，该方法会重写默认绘制方法，在FrameNod
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | DrawContext | 是 | 图形绘制上下文。自绘制区域无法超出组件自身大小。 |
@@ -2250,9 +2371,10 @@ FrameNode的自绘制方法，该方法会重写默认绘制方法，在FrameNod
 
 
 
-#### onMeasure12+
+### onMeasure12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onMeasure(constraint: LayoutConstraint): void
 
@@ -2266,6 +2388,7 @@ FrameNode的自定义测量方法，该方法会重写默认测量方法，在Fr
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | constraint | LayoutConstraint | 是 | 组件进行测量时使用的布局约束。 |
@@ -2277,9 +2400,10 @@ FrameNode的自定义测量方法，该方法会重写默认测量方法，在Fr
 
 
 
-#### onLayout12+
+### onLayout12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onLayout(position: Position): void
 
@@ -2293,6 +2417,7 @@ FrameNode的自定义布局方法，该方法会重写默认布局方法，在Fr
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | position | Position | 是 | 组件进行布局时使用的位置信息。单位为PX。 |
@@ -2304,9 +2429,10 @@ FrameNode的自定义布局方法，该方法会重写默认布局方法，在Fr
 
 
 
-#### setMeasuredSize12+
+### setMeasuredSize12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMeasuredSize(size: Size): void
 
@@ -2320,6 +2446,7 @@ setMeasuredSize(size: Size): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | size | Size | 是 | FrameNode的测量后的尺寸，单位为PX。 |
@@ -2331,9 +2458,10 @@ setMeasuredSize(size: Size): void
 
 
 
-#### setLayoutPosition12+
+### setLayoutPosition12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setLayoutPosition(position: Position): void
 
@@ -2347,6 +2475,7 @@ setLayoutPosition(position: Position): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | position | Position | 是 | FrameNode的布局后的位置，单位为PX。 |
@@ -2358,9 +2487,10 @@ setLayoutPosition(position: Position): void
 
 
 
-#### measure12+
+### measure12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 measure(constraint: LayoutConstraint): void
 
@@ -2374,6 +2504,7 @@ measure(constraint: LayoutConstraint): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | constraint | LayoutConstraint | 是 | 组件进行测量时使用的父容器布局约束。 |
@@ -2385,9 +2516,10 @@ measure(constraint: LayoutConstraint): void
 
 
 
-#### layout12+
+### layout12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 layout(position: Position): void
 
@@ -2401,6 +2533,7 @@ layout(position: Position): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | position | Position | 是 | 组件进行布局时使用的位置信息。单位为PX。 |
@@ -2412,9 +2545,10 @@ layout(position: Position): void
 
 
 
-#### setNeedsLayout12+
+### setNeedsLayout12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setNeedsLayout(): void
 
@@ -2432,9 +2566,10 @@ setNeedsLayout(): void
 
 
 
-#### invalidate12+
+### invalidate12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 invalidate(): void
 
@@ -2448,9 +2583,10 @@ invalidate(): void
 
 
 
-#### addComponentContent12+
+### addComponentContent12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addComponentContent&lt;T&gt;(content: ComponentContent&lt;T&gt; | ReactiveComponentContent&lt;T&gt;): void
 
@@ -2464,6 +2600,7 @@ addComponentContent&lt;T&gt;(content: ComponentContent&lt;T&gt; | ReactiveCompon
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | content | ComponentContent&lt;T&gt; \| ReactiveComponentContent&lt;T&gt;22+ | 是 | FrameNode节点中显示的组件内容。 |
@@ -2472,6 +2609,7 @@ addComponentContent&lt;T&gt;(content: ComponentContent&lt;T&gt; | ReactiveCompon
 **错误码：**
 
 以下错误码的详细介绍请参见[自定义节点错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-node)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2531,9 +2669,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### disposeTree12+
+### disposeTree12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 disposeTree(): void
 
@@ -2725,14 +2864,15 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/SnUnnqdwRNOWTnjnA_Ce-A/zh-cn_image_0000002685927899.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071448Z&HW-CC-Expire=86400&HW-CC-Sign=537C35028D2B911500C92194A7A7E6F1D3CEEAC29E614185F7C7C1DDAEE87457)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/YW9NHlvZRzeMPqWXJ8RJMA/zh-cn_image_0000002747212301.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072835Z&HW-CC-Expire=86400&HW-CC-Sign=40B693DDEFF33E1770A669FB582D8084E0B00E870C444EA60D667C5B693D0551)
 
 
 
 
-#### setCrossLanguageOptions15+
+### setCrossLanguageOptions15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCrossLanguageOptions(options: CrossLanguageOptions): void
 
@@ -2750,6 +2890,7 @@ setCrossLanguageOptions(options: CrossLanguageOptions): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | CrossLanguageOptions | 是 | 跨ArkTS语言访问选项。 |
@@ -2758,6 +2899,7 @@ setCrossLanguageOptions(options: CrossLanguageOptions): void
 **错误码：**
 
 以下错误码的详细介绍请参见[自定义节点错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-node)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2770,9 +2912,10 @@ setCrossLanguageOptions(options: CrossLanguageOptions): void
 
 
 
-#### getCrossLanguageOptions15+
+### getCrossLanguageOptions15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCrossLanguageOptions(): CrossLanguageOptions
 
@@ -2786,6 +2929,7 @@ getCrossLanguageOptions(): CrossLanguageOptions
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | CrossLanguageOptions | 跨ArkTS语言访问选项。 |
@@ -2797,9 +2941,10 @@ getCrossLanguageOptions(): CrossLanguageOptions
 
 
 
-#### getInteractionEventBindingInfo19+
+### getInteractionEventBindingInfo19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getInteractionEventBindingInfo(eventType: EventQueryType): InteractionEventBindingInfo | undefined
 
@@ -2813,12 +2958,14 @@ getInteractionEventBindingInfo(eventType: EventQueryType): InteractionEventBindi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | eventType | EventQueryType | 是 | 要查询的交互事件类型。例如EventQueryType.ON_CLICK表示查询点击事件的绑定信息，各枚举值的具体含义请参考EventQueryType。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2831,9 +2978,10 @@ getInteractionEventBindingInfo(eventType: EventQueryType): InteractionEventBindi
 
 
 
-#### recycle18+
+### recycle18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 recycle(): void
 
@@ -2851,9 +2999,10 @@ recycle(): void
 
 
 
-#### reuse18+
+### reuse18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reuse(): void
 
@@ -2871,9 +3020,10 @@ reuse(): void
 
 
 
-#### addSupportedUIStates20+
+### addSupportedUIStates20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addSupportedUIStates(uiStates: number, statesChangeHandler: UIStatesChangeHandler, excludeInner?: boolean): void
 
@@ -2886,6 +3036,7 @@ addSupportedUIStates(uiStates: number, statesChangeHandler: UIStatesChangeHandle
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2900,9 +3051,10 @@ addSupportedUIStates(uiStates: number, statesChangeHandler: UIStatesChangeHandle
 
 
 
-#### removeSupportedUIStates20+
+### removeSupportedUIStates20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeSupportedUIStates(uiStates: number): void
 
@@ -2916,6 +3068,7 @@ removeSupportedUIStates(uiStates: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uiStates | number | 是 | 需要删除的UI状态。 可以通过位或计算同时指定删除多个状态，如：removeUIStates = UIState.PRESSED \| UIState.FOCUSED。 |
@@ -2927,9 +3080,10 @@ removeSupportedUIStates(uiStates: number): void
 
 
 
-#### createAnimation20+
+### createAnimation20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAnimation(property: AnimationPropertyType, startValue: Optional<number[]>, endValue: number[], param: AnimateParam): boolean
 
@@ -2943,6 +3097,7 @@ createAnimation(property: AnimationPropertyType, startValue: Optional<number[]>,
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | property | AnimationPropertyType | 是 | 动画属性枚举。 |
@@ -2952,6 +3107,7 @@ createAnimation(property: AnimationPropertyType, startValue: Optional<number[]>,
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2964,9 +3120,10 @@ createAnimation(property: AnimationPropertyType, startValue: Optional<number[]>,
 
 
 
-#### cancelAnimations20+
+### cancelAnimations20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancelAnimations(properties: AnimationPropertyType[]): boolean
 
@@ -2980,12 +3137,14 @@ cancelAnimations(properties: AnimationPropertyType[]): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | properties | AnimationPropertyType[] | 是 | 待取消的动画属性枚举数组。可以一次取消一个节点上的多个属性的动画。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2998,9 +3157,10 @@ cancelAnimations(properties: AnimationPropertyType[]): boolean
 
 
 
-#### getNodePropertyValue20+
+### getNodePropertyValue20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getNodePropertyValue(property: AnimationPropertyType): number[]
 
@@ -3014,12 +3174,14 @@ getNodePropertyValue(property: AnimationPropertyType): number[]
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | property | AnimationPropertyType | 是 | 动画属性枚举。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3032,9 +3194,10 @@ getNodePropertyValue(property: AnimationPropertyType): number[]
 
 
 
-#### invalidateAttributes21+
+### invalidateAttributes21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 invalidateAttributes(): void
 
@@ -3156,9 +3319,10 @@ struct ListNodeTest {
 
 
 
-#### adoptChild22+
+### adoptChild22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 adoptChild(child: FrameNode): void
 
@@ -3170,6 +3334,7 @@ adoptChild(child: FrameNode): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | child | FrameNode | 是 | 指定待被接纳的节点。child节点不可以拥有父节点，否则抛出异常信息。 |
@@ -3178,6 +3343,7 @@ adoptChild(child: FrameNode): void
 **错误码：**
 
 以下错误码的详细介绍请参见[自定义节点错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-node)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3192,9 +3358,10 @@ adoptChild(child: FrameNode): void
 
 
 
-#### removeAdoptedChild22+
+### removeAdoptedChild22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeAdoptedChild(child: FrameNode): void
 
@@ -3206,6 +3373,7 @@ removeAdoptedChild(child: FrameNode): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | child | FrameNode | 是 | 已被接纳的目标附属节点。 |
@@ -3214,6 +3382,7 @@ removeAdoptedChild(child: FrameNode): void
 **错误码：**
 
 以下错误码的详细介绍请参见[自定义节点错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-node)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3228,9 +3397,10 @@ removeAdoptedChild(child: FrameNode): void
 
 
 
-#### convertPosition22+
+### convertPosition22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 convertPosition(position: Position, targetNode: FrameNode): Position
 
@@ -3244,6 +3414,7 @@ convertPosition(position: Position, targetNode: FrameNode): Position
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | position | Position | 是 | 当前节点坐标系中的相对坐标。单位为VP。 |
@@ -3251,6 +3422,7 @@ convertPosition(position: Position, targetNode: FrameNode): Position
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3260,6 +3432,7 @@ convertPosition(position: Position, targetNode: FrameNode): Position
 **错误码：**
 
 以下错误码的详细介绍请参见[自定义节点错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-node)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3339,9 +3512,10 @@ struct ConvertPositionTestOnly {
 
 
 
-#### isInRenderState23+
+### isInRenderState23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isInRenderState(): boolean
 
@@ -3354,6 +3528,7 @@ isInRenderState(): boolean
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3429,9 +3604,10 @@ struct Index {
 
 
 
-#### isOnMainTree23+
+### isOnMainTree23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isOnMainTree(): boolean
 
@@ -3445,6 +3621,7 @@ isOnMainTree(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 节点是否被挂载到主节点树上。 true表示节点被挂载到主节点树上，false表示节点没有被挂载到主节点树上。 |
@@ -3453,6 +3630,7 @@ isOnMainTree(): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[自定义节点错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-node)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3982,9 +4160,10 @@ struct Index {
 
 
 
-#### convertPositionToWindow23+
+### convertPositionToWindow23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 convertPositionToWindow(positionByLocal: Position): Position
 
@@ -3998,12 +4177,14 @@ convertPositionToWindow(positionByLocal: Position): Position
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | positionByLocal | Position | 是 | 当前节点坐标系中的相对坐标。单位为VP。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4013,6 +4194,7 @@ convertPositionToWindow(positionByLocal: Position): Position
 **错误码：**
 
 以下错误码的详细介绍请参见[自定义节点错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-node)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4026,9 +4208,10 @@ convertPositionToWindow(positionByLocal: Position): Position
 
 
 
-#### convertPositionFromWindow23+
+### convertPositionFromWindow23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 convertPositionFromWindow(positionByWindow: Position): Position
 
@@ -4042,12 +4225,14 @@ convertPositionFromWindow(positionByWindow: Position): Position
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | positionByWindow | Position | 是 | 当前节点所在窗口的坐标系中的相对坐标。单位为VP。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4057,6 +4242,7 @@ convertPositionFromWindow(positionByWindow: Position): Position
 **错误码：**
 
 以下错误码的详细介绍请参见[自定义节点错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-node)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4070,9 +4256,10 @@ convertPositionFromWindow(positionByWindow: Position): Position
 
 
 
-#### createFrameNodes
+### createFrameNodes
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static createFrameNodes(uiContext: UIContext, count: number): FrameNode[]
 
@@ -4088,6 +4275,7 @@ static createFrameNodes(uiContext: UIContext, count: number): FrameNode[]
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uiContext | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -4095,6 +4283,7 @@ static createFrameNodes(uiContext: UIContext, count: number): FrameNode[]
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4139,9 +4328,10 @@ struct Index {
 
 
 
-#### getFrameNodeById
+### getFrameNodeById
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFrameNodeById(id: string): FrameNode | null
 
@@ -4157,12 +4347,14 @@ getFrameNodeById(id: string): FrameNode | null
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | string | 是 | 查询的子节点id，为通用属性设置的组件标识。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4226,9 +4418,10 @@ struct Index {
 
 
 
-#### getFrameNodeByUniqueId
+### getFrameNodeByUniqueId
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFrameNodeByUniqueId(id: number): FrameNode | null
 
@@ -4244,12 +4437,14 @@ getFrameNodeByUniqueId(id: number): FrameNode | null
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | number | 是 | 查询的子节点的唯一标识UniqueID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4314,23 +4509,26 @@ struct Index {
 
 
 
-#### TypedFrameNode12+
+## TypedFrameNode12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TypedFrameNode继承自[FrameNode](#framenode-1)，用于声明具体类型的FrameNode，支持Text、Image、Button、Column等多种组件类型，适用于通过代码动态创建具体类型组件节点的场景。
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -4344,9 +4542,10 @@ TypedFrameNode继承自[FrameNode](#framenode-1)，用于声明具体类型的Fr
 
 
 
-#### typeNode12+
+## typeNode12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 typeNode提供创建具体类型的FrameNode能力，可通过FrameNode的基础接口进行自定义的挂载，使用占位容器进行显示。适用于需要通过代码动态创建具体类型组件节点并进行自定义挂载的场景。
 
@@ -4358,9 +4557,10 @@ typeNode提供创建具体类型的FrameNode能力，可通过FrameNode的基础
 
 
 
-#### Text12+
+### Text12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Text = TypedFrameNode<TextInterface, TextAttribute>
 
@@ -4372,6 +4572,7 @@ Text类型的FrameNode节点类型。不允许添加子组件。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<TextInterface, TextAttribute> | 提供Text类型FrameNode节点。 TextInterface用于TypedFrameNode的initialize接口的入参，入参为Text组件的构造函数类型。 TextAttribute用于TypedFrameNode的attribute接口的返回值，返回Text组件的属性设置对象。 TextInterface表示Text的接口，TextAttribute表示Text的属性。 |
@@ -4379,9 +4580,10 @@ Text类型的FrameNode节点类型。不允许添加子组件。
 
 
 
-#### createNode('Text')12+
+### createNode('Text')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'Text'): Text
 
@@ -4395,6 +4597,7 @@ createNode(context: UIContext, nodeType: 'Text'): Text
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -4402,6 +4605,7 @@ createNode(context: UIContext, nodeType: 'Text'): Text
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4446,9 +4650,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### getAttribute('Text')20+
+### getAttribute('Text')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAttribute(node: FrameNode, nodeType: 'Text'): TextAttribute | undefined
 
@@ -4462,6 +4667,7 @@ getAttribute(node: FrameNode, nodeType: 'Text'): TextAttribute | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 获取属性时所需的目标节点。 |
@@ -4469,6 +4675,7 @@ getAttribute(node: FrameNode, nodeType: 'Text'): TextAttribute | undefined
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4518,9 +4725,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### bindController('Text')20+
+### bindController('Text')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 bindController(node: FrameNode, controller: TextController, nodeType: 'Text'): void
 
@@ -4534,6 +4742,7 @@ bindController(node: FrameNode, controller: TextController, nodeType: 'Text'): v
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 绑定文本控制器的目标节点。 |
@@ -4544,6 +4753,7 @@ bindController(node: FrameNode, controller: TextController, nodeType: 'Text'): v
 **错误码：**
 
 以下错误码的详细介绍请参见[自定义节点错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-node)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4600,9 +4810,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### Column12+
+### Column12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Column = TypedFrameNode<ColumnInterface, ColumnAttribute>
 
@@ -4614,6 +4825,7 @@ Column类型的FrameNode节点类型。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<ColumnInterface, ColumnAttribute> | 提供Column类型FrameNode节点。 ColumnInterface用于TypedFrameNode的initialize接口的入参，入参为Column组件的构造函数类型。 ColumnAttribute用于TypedFrameNode的attribute接口的返回值，返回Column组件的属性设置对象。 ColumnInterface表示Column的接口，ColumnAttribute表示Column的属性。 |
@@ -4621,9 +4833,10 @@ Column类型的FrameNode节点类型。
 
 
 
-#### createNode('Column')12+
+### createNode('Column')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'Column'): Column
 
@@ -4637,6 +4850,7 @@ createNode(context: UIContext, nodeType: 'Column'): Column
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -4644,6 +4858,7 @@ createNode(context: UIContext, nodeType: 'Column'): Column
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4687,9 +4902,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### getAttribute('Column')20+
+### getAttribute('Column')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAttribute(node: FrameNode, nodeType: 'Column'): ColumnAttribute | undefined
 
@@ -4703,6 +4919,7 @@ getAttribute(node: FrameNode, nodeType: 'Column'): ColumnAttribute | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 获取属性时所需的目标节点。 |
@@ -4710,6 +4927,7 @@ getAttribute(node: FrameNode, nodeType: 'Column'): ColumnAttribute | undefined
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4758,9 +4976,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### Row12+
+### Row12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Row = TypedFrameNode<RowInterface, RowAttribute>
 
@@ -4772,6 +4991,7 @@ Row类型的FrameNode节点类型。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<RowInterface, RowAttribute> | 提供Row类型FrameNode节点。 RowInterface用于TypedFrameNode的initialize接口的入参，入参为Row组件的构造函数类型。 RowAttribute用于TypedFrameNode的attribute接口的返回值，返回Row组件的属性设置对象。 RowInterface表示Row的接口，RowAttribute表示Row的属性。 |
@@ -4779,9 +4999,10 @@ Row类型的FrameNode节点类型。
 
 
 
-#### createNode('Row')12+
+### createNode('Row')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'Row'): Row
 
@@ -4795,6 +5016,7 @@ createNode(context: UIContext, nodeType: 'Row'): Row
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -4802,6 +5024,7 @@ createNode(context: UIContext, nodeType: 'Row'): Row
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4845,9 +5068,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### getAttribute('Row')20+
+### getAttribute('Row')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAttribute(node: FrameNode, nodeType: 'Row'): RowAttribute | undefined
 
@@ -4861,6 +5085,7 @@ getAttribute(node: FrameNode, nodeType: 'Row'): RowAttribute | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 获取属性时所需的目标节点。 |
@@ -4868,6 +5093,7 @@ getAttribute(node: FrameNode, nodeType: 'Row'): RowAttribute | undefined
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4916,9 +5142,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### Stack12+
+### Stack12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Stack = TypedFrameNode<StackInterface, StackAttribute>
 
@@ -4930,6 +5157,7 @@ Stack类型的FrameNode节点类型。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<StackInterface, StackAttribute> | 提供Stack类型FrameNode节点。 StackInterface用于TypedFrameNode的initialize接口的入参，入参为Stack组件的构造函数类型。 StackAttribute用于TypedFrameNode的attribute接口的返回值，返回Stack组件的属性设置对象。 StackInterface表示Stack的接口，StackAttribute表示Stack的属性。 |
@@ -4937,9 +5165,10 @@ Stack类型的FrameNode节点类型。
 
 
 
-#### createNode('Stack')12+
+### createNode('Stack')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'Stack'): Stack
 
@@ -4953,6 +5182,7 @@ createNode(context: UIContext, nodeType: 'Stack'): Stack
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -4960,6 +5190,7 @@ createNode(context: UIContext, nodeType: 'Stack'): Stack
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5007,9 +5238,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### getAttribute('Stack')20+
+### getAttribute('Stack')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAttribute(node: FrameNode, nodeType: 'Stack'): StackAttribute | undefined
 
@@ -5023,6 +5255,7 @@ getAttribute(node: FrameNode, nodeType: 'Stack'): StackAttribute | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 获取属性时所需的目标节点。 |
@@ -5030,6 +5263,7 @@ getAttribute(node: FrameNode, nodeType: 'Stack'): StackAttribute | undefined
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5078,9 +5312,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### GridRow12+
+### GridRow12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type GridRow = TypedFrameNode<GridRowInterface, GridRowAttribute>
 
@@ -5092,6 +5327,7 @@ GridRow类型的FrameNode节点类型。只允许添加GridCol类型子组件。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<GridRowInterface, GridRowAttribute> | 提供GridRow类型FrameNode节点。 GridRowInterface用于TypedFrameNode的initialize接口的入参，入参为GridRow组件的构造函数类型。 GridRowAttribute用于TypedFrameNode的attribute接口的返回值，返回GridRow组件的属性设置对象。 GridRowInterface表示GridRow的接口，GridRowAttribute表示GridRow的属性。 |
@@ -5099,9 +5335,10 @@ GridRow类型的FrameNode节点类型。只允许添加GridCol类型子组件。
 
 
 
-#### createNode('GridRow')12+
+### createNode('GridRow')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'GridRow'): GridRow
 
@@ -5115,6 +5352,7 @@ createNode(context: UIContext, nodeType: 'GridRow'): GridRow
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -5122,6 +5360,7 @@ createNode(context: UIContext, nodeType: 'GridRow'): GridRow
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5172,9 +5411,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### GridCol12+
+### GridCol12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type GridCol = TypedFrameNode<GridColInterface, GridColAttribute>
 
@@ -5186,6 +5426,7 @@ GridCol类型的FrameNode节点类型。不允许添加子组件。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<GridColInterface, GridColAttribute> | 提供GridCol类型FrameNode节点。 GridColInterface用于TypedFrameNode的initialize接口的入参，入参为GridCol组件的构造函数类型。 GridColAttribute用于TypedFrameNode的attribute接口的返回值，返回GridCol组件的属性设置对象。 GridColInterface表示GridCol的接口，GridColAttribute表示GridCol的属性。 |
@@ -5193,9 +5434,10 @@ GridCol类型的FrameNode节点类型。不允许添加子组件。
 
 
 
-#### createNode('GridCol')12+
+### createNode('GridCol')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'GridCol'): GridCol
 
@@ -5209,6 +5451,7 @@ createNode(context: UIContext, nodeType: 'GridCol'): GridCol
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -5216,6 +5459,7 @@ createNode(context: UIContext, nodeType: 'GridCol'): GridCol
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5266,9 +5510,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### Flex12+
+### Flex12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Flex = TypedFrameNode<FlexInterface, FlexAttribute>
 
@@ -5280,6 +5525,7 @@ Flex类型的FrameNode节点类型。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<FlexInterface, FlexAttribute> | 提供Flex类型FrameNode节点。 FlexInterface用于TypedFrameNode的initialize接口的入参，入参为Flex组件的构造函数类型。 FlexAttribute用于TypedFrameNode的attribute接口的返回值，返回Flex组件的属性设置对象。 FlexInterface表示Flex的接口，FlexAttribute表示Flex的属性。 |
@@ -5287,9 +5533,10 @@ Flex类型的FrameNode节点类型。
 
 
 
-#### createNode('Flex')12+
+### createNode('Flex')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'Flex'): Flex
 
@@ -5303,6 +5550,7 @@ createNode(context: UIContext, nodeType: 'Flex'): Flex
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -5310,6 +5558,7 @@ createNode(context: UIContext, nodeType: 'Flex'): Flex
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5353,9 +5602,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### getAttribute('Flex')20+
+### getAttribute('Flex')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAttribute(node: FrameNode, nodeType: 'Flex'): FlexAttribute | undefined
 
@@ -5369,6 +5619,7 @@ getAttribute(node: FrameNode, nodeType: 'Flex'): FlexAttribute | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 获取属性时所需的目标节点。 |
@@ -5376,6 +5627,7 @@ getAttribute(node: FrameNode, nodeType: 'Flex'): FlexAttribute | undefined
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5424,9 +5676,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### Swiper12+
+### Swiper12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Swiper = TypedFrameNode<SwiperInterface, SwiperAttribute>
 
@@ -5438,6 +5691,7 @@ Swiper类型的FrameNode节点类型。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<SwiperInterface, SwiperAttribute> | 提供Swiper类型FrameNode节点。 SwiperInterface用于TypedFrameNode的initialize接口的入参，入参为Swiper组件的构造函数类型。 SwiperAttribute用于TypedFrameNode的attribute接口的返回值，返回Swiper组件的属性设置对象。 SwiperInterface表示Swiper的接口，SwiperAttribute表示Swiper的属性。 |
@@ -5445,9 +5699,10 @@ Swiper类型的FrameNode节点类型。
 
 
 
-#### createNode('Swiper')12+
+### createNode('Swiper')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'Swiper'): Swiper
 
@@ -5461,6 +5716,7 @@ createNode(context: UIContext, nodeType: 'Swiper'): Swiper
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -5468,6 +5724,7 @@ createNode(context: UIContext, nodeType: 'Swiper'): Swiper
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5530,9 +5787,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### getAttribute('Swiper')20+
+### getAttribute('Swiper')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAttribute(node: FrameNode, nodeType: 'Swiper'): SwiperAttribute | undefined
 
@@ -5546,6 +5804,7 @@ getAttribute(node: FrameNode, nodeType: 'Swiper'): SwiperAttribute | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 获取属性时所需的目标节点。 |
@@ -5553,6 +5812,7 @@ getAttribute(node: FrameNode, nodeType: 'Swiper'): SwiperAttribute | undefined
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5565,9 +5825,10 @@ getAttribute(node: FrameNode, nodeType: 'Swiper'): SwiperAttribute | undefined
 
 
 
-#### bindController('Swiper')20+
+### bindController('Swiper')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 bindController(node: FrameNode, controller: SwiperController, nodeType: 'Swiper'): void
 
@@ -5581,6 +5842,7 @@ bindController(node: FrameNode, controller: SwiperController, nodeType: 'Swiper'
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 绑定控制器的目标节点。 |
@@ -5591,6 +5853,7 @@ bindController(node: FrameNode, controller: SwiperController, nodeType: 'Swiper'
 **错误码：**
 
 以下错误码的详细介绍请参见[自定义节点错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-node)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5604,9 +5867,10 @@ bindController(node: FrameNode, controller: SwiperController, nodeType: 'Swiper'
 
 
 
-#### Progress12+
+### Progress12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Progress = TypedFrameNode<ProgressInterface, ProgressAttribute>
 
@@ -5618,6 +5882,7 @@ Progress类型的FrameNode节点类型。不允许添加子组件。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<ProgressInterface, ProgressAttribute> | 提供Progress类型FrameNode节点。 ProgressInterface用于TypedFrameNode的initialize接口的入参，入参为Progress组件的构造函数类型。 ProgressAttribute用于TypedFrameNode的attribute接口的返回值，返回Progress组件的属性设置对象。 ProgressInterface表示Progress的接口，ProgressAttribute表示Progress的属性。 |
@@ -5625,9 +5890,10 @@ Progress类型的FrameNode节点类型。不允许添加子组件。
 
 
 
-#### createNode('Progress')12+
+### createNode('Progress')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'Progress'): Progress
 
@@ -5641,6 +5907,7 @@ createNode(context: UIContext, nodeType: 'Progress'): Progress
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -5648,6 +5915,7 @@ createNode(context: UIContext, nodeType: 'Progress'): Progress
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5694,9 +5962,10 @@ struct Sample {
 
 
 
-#### getAttribute('Progress')20+
+### getAttribute('Progress')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAttribute(node: FrameNode, nodeType: 'Progress'): ProgressAttribute | undefined
 
@@ -5710,6 +5979,7 @@ getAttribute(node: FrameNode, nodeType: 'Progress'): ProgressAttribute | undefin
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 获取属性时所需的目标节点。 |
@@ -5717,6 +5987,7 @@ getAttribute(node: FrameNode, nodeType: 'Progress'): ProgressAttribute | undefin
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5764,9 +6035,10 @@ struct Sample {
 
 
 
-#### Scroll12+
+### Scroll12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Scroll = TypedFrameNode<ScrollInterface, ScrollAttribute>
 
@@ -5778,6 +6050,7 @@ Scroll类型的FrameNode节点类型。允许添加一个子组件。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<ScrollInterface, ScrollAttribute> | 提供Scroll类型FrameNode节点。 ScrollInterface用于TypedFrameNode的initialize接口的入参，入参为Scroll组件的构造函数类型。 ScrollAttribute用于TypedFrameNode的attribute接口的返回值，返回Scroll组件的属性设置对象。 ScrollInterface表示Scroll的接口，ScrollAttribute表示Scroll的属性。 |
@@ -5785,9 +6058,10 @@ Scroll类型的FrameNode节点类型。允许添加一个子组件。
 
 
 
-#### createNode('Scroll')12+
+### createNode('Scroll')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'Scroll'): Scroll
 
@@ -5801,6 +6075,7 @@ createNode(context: UIContext, nodeType: 'Scroll'): Scroll
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -5808,6 +6083,7 @@ createNode(context: UIContext, nodeType: 'Scroll'): Scroll
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5868,9 +6144,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### getAttribute('Scroll')15+
+### getAttribute('Scroll')15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAttribute(node: FrameNode, nodeType: 'Scroll'): ScrollAttribute | undefined
 
@@ -5884,6 +6161,7 @@ getAttribute(node: FrameNode, nodeType: 'Scroll'): ScrollAttribute | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 获取属性时所需的目标节点。 |
@@ -5891,6 +6169,7 @@ getAttribute(node: FrameNode, nodeType: 'Scroll'): ScrollAttribute | undefined
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5903,9 +6182,10 @@ getAttribute(node: FrameNode, nodeType: 'Scroll'): ScrollAttribute | undefined
 
 
 
-#### getEvent('Scroll')19+
+### getEvent('Scroll')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEvent(node: FrameNode, nodeType: 'Scroll'): UIScrollEvent | undefined
 
@@ -5919,6 +6199,7 @@ getEvent(node: FrameNode, nodeType: 'Scroll'): UIScrollEvent | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 获取事件时所需的目标节点。 |
@@ -5926,6 +6207,7 @@ getEvent(node: FrameNode, nodeType: 'Scroll'): UIScrollEvent | undefined
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5938,9 +6220,10 @@ getEvent(node: FrameNode, nodeType: 'Scroll'): UIScrollEvent | undefined
 
 
 
-#### bindController('Scroll')15+
+### bindController('Scroll')15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 bindController(node: FrameNode, controller: Scroller, nodeType: 'Scroll'): void
 
@@ -5954,6 +6237,7 @@ bindController(node: FrameNode, controller: Scroller, nodeType: 'Scroll'): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 绑定滚动控制器的目标节点。 |
@@ -5964,6 +6248,7 @@ bindController(node: FrameNode, controller: Scroller, nodeType: 'Scroll'): void
 **错误码：**
 
 以下错误码的详细介绍请参见[自定义节点错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-node)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5979,9 +6264,10 @@ typeNode.bindController(node, scroller, 'Scroll');
 
 
 
-#### RelativeContainer12+
+### RelativeContainer12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type RelativeContainer = TypedFrameNode<RelativeContainerInterface, RelativeContainerAttribute>
 
@@ -5993,6 +6279,7 @@ RelativeContainer类型的FrameNode节点类型。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<RelativeContainerInterface, RelativeContainerAttribute> | 提供RelativeContainer类型FrameNode节点。 RelativeContainerInterface用于TypedFrameNode的initialize接口的入参，入参为RelativeContainer组件的构造函数类型。 RelativeContainerAttribute用于TypedFrameNode的attribute接口的返回值，返回RelativeContainer组件的属性设置对象。 RelativeContainerInterface表示RelativeContainer的接口，RelativeContainerAttribute表示RelativeContainer的属性。 |
@@ -6000,9 +6287,10 @@ RelativeContainer类型的FrameNode节点类型。
 
 
 
-#### createNode('RelativeContainer')12+
+### createNode('RelativeContainer')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'RelativeContainer'): RelativeContainer
 
@@ -6016,6 +6304,7 @@ createNode(context: UIContext, nodeType: 'RelativeContainer'): RelativeContainer
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -6023,6 +6312,7 @@ createNode(context: UIContext, nodeType: 'RelativeContainer'): RelativeContainer
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6066,9 +6356,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### getAttribute('RelativeContainer')20+
+### getAttribute('RelativeContainer')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAttribute(node: FrameNode, nodeType: 'RelativeContainer'): RelativeContainerAttribute | undefined
 
@@ -6082,6 +6373,7 @@ getAttribute(node: FrameNode, nodeType: 'RelativeContainer'): RelativeContainerA
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 获取属性时所需的目标节点。 |
@@ -6089,6 +6381,7 @@ getAttribute(node: FrameNode, nodeType: 'RelativeContainer'): RelativeContainerA
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6137,9 +6430,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### Divider12+
+### Divider12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Divider = TypedFrameNode<DividerInterface, DividerAttribute>
 
@@ -6151,6 +6445,7 @@ Divider类型的FrameNode节点类型。不允许添加子组件。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<DividerInterface, DividerAttribute> | 提供Divider类型FrameNode节点。 DividerInterface用于TypedFrameNode的initialize接口的入参，入参为Divider组件的构造函数类型。 DividerAttribute用于TypedFrameNode的attribute接口的返回值，返回Divider组件的属性设置对象。 DividerInterface表示Divider的接口，DividerAttribute表示Divider的属性。 |
@@ -6158,9 +6453,10 @@ Divider类型的FrameNode节点类型。不允许添加子组件。
 
 
 
-#### createNode('Divider')12+
+### createNode('Divider')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'Divider'): Divider
 
@@ -6174,6 +6470,7 @@ createNode(context: UIContext, nodeType: 'Divider'): Divider
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -6181,6 +6478,7 @@ createNode(context: UIContext, nodeType: 'Divider'): Divider
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6230,9 +6528,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### LoadingProgress12+
+### LoadingProgress12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type LoadingProgress = TypedFrameNode<LoadingProgressInterface, LoadingProgressAttribute>
 
@@ -6244,6 +6543,7 @@ LoadingProgress类型的FrameNode节点类型。不允许添加子组件。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<LoadingProgressInterface, LoadingProgressAttribute> | 提供LoadingProgress类型FrameNode节点。 LoadingProgressInterface用于TypedFrameNode的initialize接口的入参，入参为LoadingProgress组件的构造函数类型。 LoadingProgressAttribute用于TypedFrameNode的attribute接口的返回值，返回LoadingProgress组件的属性设置对象。 LoadingProgressInterface表示LoadingProgress的接口，LoadingProgressAttribute表示LoadingProgress的属性。 |
@@ -6251,9 +6551,10 @@ LoadingProgress类型的FrameNode节点类型。不允许添加子组件。
 
 
 
-#### createNode('LoadingProgress')12+
+### createNode('LoadingProgress')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'LoadingProgress'): LoadingProgress
 
@@ -6267,6 +6568,7 @@ createNode(context: UIContext, nodeType: 'LoadingProgress'): LoadingProgress
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -6274,6 +6576,7 @@ createNode(context: UIContext, nodeType: 'LoadingProgress'): LoadingProgress
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6318,9 +6621,10 @@ struct Sample {
 
 
 
-#### getAttribute('LoadingProgress')20+
+### getAttribute('LoadingProgress')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAttribute(node: FrameNode, nodeType: 'LoadingProgress'): LoadingProgressAttribute | undefined
 
@@ -6334,6 +6638,7 @@ getAttribute(node: FrameNode, nodeType: 'LoadingProgress'): LoadingProgressAttri
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 获取属性时所需的目标节点。 |
@@ -6341,6 +6646,7 @@ getAttribute(node: FrameNode, nodeType: 'LoadingProgress'): LoadingProgressAttri
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6386,9 +6692,10 @@ struct Sample {
 
 
 
-#### Search12+
+### Search12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Search = TypedFrameNode<SearchInterface, SearchAttribute>
 
@@ -6400,6 +6707,7 @@ Search类型的FrameNode节点类型。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<SearchInterface, SearchAttribute> | 提供Search类型FrameNode节点。 SearchInterface用于TypedFrameNode的initialize接口的入参，入参为Search组件的构造函数类型。 SearchAttribute用于TypedFrameNode的attribute接口的返回值，返回Search组件的属性设置对象。 SearchInterface表示Search的接口，SearchAttribute表示Search的属性。 |
@@ -6407,9 +6715,10 @@ Search类型的FrameNode节点类型。
 
 
 
-#### createNode('Search')12+
+### createNode('Search')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'Search'): Search
 
@@ -6423,6 +6732,7 @@ createNode(context: UIContext, nodeType: 'Search'): Search
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -6430,6 +6740,7 @@ createNode(context: UIContext, nodeType: 'Search'): Search
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6475,9 +6786,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### Blank12+
+### Blank12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Blank = TypedFrameNode<BlankInterface, BlankAttribute>
 
@@ -6489,6 +6801,7 @@ Blank类型的FrameNode节点类型。不允许添加子组件。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<BlankInterface, BlankAttribute> | 提供Blank类型FrameNode节点。 BlankInterface用于TypedFrameNode的initialize接口的入参，入参为Blank组件的构造函数类型。 BlankAttribute用于TypedFrameNode的attribute接口的返回值，返回Blank组件的属性设置对象。 BlankInterface表示Blank的接口，BlankAttribute表示Blank的属性。 |
@@ -6496,9 +6809,10 @@ Blank类型的FrameNode节点类型。不允许添加子组件。
 
 
 
-#### createNode('Blank')12+
+### createNode('Blank')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'Blank'): Blank
 
@@ -6512,6 +6826,7 @@ createNode(context: UIContext, nodeType: 'Blank'): Blank
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -6519,6 +6834,7 @@ createNode(context: UIContext, nodeType: 'Blank'): Blank
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6569,9 +6885,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### Image12+
+### Image12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Image = TypedFrameNode<ImageInterface, ImageAttribute>
 
@@ -6583,6 +6900,7 @@ Image类型的FrameNode节点类型。不允许添加子组件。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<ImageInterface, ImageAttribute> | 提供Image类型FrameNode节点。 ImageInterface用于TypedFrameNode的initialize接口的入参，入参为Image组件的构造函数类型。 ImageAttribute用于TypedFrameNode的attribute接口的返回值，返回Image组件的属性设置对象。 ImageInterface表示Image的接口，ImageAttribute表示Image的属性。 |
@@ -6590,9 +6908,10 @@ Image类型的FrameNode节点类型。不允许添加子组件。
 
 
 
-#### createNode('Image')12+
+### createNode('Image')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'Image'): Image
 
@@ -6606,6 +6925,7 @@ createNode(context: UIContext, nodeType: 'Image'): Image
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -6613,6 +6933,7 @@ createNode(context: UIContext, nodeType: 'Image'): Image
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6667,9 +6988,10 @@ struct Sample {
 
 
 
-#### getAttribute('Image')20+
+### getAttribute('Image')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAttribute(node: FrameNode, nodeType: 'Image'): ImageAttribute | undefined
 
@@ -6683,6 +7005,7 @@ getAttribute(node: FrameNode, nodeType: 'Image'): ImageAttribute | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 获取属性时所需的目标节点。 |
@@ -6690,6 +7013,7 @@ getAttribute(node: FrameNode, nodeType: 'Image'): ImageAttribute | undefined
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6744,9 +7068,10 @@ struct Sample {
 
 
 
-#### List12+
+### List12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type List = TypedFrameNode<ListInterface, ListAttribute>
 
@@ -6758,6 +7083,7 @@ List类型的FrameNode节点类型。只允许添加[ListItem](#listitem12)、[L
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<ListInterface, ListAttribute> | 提供List类型FrameNode节点。 ListInterface用于TypedFrameNode的initialize接口的入参，入参为List组件的构造函数类型。 ListAttribute用于TypedFrameNode的attribute接口的返回值，返回List组件的属性设置对象。 ListInterface表示List的接口，ListAttribute表示List的属性。 |
@@ -6765,9 +7091,10 @@ List类型的FrameNode节点类型。只允许添加[ListItem](#listitem12)、[L
 
 
 
-#### createNode('List')12+
+### createNode('List')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'List'): List
 
@@ -6781,6 +7108,7 @@ createNode(context: UIContext, nodeType: 'List'): List
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -6788,6 +7116,7 @@ createNode(context: UIContext, nodeType: 'List'): List
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6855,9 +7184,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### getEvent('List')19+
+### getEvent('List')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEvent(node: FrameNode, nodeType: 'List'): UIListEvent | undefined
 
@@ -6871,6 +7201,7 @@ getEvent(node: FrameNode, nodeType: 'List'): UIListEvent | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 获取事件时所需的目标节点。 |
@@ -6878,6 +7209,7 @@ getEvent(node: FrameNode, nodeType: 'List'): UIListEvent | undefined
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6890,9 +7222,10 @@ getEvent(node: FrameNode, nodeType: 'List'): UIListEvent | undefined
 
 
 
-#### getAttribute('List')20+
+### getAttribute('List')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAttribute(node: FrameNode, nodeType: 'List'): ListAttribute | undefined
 
@@ -6906,6 +7239,7 @@ getAttribute(node: FrameNode, nodeType: 'List'): ListAttribute | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 获取属性时所需的目标节点。 |
@@ -6913,6 +7247,7 @@ getAttribute(node: FrameNode, nodeType: 'List'): ListAttribute | undefined
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6925,9 +7260,10 @@ getAttribute(node: FrameNode, nodeType: 'List'): ListAttribute | undefined
 
 
 
-#### bindController('List')20+
+### bindController('List')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 bindController(node: FrameNode, controller: Scroller, nodeType: 'List'): void
 
@@ -6941,6 +7277,7 @@ bindController(node: FrameNode, controller: Scroller, nodeType: 'List'): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 绑定滚动控制器的目标节点。 |
@@ -6951,6 +7288,7 @@ bindController(node: FrameNode, controller: Scroller, nodeType: 'List'): void
 **错误码：**
 
 以下错误码的详细介绍请参见[自定义节点错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-node)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6966,9 +7304,10 @@ typeNode.bindController(node, scroller, 'List');
 
 
 
-#### ListItem12+
+### ListItem12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ListItem = TypedFrameNode<ListItemInterface, ListItemAttribute>
 
@@ -6980,6 +7319,7 @@ ListItem类型的FrameNode节点类型。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<ListItemInterface, ListItemAttribute> | 提供ListItem类型FrameNode节点。 ListItemInterface用于TypedFrameNode的initialize接口的入参，入参为ListItem组件的构造函数类型。 ListItemAttribute用于TypedFrameNode的attribute接口的返回值，返回ListItem组件的属性设置对象。 ListItemInterface表示ListItem的接口，ListItemAttribute表示ListItem的属性。 |
@@ -6987,9 +7327,10 @@ ListItem类型的FrameNode节点类型。
 
 
 
-#### createNode('ListItem')12+
+### createNode('ListItem')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'ListItem'): ListItem
 
@@ -7003,6 +7344,7 @@ createNode(context: UIContext, nodeType: 'ListItem'): ListItem
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -7010,6 +7352,7 @@ createNode(context: UIContext, nodeType: 'ListItem'): ListItem
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7022,9 +7365,10 @@ createNode(context: UIContext, nodeType: 'ListItem'): ListItem
 
 
 
-#### getAttribute('ListItem')20+
+### getAttribute('ListItem')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAttribute(node: FrameNode, nodeType: 'ListItem'): ListItemAttribute | undefined
 
@@ -7038,6 +7382,7 @@ getAttribute(node: FrameNode, nodeType: 'ListItem'): ListItemAttribute | undefin
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 获取属性时所需的目标节点。 |
@@ -7045,6 +7390,7 @@ getAttribute(node: FrameNode, nodeType: 'ListItem'): ListItemAttribute | undefin
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7057,9 +7403,10 @@ getAttribute(node: FrameNode, nodeType: 'ListItem'): ListItemAttribute | undefin
 
 
 
-#### TextInput12+
+### TextInput12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type TextInput = TypedFrameNode<TextInputInterface, TextInputAttribute>
 
@@ -7071,6 +7418,7 @@ TextInput类型的FrameNode节点类型。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<TextInputInterface, TextInputAttribute> | 提供TextInput类型FrameNode节点。 TextInputInterface用于TypedFrameNode的initialize接口的入参，入参为TextInput组件的构造函数类型。 TextInputAttribute用于TypedFrameNode的attribute接口的返回值，返回TextInput组件的属性设置对象。 TextInputInterface表示TextInput的接口，TextInputAttribute表示TextInput的属性。 |
@@ -7078,9 +7426,10 @@ TextInput类型的FrameNode节点类型。
 
 
 
-#### createNode('TextInput')12+
+### createNode('TextInput')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'TextInput'): TextInput
 
@@ -7094,6 +7443,7 @@ createNode(context: UIContext, nodeType: 'TextInput'): TextInput
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -7101,6 +7451,7 @@ createNode(context: UIContext, nodeType: 'TextInput'): TextInput
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7144,9 +7495,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### getAttribute('TextInput')20+
+### getAttribute('TextInput')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAttribute(node: FrameNode, nodeType: 'TextInput'): TextInputAttribute | undefined
 
@@ -7160,6 +7512,7 @@ getAttribute(node: FrameNode, nodeType: 'TextInput'): TextInputAttribute | undef
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 获取属性时所需的目标节点。 |
@@ -7167,6 +7520,7 @@ getAttribute(node: FrameNode, nodeType: 'TextInput'): TextInputAttribute | undef
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7212,9 +7566,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### bindController('TextInput')20+
+### bindController('TextInput')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 bindController(node: FrameNode, controller: TextInputController, nodeType: 'TextInput'): void
 
@@ -7228,6 +7583,7 @@ bindController(node: FrameNode, controller: TextInputController, nodeType: 'Text
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 绑定输入框控制器的目标节点。 |
@@ -7238,6 +7594,7 @@ bindController(node: FrameNode, controller: TextInputController, nodeType: 'Text
 **错误码：**
 
 以下错误码的详细介绍请参见[自定义节点错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-node)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7287,9 +7644,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### Button12+
+### Button12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Button = TypedFrameNode<ButtonInterface, ButtonAttribute>
 
@@ -7301,6 +7659,7 @@ Button类型的FrameNode节点类型。以子组件模式创建允许添加一�
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<ButtonInterface, ButtonAttribute> | 提供Button类型FrameNode节点。 ButtonInterface用于TypedFrameNode的initialize接口的入参，入参为Button组件的构造函数类型。 ButtonAttribute用于TypedFrameNode的attribute接口的返回值，返回Button组件的属性设置对象。 接口入参label不为空时，以label模式创建Button组件，以此模式创建时无法包含子组件，并且不允许再设置子组件，否则会抛出异常。且label模式和子组件模式在第一次initialize创建之后无法在后续的initialize进行动态修改，如需要包含子组件，第一次initialize时不要设置label参数。 以子组件模式创建时，只能包含一个子组件，不能设置多个子组件，否则会抛出异常。 ButtonInterface表示Button的接口，ButtonAttribute表示Button的属性。 |
@@ -7308,9 +7667,10 @@ Button类型的FrameNode节点类型。以子组件模式创建允许添加一�
 
 
 
-#### createNode('Button')12+
+### createNode('Button')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'Button'): Button
 
@@ -7324,6 +7684,7 @@ createNode(context: UIContext, nodeType: 'Button'): Button
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -7331,6 +7692,7 @@ createNode(context: UIContext, nodeType: 'Button'): Button
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7381,9 +7743,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### getAttribute('Button')20+
+### getAttribute('Button')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAttribute(node: FrameNode, nodeType: 'Button'): ButtonAttribute | undefined
 
@@ -7397,6 +7760,7 @@ getAttribute(node: FrameNode, nodeType: 'Button'): ButtonAttribute | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 获取属性时所需的目标节点。 |
@@ -7404,6 +7768,7 @@ getAttribute(node: FrameNode, nodeType: 'Button'): ButtonAttribute | undefined
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7455,9 +7820,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### ListItemGroup12+
+### ListItemGroup12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ListItemGroup = TypedFrameNode<ListItemGroupInterface, ListItemGroupAttribute>
 
@@ -7469,6 +7835,7 @@ ListItemGroup类型的FrameNode节点类型。只允许添加[ListItem](https://
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<ListItemGroupInterface, ListItemGroupAttribute> | 提供ListItemGroup类型FrameNode节点。 ListItemGroupInterface用于TypedFrameNode的initialize接口的入参，入参为ListItemGroup组件的构造函数类型。 ListItemGroupAttribute用于TypedFrameNode的attribute接口的返回值，返回ListItemGroup组件的属性设置对象。 ListItemGroupInterface表示ListItemGroup的接口，ListItemGroupAttribute表示ListItemGroup的属性。 |
@@ -7476,9 +7843,10 @@ ListItemGroup类型的FrameNode节点类型。只允许添加[ListItem](https://
 
 
 
-#### createNode('ListItemGroup')12+
+### createNode('ListItemGroup')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'ListItemGroup'): ListItemGroup
 
@@ -7492,6 +7860,7 @@ createNode(context: UIContext, nodeType: 'ListItemGroup'): ListItemGroup
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -7499,6 +7868,7 @@ createNode(context: UIContext, nodeType: 'ListItemGroup'): ListItemGroup
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7511,9 +7881,10 @@ createNode(context: UIContext, nodeType: 'ListItemGroup'): ListItemGroup
 
 
 
-#### getAttribute('ListItemGroup')20+
+### getAttribute('ListItemGroup')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAttribute(node: FrameNode, nodeType: 'ListItemGroup'): ListItemGroupAttribute | undefined
 
@@ -7527,6 +7898,7 @@ getAttribute(node: FrameNode, nodeType: 'ListItemGroup'): ListItemGroupAttribute
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 获取属性时所需的目标节点。 |
@@ -7534,6 +7906,7 @@ getAttribute(node: FrameNode, nodeType: 'ListItemGroup'): ListItemGroupAttribute
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7548,9 +7921,10 @@ typeNode.getAttribute(node, 'ListItemGroup');
 
 
 
-#### WaterFlow12+
+### WaterFlow12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type WaterFlow = TypedFrameNode<WaterFlowInterface, WaterFlowAttribute>
 
@@ -7562,6 +7936,7 @@ WaterFlow类型的FrameNode节点类型。只允许添加[FlowItem](https://deve
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<WaterFlowInterface, WaterFlowAttribute> | 提供WaterFlow类型FrameNode节点。 WaterFlowInterface用于TypedFrameNode的initialize接口的入参，入参为WaterFlow组件的构造函数类型。 WaterFlowAttribute用于TypedFrameNode的attribute接口的返回值，返回WaterFlow组件的属性设置对象。 WaterFlowInterface表示WaterFlow的接口，WaterFlowAttribute表示WaterFlow的属性。 |
@@ -7569,9 +7944,10 @@ WaterFlow类型的FrameNode节点类型。只允许添加[FlowItem](https://deve
 
 
 
-#### createNode('WaterFlow')12+
+### createNode('WaterFlow')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'WaterFlow'): WaterFlow
 
@@ -7585,6 +7961,7 @@ createNode(context: UIContext, nodeType: 'WaterFlow'): WaterFlow
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -7592,6 +7969,7 @@ createNode(context: UIContext, nodeType: 'WaterFlow'): WaterFlow
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7663,9 +8041,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### getEvent('WaterFlow')19+
+### getEvent('WaterFlow')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEvent(node: FrameNode, nodeType: 'WaterFlow'): UIWaterFlowEvent | undefined
 
@@ -7679,6 +8058,7 @@ getEvent(node: FrameNode, nodeType: 'WaterFlow'): UIWaterFlowEvent | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 获取事件时所需的目标节点。 |
@@ -7686,6 +8066,7 @@ getEvent(node: FrameNode, nodeType: 'WaterFlow'): UIWaterFlowEvent | undefined
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7698,9 +8079,10 @@ getEvent(node: FrameNode, nodeType: 'WaterFlow'): UIWaterFlowEvent | undefined
 
 
 
-#### getAttribute('WaterFlow')20+
+### getAttribute('WaterFlow')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAttribute(node: FrameNode, nodeType: 'WaterFlow'): WaterFlowAttribute | undefined
 
@@ -7714,6 +8096,7 @@ getAttribute(node: FrameNode, nodeType: 'WaterFlow'): WaterFlowAttribute | undef
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 获取属性时所需的目标节点。 |
@@ -7721,6 +8104,7 @@ getAttribute(node: FrameNode, nodeType: 'WaterFlow'): WaterFlowAttribute | undef
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7733,9 +8117,10 @@ getAttribute(node: FrameNode, nodeType: 'WaterFlow'): WaterFlowAttribute | undef
 
 
 
-#### bindController('WaterFlow')20+
+### bindController('WaterFlow')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 bindController(node: FrameNode, controller: Scroller, nodeType: 'WaterFlow'): void
 
@@ -7749,6 +8134,7 @@ bindController(node: FrameNode, controller: Scroller, nodeType: 'WaterFlow'): vo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 绑定滚动控制器的目标节点。 |
@@ -7759,6 +8145,7 @@ bindController(node: FrameNode, controller: Scroller, nodeType: 'WaterFlow'): vo
 **错误码：**
 
 以下错误码的详细介绍请参见[自定义节点错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-node)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7774,9 +8161,10 @@ typeNode.bindController(node, scroller, 'WaterFlow');
 
 
 
-#### FlowItem12+
+### FlowItem12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type FlowItem = TypedFrameNode<FlowItemInterface, FlowItemAttribute>
 
@@ -7788,6 +8176,7 @@ FlowItem类型的FrameNode节点类型。允许添加一个子组件。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<FlowItemInterface, FlowItemAttribute> | 提供FlowItem类型FrameNode节点。 FlowItemInterface用于TypedFrameNode的initialize接口的入参，入参为FlowItem组件的构造函数类型。 FlowItemAttribute用于TypedFrameNode的attribute接口的返回值，返回FlowItem组件的属性设置对象。 FlowItemInterface表示FlowItem的接口，FlowItemAttribute表示FlowItem的属性。 |
@@ -7795,9 +8184,10 @@ FlowItem类型的FrameNode节点类型。允许添加一个子组件。
 
 
 
-#### createNode('FlowItem')12+
+### createNode('FlowItem')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'FlowItem'): FlowItem
 
@@ -7811,6 +8201,7 @@ createNode(context: UIContext, nodeType: 'FlowItem'): FlowItem
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -7818,6 +8209,7 @@ createNode(context: UIContext, nodeType: 'FlowItem'): FlowItem
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7830,9 +8222,10 @@ createNode(context: UIContext, nodeType: 'FlowItem'): FlowItem
 
 
 
-#### getAttribute('FlowItem')20+
+### getAttribute('FlowItem')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAttribute(node: FrameNode, nodeType: 'FlowItem'): FlowItemAttribute | undefined
 
@@ -7846,6 +8239,7 @@ getAttribute(node: FrameNode, nodeType: 'FlowItem'): FlowItemAttribute | undefin
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 获取属性时所需的目标节点。 |
@@ -7853,6 +8247,7 @@ getAttribute(node: FrameNode, nodeType: 'FlowItem'): FlowItemAttribute | undefin
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7865,9 +8260,10 @@ getAttribute(node: FrameNode, nodeType: 'FlowItem'): FlowItemAttribute | undefin
 
 
 
-#### XComponent12+
+### XComponent12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type XComponent = TypedFrameNode<XComponentInterface, XComponentAttribute>
 
@@ -7879,6 +8275,7 @@ XComponent类型的FrameNode节点类型。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<XComponentInterface, XComponentAttribute> | 提供XComponent类型FrameNode节点。 XComponentInterface用于TypedFrameNode的initialize接口的入参，入参为XComponent组件的构造函数类型。 XComponentAttribute用于TypedFrameNode的attribute接口的返回值，返回XComponent组件的属性设置对象。 XComponentInterface表示XComponent的接口，XComponentAttribute表示XComponent的属性。 |
@@ -7886,9 +8283,10 @@ XComponent类型的FrameNode节点类型。
 
 
 
-#### createNode('XComponent')12+
+### createNode('XComponent')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'XComponent'): XComponent
 
@@ -7902,6 +8300,7 @@ createNode(context: UIContext, nodeType: 'XComponent'): XComponent
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -7909,6 +8308,7 @@ createNode(context: UIContext, nodeType: 'XComponent'): XComponent
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7953,9 +8353,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### createNode('XComponent')12+
+### createNode('XComponent')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'XComponent', options: XComponentOptions): XComponent
 
@@ -7969,6 +8370,7 @@ createNode(context: UIContext, nodeType: 'XComponent', options: XComponentOption
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -7977,6 +8379,7 @@ createNode(context: UIContext, nodeType: 'XComponent', options: XComponentOption
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8027,9 +8430,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### createNode('XComponent')19+
+### createNode('XComponent')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'XComponent', parameters: NativeXComponentParameters): XComponent
 
@@ -8043,6 +8447,7 @@ createNode(context: UIContext, nodeType: 'XComponent', parameters: NativeXCompon
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -8051,6 +8456,7 @@ createNode(context: UIContext, nodeType: 'XComponent', parameters: NativeXCompon
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8099,9 +8505,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### getAttribute('XComponent')20+
+### getAttribute('XComponent')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAttribute(node: FrameNode, nodeType: 'XComponent'): XComponentAttribute | undefined
 
@@ -8115,6 +8522,7 @@ getAttribute(node: FrameNode, nodeType: 'XComponent'): XComponentAttribute | und
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 获取属性时所需的目标节点。 |
@@ -8122,6 +8530,7 @@ getAttribute(node: FrameNode, nodeType: 'XComponent'): XComponentAttribute | und
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8136,9 +8545,10 @@ typeNode.getAttribute(node, 'XComponent');
 
 
 
-#### QRCode14+
+### QRCode14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type QRCode = TypedFrameNode<QRCodeInterface, QRCodeAttribute>
 
@@ -8150,6 +8560,7 @@ QRCode类型的FrameNode节点类型。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<QRCodeInterface, QRCodeAttribute> | 提供QRCode类型FrameNode节点。 QRCodeInterface用于TypedFrameNode的initialize接口的入参，入参为QRCode组件的构造函数类型。 QRCodeAttribute用于TypedFrameNode的attribute接口的返回值，返回QRCode组件的属性设置对象。 QRCodeInterface表示QRCode的接口，QRCodeAttribute表示QRCode的属性。 |
@@ -8157,9 +8568,10 @@ QRCode类型的FrameNode节点类型。
 
 
 
-#### createNode('QRCode')14+
+### createNode('QRCode')14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'QRCode'): QRCode
 
@@ -8173,6 +8585,7 @@ createNode(context: UIContext, nodeType: 'QRCode'): QRCode
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -8180,6 +8593,7 @@ createNode(context: UIContext, nodeType: 'QRCode'): QRCode
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8194,9 +8608,10 @@ typeNode.createNode(uiContext, 'QRCode');
 
 
 
-#### Badge14+
+### Badge14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Badge = TypedFrameNode<BadgeInterface, BadgeAttribute>
 
@@ -8208,6 +8623,7 @@ Badge类型的FrameNode节点类型。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<BadgeInterface, BadgeAttribute> | 提供Badge类型FrameNode节点。 BadgeInterface用于TypedFrameNode的initialize接口的入参，入参为Badge组件的构造函数类型。 BadgeAttribute用于TypedFrameNode的attribute接口的返回值，返回Badge组件的属性设置对象。 BadgeInterface表示Badge的接口，BadgeAttribute表示Badge的属性。 |
@@ -8215,9 +8631,10 @@ Badge类型的FrameNode节点类型。
 
 
 
-#### createNode('Badge')14+
+### createNode('Badge')14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'Badge'): Badge
 
@@ -8231,6 +8648,7 @@ createNode(context: UIContext, nodeType: 'Badge'): Badge
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -8238,6 +8656,7 @@ createNode(context: UIContext, nodeType: 'Badge'): Badge
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8252,9 +8671,10 @@ typeNode.createNode(uiContext, 'Badge');
 
 
 
-#### Grid14+
+### Grid14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Grid = TypedFrameNode<GridInterface, GridAttribute>
 
@@ -8266,6 +8686,7 @@ Grid类型的FrameNode节点类型。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<GridInterface, GridAttribute> | 提供Grid类型FrameNode节点。 GridInterface用于TypedFrameNode的initialize接口的入参，入参为Grid组件的构造函数类型。 GridAttribute用于TypedFrameNode的attribute接口的返回值，返回Grid组件的属性设置对象。 GridInterface表示Grid的接口，GridAttribute表示Grid的属性。 |
@@ -8273,9 +8694,10 @@ Grid类型的FrameNode节点类型。
 
 
 
-#### createNode('Grid')14+
+### createNode('Grid')14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'Grid'): Grid
 
@@ -8289,6 +8711,7 @@ createNode(context: UIContext, nodeType: 'Grid'): Grid
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -8296,6 +8719,7 @@ createNode(context: UIContext, nodeType: 'Grid'): Grid
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8362,9 +8786,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### getEvent('Grid')19+
+### getEvent('Grid')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEvent(node: FrameNode, nodeType: 'Grid'): UIGridEvent | undefined
 
@@ -8378,6 +8803,7 @@ getEvent(node: FrameNode, nodeType: 'Grid'): UIGridEvent | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 获取事件时所需的目标节点。 |
@@ -8385,6 +8811,7 @@ getEvent(node: FrameNode, nodeType: 'Grid'): UIGridEvent | undefined
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8397,9 +8824,10 @@ getEvent(node: FrameNode, nodeType: 'Grid'): UIGridEvent | undefined
 
 
 
-#### getAttribute('Grid')20+
+### getAttribute('Grid')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAttribute(node: FrameNode, nodeType: 'Grid'): GridAttribute | undefined
 
@@ -8413,6 +8841,7 @@ getAttribute(node: FrameNode, nodeType: 'Grid'): GridAttribute | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 获取属性时所需的目标节点。 |
@@ -8420,6 +8849,7 @@ getAttribute(node: FrameNode, nodeType: 'Grid'): GridAttribute | undefined
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8432,9 +8862,10 @@ getAttribute(node: FrameNode, nodeType: 'Grid'): GridAttribute | undefined
 
 
 
-#### bindController('Grid')20+
+### bindController('Grid')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 bindController(node: FrameNode, controller: Scroller, nodeType: 'Grid'): void
 
@@ -8448,6 +8879,7 @@ bindController(node: FrameNode, controller: Scroller, nodeType: 'Grid'): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 绑定滚动控制器的目标节点。 |
@@ -8458,6 +8890,7 @@ bindController(node: FrameNode, controller: Scroller, nodeType: 'Grid'): void
 **错误码：**
 
 以下错误码的详细介绍请参见[自定义节点错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-node)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -8473,9 +8906,10 @@ typeNode.bindController(node, scroller, 'Grid');
 
 
 
-#### GridItem14+
+### GridItem14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type GridItem = TypedFrameNode<GridItemInterface, GridItemAttribute>
 
@@ -8487,6 +8921,7 @@ GridItem类型的FrameNode节点类型。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<GridItemInterface, GridItemAttribute> | 提供GridItem类型FrameNode节点。 GridItemInterface用于TypedFrameNode的initialize接口的入参，入参为GridItem组件的构造函数类型。 GridItemAttribute用于TypedFrameNode的attribute接口的返回值，返回GridItem组件的属性设置对象。 GridItemInterface表示GridItem的接口，GridItemAttribute表示GridItem的属性。 |
@@ -8494,9 +8929,10 @@ GridItem类型的FrameNode节点类型。
 
 
 
-#### createNode('GridItem')14+
+### createNode('GridItem')14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'GridItem'): GridItem
 
@@ -8510,6 +8946,7 @@ createNode(context: UIContext, nodeType: 'GridItem'): GridItem
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -8517,6 +8954,7 @@ createNode(context: UIContext, nodeType: 'GridItem'): GridItem
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8529,9 +8967,10 @@ createNode(context: UIContext, nodeType: 'GridItem'): GridItem
 
 
 
-#### getAttribute('GridItem')20+
+### getAttribute('GridItem')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAttribute(node: FrameNode, nodeType: 'GridItem'): GridItemAttribute | undefined
 
@@ -8545,6 +8984,7 @@ getAttribute(node: FrameNode, nodeType: 'GridItem'): GridItemAttribute | undefin
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 获取属性时所需的目标节点。 |
@@ -8552,6 +8992,7 @@ getAttribute(node: FrameNode, nodeType: 'GridItem'): GridItemAttribute | undefin
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8564,9 +9005,10 @@ getAttribute(node: FrameNode, nodeType: 'GridItem'): GridItemAttribute | undefin
 
 
 
-#### TextClock14+
+### TextClock14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type TextClock = TypedFrameNode<TextClockInterface, TextClockAttribute>
 
@@ -8578,6 +9020,7 @@ TextClock类型的FrameNode节点类型。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<TextClockInterface, TextClockAttribute> | 提供TextClock类型FrameNode节点。 TextClockInterface用于TypedFrameNode的initialize接口的入参，入参为TextClock组件的构造函数类型。 TextClockAttribute用于TypedFrameNode的attribute接口的返回值，返回TextClock组件的属性设置对象。 TextClockInterface表示TextClock的接口，TextClockAttribute表示TextClock的属性。 |
@@ -8585,9 +9028,10 @@ TextClock类型的FrameNode节点类型。
 
 
 
-#### createNode('TextClock')14+
+### createNode('TextClock')14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'TextClock'): TextClock
 
@@ -8601,6 +9045,7 @@ createNode(context: UIContext, nodeType: 'TextClock'): TextClock
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -8608,6 +9053,7 @@ createNode(context: UIContext, nodeType: 'TextClock'): TextClock
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8622,9 +9068,10 @@ typeNode.createNode(uiContext, 'TextClock');
 
 
 
-#### TextTimer14+
+### TextTimer14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type TextTimer = TypedFrameNode<TextTimerInterface, TextTimerAttribute>
 
@@ -8636,6 +9083,7 @@ TextTimer类型的FrameNode节点类型。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<TextTimerInterface, TextTimerAttribute> | 提供TextTimer类型FrameNode节点。 TextTimerInterface用于TypedFrameNode的initialize接口的入参，入参为TextTimer组件的构造函数类型。 TextTimerAttribute用于TypedFrameNode的attribute接口的返回值，返回TextTimer组件的属性设置对象。 TextTimerInterface表示TextTimer的接口，TextTimerAttribute表示TextTimer的属性。 |
@@ -8643,9 +9091,10 @@ TextTimer类型的FrameNode节点类型。
 
 
 
-#### createNode('TextTimer')14+
+### createNode('TextTimer')14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'TextTimer'): TextTimer
 
@@ -8659,6 +9108,7 @@ createNode(context: UIContext, nodeType: 'TextTimer'): TextTimer
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -8666,6 +9116,7 @@ createNode(context: UIContext, nodeType: 'TextTimer'): TextTimer
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8680,9 +9131,10 @@ typeNode.createNode(uiContext, 'TextTimer');
 
 
 
-#### Marquee14+
+### Marquee14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Marquee = TypedFrameNode<MarqueeInterface, MarqueeAttribute>
 
@@ -8694,6 +9146,7 @@ Marquee类型的FrameNode节点类型。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<MarqueeInterface, MarqueeAttribute> | 提供Marquee类型FrameNode节点。 MarqueeInterface用于TypedFrameNode的initialize接口的入参，入参为Marquee组件的构造函数类型。 MarqueeAttribute用于TypedFrameNode的attribute接口的返回值，返回Marquee组件的属性设置对象。 MarqueeInterface表示Marquee的接口，MarqueeAttribute表示Marquee的属性。 |
@@ -8701,9 +9154,10 @@ Marquee类型的FrameNode节点类型。
 
 
 
-#### createNode('Marquee')14+
+### createNode('Marquee')14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'Marquee'): Marquee
 
@@ -8717,6 +9171,7 @@ createNode(context: UIContext, nodeType: 'Marquee'): Marquee
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -8724,6 +9179,7 @@ createNode(context: UIContext, nodeType: 'Marquee'): Marquee
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8745,7 +9201,7 @@ class MyNodeController extends NodeController {
     node.appendChild(col);
     // 创建marquee
     let marquee = typeNode.createNode(uiContext, 'Marquee');
-    marquee.initialize({ start: true, src: 'Marquee, if need display, src shall be long' });
+    marquee.initialize({ start: true, src: 'Marquee, if need display, src shall be long' })
       .width(100);
     col.appendChild(marquee);
     return node;
@@ -8768,9 +9224,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### TextArea14+
+### TextArea14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type TextArea = TypedFrameNode<TextAreaInterface, TextAreaAttribute>
 
@@ -8782,6 +9239,7 @@ TextArea类型的FrameNode节点类型。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<TextAreaInterface, TextAreaAttribute> | 提供TextArea类型FrameNode节点。 TextAreaInterface用于TypedFrameNode的initialize接口的入参，入参为TextArea组件的构造函数类型。 TextAreaAttribute用于TypedFrameNode的attribute接口的返回值，返回TextArea组件的属性设置对象。 TextAreaInterface表示TextArea的接口，TextAreaAttribute表示TextArea的属性。 |
@@ -8789,9 +9247,10 @@ TextArea类型的FrameNode节点类型。
 
 
 
-#### createNode('TextArea')14+
+### createNode('TextArea')14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'TextArea'): TextArea
 
@@ -8805,6 +9264,7 @@ createNode(context: UIContext, nodeType: 'TextArea'): TextArea
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -8812,6 +9272,7 @@ createNode(context: UIContext, nodeType: 'TextArea'): TextArea
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8855,9 +9316,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### getAttribute('TextArea')20+
+### getAttribute('TextArea')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAttribute(node: FrameNode, nodeType: 'TextArea'): TextAreaAttribute | undefined
 
@@ -8871,6 +9333,7 @@ getAttribute(node: FrameNode, nodeType: 'TextArea'): TextAreaAttribute | undefin
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 获取属性时所需的目标节点。 |
@@ -8878,6 +9341,7 @@ getAttribute(node: FrameNode, nodeType: 'TextArea'): TextAreaAttribute | undefin
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8923,9 +9387,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### bindController('TextArea')20+
+### bindController('TextArea')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 bindController(node: FrameNode, controller: TextAreaController, nodeType: 'TextArea'): void
 
@@ -8939,6 +9404,7 @@ bindController(node: FrameNode, controller: TextAreaController, nodeType: 'TextA
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 绑定输入框控制器的目标节点。 |
@@ -8949,6 +9415,7 @@ bindController(node: FrameNode, controller: TextAreaController, nodeType: 'TextA
 **错误码：**
 
 以下错误码的详细介绍请参见[自定义节点错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-node)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -8998,9 +9465,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### SymbolGlyph14+
+### SymbolGlyph14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type SymbolGlyph = TypedFrameNode<SymbolGlyphInterface, SymbolGlyphAttribute>
 
@@ -9012,6 +9480,7 @@ SymbolGlyph类型的FrameNode节点类型。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<SymbolGlyphInterface, SymbolGlyphAttribute> | 提供SymbolGlyph类型FrameNode节点。 SymbolGlyphInterface用于TypedFrameNode的initialize接口的入参，入参为SymbolGlyph组件的构造函数类型。 SymbolGlyphAttribute用于TypedFrameNode的attribute接口的返回值，返回SymbolGlyph组件的属性设置对象。 SymbolGlyphInterface表示SymbolGlyph的接口，SymbolGlyphAttribute表示SymbolGlyph的属性。 |
@@ -9019,9 +9488,10 @@ SymbolGlyph类型的FrameNode节点类型。
 
 
 
-#### createNode('SymbolGlyph')14+
+### createNode('SymbolGlyph')14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'SymbolGlyph'): SymbolGlyph
 
@@ -9035,6 +9505,7 @@ createNode(context: UIContext, nodeType: 'SymbolGlyph'): SymbolGlyph
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -9042,6 +9513,7 @@ createNode(context: UIContext, nodeType: 'SymbolGlyph'): SymbolGlyph
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -9085,9 +9557,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### Checkbox18+
+### Checkbox18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Checkbox = TypedFrameNode<CheckboxInterface, CheckboxAttribute>
 
@@ -9099,6 +9572,7 @@ Checkbox类型的FrameNode节点类型。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<CheckboxInterface, CheckboxAttribute> | 提供Checkbox类型FrameNode节点。 CheckboxInterface用于TypedFrameNode的initialize接口的入参，入参为Checkbox组件的构造函数类型。 CheckboxAttribute用于TypedFrameNode的attribute接口的返回值，返回Checkbox组件的属性设置对象。 CheckboxInterface表示Checkbox的接口，CheckboxAttribute表示Checkbox的属性。 |
@@ -9106,9 +9580,10 @@ Checkbox类型的FrameNode节点类型。
 
 
 
-#### createNode('Checkbox')18+
+### createNode('Checkbox')18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'Checkbox'): Checkbox
 
@@ -9122,6 +9597,7 @@ createNode(context: UIContext, nodeType: 'Checkbox'): Checkbox
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -9129,6 +9605,7 @@ createNode(context: UIContext, nodeType: 'Checkbox'): Checkbox
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -9181,9 +9658,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### getAttribute('Checkbox')20+
+### getAttribute('Checkbox')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAttribute(node: FrameNode, nodeType: 'Checkbox'): CheckboxAttribute | undefined
 
@@ -9197,6 +9675,7 @@ getAttribute(node: FrameNode, nodeType: 'Checkbox'): CheckboxAttribute | undefin
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 获取属性时所需的目标节点。 |
@@ -9204,6 +9683,7 @@ getAttribute(node: FrameNode, nodeType: 'Checkbox'): CheckboxAttribute | undefin
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -9257,9 +9737,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### CheckboxGroup18+
+### CheckboxGroup18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type CheckboxGroup = TypedFrameNode<CheckboxGroupInterface, CheckboxGroupAttribute>
 
@@ -9271,6 +9752,7 @@ CheckboxGroup类型的FrameNode节点类型。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<CheckboxGroupInterface, CheckboxGroupAttribute> | 提供CheckboxGroup类型FrameNode节点。 CheckboxGroupInterface用于TypedFrameNode的initialize接口的入参，入参为CheckboxGroup组件的构造函数类型。 CheckboxGroupAttribute用于TypedFrameNode的attribute接口的返回值，返回CheckboxGroup组件的属性设置对象。 CheckboxGroupInterface表示CheckboxGroup的接口，CheckboxGroupAttribute表示CheckboxGroup的属性。 |
@@ -9278,9 +9760,10 @@ CheckboxGroup类型的FrameNode节点类型。
 
 
 
-#### createNode('CheckboxGroup')18+
+### createNode('CheckboxGroup')18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'CheckboxGroup'): CheckboxGroup
 
@@ -9294,6 +9777,7 @@ createNode(context: UIContext, nodeType: 'CheckboxGroup'): CheckboxGroup
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -9301,6 +9785,7 @@ createNode(context: UIContext, nodeType: 'CheckboxGroup'): CheckboxGroup
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -9355,9 +9840,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### Rating18+
+### Rating18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Rating = TypedFrameNode<RatingInterface, RatingAttribute>
 
@@ -9369,6 +9855,7 @@ Rating类型的FrameNode节点类型。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<RatingInterface, RatingAttribute> | 提供Rating类型FrameNode节点。 RatingInterface用于TypedFrameNode的initialize接口的入参，入参为Rating组件的构造函数类型。 RatingAttribute用于TypedFrameNode的attribute接口的返回值，返回Rating组件的属性设置对象。 RatingInterface表示Rating的接口，RatingAttribute表示Rating的属性。 |
@@ -9376,9 +9863,10 @@ Rating类型的FrameNode节点类型。
 
 
 
-#### createNode('Rating')18+
+### createNode('Rating')18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'Rating'): Rating
 
@@ -9392,6 +9880,7 @@ createNode(context: UIContext, nodeType: 'Rating'): Rating
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -9399,6 +9888,7 @@ createNode(context: UIContext, nodeType: 'Rating'): Rating
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -9446,9 +9936,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### Radio18+
+### Radio18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Radio = TypedFrameNode<RadioInterface, RadioAttribute>
 
@@ -9460,6 +9951,7 @@ Radio类型的FrameNode节点类型。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<RadioInterface, RadioAttribute> | 提供Radio类型FrameNode节点。 RadioInterface用于TypedFrameNode的initialize接口的入参，入参为Radio组件的构造函数类型。 RadioAttribute用于TypedFrameNode的attribute接口的返回值，返回Radio组件的属性设置对象。 RadioInterface表示Radio的接口，RadioAttribute表示Radio的属性。 |
@@ -9467,9 +9959,10 @@ Radio类型的FrameNode节点类型。
 
 
 
-#### createNode('Radio')18+
+### createNode('Radio')18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'Radio'): Radio
 
@@ -9483,6 +9976,7 @@ createNode(context: UIContext, nodeType: 'Radio'): Radio
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -9490,6 +9984,7 @@ createNode(context: UIContext, nodeType: 'Radio'): Radio
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -9541,9 +10036,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### getAttribute('Radio')20+
+### getAttribute('Radio')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAttribute(node: FrameNode, nodeType: 'Radio'): RadioAttribute | undefined
 
@@ -9557,6 +10053,7 @@ getAttribute(node: FrameNode, nodeType: 'Radio'): RadioAttribute | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 获取属性时所需的目标节点。 |
@@ -9564,6 +10061,7 @@ getAttribute(node: FrameNode, nodeType: 'Radio'): RadioAttribute | undefined
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -9616,9 +10114,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### Slider18+
+### Slider18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Slider = TypedFrameNode<SliderInterface, SliderAttribute>
 
@@ -9630,6 +10129,7 @@ Slider类型的FrameNode节点类型。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<SliderInterface, SliderAttribute> | 提供Slider类型FrameNode节点。 SliderInterface用于TypedFrameNode的initialize接口的入参，入参为Slider组件的构造函数类型。 SliderAttribute用于TypedFrameNode的attribute接口的返回值，返回Slider组件的属性设置对象。 SliderInterface表示Slider的接口，SliderAttribute表示Slider的属性。 |
@@ -9637,9 +10137,10 @@ Slider类型的FrameNode节点类型。
 
 
 
-#### createNode('Slider')18+
+### createNode('Slider')18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'Slider'): Slider
 
@@ -9653,6 +10154,7 @@ createNode(context: UIContext, nodeType: 'Slider'): Slider
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -9660,6 +10162,7 @@ createNode(context: UIContext, nodeType: 'Slider'): Slider
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -9706,9 +10209,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### getAttribute('Slider')20+
+### getAttribute('Slider')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAttribute(node: FrameNode, nodeType: 'Slider'): SliderAttribute | undefined
 
@@ -9722,6 +10226,7 @@ getAttribute(node: FrameNode, nodeType: 'Slider'): SliderAttribute | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 获取属性时所需的目标节点。 |
@@ -9729,6 +10234,7 @@ getAttribute(node: FrameNode, nodeType: 'Slider'): SliderAttribute | undefined
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -9776,9 +10282,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### Select18+
+### Select18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Select = TypedFrameNode<SelectInterface, SelectAttribute>
 
@@ -9790,6 +10297,7 @@ Select类型的FrameNode节点类型。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<SelectInterface, SelectAttribute> | 提供Select类型FrameNode节点。 SelectInterface用于TypedFrameNode的initialize接口的入参，入参为Select组件的构造函数类型。 SelectAttribute用于TypedFrameNode的attribute接口的返回值，返回Select组件的属性设置对象。 SelectInterface表示Select的接口，SelectAttribute表示Select的属性。 |
@@ -9797,9 +10305,10 @@ Select类型的FrameNode节点类型。
 
 
 
-#### createNode('Select')18+
+### createNode('Select')18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'Select'): Select
 
@@ -9813,6 +10322,7 @@ createNode(context: UIContext, nodeType: 'Select'): Select
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -9820,6 +10330,7 @@ createNode(context: UIContext, nodeType: 'Select'): Select
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -9865,9 +10376,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### Toggle18+
+### Toggle18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Toggle = TypedFrameNode<ToggleInterface, ToggleAttribute>
 
@@ -9879,6 +10391,7 @@ type Toggle = TypedFrameNode<ToggleInterface, ToggleAttribute>
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypedFrameNode<ToggleInterface, ToggleAttribute> | 提供Toggle类型FrameNode节点。 ToggleInterface用于TypedFrameNode的initialize接口的入参，入参为Toggle组件的构造函数类型。 ToggleAttribute用于TypedFrameNode的attribute接口的返回值，返回Toggle组件的属性设置对象。 ToggleInterface表示Toggle的接口，ToggleAttribute表示Toggle的属性。 |
@@ -9886,9 +10399,10 @@ type Toggle = TypedFrameNode<ToggleInterface, ToggleAttribute>
 
 
 
-#### createNode('Toggle')18+
+### createNode('Toggle')18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNode(context: UIContext, nodeType: 'Toggle', options?: ToggleOptions): Toggle
 
@@ -9902,6 +10416,7 @@ createNode(context: UIContext, nodeType: 'Toggle', options?: ToggleOptions): Tog
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 创建对应节点时所需的UI上下文。 |
@@ -9910,6 +10425,7 @@ createNode(context: UIContext, nodeType: 'Toggle', options?: ToggleOptions): Tog
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -9957,9 +10473,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### getAttribute('Toggle')20+
+### getAttribute('Toggle')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAttribute(node: FrameNode, nodeType: 'Toggle'): ToggleAttribute | undefined
 
@@ -9973,6 +10490,7 @@ getAttribute(node: FrameNode, nodeType: 'Toggle'): ToggleAttribute | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 获取属性时所需的目标节点。 |
@@ -9980,6 +10498,7 @@ getAttribute(node: FrameNode, nodeType: 'Toggle'): ToggleAttribute | undefined
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -10027,9 +10546,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### NodeAdapter12+
+## NodeAdapter12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 NodeAdapter提供FrameNode的数据懒加载能力，通过[LazyForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-rendering-control-lazyforeach)实现接口功能。适用于长列表等需要按需加载节点数据的场景，可提升渲染性能并降低内存占用。
 
@@ -10043,9 +10563,10 @@ NodeAdapter提供FrameNode的数据懒加载能力，通过[LazyForEach](https:/
 
 
 
-#### constructor12+
+### constructor12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -10059,9 +10580,10 @@ NodeAdapter的构造函数。
 
 
 
-#### dispose12+
+### dispose12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 dispose(): void
 
@@ -10075,9 +10597,10 @@ dispose(): void
 
 
 
-#### totalNodeCount12+
+### totalNodeCount12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set totalNodeCount(count: number)
 
@@ -10090,6 +10613,7 @@ set totalNodeCount(count: number)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -10108,6 +10632,7 @@ get totalNodeCount(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 数据节点总数。 取值范围：[0, +∞) |
@@ -10115,9 +10640,10 @@ get totalNodeCount(): number
 
 
 
-#### reloadAllItems12+
+### reloadAllItems12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reloadAllItems(): void
 
@@ -10131,9 +10657,10 @@ reloadAllItems(): void
 
 
 
-#### reloadItem12+
+### reloadItem12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reloadItem(start: number, count: number): void
 
@@ -10147,6 +10674,7 @@ reloadItem(start: number, count: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | start | number | 是 | 重新加载的节点开始索引值。 取值范围：[0, +∞) |
@@ -10155,9 +10683,10 @@ reloadItem(start: number, count: number): void
 
 
 
-#### removeItem12+
+### removeItem12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeItem(start: number, count: number): void
 
@@ -10171,6 +10700,7 @@ removeItem(start: number, count: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | start | number | 是 | 删除的节点开始索引值。 取值范围：[0, +∞) |
@@ -10179,9 +10709,10 @@ removeItem(start: number, count: number): void
 
 
 
-#### insertItem12+
+### insertItem12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 insertItem(start: number, count: number): void
 
@@ -10195,6 +10726,7 @@ insertItem(start: number, count: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | start | number | 是 | 新增的节点开始索引值。 取值范围：[0, +∞) |
@@ -10203,9 +10735,10 @@ insertItem(start: number, count: number): void
 
 
 
-#### moveItem12+
+### moveItem12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 moveItem(from: number, to: number): void
 
@@ -10219,6 +10752,7 @@ moveItem(from: number, to: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | from | number | 是 | 数据移动的原始索引值。 取值范围：[0, +∞) |
@@ -10227,9 +10761,10 @@ moveItem(from: number, to: number): void
 
 
 
-#### getAllAvailableItems12+
+### getAllAvailableItems12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllAvailableItems(): Array&lt;FrameNode&gt;
 
@@ -10243,6 +10778,7 @@ getAllAvailableItems(): Array&lt;FrameNode&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;FrameNode&gt; | FrameNode数据节点集合。 |
@@ -10250,9 +10786,10 @@ getAllAvailableItems(): Array&lt;FrameNode&gt;
 
 
 
-#### onAttachToNode12+
+### onAttachToNode12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onAttachToNode?(target: FrameNode): void
 
@@ -10266,6 +10803,7 @@ FrameNode绑定NodeAdapter时回调。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | target | FrameNode | 是 | 绑定NodeAdapter的FrameNode节点。 |
@@ -10273,9 +10811,10 @@ FrameNode绑定NodeAdapter时回调。
 
 
 
-#### onDetachFromNode12+
+### onDetachFromNode12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDetachFromNode?(): void
 
@@ -10289,9 +10828,10 @@ onDetachFromNode?(): void
 
 
 
-#### onGetChildId12+
+### onGetChildId12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onGetChildId?(index: number): number
 
@@ -10305,12 +10845,14 @@ onGetChildId?(index: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 加载节点索引值。 取值范围：[0, +∞) |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -10319,9 +10861,10 @@ onGetChildId?(index: number): number
 
 
 
-#### onCreateChild12+
+### onCreateChild12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onCreateChild?(index: number): FrameNode
 
@@ -10335,12 +10878,14 @@ onCreateChild?(index: number): FrameNode
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 加载节点索引值。 取值范围：[0, +∞) |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -10349,9 +10894,10 @@ onCreateChild?(index: number): FrameNode
 
 
 
-#### onDisposeChild12+
+### onDisposeChild12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDisposeChild?(id: number, node: FrameNode): void
 
@@ -10365,6 +10911,7 @@ onDisposeChild?(id: number, node: FrameNode): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | number | 是 | 即将销毁的子节点id。 |
@@ -10373,9 +10920,10 @@ onDisposeChild?(id: number, node: FrameNode): void
 
 
 
-#### onUpdateChild12+
+### onUpdateChild12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onUpdateChild?(id: number, node: FrameNode): void
 
@@ -10389,6 +10937,7 @@ onUpdateChild?(id: number, node: FrameNode): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | number | 是 | 复用节点的id。 |
@@ -10397,9 +10946,10 @@ onUpdateChild?(id: number, node: FrameNode): void
 
 
 
-#### attachNodeAdapter12+
+### attachNodeAdapter12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static attachNodeAdapter(adapter: NodeAdapter, node: FrameNode): boolean
 
@@ -10417,6 +10967,7 @@ static attachNodeAdapter(adapter: NodeAdapter, node: FrameNode): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | adapter | NodeAdapter | 是 | 定义懒加载的NodeAdapter类。 |
@@ -10425,6 +10976,7 @@ static attachNodeAdapter(adapter: NodeAdapter, node: FrameNode): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 绑定结果，返回true绑定成功，false绑定失败。 |
@@ -10432,9 +10984,10 @@ static attachNodeAdapter(adapter: NodeAdapter, node: FrameNode): boolean
 
 
 
-#### detachNodeAdapter12+
+### detachNodeAdapter12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static detachNodeAdapter(node: FrameNode): void
 
@@ -10448,6 +11001,7 @@ static detachNodeAdapter(node: FrameNode): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 要解除绑定的FrameNode节点。 |
@@ -10455,9 +11009,10 @@ static detachNodeAdapter(node: FrameNode): void
 
 
 
-#### isDisposed20+
+### isDisposed20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isDisposed(): boolean
 
@@ -10471,6 +11026,7 @@ isDisposed(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 后端实体节点是否解除引用。true为节点已与后端实体节点解除引用，false为节点未与后端实体节点解除引用。 |
@@ -10482,9 +11038,10 @@ isDisposed(): boolean
 
 
 
-#### 自定义具体类型节点示例
+## 自定义具体类型节点示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 以Text节点为例，创建Text类型节点。
 
@@ -10525,14 +11082,15 @@ struct FrameNodeTypeTest {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/G4O9zYS3Q9GJf-W1zOBQew/zh-cn_image_0000002656008220.png?HW-CC-KV=V1&HW-CC-Date=20260730T071448Z&HW-CC-Expire=86400&HW-CC-Sign=4766E79D4F4C77C06643E506D2AA6698D75AD33698B2DD9FAD93E13696849FC8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/0q-8B_60Qi-gg_FYoGw9SQ/zh-cn_image_0000002717772366.png?HW-CC-KV=V1&HW-CC-Date=20260911T072835Z&HW-CC-Expire=86400&HW-CC-Sign=54B70EAD415387669D7DBC2127FE726A5776C30947540AFB433F4001C8FB9A6B)
 
 
 
 
-#### 节点操作示例
+## 节点操作示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```json
 import { NodeController, FrameNode, UIContext, typeNode } from '@kit.ArkUI';
@@ -11062,9 +11620,10 @@ struct Index {
 
 
 
-#### LazyForEach场景节点操作示例
+## LazyForEach场景节点操作示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { NodeController, FrameNode, UIContext, BuilderNode, ExpandMode, LengthUnit } from '@kit.ArkUI';
@@ -11328,9 +11887,10 @@ struct Index {
 
 
 
-#### 基础事件示例
+## 基础事件示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```json
 import { NodeController, FrameNode } from '@kit.ArkUI';
@@ -11462,9 +12022,10 @@ struct Index {
 
 
 
-#### LazyForEach场景基础事件使用示例
+## LazyForEach场景基础事件使用示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```ArkTS
 // index.ets
@@ -11788,9 +12349,10 @@ export class TrackManager {
 
 
 
-#### 手势事件示例
+## 手势事件示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```json
 import { NodeController, FrameNode } from '@kit.ArkUI';
@@ -11862,9 +12424,10 @@ struct Index {
 
 
 
-#### 节点自定义示例
+## 节点自定义示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { UIContext, DrawContext, FrameNode, NodeController, LayoutConstraint, Size, Position } from '@kit.ArkUI';
@@ -11993,9 +12556,10 @@ struct Index {
 
 
 
-#### NodeAdapter使用示例
+## NodeAdapter使用示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { FrameNode, NodeController, NodeAdapter, typeNode } from '@kit.ArkUI';
@@ -12195,9 +12759,10 @@ struct ListNodeTest {
 
 
 
-#### 节点复用回收使用示例
+## 节点复用回收使用示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { NodeController, BuilderNode, FrameNode, UIContext } from '@kit.ArkUI';
@@ -12299,9 +12864,10 @@ struct Index {
 
 
 
-#### 组件设置和删除多态样式状态示例
+## 组件设置和删除多态样式状态示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API版本26.0.0开始，[UIState](#uistate20)新增HOVERED枚举。
 
@@ -12425,14 +12991,15 @@ struct FrameNodeTypeTest {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/xnsvunEuTJ-EYmNPWTlsHQ/zh-cn_image_0000002655848300.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071448Z&HW-CC-Expire=86400&HW-CC-Sign=7C411664AF9303C02C756E11ECFF2F52733B011046F417429AD6370C26AC32B5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/zyRpQp5RQaafgrSHzuIOxQ/zh-cn_image_0000002717612434.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072835Z&HW-CC-Expire=86400&HW-CC-Sign=2249CC439966271FE04140FB8A87AEFBC056F4B07196FBCC5FE778FB21B43835)
 
 
 
 
-#### 动画创建与取消示例
+## 动画创建与取消示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例说明在FrameNode上[createAnimation](#createanimation20)、[cancelAnimations](#cancelanimations20)、[getNodePropertyValue](#getnodepropertyvalue20)接口的用法。
 
@@ -12534,14 +13101,15 @@ struct CreateAnimationExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/BMAnniTrQUefBZr8p7Rqqg/zh-cn_image_0000002686087729.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071448Z&HW-CC-Expire=86400&HW-CC-Sign=F79C03B7D5226C174E0EBE968C8B91910D2E90D4430F78B4D3F4DB75D5B512B0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/e6Y0teAZSzGQgjoGCGHczA/zh-cn_image_0000002747292387.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072835Z&HW-CC-Expire=86400&HW-CC-Sign=87C7B1D31E7171384842126C589126623E3F7235A0829FCC9D3E4C9F5E46AA63)
 
 
 
 
-#### 滚动事件示例
+## 滚动事件示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { NodeController, FrameNode, typeNode } from '@kit.ArkUI';
@@ -12634,9 +13202,10 @@ struct Index {
 
 
 
-#### 检验FrameNode是否有效示例
+## 检验FrameNode是否有效示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例演示了FrameNode释放节点前后分别使用[isDisposed](#isdisposed20)接口验证节点的状态，释放节点前节点调用isDisposed接口返回false，释放节点后节点调用isDisposed接口返回true。
 
@@ -12750,14 +13319,15 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/Zc_vj0hIQL6_Lfum_WAA7Q/zh-cn_image_0000002685927901.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071448Z&HW-CC-Expire=86400&HW-CC-Sign=44E089A73E258FFA7F18EEDB7BAB6432DFFB60B4A26F8FA87B7522EDE2A3F843)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/COnMRLVWQLGFuI4MmpFDHA/zh-cn_image_0000002747212303.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072835Z&HW-CC-Expire=86400&HW-CC-Sign=CA823400E3456B4473C7BB99F94E00F2AC2AD7A51EEF4EC0154833E2436E0E90)
 
 
 
 
-#### 检验NodeAdapter是否有效示例
+## 检验NodeAdapter是否有效示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例演示了[NodeAdapter](#nodeadapter12)释放节点前后分别使用[isDisposed](#isdisposed20)接口验证节点的状态，释放节点前节点调用isDisposed接口返回false，释放节点后节点调用isDisposed接口返回true。
 
@@ -12875,14 +13445,15 @@ struct ListNodeTest {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/68fmGwqGTzaYVBHx6Kgv4g/zh-cn_image_0000002656008222.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071448Z&HW-CC-Expire=86400&HW-CC-Sign=BBB5A975025812EE280150507F3353817155DE48FBCF4DDC6200ACBB9035BA4F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/ceqCt-9JTBOjbpzXSjf6eQ/zh-cn_image_0000002717772368.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072835Z&HW-CC-Expire=86400&HW-CC-Sign=8675AFD3A823A92CDC71BB6EAAEF42D852BC47E49242E58313FCF5D42D6FEF83)
 
 
 
 
-#### 获取根节点示例
+## 获取根节点示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例演示了如何通过FrameNode的[getParent](#getparent12)接口获取当前页面根节点。
 
@@ -12936,9 +13507,10 @@ struct Index {
 
 
 
-#### 接纳为附属节点示例
+## 接纳为附属节点示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 22开始，该示例演示了如何通过FrameNode的[adoptChild](#adoptchild22)和[removeAdoptedChild](#removeadoptedchild22)接口进行接纳为附属节点的相关操作。
 
@@ -13021,9 +13593,10 @@ struct Index {
 
 
 
-#### 局部与窗口坐标转换示例
+## 局部与窗口坐标转换示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例演示了如何通过FrameNode的[convertPositionToWindow](#convertpositiontowindow23)和[convertPositionFromWindow](#convertpositionfromwindow23)接口进行局部与窗口坐标转换。
 

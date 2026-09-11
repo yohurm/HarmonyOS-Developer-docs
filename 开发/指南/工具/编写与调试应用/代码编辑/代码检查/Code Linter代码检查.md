@@ -1,6 +1,6 @@
 # Code Linter代码检查
 
-更新时间：2026-06-24 07:08:31
+更新时间：2026-09-08 02:53:31
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-code-linter
 
@@ -9,7 +9,7 @@ Code Linter支持对模块内文件或文件夹中的代码进行最佳实践/�
 开发者可根据扫描结果中告警提示手工修复代码缺陷，或者执行一键式自动修复，在代码开发阶段，确保代码质量。
 
 
-#### 配置代码检查规则
+## 配置代码检查规则
 
 新建工程时，工程根目录下默认创建code-linter.json5配置文件，可对代码检查的范围及对应生效的检查规则进行配置。若使用历史工程进行开发，可在工程中右键选择**Code Linter > Generate Config File**创建code-linter.json5配置文件。
 
@@ -109,13 +109,13 @@ Code Linter支持对模块内文件或文件夹中的代码进行最佳实践/�
 
 
 
-#### 通过DevEco Studio进行代码检查
+## 通过DevEco Studio进行代码检查
 
 
 
-#### 操作方法
+### 操作方法
 
-在已打开的代码编辑器窗口右键点击**Code Linter**，或在工程管理窗口中鼠标选中单个或多个工程文件/目录，右键选择**Code Linter**** > Full Linter**执行代码全量检查。
+在已打开的代码编辑器窗口右键点击**Code Linter**，或在工程管理窗口中鼠标选中单个或多个工程文件/目录，右键选择**Code Linter > Full Linter**执行代码全量检查。
 
 
 ![](assets/Code%20Linter代码检查/file-20260514132807764-1.png)
@@ -133,15 +133,11 @@ Code Linter支持对模块内文件或文件夹中的代码进行最佳实践/�
 
 
 
-#### 查看和处理代码检查结果
+### 查看和处理代码检查结果
 
 扫描完成后，在底部工具面板查看检查结果。勾选**Defects**中不同告警等级，可分别查看对应告警级别的信息。点击**Filter by scene**下拉菜单，可以筛选不同规则的检查结果。双击某条告警结果，可以跳转到对应代码缺陷位置；选中告警结果时，可以在右侧**Defect Description窗口**查看告警对应的规则详细说明，其中包含正向和反向示例，并根据其中的建议修改代码；搜索规则时，可设定是否全词匹配和大小写敏感。
 
-单击
-![](assets/Code%20Linter代码检查/file-20260514132807764-2.jpg)
-图标，查看可修复的代码规则，点击
-![](assets/Code%20Linter代码检查/file-20260514132807764-3.png)
-代码修复图标，可以一键式批量修复告警，并刷新检查结果。
+单击![icon](assets/Code%20Linter代码检查/file-20260514132807764-2.jpg)图标，查看可修复的代码规则，点击![icon](assets/Code%20Linter代码检查/file-20260514132807764-3.png)代码修复图标，可以一键式批量修复告警，并刷新检查结果。
 
 
 ![](assets/Code%20Linter代码检查/file-20260514132807764-4.png)
@@ -149,10 +145,8 @@ Code Linter支持对模块内文件或文件夹中的代码进行最佳实践/�
 
 **屏蔽告警信息**：
 
- - 在某些特殊场景下，若扫描结果中出现误报，点击单条告警结果后的
-![](assets/Code%20Linter代码检查/file-20260514132807764-5.jpg)
-**Ignore**图标**，**可以忽略对告警所在行的code linter检查；或勾选文件名称或多条待屏蔽的告警，点击左侧工具面板**Ignore**图标批量执行操作；
- - 在文件顶部添加注释/* eslint-disable */可以屏蔽整个文件执行code linter检查，在eslint-disable 后加入一个或多个以逗号分隔的规则Id，可以屏蔽具体检查规则；
+ - 在某些特殊场景下，若扫描结果中出现误报，点击单条告警结果后的![icon](assets/Code%20Linter代码检查/file-20260514132807764-5.jpg)**Ignore**图标**，**可以忽略对告警所在行的code linter检查；或勾选文件名称或多条待屏蔽的告警，点击左侧工具面板**Ignore**图标批量执行操作。
+ - 在文件顶部添加注释/* eslint-disable */可以屏蔽整个文件执行code linter检查，在eslint-disable 后加入一个或多个以逗号分隔的规则Id，可以屏蔽具体检查规则。
  - 在需要忽略检查的代码块前后分别添加/* eslint-disable */和/* eslint-enable */添加注释信息，再执行**Code Linter，**将不再显示该代码块扫描结果；在待屏蔽的代码行前一行添加/* eslint-disable-next-line */，也可屏蔽对该代码行的Code Linter检查。
 
 
@@ -162,9 +156,7 @@ Code Linter支持对模块内文件或文件夹中的代码进行最佳实践/�
 ![](assets/Code%20Linter代码检查/file-20260514132807764-6.png)
 
 
-**导出检查结果**：点击工具面板左侧
-![](assets/Code%20Linter代码检查/file-20260514132807764-7.jpg)
-导出按钮，即可导出检查结果到excel文件，包含告警所在行，告警明细，告警级别等信息。
+**导出检查结果**：点击工具面板左侧![icon](assets/Code%20Linter代码检查/file-20260514132807764-7.jpg)导出按钮，即可导出检查结果到excel文件，包含告警所在行，告警明细，告警级别等信息。
 
 
 ![](assets/Code%20Linter代码检查/file-20260514132807764-8.png)
@@ -172,7 +164,7 @@ Code Linter支持对模块内文件或文件夹中的代码进行最佳实践/�
 
 
 
-#### 通过命令行进行代码检查
+## 通过命令行进行代码检查
 
 从DevEco Studio 6.0.1 Beta1开始，支持通过命令行方式进行代码检查。在DevEco Studio安装包\deveco-studio\plugins\codelinter\run目录下打开cmd或者bash窗口，执行如下命令：
 
@@ -190,42 +182,42 @@ dir：待检查的工程根目录，可选，默认为当前上下文目录。
 
 
 
-#### 实践说明
+## 实践说明
 
 以@typescript-eslint/no-restricted-syntax（使用某类语法时，codelinter告警）、@typescript-eslint/naming-convention（命名风格校验）和@hw-stylistic/file-naming-convention（检查代码文件的命名风格）三个规则为例，介绍Code Linter配置文件的使用方法。
 
 
 
-#### 示例1：调用类Foo下bar方法时，Code Linter告警
+### 示例1：调用类Foo下bar方法时，Code Linter告警
 
 **在配置文件中定义规则**
 
 在ArkTS工程中，pages/Index.ets文件下增加以下用例：
 
 ```text
-class Foo {
-  static bar() {}
-}
+class <span style="color: rgb(0,169,158);">Foo </span><span style="color: rgb(233,134,205);">{</span>
+  static <span style="color: rgb(0,169,158);">bar</span><span style="color: rgb(108,113,196);">() </span><span style="color: rgb(233,134,205);">{}</span>
+<span style="color: rgb(233,134,205);">}</span>
 
-Foo.bar();
+<span style="color: rgb(17,64,142);">Foo</span><span style="color: rgb(133,152,1);">.</span><span style="color: rgb(0,169,158);">bar</span><span style="color: rgb(108,113,196);">()</span><span style="color: rgb(133,152,1);">;</span>
 ```
 
 在工程根目录下新建code-linter.json5文件（文件名不可修改），新增以下配置：
 
 ```text
 {
-  "rules": {
-    "@typescript-eslint/no-restricted-syntax": [
+  <span style="color: rgb(135,16,148);">"rules"</span>: {
+    <span style="color: rgb(135,16,148);">"@typescript-eslint/no-restricted-syntax"</span>: [
       // 告警级别: 枚举类型, 支持配置为error, warn, off
-      "error",
+      <span style="color: rgb(6,125,23);">"error"</span>,
       {
-        // selector属性必选，配置要禁用的语法
-        // 可通过特定DSL筛选待限制的语句，CallExpression表示方法调用表达式，后面的中括号里面是筛选条件（根据语法树Node节点来确定）
-        // 其中callee.object.name根据指定的名称筛选调用方法的对象（class，namespace或module），以上示例中为"Foo"
-        // callee.property.name则根据指定的名称筛选被调用的方法，以上示例中为"bar"
-        "selector": "CallExpression[callee.object.name='Foo'][callee.property.name='bar']",
-        // message属性可选，配置要展示的报错信息
-        "message": "Foo.bar() is not allowed"
+        <span style="color: rgb(140,140,140);">// selector</span><span style="color: rgb(140,140,140);">属性必选，配置要禁用的语法</span>
+        <span style="color: rgb(140,140,140);">// </span><span style="color: rgb(140,140,140);">可通过特定</span><span style="color: rgb(140,140,140);">DSL</span><span style="color: rgb(140,140,140);">筛选待限制的语句，</span><span style="color: rgb(140,140,140);">CallExpression</span><span style="color: rgb(140,140,140);">表示方法调用表达式，后面的中括号里面是筛选条件（根据语法树</span><span style="color: rgb(140,140,140);">Node</span><span style="color: rgb(140,140,140);">节点来确定）</span>
+        <span style="color: rgb(140,140,140);">// </span><span style="color: rgb(140,140,140);">其中</span><span style="color: rgb(140,140,140);">callee.object.name</span><span style="color: rgb(140,140,140);">根据指定的名称筛选调用方法的对象（</span><span style="color: rgb(140,140,140);">class</span><span style="color: rgb(140,140,140);">，</span><span style="color: rgb(140,140,140);">namespace</span><span style="color: rgb(140,140,140);">或</span><span style="color: rgb(140,140,140);">module</span><span style="color: rgb(140,140,140);">），以上示例中为</span><span style="color: rgb(140,140,140);">"Foo"</span>
+<span style="color: rgb(140,140,140);">        // callee.property.name</span><span style="color: rgb(140,140,140);">则根据指定的名称筛选被调用的方法，以上示例中为</span><span style="color: rgb(140,140,140);">"bar"</span>
+        <span style="color: rgb(135,16,148);">"selector"</span>: <span style="color: rgb(6,125,23);">"CallExpression[callee.object.name='Foo'][callee.property.name='bar']</span><span style="color: rgb(6,125,23);">"</span>,
+        <span style="color: rgb(140,140,140);">// message</span><span style="color: rgb(140,140,140);">属性可选，配置要展示的报错信息</span>
+        <span style="color: rgb(135,16,148);">"message"</span>: <span style="color: rgb(6,125,23);">"Foo.bar() is not allowed"</span>
       }
     ]
   },
@@ -241,47 +233,53 @@ Foo.bar();
 对pages/Index.ets文件执行代码检查，检查结果如下：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/gG84N89yQh6v2tMfjSNETw/zh-cn_image_0000002625074559.png?HW-CC-KV=V1&HW-CC-Date=20260701T014606Z&HW-CC-Expire=86400&HW-CC-Sign=E69E40D46BC6C0CC54B77FFF6E369E4B4A19DF29BABC15F274AF0E8D8E22859C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/4dRKMfW3RimpA6ECSzMrMw/zh-cn_image_0000002701823396.png?HW-CC-KV=V1&HW-CC-Date=20260911T072809Z&HW-CC-Expire=86400&HW-CC-Sign=FAF7380F36A05933305A061BE9CB240BD97052A29A61AAD530192237D1775D8A)
 
 
 
 
-#### 示例2：对类名Foo的命名风格校验
+### 示例2：对类名Foo的命名风格校验
 
 **在配置文件中定义规则**
 
 在ArkTS工程中，pages/Index.ets文件下增加以下用例：
 
 ```text
-class foo {    //此处构造一个命名风格错误的示例，foo为错误使用类名，正确类名应为Foo
-  bar() {} 
-}
+class <span style="color: rgb(0,169,158);">foo </span><span style="color: rgb(233,134,205);">{</span>    //此处构造一个命名风格错误的示例，foo为错误使用类名，正确类名应为Foo
+  <span style="color: rgb(0,169,158);">bar</span><span style="color: rgb(108,113,196);">() </span><span style="color: rgb(233,134,205);">{}</span> 
+<span style="color: rgb(233,134,205);">}</span>
 ```
 
 在工程根目录下新建code-linter.json5文件，新增以下配置：
 
 ```text
 {
-  "rules": {
-    "@typescript-eslint/naming-convention": [
-      "error",
+  <span style="color: rgb(135,16,148);">"rules"</span>: {
+    <span style="color: rgb(135,16,148);">"@typescript-eslint/naming-convention"</span>: [
+      <span style="color: rgb(6,125,23);">"error"</span>,
       {
-        // selector属性必选，配置要检查的语法，这里配置的class表示检查自定义组件名
-        "selector": "class",
-        // format属性必选，配置期望的命名风格，支持枚举值，这里配置的PascalCase表示大驼峰风格
-        "format": ["PascalCase"],
-        // custom属性可选，配置用户自定义的命名风格
-        "custom": {
-          // regex属性必选，配置具体的正则
-          "regex": "^[a-zA-Z]+$",
-          // match属性必选，配置为true表示正则未命中时报错；配置为false表示正则命中时报错
-          "match": true
+        <span style="color: rgb(140,140,140);">// selector</span><span style="color: rgb(140,140,140);">属性必选，配置要检查的语法，这里配置的class</span><span style="color: rgb(140,140,140);">表示检查自定义组件名</span>
+        <span style="color: rgb(135,16,148);">"selector"</span>: <span style="color: rgb(6,125,23);">"class"</span>,
+        <span style="color: rgb(140,140,140);">// format</span><span style="color: rgb(140,140,140);">属性必选，配置期望的命名风格，支持枚举值，这里配置的</span>PascalCase<span style="color: rgb(140,140,140);">表示大驼峰风格</span>
+        <span style="color: rgb(135,16,148);">"format"</span>: [<span style="color: rgb(6,125,23);">"PascalCase"</span>],
+        <span style="color: rgb(140,140,140);">// custom</span><span style="color: rgb(140,140,140);">属性可选，配置用户自定义的命名风格</span>
+        <span style="color: rgb(135,16,148);">"custom"</span>: {
+          <span style="color: rgb(140,140,140);">// regex</span><span style="color: rgb(140,140,140);">属性必选，配置具体的正则</span>
+          <span style="color: rgb(135,16,148);">"regex"</span>: <span style="color: rgb(6,125,23);">"^[a-zA-Z]+$"</span>,
+          <span style="color: rgb(140,140,140);">// match</span><span style="color: rgb(140,140,140);">属性必选，配置为</span><span style="color: rgb(140,140,140);">true</span><span style="color: rgb(140,140,140);">表示正则未命中时报错；配置为</span><span style="color: rgb(140,140,140);">false</span><span style="color: rgb(140,140,140);">表示正则命中时报错</span>
+          <span style="color: rgb(135,16,148);">"match"</span>: <span style="color: rgb(0,51,179);">true</span>
         }
       }
     ]
   },
 }
 ```
+
+
+
+> [!NOTE] 说明
+> 支持直接配置一个字符串，这个字符串配置的是regex，此时match相当于配置的是true。
+
 
 | 字段名称 | 参数说明 | 是否必选 | 类型 | 支持配置的参数 |
 | --- | --- | --- | --- | --- |
@@ -290,10 +288,7 @@ class foo {    //此处构造一个命名风格错误的示例，foo为错误使
 | custom | 配置用户自定义的命名风格 | 否 | 对象 | regex：属性必选，配置具体的正则 match：属性必选，配置为true表示正则未命中时报错，配置为false表示正则命中时报错 |
 | leadingUnderscore/trailingUnderscore | 配置是否允许以下划线开头/以下划线结尾的命名风格 | 否 | 字符串 | allow：允许以一个下划线开头/结尾的命名风格，比如_name allowDouble：允许以两个下划线开头/结尾的命名风格，比如__name allowSingleOrDouble：允许以一个或者两个下划线开头/结尾的命名风格（allow+allowDouble） forbid：禁止以下划线开头/结尾的命名风格，比如_name，__name require：必须是以下划线开头/结尾的命名风格，比如_name，__name requireDouble：必须是以两个下划线开头/结尾的命名风格，比如__name |
 | prefix/suffix | 配置固定前缀/后缀的命名风格。如果前缀/后缀未匹配则报错 | 否 | 字符串数组 | 用户自定义前缀/后缀 |
-| filter | 过滤特定的命名风格，检查或者不检查正则命中的命名 | 否 | 对象 | 配置格式与custom相似 match：设置为true表示只检查正则命中的名字，设置为false表示不检查正则命中的名字 regex：设置过滤的正则 
-> [!TIP]
-> 支持直接配置一个字符串，这个字符串配置的是regex，此时match相当于配置的是true。
- |
+| filter | 过滤特定的命名风格，检查或者不检查正则命中的命名 | 否 | 对象 | 配置格式与custom相似 match：设置为true表示只检查正则命中的名字，设置为false表示不检查正则命中的名字 regex：设置过滤的正则 |
 | modifiers | 匹配修饰符，只有包含特定修饰符的命名才会检查 | 否 | 字符串数组 | abstract：匹配abstract关键字 override：匹配override关键字 private：匹配private关键字 protected：匹配protected关键字 static：匹配static关键字 async：匹配async关键字 const：匹配const关键字 destructured：匹配解构语法 exported：匹配export关键字 global：匹配全局声明 #private：匹配私有符号# public：匹配public级别的访问修饰符 requiresQuotes：匹配字符串类型的命名，并且 字符串中包含特殊字符 unused：匹配未使用的声明 |
 | types | 匹配类型，只有特定类型的名字才会检查 | 否 | 字符串数组 | array：数组类型 boolean：布尔类型 function：函数类型 number：数字类型 string：字符串类型 |
 
@@ -307,30 +302,30 @@ class foo {    //此处构造一个命名风格错误的示例，foo为错误使
 对pages/Index.ets文件执行代码检查，检查结果如下：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/FeEdp6QATIadGuYCvWCpyQ/zh-cn_image_0000002625074561.png?HW-CC-KV=V1&HW-CC-Date=20260701T014606Z&HW-CC-Expire=86400&HW-CC-Sign=267A60B98B1C41AB225DE59977E130814890514A3210F44BF5889B02FE7799BE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/YH6vG9yITn6KgV25fNl2wA/zh-cn_image_0000002731382703.png?HW-CC-KV=V1&HW-CC-Date=20260911T072809Z&HW-CC-Expire=86400&HW-CC-Sign=E1A5EAD5F72DE74626BF7A1B0C86F959C47FAB2DD0428A0B02D61CC1D0CEF1F9)
 
 
 
 
-#### 示例3：检查代码文件的命名风格
+### 示例3：检查代码文件的命名风格
 
 **在配置文件中定义规则**
 
-在ArkTS工程中，pages目录下新建test.ets文件；
+在ArkTS工程中，pages目录下新建test.ets文件。
 
 在工程根目录下新建code-linter.json5文件，新增以下配置：
 
 ```text
 {
-  "rules": {
-    "@hw-stylistic/file-naming-convention": [
-      // 告警级别：枚举类型，支持配置为error，warn，off
-      "error",
+  <span style="color: rgb(135,16,148);">"rules"</span>: {
+    <span style="color: rgb(135,16,148);">"@hw-stylistic/file-naming-convention"</span>: [
+      <span style="color: rgb(140,140,140);">// </span><span style="color: rgb(140,140,140);">告警级别：枚举类型，支持配置为</span><span style="color: rgb(140,140,140);">error</span><span style="color: rgb(140,140,140);">，</span><span style="color: rgb(140,140,140);">warn</span><span style="color: rgb(140,140,140);">，</span><span style="color: rgb(140,140,140);">off</span>
+      <span style="color: rgb(6,125,23);">"error"</span>,
       {
-        // selector属性可选，支持配置为code或者resources
-        // code表示检查代码文件的命名风格
-        // resources表示检查资源文件的命名风格
-        "selector": "code"
+        <span style="color: rgb(140,140,140);">// selector</span><span style="color: rgb(140,140,140);">属性可选，支持配置为</span><span style="color: rgb(140,140,140);">code</span><span style="color: rgb(140,140,140);">或者</span><span style="color: rgb(140,140,140);">resources</span>
+<span style="color: rgb(140,140,140);">        // code</span><span style="color: rgb(140,140,140);">表示检查代码文件的命名风格</span>
+        <span style="color: rgb(140,140,140);">// resources</span><span style="color: rgb(140,140,140);">表示检查资源文件的命名风格</span>
+        <span style="color: rgb(135,16,148);">"selector"</span>: <span style="color: rgb(6,125,23);">"code"</span>
       }
     ]
   },
@@ -346,4 +341,4 @@ class foo {    //此处构造一个命名风格错误的示例，foo为错误使
 对pages/test.ets文件执行代码检查，检查结果如下：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/JFTwjuRzSVmEbj-UNE36OA/zh-cn_image_0000002594475056.png?HW-CC-KV=V1&HW-CC-Date=20260701T014606Z&HW-CC-Expire=86400&HW-CC-Sign=4702EDA351C199975CFBAD4A4A29F2C854428BD0CBE2D63310D7BF531BF6B9F6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/tUF2NfelRRiPg1cYe1oTYQ/zh-cn_image_0000002731542669.png?HW-CC-KV=V1&HW-CC-Date=20260911T072809Z&HW-CC-Expire=86400&HW-CC-Sign=6AD55F44C601C765967C2EF3753B73275896302FB562496EB70F3A4B5C25618F)

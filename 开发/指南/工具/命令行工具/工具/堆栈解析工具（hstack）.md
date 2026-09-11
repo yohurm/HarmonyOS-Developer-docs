@@ -1,10 +1,10 @@
 # 堆栈解析工具（hstack）
 
-更新时间：2026-07-15 09:00:31
+更新时间：2026-08-29 09:41:34
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-command-line-hstack
 
-#### 简介
+## 简介
 
 hstack是为开发人员提供的用于将release应用混淆后的crash堆栈解析为源码对应堆栈的工具，支持Windows、Mac、Linux三个平台，关于堆栈解析的原理，请查看[异常堆栈解析原理](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle)。
  
@@ -16,34 +16,34 @@ hstack [options]
  
 options: 可选配置，请参考[表hstack命令行配置](#table25697717185)。
   
+
 | 指令 | 说明 |
 | --- | --- |
-| -i/--input | 可选，指定工程crash文件归档目录。 |
+| -i/--input | 可选，指定工程crash文件归档目录。 从26.0.0版本开始，支持指定crash文件。 |
 | -c/--crash | 可选，指定一条crash堆栈。 |
-| -o/--output | 可选，指定解析结果输出目录（输入指定为-c时， -o参数指定一个输出文件）。 |
-| -s/--sourcemapDir | 可选，指定工程sourceMap文件归档目录。 |
-| --so/--soDir | 可选，指定工程shared object文件归档目录。 |
-| -n/--nameObfuscation | 可选 ，指定工程nameCache文件归档目录。 |
+| -o/--output | 可选，指定解析结果输出目录或输出文件。 通过-i指定输入目录时，-o参数指定输出目录。如果不指定，默认输出到-i指定的目录下。通过-i指定输入文件时，-o参数指定输出目录或文件。如果不指定，默认输出到-i所在的文件目录下。通过-c指定输入堆栈时，-o参数指定输出文件。如果不指定，默认输出到控制台。 |
+| -s/--sourcemapDir | 可选，指定工程sourceMap文件归档目录。 从26.0.0版本开始，支持指定sourceMap文件。 |
+| --so/--soDir | 可选，指定工程shared object文件归档目录。 从26.0.0版本开始，支持指定shared object文件。 |
+| -n/--nameObfuscation | 可选 ，指定工程nameCache文件归档目录。 从26.0.0版本开始，支持指定nameCache文件。 |
 | -v/--version | 查看hstack版本。 |
 | -h/--help | 查询hstack命令行帮助。 |
  
  
 > [!NOTE]
-> crash文件归档目录与crash堆栈必须且只能提供一项。 sourceMap与shared object文件归档目录至少提供一项。 如果需要对方法名进行解析还原，则需要同时提供sourceMap与nameCache文件。 路径参数不支持以下特殊字符：`~!@#$^&*=|{};,\s\[\]<>?~！@#￥……&*（）——|{}【】‘；：。，、？
+> crash文件/文件归档目录与crash堆栈必须且只能提供一项。 sourceMap与shared object文件/文件归档目录至少提供一项。 如果需要对方法名进行解析还原，则需要同时提供sourceMap与nameCache文件。 路径参数不支持以下特殊字符：`~!@#$^&*=|{};,\s\[\]<>?~！@#￥……&*（）——|{}【】‘；：。，、？
 
  
  
 
-#### 环境配置
+## 环境准备
 1. hstack工具在Command Line Tools的bin目录下，需要[将bin目录配置到PATH变量中](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-commandline-get#section17776863449)。
-2. 本工具依赖Node环境，需要[将Node.js配置到环境变量中](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-command-line-building-app#section159168531288)。
-3. 如果需要对C++文件产生的异常进行解析，则需要将SDK中的native\llvm\bin目录配置到环境变量中，变量名设置为“ADDR2LINE_PATH”。
+2. 如果需要对C++文件产生的异常进行解析，则需要将SDK中的native\llvm\bin目录配置到环境变量中，变量名设置为“ADDR2LINE_PATH”。
 ![](assets/堆栈解析工具（hstack）/file-20260514134415072-1.png)
 
  
  
 
-#### 使用示例
+## 使用示例
 1. 将应用产生的crash文件归档到crashDir目录下（或者-c指定一条crash堆栈），关于堆栈的获取方式请参考[崩溃检测](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fault-detection-overview)。
 
   
@@ -83,16 +83,16 @@ hstack -c "at anonymous (entry|entry|1.0.0|src/main/ets/pages/Index.ts:401:1)" -
   如果是指定crash文件归档目录，解析完成后，outputDir目录下会生成对应的解析结果，文件以原始crash文件名加“_”前缀进行命名。crash堆栈中的C++日志以及ArkTS日志均已解析为源码对应的文件路径以及行列号，结果如下图所示：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/y1Ztza_zRnqsJkWVUfHogg/zh-cn_image_0000002594634532.png?HW-CC-KV=V1&HW-CC-Date=20260723T012115Z&HW-CC-Expire=86400&HW-CC-Sign=07E95F1DC4C765A103A2329231D5B7ECCD92206C8AA16CFEFFA240C05C5BCC31)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/KrpD6-pXQviXoPfmvaHO5Q/zh-cn_image_0000002701822806.png?HW-CC-KV=V1&HW-CC-Date=20260911T072810Z&HW-CC-Expire=86400&HW-CC-Sign=131DFAE1EB3AB050AD64AE7FD9CD039704784F5CA165CF5A0E256CE48A65EA42)
 
 
   在构建Release应用时，so文件是默认不包含符号表信息的，如果需要在构建Release应用时生成包含符号表的so文件，需要在工程的模块级build-profile.json5文件的buildOption属性中，配置如下信息：
 
   
 ```json
-"buildOption": {
-  "externalNativeOptions": {
-    "arguments": "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+<span style="color: rgb(152,118,170);">"buildOption"</span><span style="color: rgb(204,120,50);">: </span>{
+  <span style="color: rgb(152,118,170);">"externalNativeOptions"</span><span style="color: rgb(204,120,50);">: </span>{
+    <span style="color: rgb(152,118,170);">"arguments"</span><span style="color: rgb(204,120,50);">: </span><span style="color: rgb(106,135,89);">"-DCMAKE_BUILD_TYPE=RelWithDebInfo"</span>
   }
 }
 ```
@@ -100,7 +100,7 @@ hstack -c "at anonymous (entry|entry|1.0.0|src/main/ets/pages/Index.ts:401:1)" -
  
  
 
-#### 堆栈解析方案说明
+## 堆栈解析方案说明
 
 以如下代码为例。
  

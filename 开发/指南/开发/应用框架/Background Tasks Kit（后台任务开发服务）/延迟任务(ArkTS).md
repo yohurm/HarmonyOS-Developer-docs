@@ -1,20 +1,20 @@
 # 延迟任务(ArkTS)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/work-scheduler
 
-#### 概述
+## 概述
 
 
 
-#### 功能介绍
+### 功能介绍
 
 应用退至后台后，需要执行时效性要求不高的任务，例如有网络时不定期主动获取邮件等，可以使用延迟任务。当应用满足设定的触发条件（包括网络类型、充电类型、存储状态、电池状态、定时状态等）时，将任务添加到执行队列，系统会根据内存、功耗、设备温度、用户使用习惯等统一调度拉起应用，执行相应的延迟任务。
 
 
 
-#### 运行原理
+### 运行原理
 
 **图1** 延迟任务实现原理
 
@@ -28,7 +28,7 @@
 
 
 
-#### 约束与限制
+### 约束与限制
 
  - **数量限制**：一个应用同一时刻最多申请10个延迟任务。
  - **执行频率限制**：系统会根据应用的活跃分组，对延迟任务做分级管控，限制延迟任务调度的执行频率。
@@ -36,12 +36,19 @@
   **表1** 应用活跃程度分组
 
 | 应用活跃分组 | 延迟任务执行频率 |
+
 | --- | --- |
+
 | 活跃分组 | 最小间隔2小时 |
+
 | 经常使用分组 | 最小间隔4小时 |
+
 | 常用分组 | 最小间隔24小时 |
+
 | 极少使用分组 | 最小间隔48小时 |
+
 | 受限使用分组 | 禁止 |
+
 | 从未使用分组 | 禁止 |
  - **超时**：WorkSchedulerExtensionAbility单次回调最长运行2分钟。如果超时不取消，系统会终止对应的Extension进程。
  - **调度延迟**：系统会根据内存、功耗、设备温度、用户使用习惯等统一调度，如当系统内存资源不足或温度达到一定档位时，系统将延迟调度该任务。
@@ -50,11 +57,12 @@
 
 
 
-#### 接口说明
+## 接口说明
 
 **表2** 延迟任务主要接口
 
 以下是延迟任务开发使用的相关接口，更多接口及使用方式请见[延迟任务调度](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-resourceschedule-workscheduler)文档。
+
 
 | 接口名 | 接口描述 |
 | --- | --- |
@@ -73,6 +81,7 @@
 
 以下是延迟任务回调开发使用的相关接口，更多接口及使用方式请见[延迟任务调度回调](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-workschedulerextensionability)文档。
 
+
 | 接口名 | 接口描述 |
 | --- | --- |
 | onWorkStart(work: workScheduler.WorkInfo): void | 延迟调度任务开始的回调。 |
@@ -81,7 +90,7 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 
 延迟任务调度开发步骤分为两步：实现延迟任务调度扩展能力、实现延迟任务调度。
 1. **延迟任务调度扩展能力**：实现WorkSchedulerExtensionAbility开始和结束的回调接口。
@@ -89,11 +98,11 @@
 
 
 
-#### 实现延迟任务回调扩展能力
+### 实现延迟任务回调扩展能力
 1. 新建工程目录。
 
   在工程entry Module对应的ets目录(./entry/src/main/ets)下，新建目录及ArkTS文件，例如新建一个目录并命名为WorkSchedulerAbility。在WorkSchedulerAbility目录下，新建一个ArkTS文件并命名为WorkSchedulerAbility.ets，用以实现延迟任务回调接口。
-2. 导入模块。
+2. 导入模块，无需配置权限。
 
   
 ```ArkTS
@@ -128,7 +137,7 @@ type标签设置为“workScheduler”。
 
 
 
-#### 实现延迟任务调度
+### 实现延迟任务调度
 1. 导入模块。
 
   
@@ -181,11 +190,15 @@ try {
 
 
 
-#### 延迟任务调度功能验证
+### 延迟任务调度功能验证
 
 确认延迟任务WorkSchedulerExtensionAbility回调方法onWorkStart、onWorkStop实现是否正确、是否可以成功回调
 
 延迟任务申请成功之后，需要等到条件满足后才可以执行延迟任务回调，为了快速验证延迟任务回调功能是否正确，可以通过以下[hidumper命令](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hidumper)手动触发延迟任务执行回调。
+
+> [!NOTE]
+> -s 1904：指向WorkScheduler系统服务发送命令（1904为该服务ID）。 -a：携带附加参数，需用引号包裹。 -t：指定目标应用包名和 ExtensionAbility 名称，示例中的 com.example.application 和 MyWorkSchedulerExtensionAbility 需替换为实际值。
+
 
 ```text
 $ hidumper -s 1904 -a '-t com.example.application MyWorkSchedulerExtensionAbility'

@@ -1,9 +1,9 @@
 # UIServiceProxy
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiserviceproxy
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** PC/2in1
 
 UIServiceProxy提供代理能力，可以从UIServiceExtension客户端发送数据到服务端。
 
@@ -12,9 +12,10 @@ UIServiceProxy提供代理能力，可以从UIServiceExtension客户端发送数
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 ```text
 import { common } from '@kit.AbilityKit';
@@ -22,9 +23,10 @@ import { common } from '@kit.AbilityKit';
 
 
 
-#### UIServiceProxy.sendData
+## UIServiceProxy.sendData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 sendData(data: Record<string, Object>): void
 
@@ -40,6 +42,7 @@ sendData(data: Record<string, Object>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | Record<string, Object> | 是 | 待发送给UIServiceExtension服务端的数据。 |
@@ -48,6 +51,7 @@ sendData(data: Record<string, Object>): void
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -114,7 +118,7 @@ struct UIServiceExtensionAbility {
       // 连接UIServiceExtension
       context.connectUIServiceExtensionAbility(startWant, this.dataCallBack)
         .then((proxy: common.UIServiceProxy) => {
-          console.info(TAG + `try to connectUIServiceExtensionAbility ${proxy}}`);
+          console.info(TAG + `try to connectUIServiceExtensionAbility ${proxy}`);
           this.comProxy = proxy;
           let formData: Record<string, string> = {
             'PATH': '/tmp/aaa.jpg'

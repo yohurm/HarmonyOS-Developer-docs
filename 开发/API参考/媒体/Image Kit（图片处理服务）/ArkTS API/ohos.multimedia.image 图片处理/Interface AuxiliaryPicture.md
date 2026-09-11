@@ -1,9 +1,9 @@
 # Interface (AuxiliaryPicture)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-auxiliarypicture
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 AuxiliaryPicture类，用于读取或写入图像的辅助图数据以及获取图像的辅助图信息。目前支持的辅助图类型可参考[AuxiliaryPictureType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-e#auxiliarypicturetype13)。
 
@@ -16,9 +16,10 @@ AuxiliaryPicture类，用于读取或写入图像的辅助图数据以及获取�
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { image } from '@kit.ImageKit';
@@ -26,9 +27,10 @@ import { image } from '@kit.ImageKit';
 
 
 
-#### writePixelsFromBuffer13+
+## writePixelsFromBuffer13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writePixelsFromBuffer(data: ArrayBuffer): Promise&lt;void&gt;
 
@@ -38,12 +40,14 @@ writePixelsFromBuffer(data: ArrayBuffer): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | ArrayBuffer | 是 | 辅助图像素数据。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -53,6 +57,7 @@ writePixelsFromBuffer(data: ArrayBuffer): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -84,9 +89,10 @@ async function WritePixelsFromBuffer(context: Context) {
 
 
 
-#### readPixelsToBuffer13+
+## readPixelsToBuffer13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readPixelsToBuffer(): Promise&lt;ArrayBuffer&gt;
 
@@ -95,6 +101,7 @@ readPixelsToBuffer(): Promise&lt;ArrayBuffer&gt;
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -130,9 +137,10 @@ async function ReadPixelsToBuffer(context: Context) {
 
 
 
-#### getType13+
+## getType13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getType(): AuxiliaryPictureType
 
@@ -141,6 +149,7 @@ getType(): AuxiliaryPictureType
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -162,9 +171,10 @@ async function GetAuxiliaryPictureType(auxPictureObj : image.AuxiliaryPicture) {
 
 
 
-#### setMetadata13+
+## setMetadata13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMetadata(metadataType: MetadataType, metadata: Metadata): Promise&lt;void&gt;
 
@@ -174,6 +184,7 @@ setMetadata(metadataType: MetadataType, metadata: Metadata): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | metadataType | MetadataType | 是 | 元数据的类型，用于设置对应的元数据。 |
@@ -181,6 +192,7 @@ setMetadata(metadataType: MetadataType, metadata: Metadata): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -190,6 +202,7 @@ setMetadata(metadataType: MetadataType, metadata: Metadata): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -233,9 +246,10 @@ async function SetAuxPictureObjMetadata(exifContext: Context, auxPictureObj: ima
 
 
 
-#### getMetadata13+
+## getMetadata13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMetadata(metadataType: MetadataType): Promise&lt;Metadata&gt;
 
@@ -245,12 +259,14 @@ getMetadata(metadataType: MetadataType): Promise&lt;Metadata&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | metadataType | MetadataType | 是 | 元数据类型，用于获取对应类型的元数据。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -260,6 +276,7 @@ getMetadata(metadataType: MetadataType): Promise&lt;Metadata&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -287,9 +304,10 @@ async function GetAuxPictureObjMetadata(auxPictureObj: image.AuxiliaryPicture) {
 
 
 
-#### getAuxiliaryPictureInfo13+
+## getAuxiliaryPictureInfo13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAuxiliaryPictureInfo(): AuxiliaryPictureInfo
 
@@ -298,6 +316,7 @@ getAuxiliaryPictureInfo(): AuxiliaryPictureInfo
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -322,9 +341,10 @@ async function GetAuxiliaryPictureInfo(auxPictureObj: image.AuxiliaryPicture) {
 
 
 
-#### setAuxiliaryPictureInfo13+
+## setAuxiliaryPictureInfo13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAuxiliaryPictureInfo(info: AuxiliaryPictureInfo): void
 
@@ -334,6 +354,7 @@ setAuxiliaryPictureInfo(info: AuxiliaryPictureInfo): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | info | AuxiliaryPictureInfo | 是 | 辅助图的图像信息。 |
@@ -342,6 +363,7 @@ setAuxiliaryPictureInfo(info: AuxiliaryPictureInfo): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -370,9 +392,10 @@ async function SetAuxiliaryPictureInfo(auxPictureObj: image.AuxiliaryPicture) {
 
 
 
-#### release13+
+## release13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release():void
 

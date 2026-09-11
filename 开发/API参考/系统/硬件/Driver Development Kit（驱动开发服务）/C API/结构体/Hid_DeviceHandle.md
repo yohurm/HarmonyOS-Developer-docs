@@ -1,6 +1,6 @@
 # Hid_DeviceHandle
 
-更新时间：2026-03-09 02:50:43
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hidddk-hid-devicehandle
 **支持设备：** PC/2in1
@@ -10,11 +10,12 @@ typedef struct Hid_DeviceHandle Hid_DeviceHandle
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** PC/2in1
 
-不透明的USB HID设备结构。
+不透明的USB HID设备结构，用于标识和操作HID设备实例。开发者通过该句柄进行HID设备的打开、关闭、读写等操作。
  
 **起始版本：** 18
  

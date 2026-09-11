@@ -1,20 +1,30 @@
 # ArkWeb_WebMessage*
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-web-arkweb-webmessage8h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct ArkWeb_WebMessage* ArkWeb_WebMessagePtr
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ArkWeb_WebMessage是用于跨上下文消息通信的Web消息结构体，定义了消息的基本格式和数据承载能力。该结构体是Web消息通信的基础数据单元，支持在Native代码和Web页面之间传递字符串和二进制数据。
+ 
+**使用场景：**
+ 
+用于在Native端和Web页面之间进行消息通信，例如：
+ 
+- Native端向Web页面发送控制指令或数据。
+- Web页面向Native端发送用户操作结果或请求数据。
+- 跨上下文的异步消息传递和数据同步。
+
  
 **起始版本：** 12
  

@@ -1,6 +1,6 @@
 # @ohos.selectionInput.SelectionPanel (划词面板)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-selectioninput-selectionpanel
 **支持设备：** PC/2in1
@@ -12,7 +12,8 @@
 
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** PC/2in1
 
@@ -22,7 +23,8 @@ import { PanelInfo, PanelType } from '@kit.BasicServicesKit';
  
   
 
-#### PanelInfo
+## PanelInfo
+
 
 **支持设备：** PC/2in1
 
@@ -32,6 +34,7 @@ import { PanelInfo, PanelType } from '@kit.BasicServicesKit';
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | panelType | PanelType | 否 | 否 | 划词面板类型枚举，有两种面板可供选择，详见PanelType。 |
@@ -43,7 +46,8 @@ import { PanelInfo, PanelType } from '@kit.BasicServicesKit';
  
   
 
-#### PanelType
+## PanelType
+
 
 **支持设备：** PC/2in1
 
@@ -53,6 +57,7 @@ import { PanelInfo, PanelType } from '@kit.BasicServicesKit';
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | MENU_PANEL | 1 | 菜单面板为一级面板，显示当前应用可以提供的功能，如翻译、搜索等。 |

@@ -245,7 +245,7 @@ import { taskpool } from '@kit.ArkTS';
 @Concurrent
 async function getCacheDir(sendableContext: sendableContextManager.SendableContext) {
   const contextTask: common.UIAbilityContext = sendableContextManager.convertToUIAbilityContext(sendableContext);
-  // 直接使用getContext方法时，主线程调用获取Context对象并可正常打印。子线程调用时无法获取Context对象
+  <em>// 直接使用getContext方法时，主线程调用获取Context对象并可正常打印。子线程调用时无法获取Context对象</em>
   try {
     contextTask.resourceManager.getStringValue($r('app.string.module_desc').id,
       (error: BusinessError, value: string) => {
@@ -298,10 +298,10 @@ struct SharedContextTaskPoolDemo {
 ```text
 import { sendableContextManager } from '@kit.AbilityKit';
 
-// 声明当前模块为共享模块，只能导出可Sendable数据
+<em>// 声明当前模块为共享模块，只能导出可Sendable数据</em>
 'use shared'
 
-// 共享模块，SingletonA全局唯一
+<em>// 共享模块，SingletonA全局唯一</em>
 @Sendable
 class SingletonShareContext {
   private sendableContext: sendableContextManager.SendableContext | undefined;
@@ -312,7 +312,7 @@ class SingletonShareContext {
     }
   }
 
-  // 返回sendableContext对象
+  <em>// 返回sendableContext对象</em>
   public getContext() {
     if (this.sendableContext === undefined) {
       console.error('sendableContext未初始化');
@@ -334,9 +334,9 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 @Concurrent
 async function printContext() {
-  // 将SendableContext对象转换为Context
+  <em>// 将SendableContext对象转换为Context</em>
   let context: common.Context = sendableContextManager.convertToUIAbilityContext(singletonShareContext.getContext()!);
-  // 主线程和子线程调用时均可正常打印
+  <em>// 主线程和子线程调用时均可正常打印</em>
   console.info('sendableContextManager:' + context.cacheDir);
 }
 

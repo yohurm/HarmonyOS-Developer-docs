@@ -1,9 +1,9 @@
 # @ohos.FusionConnectivity.PartnerAgentExtensionAbility (支持设备状态通知的ExtensionAbility组件)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-fusionconnectivity-partneragentextensionability
-**支持设备：** Phone | PC/2in1 | Tablet
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 PartnerAgentExtensionAbility是外设互通扩展能力的基础类，提供设备发现与设备下线的通知功能，需要应用继承实现。应用模块级配置文件[module.json5](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file) 中的[extensionabilities](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#extensionabilities标签)的type属性应该配置为partnerAgent。
 
@@ -12,17 +12,19 @@ PartnerAgentExtensionAbility是外设互通扩展能力的基础类，提供设�
 
 
 
-#### 约束限制
+## 约束限制
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 为保障系统安全性和稳定性，防止PartnerAgentExtensionAbility滥用系统资源，系统对其能力进行管控，不支持部分模块的引用，详情请参考[附录](#附录)。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 import { PartnerAgentExtensionAbility, partnerAgent } from '@kit.ConnectivityKit';
@@ -30,9 +32,10 @@ import { PartnerAgentExtensionAbility, partnerAgent } from '@kit.ConnectivityKit
 
 
 
-#### PartnerDeviceAddress
+## PartnerDeviceAddress
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 type PartnerDeviceAddress = partnerAgent.PartnerDeviceAddress
 
@@ -42,6 +45,7 @@ type PartnerDeviceAddress = partnerAgent.PartnerDeviceAddress
 
 **模型约束**： 此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | partnerAgent.PartnerDeviceAddress | 信息互通设备的地址信息。 |
@@ -49,9 +53,10 @@ type PartnerDeviceAddress = partnerAgent.PartnerDeviceAddress
 
 
 
-#### PartnerAgentExtensionAbilityDestroyReason
+## PartnerAgentExtensionAbilityDestroyReason
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 type PartnerAgentExtensionAbilityDestroyReason = partnerAgent.PartnerAgentExtensionAbilityDestroyReason
 
@@ -61,6 +66,7 @@ type PartnerAgentExtensionAbilityDestroyReason = partnerAgent.PartnerAgentExtens
 
 **模型约束**： 此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | partnerAgent.PartnerAgentExtensionAbilityDestroyReason | PartnerAgentExtensionAbility被销毁的原因。 |
@@ -68,21 +74,24 @@ type PartnerAgentExtensionAbilityDestroyReason = partnerAgent.PartnerAgentExtens
 
 
 
-#### PartnerAgentExtensionAbility
-
-**支持设备：** Phone | PC/2in1 | Tablet
-
-PartnerAgentExtensionAbility是外设互通扩展能力的基础类，提供设备发现与设备下线的通知功能，需要应用继承实现。本能力继承自[ExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-extensionability)。
+## PartnerAgentExtensionAbility
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 属性
+PartnerAgentExtensionAbility是外设互通扩展能力的基础类，提供设备发现与设备下线的通知功能，本能力继承自[ExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-extensionability)，需要应用继承实现。
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 **系统能力**： SystemCapability.Communication.FusionConnectivity.Core
 
 **模型约束**： 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -91,9 +100,10 @@ PartnerAgentExtensionAbility是外设互通扩展能力的基础类，提供设�
 
 
 
-#### onDestroyWithReason
+### onDestroyWithReason
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 onDestroyWithReason(reason: PartnerAgentExtensionAbilityDestroyReason): void
 
@@ -105,9 +115,10 @@ onDestroyWithReason(reason: PartnerAgentExtensionAbilityDestroyReason): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| reason | PartnerAgentExtensionAbilityDestroyReason | 是 | 通知销毁该应用的原因。 |
+| reason | PartnerAgentExtensionAbilityDestroyReason | 是 | 通知销毁该外设互通扩展能力的原因。不同枚举值代表不同的销毁场景，应用可根据不同的销毁原因执行相应的资源释放或状态保存逻辑。 |
 
 
 **示例：**
@@ -122,9 +133,10 @@ export default class PartnerAgentExtAbility extends PartnerAgentExtensionAbility
 
 
 
-#### onDeviceDiscovered
+### onDeviceDiscovered
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 onDeviceDiscovered(deviceAddress: PartnerDeviceAddress): void
 
@@ -135,6 +147,7 @@ onDeviceDiscovered(deviceAddress: PartnerDeviceAddress): void
 **模型约束**： 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -153,16 +166,18 @@ export default class PartnerAgentExtAbility extends PartnerAgentExtensionAbility
 
 
 
-#### 附录
+## 附录
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 PartnerAgentExtensionAbility不支持以下模块的引用。
 
+
 | Kit | 模块 |
 | --- | --- |
-| Ability Kit | @ohos.backgroundTaskManager (后台任务管理) |
-| Ability Kit | @ohos.resourceschedule.backgroundTaskManager (后台任务管理) |
+| Background Tasks Kit | @ohos.backgroundTaskManager (后台任务管理) |
+| Background Tasks Kit | @ohos.resourceschedule.backgroundTaskManager (后台任务管理) |
 | Camera Kit | @ohos.multimedia.cameraPicker (相机选择器) |
 | Connectivity Kit | @ohos.connectedTag (有源标签) |
 | Connectivity Kit | @ohos.nfc.cardEmulation (标准NFC-cardEmulation) |

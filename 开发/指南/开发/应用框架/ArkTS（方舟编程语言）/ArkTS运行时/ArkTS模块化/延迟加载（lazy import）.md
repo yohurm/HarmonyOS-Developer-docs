@@ -1,6 +1,6 @@
 # 延迟加载 (lazy import)
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-lazy-import
 
@@ -11,13 +11,13 @@
 
 
 
-#### 功能特性
+## 功能特性
 
 延迟加载特性使文件在冷启动阶段不被加载，而是在程序运行时按需加载，从而缩短冷启动时间。
 
 
 
-#### 使用方式
+## 使用方式
 
 开发者可以参考[Launch模板基本操作](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-insight-session-launch)、[可延迟加载文件检测](#可延迟加载文件检测)、常用Trace使用指导，利用工具或日志记录等手段，识别冷启动期间未被实际调用的文件，分析方法可参考[延迟加载lazy-import使用指导](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-arkts-high-performance#section12861143418213)。通过对这些数据的分析，开发者可以精准定位启动阶段不必预先加载的文件列表，并在这些文件的调用点增加lazy标识。但需要注意，后续执行的加载是同步加载，可能阻塞任务执行（如单击任务，触发了延迟加载，那么运行时会去执行冷启动未加载的文件，从而增加耗时），因此是否使用lazy需要开发者自行评估。
 
@@ -27,7 +27,7 @@
 
 
 
-#### 场景行为解析
+## 场景行为解析
 
  - 使用lazy-import延迟加载。
 
@@ -111,9 +111,10 @@ main executed
 
 
 
-#### lazy-import与动态加载的区别
+## lazy-import与动态加载的区别
 
 lazy-import与[动态加载](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-dynamic-import)都可以延后特定文件的执行时间，帮助设备分摊性能消耗，缓解特定时段的性能压力。
+
 
 | 区别项 | 动态加载 | lazy-import |
 | --- | --- | --- |
@@ -131,9 +132,10 @@ lazy-import 相较于动态加载的优势：
 
 
 
-#### 语法规格及起始支持版本
+## 语法规格及起始支持版本
 
  - lazy-import支持如下指令实现：
+
 
 
 | 语法 | ModuleRequest | ImportName | LocalName | 开始支持的API版本 |
@@ -151,7 +153,7 @@ lazy-import 相较于动态加载的优势：
 
 
 
-#### 错误示例
+### 错误示例
 
 以下写法将引起编译报错。
 
@@ -180,7 +182,7 @@ import type lazy { obj } from "./mod";    // 不支持，编译器、应用编�
 
 
 
-#### 不推荐用法
+### 不推荐用法
 
  - 在同一个ets文件中，期望延迟加载的依赖模块标记不完全。
 
@@ -275,7 +277,7 @@ ReferenceError: module environment is undefined
 
 
 
-#### 注意事项
+### 注意事项
 
  - 不依赖该模块执行的副作用（如初始化全局变量，挂载globalThis等）。可参考：[模块加载副作用及优化](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-module-side-effects)。
  - 使用导出对象时，触发延迟加载的耗时可能导致对应特性的功能劣化。由于lazy-import的后续加载是同步加载，可能在某些场景阻塞任务执行（比如在点击业务时触发了懒加载，那么运行时会执行冷启动未加载的文件，增加执行耗时，存在掉帧风险），是否使用延迟加载仍需要开发者自行评估。
@@ -285,7 +287,7 @@ ReferenceError: module environment is undefined
 
 
 
-#### 可延迟加载文件检测
+## 可延迟加载文件检测
 
 本工具用于本地检测应用冷启动时的文件加载情况，可打印应用启动后固定时间段内使用和未使用的文件名，帮助开发者筛选可延迟加载的文件。
 
@@ -295,7 +297,7 @@ ReferenceError: module environment is undefined
 
 
 
-#### 检测步骤
+### 检测步骤
 1. 打开工具：获取[hdc](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hdc)工具，连接设备，在终端直接输入下方命令执行。
 
   
@@ -310,7 +312,7 @@ hdc shell param set persist.ark.properties 0x200105c
 hdc shell param set persist.ark.importDuration 1000
 ```
 
-3. 清除应用后台进程后，重新启动应用进程，等待抓取时间结束，会在应用沙箱下（data/app/el2/100/base/${bundlename}/files/）生成主/子线程对应文件。
+3. 清除应用后台进程后，重新启动应用进程，等待抓取时间结束，会在应用沙箱下（data/app/el2/100/base/${bundleName}/files/）生成主/子线程对应的文件。
 
   
 ![](assets/延迟加载（lazy%20import）/file-20260514130448932-4.png)
@@ -335,7 +337,7 @@ hdc shell param set persist.ark.properties 0x000105c
 
 
 
-#### 生成文件介绍
+### 生成文件介绍
 
 工具会根据设置的抓取时间，分别记录主线程和子线程在该时间内的文件加载情况。各线程独立计时。
 
@@ -362,12 +364,12 @@ hdc shell param set persist.ark.properties 0x000105c
 子线程文件名：data/app/el2/100/base/com.example.myapplication/files/com.example.myapplication_18089_redundant_file.txt
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/9eY5XdHZTQiPGaS32yDIcg/zh-cn_image_0000002704271693.png?HW-CC-KV=V1&HW-CC-Date=20260813T095651Z&HW-CC-Expire=86400&HW-CC-Sign=D0457AA288AB0D1498E1E94DD4D4F56F189331B93439208A966C63C05EB1D876)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/S-5rCV5TRPSr45VR3Z2RAw/zh-cn_image_0000002717769890.png?HW-CC-KV=V1&HW-CC-Date=20260911T072506Z&HW-CC-Expire=86400&HW-CC-Sign=B4207365F7B31D011BA03F58AB801BC6EACD0613A5AEFE60BEC10E60FEC1EA48)
 
 
 
 
-#### 检测原理
+### 检测原理
 
 如下例所示，A文件和B文件同时被Index文件依赖，那么A、B会随着Index文件的加载被直接加载执行。
 
@@ -398,7 +400,7 @@ export function func() {
 
 
 
-#### 加载情况总结
+### 加载情况总结
 
 总结加载时间内所有文件及其耗时，包括已使用的文件及其耗时和未使用的文件及其耗时。
 
@@ -412,7 +414,7 @@ export function func() {
 
 
 
-#### 被使用文件
+### 被使用文件
 
 在冷启动阶段，导出内容被其他文件使用的文件称为used file。
 
@@ -520,7 +522,7 @@ parentModule 1: EntryPoint
 
 
 
-#### 未被使用文件
+### 未被使用文件
 
 在冷启动阶段，导出内容没有被其他文件使用的文件称为未使用的文件，代表可以延迟加载。
 
@@ -561,7 +563,7 @@ export function myFunc() {
 
 
 
-#### 使用示例
+### 使用示例
 
 **使用场景**
 
@@ -591,7 +593,7 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/PymdGnkeQ5WSRL3388tFOw/zh-cn_image_0000002674471892.png?HW-CC-KV=V1&HW-CC-Date=20260813T095651Z&HW-CC-Expire=86400&HW-CC-Sign=22F93A24C1042B8CEAEC0F2BD0B03607DA21185DDF6AF1B3092D86B158B30A83)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/0w2kjS0vQQCZgGcvqthkoA/zh-cn_image_0000002717609956.png?HW-CC-KV=V1&HW-CC-Date=20260911T072506Z&HW-CC-Expire=86400&HW-CC-Sign=1FFAF64119BC33C6FB945F7FF0E5F37D4DAFA77EEB0923D28F47147A201BE558)
 
 
 通过抓取Trace图查看调用栈，可以发现应用在冷启动时加载了A文件。
@@ -615,7 +617,7 @@ hdc file recv data/app/el2/100/base/${bundleName}/files/${bundleName}_redundant_
 4. 对上述示例代码获取到的文件进行分析。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/UiSm8HKORuSplyFjX5VVvg/zh-cn_image_0000002704391861.png?HW-CC-KV=V1&HW-CC-Date=20260813T095651Z&HW-CC-Expire=86400&HW-CC-Sign=781711EB8AD5D579CAA80EBE39FDE8ACBB25B316B86B06E16A25253D9E85135D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/87tOP-ovQQqNqpQBviMeOQ/zh-cn_image_0000002747289907.png?HW-CC-KV=V1&HW-CC-Date=20260911T072506Z&HW-CC-Expire=86400&HW-CC-Sign=33DA3FB0B1475CA3D7ABCF33CDF8F81A1EDB6542580945EA8B17399783030413)
 
 
 **修改方式**
@@ -646,12 +648,13 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/LbdffNQcT5GHy1D9gu8Iig/zh-cn_image_0000002674631740.png?HW-CC-KV=V1&HW-CC-Date=20260813T095651Z&HW-CC-Expire=86400&HW-CC-Sign=C9E3B871C7FA77F839A97928743E425CABC715616670F018FCA33DBE13479EEA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/J5vJqTiQQYmt0Tu5fZe1fw/zh-cn_image_0000002747209825.png?HW-CC-KV=V1&HW-CC-Date=20260911T072506Z&HW-CC-Expire=86400&HW-CC-Sign=B0E0DFEA4F9A4E27D416369CCC2A029DE5A701F38F8C5A07A2B9DD8AA11C9885)
 
 
 通过抓取Trace图查看调用栈可以发现，使用lazy-import标识后，应用在冷启动时不再加载A文件。
 
 **优化效果**
+
 
 | 优化效果 | 加载文件耗时（微秒μs） |
 | --- | --- |

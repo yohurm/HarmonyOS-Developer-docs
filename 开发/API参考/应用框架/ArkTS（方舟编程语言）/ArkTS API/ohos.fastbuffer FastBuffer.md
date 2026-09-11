@@ -1,9 +1,9 @@
 # @ohos.fastbuffer (FastBuffer)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-fastbuffer
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 FastBuffer对象是比Buffer性能更优的Buffer容器，用于表示固定长度的字节序列，是专门存放二进制数据的缓冲区。
 
@@ -16,9 +16,10 @@ FastBuffer通过from构造时，仅支持FastBuffer、Uint8Array、string、Arra
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { fastbuffer } from '@kit.ArkTS';
@@ -26,9 +27,10 @@ import { fastbuffer } from '@kit.ArkTS';
 
 
 
-#### BufferEncoding
+## BufferEncoding
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type BufferEncoding = 'ascii' | 'utf8' | 'utf-8' | 'utf16le' | 'ucs2' | 'ucs-2' | 'base64' | 'base64url' | 'latin1' | 'binary' | 'hex'
 
@@ -37,6 +39,7 @@ type BufferEncoding = 'ascii' | 'utf8' | 'utf-8' | 'utf16le' | 'ucs2' | 'ucs-2' 
 **元服务API**：从API version 20开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -55,9 +58,10 @@ type BufferEncoding = 'ascii' | 'utf8' | 'utf-8' | 'utf16le' | 'ucs2' | 'ucs-2' 
 
 
 
-#### fastbuffer.alloc
+## fastbuffer.alloc
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 alloc(size: number, fill?: string | FastBuffer | number, encoding?: BufferEncoding): FastBuffer
 
@@ -69,6 +73,7 @@ alloc(size: number, fill?: string | FastBuffer | number, encoding?: BufferEncodi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | size | number | 是 | 指定的FastBuffer对象长度，单位：字节。取值范围：0 <= size <= UINT32_MAX。 |
@@ -77,6 +82,7 @@ alloc(size: number, fill?: string | FastBuffer | number, encoding?: BufferEncodi
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -104,9 +110,10 @@ console.info(buf3.toString());
 
 
 
-#### fastbuffer.allocUninitializedFromPool
+## fastbuffer.allocUninitializedFromPool
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 allocUninitializedFromPool(size: number): FastBuffer
 
@@ -118,12 +125,14 @@ allocUninitializedFromPool(size: number): FastBuffer
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | size | number | 是 | 指定的FastBuffer对象长度，单位：字节。取值范围：0 <= size <= UINT32_MAX。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -142,9 +151,10 @@ buf.fill(0);
 
 
 
-#### fastbuffer.allocUninitialized
+## fastbuffer.allocUninitialized
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 allocUninitialized(size: number): FastBuffer
 
@@ -156,12 +166,14 @@ allocUninitialized(size: number): FastBuffer
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | size | number | 是 | 指定的FastBuffer对象长度，单位：字节。取值范围：0 <= size <= UINT32_MAX。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -180,9 +192,10 @@ buf.fill(0);
 
 
 
-#### fastbuffer.byteLength
+## fastbuffer.byteLength
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 byteLength(value: string | FastBuffer | TypedArray | DataView | ArrayBuffer | SharedArrayBuffer, encoding?: BufferEncoding): number
 
@@ -194,6 +207,7 @@ byteLength(value: string | FastBuffer | TypedArray | DataView | ArrayBuffer | Sh
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string \| FastBuffer \| TypedArray \| DataView \| ArrayBuffer \| SharedArrayBuffer | 是 | 指定用于计算字节长度的内容。 |
@@ -201,6 +215,7 @@ byteLength(value: string | FastBuffer | TypedArray | DataView | ArrayBuffer | Sh
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -223,9 +238,10 @@ console.info(`${str}: ${str.length} characters, ${fastbuffer.byteLength(str, 'ut
 
 
 
-#### fastbuffer.compare
+## fastbuffer.compare
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 compare(buf1: FastBuffer | Uint8Array, buf2: FastBuffer | Uint8Array): -1 | 0 | 1
 
@@ -237,6 +253,7 @@ compare(buf1: FastBuffer | Uint8Array, buf2: FastBuffer | Uint8Array): -1 | 0 | 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | buf1 | FastBuffer \| Uint8Array | 是 | 待比较的第一个对象。 |
@@ -244,6 +261,7 @@ compare(buf1: FastBuffer | Uint8Array, buf2: FastBuffer | Uint8Array): -1 | 0 | 
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -253,6 +271,7 @@ compare(buf1: FastBuffer | Uint8Array, buf2: FastBuffer | Uint8Array): -1 | 0 | 
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -274,9 +293,10 @@ console.info(Number(compareResult).toString());
 
 
 
-#### fastbuffer.concat
+## fastbuffer.concat
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 concat(list: FastBuffer[] | Uint8Array[], totalLength?: number): FastBuffer
 
@@ -292,6 +312,7 @@ concat(list: FastBuffer[] | Uint8Array[], totalLength?: number): FastBuffer
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | list | FastBuffer[] \| Uint8Array[] | 是 | 待拼接的FastBuffer或Uint8Array实例数组，数组中所有对象的内容将被依次复制到新的FastBuffer对象中。 |
@@ -299,6 +320,7 @@ concat(list: FastBuffer[] | Uint8Array[], totalLength?: number): FastBuffer
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -308,6 +330,7 @@ concat(list: FastBuffer[] | Uint8Array[], totalLength?: number): FastBuffer
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -328,9 +351,10 @@ console.info(buf.toString('hex'));
 
 
 
-#### fastbuffer.from
+## fastbuffer.from
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 from(array: number[]): FastBuffer
 
@@ -342,12 +366,14 @@ from(array: number[]): FastBuffer
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | array | number[] | 是 | 指定数组，数组内各元素的取值范围为[0, 255]。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -366,9 +392,10 @@ console.info(buf.toString('hex'));
 
 
 
-#### fastbuffer.from
+## fastbuffer.from
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 from(arrayBuffer: ArrayBuffer | SharedArrayBuffer, byteOffset?: number, length?: number): FastBuffer
 
@@ -380,6 +407,7 @@ from(arrayBuffer: ArrayBuffer | SharedArrayBuffer, byteOffset?: number, length?:
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | arrayBuffer | ArrayBuffer \| SharedArrayBuffer | 是 | 用于创建FastBuffer对象的底层ArrayBuffer或SharedArrayBuffer，创建的FastBuffer将与该对象共享相同的内存区域。 |
@@ -389,6 +417,7 @@ from(arrayBuffer: ArrayBuffer | SharedArrayBuffer, byteOffset?: number, length?:
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | FastBuffer | 返回一个FastBuffer对象，该对象与入参对象arrayBuffer共享相同的内存区域。修改FastBuffer对象的数据将同步修改原ArrayBuffer中对应位置的数据，修改原ArrayBuffer的数据也会同步修改FastBuffer中对应位置的数据。 |
@@ -397,6 +426,7 @@ from(arrayBuffer: ArrayBuffer | SharedArrayBuffer, byteOffset?: number, length?:
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -417,9 +447,10 @@ console.info(buf.length.toString());
 
 
 
-#### fastbuffer.from
+## fastbuffer.from
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 from(buffer: FastBuffer | Uint8Array): FastBuffer
 
@@ -433,12 +464,14 @@ from(buffer: FastBuffer | Uint8Array): FastBuffer
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | buffer | FastBuffer \| Uint8Array | 是 | 用于创建新FastBuffer对象的源数据。当入参为FastBuffer时，将复制其数据创建新对象；当入参为Uint8Array时，基于其内存创建新对象并保持内存关联。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -448,6 +481,7 @@ from(buffer: FastBuffer | Uint8Array): FastBuffer
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -477,9 +511,10 @@ console.info('uint8Array:', uint8Array);
 
 
 
-#### fastbuffer.from
+## fastbuffer.from
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 from(value: string, encoding?: BufferEncoding): FastBuffer
 
@@ -491,6 +526,7 @@ from(value: string, encoding?: BufferEncoding): FastBuffer
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string | 是 | 用于创建FastBuffer对象的字符串。 |
@@ -498,6 +534,7 @@ from(value: string, encoding?: BufferEncoding): FastBuffer
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -522,9 +559,10 @@ console.info(buf2.toString());
 
 
 
-#### fastbuffer.isBuffer
+## fastbuffer.isBuffer
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isBuffer(obj: Object): boolean
 
@@ -536,12 +574,14 @@ isBuffer(obj: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | obj | Object | 是 | 待判断是否为FastBuffer的对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -572,9 +612,10 @@ console.info('uint8ArrayResult = ' + uint8ArrayResult);
 
 
 
-#### fastbuffer.isEncoding
+## fastbuffer.isEncoding
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isEncoding(encoding: string): boolean
 
@@ -586,12 +627,14 @@ isEncoding(encoding: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | encoding | string | 是 | 待判断是否为支持的编码格式。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -615,9 +658,10 @@ console.info(fastbuffer.isEncoding('').toString());
 
 
 
-#### fastbuffer.transcode
+## fastbuffer.transcode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 transcode(source: FastBuffer | Uint8Array, fromEnc: string, toEnc: string): FastBuffer
 
@@ -631,6 +675,7 @@ fastbuffer.transcode支持的编码：'ascii' | 'utf8' | 'utf16le'| 'ucs2' | 'la
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | source | FastBuffer \| Uint8Array | 是 | 需要进行编码转换的源数据对象，将从fromEnc编码转换为toEnc编码。 |
@@ -639,6 +684,7 @@ fastbuffer.transcode支持的编码：'ascii' | 'utf8' | 'utf16le'| 'ucs2' | 'la
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -657,19 +703,22 @@ console.info('newBuf = ' + newBuf.toString('ascii'));
 
 
 
-#### FastBuffer
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## FastBuffer
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Utils.Lang
 
 **元服务API**：从API version 20开始，该接口支持在元服务中使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -695,9 +744,10 @@ console.info(JSON.stringify(buf.byteOffset));
 
 
 
-#### compare
+### compare
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 compare(target: FastBuffer | Uint8Array, targetStart?: number, targetEnd?: number, sourceStart?: number, sourceEnd?: number): -1 | 0 | 1
 
@@ -708,6 +758,7 @@ compare(target: FastBuffer | Uint8Array, targetStart?: number, targetEnd?: numbe
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -720,6 +771,7 @@ compare(target: FastBuffer | Uint8Array, targetStart?: number, targetEnd?: numbe
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | -1 \| 0 \| 1 | 返回比较结果。 -1：当前排列在目标前； 0：当前与目标相同； 1：当前排列在目标后。 |
@@ -728,6 +780,7 @@ compare(target: FastBuffer | Uint8Array, targetStart?: number, targetEnd?: numbe
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -756,9 +809,10 @@ console.info(buf1.compare(buf2, 5, 6, 5).toString());
 
 
 
-#### copy
+### copy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 copy(target: FastBuffer| Uint8Array, targetStart?: number, sourceStart?: number, sourceEnd?: number): number
 
@@ -770,6 +824,7 @@ copy(target: FastBuffer| Uint8Array, targetStart?: number, sourceStart?: number,
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | target | FastBuffer \| Uint8Array | 是 | 要复制到的Buffer或Uint8Array实例。 |
@@ -780,6 +835,7 @@ copy(target: FastBuffer| Uint8Array, targetStart?: number, sourceStart?: number,
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 复制的字节总长度。 |
@@ -788,6 +844,7 @@ copy(target: FastBuffer| Uint8Array, targetStart?: number, sourceStart?: number,
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -816,9 +873,10 @@ console.info(buf2.toString('ascii', 0, 25));
 
 
 
-#### entries
+### entries
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 entries(): IterableIterator<[number, number]>
 
@@ -829,6 +887,7 @@ entries(): IterableIterator<[number, number]>
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -863,9 +922,10 @@ while (!nextEntry.done) {
 
 
 
-#### equals
+### equals
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 equals(otherBuffer: Uint8Array | FastBuffer): boolean
 
@@ -877,12 +937,14 @@ equals(otherBuffer: Uint8Array | FastBuffer): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | otherBuffer | Uint8Array \| FastBuffer | 是 | 比较的目标对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -892,6 +954,7 @@ equals(otherBuffer: Uint8Array | FastBuffer): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -915,9 +978,10 @@ console.info(buf1.equals(buf3).toString());
 
 
 
-#### fill
+### fill
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fill(value: string | FastBuffer | Uint8Array | number, offset?: number, end?: number, encoding?: BufferEncoding): FastBuffer
 
@@ -929,6 +993,7 @@ fill(value: string | FastBuffer | Uint8Array | number, offset?: number, end?: nu
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string \| FastBuffer \| Uint8Array \| number | 是 | 用于填充的值。 |
@@ -939,6 +1004,7 @@ fill(value: string | FastBuffer | Uint8Array | number, offset?: number, end?: nu
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | FastBuffer | 返回填充后的FastBuffer对象。 |
@@ -947,6 +1013,7 @@ fill(value: string | FastBuffer | Uint8Array | number, offset?: number, end?: nu
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -966,9 +1033,10 @@ console.info(filledBuffer.toString());
 
 
 
-#### includes
+### includes
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 includes(value: string | number | FastBuffer | Uint8Array, byteOffset?: number, encoding?: BufferEncoding): boolean
 
@@ -984,6 +1052,7 @@ includes(value: string | number | FastBuffer | Uint8Array, byteOffset?: number, 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string \| number \| FastBuffer \| Uint8Array | 是 | 要搜索的内容。 |
@@ -992,6 +1061,7 @@ includes(value: string | number | FastBuffer | Uint8Array, byteOffset?: number, 
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1012,9 +1082,10 @@ console.info(buf.includes('be').toString());
 
 
 
-#### indexOf
+### indexOf
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 indexOf(value: string | number | FastBuffer | Uint8Array, byteOffset?: number, encoding?: BufferEncoding): number
 
@@ -1030,6 +1101,7 @@ indexOf(value: string | number | FastBuffer | Uint8Array, byteOffset?: number, e
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string \| number \| FastBuffer \| Uint8Array | 是 | 要查找的内容。 |
@@ -1038,6 +1110,7 @@ indexOf(value: string | number | FastBuffer | Uint8Array, byteOffset?: number, e
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1058,9 +1131,10 @@ console.info(buf.indexOf('is').toString());
 
 
 
-#### keys
+### keys
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 keys(): IterableIterator&lt;number&gt;
 
@@ -1071,6 +1145,7 @@ keys(): IterableIterator&lt;number&gt;
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1099,9 +1174,10 @@ for (const key of keys) {
 
 
 
-#### values
+### values
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 values(): IterableIterator&lt;number&gt;
 
@@ -1112,6 +1188,7 @@ values(): IterableIterator&lt;number&gt;
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1142,9 +1219,10 @@ while (!nextValue.done) {
 
 
 
-#### lastIndexOf
+### lastIndexOf
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 lastIndexOf(value: string | number | FastBuffer | Uint8Array, byteOffset?: number, encoding?: BufferEncoding): number
 
@@ -1160,6 +1238,7 @@ lastIndexOf(value: string | number | FastBuffer | Uint8Array, byteOffset?: numbe
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string \| number \| FastBuffer \| Uint8Array | 是 | 要搜索的内容。 |
@@ -1168,6 +1247,7 @@ lastIndexOf(value: string | number | FastBuffer | Uint8Array, byteOffset?: numbe
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1188,9 +1268,10 @@ console.info(buf.lastIndexOf('buffer').toString());
 
 
 
-#### readBigInt64BE
+### readBigInt64BE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readBigInt64BE(offset?: number): bigint
 
@@ -1202,12 +1283,14 @@ readBigInt64BE(offset?: number): bigint
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 否 | 偏移量。默认值：0。取值范围：0 <= offset <= this.length - 8。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1217,6 +1300,7 @@ readBigInt64BE(offset?: number): bigint
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1236,9 +1320,10 @@ console.info(buf.readBigInt64BE(0).toString());
 
 
 
-#### readBigInt64LE
+### readBigInt64LE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readBigInt64LE(offset?: number): bigint
 
@@ -1250,12 +1335,14 @@ readBigInt64LE(offset?: number): bigint
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 否 | 偏移量。取值范围：0 <= offset <= this.length - 8，默认值：0。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1265,6 +1352,7 @@ readBigInt64LE(offset?: number): bigint
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1284,9 +1372,10 @@ console.info(buf.readBigInt64LE(0).toString());
 
 
 
-#### readBigUInt64BE
+### readBigUInt64BE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readBigUInt64BE(offset?: number): bigint
 
@@ -1298,12 +1387,14 @@ readBigUInt64BE(offset?: number): bigint
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 否 | 偏移量。取值范围：0 <= offset <= this.length - 8，默认值：0。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1313,6 +1404,7 @@ readBigUInt64BE(offset?: number): bigint
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1332,9 +1424,10 @@ console.info(buf.readBigUInt64BE(0).toString());
 
 
 
-#### readBigUInt64LE
+### readBigUInt64LE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readBigUInt64LE(offset?: number): bigint
 
@@ -1346,12 +1439,14 @@ readBigUInt64LE(offset?: number): bigint
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 否 | 偏移量。取值范围：0 <= offset <= this.length - 8，默认值：0。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1361,6 +1456,7 @@ readBigUInt64LE(offset?: number): bigint
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1380,9 +1476,10 @@ console.info(buf.readBigUInt64LE(0).toString());
 
 
 
-#### readDoubleBE
+### readDoubleBE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readDoubleBE(offset?: number): number
 
@@ -1394,12 +1491,14 @@ readDoubleBE(offset?: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 否 | 偏移量。取值范围：0 <= offset <= this.length - 8，默认值：0。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1409,6 +1508,7 @@ readDoubleBE(offset?: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1427,9 +1527,10 @@ console.info(buf.readDoubleBE(0).toString());
 
 
 
-#### readDoubleLE
+### readDoubleLE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readDoubleLE(offset?: number): number
 
@@ -1441,12 +1542,14 @@ readDoubleLE(offset?: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 否 | 偏移量。取值范围：0 <= offset <= this.length - 8，默认值：0。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1456,6 +1559,7 @@ readDoubleLE(offset?: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1474,9 +1578,10 @@ console.info(buf.readDoubleLE(0).toString());
 
 
 
-#### readFloatBE
+### readFloatBE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readFloatBE(offset?: number): number
 
@@ -1488,12 +1593,14 @@ readFloatBE(offset?: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 否 | 偏移量。取值范围：0 <= offset <= this.length - 4，默认值：0。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1503,6 +1610,7 @@ readFloatBE(offset?: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1521,9 +1629,10 @@ console.info(buf.readFloatBE(0).toString());
 
 
 
-#### readFloatLE
+### readFloatLE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readFloatLE(offset?: number): number
 
@@ -1535,12 +1644,14 @@ readFloatLE(offset?: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 否 | 偏移量。取值范围：0 <= offset <= this.length - 4，默认值：0。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1550,6 +1661,7 @@ readFloatLE(offset?: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1568,9 +1680,10 @@ console.info(buf.readFloatLE(0).toString());
 
 
 
-#### readInt8
+### readInt8
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readInt8(offset?: number): number
 
@@ -1582,12 +1695,14 @@ readInt8(offset?: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 否 | 偏移量。取值范围：0 <= offset <= this.length - 1，默认值：0。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1597,6 +1712,7 @@ readInt8(offset?: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1617,9 +1733,10 @@ console.info(buf.readInt8(1).toString());
 
 
 
-#### readInt16BE
+### readInt16BE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readInt16BE(offset?: number): number
 
@@ -1631,12 +1748,14 @@ readInt16BE(offset?: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 否 | 偏移量。取值范围：0 <= offset <= this.length - 2，默认值：0。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1646,6 +1765,7 @@ readInt16BE(offset?: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1664,9 +1784,10 @@ console.info(buf.readInt16BE(0).toString());
 
 
 
-#### readInt16LE
+### readInt16LE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readInt16LE(offset?: number): number
 
@@ -1678,12 +1799,14 @@ readInt16LE(offset?: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 否 | 偏移量。取值范围：0 <= offset <= this.length - 2，默认值：0。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1693,6 +1816,7 @@ readInt16LE(offset?: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1711,9 +1835,10 @@ console.info(buf.readInt16LE(0).toString());
 
 
 
-#### readInt32BE
+### readInt32BE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readInt32BE(offset?: number): number
 
@@ -1725,12 +1850,14 @@ readInt32BE(offset?: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 否 | 偏移量。取值范围：0 <= offset <= this.length - 4，默认值：0。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1740,6 +1867,7 @@ readInt32BE(offset?: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1758,9 +1886,10 @@ console.info(buf.readInt32BE(0).toString());
 
 
 
-#### readInt32LE
+### readInt32LE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readInt32LE(offset?: number): number
 
@@ -1772,12 +1901,14 @@ readInt32LE(offset?: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 否 | 偏移量。取值范围：0 <= offset <= this.length - 4，默认值：0。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1787,6 +1918,7 @@ readInt32LE(offset?: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1805,9 +1937,10 @@ console.info(buf.readInt32LE(0).toString());
 
 
 
-#### readIntBE
+### readIntBE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readIntBE(offset: number, byteLength: number): number
 
@@ -1819,6 +1952,7 @@ readIntBE(offset: number, byteLength: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 是 | 偏移量。取值范围：0 <= offset <= this.length - byteLength，默认值：0。 |
@@ -1826,6 +1960,7 @@ readIntBE(offset: number, byteLength: number): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1835,6 +1970,7 @@ readIntBE(offset: number, byteLength: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1854,9 +1990,10 @@ console.info(num.toString());
 
 
 
-#### readIntLE
+### readIntLE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readIntLE(offset: number, byteLength: number): number
 
@@ -1868,6 +2005,7 @@ readIntLE(offset: number, byteLength: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 是 | 偏移量。取值范围：0 <= offset <= this.length - byteLength，默认值：0。 |
@@ -1875,6 +2013,7 @@ readIntLE(offset: number, byteLength: number): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1884,6 +2023,7 @@ readIntLE(offset: number, byteLength: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1902,9 +2042,10 @@ console.info(buf.readIntLE(0, 6).toString(16));
 
 
 
-#### readUInt8
+### readUInt8
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readUInt8(offset?: number): number
 
@@ -1916,12 +2057,14 @@ readUInt8(offset?: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 否 | 偏移量。取值范围：0 <= offset <= this.length - 1，默认值：0。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1931,6 +2074,7 @@ readUInt8(offset?: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1951,9 +2095,10 @@ console.info(buf.readUInt8(1).toString());
 
 
 
-#### readUInt16BE
+### readUInt16BE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readUInt16BE(offset?: number): number
 
@@ -1965,12 +2110,14 @@ readUInt16BE(offset?: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 否 | 偏移量。取值范围：0 <= offset <= this.length - 2，默认值：0。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1980,6 +2127,7 @@ readUInt16BE(offset?: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2000,9 +2148,10 @@ console.info(buf.readUInt16BE(1).toString(16));
 
 
 
-#### readUInt16LE
+### readUInt16LE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readUInt16LE(offset?: number): number
 
@@ -2014,12 +2163,14 @@ readUInt16LE(offset?: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 否 | 偏移量。取值范围：0 <= offset <= this.length - 2，默认值：0。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2029,6 +2180,7 @@ readUInt16LE(offset?: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2049,9 +2201,10 @@ console.info(buf.readUInt16LE(1).toString(16));
 
 
 
-#### readUInt32BE
+### readUInt32BE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readUInt32BE(offset?: number): number
 
@@ -2063,12 +2216,14 @@ readUInt32BE(offset?: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 否 | 偏移量。取值范围：0 <= offset <= this.length - 4，默认值：0。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2078,6 +2233,7 @@ readUInt32BE(offset?: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2096,9 +2252,10 @@ console.info(buf.readUInt32BE(0).toString(16));
 
 
 
-#### readUInt32LE
+### readUInt32LE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readUInt32LE(offset?: number): number
 
@@ -2110,12 +2267,14 @@ readUInt32LE(offset?: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 否 | 偏移量。取值范围：0 <= offset <= this.length - 4，默认值：0。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2125,6 +2284,7 @@ readUInt32LE(offset?: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2143,9 +2303,10 @@ console.info(buf.readUInt32LE(0).toString(16));
 
 
 
-#### readUIntBE
+### readUIntBE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readUIntBE(offset: number, byteLength: number): number
 
@@ -2157,6 +2318,7 @@ readUIntBE(offset: number, byteLength: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 是 | 偏移量。取值范围：0 <= offset <= this.length - byteLength。 |
@@ -2164,6 +2326,7 @@ readUIntBE(offset: number, byteLength: number): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2173,6 +2336,7 @@ readUIntBE(offset: number, byteLength: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2191,9 +2355,10 @@ console.info(buf.readUIntBE(0, 6).toString(16));
 
 
 
-#### readUIntLE
+### readUIntLE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readUIntLE(offset: number, byteLength: number): number
 
@@ -2205,6 +2370,7 @@ readUIntLE(offset: number, byteLength: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 是 | 偏移量。取值范围：0 <= offset <= this.length - byteLength。 |
@@ -2212,6 +2378,7 @@ readUIntLE(offset: number, byteLength: number): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2221,6 +2388,7 @@ readUIntLE(offset: number, byteLength: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2239,9 +2407,10 @@ console.info(buf.readUIntLE(0, 6).toString(16));
 
 
 
-#### subarray
+### subarray
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 subarray(start?: number, end?: number): FastBuffer
 
@@ -2253,6 +2422,7 @@ subarray(start?: number, end?: number): FastBuffer
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | start | number | 否 | 截取开始位置。默认值：0。 |
@@ -2260,6 +2430,7 @@ subarray(start?: number, end?: number): FastBuffer
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2283,9 +2454,10 @@ console.info(buf2.toString('ascii', 0, buf2.length));
 
 
 
-#### swap16
+### swap16
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 swap16(): FastBuffer
 
@@ -2297,6 +2469,7 @@ swap16(): FastBuffer
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | FastBuffer | 交换之后的FastBuffer对象。 |
@@ -2305,6 +2478,7 @@ swap16(): FastBuffer
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2326,9 +2500,10 @@ console.info(buf1.toString('hex'));
 
 
 
-#### swap32
+### swap32
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 swap32(): FastBuffer
 
@@ -2340,6 +2515,7 @@ swap32(): FastBuffer
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | FastBuffer | 交换之后的FastBuffer对象。 |
@@ -2348,6 +2524,7 @@ swap32(): FastBuffer
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2369,9 +2546,10 @@ console.info(buf1.toString('hex'));
 
 
 
-#### swap64
+### swap64
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 swap64(): FastBuffer
 
@@ -2383,6 +2561,7 @@ swap64(): FastBuffer
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | FastBuffer | 交换之后的FastBuffer对象。 |
@@ -2391,6 +2570,7 @@ swap64(): FastBuffer
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2412,9 +2592,10 @@ console.info(buf1.toString('hex'));
 
 
 
-#### toJSON
+### toJSON
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toJSON(): Object
 
@@ -2425,6 +2606,7 @@ toJSON(): Object
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2444,9 +2626,10 @@ console.info(JSON.stringify(jsonResult));
 
 
 
-#### toString
+### toString
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toString(encoding?: string, start?: number, end?: number): string
 
@@ -2458,6 +2641,7 @@ toString(encoding?: string, start?: number, end?: number): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | encoding | string | 否 | 字符编码格式，支持的格式范围参考BufferEncoding。默认值：'utf8'。 |
@@ -2467,6 +2651,7 @@ toString(encoding?: string, start?: number, end?: number): string
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 字符串。当start >= this.length或start > end时返回空字符串。 |
@@ -2475,6 +2660,7 @@ toString(encoding?: string, start?: number, end?: number): string
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2496,9 +2682,10 @@ console.info(buf1.toString('utf-8'));
 
 
 
-#### write
+### write
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 write(str: string, offset?: number, length?: number, encoding?: string): number
 
@@ -2510,6 +2697,7 @@ write(str: string, offset?: number, length?: number, encoding?: string): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | str | string | 是 | 要写入FastBuffer的字符串。 |
@@ -2520,6 +2708,7 @@ write(str: string, offset?: number, length?: number, encoding?: string): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 写入的字节数。 |
@@ -2528,6 +2717,7 @@ write(str: string, offset?: number, length?: number, encoding?: string): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2553,9 +2743,10 @@ console.info('length = ' + length);
 
 
 
-#### writeBigInt64BE
+### writeBigInt64BE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeBigInt64BE(value: bigint, offset?: number): number
 
@@ -2567,6 +2758,7 @@ writeBigInt64BE(value: bigint, offset?: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | bigint | 是 | 写入FastBuffer的数据。取值范围：-INT64_MAX <= value <= INT64_MAX。 |
@@ -2574,6 +2766,7 @@ writeBigInt64BE(value: bigint, offset?: number): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2583,6 +2776,7 @@ writeBigInt64BE(value: bigint, offset?: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2602,9 +2796,10 @@ console.info('result = ' + result);
 
 
 
-#### writeBigInt64LE
+### writeBigInt64LE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeBigInt64LE(value: bigint, offset?: number): number
 
@@ -2616,6 +2811,7 @@ writeBigInt64LE(value: bigint, offset?: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | bigint | 是 | 写入FastBuffer的数据。取值范围：-INT64_MAX <= value <= INT64_MAX。 |
@@ -2623,6 +2819,7 @@ writeBigInt64LE(value: bigint, offset?: number): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2632,6 +2829,7 @@ writeBigInt64LE(value: bigint, offset?: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2651,9 +2849,10 @@ console.info('result = ' + result);
 
 
 
-#### writeBigUInt64BE
+### writeBigUInt64BE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeBigUInt64BE(value: bigint, offset?: number): number
 
@@ -2665,6 +2864,7 @@ writeBigUInt64BE(value: bigint, offset?: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | bigint | 是 | 写入FastBuffer的数据。取值范围：0 <= value <= UINT64_MAX。 |
@@ -2672,6 +2872,7 @@ writeBigUInt64BE(value: bigint, offset?: number): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2681,6 +2882,7 @@ writeBigUInt64BE(value: bigint, offset?: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2700,9 +2902,10 @@ console.info('result = ' + result);
 
 
 
-#### writeBigUInt64LE
+### writeBigUInt64LE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeBigUInt64LE(value: bigint, offset?: number): number
 
@@ -2714,6 +2917,7 @@ writeBigUInt64LE(value: bigint, offset?: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | bigint | 是 | 写入FastBuffer的数据。取值范围：0 <= value <= UINT64_MAX。 |
@@ -2721,6 +2925,7 @@ writeBigUInt64LE(value: bigint, offset?: number): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2730,6 +2935,7 @@ writeBigUInt64LE(value: bigint, offset?: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2749,9 +2955,10 @@ console.info('result = ' + result);
 
 
 
-#### writeDoubleBE
+### writeDoubleBE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeDoubleBE(value: number, offset?: number): number
 
@@ -2763,6 +2970,7 @@ writeDoubleBE(value: number, offset?: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 写入FastBuffer的数据。取值范围：-DOUBLE_MAX <= value <= DOUBLE_MAX。 |
@@ -2770,6 +2978,7 @@ writeDoubleBE(value: number, offset?: number): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2779,6 +2988,7 @@ writeDoubleBE(value: number, offset?: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2798,9 +3008,10 @@ console.info('result = ' + result);
 
 
 
-#### writeDoubleLE
+### writeDoubleLE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeDoubleLE(value: number, offset?: number): number
 
@@ -2812,6 +3023,7 @@ writeDoubleLE(value: number, offset?: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 写入FastBuffer的数据。取值范围：-DOUBLE_MAX <= value <= DOUBLE_MAX。 |
@@ -2819,6 +3031,7 @@ writeDoubleLE(value: number, offset?: number): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2828,6 +3041,7 @@ writeDoubleLE(value: number, offset?: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2847,9 +3061,10 @@ console.info('result = ' + result);
 
 
 
-#### writeFloatBE
+### writeFloatBE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeFloatBE(value: number, offset?: number): number
 
@@ -2861,6 +3076,7 @@ writeFloatBE(value: number, offset?: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 写入FastBuffer的数据。取值范围：-FLOAT_MAX <= value <= FLOAT_MAX。 |
@@ -2868,6 +3084,7 @@ writeFloatBE(value: number, offset?: number): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2877,6 +3094,7 @@ writeFloatBE(value: number, offset?: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2896,9 +3114,10 @@ console.info('result = ' + result);
 
 
 
-#### writeFloatLE
+### writeFloatLE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeFloatLE(value: number, offset?: number): number
 
@@ -2910,6 +3129,7 @@ writeFloatLE(value: number, offset?: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 写入FastBuffer的数据。取值范围：-FLOAT_MAX <= value <= FLOAT_MAX。 |
@@ -2917,6 +3137,7 @@ writeFloatLE(value: number, offset?: number): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2926,6 +3147,7 @@ writeFloatLE(value: number, offset?: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2945,9 +3167,10 @@ console.info('result = ' + result);
 
 
 
-#### writeInt8
+### writeInt8
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeInt8(value: number, offset?: number): number
 
@@ -2959,6 +3182,7 @@ writeInt8(value: number, offset?: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 写入FastBuffer的数据。取值范围：-INT8_MAX <= value <= INT8_MAX。 |
@@ -2966,6 +3190,7 @@ writeInt8(value: number, offset?: number): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2975,6 +3200,7 @@ writeInt8(value: number, offset?: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2997,9 +3223,10 @@ console.info('result1 = ' + result1);
 
 
 
-#### writeInt16BE
+### writeInt16BE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeInt16BE(value: number, offset?: number): number
 
@@ -3011,6 +3238,7 @@ writeInt16BE(value: number, offset?: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 写入FastBuffer的数据。取值范围：-INT16_MAX <= value <= INT16_MAX。 |
@@ -3018,6 +3246,7 @@ writeInt16BE(value: number, offset?: number): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3027,6 +3256,7 @@ writeInt16BE(value: number, offset?: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3046,9 +3276,10 @@ console.info('result = ' + result);
 
 
 
-#### writeInt16LE
+### writeInt16LE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeInt16LE(value: number, offset?: number): number
 
@@ -3060,6 +3291,7 @@ writeInt16LE(value: number, offset?: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 写入FastBuffer的数据。取值范围：-INT16_MAX <= value <= INT16_MAX。 |
@@ -3067,6 +3299,7 @@ writeInt16LE(value: number, offset?: number): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3076,6 +3309,7 @@ writeInt16LE(value: number, offset?: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3095,9 +3329,10 @@ console.info('result = ' + result);
 
 
 
-#### writeInt32BE
+### writeInt32BE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeInt32BE(value: number, offset?: number): number
 
@@ -3109,6 +3344,7 @@ writeInt32BE(value: number, offset?: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 写入FastBuffer的数据。取值范围：-INT32_MAX <= value <= INT32_MAX。 |
@@ -3116,6 +3352,7 @@ writeInt32BE(value: number, offset?: number): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3125,6 +3362,7 @@ writeInt32BE(value: number, offset?: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3144,9 +3382,10 @@ console.info('result = ' + result);
 
 
 
-#### writeInt32LE
+### writeInt32LE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeInt32LE(value: number, offset?: number): number
 
@@ -3158,6 +3397,7 @@ writeInt32LE(value: number, offset?: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 写入FastBuffer的数据。取值范围：-INT32_MAX <= value <= INT32_MAX。 |
@@ -3165,6 +3405,7 @@ writeInt32LE(value: number, offset?: number): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3174,6 +3415,7 @@ writeInt32LE(value: number, offset?: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3193,9 +3435,10 @@ console.info('result = ' + result);
 
 
 
-#### writeIntBE
+### writeIntBE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeIntBE(value: number, offset: number, byteLength: number): number
 
@@ -3207,6 +3450,7 @@ writeIntBE(value: number, offset: number, byteLength: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 写入FastBuffer的数据。取值范围：-2^(8×byteLength-1) ≤ value ≤ 2^(8×byteLength-1)-1。 |
@@ -3216,6 +3460,7 @@ writeIntBE(value: number, offset: number, byteLength: number): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 偏移量offset加上写入的字节数。 |
@@ -3224,6 +3469,7 @@ writeIntBE(value: number, offset: number, byteLength: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3243,9 +3489,10 @@ console.info('result = ' + result);
 
 
 
-#### writeIntLE
+### writeIntLE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeIntLE(value: number, offset: number, byteLength: number): number
 
@@ -3257,6 +3504,7 @@ writeIntLE(value: number, offset: number, byteLength: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 写入FastBuffer的数据。取值范围：-2^(8×byteLength-1) ≤ value ≤ 2^(8×byteLength-1)-1。 |
@@ -3266,6 +3514,7 @@ writeIntLE(value: number, offset: number, byteLength: number): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 偏移量offset加上写入的字节数。 |
@@ -3274,6 +3523,7 @@ writeIntLE(value: number, offset: number, byteLength: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3293,9 +3543,10 @@ console.info('result = ' + result);
 
 
 
-#### writeUInt8
+### writeUInt8
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeUInt8(value: number, offset?: number): number
 
@@ -3307,6 +3558,7 @@ writeUInt8(value: number, offset?: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 写入FastBuffer的数据。取值范围：0 <= value <= UINT8_MAX。 |
@@ -3314,6 +3566,7 @@ writeUInt8(value: number, offset?: number): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3323,6 +3576,7 @@ writeUInt8(value: number, offset?: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3351,9 +3605,10 @@ console.info('result3 = ' + result3);
 
 
 
-#### writeUInt16BE
+### writeUInt16BE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeUInt16BE(value: number, offset?: number): number
 
@@ -3365,6 +3620,7 @@ writeUInt16BE(value: number, offset?: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 写入FastBuffer的数据。取值范围：0 <= value <= UINT16_MAX。 |
@@ -3372,6 +3628,7 @@ writeUInt16BE(value: number, offset?: number): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3381,6 +3638,7 @@ writeUInt16BE(value: number, offset?: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3403,9 +3661,10 @@ console.info('result1 = ' + result1);
 
 
 
-#### writeUInt16LE
+### writeUInt16LE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeUInt16LE(value: number, offset?: number): number
 
@@ -3417,6 +3676,7 @@ writeUInt16LE(value: number, offset?: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 写入FastBuffer的数据。取值范围：0 <= value <= UINT16_MAX。 |
@@ -3424,6 +3684,7 @@ writeUInt16LE(value: number, offset?: number): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3433,6 +3694,7 @@ writeUInt16LE(value: number, offset?: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3455,9 +3717,10 @@ console.info('result1 = ' + result1);
 
 
 
-#### writeUInt32BE
+### writeUInt32BE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeUInt32BE(value: number, offset?: number): number
 
@@ -3469,6 +3732,7 @@ writeUInt32BE(value: number, offset?: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 写入FastBuffer的数据。取值范围：0 <= value <= UINT32_MAX。 |
@@ -3476,6 +3740,7 @@ writeUInt32BE(value: number, offset?: number): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3485,6 +3750,7 @@ writeUInt32BE(value: number, offset?: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3504,9 +3770,10 @@ console.info('result = ' + result);
 
 
 
-#### writeUInt32LE
+### writeUInt32LE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeUInt32LE(value: number, offset?: number): number
 
@@ -3518,6 +3785,7 @@ writeUInt32LE(value: number, offset?: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 写入FastBuffer的数据。取值范围：0 <= value <= UINT32_MAX。 |
@@ -3525,6 +3793,7 @@ writeUInt32LE(value: number, offset?: number): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3534,6 +3803,7 @@ writeUInt32LE(value: number, offset?: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3553,9 +3823,10 @@ console.info('result = ' + result);
 
 
 
-#### writeUIntBE
+### writeUIntBE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeUIntBE(value: number, offset: number, byteLength: number): number
 
@@ -3567,6 +3838,7 @@ writeUIntBE(value: number, offset: number, byteLength: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 写入FastBuffer的数据。取值范围：0 ≤ value ≤ 2^(8×byteLength)-1。 |
@@ -3576,6 +3848,7 @@ writeUIntBE(value: number, offset: number, byteLength: number): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 偏移量offset加上写入的字节数。 |
@@ -3584,6 +3857,7 @@ writeUIntBE(value: number, offset: number, byteLength: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3603,9 +3877,10 @@ console.info('result = ' + result);
 
 
 
-#### writeUIntLE
+### writeUIntLE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeUIntLE(value: number, offset: number, byteLength: number): number
 
@@ -3617,6 +3892,7 @@ writeUIntLE(value: number, offset: number, byteLength: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 写入FastBuffer的数据。取值范围：0 ≤ value ≤ 2^(8×byteLength)-1。 |
@@ -3626,6 +3902,7 @@ writeUIntLE(value: number, offset: number, byteLength: number): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 偏移量offset加上写入的字节数。 |
@@ -3634,6 +3911,7 @@ writeUIntLE(value: number, offset: number, byteLength: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

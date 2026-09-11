@@ -1,10 +1,10 @@
 # NativeBuffer开发指导 (C/C++)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-buffer-guidelines
 
-#### 场景介绍
+## 场景介绍
 
 NativeBuffer模块提供**共享内存**功能，支持内存的申请、使用、查询和释放等操作。
 
@@ -12,7 +12,8 @@ NativeBuffer的常见应用场景包括：图像数据处理、视频编解码�
 
 
 
-#### 接口说明
+## 接口说明
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -21,7 +22,7 @@ NativeBuffer的常见应用场景包括：图像数据处理、视频编解码�
 | OH_NativeBuffer_Unreference (OH_NativeBuffer *buffer) | 将OH_NativeBuffer对象的引用计数减1，当引用计数为0的时候，该NativeBuffer对象会被析构掉。 |
 | OH_NativeBuffer_GetConfig (OH_NativeBuffer *buffer, OH_NativeBuffer_Config *config) | 用于获取OH_NativeBuffer的属性。 |
 | OH_NativeBuffer_Map (OH_NativeBuffer *buffer, void **virAddr) | 将OH_NativeBuffer对应的ION内存映射到进程空间。 |
-| OH_NativeBuffer_Unmap (OH_NativeBuffer *buffer) | 将OH_NativeBuffer对应的ION内存从进程空间移除。 |
+| OH_NativeBuffer_Unmap (OH_NativeBuffer *buffer) | 将OH_NativeBuffer对应的ION内存从进程空间解除映射。 |
 | OH_NativeBuffer_GetSeqNum (OH_NativeBuffer *buffer) | 获取OH_NativeBuffer的序列号。 |
 
 
@@ -29,7 +30,7 @@ NativeBuffer的常见应用场景包括：图像数据处理、视频编解码�
 
 
 
-#### 开发步骤
+## 开发步骤
 
 以下步骤描述了如何使用NativeBuffer提供的Native API接口创建OH_NativeBuffer实例，获取内存属性信息，并将ION内存映射到进程空间。
 

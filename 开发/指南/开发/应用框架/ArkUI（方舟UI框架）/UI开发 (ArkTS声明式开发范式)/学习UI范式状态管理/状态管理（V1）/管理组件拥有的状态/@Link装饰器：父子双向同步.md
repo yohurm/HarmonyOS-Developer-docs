@@ -1,6 +1,6 @@
 # @Link装饰器：父子双向同步
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-link
 
@@ -13,13 +13,14 @@
 
 
 
-#### 概述
+## 概述
 
 @Link装饰的变量与其父组件中的数据源共享相同的值。
 
 
 
-#### 装饰器使用规则说明
+## 装饰器使用规则说明
+
 
 | @Link变量装饰器 | 说明 |
 | --- | --- |
@@ -32,7 +33,8 @@
 
 
 
-#### 变量的传递/访问规则说明
+## 变量的传递/访问规则说明
+
 
 | 传递/访问 | 说明 |
 | --- | --- |
@@ -49,11 +51,11 @@
 
 
 
-#### 观察变化和行为表现
+## 观察变化和行为表现
 
 
 
-#### 观察变化
+### 观察变化
 
  - 当装饰的数据类型为boolean、string、number类型时，可以同步观察到数值的变化，示例请参考[简单类型和类对象类型的@Link](#简单类型和类对象类型的link)。
  - 当装饰的数据类型为class或者Object时，可以观察到赋值和属性赋值的变化，即Object.keys(observedObject)返回的所有属性，示例请参考[简单类型和类对象类型的@Link](#简单类型和类对象类型的link)。@Link仅能观察对象本身及其一层属性的变化，无法观察嵌套场景（如嵌套对象、对象数组）内层数据的变化，该场景请参考[@Observed装饰器与@ObjectLink装饰器的使用场景](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-observed-and-objectlink#使用场景)。
@@ -65,7 +67,7 @@
 
 
 
-#### 框架行为
+### 框架行为
 
 @Link装饰的变量和所属的自定义组件共享生命周期。
 
@@ -90,7 +92,7 @@
 
 
 
-#### 限制条件
+## 限制条件
 1. @Link装饰器不建议在[@Entry](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-custom-components#entry)装饰的自定义组件中使用，否则编译时会抛出警告；若该自定义组件作为页面根节点使用，则会抛出运行时错误。
 2. @Link装饰的变量禁止本地初始化，否则编译期会报错。
 
@@ -254,11 +256,11 @@ struct LinkExample2 {
 
 
 
-#### 使用场景
+## 使用场景
 
 
 
-#### 简单类型和类对象类型的@Link
+### 简单类型和类对象类型的@Link
 
 以下示例中，点击父组件ShufflingContainer中的“Parent View: Set yellowButton”和“Parent View: Set GreenButton”，可以从父组件将变化同步给子组件。
 
@@ -357,7 +359,7 @@ struct ShufflingContainer {
 
 
 
-#### 数组类型的@Link
+### 数组类型的@Link
 
 ```ArkTS
 @Component
@@ -420,13 +422,13 @@ struct ArrayTypes {
 
 
 
-#### 装饰Map类型变量
+### 装饰Map类型变量
 
 > [!NOTE]
 > 从API version 11开始，@Link支持Map类型。
 
 
-在下面的示例中，value类型为Map<number, string>，点击Button改变message的值，视图会随之刷新。
+在下面的示例中，value类型为Map<number, string>，点击Button改变value的值，视图会随之刷新。
 
 ```ArkTS
 @Component
@@ -499,12 +501,12 @@ struct MapSample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/E7fzSIhnQUKm_02qbCl_LA/zh-cn_image_0000002704391965.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095704Z&HW-CC-Expire=86400&HW-CC-Sign=BC20AB118A0C89B94B006EBC001D32C646B054E0D9424716813FC0FA3ACFEC1F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/ToWADv-WQmyMv0_nr5OFtQ/zh-cn_image_0000002747290009.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072506Z&HW-CC-Expire=86400&HW-CC-Sign=5F5C96B06253A987A6F84C2BFB066990A6CB1764AC3868B9D2622B79DFC600B5)
 
 
 
 
-#### 装饰Set类型变量
+### 装饰Set类型变量
 
 > [!NOTE]
 > 从API version 11开始，@Link支持Set类型。
@@ -574,12 +576,12 @@ struct SetSample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/rSoZhv5mSwaWDLKE1UOtiw/zh-cn_image_0000002674631842.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095704Z&HW-CC-Expire=86400&HW-CC-Sign=1180A1B47A892D10C7C48BDA846E4A8B8E809CFB73745AB61C7A1DC975AEE50D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/q0uhAlM7REO2VfWTwNzb6Q/zh-cn_image_0000002747209927.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072506Z&HW-CC-Expire=86400&HW-CC-Sign=4FD662E55F21F6574353FAC23D58C1E5FB58D6622AABCE4CB3FE3E092F6E8E77)
 
 
 
 
-#### 装饰Date类型变量
+### 装饰Date类型变量
 
 在下面的示例中，selectedDate类型为Date，点击Button改变selectedDate的值，视图会随之刷新。
 
@@ -646,12 +648,12 @@ struct ParentComponent {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/WE5kcTzyQw2cl7AvNVEuEA/zh-cn_image_0000002704271797.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095704Z&HW-CC-Expire=86400&HW-CC-Sign=578B26F10E2670CEADBB36307BBA3D4A383E2CB3FDB3F0D60750FF05F32BA8ED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/tTjbFsi4TxC2D4kaktmbDg/zh-cn_image_0000002717769994.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072506Z&HW-CC-Expire=86400&HW-CC-Sign=284B9DD39C474FA6A15E39481282A06F732453D79B9F1FC4E6BDBEF0E2085064)
 
 
 
 
-#### 使用双向同步机制更改本地其他变量
+### 使用双向同步机制更改本地其他变量
 
 通过[@Watch](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-watch)可以在双向同步时更改本地变量。
 
@@ -712,12 +714,12 @@ struct ChangeVariablesChild {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/ghRZDzCpQdWzoBlij8YQ5A/zh-cn_image_0000002674471998.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095704Z&HW-CC-Expire=86400&HW-CC-Sign=1DB5FF03B14E3B88041ABA75DDCEED1B014B06EA2074620982CFB477310134DF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/ZdLbLqu4THuaK5ctHUBh0g/zh-cn_image_0000002717610060.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072506Z&HW-CC-Expire=86400&HW-CC-Sign=02FDE9F09374345355B32BA3DD748D45A7DF1E16C6307CEEE7B06DA1972C14B5)
 
 
 
 
-#### Link支持联合类型实例
+### @Link支持联合类型实例
 
 @Link支持联合类型、undefined和null。在以下示例中，name类型为string | undefined。点击父组件UnionTypes中的按钮可以改变name的属性或类型，UnionChild组件也会相应刷新。
 
@@ -781,4 +783,4 @@ struct UnionTypes {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/kQAQdbsiRlOjUQIlbbzcjw/zh-cn_image_0000002704391967.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095704Z&HW-CC-Expire=86400&HW-CC-Sign=2548B8922E2E6825482F49CC35E04E4FBA957399ECBB9216323720FED42D0F8F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/eOHoAz6FR-SJXbQWweGuNQ/zh-cn_image_0000002747290011.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072506Z&HW-CC-Expire=86400&HW-CC-Sign=345DC2C723F9B7AD842251444E1EE5609D554B34920F49256FBD2377376F2385)

@@ -1,10 +1,10 @@
 # Function Flow Runtime串行队列(C++)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ffrt-concurrency-serial-queue-cpp
 
-#### 概述
+## 概述
 
 FFRT串行队列基于协程调度模型实现，提供高效的消息队列功能，支持异步通信、流量削峰、无锁化状态和资源管理以及架构解耦等多种业务场景。FFRT串行队列支持以下功能：
  
@@ -18,7 +18,7 @@ FFRT串行队列基于协程调度模型实现，提供高效的消息队列功�
  
   
 
-#### 示例：异步日志系统
+## 示例：异步日志系统
 
 举例实现一个异步日志系统，主线程将日志任务提交到队列，后台线程从队列中取出任务并写入文件。这种方式既能保证日志的顺序性，又能避免文件写入操作阻塞主线程。
  
@@ -86,10 +86,11 @@ int SerialQueueCppExec()
  
   
 
-#### 接口说明
+## 接口说明
 
 上述样例中涉及到主要的FFRT的接口包括：
   
+
 | 名称 | 描述 |
 | --- | --- |
 | class queue | 队列类。 |
@@ -102,7 +103,7 @@ int SerialQueueCppExec()
  
   
 
-#### 约束限制
+## 约束限制
 
 - **避免提交超长任务** FFRT内置进程级队列任务超时检测机制。当串行任务执行时间超过预设阈值（默认30秒）时，系统将打印和上报异常日志，并触发预设的进程超时回调函数（如已配置）。
 - **同步原语使用规范** 在提交给FFRT的任务闭包中，避免使用std::mutex、std::condition_variable和std::recursive_mutex，标准库同步原语会长时间占用FFRT Worker线程。请替换为FFRT提供的同步原语：ffrt::mutex、ffrt::condition_variable或ffrt::recursive_mutex，其用法与标准库相同。

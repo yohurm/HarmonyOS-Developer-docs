@@ -1,18 +1,19 @@
 # ArkTS API错误码
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cloudfoundation
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 以下仅介绍本模块特有错误码。若返回通用错误码，请参考 通用错误码 处理。
 
 
 
-#### 1008210001 云函数网络连接错误
+## 1008210001 云函数网络连接错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -32,9 +33,10 @@ Network connection error.
 
 
 
-#### 1008210009 云函数客户端内部错误
+## 1008210009 云函数客户端内部错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -50,16 +52,17 @@ Client internal error.
 3. 系统内部错误。
 
 **处理步骤**
-1. 请确认应用的签名方式正确。当前Cloud Foundation Kit支持[关联注册应用进行自动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section20943184413328)和[手动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section297715173233)两种方式。
+1. 请确认应用的签名方式正确。当前Cloud Foundation Kit支持[关联注册应用进行自动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing-auto#section6333421192714)和[手动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing-manual)两种方式。
 2. 请检查设备网络连接情况。
 3. 请参考[使用模拟器调试](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundation-emulator)进行排查。
 4. 若以上排查结果均无异常，请稍后重试。
 
 
 
-#### 1008211001 云函数服务器侧错误
+## 1008211001 云函数服务器侧错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -79,9 +82,10 @@ Server error.
 
 
 
-#### 1008220001 云存储网络连接错误
+## 1008220001 云存储网络连接错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -101,9 +105,10 @@ Network connection error.
 
 
 
-#### 1008220009 云存储客户端内部错误
+## 1008220009 云存储客户端内部错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -119,16 +124,17 @@ Client internal error.
 3. 系统内部错误。
 
 **处理步骤**
-1. 请确认应用的签名方式正确。当前Cloud Foundation Kit支持[关联注册应用进行自动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section20943184413328)和[手动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section297715173233)两种方式。
+1. 请确认应用的签名方式正确。当前Cloud Foundation Kit支持[关联注册应用进行自动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing-auto#section6333421192714)和[手动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing-manual)两种方式。
 2. 请检查设备网络连接情况。
 3. 请参考[使用模拟器调试](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundation-emulator)进行排查。
 4. 若以上排查结果均无异常，请稍后重试。
 
 
 
-#### 1008221001 云存储服务器侧错误
+## 1008221001 云存储服务器侧错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -148,9 +154,10 @@ Server error.
 
 
 
-#### 1008230001 云数据库网络连接错误
+## 1008230001 云数据库网络连接错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -170,9 +177,10 @@ Network connection error.
 
 
 
-#### 1008230009 云数据库客户端内部错误
+## 1008230009 云数据库客户端内部错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -188,16 +196,17 @@ Client internal error.
 3. 系统内部错误。
 
 **处理步骤**
-1. 请确认应用的签名方式正确。当前Cloud Foundation Kit支持[关联注册应用进行自动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section20943184413328)和[手动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section297715173233)两种方式。
+1. 请确认应用的签名方式正确。当前Cloud Foundation Kit支持[关联注册应用进行自动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing-auto#section6333421192714)和[手动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing-manual)两种方式。
 2. 请检查设备网络连接情况。
 3. 请参考[使用模拟器调试](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundation-emulator)进行排查。
 4. 若以上排查结果均无异常，请稍后重试。
 
 
 
-#### 1008230002 云数据库schema配置错误
+## 1008230002 云数据库schema配置错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -219,9 +228,10 @@ Schema config error.
 
 
 
-#### 1008230003 云数据库代码对象错误
+## 1008230003 云数据库代码对象错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -241,9 +251,10 @@ Natural object error.
 
 
 
-#### 1008231001 云数据库服务器侧错误
+## 1008231001 云数据库服务器侧错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -263,9 +274,10 @@ Server error.
 
 
 
-#### 1008240009 预加载客户端内部错误
+## 1008240009 预加载客户端内部错误
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 

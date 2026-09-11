@@ -1,16 +1,16 @@
 # 实现List下拉刷新和上拉加载更多
 
-更新时间：2026-07-15 01:37:37
+更新时间：2026-08-26 00:50:37
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1195
 
-#### 问题现象
+## 问题现象
 
 在List组件中，如何实现下拉刷新和上拉加载的功能？
  
  
 
-#### 背景知识
+## 背景知识
 
 - [PullToRefresh](https://ohpm.openharmony.cn/#/cn/detail/@ohos%2Fpulltorefresh)是一款OpenHarmony环境下可用的下拉刷新、上拉加载组件。支持设置内置动画的各种属性，支持设置自定义动画，支持lazyForEach的数据作为数据源。PullToRefresh使用限制：
 
@@ -33,7 +33,7 @@
  
  
 
-#### 解决方案
+## 解决方案
 
 - 场景一：通过List的滚动实现下拉刷新、上拉加载的效果。在目录entry/src/oh-package.json5文件中配置PullToRefresh依赖，本示例PullToRefresh三方库版本为2.1.2：
 
@@ -85,8 +85,8 @@ struct ListStickyHeaderOne {
       scrollBackward: NestedScrollMode.SELF_FIRST
     })
     .backgroundColor('#ffffffff')
-    // .divider({ strokeWidth: 1, color: 0x222222 })
-    .edgeEffect(EdgeEffect.None); // 必须设置列表为滑动到边缘无效果
+  <em>  // .divider({ strokeWidth: 1, color: 0x222222 })</em>
+    .edgeEffect(EdgeEffect.None); <em>// 必须设置列表为滑动到边缘无效果</em>
   }
 
   @Builder
@@ -99,10 +99,10 @@ struct ListStickyHeaderOne {
           customList: () => {
             this.getListView();
           },
-          // 可选项，下拉刷新回调
+        <em>  // 可选项，下拉刷新回调</em>
           onRefresh: () => {
             return new Promise<string>((resolve) => {
-              // 模拟网络请求操作，请求网络2秒后得到数据，通知组件，变更列表数据
+          <em>    // 模拟网络请求操作，请求网络2秒后得到数据，通知组件，变更列表数据</em>
               setTimeout(() => {
                 resolve('刷新成功');
                 let num = this.itemData.length;
@@ -110,7 +110,7 @@ struct ListStickyHeaderOne {
               }, 500);
             });
           },
-          // 可选项，上拉加载更多回调
+       <em>   // 可选项，上拉加载更多回调</em>
           onLoadMore: () => {
             return new Promise<string>((resolve) => {
               setTimeout(() => {
@@ -162,13 +162,13 @@ struct RefreshExample {
         Button('开始刷新')
           .margin(16)
           .onClick(() => {
-            // 手动开始刷新
+          <em>  // 手动开始刷新</em>
             this.isRefreshing = true;
           });
         Button('结束刷新')
           .margin(16)
           .onClick(() => {
-            // 手动停止刷新
+         <em>   // 手动停止刷新</em>
             this.isRefreshing = false;
           });
       };
@@ -190,7 +190,7 @@ struct RefreshExample {
         };
       }
       .onRefreshing(() => {
-        // 2秒后自动结束刷新
+      <em>  // 2秒后自动结束刷新</em>
         setTimeout(() => {
           this.isRefreshing = false;
         }, 2000);
@@ -249,20 +249,20 @@ struct Index {
   build() {
     Column({ space: 10 }) {
       PullToRefresh({
-        // 必传项，列表组件所绑定的数据
+    <em>    // 必传项，列表组件所绑定的数据</em>
         data: $list,
         refreshConfigurator: this.refreshConfigurator,
-        // 必传项，需绑定传入主体布局内的列表或宫格组件
+    <em>    // 必传项，需绑定传入主体布局内的列表或宫格组件</em>
         scroller: this.refreshScroller,
-        // 必传项，自定义主体布局，内部有列表或宫格组件
+   <em>     // 必传项，自定义主体布局，内部有列表或宫格组件</em>
         customList: () => {
-          // 一个用@Builder修饰过的UI方法
+       <em>   // 一个用@Builder修饰过的UI方法</em>
           this.getListView();
         },
-        // 可选项，上拉加载更多回调
+    <em>    // 可选项，上拉加载更多回调</em>
         onLoadMore: () => {
           return new Promise<string>((resolve) => {
-            // 模拟网络请求操作，请求网络2秒后得到数据，通知组件，变更列表数据
+          <em>  // 模拟网络请求操作，请求网络2秒后得到数据，通知组件，变更列表数据</em>
             setTimeout(() => {
               resolve('加载更多');
               this.list.push('a2');
@@ -380,11 +380,72 @@ struct KeyboadPage {
 }
 ```
 
+- 场景四：使用[Refresh](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-refresh)组件结合[list](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)的[onReachEnd](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list#onreachend)事件实现下拉刷新和上拉加载。不依赖三方库，使用系统内置Refresh组件处理下拉刷新，List的onReachEnd事件处理上拉加载，通过isLoading和hasMore状态变量控制加载行为，示例代码如下：
+
+  
+```text
+@Entry
+@Component
+struct RefreshLoadPage {
+  @State items: number[] = Array.from({ length: 20 }, (_: ESObject, i: number) => i);
+  @State isRefreshing: boolean = false;
+  @State isLoading: boolean = false;
+  @State hasMore: boolean = true;
+  private page: number = 1;
+
+  build() {
+    Refresh({ refreshing: $$this.isRefreshing }) {
+      List() {
+        ForEach(this.items, (item: number) => {
+          ListItem() {
+            Text(`Item ${item}`)
+              .height(56)
+              .padding({ left: 16 });
+          }
+        })
+        if (this.isLoading) {
+          ListItem() {
+            Row() {
+              LoadingProgress().width(24).height(24);
+              Text('加载中...').fontSize(14).margin({ left: 8 });
+            }.justifyContent(FlexAlign.Center).width('100%').height(50);
+          }
+        }
+      }
+      .onReachEnd(() => {
+        if (this.hasMore && !this.isLoading) {
+          this.loadMore();
+        }
+      })
+    }
+    .onRefreshing(() => {
+      this.page = 1;
+      this.items = Array.from({ length: 20 }, (_: ESObject, i: number) => i);
+      this.hasMore = true;
+      this.isRefreshing = false;
+    })
+  }
+
+  loadMore(): void {
+    this.isLoading = true;
+    setTimeout(() => {
+      let newItems = Array.from({ length: 10 }, (_: ESObject, i: number) => this.items.length + i);
+      this.items = this.items.concat(newItems);
+      this.page++;
+      this.isLoading = false;
+      if (this.page >= 5) {
+        this.hasMore = false;
+      }
+    }, 1000);
+  }
+}
+```
+
 
  
  
 
-#### 常见FAQ
+## 常见FAQ
 
 Q：页面的数据已经全部加载完成时，如何结束上拉加载的状态？
  

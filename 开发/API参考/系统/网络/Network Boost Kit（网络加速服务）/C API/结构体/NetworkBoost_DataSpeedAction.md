@@ -1,11 +1,12 @@
 # NetworkBoost_DataSpeedAction
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/network-boost-c-struct-data_speed_action
 **支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -19,16 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | NetworkBoost_DataSpeedSimpleAction dataSpeedSimpleAction | 应用发包策略的简单建议。该字段表示应用在当前网络环境下推荐使用的发包策略，用于指导应用优化数据传输行为。 |
@@ -38,13 +42,15 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### dataSpeedSimpleAction
+### dataSpeedSimpleAction
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -58,7 +64,8 @@ NetworkBoost_DataSpeedSimpleAction NetworkBoost_DataSpeedAction::dataSpeedSimple
  
   
 
-#### linkDownBandwidth
+### linkDownBandwidth
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -72,7 +79,8 @@ uint64_t NetworkBoost_DataSpeedAction::linkDownBandwidth
  
   
 
-#### linkUpBandwidth
+### linkUpBandwidth
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 

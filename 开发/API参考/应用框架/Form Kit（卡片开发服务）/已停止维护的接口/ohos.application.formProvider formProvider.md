@@ -1,9 +1,9 @@
 # @ohos.application.formProvider (formProvider)
 
-更新时间：2026-07-24 10:38:53
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-application-formprovider
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 FormProvider模块提供了卡片提供方相关接口的能力，开发者在开发卡片时，可通过该模块提供接口实现刷新卡片，设置卡片刷新时间，获取卡片信息，请求发布卡片等。
  
@@ -12,9 +12,10 @@ FormProvider模块提供了卡片提供方相关接口的能力，开发者在�
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { formProvider } from '@kit.FormKit';
@@ -22,9 +23,10 @@ import { formProvider } from '@kit.FormKit';
  
   
 
-#### formProvider.setFormNextRefreshTime
+## formProvider.setFormNextRefreshTime
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setFormNextRefreshTime(formId: string, minute: number, callback: AsyncCallback&lt;void&gt;): void
  
@@ -34,6 +36,7 @@ setFormNextRefreshTime(formId: string, minute: number, callback: AsyncCallback&l
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | formId | string | 是 | 卡片标识。 |
@@ -57,9 +60,10 @@ formProvider.setFormNextRefreshTime(formId, 5, (error: BusinessError) => {
  
   
 
-#### formProvider.setFormNextRefreshTime
+## formProvider.setFormNextRefreshTime
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setFormNextRefreshTime(formId: string, minute: number): Promise&lt;void&gt;
  
@@ -69,6 +73,7 @@ setFormNextRefreshTime(formId: string, minute: number): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | formId | string | 是 | 卡片标识。 |
@@ -77,6 +82,7 @@ setFormNextRefreshTime(formId: string, minute: number): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -98,9 +104,10 @@ formProvider.setFormNextRefreshTime(formId, 5).then(() => {
  
   
 
-#### formProvider.updateForm
+## formProvider.updateForm
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateForm(formId: string, formBindingData: formBindingData.FormBindingData, callback: AsyncCallback&lt;void&gt;): void
  
@@ -110,6 +117,7 @@ updateForm(formId: string, formBindingData: formBindingData.FormBindingData, cal
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | formId | string | 是 | 请求更新的卡片标识。 |
@@ -139,9 +147,10 @@ formProvider.updateForm(formId, obj, (error: BusinessError) => {
  
   
 
-#### formProvider.updateForm
+## formProvider.updateForm
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateForm(formId: string, formBindingData: formBindingData.FormBindingData): Promise&lt;void&gt;
  
@@ -151,6 +160,7 @@ updateForm(formId: string, formBindingData: formBindingData.FormBindingData): Pr
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | formId | string | 是 | 请求更新的卡片标识。 |
@@ -159,6 +169,7 @@ updateForm(formId: string, formBindingData: formBindingData.FormBindingData): Pr
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |

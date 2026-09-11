@@ -1,14 +1,14 @@
-# 使用@ComponentV2装饰的struct向@CustomDialog装饰的自定义弹窗传参失败
+# @ComponentV2自定义弹窗传参失败
 
-更新时间：2026-06-26 09:07:13
+更新时间：2026-08-26 00:50:37
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-771
 
-#### 问题现象
+## 问题现象
 
 在@ComponentV2组件中无法直接将数据传递给@CustomDialog组件。
  
-问题代码示例参考如下：
+问题代码如下：
  
 ```text
 @ComponentV2
@@ -19,31 +19,29 @@ export struct Page {
       selectIndex: this.selectIndex,
     }),
   })
-  // ...
+  <em>// ...</em>
 }
 ```
  
 ```text
-// 定义弹窗
+<em>// 定义弹窗</em>
 @CustomDialog
 export struct AccountSafeDialog {
   controller?: CustomDialogController;
   @Link selectIndex: number;
-  // ...
+<em>  // ...</em>
 }
 ```
  
  
 
-#### 背景知识
+## 背景知识
 
-- [@ComponentV2装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-custom-components#componentv2)为搭配V2状态变量使用的自定义组件装饰器。[@Link装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-link)装饰的变量与其父组件中的数据源共享相同的值，[自定义弹窗CustomDialog](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-custom-dialog-box)通过CustomDialogController类显示自定义弹窗，二者均仅在状态管理V1中使用。
-- 可以通过使用NavDestination的[Dialog](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navdestination#navdestinationmode枚举说明11)模式实现弹窗。此时整个NavDestination无组件占位部分默认透明显示。
-
+[@ComponentV2装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-custom-components#componentv2)为搭配V2状态变量使用的自定义组件装饰器。[@Link装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-link)装饰的变量与其父组件中的数据源共享相同的值，[自定义弹窗CustomDialog](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-custom-dialog-box)通过CustomDialogController类显示自定义弹窗，二者均仅在状态管理V1中使用。
  
  
 
-#### 问题定位
+## 问题定位
 
 运行代码报错：
  
@@ -57,15 +55,17 @@ constructor: source variable in parent/ancestor @Component must be defined. Appl
  
  
 
-#### 分析结论
+## 分析结论
 
 @ComponentV2装饰器的组件与使用@CustomDialog装饰器的自定义弹窗组件之间存在状态管理版本不兼容，导致数据无法正确传递给使用@CustomDialog装饰器的自定义弹窗组件。
  
  
 
-#### 修改建议
+## 修改建议
 
 可使用@ComponentV2的Page替换@CustomDialog，使用Navigation的Dialog模式实现弹窗。
+ 
+示例代码如下：
  1. Index.ets，通过[pushPathByName](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation#pushpathbyname11)方法将指定的NavDestination页面信息入栈。
 ```text
 @Entry
@@ -83,7 +83,7 @@ struct NavigationExample {
           .margin(20)
           .onClick(() => {
             this.pageInfos.pushPathByName('pageOne', this.selectIndex, () => {
-            }, false); // 将name指定的NavDestination页面信息入栈
+            }, false); <em>// 将name指定的NavDestination页面信息入栈</em>
           });
       };
     }.title('NavIndex');

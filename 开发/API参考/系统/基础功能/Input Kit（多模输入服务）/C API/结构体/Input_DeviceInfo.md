@@ -1,18 +1,19 @@
 # Input_DeviceInfo
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-input-input-deviceinfo
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct Input_DeviceInfo Input_DeviceInfo
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 输入设备信息，用于描述输入设备的基本信息和能力特征，包括设备类型、设备ID等属性。开发者可以通过此结构体获取和管理输入设备的详细信息，便于设备识别和配置管理。
  
@@ -24,6 +25,7 @@ typedef struct Input_DeviceInfo Input_DeviceInfo
  
 **相关接口：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_Input_CreateDeviceInfo | 创建输入设备信息的对象。通过调用OH_Input_DestroyDeviceInfo销毁输入设备信息的对象。 |

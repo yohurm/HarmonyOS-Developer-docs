@@ -1,24 +1,25 @@
 # 使用JSVM-API接口进行JSON操作
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-about-json
 
-#### 简介
+## 简介
 
 使用JSVM-API接口操作JSON数据时，JSVM模块中的相关接口可以直接处理JSON格式的数据。
  
   
 
-#### 基本概念
+## 基本概念
 
 - **JSON（JavaScript Object Notation）**：是一种常见的数据交换格式，用于前后端数据的传递、存储和交流。可以与多种编程语言进行交互，在JavaScript中被广泛应用于数据处理。
 
  
   
 
-#### 接口说明
+## 接口说明
  
+
 | 接口 | 功能说明 |
 | --- | --- |
 | OH_JSVM_JsonParse | 解析JSON字符串，并将结果存储在JSON对象中。 |
@@ -27,13 +28,13 @@
  
   
 
-#### 使用示例
+## 使用示例
 
 JSVM-API接口开发流程参考[使用JSVM-API实现JS与C/C++语言交互开发流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-process)，本文仅展示接口对应的C++相关代码。
  
   
 
-#### OH_JSVM_JsonParse & OH_JSVM_JsonStringify
+### OH_JSVM_JsonParse & OH_JSVM_JsonStringify
 
 解析JSON对象，并输出有效的解析结果。
  
@@ -87,7 +88,7 @@ static JSVM_CallbackStruct param[] = {
 
 static JSVM_CallbackStruct *method = param;
 
-JSVM_PropertyDescriptor descriptor[] = {
+static JSVM_PropertyDescriptor descriptor[] = {
     {"jsonParseNumber", nullptr, method, nullptr, nullptr, nullptr, JSVM_DEFAULT},
     {"jsonParseObject", nullptr, method + 1, nullptr, nullptr, nullptr, JSVM_DEFAULT},
 };
@@ -98,7 +99,7 @@ static const char *STR_TASK = R"JS(jsonParseNumber();jsonParseObject();)JS";
  
   
 
-#### 预期结果：
+## 预期结果：
 
 ```json
 Test JSVM jsonParseNumber: 10.555000

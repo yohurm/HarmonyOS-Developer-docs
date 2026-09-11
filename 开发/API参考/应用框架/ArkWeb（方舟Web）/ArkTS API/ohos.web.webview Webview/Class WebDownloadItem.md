@@ -1,20 +1,21 @@
 # Class (WebDownloadItem)
 
-更新时间：2026-07-09 02:26:55
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webdownloaditem
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 WebDownloadItem是ArkWeb框架中用于表示和管理单个下载任务的类。通过[WebDownloadDelegate](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webdownloaddelegate)的回调参数，应用可以获取到WebDownloadItem实例，进而对下载任务进行查询和控制，包括启动下载到指定路径、查询下载进度和状态、暂停/恢复/取消任务、序列化失败任务以便后续恢复等。
 
 > [!NOTE]
-> 本模块首批接口从API version 9开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 本Class首批接口从API version 11开始支持。 示例效果请以真机运行为准。 在下载过程中，下载的进度会通过WebDownloadDelegate通知给使用者，使用者可以通过参数WebDownloadItem来操作下载任务。 当前WebDownloadItem支持的下载文件名最长长度为255字节。
+> 本模块首批接口从API version 9开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 本Class首批接口从API version 11开始支持。 示例效果请以真机运行为准。 在下载过程中，下载的进度会通过WebDownloadDelegate通知给使用者，使用者可以通过参数WebDownloadItem来操作下载任务。 当前WebDownloadItem支持的下载文件路径（包含文件名）最长长度为255字节。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { webview } from '@kit.ArkWeb';
@@ -22,9 +23,10 @@ import { webview } from '@kit.ArkWeb';
 
 
 
-#### getGuid11+
+## getGuid11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getGuid(): string
 
@@ -33,6 +35,7 @@ getGuid(): string
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -92,9 +95,10 @@ struct WebComponent {
 
 
 
-#### getCurrentSpeed11+
+## getCurrentSpeed11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCurrentSpeed(): number
 
@@ -104,9 +108,10 @@ getCurrentSpeed(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| number | 下载的速度（字节每秒）。 |
+| number | 下载的速度，单位：字节每秒。 |
 
 
 **示例：**
@@ -162,9 +167,10 @@ struct WebComponent {
 
 
 
-#### getPercentComplete11+
+## getPercentComplete11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPercentComplete(): number
 
@@ -173,6 +179,7 @@ getPercentComplete(): number
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -232,9 +239,10 @@ struct WebComponent {
 
 
 
-#### getTotalBytes11+
+## getTotalBytes11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTotalBytes(): number
 
@@ -243,6 +251,7 @@ getTotalBytes(): number
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -302,9 +311,10 @@ struct WebComponent {
 
 
 
-#### getState11+
+## getState11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getState(): WebDownloadState
 
@@ -313,6 +323,7 @@ getState(): WebDownloadState
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -372,9 +383,10 @@ struct WebComponent {
 
 
 
-#### getLastErrorCode11+
+## getLastErrorCode11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLastErrorCode(): WebDownloadErrorCode
 
@@ -383,6 +395,7 @@ getLastErrorCode(): WebDownloadErrorCode
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -443,9 +456,10 @@ struct WebComponent {
 
 
 
-#### getMethod11+
+## getMethod11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMethod(): string
 
@@ -454,6 +468,7 @@ getMethod(): string
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -513,9 +528,10 @@ struct WebComponent {
 
 
 
-#### getMimeType11+
+## getMimeType11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMimeType(): string
 
@@ -524,6 +540,7 @@ getMimeType(): string
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -583,9 +600,10 @@ struct WebComponent {
 
 
 
-#### getUrl11+
+## getUrl11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUrl(): string
 
@@ -594,6 +612,7 @@ getUrl(): string
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -653,9 +672,10 @@ struct WebComponent {
 
 
 
-#### getSuggestedFileName11+
+## getSuggestedFileName11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSuggestedFileName(): string
 
@@ -664,6 +684,7 @@ getSuggestedFileName(): string
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -723,9 +744,10 @@ struct WebComponent {
 
 
 
-#### getReceivedBytes11+
+## getReceivedBytes11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getReceivedBytes(): number
 
@@ -734,6 +756,7 @@ getReceivedBytes(): number
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -794,9 +817,10 @@ struct WebComponent {
 
 
 
-#### getFullPath11+
+## getFullPath11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFullPath(): string
 
@@ -805,6 +829,7 @@ getFullPath(): string
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -865,9 +890,10 @@ struct WebComponent {
 
 
 
-#### getOriginalUrl24+
+## getOriginalUrl24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOriginalUrl(): string
 
@@ -878,6 +904,7 @@ getOriginalUrl(): string
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -937,9 +964,10 @@ struct WebComponent {
 
 
 
-#### getReferrerUrl24+
+## getReferrerUrl24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getReferrerUrl(): string
 
@@ -950,6 +978,7 @@ getReferrerUrl(): string
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1009,9 +1038,10 @@ struct WebComponent {
 
 
 
-#### serialize11+
+## serialize11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 serialize(): Uint8Array
 
@@ -1020,6 +1050,7 @@ serialize(): Uint8Array
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1082,9 +1113,10 @@ struct WebComponent {
 
 
 
-#### deserialize11+
+## deserialize11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static deserialize(serializedData: Uint8Array): WebDownloadItem
 
@@ -1094,12 +1126,14 @@ static deserialize(serializedData: Uint8Array): WebDownloadItem
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| serializedData | Uint8Array | 是 | 序列化后的下载。 |
+| serializedData | Uint8Array | 是 | 序列化后的字节数组。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1109,6 +1143,7 @@ static deserialize(serializedData: Uint8Array): WebDownloadItem
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1179,9 +1214,10 @@ struct WebComponent {
 
 
 
-#### start11+
+## start11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 start(downloadPath: string): void
 
@@ -1195,6 +1231,7 @@ start(downloadPath: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | downloadPath | string | 是 | 下载文件的路径（包含文件名），路径长度与文件管理中长度一致，最长255字节。 |
@@ -1203,6 +1240,7 @@ start(downloadPath: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1273,13 +1311,14 @@ struct WebComponent {
 
 
 
-#### cancel11+
+## cancel11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancel(): void
 
-取消一个正在下载的下载任务。
+取消下载任务。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -1357,19 +1396,21 @@ struct WebComponent {
 
 
 
-#### pause11+
+## pause11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pause(): void
 
-暂停一个正在下载的下载任务。
+暂停下载任务。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1458,9 +1499,10 @@ struct WebComponent {
 
 
 
-#### resume11+
+## resume11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 resume(): void
 
@@ -1471,6 +1513,7 @@ resume(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

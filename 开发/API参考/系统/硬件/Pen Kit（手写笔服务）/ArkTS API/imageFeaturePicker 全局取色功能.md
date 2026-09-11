@@ -1,6 +1,6 @@
 # imageFeaturePicker (全局取色功能)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/pen-imagefeaturepicker
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -10,7 +10,8 @@
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -20,7 +21,8 @@ import { imageFeaturePicker } from '@kit.Penkit';
  
   
 
-#### PickedColorInfo
+## PickedColorInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -32,6 +34,7 @@ import { imageFeaturePicker } from '@kit.Penkit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | color | common2D.Color | 否 | 否 | 色值。 |
@@ -42,7 +45,8 @@ import { imageFeaturePicker } from '@kit.Penkit';
  
   
 
-#### pickForResult
+## pickForResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -58,6 +62,7 @@ pickForResult(x?: number, y?: number): Promise&lt;PickedColorInfo&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | x | number | 否 | 取色器初始位置的x轴坐标。取值范围：0~屏幕的实际宽度，取值超出上限取屏幕的实际宽度，单位：px，默认值：100。 |
@@ -66,6 +71,7 @@ pickForResult(x?: number, y?: number): Promise&lt;PickedColorInfo&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;PickedColorInfo&gt; | Promise对象，返回取色执行的结果。该Promise对象用于获取全局取色操作的结果，当取色成功时，会返回一个包含颜色信息的对象。 |
@@ -75,6 +81,7 @@ pickForResult(x?: number, y?: number): Promise&lt;PickedColorInfo&gt;
  
 以下错误码的详细介绍请参见[ArkTS API 错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pen)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
@@ -103,7 +110,8 @@ try {
  
   
 
-#### pickForResult
+## pickForResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -119,6 +127,7 @@ pickForResult(x?: number, y?: number, showValue?: boolean): Promise&lt;PickedCol
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | x | number | 否 | 取色器初始位置的x轴坐标。取值范围：0~屏幕的实际宽度，取值超出上限取屏幕的实际宽度，单位：px，默认值：100。 |
@@ -128,6 +137,7 @@ pickForResult(x?: number, y?: number, showValue?: boolean): Promise&lt;PickedCol
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;PickedColorInfo&gt; | Promise对象，返回取色执行的结果。该Promise对象用于获取全局取色操作的结果，当取色成功时，会返回一个包含颜色信息的对象。 |
@@ -137,6 +147,7 @@ pickForResult(x?: number, y?: number, showValue?: boolean): Promise&lt;PickedCol
  
 以下错误码的详细介绍请参见[ArkTS API 错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pen)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
@@ -165,7 +176,8 @@ try {
  
   
 
-#### pickHdrForResult
+## pickHdrForResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -181,6 +193,7 @@ pickHdrForResult(x?: number, y?: number): Promise&lt;PickedColorInfo&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | x | number | 否 | 取色器初始位置的x轴坐标。取值范围：0~屏幕的实际宽度，取值超出上限取屏幕的实际宽度，单位：px，默认值：100。 |
@@ -189,6 +202,7 @@ pickHdrForResult(x?: number, y?: number): Promise&lt;PickedColorInfo&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;PickedColorInfo&gt; | Promise对象，返回取色执行的结果。该Promise对象用于获取全局取色操作的结果，当取色成功时，会返回一个包含颜色信息的对象。 |
@@ -198,6 +212,7 @@ pickHdrForResult(x?: number, y?: number): Promise&lt;PickedColorInfo&gt;
  
 以下错误码的详细介绍请参见[ArkTS API 错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pen)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. The pickHdrForResult function cannot work properly due to limited device capabilities. |
@@ -225,7 +240,8 @@ try {
  
   
 
-#### pickHdrForResult
+## pickHdrForResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -241,6 +257,7 @@ pickHdrForResult(x?: number, y?: number, showValue?: boolean): Promise&lt;Picked
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | x | number | 否 | 取色器初始位置的x轴坐标。取值范围：0~屏幕的实际宽度，取值超出上限取屏幕的实际宽度，单位：px，默认值：100。 |
@@ -250,6 +267,7 @@ pickHdrForResult(x?: number, y?: number, showValue?: boolean): Promise&lt;Picked
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;PickedColorInfo&gt; | Promise对象，返回取色执行的结果。该Promise对象用于获取全局取色操作的结果，当取色成功时，会返回一个包含颜色信息的对象。 |
@@ -259,6 +277,7 @@ pickHdrForResult(x?: number, y?: number, showValue?: boolean): Promise&lt;Picked
  
 以下错误码的详细介绍请参见[ArkTS API 错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pen)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. The pickHdrForResult function cannot work properly due to limited device capabilities. |

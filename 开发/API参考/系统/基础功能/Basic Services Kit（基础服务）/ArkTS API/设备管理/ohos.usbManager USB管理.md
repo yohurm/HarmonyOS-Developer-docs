@@ -1,18 +1,19 @@
 # @ohos.usbManager (USB管理)
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-usbmanager
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-本模块主要提供管理USB设备的相关功能，包括主机端的查询USB设备列表、批量数据传输、控制命令传输、权限控制等；设备端的端口管理、功能切换及查询等。适用于需要与USB外设进行数据交互、管理USB设备权限、动态切换USB设备模式等场景。
+本模块主要提供管理USB设备的相关功能，包括主机端的查询USB设备列表、批量数据传输、控制命令传输、权限控制等；设备端的端口管理、功能切换及查询等。适用于需要与USB设备进行数据交互、管理USB设备权限、动态切换USB设备模式等场景。
 
 > [!NOTE]
 > 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -22,7 +23,8 @@ import { usbManager } from '@kit.BasicServicesKit';
 
 
 
-#### 使用说明
+## 使用说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -35,21 +37,16 @@ import { usbManager } from '@kit.BasicServicesKit';
 
 **在使用接口后：**
 
-调用[usbManager.closePipe](#usbmanagerclosepipe)关闭设备消息控制通道。
+调用[usbManager.closePipe](#usbmanagerclosepipe)关闭设备连接通道。
 
-```text
-graph LR
-    A[开始] --> B[调用getDevices获取设备列表]
-    B --> C[调用requestRight获取权限]
-    C --> D[调用connectDevice获取USBDevicePipe]
-    D --> E[调用相关接口进行操作]
-    E --> F[调用closePipe关闭通道]
-    F --> G[结束]
-```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/7hq09RVLT66jp4k2M5UF4Q/zh-cn_image_0000002717773528.png?HW-CC-KV=V1&HW-CC-Date=20260911T072946Z&HW-CC-Expire=86400&HW-CC-Sign=9CD98190FDBDFF711D0F9107F7AA229F701A46DED12BACF0B66ABC03CC3BE1A7)
 
 
 
-#### usbManager.getDevices
+
+## usbManager.getDevices
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -65,6 +62,7 @@ getDevices(): Array<Readonly&lt;USBDevice&gt;>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array<Readonly&lt;USBDevice&gt;> | 设备信息列表。 |
@@ -74,9 +72,10 @@ getDevices(): Array<Readonly&lt;USBDevice&gt;>
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | Capability not supported. [since 18] |
+| 801 | Capability not supported. 适用版本：18+ |
 
 
 **示例：**
@@ -139,19 +138,21 @@ console.info(`devicesList = ${devicesList}`);
 
 
 
-#### usbManager.connectDevice
+## usbManager.connectDevice
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 connectDevice(device: USBDevice): Readonly&lt;USBDevicePipe&gt;
 
-根据getDevices()返回的设备信息打开USB设备，调用成功后建立设备连接通道，可以进行后续的数据传输和设备控制操作。如果USB服务异常，会返回undefined，注意需要对接口返回值做判空处理。
+根据getDevices()返回的设备信息打开USB设备，调用成功后建立设备连接通道，可以进行后续的数据传输和设备控制操作。使用完后需要调用[usbManager.closePipe](#usbmanagerclosepipe)关闭设备连接通道。如果USB服务异常，会返回undefined，注意需要对接口返回值做判空处理。
 1. 调用[usbManager.getDevices](#usbmanagergetdevices)获取设备信息以及USBDevice;
 2. 调用[usbManager.requestRight](#usbmanagerrequestright)请求使用该设备的权限。
 
 **系统能力：** SystemCapability.USB.USBManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -160,19 +161,21 @@ connectDevice(device: USBDevice): Readonly&lt;USBDevicePipe&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Readonly&lt;USBDevicePipe&gt; | USB设备消息传输通道对象，用于后续的数据传输和设备控制操作。 |
+| Readonly&lt;USBDevicePipe&gt; | USB设备连接通道对象，用于后续的数据传输和设备控制操作。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[USB服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-usb)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
-| 801 | Capability not supported. [since 18] |
+| 801 | Capability not supported. 适用版本：18+ |
 | 14400001 | Access right denied. Call requestRight to get the USBDevicePipe access right first. |
 
 
@@ -192,19 +195,20 @@ async function connectDevice() {
     console.error(`request right failed`);
     return;
   }
-  let devicepipe: usbManager.USBDevicePipe = usbManager.connectDevice(device);
-  if (devicepipe == undefined) {
+  let devicePipe: usbManager.USBDevicePipe = usbManager.connectDevice(device);
+  if (devicePipe == undefined) {
     console.error(`connect device failed`);
     return;
   }
-  console.info(`devicepipe = ${devicepipe}`);
-  usbManager.closePipe(devicepipe);
+  console.info(`devicePipe = ${devicePipe}`);
+  usbManager.closePipe(devicePipe);
 }
 ```
 
 
 
-#### usbManager.hasRight
+## usbManager.hasRight
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -212,11 +216,12 @@ hasRight(deviceName: string): boolean
 
 判断是否有权访问该设备。
 
-如果“使用者”（如各种App或系统）有权访问设备则返回true；无权访问设备则返回false。
+如果应用有权访问设备则返回true；无权访问设备则返回false。
 
 **系统能力：** SystemCapability.USB.USBManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -224,6 +229,7 @@ hasRight(deviceName: string): boolean
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -234,10 +240,11 @@ hasRight(deviceName: string): boolean
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
-| 801 | Capability not supported. [since 18] |
+| 801 | Capability not supported. 适用版本：18+ |
 
 
 **示例：**
@@ -260,17 +267,19 @@ async function hasRight(): Promise<boolean> {
 
 
 
-#### usbManager.requestRight
+## usbManager.requestRight
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 requestRight(deviceName: string): Promise&lt;boolean&gt;
 
-请求应用访问设备的临时权限。使用Promise异步回调。系统应用默认拥有访问设备权限，无需调用此接口申请。
+请求应用访问设备的临时权限。使用Promise异步回调返回结果。系统应用默认拥有访问设备权限，无需调用此接口。
 
 **系统能力：** SystemCapability.USB.USBManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -278,6 +287,7 @@ requestRight(deviceName: string): Promise&lt;boolean&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -288,10 +298,11 @@ requestRight(deviceName: string): Promise&lt;boolean&gt;
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
-| 801 | Capability not supported. [since 18] |
+| 801 | Capability not supported. 适用版本：18+ |
 
 
 **示例：**
@@ -316,17 +327,19 @@ function requestRight() {
 
 
 
-#### usbManager.removeRight
+## usbManager.removeRight
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 removeRight(deviceName: string): boolean
 
-移除软件包访问设备的权限。系统应用默认拥有访问设备权限，调用此接口不会产生影响。
+移除应用访问设备的权限。系统应用默认拥有访问设备权限，调用此接口不会产生影响。
 
 **系统能力：** SystemCapability.USB.USBManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -334,6 +347,7 @@ removeRight(deviceName: string): boolean
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -344,10 +358,11 @@ removeRight(deviceName: string): boolean
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
-| 801 | Capability not supported. [since 18] |
+| 801 | Capability not supported. 适用版本：18+ |
 
 
 **示例：**
@@ -371,23 +386,25 @@ function removeRight(): boolean {
 
 
 
-#### usbManager.claimInterface
+## usbManager.claimInterface
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 claimInterface(pipe: USBDevicePipe, iface: USBInterface, force ?: boolean): number
 
-声明对USB设备某个接口的控制权。调用成功后应用程序获得该接口的独占控制权可以进行数据传输等操作，其他程序无法访问该接口。使用完后需调用[releaseInterface](#usbmanagerreleaseinterface)释放该接口的控制权。
+声明对USB设备某个接口的控制权。调用成功后应用获得该接口的独占控制权可以进行数据传输等操作，其他程序无法访问该接口。使用完后需调用[releaseInterface](#usbmanagerreleaseinterface)释放该接口的控制权。
 
 **使用场景**：在需要进行USB数据传输时，需要先声明接口控制权以独占访问该接口。例如，在USB存储设备读写、USB摄像头数据采集、USB串口通信等场景中，都需要先声明接口控制权。
 
 > [!NOTE]
-> 在USB编程中，claim interface是一个常见操作，指的是应用程序请求操作系统将某个USB接口从内核驱动中释放并交由用户空间程序控制。 下面用到的claim通信接口都表示claim interface操作。
+> 在USB编程中，claim interface是一个常见操作，指的是应用请求操作系统将某个USB接口从内核驱动中释放并交由用户空间程序控制。 下面用到的claim通信接口都表示claim interface操作。
 
 
 **系统能力：** SystemCapability.USB.USBManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -398,6 +415,7 @@ claimInterface(pipe: USBDevicePipe, iface: USBInterface, force ?: boolean): numb
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | claim通信接口成功返回0；claim通信接口失败返回其他错误码如下： - 88080389：服务未启动，可能原因：1.无设备插入；2.服务异常退出。 - 88080486：服务初始化中，请稍后重试。 - 88080488：无设备访问权限，请先调用requestRight接口申请授权。 - -1：驱动异常。可能原因：1、设备连接不稳定或已断开；2、USB驱动加载失败；3、内核USB模块异常。 |
@@ -407,10 +425,11 @@ claimInterface(pipe: USBDevicePipe, iface: USBInterface, force ?: boolean): numb
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
-| 801 | Capability not supported. [since 18] |
+| 801 | Capability not supported. 适用版本：18+ |
 
 
 **示例：**
@@ -429,27 +448,29 @@ async function claimInterface() {
     console.error(`request right failed`);
     return;
   }
-  let devicepipe: usbManager.USBDevicePipe = usbManager.connectDevice(device);
-  if (devicepipe == undefined) {
+  let devicePipe: usbManager.USBDevicePipe = usbManager.connectDevice(device);
+  if (devicePipe == undefined) {
     console.error(`connect device failed`);
     return;
   }
   let interfaces: usbManager.USBInterface = device.configs?.[0]?.interfaces?.[0];
-  let ret: number = usbManager.claimInterface(devicepipe, interfaces);
+  let ret: number = usbManager.claimInterface(devicePipe, interfaces);
   if (ret !== 0) {
     console.error(`claim interface failed`);
+    usbManager.closePipe(devicePipe);
     return;
   }
   console.info(`claimInterface = ${ret}`);
-  ret = usbManager.releaseInterface(devicepipe, interfaces);
+  ret = usbManager.releaseInterface(devicePipe, interfaces);
   console.info(`releaseInterface = ${ret}`);
-  usbManager.closePipe(devicepipe);
+  usbManager.closePipe(devicePipe);
 }
 ```
 
 
 
-#### usbManager.releaseInterface
+## usbManager.releaseInterface
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -465,6 +486,7 @@ releaseInterface(pipe: USBDevicePipe, iface: USBInterface): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pipe | USBDevicePipe | 是 | 用于确定总线地址和设备地址，需要调用connectDevice获取。 |
@@ -472,6 +494,7 @@ releaseInterface(pipe: USBDevicePipe, iface: USBInterface): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -482,10 +505,11 @@ releaseInterface(pipe: USBDevicePipe, iface: USBInterface): number
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
-| 801 | Capability not supported. [since 18] |
+| 801 | Capability not supported. 适用版本：18+ |
 
 
 **示例：**
@@ -504,32 +528,34 @@ async function releaseInterface() {
     console.error(`request right failed`);
     return;
   }
-  let devicepipe: usbManager.USBDevicePipe = usbManager.connectDevice(device);
-  if (devicepipe == undefined) {
+  let devicePipe: usbManager.USBDevicePipe = usbManager.connectDevice(device);
+  if (devicePipe == undefined) {
     console.error(`connect device failed`);
     return;
   }
   let interfaces: usbManager.USBInterface = device.configs?.[0]?.interfaces?.[0];
-  let ret: number = usbManager.claimInterface(devicepipe, interfaces);
+  let ret: number = usbManager.claimInterface(devicePipe, interfaces);
   if (ret !== 0) {
     console.error(`claim interface failed`);
+    usbManager.closePipe(devicePipe);
     return;
   }
-  ret = usbManager.releaseInterface(devicepipe, interfaces);
+  ret = usbManager.releaseInterface(devicePipe, interfaces);
   console.info(`releaseInterface = ${ret}`);
-  usbManager.closePipe(devicepipe);
+  usbManager.closePipe(devicePipe);
 }
 ```
 
 
 
-#### usbManager.setConfiguration
+## usbManager.setConfiguration
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 setConfiguration(pipe: USBDevicePipe, config: USBConfiguration): number
 
-设置设备配置。调用成功后设备的配置将被切换为指定的配置，后续的数据传输和设备操作将基于新配置进行。
+设置设备配置。适用于多功能USB设备需要切换工作模式的场景，如打印机+扫描仪组合设备切换为打印模式或扫描模式、设备从低功耗配置切换到高功耗配置以启用全部功能等。调用成功后设备的配置将被切换为指定的配置，后续的数据传输和设备操作将基于新配置进行。
 
 > [!NOTE]
 > 在调用该接口前需要调用 usbManager.claimInterface claim通信接口。
@@ -539,6 +565,7 @@ setConfiguration(pipe: USBDevicePipe, config: USBConfiguration): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pipe | USBDevicePipe | 是 | 用于确定总线地址和设备地址，需要调用connectDevice获取。 |
@@ -547,19 +574,21 @@ setConfiguration(pipe: USBDevicePipe, config: USBConfiguration): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| number | 返回设置设备配置操作的结果。设置设备配置成功返回0；设置设备配置失败返回其他错误码如下： - 88080389：服务未启动，可能原因：1.无设备插入；2.服务异常退出。 - 88080486：服务初始化中，请稍后重试。 - 88080488：无设备访问权限，请先调用requestRight接口申请授权。 - -1：驱动异常。可能原因：1、设备连接不稳定或已断开；2、USB驱动加载失败；3、内核USB模块异常。 - -17：I/O失败。 |
+| number | 返回设置设备配置操作的结果。设置设备配置成功返回0；设置设备配置失败返回其他错误码如下： - 88080389：服务未启动，可能原因：1.无设备插入；2.服务异常退出。 - 88080486：服务初始化中，请稍后重试。 - 88080488：无设备访问权限，请先调用requestRight接口申请授权。 - -1：驱动异常。可能原因：1、设备连接不稳定或已断开；2、USB驱动加载失败；3、内核USB模块异常。 - -17：I/O失败。可能原因：1.设备通信异常导致I/O操作失败；2.数据传输过程中发生中断。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
-| 801 | Capability not supported. [since 18] |
+| 801 | Capability not supported. 适用版本：18+ |
 
 
 **示例：**
@@ -578,21 +607,22 @@ async function setConfiguration() {
     console.error(`request right failed`);
     return;
   }
-  let devicepipe: usbManager.USBDevicePipe = usbManager.connectDevice(device);
-  if (devicepipe == undefined) {
+  let devicePipe: usbManager.USBDevicePipe = usbManager.connectDevice(device);
+  if (devicePipe == undefined) {
     console.error(`connect device failed`);
     return;
   }
   let config: usbManager.USBConfiguration = device.configs?.[0];
-  let ret: number = usbManager.setConfiguration(devicepipe, config);
+  let ret: number = usbManager.setConfiguration(devicePipe, config);
   console.info(`setConfiguration = ${ret}`);
-  usbManager.closePipe(devicepipe);
+  usbManager.closePipe(devicePipe);
 }
 ```
 
 
 
-#### usbManager.setInterface
+## usbManager.setInterface
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -608,6 +638,7 @@ setInterface(pipe: USBDevicePipe, iface: USBInterface): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pipe | USBDevicePipe | 是 | 用于确定总线地址和设备地址，需要调用connectDevice获取。 |
@@ -615,6 +646,7 @@ setInterface(pipe: USBDevicePipe, iface: USBInterface): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -625,10 +657,11 @@ setInterface(pipe: USBDevicePipe, iface: USBInterface): number
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
-| 801 | Capability not supported. [since 18] |
+| 801 | Capability not supported. 适用版本：18+ |
 
 
 **示例：**
@@ -647,26 +680,30 @@ async function setInterface() {
     console.error(`request right failed`);
     return;
   }
-  let devicepipe: usbManager.USBDevicePipe = usbManager.connectDevice(device);
-  if (devicepipe == undefined) {
+  let devicePipe: usbManager.USBDevicePipe = usbManager.connectDevice(device);
+  if (devicePipe == undefined) {
     console.error(`connect device failed`);
     return;
   }
   let interfaces: usbManager.USBInterface = device.configs?.[0]?.interfaces?.[0];
-  let ret: number = usbManager.claimInterface(devicepipe, interfaces);
+  let ret: number = usbManager.claimInterface(devicePipe, interfaces);
   if (ret !== 0) {
     console.error(`claim interface failed`);
+    usbManager.closePipe(devicePipe);
     return;
   }
-  ret = usbManager.setInterface(devicepipe, interfaces);
+  ret = usbManager.setInterface(devicePipe, interfaces);
   console.info(`setInterface = ${ret}`);
-  usbManager.closePipe(devicepipe);
+  ret = usbManager.releaseInterface(devicePipe, interfaces);
+  console.info(`releaseInterface = ${ret}`);
+  usbManager.closePipe(devicePipe);
 }
 ```
 
 
 
-#### usbManager.getRawDescriptor
+## usbManager.getRawDescriptor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -678,12 +715,14 @@ getRawDescriptor(pipe: USBDevicePipe): Uint8Array
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pipe | USBDevicePipe | 是 | 用于确定总线地址和设备地址，需要调用connectDevice获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -694,10 +733,11 @@ getRawDescriptor(pipe: USBDevicePipe): Uint8Array
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
-| 801 | Capability not supported. [since 18] |
+| 801 | Capability not supported. 适用版本：18+ |
 
 
 **示例：**
@@ -715,19 +755,20 @@ async function getRawDescriptor() {
     console.error(`request right failed`);
     return;
   }
-  let devicepipe: usbManager.USBDevicePipe = usbManager.connectDevice(devicesList?.[0]);
-  if (devicepipe == undefined) {
+  let devicePipe: usbManager.USBDevicePipe = usbManager.connectDevice(devicesList?.[0]);
+  if (devicePipe == undefined) {
     console.error(`connect device failed`);
     return;
   }
-  usbManager.getRawDescriptor(devicepipe);
-  usbManager.closePipe(devicepipe);
+  usbManager.getRawDescriptor(devicePipe);
+  usbManager.closePipe(devicePipe);
 }
 ```
 
 
 
-#### usbManager.getFileDescriptor
+## usbManager.getFileDescriptor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -739,12 +780,14 @@ getFileDescriptor(pipe: USBDevicePipe): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pipe | USBDevicePipe | 是 | 用于确定总线地址和设备地址，需要调用connectDevice获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -755,10 +798,11 @@ getFileDescriptor(pipe: USBDevicePipe): number
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
-| 801 | Capability not supported. [since 18] |
+| 801 | Capability not supported. 适用版本：18+ |
 
 
 **示例：**
@@ -776,40 +820,43 @@ async function getFileDescriptor() {
     console.error(`request right failed`);
     return;
   }
-  let devicepipe: usbManager.USBDevicePipe = usbManager.connectDevice(devicesList?.[0]);
-  if (devicepipe == undefined) {
+  let devicePipe: usbManager.USBDevicePipe = usbManager.connectDevice(devicesList?.[0]);
+  if (devicePipe == undefined) {
     console.error(`connect device failed`);
     return;
   }
-  let ret: number = usbManager.getFileDescriptor(devicepipe);
+  let ret: number = usbManager.getFileDescriptor(devicePipe);
   console.info(`getFileDescriptor = ${ret}`);
-  let closeRet: number = usbManager.closePipe(devicepipe);
+  let closeRet: number = usbManager.closePipe(devicePipe);
   console.info(`closePipe = ${closeRet}`);
 }
 ```
 
 
 
-#### usbManager.usbControlTransfer12+
+## usbManager.usbControlTransfer12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 usbControlTransfer(pipe: USBDevicePipe, requestparam: USBDeviceRequestParams, timeout ?: number): Promise&lt;number&gt;
 
-控制传输。使用Promise异步回调。
+控制传输。调用成功后完成控制命令的传输，返回传输或接收到的数据块大小。适用于需要与USB设备进行控制命令交互的场景，如获取设备描述符、设置设备地址、发送厂商自定义命令、配置HID设备特性等。使用Promise异步回调。
 
 **系统能力：** SystemCapability.USB.USBManager
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pipe | USBDevicePipe | 是 | 用于确定总线地址和设备地址，需要调用connectDevice获取。 |
 | requestparam | USBDeviceRequestParams | 是 | 控制传输参数，包含bmRequestType、bRequest、wValue、wIndex、wLength、data等字段，参数传参类型请参考USB协议规范，根据具体设备和控制请求类型设置。 |
-| timeout | number | 否 | 超时时间（单位：毫秒），可选参数，指定时间内等待控制传输完成，若在指定时间内传输完成则正常返回，否则返回超时；默认值为0，表示无限等待直到传输完成。用户按需选择。取值范围：[0, +∞)。 |
+| timeout | number | 否 | 超时时间（单位：毫秒），可选参数，指定时间内等待控制传输完成，若在指定时间内传输完成则正常返回，否则返回超时；默认值为0，表示无限等待直到传输完成。传入负数时抛出参数错误异常。用户按需选择。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -820,10 +867,11 @@ usbControlTransfer(pipe: USBDevicePipe, requestparam: USBDeviceRequestParams, ti
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
-| 801 | Capability not supported. [since 18] |
+| 801 | Capability not supported. 适用版本：18+ |
 
 
 **示例：**
@@ -831,7 +879,7 @@ usbControlTransfer(pipe: USBDevicePipe, requestparam: USBDeviceRequestParams, ti
 ```text
 import {BusinessError} from '@kit.BasicServicesKit';
 // 控制传输参数：根据USB协议规范、设备描述符或设备规格文档设置各字段值
-// bmRequestType：请求控制类型，常见取值0x00(标准设备请求)、0x01(类请求)、0x02(厂商请求)
+// bmRequestType：请求控制类型，常见取值示例：0x00（标准请求，主机向设备）、0x20（类请求，主机向设备）、0x40（厂商请求，主机向设备）、0x80（标准请求，设备向主机）
 // bRequest：具体控制请求命令（如获取描述符、设置地址等）
 // wValue：请求参数内容
 // wIndex：请求参数的索引值
@@ -858,24 +906,25 @@ async function usbControlTransfer() {
     console.error(`request right failed`);
     return;
   }
-  let devicepipe: usbManager.USBDevicePipe = usbManager.connectDevice(devicesList?.[0]);
-  if (devicepipe == undefined) {
+  let devicePipe: usbManager.USBDevicePipe = usbManager.connectDevice(devicesList?.[0]);
+  if (devicePipe == undefined) {
     console.error(`connect device failed`);
     return;
   }
-  usbManager.usbControlTransfer(devicepipe, param).then((ret: number) => {
+  usbManager.usbControlTransfer(devicePipe, param).then((ret: number) => {
     console.info(`usbControlTransfer = ${ret}`);
   }).catch((error: BusinessError) => {
     console.error(`usbControlTransfer failed: ${error.code}, message: ${error.message}`);
   }).finally(() => {
-    usbManager.closePipe(devicepipe);
+    usbManager.closePipe(devicePipe);
   });
 }
 ```
 
 
 
-#### usbManager.bulkTransfer
+## usbManager.bulkTransfer
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -891,15 +940,17 @@ bulkTransfer(pipe: USBDevicePipe, endpoint: USBEndpoint, buffer: Uint8Array, tim
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pipe | USBDevicePipe | 是 | 用于确定总线地址和设备地址，需要调用connectDevice获取。 |
-| endpoint | USBEndpoint | 是 | 用于确定传输的端口，需要调用getDevices获取设备信息列表。通过endpoint的address确定端点地址，direction用于确定端点的传输方向（0表示输出，128表示输入），interfaceId用于确定所属接口，当前其他属性不做处理。 |
+| endpoint | USBEndpoint | 是 | 用于确定传输的端点，需要调用getDevices获取设备信息列表。通过endpoint的address确定端点地址，direction用于确定端点的传输方向（0表示输出，128表示输入），interfaceId用于确定所属接口，当前其他属性不做处理。 |
 | buffer | Uint8Array | 是 | 用于写入或读取数据的缓冲区，数组长度即为缓冲区大小。用于批量传输时写入或读取数据。 |
-| timeout | number | 否 | 超时时间（单位：毫秒），可选参数，指定时间内等待批量传输完成，若在指定时间内传输完成则正常返回，否则返回超时；默认值为0，表示无限等待直到传输完成。用户按需选择。取值范围：[0, +∞)。 |
+| timeout | number | 否 | 超时时间（单位：毫秒），可选参数，指定时间内等待批量传输完成，若在指定时间内传输完成则正常返回，否则返回超时；默认值为0，表示无限等待直到传输完成。传入负数时抛出参数错误异常。用户按需选择。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -910,10 +961,11 @@ bulkTransfer(pipe: USBDevicePipe, endpoint: USBEndpoint, buffer: Uint8Array, tim
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
-| 801 | Capability not supported. [since 18] |
+| 801 | Capability not supported. 适用版本：18+ |
 
 
 **示例：**
@@ -925,8 +977,8 @@ bulkTransfer(pipe: USBDevicePipe, endpoint: USBEndpoint, buffer: Uint8Array, tim
 ```text
 import {BusinessError} from '@kit.BasicServicesKit';
 // usbManager.getDevices 接口返回数据集合，取其中一个设备对象，并获取权限。
-// 把获取到的设备对象作为参数传入usbManager.connectDevice;当usbManager.connectDevice接口成功返回之后；
-// 才可以调用第三个接口usbManager.claimInterface.当usbManager.claimInterface 调用成功以后，再调用该接口。
+// 把获取到的设备对象作为参数传入usbManager.connectDevice；当usbManager.connectDevice接口成功返回之后；
+// 才可以调用第三个接口usbManager.claimInterface。当usbManager.claimInterface 调用成功以后，再调用该接口。
 async function bulkTransfer() {
   let devicesList: Array<usbManager.USBDevice> = usbManager.getDevices();
   if (!devicesList || devicesList.length == 0) {
@@ -940,8 +992,8 @@ async function bulkTransfer() {
     console.error(`request right fail`);
     return;
   }
-  let devicepipe: usbManager.USBDevicePipe = usbManager.connectDevice(device);
-  if (devicepipe == undefined) {
+  let devicePipe: usbManager.USBDevicePipe = usbManager.connectDevice(device);
+  if (devicePipe == undefined) {
     console.error(`connect device failed`);
     return;
   }
@@ -949,16 +1001,18 @@ async function bulkTransfer() {
     if (device.configs?.[0]?.interfaces?.[i]?.endpoints?.[0]?.attributes == 2) {
       let endpoint: usbManager.USBEndpoint = device.configs?.[0]?.interfaces?.[i]?.endpoints?.[0];
       let interfaces: usbManager.USBInterface = device.configs?.[0]?.interfaces?.[i];
-      let ret: number = usbManager.claimInterface(devicepipe, interfaces);
+      let ret: number = usbManager.claimInterface(devicePipe, interfaces);
       if (ret !== 0) {
         console.error(`claim interface failed`);
         continue;
       }
-      let buffer =  new Uint8Array(128);
-      usbManager.bulkTransfer(devicepipe, endpoint, buffer).then((ret: number) => {
+      let buffer = new Uint8Array(128);
+      usbManager.bulkTransfer(devicePipe, endpoint, buffer).then((ret: number) => {
         console.info(`bulkTransfer = ${ret}`);
+        ret = usbManager.releaseInterface(devicePipe, interfaces);
+        console.info(`releaseInterface = ${ret}`);
         if (i === device.configs?.[0]?.interfaces.length - 1) {
-          usbManager.closePipe(devicepipe);
+          usbManager.closePipe(devicePipe);
         }
       }).catch((error: BusinessError) => {
         console.error(`Failed to transfer. Code: ${error.code}, message: ${error.message}`);
@@ -970,7 +1024,8 @@ async function bulkTransfer() {
 
 
 
-#### usbManager.usbSubmitTransfer18+
+## usbManager.usbSubmitTransfer18+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -986,6 +1041,7 @@ usbSubmitTransfer(transfer: UsbDataTransferParams): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | transfer | UsbDataTransferParams | 是 | 作为通用USB数据传输接口，客户端需要填充这个对象中的参数，用以发起传输请求。在调用该接口前需要通过usbManager.claimInterface claim通信接口。 |
@@ -994,6 +1050,7 @@ usbSubmitTransfer(transfer: UsbDataTransferParams): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[USB服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-usb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1027,24 +1084,25 @@ async function usbSubmitTransfer() {
     console.info(`request right fail`);
     return;
   }
-  let devicepipe: usbManager.USBDevicePipe = usbManager.connectDevice(device);
-  if (devicepipe == undefined) {
+  let devicePipe: usbManager.USBDevicePipe = usbManager.connectDevice(device);
+  if (devicePipe == undefined) {
     console.error(`connect device failed`);
     return;
   }
   // 获取endpoint端点地址
   let endpoint = device.configs?.[0]?.interfaces?.[0]?.endpoints.find((value) => {
-    return value.direction === 0 && value.type === 2
-  })
-  // 获取设备的第一个id。
-  let ret: number = usbManager.claimInterface(devicepipe, device.configs?.[0]?.interfaces?.[0], true);
+    return value.direction === 0 && value.type === 2;
+  });
+  // 声明接口控制权，force参数为true表示强制获取
+  let ret: number = usbManager.claimInterface(devicePipe, device.configs?.[0]?.interfaces?.[0], true);
   if (ret !== 0) {
     console.error(`claim interface failed`);
+    usbManager.closePipe(devicePipe);
     return;
   }
 
   let transferParams: usbManager.UsbDataTransferParams = {
-    devPipe: devicepipe,
+    devPipe: devicePipe,
     flags: usbManager.UsbTransferFlags.USB_TRANSFER_SHORT_NOT_OK,
     endpoint: 1,
     type: usbManager.UsbEndpointTransferType.TRANSFER_TYPE_BULK,
@@ -1056,40 +1114,44 @@ async function usbSubmitTransfer() {
     isoPacketCount: 0,
   };
   try {
-    transferParams.endpoint=endpoint?.address as number;
-    transferParams.callback=(err, callbackData: usbManager.SubmitTransferCallback) => {
+    transferParams.endpoint = endpoint?.address as number;
+    transferParams.callback = (err, callbackData: usbManager.SubmitTransferCallback) => {
+      let relIntfRet: number = usbManager.releaseInterface(devicePipe, interfaces);
+      console.info(`releaseInterface = ${relIntfRet}`);
+      usbManager.closePipe(devicePipe);
       if (err) {
-        console.error('USB transfer failed:', err);
+        console.error(`USB transfer failed. Code: ${err.code}, message: ${err.message}`);
         return;
       }
-      console.info('callbackData =' +JSON.stringify(callbackData));
-    }
+      console.info('callbackData =' + JSON.stringify(callbackData));
+    };
     usbManager.usbSubmitTransfer(transferParams);
     console.info('USB transfer request submitted.');
   } catch (error) {
-    console.error('USB transfer failed:', error);
+    console.error(`USB transfer failed. Code: ${error.code}, message: ${error.message}`);
   }
-  usbManager.closePipe(devicepipe);
 }
 ```
 
 
 
-#### usbManager.usbCancelTransfer18+
+## usbManager.usbCancelTransfer18+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 usbCancelTransfer(transfer: UsbDataTransferParams): void
 
-取消异步传输请求。
+取消异步传输请求。适用于需要主动终止未完成USB数据传输的场景，如用户手动取消长时间数据传输、传输超时后的错误恢复、应用切换时中止当前传输等。
 
 > [!NOTE]
-> 该接口的主要作用是主动取消尚未完成的USB数据传输请求（如usbSubmitTransfer提交的传输）。 在调用该接口前需要通过 usbManager.claimInterface claim通信接口。
+> 主动取消尚未完成的USB数据传输请求（如usbSubmitTransfer提交的传输）。 在调用该接口前需要通过 usbManager.claimInterface claim通信接口。
 
 
 **系统能力：** SystemCapability.USB.USBManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1099,6 +1161,7 @@ usbCancelTransfer(transfer: UsbDataTransferParams): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[USB服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-usb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1112,7 +1175,7 @@ usbCancelTransfer(transfer: UsbDataTransferParams): void
 **示例：**
 
 > [!NOTE]
-> 以下示例代码需要放入具体的方法中执行，只是调用usbSubmitTransfer接口的必要流程，实际调用时，设备开发者需要遵循目标USB设备的协议规范进行调用，具体协议要求请参考设备的技术文档，确保数据的正确传输和设备的兼容性。
+> 以下示例代码需要放入具体的方法中执行，只是调用usbCancelTransfer接口的必要流程，实际调用时，设备开发者需要遵循目标USB设备的协议规范进行调用，具体协议要求请参考设备的技术文档，确保数据的正确传输和设备的兼容性。
 
 
 ```json
@@ -1131,8 +1194,8 @@ async function usbCancelTransfer() {
     console.error(`request right failed`);
     return;
   }
-  let devicepipe: usbManager.USBDevicePipe = usbManager.connectDevice(device);
-  if (devicepipe === undefined) {
+  let devicePipe: usbManager.USBDevicePipe = usbManager.connectDevice(device);
+  if (devicePipe === undefined) {
     console.info(`connect device fail`);
     return;
   }
@@ -1144,14 +1207,15 @@ async function usbCancelTransfer() {
     console.info(`invalid endpoint`);
     return;
   }
-  // 获取设备的第一个id。
-  let ret: number = usbManager.claimInterface(devicepipe, device.configs?.[0]?.interfaces?.[0], true);
+  // 声明接口控制权，force参数为true表示强制获取。
+  let ret: number = usbManager.claimInterface(devicePipe, device.configs?.[0]?.interfaces?.[0], true);
   if (ret !== 0) {
     console.error(`claim interface failed`);
+    usbManager.closePipe(devicePipe);
     return;
   }
   let transferParams: usbManager.UsbDataTransferParams = {
-    devPipe: devicepipe,
+    devPipe: devicePipe,
     flags: usbManager.UsbTransferFlags.USB_TRANSFER_SHORT_NOT_OK,
     endpoint: 1,
     type: usbManager.UsbEndpointTransferType.TRANSFER_TYPE_BULK,
@@ -1163,29 +1227,32 @@ async function usbCancelTransfer() {
     isoPacketCount: 0,
   };
   try {
-    transferParams.endpoint=endpoint?.address as number;
-    transferParams.callback=(err, callBackData: usbManager.SubmitTransferCallback)=>{
-      console.info('callBackData =' +JSON.stringify(callBackData));
-    }
+    transferParams.endpoint = endpoint?.address as number;
+    transferParams.callback = (err, callbackData: usbManager.SubmitTransferCallback)=>{
+      console.info('callbackData =' + JSON.stringify(callbackData));
+    };
     usbManager.usbSubmitTransfer(transferParams);
     usbManager.usbCancelTransfer(transferParams);
     console.info('USB transfer request submitted.');
   } catch (error) {
-    console.error('USB transfer failed:', error);
+    console.error(`USB transfer failed. Code: ${error.code}, message: ${error.message}`);
   }
-  usbManager.closePipe(devicepipe);
+  ret = usbManager.releaseInterface(devicePipe, interfaces);
+  console.info(`releaseInterface = ${ret}`);
+  usbManager.closePipe(devicePipe);
 }
 ```
 
 
 
-#### usbManager.closePipe
+## usbManager.closePipe
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 closePipe(pipe: USBDevicePipe): number
 
-关闭设备消息控制通道。
+关闭设备连接通道。
 1. 调用[usbManager.getDevices](#usbmanagergetdevices)获取设备列表；
 2. 调用[usbManager.requestRight](#usbmanagerrequestright)获取设备请求权限；
 3. 调用[usbManager.connectDevice](#usbmanagerconnectdevice)得到devicepipe作为参数。
@@ -1194,6 +1261,7 @@ closePipe(pipe: USBDevicePipe): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pipe | USBDevicePipe | 是 | 用于确定总线地址和设备地址，需要调用connectDevice获取。 |
@@ -1201,19 +1269,21 @@ closePipe(pipe: USBDevicePipe): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| number | 关闭设备消息控制通道成功返回0；关闭设备消息控制通道失败返回其他错误码如下： - 22：服务异常。 |
+| number | 关闭设备连接通道成功返回0；关闭设备连接通道失败返回其他错误码如下： - 22：服务异常。可能原因：1.USB服务未正常运行；2.设备连接通道状态异常。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
-| 801 | Capability not supported. [since 18] |
+| 801 | Capability not supported. 适用版本：18+ |
 
 
 **示例：**
@@ -1231,31 +1301,33 @@ async function closePipe() {
     console.error(`request right failed`);
     return;
   }
-  let devicepipe: usbManager.USBDevicePipe = usbManager.connectDevice(devicesList?.[0]);
-  if (devicepipe == undefined) {
+  let devicePipe: usbManager.USBDevicePipe = usbManager.connectDevice(devicesList?.[0]);
+  if (devicePipe == undefined) {
     console.error(`connect device failed`);
     return;
   }
-  let ret: number = usbManager.closePipe(devicepipe);
+  let ret: number = usbManager.closePipe(devicePipe);
   console.info(`closePipe = ${ret}`);
 }
 ```
 
 
 
-#### usbManager.hasAccessoryRight14+
+## usbManager.hasAccessoryRight14+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 hasAccessoryRight(accessory: USBAccessory): boolean
 
-检查应用程序是否有权访问USB配件。
+检查应用是否有权访问USB配件。
 
 需要调用[usbManager.getAccessoryList](#usbmanagergetaccessorylist14)获取配件列表，得到[USBAccessory](#usbaccessory14)作为参数。
 
 **系统能力：** SystemCapability.USB.USBManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1264,19 +1336,21 @@ hasAccessoryRight(accessory: USBAccessory): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| boolean | true表示应用程序有权访问USB配件，false表示应用程序无权访问USB配件。 |
+| boolean | true表示应用有权访问USB配件，false表示应用无权访问USB配件。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[USB服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-usb)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
-| 801 | Capability not supported. [since 18] |
+| 801 | Capability not supported. 适用版本：18+ |
 | 14400004 | Service exception. Possible causes: 1. No accessory is plugged in. |
 | 14400005 | Database operation exception. |
 | 14401001 | The target USBAccessory not matched. |
@@ -1286,29 +1360,31 @@ hasAccessoryRight(accessory: USBAccessory): boolean
 
 ```text
 try {
-  let accList: usbManager.USBAccessory[] = usbManager.getAccessoryList()
-  let flag = usbManager.hasAccessoryRight(accList?.[0])
-  console.info(`hasAccessoryRight success, ret:${flag}`)
+  let accList: usbManager.USBAccessory[] = usbManager.getAccessoryList();
+  let flag = usbManager.hasAccessoryRight(accList?.[0]);
+  console.info(`hasAccessoryRight success, ret:${flag}`);
 } catch (error) {
-  console.error(`hasAccessoryRight error ${error.code}, message is ${error.message}`)
+  console.error(`hasAccessoryRight error ${error.code}, message is ${error.message}`);
 }
 ```
 
 
 
-#### usbManager.requestAccessoryRight14+
+## usbManager.requestAccessoryRight14+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 requestAccessoryRight(accessory: USBAccessory): Promise&lt;boolean&gt;
 
-为指定应用程序申请访问USB配件的访问权限。使用Promise异步回调。
+为指定应用申请访问USB配件的访问权限。使用Promise异步回调。
 
 需要调用[usbManager.getAccessoryList](#usbmanagergetaccessorylist14)获取配件列表，得到[USBAccessory](#usbaccessory14)作为参数。
 
 **系统能力：** SystemCapability.USB.USBManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1317,19 +1393,21 @@ requestAccessoryRight(accessory: USBAccessory): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;boolean&gt; | Promise对象，返回应用程序访问配件权限的申请结果。返回true表示权限申请成功；返回false表示权限申请失败。 |
+| Promise&lt;boolean&gt; | Promise对象，返回应用访问配件权限的申请结果。返回true表示权限申请成功；返回false表示权限申请失败。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[USB服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-usb)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
-| 801 | Capability not supported. [since 18] |
+| 801 | Capability not supported. 适用版本：18+ |
 | 14400004 | Service exception. Possible causes: 1. No accessory is plugged in. |
 | 14400005 | Database operation exception. |
 | 14401001 | The target USBAccessory not matched. |
@@ -1340,30 +1418,32 @@ requestAccessoryRight(accessory: USBAccessory): Promise&lt;boolean&gt;
 ```text
 async function requestAccessoryRight() {
   try {
-    let accList: usbManager.USBAccessory[] = usbManager.getAccessoryList()
-    let flag = await usbManager.requestAccessoryRight(accList?.[0])
-    console.info(`requestAccessoryRight success, ret:${flag}`)
+    let accList: usbManager.USBAccessory[] = usbManager.getAccessoryList();
+    let flag = await usbManager.requestAccessoryRight(accList?.[0]);
+    console.info(`requestAccessoryRight success, ret:${flag}`);
   } catch (error) {
-    console.error(`requestAccessoryRight error ${error.code}, message is ${error.message}`)
+    console.error(`requestAccessoryRight error ${error.code}, message is ${error.message}`);
   }
 }
 ```
 
 
 
-#### usbManager.cancelAccessoryRight14+
+## usbManager.cancelAccessoryRight14+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 cancelAccessoryRight(accessory: USBAccessory): void
 
-取消当前应用程序访问USB配件的权限。与requestAccessoryRight()方法配合使用，用于取消此前通过requestAccessoryRight()申请的配件访问权限。
+取消当前应用访问USB配件的权限。与requestAccessoryRight()方法配合使用，用于取消此前通过requestAccessoryRight()申请的配件访问权限。
 
 需要调用[usbManager.getAccessoryList](#usbmanagergetaccessorylist14)获取配件列表，得到[USBAccessory](#usbaccessory14)作为参数。
 
 **系统能力：** SystemCapability.USB.USBManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1374,10 +1454,11 @@ cancelAccessoryRight(accessory: USBAccessory): void
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[USB服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-usb)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
-| 801 | Capability not supported. [since 18] |
+| 801 | Capability not supported. 适用版本：18+ |
 | 14400004 | Service exception. Possible causes: 1. No accessory is plugged in. |
 | 14400005 | Database operation exception. |
 | 14401001 | The target USBAccessory not matched. |
@@ -1388,22 +1469,23 @@ cancelAccessoryRight(accessory: USBAccessory): void
 ```text
 async function cancelAccessoryRight() {
   try {
-    let accList: usbManager.USBAccessory[] = usbManager.getAccessoryList()
-    let flag = await usbManager.requestAccessoryRight(accList?.[0])
+    let accList: usbManager.USBAccessory[] = usbManager.getAccessoryList();
+    let flag = await usbManager.requestAccessoryRight(accList?.[0]);
     if (!flag) {
-      return
+      return;
     }
-    usbManager.cancelAccessoryRight(accList?.[0])
-    console.info(`cancelAccessoryRight success`)
+    usbManager.cancelAccessoryRight(accList?.[0]);
+    console.info(`cancelAccessoryRight success`);
   } catch (error) {
-    console.error(`cancelAccessoryRight error ${error.code}, message is ${error.message}`)
+    console.error(`cancelAccessoryRight error ${error.code}, message is ${error.message}`);
   }
 }
 ```
 
 
 
-#### usbManager.getAccessoryList14+
+## usbManager.getAccessoryList14+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1415,6 +1497,7 @@ getAccessoryList(): Array<Readonly&lt;USBAccessory&gt;>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array<Readonly&lt;USBAccessory&gt;> | 只读的USB配件列表。包含所有可用的USB配件信息。 |
@@ -1424,9 +1507,10 @@ getAccessoryList(): Array<Readonly&lt;USBAccessory&gt;>
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[USB服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-usb)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | Capability not supported. [since 18] |
+| 801 | Capability not supported. 适用版本：18+ |
 | 14400004 | Service exception. Possible causes: 1. No accessory is plugged in. |
 
 
@@ -1434,16 +1518,17 @@ getAccessoryList(): Array<Readonly&lt;USBAccessory&gt;>
 
 ```json
 try {
-  let accList: usbManager.USBAccessory[] = usbManager.getAccessoryList()
-  console.info(`getAccessoryList success, accList: ${JSON.stringify(accList)}`)
+  let accList: usbManager.USBAccessory[] = usbManager.getAccessoryList();
+  console.info(`getAccessoryList success, accList: ${JSON.stringify(accList)}`);
 } catch (error) {
-  console.error(`getAccessoryList error ${error.code}, message is ${error.message}`)
+  console.error(`getAccessoryList error ${error.code}, message is ${error.message}`);
 }
 ```
 
 
 
-#### usbManager.openAccessory14+
+## usbManager.openAccessory14+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1451,11 +1536,12 @@ openAccessory(accessory: USBAccessory): USBAccessoryHandle
 
 获取配件句柄并打开配件文件描述符。之后可以通过CoreFileKit提供的read/write接口和配件进行通信。使用完后需要调用[closeAccessory](#usbmanagercloseaccessory14)接口关闭文件描述符。
 
-需要调用[usbManager.getAccessoryList](#usbmanagergetaccessorylist14)获取配件列表，得到[USBAccessory](#usbaccessory14)作为参数。
+需要调用[usbManager.getAccessoryList](#usbmanagergetaccessorylist14)获取配件列表，得到[USBAccessory](#usbaccessory14)作为参数。调用前需先调用[usbManager.requestAccessoryRight](#usbmanagerrequestaccessoryright14)请求访问配件权限，权限申请成功（返回true）后方可调用本接口打开配件。
 
 **系统能力：** SystemCapability.USB.USBManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1463,6 +1549,7 @@ openAccessory(accessory: USBAccessory): USBAccessoryHandle
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1473,10 +1560,11 @@ openAccessory(accessory: USBAccessory): USBAccessoryHandle
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[USB服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-usb)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
-| 801 | Capability not supported. [since 18] |
+| 801 | Capability not supported. 适用版本：18+ |
 | 14400001 | Access right denied. Call requestRight to get the USBDevicePipe access right first. |
 | 14400004 | Service exception. Possible causes: 1. No accessory is plugged in. |
 | 14401001 | The target USBAccessory not matched. |
@@ -1490,25 +1578,27 @@ openAccessory(accessory: USBAccessory): USBAccessoryHandle
 import { fileIo } from '@kit.CoreFileKit';
 async function openAccessory() {
   try {
-    let accList: usbManager.USBAccessory[] = usbManager.getAccessoryList()
-    let flag = await usbManager.requestAccessoryRight(accList?.[0])
+    let accList: usbManager.USBAccessory[] = usbManager.getAccessoryList();
+    let flag = await usbManager.requestAccessoryRight(accList?.[0]);
     if (!flag) {
-      return
+      return;
     }
-    let handle = usbManager.openAccessory(accList?.[0])
-    console.info(`openAccessory success`)
+    let handle = usbManager.openAccessory(accList?.[0]);
+    console.info(`openAccessory success`);
     let arrayBuffer = new ArrayBuffer(4096);
     let readLength = fileIo.readSync(handle.accessoryFd, arrayBuffer, {offset: 0, length: 4096});
     console.info('readSync ret: ' + readLength.toString(10));
+    usbManager.closeAccessory(handle);
   } catch (error) {
-    console.error(`openAccessory error ${error.code}, message is ${error.message}`)
+    console.error(`openAccessory error ${error.code}, message is ${error.message}`);
   }
 }
 ```
 
 
 
-#### usbManager.closeAccessory14+
+## usbManager.closeAccessory14+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1516,11 +1606,12 @@ closeAccessory(accessoryHandle: USBAccessoryHandle): void
 
 关闭配件文件描述符。
 
-需要调用[usbManager.getAccessoryList](#usbmanagergetaccessorylist14)获取配件列表，然后调用[usbManager.openAccessory](#usbmanageropenaccessory14)获取配件句柄，得到[USBAccessoryHandle](#usbaccessoryhandle14)作为参数。
+需要调用[usbManager.getAccessoryList](#usbmanagergetaccessorylist14)获取配件列表，然后调用[usbManager.requestAccessoryRight](#usbmanagerrequestaccessoryright14)请求访问配件权限，权限申请成功后调用[usbManager.openAccessory](#usbmanageropenaccessory14)获取配件句柄，得到[USBAccessoryHandle](#usbaccessoryhandle14)作为参数。
 
 **系统能力：** SystemCapability.USB.USBManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1531,10 +1622,11 @@ closeAccessory(accessoryHandle: USBAccessoryHandle): void
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[USB服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-usb)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
-| 801 | Capability not supported. [since 18] |
+| 801 | Capability not supported. 适用版本：18+ |
 | 14400004 | Service exception. Possible causes: 1. No accessory is plugged in. |
 
 
@@ -1543,23 +1635,24 @@ closeAccessory(accessoryHandle: USBAccessoryHandle): void
 ```text
 async function closeAccessory() {
   try {
-    let accList: usbManager.USBAccessory[] = usbManager.getAccessoryList()
-    let flag = await usbManager.requestAccessoryRight(accList?.[0])
+    let accList: usbManager.USBAccessory[] = usbManager.getAccessoryList();
+    let flag = await usbManager.requestAccessoryRight(accList?.[0]);
     if (!flag) {
-      return
+      return;
     }
-    let handle = usbManager.openAccessory(accList?.[0])
-    usbManager.closeAccessory(handle)
-    console.info(`closeAccessory success`)
+    let handle = usbManager.openAccessory(accList?.[0]);
+    usbManager.closeAccessory(handle);
+    console.info(`closeAccessory success`);
   } catch (error) {
-    console.error(`closeAccessory error ${error.code}, message is ${error.message}`)
+    console.error(`closeAccessory error ${error.code}, message is ${error.message}`);
   }
 }
 ```
 
 
 
-#### usbManager.resetUsbDevice20+
+## usbManager.resetUsbDevice20+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1578,12 +1671,14 @@ resetUsbDevice(pipe: USBDevicePipe): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pipe | USBDevicePipe | 是 | 用于确定总线地址和设备地址，需要调用connectDevice获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1593,6 +1688,7 @@ resetUsbDevice(pipe: USBDevicePipe): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[USB服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-usb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1620,24 +1716,25 @@ async function resetUsbDevice() {
     console.error(`request right failed`);
     return;
   }
-  let devicepipe: usbManager.USBDevicePipe = usbManager.connectDevice(devicesList?.[0]);
-  if (devicepipe == undefined) {
+  let devicePipe: usbManager.USBDevicePipe = usbManager.connectDevice(devicesList?.[0]);
+  if (devicePipe == undefined) {
     console.error(`connect device failed`);
     return;
   }
   try {
-    let ret: boolean = usbManager.resetUsbDevice(devicepipe);
+    let ret: boolean = usbManager.resetUsbDevice(devicePipe);
     console.info(`resetUsbDevice  = ${ret}`);
-  } catch (err: BusinessError) {
+  } catch (err) {
     console.error(`Failed to reset USB device. Code: ${err.code}, message: ${err.message}`);
   }
-  usbManager.closePipe(devicepipe);
+  usbManager.closePipe(devicePipe);
 }
 ```
 
 
 
-#### usbManager.controlTransfer(deprecated)
+## usbManager.controlTransfer(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1653,23 +1750,26 @@ controlTransfer(pipe: USBDevicePipe, controlparam: USBControlParams, timeout ?: 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| pipe | USBDevicePipe | 是 | USB设备消息传输通道对象，用于确定设备，需要调用connectDevice获取。 |
+| pipe | USBDevicePipe | 是 | USB设备连接通道对象，用于确定设备，需要调用connectDevice获取。 |
 | controlparam | USBControlParams | 是 | 控制传输参数，包含request、target、reqType、value、index、data等字段，参数传参类型请参考USB协议规范，根据具体设备和控制请求类型设置。 |
-| timeout | number | 否 | 超时时间（单位：毫秒），可选参数，指定时间内等待控制传输完成，若在指定时间内传输完成则正常返回，否则返回超时；默认值为0，表示无限等待直到传输完成。用户按需选择。 |
+| timeout | number | 否 | 超时时间（单位：毫秒），可选参数，指定时间内等待控制传输完成，若在指定时间内传输完成则正常返回，否则返回超时；默认值为0，表示无限等待直到传输完成。传入负数时抛出参数错误异常。用户按需选择。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;number&gt; | Promise对象，获取传输或接收到的数据块大小。失败返回其他错误码如下： - -1：驱动异常。 |
+| Promise&lt;number&gt; | Promise对象，获取传输或接收到的数据块大小。失败返回其他错误码如下： - -1：驱动异常。可能原因：1、设备连接不稳定或已断开；2、USB驱动加载失败；3、内核USB模块异常。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1683,7 +1783,7 @@ import {BusinessError} from '@kit.BasicServicesKit';
 let param: usbManager.USBControlParams = {
   request: 0x06,
   reqType: 0x80,
-  target:0,
+  target: 0,
   value: 0x01 << 8 | 0,
   index: 0,
   data: new Uint8Array(18)
@@ -1701,47 +1801,40 @@ async function controlTransfer() {
     console.error(`request right failed`);
     return;
   }
-  let devicepipe: usbManager.USBDevicePipe = usbManager.connectDevice(devicesList[0]);
-  if (devicepipe == undefined) {
+  let devicePipe: usbManager.USBDevicePipe = usbManager.connectDevice(devicesList[0]);
+  if (devicePipe == undefined) {
     console.error(`connect device failed`);
     return;
   }
-  usbManager.controlTransfer(devicepipe, param).then((ret: number) => {
+  usbManager.controlTransfer(devicePipe, param).then((ret: number) => {
     console.info(`controlTransfer = ${ret}`);
   }).catch((error: BusinessError) => {
     console.error(`Failed to transfer. Code: ${error.code}, message: ${error.message}`);
   }).finally(() => {
-    usbManager.closePipe(devicepipe);
+    usbManager.closePipe(devicePipe);
   });
 }
 ```
 
 
 
-#### USBEndpoint
+## USBEndpoint
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 USB端点，用于主机与设备之间数据传输的通信端点。通过[USBInterface](#usbinterface)获取。
 
 > [!NOTE]
-> 主机控制器按照Endpoint类型调度，不同类型的端点采用不同的调度策略：批量端点(bulk)采用宽带共享调度适合大量数据非实时传输；中断端点(interrupt)采用固定轮询调度适合小数据量实时传输；实时端点(isochronous)采用宽带预留调度，适合音视频等实时数据流。 协议层打包时依赖type决定传输特性，包括数据包格式、错误处理机制、超时策略等。
+> 主机控制器按照Endpoint类型调度，不同类型的端点采用不同的调度策略：批量端点(bulk)采用带宽共享调度适合大量数据非实时传输；中断端点(interrupt)采用固定轮询调度适合小数据量实时传输；实时端点(isochronous)采用带宽预留调度，适合音视频等实时数据流。 协议层打包时依赖type决定传输特性，包括数据包格式、错误处理机制、超时策略等。
 
 
-```text
-graph LR
-    A[端点类型] --> B[批量端点 bulk]
-    A --> C[中断端点 interrupt]
-    A --> D[实时端点 isochronous]
-    B --> B1[宽带共享调度]
-    B1 --> B2[适合大量数据非实时传输]
-    C --> C1[固定轮询调度]
-    C1 --> C2[适合小数据量实时传输]
-    D --> D1[宽带预留调度]
-    D1 --> D2[适合音视频等实时数据流]
-```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/9Lvir18ARZODFjoRL33XsQ/zh-cn_image_0000002717613596.png?HW-CC-KV=V1&HW-CC-Date=20260911T072946Z&HW-CC-Expire=86400&HW-CC-Sign=FE3028089A22C7FD857EE59612ABE096861E1E7591ED485094A417A59B98F6AD)
+
 
 **系统能力：** SystemCapability.USB.USBManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1757,13 +1850,15 @@ graph LR
 
 
 
-#### USBInterface
+## USBInterface
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 一个[USBConfiguration](#usbconfiguration)中可以含有多个USBInterface，每个USBInterface提供一个功能。
 
 **系统能力：** SystemCapability.USB.USBManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1778,13 +1873,15 @@ graph LR
 
 
 
-#### USBConfiguration
+## USBConfiguration
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 USB配置，一个[USBDevice](#usbdevice)中可以含有多个配置。
 
 **系统能力：** SystemCapability.USB.USBManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1799,7 +1896,8 @@ USB配置，一个[USBDevice](#usbdevice)中可以含有多个配置。
 
 
 
-#### USBDevice
+## USBDevice
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1807,12 +1905,13 @@ USB设备信息。
 
 **系统能力：** SystemCapability.USB.USBManager
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | busNum | number | 否 | 否 | 总线地址。 |
 | devAddress | number | 否 | 否 | 设备地址。 |
-| serial | string | 否 | 否 | 序列号。 |
-| name | string | 否 | 否 | 设备名字。 |
+| serial | string | 否 | 否 | 序列号。三方应用无法获取此字段的设备序列号信息（该字段对三方应用不可用），如需获取序列号需在申请设备访问权限后自行发起控制传输。 |
+| name | string | 否 | 否 | 设备名称。 |
 | manufacturerName | string | 否 | 否 | 设备厂商名称。 |
 | productName | string | 否 | 否 | 设备产品名称。 |
 | version | string | 否 | 否 | 设备版本号。 |
@@ -1826,13 +1925,15 @@ USB设备信息。
 
 
 
-#### USBDevicePipe
+## USBDevicePipe
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-USB设备消息传输通道，用于确定总线地址和设备地址。
+USB设备连接通道，用于确定总线地址和设备地址。
 
 **系统能力：** SystemCapability.USB.USBManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1842,7 +1943,8 @@ USB设备消息传输通道，用于确定总线地址和设备地址。
 
 
 
-#### USBDeviceRequestParams12+
+## USBDeviceRequestParams12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1850,25 +1952,28 @@ USB设备消息传输通道，用于确定总线地址和设备地址。
 
 **系统能力：** SystemCapability.USB.USBManager
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| bmRequestType | number | 否 | 否 | 请求控制类型，用于指定控制传输的方向和类型，取值需遵循USB协议规范，常见取值包括：0x00(标准设备请求)、0x01(类请求)、0x02(厂商请求)。 |
+| bmRequestType | number | 否 | 否 | 请求控制类型，用于指定控制传输的方向和类型，取值需遵循USB协议规范，常见取值示例：0x00（标准请求，主机向设备）、0x20（类请求，主机向设备）、0x40（厂商请求，主机向设备）、0x80（标准请求，设备向主机）。 |
 | bRequest | number | 否 | 否 | 请求类型，用于指定具体的USB控制请求命令（如获取描述符，设置地址等）。 |
 | wValue | number | 否 | 否 | 请求参数，用于向USB设备传递控制请求所需的参数内容。 |
-| wIndex | number | 否 | 否 | 请求参数value对应的索引值，用于指定控制请求的目标接口或端点索引。 |
+| wIndex | number | 否 | 否 | 请求参数wValue对应的索引值，用于指定控制请求的目标接口或端点。 |
 | wLength | number | 否 | 否 | 请求数据的长度，用于指定控制传输中期望接收或发送的数据字节数。 |
 | data | Uint8Array | 否 | 否 | 用于写入或读取的缓冲区，数组长度对应wLength参数指定的数据字节数。用于控制传输时发送或接收数据。 |
 
 
 
 
-#### USBRequestTargetType
+## USBRequestTargetType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 请求目标类型。
 
 **系统能力：** SystemCapability.USB.USBManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1880,13 +1985,15 @@ USB设备消息传输通道，用于确定总线地址和设备地址。
 
 
 
-#### USBControlRequestType
+## USBControlRequestType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-控制请求类型。
+控制请求类型，用于指定具体的USB控制请求命令（如获取描述符、设置地址等）。
 
 **系统能力：** SystemCapability.USB.USBManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1897,13 +2004,15 @@ USB设备消息传输通道，用于确定总线地址和设备地址。
 
 
 
-#### USBRequestDirection
+## USBRequestDirection
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 请求方向。
 
 **系统能力：** SystemCapability.USB.USBManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1913,13 +2022,15 @@ USB设备消息传输通道，用于确定总线地址和设备地址。
 
 
 
-#### USBAccessory14+
+## USBAccessory14+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 USB配件信息。
 
 **系统能力：** SystemCapability.USB.USBManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1932,13 +2043,15 @@ USB配件信息。
 
 
 
-#### USBAccessoryHandle14+
+## USBAccessoryHandle14+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 USB配件句柄，包含配件文件描述符，用于通过CoreFileKit提供的read/write接口和配件进行通信。
 
 **系统能力：** SystemCapability.USB.USBManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1947,7 +2060,8 @@ USB配件句柄，包含配件文件描述符，用于通过CoreFileKit提供的
 
 
 
-#### UsbDataTransferParams18+
+## UsbDataTransferParams18+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1955,13 +2069,14 @@ USB数据传输参数对象，包含USB数据传输所需的所有参数，用�
 
 **系统能力：** SystemCapability.USB.USBManager
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | devPipe | USBDevicePipe | 否 | 否 | 用于确定总线地址和设备地址，需要调用connectDevice获取。 |
-| flags | UsbTransferFlags | 否 | 否 | USB传输标志，用于控制传输行为。可选值包括：0（将短帧报告为错误）、1（自动释放传输缓冲区）、2（完成回调后自动传输）、3（传输增加一个额外的数据包）。 |
+| flags | UsbTransferFlags | 否 | 否 | USB传输标志，用于控制传输行为。可选值包括：0（将短帧报告为错误）、1（自动释放传输缓冲区）、2（完成回调后自动释放传输资源）、3（传输增加一个额外的数据包）。 |
 | endpoint | number | 否 | 否 | 端点地址，取值范围为[1, 255]的正整数。需要调用getDevices获取设备信息，通过endpoint的address属性确定端点信息，通过direction属性确定端点方向。 |
 | type | UsbEndpointTransferType | 否 | 否 | 传输类型，指定USB传输的方式。可选值包括：0x1（实时传输，适合音视频等实时数据流）、0x2（批量传输，适合大量数据非实时传输）、0x3（中断传输，适合小数据量实时传输）。 |
-| timeout | number | 否 | 否 | 超时时间（单位：毫秒），指定时间内等待传输完成，若在指定时间内传输完成则正常返回否则返回超时。取值范围为[0, +∞)，设置为0时无限等待直到传输完成。 |
+| timeout | number | 否 | 否 | 超时时间（单位：毫秒），指定时间内等待传输完成，若在指定时间内传输完成则正常返回否则返回超时。设置为0时无限等待直到传输完成。传入负数时抛出参数错误异常。 |
 | length | number | 否 | 否 | 数据缓冲区的长度，取值范围为[0, INT_MAX]的非负数（期望长度），（单位：字节）。 |
 | callback | AsyncCallback&lt;SubmitTransferCallback&gt; | 否 | 否 | 传输完成时的回调函数，签名：(err: Error, data: SubmitTransferCallback) => void。err为错误对象（成功时为null），data包含传输状态、实际长度等信息。 |
 | userData | Uint8Array | 否 | 否 | 用户上下文数据，用于在回调函数中传递自定义的上下文信息。大小和格式由用户定义，在传输请求中指定，回调中原样返回。 |
@@ -1971,13 +2086,15 @@ USB数据传输参数对象，包含USB数据传输所需的所有参数，用�
 
 
 
-#### UsbTransferFlags18+
+## UsbTransferFlags18+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 USB传输标志。
 
 **系统能力：** SystemCapability.USB.USBManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1989,13 +2106,15 @@ USB传输标志。
 
 
 
-#### UsbEndpointTransferType18+
+## UsbEndpointTransferType18+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-Usb传输类型。
+USB传输类型。
 
 **系统能力：** SystemCapability.USB.USBManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2006,13 +2125,15 @@ Usb传输类型。
 
 
 
-#### SubmitTransferCallback18+
+## SubmitTransferCallback18+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-Usb异步传输回调。
+USB异步传输回调。
 
 **系统能力：** SystemCapability.USB.USBManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2023,13 +2144,15 @@ Usb异步传输回调。
 
 
 
-#### UsbTransferStatus18+
+## UsbTransferStatus18+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 数据处理完成后通过回调返回的状态码。
 
 **系统能力：** SystemCapability.USB.USBManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2044,13 +2167,15 @@ Usb异步传输回调。
 
 
 
-#### UsbIsoPacketDescriptor18+
+## UsbIsoPacketDescriptor18+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 实时传输模式回调返回的分包信息。
 
 **系统能力：** SystemCapability.USB.USBManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2061,7 +2186,8 @@ Usb异步传输回调。
 
 
 
-#### USBControlParams(deprecated)
+## USBControlParams(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2073,11 +2199,12 @@ Usb异步传输回调。
 
 **系统能力：** SystemCapability.USB.USBManager
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| request | number | 否 | 否 | 请求类型。 |
+| request | number | 否 | 否 | 请求类型，用于指定具体的USB控制请求命令。 |
 | target | USBRequestTargetType | 否 | 否 | 请求目标类型。 |
 | reqType | USBControlRequestType | 否 | 否 | 请求控制类型。 |
-| value | number | 否 | 否 | 请求参数。 |
-| index | number | 否 | 否 | 请求参数value对应的索引值。 |
+| value | number | 否 | 否 | 请求参数，用于向USB设备传递控制请求所需的参数内容。 |
+| index | number | 否 | 否 | 请求参数value对应的索引值，用于指定控制请求的目标接口或端点。 |
 | data | Uint8Array | 否 | 否 | 用于写入或读取的缓冲区。 |

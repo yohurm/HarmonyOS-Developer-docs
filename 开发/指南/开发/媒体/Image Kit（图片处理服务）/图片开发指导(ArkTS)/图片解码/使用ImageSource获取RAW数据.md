@@ -1,6 +1,6 @@
 # 使用ImageSource获取RAW数据
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-raw-data
 
@@ -11,7 +11,7 @@
 当前支持的图片文件格式为DNG。
 
 
-#### 开发步骤
+## 开发步骤
 
 获取图片RAW数据相关API的详细介绍请参见：[createImageRawData](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-imagesource#createimagerawdata24)。
 1. 全局导入Image模块，根据实际需求导入对应的Kit模块。

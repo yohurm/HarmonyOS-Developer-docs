@@ -1,15 +1,19 @@
 # ArkUI_NodeAttributeType（交互类相关属性）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-node-h-nodeattributetype-interaction
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_NodeAttributeType
 ```
   
 
-#### 概述
+## 概述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义ArkUI在Native侧可以设置的交互类相关属性集合，包含触摸测试、响应热区、焦点控制、安全区域扩展、可见区域监听和走焦等属性设置。
  
@@ -21,7 +25,10 @@ enum ArkUI_NodeAttributeType
  
   
 
-#### NODE_HIT_TEST_BEHAVIOR
+## NODE_HIT_TEST_BEHAVIOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_HIT_TEST_BEHAVIOR = 26
@@ -35,6 +42,7 @@ NODE_HIT_TEST_BEHAVIOR = 26
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 控制当前组件的触摸测试类型，参数类型ArkUI_HitTestMode，默认值为ARKUI_HIT_TEST_MODE_DEFAULT。 |
@@ -42,6 +50,7 @@ NODE_HIT_TEST_BEHAVIOR = 26
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 控制当前组件的触摸测试类型，参数类型ArkUI_HitTestMode，默认值为ARKUI_HIT_TEST_MODE_DEFAULT。 |
@@ -49,7 +58,10 @@ NODE_HIT_TEST_BEHAVIOR = 26
  
   
 
-#### NODE_DEFAULT_FOCUS
+## NODE_DEFAULT_FOCUS
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_DEFAULT_FOCUS = 40
@@ -63,6 +75,7 @@ NODE_DEFAULT_FOCUS = 40
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 参数值为1表示是默认焦点，为0表示不是默认焦点。 |
@@ -70,6 +83,7 @@ NODE_DEFAULT_FOCUS = 40
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 参数值为1表示是默认焦点，为0表示不是默认焦点。 |
@@ -77,7 +91,10 @@ NODE_DEFAULT_FOCUS = 40
  
   
 
-#### NODE_RESPONSE_REGION
+## NODE_RESPONSE_REGION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_RESPONSE_REGION = 41
@@ -95,6 +112,7 @@ NODE_RESPONSE_REGION = 41
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .data[0].f32 | 触摸点相对于组件左上角的x轴坐标，单位为vp。 |
@@ -106,6 +124,7 @@ NODE_RESPONSE_REGION = 41
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .data[0].f32 | 触摸点相对于组件左上角的x轴坐标，单位为vp。 |
@@ -117,7 +136,10 @@ NODE_RESPONSE_REGION = 41
  
   
 
-#### NODE_OVERLAY
+## NODE_OVERLAY
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_OVERLAY = 42
@@ -131,6 +153,7 @@ NODE_OVERLAY = 42
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 浮层文本。 |
@@ -143,6 +166,7 @@ NODE_OVERLAY = 42
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .string | 浮层文本。 |
@@ -155,7 +179,10 @@ NODE_OVERLAY = 42
  
   
 
-#### NODE_FOCUS_STATUS
+## NODE_FOCUS_STATUS
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_FOCUS_STATUS = 66
@@ -173,6 +200,7 @@ NODE_FOCUS_STATUS = 66
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 参数值为1表示组件获焦，为0表示组件失焦。 |
@@ -180,6 +208,7 @@ NODE_FOCUS_STATUS = 66
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 参数值为1表示组件获焦，为0表示组件失焦。 |
@@ -187,7 +216,10 @@ NODE_FOCUS_STATUS = 66
  
   
 
-#### NODE_FOCUS_ON_TOUCH
+## NODE_FOCUS_ON_TOUCH
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_FOCUS_ON_TOUCH = 84
@@ -201,6 +233,7 @@ NODE_FOCUS_ON_TOUCH = 84
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 参数值为1表示支持点击获焦，为0表示不支持点击获焦。 |
@@ -208,6 +241,7 @@ NODE_FOCUS_ON_TOUCH = 84
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 参数值为1表示支持点击获焦，为0表示不支持点击获焦。 |
@@ -215,7 +249,10 @@ NODE_FOCUS_ON_TOUCH = 84
  
   
 
-#### NODE_EXPAND_SAFE_AREA
+## NODE_EXPAND_SAFE_AREA
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_EXPAND_SAFE_AREA = 92
@@ -229,6 +266,7 @@ NODE_EXPAND_SAFE_AREA = 92
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0]?.u32 | 设置扩展安全区域的枚举值集合ArkUI_SafeAreaType，例如：ARKUI_SAFE_AREA_TYPE_SYSTEM \| ARKUI_SAFE_AREA_TYPE_CUTOUT。 |
@@ -237,6 +275,7 @@ NODE_EXPAND_SAFE_AREA = 92
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].u32 | 扩展安全区域。 |
@@ -245,7 +284,10 @@ NODE_EXPAND_SAFE_AREA = 92
  
   
 
-#### NODE_VISIBLE_AREA_CHANGE_RATIO
+## NODE_VISIBLE_AREA_CHANGE_RATIO
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_VISIBLE_AREA_CHANGE_RATIO = 93
@@ -255,10 +297,11 @@ NODE_VISIBLE_AREA_CHANGE_RATIO = 93
  
 作为属性设置方法参数、属性获取方法返回值[ArkUI_AttributeItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-arkui-attributeitem)格式如下。
  
-**起始版本：** 22
+**起始版本：** 12
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[...].f32 | 占比数值，输入范围0-1。 |
@@ -267,6 +310,7 @@ NODE_VISIBLE_AREA_CHANGE_RATIO = 93
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[...].f32 | 占比数值。 |
@@ -275,7 +319,10 @@ NODE_VISIBLE_AREA_CHANGE_RATIO = 93
  
   
 
-#### NODE_FOCUS_BOX
+## NODE_FOCUS_BOX
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_FOCUS_BOX = 96
@@ -289,6 +336,7 @@ NODE_FOCUS_BOX = 96
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 焦点框相对组件边缘的距离。正数代表外侧，负数代表内侧。不支持百分比。 |
@@ -298,7 +346,10 @@ NODE_FOCUS_BOX = 96
  
   
 
-#### NODE_TAB_STOP
+## NODE_TAB_STOP
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TAB_STOP = 98
@@ -312,6 +363,7 @@ NODE_TAB_STOP = 98
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 参数值为1表示焦点能停在当前组件，为0表示焦点不能停在当前组件。默认值为0。 |
@@ -319,6 +371,7 @@ NODE_TAB_STOP = 98
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 参数值为1表示焦点停在当前组件，为0表示焦点未停在当前组件。 |
@@ -326,7 +379,10 @@ NODE_TAB_STOP = 98
  
   
 
-#### NODE_NEXT_FOCUS
+## NODE_NEXT_FOCUS
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_NEXT_FOCUS = 101
@@ -340,6 +396,7 @@ NODE_NEXT_FOCUS = 101
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 走焦类型，定义在ArkUI_FocusMove。 |
@@ -348,7 +405,10 @@ NODE_NEXT_FOCUS = 101
  
   
 
-#### NODE_VISIBLE_AREA_APPROXIMATE_CHANGE_RATIO
+## NODE_VISIBLE_AREA_APPROXIMATE_CHANGE_RATIO
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_VISIBLE_AREA_APPROXIMATE_CHANGE_RATIO = 102
@@ -366,6 +426,7 @@ NODE_VISIBLE_AREA_APPROXIMATE_CHANGE_RATIO = 102
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 参数类型为ArkUI_VisibleAreaEventOptions。 |
@@ -373,6 +434,7 @@ NODE_VISIBLE_AREA_APPROXIMATE_CHANGE_RATIO = 102
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .object | 参数类型为ArkUI_VisibleAreaEventOptions。 |
@@ -380,7 +442,10 @@ NODE_VISIBLE_AREA_APPROXIMATE_CHANGE_RATIO = 102
  
   
 
-#### NODE_ENABLE_CLICK_SOUND_EFFECT
+## NODE_ENABLE_CLICK_SOUND_EFFECT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_ENABLE_CLICK_SOUND_EFFECT = 110
@@ -394,6 +459,7 @@ NODE_ENABLE_CLICK_SOUND_EFFECT = 110
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 参数取值为1或0，1表示启用默认点击音效，0表示禁用默认点击音效，默认值为1。 |
@@ -401,6 +467,7 @@ NODE_ENABLE_CLICK_SOUND_EFFECT = 110
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 表示此节点是否启用了默认的点击音效。参数取值为1或0，1表示启用默认点击音效，0表示禁用默认点击音效。 |
@@ -408,7 +475,10 @@ NODE_ENABLE_CLICK_SOUND_EFFECT = 110
  
   
 
-#### NODE_HOVER_EFFECT
+## NODE_HOVER_EFFECT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_HOVER_EFFECT = 112
@@ -422,6 +492,7 @@ NODE_HOVER_EFFECT = 112
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 组件在悬停状态下的悬停效果。参数类型为ArkUI_HoverEffect。默认值为ARKUI_HOVER_EFFECT_AUTO。 |
@@ -429,6 +500,7 @@ NODE_HOVER_EFFECT = 112
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 组件在悬停状态下的悬停效果。参数类型为ArkUI_HoverEffect。 |
@@ -436,7 +508,10 @@ NODE_HOVER_EFFECT = 112
  
   
 
-#### NODE_FOCUS_SCOPE_ID
+## NODE_FOCUS_SCOPE_ID
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_FOCUS_SCOPE_ID = 113
@@ -450,6 +525,7 @@ NODE_FOCUS_SCOPE_ID = 113
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 焦点作用域标识符。 |
@@ -459,6 +535,7 @@ NODE_FOCUS_SCOPE_ID = 113
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .string | 焦点作用域标识符。 |
@@ -468,7 +545,10 @@ NODE_FOCUS_SCOPE_ID = 113
  
   
 
-#### NODE_FOCUS_SCOPE_PRIORITY
+## NODE_FOCUS_SCOPE_PRIORITY
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_FOCUS_SCOPE_PRIORITY = 114
@@ -482,6 +562,7 @@ NODE_FOCUS_SCOPE_PRIORITY = 114
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 焦点作用域标识符。 |
@@ -490,6 +571,7 @@ NODE_FOCUS_SCOPE_PRIORITY = 114
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .string | 焦点作用域标识符。 |
@@ -498,7 +580,10 @@ NODE_FOCUS_SCOPE_PRIORITY = 114
  
   
 
-#### NODE_ON_CLICK_EVENT_DISTANCE_THRESHOLD
+## NODE_ON_CLICK_EVENT_DISTANCE_THRESHOLD
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_ON_CLICK_EVENT_DISTANCE_THRESHOLD = 115
@@ -516,6 +601,7 @@ NODE_ON_CLICK_EVENT_DISTANCE_THRESHOLD = 115
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 点击事件移动阈值。当设置的值小于等于0时，会被转化为默认值。取值范围(0, +∞)。默认值为+∞，单位vp。 |
@@ -523,6 +609,7 @@ NODE_ON_CLICK_EVENT_DISTANCE_THRESHOLD = 115
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 点击事件移动阈值。 |
@@ -530,7 +617,10 @@ NODE_ON_CLICK_EVENT_DISTANCE_THRESHOLD = 115
  
   
 
-#### NODE_RESPONSE_REGION_LIST
+## NODE_RESPONSE_REGION_LIST
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_RESPONSE_REGION_LIST = 116
@@ -548,6 +638,7 @@ NODE_RESPONSE_REGION_LIST = 116
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .data[0].i32 | 适用于此响应区域的事件工具类型。参数类型为ArkUI_ResponseRegionSupportedTool。默认值：ARKUI_RESPONSE_REGIN_SUPPORTED_TOOL_ALL。 |
@@ -560,6 +651,7 @@ NODE_RESPONSE_REGION_LIST = 116
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .data[0].i32 | 适用于此响应区域的事件工具类型。参数类型为ArkUI_ResponseRegionSupportedTool。默认值：ARKUI_RESPONSE_REGIN_SUPPORTED_TOOL_ALL。 |
@@ -572,7 +664,10 @@ NODE_RESPONSE_REGION_LIST = 116
  
   
 
-#### NODE_MONOPOLIZE_EVENTS
+## NODE_MONOPOLIZE_EVENTS
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_MONOPOLIZE_EVENTS = 117
@@ -586,6 +681,7 @@ NODE_MONOPOLIZE_EVENTS = 117
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 取值范围为1或0。1表示设置组件独占，0表示组件未设置独占属性。 |
@@ -593,6 +689,7 @@ NODE_MONOPOLIZE_EVENTS = 117
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 取值范围为1或0。1表示设置组件独占，0表示组件未设置独占属性。 |

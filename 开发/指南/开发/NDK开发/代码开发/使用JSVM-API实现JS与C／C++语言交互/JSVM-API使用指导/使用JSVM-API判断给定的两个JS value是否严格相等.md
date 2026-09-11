@@ -1,37 +1,38 @@
 # 使用JSVM-API判断给定的两个JS value是否严格相等
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-strict-equals
 
-#### 简介
+## 简介
 
 JSVM-API 中的函数用于判断两个 JavaScript 值是否严格相等，类似于 JavaScript 中的 === 操作符。该函数避免类型转换和松散相等性比较，确保值和类型均相等。
  
   
 
-#### 基本概念
+## 基本概念
 
 比较两个JavaScript值是否严格相等。严格相等比较不会进行类型转换，它要求两个值的类型和值完全相同才会返回true。
  
   
 
-#### 接口说明
+## 接口说明
  
+
 | 接口 | 功能说明 |
 | --- | --- |
-| OH_JSVM_StrictEquals | 判断两个JSVM_Value对象是否相等 |
+| OH_JSVM_StrictEquals | 判断两个JSVM_Value对象是否严格相等 |
  
  
   
 
-#### 使用示例
+## 使用示例
 
 JSVM-API接口开发流程参考[使用JSVM-API实现JS与C/C++语言交互开发流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-process)，本文仅对接口对应C++相关代码进行展示。
  
   
 
-#### OH_JSVM_StrictEquals
+### OH_JSVM_StrictEquals
 
 判断给定的两个JS value是否严格相等。
  
@@ -45,7 +46,7 @@ cpp部分代码：
 // OH_JSVM_StrictEquals的样例方法
 static JSVM_Value IsStrictEquals(JSVM_Env env, JSVM_CallbackInfo info)
 {
-    // 接受两个入参
+    // 接收两个入参
     size_t argc = 2;
     JSVM_Value args[2] = {nullptr};
     OH_JSVM_GetCbInfo(env, info, &argc, args, nullptr, nullptr);

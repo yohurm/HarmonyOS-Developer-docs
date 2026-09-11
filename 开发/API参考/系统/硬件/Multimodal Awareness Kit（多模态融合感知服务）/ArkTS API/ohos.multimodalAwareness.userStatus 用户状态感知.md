@@ -1,6 +1,6 @@
 # @ohos.multimodalAwareness.userStatus (用户状态感知)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-awareness-userstatus
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -12,7 +12,8 @@
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -22,13 +23,15 @@ import { userStatus } from '@kit.MultimodalAwarenessKit';
 
 
 
-#### UserAgeGroup(deprecated)
+## UserAgeGroup(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone
 
 表示用户具体的年龄分类群组，例如，儿童或成年人。
 
 **系统能力**：SystemCapability.MultimodalAwareness.UserStatus
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -38,13 +41,15 @@ import { userStatus } from '@kit.MultimodalAwarenessKit';
 
 
 
-#### UserClassification(deprecated)
+## UserClassification(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone
 
 表示用户年龄群组分类检测结果。
 
 **系统能力**：SystemCapability.MultimodalAwareness.UserStatus
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -54,9 +59,10 @@ import { userStatus } from '@kit.MultimodalAwarenessKit';
 
 
 
-#### userStatus.on('userAgeGroupDetected')(deprecated)
+## userStatus.on('userAgeGroupDetected')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone
 
 on(type: 'userAgeGroupDetected', callback: Callback&lt;UserClassification&gt;): void
 
@@ -74,6 +80,7 @@ on(type: 'userAgeGroupDetected', callback: Callback&lt;UserClassification&gt;): 
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件类型。type为“userAgeGroupDetected”，表示年龄群组检测功能。 |
@@ -83,6 +90,7 @@ on(type: 'userAgeGroupDetected', callback: Callback&lt;UserClassification&gt;): 
 **错误码**：
 
 以下错误码的详细介绍请参见[用户状态感知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-userstatus)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -109,9 +117,10 @@ try {
 
 
 
-#### userStatus.off('userAgeGroupDetected')(deprecated)
+## userStatus.off('userAgeGroupDetected')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone
 
 off(type: 'userAgeGroupDetected', callback?: Callback&lt;UserClassification&gt;): void
 
@@ -127,6 +136,7 @@ off(type: 'userAgeGroupDetected', callback?: Callback&lt;UserClassification&gt;)
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件类型。type为“userAgeGroupDetected”，表示年龄群组检测功能。 |
@@ -136,6 +146,7 @@ off(type: 'userAgeGroupDetected', callback?: Callback&lt;UserClassification&gt;)
 **错误码**：
 
 以下错误码的详细介绍请参见[用户状态感知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-userstatus)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

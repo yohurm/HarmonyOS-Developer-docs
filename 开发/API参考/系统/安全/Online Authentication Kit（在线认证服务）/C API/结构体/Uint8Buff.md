@@ -1,10 +1,14 @@
 # Uint8Buff
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_uint8_buff
+**支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 定义uint8_t字节流。
  
@@ -16,12 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 成员变量
+### 成员变量
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | uint32_t length | 字节流的长度。 |
@@ -30,11 +41,17 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### length
+### length
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 uint32_t Uint8Buff::length
@@ -46,7 +63,10 @@ uint32_t Uint8Buff::length
  
   
 
-#### val
+### val
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 uint8_t* Uint8Buff::val

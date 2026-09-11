@@ -1,18 +1,19 @@
-# hdsMaterial
+# hdsMaterial (hds沉浸光感材质)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdsmaterial
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+**支持设备：** Phone | PC/2in1 | Tablet
 
 本模块提供材质效果能力，支持通过配置材质类型、等级等参数，实现多样化的材质表现。
 
 **起始版本：** 6.1.0(23)
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 import { hdsMaterial } from '@kit.UIDesignKit';
@@ -20,9 +21,10 @@ import { hdsMaterial } from '@kit.UIDesignKit';
 
 
 
-#### getSystemMaterialTypes
+## getSystemMaterialTypes
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 getSystemMaterialTypes(): Array&lt;MaterialType&gt;
 
@@ -37,6 +39,7 @@ getSystemMaterialTypes(): Array&lt;MaterialType&gt;
 **起始版本：** 6.1.0(23)
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -60,9 +63,10 @@ try {
 
 
 
-#### MaterialType
+## MaterialType
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 材质类型枚举。
 
@@ -74,6 +78,7 @@ try {
 
 **起始版本：** 6.1.0(23)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NONE | 0 | 无材质效果。 |
@@ -83,9 +88,10 @@ try {
 
 
 
-#### MaterialLevel
+## MaterialLevel
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 材质等级枚举。各等级效果承载在支持配置材质属性的组件上，其中精美等级材质需要耗费的性能更多，流畅等级材质需要耗费的性能较少。
 
@@ -96,6 +102,7 @@ try {
 **系统能力：** SystemCapability.UIDesign.HDSComponent.Core
 
 **起始版本：** 6.1.0(23)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

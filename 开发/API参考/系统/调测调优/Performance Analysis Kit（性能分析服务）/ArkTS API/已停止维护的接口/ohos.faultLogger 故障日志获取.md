@@ -1,9 +1,9 @@
 # @ohos.faultLogger (故障日志获取)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-faultlogger
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 应用可以使用faultLogger接口查询系统侧缓存的当前应用的故障日志。接口以应用包名和系统分配的UID作为唯一键值。
 
@@ -14,9 +14,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { FaultLogger } from '@kit.PerformanceAnalysisKit';
@@ -24,13 +25,15 @@ import { FaultLogger } from '@kit.PerformanceAnalysisKit';
 
 
 
-#### FaultType
+## FaultType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 故障类型枚举。
 
 **系统能力**：SystemCapability.HiviewDFX.Hiview.FaultLogger
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -42,13 +45,15 @@ import { FaultLogger } from '@kit.PerformanceAnalysisKit';
 
 
 
-#### FaultLogInfo
+## FaultLogInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 故障信息数据结构，获取到的故障信息的数据结构。
 
 **系统能力**：SystemCapability.HiviewDFX.Hiview.FaultLogger
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -64,9 +69,10 @@ import { FaultLogger } from '@kit.PerformanceAnalysisKit';
 
 
 
-#### FaultLogger.query9+
+## FaultLogger.query9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 query(faultType: FaultType, callback: AsyncCallback<Array&lt;FaultLogInfo&gt;>) : void
 
@@ -75,6 +81,7 @@ query(faultType: FaultType, callback: AsyncCallback<Array&lt;FaultLogInfo&gt;>) 
 **系统能力**：SystemCapability.HiviewDFX.Hiview.FaultLogger
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -85,6 +92,7 @@ query(faultType: FaultType, callback: AsyncCallback<Array&lt;FaultLogInfo&gt;>) 
 **错误码：**
 
 以下错误码的详细介绍参见[Faultlogger 错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-faultlogger)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -127,9 +135,10 @@ try {
 
 
 
-#### FaultLogger.query9+
+## FaultLogger.query9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 query(faultType: FaultType) : Promise<Array&lt;FaultLogInfo&gt;>
 
@@ -139,12 +148,14 @@ query(faultType: FaultType) : Promise<Array&lt;FaultLogInfo&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | faultType | FaultType | 是 | 输入要查询的故障类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -154,6 +165,7 @@ query(faultType: FaultType) : Promise<Array&lt;FaultLogInfo&gt;>
 **错误码：**
 
 以下错误码的详细介绍参见[Faultlogger 错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-faultlogger)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -194,9 +206,10 @@ async function getLog() {
 
 
 
-#### FaultLogger.querySelfFaultLog(deprecated)
+## FaultLogger.querySelfFaultLog(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 querySelfFaultLog(faultType: FaultType, callback: AsyncCallback<Array&lt;FaultLogInfo&gt;>) : void
 
@@ -209,6 +222,7 @@ querySelfFaultLog(faultType: FaultType, callback: AsyncCallback<Array&lt;FaultLo
 **系统能力**：SystemCapability.HiviewDFX.Hiview.FaultLogger
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -246,9 +260,10 @@ FaultLogger.querySelfFaultLog(FaultLogger.FaultType.JS_CRASH, queryFaultLogCallb
 
 
 
-#### FaultLogger.querySelfFaultLog(deprecated)
+## FaultLogger.querySelfFaultLog(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 querySelfFaultLog(faultType: FaultType) : Promise<Array&lt;FaultLogInfo&gt;>
 
@@ -262,12 +277,14 @@ querySelfFaultLog(faultType: FaultType) : Promise<Array&lt;FaultLogInfo&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | faultType | FaultType | 是 | 输入要查询的故障类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |

@@ -1,20 +1,21 @@
 # @ohos.wifiManager (WLAN)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-wifimanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-该模块主要提供WLAN基础功能（无线接入、无线加密、无线漫游等）、P2P（peer-to-peer）服务的基础功能和WLAN消息通知的相应服务，让应用可以通过WLAN和其他设备互联互通。
+该模块主要提供Wi-Fi基础功能（无线接入、无线加密、无线漫游等）、P2P（peer-to-peer）服务的基础功能和Wi-Fi消息通知的相应服务，让应用可以通过Wi-Fi和其他设备互联互通。
 
 > [!NOTE]
 > 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { wifiManager } from '@kit.ConnectivityKit';
@@ -22,13 +23,14 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.isWifiActive
+## wifiManager.isWifiActive
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isWifiActive(): boolean
 
-查询WLAN开关是否已使能。
+查询Wi-Fi开关是否已激活。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -36,14 +38,16 @@ isWifiActive(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| boolean | true:已使能， false:未使能。 |
+| boolean | true:已激活， false:未激活。 |
 
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -66,13 +70,14 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.enableWifi15+
+## wifiManager.enableWifi15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableWifi(): void
 
-启动WLAN。
+启动Wi-Fi。
 
 **需要权限：** ohos.permission.SET_WIFI_INFO 和 (ohos.permission.MANAGE_WIFI_CONNECTION 仅系统应用可用 或 ohos.permission.MANAGE_ENTERPRISE_WIFI_CONNECTION 仅企业应用可用)
 
@@ -80,7 +85,8 @@ enableWifi(): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -104,13 +110,14 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.disableWifi20+
+## wifiManager.disableWifi20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 disableWifi(): void
 
-关闭WLAN。
+关闭Wi-Fi。
 
 **需要权限：** ohos.permission.SET_WIFI_INFO 和 (ohos.permission.MANAGE_WIFI_CONNECTION 仅系统应用可用 或 ohos.permission.MANAGE_ENTERPRISE_WIFI_CONNECTION 仅企业应用可用)
 
@@ -118,7 +125,8 @@ disableWifi(): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -142,16 +150,17 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.scan(deprecated)
+## wifiManager.scan(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scan(): void
 
-启动WLAN扫描，使用前先使能WLAN。
+启动Wi-Fi扫描，使用前先开启Wi-Fi。
 
 > [!NOTE]
-> 从 API version 9开始支持，从API version 10开始废弃。建议使用 wifiManager.startScan 代替。
+> 从API version 9开始支持，从API version 10开始废弃，建议使用 wifiManager.startScan 替代。
 
 
 **需要权限：** ohos.permission.SET_WIFI_INFO、ohos.permission.LOCATION 和 ohos.permission.APPROXIMATELY_LOCATION
@@ -160,7 +169,8 @@ scan(): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -183,13 +193,14 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.startScan21+
+## wifiManager.startScan21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startScan(): void
 
-启动WLAN扫描。
+启动Wi-Fi扫描。
 
  - 应用程序在前台运行时，两分钟内最多可扫描四次。
  - 在后台运行时，三十分钟内最多可扫描一次。
@@ -202,7 +213,8 @@ startScan(): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -225,19 +237,20 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.getScanResults(deprecated)
+## wifiManager.getScanResults(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getScanResults(): Promise<Array&lt;WifiScanInfo&gt;>
 
 获取扫描结果，使用Promise异步回调。
 
- - 返回一个Promise对象，解析后得到一个包含多个WifiScanInfo对象的数组，每个对象表示一个WLAN网络的扫描信息。
+ - 返回一个Promise对象，解析后得到一个包含多个WifiScanInfo对象的数组，每个对象表示一个Wi-Fi网络的扫描信息。
 
 
 > [!NOTE]
-> 从 API version 9开始支持，从API version 10开始废弃。建议使用 wifiManager.getScanInfoList 代替。
+> 从API version 9开始支持，从API version 10开始废弃，建议使用 wifiManager.getScanInfoList 替代。
 
 
 **需要权限：** ohos.permission.GET_WIFI_INFO 和 (ohos.permission.GET_WIFI_PEERS_MAC 或(ohos.permission.LOCATION 和 ohos.permission.APPROXIMATELY_LOCATION))
@@ -246,6 +259,7 @@ getScanResults(): Promise<Array&lt;WifiScanInfo&gt;>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise< Array&lt;WifiScanInfo&gt; > | Promise对象。返回扫描到的热点列表。 |
@@ -253,7 +267,8 @@ getScanResults(): Promise<Array&lt;WifiScanInfo&gt;>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -264,19 +279,20 @@ getScanResults(): Promise<Array&lt;WifiScanInfo&gt;>
 
 
 
-#### wifiManager.getScanResults(deprecated)
+## wifiManager.getScanResults(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getScanResults(callback: AsyncCallback<Array&lt;WifiScanInfo&gt;>): void
 
 获取扫描结果，使用callback异步回调。
 
- - 通过回调函数返回一个包含多个WifiScanInfo对象的数组，每个对象表示一个WLAN网络的扫描信息。
+ - 通过回调函数返回一个包含多个WifiScanInfo对象的数组，每个对象表示一个Wi-Fi网络的扫描信息。
 
 
 > [!NOTE]
-> 从 API version 9开始支持，从API version 10开始废弃。建议使用 wifiManager.getScanInfoList 代替。
+> 从API version 9开始支持，从API version 10开始废弃，建议使用 wifiManager.getScanInfoList 替代。
 
 
 **需要权限：** ohos.permission.GET_WIFI_INFO 和 (ohos.permission.GET_WIFI_PEERS_MAC 或 (ohos.permission.LOCATION 和 ohos.permission.APPROXIMATELY_LOCATION))
@@ -285,14 +301,16 @@ getScanResults(callback: AsyncCallback<Array&lt;WifiScanInfo&gt;>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback< Array&lt;WifiScanInfo&gt;> | 是 | 回调函数。当成功时，err为0，data为扫描到的热点；否则err为非0值，data为空。 |
+| callback | AsyncCallback< Array&lt;WifiScanInfo&gt;> | 是 | 回调函数。当成功时，异步错误对象err为0，data为扫描到的热点；否则err为非0值，data为空。 |
 
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -348,16 +366,17 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.getScanResultsSync(deprecated)
+## wifiManager.getScanResultsSync(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getScanResultsSync(): Array<[WifiScanInfo](#wifiscaninfo)>
 
-获取扫描结果，使用同步方式返回一个包含多个WifiScanInfo对象的数组，每个对象表示一个WLAN网络的扫描信息。
+获取扫描结果，使用同步方式返回一个包含多个WifiScanInfo对象的数组，每个对象表示一个Wi-Fi网络的扫描信息。
 
 > [!NOTE]
-> 从 API version 9开始支持，从API version 10开始废弃。建议使用 wifiManager.getScanInfoList 代替。
+> 从API version 9开始支持，从API version 10开始废弃，建议使用 wifiManager.getScanInfoList 替代。
 
 
 **需要权限：** ohos.permission.GET_WIFI_INFO 和 (ohos.permission.GET_WIFI_PEERS_MAC 或 (ohos.permission.LOCATION 和 ohos.permission.APPROXIMATELY_LOCATION))
@@ -366,6 +385,7 @@ getScanResultsSync(): Array<[WifiScanInfo](#wifiscaninfo)>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;WifiScanInfo&gt; | 扫描结果数组。 |
@@ -373,7 +393,8 @@ getScanResultsSync(): Array<[WifiScanInfo](#wifiscaninfo)>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -412,9 +433,10 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.getScanInfoList10+
+## wifiManager.getScanInfoList10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getScanInfoList(): Array&lt;WifiScanInfo&gt;
 
@@ -428,6 +450,7 @@ getScanInfoList(): Array&lt;WifiScanInfo&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;WifiScanInfo&gt; | 返回扫描到的热点列表。如果应用申请了ohos.permission.GET_WIFI_PEERS_MAC权限，则返回结果中的bssid为真实设备地址，否则为随机设备地址。 |
@@ -435,7 +458,8 @@ getScanInfoList(): Array&lt;WifiScanInfo&gt;
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -476,13 +500,15 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### WifiScanInfo
+## WifiScanInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-WLAN热点信息。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+Wi-Fi热点信息。
 
 **系统能力：** SystemCapability.Communication.WiFi.STA
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -490,13 +516,13 @@ WLAN热点信息。
 | bssid | string | 否 | 否 | 热点的BSSID，例如：00:11:22:33:44:55。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | bssidType10+ | DeviceAddressType | 否 | 否 | 热点的BSSID类型。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | capabilities | string | 否 | 否 | 热点能力。 |
-| securityType | WifiSecurityType | 否 | 否 | WLAN加密类型。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| securityType | WifiSecurityType | 否 | 否 | Wi-Fi加密类型。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | rssi | number | 否 | 否 | 热点的信号强度(dBm)。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| band | number | 否 | 否 | WLAN接入点的频段，1表示2.4GHZ；2表示5GHZ。 |
-| frequency | number | 否 | 否 | WLAN接入点的频率。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| channelWidth | number | 否 | 否 | WLAN接入点的带宽，具体定义参见WifiChannelWidth。 |
+| band | number | 否 | 否 | Wi-Fi接入点的频段，1表示2.4GHz；2表示5GHz。 |
+| frequency | number | 否 | 否 | Wi-Fi接入点的频率。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| channelWidth | number | 否 | 否 | Wi-Fi接入点的带宽，具体定义参见WifiChannelWidth。 |
 | centerFrequency0 | number | 否 | 否 | 热点的中心频率。 |
-| centerFrequency1 | number | 否 | 否 | 热点的中心频率。如果热点使用两个不重叠的WLAN信道，则返回两个中心频率，分别用centerFrequency0和centerFrequency1表示。 |
+| centerFrequency1 | number | 否 | 否 | 热点的中心频率。如果热点使用两个不重叠的Wi-Fi信道，则返回两个中心频率，分别用centerFrequency0和centerFrequency1表示。 |
 | infoElems | Array&lt;WifiInfoElem&gt; | 否 | 否 | 信息元素。 |
 | timestamp | number | 否 | 否 | 时间戳。 |
 | supportedWifiCategory12+ | WifiCategory | 否 | 否 | 热点支持的最高Wi-Fi级别。 |
@@ -505,17 +531,19 @@ WLAN热点信息。
 
 
 
-#### DeviceAddressType10+
+## DeviceAddressType10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-WLAN设备地址（MAC/BSSID）类型。是标识WLAN设备或接入点的唯一地址。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-在WLAN相关操作中，如连接指定的WLAN网络、获取设备信息等，需要使用DeviceAddressType类型的参数。
+Wi-Fi设备地址（MAC/BSSID）类型。是标识Wi-Fi设备或接入点的唯一地址。
+
+在Wi-Fi相关操作中，如连接指定的Wi-Fi网络、获取设备信息等，需要使用DeviceAddressType类型的参数。
 
 **系统能力：** SystemCapability.Communication.WiFi.Core
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -525,13 +553,15 @@ WLAN设备地址（MAC/BSSID）类型。是标识WLAN设备或接入点的唯一
 
 
 
-#### WifiSecurityType
+## WifiSecurityType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示加密类型的枚举。
 
 **系统能力：** SystemCapability.Communication.WiFi.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -549,13 +579,15 @@ WLAN设备地址（MAC/BSSID）类型。是标识WLAN设备或接入点的唯一
 
 
 
-#### WifiBandType10+
+## WifiBandType10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示WIFI频段类型的枚举。
 
 **系统能力：** SystemCapability.Communication.WiFi.STA
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -568,13 +600,15 @@ WLAN设备地址（MAC/BSSID）类型。是标识WLAN设备或接入点的唯一
 
 
 
-#### WifiStandard10+
+## WifiStandard10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示WIFI标准的枚举。
 
 **系统能力：** SystemCapability.Communication.WiFi.STA
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -585,18 +619,20 @@ WLAN设备地址（MAC/BSSID）类型。是标识WLAN设备或接入点的唯一
 | WIFI_STANDARD_11N | 4 | 802.11n WiFi标准类型。 |
 | WIFI_STANDARD_11AC | 5 | 802.11ac WiFi标准类型。 |
 | WIFI_STANDARD_11AX | 6 | 802.11ax WiFi标准类型。 |
-| WIFI_STANDARD_11BE | 7 | 802.11be WiFi标准类型。 |
+| WIFI_STANDARD_11AD | 7 | 802.11ad WiFi标准类型。 |
 
 
 
 
-#### WifiInfoElem
+## WifiInfoElem
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-WLAN热点信息。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+Wi-Fi热点信息。
 
 **系统能力：** SystemCapability.Communication.WiFi.STA
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -606,13 +642,15 @@ WLAN热点信息。
 
 
 
-#### WifiChannelWidth
+## WifiChannelWidth
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示带宽类型的枚举。
 
 **系统能力：** SystemCapability.Communication.WiFi.STA
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -626,13 +664,15 @@ WLAN热点信息。
 
 
 
-#### WifiDeviceConfig
+## WifiDeviceConfig
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-WLAN配置信息。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+Wi-Fi配置信息。
 
 **系统能力：** SystemCapability.Communication.WiFi.STA
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -645,21 +685,24 @@ WLAN配置信息。
 | netId22+ | number | 否 | 是 | 分配的网络ID。 |
 | eapConfig10+ | WifiEapConfig | 否 | 是 | 可扩展身份验证协议配置。只有securityType为WIFI_SEC_TYPE_EAP时需要填写。 |
 | wapiConfig12+ | WifiWapiConfig | 否 | 是 | WAPI身份验证协议配置。只有securityType为WIFI_SEC_TYPE_WAPI_CERT或WIFI_SEC_TYPE_WAPI_PSK时需要填写。 |
+| showNoInternetDialog | boolean | 否 | 是 | 当首次网络探测检测到无互联网连接时，是否显示提示框。若为false，默认网络绑定到蜂窝网络，不显示提示框；若为true，显示无互联网连接提示框，提示用户选择默认网络绑定。默认值为true。 模型约束： 此接口仅可在Stage模型下使用。 起始版本： 26.0.0 |
 
 
 
 
-#### WifiEapConfig10+
+## WifiEapConfig10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 可扩展身份验证协议配置信息。
 
- - WifiEapConfig是一个用于配置WLAN网络EAP认证的类型。
+ - WifiEapConfig是一个用于配置Wi-Fi网络EAP认证的类型。
  - 包含EAP认证方式、第二阶段认证方式、身份信息、密码、证书等配置项。
 
 
 **系统能力：** SystemCapability.Communication.WiFi.STA
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -682,29 +725,31 @@ WLAN配置信息。
 
 
 
-#### WifiWapiConfig12+
+## WifiWapiConfig12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 WAPI(Wireless LAN Authentication and Privacy Infrastructure) 身份验证协议配置。
 
 当用户通过WAPI身份验证协议连接无线网时，可通过以下方式配置参数或者证书进行连接。
 
- - 方式一:通过配置证书进行连接。WifiDeviceConfig中关键字段的配置如下:       
-preSharedKey无需传参;
+ - 方式一：通过配置证书进行连接。WifiDeviceConfig中关键字段的配置如下：       
+preSharedKey无需传参；
  - securityType设置为WIFI_SEC_TYPE_WAPI_CERT;
  - 在wapiConfig中：         
 wapiAsCert传递AS证书的文本内容。
  - wapiUserCert传递用户证书的文本内容。
 
 
-      - 方式二:通过配置preSharedKey进行链接。WifiDeviceConfig中关键字段的配置如下:       
-preSharedKey传参为路由器上设置的密码;
+      - 方式二：通过配置preSharedKey进行连接。WifiDeviceConfig中关键字段的配置如下：       
+preSharedKey传参为路由器上设置的密码；
  - securityType设置为WIFI_SEC_TYPE_WAPI_PSK。
 
 
 
 **系统能力：** SystemCapability.Communication.WiFi.STA
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -715,9 +760,10 @@ preSharedKey传参为路由器上设置的密码;
 
 
 
-#### WifiCapability
+## WifiCapability
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Wi-Fi功能。
 
@@ -727,6 +773,7 @@ Wi-Fi功能。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | WIFI_AUTO_ENABLE | 0 | Wi-Fi自动启用功能。 |
@@ -734,13 +781,15 @@ Wi-Fi功能。
 
 
 
-#### WapiPskType12+
+## WapiPskType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 WAPI认证方式的枚举。
 
 **系统能力：** SystemCapability.Communication.WiFi.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -750,13 +799,15 @@ WAPI认证方式的枚举。
 
 
 
-#### EapMethod10+
+## EapMethod10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示EAP认证方式的枚举。
 
 **系统能力：** SystemCapability.Communication.WiFi.STA
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -773,13 +824,15 @@ WAPI认证方式的枚举。
 
 
 
-#### Phase2Method10+
+## Phase2Method10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示第二阶段认证方式的枚举。
 
 **系统能力：** SystemCapability.Communication.WiFi.STA
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -795,13 +848,15 @@ WAPI认证方式的枚举。
 
 
 
-#### WifiCategory12+
+## WifiCategory12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-表示热点支持的最高WLAN类别。可以用于识别和区分不同WLAN技术标准的热点。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+表示热点支持的最高Wi-Fi类别。可以用于识别和区分不同Wi-Fi技术标准的热点。
 
 **系统能力：** SystemCapability.Communication.WiFi.STA
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -814,11 +869,12 @@ WAPI认证方式的枚举。
 
 
 
-#### ConnectSettings
+## ConnectSettings
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-连接WLAN设置信息。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+连接Wi-Fi设置信息。
 
 **起始版本：** 26.0.0
 
@@ -827,6 +883,7 @@ WAPI认证方式的枚举。
 **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -838,16 +895,17 @@ WAPI认证方式的枚举。
 
 
 
-#### wifiManager.addCandidateConfig
+## wifiManager.addCandidateConfig
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addCandidateConfig(config: WifiDeviceConfig): Promise&lt;number&gt;
 
-添加候选网络配置，使用Promise异步回调，使用前先使能WLAN。
+添加候选网络配置，使用Promise异步回调，使用前先开启Wi-Fi。
 
- - 通过传入[WifiDeviceConfig](#wifideviceconfig)对象，配置WLAN网络的详细信息，如SSID、密码、安全类型等。
- - 返回一个Promise对象，解析后得到一个数字，表示配置的ID(用于区分、管理不同WLAN配置，其他相关API操作，错误处理调试等)。
+ - 通过传入[WifiDeviceConfig](#wifideviceconfig)对象，配置Wi-Fi网络的详细信息，如SSID、密码、安全类型等。
+ - 返回一个Promise对象，解析后得到一个数字，表示配置的ID，用于区分和管理不同Wi-Fi配置。
 
 
 **需要权限：** ohos.permission.SET_WIFI_INFO
@@ -858,12 +916,14 @@ addCandidateConfig(config: WifiDeviceConfig): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| config | WifiDeviceConfig | 是 | WLAN配置信息。如果bssidType未指定值，则bssidType默认为随机设备地址类型。 |
+| config | WifiDeviceConfig | 是 | Wi-Fi配置信息。如果bssidType未指定值，则bssidType默认为随机设备地址类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -872,7 +932,8 @@ addCandidateConfig(config: WifiDeviceConfig): Promise&lt;number&gt;
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -905,16 +966,17 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.addCandidateConfig
+## wifiManager.addCandidateConfig
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addCandidateConfig(config: WifiDeviceConfig, callback: AsyncCallback&lt;number&gt;): void
 
 添加候选网络配置，使用callback异步回调。
 
- - 将指定的WLAN设备配置添加为候选网络，添加后的网络在没有连接记录的情况下无法触发自动回连，可以通过 connectToCandidateConfig或connectToCandidateConfigWithUserAction 方法实现候选网络连接，页面确认连接成功后，可实现自动回连。
- - 候选网络属于应用维度添加的网络配置，和系统网络配置是相互隔离的，在系统WLAN页面不可见。
+ - 将指定的Wi-Fi设备配置添加为候选网络，添加后的网络在没有连接记录的情况下无法触发自动回连，可以通过[connectToCandidateConfig](#wifimanagerconnecttocandidateconfig)或[connectToCandidateConfigWithUserAction](#wifimanagerconnecttocandidateconfigwithuseraction20)方法实现候选网络连接，页面确认连接成功后，可实现自动回连。
+ - 候选网络属于应用维度添加的网络配置，和系统网络配置是相互隔离的，在系统Wi-Fi页面不可见。
 
 
 **需要权限：** ohos.permission.SET_WIFI_INFO
@@ -925,15 +987,17 @@ addCandidateConfig(config: WifiDeviceConfig, callback: AsyncCallback&lt;number&g
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| config | WifiDeviceConfig | 是 | WLAN配置信息。如果bssidType未指定值，则bssidType默认为随机设备地址类型。 |
-| callback | AsyncCallback&lt;number&gt; | 是 | 回调函数。err为0时：操作成功，data为添加的网络配置ID，如果data值为-1，表示添加失败。 err为非0值时：操作出现错误。 |
+| config | WifiDeviceConfig | 是 | Wi-Fi配置信息。如果bssidType未指定值，则bssidType默认为随机设备地址类型。 |
+| callback | AsyncCallback&lt;number&gt; | 是 | 回调函数。error为0时：操作成功，data为添加的网络配置ID，如果data值为-1，表示添加失败。 error为非0值时：操作出现错误。 |
 
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -964,15 +1028,16 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.removeCandidateConfig
+## wifiManager.removeCandidateConfig
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeCandidateConfig(networkId: number): Promise&lt;void&gt;
 
 移除候选网络配置，使用Promise异步回调。
 
- - 从系统中删除指定网络ID的WLAN候选配置，清理不再需要的WLAN候选配置，释放系统资源。
+ - 从系统中删除指定网络ID的Wi-Fi候选配置，清理不再需要的Wi-Fi候选配置，释放系统资源。
  - 只能移除通过[addCandidateConfig](#wifimanageraddcandidateconfig)添加的候选配置，移除后该候选网络将不再被系统自动连接。
 
 
@@ -984,12 +1049,14 @@ removeCandidateConfig(networkId: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | networkId | number | 是 | 网络配置ID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -998,7 +1065,8 @@ removeCandidateConfig(networkId: number): Promise&lt;void&gt;
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1028,15 +1096,16 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.removeCandidateConfig
+## wifiManager.removeCandidateConfig
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeCandidateConfig(networkId: number, callback: AsyncCallback&lt;void&gt;): void
 
 移除指定的候选网络配置，使用callback异步回调。
 
- - 从系统中删除指定网络ID的WLAN候选配置，清理不再需要的WLAN候选配置，释放系统资源。
+ - 从系统中删除指定网络ID的Wi-Fi候选配置，清理不再需要的Wi-Fi候选配置，释放系统资源。
  - 只能移除通过[addCandidateConfig](#wifimanageraddcandidateconfig)添加的候选配置，移除后该候选网络将不再被系统自动连接。
 
 
@@ -1048,15 +1117,17 @@ removeCandidateConfig(networkId: number, callback: AsyncCallback&lt;void&gt;): v
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | networkId | number | 是 | 网络配置ID。 |
-| callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当操作成功时，err为0。如果err为非0，表示处理出现错误。 |
+| callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当操作成功时，error为0。如果error为非0，表示处理出现错误。 |
 
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1084,15 +1155,16 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.removeDevice15+
+## wifiManager.removeDevice15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeDevice(id: number): void
 
 移除网络配置。
 
- - 通过网络配置ID删除已保存的WLAN网络配置信息。
+ - 通过网络配置ID删除已保存的Wi-Fi网络配置信息。
  - 移除后对应的网络配置将不再可用，设备也不会再自动连接该网络。
 
 
@@ -1102,6 +1174,7 @@ removeDevice(id: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | number | 是 | 网络配置ID。 |
@@ -1109,7 +1182,8 @@ removeDevice(id: number): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1135,17 +1209,18 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.getCandidateConfigs
+## wifiManager.getCandidateConfigs
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCandidateConfigs(): Array&lt;WifiDeviceConfig&gt;
 
 获取候选网络配置。
 
  - 候选网络是指曾经连接过或者手动添加的网络配置。
- - 该接口返回系统中所有已保存但当前未连接的WLAN网络配置。
- - 用于展示可连接的网络列表或进行网络管理操作。
+ - 该接口返回当前应用添加的所有已保存但当前未连接的Wi-Fi候选网络配置。
+ - 用于展示可连接的网络列表。
 
 
 **需要权限：**
@@ -1158,6 +1233,7 @@ API 10起：ohos.permission.GET_WIFI_INFO
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;WifiDeviceConfig&gt; | 候选网络配置数组。 |
@@ -1165,7 +1241,8 @@ API 10起：ohos.permission.GET_WIFI_INFO
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1197,9 +1274,10 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.connectToCandidateConfig
+## wifiManager.connectToCandidateConfig
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 connectToCandidateConfig(networkId: number): void
 
@@ -1213,6 +1291,7 @@ connectToCandidateConfig(networkId: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | networkId | number | 是 | 候选网络配置的ID。 |
@@ -1220,7 +1299,8 @@ connectToCandidateConfig(networkId: number): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1246,9 +1326,10 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.connectToCandidateConfig
+## wifiManager.connectToCandidateConfig
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 connectToCandidateConfig(settings: ConnectSettings): Promise&lt;void&gt;
 
@@ -1266,12 +1347,14 @@ connectToCandidateConfig(settings: ConnectSettings): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| settings | ConnectSettings | 是 | 连接WLAN设置信息。 |
+| settings | ConnectSettings | 是 | 连接Wi-Fi设置信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1280,7 +1363,8 @@ connectToCandidateConfig(settings: ConnectSettings): Promise&lt;void&gt;
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1308,9 +1392,10 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.connectToCandidateConfigWithUserAction20+
+## wifiManager.connectToCandidateConfigWithUserAction20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 connectToCandidateConfigWithUserAction(networkId: number): Promise&lt;void&gt;
 
@@ -1318,7 +1403,7 @@ connectToCandidateConfigWithUserAction(networkId: number): Promise&lt;void&gt;
 
  - 调用此接口时，系统将提示用户确认是否信任并连接到指定的候选网络。
  - 用户确认是连接过程中的必要步骤，未获得用户信任确认前，连接操作不会执行。
- - 建议在发起连接前先通过startScan接口触发一次WLAN扫描，通过[wifiManager.on('wifiScanStateChange')](#wifimanageronwifiscanstatechange)方法监听到扫描结果刷新后再连接，以提高连接成功率。
+ - 建议在发起连接前先通过startScan接口触发一次Wi-Fi扫描，通过[wifiManager.on('wifiScanStateChange')](#wifimanageronwifiscanstatechange)方法监听到扫描结果刷新后再连接，以提高连接成功率。
 
 
 > [!NOTE]
@@ -1333,12 +1418,14 @@ connectToCandidateConfigWithUserAction(networkId: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | networkId | number | 是 | 候选网络配置的ID，ID不能小于0。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1347,7 +1434,8 @@ connectToCandidateConfigWithUserAction(networkId: number): Promise&lt;void&gt;
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1379,9 +1467,10 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.addDeviceConfig15+
+## wifiManager.addDeviceConfig15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addDeviceConfig(config: WifiDeviceConfig): Promise&lt;number&gt;
 
@@ -1393,12 +1482,14 @@ addDeviceConfig(config: WifiDeviceConfig): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| config | WifiDeviceConfig | 是 | WLAN配置信息。如果bssidType无指定值，则bssidType默认为随机设备地址类型。 |
+| config | WifiDeviceConfig | 是 | Wi-Fi配置信息。如果bssidType无指定值，则bssidType默认为随机设备地址类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1407,7 +1498,8 @@ addDeviceConfig(config: WifiDeviceConfig): Promise&lt;number&gt;
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1441,9 +1533,10 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.addDeviceConfig15+
+## wifiManager.addDeviceConfig15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addDeviceConfig(config: WifiDeviceConfig, callback: AsyncCallback&lt;number&gt;): void
 
@@ -1455,15 +1548,17 @@ addDeviceConfig(config: WifiDeviceConfig, callback: AsyncCallback&lt;number&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| config | WifiDeviceConfig | 是 | WLAN配置信息。如果bssidType无指定值，则bssidType默认为随机设备地址类型。 |
-| callback | AsyncCallback&lt;number&gt; | 是 | 回调函数。当操作成功时，err为0，data为添加的网络配置ID，如果data值为-1，表示添加失败。当操作错误，err为非0值。 |
+| config | WifiDeviceConfig | 是 | Wi-Fi配置信息。如果bssidType无指定值，则bssidType默认为随机设备地址类型。 |
+| callback | AsyncCallback&lt;number&gt; | 是 | 回调函数。当操作成功时，error为0，data为添加的网络配置ID，如果data值为-1，表示添加失败。当操作错误，error为非0值。 |
 
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1495,9 +1590,10 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.getDeviceConfigs15+
+## wifiManager.getDeviceConfigs15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDeviceConfigs(): Array&lt;WifiDeviceConfig&gt;
 
@@ -1509,6 +1605,7 @@ getDeviceConfigs(): Array&lt;WifiDeviceConfig&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;WifiDeviceConfig&gt; | 网络配置数组。 |
@@ -1516,7 +1613,8 @@ getDeviceConfigs(): Array&lt;WifiDeviceConfig&gt;
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1540,9 +1638,10 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.connectToNetwork15+
+## wifiManager.connectToNetwork15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 connectToNetwork(networkId: number): void
 
@@ -1554,6 +1653,7 @@ connectToNetwork(networkId: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | networkId | number | 是 | 候选网络配置的ID。 |
@@ -1561,7 +1661,8 @@ connectToNetwork(networkId: number): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1587,13 +1688,14 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.getSignalLevel
+## wifiManager.getSignalLevel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSignalLevel(rssi: number, band: number): number
 
-查询WLAN信号强度。
+查询Wi-Fi信号强度。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
@@ -1601,13 +1703,15 @@ getSignalLevel(rssi: number, band: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rssi | number | 是 | 热点的信号强度(dBm)。 |
-| band | number | 是 | WLAN接入点的频段，1表示2.4GHZ；2表示5GHZ。 |
+| band | number | 是 | Wi-Fi接入点的频段，1表示2.4GHz；2表示5GHz。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1616,7 +1720,8 @@ getSignalLevel(rssi: number, band: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1643,17 +1748,20 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.getLinkedInfo
+## wifiManager.getLinkedInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLinkedInfo(): Promise&lt;WifiLinkedInfo&gt;
 
-获取WLAN连接信息。使用Promise异步回调。
+获取Wi-Fi连接信息。使用Promise异步回调。
 
-**需要权限：** ohos.permission.GET_WIFI_INFO 。
+**需要权限：** ohos.permission.GET_WIFI_INFO
 
-当macType是1 - 设备MAC地址时，获取 macAddress 还需申请ohos.permission.GET_WIFI_LOCAL_MAC权限（API8-15仅面向系统应用开放。从API 16开始，在PC/2in1设备上面向普通应用开放，在其余设备上仍仅面向系统应用开放），无该权限时，macAddress 返回随机MAC地址。
+> [!NOTE]
+> 当macType是1（设备MAC地址）时，获取macAddress还需申请ohos.permission.GET_WIFI_LOCAL_MAC权限（API 8-15仅面向系统应用开放。从API 16开始，在PC/2in1设备上面向普通应用开放，在其余设备上仍仅面向系统应用开放），无该权限时，macAddress返回为空。 如果应用申请了ohos.permission.GET_WIFI_PEERS_MAC权限，则返回结果中的bssid为真实BSSID地址，否则为随机设备地址。
+
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1661,14 +1769,16 @@ getLinkedInfo(): Promise&lt;WifiLinkedInfo&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;WifiLinkedInfo&gt; | Promise对象。表示WLAN连接信息。 |
+| Promise&lt;WifiLinkedInfo&gt; | Promise对象。表示Wi-Fi连接信息。 |
 
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1680,13 +1790,14 @@ getLinkedInfo(): Promise&lt;WifiLinkedInfo&gt;
 
 
 
-#### wifiManager.getLinkedInfo
+## wifiManager.getLinkedInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLinkedInfo(callback: AsyncCallback&lt;WifiLinkedInfo&gt;): void
 
-获取WLAN连接信息。使用callback异步回调。
+获取Wi-Fi连接信息。使用callback异步回调。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO 。
 
@@ -1698,14 +1809,16 @@ getLinkedInfo(callback: AsyncCallback&lt;WifiLinkedInfo&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback&lt;WifiLinkedInfo&gt; | 是 | 回调函数。当获取成功时，err为0，data表示WLAN连接信息。如果err为非0，表示处理出现错误。 |
+| callback | AsyncCallback&lt;WifiLinkedInfo&gt; | 是 | 回调函数。当获取成功时，error为0，data表示Wi-Fi连接信息。如果error为非0，表示处理出现错误。 |
 
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1730,13 +1843,14 @@ wifiManager.getLinkedInfo().then((data: wifiManager.WifiLinkedInfo) => {
 
 
 
-#### wifiManager.getLinkedInfoSync18+
+## wifiManager.getLinkedInfoSync18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-getLinkedInfoSync(): WifiLinkedInfo;
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-获取WLAN连接信息，使用同步方式返回结果。
+getLinkedInfoSync(): WifiLinkedInfo
+
+获取Wi-Fi连接信息，使用同步方式返回结果。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO 。
 
@@ -1748,14 +1862,16 @@ getLinkedInfoSync(): WifiLinkedInfo;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| WifiLinkedInfo | 表示WLAN连接信息。 |
+| WifiLinkedInfo | 表示Wi-Fi连接信息。 |
 
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1779,88 +1895,95 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### WifiLinkedInfo
+## WifiLinkedInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-提供WLAN连接的相关信息。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+提供Wi-Fi连接的相关信息。
 
 **系统能力：** SystemCapability.Communication.WiFi.STA
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | ssid | string | 否 | 否 | 热点的SSID（Service Set Identifier，服务集标识符），用于获取当前设备已连接的Wi-Fi热点的公开名称（即无线网络的名称），编码格式为UTF-8。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | bssid | string | 否 | 否 | 热点的BSSID（Basic Service Set Identifier，基本服务集标识符）即无线网络的MAC地址。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | rssi | number | 否 | 否 | 热点的信号强度(dBm)。 RSSI（Received Signal Strength Indicator，接收信号强度指示），其标准取值范围为-127dBm至0dBm。在正常使用场景下，常见有效范围为-100dBm（弱信号）至-30dBm（强信号），接近0dBm表示信号极强。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| band | number | 否 | 否 | WLAN接入点的频段，1表示2.4GHZ；2表示5GHZ。 |
-| linkSpeed | number | 否 | 否 | WLAN接入点的上行速度，单位Mbps。 |
-| rxLinkSpeed10+ | number | 否 | 否 | WLAN接入点的下行速度，单位Mbps。 |
+| band | number | 否 | 否 | Wi-Fi接入点的频段，1表示2.4GHz；2表示5GHz。 |
+| linkSpeed | number | 否 | 否 | Wi-Fi接入点的上行速度，单位Mbps。 |
+| rxLinkSpeed10+ | number | 否 | 否 | Wi-Fi接入点的下行速度，单位Mbps。 |
 | maxSupportedTxLinkSpeed10+ | number | 否 | 否 | 当前支持的最大上行速率，单位Mbps。 |
 | maxSupportedRxLinkSpeed10+ | number | 否 | 否 | 当前支持的最大下行速率，单位Mbps。 |
-| frequency | number | 否 | 否 | WLAN接入点的频率。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| isHidden | boolean | 否 | 否 | WLAN接入点是否是隐藏网络，true表示是隐藏网络，false表示不是隐藏网络。 |
-| isRestricted | boolean | 否 | 否 | WLAN接入点是否限制数据量，true表示限制，false表示不限制。 |
+| frequency | number | 否 | 否 | Wi-Fi接入点的频率。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| isHidden | boolean | 否 | 否 | Wi-Fi接入点是否是隐藏网络，true表示是隐藏网络，false表示不是隐藏网络。 |
+| isRestricted | boolean | 否 | 否 | Wi-Fi接入点是否限制数据量，true表示限制，false表示不限制。 |
 | macType | number | 否 | 否 | MAC地址类型。0 - 随机MAC地址，1 - 设备MAC地址。 |
 | macAddress | string | 否 | 否 | 设备的MAC地址。 |
-| ipAddress | number | 否 | 否 | WLAN连接的IP地址。 1. IP地址在WiFi连接信息和"设置 > 关于本机 > 状态信息"中可以查看。 2. ipAddress值为number类型，需要转换为IP常用格式，具体请参考IP格式转换。 |
-| connState | ConnState | 否 | 否 | WLAN连接状态。 |
+| ipAddress | number | 否 | 否 | Wi-Fi连接的IP地址。 1. IP地址在WiFi连接信息和"设置 > 关于本机 > 状态信息"中可以查看。 2. ipAddress值为number类型，需要转换为点分十进制格式的IP地址（如192.168.1.1），具体请参考IP格式转换。 |
+| connState | ConnState | 否 | 否 | Wi-Fi连接状态。 |
 | channelWidth10+ | WifiChannelWidth | 否 | 否 | 当前连接热点的信道带宽。 |
 | wifiStandard10+ | WifiStandard | 否 | 否 | 当前路由器支持的最高Wi-Fi标准。 |
-| supportedWifiCategory12+ | WifiCategory | 否 | 否 | 当前手机连接Wi-Fi后支持的最高协议版本。 |
+| supportedWifiCategory12+ | WifiCategory | 否 | 否 | 当前设备连接Wi-Fi后支持的最高协议版本。 |
 | isHiLinkNetwork12+ | boolean | 否 | 否 | 热点是否支持hilink，true表示支持， false表示不支持。 |
 | wifiLinkType18+ | WifiLinkType | 否 | 是 | Wi-Fi7连接类型。 |
 
 
 
 
-#### WifiLinkType18+
+## WifiLinkType18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，Wi-Fi7连接类型。
 
 **系统能力：** SystemCapability.Communication.WiFi.STA
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DEFAULT_LINK | 0 | 默认连接类型。 |
 | WIFI7_SINGLE_LINK | 1 | Wi-Fi7单链连接。 |
-| WIFI7_MLSR | 2 | Wi-Fi7 MLSR（multi-link single-radio，多链路多天线）连接。 |
+| WIFI7_MLSR | 2 | Wi-Fi7 MLSR（multi-link single-radio，多链路单射频）连接。 |
 | WIFI7_EMLSR | 3 | Wi-Fi7 EMLSR（enhanced multi-link single-radio，增强型多链路单天线）连接。 |
 | WIFI7_STR | 4 | Wi-Fi7 STR（Simultaneous Tx and Rx，同时发送和接收）连接。 |
 
 
 
 
-#### ConnState
+## ConnState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-表示WLAN连接状态的枚举。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+表示Wi-Fi连接状态的枚举。
 
 **系统能力：** SystemCapability.Communication.WiFi.STA
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SCANNING | 0 | 设备正在搜索可用的AP。 |
-| CONNECTING | 1 | 正在建立WLAN连接。 |
-| AUTHENTICATING | 2 | WLAN连接正在认证中。 |
-| OBTAINING_IPADDR | 3 | 正在获取WLAN连接的IP地址。 |
-| CONNECTED | 4 | WLAN连接已建立。 |
-| DISCONNECTING | 5 | WLAN连接正在断开。 |
-| DISCONNECTED | 6 | WLAN连接已断开。 |
-| UNKNOWN | 7 | WLAN连接建立失败。 |
+| CONNECTING | 1 | 正在建立Wi-Fi连接。 |
+| AUTHENTICATING | 2 | Wi-Fi连接正在认证中。 |
+| OBTAINING_IPADDR | 3 | 正在获取Wi-Fi连接的IP地址。 |
+| CONNECTED | 4 | Wi-Fi连接已建立。 |
+| DISCONNECTING | 5 | Wi-Fi连接正在断开。 |
+| DISCONNECTED | 6 | Wi-Fi连接已断开。 |
+| UNKNOWN | 7 | Wi-Fi连接建立失败。 |
 
 
 
 
-#### wifiManager.isConnected
+## wifiManager.isConnected
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isConnected(): boolean
 
-查询WLAN是否已连接。
+查询Wi-Fi是否已连接。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
@@ -1870,6 +1993,7 @@ isConnected(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | true:已连接， false:未连接。 |
@@ -1877,7 +2001,8 @@ isConnected(): boolean
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1901,13 +2026,14 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.disconnect15+
+## wifiManager.disconnect15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 disconnect(): void
 
-断开WLAN连接。
+断开Wi-Fi连接。
 
 **需要权限：** ohos.permission.SET_WIFI_INFO 和 (ohos.permission.MANAGE_WIFI_CONNECTION 仅系统应用可用 或
 
@@ -1917,7 +2043,8 @@ ohos.permission.MANAGE_ENTERPRISE_WIFI_CONNECTION 仅企业应用可用)
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1941,13 +2068,14 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.isFeatureSupported
+## wifiManager.isFeatureSupported
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isFeatureSupported(featureId: number): boolean
 
-判断设备是否支持相关WLAN特性。
+判断设备是否支持指定的Wi-Fi特性。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
@@ -1955,12 +2083,14 @@ isFeatureSupported(featureId: number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | featureId | number | 是 | 特性ID值。 |
 
 
 **特性ID值枚举：**
+
 
 | 枚举值 | 说明 |
 | --- | --- |
@@ -1978,6 +2108,7 @@ isFeatureSupported(featureId: number): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | true:支持， false:不支持。 |
@@ -1985,7 +2116,8 @@ isFeatureSupported(featureId: number): boolean
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2011,9 +2143,10 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.getDeviceMacAddress15+
+## wifiManager.getDeviceMacAddress15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDeviceMacAddress(): string[]
 
@@ -2027,6 +2160,7 @@ API8-15 ohos.permission.GET_WIFI_LOCAL_MAC权限仅向系统应用开放，从AP
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string[] | MAC地址。 |
@@ -2034,7 +2168,8 @@ API8-15 ohos.permission.GET_WIFI_LOCAL_MAC权限仅向系统应用开放，从AP
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2059,9 +2194,10 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.getIpInfo
+## wifiManager.getIpInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getIpInfo(): IpInfo
 
@@ -2073,6 +2209,7 @@ getIpInfo(): IpInfo
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | IpInfo | IP信息。 |
@@ -2080,7 +2217,8 @@ getIpInfo(): IpInfo
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2104,13 +2242,15 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### IpInfo
+## IpInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 IPV4信息。
 
 **系统能力：** SystemCapability.Communication.WiFi.STA
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2125,9 +2265,10 @@ IPV4信息。
 
 
 
-#### wifiManager.getIpv6Info10+
+## wifiManager.getIpv6Info10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getIpv6Info(): Ipv6Info
 
@@ -2139,6 +2280,7 @@ getIpv6Info(): Ipv6Info
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Ipv6Info | Ipv6信息。 |
@@ -2146,7 +2288,8 @@ getIpv6Info(): Ipv6Info
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2170,13 +2313,15 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### Ipv6Info10+
+## Ipv6Info10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Ipv6信息。
 
 **系统能力：** SystemCapability.Communication.WiFi.STA
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2193,9 +2338,10 @@ Ipv6信息。
 
 
 
-#### wifiManager.getCountryCode
+## wifiManager.getCountryCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCountryCode(): string
 
@@ -2207,6 +2353,7 @@ getCountryCode(): string
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 国家码。 |
@@ -2214,7 +2361,8 @@ getCountryCode(): string
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2238,9 +2386,10 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.isBandTypeSupported10+
+## wifiManager.isBandTypeSupported10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isBandTypeSupported(bandType: WifiBandType): boolean
 
@@ -2252,12 +2401,14 @@ isBandTypeSupported(bandType: WifiBandType): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bandType | WifiBandType | 是 | Wifi 频段类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2266,7 +2417,8 @@ isBandTypeSupported(bandType: WifiBandType): boolean
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2291,9 +2443,10 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.isMeteredHotspot11+
+## wifiManager.isMeteredHotspot11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isMeteredHotspot(): boolean
 
@@ -2305,6 +2458,7 @@ isMeteredHotspot(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | true:是手机热点， false:不是手机热点。 |
@@ -2312,7 +2466,8 @@ isMeteredHotspot(): boolean
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2337,13 +2492,14 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.isHotspotActive15+
+## wifiManager.isHotspotActive15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isHotspotActive(): boolean
 
-热点是否已使能。
+热点是否已开启。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
@@ -2351,14 +2507,16 @@ isHotspotActive(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| boolean | true:已使能， false:未使能。 |
+| boolean | 热点是否已开启。true:已开启， false:未开启。 |
 
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2382,9 +2540,10 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.getP2pLinkedInfo
+## wifiManager.getP2pLinkedInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getP2pLinkedInfo(): Promise&lt;WifiP2pLinkedInfo&gt;
 
@@ -2398,6 +2557,7 @@ getP2pLinkedInfo(): Promise&lt;WifiP2pLinkedInfo&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;WifiP2pLinkedInfo&gt; | Promise对象。表示P2P连接信息。 |
@@ -2405,7 +2565,8 @@ getP2pLinkedInfo(): Promise&lt;WifiP2pLinkedInfo&gt;
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2416,9 +2577,10 @@ getP2pLinkedInfo(): Promise&lt;WifiP2pLinkedInfo&gt;
 
 
 
-#### wifiManager.getP2pLinkedInfo
+## wifiManager.getP2pLinkedInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getP2pLinkedInfo(callback: AsyncCallback&lt;WifiP2pLinkedInfo&gt;): void
 
@@ -2432,6 +2594,7 @@ getP2pLinkedInfo(callback: AsyncCallback&lt;WifiP2pLinkedInfo&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;WifiP2pLinkedInfo&gt; | 是 | 回调函数。当操作成功时，err为0，data表示P2P连接信息。如果err为非0，表示处理出现错误。 |
@@ -2439,7 +2602,8 @@ getP2pLinkedInfo(callback: AsyncCallback&lt;WifiP2pLinkedInfo&gt;): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2469,13 +2633,15 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### WifiP2pLinkedInfo
+## WifiP2pLinkedInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-提供WLAN连接的相关信息。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+提供Wi-Fi连接的相关信息。
 
 **系统能力：** SystemCapability.Communication.WiFi.P2P
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2486,13 +2652,15 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### P2pConnectState
+## P2pConnectState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示P2P连接状态的枚举。
 
 **系统能力：** SystemCapability.Communication.WiFi.P2P
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2502,9 +2670,10 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.getCurrentGroup
+## wifiManager.getCurrentGroup
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCurrentGroup(): Promise&lt;WifiP2pGroupInfo&gt;
 
@@ -2518,6 +2687,7 @@ API 10起：ohos.permission.GET_WIFI_INFO
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;WifiP2pGroupInfo&gt; | Promise对象。表示当前组信息。如果应用申请了ohos.permission.GET_WIFI_PEERS_MAC权限，则返回结果中的deviceAddress为真实设备地址，否则为随机设备地址。 |
@@ -2525,7 +2695,8 @@ API 10起：ohos.permission.GET_WIFI_INFO
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2536,9 +2707,10 @@ API 10起：ohos.permission.GET_WIFI_INFO
 
 
 
-#### wifiManager.getCurrentGroup
+## wifiManager.getCurrentGroup
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCurrentGroup(callback: AsyncCallback&lt;WifiP2pGroupInfo&gt;): void
 
@@ -2552,14 +2724,16 @@ API 10起：ohos.permission.GET_WIFI_INFO
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback&lt;WifiP2pGroupInfo&gt; | 是 | 回调函数。当操作成功时，err为0，data表示当前组信息。如果error为非0，表示处理出现错误。如果应用申请了ohos.permission.GET_WIFI_PEERS_MAC权限，则返回结果中的deviceAddress为真实设备地址，否则为随机设备地址。 |
+| callback | AsyncCallback&lt;WifiP2pGroupInfo&gt; | 是 | 回调函数。当操作成功时，err为0，data表示当前组信息。如果err为非0，表示处理出现错误。如果应用申请了ohos.permission.GET_WIFI_PEERS_MAC权限，则返回结果中的deviceAddress为真实设备地址，否则为随机设备地址。 |
 
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2588,9 +2762,10 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.getP2pPeerDevices
+## wifiManager.getP2pPeerDevices
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getP2pPeerDevices(): Promise<WifiP2pDevice[]>
 
@@ -2604,6 +2779,7 @@ API 10起：ohos.permission.GET_WIFI_INFO
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<WifiP2pDevice[]> | Promise对象。表示对端设备列表信息。如果应用申请了ohos.permission.GET_WIFI_PEERS_MAC权限，则返回结果中的deviceAddress为真实设备地址，否则为随机设备地址。 |
@@ -2611,7 +2787,8 @@ API 10起：ohos.permission.GET_WIFI_INFO
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2622,9 +2799,10 @@ API 10起：ohos.permission.GET_WIFI_INFO
 
 
 
-#### wifiManager.getP2pPeerDevices
+## wifiManager.getP2pPeerDevices
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getP2pPeerDevices(callback: AsyncCallback<WifiP2pDevice[]>): void
 
@@ -2638,6 +2816,7 @@ API 10起：ohos.permission.GET_WIFI_INFO
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<WifiP2pDevice[]> | 是 | 回调函数。当操作成功时，err为0，data表示对端设备列表信息。如果err为非0，表示处理出现错误。如果应用申请了ohos.permission.GET_WIFI_PEERS_MAC权限，则返回结果中的deviceAddress为真实设备地址，否则为随机设备地址。 |
@@ -2645,7 +2824,8 @@ API 10起：ohos.permission.GET_WIFI_INFO
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2675,13 +2855,15 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### WifiP2pDevice
+## WifiP2pDevice
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示P2P设备信息。
 
 **系统能力：** SystemCapability.Communication.WiFi.P2P
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2695,13 +2877,15 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### P2pDeviceStatus
+## P2pDeviceStatus
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示设备状态的枚举。
 
 **系统能力：** SystemCapability.Communication.WiFi.P2P
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2714,9 +2898,10 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.getP2pLocalDevice
+## wifiManager.getP2pLocalDevice
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getP2pLocalDevice(): Promise&lt;WifiP2pDevice&gt;
 
@@ -2730,6 +2915,7 @@ API 11起：ohos.permission.GET_WIFI_INFO
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;WifiP2pDevice&gt; | Promise对象。表示本端设备信息。 |
@@ -2737,7 +2923,8 @@ API 11起：ohos.permission.GET_WIFI_INFO
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2748,9 +2935,10 @@ API 11起：ohos.permission.GET_WIFI_INFO
 
 
 
-#### wifiManager.getP2pLocalDevice
+## wifiManager.getP2pLocalDevice
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getP2pLocalDevice(callback: AsyncCallback&lt;WifiP2pDevice&gt;): void
 
@@ -2764,12 +2952,14 @@ API 11起：ohos.permission.GET_WIFI_INFO
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback&lt;WifiP2pDevice&gt; | 是 | 回调函数。当操作成功时，err为0，data表示本端设备信息。如果error为非0，表示处理出现错误。 |
+| callback | AsyncCallback&lt;WifiP2pDevice&gt; | 是 | 回调函数。当操作成功时，err为0，data表示本端设备信息。如果err为非0，表示处理出现错误。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2799,19 +2989,21 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.createGroup
+## wifiManager.createGroup
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createGroup(config: WifiP2PConfig): void
 
-创建群组。
+创建群组。创建群组后，可调用[removeGroup](#wifimanagerremovegroup)移除已创建的群组。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
 **系统能力：** SystemCapability.Communication.WiFi.P2P
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2820,7 +3012,8 @@ createGroup(config: WifiP2PConfig): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2853,13 +3046,15 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### WifiP2PConfig
+## WifiP2PConfig
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示P2P配置信息。
 
 **系统能力：** SystemCapability.Communication.WiFi.P2P
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2874,26 +3069,29 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### GroupOwnerBand
+## GroupOwnerBand
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示群组带宽的枚举。
 
 **系统能力：** SystemCapability.Communication.WiFi.P2P
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | GO_BAND_AUTO | 0 | 自动模式。 |
-| GO_BAND_2GHZ | 1 | 2.4GHZ。 |
-| GO_BAND_5GHZ | 2 | 5GHZ。 |
+| GO_BAND_2GHZ | 1 | 2.4GHz。 |
+| GO_BAND_5GHZ | 2 | 5GHz。 |
 
 
 
 
-#### wifiManager.removeGroup
+## wifiManager.removeGroup
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeGroup(): void
 
@@ -2905,7 +3103,8 @@ removeGroup(): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2929,13 +3128,14 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.p2pConnect
+## wifiManager.p2pConnect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 p2pConnect(config: WifiP2PConfig): void
 
-执行P2P连接。
+执行P2P连接。调用此方法连接后，如需取消可调用[p2pCancelConnect](#wifimanagerp2pcancelconnect)。
 
 **需要权限：**
 
@@ -2945,6 +3145,7 @@ API 10起：ohos.permission.GET_WIFI_INFO
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | config | WifiP2PConfig | 是 | 连接配置信息。如果DeviceAddressType未指定值，则DeviceAddressType默认为随机设备地址类型。 |
@@ -2952,7 +3153,8 @@ API 10起：ohos.permission.GET_WIFI_INFO
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3033,9 +3235,10 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.p2pCancelConnect
+## wifiManager.p2pCancelConnect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 p2pCancelConnect(): void
 
@@ -3047,7 +3250,8 @@ p2pCancelConnect(): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3071,13 +3275,14 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.startDiscoverDevices
+## wifiManager.startDiscoverDevices
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startDiscoverDevices(): void
 
-开始发现设备。
+开始发现设备。调用此方法后，可调用[stopDiscoverDevices](#wifimanagerstopdiscoverdevices)停止发现设备以释放资源。
 
 **需要权限：**
 
@@ -3087,7 +3292,8 @@ API 10起：ohos.permission.GET_WIFI_INFO
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3111,9 +3317,10 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.stopDiscoverDevices
+## wifiManager.stopDiscoverDevices
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopDiscoverDevices(): void
 
@@ -3125,7 +3332,8 @@ stopDiscoverDevices(): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3149,13 +3357,14 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.getMultiLinkedInfo18+
+## wifiManager.getMultiLinkedInfo18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMultiLinkedInfo(): Array&lt;WifiLinkedInfo&gt;
 
-获取MLO(Multi-Link Operation，多链路操作)WLAN连接信息。
+获取MLO(Multi-Link Operation，多链路操作)Wi-Fi连接信息。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
@@ -3167,6 +3376,7 @@ getMultiLinkedInfo(): Array&lt;WifiLinkedInfo&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;WifiLinkedInfo&gt; | Wi-Fi连接信息。 |
@@ -3174,7 +3384,8 @@ getMultiLinkedInfo(): Array&lt;WifiLinkedInfo&gt;
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3199,13 +3410,15 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### WifiP2pGroupInfo
+## WifiP2pGroupInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示P2P群组相关信息。
 
 **系统能力：** SystemCapability.Communication.WiFi.P2P
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -3222,13 +3435,14 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.on('wifiStateChange')
+## wifiManager.on('wifiStateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'wifiStateChange', callback: Callback&lt;number&gt;): void
 
-注册WLAN状态改变事件，在业务退出时，要调用off(type: 'wifiStateChange', callback?: Callback&lt;number&gt;)接口去掉之前的注册回调。使用callback异步回调。
+注册Wi-Fi状态改变事件，在业务退出时，要调用off(type: 'wifiStateChange', callback?: Callback&lt;number&gt;)接口去掉之前的注册回调。使用callback异步回调。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
@@ -3238,6 +3452,7 @@ on(type: 'wifiStateChange', callback: Callback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定填"wifiStateChange"字符串。 |
@@ -3246,7 +3461,8 @@ on(type: 'wifiStateChange', callback: Callback&lt;number&gt;): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3258,6 +3474,7 @@ on(type: 'wifiStateChange', callback: Callback&lt;number&gt;): void
 
 **状态改变事件的枚举：**
 
+
 | 枚举值 | 说明 |
 | --- | --- |
 | 0 | 未激活。 |
@@ -3268,13 +3485,14 @@ on(type: 'wifiStateChange', callback: Callback&lt;number&gt;): void
 
 
 
-#### wifiManager.off('wifiStateChange')
+## wifiManager.off('wifiStateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'wifiStateChange', callback?: Callback&lt;number&gt;): void
 
-取消注册WLAN状态改变事件。使用callback异步回调。
+取消注册Wi-Fi状态改变事件。使用callback异步回调。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
@@ -3284,6 +3502,7 @@ off(type: 'wifiStateChange', callback?: Callback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定填"wifiStateChange"字符串。 |
@@ -3292,7 +3511,8 @@ off(type: 'wifiStateChange', callback?: Callback&lt;number&gt;): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3320,13 +3540,14 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.on('wifiConnectionChange')
+## wifiManager.on('wifiConnectionChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'wifiConnectionChange', callback: Callback&lt;number&gt;): void
 
-注册WLAN连接状态改变事件，在业务退出时，要调用off(type: 'wifiConnectionChange', callback?: Callback&lt;number&gt;)接口去掉之前的注册回调。使用callback异步回调。
+注册Wi-Fi连接状态改变事件，在业务退出时，要调用off(type: 'wifiConnectionChange', callback?: Callback&lt;number&gt;)接口去掉之前的注册回调。使用callback异步回调。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
@@ -3336,6 +3557,7 @@ on(type: 'wifiConnectionChange', callback: Callback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定填"wifiConnectionChange"字符串。 |
@@ -3343,6 +3565,7 @@ on(type: 'wifiConnectionChange', callback: Callback&lt;number&gt;): void
 
 
 **连接状态改变事件的枚举：**
+
 
 | 枚举值 | 说明 |
 | --- | --- |
@@ -3352,7 +3575,8 @@ on(type: 'wifiConnectionChange', callback: Callback&lt;number&gt;): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3364,13 +3588,14 @@ on(type: 'wifiConnectionChange', callback: Callback&lt;number&gt;): void
 
 
 
-#### wifiManager.off('wifiConnectionChange')
+## wifiManager.off('wifiConnectionChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'wifiConnectionChange', callback?: Callback&lt;number&gt;): void
 
-取消注册WLAN连接状态改变事件。使用callback异步回调。
+取消注册Wi-Fi连接状态改变事件。使用callback异步回调。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
@@ -3380,6 +3605,7 @@ off(type: 'wifiConnectionChange', callback?: Callback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定填"wifiConnectionChange"字符串。 |
@@ -3388,7 +3614,8 @@ off(type: 'wifiConnectionChange', callback?: Callback&lt;number&gt;): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3416,9 +3643,10 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.on('wifiScanStateChange')
+## wifiManager.on('wifiScanStateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'wifiScanStateChange', callback: Callback&lt;number&gt;): void
 
@@ -3432,13 +3660,15 @@ on(type: 'wifiScanStateChange', callback: Callback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定填"wifiScanStateChange"字符串。 |
-| callback | Callback&lt;number&gt; | 是 | 状态改变回调函数。返回: 0: 扫描失败; 1: 扫描成功。 |
+| callback | Callback&lt;number&gt; | 是 | 状态改变回调函数。返回：0：扫描失败；1：扫描成功。 |
 
 
 **扫描状态改变事件的枚举：**
+
 
 | 枚举值 | 说明 |
 | --- | --- |
@@ -3448,7 +3678,8 @@ on(type: 'wifiScanStateChange', callback: Callback&lt;number&gt;): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3460,9 +3691,10 @@ on(type: 'wifiScanStateChange', callback: Callback&lt;number&gt;): void
 
 
 
-#### wifiManager.off('wifiScanStateChange')
+## wifiManager.off('wifiScanStateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'wifiScanStateChange', callback?: Callback&lt;number&gt;): void
 
@@ -3476,6 +3708,7 @@ off(type: 'wifiScanStateChange', callback?: Callback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定填"wifiScanStateChange"字符串。 |
@@ -3484,7 +3717,8 @@ off(type: 'wifiScanStateChange', callback?: Callback&lt;number&gt;): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3512,19 +3746,21 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.on('wifiRssiChange')
+## wifiManager.on('wifiRssiChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'wifiRssiChange', callback: Callback&lt;number&gt;): void
 
-注册WLAN接收信号强度(RSSI)变化事件，在业务退出时，要调用off(type: 'wifiRssiChange', callback?: Callback&lt;number&gt;)接口去掉之前的注册回调。使用callback异步回调。
+注册Wi-Fi接收信号强度(RSSI)变化事件，在业务退出时，要调用off(type: 'wifiRssiChange', callback?: Callback&lt;number&gt;)接口去掉之前的注册回调。使用callback异步回调。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
 **系统能力：** SystemCapability.Communication.WiFi.STA
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3534,7 +3770,8 @@ on(type: 'wifiRssiChange', callback: Callback&lt;number&gt;): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3546,19 +3783,21 @@ on(type: 'wifiRssiChange', callback: Callback&lt;number&gt;): void
 
 
 
-#### wifiManager.off('wifiRssiChange')
+## wifiManager.off('wifiRssiChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'wifiRssiChange', callback?: Callback&lt;number&gt;): void
 
-取消注册WLAN接收信号强度(RSSI)变化事件。使用callback异步回调。
+取消注册Wi-Fi接收信号强度(RSSI)变化事件。使用callback异步回调。
 
 **需要权限：** ohos.permission.GET_WIFI_INFO
 
 **系统能力：** SystemCapability.Communication.WiFi.STA
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3568,7 +3807,8 @@ off(type: 'wifiRssiChange', callback?: Callback&lt;number&gt;): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3596,9 +3836,10 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.on('hotspotStateChange')
+## wifiManager.on('hotspotStateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'hotspotStateChange', callback: Callback&lt;number&gt;): void
 
@@ -3610,13 +3851,15 @@ on(type: 'hotspotStateChange', callback: Callback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定填"hotspotStateChange"字符串。 |
-| callback | Callback&lt;number&gt; | 是 | 状态改变回调函数。返回0:未激活, 1:已激活，2:正在激活，3:正在去激活。 |
+| callback | Callback&lt;number&gt; | 是 | 状态改变回调函数。返回0：未激活，1：已激活，2：正在激活，3：正在去激活。 |
 
 
 **热点状态改变事件的枚举：**
+
 
 | 枚举值 | 说明 |
 | --- | --- |
@@ -3628,7 +3871,8 @@ on(type: 'hotspotStateChange', callback: Callback&lt;number&gt;): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3640,9 +3884,10 @@ on(type: 'hotspotStateChange', callback: Callback&lt;number&gt;): void
 
 
 
-#### wifiManager.off('hotspotStateChange')
+## wifiManager.off('hotspotStateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'hotspotStateChange', callback?: Callback&lt;number&gt;): void
 
@@ -3654,6 +3899,7 @@ off(type: 'hotspotStateChange', callback?: Callback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定填"hotspotStateChange"字符串。 |
@@ -3662,7 +3908,8 @@ off(type: 'hotspotStateChange', callback?: Callback&lt;number&gt;): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3690,9 +3937,10 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.on('p2pStateChange')
+## wifiManager.on('p2pStateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'p2pStateChange', callback: Callback&lt;number&gt;): void
 
@@ -3704,6 +3952,7 @@ on(type: 'p2pStateChange', callback: Callback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定填"p2pStateChange"字符串。 |
@@ -3711,6 +3960,7 @@ on(type: 'p2pStateChange', callback: Callback&lt;number&gt;): void
 
 
 **P2P状态改变事件的枚举：**
+
 
 | 枚举值 | 说明 |
 | --- | --- |
@@ -3723,7 +3973,8 @@ on(type: 'p2pStateChange', callback: Callback&lt;number&gt;): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3735,9 +3986,10 @@ on(type: 'p2pStateChange', callback: Callback&lt;number&gt;): void
 
 
 
-#### wifiManager.off('p2pStateChange')
+## wifiManager.off('p2pStateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'p2pStateChange', callback?: Callback&lt;number&gt;): void
 
@@ -3749,6 +4001,7 @@ off(type: 'p2pStateChange', callback?: Callback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定填"p2pStateChange"字符串。 |
@@ -3757,7 +4010,8 @@ off(type: 'p2pStateChange', callback?: Callback&lt;number&gt;): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3785,9 +4039,10 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.on('p2pConnectionChange')
+## wifiManager.on('p2pConnectionChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'p2pConnectionChange', callback: Callback&lt;WifiP2pLinkedInfo&gt;): void
 
@@ -3799,6 +4054,7 @@ on(type: 'p2pConnectionChange', callback: Callback&lt;WifiP2pLinkedInfo&gt;): vo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定填"p2pConnectionChange"字符串。 |
@@ -3807,7 +4063,8 @@ on(type: 'p2pConnectionChange', callback: Callback&lt;WifiP2pLinkedInfo&gt;): vo
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3819,9 +4076,10 @@ on(type: 'p2pConnectionChange', callback: Callback&lt;WifiP2pLinkedInfo&gt;): vo
 
 
 
-#### wifiManager.off('p2pConnectionChange')
+## wifiManager.off('p2pConnectionChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'p2pConnectionChange', callback?: Callback&lt;WifiP2pLinkedInfo&gt;): void
 
@@ -3833,6 +4091,7 @@ off(type: 'p2pConnectionChange', callback?: Callback&lt;WifiP2pLinkedInfo&gt;): 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定填"p2pConnectionChange"字符串。 |
@@ -3841,7 +4100,8 @@ off(type: 'p2pConnectionChange', callback?: Callback&lt;WifiP2pLinkedInfo&gt;): 
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3869,9 +4129,10 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.on('p2pDeviceChange')
+## wifiManager.on('p2pDeviceChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'p2pDeviceChange', callback: Callback&lt;WifiP2pDevice&gt;): void
 
@@ -3885,6 +4146,7 @@ API 10起：ohos.permission.GET_WIFI_INFO
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定填"p2pDeviceChange"字符串。 |
@@ -3893,7 +4155,8 @@ API 10起：ohos.permission.GET_WIFI_INFO
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3905,9 +4168,10 @@ API 10起：ohos.permission.GET_WIFI_INFO
 
 
 
-#### wifiManager.off('p2pDeviceChange')
+## wifiManager.off('p2pDeviceChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'p2pDeviceChange', callback?: Callback&lt;WifiP2pDevice&gt;): void
 
@@ -3917,6 +4181,7 @@ off(type: 'p2pDeviceChange', callback?: Callback&lt;WifiP2pDevice&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定填"p2pDeviceChange"字符串。 |
@@ -3925,7 +4190,8 @@ off(type: 'p2pDeviceChange', callback?: Callback&lt;WifiP2pDevice&gt;): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3953,9 +4219,10 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.on('p2pPeerDeviceChange')
+## wifiManager.on('p2pPeerDeviceChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'p2pPeerDeviceChange', callback: Callback<WifiP2pDevice[]>): void
 
@@ -3969,6 +4236,7 @@ API 10起：ohos.permission.GET_WIFI_INFO
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定填"p2pPeerDeviceChange"字符串。 |
@@ -3977,7 +4245,8 @@ API 10起：ohos.permission.GET_WIFI_INFO
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3989,9 +4258,10 @@ API 10起：ohos.permission.GET_WIFI_INFO
 
 
 
-#### wifiManager.off('p2pPeerDeviceChange')
+## wifiManager.off('p2pPeerDeviceChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'p2pPeerDeviceChange', callback?: Callback<WifiP2pDevice[]>): void
 
@@ -4001,6 +4271,7 @@ off(type: 'p2pPeerDeviceChange', callback?: Callback<WifiP2pDevice[]>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定填"p2pPeerDeviceChange"字符串。 |
@@ -4009,7 +4280,8 @@ off(type: 'p2pPeerDeviceChange', callback?: Callback<WifiP2pDevice[]>): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4037,9 +4309,10 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.on('p2pPersistentGroupChange')
+## wifiManager.on('p2pPersistentGroupChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'p2pPersistentGroupChange', callback: Callback&lt;void&gt;): void
 
@@ -4051,6 +4324,7 @@ on(type: 'p2pPersistentGroupChange', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定填"p2pPersistentGroupChange"字符串。 |
@@ -4059,7 +4333,8 @@ on(type: 'p2pPersistentGroupChange', callback: Callback&lt;void&gt;): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4071,9 +4346,10 @@ on(type: 'p2pPersistentGroupChange', callback: Callback&lt;void&gt;): void
 
 
 
-#### wifiManager.off('p2pPersistentGroupChange')
+## wifiManager.off('p2pPersistentGroupChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'p2pPersistentGroupChange', callback?: Callback&lt;void&gt;): void
 
@@ -4085,6 +4361,7 @@ off(type: 'p2pPersistentGroupChange', callback?: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定填"p2pPersistentGroupChange"字符串。 |
@@ -4093,7 +4370,8 @@ off(type: 'p2pPersistentGroupChange', callback?: Callback&lt;void&gt;): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4121,9 +4399,10 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.on('p2pDiscoveryChange')
+## wifiManager.on('p2pDiscoveryChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'p2pDiscoveryChange', callback: Callback&lt;number&gt;): void
 
@@ -4135,6 +4414,7 @@ on(type: 'p2pDiscoveryChange', callback: Callback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定填"p2pDiscoveryChange"字符串。 |
@@ -4142,6 +4422,7 @@ on(type: 'p2pDiscoveryChange', callback: Callback&lt;number&gt;): void
 
 
 **发现设备状态改变事件的枚举：**
+
 
 | 枚举值 | 说明 |
 | --- | --- |
@@ -4151,7 +4432,8 @@ on(type: 'p2pDiscoveryChange', callback: Callback&lt;number&gt;): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4163,9 +4445,10 @@ on(type: 'p2pDiscoveryChange', callback: Callback&lt;number&gt;): void
 
 
 
-#### wifiManager.off('p2pDiscoveryChange')
+## wifiManager.off('p2pDiscoveryChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'p2pDiscoveryChange', callback?: Callback&lt;number&gt;): void
 
@@ -4177,6 +4460,7 @@ off(type: 'p2pDiscoveryChange', callback?: Callback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定填"p2pDiscoveryChange"字符串。 |
@@ -4185,7 +4469,8 @@ off(type: 'p2pDiscoveryChange', callback?: Callback&lt;number&gt;): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4213,9 +4498,10 @@ import { wifiManager } from '@kit.ConnectivityKit';
 
 
 
-#### wifiManager.isWlanSupported
+## wifiManager.isWlanSupported
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isWlanSupported(): boolean
 
@@ -4229,6 +4515,7 @@ isWlanSupported(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | Wi-Fi是否可用。true表示Wi-Fi可用， false表示Wi-Fi不可用。 |
@@ -4236,7 +4523,8 @@ isWlanSupported(): boolean
 
 **错误码：**
 
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

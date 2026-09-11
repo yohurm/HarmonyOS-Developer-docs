@@ -1,11 +1,12 @@
 # Class (LatLngBoundsUtils)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-latlngboundsutils
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -15,7 +16,8 @@ import { map, mapCommon } from '@kit.MapKit';
  
   
 
-#### LatLngBoundsUtils
+## LatLngBoundsUtils
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -31,7 +33,8 @@ LatLngBounds工具类。
  
   
 
-#### contains
+### contains
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -49,6 +52,7 @@ static contains(bounds: mapCommon.LatLngBounds, position: mapCommon.LatLng): boo
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bounds | mapCommon.LatLngBounds | 是 | LatLngBounds对象。 |
@@ -57,6 +61,7 @@ static contains(bounds: mapCommon.LatLngBounds, position: mapCommon.LatLng): boo
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | true：包含该位置点（包括坐标点落在LatLngBounds边界上）。 false：不包含该位置点。 |
@@ -66,6 +71,7 @@ static contains(bounds: mapCommon.LatLngBounds, position: mapCommon.LatLng): boo
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid input parameter. |
@@ -92,7 +98,8 @@ let result: boolean = map.LatLngBoundsUtils.contains(bounds, {
  
   
 
-#### contains
+### contains
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -110,6 +117,7 @@ static contains(src: mapCommon.LatLngBounds, target: mapCommon.LatLngBounds): bo
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | src | mapCommon.LatLngBounds | 是 | LatLngBounds对象。 |
@@ -118,6 +126,7 @@ static contains(src: mapCommon.LatLngBounds, target: mapCommon.LatLngBounds): bo
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | true：包含该区域。 false：不包含该区域。 |
@@ -127,6 +136,7 @@ static contains(src: mapCommon.LatLngBounds, target: mapCommon.LatLngBounds): bo
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid input parameter. |
@@ -161,7 +171,8 @@ let result: boolean = map.LatLngBoundsUtils.contains(src, target);
  
   
 
-#### getCenter
+### getCenter
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -179,6 +190,7 @@ static getCenter(bounds: mapCommon.LatLngBounds): mapCommon.LatLng
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bounds | mapCommon.LatLngBounds | 是 | LatLngBounds对象。 |
@@ -186,6 +198,7 @@ static getCenter(bounds: mapCommon.LatLngBounds): mapCommon.LatLng
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | mapCommon.LatLng | 中心经纬度坐标。 |
@@ -195,6 +208,7 @@ static getCenter(bounds: mapCommon.LatLngBounds): mapCommon.LatLng
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid input parameter. |
@@ -218,7 +232,8 @@ let center: mapCommon.LatLng = map.LatLngBoundsUtils.getCenter(bounds);
  
   
 
-#### include
+### include
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -236,6 +251,7 @@ static include(position: mapCommon.LatLng, bounds?: mapCommon.LatLngBounds): map
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | position | mapCommon.LatLng | 是 | 位置坐标。 |
@@ -244,6 +260,7 @@ static include(position: mapCommon.LatLng, bounds?: mapCommon.LatLngBounds): map
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | mapCommon.LatLngBounds | 包含指定位置的LatLngBounds对象。 |
@@ -253,6 +270,7 @@ static include(position: mapCommon.LatLng, bounds?: mapCommon.LatLngBounds): map
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid input parameter. |

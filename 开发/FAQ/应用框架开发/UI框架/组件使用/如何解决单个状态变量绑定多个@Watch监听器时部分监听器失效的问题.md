@@ -16,12 +16,12 @@
 struct S20250403171354570182 {
   @State @Watch('change1') @Watch('change2') num: number = 0;
 
-  // 监听不生效
+<em>  // 监听不生效</em>
   change1() {
     console.info('watch1 ');
   }
 
-  // 监听生效
+<em>  // 监听生效</em>
   change2() {
     console.info('watch2');
   }

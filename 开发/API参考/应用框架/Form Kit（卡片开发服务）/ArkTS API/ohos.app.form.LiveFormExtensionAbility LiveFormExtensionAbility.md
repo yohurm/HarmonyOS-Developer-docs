@@ -1,28 +1,30 @@
 # @ohos.app.form.LiveFormExtensionAbility (LiveFormExtensionAbility)
 
-更新时间：2026-08-04 06:06:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-form-liveformextensionability
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-LiveFormExtensionAbility模块提供互动卡片功能，包括创建、销毁互动卡片等，继承自[ExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-extensionability)。
+LiveFormExtensionAbility（互动卡片扩展能力）模块提供互动卡片功能，包括接收创建和销毁互动卡片的通知等，继承自[ExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-extensionability)。
 
 > [!NOTE]
 > 本模块首批接口从API version 20开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 本模块接口仅可在Stage模型下使用。
 
 
 
-#### 约束限制
+## 约束限制
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 为保障系统安全性和稳定性，防止LiveFormExtensionAbility滥用系统资源，系统对其能力进行管控，不支持部分模块的引用，详情请参考[附录](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-form-liveformextensionability#附录)。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { LiveFormExtensionAbility } from '@kit.FormKit';
@@ -30,23 +32,26 @@ import { LiveFormExtensionAbility } from '@kit.FormKit';
 
 
 
-#### LiveFormExtensionAbility
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-互动卡片扩展类。包含互动卡片提供方接收创建和销毁互动卡片的通知接口。
+## LiveFormExtensionAbility
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 属性
+互动卡片扩展类，用于实现互动卡片的提供方功能。包含互动卡片提供方接收创建和销毁互动卡片的通知接口，开发者可在这些回调中实现卡片的初始化、数据绑定、资源清理等逻辑。[onLiveFormCreate](#onliveformcreate)在用户切换互动卡片状态为激活态时触发，用于初始化和数据绑定；[onLiveFormDestroy](#onliveformdestroy)在用户切换互动卡片状态为非激活态时触发，用于资源清理。两者形成完整的生命周期管理，应确保在create中分配的资源在destroy中正确释放。
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Ability.Form
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -55,13 +60,21 @@ import { LiveFormExtensionAbility } from '@kit.FormKit';
 
 
 
-#### onLiveFormCreate
+### onLiveFormCreate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onLiveFormCreate(liveFormInfo: LiveFormInfo, session: UIExtensionContentSession): void
 
-LiveFormExtensionAbility界面内容对象创建后调用。
+LiveFormExtensionAbility实例创建完成的回调。当用户切换到互动卡片激活态时，系统会自动调用此回调，开发者可在此回调中进行卡片初始化、数据绑定等操作。
+
+**配对调用：**
+
+ - 与onLiveFormDestroy()方法成对使用，构成完整的互动卡片生命周期。
+ - 当互动卡片切换为非激活态时，系统会自动调用onLiveFormDestroy()进行资源清理。
+ - 开发者应确保在onLiveFormCreate中申请的资源在onLiveFormDestroy中正确释放，避免内存泄漏。
+
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -71,10 +84,11 @@ LiveFormExtensionAbility界面内容对象创建后调用。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| liveFormInfo | LiveFormInfo | 是 | 互动卡片信息，包括卡片id等信息。 |
-| session | UIExtensionContentSession | 是 | LiveFormExtensionAbility界面内容相关信息。 |
+| liveFormInfo | LiveFormInfo | 是 | 互动卡片信息，用于标识处于激活态的互动卡片，包括卡片id等信息。 |
+| session | UIExtensionContentSession | 是 | LiveFormExtensionAbility的界面会话对象，用于管理与卡片的交互会话。 |
 
 
 **示例：**
@@ -94,9 +108,10 @@ export default class LiveFormExtAbility extends LiveFormExtensionAbility {
 
 
 
-#### onLiveFormDestroy
+### onLiveFormDestroy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onLiveFormDestroy(liveFormInfo: LiveFormInfo): void
 
@@ -110,9 +125,10 @@ LiveFormExtensionAbility生命周期回调，在销毁时回调，执行资源�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| liveFormInfo | LiveFormInfo | 是 | 互动卡片信息，包括卡片id等信息。 |
+| liveFormInfo | LiveFormInfo | 是 | 互动卡片信息，用于标识处于非激活态的互动卡片，包括卡片id等信息。 |
 
 
 **示例：**
@@ -131,9 +147,10 @@ export default class LiveFormExtAbility extends LiveFormExtensionAbility {
 
 
 
-#### LiveFormInfo
+## LiveFormInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 互动卡片信息。
 
@@ -142,6 +159,7 @@ export default class LiveFormExtAbility extends LiveFormExtensionAbility {
 **系统能力：** SystemCapability.Ability.Form
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -152,11 +170,13 @@ export default class LiveFormExtAbility extends LiveFormExtensionAbility {
 
 
 
-#### 附录
+## 附录
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 LiveFormExtensionAbility不支持以下模块的引用。
+
 
 | Kit名称 | 模块名称 |
 | --- | --- |

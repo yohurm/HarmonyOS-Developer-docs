@@ -1,19 +1,19 @@
 # Class (Matrix)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-graphics-drawing-matrix
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-矩阵对象。
+矩阵对象，用于图形的坐标变换，支持平移、旋转、缩放和倾斜等变换操作。通过矩阵变换可实现不同坐标系之间的映射。
 
-表示为3*3的矩阵，如下图所示：
+表示为3×3的矩阵，如下图所示：
 
 
 ![](assets/Class%20Matrix/file-20260514165004209-0.png)
 
 
-矩阵中的元素从左到右，从上到下分别表示水平缩放系数、水平倾斜系数、水平位移系数、垂直倾斜系数、垂直缩放系数、垂直位移系数、X轴透视系数、Y轴透视系数、透视缩放系数。
+矩阵中的元素从左到右，从上到下分别表示水平缩放因子、水平倾斜系数、水平位移系数、垂直倾斜系数、垂直缩放因子、垂直位移系数、x轴透视系数、y轴透视系数、透视缩放因子。
 
 设(x1, y1)为源坐标点，(x2, y2)为源坐标点通过矩阵变换后的坐标点，则两个坐标点的关系如下：
 
@@ -26,9 +26,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { drawing } from '@kit.ArkGraphics2D';
@@ -36,9 +37,10 @@ import { drawing } from '@kit.ArkGraphics2D';
 
 
 
-#### constructor12+
+## constructor12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -56,9 +58,10 @@ let matrix = new drawing.Matrix();
 
 
 
-#### constructor20+
+## constructor20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(matrix: Matrix)
 
@@ -67,6 +70,7 @@ constructor(matrix: Matrix)
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -84,9 +88,10 @@ let matrix2 = new drawing.Matrix(matrix);
 
 
 
-#### isAffine20+
+## isAffine20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isAffine(): boolean
 
@@ -95,6 +100,7 @@ isAffine(): boolean
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -108,15 +114,16 @@ import { drawing } from '@kit.ArkGraphics2D';
 
 let matrix = new drawing.Matrix();
 matrix.setMatrix([1, 0.5, 1, 0.5, 1, 1, 1, 1, 1]);
-let isAff = matrix.isAffine();
-console.info('isAff :', isAff);
+let isAffine = matrix.isAffine();
+console.info('isAffine :', isAffine);
 ```
 
 
 
-#### rectStaysRect20+
+## rectStaysRect20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 rectStaysRect(): boolean
 
@@ -125,6 +132,7 @@ rectStaysRect(): boolean
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -145,17 +153,19 @@ console.info('isRect :', isRect);
 
 
 
-#### setSkew20+
+## setSkew20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setSkew(kx: number, ky: number, px: number, py: number): void
 
-设置矩阵的倾斜系数。
+设置矩阵为单位矩阵，并围绕倾斜中心点(px, py)按(kx, ky)进行倾斜变换。与[setRotation](#setrotation12)、[setScale](#setscale12)、[setTranslation](#settranslation12)类似，均为重置矩阵后施加单一变换。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -177,17 +187,19 @@ matrix.setSkew(2, 0.5, 0.5, 2);
 
 
 
-#### setSinCos20+
+## setSinCos20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setSinCos(sinValue: number, cosValue: number, px: number, py: number): void
 
-设置矩阵，使其围绕旋转中心(px, py)以指定的正弦值和余弦值旋转。
+设置矩阵为单位矩阵，使其围绕旋转中心点(px, py)以指定的正弦值和余弦值旋转。与[setRotation](#setrotation12)功能类似，但setRotation直接传入角度值，而本方法传入正弦值和余弦值。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -209,28 +221,31 @@ matrix.setSinCos(0, 1, 1, 0);
 
 
 
-#### setRotation12+
+## setRotation12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setRotation(degree: number, px: number, py: number): void
 
-设置矩阵为单位矩阵，并围绕位于(px, py)的旋转轴点进行旋转。
+设置矩阵为单位矩阵，并围绕旋转中心点(px, py)进行旋转。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | degree | number | 是 | 角度，单位为度。正数表示顺时针旋转，负数表示逆时针旋转，该参数为浮点数。 |
-| px | number | 是 | 旋转轴点的横坐标，该参数为浮点数。单位为物理像素px。 |
-| py | number | 是 | 旋转轴点的纵坐标，该参数为浮点数。单位为物理像素px。 |
+| px | number | 是 | 旋转中心点的x轴坐标，该参数为浮点数。单位为物理像素px。 |
+| py | number | 是 | 旋转中心点的y轴坐标，该参数为浮点数。单位为物理像素px。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -248,29 +263,32 @@ matrix.setRotation(90, 100, 100);
 
 
 
-#### setScale12+
+## setScale12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setScale(sx: number, sy: number, px: number, py: number): void
 
-设置矩阵为单位矩阵围绕位于(px, py)的中心点，以sx和sy进行缩放后的结果。
+设置矩阵为单位矩阵，并围绕缩放中心点(px, py)按sx和sy进行缩放。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| sx | number | 是 | x轴方向缩放系数，为负数时可看作是先关于y = px作镜像翻转后再进行缩放，该参数为浮点数。 |
-| sy | number | 是 | y轴方向缩放系数，为负数时可看作是先关于x = py作镜像翻转后再进行缩放，该参数为浮点数。 |
-| px | number | 是 | 缩放中心点的横坐标，该参数为浮点数。单位为物理像素px。 |
-| py | number | 是 | 缩放中心点的纵坐标，该参数为浮点数。单位为物理像素px。 |
+| sx | number | 是 | x轴方向缩放因子，为负数时可看作是先关于x = px作镜像翻转后再进行缩放，该参数为浮点数。 |
+| sy | number | 是 | y轴方向缩放因子，为负数时可看作是先关于y = py作镜像翻转后再进行缩放，该参数为浮点数。 |
+| px | number | 是 | 缩放中心点的x轴坐标，该参数为浮点数。单位为物理像素px。 |
+| py | number | 是 | 缩放中心点的y轴坐标，该参数为浮点数。单位为物理像素px。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -288,17 +306,19 @@ matrix.setScale(100, 100, 150, 150);
 
 
 
-#### setTranslation12+
+## setTranslation12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setTranslation(dx: number, dy: number): void
 
-设置矩阵为单位矩阵平移(dx, dy)后的结果。
+设置矩阵为单位矩阵，并平移(dx, dy)。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -309,6 +329,7 @@ setTranslation(dx: number, dy: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -326,9 +347,10 @@ matrix.setTranslation(100, 100);
 
 
 
-#### setMatrix12+
+## setMatrix12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMatrix(values: Array&lt;number&gt;): void
 
@@ -338,14 +360,16 @@ setMatrix(values: Array&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| values | Array&lt;number&gt; | 是 | 长度为9的浮点数组，表示矩阵对象参数。数组中的值按下标从小，到大分别表示水平缩放系数、水平倾斜系数、水平位移系数、垂直倾斜系数、垂直缩放系数、垂直位移系数、X轴透视系数、Y轴透视系数、透视缩放系数。 |
+| values | Array&lt;number&gt; | 是 | 长度为9的浮点数组，表示矩阵对象的各项参数。数组中的值按下标从小到大分别表示水平缩放因子、水平倾斜系数、水平位移系数（单位为物理像素px）、垂直倾斜系数、垂直缩放因子、垂直位移系数（单位为物理像素px）、x轴透视系数、y轴透视系数和透视缩放因子。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -364,26 +388,29 @@ matrix.setMatrix(value);
 
 
 
-#### preConcat12+
+## preConcat12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 preConcat(matrix: Matrix): void
 
-将当前矩阵设置为当前矩阵左乘matrix的结果。
+将一个矩阵乘在当前矩阵的右侧，即新的变换在当前矩阵的变换之前应用。如果需要在当前矩阵的变换之后应用新变换，使用postConcat方法。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| matrix | Matrix | 是 | 表示矩阵对象，位于乘法表达式右侧。 |
+| matrix | Matrix | 是 | 表示用于运算的矩阵，位于乘法表达式右侧。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -404,9 +431,10 @@ matrix1.preConcat(matrix2);
 
 
 
-#### setMatrix20+
+## setMatrix20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMatrix(matrix: Array&lt;number&gt; | Matrix): void
 
@@ -416,9 +444,10 @@ setMatrix(matrix: Array&lt;number&gt; | Matrix): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| matrix | Array&lt;number&gt; \| Matrix | 是 | 用于更新的数组或矩阵。 |
+| matrix | Array&lt;number&gt; \| Matrix | 是 | 用于更新的数组或矩阵。当类型为数组时，长度固定为9。 |
 
 
 **示例：**
@@ -434,22 +463,24 @@ matrix1.setMatrix(matrix2);
 
 
 
-#### setConcat20+
+## setConcat20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setConcat(matrixA: Matrix, matrixB: Matrix): void
 
-用两个矩阵的乘积更新当前矩阵。
+用两个矩阵的乘积更新当前矩阵，即当前矩阵 = matrixA × matrixB。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| matrixA | Matrix | 是 | 用于运算的矩阵A。 |
-| matrixB | Matrix | 是 | 用于运算的矩阵B。 |
+| matrixA | Matrix | 是 | 用于运算的矩阵A，位于乘法表达式左侧。 |
+| matrixB | Matrix | 是 | 用于运算的矩阵B，位于乘法表达式右侧。 |
 
 
 **示例：**
@@ -466,21 +497,23 @@ matrix1.setConcat(matrix2, matrix1);
 
 
 
-#### postConcat20+
+## postConcat20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 postConcat(matrix: Matrix): void
 
-用当前矩阵右乘一个矩阵。
+将一个矩阵乘在当前矩阵的左侧，即新的变换在当前矩阵的变换之后应用。如果需要在当前矩阵的变换之前应用新变换，使用preConcat方法。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| matrix | Matrix | 是 | 用于运算的矩阵。 |
+| matrix | Matrix | 是 | 表示用于运算的矩阵，位于乘法表达式左侧。 |
 
 
 **示例：**
@@ -494,6 +527,7 @@ if (matrix.isIdentity()) {
 } else {
   console.info("matrix is not identity.");
 }
+
 let matrix1 = new drawing.Matrix();
 matrix1.setMatrix([2, 1, 3, 1, 2, 1, 3, 1, 2]);
 let matrix2 = new drawing.Matrix();
@@ -503,9 +537,10 @@ matrix1.postConcat(matrix2);
 
 
 
-#### isEqual12+
+## isEqual12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isEqual(matrix: Matrix): boolean
 
@@ -515,12 +550,14 @@ isEqual(matrix: Matrix): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| matrix | Matrix | 是 | 另一个矩阵。 |
+| matrix | Matrix | 是 | 另一个矩阵，用来与当前矩阵比较是否相等。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -530,6 +567,7 @@ isEqual(matrix: Matrix): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -554,9 +592,10 @@ if (matrix1.isEqual(matrix2)) {
 
 
 
-#### invert12+
+## invert12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 invert(matrix: Matrix): boolean
 
@@ -566,12 +605,14 @@ invert(matrix: Matrix): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | matrix | Matrix | 是 | 矩阵对象，用于存储获取到的逆矩阵。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -581,6 +622,7 @@ invert(matrix: Matrix): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -605,9 +647,10 @@ if (matrix1.invert(matrix2)) {
 
 
 
-#### isIdentity12+
+## isIdentity12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isIdentity(): boolean
 
@@ -616,6 +659,7 @@ isIdentity(): boolean
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -637,9 +681,10 @@ if (matrix.isIdentity()) {
 
 
 
-#### getValue12+
+## getValue12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getValue(index: number): number
 
@@ -649,6 +694,7 @@ getValue(index: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 索引位置，范围0-8，该参数为整数。 |
@@ -656,14 +702,16 @@ getValue(index: number): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| number | 函数返回矩阵给定索引位对应的值，该返回值为整数。 |
+| number | 函数返回矩阵给定索引位对应的值，该返回值为浮点数。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -683,28 +731,31 @@ for (let i = 0; i < 9; i++) {
 
 
 
-#### postRotate12+
+## postRotate12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 postRotate(degree: number, px: number, py: number): void
 
-将矩阵设置为矩阵右乘围绕轴心点旋转一定角度的单位矩阵后得到的矩阵。
+将矩阵设置为矩阵右乘围绕旋转中心点旋转degree角度的单位矩阵后得到的矩阵，即新的旋转变换在当前矩阵的变换之后应用。如果需要在当前矩阵的变换之前应用旋转变换，使用preRotate方法。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | degree | number | 是 | 旋转角度，单位为度。正数表示顺时针旋转，负数表示逆时针旋转，该参数为浮点数。 |
-| px | number | 是 | 旋转中心点的横坐标，该参数为浮点数。单位为物理像素px。 |
-| py | number | 是 | 旋转中心点的纵坐标，该参数为浮点数。单位为物理像素px。 |
+| px | number | 是 | 旋转中心点的x轴坐标，该参数为浮点数。单位为物理像素px。 |
+| py | number | 是 | 旋转中心点的y轴坐标，该参数为浮点数。单位为物理像素px。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -726,29 +777,32 @@ console.info("matrix= "+matrix.getAll().toString());
 
 
 
-#### postScale12+
+## postScale12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 postScale(sx: number, sy: number, px: number, py: number): void
 
-将矩阵设置为矩阵右乘围绕轴心点按一定缩放系数缩放后的单位矩阵后得到的矩阵。
+将矩阵设置为矩阵右乘围绕缩放中心点按sx和sy缩放系数缩放后的单位矩阵后得到的矩阵，即新的缩放变换在当前矩阵的变换之后应用。如果需要在当前矩阵的变换之前应用缩放变换，使用preScale方法。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| sx | number | 是 | x轴方向缩放系数，负数表示先关于y = px作镜像翻转后再进行缩放，该参数为浮点数。 |
-| sy | number | 是 | y轴方向缩放系数，负数表示先关于x = py作镜像翻转后再进行缩放，该参数为浮点数。 |
-| px | number | 是 | 缩放中心点的横坐标，该参数为浮点数。单位为物理像素px。 |
-| py | number | 是 | 缩放中心点的纵坐标，该参数为浮点数。单位为物理像素px。 |
+| sx | number | 是 | x轴方向缩放因子，负数表示先关于x = px作镜像翻转后再进行缩放，该参数为浮点数。 |
+| sy | number | 是 | y轴方向缩放因子，负数表示先关于y = py作镜像翻转后再进行缩放，该参数为浮点数。 |
+| px | number | 是 | 缩放中心点的x轴坐标，该参数为浮点数。单位为物理像素px。 |
+| py | number | 是 | 缩放中心点的y轴坐标，该参数为浮点数。单位为物理像素px。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -771,17 +825,19 @@ console.info("matrix= "+matrix.getAll().toString());
 
 
 
-#### postTranslate12+
+## postTranslate12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 postTranslate(dx: number, dy: number): void
 
-将矩阵设置为矩阵右乘平移一定距离后的单位矩阵后得到的矩阵。
+将矩阵设置为矩阵右乘平移dx和dy距离后的单位矩阵后得到的矩阵，即新的平移变换在当前矩阵的变换之后应用。如果需要在当前矩阵的变换之前应用平移变换，使用preTranslate方法。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -792,6 +848,7 @@ postTranslate(dx: number, dy: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -812,28 +869,31 @@ console.info("matrix= "+matrix.getAll().toString());
 
 
 
-#### preRotate12+
+## preRotate12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 preRotate(degree: number, px: number, py: number): void
 
-将矩阵设置为矩阵左乘围绕轴心点旋转一定角度的单位矩阵后得到的矩阵。
+将矩阵设置为矩阵左乘围绕旋转中心点旋转degree角度的单位矩阵后得到的矩阵，即新的旋转变换在当前矩阵的变换之前应用。如果需要在当前矩阵的变换之后应用旋转变换，使用postRotate方法。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | degree | number | 是 | 旋转角度，单位为度。正数表示顺时针旋转，负数表示逆时针旋转，该参数为浮点数。 |
-| px | number | 是 | 旋转中心点的横坐标，该参数为浮点数。单位为物理像素px。 |
-| py | number | 是 | 旋转中心点的纵坐标，该参数为浮点数。单位为物理像素px。 |
+| px | number | 是 | 旋转中心点的x轴坐标，该参数为浮点数。单位为物理像素px。 |
+| py | number | 是 | 旋转中心点的y轴坐标，该参数为浮点数。单位为物理像素px。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -855,9 +915,10 @@ console.info("matrix= "+matrix.getAll().toString());
 
 
 
-#### postSkew20+
+## postSkew20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 postSkew(kx: number, ky: number, px: number, py: number): void
 
@@ -867,6 +928,7 @@ postSkew(kx: number, ky: number, px: number, py: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | kx | number | 是 | x轴上的倾斜量，该参数为浮点数。正值会使绘制沿y轴增量方向向右倾斜；负值会使绘制沿y轴增量方向向左倾斜。 |
@@ -878,7 +940,7 @@ postSkew(kx: number, ky: number, px: number, py: number): void
 **示例：**
 
 ```text
-import { drawing } from "@kit.ArkGraphics2D"
+import { drawing } from "@kit.ArkGraphics2D";
 
 let matrix = new drawing.Matrix();
 matrix.postSkew(2.0, 1.0, 2.0, 1.0);
@@ -886,9 +948,10 @@ matrix.postSkew(2.0, 1.0, 2.0, 1.0);
 
 
 
-#### preSkew20+
+## preSkew20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 preSkew(kx: number, ky: number, px: number, py: number): void
 
@@ -898,6 +961,7 @@ preSkew(kx: number, ky: number, px: number, py: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | kx | number | 是 | x轴上的倾斜量，该参数为浮点数。正值会使绘制沿y轴增量方向向右倾斜；负值会使绘制沿y轴增量方向向左倾斜。 |
@@ -909,7 +973,7 @@ preSkew(kx: number, ky: number, px: number, py: number): void
 **示例：**
 
 ```text
-import { drawing } from "@kit.ArkGraphics2D"
+import { drawing } from "@kit.ArkGraphics2D";
 
 let matrix = new drawing.Matrix();
 matrix.preSkew(2.0, 1.0, 2.0, 1.0);
@@ -917,9 +981,10 @@ matrix.preSkew(2.0, 1.0, 2.0, 1.0);
 
 
 
-#### mapRadius20+
+## mapRadius20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 mapRadius(radius: number): number
 
@@ -929,12 +994,14 @@ mapRadius(radius: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | radius | number | 是 | 用于计算的圆的半径，浮点数。如果是负数，则按照绝对值进行计算。单位为物理像素px。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -944,7 +1011,7 @@ mapRadius(radius: number): number
 **示例：**
 
 ```text
-import { drawing } from "@kit.ArkGraphics2D"
+import { drawing } from "@kit.ArkGraphics2D";
 
 let matrix = new drawing.Matrix();
 matrix.setMatrix([2, 1, 3, 1, 2, 1, 3, 1, 2]);
@@ -954,29 +1021,32 @@ console.info('radius', radius);
 
 
 
-#### preScale12+
+## preScale12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 preScale(sx: number, sy: number, px: number, py: number): void
 
-将矩阵设置为矩阵左乘围绕轴心点按一定缩放系数缩放后的单位矩阵后得到的矩阵。
+将矩阵设置为矩阵左乘围绕缩放中心点按sx和sy缩放系数缩放后的单位矩阵后得到的矩阵，即新的缩放变换在当前矩阵的变换之前应用。如果需要在当前矩阵的变换之后应用缩放变换，使用postScale方法。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| sx | number | 是 | x轴方向缩放系数，为负数时可看作是先关于y = px作镜像翻转后再进行缩放，该参数为浮点数。 |
-| sy | number | 是 | y轴方向缩放系数，为负数时可看作是先关于x = py作镜像翻转后再进行缩放，该参数为浮点数。 |
-| px | number | 是 | 轴心点横坐标，该参数为浮点数。单位为物理像素px。 |
-| py | number | 是 | 轴心点纵坐标，该参数为浮点数。单位为物理像素px。 |
+| sx | number | 是 | x轴方向缩放因子，为负数时可看作是先关于x = px作镜像翻转后再进行缩放，该参数为浮点数。 |
+| sy | number | 是 | y轴方向缩放因子，为负数时可看作是先关于y = py作镜像翻转后再进行缩放，该参数为浮点数。 |
+| px | number | 是 | 缩放中心点的x轴坐标，该参数为浮点数。单位为物理像素px。 |
+| py | number | 是 | 缩放中心点的y轴坐标，该参数为浮点数。单位为物理像素px。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -999,17 +1069,19 @@ console.info("matrix"+matrix.getAll().toString());
 
 
 
-#### preTranslate12+
+## preTranslate12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 preTranslate(dx: number, dy: number): void
 
-将矩阵设置为矩阵左乘平移一定距离后的单位矩阵后得到的矩阵。
+将矩阵设置为矩阵左乘平移dx和dy距离后的单位矩阵后得到的矩阵，即新的平移变换在当前矩阵的变换之前应用。如果需要在当前矩阵的变换之后应用平移变换，使用postTranslate方法。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1020,6 +1092,7 @@ preTranslate(dx: number, dy: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1040,9 +1113,10 @@ console.info("matrix"+matrix.getAll().toString());
 
 
 
-#### reset12+
+## reset12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reset(): void
 
@@ -1063,9 +1137,10 @@ console.info("matrix= "+matrix.getAll().toString());
 
 
 
-#### mapPoints12+
+## mapPoints12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 mapPoints(src: Array<common2D.Point>): Array<common2D.Point>
 
@@ -1075,12 +1150,14 @@ mapPoints(src: Array<common2D.Point>): Array<common2D.Point>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| src | Array<common2D.Point> | 是 | 源点数组。 |
+| src | Array<common2D.Point> | 是 | 源点数组，作为矩阵变换的输入点。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1090,6 +1167,7 @@ mapPoints(src: Array<common2D.Point>): Array<common2D.Point>
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1113,9 +1191,10 @@ console.info("matrix= dst: "+JSON.stringify(dst));
 
 
 
-#### getAll12+
+## getAll12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAll(): Array&lt;number&gt;
 
@@ -1124,6 +1203,7 @@ getAll(): Array&lt;number&gt;
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1141,21 +1221,23 @@ console.info("matrix "+ matrix.getAll());
 
 
 
-#### mapRect12+
+## mapRect12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 mapRect(dst: common2D.Rect, src: common2D.Rect): boolean
 
 将目标矩形设置为源矩形通过矩阵变换后的图形的外接矩形。如下图所示，蓝色矩形为源矩形，假设黄色矩形为源矩形通过矩阵变换形成的图形，此时黄色矩形的边不与坐标轴平行，无法使用矩形对象表示，因此，将目标矩形设置为黄色矩形的外接矩形，即黑色矩形。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/so1BZwRvR_SZckFINKZWYg/zh-cn_image_0000002656350979.png?HW-CC-KV=V1&HW-CC-Date=20260624T020307Z&HW-CC-Expire=86400&HW-CC-Sign=74C0B85C229A0C5975657426330EFD59AA0DD0EA0D0C07B2B85D0A35F4BB789F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/hyRHH43ARvOTDxqjVndtRQ/zh-cn_image_0000002747213787.png?HW-CC-KV=V1&HW-CC-Date=20260911T072431Z&HW-CC-Expire=86400&HW-CC-Sign=FE2817798ADBAC6054CBB4F762223A6B9ACA871E949AEBEE512DF49CD9AEA464)
 
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1165,6 +1247,7 @@ mapRect(dst: common2D.Rect, src: common2D.Rect): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回源矩形经过矩阵变换后的图形是否仍然是矩形，true表示是矩形，false表示不是矩形。 |
@@ -1173,6 +1256,7 @@ mapRect(dst: common2D.Rect, src: common2D.Rect): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1194,9 +1278,10 @@ if (matrix.mapRect(dst, src)) {
 
 
 
-#### setRectToRect12+
+## setRectToRect12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setRectToRect(src: common2D.Rect, dst: common2D.Rect, scaleToFit: ScaleToFit): boolean
 
@@ -1206,23 +1291,26 @@ setRectToRect(src: common2D.Rect, dst: common2D.Rect, scaleToFit: ScaleToFit): b
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| src | common2D.Rect | 是 | 源矩形。 |
-| dst | common2D.Rect | 是 | 目标矩形。 |
+| src | common2D.Rect | 是 | 源矩形，用于指定映射的源区域。 |
+| dst | common2D.Rect | 是 | 目标矩形，用于指定映射的目标区域。 |
 | scaleToFit | ScaleToFit | 是 | 源矩形到目标矩形的映射方式。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 返回矩阵是否可以表示矩形之间的映射，true表示可以，false表示不可以。如果源矩形的宽高任意一个小于等于0，则返回false，并将矩阵设置为单位矩阵；如果目标矩形的宽高任意一个小于等于0，则返回true，并将矩阵设置为除透视缩放系数为1外其余值皆为0的矩阵。 |
+| boolean | 返回矩阵是否可以表示矩形之间的映射，true表示可以，false表示不可以。如果源矩形的宽高任意一个小于等于0，则返回false，并将矩阵设置为单位矩阵；如果目标矩形的宽高任意一个小于等于0，则返回true，并将矩阵设置为除透视缩放因子为1外其余值皆为0的矩阵。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1236,7 +1324,7 @@ import { drawing, common2D } from "@kit.ArkGraphics2D";
 
 let src: common2D.Rect = { left: 100, top: 100, right: 300, bottom: 300 };
 let dst: common2D.Rect = { left: 200, top: 200, right: 600, bottom: 600 };
-let scaleToFit: drawing.ScaleToFit = drawing.ScaleToFit.FILL_SCALE_TO_FIT
+let scaleToFit: drawing.ScaleToFit = drawing.ScaleToFit.FILL_SCALE_TO_FIT;
 let matrix = new drawing.Matrix();
 if (matrix.setRectToRect(src, dst, scaleToFit)) {
     console.info("matrix"+matrix.getAll().toString());
@@ -1245,9 +1333,10 @@ if (matrix.setRectToRect(src, dst, scaleToFit)) {
 
 
 
-#### setPolyToPoly12+
+## setPolyToPoly12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setPolyToPoly(src: Array<common2D.Point>, dst: Array<common2D.Point>, count: number): boolean
 
@@ -1257,14 +1346,16 @@ setPolyToPoly(src: Array<common2D.Point>, dst: Array<common2D.Point>, count: num
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | src | Array<common2D.Point> | 是 | 源点数组，长度必须为count。 |
 | dst | Array<common2D.Point> | 是 | 目标点数组，长度必须为count。 |
-| count | number | 是 | 在src和dst点的数量，该参数为整数。 |
+| count | number | 是 | src和dst中点的数量，取值范围为[0, 4]，该参数为整数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1274,6 +1365,7 @@ setPolyToPoly(src: Array<common2D.Point>, dst: Array<common2D.Point>, count: num
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

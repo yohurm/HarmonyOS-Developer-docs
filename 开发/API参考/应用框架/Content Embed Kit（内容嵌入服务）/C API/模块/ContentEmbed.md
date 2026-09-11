@@ -1,11 +1,12 @@
 # ContentEmbed
 
-更新时间：2026-05-26 06:48:54
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-contentembed
 **支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -19,10 +20,12 @@
  
   
 
-#### 文件汇总
+## 文件汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | content_embed_common.h | 提供内容嵌入模块的错误码定义和嵌入文档支持能力的类型枚举描述。 |

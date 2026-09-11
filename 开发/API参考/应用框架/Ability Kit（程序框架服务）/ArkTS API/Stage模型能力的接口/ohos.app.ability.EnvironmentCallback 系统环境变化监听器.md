@@ -1,9 +1,9 @@
 # @ohos.app.ability.EnvironmentCallback (系统环境变化监听器)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-environmentcallback
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 EnvironmentCallback模块提供对系统环境变化监听回调的能力。
  
@@ -12,9 +12,10 @@ EnvironmentCallback模块提供对系统环境变化监听回调的能力。
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { EnvironmentCallback } from '@kit.AbilityKit';
@@ -22,15 +23,17 @@ import { EnvironmentCallback } from '@kit.AbilityKit';
  
   
 
-#### EnvironmentCallback
+## EnvironmentCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### onConfigurationUpdated
+### onConfigurationUpdated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onConfigurationUpdated(config: Configuration): void
  
@@ -46,6 +49,7 @@ onConfigurationUpdated(config: Configuration): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | config | Configuration | 是 | 变化后的Configuration对象。 |
@@ -57,9 +61,10 @@ onConfigurationUpdated(config: Configuration): void
  
   
 
-#### onMemoryLevel
+### onMemoryLevel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onMemoryLevel(level: AbilityConstant.MemoryLevel): void
  
@@ -75,6 +80,7 @@ onMemoryLevel(level: AbilityConstant.MemoryLevel): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | level | AbilityConstant.MemoryLevel | 是 | 整机可用内存级别，对应的触发场景详见AbilityConstant.MemoryLevel。 |
@@ -86,9 +92,10 @@ onMemoryLevel(level: AbilityConstant.MemoryLevel): void
  
   
 
-#### EnvironmentCallback使用
+## EnvironmentCallback使用
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **示例：**
  
@@ -113,7 +120,7 @@ export default class MyAbility extends UIAbility {
     // 1.获取applicationContext
     let applicationContext = this.context.getApplicationContext();
     try {
-      // 2.通过applicationContext注册监听应用内生命周期
+      // 2.通过applicationContext注册系统环境变化监听
       callbackId = applicationContext.on('environment', environmentCallback);
     } catch (paramError) {
       console.error(`error: ${(paramError as BusinessError).code}, ${(paramError as BusinessError).message}`);

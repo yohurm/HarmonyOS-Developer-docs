@@ -1,13 +1,14 @@
 # native_vsync.h
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-vsync-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义获取和使用NativeVsync的相关函数。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_NativeVSync_ExpectedRateRange | OH_NativeVSync_ExpectedRateRange | 期望帧率范围结构体。 |
@@ -41,10 +45,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | typedef void (*OH_NativeVSync_FrameCallback)(long long timestamp, void *data) | OH_NativeVSync_FrameCallback | VSync回调函数类型。 |
@@ -60,15 +66,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_NativeVSync_FrameCallback()
+### OH_NativeVSync_FrameCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_NativeVSync_FrameCallback)(long long timestamp, void *data)
@@ -84,6 +92,7 @@ VSync回调函数类型。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | long long timestamp | VSync使用CLOCK_MONOTONIC获取的系统时间戳，单位为纳秒。 |
@@ -92,9 +101,10 @@ VSync回调函数类型。
  
   
 
-#### OH_NativeVSync_Create()
+### OH_NativeVSync_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_NativeVSync* OH_NativeVSync_Create(const char* name, unsigned int length)
@@ -112,6 +122,7 @@ OH_NativeVSync* OH_NativeVSync_Create(const char* name, unsigned int length)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char* name | 表示一个名字，与创建的OH_NativeVSync实例关联。 |
@@ -120,6 +131,7 @@ OH_NativeVSync* OH_NativeVSync_Create(const char* name, unsigned int length)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_NativeVSync* | 返回一个指向OH_NativeVSync实例的指针。 |
@@ -127,9 +139,10 @@ OH_NativeVSync* OH_NativeVSync_Create(const char* name, unsigned int length)
  
   
 
-#### OH_NativeVSync_Create_ForAssociatedWindow()
+### OH_NativeVSync_Create_ForAssociatedWindow()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_NativeVSync* OH_NativeVSync_Create_ForAssociatedWindow(uint64_t windowID, const char* name, unsigned int length)
@@ -147,6 +160,7 @@ OH_NativeVSync* OH_NativeVSync_Create_ForAssociatedWindow(uint64_t windowID, con
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint64_t windowID | 表示窗口ID，窗口子进程索引标识符，可以通过OH_NativeWindow_GetSurfaceId接口获取。 |
@@ -156,6 +170,7 @@ OH_NativeVSync* OH_NativeVSync_Create_ForAssociatedWindow(uint64_t windowID, con
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_NativeVSync* | 返回一个指向OH_NativeVSync实例的指针。 |
@@ -163,9 +178,10 @@ OH_NativeVSync* OH_NativeVSync_Create_ForAssociatedWindow(uint64_t windowID, con
  
   
 
-#### OH_NativeVSync_Destroy()
+### OH_NativeVSync_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_NativeVSync_Destroy(OH_NativeVSync* nativeVsync)
@@ -183,6 +199,7 @@ void OH_NativeVSync_Destroy(OH_NativeVSync* nativeVsync)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeVSync* nativeVsync | 一个指向OH_NativeVSync实例的指针。 |
@@ -190,9 +207,10 @@ void OH_NativeVSync_Destroy(OH_NativeVSync* nativeVsync)
  
   
 
-#### OH_NativeVSync_RequestFrame()
+### OH_NativeVSync_RequestFrame()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_NativeVSync_RequestFrame(OH_NativeVSync* nativeVsync, OH_NativeVSync_FrameCallback callback, void* data)
@@ -212,6 +230,7 @@ int OH_NativeVSync_RequestFrame(OH_NativeVSync* nativeVsync, OH_NativeVSync_Fram
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeVSync* nativeVsync | 一个指向OH_NativeVSync实例的指针。 |
@@ -221,6 +240,7 @@ int OH_NativeVSync_RequestFrame(OH_NativeVSync* nativeVsync, OH_NativeVSync_Fram
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回值为0表示执行成功，其他返回值可参考OHNativeErrorCode。 |
@@ -228,9 +248,10 @@ int OH_NativeVSync_RequestFrame(OH_NativeVSync* nativeVsync, OH_NativeVSync_Fram
  
   
 
-#### OH_NativeVSync_RequestFrameWithMultiCallback()
+### OH_NativeVSync_RequestFrameWithMultiCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_NativeVSync_RequestFrameWithMultiCallback(OH_NativeVSync* nativeVsync, OH_NativeVSync_FrameCallback callback, void* data)
@@ -248,6 +269,7 @@ int OH_NativeVSync_RequestFrameWithMultiCallback(OH_NativeVSync* nativeVsync, OH
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeVSync* nativeVsync | 一个指向OH_NativeVSync实例的指针。 |
@@ -257,6 +279,7 @@ int OH_NativeVSync_RequestFrameWithMultiCallback(OH_NativeVSync* nativeVsync, OH
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回值为0表示执行成功，其他返回值可参考OHNativeErrorCode。 |
@@ -264,9 +287,10 @@ int OH_NativeVSync_RequestFrameWithMultiCallback(OH_NativeVSync* nativeVsync, OH
  
   
 
-#### OH_NativeVSync_GetPeriod()
+### OH_NativeVSync_GetPeriod()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_NativeVSync_GetPeriod(OH_NativeVSync* nativeVsync, long long* period)
@@ -286,6 +310,7 @@ vsync周期是在每次使用OH_NativeVSync_RequestFrame接口请求vsync信号�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeVSync* nativeVsync | 一个指向OH_NativeVSync实例的指针。 |
@@ -294,6 +319,7 @@ vsync周期是在每次使用OH_NativeVSync_RequestFrame接口请求vsync信号�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回值为0表示执行成功，其他返回值可参考OHNativeErrorCode。 |
@@ -301,9 +327,10 @@ vsync周期是在每次使用OH_NativeVSync_RequestFrame接口请求vsync信号�
  
   
 
-#### OH_NativeVSync_DVSyncSwitch()
+### OH_NativeVSync_DVSyncSwitch()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_NativeVSync_DVSyncSwitch(OH_NativeVSync* nativeVsync, bool enable)
@@ -331,6 +358,7 @@ DVSync通过提前发送带有未来时间戳的VSync信号驱动后续动画帧
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeVSync* nativeVsync | 一个指向OH_NativeVSync实例的指针。 |
@@ -339,6 +367,7 @@ DVSync通过提前发送带有未来时间戳的VSync信号驱动后续动画帧
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回值为0表示执行成功，其他返回值可参考OHNativeErrorCode。 |
@@ -346,9 +375,10 @@ DVSync通过提前发送带有未来时间戳的VSync信号驱动后续动画帧
  
   
 
-#### OH_NativeVSync_SetExpectedFrameRateRange()
+### OH_NativeVSync_SetExpectedFrameRateRange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_NativeVSync_SetExpectedFrameRateRange(OH_NativeVSync* nativeVsync, OH_NativeVSync_ExpectedRateRange* range)
@@ -364,6 +394,7 @@ int OH_NativeVSync_SetExpectedFrameRateRange(OH_NativeVSync* nativeVsync, OH_Nat
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeVSync* nativeVsync | 指向OH_NativeVSync实例的指针。 |
@@ -372,6 +403,7 @@ int OH_NativeVSync_SetExpectedFrameRateRange(OH_NativeVSync* nativeVsync, OH_Nat
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回值为0表示成功，其他返回值可参考OHNativeErrorCode。 |

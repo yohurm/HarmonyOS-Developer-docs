@@ -1,13 +1,13 @@
 # HAR
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/har-package
 
 HAR（Harmony Archive）是静态共享包，可以包含代码、C++库、资源和配置文件。通过HAR可以实现多个模块或多个工程共享ArkUI组件、资源等相关代码。
 
 
-#### 使用场景
+## 使用场景
 
  - 支持应用内共享，也可以作为二方库（SDK）、三方库（SDK）发布后供其他应用使用。
  - 作为二方库（SDK），发布到[OHPM私仓](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo)，供公司内部其他应用使用。
@@ -16,7 +16,7 @@ HAR（Harmony Archive）是静态共享包，可以包含代码、C++库、资�
 
 
 
-#### 约束限制
+## 约束限制
 
  - HAR不支持在设备上单独安装或运行，只能作为应用模块的依赖项被引用。
  - 从API version 14开始，HAR支持在配置文件中声明[UIAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-overview)组件，配置UIAbility的方法参考[在模块中添加Ability](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-add-new-ability#section18658758104318)，拉起HAR中UIAbility的方式与[启动应用内的UIAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-intra-device-interaction)方法相同。
@@ -41,13 +41,13 @@ HAR（Harmony Archive）是静态共享包，可以包含代码、C++库、资�
 
 
 
-#### 创建
+## 创建
 
 开发者可以通过DevEco Studio创建一个用于调用C++代码的HAR模块，创建过程中需要在Configure New Module界面中开启Enable native。详见[创建库模块](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-har#section643521083015)。
 
 
 
-#### 开发
+## 开发
 
 介绍如何导出HAR的ArkUI组件、接口、资源，供其他应用或当前应用的其他模块引用。
 
@@ -67,7 +67,7 @@ Index.ets文件是HAR导出声明文件的入口，HAR需要导出的接口，�
 
 
 
-#### 导出ArkUI组件
+### 导出ArkUI组件
 
 通过export导出ArkUI组件，示例如下：
 
@@ -114,7 +114,7 @@ export { MainPage } from './src/main/ets/components/mainpage/MainPage';
 
 
 
-#### 导出类和方法
+### 导出类和方法
 
 通过export导出类和方法，支持导出多个类和方法，示例如下所示：
 
@@ -144,7 +144,7 @@ export { Log, func, func2 } from './src/main/ets/test';
 
 
 
-#### 导出native方法
+### 导出native方法
 
 在HAR中也可以包含C++编写的so。对于so中的native方法，HAR通过以下方式导出，以导出liblibrary.so的加法接口add为例：
 
@@ -167,7 +167,7 @@ export { nativeAdd } from './src/main/ets/utils/nativeTest';
 
 
 
-#### 导出资源
+### 导出资源
 
 在编译构建HAP时，DevEco Studio会从HAP模块及依赖的模块中收集资源文件，如果不同模块下的资源文件出现重名冲突时，DevEco Studio会按照以下优先级进行覆盖（优先级由高到低）：
 
@@ -192,7 +192,7 @@ export { nativeAdd } from './src/main/ets/utils/nativeTest';
 
 
 
-#### 使用
+## 使用
 
 介绍如何配置HAR依赖，并引用HAR的ArkUI组件、接口、资源。
 
@@ -200,7 +200,7 @@ export { nativeAdd } from './src/main/ets/utils/nativeTest';
 
 
 
-#### 引用HAR的ArkUI组件
+### 引用HAR的ArkUI组件
 
 HAR的依赖配置成功后，可以引用HAR的ArkUI组件。通过import引入HAR导出的ArkUI组件，示例如下所示：
 
@@ -223,7 +223,7 @@ struct IndexSec {
 
 
 
-#### 引用HAR的类和方法
+### 引用HAR的类和方法
 
 通过import引用HAR导出的类和方法，示例如下所示：
 
@@ -268,7 +268,7 @@ struct Index {
 
 
 
-#### 引用HAR的native方法
+### 引用HAR的native方法
 
 通过import引用HAR导出的native方法，示例如下所示：
 
@@ -311,7 +311,7 @@ struct Index {
 
 
 
-#### 引用HAR的资源
+### 引用HAR的资源
 
 通过$r引用HAR中的资源，例如在HAR模块的src/main/resources里添加字符串资源（在string.json中定义，name：hello_har）和图片资源（icon_har.png），然后在Entry模块中引用该字符串和图片资源的示例如下所示：
 
@@ -361,13 +361,13 @@ struct Index {
 
 
 
-#### 构建
+## 构建
 
 详情请参见[构建HAR](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-build-har)。
 
 
 
-#### 混淆配置
+### 混淆配置
 
 HAR可以作为二方库和三方库提供给其他应用使用，如果需要对代码资产进行保护，建议按照[HAR包混淆建议](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/source-obfuscation-practice#har包混淆建议)来进行源码混淆。
 
@@ -411,6 +411,6 @@ HAR模块原先默认开启混淆能力，会对API 10及以上的HAR模块，�
 
 
 
-#### 发布
+## 发布
 
 详见[发布HAR](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-har-publish)。

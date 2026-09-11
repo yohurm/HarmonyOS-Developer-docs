@@ -20,24 +20,24 @@ struct SM3Encrypted {
     return new Uint8Array(buffer.from(str, 'utf-8').buffer);
   }
 
-  // Complete the summary in Promise format
+  <em>// Complete the summary in Promise format</em>
   doMdByPromise() {
-    // Summary algorithm name.
+    <em>// Summary algorithm name.</em>
     let mdAlgName = 'SM3';
-    // The data to be summarized.
+    <em>// The data to be summarized.</em>
     let message = 'Hello,world';
     let md = cryptoFramework.createMd(mdAlgName);
     console.info('[Promise]: Md algName is: ' + md.algName);
     let promiseMdUpdate = md.update({ data: this.stringToUint8Array(message) });
     promiseMdUpdate.then(() => {
-      // Call digest() to return the result.
+      <em>// Call digest() to return the result.</em>
       let PromiseMdDigest = md.digest();
       return PromiseMdDigest;
     }).then(digestOutput => {
       let mdOutput = digestOutput.data;
-      // Uint8Array to base64
+      <em>// Uint8Array to base64</em>
       let str2 = base64.encodeToStringSync(mdOutput);
-      // Convert to hexadecimal
+      <em>// Convert to hexadecimal</em>
       let str = this.uint8ArrayToHexStr(mdOutput);
       console.info('[Promise]: MD result: ' + mdOutput);
       let mdLen = md.getMdLength();
@@ -47,7 +47,7 @@ struct SM3Encrypted {
     });
   }
 
-  // The summary result is Uint8Array type, converted to hexadecimal string data
+  <em>// The summary result is Uint8Array type, converted to hexadecimal string data</em>
   uint8ArrayToHexStr(data: Uint8Array): string {
     let hexString = '';
     let i: number;

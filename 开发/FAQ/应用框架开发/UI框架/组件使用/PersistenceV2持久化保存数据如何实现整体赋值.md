@@ -82,11 +82,11 @@ struct PersistentPage {
       Text(`是否登录:${this.user.isLogin}`);
       Text(`token:${this.user.ticketString}`);
 
-      // 保存用户信息
+    <em>  // 保存用户信息</em>
       Button('登录').onClick(() => {
         const model = JSON.parse(this.jsonStr) as UserInfoModel;
         model.isLogin = true;
-        // 重新持久化存储UI状态
+       <em> // 重新持久化存储UI状态</em>
         PersistenceV2.remove('LocalUserInfoModelKey');
         this.user = PersistenceV2.connect(UserInfoModel, 'LocalUserInfoModelKey', () => new UserInfoModel(model))!;
         console.info(JSON.stringify(this.user));

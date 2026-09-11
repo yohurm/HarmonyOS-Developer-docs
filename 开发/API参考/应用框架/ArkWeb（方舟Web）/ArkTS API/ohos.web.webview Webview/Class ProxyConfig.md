@@ -1,9 +1,9 @@
 # Class (ProxyConfig)
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-proxyconfig
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ProxyConfig是ArkWeb框架中用于配置网络代理规则的类，配合[ProxyController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-proxycontroller)实现对应用中所有Web组件网络请求的代理控制。通过ProxyConfig，开发者可以灵活定义多种代理规则：指定特定URL使用特定代理服务器、指定某些URL直连服务器、定义绕过代理的规则等。
 
@@ -12,13 +12,14 @@ ProxyConfig是ArkWeb框架中用于配置网络代理规则的类，配合[Proxy
 
 
 
-#### insertProxyRule15+
+## insertProxyRule15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 insertProxyRule(proxyRule: string, schemeFilter?: ProxySchemeFilter): void
 
-插入一条代理规则，与schemeFilter匹配的URL都会使用指定代理。如果schemeFilter为空，所有URL都将使用指定代理。
+插入一条代理规则，与schemeFilter匹配的URL都会使用指定代理。如果未指定schemeFilter参数，将使用默认值MATCH_ALL_SCHEMES，所有URL都将使用指定代理。
 
 代理格式为[scheme://]host[:port]。
 
@@ -43,6 +44,7 @@ host是带括号的IPv6字面量、IPv4字面量或由点分隔的一个或多�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | proxyRule | string | 是 | URL要使用的代理。 |
@@ -53,6 +55,7 @@ host是带括号的IPv6字面量、IPv4字面量或由点分隔的一个或多�
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)说明文档。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
@@ -64,17 +67,23 @@ host是带括号的IPv6字面量、IPv4字面量或由点分隔的一个或多�
 
 
 
-#### insertDirectRule15+
+## insertDirectRule15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 insertDirectRule(schemeFilter?: ProxySchemeFilter): void
 
-插入一条代理规则，指明符合schemeFilter条件的URL将直接连接到服务器。
+插入一条直连规则，指明符合schemeFilter条件的URL将直接连接到服务器。
+
+> [!NOTE]
+> 与 insertBypassRule 和 bypassHostnamesWithoutPeriod 均可实现URL直连，区别在于匹配维度：本方法通过schemeFilter按协议类型匹配；insertBypassRule通过bypassRule字符串按URL模式匹配；bypassHostnamesWithoutPeriod无需传参，自动对不含点号的域名直连。可根据需要直连的URL范围选择合适的方法。
+
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -85,6 +94,7 @@ insertDirectRule(schemeFilter?: ProxySchemeFilter): void
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)说明文档。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
@@ -96,27 +106,30 @@ insertDirectRule(schemeFilter?: ProxySchemeFilter): void
 
 
 
-#### insertBypassRule15+
+## insertBypassRule15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 insertBypassRule(bypassRule: string): void
 
-插入一条bypass规则，指明哪些URL应该绕过代理并直接连接到服务器。
+插入一条bypass规则，指明哪些URL应该绕过代理并直接连接到服务器。当[enableReverseBypass](#enablereversebypass15)设置为true时，与bypassRule匹配的URL会使用代理而非绕过代理。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| bypassRule | string | 是 | 与bypassRule匹配的URL会绕过代理。 |
+| bypassRule | string | 是 | bypass规则字符串，用于指定绕过代理的URL匹配规则，支持主机名或域名格式（如"example.com"匹配该域名及其子域名）。与bypassRule匹配的URL会绕过代理。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)说明文档。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
@@ -128,13 +141,14 @@ insertBypassRule(bypassRule: string): void
 
 
 
-#### bypassHostnamesWithoutPeriod15+
+## bypassHostnamesWithoutPeriod15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 bypassHostnamesWithoutPeriod(): void
 
-没有点字符的域名将跳过代理并直接连接到服务器。
+没有点字符的域名将绕过代理并直接连接到服务器。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -144,9 +158,10 @@ bypassHostnamesWithoutPeriod(): void
 
 
 
-#### clearImplicitRules15+
+## clearImplicitRules15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clearImplicitRules(): void
 
@@ -160,9 +175,10 @@ clearImplicitRules(): void
 
 
 
-#### enableReverseBypass15+
+## enableReverseBypass15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableReverseBypass(reverse: boolean): void
 
@@ -172,6 +188,7 @@ enableReverseBypass(reverse: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | reverse | boolean | 是 | 参数值默认是false，表示与insertBypassRule中的bypassRule匹配的URL会绕过代理，参数值为true时，表示与insertBypassRule中的bypassRule匹配的URL会使用代理。 |
@@ -180,6 +197,7 @@ enableReverseBypass(reverse: boolean): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)说明文档。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -192,9 +210,10 @@ enableReverseBypass(reverse: boolean): void
 
 
 
-#### getBypassRules15+
+## getBypassRules15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBypassRules(): Array&lt;string&gt;
 
@@ -203,6 +222,7 @@ getBypassRules(): Array&lt;string&gt;
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -215,9 +235,10 @@ getBypassRules(): Array&lt;string&gt;
 
 
 
-#### getProxyRules15+
+## getProxyRules15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getProxyRules(): Array&lt;ProxyRule&gt;
 
@@ -227,9 +248,10 @@ getProxyRules(): Array&lt;ProxyRule&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Array&lt;ProxyRule&gt; | 代理规则。 |
+| Array&lt;ProxyRule&gt; | 代理规则，每个ProxyRule对象表示一条已配置的代理规则。 |
 
 
 **示例：**
@@ -238,9 +260,10 @@ getProxyRules(): Array&lt;ProxyRule&gt;
 
 
 
-#### isReverseBypassEnabled15+
+## isReverseBypassEnabled15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isReverseBypassEnabled(): boolean
 
@@ -249,6 +272,7 @@ isReverseBypassEnabled(): boolean
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |

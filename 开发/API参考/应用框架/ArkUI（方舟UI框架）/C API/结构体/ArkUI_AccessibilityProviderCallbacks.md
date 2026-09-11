@@ -1,20 +1,21 @@
 # ArkUI_AccessibilityProviderCallbacks
 
-更新时间：2026-07-28 11:23:46（官网已下线）
+更新时间：2026-09-04 10:41:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-accessibility-arkui-accessibilityprovidercallbacks
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-typedef struct {...} ArkUI_AccessibilityProviderCallbacks
+typedef struct ArkUI_AccessibilityProviderCallbacks {...} ArkUI_AccessibilityProviderCallbacks
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-第三方[provider](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-accessibility-arkui-accessibilityprovider)回调函数结构定义，需要第三方平台实现的相关函数，通过[OH_ArkUI_AccessibilityProviderRegisterCallback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-interface-accessibility-h#oh_arkui_accessibilityproviderregistercallback)注册到系统侧。适用于读屏软件、语音控制、开关控制等无障碍辅助场景，第三方平台通过实现这些回调响应系统的无障碍查询和操作请求。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+第三方[provider](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-accessibility-arkui-accessibilityprovider)回调函数结构定义，需要第三方平台实现的相关函数，通过[OH_ArkUI_AccessibilityProviderRegisterCallback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-interface-accessibility-h#oh_arkui_accessibilityproviderregistercallback)注册到系统侧。适用于读屏软件、语音控制、开关控制等无障碍辅助场景，第三方平台通过实现这些回调响应系统的无障碍查询和操作请求。所有的回调函数执行线程为IPC线程，非UI线程。
  
 **起始版本：** 13
  
@@ -24,38 +25,43 @@ typedef struct {...} ArkUI_AccessibilityProviderCallbacks
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 成员函数
+### 成员函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | int32_t (*findAccessibilityNodeInfosById)(int64_t elementId, ArkUI_AccessibilitySearchMode mode, int32_t requestId, ArkUI_AccessibilityElementInfoList* elementList) | 查询指定节点的节点信息。由接入方平台实现的回调函数，注册给系统侧调用。 |
 | int32_t (*findAccessibilityNodeInfosByText)(int64_t elementId, const char* text, int32_t requestId, ArkUI_AccessibilityElementInfoList* elementList) | 基于指定的节点，查询满足指定文本内容的节点信息。由接入方平台实现的回调函数，注册给系统侧调用。 |
 | int32_t (*findFocusedAccessibilityNode)(int64_t elementId, ArkUI_AccessibilityFocusType focusType, int32_t requestId, ArkUI_AccessibilityElementInfo* elementInfo) | 从指定节点出发，根据焦点类型查找当前已获得焦点的节点，并将该节点元素信息返回。由接入方平台实现的回调函数，注册给系统侧调用。 |
 | int32_t (*findNextFocusAccessibilityNode)(int64_t elementId, ArkUI_AccessibilityFocusMoveDirection direction, int32_t requestId, ArkUI_AccessibilityElementInfo* elementInfo) | 根据参考节点和查找方向，查询下一个可以聚焦的节点。由接入方平台实现的回调函数，注册给系统侧调用。 |
-| int32_t (*executeAccessibilityAction)(int64_t elementId, ArkUI_Accessibility_ActionType action, ArkUI_AccessibilityActionArguments *actionArguments, int32_t requestId) | 在指定节点上执行Action操作。由接入方平台实现的回调函数，注册给系统侧调用。 |
-| int32_t (*clearFocusedFocusAccessibilityNode)() | 清除当前焦点节点的焦点状态。由接入方平台实现的回调函数，注册给系统侧调用。例如，当无障碍服务需要重置焦点高亮或用户切换到其他交互区域时触发。 |
-| int32_t (*getAccessibilityNodeCursorPosition)(int64_t elementId, int32_t requestId, int32_t* index) | 查询指定节点的当前光标位置。由接入方平台实现的回调函数，注册给系统侧调用。例如，当读屏软件需要播报光标位置或语音输入法定位文本插入点时触发。 |
+| int32_t (*executeAccessibilityAction)(int64_t elementId, ArkUI_Accessibility_ActionType action, ArkUI_AccessibilityActionArguments *actionArguments, int32_t requestId) | 在指定的无障碍节点上执行无障碍Action操作。由接入方平台实现的回调函数，注册给系统侧调用。 |
+| int32_t (*clearFocusedFocusAccessibilityNode)() | 清除当前焦点节点的焦点状态。例如，当无障碍服务需要重置焦点高亮或用户切换到其他交互区域时触发。由接入方平台实现的回调函数，注册给系统侧调用。 |
+| int32_t (*getAccessibilityNodeCursorPosition)(int64_t elementId, int32_t requestId, int32_t* index) | 查询指定节点的当前光标位置。例如，当读屏软件需要播报光标位置或语音输入法定位文本插入点时触发。由接入方平台实现的回调函数，注册给系统侧调用。 |
  
  
   
 
-#### 成员函数说明
+## 成员函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### findAccessibilityNodeInfosById()
+### findAccessibilityNodeInfosById()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*findAccessibilityNodeInfosById)(int64_t elementId, ArkUI_AccessibilitySearchMode mode, int32_t requestId, ArkUI_AccessibilityElementInfoList* elementList)
@@ -69,16 +75,18 @@ int32_t (*findAccessibilityNodeInfosById)(int64_t elementId, ArkUI_Accessibility
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| int64_t elementId | 无障碍元素的唯一编号。 |
+| int64_t elementId | 无障碍元素的唯一编号，取值应为系统已分配的有效元素ID。 |
 | ArkUI_AccessibilitySearchMode mode | 表示无障碍搜索模式。具体取值及含义参见ArkUI_AccessibilitySearchMode。 |
-| int32_t requestId | 表示请求ID。 |
+| int32_t requestId | 表示请求ID，由系统侧生成，用于标识一次无障碍请求。 |
 | ArkUI_AccessibilityElementInfoList* elementList | 表示无障碍元素信息列表。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL，表示操作成功。 ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER，表示参数错误。可能原因：传入的elementId无效或elementList为空指针。处理步骤：请检查参数elementId、mode、elementList的有效性。 |
@@ -86,9 +94,10 @@ int32_t (*findAccessibilityNodeInfosById)(int64_t elementId, ArkUI_Accessibility
  
   
 
-#### findAccessibilityNodeInfosByText()
+### findAccessibilityNodeInfosByText()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*findAccessibilityNodeInfosByText)(int64_t elementId, const char* text, int32_t requestId, ArkUI_AccessibilityElementInfoList* elementList)
@@ -102,6 +111,7 @@ int32_t (*findAccessibilityNodeInfosByText)(int64_t elementId, const char* text,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | int64_t elementId | 无障碍元素的唯一编号。 |
@@ -112,6 +122,7 @@ int32_t (*findAccessibilityNodeInfosByText)(int64_t elementId, const char* text,
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL，表示操作成功。 ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER，表示参数错误。 |
@@ -119,9 +130,10 @@ int32_t (*findAccessibilityNodeInfosByText)(int64_t elementId, const char* text,
  
   
 
-#### findFocusedAccessibilityNode()
+### findFocusedAccessibilityNode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*findFocusedAccessibilityNode)(int64_t elementId, ArkUI_AccessibilityFocusType focusType, int32_t requestId, ArkUI_AccessibilityElementInfo* elementInfo)
@@ -135,16 +147,18 @@ int32_t (*findFocusedAccessibilityNode)(int64_t elementId, ArkUI_AccessibilityFo
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | int64_t elementId | 无障碍元素的唯一编号。 |
 | ArkUI_AccessibilityFocusType focusType | 表示焦点的类型。具体取值及含义参见ArkUI_AccessibilityFocusType。 |
 | int32_t requestId | 表示请求ID。 |
-| ArkUI_AccessibilityElementInfo* elementInfo | 表示无障碍元素信息。 |
+| ArkUI_AccessibilityElementInfo* elementInfo | 表示查询到的无障碍元素信息。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL，表示操作成功。 ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER，表示参数错误。 |
@@ -152,9 +166,10 @@ int32_t (*findFocusedAccessibilityNode)(int64_t elementId, ArkUI_AccessibilityFo
  
   
 
-#### findNextFocusAccessibilityNode()
+### findNextFocusAccessibilityNode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*findNextFocusAccessibilityNode)(int64_t elementId, ArkUI_AccessibilityFocusMoveDirection direction, int32_t requestId, ArkUI_AccessibilityElementInfo* elementInfo)
@@ -168,6 +183,7 @@ int32_t (*findNextFocusAccessibilityNode)(int64_t elementId, ArkUI_Accessibility
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | int64_t elementId | 无障碍元素的唯一编号。 |
@@ -178,6 +194,7 @@ int32_t (*findNextFocusAccessibilityNode)(int64_t elementId, ArkUI_Accessibility
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL，表示操作成功。 ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER，表示参数错误。 |
@@ -185,9 +202,10 @@ int32_t (*findNextFocusAccessibilityNode)(int64_t elementId, ArkUI_Accessibility
  
   
 
-#### executeAccessibilityAction()
+### executeAccessibilityAction()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*executeAccessibilityAction)(int64_t elementId, ArkUI_Accessibility_ActionType action, ArkUI_AccessibilityActionArguments *actionArguments, int32_t requestId)
@@ -201,6 +219,7 @@ int32_t (*executeAccessibilityAction)(int64_t elementId, ArkUI_Accessibility_Act
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | int64_t elementId | 无障碍元素的唯一编号。 |
@@ -211,6 +230,7 @@ int32_t (*executeAccessibilityAction)(int64_t elementId, ArkUI_Accessibility_Act
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL，表示操作成功。 ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER，表示参数错误。 |
@@ -218,9 +238,10 @@ int32_t (*executeAccessibilityAction)(int64_t elementId, ArkUI_Accessibility_Act
  
   
 
-#### clearFocusedFocusAccessibilityNode()
+### clearFocusedFocusAccessibilityNode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*clearFocusedFocusAccessibilityNode)()
@@ -234,6 +255,7 @@ int32_t (*clearFocusedFocusAccessibilityNode)()
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL，表示操作成功。 ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER，表示参数错误。 |
@@ -241,9 +263,10 @@ int32_t (*clearFocusedFocusAccessibilityNode)()
  
   
 
-#### getAccessibilityNodeCursorPosition()
+### getAccessibilityNodeCursorPosition()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*getAccessibilityNodeCursorPosition)(int64_t elementId, int32_t requestId, int32_t* index)
@@ -257,6 +280,7 @@ int32_t (*getAccessibilityNodeCursorPosition)(int64_t elementId, int32_t request
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | int64_t elementId | 无障碍元素的唯一编号。 |
@@ -266,6 +290,7 @@ int32_t (*getAccessibilityNodeCursorPosition)(int64_t elementId, int32_t request
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL，表示操作成功。 ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER，表示参数错误。 |

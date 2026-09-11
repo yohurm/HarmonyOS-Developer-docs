@@ -1,9 +1,9 @@
 # Interface (AutoDeviceSwitchQuery)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-autodeviceswitchquery
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 自动切换镜头查询类，用于查询设备是否支持自动切换镜头。
 
@@ -14,9 +14,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { camera } from '@kit.CameraKit';
@@ -24,9 +25,10 @@ import { camera } from '@kit.CameraKit';
 
 
 
-#### isAutoDeviceSwitchSupported13+
+## isAutoDeviceSwitchSupported13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isAutoDeviceSwitchSupported(): boolean
 
@@ -38,6 +40,7 @@ isAutoDeviceSwitchSupported(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 是否支持自动切换镜头，true为支持，false为不支持。 |
@@ -46,6 +49,7 @@ isAutoDeviceSwitchSupported(): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

@@ -1,9 +1,9 @@
 # @ohos.application.formBindingData (卡片数据绑定类)
 
-更新时间：2026-07-17 09:35:24
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-application-formbindingdata
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 卡片数据绑定模块提供卡片数据绑定的能力。包括FormBindingData对象的创建、相关信息的描述。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { formBindingData } from '@kit.FormKit';
@@ -22,14 +23,16 @@ import { formBindingData } from '@kit.FormKit';
  
   
 
-#### FormBindingData
+## FormBindingData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 FormBindingData提供卡片数据绑定的能力，用于存储卡片需要展示的数据。
  
 **系统能力：** SystemCapability.Ability.Form
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | data | Object | 否 | 否 | JS卡片要展示的数据。可以是包含若干键值对的Object或者 json 格式的字符串。 |
@@ -37,9 +40,10 @@ FormBindingData提供卡片数据绑定的能力，用于存储卡片需要展�
  
   
 
-#### formBindingData.createFormBindingData
+## formBindingData.createFormBindingData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createFormBindingData(obj?: Object | string): FormBindingData
  
@@ -49,6 +53,7 @@ createFormBindingData(obj?: Object | string): FormBindingData
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | obj | Object\|string | 否 | JS卡片要展示的数据。可以是包含若干键值对的Object或者 json 格式的字符串。其中图片数据以'formImages'作为标识，内容为图片标识与图片文件描述符的键值对{'formImages': {'key1': fd1, 'key2': fd2}}。 |
@@ -56,6 +61,7 @@ createFormBindingData(obj?: Object | string): FormBindingData
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FormBindingData | 根据传入数据创建的FormBindingData对象。 |

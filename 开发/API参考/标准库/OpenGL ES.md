@@ -1,25 +1,35 @@
 # OpenGL ES
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/opengles
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 OpenGL 是一种跨平台的图形 API，用于为 3D 图形处理硬件指定标准的软件接口。[OpenGL ES](https://www.khronos.org/opengles/) 是 OpenGL 规范的一种形式，适用于嵌入式设备。HarmonyOS 现已支持 OpenGL ES 3.2。
 
 
-#### 支持的能力
+## 支持的能力
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 OpenGL ES 3.2
 
 
 
-#### 标准库中导出的符号列表
+## 标准库中导出的符号列表
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [native api中导出的OpenGL ES 3.2符号列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/openglesv3-symbol)
 
 
 
-#### 引入OpenGL能力
+## 引入OpenGL能力
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 如果开发者使用OpenGL的相关能力，需要添加相关动态链接库和头文件。
 
@@ -46,7 +56,10 @@ libEGL.so
 
 
 
-#### 相关参考
+## 相关参考
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 针对OpenGL ES的使用和相关开发，需要同步了解NDK的开发过程，以及XComponent组件等的使用。具体可参考：
 
@@ -58,7 +71,10 @@ libEGL.so
 
 
 
-#### OpenGL ES扩展接口
+## OpenGL ES扩展接口
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
  - OpenGL ES扩展接口的官方参考文档：[OpenGL ES扩展接口](https://registry.khronos.org/OpenGL/index_es.php)
  - 开发者可以调用glGetString查询芯片厂商支持的扩展接口，调用之前务必初始化上下文。具体示例如下：
@@ -96,7 +112,10 @@ bool isHave = strTest.find("GL_OES_matrix_palette") != -1 ?
 
 
 
-#### 简单示例
+## 简单示例
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void enableVertexAttrib(GLuint index, float *data, int32_t len)
@@ -299,7 +318,10 @@ void Update(float angleXOffset, float angleYOffset)
 
 
 
-#### 使用eglGetDisplay连接渲染目标设备
+### 使用eglGetDisplay连接渲染目标设备
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 EGLDisplay eglGetDisplay(EGLNativeDisplayType display_id);
@@ -311,7 +333,10 @@ display_id 参数通常是一个表示显示设备的本地显示类型，EGLNat
 
 
 
-#### 使用eglInitialize初始化EGL
+### 使用eglInitialize初始化EGL
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 当成功打开连接之后则需要调用eglInitialize初始化EGL。
 
@@ -331,7 +356,10 @@ EGLBoolean eglInitialize(EGLDisplay display,    // 指定EGL显示连接
 
 
 
-#### 使用eglChooseConfig确定渲染配置
+### 使用eglChooseConfig确定渲染配置
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 EGL初始化成功之后，需要确定可用渲染表面的类型和配置，目前支持两种方法：
 
@@ -442,7 +470,10 @@ EGLBoolean eglGetConfigAttrib(EGLDisplay display,     // EGL 显示连接句柄�
 
 
 
-#### 使用eglCreateWindowSurface创建窗口表面
+### 使用eglCreateWindowSurface创建窗口表面
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 得到符合渲染需求的EGLConfig之后，可以使用eglCreateWindowSurface创建窗口表面。
 
@@ -550,7 +581,10 @@ napi_value PluginManager::SetSurfaceId(napi_env env, napi_callback_info info)
 
 
 
-#### 使用eglCreateContext创建渲染上下文
+### 使用eglCreateContext创建渲染上下文
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 eglCreateContext函数用于创建一个新的EGL上下文，并将其与特定的显示设备（display）和配置（config）关联起来。允许指定共享上下文（shareContext），以便与已经存在的OpenGL上下文共享状态信息。该函数的参数说明如下：
 
@@ -574,7 +608,10 @@ eglCreateContext 创建渲染上下文失败的原因为EGL_BAD_CONFIG，即提�
 
 
 
-#### 使用eglMakeCurrent将EGL上下文与绘图表面进行关联
+### 使用eglMakeCurrent将EGL上下文与绘图表面进行关联
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 EGLBoolean eglMakeCurrent(EGLDisplay display, // EGL显示连接的句柄，用于标识渲染设备。
@@ -585,7 +622,10 @@ EGLBoolean eglMakeCurrent(EGLDisplay display, // EGL显示连接的句柄，用�
 
 
 
-#### 创建并使用着色器程序
+### 创建并使用着色器程序
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 // 创建顶点着色器
@@ -720,7 +760,10 @@ if (!linked)
 
 
 
-#### 使用glViewport设置视口大小
+### 使用glViewport设置视口大小
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void glViewport(GLint x, GLint y, GLsizei width, GLsizei height)
@@ -730,7 +773,10 @@ glViewport函数用于设置视口，指定OpenGL ES渲染区域在窗口的位�
 
 
 
-#### 使用glClearColor设置清除颜色缓冲区时使用的颜色
+### 使用glClearColor设置清除颜色缓冲区时使用的颜色
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void glClearColor(GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha);
@@ -740,7 +786,10 @@ glClearColor(1.0f, 1.0f, 1.0f, 1.0f)此时设置清除颜色缓冲区时使用�
 
 
 
-#### 使用glClear执行清除操作
+### 使用glClear执行清除操作
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void glClear(GLbitfield mask);
@@ -757,7 +806,10 @@ glClear函数用于清除指定的缓冲区。参数mask指定需要清除的缓
 
 
 
-#### 使用glGetAttribLocation获取属性变量位置
+### 使用glGetAttribLocation获取属性变量位置
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 GLint glGetAttribLocation(GLuint program, const GLchar *name);
@@ -767,7 +819,10 @@ glGetAttribLocation函数用于获取顶点着色器中某个属性的位置，�
 
 
 
-#### 使用glGetUniformLocation获取uniform变量位置
+### 使用glGetUniformLocation获取uniform变量位置
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 GLint glGetUniformLocation(GLuint program, const GLchar *name);
@@ -785,7 +840,10 @@ glGetUniformLocation的返回值是要查询的uniform变量的位置（GLint类
 
 
 
-#### 使用glUniformMatrix4fv传递4×4矩阵
+### 使用glUniformMatrix4fv传递4×4矩阵
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void glUniformMatrix4fv(GLint location, GLsizei count, GLboolean transpose, const GLfloat *value);
@@ -801,7 +859,10 @@ glUniformMatrix4fv函数用于向uniform变量传递4×4矩阵数据。其中各
 
 
 
-#### 使用glUniform3f向着色器传递颜色和方向
+### 使用glUniform3f向着色器传递颜色和方向
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void glUniform3f(GLint location, GLfloat v0, GLfloat v1, GLfloat v2);
@@ -811,7 +872,10 @@ glUniform3f函数为当前程序对象指定Uniform变量的值。其中location
 
 
 
-#### 创建缓冲区并上传数据到GPU
+### 创建缓冲区并上传数据到GPU
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 GLuint buffer;
@@ -860,7 +924,10 @@ glEnableVertexAttribArray函数用于启用指定索引的顶点属性数组。�
 
 
 
-#### 启用功能
+### 启用功能
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void glEnable(GLenum cap);
@@ -875,7 +942,10 @@ glEnable函数用于启用各种功能，具体功能由参数cap决定，cap可
 
 
 
-#### 绘制图元并显示
+### 绘制图元并显示
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void glDrawArrays(GLenum mode,   // 参数指定要绘制的图元的类型，比如GL_TRIANGLES表示绘制三角形。
@@ -895,6 +965,9 @@ eglSwapBuffers函数用于交换前后缓冲区的内容，并将渲染结果显
 
 
 
-#### 示例代码
+## 示例代码
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
  - [基于OpenGL图形库实现绘制三棱锥功能](https://gitcode.com/HarmonyOS_Samples/ndk-opengl)

@@ -1,18 +1,19 @@
 # ArkWeb_WebMessageAPI
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-web-arkweb-webmessageapi
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct {...} ArkWeb_WebMessageAPI
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ArkWeb_WebMessageAPI是Web消息相关Native API结构体。该结构体提供了创建和销毁消息、设置和获取消息类型、管理消息数据缓冲区等函数。此API是postMessage桥接的一部分，支持Native代码与HTML页面之间的双向通信。
  
@@ -26,16 +27,19 @@ Web消息相关接口需在UI线程中调用OH_ArkWeb_GetNativeAPI方法获取�
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 成员变量
+### 成员变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | size_t size | 结构体的大小。 |
@@ -43,10 +47,12 @@ Web消息相关接口需在UI线程中调用OH_ArkWeb_GetNativeAPI方法获取�
  
   
 
-#### 成员函数
+### 成员函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | ArkWeb_WebMessagePtr (*createWebMessage)() | 创建消息。 |
@@ -59,15 +65,17 @@ Web消息相关接口需在UI线程中调用OH_ArkWeb_GetNativeAPI方法获取�
  
   
 
-#### 成员函数说明
+## 成员函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### createWebMessage()
+### createWebMessage()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkWeb_WebMessagePtr (*createWebMessage)()
@@ -75,10 +83,11 @@ ArkWeb_WebMessagePtr (*createWebMessage)()
  
 **描述**
  
-创建消息。
+创建消息。用于在Native代码与HTML页面之间进行postMessage通信前，创建待发送的消息对象。调用createWebMessage()后，必须在使用完毕后调用destroyWebMessage()释放消息资源，未调用destroyWebMessage()会导致消息资源泄漏，影响系统内存管理。
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkWeb_WebMessagePtr | 消息结构体指针。 |
@@ -86,9 +95,10 @@ ArkWeb_WebMessagePtr (*createWebMessage)()
  
   
 
-#### destroyWebMessage()
+### destroyWebMessage()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void (*destroyWebMessage)(ArkWeb_WebMessagePtr* webMessage)
@@ -96,10 +106,11 @@ void (*destroyWebMessage)(ArkWeb_WebMessagePtr* webMessage)
  
 **描述**
  
-销毁消息。
+销毁消息，并释放消息对象占用的内存。必须与createWebMessage()成对使用，在使用完消息后调用此方法释放资源。调用后webMessage指针将变为无效，不应再被使用。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkWeb_WebMessagePtr* webMessage | 需要销毁的消息。 |
@@ -107,9 +118,10 @@ void (*destroyWebMessage)(ArkWeb_WebMessagePtr* webMessage)
  
   
 
-#### setType()
+### setType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void (*setType)(ArkWeb_WebMessagePtr webMessage, ArkWeb_WebMessageType type)
@@ -121,6 +133,7 @@ void (*setType)(ArkWeb_WebMessagePtr webMessage, ArkWeb_WebMessageType type)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkWeb_WebMessagePtr webMessage | 消息结构体指针。 |
@@ -129,9 +142,10 @@ void (*setType)(ArkWeb_WebMessagePtr webMessage, ArkWeb_WebMessageType type)
  
   
 
-#### getType()
+### getType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkWeb_WebMessageType (*getType)(ArkWeb_WebMessagePtr webMessage)
@@ -139,10 +153,11 @@ ArkWeb_WebMessageType (*getType)(ArkWeb_WebMessagePtr webMessage)
  
 **描述**
  
-获取消息类型。
+获取消息类型。用于区分不同类型的通信消息，如文本消息、JSON消息、二进制消息等。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkWeb_WebMessagePtr webMessage | 消息结构体指针。 |
@@ -150,16 +165,18 @@ ArkWeb_WebMessageType (*getType)(ArkWeb_WebMessagePtr webMessage)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| ArkWeb_WebMessageType | 消息类型。 |
+| ArkWeb_WebMessageType | 返回消息的类型枚举值，如ARKWEB_WEB_MESSAGE_TYPE_STRING或ARKWEB_WEB_MESSAGE_TYPE_ARRAY_BUFFER等。 |
  
  
   
 
-#### setData()
+### setData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void (*setData)(ArkWeb_WebMessagePtr webMessage, void* data, size_t dataLength)
@@ -167,22 +184,24 @@ void (*setData)(ArkWeb_WebMessagePtr webMessage, void* data, size_t dataLength)
  
 **描述**
  
-设置数据。
+设置数据。用于设置消息的具体内容，支持从Native代码向HTML页面传递文本、JSON或二进制数据。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkWeb_WebMessagePtr webMessage | 消息结构体指针。 |
-| void* data | 数据指针。 |
+| void* data | 数据指针。由调用方负责内存管理，函数内部不释放该内存，数据所有权不转移。 |
 | size_t dataLength | 数据长度。 |
  
  
   
 
-#### getData()
+### getData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void* (*getData)(ArkWeb_WebMessagePtr webMessage, size_t* dataLength)
@@ -190,10 +209,11 @@ void* (*getData)(ArkWeb_WebMessagePtr webMessage, size_t* dataLength)
  
 **描述**
  
-获取数据。
+获取数据。用于获取消息的具体内容，支持从HTML页面接收文本、JSON或二进制数据并在Native代码中处理。必须先调用setData()设置数据，然后才能调用getData()获取数据；如果未调用setData()就调用getData()，将返回NULL，且dataLength为0。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkWeb_WebMessagePtr webMessage | 消息结构体指针。 |
@@ -202,6 +222,7 @@ void* (*getData)(ArkWeb_WebMessagePtr webMessage, size_t* dataLength)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| void* | 数据指针。 |
+| void* | 指向消息数据的指针，数据长度由dataLength出参返回。返回指针的生命周期与消息对象绑定，消息销毁后指针失效，调用方不应释放该内存。 |

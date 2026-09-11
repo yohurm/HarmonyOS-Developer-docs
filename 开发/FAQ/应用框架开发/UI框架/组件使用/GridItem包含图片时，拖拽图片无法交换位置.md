@@ -36,11 +36,11 @@ struct Second {
   private scroller: Scroller = new Scroller();
 
 
-  // 设置拖拽过程样式
+ <em> // 设置拖拽过程样式</em>
   @Builder
   dragItem(item: string) {
     Column() {
-      Image($r('app.media.startIcon')) // 仅供参考，需根据业务场景更换
+      Image($r('app.media.startIcon'))<em> // 仅供参考，需根据业务场景更换</em>
         .width(44)
         .height(44)
         .draggable(false)
@@ -59,11 +59,11 @@ struct Second {
         ForEach(this.addedItems, (item: string) => {
           GridItem() {
             Column() {
-              Image($r('app.media.startIcon')) // 仅供参考，需根据业务场景更换
+              Image($r('app.media.startIcon')) <em>// 仅供参考，需根据业务场景更换</em>
                 .width(44)
                 .height(44)
                 .objectFit(ImageFit.Contain)
-                .draggable(false); // 将draggable属性设置为false
+                .draggable(false); <em>// 将draggable属性设置为false</em>
               Text(`index:${item}`)
                 .fontSize(12)
                 .margin({ top: 5 });
@@ -81,19 +81,19 @@ struct Second {
       .padding({
         top: 30
       })
-      .editMode(true) // 设置Grid是否进入编辑模式，进入编辑模式可以拖拽Grid组件内部GridItem
-      .onItemDragStart(((event: ItemDragInfo, index: number) => { // 第一次拖拽此事件绑定的组件时，触发回调
+      .editMode(true) /<em>/ 设置Grid是否进入编辑模式，进入编辑模式可以拖拽Grid组件内部GridItem</em>
+      .onItemDragStart(((event: ItemDragInfo, index: number) => { /<em>/ 第一次拖拽此事件绑定的组件时，触发回调</em>
         console.log('onItemDragStart');
-        return this.dragItem(this.addedItems[index]); // 设置拖拽过程中显示的图片
+        return this.dragItem(this.addedItems[index]); <em>// 设置拖拽过程中显示的图片</em>
       }))
       .onItemDrop((event: ItemDragInfo, itemIndex: number, insertIndex: number,
-        isSuccess: boolean) => { // 绑定此事件的组件可作为拖拽释放目标，当在本组件范围内停止拖拽行为时，触发回调
+        isSuccess: boolean) => { <em>// 绑定此事件的组件可作为拖拽释放目标，当在本组件范围内停止拖拽行为时，触发回调</em>
         console.log('onItemDrop');
-        // isSuccess=false时，说明drop的位置在grid外部；insertIndex > length时，说明有新增元素的事件发生
+      <em>  // isSuccess=false时，说明drop的位置在grid外部；insertIndex > length时，说明有新增元素的事件发生</em>
         if (!isSuccess || insertIndex >= this.addedItems.length) {
           return;
         }
-        console.info( itemIndex + '', insertIndex + ''); // itemIndex拖拽起始位置，insertIndex拖拽插入位置
+        console.info( itemIndex + '', insertIndex + ''); <em>// itemIndex拖拽起始位置，insertIndex拖拽插入位置</em>
         this.changeIndex(itemIndex, insertIndex);
       });
     }
@@ -102,7 +102,7 @@ struct Second {
   }
 
 
-  // 交换数组位置
+<em>  // 交换数组位置</em>
   changeIndex(index1: number, index2: number) {
     let temp: string;
     temp = this.addedItems[index1];

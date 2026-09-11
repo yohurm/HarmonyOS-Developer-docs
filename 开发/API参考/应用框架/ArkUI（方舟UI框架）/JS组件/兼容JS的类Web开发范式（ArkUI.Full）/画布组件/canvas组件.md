@@ -1,9 +1,9 @@
 # canvas组件
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-canvas-canvas
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 > [!NOTE]
 > 从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
@@ -12,57 +12,64 @@
 提供画布组件。用于自定义绘制图形。
   
 
-#### 权限列表
+## 权限列表
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 无
  
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 不支持。
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-attributes)。
  
   
 
-#### 样式
+## 样式
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 支持[通用样式](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-styles)。
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-events)。
  
   
 
-#### 方法
+## 方法
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 除支持[通用方法](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-methods)外，还支持如下方法：
  
   
 
-#### getContext
+### getContext
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 getContext(type: '2d', options?: ContextAttrOptions): CanvasRenderingContext2D
  
@@ -70,6 +77,7 @@ getContext(type: '2d', options?: ContextAttrOptions): CanvasRenderingContext2D
  
 **参数：**
   
+
 | 参数名 | 参数类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | type | string | 是 | 设置为'2d'，返回值为2D绘制对象，该对象可用于在画布组件上绘制矩形、文本、图片等。 |
@@ -78,6 +86,7 @@ getContext(type: '2d', options?: ContextAttrOptions): CanvasRenderingContext2D
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | CanvasRenderingContext2D | 用于在画布组件上绘制矩形、文本、图片等。 |
@@ -85,9 +94,10 @@ getContext(type: '2d', options?: ContextAttrOptions): CanvasRenderingContext2D
  
   
 
-#### toDataURL6+
+### toDataURL6+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 toDataURL(type?: string, quality?: number): string
  
@@ -95,6 +105,7 @@ toDataURL(type?: string, quality?: number): string
  
 **参数：**
   
+
 | 参数名 | 参数类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | type | string | 否 | 可选参数，用于指定图像格式，默认格式为image/png。 |
@@ -103,6 +114,7 @@ toDataURL(type?: string, quality?: number): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 图像的URL地址。 |
@@ -110,14 +122,16 @@ toDataURL(type?: string, quality?: number): string
  
   
 
-#### ContextAttrOptions6+
+## ContextAttrOptions6+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 用于配置Canvas渲染上下文属性的选项对象。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | antialias | boolean | 否 | 是 | 是否开启抗锯齿功能。 true表示开启抗锯齿功能；false表示不开启抗锯齿功能。 默认值：false |
@@ -125,9 +139,10 @@ toDataURL(type?: string, quality?: number): string
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 <!-- xxx.hml -->
@@ -150,4 +165,4 @@ export default {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/t3-8DD4GTySq9CPoz2sjDg/zh-cn_image_0000002659102307.png?HW-CC-KV=V1&HW-CC-Date=20260701T014404Z&HW-CC-Expire=86400&HW-CC-Sign=D313933523E8AAE905351DE4FA15FBCC7EAC87F7AA5F94991BBAAD3AFA1BF132)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/sgyNeZtVSueNO5arp0IRow/zh-cn_image_0000002747293207.png?HW-CC-KV=V1&HW-CC-Date=20260911T072956Z&HW-CC-Expire=86400&HW-CC-Sign=B09CF16CAD72E70048CEE0E8A12B5603147FD80B41400086F803276E4D17AC37)

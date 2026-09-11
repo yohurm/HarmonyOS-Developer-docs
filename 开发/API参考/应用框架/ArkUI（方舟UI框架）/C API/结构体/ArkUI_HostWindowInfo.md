@@ -1,18 +1,19 @@
 # ArkUI_HostWindowInfo
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-arkui-hostwindowinfo
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct ArkUI_HostWindowInfo ArkUI_HostWindowInfo
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义窗口属性的HostWindowInfo类信息。
  
@@ -24,6 +25,7 @@ typedef struct ArkUI_HostWindowInfo ArkUI_HostWindowInfo
  
 **相关接口：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_ArkUI_NodeUtils_GetWindowInfo | 获取节点所属的窗口信息。 |

@@ -1,9 +1,9 @@
 # @ohos.intl (国际化-Intl)
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-intl
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供基础的应用国际化能力，包括时间日期格式化、数字格式化、排序等，相关接口在ECMA 402标准中定义。
 
@@ -14,9 +14,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { intl } from '@kit.LocalizationKit';
@@ -24,15 +25,17 @@ import { intl } from '@kit.LocalizationKit';
 
 
 
-#### Locale(deprecated)
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## Locale(deprecated)
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 6开始支持，从API version 20开始废弃，建议使用[Intl.Locale](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale)替代。
 
@@ -41,6 +44,7 @@ import { intl } from '@kit.LocalizationKit';
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Global.I18n
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -58,9 +62,10 @@ import { intl } from '@kit.LocalizationKit';
 
 
 
-#### constructor(deprecated)
+### constructor(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -87,9 +92,10 @@ let localeID = locale.toString();
 
 
 
-#### constructor(deprecated)
+### constructor(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(locale: string, options?: LocaleOptions)
 
@@ -104,6 +110,7 @@ constructor(locale: string, options?: LocaleOptions)
 **系统能力**：SystemCapability.Global.I18n
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -123,9 +130,10 @@ let localeID = locale.toString(); // localeID = 'zh-CN'
 
 
 
-#### toString(deprecated)
+### toString(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toString(): string
 
@@ -140,6 +148,7 @@ toString(): string
 **系统能力**：SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -158,9 +167,10 @@ let localeID = locale.toString(); // localeID = 'en-GB'
 
 
 
-#### maximize(deprecated)
+### maximize(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 maximize(): Locale
 
@@ -175,6 +185,7 @@ maximize(): Locale
 **系统能力**：SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -201,9 +212,10 @@ localeID = maximizedLocale.toString(); // localeID = 'en-Latn-US'
 
 
 
-#### minimize(deprecated)
+### minimize(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 minimize(): Locale
 
@@ -218,6 +230,7 @@ minimize(): Locale
 **系统能力**：SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -244,9 +257,10 @@ localeID = minimizedLocale.toString(); // localeID = 'en'
 
 
 
-#### LocaleOptions(deprecated)
+## LocaleOptions(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 6开始支持，从API version 20开始废弃，以calendar为例，建议使用[Intl.LocaleOptions.calendar](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/calendar)替代。
 
@@ -257,6 +271,7 @@ localeID = minimizedLocale.toString(); // localeID = 'en'
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Global.I18n
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -274,9 +289,10 @@ localeID = minimizedLocale.toString(); // localeID = 'en'
 
 
 
-#### DateTimeFormat(deprecated)
+## DateTimeFormat(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 6开始支持，从API version 20开始废弃，建议使用[Intl.DateTimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat)替代。
 
@@ -288,9 +304,10 @@ localeID = minimizedLocale.toString(); // localeID = 'en'
 
 
 
-#### constructor(deprecated)
+### constructor(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -315,9 +332,10 @@ let formatter: intl.DateTimeFormat = new intl.DateTimeFormat();
 
 
 
-#### constructor(deprecated)
+### constructor(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(locale: string | Array&lt;string&gt;, options?: DateTimeOptions)
 
@@ -332,6 +350,7 @@ constructor(locale: string | Array&lt;string&gt;, options?: DateTimeOptions)
 **系统能力**：SystemCapability.Global.I18n
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -353,9 +372,10 @@ formatter = new intl.DateTimeFormat(['ban', 'zh'], { dateStyle: 'full', timeStyl
 
 
 
-#### format(deprecated)
+### format(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 format(date: Date): string
 
@@ -371,12 +391,14 @@ format(date: Date): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | date | Date | 是 | 时间日期。 说明： 月份从0开始计数，0表示一月。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -400,9 +422,10 @@ formattedDate = formatter.format(date); // formattedDate "Friday, 17 December 20
 
 
 
-#### formatRange(deprecated)
+### formatRange(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 formatRange(startDate: Date, endDate: Date): string
 
@@ -418,6 +441,7 @@ formatRange(startDate: Date, endDate: Date): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | startDate | Date | 是 | 时间日期的开始。 说明： 月份从0开始计数，0表示一月。 |
@@ -425,6 +449,7 @@ formatRange(startDate: Date, endDate: Date): string
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -445,9 +470,10 @@ let formattedDateRange: string = formatter.formatRange(startDate, endDate); // f
 
 
 
-#### resolvedOptions(deprecated)
+### resolvedOptions(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 resolvedOptions(): DateTimeOptions
 
@@ -462,6 +488,7 @@ resolvedOptions(): DateTimeOptions
 **系统能力**：SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -482,9 +509,10 @@ let timeStyle: string | undefined = options.timeStyle; // timeStyle = 'medium'
 
 
 
-#### DateTimeOptions(deprecated)
+## DateTimeOptions(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 6开始支持，从API version 20开始废弃，建议使用Intl.DateTimeFormatOptions和Intl.ResolvedDateTimeFormatOptions替代。用法参考[Intl.DateTimeFormat.constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat)和[Intl.DateTimeFormat.resolvedOptions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/resolvedOptions)。
 
@@ -495,6 +523,7 @@ let timeStyle: string | undefined = options.timeStyle; // timeStyle = 'medium'
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Global.I18n
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -521,9 +550,10 @@ let timeStyle: string | undefined = options.timeStyle; // timeStyle = 'medium'
 
 
 
-#### NumberFormat
+## NumberFormat
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供标准的数字格式化的能力。
 
@@ -533,9 +563,10 @@ let timeStyle: string | undefined = options.timeStyle; // timeStyle = 'medium'
 
 
 
-#### constructor8+
+### constructor8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -556,9 +587,10 @@ let formatter: intl.NumberFormat = new intl.NumberFormat();
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(locale: string | Array&lt;string&gt;, options?: NumberOptions)
 
@@ -569,6 +601,7 @@ constructor(locale: string | Array&lt;string&gt;, options?: NumberOptions)
 **系统能力**：SystemCapability.Global.I18n
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -587,9 +620,10 @@ let formatter: intl.NumberFormat = new intl.NumberFormat('en-GB', { style: 'deci
 
 
 
-#### format
+### format
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 format(num: number): string
 
@@ -601,12 +635,14 @@ format(num: number): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | num | number | 是 | 数字对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -632,9 +668,10 @@ let result: string = formatter.format(1.23456); // result = 1.23
 
 
 
-#### formatRange18+
+### formatRange18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 formatRange(startRange: number, endRange: number): string
 
@@ -646,6 +683,7 @@ formatRange(startRange: number, endRange: number): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | startRange | number | 是 | 数字范围的起始值。 |
@@ -653,6 +691,7 @@ formatRange(startRange: number, endRange: number): string
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -670,9 +709,10 @@ let formattedRange: string = formatter.formatRange(0, 3); // formattedRange: 0�
 
 
 
-#### resolvedOptions
+### resolvedOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 resolvedOptions(): NumberOptions
 
@@ -683,6 +723,7 @@ resolvedOptions(): NumberOptions
 **系统能力**：SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -703,13 +744,15 @@ let notation: string | undefined = options.notation; // notation = 'scientific'
 
 
 
-#### NumberOptions
+## NumberOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 创建数字格式化对象时可设置的配置项。从API version 9开始，NumberOptions的属性由必填改为可选。
 
 **系统能力**：SystemCapability.Global.I18n
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -739,9 +782,10 @@ let notation: string | undefined = options.notation; // notation = 'scientific'
 
 
 
-#### Collator8+
+## Collator8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供字符串排序的能力。
 
@@ -751,9 +795,10 @@ let notation: string | undefined = options.notation; // notation = 'scientific'
 
 
 
-#### constructor8+
+### constructor8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -774,9 +819,10 @@ let collator = new intl.Collator();
 
 
 
-#### constructor8+
+### constructor8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(locale: string | Array&lt;string&gt;, options?: CollatorOptions)
 
@@ -787,6 +833,7 @@ constructor(locale: string | Array&lt;string&gt;, options?: CollatorOptions)
 **系统能力**：SystemCapability.Global.I18n
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -805,9 +852,10 @@ let collator = new intl.Collator('zh-CN', {localeMatcher: 'lookup', usage: 'sort
 
 
 
-#### compare8+
+### compare8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 compare(first: string, second: string): number
 
@@ -819,6 +867,7 @@ compare(first: string, second: string): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | first | string | 是 | 进行比较的第一个字符串。 |
@@ -826,6 +875,7 @@ compare(first: string, second: string): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -845,9 +895,10 @@ let compareResult = collator.compare('first', 'second'); // compareResult = -1
 
 
 
-#### resolvedOptions8+
+### resolvedOptions8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 resolvedOptions(): CollatorOptions
 
@@ -858,6 +909,7 @@ resolvedOptions(): CollatorOptions
 **系统能力**：SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -878,9 +930,10 @@ let ignorePunctuation = options.ignorePunctuation; // ignorePunctuation = true
 
 
 
-#### CollatorOptions8+
+## CollatorOptions8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 创建排序对象时可设置的配置项。
 
@@ -889,6 +942,7 @@ let ignorePunctuation = options.ignorePunctuation; // ignorePunctuation = true
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Global.I18n
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -903,9 +957,10 @@ let ignorePunctuation = options.ignorePunctuation; // ignorePunctuation = true
 
 
 
-#### PluralRules(deprecated)
+## PluralRules(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 8开始支持，从API version 20开始废弃，建议使用[Intl.PluralRules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules)替代。
 
@@ -917,9 +972,10 @@ let ignorePunctuation = options.ignorePunctuation; // ignorePunctuation = true
 
 
 
-#### constructor(deprecated)
+### constructor(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -942,9 +998,10 @@ let pluralRules = new intl.PluralRules();
 
 
 
-#### constructor(deprecated)
+### constructor(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(locale: string | Array&lt;string&gt;, options?: PluralRulesOptions)
 
@@ -957,6 +1014,7 @@ constructor(locale: string | Array&lt;string&gt;, options?: PluralRulesOptions)
 **系统能力**：SystemCapability.Global.I18n
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -975,9 +1033,10 @@ let pluralRules: intl.PluralRules = new intl.PluralRules('zh-CN', { localeMatche
 
 
 
-#### select(deprecated)
+### select(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 select(n: number): string
 
@@ -991,12 +1050,14 @@ select(n: number): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | number | 是 | 待获取单复数类别的数字。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1021,9 +1082,10 @@ plural = enPluralRules.select(1); // plural = 'one'
 
 
 
-#### PluralRulesOptions(deprecated)
+## PluralRulesOptions(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 8开始支持，从API version 20开始废弃，建议使用[Intl.PluralRulesOptions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules/PluralRules)替代。
 
@@ -1032,6 +1094,7 @@ plural = enPluralRules.select(1); // plural = 'one'
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Global.I18n
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1046,9 +1109,10 @@ plural = enPluralRules.select(1); // plural = 'one'
 
 
 
-#### RelativeTimeFormat(deprecated)
+## RelativeTimeFormat(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 8开始支持，从API version 20开始废弃，建议使用[Intl.RelativeTimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat)替代。
 
@@ -1060,9 +1124,10 @@ plural = enPluralRules.select(1); // plural = 'one'
 
 
 
-#### constructor(deprecated)
+### constructor(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -1085,9 +1150,10 @@ let formatter: intl.RelativeTimeFormat = new intl.RelativeTimeFormat();
 
 
 
-#### constructor(deprecated)
+### constructor(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(locale: string | Array&lt;string&gt;, options?: RelativeTimeFormatInputOptions)
 
@@ -1100,6 +1166,7 @@ constructor(locale: string | Array&lt;string&gt;, options?: RelativeTimeFormatIn
 **系统能力**：SystemCapability.Global.I18n
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1122,9 +1189,10 @@ let formatter: intl.RelativeTimeFormat = new intl.RelativeTimeFormat('zh-CN', {
 
 
 
-#### format(deprecated)
+### format(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 format(value: number, unit: string): string
 
@@ -1138,6 +1206,7 @@ format(value: number, unit: string): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 相对时间格式化的数值。 |
@@ -1145,6 +1214,7 @@ format(value: number, unit: string): string
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1164,9 +1234,10 @@ let formatResult: string = formatter.format(3, 'quarter'); // formatResult = '3�
 
 
 
-#### formatToParts(deprecated)
+### formatToParts(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 formatToParts(value: number, unit: string): Array&lt;object&gt;
 
@@ -1180,6 +1251,7 @@ formatToParts(value: number, unit: string): Array&lt;object&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 相对时间格式化的数值。 |
@@ -1187,6 +1259,7 @@ formatToParts(value: number, unit: string): Array&lt;object&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1205,9 +1278,10 @@ let parts: Array<object> = formatter.formatToParts(10, 'seconds'); // parts = [ 
 
 
 
-#### resolvedOptions(deprecated)
+### resolvedOptions(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 resolvedOptions(): RelativeTimeFormatResolvedOptions
 
@@ -1220,6 +1294,7 @@ resolvedOptions(): RelativeTimeFormatResolvedOptions
 **系统能力**：SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1240,9 +1315,10 @@ let style: string = options.style; // style = 'short'
 
 
 
-#### RelativeTimeFormatInputOptions(deprecated)
+## RelativeTimeFormatInputOptions(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 8开始支持，从API version 20开始废弃，建议使用[Intl.RelativeTimeFormatOptions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat/RelativeTimeFormat#options)替代。
 
@@ -1254,6 +1330,7 @@ let style: string = options.style; // style = 'short'
 
 **系统能力**：SystemCapability.Global.I18n
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | localeMatcher | string | 否 | 是 | 区域匹配算法，取值包括："best fit", "lookup"。 默认值：best fit。 |
@@ -1263,9 +1340,10 @@ let style: string = options.style; // style = 'short'
 
 
 
-#### RelativeTimeFormatResolvedOptions(deprecated)
+## RelativeTimeFormatResolvedOptions(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 8开始支持，从API version 20开始废弃，建议使用[Intl.RelativeTimeFormatOptions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat/resolvedOptions#return_value)替代。
 
@@ -1274,6 +1352,7 @@ let style: string = options.style; // style = 'short'
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Global.I18n
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1285,15 +1364,17 @@ let style: string = options.style; // style = 'short'
 
 
 
-#### 附录
+## 附录
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **时间日期格式化选项**
 
 下方表格以时间：2021年9月17日 13:04:00、2021年9月17日 00:25:00和区域ID: zh-CN、en为例，说明[DateTimeOptions](#datetimeoptionsdeprecated)的取值和显示结果。
 
 **表1** 日期显示格式 (dateStyle)
+
 
 | 取值 | 描述 | 2021年9月17日 13:04:00，区域ID为zh-CN显示结果 | 2021年9月17日 13:04:00，区域ID为en显示结果 |
 | --- | --- | --- | --- |
@@ -1305,6 +1386,7 @@ let style: string = options.style; // style = 'short'
 
 **表2** 时间显示格式 (timeStyle)
 
+
 | 取值 | 描述 | 2021年9月17日 13:04:00，区域ID为zh-CN显示结果 | 2021年9月17日 13:04:00，区域ID为en显示结果 |
 | --- | --- | --- | --- |
 | full | 完整的时间显示，包含时区和时间，时间精确到秒。 | 中国标准时间 13:04:00 | 13:04:00 China Standard Time |
@@ -1315,6 +1397,7 @@ let style: string = options.style; // style = 'short'
 
 **表3** 年份显示格式 (year)
 
+
 | 取值 | 描述 | 2021年9月17日 13:04:00，区域ID为zh-CN显示结果 | 2021年9月17日 13:04:00，区域ID为en显示结果 |
 | --- | --- | --- | --- |
 | numeric | 完整的年份显示。 | 2021年 | 2021 |
@@ -1322,6 +1405,7 @@ let style: string = options.style; // style = 'short'
 
 
 **表4** 星期显示格式 (weekday)
+
 
 | 取值 | 描述 | 2021年9月17日 13:04:00，区域ID为zh-CN显示结果 | 2021年9月17日 13:04:00，区域ID为en显示结果 |
 | --- | --- | --- | --- |
@@ -1331,6 +1415,7 @@ let style: string = options.style; // style = 'short'
 
 
 **表5** 时制格式 (hourCycle)
+
 
 | 取值 | 描述 | 2021年9月17日 13:04:00，区域ID为zh-CN显示结果 | 2021年9月17日 00:25:00，区域ID为zh-CN显示结果 |
 | --- | --- | --- | --- |
@@ -1346,6 +1431,7 @@ let style: string = options.style; // style = 'short'
 
 **表6** 时制格式 (hourCycle)
 
+
 | 取值 | 描述 | 2021年9月17日 13:04:00，区域ID为zh-CN显示结果 | 2021年9月17日 00:25:00，区域ID为zh-CN显示结果 |
 | --- | --- | --- | --- |
 | h11 | 用1-24表示小时。 | 下午13:04 | 上午24:25 |
@@ -1360,6 +1446,7 @@ let style: string = options.style; // style = 'short'
 
 **表7** 月份格式 (month)
 
+
 | 取值 | 描述 | 2021年9月17日 13:04:00，区域ID为zh-CN显示结果 | 2021年9月17日 13:04:00，区域ID为en显示结果 |
 | --- | --- | --- | --- |
 | numeric | 以数字形式显示月份。 | 9月 | 9 |
@@ -1371,6 +1458,7 @@ let style: string = options.style; // style = 'short'
 
 **表8** 时区名称的本地化表示 (timeZoneName)
 
+
 | 取值 | 描述 | 2021年9月17日 13:04:00，区域ID为zh-CN显示结果 | 2021年9月17日 13:04:00，区域ID为en显示结果 |
 | --- | --- | --- | --- |
 | long | 详细的时区名称显示。 | 中国标准时间 | China Standard Time |
@@ -1378,6 +1466,7 @@ let style: string = options.style; // style = 'short'
 
 
 **表9** 纪元的显示格式 (era)
+
 
 | 取值 | 描述 | 2021年9月17日 13:04:00，区域ID为zh-CN显示效果 | 2021年9月17日 13:04:00，区域ID为en显示效果 |
 | --- | --- | --- | --- |
@@ -1387,6 +1476,7 @@ let style: string = options.style; // style = 'short'
 
 
 **表10** 时段的显示格式 (dayPeriod)
+
 
 | 取值 | 描述 | 2021年9月17日 13:04:00，区域ID为zh-CN显示效果 | 2021年9月17日 13:04:00，区域ID为en显示效果 |
 | --- | --- | --- | --- |
@@ -1403,6 +1493,7 @@ let style: string = options.style; // style = 'short'
 
 **表11** 最小整数位数 (minimumIntegerDigits)
 
+
 | 取值 | 显示效果 |
 | --- | --- |
 | 6 | 123,000.123 |
@@ -1410,6 +1501,7 @@ let style: string = options.style; // style = 'short'
 
 
 **表12** 最小小数位数 (minimumFractionDigits)
+
 
 | 取值 | 显示效果 |
 | --- | --- |
@@ -1419,6 +1511,7 @@ let style: string = options.style; // style = 'short'
 
 **表13** 最大小数位数 (maximumFractionDigits)
 
+
 | 取值 | 显示效果 |
 | --- | --- |
 | 3 | 123,000.123 |
@@ -1426,6 +1519,7 @@ let style: string = options.style; // style = 'short'
 
 
 **表14** 最小有效位数 (minimumSignificantDigits)
+
 
 | 取值 | 显示效果 |
 | --- | --- |
@@ -1435,6 +1529,7 @@ let style: string = options.style; // style = 'short'
 
 **表15** 最大有效位数 (maximumSignificantDigits)
 
+
 | 取值 | 显示效果 |
 | --- | --- |
 | 9 | 123,000.123 |
@@ -1443,6 +1538,7 @@ let style: string = options.style; // style = 'short'
 
 **表16** 是否分组显示 (useGrouping)
 
+
 | 取值 | 显示效果 |
 | --- | --- |
 | true | 123,000.123 |
@@ -1450,6 +1546,7 @@ let style: string = options.style; // style = 'short'
 
 
 **表17** 数字的表示方法 (notation)
+
 
 | 取值 | 显示效果 |
 | --- | --- |
@@ -1460,6 +1557,7 @@ let style: string = options.style; // style = 'short'
 
 
 **表18** 紧凑显示格式 (compactDisplay)
+
 
 | 取值 | 显示效果 |
 | --- | --- |
@@ -1473,6 +1571,7 @@ let style: string = options.style; // style = 'short'
 
 **表19** 货币单位的符号 (currencySign)
 
+
 | 取值 | 显示效果 |
 | --- | --- |
 | standard | -US$12,300.00 |
@@ -1480,6 +1579,7 @@ let style: string = options.style; // style = 'short'
 
 
 **表20** 货币的显示方式 (currencyDisplay)
+
 
 | 取值 | 显示效果 |
 | --- | --- |
@@ -1495,6 +1595,7 @@ let style: string = options.style; // style = 'short'
 
 **表21** 单位的显示格式 (unitDisplay)
 
+
 | 取值 | 显示效果 |
 | --- | --- |
 | long | -12,3000 hectares |
@@ -1503,6 +1604,7 @@ let style: string = options.style; // style = 'short'
 
 
 **表22** 单位的使用场景 (unitUsage)
+
 
 | 取值 | 显示效果 |
 | --- | --- |
@@ -1517,6 +1619,7 @@ let style: string = options.style; // style = 'short'
 
 **表23** 数值表示 (numeric)
 
+
 | 取值 | 描述 | 显示效果(fr-FR) | 显示效果(en-GB) |
 | --- | --- | --- | --- |
 | always | 使用数值表示相对时间。 | il y a 1 jour | 1 day ago |
@@ -1524,6 +1627,7 @@ let style: string = options.style; // style = 'short'
 
 
 **表24** 相对时间样式 (style)
+
 
 | 取值 | 描述 | 显示效果(fr-FR) | 显示效果(en-GB) |
 | --- | --- | --- | --- |

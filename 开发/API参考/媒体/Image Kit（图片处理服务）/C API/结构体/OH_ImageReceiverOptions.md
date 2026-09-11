@@ -1,18 +1,19 @@
 # OH_ImageReceiverOptions
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-nativemodule-oh-imagereceiveroptions
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct OH_ImageReceiverOptions OH_ImageReceiverOptions
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于定义OH_ImageReceiverOptions数据类型名称。
  
@@ -24,6 +25,7 @@ OH_ImageReceiverOptions是native层封装的图片接收器选项设置器结构
  
 OH_ImageReceiverOptions结构体内容和操作方式如下：
   
+
 | 字段类型 | 字段名称 | 字段描述 | 操作函数 | 函数描述 |
 | --- | --- | --- | --- | --- |
 | Image_Size | size | 图像大小 | OH_ImageReceiverOptions_GetSize | 获取OH_ImageReceiverOptions对象的Image_Size。 |

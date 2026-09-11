@@ -1,16 +1,16 @@
 # ReleaseEventID
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-18 12:49:55
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-releaseeventid
 
-#### 功能说明
+## 功能说明
 
 用于释放HardEvent（硬件类型同步事件）的TEventID，通常与[AllocEventID](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-alloceventid)搭配使用。
  
   
 
-#### 函数原型
+## 函数原型
 
 ```text
 template <HardEvent evt> 
@@ -19,8 +19,9 @@ __aicore__ inline void ReleaseEventID(TEventID id)
  
   
 
-#### 参数说明
+## 参数说明
  
+
 | 参数名称 | 输入/输出 | 含义 |
 | --- | --- | --- |
 | id | 输入 | TEventID类型，调用AllocEventID申请获得的TEventID。 |
@@ -28,27 +29,29 @@ __aicore__ inline void ReleaseEventID(TEventID id)
  
   
 
-#### 支持的型号
+## 支持的型号
 
 Kirin9020系列处理器
+ 
+Kirin9030系列处理器
  
 KirinX90系列处理器
  
   
 
-#### 注意事项
+## 注意事项
 
 AllocEventID、ReleaseEventID需成对出现，ReleaseEventID传入的TEventID需由对应的AllocEventID申请而来。
  
   
 
-#### 返回值
+## 返回值
 
 无
  
   
 
-#### 调用示例
+## 调用示例
 
 ```text
 AscendC::TEventID eventID = GetTPipePtr()->AllocEventID<AscendC::HardEvent::V_S>(); // 需要插入scalar与vector之间的同步，申请对应的HardEvent的ID

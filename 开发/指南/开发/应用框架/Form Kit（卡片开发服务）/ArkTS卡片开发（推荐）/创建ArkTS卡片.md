@@ -1,6 +1,6 @@
 # 创建ArkTS卡片
 
-更新时间：2026-03-09 02:50:43
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widget-creation
 
@@ -13,11 +13,11 @@ ArkTS卡片有两种创建卡片包的方式。开发者在开发过程中任选
 ArkTS卡片创建完成，在开发卡片过程中，支持对卡片进行[实时预览](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-service-widget#section18171652015)。
 
 
-#### 方式一：共包方式创建卡片
+## 方式一：共包方式创建卡片
 
 
 
-#### 创建步骤
+### 创建步骤
 
 **1. 新建工程**
 
@@ -60,7 +60,7 @@ ArkTS卡片创建完成，在开发卡片过程中，支持对卡片进行[实�
 
 
 
-#### 工程结构介绍
+### 工程结构介绍
 
 **图1** ArkTS卡片工程目录、相关模块
 
@@ -79,7 +79,7 @@ ArkTS卡片创建完成，在开发卡片过程中，支持对卡片进行[实�
 [ArkTS卡片通用能力](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widget-page-overview#arkts卡片支持的页面能力)：提供了能在ArkTS卡片中使用的组件、属性和API。
  - [ArkTS卡片特有能力](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widget-event-overview)：postCardAction用于卡片内部和提供方应用间的交互，仅在卡片中可以调用。
 
-      - [卡片配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widget-configuration)：包含FormExtensionAbility的配置和卡片的配置。
+            - [卡片配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widget-configuration)：包含FormExtensionAbility的配置和卡片的配置。
 
   
 在[module.json5配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)中的extensionAbilities标签下，配置FormExtensionAbility相关信息。
@@ -89,11 +89,11 @@ ArkTS卡片创建完成，在开发卡片过程中，支持对卡片进行[实�
 
 
 
-#### 方式二：独立包方式创建卡片
+## 方式二：独立包方式创建卡片
 
 
 
-#### 创建步骤
+### 创建步骤
 
 **1. 新建工程**
 
@@ -122,20 +122,20 @@ ArkTS卡片创建完成，在开发卡片过程中，支持对卡片进行[实�
  - 填写卡片配置之后点击【Finish】。卡片创建成功后，entry包中包含应用和卡片后端能力；library包中包含卡片UI侧能力。entry模块下的module.json5配置文件中的formWidgetModule字段需关联library模块，library模块下的module.json5配置文件中的formExtensionModule字段需关联entry模块，以实现卡片包和应用包相互关联。创建完成后，会自动生成配置文件并配置，后续也可以按照[卡片配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widget-configuration)修改配置。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/5tdvG1sLQ9qjj_S3IM5lzw/zh-cn_image_0000002581274448.png?HW-CC-KV=V1&HW-CC-Date=20260528T030359Z&HW-CC-Expire=86400&HW-CC-Sign=B7B1464AFA40F684DC7922D718F958F13888DF2C4EC7F7D5C204A1EBCACB4C36)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/dy3i3yO0QlmQChAPSzD-Rw/zh-cn_image_0000002747290959.png?HW-CC-KV=V1&HW-CC-Date=20260911T072223Z&HW-CC-Expire=86400&HW-CC-Sign=D66CB423E558038467E32165BA81D6CD5EFF195C73EDDAAAB1D214AA0B2C4886)
 
 
 
 
 
-#### 工程结构介绍
+### 工程结构介绍
 
 独立卡片包与卡片共包方式创建卡片，仅工程结构存在差异，生成的文件是一致的，各文件具体内容请参考[共包方式工程结构介绍](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widget-creation#工程结构介绍)。
 
 **图2** 独立卡片包工程目录。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/QAkJXYPHTSqOPdW9ZiLLXA/zh-cn_image_0000002611754301.png?HW-CC-KV=V1&HW-CC-Date=20260528T030359Z&HW-CC-Expire=86400&HW-CC-Sign=714F6ADC39EDDBC14D059E2F7607E46A0C67D81E343CEE2BCD016496652CBFEA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/MObs5rtGR8KGATgaYjotlQ/zh-cn_image_0000002747210877.png?HW-CC-KV=V1&HW-CC-Date=20260911T072223Z&HW-CC-Expire=86400&HW-CC-Sign=979353C23C5039C33FD5B272E926DA9AC53B5D476DE4263737F5412923BDAC99)
 
 
 > [!NOTE]

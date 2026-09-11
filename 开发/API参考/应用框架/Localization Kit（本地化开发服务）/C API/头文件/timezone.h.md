@@ -1,13 +1,14 @@
 # timezone.h
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-timezone-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供获取时区信息的能力。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | DateTimeRule | DateTimeRule | 时间日期规则。 |
@@ -45,10 +49,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | DateRuleType | DateRuleType | 日期规则类型的枚举。 |
@@ -57,10 +63,12 @@
  
   
 
-#### 宏定义
+### 宏定义
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | MAX_YEAR_IN_ANNUAL_TIMEZONE_RULE 0x7fffffff | 每年生效时区规则的年份最大值。 起始版本： 22 |
@@ -68,10 +76,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | I18n_ErrorCode OH_i18n_GetTimeZoneRules(const char* timeZoneID, TimeZoneRules* rules) | 通过时区ID，获取完整的时区规则。 |
@@ -89,15 +99,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### DateRuleType
+### DateRuleType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum DateRuleType
@@ -111,6 +123,7 @@ enum DateRuleType
  
 **起始版本：** 22
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | DOM = 0 | 当月的第几天，以2025年为例，十月十六日为：十月的第十六天。 |
@@ -121,9 +134,10 @@ enum DateRuleType
  
   
 
-#### TimeRuleType
+### TimeRuleType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum TimeRuleType
@@ -137,6 +151,7 @@ enum TimeRuleType
  
 **起始版本：** 22
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | WALL_TIME = 0 | 本地时钟时间（不考虑时区偏移）。 |
@@ -146,15 +161,17 @@ enum TimeRuleType
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_i18n_GetTimeZoneRules()
+### OH_i18n_GetTimeZoneRules()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 I18n_ErrorCode OH_i18n_GetTimeZoneRules(const char* timeZoneID, TimeZoneRules* rules)
@@ -170,6 +187,7 @@ I18n_ErrorCode OH_i18n_GetTimeZoneRules(const char* timeZoneID, TimeZoneRules* r
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char* timeZoneID | 时区ID，例如“Asia/Shanghai”。 |
@@ -178,6 +196,7 @@ I18n_ErrorCode OH_i18n_GetTimeZoneRules(const char* timeZoneID, TimeZoneRules* r
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | I18n_ErrorCode | 0 - 成功。 8900001 - 传入参数无效。 8900050 - 预期之外的错误，例如内存错误。 |
@@ -185,9 +204,10 @@ I18n_ErrorCode OH_i18n_GetTimeZoneRules(const char* timeZoneID, TimeZoneRules* r
  
   
 
-#### OH_i18n_GetFirstStartFromTimeArrayTimeZoneRule()
+### OH_i18n_GetFirstStartFromTimeArrayTimeZoneRule()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 I18n_ErrorCode OH_i18n_GetFirstStartFromTimeArrayTimeZoneRule(TimeArrayTimeZoneRule* rule, TimeZoneRuleQuery* query)
@@ -203,6 +223,7 @@ I18n_ErrorCode OH_i18n_GetFirstStartFromTimeArrayTimeZoneRule(TimeArrayTimeZoneR
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | TimeArrayTimeZoneRule* rule | 起始时间戳数组定义的时区规则TimeArrayTimeZoneRule。 |
@@ -211,6 +232,7 @@ I18n_ErrorCode OH_i18n_GetFirstStartFromTimeArrayTimeZoneRule(TimeArrayTimeZoneR
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | I18n_ErrorCode | 0 - 成功。 8900001 - 传入参数无效。 8900050 - 预期之外的错误，例如内存错误。 |
@@ -218,9 +240,10 @@ I18n_ErrorCode OH_i18n_GetFirstStartFromTimeArrayTimeZoneRule(TimeArrayTimeZoneR
  
   
 
-#### OH_i18n_GetFirstStartFromAnnualTimeZoneRule()
+### OH_i18n_GetFirstStartFromAnnualTimeZoneRule()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 I18n_ErrorCode OH_i18n_GetFirstStartFromAnnualTimeZoneRule(AnnualTimeZoneRule* rule, TimeZoneRuleQuery* query)
@@ -236,6 +259,7 @@ I18n_ErrorCode OH_i18n_GetFirstStartFromAnnualTimeZoneRule(AnnualTimeZoneRule* r
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AnnualTimeZoneRule* rule | 每年生效的时区规则AnnualTimeZoneRule。 |
@@ -244,6 +268,7 @@ I18n_ErrorCode OH_i18n_GetFirstStartFromAnnualTimeZoneRule(AnnualTimeZoneRule* r
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | I18n_ErrorCode | 0 - 成功。 8900001 - 传入参数无效。 8900050 - 预期之外的错误，例如内存错误。 |
@@ -251,9 +276,10 @@ I18n_ErrorCode OH_i18n_GetFirstStartFromAnnualTimeZoneRule(AnnualTimeZoneRule* r
  
   
 
-#### OH_i18n_GetFinalStartFromTimeArrayTimeZoneRule()
+### OH_i18n_GetFinalStartFromTimeArrayTimeZoneRule()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 I18n_ErrorCode OH_i18n_GetFinalStartFromTimeArrayTimeZoneRule(TimeArrayTimeZoneRule* rule, TimeZoneRuleQuery* query)
@@ -269,6 +295,7 @@ I18n_ErrorCode OH_i18n_GetFinalStartFromTimeArrayTimeZoneRule(TimeArrayTimeZoneR
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | TimeArrayTimeZoneRule* rule | 起始时间戳数组定义的时区规则TimeArrayTimeZoneRule。 |
@@ -277,6 +304,7 @@ I18n_ErrorCode OH_i18n_GetFinalStartFromTimeArrayTimeZoneRule(TimeArrayTimeZoneR
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | I18n_ErrorCode | 0 - 成功。 8900001 - 传入参数无效。 8900050 - 预期之外的错误，例如内存错误。 |
@@ -284,9 +312,10 @@ I18n_ErrorCode OH_i18n_GetFinalStartFromTimeArrayTimeZoneRule(TimeArrayTimeZoneR
  
   
 
-#### OH_i18n_GetFinalStartFromAnnualTimeZoneRule()
+### OH_i18n_GetFinalStartFromAnnualTimeZoneRule()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 I18n_ErrorCode OH_i18n_GetFinalStartFromAnnualTimeZoneRule(AnnualTimeZoneRule* rule, TimeZoneRuleQuery* query)
@@ -302,6 +331,7 @@ I18n_ErrorCode OH_i18n_GetFinalStartFromAnnualTimeZoneRule(AnnualTimeZoneRule* r
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AnnualTimeZoneRule* rule | 每年生效的时区规则AnnualTimeZoneRule。 |
@@ -310,6 +340,7 @@ I18n_ErrorCode OH_i18n_GetFinalStartFromAnnualTimeZoneRule(AnnualTimeZoneRule* r
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | I18n_ErrorCode | 0 - 成功。 8900001 - 传入参数无效。 8900050 - 预期之外的错误，例如内存错误。 |
@@ -317,9 +348,10 @@ I18n_ErrorCode OH_i18n_GetFinalStartFromAnnualTimeZoneRule(AnnualTimeZoneRule* r
  
   
 
-#### OH_i18n_GetNextStartFromTimeArrayTimeZoneRule()
+### OH_i18n_GetNextStartFromTimeArrayTimeZoneRule()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 I18n_ErrorCode OH_i18n_GetNextStartFromTimeArrayTimeZoneRule(TimeArrayTimeZoneRule* rule, TimeZoneRuleQuery* query)
@@ -335,6 +367,7 @@ I18n_ErrorCode OH_i18n_GetNextStartFromTimeArrayTimeZoneRule(TimeArrayTimeZoneRu
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | TimeArrayTimeZoneRule* rule | 起始时间戳数组定义的时区规则TimeArrayTimeZoneRule。 |
@@ -343,6 +376,7 @@ I18n_ErrorCode OH_i18n_GetNextStartFromTimeArrayTimeZoneRule(TimeArrayTimeZoneRu
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | I18n_ErrorCode | 0 - 成功。 8900001 - 传入参数无效。 8900050 - 预期之外的错误，例如内存错误。 |
@@ -350,9 +384,10 @@ I18n_ErrorCode OH_i18n_GetNextStartFromTimeArrayTimeZoneRule(TimeArrayTimeZoneRu
  
   
 
-#### OH_i18n_GetNextStartFromAnnualTimeZoneRule()
+### OH_i18n_GetNextStartFromAnnualTimeZoneRule()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 I18n_ErrorCode OH_i18n_GetNextStartFromAnnualTimeZoneRule(AnnualTimeZoneRule* rule, TimeZoneRuleQuery* query)
@@ -368,6 +403,7 @@ I18n_ErrorCode OH_i18n_GetNextStartFromAnnualTimeZoneRule(AnnualTimeZoneRule* ru
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AnnualTimeZoneRule* rule | 每年生效的时区规则AnnualTimeZoneRule。 |
@@ -376,6 +412,7 @@ I18n_ErrorCode OH_i18n_GetNextStartFromAnnualTimeZoneRule(AnnualTimeZoneRule* ru
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | I18n_ErrorCode | 0 - 成功。 8900001 - 传入参数无效。 8900050 - 预期之外的错误，例如内存错误。 |
@@ -383,9 +420,10 @@ I18n_ErrorCode OH_i18n_GetNextStartFromAnnualTimeZoneRule(AnnualTimeZoneRule* ru
  
   
 
-#### OH_i18n_GetPrevStartFromTimeArrayTimeZoneRule()
+### OH_i18n_GetPrevStartFromTimeArrayTimeZoneRule()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 I18n_ErrorCode OH_i18n_GetPrevStartFromTimeArrayTimeZoneRule(TimeArrayTimeZoneRule* rule, TimeZoneRuleQuery* query)
@@ -401,6 +439,7 @@ I18n_ErrorCode OH_i18n_GetPrevStartFromTimeArrayTimeZoneRule(TimeArrayTimeZoneRu
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | TimeArrayTimeZoneRule* rule | 起始时间戳数组定义的时区规则TimeArrayTimeZoneRule。 |
@@ -409,6 +448,7 @@ I18n_ErrorCode OH_i18n_GetPrevStartFromTimeArrayTimeZoneRule(TimeArrayTimeZoneRu
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | I18n_ErrorCode | 0 - 成功。 8900001 - 传入参数无效。 8900050 - 预期之外的错误，例如内存错误。 |
@@ -416,9 +456,10 @@ I18n_ErrorCode OH_i18n_GetPrevStartFromTimeArrayTimeZoneRule(TimeArrayTimeZoneRu
  
   
 
-#### OH_i18n_GetPrevStartFromAnnualTimeZoneRule()
+### OH_i18n_GetPrevStartFromAnnualTimeZoneRule()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 I18n_ErrorCode OH_i18n_GetPrevStartFromAnnualTimeZoneRule(AnnualTimeZoneRule* rule, TimeZoneRuleQuery* query)
@@ -434,6 +475,7 @@ I18n_ErrorCode OH_i18n_GetPrevStartFromAnnualTimeZoneRule(AnnualTimeZoneRule* ru
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AnnualTimeZoneRule* rule | 每年生效的时区规则AnnualTimeZoneRule。 |
@@ -442,6 +484,7 @@ I18n_ErrorCode OH_i18n_GetPrevStartFromAnnualTimeZoneRule(AnnualTimeZoneRule* ru
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | I18n_ErrorCode | 0 - 成功。 8900001 - 传入参数无效。 8900050 - 预期之外的错误，例如内存错误。 |
@@ -449,9 +492,10 @@ I18n_ErrorCode OH_i18n_GetPrevStartFromAnnualTimeZoneRule(AnnualTimeZoneRule* ru
  
   
 
-#### OH_i18n_GetStartTimeAt()
+### OH_i18n_GetStartTimeAt()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 I18n_ErrorCode OH_i18n_GetStartTimeAt(TimeArrayTimeZoneRule* rule, int32_t index, double* result)
@@ -467,6 +511,7 @@ I18n_ErrorCode OH_i18n_GetStartTimeAt(TimeArrayTimeZoneRule* rule, int32_t index
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | TimeArrayTimeZoneRule* rule | 起始时间戳数组定义的时区规则TimeArrayTimeZoneRule。 |
@@ -476,6 +521,7 @@ I18n_ErrorCode OH_i18n_GetStartTimeAt(TimeArrayTimeZoneRule* rule, int32_t index
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | I18n_ErrorCode | 0 - 成功。 8900001 - 传入参数无效。 8900050 - 预期之外的错误，例如内存错误。 |
@@ -483,9 +529,10 @@ I18n_ErrorCode OH_i18n_GetStartTimeAt(TimeArrayTimeZoneRule* rule, int32_t index
  
   
 
-#### OH_i18n_GetStartInYear()
+### OH_i18n_GetStartInYear()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 I18n_ErrorCode OH_i18n_GetStartInYear(AnnualTimeZoneRule* rule, int32_t year, TimeZoneRuleQuery* query)
@@ -501,6 +548,7 @@ I18n_ErrorCode OH_i18n_GetStartInYear(AnnualTimeZoneRule* rule, int32_t year, Ti
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AnnualTimeZoneRule* rule | 每年生效的时区规则AnnualTimeZoneRule。 |
@@ -510,6 +558,7 @@ I18n_ErrorCode OH_i18n_GetStartInYear(AnnualTimeZoneRule* rule, int32_t year, Ti
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | I18n_ErrorCode | 0 - 成功。 8900001 - 传入参数无效。 8900050 - 预期之外的错误，例如内存错误。 |

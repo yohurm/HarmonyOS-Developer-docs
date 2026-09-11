@@ -1,9 +1,9 @@
 # @ohos.systemTime (系统时间、时区)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-system-time
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块主要由系统时间和系统时区功能组成。开发者可以设置、获取系统时间及系统时区。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { systemTime } from '@kit.BasicServicesKit';
@@ -22,9 +23,10 @@ import { systemTime } from '@kit.BasicServicesKit';
  
   
 
-#### systemTime.getCurrentTime8+(deprecated)
+## systemTime.getCurrentTime8+(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCurrentTime(isNano: boolean, callback: AsyncCallback&lt;number&gt;): void
  
@@ -38,6 +40,7 @@ getCurrentTime(isNano: boolean, callback: AsyncCallback&lt;number&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isNano | boolean | 是 | 返回结果是否为纳秒数。 - true：表示返回结果为纳秒数（ns）。 - false：表示返回结果为毫秒数（ms）。 |
@@ -48,6 +51,7 @@ getCurrentTime(isNano: boolean, callback: AsyncCallback&lt;number&gt;): void
  
 以下错误码的详细介绍请参见[时间时区服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-time)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | -1 | Parameter check failed, permission denied, or system error. |
@@ -74,9 +78,10 @@ try {
  
   
 
-#### systemTime.getCurrentTime8+(deprecated)
+## systemTime.getCurrentTime8+(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCurrentTime(callback: AsyncCallback&lt;number&gt;): void
  
@@ -90,6 +95,7 @@ getCurrentTime(callback: AsyncCallback&lt;number&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;number&gt; | 是 | 回调函数，返回自Unix纪元以来经过的时间（ms）。 |
@@ -99,6 +105,7 @@ getCurrentTime(callback: AsyncCallback&lt;number&gt;): void
  
 以下错误码的详细介绍请参见[时间时区服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-time)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | -1 | Parameter check failed, permission denied, or system error. |
@@ -125,9 +132,10 @@ try {
  
   
 
-#### systemTime.getCurrentTime8+(deprecated)
+## systemTime.getCurrentTime8+(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCurrentTime(isNano?: boolean): Promise&lt;number&gt;
  
@@ -141,6 +149,7 @@ getCurrentTime(isNano?: boolean): Promise&lt;number&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isNano | boolean | 否 | 返回结果是否为纳秒数，默认值为false。 默认值为false。 - true：表示返回结果为纳秒数（ns）。 - false：表示返回结果为毫秒数（ms）。 |
@@ -148,6 +157,7 @@ getCurrentTime(isNano?: boolean): Promise&lt;number&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象，返回自Unix纪元以来经过的时间。 |
@@ -157,6 +167,7 @@ getCurrentTime(isNano?: boolean): Promise&lt;number&gt;
  
 以下错误码的详细介绍请参见[时间时区服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-time)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | -1 | Parameter check failed, permission denied, or system error. |
@@ -181,9 +192,10 @@ try {
  
   
 
-#### systemTime.getRealActiveTime8+(deprecated)
+## systemTime.getRealActiveTime8+(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRealActiveTime(isNano: boolean, callback: AsyncCallback&lt;number&gt;): void
  
@@ -197,6 +209,7 @@ getRealActiveTime(isNano: boolean, callback: AsyncCallback&lt;number&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isNano | boolean | 是 | 返回结果是否为纳秒数。 - true：表示返回结果为纳秒数（ns）。 - false：表示返回结果为毫秒数（ms）。 |
@@ -207,6 +220,7 @@ getRealActiveTime(isNano: boolean, callback: AsyncCallback&lt;number&gt;): void
  
 以下错误码的详细介绍请参见[时间时区服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-time)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | -1 | Parameter check failed, permission denied, or system error. |
@@ -233,9 +247,10 @@ try {
  
   
 
-#### systemTime.getRealActiveTime8+(deprecated)
+## systemTime.getRealActiveTime8+(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRealActiveTime(callback: AsyncCallback&lt;number&gt;): void
  
@@ -249,6 +264,7 @@ getRealActiveTime(callback: AsyncCallback&lt;number&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;number&gt; | 是 | 回调函数，返回自系统启动以来经过的时间（ms），不包括深度睡眠时间。 |
@@ -258,6 +274,7 @@ getRealActiveTime(callback: AsyncCallback&lt;number&gt;): void
  
 以下错误码的详细介绍请参见[时间时区服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-time)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | -1 | Parameter check failed, permission denied, or system error. |
@@ -284,9 +301,10 @@ try {
  
   
 
-#### systemTime.getRealActiveTime8+(deprecated)
+## systemTime.getRealActiveTime8+(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRealActiveTime(isNano?: boolean): Promise&lt;number&gt;
  
@@ -300,6 +318,7 @@ getRealActiveTime(isNano?: boolean): Promise&lt;number&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isNano | boolean | 否 | 返回结果是否为纳秒数，默认值为false。 - true：表示返回结果为纳秒数（ns）。 - false：表示返回结果为毫秒数（ms）。 |
@@ -307,6 +326,7 @@ getRealActiveTime(isNano?: boolean): Promise&lt;number&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象，返回自系统启动以来经过的时间，但不包括深度睡眠时间。 |
@@ -316,6 +336,7 @@ getRealActiveTime(isNano?: boolean): Promise&lt;number&gt;
  
 以下错误码的详细介绍请参见[时间时区服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-time)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | -1 | Parameter check failed, permission denied, or system error. |
@@ -340,9 +361,10 @@ try {
  
   
 
-#### systemTime.getRealTime8+(deprecated)
+## systemTime.getRealTime8+(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRealTime(isNano: boolean, callback: AsyncCallback&lt;number&gt;): void
  
@@ -356,6 +378,7 @@ getRealTime(isNano: boolean, callback: AsyncCallback&lt;number&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isNano | boolean | 是 | 返回结果是否为纳秒数。 - true：表示返回结果为纳秒数（ns）。 - false：表示返回结果为毫秒数（ms）。 |
@@ -366,6 +389,7 @@ getRealTime(isNano: boolean, callback: AsyncCallback&lt;number&gt;): void
  
 以下错误码的详细介绍请参见[时间时区服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-time)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | -1 | Parameter check failed, permission denied, or system error. |
@@ -392,9 +416,10 @@ try {
  
   
 
-#### systemTime.getRealTime8+(deprecated)
+## systemTime.getRealTime8+(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRealTime(callback: AsyncCallback&lt;number&gt;): void
  
@@ -408,6 +433,7 @@ getRealTime(callback: AsyncCallback&lt;number&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;number&gt; | 是 | 回调函数，返回自系统启动以来经过的时间（ms），包括深度睡眠时间。 |
@@ -417,6 +443,7 @@ getRealTime(callback: AsyncCallback&lt;number&gt;): void
  
 以下错误码的详细介绍请参见[时间时区服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-time)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | -1 | Parameter check failed, permission denied, or system error. |
@@ -443,9 +470,10 @@ try {
  
   
 
-#### systemTime.getRealTime8+(deprecated)
+## systemTime.getRealTime8+(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRealTime(isNano?: boolean): Promise&lt;number&gt;
  
@@ -459,6 +487,7 @@ getRealTime(isNano?: boolean): Promise&lt;number&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isNano | boolean | 否 | 返回结果是否为纳秒数，默认值为false。 默认值为false。 - true：表示返回结果为纳秒数（ns）。 - false：表示返回结果为毫秒数（ms）。 |
@@ -466,6 +495,7 @@ getRealTime(isNano?: boolean): Promise&lt;number&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象，返回自系统启动以来经过的时间，包括深度睡眠时间。 |
@@ -475,6 +505,7 @@ getRealTime(isNano?: boolean): Promise&lt;number&gt;
  
 以下错误码的详细介绍请参见[时间时区服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-time)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | -1 | Parameter check failed, permission denied, or system error. |
@@ -499,9 +530,10 @@ try {
  
   
 
-#### systemTime.getDate8+(deprecated)
+## systemTime.getDate8+(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDate(callback: AsyncCallback&lt;Date&gt;): void
  
@@ -515,6 +547,7 @@ getDate(callback: AsyncCallback&lt;Date&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;Date&gt; | 是 | 回调函数，返回当前系统日期。 |
@@ -524,6 +557,7 @@ getDate(callback: AsyncCallback&lt;Date&gt;): void
  
 以下错误码的详细介绍请参见[时间时区服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-time)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | -1 | Parameter check failed, permission denied, or system error. |
@@ -550,9 +584,10 @@ try {
  
   
 
-#### systemTime.getDate8+(deprecated)
+## systemTime.getDate8+(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDate(): Promise&lt;Date&gt;
  
@@ -566,6 +601,7 @@ getDate(): Promise&lt;Date&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Date&gt; | Promise对象，返回当前系统日期。 |
@@ -575,6 +611,7 @@ getDate(): Promise&lt;Date&gt;
  
 以下错误码的详细介绍请参见[时间时区服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-time)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | -1 | Parameter check failed, permission denied, or system error. |
@@ -599,9 +636,10 @@ try {
  
   
 
-#### systemTime.getTimezone8+(deprecated)
+## systemTime.getTimezone8+(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTimezone(callback: AsyncCallback&lt;string&gt;): void
  
@@ -615,6 +653,7 @@ getTimezone(callback: AsyncCallback&lt;string&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;string&gt; | 是 | 回调函数，返回系统时区。具体可见支持的系统时区 。 |
@@ -624,6 +663,7 @@ getTimezone(callback: AsyncCallback&lt;string&gt;): void
  
 以下错误码的详细介绍请参见[时间时区服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-time)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | -1 | Parameter check failed, permission denied, or system error. |
@@ -650,9 +690,10 @@ try {
  
   
 
-#### systemTime.getTimezone8+(deprecated)
+## systemTime.getTimezone8+(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTimezone(): Promise&lt;string&gt;
  
@@ -666,6 +707,7 @@ getTimezone(): Promise&lt;string&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回系统时区。具体可见支持的系统时区 。 |
@@ -675,6 +717,7 @@ getTimezone(): Promise&lt;string&gt;
  
 以下错误码的详细介绍请参见[时间时区服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-time)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | -1 | Parameter check failed, permission denied, or system error. |
@@ -699,9 +742,10 @@ try {
  
   
 
-#### systemTime.setTime(deprecated)
+## systemTime.setTime(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setTime(time : number, callback : AsyncCallback&lt;void&gt;) : void
  
@@ -717,6 +761,7 @@ setTime(time : number, callback : AsyncCallback&lt;void&gt;) : void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | time | number | 是 | 目标时间戳（ms）。 |
@@ -727,6 +772,7 @@ setTime(time : number, callback : AsyncCallback&lt;void&gt;) : void
  
 以下错误码的详细介绍请参见[时间时区服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-time)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | -1 | Parameter check failed, permission denied, or system error. |
@@ -755,9 +801,10 @@ try {
  
   
 
-#### systemTime.setTime(deprecated)
+## systemTime.setTime(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setTime(time : number) : Promise&lt;void&gt;
  
@@ -773,6 +820,7 @@ setTime(time : number) : Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | time | number | 是 | 目标时间戳（ms）。 |
@@ -780,6 +828,7 @@ setTime(time : number) : Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -789,6 +838,7 @@ setTime(time : number) : Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[时间时区服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-time)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | -1 | Parameter check failed, permission denied, or system error. |
@@ -815,9 +865,10 @@ try {
  
   
 
-#### systemTime.setDate(deprecated)
+## systemTime.setDate(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setDate(date: Date, callback: AsyncCallback&lt;void&gt;): void
  
@@ -833,6 +884,7 @@ setDate(date: Date, callback: AsyncCallback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | date | Date | 是 | 目标日期。 |
@@ -843,6 +895,7 @@ setDate(date: Date, callback: AsyncCallback&lt;void&gt;): void
  
 以下错误码的详细介绍请参见[时间时区服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-time)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | -1 | Parameter check failed, permission denied, or system error. |
@@ -870,9 +923,10 @@ try {
  
   
 
-#### systemTime.setDate(deprecated)
+## systemTime.setDate(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setDate(date: Date): Promise&lt;void&gt;
  
@@ -888,6 +942,7 @@ setDate(date: Date): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | date | Date | 是 | 目标日期。 |
@@ -895,6 +950,7 @@ setDate(date: Date): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -904,6 +960,7 @@ setDate(date: Date): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[时间时区服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-time)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | -1 | Parameter check failed, permission denied, or system error. |
@@ -929,9 +986,10 @@ try {
  
   
 
-#### systemTime.setTimezone(deprecated)
+## systemTime.setTimezone(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setTimezone(timezone: string, callback: AsyncCallback&lt;void&gt;): void
  
@@ -947,6 +1005,7 @@ setTimezone(timezone: string, callback: AsyncCallback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | timezone | string | 是 | 系统时区。具体可见支持的系统时区 。 |
@@ -957,6 +1016,7 @@ setTimezone(timezone: string, callback: AsyncCallback&lt;void&gt;): void
  
 以下错误码的详细介绍请参见[时间时区服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-time)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | -1 | Parameter check failed, permission denied, or system error. |
@@ -983,9 +1043,10 @@ try {
  
   
 
-#### systemTime.setTimezone(deprecated)
+## systemTime.setTimezone(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setTimezone(timezone: string): Promise&lt;void&gt;
  
@@ -1001,6 +1062,7 @@ setTimezone(timezone: string): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | timezone | string | 是 | 系统时区。具体可见支持的系统时区 。 |
@@ -1008,6 +1070,7 @@ setTimezone(timezone: string): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -1017,6 +1080,7 @@ setTimezone(timezone: string): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[时间时区服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-time)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | -1 | Parameter check failed, permission denied, or system error. |
@@ -1041,12 +1105,14 @@ try {
  
   
 
-#### 支持的系统时区
+## 支持的系统时区
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持的系统时区及各时区与0时区相比的偏移量（单位：h）可见下表。
   
+
 | 时区 | 偏移量 |
 | --- | --- |
 | Antarctica/McMurdo | 12 |

@@ -1,9 +1,9 @@
 # @ohos.application.formInfo (formInfo)
 
-更新时间：2026-07-24 10:38:53
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-application-forminfo
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 formInfo模块提供了卡片信息和状态等相关类型和枚举。
  
@@ -12,9 +12,10 @@ formInfo模块提供了卡片信息和状态等相关类型和枚举。
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { formInfo } from '@kit.FormKit';
@@ -22,14 +23,16 @@ import { formInfo } from '@kit.FormKit';
  
   
 
-#### FormInfo
+## FormInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 卡片信息。
  
 **系统能力：** SystemCapability.Ability.Form
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | bundleName | string | 否 | 否 | 表示卡片所属包的Bundle名称。 |
@@ -54,14 +57,16 @@ import { formInfo } from '@kit.FormKit';
  
   
 
-#### FormType
+## FormType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持的卡片类型枚举。
  
 **系统能力：** SystemCapability.Ability.Form
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | JS | 1 | 卡片类型为JS。 |
@@ -69,14 +74,16 @@ import { formInfo } from '@kit.FormKit';
  
   
 
-#### ColorMode
+## ColorMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 卡片支持的颜色模式枚举。
  
 **系统能力：** SystemCapability.Ability.Form
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | MODE_AUTO | -1 | 表示自动模式。 |
@@ -86,14 +93,16 @@ import { formInfo } from '@kit.FormKit';
  
   
 
-#### FormStateInfo
+## FormStateInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 卡片状态信息。
  
 **系统能力：** SystemCapability.Ability.Form
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | formState | FormState | 否 | 否 | 表示卡片状态。 |
@@ -102,14 +111,16 @@ import { formInfo } from '@kit.FormKit';
  
   
 
-#### FormState
+## FormState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 卡片状态枚举。
  
 **系统能力：** SystemCapability.Ability.Form
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | UNKNOWN | -1 | 表示未知状态。 |
@@ -119,14 +130,16 @@ import { formInfo } from '@kit.FormKit';
  
   
 
-#### FormParam
+## FormParam
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 卡片参数枚举。
  
 **系统能力：** SystemCapability.Ability.Form
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DIMENSION_KEY | 'ohos.extra.param.key.form_dimension' | 卡片规格样式。 |

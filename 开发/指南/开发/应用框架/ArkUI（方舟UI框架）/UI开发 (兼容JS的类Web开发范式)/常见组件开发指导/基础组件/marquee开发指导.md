@@ -1,13 +1,13 @@
 # marquee开发指导
 
-更新时间：2026-07-09 02:26:55
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-components-marquee
 
 marquee为跑马灯组件，用于展示一段单行滚动的文字。具体用法请参考[marquee](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-basic-marquee)。
 
 
-#### 创建marquee组件
+## 创建marquee组件
 
 在pages/index目录下的hml文件中创建一个marquee组件。
 
@@ -36,7 +36,7 @@ marquee为跑马灯组件，用于展示一段单行滚动的文字。具体用�
 
 
 
-#### 设置属性和样式
+## 设置属性和样式
 
 marquee通过color和font-weight属性设置跑马灯中文本的颜色和字体粗细，通过border属性设置边框样式。
 
@@ -75,7 +75,7 @@ marquee通过color和font-weight属性设置跑马灯中文本的颜色和字体
 ![](assets/marquee开发指导/file-20260514130754879-1.png)
 
 
-通过scrollamount、loop和direction属性实现跑马灯滚动时移动的最大长度、滚动次数和文字滚动方向。
+通过scrollamount、loop和direction属性实现跑马灯滚动时的移动距离、滚动次数和文字滚动方向。
 
 ```text
 <!-- xxx.hml -->
@@ -157,7 +157,7 @@ export default {
 
 
 
-#### 场景示例
+## 场景示例
 
 本场景可以控制跑马灯文字的滚动和暂停。
 
@@ -237,4 +237,4 @@ export default {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/qX31HLixRx-rqtcNhcrVcg/zh-cn_image_0000002677825853.gif?HW-CC-KV=V1&HW-CC-Date=20260723T012138Z&HW-CC-Expire=86400&HW-CC-Sign=5BD3636CB4DA091FEACEFD48927808B24FF87E6122A879C0C818CF471A0D43E0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/Y3TomVIqS1-0zSfLSahgyw/zh-cn_image_0000002747210685.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073134Z&HW-CC-Expire=86400&HW-CC-Sign=DFA45DC04B189B0CF7C604F00DCB3E96640960503CFEBF2F74FBA6EC786DCD1D)

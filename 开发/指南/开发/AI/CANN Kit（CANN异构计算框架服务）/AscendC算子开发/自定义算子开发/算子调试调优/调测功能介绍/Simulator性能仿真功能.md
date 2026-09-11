@@ -1,14 +1,14 @@
 # Simulator性能仿真功能
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-18 12:49:55
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-simulator-performance-simulation
 
-#### CAModel性能仿真
+## CAModel性能仿真
 
   
 
-#### 功能介绍
+### 功能介绍
 
 算子可以在仿真器上进行性能仿真，目前主要支持CAModel仿真器。
  
@@ -18,7 +18,7 @@
  
   
 
-#### 使用方法（命令行）
+### 使用方法（命令行）
 
 通过命令行进行性能仿真的关键步骤如下。
  1. [完成环境搭建](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-environment-preparation)，并准备好输入/标杆数据文件。
@@ -33,7 +33,7 @@ ascendebug kernel --backend simulator --repo-type customize --json-file ${op_con
  
   
 
-#### 产物说明
+### 产物说明
 
 CAModel仿真结果存放在${root}/${work_dir}/simulator路径下，其中${root}表示当前操作路径，${work_dir}表示调测工作空间，默认为/debug_workspace/${op_type}目录，${op_type}为算子名。目录结构示例如下。
  
@@ -108,13 +108,21 @@ data_cmp mean is -1.41e-05 data_gd mean is -1.41e-05
   **表1** 精度比对结果说明
 
 | 信息项 | 说明 |
+
 | --- | --- |
+
 | data_cmp mean | 运行输出数据的均值信息。 |
+
 | data_gd mean | 标杆数据的均值信息。 |
+
 | split_count | 统计输出数据的个数。 |
+
 | max_diff_hd | 输出数据和golden数据的最大误差值阈值。 |
+
 | 详细对比数据展示（部分） | Loop（数据位置）、ExpectOut（期望输出值）、RealOut（实际输出值）、FpDiff （绝对误差值）、RateDiff（相对误差值）。 |
+
 | 整体对比结果展示 | DiffThd（相对误差值阈值）、PctThd （精度达标数据占比阈值）、PctRlt（实际精度达标数据占比）、Result（对比结果）。 |
+
 | Error Line展示项 | 若精度比对结果为Failed，会追加展示部分误差较大的数据的详细信息。 |
 - **（可选）查看dump结果**
 
@@ -123,21 +131,21 @@ data_cmp mean is -1.41e-05 data_gd mean is -1.41e-05
  
   
 
-#### Model仿真打点
+## Model仿真打点
 
   
 
-#### 功能介绍
+### 功能介绍
 
 算子进行CAModel仿真时，可对算子任意运行阶段进行打点，从而分析不同指令的流水图，以便进一步性能调优。
  
 > [!NOTE]
-> Kirin9020/KirinX90暂不支持使用该方法进行调优。
+> Kirin9020/Kirin9030/KirinX90暂不支持使用该方法进行调优。
 
  
   
 
-#### 使用方法
+### 使用方法
 1. 先在Kernel代码中的目标指令位置分别打上TRACE_START/TRACE_STOP，示例如下，起始/终止接口的说明详见[Trace接口说明](#trace接口说明)。
 
   
@@ -155,12 +163,12 @@ TRACE_STOP(0x1);
   **图1** 仿真打点示意图
 
   
-![](assets/Simulator性能仿真功能/file-2026070810332492642811.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/hleXLUr_TZ6yCMipIrzBjQ/zh-cn_image_0000002747292119.png?HW-CC-KV=V1&HW-CC-Date=20260911T072535Z&HW-CC-Expire=86400&HW-CC-Sign=29FCD954EDD54315B819A92C60EFBE5624987DB99A00922ADA340DE76ECA78CF)
 
  
   
 
-#### Trace接口说明
+### Trace接口说明
 
 TRACE_START接口说明如下。
  

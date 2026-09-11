@@ -1,6 +1,6 @@
 # 使用AES对称密钥（GCM模式）分段加解密(C/C++)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-03 11:34:29（官网已下线）
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-aes-sym-encrypt-decrypt-gcm-by-segment-ndk
 

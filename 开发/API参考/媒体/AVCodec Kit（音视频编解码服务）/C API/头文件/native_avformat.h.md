@@ -1,13 +1,14 @@
 # native_avformat.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avformat-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明了OH_AVFormat相关的函数和枚举。
  
@@ -25,16 +26,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_AVFormat | OH_AVFormat | 为OH_AVFormat接口定义native层对象。 |
@@ -42,10 +46,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_AVPixelFormat | OH_AVPixelFormat | 视频像素格式的枚举类。 |
@@ -53,10 +59,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | struct OH_AVFormat *OH_AVFormat_Create(void) | 创建OH_AVFormat实例，用于读取数据。 |
@@ -87,15 +95,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AVPixelFormat
+### OH_AVPixelFormat
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AVPixelFormat
@@ -109,6 +119,7 @@ enum OH_AVPixelFormat
  
 **起始版本：** 9
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AV_PIXEL_FORMAT_YUVI420 = 1 | yuv 420 planar。 |
@@ -121,15 +132,17 @@ enum OH_AVPixelFormat
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AVFormat_Create()
+### OH_AVFormat_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 struct OH_AVFormat *OH_AVFormat_Create(void)
@@ -145,6 +158,7 @@ struct OH_AVFormat *OH_AVFormat_Create(void)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | struct OH_AVFormat * | 返回指向OH_AVFormat实例的指针。系统资源不足时返回NULL。 |
@@ -152,9 +166,10 @@ struct OH_AVFormat *OH_AVFormat_Create(void)
  
   
 
-#### OH_AVFormat_CreateAudioFormat()
+### OH_AVFormat_CreateAudioFormat()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 struct OH_AVFormat *OH_AVFormat_CreateAudioFormat(const char *mimeType, int32_t sampleRate, int32_t channelCount)
@@ -170,6 +185,7 @@ struct OH_AVFormat *OH_AVFormat_CreateAudioFormat(const char *mimeType, int32_t 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *mimeType | MIME类型描述字符串，请参阅AVCODEC_MIMETYPE。 |
@@ -179,6 +195,7 @@ struct OH_AVFormat *OH_AVFormat_CreateAudioFormat(const char *mimeType, int32_t 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | struct OH_AVFormat * | 如果创建成功，返回指向OH_AVFormat实例的指针，如果失败，则返回NULL。 可能的失败原因： 1. 传入的mimeType为NULL。 2. 系统资源不足。 |
@@ -186,9 +203,10 @@ struct OH_AVFormat *OH_AVFormat_CreateAudioFormat(const char *mimeType, int32_t 
  
   
 
-#### OH_AVFormat_CreateVideoFormat()
+### OH_AVFormat_CreateVideoFormat()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 struct OH_AVFormat *OH_AVFormat_CreateVideoFormat(const char *mimeType, int32_t width, int32_t height)
@@ -204,6 +222,7 @@ struct OH_AVFormat *OH_AVFormat_CreateVideoFormat(const char *mimeType, int32_t 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *mimeType | MIME类型描述字符串，请参阅AVCODEC_MIMETYPE。 |
@@ -213,6 +232,7 @@ struct OH_AVFormat *OH_AVFormat_CreateVideoFormat(const char *mimeType, int32_t 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | struct OH_AVFormat * | 如果创建成功，返回指向OH_AVFormat实例的指针，如果失败，则返回NULL。 可能的失败原因： 1. 传入的mimeType为NULL。 2. 系统资源不足。 |
@@ -220,9 +240,10 @@ struct OH_AVFormat *OH_AVFormat_CreateVideoFormat(const char *mimeType, int32_t 
  
   
 
-#### OH_AVFormat_Destroy()
+### OH_AVFormat_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_AVFormat_Destroy(struct OH_AVFormat *format)
@@ -238,6 +259,7 @@ void OH_AVFormat_Destroy(struct OH_AVFormat *format)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVFormat *format | 指向OH_AVFormat实例的指针。 |
@@ -245,9 +267,10 @@ void OH_AVFormat_Destroy(struct OH_AVFormat *format)
  
   
 
-#### OH_AVFormat_Copy()
+### OH_AVFormat_Copy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AVFormat_Copy(struct OH_AVFormat *to, struct OH_AVFormat *from)
@@ -263,6 +286,7 @@ bool OH_AVFormat_Copy(struct OH_AVFormat *to, struct OH_AVFormat *from)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVFormat *to | OH_AVFormat实例，用于接收数据。 |
@@ -271,6 +295,7 @@ bool OH_AVFormat_Copy(struct OH_AVFormat *to, struct OH_AVFormat *from)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回值为true表示成功，为false表示失败。 可能的失败原因： 1. 输入参数为空指针。 2. 输入的OH_AVFormat参数结构校验失败。 |
@@ -278,9 +303,10 @@ bool OH_AVFormat_Copy(struct OH_AVFormat *to, struct OH_AVFormat *from)
  
   
 
-#### OH_AVFormat_SetIntValue()
+### OH_AVFormat_SetIntValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AVFormat_SetIntValue(struct OH_AVFormat *format, const char *key, int32_t value)
@@ -296,6 +322,7 @@ bool OH_AVFormat_SetIntValue(struct OH_AVFormat *format, const char *key, int32_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVFormat *format | 指向OH_AVFormat实例的指针。 |
@@ -305,6 +332,7 @@ bool OH_AVFormat_SetIntValue(struct OH_AVFormat *format, const char *key, int32_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回值为true表示成功，为false表示失败。 可能的失败原因： 1. 输入format为空指针。 2. 输入format参数结构校验失败。 3. 输入key为空指针。 4. 设置的key对应的value类型错误。 |
@@ -312,9 +340,10 @@ bool OH_AVFormat_SetIntValue(struct OH_AVFormat *format, const char *key, int32_
  
   
 
-#### OH_AVFormat_SetUintValue()
+### OH_AVFormat_SetUintValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AVFormat_SetUintValue(struct OH_AVFormat *format, const char *key, uint32_t value)
@@ -328,6 +357,7 @@ bool OH_AVFormat_SetUintValue(struct OH_AVFormat *format, const char *key, uint3
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVFormat *format | 指向OH_AVFormat实例的指针。 |
@@ -337,6 +367,7 @@ bool OH_AVFormat_SetUintValue(struct OH_AVFormat *format, const char *key, uint3
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回值为true表示成功，为false表示失败。 可能的失败原因： 1. 输入format为空指针。 2. 输入format参数结构校验失败。 3. 输入key为空指针。 4. 设置的key对应的value类型错误。 |
@@ -344,9 +375,10 @@ bool OH_AVFormat_SetUintValue(struct OH_AVFormat *format, const char *key, uint3
  
   
 
-#### OH_AVFormat_SetLongValue()
+### OH_AVFormat_SetLongValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AVFormat_SetLongValue(struct OH_AVFormat *format, const char *key, int64_t value)
@@ -362,6 +394,7 @@ bool OH_AVFormat_SetLongValue(struct OH_AVFormat *format, const char *key, int64
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVFormat *format | 指向OH_AVFormat实例的指针。 |
@@ -371,6 +404,7 @@ bool OH_AVFormat_SetLongValue(struct OH_AVFormat *format, const char *key, int64
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回值为true表示成功，为false表示失败。 可能的失败原因： 1. 输入format为空指针。 2. 输入format参数结构校验失败。 3. 输入key为空指针。 4. 设置的key对应的value类型错误。 |
@@ -378,9 +412,10 @@ bool OH_AVFormat_SetLongValue(struct OH_AVFormat *format, const char *key, int64
  
   
 
-#### OH_AVFormat_SetFloatValue()
+### OH_AVFormat_SetFloatValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AVFormat_SetFloatValue(struct OH_AVFormat *format, const char *key, float value)
@@ -396,6 +431,7 @@ bool OH_AVFormat_SetFloatValue(struct OH_AVFormat *format, const char *key, floa
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVFormat *format | 指向OH_AVFormat实例的指针。 |
@@ -405,6 +441,7 @@ bool OH_AVFormat_SetFloatValue(struct OH_AVFormat *format, const char *key, floa
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回值为true表示成功，为false表示失败。 可能的失败原因： 1. 输入format为空指针。 2. 输入format参数结构校验失败。 3. 输入key为空指针。 4. 设置的key对应的value类型错误。 |
@@ -412,9 +449,10 @@ bool OH_AVFormat_SetFloatValue(struct OH_AVFormat *format, const char *key, floa
  
   
 
-#### OH_AVFormat_SetDoubleValue()
+### OH_AVFormat_SetDoubleValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AVFormat_SetDoubleValue(struct OH_AVFormat *format, const char *key, double value)
@@ -430,6 +468,7 @@ bool OH_AVFormat_SetDoubleValue(struct OH_AVFormat *format, const char *key, dou
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVFormat *format | 指向OH_AVFormat实例的指针。 |
@@ -439,6 +478,7 @@ bool OH_AVFormat_SetDoubleValue(struct OH_AVFormat *format, const char *key, dou
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回值为true表示成功，为false表示失败。 可能的失败原因： 1. 输入format为空指针。 2. 输入format参数结构校验失败。 3. 输入key为空指针。 4. 设置的key对应的value类型错误。 |
@@ -446,9 +486,10 @@ bool OH_AVFormat_SetDoubleValue(struct OH_AVFormat *format, const char *key, dou
  
   
 
-#### OH_AVFormat_SetStringValue()
+### OH_AVFormat_SetStringValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AVFormat_SetStringValue(struct OH_AVFormat *format, const char *key, const char *value)
@@ -464,6 +505,7 @@ bool OH_AVFormat_SetStringValue(struct OH_AVFormat *format, const char *key, con
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVFormat *format | 指向OH_AVFormat实例的指针。 |
@@ -473,6 +515,7 @@ bool OH_AVFormat_SetStringValue(struct OH_AVFormat *format, const char *key, con
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回值为true表示成功，为false表示失败。 可能的失败原因： 1. 输入format为空指针。 2. 输入format参数结构校验失败。 3. 输入key为空指针。 4. 输入value为空指针。 5. 设置的key对应的value类型错误。 |
@@ -480,9 +523,10 @@ bool OH_AVFormat_SetStringValue(struct OH_AVFormat *format, const char *key, con
  
   
 
-#### OH_AVFormat_SetBuffer()
+### OH_AVFormat_SetBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AVFormat_SetBuffer(struct OH_AVFormat *format, const char *key, const uint8_t *addr, size_t size)
@@ -498,6 +542,7 @@ bool OH_AVFormat_SetBuffer(struct OH_AVFormat *format, const char *key, const ui
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVFormat *format | 指向OH_AVFormat实例的指针。 |
@@ -508,6 +553,7 @@ bool OH_AVFormat_SetBuffer(struct OH_AVFormat *format, const char *key, const ui
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回值为true表示成功，为false表示失败。 可能的失败原因： 1. 输入format为空指针。 2. 输入format参数结构校验失败。 3. 输入key为空指针。 4. 输入addr为空指针。 5. size为0或超过限制1MB。 6. 设置的key对应的value类型错误。 |
@@ -515,9 +561,10 @@ bool OH_AVFormat_SetBuffer(struct OH_AVFormat *format, const char *key, const ui
  
   
 
-#### OH_AVFormat_GetIntValue()
+### OH_AVFormat_GetIntValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AVFormat_GetIntValue(struct OH_AVFormat *format, const char *key, int32_t *out)
@@ -533,6 +580,7 @@ bool OH_AVFormat_GetIntValue(struct OH_AVFormat *format, const char *key, int32_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVFormat *format | 指向OH_AVFormat实例的指针。 |
@@ -542,6 +590,7 @@ bool OH_AVFormat_GetIntValue(struct OH_AVFormat *format, const char *key, int32_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回值为true表示成功，为false表示失败。 可能的失败原因： 1. 输入format为空指针。 2. 输入format参数结构校验失败。 3. 输入key为空指针。 4. 输入out为空指针。 5. 获取的key不存在或者未设置。 |
@@ -549,9 +598,10 @@ bool OH_AVFormat_GetIntValue(struct OH_AVFormat *format, const char *key, int32_
  
   
 
-#### OH_AVFormat_GetUintValue()
+### OH_AVFormat_GetUintValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AVFormat_GetUintValue(struct OH_AVFormat *format, const char *key, uint32_t *out)
@@ -565,6 +615,7 @@ bool OH_AVFormat_GetUintValue(struct OH_AVFormat *format, const char *key, uint3
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVFormat *format | 指向OH_AVFormat实例的指针。 |
@@ -574,6 +625,7 @@ bool OH_AVFormat_GetUintValue(struct OH_AVFormat *format, const char *key, uint3
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回值为true表示成功，为false表示失败。 可能的失败原因： 1. 输入format为空指针。 2. 输入format参数结构校验失败。 3. 输入key为空指针。 4. 输入out为空指针。 5. 获取的key不存在或者未设置。 |
@@ -581,9 +633,10 @@ bool OH_AVFormat_GetUintValue(struct OH_AVFormat *format, const char *key, uint3
  
   
 
-#### OH_AVFormat_GetLongValue()
+### OH_AVFormat_GetLongValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AVFormat_GetLongValue(struct OH_AVFormat *format, const char *key, int64_t *out)
@@ -599,6 +652,7 @@ bool OH_AVFormat_GetLongValue(struct OH_AVFormat *format, const char *key, int64
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVFormat *format | 指向OH_AVFormat实例的指针。 |
@@ -608,6 +662,7 @@ bool OH_AVFormat_GetLongValue(struct OH_AVFormat *format, const char *key, int64
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回值为true表示成功，为false表示失败。 可能的失败原因： 1. 输入format为空指针。 2. 输入format参数结构校验失败。 3. 输入key为空指针。 4. 输入out为空指针。 5. 获取的key不存在或者未设置。 |
@@ -615,9 +670,10 @@ bool OH_AVFormat_GetLongValue(struct OH_AVFormat *format, const char *key, int64
  
   
 
-#### OH_AVFormat_GetFloatValue()
+### OH_AVFormat_GetFloatValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AVFormat_GetFloatValue(struct OH_AVFormat *format, const char *key, float *out)
@@ -633,6 +689,7 @@ bool OH_AVFormat_GetFloatValue(struct OH_AVFormat *format, const char *key, floa
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVFormat *format | 指向OH_AVFormat实例的指针。 |
@@ -642,6 +699,7 @@ bool OH_AVFormat_GetFloatValue(struct OH_AVFormat *format, const char *key, floa
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回值为true表示成功，为false表示失败。 可能的失败原因： 1. 输入format为空指针。 2. 输入format参数结构校验失败。 3. 输入key为空指针。 4. 输入out为空指针。 5. 获取的key不存在或者未设置。 |
@@ -649,9 +707,10 @@ bool OH_AVFormat_GetFloatValue(struct OH_AVFormat *format, const char *key, floa
  
   
 
-#### OH_AVFormat_GetDoubleValue()
+### OH_AVFormat_GetDoubleValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AVFormat_GetDoubleValue(struct OH_AVFormat *format, const char *key, double *out)
@@ -667,6 +726,7 @@ bool OH_AVFormat_GetDoubleValue(struct OH_AVFormat *format, const char *key, dou
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVFormat *format | 指向OH_AVFormat实例的指针。 |
@@ -676,6 +736,7 @@ bool OH_AVFormat_GetDoubleValue(struct OH_AVFormat *format, const char *key, dou
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回值为true表示成功，为false表示失败。 可能的失败原因： 1. 输入format为空指针。 2. 输入format参数结构校验失败。 3. 输入key为空指针。 4. 输入out为空指针。 5. 获取的key不存在或者未设置。 |
@@ -683,9 +744,10 @@ bool OH_AVFormat_GetDoubleValue(struct OH_AVFormat *format, const char *key, dou
  
   
 
-#### OH_AVFormat_GetStringValue()
+### OH_AVFormat_GetStringValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AVFormat_GetStringValue(struct OH_AVFormat *format, const char *key, const char **out)
@@ -701,6 +763,7 @@ bool OH_AVFormat_GetStringValue(struct OH_AVFormat *format, const char *key, con
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVFormat *format | 指向OH_AVFormat实例的指针。 |
@@ -710,6 +773,7 @@ bool OH_AVFormat_GetStringValue(struct OH_AVFormat *format, const char *key, con
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回值为true表示成功，为false表示失败。 可能的失败原因： 1. 输入format为空指针。 2. 输入format参数结构校验失败。 3. 输入key为空指针。 4. 输入out为空指针。 5. malloc出的out字符串资源不足。 6. 获取的key不存在或者未设置。 7. 输出out的长度超过256字节。 |
@@ -717,9 +781,10 @@ bool OH_AVFormat_GetStringValue(struct OH_AVFormat *format, const char *key, con
  
   
 
-#### OH_AVFormat_GetBuffer()
+### OH_AVFormat_GetBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AVFormat_GetBuffer(struct OH_AVFormat *format, const char *key, uint8_t **addr, size_t *size)
@@ -735,6 +800,7 @@ bool OH_AVFormat_GetBuffer(struct OH_AVFormat *format, const char *key, uint8_t 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVFormat *format | 指向OH_AVFormat实例的指针。 |
@@ -745,6 +811,7 @@ bool OH_AVFormat_GetBuffer(struct OH_AVFormat *format, const char *key, uint8_t 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回值为true表示成功，为false表示失败。 可能的失败原因： 1. 输入format为空指针。 2. 输入format参数结构校验失败。 3. 输入key为空指针。 4. 输入addr为空指针。 5. 输入size为空指针。 6. 获取的key不存在或者未设置。 |
@@ -752,9 +819,10 @@ bool OH_AVFormat_GetBuffer(struct OH_AVFormat *format, const char *key, uint8_t 
  
   
 
-#### OH_AVFormat_GetIntBuffer()
+### OH_AVFormat_GetIntBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AVFormat_GetIntBuffer(struct OH_AVFormat *format, const char *key, int32_t **addr, size_t *size)
@@ -774,6 +842,7 @@ bool OH_AVFormat_GetIntBuffer(struct OH_AVFormat *format, const char *key, int32
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVFormat *format | 指向OH_AVFormat实例的指针。 |
@@ -784,6 +853,7 @@ bool OH_AVFormat_GetIntBuffer(struct OH_AVFormat *format, const char *key, int32
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回值为true表示成功，为false表示失败。 可能的失败原因： 1. 输入format为空指针。 2. 输入format参数结构校验失败。 3. 输入key为空指针。 4. 输入addr为空指针。 5. 输入size为空指针。 6. 获取的key不存在或者未设置。 |
@@ -791,9 +861,10 @@ bool OH_AVFormat_GetIntBuffer(struct OH_AVFormat *format, const char *key, int32
  
   
 
-#### OH_AVFormat_DumpInfo()
+### OH_AVFormat_DumpInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 const char *OH_AVFormat_DumpInfo(struct OH_AVFormat *format)
@@ -809,6 +880,7 @@ const char *OH_AVFormat_DumpInfo(struct OH_AVFormat *format)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVFormat *format | 指向OH_AVFormat实例的指针。 |
@@ -816,6 +888,7 @@ const char *OH_AVFormat_DumpInfo(struct OH_AVFormat *format)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | const char * | 如果获取成功，返回一个由key-value组成的字符串，如果失败，则返回NULL。 可能的失败原因： 1. 传入的format为NULL。 2. 系统资源不足。 |
@@ -823,9 +896,10 @@ const char *OH_AVFormat_DumpInfo(struct OH_AVFormat *format)
  
   
 
-#### OH_AVFormat_SetIntBuffer()
+### OH_AVFormat_SetIntBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AVFormat_SetIntBuffer(struct OH_AVFormat *format, const char *key, const int32_t *addr, size_t size)
@@ -841,6 +915,7 @@ bool OH_AVFormat_SetIntBuffer(struct OH_AVFormat *format, const char *key, const
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVFormat *format | 指向OH_AVFormat实例的指针。 |
@@ -851,6 +926,7 @@ bool OH_AVFormat_SetIntBuffer(struct OH_AVFormat *format, const char *key, const
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回true表示成功，返回false表示失败。 可能的失败原因： 1. 输入format为空指针。 2. 输入format参数结构校验失败。 3. 输入key为空指针。 4. 输入addr为空指针。 5. 输入size为0。 |
@@ -858,9 +934,10 @@ bool OH_AVFormat_SetIntBuffer(struct OH_AVFormat *format, const char *key, const
  
   
 
-#### OH_AVFormat_GetKeyCount()
+### OH_AVFormat_GetKeyCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 uint32_t OH_AVFormat_GetKeyCount(OH_AVFormat *format)
@@ -874,6 +951,7 @@ uint32_t OH_AVFormat_GetKeyCount(OH_AVFormat *format)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVFormat *format | 指向一个OH_AVFormat实例的指针。 |
@@ -881,6 +959,7 @@ uint32_t OH_AVFormat_GetKeyCount(OH_AVFormat *format)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | uint32_t | 成功时返回键的数量；失败时返回 0。 |
@@ -888,9 +967,10 @@ uint32_t OH_AVFormat_GetKeyCount(OH_AVFormat *format)
  
   
 
-#### OH_AVFormat_GetKey()
+### OH_AVFormat_GetKey()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AVFormat_GetKey(OH_AVFormat *format, uint32_t index, const char **key)
@@ -904,6 +984,7 @@ bool OH_AVFormat_GetKey(OH_AVFormat *format, uint32_t index, const char **key)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVFormat *format | 指向一个OH_AVFormat实例的指针。 |
@@ -913,6 +994,7 @@ bool OH_AVFormat_GetKey(OH_AVFormat *format, uint32_t index, const char **key)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 成功时返回true，失败时返回false。 |

@@ -1,9 +1,9 @@
 # AbilityRunningInfo
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-abilityrunninginfo
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 AbilityRunningInfo是记录Ability运行信息和状态的数据结构，通过[getAbilityRunningInfos](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-abilitymanager#abilitymanagergetabilityrunninginfos14)方法获取。
  
@@ -12,9 +12,10 @@ AbilityRunningInfo是记录Ability运行信息和状态的数据结构，通过[
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { abilityManager } from '@kit.AbilityKit';
@@ -22,12 +23,14 @@ import { abilityManager } from '@kit.AbilityKit';
  
   
 
-#### AbilityRunningInfo
+## AbilityRunningInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | ability | ElementName | 否 | 否 | Ability的ElementName信息。 |
@@ -54,7 +57,7 @@ try {
     })
     .catch((error: BusinessError) => {
       console.error(`getAbilityRunningInfos fail, error code: ${JSON.stringify(error.code)}, error msg: ${JSON.stringify(error.message)}`);
-    })
+    });
 } catch (err) {
   let code = (err as BusinessError).code;
   let msg = (err as BusinessError).message;

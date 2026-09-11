@@ -1,9 +1,9 @@
 # Divider
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-divider
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供分割线组件，分割不同内容块/内容元素。
  
@@ -12,17 +12,19 @@
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
  
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Divider()
  
@@ -36,17 +38,19 @@ Divider()
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
  
   
 
-#### vertical
+### vertical
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 vertical(value: boolean)
  
@@ -60,6 +64,7 @@ vertical(value: boolean)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 使用水平分割线还是垂直分割线。 false：水平分割线；true：垂直分割线。 默认值：false 非法值：按默认值处理。 |
@@ -67,9 +72,10 @@ vertical(value: boolean)
  
   
 
-#### color
+### color
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 color(value: ResourceColor)
  
@@ -83,6 +89,7 @@ color(value: ResourceColor)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 分割线颜色。 默认值：'#33182431' 非法值：按默认值处理。 支持通过WithTheme设置通用分割线颜色。 |
@@ -90,9 +97,10 @@ color(value: ResourceColor)
  
   
 
-#### strokeWidth
+### strokeWidth
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 strokeWidth(value: number | string)
  
@@ -110,6 +118,7 @@ strokeWidth(value: number | string)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| string | 是 | 分割线宽度。 默认值：1px 非法值：按默认值处理。 单位：vp |
@@ -117,9 +126,10 @@ strokeWidth(value: number | string)
  
   
 
-#### lineCap
+### lineCap
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 lineCap(value: LineCapStyle)
  
@@ -133,6 +143,7 @@ lineCap(value: LineCapStyle)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | LineCapStyle | 是 | 分割线的端点样式。 默认值：LineCapStyle.Butt 非法值：按默认值处理。 |
@@ -140,21 +151,26 @@ lineCap(value: LineCapStyle)
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)。
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 示例1（定义Divider方向、颜色及宽度）
+### 示例1（定义Divider方向、颜色及宽度）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例定义了Divider的样式，如方向、颜色及宽度。
  
@@ -229,12 +245,15 @@ struct DividerExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/Ljf_L6bgRH2cedlM7YmFVg/zh-cn_image_0000002628862672.png?HW-CC-KV=V1&HW-CC-Date=20260701T014344Z&HW-CC-Expire=86400&HW-CC-Sign=A4C9C9CD295343B33F8E48C5B7BD61413196565349F6666895EE144CDBD2E601)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/EW-6-MKRR--cX4MAMI2VKg/zh-cn_image_0000002747292917.png?HW-CC-KV=V1&HW-CC-Date=20260911T073104Z&HW-CC-Expire=86400&HW-CC-Sign=C90B6C970FE75CD77878922E0F40D8EACF08742210DD9ACA81414D15BEC05E3A)
 
  
   
 
-#### 示例2（定义Divider的lineCap样式）
+### 示例2（定义Divider的lineCap样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例定义了Divider的lineCap样式。
  
@@ -272,4 +291,4 @@ struct DividerExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/KfIfv7LFR12hFh3BY-TsQA/zh-cn_image_0000002659221987.png?HW-CC-KV=V1&HW-CC-Date=20260701T014344Z&HW-CC-Expire=86400&HW-CC-Sign=45CDF125EA7945D09489852881B99A03E1396FAF481619CC8CCF85A76F042996)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/UGoz2iy2Q0eQwuWxKJMibg/zh-cn_image_0000002747212833.png?HW-CC-KV=V1&HW-CC-Date=20260911T073104Z&HW-CC-Expire=86400&HW-CC-Sign=E02BEE0E530AB1F88F31F877FBDAE23B988FBF13CB8450570E90485148FB75C7)

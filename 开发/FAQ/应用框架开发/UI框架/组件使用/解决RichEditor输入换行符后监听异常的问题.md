@@ -18,7 +18,7 @@ struct StackExample {
 
   build() {
     Row() {
-      // 输入框
+     <em> // 输入框</em>
       RichEditor({ controller: this.controller })
         .backgroundColor(Color.Gray)
         .enterKeyType(EnterKeyType.NEW_LINE)
@@ -29,13 +29,13 @@ struct StackExample {
         })
         .defaultFocus(true)
         .onSubmit((enterKey: EnterKeyType, event: SubmitEvent) => {
-          event.keepEditableState() // 保持输入状态
+          event.keepEditableState() <em>// 保持输入状态</em>
         })
         .onIMEInputComplete((value: RichEditorTextSpanResult) => {
-          // 监听文字输入
+       <em>   // 监听文字输入</em>
           const start = value.offsetInSpan[0]
           const end = value.offsetInSpan[1]
-          // 获取输入的字符串
+        <em>  // 获取输入的字符串</em>
           const inputStr = value.value.substring(start, end)
         })
     }
@@ -95,7 +95,7 @@ struct StackExample {
 
   build() {
     Row() {
-      // 输入框
+    <em>  // 输入框</em>
       RichEditor({ controller: this.controller })
         .backgroundColor(Color.Gray)
         .enterKeyType(EnterKeyType.NEW_LINE)
@@ -106,7 +106,7 @@ struct StackExample {
         })
         .defaultFocus(true)
         .onSubmit((enterKey: EnterKeyType, event: SubmitEvent) => {
-          event.keepEditableState(); // 保持输入状态
+          event.keepEditableState(); <em>// 保持输入状态</em>
         })
         .onDidIMEInput((value: TextRange) => {
           const start = value.start;

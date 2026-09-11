@@ -1,16 +1,16 @@
 # 使用Node-API进行自定义异步操作相关开发
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-about-custom-asynchronous-operations
 
-#### 简介
+## 简介
 
 使用Node-API的自定义异步操作功能，可以使ArkTS更灵活高效地处理那些可能阻塞事件循环的长时间运行任务，同时保持应用的响应性和性能。
  
   
 
-#### 基本概念
+## 基本概念
 
 Node-API支持异步操作，这有助于处理IO密集型或计算密集型任务。这些任务通常需要非阻塞的执行方式，以避免阻塞主线程。以下是一些关于自定义异步操作的基本概念：
  
@@ -21,10 +21,11 @@ Node-API支持异步操作，这有助于处理IO密集型或计算密集型任�
  
   
 
-#### 场景和功能介绍
+## 场景和功能介绍
 
 这些Node-API接口可以在Node-API模块中执行异步操作、进行ArkTS回调以及管理相关资源的生命周期。通过使用这些函数，可以有效地与ArkTS环境进行交互，并实现复杂的异步操作。它们的使用场景如下：
   
+
 | 接口 | 描述 |
 | --- | --- |
 | napi_async_init、napi_async_destroy | 用于创建和销毁异步资源上下文环境。这些函数可以用于处理长时间运行的异步操作，例如文件I/O操作、网络请求等。在这些情况下，创建异步资源上下文环境，执行必要的异步任务，然后销毁资源以释放相关的资源和内容。 |
@@ -34,25 +35,25 @@ Node-API支持异步操作，这有助于处理IO密集型或计算密集型任�
  
   
 
-#### 使用示例
+## 使用示例
 
 Node-API接口开发流程参考[使用Node-API实现跨语言交互开发流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-process)，本文仅对接口对应C++及ArkTS相关代码进行展示。
  
   
 
-#### napi_async_init、napi_async_destroy
+### napi_async_init、napi_async_destroy
 
 在需要管理异步资源上下文环境的创建和销毁时，可以使用napi_async_init和napi_async_destroy来管理这些环境。需要注意的是，这些函数不支持与async_hook相关的能力，所以在使用时需要注意可能存在的一些限制。
  
   
 
-#### napi_make_callback
+### napi_make_callback
 
 在编写Node-API模块时，异步操作完成后需调用ArkTS回调函数。可使用napi_async_init创建异步资源上下文，再使用napi_make_callback执行ArkTS回调函数。
  
   
 
-#### napi_open_callback_scope、napi_close_callback_scope
+### napi_open_callback_scope、napi_close_callback_scope
 
 在需要创建一个回调作用域来确保异步操作期间ArkTS环境仍然可用时，可以使用napi_open_callback_scope创建回调作用域，然后在异步操作完成后使用napi_close_callback_scope关闭该作用域。
  

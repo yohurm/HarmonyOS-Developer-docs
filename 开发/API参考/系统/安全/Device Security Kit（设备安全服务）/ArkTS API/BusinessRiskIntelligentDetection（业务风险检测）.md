@@ -1,6 +1,6 @@
 # BusinessRiskIntelligentDetection（业务风险检测）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-04 10:41:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesecurity-brid-api
 **支持设备：** Phone | Tablet
@@ -10,7 +10,8 @@
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | Tablet
 
@@ -20,7 +21,8 @@ import { businessRiskIntelligentDetection } from '@kit.DeviceSecurityKit';
  
   
 
-#### FraudDetectionRequest
+## FraudDetectionRequest
+
 
 **支持设备：** Phone | Tablet
 
@@ -32,6 +34,7 @@ import { businessRiskIntelligentDetection } from '@kit.DeviceSecurityKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | nonce | Uint8Array | 否 | 否 | 开发者应用传入的一个随机生成的nonce值，用于防重放攻击，在检测结果中会包含该值。nonce值必须为24至80字节之间。 |
@@ -41,7 +44,8 @@ import { businessRiskIntelligentDetection } from '@kit.DeviceSecurityKit';
  
   
 
-#### SimulatedClickDetectionRequest
+## SimulatedClickDetectionRequest
+
 
 **支持设备：** Phone | Tablet
 
@@ -53,6 +57,7 @@ import { businessRiskIntelligentDetection } from '@kit.DeviceSecurityKit';
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | version | number | 否 | 是 | 检测结果消息格式的版本，默认值为1，当前只支持1。 |
@@ -60,7 +65,8 @@ import { businessRiskIntelligentDetection } from '@kit.DeviceSecurityKit';
  
   
 
-#### SimulatedClickDetectionEnhancedRequest
+## SimulatedClickDetectionEnhancedRequest
+
 
 **支持设备：** Phone | Tablet
 
@@ -72,6 +78,7 @@ import { businessRiskIntelligentDetection } from '@kit.DeviceSecurityKit';
  
 **起始版本：** 6.0.2(22)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | nonce | Uint8Array | 否 | 否 | 开发者应用传入的一个随机生成的nonce值，用于防重放攻击，在检测结果中会包含该值。nonce值必须为24至80字节之间。 |
@@ -81,7 +88,8 @@ import { businessRiskIntelligentDetection } from '@kit.DeviceSecurityKit';
  
   
 
-#### SigningAlgorithm
+## SigningAlgorithm
+
 
 **支持设备：** Phone | Tablet
 
@@ -93,6 +101,7 @@ import { businessRiskIntelligentDetection } from '@kit.DeviceSecurityKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ES256 | 0 | SHA256withECDSA算法。 |
@@ -100,7 +109,8 @@ import { businessRiskIntelligentDetection } from '@kit.DeviceSecurityKit';
  
   
 
-#### businessRiskIntelligentDetection.detectFraudRisk
+## businessRiskIntelligentDetection.detectFraudRisk
+
 
 **支持设备：** Phone | Tablet
 
@@ -116,6 +126,7 @@ detectFraudRisk(params: FraudDetectionRequest): Promise&lt;string&gt;
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | FraudDetectionRequest | 是 | 请求参数。 |
@@ -123,6 +134,7 @@ detectFraudRisk(params: FraudDetectionRequest): Promise&lt;string&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回涉诈风险检测结果，一个JSON Web Signature格式的字符串，使用Base64URL编码，如果发生异常或错误，则返回错误码。 |
@@ -132,6 +144,7 @@ detectFraudRisk(params: FraudDetectionRequest): Promise&lt;string&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-brid)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameters. |
@@ -174,7 +187,8 @@ try {
  
   
 
-#### businessRiskIntelligentDetection.detectSimulatedClickRisk
+## businessRiskIntelligentDetection.detectSimulatedClickRisk
+
 
 **支持设备：** Phone | Tablet
 
@@ -190,6 +204,7 @@ detectSimulatedClickRisk(params: SimulatedClickDetectionRequest): Promise&lt;str
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | SimulatedClickDetectionRequest | 是 | 请求参数 |
@@ -197,6 +212,7 @@ detectSimulatedClickRisk(params: SimulatedClickDetectionRequest): Promise&lt;str
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回模拟点击检测结果。 |
@@ -206,6 +222,7 @@ detectSimulatedClickRisk(params: SimulatedClickDetectionRequest): Promise&lt;str
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-brid)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1012500001 | Internal error. |
@@ -245,7 +262,8 @@ try {
  
   
 
-#### businessRiskIntelligentDetection.detectSimulatedClickRiskEnhanced
+## businessRiskIntelligentDetection.detectSimulatedClickRiskEnhanced
+
 
 **支持设备：** Phone | Tablet
 
@@ -261,6 +279,7 @@ detectSimulatedClickRiskEnhanced(params: SimulatedClickDetectionEnhancedRequest)
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | SimulatedClickDetectionEnhancedRequest | 是 | 请求参数 |
@@ -268,6 +287,7 @@ detectSimulatedClickRiskEnhanced(params: SimulatedClickDetectionEnhancedRequest)
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回模拟点击增强检测结果，一个JSON Web Signature格式的字符串，使用Base64URL编码，如果发生异常或错误，则返回错误码。 |
@@ -277,6 +297,7 @@ detectSimulatedClickRiskEnhanced(params: SimulatedClickDetectionEnhancedRequest)
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-brid)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1012500001 | Internal error. |

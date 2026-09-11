@@ -1,9 +1,9 @@
 # @ohos.bluetooth.a2dp (蓝牙a2dp模块)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bluetooth-a2dp
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供基于增强音频分发协议（Advanced Audio Distribution Profile，[A2DP](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#a2dp)）的蓝牙媒体音频能力，支持获取媒体播放状态和连接状态等方法。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { a2dp } from '@kit.ConnectivityKit';
@@ -22,15 +23,17 @@ import { a2dp } from '@kit.ConnectivityKit';
 
 
 
-#### BaseProfile
+## BaseProfile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type BaseProfile = baseProfile.BaseProfile
 
 基础Profile接口定义，提供监听和获取连接状态等公共能力。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -39,17 +42,19 @@ type BaseProfile = baseProfile.BaseProfile
 
 
 
-#### a2dp.createA2dpSrcProfile
+## a2dp.createA2dpSrcProfile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createA2dpSrcProfile(): A2dpSourceProfile
 
-创建蓝牙媒体[A2DP Source](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#a2dp-source)实例。通过该实例可以使用本端作为A2DP Source设备的方法，如：获取和其他设备间的蓝牙媒体音频播放状态。
+创建蓝牙媒体[A2DP Source](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#a2dp-source)实例。通过该实例，可以使用本端作为A2DP Source设备时提供的各项方法，如：获取和其他设备间的蓝牙媒体音频播放状态。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -59,6 +64,7 @@ createA2dpSrcProfile(): A2dpSourceProfile
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -80,9 +86,10 @@ try {
 
 
 
-#### A2dpSourceProfile
+## A2dpSourceProfile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该实例表示蓝牙媒体音频中的[A2DP Source](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#a2dp-source)角色。
 
@@ -93,13 +100,14 @@ try {
 
 
 
-#### getPlayingState
+### getPlayingState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPlayingState(deviceId: string): PlayingState
 
-获取本端和对端设备间的媒体音频播放状态。
+获取本端和对端设备间的媒体音频播放状态。例如，在音乐播放器应用中可用于检查蓝牙音频是否正在播放，从而同步更新界面的播放/暂停按钮状态。
 
  - 从API version 21开始，此接口支持使用对端设备的实际MAC地址获取媒体音频播放状态。
 
@@ -110,12 +118,14 @@ getPlayingState(deviceId: string): PlayingState
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 对端设备地址，例如："XX:XX:XX:XX:XX:XX"。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -125,6 +135,7 @@ getPlayingState(deviceId: string): PlayingState
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -151,13 +162,15 @@ try {
 
 
 
-#### PlayingState
+## PlayingState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，蓝牙媒体音频播放状态。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -167,13 +180,15 @@ try {
 
 
 
-#### CodecInfo11+
+## CodecInfo11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 蓝牙媒体音频使用的编解码器。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -187,13 +202,15 @@ try {
 
 
 
-#### CodecInfoList19+
+## CodecInfoList19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 蓝牙媒体音频编解码器支持的能力集合。不同编解码器支持的位深、声道模式、采样率、码率和帧长类型与音频接收器设备端能力有关。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -207,13 +224,15 @@ try {
 
 
 
-#### CodecType11+
+## CodecType11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，蓝牙媒体音频编解码器类型。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -227,13 +246,15 @@ try {
 
 
 
-#### CodecChannelMode11+
+## CodecChannelMode11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，蓝牙媒体音频编解码器的声道模式，表示音频播放时独立的空间信号路径数量。声道模式影响声音的立体感和空间定位‌。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -244,13 +265,15 @@ try {
 
 
 
-#### CodecBitsPerSample11+
+## CodecBitsPerSample11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，蓝牙媒体音频编解码器的位深，表示蓝牙音频信号在数字表示中使用的位数，单位为bit。位深决定每个采样点可以表示的动态范围和精度。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -262,13 +285,15 @@ try {
 
 
 
-#### CodecSampleRate11+
+## CodecSampleRate11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，蓝牙媒体音频编解码器的采样率，表示每秒对蓝牙音频采样的次数，单位为Hz。采样率的选择会影响音质和传输效率。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -283,13 +308,15 @@ try {
 
 
 
-#### CodecBitRate19+
+## CodecBitRate19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-枚举，蓝牙媒体音频编解码器的码率，表示单位时间内音频数据的传输量，单位为kbps。码率影响音频音质和文件大小。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+枚举，蓝牙媒体音频编解码器的码率，表示单位时间内音频数据的传输量，单位为kbps。码率影响音频音质和传输带宽。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -301,20 +328,22 @@ try {
 | CODEC_BIT_RATE_480000 | 5 | 480kbps |
 | CODEC_BIT_RATE_640000 | 6 | 640kbps |
 | CODEC_BIT_RATE_960000 | 7 | 960kbps |
-| CODEC_BIT_RATE_ABR | 8 | 自适应码率（根据网络条件自动调整）。 |
+| CODEC_BIT_RATE_ABR | 8 | 自适应码率（根据蓝牙链路质量自动调整）。 |
 | CODEC_BIT_RATE_150000021+ | 9 | 1500kbps |
 | CODEC_BIT_RATE_230000021+ | 10 | 2300kbps |
 
 
 
 
-#### CodecFrameLength19+
+## CodecFrameLength19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-枚举，蓝牙媒体音频编解码器的帧长，表示一帧音频数据播放的时长。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+枚举，蓝牙媒体音频编解码器的帧长，表示一帧音频数据播放的时长，单位为ms。帧长影响音频传输的延迟和效率。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

@@ -1,9 +1,9 @@
 # ScenePostProcessSettings
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-scene-post-process-settings
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供ArkGraphics 3D中的色调映射等图像后处理方法。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { ToneMappingType, ToneMappingSettings, BloomSettings, VignetteSettings, ColorFringeSettings, PostProcessSettings } from '@kit.ArkGraphics3D';
@@ -22,14 +23,16 @@ import { ToneMappingType, ToneMappingSettings, BloomSettings, VignetteSettings, 
  
   
 
-#### ToneMappingType
+## ToneMappingType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 色调映射类型枚举。
  
 **系统能力：** SystemCapability.ArkUi.Graphics3D
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ACES | 0 | ACES色调映射类型，基于Academy Color Encoding System标准，将高动态范围（HDR）图像映射到低动态范围（LDR），适用于追求电影级色彩还原的场景。 |
@@ -39,14 +42,16 @@ import { ToneMappingType, ToneMappingSettings, BloomSettings, VignetteSettings, 
  
   
 
-#### ToneMappingSettings
+## ToneMappingSettings
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 色调映射设置。
  
 **系统能力：** SystemCapability.ArkUi.Graphics3D
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | ToneMappingType | 否 | 是 | 色调映射类型，默认值为undefined。 |
@@ -55,14 +60,16 @@ import { ToneMappingType, ToneMappingSettings, BloomSettings, VignetteSettings, 
  
   
 
-#### BloomSettings18+
+## BloomSettings18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 泛光设置。当[RenderingPipelineType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-scene-types#renderingpipelinetype21)为FORWARD_LIGHTWEIGHT时，此功能不可用。
  
 **系统能力：** SystemCapability.ArkUi.Graphics3D
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | thresholdHard | number | 否 | 是 | 硬阈值，取值范围是非负数，默认值为1.0。 |
@@ -73,14 +80,16 @@ import { ToneMappingType, ToneMappingSettings, BloomSettings, VignetteSettings, 
  
   
 
-#### VignetteSettings22+
+## VignetteSettings22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 边缘暗角设置。
  
 **系统能力：** SystemCapability.ArkUi.Graphics3D
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | roundness | number | 否 | 是 | 暗角的圆度，取值范围为[0, 1]，取值为0时暗角形状趋近矩形，取值为1时暗角形状趋近圆形，默认值为sqrt(0.5)（约0.707）。 |
@@ -89,14 +98,16 @@ import { ToneMappingType, ToneMappingSettings, BloomSettings, VignetteSettings, 
  
   
 
-#### ColorFringeSettings22+
+## ColorFringeSettings22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 色晕设置。当[RenderingPipelineType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-scene-types#renderingpipelinetype21)为FORWARD_LIGHTWEIGHT时，此功能不可用。
  
 **系统能力：** SystemCapability.ArkUi.Graphics3D
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | intensity | number | 否 | 是 | 作用强度，取值范围为[0, 1]，默认值为0.2。 |
@@ -104,14 +115,16 @@ import { ToneMappingType, ToneMappingSettings, BloomSettings, VignetteSettings, 
  
   
 
-#### PostProcessSettings
+## PostProcessSettings
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 后处理设置，用于配置相机渲染后的图像处理效果，包括色调映射、泛光、边缘暗角和色晕等，作为[Camera](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-scene-nodes#camera)的postProcess属性来使用。
  
 **系统能力：** SystemCapability.ArkUi.Graphics3D
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | toneMapping | ToneMappingSettings | 否 | 是 | 色调映射，默认值为undefined。 |

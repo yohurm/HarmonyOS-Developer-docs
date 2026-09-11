@@ -1,20 +1,21 @@
 # ProgressButton
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-04 10:41:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-progressbutton
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 文本下载按钮，可显示具体下载进度。
  
 > [!NOTE]
-> 该组件从API version 10开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 该组件仅可在Stage模型下使用。 如果ProgressButton设置 通用属性 和 通用事件 ，编译工具链会额外生成节点__Common__，并将通用属性或通用事件挂载在__Common__上，而不是直接应用到ProgressButton本身。这可能导致开发者设置的通用属性或通用事件不生效或不符合预期，因此，不建议ProgressButton设置通用属性和通用事件。
+> 该组件从API version 10开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 本模块接口仅可在Stage模型下使用。 如果ProgressButton设置 通用属性 和 通用事件 ，编译工具链会额外生成节点__Common__，并将通用属性或通用事件挂载在__Common__上，而不是直接应用到ProgressButton本身。这可能导致开发者设置的通用属性或通用事件不生效或不符合预期，因此，不建议ProgressButton设置通用属性和通用事件。
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 import { ProgressButton } from '@kit.ArkUI';
@@ -22,9 +23,10 @@ import { ProgressButton } from '@kit.ArkUI';
  
   
 
-#### ProgressButton
+## ProgressButton
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ProgressButton({progress: number, content: ResourceStr, progressButtonWidth?: Length, clickCallback: () => void, enable: boolean, colorOptions?: ProgressButtonColorOptions, progressButtonRadius?: LengthMetrics})
  
@@ -34,6 +36,7 @@ ProgressButton({progress: number, content: ResourceStr, progressButtonWidth?: Le
  
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
   
+
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | progress | number | 是 | @Prop | 下载按钮的当前进度值。 取值范围：[0,100]。设置小于0的数值时置为0，设置大于100的数值时置为100。 默认值：0 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -47,9 +50,10 @@ ProgressButton({progress: number, content: ResourceStr, progressButtonWidth?: Le
  
   
 
-#### ProgressButtonColorOptions18+
+## ProgressButtonColorOptions18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 下载按钮颜色选项
  
@@ -59,6 +63,7 @@ ProgressButton({progress: number, content: ResourceStr, progressButtonWidth?: Le
  
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | progressColor | ResourceColor | 否 | 是 | 进度条颜色。 默认值：#330A59F7 |
@@ -69,21 +74,26 @@ ProgressButton({progress: number, content: ResourceStr, progressButtonWidth?: Le
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 不支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)。
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 示例1（进度条下载按钮）
+### 示例1（进度条下载按钮）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例实现了一个简单的带加载进度的文本下载按钮。
  
@@ -143,7 +153,10 @@ struct Index {
  
   
 
-#### 示例2（自定义颜色按钮）
+### 示例2（自定义颜色按钮）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例实现了一个简单的自定义颜色的文本下载按钮。
  
@@ -210,7 +223,10 @@ struct Index {
  
   
 
-#### 示例3（自定义圆角按钮）
+### 示例3（自定义圆角按钮）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例实现了一个简单的自定义圆角的文本下载按钮。
  
@@ -266,4 +282,4 @@ struct Index {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/ZnQMTlHISruUzIFVaWR9BA/zh-cn_image_0000002628702996.png?HW-CC-KV=V1&HW-CC-Date=20260701T014354Z&HW-CC-Expire=86400&HW-CC-Sign=6135A9818A8852DEF5D077FFE0A90FF2A8E26F0547571597D3220DD8EF25A792)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/i73jqMAAQUCp34ygZR4B4Q/zh-cn_image_0000002717613164.png?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=EA459CEF7D8BC0F9176DFAC675287E8F437C8E27F416CD6CAAB1DFC37291668B)

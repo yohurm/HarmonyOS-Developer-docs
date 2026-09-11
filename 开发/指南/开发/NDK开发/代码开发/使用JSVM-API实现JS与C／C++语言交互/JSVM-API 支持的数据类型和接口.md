@@ -1,14 +1,14 @@
-# JSVM-API 支持的数据类型和接口
+# JSVM-API支持的数据类型和接口
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/jsvm-data-types-interfaces
 
-#### JSVM-API 的数据类型
+## JSVM-API 的数据类型
 
   
 
-#### JSVM_Status
+### JSVM_Status
 
 这是一个枚举数据类型，用来表示JSVM-API接口返回的状态信息。
  
@@ -33,7 +33,7 @@ typedef enum {
         JSVM_CALLBACK_SCOPE_MISMATCH,         /* 回调作用域不匹配 */
         JSVM_QUEUE_FULL,                      /* 队列满 */
         JSVM_CLOSING,                         /* 关闭中 */
-        JSVM_BIGINT_EXPECTED,                 /* 期望传入Bigint类型 */
+        JSVM_BIGINT_EXPECTED,                 /* 期望传入BigInt类型 */
         JSVM_DATE_EXPECTED,                   /* 期望传入日期类型 */
         JSVM_ARRAYBUFFER_EXPECTED,            /* 期望传入ArrayBuffer类型 */
         JSVM_DETACHABLE_ARRAYBUFFER_EXPECTED, /* 可分离的数组缓冲区预期状态 */
@@ -47,7 +47,7 @@ typedef enum {
  
   
 
-#### JSVM_ExtendedErrorInfo
+### JSVM_ExtendedErrorInfo
 
 一个结构体，在调用函数不成功时存储了较为详细的错误信息。
  
@@ -62,13 +62,13 @@ typedef struct {
  
   
 
-#### JSVM_Value
+### JSVM_Value
 
 在C++代码中，用于表示JavaScript值。
  
   
 
-#### JSVM_Env
+### JSVM_Env
 
 - 表示JSVM-API执行时的上下文，作为Native函数的参数传递给JSVM-API接口。
 - 退出Native侧插件时，JSVM_Env将失效，该事件通过回调传递给OH_JSVM_SetInstanceData接口。
@@ -78,7 +78,7 @@ typedef struct {
  
   
 
-#### JSVM_ValueType
+### JSVM_ValueType
 
 JSVM_Value的类型。包含了ECMAScript语言规范中定义的类型，其中JSVM_EXTERNAL表示外部数据类型。
  
@@ -99,7 +99,7 @@ typedef enum {
  
   
 
-#### JSVM_TypedarrayType
+### JSVM_TypedarrayType
 
 描述Typedarray的类型。
  
@@ -121,7 +121,7 @@ typedef enum {
  
   
 
-#### JSVM_RegExpFlags
+### JSVM_RegExpFlags
 
 正则表达式标志位。
  
@@ -142,7 +142,7 @@ typedef enum {
  
   
 
-#### 编译选项相关类型
+### 编译选项相关类型
 
 **JSVM_CompileOptions**
  
@@ -266,7 +266,7 @@ typedef struct {
  
   
 
-#### 内存管理类型
+### 内存管理类型
 
 JSVM-API 包含以下内存管理类型：
  
@@ -303,7 +303,7 @@ typedef struct {
  
   
 
-#### 回调类型
+### 回调类型
 
 JSVM-API包含以下回调类型：
  
@@ -397,13 +397,13 @@ typedef JSVM_PropertyHandlerConfigurationStruct* JSVM_PropertyHandlerCfg;
  
   
 
-#### 支持的JSVM-API接口
+## 支持的JSVM-API接口
 
 标准JS引擎的能力通过JSVM-API提供。JSVM-API支持动态链接到不同版本的JS引擎库，从而为开发者屏蔽掉不同引擎接口的差异。JSVM-API提供引擎生命周期管理、JS context管理、JS代码执行、JS/C++互操作、执行环境快照、codecache等能力，具体可见下文。
  
   
 
-#### 使用 JSVM-API 接口创建引擎实例及 JS 执行上下文环境
+### 使用 JSVM-API 接口创建引擎实例及 JS 执行上下文环境
 
 **场景介绍**
  
@@ -411,6 +411,7 @@ typedef JSVM_PropertyHandlerConfigurationStruct* JSVM_PropertyHandlerCfg;
  
 **接口说明**
   
+
 | 接口 | 功能说明 |
 | --- | --- |
 | OH_JSVM_Init | 初始化JavaScript引擎实例 |
@@ -618,7 +619,7 @@ static napi_value MyJSVMDemo([[maybe_unused]] napi_env _env, [[maybe_unused]] na
  
   
 
-#### 使用 JSVM-API 接口编译及执行 JS 代码
+### 使用 JSVM-API 接口编译及执行 JS 代码
 
 **场景介绍**
  
@@ -626,13 +627,14 @@ static napi_value MyJSVMDemo([[maybe_unused]] napi_env _env, [[maybe_unused]] na
  
 **接口说明**
   
+
 | 接口 | 功能说明 |
 | --- | --- |
 | OH_JSVM_CompileScript | 编译JavaScript代码并返回绑定到当前环境的编译脚本 |
 | OH_JSVM_CompileScriptWithOrigin | 编译JavaScript代码并返回绑定到当前环境的编译脚本，同时传入包括 sourceMapUrl 和源文件名在内的源代码信息，用于处理 source map 信息 |
 | OH_JSVM_CompileScriptWithOptions | 通用的编译接口，通过传入 option 数组完成前面的 compile 接口全部功能，同时支持后续选项扩展 |
 | OH_JSVM_CreateCodeCache | 为编译脚本创建code cache |
-| OH_JSVM_RunScript | 执行编译脚本，如果没有 JIT 权限支持，执行含wasm的脚本会失败，在特定场景下存在性能差异，并打印一行日志提示开发者 |
+| OH_JSVM_RunScript | 执行编译脚本，如果没有 JIT 权限支持，执行含Wasm的脚本会失败，在特定场景下存在性能差异，并打印一行日志提示开发者 |
  
  
 场景示例：
@@ -869,7 +871,7 @@ OH_JSVM_CreateCodeCache接口用法可参考[使用code cache加速编译](https
  
   
 
-#### 使用 JSVM-API WebAssembly 接口编译 wasm module
+### 使用 JSVM-API WebAssembly 接口编译 wasm module
 
 **场景介绍**
  
@@ -879,6 +881,7 @@ JSVM-API WebAssembly 接口提供了 WebAssembly 字节码编译、WebAssembly �
  
 **接口说明**
   
+
 | 接口 | 功能说明 |
 | --- | --- |
 | OH_JSVM_CompileWasmModule | 将 wasm 字节码同步编译为 wasm module。如果提供了 cache 参数，先尝试将 cache 反序列为 wasm module，反序列化失败时再执行编译。如果没有 JIT 权限支持，则打印一行日志提示开发者。 |
@@ -894,7 +897,7 @@ JSVM-API WebAssembly 接口提供了 WebAssembly 字节码编译、WebAssembly �
  
   
 
-#### 异常处理
+### 异常处理
 
 **场景介绍**
  
@@ -902,6 +905,7 @@ JSVM-API WebAssembly 接口提供了 WebAssembly 字节码编译、WebAssembly �
  
 **接口说明**
   
+
 | 接口 | 功能说明 |
 | --- | --- |
 | OH_JSVM_Throw | 抛出一个JS值 |
@@ -967,7 +971,7 @@ if (status != JSVM_OK) // 当执行失败出现异常时
  
   
 
-#### 对象生命周期管理
+### 对象生命周期管理
 
 在调用JSVM-API接口时，底层VM堆中的对象可能会作为JSVM_Values返回句柄。这些句柄必须在Native方法销毁或主动释放掉前，使其关联的对象处于“活动”状态，防止被引擎回收掉。
  
@@ -977,6 +981,7 @@ if (status != JSVM_OK) // 当执行失败出现异常时
  
 **对象生命周期管理接口说明**
   
+
 | 接口 | 功能说明 |
 | --- | --- |
 | OH_JSVM_OpenHandleScope | 打开一个新的scope，在关闭该scope之前创建的对象在scope范围内不会被GC回收 |
@@ -1064,7 +1069,7 @@ JSVM_CALL(OH_JSVM_CloseHandleScope(env, scope));
  
   
 
-#### 创建JS对象类型和基本类型
+### 创建JS对象类型和基本类型
 
 **场景介绍**
  
@@ -1072,6 +1077,7 @@ JSVM_CALL(OH_JSVM_CloseHandleScope(env, scope));
  
 **接口说明**
   
+
 | 接口 | 功能说明 |
 | --- | --- |
 | OH_JSVM_CreateArray | 创建一个新的 JavaScript 数组对象 |
@@ -1173,7 +1179,7 @@ OH_JSVM_CreateSet(env, &value);
  
   
 
-#### 从JS类型获取C类型&JS类型信息
+### 从JS类型获取C类型&JS类型信息
 
 **场景介绍**
  
@@ -1181,6 +1187,7 @@ OH_JSVM_CreateSet(env, &value);
  
 **接口说明**
   
+
 | 接口 | 功能说明 |
 | --- | --- |
 | OH_JSVM_GetArrayLength | 返回 Array 对象的长度 |
@@ -1270,7 +1277,7 @@ JSVM_CALL(OH_JSVM_GetValueStringUtf8(env, testString, buffer, bufferSize, &copie
  
   
 
-#### JS值操作和抽象操作
+### JS值操作和抽象操作
 
 **场景介绍**
  
@@ -1278,6 +1285,7 @@ JS值操作和抽象操作。
  
 **接口说明**
   
+
 | 接口 | 功能说明 |
 | --- | --- |
 | OH_JSVM_CoerceToBool | 将目标值转换为 Boolean 类型对象 |
@@ -1424,7 +1432,7 @@ OH_JSVM_IsRegExp(env, result, &isRegExp);
  
   
 
-#### JS属性操作
+### JS属性操作
 
 **场景介绍**
  
@@ -1432,10 +1440,11 @@ JS对象属性的增加、删除、获取和判断。
  
 **接口说明**
   
+
 | 接口 | 功能说明 |
 | --- | --- |
-| OH_JSVM_GetPropertyNames | 获取给定对象的所有可枚举属性名称, 结果变量将存储一个包含所有可枚举属性名称的JavaScript数组。 |
-| OH_JSVM_GetAllPropertyNames | 获取给定对象的所有可用属性名称, 结果变量将存储一个包含所有可枚举属性名称的JavaScript数组。 |
+| OH_JSVM_GetPropertyNames | 获取给定对象的所有可枚举属性名称，结果变量将存储一个包含所有可枚举属性名称的JavaScript数组。 |
+| OH_JSVM_GetAllPropertyNames | 获取给定对象的所有可用属性名称，结果变量将存储一个包含所有可枚举属性名称的JavaScript数组。 |
 | OH_JSVM_SetProperty | 为给定对象设置一个属性。 |
 | OH_JSVM_GetProperty | 用给定的属性的名称，检索目标对象的属性。 |
 | OH_JSVM_HasProperty | 用给定的属性的名称，查询目标对象是否有此属性。 |
@@ -1449,7 +1458,7 @@ JS对象属性的增加、删除、获取和判断。
 | OH_JSVM_HasElement | 若给定对象的指定索引处拥有属性，获取该元素。 |
 | OH_JSVM_DeleteElement | 尝试删除给定对象的指定索引处的元素。 |
 | OH_JSVM_DefineProperties | 在给定对象中定义多个属性。 |
-| OH_JSVM_ObjectFreeze | 冻结给定的对象,防止向其添加新属性，删除现有属性，防止更改现有属性的可枚举性、可配置性或可写性，并防止更改现有属性的值。 |
+| OH_JSVM_ObjectFreeze | 冻结给定的对象，防止向其添加新属性，删除现有属性，防止更改现有属性的可枚举性、可配置性或可写性，并防止更改现有属性的值。 |
 | OH_JSVM_ObjectSeal | 密封给定的对象。这可以防止向其添加新属性，以及将所有现有属性标记为不可配置。 |
 | OH_JSVM_ObjectSetPrototypeOf | 为给定对象设置一个原型。 |
 | OH_JSVM_ObjectGetPrototypeOf | 获取给定JavaScript对象的原型。 |
@@ -1523,7 +1532,7 @@ OH_JSVM_ObjectGetPrototypeOf(env, myObject, &proto);
  
   
 
-#### JS函数操作
+### JS函数操作
 
 **场景介绍**
  
@@ -1531,6 +1540,7 @@ JS函数操作。
  
 **接口说明**
   
+
 | 接口 | 功能说明 |
 | --- | --- |
 | OH_JSVM_CallFunction | 在C/C++侧调用JS方法 |
@@ -1611,7 +1621,7 @@ OH_JSVM_CreateFunctionWithScript(env, "add", JSVM_AUTO_LENGTH, 2, argus, script,
  
   
 
-#### 对象绑定操作
+### 对象绑定操作
 
 **场景介绍**
  
@@ -1619,6 +1629,7 @@ OH_JSVM_CreateFunctionWithScript(env, "add", JSVM_AUTO_LENGTH, 2, argus, script,
  
 **接口说明**
   
+
 | 接口 | 功能说明 |
 | --- | --- |
 | OH_JSVM_DefineClass | 用于在JavaScript中定义一个类，并与对应的C类进行封装和交互。它提供了创建类的构造函数、定义属性和方法的能力，以及在C和JavaScript之间进行数据交互的支持。 |
@@ -2120,7 +2131,7 @@ static napi_value TestDefineClassWithProperty(napi_env env1, napi_callback_info 
  
   
 
-#### 版本管理
+### 版本管理
 
 **场景介绍**
  
@@ -2128,6 +2139,7 @@ static napi_value TestDefineClassWithProperty(napi_env env1, napi_callback_info 
  
 **接口说明**
   
+
 | 接口 | 功能说明 |
 | --- | --- |
 | OH_JSVM_GetVersion | 返回JSVM运行时支持的最高JSVM API版本 |
@@ -2147,7 +2159,7 @@ OH_JSVM_GetVersion(env, &versionId);
  
   
 
-#### 内存管理
+### 内存管理
 
 **场景介绍**
  
@@ -2155,6 +2167,7 @@ OH_JSVM_GetVersion(env, &versionId);
  
 **接口说明**
   
+
 | 接口 | 功能说明 |
 | --- | --- |
 | OH_JSVM_AdjustExternalMemory | 将因JavaScript对象而保持活跃的外部分配的内存大小及时通知给底层虚拟机，虚拟机后续触发GC时，就会综合内外内存状态来判断是否进行全局GC。即增大外部内存分配，则会增大触发全局GC的概率；反之减少。 |
@@ -2260,7 +2273,7 @@ OH_JSVM_FreeArrayBufferBackingStoreData(backingStore);
  
   
 
-#### Promise操作
+### Promise操作
 
 **场景介绍**
  
@@ -2268,6 +2281,7 @@ Promise相关操作。
  
 **接口说明**
   
+
 | 接口 | 功能说明 |
 | --- | --- |
 | OH_JSVM_CreatePromise | 创建一个延迟对象和一个JavaScript promise |
@@ -2308,7 +2322,7 @@ if (success)
  
   
 
-#### JSON操作
+### JSON操作
 
 **场景介绍**
  
@@ -2316,6 +2330,7 @@ JSON操作。
  
 **接口说明**
   
+
 | 接口 | 功能说明 |
 | --- | --- |
 | OH_JSVM_JsonParse | 解析JSON字符串，并返回成功解析的值 |
@@ -2336,7 +2351,7 @@ OH_JSVM_JsonParse(env, jsonString, &result);
  
   
 
-#### 创建和使用虚拟机的启动快照
+### 创建和使用虚拟机的启动快照
 
 **场景介绍**
  
@@ -2344,6 +2359,7 @@ OH_JSVM_JsonParse(env, jsonString, &result);
  
 **接口说明**
   
+
 | 接口 | 功能说明 |
 | --- | --- |
 | OH_JSVM_CreateSnapshot | 用于创建虚拟机的启动快照 |
@@ -2356,7 +2372,7 @@ OH_JSVM_JsonParse(env, jsonString, &result);
  
   
 
-#### 检查传入的值是否可调用
+### 检查传入的值是否可调用
 
 **场景介绍**
  
@@ -2364,6 +2380,7 @@ OH_JSVM_JsonParse(env, jsonString, &result);
  
 **接口说明**
   
+
 | 接口 | 功能说明 |
 | --- | --- |
 | OH_JSVM_IsCallable | 检查传入的值是否可调用 |
@@ -2440,7 +2457,7 @@ static napi_value MyJSVMDemo([[maybe_unused]] napi_env _env, [[maybe_unused]] na
  
   
 
-#### Lock操作
+### Lock操作
 
 **场景介绍**
  
@@ -2448,6 +2465,7 @@ Lock操作。
  
 **接口说明**
   
+
 | 接口 | 功能说明 |
 | --- | --- |
 | OH_JSVM_IsLocked | 判断当前线程是否持有指定环境的锁 |
@@ -2550,7 +2568,7 @@ static napi_value Add([[maybe_unused]] napi_env _env, [[maybe_unused]] napi_call
  
   
 
-#### 设置与获取和当前运行的JSVM环境相关联的数据
+### 设置与获取和当前运行的JSVM环境相关联的数据
 
 **场景介绍**
  
@@ -2558,6 +2576,7 @@ static napi_value Add([[maybe_unused]] napi_env _env, [[maybe_unused]] napi_call
  
 **接口说明**
   
+
 | 接口 | 功能说明 |
 | --- | --- |
 | OH_JSVM_SetInstanceData | 设置与当前运行的JSVM环境相关联的数据 |
@@ -2650,7 +2669,7 @@ static napi_value GetInstanceData(napi_env env1, napi_callback_info info)
  
   
 
-#### 任务队列
+### 任务队列
 
 **场景介绍**
  
@@ -2658,6 +2677,7 @@ static napi_value GetInstanceData(napi_env env1, napi_callback_info info)
  
 **接口说明**
   
+
 | 接口 | 功能说明 |
 | --- | --- |
 | OH_JSVM_PumpMessageLoop | 启动任务队列的运行 |
@@ -2670,7 +2690,7 @@ static napi_value GetInstanceData(napi_env env1, napi_callback_info info)
  
   
 
-#### 后台反序列化
+### 后台反序列化
 
 **场景介绍**
  
@@ -2678,6 +2698,7 @@ static napi_value GetInstanceData(napi_env env1, napi_callback_info info)
  
 **接口说明**
   
+
 | 接口 | 功能说明 |
 | --- | --- |
 | OH_JSVM_BackgroundDeserialize | 在线程池中反序列化 JSVM_CodeCache，通过 OH_JSVM_ReleaseDeserializeResult 接口释放 JSVM_DeserializeResult。 |

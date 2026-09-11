@@ -1,9 +1,9 @@
 # Class (ClickActionProposal)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-clickactionproposal
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 智慧手势点击动作处理。当通过[registerMonitor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-smartgesturecontroller#registermonitor)接口动态自定义智慧手势行为时，设置返回值[Class (GestureHandlingResolution)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-gesturehandlingresolution)的selectedProposal为该类型对象，会触发目标组件的点击操作。
  
@@ -14,9 +14,10 @@
 **起始版本：** 26.0.0
   
 
-#### constructor
+## constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(node: FrameNode)
  
@@ -32,6 +33,7 @@ constructor(node: FrameNode)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 响应点击动作的目标节点。 |
@@ -101,4 +103,4 @@ struct SmartGestureControllerExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/JlbsRxRyT4-JWe9DV1RSPQ/zh-cn_image_0000002698142269.png?HW-CC-KV=V1&HW-CC-Date=20260811T010215Z&HW-CC-Expire=86400&HW-CC-Sign=3181304570FFFC88EFBCF5048DF19C7B6997407E724213F74E7F04D6EC5FF005)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/khM7bCJLSveJRUrAbA46og/zh-cn_image_0000002747212249.png?HW-CC-KV=V1&HW-CC-Date=20260911T072302Z&HW-CC-Expire=86400&HW-CC-Sign=DF96D4A8318A88F6D445AF14766B095E96792C8D4CD29D871784A02C8FA0E0AE)

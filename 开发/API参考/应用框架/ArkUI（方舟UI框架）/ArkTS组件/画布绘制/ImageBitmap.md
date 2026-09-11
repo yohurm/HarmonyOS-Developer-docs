@@ -1,9 +1,9 @@
 # ImageBitmap
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-imagebitmap
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ImageBitmap对象可以存储canvas渲染的像素数据。从API version 11开始，当应用创建[Worker线程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/worker-introduction)，支持使用postMessage将ImageBitmap实例传到Worker中进行绘制，并使用onmessage接收Worker线程发送的绘制结果进行显示。
 
@@ -12,9 +12,10 @@ ImageBitmap对象可以存储canvas渲染的像素数据。从API version 11开�
 
 
 
-#### constructor
+## constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(src: string)
 
@@ -32,6 +33,7 @@ constructor(src: string)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | src | string | 是 | 图片数据源，支持本地图片。 1、string格式用于加载本地图片，例如ImageBitmap("common/images/example.jpg")，type为"entry"和"feature"类型的Module，其图片加载路径的起点为当前Module的ets文件夹，type为"har"和"shared"类型的Module，其图片加载路径的起点为当前构建的"entry"或"feature"类型Module的ets文件夹。 type为"har"和"shared"类型的Module中推荐使用ImageSource图片解码方式将资源图片解码为统一的PixelMap加载使用。 2、支持本地图片类型：bmp、jpg、png、svg和webp类型。 说明： - ArkTS卡片上不支持http://等网络相关路径前缀、datashare://路径前缀以及file://data/storage路径前缀的字符串。 |
@@ -39,9 +41,10 @@ constructor(src: string)
 
 
 
-#### constructor
+## constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(data: PixelMap)
 
@@ -57,6 +60,7 @@ constructor(data: PixelMap)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | PixelMap | 是 | 图片数据源，通过PixelMap对象设置。适用于需要对图片进行解码、处理后再绘制的场景，可提高图片加载性能。 |
@@ -64,9 +68,10 @@ constructor(data: PixelMap)
 
 
 
-#### constructor12+
+## constructor12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(src: string, unit: LengthMetricsUnit)
 
@@ -86,6 +91,7 @@ constructor(src: string, unit: LengthMetricsUnit)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | src | string | 是 | 图片数据源，支持本地图片。 1、string格式用于加载本地图片，例如ImageBitmap("common/images/example.jpg")，type为"entry"和"feature"类型的Module，其图片加载路径的起点为当前Module的ets文件夹，type为"har"和"shared"类型的Module，其图片加载路径的起点为当前构建的"entry"或"feature"类型Module的ets文件夹。 type为"har"和"shared"类型的Module中推荐使用ImageSource图片解码方式将资源图片解码为统一的PixelMap加载使用。 2、支持本地图片类型：bmp、jpg、png、svg和webp类型。 说明： - ArkTS卡片上不支持http://等网络相关路径前缀、datashare://路径前缀以及file://data/storage路径前缀的字符串。 |
@@ -94,9 +100,10 @@ constructor(src: string, unit: LengthMetricsUnit)
 
 
 
-#### constructor12+
+## constructor12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(data: PixelMap, unit: LengthMetricsUnit)
 
@@ -114,6 +121,7 @@ constructor(data: PixelMap, unit: LengthMetricsUnit)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | PixelMap | 是 | 图片数据源，通过PixelMap对象设置。适用于需要对图片进行解码、处理后再绘制的场景，可提高图片加载性能。 |
@@ -122,9 +130,10 @@ constructor(data: PixelMap, unit: LengthMetricsUnit)
 
 
 
-#### constructor
+## constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(data: Resource, unit?: LengthMetricsUnit)
 
@@ -144,6 +153,7 @@ constructor(data: Resource, unit?: LengthMetricsUnit)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | Resource | 是 | 图片数据源，通过Resource资源引用方式设置。适用于引用应用资源目录下的图片资源，如\$r('app.media.example')，可避免硬编码路径。 支持图片类型：bmp、jpg、png、svg和webp类型。 |
@@ -152,9 +162,10 @@ constructor(data: Resource, unit?: LengthMetricsUnit)
 
 
 
-#### close
+## close
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(): void
 
@@ -172,15 +183,17 @@ close(): void
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -190,13 +203,17 @@ close(): void
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（加载图片）
+
+
+### 示例1（加载图片）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过ImageBitmap加载本地图片。
 
@@ -232,12 +249,15 @@ struct ImageExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/OHJ9FPtKRQKCR1H4IhNUWw/zh-cn_image_0000002686088267.png?HW-CC-KV=V1&HW-CC-Date=20260730T071510Z&HW-CC-Expire=86400&HW-CC-Sign=B913BCA521FE8C75EBE87347326239DE7FDFA575A365A0BE3D74E9BE89AE1359)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/jF0tKmjoS5WEyIyAEHGzOg/zh-cn_image_0000002747212843.png?HW-CC-KV=V1&HW-CC-Date=20260911T073111Z&HW-CC-Expire=86400&HW-CC-Sign=BB8F7FA13B0547DEAAC985E7D0B9E12F8931CF5A4D871CDF14EE6A90244CA895)
 
 
 
 
-#### 示例2（创建ImageBitmap）
+### 示例2（创建ImageBitmap）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过PixelMap创建ImageBitmap对象。
 
@@ -275,12 +295,15 @@ struct Demo {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/-9QQYJ3RTWqzMwxfKNHyeQ/zh-cn_image_0000002685928437.png?HW-CC-KV=V1&HW-CC-Date=20260730T071510Z&HW-CC-Expire=86400&HW-CC-Sign=1F9ECB88F8D2BF11D91DE51DCB1D617A2680C036FE0BA7FCFFAACA55C095479F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/C-A63McTTLyRJttuQt-MFA/zh-cn_image_0000002717772908.png?HW-CC-KV=V1&HW-CC-Date=20260911T073111Z&HW-CC-Expire=86400&HW-CC-Sign=5C83488A79732967DAEDE477FC7764F9E7EC9A2D6C8B73F9FD4CD24C41D69430)
 
 
 
 
-#### 示例3（支持并发线程绘制）
+### 示例3（支持并发线程绘制）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过创建Worker线程，实现并发线程绘制。
 
@@ -341,12 +364,15 @@ workerPort.onmessage = (e: MessageEvents) => {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/r6aw7YhtQJSI0wyTket9Xg/zh-cn_image_0000002686088267.png?HW-CC-KV=V1&HW-CC-Date=20260730T071510Z&HW-CC-Expire=86400&HW-CC-Sign=642C8522E8FBE75995727F073B17165953DAFDAF21AC8D3DB56DA350D87983ED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/gM-4hCZkT2uy3g8DGHAHlw/zh-cn_image_0000002747212843.png?HW-CC-KV=V1&HW-CC-Date=20260911T073111Z&HW-CC-Expire=86400&HW-CC-Sign=3B7C5F97A85B208CB096F7AC2E9D22738EF1BBEA376BE62D5848F9A272640DA7)
 
 
 
 
-#### 示例4（加载Resource图片）
+### 示例4（加载Resource图片）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过constructor接口创建Resource类型的ImageBitmap对象，用于Canvas绘制。
 
@@ -380,4 +406,4 @@ struct ImageBitmapResourceExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/nWUJyMEsQx-xbzkgLHiRyQ/zh-cn_image_0000002656008760.png?HW-CC-KV=V1&HW-CC-Date=20260730T071510Z&HW-CC-Expire=86400&HW-CC-Sign=34953F937CCC34B0290A67989F797A1CA9E319262A9668626DB189D1B6D254EF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/fV1Rnx8pSpWQoXLId1Y6ZQ/zh-cn_image_0000002717612976.png?HW-CC-KV=V1&HW-CC-Date=20260911T073111Z&HW-CC-Expire=86400&HW-CC-Sign=9817558737D85A9441CADCC384B73851BBF9D785793447D06DBB757C672EC592)

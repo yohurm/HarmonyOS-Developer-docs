@@ -1,9 +1,9 @@
 # QRCode
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-qrcode
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 QRCode组件用于显示单个二维码，支持自定义二维码颜色、背景颜色及内容不透明度，适用于需要展示二维码以供扫描获取字符串信息的场景。
  
@@ -12,17 +12,19 @@ QRCode组件用于显示单个二维码，支持自定义二维码颜色、背�
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
  
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 QRCode(value: ResourceStr)
  
@@ -36,6 +38,7 @@ QRCode(value: ResourceStr)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceStr | 是 | 二维码内容字符串。最大支持512个字符，若超出，则截取前512个字符。 从API version 20开始，支持Resource类型。 说明： 设置为null时与设置字符串"null"效果一致；设置为undefined时与设置字符串"undefined"效果一致；当传入空字符串时，将生成无效二维码。 |
@@ -43,17 +46,19 @@ QRCode(value: ResourceStr)
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
  
   
 
-#### color
+### color
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 color(value: ResourceColor)
  
@@ -67,6 +72,7 @@ color(value: ResourceColor)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 二维码颜色。默认值：'#ff000000'，且不跟随系统深浅色模式切换而修改。 |
@@ -74,9 +80,10 @@ color(value: ResourceColor)
  
   
 
-#### backgroundColor
+### backgroundColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 backgroundColor(value: ResourceColor)
  
@@ -90,6 +97,7 @@ backgroundColor(value: ResourceColor)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 二维码背景颜色。 默认值：Color.White 从API version 11开始，默认值改为'#ffffffff'，且不跟随系统深浅色模式切换而修改。 |
@@ -97,9 +105,10 @@ backgroundColor(value: ResourceColor)
  
   
 
-#### contentOpacity11+
+### contentOpacity11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contentOpacity(value: number | Resource)
  
@@ -113,6 +122,7 @@ contentOpacity(value: number | Resource)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| Resource | 是 | 二维码内容颜色的不透明度。 默认值：1 取值范围：[0, 1]，超出取值范围按默认值处理。 |
@@ -120,21 +130,26 @@ contentOpacity(value: number | Resource)
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通用事件支持[点击事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-events-click)、[触摸事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-events-touch)和[挂载卸载事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-events-show-hide)。
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 示例1（设置颜色、背景颜色、不透明度）
+### 示例1（设置颜色、背景颜色、不透明度）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示了QRCode组件的基本使用方法，通过[color](#color)属性设置二维码颜色、[backgroundColor](#backgroundcolor)属性设置二维码背景颜色、[contentOpacity](#contentopacity11)属性设置二维码不透明度。
  
@@ -172,7 +187,10 @@ struct QRCodeExample {
  
   
 
-#### 示例2（设置背景颜色为透明）
+### 示例2（设置背景颜色为透明）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[backgroundColor](#backgroundcolor)属性设置二维码背景颜色为透明，从而实现二维码内容与背景融合。
  

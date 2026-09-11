@@ -1,6 +1,6 @@
 # Hid_MscEventArray
 
-更新时间：2026-04-28 03:31:56
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hidddk-hid-msceventarray
 **支持设备：** PC/2in1
@@ -10,11 +10,12 @@ typedef struct Hid_MscEventArray {...} Hid_MscEventArray
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** PC/2in1
 
-其他特殊事件属性数组。
+其他特殊事件属性数组，用于存储HID设备支持的特殊事件信息。
  
 **起始版本：** 11
  
@@ -24,17 +25,20 @@ typedef struct Hid_MscEventArray {...} Hid_MscEventArray
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** PC/2in1
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** PC/2in1
  
+
 | 名称 | 描述 |
 | --- | --- |
-| Hid_MscEvent* hidMscEvent | 其他特殊事件属性编码 |
-| uint16_t length | 数组的有效长度 |
+| Hid_MscEvent* hidMscEvent | 其他特殊事件属性编码数组的指针，指向调用方预先分配的数组（不允许为空指针），数组大小不小于length。 |
+| uint16_t length | 数组的有效长度，不超过hidMscEvent数组的实际长度。 |

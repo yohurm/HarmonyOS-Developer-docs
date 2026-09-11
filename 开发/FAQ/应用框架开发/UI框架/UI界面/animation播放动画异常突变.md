@@ -15,7 +15,7 @@
 @ComponentV2
 struct ShackHand {
   @Param serverActive: boolean = false
-  // 动画点信息
+<em>  // 动画点信息</em>
   @Local colorArray: Array<JumpTrans> = [
     new JumpTrans('#8002ECFC', 500),
     new JumpTrans('#802d2de3', 1000),
@@ -34,7 +34,7 @@ struct ShackHand {
           })
           .strokeWidth('5lpx')
           .fill(jump.color)
-          .transition(generateEffect(jump.delay)) // 设置动画效果
+          .transition(generateEffect(jump.delay))<em> </em><em>// 设置动画效果</em>
       })
 
     }
@@ -45,18 +45,18 @@ struct ShackHand {
   }
 }
 
-// 动画效果
+<em>// </em><em>动画效果</em>
 function generateEffect(delay: number): TransitionEffect {
   return TransitionEffect.scale({ x: 0.1, y: 0.1 })
     .animation({
       duration: 1000,
-      playMode: PlayMode.Reverse, // 动画反向播放
+      playMode: PlayMode.Reverse, <em>// 动画反向播放</em>
       delay: delay
     })
 
 }
 
-// 信息类
+<em>// </em><em>信息类</em>
 class JumpTrans {
   color: ResourceColor
   delay: number
@@ -120,7 +120,7 @@ delay和PlayMode.Reverse属性设置不当会导致动画播放前出现组件�
 @Entry
 @ComponentV2
 struct JumpTransCustom {
-  // 动画数据
+<em>  // 动画数据</em>
   @Local colorArray: Array<JumpTrans> = [
     new JumpTrans('#8002ECFC', 500),
     new JumpTrans('#802d2de3', 1000),
@@ -140,7 +140,7 @@ struct JumpTransCustom {
             })
             .strokeWidth('5lpx')
             .fill(jump.color)
-            .transition(generateEffect(jump.delay))  // 调用动画函数
+            .transition(generateEffect(jump.delay)) <em> </em><em>// 调用动画函数</em>
             .scale({ x: 0.1, y: 0.1 });
         });
       }
@@ -151,7 +151,7 @@ struct JumpTransCustom {
   }
 }
 
-// 动画效果
+<em>// </em><em>动画效果</em>
 function generateEffect(delay: number): TransitionEffect {
   return TransitionEffect.scale({ x: 8, y: 8 })
     .animation({
@@ -161,7 +161,7 @@ function generateEffect(delay: number): TransitionEffect {
     });
 }
 
-// 数据类
+<em>// </em><em>数据类</em>
 class JumpTrans {
   color: ResourceColor;
   delay: number;

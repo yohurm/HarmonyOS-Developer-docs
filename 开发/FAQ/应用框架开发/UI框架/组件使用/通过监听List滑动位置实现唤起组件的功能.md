@@ -45,7 +45,7 @@ struct ListRefreshLoad {
   @State allowOffset: number = 0;
   @State isShow: boolean = false;
 
-  // 获取列表项的总长度
+ <em> // 获取列表项的总长度</em>
   getMaxWidth() {
     let widthAll = 0;
     for (let index = 0; index < this.arr.length; index++) {
@@ -55,7 +55,7 @@ struct ListRefreshLoad {
     this.allowOffset = widthAll;
   }
 
-  // 控制“更多”字体大小，
+<em>  // 控制“更多”字体大小，</em>
   getScale() {
     let scale = (this.currentOffset + this.startOffset - this.allowOffset - 30) / 30;
     if (scale > 1) {
@@ -155,7 +155,7 @@ struct Index {
 
   aboutToAppear(): void {
     window.getLastWindow(this.getUIContext().getHostContext(), (err, data) => {
-      data?.setWindowLayoutFullScreen(true); // 设置沉浸式布局
+      data?.setWindowLayoutFullScreen(true);<em> </em><em>// 设置沉浸式布局</em>
     });
   }
 
@@ -181,15 +181,15 @@ struct Index {
       .edgeEffect(EdgeEffect.None)
       .onDidScroll((offset: number, State: ScrollState) => {
         if (offset < 0 && this.showTitle === true) {
-          this.showTitle = false; // 下滑隐藏组件
+          this.showTitle = false;<em> </em><em>// 下滑隐藏组件</em>
         }
         if (offset > 0 && this.showTitle === false) {
-          this.showTitle = true; // 上滑显示组件
+          this.showTitle = true;<em> </em><em>// 上滑显示组件</em>
         }
         console.info(`offset：${offset},State：${JSON.stringify(State)}`);
       });
 
-      // 控制是否展示以下'开始组题'的UI组件
+    <em>  // 控制是否展示以下'开始组题'的UI组件</em>
       if (this.showTitle) {
         Row() {
           Button('开始组题')

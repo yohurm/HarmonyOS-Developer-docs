@@ -1,9 +1,9 @@
 # Radio
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-radio
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 单选框，提供单选类型的用户交互选择项。
 
@@ -12,17 +12,19 @@
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Radio(options: RadioOptions)
 
@@ -36,6 +38,7 @@ Radio(options: RadioOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | RadioOptions | 是 | 配置单选框的参数。 |
@@ -43,13 +46,15 @@ Radio(options: RadioOptions)
 
 
 
-#### RadioOptions对象说明
+## RadioOptions对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 单选框的信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -61,9 +66,10 @@ Radio(options: RadioOptions)
 
 
 
-#### RadioIndicatorType12+枚举说明
+## RadioIndicatorType12+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 单选框的样式。
 
@@ -75,6 +81,7 @@ Radio(options: RadioOptions)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | TICK | 0 | 选中样式为系统默认TICK图标。 |
@@ -84,17 +91,19 @@ Radio(options: RadioOptions)
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
 
 
 
-#### checked
+### checked
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checked(value: boolean)
 
@@ -112,6 +121,7 @@ checked(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 单选框的选中状态。 默认值：false 值为true时，单选框被选中。值为false时，单选框不被选中。 |
@@ -119,9 +129,10 @@ checked(value: boolean)
 
 
 
-#### checked18+
+### checked18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checked(isChecked: Optional&lt;boolean&gt;)
 
@@ -139,6 +150,7 @@ checked(isChecked: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isChecked | Optional&lt;boolean&gt; | 是 | 单选框的选中状态。 当isChecked的值为undefined时取默认值false。 值为true时，单选框被选中。值为false时，单选框不被选中。 |
@@ -146,9 +158,10 @@ checked(isChecked: Optional&lt;boolean&gt;)
 
 
 
-#### radioStyle10+
+### radioStyle10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 radioStyle(value?: RadioStyle)
 
@@ -164,6 +177,7 @@ radioStyle(value?: RadioStyle)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | RadioStyle | 否 | 单选框选中状态和非选中状态的样式。 未设置时，则按照RadioStyle中各参数的默认值配置。 |
@@ -171,9 +185,10 @@ radioStyle(value?: RadioStyle)
 
 
 
-#### contentModifier12+
+### contentModifier12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contentModifier(modifier: ContentModifier&lt;RadioConfiguration&gt;)
 
@@ -187,6 +202,7 @@ contentModifier(modifier: ContentModifier&lt;RadioConfiguration&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | modifier | ContentModifier&lt;RadioConfiguration&gt; | 是 | 在Radio组件上，定制内容区的方法。 modifier：内容修改器，开发者需要自定义class实现ContentModifier接口。 |
@@ -194,9 +210,10 @@ contentModifier(modifier: ContentModifier&lt;RadioConfiguration&gt;)
 
 
 
-#### contentModifier18+
+### contentModifier18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contentModifier(modifier: Optional<ContentModifier&lt;RadioConfiguration&gt;>)
 
@@ -210,6 +227,7 @@ contentModifier(modifier: Optional<ContentModifier&lt;RadioConfiguration&gt;>)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | modifier | Optional<ContentModifier&lt;RadioConfiguration&gt;> | 是 | 在Radio组件上，定制内容区的方法。 modifier：内容修改器，开发者需要自定义class实现ContentModifier接口。 当modifier的值为undefined时，不使用内容修改器。 |
@@ -217,17 +235,19 @@ contentModifier(modifier: Optional<ContentModifier&lt;RadioConfiguration&gt;>)
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)外，还支持以下事件：
 
 
 
-#### onChange
+### onChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onChange(callback: (isChecked: boolean) => void)
 
@@ -241,6 +261,7 @@ onChange(callback: (isChecked: boolean) => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isChecked | boolean | 是 | 单选框选中状态改变时触发该回调。 值为true时，表示从未选中变为选中。值为false时，表示从选中变为未选中。 |
@@ -248,9 +269,10 @@ onChange(callback: (isChecked: boolean) => void)
 
 
 
-#### onChange18+
+### onChange18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onChange(callback: Optional&lt;OnRadioChangeCallback&gt;)
 
@@ -266,6 +288,7 @@ onChange(callback: Optional&lt;OnRadioChangeCallback&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Optional&lt;OnRadioChangeCallback&gt; | 是 | 单选框选中状态改变时触发该回调。 当callback的值为undefined时，不使用回调函数。 |
@@ -273,9 +296,10 @@ onChange(callback: Optional&lt;OnRadioChangeCallback&gt;)
 
 
 
-#### OnRadioChangeCallback18+
+## OnRadioChangeCallback18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnRadioChangeCallback = (isChecked: boolean) => void
 
@@ -289,6 +313,7 @@ type OnRadioChangeCallback = (isChecked: boolean) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isChecked | boolean | 是 | 单选框状态变化后的新选中状态。 值为true时，表示从未选中变为选中。值为false时，表示从选中变为未选中。 |
@@ -296,9 +321,10 @@ type OnRadioChangeCallback = (isChecked: boolean) => void
 
 
 
-#### RadioStyle10+对象说明
+## RadioStyle10+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 单选框的样式。
 
@@ -307,6 +333,7 @@ type OnRadioChangeCallback = (isChecked: boolean) => void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -317,9 +344,10 @@ type OnRadioChangeCallback = (isChecked: boolean) => void
 
 
 
-#### RadioConfiguration12+对象说明
+## RadioConfiguration12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 开发者需要自定义class实现ContentModifier接口。继承自[CommonConfiguration](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-content-modifier#commonconfigurationt)。
 
@@ -328,6 +356,7 @@ type OnRadioChangeCallback = (isChecked: boolean) => void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -338,13 +367,17 @@ type OnRadioChangeCallback = (isChecked: boolean) => void
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1 （设置底板颜色）
+
+
+### 示例1 （设置底板颜色）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置checkedBackgroundColor以自定义单选框的底板颜色。
 
@@ -402,7 +435,10 @@ struct RadioExample {
 
 
 
-#### 示例2 （设置选中样式）
+### 示例2 （设置选中样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置indicatorType和indicatorBuilder以自定义选中样式。
 
@@ -463,7 +499,10 @@ struct RadioExample {
 
 
 
-#### 示例3（设置自定义样式）
+### 示例3（设置自定义样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过contentModifier实现自定义单选框样式。
 
@@ -528,4 +567,4 @@ struct RadioExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/zNccztlrTt6o_puPPL1S_Q/zh-cn_image_0000002674634534.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095449Z&HW-CC-Expire=86400&HW-CC-Sign=59CF3638AA7301B674B31679EE0781965BDA6A66F59F663C474E4DF123E7D6ED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/RdChqzDLQ_-g2fvxX4sJgg/zh-cn_image_0000002717612738.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073106Z&HW-CC-Expire=86400&HW-CC-Sign=CDCC061C3BE749653BAFB395572D1C40BD7E60F9D80CB0A7248D2DE0B11AC705)

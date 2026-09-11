@@ -1,9 +1,9 @@
 # ShortcutInfo
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bundlemanager-shortcutinfo
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 应用[module.json5配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#shortcuts标签)中定义的快捷方式信息，可以通过[getAllShortcutInfoForSelf接口](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-shortcutmanager#shortcutmanagergetallshortcutinfoforself)获取。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { shortcutManager } from '@kit.AbilityKit';
@@ -22,13 +23,15 @@ import { shortcutManager } from '@kit.AbilityKit';
 
 
 
-#### ShortcutWant
+## ShortcutWant
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 快捷方式内定义的目标[wants](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#wants标签)信息集合。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Launcher
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -40,13 +43,15 @@ import { shortcutManager } from '@kit.AbilityKit';
 
 
 
-#### ShortcutInfo
+## ShortcutInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 快捷方式的配置信息。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Launcher
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -66,13 +71,15 @@ import { shortcutManager } from '@kit.AbilityKit';
 
 
 
-#### ParameterItem
+## ParameterItem
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 快捷方式配置信息中的自定义数据。由开发者自行决定传入的键值对，可以通过key值获取对应的value值。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Launcher
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

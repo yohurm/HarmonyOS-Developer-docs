@@ -1,21 +1,22 @@
 # 使用HiCollie检测业务线程卡死卡顿问题（C/C++）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hicollie-guidelines-ndk
 
-#### 简介
+## 简介
 
 用户在使用应用时，如果出现点击无反应或应用无响应等情况，并且持续时间超过一定限制，就会被定义为[应用冻屏](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appfreeze-guidelines)。本文面向开发者介绍HiCollie模块对外提供检测业务线程卡死、卡顿，以及上报卡死事件的能力。
 
 
 
-#### 接口说明
+## 接口说明
+
 
 | 接口名 | 描述 |
 | --- | --- |
-| OH_HiCollie_Init_StuckDetection | 注册应用业务线程卡死的周期性检测任务。用户实现回调函数, 用于定时检测业务线程卡死情况。 默认检测时间：3s上报BUSSINESS_THREAD_BLOCK_3S告警事件，6s上报BUSSINESS_THREAD_BLOCK_6S卡死事件。 说明：在非主线程使用该接口。 |
-| OH_HiCollie_Init_StuckDetectionWithTimeout | 注册应用业务线程卡死的周期性检测任务。用户实现回调函数, 用于定时检测业务线程卡死情况。 开发者可以设置卡死检测时间，可设置的时间范围：[3, 15]，单位：s。 说明： - 在非主线程使用该接口。 - 从API version 18开始，支持该接口。 |
+| OH_HiCollie_Init_StuckDetection | 注册应用业务线程卡死的周期性检测任务。用户实现回调函数，用于定时检测业务线程卡死情况。 默认检测时间：3s上报BUSSINESS_THREAD_BLOCK_3S告警事件，6s上报BUSSINESS_THREAD_BLOCK_6S卡死事件。 说明：在非主线程使用该接口。 |
+| OH_HiCollie_Init_StuckDetectionWithTimeout | 注册应用业务线程卡死的周期性检测任务。用户实现回调函数，用于定时检测业务线程卡死情况。 开发者可以设置卡死检测时间，可设置的时间范围：[3, 15]，单位：s。 说明： - 在非主线程使用该接口。 - 从API version 18开始，支持该接口。 |
 | OH_HiCollie_Init_JankDetection | 注册应用业务线程卡顿检测的回调函数。 线程卡顿监控功能需要开发者实现两个卡顿检测回调函数，分别放在业务线程处理事件的前后。作为插桩函数，监控业务线程处理事件执行情况。 说明：在非主线程使用该接口。 |
 | OH_HiCollie_Report | 上报应用业务线程卡死事件，生成卡死故障日志，辅助定位应用卡死问题。 先调用OH_HiCollie_Init_StuckDetection或OH_HiCollie_Init_StuckDetectionWithTimeout接口，初始化检测的task。 如果task任务超时，结合业务逻辑，调用OH_HiCollie_Report接口上报卡死事件。 说明： - 在非主线程使用该接口。 - 该接口仅对release版本应用生效，对debug版本应用不生效。 |
 | OH_HiCollie_ReportInputBlock | 上报应用输入无响应事件，生成卡死故障日志，辅助定位应用卡死问题。如果在PC或平板设备上，还会弹窗提示用户继续等待或关闭应用，其他设备不会弹窗。建议如下两种方式使用该接口。 方式一（推荐）：配合OH_HiCollie_Report、OH_HiCollie_Init_StuckDetection或OH_HiCollie_Init_StuckDetectionWithTimeout接口使用，业务线程通过上述接口周期性检测自身卡死情况，当满足业务线程卡死且有输入事件（如屏幕点击、鼠标点击、键盘输入等）条件时再调用OH_HiCollie_ReportInputBlock接口。 方式二：业务线程不通过OH_HiCollie_Report、OH_HiCollie_Init_StuckDetection或OH_HiCollie_Init_StuckDetectionWithTimeout接口也能检测自身卡死情况，则应用结合业务线程卡死情况和输入事件再调用OH_HiCollie_ReportInputBlock接口。 说明： - 该接口可以在主线程使用，比如输入事件需要先经过主线程再封装传递给业务线程处理，业务线程卡死时维护一个状态标志位，主线程结合业务线程的卡死状态标志位和输入事件再调用该接口。 - 该接口仅对release版本应用生效，对debug版本应用不生效。 - 从API version 24开始，支持该接口。 |
@@ -27,7 +28,7 @@ API接口的具体使用说明（参数使用限制、具体取值范围等）�
 
 
 
-#### 检测原理
+## 检测原理
 1. 业务线程卡顿OH_HiCollie_Init_JankDetection故障规格，请参考[主线程超时事件检测原理](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-watcher-mainthreadjank-events#检测原理)。
 2. 业务线程卡死故障：
 
@@ -45,13 +46,13 @@ API接口的具体使用说明（参数使用限制、具体取值范围等）�
 
 
 
-#### 日志规格
+## 日志规格
 1. 业务线程卡死故障日志以appfreeze-开头，生成在“设备/data/log/faultlog/faultlogger/”路径下。该日志文件名格式为“appfreeze-应用包名-应用UID-毫秒级时间”。具体规格可参考[应用冻屏（AppFreeze）日志规格](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appfreeze-guidelines#日志规格)。
 2. OH_HiCollie_Init_StuckDetection日志规格，请参考[主线程超时事件日志规格](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/apptask-timeout-guidelines#日志规格)。
 
 
 
-#### 开发步骤
+## 开发步骤
 
 下文将展示如何在应用内增加一个按钮，并单击该按钮以调用HiCollie NDK接口。
 1. 在DevEco Studio中，新建Native C++工程，目录结构如下：

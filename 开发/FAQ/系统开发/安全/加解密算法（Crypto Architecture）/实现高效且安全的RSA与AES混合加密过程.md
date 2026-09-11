@@ -77,14 +77,14 @@ struct rsaWithAES {
   }
 }
 
-// 生成随机数
+<em>// </em><em>生成随机数</em>
 function generateRandom(len: number) {
   let rand = cryptoFramework.createRandom();
   let generateRandSync = rand.generateRandomSync(len);
   return generateRandSync;
 }
 
-// 获取iv值
+<em>// </em><em>获取iv值</em>
 function genIvParamsSpec() {
   let ivBlob = generateRandom(16);
   let ivParamsSpec: cryptoFramework.IvParamsSpec = {
@@ -96,7 +96,7 @@ function genIvParamsSpec() {
 
 let iv = genIvParamsSpec();
 
-// 生成RSA密钥对
+<em>// </em><em>生成RSA密钥对</em>
 function genKeyPairByData() {
   let pubKeyData =
     new Uint8Array([48, 129, 159, 48, 13, 6, 9, 42, 134, 72, 134, 247, 13, 1, 1, 1, 5, 0, 3, 129, 141, 0, 48, 129, 137,
@@ -141,7 +141,7 @@ function genKeyPairByData() {
   return keyPair;
 }
 
-// 生成AES密钥
+<em>// </em><em>生成AES密钥</em>
 function genSymKeyByData(symKeyData: Uint8Array) {
   let symKeyBlob: cryptoFramework.DataBlob = { data: symKeyData };
   let aesGenerator = cryptoFramework.createSymKeyGenerator('AES128');
@@ -150,7 +150,7 @@ function genSymKeyByData(symKeyData: Uint8Array) {
   return symKey;
 }
 
-// 使用RSA公钥加密AES密钥
+<em>// </em><em>使用RSA公钥加密AES</em><em>密钥</em>
 function encryptAESKey(keyData_AES: Uint8Array, publicKey: cryptoFramework.PubKey) {
   let plainText: cryptoFramework.DataBlob = { data: keyData_AES };
   let cipher = cryptoFramework.createCipher('RSA1024|PKCS1');
@@ -159,7 +159,7 @@ function encryptAESKey(keyData_AES: Uint8Array, publicKey: cryptoFramework.PubKe
   return encryptData;
 }
 
-// 使用AES密钥加密数据
+<em>// </em><em>使用AES密钥加密数据</em>
 function encryptMessByAES(keyData_AES: Uint8Array, message: string) {
   let symKey = genSymKeyByData(keyData_AES);
   let plainText_Mes: cryptoFramework.DataBlob = { data: new Uint8Array(buffer.from(message, 'utf-8').buffer) };
@@ -170,7 +170,7 @@ function encryptMessByAES(keyData_AES: Uint8Array, message: string) {
   return cipherData;
 }
 
-// 使用RSA解密AES密钥
+<em>// </em><em>使用RSA解密AES密钥</em>
 function decryptAESKey(privateKey: cryptoFramework.PriKey, cipherText: cryptoFramework.DataBlob) {
   let decoder = cryptoFramework.createCipher('RSA1024|PKCS1');
   decoder.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, privateKey, null);
@@ -178,14 +178,14 @@ function decryptAESKey(privateKey: cryptoFramework.PriKey, cipherText: cryptoFra
   return decryptData;
 }
 
-// 使用AES密钥解密数据
+<em>// </em><em>使用AES密钥解密数据</em>
 function decryptMessage(priKey_RSA: cryptoFramework.PriKey, encryptText_AESKey: cryptoFramework.DataBlob,
   cipherText: cryptoFramework.DataBlob) {
-  // 使用RSA解密AES密钥
+  <em>// 使用RSA解密AES密钥</em>
   let decryptText_AESKey = decryptAESKey(priKey_RSA, encryptText_AESKey);
-  // 获取AES的密钥值
+  <em>// 获取AES的密钥值</em>
   let symKey = genSymKeyByData(decryptText_AESKey.data);
-  // 解密
+  <em>// 解密</em>
   let decoder = cryptoFramework.createCipher('AES128|CBC|PKCS7');
   decoder.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, iv);
   let decryptData = decoder.doFinalSync(cipherText);
@@ -193,22 +193,22 @@ function decryptMessage(priKey_RSA: cryptoFramework.PriKey, encryptText_AESKey: 
 }
 
 function main() {
-  // 待加密数据
+ <em> // 待加密数据</em>
   let message = 'This is a test';
-  // 创建RSA密钥对
+  <em>// </em><em>创建RSA密钥对</em>
   let keyPair_RSA = genKeyPairByData();
-  // 公钥
+ <em> // 公钥</em>
   let pubKey_RSA = keyPair_RSA.pubKey;
-  // 私钥
+ <em> // 私钥</em>
   let priKey_RSA = keyPair_RSA.priKey;
-  // 创建AES密钥
+ <em> // 创建AES密钥</em>
   let keyData_AES = new Uint8Array([83, 217, 231, 76, 28, 113, 23, 219, 250, 71, 209, 210, 205, 97, 32, 159]);
-  // 使用AES密钥加密数据
+ <em> // 使用AES密钥加密数据</em>
   let encryptText = encryptMessByAES(keyData_AES, message);
-  // 使用RSA公钥加密AES密钥后，该加密后的密钥具有较高的安全性
+  <em>// </em><em>使用RSA公钥加密AES密钥后，该加密后的密钥具有较高的安全性</em>
   let encryptText_AESKey = encryptAESKey(keyData_AES, pubKey_RSA);
 
-  // 获取解密后的数据用于进行结果比对验证
+  <em>// 获取解密后的数据用于进行结果比对验证</em>
   let decryptText = decryptMessage(priKey_RSA, encryptText_AESKey, encryptText);
   let dec_message = buffer.from(decryptText.data).toString('utf-8');
   console.info('结果对比：' + (message === dec_message));

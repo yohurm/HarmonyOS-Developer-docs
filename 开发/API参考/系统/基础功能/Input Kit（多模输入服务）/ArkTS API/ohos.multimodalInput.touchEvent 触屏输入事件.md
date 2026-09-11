@@ -1,9 +1,9 @@
 # @ohos.multimodalInput.touchEvent (触屏输入事件)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-touchevent
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设备上报的触屏输入事件，继承自[InputEvent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inputevent)。
  
@@ -12,24 +12,27 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-import { Action,ToolType,SourceType,Touch,TouchEvent } from '@kit.InputKit';
+import { KeyAction,ToolType,SourceType,Touch,TouchEvent } from '@kit.InputKit';
 ```
  
   
 
-#### Action
+## Action
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 触屏输入事件类型。
  
 **系统能力：** SystemCapability.MultimodalInput.Input.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CANCEL | 0 | 触屏取消。触屏down事件异常打断，未正常闭环，例如：手指按下后未抬起，屏幕发生旋转、折叠或有新hover等场景时触发cancel事件。 |
@@ -43,14 +46,16 @@ import { Action,ToolType,SourceType,Touch,TouchEvent } from '@kit.InputKit';
  
   
 
-#### ToolType
+## ToolType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 操作触屏的工具类型。
  
 **系统能力：** SystemCapability.MultimodalInput.Input.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | FINGER | 0 | 手指。 |
@@ -65,14 +70,16 @@ import { Action,ToolType,SourceType,Touch,TouchEvent } from '@kit.InputKit';
  
   
 
-#### SourceType
+## SourceType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 触屏来源的设备类型，当前支持触屏、手写笔、触控板类型上报。
  
 **系统能力：** SystemCapability.MultimodalInput.Input.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | TOUCH_SCREEN | 0 | 触摸屏。 |
@@ -82,14 +89,16 @@ import { Action,ToolType,SourceType,Touch,TouchEvent } from '@kit.InputKit';
  
   
 
-#### Touch
+## Touch
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 触屏点信息。
  
 **系统能力：** SystemCapability.MultimodalInput.Input.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | id | number | 否 | 否 | 触屏输入事件ID。 |
@@ -116,14 +125,16 @@ import { Action,ToolType,SourceType,Touch,TouchEvent } from '@kit.InputKit';
  
   
 
-#### TouchEvent
+## TouchEvent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 触屏输入事件。
  
 **系统能力：** SystemCapability.MultimodalInput.Input.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | action | Action | 否 | 否 | 触屏输入事件类型。 |

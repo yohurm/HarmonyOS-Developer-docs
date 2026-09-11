@@ -1,13 +1,13 @@
 # ohpm unpublish
 
-更新时间：2026-07-28 12:07:32
+更新时间：2026-08-29 09:41:34
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-unpublish
 
 下架已发布的三方库。
  
 
-#### 命令格式
+## 命令格式
 
 ```text
 ohpm unpublish [options] [<@group>]<pkg>[@<version>]
@@ -19,7 +19,7 @@ ohpm unpublish [options] [<@group>]<pkg>[@<version>]
  
  
 
-#### 功能描述
+## 功能描述
 
 - 从 OpenHarmony 三方库中心仓下架已经发布并审核通过上架的三方库。
 - 若不指定版本，则默认下架三方库的所有版本，并且需要加上 -f  配置参数；全部版本均下架后，在 24h 内则不允许重新发布相同名称的三方库。
@@ -29,22 +29,22 @@ ohpm unpublish [options] [<@group>]<pkg>[@<version>]
  
  
 
-#### Options
+## Options
 
  
 
-#### force
+### force
 
 - 默认值：false
 - 类型：Boolean
 - 别名：f
 
  
-默认不开启。使用 --force 或者 -f 参数，开启强制下架。
+默认不开启。使用--force或者-f参数，开启强制下架。
  
  
 
-#### publish_registry
+### publish_registry
 
 - 默认值：""
 - 类型：URL
@@ -54,7 +54,7 @@ ohpm unpublish [options] [<@group>]<pkg>[@<version>]
  
  
 
-#### publish_id
+### publish_id
 
 - 默认值：""
 - 类型：String
@@ -64,7 +64,7 @@ ohpm unpublish [options] [<@group>]<pkg>[@<version>]
  
  
 
-#### key_path
+### key_path
 
 - 默认值：""
 - 类型：String
@@ -74,7 +74,7 @@ ohpm unpublish [options] [<@group>]<pkg>[@<version>]
  
  
 
-#### fetch_timeout
+### fetch_timeout
 
 - 默认值：60000
 - 类型：Number
@@ -85,17 +85,19 @@ ohpm unpublish [options] [<@group>]<pkg>[@<version>]
  
  
 
-#### strict_ssl
+### strict_ssl
 
 - 默认值：true
 - 类型：Boolean
 
  
-可以在 unpublish 命令后面配置 --strict_ssl true 参数，校验 https 证书；配置 --strict_ssl false 参数，不校验 https 证书。
+可以在 unpublish 命令后面不配置参数、配置--strict_ssl或--strict_ssl true参数时，开启校验HTTPS证书。
+ 
+从ohpm 26.0.0.630版本开始，如需关闭校验，可配置--no-strict_ssl或--strict_ssl false参数，推荐使用--no-strict_ssl参数。
  
  
 
-#### log_level
+### log_level
 
 - 默认值：无
 - 类型：String
@@ -105,7 +107,7 @@ ohpm unpublish [options] [<@group>]<pkg>[@<version>]
  
  
 
-#### debug
+### debug
 
 - 默认值：false
 - 类型：Boolean
@@ -115,7 +117,7 @@ ohpm unpublish [options] [<@group>]<pkg>[@<version>]
  
  
 
-#### 示例
+## 示例
 
 下架已发布的三方库，执行以下命令：
  
@@ -126,4 +128,4 @@ ohpm unpublish demo@1.0.0 -f
 结果示例：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/P2_A0RFOTS2M1RmbLmfKxA/zh-cn_image_0000002678157173.png?HW-CC-KV=V1&HW-CC-Date=20260730T071814Z&HW-CC-Expire=86400&HW-CC-Sign=934E25FE3432807F6C1DFAC606B913D2A9C9CD3B92C92802EBB2AD7623ED1855)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/W7mmW-qmRTmlOhTnBBsuaw/zh-cn_image_0000002731382783.png?HW-CC-KV=V1&HW-CC-Date=20260911T072818Z&HW-CC-Expire=86400&HW-CC-Sign=C92ABF1787C764A242582F9947B320591492284AD1D220820BF2F7287EBCEC38)

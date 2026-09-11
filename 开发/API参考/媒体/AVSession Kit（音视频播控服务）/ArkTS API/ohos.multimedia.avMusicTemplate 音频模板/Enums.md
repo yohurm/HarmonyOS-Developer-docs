@@ -1,15 +1,19 @@
 # Enums
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-avmusictemplate-e
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 本模块首批接口从API version 23开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 本模块仅适用于API version 23及以上版本的Car设备。
 
   
 
-#### AVMusicTemplateType
+## AVMusicTemplateType
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示音频模板类型的枚举。
  
@@ -17,14 +21,18 @@
  
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| DEFAULT | 'smartCar' | 音频模板类型的默认值。 用于标识当前音频模板应用的业务类型，开发者创建模板时可根据自身业务修改此值。 |
+| DEFAULT | 'smartCar' | 音频模板类型的默认值。 用于标识当前音频模板应用的业务类型。 |
  
  
   
 
-#### EntityType
+## EntityType
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示媒体资源类型的枚举。
  
@@ -32,6 +40,7 @@
  
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | UNKNOWN | 0 | 未知的媒体资源类型。 |
@@ -45,7 +54,10 @@
  
   
 
-#### PlaybackState
+## PlaybackState
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示媒体资源的播放状态的枚举。
  
@@ -53,6 +65,7 @@
  
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | PLAYBACK_STATE_PREPARE | 0 | 准备中状态。 表示媒体文件尚未准备好播放，媒体正在加载或缓冲中。 |
@@ -66,7 +79,10 @@
  
   
 
-#### Sort
+## Sort
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示查询到的列表数据排序类型的枚举。
  
@@ -74,16 +90,20 @@
  
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| NONE | 0 | 默认值，默认正序。 |
+| NONE | 0 | 不指定排序方式，使用默认正序。 |
 | ORDER | 1 | 正序。 |
 | REVERSE_ORDER | 2 | 倒序。 |
  
  
   
 
-#### SettingType
+## SettingType
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示设置类型的枚举。
  
@@ -91,6 +111,7 @@
  
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SWITCH | 0 | 开关设置，用于控制功能的开启或关闭。 |
@@ -100,7 +121,10 @@
  
   
 
-#### DialogType
+## DialogType
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示对话框类型的枚举。
  
@@ -108,6 +132,7 @@
  
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NORMAL | 0 | 普通对话框。 |
@@ -122,7 +147,10 @@
  
   
 
-#### ButtonType
+## ButtonType
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示按钮类型的枚举。
  
@@ -130,6 +158,7 @@
  
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NORMAL | 0 | 普通按钮。 |
@@ -138,7 +167,10 @@
  
   
 
-#### MemberPurchaseType
+## MemberPurchaseType
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示会员购买类型的枚举。
  
@@ -146,6 +178,7 @@
  
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NORMAL | 'normal' | 常规购买。 |
@@ -154,7 +187,10 @@
  
   
 
-#### SearchPlayInfoType
+## SearchPlayInfoType
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示搜播信息类型的枚举。
  
@@ -162,6 +198,7 @@
  
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | PLAY_MUSIC | 'playMusic' | 播放音乐。 |
@@ -170,7 +207,10 @@
  
   
 
-#### DownloadStatus
+## DownloadStatus
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示下载状态类型的枚举。
  
@@ -178,6 +218,7 @@
  
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DOWNLOAD_SUCCESS | 0 | 下载成功。 |
@@ -187,7 +228,10 @@
  
   
 
-#### AVMusicTemplateErrorCode
+## AVMusicTemplateErrorCode
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示错误码类型的枚举。
  
@@ -195,6 +239,7 @@
  
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ERR_CODE_CREATE_AV_MUSIC_TEMPLATE_FAILED | 35000001 | 音频模板创建失败。 |

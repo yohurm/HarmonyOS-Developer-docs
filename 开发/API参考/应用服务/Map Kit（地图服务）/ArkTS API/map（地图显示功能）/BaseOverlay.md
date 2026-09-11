@@ -1,11 +1,12 @@
 # Interface (BaseOverlay)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-baseoverlay
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -15,7 +16,8 @@ import { map, mapCommon } from '@kit.MapKit';
  
   
 
-#### BaseOverlay
+## BaseOverlay
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -29,6 +31,7 @@ import { map, mapCommon } from '@kit.MapKit';
  
 **起始版本：** 4.1.0(11)
   
+
 | 返回类型 | 方法 |
 | --- | --- |
 | string | getId() 获取覆盖物的ID属性。 |
@@ -43,7 +46,8 @@ import { map, mapCommon } from '@kit.MapKit';
  
   
 
-#### getId
+### getId
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -61,6 +65,7 @@ getId(): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 覆盖物的ID。 |
@@ -82,7 +87,8 @@ let id: string = marker.getId();
  
   
 
-#### getZIndex
+### getZIndex
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -100,6 +106,7 @@ getZIndex(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 覆盖物的z指数。z指数指覆盖物的叠加顺序，具有较大z指数的覆盖物会绘制在具有较小z指数的覆盖物上，具有相同z指数的叠加顺序为元素添加的先后顺序。 |
@@ -114,7 +121,8 @@ let zIndex: number = marker.getZIndex();
  
   
 
-#### getTag
+### getTag
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -132,6 +140,7 @@ getTag(): Object
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Object | 覆盖物的tag属性。 |
@@ -146,7 +155,8 @@ let tag: Object = marker.getTag();
  
   
 
-#### isVisible
+### isVisible
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -164,6 +174,7 @@ isVisible(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 覆盖物的可见性。 - true：可见 - false：不可见 |
@@ -178,7 +189,8 @@ let isVisible: boolean = marker.isVisible();
  
   
 
-#### remove
+### remove
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -203,7 +215,8 @@ marker.remove();
  
   
 
-#### setZIndex
+### setZIndex
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -221,6 +234,7 @@ setZIndex(zIndex: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | zIndex | number | 是 | 覆盖物的z指数。z指数指覆盖物的叠加顺序，具有较大z指数的覆盖物会绘制在具有较小z指数的覆盖物上，具有相同z指数的叠加顺序为元素添加的先后顺序。异常值不处理。 |
@@ -235,7 +249,8 @@ marker.setZIndex(3);
  
   
 
-#### setTag
+### setTag
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -253,6 +268,7 @@ setTag(tag: Object): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | tag | Object | 是 | 覆盖物的tag属性，异常值不处理。 |
@@ -268,7 +284,8 @@ marker.setTag(tag);
  
   
 
-#### setVisible
+### setVisible
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -286,6 +303,7 @@ setVisible(visible: boolean): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | visible | boolean | 是 | 覆盖物的可见性，异常值不处理。 - true：可见 - false：不可见 |

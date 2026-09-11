@@ -1,11 +1,12 @@
 # XEG_AdaptiveVRSDescription
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-kit-xeg-adaptivevrsdescription
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -19,16 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | float * reprojectionMatrix | 此参数为重投影矩阵的指针，计算公式为：（上一帧投影矩阵*上一帧的观察矩阵）*（（当前帧的投影矩阵*当前帧的观察矩阵）的逆矩阵），矩阵必须是4*4列主序的矩阵。此参数可以设为空指针。 |
@@ -43,13 +47,15 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### inputColorImage
+### inputColorImage
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -63,7 +69,8 @@ VkImageView XEG_AdaptiveVRSDescription::inputColorImage
  
   
 
-#### inputDepthImage
+### inputDepthImage
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -77,7 +84,8 @@ VkImageView XEG_AdaptiveVRSDescription::inputDepthImage
  
   
 
-#### outputShadingRateImage
+### outputShadingRateImage
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -91,7 +99,8 @@ VkImageView XEG_AdaptiveVRSDescription::outputShadingRateImage
  
   
 
-#### reprojectionMatrix
+### reprojectionMatrix
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 

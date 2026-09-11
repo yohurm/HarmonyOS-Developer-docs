@@ -1,9 +1,9 @@
 # AbilityStartCallback
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-abilitystartcallback
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义拉起UIExtensionAbility执行结果的回调。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { common } from '@kit.AbilityKit';
@@ -22,18 +23,21 @@ import { common } from '@kit.AbilityKit';
  
   
 
-#### AbilityStartCallback
+## AbilityStartCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | completionHandler21+ | CompletionHandlerForAbilityStartCallback | 否 | 是 | 用于返回拉起指定类型的Ability组件的回调结果。 元服务API：从API version 21开始，该接口支持在元服务中使用。 |
@@ -41,9 +45,10 @@ import { common } from '@kit.AbilityKit';
  
   
 
-#### onError
+### onError
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onError(code: number, name: string, message: string): void
  
@@ -55,10 +60,11 @@ onError(code: number, name: string, message: string): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | code | number | 是 | 拉起UIExtensionAbility执行失败时返回的结果码。 |
-| name | string | 是 | 拉起UIExtensionAbility执行失败时返回的名称。 |
+| name | string | 是 | 拉起UIExtensionAbility执行失败时返回的错误名称，用于标识错误类型。 |
 | message | string | 是 | 拉起UIExtensionAbility执行失败时返回的错误信息。 |
  
  
@@ -75,7 +81,7 @@ export default class EntryAbility extends UIAbility {
     };
     let abilityStartCallback: common.AbilityStartCallback = {
       onError: (code: number, name: string, message: string) => {
-        console.info(`code: ${code}, name: ${name}, message: ${message}`);
+        console.error(`code: ${code}, name: ${name}, message: ${message}`);
       },
       onResult: (abilityResult: common.AbilityResult) => {
         console.info(`resultCode: ${abilityResult.resultCode}, bundleName: ${abilityResult.want?.bundleName}`);
@@ -95,9 +101,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### onResult12+
+### onResult12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onResult?(parameter: AbilityResult): void
  
@@ -109,6 +116,7 @@ onResult?(parameter: AbilityResult): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | parameter | AbilityResult | 是 | 当调用terminateSelfWithResult方法终止UIExtensionAbility时返回的结果。 |

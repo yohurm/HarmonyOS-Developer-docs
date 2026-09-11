@@ -1,11 +1,12 @@
 # XEG_SpatialUpscaleDescription
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-kit-xeg-spatialupscaledescription
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -19,16 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | VkImageView inputImage | 超分输入图像的VkImageView，需要是有效的VkImageView，否则会出现未定义行为，如渲染失败或程序崩溃。 |
@@ -41,13 +45,15 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### inputImage
+### inputImage
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -61,7 +67,8 @@ VkImageView XEG_SpatialUpscaleDescription::inputImage
  
   
 
-#### outputImage
+### outputImage
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 

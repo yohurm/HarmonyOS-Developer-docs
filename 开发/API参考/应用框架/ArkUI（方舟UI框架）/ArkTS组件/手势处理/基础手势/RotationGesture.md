@@ -1,9 +1,9 @@
 # RotationGesture
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-gestures-rotationgesture
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于触发旋转手势，最少需要2指，最多5指，最小角度变化为1度，适用于需要识别用户多指旋转操作并实现旋转类交互的场景。该手势不支持通过触控板双指旋转操作触发。
  
@@ -12,15 +12,17 @@
 
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### RotationGesture
+### RotationGesture
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 RotationGesture(value?: { fingers?: number; angle?: number })
  
@@ -32,6 +34,7 @@ RotationGesture(value?: { fingers?: number; angle?: number })
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | { fingers?: number; angle?: number } | 否 | 设置旋转手势事件参数。 - fingers：触发旋转手势所需的最少手指数， 最小为2指，最大为5指。 默认值：2 取值范围：[2, 5]。当设置的值小于2或大于5时，会被转化为默认值。 触发手势时手指数量可以多于fingers参数值，但仅最先落下的两指参与手势计算。 - angle：触发旋转手势所需的最小角度变化，单位为deg。 默认值：1 说明： 当改变度数的值小于等于0或大于360时，会被转化为默认值。 |
@@ -39,9 +42,10 @@ RotationGesture(value?: { fingers?: number; angle?: number })
  
   
 
-#### RotationGesture15+
+### RotationGesture15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 RotationGesture(options?: RotationGestureHandlerOptions)
  
@@ -55,6 +59,7 @@ RotationGesture(options?: RotationGestureHandlerOptions)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | RotationGestureHandlerOptions | 否 | 旋转手势处理器配置参数。 |
@@ -62,9 +67,10 @@ RotationGesture(options?: RotationGestureHandlerOptions)
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!TIP]
 > 在 GestureEvent 的fingerList元素中，手指索引编号与位置相对应，即fingerList[index]的id为index。对于先按下但未参与当前手势触发的手指，fingerList中对应的位置为空。建议优先使用fingerInfos。
@@ -72,9 +78,10 @@ RotationGesture(options?: RotationGestureHandlerOptions)
  
   
 
-#### onActionStart
+### onActionStart
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onActionStart(event: (event: GestureEvent) => void)
  
@@ -86,6 +93,7 @@ onActionStart(event: (event: GestureEvent) => void)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | (event: GestureEvent) => void | 是 | 手势事件回调函数。GestureEvent的fingerList元素中，手指索引编号与位置相对应，即fingerList[index]的id为index；对于先按下但未参与当前手势触发的手指，fingerList中对应的位置为空，建议优先使用fingerInfos。 |
@@ -93,9 +101,10 @@ onActionStart(event: (event: GestureEvent) => void)
  
   
 
-#### onActionUpdate
+### onActionUpdate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onActionUpdate(event: (event: GestureEvent) => void)
  
@@ -107,6 +116,7 @@ onActionUpdate(event: (event: GestureEvent) => void)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | (event: GestureEvent) => void | 是 | 手势事件回调函数。 |
@@ -114,9 +124,10 @@ onActionUpdate(event: (event: GestureEvent) => void)
  
   
 
-#### onActionEnd
+### onActionEnd
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onActionEnd(event: (event: GestureEvent) => void)
  
@@ -128,6 +139,7 @@ onActionEnd(event: (event: GestureEvent) => void)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | (event: GestureEvent) => void | 是 | 手势事件回调函数。 |
@@ -135,9 +147,10 @@ onActionEnd(event: (event: GestureEvent) => void)
  
   
 
-#### onActionCancel
+### onActionCancel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onActionCancel(event: () => void)
  
@@ -149,6 +162,7 @@ onActionCancel(event: () => void)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | () => void | 是 | 手势事件回调函数，用于处理旋转手势取消事件；该回调不接收参数，不返回手势事件信息。 |
@@ -156,9 +170,10 @@ onActionCancel(event: () => void)
  
   
 
-#### onActionCancel18+
+### onActionCancel18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onActionCancel(event: Callback&lt;GestureEvent&gt;)
  
@@ -172,6 +187,7 @@ onActionCancel(event: Callback&lt;GestureEvent&gt;)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | Callback&lt;GestureEvent&gt; | 是 | 手势事件回调函数，用于接收旋转手势取消时的手势事件信息，回调参数为GestureEvent对象。 |
@@ -179,9 +195,10 @@ onActionCancel(event: Callback&lt;GestureEvent&gt;)
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置RotationGesture实现了双指旋转手势的识别。
  
@@ -228,4 +245,4 @@ struct RotationGestureExample {
 ```
  
  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/7ot7K6vVR-eea2cQq7WhnA/zh-cn_image_0000002686087879.png?HW-CC-KV=V1&HW-CC-Date=20260730T071458Z&HW-CC-Expire=86400&HW-CC-Sign=06E2444C0908F865D81F1C4D42DF9B951ED54BCBA35B1F82B4F5D47CAFB5E8D6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/vo_dNS5CRqCn8I5wN7N2SQ/zh-cn_image_0000002717772520.png?HW-CC-KV=V1&HW-CC-Date=20260911T073110Z&HW-CC-Expire=86400&HW-CC-Sign=1CF0B050627D84383CF19F365A68CCC230540FB4315BC02DD4E380CED9FF7BF0)

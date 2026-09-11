@@ -1,10 +1,10 @@
 # ROI视频编码
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-encoding-roi
 
-#### 基础概念
+## 基础概念
 
 从API version 20开始支持ROI视频编码（Region Of Interest Video Coding），该功能是基于硬件H.264/H.265编码能力扩展的高级优化技术。其核心逻辑为对画面中指定的重点区域分配更多编码资源实现高画质编码。在有限带宽条件下保障ROI区域内容清晰呈现，显著提升整体视觉体验。
 
@@ -12,7 +12,7 @@
 
 
 
-#### 适用场景
+## 适用场景
 
 ROI视频编码适用于因网络带宽限制导致码率不能满足视频画质要求，且能明确定义关键画面内容（ROI区域）的场景。比如视频通话、视频直播、安全监控等。
 
@@ -26,6 +26,7 @@ ROI视频编码适用于因网络带宽限制导致码率不能满足视频画�
 
 
 根据编码模式和ROI配置方式的不同，提供了三种ROI编码开发示例，开发者可根据实际业务和技术架构选择。
+
 
 | 不同场景对照点 | 直播/视频通话场景 | 录像场景 | 编辑导出/内容发布场景 |
 | --- | --- | --- | --- |
@@ -43,7 +44,7 @@ ROI视频编码适用于因网络带宽限制导致码率不能满足视频画�
 
 
 
-#### 约束和限制
+## 约束和限制
 
 **支持的编码器：** H.264 8bit硬件编码、H.265 8bit硬件编码、H.265 10bit硬件编码。
 
@@ -53,7 +54,7 @@ ROI视频编码适用于因网络带宽限制导致码率不能满足视频画�
 
 
 
-#### 参数要求说明
+## 参数要求说明
 
 ROI配置参数最终以字符串形式下发到编码器。从API版本26.0.0开始支持键值对格式，同时兼容旧版纯数值格式。所有坐标参数和数值参数均为整数。
 
@@ -70,6 +71,7 @@ ROI配置参数最终以字符串形式下发到编码器。从API版本26.0.0�
 ROI是一个矩形区域，Top,Left和Bottom,Right分别定义了ROI的区域在图像中的左上角和右下角的坐标位置（如图1所示）。
 
 **键值对参数：**
+
 
 | 参数 | 含义 | 取值范围 | 是否必填 | 默认行为 |
 | --- | --- | --- | --- | --- |
@@ -96,7 +98,7 @@ ROI是一个矩形区域，Top,Left和Bottom,Right分别定义了ROI的区域在
 
 
 
-#### 生效机制说明
+## 生效机制说明
 
 配置ROI支持两种方式：**NativeBuffer元数据配置方式**和**编码输入回调配置方式**。编码输入回调配置方式包含编码输入参数回调（Surface模式）和编码输入buffer回调（Buffer模式）。
 
@@ -128,7 +130,7 @@ ROI是一个矩形区域，Top,Left和Bottom,Right分别定义了ROI的区域在
 
 
 
-#### 开发示例
+## 开发示例
 
 以下开发示例按照编码模式组织。Surface模式和Buffer模式共用相同的ROI信息获取与组装流程，区别在于如何将ROI配置到编码器。
 
@@ -136,7 +138,7 @@ ROI是一个矩形区域，Top,Left和Bottom,Right分别定义了ROI的区域在
 
 
 
-#### 方式一：通过NativeBuffer元数据配置（推荐）
+### 方式一：通过NativeBuffer元数据配置（推荐）
 
 Surface模式下，相机将视频帧输出到OH_NativeImage的Surface上，开发者在帧处理线程中从每帧的NativeBuffer元数据提取ROI信息并组装成配置字符串，随后将ROI字符串写入编码器输入帧的NativeBuffer元数据，实现ROI随帧下发到编码器（如图2所示）。
 
@@ -290,7 +292,7 @@ void RenderThread::FlushAndCleanup(OHNativeWindowBuffer *InBuffer, int32_t fence
 
 
 
-#### 方式二：通过编码输入参数回调配置
+### 方式二：通过编码输入参数回调配置
 
 此方式同样适用于Surface模式。从帧的NativeBuffer元数据中提取ROI信息，配置方式通过OH_VideoEncoder_RegisterParameterCallback注册的编码输入参数回调完成（如图3所示）。
 
@@ -299,11 +301,11 @@ void RenderThread::FlushAndCleanup(OHNativeWindowBuffer *InBuffer, int32_t fence
 **图3：编码输入参数回调接口配置ROI流程图**
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/eygVm8R3RjiuDfpgVaGjTw/zh-cn_image_0000002674633158.png?HW-CC-KV=V1&HW-CC-Date=20260813T095820Z&HW-CC-Expire=86400&HW-CC-Sign=3F7277A17C2244DF7C644E8C5281611687F18ABA3B01912F3F6F9AE897671075)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/gaE0ptclTK-y7l9DcM6CKw/zh-cn_image_0000002747211223.png?HW-CC-KV=V1&HW-CC-Date=20260911T073142Z&HW-CC-Expire=86400&HW-CC-Sign=A9B353CA486AAB9BB31D29D70F711B8054FB8BDA319C3E34FA997DADE204B011)
 
 
 详细开发步骤如下：
-1. 在CMakeList.txt中链接动态库。
+1. 在CMakeLists.txt中链接动态库。
 
   同[方式一：通过nativebuffer元数据配置（推荐）](#方式一通过nativebuffer元数据配置推荐)步骤1。
 2. 从视频帧NativeBuffer元数据提取ROI信息。
@@ -408,18 +410,18 @@ void VideoEncoder::ClearRoiQueue()
 
 
 
-#### 方式三：Buffer模式下配置ROI
+### 方式三：Buffer模式下配置ROI
 
 Buffer模式下，视频帧通过OH_VideoEncoder_PushInputBuffer送入编码器，开发者需要在OnNeedInputBuffer回调中填充帧像素数据的同时配置ROI信息。由于Buffer模式没有编码器Surface，帧像素数据需要从相机帧Buffer中拷贝出来，连同ROI字符串一起推入帧队列供编码回调消费（如图4所示）。
 
 **图4：编码输入Buffer回调接口配置ROI流程图**
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/oSmVMk2xQASTOCnhDZEmwA/zh-cn_image_0000002704273111.png?HW-CC-KV=V1&HW-CC-Date=20260813T095820Z&HW-CC-Expire=86400&HW-CC-Sign=49CCBAFDC94CDAD9C9356B324480253649491F22ACF971F894A2F41DDB6BF3AA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/I4wCLsEBRIywaKerPBxwCA/zh-cn_image_0000002717771288.png?HW-CC-KV=V1&HW-CC-Date=20260911T073142Z&HW-CC-Expire=86400&HW-CC-Sign=D893827BAA8C53872E9D402A4F6F40F4E8EC1B08A1C1F28A4A9129CE8BAB36EE)
 
 
 详细开发步骤如下：
-1. 在CMakeList.txt中链接动态库。
+1. 在CMakeLists.txt中链接动态库。
 
   同[方式一：通过nativebuffer元数据配置（推荐）](#方式一通过nativebuffer元数据配置推荐)步骤1。
 2. 从视频帧NativeBuffer元数据提取ROI信息。

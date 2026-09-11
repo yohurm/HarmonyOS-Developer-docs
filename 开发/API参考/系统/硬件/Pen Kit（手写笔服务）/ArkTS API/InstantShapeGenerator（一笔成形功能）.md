@@ -1,6 +1,6 @@
 # InstantShapeGenerator（一笔成形功能）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/pen-instantsshapegenerator
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -10,7 +10,8 @@
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -20,6 +21,7 @@ import { InstantShapeGenerator, ShapeInfo } from '@kit.Penkit';
  
 本模块提供以下类或接口，支持获取一笔成形的图像。
   
+
 | 名称 | 类型 | 说明 |
 | --- | --- | --- |
 | ShapeInfo | ShapeInfo | 一笔成形识别结果对象，包含识别的图像的基本信息。 |
@@ -27,6 +29,7 @@ import { InstantShapeGenerator, ShapeInfo } from '@kit.Penkit';
  
 本模块提供以下方法。
   
+
 | 方法名称 | 说明 |
 | --- | --- |
 | processTouchEvent | 传递触摸事件。 |
@@ -39,7 +42,8 @@ import { InstantShapeGenerator, ShapeInfo } from '@kit.Penkit';
  
   
 
-#### ShapeInfo
+## ShapeInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -51,6 +55,7 @@ import { InstantShapeGenerator, ShapeInfo } from '@kit.Penkit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | shapePath | Path2D | 否 | 否 | 图形对象。 |
@@ -62,7 +67,7 @@ import { InstantShapeGenerator, ShapeInfo } from '@kit.Penkit';
  
 ```text
 private shapeInfo : ShapeInfo = {
-shapePath: '',
+shapePath: new Path2D(),
 shapeString: '',
 shapeType: 0
 }
@@ -70,7 +75,8 @@ shapeType: 0
  
   
 
-#### processTouchEvent
+## processTouchEvent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -86,6 +92,7 @@ processTouchEvent(event: TouchEvent): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | TouchEvent | 是 | 当前触摸点事件。 |
@@ -95,6 +102,7 @@ processTouchEvent(event: TouchEvent): void
  
 以下错误码的详细介绍请参见[ArkTS API 错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pen)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1010410001 | internal recognition engine has been released. |
@@ -118,7 +126,8 @@ Canvas() {
  
   
 
-#### getPathFromString
+## getPathFromString
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -134,6 +143,7 @@ getPathFromString(shapeString: string, penSize: number): Path2D
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | shapeString | string | 是 | 形状字符串。无取值范围限制。 |
@@ -142,6 +152,7 @@ getPathFromString(shapeString: string, penSize: number): Path2D
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Path2D | 形状信息生成的Path2D对象。 |
@@ -151,6 +162,7 @@ getPathFromString(shapeString: string, penSize: number): Path2D
  
 以下错误码的详细介绍请参见[ArkTS API 错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pen)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1010410001 | internal recognition engine has been released. |
@@ -167,7 +179,8 @@ private shapeInfoCallback(shapeInfo: ShapeInfo) {
  
   
 
-#### notifyAreaChange
+## notifyAreaChange
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -183,6 +196,7 @@ notifyAreaChange(width: number, height: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | width | number | 是 | 组件变更后的宽度。单位：vp。 |
@@ -193,6 +207,7 @@ notifyAreaChange(width: number, height: number): void
  
 以下错误码的详细介绍请参见[ArkTS API 错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pen)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1010410001 | internal recognition engine has been released. |
@@ -214,7 +229,8 @@ notifyAreaChange(width: number, height: number): void
  
   
 
-#### setPauseTime
+## setPauseTime
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -230,6 +246,7 @@ setPauseTime(time: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | time | number | 是 | 触发识别的暂停时间。 单位：ms。 |
@@ -239,6 +256,7 @@ setPauseTime(time: number): void
  
 以下错误码的详细介绍请参见[ArkTS API 错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pen)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1010410001 | internal recognition engine has been released. |
@@ -259,7 +277,8 @@ aboutToAppear() {
  
   
 
-#### release
+## release
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -284,7 +303,8 @@ aboutToDisappear(){
  
   
 
-#### onShapeRecognized
+## onShapeRecognized
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -300,6 +320,7 @@ onShapeRecognized(callback: Callback&lt;ShapeInfo&gt;): InstantShapeGenerator
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;ShapeInfo&gt; | 是 | 回调函数，返回一笔成形识别结果对象，包含识别的图像的基本信息。 |
@@ -307,6 +328,7 @@ onShapeRecognized(callback: Callback&lt;ShapeInfo&gt;): InstantShapeGenerator
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | InstantShapeGenerator | 一笔成形工具方法类实例。 |

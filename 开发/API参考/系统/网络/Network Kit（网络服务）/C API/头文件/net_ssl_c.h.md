@@ -1,13 +1,14 @@
 # net_ssl_c.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-net-ssl-c-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义SSL/TLS证书链校验模块C接口数据结构。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | uint32_t OH_NetStack_CertVerification(const struct NetStack_CertBlob *cert, const struct NetStack_CertBlob *caCert) | 证书链校验接口。 |
@@ -48,15 +52,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_NetStack_CertVerification()
+### OH_NetStack_CertVerification()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 uint32_t OH_NetStack_CertVerification(const struct NetStack_CertBlob *cert, const struct NetStack_CertBlob *caCert)
@@ -72,6 +78,7 @@ uint32_t OH_NetStack_CertVerification(const struct NetStack_CertBlob *cert, cons
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct NetStack_CertBlob *cert | 用户传入的待校验证书。 |
@@ -80,6 +87,7 @@ uint32_t OH_NetStack_CertVerification(const struct NetStack_CertBlob *cert, cons
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | uint32_t | 0 - 成功。 2305001 - 未指定的错误。 2305002 - 无法获取颁发者证书。 2305003 - 无法获取证书吊销列表（CRL）。 2305004 - 无法解密证书签名。 2305005 - 无法解密CRL签名。 2305006 - 无法解码颁发者公钥。 2305007 - 证书签名失败。 2305008 - CRL签名失败。 2305009 - 证书尚未生效。 2305010 - 证书已过期。 2305011 - CRL尚未有效。 2305012 - CRL已过期。 2305023 - 证书已被吊销。 2305024 - 证书颁发机构（CA）无效。 2305027 - 证书不受信任。 |
@@ -87,9 +95,10 @@ uint32_t OH_NetStack_CertVerification(const struct NetStack_CertBlob *cert, cons
  
   
 
-#### OH_NetStack_GetPinSetForHostName()
+### OH_NetStack_GetPinSetForHostName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NetStack_GetPinSetForHostName(const char *hostname, NetStack_CertificatePinning *pin)
@@ -105,6 +114,7 @@ int32_t OH_NetStack_GetPinSetForHostName(const char *hostname, NetStack_Certific
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *hostname | 主机名。 |
@@ -113,6 +123,7 @@ int32_t OH_NetStack_GetPinSetForHostName(const char *hostname, NetStack_Certific
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 0 - 成功。 401 - 参数设置错误。 2305999 - 内存错误。 |
@@ -120,9 +131,10 @@ int32_t OH_NetStack_GetPinSetForHostName(const char *hostname, NetStack_Certific
  
   
 
-#### OH_NetStack_GetCertificatesForHostName()
+### OH_NetStack_GetCertificatesForHostName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NetStack_GetCertificatesForHostName(const char *hostname, NetStack_Certificates *certs)
@@ -138,6 +150,7 @@ int32_t OH_NetStack_GetCertificatesForHostName(const char *hostname, NetStack_Ce
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *hostname | 主机名。 |
@@ -146,6 +159,7 @@ int32_t OH_NetStack_GetCertificatesForHostName(const char *hostname, NetStack_Ce
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 0 - 成功。 401 - 参数设置错误。 2305999 - 内存错误。 |
@@ -153,9 +167,10 @@ int32_t OH_NetStack_GetCertificatesForHostName(const char *hostname, NetStack_Ce
  
   
 
-#### OH_Netstack_DestroyCertificatesContent()
+### OH_Netstack_DestroyCertificatesContent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Netstack_DestroyCertificatesContent(NetStack_Certificates *certs)
@@ -171,6 +186,7 @@ void OH_Netstack_DestroyCertificatesContent(NetStack_Certificates *certs)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | NetStack_Certificates *certs | 证书信息。 |
@@ -178,9 +194,10 @@ void OH_Netstack_DestroyCertificatesContent(NetStack_Certificates *certs)
  
   
 
-#### OH_Netstack_IsCleartextPermitted()
+### OH_Netstack_IsCleartextPermitted()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Netstack_IsCleartextPermitted(bool *isCleartextPermitted)
@@ -196,6 +213,7 @@ int32_t OH_Netstack_IsCleartextPermitted(bool *isCleartextPermitted)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | bool *isCleartextPermitted | 输出参数，如果允许明文流量，则true，否则false。 |
@@ -203,6 +221,7 @@ int32_t OH_Netstack_IsCleartextPermitted(bool *isCleartextPermitted)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 0 - 成功。 201 - 权限被拒。 401 - 参数错误。 |
@@ -210,9 +229,10 @@ int32_t OH_Netstack_IsCleartextPermitted(bool *isCleartextPermitted)
  
   
 
-#### OH_Netstack_IsCleartextPermittedByHostName()
+### OH_Netstack_IsCleartextPermittedByHostName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Netstack_IsCleartextPermittedByHostName(const char *hostname, bool *isCleartextPermitted)
@@ -228,6 +248,7 @@ int32_t OH_Netstack_IsCleartextPermittedByHostName(const char *hostname, bool *i
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *hostname | 主机名。 |
@@ -236,6 +257,7 @@ int32_t OH_Netstack_IsCleartextPermittedByHostName(const char *hostname, bool *i
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 0 - 成功。 201 - 权限被拒。 401 - 参数错误。 |
@@ -243,9 +265,10 @@ int32_t OH_Netstack_IsCleartextPermittedByHostName(const char *hostname, bool *i
  
   
 
-#### OH_Netstack_IsCleartextCfgByComponent()
+### OH_Netstack_IsCleartextCfgByComponent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Netstack_IsCleartextCfgByComponent(const char *component, bool *componentCfg);
@@ -259,6 +282,7 @@ int32_t OH_Netstack_IsCleartextCfgByComponent(const char *component, bool *compo
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *component | 组件名称，当前支持的组件：Network Kit、ArkWeb。 |
@@ -267,6 +291,7 @@ int32_t OH_Netstack_IsCleartextCfgByComponent(const char *component, bool *compo
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 0 - 成功。 2100001 - 无效的参数值。 |
@@ -274,9 +299,10 @@ int32_t OH_Netstack_IsCleartextCfgByComponent(const char *component, bool *compo
  
   
 
-#### OH_NetStack_CreateAndVerifySortedCertChain()
+### OH_NetStack_CreateAndVerifySortedCertChain()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 uint32_t OH_NetStack_CreateAndVerifySortedCertChain(
@@ -298,6 +324,7 @@ uint32_t OH_NetStack_CreateAndVerifySortedCertChain(
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct NetStack_CertBlob *cert | 待校验证书数组。第一个元素（cert[0]）必须是叶子证书（end-entity certificate），其余元素为中间证书。 |
@@ -310,6 +337,7 @@ uint32_t OH_NetStack_CreateAndVerifySortedCertChain(
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | uint32_t | 0 - 成功。 2305001 - 未指定的错误。 2305002 - 无法获取颁发者证书。 2305003 - 无法获取证书吊销列表（CRL）。 2305004 - 无法解密证书签名。 2305005 - 无法解密CRL签名。 2305006 - 无法解码颁发者公钥。 2305007 - 证书签名失败。 2305008 - CRL签名失败。 2305009 - 证书尚未生效。 2305010 - 证书已过期。 2305011 - CRL尚未有效。 2305012 - CRL已过期。 2305018 - 自签名证书。 2305023 - 证书已被吊销。 2305024 - 证书颁发机构（CA）无效。 2305027 - 证书不受信任。 2305062 - 主机名验证失败。 2305069 - 无效的证书验证上下文。 |
@@ -317,9 +345,10 @@ uint32_t OH_NetStack_CreateAndVerifySortedCertChain(
  
   
 
-#### OH_NetStack_FreeCertChain()
+### OH_NetStack_FreeCertChain()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_NetStack_FreeCertChain(struct NetStack_CertBlob *certChain, size_t certCount)
@@ -335,6 +364,7 @@ void OH_NetStack_FreeCertChain(struct NetStack_CertBlob *certChain, size_t certC
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct NetStack_CertBlob *certChain | 由OH_NetStack_CreateAndVerifySortedCertChain返回的证书链。 |

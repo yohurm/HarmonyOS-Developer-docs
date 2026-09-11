@@ -1,11 +1,12 @@
 # Class (FontSizeAnimation)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-fontsizeanimation
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -15,7 +16,8 @@ import { map } from '@kit.MapKit';
  
   
 
-#### FontSizeAnimation
+## FontSizeAnimation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -31,7 +33,8 @@ import { map } from '@kit.MapKit';
  
   
 
-#### constructor
+### constructor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -49,6 +52,7 @@ constructor(fromSize: number, toSize: number)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fromSize | number | 是 | 起始的字体大小。取值范围：[0，100]，单位：px，异常值不处理。 |

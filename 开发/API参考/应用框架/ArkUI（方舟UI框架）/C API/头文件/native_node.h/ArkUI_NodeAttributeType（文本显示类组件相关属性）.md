@@ -1,15 +1,19 @@
 # ArkUI_NodeAttributeType（文本显示类组件相关属性）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-node-h-nodeattributetype-text
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_NodeAttributeType
 ```
 
 
-#### 概述
+## 概述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义ArkUI在Native侧可以设置的文本显示类组件相关属性样式集合，包含Text、Span、ImageSpan等组件属性设置。用于在Native开发场景中通过属性设置、属性获取接口配置文本组件的样式属性，如字体大小、颜色、行高、装饰线等，实现对文本显示效果的精细化控制和自定义。
 
@@ -21,7 +25,10 @@ enum ArkUI_NodeAttributeType
 
 
 
-#### NODE_TEXT_CONTENT
+## NODE_TEXT_CONTENT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_CONTENT = MAX_NODE_SCOPE_NUM * ARKUI_NODE_TEXT = 1000
@@ -35,12 +42,14 @@ Text组件设置文本内容属性，支持属性设置、属性重置和属性�
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 表示文本内容。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -49,7 +58,10 @@ Text组件设置文本内容属性，支持属性设置、属性重置和属性�
 
 
 
-#### NODE_FONT_COLOR
+## NODE_FONT_COLOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_FONT_COLOR = 1001
@@ -63,12 +75,14 @@ NODE_FONT_COLOR = 1001
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].u32 | 字体颜色数值，0xargb格式，形如 0xFFFF0000 表示红色。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -77,7 +91,10 @@ NODE_FONT_COLOR = 1001
 
 
 
-#### NODE_FONT_SIZE
+## NODE_FONT_SIZE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_FONT_SIZE = 1002
@@ -91,12 +108,14 @@ NODE_FONT_SIZE = 1002
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 字体大小数值，单位为fp。取值范围：[0, +∞)。传入负数时参数不生效。默认值：16fp。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -105,7 +124,10 @@ NODE_FONT_SIZE = 1002
 
 
 
-#### NODE_FONT_STYLE
+## NODE_FONT_STYLE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_FONT_STYLE = 1003
@@ -119,12 +141,14 @@ NODE_FONT_STYLE = 1003
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 字体样式，具体枚举值请参考ArkUI_FontStyle。默认值为ARKUI_FONT_STYLE_NORMAL。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -133,7 +157,10 @@ NODE_FONT_STYLE = 1003
 
 
 
-#### NODE_FONT_WEIGHT
+## NODE_FONT_WEIGHT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_FONT_WEIGHT = 1004
@@ -147,12 +174,14 @@ NODE_FONT_WEIGHT = 1004
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 字体粗细样式ArkUI_FontWeight。取值越大字体越粗。默认值为ARKUI_FONT_WEIGHT_NORMAL。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -161,7 +190,10 @@ NODE_FONT_WEIGHT = 1004
 
 
 
-#### NODE_TEXT_LINE_HEIGHT
+## NODE_TEXT_LINE_HEIGHT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_LINE_HEIGHT = 1005
@@ -175,12 +207,14 @@ NODE_TEXT_LINE_HEIGHT = 1005
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 表示行高值，单位为fp。取值范围：[0, +∞)。传入负数时参数不生效。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -189,7 +223,10 @@ NODE_TEXT_LINE_HEIGHT = 1005
 
 
 
-#### NODE_TEXT_DECORATION
+## NODE_TEXT_DECORATION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_DECORATION = 1006
@@ -203,6 +240,7 @@ NODE_TEXT_DECORATION = 1006
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 文本装饰线类型，具体枚举值请参考ArkUI_TextDecorationType。默认值为ARKUI_TEXT_DECORATION_TYPE_NONE，无装饰线。 |
@@ -212,6 +250,7 @@ NODE_TEXT_DECORATION = 1006
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -223,7 +262,10 @@ NODE_TEXT_DECORATION = 1006
 
 
 
-#### NODE_TEXT_CASE
+## NODE_TEXT_CASE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_CASE = 1007
@@ -237,12 +279,14 @@ NODE_TEXT_CASE = 1007
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 表示文本大小写类型，具体枚举值请参考ArkUI_TextCase。默认值为ARKUI_TEXT_CASE_NORMAL，表示保持原样。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -251,7 +295,10 @@ NODE_TEXT_CASE = 1007
 
 
 
-#### NODE_TEXT_LETTER_SPACING
+## NODE_TEXT_LETTER_SPACING
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_LETTER_SPACING = 1008
@@ -265,12 +312,14 @@ NODE_TEXT_LETTER_SPACING = 1008
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 表示字符间距值，单位为fp。取值范围：(-∞, +∞)。当取值为负值时，文字会被压缩。负值过小时会将组件内容区大小压缩为0，导致内容无法显示。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -279,7 +328,10 @@ NODE_TEXT_LETTER_SPACING = 1008
 
 
 
-#### NODE_TEXT_MAX_LINES
+## NODE_TEXT_MAX_LINES
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_MAX_LINES = 1009
@@ -293,12 +345,14 @@ NODE_TEXT_MAX_LINES = 1009
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 表示最大行数，取值范围：[0, +∞)。传入负数时参数不生效。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -307,7 +361,10 @@ NODE_TEXT_MAX_LINES = 1009
 
 
 
-#### NODE_TEXT_ALIGN
+## NODE_TEXT_ALIGN
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_ALIGN = 1010
@@ -321,12 +378,14 @@ NODE_TEXT_ALIGN = 1010
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 表示文本水平对齐方式，具体枚举值请参考ArkUI_TextAlignment。默认值为ARKUI_TEXT_ALIGNMENT_START，表示水平对齐首部。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -335,7 +394,10 @@ NODE_TEXT_ALIGN = 1010
 
 
 
-#### NODE_TEXT_OVERFLOW
+## NODE_TEXT_OVERFLOW
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_OVERFLOW = 1011
@@ -349,12 +411,14 @@ NODE_TEXT_OVERFLOW = 1011
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 表示文本超长时的显示方式，具体枚举值请参考ArkUI_TextOverflow。默认值为ARKUI_TEXT_OVERFLOW_NONE，表示文本超长时不裁剪显示。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -363,7 +427,10 @@ NODE_TEXT_OVERFLOW = 1011
 
 
 
-#### NODE_FONT_FAMILY
+## NODE_FONT_FAMILY
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_FONT_FAMILY = 1012
@@ -377,10 +444,12 @@ Text字体列表属性，支持属性设置、属性重置和属性获取接口�
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 字体字符串，多个字体用英文逗号(,)分隔。不传入时使用系统默认字体。 |
 | 返回： |  |
+
 
 
 | 类型 | 说明 |
@@ -390,7 +459,10 @@ Text字体列表属性，支持属性设置、属性重置和属性获取接口�
 
 
 
-#### NODE_TEXT_COPY_OPTION
+## NODE_TEXT_COPY_OPTION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_COPY_OPTION = 1013
@@ -404,12 +476,14 @@ NODE_TEXT_COPY_OPTION = 1013
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 复制粘贴方式，具体枚举值请参考ArkUI_CopyOptions。默认值为ARKUI_COPY_OPTIONS_NONE，表示不支持复制。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -418,7 +492,10 @@ NODE_TEXT_COPY_OPTION = 1013
 
 
 
-#### NODE_TEXT_BASELINE_OFFSET
+## NODE_TEXT_BASELINE_OFFSET
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_BASELINE_OFFSET = 1014
@@ -432,12 +509,14 @@ NODE_TEXT_BASELINE_OFFSET = 1014
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 偏移量数值，单位为fp。默认值：0。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -446,7 +525,10 @@ NODE_TEXT_BASELINE_OFFSET = 1014
 
 
 
-#### NODE_TEXT_TEXT_SHADOW
+## NODE_TEXT_TEXT_SHADOW
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_TEXT_SHADOW = 1015
@@ -460,6 +542,7 @@ NODE_TEXT_TEXT_SHADOW = 1015
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 阴影模糊半径，单位为vp。取值范围：[0, +∞)。默认值为0，表示无模糊效果。 |
@@ -470,6 +553,7 @@ NODE_TEXT_TEXT_SHADOW = 1015
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -482,7 +566,10 @@ NODE_TEXT_TEXT_SHADOW = 1015
 
 
 
-#### NODE_TEXT_MIN_FONT_SIZE
+## NODE_TEXT_MIN_FONT_SIZE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_MIN_FONT_SIZE = 1016
@@ -496,12 +583,14 @@ Text最小显示字号，支持属性设置、属性重置和属性获取。
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 文本最小显示字号，单位为fp。取值范围：[0, +∞)。传入负数时参数不生效。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -510,7 +599,10 @@ Text最小显示字号，支持属性设置、属性重置和属性获取。
 
 
 
-#### NODE_TEXT_MAX_FONT_SIZE
+## NODE_TEXT_MAX_FONT_SIZE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_MAX_FONT_SIZE = 1017
@@ -524,12 +616,14 @@ Text最大显示字号，支持属性设置、属性重置和属性获取。
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 文本最大显示字号，单位为fp。取值范围：[0, +∞)。传入负数时参数不生效。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -538,7 +632,10 @@ Text最大显示字号，支持属性设置、属性重置和属性获取。
 
 
 
-#### NODE_TEXT_FONT
+## NODE_TEXT_FONT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_FONT = 1018
@@ -552,6 +649,7 @@ Text样式，支持属性设置、属性重置和属性获取。
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string? | 可选值：字体列表，多个字体使用','进行分隔。不传入时使用系统默认字体。 |
@@ -562,9 +660,10 @@ Text样式，支持属性设置、属性重置和属性获取。
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| .string | 字体列表，使用多个字体，使用','进行分割。 |
+| .string | 字体列表，使用多个字体，使用','进行分隔。 |
 | .value[0].f32 | 文本尺寸，单位为fp。取值范围：[0, +∞)。 |
 | .value[1].i32 | 文本的字体粗细，具体枚举值请参考ArkUI_FontWeight。默认值为ARKUI_FONT_WEIGHT_NORMAL。 |
 | .value[2].i32 | 字体样式，具体枚举值请参考ArkUI_FontStyle。默认值为ARKUI_FONT_STYLE_NORMAL。 |
@@ -572,7 +671,10 @@ Text样式，支持属性设置、属性重置和属性获取。
 
 
 
-#### NODE_TEXT_HEIGHT_ADAPTIVE_POLICY
+## NODE_TEXT_HEIGHT_ADAPTIVE_POLICY
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_HEIGHT_ADAPTIVE_POLICY = 1019
@@ -586,12 +688,14 @@ Text自适应高度的方式，支持属性设置、属性重置和属性获取�
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 参数类型，具体枚举值请参考ArkUI_TextHeightAdaptivePolicy。默认值为ARKUI_TEXT_HEIGHT_ADAPTIVE_POLICY_MAX_LINES_FIRST，表示以MaxLines优先。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -600,7 +704,10 @@ Text自适应高度的方式，支持属性设置、属性重置和属性获取�
 
 
 
-#### NODE_TEXT_INDENT
+## NODE_TEXT_INDENT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INDENT = 1020
@@ -614,12 +721,14 @@ NODE_TEXT_INDENT = 1020
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 表示首行缩进值，入参单位为fp，返回值单位为vp。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -628,7 +737,10 @@ NODE_TEXT_INDENT = 1020
 
 
 
-#### NODE_TEXT_WORD_BREAK
+## NODE_TEXT_WORD_BREAK
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_WORD_BREAK = 1021
@@ -642,12 +754,14 @@ NODE_TEXT_WORD_BREAK = 1021
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 参数类型，具体枚举值请参考ArkUI_WordBreak。默认值为ARKUI_WORD_BREAK_BREAK_WORD，对于Non-CJK的文本可在任意2个字符间断行，一行文本中有断行破发点（如空白符）时，优先按破发点换行。对于CJK的文本，换行效果与NORMAL效果保持一致。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -656,7 +770,10 @@ NODE_TEXT_WORD_BREAK = 1021
 
 
 
-#### NODE_TEXT_ELLIPSIS_MODE
+## NODE_TEXT_ELLIPSIS_MODE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_ELLIPSIS_MODE = 1022
@@ -670,12 +787,14 @@ NODE_TEXT_ELLIPSIS_MODE = 1022
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 参数类型，具体枚举值请参考ArkUI_EllipsisMode。默认值为ARKUI_ELLIPSIS_MODE_END，表示省略行末内容。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -684,7 +803,10 @@ NODE_TEXT_ELLIPSIS_MODE = 1022
 
 
 
-#### NODE_TEXT_LINE_SPACING
+## NODE_TEXT_LINE_SPACING
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_LINE_SPACING = 1023
@@ -698,12 +820,14 @@ NODE_TEXT_LINE_SPACING = 1023
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 表示行间距值，单位为fp。取值范围：[0, +∞)。传入负数时参数不生效。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -712,7 +836,10 @@ NODE_TEXT_LINE_SPACING = 1023
 
 
 
-#### NODE_FONT_FEATURE
+## NODE_FONT_FEATURE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_FONT_FEATURE = 1024
@@ -726,12 +853,14 @@ NODE_FONT_FEATURE = 1024
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 符合文本特性格式的字符串，格式为normal \| <feature-tag-value>。 <feature-tag-value>的格式为：&lt;string&gt; [ &lt;integer&gt; \| on \| off ]。 <feature-tag-value>的个数可以有多个，中间用','隔开，例如，使用等宽数字的输入格式为：ss01 on。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -740,13 +869,16 @@ NODE_FONT_FEATURE = 1024
 
 
 
-#### NODE_TEXT_ENABLE_DATA_DETECTOR
+## NODE_TEXT_ENABLE_DATA_DETECTOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_ENABLE_DATA_DETECTOR = 1025
 ```
 
-设置是否使能文本实体识别，识别的实体类型可通过NODE_TEXT_ENABLE_DATA_DETECTOR_CONFIG属性配置。适用于识别文本中的特定实体类型（如电话号码、邮箱地址、网址链接等），实现点击跳转、智能交互等功能。
+设置是否启用文本实体识别，识别的实体类型可通过NODE_TEXT_ENABLE_DATA_DETECTOR_CONFIG属性配置。适用于识别文本中的特定实体类型（如电话号码、邮箱地址、网址链接等），实现点击跳转、智能交互等功能。
 
 作为属性设置方法参数、属性获取方法返回值[ArkUI_AttributeItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-arkui-attributeitem)格式如下。
 
@@ -754,21 +886,26 @@ NODE_TEXT_ENABLE_DATA_DETECTOR = 1025
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].i32 | 使能文本识别，1表示文本可实体识别，0表示不可识别。默认值：0。 |
+| .value[0].i32 | 是否启用文本实体识别，1表示文本可实体识别，0表示不可识别。默认值：0。 |
 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| .value[0].i32 | 使能文本识别。1表示文本可实体识别，0表示不可识别。 |
+| .value[0].i32 | 是否启用文本实体识别。1表示文本可实体识别，0表示不可识别。 |
 
 
 
 
-#### NODE_TEXT_ENABLE_DATA_DETECTOR_CONFIG
+## NODE_TEXT_ENABLE_DATA_DETECTOR_CONFIG
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_ENABLE_DATA_DETECTOR_CONFIG = 1026
@@ -782,12 +919,14 @@ NODE_TEXT_ENABLE_DATA_DETECTOR_CONFIG = 1026
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0...].i32 | 实体类型数组，参数类型ArkUI_TextDataDetectorType。数组中可包含电话号码、URL、邮箱等实体类型，具体取值请参考枚举定义。本参数仅在NODE_TEXT_ENABLE_DATA_DETECTOR设置为1（开启文本实体识别）时生效。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -796,7 +935,10 @@ NODE_TEXT_ENABLE_DATA_DETECTOR_CONFIG = 1026
 
 
 
-#### NODE_TEXT_SELECTED_BACKGROUND_COLOR
+## NODE_TEXT_SELECTED_BACKGROUND_COLOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_SELECTED_BACKGROUND_COLOR = 1027
@@ -810,12 +952,14 @@ NODE_TEXT_SELECTED_BACKGROUND_COLOR = 1027
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].u32 | 颜色数值，0xargb格式，形如 0xFFFF0000 表示红色。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -824,7 +968,10 @@ NODE_TEXT_SELECTED_BACKGROUND_COLOR = 1027
 
 
 
-#### NODE_TEXT_CONTENT_WITH_STYLED_STRING
+## NODE_TEXT_CONTENT_WITH_STYLED_STRING
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_CONTENT_WITH_STYLED_STRING = 1028
@@ -844,12 +991,14 @@ Text组件使用格式化字符串对象设置文本内容属性，支持属性�
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 表示 ArkUI_StyledString 格式化字符串数据，参数类型为ArkUI_StyledString。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -858,7 +1007,10 @@ Text组件使用格式化字符串对象设置文本内容属性，支持属性�
 
 
 
-#### NODE_TEXT_HALF_LEADING
+## NODE_TEXT_HALF_LEADING
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_HALF_LEADING = 1029
@@ -872,12 +1024,14 @@ Text组件设置文本纵向居中显示。
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 文本是否纵向居中显示，默认值：0。 1表示文本是纵向居中显示，0表示文本不是纵向居中显示。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -886,7 +1040,10 @@ Text组件设置文本纵向居中显示。
 
 
 
-#### NODE_IMMUTABLE_FONT_WEIGHT
+## NODE_IMMUTABLE_FONT_WEIGHT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMMUTABLE_FONT_WEIGHT = 1030
@@ -900,12 +1057,14 @@ NODE_IMMUTABLE_FONT_WEIGHT = 1030
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 字体粗细样式ArkUI_FontWeight。取值越大字体越粗，默认值为ARKUI_FONT_WEIGHT_NORMAL。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -914,7 +1073,10 @@ NODE_IMMUTABLE_FONT_WEIGHT = 1030
 
 
 
-#### NODE_TEXT_LINE_COUNT
+## NODE_TEXT_LINE_COUNT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_LINE_COUNT = 1031
@@ -928,6 +1090,7 @@ NODE_TEXT_LINE_COUNT = 1031
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 表示文本行数。 |
@@ -935,7 +1098,10 @@ NODE_TEXT_LINE_COUNT = 1031
 
 
 
-#### NODE_TEXT_OPTIMIZE_TRAILING_SPACE
+## NODE_TEXT_OPTIMIZE_TRAILING_SPACE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_OPTIMIZE_TRAILING_SPACE = 1032
@@ -949,12 +1115,14 @@ NODE_TEXT_OPTIMIZE_TRAILING_SPACE = 1032
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 设置文本排版时是否优化每行结尾的空格，默认值：0。 1表示设置文本排版时优化每行结尾的空格，0表示不优化。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -963,7 +1131,10 @@ NODE_TEXT_OPTIMIZE_TRAILING_SPACE = 1032
 
 
 
-#### NODE_TEXT_LINEAR_GRADIENT
+## NODE_TEXT_LINEAR_GRADIENT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_LINEAR_GRADIENT = 1033
@@ -976,6 +1147,7 @@ NODE_TEXT_LINEAR_GRADIENT = 1033
 **起始版本：** 20
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -990,6 +1162,7 @@ NODE_TEXT_LINEAR_GRADIENT = 1033
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 线性渐变的起始角度。当为ARKUI_LINEAR_GRADIENT_DIRECTION_CUSTOM时，angle为设置值，其他情况均为默认值0。 |
@@ -1003,7 +1176,10 @@ NODE_TEXT_LINEAR_GRADIENT = 1033
 
 
 
-#### NODE_TEXT_RADIAL_GRADIENT
+## NODE_TEXT_RADIAL_GRADIENT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_RADIAL_GRADIENT = 1034
@@ -1016,6 +1192,7 @@ NODE_TEXT_RADIAL_GRADIENT = 1034
 **起始版本：** 20
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -1031,6 +1208,7 @@ NODE_TEXT_RADIAL_GRADIENT = 1034
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0]?.f32 | 为径向渐变的中心点，即相对于当前文本框左上角的X轴坐标，单位为vp。 |
@@ -1045,7 +1223,10 @@ NODE_TEXT_RADIAL_GRADIENT = 1034
 
 
 
-#### NODE_TEXT_VERTICAL_ALIGN
+## NODE_TEXT_VERTICAL_ALIGN
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_VERTICAL_ALIGN = 1035
@@ -1059,12 +1240,14 @@ NODE_TEXT_VERTICAL_ALIGN = 1035
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 文本内容垂直对齐方式ArkUI_TextVerticalAlignment，默认值：ARKUI_TEXT_VERTICAL_ALIGNMENT_BASELINE。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1073,7 +1256,10 @@ NODE_TEXT_VERTICAL_ALIGN = 1035
 
 
 
-#### NODE_TEXT_CONTENT_ALIGN
+## NODE_TEXT_CONTENT_ALIGN
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_CONTENT_ALIGN = 1036
@@ -1087,12 +1273,14 @@ NODE_TEXT_CONTENT_ALIGN = 1036
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 文本内容区垂直对齐方式ArkUI_TextContentAlign，默认值：ARKUI_TEXT_CONTENT_ALIGN_CENTER。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1101,7 +1289,10 @@ NODE_TEXT_CONTENT_ALIGN = 1036
 
 
 
-#### NODE_TEXT_MIN_LINES
+## NODE_TEXT_MIN_LINES
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_MIN_LINES = 1037
@@ -1115,12 +1306,14 @@ NODE_TEXT_MIN_LINES = 1037
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 表示文本最小行数，取值范围：正整数。传入0或负数时参数不生效。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1129,7 +1322,10 @@ NODE_TEXT_MIN_LINES = 1037
 
 
 
-#### NODE_TEXT_ENABLE_SELECTED_DATA_DETECTOR
+## NODE_TEXT_ENABLE_SELECTED_DATA_DETECTOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_ENABLE_SELECTED_DATA_DETECTOR = 1038
@@ -1143,12 +1339,14 @@ NODE_TEXT_ENABLE_SELECTED_DATA_DETECTOR = 1038
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 开启选中词文本识别，1表示开启识别，0表示关闭识别。默认值：1。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1157,7 +1355,10 @@ NODE_TEXT_ENABLE_SELECTED_DATA_DETECTOR = 1038
 
 
 
-#### NODE_TEXT_MIN_LINE_HEIGHT
+## NODE_TEXT_MIN_LINE_HEIGHT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_MIN_LINE_HEIGHT = 1040
@@ -1171,12 +1372,14 @@ NODE_TEXT_MIN_LINE_HEIGHT = 1040
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 文本最小行高，默认值：0。单位为fp。取值范围：[0, +∞)。传入负数时参数不生效。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1185,7 +1388,10 @@ NODE_TEXT_MIN_LINE_HEIGHT = 1040
 
 
 
-#### NODE_TEXT_MAX_LINE_HEIGHT
+## NODE_TEXT_MAX_LINE_HEIGHT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_MAX_LINE_HEIGHT = 1041
@@ -1199,12 +1405,14 @@ NODE_TEXT_MAX_LINE_HEIGHT = 1041
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 文本最大行高，默认值：0，表示最大行高不受限制。单位为fp。取值范围：[0, +∞)。传入负数时参数不生效。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1213,7 +1421,10 @@ NODE_TEXT_MAX_LINE_HEIGHT = 1041
 
 
 
-#### NODE_TEXT_LINE_HEIGHT_MULTIPLE
+## NODE_TEXT_LINE_HEIGHT_MULTIPLE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_LINE_HEIGHT_MULTIPLE = 1042
@@ -1227,12 +1438,14 @@ NODE_TEXT_LINE_HEIGHT_MULTIPLE = 1042
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 倍数行高模式的倍数值，默认值：0，表示使用默认行高高度。取值范围：[0, +∞)。传入负数时参数不生效。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1241,7 +1454,10 @@ NODE_TEXT_LINE_HEIGHT_MULTIPLE = 1042
 
 
 
-#### NODE_TEXT_LAYOUT_MANAGER
+## NODE_TEXT_LAYOUT_MANAGER
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_LAYOUT_MANAGER = 1043
@@ -1255,6 +1471,7 @@ NODE_TEXT_LAYOUT_MANAGER = 1043
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | .object | 文本布局管理器对象，参数类型为ArkUI_TextLayoutManager。 |
@@ -1262,7 +1479,10 @@ NODE_TEXT_LAYOUT_MANAGER = 1043
 
 
 
-#### NODE_TEXT_EDIT_MENU_OPTIONS
+## NODE_TEXT_EDIT_MENU_OPTIONS
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_EDIT_MENU_OPTIONS = 1044
@@ -1276,6 +1496,7 @@ NODE_TEXT_EDIT_MENU_OPTIONS = 1044
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 文本菜单扩展项配置数据，参数类型为ArkUI_TextEditMenuOptions。 |
@@ -1283,7 +1504,10 @@ NODE_TEXT_EDIT_MENU_OPTIONS = 1044
 
 
 
-#### NODE_TEXT_BIND_SELECTION_MENU
+## NODE_TEXT_BIND_SELECTION_MENU
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_BIND_SELECTION_MENU = 1045
@@ -1297,6 +1521,7 @@ NODE_TEXT_BIND_SELECTION_MENU = 1045
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 自定义文本选择菜单配置数据，参数类型为ArkUI_TextSelectionMenuOptions。 |
@@ -1304,7 +1529,10 @@ NODE_TEXT_BIND_SELECTION_MENU = 1045
 
 
 
-#### NODE_TEXT_TEXT_SELECTION
+## NODE_TEXT_TEXT_SELECTION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_TEXT_SELECTION = 1046
@@ -1318,6 +1546,7 @@ NODE_TEXT_TEXT_SELECTION = 1046
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 文本选择的起始位置。取值范围：[0, 文本长度]，必须是有效的文本索引。 |
@@ -1326,6 +1555,7 @@ NODE_TEXT_TEXT_SELECTION = 1046
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1336,7 +1566,10 @@ NODE_TEXT_TEXT_SELECTION = 1046
 
 
 
-#### NODE_TEXT_ORPHAN_CHAR_OPTIMIZATION
+## NODE_TEXT_ORPHAN_CHAR_OPTIMIZATION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_ORPHAN_CHAR_OPTIMIZATION = 1047
@@ -1350,12 +1583,14 @@ NODE_TEXT_ORPHAN_CHAR_OPTIMIZATION = 1047
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否使能孤字优化，1表示使能，0表示不使能。默认值：0。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1364,7 +1599,10 @@ NODE_TEXT_ORPHAN_CHAR_OPTIMIZATION = 1047
 
 
 
-#### NODE_TEXT_COMPRESS_LEADING_PUNCTUATION
+## NODE_TEXT_COMPRESS_LEADING_PUNCTUATION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_COMPRESS_LEADING_PUNCTUATION = 1048
@@ -1378,12 +1616,14 @@ NODE_TEXT_COMPRESS_LEADING_PUNCTUATION = 1048
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否打开行首标点压缩开关。 1表示开启行首标点压缩，0表示关闭行首标点压缩。默认值：0。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1392,7 +1632,10 @@ NODE_TEXT_COMPRESS_LEADING_PUNCTUATION = 1048
 
 
 
-#### NODE_TEXT_INCLUDE_FONT_PADDING
+## NODE_TEXT_INCLUDE_FONT_PADDING
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_INCLUDE_FONT_PADDING = 1049
@@ -1406,12 +1649,14 @@ NODE_TEXT_INCLUDE_FONT_PADDING = 1049
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 设置是否在首行和尾行增加间距以避免文字截断。 1表示开启增加间距，0表示关闭增加间距。默认值：0。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1420,7 +1665,10 @@ NODE_TEXT_INCLUDE_FONT_PADDING = 1049
 
 
 
-#### NODE_TEXT_FALLBACK_LINE_SPACING
+## NODE_TEXT_FALLBACK_LINE_SPACING
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_FALLBACK_LINE_SPACING = 1050
@@ -1434,12 +1682,14 @@ NODE_TEXT_FALLBACK_LINE_SPACING = 1050
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 支持行高基于文字实际高度自适应。 1表示开启自适应，0表示关闭自适应。默认值：0。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1448,7 +1698,10 @@ NODE_TEXT_FALLBACK_LINE_SPACING = 1050
 
 
 
-#### NODE_TEXT_MARQUEE_OPTIONS
+## NODE_TEXT_MARQUEE_OPTIONS
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_MARQUEE_OPTIONS = 1051
@@ -1462,12 +1715,14 @@ NODE_TEXT_MARQUEE_OPTIONS = 1051
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 文本跑马灯模式配置，参数类型为ArkUI_TextMarqueeOptions。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1476,7 +1731,10 @@ NODE_TEXT_MARQUEE_OPTIONS = 1051
 
 
 
-#### NODE_TEXT_DIRECTION
+## NODE_TEXT_DIRECTION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_DIRECTION = 1052
@@ -1490,12 +1748,14 @@ NODE_TEXT_DIRECTION = 1052
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 表示文本的排版方向，取ArkUI_TextDirection枚举值。默认值为ARKUI_TEXT_DIRECTION_DEFAULT，表示文本排版方向遵循组件布局。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1504,7 +1764,10 @@ NODE_TEXT_DIRECTION = 1052
 
 
 
-#### NODE_TEXT_SELECTED_DRAG_PREVIEW_STYLE
+## NODE_TEXT_SELECTED_DRAG_PREVIEW_STYLE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_SELECTED_DRAG_PREVIEW_STYLE = 1053
@@ -1518,12 +1781,14 @@ NODE_TEXT_SELECTED_DRAG_PREVIEW_STYLE = 1053
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 文本选中状态下的拖拽预览样式。参数类型为ArkUI_SelectedDragPreviewStyle。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1532,7 +1797,10 @@ NODE_TEXT_SELECTED_DRAG_PREVIEW_STYLE = 1053
 
 
 
-#### NODE_TEXT_CONTROLLER
+## NODE_TEXT_CONTROLLER
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_CONTROLLER = 1054
@@ -1546,6 +1814,7 @@ NODE_TEXT_CONTROLLER = 1054
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 文本的控制器，参数类型为OH_ArkUI_TextController。 |
@@ -1553,7 +1822,10 @@ NODE_TEXT_CONTROLLER = 1054
 
 
 
-#### NODE_TEXT_PUNCTUATION_OVERFLOW
+## NODE_TEXT_PUNCTUATION_OVERFLOW
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_PUNCTUATION_OVERFLOW = 1055
@@ -1567,12 +1839,14 @@ NODE_TEXT_PUNCTUATION_OVERFLOW = 1055
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否启用行尾标点符号悬挂。 1表示启用标点符号悬挂，0表示不启用标点符号悬挂。默认值为0。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1581,7 +1855,10 @@ NODE_TEXT_PUNCTUATION_OVERFLOW = 1055
 
 
 
-#### NODE_TEXT_TAIL_INDENTS
+## NODE_TEXT_TAIL_INDENTS
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_TAIL_INDENTS = 1056
@@ -1595,6 +1872,7 @@ NODE_TEXT_TAIL_INDENTS = 1056
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[i].f32 | 表示第i行文本的尾部缩进值，单位为vp。取值范围：[0, +∞)，传入负数时按默认值0处理。当.size大小为1时，所有行共享相同的尾部缩进.value[0].f32；当.size大于1时，第i行使用.value[i].f32；当文本行数超过.size，则超出部分复用.value[.size - 1].f32。 |
@@ -1602,6 +1880,7 @@ NODE_TEXT_TAIL_INDENTS = 1056
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1611,7 +1890,10 @@ NODE_TEXT_TAIL_INDENTS = 1056
 
 
 
-#### NODE_SPAN_CONTENT
+## NODE_SPAN_CONTENT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SPAN_CONTENT = MAX_NODE_SCOPE_NUM * ARKUI_NODE_SPAN = 2000
@@ -1625,12 +1907,14 @@ NODE_SPAN_CONTENT = MAX_NODE_SCOPE_NUM * ARKUI_NODE_SPAN = 2000
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 表示span的文本内容。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1639,7 +1923,10 @@ NODE_SPAN_CONTENT = MAX_NODE_SCOPE_NUM * ARKUI_NODE_SPAN = 2000
 
 
 
-#### NODE_SPAN_TEXT_BACKGROUND_STYLE
+## NODE_SPAN_TEXT_BACKGROUND_STYLE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SPAN_TEXT_BACKGROUND_STYLE = 2001
@@ -1653,6 +1940,7 @@ NODE_SPAN_TEXT_BACKGROUND_STYLE = 2001
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].u32 | 表示文本背景颜色，0xargb格式，形如0xFFFF0000表示红色。 |
@@ -1661,6 +1949,7 @@ NODE_SPAN_TEXT_BACKGROUND_STYLE = 2001
 | .value[3].f32 | 设置左下角圆角半径，单位为vp。取值范围：[0, +∞)。传入负数时参数不生效。 |
 | .value[4].f32 | 设置右下角圆角半径，单位为vp。取值范围：[0, +∞)。传入负数时参数不生效。 |
 | 返回： |  |
+
 
 
 | 类型 | 说明 |
@@ -1674,7 +1963,10 @@ NODE_SPAN_TEXT_BACKGROUND_STYLE = 2001
 
 
 
-#### NODE_SPAN_BASELINE_OFFSET
+## NODE_SPAN_BASELINE_OFFSET
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SPAN_BASELINE_OFFSET = 2002
@@ -1688,12 +1980,14 @@ NODE_SPAN_BASELINE_OFFSET = 2002
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 偏移量数值，单位为fp。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1702,7 +1996,10 @@ NODE_SPAN_BASELINE_OFFSET = 2002
 
 
 
-#### NODE_SPAN_FONT
+## NODE_SPAN_FONT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SPAN_FONT = 2003
@@ -1716,9 +2013,10 @@ NODE_SPAN_FONT = 2003
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
-| .string? | 字体列表，多个字体使用,进行分割。可选。 |
+| .string? | 字体列表，多个字体使用,进行分隔。可选。 |
 | .value[0].f32 | 文本尺寸，单位为fp。取值范围：[0, +∞)。 |
 | .value[1]?.i32 | 文本的字体粗细。可选。取值为[100, 900]，默认为400。取值越大，字体越粗。 |
 | .value[2]?.i32 | 字体样式。可选。参数类型为ArkUI_FontStyle。默认值为ARKUI_FONT_STYLE_NORMAL。 |
@@ -1727,9 +2025,10 @@ NODE_SPAN_FONT = 2003
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| .string | 字体列表，多个字体使用,进行分割。 |
+| .string | 字体列表，多个字体使用,进行分隔。 |
 | .value[0].f32 | 文本尺寸，单位为fp。取值范围：[0, +∞)。 |
 | .value[1].i32 | 文本的字体粗细，无单位。取值越大，字体越粗。 |
 | .value[2].i32 | 字体样式。参数类型为ArkUI_FontStyle。 |
@@ -1738,7 +2037,10 @@ NODE_SPAN_FONT = 2003
 
 
 
-#### NODE_SPAN_FONT_WEIGHT
+## NODE_SPAN_FONT_WEIGHT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SPAN_FONT_WEIGHT = 2004
@@ -1752,6 +2054,7 @@ NODE_SPAN_FONT_WEIGHT = 2004
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 文本的字体粗细。取值为[100, 900]，默认为400。取值越大，字体越粗。超出范围时按默认值400处理。 |
@@ -1759,6 +2062,7 @@ NODE_SPAN_FONT_WEIGHT = 2004
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1768,7 +2072,10 @@ NODE_SPAN_FONT_WEIGHT = 2004
 
 
 
-#### NODE_IMAGE_SPAN_SRC
+## NODE_IMAGE_SPAN_SRC
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_SPAN_SRC = MAX_NODE_SCOPE_NUM * ARKUI_NODE_IMAGE_SPAN = 3000
@@ -1782,6 +2089,7 @@ imageSpan组件图片地址属性，支持属性设置、属性重置和属性�
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 表示imageSpan的图片地址。 |
@@ -1789,6 +2097,7 @@ imageSpan组件图片地址属性，支持属性设置、属性重置和属性�
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1798,7 +2107,10 @@ imageSpan组件图片地址属性，支持属性设置、属性重置和属性�
 
 
 
-#### NODE_IMAGE_SPAN_VERTICAL_ALIGNMENT
+## NODE_IMAGE_SPAN_VERTICAL_ALIGNMENT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_SPAN_VERTICAL_ALIGNMENT = 3001
@@ -1812,12 +2124,14 @@ NODE_IMAGE_SPAN_VERTICAL_ALIGNMENT = 3001
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 表示图片基于文本的对齐方式，取ArkUI_ImageSpanAlignment枚举值。默认值为ARKUI_IMAGE_SPAN_ALIGNMENT_BOTTOM，图片下边沿与文本下边沿对齐。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1826,7 +2140,10 @@ NODE_IMAGE_SPAN_VERTICAL_ALIGNMENT = 3001
 
 
 
-#### NODE_IMAGE_SPAN_ALT
+## NODE_IMAGE_SPAN_ALT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_SPAN_ALT = 3002
@@ -1840,6 +2157,7 @@ imageSpan组件占位图地址属性，支持属性设置、属性重置和属�
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 表示imageSpan组件占位图地址（不支持gif类型图源）。 |
@@ -1847,6 +2165,7 @@ imageSpan组件占位图地址属性，支持属性设置、属性重置和属�
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1856,7 +2175,10 @@ imageSpan组件占位图地址属性，支持属性设置、属性重置和属�
 
 
 
-#### NODE_IMAGE_SPAN_BASELINE_OFFSET
+## NODE_IMAGE_SPAN_BASELINE_OFFSET
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_SPAN_BASELINE_OFFSET = 3003
@@ -1870,12 +2192,14 @@ imageSpan组件的基线偏移量属性，支持属性设置、属性重置和�
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 偏移量数值，单位为fp。取值范围：(-∞, +∞)。默认值：0。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1884,7 +2208,10 @@ imageSpan组件的基线偏移量属性，支持属性设置、属性重置和�
 
 
 
-#### NODE_IMAGE_SPAN_COLOR_FILTER
+## NODE_IMAGE_SPAN_COLOR_FILTER
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_SPAN_COLOR_FILTER = 3004
@@ -1898,6 +2225,7 @@ NODE_IMAGE_SPAN_COLOR_FILTER = 3004
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 ~ .value[19].f32 | 表示5x4颜色滤镜矩阵数组，共20个浮点数元素，按行优先顺序排列。矩阵前4列分别对应红（R）、绿（G）、蓝（B）、透明度（A）通道的颜色变换系数，第5列为各通道的偏移量。用于对图片进行颜色变换处理，如亮度、对比度、色调调整等。 |
@@ -1906,6 +2234,7 @@ NODE_IMAGE_SPAN_COLOR_FILTER = 3004
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1916,7 +2245,10 @@ NODE_IMAGE_SPAN_COLOR_FILTER = 3004
 
 
 
-#### NODE_IMAGE_SPAN_SUPPORT_SVG2
+## NODE_IMAGE_SPAN_SUPPORT_SVG2
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_SPAN_SUPPORT_SVG2 = 3005
@@ -1930,12 +2262,14 @@ NODE_IMAGE_SPAN_SUPPORT_SVG2 = 3005
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否启用SVG新解析能力开关。1表示支持SVG解析新能力；0表示保持原有SVG解析能力。 默认值：0。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |

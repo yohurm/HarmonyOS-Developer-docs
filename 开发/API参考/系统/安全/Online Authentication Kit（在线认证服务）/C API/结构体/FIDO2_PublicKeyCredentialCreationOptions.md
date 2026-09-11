@@ -1,10 +1,14 @@
 # FIDO2_PublicKeyCredentialCreationOptions
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_f_i_d_o2___public_key_credential_creation_options
+**支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 创建新的认证凭据的选项。
  
@@ -16,12 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 成员变量
+### 成员变量
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | FIDO2_PublicKeyCredentialRpEntity rp | 创建新凭据时的依赖方属性。 |
@@ -34,16 +45,22 @@
 | FIDO2_PublicKeyCredentialHintArray hints | 认证方式指示。默认值为[]。可选。 |
 | FIDO2_AttestationConveyancePreference attestation | 凭据传递首选项。默认值为FIDO2_NONE，可选。 |
 | FIDO2_AttestationFormatsArray attestationFormats | 依赖方可以使用此选项指定有关认证方使用的证明声明格式的偏好。默认值为[]。 |
-| char * extensions | 扩展名必须是表示Map<string, Object>对象的JSON字符串。默认空。可选，最大长度为2048字符。 |
+| char * extensions | 扩展名必须是表示Map<string, Object>对象的JSON字符串。默认空。可选，最小长度为0字符，最大长度为2048字符。 |
  
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### attestation
+### attestation
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FIDO2_AttestationConveyancePreference FIDO2_PublicKeyCredentialCreationOptions::attestation
@@ -55,7 +72,10 @@ FIDO2_AttestationConveyancePreference FIDO2_PublicKeyCredentialCreationOptions::
  
   
 
-#### attestationFormats
+### attestationFormats
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FIDO2_AttestationFormatsArray FIDO2_PublicKeyCredentialCreationOptions::attestationFormats
@@ -67,7 +87,10 @@ FIDO2_AttestationFormatsArray FIDO2_PublicKeyCredentialCreationOptions::attestat
  
   
 
-#### authenticatorSelection
+### authenticatorSelection
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FIDO2_AuthenticatorSelectionCriteria FIDO2_PublicKeyCredentialCreationOptions::authenticatorSelection
@@ -79,7 +102,10 @@ FIDO2_AuthenticatorSelectionCriteria FIDO2_PublicKeyCredentialCreationOptions::a
  
   
 
-#### challenge
+### challenge
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 Uint8Buff FIDO2_PublicKeyCredentialCreationOptions::challenge
@@ -91,7 +117,10 @@ Uint8Buff FIDO2_PublicKeyCredentialCreationOptions::challenge
  
   
 
-#### excludeCredentials
+### excludeCredentials
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FIDO2_PublicKeyCredentialDescriptorArray FIDO2_PublicKeyCredentialCreationOptions::excludeCredentials
@@ -103,7 +132,10 @@ FIDO服务器已注册的凭据列表。默认值为[]。可选。
  
   
 
-#### extensions
+### extensions
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 char* FIDO2_PublicKeyCredentialCreationOptions::extensions
@@ -115,7 +147,10 @@ char* FIDO2_PublicKeyCredentialCreationOptions::extensions
  
   
 
-#### hints
+### hints
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FIDO2_PublicKeyCredentialHintArray FIDO2_PublicKeyCredentialCreationOptions::hints
@@ -127,7 +162,10 @@ FIDO2_PublicKeyCredentialHintArray FIDO2_PublicKeyCredentialCreationOptions::hin
  
   
 
-#### pubKeyCredParams
+### pubKeyCredParams
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FIDO2_CredentialCreationOptionArray FIDO2_PublicKeyCredentialCreationOptions::pubKeyCredParams
@@ -139,7 +177,10 @@ FIDO2_CredentialCreationOptionArray FIDO2_PublicKeyCredentialCreationOptions::pu
  
   
 
-#### rp
+### rp
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FIDO2_PublicKeyCredentialRpEntity FIDO2_PublicKeyCredentialCreationOptions::rp
@@ -151,7 +192,10 @@ FIDO2_PublicKeyCredentialRpEntity FIDO2_PublicKeyCredentialCreationOptions::rp
  
   
 
-#### timeout
+### timeout
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 uint32_t FIDO2_PublicKeyCredentialCreationOptions::timeout
@@ -163,7 +207,10 @@ uint32_t FIDO2_PublicKeyCredentialCreationOptions::timeout
  
   
 
-#### user
+### user
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FIDO2_PublicKeyCredentialUserEntity FIDO2_PublicKeyCredentialCreationOptions::user

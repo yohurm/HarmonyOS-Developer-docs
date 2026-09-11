@@ -1,9 +1,9 @@
 # Interface (ControlCenterQuery)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-controlcenterquery
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 控制中心类，用于查询是否支持相机控制器。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { camera } from '@kit.CameraKit';
@@ -22,9 +23,10 @@ import { camera } from '@kit.CameraKit';
  
   
 
-#### isControlCenterSupported20+
+## isControlCenterSupported20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isControlCenterSupported(): boolean
  
@@ -36,6 +38,7 @@ isControlCenterSupported(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回是否支持相机控制器。true表示支持，false表示不支持。 |
@@ -52,9 +55,10 @@ function isControlCenterSupported(videoSession: camera.VideoSession): boolean {
  
   
 
-#### getSupportedEffectTypes20+
+## getSupportedEffectTypes20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSupportedEffectTypes(): Array&lt;ControlCenterEffectType&gt;
  
@@ -66,6 +70,7 @@ getSupportedEffectTypes(): Array&lt;ControlCenterEffectType&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;ControlCenterEffectType&gt; | 支持的效果类型。 |

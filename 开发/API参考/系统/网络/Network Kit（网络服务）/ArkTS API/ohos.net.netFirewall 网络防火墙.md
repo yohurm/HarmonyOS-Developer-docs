@@ -1,6 +1,6 @@
 # @ohos.net.netFirewall (网络防火墙)
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-net-netfirewall
 **支持设备：** PC/2in1
@@ -12,7 +12,8 @@
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** PC/2in1
 
@@ -22,7 +23,8 @@ import { netFirewall } from '@kit.NetworkKit';
 
 
 
-#### netFirewall.setNetFirewallPolicy
+## netFirewall.setNetFirewallPolicy
+
 
 **支持设备：** PC/2in1
 
@@ -40,6 +42,7 @@ setNetFirewallPolicy(userId: number, policy: NetFirewallPolicy): Promise&lt;void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | userId | number | 是 | 系统用户ID，只能是存在的用户ID。 |
@@ -47,6 +50,7 @@ setNetFirewallPolicy(userId: number, policy: NetFirewallPolicy): Promise&lt;void
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -56,6 +60,7 @@ setNetFirewallPolicy(userId: number, policy: NetFirewallPolicy): Promise&lt;void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[防火墙错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-netfirewall)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -87,7 +92,8 @@ netFirewall.setNetFirewallPolicy(100, policy).then(() => {
 
 
 
-#### netFirewall.getNetFirewallPolicy
+## netFirewall.getNetFirewallPolicy
+
 
 **支持设备：** PC/2in1
 
@@ -101,12 +107,14 @@ getNetFirewallPolicy(userId: number): Promise&lt;NetFirewallPolicy&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | userId | number | 是 | 系统用户ID，只能是存在的用户ID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -116,6 +124,7 @@ getNetFirewallPolicy(userId: number): Promise&lt;NetFirewallPolicy&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[防火墙错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-netfirewall)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -142,7 +151,8 @@ netFirewall.getNetFirewallPolicy(100).then((result: netFirewall.NetFirewallPolic
 
 
 
-#### netFirewall.addNetFirewallRule
+## netFirewall.addNetFirewallRule
+
 
 **支持设备：** PC/2in1
 
@@ -160,12 +170,14 @@ addNetFirewallRule(rule: NetFirewallRule): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rule | NetFirewallRule | 是 | 防火墙规则。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -175,6 +187,7 @@ addNetFirewallRule(rule: NetFirewallRule): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[防火墙错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-netfirewall)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -268,6 +281,15 @@ let domainRule: netFirewall.NetFirewallRule = {
     },{
       isWildcard: true,
       domain: "*.example.cn"
+    },{
+      isWildcard: true,
+      domain: "*w.example.cn"  // 从API版本26.0.0开始支持
+    },{
+      isWildcard: true,
+      domain: "www.example.*"  // 从API版本26.0.0开始支持
+    },{
+      isWildcard: true,
+      domain: "www.example.c*"  // 从API版本26.0.0开始支持
     }],
   userId: 100,
   interface:"wlan0" // 从API版本26.0.0开始支持
@@ -302,7 +324,8 @@ netFirewall.addNetFirewallRule(dnsRule).then((result: number) => {
 
 
 
-#### netFirewall.removeNetFirewallRule
+## netFirewall.removeNetFirewallRule
+
 
 **支持设备：** PC/2in1
 
@@ -316,6 +339,7 @@ removeNetFirewallRule(userId: number, ruleId: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | userId | number | 是 | 系统用户ID，只能是存在的用户ID。 |
@@ -323,6 +347,7 @@ removeNetFirewallRule(userId: number, ruleId: number): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -332,6 +357,7 @@ removeNetFirewallRule(userId: number, ruleId: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[防火墙错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-netfirewall)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -359,7 +385,8 @@ netFirewall.removeNetFirewallRule(100, 1).then(() => {
 
 
 
-#### netFirewall.updateNetFirewallRule
+## netFirewall.updateNetFirewallRule
+
 
 **支持设备：** PC/2in1
 
@@ -373,12 +400,14 @@ updateNetFirewallRule(rule: NetFirewallRule): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rule | NetFirewallRule | 是 | 防火墙规则。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -388,6 +417,7 @@ updateNetFirewallRule(rule: NetFirewallRule): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[防火墙错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-netfirewall)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -444,7 +474,8 @@ netFirewall.updateNetFirewallRule(ipRuleUpd).then(() => {
 
 
 
-#### netFirewall.getNetFirewallRules
+## netFirewall.getNetFirewallRules
+
 
 **支持设备：** PC/2in1
 
@@ -458,6 +489,7 @@ getNetFirewallRules(userId: number, requestParam: RequestParam): Promise&lt;Fire
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | userId | number | 是 | 系统用户ID，只能是存在的用户ID。 |
@@ -465,6 +497,7 @@ getNetFirewallRules(userId: number, requestParam: RequestParam): Promise&lt;Fire
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -474,6 +507,7 @@ getNetFirewallRules(userId: number, requestParam: RequestParam): Promise&lt;Fire
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[防火墙错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-netfirewall)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -506,7 +540,8 @@ netFirewall.getNetFirewallRules(100, ruleParam).then((result: netFirewall.Firewa
 
 
 
-#### netFirewall.getNetFirewallRule
+## netFirewall.getNetFirewallRule
+
 
 **支持设备：** PC/2in1
 
@@ -520,6 +555,7 @@ getNetFirewallRule(userId: number, ruleId: number): Promise&lt;NetFirewallRule&g
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | userId | number | 是 | 系统用户ID，只能是存在的用户ID。 |
@@ -527,6 +563,7 @@ getNetFirewallRule(userId: number, ruleId: number): Promise&lt;NetFirewallRule&g
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -536,6 +573,7 @@ getNetFirewallRule(userId: number, ruleId: number): Promise&lt;NetFirewallRule&g
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[防火墙错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-netfirewall)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -563,13 +601,15 @@ netFirewall.getNetFirewallRule(100, 1).then((rule: netFirewall.NetFirewallRule) 
 
 
 
-#### NetFirewallRule
+## NetFirewallRule
+
 
 **支持设备：** PC/2in1
 
 防火墙规则信息结构。
 
 **系统能力**：SystemCapability.Communication.NetManager.NetFirewall
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -594,13 +634,15 @@ netFirewall.getNetFirewallRule(100, 1).then((rule: netFirewall.NetFirewallRule) 
 
 
 
-#### RequestParam
+## RequestParam
+
 
 **支持设备：** PC/2in1
 
 查询输入信息结构。
 
 **系统能力**：SystemCapability.Communication.NetManager.NetFirewall
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -612,13 +654,15 @@ netFirewall.getNetFirewallRule(100, 1).then((rule: netFirewall.NetFirewallRule) 
 
 
 
-#### FirewallRulePage
+## FirewallRulePage
+
 
 **支持设备：** PC/2in1
 
 防火墙规则页信息结构。
 
 **系统能力**：SystemCapability.Communication.NetManager.NetFirewall
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -630,13 +674,15 @@ netFirewall.getNetFirewallRule(100, 1).then((rule: netFirewall.NetFirewallRule) 
 
 
 
-#### NetFirewallPolicy
+## NetFirewallPolicy
+
 
 **支持设备：** PC/2in1
 
 防火墙策略，包含防火墙开关状态，默认的出站/入站行为（允许/阻止）。
 
 **系统能力**：SystemCapability.Communication.NetManager.NetFirewall
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -647,13 +693,15 @@ netFirewall.getNetFirewallRule(100, 1).then((rule: netFirewall.NetFirewallRule) 
 
 
 
-#### NetFirewallRuleDirection
+## NetFirewallRuleDirection
+
 
 **支持设备：** PC/2in1
 
 枚举类型，防火墙规则方向，包含入站、出站。
 
 **系统能力**：SystemCapability.Communication.NetManager.NetFirewall
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -663,13 +711,15 @@ netFirewall.getNetFirewallRule(100, 1).then((rule: netFirewall.NetFirewallRule) 
 
 
 
-#### FirewallRuleAction
+## FirewallRuleAction
+
 
 **支持设备：** PC/2in1
 
 枚举类型，防火墙规则行为，包含允许网络连接、阻止网络连接。
 
 **系统能力**：SystemCapability.Communication.NetManager.NetFirewall
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -679,13 +729,15 @@ netFirewall.getNetFirewallRule(100, 1).then((rule: netFirewall.NetFirewallRule) 
 
 
 
-#### NetFirewallRuleType
+## NetFirewallRuleType
+
 
 **支持设备：** PC/2in1
 
 枚举类型，防火墙规则类型，包含IP、Domain、DNS。
 
 **系统能力**：SystemCapability.Communication.NetManager.NetFirewall
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -696,7 +748,8 @@ netFirewall.getNetFirewallRule(100, 1).then((rule: netFirewall.NetFirewallRule) 
 
 
 
-#### NetFirewallOrderField
+## NetFirewallOrderField
+
 
 **支持设备：** PC/2in1
 
@@ -708,6 +761,7 @@ netFirewall.getNetFirewallRule(100, 1).then((rule: netFirewall.NetFirewallRule) 
 
 **系统能力**：SystemCapability.Communication.NetManager.NetFirewall
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ORDER_BY_RULE_NAME | 1 | 根据防火墙规则名排序。 |
@@ -716,13 +770,15 @@ netFirewall.getNetFirewallRule(100, 1).then((rule: netFirewall.NetFirewallRule) 
 
 
 
-#### NetFirewallOrderType
+## NetFirewallOrderType
+
 
 **支持设备：** PC/2in1
 
 枚举类型，防火墙规则排序顺序，包含升序或降序。
 
 **系统能力**：SystemCapability.Communication.NetManager.NetFirewall
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -732,13 +788,15 @@ netFirewall.getNetFirewallRule(100, 1).then((rule: netFirewall.NetFirewallRule) 
 
 
 
-#### NetFirewallIpParams
+## NetFirewallIpParams
+
 
 **支持设备：** PC/2in1
 
 防火墙规则的IP参数，IP类型包括IPv4、IPv6，支持单个IP或IP段。
 
 **系统能力**：SystemCapability.Communication.NetManager.NetFirewall
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -752,13 +810,15 @@ netFirewall.getNetFirewallRule(100, 1).then((rule: netFirewall.NetFirewallRule) 
 
 
 
-#### NetFirewallPortParams
+## NetFirewallPortParams
+
 
 **支持设备：** PC/2in1
 
 防火墙规则端口参数。
 
 **系统能力**：SystemCapability.Communication.NetManager.NetFirewall
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -768,7 +828,8 @@ netFirewall.getNetFirewallRule(100, 1).then((rule: netFirewall.NetFirewallRule) 
 
 
 
-#### NetFirewallDomainParams
+## NetFirewallDomainParams
+
 
 **支持设备：** PC/2in1
 
@@ -776,15 +837,25 @@ netFirewall.getNetFirewallRule(100, 1).then((rule: netFirewall.NetFirewallRule) 
 
 **系统能力**：SystemCapability.Communication.NetManager.NetFirewall
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | isWildcard | boolean | 否 | 否 | 是否包含通配符。true表示包含，false表示不包含。 |
-| domain | string | 否 | 否 | 当isWildcard为false时，需要确定的完整域， 例如"www.example.cn"。 |
+| domain | string | 否 | 否 | 当isWildcard为false时，需要确定的完整域，例如"www.example.com"；当isWildcard为true时，支持通配符规则，具体格式见下文说明。 |
+
+
+当isWildcard为true时，domain支持使用通配符""，""可出现在域名的首部、尾部或首尾同时出现，表示匹配任意长度（包括零）的任意字符。支持以下通配符格式：
+
+ - "*.xxx.xxx"：前缀通配，匹配xxx.xxx及其所有子域名。例如"*.example.com"可匹配"example.com"、"[www.example.com"、"a.b.example.com"。（从API版本21开始支持）](http://www.example.com)
+ - "*xx.xxx.xxx"：前缀通配，匹配以"xx.xxx.xxx"结尾的域名。例如"*a.example.com"可匹配"a.example.com"、"[www.a.example.com"。（从API版本26.0.0开始支持）](http://www.a.example.com)
+ - "xxx.xxx.xxx.*"：后缀通配，匹配以"xxx.xxx.xxx."开头的域名。例如"www.example.*"可匹配"www.example.com"、"www.example.cn"。（从API版本26.0.0开始支持）
+ - "xxx.xxx.xxx.xx*"：后缀通配，匹配以"xxx.xxx.xxx.xx"开头的域名。例如"www.example.co*"可匹配"www.example.com"、"www.example.com.cn"。（从API版本26.0.0开始支持）
 
 
 
 
-#### NetFirewallDnsParams
+## NetFirewallDnsParams
+
 
 **支持设备：** PC/2in1
 
@@ -795,6 +866,7 @@ netFirewall.getNetFirewallRule(100, 1).then((rule: netFirewall.NetFirewallRule) 
 
 
 **系统能力**：SystemCapability.Communication.NetManager.NetFirewall
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

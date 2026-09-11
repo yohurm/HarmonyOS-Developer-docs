@@ -1,9 +1,9 @@
 # Class (UIContext)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 UIContext实例对象，用于提供与当前UI实例关联的上下文能力，支持获取UI相关控制器、管理弹窗与动画、查询节点和窗口信息、进行像素单位转换等，适用于在指定UI实例中管理页面、组件和交互行为的场景。
 
@@ -51,9 +51,10 @@ export default class EntryAbility extends UIAbility {
 ```
 
 
-#### constructor22+
+## constructor22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -139,9 +140,10 @@ struct Index {
 
 
 
-#### getCallingScopeUIContext22+
+## getCallingScopeUIContext22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getCallingScopeUIContext(): UIContext | undefined
 
@@ -156,6 +158,7 @@ static getCallingScopeUIContext(): UIContext | undefined
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -195,9 +198,10 @@ struct Index {
 
 
 
-#### getLastFocusedUIContext22+
+## getLastFocusedUIContext22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getLastFocusedUIContext(): UIContext | undefined
 
@@ -208,6 +212,7 @@ static getLastFocusedUIContext(): UIContext | undefined
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -247,9 +252,10 @@ struct Index {
 
 
 
-#### getLastForegroundUIContext22+
+## getLastForegroundUIContext22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getLastForegroundUIContext(): UIContext | undefined
 
@@ -260,6 +266,7 @@ static getLastForegroundUIContext(): UIContext | undefined
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -299,9 +306,10 @@ struct Index {
 
 
 
-#### getAllUIContexts22+
+## getAllUIContexts22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getAllUIContexts(): UIContext[]
 
@@ -312,6 +320,7 @@ static getAllUIContexts(): UIContext[]
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -351,9 +360,10 @@ struct Index {
 
 
 
-#### resolveUIContext22+
+## resolveUIContext22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static resolveUIContext(): ResolvedUIContext
 
@@ -368,6 +378,7 @@ static resolveUIContext(): ResolvedUIContext
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -398,9 +409,10 @@ struct Index {
 
 
 
-#### isAvailable20+
+## isAvailable20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isAvailable(): boolean
 
@@ -411,6 +423,7 @@ isAvailable(): boolean
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -483,9 +496,10 @@ struct UIContextCompare {
 
 
 
-#### getFont
+## getFont
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFont(): Font
 
@@ -496,6 +510,7 @@ getFont(): Font
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -508,9 +523,10 @@ getFont(): Font
 
 
 
-#### getComponentUtils
+## getComponentUtils
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getComponentUtils(): ComponentUtils
 
@@ -521,6 +537,7 @@ getComponentUtils(): ComponentUtils
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -533,9 +550,10 @@ getComponentUtils(): ComponentUtils
 
 
 
-#### getUIInspector
+## getUIInspector
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUIInspector(): UIInspector
 
@@ -546,6 +564,7 @@ getUIInspector(): UIInspector
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -558,9 +577,10 @@ getUIInspector(): UIInspector
 
 
 
-#### getUIObserver11+
+## getUIObserver11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUIObserver(): UIObserver
 
@@ -571,6 +591,7 @@ getUIObserver(): UIObserver
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -627,9 +648,10 @@ struct Index {
 
 
 
-#### getId22+
+## getId22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getId(): number
 
@@ -640,6 +662,7 @@ getId(): number
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -656,7 +679,7 @@ struct Index{
     Column()
       .width("100%")
       .height("100%")
-      .onClick(() => {
+      .onClick(()=>{
       console.info(`id:${this.getUIContext()?.getId()}`);
     })
   }
@@ -665,9 +688,10 @@ struct Index{
 
 
 
-#### getMediaQuery
+## getMediaQuery
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMediaQuery(): MediaQuery
 
@@ -678,6 +702,7 @@ getMediaQuery(): MediaQuery
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -690,9 +715,10 @@ getMediaQuery(): MediaQuery
 
 
 
-#### getRouter
+## getRouter
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRouter(): Router
 
@@ -703,6 +729,7 @@ getRouter(): Router
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -715,9 +742,10 @@ getRouter(): Router
 
 
 
-#### getPromptAction
+## getPromptAction
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPromptAction(): PromptAction
 
@@ -728,6 +756,7 @@ getPromptAction(): PromptAction
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -740,9 +769,10 @@ getPromptAction(): PromptAction
 
 
 
-#### getOverlayManager12+
+## getOverlayManager12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOverlayManager(): OverlayManager
 
@@ -753,6 +783,7 @@ getOverlayManager(): OverlayManager
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -765,9 +796,10 @@ getOverlayManager(): OverlayManager
 
 
 
-#### setOverlayManagerOptions15+
+## setOverlayManagerOptions15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setOverlayManagerOptions(options: OverlayManagerOptions): boolean
 
@@ -779,12 +811,14 @@ setOverlayManagerOptions(options: OverlayManagerOptions): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | OverlayManagerOptions | 是 | OverlayManager参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -797,9 +831,10 @@ setOverlayManagerOptions(options: OverlayManagerOptions): boolean
 
 
 
-#### getOverlayManagerOptions15+
+## getOverlayManagerOptions15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOverlayManagerOptions(): OverlayManagerOptions
 
@@ -810,6 +845,7 @@ getOverlayManagerOptions(): OverlayManagerOptions
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -822,9 +858,10 @@ getOverlayManagerOptions(): OverlayManagerOptions
 
 
 
-#### animateToImmediately23+
+## animateToImmediately23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 animateToImmediately(param: AnimateParam, processor: Callback&lt;void&gt;): void
 
@@ -835,6 +872,7 @@ animateToImmediately(param: AnimateParam, processor: Callback&lt;void&gt;): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -909,9 +947,10 @@ struct AnimateToImmediatelyExample {
 
 
 
-#### animateTo
+## animateTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 animateTo(value: AnimateParam, event: () => void): void
 
@@ -926,6 +965,7 @@ animateTo(value: AnimateParam, event: () => void): void
 
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1015,9 +1055,10 @@ struct AnimateToExample {
 
 
 
-#### getSharedLocalStorage12+
+## getSharedLocalStorage12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSharedLocalStorage(): LocalStorage | undefined
 
@@ -1030,6 +1071,7 @@ getSharedLocalStorage(): LocalStorage | undefined
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1081,9 +1123,10 @@ struct SharedLocalStorage {
 
 
 
-#### getHostContext12+
+## getHostContext12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getHostContext(): Context | undefined
 
@@ -1096,6 +1139,7 @@ getHostContext(): Context | undefined
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1131,9 +1175,10 @@ struct Index {
 
 
 
-#### getFrameNodeById12+
+## getFrameNodeById12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFrameNodeById(id: string): FrameNode | null
 
@@ -1145,12 +1190,14 @@ getFrameNodeById(id: string): FrameNode | null
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | string | 是 | 节点对应的组件标识。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1167,9 +1214,10 @@ getFrameNodeById(id: string): FrameNode | null
 
 
 
-#### getAttachedFrameNodeById12+
+## getAttachedFrameNodeById12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAttachedFrameNodeById(id: string): FrameNode | null
 
@@ -1181,12 +1229,14 @@ getAttachedFrameNodeById(id: string): FrameNode | null
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | string | 是 | 节点对应的组件标识。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1228,9 +1278,10 @@ struct MyComponent {
 
 
 
-#### getFrameNodeByUniqueId12+
+## getFrameNodeByUniqueId12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFrameNodeByUniqueId(id: number): FrameNode | null
 
@@ -1247,12 +1298,14 @@ getFrameNodeByUniqueId(id: number): FrameNode | null
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | number | 是 | 节点对应的UniqueId |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1283,9 +1336,10 @@ struct MyComponent {
 
 
 
-#### getPageInfoByUniqueId12+
+## getPageInfoByUniqueId12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPageInfoByUniqueId(id: number): PageInfo
 
@@ -1301,12 +1355,14 @@ getPageInfoByUniqueId(id: number): PageInfo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | number | 是 | 节点对应的UniqueId。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1362,9 +1418,10 @@ struct MyComponent {
 
 
 
-#### getNavigationInfoByUniqueId12+
+## getNavigationInfoByUniqueId12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getNavigationInfoByUniqueId(id: number): observer.NavigationInfo | undefined
 
@@ -1378,12 +1435,14 @@ getNavigationInfoByUniqueId(id: number): observer.NavigationInfo | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | number | 是 | 节点对应的UniqueId。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1396,9 +1455,10 @@ getNavigationInfoByUniqueId(id: number): observer.NavigationInfo | undefined
 
 
 
-#### showAlertDialog
+## showAlertDialog
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showAlertDialog(options: AlertDialogParamWithConfirm | AlertDialogParamWithButtons | AlertDialogParamWithOptions): void
 
@@ -1413,6 +1473,7 @@ showAlertDialog(options: AlertDialogParamWithConfirm | AlertDialogParamWithButto
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1462,9 +1523,10 @@ struct Index {
 
 
 
-#### showActionSheet
+## showActionSheet
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showActionSheet(value: ActionSheetOptions): void
 
@@ -1475,6 +1537,7 @@ showActionSheet(value: ActionSheetOptions): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1541,9 +1604,10 @@ struct Index {
 
 
 
-#### showDatePickerDialog
+## showDatePickerDialog
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 showDatePickerDialog(options: DatePickerDialogOptions): void
 
@@ -1560,6 +1624,7 @@ showDatePickerDialog(options: DatePickerDialogOptions): void
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1625,9 +1690,10 @@ struct DatePickerDialogExample {
 
 
 
-#### showTimePickerDialog
+## showTimePickerDialog
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 showTimePickerDialog(options: TimePickerDialogOptions): void
 
@@ -1644,6 +1710,7 @@ showTimePickerDialog(options: TimePickerDialogOptions): void
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1697,9 +1764,10 @@ struct TimePickerDialogExample {
 
 
 
-#### showTextPickerDialog
+## showTextPickerDialog
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 showTextPickerDialog(options: TextPickerDialogOptions): void
 
@@ -1716,6 +1784,7 @@ showTextPickerDialog(options: TextPickerDialogOptions): void
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1783,9 +1852,10 @@ struct TextPickerDialogExample {
 
 
 
-#### showTextPickerDialog20+
+## showTextPickerDialog20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 showTextPickerDialog(style: TextPickerDialogOptions|TextPickerDialogOptionsExt): void
 
@@ -1803,6 +1873,7 @@ showTextPickerDialog(style: TextPickerDialogOptions|TextPickerDialogOptionsExt):
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | TextPickerDialogOptions\| TextPickerDialogOptionsExt | 是 | 配置文本滑动选择器弹窗的参数。 |
@@ -1810,9 +1881,10 @@ showTextPickerDialog(style: TextPickerDialogOptions|TextPickerDialogOptionsExt):
 
 
 
-#### createAnimator
+## createAnimator
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAnimator(options: AnimatorOptions): AnimatorResult
 
@@ -1824,12 +1896,14 @@ createAnimator(options: AnimatorOptions): AnimatorResult
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | AnimatorOptions | 是 | 定义动画选项。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1839,6 +1913,7 @@ createAnimator(options: AnimatorOptions): AnimatorResult
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1882,9 +1957,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### createAnimator18+
+## createAnimator18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAnimator(options: AnimatorOptions | SimpleAnimatorOptions): AnimatorResult
 
@@ -1896,12 +1972,14 @@ createAnimator(options: AnimatorOptions | SimpleAnimatorOptions): AnimatorResult
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | AnimatorOptions \| SimpleAnimatorOptions | 是 | 定义动画选项。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1911,6 +1989,7 @@ createAnimator(options: AnimatorOptions | SimpleAnimatorOptions): AnimatorResult
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1945,9 +2024,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### runScopedTask
+## runScopedTask
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 runScopedTask(callback: () => void): void
 
@@ -1958,6 +2038,7 @@ runScopedTask(callback: () => void): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1988,9 +2069,10 @@ struct Index {
 
 
 
-#### setKeyboardAvoidMode11+
+## setKeyboardAvoidMode11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setKeyboardAvoidMode(value: KeyboardAvoidMode): void
 
@@ -2001,6 +2083,7 @@ setKeyboardAvoidMode(value: KeyboardAvoidMode): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2032,9 +2115,10 @@ export default class EntryAbility extends UIAbility{
 
 
 
-#### getKeyboardAvoidMode11+
+## getKeyboardAvoidMode11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getKeyboardAvoidMode(): KeyboardAvoidMode
 
@@ -2049,6 +2133,7 @@ getKeyboardAvoidMode(): KeyboardAvoidMode
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2077,9 +2162,10 @@ export default class EntryAbility extends UIAbility{
 
 
 
-#### getAtomicServiceBar11+
+## getAtomicServiceBar11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAtomicServiceBar(): Nullable&lt;AtomicServiceBar&gt;
 
@@ -2090,6 +2176,7 @@ getAtomicServiceBar(): Nullable&lt;AtomicServiceBar&gt;
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2122,9 +2209,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getDragController11+
+## getDragController11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDragController(): DragController
 
@@ -2135,6 +2223,7 @@ getDragController(): DragController
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2147,9 +2236,10 @@ getDragController(): DragController
 
 
 
-#### keyframeAnimateTo11+
+## keyframeAnimateTo11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 keyframeAnimateTo(param: KeyframeAnimateParam, keyframes: Array&lt;KeyframeState&gt;): void
 
@@ -2160,6 +2250,7 @@ keyframeAnimateTo(param: KeyframeAnimateParam, keyframes: Array&lt;KeyframeState
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2229,9 +2320,10 @@ struct KeyframeDemo {
 
 
 
-#### getFocusController12+
+## getFocusController12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFocusController(): FocusController
 
@@ -2242,6 +2334,7 @@ getFocusController(): FocusController
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2254,9 +2347,10 @@ getFocusController(): FocusController
 
 
 
-#### getFilteredInspectorTree12+
+## getFilteredInspectorTree12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFilteredInspectorTree(filters?: Array&lt;string&gt;): string
 
@@ -2268,12 +2362,14 @@ getFilteredInspectorTree(filters?: Array&lt;string&gt;): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | filters | Array&lt;string&gt; | 否 | 需要获取的组件属性的过滤列表。目前仅支持过滤字段： "id"：组件唯一标识。 "src"：资源来源。 "content"：元素、组件或对象所包含的信息或数据。 "editable"：是否可编辑。 "scrollable"：是否可滚动。 "selectable"：是否可选择。 "focusable"：是否可聚焦。 "focused"：是否已聚焦。 如果在filters参数中包含以上一个或者多个字段，则未包含的字段会在组件属性查询结果中被过滤掉。如果用户未传入filters参数或者filters参数为空数组，则以上字段全部不会在组件属性查询结果中被过滤掉。 从API version 20开始，支持该过滤字段： "isLayoutInspector"：返回组件树是否包含自定义组件。如果用户未传入filters参数或者filters数组不包含isLayoutInspector，返回的组件树将缺少自定义组件的信息。 其余字段仅供测试场景使用。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2283,6 +2379,7 @@ getFilteredInspectorTree(filters?: Array&lt;string&gt;): string
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2357,9 +2454,10 @@ InsTree ----| type: Button, ID: 18
 
 
 
-#### getFilteredInspectorTreeById12+
+## getFilteredInspectorTreeById12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFilteredInspectorTreeById(id: string, depth: number, filters?: Array&lt;string&gt;): string
 
@@ -2371,6 +2469,7 @@ getFilteredInspectorTreeById(id: string, depth: number, filters?: Array&lt;strin
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | string | 是 | 指定的组件标识id。 |
@@ -2380,6 +2479,7 @@ getFilteredInspectorTreeById(id: string, depth: number, filters?: Array&lt;strin
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 获取指定的组件及其子组件的属性的JSON字符串。组件中每个字段的含义请参考getInspectorInfo的返回值说明。 |
@@ -2388,6 +2488,7 @@ getFilteredInspectorTreeById(id: string, depth: number, filters?: Array&lt;strin
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2443,9 +2544,10 @@ result3: {"$type":"Text","$ID":6,"type":"build-in","$rect":"[457.00, 123.00],[80
 
 
 
-#### getCursorController12+
+## getCursorController12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCursorController(): CursorController
 
@@ -2456,6 +2558,7 @@ getCursorController(): CursorController
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2468,9 +2571,10 @@ getCursorController(): CursorController
 
 
 
-#### getContextMenuController12+
+## getContextMenuController12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getContextMenuController(): ContextMenuController
 
@@ -2482,6 +2586,7 @@ getContextMenuController(): ContextMenuController
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ContextMenuController | 获取ContextMenuController对象。 |
@@ -2489,9 +2594,10 @@ getContextMenuController(): ContextMenuController
 
 
 
-#### getSmartGestureController
+## getSmartGestureController
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSmartGestureController(): SmartGestureController
 
@@ -2507,6 +2613,7 @@ getSmartGestureController(): SmartGestureController
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | SmartGestureController | SmartGestureController对象。 |
@@ -2518,9 +2625,10 @@ getSmartGestureController(): SmartGestureController
 
 
 
-#### getMeasureUtils12+
+## getMeasureUtils12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMeasureUtils(): MeasureUtils
 
@@ -2531,6 +2639,7 @@ getMeasureUtils(): MeasureUtils
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2543,9 +2652,10 @@ getMeasureUtils(): MeasureUtils
 
 
 
-#### getComponentSnapshot12+
+## getComponentSnapshot12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getComponentSnapshot(): ComponentSnapshot
 
@@ -2559,6 +2669,7 @@ getComponentSnapshot(): ComponentSnapshot
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ComponentSnapshot | 获取ComponentSnapshot对象。 |
@@ -2570,9 +2681,10 @@ getComponentSnapshot(): ComponentSnapshot
 
 
 
-#### vp2px12+
+## vp2px12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 vp2px(value : number) : number
 
@@ -2592,12 +2704,14 @@ vp2px(value : number) : number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 将vp单位的数值转换为以px为单位的数值。 取值范围：(-∞, +∞) |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2632,9 +2746,10 @@ struct MatrixExample {
 
 
 
-#### px2vp12+
+## px2vp12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 px2vp(value : number) : number
 
@@ -2654,12 +2769,14 @@ px2vp(value : number) : number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 将px单位的数值转换为以vp为单位的数值。 取值范围：(-∞, +∞) |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2694,9 +2811,10 @@ struct MatrixExample {
 
 
 
-#### fp2px12+
+## fp2px12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fp2px(value : number) : number
 
@@ -2718,12 +2836,14 @@ fp2px(value : number) : number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 将fp单位的数值转换为以px为单位的数值。 取值范围：(-∞, +∞) |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2758,9 +2878,10 @@ struct MatrixExample {
 
 
 
-#### px2fp12+
+## px2fp12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 px2fp(value : number) : number
 
@@ -2782,12 +2903,14 @@ px2fp(value : number) : number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 将px单位的数值转换为以fp为单位的数值。 取值范围：(-∞, +∞) |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2822,9 +2945,10 @@ struct MatrixExample {
 
 
 
-#### lpx2px12+
+## lpx2px12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 lpx2px(value : number) : number
 
@@ -2842,12 +2966,14 @@ lpx2px(value : number) : number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 将lpx单位的数值转换为以px为单位的数值。 取值范围：(-∞, +∞) |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2882,9 +3008,10 @@ struct MatrixExample {
 
 
 
-#### px2lpx12+
+## px2lpx12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 px2lpx(value : number) : number
 
@@ -2902,12 +3029,14 @@ px2lpx(value : number) : number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 将px单位的数值转换为以lpx为单位的数值。 取值范围：(-∞, +∞) |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2942,9 +3071,10 @@ struct MatrixExample {
 
 
 
-#### getWindowName12+
+## getWindowName12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getWindowName(): string | undefined
 
@@ -2955,6 +3085,7 @@ getWindowName(): string | undefined
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2997,9 +3128,10 @@ struct Index {
 
 
 
-#### getWindowId23+
+## getWindowId23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getWindowId(): number | undefined
 
@@ -3014,6 +3146,7 @@ getWindowId(): number | undefined
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3051,9 +3184,10 @@ struct Index {
 
 
 
-#### getWindowWidthBreakpoint13+
+## getWindowWidthBreakpoint13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getWindowWidthBreakpoint(): WidthBreakpoint
 
@@ -3064,6 +3198,7 @@ getWindowWidthBreakpoint(): WidthBreakpoint
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3105,9 +3240,10 @@ struct Index {
 
 
 
-#### getWindowHeightBreakpoint13+
+## getWindowHeightBreakpoint13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getWindowHeightBreakpoint(): HeightBreakpoint
 
@@ -3118,6 +3254,7 @@ getWindowHeightBreakpoint(): HeightBreakpoint
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3160,9 +3297,10 @@ struct Index {
 
 
 
-#### postFrameCallback12+
+## postFrameCallback12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 postFrameCallback(frameCallback: FrameCallback): void
 
@@ -3173,6 +3311,7 @@ postFrameCallback(frameCallback: FrameCallback): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3213,9 +3352,10 @@ struct Index {
 
 
 
-#### postDelayedFrameCallback12+
+## postDelayedFrameCallback12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 postDelayedFrameCallback(frameCallback: FrameCallback, delayTime: number): void
 
@@ -3226,6 +3366,7 @@ postDelayedFrameCallback(frameCallback: FrameCallback, delayTime: number): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3267,9 +3408,10 @@ struct Index {
 
 
 
-#### requireDynamicSyncScene12+
+## requireDynamicSyncScene12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requireDynamicSyncScene(id: string): Array&lt;DynamicSyncScene&gt;
 
@@ -3281,12 +3423,14 @@ requireDynamicSyncScene(id: string): Array&lt;DynamicSyncScene&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | string | 是 | 节点对应的组件标识。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3345,9 +3489,10 @@ struct Frame {
 
 
 
-#### openBindSheet12+
+## openBindSheet12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 openBindSheet<T extends Object>(bindSheetContent: ComponentContent&lt;T&gt;, sheetOptions?: SheetOptions, targetId?: number): Promise&lt;void&gt;
 
@@ -3363,6 +3508,7 @@ openBindSheet<T extends Object>(bindSheetContent: ComponentContent&lt;T&gt;, she
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bindSheetContent | ComponentContent&lt;T&gt; | 是 | 半模态页面中显示的组件内容。 |
@@ -3372,6 +3518,7 @@ openBindSheet<T extends Object>(bindSheetContent: ComponentContent&lt;T&gt;, she
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -3380,6 +3527,7 @@ openBindSheet<T extends Object>(bindSheetContent: ComponentContent&lt;T&gt;, she
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[半模态错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bindsheet)错误码。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3482,9 +3630,10 @@ struct UIContextBindSheet {
 
 
 
-#### updateBindSheet12+
+## updateBindSheet12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateBindSheet<T extends Object>(bindSheetContent: ComponentContent&lt;T&gt;, sheetOptions: SheetOptions, partialUpdate?: boolean ): Promise&lt;void&gt;
 
@@ -3500,6 +3649,7 @@ updateBindSheet<T extends Object>(bindSheetContent: ComponentContent&lt;T&gt;, s
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bindSheetContent | ComponentContent&lt;T&gt; | 是 | 半模态页面中显示的组件内容。 |
@@ -3509,6 +3659,7 @@ updateBindSheet<T extends Object>(bindSheetContent: ComponentContent&lt;T&gt;, s
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -3517,6 +3668,7 @@ updateBindSheet<T extends Object>(bindSheetContent: ComponentContent&lt;T&gt;, s
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[半模态错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bindsheet)错误码。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3616,9 +3768,10 @@ struct UIContextBindSheet {
 
 
 
-#### closeBindSheet12+
+## closeBindSheet12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 closeBindSheet<T extends Object>(bindSheetContent: ComponentContent&lt;T&gt;): Promise&lt;void&gt;
 
@@ -3634,12 +3787,14 @@ closeBindSheet<T extends Object>(bindSheetContent: ComponentContent&lt;T&gt;): P
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bindSheetContent | ComponentContent&lt;T&gt; | 是 | 半模态页面中显示的组件内容。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3649,6 +3804,7 @@ closeBindSheet<T extends Object>(bindSheetContent: ComponentContent&lt;T&gt;): P
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[半模态错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bindsheet)错误码。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3748,9 +3904,10 @@ struct UIContextBindSheet {
 
 
 
-#### isFollowingSystemFontScale13+
+## isFollowingSystemFontScale13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isFollowingSystemFontScale(): boolean
 
@@ -3761,6 +3918,7 @@ isFollowingSystemFontScale(): boolean
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3787,9 +3945,10 @@ struct Index {
 
 
 
-#### getMaxFontScale13+
+## getMaxFontScale13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMaxFontScale(): number
 
@@ -3800,6 +3959,7 @@ getMaxFontScale(): number
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3826,9 +3986,10 @@ struct Index {
 
 
 
-#### bindTabsToScrollable13+
+## bindTabsToScrollable13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 bindTabsToScrollable(tabsController: TabsController, scroller: Scroller): void
 
@@ -3843,6 +4004,7 @@ bindTabsToScrollable(tabsController: TabsController, scroller: Scroller): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3948,14 +4110,15 @@ struct TabsExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/6Hen6f4bTZmVIFIkK2KkQw/zh-cn_image_0000002674634196.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095444Z&HW-CC-Expire=86400&HW-CC-Sign=DAE5E0248104186C2C8A6AA6CB907F20B93DDF10EE95E9FB433091CD1CE4D747)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/yzPkjF7_T-CN727WjU5euw/zh-cn_image_0000002717772320.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072054Z&HW-CC-Expire=86400&HW-CC-Sign=2652764BC11FA6AC5EAF6580521CFF2B0FBC94245639E7808F9D63E7DD2E922C)
 
 
 
 
-#### unbindTabsFromScrollable13+
+## unbindTabsFromScrollable13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unbindTabsFromScrollable(tabsController: TabsController, scroller: Scroller): void
 
@@ -3966,6 +4129,7 @@ unbindTabsFromScrollable(tabsController: TabsController, scroller: Scroller): vo
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3979,9 +4143,10 @@ unbindTabsFromScrollable(tabsController: TabsController, scroller: Scroller): vo
 
 
 
-#### bindTabsToNestedScrollable13+
+## bindTabsToNestedScrollable13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 bindTabsToNestedScrollable(tabsController: TabsController, parentScroller: Scroller, childScroller: Scroller): void
 
@@ -3993,6 +4158,7 @@ bindTabsToNestedScrollable(tabsController: TabsController, parentScroller: Scrol
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | tabsController | TabsController | 是 | Tabs组件的控制器。 |
@@ -4006,9 +4172,10 @@ bindTabsToNestedScrollable(tabsController: TabsController, parentScroller: Scrol
 
 
 
-#### unbindTabsFromNestedScrollable13+
+## unbindTabsFromNestedScrollable13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unbindTabsFromNestedScrollable(tabsController: TabsController, parentScroller: Scroller, childScroller: Scroller): void
 
@@ -4020,6 +4187,7 @@ unbindTabsFromNestedScrollable(tabsController: TabsController, parentScroller: S
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | tabsController | TabsController | 是 | Tabs组件的控制器。 |
@@ -4033,9 +4201,10 @@ unbindTabsFromNestedScrollable(tabsController: TabsController, parentScroller: S
 
 
 
-#### enableSwipeBack18+
+## enableSwipeBack18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableSwipeBack(enabled: Optional&lt;boolean&gt;): void
 
@@ -4046,6 +4215,7 @@ enableSwipeBack(enabled: Optional&lt;boolean&gt;): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Circle
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4075,9 +4245,10 @@ struct Index {
 
 
 
-#### getTextMenuController16+
+## getTextMenuController16+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTextMenuController(): TextMenuController
 
@@ -4088,6 +4259,7 @@ getTextMenuController(): TextMenuController
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4100,9 +4272,10 @@ getTextMenuController(): TextMenuController
 
 
 
-#### createUIContextWithoutWindow17+
+## createUIContextWithoutWindow17+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static createUIContextWithoutWindow(context: common.UIAbilityContext | common.ExtensionContext): UIContext | undefined
 
@@ -4118,12 +4291,14 @@ static createUIContextWithoutWindow(context: common.UIAbilityContext | common.Ex
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext \| common.ExtensionContext | 是 | UIAbility或ExtensionAbility所对应的上下文环境。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4133,6 +4308,7 @@ static createUIContextWithoutWindow(context: common.UIAbilityContext | common.Ex
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4160,9 +4336,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### destroyUIContextWithoutWindow17+
+## destroyUIContextWithoutWindow17+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static destroyUIContextWithoutWindow(): void
 
@@ -4193,9 +4370,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### dispatchKeyEvent15+
+## dispatchKeyEvent15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 dispatchKeyEvent(node: number | string, event: KeyEvent): boolean
 
@@ -4207,6 +4385,7 @@ dispatchKeyEvent(node: number | string, event: KeyEvent): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | number \| string | 是 | 组件的id或者节点UniqueID。 |
@@ -4214,6 +4393,7 @@ dispatchKeyEvent(node: number | string, event: KeyEvent): boolean
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4264,9 +4444,10 @@ struct Index {
 
 
 
-#### setPixelRoundMode18+
+## setPixelRoundMode18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setPixelRoundMode(mode: PixelRoundMode): void
 
@@ -4277,6 +4458,7 @@ setPixelRoundMode(mode: PixelRoundMode): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4302,9 +4484,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getPixelRoundMode18+
+## getPixelRoundMode18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPixelRoundMode(): PixelRoundMode
 
@@ -4315,6 +4498,7 @@ getPixelRoundMode(): PixelRoundMode
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4340,9 +4524,10 @@ export default class EntryAbility extends UIAbility{
 
 
 
-#### setResourceManagerCacheMaxCountForHSP21+
+## setResourceManagerCacheMaxCountForHSP21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static setResourceManagerCacheMaxCountForHSP(count: number): void
 
@@ -4358,6 +4543,7 @@ static setResourceManagerCacheMaxCountForHSP(count: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | count | number | 是 | 设置的资源缓存数量，取值范围为非负整数。 |
@@ -4366,6 +4552,7 @@ static setResourceManagerCacheMaxCountForHSP(count: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[UI上下文错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-uicontext)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4401,9 +4588,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### setImageCacheCount23+
+## setImageCacheCount23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setImageCacheCount(value: number): void
 
@@ -4418,6 +4606,7 @@ setImageCacheCount、setImageRawDataCacheSize和setImageFileCacheSize并不灵�
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4452,9 +4641,10 @@ struct Index {
 
 
 
-#### setImageRawDataCacheSize23+
+## setImageRawDataCacheSize23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setImageRawDataCacheSize(value: number): void
 
@@ -4467,6 +4657,7 @@ setImageRawDataCacheSize方法需要在@Entry标记的页面，[onPageShow](http
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4501,9 +4692,10 @@ struct Index {
 
 
 
-#### getMagnifier22+
+## getMagnifier22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMagnifier(): Magnifier
 
@@ -4514,6 +4706,7 @@ getMagnifier(): Magnifier
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4526,9 +4719,10 @@ getMagnifier(): Magnifier
 
 
 
-#### setCustomKeyboardContinueFeature23+
+## setCustomKeyboardContinueFeature23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCustomKeyboardContinueFeature(feature: CustomKeyboardContinueFeature): void
 
@@ -4545,6 +4739,7 @@ setCustomKeyboardContinueFeature(feature: CustomKeyboardContinueFeature): void
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4659,14 +4854,15 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/0eY-rrpNQ-W2J85jgdEM-A/zh-cn_image_0000002704274153.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095444Z&HW-CC-Expire=86400&HW-CC-Sign=3869CF3FA4856CC6C785EE1E9AD7B28E920C78C96FAB71A13B0710649F7967EB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/eHZOPGKvShO3Qvim5Odl2w/zh-cn_image_0000002717612388.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072054Z&HW-CC-Expire=86400&HW-CC-Sign=7858C4D8752BBA3804FB93D60CD79C34419E78E634FE1B81FB7E3E2200E609C9)
 
 
 
 
-#### getPageRootNode24+
+## getPageRootNode24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPageRootNode(): FrameNode | null
 
@@ -4678,6 +4874,7 @@ getPageRootNode(): FrameNode | null
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | FrameNode \| null | 返回页面的根节点的实体节点或者空节点。 若无有效的FrameNode则返回null。 若窗口内无加载完成的页面则返回null。 |
@@ -4686,6 +4883,7 @@ getPageRootNode(): FrameNode | null
 **错误码：**
 
 以下错误码详细介绍请参考[UI上下文错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-uicontext)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4820,14 +5018,15 @@ export struct PageThree {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/H6MgZgbNRpyg2TFF-NL6Nw/zh-cn_image_0000002674474360.jpg?HW-CC-KV=V1&HW-CC-Date=20260813T095444Z&HW-CC-Expire=86400&HW-CC-Sign=E634F59706A5D654B8B125242360F3BCAC4E5BF19EF053F9573FB519B70F0E17)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/rM4BK7nuR7a0CqbRZ_GAuA/zh-cn_image_0000002747292341.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T072054Z&HW-CC-Expire=86400&HW-CC-Sign=96F49B94BE727815D75F248CF5BE83FEE5BFFB01AEBCE9F8EB597D0F85629571)
 
 
 
 
-#### isEasySplit24+
+## isEasySplit24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isEasySplit(): boolean
 
@@ -4840,6 +5039,7 @@ isEasySplit(): boolean
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4872,9 +5072,10 @@ struct Index {
 
 
 
-#### enableEventPassthrough
+## enableEventPassthrough
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableEventPassthrough(enabled: boolean, eventType: RawInputEventType): void
 
@@ -4889,6 +5090,7 @@ enableEventPassthrough(enabled: boolean, eventType: RawInputEventType): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4917,9 +5119,10 @@ struct Index {
 
 
 
-#### addLocalInputEventMonitor
+## addLocalInputEventMonitor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addLocalInputEventMonitor(eventMask: number, listener: InputEventListener): InputEventMonitor
 
@@ -4939,6 +5142,7 @@ addLocalInputEventMonitor(eventMask: number, listener: InputEventListener): Inpu
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | eventMask | number | 是 | 事件类型掩码，通过位运算指定要监听的事件类型。取值及对应含义请参考InputEventSubTypeMask。 |
@@ -4946,6 +5150,7 @@ addLocalInputEventMonitor(eventMask: number, listener: InputEventListener): Inpu
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4994,9 +5199,10 @@ struct InputEventMonitorSample {
 
 
 
-#### removeLocalInputEventMonitor
+## removeLocalInputEventMonitor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeLocalInputEventMonitor(monitor: InputEventMonitor): void
 
@@ -5015,6 +5221,7 @@ removeLocalInputEventMonitor(monitor: InputEventMonitor): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5062,9 +5269,10 @@ struct RemoveMonitorSample {
 
 
 
-#### setTextSelectionClearPolicy
+## setTextSelectionClearPolicy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setTextSelectionClearPolicy(policy: TextSelectionClearPolicy): void
 
@@ -5079,6 +5287,7 @@ setTextSelectionClearPolicy(policy: TextSelectionClearPolicy): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |

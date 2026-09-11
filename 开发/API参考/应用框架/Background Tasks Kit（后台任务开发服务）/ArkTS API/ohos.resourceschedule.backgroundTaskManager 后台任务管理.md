@@ -1,9 +1,9 @@
 # @ohos.resourceschedule.backgroundTaskManager (后台任务管理)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-resourceschedule-backgroundtaskmanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供申请后台任务的接口。当应用退至后台时，开发者可以通过本模块接口为应用申请短时、长时任务，避免应用进程被终止或挂起。开发指导请参考[长时任务开发指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/continuous-task)、[短时任务开发指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/transient-task)。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { backgroundTaskManager } from '@kit.BackgroundTasksKit';
@@ -22,13 +23,14 @@ import { backgroundTaskManager } from '@kit.BackgroundTasksKit';
 
 
 
-#### backgroundTaskManager.requestSuspendDelay
+## backgroundTaskManager.requestSuspendDelay
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestSuspendDelay(reason: string, callback: Callback&lt;void&gt;): DelaySuspendInfo
 
-申请短时任务。
+申请短时任务。适用于应用即将退至后台、需要短暂延迟挂起以便完成关键操作（如保存数据、上传进度等）等场景。
 
 > [!NOTE]
 > 短时任务的申请和使用过程中的约束与限制请参考 指南 。
@@ -38,6 +40,7 @@ requestSuspendDelay(reason: string, callback: Callback&lt;void&gt;): DelaySuspen
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | reason | string | 是 | 申请短时任务的原因。 |
@@ -45,6 +48,7 @@ requestSuspendDelay(reason: string, callback: Callback&lt;void&gt;): DelaySuspen
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -54,6 +58,7 @@ requestSuspendDelay(reason: string, callback: Callback&lt;void&gt;): DelaySuspen
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[backgroundTaskManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-backgroundtaskmgr)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -72,6 +77,7 @@ requestSuspendDelay(reason: string, callback: Callback&lt;void&gt;): DelaySuspen
 import { BusinessError } from '@kit.BasicServicesKit';
 import { backgroundTaskManager } from '@kit.BackgroundTasksKit';
 
+// 申请短时任务的原因
 let myReason = 'test requestSuspendDelay';
 try {
   let delayInfo = backgroundTaskManager.requestSuspendDelay(myReason, () => {
@@ -90,9 +96,10 @@ try {
 
 
 
-#### backgroundTaskManager.getRemainingDelayTime
+## backgroundTaskManager.getRemainingDelayTime
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRemainingDelayTime(requestId: number, callback: AsyncCallback&lt;number&gt;): void
 
@@ -101,6 +108,7 @@ getRemainingDelayTime(requestId: number, callback: AsyncCallback&lt;number&gt;):
 **系统能力：** SystemCapability.ResourceSchedule.BackgroundTaskManager.TransientTask
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -111,6 +119,7 @@ getRemainingDelayTime(requestId: number, callback: AsyncCallback&lt;number&gt;):
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[backgroundTaskManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-backgroundtaskmgr)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -129,6 +138,7 @@ getRemainingDelayTime(requestId: number, callback: AsyncCallback&lt;number&gt;):
 import { BusinessError } from '@kit.BasicServicesKit';
 import { backgroundTaskManager } from '@kit.BackgroundTasksKit';
 
+// 短时任务的请求ID，用于查询剩余时间
 let id = 1;
 backgroundTaskManager.getRemainingDelayTime(id, (error: BusinessError, res: number) => {
   if(error) {
@@ -141,9 +151,10 @@ backgroundTaskManager.getRemainingDelayTime(id, (error: BusinessError, res: numb
 
 
 
-#### backgroundTaskManager.getRemainingDelayTime
+## backgroundTaskManager.getRemainingDelayTime
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRemainingDelayTime(requestId: number): Promise&lt;number&gt;
 
@@ -153,12 +164,14 @@ getRemainingDelayTime(requestId: number): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | requestId | number | 是 | 短时任务的请求ID。通过申请短时任务requestSuspendDelay接口获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -168,6 +181,7 @@ getRemainingDelayTime(requestId: number): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[backgroundTaskManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-backgroundtaskmgr)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -196,17 +210,19 @@ backgroundTaskManager.getRemainingDelayTime(id).then((res: number) => {
 
 
 
-#### backgroundTaskManager.cancelSuspendDelay
+## backgroundTaskManager.cancelSuspendDelay
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancelSuspendDelay(requestId: number): void
 
-取消短时任务。
+取消短时任务。适用于应用任务已完成、需要提前释放后台资源等场景。
 
 **系统能力：** SystemCapability.ResourceSchedule.BackgroundTaskManager.TransientTask
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -216,6 +232,7 @@ cancelSuspendDelay(requestId: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[backgroundTaskManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-backgroundtaskmgr)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -244,9 +261,10 @@ try {
 
 
 
-#### backgroundTaskManager.getTransientTaskInfo20+
+## backgroundTaskManager.getTransientTaskInfo20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTransientTaskInfo(): Promise&lt;TransientTaskInfo&gt;
 
@@ -256,6 +274,7 @@ getTransientTaskInfo(): Promise&lt;TransientTaskInfo&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;TransientTaskInfo&gt; | Promise对象，返回所有短时任务信息。 |
@@ -264,6 +283,7 @@ getTransientTaskInfo(): Promise&lt;TransientTaskInfo&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[backgroundTaskManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-backgroundtaskmgr)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -291,9 +311,10 @@ try {
 
 
 
-#### backgroundTaskManager.startBackgroundRunning
+## backgroundTaskManager.startBackgroundRunning
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startBackgroundRunning(context: Context, bgMode: BackgroundMode, wantAgent: WantAgent, callback: AsyncCallback&lt;void&gt;): void
 
@@ -307,6 +328,7 @@ startBackgroundRunning(context: Context, bgMode: BackgroundMode, wantAgent: Want
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用运行的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 说明： Stage模型中，仅支持UIAbility申请；FA模型中，仅支持ServiceAbility申请。 |
@@ -318,6 +340,7 @@ startBackgroundRunning(context: Context, bgMode: BackgroundMode, wantAgent: Want
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[backgroundTaskManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-backgroundtaskmgr)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -388,9 +411,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### backgroundTaskManager.startBackgroundRunning
+## backgroundTaskManager.startBackgroundRunning
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startBackgroundRunning(context: Context, bgMode: BackgroundMode, wantAgent: WantAgent): Promise&lt;void&gt;
 
@@ -404,6 +428,7 @@ startBackgroundRunning(context: Context, bgMode: BackgroundMode, wantAgent: Want
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用运行的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 说明： Stage模型中，仅支持UIAbility申请；FA模型中，仅支持ServiceAbility申请。 |
@@ -413,6 +438,7 @@ startBackgroundRunning(context: Context, bgMode: BackgroundMode, wantAgent: Want
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -421,6 +447,7 @@ startBackgroundRunning(context: Context, bgMode: BackgroundMode, wantAgent: Want
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[backgroundTaskManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-backgroundtaskmgr)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -487,9 +514,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### backgroundTaskManager.startBackgroundRunning12+
+## backgroundTaskManager.startBackgroundRunning12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startBackgroundRunning(context: Context, bgModes: string[], wantAgent: WantAgent): Promise&lt;ContinuousTaskNotification&gt;
 
@@ -503,6 +531,7 @@ startBackgroundRunning(context: Context, bgModes: string[], wantAgent: WantAgent
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用运行的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 说明： Stage模型中，仅支持UIAbility申请；FA模型中，仅支持ServiceAbility申请。 |
@@ -512,6 +541,7 @@ startBackgroundRunning(context: Context, bgModes: string[], wantAgent: WantAgent
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;ContinuousTaskNotification&gt; | Promise对象，返回ContinuousTaskNotification类型对象。 |
@@ -520,6 +550,7 @@ startBackgroundRunning(context: Context, bgModes: string[], wantAgent: WantAgent
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[backgroundTaskManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-backgroundtaskmgr)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -629,9 +660,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### backgroundTaskManager.startBackgroundRunning21+
+## backgroundTaskManager.startBackgroundRunning21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startBackgroundRunning(context: Context, request: ContinuousTaskRequest): Promise&lt;ContinuousTaskNotification&gt;
 
@@ -649,6 +681,7 @@ startBackgroundRunning(context: Context, request: ContinuousTaskRequest): Promis
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用运行的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 说明： Stage模型中，仅支持UIAbility申请；FA模型中，仅支持ServiceAbility申请。 |
@@ -656,6 +689,7 @@ startBackgroundRunning(context: Context, request: ContinuousTaskRequest): Promis
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -665,6 +699,7 @@ startBackgroundRunning(context: Context, request: ContinuousTaskRequest): Promis
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[backgroundTaskManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-backgroundtaskmgr)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -714,6 +749,7 @@ export default class EntryAbility extends UIAbility {
           // 申请主类型为MODE_LOCATION的长时任务
           let modeList: Array<number> = [backgroundTaskManager.BackgroundTaskMode.MODE_LOCATION];
           let subModeList: Array<number> = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_NORMAL_NOTIFICATION];
+          // 创建长时任务请求对象
           let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
           continuousTaskRequest.backgroundTaskModes =  modeList;
           continuousTaskRequest.backgroundTaskSubmodes = subModeList;
@@ -740,19 +776,21 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### backgroundTaskManager.stopBackgroundRunning
+## backgroundTaskManager.stopBackgroundRunning
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopBackgroundRunning(context: Context, callback: AsyncCallback&lt;void&gt;): void
 
-取消当前UIAbility（FA模型则为ServiceAbility）下所有长时任务，使用callback异步回调。也可以通过[stopBackgroundRunning](#backgroundtaskmanagerstopbackgroundrunning21)接口取消指定Id的长时任务。
+取消当前UIAbility（FA模型则为ServiceAbility）下所有长时任务，使用callback异步回调。也可以通过[stopBackgroundRunning](#backgroundtaskmanagerstopbackgroundrunning21)接口取消指定Id的长时任务。适用于应用功能已完成、应用即将退出等场景。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -763,6 +801,7 @@ stopBackgroundRunning(context: Context, callback: AsyncCallback&lt;void&gt;): vo
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[backgroundTaskManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-backgroundtaskmgr)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -805,13 +844,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### backgroundTaskManager.stopBackgroundRunning
+## backgroundTaskManager.stopBackgroundRunning
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopBackgroundRunning(context: Context): Promise&lt;void&gt;
 
-取消当前UIAbility（FA模型则为ServiceAbility）下所有长时任务，使用Promise异步回调。也可以通过[stopBackgroundRunning](#backgroundtaskmanagerstopbackgroundrunning21)接口取消指定Id的长时任务。
+取消当前UIAbility（FA模型则为ServiceAbility）下所有长时任务，使用Promise异步回调。也可以通过[stopBackgroundRunning](#backgroundtaskmanagerstopbackgroundrunning21)接口取消指定Id的长时任务。适用于应用功能已完成、应用即将退出等场景。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -819,12 +859,14 @@ stopBackgroundRunning(context: Context): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用运行的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 说明： Stage模型中，仅支持UIAbility申请；FA模型中，仅支持ServiceAbility申请。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -834,6 +876,7 @@ stopBackgroundRunning(context: Context): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[backgroundTaskManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-backgroundtaskmgr)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -872,19 +915,23 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### backgroundTaskManager.stopBackgroundRunning21+
+## backgroundTaskManager.stopBackgroundRunning21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopBackgroundRunning(context: Context, continuousTaskId: number): Promise&lt;void&gt;
 
-取消指定Id的长时任务，使用Promise异步回调。也可以通过[stopBackgroundRunning](#backgroundtaskmanagerstopbackgroundrunning)取消当前UIAbility下所有长时任务。
+取消指定Id的长时任务，使用Promise异步回调。也可以通过[stopBackgroundRunning](#backgroundtaskmanagerstopbackgroundrunning)取消当前UIAbility下所有长时任务。适用于应用功能已完成、应用即将退出等场景。
+
+可用于应用功能已完成、应用即将退出等情况。
 
 **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -894,6 +941,7 @@ stopBackgroundRunning(context: Context, continuousTaskId: number): Promise&lt;vo
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -902,6 +950,7 @@ stopBackgroundRunning(context: Context, continuousTaskId: number): Promise&lt;vo
 **错误码**：
 
 以下错误码的详细介绍请参见[backgroundTaskManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-backgroundtaskmgr)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -937,13 +986,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### backgroundTaskManager.updateBackgroundRunning12+
+## backgroundTaskManager.updateBackgroundRunning12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateBackgroundRunning(context: Context, bgModes: string[]): Promise&lt;ContinuousTaskNotification&gt;
 
-更新长时任务类型，使用Promise异步回调。长时任务更新成功后，会有通知栏消息，没有提示音。
+更新长时任务，使用Promise异步回调。更新成功后仅显示通知栏消息，不播放提示音。适用于应用功能切换（如从音视频播放切换到录音）等需要调整长时任务以匹配新业务的场景。
 
 更新长时任务前，可以通过[getAllContinuousTasks](#backgroundtaskmanagergetallcontinuoustasks20)接口获取当前所有长时任务信息，如果当前没有已经存在的长时任务，会更新失败。
 
@@ -963,6 +1013,7 @@ updateBackgroundRunning(context: Context, bgModes: string[]): Promise&lt;Continu
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用运行的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 说明： Stage模型中，仅支持UIAbility申请；FA模型中，仅支持ServiceAbility申请。 |
@@ -970,6 +1021,7 @@ updateBackgroundRunning(context: Context, bgModes: string[]): Promise&lt;Continu
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -979,6 +1031,7 @@ updateBackgroundRunning(context: Context, bgModes: string[]): Promise&lt;Continu
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[backgroundTaskManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-backgroundtaskmgr)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -995,7 +1048,7 @@ updateBackgroundRunning(context: Context, bgModes: string[]): Promise&lt;Continu
 
 **示例：**
 
-```text
+```json
 import { backgroundTaskManager } from '@kit.BackgroundTasksKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
@@ -1005,8 +1058,8 @@ export default class EntryAbility extends UIAbility {
     try {
       // 必须先执行startBackgroundRunning，才能调用updateBackgroundRunning，这里假设已经申请过
       let list: Array<string> = ["audioPlayback"];
-      backgroundTaskManager.updateBackgroundRunning(this.context, list).then(() => {
-        console.info("Operation updateBackgroundRunning succeeded");
+      backgroundTaskManager.updateBackgroundRunning(this.context, list).then((res: backgroundTaskManager.ContinuousTaskNotification) => {
+        console.info('Operation updateBackgroundRunning succeeded. Data: ' + JSON.stringify(res));
       }).catch((error: BusinessError) => {
         console.error(`Operation updateBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
       });
@@ -1019,13 +1072,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### backgroundTaskManager.updateBackgroundRunning21+
+## backgroundTaskManager.updateBackgroundRunning21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateBackgroundRunning(context: Context, request: ContinuousTaskRequest): Promise&lt;ContinuousTaskNotification&gt;
 
-更新长时任务，使用Promise异步回调。长时任务更新成功后，会有通知栏消息，没有提示音。
+更新长时任务，使用Promise异步回调。更新成功后仅显示通知栏消息，不播放提示音。适用于应用功能切换（如从音视频播放切换到录音）等需要调整长时任务以匹配新业务的场景。
 
 更新长时任务还存在如下约束限制：
 1. 本接口仅支持更新如下接口申请的长时任务：[startBackgroundRunning(context: Context, request: ContinuousTaskRequest): Promise&lt;ContinuousTaskNotification&gt;](#backgroundtaskmanagerstartbackgroundrunning21)。
@@ -1040,6 +1094,7 @@ updateBackgroundRunning(context: Context, request: ContinuousTaskRequest): Promi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用运行的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 说明： Stage模型中，仅支持UIAbility申请；FA模型中，仅支持ServiceAbility申请。 |
@@ -1047,6 +1102,7 @@ updateBackgroundRunning(context: Context, request: ContinuousTaskRequest): Promi
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1056,6 +1112,7 @@ updateBackgroundRunning(context: Context, request: ContinuousTaskRequest): Promi
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[backgroundTaskManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-backgroundtaskmgr)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1069,7 +1126,7 @@ updateBackgroundRunning(context: Context, request: ContinuousTaskRequest): Promi
 
 **示例：**
 
-```text
+```json
 import { backgroundTaskManager } from '@kit.BackgroundTasksKit';
 import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -1104,6 +1161,7 @@ export default class EntryAbility extends UIAbility {
           // 必须先执行startBackgroundRunning，才能调用updateBackgroundRunning，请开发者提前申请长时任务
           let modeList: Array<number> = [backgroundTaskManager.BackgroundTaskMode.MODE_LOCATION];
           let subModeList: Array<number> = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_NORMAL_NOTIFICATION];
+          // 创建长时任务请求对象
           let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
           continuousTaskRequest.backgroundTaskModes = modeList;
           continuousTaskRequest.backgroundTaskSubmodes = subModeList;
@@ -1111,7 +1169,7 @@ export default class EntryAbility extends UIAbility {
           continuousTaskRequest.combinedTaskNotification = false;
           continuousTaskRequest.continuousTaskId = this.continuousTaskId; // 对于更新接口，长时任务ID必须要传且为存在的ID，否则更新失败
           backgroundTaskManager.updateBackgroundRunning(this.context, continuousTaskRequest).then((res: backgroundTaskManager.ContinuousTaskNotification) => {
-            console.info("Operation updateBackgroundRunning succeeded");
+            console.info('Operation updateBackgroundRunning succeeded. Data: ' + JSON.stringify(res));
             this.notificationId = res.notificationId;
           }).catch((error: BusinessError) => {
             console.error(`Operation updateBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
@@ -1129,9 +1187,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### backgroundTaskManager.getAllContinuousTasks20+
+## backgroundTaskManager.getAllContinuousTasks20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllContinuousTasks(context: Context): Promise<ContinuousTaskInfo[]>
 
@@ -1143,12 +1202,14 @@ getAllContinuousTasks(context: Context): Promise<ContinuousTaskInfo[]>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用运行的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 说明： Stage模型中，仅支持UIAbility申请；FA模型中，仅支持ServiceAbility申请。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1158,6 +1219,7 @@ getAllContinuousTasks(context: Context): Promise<ContinuousTaskInfo[]>
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[backgroundTaskManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-backgroundtaskmgr)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1192,9 +1254,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### backgroundTaskManager.getAllContinuousTasks20+
+## backgroundTaskManager.getAllContinuousTasks20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllContinuousTasks(context: Context, includeSuspended: boolean): Promise<ContinuousTaskInfo[]>
 
@@ -1206,6 +1269,7 @@ getAllContinuousTasks(context: Context, includeSuspended: boolean): Promise<Cont
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用运行的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 说明： Stage模型中，仅支持UIAbility申请；FA模型中，仅支持ServiceAbility申请。 |
@@ -1213,6 +1277,7 @@ getAllContinuousTasks(context: Context, includeSuspended: boolean): Promise<Cont
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1222,6 +1287,7 @@ getAllContinuousTasks(context: Context, includeSuspended: boolean): Promise<Cont
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[backgroundTaskManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-backgroundtaskmgr)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1256,9 +1322,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### backgroundTaskManager.on('continuousTaskCancel')15+
+## backgroundTaskManager.on('continuousTaskCancel')15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'continuousTaskCancel', callback: Callback&lt;ContinuousTaskCancelInfo&gt;): void
 
@@ -1270,15 +1337,17 @@ on(type: 'continuousTaskCancel', callback: Callback&lt;ContinuousTaskCancelInfo&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，固定取值为'continuousTaskCancel'，表示长时任务取消。 |
-| callback | Callback&lt;ContinuousTaskCancelInfo&gt; | 是 | 回调函数，返回长时任务取消原因等信息。 |
+| callback | Callback&lt;ContinuousTaskCancelInfo&gt; | 是 | 回调函数，返回长时任务取消原因等信息。当长时任务被取消时触发此回调。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1311,9 +1380,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### backgroundTaskManager.off('continuousTaskCancel')15+
+## backgroundTaskManager.off('continuousTaskCancel')15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'continuousTaskCancel', callback?: Callback&lt;ContinuousTaskCancelInfo&gt;): void
 
@@ -1325,15 +1395,17 @@ off(type: 'continuousTaskCancel', callback?: Callback&lt;ContinuousTaskCancelInf
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 取消长时任务，固定取值为'continuousTaskCancel'。 |
+| type | string | 是 | 事件回调类型，固定取值为'continuousTaskCancel'，表示长时任务取消。 |
 | callback | Callback&lt;ContinuousTaskCancelInfo&gt; | 否 | 需要取消监听的回调函数，未传入则取消所有注册回调。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1366,9 +1438,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### backgroundTaskManager.on('continuousTaskSuspend')20+
+## backgroundTaskManager.on('continuousTaskSuspend')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'continuousTaskSuspend', callback: Callback&lt;ContinuousTaskSuspendInfo&gt;): void
 
@@ -1382,15 +1455,17 @@ on(type: 'continuousTaskSuspend', callback: Callback&lt;ContinuousTaskSuspendInf
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，固定取值为'continuousTaskSuspend'，表示长时任务暂停。 |
-| callback | Callback&lt;ContinuousTaskSuspendInfo&gt; | 是 | 回调函数，返回长时任务暂停原因等信息。 |
+| callback | Callback&lt;ContinuousTaskSuspendInfo&gt; | 是 | 回调函数，返回长时任务暂停原因等信息。当长时任务为暂停状态时触发此回调。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[backgroundTaskManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-backgroundtaskmgr)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1424,9 +1499,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### backgroundTaskManager.off('continuousTaskSuspend')20+
+## backgroundTaskManager.off('continuousTaskSuspend')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'continuousTaskSuspend', callback?: Callback&lt;ContinuousTaskSuspendInfo&gt;): void
 
@@ -1438,6 +1514,7 @@ off(type: 'continuousTaskSuspend', callback?: Callback&lt;ContinuousTaskSuspendI
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，固定取值为'continuousTaskSuspend'，表示长时任务暂停。 |
@@ -1447,6 +1524,7 @@ off(type: 'continuousTaskSuspend', callback?: Callback&lt;ContinuousTaskSuspendI
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[backgroundTaskManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-backgroundtaskmgr)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1480,9 +1558,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### backgroundTaskManager.on('continuousTaskActive')20+
+## backgroundTaskManager.on('continuousTaskActive')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'continuousTaskActive', callback: Callback&lt;ContinuousTaskActiveInfo&gt;): void
 
@@ -1494,15 +1573,17 @@ on(type: 'continuousTaskActive', callback: Callback&lt;ContinuousTaskActiveInfo&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，固定取值为'continuousTaskActive'，表示长时任务激活。 |
-| callback | Callback&lt;ContinuousTaskActiveInfo&gt; | 是 | 回调函数，返回长时任务激活相关信息。 |
+| callback | Callback&lt;ContinuousTaskActiveInfo&gt; | 是 | 回调函数，返回长时任务激活相关信息。当暂停的长时任务被激活时触发此回调。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[backgroundTaskManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-backgroundtaskmgr)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1534,9 +1615,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### backgroundTaskManager.off('continuousTaskActive')20+
+## backgroundTaskManager.off('continuousTaskActive')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'continuousTaskActive', callback?: Callback&lt;ContinuousTaskActiveInfo&gt;): void
 
@@ -1548,6 +1630,7 @@ off(type: 'continuousTaskActive', callback?: Callback&lt;ContinuousTaskActiveInf
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，固定取值为'continuousTaskActive'，表示长时任务激活。 |
@@ -1557,6 +1640,7 @@ off(type: 'continuousTaskActive', callback?: Callback&lt;ContinuousTaskActiveInf
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[backgroundTaskManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-backgroundtaskmgr)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1588,13 +1672,15 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### DelaySuspendInfo
+## DelaySuspendInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 短时任务信息。
 
 **系统能力：** SystemCapability.ResourceSchedule.BackgroundTaskManager.TransientTask
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1604,13 +1690,15 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### TransientTaskInfo20+
+## TransientTaskInfo20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 所有短时任务信息。
 
 **系统能力：** SystemCapability.ResourceSchedule.BackgroundTaskManager.TransientTask
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1620,13 +1708,15 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### BackgroundMode
+## BackgroundMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 长时任务类型。
 
 **系统能力：** SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1642,13 +1732,15 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### ContinuousTaskNotification12+
+## ContinuousTaskNotification12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 长时任务通知信息。
 
 **系统能力：** SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1660,13 +1752,15 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### ContinuousTaskCancelInfo15+
+## ContinuousTaskCancelInfo15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 长时任务取消信息。
 
 **系统能力：** SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1677,13 +1771,15 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### ContinuousTaskCancelReason15+
+## ContinuousTaskCancelReason15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 长时任务取消原因。
 
 **系统能力：** SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1702,9 +1798,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### ContinuousTaskDetailedCancelReason
+## ContinuousTaskDetailedCancelReason
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 长时任务取消详细原因。
 
@@ -1713,6 +1810,7 @@ export default class EntryAbility extends UIAbility {
 **系统能力：** SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
 
 **模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1731,13 +1829,15 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### BackgroundSubMode16+
+## BackgroundSubMode16+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 长时任务子类型。
 
 **系统能力：** SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1746,13 +1846,15 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### BackgroundModeType16+
+## BackgroundModeType16+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 长时任务类型类别。
 
 **系统能力：** SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1761,13 +1863,15 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### ContinuousTaskSuspendInfo20+
+## ContinuousTaskSuspendInfo20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 长时任务暂停信息。
 
 **系统能力：** SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1779,9 +1883,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### SuspendMessage
+## SuspendMessage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 长时任务暂停原因。
 
@@ -1791,6 +1896,7 @@ export default class EntryAbility extends UIAbility {
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | message | string | 否 | 否 | 长时任务暂停的信息。 |
@@ -1799,13 +1905,15 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### ContinuousTaskSuspendReason20+
+## ContinuousTaskSuspendReason20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 长时任务暂停原因。
 
 **系统能力：** SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1829,13 +1937,15 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### ContinuousTaskActiveInfo20+
+## ContinuousTaskActiveInfo20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 长时任务激活信息。
 
 **系统能力：** SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1844,13 +1954,15 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### ContinuousTaskInfo20+
+## ContinuousTaskInfo20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 长时任务信息。
 
 **系统能力：** SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1872,9 +1984,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### ContinuousTaskRequest21+
+## ContinuousTaskRequest21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通常作为[startBackgroundRunning()](#backgroundtaskmanagerstartbackgroundrunning21)和[updateBackgroundRunning()](#backgroundtaskmanagerupdatebackgroundrunning21)接口的入参，用于指定申请或更新的长时任务信息。其中：
 1. 通过[startBackgroundRunning()](#backgroundtaskmanagerstartbackgroundrunning21)接口申请长时任务时，如果待申请长时任务与当前应用下已存在长时任务，两者的主类型和子类型均相同，且combinedTaskNotification均取值为true，则会合并通知。否则不会合并通知。
@@ -1887,11 +2000,13 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1904,9 +2019,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### isModeSupported21+
+### isModeSupported21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isModeSupported(): boolean
 
@@ -1920,6 +2036,7 @@ isModeSupported(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回长时任务主类型是否支持。true表示支持，false表示不支持。 |
@@ -1928,6 +2045,7 @@ isModeSupported(): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[backgroundTaskManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-backgroundtaskmgr)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1945,6 +2063,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
     let isModeSupported: boolean = false;
+    // 创建长时任务请求对象
     let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
     let modeList: Array<number> = [backgroundTaskManager.BackgroundTaskMode.MODE_TASK_KEEPING];
     continuousTaskRequest.backgroundTaskModes = modeList;
@@ -1960,9 +2079,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### requestAuthFromUser22+
+### requestAuthFromUser22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 requestAuthFromUser(context: Context, callback: Callback&lt;UserAuthResult&gt;): void
 
@@ -1978,6 +2098,7 @@ requestAuthFromUser(context: Context, callback: Callback&lt;UserAuthResult&gt;):
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用运行的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 说明： Stage模型中，仅支持UIAbility申请；FA模型中，仅支持ServiceAbility申请。 |
@@ -1987,6 +2108,7 @@ requestAuthFromUser(context: Context, callback: Callback&lt;UserAuthResult&gt;):
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[backgroundTaskManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-backgroundtaskmgr)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2008,6 +2130,7 @@ function callbackAuth(authResult: backgroundTaskManager.UserAuthResult) {
 
 export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
+    // 创建长时任务请求对象
     let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
     let modeList: Array<number> = [backgroundTaskManager.BackgroundTaskMode.MODE_SPECIAL_SCENARIO_PROCESSING];
     continuousTaskRequest.backgroundTaskModes = modeList;
@@ -2025,9 +2148,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### requestAuthFromUserByDialog
+### requestAuthFromUserByDialog
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 requestAuthFromUserByDialog(context: Context, callback: Callback&lt;UserAuthResult&gt;): void
 
@@ -2045,6 +2169,7 @@ requestAuthFromUserByDialog(context: Context, callback: Callback&lt;UserAuthResu
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用运行的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 说明： Stage模型中，仅支持UIAbility申请；FA模型中，仅支持ServiceAbility申请。 |
@@ -2054,6 +2179,7 @@ requestAuthFromUserByDialog(context: Context, callback: Callback&lt;UserAuthResu
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[backgroundTaskManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-backgroundtaskmgr)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2081,6 +2207,7 @@ export default class EntryAbility extends UIAbility {
         return;
       }
       try {
+        // 创建长时任务请求对象
         let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
         let modeList: Array<number> = [backgroundTaskManager.BackgroundTaskMode.MODE_SPECIAL_SCENARIO_PROCESSING];
         continuousTaskRequest.backgroundTaskModes = modeList;
@@ -2098,9 +2225,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### checkSpecialScenarioAuth22+
+### checkSpecialScenarioAuth22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 checkSpecialScenarioAuth(context: Context): Promise&lt;UserAuthResult&gt;
 
@@ -2116,12 +2244,14 @@ checkSpecialScenarioAuth(context: Context): Promise&lt;UserAuthResult&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用运行的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 说明： Stage模型中，仅支持UIAbility申请；FA模型中，仅支持ServiceAbility申请。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2131,6 +2261,7 @@ checkSpecialScenarioAuth(context: Context): Promise&lt;UserAuthResult&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[backgroundTaskManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-backgroundtaskmgr)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2149,6 +2280,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
     try {
+      // 创建长时任务请求对象
       let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
       continuousTaskRequest.checkSpecialScenarioAuth(this.context).then((res: backgroundTaskManager.UserAuthResult) => {
         console.info('Operation checkSpecialScenarioAuth succeeded. data: ' + JSON.stringify(res));
@@ -2164,9 +2296,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### checkSpecialScenarioAuthResult
+### checkSpecialScenarioAuthResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 checkSpecialScenarioAuthResult(context: Context): Promise&lt;UserAuthResult&gt;
 
@@ -2184,12 +2317,14 @@ checkSpecialScenarioAuthResult(context: Context): Promise&lt;UserAuthResult&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用运行的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 说明： Stage模型中，仅支持UIAbility申请；FA模型中，仅支持ServiceAbility申请。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2199,6 +2334,7 @@ checkSpecialScenarioAuthResult(context: Context): Promise&lt;UserAuthResult&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[backgroundTaskManager错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-backgroundtaskmgr)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2217,6 +2353,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
     try {
+      // 创建长时任务请求对象
       let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
       continuousTaskRequest.checkSpecialScenarioAuthResult(this.context).then((res: backgroundTaskManager.UserAuthResult) => {
         console.info('Operation checkSpecialScenarioAuthResult succeeded. data: ' + JSON.stringify(res));
@@ -2232,15 +2369,17 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### BackgroundTaskMode21+
+## BackgroundTaskMode21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 长时任务主类型。通常与长时任务子类型[BackgroundTaskSubmode](#backgroundtasksubmode21)配合使用，对照关系请参考长时任务主类型与子类型对照表，两者共同作为API version 21新增的申请[startBackgroundRunning](#backgroundtaskmanagerstartbackgroundrunning21)、更新[updateBackgroundRunning](#backgroundtaskmanagerupdatebackgroundrunning21)长时任务接口入参，用于指定长时任务类型。
 
 仅当主类型为MODE_SPECIAL_SCENARIO_PROCESSING特殊场景类型，或非PC/2in1设备主类型为MODE_TASK_KEEPING计算任务时，调用长时任务相关接口时需同时申请ACL权限[ohos.permission.KEEP_BACKGROUND_RUNNING_SYSTEM](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/restricted-permissions#ohospermissionkeep_background_running_system)，其他场景无需申请该权限。
 
 **系统能力：** SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2259,13 +2398,15 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### BackgroundTaskSubmode21+
+## BackgroundTaskSubmode21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 长时任务子类型。通常与长时任务主类型[BackgroundTaskMode](#backgroundtaskmode21)配合使用，对照关系请参考长时任务主类型与子类型对照表，两者共同作为API version 21新增的申请、更新长时任务接口入参，用于指定长时任务类型。
 
 **系统能力：** SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2284,6 +2425,7 @@ export default class EntryAbility extends UIAbility {
 
 **长时任务主类型与子类型对照表：**
 
+
 | 长时任务主类型BackgroundTaskMode | 长时任务子类型BackgroundTaskSubmode |
 | --- | --- |
 | MODE_DATA_TRANSFER | SUBMODE_LIVE_VIEW_NOTIFICATION |
@@ -2301,13 +2443,15 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### UserAuthResult22+
+## UserAuthResult22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用户授权结果。
 
 **系统能力：** SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

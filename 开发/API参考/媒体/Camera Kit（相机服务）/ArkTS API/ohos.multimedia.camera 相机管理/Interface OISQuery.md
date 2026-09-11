@@ -1,9 +1,9 @@
 # Interface (OISQuery)
 
-更新时间：2026-07-24 10:38:53
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-oisquery
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 光学防抖（OIS）查询对象。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { camera } from '@kit.CameraKit';
@@ -22,9 +23,10 @@ import { camera } from '@kit.CameraKit';
  
   
 
-#### isOISModeSupported24+
+## isOISModeSupported24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isOISModeSupported(mode: OISMode): boolean
  
@@ -38,6 +40,7 @@ isOISModeSupported(mode: OISMode): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | OISMode | 是 | 设置的OIS模式。 |
@@ -45,6 +48,7 @@ isOISModeSupported(mode: OISMode): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 当前设备是否支持指定的OIS模式。返回true表示支持，返回false表示不支持。 |
@@ -54,6 +58,7 @@ isOISModeSupported(mode: OISMode): boolean
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400102 | Operation not allowed, the inputDevice or the session is abnormal. |
@@ -79,9 +84,10 @@ function isOISModeSupported(photoSession: camera.PhotoSession, mode: camera.OISM
  
   
 
-#### getSupportedOISBiasRange24+
+## getSupportedOISBiasRange24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSupportedOISBiasRange(oisAxis: OISAxes): Array&lt;number&gt;
  
@@ -95,6 +101,7 @@ getSupportedOISBiasRange(oisAxis: OISAxes): Array&lt;number&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | oisAxis | OISAxes | 是 | OIS轴向。 |
@@ -102,6 +109,7 @@ getSupportedOISBiasRange(oisAxis: OISAxes): Array&lt;number&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;number&gt; | 偏置范围。 |
@@ -111,6 +119,7 @@ getSupportedOISBiasRange(oisAxis: OISAxes): Array&lt;number&gt;
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400102 | Operation not allowed, the inputDevice or the session is abnormal. |
@@ -136,9 +145,10 @@ function getSupportedOISBiasRange(photoSession: camera.PhotoSession, oisAxis: ca
  
   
 
-#### getSupportedOISBiasStep24+
+## getSupportedOISBiasStep24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSupportedOISBiasStep(oisAxis: OISAxes): number
  
@@ -152,6 +162,7 @@ getSupportedOISBiasStep(oisAxis: OISAxes): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | oisAxis | OISAxes | 是 | OIS轴向。 |
@@ -159,6 +170,7 @@ getSupportedOISBiasStep(oisAxis: OISAxes): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 偏置步长值。 |
@@ -168,6 +180,7 @@ getSupportedOISBiasStep(oisAxis: OISAxes): number
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400102 | Operation not allowed, the inputDevice or the session is abnormal. |
@@ -193,9 +206,10 @@ function getSupportedOISBiasStep(photoSession: camera.PhotoSession, oisAxis: cam
  
   
 
-#### getCurrentOISMode24+
+## getCurrentOISMode24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCurrentOISMode(): OISMode
  
@@ -209,6 +223,7 @@ getCurrentOISMode(): OISMode
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OISMode | 当前OIS模式。 |
@@ -218,6 +233,7 @@ getCurrentOISMode(): OISMode
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400102 | Operation not allowed, the inputDevice or the session is abnormal. |
@@ -243,9 +259,10 @@ function getCurrentOISMode(photoSession: camera.PhotoSession): camera.OISMode {
  
   
 
-#### getCurrentCustomOISBias24+
+## getCurrentCustomOISBias24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCurrentCustomOISBias(oisAxis: OISAxes): number
  
@@ -259,6 +276,7 @@ getCurrentCustomOISBias(oisAxis: OISAxes): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | oisAxis | OISAxes | 是 | OIS轴向。 |
@@ -266,6 +284,7 @@ getCurrentCustomOISBias(oisAxis: OISAxes): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 当前偏置值。 |
@@ -275,6 +294,7 @@ getCurrentCustomOISBias(oisAxis: OISAxes): number
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400102 | Operation not allowed, the inputDevice or the session is abnormal. |

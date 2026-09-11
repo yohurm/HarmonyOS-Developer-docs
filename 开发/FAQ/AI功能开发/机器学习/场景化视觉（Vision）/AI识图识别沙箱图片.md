@@ -59,13 +59,13 @@ struct SavePixelMapToAlbum {
   }
 
   async packToFile(pixelMap?: PixelMap): Promise<string> {
-    // 获取应用文件路径
+   <em> // 获取应用文件路径</em>
     let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
     let filesDir: string = context.cacheDir;
     let picName = '/testing' + new Date().getTime() + '.jpg';
-    // 新建并打开文件
+   <em> // 新建并打开文件</em>
     let file = fs.openSync(filesDir + picName, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
-    // 创建图像编码ImagePacker对象
+   <em> // 创建图像编码ImagePacker对象</em>
     const imagePackerApi = image.createImagePacker();
     const options: image.PackingOption = { format: 'image/jpeg', quality: 98 };
     await imagePackerApi.packToFile(pixelMap, file.fd, options);
@@ -97,13 +97,13 @@ struct SavePixelMapToAlbum {
                   .then(async (PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
                     console.info('PhotoViewPicker.select successfully, PhotoSelectResult uri: ' +
                     JSON.stringify(PhotoSelectResult));
-                    // 获取相册图片URI
+                   <em> // 获取相册图片URI</em>
                     let filePath = PhotoSelectResult.photoUris[0];
                     let file = fileIo.openSync(filePath, fileIo.OpenMode.READ_ONLY);
-                    // 通过传入文件描述符来创建图片源实例
+                  <em>  // 通过传入文件描述符来创建图片源实例</em>
                     let imageSource: image.ImageSource = image.createImageSource(file.fd);
                     let pixelMap: image.PixelMap = await imageSource.createPixelMap();
-                    // 保存到沙盒路径
+                  <em>  // 保存到沙盒路径</em>
                     let url = await this.packToFile(pixelMap);
                     this.imageUrl = fileUri.getUriFromPath(url);
                   })

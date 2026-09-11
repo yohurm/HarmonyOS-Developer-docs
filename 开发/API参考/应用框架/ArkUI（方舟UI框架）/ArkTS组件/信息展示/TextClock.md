@@ -1,9 +1,9 @@
 # TextClock
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textclock
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TextClock组件通过文本将当前系统时间显示在设备上，支持不同时区的时间显示和时间格式自定义，最高精度到秒级。适用于需要在应用界面上实时展示系统时间、支持多时区显示的场景，可帮助开发者快速实现时间文本展示功能，无需手动计算和更新时间。
  
@@ -14,17 +14,19 @@ TextClock组件通过文本将当前系统时间显示在设备上，支持不�
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
  
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TextClock(options?: TextClockOptions)
  
@@ -36,6 +38,7 @@ TextClock(options?: TextClockOptions)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | TextClockOptions | 否 | 通过文本显示当前系统时间的组件参数。不传入时使用默认配置，各属性默认值详见TextClockOptions。 |
@@ -43,9 +46,10 @@ TextClock(options?: TextClockOptions)
  
   
 
-#### TextClockOptions18+对象说明
+## TextClockOptions18+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于构建TextClock组件的选项。
  
@@ -61,6 +65,7 @@ TextClock(options?: TextClockOptions)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | timeZoneOffset8+ | number | 否 | 是 | 设置时区偏移量，单位：小时。 取值范围为[-14, 12]，表示东十二区到西十二区，其中负值表示东时区，正值表示西时区，比如东八区为-8。设置值为该取值范围内的浮点数时会进行取整，舍弃小数部分。 对横跨国际日界线的国家或地区，用-13（UTC+13）和-14（UTC+14）来保证整个国家或者区域处在相同的时间，当设置的值不在取值范围内时，将使用当前系统的时区偏移量。 默认值：当前系统的时区偏移量 设置值为{ 9.5, 3.5, -3.5, -4.5, -5.5, -5.75, -6.5, -9.5, -10.5, -12.75 }集合中的浮点数时不进行取整。 卡片能力： 从API version 11开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -69,17 +74,19 @@ TextClock(options?: TextClockOptions)
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
  
   
 
-#### format
+### format
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 format(value: ResourceStr)
  
@@ -129,6 +136,7 @@ a：上午/下午（当设置小时制式为H时，该参数不生效）
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceStr | 是 | 显示时间格式。 从API version 20开始，支持Resource类型。 |
@@ -136,6 +144,7 @@ a：上午/下午（当设置小时制式为H时，该参数不生效）
  
 以下是format输入的格式样式及对应的显示效果：
   
+
 | 输入格式 | 显示效果 |
 | --- | --- |
 | yyyy年M月d日 EEEE | 2023年2月4日 星期六 |
@@ -171,9 +180,10 @@ a：上午/下午（当设置小时制式为H时，该参数不生效）
  
   
 
-#### fontColor
+### fontColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontColor(value: ResourceColor)
  
@@ -187,6 +197,7 @@ fontColor(value: ResourceColor)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 字体颜色。 Wearable设备上默认值：'#c5ffffff'，其他设备默认值：'#e6182431' |
@@ -194,9 +205,10 @@ fontColor(value: ResourceColor)
  
   
 
-#### fontSize
+### fontSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontSize(value: Length)
  
@@ -210,6 +222,7 @@ fontSize(value: Length)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Length | 是 | 字体大小。fontSize为number类型时，使用fp单位。 字体默认大小16fp。不支持设置百分比字符串，传入百分比字符串时使用默认值。 |
@@ -217,9 +230,10 @@ fontSize(value: Length)
  
   
 
-#### fontStyle
+### fontStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontStyle(value: FontStyle)
  
@@ -233,6 +247,7 @@ fontStyle(value: FontStyle)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | FontStyle | 是 | 字体样式。 默认值：FontStyle.Normal，表示标准的字体样式（非斜体）。 |
@@ -240,9 +255,10 @@ fontStyle(value: FontStyle)
  
   
 
-#### fontWeight
+### fontWeight
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontWeight(value: number | FontWeight | string)
  
@@ -256,6 +272,7 @@ fontWeight(value: number | FontWeight | string)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| FontWeight \| string | 是 | 文本的字体粗细，number类型取值范围为[100, 900]，取值间隔为100，取值越大，字体越粗。number类型取值范围外的默认值为400。string类型支持：number类型取值的字符串形式（如400），以及枚举值'lighter'（对应300）、'regular'（对应400）、'medium'（对应500）、'bold'（对应700）、'bolder'（对应900），分别对应FontWeight中相应的枚举值。 默认值：FontWeight.Normal |
@@ -263,9 +280,10 @@ fontWeight(value: number | FontWeight | string)
  
   
 
-#### fontFamily
+### fontFamily
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontFamily(value: ResourceStr)
  
@@ -279,6 +297,7 @@ fontFamily(value: ResourceStr)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceStr | 是 | 字体列表。默认字体'HarmonyOS Sans'。 应用当前支持'HarmonyOS Sans'字体和注册自定义字体。 卡片当前仅支持'HarmonyOS Sans'字体。 |
@@ -286,9 +305,10 @@ fontFamily(value: ResourceStr)
  
   
 
-#### textShadow11+
+### textShadow11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 textShadow(value: ShadowOptions | Array&lt;ShadowOptions&gt;)
  
@@ -304,6 +324,7 @@ textShadow(value: ShadowOptions | Array&lt;ShadowOptions&gt;)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ShadowOptions \| Array&lt;ShadowOptions&gt; | 是 | 文字阴影效果。支持单个阴影对象或阴影数组实现多重阴影效果。ShadowOptions对象包含radius（模糊半径）、color（阴影颜色）、offsetX（X轴偏移）、offsetY（Y轴偏移）等属性。 不支持fill字段，不支持智能取色模式。具体属性说明请参考ShadowOptions对象说明。 |
@@ -311,9 +332,10 @@ textShadow(value: ShadowOptions | Array&lt;ShadowOptions&gt;)
  
   
 
-#### fontFeature11+
+### fontFeature11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontFeature(value: string)
  
@@ -337,6 +359,7 @@ fontFeature(value: string)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string | 是 | 文字特性效果，用于设置文字的OpenType特性。格式为：normal \| <feature-tag-value>，其中<feature-tag-value>格式为：&lt;string&gt; [ &lt;integer&gt; \| on \| off ]。可设置多个特性，中间用','隔开。例如，使用等宽时钟数字的格式为：'"ss01" on'。 |
@@ -344,9 +367,10 @@ fontFeature(value: string)
  
   
 
-#### contentModifier12+
+### contentModifier12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contentModifier(modifier: ContentModifier&lt;TextClockConfiguration&gt;)
  
@@ -360,6 +384,7 @@ contentModifier(modifier: ContentModifier&lt;TextClockConfiguration&gt;)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | modifier | ContentModifier&lt;TextClockConfiguration&gt; | 是 | 在TextClock组件上，定制内容区的方法。 modifier： 内容修改器，开发者需要自定义class实现ContentModifier接口。 |
@@ -367,9 +392,10 @@ contentModifier(modifier: ContentModifier&lt;TextClockConfiguration&gt;)
  
   
 
-#### dateTimeOptions12+
+### dateTimeOptions12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 dateTimeOptions(dateTimeOptions: Optional&lt;DateTimeOptions&gt;)
  
@@ -385,6 +411,7 @@ dateTimeOptions(dateTimeOptions: Optional&lt;DateTimeOptions&gt;)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dateTimeOptions | Optional&lt;DateTimeOptions&gt; | 是 | 设置小时是否显示前导0，只支持设置hour参数，参数值为{hour: "2-digit"}时表示显示前导0，参数值为{hour: "numeric"}时表示不显示前导0。 默认值：undefined，默认状态下，24小时制显示前导0，12小时制不显示前导0。 |
@@ -392,17 +419,19 @@ dateTimeOptions(dateTimeOptions: Optional&lt;DateTimeOptions&gt;)
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)外，还支持以下事件：
  
   
 
-#### onDateChange
+### onDateChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDateChange(event: (value: number) => void)
  
@@ -422,6 +451,7 @@ onDateChange(event: (value: number) => void)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | Unix Time Stamp，即自1970年1月1日（UTC）起经过的秒数。 |
@@ -429,9 +459,10 @@ onDateChange(event: (value: number) => void)
  
   
 
-#### TextClockController
+## TextClockController
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TextClock容器组件的控制器，可以将该控制器绑定到TextClock组件，通过它控制文本时钟的启动与停止。一个TextClock组件仅支持绑定一个控制器。
  
@@ -443,7 +474,10 @@ TextClock容器组件的控制器，可以将该控制器绑定到TextClock组�
  
   
 
-#### 导入对象
+### 导入对象
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 controller: TextClockController = new TextClockController();
@@ -451,9 +485,10 @@ controller: TextClockController = new TextClockController();
  
   
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
  
@@ -467,9 +502,10 @@ TextClockController的构造函数。
  
   
 
-#### start
+### start
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 start()
  
@@ -483,9 +519,10 @@ start()
  
   
 
-#### stop
+### stop
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stop()
  
@@ -499,9 +536,10 @@ stop()
  
   
 
-#### TextClockConfiguration12+对象说明
+## TextClockConfiguration12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 开发者需要自定义class实现ContentModifier接口。
  
@@ -511,22 +549,27 @@ stop()
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| timeZoneOffset | number | 否 | 否 | 当前文本时钟时区偏移量。 取值范围为[-14, 12]，表示东十二区到西十二区，其中负值表示东时区，正值表示西时区，比如东八区为-8。设置值为该取值范围内的浮点数时会进行取整，舍弃小数部分。当设置的值不在取值范围内时，将使用当前系统的时区偏移量。 |
+| timeZoneOffset | number | 否 | 否 | 当前文本时钟时区偏移量。 取值范围为[-14, 12]，表示东十二区到西十二区，其中负值表示东时区，正值表示西时区，比如东八区为-8。设置值为该取值范围内的浮点数时会进行取整，舍弃小数部分；但设置值为{ 9.5, 3.5, -3.5, -4.5, -5.5, -5.75, -6.5, -9.5, -10.5, -12.75 }集合中的浮点数时不进行取整。当设置的值不在取值范围内时，将使用当前系统的时区偏移量。 |
 | started | boolean | 否 | 否 | 指示文本时钟是否启动。 true：表示启动文本时钟。 false：表示停止文本时钟。 默认值：true |
 | timeValue | number | 否 | 否 | 当前文本时钟时区的UTC秒数。 |
  
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 示例1（支持启停的文本样式时钟）
+### 示例1（支持启停的文本样式时钟）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示了TextClock组件的基本使用方法，通过[format](#format)属性设置时钟文本的格式。
  
@@ -539,7 +582,7 @@ stop()
 @Component
 struct Second {
   @State accumulateTime: number = 0;
-  // 导入对象
+  // 创建控制器对象
   controller: TextClockController = new TextClockController();
 
   build() {
@@ -578,7 +621,10 @@ struct Second {
  
   
 
-#### 示例2（设定文本阴影样式）
+### 示例2（设定文本阴影样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[textShadow](#textshadow11)属性设置时钟文本的阴影样式。
  
@@ -627,7 +673,10 @@ struct TextClockExample {
  
   
 
-#### 示例3（设定自定义内容区）
+### 示例3（设定自定义内容区）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例实现了自定义文本时钟样式的功能，自定义样式实现了一个时间选择器组件：通过文本时钟的时区偏移量与UTC秒数，来动态改变时间选择器的选中值，实现时钟效果。同时，根据文本时钟的启动状态，实现时间选择器的12小时制与24小时制的切换。
  
@@ -718,7 +767,10 @@ struct TextClockExample {
  
   
 
-#### 示例4（设置前导零）
+### 示例4（设置前导零）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例演示了[dateTimeOptions](#datetimeoptions12)属性为小时字段增加或去除前导0的功能。24小时制的小时字段默认带有前导0，可通过[dateTimeOptions](#datetimeoptions12)属性去除前导0，12小时制的小时字段默认不带有前导0，可通过[dateTimeOptions](#datetimeoptions12)属性增加前导0。
  
@@ -757,7 +809,10 @@ struct TextClockExample {
  
   
 
-#### 示例5（设置文字显示样式）
+### 示例5（设置文字显示样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例演示了使用[fontFeature](#fontfeature11)、[fontColor](#fontcolor)、[fontStyle](#fontstyle)、[fontWeight](#fontweight)、[fontFamily](#fontfamily)属性设置时钟文字显示样式的功能。
  

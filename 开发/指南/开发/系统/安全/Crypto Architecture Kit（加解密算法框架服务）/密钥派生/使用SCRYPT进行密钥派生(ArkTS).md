@@ -1,13 +1,13 @@
 # 使用SCRYPT进行密钥派生(ArkTS)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-key-derivation-using-scrypt
 
 对应的算法规格请查看[密钥派生算法规格：SCRYPT](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-key-derivation-overview#scrypt算法)。
 
 
-#### 开发步骤
+## 开发步骤
 1. 构造[ScryptSpec](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#scryptspec18)对象，作为密钥派生参数进行密钥派生。
 
   ScryptSpec是[KdfSpec](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#kdfspec11)的子类，需要指定：
@@ -38,9 +38,13 @@
   Kdf.generateSecret的多种调用形式如表所示。
 
 | 接口名 | 返回方式 |
+
 | --- | --- |
+
 | generateSecret(params: KdfSpec, callback: AsyncCallback&lt;DataBlob&gt;): void | callback异步生成。 |
+
 | generateSecret(params: KdfSpec): Promise&lt;DataBlob&gt; | Promise异步生成。 |
+
 | generateSecretSync(params: KdfSpec): DataBlob | 同步生成。 |
 
   

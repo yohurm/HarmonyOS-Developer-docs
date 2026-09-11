@@ -1,14 +1,14 @@
 # OS平台API行为的变更
 
-更新时间：2026-06-27 01:41:31
+更新时间：2026-09-09 06:41:01
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-for-all-apps-6001
 
-#### Ability Kit
+## Ability Kit
 
  
 
-#### AbilityDelegator.startAbility()接口错误码变更
+### AbilityDelegator.startAbility()接口错误码变更
 
 **变更原因**
  
@@ -24,6 +24,7 @@ AbilityDelegator.startAbility()返回的所有错误码与API描述不一致。
  
 变更影响AbilityDelegator.startAbility()返回的所有错误码，错误码对照表如下：
   
+
 | 变更前 | 变更后 |
 | --- | --- |
 | 29360128 | 401 |
@@ -56,11 +57,11 @@ AbilityDelegator提供的startAbility()接口。
  
 无需适配。
  
-AbilityDelegator提供的startAbility()接口参见[startAbility API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-abilitydelegator#startability9)。
+AbilityDelegator提供的startAbility()接口参见[startAbility API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-abilitydelegator#startability)。
  
  
 
-#### 借助Want进行文件分享时擦除不合法的URI
+### 借助Want进行文件分享时擦除不合法的URI
 
 **变更原因**
  
@@ -129,11 +130,11 @@ AbilityDelegator提供的startAbility()接口参见[startAbility API参考](http
  
  
 
-#### ArkTS
+## ArkTS
 
  
 
-#### 通过字面量定义的数组在删除元素后再使用该字面量定义数组时数组内容异常
+### 通过字面量定义的数组在删除元素后再使用该字面量定义数组时数组内容异常
 
 **变更原因**
  
@@ -191,11 +192,11 @@ for (let i = 0; i < 2; i++) {
  
  
 
-#### ArkUI
+## ArkUI
 
  
 
-#### GridRow组件columns参数和GridCol组件span参数默认值变更
+### GridRow组件columns参数和GridCol组件span参数默认值变更
 
 **变更原因**
  
@@ -209,6 +210,7 @@ for (let i = 0; i < 2; i++) {
 > 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于6.0.0(20)时生效。
 
   
+
 | 变更前 | 变更后 |
 | --- | --- |
 | GridRow中columns不配置时，默认值为12。 | GridRow中columns不配置时，columns使用默认值：{ xs: 2, sm: 4, md: 8, lg: 12, xl: 12, xxl: 12 } |
@@ -283,7 +285,7 @@ struct Example {
  
  
 
-#### width和height支持的matchParent接口规格变更
+### width和height支持的matchParent接口规格变更
 
 **变更原因**
  
@@ -315,6 +317,7 @@ struct Demo {
  
 变更前后效果如下:
   
+
 | 变更前 | 变更后 |
 | --- | --- |
 |  |  |
@@ -336,7 +339,7 @@ height(heightValue: Length | LayoutPolicy): T
  
  
 
-#### 文本与输入、信息展示、按钮与选择、滚动与滑动、图形绘制组件接口支持Resource类型
+### 文本与输入、信息展示、按钮与选择、滚动与滑动、图形绘制组件接口支持Resource类型
 
 **变更原因**
  
@@ -356,6 +359,7 @@ height(heightValue: Length | LayoutPolicy): T
  
 **变更的接口/组件**
   
+
 | 组件名称 | 接口名称 | 参数名称 |
 | --- | --- | --- |
 | TextPicker | TextPickerOptions | value |
@@ -406,7 +410,7 @@ height(heightValue: Length | LayoutPolicy): T
  
  
 
-#### UI Input相关NDK接口行为变更
+### UI Input相关NDK接口行为变更
 
 **变更原因**
  
@@ -431,6 +435,7 @@ height(heightValue: Length | LayoutPolicy): T
  
 变更前与变更后的变化说明：
   
+
 | 接口名称 | 起始版本 | 说明 | 变更原因 | 变更影响 |
 | --- | --- | --- | --- | --- |
 | int32_t OH_ArkUI_UIInputEvent_GetType(const ArkUI_UIInputEvent* event); | 12 | 获取该裸事件对应的枚举类型ArkUI_UIInputEvent_Type，变更前包括触控、轴、鼠标这几种裸事件 | 遗漏支持key事件类型 | 当传入的参数为key事件时，获取的类型为0，修复后可获取正确值（ARKUI_UIINPUTEVENT_TYPE_KEY）。 |
@@ -456,7 +461,7 @@ int32_t OH_ArkUI_UIInputEvent_GetDeviceId(const ArkUI_UIInputEvent* event);
  
  
 
-#### 使用字面量初始化CustomDialogController类实例导致的编译行为变更
+### 使用字面量初始化CustomDialogController类实例导致的编译行为变更
 
 **变更原因**
  
@@ -496,11 +501,11 @@ let controller: CustomDialogController = new CustomDialogController()
  
  
 
-#### ArkWeb
+## ArkWeb
 
  
 
-#### ArkWeb基于上游社区的Chromium内核从114升级为132版本
+### ArkWeb基于上游社区的Chromium内核从114升级为132版本
 
 **变更原因**
  
@@ -524,11 +529,11 @@ ArkWeb
  
  
 
-#### Connectivity Kit
+## Connectivity Kit
 
  
 
-#### 蓝牙BLE接口错误码变更
+### 蓝牙BLE接口错误码变更
 
 **变更原因**
  
@@ -552,6 +557,7 @@ ArkWeb
  
 **变更的接口/组件**
   
+
 | 模块名 | 命名空间 | 类名 | 接口声明 | 主要变更点说明 |
 | --- | --- | --- | --- | --- |
 | @ohos.bluetooth.ble.d.ts | ble |    | function startAdvertising(setting: AdvertiseSetting, advData: AdvertiseData, advResponse?: AdvertiseData): void; | 新增2900010错误码：广播资源已耗尽； 新增2902054错误码：广播报文数据长度超限； |
@@ -615,11 +621,11 @@ try {
  
  
 
-#### Core File Kit
+## Core File Kit
 
  
 
-#### @ohos.file.fs.d.ts中copy接口在拷贝后，对目标文件原有数据处理方式发生变更
+### @ohos.file.fs.d.ts中copy接口在拷贝后，对目标文件原有数据处理方式发生变更
 
 **变更原因**
  
@@ -651,11 +657,11 @@ try {
  
  
 
-#### Driver Development Kit
+## Driver Development Kit
 
  
 
-#### SendPipeRequest和SendPipeRequestWithAshmem传入错误参数时，返回值由USB_DDK_SUCCESS变更为USB_DDK_INVALID_PARAMETER
+### SendPipeRequest和SendPipeRequestWithAshmem传入错误参数时，返回值由USB_DDK_SUCCESS变更为USB_DDK_INVALID_PARAMETER
 
 **变更原因**
  
@@ -783,11 +789,11 @@ OH_Usb_SendPipeRequest和OH_Usb_SendPipeRequestWithAshmem接口开发适配指�
  
  
 
-#### Image Kit
+## Image Kit
 
  
 
-#### ImageInfo对象mimeType返回值变更
+### ImageInfo对象mimeType返回值变更
 
 **变更原因**
  
@@ -805,6 +811,7 @@ OH_Usb_SendPipeRequest和OH_Usb_SendPipeRequestWithAshmem接口开发适配指�
 > 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于6.0.0(20)时生效。
 
   
+
 | 实际格式 | 变更前返回 | 变更后返回 | 解码支持情况 | 编码支持情况 |
 | --- | --- | --- | --- | --- |
 | jpeg | image/jpeg | image/jpeg | 支持 | 支持 |
@@ -856,11 +863,11 @@ function getImageMimeType(context: Context) {
  
  
 
-#### Media Kit
+## Media Kit
 
  
 
-#### 播放器所使用的内存归属变更
+### 播放器所使用的内存归属变更
 
 **变更原因**
  
@@ -894,11 +901,11 @@ AVPlayer
  
  
 
-#### User Authentication Kit
+## User Authentication Kit
 
  
 
-#### @ohos.useriam.userAuth限制应用从后台发起带交互界面的身份认证变更
+### @ohos.useriam.userAuth限制应用从后台发起带交互界面的身份认证变更
 
 **变更原因**
  
@@ -946,11 +953,11 @@ start(): void;
  
  
 
-#### 其他
+## 其他
 
  
 
-#### mincore接口功能补齐至与Linux一致
+### mincore接口功能补齐至与Linux一致
 
 **变更原因**
  
@@ -982,7 +989,7 @@ mincore
  
  
 
-#### ptrace syscall操作未被停住的线程由返回0改为返回ESRCH.1
+### ptrace syscall操作未被停住的线程由返回0改为返回ESRCH.1
 
 **变更原因**
  
@@ -1046,7 +1053,7 @@ return -1;
  
  
 
-#### 限制ptrace接口仅可在开发者调试模式下使用
+### 限制ptrace接口仅可在开发者调试模式下使用
 
 **变更原因**
  

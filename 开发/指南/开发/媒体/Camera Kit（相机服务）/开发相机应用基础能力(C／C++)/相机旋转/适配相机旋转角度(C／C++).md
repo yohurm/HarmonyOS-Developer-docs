@@ -1,6 +1,6 @@
 # 适配相机旋转角度(C/C++)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-rotation-angle-adaptation-native
 
@@ -29,7 +29,7 @@
 详细的API参考说明，请参考[Camera API文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-camera)。
 
 
-#### 创建会话
+## 创建会话
 1. 导入相机等相关模块。
 
   
@@ -76,7 +76,7 @@ void createVideosession(Camera_Manager *cameraManager) {
 
 
 
-#### 预览
+## 预览
 
 完成[会话创建](#创建会话)后，开发者可根据实际需求，配置输出流。
 1. 在[会话管理](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera-session-management)过程中获取并设置[预览旋转角度](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-rotation-term#预览旋转角度)，即：使用[OH_CaptureSession_CommitConfig](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-capture-session-h#oh_capturesession_commitconfig)接口提交相关配置后调用，建议在[OH_CaptureSession_Start](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-capture-session-h#oh_capturesession_start)起流前调用。
@@ -206,7 +206,7 @@ void NDKCamera::DisplayChangeCallback(uint64_t displayId)
 
 
 
-#### 拍照
+## 拍照
 
 完成[会话创建](#创建会话)后，开发者可根据实际需求，配置输出流。
 1. 获取拍照旋转角度。
@@ -255,7 +255,7 @@ Camera_ImageRotation NDKCamera::GetPhotoRotationWithoutDeviceDegree(Camera_Photo
 
 
 
-#### 录像
+## 录像
 
 完成[会话创建](#创建会话)后，开发者可根据实际需求，配置输出流。
 1. 获取录像旋转角度。
@@ -304,7 +304,7 @@ Camera_ImageRotation NDKCamera::GetVideoRotationWithoutDeviceDegree()
 
 
 
-#### 计算设备旋转角度
+## 计算设备旋转角度
 
 当前可通过监听[OH_Sensor_Subscribe](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-sensor-h#oh_sensor_subscribe)获取重力传感器在x、y、z三个方向上的数据，计算得出设备旋转角度deviceDegree，示例如下所示。
 
@@ -418,13 +418,13 @@ int32_t CalDeviceDegree()
 
 
 
-#### 视频通话送远端场景
+## 视频通话送远端场景
 
 两个设备之间进行视频通话，存在设备间持握方向不一致问题，建议**在本端将画面转正**，再通过网络发送到对端。
 
 
 
-#### 实现相机无损出图
+## 实现相机无损出图
 
 在部分折叠屏设备上，[不同折叠状态](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-display#foldstatus10)下的[设备自然方向](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-rotation-term-native#设备自然方向)会发生改变，导致不同折叠状态下的[相机镜头安装角度](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-rotation-term-native#相机镜头安装角度)不同。为了屏蔽不同设备间的差异，使得不同折叠状态下的相机镜头安装角度一致，系统会自动调整部分折叠状态下的相机采集图像方向（通过旋转裁切的方式）和相机镜头安装角度，因此会存在视场角（Field of View, FOV）损失，可能会导致相机预览、拍照、录像可见范围降低，因此如果需要实现相机无损出图，可以通过[OH_CameraInput_UsePhysicalCameraOrientation](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-camera-manager-h#oh_cameramanager_createcamerainput)接口来实现相机无损出图。具体方式如下：
 

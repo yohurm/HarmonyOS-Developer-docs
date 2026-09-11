@@ -1,6 +1,6 @@
 # deferredLink (延迟链接能力)
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/applinking-deferredlink-api
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -10,7 +10,8 @@
 **起始版本：** 5.0.3(15)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -20,7 +21,8 @@ import { deferredLink } from '@kit.AppLinkingKit';
  
   
 
-#### popDeferredLink
+## popDeferredLink
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -36,6 +38,7 @@ popDeferredLink(): Promise&lt;string&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回延迟链接。 |

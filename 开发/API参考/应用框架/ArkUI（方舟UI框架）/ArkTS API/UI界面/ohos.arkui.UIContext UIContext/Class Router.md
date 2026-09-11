@@ -1,11 +1,11 @@
 # Class (Router)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-router
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-Router提供页面跳转能力，包括跳转到应用内的指定页面、同应用内的某个页面替换当前页面、返回上一页面或指定的页面等。还支持命名路由跳转、页面栈管理、参数传递、返回确认对话框等能力，适用于需要统一管理页面导航流程、处理页面间数据传递的场景，与UIContext集成使用可实现灵活的路由控制。
+提供通过不同的url访问不同的页面，包括跳转到应用内的指定页面、同应用内的某个页面替换当前页面、返回上一页面或指定的页面等。Router还支持命名路由跳转、页面栈管理、参数传递、返回确认对话框等能力，适用于需要统一管理页面导航流程、处理页面间数据传递的场景，与UIContext集成使用可实现灵活的路由控制。
 
 Router基于页面栈机制管理页面导航，页面栈支持的最大容量为32个页面。当调用pushUrl时，目标页面会被压入栈顶；调用replaceUrl时，当前页面会被弹出栈并销毁，目标页面压入栈顶；调用back时，栈顶页面会被弹出。
 
@@ -14,9 +14,10 @@ Router基于页面栈机制管理页面导航，页面栈支持的最大容量�
 
 
 
-#### pushUrl
+## pushUrl
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pushUrl(options: router.RouterOptions): Promise&lt;void&gt;
 
@@ -32,12 +33,14 @@ pushUrl(options: router.RouterOptions): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| options | router.RouterOptions | 是 | 跳转页面描述信息，包含url（目标页面路径）和params（传递的参数）等字段。 |
+| options | router.RouterOptions | 是 | 跳转页面描述信息，包含url（目标页面路径）和params（传递的参数）等字段。 说明： 页面栈最大支持32个页面，建议跳转前通过getStackSize（从API version 23开始支持）检查当前栈大小，避免超出限制导致跳转失败（错误码100003）。API version 23之前可使用getLength检查。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -47,6 +50,7 @@ pushUrl(options: router.RouterOptions): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[页面路由错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-router)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -168,9 +172,10 @@ struct Second {
 
 
 
-#### pushUrl
+## pushUrl
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pushUrl(options: router.RouterOptions, callback: AsyncCallback&lt;void&gt;): void
 
@@ -182,6 +187,7 @@ pushUrl(options: router.RouterOptions, callback: AsyncCallback&lt;void&gt;): voi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | router.RouterOptions | 是 | 跳转页面描述信息。 |
@@ -191,6 +197,7 @@ pushUrl(options: router.RouterOptions, callback: AsyncCallback&lt;void&gt;): voi
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[页面路由错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-router)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -250,9 +257,10 @@ struct Index {
 
 
 
-#### pushUrl
+## pushUrl
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pushUrl(options: router.RouterOptions, mode: router.RouterMode): Promise&lt;void&gt;
 
@@ -264,6 +272,7 @@ pushUrl(options: router.RouterOptions, mode: router.RouterMode): Promise&lt;void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | router.RouterOptions | 是 | 跳转页面描述信息。 |
@@ -271,6 +280,7 @@ pushUrl(options: router.RouterOptions, mode: router.RouterMode): Promise&lt;void
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -280,6 +290,7 @@ pushUrl(options: router.RouterOptions, mode: router.RouterMode): Promise&lt;void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[页面路由错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-router)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -344,9 +355,10 @@ struct Index {
 
 
 
-#### pushUrl
+## pushUrl
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pushUrl(options: router.RouterOptions, mode: router.RouterMode, callback: AsyncCallback&lt;void&gt;): void
 
@@ -358,6 +370,7 @@ pushUrl(options: router.RouterOptions, mode: router.RouterMode, callback: AsyncC
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | router.RouterOptions | 是 | 跳转页面描述信息。 |
@@ -368,6 +381,7 @@ pushUrl(options: router.RouterOptions, mode: router.RouterMode, callback: AsyncC
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[页面路由错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-router)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -383,9 +397,8 @@ pushUrl(options: router.RouterOptions, mode: router.RouterMode, callback: AsyncC
 import { router } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
 
-// 定义路由模式类
 class RouterTmp {
-  Standard: router.RouterMode = router.RouterMode.Standard;  // 标准路由模式
+  Standard: router.RouterMode = router.RouterMode.Standard;
 }
 
 let rtm: RouterTmp = new RouterTmp();
@@ -394,10 +407,9 @@ let rtm: RouterTmp = new RouterTmp();
 @Component
 struct Index {
   async routePage() {
-    // 调用pushUrl接口进行页面跳转
     this.getUIContext().getRouter().pushUrl({
-      url: 'pages/routerpage2',  // 跳转目标页面路径
-      params: {  // 传递的页面参数
+      url: 'pages/routerpage2',
+      params: {
         data1: 'message',
         data2: {
           data3: [123, 456, 789]
@@ -435,9 +447,10 @@ struct Index {
 
 
 
-#### replaceUrl
+## replaceUrl
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 replaceUrl(options: router.RouterOptions): Promise&lt;void&gt;
 
@@ -453,12 +466,14 @@ replaceUrl(options: router.RouterOptions): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | router.RouterOptions | 是 | 替换页面描述信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -468,6 +483,7 @@ replaceUrl(options: router.RouterOptions): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[页面路由错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-router)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -521,9 +537,10 @@ struct Index {
 
 
 
-#### replaceUrl
+## replaceUrl
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 replaceUrl(options: router.RouterOptions, callback: AsyncCallback&lt;void&gt;): void
 
@@ -535,6 +552,7 @@ replaceUrl(options: router.RouterOptions, callback: AsyncCallback&lt;void&gt;): 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | router.RouterOptions | 是 | 替换页面描述信息。 |
@@ -544,6 +562,7 @@ replaceUrl(options: router.RouterOptions, callback: AsyncCallback&lt;void&gt;): 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[页面路由错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-router)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -598,9 +617,10 @@ struct Index {
 
 
 
-#### replaceUrl
+## replaceUrl
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 replaceUrl(options: router.RouterOptions, mode: router.RouterMode): Promise&lt;void&gt;
 
@@ -612,6 +632,7 @@ replaceUrl(options: router.RouterOptions, mode: router.RouterMode): Promise&lt;v
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | router.RouterOptions | 是 | 替换页面描述信息。 |
@@ -619,6 +640,7 @@ replaceUrl(options: router.RouterOptions, mode: router.RouterMode): Promise&lt;v
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -628,6 +650,7 @@ replaceUrl(options: router.RouterOptions, mode: router.RouterMode): Promise&lt;v
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[页面路由错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-router)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -687,9 +710,10 @@ struct Index {
 
 
 
-#### replaceUrl
+## replaceUrl
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 replaceUrl(options: router.RouterOptions, mode: router.RouterMode, callback: AsyncCallback&lt;void&gt;): void
 
@@ -701,6 +725,7 @@ replaceUrl(options: router.RouterOptions, mode: router.RouterMode, callback: Asy
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | router.RouterOptions | 是 | 替换页面描述信息。 |
@@ -711,6 +736,7 @@ replaceUrl(options: router.RouterOptions, mode: router.RouterMode, callback: Asy
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[页面路由错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-router)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -772,9 +798,10 @@ struct Index {
 
 
 
-#### pushNamedRoute
+## pushNamedRoute
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pushNamedRoute(options: router.NamedRouterOptions): Promise&lt;void&gt;
 
@@ -786,12 +813,14 @@ pushNamedRoute(options: router.NamedRouterOptions): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | router.NamedRouterOptions | 是 | 跳转页面描述信息，包含name（命名路由名称）和params（传递的参数）等字段。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -801,6 +830,7 @@ pushNamedRoute(options: router.NamedRouterOptions): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[页面路由错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-router)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -858,9 +888,10 @@ struct Index {
 
 
 
-#### pushNamedRoute
+## pushNamedRoute
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pushNamedRoute(options: router.NamedRouterOptions, callback: AsyncCallback&lt;void&gt;): void
 
@@ -872,6 +903,7 @@ pushNamedRoute(options: router.NamedRouterOptions, callback: AsyncCallback&lt;vo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | router.NamedRouterOptions | 是 | 跳转页面描述信息。 |
@@ -881,6 +913,7 @@ pushNamedRoute(options: router.NamedRouterOptions, callback: AsyncCallback&lt;vo
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[页面路由错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-router)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -939,9 +972,10 @@ struct Index {
 
 
 
-#### pushNamedRoute
+## pushNamedRoute
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pushNamedRoute(options: router.NamedRouterOptions, mode: router.RouterMode): Promise&lt;void&gt;
 
@@ -953,6 +987,7 @@ pushNamedRoute(options: router.NamedRouterOptions, mode: router.RouterMode): Pro
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | router.NamedRouterOptions | 是 | 跳转页面描述信息。 |
@@ -960,6 +995,7 @@ pushNamedRoute(options: router.NamedRouterOptions, mode: router.RouterMode): Pro
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -969,6 +1005,7 @@ pushNamedRoute(options: router.NamedRouterOptions, mode: router.RouterMode): Pro
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[页面路由错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-router)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1031,9 +1068,10 @@ struct Index {
 
 
 
-#### pushNamedRoute
+## pushNamedRoute
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pushNamedRoute(options: router.NamedRouterOptions, mode: router.RouterMode, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1045,6 +1083,7 @@ pushNamedRoute(options: router.NamedRouterOptions, mode: router.RouterMode, call
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | router.NamedRouterOptions | 是 | 跳转页面描述信息。 |
@@ -1055,6 +1094,7 @@ pushNamedRoute(options: router.NamedRouterOptions, mode: router.RouterMode, call
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[页面路由错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-router)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1120,9 +1160,10 @@ struct Index {
 
 
 
-#### replaceNamedRoute
+## replaceNamedRoute
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 replaceNamedRoute(options: router.NamedRouterOptions): Promise&lt;void&gt;
 
@@ -1134,12 +1175,14 @@ replaceNamedRoute(options: router.NamedRouterOptions): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | router.NamedRouterOptions | 是 | 替换页面描述信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1149,6 +1192,7 @@ replaceNamedRoute(options: router.NamedRouterOptions): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[页面路由错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-router)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1202,9 +1246,10 @@ struct Index {
 
 
 
-#### replaceNamedRoute
+## replaceNamedRoute
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 replaceNamedRoute(options: router.NamedRouterOptions, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1216,6 +1261,7 @@ replaceNamedRoute(options: router.NamedRouterOptions, callback: AsyncCallback&lt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | router.NamedRouterOptions | 是 | 替换页面描述信息。 |
@@ -1225,6 +1271,7 @@ replaceNamedRoute(options: router.NamedRouterOptions, callback: AsyncCallback&lt
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[页面路由错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-router)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1279,9 +1326,10 @@ struct Index {
 
 
 
-#### replaceNamedRoute
+## replaceNamedRoute
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 replaceNamedRoute(options: router.NamedRouterOptions, mode: router.RouterMode): Promise&lt;void&gt;
 
@@ -1293,6 +1341,7 @@ replaceNamedRoute(options: router.NamedRouterOptions, mode: router.RouterMode): 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | router.NamedRouterOptions | 是 | 替换页面描述信息。 |
@@ -1300,6 +1349,7 @@ replaceNamedRoute(options: router.NamedRouterOptions, mode: router.RouterMode): 
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1309,6 +1359,7 @@ replaceNamedRoute(options: router.NamedRouterOptions, mode: router.RouterMode): 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[页面路由错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-router)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1368,9 +1419,10 @@ struct Index {
 
 
 
-#### replaceNamedRoute
+## replaceNamedRoute
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 replaceNamedRoute(options: router.NamedRouterOptions, mode: router.RouterMode, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1382,6 +1434,7 @@ replaceNamedRoute(options: router.NamedRouterOptions, mode: router.RouterMode, c
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | router.NamedRouterOptions | 是 | 替换页面描述信息。 |
@@ -1392,6 +1445,7 @@ replaceNamedRoute(options: router.NamedRouterOptions, mode: router.RouterMode, c
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[页面路由错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-router)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1453,9 +1507,10 @@ struct Index {
 
 
 
-#### back
+## back
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 back(options?: router.RouterOptions ): void
 
@@ -1471,9 +1526,10 @@ back(options?: router.RouterOptions ): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| options | router.RouterOptions | 否 | 返回页面描述信息。当需要返回到指定的页面时传入此参数（通过options中的url字段指定目标页面）；当只需返回上一页时可以不传入此参数。url指定返回的目标页面：若页面栈中存在该url，则返回至index最大的同名页面；若不存在则不响应操作。若url未设置，则返回上一页（页面不会重新构建，出栈后会被回收）。 |
+| options | router.RouterOptions | 否 | 返回页面描述信息。当需要返回到指定的页面时传入此参数（通过url指定目标页面）；当只需返回上一页时可以不传入此参数。url指定返回的目标页面：若页面栈中存在该url，则返回至index最大的同名页面；若不存在则不响应操作。若url未设置，则返回上一页（页面不会重新构建，出栈后会被回收）。 |
 
 
 **示例：**
@@ -1489,9 +1545,10 @@ router.back({url:'pages/detail'});
 
 
 
-#### back12+
+## back12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 back(index: number, params?: Object): void
 
@@ -1503,10 +1560,11 @@ back(index: number, params?: Object): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 返回目标页面的索引值，从0开始计数（注意：与getStateByIndex的index参数不同，后者从1开始计数）。 取值范围：[0, +∞)。如果index超出页面栈范围或不存在对应页面，则不响应用户操作。 |
-| params | Object | 否 | 页面返回时携带的参数。不传入时不携带参数。携带的参数可通过目标页面的getParams方法接收。 |
+| params | Object | 否 | 页面返回时携带的参数。不传入时不携带参数。 |
 
 
 **示例：**
@@ -1532,16 +1590,17 @@ router.back(1, {info:'来自Home页'}); // 携带参数返回
 
 
 
-#### clear
+## clear
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clear(): void
 
 清空页面栈中的所有历史页面，仅保留当前页面作为栈顶页面。
 
 > [!NOTE]
-> 调用clear()方法会清空全部历史页面栈，最终仅保留当前页面，页面栈深度变为1。此时栈内无历史记录，back()方法将失效，但pushUrl()、replaceUrl()等方法仍可正常使用。该操作不可逆，执行完成后用户无法回访任何历史页面，建议仅在退出登录、切换账号等场景下使用，调用前务必持久化存储关键页面状态数据。
+> 调用 clear()方法会清空全部历史页面栈，最终仅保留当前页面，页面栈深度变为1。此时栈内无历史记录，back()回退接口将失效；但pushUrl()、replaceUrl()等跳转方法仍可正常使用，支持新增页面或替换当前页面。该操作具备不可逆特性，执行完成后用户无法回访任何历史页面，建议仅在退出登录、切换账号等业务场景下使用，调用前务必持久化存储关键页面状态数据。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -1562,16 +1621,17 @@ router.clear();
 
 
 
-#### getLength(deprecated)
+## getLength(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLength(): string
 
 获取当前在页面栈内的页面数量。
 
 > [!NOTE]
-> 从API version 10开始支持，从API version 23开始废弃，建议使用 getStackSize 替代。
+> 从API version 10开始支持，从 API version 23开始废弃，建议使用 getStackSize 替代。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -1579,6 +1639,7 @@ getLength(): string
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1600,9 +1661,10 @@ console.info('pages stack size = ' + size);
 
 
 
-#### getStackSize23+
+## getStackSize23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStackSize(): number
 
@@ -1613,6 +1675,7 @@ getStackSize(): number
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1647,9 +1710,10 @@ struct Index {
 
 
 
-#### getState
+## getState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getState(): router.RouterState
 
@@ -1660,6 +1724,7 @@ getState(): router.RouterState
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1685,9 +1750,10 @@ if (page != undefined) {
 
 
 
-#### getStateByIndex12+
+## getStateByIndex12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStateByIndex(index: number): router.RouterState | undefined
 
@@ -1699,12 +1765,14 @@ getStateByIndex(index: number): router.RouterState | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 表示要获取的页面索引，从1开始计数（注意：与back的index参数不同，后者从0开始计数）。 取值范围：[1, +∞)。索引不存在时返回undefined。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1731,9 +1799,10 @@ if (options != undefined) {
 
 
 
-#### getStateByUrl12+
+## getStateByUrl12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStateByUrl(url: string): Array<router.RouterState>
 
@@ -1745,12 +1814,14 @@ getStateByUrl(url: string): Array<router.RouterState>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | string | 是 | 表示要获取对应页面信息的url，需使用应用内页面路径格式。如果页面栈中没有对应url的页面，返回空数组。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1776,9 +1847,10 @@ for (let i: number = 0; i < options.length; i++) {
 
 
 
-#### showAlertBeforeBackPage
+## showAlertBeforeBackPage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showAlertBeforeBackPage(options: router.EnableAlertOptions): void
 
@@ -1790,6 +1862,7 @@ showAlertBeforeBackPage(options: router.EnableAlertOptions): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | router.EnableAlertOptions | 是 | 文本弹窗信息描述，包含message（弹窗提示内容）等参数。 |
@@ -1798,6 +1871,7 @@ showAlertBeforeBackPage(options: router.EnableAlertOptions): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1828,13 +1902,14 @@ try {
 
 
 
-#### hideAlertBeforeBackPage
+## hideAlertBeforeBackPage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hideAlertBeforeBackPage(): void
 
-禁用页面返回询问对话框。适用于用户已完成保存操作可以安全返回、页面状态切换后不再需要返回确认、需要动态控制返回行为等场景。与showAlertBeforeBackPage()方法成对使用：调用showAlertBeforeBackPage()开启对话框后，可在适当时机调用本方法关闭对话框。
+禁用页面返回询问对话框。适用于用户已完成保存操作可以安全返回、页面状态切换后不再需要返回确认、需要动态控制返回行为等场景。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1854,9 +1929,10 @@ router.hideAlertBeforeBackPage();
 
 
 
-#### getParams
+## getParams
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getParams(): Object
 
@@ -1868,9 +1944,10 @@ getParams(): Object
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Object | 返回上一页面通过params字段传递的参数对象，开发者可以通过该对象获取到跳转时传入的具体数据。 |
+| Object | 发起跳转的页面往当前页传入的参数。 |
 
 
 **示例：**

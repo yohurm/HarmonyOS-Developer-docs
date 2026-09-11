@@ -1,10 +1,10 @@
 # 数据库备份与恢复 (C/C++)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-backup-and-restore
 
-#### 场景介绍
+## 场景介绍
 
 如果操作或存储的过程中出现问题，开发者可以使用恢复功能，将数据库恢复到之前的状态，重新对数据库进行操作。
  
@@ -14,7 +14,7 @@
  
   
 
-#### 开发步骤
+## 开发步骤
 
 数据库操作或者存储过程中，有可能会因为各种原因发生非预期的数据库异常的情况，可以根据需要使用关系型数据库的备份能力，以便在数据库异常时，可靠高效地恢复数据保证业务数据正常使用。
  1. CMakeLists.txt中添加以下lib。
@@ -95,7 +95,7 @@ void CorruptedHandler(void *context, OH_Rdb_ConfigV2 *config, OH_Rdb_Store *stor
     }
     // 通过store句柄使用备库进行数据库恢复
     int errCode = OH_Rdb_Restore(store, restorePath);
-    // restore在有其它接口占用写链接时会失败，建议等待其它调用结束后再调用
+    // restore在有其它接口占用写连接时会失败，建议等待其它调用结束后再调用
     if (errCode != 0) {
         OH_LOG_ERROR(LOG_APP, "restore failed! errCode is: %{public}d", errCode);
         // 等待其它线程调用结束，进行重试。不建议重试次数过多或等待时间过长，避免占用太多系统资源。

@@ -1,6 +1,6 @@
 # AntifraudPicker（反诈选择器）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesecurity-antifraudpicker-api
 **支持设备：** Phone | Tablet
@@ -10,7 +10,8 @@
 **起始版本：** 5.0.3(15)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | Tablet
 
@@ -20,7 +21,8 @@ import {antifraudPicker} from '@kit.DeviceSecurityKit';
  
   
 
-#### AntifraudMessageOptions
+## AntifraudMessageOptions
+
 
 **支持设备：** Phone | Tablet
 
@@ -32,6 +34,7 @@ import {antifraudPicker} from '@kit.DeviceSecurityKit';
  
 **起始版本：** 5.0.3(15)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | maxSelectNumber | number | 否 | 是 | 最大可选项数。如果不传，则默认为50。取值范围为1~50，小于1或者大于50会抛出错误信息，错误码401。 |
@@ -39,7 +42,8 @@ import {antifraudPicker} from '@kit.DeviceSecurityKit';
  
   
 
-#### SingleAntifraudMessageInfo
+## SingleAntifraudMessageInfo
+
 
 **支持设备：** Phone | Tablet
 
@@ -51,6 +55,7 @@ import {antifraudPicker} from '@kit.DeviceSecurityKit';
  
 **起始版本：** 5.0.3(15)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | senderNumber | string | 否 | 否 | 消息发送方号码。 |
@@ -65,7 +70,8 @@ import {antifraudPicker} from '@kit.DeviceSecurityKit';
  
   
 
-#### MmsAttachmentInfo
+## MmsAttachmentInfo
+
 
 **支持设备：** Phone | Tablet
 
@@ -77,6 +83,7 @@ import {antifraudPicker} from '@kit.DeviceSecurityKit';
  
 **起始版本：** 5.0.3(15)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | attachmentType | number | 否 | 否 | 彩信附件类型。 -1：彩信未下载； 0：smil文件； 1：图片； 2：视频； 3：音频； 4：联系人卡片； 5：主题； 6：幻灯片； 7：文本； 8：位置。 |
@@ -85,7 +92,8 @@ import {antifraudPicker} from '@kit.DeviceSecurityKit';
  
   
 
-#### AntifraudMessageResult
+## AntifraudMessageResult
+
 
 **支持设备：** Phone | Tablet
 
@@ -97,6 +105,7 @@ import {antifraudPicker} from '@kit.DeviceSecurityKit';
  
 **起始版本：** 5.0.3(15)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | messageInfo | SingleAntifraudMessageInfo[] | 否 | 否 | 诈骗消息结果列表。 |
@@ -104,7 +113,8 @@ import {antifraudPicker} from '@kit.DeviceSecurityKit';
  
   
 
-#### SingleAntifraudCallLogInfo
+## SingleAntifraudCallLogInfo
+
 
 **支持设备：** Phone | Tablet
 
@@ -116,6 +126,7 @@ import {antifraudPicker} from '@kit.DeviceSecurityKit';
  
 **起始版本：** 5.0.3(15)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | callerNumber | string | 否 | 否 | 来电方号码。 |
@@ -127,7 +138,8 @@ import {antifraudPicker} from '@kit.DeviceSecurityKit';
  
   
 
-#### AntifraudCallLogResult
+## AntifraudCallLogResult
+
 
 **支持设备：** Phone | Tablet
 
@@ -139,6 +151,7 @@ import {antifraudPicker} from '@kit.DeviceSecurityKit';
  
 **起始版本：** 5.0.3(15)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | callLogInfo | SingleAntifraudCallLogInfo[] | 否 | 否 | 诈骗通话记录列表。 |
@@ -146,7 +159,8 @@ import {antifraudPicker} from '@kit.DeviceSecurityKit';
  
   
 
-#### AntifraudCallLogOptions
+## AntifraudCallLogOptions
+
 
 **支持设备：** Phone | Tablet
 
@@ -158,6 +172,7 @@ import {antifraudPicker} from '@kit.DeviceSecurityKit';
  
 **起始版本：** 5.0.3(15)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | maxSelectNumber | number | 否 | 是 | 最大可选项数。如果不传，则默认为50。取值范围为1~50，小于1或者大于50会抛出错误信息，错误码401。 |
@@ -165,7 +180,8 @@ import {antifraudPicker} from '@kit.DeviceSecurityKit';
  
   
 
-#### selectFraudMessage
+## selectFraudMessage
+
 
 **支持设备：** Phone | Tablet
 
@@ -183,6 +199,7 @@ selectFraudMessage(context: common.Context, options?: [AntifraudMessageOptions](
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 应用上下文。 |
@@ -191,6 +208,7 @@ selectFraudMessage(context: common.Context, options?: [AntifraudMessageOptions](
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;AntifraudMessageResult&gt; | Promise对象，返回诈骗消息结果。 |
@@ -200,6 +218,7 @@ selectFraudMessage(context: common.Context, options?: [AntifraudMessageOptions](
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-antifraudpicker)**。**
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. Interface caller does not have permission "ohos.permission.USE_FRAUD_MESSAGES_PICKER". |
@@ -234,7 +253,8 @@ try {
  
   
 
-#### selectFraudCallLog
+## selectFraudCallLog
+
 
 **支持设备：** Phone | Tablet
 
@@ -252,6 +272,7 @@ selectFraudCallLog(context: common.Context, options?: [AntifraudCallLogOptions](
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 应用上下文。 |
@@ -260,6 +281,7 @@ selectFraudCallLog(context: common.Context, options?: [AntifraudCallLogOptions](
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;AntifraudCallLogResult&gt; | Promise对象，返回诈骗通话记录结果。 |
@@ -269,6 +291,7 @@ selectFraudCallLog(context: common.Context, options?: [AntifraudCallLogOptions](
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-antifraudpicker)**。**
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. Interface caller does not have permission "ohos.permission.USE_FRAUD_CALL_LOG_PICKER". |
@@ -303,7 +326,8 @@ try {
  
   
 
-#### AntifraudAppOptions
+## AntifraudAppOptions
+
 
 **支持设备：** Phone | Tablet
 
@@ -315,6 +339,7 @@ try {
  
 **起始版本：** 5.1.1(19)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | maxSelectNumber | number | 否 | 是 | 最大可选项数。如果不传，则默认为50。取值范围为1~50，小于1或者大于50会抛出错误信息，错误码401。 |
@@ -322,7 +347,8 @@ try {
  
   
 
-#### AntifraudAppResult
+## AntifraudAppResult
+
 
 **支持设备：** Phone | Tablet
 
@@ -334,6 +360,7 @@ try {
  
 **起始版本：** 5.1.1(19)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | appInfo | SingleAntifraudAppInfo[] | 否 | 否 | 诈骗应用列表。 |
@@ -341,7 +368,8 @@ try {
  
   
 
-#### SingleAntifraudAppInfo
+## SingleAntifraudAppInfo
+
 
 **支持设备：** Phone | Tablet
 
@@ -353,6 +381,7 @@ try {
  
 **起始版本：** 5.1.1(19)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | applicationName | string | 否 | 否 | 应用程序的名称。 |
@@ -367,7 +396,8 @@ try {
  
   
 
-#### selectFraudApp
+## selectFraudApp
+
 
 **支持设备：** Phone | Tablet
 
@@ -385,6 +415,7 @@ selectFraudApp(context: common.Context, options?: [AntifraudAppOptions](#antifra
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 应用上下文。 |
@@ -393,6 +424,7 @@ selectFraudApp(context: common.Context, options?: [AntifraudAppOptions](#antifra
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;AntifraudAppResult&gt; | Promise对象，返回诈骗应用结果。 |
@@ -402,6 +434,7 @@ selectFraudApp(context: common.Context, options?: [AntifraudAppOptions](#antifra
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-antifraudpicker) **。**
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. Interface caller does not have permission "ohos.permission.USE_FRAUD_APP_PICKER". |

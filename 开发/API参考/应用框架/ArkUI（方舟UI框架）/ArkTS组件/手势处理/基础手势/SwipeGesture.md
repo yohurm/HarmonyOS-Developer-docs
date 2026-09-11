@@ -1,9 +1,9 @@
 # SwipeGesture
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-gestures-swipegesture
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于触发快滑手势，适用于快速翻页、轮播图切换、列表项快速切换等需要识别快速滑动操作的场景，滑动速度需大于速度阈值，默认最小速度为100vp/s。
  
@@ -12,15 +12,17 @@
 
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### SwipeGesture
+### SwipeGesture
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 SwipeGesture(value?: { fingers?: number; direction?: SwipeDirection; speed?: number })
  
@@ -32,6 +34,7 @@ SwipeGesture(value?: { fingers?: number; direction?: SwipeDirection; speed?: num
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | { fingers?: number; direction?: SwipeDirection; speed?: number } | 否 | 设置快滑事件参数。 - fingers：触发快滑的最少手指数。 默认值：1 取值范围：[1, 10] 当设置的值超出取值范围时，按默认值处理。 - direction：触发快滑手势的滑动方向。 默认值：SwipeDirection.All - speed：识别快滑的最小速度。 默认值：100VP/s 取值范围：(0, +∞) 说明： 当滑动速度的值小于等于0时，会被转化为默认值。 |
@@ -39,9 +42,10 @@ SwipeGesture(value?: { fingers?: number; direction?: SwipeDirection; speed?: num
  
   
 
-#### SwipeGesture15+
+### SwipeGesture15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 SwipeGesture(options?: SwipeGestureHandlerOptions)
  
@@ -55,6 +59,7 @@ SwipeGesture(options?: SwipeGestureHandlerOptions)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | SwipeGestureHandlerOptions | 否 | 快滑事件处理器配置参数。当需要自定义触发快滑的最少手指数、滑动方向、最小识别速度或是否检查触摸屏幕的手指数量时传入；不传入时使用快滑手势处理器默认配置。 |
@@ -62,9 +67,10 @@ SwipeGesture(options?: SwipeGestureHandlerOptions)
  
   
 
-#### SwipeDirection枚举说明
+## SwipeDirection枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义滑动手势的触发方向。
  
@@ -72,6 +78,7 @@ SwipeGesture(options?: SwipeGestureHandlerOptions)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | All | - | 所有方向。 |
@@ -82,9 +89,10 @@ SwipeGesture(options?: SwipeGestureHandlerOptions)
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!TIP]
 > 在 GestureEvent 的fingerList元素中，手指索引编号与位置相对应，即fingerList[index]的id为index。对于先按下但未参与当前手势触发的手指，fingerList中对应的位置为空。建议开发者优先使用fingerInfos。
@@ -92,9 +100,10 @@ SwipeGesture(options?: SwipeGestureHandlerOptions)
  
   
 
-#### onAction
+### onAction
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onAction(event: (event: GestureEvent) => void)
  
@@ -106,6 +115,7 @@ onAction(event: (event: GestureEvent) => void)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | (event: GestureEvent) => void | 是 | 手势事件回调函数。在GestureEvent的fingerList元素中，手指索引编号与位置相对应，即fingerList[index]的id为index。对于先按下但未参与当前手势触发的手指，fingerList中对应的位置为空，建议开发者优先使用fingerInfos。 |
@@ -113,9 +123,10 @@ onAction(event: (event: GestureEvent) => void)
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示了如何实现快滑手势的识别。
  
@@ -154,4 +165,4 @@ struct SwipeGestureExample {
 ```
  
  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/RhIDMOedTP-bANTozTRkzg/zh-cn_image_0000002685928051.png?HW-CC-KV=V1&HW-CC-Date=20260730T071458Z&HW-CC-Expire=86400&HW-CC-Sign=B8685F69420F88182061F9591679CE8102685BCDFCAA4FA4555EAB8055733944)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/5vHTqFmnRGWFqpA6ksLyRg/zh-cn_image_0000002717612588.png?HW-CC-KV=V1&HW-CC-Date=20260911T073110Z&HW-CC-Expire=86400&HW-CC-Sign=5C660F64CFEAD752952C5E5AAE5716EA0CCC89EB806C5BF3C1103F8D7E6903A7)

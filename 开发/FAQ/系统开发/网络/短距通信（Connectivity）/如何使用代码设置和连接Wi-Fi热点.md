@@ -32,7 +32,7 @@ struct Index {
             abilityName: 'com.huawei.hmos.settings.MainAbility',
             uri: 'hotspot_data_settings',
             parameters: {
-              // 传对应应用的包名
+             <em> // 传对应应用的包名</em>
               pushParams: 'com.example.myapplication'
             }
           };

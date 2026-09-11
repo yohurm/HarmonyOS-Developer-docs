@@ -1,19 +1,19 @@
 # 使用DevTools工具调试前端页面
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-debugging-with-devtools
 
 Web组件支持使用DevTools工具调试前端页面。DevTools是Web前端开发调试工具，支持在电脑上调试移动设备前端页面。开发者通过[setWebDebuggingAccess()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller#setwebdebuggingaccess)接口开启Web组件前端页面调试能力，使用DevTools在电脑上调试移动前端网页，设备需为4.1.0及以上版本。
 
 
-#### 无线调试
+## 无线调试
 
 从API version 20开始，可使用无线调试接口[setWebDebuggingAccess20+](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller#setwebdebuggingaccess20)，来简化调试流程。
 
 
 
-#### 应用代码开启Web调试开关
+### 应用代码开启Web调试开关
 
 调试网页前，需要应用侧代码调用setWebDebuggingAccess()接口开启Web调试开关。
 
@@ -48,7 +48,7 @@ struct WebComponent {
 }
 ```
 
-> [!NOTE]
+> [!TIP]
 > 代码中使用的8888端口仅作为示例展示，开发者使用过程中，应保证端口号可以被应用使用。如果因为端口被占用或者应用无权限使用等因素导致端口无法被应用使用，会导致接口抛出异常或者ArkWeb无法开启调试模式。
 
 2. 开启调试功能需要在DevEco Studio应用工程hap模块的module.json5文件中增加如下权限，添加方法请参考[在配置文件中声明权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions#在配置文件中声明权限)。
@@ -65,7 +65,7 @@ struct WebComponent {
 
 
 
-#### 在Chrome浏览器上打开调试工具页面
+### 在Chrome浏览器上打开调试工具页面
 1. 在电脑端Chrome浏览器地址栏中输入调试工具地址 chrome://inspect/#devices 并打开该页面。
 2. 修改Chrome调试工具的配置。
 
@@ -81,7 +81,7 @@ struct WebComponent {
 
 
 
-#### 等待发现被调试页面
+### 等待发现被调试页面
 
 如果前面的步骤执行成功，Chrome的调试页面将显示待调试的网页。
 
@@ -91,7 +91,7 @@ struct WebComponent {
 
 
 
-#### 开始网页调试
+### 开始网页调试
 
 
 ![](assets/使用DevTools工具调试前端页面/file-20260514130856029-11.png)
@@ -99,11 +99,11 @@ struct WebComponent {
 
 
 
-#### USB连接调试
+## USB连接调试
 
 
 
-#### 应用代码开启Web调试开关
+### 应用代码开启Web调试开关
 
 调试网页前，需要应用侧代码调用[setWebDebuggingAccess()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller#setwebdebuggingaccess)接口开启Web调试开关。
 
@@ -146,7 +146,7 @@ struct WebComponent {
 
 
 
-#### 将设备连接至电脑
+### 将设备连接至电脑
 
 请将设备连接至电脑，随后开启开发者模式，为后续的端口转发操作做好准备。
 1. 请开启设备上的开发者模式，并启用USB调试功能。
@@ -187,7 +187,7 @@ hdc shell
 
   
 
-  #### 端口转发
+  ### 端口转发
 
   当应用代码调用setWebDebuggingAccess接口开启Web调试开关后，ArkWeb内核将启动一个domain socket的监听，以此实现DevTools对网页的调试功能。
 
@@ -262,7 +262,7 @@ hdc fport ls
 
   
 
-  #### 便捷脚本
+  ### 便捷脚本
 
   **Windows平台**
 
@@ -413,7 +413,7 @@ hdc fport ls
 
   
 
-  #### 在Chrome浏览器上打开调试工具页面
+  ### 在Chrome浏览器上打开调试工具页面
 
 1. 在电脑端Chrome浏览器地址栏中输入调试工具地址 chrome://inspect/#devices 并打开该页面。
 
@@ -437,7 +437,7 @@ hdc fport ls
 
   
 
-  #### 等待发现被调试页面
+  ### 等待发现被调试页面
 
   如果前面的步骤执行成功，Chrome的调试页面将显示待调试的网页。
 
@@ -447,19 +447,19 @@ hdc fport ls
 
   
 
-  #### 开始网页调试
+  ### 开始网页调试
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/W_rr0UPLS46CFedwM0kwuQ/zh-cn_image_0000002704392885.png?HW-CC-KV=V1&HW-CC-Date=20260813T095738Z&HW-CC-Expire=86400&HW-CC-Sign=6D3BC957EC19CF2A55DBED6B254277E959EA3B2E132B1E580FE4445B437981AE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/ri_VlrHqS-KMZW9S9YqE3A/zh-cn_image_0000002717610958.png?HW-CC-KV=V1&HW-CC-Date=20260911T073147Z&HW-CC-Expire=86400&HW-CC-Sign=3741B67BF34DF0048440FFCB9E5B2D624008F4E289252045733E06DF3BF200BD)
 
-
-  
-
-  #### 常见问题与解决方法
 
   
 
-  #### 可以调试系统浏览器打开的网页吗？
+  ## 常见问题与解决方法
+
+  
+
+  ### 可以调试系统浏览器打开的网页吗？
 
   能否调试系统浏览器打开的网页，取决于系统浏览器是否开启Web调试开关。
 
@@ -469,7 +469,7 @@ hdc fport ls
 
 
 
-#### hdc无法发现设备
+### hdc无法发现设备
 
 **问题现象**
 
@@ -487,7 +487,7 @@ hdc list targets
 
 
 
-#### hdc的命令显示设备"未授权"或"unauthorized"
+### hdc的命令显示设备"未授权"或"unauthorized"
 
 **问题现象**
 
@@ -503,7 +503,7 @@ hdc list targets
 
 
 
-#### 找不到DevTools的domain socket
+### 找不到DevTools的domain socket
 
 **问题现象**
 1. 在hdc shell里执行如下命令后，没有结果。       
@@ -521,7 +521,7 @@ cat /proc/net/unix | grep devtools
 
 
 
-#### 删除端口转发任务失败
+### 删除端口转发任务失败
 
 **问题现象**
 
@@ -535,7 +535,7 @@ cat /proc/net/unix | grep devtools
 
 
 
-#### 端口转发不成功
+### 端口转发不成功
 
 **问题现象**
 1. 在命令行里执行如下命令后，没有列出之前设置过转发任务。       
@@ -557,7 +557,7 @@ hdc fport ls
 
 
 
-#### 端口转发成功后，电脑端Chrome无法发现被调试网页
+### 端口转发成功后，电脑端Chrome无法发现被调试网页
 
 **问题现象**
 
@@ -585,15 +585,15 @@ hdc fport ls
 如果网页有内容， 说明端口转发成功，请在Chrome的调试页面[等待被调试页面的出现](#等待发现被调试页面)。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/kEBSNRmAR6CqfdU4n1qtmA/zh-cn_image_0000002674632768.jpg?HW-CC-KV=V1&HW-CC-Date=20260813T095738Z&HW-CC-Expire=86400&HW-CC-Sign=0E942B2C0CF8678C269EB098E323706AAEEF0C266DE7714D39EA38E95370E92E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/lje9xSwTQUOG4RXbt-Q1TA/zh-cn_image_0000002747290915.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T073147Z&HW-CC-Expire=86400&HW-CC-Sign=DCF94A25DCF9EB07850A15ABFFE0287739175522EB527CB3526818E07CF0BA9C)
 
  - 如果展示的是错误网页， 说明端口转发失败， 请参阅[端口转发不成功](#端口转发不成功)中的解决方法。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/LLGWlV0aSRGx2iG8RP9__Q/zh-cn_image_0000002704272721.jpg?HW-CC-KV=V1&HW-CC-Date=20260813T095738Z&HW-CC-Expire=86400&HW-CC-Sign=D502B1C50215BF1C0DCB7A53A8A8741F1982900EC768E18E8D0FE3E6DD7035A2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/_jRsn3W5SeiO9VYyMbFw6A/zh-cn_image_0000002747210833.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T073147Z&HW-CC-Expire=86400&HW-CC-Sign=9114C06CA78FE9B5002184D6EC35D070A03535337060195B606A23DBE834BB8D)
 
 
-      - 电脑端Chrome浏览器打开 [http://localhost:9222/json](http://localhost:9222/json) 页面有内容，但是Chrome的调试工具界面还是无法发现调试目标。
+            - 电脑端Chrome浏览器打开 [http://localhost:9222/json](http://localhost:9222/json) 页面有内容，但是Chrome的调试工具界面还是无法发现调试目标。
 
   
 请确保Chrome调试工具界面的 "Configure" 中配置的端口号，与端口转发指定的TCP端口号一致。
@@ -605,7 +605,7 @@ hdc fport ls
 
 
 
-#### 开启了无线调试模式后，电脑端Chrome无法发现被调试网页
+### 开启了无线调试模式后，电脑端Chrome无法发现被调试网页
 
 **问题现象**
 
@@ -625,7 +625,7 @@ ArkWeb开启了无线调试模式后，电脑端Chrome浏览器无法发现被�
 
 
 
-#### Web组件无法使用DevTools工具进行调试
+### Web组件无法使用DevTools工具进行调试
 
 **问题现象**
 
@@ -643,7 +643,7 @@ ArkWeb开启了无线调试模式后，电脑端Chrome浏览器无法发现被�
 
 
 
-#### 使用DevTools工具进行调试出现404报错
+### 使用DevTools工具进行调试出现404报错
 
 **问题现象**
 

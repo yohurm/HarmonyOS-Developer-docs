@@ -1,13 +1,14 @@
 # picture_native.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-picture-native-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供获取picture数据和信息的API。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_PictureNative_AuxiliaryPictureCopyItem | OH_PictureNative_AuxiliaryPictureCopyItem | 此结构体用于在创建PictureNative对象的深拷贝时指定辅助图的拷贝规则。描述如何将辅助图从一种类型拷贝到另一种类型。 |
@@ -45,10 +49,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | Image_AuxiliaryPictureType | Image_AuxiliaryPictureType | 辅助图类型。 |
@@ -56,10 +62,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | Image_ErrorCode OH_ComposeOptions_Create(OH_ComposeOptions **options) | 创建OH_ComposeOptions实例。 |
@@ -107,15 +115,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### Image_AuxiliaryPictureType
+### Image_AuxiliaryPictureType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Image_AuxiliaryPictureType
@@ -127,6 +137,7 @@ enum Image_AuxiliaryPictureType
  
 **起始版本：** 13
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AUXILIARY_PICTURE_TYPE_GAINMAP = 1 | 增益图，代表了一种增强SDR图像以产生具有可变显示调整能力的HDR图像的机制。它是一组描述如何应用gainmap元数据的组合。 |
@@ -138,15 +149,17 @@ enum Image_AuxiliaryPictureType
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_ComposeOptions_Create()
+### OH_ComposeOptions_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ComposeOptions_Create(OH_ComposeOptions **options)
@@ -160,6 +173,7 @@ Image_ErrorCode OH_ComposeOptions_Create(OH_ComposeOptions **options)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ComposeOptions **options | 被操作的OH_ComposeOptions指针。 |
@@ -167,6 +181,7 @@ Image_ErrorCode OH_ComposeOptions_Create(OH_ComposeOptions **options)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -174,9 +189,10 @@ Image_ErrorCode OH_ComposeOptions_Create(OH_ComposeOptions **options)
  
   
 
-#### OH_ComposeOptions_SetDesiredPixelFormat()
+### OH_ComposeOptions_SetDesiredPixelFormat()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ComposeOptions_SetDesiredPixelFormat(OH_ComposeOptions *options, PIXEL_FORMAT desiredPixelFormat)
@@ -190,6 +206,7 @@ Image_ErrorCode OH_ComposeOptions_SetDesiredPixelFormat(OH_ComposeOptions *optio
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ComposeOptions *options | 被操作的OH_ComposeOptions指针。 |
@@ -198,6 +215,7 @@ Image_ErrorCode OH_ComposeOptions_SetDesiredPixelFormat(OH_ComposeOptions *optio
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误，例如options为nullptr或传入了不支持的desiredPixelFormat。 |
@@ -205,9 +223,10 @@ Image_ErrorCode OH_ComposeOptions_SetDesiredPixelFormat(OH_ComposeOptions *optio
  
   
 
-#### OH_ComposeOptions_GetDesiredPixelFormat()
+### OH_ComposeOptions_GetDesiredPixelFormat()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ComposeOptions_GetDesiredPixelFormat(OH_ComposeOptions *options, PIXEL_FORMAT *desiredPixelFormat)
@@ -221,6 +240,7 @@ Image_ErrorCode OH_ComposeOptions_GetDesiredPixelFormat(OH_ComposeOptions *optio
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ComposeOptions *options | 被操作的OH_ComposeOptions指针。 |
@@ -229,6 +249,7 @@ Image_ErrorCode OH_ComposeOptions_GetDesiredPixelFormat(OH_ComposeOptions *optio
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -236,9 +257,10 @@ Image_ErrorCode OH_ComposeOptions_GetDesiredPixelFormat(OH_ComposeOptions *optio
  
   
 
-#### OH_ComposeOptions_Release()
+### OH_ComposeOptions_Release()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ComposeOptions_Release(OH_ComposeOptions *options)
@@ -252,6 +274,7 @@ Image_ErrorCode OH_ComposeOptions_Release(OH_ComposeOptions *options)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ComposeOptions *options | 被操作的OH_ComposeOptions指针。 |
@@ -259,6 +282,7 @@ Image_ErrorCode OH_ComposeOptions_Release(OH_ComposeOptions *options)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -266,9 +290,10 @@ Image_ErrorCode OH_ComposeOptions_Release(OH_ComposeOptions *options)
  
   
 
-#### OH_PictureNative_CreatePicture()
+### OH_PictureNative_CreatePicture()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PictureNative_CreatePicture(OH_PixelmapNative *mainPixelmap, OH_PictureNative **picture)
@@ -282,6 +307,7 @@ Image_ErrorCode OH_PictureNative_CreatePicture(OH_PixelmapNative *mainPixelmap, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *mainPixelmap | 主图的OH_PixelmapNative指针。 |
@@ -290,6 +316,7 @@ Image_ErrorCode OH_PictureNative_CreatePicture(OH_PixelmapNative *mainPixelmap, 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -297,9 +324,10 @@ Image_ErrorCode OH_PictureNative_CreatePicture(OH_PixelmapNative *mainPixelmap, 
  
   
 
-#### OH_PictureNative_GetMainPixelmap()
+### OH_PictureNative_GetMainPixelmap()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PictureNative_GetMainPixelmap(OH_PictureNative *picture, OH_PixelmapNative **mainPixelmap)
@@ -313,6 +341,7 @@ Image_ErrorCode OH_PictureNative_GetMainPixelmap(OH_PictureNative *picture, OH_P
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PictureNative *picture | 被操作的OH_PictureNative指针。 |
@@ -321,6 +350,7 @@ Image_ErrorCode OH_PictureNative_GetMainPixelmap(OH_PictureNative *picture, OH_P
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -328,9 +358,10 @@ Image_ErrorCode OH_PictureNative_GetMainPixelmap(OH_PictureNative *picture, OH_P
  
   
 
-#### OH_PictureNative_GetHdrComposedPixelmap()
+### OH_PictureNative_GetHdrComposedPixelmap()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PictureNative_GetHdrComposedPixelmap(OH_PictureNative *picture, OH_PixelmapNative **hdrPixelmap)
@@ -346,6 +377,7 @@ Image_ErrorCode OH_PictureNative_GetHdrComposedPixelmap(OH_PictureNative *pictur
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PictureNative *picture | 被操作的OH_PictureNative指针。 |
@@ -354,6 +386,7 @@ Image_ErrorCode OH_PictureNative_GetHdrComposedPixelmap(OH_PictureNative *pictur
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 IMAGE_UNSUPPORTED_OPERATION：操作不支持，例如picture对象中不包含增益图。 |
@@ -361,9 +394,10 @@ Image_ErrorCode OH_PictureNative_GetHdrComposedPixelmap(OH_PictureNative *pictur
  
   
 
-#### OH_PictureNative_GetHdrComposedPixelmapWithOptions()
+### OH_PictureNative_GetHdrComposedPixelmapWithOptions()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PictureNative_GetHdrComposedPixelmapWithOptions(OH_PictureNative *picture, OH_ComposeOptions *options, OH_PixelmapNative **hdrPixelmap)
@@ -379,6 +413,7 @@ Image_ErrorCode OH_PictureNative_GetHdrComposedPixelmapWithOptions(OH_PictureNat
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PictureNative *picture | 被操作的OH_PictureNative指针。 |
@@ -388,6 +423,7 @@ Image_ErrorCode OH_PictureNative_GetHdrComposedPixelmapWithOptions(OH_PictureNat
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 IMAGE_UNSUPPORTED_OPERATION：操作不支持，例如picture对象中不包含增益图。 |
@@ -395,9 +431,10 @@ Image_ErrorCode OH_PictureNative_GetHdrComposedPixelmapWithOptions(OH_PictureNat
  
   
 
-#### OH_PictureNative_GetGainmapPixelmap()
+### OH_PictureNative_GetGainmapPixelmap()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PictureNative_GetGainmapPixelmap(OH_PictureNative *picture, OH_PixelmapNative **gainmapPixelmap)
@@ -411,6 +448,7 @@ Image_ErrorCode OH_PictureNative_GetGainmapPixelmap(OH_PictureNative *picture, O
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PictureNative *picture | 被操作的OH_PictureNative指针。 |
@@ -419,6 +457,7 @@ Image_ErrorCode OH_PictureNative_GetGainmapPixelmap(OH_PictureNative *picture, O
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -426,9 +465,10 @@ Image_ErrorCode OH_PictureNative_GetGainmapPixelmap(OH_PictureNative *picture, O
  
   
 
-#### OH_PictureNative_SetAuxiliaryPicture()
+### OH_PictureNative_SetAuxiliaryPicture()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PictureNative_SetAuxiliaryPicture(OH_PictureNative *picture, Image_AuxiliaryPictureType type, OH_AuxiliaryPictureNative *auxiliaryPicture)
@@ -444,6 +484,7 @@ Image_ErrorCode OH_PictureNative_SetAuxiliaryPicture(OH_PictureNative *picture, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PictureNative *picture | 被操作的OH_PictureNative指针。 |
@@ -453,6 +494,7 @@ Image_ErrorCode OH_PictureNative_SetAuxiliaryPicture(OH_PictureNative *picture, 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -460,9 +502,10 @@ Image_ErrorCode OH_PictureNative_SetAuxiliaryPicture(OH_PictureNative *picture, 
  
   
 
-#### OH_PictureNative_GetAuxiliaryPicture()
+### OH_PictureNative_GetAuxiliaryPicture()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PictureNative_GetAuxiliaryPicture(OH_PictureNative *picture, Image_AuxiliaryPictureType type, OH_AuxiliaryPictureNative **auxiliaryPicture)
@@ -478,6 +521,7 @@ Image_ErrorCode OH_PictureNative_GetAuxiliaryPicture(OH_PictureNative *picture, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PictureNative *picture | 被操作的OH_PictureNative指针。 |
@@ -487,6 +531,7 @@ Image_ErrorCode OH_PictureNative_GetAuxiliaryPicture(OH_PictureNative *picture, 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -494,9 +539,10 @@ Image_ErrorCode OH_PictureNative_GetAuxiliaryPicture(OH_PictureNative *picture, 
  
   
 
-#### OH_PictureNative_GetMetadata()
+### OH_PictureNative_GetMetadata()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PictureNative_GetMetadata(OH_PictureNative *picture, Image_MetadataType metadataType, OH_PictureMetadata **metadata)
@@ -512,6 +558,7 @@ Image_ErrorCode OH_PictureNative_GetMetadata(OH_PictureNative *picture, Image_Me
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PictureNative *picture | 被操作的OH_PictureNative指针。 |
@@ -521,6 +568,7 @@ Image_ErrorCode OH_PictureNative_GetMetadata(OH_PictureNative *picture, Image_Me
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 IMAGE_UNSUPPORTED_METADATA：不支持的元数据类型。 |
@@ -528,9 +576,10 @@ Image_ErrorCode OH_PictureNative_GetMetadata(OH_PictureNative *picture, Image_Me
  
   
 
-#### OH_PictureNative_SetMetadata()
+### OH_PictureNative_SetMetadata()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PictureNative_SetMetadata(OH_PictureNative *picture, Image_MetadataType metadataType, OH_PictureMetadata *metadata)
@@ -546,6 +595,7 @@ Image_ErrorCode OH_PictureNative_SetMetadata(OH_PictureNative *picture, Image_Me
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PictureNative *picture | 被操作的OH_PictureNative指针。 |
@@ -555,6 +605,7 @@ Image_ErrorCode OH_PictureNative_SetMetadata(OH_PictureNative *picture, Image_Me
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 IMAGE_UNSUPPORTED_METADATA：不支持的元数据类型。 |
@@ -562,9 +613,10 @@ Image_ErrorCode OH_PictureNative_SetMetadata(OH_PictureNative *picture, Image_Me
  
   
 
-#### OH_PictureNative_GetAuxiliaryPictureCount()
+### OH_PictureNative_GetAuxiliaryPictureCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PictureNative_GetAuxiliaryPictureCount(OH_PictureNative *picture, uint32_t *count)
@@ -578,6 +630,7 @@ Image_ErrorCode OH_PictureNative_GetAuxiliaryPictureCount(OH_PictureNative *pict
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PictureNative *picture | 指向OH_PictureNative对象的指针。 |
@@ -586,6 +639,7 @@ Image_ErrorCode OH_PictureNative_GetAuxiliaryPictureCount(OH_PictureNative *pict
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_INVALID_PARAMETER：picture或count为空指针、获取picture失败。 |
@@ -593,9 +647,10 @@ Image_ErrorCode OH_PictureNative_GetAuxiliaryPictureCount(OH_PictureNative *pict
  
   
 
-#### OH_PictureNative_GetAuxiliaryPictureTypes()
+### OH_PictureNative_GetAuxiliaryPictureTypes()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PictureNative_GetAuxiliaryPictureTypes(OH_PictureNative *picture, Image_AuxiliaryPictureType *auxiliaryPictureTypes, uint32_t *count)
@@ -609,6 +664,7 @@ Image_ErrorCode OH_PictureNative_GetAuxiliaryPictureTypes(OH_PictureNative *pict
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PictureNative *picture | 指向OH_PictureNative对象的指针。 |
@@ -618,6 +674,7 @@ Image_ErrorCode OH_PictureNative_GetAuxiliaryPictureTypes(OH_PictureNative *pict
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_INVALID_PARAMETER：picture、auxiliaryPictureTypes或count为空指针、无法获取图片、count小于要求。 |
@@ -625,9 +682,10 @@ Image_ErrorCode OH_PictureNative_GetAuxiliaryPictureTypes(OH_PictureNative *pict
  
   
 
-#### OH_PictureNative_GetMetadataCount()
+### OH_PictureNative_GetMetadataCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PictureNative_GetMetadataCount(OH_PictureNative *picture, uint32_t *count)
@@ -641,6 +699,7 @@ Image_ErrorCode OH_PictureNative_GetMetadataCount(OH_PictureNative *picture, uin
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PictureNative *picture | 指向OH_PictureNative对象的指针。 |
@@ -649,6 +708,7 @@ Image_ErrorCode OH_PictureNative_GetMetadataCount(OH_PictureNative *picture, uin
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_INVALID_PARAMETER：picture或count为空指针、获取picture失败。 |
@@ -656,9 +716,10 @@ Image_ErrorCode OH_PictureNative_GetMetadataCount(OH_PictureNative *picture, uin
  
   
 
-#### OH_PictureNative_GetMetadataTypes()
+### OH_PictureNative_GetMetadataTypes()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PictureNative_GetMetadataTypes(OH_PictureNative *picture, Image_MetadataType *metadataTypes, uint32_t *count)
@@ -672,6 +733,7 @@ Image_ErrorCode OH_PictureNative_GetMetadataTypes(OH_PictureNative *picture, Ima
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PictureNative *picture | 指向OH_PictureNative对象的指针。 |
@@ -681,6 +743,7 @@ Image_ErrorCode OH_PictureNative_GetMetadataTypes(OH_PictureNative *picture, Ima
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_INVALID_PARAMETER：picture、metadataTypes或count为空指针、获取picture失败、count小于所需大小。 |
@@ -688,9 +751,10 @@ Image_ErrorCode OH_PictureNative_GetMetadataTypes(OH_PictureNative *picture, Ima
  
   
 
-#### OH_PictureNative_RemoveAuxiliaryPicture()
+### OH_PictureNative_RemoveAuxiliaryPicture()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PictureNative_RemoveAuxiliaryPicture(OH_PictureNative *picture, Image_AuxiliaryPictureType type)
@@ -704,6 +768,7 @@ Image_ErrorCode OH_PictureNative_RemoveAuxiliaryPicture(OH_PictureNative *pictur
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PictureNative *picture | 指向OH_PictureNative对象的指针。 |
@@ -712,6 +777,7 @@ Image_ErrorCode OH_PictureNative_RemoveAuxiliaryPicture(OH_PictureNative *pictur
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：辅助图被成功移除或不存在。 IMAGE_INVALID_PARAMETER：picture为空指针、获取picture失败、辅助图类型不支持。 |
@@ -719,9 +785,10 @@ Image_ErrorCode OH_PictureNative_RemoveAuxiliaryPicture(OH_PictureNative *pictur
  
   
 
-#### OH_PictureNative_RemoveMetadata()
+### OH_PictureNative_RemoveMetadata()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PictureNative_RemoveMetadata(OH_PictureNative *picture, Image_MetadataType type)
@@ -735,6 +802,7 @@ Image_ErrorCode OH_PictureNative_RemoveMetadata(OH_PictureNative *picture, Image
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PictureNative *picture | 指向OH_PictureNative对象的指针。 |
@@ -743,6 +811,7 @@ Image_ErrorCode OH_PictureNative_RemoveMetadata(OH_PictureNative *picture, Image
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：元数据被成功移除或不存在。 IMAGE_INVALID_PARAMETER：picture为空指针、获取picture失败。 IMAGE_UNSUPPORTED_METADATA：不支持的元数据类型。 |
@@ -750,9 +819,10 @@ Image_ErrorCode OH_PictureNative_RemoveMetadata(OH_PictureNative *picture, Image
  
   
 
-#### OH_PictureNative_DeepCopyWithItems()
+### OH_PictureNative_DeepCopyWithItems()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PictureNative_DeepCopyWithItems(OH_PictureNative *source, const OH_PictureNative_AuxiliaryPictureCopyItem *auxiliaryPictureCopyItems, uint32_t auxiliaryPictureCopyCount, const OH_PictureNative_MetadataCopyItem *metadataCopyItems, uint32_t metadataCopyCount, Image_AuxiliaryPictureType *sourceAuxPictureAsMainPixelMap, OH_PictureNative **picture)
@@ -766,6 +836,7 @@ Image_ErrorCode OH_PictureNative_DeepCopyWithItems(OH_PictureNative *source, con
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PictureNative *source | 源PictureNative对象，不能为NULL。 |
@@ -779,6 +850,7 @@ Image_ErrorCode OH_PictureNative_DeepCopyWithItems(OH_PictureNative *source, con
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_INVALID_PARAMETER：source或picture为空指针、获取picture失败或数量不匹配、数量不为零但对应数组为空指针。 IMAGE_ALLOC_FAILED：内存分配失败。 |
@@ -786,9 +858,10 @@ Image_ErrorCode OH_PictureNative_DeepCopyWithItems(OH_PictureNative *source, con
  
   
 
-#### OH_PictureNative_Release()
+### OH_PictureNative_Release()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PictureNative_Release(OH_PictureNative *picture)
@@ -802,6 +875,7 @@ Image_ErrorCode OH_PictureNative_Release(OH_PictureNative *picture)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PictureNative *picture | 被操作的OH_PictureNative指针。 |
@@ -809,6 +883,7 @@ Image_ErrorCode OH_PictureNative_Release(OH_PictureNative *picture)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -816,9 +891,10 @@ Image_ErrorCode OH_PictureNative_Release(OH_PictureNative *picture)
  
   
 
-#### OH_AuxiliaryPictureNative_Create()
+### OH_AuxiliaryPictureNative_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_AuxiliaryPictureNative_Create(uint8_t *data, size_t dataLength, Image_Size *size, Image_AuxiliaryPictureType type, OH_AuxiliaryPictureNative **auxiliaryPicture)
@@ -832,6 +908,7 @@ Image_ErrorCode OH_AuxiliaryPictureNative_Create(uint8_t *data, size_t dataLengt
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint8_t *data | 图像数据。 |
@@ -843,6 +920,7 @@ Image_ErrorCode OH_AuxiliaryPictureNative_Create(uint8_t *data, size_t dataLengt
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -850,9 +928,10 @@ Image_ErrorCode OH_AuxiliaryPictureNative_Create(uint8_t *data, size_t dataLengt
  
   
 
-#### OH_AuxiliaryPictureNative_WritePixels()
+### OH_AuxiliaryPictureNative_WritePixels()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_AuxiliaryPictureNative_WritePixels(OH_AuxiliaryPictureNative *auxiliaryPicture, uint8_t *source, size_t bufferSize)
@@ -868,6 +947,7 @@ Image_ErrorCode OH_AuxiliaryPictureNative_WritePixels(OH_AuxiliaryPictureNative 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AuxiliaryPictureNative *auxiliaryPicture | 被操作的OH_AuxiliaryPictureNative指针。 |
@@ -877,6 +957,7 @@ Image_ErrorCode OH_AuxiliaryPictureNative_WritePixels(OH_AuxiliaryPictureNative 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 IMAGE_ALLOC_FAILED：内存分配失败。 IMAGE_COPY_FAILED：内存拷贝失败。 |
@@ -884,9 +965,10 @@ Image_ErrorCode OH_AuxiliaryPictureNative_WritePixels(OH_AuxiliaryPictureNative 
  
   
 
-#### OH_AuxiliaryPictureNative_ReadPixels()
+### OH_AuxiliaryPictureNative_ReadPixels()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_AuxiliaryPictureNative_ReadPixels(OH_AuxiliaryPictureNative *auxiliaryPicture, uint8_t *destination, size_t *bufferSize)
@@ -902,6 +984,7 @@ Image_ErrorCode OH_AuxiliaryPictureNative_ReadPixels(OH_AuxiliaryPictureNative *
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AuxiliaryPictureNative *auxiliaryPicture | 被操作的OH_AuxiliaryPictureNative指针。 |
@@ -911,6 +994,7 @@ Image_ErrorCode OH_AuxiliaryPictureNative_ReadPixels(OH_AuxiliaryPictureNative *
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 IMAGE_ALLOC_FAILED：内存分配失败。 IMAGE_COPY_FAILED：内存拷贝失败。 |
@@ -918,9 +1002,10 @@ Image_ErrorCode OH_AuxiliaryPictureNative_ReadPixels(OH_AuxiliaryPictureNative *
  
   
 
-#### OH_AuxiliaryPictureNative_GetType()
+### OH_AuxiliaryPictureNative_GetType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_AuxiliaryPictureNative_GetType(OH_AuxiliaryPictureNative *auxiliaryPicture, Image_AuxiliaryPictureType *type)
@@ -934,6 +1019,7 @@ Image_ErrorCode OH_AuxiliaryPictureNative_GetType(OH_AuxiliaryPictureNative *aux
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AuxiliaryPictureNative *auxiliaryPicture | 被操作的OH_AuxiliaryPictureNative指针。 |
@@ -942,6 +1028,7 @@ Image_ErrorCode OH_AuxiliaryPictureNative_GetType(OH_AuxiliaryPictureNative *aux
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -949,9 +1036,10 @@ Image_ErrorCode OH_AuxiliaryPictureNative_GetType(OH_AuxiliaryPictureNative *aux
  
   
 
-#### OH_AuxiliaryPictureNative_GetInfo()
+### OH_AuxiliaryPictureNative_GetInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_AuxiliaryPictureNative_GetInfo(OH_AuxiliaryPictureNative *auxiliaryPicture, OH_AuxiliaryPictureInfo **info)
@@ -967,6 +1055,7 @@ Image_ErrorCode OH_AuxiliaryPictureNative_GetInfo(OH_AuxiliaryPictureNative *aux
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AuxiliaryPictureNative *auxiliaryPicture | 被操作的OH_AuxiliaryPictureNative指针。 |
@@ -975,6 +1064,7 @@ Image_ErrorCode OH_AuxiliaryPictureNative_GetInfo(OH_AuxiliaryPictureNative *aux
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -982,9 +1072,10 @@ Image_ErrorCode OH_AuxiliaryPictureNative_GetInfo(OH_AuxiliaryPictureNative *aux
  
   
 
-#### OH_AuxiliaryPictureNative_SetInfo()
+### OH_AuxiliaryPictureNative_SetInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_AuxiliaryPictureNative_SetInfo(OH_AuxiliaryPictureNative *auxiliaryPicture, OH_AuxiliaryPictureInfo *info)
@@ -1000,6 +1091,7 @@ Image_ErrorCode OH_AuxiliaryPictureNative_SetInfo(OH_AuxiliaryPictureNative *aux
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AuxiliaryPictureNative *auxiliaryPicture | 将操作的OH_AuxiliaryPictureNative指针。 |
@@ -1008,6 +1100,7 @@ Image_ErrorCode OH_AuxiliaryPictureNative_SetInfo(OH_AuxiliaryPictureNative *aux
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -1015,9 +1108,10 @@ Image_ErrorCode OH_AuxiliaryPictureNative_SetInfo(OH_AuxiliaryPictureNative *aux
  
   
 
-#### OH_AuxiliaryPictureNative_GetMetadata()
+### OH_AuxiliaryPictureNative_GetMetadata()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_AuxiliaryPictureNative_GetMetadata(OH_AuxiliaryPictureNative *auxiliaryPicture, Image_MetadataType metadataType, OH_PictureMetadata **metadata)
@@ -1031,6 +1125,7 @@ Image_ErrorCode OH_AuxiliaryPictureNative_GetMetadata(OH_AuxiliaryPictureNative 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AuxiliaryPictureNative *auxiliaryPicture | 将操作的OH_AuxiliaryPictureNative指针。 |
@@ -1040,6 +1135,7 @@ Image_ErrorCode OH_AuxiliaryPictureNative_GetMetadata(OH_AuxiliaryPictureNative 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 IMAGE_UNSUPPORTED_METADATA：不支持的元数据类型，或者元数据类型与辅助图片类型不匹配。 |
@@ -1047,9 +1143,10 @@ Image_ErrorCode OH_AuxiliaryPictureNative_GetMetadata(OH_AuxiliaryPictureNative 
  
   
 
-#### OH_AuxiliaryPictureNative_SetMetadata()
+### OH_AuxiliaryPictureNative_SetMetadata()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_AuxiliaryPictureNative_SetMetadata(OH_AuxiliaryPictureNative *auxiliaryPicture, Image_MetadataType metadataType, OH_PictureMetadata *metadata)
@@ -1063,6 +1160,7 @@ Image_ErrorCode OH_AuxiliaryPictureNative_SetMetadata(OH_AuxiliaryPictureNative 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AuxiliaryPictureNative *auxiliaryPicture | 将操作的OH_AuxiliaryPictureNative指针。 |
@@ -1072,6 +1170,7 @@ Image_ErrorCode OH_AuxiliaryPictureNative_SetMetadata(OH_AuxiliaryPictureNative 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 IMAGE_UNSUPPORTED_METADATA：不支持的元数据类型，或者元数据类型与辅助图片类型不匹配。 |
@@ -1079,9 +1178,10 @@ Image_ErrorCode OH_AuxiliaryPictureNative_SetMetadata(OH_AuxiliaryPictureNative 
  
   
 
-#### OH_AuxiliaryPictureNative_AcquirePixelmap()
+### OH_AuxiliaryPictureNative_AcquirePixelmap()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_AuxiliaryPictureNative_AcquirePixelmap(OH_AuxiliaryPictureNative *auxiliaryPicture, OH_PixelmapNative **pixelmap)
@@ -1095,6 +1195,7 @@ Image_ErrorCode OH_AuxiliaryPictureNative_AcquirePixelmap(OH_AuxiliaryPictureNat
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AuxiliaryPictureNative *auxiliaryPicture | 指向OH_AuxiliaryPictureNative对象的指针。 |
@@ -1103,6 +1204,7 @@ Image_ErrorCode OH_AuxiliaryPictureNative_AcquirePixelmap(OH_AuxiliaryPictureNat
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_INVALID_PARAMETER：auxiliaryPicture或pixelmap为空指针。 IMAGE_GET_IMAGE_DATA_FAILED：无法获取辅助图或像素数据。 IMAGE_ALLOC_FAILED：内存分配失败。 |
@@ -1110,9 +1212,10 @@ Image_ErrorCode OH_AuxiliaryPictureNative_AcquirePixelmap(OH_AuxiliaryPictureNat
  
   
 
-#### OH_AuxiliaryPictureNative_Release()
+### OH_AuxiliaryPictureNative_Release()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_AuxiliaryPictureNative_Release(OH_AuxiliaryPictureNative *picture)
@@ -1126,6 +1229,7 @@ Image_ErrorCode OH_AuxiliaryPictureNative_Release(OH_AuxiliaryPictureNative *pic
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AuxiliaryPictureNative *picture | 将操作的OH_AuxiliaryPictureNative指针。 |
@@ -1133,6 +1237,7 @@ Image_ErrorCode OH_AuxiliaryPictureNative_Release(OH_AuxiliaryPictureNative *pic
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -1140,9 +1245,10 @@ Image_ErrorCode OH_AuxiliaryPictureNative_Release(OH_AuxiliaryPictureNative *pic
  
   
 
-#### OH_AuxiliaryPictureInfo_Create()
+### OH_AuxiliaryPictureInfo_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_AuxiliaryPictureInfo_Create(OH_AuxiliaryPictureInfo **info)
@@ -1156,6 +1262,7 @@ Image_ErrorCode OH_AuxiliaryPictureInfo_Create(OH_AuxiliaryPictureInfo **info)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AuxiliaryPictureInfo **info | 将操作的OH_AuxiliaryPictureInfo指针。 |
@@ -1163,6 +1270,7 @@ Image_ErrorCode OH_AuxiliaryPictureInfo_Create(OH_AuxiliaryPictureInfo **info)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -1170,9 +1278,10 @@ Image_ErrorCode OH_AuxiliaryPictureInfo_Create(OH_AuxiliaryPictureInfo **info)
  
   
 
-#### OH_AuxiliaryPictureInfo_GetType()
+### OH_AuxiliaryPictureInfo_GetType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_AuxiliaryPictureInfo_GetType(OH_AuxiliaryPictureInfo *info, Image_AuxiliaryPictureType *type)
@@ -1186,6 +1295,7 @@ Image_ErrorCode OH_AuxiliaryPictureInfo_GetType(OH_AuxiliaryPictureInfo *info, I
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AuxiliaryPictureInfo *info | 将操作的OH_AuxiliaryPictureInfo指针。 |
@@ -1194,6 +1304,7 @@ Image_ErrorCode OH_AuxiliaryPictureInfo_GetType(OH_AuxiliaryPictureInfo *info, I
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -1201,9 +1312,10 @@ Image_ErrorCode OH_AuxiliaryPictureInfo_GetType(OH_AuxiliaryPictureInfo *info, I
  
   
 
-#### OH_AuxiliaryPictureInfo_SetType()
+### OH_AuxiliaryPictureInfo_SetType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_AuxiliaryPictureInfo_SetType(OH_AuxiliaryPictureInfo *info, Image_AuxiliaryPictureType type)
@@ -1217,6 +1329,7 @@ Image_ErrorCode OH_AuxiliaryPictureInfo_SetType(OH_AuxiliaryPictureInfo *info, I
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AuxiliaryPictureInfo *info | 将操作的OH_AuxiliaryPictureInfo指针。 |
@@ -1225,6 +1338,7 @@ Image_ErrorCode OH_AuxiliaryPictureInfo_SetType(OH_AuxiliaryPictureInfo *info, I
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -1232,9 +1346,10 @@ Image_ErrorCode OH_AuxiliaryPictureInfo_SetType(OH_AuxiliaryPictureInfo *info, I
  
   
 
-#### OH_AuxiliaryPictureInfo_GetSize()
+### OH_AuxiliaryPictureInfo_GetSize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_AuxiliaryPictureInfo_GetSize(OH_AuxiliaryPictureInfo *info, Image_Size *size)
@@ -1248,6 +1363,7 @@ Image_ErrorCode OH_AuxiliaryPictureInfo_GetSize(OH_AuxiliaryPictureInfo *info, I
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AuxiliaryPictureInfo *info | 将操作的OH_AuxiliaryPictureInfo指针。 |
@@ -1256,6 +1372,7 @@ Image_ErrorCode OH_AuxiliaryPictureInfo_GetSize(OH_AuxiliaryPictureInfo *info, I
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -1263,9 +1380,10 @@ Image_ErrorCode OH_AuxiliaryPictureInfo_GetSize(OH_AuxiliaryPictureInfo *info, I
  
   
 
-#### OH_AuxiliaryPictureInfo_SetSize()
+### OH_AuxiliaryPictureInfo_SetSize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_AuxiliaryPictureInfo_SetSize(OH_AuxiliaryPictureInfo *info, Image_Size *size)
@@ -1279,6 +1397,7 @@ Image_ErrorCode OH_AuxiliaryPictureInfo_SetSize(OH_AuxiliaryPictureInfo *info, I
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AuxiliaryPictureInfo *info | 将操作的OH_AuxiliaryPictureInfo指针。 |
@@ -1287,6 +1406,7 @@ Image_ErrorCode OH_AuxiliaryPictureInfo_SetSize(OH_AuxiliaryPictureInfo *info, I
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -1294,9 +1414,10 @@ Image_ErrorCode OH_AuxiliaryPictureInfo_SetSize(OH_AuxiliaryPictureInfo *info, I
  
   
 
-#### OH_AuxiliaryPictureInfo_GetRowStride()
+### OH_AuxiliaryPictureInfo_GetRowStride()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_AuxiliaryPictureInfo_GetRowStride(OH_AuxiliaryPictureInfo *info, uint32_t *rowStride)
@@ -1310,6 +1431,7 @@ Image_ErrorCode OH_AuxiliaryPictureInfo_GetRowStride(OH_AuxiliaryPictureInfo *in
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AuxiliaryPictureInfo *info | 将操作的OH_AuxiliaryPictureInfo指针。 |
@@ -1318,6 +1440,7 @@ Image_ErrorCode OH_AuxiliaryPictureInfo_GetRowStride(OH_AuxiliaryPictureInfo *in
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -1325,9 +1448,10 @@ Image_ErrorCode OH_AuxiliaryPictureInfo_GetRowStride(OH_AuxiliaryPictureInfo *in
  
   
 
-#### OH_AuxiliaryPictureInfo_SetRowStride()
+### OH_AuxiliaryPictureInfo_SetRowStride()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_AuxiliaryPictureInfo_SetRowStride(OH_AuxiliaryPictureInfo *info, uint32_t rowStride)
@@ -1341,6 +1465,7 @@ Image_ErrorCode OH_AuxiliaryPictureInfo_SetRowStride(OH_AuxiliaryPictureInfo *in
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AuxiliaryPictureInfo *info | 将操作的OH_AuxiliaryPictureInfo指针。 |
@@ -1349,6 +1474,7 @@ Image_ErrorCode OH_AuxiliaryPictureInfo_SetRowStride(OH_AuxiliaryPictureInfo *in
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -1356,9 +1482,10 @@ Image_ErrorCode OH_AuxiliaryPictureInfo_SetRowStride(OH_AuxiliaryPictureInfo *in
  
   
 
-#### OH_AuxiliaryPictureInfo_GetPixelFormat()
+### OH_AuxiliaryPictureInfo_GetPixelFormat()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_AuxiliaryPictureInfo_GetPixelFormat(OH_AuxiliaryPictureInfo *info, PIXEL_FORMAT *pixelFormat)
@@ -1372,6 +1499,7 @@ Image_ErrorCode OH_AuxiliaryPictureInfo_GetPixelFormat(OH_AuxiliaryPictureInfo *
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AuxiliaryPictureInfo *info | 将操作的OH_AuxiliaryPictureInfo指针。 |
@@ -1380,6 +1508,7 @@ Image_ErrorCode OH_AuxiliaryPictureInfo_GetPixelFormat(OH_AuxiliaryPictureInfo *
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -1387,9 +1516,10 @@ Image_ErrorCode OH_AuxiliaryPictureInfo_GetPixelFormat(OH_AuxiliaryPictureInfo *
  
   
 
-#### OH_AuxiliaryPictureInfo_SetPixelFormat()
+### OH_AuxiliaryPictureInfo_SetPixelFormat()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_AuxiliaryPictureInfo_SetPixelFormat(OH_AuxiliaryPictureInfo *info, PIXEL_FORMAT pixelFormat)
@@ -1403,6 +1533,7 @@ Image_ErrorCode OH_AuxiliaryPictureInfo_SetPixelFormat(OH_AuxiliaryPictureInfo *
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AuxiliaryPictureInfo *info | 将操作的OH_AuxiliaryPictureInfo指针。 |
@@ -1411,6 +1542,7 @@ Image_ErrorCode OH_AuxiliaryPictureInfo_SetPixelFormat(OH_AuxiliaryPictureInfo *
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -1418,9 +1550,10 @@ Image_ErrorCode OH_AuxiliaryPictureInfo_SetPixelFormat(OH_AuxiliaryPictureInfo *
  
   
 
-#### OH_AuxiliaryPictureInfo_Release()
+### OH_AuxiliaryPictureInfo_Release()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_AuxiliaryPictureInfo_Release(OH_AuxiliaryPictureInfo *info)
@@ -1434,6 +1567,7 @@ Image_ErrorCode OH_AuxiliaryPictureInfo_Release(OH_AuxiliaryPictureInfo *info)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AuxiliaryPictureInfo *info | 将操作的OH_AuxiliaryPictureInfo指针。 |
@@ -1441,6 +1575,7 @@ Image_ErrorCode OH_AuxiliaryPictureInfo_Release(OH_AuxiliaryPictureInfo *info)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |

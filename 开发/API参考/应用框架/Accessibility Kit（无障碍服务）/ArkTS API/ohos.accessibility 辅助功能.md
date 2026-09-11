@@ -1,6 +1,6 @@
 # @ohos.accessibility (辅助功能)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-accessibility
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
@@ -12,7 +12,8 @@
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -22,7 +23,8 @@ import { accessibility } from '@kit.AccessibilityKit';
 
 
 
-#### AbilityState
+## AbilityState
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -36,6 +38,7 @@ type AbilityState = 'enable' | 'disable' | 'install'
 
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | 'enable' | 表示辅助应用已启用。 |
@@ -45,7 +48,8 @@ type AbilityState = 'enable' | 'disable' | 'install'
 
 
 
-#### AbilityType
+## AbilityType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -59,6 +63,7 @@ type AbilityType = 'audible' | 'generic' | 'haptic' | 'spoken' | 'visual' | 'all
 
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | 'audible' | 表示具有听觉反馈。 |
@@ -71,7 +76,8 @@ type AbilityType = 'audible' | 'generic' | 'haptic' | 'spoken' | 'visual' | 'all
 
 
 
-#### AccessibilityAbilityInfo
+## AccessibilityAbilityInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -85,7 +91,11 @@ type AbilityType = 'audible' | 'generic' | 'haptic' | 'spoken' | 'visual' | 'all
 
 
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -103,7 +113,8 @@ type AbilityType = 'audible' | 'generic' | 'haptic' | 'spoken' | 'visual' | 'all
 
 
 
-#### Action
+## Action
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -122,6 +133,7 @@ type Action = 'accessibilityFocus' | 'clearAccessibilityFocus' | 'focus' | 'clea
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Core
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -154,7 +166,8 @@ type Action = 'accessibilityFocus' | 'clearAccessibilityFocus' | 'focus' | 'clea
 
 
 
-#### Capability
+## Capability
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -168,6 +181,7 @@ type Capability = 'retrieve' | 'touchGuide' | 'keyEventObserver' | 'zoom' | 'ges
 
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | 'retrieve' | 具有检索窗口内容的能力。 |
@@ -179,7 +193,8 @@ type Capability = 'retrieve' | 'touchGuide' | 'keyEventObserver' | 'zoom' | 'ges
 
 
 
-#### CaptionsFontEdgeType8+
+## CaptionsFontEdgeType8+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -193,6 +208,7 @@ type CaptionsFontEdgeType = 'none' | 'raised' | 'depressed' | 'uniform' | 'dropS
 
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Hearing
 
+
 | 类型 | 说明 |
 | --- | --- |
 | 'none' | 表示无效果。 |
@@ -204,7 +220,8 @@ type CaptionsFontEdgeType = 'none' | 'raised' | 'depressed' | 'uniform' | 'dropS
 
 
 
-#### CaptionsFontFamily8+
+## CaptionsFontFamily8+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -220,6 +237,7 @@ type CaptionsFontFamily = 'default' | 'monospacedSerif' | 'serif' | 'monospacedS
 
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Hearing
 
+
 | 类型 | 说明 |
 | --- | --- |
 | 'default' | 表示默认字体。 |
@@ -234,7 +252,8 @@ type CaptionsFontFamily = 'default' | 'monospacedSerif' | 'serif' | 'monospacedS
 
 
 
-#### CaptionsStyle8+
+## CaptionsStyle8+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -245,6 +264,7 @@ type CaptionsFontFamily = 'default' | 'monospacedSerif' | 'serif' | 'monospacedS
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Hearing
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -258,7 +278,8 @@ type CaptionsFontFamily = 'default' | 'monospacedSerif' | 'serif' | 'monospacedS
 
 
 
-#### CaptionsManager8+
+## CaptionsManager8+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -272,7 +293,11 @@ type CaptionsFontFamily = 'default' | 'monospacedSerif' | 'serif' | 'monospacedS
 
 
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -282,7 +307,8 @@ type CaptionsFontFamily = 'default' | 'monospacedSerif' | 'serif' | 'monospacedS
 
 
 
-#### on('enableChange')(deprecated)
+### on('enableChange')(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -298,6 +324,7 @@ on(type: 'enableChange', callback: Callback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件名，固定为‘enableChange’，即字幕配置启用状态变化事件。 |
@@ -307,6 +334,7 @@ on(type: 'enableChange', callback: Callback&lt;boolean&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -340,7 +368,8 @@ struct Index {
 
 
 
-#### on('styleChange')(deprecated)
+### on('styleChange')(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -356,6 +385,7 @@ on(type: 'styleChange', callback: Callback&lt;CaptionsStyle&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件名，固定为‘styleChange’，即字幕风格变化事件。 |
@@ -365,6 +395,7 @@ on(type: 'styleChange', callback: Callback&lt;CaptionsStyle&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -398,7 +429,8 @@ struct Index {
 
 
 
-#### off('enableChange')(deprecated)
+### off('enableChange')(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -414,6 +446,7 @@ off(type: 'enableChange', callback?: Callback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 取消监听的事件名，固定为‘enableChange’，即字幕配置启用状态变化事件。 |
@@ -423,6 +456,7 @@ off(type: 'enableChange', callback?: Callback&lt;boolean&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -461,7 +495,8 @@ struct Index {
 
 
 
-#### off('styleChange')(deprecated)
+### off('styleChange')(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -477,6 +512,7 @@ off(type: 'styleChange', callback?: Callback&lt;CaptionsStyle&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 取消监听的事件名，固定为‘styleChange’，即字幕风格变化事件。 |
@@ -486,6 +522,7 @@ off(type: 'styleChange', callback?: Callback&lt;CaptionsStyle&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -524,7 +561,8 @@ struct Index {
 
 
 
-#### EventInfo
+## EventInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -538,7 +576,11 @@ struct Index {
 
 
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -564,7 +606,8 @@ struct Index {
 
 
 
-#### constructor
+### constructor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -580,6 +623,7 @@ constructor(jsonObject: Object)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | jsonObject | Object | 是 | 包含type、bundleName和triggerAction三个字段的JSON对象，详见示例。 |
@@ -590,7 +634,7 @@ constructor(jsonObject: Object)
 ```text
 import { accessibility } from '@kit.AccessibilityKit';
 
-let eventInfo = new accessibility.EventInfo({
+let eventInfo: accessibility.EventInfo = ({
   type: 'click',
   bundleName: 'com.example.MyApplication',
   triggerAction: 'click',
@@ -599,7 +643,8 @@ let eventInfo = new accessibility.EventInfo({
 
 
 
-#### constructor11+
+### constructor11+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -614,6 +659,7 @@ constructor(type: EventType, bundleName: string, triggerAction: Action)
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -633,7 +679,8 @@ let eventInfo = new accessibility.EventInfo('click', 'com.example.MyApplication'
 
 
 
-#### EventType
+## EventType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -654,6 +701,7 @@ type EventType = 'accessibilityFocus' | 'accessibilityFocusClear' |
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Core
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -680,7 +728,8 @@ type EventType = 'accessibilityFocus' | 'accessibilityFocusClear' |
 
 
 
-#### TextMoveUnit
+## TextMoveUnit
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -694,6 +743,7 @@ type TextMoveUnit = 'char' | 'word' | 'line' | 'page' | 'paragraph'
 
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | 'char' | 表示以字符为移动粒度遍历节点文本。 |
@@ -705,7 +755,8 @@ type TextMoveUnit = 'char' | 'word' | 'line' | 'page' | 'paragraph'
 
 
 
-#### WindowUpdateType
+## WindowUpdateType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -719,6 +770,7 @@ type WindowUpdateType = 'add' | 'remove' | 'bounds' | 'active' | 'focus'
 
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | 'add' | 表示添加窗口的窗口变化事件，值固定为'add'字符串。 |
@@ -730,7 +782,8 @@ type WindowUpdateType = 'add' | 'remove' | 'bounds' | 'active' | 'focus'
 
 
 
-#### accessibility.getAbilityLists(deprecated)
+## accessibility.getAbilityLists(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -746,6 +799,7 @@ getAbilityLists(abilityType: AbilityType, stateType: AbilityState): Promise<Arra
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | abilityType | AbilityType | 是 | 辅助应用的类型。 |
@@ -753,6 +807,7 @@ getAbilityLists(abilityType: AbilityType, stateType: AbilityState): Promise<Arra
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -777,7 +832,8 @@ accessibility.getAbilityLists(abilityType, abilityState).then((data: accessibili
 
 
 
-#### accessibility.getAbilityLists(deprecated)
+## accessibility.getAbilityLists(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -792,6 +848,7 @@ getAbilityLists(abilityType: AbilityType, stateType: AbilityState,callback: Asyn
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -820,7 +877,8 @@ accessibility.getAbilityLists(abilityType, abilityState, (err: BusinessError, da
 
 
 
-#### accessibility.getAccessibilityExtensionList9+
+## accessibility.getAccessibilityExtensionList9+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -836,6 +894,7 @@ getAccessibilityExtensionList(abilityType: AbilityType, stateType: AbilityState)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | abilityType | AbilityType | 是 | 辅助应用的类型。 |
@@ -843,6 +902,7 @@ getAccessibilityExtensionList(abilityType: AbilityType, stateType: AbilityState)
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -853,12 +913,14 @@ getAccessibilityExtensionList(abilityType: AbilityType, stateType: AbilityState)
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 
 **参数示例：**
+
 
 | 辅助应用类型 \ 辅助应用状态 | enable | disable | install |
 | --- | --- | --- | --- |
@@ -920,7 +982,8 @@ accessibility.getAccessibilityExtensionList(abilityType, abilityState).then((dat
 
 
 
-#### accessibility.getAccessibilityExtensionList9+
+## accessibility.getAccessibilityExtensionList9+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -936,6 +999,7 @@ getAccessibilityExtensionList(abilityType: AbilityType, stateType: AbilityState,
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | abilityType | AbilityType | 是 | 辅助应用的类型。 |
@@ -947,12 +1011,14 @@ getAccessibilityExtensionList(abilityType: AbilityType, stateType: AbilityState,
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 
 **参数示例：**
+
 
 | 辅助应用类型 \ 辅助应用状态 | enable | disable | install |
 | --- | --- | --- | --- |
@@ -1018,7 +1084,8 @@ accessibility.getAccessibilityExtensionList(abilityType, abilityState, (err: Bus
 
 
 
-#### accessibility.getAccessibilityExtensionListSync12+
+## accessibility.getAccessibilityExtensionListSync12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1036,6 +1103,7 @@ getAccessibilityExtensionListSync(abilityType: AbilityType, stateType: AbilitySt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | abilityType | AbilityType | 是 | 辅助应用的类型。 |
@@ -1044,12 +1112,14 @@ getAccessibilityExtensionListSync(abilityType: AbilityType, stateType: AbilitySt
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;AccessibilityAbilityInfo&gt; | 返回辅助应用信息列表。 |
 
 
 **参数示例：**
+
 
 | 辅助应用类型 \ 辅助应用状态 | enable | disable | install |
 | --- | --- | --- | --- |
@@ -1152,7 +1222,8 @@ try {
 
 
 
-#### accessibility.getCaptionsManager(deprecated)
+## accessibility.getCaptionsManager(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1167,6 +1238,7 @@ getCaptionsManager(): CaptionsManager
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Hearing
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1183,7 +1255,8 @@ let captionsManager = accessibility.getCaptionsManager();
 
 
 
-#### accessibility.on('accessibilityStateChange')
+## accessibility.on('accessibilityStateChange')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1205,6 +1278,7 @@ on(type: 'accessibilityStateChange', callback: Callback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件名，固定为‘accessibilityStateChange’，即辅助应用启用状态变化事件。 |
@@ -1214,6 +1288,7 @@ on(type: 'accessibilityStateChange', callback: Callback&lt;boolean&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1289,7 +1364,8 @@ accessibility.on('accessibilityStateChange', onAccessibilityStateChangeListener)
 
 
 
-#### accessibility.on('touchGuideStateChange')
+## accessibility.on('touchGuideStateChange')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1311,6 +1387,7 @@ on(type: 'touchGuideStateChange', callback: Callback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件名，固定为‘touchGuideStateChange’，即触摸浏览启用状态变化事件。 |
@@ -1320,6 +1397,7 @@ on(type: 'touchGuideStateChange', callback: Callback&lt;boolean&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1359,7 +1437,8 @@ struct Index {
 
 
 
-#### accessibility.on('screenReaderStateChange')18+
+## accessibility.on('screenReaderStateChange')18+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1379,6 +1458,7 @@ on(type: 'screenReaderStateChange', callback: Callback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件名，固定为‘screenReaderStateChange’，即屏幕朗读启用状态变化事件。 |
@@ -1388,6 +1468,7 @@ on(type: 'screenReaderStateChange', callback: Callback&lt;boolean&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1424,7 +1505,8 @@ struct Index {
 
 
 
-#### accessibility.on('touchModeChange')20+
+## accessibility.on('touchModeChange')20+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1444,6 +1526,7 @@ on(type: 'touchModeChange', callback: Callback&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件名，固定为‘touchModeChange’，即触摸浏览功能下的单击/双击操作模式变化事件。 |
@@ -1453,6 +1536,7 @@ on(type: 'touchModeChange', callback: Callback&lt;string&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1489,7 +1573,8 @@ struct Index {
 
 
 
-#### accessibility.onAnimationReduceStateChange23+
+## accessibility.onAnimationReduceStateChange23+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1506,6 +1591,7 @@ onAnimationReduceStateChange(callback: Callback&lt;boolean&gt;): void
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1542,7 +1628,8 @@ struct Index {
 
 
 
-#### accessibility.onFlashReminderStateChange23+
+## accessibility.onFlashReminderStateChange23+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1559,6 +1646,7 @@ onFlashReminderStateChange(callback: Callback&lt;boolean&gt;): void
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1595,7 +1683,8 @@ struct Index {
 
 
 
-#### accessibility.onAudioMonoStateChange23+
+## accessibility.onAudioMonoStateChange23+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1612,6 +1701,7 @@ onAudioMonoStateChange(callback: Callback&lt;boolean&gt;): void
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1648,7 +1738,8 @@ struct Index {
 
 
 
-#### accessibility.onSeniorModeStateChange
+## accessibility.onSeniorModeStateChange
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1667,6 +1758,7 @@ onSeniorModeStateChange(callback: Callback&lt;boolean&gt;): void
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1703,7 +1795,8 @@ struct Index {
 
 
 
-#### accessibility.onSeniorModeStateChangeForSelf
+## accessibility.onSeniorModeStateChangeForSelf
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1724,6 +1817,7 @@ onSeniorModeStateChangeForSelf(callback: Callback&lt;boolean&gt;): void
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1760,7 +1854,8 @@ struct Index {
 
 
 
-#### accessibility.off('accessibilityStateChange')
+## accessibility.off('accessibilityStateChange')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1776,6 +1871,7 @@ off(type: 'accessibilityStateChange', callback?: Callback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 取消监听的事件名，固定为‘accessibilityStateChange’，即辅助应用启用状态变化事件。 |
@@ -1785,6 +1881,7 @@ off(type: 'accessibilityStateChange', callback?: Callback&lt;boolean&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1821,7 +1918,8 @@ struct Index {
 
 
 
-#### accessibility.off('touchGuideStateChange')
+## accessibility.off('touchGuideStateChange')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1837,6 +1935,7 @@ off(type: 'touchGuideStateChange', callback?: Callback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 取消监听的事件名，固定为‘touchGuideStateChange’，即触摸浏览启用状态变化事件。 |
@@ -1846,6 +1945,7 @@ off(type: 'touchGuideStateChange', callback?: Callback&lt;boolean&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1882,7 +1982,8 @@ struct Index {
 
 
 
-#### accessibility.off('screenReaderStateChange')18+
+## accessibility.off('screenReaderStateChange')18+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1898,6 +1999,7 @@ off(type: 'screenReaderStateChange', callback?: Callback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 取消监听的事件名，固定为‘screenReaderStateChange’，即屏幕朗读启用状态变化事件。 |
@@ -1907,6 +2009,7 @@ off(type: 'screenReaderStateChange', callback?: Callback&lt;boolean&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1943,7 +2046,8 @@ struct Index {
 
 
 
-#### accessibility.off('touchModeChange')20+
+## accessibility.off('touchModeChange')20+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1959,6 +2063,7 @@ off(type: 'touchModeChange', callback?: Callback&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 取消监听的事件名，固定为‘touchModeChange’，即触摸浏览功能下的单击/双击操作模式变化事件。 |
@@ -1968,6 +2073,7 @@ off(type: 'touchModeChange', callback?: Callback&lt;string&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2004,7 +2110,8 @@ struct Index {
 
 
 
-#### accessibility.offAnimationReduceStateChange23+
+## accessibility.offAnimationReduceStateChange23+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2017,6 +2124,7 @@ offAnimationReduceStateChange(callback?: Callback&lt;boolean&gt;): void
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2053,7 +2161,8 @@ struct Index {
 
 
 
-#### accessibility.offFlashReminderStateChange23+
+## accessibility.offFlashReminderStateChange23+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2066,6 +2175,7 @@ offFlashReminderStateChange(callback?: Callback&lt;boolean&gt;): void
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2102,7 +2212,8 @@ struct Index {
 
 
 
-#### accessibility.offAudioMonoStateChange23+
+## accessibility.offAudioMonoStateChange23+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2115,6 +2226,7 @@ offAudioMonoStateChange(callback?: Callback&lt;boolean&gt;): void
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2151,7 +2263,8 @@ struct Index {
 
 
 
-#### accessibility.offSeniorModeStateChange
+## accessibility.offSeniorModeStateChange
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2166,6 +2279,7 @@ offSeniorModeStateChange(callback?: Callback&lt;boolean&gt;): void
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2202,7 +2316,8 @@ struct Index {
 
 
 
-#### accessibility.offSeniorModeStateChangeForSelf
+## accessibility.offSeniorModeStateChangeForSelf
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2217,6 +2332,7 @@ offSeniorModeStateChangeForSelf(callback?: Callback&lt;boolean&gt;): void
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2253,7 +2369,8 @@ struct Index {
 
 
 
-#### accessibility.isOpenAccessibility(deprecated)
+## accessibility.isOpenAccessibility(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2268,6 +2385,7 @@ isOpenAccessibility(): Promise&lt;boolean&gt;
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2289,7 +2407,8 @@ accessibility.isOpenAccessibility().then((data: boolean) => {
 
 
 
-#### accessibility.isOpenAccessibility(deprecated)
+## accessibility.isOpenAccessibility(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2304,6 +2423,7 @@ isOpenAccessibility(callback: AsyncCallback&lt;boolean&gt;): void
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2327,7 +2447,8 @@ accessibility.isOpenAccessibility((err: BusinessError, data: boolean) => {
 
 
 
-#### accessibility.isOpenAccessibilitySync10+
+## accessibility.isOpenAccessibilitySync10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2344,6 +2465,7 @@ isOpenAccessibilitySync(): boolean
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2362,7 +2484,8 @@ let status: boolean = accessibility.isOpenAccessibilitySync();
 
 
 
-#### accessibility.isOpenTouchGuide(deprecated)
+## accessibility.isOpenTouchGuide(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2377,6 +2500,7 @@ isOpenTouchGuide(): Promise&lt;boolean&gt;
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Vision
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2398,7 +2522,8 @@ accessibility.isOpenTouchGuide().then((data: boolean) => {
 
 
 
-#### accessibility.isOpenTouchGuide(deprecated)
+## accessibility.isOpenTouchGuide(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2413,6 +2538,7 @@ isOpenTouchGuide(callback: AsyncCallback&lt;boolean&gt;): void
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Vision
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2436,7 +2562,8 @@ accessibility.isOpenTouchGuide((err: BusinessError, data: boolean) => {
 
 
 
-#### accessibility.isOpenTouchGuideSync10+
+## accessibility.isOpenTouchGuideSync10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2451,6 +2578,7 @@ isOpenTouchGuideSync(): boolean
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Vision
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2467,7 +2595,8 @@ let status: boolean = accessibility.isOpenTouchGuideSync();
 
 
 
-#### accessibility.isScreenReaderOpenSync18+
+## accessibility.isScreenReaderOpenSync18+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2482,6 +2611,7 @@ isScreenReaderOpenSync(): boolean
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Vision
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2498,7 +2628,8 @@ let status: boolean = accessibility.isScreenReaderOpenSync();
 
 
 
-#### accessibility.isAnimationReduceEnabled23+
+## accessibility.isAnimationReduceEnabled23+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2511,6 +2642,7 @@ isAnimationReduceEnabled(): Promise&lt;boolean&gt;
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2543,7 +2675,8 @@ struct Index {
 
 
 
-#### accessibility.isAnimationReduceEnabledSync23+
+## accessibility.isAnimationReduceEnabledSync23+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2558,6 +2691,7 @@ isAnimationReduceEnabledSync(): boolean
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2586,7 +2720,8 @@ struct Index {
 
 
 
-#### accessibility.isFlashReminderEnabled23+
+## accessibility.isFlashReminderEnabled23+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2599,6 +2734,7 @@ isFlashReminderEnabled(): Promise&lt;boolean&gt;
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2631,7 +2767,8 @@ struct Index {
 
 
 
-#### accessibility.isFlashReminderEnabledSync23+
+## accessibility.isFlashReminderEnabledSync23+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2646,6 +2783,7 @@ isFlashReminderEnabledSync(): boolean
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2674,7 +2812,8 @@ struct Index {
 
 
 
-#### accessibility.isAudioMonoEnabled23+
+## accessibility.isAudioMonoEnabled23+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2687,6 +2826,7 @@ isAudioMonoEnabled(): Promise&lt;boolean&gt;
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2719,7 +2859,8 @@ struct Index {
 
 
 
-#### accessibility.isAudioMonoEnabledSync23+
+## accessibility.isAudioMonoEnabledSync23+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2734,6 +2875,7 @@ isAudioMonoEnabledSync(): boolean
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2762,7 +2904,8 @@ struct Index {
 
 
 
-#### accessibility.isSeniorModeEnabled
+## accessibility.isSeniorModeEnabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2778,6 +2921,7 @@ isSeniorModeEnabled(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示系统关怀模式已开启；返回false表示系统关怀模式已关闭。 |
@@ -2786,6 +2930,7 @@ isSeniorModeEnabled(): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[无障碍子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-accessibility)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2818,7 +2963,8 @@ struct Index {
 
 
 
-#### accessibility.getSeniorModeStateForSelf
+## accessibility.getSeniorModeStateForSelf
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2836,6 +2982,7 @@ getSeniorModeStateForSelf(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示应用自身“长辈模式”已开启；返回false表示应用自身“长辈模式”已关闭。 |
@@ -2844,6 +2991,7 @@ getSeniorModeStateForSelf(): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[无障碍子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-accessibility)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2876,7 +3024,8 @@ struct Index {
 
 
 
-#### accessibility.setSeniorModeStateForSelf
+## accessibility.setSeniorModeStateForSelf
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2892,12 +3041,14 @@ setSeniorModeStateForSelf(state: boolean): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | state | boolean | 是 | 设置应用是否开启“长辈模式”状态，true表示开启“长辈模式”，false表示关闭“长辈模式”。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2907,6 +3058,7 @@ setSeniorModeStateForSelf(state: boolean): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[无障碍子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-accessibility)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2939,7 +3091,8 @@ struct Index {
 
 
 
-#### accessibility.sendEvent(deprecated)
+## accessibility.sendEvent(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2955,12 +3108,14 @@ sendEvent(event: EventInfo): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | EventInfo | 是 | 无障碍事件对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2988,7 +3143,8 @@ accessibility.sendEvent(eventInfo).then(() => {
 
 
 
-#### accessibility.sendEvent(deprecated)
+## accessibility.sendEvent(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3003,6 +3159,7 @@ sendEvent(event: EventInfo, callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3033,7 +3190,8 @@ accessibility.sendEvent(eventInfo, (err: BusinessError) => {
 
 
 
-#### accessibility.sendAccessibilityEvent9+
+## accessibility.sendAccessibilityEvent9+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3049,12 +3207,14 @@ sendAccessibilityEvent(event: EventInfo): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | EventInfo | 是 | 无障碍事件对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3064,6 +3224,7 @@ sendAccessibilityEvent(event: EventInfo): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3091,7 +3252,8 @@ accessibility.sendAccessibilityEvent(eventInfo).then(() => {
 
 
 
-#### accessibility.sendAccessibilityEvent9+
+## accessibility.sendAccessibilityEvent9+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3107,6 +3269,7 @@ sendAccessibilityEvent(event: EventInfo, callback: AsyncCallback&lt;void&gt;): v
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | EventInfo | 是 | 无障碍事件对象。 |
@@ -3116,6 +3279,7 @@ sendAccessibilityEvent(event: EventInfo, callback: AsyncCallback&lt;void&gt;): v
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3203,7 +3367,8 @@ accessibility.sendAccessibilityEvent(eventInfo, (err: BusinessError) => {
 
 
 
-#### accessibility.getTouchModeSync20+
+## accessibility.getTouchModeSync20+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3218,6 +3383,7 @@ getTouchModeSync(): string
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |

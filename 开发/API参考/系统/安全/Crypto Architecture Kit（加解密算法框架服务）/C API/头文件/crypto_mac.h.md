@@ -1,13 +1,14 @@
 # crypto_mac.h
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-crypto-mac-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义消息认证码接口。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_CryptoMac | OH_CryptoMac | MAC结构体，表示MAC上下文。 |
@@ -40,10 +44,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | CryptoMac_ParamType | CryptoMac_ParamType | 定义MAC算法参数类型。 |
@@ -51,10 +57,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_Crypto_ErrCode OH_CryptoMac_Create(const char *algoName, OH_CryptoMac **ctx) | 根据给定的算法名称创建MAC上下文。 注意：创建的资源必须通过OH_CryptoMac_Destroy销毁。 |
@@ -68,15 +76,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### CryptoMac_ParamType
+### CryptoMac_ParamType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum CryptoMac_ParamType
@@ -88,6 +98,7 @@ enum CryptoMac_ParamType
  
 **起始版本：** 20
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | CRYPTO_MAC_DIGEST_NAME_STR = 0 | HMAC的消息摘要算法名称，通过OH_CryptoMac_SetParam设置。取值："SHA1"、"SHA224"、"SHA256"、"SHA384"、"SHA512"、"SM3"、"MD5"。从API version 26.0.0开始支持"SHA3-256"、"SHA3-384"、"SHA3-512"。 起始版本： 20 |
@@ -96,15 +107,17 @@ enum CryptoMac_ParamType
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_CryptoMac_Create()
+### OH_CryptoMac_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoMac_Create(const char *algoName, OH_CryptoMac **ctx)
@@ -120,6 +133,7 @@ OH_Crypto_ErrCode OH_CryptoMac_Create(const char *algoName, OH_CryptoMac **ctx)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *algoName | [in] MAC算法名称，不能为NULL。支持“HMAC”和“CMAC”。 |
@@ -128,6 +142,7 @@ OH_Crypto_ErrCode OH_CryptoMac_Create(const char *algoName, OH_CryptoMac **ctx)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_PARAMETER_CHECK_FAILED：algoName或ctx为NULL，或algoName不是"HMAC"或"CMAC"。 CRYPTO_NOT_SUPPORTED：不支持的操作或算法。 CRYPTO_MEMORY_ERROR：内存操作失败。 CRYPTO_OPERTION_ERROR：密码操作失败。 |
@@ -139,9 +154,10 @@ OH_Crypto_ErrCode OH_CryptoMac_Create(const char *algoName, OH_CryptoMac **ctx)
  
   
 
-#### OH_CryptoMac_SetParam()
+### OH_CryptoMac_SetParam()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoMac_SetParam(OH_CryptoMac *ctx, CryptoMac_ParamType type, const Crypto_DataBlob *value)
@@ -155,6 +171,7 @@ OH_Crypto_ErrCode OH_CryptoMac_SetParam(OH_CryptoMac *ctx, CryptoMac_ParamType t
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoMac *ctx | [in] MAC上下文。不能为NULL。 |
@@ -164,6 +181,7 @@ OH_Crypto_ErrCode OH_CryptoMac_SetParam(OH_CryptoMac *ctx, CryptoMac_ParamType t
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_PARAMETER_CHECK_FAILED：ctx、value或value->data为NULL，type对当前MAC算法无效，或摘要/加密算法名称不支持。 CRYPTO_NOT_SUPPORTED：不支持的操作或算法。 CRYPTO_MEMORY_ERROR：参数拷贝内存分配失败。 CRYPTO_OPERTION_ERROR：密码操作失败。 |
@@ -175,9 +193,10 @@ OH_Crypto_ErrCode OH_CryptoMac_SetParam(OH_CryptoMac *ctx, CryptoMac_ParamType t
  
   
 
-#### OH_CryptoMac_Init()
+### OH_CryptoMac_Init()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoMac_Init(OH_CryptoMac *ctx, const OH_CryptoSymKey *key)
@@ -191,6 +210,7 @@ OH_Crypto_ErrCode OH_CryptoMac_Init(OH_CryptoMac *ctx, const OH_CryptoSymKey *ke
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoMac *ctx | [in] MAC上下文。不能为NULL。 |
@@ -199,6 +219,7 @@ OH_Crypto_ErrCode OH_CryptoMac_Init(OH_CryptoMac *ctx, const OH_CryptoSymKey *ke
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_PARAMETER_CHECK_FAILED：ctx或key为NULL。 CRYPTO_NOT_SUPPORTED：不支持的操作或算法。 CRYPTO_MEMORY_ERROR：内存操作失败。 CRYPTO_OPERTION_ERROR：MAC初始化失败。可能的原因：密钥长度与算法不匹配（例如CMAC使用AES-128需要16字节密钥）。 |
@@ -210,9 +231,10 @@ OH_Crypto_ErrCode OH_CryptoMac_Init(OH_CryptoMac *ctx, const OH_CryptoSymKey *ke
  
   
 
-#### OH_CryptoMac_Update()
+### OH_CryptoMac_Update()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoMac_Update(OH_CryptoMac *ctx, const Crypto_DataBlob *in)
@@ -226,6 +248,7 @@ OH_Crypto_ErrCode OH_CryptoMac_Update(OH_CryptoMac *ctx, const Crypto_DataBlob *
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoMac *ctx | [in] MAC上下文。不能为NULL。 |
@@ -234,6 +257,7 @@ OH_Crypto_ErrCode OH_CryptoMac_Update(OH_CryptoMac *ctx, const Crypto_DataBlob *
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_PARAMETER_CHECK_FAILED：ctx或in为NULL。 CRYPTO_NOT_SUPPORTED：不支持的操作或算法。 CRYPTO_MEMORY_ERROR：内存操作失败。 CRYPTO_OPERTION_ERROR：MAC更新失败。 |
@@ -245,9 +269,10 @@ OH_Crypto_ErrCode OH_CryptoMac_Update(OH_CryptoMac *ctx, const Crypto_DataBlob *
  
   
 
-#### OH_CryptoMac_Final()
+### OH_CryptoMac_Final()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoMac_Final(OH_CryptoMac *ctx, Crypto_DataBlob *out)
@@ -263,6 +288,7 @@ OH_Crypto_ErrCode OH_CryptoMac_Final(OH_CryptoMac *ctx, Crypto_DataBlob *out)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoMac *ctx | [in] MAC上下文。不能为NULL。 |
@@ -271,6 +297,7 @@ OH_Crypto_ErrCode OH_CryptoMac_Final(OH_CryptoMac *ctx, Crypto_DataBlob *out)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_PARAMETER_CHECK_FAILED：ctx或out为NULL。 CRYPTO_NOT_SUPPORTED：不支持的操作或算法。 CRYPTO_MEMORY_ERROR：内存操作失败。 CRYPTO_OPERTION_ERROR：MAC完成操作失败。 |
@@ -278,9 +305,10 @@ OH_Crypto_ErrCode OH_CryptoMac_Final(OH_CryptoMac *ctx, Crypto_DataBlob *out)
  
   
 
-#### OH_CryptoMac_GetLength()
+### OH_CryptoMac_GetLength()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoMac_GetLength(OH_CryptoMac *ctx, uint32_t *length)
@@ -294,6 +322,7 @@ OH_Crypto_ErrCode OH_CryptoMac_GetLength(OH_CryptoMac *ctx, uint32_t *length)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoMac *ctx | [in] MAC上下文。不能为NULL。 |
@@ -302,6 +331,7 @@ OH_Crypto_ErrCode OH_CryptoMac_GetLength(OH_CryptoMac *ctx, uint32_t *length)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_PARAMETER_CHECK_FAILED：ctx或length为NULL。 CRYPTO_NOT_SUPPORTED：不支持的操作或算法。 CRYPTO_MEMORY_ERROR：内存操作失败。 CRYPTO_OPERTION_ERROR：密码操作失败。 |
@@ -309,9 +339,10 @@ OH_Crypto_ErrCode OH_CryptoMac_GetLength(OH_CryptoMac *ctx, uint32_t *length)
  
   
 
-#### OH_CryptoMac_Destroy()
+### OH_CryptoMac_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_CryptoMac_Destroy(OH_CryptoMac *ctx)
@@ -325,6 +356,7 @@ void OH_CryptoMac_Destroy(OH_CryptoMac *ctx)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoMac *ctx | [in] MAC上下文。 |

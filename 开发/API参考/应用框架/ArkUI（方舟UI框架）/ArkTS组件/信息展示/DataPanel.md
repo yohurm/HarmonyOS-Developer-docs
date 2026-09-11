@@ -1,9 +1,9 @@
 # DataPanel
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-datapanel
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 数据面板组件，用于将多个数据占比情况使用占比图进行展示，支持环形和线性两种展示类型，可自定义颜色、阴影、底板等视觉效果，适用于存储容量、任务进度、资源占比等数据可视化场景，帮助用户直观了解数据分布情况。
  
@@ -12,17 +12,19 @@
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
  
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 DataPanel(options: DataPanelOptions)
  
@@ -36,6 +38,7 @@ DataPanel(options: DataPanelOptions)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | DataPanelOptions | 是 | 数据面板配置选项，用于设置数据面板的数据值列表、最大值和数据面板类型。 |
@@ -43,9 +46,10 @@ DataPanel(options: DataPanelOptions)
  
   
 
-#### DataPanelOptions对象说明
+## DataPanelOptions对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 数据面板选项。
  
@@ -55,18 +59,20 @@ DataPanel(options: DataPanelOptions)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | values | number[] | 否 | 否 | 数据值列表，数组长度范围[0, 9]，大于9个数据则取前9个数据。若数据值小于0则置为0。 |
-| max | number | 否 | 是 | - max大于0时，表示数据的最大值。 - max小于等于0时，max等于values数据值列表各项的和，按比例显示。 不传入时默认值：100。 |
+| max | number | 否 | 是 | - max大于0时，表示数据的最大值。 - max小于等于0时，max等于values数据值列表各项的和，按比例显示。 默认值：100。 |
 | type8+ | DataPanelType | 否 | 是 | 数据面板的类型（不支持动态修改）。 可选值：DataPanelType.Line（线性数据面板，适合在有限空间内展示多段数据对比）、DataPanelType.Circle（环形数据面板，适合直观展示数据占比关系）。 不传入时默认值为DataPanelType.Circle。 |
  
  
   
 
-#### DataPanelType8+枚举说明
+## DataPanelType8+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 数据面板的类型。
  
@@ -76,6 +82,7 @@ DataPanel(options: DataPanelOptions)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | Line | 0 | 线性数据面板。 |
@@ -84,17 +91,19 @@ DataPanel(options: DataPanelOptions)
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
  
   
 
-#### closeEffect
+### closeEffect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 closeEffect(value: boolean)
  
@@ -108,6 +117,7 @@ closeEffect(value: boolean)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 关闭数据占比图表旋转动效和投影效果。 默认值：false，表示开启动效和投影；true表示关闭动效和投影。 |
@@ -115,9 +125,10 @@ closeEffect(value: boolean)
  
   
 
-#### valueColors10+
+### valueColors10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 valueColors(value: Array<ResourceColor | LinearGradient>)
  
@@ -131,6 +142,7 @@ valueColors(value: Array<ResourceColor | LinearGradient>)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Array<ResourceColor \| LinearGradient> | 是 | 各数据段颜色，ResourceColor为纯色，LinearGradient为渐变色。默认值为渐变色，九段数据的默认颜色为：[{ color: '#F7CE00', offset: 0 }, { color: '#F99B11', offset: 1 }]、[{ color: '#F76223', offset: 0 }, { color: '#F2400A', offset: 1 }]、[{ color: '#F772AC', offset: 0 }, { color: '#E65392', offset: 1 }]、[{ color: '#A575EB', offset: 0 }, { color: '#A12DF7', offset: 1 }]、[{ color: '#7B79F7', offset: 0 }, { color: '#4B48F7', offset: 1 }]、[{ color: '#4B8AF3', offset: 0 }, { color: '#007DFF', offset: 1 }]、[{ color: '#73C1E6', offset: 0 }, { color: '#4FB4E3', offset: 1 }]、[{ color: '#A5D61D', offset: 0 }, { color: '#69D14F', offset: 1 }]、[{ color: '#A2A2B0', offset: 0 }, { color: '#8E8E93', offset: 1 }]。 说明： 若设置的颜色个数少于数据段个数，剩余数据段会自动匹配默认颜色列表里对应顺序的颜色；若设置的颜色个数多于数据段个数，则显示的颜色个数与数据段个数一致，多余颜色将被忽略。 |
@@ -138,9 +150,10 @@ valueColors(value: Array<ResourceColor | LinearGradient>)
  
   
 
-#### trackBackgroundColor10+
+### trackBackgroundColor10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 trackBackgroundColor(value: ResourceColor)
  
@@ -154,6 +167,7 @@ trackBackgroundColor(value: ResourceColor)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 底板颜色。 默认值：'#08182431'，格式为十六进制ARGB值，前两位代表透明度。 |
@@ -161,9 +175,10 @@ trackBackgroundColor(value: ResourceColor)
  
   
 
-#### strokeWidth10+
+### strokeWidth10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 strokeWidth(value: Length)
  
@@ -177,6 +192,7 @@ strokeWidth(value: Length)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Length | 是 | 圆环粗细。 默认值：24 单位：vp 设置字符串类型参数时，如果不指定单位，默认单位为px，例如'10'，等同于'10px'。 说明： 数据面板的类型为DataPanelType.Line时该属性不生效。 设置小于0的值时，按默认值显示。 当value大于圆环半径时，圆环粗细会自动设置为圆环半径的12%。如果value过大，圆环可能会消失。 |
@@ -184,9 +200,10 @@ strokeWidth(value: Length)
  
   
 
-#### trackShadow10+
+### trackShadow10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 trackShadow(value: DataPanelShadowOptions)
  
@@ -200,6 +217,7 @@ trackShadow(value: DataPanelShadowOptions)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | DataPanelShadowOptions | 是 | 投影样式。 说明： 设置为null时，不开启投影。 |
@@ -207,9 +225,10 @@ trackShadow(value: DataPanelShadowOptions)
  
   
 
-#### contentModifier12+
+### contentModifier12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contentModifier(modifier: ContentModifier&lt;DataPanelConfiguration&gt;)
  
@@ -223,6 +242,7 @@ contentModifier(modifier: ContentModifier&lt;DataPanelConfiguration&gt;)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | modifier | ContentModifier&lt;DataPanelConfiguration&gt; | 是 | 在DataPanel组件上，定制内容区的方法，设置后将使用开发者自定义的内容替换DataPanel原有显示内容。 modifier：内容修改器，开发者需要自定义class实现ContentModifier接口。 |
@@ -230,9 +250,10 @@ contentModifier(modifier: ContentModifier&lt;DataPanelConfiguration&gt;)
  
   
 
-#### DataPanelShadowOptions10+对象说明
+## DataPanelShadowOptions10+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 DataPanelShadowOptions继承自[MultiShadowOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-information-display-common#multishadowoptions)，具有MultiShadowOptions的全部属性。
  
@@ -242,22 +263,25 @@ DataPanelShadowOptions继承自[MultiShadowOptions](https://developer.huawei.com
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| colors | Array<ResourceColor \| LinearGradient> | 否 | 是 | 各数据段投影的颜色。 默认值：与valueColors值相同 说明： 若设置的投影颜色的个数少于数据段个数时，则显示的投影颜色的个数和设置的投影颜色个数一致。 若设置的投影颜色的个数多于数据段个数时，则显示的投影颜色的个数和数据段个数一致。 |
+| colors | Array<ResourceColor \| LinearGradient> | 否 | 是 | 各数据段投影的颜色。 默认值：与valueColors值相同 说明： 若设置的投影颜色的个数少于数据段个数时，则显示的投影颜色个数等于设置的投影颜色个数。 若设置的投影颜色的个数多于数据段个数时，则显示的投影颜色个数等于数据段个数。 |
  
  
   
 
-#### LinearGradient10+
+## LinearGradient10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(colorStops: ColorStop[])
  
@@ -271,6 +295,7 @@ constructor(colorStops: ColorStop[])
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | colorStops | ColorStop[] | 是 | 存储渐变颜色和渐变点。 |
@@ -278,9 +303,10 @@ constructor(colorStops: ColorStop[])
  
   
 
-#### ColorStop10+
+## ColorStop10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 颜色断点类型，用于描述渐变色颜色断点。
  
@@ -290,6 +316,7 @@ constructor(colorStops: ColorStop[])
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | color | ResourceColor | 否 | 否 | 渐变色断点处的颜色值。 |
@@ -298,9 +325,10 @@ constructor(colorStops: ColorStop[])
  
   
 
-#### DataPanelConfiguration12+对象说明
+## DataPanelConfiguration12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 开发者需要自定义class实现ContentModifier接口。继承自[CommonConfiguration](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-content-modifier#commonconfigurationt)。
  
@@ -310,6 +338,7 @@ constructor(colorStops: ColorStop[])
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | values | number[] | 否 | 否 | 当前DataPanel的数据值。 数组长度范围是[0, 9]。 说明： 如果数组长度大于9，则取前9项。 |
@@ -318,13 +347,17 @@ constructor(colorStops: ColorStop[])
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 示例1（设置数据面板类型）
+### 示例1（设置数据面板类型）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[DataPanelOptions](#datapaneloptions对象说明)的type属性，实现了设置数据面板的类型的功能。
  
@@ -384,7 +417,10 @@ struct DataPanelExample {
  
   
 
-#### 示例2（设置渐变色和阴影）
+### 示例2（设置渐变色和阴影）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[valueColors](#valuecolors10)和[trackShadow](#trackshadow10)接口设置[LinearGradient](#lineargradient10)颜色，实现了设置渐变色效果和阴影效果。
  
@@ -447,7 +483,10 @@ struct LinearGradientDataPanelExample {
  
   
 
-#### 示例3（设置关闭动画和阴影）
+### 示例3（设置关闭动画和阴影）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[closeEffect](#closeeffect)接口，实现了关闭数据占比图表旋转动效和投影效果的功能。
  
@@ -465,9 +504,6 @@ struct LinearGradientDataPanelExample {
   @State color4: string = '#20FF0000';
   @State colorArray: Array<LinearGradient | ResourceColor> = [this.color1, this.color2, this.color3, this.color4];
   @State bgColor: string = '#08182431';
-  @State offsetX: number = 15;
-  @State offsetY: number = 15;
-  @State radius: number = 5;
 
   build() {
     Column({ space: 5 }) {
@@ -495,7 +531,10 @@ struct LinearGradientDataPanelExample {
  
   
 
-#### 示例4（设置定制内容区）
+### 示例4（设置定制内容区）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[contentModifier](#contentmodifier12)接口，实现了定制数据面板内容区的功能。
  

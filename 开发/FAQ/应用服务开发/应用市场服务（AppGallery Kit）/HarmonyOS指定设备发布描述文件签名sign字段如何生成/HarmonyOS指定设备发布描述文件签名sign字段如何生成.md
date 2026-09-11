@@ -1,16 +1,16 @@
 # HarmonyOS指定设备发布描述文件签名sign字段如何生成
 
-更新时间：2026-08-05 01:58:01
+更新时间：2026-08-19 01:20:00
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery-9
 
-#### 问题现象
+## 问题现象
 
 使用[指定设备发布](https://developer.huawei.com/consumer/cn/doc/app/agc-help-internal-test-0000002270709477)发布应用，在使用[构建Deeplink实现下载应用](https://developer.huawei.com/consumer/cn/doc/app/agc-help-internal-test-release-app-0000002260691994)生成应用描述文件（例如：manifest.json5，文件名可自定义）时，需要获取描述文件签名（即sign字段），应该如何获取sign的值呢？
  
  
 
-#### 背景知识
+## 背景知识
 
 - 需要根据提供的[验签工具](https://gitee.com/arkin-internal-testing/internal-testing)来生成sign字段。
 - 生成签名所需要manifest-sign-tool-1.0.0.jar也需要通过[验签工具](https://gitee.com/arkin-internal-testing/internal-testing)获取。
@@ -18,7 +18,7 @@
  
  
 
-#### 解决方案
+## 解决方案
 1. 描述文件不是由项目生成，但可以通过应用的module.json5和app.json5文件生成，具体字段可以参考[构建Deeplink实现下载应用](https://developer.huawei.com/consumer/cn/doc/app/agc-help-internal-test-release-app-0000002260691994)说明，并根据实际情况手动填写对应的参数，保存到本地即可。
 2. 描述文件生成后保存本地，参照如下命令生成描述文件签名sign：
 ```json
@@ -57,7 +57,7 @@ new_manifest.json5：
 "sign": "MEUCIEl****4AVZyWFc="
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/eH6pW-ylRt-O4GyJaIAlMA/notice_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260811T005618Z&HW-CC-Expire=86400&HW-CC-Sign=43B3F07FE16F8D4EF4FC0609FCE421ED2635CE79A7A03A03FF65E96F8AD47D1B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/1s7raOXvR9W9l3ylOmJfng/notice_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072742Z&HW-CC-Expire=86400&HW-CC-Sign=64593CE59E9C82C109687008E8FA091253770E3FB2994645179E6B15737E2BED)
  
 
 低版本的JDK会限制加密强度并产生报错，需要升级JDK到1.8.0.3*或更高版本（不包括java11的版本）。
@@ -66,7 +66,7 @@ new_manifest.json5：
  
  
 
-#### 常见FAQ
+## 常见FAQ
 
 Q：指定设备发布时提示错误码10019：描述文件验签失败，如何处理？
  
@@ -76,4 +76,4 @@ A：检查描述文件的签名密钥与安装包的签名密钥，确保二者�
 java -jar manifest-sign-tool-1.0.0.jar -operation verify -inputFile C:\xxx\manifest.json5 -keystore C:\xxx\internaltest.p12 -keystorepasswd internaltest
 ```
  
-其中operation为操作类型，验证签名时为verify；inputFile为需要验签的manifest.json5文件路径；keystore为p12密钥文件路径；keystorepasswd为密钥文件密码。manifest-sign-tool-1.0.0.jar可通过[验签工具](https://gitee.com/arkin-internal-testing/internal-testing)获取。特别注意安装包有多产物和多签名密钥的情况，需确保描述文件签名时使用的签名密钥p12和安装包使用的签名密钥一致。更多内容可参考[文档](https://developer.huawei.com/consumer/cn/doc/architecture-guides/common-v1_26-ts_c263-0000002547686998)。
+其中operation为操作类型，验证签名时为verify；inputFile为需要验签的manifest.json5文件路径；keystore为p12密钥文件路径；keystorepasswd为密钥文件密码。manifest-sign-tool-1.0.0.jar可通过[验签工具](https://gitee.com/arkin-internal-testing/internal-testing)获取。特别注意安装包有多产物和多签名密钥的情况，需确保描述文件签名时使用的签名密钥p12和安装包使用的签名密钥一致。更多内容可参考[文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery-93)。

@@ -1,9 +1,9 @@
 # Interface (ZoomQuery)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-zoomquery
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供了与设备的缩放相关的查询功能，包括获取支持的缩放比例范围。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { camera } from '@kit.CameraKit';
@@ -22,9 +23,10 @@ import { camera } from '@kit.CameraKit';
  
   
 
-#### getZoomRatioRange11+
+## getZoomRatioRange11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getZoomRatioRange(): Array&lt;number&gt;
  
@@ -36,6 +38,7 @@ getZoomRatioRange(): Array&lt;number&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;number&gt; | 用于获取可变焦距比范围，返回的数组包括其最小值和最大值。接口调用失败会抛出相应错误码并返回undefined，错误码类型CameraErrorCode。若当前设备不支持变焦，调用该接口会返回undefined。 |
@@ -45,6 +48,7 @@ getZoomRatioRange(): Array&lt;number&gt;
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400103 | Session not config, only throw in session usage. |
@@ -70,9 +74,10 @@ function getZoomRatioRange(photoSession: camera.PhotoSession): Array<number> {
  
   
 
-#### getRAWCaptureZoomRatioRange24+
+## getRAWCaptureZoomRatioRange24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRAWCaptureZoomRatioRange(): Array&lt;number&gt;
  
@@ -86,6 +91,7 @@ getRAWCaptureZoomRatioRange(): Array&lt;number&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;number&gt; | 变焦比例范围。 |
@@ -95,6 +101,7 @@ getRAWCaptureZoomRatioRange(): Array&lt;number&gt;
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400102 | Operation not allowed, the inputDevice or the session is abnormal. |
@@ -121,9 +128,10 @@ function getRAWCaptureZoomRatioRange(photoSession: camera.PhotoSession): Array<n
  
   
 
-#### getZoomPointInfos
+## getZoomPointInfos
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getZoomPointInfos(): Array&lt;ZoomPointInfo&gt;
  
@@ -137,6 +145,7 @@ getZoomPointInfos(): Array&lt;ZoomPointInfo&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;ZoomPointInfo&gt; | 获取当前模式的等效焦距信息列表。 |
@@ -146,6 +155,7 @@ getZoomPointInfos(): Array&lt;ZoomPointInfo&gt;
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400103 | Session not config, only throw in session usage. |

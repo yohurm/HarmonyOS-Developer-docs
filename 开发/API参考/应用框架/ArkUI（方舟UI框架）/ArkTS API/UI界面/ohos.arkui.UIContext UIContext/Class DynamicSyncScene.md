@@ -1,9 +1,9 @@
 # Class (DynamicSyncScene)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-dynamicsyncscene
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供组件自定义场景下相关帧率的配置。
  
@@ -12,9 +12,10 @@
 
   
 
-#### setFrameRateRange12+
+## setFrameRateRange12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setFrameRateRange(range: ExpectedFrameRateRange): void
  
@@ -28,6 +29,7 @@ setFrameRateRange(range: ExpectedFrameRateRange): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | range | ExpectedFrameRateRange | 是 | 设置期望的帧率范围。 默认值：{min:0, max:120, expected: 120} |
@@ -85,9 +87,10 @@ struct Frame {
  
   
 
-#### getFrameRateRange12+
+## getFrameRateRange12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFrameRateRange(): ExpectedFrameRateRange
  
@@ -99,6 +102,7 @@ getFrameRateRange(): ExpectedFrameRateRange
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ExpectedFrameRateRange | 期望帧率范围。 |

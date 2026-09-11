@@ -1,13 +1,14 @@
 # native_audio_device_base.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-audio-device-base-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义音频设备参数的类型以及获取每个设备参数的接口。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_AudioDeviceDescriptorArray | OH_AudioDeviceDescriptorArray | 声明音频设备描述符数组。 |
@@ -41,10 +45,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_AudioDevice_ChangeType | OH_AudioDevice_ChangeType | 定义音频设备更改类型。 |
@@ -57,10 +63,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceRole(OH_AudioDeviceDescriptor *audioDeviceDescriptor, OH_AudioDevice_Role *deviceRole) | 查询目标音频设备描述符的设备角色。 |
@@ -76,15 +84,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AudioDevice_ChangeType
+### OH_AudioDevice_ChangeType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AudioDevice_ChangeType
@@ -96,6 +106,7 @@ enum OH_AudioDevice_ChangeType
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AUDIO_DEVICE_CHANGE_TYPE_CONNECT = 0 | 设备连接。 |
@@ -104,9 +115,10 @@ enum OH_AudioDevice_ChangeType
  
   
 
-#### OH_AudioDevice_Role
+### OH_AudioDevice_Role
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AudioDevice_Role
@@ -118,6 +130,7 @@ enum OH_AudioDevice_Role
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AUDIO_DEVICE_ROLE_INPUT = 1 | 输入设备。 |
@@ -126,9 +139,10 @@ enum OH_AudioDevice_Role
  
   
 
-#### OH_AudioDevice_Type
+### OH_AudioDevice_Type
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AudioDevice_Type
@@ -140,6 +154,7 @@ enum OH_AudioDevice_Type
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AUDIO_DEVICE_TYPE_INVALID = 0 | 无效设备。 |
@@ -164,9 +179,10 @@ enum OH_AudioDevice_Type
  
   
 
-#### OH_AudioDevice_Flag
+### OH_AudioDevice_Flag
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AudioDevice_Flag
@@ -178,6 +194,7 @@ enum OH_AudioDevice_Flag
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AUDIO_DEVICE_FLAG_NONE = 0 | 无设备。 |
@@ -188,9 +205,10 @@ enum OH_AudioDevice_Flag
  
   
 
-#### OH_AudioDevice_Usage
+### OH_AudioDevice_Usage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AudioDevice_Usage
@@ -202,6 +220,7 @@ enum OH_AudioDevice_Usage
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AUDIO_DEVICE_USAGE_MEDIA_OUTPUT = 1 | 媒体输出设备。 |
@@ -214,9 +233,10 @@ enum OH_AudioDevice_Usage
  
   
 
-#### OH_AudioDevice_BlockStatus
+### OH_AudioDevice_BlockStatus
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AudioDevice_BlockStatus
@@ -228,6 +248,7 @@ enum OH_AudioDevice_BlockStatus
  
 **起始版本：** 13
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AUDIO_DEVICE_UNBLOCKED = 0 | 音频设备未被堵塞。 |
@@ -236,15 +257,17 @@ enum OH_AudioDevice_BlockStatus
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AudioDeviceDescriptor_GetDeviceRole()
+### OH_AudioDeviceDescriptor_GetDeviceRole()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceRole(OH_AudioDeviceDescriptor *audioDeviceDescriptor,OH_AudioDevice_Role *deviceRole)
@@ -258,6 +281,7 @@ OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceRole(OH_AudioDeviceDescr
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioDeviceDescriptor *audioDeviceDescriptor | 音频设备描述符。通过 OH_AudioRoutingManager_GetDevices 或者OH_AudioRoutingManager_OnDeviceChangedCallback获取。 |
@@ -266,6 +290,7 @@ OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceRole(OH_AudioDeviceDescr
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS或AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM。 |
@@ -273,9 +298,10 @@ OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceRole(OH_AudioDeviceDescr
  
   
 
-#### OH_AudioDeviceDescriptor_GetDeviceType()
+### OH_AudioDeviceDescriptor_GetDeviceType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceType(OH_AudioDeviceDescriptor *audioDeviceDescriptor,OH_AudioDevice_Type *deviceType)
@@ -289,6 +315,7 @@ OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceType(OH_AudioDeviceDescr
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioDeviceDescriptor *audioDeviceDescriptor | 音频设备描述符。通过 OH_AudioRoutingManager_GetDevices 或者OH_AudioRoutingManager_OnDeviceChangedCallback获取。 |
@@ -297,6 +324,7 @@ OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceType(OH_AudioDeviceDescr
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS或AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM。 |
@@ -304,9 +332,10 @@ OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceType(OH_AudioDeviceDescr
  
   
 
-#### OH_AudioDeviceDescriptor_GetDeviceId()
+### OH_AudioDeviceDescriptor_GetDeviceId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceId(OH_AudioDeviceDescriptor *audioDeviceDescriptor,uint32_t *id)
@@ -320,6 +349,7 @@ OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceId(OH_AudioDeviceDescrip
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioDeviceDescriptor *audioDeviceDescriptor | 音频设备描述符。通过 OH_AudioRoutingManager_GetDevices 或者OH_AudioRoutingManager_OnDeviceChangedCallback获取。 |
@@ -328,6 +358,7 @@ OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceId(OH_AudioDeviceDescrip
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS 或 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM。 |
@@ -335,9 +366,10 @@ OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceId(OH_AudioDeviceDescrip
  
   
 
-#### OH_AudioDeviceDescriptor_GetDeviceName()
+### OH_AudioDeviceDescriptor_GetDeviceName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceName(OH_AudioDeviceDescriptor *audioDeviceDescriptor,char **name)
@@ -351,6 +383,7 @@ OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceName(OH_AudioDeviceDescr
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioDeviceDescriptor *audioDeviceDescriptor | 音频设备描述符。通过 OH_AudioRoutingManager_GetDevices 或者OH_AudioRoutingManager_OnDeviceChangedCallback获取。 |
@@ -359,6 +392,7 @@ OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceName(OH_AudioDeviceDescr
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS或AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM。 |
@@ -366,9 +400,10 @@ OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceName(OH_AudioDeviceDescr
  
   
 
-#### OH_AudioDeviceDescriptor_GetDeviceAddress()
+### OH_AudioDeviceDescriptor_GetDeviceAddress()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceAddress(OH_AudioDeviceDescriptor *audioDeviceDescriptor,char **address)
@@ -382,6 +417,7 @@ OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceAddress(OH_AudioDeviceDe
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioDeviceDescriptor *audioDeviceDescriptor | 音频设备描述符。通过 OH_AudioRoutingManager_GetDevices 或者OH_AudioRoutingManager_OnDeviceChangedCallback获取。 |
@@ -390,6 +426,7 @@ OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceAddress(OH_AudioDeviceDe
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS或AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM。 |
@@ -397,9 +434,10 @@ OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceAddress(OH_AudioDeviceDe
  
   
 
-#### OH_AudioDeviceDescriptor_GetDeviceSampleRates()
+### OH_AudioDeviceDescriptor_GetDeviceSampleRates()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceSampleRates(OH_AudioDeviceDescriptor *audioDeviceDescriptor,uint32_t **sampleRates, uint32_t *size)
@@ -413,6 +451,7 @@ OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceSampleRates(OH_AudioDevi
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioDeviceDescriptor *audioDeviceDescriptor | 音频设备描述符。通过 OH_AudioRoutingManager_GetDevices 或者OH_AudioRoutingManager_OnDeviceChangedCallback获取。 |
@@ -422,6 +461,7 @@ OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceSampleRates(OH_AudioDevi
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS或AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM。 |
@@ -429,9 +469,10 @@ OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceSampleRates(OH_AudioDevi
  
   
 
-#### OH_AudioDeviceDescriptor_GetDeviceChannelCounts()
+### OH_AudioDeviceDescriptor_GetDeviceChannelCounts()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceChannelCounts(OH_AudioDeviceDescriptor *audioDeviceDescriptor,uint32_t **channelCounts, uint32_t *size)
@@ -445,6 +486,7 @@ OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceChannelCounts(OH_AudioDe
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioDeviceDescriptor *audioDeviceDescriptor | 音频设备描述符。通过 OH_AudioRoutingManager_GetDevices 或者OH_AudioRoutingManager_OnDeviceChangedCallback获取。 |
@@ -454,6 +496,7 @@ OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceChannelCounts(OH_AudioDe
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS或AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM。 |
@@ -461,9 +504,10 @@ OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceChannelCounts(OH_AudioDe
  
   
 
-#### OH_AudioDeviceDescriptor_GetDeviceDisplayName()
+### OH_AudioDeviceDescriptor_GetDeviceDisplayName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceDisplayName(OH_AudioDeviceDescriptor *audioDeviceDescriptor,char **displayName)
@@ -477,6 +521,7 @@ OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceDisplayName(OH_AudioDevi
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioDeviceDescriptor *audioDeviceDescriptor | 音频设备描述符。通过 OH_AudioRoutingManager_GetDevices 或者OH_AudioRoutingManager_OnDeviceChangedCallback获取。 |
@@ -485,6 +530,7 @@ OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceDisplayName(OH_AudioDevi
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS或AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM。 |
@@ -492,9 +538,10 @@ OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceDisplayName(OH_AudioDevi
  
   
 
-#### OH_AudioDeviceDescriptor_GetDeviceEncodingTypes()
+### OH_AudioDeviceDescriptor_GetDeviceEncodingTypes()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceEncodingTypes(OH_AudioDeviceDescriptor *audioDeviceDescriptor,OH_AudioStream_EncodingType **encodingTypes, uint32_t *size)
@@ -508,6 +555,7 @@ OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceEncodingTypes(OH_AudioDe
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioDeviceDescriptor *audioDeviceDescriptor | 音频设备描述符。通过 OH_AudioRoutingManager_GetDevices 或者OH_AudioRoutingManager_OnDeviceChangedCallback获取。 |
@@ -517,6 +565,7 @@ OH_AudioCommon_Result OH_AudioDeviceDescriptor_GetDeviceEncodingTypes(OH_AudioDe
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS或AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM。 |

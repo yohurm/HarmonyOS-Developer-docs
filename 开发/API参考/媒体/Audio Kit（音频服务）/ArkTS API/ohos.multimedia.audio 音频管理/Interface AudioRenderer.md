@@ -1,9 +1,9 @@
 # Interface (AudioRenderer)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供音频渲染的相关接口。
 
@@ -14,9 +14,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { audio } from '@kit.AudioKit';
@@ -24,11 +25,13 @@ import { audio } from '@kit.AudioKit';
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -45,9 +48,10 @@ let state: audio.AudioState = audioRenderer.state;
 
 
 
-#### getRendererInfo8+
+## getRendererInfo8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRendererInfo(callback: AsyncCallback&lt;AudioRendererInfo&gt;): void
 
@@ -56,6 +60,7 @@ getRendererInfo(callback: AsyncCallback&lt;AudioRendererInfo&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -78,9 +83,10 @@ audioRenderer.getRendererInfo((err: BusinessError, audioRendererInfo: audio.Audi
 
 
 
-#### getRendererInfo8+
+## getRendererInfo8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRendererInfo(): Promise&lt;AudioRendererInfo&gt;
 
@@ -89,6 +95,7 @@ getRendererInfo(): Promise&lt;AudioRendererInfo&gt;
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -109,9 +116,10 @@ audioRenderer.getRendererInfo().then((audioRendererInfo: audio.AudioRendererInfo
 
 
 
-#### getRendererInfoSync10+
+## getRendererInfoSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRendererInfoSync(): AudioRendererInfo
 
@@ -120,6 +128,7 @@ getRendererInfoSync(): AudioRendererInfo
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -142,9 +151,10 @@ try {
 
 
 
-#### getStreamInfo8+
+## getStreamInfo8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStreamInfo(callback: AsyncCallback&lt;AudioStreamInfo&gt;): void
 
@@ -153,6 +163,7 @@ getStreamInfo(callback: AsyncCallback&lt;AudioStreamInfo&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -175,9 +186,10 @@ audioRenderer.getStreamInfo((err: BusinessError, streamInfo: audio.AudioStreamIn
 
 
 
-#### getStreamInfo8+
+## getStreamInfo8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStreamInfo(): Promise&lt;AudioStreamInfo&gt;
 
@@ -186,6 +198,7 @@ getStreamInfo(): Promise&lt;AudioStreamInfo&gt;
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -210,9 +223,10 @@ audioRenderer.getStreamInfo().then((streamInfo: audio.AudioStreamInfo) => {
 
 
 
-#### getStreamInfoSync10+
+## getStreamInfoSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStreamInfoSync(): AudioStreamInfo
 
@@ -221,6 +235,7 @@ getStreamInfoSync(): AudioStreamInfo
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -246,9 +261,10 @@ try {
 
 
 
-#### getAudioStreamId9+
+## getAudioStreamId9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAudioStreamId(callback: AsyncCallback&lt;number&gt;): void
 
@@ -257,6 +273,7 @@ getAudioStreamId(callback: AsyncCallback&lt;number&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -275,9 +292,10 @@ audioRenderer.getAudioStreamId((err: BusinessError, streamId: number) => {
 
 
 
-#### getAudioStreamId9+
+## getAudioStreamId9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAudioStreamId(): Promise&lt;number&gt;
 
@@ -286,6 +304,7 @@ getAudioStreamId(): Promise&lt;number&gt;
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -306,9 +325,10 @@ audioRenderer.getAudioStreamId().then((streamId: number) => {
 
 
 
-#### getAudioStreamIdSync10+
+## getAudioStreamIdSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAudioStreamIdSync(): number
 
@@ -317,6 +337,7 @@ getAudioStreamIdSync(): number
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -339,9 +360,10 @@ try {
 
 
 
-#### setAudioEffectMode10+
+## setAudioEffectMode10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAudioEffectMode(mode: AudioEffectMode, callback: AsyncCallback&lt;void&gt;): void
 
@@ -350,6 +372,7 @@ setAudioEffectMode(mode: AudioEffectMode, callback: AsyncCallback&lt;void&gt;): 
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -360,6 +383,7 @@ setAudioEffectMode(mode: AudioEffectMode, callback: AsyncCallback&lt;void&gt;): 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -383,9 +407,10 @@ audioRenderer.setAudioEffectMode(audio.AudioEffectMode.EFFECT_DEFAULT, (err: Bus
 
 
 
-#### setAudioEffectMode10+
+## setAudioEffectMode10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAudioEffectMode(mode: AudioEffectMode): Promise&lt;void&gt;
 
@@ -395,12 +420,14 @@ setAudioEffectMode(mode: AudioEffectMode): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | AudioEffectMode | 是 | 音效模式。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -410,6 +437,7 @@ setAudioEffectMode(mode: AudioEffectMode): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -431,9 +459,10 @@ audioRenderer.setAudioEffectMode(audio.AudioEffectMode.EFFECT_DEFAULT).then(() =
 
 
 
-#### getAudioEffectMode10+
+## getAudioEffectMode10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAudioEffectMode(callback: AsyncCallback&lt;AudioEffectMode&gt;): void
 
@@ -442,6 +471,7 @@ getAudioEffectMode(callback: AsyncCallback&lt;AudioEffectMode&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -464,9 +494,10 @@ audioRenderer.getAudioEffectMode((err: BusinessError, effectMode: audio.AudioEff
 
 
 
-#### getAudioEffectMode10+
+## getAudioEffectMode10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAudioEffectMode(): Promise&lt;AudioEffectMode&gt;
 
@@ -475,6 +506,7 @@ getAudioEffectMode(): Promise&lt;AudioEffectMode&gt;
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -495,9 +527,10 @@ audioRenderer.getAudioEffectMode().then((effectMode: audio.AudioEffectMode) => {
 
 
 
-#### start8+
+## start8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 start(callback: AsyncCallback&lt;void&gt;): void
 
@@ -506,6 +539,7 @@ start(callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -528,9 +562,10 @@ audioRenderer.start((err: BusinessError) => {
 
 
 
-#### start8+
+## start8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 start(): Promise&lt;void&gt;
 
@@ -539,6 +574,7 @@ start(): Promise&lt;void&gt;
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -559,9 +595,10 @@ audioRenderer.start().then(() => {
 
 
 
-#### pause8+
+## pause8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pause(callback: AsyncCallback&lt;void&gt;): void
 
@@ -570,6 +607,7 @@ pause(callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -592,9 +630,10 @@ audioRenderer.pause((err: BusinessError) => {
 
 
 
-#### pause8+
+## pause8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pause(): Promise&lt;void&gt;
 
@@ -603,6 +642,7 @@ pause(): Promise&lt;void&gt;
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -623,9 +663,10 @@ audioRenderer.pause().then(() => {
 
 
 
-#### drain8+
+## drain8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 drain(callback: AsyncCallback&lt;void&gt;): void
 
@@ -634,6 +675,7 @@ drain(callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -656,9 +698,10 @@ audioRenderer.drain((err: BusinessError) => {
 
 
 
-#### drain8+
+## drain8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 drain(): Promise&lt;void&gt;
 
@@ -667,6 +710,7 @@ drain(): Promise&lt;void&gt;
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -687,9 +731,10 @@ audioRenderer.drain().then(() => {
 
 
 
-#### flush11+
+## flush11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 flush(): Promise&lt;void&gt;
 
@@ -699,6 +744,7 @@ flush(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -707,6 +753,7 @@ flush(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -727,9 +774,10 @@ audioRenderer.flush().then(() => {
 
 
 
-#### stop8+
+## stop8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stop(callback: AsyncCallback&lt;void&gt;): void
 
@@ -738,6 +786,7 @@ stop(callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -760,9 +809,10 @@ audioRenderer.stop((err: BusinessError) => {
 
 
 
-#### stop8+
+## stop8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stop(): Promise&lt;void&gt;
 
@@ -771,6 +821,7 @@ stop(): Promise&lt;void&gt;
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -791,9 +842,10 @@ audioRenderer.stop().then(() => {
 
 
 
-#### release8+
+## release8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(callback: AsyncCallback&lt;void&gt;): void
 
@@ -802,6 +854,7 @@ release(callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -824,9 +877,10 @@ audioRenderer.release((err: BusinessError) => {
 
 
 
-#### release8+
+## release8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(): Promise&lt;void&gt;
 
@@ -835,6 +889,7 @@ release(): Promise&lt;void&gt;
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -855,9 +910,10 @@ audioRenderer.release().then(() => {
 
 
 
-#### getAudioTime8+
+## getAudioTime8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAudioTime(callback: AsyncCallback&lt;number&gt;): void
 
@@ -866,6 +922,7 @@ getAudioTime(callback: AsyncCallback&lt;number&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -884,9 +941,10 @@ audioRenderer.getAudioTime((err: BusinessError, timestamp: number) => {
 
 
 
-#### getAudioTime8+
+## getAudioTime8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAudioTime(): Promise&lt;number&gt;
 
@@ -895,6 +953,7 @@ getAudioTime(): Promise&lt;number&gt;
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -915,9 +974,10 @@ audioRenderer.getAudioTime().then((timestamp: number) => {
 
 
 
-#### getAudioTimeSync10+
+## getAudioTimeSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAudioTimeSync(): number
 
@@ -926,6 +986,7 @@ getAudioTimeSync(): number
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -948,9 +1009,10 @@ try {
 
 
 
-#### getAudioTimestampInfo19+
+## getAudioTimestampInfo19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAudioTimestampInfo(): Promise&lt;AudioTimestampInfo&gt;
 
@@ -963,12 +1025,13 @@ getAudioTimestampInfo(): Promise&lt;AudioTimestampInfo&gt;
 该接口通常用来实现音画同步，调用频率建议高于200ms一次，推荐频率为每分钟一次。在能保证音画同步效果的情况下，不需要频繁地查询时间戳，避免出现功耗问题。
 
 > [!NOTE]
-> 当实际播放位置（framePosition）为0时，时间戳（timestamp）是固定值，直到流真正开始播放时才会更新。 播放位置（framePosition）单位为采样数，采样数计算方式为采样率乘以时间（例如，当采样率为48000Hz时，20ms音频数据对应的采样数为48000*0.02，即采样点为960）。 当调用Flush接口时实际播放位置也会被重置。 在调用此函数之前，确保音频流处于运行状态，并且至少已成功播放一帧数据。 当音频流路由（route）变化时，例如设备变化或者输出类型变化时，播放位置可能也会被重置，但此时时间戳仍会持续增长。推荐当实际播放位置和时间戳的变化稳定后再使用该接口获取的值。 该接口适配倍速接口，例如当播放速度设置为2倍时，播放位置的增长速度也会返回为正常的2倍。
+> 当实际播放位置（framePosition）为0时，时间戳（timestamp）是固定值，直到流真正跑起来时才会更新。 播放位置（framePosition）单位为采样数，采样数计算方式为采样率乘以时间（例如，当采样率为48000Hz时，20ms音频数据对应的采样数为48000*0.02，即采样点为960）。 当调用Flush接口时实际播放位置也会被重置。 在调用此函数之前，确保音频流处于运行状态，并且至少已成功播放一帧数据。 当音频流路由（route）变化时，例如设备变化或者输出类型变化时，播放位置可能也会被重置，但此时时间戳仍会持续增长。推荐当实际播放位置和时间戳的变化稳定后再使用该接口获取的值。 该接口适配倍速接口，例如当播放速度设置为2倍时，播放位置的增长速度也会返回为正常的2倍。
 
 
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -978,6 +1041,7 @@ getAudioTimestampInfo(): Promise&lt;AudioTimestampInfo&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -998,9 +1062,10 @@ audioRenderer.getAudioTimestampInfo().then((audioTimestampInfo: audio.AudioTimes
 
 
 
-#### getAudioTimestampInfoSync19+
+## getAudioTimestampInfoSync19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAudioTimestampInfoSync(): AudioTimestampInfo
 
@@ -1010,6 +1075,7 @@ getAudioTimestampInfoSync(): AudioTimestampInfo
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | AudioTimestampInfo | 返回音频流时间戳和当前数据帧位置信息。 |
@@ -1018,6 +1084,7 @@ getAudioTimestampInfoSync(): AudioTimestampInfo
 **错误码：**
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1040,9 +1107,10 @@ try {
 
 
 
-#### getLatency23+
+## getLatency23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLatency(type: AudioLatencyType): number
 
@@ -1058,12 +1126,14 @@ getLatency(type: AudioLatencyType): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | AudioLatencyType | 是 | 获取的时延类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1073,6 +1143,7 @@ getLatency(type: AudioLatencyType): number
 **错误码：**
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1097,9 +1168,10 @@ try {
 
 
 
-#### getBufferSize8+
+## getBufferSize8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBufferSize(callback: AsyncCallback&lt;number&gt;): void
 
@@ -1108,6 +1180,7 @@ getBufferSize(callback: AsyncCallback&lt;number&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1133,9 +1206,10 @@ audioRenderer.getBufferSize((err: BusinessError, data: number) => {
 
 
 
-#### getBufferSize8+
+## getBufferSize8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBufferSize(): Promise&lt;number&gt;
 
@@ -1144,6 +1218,7 @@ getBufferSize(): Promise&lt;number&gt;
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1167,9 +1242,10 @@ audioRenderer.getBufferSize().then((data: number) => {
 
 
 
-#### getBufferSizeSync10+
+## getBufferSizeSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBufferSizeSync(): number
 
@@ -1178,6 +1254,7 @@ getBufferSizeSync(): number
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1202,9 +1279,10 @@ try {
 
 
 
-#### setSpeed11+
+## setSpeed11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setSpeed(speed: number): void
 
@@ -1214,6 +1292,7 @@ setSpeed(speed: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | speed | number | 是 | 设置播放的倍速值，倍速范围为[0.25, 4.0]。 |
@@ -1222,6 +1301,7 @@ setSpeed(speed: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1237,9 +1317,10 @@ audioRenderer.setSpeed(1.5);
 
 
 
-#### getSpeed11+
+## getSpeed11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSpeed(): number
 
@@ -1248,6 +1329,7 @@ getSpeed(): number
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1262,9 +1344,10 @@ let speed = audioRenderer.getSpeed();
 
 
 
-#### setInterruptMode9+
+## setInterruptMode9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setInterruptMode(mode: InterruptMode): Promise&lt;void&gt;
 
@@ -1274,12 +1357,14 @@ setInterruptMode(mode: InterruptMode): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | InterruptMode | 是 | 焦点模型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1302,9 +1387,10 @@ audioRenderer.setInterruptMode(mode).then(() => {
 
 
 
-#### setInterruptMode9+
+## setInterruptMode9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setInterruptMode(mode: InterruptMode, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1313,6 +1399,7 @@ setInterruptMode(mode: InterruptMode, callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Interrupt
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1337,9 +1424,10 @@ audioRenderer.setInterruptMode(mode, (err: BusinessError) => {
 
 
 
-#### setInterruptModeSync10+
+## setInterruptModeSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setInterruptModeSync(mode: InterruptMode): void
 
@@ -1349,6 +1437,7 @@ setInterruptModeSync(mode: InterruptMode): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | InterruptMode | 是 | 焦点模型。 |
@@ -1357,6 +1446,7 @@ setInterruptModeSync(mode: InterruptMode): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1380,9 +1470,10 @@ try {
 
 
 
-#### setVolume9+
+## setVolume9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setVolume(volume: number): Promise&lt;void&gt;
 
@@ -1392,12 +1483,14 @@ setVolume(volume: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | volume | number | 是 | 音量值范围为[0.0, 1.0]。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1418,9 +1511,10 @@ audioRenderer.setVolume(0.5).then(() => {
 
 
 
-#### setVolume9+
+## setVolume9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setVolume(volume: number, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1429,6 +1523,7 @@ setVolume(volume: number, callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1452,9 +1547,10 @@ audioRenderer.setVolume(0.5, (err: BusinessError) => {
 
 
 
-#### getVolume12+
+## getVolume12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getVolume(): number
 
@@ -1463,6 +1559,7 @@ getVolume(): number
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1485,9 +1582,10 @@ try {
 
 
 
-#### getMinStreamVolume10+
+## getMinStreamVolume10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMinStreamVolume(callback: AsyncCallback&lt;number&gt;): void
 
@@ -1496,6 +1594,7 @@ getMinStreamVolume(callback: AsyncCallback&lt;number&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1518,9 +1617,10 @@ audioRenderer.getMinStreamVolume((err: BusinessError, minVolume: number) => {
 
 
 
-#### getMinStreamVolume10+
+## getMinStreamVolume10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMinStreamVolume(): Promise&lt;number&gt;
 
@@ -1529,6 +1629,7 @@ getMinStreamVolume(): Promise&lt;number&gt;
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1549,9 +1650,10 @@ audioRenderer.getMinStreamVolume().then((value: number) => {
 
 
 
-#### getMinStreamVolumeSync10+
+## getMinStreamVolumeSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMinStreamVolumeSync(): number
 
@@ -1560,6 +1662,7 @@ getMinStreamVolumeSync(): number
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1582,9 +1685,10 @@ try {
 
 
 
-#### getMaxStreamVolume10+
+## getMaxStreamVolume10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMaxStreamVolume(callback: AsyncCallback&lt;number&gt;): void
 
@@ -1593,6 +1697,7 @@ getMaxStreamVolume(callback: AsyncCallback&lt;number&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1615,9 +1720,10 @@ audioRenderer.getMaxStreamVolume((err: BusinessError, maxVolume: number) => {
 
 
 
-#### getMaxStreamVolume10+
+## getMaxStreamVolume10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMaxStreamVolume(): Promise&lt;number&gt;
 
@@ -1626,6 +1732,7 @@ getMaxStreamVolume(): Promise&lt;number&gt;
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1646,9 +1753,10 @@ audioRenderer.getMaxStreamVolume().then((value: number) => {
 
 
 
-#### getMaxStreamVolumeSync10+
+## getMaxStreamVolumeSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMaxStreamVolumeSync(): number
 
@@ -1657,6 +1765,7 @@ getMaxStreamVolumeSync(): number
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1679,9 +1788,10 @@ try {
 
 
 
-#### getUnderflowCount10+
+## getUnderflowCount10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUnderflowCount(callback: AsyncCallback&lt;number&gt;): void
 
@@ -1690,6 +1800,7 @@ getUnderflowCount(callback: AsyncCallback&lt;number&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1712,9 +1823,10 @@ audioRenderer.getUnderflowCount((err: BusinessError, underflowCount: number) => 
 
 
 
-#### getUnderflowCount10+
+## getUnderflowCount10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUnderflowCount(): Promise&lt;number&gt;
 
@@ -1723,6 +1835,7 @@ getUnderflowCount(): Promise&lt;number&gt;
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1743,9 +1856,10 @@ audioRenderer.getUnderflowCount().then((value: number) => {
 
 
 
-#### getUnderflowCountSync10+
+## getUnderflowCountSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUnderflowCountSync(): number
 
@@ -1754,6 +1868,7 @@ getUnderflowCountSync(): number
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1776,9 +1891,10 @@ try {
 
 
 
-#### getCurrentOutputDevices10+
+## getCurrentOutputDevices10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCurrentOutputDevices(callback: AsyncCallback&lt;AudioDeviceDescriptors&gt;): void
 
@@ -1787,6 +1903,7 @@ getCurrentOutputDevices(callback: AsyncCallback&lt;AudioDeviceDescriptors&gt;): 
 **系统能力：** SystemCapability.Multimedia.Audio.Device
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1818,9 +1935,10 @@ audioRenderer.getCurrentOutputDevices((err: BusinessError, deviceInfo: audio.Aud
 
 
 
-#### getCurrentOutputDevices10+
+## getCurrentOutputDevices10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCurrentOutputDevices(): Promise&lt;AudioDeviceDescriptors&gt;
 
@@ -1829,6 +1947,7 @@ getCurrentOutputDevices(): Promise&lt;AudioDeviceDescriptors&gt;
 **系统能力：** SystemCapability.Multimedia.Audio.Device
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1858,9 +1977,10 @@ audioRenderer.getCurrentOutputDevices().then((deviceInfo: audio.AudioDeviceDescr
 
 
 
-#### getCurrentOutputDevicesSync10+
+## getCurrentOutputDevicesSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCurrentOutputDevicesSync(): AudioDeviceDescriptors
 
@@ -1869,6 +1989,7 @@ getCurrentOutputDevicesSync(): AudioDeviceDescriptors
 **系统能力：** SystemCapability.Multimedia.Audio.Device
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1900,9 +2021,10 @@ try {
 
 
 
-#### setChannelBlendMode11+
+## setChannelBlendMode11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setChannelBlendMode(mode: ChannelBlendMode): void
 
@@ -1912,6 +2034,7 @@ setChannelBlendMode(mode: ChannelBlendMode): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | ChannelBlendMode | 是 | 声道混合模式类型。 |
@@ -1920,6 +2043,7 @@ setChannelBlendMode(mode: ChannelBlendMode): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1939,9 +2063,10 @@ console.info(`BlendMode: ${mode}`);
 
 
 
-#### setVolumeWithRamp11+
+## setVolumeWithRamp11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setVolumeWithRamp(volume: number, duration: number): void
 
@@ -1950,6 +2075,7 @@ setVolumeWithRamp(volume: number, duration: number): void
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1960,6 +2086,7 @@ setVolumeWithRamp(volume: number, duration: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1979,9 +2106,10 @@ console.info(`setVolumeWithRamp: ${volume}`);
 
 
 
-#### setSilentModeAndMixWithOthers12+
+## setSilentModeAndMixWithOthers12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setSilentModeAndMixWithOthers(on: boolean): void
 
@@ -1992,6 +2120,7 @@ setSilentModeAndMixWithOthers(on: boolean): void
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2006,9 +2135,10 @@ audioRenderer.setSilentModeAndMixWithOthers(true);
 
 
 
-#### getSilentModeAndMixWithOthers12+
+## getSilentModeAndMixWithOthers12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSilentModeAndMixWithOthers(): boolean
 
@@ -2017,6 +2147,7 @@ getSilentModeAndMixWithOthers(): boolean
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2031,9 +2162,10 @@ let on = audioRenderer.getSilentModeAndMixWithOthers();
 
 
 
-#### setDefaultOutputDevice12+
+## setDefaultOutputDevice12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setDefaultOutputDevice(deviceType: DeviceType): Promise&lt;void&gt;
 
@@ -2049,12 +2181,14 @@ setDefaultOutputDevice(deviceType: DeviceType): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceType | DeviceType | 是 | 设备类型。 仅支持以下设备：EARPIECE（听筒）、SPEAKER（扬声器）和DEFAULT（系统默认设备）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2064,6 +2198,7 @@ setDefaultOutputDevice(deviceType: DeviceType): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2089,9 +2224,10 @@ audioRenderer.setDefaultOutputDevice(audio.DeviceType.SPEAKER).then(() => {
 
 
 
-#### on('audioInterrupt')9+
+## on('audioInterrupt')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'audioInterrupt', callback: Callback&lt;InterruptEvent&gt;): void
 
@@ -2105,6 +2241,7 @@ AudioRenderer对象在start事件时获取焦点，在pause、stop等事件时�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'audioInterrupt'，当音频焦点状态发生变化时，触发该事件。 |
@@ -2114,6 +2251,7 @@ AudioRenderer对象在start事件时获取焦点，在pause、stop等事件时�
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2180,9 +2318,10 @@ audioRenderer.on('audioInterrupt', (interruptEvent: audio.InterruptEvent) => {
 
 
 
-#### off('audioInterrupt')18+
+## off('audioInterrupt')18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'audioInterrupt', callback?: Callback&lt;InterruptEvent&gt;): void
 
@@ -2191,6 +2330,7 @@ off(type: 'audioInterrupt', callback?: Callback&lt;InterruptEvent&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Interrupt
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2201,6 +2341,7 @@ off(type: 'audioInterrupt', callback?: Callback&lt;InterruptEvent&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2272,9 +2413,10 @@ audioRenderer.off('audioInterrupt', audioInterruptCallback);
 
 
 
-#### on('markReach')8+
+## on('markReach')8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'markReach', frame: number, callback: Callback&lt;number&gt;): void
 
@@ -2285,6 +2427,7 @@ on(type: 'markReach', frame: number, callback: Callback&lt;number&gt;): void
 **系统能力:** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2305,9 +2448,10 @@ audioRenderer.on('markReach', 1000, (position: number) => {
 
 
 
-#### off('markReach')8+
+## off('markReach')8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'markReach', callback?: Callback&lt;number&gt;): void
 
@@ -2316,6 +2460,7 @@ off(type: 'markReach', callback?: Callback&lt;number&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2343,9 +2488,10 @@ audioRenderer.off('markReach', markReachCallback);
 
 
 
-#### on('periodReach')8+
+## on('periodReach')8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'periodReach', frame: number, callback: Callback&lt;number&gt;): void
 
@@ -2356,6 +2502,7 @@ on(type: 'periodReach', frame: number, callback: Callback&lt;number&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2376,9 +2523,10 @@ audioRenderer.on('periodReach', 1000, (position: number) => {
 
 
 
-#### off('periodReach')8+
+## off('periodReach')8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'periodReach', callback?: Callback&lt;number&gt;): void
 
@@ -2387,6 +2535,7 @@ off(type: 'periodReach', callback?: Callback&lt;number&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2414,9 +2563,10 @@ audioRenderer.off('periodReach', periodReachCallback);
 
 
 
-#### on('stateChange')8+
+## on('stateChange')8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'stateChange', callback: Callback&lt;AudioState&gt;): void
 
@@ -2425,6 +2575,7 @@ on(type: 'stateChange', callback: Callback&lt;AudioState&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2447,9 +2598,10 @@ audioRenderer.on('stateChange', (state: audio.AudioState) => {
 
 
 
-#### off('stateChange')18+
+## off('stateChange')18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'stateChange', callback?: Callback&lt;AudioState&gt;): void
 
@@ -2458,6 +2610,7 @@ off(type: 'stateChange', callback?: Callback&lt;AudioState&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2468,6 +2621,7 @@ off(type: 'stateChange', callback?: Callback&lt;AudioState&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2497,9 +2651,10 @@ audioRenderer.off('stateChange', stateChangeCallback);
 
 
 
-#### on('outputDeviceChange')10+
+## on('outputDeviceChange')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'outputDeviceChange', callback: Callback&lt;AudioDeviceDescriptors&gt;): void
 
@@ -2508,6 +2663,7 @@ on(type: 'outputDeviceChange', callback: Callback&lt;AudioDeviceDescriptors&gt;)
 **系统能力：** SystemCapability.Multimedia.Audio.Device
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2518,6 +2674,7 @@ on(type: 'outputDeviceChange', callback: Callback&lt;AudioDeviceDescriptors&gt;)
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2537,9 +2694,10 @@ audioRenderer.on('outputDeviceChange', (deviceInfo: audio.AudioDeviceDescriptors
 
 
 
-#### off('outputDeviceChange')10+
+## off('outputDeviceChange')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'outputDeviceChange', callback?: Callback&lt;AudioDeviceDescriptors&gt;): void
 
@@ -2548,6 +2706,7 @@ off(type: 'outputDeviceChange', callback?: Callback&lt;AudioDeviceDescriptors&gt
 **系统能力：** SystemCapability.Multimedia.Audio.Device
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2558,6 +2717,7 @@ off(type: 'outputDeviceChange', callback?: Callback&lt;AudioDeviceDescriptors&gt
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2585,9 +2745,10 @@ audioRenderer.off('outputDeviceChange', outputDeviceChangeCallback);
 
 
 
-#### on('outputDeviceChangeWithInfo')11+
+## on('outputDeviceChangeWithInfo')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'outputDeviceChangeWithInfo', callback: Callback&lt;AudioStreamDeviceChangeInfo&gt;): void
 
@@ -2596,6 +2757,7 @@ on(type: 'outputDeviceChangeWithInfo', callback: Callback&lt;AudioStreamDeviceCh
 **系统能力：** SystemCapability.Multimedia.Audio.Device
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2606,6 +2768,7 @@ on(type: 'outputDeviceChangeWithInfo', callback: Callback&lt;AudioStreamDeviceCh
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2626,9 +2789,10 @@ audioRenderer.on('outputDeviceChangeWithInfo', (deviceChangeInfo: audio.AudioStr
 
 
 
-#### off('outputDeviceChangeWithInfo')11+
+## off('outputDeviceChangeWithInfo')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'outputDeviceChangeWithInfo', callback?: Callback&lt;AudioStreamDeviceChangeInfo&gt;): void
 
@@ -2637,6 +2801,7 @@ off(type: 'outputDeviceChangeWithInfo', callback?: Callback&lt;AudioStreamDevice
 **系统能力：** SystemCapability.Multimedia.Audio.Device
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2647,6 +2812,7 @@ off(type: 'outputDeviceChangeWithInfo', callback?: Callback&lt;AudioStreamDevice
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2675,9 +2841,10 @@ audioRenderer.off('outputDeviceChangeWithInfo', outputDeviceChangeWithInfoCallba
 
 
 
-#### on('writeData')11+
+## on('writeData')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'writeData', callback: AudioRendererWriteDataCallback): void
 
@@ -2691,6 +2858,7 @@ on(type: 'writeData', callback: AudioRendererWriteDataCallback): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'writeData'，当需要写入音频数据时，触发该事件。 |
@@ -2700,6 +2868,7 @@ on(type: 'writeData', callback: AudioRendererWriteDataCallback): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2754,9 +2923,10 @@ audioRenderer.start().then(() => {
 
 
 
-#### off('writeData')11+
+## off('writeData')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'writeData', callback?: AudioRendererWriteDataCallback): void
 
@@ -2765,6 +2935,7 @@ off(type: 'writeData', callback?: AudioRendererWriteDataCallback): void
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2775,6 +2946,7 @@ off(type: 'writeData', callback?: AudioRendererWriteDataCallback): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2800,9 +2972,10 @@ audioRenderer.off('writeData', writeDataCallback);
 
 
 
-#### write(deprecated)
+## write(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 write(buffer: ArrayBuffer, callback: AsyncCallback&lt;number&gt;): void
 
@@ -2815,6 +2988,7 @@ write(buffer: ArrayBuffer, callback: AsyncCallback&lt;number&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2871,9 +3045,10 @@ audioRenderer.getBufferSize().then((data: number)=> {
 
 
 
-#### write(deprecated)
+## write(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 write(buffer: ArrayBuffer): Promise&lt;number&gt;
 
@@ -2887,12 +3062,14 @@ write(buffer: ArrayBuffer): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | buffer | ArrayBuffer | 是 | 要写入缓冲区的数据。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2945,9 +3122,10 @@ audioRenderer.getBufferSize().then((data: number) => {
 
 
 
-#### setRenderRate(deprecated)
+## setRenderRate(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setRenderRate(rate: AudioRendererRate, callback: AsyncCallback&lt;void&gt;): void
 
@@ -2960,6 +3138,7 @@ setRenderRate(rate: AudioRendererRate, callback: AsyncCallback&lt;void&gt;): voi
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2983,9 +3162,10 @@ audioRenderer.setRenderRate(audio.AudioRendererRate.RENDER_RATE_NORMAL, (err: Bu
 
 
 
-#### setRenderRate(deprecated)
+## setRenderRate(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setRenderRate(rate: AudioRendererRate): Promise&lt;void&gt;
 
@@ -2999,12 +3179,14 @@ setRenderRate(rate: AudioRendererRate): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rate | AudioRendererRate | 是 | 渲染的速率。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3025,9 +3207,10 @@ audioRenderer.setRenderRate(audio.AudioRendererRate.RENDER_RATE_NORMAL).then(() 
 
 
 
-#### getRenderRate(deprecated)
+## getRenderRate(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRenderRate(callback: AsyncCallback&lt;AudioRendererRate&gt;): void
 
@@ -3040,6 +3223,7 @@ getRenderRate(callback: AsyncCallback&lt;AudioRendererRate&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3058,9 +3242,10 @@ audioRenderer.getRenderRate((err: BusinessError, renderRate: audio.AudioRenderer
 
 
 
-#### getRenderRate(deprecated)
+## getRenderRate(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRenderRate(): Promise&lt;AudioRendererRate&gt;
 
@@ -3073,6 +3258,7 @@ getRenderRate(): Promise&lt;AudioRendererRate&gt;
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3093,9 +3279,10 @@ audioRenderer.getRenderRate().then((renderRate: audio.AudioRendererRate) => {
 
 
 
-#### getRenderRateSync(deprecated)
+## getRenderRateSync(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRenderRateSync(): AudioRendererRate
 
@@ -3108,6 +3295,7 @@ getRenderRateSync(): AudioRendererRate
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3130,9 +3318,10 @@ try {
 
 
 
-#### setLoudnessGain20+
+## setLoudnessGain20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setLoudnessGain(loudnessGain: number): Promise&lt;void&gt;
 
@@ -3146,12 +3335,14 @@ setLoudnessGain(loudnessGain: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | loudnessGain | number | 是 | 设置播放的响度值，单位为dB，响度范围为[-90.0, 24.0]。默认值为0.0dB。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3161,6 +3352,7 @@ setLoudnessGain(loudnessGain: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3176,9 +3368,10 @@ audioRenderer.setLoudnessGain(1.0);
 
 
 
-#### getLoudnessGain20+
+## getLoudnessGain20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLoudnessGain(): number
 
@@ -3187,6 +3380,7 @@ getLoudnessGain(): number
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3201,9 +3395,10 @@ let loudnessGain = audioRenderer.getLoudnessGain();
 
 
 
-#### setIndependentAudioSessionStrategy24+
+## setIndependentAudioSessionStrategy24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setIndependentAudioSessionStrategy(strategy: AudioSessionStrategy, behavior: number): void
 
@@ -3219,6 +3414,7 @@ setIndependentAudioSessionStrategy(strategy: AudioSessionStrategy, behavior: num
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | strategy | AudioSessionStrategy | 是 | 音频会话策略。 |
@@ -3228,6 +3424,7 @@ setIndependentAudioSessionStrategy(strategy: AudioSessionStrategy, behavior: num
 **错误码：**
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

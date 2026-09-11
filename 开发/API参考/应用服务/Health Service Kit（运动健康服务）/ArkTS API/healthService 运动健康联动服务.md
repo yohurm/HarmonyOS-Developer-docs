@@ -1,16 +1,21 @@
 # healthService (运动健康联动服务)
 
-更新时间：2026-07-09 02:26:55
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/health-api-healthservice
 **支持设备：** Phone | Tablet | Wearable
 
 本模块提供运动健康联动服务。
  
+> [!NOTE]
+> 针对系统能力SystemCapability.Health.HealthService，请先使用 canIUse() 接口判断当前设备是否支持此syscap及对应接口。
+
+ 
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -20,7 +25,8 @@ import { healthService } from '@kit.HealthServiceKit';
  
   
 
-#### SampleEvent
+## SampleEvent
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -32,6 +38,7 @@ import { healthService } from '@kit.HealthServiceKit';
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | eventId | number | 否 | 否 | 事件ID。 |
@@ -43,7 +50,8 @@ import { healthService } from '@kit.HealthServiceKit';
  
   
 
-#### SampleReal
+## SampleReal
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -57,6 +65,7 @@ SampleReal<K extends Record<string, [healthStore.HealthValueType](https://develo
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | dataType | healthStore.DataType | 否 | 否 | 实时融合数据类型。 |
@@ -67,7 +76,8 @@ SampleReal<K extends Record<string, [healthStore.HealthValueType](https://develo
  
   
 
-#### workout
+## workout
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -83,7 +93,8 @@ SampleReal<K extends Record<string, [healthStore.HealthValueType](https://develo
  
   
 
-#### ActivityReport
+### ActivityReport
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -97,6 +108,7 @@ SampleReal<K extends Record<string, [healthStore.HealthValueType](https://develo
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | steps | number | 否 | 否 | 步数。 |
@@ -111,7 +123,8 @@ SampleReal<K extends Record<string, [healthStore.HealthValueType](https://develo
  
   
 
-#### ConfigType
+### ConfigType
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -125,6 +138,7 @@ type ConfigType = number | string | boolean
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 表示值类型为数字，可取任意值。 |
@@ -134,7 +148,8 @@ type ConfigType = number | string | boolean
  
   
 
-#### DeviceState
+### DeviceState
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -146,6 +161,7 @@ type ConfigType = number | string | boolean
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | deviceId | string | 否 | 否 | 设备ID。 |
@@ -155,7 +171,8 @@ type ConfigType = number | string | boolean
  
   
 
-#### Goal
+### Goal
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -167,6 +184,7 @@ type ConfigType = number | string | boolean
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | number | 否 | 否 | 目标类型，取值参考：TargetType。 |
@@ -175,7 +193,8 @@ type ConfigType = number | string | boolean
  
   
 
-#### LinkageType
+### LinkageType
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -187,6 +206,7 @@ type ConfigType = number | string | boolean
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | COURSE_LINK | 0 | 课程联动。 |
@@ -195,7 +215,8 @@ type ConfigType = number | string | boolean
  
   
 
-#### StartCode
+### StartCode
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -207,6 +228,7 @@ type ConfigType = number | string | boolean
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SUCCESS | 0 | 联动开启成功。 |
@@ -217,7 +239,8 @@ type ConfigType = number | string | boolean
  
   
 
-#### StartResult
+### StartResult
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -229,6 +252,7 @@ type ConfigType = number | string | boolean
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | startCode | StartCode | 否 | 否 | 联动开启结果码。 |
@@ -237,9 +261,10 @@ type ConfigType = number | string | boolean
  
   
 
-#### SportInfo
+### SportInfo
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 运动状态信息。
  
@@ -249,6 +274,7 @@ type ConfigType = number | string | boolean
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | sportType | number | 否 | 否 | 运动类型，参见锻炼记录类型常量子数据类型id。 |
@@ -257,9 +283,10 @@ type ConfigType = number | string | boolean
  
   
 
-#### SportState
+### SportState
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 运动状态类型。
  
@@ -269,6 +296,7 @@ type ConfigType = number | string | boolean
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | IDLE | 0 | 初始化。 |
@@ -280,7 +308,8 @@ type ConfigType = number | string | boolean
  
   
 
-#### TargetType
+### TargetType
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -292,6 +321,7 @@ type ConfigType = number | string | boolean
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NONE | 0 | 无目标。 |
@@ -303,7 +333,8 @@ type ConfigType = number | string | boolean
  
   
 
-#### WorkoutConfig
+### WorkoutConfig
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -315,6 +346,7 @@ type ConfigType = number | string | boolean
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | linkageType | LinkageType | 否 | 否 | 联动类型。 |
@@ -325,7 +357,8 @@ type ConfigType = number | string | boolean
  
   
 
-#### workout.config
+### workout.config
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -343,6 +376,7 @@ config(workoutConfig: WorkoutConfig): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | workoutConfig | WorkoutConfig | 是 | 联动配置项。 |
@@ -350,6 +384,7 @@ config(workoutConfig: WorkoutConfig): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -357,8 +392,9 @@ config(workoutConfig: WorkoutConfig): Promise&lt;void&gt;
  
 **错误码：**
  
-以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
+以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. |
@@ -391,7 +427,8 @@ try {
  
   
 
-#### workout.start
+### workout.start
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -409,6 +446,7 @@ start(): Promise&lt;StartResult&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;StartResult&gt; | Promise对象，返回联动开启结果。 |
@@ -418,6 +456,7 @@ start(): Promise&lt;StartResult&gt;
  
 以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. |
@@ -448,7 +487,8 @@ try {
  
   
 
-#### workout.pause
+### workout.pause
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -466,6 +506,7 @@ pause(): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -475,6 +516,7 @@ pause(): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. |
@@ -502,7 +544,8 @@ try {
  
   
 
-#### workout.resume
+### workout.resume
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -520,6 +563,7 @@ resume(): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -529,6 +573,7 @@ resume(): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. |
@@ -556,7 +601,8 @@ try {
  
   
 
-#### workout.stop
+### workout.stop
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -574,6 +620,7 @@ stop(): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -583,6 +630,7 @@ stop(): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. |
@@ -610,7 +658,8 @@ try {
  
   
 
-#### workout.onData
+### workout.onData
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -628,6 +677,7 @@ onData(dataType: healthStore.DataType, listener: Callback<SampleReal[]>): Promis
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dataType | healthStore.DataType | 是 | 联动运动数据类型。 |
@@ -636,6 +686,7 @@ onData(dataType: healthStore.DataType, listener: Callback<SampleReal[]>): Promis
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -643,8 +694,9 @@ onData(dataType: healthStore.DataType, listener: Callback<SampleReal[]>): Promis
  
 **错误码：**
  
-以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
+以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. |
@@ -676,7 +728,8 @@ try {
  
   
 
-#### workout.onData
+### workout.onData
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -694,6 +747,7 @@ onData(dataType: undefined, listener: Callback<SampleReal[]>): Promise&lt;void&g
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dataType | undefined | 是 | 监听所有联动运动数据类型。 |
@@ -702,6 +756,7 @@ onData(dataType: undefined, listener: Callback<SampleReal[]>): Promise&lt;void&g
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -709,8 +764,9 @@ onData(dataType: undefined, listener: Callback<SampleReal[]>): Promise&lt;void&g
  
 **错误码：**
  
-以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
+以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. |
@@ -739,7 +795,8 @@ try {
  
   
 
-#### workout.offData
+### workout.offData
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -757,6 +814,7 @@ offData(dataType: healthStore.DataType, listener: Callback<SampleReal[]>): Promi
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dataType | healthStore.DataType | 是 | 联动运动数据类型。 |
@@ -765,6 +823,7 @@ offData(dataType: healthStore.DataType, listener: Callback<SampleReal[]>): Promi
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -772,8 +831,9 @@ offData(dataType: healthStore.DataType, listener: Callback<SampleReal[]>): Promi
  
 **错误码：**
  
-以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
+以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. |
@@ -802,7 +862,8 @@ try {
  
   
 
-#### workout.offData
+### workout.offData
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -820,6 +881,7 @@ offData(dataType: undefined, listener: Callback<SampleReal[]>): Promise&lt;void&
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dataType | undefined | 是 | 监听所有联动运动数据类型。 |
@@ -828,6 +890,7 @@ offData(dataType: undefined, listener: Callback<SampleReal[]>): Promise&lt;void&
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -835,8 +898,9 @@ offData(dataType: undefined, listener: Callback<SampleReal[]>): Promise&lt;void&
  
 **错误码：**
  
-以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
+以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. |
@@ -865,9 +929,10 @@ try {
  
   
 
-#### workout.onEvent("*")
+### workout.onEvent("*")
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 onEvent(event: "*", listener: Callback&lt;SampleEvent&gt;): Promise&lt;void&gt;
  
@@ -883,6 +948,7 @@ onEvent(event: "*", listener: Callback&lt;SampleEvent&gt;): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 联动设备事件类型，支持的事件为："*"，当联动设备运动状态改变时，触发该事件。 |
@@ -891,6 +957,7 @@ onEvent(event: "*", listener: Callback&lt;SampleEvent&gt;): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -898,8 +965,9 @@ onEvent(event: "*", listener: Callback&lt;SampleEvent&gt;): Promise&lt;void&gt;
  
 **错误码：**
  
-以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
+以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. |
@@ -928,9 +996,10 @@ try {
  
   
 
-#### workout.offEvent("*")
+### workout.offEvent("*")
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 offEvent(event: "*", listener: Callback&lt;SampleEvent&gt;): Promise&lt;void&gt;
  
@@ -946,6 +1015,7 @@ offEvent(event: "*", listener: Callback&lt;SampleEvent&gt;): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 联动设备事件类型，支持的事件为："*"，当联动设备运动状态改变时，触发该事件。 |
@@ -954,6 +1024,7 @@ offEvent(event: "*", listener: Callback&lt;SampleEvent&gt;): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -961,8 +1032,9 @@ offEvent(event: "*", listener: Callback&lt;SampleEvent&gt;): Promise&lt;void&gt;
  
 **错误码：**
  
-以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
+以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. |
@@ -991,7 +1063,8 @@ try {
  
   
 
-#### workout.readActivityReport
+### workout.readActivityReport
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1011,6 +1084,7 @@ readActivityReport(): Promise&lt;ActivityReport&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;ActivityReport&gt; | Promise对象，返回实时三环数据。 |
@@ -1020,6 +1094,7 @@ readActivityReport(): Promise&lt;ActivityReport&gt;
  
 以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -1050,9 +1125,10 @@ try {
  
   
 
-#### workout.sendData
+### workout.sendData
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 sendData(sampleReal: SampleReal[]): Promise&lt;void&gt;
  
@@ -1068,6 +1144,7 @@ sendData(sampleReal: SampleReal[]): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sampleReal | SampleReal[] | 是 | 融合运动数据。 |
@@ -1075,6 +1152,7 @@ sendData(sampleReal: SampleReal[]): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1082,8 +1160,9 @@ sendData(sampleReal: SampleReal[]): Promise&lt;void&gt;
  
 **错误码：**
  
-以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
+以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. |
@@ -1117,9 +1196,10 @@ try {
  
   
 
-#### workout.sendEvent
+### workout.sendEvent
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 sendEvent(event: SampleEvent): Promise&lt;void&gt;
  
@@ -1135,6 +1215,7 @@ sendEvent(event: SampleEvent): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | SampleEvent | 是 | 联动控制事件。 |
@@ -1142,6 +1223,7 @@ sendEvent(event: SampleEvent): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1149,8 +1231,9 @@ sendEvent(event: SampleEvent): Promise&lt;void&gt;
  
 **错误码：**
  
-以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
+以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. |
@@ -1182,9 +1265,10 @@ try {
  
   
 
-#### workout.getCurrentSportInfo
+### workout.getCurrentSportInfo
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 getCurrentSportInfo(): Promise&lt;SportInfo&gt;
  
@@ -1198,6 +1282,7 @@ getCurrentSportInfo(): Promise&lt;SportInfo&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;SportInfo&gt; | Promise对象，返回运动状态信息。 |
@@ -1207,6 +1292,7 @@ getCurrentSportInfo(): Promise&lt;SportInfo&gt;
  
 以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. Require workout management permission.Refer to the development documentation for permission request. |

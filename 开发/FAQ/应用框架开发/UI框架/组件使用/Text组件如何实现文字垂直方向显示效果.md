@@ -29,10 +29,10 @@ class Tmp {
 }
 
 
-// 封装一个方法
+<em>// 封装一个方法</em>
 @Builder
 function overBuilder(params: Tmp) {
-  // 用ForEach()方法对Text组件文本内容进行遍历，再使用.split('')属性对文本内容进行分割
+ <em> // 用ForEach()方法对Text组件文本内容进行遍历，再使用.split('')属性对文本内容进行分割</em>
   ForEach(params.label.split(''), (item: string) => {
     Text(item)
       .fontSize(30);

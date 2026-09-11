@@ -1,9 +1,9 @@
 # Marquee
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-marquee
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 跑马灯组件，用于滚动展示一段单行文本，支持自定义滚动速度、方向、循环次数等。仅当文本内容宽度大于等于跑马灯组件宽度时滚动，否则不滚动。适用于需要在有限空间内展示较长文本的场景，如新闻标题滚动、通知公告、广告轮播等，可以有效节省界面空间并吸引用户注意。
 
@@ -12,17 +12,19 @@
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Marquee(options: MarqueeOptions)
 
@@ -36,6 +38,7 @@ Marquee(options: MarqueeOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | MarqueeOptions18+ | 是 | 配置跑马灯组件的参数。 |
@@ -43,9 +46,10 @@ Marquee(options: MarqueeOptions)
 
 
 
-#### MarqueeOptions18+对象说明
+## MarqueeOptions18+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Marquee初始化参数。
 
@@ -57,6 +61,7 @@ Marquee初始化参数。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | start8+ | boolean | 否 | 否 | 控制跑马灯是否进入播放状态。 true：播放；false：不播放。 说明： 当loop参数设置为大于0的有限次数且播放完毕后，不可以通过改变start参数重置滚动次数重新开始播放。 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -64,23 +69,25 @@ Marquee初始化参数。
 | loop8+ | number | 否 | 是 | 设置重复滚动的次数，小于等于零时无限循环。 默认值：-1 说明： ArkTS卡片上该参数设置任意值都仅在可见时滚动一次。当设置为大于0的有限次数且播放完毕后，不可以通过改变start参数重置滚动次数重新开始播放。 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | fromStart8+ | boolean | 否 | 是 | 设置文本的滚动方向。 true：表示文本从头部位置开始正向滚动；false：表示文本反向滚动。 默认值：true 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | src8+ | string | 否 | 否 | 需要滚动的文本。 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
-| spacing23+ | LengthMetrics | 否 | 是 | 两轮跑马灯之间的间距。如果LengthMetrics的unit值是PERCENT，当前设置不生效，按默认值处理。 默认值：跑马灯组件宽度。 卡片能力： 从API version 23开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 23开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
+| spacing23+ | LengthMetrics | 否 | 是 | 两轮跑马灯之间的间距。当LengthMetrics对象的unit属性为LengthUnit.PERCENT时，当前设置不生效，按默认值处理。 默认值：跑马灯组件宽度。 卡片能力： 从API version 23开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 23开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | delay23+ | number | 否 | 是 | 设置两轮滚动之间的延迟时间。 默认值：0 取值范围：[0, +∞)，设置的值小于0时等价于设置0。 单位：毫秒 卡片能力： 从API version 23开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 23开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
 
 
 
-#### fontColor
+### fontColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontColor(value: ResourceColor)
 
@@ -94,6 +101,7 @@ fontColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 字体颜色。 |
@@ -101,9 +109,10 @@ fontColor(value: ResourceColor)
 
 
 
-#### fontSize
+### fontSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontSize(value: Length)
 
@@ -117,6 +126,7 @@ fontSize(value: Length)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Length | 是 | 字体大小。fontSize为number类型时，使用fp单位。字体默认大小16fp。不支持设置百分比字符串。 Wearable设备上默认值：15fp 说明： 配合allowScale属性使用时，需设置为fp单位。 |
@@ -124,9 +134,10 @@ fontSize(value: Length)
 
 
 
-#### fontWeight
+### fontWeight
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontWeight(value: number | FontWeight | string)
 
@@ -140,6 +151,7 @@ fontWeight(value: number | FontWeight | string)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| FontWeight \| string | 是 | 文本的字体粗细 number类型取值[100, 900]，取值间隔为100，默认为400，取值越大，字体越粗。string类型仅支持number类型取值的字符串形式，例如“400”，以及“bold”、“bolder”、“lighter”、“regular”、“medium”，分别对应FontWeight中相应的枚举值。设置过大可能会在不同字体下有截断。 传入超出取值范围的值时取默认值。传入不符合间隔要求的值时，若设置fontWeightConfigs的enableVariableFontWeight为true，使用传入值；若设置为false，使用默认值。 |
@@ -147,9 +159,10 @@ fontWeight(value: number | FontWeight | string)
 
 
 
-#### fontFamily
+### fontFamily
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontFamily(value: string | Resource)
 
@@ -163,6 +176,7 @@ fontFamily(value: string | Resource)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string \| Resource | 是 | 字体列表。默认字体'HarmonyOS Sans'。 应用当前支持'HarmonyOS Sans'字体和注册自定义字体loadFontSync。 卡片当前仅支持'HarmonyOS Sans'字体。 |
@@ -170,9 +184,10 @@ fontFamily(value: string | Resource)
 
 
 
-#### allowScale
+### allowScale
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 allowScale(value: boolean)
 
@@ -186,6 +201,7 @@ allowScale(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否允许文本缩放。 true：允许文本缩放；false：不允许文本缩放。 说明： 仅当fontSize为fp单位时生效。 |
@@ -193,9 +209,10 @@ allowScale(value: boolean)
 
 
 
-#### marqueeUpdateStrategy12+
+### marqueeUpdateStrategy12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 marqueeUpdateStrategy(value: MarqueeUpdateStrategy)
 
@@ -215,6 +232,7 @@ marqueeUpdateStrategy(value: MarqueeUpdateStrategy)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | MarqueeUpdateStrategy | 是 | 跑马灯组件属性更新后，跑马灯的滚动策略。 |
@@ -222,15 +240,17 @@ marqueeUpdateStrategy(value: MarqueeUpdateStrategy)
 
 
 
-#### 事件
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 事件
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### onStart
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### onStart
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onStart(event: () => void)
 
@@ -244,6 +264,7 @@ onStart(event: () => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | () => void | 是 | 当滚动的文本内容变化或者开始滚动时的回调。 |
@@ -251,9 +272,10 @@ onStart(event: () => void)
 
 
 
-#### onBounce
+### onBounce
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onBounce(event: () => void)
 
@@ -267,6 +289,7 @@ onBounce(event: () => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | () => void | 是 | 完成一次完整滚动时触发的回调。 |
@@ -274,9 +297,10 @@ onBounce(event: () => void)
 
 
 
-#### onFinish
+### onFinish
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onFinish(event: () => void)
 
@@ -290,6 +314,7 @@ onFinish(event: () => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | () => void | 是 | 滚动全部循环次数完成时的回调。 |
@@ -297,9 +322,10 @@ onFinish(event: () => void)
 
 
 
-#### onStop
+### onStop
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onStop(event: Callback&lt;void&gt;| undefined)
 
@@ -319,6 +345,7 @@ onStop(event: Callback&lt;void&gt;| undefined)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | Callback&lt;void&gt;\| undefined | 是 | 跑马灯滚动结束或停止时触发回调。 设置为undefined时不会执行回调。 |
@@ -326,13 +353,17 @@ onStop(event: Callback&lt;void&gt;| undefined)
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（跑马灯内容动态更新）
+
+
+### 示例1（跑马灯内容动态更新）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示了跑马灯内容动态更新时的运行效果，主要涉及start、step、loop、fromStart、src等属性以及[marqueeUpdateStrategy](#marqueeupdatestrategy12)属性的设置。
 
@@ -417,12 +448,15 @@ struct MarqueeExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/t0bqy7DvSGKDhjhnddBIjA/zh-cn_image_0000002656008734.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071508Z&HW-CC-Expire=86400&HW-CC-Sign=25212BF794B8659369C9CAB8AE5A5A7F5946A062B878C6085EFF9796D15ED044)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/W7hQL8LMTS-SfE3TI04ejQ/zh-cn_image_0000002717612950.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073104Z&HW-CC-Expire=86400&HW-CC-Sign=CCC962AAC5581F57C5B2DAA267BB47B7EEE754D4E1D790D09AD44710490D0C9F)
 
 
 
 
-#### 示例2（设置跑马灯停止回调）
+### 示例2（设置跑马灯停止回调）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过变更跑马灯状态来触发onStop回调，回调触发后使停止计数器numberStop的值加1。
 
@@ -434,7 +468,7 @@ struct MarqueeExample {
 @Component
 struct MarqueeStop4 {
   @State change: boolean = true;
-  @State scrollDirection: String = '正向滚动';
+  @State scrollDirection: string = '正向滚动';
   @State marqueeText: string =
     'This is the text with the text overflow set marquee This is the text with the text overflow set marquee This is the text with the text overflow set marquee';
   @State numberStart: number = 0;
@@ -498,4 +532,4 @@ struct MarqueeStop4 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/JvaMgfUCQ8qoZITJatw0Sg/zh-cn_image_0000002655848812.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071508Z&HW-CC-Expire=86400&HW-CC-Sign=51F06B24DA8AC2BEC45ECF0B0CC831A2FCE066099C94E567B8CBA474C445C18E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/Em2O4MVlQVeycAlE12T0Gw/zh-cn_image_0000002747292903.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073104Z&HW-CC-Expire=86400&HW-CC-Sign=AF5175670EE31BCA6C972AFAC27A31B2AD562E9BF71AABEED84271FE9B78478D)

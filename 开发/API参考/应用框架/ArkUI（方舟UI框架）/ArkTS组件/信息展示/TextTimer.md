@@ -1,9 +1,9 @@
 # TextTimer
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-texttimer
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TextTimer是通过文本显示计时信息并控制其计时器状态的组件，支持正向计时与倒计时两种模式，可自定义显示格式，适用于秒表、活动倒计时等需要展示时间流逝的场景。常用于倒计时场景，如考试倒计时、限时活动、运动计时等。
  
@@ -14,17 +14,19 @@ TextTimer是通过文本显示计时信息并控制其计时器状态的组件�
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
  
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TextTimer(options?: TextTimerOptions)
  
@@ -36,6 +38,7 @@ TextTimer(options?: TextTimerOptions)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | TextTimerOptions | 否 | 通过文本显示计时信息并控制其计时器状态的组件参数。当需要自定义计时器配置（如设置倒计时开关、计时时间、初始时间、控制器等）时传入此参数；不传入时使用TextTimerOptions的默认配置。 默认值继承TextTimerOptions 。 |
@@ -43,14 +46,16 @@ TextTimer(options?: TextTimerOptions)
  
   
 
-#### TextTimerOptions对象说明
+## TextTimerOptions对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于构建TextTimer组件的选项。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | isCountDown | boolean | 否 | 是 | 倒计时开关。 true：计时器开启倒计时，例如从30秒~0秒。 false：计时器开始计时，例如从0秒~30秒。 默认值：false 卡片能力： 从API version 10开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -61,17 +66,19 @@ TextTimer(options?: TextTimerOptions)
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
  
   
 
-#### format
+### format
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 format(value: string)
  
@@ -87,6 +94,7 @@ format(value: string)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string | 是 | 自定义计时器显示的时间格式，需至少包含一个HH、mm、ss、SS中的关键字。 默认值：'HH:mm:ss.SS' |
@@ -94,9 +102,10 @@ format(value: string)
  
   
 
-#### fontColor
+### fontColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontColor(value: ResourceColor)
  
@@ -110,6 +119,7 @@ fontColor(value: ResourceColor)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 字体颜色。 Wearable设备上默认值为：'#c5ffffff'，显示白色。 其他设备上默认值：'#e6182431'，显示黑色。 |
@@ -117,9 +127,10 @@ fontColor(value: ResourceColor)
  
   
 
-#### fontSize
+### fontSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontSize(value: Length)
  
@@ -133,6 +144,7 @@ fontSize(value: Length)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Length | 是 | 字体大小。 默认值：16fp value为Length中的number类型时，单位为fp。value为Length中的string类型时，若设置值为非数字开头，则按0fp处理；若设置值为数字开头，当数字后内容包含除像素单位外的字符（如字母、特殊符号等）时，取值字符串开头的数字部分，单位为fp。 例如：设置值为"abc"时取值为0fp，设置值为"10vp"时取值为10vp，设置值为"10vp11abc"时取值为10fp。不支持设置百分比字符串。 |
@@ -140,9 +152,10 @@ fontSize(value: Length)
  
   
 
-#### fontStyle
+### fontStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontStyle(value: FontStyle)
  
@@ -156,6 +169,7 @@ fontStyle(value: FontStyle)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | FontStyle | 是 | 字体样式，例如斜体的字体样式。 默认值：FontStyle.Normal |
@@ -163,9 +177,10 @@ fontStyle(value: FontStyle)
  
   
 
-#### fontWeight
+### fontWeight
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontWeight(value: number | FontWeight | ResourceStr)
  
@@ -179,6 +194,7 @@ fontWeight(value: number | FontWeight | ResourceStr)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| FontWeight \| ResourceStr | 是 | 文本的字体粗细，number类型取值范围为[100, 900]，取值间隔为100，取值越大，字体越粗。number类型取值范围外的默认值为400。ResourceStr类型仅支持number类型取值的字符串形式，例如"400"，以及"bold"、"bolder"、"lighter"、"regular"、"medium"，分别对应FontWeight中相应的枚举值。 默认值：FontWeight.Normal 从API version 20开始，支持Resource类型。 |
@@ -186,9 +202,10 @@ fontWeight(value: number | FontWeight | ResourceStr)
  
   
 
-#### fontFamily
+### fontFamily
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontFamily(value: ResourceStr)
  
@@ -202,6 +219,7 @@ fontFamily(value: ResourceStr)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceStr | 是 | 字体列表。默认字体为'HarmonyOS Sans'。 应用当前支持'HarmonyOS Sans'字体和注册自定义字体。 卡片当前仅支持'HarmonyOS Sans'字体。 |
@@ -209,9 +227,10 @@ fontFamily(value: ResourceStr)
  
   
 
-#### textShadow11+
+### textShadow11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 textShadow(value: ShadowOptions | Array&lt;ShadowOptions&gt;)
  
@@ -229,6 +248,7 @@ textShadow(value: ShadowOptions | Array&lt;ShadowOptions&gt;)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ShadowOptions \| Array&lt;ShadowOptions&gt; | 是 | 文字阴影效果的参数，包括颜色、模糊半径、偏移量。 |
@@ -236,9 +256,10 @@ textShadow(value: ShadowOptions | Array&lt;ShadowOptions&gt;)
  
   
 
-#### contentModifier12+
+### contentModifier12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contentModifier(modifier: ContentModifier&lt;TextTimerConfiguration&gt;)
  
@@ -252,6 +273,7 @@ contentModifier(modifier: ContentModifier&lt;TextTimerConfiguration&gt;)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | modifier | ContentModifier&lt;TextTimerConfiguration&gt; | 是 | 在TextTimer组件上，定制内容区的方法。 modifier： 内容修改器，开发者需要自定义class实现ContentModifier接口。 |
@@ -259,15 +281,17 @@ contentModifier(modifier: ContentModifier&lt;TextTimerConfiguration&gt;)
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### onTimer
+### onTimer
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onTimer(event: (utc: number, elapsedTime: number) => void)
  
@@ -281,6 +305,7 @@ onTimer(event: (utc: number, elapsedTime: number) => void)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | utc | number | 是 | Linux时间戳，即自1970年1月1日起经过的时间，单位为format属性设置格式中的最小时间单位。 |
@@ -289,9 +314,10 @@ onTimer(event: (utc: number, elapsedTime: number) => void)
  
   
 
-#### TextTimerController
+## TextTimerController
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TextTimer组件的控制器，用于控制文本计时器。一个TextTimer组件仅支持绑定一个控制器，组件创建完成后相关指令才能被调用。一个TextTimerController只能控制最后一个绑定此TextTimerController的TextTimer组件。
  
@@ -301,7 +327,10 @@ TextTimer组件的控制器，用于控制文本计时器。一个TextTimer组�
  
   
 
-#### 导入对象
+### 导入对象
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 textTimerController: TextTimerController = new TextTimerController();
@@ -309,9 +338,10 @@ textTimerController: TextTimerController = new TextTimerController();
  
   
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
  
@@ -325,9 +355,10 @@ TextTimerController的构造函数。
  
   
 
-#### start
+### start
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 start()
  
@@ -341,9 +372,10 @@ start()
  
   
 
-#### pause
+### pause
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pause()
  
@@ -357,9 +389,10 @@ pause()
  
   
 
-#### reset
+### reset
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reset()
  
@@ -373,9 +406,10 @@ reset()
  
   
 
-#### TextTimerConfiguration12+对象说明
+## TextTimerConfiguration12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ContentModifier接口使用的TextTimer配置。
  
@@ -385,24 +419,29 @@ ContentModifier接口使用的TextTimer配置。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | count | number | 否 | 否 | 计时器初始时间，单位为毫秒，isCountDown为true时生效。 默认值：60000 取值范围为(0, 86400000)，即不超过24小时。超出取值范围时置为默认值。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | isCountDown | boolean | 否 | 否 | 是否倒计时。 true：计时器开启倒计时，例如从30秒~0秒；false：计时器开始计时，例如从0秒~30秒。 默认值：false 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | started | boolean | 否 | 否 | 是否已经开始了计时。 true：开始计时；false：未开始计时。 默认值：false 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | elapsedTime | number | 否 | 否 | 计时器经过的时间，单位为设置格式的最小单位。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| startTime | number | 否 | 是 | 计时器正向计时模式下的初始时间，仅当isCountDown为false时该参数设置生效。 取值范围：无上限，支持负数。 默认值：0 单位：毫秒 当值为负数时，计时器将从负值开始计时，经过0后继续向正数计时。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| startTime | number | 否 | 是 | 计时器正向计时模式下的初始时间，仅当isCountDown为false时该参数设置生效。 取值范围：[-2147483648, 2147483647]，支持负数。 默认值：0 单位：毫秒 当值为负数时，计时器将从负值开始计时，经过0后继续向正数计时。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
  
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 示例1（支持手动启停的文本计时器）
+### 示例1（支持手动启停的文本计时器）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示了TextTimer组件的基本使用方法，通过[format](#format)属性设置计时器的文本显示格式。
  
@@ -447,7 +486,10 @@ struct TextTimerExample {
  
   
 
-#### 示例2（设定文本阴影样式）
+### 示例2（设定文本阴影样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[textShadow](#textshadow11)属性设置计时器的文本阴影样式。
  
@@ -497,7 +539,10 @@ struct TextTimerExample {
  
   
 
-#### 示例3（设定自定义内容区）
+### 示例3（设定自定义内容区）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例实现了两个简易秒表，使用浅灰色背景。计时器开始后，会实时显示时间变化。倒计时器开始后，背景会变成黑色，正计时器开始后，背景会变成灰色。
  
@@ -580,7 +625,10 @@ struct Index {
  
   
 
-#### 示例4（创建之后立即执行计时）
+### 示例4（创建之后立即执行计时）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示了TextTimer计时器如何在创建完成之后立即开始计时。
  
@@ -618,7 +666,10 @@ struct TextTimerStart {
  
   
 
-#### 示例5（设置文本样式）
+### 示例5（设置文本样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[fontColor](#fontcolor)、[fontSize](#fontsize)、[fontStyle](#fontstyle)、[fontWeight](#fontweight)、[fontFamily](#fontfamily)属性展示了不同样式的文本效果。
  
@@ -627,6 +678,7 @@ struct TextTimerStart {
 @Entry
 @Component
 struct TextTimerDemo {
+  // textTimerController用于控制计时器启停，本示例主要展示样式配置
   textTimerController: TextTimerController = new TextTimerController();
   @State countValue: number = 5025678;
 
@@ -675,7 +727,10 @@ struct TextTimerDemo {
  
   
 
-#### 示例6（设置初始计时时间）
+### 示例6（设置初始计时时间）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[TextTimerOptions](#texttimeroptions对象说明)的startTime属性设置计时器初始计时时间。
  

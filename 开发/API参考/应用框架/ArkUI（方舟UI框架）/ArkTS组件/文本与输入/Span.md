@@ -1,9 +1,9 @@
 # Span
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-span
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 作为[Text](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text)、[ContainerSpan](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-containerspan)组件的子组件，用于显示行内文本，支持对文本的字体、颜色、大小等样式进行细粒度设置。适用于在同一行文本中混合显示不同样式的场景，如不同字体颜色的文本、添加装饰线或阴影效果等。
 
@@ -12,17 +12,19 @@
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Span(value: string | Resource)
 
@@ -34,6 +36,7 @@ Span(value: string | Resource)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string \| Resource | 是 | 文本内容。 |
@@ -41,17 +44,19 @@ Span(value: string | Resource)
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 属性继承自[BaseSpan](#basespan)。
 
 
 
-#### decoration
+### decoration
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 decoration(value: DecorationStyleInterface)
 
@@ -65,6 +70,7 @@ decoration(value: DecorationStyleInterface)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | DecorationStyleInterface12+ | 是 | 文本装饰线样式对象。 说明： style参数不支持卡片能力。 |
@@ -76,9 +82,10 @@ decoration(value: DecorationStyleInterface)
 
 
 
-#### letterSpacing
+### letterSpacing
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 letterSpacing(value: number | ResourceStr)
 
@@ -92,6 +99,7 @@ letterSpacing(value: number | ResourceStr)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| ResourceStr | 是 | 文本字符间距。 单位：fp 从API version 20开始，支持Resource类型。 |
@@ -99,9 +107,10 @@ letterSpacing(value: number | ResourceStr)
 
 
 
-#### textCase
+### textCase
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 textCase(value: TextCase)
 
@@ -115,6 +124,7 @@ textCase(value: TextCase)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | TextCase | 是 | 文本大小写。 |
@@ -122,9 +132,10 @@ textCase(value: TextCase)
 
 
 
-#### fontColor
+### fontColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontColor(value: ResourceColor)
 
@@ -138,6 +149,7 @@ fontColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 字体颜色。 |
@@ -145,9 +157,10 @@ fontColor(value: ResourceColor)
 
 
 
-#### fontSize
+### fontSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontSize(value: number | string | Resource)
 
@@ -161,6 +174,7 @@ fontSize(value: number | string | Resource)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| string \| Resource | 是 | 字体大小。fontSize为number类型时，使用fp单位。string类型支持number类型取值的字符串形式，可以附带单位，例如"10"、"10fp"，不支持设置百分比字符串。 从API version 20开始，支持Resource类型。 |
@@ -168,9 +182,10 @@ fontSize(value: number | string | Resource)
 
 
 
-#### fontStyle
+### fontStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontStyle(value: FontStyle)
 
@@ -184,6 +199,7 @@ fontStyle(value: FontStyle)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | FontStyle | 是 | 字体样式。 |
@@ -191,9 +207,10 @@ fontStyle(value: FontStyle)
 
 
 
-#### fontWeight
+### fontWeight
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontWeight(value: number | FontWeight | ResourceStr)
 
@@ -211,6 +228,7 @@ fontWeight(value: number | FontWeight | ResourceStr)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| FontWeight \| ResourceStr | 是 | 文本的字体粗细。 number类型取值[100, 900]，取值间隔为100，取值越大，字体越粗。string类型仅支持number类型取值的字符串形式，例如“400”，以及“bold”、“bolder”、“lighter”、“regular”、“medium”，分别对应FontWeight中相应的枚举值。设置过大可能会在不同字体下有截断。传入超出取值范围或不符合间隔要求的值时取默认值。 从API version 20开始，支持Resource类型。 |
@@ -218,9 +236,10 @@ fontWeight(value: number | FontWeight | ResourceStr)
 
 
 
-#### fontWeight24+
+### fontWeight24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontWeight(weight: number | FontWeight | ResourceStr, fontWeightConfigs?: FontWeightConfigs)
 
@@ -240,6 +259,7 @@ fontWeight(weight: number | FontWeight | ResourceStr, fontWeightConfigs?: FontWe
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | weight | number \| FontWeight \| ResourceStr | 是 | 文本的字体粗细。 number类型取值[100, 900]，取值间隔为100，取值越大，字体越粗。string类型仅支持number类型取值的字符串形式，例如“400”，以及“bold”、“bolder”、“lighter”、“regular”、“medium”，分别对应FontWeight中相应的枚举值。设置过大可能会在不同字体下有截断。 传入超出取值范围的值时取默认值。传入不符合间隔要求的值时，若设置fontWeightConfigs的enableVariableFontWeight为true，使用传入值；若设置为false，使用默认值。 |
@@ -248,9 +268,10 @@ fontWeight(weight: number | FontWeight | ResourceStr, fontWeightConfigs?: FontWe
 
 
 
-#### fontFamily
+### fontFamily
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontFamily(value: string | Resource)
 
@@ -264,6 +285,7 @@ fontFamily(value: string | Resource)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string \| Resource | 是 | 字体列表。 使用多个字体时，请用逗号','分隔，字体的优先级按顺序生效。例如：'Arial,HarmonyOS Sans'。 |
@@ -275,9 +297,10 @@ fontFamily(value: string | Resource)
 
 
 
-#### lineHeight10+
+### lineHeight10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 lineHeight(value: Length)
 
@@ -291,6 +314,7 @@ lineHeight(value: Length)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Length | 是 | 文本行高。 number类型时单位为fp。设置string类型时，支持number类型取值的字符串形式，可以附带单位，例如"10"、"10fp"，不支持设置百分比字符串。 |
@@ -298,9 +322,10 @@ lineHeight(value: Length)
 
 
 
-#### font10+
+### font10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 font(value: Font)
 
@@ -318,6 +343,7 @@ font(value: Font)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Font | 是 | 文本样式，包括字体大小、字体粗细、字体族和字体风格。 |
@@ -325,9 +351,10 @@ font(value: Font)
 
 
 
-#### font24+
+### font24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 font(value: Font, fontConfigs?: FontConfigs)
 
@@ -341,6 +368,7 @@ font(value: Font, fontConfigs?: FontConfigs)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Font | 是 | 文本样式，包括字体大小、字体粗细、字体族和字体风格。 |
@@ -349,9 +377,10 @@ font(value: Font, fontConfigs?: FontConfigs)
 
 
 
-#### textShadow11+
+### textShadow11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 textShadow(value: ShadowOptions | Array&lt;ShadowOptions&gt;)
 
@@ -365,6 +394,7 @@ textShadow(value: ShadowOptions | Array&lt;ShadowOptions&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ShadowOptions \| Array&lt;ShadowOptions&gt; | 是 | 文字阴影效果。可设置阴影的模糊半径(radius)、颜色(color)、偏移距离(offsetX/offsetY)等参数，支持数组形式实现多重阴影。 |
@@ -372,9 +402,10 @@ textShadow(value: ShadowOptions | Array&lt;ShadowOptions&gt;)
 
 
 
-#### fontVariations
+### fontVariations
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontVariations(fontVariations: Array&lt;FontVariation&gt;)
 
@@ -390,6 +421,7 @@ fontVariations(fontVariations: Array&lt;FontVariation&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fontVariations | Array&lt;FontVariation&gt; | 是 | 可变字体的属性数组，每个数组元素包含axis（属性轴名称）和value（属性值）两个字段。fontVariations属性的优先级高于fontWeight。 |
@@ -397,9 +429,10 @@ fontVariations(fontVariations: Array&lt;FontVariation&gt;)
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通用事件支持[点击事件onClick](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-events-click#onclick)、[悬浮事件onHover](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-events-hover#onhover)。
 
@@ -409,9 +442,10 @@ fontVariations(fontVariations: Array&lt;FontVariation&gt;)
 
 
 
-#### BaseSpan
+## BaseSpan
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义BaseSpan基础类，包含Span的通用属性。
 
@@ -421,9 +455,10 @@ fontVariations(fontVariations: Array&lt;FontVariation&gt;)
 
 
 
-#### textBackgroundStyle11+
+### textBackgroundStyle11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 textBackgroundStyle(style: TextBackgroundStyle): T
 
@@ -437,12 +472,14 @@ textBackgroundStyle(style: TextBackgroundStyle): T
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | TextBackgroundStyle | 是 | 文本背景样式。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -451,9 +488,10 @@ textBackgroundStyle(style: TextBackgroundStyle): T
 
 
 
-#### baselineOffset12+
+### baselineOffset12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 baselineOffset(value: LengthMetrics): T
 
@@ -467,12 +505,14 @@ baselineOffset(value: LengthMetrics): T
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | LengthMetrics | 是 | 设置Span基线的偏移量，设置该值为百分比时，按默认值显示。 正数内容向上偏移，负数向下偏移。 在ImageSpan中，设置为非0时，verticalAlign将固定为ImageSpanAlignment.BASELINE对齐；设置为0时，要使基线对齐策略生效，需同时设置verticalAlign为ImageSpanAlignment.BASELINE。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -481,15 +521,17 @@ baselineOffset(value: LengthMetrics): T
 
 
 
-#### TextBackgroundStyle11+对象说明
+## TextBackgroundStyle11+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -499,13 +541,17 @@ baselineOffset(value: LengthMetrics): T
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（设置文本样式）
+
+
+### 示例1（设置文本样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示了设置不同样式的文本效果以及Span配置点击事件。
 
@@ -682,7 +728,10 @@ struct SpanExample {
 
 
 
-#### 示例2（设置文本阴影）
+### 示例2（设置文本阴影）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 11开始，该示例通过[textShadow](#textshadow11)属性展示了文本设置阴影的效果。
 
@@ -735,12 +784,15 @@ struct SpanExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/Ss-4kAS4SkOYUtuIRgJRrQ/zh-cn_image_0000002686088135.png?HW-CC-KV=V1&HW-CC-Date=20260730T071506Z&HW-CC-Expire=86400&HW-CC-Sign=DE07EC2EE71D28D96051969F80E3EB3347AE7C237EF75751C8431B4380B14354)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/5cUTdCm6QlSDZXtNxi8Ouw/zh-cn_image_0000002747292795.png?HW-CC-KV=V1&HW-CC-Date=20260911T073107Z&HW-CC-Expire=86400&HW-CC-Sign=CF6712BAEFC254CF6CC042AB3CCA5198F0C336CBEF1FECCDD90804554A8486C4)
 
 
 
 
-#### 示例3（设置背景样式）
+### 示例3（设置背景样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 11开始，该示例通过[textBackgroundStyle](#textbackgroundstyle11)属性展示了文本设置背景样式的效果。
 
@@ -763,12 +815,15 @@ struct SpanExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/2OdWn-SCTy2OVYuOpSpT1Q/zh-cn_image_0000002685928303.png?HW-CC-KV=V1&HW-CC-Date=20260730T071506Z&HW-CC-Expire=86400&HW-CC-Sign=EA93EB9DC2173270A02E1F9BD2DEE3D888D34C2C9903EABFD9C1F3FD9B2B5B42)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/ZbXgaxYCTSeIuvahdsueoA/zh-cn_image_0000002747212711.png?HW-CC-KV=V1&HW-CC-Date=20260911T073107Z&HW-CC-Expire=86400&HW-CC-Sign=420915CEE1DA741BE3A4FBBF93EC39F2910F86AB42A68D59534121BAFA196E70)
 
 
 
 
-#### 示例4（设置文本基线偏移量）
+### 示例4（设置文本基线偏移量）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 12开始，该示例通过[baselineOffset](#baselineoffset12)属性展示了文本设置不同基线偏移量的效果。
 
@@ -804,12 +859,15 @@ struct SpanExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/zztZtXKiT4qm14HDIF-j8Q/zh-cn_image_0000002656008626.png?HW-CC-KV=V1&HW-CC-Date=20260730T071506Z&HW-CC-Expire=86400&HW-CC-Sign=E759B4DFEDE12C5C83763BF9E623DD639D8C5952A4EF515350BF17614936FEC7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/186z1Dm6R7WZuPSZJHsdBw/zh-cn_image_0000002717772776.png?HW-CC-KV=V1&HW-CC-Date=20260911T073107Z&HW-CC-Expire=86400&HW-CC-Sign=1DCE6C920C77665C6A8ECF179AB83709EA59DEEC05B91D101678B2F7DD806F20)
 
 
 
 
-#### 示例5（设置文本可变字体的属性）
+### 示例5（设置文本可变字体的属性）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[fontVariations](#fontvariations)属性设置可变字体的属性。
 
@@ -841,4 +899,4 @@ struct SpanExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/J22Np-75Qxis2mBQ2eUg-w/zh-cn_image_0000002655848630.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071506Z&HW-CC-Expire=86400&HW-CC-Sign=DEBEDCC9D4C71B3FE7183A0D1646E8A6F0B5B2A1C105CF848F6D719DD0C3FC73)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/MLJVcvQOSmaJ0aGVZ43TqQ/zh-cn_image_0000002717772700.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073107Z&HW-CC-Expire=86400&HW-CC-Sign=D683254E19940BD8366C3FD30FE6D28DF63897CCB28DD9AB475180E2C9640A99)

@@ -1,6 +1,6 @@
 # rag（检索增强生成）
 
-更新时间：2026-06-12 06:54:11
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/dataaugmentation-rag-api
 **支持设备：** PC/2in1
@@ -10,7 +10,8 @@
 **起始版本：** 6.0.0(20)
   
 
-#### 模块概述
+## 模块概述
+
 
 **支持设备：** PC/2in1
 
@@ -26,14 +27,19 @@ RAG（Retrieval-Augmented Generation，检索增强生成）模块提供基于�
  
   
 
-#### 关键Class/Interface介绍
+## 关键Class/Interface介绍
+
 
 **支持设备：** PC/2in1
 
   
 
-#### 核心类型概览
+### 核心类型概览
+
+
+**支持设备：** PC/2in1
  
+
 | 名称 | 类型 | 说明 |
 | --- | --- | --- |
 | ChatLLM | 抽象类 | LLM流式请求抽象类，应用需继承实现streamChat和cancel方法 |
@@ -43,15 +49,19 @@ RAG（Retrieval-Augmented Generation，检索增强生成）模块提供基于�
  
   
 
-#### UML类图
+### UML类图
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/854r-MKRRamRALIsSkU8kg/zh-cn_image_0000002656350631.png?HW-CC-KV=V1&HW-CC-Date=20260624T020036Z&HW-CC-Expire=86400&HW-CC-Sign=DAAE3DA4562EC43A08105EE71D132F51B96BBB9E4A233FDBC882F0A53E35204C)
+**支持设备：** PC/2in1
+
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/IxGwA5ikSCygTYk6MOJRNA/zh-cn_image_0000002747293521.png?HW-CC-KV=V1&HW-CC-Date=20260911T072727Z&HW-CC-Expire=86400&HW-CC-Sign=B00ACEE7B0E342B5D6FBFD54D809B5929CBAF5AB04C9652780A0D1CB588D5D8B)
 
  
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** PC/2in1
 
@@ -61,7 +71,8 @@ import { rag } from '@kit.DataAugmentationKit';
  
   
 
-#### LLMStreamAnswer
+## LLMStreamAnswer
+
 
 **支持设备：** PC/2in1
 
@@ -73,6 +84,7 @@ import { rag } from '@kit.DataAugmentationKit';
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | isFinished | boolean | 否 | 否 | 表示LLM流式输出是否已经结束。true表示已结束，false表示后续还有答案输出。 |
@@ -82,7 +94,8 @@ import { rag } from '@kit.DataAugmentationKit';
  
   
 
-#### LLMRequestStatus
+## LLMRequestStatus
+
 
 **支持设备：** PC/2in1
 
@@ -94,6 +107,7 @@ import { rag } from '@kit.DataAugmentationKit';
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | LLM_SUCCESS | 0 | 请求LLM成功。表示streamChat已成功发起LLM调用并获得有效响应。 |
@@ -105,7 +119,8 @@ import { rag } from '@kit.DataAugmentationKit';
  
   
 
-#### LLMRequestInfo
+## LLMRequestInfo
+
 
 **支持设备：** PC/2in1
 
@@ -117,6 +132,7 @@ import { rag } from '@kit.DataAugmentationKit';
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | chatId | number | 否 | 否 | 表示大模型的请求ID。取值范围：[0, 2147483647]。开发者需要自行维护chatId与实际HTTP请求的映射关系，以便后续调用cancel时能够取消对应的请求。 |
@@ -125,7 +141,8 @@ import { rag } from '@kit.DataAugmentationKit';
  
   
 
-#### ChatLLM
+## ChatLLM
+
 
 **支持设备：** PC/2in1
 
@@ -139,7 +156,8 @@ import { rag } from '@kit.DataAugmentationKit';
  
   
 
-#### streamChat
+### streamChat
+
 
 **支持设备：** PC/2in1
 
@@ -155,6 +173,7 @@ abstract streamChat(query: string, callback: Callback&lt;LLMStreamAnswer&gt;): P
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | query | string | 是 | 与大模型交互时的请求内容，根据输入问题、问题预处理、检索等结果动态拼接，最大长度为20000字节。使用的API模型不同最大长度不同，开发者使用相关模型时注意对应的最大长度。说明： 其中已带有需要带给大模型的提示prompt，无需额外附加内容，且提示prompt中的示例数据均只是提示大模型按照预期输出的模拟数据，无其他额外用途。 |
@@ -163,6 +182,7 @@ abstract streamChat(query: string, callback: Callback&lt;LLMStreamAnswer&gt;): P
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;LLMRequestInfo&gt; | Promise对象，返回LLM请求信息对象。其中chatId用于标识本次LLM请求，开发者需要在后续cancel时传入相同的chatId；status表示请求状态，LLM_SUCCESS表示成功，其他值表示失败。 |
@@ -211,7 +231,8 @@ class MyChatLLM extends rag.ChatLLM {
  
   
 
-#### cancel
+### cancel
+
 
 **支持设备：** PC/2in1
 
@@ -227,6 +248,7 @@ abstract cancel(chatId: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | chatId | number | 是 | 需要被取消的请求LLM的ID。与streamChat返回值LLMRequestInfo中填入的chatId保持一致。取值范围：[0, 2147483647]。开发者需要在streamChat被调用时保存chatId与实际HTTP请求的映射关系，以便在cancel时能够找到对应的请求并取消。 |
@@ -256,7 +278,8 @@ class MyChatLLM extends rag.ChatLLM {
  
   
 
-#### Config
+## Config
+
 
 **支持设备：** PC/2in1
 
@@ -268,6 +291,7 @@ RAG会话的配置项。
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | llm | ChatLLM | 否 | 否 | 表示ChatLLM的提供者。开发者需要创建ChatLLM子类的实例并传入。当需要使用RAG进行问答时，必须配置此项。llm实例负责与实际的大语言模型交互。 |
@@ -303,7 +327,8 @@ let config: rag.Config = {
  
   
 
-#### Answer
+## Answer
+
 
 **支持设备：** PC/2in1
 
@@ -315,6 +340,7 @@ let config: rag.Config = {
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | chunk | string | 否 | 否 | 表示问题摘要的答案。长度上限为8192字节。 |
@@ -323,7 +349,8 @@ let config: rag.Config = {
  
   
 
-#### StreamType
+## StreamType
+
 
 **支持设备：** PC/2in1
 
@@ -335,6 +362,7 @@ let config: rag.Config = {
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | THOUGHT | 0 | 思考过程数据。表示LLM在生成最终答案前的推理过程或中间思考内容。部分LLM会输出思考过程。 |
@@ -344,7 +372,8 @@ let config: rag.Config = {
  
   
 
-#### Stream
+## Stream
+
 
 **支持设备：** PC/2in1
 
@@ -356,6 +385,7 @@ let config: rag.Config = {
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | StreamType | 否 | 否 | 表示答案的数据类型。 |
@@ -365,7 +395,8 @@ let config: rag.Config = {
  
   
 
-#### RunConfig
+## RunConfig
+
 
 **支持设备：** PC/2in1
 
@@ -377,6 +408,7 @@ let config: rag.Config = {
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | answerTypes | Array&lt;StreamType&gt; | 否 | 否 | 用于指定流式输出的数据类型。 |
@@ -384,7 +416,8 @@ let config: rag.Config = {
  
   
 
-#### FeedbackInfo
+## FeedbackInfo
+
 
 **支持设备：** PC/2in1
 
@@ -396,6 +429,7 @@ let config: rag.Config = {
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | runId | number | 否 | 否 | 会话内特定流式问答的唯一标识符。取值范围：[0, 2147483647]。 |
@@ -406,7 +440,8 @@ let config: rag.Config = {
  
   
 
-#### RagSession
+## RagSession
+
 
 **支持设备：** PC/2in1
 
@@ -420,7 +455,8 @@ RAG会话，用以提供基于知识库的智能问答能力。
  
   
 
-#### streamRun
+### streamRun
+
 
 **支持设备：** PC/2in1
 
@@ -436,6 +472,7 @@ streamRun(question: string, config: RunConfig, callback: AsyncCallback&lt;Stream
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | question | string | 是 | 表示本次提出的问题。长度上限为1000字节。 |
@@ -445,6 +482,7 @@ streamRun(question: string, config: RunConfig, callback: AsyncCallback&lt;Stream
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象，返回本次调用的ID。 |
@@ -454,6 +492,7 @@ streamRun(question: string, config: RunConfig, callback: AsyncCallback&lt;Stream
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[数据增强错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-dataaugmentation)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1021000000 | Insufficient system resources or memory access exception. |
@@ -463,7 +502,7 @@ streamRun(question: string, config: RunConfig, callback: AsyncCallback&lt;Stream
 | 1021000004 | The LLM chat is busy. |
 | 1021000005 | The output of LLM chat does not comply with the constraints. |
 | 1021000007 | The RAG session is busy. |
-| 1021000008 | The RAG session is Already closed. |
+| 1021000008 | The RAG session is already closed. |
 | 1021000009 | User has canceled the stream run. |
 | 1021000010 | A timeout occurred in the session. |
 | 1021000011 | Some parameter does not meet the constraints. Possible causes: 1. The length of the string parameter or the length of the numeric parameter does not comply with the constraints. 2. The string parameter contains invalid characters. |
@@ -513,7 +552,8 @@ if (session != null) {
  
   
 
-#### cancel
+### cancel
+
 
 **支持设备：** PC/2in1
 
@@ -529,6 +569,7 @@ cancel(runId: number): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | runId | number | 是 | 表示需要取消的问答ID。与streamRun返回值保持一致。 |
@@ -536,6 +577,7 @@ cancel(runId: number): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -545,10 +587,11 @@ cancel(runId: number): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[数据增强错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-dataaugmentation)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1021000000 | Insufficient system resources or memory access exception. |
-| 1021000008 | The RAG session is Already closed. |
+| 1021000008 | The RAG session is already closed. |
  
  
 **示例：**
@@ -572,7 +615,8 @@ if (session != null) {
  
   
 
-#### close
+### close
+
 
 **支持设备：** PC/2in1
 
@@ -588,6 +632,7 @@ close(): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -597,6 +642,7 @@ close(): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[数据增强错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-dataaugmentation)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1021000000 | Insufficient system resources or memory access exception. |
@@ -621,7 +667,8 @@ function WindowStageDestroy(): void {
  
   
 
-#### createRagSession
+## createRagSession
+
 
 **支持设备：** PC/2in1
 
@@ -637,6 +684,7 @@ createRagSession(context: common.Context, config: Config): Promise&lt;RagSession
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 表示当前应用上下文。 |
@@ -645,6 +693,7 @@ createRagSession(context: common.Context, config: Config): Promise&lt;RagSession
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;RagSession&gt; | Promise对象，返回RagSession对象。 |
@@ -654,6 +703,7 @@ createRagSession(context: common.Context, config: Config): Promise&lt;RagSession
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[数据增强错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-dataaugmentation)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1021000000 | Insufficient system resources or memory access exception. |
@@ -714,7 +764,8 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### feedback
+## feedback
+
 
 **支持设备：** PC/2in1
 
@@ -730,6 +781,7 @@ feedback(context: common.Context, feedbackInfo: FeedbackInfo): Promise&lt;void&g
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 表示当前应用上下文。 |
@@ -738,6 +790,7 @@ feedback(context: common.Context, feedbackInfo: FeedbackInfo): Promise&lt;void&g
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -747,6 +800,7 @@ feedback(context: common.Context, feedbackInfo: FeedbackInfo): Promise&lt;void&g
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[数据增强错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-dataaugmentation)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1021000000 | Insufficient system resources or memory access exception. |

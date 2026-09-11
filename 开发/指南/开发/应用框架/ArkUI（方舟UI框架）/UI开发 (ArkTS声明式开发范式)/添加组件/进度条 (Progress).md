@@ -1,13 +1,13 @@
 # 进度条 (Progress)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-components-progress-indicator
 
 Progress是进度条显示组件，显示内容通常为目标操作的当前进度。具体用法请参考[Progress](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-progress)。
 
 
-#### 创建进度条
+## 创建进度条
 
 Progress通过调用接口来创建，接口调用方式如下：
 
@@ -27,7 +27,7 @@ Progress({ value: 24, total: 100, type: ProgressType.Linear }) // 创建一个�
 
 
 
-#### 设置进度条样式
+## 设置进度条样式
 
 Progress有5种可选类型，通过[ProgressType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-progress#progresstype8枚举说明)可以设置进度条样式。ProgressType类型包括：ProgressType.Linear（线性样式）、 ProgressType.Ring（环形无刻度样式）、ProgressType.ScaleRing（环形有刻度样式）、ProgressType.Eclipse（圆形样式）和ProgressType.Capsule（胶囊样式）。
 
@@ -55,7 +55,7 @@ Progress({ value: 40, total: 150, type: ProgressType.Ring }).width(100).height(1
 // 从左往右，2号环形进度条
 Progress({ value: 40, total: 150, type: ProgressType.Ring }).width(100).height(100)
   .color(Color.Grey)    // 进度条前景色为灰色
-  .style({ strokeWidth: 15})    // 设置strokeWidth进度条宽度为15.0vp
+  .style({ strokeWidth: 15})    // 设置strokeWidth进度条宽度为15vp
 ```
 
 ![](assets/进度条%20(Progress)/file-20260514130635064-3.png)
@@ -69,10 +69,10 @@ Progress({ value: 20, total: 150, type: ProgressType.ScaleRing }).width(100).hei
   .style({ scaleCount: 20, scaleWidth: 5 })    // 设置环形有刻度进度条总刻度数为20，刻度宽度为5vp
 Progress({ value: 20, total: 150, type: ProgressType.ScaleRing }).width(100).height(100)
   .backgroundColor(Color.Black)
-  .style({ strokeWidth: 15, scaleCount: 20, scaleWidth: 5 })    // 设置环形有刻度进度条宽度15，总刻度数为20，刻度宽度为5vp
+  .style({ strokeWidth: 15, scaleCount: 20, scaleWidth: 5 })    // 设置环形有刻度进度条宽度15vp，总刻度数为20，刻度宽度为5vp
 Progress({ value: 20, total: 150, type: ProgressType.ScaleRing }).width(100).height(100)
   .backgroundColor(Color.Black)
-  .style({ strokeWidth: 15, scaleCount: 20, scaleWidth: 3 })    // 设置环形有刻度进度条宽度15，总刻度数为20，刻度宽度为3vp
+  .style({ strokeWidth: 15, scaleCount: 20, scaleWidth: 3 })    // 设置环形有刻度进度条宽度15vp，总刻度数为20，刻度宽度为3vp
 ```
 
 ![](assets/进度条%20(Progress)/file-20260514130635064-4.png)
@@ -103,13 +103,13 @@ Progress({ value: 20, total: 150, type: ProgressType.Capsule }).width(50).height
 Progress({ value: 50, total: 150, type: ProgressType.Capsule }).width(50).height(100).color(Color.Blue).backgroundColor(Color.Black)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/eMPDkgRXQVi02zist9cASg/zh-cn_image_0000002704272269.png?HW-CC-KV=V1&HW-CC-Date=20260813T095713Z&HW-CC-Expire=86400&HW-CC-Sign=CC5A5757458D2A6086DDF5DEAB0D2C3665F0FD73176FADD0F9AB13B5195956DF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/w8uR2bILRzmNftn4gR4VLw/zh-cn_image_0000002747210401.png?HW-CC-KV=V1&HW-CC-Date=20260911T072458Z&HW-CC-Expire=86400&HW-CC-Sign=43D10F157F4B691455914D5FA724E8C9200AB6B02B5087F9C52FD527DE32243B)
 
 
 
 
 
-#### 场景示例
+## 场景示例
 
 更新当前进度值，如应用安装进度条，可通过点击Button增加progressValue，value属性将progressValue设置给Progress组件，进度条组件即会触发刷新，更新当前进度。
 
@@ -121,7 +121,7 @@ struct ProgressCase1 {
   build() {
     Column() {
       Column() {
-        Progress({value:0, total:100, type:ProgressType.Capsule}).width(200).height(50).value(this.progressValue)
+        Progress({value:this.progressValue, total:100, type:ProgressType.Capsule}).width(200).height(50)
         Row().width('100%').height(5)
         // 请将$r('app.string.progress_add')替换为实际资源文件，在本示例中该资源文件的value值为"进度条+5"
         Button($r('app.string.progress_add'))
@@ -138,4 +138,4 @@ struct ProgressCase1 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/w8tgB-dJRTmqFh1zl2qxWA/zh-cn_image_0000002674472470.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095713Z&HW-CC-Expire=86400&HW-CC-Sign=85C4D47F2899ECF52004DBCC7706006E56218E2A38F92B54DDC3CDD4657B1F2E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/KFLz-ONYTA6K1dK68HKNxQ/zh-cn_image_0000002717770466.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072458Z&HW-CC-Expire=86400&HW-CC-Sign=55197F8868EC50475502D0B80726EB6D52DAF008167D4A048353BBA3169D397B)

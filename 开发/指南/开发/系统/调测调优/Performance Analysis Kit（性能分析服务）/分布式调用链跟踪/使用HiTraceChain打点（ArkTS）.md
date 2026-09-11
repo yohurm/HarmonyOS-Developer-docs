@@ -1,12 +1,13 @@
 # 使用HiTraceChain打点（ArkTS）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hitracechain-guidelines-arkts
 
-#### 接口说明
+## 接口说明
 
 分布式跟踪接口由HiTraceChain模块提供，详细API请参考[@ohos.hiTraceChain (分布式跟踪)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hitracechain)。
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -24,7 +25,7 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 
 HiTraceChain在ArkTS中的使用方法参考以下示例，开发者可参考[约束与限制](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hitracechain-intro#约束与限制)，了解常见的支持与不支持HiTraceChain自动传递的机制。
 1. 在DevEco Studio中新建工程，选择“Empty Ability”，工程的目录结构如下：

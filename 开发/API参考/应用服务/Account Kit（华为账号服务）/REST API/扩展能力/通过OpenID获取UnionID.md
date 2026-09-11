@@ -1,10 +1,11 @@
 # 通过OpenID获取UnionID
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-api-get-unionid
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/Ir5YHVRmRY-FMVKmxGyTFg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071727Z&HW-CC-Expire=86400&HW-CC-Sign=B9B7169FF9CA36149E1742300065A94BA51864C20B9C3195F98DABE66B75583C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/bAMK96W9S1KF9wwPGnBQpQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072356Z&HW-CC-Expire=86400&HW-CC-Sign=B235A78A20B37106A7BA895AF795C1C5F726AF8CA881AF80B432AEA7E9E2CAEB)
 
 
 为了更安全的网络访问，请务必使用TLS1.2协议及规定内的加密套件。若使用协议是TLS1.0、TLS1.1或规定外的加密套件，可能无法正常访问华为账号服务。
@@ -14,19 +15,28 @@
 
 
 
-#### 功能介绍
+## 功能介绍
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 应用服务端向华为账号服务器调用该接口，通过用户的OpenID获取UnionID信息。
 
 
 
-#### 场景描述
+## 场景描述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 在开发HarmonyOS应用时，您需要考虑同一用户在非HarmonyOS应用和HarmonyOS应用的用户数据是否互通。如果您之前使用OpenID来关联用户数据，我们建议将用户数据关系切换成UnionID，以确保用户使用HarmonyOS应用后可以继承老版本的用户数据。
 
 
 
-#### 使用约束
+## 使用约束
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
  - 需确保调用端网络正常。
  - 仅能获取自身应用的用户OpenID对应的UnionID。
@@ -34,7 +44,10 @@
 
 
 
-#### 接口原型
+## 接口原型
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
  - **承载协议：** HTTPS POST
  - **接口方向：** 开发者服务器->华为账号服务器
@@ -48,11 +61,18 @@
 
 
 
-#### 请求参数
+## 请求参数
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 
 
-#### Request Header
+### Request Header
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
@@ -61,7 +81,11 @@
 
 
 
-#### Request Body
+### Request Body
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
@@ -71,7 +95,10 @@
 
 
 
-#### 请求示例
+## 请求示例
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 请通过POST方式调用，示例如下：
 
@@ -85,11 +112,18 @@ open_id=<open_id>&access_token=<access_token>
 
 
 
-#### 响应参数
+## 响应参数
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 
 
-#### Response Header
+### Response Header
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
@@ -98,9 +132,13 @@ open_id=<open_id>&access_token=<access_token>
 
 
 
-#### Response Body
+### Response Body
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 调用成功时，响应消息体返回如下：
+
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
@@ -108,6 +146,7 @@ open_id=<open_id>&access_token=<access_token>
 
 
 调用失败时，响应消息体返回如下：
+
 
 | 参数 | 参数位置 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
@@ -117,11 +156,17 @@ open_id=<open_id>&access_token=<access_token>
 
 
 
-#### 响应示例
+## 响应示例
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 
 
-#### 请求成功时
+### 请求成功时
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```json
 HTTP/1.1 200 OK
@@ -132,7 +177,10 @@ Content-Type: text/plain;charset=utf-8
 
 
 
-#### 请求失败时
+### 请求失败时
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```json
 HTTP/1.1 200 OK
@@ -146,7 +194,10 @@ NSP_STATUS: 102
 
 
 
-#### 示例代码
+## 示例代码
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Java示例代码如下，运行前需要进行[示例代码环境配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-api-common#示例代码环境配置)（请将此示例代码与工具类CallUtils放于同一路径下，如不在同一路径，请手动添加import）
 
@@ -191,7 +242,11 @@ public class OpenIdToUnionIdDemo {
 
 
 
-#### 错误码
+## 错误码
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | HTTP响应码 | 描述 | 解决方法 |
 | --- | --- | --- |
@@ -209,6 +264,7 @@ public class OpenIdToUnionIdDemo {
 
 > [!NOTE]
 > Response Header中的NSP_STATUS字段，在处理成功时不会返回。
+
 
 
 | NSP_STATUS | 描述 | 解决方法 |

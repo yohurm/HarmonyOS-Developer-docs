@@ -1,13 +1,14 @@
 # oh_sensor.h
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-sensor-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明传感器服务的API，包括获取传感器信息和订阅/取消订阅传感器数据。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | Sensor_Result OH_Sensor_GetInfos(Sensor_Info **infos, uint32_t *count) | 获取设备上所有传感器的信息。使用场景：应用启动时查询设备支持的传感器列表，根据传感器能力展示或隐藏相关功能；选择合适的传感器进行订阅。调用成功后，通过指针infos返回传感器信息数组，通过指针count返回传感器数量。 |
@@ -42,15 +46,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Sensor_GetInfos()
+### OH_Sensor_GetInfos()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Sensor_Result OH_Sensor_GetInfos(Sensor_Info **infos, uint32_t *count)
@@ -64,6 +70,7 @@ Sensor_Result OH_Sensor_GetInfos(Sensor_Info **infos, uint32_t *count)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Sensor_Info **infos | 输出参数，双指针指向设备上所有传感器的信息。调用者不需要预先分配内存，函数内部会分配内存，调用者需要在使用完毕后调用相应的释放函数释放内存。调用后，*infos指向传感器信息数组，请参考Sensor_Info。该参数不应为NULL。 |
@@ -72,6 +79,7 @@ Sensor_Result OH_Sensor_GetInfos(Sensor_Info **infos, uint32_t *count)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Sensor_Result | 返回Sensor_Result枚举值。主要枚举值如下： SENSOR_SUCCESS：操作成功，表示成功获取传感器信息。 SENSOR_PARAMETER_ERROR：参数检查失败。例如，传入的infos或count参数为NULL指针。 SENSOR_SERVICE_EXCEPTION：传感器服务异常。例如，传感器服务未启动或发生内部错误。 其他可能的错误代码请参考Sensor_Result。 |
@@ -79,9 +87,10 @@ Sensor_Result OH_Sensor_GetInfos(Sensor_Info **infos, uint32_t *count)
  
   
 
-#### OH_Sensor_Subscribe()
+### OH_Sensor_Subscribe()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Sensor_Result OH_Sensor_Subscribe(const Sensor_SubscriptionId *id, const Sensor_SubscriptionAttribute *attribute, const Sensor_Subscriber *subscriber)
@@ -99,6 +108,7 @@ Sensor_Result OH_Sensor_Subscribe(const Sensor_SubscriptionId *id, const Sensor_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Sensor_SubscriptionId *id | 输入参数，指向传感器订阅ID的指针。这是要订阅的传感器类型标识，不同的传感器类型对应不同的id值，如加速度传感器、陀螺仪传感器、心率传感器等，具体取值请参考Sensor_SubscriptionId。调用者需要确保id指向的数据有效。该参数不应为NULL。 |
@@ -108,6 +118,7 @@ Sensor_Result OH_Sensor_Subscribe(const Sensor_SubscriptionId *id, const Sensor_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Sensor_Result | 返回Sensor_Result枚举值。主要枚举值如下： SENSOR_SUCCESS：操作成功，表示成功订阅传感器数据。 SENSOR_PERMISSION_DENIED：权限验证失败。缺少订阅传感器所需权限时返回此错误，请参考函数描述部分了解不同传感器所需的权限，并按照要求申请相应权限后再试。 SENSOR_PARAMETER_ERROR：参数检查失败。例如，传入的id、attribute或subscriber参数为NULL指针。 SENSOR_SERVICE_EXCEPTION：传感器服务异常。例如，传感器服务未启动或发生内部错误。 其他可能的错误代码请参考Sensor_Result。 |
@@ -115,9 +126,10 @@ Sensor_Result OH_Sensor_Subscribe(const Sensor_SubscriptionId *id, const Sensor_
  
   
 
-#### OH_Sensor_Unsubscribe()
+### OH_Sensor_Unsubscribe()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Sensor_Result OH_Sensor_Unsubscribe(const Sensor_SubscriptionId *id, const Sensor_Subscriber *subscriber)
@@ -135,6 +147,7 @@ Sensor_Result OH_Sensor_Unsubscribe(const Sensor_SubscriptionId *id, const Senso
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Sensor_SubscriptionId *id | 输入参数，指向传感器订阅ID的指针。这是要取消的订阅ID，必须与之前调用OH_Sensor_Subscribe时使用的订阅ID一致，否则可能返回SENSOR_PARAMETER_ERROR。不同的传感器类型对应不同的id值，如加速度传感器、陀螺仪传感器、心率传感器等，具体取值请参考Sensor_SubscriptionId。该参数不应为NULL。 |
@@ -143,6 +156,7 @@ Sensor_Result OH_Sensor_Unsubscribe(const Sensor_SubscriptionId *id, const Senso
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Sensor_Result | 返回Sensor_Result枚举值。主要枚举值如下： SENSOR_SUCCESS：操作成功，表示成功取消订阅传感器数据。 SENSOR_PERMISSION_DENIED：权限验证失败。缺少取消订阅传感器所需权限时返回此错误，请参考函数描述部分了解不同传感器所需的权限，并按照要求申请相应权限后再试。 SENSOR_PARAMETER_ERROR：参数检查失败。例如，传入的id或subscriber参数为NULL指针。 SENSOR_SERVICE_EXCEPTION：传感器服务异常。例如，传感器服务未启动或发生内部错误。 其他可能的错误代码请参考Sensor_Result。 |

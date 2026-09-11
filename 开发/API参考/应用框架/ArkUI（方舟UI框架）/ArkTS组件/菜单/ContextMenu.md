@@ -1,9 +1,9 @@
 # ContextMenu
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-menu
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 在页面范围内关闭通过[bindContextMenu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-menu#bindcontextmenu12)属性绑定的菜单。
  
@@ -12,9 +12,10 @@
 
   
 
-#### ContextMenu.close(deprecated)
+## ContextMenu.close(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static close()
  
@@ -30,9 +31,10 @@ static close()
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例演示ContextMenu.close的使用方法，在拖拽开始时关闭通过bindContextMenu绑定的菜单。
  
@@ -80,4 +82,4 @@ struct Index {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/oFD0-QvZRaGtbUQp2KnmDw/zh-cn_image_0000002704274791.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095449Z&HW-CC-Expire=86400&HW-CC-Sign=B4E4734ECDBE0492A8925A3CFA850D65C8684CD57E08745D367618D9920700E6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/_1U85MfqRCClTrx6SGaVaA/zh-cn_image_0000002717613042.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=236A7B0186BFAF9A7B2D57A8064355CC873045536F81C40ACB4A35AA1D863123)

@@ -1,18 +1,19 @@
 # VPN错误码
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-vpn
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!TIP]
 > 以下仅介绍本模块特有错误码，通用错误码请参考 通用错误码 说明文档。
 
 
 
-#### 2200001 非法参数值
+## 2200001 非法参数值
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -32,7 +33,8 @@ Invalid parameter value.
 
 
 
-#### 2200002 连接服务失败
+## 2200002 连接服务失败
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
@@ -54,9 +56,10 @@ Failed to connect to the service.
 
 
 
-#### 2200003 系统内部错误
+## 2200003 系统内部错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -67,22 +70,19 @@ System internal error.
 系统内部错误。
 
 **可能原因**
-
-1.内存异常。
-
-2.空指针。
+1. 内存异常。
+2. 空指针。
 
 **处理步骤**
-
-1.检查内存空间是否充足，清理内存后重试。
-
-2.系统异常，请稍后重试或重启设备。如果问题仍然存在，收集完整日志后联系技术支持获取帮助。
+1. 检查内存空间是否充足，清理内存后重试。
+2. 系统异常，请稍后重试或重启设备。如果问题仍然存在，收集完整日志后联系技术支持获取帮助。
 
 
 
-#### 2203001 VPN创建失败
+## 2203001 VPN创建失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -90,7 +90,7 @@ VPN creation denied, please check the user type.
 
 **错误描述**
 
-拒绝创建VPN，请检测当前用户的类型。
+拒绝创建VPN，请检查当前用户的类型。
 
 **可能原因**
 
@@ -102,9 +102,10 @@ VPN creation denied, please check the user type.
 
 
 
-#### 2203002 VPN已存在
+## 2203002 VPN已存在
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -124,9 +125,10 @@ VPN已经被创建。
 
 
 
-#### 2203004 无效描述符
+## 2203004 无效描述符
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -146,9 +148,10 @@ tcp链路建立失败。
 
 
 
-#### 19900001 无效参数
+## 19900001 无效参数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -168,9 +171,10 @@ Invalid parameter value.
 
 
 
-#### 19900002 系统内部错误
+## 19900002 系统内部错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -185,5 +189,5 @@ VPN系统内部错误。
 空指针、内存分配异常、IPC通信异常等。
 
 **处理步骤**
-
-检查VPN系统服务是否正常。
+1. 检查内存空间是否充足，清理内存后重试。
+2. 检查VPN系统服务是否正常。如果问题仍然存在，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。

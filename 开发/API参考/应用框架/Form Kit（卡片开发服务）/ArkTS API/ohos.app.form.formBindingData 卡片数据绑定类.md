@@ -1,20 +1,21 @@
 # @ohos.app.form.formBindingData (卡片数据绑定类)
 
-更新时间：2026-07-24 10:38:53
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-form-formbindingdata
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-卡片数据绑定模块提供卡片数据绑定的能力。包括FormBindingData对象的创建、相关信息的描述。
+卡片数据绑定模块提供卡片数据绑定的能力，支持创建FormBindingData对象并设置卡片展示数据。适用于卡片数据更新、图片数据传递等场景，能够帮助开发者便捷地管理卡片展示内容，提升卡片数据管理的效率。
 
 > [!NOTE]
 > 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { formBindingData } from '@kit.FormKit';
@@ -22,9 +23,10 @@ import { formBindingData } from '@kit.FormKit';
 
 
 
-#### ProxyData10+
+## ProxyData10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 卡片代理刷新订阅数据信息。
 
@@ -34,35 +36,39 @@ import { formBindingData } from '@kit.FormKit';
 
 **系统能力：** SystemCapability.Ability.Form
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | key | string | 否 | 否 | 卡片代理刷新的订阅标识，与数据发布者保持一致。 |
-| subscriberId | string | 否 | 是 | 卡片代理刷新的订阅者标识，默认值为当前卡片的formId。 |
+| subscriberId | string | 否 | 是 | 卡片代理刷新的订阅条件，用于指定订阅的消息过滤条件。设置后会根据subscriberId匹配相应的代理刷新消息，默认值为当前卡片的formId。当需要指定特定的订阅条件时传入此参数，不传入时默认值为当前卡片的formId。 |
 
 
 
 
-#### FormBindingData
+## FormBindingData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-FormBindingData相关描述。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+FormBindingData对象的属性定义。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Ability.Form
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | data | Object | 否 | 否 | 卡片要展示的数据。可以是包含若干键值对的Object或者JSON格式的字符串。 |
-| proxies10+ | Array&lt;ProxyData&gt; | 否 | 是 | 卡片代理刷新的订阅信息，默认为空数组。 模型约束： 此接口仅可在Stage模型下使用。 |
+| proxies10+ | Array&lt;ProxyData&gt; | 否 | 是 | 卡片代理刷新的订阅信息，配置后会订阅代理刷新消息。默认为空数组，表示不订阅代理刷新消息。当需要使用卡片代理刷新功能时传入此参数，不传入时默认为空数组（不使用代理刷新）。 模型约束： 此接口仅可在Stage模型下使用。 |
 
 
 
 
-#### formBindingData.createFormBindingData
+## formBindingData.createFormBindingData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createFormBindingData(obj?: Object | string): FormBindingData
 
@@ -74,21 +80,24 @@ createFormBindingData(obj?: Object | string): FormBindingData
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| obj | Object \| string | 否 | 卡片要展示的数据。可以是包含若干键值对的Object或者JSON格式的字符串。其中图片数据以'formImages'作为标识，内容为图片标识与图片文件描述符的键值对{'formImages': {'key1': fd1, 'key2': fd2}}。 说明： 在卡片刷新过程中，卡片UI通过@LocalStorageProp接收卡片数据时，FormBindingData对象会序列化，即卡片数据会转换成string类型。从API version 20开始，如果卡片刷新的数据通过共享内存更新，刷新数据总大小不超过10MB，刷新图片数量不超过20张，API version 19及之前的版本，图片文件数量上限为5张，每张限制内存2MB，超出限制的图片会显示异常。 |
+| obj | Object \| string | 否 | 卡片要展示的数据，用于绑定卡片UI显示的内容。当需要向卡片传递数据时传入此参数，可以是包含若干键值对的Object或者JSON格式的字符串。不传入时创建一个空的FormBindingData对象，卡片将显示默认内容。其中图片数据以'formImages'作为标识，内容为图片标识与图片文件描述符的键值对{'formImages': {'key1': fd1, 'key2': fd2}}。 说明： 在卡片刷新过程中，卡片UI通过@LocalStorageProp接收卡片数据时，FormBindingData对象会序列化，即卡片数据会转换成string类型。从API version 20开始，如果卡片刷新的数据通过共享内存更新，刷新数据总大小不超过10MB，刷新图片数量不超过20张，API version 19及之前的版本，图片文件数量上限为5张，每张限制内存2MB，超出限制的图片会显示异常。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| FormBindingData | 根据传入数据创建的FormBindingData对象。 |
+| FormBindingData | 根据传入数据创建的FormBindingData对象，用于卡片数据绑定，向卡片提供要展示的数据。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

@@ -1,20 +1,21 @@
 # ToolBar
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-toolbar
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
-工具栏组件，用于展示针对当前界面内容的操作选项，在界面底部显示。适用于需要为用户提供快捷操作入口的场景，如编辑页面的复制、粘贴、分享等操作。底部最多显示5个入口，超过则收纳入“更多”子项中，在最右侧显示。
+工具栏组件，用于展示针对当前界面内容的操作选项，在界面底部显示。底部最多显示5个入口，超过则收纳入“更多”子项中，在最右侧显示。
 
 > [!NOTE]
 > 该组件从API version 10开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 该组件仅可在Stage模型下使用。 如果ToolBar设置 通用属性 和 通用事件 ，编译工具链会额外生成节点__Common__，并将通用属性或通用事件挂载在__Common__上，而不是直接应用到ToolBar本身。这可能导致开发者设置的通用属性或通用事件不生效或不符合预期，因此，不建议ToolBar设置通用属性和通用事件。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 import { SymbolGlyphModifier, DividerModifier, ToolBar, ToolBarOptions, ToolBarModifier, ItemState, LengthMetrics } from '@kit.ArkUI';
@@ -22,17 +23,19 @@ import { SymbolGlyphModifier, DividerModifier, ToolBar, ToolBarOptions, ToolBarM
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 无
 
 
 
-#### ToolBar
+## ToolBar
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ToolBar({toolBarList: ToolBarOptions, activateIndex?: number, controller: TabsController, dividerModifier?: DividerModifier, toolBarModifier?: ToolBarModifier})
 
@@ -44,20 +47,22 @@ ToolBar({toolBarList: ToolBarOptions, activateIndex?: number, controller: TabsCo
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
+
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | toolBarList | ToolBarOptions | 是 | @ObjectLink | 工具栏列表。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
-| activateIndex | number | 否 | @Prop | 激活态的子项索引。 默认值：-1，表示没有激活态的子项。设置小于-1的值时按没有激活项处理。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
-| controller | TabsController | 是 | - | 工具栏控制器，用于关联Tabs组件页面切换，不支持控制工具栏子项。 说明： 根据自定义组件成员属性访问限定符使用限制，该接口属于常规成员变量，可以传参进行初始化；也可以不传。不传时，使用组件内预设值进行初始化，组件内预设值为：new TabsController()。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| activateIndex | number | 否 | @Prop | 激活态的子项。 取值范围：大于等于-1。 默认值：-1，没有激活态的子项。若设置数值小于-1，按没有激活项处理。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| controller | TabsController | 是 | - | 工具栏控制器，不支持控制工具栏子项。 说明： 根据自定义组件成员属性访问限定符使用限制，该接口属于常规成员变量，可以传参进行初始化；也可以不传。不传时，使用组件内预设值进行初始化，组件内预设值为：new TabsController()。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | dividerModifier13+ | DividerModifier | 否 | @Prop | 工具栏头部分割线属性，可设置分割线高度、颜色等。 默认值：系统默认值。 元服务API： 从API version 13开始，该接口支持在元服务中使用。 |
 | toolBarModifier13+ | ToolBarModifier | 否 | @Prop | 工具栏属性，可设置工具栏高度、背景色、内边距（仅在工具栏子项数量小于5时生效）、是否显示按压态。 默认值： 工具栏高度：56vp 背景色：ohos_id_toolbar_bg 内边距：24vp 显示按压态。 元服务API： 从API version 13开始，该接口支持在元服务中使用。 |
 
 
 
 
-#### ToolBarOptions
+## ToolBarOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 继承于 Array<[ToolBarOption](#toolbaroption)>。
 
@@ -71,9 +76,10 @@ ToolBar({toolBarList: ToolBarOptions, activateIndex?: number, controller: TabsCo
 
 
 
-#### ToolBarOption
+## ToolBarOption
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 定义工具栏的列表内容和属性。
 
@@ -83,41 +89,44 @@ ToolBar({toolBarList: ToolBarOptions, activateIndex?: number, controller: TabsCo
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | content | ResourceStr | 否 | 否 | 工具栏子项的文本。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
-| action | () => void | 否 | 是 | 工具栏子项点击事件。不传入时点击子项不会触发任何操作。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
-| icon | Resource | 否 | 是 | 工具栏子项的图标。 默认不设置或者设置为undefined，图标不显示。 当设置了toolBarSymbolOptions属性时，icon属性将不生效。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| action | () => void | 否 | 是 | 工具栏子项点击事件。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| icon | Resource | 否 | 是 | 工具栏子项的图标。 默认不设置或者设置为undefined，图标不显示。 toolBarSymbolOptions有传入参数时，icon不生效。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | state | ItemState | 否 | 是 | 工具栏子项的状态。 默认为ItemState.ENABLE。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
-| iconColor13+ | ResourceColor | 否 | 是 | 工具栏子项的图标填充颜色。 默认值为\$r('sys.color.icon_primary')。 当设置了toolBarSymbolOptions属性时，该参数不生效。 元服务API： 从API version 13开始，该接口支持在元服务中使用。 |
-| activatedIconColor13+ | ResourceColor | 否 | 是 | 工具栏子项激活态的图标填充颜色。 默认值为\$r('sys.color.icon_emphasize')。 当设置了toolBarSymbolOptions属性时，该参数不生效。 元服务API： 从API version 13开始，该接口支持在元服务中使用。 |
+| iconColor13+ | ResourceColor | 否 | 是 | 工具栏子项的图标填充颜色。 默认值为\$r('sys.color.icon_primary')。 元服务API： 从API version 13开始，该接口支持在元服务中使用。 |
+| activatedIconColor13+ | ResourceColor | 否 | 是 | 工具栏子项激活态的图标填充颜色。 默认值为\$r('sys.color.icon_emphasize')。 元服务API： 从API version 13开始，该接口支持在元服务中使用。 |
 | textColor13+ | ResourceColor | 否 | 是 | 工具栏子项的文本颜色。 默认值为\$r('sys.color.font_primary')。 元服务API： 从API version 13开始，该接口支持在元服务中使用。 |
 | activatedTextColor13+ | ResourceColor | 否 | 是 | 工具栏子项激活态的文本颜色。 默认值为\$r('sys.color.font_emphasize')。 元服务API： 从API version 13开始，该接口支持在元服务中使用。 |
-| toolBarSymbolOptions13+ | ToolBarSymbolGlyphOptions | 否 | 是 | 工具栏子项的图标属性，symbol类型。设置此参数后，icon属性将不生效。 元服务API： 从API version 13开始，该接口支持在元服务中使用。 |
-| accessibilityText18+ | ResourceStr | 否 | 是 | 工具栏子项的无障碍文本属性。当组件不包含文本属性时，屏幕朗读选中此组件时不播报。开发人员可为不包含文字信息的组件设置无障碍文本，使屏幕朗读选中此组件时播报该文本内容。 默认值为当前项content属性内容。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
-| accessibilityDescription18+ | ResourceStr | 否 | 是 | 工具栏子项的无障碍描述。用于向用户详细解释当前组件的功能和操作后果，特别是当这些信息无法仅从组件文本直接获知时。组件被选中时，将依次播报文本属性和无障碍说明属性的内容。 默认值为“单指双击即可执行”。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
-| accessibilityLevel18+ | string | 否 | 是 | 工具栏子项无障碍重要性。用于控制当前项是否可被无障碍辅助服务所识别。 支持的值为： "auto"：当前组件会转换为"yes"。 "yes"：当前组件可被无障碍辅助服务所识别。 "no"：当前组件不可被无障碍辅助服务所识别。 "no-hide-descendants"：当前组件及其所有子组件不可被无障碍辅助服务所识别。 默认值："auto" 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
+| toolBarSymbolOptions13+ | ToolBarSymbolGlyphOptions | 否 | 是 | 工具栏子项的图标属性，symbol类型。 元服务API： 从API version 13开始，该接口支持在元服务中使用。 |
+| accessibilityText18+ | ResourceStr | 否 | 是 | 工具栏子项的无障碍文本属性。当组件不包含文本属性时，屏幕朗读选中此组件时不播报，使用者无法清楚地知道当前选中了什么组件。为了解决此场景，开发人员可为不包含文字信息的组件设置无障碍文本，当屏幕朗读选中此组件时播报无障碍文本的内容，帮助屏幕朗读的使用者清楚地知道自己选中了什么组件。 默认值为当前项content属性内容。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
+| accessibilityDescription18+ | ResourceStr | 否 | 是 | 工具栏子项的无障碍描述。此描述用于向用户详细解释当前组件，开发人员应为组件的这一属性提供较为详尽的文本说明，以协助用户理解即将执行的操作及其可能产生的后果。特别是当这些后果无法仅从组件的属性和无障碍文本中直接获知时。如果组件同时具备文本属性和无障碍说明属性，当组件被选中时，系统将首先播报组件的文本属性，随后播报无障碍说明属性的内容。 默认值为“单指双击即可执行”。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
+| accessibilityLevel18+ | string | 否 | 是 | 工具栏子项无障碍重要性。用于控制当前项是否可被无障碍辅助服务所识别。 支持的值为： "auto"：当前组件会转换"yes"。 "yes"：当前组件可被无障碍辅助服务所识别。 "no"：当前组件不可被无障碍辅助服务所识别。 "no-hide-descendants"：当前组件及其所有子组件不可被无障碍辅助服务所识别。 默认值："auto" 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 
 
 
 
-#### ToolBarModifier13+
+## ToolBarModifier13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-ToolBarModifier提供设置工具栏高度(height)、背景色(backgroundColor)、左右内边距（padding，仅在子项数量小于5个时生效）、是否显示按压态（stateEffect）的方法。
+**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+ToolBarModifier提供设置工具栏高度(height)、背景色(backgroundColor)、左右内边距（padding，仅在item小于5个时生效）、是否显示按压态（stateEffect）的方法。
 
 **元服务API：** 从API version 13开始，该接口支持在元服务中使用。
 
 
 
-#### backgroundColor13+
+### backgroundColor13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 backgroundColor(backgroundColor: ResourceColor): ToolBarModifier
 
-设置工具栏背景色的接口。
+自定义绘制工具栏背景色的接口，若重载该方法则可进行工具栏背景色的自定义绘制。
 
 **元服务API：** 从API version 13开始，该接口支持在元服务中使用。
 
@@ -126,6 +135,7 @@ backgroundColor(backgroundColor: ResourceColor): ToolBarModifier
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -134,20 +144,22 @@ backgroundColor(backgroundColor: ResourceColor): ToolBarModifier
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| ToolBarModifier | 返回当前的ToolBarModifier对象，支持链式调用。 |
+| ToolBarModifier | 设置backgroundColor后的ToolBarModifier对象。 |
 
 
 
 
-#### padding13+
+### padding13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 padding(padding: LengthMetrics): ToolBarModifier
 
-设置工具栏左右内边距的接口。
+自定义绘制工具栏左右内边距的接口，若重载该方法则可进行工具栏左右内边距的自定义绘制。
 
 **元服务API：** 从API version 13开始，该接口支持在元服务中使用。
 
@@ -157,27 +169,30 @@ padding(padding: LengthMetrics): ToolBarModifier
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| padding | LengthMetrics | 是 | 工具栏左右内边距，仅在子项数量小于5个时生效。 工具栏默认在子项数量小于5个时padding为24vp，大于等于5个时为0vp。 |
+| padding | LengthMetrics | 是 | 工具栏左右内边距，仅在item小于5个时生效。 工具栏默认在item小于5个时padding为24vp，大于等于5个时为0。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| ToolBarModifier | 返回当前的ToolBarModifier对象，支持链式调用。 |
+| ToolBarModifier | 设置padding后的ToolBarModifier对象。 |
 
 
 
 
-#### height13+
+### height13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 height(height: LengthMetrics): ToolBarModifier
 
-设置工具栏高度的接口，此高度不包含分割线高度。
+自定义绘制工具栏高度的接口，若重载该方法则可进行工具栏高度的自定义绘制，此高度不包含分割线高度。
 
 **元服务API：** 从API version 13开始，该接口支持在元服务中使用。
 
@@ -186,6 +201,7 @@ height(height: LengthMetrics): ToolBarModifier
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -194,16 +210,18 @@ height(height: LengthMetrics): ToolBarModifier
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| ToolBarModifier | 返回当前的ToolBarModifier对象，支持链式调用。 |
+| ToolBarModifier | 设置height后的ToolBarModifier对象。 |
 
 
 
 
-#### stateEffect13+
+### stateEffect13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 stateEffect(stateEffect: boolean): ToolBarModifier
 
@@ -217,6 +235,7 @@ stateEffect(stateEffect: boolean): ToolBarModifier
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | stateEffect | boolean | 是 | 工具栏是否显示按压态效果。 true为显示按压态效果，false为移除按压态效果，默认为true。 |
@@ -224,16 +243,18 @@ stateEffect(stateEffect: boolean): ToolBarModifier
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| ToolBarModifier | 返回当前的ToolBarModifier对象，支持链式调用。 |
+| ToolBarModifier | 设置stateEffect后的ToolBarModifier对象。 |
 
 
 
 
-#### ItemState
+## ItemState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 定义工具栏子项的当前状态。
 
@@ -242,6 +263,7 @@ stateEffect(stateEffect: boolean): ToolBarModifier
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -252,9 +274,10 @@ stateEffect(stateEffect: boolean): ToolBarModifier
 
 
 
-#### ToolBarSymbolGlyphOptions13+
+## ToolBarSymbolGlyphOptions13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ToolBarSymbolGlyphOptions定义图标的属性。
 
@@ -264,6 +287,7 @@ ToolBarSymbolGlyphOptions定义图标的属性。
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | normal | SymbolGlyphModifier | 否 | 是 | 工具栏symbol图标普通态样式。 默认值：fontColor：\$r('sys.color.icon_primary')，fontSize：24vp。 |
@@ -272,21 +296,26 @@ ToolBarSymbolGlyphOptions定义图标的属性。
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 不支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)。
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 示例1（工具栏不同状态的默认效果）
+
+
+### 示例1（工具栏不同状态的默认效果）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例展示了工具栏子项state属性分别设置ENABLE、DISABLE、ACTIVATE状态的不同显示效果。
 
@@ -363,7 +392,10 @@ struct Index {
 
 
 
-#### 示例2（设置工具栏自定义样式）
+### 示例2（设置工具栏自定义样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 从API version 13开始，该示例通过设置属性ToolBarModifier自定义工具栏高度、背景色、按压效果等样式。
 
@@ -467,7 +499,10 @@ struct Index {
 
 
 
-#### 示例3（设置工具栏自定义播报）
+### 示例3（设置工具栏自定义播报）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 从API version 18开始，该示例通过设置工具栏子项属性accessibilityText、accessibilityDescription、accessibilityLevel自定义屏幕朗读播报文本。
 
@@ -544,4 +579,4 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/kRooLqifSLWI5c_VmaZLxQ/zh-cn_image_0000002656008962.png?HW-CC-KV=V1&HW-CC-Date=20260730T071520Z&HW-CC-Expire=86400&HW-CC-Sign=5535CB60F8F8A03DFE4635E34360435660934C2FE8994AB02A4817FACB79BAF4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/dGg8U9l_RTye9K474A93dg/zh-cn_image_0000002717613184.png?HW-CC-KV=V1&HW-CC-Date=20260911T073030Z&HW-CC-Expire=86400&HW-CC-Sign=CC4822F05686D4ABAED4954C8B85AFD420FBB9D24CA8349F9D91FCE4A4753DAF)

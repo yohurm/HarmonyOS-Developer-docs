@@ -1,9 +1,9 @@
 # @ohos.geoLocationManager (位置服务)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-geolocationmanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 位置服务提供GNSS定位、网络定位（蜂窝基站、WLAN、蓝牙定位技术）、地理编码、逆地理编码、国家码和地理围栏等基本功能。
 
@@ -14,17 +14,19 @@
 
 
 
-#### 申请权限
+## 申请权限
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 请参考[申请位置权限开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/location-permission-guidelines)。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { geoLocationManager } from '@kit.LocationKit';
@@ -32,13 +34,15 @@ import { geoLocationManager } from '@kit.LocationKit';
 
 
 
-#### ReverseGeoCodeRequest
+## ReverseGeoCodeRequest
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 逆地理编码请求参数。
 
 **系统能力**：SystemCapability.Location.Location.Geocoder
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -51,13 +55,15 @@ import { geoLocationManager } from '@kit.LocationKit';
 
 
 
-#### GeoCodeRequest
+## GeoCodeRequest
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 地理编码请求参数。
 
 **系统能力**：SystemCapability.Location.Location.Geocoder
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -73,13 +79,15 @@ import { geoLocationManager } from '@kit.LocationKit';
 
 
 
-#### GeoAddress
+## GeoAddress
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 地理编码地址信息。
 
 **系统能力**：SystemCapability.Location.Location.Geocoder
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -98,22 +106,24 @@ import { geoLocationManager } from '@kit.LocationKit';
 | premises | string | 否 | 是 | 表示门牌号信息。 |
 | postalCode | string | 否 | 是 | 表示邮政编码信息。 |
 | phoneNumber | string | 否 | 是 | 表示联系方式信息。 |
-| addressUrl | string | 否 | 是 | 表示位置信息附件的网址信息。 |
+| addressUrl | string | 否 | 是 | 表示位置信息附近的网址信息。 |
 | descriptions | Array&lt;string&gt; | 否 | 是 | 表示附加的描述信息。目前包含城市编码cityCode（Array下标为0）和区划编码adminCode（Array下标为1），例如["025","320114001"]。 |
 | descriptionsSize | number | 否 | 是 | 表示附加的描述信息数量。取值范围为大于等于0，推荐该值小于10。 |
 
 
 
 
-#### LocationRequest
+## LocationRequest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 位置信息请求参数。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Location.Location.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -126,15 +136,17 @@ import { geoLocationManager } from '@kit.LocationKit';
 
 
 
-#### CurrentLocationRequest
+## CurrentLocationRequest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 当前位置信息请求参数。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Location.Location.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -146,35 +158,37 @@ import { geoLocationManager } from '@kit.LocationKit';
 
 
 
-#### ContinuousLocationRequest12+
+## ContinuousLocationRequest12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 持续定位的请求参数。
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
 **系统能力**：SystemCapability.Location.Location.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| interval | number | 否 | 否 | 表示上报位置信息的时间间隔，单位是秒。默认值为1，取值范围为大于等于0。等于0时对位置上报时间间隔无限制。 |
-| locationScenario | UserActivityScenario \| PowerConsumptionScenario | 否 | 否 | 表示定位的场景信息。取值范围见UserActivityScenario和PowerConsumptionScenario的定义。 |
-| sportsType | SportsType | 否 | 是 | 表示运动模式。取值范围见SportsType定义。此参数仅在locationScenario设置为UserActivityScenario.SPORT时有效。默认值为0，表示该参数不生效。 起始版本： 26.0.0 |
+| interval | number | 否 | 否 | 表示上报位置信息的时间间隔，单位是秒。默认值为1，取值范围为大于等于0。等于0时对位置上报时间间隔无限制。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| locationScenario | UserActivityScenario \| PowerConsumptionScenario | 否 | 否 | 表示定位的场景信息。取值范围见UserActivityScenario和PowerConsumptionScenario的定义。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| sportsType | SportsType | 否 | 是 | 表示运动模式。取值范围见SportsType定义。此参数仅在locationScenario设置为UserActivityScenario.SPORT时有效。默认值为0，表示该参数不生效。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
 | needPoi19+ | boolean | 否 | 是 | 表示是否需要获取当前位置附近的POI信息。false代表不需要获取当前位置附近的POI信息，true代表需要获取当前位置附近的POI信息。不设置时，默认值为false。 该参数仅在精确位置功能场景（即同时授权了ohos.permission.APPROXIMATELY_LOCATION和ohos.permission.LOCATION 权限）下有效，模糊位置功能生效场景（即仅授权了ohos.permission.APPROXIMATELY_LOCATION 权限）下不返回POI信息。 元服务API： 从API version 19开始，该接口支持在元服务中使用。 |
 
 
 
 
-#### SingleLocationRequest12+
+## SingleLocationRequest12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 单次定位的请求参数。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Location.Location.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -185,13 +199,15 @@ import { geoLocationManager } from '@kit.LocationKit';
 
 
 
-#### SatelliteStatusInfo
+## SatelliteStatusInfo
+
 
 **支持设备：** Phone | Tablet | Wearable
 
 卫星状态信息。
 
 **系统能力**：SystemCapability.Location.Location.Gnss
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -207,13 +223,15 @@ import { geoLocationManager } from '@kit.LocationKit';
 
 
 
-#### CachedGnssLocationsRequest
+## CachedGnssLocationsRequest
+
 
 **支持设备：** Phone | Tablet | Wearable
 
 请求订阅GNSS缓存位置上报功能接口的配置参数。
 
 **系统能力**：SystemCapability.Location.Location.Gnss
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -223,13 +241,15 @@ import { geoLocationManager } from '@kit.LocationKit';
 
 
 
-#### Geofence
+## Geofence
+
 
 **支持设备：** Phone | Tablet
 
 GNSS围栏的配置参数。目前只支持圆形围栏。
 
 **系统能力**：SystemCapability.Location.Location.Geofence
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -242,13 +262,15 @@ GNSS围栏的配置参数。目前只支持圆形围栏。
 
 
 
-#### GeofenceRequest
+## GeofenceRequest
+
 
 **支持设备：** Phone | Tablet
 
 请求添加GNSS围栏消息中携带的参数，包括定位场景和围栏信息。
 
 **系统能力**：SystemCapability.Location.Location.Geofence
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -258,13 +280,15 @@ GNSS围栏的配置参数。目前只支持圆形围栏。
 
 
 
-#### LocationCommand
+## LocationCommand
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 扩展命令参数。
 
 **系统能力**：SystemCapability.Location.Location.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -274,13 +298,15 @@ GNSS围栏的配置参数。目前只支持圆形围栏。
 
 
 
-#### Location
+## Location
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 位置信息。
 
 **系统能力**：SystemCapability.Location.Location.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -298,21 +324,23 @@ GNSS围栏的配置参数。目前只支持圆形围栏。
 | altitudeAccuracy12+ | number | 否 | 是 | 表示高度信息的精度，单位米。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | speedAccuracy12+ | number | 否 | 是 | 表示速度信息的精度，单位米每秒。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | directionAccuracy12+ | number | 否 | 是 | 表示航向信息的精度。单位是“度”，取值范围为0到360。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| uncertaintyOfTimeSinceBoot12+ | number | 否 | 是 | 表示位置时间戳的不确定度。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| uncertaintyOfTimeSinceBoot12+ | number | 否 | 是 | 表示从开机到获取位置所经过的时间的不确定度。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | sourceType12+ | LocationSourceType | 否 | 是 | 表示定位结果的来源。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | poi19+ | PoiInfo | 否 | 是 | 表示当前位置附近的POI信息。 元服务API： 从API version 19开始，该接口支持在元服务中使用。 |
-| isFromMock | boolean | 否 | 是 | true：位置信息来自于位置模拟功能。 false：位置信息不是来自于位置模拟功能。 起始版本： 26.0.0 元服务API： 从API version 26.0.0开始，该接口支持在元服务中使用。 |
+| isFromMock | boolean | 否 | 是 | true：位置信息来自于位置模拟功能。 false：位置信息不是来自于位置模拟功能。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
 
 
 
 
-#### GeofenceTransition12+
+## GeofenceTransition12+
+
 
 **支持设备：** Phone | Tablet
 
 地理围栏事件信息；包含地理围栏ID和具体的地理围栏事件。
 
 **系统能力**：SystemCapability.Location.Location.Geofence
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -323,13 +351,15 @@ GNSS围栏的配置参数。目前只支持圆形围栏。
 
 
 
-#### GnssGeofenceRequest12+
+## GnssGeofenceRequest12+
+
 
 **支持设备：** Phone | Tablet
 
 GNSS地理围栏请求参数。
 
 **系统能力**：SystemCapability.Location.Location.Geofence
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -343,13 +373,15 @@ GNSS地理围栏请求参数。
 
 
 
-#### CountryCode
+## CountryCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 国家码信息，包含国家码字符串和国家码的来源信息。
 
 **系统能力**：SystemCapability.Location.Location.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -359,15 +391,17 @@ GNSS地理围栏请求参数。
 
 
 
-#### LocationRequestPriority
+## LocationRequestPriority
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 位置请求中位置信息优先级类型。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Location.Location.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -379,9 +413,10 @@ GNSS地理围栏请求参数。
 
 
 
-#### LocationRequestScenario
+## LocationRequestScenario
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 位置请求中定位场景类型。
 
@@ -391,6 +426,7 @@ GNSS地理围栏请求参数。
 
 > [!NOTE]
 > 当使用NAVIGATION/TRAJECTORY_TRACKING/CAR_HAILING场景进行单次定位或持续定位时，我们会在GNSS提供稳定位置结果之前使用网络定位技术提供服务；在持续定位时，如果超过30秒无法获取GNSS定位结果则会使用网络定位技术获取位置。
+
 
 
 | 名称 | 值 | 说明 |
@@ -405,13 +441,15 @@ GNSS地理围栏请求参数。
 
 
 
-#### CountryCodeType
+## CountryCodeType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 国家码来源类型。
 
 **系统能力**：SystemCapability.Location.Location.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -423,13 +461,15 @@ GNSS地理围栏请求参数。
 
 
 
-#### CoordinateSystemType12+
+## CoordinateSystemType12+
+
 
 **支持设备：** Phone | Tablet
 
 坐标系类型。
 
 **系统能力**：SystemCapability.Location.Location.Geofence
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -439,13 +479,15 @@ GNSS地理围栏请求参数。
 
 
 
-#### GeofenceTransitionEvent12+
+## GeofenceTransitionEvent12+
+
 
 **支持设备：** Phone | Tablet
 
 地理围栏事件。
 
 **系统能力**：SystemCapability.Location.Location.Geofence
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -456,13 +498,15 @@ GNSS地理围栏请求参数。
 
 
 
-#### SatelliteConstellationCategory12+
+## SatelliteConstellationCategory12+
+
 
 **支持设备：** Phone | Tablet | Wearable
 
 卫星星座类型。
 
 **系统能力**：SystemCapability.Location.Location.Gnss
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -478,13 +522,15 @@ GNSS地理围栏请求参数。
 
 
 
-#### SatelliteAdditionalInfo12+
+## SatelliteAdditionalInfo12+
+
 
 **支持设备：** Phone | Tablet | Wearable
 
 卫星附加信息类型。
 
 **系统能力**：SystemCapability.Location.Location.Gnss
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -497,15 +543,17 @@ GNSS地理围栏请求参数。
 
 
 
-#### PowerConsumptionScenario12+
+## PowerConsumptionScenario12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 位置请求中的功耗场景类型。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Location.Location.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -516,9 +564,10 @@ GNSS地理围栏请求参数。
 
 
 
-#### UserActivityScenario12+
+## UserActivityScenario12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 位置请求中的用户活动场景类型。
 
@@ -528,6 +577,7 @@ GNSS地理围栏请求参数。
 
 > [!NOTE]
 > 当使用NAVIGATION/SPORT/TRANSPORT场景进行单次定位或持续定位时，我们会在GNSS提供稳定位置结果之前使用网络定位技术提供服务；在持续定位时，如果超过30秒无法获取GNSS定位结果则会使用网络定位技术获取位置。
+
 
 
 | 名称 | 值 | 说明 |
@@ -540,15 +590,17 @@ GNSS地理围栏请求参数。
 
 
 
-#### LocatingPriority12+
+## LocatingPriority12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 单次位置请求中的优先级类型。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Location.Location.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -558,15 +610,17 @@ GNSS地理围栏请求参数。
 
 
 
-#### LocationError12+
+## LocationError12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 持续定位过程中的错误信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Location.Location.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -579,15 +633,17 @@ GNSS地理围栏请求参数。
 
 
 
-#### LocationSourceType12+
+## LocationSourceType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定位结果的来源。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Location.Location.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -599,13 +655,15 @@ GNSS地理围栏请求参数。
 
 
 
-#### BluetoothScanResult16+
+## BluetoothScanResult16+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 蓝牙扫描结果。
 
 **系统能力**：SystemCapability.Location.Location.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -618,15 +676,17 @@ GNSS地理围栏请求参数。
 
 
 
-#### Poi19+
+## Poi19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 POI(Point of Interest, 兴趣点)信息。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Location.Location.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -640,20 +700,22 @@ POI(Point of Interest, 兴趣点)信息。
 | locality | string | 否 | 否 | 表示POI所在的城市信息，一般是市。 |
 | subLocality | string | 否 | 否 | 表示POI所在的子城市信息，一般是区/县。 |
 | address | string | 否 | 否 | 表示POI的详细地址。 |
-| additionalInfo | string | 否 | 是 | 表示POI附加信息，本字符串为JSON格式。 起始版本： 26.0.0 元服务API： 从API version 26.0.0开始，该接口支持在元服务中使用。 模型约束：此接口仅可在Stage模型下使用。 |
+| additionalInfo | string | 否 | 是 | 表示POI附加信息，本字符串为JSON格式。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束：此接口仅可在Stage模型下使用。 |
 
 
 
 
-#### PoiInfo19+
+## PoiInfo19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 POI信息结构体。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Location.Location.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -663,9 +725,10 @@ POI信息结构体。
 
 
 
-#### SportsType18+
+## SportsType18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 运动类型。
 
@@ -673,17 +736,19 @@ POI信息结构体。
 
 **系统能力**：SystemCapability.Location.Location.Core
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | RUNNING | 1 | 表示跑步。 |
 | WALKING | 2 | 表示步行。 |
 | CYCLING | 3 | 表示骑行。 |
-| SKIING | 4 | 表示滑雪。 起始版本： 26.0.0 |
+| SKIING | 4 | 表示滑雪。 起始版本： 26.0.0 模型约束：此接口仅可在Stage模型下使用。 |
 
 
 
 
-#### BeaconFenceInfoType20+
+## BeaconFenceInfoType20+
+
 
 **支持设备：** Phone | Tablet
 
@@ -693,6 +758,7 @@ beacon围栏信息类型。当前仅支持设备制造商数据过滤。
 
 **系统能力**：SystemCapability.Location.Location.Geofence
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | BEACON_MANUFACTURE_DATA | 1 | 标识使用beacon设备制造商数据。 |
@@ -700,7 +766,8 @@ beacon围栏信息类型。当前仅支持设备制造商数据过滤。
 
 
 
-#### BeaconManufactureData20+
+## BeaconManufactureData20+
+
 
 **支持设备：** Phone | Tablet
 
@@ -709,6 +776,7 @@ beacon设备制造商数据。
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Location.Location.Geofence
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -719,7 +787,8 @@ beacon设备制造商数据。
 
 
 
-#### BeaconFence20+
+## BeaconFence20+
+
 
 **支持设备：** Phone | Tablet
 
@@ -728,6 +797,7 @@ beacon围栏的参数配置。
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Location.Location.Geofence
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -738,7 +808,8 @@ beacon围栏的参数配置。
 
 
 
-#### BeaconFenceRequest20+
+## BeaconFenceRequest20+
+
 
 **支持设备：** Phone | Tablet
 
@@ -747,6 +818,7 @@ beacon围栏请求参数。transitionCallback与fenceExtensionAbilityName任选�
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Location.Location.Geofence
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -757,19 +829,21 @@ beacon围栏请求参数。transitionCallback与fenceExtensionAbilityName任选�
 
 
 
-#### MatchingWlanInfo
+## MatchingWlanInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 匹配的WLAN信息结构体。
 
 **起始版本：** 26.0.0
 
-**元服务API：** 从API version 26.0.0开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Location.Location.Core
 
 **模型约束**：此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -779,7 +853,8 @@ beacon围栏请求参数。transitionCallback与fenceExtensionAbilityName任选�
 
 
 
-#### DistrictRequestParams
+## DistrictRequestParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -787,9 +862,12 @@ beacon围栏请求参数。transitionCallback与fenceExtensionAbilityName任选�
 
 **起始版本：** 26.0.0
 
-**元服务API：** 从API version 26.0.0开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Location.Location.Geocoder
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -799,7 +877,8 @@ beacon围栏请求参数。transitionCallback与fenceExtensionAbilityName任选�
 
 
 
-#### DistrictInfo
+## DistrictInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -807,9 +886,12 @@ beacon围栏请求参数。transitionCallback与fenceExtensionAbilityName任选�
 
 **起始版本：** 26.0.0
 
-**元服务API：** 从API version 26.0.0开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Location.Location.Geocoder
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -824,19 +906,21 @@ beacon围栏请求参数。transitionCallback与fenceExtensionAbilityName任选�
 
 
 
-#### BluetoothSearchRequestParams
+## BluetoothSearchRequestParams
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 蓝牙扫描请求参数。
 
 **起始版本：** 26.0.0
 
-**元服务API：** 从API version 26.0.0开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Location.Location.Core
 
 **模型约束**：此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -846,9 +930,32 @@ beacon围栏请求参数。transitionCallback与fenceExtensionAbilityName任选�
 
 
 
-#### geoLocationManager.on('locationChange')
+## Point
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+表示一个位置点。
+
+**起始版本：** 26.0.0
+
+**系统能力**：SystemCapability.Location.Location.Core
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| latitude | number | 否 | 否 | 表示纬度信息，正值表示北纬，负值表示南纬。取值范围为-90到90。仅支持WGS84坐标系。 |
+| longitude | number | 否 | 否 | 表示经度信息，正值表示东经，负值表示西经。取值范围为-180到180。仅支持WGS84坐标系。 |
+
+
+
+
+## geoLocationManager.on('locationChange')
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'locationChange', request: LocationRequest | ContinuousLocationRequest, callback: Callback&lt;Location&gt;): void
 
@@ -862,6 +969,7 @@ on(type: 'locationChange', request: LocationRequest | ContinuousLocationRequest,
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 设置事件类型。type为“locationChange”，表示位置变化。 |
@@ -873,6 +981,7 @@ on(type: 'locationChange', request: LocationRequest | ContinuousLocationRequest,
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. |
@@ -880,6 +989,7 @@ on(type: 'locationChange', request: LocationRequest | ContinuousLocationRequest,
 | 801 | Capability not supported. Failed to call ${geoLocationManager.on('locationChange')} due to limited device capabilities. |
 | 3301000 | The location service is unavailable. |
 | 3301100 | The location switch is off. |
+| 3301200 | Failed to obtain the geographical location. 适用版本：9-17 |
 
 
 **示例**
@@ -921,9 +1031,10 @@ try {
 
 
 
-#### geoLocationManager.onLocationChange
+## geoLocationManager.onLocationChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onLocationChange(request: LocationRequest | ContinuousLocationRequest, callback: Callback&lt;Location&gt;): void
 
@@ -935,9 +1046,8 @@ onLocationChange(request: LocationRequest | ContinuousLocationRequest, callback:
 
 **系统能力**：SystemCapability.Location.Location.Core
 
-**模型约束**：此接口仅可在Stage模型下使用。
-
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -948,6 +1058,7 @@ onLocationChange(request: LocationRequest | ContinuousLocationRequest, callback:
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -997,9 +1108,10 @@ try {
 
 
 
-#### geoLocationManager.off('locationChange')
+## geoLocationManager.off('locationChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'locationChange', callback?: Callback&lt;Location&gt;): void
 
@@ -1007,11 +1119,15 @@ off(type: 'locationChange', callback?: Callback&lt;Location&gt;): void
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
-**需要权限**：ohos.permission.APPROXIMATELY_LOCATION
+**需要权限**
+
+ - API版本9-24：ohos.permission.APPROXIMATELY_LOCATION
+
 
 **系统能力**：SystemCapability.Location.Location.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1023,12 +1139,15 @@ off(type: 'locationChange', callback?: Callback&lt;Location&gt;): void
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. 适用版本：9-24 |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 801 | Capability not supported. Failed to call ${geoLocationManager.off('locationChange')} due to limited device capabilities. |
 | 3301000 | The location service is unavailable. |
+| 3301100 | The location switch is off. 适用版本：9-17 |
+| 3301200 | Failed to obtain the geographical location. 适用版本：9-17 |
 
 
 **示例**
@@ -1056,9 +1175,10 @@ try {
 
 
 
-#### geoLocationManager.offLocationChange
+## geoLocationManager.offLocationChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offLocationChange(callback?: Callback&lt;Location&gt;): void
 
@@ -1070,9 +1190,8 @@ offLocationChange(callback?: Callback&lt;Location&gt;): void
 
 **系统能力**：SystemCapability.Location.Location.Core
 
-**模型约束**：此接口仅可在Stage模型下使用。
-
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1082,6 +1201,7 @@ offLocationChange(callback?: Callback&lt;Location&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1115,9 +1235,10 @@ try {
 
 
 
-#### geoLocationManager.on('locationError')12+
+## geoLocationManager.on('locationError')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'locationError', callback: Callback&lt;LocationError&gt;): void
 
@@ -1131,6 +1252,7 @@ on(type: 'locationError', callback: Callback&lt;LocationError&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 设置事件类型。type为“locationError”，表示持续定位过程中的错误码变化。 |
@@ -1140,6 +1262,7 @@ on(type: 'locationError', callback: Callback&lt;LocationError&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1171,7 +1294,7 @@ try {
 }
 
 let locationErrorChange = (errcode: geoLocationManager.LocationError): void => {
-  console.info('locationErrorChange: data: ' + JSON.stringify(errcode));
+  console.error('locationErrorChange: data: ' + JSON.stringify(errcode));
 };
 try {
   geoLocationManager.on('locationError', locationErrorChange);
@@ -1182,9 +1305,10 @@ try {
 
 
 
-#### geoLocationManager.off('locationError')12+
+## geoLocationManager.off('locationError')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'locationError', callback?: Callback&lt;LocationError&gt;): void
 
@@ -1198,6 +1322,7 @@ off(type: 'locationError', callback?: Callback&lt;LocationError&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 设置事件类型。type为“locationError”，表示持续定位过程中的错误码变化。 |
@@ -1207,6 +1332,7 @@ off(type: 'locationError', callback?: Callback&lt;LocationError&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1222,7 +1348,7 @@ off(type: 'locationError', callback?: Callback&lt;LocationError&gt;): void
 import { geoLocationManager } from '@kit.LocationKit';
 
 let locationErrorChange = (errcode: geoLocationManager.LocationError): void => {
-  console.info('locationErrorChange: data: ' + JSON.stringify(errcode));
+  console.error('locationErrorChange: data: ' + JSON.stringify(errcode));
 };
 try {
   geoLocationManager.on('locationError', locationErrorChange);
@@ -1234,9 +1360,10 @@ try {
 
 
 
-#### geoLocationManager.on('locationEnabledChange')
+## geoLocationManager.on('locationEnabledChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'locationEnabledChange', callback: Callback&lt;boolean&gt;): void
 
@@ -1245,6 +1372,7 @@ on(type: 'locationEnabledChange', callback: Callback&lt;boolean&gt;): void
 **系统能力**：SystemCapability.Location.Location.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1255,6 +1383,7 @@ on(type: 'locationEnabledChange', callback: Callback&lt;boolean&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1280,9 +1409,10 @@ try {
 
 
 
-#### geoLocationManager.off('locationEnabledChange')
+## geoLocationManager.off('locationEnabledChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'locationEnabledChange', callback?: Callback&lt;boolean&gt;): void
 
@@ -1291,6 +1421,7 @@ off(type: 'locationEnabledChange', callback?: Callback&lt;boolean&gt;): void
 **系统能力**：SystemCapability.Location.Location.Core
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1301,6 +1432,7 @@ off(type: 'locationEnabledChange', callback?: Callback&lt;boolean&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1327,9 +1459,10 @@ try {
 
 
 
-#### geoLocationManager.on('cachedGnssLocationsChange')
+## geoLocationManager.on('cachedGnssLocationsChange')
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Wearable
 
 on(type: 'cachedGnssLocationsChange', request: CachedGnssLocationsRequest, callback: Callback<Array&lt;Location&gt;>): void
 
@@ -1340,6 +1473,7 @@ on(type: 'cachedGnssLocationsChange', request: CachedGnssLocationsRequest, callb
 **系统能力**：SystemCapability.Location.Location.Gnss
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1352,6 +1486,7 @@ on(type: 'cachedGnssLocationsChange', request: CachedGnssLocationsRequest, callb
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. |
@@ -1359,6 +1494,7 @@ on(type: 'cachedGnssLocationsChange', request: CachedGnssLocationsRequest, callb
 | 801 | Capability not supported. Failed to call ${geoLocationManager.on('cachedGnssLocationsChange')} due to limited device capabilities. |
 | 3301000 | The location service is unavailable. |
 | 3301100 | The location switch is off. |
+| 3301200 | Failed to obtain the geographical location. 适用版本：9-17 |
 
 
 **示例**
@@ -1384,9 +1520,10 @@ try {
 
 
 
-#### geoLocationManager.off('cachedGnssLocationsChange')
+## geoLocationManager.off('cachedGnssLocationsChange')
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Wearable
 
 off(type: 'cachedGnssLocationsChange', callback?: Callback<Array&lt;Location&gt;>): void
 
@@ -1398,6 +1535,7 @@ off(type: 'cachedGnssLocationsChange', callback?: Callback<Array&lt;Location&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 设置事件类型。type为“cachedGnssLocationsChange”，表示GNSS缓存定位结果上报。 |
@@ -1408,6 +1546,7 @@ off(type: 'cachedGnssLocationsChange', callback?: Callback<Array&lt;Location&gt;
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. |
@@ -1415,6 +1554,7 @@ off(type: 'cachedGnssLocationsChange', callback?: Callback<Array&lt;Location&gt;
 | 801 | Capability not supported. Failed to call ${geoLocationManager.off('cachedGnssLocationsChange')} due to limited device capabilities. |
 | 3301000 | The location service is unavailable. |
 | 3301100 | The location switch is off. |
+| 3301200 | Failed to obtain the geographical location. 适用版本：9-17 |
 
 
 **示例**
@@ -1441,7 +1581,8 @@ try {
 
 
 
-#### geoLocationManager.on('satelliteStatusChange')
+## geoLocationManager.on('satelliteStatusChange')
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1455,6 +1596,7 @@ on(type: 'satelliteStatusChange', callback: Callback&lt;SatelliteStatusInfo&gt;)
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 设置事件类型。type为“satelliteStatusChange”，表示订阅GNSS卫星状态信息上报。 |
@@ -1464,6 +1606,7 @@ on(type: 'satelliteStatusChange', callback: Callback&lt;SatelliteStatusInfo&gt;)
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1523,7 +1666,8 @@ try {
 
 
 
-#### geoLocationManager.off('satelliteStatusChange')
+## geoLocationManager.off('satelliteStatusChange')
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1537,6 +1681,7 @@ off(type: 'satelliteStatusChange', callback?: Callback&lt;SatelliteStatusInfo&gt
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 设置事件类型。type为“satelliteStatusChange”，表示订阅GNSS卫星状态信息上报。 |
@@ -1546,6 +1691,7 @@ off(type: 'satelliteStatusChange', callback?: Callback&lt;SatelliteStatusInfo&gt
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1576,7 +1722,8 @@ try {
 
 
 
-#### geoLocationManager.on('nmeaMessage')
+## geoLocationManager.on('nmeaMessage')
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1590,6 +1737,7 @@ on(type: 'nmeaMessage', callback: Callback&lt;string&gt;): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 设置事件类型。type为“nmeaMessage”，表示订阅GNSS NMEA信息上报。 |
@@ -1599,6 +1747,7 @@ on(type: 'nmeaMessage', callback: Callback&lt;string&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1629,7 +1778,8 @@ try {
 
 
 
-#### geoLocationManager.off('nmeaMessage')
+## geoLocationManager.off('nmeaMessage')
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1643,6 +1793,7 @@ off(type: 'nmeaMessage', callback?: Callback&lt;string&gt;): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 设置事件类型。type为“nmeaMessage”，表示订阅GNSS NMEA信息上报。 |
@@ -1652,6 +1803,7 @@ off(type: 'nmeaMessage', callback?: Callback&lt;string&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1683,7 +1835,8 @@ try {
 
 
 
-#### geoLocationManager.on('gnssFenceStatusChange')
+## geoLocationManager.on('gnssFenceStatusChange')
+
 
 **支持设备：** Phone | Tablet
 
@@ -1699,6 +1852,7 @@ on(type: 'gnssFenceStatusChange', request: GeofenceRequest, want: WantAgent): vo
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 设置事件类型。type为“gnssFenceStatusChange”，表示订阅围栏事件上报。 |
@@ -1709,6 +1863,7 @@ on(type: 'gnssFenceStatusChange', request: GeofenceRequest, want: WantAgent): vo
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1757,7 +1912,8 @@ wantAgent.getWantAgent(wantAgentInfo).then((wantAgentObj) => {
 
 
 
-#### geoLocationManager.off('gnssFenceStatusChange')
+## geoLocationManager.off('gnssFenceStatusChange')
+
 
 **支持设备：** Phone | Tablet
 
@@ -1765,9 +1921,15 @@ off(type: 'gnssFenceStatusChange', request: GeofenceRequest, want: WantAgent): v
 
 删除一个围栏，并取消订阅该围栏事件。该接口功能由GNSS定位芯片提供（仅部分型号支持），如果设备无此芯片或使用的芯片型号不支持该功能，则返回错误码801（Capability not supported）。调用该接口前建议先通过[geoLocationManager.isGnssFenceServiceSupported](#geolocationmanagerisgnssfenceservicesupported)接口判断对应能力是否支持。
 
+**需要权限**
+
+ - API版本9-24：ohos.permission.APPROXIMATELY_LOCATION
+
+
 **系统能力**：SystemCapability.Location.Location.Geofence
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1780,8 +1942,10 @@ off(type: 'gnssFenceStatusChange', request: GeofenceRequest, want: WantAgent): v
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. 适用版本：9-24 |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 801 | Capability not supported. Failed to call ${geoLocationManager.off('gnssFenceStatusChange')} due to limited device capabilities. |
 | 3301000 | The location service is unavailable. |
@@ -1827,9 +1991,10 @@ wantAgent.getWantAgent(wantAgentInfo).then((wantAgentObj) => {
 
 
 
-#### geoLocationManager.on('countryCodeChange')
+## geoLocationManager.on('countryCodeChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'countryCodeChange', callback: Callback&lt;CountryCode&gt;): void
 
@@ -1838,6 +2003,7 @@ on(type: 'countryCodeChange', callback: Callback&lt;CountryCode&gt;): void
 **系统能力**：SystemCapability.Location.Location.Core
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1848,6 +2014,7 @@ on(type: 'countryCodeChange', callback: Callback&lt;CountryCode&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1875,9 +2042,10 @@ try {
 
 
 
-#### geoLocationManager.off('countryCodeChange')
+## geoLocationManager.off('countryCodeChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'countryCodeChange', callback?: Callback&lt;CountryCode&gt;): void
 
@@ -1886,6 +2054,7 @@ off(type: 'countryCodeChange', callback?: Callback&lt;CountryCode&gt;): void
 **系统能力**：SystemCapability.Location.Location.Core
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1896,6 +2065,7 @@ off(type: 'countryCodeChange', callback?: Callback&lt;CountryCode&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1924,9 +2094,10 @@ try {
 
 
 
-#### geoLocationManager.getCurrentLocation
+## geoLocationManager.getCurrentLocation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCurrentLocation(request: CurrentLocationRequest | SingleLocationRequest, callback: AsyncCallback&lt;Location&gt;): void
 
@@ -1940,6 +2111,7 @@ getCurrentLocation(request: CurrentLocationRequest | SingleLocationRequest, call
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | CurrentLocationRequest \| SingleLocationRequest | 是 | 设置位置请求参数。 SingleLocationRequest为API12新增参数。 |
@@ -1949,6 +2121,7 @@ getCurrentLocation(request: CurrentLocationRequest | SingleLocationRequest, call
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2009,9 +2182,10 @@ try {
 
 
 
-#### geoLocationManager.getCurrentLocation
+## geoLocationManager.getCurrentLocation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCurrentLocation(callback: AsyncCallback&lt;Location&gt;): void
 
@@ -2025,6 +2199,7 @@ getCurrentLocation(callback: AsyncCallback&lt;Location&gt;): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;Location&gt; | 是 | 回调函数，返回当前位置信息。 |
@@ -2033,6 +2208,7 @@ getCurrentLocation(callback: AsyncCallback&lt;Location&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2068,9 +2244,10 @@ try {
 
 
 
-#### geoLocationManager.getCurrentLocation
+## geoLocationManager.getCurrentLocation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCurrentLocation(request?: CurrentLocationRequest | SingleLocationRequest): Promise&lt;Location&gt;
 
@@ -2084,12 +2261,14 @@ getCurrentLocation(request?: CurrentLocationRequest | SingleLocationRequest): Pr
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | CurrentLocationRequest \| SingleLocationRequest | 否 | 设置位置请求参数。 SingleLocationRequest为API12新增参数。若无此参数设置，则使用CurrentLocationRequest为默认值。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2099,6 +2278,7 @@ getCurrentLocation(request?: CurrentLocationRequest | SingleLocationRequest): Pr
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2152,9 +2332,10 @@ try {
 
 
 
-#### geoLocationManager.getLastLocation
+## geoLocationManager.getLastLocation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLastLocation(): Location
 
@@ -2168,6 +2349,7 @@ getLastLocation(): Location
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Location | 位置信息。 |
@@ -2176,6 +2358,7 @@ getLastLocation(): Location
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2200,9 +2383,10 @@ try {
 
 
 
-#### geoLocationManager.isLocationEnabled
+## geoLocationManager.isLocationEnabled
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isLocationEnabled(): boolean
 
@@ -2214,6 +2398,7 @@ isLocationEnabled(): boolean
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | true：位置信息开关已开启。 false：位置信息开关已关闭。 |
@@ -2222,6 +2407,7 @@ isLocationEnabled(): boolean
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2243,7 +2429,8 @@ try {
 
 
 
-#### geoLocationManager.getAddressesFromLocation
+## geoLocationManager.getAddressesFromLocation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2255,6 +2442,7 @@ getAddressesFromLocation(request: ReverseGeoCodeRequest, callback: AsyncCallback
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | ReverseGeoCodeRequest | 是 | 设置逆地理编码请求的相关参数。 |
@@ -2264,6 +2452,7 @@ getAddressesFromLocation(request: ReverseGeoCodeRequest, callback: AsyncCallback
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2299,7 +2488,8 @@ try {
 
 
 
-#### geoLocationManager.getAddressesFromLocation
+## geoLocationManager.getAddressesFromLocation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2311,12 +2501,14 @@ getAddressesFromLocation(request: ReverseGeoCodeRequest): Promise<Array&lt;GeoAd
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | ReverseGeoCodeRequest | 是 | 设置逆地理编码请求的相关参数。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2326,6 +2518,7 @@ getAddressesFromLocation(request: ReverseGeoCodeRequest): Promise<Array&lt;GeoAd
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2360,7 +2553,8 @@ try {
 
 
 
-#### geoLocationManager.getAddressesFromLocationName
+## geoLocationManager.getAddressesFromLocationName
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2372,6 +2566,7 @@ getAddressesFromLocationName(request: GeoCodeRequest, callback: AsyncCallback<Ar
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | GeoCodeRequest | 是 | 设置地理编码请求的相关参数。 |
@@ -2381,6 +2576,7 @@ getAddressesFromLocationName(request: GeoCodeRequest, callback: AsyncCallback<Ar
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2412,7 +2608,8 @@ try {
 
 
 
-#### geoLocationManager.getAddressesFromLocationName
+## geoLocationManager.getAddressesFromLocationName
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2424,12 +2621,14 @@ getAddressesFromLocationName(request: GeoCodeRequest): Promise<Array&lt;GeoAddre
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | GeoCodeRequest | 是 | 设置地理编码请求的相关参数。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2439,6 +2638,7 @@ getAddressesFromLocationName(request: GeoCodeRequest): Promise<Array&lt;GeoAddre
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2469,7 +2669,8 @@ try {
 
 
 
-#### geoLocationManager.isGeocoderAvailable
+## geoLocationManager.isGeocoderAvailable
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2481,6 +2682,7 @@ isGeocoderAvailable(): boolean
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | true:地理编码与逆地理编码服务可用。 false：地理编码与逆地理编码服务不可用。 |
@@ -2489,6 +2691,7 @@ isGeocoderAvailable(): boolean
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2510,9 +2713,10 @@ try {
 
 
 
-#### geoLocationManager.getCachedGnssLocationsSize
+## geoLocationManager.getCachedGnssLocationsSize
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Wearable
 
 getCachedGnssLocationsSize(callback: AsyncCallback&lt;number&gt;): void
 
@@ -2524,6 +2728,7 @@ getCachedGnssLocationsSize(callback: AsyncCallback&lt;number&gt;): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;number&gt; | 是 | 回调函数，返回GNSS芯片缓存位置个数。 |
@@ -2532,6 +2737,7 @@ getCachedGnssLocationsSize(callback: AsyncCallback&lt;number&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2565,9 +2771,10 @@ try {
 
 
 
-#### geoLocationManager.getCachedGnssLocationsSize
+## geoLocationManager.getCachedGnssLocationsSize
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Wearable
 
 getCachedGnssLocationsSize(): Promise&lt;number&gt;
 
@@ -2579,6 +2786,7 @@ getCachedGnssLocationsSize(): Promise&lt;number&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象，返回GNSS缓存位置的个数。 |
@@ -2587,6 +2795,7 @@ getCachedGnssLocationsSize(): Promise&lt;number&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2618,9 +2827,10 @@ try {
 
 
 
-#### geoLocationManager.flushCachedGnssLocations
+## geoLocationManager.flushCachedGnssLocations
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Wearable
 
 flushCachedGnssLocations(callback: AsyncCallback&lt;void&gt;): void
 
@@ -2632,6 +2842,7 @@ flushCachedGnssLocations(callback: AsyncCallback&lt;void&gt;): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当操作成功，err为undefined，否则为错误对象。 |
@@ -2640,6 +2851,7 @@ flushCachedGnssLocations(callback: AsyncCallback&lt;void&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2671,9 +2883,10 @@ try {
 
 
 
-#### geoLocationManager.flushCachedGnssLocations
+## geoLocationManager.flushCachedGnssLocations
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Wearable
 
 flushCachedGnssLocations(): Promise&lt;void&gt;
 
@@ -2685,6 +2898,7 @@ flushCachedGnssLocations(): Promise&lt;void&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象 |
@@ -2693,6 +2907,7 @@ flushCachedGnssLocations(): Promise&lt;void&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2725,9 +2940,10 @@ try {
 
 
 
-#### geoLocationManager.sendCommand
+## geoLocationManager.sendCommand
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sendCommand(command: LocationCommand, callback: AsyncCallback&lt;void&gt;): void
 
@@ -2736,6 +2952,7 @@ sendCommand(command: LocationCommand, callback: AsyncCallback&lt;void&gt;): void
 **系统能力**：SystemCapability.Location.Location.Core
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2746,6 +2963,7 @@ sendCommand(command: LocationCommand, callback: AsyncCallback&lt;void&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2773,9 +2991,10 @@ try {
 
 
 
-#### geoLocationManager.sendCommand
+## geoLocationManager.sendCommand
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sendCommand(command: LocationCommand): Promise&lt;void&gt;
 
@@ -2785,12 +3004,14 @@ sendCommand(command: LocationCommand): Promise&lt;void&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | command | LocationCommand | 是 | 指定目标场景，和将要发送的命令（字符串）。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2800,6 +3021,7 @@ sendCommand(command: LocationCommand): Promise&lt;void&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2829,9 +3051,10 @@ try {
 
 
 
-#### geoLocationManager.getCountryCode
+## geoLocationManager.getCountryCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCountryCode(callback: AsyncCallback&lt;CountryCode&gt;): void
 
@@ -2841,6 +3064,7 @@ getCountryCode(callback: AsyncCallback&lt;CountryCode&gt;): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;CountryCode&gt; | 是 | 回调函数，返回国家码信息。 |
@@ -2849,6 +3073,7 @@ getCountryCode(callback: AsyncCallback&lt;CountryCode&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2879,9 +3104,10 @@ try {
 
 
 
-#### geoLocationManager.getCountryCode
+## geoLocationManager.getCountryCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCountryCode(): Promise&lt;CountryCode&gt;
 
@@ -2891,6 +3117,7 @@ getCountryCode(): Promise&lt;CountryCode&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;CountryCode&gt; | Promise对象，返回国家码信息。 |
@@ -2899,6 +3126,7 @@ getCountryCode(): Promise&lt;CountryCode&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2928,7 +3156,8 @@ try {
 
 
 
-#### geoLocationManager.addGnssGeofence12+
+## geoLocationManager.addGnssGeofence12+
+
 
 **支持设备：** Phone | Tablet
 
@@ -2948,12 +3177,14 @@ GNSS地理围栏功能依赖GNSS定位芯片（仅部分型号支持），如果
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fenceRequest | GnssGeofenceRequest | 是 | 添加GNSS地理围栏请求参数。 包含圆形围栏信息、需要监听的地理围栏事件、地理围栏事件触发后弹出的通知对象和监听地理围栏事件的回调函数。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2963,6 +3194,7 @@ GNSS地理围栏功能依赖GNSS定位芯片（仅部分型号支持），如果
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3057,7 +3289,8 @@ try {
 
 
 
-#### geoLocationManager.removeGnssGeofence12+
+## geoLocationManager.removeGnssGeofence12+
+
 
 **支持设备：** Phone | Tablet
 
@@ -3069,7 +3302,13 @@ GNSS地理围栏功能依赖GNSS定位芯片（仅部分型号支持），如果
 
 **系统能力**：SystemCapability.Location.Location.Geofence
 
+**需要权限**
+
+ - API版本9-24：ohos.permission.LOCATION 和 ohos.permission.APPROXIMATELY_LOCATION
+
+
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3077,6 +3316,7 @@ GNSS地理围栏功能依赖GNSS定位芯片（仅部分型号支持），如果
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3087,8 +3327,10 @@ GNSS地理围栏功能依赖GNSS定位芯片（仅部分型号支持），如果
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. 适用版本：12-24 |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 801 | Capability not supported. Failed to call ${geoLocationManager.removeGnssGeofence} due to limited device capabilities. |
 | 3301000 | The location service is unavailable. |
@@ -3117,7 +3359,8 @@ try {
 
 
 
-#### geoLocationManager.getGeofenceSupportedCoordTypes12+
+## geoLocationManager.getGeofenceSupportedCoordTypes12+
+
 
 **支持设备：** Phone | Tablet
 
@@ -3129,6 +3372,7 @@ getGeofenceSupportedCoordTypes(): Array&lt;CoordinateSystemType&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;CoordinateSystemType&gt; | 地理围栏功能支持的坐标系列表。 |
@@ -3137,6 +3381,7 @@ getGeofenceSupportedCoordTypes(): Array&lt;CoordinateSystemType&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3161,9 +3406,10 @@ try {
 
 
 
-#### geoLocationManager.getCurrentWifiBssidForLocating14+
+## geoLocationManager.getCurrentWifiBssidForLocating14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCurrentWifiBssidForLocating(): string
 
@@ -3175,6 +3421,7 @@ getCurrentWifiBssidForLocating(): string
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | Wi-Fi Bssid |
@@ -3183,6 +3430,7 @@ getCurrentWifiBssidForLocating(): string
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3208,9 +3456,10 @@ try {
 
 
 
-#### geoLocationManager.on('bluetoothScanResultChange')16+
+## geoLocationManager.on('bluetoothScanResultChange')16+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'bluetoothScanResultChange', callback: Callback&lt;BluetoothScanResult&gt;): void
 
@@ -3228,6 +3477,7 @@ on(type: 'bluetoothScanResultChange', callback: Callback&lt;BluetoothScanResult&
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 设置事件类型。type为“bluetoothScanResultChange”，表示订阅蓝牙扫描信息上报事件。 |
@@ -3237,6 +3487,7 @@ on(type: 'bluetoothScanResultChange', callback: Callback&lt;BluetoothScanResult&
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3265,9 +3516,10 @@ try {
 
 
 
-#### geoLocationManager.off('bluetoothScanResultChange')16+
+## geoLocationManager.off('bluetoothScanResultChange')16+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'bluetoothScanResultChange', callback?: Callback&lt;BluetoothScanResult&gt;): void
 
@@ -3279,6 +3531,7 @@ off(type: 'bluetoothScanResultChange', callback?: Callback&lt;BluetoothScanResul
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 设置事件类型。type为“bluetoothScanResultChange”，表示停止订阅蓝牙扫描信息上报事件。 |
@@ -3288,6 +3541,7 @@ off(type: 'bluetoothScanResultChange', callback?: Callback&lt;BluetoothScanResul
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3315,9 +3569,10 @@ try {
 
 
 
-#### geoLocationManager.isPoiServiceSupported20+
+## geoLocationManager.isPoiServiceSupported20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isPoiServiceSupported(): boolean
 
@@ -3328,6 +3583,7 @@ isPoiServiceSupported(): boolean
 **系统能力**：SystemCapability.Location.Location.Core
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3345,9 +3601,10 @@ console.info("poiServiceState:" + poiServiceState);
 
 
 
-#### geoLocationManager.getPoiInfo20+
+## geoLocationManager.getPoiInfo20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 getPoiInfo(): Promise&lt;PoiInfo&gt;
 
@@ -3361,6 +3618,7 @@ getPoiInfo(): Promise&lt;PoiInfo&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;PoiInfo&gt; | 当前位置附近的POI信息。 |
@@ -3369,6 +3627,7 @@ getPoiInfo(): Promise&lt;PoiInfo&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3398,9 +3657,10 @@ try {
 
 
 
-#### geoLocationManager.getDistanceBetweenLocations20+
+## geoLocationManager.getDistanceBetweenLocations20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDistanceBetweenLocations(location1: Location, location2: Location): number
 
@@ -3412,6 +3672,7 @@ getDistanceBetweenLocations(location1: Location, location2: Location): number
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | location1 | Location | 是 | 位置1。 |
@@ -3419,6 +3680,7 @@ getDistanceBetweenLocations(location1: Location, location2: Location): number
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3462,7 +3724,8 @@ try {
 
 
 
-#### geoLocationManager.addBeaconFence20+
+## geoLocationManager.addBeaconFence20+
+
 
 **支持设备：** Phone | Tablet
 
@@ -3484,12 +3747,14 @@ beacon围栏是指通过蓝牙beacon设备和手机应用配合，实现“虚�
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fenceRequest | BeaconFenceRequest | 是 | 添加beacon围栏请求参数。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3499,6 +3764,7 @@ beacon围栏是指通过蓝牙beacon设备和手机应用配合，实现“虚�
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3562,7 +3828,8 @@ try {
 
 
 
-#### geoLocationManager.removeBeaconFence20+
+## geoLocationManager.removeBeaconFence20+
+
 
 **支持设备：** Phone | Tablet
 
@@ -3572,11 +3839,15 @@ removeBeaconFence(beaconFence?: BeaconFence): Promise&lt;void&gt;
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
-**需要权限**：ohos.permission.LOCATION 和 ohos.permission.APPROXIMATELY_LOCATION
+**需要权限**：
+
+ - API版本20-24：ohos.permission.LOCATION 和 ohos.permission.APPROXIMATELY_LOCATION
+
 
 **系统能力**：SystemCapability.Location.Location.Geofence
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3584,6 +3855,7 @@ removeBeaconFence(beaconFence?: BeaconFence): Promise&lt;void&gt;
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3594,9 +3866,10 @@ removeBeaconFence(beaconFence?: BeaconFence): Promise&lt;void&gt;
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. 适用版本：20-24 |
 | 801 | Capability not supported. Failed to call ${geoLocationManager.removeBeaconFence} due to limited device capabilities. |
 | 3501602 | Failed to delete the fence due to incorrect beacon fence information. |
 
@@ -3637,11 +3910,12 @@ try {
 
 
 
-#### geoLocationManager.isBeaconFenceSupported20+
+## geoLocationManager.isBeaconFenceSupported20+
+
 
 **支持设备：** Phone | Tablet
 
-isBeaconFenceSupported(): boolean;
+isBeaconFenceSupported(): boolean
 
 判断当前设备是否支持beacon围栏。
 
@@ -3650,6 +3924,7 @@ isBeaconFenceSupported(): boolean;
 **系统能力**：SystemCapability.Location.Location.Geofence
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3670,9 +3945,10 @@ try {
 
 
 
-#### geoLocationManager.isWlanBssidMatched21+
+## geoLocationManager.isWlanBssidMatched21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isWlanBssidMatched(wlanBssidArray: Array&lt;string&gt;, rssiThreshold: number, needStartScan: boolean): Promise&lt;boolean&gt;
 
@@ -3686,6 +3962,7 @@ isWlanBssidMatched(wlanBssidArray: Array&lt;string&gt;, rssiThreshold: number, n
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | wlanBssidArray | Array&lt;string&gt; | 是 | 请求匹配的BSSID列表。单个字符串的长度不超过64，数组的长度不超过1000。 |
@@ -3695,6 +3972,7 @@ isWlanBssidMatched(wlanBssidArray: Array&lt;string&gt;, rssiThreshold: number, n
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | 表示匹配是否成功。当扫描结果中存在wlanBssidArray中的任意BSSID，且其RSSI值高于rssiThreshold时，返回true，否则返回false。 |
@@ -3703,6 +3981,7 @@ isWlanBssidMatched(wlanBssidArray: Array&lt;string&gt;, rssiThreshold: number, n
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3731,9 +4010,10 @@ try {
 
 
 
-#### geoLocationManager.isGnssServiceSupported
+## geoLocationManager.isGnssServiceSupported
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isGnssServiceSupported(): boolean
 
@@ -3741,13 +4021,14 @@ isGnssServiceSupported(): boolean
 
 **起始版本：** 26.0.0
 
-**元服务API：** 从API version 26.0.0开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Location.Location.Core
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3757,6 +4038,7 @@ isGnssServiceSupported(): boolean
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3776,9 +4058,10 @@ try {
 
 
 
-#### geoLocationManager.isGnssFenceServiceSupported
+## geoLocationManager.isGnssFenceServiceSupported
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isGnssFenceServiceSupported(): boolean
 
@@ -3786,13 +4069,14 @@ isGnssFenceServiceSupported(): boolean
 
 **起始版本：** 26.0.0
 
-**元服务API：** 从API version 26.0.0开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Location.Location.Core
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3802,6 +4086,7 @@ isGnssFenceServiceSupported(): boolean
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3821,9 +4106,10 @@ try {
 
 
 
-#### geoLocationManager.isCachedGnssServiceSupported
+## geoLocationManager.isCachedGnssServiceSupported
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isCachedGnssServiceSupported(): boolean
 
@@ -3831,13 +4117,14 @@ isCachedGnssServiceSupported(): boolean
 
 **起始版本：** 26.0.0
 
-**元服务API：** 从API version 26.0.0开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Location.Location.Core
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3847,6 +4134,7 @@ isCachedGnssServiceSupported(): boolean
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3866,7 +4154,8 @@ try {
 
 
 
-#### geoLocationManager.getActiveGeoFences23+
+## geoLocationManager.getActiveGeoFences23+
+
 
 **支持设备：** Phone | Tablet
 
@@ -3880,6 +4169,7 @@ getActiveGeoFences(): Promise<Map<number, Geofence>>
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Map<number, Geofence>> | Promise对象，返回有效的围栏信息。Map中的key值为fenceId，value值为对应围栏的具体信息。 |
@@ -3888,6 +4178,7 @@ getActiveGeoFences(): Promise<Map<number, Geofence>>
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3921,9 +4212,10 @@ try {
 
 
 
-#### geoLocationManager.findMatchingWlan
+## geoLocationManager.findMatchingWlan
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 findMatchingWlan(wlanBssidArray: Array&lt;string&gt;, rssiThreshold: number, needStartScan: boolean):Promise<Array&lt;MatchingWlanInfo&gt;>
 
@@ -3931,7 +4223,7 @@ findMatchingWlan(wlanBssidArray: Array&lt;string&gt;, rssiThreshold: number, nee
 
 **起始版本：** 26.0.0
 
-**元服务API：** 从API version 26.0.0开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **需要权限**：ohos.permission.LOCATION 和 ohos.permission.APPROXIMATELY_LOCATION
 
@@ -3940,6 +4232,7 @@ findMatchingWlan(wlanBssidArray: Array&lt;string&gt;, rssiThreshold: number, nee
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3950,6 +4243,7 @@ findMatchingWlan(wlanBssidArray: Array&lt;string&gt;, rssiThreshold: number, nee
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;MatchingWlanInfo&gt;> | Promise对象，匹配成功时返回对应的WLAN设备信息，匹配失败时返回空数组(数组长度为0)。仅返回rssi最强的3个设备信息。 |
@@ -3958,6 +4252,7 @@ findMatchingWlan(wlanBssidArray: Array&lt;string&gt;, rssiThreshold: number, nee
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3986,7 +4281,8 @@ try {
 
 
 
-#### geoLocationManager.getCurrentDistrict
+## geoLocationManager.getCurrentDistrict
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3996,6 +4292,8 @@ getCurrentDistrict(params?: DistrictRequestParams): Promise&lt;DistrictInfo&gt;
 
 **起始版本：** 26.0.0
 
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
 **需要权限**：ohos.permission.APPROXIMATELY_LOCATION
 
 **系统能力**：SystemCapability.Location.Location.Geocoder
@@ -4004,12 +4302,14 @@ getCurrentDistrict(params?: DistrictRequestParams): Promise&lt;DistrictInfo&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| request | DistrictRequestParams | 否 | 设置区域信息请求参数。 |
+| params | DistrictRequestParams | 否 | 设置区域信息请求参数。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4019,6 +4319,7 @@ getCurrentDistrict(params?: DistrictRequestParams): Promise&lt;DistrictInfo&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4069,7 +4370,8 @@ try {
 
 
 
-#### geoLocationManager.getPostProcessingTrack
+## geoLocationManager.getPostProcessingTrack
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -4079,6 +4381,8 @@ getPostProcessingTrack(sportsType: SportsType): Promise<Array&lt;Location&gt;>
 
 **起始版本：** 26.0.0
 
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
 **需要权限**：ohos.permission.LOCATION
 
 **系统能力**：SystemCapability.Location.Location.Gnss
@@ -4087,12 +4391,14 @@ getPostProcessingTrack(sportsType: SportsType): Promise<Array&lt;Location&gt;>
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| sportsType | SportsType | 否 | 设置要获取后处理轨迹的运动模式。当前仅支持滑雪模式。 |
+| sportsType | SportsType | 是 | 设置要获取后处理轨迹的运动模式。当前仅支持滑雪模式。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4103,6 +4409,7 @@ getPostProcessingTrack(sportsType: SportsType): Promise<Array&lt;Location&gt;>
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. |
@@ -4110,7 +4417,7 @@ getPostProcessingTrack(sportsType: SportsType): Promise<Array&lt;Location&gt;>
 | 801 | Capability not supported. Failed to call ${geoLocationManager.getPostProcessingTrack} due to limited device capabilities. |
 | 3301000 | The location service is unavailable. |
 | 3301100 | The location switch is off. |
-| 3301200 | Failed to obtain the geographical location. |
+| 3301200 | Failed to obtain the post processing track because sports type is not supported. |
 
 
 **示例**
@@ -4138,7 +4445,7 @@ let processTrackTask = (): void => {
     .then((res) => {
       console.info('getPostProcessingTrack len: ' + JSON.stringify(res.length));
     }).catch((err: BusinessError) => {
-      console.info('getPostProcessingTrack err: ' + JSON.stringify(err));
+      console.error('getPostProcessingTrack err: ' + JSON.stringify(err));
     })
 }
 
@@ -4155,9 +4462,10 @@ try {
 
 
 
-#### geoLocationManager.startBluetoothSearch
+## geoLocationManager.startBluetoothSearch
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startBluetoothSearch(request: BluetoothSearchRequestParams, callback: Callback&lt;BluetoothScanResult&gt;): void
 
@@ -4165,7 +4473,7 @@ startBluetoothSearch(request: BluetoothSearchRequestParams, callback: Callback&l
 
 **起始版本：** 26.0.0
 
-**元服务API：** 从API version 26.0.0开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **需要权限**：ohos.permission.APPROXIMATELY_LOCATION
 
@@ -4174,6 +4482,7 @@ startBluetoothSearch(request: BluetoothSearchRequestParams, callback: Callback&l
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4184,6 +4493,7 @@ startBluetoothSearch(request: BluetoothSearchRequestParams, callback: Callback&l
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4203,18 +4513,18 @@ private callback = (bluetoothScanResult: geoLocationManager.BluetoothScanResult)
   if (bluetoothScanResult) {
     console.info('bluetoothScanResult: deviceId=' + bluetoothScanResult.deviceId);
       try {
-        // 开发者需要考虑在合适的时机调用stopBluetoothSearch停止蓝牙扫描以节省功耗，本代码仅作为参考
-        geoLocationManager.stopBluetoothSearch(this.callback);
+         // 开发者需要考虑在合适的时机调用stopBluetoothSearch停止蓝牙扫描以节省功耗，本代码仅作为参考
+         geoLocationManager.stopBluetoothSearch(this.callback);
       } catch (err) {
-        console.error("errCode:" + err.code + ", message:" + err.message);
+         console.error("errCode:" + err.code + ", message:" + err.message);
       }
   }
 };
 let request: geoLocationManager.BluetoothSearchRequestParams = {
-  'rssiThreshold': -=100,
+  'rssiThreshold': -100,
   'deviceIdArray': ['98:56:07:E6:AA:46','4E:E6:D2:02:27:F9']
 };
-
+ 
 try {
   geoLocationManager.startBluetoothSearch(request, this.callback);
 } catch (err) {
@@ -4224,9 +4534,10 @@ try {
 
 
 
-#### geoLocationManager.stopBluetoothSearch
+## geoLocationManager.stopBluetoothSearch
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopBluetoothSearch(callback?: Callback&lt;BluetoothScanResult&gt;): void
 
@@ -4234,13 +4545,14 @@ stopBluetoothSearch(callback?: Callback&lt;BluetoothScanResult&gt;): void
 
 **起始版本：** 26.0.0
 
-**元服务API：** 从API version 26.0.0开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Location.Location.Core
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4250,6 +4562,7 @@ stopBluetoothSearch(callback?: Callback&lt;BluetoothScanResult&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[位置服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-geolocationmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4262,7 +4575,7 @@ stopBluetoothSearch(callback?: Callback&lt;BluetoothScanResult&gt;): void
 
 ```text
 import { geoLocationManager } from '@kit.LocationKit';
-
+ 
 let request: geoLocationManager.BluetoothSearchRequestParams = {
   'rssiThreshold': -100,
   'deviceIdArray': ['98:56:07:E6:AA:46','4E:E6:D2:02:27:F9']

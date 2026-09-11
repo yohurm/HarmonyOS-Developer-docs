@@ -1,9 +1,9 @@
 # switch
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-components-basic-switch
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 开关选择器，通过开关，开启或关闭某个功能。
  
@@ -12,18 +12,21 @@
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 不支持。
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
  
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | checked | boolean | false | 否 | 是否选中。true表示被选中，false表示不被选中。 |
@@ -35,10 +38,12 @@
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
  
+
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | change | { checked: checkedValue } | 选中状态改变时触发该事件。 |
@@ -49,10 +54,12 @@
  
   
 
-#### 样式
+## 样式
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
  
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | width | &lt;length&gt; \| &lt;percentage&gt;5+ | - | 否 | 设置组件自身的宽度。 未设置时组件宽度默认为0。 |
@@ -71,9 +78,10 @@
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 <!-- xxx.hml -->
@@ -120,4 +128,4 @@ export default {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/54eMz0ARTbCYfNqMd0Q01w/zh-cn_image_0000002686088753.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071526Z&HW-CC-Expire=86400&HW-CC-Sign=E2CFE6F3EDCF6A5B86F2B88CD2BFA74A9603ABE60DF8272D006866A54EAC29C2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/xDUdIs4iTH6BEaumZiUHgA/zh-cn_image_0000002747213331.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073000Z&HW-CC-Expire=86400&HW-CC-Sign=62AFE3AA288D249B44B496B0A37C5FCB7C31860FE4A01F1AB9C0E2BB13249DDF)

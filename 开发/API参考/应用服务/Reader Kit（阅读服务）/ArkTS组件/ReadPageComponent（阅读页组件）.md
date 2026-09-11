@@ -1,6 +1,6 @@
 # ReadPageComponent（阅读页组件）
 
-更新时间：2026-06-12 06:54:11
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/reader-api-readpagecomponent
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -10,7 +10,8 @@
 **起始版本：** 5.0.4(16)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -20,7 +21,8 @@ import { ReadPageComponent } from '@kit.ReaderKit';
  
   
 
-#### ReadPageComponent
+## ReadPageComponent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -42,15 +44,17 @@ import { ReadPageComponent } from '@kit.ReaderKit';
  
 **参数：**
   
+
 | 参数名 | 类型 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- |
-| controller | ReaderComponentController | _ | ReadPageComponent控制器。 |
-| readerCallback | AsyncCallback<readerCore.ReaderComponentController> | _ | 回调函数。 |
+| controller | readerCore.ReaderComponentController | - | ReadPageComponent控制器。 |
+| readerCallback | AsyncCallback<readerCore.ReaderComponentController> | - | 回调函数。 |
  
  
   
 
-#### build
+### build
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -94,7 +98,7 @@ struct Reader {
 
     await this.readerComponentController.init(context);
     this.readerComponentController.registerBookParser(bookParserHandler);
-    this.readerComponentController.startPlay(spineIndex || 0, domPos);
+    await this.readerComponentController.startPlay(spineIndex || 0, domPos);
     hilog.info(0x0000, 'testTag', `startPlay succeeded`);
   }
 

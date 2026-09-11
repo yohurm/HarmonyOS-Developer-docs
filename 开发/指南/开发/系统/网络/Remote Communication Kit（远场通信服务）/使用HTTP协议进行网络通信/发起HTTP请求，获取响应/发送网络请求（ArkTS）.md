@@ -1,24 +1,25 @@
 # 发送网络请求（ArkTS）
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-communication-netsend-arkts
 
-#### 约束与限制
+## 约束与限制
 
 发送网络请求能力支持Phone、2in1、Tablet、Wearable设备。并且从5.1.1(19)开始，新增支持TV设备。
 
 
 
-#### 如何使用FETCH发起网络请求
+## 如何使用FETCH发起网络请求
 
 发送HTTP请求，可设置请求头和请求体等参数，并返回来自服务器的HTTP响应。使用Promise异步回调。常用于获取资源，支持流处理和通过拦截器来处理请求和响应。
 
 
 
-#### 接口说明
+### 接口说明
 
 具体API说明详见[接口文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-communication-rcp#fetch)。
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -27,7 +28,7 @@
 
 
 
-#### 使用示例
+### 使用示例
 1. 导入模块。
 
   
@@ -68,15 +69,16 @@ session.fetch(request).then((rep: rcp.Response) => {
 
 
 
-#### 如何发起GET网络请求
+## 如何发起GET网络请求
 
 HTTP GET请求是常用的通信方式之一。为了有效地实现这一目标，RemoteCommunicationKit采用了Promise和异步回调的组合策略，不仅可以高效地从服务器获取数据，还可以提高代码的可读性和可维护性。
 
 
 
-#### 接口说明
+### 接口说明
 
 具体API说明详见[接口文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-communication-rcp#get)。
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -85,7 +87,7 @@ HTTP GET请求是常用的通信方式之一。为了有效地实现这一目标
 
 
 
-#### 使用示例
+### 使用示例
 1. 导入模块。
 
   
@@ -117,15 +119,16 @@ session.get(getURL).then((response) => {
 
 
 
-#### 如何发起POST网络请求
+## 如何发起POST网络请求
 
 发送带有默认HTTP参数的HTTP POST请求，并返回来自服务器的HTTP响应。使用Promise异步回调。常用于向服务器提交数据。与GET请求不同，POST请求将参数包含在请求主体中，适用于创建新资源、提交表单数据或执行某些操作。
 
 
 
-#### 接口说明
+### 接口说明
 
 具体API说明详见[接口文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-communication-rcp#post)。
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -134,7 +137,7 @@ session.get(getURL).then((response) => {
 
 
 
-#### 使用示例
+### 使用示例
 1. 导入模块。
 
   
@@ -175,15 +178,16 @@ session.post(postURL, postContent)
 
 
 
-#### 如何发起PUT网络请求
+## 如何发起PUT网络请求
 
 在远场通信服务框架中，HTTP PUT请求用于更新服务器上的特定资源。作为幂等操作，它确保每次请求仅影响目标资源状态。通过Promise异步编程模型，可以有效地管理和控制请求执行流程，结构化处理异步操作和反馈。
 
 
 
-#### 接口说明
+### 接口说明
 
 具体API说明详见[接口文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-communication-rcp#put)。
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -192,7 +196,7 @@ session.post(postURL, postContent)
 
 
 
-#### 使用示例
+### 使用示例
 1. 导入模块。
 
   
@@ -231,15 +235,16 @@ session.put('http://www.example.com/put', postContent).then((response) => {
 
 
 
-#### 如何发起HEAD网络请求
+## 如何发起HEAD网络请求
 
 HTTP HEAD请求可高效访问服务器资源头信息。它与GET请求类似，但主要的区别在于，HEAD请求只返回响应头，而不返回实体内容，这使得其在获取资源的元信息，如文件大小、修改日期等，以及检查资源是否已更改等方面更加有效。
 
 
 
-#### 接口说明
+### 接口说明
 
 具体API说明详见[接口文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-communication-rcp#head)。
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -248,7 +253,7 @@ HTTP HEAD请求可高效访问服务器资源头信息。它与GET请求类似�
 
 
 
-#### 使用示例
+### 使用示例
 1. 导入模块。
 
   
@@ -278,15 +283,16 @@ session.head('http://www.example.com/head').then((response) => {
 
 
 
-#### 如何发起DELETE网络请求
+## 如何发起DELETE网络请求
 
 在远场通信服务的框架中，Remote Communication Kit采用了一种结合发起HTTP DELETE请求与Promise异步处理的方法。具体操作如下：通过向预定义的URL发送包含默认HTTP参数的HTTP DELETE请求，即可实现对目标URL上相关资源的有效删除。这种机制不仅简化了请求的发送过程，还增强了异步处理的效率，确保了资源管理的灵活性和响应速度。
 
 
 
-#### 接口说明
+### 接口说明
 
 具体API说明详见[接口文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-communication-rcp#delete)。
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -295,7 +301,7 @@ session.head('http://www.example.com/head').then((response) => {
 
 
 
-#### 使用示例
+### 使用示例
 1. 导入模块。
 
   
@@ -318,7 +324,7 @@ session.delete('http://www.example.com/delete').then((response) => {
 
 
 
-#### 如何使用Form发送HTTP简单的表格数据
+## 如何使用Form发送HTTP简单的表格数据
 
 在使用[RequestContent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-communication-rcp#requestcontent)指定HTTP请求中要发送的数据时，可以使用[Form](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-communication-rcp#form)来发送简单的HTTP表单数据。
 
@@ -326,7 +332,7 @@ session.delete('http://www.example.com/delete').then((response) => {
 
 
 
-#### 使用示例
+### 使用示例
 1. 导入模块。
 
   
@@ -377,7 +383,7 @@ try {
 
 
 
-#### 如何使用MultipartForm发送HTTP多部分表格数据
+## 如何使用MultipartForm发送HTTP多部分表格数据
 
 在使用[RequestContent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-communication-rcp#requestcontent)指定HTTP请求中要发送的数据时，可以使用[MultipartForm](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-communication-rcp#multipartform)来发送HTTP多部分表格数据。
 
@@ -385,7 +391,7 @@ try {
 
 
 
-#### 使用示例
+### 使用示例
 1. 导入模块。
 
   

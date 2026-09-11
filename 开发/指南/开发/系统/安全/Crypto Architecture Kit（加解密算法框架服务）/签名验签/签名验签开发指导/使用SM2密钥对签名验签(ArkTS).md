@@ -1,6 +1,6 @@
 # 使用SM2密钥对签名验签(ArkTS)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-sm2-sign-sig-verify-pkcs1
 
@@ -9,7 +9,7 @@
 **签名**
 1. 调用[cryptoFramework.createAsyKeyGenerator](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#cryptoframeworkcreateasykeygenerator)、[AsyKeyGenerator.generateKeyPair](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#generatekeypair-1)，生成非对称密钥算法为SM2、密钥长度为256位的密钥对（KeyPair）。
 
-  如何生成SM2非对称密钥，开发者可参考下文示例，并结合[非对称密钥生成和转换规格：SM2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-asym-key-generation-conversion-spec#sm2)和[随机生成非对称密钥对](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-generate-asym-key-pair-randomly)理解，参考文档与当前示例可能存在入参差异，请在阅读时注意区分。
+  如何生成SM2非对称密钥，开发者可参考下文示例，并结合[非对称密钥生成和转换规格：SM2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-key-generation-conversion#sm2)和[随机生成非对称密钥对](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-generate-asym-key-pair-randomly)理解，参考文档与当前示例可能存在入参差异，请在阅读时注意区分。
 2. 调用[cryptoFramework.createSign](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#cryptoframeworkcreatesign)，指定字符串参数'SM2_256|SM3'，创建非对称密钥类型为SM2_256、摘要算法为SM3的Sign实例，用于完成签名操作。
 3. 调用[Sign.init](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#init-3)，使用私钥（PriKey）初始化Sign实例。
 4. 调用[Sign.update](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#update-3)，传入待签名的数据。当前单次update长度没有限制，开发者可以根据数据量判断如何调用update。
@@ -76,7 +76,7 @@ import { buffer } from '@kit.ArkTS';
 let input1: cryptoFramework.DataBlob = { data: new Uint8Array(buffer.from('This is Sign test plan1', 'utf-8').buffer) };
 let input2: cryptoFramework.DataBlob = { data: new Uint8Array(buffer.from('This is Sign test plan2', 'utf-8').buffer) };
 
-function signMessagePromise(priKey: cryptoFramework.PriKey) {
+function signMessageSync(priKey: cryptoFramework.PriKey) {
   let signAlg = 'SM2_256|SM3';
   let signer = cryptoFramework.createSign(signAlg);
   signer.initSync(priKey);
@@ -85,7 +85,7 @@ function signMessagePromise(priKey: cryptoFramework.PriKey) {
   return signData;
 }
 
-function verifyMessagePromise(signMessageBlob: cryptoFramework.DataBlob, pubKey: cryptoFramework.PubKey) {
+function verifyMessageSync(signMessageBlob: cryptoFramework.DataBlob, pubKey: cryptoFramework.PubKey) {
   let verifyAlg = 'SM2_256|SM3';
   let verifier = cryptoFramework.createVerify(verifyAlg);
   verifier.initSync(pubKey);
@@ -99,8 +99,8 @@ function main() {
   let keyGenAlg = 'SM2_256';
   let generator = cryptoFramework.createAsyKeyGenerator(keyGenAlg);
   let keyPair = generator.generateKeyPairSync();
-  let signData = signMessagePromise(keyPair.priKey);
-  let verifyResult = verifyMessagePromise(signData, keyPair.pubKey);
+  let signData = signMessageSync(keyPair.priKey);
+  let verifyResult = verifyMessageSync(signData, keyPair.pubKey);
   if (verifyResult === true) {
     console.info('verify result: success.');
   } else {

@@ -1,10 +1,14 @@
 # NDK涉及的musl libc接口使用限制的说明
 
-更新时间：2026-07-28 11:23:46（官网已下线）
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/guidance-on-ndk-libc-interfaces-affected-by-permissions
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 开发者使用DevEco Studio或者NDK进行应用开发时，可能涉及到使用musl libc的接口能力，因为musl libc的个别接口可能受多种系统和环境的限制而无法使用，此时可以通过本文档进行接口问题排查。
 
@@ -12,17 +16,23 @@
 
 
 
-#### Seccomp机制影响的musl接口
+## Seccomp机制影响的musl接口
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 
 
-#### 确定进程因为Seccomp机制终止的方法
+### 确定进程因为Seccomp机制终止的方法
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
  - 查看进程faultlog日志，如果报错原因是signal:SIGSYS，且栈顶在ld-musl-{架构}.so.1库里，则进程终止可能是由Seccomp机制引起的。       
 ```bash
 cat /data/log/faultlog/faultlogger/cppcrash-xxxx
 ```
- 错误示例：       
+错误示例：       
 ```text
 Process name:com.example.myapplication
 Reason:Signal:SIGSYS(UNKNOWN)
@@ -36,7 +46,11 @@ Tid:13893, Name:e.myapplication
 
 
 
-#### 常见可能受Seccomp机制影响的接口列表如下
+### 常见可能受Seccomp机制影响的接口列表如下
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 头文件 | musl接口名称 |
 | --- | --- |
@@ -95,7 +109,11 @@ Tid:13893, Name:e.myapplication
 
 
 
-#### 内核没有对外开放影响的musl接口
+## 内核没有对外开放影响的musl接口
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 头文件 | musl接口名称 |
 | --- | --- |
@@ -106,18 +124,28 @@ Tid:13893, Name:e.myapplication
 
 
 
-#### SELinux机制影响的musl接口
+## SELinux机制影响的musl接口
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 
 
-#### 确定接口因为SELinux机制报错的方法
+### 确定接口因为SELinux机制报错的方法
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
  - 引入errno.h头文件，检查errno错误状态码，如果错误状态码是EACCES，则接口报错可能是由SELinux机制引起的。
 
 
 
 
-#### 常见可能受SELinux机制影响的接口列表如下
+### 常见可能受SELinux机制影响的接口列表如下
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 头文件 | musl接口名称 |
 | --- | --- |
@@ -178,13 +206,17 @@ Tid:13893, Name:e.myapplication
 
 
 
-#### 沙箱机制影响的musl接口
+## 沙箱机制影响的musl接口
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 沙箱机制可参考 [应用沙箱目录](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-sandbox-directory)。
 
 引入errno.h头文件，检查errno错误状态码，如果错误状态码是ENOENT，则接口报错可能是由沙箱机制引起的。
 
 常见可能受沙箱机制影响的接口列表如下：
+
 
 | 头文件 | musl接口名称 |
 | --- | --- |
@@ -202,7 +234,11 @@ Tid:13893, Name:e.myapplication
 
 
 
-#### 空实现或默认失败的musl接口
+## 空实现或默认失败的musl接口
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 头文件 | musl接口名称 |
 | --- | --- |
@@ -219,11 +255,15 @@ Tid:13893, Name:e.myapplication
 
 
 
-#### 需要特殊权限才能执行的musl接口
+## 需要特殊权限才能执行的musl接口
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 引入errno.h头文件，检查errno错误状态码，如果错误状态码是EPERM，则接口报错可能是由系统Capabilities安全机制引起的，也有可能是内核其他安全管控引起的。
 
 常见可能受Capabilities机制影响的接口如下：
+
 
 | 头文件 | musl接口名称 | Capabilities权限 |
 | --- | --- | --- |
@@ -246,11 +286,18 @@ Tid:13893, Name:e.myapplication
 
 
 
-#### third_party_musl 中与 SELinux 强相关的接口(按实现路径归类)
+## third_party_musl 中与 SELinux 强相关的接口(按实现路径归类)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 
 
-#### pty/tty 与终端链路
+### pty/tty 与终端链路
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 头文件 | musl 接口名称 | 固定访问路径 |
 | --- | --- | --- |
@@ -270,7 +317,11 @@ Tid:13893, Name:e.myapplication
 
 
 
-#### 共享内存与命名信号量
+### 共享内存与命名信号量
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 头文件 | musl 接口名称 | 固定访问路径 |
 | --- | --- | --- |
@@ -283,7 +334,11 @@ Tid:13893, Name:e.myapplication
 
 
 
-#### shell 执行与日志控制台
+### shell 执行与日志控制台
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 头文件 | musl 接口名称 | 固定访问路径 |
 | --- | --- | --- |
@@ -299,7 +354,11 @@ Tid:13893, Name:e.myapplication
 
 
 
-#### 账号与敏感文件
+### 账号与敏感文件
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 头文件 | musl 接口名称 | 固定访问路径 |
 | --- | --- | --- |
@@ -310,7 +369,11 @@ Tid:13893, Name:e.myapplication
 
 
 
-#### 无固定路径但存在 SELinux 管控点的接口
+### 无固定路径但存在 SELinux 管控点的接口
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 头文件 | musl 接口名称 | 可能受影响的原因 |
 | --- | --- | --- |

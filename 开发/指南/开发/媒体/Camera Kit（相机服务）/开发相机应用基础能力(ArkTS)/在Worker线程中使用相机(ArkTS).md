@@ -1,6 +1,6 @@
 # 在Worker线程中使用相机(ArkTS)
 
-更新时间：2026-03-09 02:50:43
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-worker
 
@@ -9,7 +9,7 @@
 通常开发者使用相机功能需要创建相机会话，并持续接收处理预览流、拍照流、录像流等从而实现相关相机功能，这些密集型操作如果都放在主线程即UI线程，可能会阻塞UI绘制，推荐开发者在worker线程中实现相机功能。
 
 
-#### 开发步骤
+## 开发步骤
 1. 导入依赖，本篇文档需要用到worker和相机框架等相关依赖包。
 
   
@@ -251,7 +251,7 @@ struct Index {
 
 
 
-#### trace对比
+## trace对比
 
 不使用Worker：
 

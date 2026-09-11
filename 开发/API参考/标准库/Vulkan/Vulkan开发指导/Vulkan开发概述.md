@@ -1,8 +1,9 @@
 # Vulkan开发概述
 
-更新时间：2026-03-09 02:50:43
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/vulkan-overview
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Vulkan是一套用来做2D和3D渲染的图形应用程序接口，在HarmonyOS中，新增两组扩展VK_OHOS_surface和VK_OHOS_external_memory。
  

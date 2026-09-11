@@ -1,9 +1,9 @@
 # GridCol
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-gridcol
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 栅格布局系统中的列组件，必须作为栅格容器组件([GridRow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-gridrow))的子组件使用。适用于响应式布局、多设备适配等需要动态调整列宽的场景。支持响应式断点配置、跨列布局、偏移和排序功能。使用GridCol组件可以快速实现响应式布局，简化多设备适配的开发工作。
  
@@ -12,17 +12,19 @@
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 可以包含单个子组件。
  
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 GridCol(option?: GridColOptions)
  
@@ -36,6 +38,7 @@ GridCol(option?: GridColOptions)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | option | GridColOptions | 否 | 栅格布局子组件配置选项，可配置span（占用列数）、offset（偏移列数）、order（排序序号）。当需要自定义栅格布局行为（如响应式列宽、固定偏移位置、指定渲染顺序）时传入此参数；当使用默认栅格布局时可不传入。不传入时使用默认配置。 |
@@ -43,9 +46,10 @@ GridCol(option?: GridColOptions)
  
   
 
-#### GridColOptions对象说明
+## GridColOptions对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置栅格列布局组件布局选项。
  
@@ -55,6 +59,7 @@ GridCol(option?: GridColOptions)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | span | number \| GridColColumnOption | 否 | 是 | 栅格子组件占用栅格容器组件的列数。span为0表示该元素不参与布局计算，即不会被渲染。 取值为非负整数，默认值为1。 非法值：按默认值处理。 |
@@ -68,17 +73,19 @@ API version 20之后，span的继承规则见[GridColColumnOption](#gridcolcolum
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
  
   
 
-#### span
+### span
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 span(value: number | GridColColumnOption)
  
@@ -92,6 +99,7 @@ span(value: number | GridColColumnOption)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| GridColColumnOption | 是 | 占用列数。span为0表示该元素不参与布局计算，即不会被渲染。 取值为非负整数，默认值为1。 非法值：按默认值处理。 说明： 该属性具有断点继承性，详见GridColOptions对象说明。API version 20之后，默认值继承规则有变化，详见GridColColumnOption。 |
@@ -99,9 +107,10 @@ span(value: number | GridColColumnOption)
  
   
 
-#### gridColOffset
+### gridColOffset
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 gridColOffset(value: number | GridColColumnOption)
  
@@ -115,6 +124,7 @@ gridColOffset(value: number | GridColColumnOption)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| GridColColumnOption | 是 | 相对于原本位置偏移的列数。gridColOffset为0表示不偏移。 取值为非负整数，默认值为0。 非法值：按默认值处理。 说明： 该属性具有断点继承性，详见GridColOptions对象说明。 |
@@ -122,9 +132,10 @@ gridColOffset(value: number | GridColColumnOption)
  
   
 
-#### order
+### order
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 order(value: number | GridColColumnOption)
  
@@ -138,6 +149,7 @@ order(value: number | GridColColumnOption)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| GridColColumnOption | 是 | 元素序号，根据栅格子组件的序号从小到大排序。 取值为非负整数，默认值为0。 非法值：按默认值处理。 说明： 该属性具有断点继承性，详见GridColOptions对象说明。 |
@@ -145,9 +157,10 @@ order(value: number | GridColColumnOption)
  
   
 
-#### GridColColumnOption
+## GridColColumnOption
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于自定义指定在不同宽度设备类型上，栅格子组件占据的栅格数量单位。
  
@@ -172,6 +185,7 @@ span: {md:4, lg:8} // 等于配置 span: {xs:4, sm:4, md:4, lg:8, xl:8, xxl:8}
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | xs | number | 否 | 是 | 在最小宽度类型设备上，栅格子组件占据的栅格列数。取值为非负整数。默认值为1。非法值：按默认值处理。 |
@@ -184,17 +198,19 @@ span: {md:4, lg:8} // 等于配置 span: {xs:4, sm:4, md:4, lg:8, xl:8, xxl:8}
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)。
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 GridCol的基本用法示例。
  
@@ -241,4 +257,4 @@ struct GridColExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/YKaY3IrDTH2GM568xQ6ysg/zh-cn_image_0000002656008392.png?HW-CC-KV=V1&HW-CC-Date=20260730T071459Z&HW-CC-Expire=86400&HW-CC-Sign=9CFD7AFFBA3EF10E1E75E633754BAAD56355790E5ED9CF55BF003C94A648B550)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/fJWPmVojTfqni5sO_U5RyA/zh-cn_image_0000002747292561.png?HW-CC-KV=V1&HW-CC-Date=20260911T073112Z&HW-CC-Expire=86400&HW-CC-Sign=FEFBC20A5DE2FF818D8B512D3E28032347D8A6722C905F02247D27123AEB89CD)

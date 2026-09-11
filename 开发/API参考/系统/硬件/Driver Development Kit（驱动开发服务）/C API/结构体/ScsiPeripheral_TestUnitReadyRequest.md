@@ -1,6 +1,6 @@
 # ScsiPeripheral_TestUnitReadyRequest
 
-更新时间：2026-06-03 01:38:22（官网已下线）
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-scsiperipheralddk-scsiperipheral-testunitreadyrequest
 **支持设备：** PC/2in1
@@ -10,11 +10,12 @@ typedef struct ScsiPeripheral_TestUnitReadyRequest {...} ScsiPeripheral_TestUnit
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** PC/2in1
 
-命令（test unit ready）的请求结构体。
+SCSI命令（TEST UNIT READY）的请求结构体，通常用于确认逻辑单元是否就绪（逻辑单元是SCSI设备中可独立寻址的I/O操作实体）。
  
 **起始版本：** 18
  
@@ -24,17 +25,20 @@ typedef struct ScsiPeripheral_TestUnitReadyRequest {...} ScsiPeripheral_TestUnit
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** PC/2in1
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** PC/2in1
  
+
 | 名称 | 描述 |
 | --- | --- |
-| uint8_t control | Control字段，用于指定一些控制信息。 |
-| uint32_t timeout | 超时时间(单位: 毫秒)。 |
+| uint8_t control | Control字段，用于指定SCSI命令的控制信息。 |
+| uint32_t timeout | 超时时间（单位：ms）。 |

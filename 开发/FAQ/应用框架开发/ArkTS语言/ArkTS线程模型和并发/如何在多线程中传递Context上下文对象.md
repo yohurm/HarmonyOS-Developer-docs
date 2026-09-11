@@ -245,7 +245,7 @@ import { taskpool } from '@kit.ArkTS';
 @Concurrent
 async function getCacheDir(sendableContext: sendableContextManager.SendableContext) {
   const contextTask: common.UIAbilityContext = sendableContextManager.convertToUIAbilityContext(sendableContext);
-  // 直接使用getContext方法时，主线程调用获取Context对象并可正常打印。子线程调用时无法获取Context对象
+  <em>// 直接使用getContext方法时，主线程调用获取Context对象并可正常打印。子线程调用时无法获取Context对象</em>
   try {
     contextTask.resourceManager.getStringValue($r('app.string.module_desc').id,
       (error: BusinessError, value: string) => {
@@ -297,13 +297,13 @@ struct SharedContextTaskPoolDemo {
   该方案既保证了Context可以引用传递，减少内存开销，又避免了Context对象在多个线程间进行引用。
 实现共享模块的单例Context类。
 ```ArkTS
-// 共享模块sharedModule.ets
+<em>// 共享模块sharedModule.ets</em>
 import { sendableContextManager } from '@kit.AbilityKit';
 
-// 声明当前模块为共享模块，只能导出可Sendable数据
+<em>// 声明当前模块为共享模块，只能导出可Sendable数据</em>
 'use shared'
 
-// 共享模块，SingletonA全局唯一
+<em>// 共享模块，SingletonA全局唯一</em>
 @Sendable
 class SingletonShareContext {
   private sendableContext: sendableContextManager.SendableContext | undefined;
@@ -314,7 +314,7 @@ class SingletonShareContext {
     }
   }
 
-  // 返回sendableContext对象
+ <em> // 返回sendableContext对象</em>
   public getContext() {
     if (this.sendableContext === undefined) {
       console.error('sendableContext未初始化');
@@ -328,7 +328,7 @@ export const singletonShareContext = new SingletonShareContext();
 
 - 在多线程业务代码中引用单例类，进行Context对象的使用。
 ```ArkTS
-// index.ets
+<em>// index.ets</em>
 import { taskpool } from '@kit.ArkTS';
 import { common, sendableContextManager } from '@kit.AbilityKit';
 import { singletonShareContext } from './SingletonShareContext';
@@ -336,9 +336,9 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 @Concurrent
 async function printContext() {
-  // 将SendableContext对象转换为Context
+ <em> // 将SendableContext对象转换为Context</em>
   let context: common.Context = sendableContextManager.convertToUIAbilityContext(singletonShareContext.getContext()!);
-  // 主线程和子线程调用时均可正常打印
+  <em>// 主线程和子线程调用时均可正常打印</em>
   console.info('sendableContextManager:' + context.cacheDir);
 }
 

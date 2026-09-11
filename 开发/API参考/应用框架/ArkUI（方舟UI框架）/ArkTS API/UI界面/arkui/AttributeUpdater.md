@@ -1,9 +1,9 @@
 # AttributeUpdater
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-attributeupdater
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 将属性直接设置给组件，无需标记为状态变量即可直接触发UI更新。适用于需要在不定义状态变量的情况下动态更新组件属性的场景，如动态修改组件构造参数、避免为一次性属性更新定义状态变量等。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { AttributeUpdater } from '@kit.ArkUI';
@@ -26,9 +27,10 @@ import { AttributeUpdater } from '@kit.ArkUI';
 
 
 
-#### Initializer&lt;T&gt;
+## Initializer&lt;T&gt;
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Initializer&lt;T&gt; = () => T
 
@@ -40,6 +42,7 @@ type Initializer&lt;T&gt; = () => T
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | T | 返回当前组件的属性实例。 |
@@ -47,9 +50,10 @@ type Initializer&lt;T&gt; = () => T
 
 
 
-#### AttributeUpdater<T, C = Initializer&lt;T&gt;>
+## AttributeUpdater<T, C = Initializer&lt;T&gt;>
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 为[AttributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifiert)的实现类，开发者需要自定义class继承AttributeUpdater。
 
@@ -61,9 +65,10 @@ type Initializer&lt;T&gt; = () => T
 
 
 
-#### applyNormalAttribute
+### applyNormalAttribute
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 applyNormalAttribute?(instance: T): void
 
@@ -75,6 +80,7 @@ applyNormalAttribute?(instance: T): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | instance | T | 是 | 组件的属性类实例，开发者通过调用该实例的属性方法来设置或更新组件的正常态属性，比如Button组件的ButtonAttribute，Text组件的TextAttribute等。 |
@@ -82,9 +88,10 @@ applyNormalAttribute?(instance: T): void
 
 
 
-#### initializeModifier
+### initializeModifier
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 initializeModifier(instance: T): void
 
@@ -95,6 +102,7 @@ AttributeUpdater首次设置给组件时提供的样式。不建议在同一组�
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -160,9 +168,10 @@ struct Index {
 
 
 
-#### attribute
+### attribute
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get attribute(): T | undefined
 
@@ -173,6 +182,7 @@ get attribute(): T | undefined
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -222,13 +232,15 @@ struct UpdaterDemo2 {
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -273,14 +285,15 @@ struct AttributeDemo3 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/0ovsc9laRG6gwP6l5MSXMw/zh-cn_image_0000002655848314.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071448Z&HW-CC-Expire=86400&HW-CC-Sign=44D31825151D53735D454DA46970962129964B52470EABCCBA59D4B5F6C3D5A9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/Yw9cu51_Qj6qpNTCaOQz4w/zh-cn_image_0000002717612448.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=7B507E534DCC50A5CF47261FBA584D9C992F21E99A90E0A1085A48232FA89DEB)
 
 
 
 
-#### onComponentChanged
+### onComponentChanged
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onComponentChanged(component: T): void
 
@@ -291,6 +304,7 @@ onComponentChanged(component: T): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -347,4 +361,4 @@ struct UpdaterDemo4 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/tjCDtVkOTiOs35Z76CWYAg/zh-cn_image_0000002686087743.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071448Z&HW-CC-Expire=86400&HW-CC-Sign=2FB095D77512ED8C1D81526E48EE5B65BFAB10A788869E230C67BB03BBB80CF4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/JZmZxLiEQsSFrXXpy5SDHw/zh-cn_image_0000002747292401.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=4EC835B35A256C51BB912231082CD57D3928BBDD830C00E538210607A48AB25C)

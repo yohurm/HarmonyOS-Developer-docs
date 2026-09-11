@@ -1,18 +1,19 @@
 # HiDebug_MallocDispatch
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hidebug-hidebug-mallocdispatch
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct HiDebug_MallocDispatch {...} HiDebug_MallocDispatch
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 应用程序进程可替换/恢复的HiDebug_MallocDispatch表结构类型定义。通过该结构体，开发者可以自定义内存管理函数指针，实现对进程内存分配和释放的监控与定制。主要特点包括：支持动态替换和恢复内存管理函数、提供全面的内存操作接口（malloc、calloc、realloc、free、mmap、munmap）、不影响系统默认内存管理行为。使用场景包括：内存泄漏检测、内存使用性能分析、自定义内存分配策略、内存安全监控等。能够帮助开发者及时发现和解决内存问题，提升应用稳定性和性能。
  
@@ -24,16 +25,19 @@ typedef struct HiDebug_MallocDispatch {...} HiDebug_MallocDispatch
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 成员函数
+### 成员函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | void* (*malloc)(size_t) | 开发者自定义malloc函数指针。用于替代系统默认的内存分配函数，在分配内存时记录分配信息或执行自定义逻辑，可用于内存泄漏追踪和性能监控。 |
@@ -46,15 +50,17 @@ typedef struct HiDebug_MallocDispatch {...} HiDebug_MallocDispatch
  
   
 
-#### 成员函数说明
+## 成员函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### malloc()
+### malloc()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void* (*malloc)(size_t)
@@ -66,9 +72,10 @@ void* (*malloc)(size_t)
  
   
 
-#### calloc()
+### calloc()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void* (*calloc)(size_t, size_t)
@@ -80,9 +87,10 @@ void* (*calloc)(size_t, size_t)
  
   
 
-#### realloc()
+### realloc()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void* (*realloc)(void*, size_t)
@@ -94,9 +102,10 @@ void* (*realloc)(void*, size_t)
  
   
 
-#### free()
+### free()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void (*free)(void*)
@@ -108,9 +117,10 @@ void (*free)(void*)
  
   
 
-#### mmap()
+### mmap()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void* (*mmap)(void*, size_t, int, int, int, off_t)
@@ -122,9 +132,10 @@ void* (*mmap)(void*, size_t, int, int, int, off_t)
  
   
 
-#### munmap()
+### munmap()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int (*munmap)(void*, size_t)

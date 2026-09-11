@@ -1,23 +1,66 @@
 # InputMethod_PrivateCommand
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-inputmethod-inputmethod-privatecommand
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct InputMethod_PrivateCommand InputMethod_PrivateCommand
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-表示私有数据的结构体类型。用于输入框与输入法应用间交互的私有数据结构。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+私有命令结构体，采用key-value机制，作为输入框与输入法应用之间传递私有数据的载体。可用于传递自定义指令、扩展能力参数和特定场景数据，提升输入法功能的扩展性和兼容性。每个PrivateCommand实例包含一个key（标识符字符串）和一个value（布尔值、整数或字符串，三种类型只能选择一种），value的数据类型由InputMethod_CommandValueType标识。
+ 
+用途：在输入法应用与编辑框客户端之间传递私有数据，实现双方的自定义通信。输入法应用通过OH_InputMethodProxy_SendPrivateCommand向编辑框客户端发送私有指令；编辑框客户端通过OH_TextEditorProxy_ReceivePrivateCommandFunc回调接收来自输入法应用的私有指令。每个PrivateCommand实例携带一条key-value私有数据，最多可同时发送5个实例，单次发送的所有私有数据与key值的大小总和限制为32KB。
+ 
+使用场景：
+ 
+- 输入法应用向编辑框发送私有指令：输入法应用创建PrivateCommand实例，设置key和value后，通过[OH_InputMethodProxy_SendPrivateCommand](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-inputmethod-inputmethod-proxy-capi-h#oh_inputmethodproxy_sendprivatecommand)发送给编辑框客户端。
+- 编辑框客户端接收私有指令：编辑框客户端在[OH_TextEditorProxy_ReceivePrivateCommandFunc](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-inputmethod-text-editor-proxy-capi-h#oh_texteditorproxy_receiveprivatecommandfunc)回调中接收PrivateCommand实例数组，遍历数组解析每个实例的key和value。
+
  
 **起始版本：** 12
  
 **相关模块：** [InputMethod](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-inputmethod)
  
 **所在头文件：** [inputmethod_private_command_capi.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-inputmethod-private-command-capi-h)
+ 
+相关函数：
+  
+
+| 函数 | 说明 |
+| --- | --- |
+| OH_PrivateCommand_Create | 创建InputMethod_PrivateCommand实例。 |
+| OH_PrivateCommand_Destroy | 销毁InputMethod_PrivateCommand实例。 |
+| OH_PrivateCommand_SetKey | 设置key值。 |
+| OH_PrivateCommand_SetBoolValue | 设置布尔类型value值。 |
+| OH_PrivateCommand_SetIntValue | 设置整数类型value值。 |
+| OH_PrivateCommand_SetStrValue | 设置字符串类型value值。 |
+| OH_PrivateCommand_GetKey | 获取key值。 |
+| OH_PrivateCommand_GetValueType | 获取value的数据类型。 |
+| OH_PrivateCommand_GetBoolValue | 获取布尔类型value值。 |
+| OH_PrivateCommand_GetIntValue | 获取整数类型value值。 |
+| OH_PrivateCommand_GetStrValue | 获取字符串类型value值。 |
+ 
+ 
+相关接口：
+  
+
+| 接口 | 说明 |
+| --- | --- |
+| OH_InputMethodProxy_SendPrivateCommand | 输入法应用向编辑框客户端发送私有指令，PrivateCommand实例数组作为参数传入。最多5个实例，数据总大小限制32KB。 |
+| OH_TextEditorProxy_ReceivePrivateCommandFunc | 编辑框客户端接收私有指令的回调函数，PrivateCommand实例数组作为参数传入。回调返回后实例内存被释放。 |
+ 
+ 
+相关枚举：
+  
+
+| 枚举 | 说明 |
+| --- | --- |
+| InputMethod_CommandValueType | PrivateCommand中value的数据类型枚举（NONE/STRING/BOOL/INT32）。 |

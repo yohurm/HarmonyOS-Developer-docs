@@ -1,18 +1,19 @@
 # @ohos.multimodalInput.pointer (鼠标光标)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-pointer
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-本模块提供鼠标光标管理能力，包括查询、设置鼠标光标属性。
+鼠标光标管理模块，用于查询和设置鼠标光标相关属性。
 
 > [!NOTE]
 > 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -23,17 +24,19 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 
 
-#### pointer.setPointerVisible
+## pointer.setPointerVisible
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 setPointerVisible(visible: boolean, callback: AsyncCallback&lt;void&gt;): void
 
-设置当前窗口的鼠标光标是否显示，使用callback异步回调。
+设置光标显示/隐藏状态，此状态作用于当前进程的所有窗口。光标在屏幕上的实际显示/隐藏效果还受渲染服务进程影响。使用callback异步回调。
 
 **系统能力**：SystemCapability.MultimodalInput.Input.Pointer
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -44,6 +47,7 @@ setPointerVisible(visible: boolean, callback: AsyncCallback&lt;void&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -84,17 +88,19 @@ struct Index {
 
 
 
-#### pointer.setPointerVisible
+## pointer.setPointerVisible
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 setPointerVisible(visible: boolean): Promise&lt;void&gt;
 
-设置当前窗口的鼠标光标是否显示，使用Promise异步回调。
+设置光标显示/隐藏状态，此状态作用于当前进程的所有窗口。光标在屏幕上的实际显示/隐藏效果还受渲染服务进程影响。使用Promise异步回调。
 
 **系统能力**：SystemCapability.MultimodalInput.Input.Pointer
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -102,6 +108,7 @@ setPointerVisible(visible: boolean): Promise&lt;void&gt;
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -111,6 +118,7 @@ setPointerVisible(visible: boolean): Promise&lt;void&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -149,17 +157,19 @@ struct Index {
 
 
 
-#### pointer.setPointerVisibleSync10+
+## pointer.setPointerVisibleSync10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 setPointerVisibleSync(visible: boolean): void
 
-设置当前窗口鼠标光标的显示状态，使用同步方式。
+设置光标显示/隐藏状态，此状态作用于当前进程的所有窗口。光标在屏幕上的实际显示/隐藏效果还受渲染服务进程影响。函数调用方式为同步方式。
 
 **系统能力**：SystemCapability.MultimodalInput.Input.Pointer
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -169,6 +179,7 @@ setPointerVisibleSync(visible: boolean): void
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -203,17 +214,19 @@ struct Index {
 
 
 
-#### pointer.isPointerVisible
+## pointer.isPointerVisible
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 isPointerVisible(callback: AsyncCallback&lt;boolean&gt;): void
 
-获取鼠标光标显示状态，使用callback异步回调。
+获取当前窗口的显示/隐藏状态，此状态反映的是多模进程对此窗口所在进程的光标显示/隐藏状态，并非真实的光标显示/隐藏情况，光标是否正确显示/隐藏还受渲染服务进程影响，使用callback异步回调。
 
 **系统能力**：SystemCapability.MultimodalInput.Input.Pointer
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -223,6 +236,7 @@ isPointerVisible(callback: AsyncCallback&lt;boolean&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -262,17 +276,19 @@ struct Index {
 
 
 
-#### pointer.isPointerVisible
+## pointer.isPointerVisible
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 isPointerVisible(): Promise&lt;boolean&gt;
 
-获取鼠标光标显示状态，使用Promise异步回调。
+获取当前窗口的显示/隐藏状态，此状态反映的是多模进程对此窗口所在进程的光标显示/隐藏状态，并非真实的光标显示/隐藏情况，光标是否正确显示/隐藏还受渲染服务进程影响，使用Promise异步回调。
 
 **系统能力**：SystemCapability.MultimodalInput.Input.Pointer
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -310,17 +326,19 @@ struct Index {
 
 
 
-#### pointer.isPointerVisibleSync10+
+## pointer.isPointerVisibleSync10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 isPointerVisibleSync(): boolean
 
-获取当前窗口鼠标光标的显示状态，使用同步方式。
+获取当前窗口的显示/隐藏状态，此状态反映的是多模进程对此窗口所在进程的光标显示/隐藏状态，并非真实的光标显示/隐藏情况，光标是否正确显示/隐藏还受渲染服务进程影响，函数调用使用同步方式。
 
 **系统能力**：SystemCapability.MultimodalInput.Input.Pointer
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -354,7 +372,8 @@ struct Index {
 
 
 
-#### pointer.getPointerStyle
+## pointer.getPointerStyle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -366,6 +385,7 @@ getPointerStyle(windowId: number, callback: AsyncCallback&lt;PointerStyle&gt;): 
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | windowId | number | 是 | 窗口ID。取值范围为大于等于-1的整数，取值为-1时表示全局窗口。 窗口ID合法并且对应窗口存在时，返回窗口的鼠标光标样式。 窗口ID合法但窗口不存在时，默认返回全局鼠标光标样式。 如果通过setPointerStyle接口为不存在的窗口设置了鼠标光标样式，使用本接口可以正常获取到该光标样式。 |
@@ -375,6 +395,7 @@ getPointerStyle(windowId: number, callback: AsyncCallback&lt;PointerStyle&gt;): 
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -427,7 +448,8 @@ struct Index {
 
 
 
-#### pointer.getPointerStyle
+## pointer.getPointerStyle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -439,12 +461,14 @@ getPointerStyle(windowId: number): Promise&lt;PointerStyle&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | windowId | number | 是 | 窗口ID。取值范围为大于等于-1的整数，取值为-1时表示全局窗口。 窗口ID合法并且对应窗口存在时，返回窗口的鼠标光标样式。 窗口ID合法但窗口不存在时，默认返回全局鼠标光标样式。 如果通过setPointerStyle接口为不存在的窗口设置了鼠标光标样式，使用本接口可以正常获取到该光标样式。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -454,6 +478,7 @@ getPointerStyle(windowId: number): Promise&lt;PointerStyle&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -504,7 +529,8 @@ struct Index {
 
 
 
-#### pointer.getPointerStyleSync10+
+## pointer.getPointerStyleSync10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -516,12 +542,14 @@ getPointerStyleSync(windowId: number): PointerStyle
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | windowId | number | 是 | 窗口ID。取值范围为大于等于-1的整数，取值为-1时表示全局窗口。 窗口ID合法并且对应窗口存在时，返回窗口的鼠标光标样式。 窗口ID合法但窗口不存在时，默认返回全局鼠标光标样式。 如果通过setPointerStyleSync接口为不存在的窗口设置了鼠标光标样式，使用本接口可以正常获取到该光标样式。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -531,6 +559,7 @@ getPointerStyleSync(windowId: number): PointerStyle
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -565,7 +594,8 @@ struct Index {
 
 
 
-#### pointer.setPointerStyle
+## pointer.setPointerStyle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -577,6 +607,7 @@ setPointerStyle(windowId: number, pointerStyle: PointerStyle, callback: AsyncCal
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | windowId | number | 是 | 窗口ID。取值范围为大于等于0的整数。 窗口ID合法并且对应窗口存在时，可以设置窗口的鼠标光标样式。 窗口ID合法但窗口不存在时，也可以设置鼠标光标样式。 设置结果可通过getPointerStyle获取。 |
@@ -587,6 +618,7 @@ setPointerStyle(windowId: number, pointerStyle: PointerStyle, callback: AsyncCal
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -635,7 +667,8 @@ struct Index {
 
 
 
-#### pointer.setPointerStyle
+## pointer.setPointerStyle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -647,6 +680,7 @@ setPointerStyle(windowId: number, pointerStyle: PointerStyle): Promise&lt;void&g
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | windowId | number | 是 | 窗口ID。取值范围为大于等于0的整数。 窗口ID合法并且对应窗口存在时，可以设置窗口的鼠标光标样式。 窗口ID合法但窗口不存在时，也可以设置鼠标光标样式。 设置结果可通过getPointerStyle获取。 |
@@ -654,6 +688,7 @@ setPointerStyle(windowId: number, pointerStyle: PointerStyle): Promise&lt;void&g
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -663,6 +698,7 @@ setPointerStyle(windowId: number, pointerStyle: PointerStyle): Promise&lt;void&g
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -713,7 +749,8 @@ struct Index {
 
 
 
-#### pointer.setPointerStyleSync10+
+## pointer.setPointerStyleSync10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -725,6 +762,7 @@ setPointerStyleSync(windowId: number, pointerStyle: PointerStyle): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | windowId | number | 是 | 窗口ID。取值范围为大于等于0的整数。 窗口ID合法并且对应窗口存在时，可以设置窗口的鼠标光标样式。 窗口ID合法但窗口不存在时，也可以设置鼠标光标样式。 设置结果可通过getPointerStyleSync获取。 |
@@ -734,6 +772,7 @@ setPointerStyleSync(windowId: number, pointerStyle: PointerStyle): void
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -781,13 +820,15 @@ struct Index {
 
 
 
-#### PrimaryButton10+
+## PrimaryButton10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 鼠标主键类型。
 
 **系统能力**：SystemCapability.MultimodalInput.Input.Pointer
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -797,13 +838,15 @@ struct Index {
 
 
 
-#### RightClickType10+
+## RightClickType10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 右键菜单的触发方式。
 
 **系统能力**：SystemCapability.MultimodalInput.Input.Pointer
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -816,13 +859,15 @@ struct Index {
 
 
 
-#### PointerStyle
+## PointerStyle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 鼠标光标样式类型。
 
 **系统能力**：SystemCapability.MultimodalInput.Input.Pointer
+
 
 | 名称 | 值 | 说明 | 图示 |
 | --- | --- | --- | --- |
@@ -883,7 +928,8 @@ struct Index {
 
 
 
-#### pointer.setCustomCursor11+
+## pointer.setCustomCursor11+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -897,6 +943,7 @@ setCustomCursor(windowId: number, pixelMap: image.PixelMap, focusX?: number, foc
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | windowId | number | 是 | 窗口ID。取值为大于0的整数。 |
@@ -907,6 +954,7 @@ setCustomCursor(windowId: number, pixelMap: image.PixelMap, focusX?: number, foc
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -915,6 +963,7 @@ setCustomCursor(windowId: number, pixelMap: image.PixelMap, focusX?: number, foc
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -966,13 +1015,15 @@ struct Index {
 
 
 
-#### CustomCursor15+
+## CustomCursor15+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 自定义光标资源。
 
 **系统能力**：SystemCapability.MultimodalInput.Input.Pointer
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -983,13 +1034,15 @@ struct Index {
 
 
 
-#### CursorConfig15+
+## CursorConfig15+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 自定义光标配置。
 
 **系统能力**：SystemCapability.MultimodalInput.Input.Pointer
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -998,7 +1051,8 @@ struct Index {
 
 
 
-#### pointer.setCustomCursor15+
+## pointer.setCustomCursor15+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1012,6 +1066,7 @@ setCustomCursor(windowId: number, cursor: CustomCursor, config: CursorConfig): P
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | windowId | number | 是 | 窗口ID。取值为大于0的整数。 |
@@ -1021,6 +1076,7 @@ setCustomCursor(windowId: number, cursor: CustomCursor, config: CursorConfig): P
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1029,6 +1085,7 @@ setCustomCursor(windowId: number, cursor: CustomCursor, config: CursorConfig): P
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[鼠标光标错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pointer)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1084,7 +1141,8 @@ struct Index {
 
 
 
-#### pointer.setCustomCursorSync11+
+## pointer.setCustomCursorSync11+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1098,6 +1156,7 @@ setCustomCursorSync(windowId: number, pixelMap: image.PixelMap, focusX?: number,
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | windowId | number | 是 | 窗口ID。取值为大于0的整数。 |
@@ -1109,6 +1168,7 @@ setCustomCursorSync(windowId: number, pixelMap: image.PixelMap, focusX?: number,
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

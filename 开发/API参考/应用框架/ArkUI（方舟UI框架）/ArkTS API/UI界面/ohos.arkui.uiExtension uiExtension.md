@@ -1,9 +1,9 @@
 # @ohos.arkui.uiExtension (uiExtension)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-uiextension
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于[EmbeddedUIExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/embeddeduiextensionability)（或[UIExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiextensionability#uiextensionability)）中获取宿主应用的窗口信息或对应的[EmbeddedComponent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-embedded-component)组件的信息。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { uiExtension } from '@kit.ArkUI';
@@ -22,23 +23,26 @@ import { uiExtension } from '@kit.ArkUI';
 
 
 
-#### WindowProxy
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-UIExtension宿主窗口代理。
+## WindowProxy
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 属性
+UIExtension宿主窗代理。
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用
+**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -47,9 +51,10 @@ UIExtension宿主窗口代理。
 
 
 
-#### getWindowAvoidArea
+### getWindowAvoidArea
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getWindowAvoidArea(type: window.AvoidAreaType): window.AvoidArea
 
@@ -63,12 +68,14 @@ getWindowAvoidArea(type: window.AvoidAreaType): window.AvoidArea
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | window.AvoidAreaType | 是 | 表示避让区类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -78,6 +85,7 @@ getWindowAvoidArea(type: window.AvoidAreaType): window.AvoidArea
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -103,9 +111,10 @@ export default class EntryAbility extends EmbeddedUIExtensionAbility {
 
 
 
-#### on('avoidAreaChange')
+### on('avoidAreaChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'avoidAreaChange', callback: Callback&lt;AvoidAreaInfo&gt;): void
 
@@ -119,6 +128,7 @@ on(type: 'avoidAreaChange', callback: Callback&lt;AvoidAreaInfo&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件类型，固定为'avoidAreaChange'，即系统避让区变化事件。 |
@@ -128,6 +138,7 @@ on(type: 'avoidAreaChange', callback: Callback&lt;AvoidAreaInfo&gt;): void
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -155,9 +166,10 @@ export default class EntryAbility extends EmbeddedUIExtensionAbility {
 
 
 
-#### off('avoidAreaChange')
+### off('avoidAreaChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'avoidAreaChange', callback?: Callback&lt;AvoidAreaInfo&gt;): void
 
@@ -171,6 +183,7 @@ off(type: 'avoidAreaChange', callback?: Callback&lt;AvoidAreaInfo&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 注销的事件类型，固定为'avoidAreaChange'，即系统避让区变化事件。 |
@@ -180,6 +193,7 @@ off(type: 'avoidAreaChange', callback?: Callback&lt;AvoidAreaInfo&gt;): void
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -204,9 +218,10 @@ export default class EntryAbility extends EmbeddedUIExtensionAbility {
 
 
 
-#### on('windowSizeChange')
+### on('windowSizeChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'windowSizeChange', callback: Callback<window.Size>): void
 
@@ -220,6 +235,7 @@ on(type: 'windowSizeChange', callback: Callback<window.Size>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件类型，固定为'windowSizeChange'，即组件（EmbeddedComponent或UIExtensionComponent）尺寸变化事件。 |
@@ -229,6 +245,7 @@ on(type: 'windowSizeChange', callback: Callback<window.Size>): void
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -256,9 +273,10 @@ export default class EntryAbility extends EmbeddedUIExtensionAbility {
 
 
 
-#### off('windowSizeChange')
+### off('windowSizeChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'windowSizeChange', callback?: Callback<window.Size>): void
 
@@ -272,15 +290,17 @@ off(type: 'windowSizeChange', callback?: Callback<window.Size>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 注销的事件类型，固定值：'windowSizeChange'，即组件（EmbeddedComponent或UIExtensionComponent）尺寸变化事件。 |
+| type | string | 是 | 注销的事件类型，固定为'windowSizeChange'，即组件（EmbeddedComponent或UIExtensionComponent）尺寸变化事件。 |
 | callback | Callback<window.Size> | 否 | 回调函数。返回当前的组件（EmbeddedComponent或UIExtensionComponent）尺寸。如果传入该参数，则关闭该监听。如果未传入参数，则关闭组件（EmbeddedComponent或UIExtensionComponent）尺寸变化的监听。 |
 
 
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -305,9 +325,10 @@ export default class EntryAbility extends EmbeddedUIExtensionAbility {
 
 
 
-#### on('rectChange')14+
+### on('rectChange')14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 on(type: 'rectChange', reasons: number, callback: Callback&lt;RectChangeOptions&gt;): void
 
@@ -323,16 +344,18 @@ on(type: 'rectChange', reasons: number, callback: Callback&lt;RectChangeOptions&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 监听事件，固定为'rectChange'，即组件（EmbeddedComponent或UIExtensionComponent）矩形变化事件。 |
+| type | string | 是 | 监听的事件类型，固定为'rectChange'，即组件（EmbeddedComponent或UIExtensionComponent）矩形变化事件。 |
 | reasons | number | 是 | 触发组件（EmbeddedComponent或UIExtensionComponent）位置及尺寸变化的原因，具体取值可参考RectChangeReason枚举值。 |
-| callback | Callback&lt;RectChangeOptions&gt; | 是 | 回调函数。返回当前组件（EmbeddedComponent或UIExtensionComponent）矩形变化值及变化原因。 |
+| callback | Callback&lt;RectChangeOptions&gt; | 是 | 回调函数：入参用于接收当前组件（EmbeddedComponent或UIExtensionComponent）矩形变化值及变化原因。 |
 
 
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -361,9 +384,10 @@ export default class EntryAbility extends EmbeddedUIExtensionAbility {
 
 
 
-#### off('rectChange')14+
+### off('rectChange')14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 off(type: 'rectChange', callback?: Callback&lt;RectChangeOptions&gt;): void
 
@@ -379,15 +403,17 @@ off(type: 'rectChange', callback?: Callback&lt;RectChangeOptions&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 监听事件，固定为'rectChange'，即组件（EmbeddedComponent或UIExtensionComponent）矩形变化事件。 |
+| type | string | 是 | 注销的事件类型，固定为'rectChange'，即组件（EmbeddedComponent或UIExtensionComponent）矩形变化事件。 |
 | callback | Callback&lt;RectChangeOptions&gt; | 否 | 回调函数。返回当前组件（EmbeddedComponent或UIExtensionComponent）矩形变化值及变化原因。如果传入参数，则关闭该监听。如果未传入参数，则关闭所有组件（EmbeddedComponent或UIExtensionComponent）矩形变化的监听。 |
 
 
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -413,9 +439,10 @@ export default class EntryAbility extends EmbeddedUIExtensionAbility {
 
 
 
-#### createSubWindowWithOptions
+### createSubWindowWithOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 createSubWindowWithOptions(name: string, subWindowOptions: window.SubWindowOptions): Promise<window.Window>
 
@@ -431,6 +458,7 @@ createSubWindowWithOptions(name: string, subWindowOptions: window.SubWindowOptio
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 子窗口的名字。 |
@@ -438,6 +466,7 @@ createSubWindowWithOptions(name: string, subWindowOptions: window.SubWindowOptio
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -448,11 +477,12 @@ createSubWindowWithOptions(name: string, subWindowOptions: window.SubWindowOptio
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed. |
 | 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
-| 1300002 | This window state is abnormal. Possible causes: 1. The window is not created or destroyed. 2. Internal task error. 3. The subWindow has been created and can not be created again. 4. It is not allowed to create non-secure window when secure extension exists. |
+| 1300002 | This window state is abnormal. Possible causes: 1. The window is not created or destroyed. 2. Internal task error. 3. The subWindow has been created and cannot be created again. 4. It is not allowed to create non-secure window when secure extension exists. |
 | 1300035 | Creating a subwindow is not allowed in the current context. Possible cause: 1. An AgentUIExtensionAbility cannot create a subwindow. |
 
 
@@ -505,9 +535,10 @@ export default class EntryAbility extends EmbeddedUIExtensionAbility {
 
 
 
-#### createSubWindowWithOptions23+
+### createSubWindowWithOptions23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 createSubWindowWithOptions(name: string, subWindowConfig: window.SubWindowOptions, followCreatorLifecycle: boolean): Promise<window.Window>
 
@@ -521,6 +552,7 @@ createSubWindowWithOptions(name: string, subWindowConfig: window.SubWindowOption
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 子窗口的名字。 |
@@ -529,6 +561,7 @@ createSubWindowWithOptions(name: string, subWindowConfig: window.SubWindowOption
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -539,10 +572,11 @@ createSubWindowWithOptions(name: string, subWindowConfig: window.SubWindowOption
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
-| 1300002 | This window state is abnormal. Possible cause: 1. The window is not created or destroyed. 2. Internal task error. 3. The subWindow has been created and can not be created again. 4. It is not allowed to create non-secure window when secure extension exists. |
+| 1300002 | This window state is abnormal. Possible cause: 1. The window is not created or destroyed. 2. Internal task error. 3. The subWindow has been created and cannot be created again. 4. It is not allowed to create non-secure window when secure extension exists. |
 | 1300035 | Creating a subwindow is not allowed in the current context. Possible cause: 1. An AgentUIExtensionAbility cannot create a subwindow. |
 
 
@@ -595,9 +629,10 @@ export default class EntryAbility extends EmbeddedUIExtensionAbility {
 
 
 
-#### occupyEvents18+
+### occupyEvents18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 occupyEvents(eventFlags: number): Promise&lt;void&gt;
 
@@ -611,12 +646,14 @@ occupyEvents(eventFlags: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | eventFlags | number | 是 | 占用的事件类型，具体取值可见EventFlag枚举值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -626,6 +663,7 @@ occupyEvents(eventFlags: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -655,8 +693,8 @@ export default class EntryAbility extends EmbeddedUIExtensionAbility {
         }).catch((err: BusinessError) => {
           console.error(`Failed to occupy events. Cause code: ${err.code}, message: ${err.message}`);
         });
-      } catch (e) {
-        console.error(`Occupy events got exception code: ${e.code}, message: ${e.message}`);
+      } catch (err) {
+        console.error(`Occupy events got exception code: ${err.code}, message: ${err.message}`);
       }
     }, 500);
   }
@@ -665,9 +703,10 @@ export default class EntryAbility extends EmbeddedUIExtensionAbility {
 
 
 
-#### EventFlag18+
+## EventFlag18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 事件类型枚举。
 
@@ -676,6 +715,7 @@ export default class EntryAbility extends EmbeddedUIExtensionAbility {
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -690,9 +730,10 @@ export default class EntryAbility extends EmbeddedUIExtensionAbility {
 
 
 
-#### AvoidAreaInfo
+## AvoidAreaInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于表示窗口避让区的信息。
 
@@ -702,6 +743,7 @@ export default class EntryAbility extends EmbeddedUIExtensionAbility {
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | window.AvoidAreaType | 否 | 否 | 窗口避让区类型。 |
@@ -710,17 +752,19 @@ export default class EntryAbility extends EmbeddedUIExtensionAbility {
 
 
 
-#### WindowProxyProperties14+
+## WindowProxyProperties14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-用于表示组件的相关信息。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+用于表示组件（EmbeddedComponent或UIExtensionComponent）的位置和尺寸信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -729,9 +773,10 @@ export default class EntryAbility extends EmbeddedUIExtensionAbility {
 
 
 
-#### RectChangeReason14+
+## RectChangeReason14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 组件（EmbeddedComponent或UIExtensionComponent）矩形（位置及尺寸）变化的原因。
 
@@ -741,6 +786,7 @@ export default class EntryAbility extends EmbeddedUIExtensionAbility {
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | HOST_WINDOW_RECT_CHANGE | 0x0001 | 组件所在的宿主窗口矩形变化。 |
@@ -748,9 +794,10 @@ export default class EntryAbility extends EmbeddedUIExtensionAbility {
 
 
 
-#### RectChangeOptions14+
+## RectChangeOptions14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 组件（EmbeddedComponent或UIExtensionComponent）矩形（位置及尺寸）变化返回的值及变化原因。
 
@@ -760,6 +807,7 @@ export default class EntryAbility extends EmbeddedUIExtensionAbility {
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | rect | window.Rect | 否 | 否 | 组件矩形变化后的值。 |
@@ -768,9 +816,10 @@ export default class EntryAbility extends EmbeddedUIExtensionAbility {
 
 
 
-#### 完整示例
+## 完整示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例展示文档中所有API在[EmbeddedUIExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/embeddeduiextensionability)中的基础使用方式，示例应用的bundleName为"com.example.embeddeddemo"，被拉起的EmbeddedUIExtensionAbility为"ExampleEmbeddedAbility"。
 
@@ -788,7 +837,7 @@ struct Index {
   private want: Want = {
     bundleName: 'com.example.embeddeddemo',
     abilityName: 'ExampleEmbeddedAbility',
-  }
+  };
 
   build() {
     Row() {
@@ -888,16 +937,16 @@ struct Extension {
       Text(this.message)
         .fontSize(20)
         .fontWeight(FontWeight.Bold)
-      Button("获取组件大小").width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
+      Button('获取组件大小').width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
         let rect = this.extensionWindow?.properties.uiExtensionHostWindowProxyRect;
-        console.info(`EmbeddedComponent的位置和尺寸信息: ${JSON.stringify(rect)}`);
+        console.info(`EmbeddedComponent position and size info: ${JSON.stringify(rect)}`);
       })
-      Button("获取系统避让区信息").width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
+      Button('获取系统避让区信息').width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
         let avoidArea: window.AvoidArea | undefined =
           this.extensionWindow?.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM);
-        console.info(`系统避让区: ${JSON.stringify(avoidArea)}`);
+        console.info(`System avoid area: ${JSON.stringify(avoidArea)}`);
       })
-      Button("创建子窗口").width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
+      Button('创建子窗口').width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
         let subWindowOpts: window.SubWindowOptions = {
           'title': 'This is a subwindow',
           decorEnabled: true
@@ -905,7 +954,7 @@ struct Extension {
         this.extensionWindow?.createSubWindowWithOptions('subWindowForHost', subWindowOpts)
           .then((subWindow: window.Window) => {
             this.subWindow = subWindow;
-            this.subWindow.loadContent('pages/Index', this.storage, (err, data) => {
+            this.subWindow?.loadContent('pages/Index', this.storage, (err, data) => {
               if (err && err.code) {
                 return;
               }

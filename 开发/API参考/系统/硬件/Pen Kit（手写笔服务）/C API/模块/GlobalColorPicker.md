@@ -1,11 +1,12 @@
 # GlobalColorPicker
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/pen-imagefeaturepicker-c
 **支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -17,16 +18,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 文件
+### 文件
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | native_gcp_api.h | 声明用于对外提供全局取色能力。 |
@@ -34,10 +38,12 @@
  
   
 
-#### 结构体
+### 结构体
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | struct HMS_GCP_Color | 定义颜色值的结构体。 |
@@ -46,10 +52,12 @@
  
   
 
-#### 类型定义
+### 类型定义
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | typedef void(* HMS_GCP_OnResult) (void *userData, HMS_GCP_PickedColorInfo colorInfo, const int32_t code) | 此回调用于接收拾取的颜色结果。 |
@@ -57,10 +65,12 @@
  
   
 
-#### 枚举
+### 枚举
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | HMS_GCP_ColorSpace { HMS_GCP_UNKNOWN = 0, HMS_GCP_ADOBE_RGB_1998 = 1, HMS_GCP_DCI_P3 = 2, HMS_GCP_DISPLAY_P3 = 3, HMS_GCP_SRGB = 4, HMS_GCP_BT709 = 6, HMS_GCP_BT601_EBU = 7, HMS_GCP_BT601_SMPTE_C = 8, HMS_GCP_BT2020_HLG = 9, HMS_GCP_BT2020_PQ = 10, HMS_GCP_P3_HLG = 11, HMS_GCP_P3_PQ = 12, HMS_GCP_ADOBE_RGB_1998_LIMIT = 13, HMS_GCP_DISPLAY_P3_LIMIT = 14, HMS_GCP_SRGB_LIMIT = 15, HMS_GCP_BT709_LIMIT = 16, HMS_GCP_BT601_EBU_LIMIT = 17, HMS_GCP_BT601_SMPTE_C_LIMIT = 18, HMS_GCP_BT2020_HLG_LIMIT = 19, HMS_GCP_BT2020_PQ_LIMIT = 20, HMS_GCP_P3_HLG_LIMIT = 21, HMS_GCP_P3_PQ_LIMIT = 22, HMS_GCP_LINEAR_P3 = 23, HMS_GCP_LINEAR_SRGB = 24, HMS_GCP_LINEAR_BT2020 = 25, CUSTOM = 5 } | 颜色空间枚举。 |
@@ -68,10 +78,12 @@
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | int32_t HMS_GCP_StartColorPicker (int32_t initialPosX, int32_t initialPosY, HMS_GCP_OnResult onResultCallback, void *userData) | 启动全局取色器。此API用于启动取色器，在取色器移动时不显示值。 |
@@ -80,13 +92,15 @@
  
   
 
-#### 类型定义说明
+## 类型定义说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### HMS_GCP_OnResult
+### HMS_GCP_OnResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -100,6 +114,7 @@ typedef void(* HMS_GCP_OnResult) (void *userData, HMS_GCP_PickedColorInfo colorI
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 描述 |
 | --- | --- |
 | userData | 指针类型，指向用户数据。可以是空指针。 |
@@ -109,13 +124,15 @@ typedef void(* HMS_GCP_OnResult) (void *userData, HMS_GCP_PickedColorInfo colorI
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### HMS_GCP_ColorSpace
+### HMS_GCP_ColorSpace
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -129,6 +146,7 @@ enum HMS_GCP_ColorSpace
  
 **起始版本：** 5.0.0(12)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | HMS_GCP_UNKNOWN | 未知的色彩空间。 |
@@ -161,13 +179,15 @@ enum HMS_GCP_ColorSpace
  
   
 
-#### 函数说明
+## 函数说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### HMS_GCP_StartColorPicker()
+### HMS_GCP_StartColorPicker()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -181,6 +201,7 @@ int32_t HMS_GCP_StartColorPicker (int32_t initialPosX, int32_t initialPosY, HMS_
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 描述 |
 | --- | --- |
 | initialPosX | 取色器初始位置的x轴坐标。取值范围：0~屏幕的实际宽度，单位px。 |
@@ -191,7 +212,8 @@ int32_t HMS_GCP_StartColorPicker (int32_t initialPosX, int32_t initialPosY, HMS_
  
   
 
-#### HMS_GCP_StartColorPickerWithColorValue()
+### HMS_GCP_StartColorPickerWithColorValue()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -207,6 +229,7 @@ int32_t HMS_GCP_StartColorPickerWithColorValue (int32_t initialPosX, int32_t ini
  
 **起始版本：** 5.1.0(18)
   
+
 | 名称 | 描述 |
 | --- | --- |
 | initialPosX | 取色器初始位置的x轴坐标。取值范围：0~屏幕的实际宽度，单位px。 |

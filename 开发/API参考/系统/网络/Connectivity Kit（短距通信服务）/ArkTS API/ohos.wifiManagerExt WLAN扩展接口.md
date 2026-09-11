@@ -1,20 +1,21 @@
 # @ohos.wifiManagerExt (WLAN扩展接口)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-wifimanagerext
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-该模块主要提供WLAN扩展接口，供非通用类型产品使用。
+该模块主要提供Wi-Fi扩展接口，供非通用类型产品使用。
  
 > [!NOTE]
 > 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 该文档中的接口只供非通用类型产品使用，如路由器等，对于常规类型产品，不应该使用这些接口。
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { wifiManagerExt } from '@kit.ConnectivityKit';
@@ -22,13 +23,14 @@ import { wifiManagerExt } from '@kit.ConnectivityKit';
  
   
 
-#### wifiManagerExt.enableHotspot(deprecated)
+## wifiManagerExt.enableHotspot(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableHotspot(): void
  
-使能WLAN热点。
+启用Wi-Fi热点。
  
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。
@@ -40,8 +42,9 @@ enableHotspot(): void
  
 **错误码：**
  
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -56,20 +59,21 @@ import { wifiManagerExt } from '@kit.ConnectivityKit';
 
   try {
       wifiManagerExt.enableHotspot();
-  }catch(error){
+  } catch (error) {
       console.error("failed: " + JSON.stringify(error));
   }
 ```
  
   
 
-#### wifiManagerExt.disableHotspot(deprecated)
+## wifiManagerExt.disableHotspot(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 disableHotspot(): void
  
-去使能WLAN热点。
+禁用Wi-Fi热点。
  
 > [!NOTE]
 > 从API version 9开始支持，从API version 10开始废弃。
@@ -81,8 +85,9 @@ disableHotspot(): void
  
 **错误码：**
  
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -104,9 +109,10 @@ import { wifiManagerExt } from '@kit.ConnectivityKit';
  
   
 
-#### wifiManagerExt.getSupportedPowerMode
+## wifiManagerExt.getSupportedPowerMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSupportedPowerMode(): Promise<Array&lt;PowerMode&gt;>
  
@@ -118,6 +124,7 @@ getSupportedPowerMode(): Promise<Array&lt;PowerMode&gt;>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;PowerMode&gt;> | Promise对象。表示功率模式。 |
@@ -125,8 +132,9 @@ getSupportedPowerMode(): Promise<Array&lt;PowerMode&gt;>
  
 **错误码：**
  
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -136,14 +144,16 @@ getSupportedPowerMode(): Promise<Array&lt;PowerMode&gt;>
  
   
 
-#### PowerMode
+## PowerMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示功率模式的枚举。
  
 **系统能力：** SystemCapability.Communication.WiFi.AP.Extension
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SLEEPING | 0 | 睡眠模式。 系统能力： SystemCapability.Ability.AbilityRuntime.Core |
@@ -153,9 +163,10 @@ getSupportedPowerMode(): Promise<Array&lt;PowerMode&gt;>
  
   
 
-#### wifiManagerExt.getSupportedPowerMode
+## wifiManagerExt.getSupportedPowerMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSupportedPowerMode(callback: AsyncCallback<Array&lt;PowerMode&gt;>): void
  
@@ -167,15 +178,17 @@ getSupportedPowerMode(callback: AsyncCallback<Array&lt;PowerMode&gt;>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback<Array&lt;PowerMode&gt;> | 是 | 回调函数。当操作成功时，err为0，data表示支持的功率模式。如果err为非0，表示处理出现错误。 |
+| callback | AsyncCallback<Array&lt;PowerMode&gt;> | 是 | 回调函数。当操作成功时，err为0，data表示支持的功率模式。如果err为非0，表示获取支持的功率模式操作出现错误。 |
  
  
 **错误码：**
  
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -199,9 +212,10 @@ wifiManagerExt.getSupportedPowerMode((err, data: wifiManagerExt.PowerMode[]) => 
  
   
 
-#### wifiManagerExt.getPowerMode
+## wifiManagerExt.getPowerMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPowerMode(): Promise&lt;PowerMode&gt;
  
@@ -213,6 +227,7 @@ getPowerMode(): Promise&lt;PowerMode&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;PowerMode&gt; | Promise对象。表示功率模式。 |
@@ -220,8 +235,9 @@ getPowerMode(): Promise&lt;PowerMode&gt;
  
 **错误码：**
  
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -249,9 +265,10 @@ async function getWifiPowerMode() {
  
   
 
-#### wifiManagerExt.getPowerMode
+## wifiManagerExt.getPowerMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPowerMode(callback: AsyncCallback&lt;PowerMode&gt;): void
  
@@ -263,15 +280,17 @@ getPowerMode(callback: AsyncCallback&lt;PowerMode&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback&lt;PowerMode&gt; | 是 | 回调函数。当操作成功时，err为0，data表示功率模式。如果err为非0，表示处理出现错误。 |
+| callback | AsyncCallback&lt;PowerMode&gt; | 是 | 回调函数。当操作成功时，err为0，data表示功率模式。如果err为非0，表示获取功率模式操作出现错误。 |
  
  
 **错误码：**
  
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -301,9 +320,10 @@ import { wifiManagerExt } from '@kit.ConnectivityKit';
  
   
 
-#### wifiManagerExt.setPowerMode(deprecated)
+## wifiManagerExt.setPowerMode(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setPowerMode(mode: PowerMode) : void
  
@@ -319,6 +339,7 @@ setPowerMode(mode: PowerMode) : void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | PowerMode | 是 | 功率模式。 |
@@ -326,8 +347,9 @@ setPowerMode(mode: PowerMode) : void
  
 **错误码：**
  
-以下错误码的详细介绍请参见[WIFI错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)。
+以下错误码的详细介绍请参见[Wi-Fi错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-wifi)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |

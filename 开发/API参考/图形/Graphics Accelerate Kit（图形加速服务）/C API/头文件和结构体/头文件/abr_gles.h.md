@@ -1,11 +1,12 @@
 # abr_gles.h
 
-更新时间：2026-05-19 09:13:51
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/abr__gles_8h
-**支持设备：** Phone | Tablet | TV
+**支持设备：** Phone | Tablet
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | ABR_ErrorCode HMS_ABR_MarkFrameBuffer_GLES(ABR_Context* context) | 标记ABR进行自适应渲染处理的GLES Buffer，需要在GLES Buffer开始渲染前调用此接口。 |

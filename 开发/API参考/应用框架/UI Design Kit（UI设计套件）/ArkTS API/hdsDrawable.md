@@ -1,6 +1,6 @@
-# hdsDrawable
+# hdsDrawable (图标处理)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdsdrawable
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -10,7 +10,8 @@
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -20,7 +21,8 @@ import { hdsDrawable } from '@kit.UIDesignKit';
  
   
 
-#### hdsDrawable.getHdsLayeredIcon
+## hdsDrawable.getHdsLayeredIcon
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -48,6 +50,7 @@ LayeredDrawableDescriptor对象：判断的方法是打开对应的Symbol json�
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 与应用绑定，为应用Bundle名称。 |
@@ -58,6 +61,7 @@ LayeredDrawableDescriptor对象：判断的方法是打开对应的Symbol json�
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | image.PixelMap | 接口处理完成后返回的图标数据对象，格式为PixelMap。 |
@@ -67,9 +71,10 @@ LayeredDrawableDescriptor对象：判断的方法是打开对应的Symbol json�
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. The value of bundleName is incorrect. Parameter error. The value of layeredDrawableDescriptor is incorrect. Parameter error. The value of size is incorrect. Parameter error. The value of hasBorder is incorrect. Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. |
  
  
 **示例：**
@@ -104,7 +109,8 @@ try {
  
   
 
-#### hdsDrawable.getHdsLayeredIconAsync
+## hdsDrawable.getHdsLayeredIconAsync
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -122,6 +128,7 @@ getHdsLayeredIconAsync(bundleName: string, layeredDrawableDescriptor: LayeredDra
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 与应用绑定，为应用Bundle名称。 |
@@ -132,6 +139,7 @@ getHdsLayeredIconAsync(bundleName: string, layeredDrawableDescriptor: LayeredDra
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<image.PixelMap> | Promise对象，接口处理完成后返回的图标数据对象，格式为PixelMap。 |
@@ -141,9 +149,10 @@ getHdsLayeredIconAsync(bundleName: string, layeredDrawableDescriptor: LayeredDra
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. The value of bundleName is incorrect. Parameter error. The value of layeredDrawableDescriptor is incorrect. Parameter error. The value of size is incorrect. Parameter error. The value of hasBorder is incorrect. Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. |
  
  
 **示例：**
@@ -178,7 +187,8 @@ hdsDrawable.getHdsLayeredIconAsync(bundleName, layeredDrawableDescriptor, 48, tr
  
   
 
-#### hdsDrawable.getHdsIcon
+## hdsDrawable.getHdsIcon
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -196,6 +206,7 @@ getHdsIcon(bundleName: string, pixelMap: image.PixelMap, size: number, mask: ima
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 与应用绑定，为应用Bundle名称。 |
@@ -207,6 +218,7 @@ getHdsIcon(bundleName: string, pixelMap: image.PixelMap, size: number, mask: ima
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | image.PixelMap | 接口处理完成后返回的图标数据对象，格式为PixelMap。 |
@@ -216,9 +228,10 @@ getHdsIcon(bundleName: string, pixelMap: image.PixelMap, size: number, mask: ima
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. The value of bundleName is incorrect. Parameter error. The value of pixelMap is incorrect. Parameter error. The value of size is incorrect. Parameter error. The value of mask is incorrect. Parameter error. The value of hasBorder is incorrect. Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. |
  
  
 **示例：**
@@ -259,7 +272,8 @@ try {
  
   
 
-#### hdsDrawable.getHdsIconAsync
+## hdsDrawable.getHdsIconAsync
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -277,6 +291,7 @@ getHdsIconAsync(bundleName: string, pixelMap: image.PixelMap, size: number, mask
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 与应用绑定，为应用Bundle名称。 |
@@ -288,6 +303,7 @@ getHdsIconAsync(bundleName: string, pixelMap: image.PixelMap, size: number, mask
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<image.PixelMap> | Promise对象，接口处理完成后返回的图标数据对象，格式为PixelMap。 |
@@ -297,9 +313,10 @@ getHdsIconAsync(bundleName: string, pixelMap: image.PixelMap, size: number, mask
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. The value of bundleName is incorrect. Parameter error. The value of pixelMap is incorrect. Parameter error. The value of size is incorrect. Parameter error. The value of mask is incorrect. Parameter error. The value of hasBorder is incorrect. Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. |
  
  
 **示例：**
@@ -343,7 +360,8 @@ try {
  
   
 
-#### hdsDrawable.getHdsLayeredIcons
+## hdsDrawable.getHdsLayeredIcons
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -361,6 +379,7 @@ getHdsLayeredIcons(icons: Array&lt;LayeredIcon&gt;, options: Options): Promise<A
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | icons | Array&lt;LayeredIcon&gt; | 是 | 待处理的分层图标数据集合。 |
@@ -369,6 +388,7 @@ getHdsLayeredIcons(icons: Array&lt;LayeredIcon&gt;, options: Options): Promise<A
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;ProcessedIcon&gt;> | Promise对象，返回处理后的图像数据集合。 |
@@ -378,9 +398,10 @@ getHdsLayeredIcons(icons: Array&lt;LayeredIcon&gt;, options: Options): Promise<A
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ui-design)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. The value of icons is incorrect. Parameter error. The value of size is incorrect. Parameter error. The value of hasBorder is incorrect. Parameter error. The value of parallelNumber is incorrect. |
+| 401 | Parameter error. |
 | 1012600001 | Task is busy. |
  
  
@@ -435,7 +456,8 @@ try {
  
   
 
-#### hdsDrawable.getHdsIcons
+## hdsDrawable.getHdsIcons
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -453,6 +475,7 @@ getHdsIcons(icons: Array&lt;Icon&gt;, mask: image.PixelMap, options: Options): P
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | icons | Array&lt;Icon&gt; | 是 | 待处理的单层图标数据集合。 |
@@ -462,6 +485,7 @@ getHdsIcons(icons: Array&lt;Icon&gt;, mask: image.PixelMap, options: Options): P
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;ProcessedIcon&gt;> | Promise对象，返回处理后的图像数据集合。 |
@@ -471,9 +495,10 @@ getHdsIcons(icons: Array&lt;Icon&gt;, mask: image.PixelMap, options: Options): P
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ui-design)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. The value of icons is incorrect. Parameter error. The value of mask is incorrect. Parameter error. The value of size is incorrect. Parameter error. The value of hasBorder is incorrect. Parameter error. The value of parallelNumber is incorrect. |
+| 401 | Parameter error. |
 | 1012600001 | Task is busy. |
  
  
@@ -531,7 +556,8 @@ try {
  
   
 
-#### LayeredIcon
+## LayeredIcon
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -547,6 +573,7 @@ try {
  
 **参数：**
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | bundleName | string | 否 | 否 | 应用Bundle名称。 |
@@ -555,7 +582,8 @@ try {
  
   
 
-#### Options
+## Options
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -571,6 +599,7 @@ try {
  
 **参数：**
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | size | number | 否 | 否 | 接口处理完成后输出的图标对象为正方形，该值表示输出对象的正方形边长，包含描边区域，取值范围：大于0，单位：vp。 |
@@ -580,7 +609,8 @@ try {
  
   
 
-#### ProcessedIcon
+## ProcessedIcon
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -596,6 +626,7 @@ try {
  
 **参数：**
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | bundleName | string | 是 | 否 | 应用Bundle名称。 |
@@ -604,7 +635,8 @@ try {
  
   
 
-#### Icon
+## Icon
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -620,6 +652,7 @@ try {
  
 **参数：**
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | bundleName | string | 否 | 否 | 应用Bundle名称。 |

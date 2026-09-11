@@ -1,9 +1,9 @@
 # @ohos.screenshot (屏幕截图)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-screenshot
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供屏幕截图的能力，支持区域截图和全屏截图两种模式，帮助开发者实现屏幕内容的获取功能。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { screenshot } from '@kit.ArkUI';
@@ -22,9 +23,10 @@ import { screenshot } from '@kit.ArkUI';
 
 
 
-#### Rect
+## Rect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示截取图像的区域。
 
@@ -32,41 +34,46 @@ import { screenshot } from '@kit.ArkUI';
 
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| left | number | 否 | 否 | 表示截取图像区域的左边界，单位为px，该参数应为整数。 |
-| top | number | 否 | 否 | 表示截取图像区域的上边界，单位为px，该参数应为整数。 |
-| width | number | 否 | 否 | 表示截取图像区域的宽度，单位为px，该参数应为整数。 |
-| height | number | 否 | 否 | 表示截取图像区域的高度，单位为px，该参数应为整数。 |
+| left | number | 否 | 否 | 表示截取图像区域的左边界，单位为px，该参数应为非负整数。 |
+| top | number | 否 | 否 | 表示截取图像区域的上边界，单位为px，该参数应为非负整数。 |
+| width | number | 否 | 否 | 表示截取图像区域的宽度，单位为px，该参数应为正整数。 |
+| height | number | 否 | 否 | 表示截取图像区域的高度，单位为px，该参数应为正整数。 |
 
 
 
 
-#### CaptureOption14+
+## CaptureOption14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置截取图像的信息。
 
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| displayId | number | 否 | 是 | 表示截取图像的显示设备Display的ID号，默认为0，该参数应为大于或等于0的整数，非整数会报参数错误。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| displayId | number | 否 | 是 | 表示截取图像的显示设备Display的ID号，默认为0，该参数应为大于或等于0的整数，非整数会报参数错误，错误码为401。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
 | blackWindowIds21+ | Array&lt;number&gt; | 否 | 是 | 表示截取图像时不显示的窗口ID列表，默认为空。窗口ID应为大于0的整数，目前仅闪控球窗口生效，窗口ID为非闪控球窗口、非整数、小于等于0、或者不存在的窗口ID时报参数错误，错误码为401。推荐使用getFloatingBallWindowInfo()方法获取闪控球窗口ID属性。 元服务API： 从API version 21开始，该接口支持在元服务中使用。 |
 
 
 
 
-#### PickInfo
+## PickInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 截取图像的信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -76,9 +83,10 @@ import { screenshot } from '@kit.ArkUI';
 
 
 
-#### screenshot.pick
+## screenshot.pick
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 pick(): Promise&lt;PickInfo&gt;
 
@@ -98,6 +106,7 @@ pick(): Promise&lt;PickInfo&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;PickInfo&gt; | Promise对象。返回一个PickInfo对象。 |
@@ -107,9 +116,10 @@ pick(): Promise&lt;PickInfo&gt;
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | Capability not supported on this device. |
+| 801 | Capability not supported. |
 | 1400003 | This display manager service works abnormally. |
 
 
@@ -135,9 +145,10 @@ try {
 
 
 
-#### screenshot.capture14+
+## screenshot.capture14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 capture(options?: CaptureOption): Promise<image.PixelMap>
 
@@ -161,12 +172,14 @@ capture(options?: CaptureOption): Promise<image.PixelMap>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | CaptureOption | 否 | 截取图像的相关信息。此参数不填时，默认截取displayId为0的屏幕截图。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -177,11 +190,12 @@ capture(options?: CaptureOption): Promise<image.PixelMap>
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[屏幕错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-display)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 401 | Parameter error. Possible causes: 1. Incorrect parameter types. 2. Parameter verification failed. |
-| 801 | Capability not supported on this device. |
+| 801 | Capability not supported. |
 | 1400003 | This display manager service works abnormally. |
 
 
@@ -193,7 +207,7 @@ import { image } from '@kit.ImageKit';
 
 // 配置截图参数，指定截取displayId为0的屏幕
 let captureOption: screenshot.CaptureOption = {
-  "displayId": 0
+  displayId: 0
 };
 try {
   // 调用capture接口获取全屏截图

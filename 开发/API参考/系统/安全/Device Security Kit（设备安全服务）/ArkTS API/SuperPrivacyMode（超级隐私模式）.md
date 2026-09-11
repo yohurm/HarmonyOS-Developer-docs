@@ -1,18 +1,19 @@
 # SuperPrivacyMode（超级隐私模式）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesecurity-superprivacymode-api
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet
 
 本模块提供超级隐私模式相关接口，应用可根据当前的超级隐私模式的状态进行相应业务处理。
 
 **起始版本：** 6.0.2(22)
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 import { superPrivacyMode } from '@kit.DeviceSecurityKit';
@@ -20,9 +21,10 @@ import { superPrivacyMode } from '@kit.DeviceSecurityKit';
 
 
 
-#### SuperPrivacyMode
+## SuperPrivacyMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 表示超级隐私模式状态的枚举。
 
@@ -34,6 +36,7 @@ import { superPrivacyMode } from '@kit.DeviceSecurityKit';
 
 **起始版本：** 6.0.2(22)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | OFF | 0 | 表示当前超级隐私模式状态为关。 |
@@ -43,9 +46,10 @@ import { superPrivacyMode } from '@kit.DeviceSecurityKit';
 
 
 
-#### getSuperPrivacyMode
+## getSuperPrivacyMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 getSuperPrivacyMode(): Promise&lt;SuperPrivacyMode&gt;
 
@@ -61,6 +65,7 @@ getSuperPrivacyMode(): Promise&lt;SuperPrivacyMode&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;SuperPrivacyMode&gt; | Promise对象，返回当前的超级隐私模式状态。 |
@@ -70,10 +75,11 @@ getSuperPrivacyMode(): Promise&lt;SuperPrivacyMode&gt;
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-superprivacy)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1006200002 | Internal error. |
-| 1006200005 | This device is not support SuperPrivacy. |
+| 1006200005 | Not support super privacy. |
 
 
 **示例：**
@@ -96,9 +102,10 @@ try {
 
 
 
-#### on('superPrivacyModeChange')
+## on('superPrivacyModeChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 on(type: 'superPrivacyModeChange', callback: Callback&lt;SuperPrivacyMode&gt;): void
 
@@ -114,6 +121,7 @@ on(type: 'superPrivacyModeChange', callback: Callback&lt;SuperPrivacyMode&gt;): 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 输入固定字符串'superPrivacyModeChange'，表示需要订阅'superPrivacyModeChange'。 |
@@ -124,11 +132,12 @@ on(type: 'superPrivacyModeChange', callback: Callback&lt;SuperPrivacyMode&gt;): 
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-superprivacy)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1006200001 | General error. |
 | 1006200002 | Internal error. |
-| 1006200005 | This device is not support SuperPrivacy. |
+| 1006200005 | Not support super privacy. |
 
 
 **示例：**
@@ -155,9 +164,10 @@ try {
 
 
 
-#### off('superPrivacyModeChange')
+## off('superPrivacyModeChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 off(type: 'superPrivacyModeChange', callback?: Callback&lt;SuperPrivacyMode&gt;): void
 
@@ -173,9 +183,10 @@ off(type: 'superPrivacyModeChange', callback?: Callback&lt;SuperPrivacyMode&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 输入固定字符串'superPrivacyModeChange'，表示需要订阅的事件为'superPrivacyModeChange'。 |
+| type | string | 是 | 输入固定字符串'superPrivacyModeChange'，表示需要取消订阅的事件为'superPrivacyModeChange'。 |
 | callback | Callback&lt;SuperPrivacyMode&gt; | 否 | 回调函数，返回调用结果。如果传入了callback，则取消该callback的订阅，否则取消所有callback的订阅。 |
 
 
@@ -183,11 +194,12 @@ off(type: 'superPrivacyModeChange', callback?: Callback&lt;SuperPrivacyMode&gt;)
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-superprivacy)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1006200001 | General error. |
 | 1006200002 | Internal error. |
-| 1006200005 | This device is not support SuperPrivacy. |
+| 1006200005 | Not support super privacy. |
 
 
 **示例：**
@@ -214,9 +226,10 @@ try {
 
 
 
-#### PrivacySensorType
+## PrivacySensorType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 隐私传感器类型枚举。
 
@@ -228,6 +241,7 @@ try {
 
 **起始版本：** 26.0.0
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CAMERA | 0 | 相机传感器。 |
@@ -237,9 +251,10 @@ try {
 
 
 
-#### PrivacySensorState
+## PrivacySensorState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 隐私传感器状态枚举。
 
@@ -251,6 +266,7 @@ try {
 
 **起始版本：** 26.0.0
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DEFAULT | 0 | 表示传感器不受超级隐私模式管控。 |
@@ -260,9 +276,10 @@ try {
 
 
 
-#### SuperPrivacyPolicy
+## SuperPrivacyPolicy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 超级隐私模式管控策略对象，表示超级隐私对隐私传感器的控制策略。
 
@@ -274,6 +291,7 @@ try {
 
 **设备行为差异：** 在存在超级隐私模式选项的Phone、PC/2in1、Tablet中可正常调用，在不存在超级隐私模式选项的Phone、PC/2in1、Tablet中返回[1006200005](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-superprivacy#section1006200005-该设备不支持超级隐私模式)错误码，开发者使用时请遵循[约束与限制](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurity-getsuperprivacymode#约束与限制)。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | sensorType | PrivacySensorType | 否 | 否 | 策略应用的隐私传感器类型。 |
@@ -282,9 +300,10 @@ try {
 
 
 
-#### SuperPrivacyPolicyInfo
+## SuperPrivacyPolicyInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 超级隐私模式状态和隐私传感器控制策略信息。
 
@@ -296,6 +315,7 @@ try {
 
 **起始版本：** 26.0.0
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | superPrivacyMode | SuperPrivacyMode | 否 | 否 | 超级隐私模式状态。 |
@@ -304,9 +324,10 @@ try {
 
 
 
-#### getSuperPrivacyPolicies
+## getSuperPrivacyPolicies
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 getSuperPrivacyPolicies(): Promise&lt;SuperPrivacyPolicyInfo&gt;
 
@@ -322,6 +343,7 @@ getSuperPrivacyPolicies(): Promise&lt;SuperPrivacyPolicyInfo&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;SuperPrivacyPolicyInfo&gt; | Promise对象，返回超级隐私管控策略信息。 |
@@ -331,11 +353,12 @@ getSuperPrivacyPolicies(): Promise&lt;SuperPrivacyPolicyInfo&gt;
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-superprivacy)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1006200001 | General error. |
 | 1006200002 | Internal error. |
-| 1006200005 | Super Privacy is not supported by the device. |
+| 1006200005 | Not support super privacy. |
 
 
 **示例：**
@@ -358,9 +381,10 @@ try {
 
 
 
-#### onSuperPrivacyModeOrPolicyChange
+## onSuperPrivacyModeOrPolicyChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 onSuperPrivacyModeOrPolicyChange(callback: Callback&lt;SuperPrivacyPolicyInfo&gt;): void
 
@@ -376,6 +400,7 @@ onSuperPrivacyModeOrPolicyChange(callback: Callback&lt;SuperPrivacyPolicyInfo&gt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;SuperPrivacyPolicyInfo&gt; | 是 | 回调函数，返回超级隐私管控策略信息。 |
@@ -385,11 +410,12 @@ onSuperPrivacyModeOrPolicyChange(callback: Callback&lt;SuperPrivacyPolicyInfo&gt
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-superprivacy)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1006200001 | General error. |
 | 1006200002 | Internal error. |
-| 1006200005 | Super Privacy is not supported by the device. |
+| 1006200005 | Not support super privacy. |
 
 
 **示例：**
@@ -418,9 +444,10 @@ try {
 
 
 
-#### offSuperPrivacyModeOrPolicyChange
+## offSuperPrivacyModeOrPolicyChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 offSuperPrivacyModeOrPolicyChange(callback?: Callback&lt;SuperPrivacyPolicyInfo&gt;): void
 
@@ -436,6 +463,7 @@ offSuperPrivacyModeOrPolicyChange(callback?: Callback&lt;SuperPrivacyPolicyInfo&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;SuperPrivacyPolicyInfo&gt; | 否 | 回调函数，返回超级隐私管控策略信息。如果传入了callback，则取消该callback的订阅，否则取消所有callback的订阅。 |
@@ -444,6 +472,7 @@ offSuperPrivacyModeOrPolicyChange(callback?: Callback&lt;SuperPrivacyPolicyInfo&
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicesecurity-superprivacy)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

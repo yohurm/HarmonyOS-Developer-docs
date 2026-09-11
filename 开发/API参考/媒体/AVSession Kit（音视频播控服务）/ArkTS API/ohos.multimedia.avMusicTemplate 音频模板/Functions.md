@@ -1,15 +1,19 @@
 # Functions
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-avmusictemplate-f
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 本模块首批接口从API version 23开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 本模块仅适用于API version 23及以上版本的Car设备。
 
 
 
-#### 导入模块
+## 导入模块
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { avMusicTemplate } from '@kit.AVSessionKit';
@@ -17,7 +21,10 @@ import { avMusicTemplate } from '@kit.AVSessionKit';
 
 
 
-#### avMusicTemplate.createAVMusicTemplate
+## avMusicTemplate.createAVMusicTemplate
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAVMusicTemplate(accessType: AVMusicTemplateType): AVMusicTemplate
 
@@ -29,12 +36,14 @@ createAVMusicTemplate(accessType: AVMusicTemplateType): AVMusicTemplate
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | accessType | AVMusicTemplateType | 是 | 音频模板类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -44,6 +53,7 @@ createAVMusicTemplate(accessType: AVMusicTemplateType): AVMusicTemplate
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -58,7 +68,7 @@ import { avMusicTemplate } from '@kit.AVSessionKit';
 
 export class TemplateManager {
   private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
-  private static sInstance: TemplateManager;
+  private static instance: TemplateManager;
 
   private constructor() {
   }
@@ -66,13 +76,13 @@ export class TemplateManager {
   /**
    * 获取模板管理器实例。
    *
-   * @returns 模板控制器实例。
+   * @returns 模板管理器实例。
    */
   public static getInstance(): TemplateManager {
-    if (!TemplateManager.sInstance) {
-      TemplateManager.sInstance = new TemplateManager();
+    if (!TemplateManager.instance) {
+      TemplateManager.instance = new TemplateManager();
     }
-    return TemplateManager.sInstance;
+    return TemplateManager.instance;
   };
 
   /**
@@ -81,7 +91,7 @@ export class TemplateManager {
   public createTemplate() {
     if (this.template) {
       console.warn('createTemplate: template already exists');
-      return
+      return;
     }
     try {
       this.template = avMusicTemplate.createAVMusicTemplate(avMusicTemplate.AVMusicTemplateType.DEFAULT);

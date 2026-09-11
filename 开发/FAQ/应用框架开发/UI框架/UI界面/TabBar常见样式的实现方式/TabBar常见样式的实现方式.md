@@ -4,7 +4,7 @@
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1101
 
-#### 问题现象
+## 问题现象
 
 设置TabBar常见样式时可能会遇到如下问题：
  
@@ -24,7 +24,7 @@
  
  
 
-#### 背景知识
+## 背景知识
 
 - [Tabs](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs)：进行内容视图切换的容器组件，每个页签对应一个内容视图。
 - [TabBar](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent#tabbar)：设置TabBar上显示内容。
@@ -36,8 +36,9 @@
  
  
 
-#### 解决方案
+## 解决方案
  
+
 | 实现场景 | 实现方案 |
 | --- | --- |
 | 场景一：实现自顶到底效果。 | 通过自定义组件实现，导航栏使用List实现。 |
@@ -76,7 +77,7 @@ struct CapsuleOne {
       SegmentButton({
         options: this.tabOptions,
         selectedIndexes: $tabSelectedIndexes,
-        // 点击SegmentButton时Tabs页面切换
+        <em>// 点击SegmentButton时Tabs页面切换</em>
         onItemClicked: (index: number) => {
           this.currentIndex = index;
         }
@@ -96,7 +97,7 @@ struct CapsuleOne {
       .layoutWeight(1)
       .onChange((index: number) => {
         this.currentIndex = index;
-        // 页面滑动时SegmentButton切换选中状态
+        <em>// 页面滑动时SegmentButton切换选中状态</em>
         this.tabSelectedIndexes = [index];
       });
     }
@@ -110,7 +111,7 @@ struct CapsuleOne {
  效果图如下所示：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/LwnqO1z_Sg6dzBkNV60uww/zh-cn_image_0000002680323059.png?HW-CC-KV=V1&HW-CC-Date=20260818T063534Z&HW-CC-Expire=86400&HW-CC-Sign=0079FF4ED50C53229058F1F1C6AEE7BB14BC9D8C5951F0FA5F33E4E142E8F388)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/LwnqO1z_Sg6dzBkNV60uww/zh-cn_image_0000002680323059.png?HW-CC-KV=V1&HW-CC-Date=20260911T072742Z&HW-CC-Expire=86400&HW-CC-Sign=522A7AE30358FE05C4813F940EF7325C497C5B9BDC51E972FEE38D9FD4D7777C)
 
 - 方案二：使用自定义页签实现。设置单个页签的宽度在(页签宽度/页签数-padding值*页签数，页签宽度/页签数)之间。参考代码如下所示：
 
@@ -129,7 +130,7 @@ struct CapsuleTwo {
     Column() {
       Text(name)
         .width(this.tabbarWidth / 2 -
-          this.tabbarPadding * 2) // 设置宽度在(tabBar宽度/tabBar个数-padding值*tabBar个数，tabBar宽度/tabBar个数)之间
+          this.tabbarPadding * 2) <em>// 设置宽度在(tabBar宽度/tabBar个数-padding值*tabBar个数，tabBar宽度/tabBar个数)之间</em>
         .height('36vp')
         .textAlign(TextAlign.Center)
         .textVerticalAlign(TextVerticalAlign.CENTER)
@@ -176,7 +177,7 @@ struct CapsuleTwo {
  效果图如下所示：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/z-UH_7hrSQef-4foAr6iuQ/zh-cn_image_0000002650243726.png?HW-CC-KV=V1&HW-CC-Date=20260818T063534Z&HW-CC-Expire=86400&HW-CC-Sign=88B62A37439A1EB8489771B22076B829A5966439292BA3360B0B1EF290DD6F82)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/z-UH_7hrSQef-4foAr6iuQ/zh-cn_image_0000002650243726.png?HW-CC-KV=V1&HW-CC-Date=20260911T072742Z&HW-CC-Expire=86400&HW-CC-Sign=6D04CFD39348719A0572D8B43C9F0DA9742DB0F46CAE6F3EB2DF2D44E7C0D260)
 
 
  - **场景四：实现页签栏和内容区重叠，并启用毛玻璃效果。**通过设置Tabs的barOverlap为true，并设置barBackgroundBlurStyle为BlurStyle.Thin，实现页签栏和内容区的重叠及毛玻璃效果。设置底部组件的padding值大于TabBar的高度防止遮挡。参考代码如下所示：
@@ -202,7 +203,7 @@ struct BarOverlapPage {
             .textAlign(TextAlign.Center)
             .backgroundColor('#26000000');
         }
-        // 设置底部组件的padding值大于tabBar的高度
+        <em>// 设置底部组件的padding值大于tabBar的高度</em>
         .padding({ bottom: index === this.contentList.length - 1 ? 56 + this.listSpace : 0 });
       });
     }
@@ -222,7 +223,7 @@ struct BarOverlapPage {
           .tabBar(item);
         });
       }
-      .barOverlap(true) // 开启背景模糊
+      .barOverlap(true) <em>// 开启背景模糊</em>
       .barBackgroundBlurStyle(BlurStyle.Thin);
     }
     .backgroundColor('#fff1f3f5')
@@ -235,7 +236,7 @@ struct BarOverlapPage {
  效果图如下所示：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/wYopQ8vnTLmg2u1LGiavOA/zh-cn_image_0000002680163711.png?HW-CC-KV=V1&HW-CC-Date=20260818T063534Z&HW-CC-Expire=86400&HW-CC-Sign=D08462D2C7757087695C98ED7DC2774B2CB04C2C220EA93A058EE7CB74FFA1DF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/wYopQ8vnTLmg2u1LGiavOA/zh-cn_image_0000002680163711.png?HW-CC-KV=V1&HW-CC-Date=20260911T072742Z&HW-CC-Expire=86400&HW-CC-Sign=6055665F97B5E50BC1B900A27F1C139E75570AF0D87FA98471E80515E1B72BAB)
 
 - **场景五：实现悬浮式、两端留空的Tab栏样式。**
 方案一：使用自定义组件实现。通过自定义组件实现，使用Stack容器将Tabs与自定义页签堆叠，实现悬浮式、两端留空的Tab栏样式，参考代码如下所示：
@@ -250,7 +251,7 @@ interface tabInterface {
 @Entry
 @Component
 struct SuspensionPage {
-  // 图片资源开发者可根据自身需求替换成所需资源
+  <em>// 图片资源开发者可根据自身需求替换成所需资源</em>
   tabList: tabInterface[] = [
     { text: '内容1', icon: $r('app.media.heart') },
     { text: '内容2', icon: $r('app.media.clock') },
@@ -317,7 +318,7 @@ struct SuspensionPage {
         .onChange((index: number) => {
           this.currentIndex = index;
         });
-        // 页签
+        <em>// 页签</em>
         this.myTabBar();
       }
       .width('100%');
@@ -332,7 +333,7 @@ struct SuspensionPage {
   效果图如下所示：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/fL6vQGfBS9yiJUbrvYdfog/zh-cn_image_0000002680163987.png?HW-CC-KV=V1&HW-CC-Date=20260818T063534Z&HW-CC-Expire=86400&HW-CC-Sign=59C7FB46840A019D88F05861755FEFB64FED5E2DBFDAD3B10A0F438BFF9647C4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/fL6vQGfBS9yiJUbrvYdfog/zh-cn_image_0000002680163987.png?HW-CC-KV=V1&HW-CC-Date=20260911T072742Z&HW-CC-Expire=86400&HW-CC-Sign=80234A31E3F067FD17813B7EFEB5A690CDE57F6047C06B9651488E3EAA4B9878)
 
 
  - **场景六：处理页签数较多时的TabBar的样式。**通过设置barMode为BarMode.Scrollable，当标签数量较多或内容超出屏幕宽度时，用户可以通过滑动来切换标签。解决方案：参考[示例2（设置Scrollable模式下的TabBar的布局样式）](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#示例2设置scrollable模式下的tabbar的布局样式)。
@@ -341,7 +342,7 @@ struct SuspensionPage {
  
  
 
-#### 常见FAQ
+## 常见FAQ
 
 Q：如何在标签页中嵌入一个动图图标？
  

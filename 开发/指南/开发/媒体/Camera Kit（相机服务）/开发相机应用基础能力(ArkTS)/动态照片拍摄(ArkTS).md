@@ -1,6 +1,6 @@
 # 动态照片拍摄(ArkTS)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-moving-photo
 
@@ -15,7 +15,7 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 
 详细的API说明请参考[@ohos.multimedia.camera (相机管理)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera)。
 
@@ -108,7 +108,7 @@ enableMovingPhoto(enable: boolean): void {
 
 
 
-#### 状态监听
+## 状态监听
 
 在相机应用开发过程中，可以随时监听动态照片拍照输出流状态。通过注册photoAsset的回调函数获取监听结果，photoOutput创建成功时即可监听。
 
@@ -176,11 +176,12 @@ async mediaLibRequestBuffer(photoAsset: photoAccessHelper.PhotoAsset, context: C
 
 
 
-#### HDR动态照片
+## HDR动态照片
 
 从API version 23开始，相机提供HDR动态照片拍摄能力，即组成动态照片的静态图片与动态短视频均为高动态范围（HDR）内容，能够在高光与暗部细节、色彩层次和整体质感方面优于SDR成片效果。
 
 应用可以通过配置预览输出格式（Profile.format）和色彩空间（ColorSpace）灵活决定输出SDR/HDR动态照片。具体对应关系如下表所示，所有能力需先查后用，支持的预览输出格式通过接口[getSupportedFullOutputCapability](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-cameramanager#getsupportedfulloutputcapability23)查询，支持的色彩空间通过接口[getSupportedColorSpaces](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-colormanagementquery#getsupportedcolorspaces12)查询。
+
 
 | 静图动态范围 | 短视频动态范围 | 预览输出格式 | 色彩空间 |
 | --- | --- | --- | --- |

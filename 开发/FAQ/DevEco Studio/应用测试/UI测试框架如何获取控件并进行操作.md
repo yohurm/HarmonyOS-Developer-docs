@@ -26,9 +26,9 @@ struct SliderDemo {
 
 
   build() {
-    Column({ space: 30 }) { // 垂直排列的容器，子组件间距30
+    Column({ space: 30 }) {<em> // 垂直排列的容器，子组件间距30</em>
       Slider({
-        // 滑动条组件
+        <em>// 滑动条组件</em>
         value: this.sliderValue,
         min: 0,
         max: 100,
@@ -46,10 +46,10 @@ struct SliderDemo {
         .fontSize(20)
         .fontWeight(FontWeight.Bold)
     }
-    .alignItems(HorizontalAlign.Center) // 子组件水平居中
+    .alignItems(HorizontalAlign.Center) <em>// 子组件水平居中</em>
     .width('100%')
     .height('100%')
-    .justifyContent(FlexAlign.Center) // 子组件垂直居中
+    .justifyContent(FlexAlign.Center) <em>// 子组件垂直居中</em>
   }
 }
 ```
@@ -70,40 +70,40 @@ export default function abilityTest() {
       console.info("uitest: TestUiExample begin");
 
 
-      // 初始化Driver对象
+<em>      // 初始化Driver对象</em>
       const driver = Driver.create();
       const bundleName = abilityDelegatorRegistry.getArguments().bundleName;
 
 
-      // 指定被测应用包名、ability名
+   <em>   // 指定被测应用包名、ability名</em>
       const want: Want = {
         bundleName: bundleName,
         abilityName: 'EntryAbility'
       }
 
 
-      // 拉起被测应用
+     <em> // 拉起被测应用</em>
       await delegator.startAbility(want);
 
 
-      // 等待应用拉起完成
+   <em>   // 等待应用拉起完成</em>
       await driver.waitForIdle(4000, 5000);
 
 
-      // 确认当前应用顶部Ability为指定的ability
+   <em>   // 确认当前应用顶部Ability为指定的ability</em>
       const ability: UIAbility = await delegator.getCurrentTopAbility();
       console.info("get top ability");
       expect(ability.context.abilityInfo.name).assertEqual('EntryAbility');
 
 
-      // 查找对应的组件
+    <em>  // 查找对应的组件</em>
       let slider: Component = await driver.findComponent(ON.type('Slider'));
       expect(slider != null).assertTrue();
       let bounds = await slider.getBounds();
       console.info('count: ', bounds);
 
 
-      // 设置slider的进度条
+ <em>     // 设置slider的进度条</em>
       const progress = 20;
       const startX = Math.round((bounds.left + bounds.right) / 2);
       const startY = Math.round((bounds.top + bounds.bottom) / 2);
@@ -111,7 +111,7 @@ export default function abilityTest() {
       const endY = startY;
 
 
-      // 执行滑动操作
+     <em> // 执行滑动操作</em>
       await driver.swipe(startX, startY, endX, endY);
       done();
     });

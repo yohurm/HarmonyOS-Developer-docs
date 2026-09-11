@@ -1,6 +1,6 @@
 # 使用ECC压缩/非压缩公钥格式转换(ArkTS)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-convert-compressed-or-uncompressed-ecc-pubkey
 
@@ -8,12 +8,12 @@
 
 当前仅支持满足X.509规范的ECC算法压缩和非压缩格式的公钥数据。此处的公钥数据应当是完整的X.509公钥，对于只使用点数据的情况，请参考[使用ECC压缩/非压缩点格式转换](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-convert-compressed-or-uncompressed-ecc-point)。
 
-ECC的算法规格请查看[非对称密钥生成和转换规格：ECC](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-asym-key-generation-conversion-spec#ecc)。
+ECC的算法规格请查看[非对称密钥生成和转换规格：ECC](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-key-generation-conversion#ecc)。
 
 通过传入字符串参数format，可指定需要获取的ECC公钥数据格式。如果需要获取满足X.509规范的压缩格式数据，则指定format为："X509|COMPRESSED"；需要获取非压缩格式，则指定format为："X509|UNCOMPRESSED"。
 
 
-#### 指定非压缩公钥数据转换为压缩公钥数据
+## 指定非压缩公钥数据转换为压缩公钥数据
 1. 将Uint8Array类型的ECC非压缩公钥数据封装成[DataBlob](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#datablob)对象。
 
   公钥和私钥可只传入其中一个。此处示例传入非压缩公钥。

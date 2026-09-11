@@ -44,7 +44,7 @@ class BasicDataSource implements IDataSource {
     return this.originDataArray[index];
   }
 
-  // 该方法为框架侧调用，为LazyForEach组件向其数据源处添加listener监听
+  <em>// 该方法为框架侧调用，为LazyForEach组件向其数据源处添加listener监听</em>
   registerDataChangeListener(listener: DataChangeListener): void {
     if (this.listeners.indexOf(listener) < 0) {
       console.info('add listener');
@@ -52,7 +52,7 @@ class BasicDataSource implements IDataSource {
     }
   }
 
-  // 该方法为框架侧调用，为对应的LazyForEach组件在数据源处去除listener监听
+  <em>// 该方法为框架侧调用，为对应的LazyForEach组件在数据源处去除listener监听</em>
   unregisterDataChangeListener(listener: DataChangeListener): void {
     const pos = this.listeners.indexOf(listener);
     if (pos >= 0) {
@@ -61,35 +61,35 @@ class BasicDataSource implements IDataSource {
     }
   }
 
-  // 通知LazyForEach组件需要重载所有子组件
+<em>  // 通知LazyForEach组件需要重载所有子组件</em>
   notifyDataReload(): void {
     this.listeners.forEach(listener => {
       listener.onDataReloaded();
     });
   }
 
-  // 通知LazyForEach组件需要在index对应索引处添加子组件
+  <em>// </em><em>通知LazyForEach组件需要在index对应索引处添加子组件</em>
   notifyDataAdd(index: number): void {
     this.listeners.forEach(listener => {
       listener.onDataAdd(index);
     });
   }
 
-  // 通知LazyForEach组件在index对应索引处数据有变化，需要重建该子组件
+<em>  // 通知LazyForEach组件在index对应索引处数据有变化，需要重建该子组件</em>
   notifyDataChange(index: number): void {
     this.listeners.forEach(listener => {
       listener.onDataChange(index);
     });
   }
 
-  // 通知LazyForEach组件需要在index对应索引处删除该子组件
+ <em> // 通知LazyForEach组件需要在index对应索引处删除该子组件</em>
   notifyDataDelete(index: number): void {
     this.listeners.forEach(listener => {
       listener.onDataDelete(index);
     });
   }
 
-  // 通知LazyForEach组件将from索引和to索引处的子组件进行交换
+ <em> // 通知LazyForEach组件将from索引和to索引处的子组件进行交换</em>
   notifyDataMove(from: number, to: number): void {
     this.listeners.forEach(listener => {
       listener.onDataMove(from, to);

@@ -1,6 +1,6 @@
 # @ohos.secureElement (安全单元的通道管理)
 
-更新时间：2026-06-12 06:54:11
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-secureelement
 **支持设备：** Phone | Wearable
@@ -9,6 +9,7 @@
  
 对于文档中出现以下类型说明：
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Reader | 此类的实例表示该设备支持的SE，如果支持eSE、SIM和SIM2，则返回3个实例，其中SIM2从API version 22开始支持。 |
@@ -21,7 +22,8 @@
 
   
 
-#### **导入模块**
+## **导入模块**
+
 
 **支持设备：** Phone | Wearable
 
@@ -31,7 +33,8 @@ import { omapi } from '@kit.ConnectivityKit';
  
   
 
-#### ServiceState
+## ServiceState
+
 
 **支持设备：** Phone | Wearable
 
@@ -39,6 +42,7 @@ import { omapi } from '@kit.ConnectivityKit';
  
 **系统能力：** SystemCapability.Communication.SecureElement
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DISCONNECTED | 0 | SE服务状态已断开。 |
@@ -47,15 +51,16 @@ import { omapi } from '@kit.ConnectivityKit';
  
   
 
-#### omapi.newSEService(deprecated)
+## omapi.newSEService(deprecated)
+
 
 **支持设备：** Phone | Wearable
 
 newSEService(type: 'serviceState', callback: Callback&lt;ServiceState&gt;): SEService
  
-建立一个可用于连接到系统中所有可用SE的新连接（服务）。连接过程较为耗时，所以此方法仅提供异步方式进行的。使用callback异步回调。
+建立一个可用于连接到系统中所有可用SE的新连接（服务）。连接过程较为耗时，所以此方法仅提供异步方式。使用callback异步回调。
  
-仅当指定的回调或者当[isConnected](#seserviceisconnected)方法返回true时，该返回SEService对象是可用的。
+仅当指定的回调或者当[isConnected](#seserviceisconnected)方法返回true时，返回的SEService对象是可用的。
  
 > [!NOTE]
 > 从 API version 10 开始支持，从 API version 12 开始废弃，建议使用 createService 替代。
@@ -65,6 +70,7 @@ newSEService(type: 'serviceState', callback: Callback&lt;ServiceState&gt;): SESe
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定填'serviceState' 。 |
@@ -73,6 +79,7 @@ newSEService(type: 'serviceState', callback: Callback&lt;ServiceState&gt;): SESe
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | SEService | SE服务实例。 |
@@ -82,6 +89,7 @@ newSEService(type: 'serviceState', callback: Callback&lt;ServiceState&gt;): SESe
  
 错误码的详细介绍请参见[SE(secureElement)错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-se)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameters types. 3. Parameter verification failed. |
@@ -100,7 +108,7 @@ function secureElementDemo() {
     // 获取 service
     try {
         seService = omapi.newSEService("serviceState", (state) => {
-        hilog.info(0x0000, 'testTag', 'se service state = %{public}s', JSON.stringify(state));
+            hilog.info(0x0000, 'testTag', 'se service state = %{public}s', JSON.stringify(state));
         });
     } catch (error) {
         hilog.error(0x0000, 'testTag', 'newSEService error %{public}s', JSON.stringify(error));
@@ -114,20 +122,22 @@ function secureElementDemo() {
  
   
 
-#### omapi.createService12+
+## omapi.createService12+
+
 
 **支持设备：** Phone | Wearable
 
-createService(): Promise&lt;SEService&gt;;
+createService(): Promise&lt;SEService&gt;
  
 建立一个可用于连接到系统中所有可用SE的新连接（服务）。连接过程较为耗时，所以此方法仅提供异步方式。使用Promise异步回调。
  
-仅当[isConnected](#seserviceisconnected)方法返回true时，该返回SEService对象是可用的。
+仅当[isConnected](#seserviceisconnected)方法返回true时，返回的SEService对象是可用的。
  
 **系统能力：** SystemCapability.Communication.SecureElement
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;SEService&gt; | 以Promise形式异步返回可用的SE服务实例。 |
@@ -137,6 +147,7 @@ createService(): Promise&lt;SEService&gt;;
  
 错误码的详细介绍请参见[SE(secureElement)错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-se)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. |
@@ -159,7 +170,7 @@ function secureElementDemo() {
             return;
         }
         hilog.info(0x0000, 'testTag', 'seservice state connected');
-    }).catch((error : BusinessError)=> {
+    }).catch((error : BusinessError) => {
         hilog.error(0x0000, 'testTag', 'createService error %{public}s', JSON.stringify(error));
     });
 }
@@ -167,11 +178,12 @@ function secureElementDemo() {
  
   
 
-#### omapi.on('stateChanged')18+
+## omapi.on('stateChanged')18+
+
 
 **支持设备：** Phone | Wearable
 
-on(type: 'stateChanged', callback: Callback&lt;ServiceState&gt;): void;
+on(type: 'stateChanged', callback: Callback&lt;ServiceState&gt;): void
  
 注册监听服务状态变化事件。
  
@@ -181,6 +193,7 @@ on(type: 'stateChanged', callback: Callback&lt;ServiceState&gt;): void;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅监听的事件类型，固定填'stateChanged' 。 |
@@ -191,6 +204,7 @@ on(type: 'stateChanged', callback: Callback&lt;ServiceState&gt;): void;
  
 错误码的详细介绍请参见[SE(secureElement)错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-se)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. |
@@ -202,7 +216,8 @@ on(type: 'stateChanged', callback: Callback&lt;ServiceState&gt;): void;
  
   
 
-#### omapi.off('stateChanged')18+
+## omapi.off('stateChanged')18+
+
 
 **支持设备：** Phone | Wearable
 
@@ -214,6 +229,7 @@ off(type: 'stateChanged', callback?: Callback&lt;ServiceState&gt;): void;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 取消订阅监听的事件类型，固定填'stateChanged' 。 |
@@ -224,6 +240,7 @@ off(type: 'stateChanged', callback?: Callback&lt;ServiceState&gt;): void;
  
 错误码的详细介绍请参见[SE(secureElement)错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-se)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. |
@@ -247,7 +264,7 @@ function seStateOffCb(data: omapi.ServiceState) {
 }
 
 function secureElementDemo() {
-    try{
+    try {
         omapi.createService().then((data) => {
             seService = data;
             if (seService == undefined || !seService.isConnected()) {
@@ -255,7 +272,7 @@ function secureElementDemo() {
                 return;
             }
             hilog.info(0x0000, 'testTag', 'seservice state connected');
-        }).catch((error : BusinessError)=> {
+        }).catch((error : BusinessError) => {
             hilog.error(0x0000, 'testTag', 'createService error %{public}s', JSON.stringify(error));
         });
         omapi.on('stateChanged', seStateOnCb);
@@ -264,7 +281,7 @@ function secureElementDemo() {
             hilog.error(0x0000, 'testTag', 'omapi on error %{public}s', JSON.stringify(error));
         }
     }
-    try{
+    try {
         omapi.off('stateChanged', seStateOffCb);
     } catch (error) {
         if (error as BusinessError) {
@@ -276,7 +293,8 @@ function secureElementDemo() {
  
   
 
-#### SEService
+## SEService
+
 
 **支持设备：** Phone | Wearable
 
@@ -284,7 +302,8 @@ SEService表示可用于连接到系统中所有可用SE的连接（服务），
  
   
 
-#### SEService.getReaders
+### SEService.getReaders
+
 
 **支持设备：** Phone | Wearable
 
@@ -296,6 +315,7 @@ getReaders(): Reader[]
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Reader[] | 返回可用Reader对象数组。 |
@@ -305,6 +325,7 @@ getReaders(): Reader[]
  
 错误码的详细介绍请参见[SE(secureElement)错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-se)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. |
@@ -338,7 +359,8 @@ function secureElementDemo() {
  
   
 
-#### SEService.isConnected
+### SEService.isConnected
+
 
 **支持设备：** Phone | Wearable
 
@@ -350,6 +372,7 @@ isConnected(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | true: SE服务状态已连接，false: SE服务状态已断开。 |
@@ -359,6 +382,7 @@ isConnected(): boolean
  
 错误码的详细介绍请参见[SE(secureElement)错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-se)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. |
@@ -381,7 +405,7 @@ function secureElementDemo() {
             return;
         }
         hilog.info(0x0000, 'testTag', 'seservice state connected');
-    }).catch((error : BusinessError)=> {
+    }).catch((error : BusinessError) => {
         hilog.error(0x0000, 'testTag', 'createService error %{public}s', JSON.stringify(error));
     });
 }
@@ -389,7 +413,8 @@ function secureElementDemo() {
  
   
 
-#### SEService.shutdown
+### SEService.shutdown
+
 
 **支持设备：** Phone | Wearable
 
@@ -403,6 +428,7 @@ shutdown(): void
  
 错误码的详细介绍请参见[SE(secureElement)错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-se)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. |
@@ -428,7 +454,8 @@ try {
  
   
 
-#### SEService.getVersion
+### SEService.getVersion
+
 
 **支持设备：** Phone | Wearable
 
@@ -440,6 +467,7 @@ getVersion(): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | OMA版本号（例如，“3.3”表示Open Mobile API规范版本3.3） |
@@ -449,6 +477,7 @@ getVersion(): string
  
 错误码的详细介绍请参见[SE(secureElement)错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-se)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. |
@@ -475,7 +504,8 @@ try {
  
   
 
-#### Reader
+## Reader
+
 
 **支持设备：** Phone | Wearable
 
@@ -483,7 +513,8 @@ Reader的实例表示该设备支持的SE，如果支持eSE、SIM和SIM2，则�
  
   
 
-#### Reader.getName
+### Reader.getName
+
 
 **支持设备：** Phone | Wearable
 
@@ -495,6 +526,7 @@ getName(): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | Reader名称。 |
@@ -504,6 +536,7 @@ getName(): string
  
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. |
@@ -530,18 +563,20 @@ try {
  
   
 
-#### Reader.isSecureElementPresent
+### Reader.isSecureElementPresent
+
 
 **支持设备：** Phone | Wearable
 
 isSecureElementPresent(): boolean
  
-检查当前Reader所对应的安全单元是否可用。
+检查当前Reader对应的安全单元是否可用。
  
 **系统能力：** SystemCapability.Communication.SecureElement
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | true: 安全单元可用， false: 安全单元不可用。 |
@@ -551,6 +586,7 @@ isSecureElementPresent(): boolean
  
 错误码的详细介绍请参见[SE(secureElement)错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-se)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. |
@@ -578,7 +614,8 @@ try {
  
   
 
-#### Reader.openSession
+### Reader.openSession
+
 
 **支持设备：** Phone | Wearable
 
@@ -590,6 +627,7 @@ try {
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Session | 连接会话Session实例。 |
@@ -599,6 +637,7 @@ try {
  
 错误码的详细介绍请参见[SE(secureElement)错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-se)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. |
@@ -632,7 +671,8 @@ function secureElementDemo() {
  
   
 
-#### Reader.closeSessions
+### Reader.closeSessions
+
 
 **支持设备：** Phone | Wearable
 
@@ -646,6 +686,7 @@ function secureElementDemo() {
  
 错误码的详细介绍请参见[SE(secureElement)错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-se)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. |
@@ -686,7 +727,8 @@ function secureElementDemo() {
  
   
 
-#### Session
+## Session
+
 
 **支持设备：** Phone | Wearable
 
@@ -694,7 +736,8 @@ Session的实例表示在某个SE Reader实例上创建连接会话。通过[Rea
  
   
 
-#### Session.getReader
+### Session.getReader
+
 
 **支持设备：** Phone | Wearable
 
@@ -706,6 +749,7 @@ getReader(): Reader
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Reader | 返回此Session的Reader实例。 |
@@ -715,6 +759,7 @@ getReader(): Reader
  
 错误码的详细介绍请参见[SE(secureElement)错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-se)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. |
@@ -752,7 +797,8 @@ function secureElementDemo() {
  
   
 
-#### Session.getATR
+### Session.getATR
+
 
 **支持设备：** Phone | Wearable
 
@@ -764,6 +810,7 @@ getATR(): number[]
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number[] | 返回SE的ATR，SE的ATR不可用时，返回空的数组。 |
@@ -773,6 +820,7 @@ getATR(): number[]
  
 错误码的详细介绍请参见[SE(secureElement)错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-se)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. |
@@ -799,7 +847,8 @@ try {
  
   
 
-#### Session.close
+### Session.close
+
 
 **支持设备：** Phone | Wearable
 
@@ -813,6 +862,7 @@ close(): void
  
 错误码的详细介绍请参见[SE(secureElement)错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-se)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. |
@@ -838,7 +888,8 @@ try {
  
   
 
-#### Session. isClosed
+### Session.isClosed
+
 
 **支持设备：** Phone | Wearable
 
@@ -850,6 +901,7 @@ isClosed(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | true：Session状态已关闭，false：Session是打开的。 |
@@ -859,6 +911,7 @@ isClosed(): boolean
  
 错误码的详细介绍请参见[SE(secureElement)错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-se)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. |
@@ -884,7 +937,8 @@ try {
  
   
 
-#### Session.closeChannels
+### Session.closeChannels
+
 
 **支持设备：** Phone | Wearable
 
@@ -898,6 +952,7 @@ closeChannels(): void
  
 错误码的详细介绍请参见[SE(secureElement)错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-se)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. |
@@ -923,7 +978,8 @@ try {
  
   
 
-#### Session.openBasicChannel
+### Session.openBasicChannel
+
 
 **支持设备：** Phone | Wearable
 
@@ -935,6 +991,7 @@ openBasicChannel(aid: number[]): Promise&lt;Channel&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | aid | number[] | 是 | 在此Channel上选择的Applet的AID或如果没有Applet被选择时空的数组。 |
@@ -942,6 +999,7 @@ openBasicChannel(aid: number[]): Promise&lt;Channel&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Channel&gt; | 以Promise形式异步返回可用的基础Channel对象实例。 |
@@ -951,6 +1009,7 @@ openBasicChannel(aid: number[]): Promise&lt;Channel&gt;
  
 错误码的详细介绍请参见[SE(secureElement)错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-se)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameters types. 3. Parameter verification failed. |
@@ -977,7 +1036,7 @@ function secureElementDemo() {
         // 改为在此channel上选择的App的aid
         seSession.openBasicChannel(aidArray).then((data) => {
             seChannel = data;
-        }).catch((error : BusinessError)=> {
+        }).catch((error : BusinessError) => {
             hilog.error(0x0000, 'testTag', 'openBasicChannel error %{public}s', JSON.stringify(error));
         });
     } catch (exception) {
@@ -992,7 +1051,8 @@ function secureElementDemo() {
  
   
 
-#### Session.openBasicChannel
+### Session.openBasicChannel
+
 
 **支持设备：** Phone | Wearable
 
@@ -1004,6 +1064,7 @@ function secureElementDemo() {
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | aid | number[] | 是 | 在此Channel上选择的Applet的AID或如果没有Applet被选择时空的数组。 |
@@ -1014,6 +1075,7 @@ function secureElementDemo() {
  
 错误码的详细介绍请参见[SE(secureElement)错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-se)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameters types. 3. Parameter verification failed. |
@@ -1057,7 +1119,8 @@ function secureElementDemo() {
  
   
 
-#### Session.openBasicChannel
+### Session.openBasicChannel
+
 
 **支持设备：** Phone | Wearable
 
@@ -1069,6 +1132,7 @@ openBasicChannel(aid: number[], p2: number): Promise&lt;Channel&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | aid | number[] | 是 | 在此Channel上选择的Applet的AID或如果没有Applet被选择时空的数组。 |
@@ -1077,6 +1141,7 @@ openBasicChannel(aid: number[], p2: number): Promise&lt;Channel&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Channel&gt; | 以Promise形式异步返回可用的基础Channel对象实例。 |
@@ -1086,6 +1151,7 @@ openBasicChannel(aid: number[], p2: number): Promise&lt;Channel&gt;
  
 错误码的详细介绍请参见[SE(secureElement)错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-se)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameters types. 3. Parameter verification failed. |
@@ -1113,7 +1179,7 @@ function secureElementDemo() {
         // 改为在此channel上选择的App的aid
         seSession.openBasicChannel(aidArray, p2).then((data) => {
             seChannel = data;
-        }).catch((error : BusinessError)=> {
+        }).catch((error : BusinessError) => {
             hilog.error(0x0000, 'testTag', 'openBasicChannel error %{public}s', JSON.stringify(error));
         });
     } catch (exception) {
@@ -1128,7 +1194,8 @@ function secureElementDemo() {
  
   
 
-#### Session.openBasicChannel
+### Session.openBasicChannel
+
 
 **支持设备：** Phone | Wearable
 
@@ -1140,6 +1207,7 @@ openBasicChannel(aid: number[], p2:number, callback: AsyncCallback&lt;Channel&gt
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | aid | number[] | 是 | 在此Channel上选择的Applet的AID或如果没有Applet被选择时空的数组。 |
@@ -1151,6 +1219,7 @@ openBasicChannel(aid: number[], p2:number, callback: AsyncCallback&lt;Channel&gt
  
 错误码的详细介绍请参见[SE(secureElement)错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-se)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameters types. 3. Parameter verification failed. |
@@ -1195,7 +1264,8 @@ function secureElementDemo() {
  
   
 
-#### Session.openLogicalChannel
+### Session.openLogicalChannel
+
 
 **支持设备：** Phone | Wearable
 
@@ -1207,6 +1277,7 @@ openLogicalChannel(aid: number[]): Promise&lt;Channel&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | aid | number[] | 是 | 在此Channel上选择的Applet的AID或如果没有Applet被选择时空的数组。 |
@@ -1214,6 +1285,7 @@ openLogicalChannel(aid: number[]): Promise&lt;Channel&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Channel&gt; | 以Promise形式异步返回可用的逻辑Channel对象实例。 |
@@ -1223,6 +1295,7 @@ openLogicalChannel(aid: number[]): Promise&lt;Channel&gt;
  
 错误码的详细介绍请参见[SE(secureElement)错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-se)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameters types. 3. Parameter verification failed. |
@@ -1249,7 +1322,7 @@ function secureElementDemo() {
         // 改为在此channel上选择的App的aid
         seSession.openLogicalChannel(aidArray).then((data) => {
             seChannel = data;
-        }).catch((error : BusinessError)=> {
+        }).catch((error : BusinessError) => {
             hilog.error(0x0000, 'testTag', 'openLogicalChannel error %{public}s', JSON.stringify(error));
         });
     } catch (exception) {
@@ -1264,7 +1337,8 @@ function secureElementDemo() {
  
   
 
-#### Session.openLogicalChannel
+### Session.openLogicalChannel
+
 
 **支持设备：** Phone | Wearable
 
@@ -1276,6 +1350,7 @@ function secureElementDemo() {
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | aid | number[] | 是 | 在此Channel上选择的Applet的AID或如果没有Applet被选择时空的数组。 |
@@ -1286,6 +1361,7 @@ function secureElementDemo() {
  
 错误码的详细介绍请参见[SE(secureElement)错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-se)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameters types. 3. Parameter verification failed. |
@@ -1329,7 +1405,8 @@ function secureElementDemo() {
  
   
 
-#### Session.openLogicalChannel
+### Session.openLogicalChannel
+
 
 **支持设备：** Phone | Wearable
 
@@ -1341,6 +1418,7 @@ openLogicalChannel(aid: number[], p2: number): Promise&lt;Channel&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | aid | number[] | 是 | 在此Channel上选择的Applet的AID或如果没有Applet被选择时空的数组。 |
@@ -1349,6 +1427,7 @@ openLogicalChannel(aid: number[], p2: number): Promise&lt;Channel&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Channel&gt; | 以Promise形式异步返回可用的逻辑Channel实例对象。 |
@@ -1358,6 +1437,7 @@ openLogicalChannel(aid: number[], p2: number): Promise&lt;Channel&gt;
  
 错误码的详细介绍请参见[SE(secureElement)错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-se)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameters types. 3. Parameter verification failed. |
@@ -1385,7 +1465,7 @@ function secureElementDemo() {
         // 改为在此channel上选择的App的aid
         seSession.openLogicalChannel(aidArray, p2).then((data) => {
             seChannel = data;
-        }).catch((error : BusinessError)=> {
+        }).catch((error : BusinessError) => {
             hilog.error(0x0000, 'testTag', 'openLogicalChannel error %{public}s', JSON.stringify(error));
         });
     } catch (exception) {
@@ -1400,7 +1480,8 @@ function secureElementDemo() {
  
   
 
-#### Session.openLogicalChannel
+### Session.openLogicalChannel
+
 
 **支持设备：** Phone | Wearable
 
@@ -1412,6 +1493,7 @@ openLogicalChannel(aid: number[], p2: number, callback: AsyncCallback&lt;Channel
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | aid | number[] | 是 | 在此Channel上选择的Applet的AID或如果没有Applet被选择时空的数组。 |
@@ -1423,6 +1505,7 @@ openLogicalChannel(aid: number[], p2: number, callback: AsyncCallback&lt;Channel
  
 错误码的详细介绍请参见[SE(secureElement)错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-se)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameters types. 3. Parameter verification failed. |
@@ -1447,7 +1530,7 @@ let p2 : number = 0x00;
 // 在使用seSession之前，需要对seSession进行初始化
 function secureElementDemo() {
     try {
-    // 改为在此channel上选择的App的aid
+        // 改为在此channel上选择的App的aid
         seSession.openLogicalChannel(aidArray, p2, (error, data) => {
             if (error) {
                 hilog.error(0x0000, 'testTag', 'openLogicalChannel error %{public}s', JSON.stringify(error));
@@ -1467,7 +1550,8 @@ function secureElementDemo() {
  
   
 
-#### Channel
+## Channel
+
 
 **支持设备：** Phone | Wearable
 
@@ -1475,7 +1559,8 @@ Channel的实例表示在某个Session实例上创建通道，可能为基础通
  
   
 
-#### Channel.getSession
+### Channel.getSession
+
 
 **支持设备：** Phone | Wearable
 
@@ -1487,6 +1572,7 @@ Channel的实例表示在某个Session实例上创建通道，可能为基础通
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Session | 该Channel绑定的Session 对象。 |
@@ -1496,6 +1582,7 @@ Channel的实例表示在某个Session实例上创建通道，可能为基础通
  
 错误码的详细介绍请参见[SE(secureElement)错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-se)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. |
@@ -1521,7 +1608,8 @@ try {
  
   
 
-#### Channel.close
+### Channel.close
+
 
 **支持设备：** Phone | Wearable
 
@@ -1535,6 +1623,7 @@ close(): void
  
 错误码的详细介绍请参见[SE(secureElement)错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-se)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. |
@@ -1558,7 +1647,8 @@ try {
  
   
 
-#### Channel.isBasicChannel
+### Channel.isBasicChannel
+
 
 **支持设备：** Phone | Wearable
 
@@ -1570,15 +1660,17 @@ isBasicChannel(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| boolean | true: 该Channel是基础Channel, false：该Channel逻辑Channel 。 |
+| boolean | 检查该Channel是否为基础Channel。true：该Channel是基础Channel，false：该Channel是逻辑Channel。 |
  
  
 **错误码：**
  
 错误码的详细介绍请参见[SE(secureElement)错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-se)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. |
@@ -1603,7 +1695,8 @@ try {
  
   
 
-#### Channel.isClosed
+### Channel.isClosed
+
 
 **支持设备：** Phone | Wearable
 
@@ -1615,6 +1708,7 @@ isClosed(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | true: Channel是关闭的，false: 不是关闭的。 |
@@ -1624,6 +1718,7 @@ isClosed(): boolean
  
 错误码的详细介绍请参见[SE(secureElement)错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-se)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. |
@@ -1648,7 +1743,8 @@ try {
  
   
 
-#### Channel.getSelectResponse
+### Channel.getSelectResponse
+
 
 **支持设备：** Phone | Wearable
 
@@ -1660,6 +1756,7 @@ getSelectResponse(): number[]
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number[] | SELECT Applet时的响应数据，包含状态字。 |
@@ -1669,6 +1766,7 @@ getSelectResponse(): number[]
  
 错误码的详细介绍请参见[SE(secureElement)错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-se)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. |
@@ -1693,7 +1791,8 @@ try {
  
   
 
-#### Channel.transmit
+### Channel.transmit
+
 
 **支持设备：** Phone | Wearable
 
@@ -1705,6 +1804,7 @@ transmit(command: number[]): Promise<number[]>
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | command | number[] | 是 | 需要发送到SE的APDU数据。 |
@@ -1712,6 +1812,7 @@ transmit(command: number[]): Promise<number[]>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<number[]> | 以Promise形式异步返回接收到的响应APDU数据，number数组。若芯片捕获异常则返回全0。 |
@@ -1721,6 +1822,7 @@ transmit(command: number[]): Promise<number[]>
  
 错误码的详细介绍请参见[SE(secureElement)错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-se)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameters types. 3. Parameter verification failed. |
@@ -1754,7 +1856,8 @@ try {
  
   
 
-#### Channel.transmit
+### Channel.transmit
+
 
 **支持设备：** Phone | Wearable
 
@@ -1766,6 +1869,7 @@ transmit(command: number[], callback: AsyncCallback<number[]>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | command | number[] | 是 | 需要发送到SE的APDU数据。 |
@@ -1776,6 +1880,7 @@ transmit(command: number[], callback: AsyncCallback<number[]>): void
  
 错误码的详细介绍请参见[SE(secureElement)错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-se)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameters types. 3. Parameter verification failed. |
@@ -1797,12 +1902,12 @@ let seChannel : omapi.Channel;
 let cmdData = [0x01, 0x02, 0x03, 0x04]; // 请更改为正确的data
 try {
     seChannel.transmit(cmdData, (error, response) => {
-    if (error) {
-        hilog.error(0x0000, 'testTag', 'transmit error %{public}s', JSON.stringify(error));
-    } else {
-        // 若芯片捕获异常则response返回全0
-        hilog.info(0x0000, 'testTag', 'transmit response = %{public}s.', JSON.stringify(response));
-    }
+        if (error) {
+            hilog.error(0x0000, 'testTag', 'transmit error %{public}s', JSON.stringify(error));
+        } else {
+            // 若芯片捕获异常则response返回全0
+            hilog.info(0x0000, 'testTag', 'transmit response = %{public}s.', JSON.stringify(response));
+        }
     });
 } catch (exception) {
     hilog.error(0x0000, 'testTag', 'transmit exception %{public}s', JSON.stringify(exception));

@@ -1,9 +1,9 @@
 # Circle
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawing-components-circle
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于绘制圆形的组件。
  
@@ -12,23 +12,26 @@
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
  
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### Circle
+### Circle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 new Circle(value?: CircleOptions)
  
@@ -42,6 +45,7 @@ new Circle(value?: CircleOptions)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | CircleOptions | 否 | 设置圆形尺寸。当需要自定义圆形大小时传入此参数，不传入时width和height默认为0。 异常值undefined和null按照无效值处理，本次设置不生效。 |
@@ -49,9 +53,10 @@ new Circle(value?: CircleOptions)
  
   
 
-#### Circle
+### Circle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Circle(value?: CircleOptions)
  
@@ -65,6 +70,7 @@ Circle(value?: CircleOptions)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | CircleOptions | 否 | 设置圆形尺寸。当需要自定义圆形大小时传入此参数，不传入时width和height默认为0。 异常值undefined和null按照无效值处理，本次设置不生效。 |
@@ -72,9 +78,10 @@ Circle(value?: CircleOptions)
  
   
 
-#### CircleOptions对象说明
+## CircleOptions对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于描述Circle组件绘制属性。
  
@@ -84,6 +91,7 @@ Circle(value?: CircleOptions)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | width | Length | 否 | 是 | 宽度，取值范围≥0。当需要自定义圆形大小时设置此属性，不传入时默认为0。 默认单位：vp 异常值undefined、null、NaN和Infinity按照默认值处理。 |
@@ -92,17 +100,19 @@ Circle(value?: CircleOptions)
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)以及[图形绘制通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawing-components-common)外，还支持以下属性：
  
   
 
-#### stroke
+### stroke
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stroke(value: ResourceColor | ColorMetrics)
  
@@ -118,6 +128,7 @@ stroke(value: ResourceColor | ColorMetrics)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor \| ColorMetrics | 是 | 边框颜色。 默认值：Color.Transparent 异常值undefined和null按照默认值处理，NaN和Infinity按照Color.Black处理。 |
@@ -125,9 +136,10 @@ stroke(value: ResourceColor | ColorMetrics)
  
   
 
-#### fill
+### fill
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fill(value: ResourceColor | ColorMetrics)
  
@@ -143,6 +155,7 @@ fill(value: ResourceColor | ColorMetrics)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor \| ColorMetrics | 是 | 填充区域颜色。 默认值：Color.Black 异常值undefined、null、NaN和Infinity按照默认值处理。 |
@@ -150,13 +163,17 @@ fill(value: ResourceColor | ColorMetrics)
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 示例1（组件属性绘制）
+### 示例1（组件属性绘制）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过fillOpacity、stroke、strokeDashArray属性可分别设置圆的透明度、边框颜色和边框间隙样式。
  
@@ -188,7 +205,10 @@ struct CircleExample {
  
   
 
-#### 示例2（宽和高使用不同参数类型绘制圆）
+### 示例2（宽和高使用不同参数类型绘制圆）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 width、height属性分别使用不同的长度类型绘制圆。
  
@@ -216,7 +236,10 @@ struct CircleTypeExample {
  
   
 
-#### 示例3（使用attributeModifier动态设置Circle组件的属性）
+### 示例3（使用attributeModifier动态设置Circle组件的属性）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 以下示例展示了如何使用attributeModifier动态设置Circle组件的fill、fillOpacity、stroke、strokeDashArray、strokeDashOffset、strokeLineCap、strokeOpacity、strokeWidth和antiAlias属性。
  
@@ -258,7 +281,10 @@ struct CircleModifierDemo {
  
   
 
-#### 示例4（使用ColorMetrics设置HDR填充和边框颜色）
+### 示例4（使用ColorMetrics设置HDR填充和边框颜色）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过[ColorMetrics](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-graphics#colormetrics12)可为Circle组件设置HDR颜色，实现超出普通显示范围的亮度效果。其中，[fill](#fill)接口用于设置填充区域的颜色，[stroke](#stroke)接口用于设置边框颜色。以下示例左侧使用HDR暖金色填充和冰蓝色边框（亮度倍数大于1.0），右侧使用普通SDR颜色作为对照。在支持HDR的屏幕上可观察到左侧明显比右侧更亮且色彩更鲜艳。
  

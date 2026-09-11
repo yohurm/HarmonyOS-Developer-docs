@@ -32,27 +32,27 @@
  1. 监听routerPageUpdate事件，即调用[uiObserver.on('routerPageUpdate')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-observer#uiobserveronrouterpageupdate11)，根页面初始化以及应用触发前后台切换时，实际会触发routerPageUpdate事件，为保证能够监听根页面初次访问时的状态变化，以及应用前后台切换时的状态变化，需要额外监听routerPageUpdate事件：
 ```text
 this.uiObserver.on('routerPageUpdate', (info: uiObserver.RouterPageInfo) => {
-  // 非当前Navigation页面过滤，避免干扰
+ <em> // 非当前Navigation页面过滤，避免干扰</em>
   if (info.name !== 'pages/Index') {
     return;
   }
   if (info.state === uiObserver.RouterPageState.ABOUT_TO_APPEAR) {
-    // 根页初次加载时会触发该状态，可在此记录首页访问次数等数据
+   <em> // 根页初次加载时会触发该状态，可在此记录首页访问次数等数据</em>
     let accessCount = AppStorage.get<number>('rootCount') ?? 0;
     accessCount++;
     AppStorage.setOrCreate('rootCount', accessCount);
   }
   if (info.state === uiObserver.RouterPageState.ABOUT_TO_DISAPPEAR) {
-    // 页面销毁时触发，可在此重置状态
+   <em> // 页面销毁时触发，可在此重置状态</em>
     this.startTime = 0;
   }
-  // 处理页面前后台切换，这里需要注意当应用前后台切换时，无论当前展示的页面是否为根页，首页都会触发一次routerPageUpdate事件
+ <em> // 处理页面前后台切换，这里需要注意当应用前后台切换时，无论当前展示的页面是否为根页，首页都会触发一次routerPageUpdate事件</em>
   if (info.state === uiObserver.RouterPageState.ON_PAGE_SHOW && this.isTop) {
-    // 应用从后台切换至前台时，首页触发一次该状态，此时需要根据根页是否为最上层展示页面来做进一步处理，这里通过isTop变量记录首页是否在最上层
+   <em> // 应用从后台切换至前台时，首页触发一次该状态，此时需要根据根页是否为最上层展示页面来做进一步处理，这里通过isTop变量记录首页是否在最上层</em>
     this.startTime = Date.now();
   }
   if (info.state === uiObserver.RouterPageState.ON_PAGE_HIDE && this.isTop) {
-    // 应用从前台切换至后台时，首页触发一次该状态，此时同样需要根据根页是否为最上层展示页面来做进一步处理
+   <em> // 应用从前台切换至后台时，首页触发一次该状态，此时同样需要根据根页是否为最上层展示页面来做进一步处理</em>
     let duration = Date.now() - this.startTime;
     AppStorage.setOrCreate('rootTime', Math.round((duration + this.preTime)/1000));
     this.preTime += duration;
@@ -64,14 +64,14 @@ this.uiObserver.on('routerPageUpdate', (info: uiObserver.RouterPageInfo) => {
 ```text
 this.uiObserver.on('navDestinationSwitch', (info: uiObserver.NavDestinationSwitchInfo) => {
   if (info.from === 'navBar') {
-    // 这里代表从根页面跳转至其他页面，根页面将被隐藏，可以在此处标记根页面是否被隐藏，方便后续处理
+   <em> // 这里代表从根页面跳转至其他页面，根页面将被隐藏，可以在此处标记根页面是否被隐藏，方便后续处理</em>
     this.isTop = false;
     let duration = this.startTime === 0 ? 0 : Date.now() - this.startTime;
     AppStorage.setOrCreate('rootTime', Math.round((duration + this.preTime) / 1000));
     this.preTime += duration;
   }
   if (info.to === 'navBar') {
-    // 回到根页面，根页面将重新展示
+ <em>   // 回到根页面，根页面将重新展示</em>
     this.isTop = true;
     this.startTime = Date.now();
   }
@@ -109,7 +109,7 @@ export default class EntryAbility extends UIAbility {
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
-    // Main window is created, set main page for this ability
+  <em>  // Main window is created, set main page for this ability</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
     windowStage.loadContent('pages/Index', (err) => {
@@ -119,44 +119,44 @@ export default class EntryAbility extends UIAbility {
       }
       hilog.info(DOMAIN, 'testTag', 'Succeeded in loading the content.');
       let uiContext = windowStage.getMainWindowSync().getUIContext();
-      // 这里保存uiObserver对象，方便后续注销订阅时使用
+      <em>// 这里保存uiObserver对象，方便后续注销订阅时使用</em>
       this.uiObserver = uiContext.getUIObserver();
       this.uiObserver.on('navDestinationSwitch', (info: uiObserver.NavDestinationSwitchInfo) => {
         if (info.from === 'navBar') {
-          // 这里代表从根页面跳转至其他页面，根页面将被隐藏，可以在此处标记根页面是否被隐藏，方便后续处理
+        <em>  // 这里代表从根页面跳转至其他页面，根页面将被隐藏，可以在此处标记根页面是否被隐藏，方便后续处理</em>
           this.isTop = false;
           let duration = this.startTime === 0 ? 0 : Date.now() - this.startTime;
           AppStorage.setOrCreate('rootTime', Math.round((duration + this.preTime) / 1000));
           this.preTime += duration;
         }
         if (info.to === 'navBar') {
-          // 回到根页面，根页面将重新展示
+          <em>// 回到根页面，根页面将重新展示</em>
           this.isTop = true;
           this.startTime = Date.now();
         }
       });
       this.uiObserver.on('routerPageUpdate', (info: uiObserver.RouterPageInfo) => {
-        // 非当前Navigation页面过滤，避免干扰
+       <em> // 非当前Navigation页面过滤，避免干扰</em>
         if (info.name !== 'pages/Index') {
           return;
         }
         if (info.state === uiObserver.RouterPageState.ABOUT_TO_APPEAR) {
-          // 根页初次加载时会触发该状态，可在此记录首页访问次数等数据
+         <em> // 根页初次加载时会触发该状态，可在此记录首页访问次数等数据</em>
           let accessCount = AppStorage.get<number>('rootCount') ?? 0;
           accessCount++;
           AppStorage.setOrCreate('rootCount', accessCount);
         }
         if (info.state === uiObserver.RouterPageState.ABOUT_TO_DISAPPEAR) {
-          // 页面销毁时触发，可在此重置状态
+         <em> // 页面销毁时触发，可在此重置状态</em>
           this.startTime = 0;
         }
-        // 处理页面前后台切换，这里需要注意当应用前后台切换时，无论当前展示的页面是否为根页，首页都会触发一次routerPageUpdate事件
+      <em>  // 处理页面前后台切换，这里需要注意当应用前后台切换时，无论当前展示的页面是否为根页，首页都会触发一次routerPageUpdate事件</em>
         if (info.state === uiObserver.RouterPageState.ON_PAGE_SHOW && this.isTop) {
-          // 应用从后台切换至前台时，首页触发一次该状态，此时需要根据根页是否为最上层展示页面来做进一步处理，这里通过isTop变量记录首页是否在最上层
+         <em> // 应用从后台切换至前台时，首页触发一次该状态，此时需要根据根页是否为最上层展示页面来做进一步处理，这里通过isTop变量记录首页是否在最上层</em>
           this.startTime = Date.now();
         }
         if (info.state === uiObserver.RouterPageState.ON_PAGE_HIDE && this.isTop) {
-          // 应用从前台切换至后台时，首页触发一次该状态，此时同样需要根据根页是否为最上层展示页面来做进一步处理
+         <em> // 应用从前台切换至后台时，首页触发一次该状态，此时同样需要根据根页是否为最上层展示页面来做进一步处理</em>
           let duration = Date.now() - this.startTime;
           AppStorage.setOrCreate('rootTime', Math.round((duration + this.preTime)/1000));
           this.preTime += duration;
@@ -166,19 +166,19 @@ export default class EntryAbility extends UIAbility {
   }
 
   onWindowStageDestroy(): void {
-    // Main window is destroyed, release UI related resources
+   <em> // Main window is destroyed, release UI related resources</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
     this.uiObserver?.off('navDestinationSwitch');
     this.uiObserver?.off('routerPageUpdate');
   }
 
   onForeground(): void {
-    // Ability has brought to foreground
+   <em> // Ability has brought to foreground</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onForeground');
   }
 
   onBackground(): void {
-    // Ability has back to background
+   <em> // Ability has back to background</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onBackground');
   }
 }
@@ -253,9 +253,9 @@ struct Index {
     .id('IndexNavigation')
   }
 
-  /**
-   * 计算时间
-   */
+<em>  /**</em>
+<em>   * 计算时间</em>
+<em>   */</em>
   countTime() {
     this.seconds++;
     if (this.seconds >= 60) {

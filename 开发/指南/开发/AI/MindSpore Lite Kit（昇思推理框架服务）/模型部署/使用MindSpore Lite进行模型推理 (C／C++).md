@@ -1,10 +1,10 @@
 # 使用MindSpore Lite进行模型推理 (C/C++)
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-09-07 06:42:31
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-lite-guidelines
 
-#### 场景介绍
+## 场景介绍
 
 MindSpore Lite是一款AI引擎，它提供了面向不同硬件设备AI模型推理的功能，目前已经在图像分类、目标识别、人脸识别、文字识别等应用中广泛使用。
 
@@ -12,23 +12,14 @@ MindSpore Lite是一款AI引擎，它提供了面向不同硬件设备AI模型�
 
 
 
-#### 基本概念
-
-在进行开发前，请先了解以下概念。
-
-**张量**：它与数组和矩阵非常相似，是MindSpore Lite网络运算中的基本数据结构。
-
-**Float16推理模式**： Float16又称半精度，它使用16比特表示一个数。Float16推理模式表示推理的时候用半精度进行推理。
-
-
-
-#### 接口说明
+## 接口说明
 
 这里给出MindSpore Lite推理的通用开发流程中涉及的一些接口，具体请见下列表格。更多接口及详细内容，请见[MindSpore](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-mindspore)。
 
 
 
-#### Context 相关接口
+### Context 相关接口
+
 
 | 接口名称 | 描述 |
 | --- | --- |
@@ -43,7 +34,8 @@ MindSpore Lite是一款AI引擎，它提供了面向不同硬件设备AI模型�
 
 
 
-#### Model 相关接口
+### Model 相关接口
+
 
 | 接口名称 | 描述 |
 | --- | --- |
@@ -54,7 +46,8 @@ MindSpore Lite是一款AI引擎，它提供了面向不同硬件设备AI模型�
 
 
 
-#### Tensor 相关接口
+### Tensor 相关接口
+
 
 | 接口名称 | 描述 |
 | --- | --- |
@@ -67,7 +60,7 @@ MindSpore Lite是一款AI引擎，它提供了面向不同硬件设备AI模型�
 
 
 
-#### 开发步骤
+## 开发步骤
 
 使用MindSpore Lite进行模型推理的开发流程如下图所示。
 
@@ -138,9 +131,9 @@ if (cpu_device_info == NULL) {
 OH_AI_DeviceInfoSetEnableFP16(cpu_device_info, false);
 OH_AI_ContextAddDeviceInfo(context, cpu_device_info);
 ```
-情形2：创建NNRT（Neural Network Runtime）和CPU异构推理上下文。
+情形2：创建NNRT（Neural Network Runtime）和CPU[异构推理](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-lite-term#heterogeneous-inference异构推理)上下文。
 
-  NNRT是面向AI领域的跨芯片推理计算运行时，一般来说，NNRT对接的加速硬件如NPU，推理能力较强，但支持的算子规格少；而通用CPU推理能力较弱，但支持算子规格更全面。MindSpore Lite支持配置NNRT硬件和CPU异构推理：优先将模型算子调度到NNRT推理，若某些算子NNRT不支持，将其调度到CPU进行推理。通过下面的操作即可配置NNRT/CPU异构推理。
+  NNRT是面向AI领域的跨芯片推理计算运行时，一般来说，NNRT对接的加速硬件如[NPU](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-lite-term#npu)，推理能力较强，但支持的[算子](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-lite-term#operator算子)规格少；而通用CPU推理能力较弱，但支持算子规格更全面。MindSpore Lite支持配置NNRT硬件和CPU异构推理：优先将模型算子调度到NNRT推理，若某些算子NNRT不支持，将其调度到CPU进行推理。通过下面的操作即可配置NNRT/CPU异构推理。
 
   
 ```text
@@ -286,7 +279,7 @@ OH_AI_ContextDestroy(&context);
 
 
 
-#### 调测验证
+## 调测验证
 1. 编写CMakeLists.txt。
 
   

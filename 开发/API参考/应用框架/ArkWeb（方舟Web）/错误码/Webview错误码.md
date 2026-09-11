@@ -1,18 +1,19 @@
 # Webview错误码
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!TIP]
 > 以下仅介绍本模块特有错误码，通用错误码请参考 通用错误码说明文档 。
 
 
 
-#### 17100001 WebviewController没有和具体的Web组件关联
+## 17100001 WebviewController没有和具体的Web组件关联
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -20,7 +21,7 @@ Init error. The WebviewController must be associated with a Web component.
 
 **错误描述**
 
-WebviewController还没有和具体的Web组件关联，无法进行相应的操作。
+WebviewController尚未与具体Web组件关联，无法进行相应操作。
 
 **可能原因**
 
@@ -32,9 +33,10 @@ WebviewController还没有和具体的Web组件关联。
 
 
 
-#### 17100002 URL格式错误
+## 17100002 URL格式错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -51,14 +53,15 @@ URL错误，可能原因：
 2. 该URL对应的网页无效，或URL长度超过2*1024*1024。
 
 **处理步骤**
+1. 请检查输入的URL是否正确且URL长度不超过2*1024*1024。
+2. 如报'No valid cookie found'错误，请检查指定URL对应的Cookie配置是否有效，必要时检查Cookie权限或重新设置Cookie。
 
-请检查输入的URL是否正确且URL长度不超过2*1024*1024。
 
 
+## 17100003 resource路径错误
 
-#### 17100003 resource路径错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 1. Invalid resource path or file type.
@@ -78,9 +81,10 @@ URL错误，可能原因：
 
 
 
-#### 17100004 功能开关未打开
+## 17100004 功能开关未打开
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -100,9 +104,10 @@ Function not enabled.
 
 
 
-#### 17100005 cookie value格式错误
+## 17100005 cookie value格式错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -118,13 +123,14 @@ cookie value格式错误。
 
 **处理步骤**
 
-请检查输入的value是否正确。
+请检查输入的cookie value是否符合RFC 6265规范，确保不包含控制字符、分隔符等非法内容。
 
 
 
-#### 17100006 无法注册message port回调
+## 17100006 无法注册message port回调
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -144,9 +150,10 @@ port可能已经关闭。
 
 
 
-#### 17100008 删除不存在的JavaScriptProxy
+## 17100008 删除不存在的JavaScriptProxy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -166,9 +173,10 @@ Failed to delete JavaScriptProxy because it does not exist.
 
 
 
-#### 17100010 无法使用该端口发送消息
+## 17100010 无法使用该端口发送消息
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -188,9 +196,10 @@ Failed to post messages through the port.
 
 
 
-#### 17100011 输入参数origin错误
+## 17100011 输入参数origin错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -210,9 +219,10 @@ Invalid origin.The origin format must follow defined in RFC 6454.
 
 
 
-#### 17100012 无可获取的webstorage源
+## 17100012 无可获取的webstorage源
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -232,9 +242,10 @@ Invalid web storage origin.
 
 
 
-#### 17100013 预连接时，输入socket数目无效
+## 17100013 预连接时，输入socket数目无效
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -254,9 +265,10 @@ The number of sockets to be preconnected is invalid.
 
 
 
-#### 17100014 类型和值不匹配
+## 17100014 类型和值不匹配
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -276,9 +288,10 @@ The type and value of the message do not match.
 
 
 
-#### 17100016 下载任务没有处于暂停状态
+## 17100016 下载任务没有处于暂停状态
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -298,9 +311,10 @@ The download task is not paused.
 
 
 
-#### 17100018 没有设置一个委托类来接收下载状态
+## 17100018 没有设置一个委托类来接收下载状态
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -320,9 +334,10 @@ No WebDownloadDelegate has been set yet.
 
 
 
-#### 17100019 下载还没开始
+## 17100019 下载还没开始
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -342,9 +357,10 @@ The download task is not started yet.
 
 
 
-#### 17100020 注册自定义协议失败
+## 17100020 注册自定义协议失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -364,9 +380,10 @@ Failed to register custom schemes.
 
 
 
-#### 17100021 WebResourceHandler已经失效
+## 17100021 WebResourceHandler已经失效
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -390,9 +407,10 @@ WebResourceHandler已经失效。
 
 
 
-#### 17100022 WebHttpBodyStream初始化失败
+## 17100022 WebHttpBodyStream初始化失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -412,9 +430,10 @@ WebHttpBodyStream数据初始化失败。
 
 
 
-#### 17100023 使用了不被允许的端口号
+## 17100023 使用了不被允许的端口号
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -434,9 +453,10 @@ The port number is not within the allowed range.
 
 
 
-#### 17100024 AIPageCommand格式错误
+## 17100024 AIPageCommand格式错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -456,9 +476,10 @@ AIPageCommand参数格式错误。
 
 
 
-#### 17100101 使用了错误的网络错误码
+## 17100101 使用了错误的网络错误码
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 

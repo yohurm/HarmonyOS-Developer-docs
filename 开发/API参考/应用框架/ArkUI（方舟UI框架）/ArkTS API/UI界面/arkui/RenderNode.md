@@ -1,9 +1,9 @@
 # RenderNode
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供自绘制渲染节点RenderNode，支持开发者通过C API进行开发，完成自定义绘制需求。RenderNode还支持渲染节点树管理（添加、删除、查询子节点）、背景色与不透明度等视觉属性设置、变换（缩放、旋转、平移、变换矩阵）、阴影、边框、遮罩与裁剪、模糊效果等能力，适用于在Stage模型下进行自定义渲染与节点树管理的场景。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { RenderNode } from '@kit.ArkUI';
@@ -22,15 +23,17 @@ import { RenderNode } from '@kit.ArkUI';
 
 
 
-#### RenderNode
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## RenderNode
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### constructor
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -85,9 +88,10 @@ struct Index {
 
 
 
-#### appendChild
+### appendChild
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 appendChild(node: RenderNode): void
 
@@ -99,6 +103,7 @@ appendChild(node: RenderNode): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | RenderNode | 是 | 需要添加的RenderNode。 |
@@ -107,6 +112,7 @@ appendChild(node: RenderNode): void
 **错误码：**
 
 以下错误码的详细介绍请参见[自定义节点错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-node)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -168,9 +174,10 @@ struct Index {
 
 
 
-#### insertChildAfter
+### insertChildAfter
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 insertChildAfter(child: RenderNode, sibling: RenderNode | null): void
 
@@ -182,6 +189,7 @@ insertChildAfter(child: RenderNode, sibling: RenderNode | null): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | child | RenderNode | 是 | 需要添加的子节点。 |
@@ -191,6 +199,7 @@ insertChildAfter(child: RenderNode, sibling: RenderNode | null): void
 **错误码：**
 
 以下错误码的详细介绍请参见[自定义节点错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-node)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -265,9 +274,10 @@ struct Index {
 
 
 
-#### removeChild
+### removeChild
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeChild(node: RenderNode): void
 
@@ -278,6 +288,7 @@ removeChild(node: RenderNode): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -344,9 +355,10 @@ struct Index {
 
 
 
-#### clearChildren
+### clearChildren
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clearChildren(): void
 
@@ -409,9 +421,10 @@ struct Index {
 
 
 
-#### getChild
+### getChild
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getChild(index: number): RenderNode | null
 
@@ -423,12 +436,14 @@ getChild(index: number): RenderNode | null
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 需要查询的子节点的序列号，从0开始。取值范围：[0, 子节点数量-1]，超出范围时返回null。不支持负索引。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -498,9 +513,10 @@ struct Index {
 
 
 
-#### getFirstChild
+### getFirstChild
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFirstChild(): RenderNode | null
 
@@ -511,6 +527,7 @@ getFirstChild(): RenderNode | null
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -585,9 +602,10 @@ struct Index {
 
 
 
-#### getNextSibling
+### getNextSibling
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getNextSibling(): RenderNode | null
 
@@ -598,6 +616,7 @@ getNextSibling(): RenderNode | null
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -677,9 +696,10 @@ struct Index {
 
 
 
-#### getPreviousSibling
+### getPreviousSibling
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPreviousSibling(): RenderNode | null
 
@@ -690,6 +710,7 @@ getPreviousSibling(): RenderNode | null
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -769,9 +790,10 @@ struct Index {
 
 
 
-#### backgroundColor
+### backgroundColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set backgroundColor(color: number)
 
@@ -782,6 +804,7 @@ set backgroundColor(color: number)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -797,6 +820,7 @@ get backgroundColor(): number
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -845,9 +869,10 @@ struct Index {
 
 
 
-#### clipToFrame
+### clipToFrame
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set clipToFrame(useClip: boolean)
 
@@ -858,6 +883,7 @@ set clipToFrame(useClip: boolean)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -873,6 +899,7 @@ get clipToFrame(): boolean
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -928,9 +955,10 @@ struct Index {
 
 
 
-#### opacity
+### opacity
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set opacity(value: number)
 
@@ -941,6 +969,7 @@ set opacity(value: number)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -956,6 +985,7 @@ get opacity(): number
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1006,9 +1036,10 @@ struct Index {
 
 
 
-#### size
+### size
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set size(size: Size)
 
@@ -1019,6 +1050,7 @@ set size(size: Size)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1034,6 +1066,7 @@ get size(): Size
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1083,9 +1116,10 @@ struct Index {
 
 
 
-#### position
+### position
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set position(position: Position)
 
@@ -1096,6 +1130,7 @@ set position(position: Position)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1111,6 +1146,7 @@ get position(): Position
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1161,9 +1197,10 @@ struct Index {
 
 
 
-#### frame
+### frame
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set frame(frame: Frame)
 
@@ -1174,6 +1211,7 @@ set frame(frame: Frame)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1189,6 +1227,7 @@ get frame(): Frame
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1238,9 +1277,10 @@ struct Index {
 
 
 
-#### pivot
+### pivot
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set pivot(pivot: Pivot)
 
@@ -1251,6 +1291,7 @@ set pivot(pivot: Pivot)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1266,6 +1307,7 @@ get pivot(): Pivot
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1318,9 +1360,10 @@ struct Index {
 
 
 
-#### scale
+### scale
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set scale(scale: Scale)
 
@@ -1331,6 +1374,7 @@ set scale(scale: Scale)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1346,6 +1390,7 @@ get scale(): Scale
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1396,9 +1441,10 @@ struct Index {
 
 
 
-#### translation
+### translation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set translation(translation: Translation)
 
@@ -1409,6 +1455,7 @@ set translation(translation: Translation)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1424,6 +1471,7 @@ get translation(): Translation
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1474,9 +1522,10 @@ struct Index {
 
 
 
-#### rotation
+### rotation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set rotation(rotation: Rotation)
 
@@ -1487,6 +1536,7 @@ set rotation(rotation: Rotation)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1502,6 +1552,7 @@ get rotation(): Rotation
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1552,9 +1603,10 @@ struct Index {
 
 
 
-#### transform
+### transform
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set transform(transform: Matrix4)
 
@@ -1565,6 +1617,7 @@ set transform(transform: Matrix4)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1589,6 +1642,7 @@ get transform(): Matrix4
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1644,9 +1698,10 @@ struct Index {
 
 
 
-#### shadowColor
+### shadowColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set shadowColor(color: number)
 
@@ -1657,6 +1712,7 @@ set shadowColor(color: number)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1672,6 +1728,7 @@ get shadowColor(): number
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1723,9 +1780,10 @@ struct Index {
 
 
 
-#### shadowOffset
+### shadowOffset
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set shadowOffset(offset: Offset)
 
@@ -1736,6 +1794,7 @@ set shadowOffset(offset: Offset)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1751,6 +1810,7 @@ get shadowOffset(): Offset
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1803,9 +1863,10 @@ struct Index {
 
 
 
-#### label12+
+### label12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set label(label: string)
 
@@ -1816,6 +1877,7 @@ set label(label: string)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1831,6 +1893,7 @@ get label(): string
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1882,9 +1945,10 @@ struct Index {
 
 
 
-#### shadowAlpha
+### shadowAlpha
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set shadowAlpha(alpha: number)
 
@@ -1895,6 +1959,7 @@ set shadowAlpha(alpha: number)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1910,6 +1975,7 @@ get shadowAlpha(): number
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1963,9 +2029,10 @@ struct Index {
 
 
 
-#### shadowElevation
+### shadowElevation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set shadowElevation(elevation: number)
 
@@ -1976,6 +2043,7 @@ set shadowElevation(elevation: number)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1991,6 +2059,7 @@ get shadowElevation(): number
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2047,9 +2116,10 @@ struct Index {
 
 
 
-#### shadowRadius
+### shadowRadius
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set shadowRadius(radius: number)
 
@@ -2060,6 +2130,7 @@ set shadowRadius(radius: number)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2075,6 +2146,7 @@ get shadowRadius(): number
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2137,9 +2209,10 @@ struct Index {
 
 
 
-#### draw
+### draw
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 draw(context: DrawContext): void
 
@@ -2156,6 +2229,7 @@ draw(context: DrawContext): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2326,9 +2400,10 @@ export const nativeOnDraw: (id: number, context: DrawContext, width: number, hei
 
 
 
-#### invalidate
+### invalidate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 invalidate(): void
 
@@ -2405,9 +2480,10 @@ libentry.so的构建方式见draw方法的示例。
 
 
 
-#### borderStyle12+
+### borderStyle12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set borderStyle(style: Edges&lt;BorderStyle&gt;)
 
@@ -2418,6 +2494,7 @@ set borderStyle(style: Edges&lt;BorderStyle&gt;)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2433,6 +2510,7 @@ get borderStyle(): Edges&lt;BorderStyle&gt;
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2490,9 +2568,10 @@ struct Index {
 
 
 
-#### borderWidth12+
+### borderWidth12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set borderWidth(width: Edges&lt;number&gt;)
 
@@ -2503,6 +2582,7 @@ set borderWidth(width: Edges&lt;number&gt;)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2518,6 +2598,7 @@ get borderWidth(): Edges&lt;number&gt;
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2569,9 +2650,10 @@ struct Index {
 
 
 
-#### borderColor12+
+### borderColor12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set borderColor(color: Edges&lt;number&gt;)
 
@@ -2582,6 +2664,7 @@ set borderColor(color: Edges&lt;number&gt;)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2597,6 +2680,7 @@ get borderColor(): Edges&lt;number&gt;
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2649,9 +2733,10 @@ struct Index {
 
 
 
-#### borderRadius12+
+### borderRadius12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set borderRadius(radius: BorderRadiuses)
 
@@ -2662,6 +2747,7 @@ set borderRadius(radius: BorderRadiuses)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2677,6 +2763,7 @@ get borderRadius(): BorderRadiuses
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2728,9 +2815,10 @@ struct Index {
 
 
 
-#### shapeMask12+
+### shapeMask12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set shapeMask(shapeMask: ShapeMask)
 
@@ -2741,6 +2829,7 @@ set shapeMask(shapeMask: ShapeMask)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2756,6 +2845,7 @@ get shapeMask(): ShapeMask
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2814,9 +2904,10 @@ struct Index {
 
 
 
-#### shapeClip12+
+### shapeClip12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set shapeClip(shapeClip: ShapeClip)
 
@@ -2827,6 +2918,7 @@ set shapeClip(shapeClip: ShapeClip)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2842,6 +2934,7 @@ get shapeClip(): ShapeClip
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2950,9 +3043,10 @@ struct Index {
 
 
 
-#### dispose12+
+### dispose12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 dispose(): void
 
@@ -3018,16 +3112,17 @@ struct Index {
 
 
 
-#### markNodeGroup12+
+### markNodeGroup12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set markNodeGroup(isNodeGroup: boolean)
 
 标记是否优先绘制节点及其子节点。若设置为true，则透明度等属性将在节点绘制完毕后再进行合成，适用于多个半透明节点重叠且需要正确合成透明度效果的场景。设置效果如下：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/rJuEepK6QuWWEXijVopdyA/zh-cn_image_0000002686087739.png?HW-CC-KV=V1&HW-CC-Date=20260730T071448Z&HW-CC-Expire=86400&HW-CC-Sign=5F6CA3D06D79F3644FAD187F0C120CAFE8A3C10E5804D8EC0D40FB7F22F47046)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/F-YR83yESmWX-tms6etjHQ/zh-cn_image_0000002747292397.png?HW-CC-KV=V1&HW-CC-Date=20260911T072837Z&HW-CC-Expire=86400&HW-CC-Sign=9407A1BED08E5709919C8C6544E67AD8A4ACC25F094B8BDF8B2D301D941459F2)
 
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -3035,6 +3130,7 @@ set markNodeGroup(isNodeGroup: boolean)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3050,6 +3146,7 @@ get markNodeGroup(): boolean
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3119,9 +3216,10 @@ struct Index {
 
 
 
-#### lengthMetricsUnit12+
+### lengthMetricsUnit12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set lengthMetricsUnit(unit: LengthMetricsUnit)
 
@@ -3132,6 +3230,7 @@ set lengthMetricsUnit(unit: LengthMetricsUnit)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3147,6 +3246,7 @@ get lengthMetricsUnit(): LengthMetricsUnit
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3214,9 +3314,10 @@ struct Index {
 
 
 
-#### isDisposed20+
+### isDisposed20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isDisposed(): boolean
 
@@ -3227,6 +3328,7 @@ isDisposed(): boolean
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3312,14 +3414,15 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/7FXj2GIHQVOdvS_hhUyesA/zh-cn_image_0000002685927911.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071448Z&HW-CC-Expire=86400&HW-CC-Sign=EB792FD718E11903AEFFB6E703476B9DEC233C1FB590D13FE5B77CF65611F6C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/2bc-KP6LQZ-_57ejFiIGPA/zh-cn_image_0000002747212313.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072837Z&HW-CC-Expire=86400&HW-CC-Sign=11A5FE4D27D95C8A1617496E70959080D184A3C9EDBB522707F04022124B4462)
 
 
 
 
-#### backgroundBlur
+### backgroundBlur
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set backgroundBlur(blurValue: BackgroundBlur | undefined)
 
@@ -3334,6 +3437,7 @@ set backgroundBlur(blurValue: BackgroundBlur | undefined)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3353,6 +3457,7 @@ get backgroundBlur(): BackgroundBlur
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3444,14 +3549,15 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/B9eaLcNkQ8O7oBGlp4JWvw/zh-cn_image_0000002656008232.png?HW-CC-KV=V1&HW-CC-Date=20260730T071448Z&HW-CC-Expire=86400&HW-CC-Sign=A11DAE24F6871B001D35C52D3BDA85F913E327BA29624B668FC2AF31BAC4C291)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/qJozu2QuRsS5_xBl7K1Nig/zh-cn_image_0000002717772378.png?HW-CC-KV=V1&HW-CC-Date=20260911T072837Z&HW-CC-Expire=86400&HW-CC-Sign=684EDE2FD8C0B6842D8203397A33D10932A19AE5DE14475BC62849B409C58248)
 
 
 
 
-#### contentBlur
+### contentBlur
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set contentBlur(blurValue: ContentBlur | undefined)
 
@@ -3466,6 +3572,7 @@ set contentBlur(blurValue: ContentBlur | undefined)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3485,6 +3592,7 @@ get contentBlur(): ContentBlur
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3576,14 +3684,15 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/AIuISqAnSZWSljhxgfRShA/zh-cn_image_0000002655848312.png?HW-CC-KV=V1&HW-CC-Date=20260730T071448Z&HW-CC-Expire=86400&HW-CC-Sign=802D22622EF94643C10FDD0FE4A5B2EDFC6E9D10F725FFF85EBC9E5839DC8C1A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/NheFry9MTx-NWbHj0lGG_Q/zh-cn_image_0000002717612446.png?HW-CC-KV=V1&HW-CC-Date=20260911T072837Z&HW-CC-Expire=86400&HW-CC-Sign=35AC9DA4188968E77DC035E2D3B133AC5C23ED40D4508956876F1659CEB897B4)
 
 
 
 
-#### foregroundBlur
+### foregroundBlur
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set foregroundBlur(blurValue: ForegroundBlur | undefined)
 
@@ -3598,6 +3707,7 @@ set foregroundBlur(blurValue: ForegroundBlur | undefined)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3617,6 +3727,7 @@ get foregroundBlur(): ForegroundBlur
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3707,4 +3818,4 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/8OxNlVgySfCCbpy9cIdqDQ/zh-cn_image_0000002686087741.png?HW-CC-KV=V1&HW-CC-Date=20260730T071448Z&HW-CC-Expire=86400&HW-CC-Sign=0BF11F8BBF12F1696A8B476DC243E6995BB3ADBA06CAAD5F97C6611D16F06497)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/-CMhXedbQOuFTHoUNVOW8w/zh-cn_image_0000002747292399.png?HW-CC-KV=V1&HW-CC-Date=20260911T072837Z&HW-CC-Expire=86400&HW-CC-Sign=94448ADCAA7A0A08D890C27B6ACC32B94403A50943BAD5500C0D30BD96453417)

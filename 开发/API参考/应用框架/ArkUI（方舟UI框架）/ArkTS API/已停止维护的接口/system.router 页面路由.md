@@ -1,9 +1,9 @@
 # @system.router (页面路由)
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-system-router
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV | lite_wearable
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 通过不同的uri访问不同的页面。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV | lite_wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 import router from '@system.router';
@@ -22,9 +23,10 @@ import router from '@system.router';
  
   
 
-#### router.push
+## router.push
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 push(options: RouterOptions): void
  
@@ -34,6 +36,7 @@ push(options: RouterOptions): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | RouterOptions | 是 | 页面路由参数，详细请参考RouterOptions。 |
@@ -79,9 +82,10 @@ export default new B()
  
   
 
-#### router.replace
+## router.replace
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 replace(options: RouterOptions): void
  
@@ -91,6 +95,7 @@ replace(options: RouterOptions): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | RouterOptions | 是 | 页面路由参数，详细请参考RouterOptions。 |
@@ -127,9 +132,10 @@ export default new Area()
  
   
 
-#### router.back
+## router.back
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 back(options?: BackRouterOptions): void
  
@@ -139,6 +145,7 @@ back(options?: BackRouterOptions): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | BackRouterOptions | 否 | 详细请参考BackRouterOptions。 |
@@ -211,9 +218,10 @@ export default new H()
  
   
 
-#### router.getParams7+
+## router.getParams7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getParams(): ParamsInterface
  
@@ -223,6 +231,7 @@ getParams(): ParamsInterface
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ParamsInterface | 详细请参见ParamsInterface。 |
@@ -230,9 +239,10 @@ getParams(): ParamsInterface
  
   
 
-#### router.clear
+## router.clear
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clear(): void
  
@@ -254,9 +264,10 @@ export default new I()
  
   
 
-#### router.getLength
+## router.getLength
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLength(): string
  
@@ -266,6 +277,7 @@ getLength(): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 页面数量，页面栈支持最大数值是32。 |
@@ -286,9 +298,10 @@ export default new J()
  
   
 
-#### router.getState
+## router.getState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getState(): RouterState
  
@@ -298,6 +311,7 @@ getState(): RouterState
  
 **返回值：**
   
+
 | 参数类型 | 说明 |
 | --- | --- |
 | RouterState | 详细请参见RouterState。 |
@@ -320,9 +334,10 @@ export default new K()
  
   
 
-#### router.enableAlertBeforeBackPage6+
+## router.enableAlertBeforeBackPage6+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableAlertBeforeBackPage(options: EnableAlertBeforeBackPageOptions): void
  
@@ -332,6 +347,7 @@ enableAlertBeforeBackPage(options: EnableAlertBeforeBackPageOptions): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | EnableAlertBeforeBackPageOptions | 是 | 详细请参见EnableAlertBeforeBackPageOptions。 |
@@ -359,9 +375,10 @@ export default new L()
  
   
 
-#### router.disableAlertBeforeBackPage6+
+## router.disableAlertBeforeBackPage6+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 disableAlertBeforeBackPage(options?: DisableAlertBeforeBackPageOptions): void
  
@@ -371,6 +388,7 @@ disableAlertBeforeBackPage(options?: DisableAlertBeforeBackPageOptions): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | DisableAlertBeforeBackPageOptions | 否 | 详细请参见DisableAlertBeforeBackPageOptions。 |
@@ -397,14 +415,16 @@ export default new Z()
  
   
 
-#### RouterOptions
+## RouterOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 定义路由器的选项。
  
 **系统能力：** 以下各项对应的系统能力均为SystemCapability.ArkUI.ArkUI.Lite
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uri | string | 是 | 目标页面的uri，可以是以下的两种格式： 1. 页面的绝对路径，由config.json文件中的页面列表提供。例如： - pages/index/index - pages/detail/detail 2. 特定路径。如果URI为斜杠（/），则显示主页。 |
@@ -413,14 +433,16 @@ export default new Z()
  
   
 
-#### BackRouterOptions
+## BackRouterOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV | lite_wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义路由器返回的选项。
  
 **系统能力：** 以下各项对应的系统能力有所不同，详见下表。
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uri7+ | string | 否 | 返回到指定uri的界面，如果页面栈上没有uri页面，则不响应该情况。如果uri未设置，则返回上一页。 系统能力： SystemCapability.ArkUI.ArkUI.Full |
@@ -429,14 +451,16 @@ export default new Z()
  
   
 
-#### RouterState
+## RouterState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义路由器的状态。
  
 **系统能力：** 以下各项对应的系统能力均为SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 表示当前页面在页面栈中的索引。从栈底到栈顶，index从1开始递增。 |
@@ -446,14 +470,16 @@ export default new Z()
  
   
 
-#### EnableAlertBeforeBackPageOptions6+
+## EnableAlertBeforeBackPageOptions6+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义EnableAlertBeforeBackPage选项。
  
 **系统能力：** 以下各项对应的系统能力均为SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | message | string | 是 | 询问对话框内容。 |
@@ -464,14 +490,16 @@ export default new Z()
  
   
 
-#### DisableAlertBeforeBackPageOptions6+
+## DisableAlertBeforeBackPageOptions6+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义DisableAlertBeforeBackPage参数选项。
  
 **系统能力：** 以下各项对应的系统能力均为SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | success | (errMsg: string) => void | 否 | 关闭询问对话框成功时触发，errMsg表示返回信息。 |
@@ -481,10 +509,12 @@ export default new Z()
  
   
 
-#### ParamsInterface
+## ParamsInterface
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV | lite_wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
  
+
 | 名称 | 参数类型 | 说明 |
 | --- | --- | --- |
 | [key: string] | object | 路由参数列表。 |
@@ -492,9 +522,10 @@ export default new Z()
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV | lite_wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 该示例展示了类Web范式下router.[replace](#routerreplace)接口的跳转功能。
  
@@ -676,4 +707,4 @@ export default {
 ```
  
 
-![](assets/system.router%20页面路由/file-20260708103055edccb079.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/pB661jbMRfypfAHUrADb6A/zh-cn_image_0000002747212319.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072942Z&HW-CC-Expire=86400&HW-CC-Sign=0F9739B8CCAE933738465AAAC050C1C264789B05E4FBE1C94D46F5D8EA9CF3E9)

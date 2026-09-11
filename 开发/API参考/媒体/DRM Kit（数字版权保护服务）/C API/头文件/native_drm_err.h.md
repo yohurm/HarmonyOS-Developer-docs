@@ -1,13 +1,14 @@
 # native_drm_err.h
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-drm-err-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义DRM错误码。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | Drm_ErrCode | Drm_ErrCode | DRM错误码。 |
@@ -40,15 +44,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### Drm_ErrCode
+### Drm_ErrCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Drm_ErrCode
@@ -62,10 +68,11 @@ DRM错误码。
  
 **起始版本：** 11
   
+
 | 枚举项 | 描述 |
 | --- | --- |
-| DRM_ERR_OK = 0 | 操作成功完成。 |
-| DRM_CAPI_ERR_BASE = 24700500 | 基础错误。 |
+| DRM_ERR_OK = 0 | 操作成功。 |
+| DRM_CAPI_ERR_BASE = 24700500 | 错误码基准值，用于生成其他错误码。 |
 | DRM_ERR_NO_MEMORY = DRM_CAPI_ERR_BASE + 1 | 内存不足。 |
 | DRM_ERR_OPERATION_NOT_PERMITTED = DRM_CAPI_ERR_BASE + 2 | 不支持的操作。 |
 | DRM_ERR_INVALID_VAL = DRM_CAPI_ERR_BASE + 3 | 无效参数。 |

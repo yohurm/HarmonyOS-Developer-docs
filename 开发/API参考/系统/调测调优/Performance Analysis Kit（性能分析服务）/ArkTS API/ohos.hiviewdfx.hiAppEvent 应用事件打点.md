@@ -1,9 +1,9 @@
 # @ohos.hiviewdfx.hiAppEvent (应用事件打点)
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hiviewdfx-hiappevent
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供应用打点和事件订阅能力，包括事件存储、事件订阅、事件清理、打点配置等功能。HiAppEvent将应用运行过程中触发的事件信息统一归纳到[AppEventInfo](#appeventinfo)中，并将事件分为系统事件和应用事件两类。
 
@@ -16,9 +16,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { hiAppEvent } from '@kit.PerformanceAnalysisKit';
@@ -26,9 +27,10 @@ import { hiAppEvent } from '@kit.PerformanceAnalysisKit';
 
 
 
-#### hiAppEvent.addWatcher
+## hiAppEvent.addWatcher
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addWatcher(watcher: Watcher): AppEventPackageHolder
 
@@ -40,12 +42,14 @@ addWatcher(watcher: Watcher): AppEventPackageHolder
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | watcher | Watcher | 是 | 事件观察者。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -55,6 +59,7 @@ addWatcher(watcher: Watcher): AppEventPackageHolder
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[应用事件打点错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-hiappevent)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -186,9 +191,10 @@ hiAppEvent.addWatcher({
 
 
 
-#### hiAppEvent.removeWatcher
+## hiAppEvent.removeWatcher
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeWatcher(watcher: Watcher): void
 
@@ -200,6 +206,7 @@ removeWatcher(watcher: Watcher): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | watcher | Watcher | 是 | 事件观察者。 |
@@ -208,6 +215,7 @@ removeWatcher(watcher: Watcher): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[应用事件打点错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-hiappevent)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -232,9 +240,10 @@ hiAppEvent.removeWatcher(watcher);
 
 
 
-#### hiAppEvent.setEventParam12+
+## hiAppEvent.setEventParam12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setEventParam(params: Record<string, ParamType>, domain: string, name?: string): Promise&lt;void&gt;
 
@@ -246,6 +255,7 @@ setEventParam(params: Record<string, ParamType>, domain: string, name?: string):
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | Record<string, ParamType> | 是 | 事件自定义参数对象。参数名和参数值规格定义如下： - 参数名为string类型，首字符必须为字母字符或$字符。中间字符必须为数字字符、字母字符或下划线字符。结尾字符必须为数字字符或字母字符。长度非空且不超过32个字符。 - 参数值为ParamType类型，参数值长度需在1024个字符以内。 - 参数个数需在64个以内。 |
@@ -255,6 +265,7 @@ setEventParam(params: Record<string, ParamType>, domain: string, name?: string):
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -263,6 +274,7 @@ setEventParam(params: Record<string, ParamType>, domain: string, name?: string):
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[应用事件打点错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-hiappevent)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -296,9 +308,10 @@ hiAppEvent.setEventParam(params, "test_domain", "test_event").then(() => {
 
 
 
-#### hiAppEvent.setEventConfig15+
+## hiAppEvent.setEventConfig15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setEventConfig(name: string, config: Record<string, ParamType>): Promise&lt;void&gt;
 
@@ -321,6 +334,7 @@ setEventConfig(name: string, config: Record<string, ParamType>): Promise&lt;void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 事件名称。 |
@@ -328,6 +342,7 @@ setEventConfig(name: string, config: Record<string, ParamType>): Promise&lt;void
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -337,6 +352,7 @@ setEventConfig(name: string, config: Record<string, ParamType>): Promise&lt;void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -367,9 +383,10 @@ hiAppEvent.setEventConfig(hiAppEvent.event.MAIN_THREAD_JANK, params).then(() => 
 
 
 
-#### hiAppEvent.configEventPolicy22+
+## hiAppEvent.configEventPolicy22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 configEventPolicy(policy: EventPolicy): Promise&lt;void&gt;
 
@@ -383,12 +400,14 @@ configEventPolicy(policy: EventPolicy): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | policy | EventPolicy | 是 | 系统事件配置策略。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -422,15 +441,17 @@ hiAppEvent.configEventPolicy(policy).then(() => {
 
 
 
-#### Watcher
+## Watcher
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供事件观察者的参数选项。用于配置和管理事件的观察者，实现对特定事件的监听和处理。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -447,15 +468,17 @@ hiAppEvent.configEventPolicy(policy).then(() => {
 
 
 
-#### TriggerCondition
+## TriggerCondition
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供设置[Watcher](#watcher)的onTrigger回调触发条件的参数选项。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -466,15 +489,17 @@ hiAppEvent.configEventPolicy(policy).then(() => {
 
 
 
-#### AppEventFilter
+## AppEventFilter
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供设置[Watcher](#watcher)的订阅过滤条件的参数选项。用于在事件观察者中设置事件过滤条件，确保只有满足过滤条件的事件才会被监听处理。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -489,17 +514,19 @@ hiAppEvent.configEventPolicy(policy).then(() => {
 
 
 
-#### AppEventPackageHolder
+## AppEventPackageHolder
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 订阅数据持有者类，用于对事件信息进行处理。
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(watcherName: string)
 
@@ -510,6 +537,7 @@ constructor(watcherName: string)
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -535,9 +563,10 @@ let holder1: hiAppEvent.AppEventPackageHolder = new hiAppEvent.AppEventPackageHo
 
 
 
-#### setSize
+### setSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setSize(size: number): void
 
@@ -549,6 +578,7 @@ setSize(size: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | size | number | 是 | 数据大小阈值，单位为byte。取值范围[0, 2^31-1]，超出范围会抛异常。 |
@@ -557,6 +587,7 @@ setSize(size: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[应用事件打点错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-hiappevent)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -575,9 +606,10 @@ holder2.setSize(1000);
 
 
 
-#### setRow12+
+### setRow12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setRow(size: number): void
 
@@ -589,6 +621,7 @@ setRow(size: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | size | number | 是 | 事件条数，单位为条。取值范围(0, 2^31-1]，超出范围会抛异常。 |
@@ -597,6 +630,7 @@ setRow(size: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[应用事件打点错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-hiappevent)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -615,9 +649,10 @@ holder3.setRow(1000);
 
 
 
-#### takeNext
+### takeNext
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 takeNext(): AppEventPackage
 
@@ -632,6 +667,7 @@ takeNext(): AppEventPackage
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -649,15 +685,17 @@ let eventPkg: hiAppEvent.AppEventPackage | null = holder4.takeNext();
 
 
 
-#### AppEventInfo
+## AppEventInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供事件信息的参数选项。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -669,13 +707,15 @@ let eventPkg: hiAppEvent.AppEventPackage | null = holder4.takeNext();
 
 
 
-#### AppEventPackage
+## AppEventPackage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供订阅返回的事件包的参数定义。可用于获取事件包的详细信息，事件包由[takeNext](#takenext)接口获得。
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -688,15 +728,17 @@ let eventPkg: hiAppEvent.AppEventPackage | null = holder4.takeNext();
 
 
 
-#### AppEventGroup11+
+## AppEventGroup11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供订阅返回的事件组的参数定义。可用于获取事件组的详细信息，事件组常在[Watcher](#watcher)的onReceive回调中使用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -706,9 +748,10 @@ let eventPkg: hiAppEvent.AppEventPackage | null = holder4.takeNext();
 
 
 
-#### hiAppEvent.write
+## hiAppEvent.write
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 write(info: AppEventInfo, callback: AsyncCallback&lt;void&gt;): void
 
@@ -720,6 +763,7 @@ write(info: AppEventInfo, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | info | AppEventInfo | 是 | 应用事件对象。其内部定义的事件名称建议避免与Event中定义的系统事件名称常量产生冲突。 |
@@ -729,6 +773,7 @@ write(info: AppEventInfo, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[应用事件打点错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-hiappevent)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -774,9 +819,10 @@ hiAppEvent.write({
 
 
 
-#### hiAppEvent.write
+## hiAppEvent.write
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 write(info: AppEventInfo): Promise&lt;void&gt;
 
@@ -788,12 +834,14 @@ write(info: AppEventInfo): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | info | AppEventInfo | 是 | 应用事件对象。其中的事件名称建议避免与Event中定义的系统事件名称常量冲突混淆。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -803,6 +851,7 @@ write(info: AppEventInfo): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[应用事件打点错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-hiappevent)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -846,9 +895,10 @@ hiAppEvent.write({
 
 
 
-#### hiAppEvent.addProcessor11+
+## hiAppEvent.addProcessor11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addProcessor(processor: Processor): number
 
@@ -862,12 +912,14 @@ addProcessor(processor: Processor): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | processor | Processor | 是 | 上报事件的数据处理者。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -877,6 +929,7 @@ addProcessor(processor: Processor): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -901,9 +954,10 @@ try {
 
 
 
-#### hiAppEvent.addProcessorFromConfig20+
+## hiAppEvent.addProcessorFromConfig20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addProcessorFromConfig(processorName: string, configName?: string): Promise&lt;number&gt;
 
@@ -917,6 +971,7 @@ addProcessorFromConfig(processorName: string, configName?: string): Promise&lt;n
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | processorName | string | 是 | 数据处理者的名称。名称只能包含大小写字母、数字、下划线和$，不能以数字开头，长度非空且不超过256个字符。 当前取值仅支持“ha_app_event”，表示接口故障处理者。 |
@@ -924,6 +979,7 @@ addProcessorFromConfig(processorName: string, configName?: string): Promise&lt;n
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -933,6 +989,7 @@ addProcessorFromConfig(processorName: string, configName?: string): Promise&lt;n
 **错误码：**
 
 以下错误码的详细介绍请参见[应用事件打点错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-hiappevent)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -954,9 +1011,10 @@ hiAppEvent.addProcessorFromConfig("test_name").then((processorId) => {
 
 
 
-#### hiAppEvent.removeProcessor11+
+## hiAppEvent.removeProcessor11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeProcessor(id: number): void
 
@@ -968,6 +1026,7 @@ removeProcessor(id: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | number | 是 | 上报事件数据处理者ID。值大于0。由调用addProcessor或addProcessorFromConfig接口返回值所得。 |
@@ -976,6 +1035,7 @@ removeProcessor(id: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1001,9 +1061,10 @@ try {
 
 
 
-#### hiAppEvent.setUserId11+
+## hiAppEvent.setUserId11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setUserId(name: string, value: string): void
 
@@ -1015,6 +1076,7 @@ setUserId(name: string, value: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 用户ID的key。只能包含大小写字母、数字、下划线和 $，不能以数字开头，长度非空且不超过256个字符。 |
@@ -1024,6 +1086,7 @@ setUserId(name: string, value: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1044,9 +1107,10 @@ try {
 
 
 
-#### hiAppEvent.getUserId11+
+## hiAppEvent.getUserId11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUserId(name: string): string
 
@@ -1058,12 +1122,14 @@ getUserId(name: string): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 用户ID的key。只能包含大小写字母、数字、下划线和 $，不能以数字开头，长度非空且不超过256个字符。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1073,6 +1139,7 @@ getUserId(name: string): string
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1095,9 +1162,10 @@ try {
 
 
 
-#### hiAppEvent.setUserProperty11+
+## hiAppEvent.setUserProperty11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setUserProperty(name: string, value: string): void
 
@@ -1109,6 +1177,7 @@ setUserProperty(name: string, value: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 用户属性的key。只能包含大小写字母、数字、下划线和 $，不能以数字开头，长度非空且不超过256个字符。 |
@@ -1118,6 +1187,7 @@ setUserProperty(name: string, value: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1138,9 +1208,10 @@ try {
 
 
 
-#### hiAppEvent.getUserProperty11+
+## hiAppEvent.getUserProperty11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUserProperty(name: string): string
 
@@ -1152,12 +1223,14 @@ getUserProperty(name: string): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 用户属性的key。只能包含大小写字母、数字、下划线和 $，不能以数字开头，长度非空且不超过256个字符。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1167,6 +1240,7 @@ getUserProperty(name: string): string
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1189,9 +1263,10 @@ try {
 
 
 
-#### hiAppEvent.clearData
+## hiAppEvent.clearData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clearData(): void
 
@@ -1209,9 +1284,10 @@ hiAppEvent.clearData();
 
 
 
-#### hiAppEvent.configure
+## hiAppEvent.configure
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 configure(config: ConfigOption): void
 
@@ -1223,6 +1299,7 @@ configure(config: ConfigOption): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | config | ConfigOption | 是 | 应用事件打点配置项对象。 |
@@ -1231,6 +1308,7 @@ configure(config: ConfigOption): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[应用事件打点错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-hiappevent)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1256,15 +1334,17 @@ hiAppEvent.configure(config2);
 
 
 
-#### ConfigOption
+## ConfigOption
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供对应用事件打点功能的配置选项。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1274,13 +1354,15 @@ hiAppEvent.configure(config2);
 
 
 
-#### EventPolicy22+
+## EventPolicy22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供系统事件配置策略的定义，用于使用[configEventPolicy](#hiappeventconfigeventpolicy22)设置事件配置策略。
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1294,15 +1376,17 @@ hiAppEvent.configure(config2);
 
 
 
-#### MainThreadJankPolicy22+
+## MainThreadJankPolicy22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供主线程超时事件配置策略的定义。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1316,14 +1400,15 @@ hiAppEvent.configure(config2);
 
 
 
-#### CpuUsageHighPolicy22+
+## CpuUsageHighPolicy22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供CPU高负载事件配置策略的定义。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/tlNdWnjBRDyUD4RgyxGZ3Q/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095516Z&HW-CC-Expire=86400&HW-CC-Sign=DE49D576EBA7DF0CDA277A885A9C7923E3AA636354596F37409F825CCFCC2204)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/wOYCmnaTSGOS9WcpFPG7iA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072910Z&HW-CC-Expire=86400&HW-CC-Sign=327409FF220D2B5F23CB861B61A817C3AF957F15AFCCD92068E7AA5A61B84EE3)
 
 
 该接口被调用后，会将设置值持久化。后续重复调用该接口时，若不设置对应参数，则取上一次系统取用的值。
@@ -1333,6 +1418,7 @@ hiAppEvent.configure(config2);
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1345,13 +1431,15 @@ hiAppEvent.configure(config2);
 
 
 
-#### AppCrashPolicy24+
+## AppCrashPolicy24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供崩溃事件配置策略的定义。
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1364,15 +1452,17 @@ hiAppEvent.configure(config2);
 
 
 
-#### AppFreezePolicy24+
+## AppFreezePolicy24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供应用冻屏事件配置策略的定义。
 
 **元服务API：** 从API version 24开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1381,13 +1471,15 @@ hiAppEvent.configure(config2);
 
 
 
-#### ResourceOverlimitPolicy24+
+## ResourceOverlimitPolicy24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供资源泄漏事件配置策略的定义。
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1398,15 +1490,17 @@ hiAppEvent.configure(config2);
 
 
 
-#### AddressSanitizerPolicy24+
+## AddressSanitizerPolicy24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供地址越界事件配置策略的定义。
 
 **元服务API：** 从API version 24开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1415,13 +1509,15 @@ hiAppEvent.configure(config2);
 
 
 
-#### Processor11+
+## Processor11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 可以上报事件的数据处理者对象。用于事件的上报和管理，开发者可自定义数据处理配置，满足不同的数据处理需求。
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1443,15 +1539,17 @@ hiAppEvent.configure(config2);
 
 
 
-#### AppEventReportConfig11+
+## AppEventReportConfig11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 数据处理者可以上报事件的描述配置。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1462,9 +1560,10 @@ hiAppEvent.configure(config2);
 
 
 
-#### ParamType12+
+## ParamType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ParamType = number | string | boolean | Array&lt;string&gt;
 
@@ -1473,6 +1572,7 @@ type ParamType = number | string | boolean | Array&lt;string&gt;
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1484,15 +1584,17 @@ type ParamType = number | string | boolean | Array&lt;string&gt;
 
 
 
-#### EventType
+## EventType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 事件类型枚举。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1504,21 +1606,24 @@ type ParamType = number | string | boolean | Array&lt;string&gt;
 
 
 
-#### domain11+
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## domain11+
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 常量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 常量
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供领域名称常量。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
 
 | 名称 | 类型 | 只读 | 说明 |
 | --- | --- | --- | --- |
@@ -1527,19 +1632,22 @@ type ParamType = number | string | boolean | Array&lt;string&gt;
 
 
 
-#### event
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## event
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 常量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 常量
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供事件名称常量。包含系统事件名称常量和应用事件名称常量，其中应用事件名称常量是为开发者在调用[Write](#hiappeventwrite-1)接口进行应用事件打点时预留的可选自定义事件名称。
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
 
 | 名称 | 类型 | 只读 | 说明 |
 | --- | --- | --- | --- |
@@ -1564,21 +1672,24 @@ type ParamType = number | string | boolean | Array&lt;string&gt;
 
 
 
-#### param
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## param
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 常量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 常量
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供参数名称常量。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
 
 | 名称 | 类型 | 只读 | 说明 |
 | --- | --- | --- | --- |

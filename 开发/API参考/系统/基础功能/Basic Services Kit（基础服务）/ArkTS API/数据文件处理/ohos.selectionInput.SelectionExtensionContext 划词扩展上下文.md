@@ -1,6 +1,6 @@
 # @ohos.selectionInput.SelectionExtensionContext (划词扩展上下文)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-selectioninput-selectionextensioncontext
 **支持设备：** PC/2in1
@@ -14,7 +14,8 @@ SelectionExtensionContext是[SelectionExtensionAbility](https://developer.huawei
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** PC/2in1
 
@@ -24,7 +25,8 @@ import { SelectionExtensionContext } from '@kit.BasicServicesKit';
 
 
 
-#### SelectionExtensionContext
+## SelectionExtensionContext
+
 
 **支持设备：** PC/2in1
 
@@ -34,7 +36,8 @@ import { SelectionExtensionContext } from '@kit.BasicServicesKit';
 
 
 
-#### startAbility
+### startAbility
+
 
 **支持设备：** PC/2in1
 
@@ -48,12 +51,14 @@ startAbility(want: Want): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | 需要拉起的目标应用信息。主要字段包括bundleName（目标应用的Bundle名称）和abilityName（目标Ability名称）。设置后系统将根据其中指定的bundleName和abilityName查找并拉起对应的Ability。仅支持拉起同应用内的Ability。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -63,6 +68,7 @@ startAbility(want: Want): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)，未标明的通用错误码请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

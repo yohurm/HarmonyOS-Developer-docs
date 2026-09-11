@@ -1,9 +1,9 @@
 # textPath
 
-更新时间：2026-07-09 02:26:55
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-svg-textpath
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 沿路径绘制文本。
  
@@ -12,28 +12,32 @@
 
   
 
-#### 权限列表
+## 权限列表
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 无
  
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 [tspan](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-svg-tspan)。
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 支持以下表格中的属性。
   
+
 | 名称 | 类型 | 默认值 | 描述 |
 | --- | --- | --- | --- |
 | id | string | - | 组件的唯一标识。 |
@@ -51,9 +55,10 @@
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 textPath属性示例，textpath文本内容沿着属性path中的路径绘制文本，起点偏移20%的path长度。（绘制的元素&lt;path&gt;曲线仅做参照）
  
@@ -294,7 +299,7 @@ textpath与tspan组合属性动画与效果图
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/dDrKMLpESFu072Jmn7ne1g/zh-cn_image_0000002677828219.gif?HW-CC-KV=V1&HW-CC-Date=20260723T012002Z&HW-CC-Expire=86400&HW-CC-Sign=796CF5FD92CC5450D1D08BF316CE849F63DC7B9963FB92904B5A1422BC77C2DF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/AeZ1HCQLSdOcbGYbekoN6g/zh-cn_image_0000002747293255.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072959Z&HW-CC-Expire=86400&HW-CC-Sign=4440B7AB7E35AFFE3EC16F9EA1D63524E64A322AC8FD683AB9DB2AF6CECAD14E)
 
  
 (1) "tspan attribute stroke" 轮廓颜色从红色逐渐转变成绿色。

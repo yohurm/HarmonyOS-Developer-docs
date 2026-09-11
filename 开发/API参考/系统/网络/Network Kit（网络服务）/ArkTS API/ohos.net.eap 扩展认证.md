@@ -1,6 +1,6 @@
 # @ohos.net.eap (扩展认证)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-net-eap
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -12,7 +12,8 @@
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -22,7 +23,8 @@ import {eap} from '@kit.NetworkKit';
 
 
 
-#### eap.regCustomEapHandler
+## eap.regCustomEapHandler
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -38,9 +40,10 @@ regCustomEapHandler(netType: number, eapCode: number, eapType: number, callback:
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| netType | number | 是 | 网络类型，取值为1或2。 netType=1表示WLAN，netType=2表示以太网。 |
+| netType | number | 是 | 网络类型，取值为1或2。 netType=1表示WLAN（WLAN仅支持PC/2in1），netType=2表示以太网。 |
 | eapCode | number | 是 | 需要进行定制的EAP code，取值为1、2、3、4 。 code=1 Request、 code=2 Response、 code=3 Success、 code=4 Failure。 |
 | eapType | number | 是 | 需要进行定制处理的EAP method类型，取值范围[0, 255]。 常用取值包括：eapType=1 Identity，eapType=2 Notification，eapType=3 NAK，eapType=4 MD5-Challenge，eapType=5 OTP（One-Time Password），eapType=6 GTC（Generic Token Card），eapType=13 EAP-TLS，eapType=21 EAP-TTLS，eapType=25 EAP-PEAP，eapType=254 Expanded Types，eapType=255 Experimental use。 |
 | callback | Callback&lt;EapData&gt; | 是 | 回调函数，返回指定的eapCode+eapType的报文。 |
@@ -49,6 +52,7 @@ regCustomEapHandler(netType: number, eapCode: number, eapType: number, callback:
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[扩展认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-eap)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -77,7 +81,8 @@ console.info('regCustomEapHandler success');
 
 
 
-#### eap.unregCustomEapHandler
+## eap.unregCustomEapHandler
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -91,9 +96,10 @@ unregCustomEapHandler(netType:number, eapCode: number, eapType: number, callback
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| netType | number | 是 | 网络类型，取值为1或2。 netType=1表示WLAN，netType=2表示以太网。 |
+| netType | number | 是 | 网络类型，取值为1或2。 netType=1表示WLAN（WLAN仅支持PC/2in1），netType=2表示以太网。 |
 | eapCode | number | 是 | 需要进行定制的EAP code，取值为1、2、3、4 。 code=1 Request、 code=2 Response、 code=3 Success、 code=4 Failure。 |
 | eapType | number | 是 | 需要进行定制处理的EAP method类型，取值范围[0, 255]。 常用取值包括：eapType=1 Identity，eapType=2 Notification，eapType=3 NAK，eapType=4 MD5-Challenge，eapType=5 OTP（One-Time Password），eapType=6 GTC（Generic Token Card），eapType=13 EAP-TLS，eapType=21 EAP-TTLS，eapType=25 EAP-PEAP，eapType=254 Expanded Types，eapType=255 Experimental use。 |
 | callback | Callback&lt;EapData&gt; | 是 | 回调函数，返回指定的eapCode+eapType的报文。 |
@@ -102,6 +108,7 @@ unregCustomEapHandler(netType:number, eapCode: number, eapType: number, callback
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[扩展认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-eap)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -130,7 +137,8 @@ console.info('unregCustomEapHandler success');
 
 
 
-#### eap.replyCustomEapData
+## eap.replyCustomEapData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -148,6 +156,7 @@ replyCustomEapData(result: CustomResult, data: EapData): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | result | CustomResult | 是 | 定制化判定结果。 |
@@ -157,6 +166,7 @@ replyCustomEapData(result: CustomResult, data: EapData): void
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[扩展认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-eap)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -186,7 +196,8 @@ try {
 
 
 
-#### eap.startEthEap
+## eap.startEthEap
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -200,6 +211,7 @@ startEthEap(netId: number, profile: EthEapProfile): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | netId | number | 是 | 以太网卡Id。（传入默认参数-1，系统将自动匹配以太网卡发起EAP认证） |
@@ -209,6 +221,7 @@ startEthEap(netId: number, profile: EthEapProfile): void
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[扩展认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-eap)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -253,7 +266,8 @@ try {
 
 
 
-#### eap.logOffEthEap
+## eap.logOffEthEap
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -267,6 +281,7 @@ logOffEthEap(netId: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | netId | number | 是 | 以太网卡Id。（传入默认参数-1，系统将自动匹配以太网卡发起EAP认证） |
@@ -275,6 +290,7 @@ logOffEthEap(netId: number): void
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[扩展认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-eap)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -301,13 +317,15 @@ try{
 
 
 
-#### EapData
+## EapData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 EAP信息。
 
 ​**系统能力**​：SystemCapability.Communication.NetManager.Eap
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -318,13 +336,15 @@ EAP信息。
 
 
 
-#### CustomResult
+## CustomResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 表示EAP认证处理结果的枚举。
 
 ​**系统能力**​：SystemCapability.Communication.NetManager.Eap
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -335,13 +355,15 @@ EAP信息。
 
 
 
-#### EapMethod
+## EapMethod
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 表示EAP认证方式的枚举。
 
 **系统能力：** SystemCapability.Communication.NetManager.Eap
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -358,13 +380,15 @@ EAP信息。
 
 
 
-#### Phase2Method
+## Phase2Method
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 表示第二阶段认证方式的枚举。
 
 **系统能力：** SystemCapability.Communication.NetManager.Eap
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -380,13 +404,15 @@ EAP信息。
 
 
 
-#### EthEapProfile
+## EthEapProfile
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 可扩展身份验证协议配置信息。
 
 **系统能力：** SystemCapability.Communication.NetManager.Eap
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

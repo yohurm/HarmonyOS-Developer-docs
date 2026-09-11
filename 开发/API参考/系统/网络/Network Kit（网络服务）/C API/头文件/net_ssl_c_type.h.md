@@ -1,13 +1,14 @@
 # net_ssl_c_type.h
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-net-ssl-c-type-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义SSL/TLS证书链校验模块的C接口需要的数据结构。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | NetStack_CertBlob | - | 证书数据结构体。 |
@@ -42,10 +46,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | NetStack_CertType | - | 证书类型枚举。 |
@@ -55,15 +61,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### NetStack_CertType
+### NetStack_CertType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum NetStack_CertType
@@ -75,18 +83,20 @@ enum NetStack_CertType
  
 **起始版本：** 11
   
+
 | 枚举项 | 描述 |
 | --- | --- |
-| NETSTACK_CERT_TYPE_PEM = 0 | PEM证书类型 |
-| NETSTACK_CERT_TYPE_DER = 1 | DER证书类型 |
-| NETSTACK_CERT_TYPE_INVALID | 错误证书类型 |
+| NETSTACK_CERT_TYPE_PEM = 0 | PEM证书类型。 |
+| NETSTACK_CERT_TYPE_DER = 1 | DER证书类型。 |
+| NETSTACK_CERT_TYPE_INVALID | 错误证书类型。 |
  
  
   
 
-#### NetStack_CertificatePinningKind
+### NetStack_CertificatePinningKind
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum NetStack_CertificatePinningKind
@@ -98,16 +108,18 @@ enum NetStack_CertificatePinningKind
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
-| PUBLIC_KEY | 公钥锁定类型 |
+| PUBLIC_KEY | 公钥锁定类型。 |
  
  
   
 
-#### NetStack_HashAlgorithm
+### NetStack_HashAlgorithm
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum NetStack_HashAlgorithm
@@ -119,6 +131,7 @@ enum NetStack_HashAlgorithm
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
-| SHA_256 | Sha256 |
+| SHA_256 | Sha256。 |

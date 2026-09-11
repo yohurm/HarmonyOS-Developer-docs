@@ -1,9 +1,9 @@
 # Class (ComponentSnapshot)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-componentsnapshot
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供获取组件截图的能力，包括已加载组件和未加载组件的截图，适用于需要获取组件渲染结果用于展示或后续处理的场景。
 
@@ -12,9 +12,10 @@
 
 
 
-#### get12+
+## get12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get(id: string, callback: AsyncCallback<image.PixelMap>, options?: componentSnapshot.SnapshotOptions): void
 
@@ -30,6 +31,7 @@ get(id: string, callback: AsyncCallback<image.PixelMap>, options?: componentSnap
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | string | 是 | 目标组件的组件标识。 说明： 不支持未挂树组件，当传入的组件标识是离屏或缓存未挂树的节点时，系统不会对其进行截图。 |
@@ -40,6 +42,7 @@ get(id: string, callback: AsyncCallback<image.PixelMap>, options?: componentSnap
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[截图错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-snapshot)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -92,14 +95,15 @@ struct SnapshotExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/juOeIiTsQyq_wkTXeFlXjg/zh-cn_image_0000002656008172.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071443Z&HW-CC-Expire=86400&HW-CC-Sign=640C7E76E72F6866AA80A45434D672BFE53380FC4CB6C0934DC18BCDDD959FF1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/tteRveaoRHeaihAKHbtCDQ/zh-cn_image_0000002747292325.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072445Z&HW-CC-Expire=86400&HW-CC-Sign=7E8573978F22B3EB299FF14395E95E71F1E263F169F3B2A341E35F1B9888A22B)
 
 
 
 
-#### get12+
+## get12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get(id: string, options?: componentSnapshot.SnapshotOptions): Promise<image.PixelMap>
 
@@ -115,6 +119,7 @@ get(id: string, options?: componentSnapshot.SnapshotOptions): Promise<image.Pixe
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | string | 是 | 目标组件的组件标识。 说明： 不支持未挂树组件，当传入的组件标识是离屏或缓存未挂树的节点时，系统不会对其进行截图。 |
@@ -122,6 +127,7 @@ get(id: string, options?: componentSnapshot.SnapshotOptions): Promise<image.Pixe
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -131,6 +137,7 @@ get(id: string, options?: componentSnapshot.SnapshotOptions): Promise<image.Pixe
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[截图错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-snapshot)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -185,9 +192,10 @@ struct SnapshotExample {
 
 
 
-#### createFromBuilder12+
+## createFromBuilder12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createFromBuilder(builder: CustomBuilder, callback: AsyncCallback<image.PixelMap>, delay?: number, checkImageStatus?: boolean, options?: componentSnapshot.SnapshotOptions): void
 
@@ -203,6 +211,7 @@ createFromBuilder(builder: CustomBuilder, callback: AsyncCallback<image.PixelMap
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | builder | CustomBuilder | 是 | 自定义组件构建函数。 说明： 不支持全局builder。 builder的根组件宽高为0时，截图操作会失败并抛出100001错误码。 |
@@ -215,6 +224,7 @@ createFromBuilder(builder: CustomBuilder, callback: AsyncCallback<image.PixelMap
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[截图错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-snapshot)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -283,9 +293,10 @@ struct ComponentSnapshotExample {
 
 
 
-#### createFromBuilder12+
+## createFromBuilder12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createFromBuilder(builder: CustomBuilder, delay?: number, checkImageStatus?: boolean, options?: componentSnapshot.SnapshotOptions): Promise<image.PixelMap>
 
@@ -301,6 +312,7 @@ createFromBuilder(builder: CustomBuilder, delay?: number, checkImageStatus?: boo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | builder | CustomBuilder | 是 | 自定义组件构建函数。 说明： 不支持全局builder。 builder的根组件宽高为0时，截图操作会失败并抛出100001错误码。 |
@@ -311,6 +323,7 @@ createFromBuilder(builder: CustomBuilder, delay?: number, checkImageStatus?: boo
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<image.PixelMap> | Promise对象，返回组件截图对象。 |
@@ -319,6 +332,7 @@ createFromBuilder(builder: CustomBuilder, delay?: number, checkImageStatus?: boo
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[截图错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-snapshot)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -387,9 +401,10 @@ struct ComponentSnapshotExample {
 
 
 
-#### getSync12+
+## getSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSync(id: string, options?: componentSnapshot.SnapshotOptions): image.PixelMap
 
@@ -405,6 +420,7 @@ getSync(id: string, options?: componentSnapshot.SnapshotOptions): image.PixelMap
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | string | 是 | 目标组件的组件标识。 说明： 不支持未挂树组件，当传入的组件标识是离屏或缓存未挂树的节点时，系统不会对其进行截图。 |
@@ -412,6 +428,7 @@ getSync(id: string, options?: componentSnapshot.SnapshotOptions): image.PixelMap
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -421,6 +438,7 @@ getSync(id: string, options?: componentSnapshot.SnapshotOptions): image.PixelMap
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[截图错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-snapshot)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -473,9 +491,10 @@ struct SnapshotExample {
 
 
 
-#### getWithUniqueId15+
+## getWithUniqueId15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getWithUniqueId(uniqueId: number, options?: componentSnapshot.SnapshotOptions): Promise<image.PixelMap>
 
@@ -491,6 +510,7 @@ getWithUniqueId(uniqueId: number, options?: componentSnapshot.SnapshotOptions): 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uniqueId | number | 是 | 目标组件的uniqueId。FrameNode节点的uniqueId可通过getUniqueId接口获取。 说明： 不支持未挂树组件，当传入的组件uniqueId对应的是离屏或缓存未挂树的节点时，系统不会对其进行截图。 |
@@ -498,6 +518,7 @@ getWithUniqueId(uniqueId: number, options?: componentSnapshot.SnapshotOptions): 
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -507,6 +528,7 @@ getWithUniqueId(uniqueId: number, options?: componentSnapshot.SnapshotOptions): 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[截图错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-snapshot)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -580,9 +602,10 @@ struct SnapshotExample {
 
 
 
-#### getSyncWithUniqueId15+
+## getSyncWithUniqueId15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSyncWithUniqueId(uniqueId: number, options?: componentSnapshot.SnapshotOptions): image.PixelMap
 
@@ -598,6 +621,7 @@ getSyncWithUniqueId(uniqueId: number, options?: componentSnapshot.SnapshotOption
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uniqueId | number | 是 | 目标组件的uniqueId。FrameNode节点的uniqueId可通过getUniqueId接口获取。 说明： 不支持未挂树组件，当传入的uniqueId对应离屏或缓存未挂树的节点时，系统不会对其进行截图。 |
@@ -605,6 +629,7 @@ getSyncWithUniqueId(uniqueId: number, options?: componentSnapshot.SnapshotOption
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -614,6 +639,7 @@ getSyncWithUniqueId(uniqueId: number, options?: componentSnapshot.SnapshotOption
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[截图错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-snapshot)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -683,23 +709,21 @@ struct SnapshotExample {
 
 
 
-#### createFromComponent18+
+## createFromComponent18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createFromComponent<T extends Object>(content: ComponentContent&lt;T&gt;, delay?: number, checkImageStatus?: boolean, options?: componentSnapshot.SnapshotOptions): Promise<image.PixelMap>
 
 将传入的content对象进行截图。与createFromBuilder传入CustomBuilder由系统离屏构建不同，createFromComponent传入的是已构建的ComponentContent对象，适用于已经通过ComponentContent管理组件内容的场景（如弹窗、节点管理等）。使用Promise异步回调。
-
-> [!NOTE]
-> 由于需要等待组件构建、渲染成功，截图的返回有一定的延迟，不适宜使用在对性能敏感的场景。 部分执行耗时任务的组件可能无法及时在截图前加载完成，因此会截取不到加载成功后的图像。例如：加载网络图片的 Image 组件、 Web 组件。
-
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -711,6 +735,7 @@ createFromComponent<T extends Object>(content: ComponentContent&lt;T&gt;, delay?
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<image.PixelMap> | Promise对象，返回组件截图对象。 |
@@ -719,6 +744,7 @@ createFromComponent<T extends Object>(content: ComponentContent&lt;T&gt;, delay?
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[截图错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-snapshot)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -811,9 +837,10 @@ struct Index {
 
 
 
-#### getSizeLimitation
+## getSizeLimitation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSizeLimitation(): componentSnapshot.SnapshotSizeLimitation
 
@@ -828,6 +855,7 @@ getSizeLimitation(): componentSnapshot.SnapshotSizeLimitation
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |

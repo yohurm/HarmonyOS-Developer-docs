@@ -68,7 +68,7 @@ struct ShowError {
 }
 
 
-// 自定义属性
+<em>// 自定义属性</em>
 @Extend(TextInput)
 function newExtend() {
   .layoutWeight(1)

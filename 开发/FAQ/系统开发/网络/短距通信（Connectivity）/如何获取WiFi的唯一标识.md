@@ -27,9 +27,9 @@
 - 实现思路：
 权限检查，代码如下：
 ```json
-/**
- * 判断是否已获取相关权限的授权
- */
+<em>/**</em>
+<em> * 判断是否已获取相关权限的授权</em>
+<em> */</em>
 private isPermissionGranted(): boolean {
   try {
     let bundleInfo: bundleManager.BundleInfo =
@@ -48,12 +48,12 @@ private isPermissionGranted(): boolean {
 
 - 获取bssid，代码如下：
 ```text
-/**
- * 获取BSSID
- */
+<em>/**</em>
+<em> * 获取BSSID</em>
+<em> */</em>
 private getConnectedWiFiBssid() {
   try {
-    // 获取连接的Wi-Fi AP（Access Point）的Bssid（Basic Service Set Identifier）信息
+   <em> // 获取连接的Wi-Fi AP（Access Point）的Bssid（Basic Service Set Identifier）信息</em>
     this.bssid = geoLocationManager.getCurrentWifiBssidForLocating();
     console.info(`get wifi bssid:${this.bssid}`);
   } catch (error) {
@@ -104,9 +104,9 @@ struct Index {
     .width('100%');
   }
 
-  /**
-   * 判断是否已获取相关权限的授权
-   */
+<em>  /**</em>
+<em>   * 判断是否已获取相关权限的授权</em>
+<em>   */</em>
   private isPermissionGranted(): boolean {
     try {
       let bundleInfo: bundleManager.BundleInfo =
@@ -122,12 +122,12 @@ struct Index {
     return false;
   }
 
-  /**
-   * 获取BSSID
-   */
+<em>  /**</em>
+<em>   * 获取BSSID</em>
+<em>   */</em>
   private getConnectedWiFiBssid() {
     try {
-      // 获取连接的Wi-Fi AP（Access Point）的Bssid（Basic Service Set Identifier）信息
+   <em>   // 获取连接的Wi-Fi AP（Access Point）的Bssid（Basic Service Set Identifier）信息</em>
       this.bssid = geoLocationManager.getCurrentWifiBssidForLocating();
       console.info(`get wifi bssid:${this.bssid}`);
     } catch (error) {
@@ -135,32 +135,32 @@ struct Index {
     }
   }
 
-  /**
-   * 请求权限
-   */
+<em>  /**</em>
+<em>   * 请求权限</em>
+<em>   */</em>
   private requestPermissions(): void {
     try {
       this.atManager.requestPermissionsFromUser(this.context, ['ohos.permission.APPROXIMATELY_LOCATION',
         'ohos.permission.LOCATION']).then((data) => {
-        // 值0：有权限，则尝试获取BSSID
+     <em>   // 值0：有权限，则尝试获取BSSID</em>
         if (data.authResults[0] === 0 && data.authResults[1] === 0) {
           this.getConnectedWiFiBssid();
           return;
         }
 
-        // 值非0且非-1：未知值，可能业务逻辑存在问题：如权限名非法等
+     <em>   // 值非0且非-1：未知值，可能业务逻辑存在问题：如权限名非法等</em>
         if (data.authResults[0] !== -1 && data.authResults[1] !== -1) {
           this.showMyToast(`获取权限失败，检查业务逻辑，错误码：${data.authResults[0]}, ${data.authResults[1]}`);
           return;
         }
 
-        // 值-1：缺少任一权限且已存在弹窗，直接返回，并toast提示
+      <em>  // 值-1：缺少任一权限且已存在弹窗，直接返回，并toast提示</em>
         if (data.dialogShownResults && (data.dialogShownResults[0] || data.dialogShownResults[1])) {
           this.showMyToast(`缺少必要权限，请重试`);
           return;
         }
 
-        // 值-1：缺少任一权限且未弹窗，弹出半模态授权申请
+     <em>   // 值-1：缺少任一权限且未弹窗，弹出半模态授权申请</em>
         this.openPermissionsSetting();
       }).catch((err: Error) => {
         console.error('requestPermissionsFromUser err:' + JSON.stringify(err));
@@ -170,9 +170,9 @@ struct Index {
     }
   }
 
-  /**
-   * 半模态弹窗请求权限
-   */
+<em>  /**</em>
+<em>   * 半模态弹窗请求权限</em>
+<em>   */</em>
   private openPermissionsSetting(): void {
     this.atManager.requestPermissionOnSetting(this.context, ['ohos.permission.APPROXIMATELY_LOCATION',
       'ohos.permission.LOCATION']).then((grantResult) => {
@@ -186,9 +186,9 @@ struct Index {
     });
   }
 
-  /**
-   * 展示toast
-   */
+<em>  /**</em>
+<em>   * 展示toast</em>
+<em>   */</em>
   private showMyToast(message: string) {
     try {
       this.getUIContext().getPromptAction().showToast({ duration: 3000, message: message });

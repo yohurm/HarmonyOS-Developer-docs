@@ -1,11 +1,12 @@
 # lowpower_audio_sink_base.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-lowpower-audio-sink-base-h
 **支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 结构体
+### 结构体
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_LowPowerAudioSink | OH_LowPowerAudioSink | LowPowerAudioSink的声明。 |
@@ -41,10 +45,12 @@
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | typedef void (*OH_LowPowerAudioSink_OnError)(OH_LowPowerAudioSink* sink, OH_AVErrCode errCode, const char* errorMsg, void* userData) | OH_LowPowerAudioSink_OnError | LowPowerAudioSink发生错误时调用该方法。 |
@@ -57,13 +63,15 @@
  
   
 
-#### 函数说明
+## 函数说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### OH_LowPowerAudioSink_OnError()
+### OH_LowPowerAudioSink_OnError()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -79,6 +87,7 @@ LowPowerAudioSink发生错误时调用该方法。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_LowPowerAudioSink* sink | 指向OH_LowPowerAudioSink实例的指针。 |
@@ -89,7 +98,8 @@ LowPowerAudioSink发生错误时调用该方法。
  
   
 
-#### OH_LowPowerAudioSink_OnPositionUpdated()
+### OH_LowPowerAudioSink_OnPositionUpdated()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -105,6 +115,7 @@ LowPowerAudioSink进度更新时调用该方法。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_LowPowerAudioSink* sink | 指向OH_LowPowerAudioSink实例的指针。 |
@@ -114,7 +125,8 @@ LowPowerAudioSink进度更新时调用该方法。
  
   
 
-#### OH_LowPowerAudioSink_OnDataNeeded()
+### OH_LowPowerAudioSink_OnDataNeeded()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -130,6 +142,7 @@ LowPowerAudioSink需要数据时调用该方法。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_LowPowerAudioSink* sink | 指向OH_LowPowerAudioSink实例的指针。 |
@@ -139,7 +152,8 @@ LowPowerAudioSink需要数据时调用该方法。
  
   
 
-#### OH_LowPowerAudioSink_OnInterrupted()
+### OH_LowPowerAudioSink_OnInterrupted()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -155,6 +169,7 @@ LowPowerAudioSink焦点打断时调用该方法。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_LowPowerAudioSink* sink | 指向OH_LowPowerAudioSink实例的指针。 |
@@ -165,7 +180,8 @@ LowPowerAudioSink焦点打断时调用该方法。
  
   
 
-#### OH_LowPowerAudioSink_OnDeviceChanged()
+### OH_LowPowerAudioSink_OnDeviceChanged()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -181,6 +197,7 @@ LowPowerAudioSink设备切换时调用该方法。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_LowPowerAudioSink* sink | 指向OH_LowPowerAudioSink实例的指针。 |
@@ -190,7 +207,8 @@ LowPowerAudioSink设备切换时调用该方法。
  
   
 
-#### OH_LowPowerAudioSink_OnEos()
+### OH_LowPowerAudioSink_OnEos()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -206,6 +224,7 @@ LowPowerAudioSink播放完成时调用该方法。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_LowPowerAudioSink* sink | 指向OH_LowPowerAudioSink实例的指针。 |

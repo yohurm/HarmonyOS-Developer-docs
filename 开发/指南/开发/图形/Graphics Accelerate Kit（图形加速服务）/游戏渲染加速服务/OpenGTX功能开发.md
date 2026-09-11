@@ -1,10 +1,10 @@
 # OpenGTX功能开发
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-accelerate-opengtx
 
-#### 概述
+## 概述
 
 OpenGTX是GPU Turbo X的开放式入口，根据游戏开发者主动提供的游戏过程中的关键信息，使能LTPO（动态帧率/刷新率）等游戏加速方案，助力游戏开发者打造高画质、高流畅、低功耗极致体验。LTPO通过动态感知游戏渲染状态、游戏场景、设备状态等关键信息，动态调整游戏的帧率/刷新率以及设备的SOC/DDR频率。
 
@@ -14,7 +14,7 @@ OpenGTX是GPU Turbo X的开放式入口，根据游戏开发者主动提供的�
 
 
 
-#### 业务流程
+## 业务流程
 
 LTPO的主要业务流程如下：
 
@@ -36,13 +36,13 @@ LTPO的主要业务流程如下：
 
 
 
-#### 开发步骤
+## 开发步骤
 
 本节介绍OpenGTX的开发接入，从流程上分别阐述每个步骤的实现和调用。详细代码请参考[OpenGTX Sample](https://gitcode.com/harmonyos_samples/open-gtx-samplecode-clientdemo-cpp)。
 
 
 
-#### 设置项目配置项
+### 设置项目配置项
 
 在“src/main/module.json5”的module层级中添加以下配置。
 
@@ -57,7 +57,7 @@ LTPO的主要业务流程如下：
 
 
 
-#### 头文件引用
+### 头文件引用
 
 引用Graphics Accelerate Kit OpenGTX头文件：opengtx_base.h。
 
@@ -68,7 +68,7 @@ LTPO的主要业务流程如下：
 
 
 
-#### 编写CMakeLists.txt
+### 编写CMakeLists.txt
 
 ```text
 find_library(
@@ -97,7 +97,7 @@ target_link_libraries(entry PUBLIC
 
 
 
-#### OpenGTX初始化
+### OpenGTX初始化
 
 在surface创建后，会触发其事件回调函数Core::OnSurfaceCreated()，在该函数中完成OpenGTX上下文实例创建、OpenGTX属性配置和功能激活。其中OpenGTX上下文实例负责管理OpenGTX整个生命周期。
 1. 调用[HMS_OpenGTX_CreateContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_graphics_accelerate#hms_opengtx_createcontext)接口创建OpenGTX上下文实例。如果返回nullptr，则说明OpenGTX上下文实例创建失败，或当前硬件设备不支持开启OpenGTX。
@@ -105,8 +105,8 @@ target_link_libraries(entry PUBLIC
   
 ```text
 // 创建OpenGTX上下文实例
-OpenGTX_Context *context_ = HMS_OpenGTX_CreateContext(nullptr);
-if (context_ == nullptr) {
+OpenGTX_Context *contextGtx_ = HMS_OpenGTX_CreateContext(nullptr);
+if (contextGtx_ == nullptr) {
     return false;
 }
 ```
@@ -183,38 +183,8 @@ if (errorCode != OPENGTX_SUCCESS) {
 
 
 
-#### OpenGTX关键信息更新
+### OpenGTX关键信息更新
 1. 游戏切换不同游戏场景后调用[HMS_OpenGTX_DispatchGameSceneInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_graphics_accelerate#hms_opengtx_dispatchgamesceneinfo)接口发送游戏场景信息，包含场景类型、指定帧率、调度帧率范围、当前分辨率等信息。
-
-  
-```text
-// 激活OpenGTX上下文实例
-errorCode = HMS_OpenGTX_Activate(contextGtx_);
-if (errorCode != OPENGTX_SUCCESS) {
-    GOLOGE("HMS_OpenGTX_Activate execution failed, error code: %d.", errorCode);
-    return false;
-}
-```
-
-2. 每帧渲染前调用[HMS_OpenGTX_DispatchFrameRenderInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_graphics_accelerate#hms_opengtx_dispatchframerenderinfo)接口发送游戏帧渲染信息，包含游戏主相机的位置和欧拉角。
-
-  
-```text
-// OpenGTX游戏渲染信息结构体
-OpenGTX_FrameRenderInfo frameRenderInfo;
-// 主相机位置
-frameRenderInfo.mainCameraPosition = {0.0f, 0.0f, 0.0f};
-// 主相机欧拉角
-frameRenderInfo.mainCameraRotate = {0.0f, 0.0f, 0.0f};
-// OpenGTX接收游戏渲染信息
-errorCode = HMS_OpenGTX_DispatchFrameRenderInfo(contextGtx_, &frameRenderInfo);
-if (errorCode != OPENGTX_SUCCESS) {
-    GOLOGE("HMS_OpenGTX_DispatchFrameRenderInfo execution failed, error code: %d.", errorCode);
-    return false;
-}
-```
-
-3. 每帧渲染前如遇到网络时延档位变化，调用[HMS_OpenGTX_DispatchNetworkInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_graphics_accelerate#hms_opengtx_dispatchnetworkinfo)接口发送游戏网络信息。包含服务器IP地址、网络时延等信息。
 
   
 ```text
@@ -242,10 +212,54 @@ if (errorCode != OPENGTX_SUCCESS) {
 }
 ```
 
+2. 每帧渲染前调用[HMS_OpenGTX_DispatchFrameRenderInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_graphics_accelerate#hms_opengtx_dispatchframerenderinfo)接口发送游戏帧渲染信息，包含游戏主相机的位置和欧拉角。
+
+  
+```text
+// OpenGTX游戏渲染信息结构体
+OpenGTX_FrameRenderInfo frameRenderInfo;
+// 主相机位置
+frameRenderInfo.mainCameraPosition = {0.0f, 0.0f, 0.0f};
+// 主相机欧拉角
+frameRenderInfo.mainCameraRotate = {0.0f, 0.0f, 0.0f};
+// OpenGTX接收游戏渲染信息
+errorCode = HMS_OpenGTX_DispatchFrameRenderInfo(contextGtx_, &frameRenderInfo);
+if (errorCode != OPENGTX_SUCCESS) {
+    GOLOGE("HMS_OpenGTX_DispatchFrameRenderInfo execution failed, error code: %d.", errorCode);
+    return false;
+}
+```
+
+3. 每帧渲染前如遇到网络时延档位变化，调用[HMS_OpenGTX_DispatchNetworkInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_graphics_accelerate#hms_opengtx_dispatchnetworkinfo)接口发送游戏网络信息。包含服务器IP地址、网络时延等信息。
+
+  
+```text
+// OpenGTX游戏网络信息结构体
+OpenGTX_NetworkInfo networkInfo;
+// OpenGTX游戏网络时延结构体
+OpenGTX_NetworkLatency networkLatency;
+// 网络总时延
+networkLatency.total = OGBT_NETWORK_LATENCY_TOTAL;
+// 网络上行时延
+networkLatency.up = OGBT_NETWORK_LATENCY_UP;
+// 网络下行时延
+networkLatency.down = OGBT_NETWORK_LATENCY_DOWN;
+// 游戏网络时延
+networkInfo.networkLatency = networkLatency;
+// 游戏服务器IP地址
+networkInfo.networkServerIP = OGBT_NETWORK_SERVER_IP.data();
+// OpenGTX接收游戏网络信息
+errorCode = HMS_OpenGTX_DispatchNetworkInfo(contextGtx_, &networkInfo);
+if (errorCode != OPENGTX_SUCCESS) {
+    GOLOGE("HMS_OpenGTX_DispatchNetworkInfo execution failed, error code: %d.", errorCode);
+    return false;
+}
+```
 
 
 
-#### 销毁OpenGTX实例
+
+### 销毁OpenGTX实例
 
 在surface销毁时，会触发其事件回调函数Core::OnSurfaceDestroyed()，在该函数中完成OpenGTX实例的销毁。
 

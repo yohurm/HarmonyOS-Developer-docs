@@ -1,10 +1,10 @@
 # UIAbility组件生命周期
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-lifecycle
 
-#### 概述
+## 概述
 
 当用户在执行应用启动、应用前后台切换、应用退出等操作时，系统会触发相关应用组件的生命周期回调。其中，UIAbility组件的核心生命周期回调包括[onCreate](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability#oncreate)、[onForeground](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability#onforeground)、[onBackground](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability#onbackground)、[onDestroy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability#ondestroy)。作为一种包含UI的应用组件，UIAbility的生命周期不可避免地与WindowStage的生命周期（可见[窗口生命周期](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-lifecycle)）存在关联关系。
 
@@ -36,7 +36,7 @@ UIAbility的生命周期示意图如下所示。
 
 
 
-#### 生命周期回调
+## 生命周期回调
 
 > [!NOTE]
 > 生命周期回调是在应用主线程执行，为了确保应用性能，建议在生命周期回调中，仅执行必要的轻量级操作。对于耗时任务，推荐采用异步处理或交由子线程执行，避免阻塞主线程。 如果需要感知UIAbility生命周期变化，开发者可以使用 ApplicationContext.on('abilityLifecycle') 接口监听UIAbility生命周期变化。详见 监听UIAbility生命周期变化 。
@@ -44,7 +44,7 @@ UIAbility的生命周期示意图如下所示。
 
 
 
-#### onCreate()
+### onCreate()
 
 在首次创建UIAbility实例时，系统触发[onCreate()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability#oncreate)回调。开发者可以在该回调中执行UIAbility整个生命周期中仅发生一次的启动逻辑。
 
@@ -63,7 +63,7 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### onWindowStageCreate()
+### onWindowStageCreate()
 
 [UIAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability)实例创建完成之后，在进入前台之前，系统会创建一个WindowStage。WindowStage创建完成后会进入[onWindowStageCreate()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability#onwindowstagecreate)回调，开发者可以在该回调中进行UI加载、WindowStage的事件订阅。
 
@@ -132,7 +132,7 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### onForeground()
+### onForeground()
 
 在[UIAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability)切换至前台时且UIAbility的UI可见之前，系统触发[onForeground](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability#onforeground)回调。开发者可以在该回调中申请系统需要的资源，或者重新申请在onBackground()中释放的资源。系统回调该方法后，UIAbility实例进入前台状态，即UIAbility实例可以与用户交互的状态。UIAbility实例会一直处于这个状态，直到被某些动作打断（例如屏幕关闭、用户跳转到其他UIAbility）。
 
@@ -155,7 +155,7 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### onBackground()
+### onBackground()
 
 在[UIAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability)的UI完全不可见之后，系统触发[onBackground](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability#onbackground)回调，将UIAbility实例切换至后台状态。开发者可以在该回调中释放UI不可见时的无用资源，例如停止定位功能，以节省系统的资源消耗。
 
@@ -178,7 +178,7 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### onWindowStageWillDestroy()
+### onWindowStageWillDestroy()
 
 在[UIAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability)实例销毁之前，系统触发[onWindowStageWillDestroy()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability#onwindowstagewilldestroy12)回调。该回调在WindowStage销毁前执行，此时WindowStage可以使用。开发者可以在该回调中释放通过WindowStage获取的资源、注销WindowStage事件订阅等。
 
@@ -221,7 +221,7 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### onWindowStageDestroy()
+### onWindowStageDestroy()
 
 在[UIAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability)实例销毁之前，系统触发[onWindowStageDestroy()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability#onwindowstagedestroy)回调，开发者可以在该回调中释放UI资源。该回调在WindowStage销毁后执行，此时WindowStage不可以使用。
 
@@ -249,7 +249,7 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### onDestroy()
+### onDestroy()
 
 在[UIAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability)实例销毁之前，系统触发[onDestroy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability#ondestroy)回调。该回调是UIAbility接收到的最后一个生命周期回调，开发者可以在onDestroy()回调中进行系统资源的释放、数据的保存等操作。
 
@@ -276,7 +276,7 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### onNewWant()
+### onNewWant()
 
 当应用的UIAbility实例已创建，再次调用方法启动该UIAbility实例时，系统触发该UIAbility的[onNewWant()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability#onnewwant)回调。开发者可以在该回调中更新要加载的资源和数据等，用于后续的UI展示。
 
@@ -295,11 +295,11 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### 常见问题
+## 常见问题
 
 
 
-#### onNewWant回调非预期触发导致页面变化
+### onNewWant回调非预期触发导致页面变化
 
 **问题现象**
 

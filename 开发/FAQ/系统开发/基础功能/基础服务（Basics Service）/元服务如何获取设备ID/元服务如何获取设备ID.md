@@ -1,16 +1,16 @@
 # 元服务如何获取设备ID
 
-更新时间：2026-06-26 07:48:29
+更新时间：2026-08-26 00:50:37
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-basics-service-kit-35
 
-#### 问题现象
+## 问题现象
 
 HarmonyOS应用里可以通过获取OAID和ODID获取设备标识，元服务不支持。元服务如何获取设备ID呢？
  
  
 
-#### 背景知识
+## 背景知识
 
 AAID是应用匿名标识符，标识应用实例，只存在于安装期，长度36位。AAID具有更好的隐私属性。AAID具有以下特性：
  
@@ -27,13 +27,21 @@ ODID：开发者匿名设备标识符，它主要用于开放给开发者的设�
  
  
 
-#### 解决方案
+## 解决方案
 
 HarmonyOS出于对用户隐私的保护不开放OAID、ODID等，开发者可以获取AAID，不过每次重新安装都会变化，具体可以参考[获取AAID](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-get-aaid)。
  
+若需要获取在元服务卸载重装后保持不变的设备标识，可采用自行生成UUID并通过[Asset Store Kit](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/asset-store-kit-overview)持久化存储的方案。核心思路是首次启动时生成UUID并通过关键资产存储以持久化方式保存，后续读取已缓存的UUID实现跨卸载周期稳定标识。
+ 
+实施步骤如下：
+ 1. 在元服务首次启动时，检查关键资产存储中是否已存在缓存的UUID。
+2. 若不存在，使用[util.generateRandomUUID](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-util#utilgeneraterandomuuid9)生成新的UUID，通过[asset.add](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-asset#assetadd)存入关键资产存储，设置IS_PERSISTENT为true（需申请ohos.permission.STORE_PERSISTENT_DATA权限，该权限为user_grant级别，需引导用户授权）。
+3. 若存在，直接从关键资产存储读取已缓存的UUID上报后端。
+4. 若业务需要跨设备用户识别，可集成华为账号Account Kit，通过静默登录获取OpenID/UnionID，后端维护"用户→设备UUID列表"映射关系。
+ 
  
 
-#### 常见FAQ
+## 常见FAQ
 
 Q：开发者需要对比从元服务和应用处获取到的设备唯一标识符来区分不同设备的会话，AAID可以吗？
  
@@ -50,3 +58,11 @@ A：ODID由系统底层自动生成，普通工具无法直接修改。其生成
 Q：AAID是否固定是36位，是否会变化？
  
 A：AAID长度是固定的，值不是。
+ 
+Q：使用UUID和关键资产存储方案生成的设备标识，在元服务卸载重装后是否保持不变？
+ 
+A：是的。通过设置IS_PERSISTENT为true，关键资产存储中的数据在元服务卸载后仍会保留，重新添加元服务后可读取到相同的UUID。
+ 
+Q：UUID和关键资产存储方案生成的设备标识在恢复出厂设置后是否保留？
+ 
+A：不保留。恢复出厂设置会清除关键资产存储中的所有数据，再次启动时UUID会重新生成。

@@ -1,6 +1,6 @@
 # healthStore (运动健康数据服务)(Lite)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/health-api-healthstore-lite
 **支持设备：** lite_wearable
@@ -10,7 +10,8 @@
 **起始版本：** 6.1.1(24)
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** lite_wearable
 
@@ -20,7 +21,8 @@ import healthStore from '@hms.health.store';
 
 
 
-#### AuthorizationBase
+## AuthorizationBase
+
 
 **支持设备：** lite_wearable
 
@@ -32,6 +34,7 @@ import healthStore from '@hms.health.store';
 
 **模型约束：** 此接口仅可在FA模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | readDataTypes | DataType[] | 否 | 否 | 读数据类型。 |
@@ -40,7 +43,8 @@ import healthStore from '@hms.health.store';
 
 
 
-#### AuthorizationRequest
+## AuthorizationRequest
+
 
 **支持设备：** lite_wearable
 
@@ -52,6 +56,7 @@ import healthStore from '@hms.health.store';
 
 **模型约束：** 此接口仅可在FA模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | readDataTypes | DataType[] | 否 | 否 | 读数据类型。 |
@@ -61,7 +66,8 @@ import healthStore from '@hms.health.store';
 
 
 
-#### AuthorizationResponse
+## AuthorizationResponse
+
 
 **支持设备：** lite_wearable
 
@@ -73,6 +79,7 @@ import healthStore from '@hms.health.store';
 
 **模型约束：** 此接口仅可在FA模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | readDataTypes | DataType[] | 否 | 否 | 授权成功的读数据类型，其对应权限在应用申请权限和用户授权权限的交集中。 |
@@ -82,7 +89,8 @@ import healthStore from '@hms.health.store';
 
 
 
-#### DataReadRequest
+## DataReadRequest
+
 
 **支持设备：** lite_wearable
 
@@ -94,6 +102,7 @@ import healthStore from '@hms.health.store';
 
 **模型约束：** 此接口仅可在FA模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | count | number | 否 | 是 | 读取数据的条数，若未填写，默认为无条数限制。 取值范围：[1, ∞) |
@@ -103,7 +112,8 @@ import healthStore from '@hms.health.store';
 
 
 
-#### DataRequest
+## DataRequest
+
 
 **支持设备：** lite_wearable
 
@@ -114,6 +124,7 @@ import healthStore from '@hms.health.store';
 **起始版本：** 6.1.1(24)
 
 **模型约束：** 此接口仅可在FA模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -126,7 +137,8 @@ import healthStore from '@hms.health.store';
 
 
 
-#### DataSourceOptions
+## DataSourceOptions
+
 
 **支持设备：** lite_wearable
 
@@ -138,6 +150,7 @@ import healthStore from '@hms.health.store';
 
 **模型约束：** 此接口仅可在FA模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | dataSourceId | string | 否 | 是 | 数据源的标识，由平台生成，无法更改，若未填写，默认为空。 |
@@ -148,7 +161,8 @@ import healthStore from '@hms.health.store';
 
 
 
-#### DataType
+## DataType
+
 
 **支持设备：** lite_wearable
 
@@ -160,6 +174,7 @@ import healthStore from '@hms.health.store';
 
 **模型约束：** 此接口仅可在FA模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | id | number | 是 | 否 | 数据类型唯一标识值。 |
@@ -168,7 +183,8 @@ import healthStore from '@hms.health.store';
 
 
 
-#### ExerciseSequence
+## ExerciseSequence
+
 
 **支持设备：** lite_wearable
 
@@ -182,6 +198,7 @@ ExerciseSequence<K extends Record<string, [ExerciseSummary](#exercisesummary)> =
 
 **模型约束：** 此接口仅可在FA模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | exerciseType | SubDataType | 否 | 否 | 锻炼记录子数据类型。 |
@@ -192,7 +209,8 @@ ExerciseSequence<K extends Record<string, [ExerciseSummary](#exercisesummary)> =
 
 
 
-#### ExerciseSequenceReadRequest
+## ExerciseSequenceReadRequest
+
 
 **支持设备：** lite_wearable
 
@@ -206,6 +224,7 @@ ExerciseSequenceReadRequest<DK extends Record<string, [SequencePoint](#sequencep
 
 **模型约束：** 此接口仅可在FA模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | exerciseType | SubDataType \| SubDataType[] \| null | 否 | 否 | 锻炼记录子数据类型，为空时查询所有类型。 |
@@ -214,7 +233,8 @@ ExerciseSequenceReadRequest<DK extends Record<string, [SequencePoint](#sequencep
 
 
 
-#### ExerciseSummary
+## ExerciseSummary
+
 
 **支持设备：** lite_wearable
 
@@ -226,6 +246,7 @@ ExerciseSequenceReadRequest<DK extends Record<string, [SequencePoint](#sequencep
 
 **模型约束：** 此接口仅可在FA模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | [P: string] | HealthValueType \| PaceValueType | 否 | 否 | 统计数据字段。 |
@@ -233,7 +254,8 @@ ExerciseSequenceReadRequest<DK extends Record<string, [SequencePoint](#sequencep
 
 
 
-#### HealthValueType
+## HealthValueType
+
 
 **支持设备：** lite_wearable
 
@@ -247,6 +269,7 @@ type HealthValueType = number | string | boolean | undefined
 
 **模型约束：** 此接口仅可在FA模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 表示值类型为数字，可取任意值。 |
@@ -257,7 +280,8 @@ type HealthValueType = number | string | boolean | undefined
 
 
 
-#### PaceValueType
+## PaceValueType
+
 
 **支持设备：** lite_wearable
 
@@ -271,6 +295,7 @@ type PaceValueType = Record<string, number>
 
 **模型约束：** 此接口仅可在FA模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Record<string, number> | 配速数据字段。 |
@@ -278,7 +303,8 @@ type PaceValueType = Record<string, number>
 
 
 
-#### SampleDataBase
+## SampleDataBase
+
 
 **支持设备：** lite_wearable
 
@@ -289,6 +315,7 @@ type PaceValueType = Record<string, number>
 **起始版本：** 6.1.1(24)
 
 **模型约束：** 此接口仅可在FA模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -303,7 +330,8 @@ type PaceValueType = Record<string, number>
 
 
 
-#### SequencePoint
+## SequencePoint
+
 
 **支持设备：** lite_wearable
 
@@ -315,6 +343,7 @@ type PaceValueType = Record<string, number>
 
 **模型约束：** 此接口仅可在FA模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | startTime | number | 否 | 否 | 数据开始时间，Unix时间戳，单位：ms。 取值范围：(0, ∞) |
@@ -323,7 +352,8 @@ type PaceValueType = Record<string, number>
 
 
 
-#### SequenceReadOptions
+## SequenceReadOptions
+
 
 **支持设备：** lite_wearable
 
@@ -337,6 +367,7 @@ SequenceReadOptions<DK extends Record<string, [SequencePoint](#sequencepoint)[]>
 
 **模型约束：** 此接口仅可在FA模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | withDetails | boolean | 否 | 是 | 是否读取全部详情。true为读取全部详情，false为不读取详情，若未填写，则withPartialDetails参数生效。 |
@@ -345,7 +376,8 @@ SequenceReadOptions<DK extends Record<string, [SequencePoint](#sequencepoint)[]>
 
 
 
-#### SortOrder
+## SortOrder
+
 
 **支持设备：** lite_wearable
 
@@ -357,6 +389,7 @@ SequenceReadOptions<DK extends Record<string, [SequencePoint](#sequencepoint)[]>
 
 **模型约束：** 此接口仅可在FA模型下使用。
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ASC | 0 | 升序。 |
@@ -365,7 +398,8 @@ SequenceReadOptions<DK extends Record<string, [SequencePoint](#sequencepoint)[]>
 
 
 
-#### SubDataType
+## SubDataType
+
 
 **支持设备：** lite_wearable
 
@@ -379,6 +413,7 @@ type SubDataType = DataType
 
 **模型约束：** 此接口仅可在FA模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | DataType | 数据类型。 |
@@ -386,7 +421,8 @@ type SubDataType = DataType
 
 
 
-#### healthStore.saveData
+## healthStore.saveData
+
 
 **支持设备：** lite_wearable
 
@@ -406,6 +442,7 @@ saveData(exerciseSequence: ExerciseSequence): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | exerciseSequence | ExerciseSequence | 是 | 单个锻炼记录。 |
@@ -414,6 +451,7 @@ saveData(exerciseSequence: ExerciseSequence): void
 **错误码：**
 
 以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -465,7 +503,8 @@ try {
 
 
 
-#### healthStore.readData
+## healthStore.readData
+
 
 **支持设备：** lite_wearable
 
@@ -481,6 +520,7 @@ readData<T extends ExerciseSequence>(request: ExerciseSequenceReadRequest, callb
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | ExerciseSequenceReadRequest | 是 | 读取锻炼记录请求，查询时间跨度范围为31天。在Lite Wearable设备上仅支持返回最新一条记录。 |
@@ -490,6 +530,7 @@ readData<T extends ExerciseSequence>(request: ExerciseSequenceReadRequest, callb
 **错误码：**
 
 以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -535,7 +576,8 @@ try {
 
 
 
-#### healthStore.requestAuthorizations
+## healthStore.requestAuthorizations
+
 
 **支持设备：** lite_wearable
 
@@ -551,12 +593,14 @@ requestAuthorizations(request: AuthorizationRequest): AuthorizationResponse
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | AuthorizationRequest | 是 | 授权请求参数，确保授权参数中的权限已在申请运动健康服务时勾选。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -584,7 +628,8 @@ try {
 
 
 
-#### healthStore.getAuthorizations
+## healthStore.getAuthorizations
+
 
 **支持设备：** lite_wearable
 
@@ -600,12 +645,14 @@ getAuthorizations(request: AuthorizationRequest): AuthorizationResponse
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | AuthorizationRequest | 是 | 查询权限请求参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |

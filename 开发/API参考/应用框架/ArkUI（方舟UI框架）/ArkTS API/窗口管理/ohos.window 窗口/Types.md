@@ -1,18 +1,19 @@
 # Types
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window-t
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 针对系统能力SystemCapability.Window.SessionManager，请先使用 canIUse() 接口判断当前设备是否支持此syscap及对应接口。
 
 
 
-#### SpecificSystemBar11+
+## SpecificSystemBar11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type SpecificSystemBar = 'status' | 'navigation' | 'navigationIndicator'
 
@@ -21,6 +22,7 @@ type SpecificSystemBar = 'status' | 'navigation' | 'navigationIndicator'
 **系统能力：** SystemCapability.Window.SessionManager
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -31,9 +33,10 @@ type SpecificSystemBar = 'status' | 'navigation' | 'navigationIndicator'
 
 
 
-#### WindowAnimationCurveParam20+
+## WindowAnimationCurveParam20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type WindowAnimationCurveParam = Array&lt;number&gt;
 
@@ -42,6 +45,7 @@ type WindowAnimationCurveParam = Array&lt;number&gt;
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -76,9 +80,10 @@ type WindowAnimationCurveParam = Array&lt;number&gt;
 
 
 
-#### RotationChangeCallback19+
+## RotationChangeCallback19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type RotationChangeCallback<T, U> = (info: T) => U
 
@@ -92,23 +97,26 @@ type RotationChangeCallback<T, U> = (info: T) => U
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| info | T | 是 | 回调函数调用时系统传入RotationChangeInfo类型的参数。 |
+| info | T | 是 | 旋转事件信息，系统传入RotationChangeInfo类型的参数，用于通知开发者旋转变化时的窗口信息。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| U | 回调函数需要返回RotationChangeResult \| void类型的返回值。 |
+| U | 回调函数需要返回RotationChangeResult \| void类型的返回值，应用指定旋转后的窗口位置；当返回void时，系统不更改窗口位置。 |
 
 
 
 
-#### WindowEventListener
+## WindowEventListener
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type WindowEventListener = (windowId: number, event: window.WindowEventType) => void
 
@@ -121,6 +129,7 @@ type WindowEventListener = (windowId: number, event: window.WindowEventType) => 
 **系统能力：** SystemCapability.Window.SessionManager
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |

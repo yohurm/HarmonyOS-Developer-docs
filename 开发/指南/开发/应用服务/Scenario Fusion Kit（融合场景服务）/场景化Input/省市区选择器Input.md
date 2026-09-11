@@ -1,10 +1,10 @@
 # 省市区选择器Input
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusion-input-zone-selectors
 
-#### 场景介绍
+## 场景介绍
 
 从5.1.0(18)开始，支持省市区选择器Input功能。
 
@@ -18,17 +18,17 @@
 
 
 
-#### 前提条件
+## 前提条件
 
 参见[开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-config-agc)。
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 导入Scenario Fusion Kit模块以及相关公共模块。
 
   
-```text
+```ArkTS
 import { FunctionalInput, functionalInputComponentManager } from '@kit.ScenarioFusionKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { SymbolGlyphModifier, TextInputModifier } from '@kit.ArkUI';
@@ -37,7 +37,7 @@ import { SymbolGlyphModifier, TextInputModifier } from '@kit.ArkUI';
 2. 在容器中声明FunctionalInput，指定FunctionalInput的inputType，并设置对应的回调函数，代码如下：
 
   
-```text
+```ArkTS
 @Entry
 @Component
 struct Index {

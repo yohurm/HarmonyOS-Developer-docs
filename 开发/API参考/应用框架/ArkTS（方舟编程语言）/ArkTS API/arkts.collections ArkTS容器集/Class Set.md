@@ -1,9 +1,9 @@
 # Class (Set)
 
-更新时间：2026-08-04 06:06:24
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-arkts-collections-set
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 一种存储唯一值的非线性数据结构，能够高效地进行元素存在性检测和去重操作。
 
@@ -19,9 +19,10 @@
 **装饰器类型：**@Sendable
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { collections } from '@kit.ArkTS';
@@ -29,13 +30,15 @@ import { collections } from '@kit.ArkTS';
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -44,9 +47,10 @@ import { collections } from '@kit.ArkTS';
 
 
 
-#### constructor
+## constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(values?: readonly T[] | null)
 
@@ -58,6 +62,7 @@ constructor(values?: readonly T[] | null)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | values | readonly T[] \| null | 否 | 数组或null。默认值为null，创建一个空Set对象。 |
@@ -66,6 +71,7 @@ constructor(values?: readonly T[] | null)
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -103,9 +109,10 @@ const mySet2: collections.Set<number|SharedClass> = new collections.Set<number|O
 
 
 
-#### constructor
+## constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(iterable: Iterable&lt;T&gt;)
 
@@ -117,6 +124,7 @@ constructor(iterable: Iterable&lt;T&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | iterable | Iterable&lt;T&gt; | 是 | 用于构造ArkTS Set的可迭代对象。 |
@@ -125,6 +133,7 @@ constructor(iterable: Iterable&lt;T&gt;)
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -147,9 +156,10 @@ console.info(`has b: ${newSet.has("b")}`); // Expected output: has b: true
 
 
 
-#### entries
+## entries
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 entries(): IterableIterator<[T, T]>
 
@@ -161,6 +171,7 @@ entries(): IterableIterator<[T, T]>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator<[T, T]> | 返回一个Set迭代器对象，该对象包含了此Set中每个元素的键值对。 |
@@ -169,6 +180,7 @@ entries(): IterableIterator<[T, T]>
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -191,9 +203,10 @@ console.info(`entry: ${iterator.next().value}`);
 
 
 
-#### keys
+## keys
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 keys(): IterableIterator&lt;T&gt;
 
@@ -205,6 +218,7 @@ keys(): IterableIterator&lt;T&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator&lt;T&gt; | 返回一个Set迭代器对象，该对象包含了此Set中每个元素的键。 |
@@ -213,6 +227,7 @@ keys(): IterableIterator&lt;T&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -235,9 +250,10 @@ console.info(`key: ${iterator.next().value}`);
 
 
 
-#### values
+## values
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 values(): IterableIterator&lt;T&gt;
 
@@ -249,6 +265,7 @@ values(): IterableIterator&lt;T&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator&lt;T&gt; | 返回一个Set迭代器对象，该对象包含了此Set中每个元素的值。 |
@@ -257,6 +274,7 @@ values(): IterableIterator&lt;T&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -297,9 +315,10 @@ console.info(`size: ${mySet.size}`);
 
 
 
-#### clear
+## clear
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clear(): void
 
@@ -312,6 +331,7 @@ clear(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -334,9 +354,10 @@ console.info(`size: ${mySet.size}`);
 
 
 
-#### delete
+## delete
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 delete(value: T): boolean
 
@@ -348,12 +369,14 @@ delete(value: T): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | T | 是 | 待删除元素的值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -363,6 +386,7 @@ delete(value: T): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -388,9 +412,10 @@ console.info(`result: ${mySet.delete("hello")}`);
 
 
 
-#### forEach
+## forEach
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 forEach(callbackFn: (value: T, value2: T, set: Set&lt;T&gt;) => void): void
 
@@ -402,12 +427,14 @@ forEach(callbackFn: (value: T, value2: T, set: Set&lt;T&gt;) => void): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callbackFn | (value: T, value2: T, set: Set&lt;T&gt;) => void | 是 | 回调函数。回调执行期间不应修改当前Set对象，否则会触发并发修改错误。 |
 
 
 callbackFn的参数说明：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -419,6 +446,7 @@ callbackFn的参数说明：
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -446,9 +474,10 @@ new collections.Set<string>(["foo", "bar", "baz"]).forEach((value, value2, set) 
 
 
 
-#### has
+## has
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 has(value: T): boolean
 
@@ -460,12 +489,14 @@ has(value: T): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | T | 是 | 待查找元素的值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -475,6 +506,7 @@ has(value: T): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -496,9 +528,10 @@ console.info(`result: ${mySet.has("world")}`);
 
 
 
-#### add
+## add
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 add(value: T): Set&lt;T&gt;
 
@@ -510,12 +543,14 @@ add(value: T): Set&lt;T&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | T | 是 | 待插入元素的值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -525,6 +560,7 @@ add(value: T): Set&lt;T&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -552,9 +588,10 @@ mySet.add(obj);
 
 
 
-#### [Symbol.iterator]
+## [Symbol.iterator]
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [Symbol.iterator](): IterableIterator&lt;T&gt;
 
@@ -570,6 +607,7 @@ mySet.add(obj);
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator&lt;T&gt; | 包含Set中所有元素的迭代器。 |
@@ -578,6 +616,7 @@ mySet.add(obj);
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

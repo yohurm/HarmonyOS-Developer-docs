@@ -1,8 +1,9 @@
 # 生成服务端请求的token
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-jwt-description
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 服务端API请求的Authorization标头中必须包含JWT格式的token用于鉴权。JSON Web Token（JWT）是一个开放标准（RFC 7519），定义了一种安全传输信息的方法，具体请参见[jwt.io](https://jwt.io/)。可以使用从[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)下载的私钥签名生成JWT。密钥的生成和下载请参见[配置密钥](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/iap-set-necessary-parameters#配置密钥)。创建JWT格式的token需要以下几步：
 1. 创建JWT Header
@@ -10,9 +11,13 @@
 3. 创建JWT格式的token
 
 
-#### 创建JWT Header
+## 创建JWT Header
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Header参数如下：
+
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
@@ -23,29 +28,39 @@ Header参数如下：
 
 
 
-#### 创建JWT Payload
+## 创建JWT Payload
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 JWT负载包含访问服务端API的一些关键信息，例如密钥颁发者ID、JWT签发时间和JWT到期时间等。JWT负载参数如下：
+
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | iss | 是 | String | 标识密钥颁发者ID（Issuer ID），获取方式请参见配置密钥的说明。 |
 | aud | 是 | String | JWT的预期接收者，固定为iap-v1。 |
 | iat | 是 | Long | JWT签发时间，UTC时间戳，以秒为单位。 |
-| exp | 是 | Long | JWT到期时间，UTC时间戳，以秒为单位。 （exp-iat）即为JWT的有效期，有效期不能超过1小时。 |
+| exp | 是 | Long | JWT到期时间，UTC时间戳，以秒为单位。 JWT的有效期由exp（到期时间）与iat（签发时间）的差值决定，即有效期=exp - iat。该有效期不得超过1小时。 |
 | aid | 是 | String | APP ID，获取方式参见配置应用身份信息。 |
 | digest | 是 | String | Request Body（json字符串）的hash值，用于验证Request Body的完整性，算法为SHA-256。 说明： 如果Request Body为空，则传空字符串""的hash值。 |
 
 
 
 
-#### 创建JWT格式的token
+## 创建JWT格式的token
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 使用Header中指定的算法（ES256）以及密钥ID关联的私钥进行签名生成JWT，可以使用各种开源库来创建JWT格式的token，具体请参见[jwt.io](https://jwt.io/)。
 
 
 
-#### 代码示例
+### 代码示例
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 以下示例代码仅以Java语言为例，Python、PHP、JS、Golang语言示例代码可通过在 IAP Kit-Sample-ServerDemo 中切换代码分支查看。
@@ -153,7 +168,10 @@ pom文件
 
 
 
-#### Authorization说明
+## Authorization说明
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 调用服务端API请求时，请求Header使用 Authorization: Bearer &lt;JWT格式的token&gt;传递鉴权信息，样例如下：
 

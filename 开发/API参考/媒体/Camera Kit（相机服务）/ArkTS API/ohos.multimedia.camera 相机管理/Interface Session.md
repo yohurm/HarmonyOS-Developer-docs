@@ -1,9 +1,9 @@
 # Interface (Session)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-session
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 会话类，保存一次相机运行所需要的所有资源[CameraInput](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-camerainput)、[CameraOutput](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-cameraoutput)，并向相机设备申请完成相机功能（录像，拍照）。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { camera } from '@kit.CameraKit';
@@ -22,9 +23,10 @@ import { camera } from '@kit.CameraKit';
  
   
 
-#### beginConfig11+
+## beginConfig11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 beginConfig(): void
  
@@ -38,6 +40,7 @@ beginConfig(): void
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400105 | Session config locked. |
@@ -62,9 +65,10 @@ function beginConfig(session: camera.Session): void {
  
   
 
-#### commitConfig11+
+## commitConfig11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 commitConfig(callback: AsyncCallback&lt;void&gt;): void
  
@@ -76,6 +80,7 @@ commitConfig(callback: AsyncCallback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当提交配置信息成功，err为undefined，否则为错误对象。错误码类型CameraErrorCode，比如预览流与录像输出流的分辨率的宽高比不一致，会返回7400201。 |
@@ -85,6 +90,7 @@ commitConfig(callback: AsyncCallback&lt;void&gt;): void
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400102 | Operation not allowed. |
@@ -109,9 +115,10 @@ function commitConfig(session: camera.Session): void {
  
   
 
-#### commitConfig11+
+## commitConfig11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 commitConfig(): Promise&lt;void&gt;
  
@@ -123,6 +130,7 @@ commitConfig(): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -132,6 +140,7 @@ commitConfig(): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400102 | Operation not allowed. |
@@ -155,9 +164,10 @@ function commitConfig(session: camera.Session): void {
  
   
 
-#### canAddInput11+
+## canAddInput11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 canAddInput(cameraInput: CameraInput): boolean
  
@@ -169,6 +179,7 @@ canAddInput(cameraInput: CameraInput): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cameraInput | CameraInput | 是 | 需要添加的CameraInput实例。传参异常（如超出范围、传入null、未定义等），实际接口不会生效。 |
@@ -176,6 +187,7 @@ canAddInput(cameraInput: CameraInput): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 判断当前cameraInput是否可以添加到session中。true表示支持添加当前cameraInput，false表示不支持添加。 |
@@ -192,9 +204,10 @@ function canAddInput(session: camera.Session, cameraInput: camera.CameraInput): 
  
   
 
-#### addInput11+
+## addInput11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addInput(cameraInput: CameraInput): void
  
@@ -206,6 +219,7 @@ addInput(cameraInput: CameraInput): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cameraInput | CameraInput | 是 | 需要添加的CameraInput实例。 |
@@ -215,6 +229,7 @@ addInput(cameraInput: CameraInput): void
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400101 | Parameter missing or parameter type incorrect. |
@@ -241,9 +256,10 @@ function addInput(session: camera.Session, cameraInput: camera.CameraInput): voi
  
   
 
-#### removeInput11+
+## removeInput11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeInput(cameraInput: CameraInput): void
  
@@ -255,6 +271,7 @@ removeInput(cameraInput: CameraInput): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cameraInput | CameraInput | 是 | 需要移除的CameraInput实例。 |
@@ -264,6 +281,7 @@ removeInput(cameraInput: CameraInput): void
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400101 | Parameter missing or parameter type incorrect. |
@@ -290,9 +308,10 @@ function removeInput(session: camera.Session, cameraInput: camera.CameraInput): 
  
   
 
-#### canAddOutput11+
+## canAddOutput11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 canAddOutput(cameraOutput: CameraOutput): boolean
  
@@ -304,6 +323,7 @@ canAddOutput(cameraOutput: CameraOutput): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cameraOutput | CameraOutput | 是 | 需要添加的CameraOutput实例。传参异常（如超出范围、传入null、未定义等），实际接口不会生效。 |
@@ -311,6 +331,7 @@ canAddOutput(cameraOutput: CameraOutput): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 是否可以添加当前cameraOutput到session中，true为可添加，false为不可添加。 |
@@ -327,9 +348,10 @@ function canAddOutput(session: camera.Session, cameraOutput: camera.CameraOutput
  
   
 
-#### addOutput11+
+## addOutput11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addOutput(cameraOutput: CameraOutput): void
  
@@ -341,6 +363,7 @@ addOutput(cameraOutput: CameraOutput): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cameraOutput | CameraOutput | 是 | 需要添加的CameraOutput实例。 |
@@ -350,6 +373,7 @@ addOutput(cameraOutput: CameraOutput): void
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400101 | Parameter missing or parameter type incorrect. |
@@ -376,9 +400,10 @@ function addOutput(session: camera.Session, cameraOutput: camera.CameraOutput): 
  
   
 
-#### removeOutput11+
+## removeOutput11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeOutput(cameraOutput: CameraOutput): void
  
@@ -390,6 +415,7 @@ removeOutput(cameraOutput: CameraOutput): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cameraOutput | CameraOutput | 是 | 需要移除的CameraOutput实例。 |
@@ -399,6 +425,7 @@ removeOutput(cameraOutput: CameraOutput): void
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400101 | Parameter missing or parameter type incorrect. |
@@ -425,9 +452,10 @@ function removeOutput(session: camera.Session, previewOutput: camera.PreviewOutp
  
   
 
-#### start11+
+## start11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 start(callback: AsyncCallback&lt;void&gt;): void
  
@@ -439,6 +467,7 @@ start(callback: AsyncCallback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当开始会话工作成功，err为undefined，否则为错误对象。错误码类型CameraErrorCode。 |
@@ -448,6 +477,7 @@ start(callback: AsyncCallback&lt;void&gt;): void
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400102 | Operation not allowed. 适用版本：12+ |
@@ -473,9 +503,10 @@ function startCaptureSession(session: camera.Session): void {
  
   
 
-#### start11+
+## start11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 start(): Promise&lt;void&gt;
  
@@ -487,6 +518,7 @@ start(): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -496,6 +528,7 @@ start(): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400102 | Operation not allowed. 适用版本：12+ |
@@ -519,9 +552,10 @@ function startCaptureSession(session: camera.Session): void {
  
   
 
-#### stop11+
+## stop11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stop(callback: AsyncCallback&lt;void&gt;): void
  
@@ -533,6 +567,7 @@ stop(callback: AsyncCallback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当停止会话工作成功，err为undefined，否则为错误对象。错误码类型CameraErrorCode。 |
@@ -542,6 +577,7 @@ stop(callback: AsyncCallback&lt;void&gt;): void
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400201 | Camera service fatal error. |
@@ -565,9 +601,10 @@ function stopCaptureSession(session: camera.Session): void {
  
   
 
-#### stop11+
+## stop11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stop(): Promise&lt;void&gt;
  
@@ -579,6 +616,7 @@ stop(): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -588,6 +626,7 @@ stop(): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400201 | Camera service fatal error. |
@@ -609,9 +648,10 @@ function stopCaptureSession(session: camera.Session): void {
  
   
 
-#### release11+
+## release11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(callback: AsyncCallback&lt;void&gt;): void
  
@@ -623,6 +663,7 @@ release(callback: AsyncCallback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当释放会话资源成功，err为undefined，否则为错误对象。错误码类型CameraErrorCode。 |
@@ -632,6 +673,7 @@ release(callback: AsyncCallback&lt;void&gt;): void
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400201 | Camera service fatal error. |
@@ -655,9 +697,10 @@ function releaseCaptureSession(session: camera.Session): void {
  
   
 
-#### release11+
+## release11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(): Promise&lt;void&gt;
  
@@ -669,6 +712,7 @@ release(): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -678,6 +722,7 @@ release(): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400201 | Camera service fatal error. |

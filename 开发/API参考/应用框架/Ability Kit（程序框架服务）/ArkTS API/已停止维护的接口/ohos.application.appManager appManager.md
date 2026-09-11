@@ -1,9 +1,9 @@
 # @ohos.application.appManager (appManager)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-application-appmanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 appManager模块提供应用管理的能力，包括查询当前系统是否处于稳定性测试场景、查询当前设备是否为RAM（Random Access Memory，随机存取存储器）受限设备、获取当前应用程序可以使用的最大内存值、获取有关运行进程的信息等。
  
@@ -12,9 +12,10 @@ appManager模块提供应用管理的能力，包括查询当前系统是否处�
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import appManager from '@ohos.application.appManager';
@@ -22,9 +23,10 @@ import appManager from '@ohos.application.appManager';
  
   
 
-#### appManager.isRunningInStabilityTest
+## appManager.isRunningInStabilityTest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isRunningInStabilityTest(callback: AsyncCallback&lt;boolean&gt;): void
  
@@ -38,6 +40,7 @@ isRunningInStabilityTest(callback: AsyncCallback&lt;boolean&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;boolean&gt; | 是 | 以回调方式返回接口运行结果及当前系统是否处于稳定性测试场景，可进行错误处理或其他自定义处理。返回true表示系统处于稳定性测试场景，返回false表示系统不处于稳定性测试场景。 |
@@ -59,9 +62,10 @@ appManager.isRunningInStabilityTest((error, flag) => {
  
   
 
-#### appManager.isRunningInStabilityTest
+## appManager.isRunningInStabilityTest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isRunningInStabilityTest(): Promise&lt;boolean&gt;
  
@@ -75,6 +79,7 @@ isRunningInStabilityTest(): Promise&lt;boolean&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示系统处于稳定性测试场景；返回false表示系统不处于稳定性测试场景。 |
@@ -95,9 +100,10 @@ appManager.isRunningInStabilityTest().then((flag) => {
  
   
 
-#### appManager.isRamConstrainedDevice7+
+## appManager.isRamConstrainedDevice7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isRamConstrainedDevice(): Promise&lt;boolean&gt;
  
@@ -107,6 +113,7 @@ isRamConstrainedDevice(): Promise&lt;boolean&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示当前设备为RAM受限设备；返回false表示当前设备为非RAM受限设备。 |
@@ -127,9 +134,10 @@ appManager.isRamConstrainedDevice().then((data) => {
  
   
 
-#### appManager.isRamConstrainedDevice7+
+## appManager.isRamConstrainedDevice7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isRamConstrainedDevice(callback: AsyncCallback&lt;boolean&gt;): void
  
@@ -139,9 +147,10 @@ isRamConstrainedDevice(callback: AsyncCallback&lt;boolean&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback&lt;boolean&gt; | 是 | 以回调方式返回接口运行结果及当前设备是否为RAM受限设备，可进行错误处理或其他自定义处理。true：当前设备为RAM受限设备，false：当前设备为非RAM受限设备。 |
+| callback | AsyncCallback&lt;boolean&gt; | 是 | 以回调方式返回接口运行结果及当前设备是否为RAM受限设备，可进行错误处理或其他自定义处理。返回true表示当前设备为RAM受限设备，返回false表示当前设备为非RAM受限设备。 |
  
  
 **示例：**
@@ -160,9 +169,10 @@ appManager.isRamConstrainedDevice((error, data) => {
  
   
 
-#### appManager.getAppMemorySize7+
+## appManager.getAppMemorySize7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAppMemorySize(): Promise&lt;number&gt;
  
@@ -172,9 +182,10 @@ getAppMemorySize(): Promise&lt;number&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;number&gt; | Promise对象，返回当前应用程序可以使用的最大内存（RAM）值，可根据此值进行错误处理或其他自定义处理，单位是M。 |
+| Promise&lt;number&gt; | Promise对象，返回当前应用程序可以使用的最大内存（RAM）值，可根据此值进行错误处理或其他自定义处理，单位是MB。 |
  
  
 **示例：**
@@ -192,9 +203,10 @@ appManager.getAppMemorySize().then((data) => {
  
   
 
-#### appManager.getAppMemorySize7+
+## appManager.getAppMemorySize7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAppMemorySize(callback: AsyncCallback&lt;number&gt;): void
  
@@ -204,9 +216,10 @@ getAppMemorySize(callback: AsyncCallback&lt;number&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback&lt;number&gt; | 是 | 获取当前应用程序可以使用的最大内存（RAM）值，可根据此值进行错误处理或其他自定义处理，单位是M。使用callback异步回调。 |
+| callback | AsyncCallback&lt;number&gt; | 是 | 以回调方式返回当前应用程序可以使用的最大内存（RAM）值，可根据此值进行错误处理或其他自定义处理，单位是MB。 |
  
  
 **示例：**
@@ -225,15 +238,16 @@ appManager.getAppMemorySize((error, data) => {
  
   
 
-#### appManager.getProcessRunningInfos(deprecated)
+## appManager.getProcessRunningInfos(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getProcessRunningInfos(): Promise<Array&lt;ProcessRunningInfo&gt;>
  
 获取有关运行进程的信息。使用Promise异步回调。
   
-从 API Version 9 开始废弃，建议使用[appManager.getRunningProcessInformation](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-appmanager#appmanagergetrunningprocessinformation)替代。
+从 API version 9 开始废弃，建议使用[appManager.getRunningProcessInformation](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-appmanager#appmanagergetrunningprocessinformation)替代。
   
 **需要权限**：ohos.permission.GET_RUNNING_INFO（该权限仅系统应用可申请）
  
@@ -241,6 +255,7 @@ getProcessRunningInfos(): Promise<Array&lt;ProcessRunningInfo&gt;>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;ProcessRunningInfo&gt;> | Promise对象，返回有关运行进程的信息。 |
@@ -261,15 +276,16 @@ appManager.getProcessRunningInfos().then((data) => {
  
   
 
-#### appManager.getProcessRunningInfos(deprecated)
+## appManager.getProcessRunningInfos(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getProcessRunningInfos(callback: AsyncCallback<Array&lt;ProcessRunningInfo&gt;>): void
  
 获取有关运行进程的信息。使用callback异步回调。
   
-从 API Version 9 开始废弃，建议使用[appManager.getRunningProcessInformation](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-appmanager#appmanagergetrunningprocessinformation)替代。
+从API version 9开始废弃，建议使用[appManager.getRunningProcessInformation](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-appmanager#appmanagergetrunningprocessinformation-1)替代。
   
 **需要权限**：ohos.permission.GET_RUNNING_INFO（该权限仅系统应用可申请）
  
@@ -277,6 +293,7 @@ getProcessRunningInfos(callback: AsyncCallback<Array&lt;ProcessRunningInfo&gt;>)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<Array&lt;ProcessRunningInfo&gt;> | 是 | 回调函数，返回有关运行进程的信息。 |

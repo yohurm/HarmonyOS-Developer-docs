@@ -1,20 +1,21 @@
 # OH_NativeXComponent_ExpectedRateRange
 
-更新时间：2026-07-28 11:23:46（官网已下线）
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-nativexcomponent-native-xcomponent-oh-nativexcomponent-expectedraterange
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct {...} OH_NativeXComponent_ExpectedRateRange
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-定义期望帧率范围。该结构体用于设置XComponent的帧率范围，支持在高性能渲染场景下进行精确的帧率控制，帮助平衡画面流畅度与功耗。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+定义期望帧率范围，用于设置XComponent渲染时的期望帧率区间，适用于需要对动画或渲染帧率进行精确控制的场景，可帮助在画面流畅度与功耗之间取得平衡。
  
 **起始版本：** 11
  
@@ -24,18 +25,21 @@ typedef struct {...} OH_NativeXComponent_ExpectedRateRange
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 成员变量
+### 成员变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
-| int32_t min | 期望帧率范围最小值。单位为帧/秒。取值范围：[0, +∞)。需满足 min <= max。 |
-| int32_t max | 期望帧率范围最大值。单位为帧/秒。取值范围：[0, +∞)。需满足 max >= min。 |
-| int32_t expected | 期望帧率。单位为帧/秒。取值范围：[0, +∞)，且应在[min, max]范围内。 |
+| int32_t min | 期望帧率范围最小值。取值需大于等于0且小于等于max。单位为帧/秒。传入无效值时不生效。取值范围：[0, +∞)。需满足 min <= max。 |
+| int32_t max | 期望帧率范围最大值。取值需大于等于min且不超过设备支持的最大帧率。单位为帧/秒。传入无效值时不生效。取值范围：[0, +∞)。需满足 max >= min。 |
+| int32_t expected | 期望帧率。取值需满足 min ≤ expected ≤ max。单位为帧/秒。取值范围：[0, +∞)，且应在[min, max]范围内。 |

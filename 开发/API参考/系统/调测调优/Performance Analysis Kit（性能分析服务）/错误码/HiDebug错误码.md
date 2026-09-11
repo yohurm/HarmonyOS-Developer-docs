@@ -1,18 +1,19 @@
 # HiDebug错误码
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-hiviewdfx-hidebug
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!TIP]
 > 以下仅介绍本模块特有错误码，通用错误码请参考 通用错误码说明文档 。
 
 
 
-#### 11400101 系统服务获取失败
+## 11400101 系统服务获取失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -32,9 +33,10 @@ serviceId参数无效，或对应的服务未启动。
 
 
 
-#### 11400104 远程服务异常
+## 11400104 远程服务异常
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -58,9 +60,10 @@ The interface call failed due to a remote exception.
 
 
 
-#### 11400106 配额超限
+## 11400106 配额超限
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -80,9 +83,10 @@ The number of available invocations for the interface is insufficient. Please wa
 
 
 
-#### 11400107 dump子进程fork失败
+## 11400107 dump子进程fork失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -102,9 +106,10 @@ dump子进程fork失败。
 
 
 
-#### 11400108 等待dump子进程结束失败
+## 11400108 等待dump子进程结束失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -124,9 +129,10 @@ Failed to wait for the child process to finish.
 
 
 
-#### 11400109 等待dump子进程超时
+## 11400109 等待dump子进程超时
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -146,9 +152,10 @@ dump过程耗时长，建议检查系统负载。
 
 
 
-#### 11400110 磁盘空间不足
+## 11400110 磁盘空间不足
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -168,9 +175,10 @@ Failed to create dump file.
 
 
 
-#### 11400111 Napi接口调用失败
+## 11400111 Napi接口调用失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -190,9 +198,10 @@ Napi接口调用时出现异常。
 
 
 
-#### 11400112 重复dump采集
+## 11400112 重复dump采集
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -212,9 +221,10 @@ Repeated data dump.
 
 
 
-#### 11400113 创建dump文件失败
+## 11400113 创建dump文件失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -234,9 +244,10 @@ Failed to create dump file.
 
 
 
-#### 11400114 使能GWP-ASan失败
+## 11400114 使能GWP-ASan失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 

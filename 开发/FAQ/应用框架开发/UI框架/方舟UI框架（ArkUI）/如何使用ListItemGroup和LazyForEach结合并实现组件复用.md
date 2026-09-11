@@ -73,24 +73,24 @@ class DataSrc1 implements IDataSource {
   listeners: DataChangeListener[] = [];
   Data: string[] = [];
 
-  // data count
+ <em> // data count</em>
   public totalCount(): number {
     return this.Data.length;
   }
 
-  // get data by index
+  <em>// get data by index</em>
   public getData(index: number): string {
     return this.Data[index];
   }
 
-  // This method is called on the framework side to add listener listening to the LazyForEach component at its data source
+<em>  // This method is called on the framework side to add listener listening to the LazyForEach component at its data source</em>
   registerDataChangeListener(listener: DataChangeListener): void {
     if (this.listeners.indexOf(listener) < 0) {
       this.listeners.push(listener);
     }
   }
 
-  // This method is called on the framework side to remove listener listening for the corresponding LazyForEach component at the data source
+  <em>// This method is called on the framework side to remove listener listening for the corresponding LazyForEach component at the data source</em>
   unregisterDataChangeListener(listener: DataChangeListener): void {
     const pos = this.listeners.indexOf(listener);
     if (pos >= 0) {
@@ -104,24 +104,24 @@ class DataSrc2 implements IDataSource {
   listeners: DataChangeListener[] = [];
   Data: DataSrc1[] = [];
 
-  // data count
+  <em>// data count</em>
   public totalCount(): number {
     return this.Data.length;
   }
 
-  // get data by index
+  <em>// get data by index</em>
   public getData(index: number): DataSrc1 {
     return this.Data[index];
   }
 
-  // This method is called on the framework side to add listener listening to the LazyForEach component at its data source
+ <em> // This method is called on the framework side to add listener listening to the LazyForEach component at its data source</em>
   registerDataChangeListener(listener: DataChangeListener): void {
     if (this.listeners.indexOf(listener) < 0) {
       this.listeners.push(listener);
     }
   }
 
-  // This method is called on the framework side to remove listener listening for the corresponding LazyForEach component at the data source
+  <em>// This method is called on the framework side to remove listener listening for the corresponding LazyForEach component at the data source</em>
   unregisterDataChangeListener(listener: DataChangeListener): void {
     const pos = this.listeners.indexOf(listener);
     if (pos >= 0) {

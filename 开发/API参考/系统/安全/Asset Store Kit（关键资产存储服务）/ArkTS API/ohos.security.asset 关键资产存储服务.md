@@ -1,9 +1,9 @@
 # @ohos.security.asset (关键资产存储服务)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-asset
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 关键资产存储服务提供了用户短敏感数据的安全存储及管理能力。其中，短敏感数据可以是密码类（账号/密码）、Token类（应用凭据）、其他关键明文（如银行卡号）等长度较短的用户敏感数据。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { asset } from '@kit.AssetStoreKit';
@@ -22,9 +23,10 @@ import { asset } from '@kit.AssetStoreKit';
 
 
 
-#### asset.add
+## asset.add
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 add(attributes: AssetMap): Promise&lt;void&gt;
 
@@ -38,12 +40,14 @@ add(attributes: AssetMap): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | attributes | AssetMap | 是 | 待新增关键资产的属性集合，包括关键资产明文、访问控制属性、自定义数据等。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -53,6 +57,7 @@ add(attributes: AssetMap): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关键资产存储服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-asset)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -96,9 +101,10 @@ asset.add(attr).then(() => {
 
 
 
-#### asset.addSync12+
+## asset.addSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addSync(attributes: AssetMap): void
 
@@ -112,6 +118,7 @@ addSync(attributes: AssetMap): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | attributes | AssetMap | 是 | 待新增关键资产的属性集合，包括关键资产明文、访问控制属性、自定义数据等。 |
@@ -120,6 +127,7 @@ addSync(attributes: AssetMap): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关键资产存储服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-asset)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -161,9 +169,10 @@ asset.addSync(attr);
 
 
 
-#### asset.batchAdd
+## asset.batchAdd
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 batchAdd(attributesArray: Array&lt;AssetMap&gt;): Promise&lt;BatchResult&gt;
 
@@ -181,12 +190,14 @@ batchAdd(attributesArray: Array&lt;AssetMap&gt;): Promise&lt;BatchResult&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | attributesArray | Array&lt;AssetMap&gt; | 是 | 待新增关键资产的属性集合数组，包括关键资产明文、访问控制属性、自定义数据等。数组长度最大值为100。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -196,6 +207,7 @@ batchAdd(attributesArray: Array&lt;AssetMap&gt;): Promise&lt;BatchResult&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[关键资产存储服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-asset)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -245,9 +257,10 @@ asset.batchAdd(attributesArray).then((res: asset.BatchResult) => {
 
 
 
-#### asset.remove
+## asset.remove
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 remove(query: AssetMap): Promise&lt;void&gt;
 
@@ -259,12 +272,14 @@ remove(query: AssetMap): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | query | AssetMap | 是 | 待删除关键资产的搜索条件，如别名、访问控制属性、自定义数据等。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -274,6 +289,7 @@ remove(query: AssetMap): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关键资产存储服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-asset)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -310,9 +326,10 @@ asset.remove(query).then(() => {
 
 
 
-#### asset.removeSync12+
+## asset.removeSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeSync(query: AssetMap): void
 
@@ -324,6 +341,7 @@ removeSync(query: AssetMap): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | query | AssetMap | 是 | 待删除关键资产的搜索条件，如别名、访问控制属性、自定义数据等。 |
@@ -332,6 +350,7 @@ removeSync(query: AssetMap): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关键资产存储服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-asset)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -366,9 +385,10 @@ asset.removeSync(query);
 
 
 
-#### asset.batchRemove
+## asset.batchRemove
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 batchRemove(assetsToBeRemoved: Array&lt;AssetMap&gt;): Promise&lt;void&gt;
 
@@ -384,12 +404,14 @@ batchRemove(assetsToBeRemoved: Array&lt;AssetMap&gt;): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | assetsToBeRemoved | Array&lt;AssetMap&gt; | 是 | 待删除关键资产的搜索条件数组，如别名、访问控制属性、自定义数据等。数组长度最大值为100。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -399,6 +421,7 @@ batchRemove(assetsToBeRemoved: Array&lt;AssetMap&gt;): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[关键资产存储服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-asset)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -441,9 +464,10 @@ asset.batchRemove(assetsToBeRemoved).then(() => {
 
 
 
-#### asset.update
+## asset.update
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 update(query: AssetMap, attributesToUpdate: AssetMap): Promise&lt;void&gt;
 
@@ -455,6 +479,7 @@ update(query: AssetMap, attributesToUpdate: AssetMap): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | query | AssetMap | 是 | 待更新关键资产的搜索条件，如关键资产别名、访问控制属性、自定义数据等。 |
@@ -462,6 +487,7 @@ update(query: AssetMap, attributesToUpdate: AssetMap): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -471,6 +497,7 @@ update(query: AssetMap, attributesToUpdate: AssetMap): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关键资产存储服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-asset)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -511,9 +538,10 @@ asset.update(query, attrsToUpdate).then(() => {
 
 
 
-#### asset.updateSync12+
+## asset.updateSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateSync(query: AssetMap, attributesToUpdate: AssetMap): void
 
@@ -525,6 +553,7 @@ updateSync(query: AssetMap, attributesToUpdate: AssetMap): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | query | AssetMap | 是 | 待更新关键资产的搜索条件，如关键资产别名、访问控制属性、自定义数据等。 |
@@ -534,6 +563,7 @@ updateSync(query: AssetMap, attributesToUpdate: AssetMap): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关键资产存储服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-asset)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -572,9 +602,10 @@ asset.updateSync(query, attrsToUpdate);
 
 
 
-#### asset.batchUpdate
+## asset.batchUpdate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 batchUpdate(sourceAttributes: Array&lt;AssetMap&gt;, destAttributes: Array&lt;AssetMap&gt;): Promise&lt;BatchResult&gt;
 
@@ -590,6 +621,7 @@ batchUpdate(sourceAttributes: Array&lt;AssetMap&gt;, destAttributes: Array&lt;As
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sourceAttributes | Array&lt;AssetMap&gt; | 是 | 待更新关键资产的搜索条件数组。数组最大长度为100，数组中所有元素的Tag.GROUP_ID和Tag.REQUIRE_ATTR_ENCRYPTED属性值必须相同。 |
@@ -597,6 +629,7 @@ batchUpdate(sourceAttributes: Array&lt;AssetMap&gt;, destAttributes: Array&lt;As
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -606,6 +639,7 @@ batchUpdate(sourceAttributes: Array&lt;AssetMap&gt;, destAttributes: Array&lt;As
 **错误码：**
 
 以下错误码的详细介绍请参见[关键资产存储服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-asset)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -655,9 +689,10 @@ asset.batchUpdate(srcAttrs, destAttrs).then((res: asset.BatchResult) => {
 
 
 
-#### asset.preQuery
+## asset.preQuery
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 preQuery(query: AssetMap): Promise&lt;Uint8Array&gt;
 
@@ -669,12 +704,14 @@ preQuery(query: AssetMap): Promise&lt;Uint8Array&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | query | AssetMap | 是 | 关键资产的查询条件，如别名、访问控制属性、自定义数据等。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -684,6 +721,7 @@ preQuery(query: AssetMap): Promise&lt;Uint8Array&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关键资产存储服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-asset)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -723,9 +761,10 @@ asset.preQuery(query).then((challenge: Uint8Array) => {
 
 
 
-#### asset.preQuerySync12+
+## asset.preQuerySync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 preQuerySync(query: AssetMap): Uint8Array
 
@@ -737,12 +776,14 @@ preQuerySync(query: AssetMap): Uint8Array
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | query | AssetMap | 是 | 关键资产的查询条件，如别名、访问控制属性、自定义数据等。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -752,6 +793,7 @@ preQuerySync(query: AssetMap): Uint8Array
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关键资产存储服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-asset)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -790,9 +832,10 @@ console.info(`Succeeded in pre-querying with sync, the challenge is: `, challeng
 
 
 
-#### asset.query
+## asset.query
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 query(query: AssetMap): Promise<Array&lt;AssetMap&gt;>
 
@@ -806,12 +849,14 @@ query(query: AssetMap): Promise<Array&lt;AssetMap&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | query | AssetMap | 是 | 关键资产的查询条件，如别名、访问控制属性、自定义数据等。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -821,6 +866,7 @@ query(query: AssetMap): Promise<Array&lt;AssetMap&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关键资产存储服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-asset)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -867,9 +913,10 @@ asset.query(query).then((res: Array<asset.AssetMap>) => {
 
 
 
-#### asset.querySync12+
+## asset.querySync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 querySync(query: AssetMap): Array&lt;AssetMap&gt;
 
@@ -883,12 +930,14 @@ querySync(query: AssetMap): Array&lt;AssetMap&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | query | AssetMap | 是 | 关键资产的查询条件，如别名、访问控制属性、自定义数据等。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -898,6 +947,7 @@ querySync(query: AssetMap): Array&lt;AssetMap&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关键资产存储服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-asset)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -943,9 +993,10 @@ console.info(`Succeeded in querying Asset.`);
 
 
 
-#### asset.postQuery
+## asset.postQuery
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 postQuery(handle: AssetMap): Promise&lt;void&gt;
 
@@ -957,12 +1008,14 @@ postQuery(handle: AssetMap): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handle | AssetMap | 是 | 待处理的查询句柄，包含asset.preQuery执行成功返回的挑战值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -972,6 +1025,7 @@ postQuery(handle: AssetMap): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关键资产存储服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-asset)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -999,9 +1053,10 @@ asset.postQuery(handle).then(() => {
 
 
 
-#### asset.postQuerySync12+
+## asset.postQuerySync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 postQuerySync(handle: AssetMap): void
 
@@ -1013,6 +1068,7 @@ postQuerySync(handle: AssetMap): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handle | AssetMap | 是 | 待处理的查询句柄，包含asset.preQuerySync执行成功返回的挑战值。 |
@@ -1021,6 +1077,7 @@ postQuerySync(handle: AssetMap): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关键资产存储服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-asset)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1041,14 +1098,15 @@ import { asset } from '@kit.AssetStoreKit';
 let handle: asset.AssetMap = new Map();
 // 此处传入的new Uint8Array(32)仅作为示例，实际应传入asset.preQuerySync执行成功返回的挑战值。
 handle.set(asset.Tag.AUTH_CHALLENGE, new Uint8Array(32));
-asset.postQuerySync(handle)
+asset.postQuerySync(handle);
 ```
 
 
 
-#### asset.querySyncResult20+
+## asset.querySyncResult20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 querySyncResult(query: AssetMap): Promise&lt;SyncResult&gt;
 
@@ -1058,12 +1116,14 @@ querySyncResult(query: AssetMap): Promise&lt;SyncResult&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | query | AssetMap | 是 | 同步结果查询条件，如关键资产所属群组、业务自定义属性信息是否加密。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1073,6 +1133,7 @@ querySyncResult(query: AssetMap): Promise&lt;SyncResult&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[关键资产存储服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-asset)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1099,15 +1160,17 @@ asset.querySyncResult(query).then((res: asset.SyncResult) => {
 
 
 
-#### TagType
+## TagType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，关键资产属性支持的数据类型。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Asset
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1118,9 +1181,10 @@ asset.querySyncResult(query).then((res: asset.SyncResult) => {
 
 
 
-#### Tag
+## Tag
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，关键资产支持的属性名称类型，用作[AssetMap](#assetmap)的键。
 
@@ -1128,6 +1192,7 @@ asset.querySyncResult(query).then((res: asset.SyncResult) => {
 
 > [!NOTE]
 > 以下为Tag类型的全量枚举值，每个接口可传的Tag枚举及对应的Value取值范围不同，详见 各个场景的开发指导 。
+
 
 
 | 名称 | 值 | 说明 |
@@ -1168,9 +1233,10 @@ asset.querySyncResult(query).then((res: asset.SyncResult) => {
 
 
 
-#### Value
+## Value
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Value = boolean | number | Uint8Array
 
@@ -1179,6 +1245,7 @@ type Value = boolean | number | Uint8Array
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Asset
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1189,9 +1256,10 @@ type Value = boolean | number | Uint8Array
 
 
 
-#### AssetMap
+## AssetMap
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AssetMap = Map<Tag, Value>
 
@@ -1201,6 +1269,7 @@ type AssetMap = Map<Tag, Value>
 
 **系统能力：** SystemCapability.Security.Asset
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Map<Tag, Value> | 表示值类型是Map，键值对取值范围分别参考Tag和Value。 |
@@ -1208,9 +1277,10 @@ type AssetMap = Map<Tag, Value>
 
 
 
-#### Accessibility
+## Accessibility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，关键资产基于锁屏状态的访问控制类型。
 
@@ -1218,24 +1288,27 @@ type AssetMap = Map<Tag, Value>
 
 **系统能力：** SystemCapability.Security.Asset
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DEVICE_POWERED_ON | 0 | 开机后可访问。 |
-| DEVICE_FIRST_UNLOCKED | 1 | 首次解锁后可访问 说明： 未设置锁屏密码时，等同于开机后可访问。 |
-| DEVICE_UNLOCKED | 2 | 解锁状态时可访问 说明： 未设置锁屏密码时，等同于开机后可访问。 |
+| DEVICE_FIRST_UNLOCKED | 1 | 首次解锁后可访问。 说明： 未设置锁屏密码时，等同于开机后可访问。 |
+| DEVICE_UNLOCKED | 2 | 解锁状态时可访问。 说明： 未设置锁屏密码时，等同于开机后可访问。 |
 
 
 
 
-#### AuthType
+## AuthType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，关键资产支持的用户认证类型。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Asset
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1245,15 +1318,17 @@ type AssetMap = Map<Tag, Value>
 
 
 
-#### SyncType
+## SyncType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，关键资产支持的同步类型。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Asset
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1265,15 +1340,17 @@ type AssetMap = Map<Tag, Value>
 
 
 
-#### ReturnType
+## ReturnType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，关键资产查询返回的结果类型。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Asset
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1283,15 +1360,17 @@ type AssetMap = Map<Tag, Value>
 
 
 
-#### ConflictResolution
+## ConflictResolution
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，新增关键资产时的冲突（如：别名相同）处理策略。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.Asset
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1301,13 +1380,15 @@ type AssetMap = Map<Tag, Value>
 
 
 
-#### OperationType12+
+## OperationType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，附属的操作类型。
 
 **系统能力：** SystemCapability.Security.Asset
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1317,13 +1398,15 @@ type AssetMap = Map<Tag, Value>
 
 
 
-#### WrapType18+
+## WrapType18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，关键资产支持的加密导入导出类型。
 
 **系统能力：** SystemCapability.Security.Asset
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1333,13 +1416,15 @@ type AssetMap = Map<Tag, Value>
 
 
 
-#### SyncResult20+
+## SyncResult20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 关键资产同步的结果。
 
 **系统能力：** SystemCapability.Security.Asset
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1350,15 +1435,17 @@ type AssetMap = Map<Tag, Value>
 
 
 
-#### BatchErrInfo
+## BatchErrInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 批量操作中单个关键资产的错误信息。
 
 **起始版本：** 26.0.0
 
 **系统能力：** SystemCapability.Security.Asset
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1369,15 +1456,17 @@ type AssetMap = Map<Tag, Value>
 
 
 
-#### BatchResult
+## BatchResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [batchAdd](#assetbatchadd)、[batchUpdate](#assetbatchupdate)和[batchRemove](#assetbatchremove)批量操作的结果。
 
 **起始版本：** 26.0.0
 
 **系统能力：** SystemCapability.Security.Asset
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1387,13 +1476,15 @@ type AssetMap = Map<Tag, Value>
 
 
 
-#### ErrorCode
+## ErrorCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示错误码的枚举。
 
 **系统能力：** SystemCapability.Security.Asset
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

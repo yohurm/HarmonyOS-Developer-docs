@@ -1,9 +1,9 @@
 # @ohos.app.ability.application (应用工具类)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-application
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 开发者可以通过该模块管理和获取应用的上下文[Context](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-context-stage)，以及控制应用进程的状态。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { application } from '@kit.AbilityKit';
@@ -22,13 +23,15 @@ import { application } from '@kit.AbilityKit';
 
 
 
-#### AppPreloadType22+
+## AppPreloadType22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示应用当前进程的预加载类型枚举。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -41,9 +44,10 @@ import { application } from '@kit.AbilityKit';
 
 
 
-#### application.createModuleContext
+## application.createModuleContext
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createModuleContext(context: Context, moduleName: string): Promise&lt;Context&gt;
 
@@ -59,6 +63,7 @@ createModuleContext(context: Context, moduleName: string): Promise&lt;Context&gt
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 表示应用上下文。 |
@@ -66,6 +71,7 @@ createModuleContext(context: Context, moduleName: string): Promise&lt;Context&gt
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -75,6 +81,7 @@ createModuleContext(context: Context, moduleName: string): Promise&lt;Context&gt
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -91,7 +98,7 @@ export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     let moduleContext: common.Context;
     try {
-      application.createModuleContext(this.context, 'entry').then((data: Context) => {
+      application.createModuleContext(this.context, 'entry').then((data: common.Context) => {
         moduleContext = data;
         console.info('createModuleContext success!');
       }).catch((error: BusinessError) => {
@@ -110,9 +117,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### application.getApplicationContext14+
+## application.getApplicationContext14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getApplicationContext(): ApplicationContext
 
@@ -126,6 +134,7 @@ getApplicationContext(): ApplicationContext
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ApplicationContext | 应用上下文。 |
@@ -134,6 +143,7 @@ getApplicationContext(): ApplicationContext
 **错误码：**
 
 以下错误码详细介绍请参考[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -161,9 +171,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### application.getApplicationContextInstance23+
+## application.getApplicationContextInstance23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getApplicationContextInstance(): ApplicationContext
 
@@ -177,6 +188,7 @@ getApplicationContextInstance(): ApplicationContext
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ApplicationContext | 应用上下文。 |
@@ -185,6 +197,7 @@ getApplicationContextInstance(): ApplicationContext
 **错误码：**
 
 以下错误码详细介绍请参考[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -212,9 +225,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### application.createPluginModuleContext19+
+## application.createPluginModuleContext19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPluginModuleContext(context: Context, pluginBundleName: string, pluginModuleName: string): Promise&lt;Context&gt;
 
@@ -224,6 +238,7 @@ createPluginModuleContext(context: Context, pluginBundleName: string, pluginModu
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 表示应用上下文。 |
@@ -232,6 +247,7 @@ createPluginModuleContext(context: Context, pluginBundleName: string, pluginModu
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -249,7 +265,7 @@ export default class EntryAbility extends UIAbility {
     let moduleContext: common.Context;
     try {
       application.createPluginModuleContext(this.context, 'com.example.pluginBundleName', 'pluginModuleName')
-        .then((data: Context) => {
+        .then((data: common.Context) => {
           moduleContext = data;
           console.info('createPluginModuleContext success!');
         })
@@ -269,9 +285,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### application.promoteCurrentToCandidateMasterProcess20+
+## application.promoteCurrentToCandidateMasterProcess20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 promoteCurrentToCandidateMasterProcess(insertToHead: boolean): Promise&lt;void&gt;
 
@@ -296,6 +313,7 @@ promoteCurrentToCandidateMasterProcess(insertToHead: boolean): Promise&lt;void&g
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | insertToHead | boolean | 是 | 表示是否将当前进程放入备选主控进程链表的表头。true表示放入表头，false表示放入表尾。 |
@@ -303,14 +321,16 @@ promoteCurrentToCandidateMasterProcess(insertToHead: boolean): Promise&lt;void&g
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | Promise对象。无返回结果。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -345,9 +365,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### application.demoteCurrentFromCandidateMasterProcess20+
+## application.demoteCurrentFromCandidateMasterProcess20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 demoteCurrentFromCandidateMasterProcess(): Promise&lt;void&gt;
 
@@ -359,14 +380,16 @@ demoteCurrentFromCandidateMasterProcess(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | Promise对象。无返回结果。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -402,19 +425,21 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### application.exitMasterProcessRole21+
+## application.exitMasterProcessRole21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 exitMasterProcessRole(): Promise&lt;void&gt;
 
-放弃当前进程的[主控进程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ability-terminology#masterprocess主控进程)身份。使用Promise异步回调。
+退出当前进程的[主控进程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ability-terminology#masterprocess主控进程)身份。使用Promise异步回调。
 
-**系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+**系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
 **设备行为差异：** 该接口仅在PC/2in1、Tablet设备中可正常调用，在其他设备中返回801错误码。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -424,6 +449,7 @@ exitMasterProcessRole(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -459,9 +485,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### application.getAppPreloadType22+
+## application.getAppPreloadType22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAppPreloadType(): AppPreloadType
 
@@ -474,6 +501,7 @@ getAppPreloadType(): AppPreloadType
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |

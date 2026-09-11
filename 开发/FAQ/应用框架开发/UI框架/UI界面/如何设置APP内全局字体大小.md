@@ -105,7 +105,7 @@ export default class EntryAbility extends UIAbility {
 
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
-    // Main window is created, set main page for this ability
+   <em> // Main window is created, set main page for this ability</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
 
@@ -116,28 +116,28 @@ export default class EntryAbility extends UIAbility {
       }
       hilog.info(DOMAIN, 'testTag', 'Succeeded in loading the content.');
     });
-    // 设置全局的字体大小
+    <em>// 设置全局的字体大小</em>
     let applicationContext = this.context.getApplicationContext();
-    applicationContext.setFontSizeScale(2); // 将应用字体设置为2倍大小
+    applicationContext.setFontSizeScale(2); <em>// 将应用字体设置为2倍大小</em>
   }
 
 
 
 
   onWindowStageDestroy(): void {
-    // Main window is destroyed, release UI related resources
+   <em> // Main window is destroyed, release UI related resources</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
   }
 
 
   onForeground(): void {
-    // Ability has brought to foreground
+   <em> // Ability has brought to foreground</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onForeground');
   }
 
 
   onBackground(): void {
-    // Ability has back to background
+   <em> // Ability has back to background</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onBackground');
   }
 };

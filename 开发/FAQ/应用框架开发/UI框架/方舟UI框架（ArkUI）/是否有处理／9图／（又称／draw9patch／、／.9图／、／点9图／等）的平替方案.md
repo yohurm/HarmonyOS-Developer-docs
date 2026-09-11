@@ -46,8 +46,8 @@ struct ChatBubbleStretchDemo {
           (Number(`${this.textSize.width}`)) : 350)
           .height(this.text.length < 40 ? 50 + px2vp(Number(`${this.textSize.height}`))
             : 50 + (this.getUIContext().px2vp(Number(`${this.textSize.height}`)) * this.line))
-          // The reason for using the px unit is that the image itself is a physical pixel, and the segmentation algorithm is executed on the image itself. Therefore, these values are ultimately converted into physical pixel values.
-          // Therefore, these divided lines must not exceed the size of the picture itself.
+         <em> // The reason for using the px unit is that the image itself is a physical pixel, and the segmentation algorithm is executed on the image itself. Therefore, these values are ultimately converted into physical pixel values.</em>
+<em>          // Therefore, these divided lines must not exceed the size of the picture itself.</em>
           .resizable({
             slice: {
               top: `${this.top}px`,
@@ -95,7 +95,7 @@ import { drawing } from '@kit.ArkGraphics2D';
 @Entry
 @Component
 struct DrawingLatticeResizeDemo {
-  // lattice grid definition
+  <em>// lattice grid definition</em>
   private xDivs: Array<number> = [40, 100, 120, 180];
   private yDivs: Array<number> = [];
   private fXCount: number = 4;
@@ -112,7 +112,7 @@ struct DrawingLatticeResizeDemo {
           .fontSize(22)
           .fontWeight(FontWeight.Bold)
 
-        // The picture shows
+       <em> // The picture shows</em>
         Image($r('app.media.lightBluexhdpi'))
           .width(String(this.widthValue) + 'px')
           .height(String(this.heightValue) + 'px')
@@ -121,7 +121,7 @@ struct DrawingLatticeResizeDemo {
             lattice: this.drawingLatticeFirst
           })
 
-        // Width adjustment
+       <em> // Width adjustment</em>
         Column({ space: 5 }) {
           Text(`Width: ${this.widthValue.toFixed(0)} px`)
           Slider({
@@ -135,7 +135,7 @@ struct DrawingLatticeResizeDemo {
             })
         }
 
-        // Height adjustment
+     <em>   // Height adjustment</em>
         Column({ space: 5 }) {
           Text(`Width: ${this.heightValue.toFixed(0)} px`)
           Slider({

@@ -1,9 +1,9 @@
 # Rating
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-rating
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供在给定范围内选择评分的组件，通常用于商品评价、内容打分等应用场景。
 
@@ -12,17 +12,19 @@
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Rating(options?: RatingOptions)
 
@@ -34,6 +36,7 @@ Rating(options?: RatingOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | RatingOptions | 否 | 设置评分组件。 未设置时，则按照RatingOptions中各参数的默认值配置。 |
@@ -41,15 +44,17 @@ Rating(options?: RatingOptions)
 
 
 
-#### 属性
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 属性
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### stars
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### stars
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stars(value: number)
 
@@ -63,6 +68,7 @@ stars(value: number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 设置评分总数。 取值范围：大于0，小于等于0时按5显示。 |
@@ -70,9 +76,10 @@ stars(value: number)
 
 
 
-#### stars18+
+### stars18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stars(starCount: Optional&lt;number&gt;)
 
@@ -88,6 +95,7 @@ stars(starCount: Optional&lt;number&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | starCount | Optional&lt;number&gt; | 是 | 设置评分总数。 取值范围：大于0，小于等于0或undefined时按5显示。 |
@@ -95,9 +103,10 @@ stars(starCount: Optional&lt;number&gt;)
 
 
 
-#### stepSize
+### stepSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stepSize(value: number)
 
@@ -111,6 +120,7 @@ stepSize(value: number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 操作评级的步长。 取值范围：[0.1, stars] |
@@ -118,9 +128,10 @@ stepSize(value: number)
 
 
 
-#### stepSize18+
+### stepSize18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stepSize(size: Optional&lt;number&gt;)
 
@@ -136,6 +147,7 @@ stepSize(size: Optional&lt;number&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | size | Optional&lt;number&gt; | 是 | 操作评级的步长。 当size的值为undefined时，默认值：0.5 取值范围：[0.1, stars] |
@@ -143,9 +155,10 @@ stepSize(size: Optional&lt;number&gt;)
 
 
 
-#### starStyle
+### starStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 starStyle(options: StarStyleOptions)
 
@@ -163,6 +176,7 @@ starStyle(options: StarStyleOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | StarStyleOptions | 是 | 评分的样式。 说明： 当backgroundUri、foregroundUri或secondaryUri设置的图片路径错误时，图片将保持上次的图片显示结果。如果首次设置错误，则不显示图片。 当backgroundUri或foregroundUri设置为undefined或空字符串时，Rating组件将加载系统默认星型图源。 当secondaryUri未设置或设置为undefined或空字符串时，将优先使用backgroundUri，效果等同于仅设置foregroundUri和backgroundUri。 |
@@ -170,9 +184,10 @@ starStyle(options: StarStyleOptions)
 
 
 
-#### starStyle18+
+### starStyle18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 starStyle(options: Optional&lt;StarStyleOptions&gt;)
 
@@ -194,6 +209,7 @@ starStyle(options: Optional&lt;StarStyleOptions&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | Optional&lt;StarStyleOptions&gt; | 是 | 评分的样式。 说明： 当backgroundUri、foregroundUri或secondaryUri设置的图片路径错误时，图片将保持上次的图片显示结果。如果首次设置错误，则不显示图片。 当backgroundUri或foregroundUri设置为undefined或空字符串时，Rating组件将加载系统默认星型图源。 当secondaryUri未设置或设置为undefined或空字符串时，将优先使用backgroundUri，效果等同于仅设置foregroundUri和backgroundUri。 |
@@ -205,9 +221,10 @@ starStyle(options: Optional&lt;StarStyleOptions&gt;)
 
 
 
-#### contentModifier12+
+### contentModifier12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contentModifier(modifier: ContentModifier&lt;RatingConfiguration&gt;)
 
@@ -221,6 +238,7 @@ contentModifier(modifier: ContentModifier&lt;RatingConfiguration&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | modifier | ContentModifier&lt;RatingConfiguration&gt; | 是 | 在Rating组件上，定制内容区的方法。 modifier：内容修改器，开发者需要自定义class实现ContentModifier接口。 |
@@ -228,9 +246,10 @@ contentModifier(modifier: ContentModifier&lt;RatingConfiguration&gt;)
 
 
 
-#### contentModifier18+
+### contentModifier18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contentModifier(modifier: Optional<ContentModifier&lt;RatingConfiguration&gt;>)
 
@@ -244,6 +263,7 @@ contentModifier(modifier: Optional<ContentModifier&lt;RatingConfiguration&gt;>)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | modifier | Optional<ContentModifier&lt;RatingConfiguration&gt;> | 是 | 在Rating组件上，定制内容区的方法。 modifier：内容修改器，开发者需要自定义class实现ContentModifier接口。 当modifier的值为undefined时，不使用内容修改器。 |
@@ -251,15 +271,17 @@ contentModifier(modifier: Optional<ContentModifier&lt;RatingConfiguration&gt;>)
 
 
 
-#### 事件
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 事件
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### onChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### onChange
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onChange(callback:(value: number) => void)
 
@@ -273,6 +295,7 @@ onChange(callback:(value: number) => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 评分条的评分值。取值范围为[0, stars]，精度受stepSize影响。 |
@@ -280,9 +303,10 @@ onChange(callback:(value: number) => void)
 
 
 
-#### onChange18+
+### onChange18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onChange(callback:Optional&lt;OnRatingChangeCallback&gt;)
 
@@ -298,6 +322,7 @@ onChange(callback:Optional&lt;OnRatingChangeCallback&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Optional&lt;OnRatingChangeCallback&gt; | 是 | 当评分条的评分变化时触发该回调。 当callback的值为undefined时，不使用回调函数。 |
@@ -305,9 +330,10 @@ onChange(callback:Optional&lt;OnRatingChangeCallback&gt;)
 
 
 
-#### OnRatingChangeCallback18+
+## OnRatingChangeCallback18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnRatingChangeCallback = (rating: number) => void
 
@@ -321,6 +347,7 @@ type OnRatingChangeCallback = (rating: number) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rating | number | 是 | 评分条的评分值。取值范围为[0, stars]。 |
@@ -328,9 +355,11 @@ type OnRatingChangeCallback = (rating: number) => void
 
 
 
-#### 键盘走焦规格
+## 键盘走焦规格
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 按键 | 功能描述 |
 | --- | --- |
@@ -343,9 +372,10 @@ type OnRatingChangeCallback = (rating: number) => void
 
 
 
-#### RatingConfiguration12+对象说明
+## RatingConfiguration12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 开发者需要自定义class实现ContentModifier接口。继承自[CommonConfiguration](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-content-modifier#commonconfigurationt)。
 
@@ -354,6 +384,7 @@ type OnRatingChangeCallback = (rating: number) => void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -366,9 +397,10 @@ type OnRatingChangeCallback = (rating: number) => void
 
 
 
-#### RatingOptions18+对象说明
+## RatingOptions18+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 评分组件的信息。
 
@@ -384,6 +416,7 @@ type OnRatingChangeCallback = (rating: number) => void
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | rating7+ | number | 否 | 否 | 设置并接收评分值。 默认值：0 取值范围： [0, stars] 小于0取0，大于stars取最大值stars。 该参数支持$$双向绑定变量。 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -392,9 +425,10 @@ type OnRatingChangeCallback = (rating: number) => void
 
 
 
-#### StarStyleOptions18+对象说明
+## StarStyleOptions18+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 评分组件选中、未选中以及部分选中的星级样式。
 
@@ -410,6 +444,7 @@ type OnRatingChangeCallback = (rating: number) => void
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | backgroundUri7+ | ResourceStr | 否 | 否 | 未选中的星级的图片路径，可由用户自定义或使用系统默认图片。 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 从API version 20开始，该字段支持设置Resource资源。参考示例3（通过Resource资源设置评分的样式）代码。 |
@@ -423,13 +458,17 @@ type OnRatingChangeCallback = (rating: number) => void
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（设置默认评分样式）
+
+
+### 示例1（设置默认评分样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 以下示例展示了如何创建默认星型评分样式。
 
@@ -487,12 +526,15 @@ struct RatingExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/hfd_n8A7T86cURkd7RhSpQ/zh-cn_image_0000002656008522.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071504Z&HW-CC-Expire=86400&HW-CC-Sign=A105A40AEE4898ED15ED8E7BDA8BF9A946EBC02A99B8FD7F6ABADFB9A4F95329)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/qqphulOJQauHxbwVBKeHLg/zh-cn_image_0000002747292691.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073106Z&HW-CC-Expire=86400&HW-CC-Sign=E91836893230A9430A25D9EC63013438F4A348849352621D1494AB131D10331F)
 
 
 
 
-#### 示例2（自定义评分条）
+### 示例2（自定义评分条）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 以下示例实现自定义评分条，其中每个圆圈表示0.5分。ratingIndicator为true时，评分条作为指示器使用，不可改变评分。ratingStars用于设置评分总数，ratingStepSize用于设置评分步长。
 
@@ -697,12 +739,15 @@ struct RatingExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/56j6ygM5RCuVStuI0ajJfg/zh-cn_image_0000002655848602.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071504Z&HW-CC-Expire=86400&HW-CC-Sign=928AB3CECBB04DE8C2BB7334A09DFB718A59550C0C2BADF80D3424D5D6EE89B1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/iyrP060IQzS8C2IjT7MCuQ/zh-cn_image_0000002747212607.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073106Z&HW-CC-Expire=86400&HW-CC-Sign=B469323997D51F62D553C251443A13093FE0529B4057B2A56A26B4F72F10FD99)
 
 
 
 
-#### 示例3（通过Resource资源设置评分的样式）
+### 示例3（通过Resource资源设置评分的样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过Resource资源配置starStyle，实现自定义星级图片链接，API version 20之后推荐使用该方法设置样式。
 
@@ -739,12 +784,15 @@ struct RatingExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/dRa-gtbRSdi2CIny49gbog/zh-cn_image_0000002686088029.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071504Z&HW-CC-Expire=86400&HW-CC-Sign=FCA53DA4D6F84A5E7FC98B18F51233322410AC4DE7F1FE6A6047BF022448F29D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/le606qZpTgGXS0A57gH7ZQ/zh-cn_image_0000002717772672.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073106Z&HW-CC-Expire=86400&HW-CC-Sign=A18F00620EEF104512CE84D84073DA940861E537CEFC00AC464F8949D1A13051)
 
 
 
 
-#### 示例4（设置评分的样式）
+### 示例4（设置评分的样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 以下示例展示了如何通过配置starStyle实现自定义星级的图片链接。
 
@@ -784,4 +832,4 @@ struct RatingExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/CbhVqZ5CT3-2fbgY37fUVw/zh-cn_image_0000002686088029.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071504Z&HW-CC-Expire=86400&HW-CC-Sign=1BDDFBF5E8209C74BF0770183C3FEC8599B52F9513CEB588EAA71F2478024969)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/BfZ7DZj7SvWUxJ3nZUld-w/zh-cn_image_0000002717772672.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073106Z&HW-CC-Expire=86400&HW-CC-Sign=F2B1960B6DAB2D6DEC34833271C4E8AD545225459D34CAC909B178490AAAE84A)

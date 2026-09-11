@@ -1,6 +1,6 @@
 # @ohos.usbManager.serial (串口管理)
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-serialmanager
 **支持设备：** PC/2in1
@@ -9,15 +9,9 @@
 
 **典型使用流程：**
 
-```text
-graph LR
-    A[调用getPortList获取串口列表] --> B[调用requestSerialRight请求权限]
-    B --> C[调用open打开串口]
-    C --> D[调用getAttribute/setAttribute配置串口参数（可选）]
-    D --> E[调用read/write或readSync/writeSync进行数据读写]
-    E --> F[调用close关闭串口]
-    F --> G[如需移除权限，调用cancelSerialRight]
-```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/SpawoAQLSs-IgbdHW2x4jg/zh-cn_image_0000002747293549.png?HW-CC-KV=V1&HW-CC-Date=20260911T072936Z&HW-CC-Expire=86400&HW-CC-Sign=2492CF4CAAFA071460B78EABA82435DB52638D37870FBD5BC6B3EF6E039528B5)
+
 
 **使用场景**：
 
@@ -31,7 +25,8 @@ graph LR
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** PC/2in1
 
@@ -41,7 +36,8 @@ import { serialManager } from '@kit.BasicServicesKit';
 
 
 
-#### serialManager.getPortList
+## serialManager.getPortList
+
 
 **支持设备：** PC/2in1
 
@@ -52,6 +48,7 @@ getPortList(): Readonly&lt;SerialPort&gt;[]
 **系统能力：** SystemCapability.USB.USBManager.Serial
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -81,7 +78,8 @@ function getPortListExample() {
 
 
 
-#### serialManager.hasSerialRight
+## serialManager.hasSerialRight
+
 
 **支持设备：** PC/2in1
 
@@ -98,12 +96,14 @@ hasSerialRight(portId: number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | portId | number | 是 | 端口号，来自getPortList返回的SerialPort对象，必须使用getPortList返回的有效端口号，传入无效值时抛出错误码31400003异常。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -113,6 +113,7 @@ hasSerialRight(portId: number): boolean
 **错误码：**
 
 以下错误码的详细介绍参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[USB服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-usb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -135,7 +136,7 @@ import { serialManager } from '@kit.BasicServicesKit';
 // 获取串口列表
 function hasSerialRightExample() {
   let portList: serialManager.SerialPort[] = serialManager.getPortList();
-  console.info('portList: '+ JSON.stringify(portList));
+  console.info('portList: ' + JSON.stringify(portList));
   if (!portList || portList.length === 0) {
     console.error('portList is empty');
     return;
@@ -153,7 +154,8 @@ function hasSerialRightExample() {
 
 
 
-#### serialManager.requestSerialRight
+## serialManager.requestSerialRight
+
 
 **支持设备：** PC/2in1
 
@@ -170,12 +172,14 @@ requestSerialRight(portId: number): Promise&lt;boolean&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | portId | number | 是 | 端口号，来自getPortList返回的SerialPort对象，必须使用getPortList返回的有效端口号，传入无效值时抛出错误码31400003异常。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -185,6 +189,7 @@ requestSerialRight(portId: number): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[USB服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-usb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -234,7 +239,8 @@ function requestSerialRightExample() {
 
 
 
-#### serialManager.open
+## serialManager.open
+
 
 **支持设备：** PC/2in1
 
@@ -258,6 +264,7 @@ open(portId: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | portId | number | 是 | 端口号，来自getPortList返回的SerialPort对象，必须使用getPortList返回的有效端口号，传入无效值时抛出错误码31400003异常。 |
@@ -266,6 +273,7 @@ open(portId: number): void
 **错误码：**
 
 以下错误码的详细介绍参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[USB服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-usb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -331,7 +339,8 @@ async function openExample() {
 
 
 
-#### serialManager.getAttribute
+## serialManager.getAttribute
+
 
 **支持设备：** PC/2in1
 
@@ -350,12 +359,14 @@ getAttribute(portId: number): Readonly&lt;SerialAttribute&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | portId | number | 是 | 端口号，来自getPortList返回的SerialPort对象，必须使用getPortList返回的有效端口号，传入无效值时抛出错误码31400003异常。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -365,6 +376,7 @@ getAttribute(portId: number): Readonly&lt;SerialAttribute&gt;
 **错误码：**
 
 以下错误码的详细介绍参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[USB服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-usb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -442,7 +454,8 @@ async function getAttributeExample() {
 
 
 
-#### serialManager.setAttribute
+## serialManager.setAttribute
+
 
 **支持设备：** PC/2in1
 
@@ -461,6 +474,7 @@ setAttribute(portId: number, attribute: SerialAttribute): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | portId | number | 是 | 端口号，来自getPortList返回的SerialPort对象，必须使用getPortList返回的有效端口号，传入无效值时抛出错误码31400003异常。 |
@@ -470,6 +484,7 @@ setAttribute(portId: number, attribute: SerialAttribute): void
 **错误码：**
 
 以下错误码的详细介绍参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[USB服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-usb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -549,7 +564,8 @@ async function setAttributeExample() {
 
 
 
-#### serialManager.read
+## serialManager.read
+
 
 **支持设备：** PC/2in1
 
@@ -568,14 +584,16 @@ read(portId: number, buffer: Uint8Array, timeout?: number): Promise&lt;number&gt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | portId | number | 是 | 端口号，来自getPortList返回的SerialPort对象，必须使用getPortList返回的有效端口号，传入无效值时抛出错误码31400003异常。 |
 | buffer | Uint8Array | 是 | 读取数据的缓冲区，用于存储从串口设备读取的二进制数据。缓冲区大小应根据预期读取的数据量确定。读取成功后，返回值表示实际读取的数据长度。 |
-| timeout | number | 否 | 超时时间（单位：毫秒）。API在写入数据时等待缓冲区可写，在指定时间后返回。默认值0表示不等待直接返回。传入负数时抛出参数错误异常。取值范围[0, +∞)，具体值需根据设备响应速度和数据量合理设置。 |
+| timeout | number | 否 | 超时时间（单位：毫秒）。API在目标端口缓冲区无数据时，等待指定时间后返回。默认值0或不传参时，表示不等待直接返回。传入负数时抛出参数错误异常。具体值需根据设备响应速度和数据量合理设置。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -585,6 +603,7 @@ read(portId: number, buffer: Uint8Array, timeout?: number): Promise&lt;number&gt
 **错误码：**
 
 以下错误码的详细介绍参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[USB服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-usb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -663,7 +682,8 @@ async function readExample() {
 
 
 
-#### read与readSync差异说明
+## read与readSync差异说明
+
 
 **支持设备：** PC/2in1
 
@@ -675,7 +695,8 @@ async function readExample() {
 
 
 
-#### serialManager.readSync
+## serialManager.readSync
+
 
 **支持设备：** PC/2in1
 
@@ -694,14 +715,16 @@ readSync(portId: number, buffer: Uint8Array, timeout?: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | portId | number | 是 | 端口号，来自getPortList返回的SerialPort对象，必须使用getPortList返回的有效端口号，传入无效值时抛出错误码31400003异常。 |
 | buffer | Uint8Array | 是 | 读取数据的缓冲区，用于存储从串口设备读取的二进制数据。缓冲区大小应根据预期读取的数据量确定。读取成功后，返回值表示实际读取的数据长度。 |
-| timeout | number | 否 | 超时时间（单位：毫秒）。API在目标端口缓冲区无数据时，等待指定时间后返回。默认值0表示不等待直接返回。传入负数时抛出参数错误异常。取值范围[0, +∞)，具体值需根据设备响应速度和数据量合理设置。 |
+| timeout | number | 否 | 超时时间（单位：毫秒）。API在目标端口缓冲区无数据时，等待指定时间后返回。默认值0或不传参时，表示不等待直接返回。传入负数时抛出参数错误异常。具体值需根据设备响应速度和数据量合理设置。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -711,6 +734,7 @@ readSync(portId: number, buffer: Uint8Array, timeout?: number): number
 **错误码：**
 
 以下错误码的详细介绍参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[USB服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-usb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -787,7 +811,8 @@ async function readSyncExample() {
 
 
 
-#### serialManager.write
+## serialManager.write
+
 
 **支持设备：** PC/2in1
 
@@ -806,14 +831,16 @@ write(portId: number, buffer: Uint8Array, timeout?: number): Promise&lt;number&g
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | portId | number | 是 | 端口号，来自getPortList返回的SerialPort对象，必须使用getPortList返回的有效端口号，传入无效值时抛出错误码31400003异常。 |
 | buffer | Uint8Array | 是 | 写入数据的缓冲区，包含要发送到串口设备的二进制数据。每次写入的数据长度不超过4KB，超过会导致数据丢失，长数据建议分包写入。 |
-| timeout | number | 否 | 超时时间（单位：毫秒）。API在目标端口缓冲区无数据时，等待指定时间后返回。默认值0表示不等待直接返回。传入负数时抛出参数错误异常。建议取值范围≥0，具体值需根据设备响应速度和数据量合理设置。 |
+| timeout | number | 否 | 超时时间（单位：毫秒）。API在写入数据时等待缓冲区可写，在指定时间后返回。默认值0或不传参时，表示不等待直接返回。传入负数时抛出参数错误异常。具体值需根据设备响应速度和数据量合理设置。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -823,6 +850,7 @@ write(portId: number, buffer: Uint8Array, timeout?: number): Promise&lt;number&g
 **错误码：**
 
 以下错误码的详细介绍参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[USB服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-usb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -902,7 +930,8 @@ async function writeExample() {
 
 
 
-#### write与writeSync差异说明
+## write与writeSync差异说明
+
 
 **支持设备：** PC/2in1
 
@@ -914,7 +943,8 @@ async function writeExample() {
 
 
 
-#### serialManager.writeSync
+## serialManager.writeSync
+
 
 **支持设备：** PC/2in1
 
@@ -933,14 +963,16 @@ writeSync(portId: number, buffer: Uint8Array, timeout?: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | portId | number | 是 | 端口号，来自getPortList返回的SerialPort对象，必须使用getPortList返回的有效端口号，传入无效值时抛出错误码31400003异常。 |
 | buffer | Uint8Array | 是 | 写入数据的缓冲区，包含要发送到串口设备的二进制数据。每次写入的数据长度不超过4KB，超过会导致数据丢失，长数据建议分包写入。 |
-| timeout | number | 否 | 超时时间（单位：毫秒）。API在写入数据时等待缓冲区可写，在指定时间后返回。默认值0表示不等待直接返回。传入负数时抛出参数错误异常。建议取值范围≥0，具体值需根据设备响应速度和数据量合理设置。 |
+| timeout | number | 否 | 超时时间（单位：毫秒）。API在写入数据时等待缓冲区可写，在指定时间后返回。默认值0或不传参时，表示不等待直接返回。传入负数时抛出参数错误异常。具体值需根据设备响应速度和数据量合理设置。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -950,6 +982,7 @@ writeSync(portId: number, buffer: Uint8Array, timeout?: number): number
 **错误码：**
 
 以下错误码的详细介绍参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[USB服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-usb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1027,7 +1060,8 @@ async function writeSyncExample() {
 
 
 
-#### serialManager.close
+## serialManager.close
+
 
 **支持设备：** PC/2in1
 
@@ -1052,6 +1086,7 @@ close(portId: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | portId | number | 是 | 端口号，来自getPortList返回的SerialPort对象，必须使用getPortList返回的有效端口号，传入无效值时抛出错误码31400003异常。 |
@@ -1060,6 +1095,7 @@ close(portId: number): void
 **错误码：**
 
 以下错误码的详细介绍参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[USB服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-usb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1125,7 +1161,8 @@ async function closeExample() {
 
 
 
-#### serialManager.cancelSerialRight
+## serialManager.cancelSerialRight
+
 
 **支持设备：** PC/2in1
 
@@ -1149,6 +1186,7 @@ cancelSerialRight(portId: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | portId | number | 是 | 端口号，来自getPortList返回的SerialPort对象，必须使用getPortList返回的有效端口号，传入无效值时抛出错误码31400003异常。 |
@@ -1157,6 +1195,7 @@ cancelSerialRight(portId: number): void
 **错误码：**
 
 以下错误码的详细介绍参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[USB服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-usb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1203,7 +1242,7 @@ async function cancelSerialRightExample() {
   // 取消已经授予的权限
   try {
     serialManager.cancelSerialRight(portId);
-    console.info('cancelSerialRight success, portId: '+ portId);
+    console.info('cancelSerialRight success, portId: ' + portId);
   } catch (error) {
     const err: BusinessError = error as BusinessError;
     console.error(`Failed to cancel serial right. Code: ${err.code}, message: ${err.message}`);
@@ -1213,13 +1252,15 @@ async function cancelSerialRightExample() {
 
 
 
-#### SerialAttribute
+## SerialAttribute
+
 
 **支持设备：** PC/2in1
 
 串口的配置参数。
 
 **系统能力：** SystemCapability.USB.USBManager.Serial
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1231,13 +1272,15 @@ async function cancelSerialRightExample() {
 
 
 
-#### SerialPort
+## SerialPort
+
 
 **支持设备：** PC/2in1
 
 串口参数。
 
 **系统能力：** SystemCapability.USB.USBManager.Serial
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1247,13 +1290,15 @@ async function cancelSerialRightExample() {
 
 
 
-#### BaudRates
+## BaudRates
+
 
 **支持设备：** PC/2in1
 
 表示波特率的枚举，单位：比特/秒。
 
 **系统能力：** SystemCapability.USB.USBManager.Serial
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1291,13 +1336,15 @@ async function cancelSerialRightExample() {
 
 
 
-#### DataBits
+## DataBits
+
 
 **支持设备：** PC/2in1
 
 表示数据位宽的枚举，单位：比特。
 
 **系统能力：** SystemCapability.USB.USBManager.Serial
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1309,13 +1356,15 @@ async function cancelSerialRightExample() {
 
 
 
-#### Parity
+## Parity
+
 
 **支持设备：** PC/2in1
 
 表示校验位的校验方式的枚举。
 
 **系统能力：** SystemCapability.USB.USBManager.Serial
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1328,13 +1377,15 @@ async function cancelSerialRightExample() {
 
 
 
-#### StopBits
+## StopBits
+
 
 **支持设备：** PC/2in1
 
 表示停止位宽的枚举，单位：比特。
 
 **系统能力：** SystemCapability.USB.USBManager.Serial
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

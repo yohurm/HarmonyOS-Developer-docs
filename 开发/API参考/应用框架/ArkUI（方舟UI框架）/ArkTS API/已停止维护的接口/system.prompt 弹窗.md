@@ -1,9 +1,9 @@
 # @system.prompt (弹窗)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-system-prompt
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 创建并显示文本提示框、对话框和操作菜单。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import prompt from '@system.prompt';
@@ -22,9 +23,10 @@ import prompt from '@system.prompt';
  
   
 
-#### prompt.showToast
+## prompt.showToast
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showToast(options: ShowToastOptions): void
  
@@ -34,6 +36,7 @@ showToast(options: ShowToastOptions): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ShowToastOptions | 是 | 定义ShowToast的选项。 |
@@ -56,9 +59,10 @@ export default new A()
  
   
 
-#### prompt.showDialog
+## prompt.showDialog
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showDialog(options: ShowDialogOptions): void
  
@@ -68,6 +72,7 @@ showDialog(options: ShowDialogOptions): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ShowDialogOptions | 是 | 定义显示对话框的选项。 |
@@ -102,9 +107,10 @@ export default new B()
  
   
 
-#### prompt.showActionMenu6+
+## prompt.showActionMenu6+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showActionMenu(options: ShowActionMenuOptions): void
  
@@ -114,6 +120,7 @@ showActionMenu(options: ShowActionMenuOptions): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ShowActionMenuOptions | 是 | 定义ShowActionMenu的选项。 |
@@ -151,14 +158,16 @@ export default new C()
  
   
 
-#### ShowToastOptions
+## ShowToastOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义ShowToast的选项。
  
 **系统能力：** 以下各项对应的系统能力均为SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | message | string | 是 | 显示的文本信息。 |
@@ -168,14 +177,16 @@ export default new C()
  
   
 
-#### Button
+## Button
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义按钮的显示信息。
  
 **系统能力：** 以下各项对应的系统能力均为SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | text | string | 是 | 定义按钮文本。 |
@@ -184,14 +195,16 @@ export default new C()
  
   
 
-#### ShowDialogSuccessResponse
+## ShowDialogSuccessResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义ShowDialog的响应。
  
 **系统能力：** 以下各项对应的系统能力均为SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 被点击按钮的索引值。 |
@@ -199,14 +212,16 @@ export default new C()
  
   
 
-#### ShowDialogOptions
+## ShowDialogOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义显示对话框的选项。
  
 **系统能力：** 以下各项对应的系统能力均为SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | title | string | 否 | 标题文本。 |
@@ -219,14 +234,16 @@ export default new C()
  
   
 
-#### ShowActionMenuOptions6+
+## ShowActionMenuOptions6+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义ShowActionMenu的选项。
  
 **系统能力：** 以下各项对应的系统能力均为SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | title | string | 否 | 标题文本。 |

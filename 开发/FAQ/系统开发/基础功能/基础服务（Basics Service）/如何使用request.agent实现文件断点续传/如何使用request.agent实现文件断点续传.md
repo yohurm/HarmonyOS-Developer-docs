@@ -136,17 +136,17 @@ struct RequestAgentDemo {
       Row({ space: 10 }) {
         Button('创建任务')
           .onClick(() => {
-            let fileName = `XXX`; //需要替换为开发者需要的资源名称
-            // 配置对象
+            let fileName = `XXX`; <em>//需要替换为开发者需要的资源名称</em>
+         <em>   // 配置对象</em>
             let config: request.agent.Config = {
               action: request.agent.Action.DOWNLOAD,
-              url: 'https://XXX', //需要替换为开发者需要的资源链接
+              url: 'https://XXX', <em>//需要替换为开发者需要的资源链接</em>
               mode: request.agent.Mode.FOREGROUND,
               overwrite: true,
               method: 'POST',
               title: fileName,
               begins: 0,
-              saveas: `XXXXXXXX`//需要替换为开发者需要的资源保存路径
+              saveas: `XXXXXXXX`<em>//需要替换为开发者需要的资源保存路径</em>
             };
             request.agent.create(this.context, config)
               .then((task: request.agent.Task) => {
@@ -212,7 +212,7 @@ struct ObjectBuild {
       .then((task: request.agent.Task) => {
         this.downloadTask = task;
         this.oldFileLen = task.config.begins!;
-        // 注册监听
+     <em>   // 注册监听</em>
         this.InitEvent(task);
       })
       .catch((err: BusinessError) => {
@@ -394,7 +394,7 @@ struct ObjectBuild {
           console.error(`calculate file hash failed with error message: ${err.message}, error code: ${err.code}`);
         });
       }
-      this.downloadTask = null; // 下载完重置
+      this.downloadTask = null; <em>// 下载完重置</em>
     });
     task.on('failed', (err) => {
       this.progressInfo = '下载失败';

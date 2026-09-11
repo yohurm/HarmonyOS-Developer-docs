@@ -1,11 +1,12 @@
 # image_effect.h
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-effect-h
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -27,15 +28,18 @@
 
 
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 
 
-#### 结构体
+### 结构体
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -44,9 +48,11 @@
 
 
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -75,7 +81,7 @@
 | ImageEffect_ErrorCode OH_ImageEffect_SetInputTextureId(OH_ImageEffect *imageEffect, int32_t textureId,int32_t colorSpace) | 配置输入包含图片内容的纹理标识。 |
 | ImageEffect_ErrorCode OH_ImageEffect_SetOutputTextureId(OH_ImageEffect *imageEffect, int32_t textureId) | 配置输出包含渲染后的纹理标识。 |
 | ImageEffect_ErrorCode OH_ImageEffect_Start(OH_ImageEffect *imageEffect) | 启动效果器。 |
-| ImageEffect_ErrorCode OH_ImageEffect_Stop(OH_ImageEffect *imageEffect) | 停止效果。 |
+| ImageEffect_ErrorCode OH_ImageEffect_Stop(OH_ImageEffect *imageEffect) | 停止效果器。 |
 | ImageEffect_ErrorCode OH_ImageEffect_Release(OH_ImageEffect *imageEffect) | 释放OH_ImageEffect实例资源。 |
 | ImageEffect_ErrorCode OH_ImageEffect_Save(OH_ImageEffect *imageEffect, char **info) | 序列化效果器。 |
 | OH_ImageEffect *OH_ImageEffect_Restore(const char *info) | 反序列化效果器。 |
@@ -83,13 +89,15 @@
 
 
 
-#### 函数说明
+## 函数说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 
 
-#### OH_ImageEffect_Create()
+### OH_ImageEffect_Create()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -107,12 +115,14 @@ OH_ImageEffect *OH_ImageEffect_Create(const char *name)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *name | 效果器名，用于标识效果器，由用户自定义，建议为非空的字符串。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -121,7 +131,8 @@ OH_ImageEffect *OH_ImageEffect_Create(const char *name)
 
 
 
-#### OH_ImageEffect_AddFilter()
+### OH_ImageEffect_AddFilter()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -139,6 +150,7 @@ OH_EffectFilter *OH_ImageEffect_AddFilter(OH_ImageEffect *imageEffect, const cha
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageEffect *imageEffect | 效果器指针。 |
@@ -147,6 +159,7 @@ OH_EffectFilter *OH_ImageEffect_AddFilter(OH_ImageEffect *imageEffect, const cha
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_EffectFilter * | 返回一个指向OH_EffectFilter实例的指针，滤镜名无效时返回空指针。 |
@@ -154,7 +167,8 @@ OH_EffectFilter *OH_ImageEffect_AddFilter(OH_ImageEffect *imageEffect, const cha
 
 
 
-#### OH_ImageEffect_AddFilterByFilter()
+### OH_ImageEffect_AddFilterByFilter()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -172,6 +186,7 @@ ImageEffect_ErrorCode OH_ImageEffect_AddFilterByFilter(OH_ImageEffect *imageEffe
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageEffect *imageEffect | 效果器指针。 |
@@ -180,6 +195,7 @@ ImageEffect_ErrorCode OH_ImageEffect_AddFilterByFilter(OH_ImageEffect *imageEffe
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageEffect_ErrorCode | EFFECT_SUCCESS：方法调用成功。 EFFECT_ERROR_PARAM_INVALID：入参为空指针。 |
@@ -187,7 +203,8 @@ ImageEffect_ErrorCode OH_ImageEffect_AddFilterByFilter(OH_ImageEffect *imageEffe
 
 
 
-#### OH_ImageEffect_InsertFilter()
+### OH_ImageEffect_InsertFilter()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -205,6 +222,7 @@ OH_EffectFilter *OH_ImageEffect_InsertFilter(OH_ImageEffect *imageEffect, uint32
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageEffect *imageEffect | 效果器指针。 |
@@ -214,6 +232,7 @@ OH_EffectFilter *OH_ImageEffect_InsertFilter(OH_ImageEffect *imageEffect, uint32
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_EffectFilter * | 返回一个指向OH_EffectFilter实例的指针，参数无效时返回空指针。 |
@@ -221,7 +240,8 @@ OH_EffectFilter *OH_ImageEffect_InsertFilter(OH_ImageEffect *imageEffect, uint32
 
 
 
-#### OH_ImageEffect_InsertFilterByFilter()
+### OH_ImageEffect_InsertFilterByFilter()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -239,6 +259,7 @@ ImageEffect_ErrorCode OH_ImageEffect_InsertFilterByFilter(OH_ImageEffect *imageE
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageEffect *imageEffect | 效果器指针。 |
@@ -248,6 +269,7 @@ ImageEffect_ErrorCode OH_ImageEffect_InsertFilterByFilter(OH_ImageEffect *imageE
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageEffect_ErrorCode | EFFECT_SUCCESS：方法调用成功。 EFFECT_ERROR_PARAM_INVALID：入参为空指针。 |
@@ -255,7 +277,8 @@ ImageEffect_ErrorCode OH_ImageEffect_InsertFilterByFilter(OH_ImageEffect *imageE
 
 
 
-#### OH_ImageEffect_RemoveFilter()
+### OH_ImageEffect_RemoveFilter()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -273,6 +296,7 @@ int32_t OH_ImageEffect_RemoveFilter(OH_ImageEffect *imageEffect, const char *fil
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageEffect *imageEffect | 效果器指针。 |
@@ -281,6 +305,7 @@ int32_t OH_ImageEffect_RemoveFilter(OH_ImageEffect *imageEffect, const char *fil
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 所删除的滤镜个数。 |
@@ -288,7 +313,8 @@ int32_t OH_ImageEffect_RemoveFilter(OH_ImageEffect *imageEffect, const char *fil
 
 
 
-#### OH_ImageEffect_RemoveFilterByIndex()
+### OH_ImageEffect_RemoveFilterByIndex()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -306,6 +332,7 @@ ImageEffect_ErrorCode OH_ImageEffect_RemoveFilterByIndex(OH_ImageEffect *imageEf
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageEffect *imageEffect | 效果器指针。 |
@@ -314,6 +341,7 @@ ImageEffect_ErrorCode OH_ImageEffect_RemoveFilterByIndex(OH_ImageEffect *imageEf
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageEffect_ErrorCode | EFFECT_SUCCESS：方法调用成功。 EFFECT_ERROR_PARAM_INVALID：入参为空指针。 |
@@ -321,7 +349,8 @@ ImageEffect_ErrorCode OH_ImageEffect_RemoveFilterByIndex(OH_ImageEffect *imageEf
 
 
 
-#### OH_ImageEffect_ReplaceFilter()
+### OH_ImageEffect_ReplaceFilter()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -339,6 +368,7 @@ OH_EffectFilter *OH_ImageEffect_ReplaceFilter(OH_ImageEffect *imageEffect, uint3
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageEffect *imageEffect | 效果器指针。 |
@@ -347,6 +377,7 @@ OH_EffectFilter *OH_ImageEffect_ReplaceFilter(OH_ImageEffect *imageEffect, uint3
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_EffectFilter * | 返回一个指向OH_EffectFilter实例的指针，替换失败时返回空指针。 |
@@ -354,7 +385,8 @@ OH_EffectFilter *OH_ImageEffect_ReplaceFilter(OH_ImageEffect *imageEffect, uint3
 
 
 
-#### OH_ImageEffect_ReplaceFilterByFilter()
+### OH_ImageEffect_ReplaceFilterByFilter()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -372,6 +404,7 @@ ImageEffect_ErrorCode OH_ImageEffect_ReplaceFilterByFilter(OH_ImageEffect *image
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageEffect *imageEffect | 效果器指针。 |
@@ -381,6 +414,7 @@ ImageEffect_ErrorCode OH_ImageEffect_ReplaceFilterByFilter(OH_ImageEffect *image
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageEffect_ErrorCode | EFFECT_SUCCESS：方法调用成功。 EFFECT_ERROR_PARAM_INVALID：入参为空指针。 |
@@ -388,7 +422,8 @@ ImageEffect_ErrorCode OH_ImageEffect_ReplaceFilterByFilter(OH_ImageEffect *image
 
 
 
-#### OH_ImageEffect_GetFilterCount()
+### OH_ImageEffect_GetFilterCount()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -406,12 +441,14 @@ int32_t OH_ImageEffect_GetFilterCount(OH_ImageEffect *imageEffect)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageEffect *imageEffect | 效果器指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -420,7 +457,8 @@ int32_t OH_ImageEffect_GetFilterCount(OH_ImageEffect *imageEffect)
 
 
 
-#### OH_ImageEffect_GetFilter()
+### OH_ImageEffect_GetFilter()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -438,6 +476,7 @@ OH_EffectFilter *OH_ImageEffect_GetFilter(OH_ImageEffect *imageEffect, uint32_t 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageEffect *imageEffect | 效果器指针。 |
@@ -446,6 +485,7 @@ OH_EffectFilter *OH_ImageEffect_GetFilter(OH_ImageEffect *imageEffect, uint32_t 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_EffectFilter * | 返回一个指向OH_EffectFilter实例的指针，参数无效时返回空指针。 |
@@ -453,7 +493,8 @@ OH_EffectFilter *OH_ImageEffect_GetFilter(OH_ImageEffect *imageEffect, uint32_t 
 
 
 
-#### OH_ImageEffect_Configure()
+### OH_ImageEffect_Configure()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -471,6 +512,7 @@ ImageEffect_ErrorCode OH_ImageEffect_Configure(OH_ImageEffect *imageEffect, cons
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageEffect *imageEffect | 效果器指针。 |
@@ -480,6 +522,7 @@ ImageEffect_ErrorCode OH_ImageEffect_Configure(OH_ImageEffect *imageEffect, cons
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageEffect_ErrorCode | EFFECT_SUCCESS：方法调用成功。 EFFECT_ERROR_PARAM_INVALID：入参为空指针。 EFFECT_KEY_ERROR：参数无效。 EFFECT_PARAM_ERROR：参数值无效。 |
@@ -487,7 +530,8 @@ ImageEffect_ErrorCode OH_ImageEffect_Configure(OH_ImageEffect *imageEffect, cons
 
 
 
-#### OH_ImageEffect_SetOutputSurface()
+### OH_ImageEffect_SetOutputSurface()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -505,6 +549,7 @@ ImageEffect_ErrorCode OH_ImageEffect_SetOutputSurface(OH_ImageEffect *imageEffec
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageEffect *imageEffect | 效果器指针。 |
@@ -513,6 +558,7 @@ ImageEffect_ErrorCode OH_ImageEffect_SetOutputSurface(OH_ImageEffect *imageEffec
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageEffect_ErrorCode | EFFECT_SUCCESS：方法调用成功。 EFFECT_ERROR_PARAM_INVALID：入参为空指针。 |
@@ -520,7 +566,8 @@ ImageEffect_ErrorCode OH_ImageEffect_SetOutputSurface(OH_ImageEffect *imageEffec
 
 
 
-#### OH_ImageEffect_GetInputSurface()
+### OH_ImageEffect_GetInputSurface()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -538,6 +585,7 @@ ImageEffect_ErrorCode OH_ImageEffect_GetInputSurface(OH_ImageEffect *imageEffect
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageEffect *imageEffect | 效果器指针。 |
@@ -546,6 +594,7 @@ ImageEffect_ErrorCode OH_ImageEffect_GetInputSurface(OH_ImageEffect *imageEffect
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageEffect_ErrorCode | EFFECT_SUCCESS：方法调用成功。 EFFECT_ERROR_PARAM_INVALID：入参为空指针。 |
@@ -553,7 +602,8 @@ ImageEffect_ErrorCode OH_ImageEffect_GetInputSurface(OH_ImageEffect *imageEffect
 
 
 
-#### OH_ImageEffect_SetInputPixelmap()
+### OH_ImageEffect_SetInputPixelmap()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -571,6 +621,7 @@ ImageEffect_ErrorCode OH_ImageEffect_SetInputPixelmap(OH_ImageEffect *imageEffec
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageEffect *imageEffect | 效果器指针。 |
@@ -579,6 +630,7 @@ ImageEffect_ErrorCode OH_ImageEffect_SetInputPixelmap(OH_ImageEffect *imageEffec
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageEffect_ErrorCode | EFFECT_SUCCESS：方法调用成功。 EFFECT_ERROR_PARAM_INVALID：入参为空指针。 |
@@ -586,7 +638,8 @@ ImageEffect_ErrorCode OH_ImageEffect_SetInputPixelmap(OH_ImageEffect *imageEffec
 
 
 
-#### OH_ImageEffect_SetOutputPixelmap()
+### OH_ImageEffect_SetOutputPixelmap()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -604,6 +657,7 @@ ImageEffect_ErrorCode OH_ImageEffect_SetOutputPixelmap(OH_ImageEffect *imageEffe
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageEffect *imageEffect | 效果器指针。 |
@@ -612,6 +666,7 @@ ImageEffect_ErrorCode OH_ImageEffect_SetOutputPixelmap(OH_ImageEffect *imageEffe
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageEffect_ErrorCode | EFFECT_SUCCESS：方法调用成功。 EFFECT_ERROR_PARAM_INVALID：入参为空指针。 EFFECT_PARAM_ERROR：如果参数异常导致方法调用失败。 |
@@ -619,7 +674,8 @@ ImageEffect_ErrorCode OH_ImageEffect_SetOutputPixelmap(OH_ImageEffect *imageEffe
 
 
 
-#### OH_ImageEffect_SetInputNativeBuffer()
+### OH_ImageEffect_SetInputNativeBuffer()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -637,6 +693,7 @@ ImageEffect_ErrorCode OH_ImageEffect_SetInputNativeBuffer(OH_ImageEffect *imageE
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageEffect *imageEffect | 效果器指针。 |
@@ -645,6 +702,7 @@ ImageEffect_ErrorCode OH_ImageEffect_SetInputNativeBuffer(OH_ImageEffect *imageE
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageEffect_ErrorCode | EFFECT_SUCCESS：方法调用成功。 EFFECT_ERROR_PARAM_INVALID：入参为空指针。 |
@@ -652,7 +710,8 @@ ImageEffect_ErrorCode OH_ImageEffect_SetInputNativeBuffer(OH_ImageEffect *imageE
 
 
 
-#### OH_ImageEffect_SetOutputNativeBuffer()
+### OH_ImageEffect_SetOutputNativeBuffer()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -670,6 +729,7 @@ ImageEffect_ErrorCode OH_ImageEffect_SetOutputNativeBuffer(OH_ImageEffect *image
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageEffect *imageEffect | 效果器指针。 |
@@ -678,6 +738,7 @@ ImageEffect_ErrorCode OH_ImageEffect_SetOutputNativeBuffer(OH_ImageEffect *image
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageEffect_ErrorCode | EFFECT_SUCCESS：方法调用成功。 EFFECT_ERROR_PARAM_INVALID：入参为空指针。 EFFECT_PARAM_ERROR：如果参数异常导致方法调用失败。 |
@@ -685,7 +746,8 @@ ImageEffect_ErrorCode OH_ImageEffect_SetOutputNativeBuffer(OH_ImageEffect *image
 
 
 
-#### OH_ImageEffect_SetInputUri()
+### OH_ImageEffect_SetInputUri()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -703,6 +765,7 @@ ImageEffect_ErrorCode OH_ImageEffect_SetInputUri(OH_ImageEffect *imageEffect, co
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageEffect *imageEffect | 效果器指针。 |
@@ -711,6 +774,7 @@ ImageEffect_ErrorCode OH_ImageEffect_SetInputUri(OH_ImageEffect *imageEffect, co
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageEffect_ErrorCode | EFFECT_SUCCESS：方法调用成功。 EFFECT_ERROR_PARAM_INVALID：入参为空指针。 |
@@ -718,7 +782,8 @@ ImageEffect_ErrorCode OH_ImageEffect_SetInputUri(OH_ImageEffect *imageEffect, co
 
 
 
-#### OH_ImageEffect_SetOutputUri()
+### OH_ImageEffect_SetOutputUri()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -736,6 +801,7 @@ ImageEffect_ErrorCode OH_ImageEffect_SetOutputUri(OH_ImageEffect *imageEffect, c
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageEffect *imageEffect | 效果器指针。 |
@@ -744,6 +810,7 @@ ImageEffect_ErrorCode OH_ImageEffect_SetOutputUri(OH_ImageEffect *imageEffect, c
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageEffect_ErrorCode | EFFECT_SUCCESS：方法调用成功。 EFFECT_ERROR_PARAM_INVALID：入参为空指针。 |
@@ -751,7 +818,8 @@ ImageEffect_ErrorCode OH_ImageEffect_SetOutputUri(OH_ImageEffect *imageEffect, c
 
 
 
-#### OH_ImageEffect_SetInputPicture()
+### OH_ImageEffect_SetInputPicture()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -769,6 +837,7 @@ ImageEffect_ErrorCode OH_ImageEffect_SetInputPicture(OH_ImageEffect *imageEffect
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageEffect *imageEffect | 效果器指针。 |
@@ -777,6 +846,7 @@ ImageEffect_ErrorCode OH_ImageEffect_SetInputPicture(OH_ImageEffect *imageEffect
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageEffect_ErrorCode | EFFECT_SUCCESS：方法调用成功。 EFFECT_ERROR_PARAM_INVALID：入参为空指针。 |
@@ -784,7 +854,8 @@ ImageEffect_ErrorCode OH_ImageEffect_SetInputPicture(OH_ImageEffect *imageEffect
 
 
 
-#### OH_ImageEffect_SetOutputPicture()
+### OH_ImageEffect_SetOutputPicture()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -802,6 +873,7 @@ ImageEffect_ErrorCode OH_ImageEffect_SetOutputPicture(OH_ImageEffect *imageEffec
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageEffect *imageEffect | 效果器指针。 |
@@ -810,6 +882,7 @@ ImageEffect_ErrorCode OH_ImageEffect_SetOutputPicture(OH_ImageEffect *imageEffec
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageEffect_ErrorCode | EFFECT_SUCCESS：方法调用成功。 EFFECT_ERROR_PARAM_INVALID：入参为空指针。 EFFECT_PARAM_ERROR：如果参数异常导致方法调用失败。 |
@@ -817,7 +890,8 @@ ImageEffect_ErrorCode OH_ImageEffect_SetOutputPicture(OH_ImageEffect *imageEffec
 
 
 
-#### OH_ImageEffect_SetInputTextureId()
+### OH_ImageEffect_SetInputTextureId()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -835,6 +909,7 @@ ImageEffect_ErrorCode OH_ImageEffect_SetInputTextureId(OH_ImageEffect *imageEffe
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageEffect *imageEffect | OH_ImageEffect结构体实例指针。 |
@@ -844,6 +919,7 @@ ImageEffect_ErrorCode OH_ImageEffect_SetInputTextureId(OH_ImageEffect *imageEffe
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageEffect_ErrorCode | EFFECT_SUCCESS：方法调用成功。 EFFECT_ERROR_PARAM_INVALID：入参为空指针或参数超出有效范围。 EFFECT_PARAM_ERROR：参数缺失或参数错误。 |
@@ -851,7 +927,8 @@ ImageEffect_ErrorCode OH_ImageEffect_SetInputTextureId(OH_ImageEffect *imageEffe
 
 
 
-#### OH_ImageEffect_SetOutputTextureId()
+### OH_ImageEffect_SetOutputTextureId()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -869,6 +946,7 @@ ImageEffect_ErrorCode OH_ImageEffect_SetOutputTextureId(OH_ImageEffect *imageEff
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageEffect *imageEffect | OH_ImageEffect结构体实例指针。 |
@@ -877,6 +955,7 @@ ImageEffect_ErrorCode OH_ImageEffect_SetOutputTextureId(OH_ImageEffect *imageEff
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageEffect_ErrorCode | EFFECT_SUCCESS：方法调用成功。 EFFECT_ERROR_PARAM_INVALID：入参为空指针或参数超出有效范围。 EFFECT_PARAM_ERROR：参数缺失或参数错误。 |
@@ -884,7 +963,8 @@ ImageEffect_ErrorCode OH_ImageEffect_SetOutputTextureId(OH_ImageEffect *imageEff
 
 
 
-#### OH_ImageEffect_Start()
+### OH_ImageEffect_Start()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -902,12 +982,14 @@ ImageEffect_ErrorCode OH_ImageEffect_Start(OH_ImageEffect *imageEffect)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageEffect *imageEffect | 效果器指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -916,7 +998,8 @@ ImageEffect_ErrorCode OH_ImageEffect_Start(OH_ImageEffect *imageEffect)
 
 
 
-#### OH_ImageEffect_Stop()
+### OH_ImageEffect_Stop()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -926,13 +1009,14 @@ ImageEffect_ErrorCode OH_ImageEffect_Stop(OH_ImageEffect *imageEffect)
 
 **描述**
 
-停止效果。
+停止效果器。
 
 **系统能力：** SystemCapability.Multimedia.ImageEffect.Core
 
 **起始版本：** 12
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -941,6 +1025,7 @@ ImageEffect_ErrorCode OH_ImageEffect_Stop(OH_ImageEffect *imageEffect)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageEffect_ErrorCode | EFFECT_SUCCESS：方法调用成功。 EFFECT_ERROR_PARAM_INVALID：入参为空指针。 |
@@ -948,7 +1033,8 @@ ImageEffect_ErrorCode OH_ImageEffect_Stop(OH_ImageEffect *imageEffect)
 
 
 
-#### OH_ImageEffect_Release()
+### OH_ImageEffect_Release()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -966,12 +1052,14 @@ ImageEffect_ErrorCode OH_ImageEffect_Release(OH_ImageEffect *imageEffect)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageEffect *imageEffect | 效果器指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -980,7 +1068,8 @@ ImageEffect_ErrorCode OH_ImageEffect_Release(OH_ImageEffect *imageEffect)
 
 
 
-#### OH_ImageEffect_Save()
+### OH_ImageEffect_Save()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -998,6 +1087,7 @@ ImageEffect_ErrorCode OH_ImageEffect_Save(OH_ImageEffect *imageEffect, char **in
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageEffect *imageEffect | 效果器指针。 |
@@ -1006,6 +1096,7 @@ ImageEffect_ErrorCode OH_ImageEffect_Save(OH_ImageEffect *imageEffect, char **in
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageEffect_ErrorCode | EFFECT_SUCCESS：方法调用成功。 EFFECT_ERROR_PARAM_INVALID：入参为空指针。 |
@@ -1013,7 +1104,8 @@ ImageEffect_ErrorCode OH_ImageEffect_Save(OH_ImageEffect *imageEffect, char **in
 
 
 
-#### OH_ImageEffect_Restore()
+### OH_ImageEffect_Restore()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1031,12 +1123,14 @@ OH_ImageEffect *OH_ImageEffect_Restore(const char *info)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *info | 序列化JSON字符串。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |

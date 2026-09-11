@@ -1,9 +1,9 @@
 # @ohos.base (公共回调信息)
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-base
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 本模块定义了HarmonyOS ArkTS接口的公共回调类型，包括接口调用时出现的公共回调和公共错误信息。这些回调类型为开发者提供了统一的异步处理机制，适用于需要处理异步操作结果、错误信息回传等场景，可以帮助开发者简化异步编程模型，提高代码的可读性和可维护性。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ArkTS示例：
  
@@ -30,9 +31,10 @@ import base from '@ohos.base';
  
   
 
-#### Callback
+## Callback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 Callback&lt;T&gt; {
  
@@ -40,7 +42,7 @@ Callback&lt;T&gt; {
  
 }
  
-通用回调函数，用于在异步操作完成时回传处理结果。类型由开发者自定义。
+通用回调函数，用于在异步操作成功完成时回传处理结果。类型由开发者自定义。
  
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
  
@@ -50,6 +52,7 @@ Callback&lt;T&gt; {
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | T | 是 | 接口调用时的公共回调信息。类型由开发者自定义，回调将返回对应类型的数据。 |
@@ -57,9 +60,10 @@ Callback&lt;T&gt; {
  
   
 
-#### ErrorCallback
+## ErrorCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ErrorCallback<T extends Error = BusinessError> {
  
@@ -67,7 +71,7 @@ ErrorCallback<T extends Error = BusinessError> {
  
 }
  
-通用回调函数，携带错误参数，用于在接口调用失败时回传错误信息。
+通用回调函数，携带错误参数，用于在异步操作失败时回传错误信息。具体错误码值由各接口定义，请参考对应接口的错误码说明。
  
 回调返回的信息为[BusinessError](#businesserror)类型的错误参数。
  
@@ -77,6 +81,7 @@ ErrorCallback<T extends Error = BusinessError> {
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | err | T | 是 | 接口调用失败的公共错误信息，类型默认为BusinessError，包含错误码（code）和可选附加数据（data）。 |
@@ -84,9 +89,10 @@ ErrorCallback<T extends Error = BusinessError> {
  
   
 
-#### AsyncCallback
+## AsyncCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 AsyncCallback<T, E = void> {
  
@@ -108,6 +114,7 @@ AsyncCallback<T, E = void> {
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | err | BusinessError | 是 | 接口调用失败的公共错误信息。接口调用成功时，此参数返回null |
@@ -116,9 +123,10 @@ AsyncCallback<T, E = void> {
  
   
 
-#### BusinessError
+## BusinessError
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 BusinessError<T = void> extends Error { code: number; data?: T; }
  
@@ -130,6 +138,7 @@ BusinessError<T = void> extends Error { code: number; data?: T; }
  
 **系统能力：** SystemCapability.Base
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | code | number | 否 | 否 | 接口调用失败返回的错误码信息。 |

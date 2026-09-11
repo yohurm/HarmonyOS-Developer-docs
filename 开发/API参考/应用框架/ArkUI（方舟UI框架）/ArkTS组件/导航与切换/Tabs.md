@@ -1,20 +1,21 @@
 # Tabs
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-通过页签进行内容视图切换的容器组件，每个页签对应一个内容视图。适用于应用底部导航栏、顶部页签切换、侧边栏导航等需要在不同内容视图间快速切换的场景。使用Tabs组件可以简化多视图导航的实现，提升用户切换效率。
+通过页签进行内容视图切换的容器组件，每个页签对应一个内容视图。
 
 > [!NOTE]
 > 该组件从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 该组件从API version 11开始，支持安全区域避让特性，其 expandSafeArea 属性的默认值为expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.BOTTOM])。开发者可通过重写该属性覆盖默认行为。对于API version 11之前的版本，则需配合expandSafeArea属性手动实现安全区域避让。
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 仅支持子组件[TabContent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent)，以及渲染控制类型[if/else](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)和[ForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-foreach)，不建议自定义组件作为子组件。并且if/else和ForEach下也仅支持TabContent作为子组件，不建议自定义组件作为子组件。
 
@@ -24,9 +25,10 @@
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Tabs(options?: TabsOptions)
 
@@ -38,36 +40,40 @@ Tabs(options?: TabsOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| options | TabsOptions | 否 | Tabs组件参数。默认值：undefined，不设置参数时使用默认配置。 |
+| options | TabsOptions | 否 | Tabs组件参数。 |
 
 
 
 
-#### TabsOptions15+
+## TabsOptions15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-Tabs组件参数，设置Tabs的页签位置，当前显示页签的索引，Tabs控制器和页签栏（TabBar）的[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+Tabs组件参数，设置Tabs的页签位置，当前显示页签的索引，Tabs控制器和TabBar的[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| barPosition7+ | BarPosition | 否 | 是 | 设置Tabs的页签位置。页签的具体位置受vertical属性影响：vertical为true时Start位于左侧、End位于右侧；vertical为false时Start位于顶部、End位于底部。 默认值：BarPosition.Start。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| barPosition7+ | BarPosition | 否 | 是 | 设置Tabs的页签位置。 默认值：BarPosition.Start。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | index7+ | number | 否 | 是 | 设置当前显示页签的索引。 默认值：0 说明： 设置为小于0的值时按默认值显示。 可选值为[0, TabContent子节点数量-1]。 直接修改index跳页时，切换动效不生效。 使用TabsController的changeIndex时，默认生效切换动效，可以设置animationDuration为0关闭动画。 从API version 10开始，该参数支持$$双向绑定变量。 Tabs重建、系统资源切换（如系统字体切换、系统深浅色切换）或者组件属性变化时，会跳转到index对应的页面。若需要在上述情况下不跳转，建议使用双向绑定。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | controller7+ | TabsController | 否 | 是 | 设置Tabs控制器。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
-| barModifier | CommonModifier | 否 | 是 | 设置TabBar的通用属性，用于通过CommonModifier统一管理TabBar的样式、布局等通用属性。当需要动态修改TabBar的通用属性或实现属性的状态管理时传入此参数，不传入时TabBar使用默认样式和布局，无额外通用属性设置。 说明： 动态置为undefined时会保持当前状态不变，不会重置各通用属性。 由一个CommonModifier切换为另一个CommonModifier时，重复属性会进行覆盖，非重复属性会同时生效，不会重置前一个CommonModifier的通用属性。 Tabs的barWidth、barHeight、barBackgroundColor、barBackgroundBlurStyle、barBackgroundEffect属性会覆盖CommonModifier的width、height、backgroundColor、backgroundBlurStyle、backgroundEffect属性。 align属性仅在BarMode.Scrollable模式下生效，且Tabs为横向时还需nonScrollableLayoutStyle未设置或设置为异常值时才能生效。 TabContent组件的tabBar属性为底部页签样式时不支持拖拽功能。 元服务API： 从API version 15开始，该接口支持在元服务中使用。 |
+| barModifier | CommonModifier | 否 | 是 | 设置TabBar的通用属性。 说明： 动态置为undefined时会保持当前状态不变，不会重置各通用属性。 由一个CommonModifier切换为另一个CommonModifier时，重复属性会进行覆盖，非重复属性会同时生效，不会重置前一个CommonModifier的通用属性。 Tabs的barWidth、barHeight、barBackgroundColor、barBackgroundBlurStyle、barBackgroundEffect属性会覆盖CommonModifier的width、height、backgroundColor、backgroundBlurStyle、backgroundEffect属性。 align属性仅在BarMode.Scrollable模式下生效，且Tabs为横向时还需nonScrollableLayoutStyle未设置或设置为异常值时才能生效。 TabContent组件的tabBar属性为底部页签样式时不支持拖拽功能。 元服务API： 从API version 15开始，该接口支持在元服务中使用。 |
 
 
 
 
-#### BarPosition枚举说明
+## BarPosition枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Tabs页签位置枚举。
 
@@ -75,56 +81,62 @@ Tabs页签位置枚举。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| Start | 0 | vertical属性设置为true时，页签位于容器左侧；vertical属性设置为false时，页签位于容器顶部。 |
-| End | 1 | vertical属性设置为true时，页签位于容器右侧；vertical属性设置为false时，页签位于容器底部。 |
+| Start | 0 | vertical属性方法设置为true时，页签位于容器左侧；vertical属性方法设置为false时，页签位于容器顶部。 |
+| End | 1 | vertical属性方法设置为true时，页签位于容器右侧；vertical属性方法设置为false时，页签位于容器底部。 |
 
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
 
 
 
-#### vertical
+### vertical
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 vertical(value: boolean)
 
-设置是否为纵向Tabs。横向Tabs（默认）适用于底部导航栏、顶部页签切换等场景；纵向Tabs适用于侧边栏导航、设置页面分类等场景。
+设置是否为纵向Tabs。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | boolean | 是 | 是否为纵向Tabs。 默认值：false，横向Tabs，为true时纵向Tabs。 当横向Tabs设置height为auto时，Tabs组件高度自适应子组件高度，即为tabBar高度+divider分割线宽度+TabContent高度+Tabs组件的上下padding值+Tabs组件的上下border宽度。 当纵向Tabs设置width为auto时，Tabs组件宽度自适应子组件宽度，即为tabBar宽度+divider线宽+TabContent宽度+左右padding值+左右border宽度。 尽量保持每一个页面中的子组件尺寸大小一致，避免滑动页面时出现页面切换动画跳动现象。 |
+| value | boolean | 是 | 是否为纵向Tabs。 默认值：false，横向Tabs，为true时纵向Tabs。 当横向Tabs设置height为auto时，Tabs组件高度自适应子组件高度，即为tabBar高度+divider线宽+TabContent高度+上下padding值+上下border宽度。 当纵向Tabs设置width为auto时，Tabs组件宽度自适应子组件宽度，即为tabBar宽度+divider线宽+TabContent宽度+左右padding值+左右border宽度。 尽量保持每一个页面中的子组件尺寸大小一致，避免滑动页面时出现页面切换动画跳动现象。 |
 
 
 
 
-#### scrollable
+### scrollable
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scrollable(value: boolean)
 
-设置是否可以通过滑动页面进行页面切换。配合自定义导航按钮或TabBar页签控制切换时，建议设置为false，避免手势滑动与自定义导航逻辑冲突。
+设置是否可以通过滑动页面进行页面切换。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -133,13 +145,14 @@ scrollable(value: boolean)
 
 
 
-#### barMode
+### barMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 barMode(value: BarMode, options?: ScrollableBarModeOptions)
 
-设置TabBar布局模式。Fixed模式适用于页签数量固定且较少的场景；Scrollable模式适用于页签数量较多或文本长度不固定的场景。
+设置TabBar布局模式。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -147,17 +160,19 @@ barMode(value: BarMode, options?: ScrollableBarModeOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | BarMode | 是 | 布局模式。 默认值：BarMode.Fixed |
-| options10+ | ScrollableBarModeOptions | 否 | Scrollable模式下的TabBar的布局样式。 说明： 仅在value为Scrollable且水平模式下有效。 模型约束： 此接口仅可在Stage模型下使用。 |
+| options10+ | ScrollableBarModeOptions | 否 | Scrollable模式下的TabBar的布局样式。 说明： 仅Scrollable且水平模式下有效。 模型约束： 此接口仅可在Stage模型下使用。 |
 
 
 
 
-#### barMode10+
+### barMode10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 barMode(value: BarMode.Fixed)
 
@@ -171,6 +186,7 @@ barMode(value: BarMode.Fixed)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | BarMode.Fixed | 是 | 所有TabBar会平均分配barWidth宽度（纵向时平均分配barHeight高度）。 |
@@ -178,9 +194,10 @@ barMode(value: BarMode.Fixed)
 
 
 
-#### barMode10+
+### barMode10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 barMode(value: BarMode.Scrollable, options: ScrollableBarModeOptions)
 
@@ -194,17 +211,19 @@ barMode(value: BarMode.Scrollable, options: ScrollableBarModeOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | BarMode.Scrollable | 是 | 所有TabBar都使用实际布局宽度，超过总宽度（横向Tabs的barWidth，纵向Tabs的barHeight）后可滑动。 |
-| options | ScrollableBarModeOptions | 是 | Scrollable模式下的TabBar的布局样式。 说明： 仅Scrollable且水平模式下有效。 |
+| options | ScrollableBarModeOptions | 是 | Scrollable模式下的TabBar的布局样式。 说明： 仅水平模式下有效。 |
 
 
 
 
-#### barWidth
+### barWidth
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 barWidth(value: Length)
 
@@ -216,6 +235,7 @@ barWidth(value: Length)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Length8+ | 是 | TabBar的宽度值。 默认值： 未设置SubTabBarStyle和BottomTabBarStyle的TabBar且vertical属性为false时，默认值为Tabs的宽度。 未设置SubTabBarStyle和BottomTabBarStyle的TabBar且vertical属性为true时，默认值为56vp。 设置SubTabBarStyle样式且vertical属性为false时，默认值为Tabs的宽度。 设置SubTabBarStyle样式且vertical属性为true时，默认值为56vp。 设置BottomTabBarStyle样式且vertical属性为true时，默认值为96vp。 设置BottomTabBarStyle样式且vertical属性为false时，默认值为Tabs的宽度。 |
@@ -223,9 +243,10 @@ barWidth(value: Length)
 
 
 
-#### barHeight
+### barHeight
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 barHeight(value: Length)
 
@@ -239,6 +260,7 @@ API version 14之前的版本，若设置barHeight为固定值后，TabBar无法
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Length8+ | 是 | TabBar的高度值。 默认值： 未设置样式或者通过CustomBuilder设置自定义样式的TabBar且vertical属性为false时，默认值为56vp。 未设置样式或者通过CustomBuilder设置自定义样式的TabBar且vertical属性为true时，默认值为Tabs的高度。 设置SubTabBarStyle样式且vertical属性为false时，默认值为56vp。 设置SubTabBarStyle样式且vertical属性为true时，默认值为Tabs的高度。 设置BottomTabBarStyle样式且vertical属性为true时，默认值为Tabs的高度。 设置BottomTabBarStyle样式且vertical属性为false时，默认值为56vp，从API version 12开始，默认值变更为48vp。 |
@@ -246,9 +268,10 @@ API version 14之前的版本，若设置barHeight为固定值后，TabBar无法
 
 
 
-#### barHeight20+
+### barHeight20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 barHeight(height: Length, noMinHeightLimit: boolean)
 
@@ -262,6 +285,7 @@ barHeight(height: Length, noMinHeightLimit: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | height | Length | 是 | TabBar的高度值。 默认值： 未设置样式或者通过CustomBuilder设置自定义样式的TabBar且vertical属性为false时，默认值为56vp。 未设置样式或者通过CustomBuilder设置自定义样式的TabBar且vertical属性为true时，默认值为Tabs的高度。 设置SubTabBarStyle样式且vertical属性为false时，默认值为56vp。 设置SubTabBarStyle样式且vertical属性为true时，默认值为Tabs的高度。 设置BottomTabBarStyle样式且vertical属性为true时，默认值为Tabs的高度。 设置BottomTabBarStyle样式且vertical属性为false时，默认值为48vp。 |
@@ -270,9 +294,10 @@ barHeight(height: Length, noMinHeightLimit: boolean)
 
 
 
-#### animationCurve20+
+### animationCurve20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 animationCurve(curve: Curve | ICurve)
 
@@ -286,6 +311,7 @@ animationCurve(curve: Curve | ICurve)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | curve | Curve \| ICurve | 是 | Tabs翻页的动画曲线。 默认值： 滑动TabContent翻页时，默认值为interpolatingSpring(-1, 1, 228, 30)。 点击TabBar页签和调用TabsController的changeIndex接口翻页时，默认值为cubicBezierCurve(0.2, 0.0, 0.1, 1.0)。 设置自定义动画曲线时，滑动翻页和点击页签、调用changeIndex翻页都使用设置的动画曲线。 |
@@ -293,9 +319,10 @@ animationCurve(curve: Curve | ICurve)
 
 
 
-#### animationDuration
+### animationDuration
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 animationDuration(value: number)
 
@@ -311,6 +338,7 @@ animationCurve不设置时，由于滑动TabContent翻页动画曲线interpolati
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | Tabs翻页的动画时长。 默认值： API version 10及以前，不设置该属性或设置为null时，默认值为0，即Tabs翻页无动画。设置为小于0或undefined时，默认值为300。 API version 11及以后，不设置该属性或设置为异常值，且设置TabBar为BottomTabBarStyle样式时，默认值为0。设置TabBar为其他样式时，默认值为300。 单位：ms 取值范围：[0, +∞) |
@@ -318,9 +346,10 @@ animationCurve不设置时，由于滑动TabContent翻页动画曲线interpolati
 
 
 
-#### animationMode12+
+### animationMode12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 animationMode(mode: Optional&lt;AnimationMode&gt;)
 
@@ -338,6 +367,7 @@ animationMode(mode: Optional&lt;AnimationMode&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | Optional&lt;AnimationMode&gt; | 是 | 点击TabBar页签或调用TabsController的changeIndex接口时切换TabContent的动画形式。 默认值：AnimationMode.CONTENT_FIRST，表示在点击TabBar页签或调用TabsController的changeIndex接口切换TabContent时，先加载目标页内容，再开始切换动画。 |
@@ -345,9 +375,10 @@ animationMode(mode: Optional&lt;AnimationMode&gt;)
 
 
 
-#### barPosition9+
+### barPosition9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 barPosition(value: BarPosition)
 
@@ -359,20 +390,22 @@ barPosition(value: BarPosition)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | BarPosition | 是 | 设置Tabs的页签位置。页签的具体位置受vertical属性影响：vertical为true时Start位于左侧、End位于右侧；vertical为false时Start位于顶部、End位于底部。 默认值：BarPosition.Start |
+| value | BarPosition | 是 | 设置Tabs的页签位置。 默认值：BarPosition.Start |
 
 
 
 
-#### divider10+
+### divider10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 divider(value: DividerStyle | null)
 
-设置区分TabBar和TabContent的分割线样式。如TabBar与TabContent之间需要视觉分隔，可通过divider添加分割线。
+设置区分TabBar和TabContent的分割线样式。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -381,6 +414,7 @@ divider(value: DividerStyle | null)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -389,13 +423,14 @@ divider(value: DividerStyle | null)
 
 
 
-#### fadingEdge10+
+### fadingEdge10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fadingEdge(value: boolean)
 
-设置页签超过容器宽度时是否渐隐消失。建议配合[barBackgroundColor](#barbackgroundcolor10)属性一起使用，未定义barBackgroundColor属性时，默认显示页签末端为白色的渐隐效果。
+设置页签超过容器宽度时是否渐隐消失。建议配合[barBackgroundColor](#barbackgroundcolor10)属性一起使用，如果barBackgroundColor属性没有定义，会默认显示页签末端为白色的渐隐效果。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -404,21 +439,23 @@ fadingEdge(value: boolean)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | boolean | 是 | 页签超过容器宽度时是否渐隐消失。 默认值：true，页签超过容器宽度时会渐隐消失。设置为false时，页签超过容器宽度直接截断显示。若未设置barBackgroundColor属性，页签末端仍会显示默认的白色渐隐效果。 |
+| value | boolean | 是 | 页签超过容器宽度时是否渐隐消失。 默认值：true，页签超过容器宽度时会渐隐消失。设置为false时，页签超过容器宽度直接截断显示，不产生任何渐变效果‌。 |
 
 
 
 
-#### barOverlap10+
+### barOverlap10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 barOverlap(value: boolean)
 
-设置TabBar是否背后变模糊并叠加在TabContent之上。适用于需要沉浸式UI效果的场景。
+设置TabBar是否背后变模糊并叠加在TabContent之上。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -427,6 +464,7 @@ barOverlap(value: boolean)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -435,9 +473,10 @@ barOverlap(value: boolean)
 
 
 
-#### barBackgroundColor10+
+### barBackgroundColor10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 barBackgroundColor(value: ResourceColor)
 
@@ -451,20 +490,22 @@ barBackgroundColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | ResourceColor | 是 | TabBar的背景颜色。 说明： 建议配合fadingEdge属性一起使用，以避免页签末端显示白色渐隐效果。 默认值：Color.Transparent，透明 |
+| value | ResourceColor | 是 | TabBar的背景颜色。 默认值：Color.Transparent，透明 |
 
 
 
 
-#### barBackgroundBlurStyle11+
+### barBackgroundBlurStyle11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 barBackgroundBlurStyle(value: BlurStyle)
 
-设置TabBar的背景模糊材质。适用于需要为TabBar添加模糊背景效果的场景。
+设置TabBar的背景模糊材质。
 
 > [!NOTE]
 > 从API version 12开始，该接口支持在 attributeModifier 中调用。
@@ -478,6 +519,7 @@ barBackgroundBlurStyle(value: BlurStyle)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | BlurStyle | 是 | TabBar的背景模糊材质。 默认值：BlurStyle.NONE |
@@ -485,13 +527,14 @@ barBackgroundBlurStyle(value: BlurStyle)
 
 
 
-#### barBackgroundBlurStyle18+
+### barBackgroundBlurStyle18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 barBackgroundBlurStyle(style: BlurStyle, options: BackgroundBlurStyleOptions)
 
-设置TabBar背景模糊能力，通过枚举值封装不同的模糊半径、蒙版颜色、蒙版透明度、饱和度、亮度。
+为TabBar提供一种在背景和内容之间的模糊能力，通过枚举值的方式封装了不同的模糊半径、蒙版颜色、蒙版透明度、饱和度、亮度。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -501,17 +544,19 @@ barBackgroundBlurStyle(style: BlurStyle, options: BackgroundBlurStyleOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | BlurStyle | 是 | 背景模糊样式。模糊样式中封装了模糊半径、蒙版颜色、蒙版透明度、饱和度、亮度五个参数。 |
-| options | BackgroundBlurStyleOptions | 是 | 背景模糊选项，用于自定义模糊效果。 |
+| options | BackgroundBlurStyleOptions | 是 | 背景模糊选项。 |
 
 
 
 
-#### barGridAlign10+
+### barGridAlign10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 barGridAlign(value: BarGridColumnOptions)
 
@@ -525,6 +570,7 @@ barGridAlign(value: BarGridColumnOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | BarGridColumnOptions | 是 | 以栅格化方式设置TabBar的可见区域。 |
@@ -532,13 +578,14 @@ barGridAlign(value: BarGridColumnOptions)
 
 
 
-#### edgeEffect12+
+### edgeEffect12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 edgeEffect(edgeEffect: Optional&lt;EdgeEffect&gt;)
 
-设置边缘滑动效果。当滑动到边缘时，根据设置的边缘效果类型执行相应的回弹动作：Spring模式使用弹簧曲线实现弹性回弹效果，Fade模式使用渐变透明度实现视觉反馈，None模式不执行任何边缘效果。边缘效果的触发条件为滑动内容超出容器边界。
+设置边缘滑动效果。
 
 > [!NOTE]
 > 从API version 17开始，该接口支持在 attributeModifier 中调用。
@@ -552,6 +599,7 @@ edgeEffect(edgeEffect: Optional&lt;EdgeEffect&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | edgeEffect | Optional&lt;EdgeEffect&gt; | 是 | 边缘滑动效果。 默认值：EdgeEffect.Spring |
@@ -559,13 +607,14 @@ edgeEffect(edgeEffect: Optional&lt;EdgeEffect&gt;)
 
 
 
-#### barBackgroundEffect18+
+### barBackgroundEffect18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 barBackgroundEffect(options: BackgroundEffectOptions)
 
-设置TabBar背景属性，包含背景模糊半径，亮度，饱和度，颜色等参数。适用于需要精细化控制TabBar背景视觉效果的场景。
+设置TabBar背景属性，包含背景模糊半径，亮度，饱和度，颜色等参数。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -575,6 +624,7 @@ barBackgroundEffect(options: BackgroundEffectOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | BackgroundEffectOptions | 是 | 设置TabBar背景属性包括：模糊半径，亮度，饱和度，颜色等。 |
@@ -582,9 +632,10 @@ barBackgroundEffect(options: BackgroundEffectOptions)
 
 
 
-#### pageFlipMode15+
+### pageFlipMode15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pageFlipMode(mode: Optional&lt;PageFlipMode&gt;)
 
@@ -598,6 +649,7 @@ pageFlipMode(mode: Optional&lt;PageFlipMode&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | Optional&lt;PageFlipMode&gt; | 是 | 鼠标滚轮翻页模式。 默认值：PageFlipMode.CONTINUOUS |
@@ -605,13 +657,14 @@ pageFlipMode(mode: Optional&lt;PageFlipMode&gt;)
 
 
 
-#### cachedMaxCount19+
+### cachedMaxCount19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cachedMaxCount(count: number, mode: TabsCacheMode)
 
-设置子组件的最大缓存个数及缓存模式。未设置该属性时默认缓存所有子组件且缓存后不会释放。建议根据页签数量和子组件内容复杂度设置count值。
+设置子组件的最大缓存个数及缓存模式。未设置该属性时默认缓存所有子组件且缓存后不会释放。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
@@ -621,21 +674,23 @@ cachedMaxCount(count: number, mode: TabsCacheMode)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| count | number | 是 | 子组件的最大缓存个数。 取值范围：[0, +∞)。设置为小于0的值时，子组件不受缓存管理。超出缓存个数时自动释放不再需要的子组件。 |
+| count | number | 是 | 子组件的最大缓存个数。超出范围时自动释放不再需要的子组件。 取值范围：[0, +∞)。 |
 | mode | TabsCacheMode | 是 | 子组件的缓存模式。 默认值：TabsCacheMode.CACHE_BOTH_SIDE |
 
 
 
 
-#### nestedScroll24+
+### nestedScroll24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 nestedScroll(value: TabsNestedScrollMode | undefined)
 
-设置Tabs组件与其父组件的嵌套滚动模式。未设置时默认嵌套滚动模式为[SELF_ONLY](#tabsnestedscrollmode24枚举说明)。
+设置Tabs组件与其父组件的嵌套滚动模式。未通过该接口设置时，默认嵌套滚动模式为[SELF_ONLY](#tabsnestedscrollmode24枚举说明)。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -645,6 +700,7 @@ nestedScroll(value: TabsNestedScrollMode | undefined)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | TabsNestedScrollMode \| undefined | 是 | Tabs组件和父组件的嵌套滚动模式。 设置undefined时，Tabs自身滚动，不与父组件联动。 |
@@ -652,9 +708,10 @@ nestedScroll(value: TabsNestedScrollMode | undefined)
 
 
 
-#### barFloatingStyle
+### barFloatingStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 barFloatingStyle(style: Optional&lt;FloatingTabBarStyle&gt;)
 
@@ -674,6 +731,7 @@ barFloatingStyle(style: Optional&lt;FloatingTabBarStyle&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | Optional&lt;FloatingTabBarStyle&gt; | 是 | TabBar的悬浮样式配置。 设置undefined时，取消悬浮样式，恢复默认样式。 |
@@ -681,9 +739,10 @@ barFloatingStyle(style: Optional&lt;FloatingTabBarStyle&gt;)
 
 
 
-#### DividerStyle10+对象说明
+## DividerStyle10+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 分割线样式对象。
 
@@ -693,19 +752,21 @@ barFloatingStyle(style: Optional&lt;FloatingTabBarStyle&gt;)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| strokeWidth | Length | 否 | 否 | 分割线的线宽（不支持百分比设置）。 默认值：0.0 单位：vp 取值范围：[0, +∞)。设置为小于0的值时，按默认值显示。 |
+| strokeWidth | Length | 否 | 否 | 分割线的线宽（不支持百分比设置）。 默认值：0.0 单位：vp 取值范围：[0, +∞)。 |
 | color | ResourceColor | 否 | 是 | 分割线的颜色。 默认值：#33182431 |
-| startMargin | Length | 否 | 是 | 分割线与侧边栏顶端的距离（不支持百分比设置）。 默认值：0.0 单位：vp 取值范围：[0, +∞)。设置为小于0的值时，按默认值显示。 |
-| endMargin | Length | 否 | 是 | 分割线与侧边栏底端的距离（不支持百分比设置）。 默认值：0.0 单位：vp 取值范围：[0, +∞)。设置为小于0的值时，按默认值显示。 |
+| startMargin | Length | 否 | 是 | 分割线与侧边栏顶端的距离（不支持百分比设置）。 默认值：0.0 单位：vp 取值范围：[0, +∞)。 |
+| endMargin | Length | 否 | 是 | 分割线与侧边栏底端的距离（不支持百分比设置）。 默认值：0.0 单位：vp 取值范围：[0, +∞)。 |
 
 
 
 
-#### BarGridColumnOptions10+对象说明
+## BarGridColumnOptions10+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TabBar栅格化方式设置的对象，包括栅格模式下的column边距和间隔，以及小、中、大屏下，页签占用的columns数量。
 
@@ -715,20 +776,22 @@ TabBar栅格化方式设置的对象，包括栅格模式下的column边距和�
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| margin | Dimension | 否 | 是 | 栅格模式下的column边距。不支持百分比设置，取值范围：[0, +∞)。默认值：24.0 单位：vp |
-| gutter | Dimension | 否 | 是 | 栅格模式下的column间隔。不支持百分比设置，取值范围：[0, +∞)。默认值：24.0 单位：vp |
-| sm | number | 否 | 是 | 小屏下，页签占用的columns数量。非负偶数或-1（-1表示页签占用TabBar全部宽度）。小屏为大于等于320vp但小于600vp 默认值：-1 |
-| md | number | 否 | 是 | 中屏下，页签占用的columns数量，非负偶数或-1（-1表示页签占用TabBar全部宽度）。中屏为大于等于600vp但小于800vp 默认值：-1 |
-| lg | number | 否 | 是 | 大屏下，页签占用的columns数量，非负偶数或-1（-1表示页签占用TabBar全部宽度）。大屏为大于等于840vp但小于1024vp 默认值：-1 |
+| margin | Dimension | 否 | 是 | 栅格模式下的column边距（不支持百分比设置）。 默认值：24.0 单位：vp |
+| gutter | Dimension | 否 | 是 | 栅格模式下的column间隔（不支持百分比设置）。 默认值：24.0 单位：vp |
+| sm | number | 否 | 是 | 小屏下，页签占用的columns数量，必须是非负偶数。小屏为大于等于320vp但小于600vp。 默认值为-1，代表页签占用TabBar全部宽度。 |
+| md | number | 否 | 是 | 中屏下，页签占用的columns数量，必须是非负偶数。中屏为大于等于600vp但小于800vp。 默认值为-1，代表页签占用TabBar全部宽度。 |
+| lg | number | 否 | 是 | 大屏下，页签占用的columns数量，必须是非负偶数。大屏为大于等于840vp但小于1024vp。 默认值为-1，代表页签占用TabBar全部宽度。 |
 
 
 
 
-#### ScrollableBarModeOptions10+对象说明
+## ScrollableBarModeOptions10+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Scrollable模式下的TabBar的布局样式对象。
 
@@ -738,22 +801,25 @@ Scrollable模式下的TabBar的布局样式对象。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| margin | Dimension | 否 | 是 | Scrollable模式下的TabBar的左右边距（不支持百分比设置）。 默认值：0.0 单位：vp 取值范围：[0, +∞)。设置为小于0的值时，按默认值显示。 |
-| nonScrollableLayoutStyle | LayoutStyle | 否 | 是 | Scrollable模式下不滚动时的页签排布方式，仅水平模式下有效。 默认值：LayoutStyle.ALWAYS_CENTER |
+| margin | Dimension | 否 | 是 | Scrollable模式下的TabBar的左右边距（不支持百分比设置）。 默认值：0.0 单位：vp 取值范围：[0, +∞)。 |
+| nonScrollableLayoutStyle | LayoutStyle | 否 | 是 | Scrollable模式下不滚动时的页签排布方式。 默认值：LayoutStyle.ALWAYS_CENTER |
 
 
 
 
-#### FloatingTabBarWidth
+## FloatingTabBarWidth
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 不同Tabs宽度下TabBar的宽度。
 
 > [!NOTE]
 > barWidth 生效优先级高于该接口，barWidth和该接口都没有生效时，TabBar宽度使用默认计算规则。 TabBar宽度默认计算规则如下表。子节点数量等于4个时，TabBar最大宽度为328vp。子节点数量大于等于5个时，TabBar最大宽度为360vp。Tabs宽度大于等于1140vp时，TabBar的宽高会放大到1.15倍。
+
 
 
 | 子节点数量 | Tabs宽度 | 计算规则 |
@@ -775,6 +841,7 @@ Scrollable模式下的TabBar的布局样式对象。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | smallBarWidth | Length | 否 | 是 | Tabs宽度小于440vp时，TabBar的宽度。 |
@@ -784,9 +851,10 @@ Scrollable模式下的TabBar的布局样式对象。
 
 
 
-#### UIMaterial
+## UIMaterial
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type UIMaterial = import('../api/@ohos.arkui.uiMaterial').uiMaterial
 
@@ -800,6 +868,7 @@ type UIMaterial = import('../api/@ohos.arkui.uiMaterial').uiMaterial
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | import('../api/@ohos.arkui.uiMaterial').uiMaterial | 系统材质模块。 |
@@ -807,9 +876,10 @@ type UIMaterial = import('../api/@ohos.arkui.uiMaterial').uiMaterial
 
 
 
-#### FloatingTabBarStyle
+## FloatingTabBarStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TabBar悬浮样式。
 
@@ -821,28 +891,31 @@ TabBar悬浮样式。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | barWidth | FloatingTabBarWidth | 否 | 是 | 不同Tabs宽度下TabBar的宽度。宽度默认计算规则见FloatingTabBarWidth说明。 |
-| barSideMargin | Length | 否 | 是 | TabBar宽度默认计算规则中的左右边距。 取值范围：[0, +∞) Tabs宽度小于600vp时，默认值为16vp。Tabs宽度处于600vp到840vp时，默认值为24vp。Tabs宽度大于840vp时，默认值为32vp。 |
-| barBottomMargin | Length | 否 | 是 | TabBar距离Tabs底部的距离。 取值范围：[0, +∞) 默认值为28vp。 |
-| maskColor | ResourceColor | 否 | 是 | 蒙层的颜色。蒙层显示区域会基于蒙层的颜色进行透明度渐变显示，从下到上不透明度变小。浅色模式下默认值为#CCF1F3F5，显示为白色。深色模式下默认值为#99000000，显示为黑色。 |
+| barSideMargin | Length | 否 | 是 | TabBar宽度默认计算规则中的左右边距。 Tabs宽度小于600vp时，默认值为16vp。Tabs宽度处于600vp到840vp时，默认值为24vp。Tabs宽度大于840vp时，默认值为32vp。 |
+| barBottomMargin | Length | 否 | 是 | TabBar距离Tabs底部的距离。默认值为28vp。 |
+| maskColor | ResourceColor | 否 | 是 | 蒙层的颜色。蒙层显示区域在纵向会基于蒙层的颜色进行透明度渐变显示，从下到上不透明度变小。浅色模式下默认值为#CCF1F3F5，显示为白色。深色模式下默认值为#99000000，显示为黑色。 |
 | maskHeight | Length | 否 | 是 | 蒙层的高度。蒙层显示上边缘默认比TabBar上边缘高16vp。 |
 | adaptToHandedness | boolean | 否 | 是 | 是否跟随操作手左右布局显示。 true表示跟随操作手左右布局显示；false表示不跟随操作手左右布局显示。 默认值：false |
-| systemMaterial | UIMaterial.ImmersiveMaterial | 否 | 是 | TabBar的背板沉浸式材质样式。 |
+| systemMaterial | UIMaterial.ImmersiveMaterial | 否 | 是 | TabBar的背板沉浸式材质样式。仅当Tabs为横向布局且barPosition为BarPosition.End时，底部TabBar的材质效果生效。 |
 
 
 
 
-#### BarMode枚举说明
+## BarMode枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TabBar布局模式枚举。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -852,9 +925,10 @@ TabBar布局模式枚举。
 
 
 
-#### AnimationMode12+枚举说明
+## AnimationMode12+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 点击[TabBar](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent#tabbar)页签时切换TabContent的动画形式枚举。
 
@@ -862,10 +936,11 @@ TabBar布局模式枚举。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| CONTENT_FIRST | 0 | 先加载目标页内容，再开始切换动画。适用于需要先确保内容加载完成再展示动画的场景，可避免动画过程中出现空白内容，推荐用于内容加载较快、需要平滑过渡的场景。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| ACTION_FIRST | 1 | 先开始切换动画，再加载目标页内容；生效需要同时满足：Tabs的height、width没有设置成auto。适用于需要立即响应用户操作、快速开始动画的场景，推荐用于内容加载较慢但希望提供快速视觉反馈的场景。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| CONTENT_FIRST | 0 | 先加载目标页内容，再开始切换动画。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| ACTION_FIRST | 1 | 先开始切换动画，再加载目标页内容；生效需要同时满足：Tabs的height、width没有设置成auto。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | NO_ANIMATION | 2 | 关闭默认动画。调用TabsController的changeIndex接口切换TabContent时该枚举值不生效。 可以通过设置animationDuration为0实现调用TabsController的changeIndex接口时不带动画。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | CONTENT_FIRST_WITH_JUMP15+ | 3 | 先加载目标页内容，再无动画跳转到目标页附近，最后有动画跳转到目标页。 元服务API： 从API version 15开始，该接口支持在元服务中使用。 |
 | ACTION_FIRST_WITH_JUMP15+ | 4 | 先无动画跳转到目标页附近，再有动画跳转到目标页，最后加载目标页内容。此项生效需要同时满足：Tabs的height、width没有设置成auto。 元服务API： 从API version 15开始，该接口支持在元服务中使用。 |
@@ -873,9 +948,10 @@ TabBar布局模式枚举。
 
 
 
-#### LayoutStyle10+枚举说明
+## LayoutStyle10+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [Scrollable](#barmode枚举说明)模式下不滚动时的页签排布方式枚举。
 
@@ -885,22 +961,24 @@ TabBar布局模式枚举。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ALWAYS_CENTER | 0 | 当页签内容超过TabBar宽度时，TabBar可滚动。 当页签内容不超过TabBar宽度时，TabBar不可滚动，页签紧凑居中。 |
 | ALWAYS_AVERAGE_SPLIT | 1 | 当页签内容超过TabBar宽度时，TabBar可滚动。 当页签内容不超过TabBar宽度时，TabBar不可滚动，且所有页签平均分配TabBar宽度。 |
-| SPACE_BETWEEN_OR_CENTER | 2 | 当页签内容超过TabBar宽度时，TabBar可滚动。 当页签内容不超过TabBar宽度但超过TabBar宽度一半时，TabBar不可滚动，页签紧凑居中。 当页签内容不超过TabBar宽度一半时，TabBar不可滚动，页签居中排列，页签之间的间距相等，所有页签的总宽度占用TabBar宽度的一半。 |
+| SPACE_BETWEEN_OR_CENTER | 2 | 当页签内容超过TabBar宽度时，TabBar可滚动。 当页签内容不超过TabBar宽度但超过TabBar宽度一半时，TabBar不可滚动，页签紧凑居中。 当页签内容不超过TabBar宽度一半时，TabBar不可滚动，保证页签居中排列在TabBar宽度一半，且间距相同。 |
 
 
 
 
-#### CommonModifier15+
+## CommonModifier15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type CommonModifier = import('../api/arkui/CommonModifier').CommonModifier
 
-CommonModifier类型用于设置Tabs组件参数。
+作为Tabs组件的参数对象。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
@@ -908,16 +986,18 @@ CommonModifier类型用于设置Tabs组件参数。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
-| import('../api/arkui/CommonModifier').CommonModifier | 设置TabBar的通用属性。 默认值：undefined |
+| import('../api/arkui/CommonModifier').CommonModifier | 设置TabBar的通用属性。 |
 
 
 
 
-#### TabsCacheMode19+枚举说明
+## TabsCacheMode19+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 子组件的缓存模式。
 
@@ -927,6 +1007,7 @@ CommonModifier类型用于设置Tabs组件参数。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CACHE_BOTH_SIDE | 0 | 缓存当前显示的子组件和其两侧的子组件。即当设置cachedMaxCount属性的count值为n时，最多缓存2n+1个子组件。 |
@@ -935,9 +1016,10 @@ CommonModifier类型用于设置Tabs组件参数。
 
 
 
-#### TabsNestedScrollMode24+枚举说明
+## TabsNestedScrollMode24+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Tabs组件和父组件的嵌套滚动模式枚举。
 
@@ -947,25 +1029,28 @@ Tabs组件和父组件的嵌套滚动模式枚举。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| SELF_ONLY | 0 | Tabs自身滚动，不与父组件联动。适用于Tabs组件内部有完整滚动功能、需要独立控制滚动行为的场景。 |
-| SELF_FIRST | 1 | Tabs自身先滚动，自身滚动到边缘以后父组件滚动。父组件滚动到边缘以后，如果父组件有边缘效果，则父组件触发边缘效果，否则Tabs触发边缘效果。适用于Tabs作为主要滚动区域、滚动到边缘后需要与父组件联动的嵌套滚动场景。 |
+| SELF_ONLY | 0 | Tabs自身滚动，不与父组件联动。 |
+| SELF_FIRST | 1 | Tabs自身先滚动，自身滚动到边缘以后父组件滚动。父组件滚动到边缘以后，如果父组件有边缘效果，则父组件触发边缘效果，否则Tabs触发边缘效果。 |
 
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)外，还支持以下事件：
 
 
 
-#### onChange
+### onChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onChange(event: Callback&lt;number&gt;)
 
@@ -991,16 +1076,18 @@ Tab页签切换后触发的事件。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| event | Callback&lt;number&gt; | 是 | 当前显示页签的索引值，从0开始计算。 |
+| event | Callback&lt;number&gt; | 是 | 当前显示的index索引，索引从0开始计算。 |
 
 
 
 
-#### onTabBarClick10+
+### onTabBarClick10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onTabBarClick(event: Callback&lt;number&gt;)
 
@@ -1014,16 +1101,18 @@ Tab页签点击后触发的事件。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| event | Callback&lt;number&gt; | 是 | 被点击页签的索引值，从0开始计算。 |
+| event | Callback&lt;number&gt; | 是 | 被点击的index索引，索引从0开始计算。 |
 
 
 
 
-#### onAnimationStart11+
+### onAnimationStart11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onAnimationStart(handler: OnTabsAnimationStartCallback)
 
@@ -1037,6 +1126,7 @@ onAnimationStart(handler: OnTabsAnimationStartCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handler | OnTabsAnimationStartCallback | 是 | 切换动画开始时触发的回调。 |
@@ -1044,13 +1134,14 @@ onAnimationStart(handler: OnTabsAnimationStartCallback)
 
 
 
-#### onAnimationEnd11+
+### onAnimationEnd11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onAnimationEnd(handler: OnTabsAnimationEndCallback)
 
-切换动画结束时触发该回调，包括动画过程中手势中断。当[animationDuration](#animationduration)为0（关闭动画）时，不触发该回调。
+切换动画结束时触发该回调，包括动画过程中手势中断。当animationDuration为0时动画关闭，不触发该回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1059,6 +1150,7 @@ onAnimationEnd(handler: OnTabsAnimationEndCallback)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1067,17 +1159,14 @@ onAnimationEnd(handler: OnTabsAnimationEndCallback)
 
 
 
-#### onGestureSwipe11+
+### onGestureSwipe11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onGestureSwipe(handler: OnTabsGestureSwipeCallback)
 
-在页面跟手滑动过程中，逐帧触发，用于监听当前显示页面的实时滑动状态。
-
-> [!NOTE]
-> 当使用 customContentTransition 自定义切换动画时，此事件不触发。
-
+在页面跟手滑动过程中，逐帧触发该回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1087,6 +1176,7 @@ onGestureSwipe(handler: OnTabsGestureSwipeCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handler | OnTabsGestureSwipeCallback | 是 | 在页面跟手滑动过程中，逐帧触发的回调。 |
@@ -1094,13 +1184,14 @@ onGestureSwipe(handler: OnTabsGestureSwipeCallback)
 
 
 
-#### customContentTransition11+
+### customContentTransition11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 customContentTransition(delegate: TabsCustomContentTransitionCallback)
 
-自定义Tabs页面切换动画。适用场景：需要个性化页签切换动效时使用，如翻转、淡入淡出、缩放等。
+自定义Tabs页面切换动画。
 
 使用说明：
 1. 当使用自定义切换动画时，Tabs组件自带的默认切换动画会被禁用，同时，页面也无法跟手滑动。
@@ -1124,6 +1215,7 @@ customContentTransition(delegate: TabsCustomContentTransitionCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | delegate | TabsCustomContentTransitionCallback | 是 | 自定义Tabs页面切换动画开始时触发的回调。 |
@@ -1131,9 +1223,10 @@ customContentTransition(delegate: TabsCustomContentTransitionCallback)
 
 
 
-#### onContentWillChange12+
+### onContentWillChange12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onContentWillChange(handler: OnTabsContentWillChangeCallback)
 
@@ -1163,6 +1256,7 @@ onContentWillChange(handler: OnTabsContentWillChangeCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handler | OnTabsContentWillChangeCallback | 是 | 自定义Tabs页面切换拦截事件能力，新页面即将显示时触发的回调。 |
@@ -1170,9 +1264,10 @@ onContentWillChange(handler: OnTabsContentWillChangeCallback)
 
 
 
-#### onSelected18+
+### onSelected18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onSelected(event: Callback&lt;number&gt;)
 
@@ -1196,16 +1291,18 @@ onSelected(event: Callback&lt;number&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| event | Callback&lt;number&gt; | 是 | 当前选中元素的索引，从0开始计算。 |
+| event | Callback&lt;number&gt; | 是 | 当前选中元素的索引。 |
 
 
 
 
-#### onUnselected18+
+### onUnselected18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onUnselected(event: Callback&lt;number&gt;)
 
@@ -1229,16 +1326,18 @@ onUnselected(event: Callback&lt;number&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| event | Callback&lt;number&gt; | 是 | 将要隐藏元素的索引，从0开始计算。 |
+| event | Callback&lt;number&gt; | 是 | 将要隐藏元素的索引。 |
 
 
 
 
-#### onContentDidScroll23+
+### onContentDidScroll23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onContentDidScroll(handler: OnTabsContentDidScrollCallback | undefined)
 
@@ -1254,6 +1353,7 @@ onContentDidScroll(handler: OnTabsContentDidScrollCallback | undefined)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handler | OnTabsContentDidScrollCallback \| undefined | 是 | Tabs滑动时触发的回调，undefined会解绑原有回调。 |
@@ -1261,9 +1361,10 @@ onContentDidScroll(handler: OnTabsContentDidScrollCallback | undefined)
 
 
 
-#### OnTabsAnimationStartCallback18+
+## OnTabsAnimationStartCallback18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnTabsAnimationStartCallback = (index: number, targetIndex: number, extraInfo: TabsAnimationEvent) => void
 
@@ -1277,6 +1378,7 @@ type OnTabsAnimationStartCallback = (index: number, targetIndex: number, extraIn
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 当前显示元素的索引，索引从0开始。 |
@@ -1286,9 +1388,10 @@ type OnTabsAnimationStartCallback = (index: number, targetIndex: number, extraIn
 
 
 
-#### OnTabsAnimationEndCallback18+
+## OnTabsAnimationEndCallback18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnTabsAnimationEndCallback = (index: number, extraInfo: TabsAnimationEvent) => void
 
@@ -1302,6 +1405,7 @@ type OnTabsAnimationEndCallback = (index: number, extraInfo: TabsAnimationEvent)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 当前显示元素的索引，索引从0开始。 |
@@ -1310,9 +1414,10 @@ type OnTabsAnimationEndCallback = (index: number, extraInfo: TabsAnimationEvent)
 
 
 
-#### OnTabsGestureSwipeCallback18+
+## OnTabsGestureSwipeCallback18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnTabsGestureSwipeCallback = (index: number, extraInfo: TabsAnimationEvent) => void
 
@@ -1326,17 +1431,19 @@ type OnTabsGestureSwipeCallback = (index: number, extraInfo: TabsAnimationEvent)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| index | number | 是 | 当前显示元素的索引，索引从0开始。 取值范围：[0, 页签总数-1] |
+| index | number | 是 | 当前显示元素的索引，索引从0开始。 取值范围：[0, 索引值-1] |
 | extraInfo | TabsAnimationEvent | 是 | 动画相关信息，只返回主轴方向上当前显示元素相对于Tabs起始位置的位移。 |
 
 
 
 
-#### TabsCustomContentTransitionCallback18+
+## TabsCustomContentTransitionCallback18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type TabsCustomContentTransitionCallback = (from: number, to: number) => TabContentAnimatedTransition | undefined
 
@@ -1350,13 +1457,15 @@ type TabsCustomContentTransitionCallback = (from: number, to: number) => TabCont
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| from | number | 是 | 动画开始时，当前页面的index值，索引从0开始。 取值范围：[0, 页签总数-1]，当设置的值超过最大索引值或小于0时无转场动画。 |
-| to | number | 是 | 动画开始时，目标页面的index值，索引从0开始。 取值范围：[0, 页签总数-1]，当设置的值超过最大索引值或小于0时无转场动画。 |
+| from | number | 是 | 动画开始时，当前页面的index值，索引从0开始。 取值范围：[0, 索引值-1]，当设置的值超过索引值或小于0时无转场动画。 |
+| to | number | 是 | 动画开始时，目标页面的index值，索引从0开始。 取值范围：[0, 索引值-1]，当设置的值超过索引值或小于0时无转场动画。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1365,9 +1474,10 @@ type TabsCustomContentTransitionCallback = (from: number, to: number) => TabCont
 
 
 
-#### OnTabsContentWillChangeCallback18+
+## OnTabsContentWillChangeCallback18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnTabsContentWillChangeCallback = (currentIndex: number, comingIndex: number) => boolean
 
@@ -1381,13 +1491,15 @@ type OnTabsContentWillChangeCallback = (currentIndex: number, comingIndex: numbe
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | currentIndex | number | 是 | 当前显示页面的index索引，索引从0开始计算。 |
-| comingIndex | number | 是 | 将要显示的新页面的index索引，索引从0开始计算。 |
+| comingIndex | number | 是 | 将要显示的新页面的index索引。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1396,9 +1508,10 @@ type OnTabsContentWillChangeCallback = (currentIndex: number, comingIndex: numbe
 
 
 
-#### TabsAnimationEvent11+对象说明
+## TabsAnimationEvent11+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Tabs组件动画相关信息集合。
 
@@ -1408,18 +1521,20 @@ Tabs组件动画相关信息集合。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| currentOffset | number | 否 | 否 | Tabs当前显示元素在主轴方向上，相对于Tabs起始位置的位移。单位：vp，默认值为0。正值表示向右（横向）或向下（纵向）偏移，负值表示向左（横向）或向上（纵向）偏移。 |
-| targetOffset | number | 否 | 否 | Tabs动画目标元素在主轴方向上，相对于Tabs起始位置的位移。单位：vp，默认值为0。正值表示向右（横向）或向下（纵向）偏移，负值表示向左（横向）或向上（纵向）偏移。 |
-| velocity | number | 否 | 否 | Tabs离手动画开始时的离手速度。单位：vp/s，默认值为0。正值表示向右（横向）或向下（纵向）滑动，负值表示向左（横向）或向上（纵向）滑动，速度值越大表示滑动越快，该参数可用于实现惯性滚动效果。 |
+| currentOffset | number | 否 | 否 | Tabs当前显示元素在主轴方向上，相对于Tabs起始位置的位移。单位vp，默认值为0。 |
+| targetOffset | number | 否 | 否 | Tabs动画目标元素在主轴方向上，相对于Tabs起始位置的位移。单位vp，默认值为0。 |
+| velocity | number | 否 | 否 | Tabs离手动画开始时的离手速度。单位vp/s，默认值为0。 |
 
 
 
 
-#### TabContentAnimatedTransition11+
+## TabContentAnimatedTransition11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Tabs自定义切换动画相关信息。
 
@@ -1431,17 +1546,19 @@ Tabs自定义切换动画相关信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| timeout | number | 否 | 是 | 自定义切换动画超时时间。如果到达该时间后，开发者仍未调用TabContentTransitionProxy的finishTransition接口通知Tabs组件自定义动画结束，那么组件就会认为此次自定义动画已结束，直接执行后续操作。 默认值：1000 单位：ms 取值范围：[0, +∞)。设置为小于0的值时，按默认值显示。 |
+| timeout | number | 否 | 是 | Tabs自定义切换动画超时时间。从自定义动画开始切换计时，如果到达该时间后，开发者仍未调用TabContentTransitionProxy的finishTransition接口通知Tabs组件自定义动画结束，那么组件就会认为此次自定义动画已结束，直接执行后续操作。 默认值：1000 单位：ms 取值范围：[0, +∞)。 |
 | transition | Callback&lt;TabContentTransitionProxy&gt; | 否 | 否 | 自定义切换动画具体内容。 |
 
 
 
 
-#### TabContentTransitionProxy11+
+## TabContentTransitionProxy11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Tabs自定义切换动画执行过程中，返回给开发者的proxy对象。开发者可通过该对象获取自定义动画的起始和目标页面信息，同时，也可以通过调用该对象的finishTransition接口通知Tabs组件自定义动画已结束。
 
@@ -1455,7 +1572,11 @@ Tabs自定义切换动画执行过程中，返回给开发者的proxy对象。�
 
 
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1465,9 +1586,10 @@ Tabs自定义切换动画执行过程中，返回给开发者的proxy对象。�
 
 
 
-#### finishTransition11+
+### finishTransition11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 finishTransition(): void
 
@@ -1483,9 +1605,10 @@ finishTransition(): void
 
 
 
-#### OnTabsContentDidScrollCallback23+
+## OnTabsContentDidScrollCallback23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnTabsContentDidScrollCallback = (selectedIndex: number, index: number, position: number, mainAxisLength: number) => void
 
@@ -1503,19 +1626,21 @@ Tabs滑动时触发的回调。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | selectedIndex | number | 是 | 当前选中页面的索引。例如，当前选中的页签索引为0，从第0页切换到第1页的动画过程中，每一次回调的selectedIndex都为0。 |
 | index | number | 是 | 视窗内页面的索引。例如，页面滑动过程中，视窗内有第0页和第1页两页时，每帧会触发两次回调。其中，第一次回调的index为0，第二次回调的index为1。 |
 | position | number | 是 | index页面相对于Tabs主轴起始位置（selectedIndex对应页面的起始位置）的移动比例。例如，一个横向Tabs中，当前选中的页签索引为0，从第0页往左切换到第1页的动画过程中，若刚好有一帧第0页和第1页分别占用视窗的30%和70%时，当前帧会触发两次回调。其中，第一次回调的position为-0.7，表示当前帧第0页在Tabs主轴起始位置的左侧，且第0页左侧位置距离Tabs主轴起始位置为视窗的70%，即第0页往左移动了视窗70%的距离。第二次回调的position为0.3，表示当前帧第1页在Tabs主轴起始位置的右侧，且第1页左侧位置距离Tabs主轴起始位置为视窗的30%，实际上第1页也是往左移动了视窗70%的距离。 |
-| mainAxisLength | number | 是 | index对应页面在主轴方向上的长度，单位：vp。例如，某一次回调的index为0，这一次回调的mainAxisLength为360，则表示当前帧第0页在主轴方向上的长度为360vp。横向Tabs代表的是页面宽度，竖向Tabs代表的是页面高度。 |
+| mainAxisLength | number | 是 | index对应页面在主轴方向上的长度，单位vp。例如，某一次回调的index为0，这一次回调的mainAxisLength为360，则表示当前帧第0页在主轴方向上的长度为360vp。横向Tabs代表的是页面宽度，竖向Tabs代表的是页面高度。 |
 
 
 
 
-#### TabsController
+## TabsController
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Tabs组件的控制器，用于控制Tabs组件进行页签切换。不支持一个TabsController控制多个Tabs组件。
 
@@ -1525,9 +1650,10 @@ Tabs组件的控制器，用于控制Tabs组件进行页签切换。不支持一
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -1539,17 +1665,14 @@ TabsController的构造函数。
 
 
 
-#### changeIndex
+### changeIndex
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 changeIndex(value: number): void
 
-控制Tabs切换到指定页签。在需要通过按钮、下拉菜单或其他控件实现页签跳转功能时使用，例如点击“上一页”/“下一页”按钮切换页签。
-
-> [!TIP]
-> 当animationMode设置为 AnimationMode.NO_ANIMATION 时，调用此接口切换TabContent时默认动画不生效，可通过设置 animationDuration 为0实现不带动画切换。
-
+控制Tabs切换到指定页签。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1557,20 +1680,22 @@ changeIndex(value: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | 是 | 页签的索引，从0开始计算。取值范围：[0, 页签总数-1]。设置范围外的值时按0处理。 |
+| value | number | 是 | 页签在Tabs里的索引值，索引值从0开始。 说明： 设置小于0或大于最大数量的值时，取默认值0。 |
 
 
 
 
-#### preloadItems12+
+### preloadItems12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 preloadItems(indices: Optional<Array&lt;number&gt;>): Promise&lt;void&gt;
 
-控制Tabs预加载指定子节点。调用该接口后会一次性加载所有指定的子节点，因此为了性能考虑，建议分批加载子节点。适用于需要提前加载某些页签以提高切换性能的场景，如某些页签内容较复杂或资源较多时，可预加载以优化用户体验。
+控制Tabs预加载指定子节点。调用该接口后会一次性加载所有指定的子节点，因此为了性能考虑，建议分批加载子节点。
 
 > [!NOTE]
 > Tabs的preloadItems需要在Tabs创建之后去调用，首次预加载推荐在Tabs的 onAppear 生命周期中去控制。 如果TabsController对象未绑定任何Tabs组件，直接调用该接口，会抛出JS异常。因此使用该接口时，建议通过try-catch捕获异常。 使用preloadItems预加载标签页时，若需自定义TabBar上的显示内容，推荐使用ComponentContent实现，使用示例请参考 示例10 。
@@ -1584,6 +1709,7 @@ preloadItems(indices: Optional<Array&lt;number&gt;>): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | indices | Optional<Array&lt;number&gt;> | 是 | 需预加载的子节点的下标数组。 默认值：空数组。 |
@@ -1591,14 +1717,16 @@ preloadItems(indices: Optional<Array&lt;number&gt;>): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | Promise对象，无返回结果。 |
+| Promise&lt;void&gt; | 预加载完成后触发的回调。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1607,13 +1735,14 @@ preloadItems(indices: Optional<Array&lt;number&gt;>): Promise&lt;void&gt;
 
 
 
-#### setTabBarTranslate13+
+### setTabBarTranslate13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setTabBarTranslate(translate: TranslateOptions): void
 
-设置TabBar的平移距离。适用于需要实现TabBar动态位置调整的场景，如TabBar滑动隐藏显示效果、配合页面滚动实现沉浸式体验等。
+设置TabBar的平移距离。
 
 > [!NOTE]
 > 当使用 bindTabsToScrollable 或 bindTabsToNestedScrollable 等接口绑定了Tabs组件和可滚动容器组件后，在滑动可滚动容器组件时，会触发所有与其绑定的Tabs组件的TabBar的显示和隐藏动效，调用setTabBarTranslate接口设置的TabBar平移距离会失效。因此不建议同时使用bindTabsToScrollable、bindTabsToNestedScrollable和setTabBarTranslate接口。
@@ -1627,6 +1756,7 @@ setTabBarTranslate(translate: TranslateOptions): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | translate | TranslateOptions | 是 | 设置TabBar的平移距离。 |
@@ -1634,13 +1764,14 @@ setTabBarTranslate(translate: TranslateOptions): void
 
 
 
-#### setTabBarOpacity13+
+### setTabBarOpacity13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setTabBarOpacity(opacity: number): void
 
-设置TabBar的不透明度。适用于需要调整TabBar显示透明度的场景，如TabBar渐隐渐显效果、降低TabBar视觉干扰突出内容等。
+设置TabBar的不透明度。
 
 > [!NOTE]
 > 当使用 bindTabsToScrollable 或 bindTabsToNestedScrollable 等接口绑定了Tabs组件和可滚动容器组件后，在滑动可滚动容器组件时，会触发所有与其绑定的Tabs组件的TabBar的显示和隐藏动效，调用setTabBarOpacity接口设置的TabBar不透明度会失效。因此不建议同时使用bindTabsToScrollable、bindTabsToNestedScrollable和setTabBarOpacity接口。
@@ -1654,20 +1785,25 @@ setTabBarOpacity(opacity: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| opacity | number | 是 | 设置TabBar的不透明度，值为1.0表示完全不透明，值为0.0表示完全透明。取值范围为[0.0, 1.0]，设置的值小于0.0时，按0.0处理，设置的值大于1.0时，按1.0处理。 默认值：1.0。 |
+| opacity | number | 是 | 设置TabBar的不透明度，取值范围为[0.0, 1.0]，设置的值小于0.0时，按0.0处理，设置的值大于1.0时，按1.0处理。 默认值：1.0。 |
 
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（设置TabBar的布局模式）
+
+
+### 示例1（设置TabBar的布局模式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例通过[barMode](#barmode)分别实现了页签均分布局和以实际长度布局，且展示了当页签布局长度之和超过了TabBar总长度后可滑动的效果。
 
@@ -1732,7 +1868,7 @@ struct TabsExample {
       }
       .height('60%')
       .backgroundColor(0xf1f3f5)
-      .barMode(this.barMode) // 设置TabBar的布局模式
+      .barMode(this.barMode)
     }
     .width('100%')
     .height(500)
@@ -1742,12 +1878,15 @@ struct TabsExample {
 ```
 
 
-![](assets/Tabs/file-20260514164009755-7.gif)
+![](assets/Tabs/file-20260514164009755-5.gif)
 
 
 
 
-#### 示例2（设置Scrollable模式下的TabBar的布局样式）
+### 示例2（设置Scrollable模式下的TabBar的布局样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例实现了[barMode](#barmode10-1)的ScrollableBarModeOptions参数，该参数仅在Scrollable模式下有效。
 
@@ -1853,7 +1992,7 @@ struct TabsExample6 {
       .animationDuration(300)
       .height('60%')
       .backgroundColor(0xf1f3f5)
-      .barMode(BarMode.Scrollable, { margin: this.scrollMargin, nonScrollableLayoutStyle: this.layoutStyle }) // 设置Scrollable模式下TabBar的布局样式
+      .barMode(BarMode.Scrollable, { margin: this.scrollMargin, nonScrollableLayoutStyle: this.layoutStyle })
     }
     .width('100%')
     .height(500)
@@ -1864,12 +2003,15 @@ struct TabsExample6 {
 ```
 
 
-![](assets/Tabs/file-20260514164009755-8.gif)
+![](assets/Tabs/file-20260514164009755-6.gif)
 
 
 
 
-#### 示例3（自定义页签切换联动）
+### 示例3（自定义页签切换联动）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例通过[onAnimationStart](#onanimationstart11)、[onChange](#onchange)实现切换时自定义tabBar和TabContent的联动。
 
@@ -1922,7 +2064,7 @@ struct TabsExample {
       .barMode(BarMode.Fixed)
       .barWidth(360)
       .barHeight(56)
-      .animationDuration(400) // 设置Tabs翻页动画时长为400ms
+      .animationDuration(400)
       .onChange((index: number) => {
         // currentIndex控制TabContent显示页签
         this.currentIndex = index;
@@ -1945,12 +2087,15 @@ struct TabsExample {
 ```
 
 
-![](assets/Tabs/file-20260514164009755-9.gif)
+![](assets/Tabs/file-20260514164009755-7.gif)
 
 
 
 
-#### 示例4（分割线基本属性）
+### 示例4（分割线基本属性）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例通过[divider](#divider10)实现了分割线各种属性的展示。
 
@@ -2005,7 +2150,7 @@ struct TabsDivider1 {
         color: this.dividerColor,
         startMargin: this.startMargin,
         endMargin: this.endMargin
-      }) // 设置分割线样式
+      })
 
       Button('常规Divider').width('100%').margin({ bottom: '12vp' })
         .onClick(() => {
@@ -2059,12 +2204,15 @@ struct TabsDivider1 {
 ```
 
 
-![](assets/Tabs/file-2026070810321180a8376b.gif)
+![](assets/Tabs/file-20260514164009755-8.gif)
 
 
 
 
-#### 示例5（设置TabBar渐隐）
+### 示例5（设置TabBar渐隐）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例通过[fadingEdge](#fadingedge10)实现了切换子页签渐隐和不渐隐。
 
@@ -2128,7 +2276,7 @@ struct TabsOpaque {
       .onChange((index: number) => {
         console.info(index.toString());
       })
-      .fadingEdge(this.selfFadingFade) // 设置页签超过容器宽度时是否渐隐消失
+      .fadingEdge(this.selfFadingFade)
       .height('30%')
       .width('100%')
 
@@ -2176,12 +2324,15 @@ struct TabsOpaque {
 ```
 
 
-![](assets/Tabs/file-202607081032119be9b361.gif)
+![](assets/Tabs/file-20260514164009755-9.gif)
 
 
 
 
-#### 示例6（设置TabBar叠加在TabContent内容上）
+### 示例6（设置TabBar叠加在TabContent内容上）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例通过[barOverlap](#baroverlap10)实现了TabBar是否背后变模糊并叠加在TabContent之上。
 
@@ -2223,7 +2374,7 @@ struct barHeightTest {
       }
       .scrollable(false)
       .height('60%')
-      .barOverlap(this.barOverlap) // 设置TabBar是否背后变模糊并叠加在TabContent之上
+      .barOverlap(this.barOverlap)
     }
     .height(500)
     .padding({ top: '24vp', left: '24vp', right: '24vp' })
@@ -2232,12 +2383,15 @@ struct barHeightTest {
 ```
 
 
-![](assets/Tabs/file-202607081032124fe33871.gif)
+![](assets/Tabs/file-2026070810321180a8376b.gif)
 
 
 
 
-#### 示例7（设置TabBar栅格化可见区域）
+### 示例7（设置TabBar栅格化可见区域）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例通过[barGridAlign](#bargridalign10)实现了以栅格化方式设置TabBar的可见区域。
 
@@ -2326,7 +2480,7 @@ struct TabsExample5 {
       .width('350vp')
       .animationDuration(300)
       .height('60%')
-      .barGridAlign({ sm: this.sm, margin: this.gridMargin, gutter: this.gridGutter }) // 以栅格化方式设置TabBar的可见区域
+      .barGridAlign({ sm: this.sm, margin: this.gridMargin, gutter: this.gridGutter })
       .backgroundColor(0xf1f3f5)
       .onTabBarClick((index: number) => {
         this.clickedContent += 'now index ' + index + ' is clicked\n';
@@ -2341,12 +2495,15 @@ struct TabsExample5 {
 ```
 
 
-![](assets/Tabs/file-20260708103212661ac08d.gif)
+![](assets/Tabs/file-202607081032119be9b361.gif)
 
 
 
 
-#### 示例8（自定义Tabs页面切换动画）
+### 示例8（自定义Tabs页面切换动画）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例通过[customContentTransition](#customcontenttransition11)实现了自定义Tabs页面的切换动画。
 
@@ -2428,19 +2585,22 @@ struct TabsCustomAnimationExample {
       .backgroundColor(0xf1f3f5)
       .width('100%')
       .height(500)
-      .customContentTransition(this.customContentTransition) // 设置自定义Tabs页面切换动画
+      .customContentTransition(this.customContentTransition)
     }
   }
 }
 ```
 
 
-![](assets/Tabs/file-20260708103212c78d07ec.gif)
+![](assets/Tabs/file-202607081032124fe33871.gif)
 
 
 
 
-#### 示例9（页面切换拦截）
+### 示例9（页面切换拦截）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例通过[onContentWillChange](#oncontentwillchange12)实现了自定义页面手势滑动切换拦截。
 
@@ -2509,7 +2669,6 @@ struct TabsExample {
       .backgroundColor('#F1F3F5')
       .scrollable(true)
       .onContentWillChange((currentIndex, comingIndex) => {
-        // 拦截页面切换：当目标页面索引为2时返回false阻止切换，否则返回true允许切换
         if (comingIndex == 2) {
           return false;
         }
@@ -2532,12 +2691,15 @@ struct TabsExample {
 ```
 
 
-![](assets/Tabs/file-20260708103213117d4503.gif)
+![](assets/Tabs/file-20260708103212661ac08d.gif)
 
 
 
 
-#### 示例10（自定义TabBar切换动画）
+### 示例10（自定义TabBar切换动画）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例通过[onChange](#onchange)、[onAnimationStart](#onanimationstart11)、[onAnimationEnd](#onanimationend11)、[onGestureSwipe](#ongestureswipe11)等接口实现了自定义TabBar的切换动画。
 
@@ -2635,11 +2797,10 @@ struct TabsExample {
       .backgroundColor('#F1F3F5')
       .animationDuration(this.animationDuration)
       .onChange((index: number) => {
-        // currentIndex控制TabContent显示页签内容
-        this.currentIndex = index;
+        this.currentIndex = index; // 监听索引index的变化，实现页签内容的切换。
       })
       .onAnimationStart((index: number, targetIndex: number, event: TabsAnimationEvent) => {
-        // 切换动画开始时触发：更新currentIndex为目标索引，启动下划线动画跟随页面滑动
+        // 切换动画开始时触发该回调。下划线跟着页面一起滑动，同时宽度渐变。
         this.currentIndex = targetIndex;
         this.startAnimateTo(this.animationDuration, this.textInfos[targetIndex][0], this.textInfos[targetIndex][1]);
       })
@@ -2708,12 +2869,15 @@ struct TabsExample {
 ```
 
 
-![](assets/Tabs/file-202607081032136cc96d49.gif)
+![](assets/Tabs/file-20260708103212c78d07ec.gif)
 
 
 
 
-#### 示例11（预加载子节点）
+### 示例11（预加载子节点）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例通过[preloadItems](#preloaditems12)接口实现了预加载指定子节点。
 
@@ -2792,7 +2956,10 @@ struct MyComponent {
 
 
 
-#### 示例12（设置TabBar平移距离和不透明度）
+### 示例12（设置TabBar平移距离和不透明度）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例通过[setTabBarTranslate](#settabbartranslate13)、[setTabBarOpacity](#settabbaropacity13)等接口设置了TabBar的平移距离和不透明度。
 
@@ -2807,12 +2974,12 @@ struct TabsExample {
     Column() {
       Button('设置TabBar的平移距离').margin({ top: 20 })
         .onClick(() => {
-          this.controller.setTabBarTranslate({ x: -20, y: -20 }); // 设置TabBar向左和向上平移20vp
+          this.controller.setTabBarTranslate({ x: -20, y: -20 });
         })
 
       Button('设置TabBar的透明度').margin({ top: 20 })
         .onClick(() => {
-          this.controller.setTabBarOpacity(0.5); // 设置TabBar的不透明度为0.5（半透明）
+          this.controller.setTabBarOpacity(0.5);
         })
 
       Tabs({ barPosition: BarPosition.End, controller: this.controller }) {
@@ -2843,12 +3010,15 @@ struct TabsExample {
 ```
 
 
-![](assets/Tabs/file-20260708103213a1be6271.gif)
+![](assets/Tabs/file-20260708103213117d4503.gif)
 
 
 
 
-#### 示例13（页面懒加载和释放）
+### 示例13（页面懒加载和释放）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例通过使用自定义[TabBar](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent#tabbar)与[Swiper](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-swiper)配合[LazyForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-rendering-control-lazyforeach)实现页面懒加载和释放。
 
@@ -2955,12 +3125,15 @@ struct TabsSwiperExample {
 ```
 
 
-![](assets/Tabs/file-20260708103214557dd08b.png)
+![](assets/Tabs/file-202607081032136cc96d49.gif)
 
 
 
 
-#### 示例14（设置翻页动效）
+### 示例14（设置翻页动效）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例通过设置[animationMode](#animationmode12)属性，实现了翻页的动效。
 
@@ -3033,12 +3206,15 @@ struct TabsExample {
 ```
 
 
-![](assets/Tabs/file-202607081032146059545e.gif)
+![](assets/Tabs/file-20260708103213a1be6271.gif)
 
 
 
 
-#### 示例15（页签超出TabBar区域显示）
+### 示例15（页签超出TabBar区域显示）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过使用[TabsOptions](#tabsoptions15)中的barModifier设置tabBar的clip属性实现页签超出tabBar区域显示效果。
 
@@ -3129,12 +3305,15 @@ struct TabsBarModifierExample {
 ```
 
 
-![](assets/Tabs/file-20260708103214b25f7cf8.gif)
+![](assets/Tabs/file-20260708103214557dd08b.png)
 
 
 
 
-#### 示例16（页签对齐布局）
+### 示例16（页签对齐布局）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例通过使用[TabsOptions](#tabsoptions15)中的barModifier设置tabBar的align属性实现页签对齐布局效果。
 
@@ -3238,12 +3417,15 @@ struct TabsBarModifierExample {
 ```
 
 
-![](assets/Tabs/file-20260708103214dbe829b2.gif)
+![](assets/Tabs/file-202607081032146059545e.gif)
 
 
 
 
-#### 示例17（Tabs与TabBar同步切换）
+### 示例17（Tabs与TabBar同步切换）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[onSelected](#onselected18)接口，实现了Tabs与TabBar的同步切换。
 
@@ -3320,12 +3502,15 @@ struct TabsExample {
 ```
 
 
-![](assets/Tabs/file-20260708103215555c1d97.gif)
+![](assets/Tabs/file-20260708103214b25f7cf8.gif)
 
 
 
 
-#### 示例18（释放Tabs子组件）
+### 示例18（释放Tabs子组件）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过设置[cachedMaxCount](#cachedmaxcount19)属性，实现了Tabs子组件的释放。
 
@@ -3356,7 +3541,7 @@ struct TabsExample {
     .width(360)
     .height(296)
     .backgroundColor('#F1F3F5')
-    .cachedMaxCount(1, TabsCacheMode.CACHE_BOTH_SIDE) // 设置最多缓存3个子组件（当前页及两侧各1个）
+    .cachedMaxCount(1, TabsCacheMode.CACHE_BOTH_SIDE)
   }
 }
 
@@ -3383,7 +3568,10 @@ struct MyComponent {
 
 
 
-#### 示例19（设置TabBar背景模糊效果）
+### 示例19（设置TabBar背景模糊效果）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例分别通过[barBackgroundBlurStyle](#barbackgroundblurstyle18)和[barBackgroundEffect](#barbackgroundeffect18)设置TabBar页签栏的背景模糊样式和效果。
 
@@ -3417,7 +3605,7 @@ struct TabsExample {
           }.tabBar('pink')
         }
         .barBackgroundBlurStyle(BlurStyle.COMPONENT_THICK,
-          { colorMode: ThemeColorMode.LIGHT, adaptiveColor: AdaptiveColor.DEFAULT, scale: 1.0 }) // 设置组件厚模糊样式，浅色主题，默认自适应颜色，缩放比例1.0
+          { colorMode: ThemeColorMode.LIGHT, adaptiveColor: AdaptiveColor.DEFAULT, scale: 1.0 })
       }
       .width(300)
       .height(300)
@@ -3443,7 +3631,7 @@ struct TabsExample {
             Column().width('100%').height('100%').backgroundColor('#E67C92')
           }.tabBar('pink')
         }
-        .barBackgroundEffect({ radius: 20, brightness: 0.6, saturation: 15 }) // 设置模糊半径20，亮度0.6，饱和度15
+        .barBackgroundEffect({ radius: 20, brightness: 0.6, saturation: 15 })
       }
       .width(300)
       .height(300)
@@ -3454,12 +3642,15 @@ struct TabsExample {
 ```
 
 
-![](assets/Tabs/file-20260708103215958747ae.gif)
+![](assets/Tabs/file-20260708103214dbe829b2.gif)
 
 
 
 
-#### 示例20（设置边缘滑动效果）
+### 示例20（设置边缘滑动效果）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[edgeEffect](#edgeeffect12)实现了不同的边缘回弹效果。
 
@@ -3493,21 +3684,21 @@ struct TabsExample {
       .height(296)
       .margin({ top: 52 })
       .backgroundColor('#F1F3F5')
-      .edgeEffect(this.edgeEffect) // 设置边缘滑动效果
+      .edgeEffect(this.edgeEffect)
 
       Button('EdgeEffect.Spring').width('50%').margin({ top: 20 })
         .onClick(() => {
-          this.edgeEffect = EdgeEffect.Spring; // 设置为弹簧回弹效果
+          this.edgeEffect = EdgeEffect.Spring;
         })
 
       Button('EdgeEffect.Fade').width('50%').margin({ top: 20 })
         .onClick(() => {
-          this.edgeEffect = EdgeEffect.Fade; // 设置为渐隐效果
+          this.edgeEffect = EdgeEffect.Fade;
         })
 
       Button('EdgeEffect.None').width('50%').margin({ top: 20 })
         .onClick(() => {
-          this.edgeEffect = EdgeEffect.None; // 设置为无边缘效果
+          this.edgeEffect = EdgeEffect.None;
         })
     }.width('100%')
   }
@@ -3515,12 +3706,15 @@ struct TabsExample {
 ```
 
 
-![](assets/Tabs/file-2026070810321598754449.gif)
+![](assets/Tabs/file-20260708103215555c1d97.gif)
 
 
 
 
-#### 示例21（Tabs设置翻页动画曲线）
+### 示例21（Tabs设置翻页动画曲线）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示了如何通过[animationCurve](#animationcurve20)接口设置Tabs翻页动画曲线，并结合animationDuration设置翻页动画的时长。
 
@@ -3571,8 +3765,8 @@ struct TabsExample {
       .backgroundColor(0xf1f3f5)
       .width('100%')
       .height(500)
-      .animationCurve(this.curves[this.curveIndex]) // 设置翻页动画曲线
-      .animationDuration(this.duration) // 设置翻页动画时长
+      .animationCurve(this.curves[this.curveIndex])
+      .animationDuration(this.duration)
 
       Column({ space: 2 }) {
         Text('Curve:' + this.curveNames[this.curveIndex])
@@ -3611,12 +3805,15 @@ struct TabsExample {
 ```
 
 
-![](assets/Tabs/file-202607081032161c3dc759.gif)
+![](assets/Tabs/file-20260708103215958747ae.gif)
 
 
 
 
-#### 示例22（监听Tabs页面滑动事件）
+### 示例22（监听Tabs页面滑动事件）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示了如何通过[onContentDidScroll](#oncontentdidscroll23)接口设置Tabs滑动时的回调。
 
@@ -3716,12 +3913,15 @@ struct TabsDidScrollExample {
 ```
 
 
-![](assets/Tabs/file-202607081032161dcaac6c.gif)
+![](assets/Tabs/file-2026070810321598754449.gif)
 
 
 
 
-#### 示例23（Tabs嵌套滚动）
+### 示例23（Tabs嵌套滚动）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示了如何通过[nestedScroll](#nestedscroll24)接口设置Tabs嵌套滚动效果。
 
@@ -3753,8 +3953,8 @@ struct TabsExample {
                 Column().width('100%').height('100%').backgroundColor(Color.Pink)
               }.tabBar(SubTabBarStyle.of('子页c'))
             }
-            .nestedScroll(TabsNestedScrollMode.SELF_FIRST) // 设置Tabs自身先滚动，滚动到边缘后父组件滚动
-          }.tabBar(SubTabBarStyle.of('首页1'))
+            .nestedScroll(TabsNestedScrollMode.SELF_FIRST)
+          }.tabBar(SubTabBarStyle.of("首页1"))
 
 
           TabContent() {
@@ -3788,12 +3988,15 @@ struct TabsExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/OrhBFRU1ToiME5ZRD-JcaA/zh-cn_image_0000002709646717.gif?HW-CC-KV=V1&HW-CC-Date=20260818T063503Z&HW-CC-Expire=86400&HW-CC-Sign=D2E23E032D6F62F1FFA4476FF1403E61D847B9D4A4BC9AED8DCF90FAC183FCC0)
+![](assets/Tabs/file-202607081032161c3dc759.gif)
 
 
 
 
-#### 示例24（TabBar悬浮样式）
+### 示例24（TabBar悬浮样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例展示了如何通过[barFloatingStyle](#barfloatingstyle)接口设置TabBar的悬浮样式和背板沉浸式材质。
 
@@ -3844,4 +4047,4 @@ struct TabsFloatingStyleExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/pbcqAnycTnSjAnCweOEBJA/zh-cn_image_0000002679807046.gif?HW-CC-KV=V1&HW-CC-Date=20260818T063503Z&HW-CC-Expire=86400&HW-CC-Sign=CB4E77E2368641423034B55A5C8114688909ED8F690D09D833BF97F65D62B877)
+![](assets/Tabs/file-202607081032161dcaac6c.gif)

@@ -1,16 +1,16 @@
 # Native与ArkTS对象绑定
 
-更新时间：2026-03-23 08:10:50
+更新时间：2026-08-21 10:52:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-object-wrap
 
-#### 场景介绍
+## 场景介绍
 
 通过napi_wrap将ArkTS对象与Native的C++对象绑定，后续操作时再通过napi_unwrap将ArkTS对象绑定的C++对象取出，并对其进行操作。
  
   
 
-#### 使用示例
+## 使用示例
 1. 接口声明、编译配置以及模块注册
 
   **接口声明**
@@ -181,7 +181,7 @@ napi_value MyObject::New(napi_env env, napi_callback_info info)
         MyObject* obj = new MyObject(value);
 
         obj->env_ = env;
-        // 通过napi_wrap将ArkTS对象jsThis)与C++对象obj绑定
+        // 通过napi_wrap将ArkTS对象jsThis与C++对象obj绑定
         status = napi_wrap(env,
                            jsThis,
                            reinterpret_cast<void*>(obj),

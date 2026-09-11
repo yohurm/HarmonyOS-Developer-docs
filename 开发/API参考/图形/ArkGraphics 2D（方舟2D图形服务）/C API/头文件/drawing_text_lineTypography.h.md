@@ -1,15 +1,16 @@
 # drawing_text_lineTypography.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-text-linetypography-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-提供排版行相关的接口，比如获取指定位置处开始可以排版的字符个数等函数。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+提供排版行相关的接口，如获取指定位置处开始可以排版的字符个数等函数。
  
 **引用文件：** <native_drawing/drawing_text_lineTypography.h>
  
@@ -23,35 +24,40 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
-| OH_Drawing_LineTypography* OH_Drawing_CreateLineTypography(OH_Drawing_TypographyCreate* handler) | 创建一个排版行对象OH_Drawing_LineTypography的指针，排版行对象保存着文本内容以及样式的载体，可以用于计算单行排版信息。 |
+| OH_Drawing_LineTypography* OH_Drawing_CreateLineTypography(OH_Drawing_TypographyCreate* handler) | 创建一个排版行对象OH_Drawing_LineTypography的指针，排版行对象是保存文本内容以及样式的载体，可以用于计算单行排版信息。 |
 | void OH_Drawing_DestroyLineTypography(OH_Drawing_LineTypography* lineTypography) | 释放排版行对象OH_Drawing_LineTypography占用的内存。 |
-| size_t OH_Drawing_LineTypographyGetLineBreak(OH_Drawing_LineTypography* lineTypography,size_t startIndex, double width) | 计算在限定排版宽度的情况下，从指定位置处开始可以排版的字符个数。 |
-| OH_Drawing_TextLine* OH_Drawing_LineTypographyCreateLine(OH_Drawing_LineTypography* lineTypography,size_t startIndex, size_t count) | 根据指定区间文本内容创建一个指向文本行对象OH_Drawing_TextLine的指针。 |
+| size_t OH_Drawing_LineTypographyGetLineBreak(OH_Drawing_LineTypography* lineTypography, size_t startIndex, double width) | 计算在限定排版宽度的情况下，从指定位置处开始可以排版的字符个数。 |
+| OH_Drawing_TextLine* OH_Drawing_LineTypographyCreateLine(OH_Drawing_LineTypography* lineTypography, size_t startIndex, size_t count) | 根据指定区间文本内容创建一个指向文本行对象OH_Drawing_TextLine的指针。 |
  
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Drawing_CreateLineTypography()
+### OH_Drawing_CreateLineTypography()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_LineTypography* OH_Drawing_CreateLineTypography(OH_Drawing_TypographyCreate* handler)
@@ -59,7 +65,7 @@ OH_Drawing_LineTypography* OH_Drawing_CreateLineTypography(OH_Drawing_Typography
  
 **描述**
  
-创建一个排版行对象[OH_Drawing_LineTypography](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-oh-drawing-linetypography)的指针，排版行对象保存着文本内容以及样式的载体，可以用于计算单行排版信息。
+创建一个排版行对象[OH_Drawing_LineTypography](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-oh-drawing-linetypography)的指针，排版行对象是保存文本内容以及样式的载体，可以用于计算单行排版信息。
  
 **系统能力：** SystemCapability.Graphic.Graphic2D.NativeDrawing
  
@@ -67,6 +73,7 @@ OH_Drawing_LineTypography* OH_Drawing_CreateLineTypography(OH_Drawing_Typography
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_TypographyCreate* handler | 指向OH_Drawing_TypographyCreate对象的指针，由OH_Drawing_CreateTypographyHandler获取。 |
@@ -74,6 +81,7 @@ OH_Drawing_LineTypography* OH_Drawing_CreateLineTypography(OH_Drawing_Typography
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_LineTypography* | 返回一个指向排版行对象OH_Drawing_LineTypography的指针。 |
@@ -81,9 +89,10 @@ OH_Drawing_LineTypography* OH_Drawing_CreateLineTypography(OH_Drawing_Typography
  
   
 
-#### OH_Drawing_DestroyLineTypography()
+### OH_Drawing_DestroyLineTypography()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_DestroyLineTypography(OH_Drawing_LineTypography* lineTypography)
@@ -99,6 +108,7 @@ void OH_Drawing_DestroyLineTypography(OH_Drawing_LineTypography* lineTypography)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_LineTypography* lineTypography | 指向排版行对象OH_Drawing_LineTypography的指针，由OH_Drawing_CreateLineTypography获取。 |
@@ -106,12 +116,13 @@ void OH_Drawing_DestroyLineTypography(OH_Drawing_LineTypography* lineTypography)
  
   
 
-#### OH_Drawing_LineTypographyGetLineBreak()
+### OH_Drawing_LineTypographyGetLineBreak()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-size_t OH_Drawing_LineTypographyGetLineBreak(OH_Drawing_LineTypography* lineTypography,size_t startIndex, double width)
+size_t OH_Drawing_LineTypographyGetLineBreak(OH_Drawing_LineTypography* lineTypography, size_t startIndex, double width)
 ```
  
 **描述**
@@ -124,15 +135,17 @@ size_t OH_Drawing_LineTypographyGetLineBreak(OH_Drawing_LineTypography* lineTypo
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_LineTypography* lineTypography | 指向排版行对象OH_Drawing_LineTypography的指针，由OH_Drawing_CreateLineTypography获取。 |
-| size_t startIndex | 开始计算排版的起始位置（包括起始位置）。取值范围需要为[0,文本字符总数）的整数。 |
+| size_t startIndex | 开始计算排版的起始位置（包括起始位置）。取值范围为[0, 文本字符总数）的整数。 |
 | double width | 换行宽度，大于0的浮点数，单位为物理像素px。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | size_t | 返回在限定排版宽度的情况下，从指定位置处开始可以排版的字符总数，取值为整数。 |
@@ -140,12 +153,13 @@ size_t OH_Drawing_LineTypographyGetLineBreak(OH_Drawing_LineTypography* lineTypo
  
   
 
-#### OH_Drawing_LineTypographyCreateLine()
+### OH_Drawing_LineTypographyCreateLine()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-OH_Drawing_TextLine* OH_Drawing_LineTypographyCreateLine(OH_Drawing_LineTypography* lineTypography,size_t startIndex, size_t count)
+OH_Drawing_TextLine* OH_Drawing_LineTypographyCreateLine(OH_Drawing_LineTypography* lineTypography, size_t startIndex, size_t count)
 ```
  
 **描述**
@@ -158,15 +172,17 @@ OH_Drawing_TextLine* OH_Drawing_LineTypographyCreateLine(OH_Drawing_LineTypograp
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_LineTypography* lineTypography | 指向排版行对象OH_Drawing_LineTypography的指针，由OH_Drawing_CreateLineTypography获取。 |
 | size_t startIndex | 表示计算排版的起始位置，整数，取值范围为[0, 文本字符总数)。 |
-| size_t count | 表示从指定排版起始位置开始进行排版的字符个数，取值为[0,文本字符总数)的整数，startIndex和count之和不能大于文本字符总数。 可以先使用OH_Drawing_LineTypographyGetLineBreak获得合理的可用于进行排版的字符总数。如果该值设置为0，则返回自startIndex开始到文本末尾的内容。 |
+| size_t count | 表示从指定排版起始位置开始进行排版的字符个数，取值为[0, 文本字符总数)的整数，startIndex和count之和不能大于文本字符总数。 可以先使用OH_Drawing_LineTypographyGetLineBreak获得合理的可用于进行排版的字符总数。如果该值设置为0，则返回自startIndex开始到文本末尾的内容。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_TextLine* | 返回一个指向文本行对象OH_Drawing_TextLine的指针。 |

@@ -1,9 +1,9 @@
 # Want
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-ability-want
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Want是对象间信息传递的载体, 可以用于应用组件间的信息传递。 Want的使用场景之一是作为[startAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext#startability)的参数, 其包含了指定的启动目标, 以及启动时需携带的相关数据, 如bundleName和abilityName字段分别指明目标Ability所在应用的Bundle名称以及对应包内的Ability名称。当Ability A需要启动Ability B并传入一些数据时, 可使用Want作为载体将这些数据传递给Ability B。
 
@@ -12,9 +12,10 @@ Want是对象间信息传递的载体, 可以用于应用组件间的信息传�
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import Want from '@ohos.app.ability.Want';
@@ -22,11 +23,13 @@ import Want from '@ohos.app.ability.Want';
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.Ability.AbilityBase
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -43,7 +46,7 @@ import Want from '@ohos.app.ability.Want';
 
 **示例：**
 
- - 基础用法(在UIAbility对象中调用，其中示例中的context为UIAbility的上下文对象)
+ - 基础用法（在UIAbility对象中调用，其中示例中的context为UIAbility的上下文对象）
 
   
 ```text
@@ -68,7 +71,7 @@ class MyAbility extends UIAbility{
 }
 ```
 
- - 传递FD(文件描述符)数据(在UIAbility对象中调用，其中示例中的context为UIAbility的上下文对象)
+ - 传递FD（文件描述符）数据（在UIAbility对象中调用，其中示例中的context为UIAbility的上下文对象）
 
   
 ```json

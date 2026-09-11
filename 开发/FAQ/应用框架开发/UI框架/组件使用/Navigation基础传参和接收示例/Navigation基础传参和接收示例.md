@@ -102,11 +102,11 @@ this.pageInfo.pop(this.params, false);
 
   
 ```text
-// 自定义参数标记
+<em>// 自定义参数标记</em>
 export class NavParams {
-  data: string; // 传递数据
-  sourcePage: string; // 页面来源标记
-  sourceMethod: string; // 页面传递方式
+  data: string; <em>// 传递数据</em>
+  sourcePage: string; <em>// 页面来源标记</em>
+  sourceMethod: string; <em>// 页面传递方式</em>
   constructor(data: string, sourcePage: string, sourceMethod: string) {
     this.data = data;
     this.sourcePage = sourcePage;
@@ -157,11 +157,11 @@ aboutToDisappear(): void {
 场景一、二、三完整示例参考如下：
  
 ```text
-// 自定义参数标记
+<em>// 自定义参数标记</em>
 export class NavParams {
-  data: string; // 传递数据
-  sourcePage: string; // 页面来源标记
-  sourceMethod: string; // 页面传递方式
+  data: string;<em> // 传递数据</em>
+  sourcePage: string; <em>// 页面来源标记</em>
+  sourceMethod: string;<em> // 页面传递方式</em>
   constructor(data: string, sourcePage: string, sourceMethod: string) {
     this.data = data;
     this.sourcePage = sourcePage;
@@ -498,20 +498,20 @@ Q：路由传参时，使用instanceof做类型判断存在安全隐患，有哪
 A：使用泛型方式判断：
  
 ```text
-// 定义参数类型
+<em>// 定义参数类型</em>
 export class NavParam {
   data: string;
   constructor(data: string) {
     this.data = data;
   }
 }
-// 使用泛型来构建buildFunction
+<em>// 使用泛型来构建buildFunction</em>
 @Builder
 export function PageBuilder<T extends NavParam>(name: string, param: T) {
   Page();
 }
-// ...
-// 路由参数处理
+<em>// ...</em>
+<em>// 路由参数处理</em>
 const param = this.pageInfo.getParamByIndex(this.pageInfo.getAllPathName().length - 1) as NavParam;
-// ...
+<em>// ...</em>
 ```

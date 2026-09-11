@@ -1,9 +1,9 @@
 # @ohos.app.ability.CompletionHandler (拉起应用结果的操作类)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-completionhandler
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 CompletionHandler作为[StartOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-startoptions#startoptions)和[OpenLinkOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-openlinkoptions#openlinkoptions)的可选参数，用于处理拉起应用请求的结果。
  
@@ -12,9 +12,10 @@ CompletionHandler作为[StartOptions](https://developer.huawei.com/consumer/cn/d
 
   
 
-#### 约束限制
+## 约束限制
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 当前支持使用该模块的接口包括：
  
@@ -25,9 +26,10 @@ CompletionHandler作为[StartOptions](https://developer.huawei.com/consumer/cn/d
  
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { CompletionHandler } from '@kit.AbilityKit';
@@ -35,17 +37,19 @@ import { CompletionHandler } from '@kit.AbilityKit';
  
   
 
-#### CompletionHandler
+## CompletionHandler
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 CompletionHandler提供了[onRequestSuccess](#onrequestsuccess)和[onRequestFailure](#onrequestfailure)两个回调函数，分别处理拉起应用成功和失败时的结果。
  
   
 
-#### onRequestSuccess
+### onRequestSuccess
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onRequestSuccess(elementName: ElementName, message: string): void
  
@@ -57,6 +61,7 @@ onRequestSuccess(elementName: ElementName, message: string): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | elementName | ElementName | 是 | ElementName信息用于标识被拉起应用。通常，ElementName仅包含abilityName和bundleName。moduleName和deviceId信息是否存在取决于调用方是否传入。shortName和uri为空。 |
@@ -69,9 +74,10 @@ onRequestSuccess(elementName: ElementName, message: string): void
  
   
 
-#### onRequestFailure
+### onRequestFailure
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onRequestFailure(elementName: ElementName, message: string): void
  
@@ -83,6 +89,7 @@ onRequestFailure(elementName: ElementName, message: string): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | elementName | ElementName | 是 | ElementName信息用于标识被拉起应用。 - 通常，ElementName仅包含abilityName和bundleName。moduleName和deviceId信息是否存在取决于调用方是否传入。shortName和uri为空。 - 隐式启动失败时，无法获取ElementName信息。 |
@@ -95,7 +102,10 @@ onRequestFailure(elementName: ElementName, message: string): void
  
   
 
-#### CompletionHandler使用
+### CompletionHandler使用
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { UIAbility, Want, StartOptions, CompletionHandler, bundleManager } from '@kit.AbilityKit';

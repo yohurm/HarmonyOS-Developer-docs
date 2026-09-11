@@ -1,10 +1,10 @@
 # SetSysWorkSpace
 
-更新时间：2026-05-26 06:48:54
+更新时间：2026-08-18 12:49:55
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-setsysworkspace
 
-#### 功能说明
+## 功能说明
 
 框架需要使用的workspace称之为系统workspace。[Matmul](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-matmul-usage-description)等高阶API需要系统workspace，所以在使用该类API时，需要调用该接口，设置系统workspace的指针。
  
@@ -28,7 +28,7 @@ static ge::graphStatus TilingFunc(gert::TilingContext* context)
  
   
 
-#### 函数原型
+## 函数原型
 
 ```text
 __aicore__ inline void SetSysWorkSpace(GM_ADDR workspace)
@@ -36,10 +36,11 @@ __aicore__ inline void SetSysWorkSpace(GM_ADDR workspace)
  
   
 
-#### 参数说明
+## 参数说明
 
 **表1** 接口参数说明
   
+
 | 参数名称 | 输入/输出 | 描述 |
 | --- | --- | --- |
 | workspace | 输入 | 核函数传入的workspace的指针，包括系统workspace和开发者使用的workspace。 |
@@ -47,27 +48,29 @@ __aicore__ inline void SetSysWorkSpace(GM_ADDR workspace)
  
   
 
-#### 支持的型号
+## 支持的型号
 
 Kirin9020系列处理器
+ 
+Kirin9030系列处理器
  
 KirinX90系列处理器
  
   
 
-#### 注意事项
+## 注意事项
 
 无
  
   
 
-#### 返回值
+## 返回值
 
 无
  
   
 
-#### 调用示例
+## 调用示例
 
 ```text
 template<typename aType, typename bType, typename cType, typename biasType> 

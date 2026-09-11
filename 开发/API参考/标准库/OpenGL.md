@@ -1,13 +1,17 @@
 # OpenGL
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/opengl
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [OpenGL](https://www.khronos.org/opengl/)是一种跨平台的图形API，用于为3D图形处理硬件指定标准的软件接口。HarmonyOS现已支持OpenGL 4.2。
 
 
-#### 支持的能力及设备
+## 支持的能力及设备
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持能力：
 
@@ -21,9 +25,12 @@
 
 
 
-#### 查询当前设备是否支持OpenGL
+## 查询当前设备是否支持OpenGL
 
-从API version 22开始，支持使用OH_Graphics_QueryGL接口判断设备是否支持使用OpenGL功能以及是否需要回退使用OpenGL ES 。
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+从API version 22开始，支持使用OH_Graphics_QueryGL接口判断设备是否支持使用OpenGL功能以及是否需要回退使用OpenGL ES。
 
 **设备行为差异：** OH_Graphics_QueryGL接口在PC、Tablet设备上可正常调用，在其他设备上返回为空。
 
@@ -57,13 +64,19 @@ static napi_value QueryGL(napi_env env, napi_callback_info info)
 
 
 
-#### 标准库中导出的符号列表
+## 标准库中导出的符号列表
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [native api中导出的OpenGL符号列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/opengl-symbol)
 
 
 
-#### OpenGL扩展接口及示例
+## OpenGL扩展接口及示例
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 OpenGL扩展接口及使用，可参考[OpenGL ES扩展接口](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/opengles#opengl-es扩展接口)。
 
@@ -71,7 +84,10 @@ OpenGL扩展接口及使用，可参考[OpenGL ES扩展接口](https://developer
 
 
 
-#### 引入OpenGL能力
+## 引入OpenGL能力
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 如果开发者需要使用OpenGL的相关能力，需要添加相关动态链接库和头文件。
 
@@ -110,7 +126,10 @@ libEGL.so
 
 
 
-#### 相关参考
+## 相关参考
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 针对OpenGL的使用和相关开发，需要同步了解NDK的开发过程，以及XComponent组件等的使用。具体可参考：
 

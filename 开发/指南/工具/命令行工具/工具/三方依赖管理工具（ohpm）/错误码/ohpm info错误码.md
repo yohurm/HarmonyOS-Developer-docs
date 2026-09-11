@@ -1,10 +1,10 @@
 # ohpm info错误码
 
-更新时间：2026-01-15 06:51:04
+更新时间：2026-08-29 09:41:34
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-info-errorcode
 
-#### 00639001 获取包失败
+## 00639001 获取包失败
 
 **错误信息**
  
@@ -24,7 +24,7 @@ Package Not Found Error.
  
  
 
-#### 00639002 包名称为空
+## 00639002 包名称为空
 
 **错误信息**
  
@@ -44,7 +44,7 @@ Package Name Is Empty Error.
  
  
 
-#### 00639003 配置Field不支持的字段
+## 00639003 配置Field不支持的字段
 
 **错误信息**
  
@@ -60,11 +60,11 @@ UnSupport Field Error.
  
 **处理步骤**
  
-检查和输入field支持的字段，如“keywords”、“dependencies”、"latest"等。
+检查并输入field支持的字段，如“keywords”、“dependencies”、"latest"等。
  
  
 
-#### 00639004 PageNum页码错误
+## 00639004 PageNum页码错误
 
 **错误信息**
  
@@ -80,11 +80,11 @@ Invalid PageNum Error.
  
 **处理步骤**
  
-检查页码范围，确保其在[1, 10000]有效范围内。
+检查页码范围，确保其在[1,10000]有效范围内。
  
  
 
-#### 00639005 PageSize无效错误
+## 00639005 PageSize无效错误
 
 **错误信息**
  
@@ -100,4 +100,4 @@ Invalid PageSize Error.
  
 **处理步骤**
  
-检查PageSize值，确保其在[1, 500]有效范围内。
+检查PageSize值，确保其在[1,500]有效范围内。

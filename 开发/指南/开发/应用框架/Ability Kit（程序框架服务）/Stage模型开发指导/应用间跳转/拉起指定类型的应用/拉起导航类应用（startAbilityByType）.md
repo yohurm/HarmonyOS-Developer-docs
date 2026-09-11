@@ -1,13 +1,13 @@
 # 拉起导航类应用（startAbilityByType）
 
-更新时间：2026-06-12 06:54:11
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/start-navigation-apps
 
 本章节介绍如何拉起导航类应用扩展面板。
 
 
-#### 导航类应用扩展面板参数说明
+## 导航类应用扩展面板参数说明
 
 startAbilityByType接口中type字段为navigation，支持路线规划、导航、位置搜索三种意图场景，对应的wantParam参数如下：
 
@@ -18,48 +18,76 @@ startAbilityByType接口中type字段为navigation，支持路线规划、导航
  - 路线规划场景
 
 | 参数名 | 类型 | 必填 | 说明 |
+
 | --- | --- | --- | --- |
+
 | sceneType | number | 否 | 意图场景，表明本次请求对应的操作意图。默认为1，路线规划场景填1或不填。 |
+
 | originName | string | 否 | 起点名称。 |
+
 | originLatitude | number | 否 | 起点纬度。 |
+
 | originLongitude | number | 否 | 起点经度。 |
+
 | originPoiIds | Record<number, string> | 否 | 起点POI ID列表，当前仅支持传入花瓣地图、高德地图、百度地图的POI ID。 |
+
 | destinationName | string | 否 | 终点名称。 |
+
 | destinationLatitude | number | 是 | 终点纬度。 |
+
 | destinationLongitude | number | 是 | 终点经度。 |
+
 | destinationPoiIds | Record<number, string> | 否 | 终点POI ID列表，当前仅支持传入花瓣地图、高德地图、百度地图的POI ID。 |
+
 | vehicleType | number | 否 | 交通出行工具，取值：0-驾车，1-步行，2-骑行，3-公交。 |
  - 导航场景
 
 | 参数名 | 类型 | 必填 | 说明 |
+
 | --- | --- | --- | --- |
+
 | sceneType | number | 是 | 意图场景，表明本次请求对应的操作意图。导航场景填2。 |
+
 | destinationName | string | 否 | 终点名称。 |
+
 | destinationLatitude | number | 是 | 终点纬度。 |
+
 | destinationLongitude | number | 是 | 终点经度。 |
+
 | destinationPoiIds | Record<number, string> | 否 | 终点POI ID列表，当前仅支持传入花瓣地图、高德地图、百度地图的POI ID。 |
+
 | vehicleType | number | 否 | 交通出行工具，取值：0-驾车，1-步行，2-骑行，3-公交。 |
  - 位置搜索场景
 
 | 参数名 | 类型 | 必填 | 说明 |
+
 | --- | --- | --- | --- |
+
 | sceneType | number | 是 | 意图场景，表明本次请求对应的操作意图。位置搜索场景填3。 |
+
 | destinationName | string | 是 | 地点名称。 |
  - 地点详情场景
 
 | 参数名 | 类型 | 必填 | 说明 |
+
 | --- | --- | --- | --- |
+
 | sceneType | number | 是 | 意图场景，表明本次请求对应的操作意图。地点详情场景填4。 |
+
 | destinationName | string | 否 | 地点名称。 |
+
 | destinationLatitude | number | 是 | 地点纬度。 |
+
 | destinationLongitude | number | 是 | 地点经度。 |
+
 | zoom | number | 否 | 地图缩放级别，取值为大于0的整数。 |
+
 | destinationPoiIds | Record<number, string> | 否 | 地点POI ID列表，当前仅支持传入花瓣地图、高德地图、百度地图的POI ID。 |
 
 
 
 
-#### 拉起方开发步骤
+## 拉起方开发步骤
 1. 导入相关模块。
 
   
@@ -134,22 +162,27 @@ struct Index {
 效果示例图：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/kiTg40fLSdGD4J_kQaPQ5A/zh-cn_image_0000002656347355.png?HW-CC-KV=V1&HW-CC-Date=20260624T020725Z&HW-CC-Expire=86400&HW-CC-Sign=0CB42AB2302C6EC988A8F552F07313F013AA74A96BA224306795D0BE88D4F1BB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/wWO44eA-RqqM-ncwkqoRpA/zh-cn_image_0000002717769838.png?HW-CC-KV=V1&HW-CC-Date=20260911T073058Z&HW-CC-Expire=86400&HW-CC-Sign=8EF11F6A76C643592D49521275FCC1D861FE9B0D60068BF9DBE7640D27202AE8)
 
 
 
 
-#### 目标方开发步骤
+## 目标方开发步骤
 1. 在module.json5中配置[uris](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#skills标签)，步骤如下：
 
   
  - 设置linkFeature属性以声明当前应用支持的特性功能，从而系统可以从设备已安装应用中找到当前支持该特性的应用，取值范围如下：
 
 | 取值 | 含义 |
+
 | --- | --- |
+
 | Navigation | 声明应用支持导航功能 |
+
 | RoutePlan | 声明应用支持路线规划功能 |
+
 | PlaceSearch | 声明应用支持位置搜索功能 |
+
 | DetailLocation | 声明应用支持地点详情功能 |
 
 2. 设置scheme、host、port、path/pathStartWith属性，与Want中URI相匹配，以便区分不同功能。
@@ -208,38 +241,62 @@ UIAbility.onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void
 路线规划场景
 
 | 参数名 | 类型 | 必填 | 说明 |
+
 | --- | --- | --- | --- |
+
 | originName | string | 否 | 起点名称。 |
+
 | originLatitude | number | 否 | 起点纬度。 |
+
 | originLongitude | number | 否 | 起点经度。 |
+
 | originPoiId | string | 否 | 起点POI ID，当前仅支持花瓣地图、高德地图、百度地图获取此参数。 |
+
 | destinationName | string | 否 | 终点名称。 |
+
 | destinationLatitude | number | 是 | 终点纬度。 |
+
 | destinationLongitude | number | 是 | 终点经度。 |
+
 | destinationPoiId | string | 否 | 终点POI ID，当前仅支持花瓣地图、高德地图、百度地图获取此参数。 |
+
 | vehicleType | number | 否 | 交通出行工具，取值：0-驾车，1-步行，2-骑行，3-公交。 |
  - 导航场景
 
 | 参数名 | 类型 | 必填 | 说明 |
+
 | --- | --- | --- | --- |
+
 | destinationName | string | 否 | 终点名称。 |
+
 | destinationLatitude | number | 是 | 终点纬度。 |
+
 | destinationLongitude | number | 是 | 终点经度。 |
+
 | destinationPoiId | string | 否 | 终点POI ID，当前仅支持花瓣地图、高德地图、百度地图获取此参数。 |
+
 | vehicleType | number | 否 | 交通出行工具，取值：0-驾车，1-步行，2-骑行，3-公交。 |
  - 位置搜索场景
 
 | 参数名 | 类型 | 必填 | 说明 |
+
 | --- | --- | --- | --- |
+
 | destinationName | string | 是 | 地点名称。 |
  - 地点详情场景
 
 | 参数名 | 类型 | 必填 | 说明 |
+
 | --- | --- | --- | --- |
+
 | destinationName | string | 否 | 地点名称。 |
+
 | destinationLatitude | number | 是 | 地点纬度。 |
+
 | destinationLongitude | number | 是 | 地点经度。 |
+
 | zoom | number | 否 | 地图缩放级别，取值为大于0的整数。 |
+
 | destinationPoiIds | Record<number, string> | 否 | 地点POI ID列表，当前仅支持传入花瓣地图、高德地图、百度地图的POI ID。 |
 
 

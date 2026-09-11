@@ -1,9 +1,9 @@
 # ConnectOptions
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-ability-connectoptions
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 在连接指定的后台服务时作为入参，用于接收连接过程中的状态变化，如作为[connectServiceExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext#connectserviceextensionability)的入参，连接指定的ServiceExtensionAbility。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { common } from '@kit.AbilityKit';
@@ -22,15 +23,19 @@ import { common } from '@kit.AbilityKit';
 
 
 
-#### ConnectOptions
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## ConnectOptions
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### onConnect
+在连接指定的后台服务时作为入参，用于接收连接过程中的状态变化，如作为[connectServiceExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext#connectserviceextensionability)的入参，连接指定的ServiceExtensionAbility。
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+### onConnect
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onConnect(elementName: ElementName, remote: rpc.IRemoteObject): void
 
@@ -39,6 +44,7 @@ onConnect(elementName: ElementName, remote: rpc.IRemoteObject): void
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -79,9 +85,10 @@ class EntryAbility extends UIAbility {
 
 
 
-#### onDisconnect
+### onDisconnect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDisconnect(elementName: ElementName): void
 
@@ -90,6 +97,7 @@ onDisconnect(elementName: ElementName): void
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -129,9 +137,10 @@ class EntryAbility extends UIAbility {
 
 
 
-#### onFailed
+### onFailed
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onFailed(code: number): void
 
@@ -140,6 +149,7 @@ onFailed(code: number): void
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |

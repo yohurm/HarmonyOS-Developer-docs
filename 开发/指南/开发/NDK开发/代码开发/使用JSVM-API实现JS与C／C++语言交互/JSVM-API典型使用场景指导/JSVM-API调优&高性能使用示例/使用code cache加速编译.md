@@ -1,11 +1,11 @@
 # 使用code cache加速编译
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-about-code-cache
 
-##code cache简介
- 
+## code cache简介
+
 JSVM提供了生成并使用code cache加速编译过程的方法，其获取和使用分为下面几个部分：
  
 - 首先使用compile系列接口编译得到JSVM_Script
@@ -15,17 +15,21 @@ JSVM提供了生成并使用code cache加速编译过程的方法，其获取和
  
 通过上述流程，将会在使用code cache的那次编译中，极大减少编译时间，其原理为将编译完成的script序列化，然后使用code cache编译时就不再需要重新解析/编译已经被序列化的函数，只需要进行一次反序列化即可，这样编译就简化为了一次数据读取。
  
-##code cache校验规格说明
   
+
+## code cache校验规格说明
+ 
+
 | 规格 | 规格说明 |
 | --- | --- |
 | 完整性校验 | 校验cache实际长度，是否与生成时一致 |
 | 兼容性校验 | 校验生成cache的JSVM版本与编译选项是否与当前一致 |
 | 一致性校验 | 校验生成cache的js源码，是否与当前输入源码长度一致 |
  
+ 
   
 
-#### 场景示例
+## 场景示例
 
 下面的伪代码是一个典型的使用方法，其中第二次编译，如果cacheRejected为true，那么说明code cache被拒绝无法生效，运行时间会与无code cache时间相同；为false则这次运行将会极大加快。
  
@@ -127,7 +131,7 @@ cache rejected: 0
  
   
 
-#### 注意事项
+## 注意事项
 
 上述代码中使用了code cache进行编译：OH_JSVM_CompileScript(env, jsSrc, dataPtr, length, true, &cacheRejected, &script);
  
@@ -140,4 +144,4 @@ cache rejected: 0
 - 内存中存在编译缓存，code cache没有被校验
 
  
-对于第一种情况，这个参数会被设置为true，而后两种情况都是false，因此需要注意即使reject为false，也不能说明code cache被接收了。
+对于第一种情况，这个参数会被设置为true，而后两种情况都是false，因此需要注意即使reject为false，也不能说明code cache被接受了。

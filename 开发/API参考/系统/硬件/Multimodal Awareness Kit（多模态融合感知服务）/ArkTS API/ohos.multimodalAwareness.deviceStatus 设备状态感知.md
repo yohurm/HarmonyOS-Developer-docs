@@ -1,18 +1,19 @@
 # @ohos.multimodalAwareness.deviceStatus (设备状态感知)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-awareness-devicestatus
 **支持设备：** Phone
 
-本模块提供对设备状态的感知能力。
+本模块提供对设备状态的感知能力，通过传感器实时感知设备物理状态，可帮助开发者根据设备物理状态调整应用行为。
 
 > [!NOTE]
 > 本模块首批接口从API version 18开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone
 
@@ -22,15 +23,17 @@ import { deviceStatus } from '@kit.MultimodalAwarenessKit';
 
 
 
-#### SteadyStandingStatus
+## SteadyStandingStatus
+
 
 **支持设备：** Phone
 
 设备静止姿态感知状态（支架态）。
 
-设备进入支架态指设备静止，且屏幕与水平面角度处于45度-135度。折叠屏手机需处于折叠状态或者完全展开状态。
+设备进入支架态指设备静止，且屏幕与水平面角度处于45度-135度。折叠屏手机需处于折叠状态或者完全展开状态。系统通过传感器检测设备的运动状态和角度变化，判断设备是否满足支架态条件。
 
 **系统能力**：SystemCapability.MultimodalAwareness.DeviceStatus
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -40,27 +43,30 @@ import { deviceStatus } from '@kit.MultimodalAwarenessKit';
 
 
 
-#### deviceStatus.on('steadyStandingDetect')
+## deviceStatus.on('steadyStandingDetect')
+
 
 **支持设备：** Phone
 
 on(type: 'steadyStandingDetect', callback: Callback&lt;SteadyStandingStatus&gt;): void
 
-订阅设备静止姿态感知（支架态）事件。
+订阅设备静止姿态感知（支架态）事件。建议在不需要时调用off()取消订阅，释放资源。
 
 **系统能力**：SystemCapability.MultimodalAwareness.DeviceStatus
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件类型。type为“steadyStandingDetect”，表示设备静止姿态（支架态）感知。 |
-| callback | Callback&lt;SteadyStandingStatus&gt; | 是 | 回调函数，返回设备静止姿态感知（支架态）状态信息。 |
+| type | string | 是 | 事件类型。固定传入'steadyStandingDetect'，表示设备静止姿态（支架态）感知。 |
+| callback | Callback&lt;SteadyStandingStatus&gt; | 是 | 回调函数，用于接收设备静止姿态（支架态）状态信息。 |
 
 
 **错误码**：
 
 以下错误码的详细介绍请参见[设备状态感知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicestatus)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -71,39 +77,42 @@ on(type: 'steadyStandingDetect', callback: Callback&lt;SteadyStandingStatus&gt;)
 
 **示例**：
 
-```text
+```json
 try {
-   deviceStatus.on('steadyStandingDetect', (data:deviceStatus.SteadyStandingStatus) => {
-      console.info('succeed to get status, now status = ' + data);
+   deviceStatus.on('steadyStandingDetect', (data: deviceStatus.SteadyStandingStatus) => {
+      console.info(`succeeded to get status, now status = ${JSON.stringify(data)}`);
    });
 } catch (err) {
-   console.error('on failed, err = ' + err);
+   console.error(`on failed. Code: ${err.code}, message: ${err.message}`);
 }
 ```
 
 
 
-#### deviceStatus.off('steadyStandingDetect')
+## deviceStatus.off('steadyStandingDetect')
+
 
 **支持设备：** Phone
 
 off(type: 'steadyStandingDetect', callback?: Callback&lt;SteadyStandingStatus&gt;): void
 
-取消订阅设备静止姿态感知（支架态）事件。
+取消订阅设备静止姿态感知（支架态）事件，用于应用在退出页面或不再需要监听支架态变化的场景。调用后释放相关资源。
 
 **系统能力**：SystemCapability.MultimodalAwareness.DeviceStatus
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件类型。type为“steadyStandingDetect”，表示设备静止姿态（支架态）感知。 |
-| callback | Callback&lt;SteadyStandingStatus&gt; | 否 | 回调函数，返回设备静止姿态感知（支架态）状态信息。需要取消监听的回调函数，需与订阅时传入的回调函数一致。若不填，则取消当前监听该事件的所有回调函数。 |
+| type | string | 是 | 事件类型。固定传入'steadyStandingDetect'，表示设备静止姿态（支架态）感知。 |
+| callback | Callback&lt;SteadyStandingStatus&gt; | 否 | 要注销的回调函数，需与订阅时传入的回调函数一致。若不填，则取消当前监听该事件的所有回调函数。 |
 
 
 **错误码**：
 
 以下错误码的详细介绍请参见[设备状态感知错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-devicestatus)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -120,27 +129,29 @@ off(type: 'steadyStandingDetect', callback?: Callback&lt;SteadyStandingStatus&gt
 try {
    deviceStatus.off('steadyStandingDetect');
 } catch (err) {
-   console.error('off failed, err = ' + err);
+   console.error(`off failed. Code: ${err.code}, message: ${err.message}`);
 }
 ```
 
 示例二：取消订阅该客户端订阅设备静止姿态感知（支架态）事件的特定回调。
 
-```text
+```json
+import { Callback } from '@kit.BasicServicesKit';
+
 // 定义callback变量
 let callback : Callback<deviceStatus.SteadyStandingStatus> = (data : deviceStatus.SteadyStandingStatus) => {
-   console.info('succeed to get status, now status = ' + data);
+   console.info('succeeded to get status, now status = ' + JSON.stringify(data));
 };
 // 以callback为回调函数，订阅设备静止姿态感知（支架态）事件
 try {
    deviceStatus.on('steadyStandingDetect', callback);
 } catch (err) {
-   console.error('on failed, err = ' + err);
+   console.error(`on failed. Code: ${err.code}, message: ${err.message}`);
 }
 // 取消该客户端订阅设备静止姿态感知（支架态）事件的特定回调函数
 try {
    deviceStatus.off('steadyStandingDetect', callback);
 } catch (err) {
-   console.error('off failed, err = ' + err);
+   console.error(`off failed. Code: ${err.code}, message: ${err.message}`);
 }
 ```

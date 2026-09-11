@@ -1,9 +1,9 @@
 # @ohos.arkui.drawableDescriptor (DrawableDescriptor)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-drawabledescriptor
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供分层图标合成（包括前景，背景，蒙版），动图播放与控制，基础图像处理的能力。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import {
@@ -30,9 +31,10 @@ import {
 
 
 
-#### DrawableDescriptorLoadedResult21+
+## DrawableDescriptorLoadedResult21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 传入的图片资源或地址的加载结果。
 
@@ -41,6 +43,7 @@ import {
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -87,17 +90,19 @@ struct Index {
 
 
 
-#### DrawableDescriptor
+## DrawableDescriptor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 父类对象提供可重写的方法，包含：获取[PixelMap](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-pixelmap)实例，图片资源加载能力。
 
 
 
-#### getPixelMap
+### getPixelMap
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPixelMap(): image.PixelMap
 
@@ -111,6 +116,7 @@ getPixelMap(): image.PixelMap
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | image.PixelMap | PixelMap |
@@ -119,6 +125,7 @@ getPixelMap(): image.PixelMap
 **错误码：**
 
 以下错误码的详细介绍请参见[DrawableDescriptor错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-drawable-descriptor)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -131,9 +138,10 @@ getPixelMap(): image.PixelMap
 
 
 
-#### loadSync21+
+### loadSync21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 loadSync(): DrawableDescriptorLoadedResult
 
@@ -147,6 +155,7 @@ loadSync(): DrawableDescriptorLoadedResult
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | DrawableDescriptorLoadedResult | 图片资源的加载结果。 |
@@ -155,6 +164,7 @@ loadSync(): DrawableDescriptorLoadedResult
 **错误码：**
 
 以下错误码的详细介绍请参见[DrawableDescriptor错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-drawable-descriptor)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -168,9 +178,10 @@ loadSync(): DrawableDescriptorLoadedResult
 
 
 
-#### load21+
+### load21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 load(): Promise&lt;DrawableDescriptorLoadedResult&gt;
 
@@ -184,6 +195,7 @@ load(): Promise&lt;DrawableDescriptorLoadedResult&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;DrawableDescriptorLoadedResult&gt; | 图片资源的加载结果。 |
@@ -192,6 +204,7 @@ load(): Promise&lt;DrawableDescriptorLoadedResult&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[DrawableDescriptor错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-drawable-descriptor)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -205,9 +218,10 @@ load(): Promise&lt;DrawableDescriptorLoadedResult&gt;
 
 
 
-#### release
+### release
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(): void
 
@@ -252,9 +266,10 @@ struct Index {
 
 
 
-#### isReleased
+### isReleased
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isReleased(): boolean
 
@@ -270,6 +285,7 @@ isReleased(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | DrawableDescriptor是否已被释放。true表示已释放，false表示未释放。 |
@@ -277,9 +293,10 @@ isReleased(): boolean
 
 
 
-#### invalidate
+### invalidate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 invalidate(): void
 
@@ -295,17 +312,19 @@ invalidate(): void
 
 
 
-#### PixelMapDrawableDescriptor12+
+## PixelMapDrawableDescriptor12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持通过传入PixelMap创建PixelMapDrawableDescriptor对象。继承自[DrawableDescriptor](#drawabledescriptor)。
 
 
 
-#### constructor12+
+### constructor12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(src?: image.PixelMap)
 
@@ -319,6 +338,7 @@ PixelMapDrawableDescriptor的构造函数。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | src | image.PixelMap | 否 | PixelMap类型参数，存储 PixelMap 图片数据。 |
@@ -326,9 +346,10 @@ PixelMapDrawableDescriptor的构造函数。
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(src?: image.PixelMap | ResourceStr)
 
@@ -343,6 +364,7 @@ PixelMapDrawableDescriptor的构造函数，通过PixelMap类型或者ResourceSt
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -377,9 +399,10 @@ struct PixelMapDrawableDescriptorExample {
 
 
 
-#### LayeredDrawableDescriptor
+## LayeredDrawableDescriptor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 当传入资源id或name为包含前景和背景资源的json文件时，生成LayeredDrawableDescriptor对象。继承自[DrawableDescriptor](#drawabledescriptor)。
 
@@ -480,9 +503,10 @@ struct Index {
 
 
 
-#### constructor12+
+### constructor12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(foreground?: DrawableDescriptor, background?: DrawableDescriptor, mask?: DrawableDescriptor)
 
@@ -496,6 +520,7 @@ LayeredDrawableDescriptor的构造函数。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | foreground | DrawableDescriptor | 否 | 分层图标的前景图片选项。 |
@@ -505,9 +530,10 @@ LayeredDrawableDescriptor的构造函数。
 
 
 
-#### getForeground
+### getForeground
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getForeground(): DrawableDescriptor
 
@@ -521,6 +547,7 @@ getForeground(): DrawableDescriptor
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | DrawableDescriptor | DrawableDescriptor对象。 |
@@ -529,6 +556,7 @@ getForeground(): DrawableDescriptor
 **错误码：**
 
 以下错误码的详细介绍请参见[DrawableDescriptor错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-drawable-descriptor)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -581,9 +609,10 @@ struct Index {
 
 
 
-#### getBackground
+### getBackground
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBackground(): DrawableDescriptor
 
@@ -597,6 +626,7 @@ getBackground(): DrawableDescriptor
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | DrawableDescriptor | DrawableDescriptor对象。 |
@@ -605,6 +635,7 @@ getBackground(): DrawableDescriptor
 **错误码：**
 
 以下错误码的详细介绍请参见[DrawableDescriptor错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-drawable-descriptor)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -652,9 +683,10 @@ struct Index {
 
 
 
-#### getMask
+### getMask
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMask(): DrawableDescriptor
 
@@ -668,6 +700,7 @@ getMask(): DrawableDescriptor
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | DrawableDescriptor | DrawableDescriptor对象。 |
@@ -676,6 +709,7 @@ getMask(): DrawableDescriptor
 **错误码：**
 
 以下错误码的详细介绍请参见[DrawableDescriptor错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-drawable-descriptor)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -723,9 +757,10 @@ struct Index {
 
 
 
-#### getMaskClipPath
+### getMaskClipPath
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getMaskClipPath(): string
 
@@ -738,6 +773,7 @@ LayeredDrawableDescriptor的静态方法，获取系统内置的裁切路径参�
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -772,9 +808,10 @@ struct Index {
 
 
 
-#### setBlendMode23+
+### setBlendMode23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setBlendMode(mode: drawing.BlendMode): void
 
@@ -787,6 +824,7 @@ setBlendMode(mode: drawing.BlendMode): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -836,9 +874,10 @@ struct Index {
 
 
 
-#### AnimationStopMode24+
+## AnimationStopMode24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 动图停止模式。
 
@@ -848,6 +887,7 @@ struct Index {
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | FIRST_FRAME | 0 | 动图停止时回到首帧。 |
@@ -856,15 +896,17 @@ struct Index {
 
 
 
-#### AnimationOptions12+
+## AnimationOptions12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 动画播放参数。包括播放时延，迭代次数，单帧播放时间，是否自动播放。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -930,17 +972,19 @@ struct Example {
 
 
 
-#### AnimatedDrawableDescriptor12+
+## AnimatedDrawableDescriptor12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 使用[Image](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image)组件播放PixelMap数组或动图资源时传入AnimatedDrawableDescriptor对象，该对象继承自[DrawableDescriptor](#drawabledescriptor)。
 
 
 
-#### constructor12+
+### constructor12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(pixelMaps: Array<image.PixelMap>, options?: AnimationOptions)
 
@@ -954,6 +998,7 @@ AnimatedDrawableDescriptor的构造函数。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pixelMaps | Array<image.PixelMap> | 是 | PixelMap 数组类型参数，存储 PixelMap 图片数据。 |
@@ -962,9 +1007,10 @@ AnimatedDrawableDescriptor的构造函数。
 
 
 
-#### constructor21+
+### constructor21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(src: ResourceStr | Array<image.PixelMap>, options?: AnimationOptions)
 
@@ -977,6 +1023,7 @@ AnimatedDrawableDescriptor的构造函数。
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1018,9 +1065,10 @@ struct Example {
 
 
 
-#### getAnimationController21+
+### getAnimationController21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAnimationController(id?: string): AnimationController | undefined
 
@@ -1034,12 +1082,14 @@ getAnimationController(id?: string): AnimationController | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | string | 否 | 组件的id。 当Image组件与AnimatedDrawableDescriptor确保1比1持有（仅传入一个Image组件）时，id非必填； 若同一AnimatedDrawableDescriptor需绑定多个Image组件，则必须设置唯一id以准确获取对应组件的动画控制器（唯一性由开发者保证）。 此规则基于动画系统设计原则：动画数据可多组件共享，但各组件动画独立运行，AnimationController与组件严格1比1持有关系（一个组件一个AnimationController对象）。 另外，AnimatedDrawableDescriptor支持不可见时自动暂停播放功能，详见onVisibleAreaChange。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1124,17 +1174,19 @@ struct Example {
 
 
 
-#### AnimationController21+
+## AnimationController21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 动画控制器对象。包含控制动画播放、停止、恢复、暂停和状态查询等方法。
 
 
 
-#### start21+
+### start21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 start(): void
 
@@ -1175,9 +1227,10 @@ struct Example {
 
 
 
-#### stop21+
+### stop21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stop(): void
 
@@ -1218,9 +1271,10 @@ struct Example {
 
 
 
-#### resume21+
+### resume21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 resume(): void
 
@@ -1261,9 +1315,10 @@ struct Example {
 
 
 
-#### pause21+
+### pause21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pause(): void
 
@@ -1304,9 +1359,10 @@ struct Example {
 
 
 
-#### getStatus21+
+### getStatus21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStatus(): AnimationStatus
 
@@ -1319,6 +1375,7 @@ getStatus(): AnimationStatus
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1370,9 +1427,10 @@ struct Example {
 
 
 
-#### HdrCompositionConfig
+## HdrCompositionConfig
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 HDR合成配置选项。
 
@@ -1384,6 +1442,7 @@ HDR合成配置选项。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | rect | Rectangle | 否 | 否 | HDR合成的矩形区域。 |
@@ -1391,9 +1450,10 @@ HDR合成配置选项。
 
 
 
-#### PictureDrawableDescriptor
+## PictureDrawableDescriptor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持通过传入Picture对象创建PictureDrawableDescriptor对象。继承自[DrawableDescriptor](#drawabledescriptor)。
 
@@ -1407,9 +1467,10 @@ HDR合成配置选项。
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(src: image.Picture)
 
@@ -1425,6 +1486,7 @@ PictureDrawableDescriptor的构造函数。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | src | image.Picture | 是 | 用于创建PictureDrawableDescriptor的Picture对象。 |
@@ -1432,9 +1494,10 @@ PictureDrawableDescriptor的构造函数。
 
 
 
-#### setHdrComposition
+### setHdrComposition
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setHdrComposition(config: HdrCompositionConfig): void
 
@@ -1449,6 +1512,7 @@ setHdrComposition(config: HdrCompositionConfig): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |

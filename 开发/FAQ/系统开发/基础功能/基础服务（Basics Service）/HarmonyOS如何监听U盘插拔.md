@@ -42,11 +42,11 @@
 
   U盘拔出事件：usual.event.hardware.usb.action.USB_DEVICE_DETACHED。
 ```text
-// 定义U盘插拔事件的监听器
+<em>// </em><em>定义U盘插拔事件的监听器</em>
 export default class UsbEventListener {
   private subscriber: commonEventManager.CommonEventSubscriber | null = null;
 
-  // 订阅U盘插拔事件
+  <em>// </em><em>订阅U盘插拔事件</em>
   subscribeUsbEvents() {
     const subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
       events: [
@@ -54,7 +54,7 @@ export default class UsbEventListener {
         'usual.event.hardware.usb.action.USB_DEVICE_DETACHED'
       ]
     };
-    // 创建订阅者
+   <em> // 创建订阅者</em>
     commonEventManager.createSubscriber(subscribeInfo,
       (err: BusinessError, subscriber: commonEventManager.CommonEventSubscriber) => {
         if (err) {
@@ -62,14 +62,14 @@ export default class UsbEventListener {
           return;
         }
         this.subscriber = subscriber;
-        // 订阅事件
+      <em>  // 订阅事件</em>
         commonEventManager.subscribe(subscriber, (err: BusinessError, data: commonEventManager.CommonEventData) => {
           if (err) {
             console.error(`Failed to subscribe event. Code: ${err.code}, message: ${err.message}`);
             return;
           }
           console.error(data.event);
-          // 获取连接的USB设备信息
+         <em> // 获取连接的USB设备信息</em>
           if (data.event === 'usual.event.hardware.usb.action.USB_DEVICE_ATTACHED') {
             console.info('U 盘已插入');
             this.handleUsbAttached();
@@ -81,17 +81,17 @@ export default class UsbEventListener {
       });
   }
 
-  // 处理U盘插入事件
+<em>  // 处理U盘插入事件</em>
   private handleUsbAttached() {
     console.info('处理 U 盘插入逻辑');
   }
 
-  // 处理U盘拔出事件
+  <em>// 处理U盘拔出事件</em>
   private handleUsbDetached() {
     console.info('处理 U 盘拔出逻辑');
   }
 
-  // 取消订阅
+  <em>// </em><em>取消订阅</em>
   unsubscribeUsbEvents() {
     if (this.subscriber) {
       commonEventManager.unsubscribe(this.subscriber, (err: BusinessError) => {
@@ -147,11 +147,11 @@ struct Index {
   }
 }
 
-// 定义U盘插拔事件的监听器
+<em>// </em><em>定义U盘插拔事件的监听器</em>
 export default class UsbEventListener {
   private subscriber: commonEventManager.CommonEventSubscriber | null = null;
 
-  // 订阅U盘插拔事件
+ <em> // 订阅U盘插拔事件</em>
   subscribeUsbEvents() {
     const subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
       events: [
@@ -159,7 +159,7 @@ export default class UsbEventListener {
         'usual.event.hardware.usb.action.USB_DEVICE_DETACHED'
       ]
     };
-    // 创建订阅者
+  <em>  // 创建订阅者</em>
     commonEventManager.createSubscriber(subscribeInfo,
       (err: BusinessError, subscriber: commonEventManager.CommonEventSubscriber) => {
         if (err) {
@@ -167,14 +167,14 @@ export default class UsbEventListener {
           return;
         }
         this.subscriber = subscriber;
-        // 订阅事件
+       <em> // 订阅事件</em>
         commonEventManager.subscribe(subscriber, (err: BusinessError, data: commonEventManager.CommonEventData) => {
           if (err) {
             console.error(`Failed to subscribe event. Code: ${err.code}, message: ${err.message}`);
             return;
           }
           console.error(data.event);
-          // 获取连接的USB设备信息
+         <em> // 获取连接的USB设备信息</em>
           if (data.event === 'usual.event.hardware.usb.action.USB_DEVICE_ATTACHED') {
             console.info('U 盘已插入');
             this.handleUsbAttached();
@@ -186,17 +186,17 @@ export default class UsbEventListener {
       });
   }
 
-  // 处理U盘插入事件
+ <em> // 处理U盘插入事件</em>
   private handleUsbAttached() {
     console.info('处理 U 盘插入逻辑');
   }
 
-  // 处理U盘拔出事件
+ <em> // 处理U盘拔出事件</em>
   private handleUsbDetached() {
     console.info('处理 U 盘拔出逻辑');
   }
 
-  // 取消订阅
+  <em>// </em><em>取消订阅</em>
   unsubscribeUsbEvents() {
     if (this.subscriber) {
       commonEventManager.unsubscribe(this.subscriber, (err: BusinessError) => {

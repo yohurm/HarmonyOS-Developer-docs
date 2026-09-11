@@ -1,9 +1,9 @@
 # Button
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-04 10:41:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-button
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 按钮组件，可快速创建不同样式的按钮。
  
@@ -12,23 +12,26 @@
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 可以包含单个子组件。
  
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### Button
+### Button
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Button(options: ButtonOptions)
  
@@ -42,6 +45,7 @@ Button(options: ButtonOptions)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ButtonOptions | 是 | 配置按钮的显示样式。 |
@@ -49,9 +53,10 @@ Button(options: ButtonOptions)
  
   
 
-#### Button
+### Button
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Button(label: ResourceStr, options?: ButtonOptions)
  
@@ -67,6 +72,7 @@ Button(label: ResourceStr, options?: ButtonOptions)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | label | ResourceStr | 是 | 按钮文本内容。 说明： 当文本字符的长度超过按钮本身的宽度时，文本将会被截断。 |
@@ -75,9 +81,10 @@ Button(label: ResourceStr, options?: ButtonOptions)
  
   
 
-#### Button
+### Button
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Button()
  
@@ -91,14 +98,16 @@ Button()
  
   
 
-#### ButtonOptions对象说明
+## ButtonOptions对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 按钮的样式。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | ButtonType | 否 | 是 | 按钮显示样式。 默认值：API version 18及之后为ButtonType.ROUNDED_RECTANGLE，API version 18之前为ButtonType.Capsule。 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -110,17 +119,19 @@ Button()
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
  
   
 
-#### type
+### type
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type(value: ButtonType)
  
@@ -134,6 +145,7 @@ type(value: ButtonType)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ButtonType | 是 | Button样式。 API version 18及之后，ButtonType的默认值从ButtonType.Capsule变更为ButtonType.ROUNDED_RECTANGLE。 |
@@ -141,9 +153,10 @@ type(value: ButtonType)
  
   
 
-#### fontSize
+### fontSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontSize(value: Length)
  
@@ -157,6 +170,7 @@ fontSize(value: Length)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Length | 是 | 设置文本显示字号。 默认值：当controlSize为ControlSize.NORMAL时，默认值为\$r('sys.float.Body_L')。 当controlSize为ControlSize.SMALL时，默认值为\$r('sys.float.Body_S')。 说明：设置string类型时，支持vp、fp等单位，不支持百分比。 |
@@ -164,9 +178,10 @@ fontSize(value: Length)
  
   
 
-#### fontColor
+### fontColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontColor(value: ResourceColor)
  
@@ -180,6 +195,7 @@ fontColor(value: ResourceColor)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 文本显示颜色。 默认值：\$r('sys.color.font_on_primary')。 |
@@ -187,9 +203,10 @@ fontColor(value: ResourceColor)
  
   
 
-#### fontWeight
+### fontWeight
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontWeight(value: number | FontWeight | string)
  
@@ -203,6 +220,7 @@ fontWeight(value: number | FontWeight | string)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| FontWeight \| string | 是 | 文本的字体粗细，number类型取值[100, 900]，取值间隔为100，取值越大，字体越粗。 默认值：500 string类型仅支持number类型取值的字符串形式，例如'400'，以及'bold'、'bolder'、'lighter'、'regular'、'medium'，分别对应FontWeight中相应的枚举值。 当值为异常值或非法值时，字体粗细取值为400。 |
@@ -210,9 +228,10 @@ fontWeight(value: number | FontWeight | string)
  
   
 
-#### fontStyle8+
+### fontStyle8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontStyle(value: FontStyle)
  
@@ -226,6 +245,7 @@ fontStyle(value: FontStyle)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | FontStyle | 是 | 文本的字体样式。 默认值：FontStyle.Normal |
@@ -233,9 +253,10 @@ fontStyle(value: FontStyle)
  
   
 
-#### stateEffect
+### stateEffect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stateEffect(value: boolean)
  
@@ -249,6 +270,7 @@ stateEffect(value: boolean)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 按钮按下时是否开启按压态显示效果。 true：开启按压效果；false：关闭按压效果。 默认值：true |
@@ -260,9 +282,10 @@ stateEffect(value: boolean)
  
   
 
-#### fontFamily8+
+### fontFamily8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontFamily(value: string | Resource)
  
@@ -276,6 +299,7 @@ fontFamily(value: string | Resource)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string \| Resource | 是 | 字体列表。默认字体'HarmonyOS Sans'，当前支持'HarmonyOS Sans'字体和注册自定义字体。 |
@@ -283,9 +307,10 @@ fontFamily(value: string | Resource)
  
   
 
-#### labelStyle10+
+### labelStyle10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 labelStyle(value: LabelStyle)
  
@@ -299,6 +324,7 @@ labelStyle(value: LabelStyle)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | LabelStyle | 是 | Button组件label文本和字体的样式。 |
@@ -306,9 +332,10 @@ labelStyle(value: LabelStyle)
  
   
 
-#### buttonStyle11+
+### buttonStyle11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 buttonStyle(value: ButtonStyleMode)
  
@@ -328,6 +355,7 @@ buttonStyle(value: ButtonStyleMode)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ButtonStyleMode | 是 | Button组件的样式和重要程度。 默认值：ButtonStyleMode.EMPHASIZED |
@@ -335,9 +363,10 @@ buttonStyle(value: ButtonStyleMode)
  
   
 
-#### controlSize11+
+### controlSize11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 controlSize(value: ControlSize)
  
@@ -357,6 +386,7 @@ controlSize(value: ControlSize)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ControlSize | 是 | Button组件的尺寸。 默认值：ControlSize.NORMAL |
@@ -364,9 +394,10 @@ controlSize(value: ControlSize)
  
   
 
-#### role12+
+### role12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 role(value: ButtonRole)
  
@@ -382,6 +413,7 @@ role(value: ButtonRole)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ButtonRole | 是 | Button组件的角色。 默认值：ButtonRole.NORMAL |
@@ -389,9 +421,10 @@ role(value: ButtonRole)
  
   
 
-#### contentModifier12+
+### contentModifier12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contentModifier(modifier: ContentModifier&lt;ButtonConfiguration&gt;)
  
@@ -405,6 +438,7 @@ contentModifier(modifier: ContentModifier&lt;ButtonConfiguration&gt;)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | modifier | ContentModifier&lt;ButtonConfiguration&gt; | 是 | 在Button组件上，定制内容区的方法。 modifier：内容修改器，开发者需要自定义class实现ContentModifier接口。 |
@@ -412,9 +446,10 @@ contentModifier(modifier: ContentModifier&lt;ButtonConfiguration&gt;)
  
   
 
-#### minFontScale18+
+### minFontScale18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 minFontScale(scale: number | Resource)
  
@@ -428,6 +463,7 @@ minFontScale(scale: number | Resource)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scale | number \| Resource | 是 | 文本最小的字体缩放倍数。 取值范围：[0, 1] 说明： 设置的值小于0时，按值为0处理，设置的值大于1，按值为1处理，异常值默认不生效。 |
@@ -435,9 +471,10 @@ minFontScale(scale: number | Resource)
  
   
 
-#### maxFontScale18+
+### maxFontScale18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 maxFontScale(scale: number | Resource)
  
@@ -451,6 +488,7 @@ maxFontScale(scale: number | Resource)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scale | number \| Resource | 是 | 文本最大的字体缩放倍数。 取值范围：[1, +∞) 说明： 设置的值小于1时，按值为1处理，异常值默认不生效。 未设置最大缩放倍数时，圆形按钮最大缩放倍数为1倍，胶囊型按钮、普通按钮、圆角矩形按钮最大缩放倍数跟随系统设置。 |
@@ -458,14 +496,16 @@ maxFontScale(scale: number | Resource)
  
   
 
-#### ButtonType枚举说明
+## ButtonType枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 按钮的类型。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | Normal | 0 | 普通按钮（默认不带圆角）。 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -480,9 +520,10 @@ maxFontScale(scale: number | Resource)
  
   
 
-#### LabelStyle10+对象说明
+## LabelStyle10+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Button组件的label文本及其字体样式。
  
@@ -490,6 +531,7 @@ Button组件的label文本及其字体样式。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | overflow | TextOverflow | 否 | 是 | 设置label文本超长时的显示方式。文本截断是按字截断。例如，英文以单词为最小单位进行截断，若需要以字母为单位进行截断，可在字母间添加零宽空格。 默认值：TextOverflow.Ellipsis 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -503,9 +545,10 @@ Button组件的label文本及其字体样式。
  
   
 
-#### ButtonStyleMode11+枚举说明
+## ButtonStyleMode11+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 按钮的重要程度。
  
@@ -517,6 +560,7 @@ Button组件的label文本及其字体样式。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NORMAL | 0 | 普通按钮（一般界面操作），适用于取消、关闭等非关键交互。 |
@@ -526,9 +570,10 @@ Button组件的label文本及其字体样式。
  
   
 
-#### ControlSize11+枚举说明
+## ControlSize11+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 按钮的尺寸。
  
@@ -540,6 +585,7 @@ Button组件的label文本及其字体样式。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SMALL | "small" | 小尺寸按钮。 |
@@ -548,9 +594,10 @@ Button组件的label文本及其字体样式。
  
   
 
-#### ButtonRole12+枚举说明
+## ButtonRole12+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 按钮的角色。
  
@@ -562,6 +609,7 @@ Button组件的label文本及其字体样式。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NORMAL | 0 | 正常按钮。 |
@@ -570,9 +618,10 @@ Button组件的label文本及其字体样式。
  
   
 
-#### ButtonConfiguration12+对象说明
+## ButtonConfiguration12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 开发者需要自定义class实现ContentModifier接口。继承自[CommonConfiguration](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-content-modifier#commonconfigurationt)。
  
@@ -582,6 +631,7 @@ Button组件的label文本及其字体样式。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | label | string | 否 | 否 | Button的文本标签，用于标识按钮的功能。 说明：当文本长度超过按钮本身的宽度时，文本将会被截断。 |
@@ -591,9 +641,10 @@ Button组件的label文本及其字体样式。
  
   
 
-#### ButtonTriggerClickCallback12+
+## ButtonTriggerClickCallback12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ButtonTriggerClickCallback = (xPos: number, yPos: number) => void
  
@@ -607,6 +658,7 @@ type ButtonTriggerClickCallback = (xPos: number, yPos: number) => void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | xPos | number | 是 | 点击位置x的坐标。 单位：vp |
@@ -615,21 +667,26 @@ type ButtonTriggerClickCallback = (xPos: number, yPos: number) => void
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)。
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 示例1（设置按钮的显示样式）
+### 示例1（设置按钮的显示样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示两种创建按钮的方式：包含子组件或使用文本内容。
  
@@ -695,7 +752,10 @@ struct ButtonExample {
  
   
 
-#### 示例2 （为按钮添加渲染控制）
+### 示例2 （为按钮添加渲染控制）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过if/else控制按钮的显示文本。
  
@@ -731,7 +791,10 @@ struct ButtonRenderControlExample {
  
   
 
-#### 示例3 （设置按钮文本样式）
+### 示例3 （设置按钮文本样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置labelStyle自定义按钮文本的显示样式。
  
@@ -777,7 +840,10 @@ struct ButtonTestDemo {
  
   
 
-#### 示例4（设置不同尺寸按钮的重要程度）
+### 示例4（设置不同尺寸按钮的重要程度）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置controlSize、buttonStyle展示不同尺寸和样式的按钮。
  
@@ -815,12 +881,15 @@ struct ButtonExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/wtl4Q6PDRDKiyef4MffBEA/zh-cn_image_0000002685928171.jpeg?HW-CC-KV=V1&HW-CC-Date=20260730T071503Z&HW-CC-Expire=86400&HW-CC-Sign=231E1D8D2B3CA2C3ADA2C983A8FF92D8E690CBC77E7D5BA483F555BB66B2C13E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/BLNyYN-BTSWyi2jOSN9yuA/zh-cn_image_0000002747292661.jpeg?HW-CC-KV=V1&HW-CC-Date=20260911T073103Z&HW-CC-Expire=86400&HW-CC-Sign=BF03A6D3BC429C635200AED7E581EEB8192872C99DA4B0D8E51B222F98BEA0CC)
 
  
   
 
-#### 示例5（设置按钮的角色）
+### 示例5（设置按钮的角色）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置role设置按钮的角色。
  
@@ -849,12 +918,15 @@ struct ButtonExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/7_y0KFSSR-qrEc9OudGR5w/zh-cn_image_0000002656008494.jpeg?HW-CC-KV=V1&HW-CC-Date=20260730T071503Z&HW-CC-Expire=86400&HW-CC-Sign=8E4CD220EF897C7F78FB2536DC0F6CA8E5FE5774BF2A9A4E823E948232FD746C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/IexQz_vBTvSb-L82CTaBzQ/zh-cn_image_0000002747212577.jpeg?HW-CC-KV=V1&HW-CC-Date=20260911T073103Z&HW-CC-Expire=86400&HW-CC-Sign=12BC15FB67272BE842662B023C0A438A4D7104CFF6F51624F63F02A0FE9BAF7E)
 
  
   
 
-#### 示例6（设置自定义样式按钮）
+### 示例6（设置自定义样式按钮）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过自定义样式用一个圆圈替换原本的按钮样式。如果按压，圆圈将变成红色，标题会显示按压字样；如果没有按压，圆圈将变成黑色，标题会显示非按压字样。
  
@@ -922,12 +994,15 @@ struct ButtonExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/pFdvKX4uTtWDUmM0pmtdUw/zh-cn_image_0000002655848572.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071503Z&HW-CC-Expire=86400&HW-CC-Sign=00901AECF04EF0C495304E6657EDCA3D4BD5AE569744F0C846874FA721AD692C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/wzaQkj66QNKVMQv2Th7lCQ/zh-cn_image_0000002717772642.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073103Z&HW-CC-Expire=86400&HW-CC-Sign=1BA387B546F3CD9448BF14359276BD0E2495F0570EEABC69A1D293E98795D088)
 
  
   
 
-#### 示例7（设置圆角矩形按钮）
+### 示例7（设置圆角矩形按钮）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示圆角矩形按钮的创建、圆角大小设置及长文本截断效果。
  
@@ -968,12 +1043,15 @@ struct ButtonExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/Wyd79-vDQ1mxE6tqtSLcaw/zh-cn_image_0000002686088001.jpeg?HW-CC-KV=V1&HW-CC-Date=20260730T071503Z&HW-CC-Expire=86400&HW-CC-Sign=0763AD54CC0F83F0A3770C15C2136E8EE3E55C236E2770AEA577C38CA7C4E31B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/GmFfn1XfSPK8LOOSazHHLg/zh-cn_image_0000002717612710.jpeg?HW-CC-KV=V1&HW-CC-Date=20260911T073103Z&HW-CC-Expire=86400&HW-CC-Sign=879AC4C46A0F03897F45078966E869939FFE07948A6938E03B30A8B489DD2A09)
 
  
   
 
-#### 示例8（设置label文本水平对齐方式）
+### 示例8（设置label文本水平对齐方式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置[LabelStyle](#labelstyle10对象说明)的textAlign，设置文本对齐方式。
  
@@ -998,4 +1076,88 @@ struct Index {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/UEfrNUh1RdSbxM00Ehd4Qw/zh-cn_image_0000002685928173.jpeg?HW-CC-KV=V1&HW-CC-Date=20260730T071503Z&HW-CC-Expire=86400&HW-CC-Sign=291B875B0F8D27EBB36DB8FBD7962F640C2051C301FF47DD2B3FCD36CD8213F4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/34MOROKFSlymFmefX0wEMA/zh-cn_image_0000002747292663.jpeg?HW-CC-KV=V1&HW-CC-Date=20260911T073103Z&HW-CC-Expire=86400&HW-CC-Sign=D543E2C6FE7F027DFC8860512767867FC5E855229C952D6B320021A8230B21E6)
+
+ 
+  
+
+### 示例9（设置按钮的沉浸光感效果）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+该示例使用通用属性[systemMaterial](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-image-effect#systemmaterial)接口来设置组件的系统材质，以实现沉浸光感效果。
+ 
+组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
+ 
+从API版本26.0.0开始，新增systemMaterial属性。
+ 
+```text
+import { uiMaterial } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct Index {
+  @Builder
+  NavigationTitle() {
+    Column() {
+      Button('helloWorld')
+        .width(200)
+        .fontColor(Color.Black)
+        .systemMaterial(new uiMaterial.ImmersiveMaterial({
+          style: uiMaterial.ImmersiveStyle.THIN
+        }))
+        .backgroundColor('#7755bbff')
+    }
+    .width('100%')
+    .height('100%')
+  }
+
+  build() {
+    Column() {
+      Navigation() {
+        Row() {
+          Column()
+            .width('50%')
+            .height('100%')
+            .background(Color.White)
+
+          Column()
+            .width('50%')
+            .height('100%')
+            .background(Color.Black)
+        }
+        .height('100%')
+        .width('100%')
+        .margin({ top: 12, left: '10%' })
+      }
+      .title(this.NavigationTitle, {
+        systemMaterial: new uiMaterial.ImmersiveMaterial({
+          style: uiMaterial.ImmersiveStyle.ULTRA_THIN,
+          colorInvert: true,
+          interactive: true,
+          lightEffect: {}
+        }),
+        // systemMaterial和barStyle没有关联性，但是同时设置barStyle为STACK样式可获得最佳沉浸效果
+        barStyle: BarStyle.STACK
+      })
+      .hideTitleBar(false)
+      .titleMode(NavigationTitleMode.Free)
+      .onTitleModeChange((titleModel: NavigationTitleMode) => {
+        console.info('titleMode' + titleModel)
+      })
+    }
+  }
+}
+```
+ 
+未设置系统材质时：
+ 
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/bMzkCFCsSbqbFQCtub3kuQ/zh-cn_image_0000002747212579.png?HW-CC-KV=V1&HW-CC-Date=20260911T073103Z&HW-CC-Expire=86400&HW-CC-Sign=541B9D961084305421D25C2CAF9CC4836271C2365FC5C166041F30933872D9B9)
+
+ 
+设置沉浸光感后：
+ 
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/Q3ES__IsT7qWwCqJ4IaRNQ/zh-cn_image_0000002717772644.png?HW-CC-KV=V1&HW-CC-Date=20260911T073103Z&HW-CC-Expire=86400&HW-CC-Sign=F06D042F7FE09E43B9CEB21FA824DE0206B30A127E6C0CBAE0899821699A762E)

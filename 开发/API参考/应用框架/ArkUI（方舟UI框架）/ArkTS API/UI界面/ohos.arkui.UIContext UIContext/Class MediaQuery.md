@@ -1,9 +1,9 @@
 # Class (MediaQuery)
 
-更新时间：2026-06-16 09:03:21
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-mediaquery
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供根据不同媒体类型定义不同的样式。
 
@@ -12,9 +12,10 @@
 
 
 
-#### matchMediaSync
+## matchMediaSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 matchMediaSync(condition: string): mediaQuery.MediaQueryListener
 
@@ -28,12 +29,14 @@ matchMediaSync(condition: string): mediaQuery.MediaQueryListener
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | condition | string | 是 | 媒体查询的匹配条件，具体可参考媒体查询语法规则。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |

@@ -1,13 +1,14 @@
 # net_connection.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-net-connection-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 为网络管理数据网络连接模块提供C接口。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | int32_t OH_NetConn_HasDefaultNet(int32_t *hasDefaultNet) | 查询是否有默认激活的数据网络。 |
@@ -66,15 +70,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_NetConn_HasDefaultNet()
+### OH_NetConn_HasDefaultNet()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NetConn_HasDefaultNet(int32_t *hasDefaultNet)
@@ -92,6 +98,7 @@ int32_t OH_NetConn_HasDefaultNet(int32_t *hasDefaultNet)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | int32_t *hasDefaultNet | 是否有默认网络。 |
@@ -99,6 +106,7 @@ int32_t OH_NetConn_HasDefaultNet(int32_t *hasDefaultNet)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 0 - 成功。 201 - 缺少权限。 401 - 参数错误。 2100002 - 无法连接到服务。 2100003 - 内部错误。 |
@@ -106,9 +114,10 @@ int32_t OH_NetConn_HasDefaultNet(int32_t *hasDefaultNet)
  
   
 
-#### OH_NetConn_GetDefaultNet()
+### OH_NetConn_GetDefaultNet()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NetConn_GetDefaultNet(NetConn_NetHandle *netHandle)
@@ -126,6 +135,7 @@ int32_t OH_NetConn_GetDefaultNet(NetConn_NetHandle *netHandle)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | NetConn_NetHandle *netHandle | 存放网络ID。 |
@@ -133,6 +143,7 @@ int32_t OH_NetConn_GetDefaultNet(NetConn_NetHandle *netHandle)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 0 - 成功。 201 - 缺少权限。 401 - 参数错误。 2100002 - 无法连接到服务。 2100003 - 内部错误。 |
@@ -140,9 +151,10 @@ int32_t OH_NetConn_GetDefaultNet(NetConn_NetHandle *netHandle)
  
   
 
-#### OH_NetConn_IsDefaultNetMetered()
+### OH_NetConn_IsDefaultNetMetered()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NetConn_IsDefaultNetMetered(int32_t *isMetered)
@@ -160,6 +172,7 @@ int32_t OH_NetConn_IsDefaultNetMetered(int32_t *isMetered)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | int32_t *isMetered | 是否激活。 |
@@ -167,6 +180,7 @@ int32_t OH_NetConn_IsDefaultNetMetered(int32_t *isMetered)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 0 - 成功。 201 - 缺少权限。 401 - 参数错误。 2100002 - 无法连接到服务。 2100003 - 内部错误。 |
@@ -174,9 +188,10 @@ int32_t OH_NetConn_IsDefaultNetMetered(int32_t *isMetered)
  
   
 
-#### OH_NetConn_GetConnectionProperties()
+### OH_NetConn_GetConnectionProperties()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NetConn_GetConnectionProperties(NetConn_NetHandle *netHandle, NetConn_ConnectionProperties *prop)
@@ -194,6 +209,7 @@ int32_t OH_NetConn_GetConnectionProperties(NetConn_NetHandle *netHandle, NetConn
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | NetConn_NetHandle *netHandle | 存放网络ID。 |
@@ -202,6 +218,7 @@ int32_t OH_NetConn_GetConnectionProperties(NetConn_NetHandle *netHandle, NetConn
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 0 - 成功。 201 - 缺少权限。 401 - 参数错误。 2100002 - 无法连接到服务。 2100003 - 内部错误。 |
@@ -209,9 +226,10 @@ int32_t OH_NetConn_GetConnectionProperties(NetConn_NetHandle *netHandle, NetConn
  
   
 
-#### OH_NetConn_GetNetCapabilities()
+### OH_NetConn_GetNetCapabilities()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NetConn_GetNetCapabilities(NetConn_NetHandle *netHandle, NetConn_NetCapabilities *netCapabilities)
@@ -229,6 +247,7 @@ int32_t OH_NetConn_GetNetCapabilities(NetConn_NetHandle *netHandle, NetConn_NetC
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | NetConn_NetHandle *netHandle | 存放网络ID。 |
@@ -237,16 +256,18 @@ int32_t OH_NetConn_GetNetCapabilities(NetConn_NetHandle *netHandle, NetConn_NetC
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| int32_t | 0 - 成功。 201 - 缺少权限。 401 - 参数错误. 2100002 - 无法连接到服务。 2100003 - 内部错误。 |
+| int32_t | 0 - 成功。201 - 缺少权限。 401 - 参数错误。2100002 - 无法连接到服务。 2100003 - 内部错误。 |
  
  
   
 
-#### OH_NetConn_GetDefaultHttpProxy()
+### OH_NetConn_GetDefaultHttpProxy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NetConn_GetDefaultHttpProxy(NetConn_HttpProxy *httpProxy)
@@ -262,6 +283,7 @@ int32_t OH_NetConn_GetDefaultHttpProxy(NetConn_HttpProxy *httpProxy)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | NetConn_HttpProxy *httpProxy | 存放代理配置信息。 |
@@ -269,16 +291,18 @@ int32_t OH_NetConn_GetDefaultHttpProxy(NetConn_HttpProxy *httpProxy)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| int32_t | 0 - 成功。 201 - 缺少权限。 401 - 参数错误. 2100002 - 无法连接到服务。 2100003 - 内部错误。 |
+| int32_t | 0 - 成功。201 - 缺少权限。 401 - 参数错误。2100002 - 无法连接到服务。 2100003 - 内部错误。 |
  
  
   
 
-#### OH_NetConn_GetAddrInfo()
+### OH_NetConn_GetAddrInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NetConn_GetAddrInfo(char *host, char *serv, struct addrinfo *hint, struct addrinfo **res, int32_t netId)
@@ -296,6 +320,7 @@ int32_t OH_NetConn_GetAddrInfo(char *host, char *serv, struct addrinfo *hint, st
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | char *host | 所需查询的host名。 |
@@ -307,6 +332,7 @@ int32_t OH_NetConn_GetAddrInfo(char *host, char *serv, struct addrinfo *hint, st
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 0 - 成功。 201 - 缺少权限。 401 - 参数错误。 2100002 - 无法连接到服务。 2100003 - 内部错误。 |
@@ -314,9 +340,10 @@ int32_t OH_NetConn_GetAddrInfo(char *host, char *serv, struct addrinfo *hint, st
  
   
 
-#### OH_NetConn_FreeDnsResult()
+### OH_NetConn_FreeDnsResult()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NetConn_FreeDnsResult(struct addrinfo *res)
@@ -334,6 +361,7 @@ int32_t OH_NetConn_FreeDnsResult(struct addrinfo *res)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct addrinfo *res | DNS查询结果链表头。 |
@@ -341,6 +369,7 @@ int32_t OH_NetConn_FreeDnsResult(struct addrinfo *res)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 0 - 成功。 201 - 缺少权限。 401 - 参数错误。 2100002 - 无法连接到服务。 2100003 - 内部错误。 |
@@ -348,9 +377,10 @@ int32_t OH_NetConn_FreeDnsResult(struct addrinfo *res)
  
   
 
-#### OH_NetConn_GetAllNets()
+### OH_NetConn_GetAllNets()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NetConn_GetAllNets(NetConn_NetHandleList *netHandleList)
@@ -368,6 +398,7 @@ int32_t OH_NetConn_GetAllNets(NetConn_NetHandleList *netHandleList)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | NetConn_NetHandleList *netHandleList | 网络信息列表。 |
@@ -375,6 +406,7 @@ int32_t OH_NetConn_GetAllNets(NetConn_NetHandleList *netHandleList)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 0 - 成功。 201 - 缺少权限。 401 - 参数错误。 2100002 - 无法连接到服务。 2100003 - 内部错误。 |
@@ -382,9 +414,10 @@ int32_t OH_NetConn_GetAllNets(NetConn_NetHandleList *netHandleList)
  
   
 
-#### OHOS_NetConn_RegisterDnsResolver()
+### OHOS_NetConn_RegisterDnsResolver()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OHOS_NetConn_RegisterDnsResolver(OH_NetConn_CustomDnsResolver resolver)
@@ -404,6 +437,7 @@ int32_t OHOS_NetConn_RegisterDnsResolver(OH_NetConn_CustomDnsResolver resolver)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NetConn_CustomDnsResolver resolver | 指向自定义DNS解析器的指针。 |
@@ -411,6 +445,7 @@ int32_t OHOS_NetConn_RegisterDnsResolver(OH_NetConn_CustomDnsResolver resolver)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 0 - 成功。 401 - 参数错误。 2100002 - 无法连接到服务。 2100003 - 内部错误。 |
@@ -418,9 +453,10 @@ int32_t OHOS_NetConn_RegisterDnsResolver(OH_NetConn_CustomDnsResolver resolver)
  
   
 
-#### OHOS_NetConn_UnregisterDnsResolver()
+### OHOS_NetConn_UnregisterDnsResolver()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OHOS_NetConn_UnregisterDnsResolver(void)
@@ -440,6 +476,7 @@ int32_t OHOS_NetConn_UnregisterDnsResolver(void)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 0 - 成功。 2100002 - 无法连接到服务。 2100003 - 内部错误。 |
@@ -447,9 +484,10 @@ int32_t OHOS_NetConn_UnregisterDnsResolver(void)
  
   
 
-#### OH_NetConn_RegisterDnsResolver()
+### OH_NetConn_RegisterDnsResolver()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NetConn_RegisterDnsResolver(OH_NetConn_CustomDnsResolver resolver)
@@ -465,8 +503,13 @@ int32_t OH_NetConn_RegisterDnsResolver(OH_NetConn_CustomDnsResolver resolver)
  
 **起始版本：** 13
  
+**废弃版本：** 26.0.0
+ 
+**替代接口：** OH_NetConn_RegisterCustomDnsResolver
+ 
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NetConn_CustomDnsResolver resolver | 指向自定义DNS解析器的指针。 |
@@ -474,6 +517,7 @@ int32_t OH_NetConn_RegisterDnsResolver(OH_NetConn_CustomDnsResolver resolver)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回结果码。 NETMANAGER_EXT_SUCCESS 如果操作成功。 NETMANAGER_ERR_PARAMETER_ERROR 参数错误。请输入正确的参数。 |
@@ -481,9 +525,10 @@ int32_t OH_NetConn_RegisterDnsResolver(OH_NetConn_CustomDnsResolver resolver)
  
   
 
-#### OH_NetConn_UnregisterDnsResolver()
+### OH_NetConn_UnregisterDnsResolver()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NetConn_UnregisterDnsResolver(void)
@@ -497,8 +542,13 @@ int32_t OH_NetConn_UnregisterDnsResolver(void)
  
 **起始版本：** 13
  
+**废弃版本：** 26.0.0
+ 
+**替代接口：** OH_NetConn_UnregisterCustomDnsResolver
+ 
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 0 - 成功。 2100002 - 无法连接到服务。 2100003 - 内部错误。 |
@@ -506,9 +556,10 @@ int32_t OH_NetConn_UnregisterDnsResolver(void)
  
   
 
-#### OH_NetConn_RegisterCustomDnsResolver()
+### OH_NetConn_RegisterCustomDnsResolver()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NetConn_RegisterCustomDnsResolver(OH_NetConn_CustomDnsResolver resolver)
@@ -530,6 +581,7 @@ int32_t OH_NetConn_RegisterCustomDnsResolver(OH_NetConn_CustomDnsResolver resolv
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NetConn_CustomDnsResolver resolver | 指向自定义DNS解析器的指针。 |
@@ -537,6 +589,7 @@ int32_t OH_NetConn_RegisterCustomDnsResolver(OH_NetConn_CustomDnsResolver resolv
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 0 - 成功。 401 - 参数错误。 2101008 - 解析器已存在。 |
@@ -544,9 +597,10 @@ int32_t OH_NetConn_RegisterCustomDnsResolver(OH_NetConn_CustomDnsResolver resolv
  
   
 
-#### OH_NetConn_UnregisterCustomDnsResolver()
+### OH_NetConn_UnregisterCustomDnsResolver()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NetConn_UnregisterCustomDnsResolver(void)
@@ -564,6 +618,7 @@ int32_t OH_NetConn_UnregisterCustomDnsResolver(void)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 0 - 成功。 2100003 - 内部错误。 |
@@ -571,9 +626,10 @@ int32_t OH_NetConn_UnregisterCustomDnsResolver(void)
  
   
 
-#### OH_NetConn_BindSocket()
+### OH_NetConn_BindSocket()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NetConn_BindSocket(int32_t socketFd, NetConn_NetHandle *netHandle)
@@ -589,6 +645,7 @@ int32_t OH_NetConn_BindSocket(int32_t socketFd, NetConn_NetHandle *netHandle)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | int32_t socketFd | 由用户构造的套接字。 |
@@ -597,6 +654,7 @@ int32_t OH_NetConn_BindSocket(int32_t socketFd, NetConn_NetHandle *netHandle)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 0 - 成功。 401 - 参数错误。 2100002 - 无法连接到服务。 2100003 - 内部错误。 |
@@ -604,9 +662,10 @@ int32_t OH_NetConn_BindSocket(int32_t socketFd, NetConn_NetHandle *netHandle)
  
   
 
-#### OH_NetConn_SetAppHttpProxy()
+### OH_NetConn_SetAppHttpProxy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NetConn_SetAppHttpProxy(NetConn_HttpProxy *httpProxy)
@@ -622,6 +681,7 @@ int32_t OH_NetConn_SetAppHttpProxy(NetConn_HttpProxy *httpProxy)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | NetConn_HttpProxy *httpProxy | 需要设置的http代理配置信息。 |
@@ -629,6 +689,7 @@ int32_t OH_NetConn_SetAppHttpProxy(NetConn_HttpProxy *httpProxy)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 0 - 成功。 401 - 参数错误。 |
@@ -636,9 +697,10 @@ int32_t OH_NetConn_SetAppHttpProxy(NetConn_HttpProxy *httpProxy)
  
   
 
-#### OH_NetConn_RegisterAppHttpProxyCallback()
+### OH_NetConn_RegisterAppHttpProxyCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NetConn_RegisterAppHttpProxyCallback(OH_NetConn_AppHttpProxyChange appHttpProxyChange, uint32_t *callbackId)
@@ -654,14 +716,16 @@ int32_t OH_NetConn_RegisterAppHttpProxyCallback(OH_NetConn_AppHttpProxyChange ap
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NetConn_AppHttpProxyChange appHttpProxyChange | 需要注册的监听回调。 |
-| uint32_t *callbackId | 回调注册后生成的id, 关联已注册的回调。 |
+| uint32_t *callbackId | 回调注册后生成的id，关联已注册的回调。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 0 - 成功。 401 - 参数错误。 |
@@ -669,9 +733,10 @@ int32_t OH_NetConn_RegisterAppHttpProxyCallback(OH_NetConn_AppHttpProxyChange ap
  
   
 
-#### OH_NetConn_UnregisterAppHttpProxyCallback()
+### OH_NetConn_UnregisterAppHttpProxyCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_NetConn_UnregisterAppHttpProxyCallback(uint32_t callbackId)
@@ -687,6 +752,7 @@ void OH_NetConn_UnregisterAppHttpProxyCallback(uint32_t callbackId)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t callbackId | 需要被注销的回调所对应的id。 |
@@ -694,9 +760,10 @@ void OH_NetConn_UnregisterAppHttpProxyCallback(uint32_t callbackId)
  
   
 
-#### OH_NetConn_RefreshGlobalHttpProxyWithCallback()
+### OH_NetConn_RefreshGlobalHttpProxyWithCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NetConn_RefreshGlobalHttpProxyWithCallback(OH_NetConn_GlobalHttpProxyRefreshCallback callback, void *userContext)
@@ -714,6 +781,7 @@ int32_t OH_NetConn_RefreshGlobalHttpProxyWithCallback(OH_NetConn_GlobalHttpProxy
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NetConn_GlobalHttpProxyRefreshCallback callback | 用于接收重新认证结果的回调。若为NULL，则接口会返回401。 |
@@ -722,6 +790,7 @@ int32_t OH_NetConn_RefreshGlobalHttpProxyWithCallback(OH_NetConn_GlobalHttpProxy
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 0 - 成功。 201 - 缺少权限。 401 - 参数错误。 |
@@ -729,9 +798,10 @@ int32_t OH_NetConn_RefreshGlobalHttpProxyWithCallback(OH_NetConn_GlobalHttpProxy
  
   
 
-#### OH_NetConn_RegisterNetConnCallback()
+### OH_NetConn_RegisterNetConnCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NetConn_RegisterNetConnCallback(NetConn_NetSpecifier *specifier, NetConn_NetConnCallback *netConnCallback,uint32_t timeout, uint32_t *callbackId)
@@ -749,6 +819,7 @@ int32_t OH_NetConn_RegisterNetConnCallback(NetConn_NetSpecifier *specifier, NetC
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | netSpecifier | 网络特征集。 |
@@ -759,6 +830,7 @@ int32_t OH_NetConn_RegisterNetConnCallback(NetConn_NetSpecifier *specifier, NetC
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 0 - 成功。 201 - 缺少权限。 401 - 参数错误。 2100002 - 无法连接到服务。 2100003 - 内部错误。 2101008 - 回调已注册。 2101022 - 请求数超出了允许的最大值。 |
@@ -766,9 +838,10 @@ int32_t OH_NetConn_RegisterNetConnCallback(NetConn_NetSpecifier *specifier, NetC
  
   
 
-#### OH_NetConn_RegisterDefaultNetConnCallback()
+### OH_NetConn_RegisterDefaultNetConnCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NetConn_RegisterDefaultNetConnCallback(NetConn_NetConnCallback *netConnCallback, uint32_t *callbackId)
@@ -786,6 +859,7 @@ int32_t OH_NetConn_RegisterDefaultNetConnCallback(NetConn_NetConnCallback *netCo
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | callback | 注册的回调函数集合。 |
@@ -794,6 +868,7 @@ int32_t OH_NetConn_RegisterDefaultNetConnCallback(NetConn_NetConnCallback *netCo
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 0 - 成功。 201 - 缺少权限。 401 - 参数错误。 2100002 - 无法连接到服务。 2100003 - 内部错误。 2101008 - 回调已注册。 2101022 - 请求数超出了允许的最大值。 |
@@ -801,9 +876,10 @@ int32_t OH_NetConn_RegisterDefaultNetConnCallback(NetConn_NetConnCallback *netCo
  
   
 
-#### OH_NetConn_UnregisterNetConnCallback()
+### OH_NetConn_UnregisterNetConnCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NetConn_UnregisterNetConnCallback(uint32_t callBackId)
@@ -821,6 +897,7 @@ int32_t OH_NetConn_UnregisterNetConnCallback(uint32_t callBackId)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t callBackId | 需要被注销的回调对应ID。 |
@@ -828,6 +905,7 @@ int32_t OH_NetConn_UnregisterNetConnCallback(uint32_t callBackId)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 0 - 成功。 201 - 缺少权限。 401 - 参数错误。 2100002 - 无法连接到服务。 2100003 - 内部错误。 2101007 - 回调不存在。 |
@@ -835,9 +913,10 @@ int32_t OH_NetConn_UnregisterNetConnCallback(uint32_t callBackId)
  
   
 
-#### OH_NetConn_SetPacUrl()
+### OH_NetConn_SetPacUrl()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NetConn_ErrorCode OH_NetConn_SetPacUrl(const char *pacUrl)
@@ -853,6 +932,7 @@ NetConn_ErrorCode OH_NetConn_SetPacUrl(const char *pacUrl)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *pacUrl | 需要设置的PAC脚本地址。 |
@@ -860,6 +940,7 @@ NetConn_ErrorCode OH_NetConn_SetPacUrl(const char *pacUrl)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NetConn_ErrorCode | 结果定义在 NetConn_ErrorCode。 NETCONN_SUCCESS 成功。 NETCONN_PERMISSION_DENIED 缺少权限。 NETCONN_PARAMETER_ERROR 参数错误。 NETCONN_OPERATION_FAILED 无法连接到服务。 NETCONN_INTERNAL_ERROR 内部错误。 |
@@ -867,9 +948,10 @@ NetConn_ErrorCode OH_NetConn_SetPacUrl(const char *pacUrl)
  
   
 
-#### OH_NetConn_GetPacUrl()
+### OH_NetConn_GetPacUrl()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NetConn_ErrorCode OH_NetConn_GetPacUrl(char *pacUrl)
@@ -883,6 +965,7 @@ NetConn_ErrorCode OH_NetConn_GetPacUrl(char *pacUrl)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | char *pacUrl | 获取的PAC脚本地址。 |
@@ -890,6 +973,7 @@ NetConn_ErrorCode OH_NetConn_GetPacUrl(char *pacUrl)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NetConn_ErrorCode | 结果定义在 NetConn_ErrorCode。 NETCONN_SUCCESS 成功。 NETCONN_PARAMETER_ERROR 参数错误。 NETCONN_OPERATION_FAILED 无法连接到服务。 NETCONN_INTERNAL_ERROR 内部错误。 |
@@ -897,9 +981,10 @@ NetConn_ErrorCode OH_NetConn_GetPacUrl(char *pacUrl)
  
   
 
-#### OH_NetConn_QueryProbeResult()
+### OH_NetConn_QueryProbeResult()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NetConn_QueryProbeResult(char *destination, int32_t duration, NetConn_ProbeResultInfo *probeResultInfo)
@@ -917,6 +1002,7 @@ int32_t OH_NetConn_QueryProbeResult(char *destination, int32_t duration, NetConn
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | char *destination | 需要探测的目标域名或者IP地址。对于域名，探测前会进行域名解析，将域名解析为目标IP，之后发起探测。域名解析时间不包含在duration指示的探测持续时间内。 |
@@ -926,6 +1012,7 @@ int32_t OH_NetConn_QueryProbeResult(char *destination, int32_t duration, NetConn
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 0 - 成功。 201 - 缺少权限。 401 - 参数错误。 2100003 - 内部错误。 |
@@ -933,9 +1020,10 @@ int32_t OH_NetConn_QueryProbeResult(char *destination, int32_t duration, NetConn
  
   
 
-#### OH_NetConn_QueryTraceRoute()
+### OH_NetConn_QueryTraceRoute()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NetConn_QueryTraceRoute(char *destination, NetConn_TraceRouteOption *option,NetConn_TraceRouteInfo *traceRouteInfo)
@@ -955,6 +1043,7 @@ int32_t OH_NetConn_QueryTraceRoute(char *destination, NetConn_TraceRouteOption *
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | char *destination | 目的地址。 |
@@ -964,6 +1053,7 @@ int32_t OH_NetConn_QueryTraceRoute(char *destination, NetConn_TraceRouteOption *
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 0 - 成功。 201 - 缺少权限。 |

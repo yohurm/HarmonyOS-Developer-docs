@@ -1,11 +1,12 @@
 # FG_Vec3D
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_f_g___vec3_d
 **支持设备：** Phone | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -19,16 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | float x | 三维向量的X轴坐标。 |
@@ -38,13 +42,15 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### x
+### x
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -58,7 +64,8 @@ float FG_Vec3D::x
  
   
 
-#### y
+### y
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -72,7 +79,8 @@ float FG_Vec3D::y
  
   
 
-#### z
+### z
+
 
 **支持设备：** Phone | Tablet | TV
 

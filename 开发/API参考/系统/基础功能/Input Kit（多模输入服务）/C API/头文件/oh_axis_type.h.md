@@ -1,13 +1,14 @@
 # oh_axis_type.h
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-axis-type-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 输入设备的轴事件结构和枚举，轴类型定义了输入设备在不同交互场景下的物理行为特征，系统通过轴类型来区分和传递不同的手势交互信息。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | InputEvent_AxisType | InputEvent_AxisType | 输入设备的轴类型。 |
@@ -42,15 +46,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### InputEvent_AxisType
+### InputEvent_AxisType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum InputEvent_AxisType
@@ -62,6 +68,7 @@ enum InputEvent_AxisType
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AXIS_TYPE_UNKNOWN = 0 | 未知轴类型，通常作为初始值。 |
@@ -73,9 +80,10 @@ enum InputEvent_AxisType
  
   
 
-#### InputEvent_AxisEventType
+### InputEvent_AxisEventType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum InputEvent_AxisEventType
@@ -87,6 +95,7 @@ enum InputEvent_AxisEventType
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AXIS_EVENT_TYPE_PINCH = 1 | 双指捏合事件，包含AXIS_TYPE_PINCH和AXIS_TYPE_ROTATE两种InputEvent_AxisType。 |
@@ -95,9 +104,10 @@ enum InputEvent_AxisEventType
  
   
 
-#### InputEvent_AxisAction
+### InputEvent_AxisAction
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum InputEvent_AxisAction
@@ -109,6 +119,7 @@ enum InputEvent_AxisAction
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AXIS_ACTION_CANCEL = 0 | 轴事件取消。 |

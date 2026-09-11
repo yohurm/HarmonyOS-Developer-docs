@@ -1,14 +1,15 @@
 # Constants
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-c
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
   
+
 | 名称 | 类型 | 只读 | 说明 |
 | --- | --- | --- | --- |
 | DEFAULT_VOLUME_GROUP_ID9+ | number | 是 | 默认音量组ID。 系统能力： SystemCapability.Multimedia.Audio.Volume |

@@ -1,6 +1,6 @@
-# HdsListItem
+# HdsListItem (列表项)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdslistitem
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -10,7 +10,8 @@
 **起始版本：** 6.0.0(20)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -20,7 +21,8 @@ import { HdsListItem } from '@kit.UIDesignKit';
  
   
 
-#### 子组件
+## 子组件
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -28,7 +30,8 @@ import { HdsListItem } from '@kit.UIDesignKit';
  
   
 
-#### 属性
+## 属性
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -36,7 +39,8 @@ import { HdsListItem } from '@kit.UIDesignKit';
  
   
 
-#### 事件
+## 事件
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -44,7 +48,8 @@ import { HdsListItem } from '@kit.UIDesignKit';
  
   
 
-#### HdsListItem
+## HdsListItem
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -56,10 +61,11 @@ HdsListItem({customItemBuilder?: CustomBuilder, hdsListItemCard?: HdsListItemCar
  
 **系统能力：** SystemCapability.UIDesign.HDSPattern.Standard
  
-**设备行为异常：** 该接口在TV中与ux规范不一致（获焦态和悬停态组件未放大，获焦态背板颜色未变化，Button内部的text默认颜色等），在其他设备类型中可正常使用。
+**设备行为差异：** 该接口在TV中与UX规范不一致（获焦态和悬停态组件未放大，获焦态背板颜色未变化，Button内部的text默认颜色等），在其他设备类型中可正常使用。
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | customItemBuilder | CustomBuilder | 否 | @BuilderParam | 自定义列表卡片项内容。 |
@@ -78,7 +84,8 @@ HdsListItem({customItemBuilder?: CustomBuilder, hdsListItemCard?: HdsListItemCar
  
   
 
-#### HdsSwipeActionOptions
+## HdsSwipeActionOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -90,6 +97,7 @@ HdsListItem({customItemBuilder?: CustomBuilder, hdsListItemCard?: HdsListItemCar
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | icons | Array&lt;SwipeIconConfigurations&gt; | 否 | 是 | 配置除删除按钮之外其他三个按钮样式。 |
@@ -101,7 +109,8 @@ HdsListItem({customItemBuilder?: CustomBuilder, hdsListItemCard?: HdsListItemCar
  
   
 
-#### IconOptions
+## IconOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -113,6 +122,7 @@ HdsListItem({customItemBuilder?: CustomBuilder, hdsListItemCard?: HdsListItemCar
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | enable | boolean | 否 | 是 | 图标是否被启用。 true：图标被启用。 false：图标被禁用。 默认值：true。 |
@@ -124,7 +134,8 @@ HdsListItem({customItemBuilder?: CustomBuilder, hdsListItemCard?: HdsListItemCar
  
   
 
-#### SwipeIconConfigurations
+## SwipeIconConfigurations
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -136,6 +147,7 @@ HdsListItem({customItemBuilder?: CustomBuilder, hdsListItemCard?: HdsListItemCar
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | icon | SwipeIconType | 否 | 否 | 图标资源，可支持symbol或image类型。 |
@@ -146,7 +158,8 @@ HdsListItem({customItemBuilder?: CustomBuilder, hdsListItemCard?: HdsListItemCar
  
   
 
-#### DeleteIconOptions
+## DeleteIconOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -158,6 +171,7 @@ HdsListItem({customItemBuilder?: CustomBuilder, hdsListItemCard?: HdsListItemCar
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | backgroundColor | ResourceColor | 否 | 是 | 删除按钮图标背景色。 |
@@ -168,7 +182,8 @@ HdsListItem({customItemBuilder?: CustomBuilder, hdsListItemCard?: HdsListItemCar
  
   
 
-#### FullDeleteOptions
+## FullDeleteOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -182,6 +197,7 @@ HdsListItem({customItemBuilder?: CustomBuilder, hdsListItemCard?: HdsListItemCar
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | isFullDelete | boolean | 否 | 是 | 横滑之后再次滑动是否删除整个列表项。 - true：横滑之后再次滑动删除该列表项。 - false：横滑之后再次滑动不删除该列表项。 默认值：false。 |
@@ -191,7 +207,8 @@ HdsListItem({customItemBuilder?: CustomBuilder, hdsListItemCard?: HdsListItemCar
  
   
 
-#### HdsListItemStateStylesOptions
+## HdsListItemStateStylesOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -203,6 +220,7 @@ HdsListItem({customItemBuilder?: CustomBuilder, hdsListItemCard?: HdsListItemCar
  
 **起始版本：** 26.0.0
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | selectedBackgroundColor | ResourceColor | 否 | 是 | 选中态背景颜色。 默认值：Color.Transparent。 |
@@ -211,7 +229,8 @@ HdsListItem({customItemBuilder?: CustomBuilder, hdsListItemCard?: HdsListItemCar
  
   
 
-#### SwipeIconType
+## SwipeIconType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -227,6 +246,7 @@ type SwipeIconType = SymbolGlyphModifier | ImageOptions
  
 **返回值**:
   
+
 | 类型 | 说明 |
 | --- | --- |
 | SymbolGlyphModifier | symbol资源类型。 |
@@ -235,7 +255,8 @@ type SwipeIconType = SymbolGlyphModifier | ImageOptions
  
   
 
-#### MenuStyle
+## MenuStyle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -247,6 +268,7 @@ type SwipeIconType = SymbolGlyphModifier | ImageOptions
  
 **起始版本：** 6.1.0(23)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | responseType | ResponseType | 否 | 是 | 预览菜单响应类型。 |
@@ -255,7 +277,8 @@ type SwipeIconType = SymbolGlyphModifier | ImageOptions
  
   
 
-#### SwipeActionCallback
+## SwipeActionCallback
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -271,7 +294,8 @@ type SwipeActionCallback = () => void
  
   
 
-#### OnStateChangeCallback
+## OnStateChangeCallback
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -287,6 +311,7 @@ type OnStateChangeCallback = (state: SwipeActionState) => void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | state | SwipeActionState | 是 | 列表项滑动的状态。 - state为SwipeActionState.COLLAPSED时，表示收起状态，此时操作项处于隐藏状态。 - state为SwipeActionState.EXPANDED时，表示展开状态，此时操作项处于显示状态。 - state为SwipeActionState.ACTIONING时，表示长距离状态，当HdsListItem进入长距删除区后，删除HdsListItem的状态。 |
@@ -294,7 +319,8 @@ type OnStateChangeCallback = (state: SwipeActionState) => void
  
   
 
-#### SwipeDeleteTriggerType
+## SwipeDeleteTriggerType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -306,6 +332,7 @@ type OnStateChangeCallback = (state: SwipeActionState) => void
  
 **起始版本：** 6.1.0(23)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NORMAL_TRIGGER | 0 | 列表横滑删除触发类型：正常触发。 正常触发长横滑删除。 触发阈值：图标宽度+50%剩余list宽度。 |
@@ -315,7 +342,8 @@ type OnStateChangeCallback = (state: SwipeActionState) => void
  
   
 
-#### 示例
+## 示例
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -480,7 +508,8 @@ export class LazyDataSource<T> implements IDataSource {
  
   
 
-#### 效果展示
+## 效果展示
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 

@@ -1,18 +1,19 @@
 # 网络场景识别 (C/C++)
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/networkboost-scenecallback-c
 
-#### 场景介绍
+## 场景介绍
 
 应用在订阅网络场景识别后，系统在网络场景实时信息或预测信息发生变化后回调给应用，回调的网络场景信息包括数据传输的链路类型、网络场景类型、数传策略建议、弱信号信息等。
 
 
 
-#### 接口说明
+## 接口说明
 
 具体API说明详见[接口文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/network-boost-c-overview)。
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -22,7 +23,7 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 导入Network Boost Kit模块。
 
   
@@ -72,7 +73,7 @@ int32_t RegisterNetSceneCallback()
 {
     HMS_NetworkBoost_NetSceneChange callback;
     callback = onNetworkSceneChanged;
-    // 注册回调，获取回调Id
+    // 注册回调，获取回调Id，该Id由系统返回并用于后续取消注册操作
     int32_t ret = HMS_NetworkBoost_RegisterNetSceneCallback(callback, &callbackId);
     printf("注册网络场景结果: %d, Id：%d\n", ret, callbackId);
     return ret;

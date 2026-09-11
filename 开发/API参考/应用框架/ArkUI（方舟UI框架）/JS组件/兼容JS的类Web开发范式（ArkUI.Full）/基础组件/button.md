@@ -1,9 +1,9 @@
 # button
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-basic-button
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
@@ -12,20 +12,23 @@
 按钮组件，包括胶囊按钮、圆形按钮、文本按钮、弧形按钮、下载按钮。
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 不支持。
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-attributes)外，还支持如下属性：
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | type | string | - | 否 | 不支持动态修改。默认展示为胶囊型按钮，与标准胶囊按钮不同的是，四边圆角可以通过border-radius分别指定。该属性可选值包括： - capsule：胶囊型按钮，带圆角按钮，有背景色和文本。 - circle：圆形按钮，支持放置图标。 - text：文本按钮，仅包含文本显示。 - arc：弧形按钮，仅支持智能穿戴。 - download：下载按钮，额外增加下载进度条功能。 |
@@ -37,18 +40,21 @@
  
   
 
-#### 样式
+## 样式
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### type设置为非arc
+### type设置为非arc
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用样式](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-styles)外，还支持如下样式：
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | text-color | &lt;color&gt; | #007dff | 否 | 按钮的文本颜色。 |
@@ -64,12 +70,14 @@
  
   
 
-#### type设置为arc
+### type设置为arc
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用样式](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-styles)中background-color、opacity、display、visibility、position、[left|top|right|bottom]外，还支持如下样式：
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | text-color | &lt;color&gt; | #de0000 | 否 | 弧形按钮的文本颜色。 |
@@ -82,22 +90,25 @@
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-events)。
  
   
 
-#### 方法
+## 方法
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用方法](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-methods)。
  
 类型为download时，支持如下方法：
   
+
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | setProgress | { progress:percent } | 设定下载按钮进度条进度，取值位于0-100区间内，当设置的值大于0时，下载按钮展现进度条。当设置的值大于等于100时，取消进度条显示。 浮在进度条上的文字通过value值进行变更。 |
@@ -105,9 +116,10 @@
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 <!-- xxx.hml -->
@@ -183,4 +195,4 @@ export default {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/vnmfk6Y1QAS7bunl6dqbmg/zh-cn_image_0000002704395151.png?HW-CC-KV=V1&HW-CC-Date=20260813T095451Z&HW-CC-Expire=86400&HW-CC-Sign=FEAA5F893845CA39C83EBFACD90B03873FE8FC2A0EFF9CF159A78C68DDED8BFC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/P2eQaATsT0WUHl0RFpyqyQ/zh-cn_image_0000002747213105.png?HW-CC-KV=V1&HW-CC-Date=20260911T072953Z&HW-CC-Expire=86400&HW-CC-Sign=BFB15D3D70CDCCB3DC468F1341C4F2C71A693A41680CC4AEA4F0CCB9086D0AA6)

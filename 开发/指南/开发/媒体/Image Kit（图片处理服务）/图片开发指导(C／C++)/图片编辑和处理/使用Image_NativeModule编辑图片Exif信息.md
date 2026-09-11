@@ -1,6 +1,6 @@
 # 使用Image_NativeModule读取和编辑图片Exif信息
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-tool-c
 
@@ -12,6 +12,7 @@ Exif（Exchangeable image file format）是专门为数码相机的照片设定�
 
 系统目前仅支持读取和修改部分Exif信息，具体支持范围请参见[变量](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-common-h#变量)里的OHOS_IMAGE_PROPERTY_XXX类型。不同图片格式对Exif信息的读写支持情况如下。
 
+
 | 图片格式 | 读取Exif信息 | 修改Exif信息 |
 | --- | --- | --- |
 | JPG/JPEG | 支持 | 支持 |
@@ -22,9 +23,10 @@ Exif（Exchangeable image file format）是专门为数码相机的照片设定�
 
 
 
-#### 接口说明
+## 接口说明
 
 Exif信息的读取与编辑相关C API如下，详细介绍请参考[image_source_native.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-source-native-h)。
+
 
 | 接口 | 说明 |
 | --- | --- |
@@ -34,7 +36,7 @@ Exif信息的读取与编辑相关C API如下，详细介绍请参考[image_sour
 
 
 
-#### 注意事项
+## 注意事项
 
  - 需要先创建OH_ImageSourceNative对象，再读取或编辑Exif信息。
  - 读取图片Exif信息前，需要确保应用对目标图片具有读取权限；修改图片Exif信息前，需要确保应用对目标图片具有写入权限。
@@ -46,11 +48,11 @@ Exif信息的读取与编辑相关C API如下，详细介绍请参考[image_sour
 
 
 
-#### 开发步骤
+## 开发步骤
 
 
 
-#### 添加链接库
+### 添加链接库
 
 在进行应用开发之前，开发者需要打开Native工程的src/main/cpp/CMakeLists.txt，在target_link_libraries依赖中添加libimage_source.so以及日志依赖libhilog_ndk.z.so。
 
@@ -60,7 +62,7 @@ target_link_libraries(entry PUBLIC libhilog_ndk.z.so libimage_source.so)
 
 
 
-#### Native接口调用
+### Native接口调用
 
 在DevEco Studio中新建Native C++应用，默认生成的项目中包含index.ets文件，在entry/src/main/cpp目录下会自动生成一个cpp文件（hello.cpp或napi_init.cpp，本示例以hello.cpp文件名为例）。在hello.cpp中实现C API接口调用逻辑，示例代码如下：
 

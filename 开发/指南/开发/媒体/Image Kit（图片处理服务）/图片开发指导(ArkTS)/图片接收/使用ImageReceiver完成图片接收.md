@@ -1,6 +1,6 @@
 # 使用ImageReceiver完成图片接收
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-receiver
 
@@ -15,7 +15,7 @@ ImageReceiver可以接收相机预览流中的图片，实现[双路预览](http
 相关API的详细介绍请参见[ImageReceiver](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-imagereceiver)。
 
 
-#### 开发步骤
+## 开发步骤
 
 创建ImageReceiver对象，获取SurfaceId创建预览流，注册图像监听，按需处理预览流每帧图像。
 1. 导入相关模块包。
@@ -106,7 +106,7 @@ function onImageArrival(receiver: image.ImageReceiver) {
 通过[image.Component](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-i#component9)解析图片的buffer数据。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/ysIEXwLNRMiF0ec6eUF7Aw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095828Z&HW-CC-Expire=86400&HW-CC-Sign=8EA0AE6FD2AE881082C92BDD5B07F962D8566B07F47F9E6B10C4482811D327B1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/JEQL40wjRkyYrtOLPQPlOQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072823Z&HW-CC-Expire=86400&HW-CC-Sign=09F6DE7E946B4B254CF7E64BF841AD40288D461306A35E69368F0EA7E7A66552)
 
 
 需要确认图像的宽（width）是否与行距（rowStride）一致，如果不一致可参考以下方式一和方式二进行预处理。

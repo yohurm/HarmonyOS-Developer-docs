@@ -1,10 +1,10 @@
 # DataCopyPad
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-08-18 12:49:55
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-datacopypad
 
-#### 功能说明
+## 功能说明
 
 该接口提供数据非对齐搬运的功能，支持的数据传输通路如下。
  
@@ -17,7 +17,7 @@
  
   
 
-#### 函数原型
+## 函数原型
 
 - dataCopyParams为DataCopyExtParams类型，相比于DataCopyParams类型，支持的操作数步长等参数取值范围更大
 
@@ -55,17 +55,19 @@ __aicore__ inline void DataCopyPad(const GlobalTensor<T>& dstGlobal, const Local
  
   
 
-#### 参数说明
+## 参数说明
 
 **表1** 模板参数说明
   
+
 | 参数名 | 描述 |
 | --- | --- |
-| T | 操作数以及paddingValue（待填充数据值）的数据类型。 Kirin9020系列处理器，支持的数据类型为：int8_t/uint8_t/int16_t/uint16_t/int32_t/uint32_t/half/float KirinX90系列处理器，支持的数据类型为：int8_t/uint8_t/int16_t/uint16_t/int32_t/uint32_t/half/float |
+| T | 操作数以及paddingValue（待填充数据值）的数据类型。 Kirin9020系列处理器、Kirin9030系列处理器、KirinX90系列处理器，支持的数据类型为：int8_t/uint8_t/int16_t/uint16_t/int32_t/uint32_t/half/float。 |
  
  
 **表2** 接口参数说明
   
+
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
 | dstLocal, dstGlobal | 输出 | 目的操作数，类型为LocalTensor或GlobalTensor。 |
@@ -77,6 +79,7 @@ __aicore__ inline void DataCopyPad(const GlobalTensor<T>& dstGlobal, const Local
  
 **表3** DataCopyExtParams结构体参数定义
   
+
 | 参数名称 | 含义 |
 | --- | --- |
 | blockCount | 指定该指令包含的连续传输数据块个数，数据类型为uint16_t，取值范围：blockCount∈[1, 4095]。 |
@@ -88,6 +91,7 @@ __aicore__ inline void DataCopyPad(const GlobalTensor<T>& dstGlobal, const Local
  
 **表4** DataCopyParams结构体参数定义
   
+
 | 参数名称 | 含义 |
 | --- | --- |
 | blockCount | 指定该指令包含的连续传输数据块个数，数据类型为uint16_t，取值范围：blockCount∈[1, 4095]。 |
@@ -98,6 +102,7 @@ __aicore__ inline void DataCopyPad(const GlobalTensor<T>& dstGlobal, const Local
  
 **表5** DataCopyPadExtParams结构体参数定义
   
+
 | 参数名称 | 含义 |
 | --- | --- |
 | isPad | 是否需要填充开发者自定义的数据，取值范围：true，false。 true：填充padding value。 false：表示开发者不需要指定填充值，会默认填充随机值。 |
@@ -183,27 +188,29 @@ __aicore__ inline void DataCopyPad(const GlobalTensor<T>& dstGlobal, const Local
  
   
 
-#### 返回值
+## 返回值
 
 无
  
   
 
-#### 支持的型号
+## 支持的型号
 
-Kirin9020系列处理器。
+Kirin9020系列处理器
+ 
+Kirin9030系列处理器
  
 KirinX90系列处理器
  
   
 
-#### 约束说明
+## 约束说明
 
 leftPadding、rightPadding的字节数均不能超过32Bytes。
  
   
 
-#### 调用示例
+## 调用示例
 
 本示例实现了GM->VECIN->GM的非对齐搬运过程。
  

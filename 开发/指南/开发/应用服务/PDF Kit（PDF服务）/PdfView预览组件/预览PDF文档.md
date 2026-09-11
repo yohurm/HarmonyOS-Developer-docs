@@ -1,6 +1,6 @@
 # 预览PDF文档
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pdf-pdfview-component
 
@@ -16,7 +16,7 @@ PDF Kit提供了丰富的PDF文档预览能力，比如：
 详细说明及使用请参考：[PdfView](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/pdf-arkts-pdfview-component#pdfview)组件。
 
 
-#### 示例代码
+## 示例代码
 1. 导入相关模块。
 2. 以下示例代码中以预览“input.pdf”文件名为例，此时需要确保在工程目录“src/main/resources/rawfile”里存在input.pdf文档，并且拷贝input.pdf文档到沙箱目录。
 3. 调用loadDocument方法，加载PDF文档。

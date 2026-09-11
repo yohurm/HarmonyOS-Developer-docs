@@ -57,7 +57,7 @@ struct CustomDialogDemo {
       Row({ space: 50 }) {
         Button('关闭弹窗').onClick(() => {
           try {
-            // 关闭时找到对应的弹窗id，进而实现关闭指定的弹窗
+           <em> // 关闭时找到对应的弹窗id，进而实现关闭指定的弹窗</em>
             this.ctx.getPromptAction().closeCustomDialog(this.dialogMap.get(dialogNumber));
           } catch (error) {
             let message = (error as BusinessError).message;
@@ -85,7 +85,7 @@ struct CustomDialogDemo {
               isModal: false
             })
             .then((dialogId: number) => {
-              // 存储对应的弹框id
+             <em> // 存储对应的弹框id</em>
               try {
                 this.dialogMap.set(this.dialogNum, dialogId);
               } catch (error) {

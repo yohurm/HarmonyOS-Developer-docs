@@ -1,13 +1,13 @@
 # 网络诊断：Network分析
 
-更新时间：2026-07-28 12:07:32
+更新时间：2026-08-29 09:41:34
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-profiler-network
 
-#### 功能介绍
+## 功能介绍
 
  
-DevEco Profiler提供Network模板，帮助用户在应用运行过程中查看http协议栈网络信息和网络流量信息，http协议栈包括请求分段耗时以及请求具体内容，方便对网络问题进行调优。请求耗时按照以下五种阶段进行划分：DNS 解析、TCP连接、TLS连接、请求等待、接收响应，分别展示在各阶段的耗时，可以针对性的优化时延问题。同时，详情信息将展示每个请求中携带的信息，包含request、response侧及其携带的header、body、cookie信息，方便网络问题定位。
+DevEco Profiler提供Network模板，帮助用户在应用运行过程中查看HTTP协议栈网络信息和网络流量信息，HTTP协议栈包括请求分段耗时和请求具体内容，方便对网络问题进行调优。请求耗时按照以下五种阶段进行划分：DNS 解析、TCP连接、TLS连接、请求等待、接收响应，分别展示在各阶段的耗时，可以针对性的优化时延问题。同时，详情信息将展示每个请求中携带的信息，包含Request、Response侧及其携带的Header、Body、Cookie信息，方便网络问题定位。
  
 Network模板支持的泳道包括：Network Traffic、Network Request、User Trace、ArkTS Callstack、Callstack。本文介绍Network Traffic、Network Request泳道，其他泳道的详细信息请参考对应模板内容。
  
@@ -15,11 +15,11 @@ Network模板支持的泳道包括：Network Traffic、Network Request、User Tr
 
  
 > [!NOTE]
-> 任务分析前，需创建Network分析任务并录制相关数据，操作方法可参考 性能问题定位：深度录制 ，或在 会话区 选择 Open File ，导入历史数据。 当前Network模板任务仅支持对Network kit接口中request 类型接口进行录制和调优。 由于隐私安全政策，已上架应用市场的应用不支持录制Network分析模板。
+> 任务分析前，需创建Network分析任务并录制相关数据，操作方法可参考 性能问题定位：深度录制 ，或在 会话区 选择 Open File ，导入历史数据。 当前Network模板任务仅支持对Network Kit接口中Request 类型接口进行录制和调优。 由于隐私安全政策，已上架应用市场的应用不支持录制Network分析模板。
 
  
 
-#### 查看网络流量消耗信息
+## 查看网络流量消耗信息
 
  
 点击**Network Traffic**泳道，可在下方数据区查看录制过程中发生的网络流量消耗情况。
@@ -33,7 +33,7 @@ Network模板支持的泳道包括：Network Traffic、Network Request、User Tr
 
  
 
-#### 查看网络请求各阶段耗时
+## 查看网络请求各阶段耗时
 
  
 点击**Network Request**泳道，可在下方数据区查看录制过程中发生的网络请求数量变化。
@@ -45,7 +45,7 @@ Network模板支持的泳道包括：Network Traffic、Network Request、User Tr
 ![](assets/网络诊断：Network分析/file-20260514133153790-4.png)
 
 
-  选择Details中某条数据，泳道区域将以虚线框选展示其耗时方块，右侧**More**区域展示该请求的Request Headers、Response Headers、Response Body。
+  选择Details中某条数据，泳道区域将以虚线框展示其耗时方块，右侧**More**区域展示该请求的Request Headers、Response Headers、Response Body。
 
   
 ![](assets/网络诊断：Network分析/file-20260514133153790-5.png)
@@ -59,7 +59,7 @@ Network模板支持的泳道包括：Network Traffic、Network Request、User Tr
 
  
 
-#### 分析启动过程网络问题
+## 分析启动过程网络问题
 
 DevEco Profiler的Network分析任务，提供了启动过程网络问题分析能力，协助开发者解决启动过程的网络问题。
  
@@ -69,8 +69,6 @@ DevEco Profiler的Network分析任务，提供了启动过程网络问题分析�
 
  
  
-具体操作方法为：在任务列表中单击Network任务后的
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/vXg-Wn_oQ-SjzCA7nINYvg/zh-cn_image_0000002678156159.png?HW-CC-KV=V1&HW-CC-Date=20260730T071823Z&HW-CC-Expire=86400&HW-CC-Sign=4E1F5F0ED23FE7FA15ECB42BFCE165CF7D6C12F2B3FDB1E8E3D2568AB407B191)
-按钮。
+具体操作方法为：在任务列表中单击Network任务后的![icon](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/v2Q14M0LTBqHJ72QeRbu-g/zh-cn_image_0000002701662854.png?HW-CC-KV=V1&HW-CC-Date=20260911T072819Z&HW-CC-Expire=86400&HW-CC-Sign=2447561360D5C23D1D8092DDAB0CC012F368C99C1CFDA4B1042B683B37013441)按钮。
  
 在分析结束后，呈现出的数据类型以及相应的处理方法，与非启动过程的分析相同。

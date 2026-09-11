@@ -1,9 +1,9 @@
 # NavRouter
 
-更新时间：2026-06-17 08:22:21
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navrouter
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 导航组件，默认提供点击响应处理，不需要开发者自定义点击事件逻辑。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 必须包含两个子组件，其中第二个子组件必须为[NavDestination](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navdestination)。
  
@@ -24,15 +25,17 @@
  
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### NavRouter(deprecated)
+### NavRouter(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 NavRouter()
  
@@ -46,9 +49,10 @@ NavRouter()
  
   
 
-#### NavRouter(deprecated)
+### NavRouter(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 NavRouter(value: RouteInfo)
  
@@ -66,6 +70,7 @@ NavRouter(value: RouteInfo)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | RouteInfo | 是 | 路由信息。 |
@@ -73,17 +78,19 @@ NavRouter(value: RouteInfo)
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
  
   
 
-#### mode(deprecated)
+### mode(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 mode(mode: NavRouteMode)
  
@@ -101,6 +108,7 @@ mode(mode: NavRouteMode)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | NavRouteMode | 是 | 指定点击NavRouter跳转到NavDestination页面时，使用的路由模式。 默认值：NavRouteMode.PUSH_WITH_RECREATE |
@@ -108,9 +116,10 @@ mode(mode: NavRouteMode)
  
   
 
-#### RouteInfo(deprecated)对象说明
+## RouteInfo(deprecated)对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 路由信息。
  
@@ -120,6 +129,7 @@ mode(mode: NavRouteMode)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | name | string | 否 | 否 | 点击NavRouter跳转到的NavDestination页面的名称。 说明： 从API version 10开始支持，从API version 13开始废弃，建议使用name替代。 |
@@ -128,9 +138,10 @@ mode(mode: NavRouteMode)
  
   
 
-#### NavRouteMode(deprecated)枚举说明
+## NavRouteMode(deprecated)枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 路由模式。
  
@@ -144,6 +155,7 @@ mode(mode: NavRouteMode)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 说明 |
 | --- | --- |
 | PUSH_WITH_RECREATE | 跳转到新的NavDestination页面时，替换当前显示的NavDestination页面，页面销毁，但该页面信息仍保留在路由栈中。 |
@@ -153,15 +165,17 @@ mode(mode: NavRouteMode)
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### onStateChange(deprecated)
+### onStateChange(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onStateChange(callback: (isActivated: boolean) => void)
  
@@ -177,6 +191,7 @@ onStateChange(callback: (isActivated: boolean) => void)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isActivated | boolean | 是 | isActivated为true时表示激活，为false时表示未激活。 |
@@ -184,9 +199,10 @@ onStateChange(callback: (isActivated: boolean) => void)
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```ArkTS
 // xxx.ets
@@ -269,4 +285,4 @@ struct NavRouterExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/8sxa2SBbT4-Vtn3vmPgO6g/zh-cn_image_0000002659222233.gif?HW-CC-KV=V1&HW-CC-Date=20260701T014357Z&HW-CC-Expire=86400&HW-CC-Sign=310C88C9B725DF627A09E12490C91B6554997353F11B26DAF4E88F2A8FAF1206)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/FRMcSgI6QOC3axjEHaR9Hw/zh-cn_image_0000002717773148.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073105Z&HW-CC-Expire=86400&HW-CC-Sign=2998E6857F4DD15DD4A731AE96E139BF33AF8EDCD88F4F442184BE1C48896AAA)

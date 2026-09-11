@@ -1,10 +1,14 @@
 # FIDO2_AuthenticatorSelectionCriteria
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_f_i_d_o2___authenticator_selection_criteria
+**支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 由WebAuthn依赖方指定，与认证器有关。
  
@@ -16,15 +20,22 @@
  
   
 
-#### 汇总
+## 汇总
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 成员变量
+### 成员变量
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
-| FIDO2_AuthenticatorAttachment authenticatorAttachment | 认证器信息（FIDO2_PLATFORM表示平台，FIDO2_ROAMING表示漫游）。默认值为FIDO2_PLATFORM。可选。 |
+| FIDO2_AuthenticatorAttachment authenticatorAttachment | 认证器信息（FIDO2_PLATFORM表示平台，FIDO2_CROSS_PLATFORM表示漫游）。默认值为FIDO2_PLATFORM。可选。 |
 | const char * residentKey | 常驻键。默认空。可选。 |
 | bool requireResidentKey | 是否需要常驻键，true代表需要常驻键，false代表不需要。默认值为false。可选。 |
 | FIDO2_UserVerificationRequirement userVerification | 用户认证需求枚举。默认值为FIDO2_PREFERRED。可选。 |
@@ -32,11 +43,17 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### authenticatorAttachment
+### authenticatorAttachment
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FIDO2_AuthenticatorAttachment FIDO2_AuthenticatorSelectionCriteria::authenticatorAttachment
@@ -44,11 +61,14 @@ FIDO2_AuthenticatorAttachment FIDO2_AuthenticatorSelectionCriteria::authenticato
  
 **描述**
  
-认证器信息（平台、漫游）。可选。
+认证器信息（平台、漫游）。默认值为FIDO2_PLATFORM。可选。
  
   
 
-#### requireResidentKey
+### requireResidentKey
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 bool FIDO2_AuthenticatorSelectionCriteria::requireResidentKey
@@ -60,7 +80,10 @@ bool FIDO2_AuthenticatorSelectionCriteria::requireResidentKey
  
   
 
-#### residentKey
+### residentKey
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 const char* FIDO2_AuthenticatorSelectionCriteria::residentKey
@@ -72,7 +95,10 @@ const char* FIDO2_AuthenticatorSelectionCriteria::residentKey
  
   
 
-#### userVerification
+### userVerification
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FIDO2_UserVerificationRequirement FIDO2_AuthenticatorSelectionCriteria::userVerification

@@ -1,13 +1,14 @@
 # net_http.h
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-net-http-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义HTTP请求模块的接口。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | Http_Headers *OH_Http_CreateHeaders(void) | 创建HTTP请求或者响应的头。 |
@@ -48,15 +52,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Http_CreateHeaders()
+### OH_Http_CreateHeaders()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Http_Headers *OH_Http_CreateHeaders(void)
@@ -76,6 +82,7 @@ Http_Headers *OH_Http_CreateHeaders(void)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Http_Headers * | Http_Headers 返回HTTP请求或者响应的头，指向Http_Headers。 |
@@ -83,9 +90,10 @@ Http_Headers *OH_Http_CreateHeaders(void)
  
   
 
-#### OH_Http_DestroyHeaders()
+### OH_Http_DestroyHeaders()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Http_DestroyHeaders(Http_Headers **headers)
@@ -101,6 +109,7 @@ void OH_Http_DestroyHeaders(Http_Headers **headers)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Http_Headers **headers | 要被销毁的HTTP请求或响应的头，是通过OH_Http_CreateHeaders生成的数据。 |
@@ -108,9 +117,10 @@ void OH_Http_DestroyHeaders(Http_Headers **headers)
  
   
 
-#### OH_Http_SetHeaderValue()
+### OH_Http_SetHeaderValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 uint32_t OH_Http_SetHeaderValue(struct Http_Headers *headers, const char *name, const char *value)
@@ -126,6 +136,7 @@ uint32_t OH_Http_SetHeaderValue(struct Http_Headers *headers, const char *name, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Http_Headers *headers | 指向要设置的Http_Headers的指针。 |
@@ -135,6 +146,7 @@ uint32_t OH_Http_SetHeaderValue(struct Http_Headers *headers, const char *name, 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | uint32_t | uint32_t 0 - 成功。 401 - 参数错误。 2300027 - 内存不足。 |
@@ -142,9 +154,10 @@ uint32_t OH_Http_SetHeaderValue(struct Http_Headers *headers, const char *name, 
  
   
 
-#### OH_Http_GetHeaderValue()
+### OH_Http_GetHeaderValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Http_HeaderValue *OH_Http_GetHeaderValue(Http_Headers *headers, const char *name)
@@ -160,6 +173,7 @@ Http_HeaderValue *OH_Http_GetHeaderValue(Http_Headers *headers, const char *name
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Http_Headers *headers | 指向要获取值的Http_Headers的指针。 |
@@ -168,6 +182,7 @@ Http_HeaderValue *OH_Http_GetHeaderValue(Http_Headers *headers, const char *name
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Http_HeaderValue * | Http_HeaderValue 指向获取的Http_HeaderValue的指针。 |
@@ -175,9 +190,10 @@ Http_HeaderValue *OH_Http_GetHeaderValue(Http_Headers *headers, const char *name
  
   
 
-#### OH_Http_GetHeaderEntries()
+### OH_Http_GetHeaderEntries()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Http_HeaderEntry *OH_Http_GetHeaderEntries(Http_Headers *headers)
@@ -193,6 +209,7 @@ Http_HeaderEntry *OH_Http_GetHeaderEntries(Http_Headers *headers)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Http_Headers *headers | 指向要获取值的Http_Headers的指针。 |
@@ -200,6 +217,7 @@ Http_HeaderEntry *OH_Http_GetHeaderEntries(Http_Headers *headers)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Http_HeaderEntry * | Http_HeaderEntry 指向获取的Http_HeaderEntry的指针。 |
@@ -207,9 +225,10 @@ Http_HeaderEntry *OH_Http_GetHeaderEntries(Http_Headers *headers)
  
   
 
-#### OH_Http_DestroyHeaderEntries()
+### OH_Http_DestroyHeaderEntries()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Http_DestroyHeaderEntries(Http_HeaderEntry **headerEntry)
@@ -225,6 +244,7 @@ void OH_Http_DestroyHeaderEntries(Http_HeaderEntry **headerEntry)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Http_HeaderEntry **headerEntry | 指向要销毁的Http_HeaderEntry的指针，是通过OH_Http_GetHeaderEntries获取的数据。 |
@@ -232,9 +252,10 @@ void OH_Http_DestroyHeaderEntries(Http_HeaderEntry **headerEntry)
  
   
 
-#### OH_Http_CreateRequest()
+### OH_Http_CreateRequest()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Http_Request *OH_Http_CreateRequest(const char *url)
@@ -250,6 +271,7 @@ Http_Request *OH_Http_CreateRequest(const char *url)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *url | 请求URL。 |
@@ -257,6 +279,7 @@ Http_Request *OH_Http_CreateRequest(const char *url)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Http_Request * | 返回创建的请求，指向Http_Request的指针。 |
@@ -264,9 +287,10 @@ Http_Request *OH_Http_CreateRequest(const char *url)
  
   
 
-#### OH_Http_Request()
+### OH_Http_Request()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Http_Request(Http_Request *request, Http_ResponseCallback callback, Http_EventsHandler handler)
@@ -288,6 +312,7 @@ int OH_Http_Request(Http_Request *request, Http_ResponseCallback callback, Http_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Http_Request *request | 发送的请求，指向Http_Request的指针。 |
@@ -297,6 +322,7 @@ int OH_Http_Request(Http_Request *request, Http_ResponseCallback callback, Http_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 请求发起成功返回0，非0表示请求发起失败，错误码的具体描述，可以参考Http_ErrCode。 在Http_ResponseCallback中也会携带errCode信息，表示请求发起成功，但是因为一些原因，和服务器的交互异常，具体异常原因，同步参考Http_ErrCode。 |
@@ -304,9 +330,10 @@ int OH_Http_Request(Http_Request *request, Http_ResponseCallback callback, Http_
  
   
 
-#### OH_Http_Destroy()
+### OH_Http_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Http_Destroy(struct Http_Request **request)
@@ -322,6 +349,7 @@ void OH_Http_Destroy(struct Http_Request **request)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Http_Request **request | 要中断的请求，指向Http_Request的指针，参考Http_Request。 |

@@ -1,13 +1,14 @@
 # oh_preferences.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-preferences-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供访问Preferences对象的接口与数据结构。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_Preferences | OH_Preferences | 定义Preferences对象类型。 |
@@ -40,10 +44,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | typedef void (*OH_PreferencesDataObserver)(void *context, const OH_PreferencesPair *pairs, uint32_t count) | OH_PreferencesDataObserver | 定义数据变更触发的回调函数类型。 |
@@ -73,15 +79,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_PreferencesDataObserver()
+### OH_PreferencesDataObserver()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_PreferencesDataObserver)(void *context, const OH_PreferencesPair *pairs, uint32_t count)
@@ -95,6 +103,7 @@ typedef void (*OH_PreferencesDataObserver)(void *context, const OH_PreferencesPa
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | void *context | 应用上下文的指针。 |
@@ -104,9 +113,10 @@ typedef void (*OH_PreferencesDataObserver)(void *context, const OH_PreferencesPa
  
   
 
-#### OH_Preferences_Open()
+### OH_Preferences_Open()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Preferences *OH_Preferences_Open(OH_PreferencesOption *option, int *errCode)
@@ -122,6 +132,7 @@ OH_Preferences *OH_Preferences_Open(OH_PreferencesOption *option, int *errCode)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PreferencesOption *option | 指向Preferences配置选项OH_PreferencesOption的指针。 |
@@ -130,16 +141,18 @@ OH_Preferences *OH_Preferences_Open(OH_PreferencesOption *option, int *errCode)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| OH_Preferences | 当操作成功时，返回指向打开的Preferences对象OH_Preferences实例对象的指针，失败返回空指针。 |
+| OH_Preferences * | 当操作成功时，返回指向打开的Preferences对象OH_Preferences实例对象的指针，失败返回空指针。 |
  
  
   
 
-#### OH_Preferences_Close()
+### OH_Preferences_Close()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Preferences_Close(OH_Preferences *preference)
@@ -153,6 +166,7 @@ int OH_Preferences_Close(OH_Preferences *preference)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Preferences *preference | 指向需要关闭的PreferencesOH_Preferences实例对象的指针。 |
@@ -160,6 +174,7 @@ int OH_Preferences_Close(OH_Preferences *preference)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的错误码，详见OH_Preferences_ErrCode。 若错误码为PREFERENCES_OK，表示操作成功。 若错误码为PREFERENCES_ERROR_INVALID_PARAM，表示参数不合法。 若错误码为PREFERENCES_ERROR_STORAGE，表示存储异常。 若错误码为PREFERENCES_ERROR_MALLOC，表示内存分配失败。 |
@@ -167,9 +182,10 @@ int OH_Preferences_Close(OH_Preferences *preference)
  
   
 
-#### OH_Preferences_GetInt()
+### OH_Preferences_GetInt()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Preferences_GetInt(OH_Preferences *preference, const char *key, int *value)
@@ -183,6 +199,7 @@ int OH_Preferences_GetInt(OH_Preferences *preference, const char *key, int *valu
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Preferences *preference | 指向目标OH_Preferences实例对象的指针。 |
@@ -192,6 +209,7 @@ int OH_Preferences_GetInt(OH_Preferences *preference, const char *key, int *valu
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的错误码。 若错误码为PREFERENCES_OK，表示操作成功。 若错误码为PREFERENCES_ERROR_INVALID_PARAM，表示参数不合法。 若错误码为PREFERENCES_ERROR_STORAGE，表示存储异常。 若错误码为PREFERENCES_ERROR_MALLOC，表示内存分配失败。 若错误码为PREFERENCES_ERROR_KEY_NOT_FOUND，表示查询的Key不存在。 |
@@ -199,9 +217,10 @@ int OH_Preferences_GetInt(OH_Preferences *preference, const char *key, int *valu
  
   
 
-#### OH_Preferences_GetBool()
+### OH_Preferences_GetBool()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Preferences_GetBool(OH_Preferences *preference, const char *key, bool *value)
@@ -215,6 +234,7 @@ int OH_Preferences_GetBool(OH_Preferences *preference, const char *key, bool *va
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Preferences *preference | 指向目标OH_Preferences实例对象的指针。 |
@@ -224,6 +244,7 @@ int OH_Preferences_GetBool(OH_Preferences *preference, const char *key, bool *va
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的错误码。 若错误码为PREFERENCES_OK，表示操作成功。 若错误码为PREFERENCES_ERROR_INVALID_PARAM，表示参数不合法。 若错误码为PREFERENCES_ERROR_STORAGE，表示存储异常。 若错误码为PREFERENCES_ERROR_MALLOC，表示内存分配失败。 若错误码为PREFERENCES_ERROR_KEY_NOT_FOUND，表示查询的Key不存在。 |
@@ -231,9 +252,10 @@ int OH_Preferences_GetBool(OH_Preferences *preference, const char *key, bool *va
  
   
 
-#### OH_Preferences_GetString()
+### OH_Preferences_GetString()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Preferences_GetString(OH_Preferences *preference, const char *key, char **value, uint32_t *valueLen)
@@ -247,6 +269,7 @@ int OH_Preferences_GetString(OH_Preferences *preference, const char *key, char *
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Preferences *preference | 指向目标OH_Preferences实例对象的指针。 |
@@ -257,6 +280,7 @@ int OH_Preferences_GetString(OH_Preferences *preference, const char *key, char *
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的错误码。 若错误码为PREFERENCES_OK，表示操作成功。 若错误码为PREFERENCES_ERROR_INVALID_PARAM，表示参数不合法。 若错误码为PREFERENCES_ERROR_STORAGE，表示存储异常。 若错误码为PREFERENCES_ERROR_MALLOC，表示内存分配失败。 若错误码为PREFERENCES_ERROR_KEY_NOT_FOUND，表示查询的Key不存在。 |
@@ -264,9 +288,10 @@ int OH_Preferences_GetString(OH_Preferences *preference, const char *key, char *
  
   
 
-#### OH_Preferences_FreeString()
+### OH_Preferences_FreeString()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Preferences_FreeString(char *string)
@@ -280,6 +305,7 @@ void OH_Preferences_FreeString(char *string)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | char *string | 需要释放的字符串指针。 |
@@ -287,9 +313,10 @@ void OH_Preferences_FreeString(char *string)
  
   
 
-#### OH_Preferences_SetInt()
+### OH_Preferences_SetInt()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Preferences_SetInt(OH_Preferences *preference, const char *key, int value)
@@ -303,6 +330,7 @@ int OH_Preferences_SetInt(OH_Preferences *preference, const char *key, int value
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Preferences *preference | 指向目标OH_Preferences实例对象的指针。 |
@@ -312,6 +340,7 @@ int OH_Preferences_SetInt(OH_Preferences *preference, const char *key, int value
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的错误码。 若错误码为PREFERENCES_OK，表示操作成功。 若错误码为PREFERENCES_ERROR_INVALID_PARAM，表示参数不合法。 若错误码为PREFERENCES_ERROR_STORAGE，表示存储异常。 若错误码为PREFERENCES_ERROR_MALLOC，表示内存分配失败。 |
@@ -319,9 +348,10 @@ int OH_Preferences_SetInt(OH_Preferences *preference, const char *key, int value
  
   
 
-#### OH_Preferences_SetBool()
+### OH_Preferences_SetBool()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Preferences_SetBool(OH_Preferences *preference, const char *key, bool value)
@@ -335,6 +365,7 @@ int OH_Preferences_SetBool(OH_Preferences *preference, const char *key, bool val
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Preferences *preference | 指向目标OH_Preferences实例对象的指针。 |
@@ -344,6 +375,7 @@ int OH_Preferences_SetBool(OH_Preferences *preference, const char *key, bool val
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的错误码。 若错误码为PREFERENCES_OK，表示操作成功。 若错误码为PREFERENCES_ERROR_INVALID_PARAM，表示参数不合法。 若错误码为PREFERENCES_ERROR_STORAGE，表示存储异常。 若错误码为PREFERENCES_ERROR_MALLOC，表示内存分配失败。 |
@@ -351,9 +383,10 @@ int OH_Preferences_SetBool(OH_Preferences *preference, const char *key, bool val
  
   
 
-#### OH_Preferences_SetString()
+### OH_Preferences_SetString()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Preferences_SetString(OH_Preferences *preference, const char *key, const char *value)
@@ -367,6 +400,7 @@ int OH_Preferences_SetString(OH_Preferences *preference, const char *key, const 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Preferences *preference | 指向目标OH_Preferences实例对象的指针。 |
@@ -376,6 +410,7 @@ int OH_Preferences_SetString(OH_Preferences *preference, const char *key, const 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的错误码。 若错误码为PREFERENCES_OK，表示操作成功。 若错误码为PREFERENCES_ERROR_INVALID_PARAM，表示参数不合法。 若错误码为PREFERENCES_ERROR_STORAGE，表示存储异常。 若错误码为PREFERENCES_ERROR_MALLOC，表示内存分配失败。 |
@@ -383,9 +418,10 @@ int OH_Preferences_SetString(OH_Preferences *preference, const char *key, const 
  
   
 
-#### OH_Preferences_Delete()
+### OH_Preferences_Delete()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Preferences_Delete(OH_Preferences *preference, const char *key)
@@ -399,6 +435,7 @@ int OH_Preferences_Delete(OH_Preferences *preference, const char *key)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Preferences *preference | 指向目标OH_Preferences实例对象的指针。 |
@@ -407,6 +444,7 @@ int OH_Preferences_Delete(OH_Preferences *preference, const char *key)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的错误码。 若错误码为PREFERENCES_OK，表示操作成功。 若错误码为PREFERENCES_ERROR_INVALID_PARAM，表示参数不合法。 若错误码为PREFERENCES_ERROR_STORAGE，表示存储异常。 若错误码为PREFERENCES_ERROR_MALLOC，表示内存分配失败。 |
@@ -414,9 +452,10 @@ int OH_Preferences_Delete(OH_Preferences *preference, const char *key)
  
   
 
-#### OH_Preferences_RegisterDataObserver()
+### OH_Preferences_RegisterDataObserver()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Preferences_RegisterDataObserver(OH_Preferences *preference, void *context,OH_PreferencesDataObserver observer, const char *keys[], uint32_t keyCount)
@@ -430,6 +469,7 @@ int OH_Preferences_RegisterDataObserver(OH_Preferences *preference, void *contex
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Preferences *preference | 指向目标OH_Preferences实例对象的指针。 |
@@ -441,6 +481,7 @@ int OH_Preferences_RegisterDataObserver(OH_Preferences *preference, void *contex
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的错误码。 若错误码为PREFERENCES_OK，表示操作成功。 若错误码为PREFERENCES_ERROR_INVALID_PARAM，表示参数不合法。 若错误码为PREFERENCES_ERROR_STORAGE，表示存储异常。 若错误码为PREFERENCES_ERROR_MALLOC，表示内存分配失败。 若错误码为PREFERENCES_ERROR_GET_DATAOBSMGRCLIENT，表示获取数据变更订阅服务失败。 |
@@ -448,9 +489,10 @@ int OH_Preferences_RegisterDataObserver(OH_Preferences *preference, void *contex
  
   
 
-#### OH_Preferences_UnregisterDataObserver()
+### OH_Preferences_UnregisterDataObserver()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Preferences_UnregisterDataObserver(OH_Preferences *preference, void *context,OH_PreferencesDataObserver observer, const char *keys[], uint32_t keyCount)
@@ -464,6 +506,7 @@ int OH_Preferences_UnregisterDataObserver(OH_Preferences *preference, void *cont
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Preferences *preference | 指向目标OH_Preferences实例对象的指针。 |
@@ -475,6 +518,7 @@ int OH_Preferences_UnregisterDataObserver(OH_Preferences *preference, void *cont
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的错误码。 若错误码为PREFERENCES_OK，表示操作成功。 若错误码为PREFERENCES_ERROR_INVALID_PARAM，表示参数不合法。 若错误码为PREFERENCES_ERROR_STORAGE，表示存储异常。 若错误码为PREFERENCES_ERROR_MALLOC，表示内存分配失败。 |
@@ -482,9 +526,10 @@ int OH_Preferences_UnregisterDataObserver(OH_Preferences *preference, void *cont
  
   
 
-#### OH_Preferences_IsStorageTypeSupported()
+### OH_Preferences_IsStorageTypeSupported()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Preferences_IsStorageTypeSupported(Preferences_StorageType type, bool *isSupported)
@@ -498,6 +543,7 @@ int OH_Preferences_IsStorageTypeSupported(Preferences_StorageType type, bool *is
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Preferences_StorageType type | 要校验是否支持的存储模式。 |
@@ -506,6 +552,7 @@ int OH_Preferences_IsStorageTypeSupported(Preferences_StorageType type, bool *is
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回接口操作执行的状态码。 返回结果为PREFERENCES_OK，表示操作成功。 返回结果为PREFERENCES_ERROR_INVALID_PARAM，表示参数不合法。 |
@@ -513,9 +560,10 @@ int OH_Preferences_IsStorageTypeSupported(Preferences_StorageType type, bool *is
  
   
 
-#### OH_Preferences_DeletePreferences()
+### OH_Preferences_DeletePreferences()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Preferences_DeletePreferences(OH_PreferencesOption *option)
@@ -529,6 +577,7 @@ int OH_Preferences_DeletePreferences(OH_PreferencesOption *option)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PreferencesOption *option | 指向Preferences配置选项OH_PreferencesOption的指针。 |
@@ -536,6 +585,7 @@ int OH_Preferences_DeletePreferences(OH_PreferencesOption *option)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的错误码。 若错误码为PREFERENCES_OK，表示操作成功。 若错误码为PREFERENCES_ERROR_INVALID_PARAM，表示参数不合法。 若错误码为PREFERENCES_ERROR_NOT_SUPPORTED，表示系统能力不支持。 若错误码为PREFERENCES_ERROR_DELETE_FILE，表示删除文件失败。 |
@@ -543,9 +593,10 @@ int OH_Preferences_DeletePreferences(OH_PreferencesOption *option)
  
   
 
-#### OH_Preferences_SetValue()
+### OH_Preferences_SetValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Preferences_SetValue(OH_Preferences *preference, const char *key, OH_PreferencesValue *value)
@@ -559,6 +610,7 @@ int OH_Preferences_SetValue(OH_Preferences *preference, const char *key, OH_Pref
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Preferences *preference | 指向目标OH_Preferences实例的指针。 |
@@ -568,6 +620,7 @@ int OH_Preferences_SetValue(OH_Preferences *preference, const char *key, OH_Pref
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的错误码。 若错误码为PREFERENCES_OK，表示操作成功。 若错误码为PREFERENCES_ERROR_INVALID_PARAM，表示参数不合法。 若错误码为PREFERENCES_ERROR_STORAGE，表示存储异常。 若错误码为PREFERENCES_ERROR_MALLOC，表示内存分配失败。 |
@@ -575,9 +628,10 @@ int OH_Preferences_SetValue(OH_Preferences *preference, const char *key, OH_Pref
  
   
 
-#### OH_Preferences_GetValue()
+### OH_Preferences_GetValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Preferences_GetValue(OH_Preferences *preference, const char *key, OH_PreferencesValue **value)
@@ -591,6 +645,7 @@ int OH_Preferences_GetValue(OH_Preferences *preference, const char *key, OH_Pref
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Preferences *preference | 指向目标OH_Preferences实例的指针。 |
@@ -600,6 +655,7 @@ int OH_Preferences_GetValue(OH_Preferences *preference, const char *key, OH_Pref
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的错误码。 若错误码为PREFERENCES_OK，表示操作成功。 若错误码为PREFERENCES_ERROR_INVALID_PARAM，表示参数不合法。 若错误码为PREFERENCES_ERROR_STORAGE，表示存储异常。 若错误码为PREFERENCES_ERROR_MALLOC，表示内存分配失败。 若错误码为PREFERENCES_ERROR_KEY_NOT_FOUND，表示查询的Key不存在。 |
@@ -607,9 +663,10 @@ int OH_Preferences_GetValue(OH_Preferences *preference, const char *key, OH_Pref
  
   
 
-#### OH_Preferences_GetAll()
+### OH_Preferences_GetAll()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Preferences_GetAll(OH_Preferences *preference, OH_PreferencesPair **pairs, uint32_t *count)
@@ -623,6 +680,7 @@ int OH_Preferences_GetAll(OH_Preferences *preference, OH_PreferencesPair **pairs
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Preferences *preference | 指向目标OH_Preferences实例的指针。 |
@@ -632,6 +690,7 @@ int OH_Preferences_GetAll(OH_Preferences *preference, OH_PreferencesPair **pairs
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的错误码。 若错误码为PREFERENCES_OK，表示操作成功。 若错误码为PREFERENCES_ERROR_INVALID_PARAM，表示参数不合法。 若错误码为PREFERENCES_ERROR_STORAGE，表示存储异常。 若错误码为PREFERENCES_ERROR_MALLOC，表示内存分配失败。 若错误码为PREFERENCES_ERROR_KEY_NOT_FOUND，表示查询的Key不存在。 |
@@ -639,9 +698,10 @@ int OH_Preferences_GetAll(OH_Preferences *preference, OH_PreferencesPair **pairs
  
   
 
-#### OH_Preferences_HasKey()
+### OH_Preferences_HasKey()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_Preferences_HasKey(OH_Preferences *preference, const char *key)
@@ -655,6 +715,7 @@ bool OH_Preferences_HasKey(OH_Preferences *preference, const char *key)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Preferences *preference | 指向目标OH_Preferences实例的指针。 |
@@ -663,6 +724,7 @@ bool OH_Preferences_HasKey(OH_Preferences *preference, const char *key)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回true则表示Preferences对象包含与指定Key匹配的KV数据，否则返回false。 |
@@ -670,9 +732,10 @@ bool OH_Preferences_HasKey(OH_Preferences *preference, const char *key)
  
   
 
-#### OH_Preferences_Flush()
+### OH_Preferences_Flush()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Preferences_Flush(OH_Preferences *preference)
@@ -686,6 +749,7 @@ int OH_Preferences_Flush(OH_Preferences *preference)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Preferences *preference | 指向目标OH_Preferences实例的指针。 |
@@ -693,6 +757,7 @@ int OH_Preferences_Flush(OH_Preferences *preference)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的错误码。 若错误码为PREFERENCES_OK，表示操作成功。 若错误码为PREFERENCES_ERROR_INVALID_PARAM，表示参数不合法。 若错误码为PREFERENCES_ERROR_NOT_SUPPORTED，表示系统能力不支持。 |
@@ -700,9 +765,10 @@ int OH_Preferences_Flush(OH_Preferences *preference)
  
   
 
-#### OH_Preferences_ClearCache()
+### OH_Preferences_ClearCache()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Preferences_ClearCache(OH_Preferences *preference)
@@ -716,6 +782,7 @@ int OH_Preferences_ClearCache(OH_Preferences *preference)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Preferences *preference | 指向目标OH_Preferences实例的指针。 |
@@ -723,6 +790,7 @@ int OH_Preferences_ClearCache(OH_Preferences *preference)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的错误码。 若错误码为PREFERENCES_OK，表示操作成功。 若错误码为PREFERENCES_ERROR_INVALID_PARAM，表示参数不合法。 若错误码为PREFERENCES_ERROR_NOT_SUPPORTED，表示系统能力不支持。 |
@@ -730,9 +798,10 @@ int OH_Preferences_ClearCache(OH_Preferences *preference)
  
   
 
-#### OH_Preferences_RegisterMultiProcessDataObserver()
+### OH_Preferences_RegisterMultiProcessDataObserver()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Preferences_RegisterMultiProcessDataObserver(OH_Preferences *preference, void *context, OH_PreferencesDataObserver observer)
@@ -746,6 +815,7 @@ int OH_Preferences_RegisterMultiProcessDataObserver(OH_Preferences *preference, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Preferences *preference | 指向目标OH_Preferences实例的指针。 |
@@ -755,6 +825,7 @@ int OH_Preferences_RegisterMultiProcessDataObserver(OH_Preferences *preference, 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的错误码。 若错误码为PREFERENCES_OK，表示操作成功。 若错误码为PREFERENCES_ERROR_INVALID_PARAM，表示参数不合法。 若错误码为PREFERENCES_ERROR_STORAGE，表示存储异常。 若错误码为PREFERENCES_ERROR_MALLOC，表示内存分配失败。 若错误码为PREFERENCES_ERROR_GET_DATAOBSMGRCLIENT，表示获取数据变更订阅服务失败。 |
@@ -762,9 +833,10 @@ int OH_Preferences_RegisterMultiProcessDataObserver(OH_Preferences *preference, 
  
   
 
-#### OH_Preferences_UnregisterMultiProcessDataObserver()
+### OH_Preferences_UnregisterMultiProcessDataObserver()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Preferences_UnregisterMultiProcessDataObserver(OH_Preferences *preference, void *context, OH_PreferencesDataObserver observer)
@@ -778,6 +850,7 @@ int OH_Preferences_UnregisterMultiProcessDataObserver(OH_Preferences *preference
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Preferences *preference | 指向目标OH_Preferences实例的指针。 |
@@ -787,6 +860,7 @@ int OH_Preferences_UnregisterMultiProcessDataObserver(OH_Preferences *preference
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的错误码。 若错误码为PREFERENCES_OK，表示操作成功。 若错误码为PREFERENCES_ERROR_INVALID_PARAM，表示参数不合法。 若错误码为PREFERENCES_ERROR_STORAGE，表示存储异常。 若错误码为PREFERENCES_ERROR_MALLOC，表示内存分配失败。 |

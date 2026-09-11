@@ -1,6 +1,6 @@
 # recoveryKey（企业恢复密钥）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/dataguard-recoverykey
 **支持设备：** PC/2in1
@@ -12,7 +12,8 @@
 **起始版本：** 5.0.3(15)
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** PC/2in1
 
@@ -22,7 +23,8 @@ import { recoveryKey } from '@kit.EnterpriseDataGuardKit';
 
 
 
-#### EnterpriseRecoveryKeyInfo
+## EnterpriseRecoveryKeyInfo
+
 
 **支持设备：** PC/2in1
 
@@ -34,6 +36,7 @@ import { recoveryKey } from '@kit.EnterpriseDataGuardKit';
 
 **起始版本：** 5.0.3(15)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | enterpriseRecoveryKey | Uint8Array | 否 | 否 | AES-GCM-256加密后的企业恢复密钥。 |
@@ -44,7 +47,8 @@ import { recoveryKey } from '@kit.EnterpriseDataGuardKit';
 
 
 
-#### recoveryKey.getEnterpriseRecoveryKey
+## recoveryKey.getEnterpriseRecoveryKey
+
 
 **支持设备：** PC/2in1
 
@@ -62,12 +66,14 @@ getEnterpriseRecoveryKey(userId: number): Promise&lt;EnterpriseRecoveryKeyInfo&g
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | userId | number | 是 | 需要获取企业恢复密钥的用户ID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -77,6 +83,7 @@ getEnterpriseRecoveryKey(userId: number): Promise&lt;EnterpriseRecoveryKeyInfo&g
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[企业数据保护服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-dataguard)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -118,7 +125,8 @@ async function getEnterpriseRecoveryKey() {
 
 
 
-#### recoveryKey.getAuthChallenge
+## recoveryKey.getAuthChallenge
+
 
 **支持设备：** PC/2in1
 
@@ -136,6 +144,7 @@ getAuthChallenge(): Promise&lt;Uint8Array&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Uint8Array&gt; | Promise对象，返回用于更新企业公钥证书或删除企业恢复密钥数据时的挑战值。 |
@@ -144,6 +153,7 @@ getAuthChallenge(): Promise&lt;Uint8Array&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[企业数据保护服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-dataguard)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -169,7 +179,8 @@ recoveryKey.getAuthChallenge().then((challenge: Uint8Array) => {
 
 
 
-#### recoveryKey.updateEnterpriseCertificate
+## recoveryKey.updateEnterpriseCertificate
+
 
 **支持设备：** PC/2in1
 
@@ -187,6 +198,7 @@ updateEnterpriseCertificate(signature: Uint8Array, cert: Uint8Array): Promise&lt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | signature | Uint8Array | 是 | 挑战值的签名。 |
@@ -194,6 +206,7 @@ updateEnterpriseCertificate(signature: Uint8Array, cert: Uint8Array): Promise&lt
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -203,6 +216,7 @@ updateEnterpriseCertificate(signature: Uint8Array, cert: Uint8Array): Promise&lt
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[企业数据保护服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-dataguard)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -234,7 +248,8 @@ recoveryKey.updateEnterpriseCertificate(signature, cert).then((ret: number) => {
 
 
 
-#### recoveryKey.deleteEnterpriseRecoveryKey
+## recoveryKey.deleteEnterpriseRecoveryKey
+
 
 **支持设备：** PC/2in1
 
@@ -252,6 +267,7 @@ deleteEnterpriseRecoveryKey(userId: number, signature: Uint8Array): Promise&lt;n
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | userId | number | 是 | 需要删除企业恢复密钥的用户ID。 |
@@ -259,6 +275,7 @@ deleteEnterpriseRecoveryKey(userId: number, signature: Uint8Array): Promise&lt;n
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -268,6 +285,7 @@ deleteEnterpriseRecoveryKey(userId: number, signature: Uint8Array): Promise&lt;n
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[企业数据保护服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-dataguard)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -305,7 +323,8 @@ async function deleteEnterpriseRecoveryKey() {
 
 
 
-#### recoveryKey.verifyUserIdentityEnterprise
+## recoveryKey.verifyUserIdentityEnterprise
+
 
 **支持设备：** PC/2in1
 
@@ -323,6 +342,7 @@ verifyUserIdentityEnterprise(userId: number, userType: number, pinCode: string):
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | userId | number | 是 | 需要导出企业恢复密钥的用户ID。 |
@@ -332,6 +352,7 @@ verifyUserIdentityEnterprise(userId: number, userType: number, pinCode: string):
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -340,6 +361,7 @@ verifyUserIdentityEnterprise(userId: number, userType: number, pinCode: string):
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[企业数据保护服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-dataguard)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -380,7 +402,8 @@ async function verifyUserIdentityEnterprise(pinCode: string) {
 
 
 
-#### recoveryKey.verifyUserByDialog
+## recoveryKey.verifyUserByDialog
+
 
 **支持设备：** PC/2in1
 
@@ -398,12 +421,14 @@ verifyUserByDialog(userId: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | userId | number | 是 | 需要导出企业恢复密钥的用户ID，需为正整数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -413,6 +438,7 @@ verifyUserByDialog(userId: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[企业数据保护服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-dataguard)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -448,7 +474,8 @@ async function getEnterpriseRecoveryKeyForPinByDialog() {
 
 
 
-#### recoveryKey.getEnterpriseRecoveryKeyForResettingPin
+## recoveryKey.getEnterpriseRecoveryKeyForResettingPin
+
 
 **支持设备：** PC/2in1
 
@@ -466,6 +493,7 @@ getEnterpriseRecoveryKeyForResettingPin(userId: number, userType: number): Promi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | userId | number | 是 | 需要导出企业恢复密钥的用户ID。 |
@@ -473,6 +501,7 @@ getEnterpriseRecoveryKeyForResettingPin(userId: number, userType: number): Promi
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -482,6 +511,7 @@ getEnterpriseRecoveryKeyForResettingPin(userId: number, userType: number): Promi
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[企业数据保护服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-dataguard)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -528,7 +558,8 @@ async function getEnterpriseRecoveryKeyForResettingPin() {
 
 
 
-#### recoveryKey.isRecoveryKeySupported
+## recoveryKey.isRecoveryKeySupported
+
 
 **支持设备：** PC/2in1
 
@@ -543,6 +574,7 @@ isRecoveryKeySupported(): boolean
 **起始版本：** 26.0.0
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -564,7 +596,8 @@ try {
 
 
 
-#### recoveryKey.isRecoveryKeyForResettingPinSupported
+## recoveryKey.isRecoveryKeyForResettingPinSupported
+
 
 **支持设备：** PC/2in1
 
@@ -579,6 +612,7 @@ isRecoveryKeyForResettingPinSupported(): boolean
 **起始版本：** 26.0.0
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -600,7 +634,8 @@ try {
 
 
 
-#### recoveryKey.isDataVolumeRecoveryKeySupported
+## recoveryKey.isDataVolumeRecoveryKeySupported
+
 
 **支持设备：** PC/2in1
 
@@ -615,6 +650,7 @@ isDataVolumeRecoveryKeySupported(): boolean
 **起始版本：** 26.0.0
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |

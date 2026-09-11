@@ -1,13 +1,14 @@
 # Rcp_RequestContent
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_rcp___request_content
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 请求的内容。
  
@@ -19,16 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 成员变量
+### 成员变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | Rcp_ContentType type | 表示union中使用的数据类型。 |
@@ -37,15 +41,17 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### contentStr
+### contentStr
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Rcp_Buffer Rcp_RequestContent::contentStr
@@ -57,9 +63,10 @@ Rcp_Buffer Rcp_RequestContent::contentStr
  
   
 
-#### form
+### form
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Rcp_Form* Rcp_RequestContent::form
@@ -71,9 +78,10 @@ Rcp_Form* Rcp_RequestContent::form
  
   
 
-#### getDataCallback
+### getDataCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Rcp_GetDataCallback Rcp_RequestContent::getDataCallback
@@ -85,9 +93,10 @@ Rcp_GetDataCallback Rcp_RequestContent::getDataCallback
  
   
 
-#### multipartForm
+### multipartForm
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Rcp_MultipartForm* Rcp_RequestContent::multipartForm
@@ -99,9 +108,10 @@ Rcp_MultipartForm* Rcp_RequestContent::multipartForm
  
   
 
-#### type
+### type
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Rcp_ContentType Rcp_RequestContent::type

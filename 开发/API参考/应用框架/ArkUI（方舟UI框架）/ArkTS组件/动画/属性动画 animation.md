@@ -1,9 +1,9 @@
 # 属性动画 (animation)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-04 10:41:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-animatorproperty
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 组件的某些通用属性变化时，若不设置动画，属性变化会直接跳变到目标值。通过属性动画可实现渐变过渡效果，使界面变化更加自然流畅。支持的属性包括[width](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size#width)、[height](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size#height)、[backgroundColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-background#backgroundcolor)、[opacity](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-opacity#opacity)、[scale](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-transformation#scale)、[rotate](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-transformation#rotate)、[translate](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-transformation#translate)等。对于改变布局类属性（如宽高）的动画，内容通常会直接跳变到最终状态，例如文字或[Canvas](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-canvas)中的内容。如果希望内容跟随宽高变化，可以使用[renderFit](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-renderfit#renderfit)属性进行配置。
  
@@ -12,16 +12,17 @@
 
   
 
-#### animation
+## animation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 animation(value:AnimateParam): T
  
-设置组件的属性动画。
+设置组件的属性动画，当组件的通用属性发生变化时，按照AnimateParam参数配置对属性变化过程进行渐变过渡。
  
 > [!NOTE]
-> 在单一页面上存在大量应用动效的组件时，可以使用 renderGroup 方法来解决卡顿问题，从而提升动画性能。最佳实践请参考 动画使用指导-使用renderGroup 。 该接口不支持在 attributeModifier 中调用。
+> 在单一页面上同时存在数十个及以上应用动效的组件时，可以使用 renderGroup 方法来解决卡顿问题，从而提升动画性能。最佳实践请参考优化动画性能中的 使用renderGroup 。 该接口不支持在 attributeModifier 中调用，在attributeModifier中调用animation不会产生动画效果。如需在attributeModifier中实现属性变化动画，请使用 显式动画 （animateTo）替代。 仅对部分通用属性生效（包括width、height、backgroundColor、opacity、scale、rotate、translate等）。对于改变布局类属性（如宽高）的动画，组件内容（如文字或Canvas中的内容）通常会直接跳转到最终状态。如果希望内容跟随宽高变化平滑过渡，可以配合使用 renderFit 属性进行配置，建议将renderFit设置为RenderFit.CENTER或RenderFit.TOP_LEFT等值，使内容在动画过程中随组件尺寸同步变化。
 
  
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
@@ -32,6 +33,7 @@ animation(value:AnimateParam): T
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | AnimateParam | 是 | 设置动画效果相关参数，各属性的取值范围及含义详见AnimateParam对象说明。 |
@@ -39,12 +41,13 @@ animation(value:AnimateParam): T
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
  
  
-属性动画只对写在animation前面的属性生效，且对组件构造器的属性不生效。
+属性动画只对写在animation前面的属性生效，产生渐变过渡效果；写在animation之后的属性变化不会有渐变动画效果，而是直接跳变到目标值。组件构造器的属性（如Column构造器的space参数、List构造器的initialIndex参数等在组件构造时传入的参数）不支持动画效果，仅对通过属性方法（如.width()、.height()、.backgroundColor()等）设置的属性生效。
  
 ```text
 @Entry
@@ -91,9 +94,10 @@ struct AnimationExample {
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过animation实现了组件的属性动画。
  
@@ -154,4 +158,4 @@ struct AttrAnimationExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/qKICW-OZTbu6v-YsCdvpIw/zh-cn_image_0000002655848906.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071513Z&HW-CC-Expire=86400&HW-CC-Sign=E70EF618A6CFD033DE1293207A589ED8C4CF21DE07F9FC4BFE786FD1C30E83E2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/ueKUMdgESnKnk61R-lB6Dg/zh-cn_image_0000002747292995.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073103Z&HW-CC-Expire=86400&HW-CC-Sign=7F78F60A7DD447845A6B711ED46D40ECF30C924802F77CDE291573AD709493F3)

@@ -1,10 +1,10 @@
 # 几何形状绘制（C/C++）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/geometric-shape-drawing-c
 
-#### 场景介绍
+## 场景介绍
 
 当前支持绘制的几何形状，主要包括以下几种：
 
@@ -21,29 +21,30 @@
 
 
 
-#### 接口说明
+## 接口说明
 
-几何形状绘制的常用接口如下表所示，详细的使用和参数说明请见[drawing_canvas.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-canvas-h)。
+几何形状绘制的常用接口如下表所示，详细的使用和参数说明请见[drawing_canvas.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-canvas-h)、[drawing_point.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-point-h)、[drawing_rect.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-rect-h)、[drawing_path.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-path-h)、[drawing_region.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-region-h)和[drawing_round_rect.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-round-rect-h)。
+
 
 | 接口 | 描述 |
 | --- | --- |
-| OH_Drawing_Point* OH_Drawing_PointCreate (float x, float y) | 用于创建一个坐标点对象。 |
-| OH_Drawing_ErrorCode OH_Drawing_CanvasDrawPoint (OH_Drawing_Canvas *canvas, const OH_Drawing_Point2D *point) | 用于画一个点。 |
-| OH_Drawing_Rect* OH_Drawing_RectCreate (float left, float top, float right, float bottom) | 用于创建一个矩形对象。 |
-| void OH_Drawing_CanvasDrawArc (OH_Drawing_Canvas*, const OH_Drawing_Rect*, float startAngle, float sweepAngle) | 用于画一个弧。 |
-| void OH_Drawing_CanvasDrawCircle (OH_Drawing_Canvas*, const OH_Drawing_Point*, float radius) | 用于画一个圆形。 |
-| OH_Drawing_Path* OH_Drawing_PathCreate (void) | 用于创建一个路径对象。 |
-| void OH_Drawing_CanvasDrawPath (OH_Drawing_Canvas*, const OH_Drawing_Path*) | 用于画一个自定义路径。 |
-| OH_Drawing_Region* OH_Drawing_RegionCreate (void) | 用于创建一个区域对象。 |
-| void OH_Drawing_CanvasDrawRegion (OH_Drawing_Canvas*, const OH_Drawing_Region*) | 用于画一块区域。 |
-| void OH_Drawing_CanvasDrawRect (OH_Drawing_Canvas*, const OH_Drawing_Rect*) | 用于画一个矩形。 |
-| OH_Drawing_RoundRect* OH_Drawing_RoundRectCreate (const OH_Drawing_Rect*, float xRad, float yRad) | 用于创建一个圆角矩形对象。 |
-| void OH_Drawing_CanvasDrawRoundRect (OH_Drawing_Canvas*, const OH_Drawing_RoundRect*) | 用于画一个圆角矩形。 |
+| OH_Drawing_Point* OH_Drawing_PointCreate(float x, float y) | 用于创建一个坐标点对象。 |
+| OH_Drawing_ErrorCode OH_Drawing_CanvasDrawPoint(OH_Drawing_Canvas *canvas, const OH_Drawing_Point2D *point) | 用于画一个点。 |
+| OH_Drawing_Rect* OH_Drawing_RectCreate(float left, float top, float right, float bottom) | 用于创建一个矩形对象。 |
+| void OH_Drawing_CanvasDrawArc(OH_Drawing_Canvas *canvas, const OH_Drawing_Rect *rect, float startAngle, float sweepAngle) | 用于画一个圆弧。 |
+| void OH_Drawing_CanvasDrawCircle(OH_Drawing_Canvas *canvas, const OH_Drawing_Point *point, float radius) | 用于画一个圆形。 |
+| OH_Drawing_Path* OH_Drawing_PathCreate(void) | 用于创建一个路径对象。 |
+| void OH_Drawing_CanvasDrawPath(OH_Drawing_Canvas *canvas, const OH_Drawing_Path *path) | 用于画一个自定义路径。 |
+| OH_Drawing_Region* OH_Drawing_RegionCreate(void) | 用于创建一个区域对象。 |
+| void OH_Drawing_CanvasDrawRegion(OH_Drawing_Canvas *canvas, const OH_Drawing_Region *region) | 用于画一块区域。 |
+| void OH_Drawing_CanvasDrawRect(OH_Drawing_Canvas *canvas, const OH_Drawing_Rect *rect) | 用于画一个矩形。 |
+| OH_Drawing_RoundRect* OH_Drawing_RoundRectCreate(const OH_Drawing_Rect *rect, float xRad, float yRad) | 用于创建一个圆角矩形对象。 |
+| void OH_Drawing_CanvasDrawRoundRect(OH_Drawing_Canvas *canvas, const OH_Drawing_RoundRect *roundRect) | 用于画一个圆角矩形。 |
 
 
 
 
-#### 绘制点
+## 绘制点
 
 点只能基于画笔在画布上进行绘制，通过使用OH_Drawing_CanvasDrawPoint()接口绘制点。接口接受两个参数，一个是画布对象Canvas，请确保已创建或获取得到画布Canvas，具体可见[画布的获取与绘制结果的显示（C/C++）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/canvas-get-result-draw-c)；另一个是要绘制的点的指针。
 
@@ -59,7 +60,6 @@ OH_Drawing_PenSetWidth(pen, 40);
 // 设置画布的画笔
 OH_Drawing_CanvasAttachPen(canvas, pen);
 // 绘制5个点
-AdaptationUtil* adaptationUtil = AdaptationUtil::GetInstance();
 OH_Drawing_Point2D point1 = {value200_, value200_};
 OH_Drawing_CanvasDrawPoint(canvas, &point1);
 OH_Drawing_Point2D point2 = {value400_, value400_};
@@ -84,7 +84,7 @@ OH_Drawing_PenDestroy(pen);
 
 
 
-#### 绘制圆弧
+## 绘制圆弧
 
 可以使用画笔或画刷在画布上进行圆弧的绘制，通过使用OH_Drawing_CanvasDrawArc()接口绘制圆弧。使用接口需要传入4个参数，分别如下：
 
@@ -124,7 +124,7 @@ OH_Drawing_RectDestroy(rect);
 
 
 
-#### 绘制圆
+## 绘制圆
 
 可以使用画笔或画刷在画布上进行圆的绘制，通过使用OH_Drawing_CanvasDrawCircle()接口绘制圆。使用接口需要传入3个参数，分别如下：
 
@@ -163,7 +163,7 @@ OH_Drawing_PointDestroy(point);
 
 
 
-#### 绘制路径
+## 绘制路径
 
 可以使用画笔或画刷在画布上进行路径的绘制，路径具体可以用于绘制直线、弧线、贝塞尔曲线等，也可以通过路径组合的方式组成其他复杂的形状。
 
@@ -231,7 +231,7 @@ OH_Drawing_PathDestroy(path);
 
 
 
-#### 绘制区域
+## 绘制区域
 
 区域不是一个特定的形状，可以设置为指定的矩形或路径，也可以对两个区域进行组合操作。可以使用画笔或画刷在画布上进行区域的绘制。详细的API说明请参考[drawing_region.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-region-h)。
 
@@ -255,7 +255,7 @@ OH_Drawing_Region *region2 = OH_Drawing_RegionCreate();
 OH_Drawing_Rect *rect2 = OH_Drawing_RectCreate(value300_, value300_, value900_, value900_);
 OH_Drawing_RegionSetRect(region2, rect2);
 // 两个矩形区域组合
-OH_Drawing_RegionOp(region1, region2, OH_Drawing_RegionOpMode::REGION_OP_MODE_XOR);
+OH_Drawing_RegionOp(region1, region2, REGION_OP_MODE_XOR);
 OH_Drawing_CanvasDrawRegion(canvas, region1);
 // 去除掉画布中的画刷
 OH_Drawing_CanvasDetachBrush(canvas);
@@ -275,7 +275,7 @@ OH_Drawing_RectDestroy(rect2);
 
 
 
-#### 绘制矩形
+## 绘制矩形
 
 可以使用画笔或画刷在画布上进行矩形的绘制。使用OH_Drawing_RectCreate()接口创建矩形。接口需要传入四个浮点数，分别表示矩形的左、上、右、下四个位置的坐标，连接这4个坐标形成一个矩形。
 
@@ -306,7 +306,7 @@ OH_Drawing_RectDestroy(rect);
 
 
 
-#### 绘制圆角矩形
+## 绘制圆角矩形
 
 可以使用画笔或画刷在画布上进行圆角矩形的绘制。使用OH_Drawing_RoundRectCreate()接口创建圆角矩形。接口需要传入3个参数，分别如下：
 
@@ -346,6 +346,6 @@ OH_Drawing_RoundRectDestroy(roundRect);
 
 
 
-#### 示例代码
+## 示例代码
 
  - [图形绘制（C/C++）](https://gitcode.com/HarmonyOS_Samples/guide-snippets/tree/master/ArkGraphics2D/Drawing/NDKGraphicsDraw)

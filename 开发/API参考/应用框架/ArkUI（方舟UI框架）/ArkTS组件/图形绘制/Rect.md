@@ -1,9 +1,9 @@
 # Rect
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawing-components-rect
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 矩形绘制组件，用于在界面中绘制矩形图形，支持设置填充颜色、边框样式、圆角等属性。
  
@@ -12,23 +12,26 @@
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
  
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### Rect
+### Rect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 new Rect(options?: RectOptions | RoundedRectOptions)
  
@@ -42,6 +45,7 @@ new Rect(options?: RectOptions | RoundedRectOptions)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | RectOptions \| RoundedRectOptions | 否 | Rect绘制属性，包含宽度、高度、圆角等配置。不传入时使用各属性默认值绘制矩形（宽高和圆角均为0）。 异常值undefined和null按照无效值处理，本次设置不生效。 |
@@ -49,9 +53,10 @@ new Rect(options?: RectOptions | RoundedRectOptions)
  
   
 
-#### Rect
+### Rect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Rect(options?: RectOptions | RoundedRectOptions)
  
@@ -65,6 +70,7 @@ Rect(options?: RectOptions | RoundedRectOptions)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | RectOptions \| RoundedRectOptions | 否 | Rect绘制属性，包含宽度、高度、圆角等配置。不传入时使用各属性默认值绘制矩形（宽高和圆角均为0）。 异常值undefined和null按照无效值处理，本次设置不生效。 |
@@ -72,9 +78,10 @@ Rect(options?: RectOptions | RoundedRectOptions)
  
   
 
-#### RectOptions18+对象说明
+## RectOptions18+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于描述矩形绘制组件的绘制属性。
  
@@ -90,6 +97,7 @@ Rect(options?: RectOptions | RoundedRectOptions)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | width7+ | Length | 否 | 是 | 宽度，取值范围≥0。 默认值：0 默认单位：vp。 异常值undefined、null、NaN和Infinity按照默认值处理。 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -99,9 +107,10 @@ Rect(options?: RectOptions | RoundedRectOptions)
  
   
 
-#### RoundedRectOptions18+对象说明
+## RoundedRectOptions18+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于描述圆角矩形绘制组件的绘制属性。
  
@@ -117,6 +126,7 @@ Rect(options?: RectOptions | RoundedRectOptions)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | width7+ | Length | 否 | 是 | 宽度，取值范围≥0。 默认值：0 默认单位：vp。 异常值undefined、null、NaN和Infinity按照默认值处理。 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -127,17 +137,19 @@ Rect(options?: RectOptions | RoundedRectOptions)
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)以及[图形绘制通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawing-components-common)外，还支持以下属性：
  
   
 
-#### radiusWidth
+### radiusWidth
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 radiusWidth(value: Length)
  
@@ -151,6 +163,7 @@ radiusWidth(value: Length)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Length | 是 | 圆角的宽度，取值范围≥0。 默认值：0 默认单位：vp。 异常值undefined、null、NaN和Infinity按照默认值处理。 |
@@ -158,9 +171,10 @@ radiusWidth(value: Length)
  
   
 
-#### radiusHeight
+### radiusHeight
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 radiusHeight(value: Length)
  
@@ -174,6 +188,7 @@ radiusHeight(value: Length)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Length | 是 | 圆角的高度，取值范围≥0。 默认值：0 默认单位：vp。 异常值undefined、null、NaN和Infinity按照默认值处理。 |
@@ -181,9 +196,10 @@ radiusHeight(value: Length)
  
   
 
-#### radius
+### radius
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 radius(value: Length | Array&lt;any&gt;)
  
@@ -197,6 +213,7 @@ radius(value: Length | Array&lt;any&gt;)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Length \| Array&lt;any&gt; | 是 | 圆角半径大小。 默认值：0 默认单位：vp 异常值undefined、null、NaN和Infinity按照[[0, 0], [0, 0], [0, 0], [0, 0]]处理。 |
@@ -204,13 +221,17 @@ radius(value: Length | Array&lt;any&gt;)
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 示例1（组件属性绘制）
+### 示例1（组件属性绘制）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 使用fill、fillOpacity、stroke、radius属性分别绘制矩形的填充颜色、透明度、边框颜色、圆角。
  
@@ -264,7 +285,10 @@ struct RectExample {
  
   
 
-#### 示例2（绘制渐变色矩形）
+### 示例2（绘制渐变色矩形）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 使用通用属性[linearGradient](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-gradient-color#lineargradient18)、[clipShape](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-sharp-clipping#clipshape18)分别绘制渐变色矩形。
  
@@ -304,12 +328,15 @@ struct RectExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/TSozm_C6Q7mOcXM2F4HReg/zh-cn_image_0000002685928471.jpeg?HW-CC-KV=V1&HW-CC-Date=20260730T071512Z&HW-CC-Expire=86400&HW-CC-Sign=E10780E8BA950E6F774CD83ED2DAE409E29B55D8DCA33196F78E6E334E950558)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/8OxaluHRTVSrUzegLSOoKw/zh-cn_image_0000002717772942.jpeg?HW-CC-KV=V1&HW-CC-Date=20260911T073117Z&HW-CC-Expire=86400&HW-CC-Sign=1970153E0D615AB8C6C16AB51457730CC8A684B697014B0A0162FA4696064E5F)
 
  
   
 
-#### 示例3（使用不同参数类型绘制矩形）
+### 示例3（使用不同参数类型绘制矩形）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 width、height、radius、radiusWidth、radiusHeight等属性分别使用不同的长度类型绘制图形。
  
@@ -343,12 +370,15 @@ struct RectExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/VFYsMFwVR_6IO0uX42e8aQ/zh-cn_image_0000002656008818.png?HW-CC-KV=V1&HW-CC-Date=20260730T071512Z&HW-CC-Expire=86400&HW-CC-Sign=124E70DCA9AF081EB26FDA2B4F99A84A22F1ABBAE471384E0F673B2054D2F7C6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/UZIshiWUT2SWHHfmughmaQ/zh-cn_image_0000002717613034.png?HW-CC-KV=V1&HW-CC-Date=20260911T073117Z&HW-CC-Expire=86400&HW-CC-Sign=5870B20B613B251E298255B2A39D85880D3CACF7ACB7804F2D883FA5031316C4)
 
  
   
 
-#### 示例4（使用attributeModifier动态设置Rect组件的属性）
+### 示例4（使用attributeModifier动态设置Rect组件的属性）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 以下示例展示了如何使用attributeModifier动态设置Rect组件的fill、fillOpacity、stroke、strokeDashArray、strokeDashOffset、strokeLineCap、strokeLineJoin、strokeMiterLimit、strokeOpacity、strokeWidth和antiAlias属性。
  
@@ -389,4 +419,4 @@ struct RectModifierDemo {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/5dRppuisQiKh-M7LAEXRTA/zh-cn_image_0000002655848898.png?HW-CC-KV=V1&HW-CC-Date=20260730T071512Z&HW-CC-Expire=86400&HW-CC-Sign=4B8CE58A8763B47CF65F616B26F7699DF1558646B37C9844F016B76571FD97D5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/KKp4MoarSXaj2ehAQO003g/zh-cn_image_0000002747292987.png?HW-CC-KV=V1&HW-CC-Date=20260911T073117Z&HW-CC-Expire=86400&HW-CC-Sign=0479D6DDA300BC902952E84A3152EAE30F15D43F0F9B65E0A03CD90825942700)

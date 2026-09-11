@@ -1,11 +1,12 @@
 # POI类型值
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-poi
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-#### HwLocationType
+## HwLocationType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -21,8 +22,12 @@
  
   
 
-#### EATING_DRINKING
+### EATING_DRINKING
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
  
+
 | Level 1 | Level 2 | Level 3 | Level 4 |
 | --- | --- | --- | --- |
 | EATING_DRINKING 饮食 | RESTAURANT 餐厅 | AFRICAN_RESTAURANT 非洲餐厅 | - |
@@ -271,8 +276,12 @@
  
   
 
-#### SHOPPING
+### SHOPPING
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
  
+
 | Level 1 | Level 2 | Level 3 | Level 4 |
 | --- | --- | --- | --- |
 | SHOPPING 购物 | DEPARTMENT_STORE 百货公司 | - | - |
@@ -408,8 +417,12 @@
  
   
 
-#### LEISURE
+### LEISURE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
  
+
 | Level 1 | Level 2 | Level 3 | Level 4 |
 | --- | --- | --- | --- |
 | LEISURE 休闲 | ENTERTAINMENT_PLAZA 娱乐场所 | - | - |
@@ -506,8 +519,12 @@
  
   
 
-#### SPORT_FITNESS
+### SPORT_FITNESS
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
  
+
 | Level 1 | Level 2 | Level 3 |
 | --- | --- | --- |
 | SPORT_FITNESS 体育运动 | SPORTS_CENTER 体育中心 | FITNESS_CLUB_CENTER 健身俱乐部 |
@@ -544,8 +561,12 @@
  
   
 
-#### TOURISM
+### TOURISM
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
  
+
 | Level 1 | Level 2 | Level 3 |
 | --- | --- | --- |
 | TOURISM 旅游 | TOURIST_INFORMATION_OFFICE 旅客问讯处 | - |
@@ -595,8 +616,12 @@
  
   
 
-#### HEALTH_CARE
+### HEALTH_CARE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
  
+
 | Level 1 | Level 2 | Level 3 |
 | --- | --- | --- |
 | HEALTH_CARE 医疗保健 | HOSPITAL_CLINIC 医院 | GENERAL_HOSPITAL 综合医院 |
@@ -633,8 +658,12 @@
  
   
 
-#### ACCOMMODATION
+### ACCOMMODATION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
  
+
 | Level 1 | Level 2 | Level 3 | Level 4 |
 | --- | --- | --- | --- |
 | ACCOMMODATION 住宿 | RESIDENTIAL_ACCOMMODATION 住宅 | RESIDENTIAL_ESTATE 居民小区 | - |
@@ -673,8 +702,12 @@
  
   
 
-#### TRANSPORT
+### TRANSPORT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
  
+
 | Level 1 | Level 2 | Level 3 | Level 4 |
 | --- | --- | --- | --- |
 | TRANSPORT 交通运输 | AIRPORT 机场 | PUBLIC_AUTHORITY 民用机场 | - |
@@ -765,8 +798,12 @@
  
   
 
-#### GOVERNMENT_PUBLIC_SERVICE
+### GOVERNMENT_PUBLIC_SERVICE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
  
+
 | Level 1 | Level 2 | Level 3 | Level 4 |
 | --- | --- | --- | --- |
 | GOVERNMENT_PUBLIC_SERVICE 政府公共服务 | GOVERNMENT_OFFICE 政府机关 | NATIONAL_ORGANIZATION 国家机关 | - |
@@ -852,8 +889,12 @@
  
   
 
-#### BUSINESS
+### BUSINESS
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
  
+
 | Level 1 | Level 2 | Level 3 | Level 4 |
 | --- | --- | --- | --- |
 | BUSINESS 商业 | BANK 银行 | - | - |
@@ -978,8 +1019,12 @@
  
   
 
-#### AUTOMOTIVE
+### AUTOMOTIVE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
  
+
 | Level 1 | Level 2 | Level 3 |
 | --- | --- | --- |
 | AUTOMOTIVE 汽车 | PETROL_STATION 加油站 | - |
@@ -1031,8 +1076,12 @@
  
   
 
-#### MISCELLANEOUS
+### MISCELLANEOUS
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
  
+
 | Level 1 | Level 2 | Level 3 |
 | --- | --- | --- |
 | MISCELLANEOUS 其他 | GEOGRAPHIC_FEATURE 地理特征 | MOUNTAIN_PEAK 山峰 |
@@ -1101,8 +1150,12 @@
  
   
 
-#### CITY_WALK
+### CITY_WALK
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
  
+
 | Level 1 |
 | --- |
 | CITY_WALK 城市漫步 |
@@ -1110,8 +1163,12 @@
  
   
 
-#### OTHERS
+### OTHERS
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
  
+
 | Level 1 |
 | --- |
 | ADMINISTRATIVE_AREA_LEVEL_1 一级行政区域 |

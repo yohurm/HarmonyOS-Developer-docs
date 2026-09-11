@@ -1,9 +1,9 @@
 # @ohos.bundle.defaultAppManager (默认应用管理)
 
-更新时间：2026-07-17 09:35:24
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-defaultappmanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供查询默认应用的能力，支持查询当前应用是否是默认应用。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { defaultAppManager } from '@kit.AbilityKit';
@@ -22,32 +23,35 @@ import { defaultAppManager } from '@kit.AbilityKit';
 
 
 
-#### ApplicationType
+## ApplicationType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 默认应用的应用类型。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.DefaultApp
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| BROWSER | Web Browser | 默认浏览器。 |
-| IMAGE | Image Gallery | 默认图片查看器。 |
-| AUDIO | Audio Player | 默认音频播放器。 |
-| VIDEO | Video Player | 默认视频播放器。 |
-| PDF | PDF Viewer | 默认PDF文档查看器。 |
-| WORD | Word Viewer | 默认WORD文档查看器。 |
-| EXCEL | Excel Viewer | 默认EXCEL文档查看器。 |
-| PPT | PPT Viewer | 默认PPT文档查看器。 |
-| EMAIL12+ | Email | 默认邮件。 |
+| BROWSER | "Web Browser" | 默认浏览器。 |
+| IMAGE | "Image Gallery" | 默认图片查看器。 |
+| AUDIO | "Audio Player" | 默认音频播放器。 |
+| VIDEO | "Video Player" | 默认视频播放器。 |
+| PDF | "PDF Viewer" | 默认PDF文档查看器。 |
+| WORD | "Word Viewer" | 默认WORD文档查看器。 |
+| EXCEL | "Excel Viewer" | 默认EXCEL文档查看器。 |
+| PPT | "PPT Viewer" | 默认PPT文档查看器。 |
+| EMAIL12+ | "Email" | 默认邮件。 |
 
 
 
 
-#### defaultAppManager.isDefaultApplication
+## defaultAppManager.isDefaultApplication
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isDefaultApplication(type: string): Promise&lt;boolean&gt;
 
@@ -57,12 +61,14 @@ isDefaultApplication(type: string): Promise&lt;boolean&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 要查询的应用类型，取ApplicationType或者UniformDataType类型中的值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -72,6 +78,7 @@ isDefaultApplication(type: string): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -95,9 +102,10 @@ defaultAppManager.isDefaultApplication(defaultAppManager.ApplicationType.BROWSER
 
 
 
-#### defaultAppManager.isDefaultApplication
+## defaultAppManager.isDefaultApplication
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isDefaultApplication(type: string, callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -106,6 +114,7 @@ isDefaultApplication(type: string, callback: AsyncCallback&lt;boolean&gt;): void
 **系统能力：** SystemCapability.BundleManager.BundleFramework.DefaultApp
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -116,6 +125,7 @@ isDefaultApplication(type: string, callback: AsyncCallback&lt;boolean&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -140,9 +150,10 @@ defaultAppManager.isDefaultApplication(defaultAppManager.ApplicationType.BROWSER
 
 
 
-#### defaultAppManager.isDefaultApplicationSync10+
+## defaultAppManager.isDefaultApplicationSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isDefaultApplicationSync(type: string): boolean
 
@@ -152,12 +163,14 @@ isDefaultApplicationSync(type: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 要查询的应用类型，取ApplicationType或者UniformDataType类型中的值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -167,6 +180,7 @@ isDefaultApplicationSync(type: string): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

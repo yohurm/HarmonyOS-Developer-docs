@@ -1,9 +1,9 @@
 # @ohos.xml (XML解析与生成)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-xml
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供XML生成和解析的接口，支持多种方式的XML文本生成与解析，可帮助开发者高效处理结构化XML数据。
 
@@ -24,9 +24,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```xml
 import { xml } from '@kit.ArkTS';
@@ -34,17 +35,19 @@ import { xml } from '@kit.ArkTS';
 
 
 
-#### XmlSerializer
+## XmlSerializer
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 XmlSerializer接口用于生成XML文件。该接口基于预分配的ArrayBuffer缓存区域，通过顺序调用元素写入方法（如startElement、setAttributes、setText和endElement）将XML文本写入缓存。
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(buffer: ArrayBuffer | DataView, encoding?: string)
 
@@ -59,6 +62,7 @@ constructor(buffer: ArrayBuffer | DataView, encoding?: string)
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -75,9 +79,10 @@ let xmlSerializer = new xml.XmlSerializer(arrayBuffer, "utf-8");
 
 
 
-#### setAttributes
+### setAttributes
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAttributes(name: string, value: string): void
 
@@ -92,6 +97,7 @@ setAttributes(name: string, value: string): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -116,9 +122,10 @@ console.info(result); // <note importance="high"/>
 
 
 
-#### addEmptyElement
+### addEmptyElement
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addEmptyElement(name: string): void
 
@@ -133,6 +140,7 @@ addEmptyElement(name: string): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -154,9 +162,10 @@ console.info(result); // <d/>
 
 
 
-#### setDeclaration
+### setDeclaration
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setDeclaration(): void
 
@@ -182,9 +191,10 @@ console.info(result);
 
 
 
-#### startElement
+### startElement
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startElement(name: string): void
 
@@ -199,6 +209,7 @@ startElement(name: string): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -223,9 +234,10 @@ console.info(result);
 
 
 
-#### endElement
+### endElement
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 endElement(): void
 
@@ -257,9 +269,10 @@ console.info(result);
 
 
 
-#### setNamespace
+### setNamespace
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setNamespace(prefix: string, namespace: string): void
 
@@ -274,6 +287,7 @@ setNamespace(prefix: string, namespace: string): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -299,9 +313,10 @@ console.info(result);
 
 
 
-#### setComment
+### setComment
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setComment(text: string): void
 
@@ -312,6 +327,7 @@ setComment(text: string): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -333,9 +349,10 @@ console.info(result); // <!--Hello, World!-->
 
 
 
-#### setCDATA
+### setCDATA
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCDATA(text: string): void
 
@@ -350,6 +367,7 @@ setCDATA(text: string): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -371,9 +389,10 @@ console.info(result); // <![CDATA[root SYSTEM]]>
 
 
 
-#### setText
+### setText
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setText(text: string): void
 
@@ -384,6 +403,7 @@ setText(text: string): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -408,9 +428,10 @@ console.info(result); // <note importance="high">Happy</note>
 
 
 
-#### setDocType
+### setDocType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setDocType(text: string): void
 
@@ -421,6 +442,7 @@ setDocType(text: string): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -442,9 +464,10 @@ console.info(result); // <!DOCTYPE root SYSTEM "http://www.test.org/test.dtd">
 
 
 
-#### XmlDynamicSerializer20+
+## XmlDynamicSerializer20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 XmlDynamicSerializer类用于动态生成XML字符串。当无法确定XML内容长度时，推荐使用该类。
 
@@ -454,9 +477,10 @@ XmlDynamicSerializer类用于动态生成XML字符串。当无法确定XML内容
 
 
 
-#### constructor20+
+### constructor20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(encoding?: string)
 
@@ -468,6 +492,7 @@ constructor(encoding?: string)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | encoding | string | 否 | 编码格式，默认'utf-8'（目前仅支持'utf-8'）。 |
@@ -476,6 +501,7 @@ constructor(encoding?: string)
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -490,9 +516,10 @@ let serializer = new xml.XmlDynamicSerializer('utf-8');
 
 
 
-#### getOutput20+
+### getOutput20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOutput(): ArrayBuffer
 
@@ -503,6 +530,7 @@ getOutput(): ArrayBuffer
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -526,9 +554,10 @@ console.info(result); // <note>Happy</note>
 
 
 
-#### setAttributes20+
+### setAttributes20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAttributes(name: string, value: string): void
 
@@ -544,6 +573,7 @@ setAttributes(name: string, value: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 属性名。所组成的XML长度不能超过100000，不可为空字符。 |
@@ -553,6 +583,7 @@ setAttributes(name: string, value: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -578,9 +609,10 @@ console.info(result); // <note importance="high"/>
 
 
 
-#### addEmptyElement20+
+### addEmptyElement20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addEmptyElement(name: string): void
 
@@ -596,6 +628,7 @@ addEmptyElement(name: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 该空元素的元素名，所组成的XML长度不能超过100000。 |
@@ -604,6 +637,7 @@ addEmptyElement(name: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -626,9 +660,10 @@ console.info(result); // <d/>
 
 
 
-#### setDeclaration20+
+### setDeclaration20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setDeclaration(): void
 
@@ -641,6 +676,7 @@ setDeclaration(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -663,9 +699,10 @@ console.info(result); // <?xml version="1.0" encoding="utf-8"?>
 
 
 
-#### startElement20+
+### startElement20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startElement(name: string): void
 
@@ -681,6 +718,7 @@ startElement(name: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 当前元素的元素名。所组成的XML长度不能超过100000，不可为空字符。 |
@@ -689,6 +727,7 @@ startElement(name: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -713,9 +752,10 @@ console.info(result); // <note>Happy</note>
 
 
 
-#### endElement20+
+### endElement20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 endElement(): void
 
@@ -732,6 +772,7 @@ endElement(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -756,9 +797,10 @@ console.info(result); // <note>Happy</note>
 
 
 
-#### setNamespace20+
+### setNamespace20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setNamespace(prefix: string, namespace: string): void
 
@@ -774,6 +816,7 @@ setNamespace(prefix: string, namespace: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | prefix | string | 是 | 当前元素及其子元素的前缀。所组成的XML长度不能超过100000，不可为空字符串。 |
@@ -783,6 +826,7 @@ setNamespace(prefix: string, namespace: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -807,9 +851,10 @@ console.info(result); // <h:note xmlns:h="http://www.w3.org/TR/html4/"/>
 
 
 
-#### setComment20+
+### setComment20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setComment(text: string): void
 
@@ -821,6 +866,7 @@ setComment(text: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | text | string | 是 | 当前元素的注释内容。所组成的XML长度不能超过100000，不可为空字符。 |
@@ -829,6 +875,7 @@ setComment(text: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -851,9 +898,10 @@ console.info(result); // <!--Hello, World!-->
 
 
 
-#### setCdata20+
+### setCdata20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCdata(text: string): void
 
@@ -869,6 +917,7 @@ setCdata(text: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | text | string | 是 | CDATA标签中的数据内容。所组成的XML长度不能超过100000。 |
@@ -877,6 +926,7 @@ setCdata(text: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -899,9 +949,10 @@ console.info(result); // <![CDATA[root SYSTEM]]>
 
 
 
-#### setText20+
+### setText20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setText(text: string): void
 
@@ -917,6 +968,7 @@ setText(text: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | text | string | 是 | 标签值。所组成的XML长度不能超过100000，不可为空字符。 |
@@ -925,6 +977,7 @@ setText(text: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -950,9 +1003,10 @@ console.info(result); // <note importance="high">Happy</note>
 
 
 
-#### setDocType20+
+### setDocType20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setDocType(text: string): void
 
@@ -964,6 +1018,7 @@ setDocType(text: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | text | string | 是 | 文档类型声明的内容。所组成的XML长度不能超过100000。 |
@@ -972,6 +1027,7 @@ setDocType(text: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -994,17 +1050,19 @@ console.info(result); // <!DOCTYPE root SYSTEM "http://www.test.org/test.dtd">
 
 
 
-#### XmlPullParser
+## XmlPullParser
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 XmlPullParser接口用于解析现有的XML文件，适用于对XML文本进行随机访问和灵活解析的场景。
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(buffer: ArrayBuffer | DataView, encoding?: string)
 
@@ -1015,6 +1073,7 @@ constructor(buffer: ArrayBuffer | DataView, encoding?: string)
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1035,9 +1094,10 @@ let xmlParser = new xml.XmlPullParser(uint8Array.buffer as object as ArrayBuffer
 
 
 
-#### parseXml14+
+### parseXml14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 parseXml(option: ParseOptions): void
 
@@ -1048,6 +1108,7 @@ parseXml(option: ParseOptions): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1083,9 +1144,10 @@ pullParser.parseXml(options);
 
 
 
-#### parse(deprecated)
+### parse(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 parse(option: ParseOptions): void
 
@@ -1101,6 +1163,7 @@ parse(option: ParseOptions): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | option | ParseOptions | 是 | XML解析选项。 |
@@ -1114,7 +1177,7 @@ import { util } from '@kit.ArkTS';
 let strXml =
   '<?xml version="1.0" encoding="utf-8"?>' +
   '<note importance="high" logged="true">' +
-    '<company>John & Hans</company>' +
+    '<company>John &amp; Hans</company>' +
     '<title>Happy</title>' +
   '</note>';
 let textEncoder = new util.TextEncoder();
@@ -1140,9 +1203,10 @@ that.parse(options);
 
 
 
-#### AttributeWithTagCb20+
+## AttributeWithTagCb20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AttributeWithTagCb = (tagName: string, key: string, value: string) => boolean
 
@@ -1151,6 +1215,7 @@ type AttributeWithTagCb = (tagName: string, key: string, value: string) => boole
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1161,6 +1226,7 @@ type AttributeWithTagCb = (tagName: string, key: string, value: string) => boole
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 是否继续解析标签名称、属性名称及属性的值。true表示继续解析，false表示停止解析。 |
@@ -1168,13 +1234,15 @@ type AttributeWithTagCb = (tagName: string, key: string, value: string) => boole
 
 
 
-#### ParseOptions
+## ParseOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 XML解析选项，用于配置XmlPullParser的解析行为。开发者可通过supportDoctype和ignoreNameSpace控制解析范围，通过注册回调函数（tagValueCallbackFunction、attributeValueCallbackFunction、tokenValueCallbackFunction等）接收不同类型的解析事件。
 
 **系统能力：** SystemCapability.Utils.Lang
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1188,17 +1256,19 @@ XML解析选项，用于配置XmlPullParser的解析行为。开发者可通过s
 
 
 
-#### ParseInfo
+## ParseInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 当前XML解析信息。
 
 
 
-#### getColumnNumber
+### getColumnNumber
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getColumnNumber(): number
 
@@ -1209,6 +1279,7 @@ getColumnNumber(): number
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1237,9 +1308,10 @@ console.info(str);
 
 
 
-#### getDepth
+### getDepth
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDepth(): number
 
@@ -1254,6 +1326,7 @@ getDepth(): number
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1286,9 +1359,10 @@ console.info(str);
 
 
 
-#### getLineNumber
+### getLineNumber
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLineNumber(): number
 
@@ -1299,6 +1373,7 @@ getLineNumber(): number
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1327,9 +1402,10 @@ console.info(str);
 
 
 
-#### getName
+### getName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getName(): string
 
@@ -1340,6 +1416,7 @@ getName(): string
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1368,9 +1445,10 @@ console.info(str);
 
 
 
-#### getNamespace
+### getNamespace
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getNamespace(): string
 
@@ -1381,6 +1459,7 @@ getNamespace(): string
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1413,9 +1492,10 @@ console.info(str);
 
 
 
-#### getPrefix
+### getPrefix
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPrefix(): string
 
@@ -1426,6 +1506,7 @@ getPrefix(): string
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1458,9 +1539,10 @@ console.info(str);
 
 
 
-#### getText
+### getText
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getText(): string
 
@@ -1471,6 +1553,7 @@ getText(): string
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1499,9 +1582,10 @@ console.info(str);
 
 
 
-#### isEmptyElementTag
+### isEmptyElementTag
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isEmptyElementTag(): boolean
 
@@ -1512,6 +1596,7 @@ isEmptyElementTag(): boolean
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1544,9 +1629,10 @@ console.info(str);
 
 
 
-#### isWhitespace
+### isWhitespace
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isWhitespace(): boolean
 
@@ -1557,6 +1643,7 @@ isWhitespace(): boolean
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1589,9 +1676,10 @@ console.info(str);
 
 
 
-#### getAttributeCount
+### getAttributeCount
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAttributeCount(): number
 
@@ -1602,6 +1690,7 @@ getAttributeCount(): number
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1630,15 +1719,17 @@ console.info(str);
 
 
 
-#### EventType
+## EventType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 事件类型枚举，定义了XmlPullParser在解析XML过程中可能触发的各类事件。解析时事件按START_DOCUMENT→START_TAG→TEXT/CDSECT→END_TAG→END_DOCUMENT等顺序依次触发，开发者可通过tokenValueCallbackFunction回调接收对应事件。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1657,9 +1748,10 @@ console.info(str);
 
 
 
-#### XmlSAXParser24+
+## XmlSAXParser24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 XmlSAXParser类用于以流式方式解析XML文本。适用于需要边读取边处理的场景，支持从[stream.Readable](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-stream#readable) 流中读取XML数据并进行解析。
 
@@ -1669,9 +1761,10 @@ XmlSAXParser类用于以流式方式解析XML文本。适用于需要边读取�
 
 
 
-#### constructor24+
+### constructor24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(inputStream: stream.Readable, encoding?: string)
 
@@ -1688,6 +1781,7 @@ constructor(inputStream: stream.Readable, encoding?: string)
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1715,9 +1809,10 @@ let saxParser = new xml.XmlSAXParser(readableStream, 'utf-8');
 
 
 
-#### parse24+
+### parse24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 parse(xmlSAXHandler: XmlSAXHandler): void
 
@@ -1734,6 +1829,7 @@ parse(xmlSAXHandler: XmlSAXHandler): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1776,17 +1872,19 @@ saxParser.parse(handler);
 
 
 
-#### XmlSAXHandler24+
+## XmlSAXHandler24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 XmlSAXHandler定义了SAX解析XML文本时的回调方法。开发者需要实现这些回调方法来处理XML文本的不同部分。这些回调方法会在XML解析过程的对应时机触发。startDocument会在开始解析文档时触发，endDocument会在结束文档解析时触发，startElement会在开始解析元素时触发，endElement会在结束解析元素时触发，characters则会在解析元素间文本内容时触发。
 
 
 
-#### startDocument24+
+### startDocument24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startDocument(): void
 
@@ -1800,9 +1898,10 @@ startDocument(): void
 
 
 
-#### endDocument24+
+### endDocument24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 endDocument(): void
 
@@ -1820,9 +1919,10 @@ endDocument(): void
 
 
 
-#### startElement24+
+### startElement24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startElement(elementName: string, namespaceURI: string | undefined, qName: string | undefined, attributes: Map<string, string>): void
 
@@ -1836,6 +1936,7 @@ startElement(elementName: string, namespaceURI: string | undefined, qName: strin
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | elementName | string | 是 | 解析器回传的元素名称（不包含命名空间前缀）。例如，对于<ns2:child>，elementName为"child"。 |
@@ -1846,9 +1947,10 @@ startElement(elementName: string, namespaceURI: string | undefined, qName: strin
 
 
 
-#### endElement24+
+### endElement24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 endElement(elementName: string, namespaceURI: string | undefined, qName: string | undefined): void
 
@@ -1862,6 +1964,7 @@ endElement(elementName: string, namespaceURI: string | undefined, qName: string 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | elementName | string | 是 | 解析器回传的元素名称（不包含命名空间前缀）。例如，对于<ns2:child>，elementName为"child"。 |
@@ -1871,9 +1974,10 @@ endElement(elementName: string, namespaceURI: string | undefined, qName: string 
 
 
 
-#### characters24+
+### characters24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 characters(content: string): void
 
@@ -1886,6 +1990,7 @@ characters(content: string): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |

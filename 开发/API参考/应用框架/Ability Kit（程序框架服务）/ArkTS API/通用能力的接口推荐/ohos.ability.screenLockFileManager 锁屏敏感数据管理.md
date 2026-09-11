@@ -1,6 +1,6 @@
 # @ohos.ability.screenLockFileManager (锁屏敏感数据管理)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-screenlockfilemanager
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -12,7 +12,8 @@
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -22,13 +23,15 @@ import { screenLockFileManager } from '@kit.AbilityKit';
 
 
 
-#### DataType
+## DataType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 表示锁屏下访问敏感数据类型的枚举。
 
 **系统能力：** SystemCapability.Security.ScreenLockFileManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -38,13 +41,15 @@ import { screenLockFileManager } from '@kit.AbilityKit';
 
 
 
-#### AccessStatus
+## AccessStatus
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 表示锁屏下敏感数据访问权限申请状态的枚举。
 
 **系统能力：** SystemCapability.Security.ScreenLockFileManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -54,13 +59,15 @@ import { screenLockFileManager } from '@kit.AbilityKit';
 
 
 
-#### ReleaseStatus
+## ReleaseStatus
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 表示锁屏下敏感数据访问权限释放状态的枚举。
 
 **系统能力：** SystemCapability.Security.ScreenLockFileManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -70,13 +77,15 @@ import { screenLockFileManager } from '@kit.AbilityKit';
 
 
 
-#### KeyStatus18+
+## KeyStatus18+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 表示锁屏下敏感数据密钥状态的枚举。
 
 **系统能力：** SystemCapability.Security.ScreenLockFileManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -87,7 +96,8 @@ import { screenLockFileManager } from '@kit.AbilityKit';
 
 
 
-#### screenLockFileManager.acquireAccess
+## screenLockFileManager.acquireAccess
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -101,6 +111,7 @@ acquireAccess(): AccessStatus
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | AccessStatus | 锁屏下敏感数据访问权限的申请状态。 |
@@ -109,6 +120,7 @@ acquireAccess(): AccessStatus
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[锁屏敏感数据管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-screenlockfilemanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -140,7 +152,8 @@ try {
 
 
 
-#### screenLockFileManager.releaseAccess
+## screenLockFileManager.releaseAccess
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -154,6 +167,7 @@ releaseAccess(): ReleaseStatus
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ReleaseStatus | 锁屏下敏感数据访问权限的释放状态。 |
@@ -162,6 +176,7 @@ releaseAccess(): ReleaseStatus
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[锁屏敏感数据管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-screenlockfilemanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -193,9 +208,10 @@ try {
 
 
 
-#### screenLockFileManager.queryAppKeyState18+
+## screenLockFileManager.queryAppKeyState18+
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** PC/2in1 | Tablet
 
 queryAppKeyState(): KeyStatus
 
@@ -205,6 +221,7 @@ queryAppKeyState(): KeyStatus
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | KeyStatus | 锁屏下敏感数据密钥的状态。 |
@@ -213,6 +230,7 @@ queryAppKeyState(): KeyStatus
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[锁屏敏感数据管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-screenlockfilemanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

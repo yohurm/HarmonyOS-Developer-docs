@@ -72,13 +72,13 @@ export class Params {
 export struct PageA {
   @Consume pathStack: NavPathStack;
   private param: Params = new Params();
-  // 封装的onPop回调
+ <em> // 封装的onPop回调</em>
   customOnPop = (popInfo: PopInfo) => {
     this.param.num = popInfo.result as number;
   };
 
   aboutToAppear(): void {
-    // 初始化参数
+    <em>// 初始化参数</em>
     this.param.num = 0;
     this.param.click = this.customOnPop;
   }
@@ -100,7 +100,7 @@ export struct PageA {
             .onClick(() => {
               this.pathStack.pushPath({
                 name: 'PageB', param: this.param, onPop: (popInfo) => {
-                  this.param.click(popInfo); // 使用封装的onPop回调
+                  this.param.click(popInfo); <em>// 使用封装的onPop回调</em>
                 }
               });
             });
@@ -137,7 +137,7 @@ export struct PageB {
             .onClick(() => {
               this.pathStack.replacePath({
                 name: 'PageB', onPop: (popInfo) => {
-                  this.param.click(popInfo); // 使用传递过来的方法
+                  this.param.click(popInfo); <em>// </em><em>使用传递过来的方法</em>
                 }
               });
             });
@@ -149,7 +149,7 @@ export struct PageB {
       };
     }.width('100%').height('100%')
     .onReady((ctx: NavDestinationContext) => {
-      this.param = ctx?.pathInfo?.param as Params; // 接收传递的参数
+      this.param = ctx?.pathInfo?.param as Params; <em>// </em><em>接收传递的参数</em>
     });
   }
 }
@@ -193,7 +193,7 @@ export struct PageA {
       };
     }
     .onResult((num: number) => {
-      this.param.num = num; // 接收回到此页面携带的参数
+      this.param.num = num; <em>// 接收回到此页面携带的参数</em>
     }).size({ width: '100%', height: '100%' });
   }
 }

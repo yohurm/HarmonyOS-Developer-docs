@@ -1,6 +1,6 @@
 # TaskPool使用规范
 
-更新时间：2026-07-22 06:05:01
+更新时间：2026-07-22 06:05:01（官网已下线）
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-taskpool_usage_specifications_and_faqs
 

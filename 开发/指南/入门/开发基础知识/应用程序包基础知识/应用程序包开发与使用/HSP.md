@@ -1,6 +1,6 @@
 # HSP
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/in-app-hsp
 
@@ -11,7 +11,7 @@ HSP（Harmony Shared Package）是动态共享包，包含代码、C++库、资�
 
 
 
-#### 使用场景
+## 使用场景
 
  - 多个HAP/HSP共用的代码和资源放在同一个HSP中，可以提高代码、资源的可重用性和可维护性，同时编译打包时也只保留一份HSP代码和资源，能够控制应用包的大小。
  - HSP在运行时[按需加载](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-modular-design#section28312051291)，有助于提升应用性能。
@@ -20,7 +20,7 @@ HSP（Harmony Shared Package）是动态共享包，包含代码、C++库、资�
 
 
 
-#### 约束限制
+## 约束限制
 
  - 可以和依赖该HSP的HAP一起安装/运行。在安装或更新时，多模块之间存在校验，详情参考[一致性校验](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/install-and-update-consistency-verification)。使用打包工具进行打包时，会进行合法性校验，详情请参考[打包工具](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/packing-tool)。
  - 从API version 14开始HSP支持在配置文件中[声明UIAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-overview#声明配置)组件，但不支持具有入口能力的UIAbility（即skill标签配置了entity.system.home和ohos.want.action.home）。配置UIAbility的方法参考[模块中添加UIAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-add-new-ability#section18658758104318)，HSP中UIAbility的启动方式与[应用内启动UIAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-intra-device-interaction)方法相同。API version 13及之前版本，不支持在配置文件中声明[UIAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-overview#声明配置)组件。
@@ -34,7 +34,7 @@ HSP（Harmony Shared Package）是动态共享包，包含代码、C++库、资�
 
 
 
-#### 创建
+## 创建
 
 使用DevEco Studio创建一个用于调用C++代码的HSP模块。并在“Configure New Module”页面中启用“Enable native”选项。详见[创建HSP模块](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hsp#section79378499185)，以创建一个名为library的HSP模块为例。基本的工程目录结构如下：
 
@@ -59,13 +59,13 @@ MyApplication
 
 
 
-#### 开发
+## 开发
 
 介绍如何导出HSP的ArkUI组件、接口、资源，供应用内的其他HAP/HSP引用。
 
 
 
-#### 导出ArkUI组件
+### 导出ArkUI组件
 
 ArkUI组件可以通过export导出，例如：
 
@@ -96,7 +96,7 @@ export { MyTitleBar } from './src/main/ets/components/MyTitleBar';
 
 
 
-#### 导出类和方法
+### 导出类和方法
 
 通过export导出类和方法，例如：
 
@@ -126,7 +126,7 @@ export { Log, add, minus } from './src/main/ets/utils/test';
 
 
 
-#### 导出native方法
+### 导出native方法
 
 在HSP中也可以包含C++编写的so。对于so中的native方法，HSP通过间接的方式导出，以导出liblibrary.so的乘法接口multi为例：
 
@@ -149,7 +149,7 @@ export { nativeMulti } from './src/main/ets/utils/nativeTest';
 
 
 
-#### 通过$r访问HSP中的资源
+### 通过$r访问HSP中的资源
 
 在组件中，经常需要使用字符串、图片等资源。HSP中的组件需要使用资源时，一般将其所用资源放在HSP包内，而非放在HSP的使用方处，以符合高内聚低耦合的原则。
 
@@ -173,7 +173,7 @@ Image("../../resources/base/media/example.png")
 
 
 
-#### 导出HSP中的资源
+### 导出HSP中的资源
 
 跨包访问HSP内资源时，推荐实现一个资源管理类，以封装对外导出的资源。采用这种方式，具有如下优点：
 
@@ -206,13 +206,13 @@ export { ResManager } from './src/main/ets/ResManager';
 
 
 
-#### 使用
+## 使用
 
 介绍如何引用HSP中的接口，以及如何通过页面路由实现HSP的pages页面跳转与返回。
 
 
 
-#### 引用HSP中的接口
+### 引用HSP中的接口
 
 要使用HSP中的接口，首先需要在使用方的 oh-package.json5 文件中配置对它的依赖。具体配置方法请参考[引用动态共享包](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-har-import)。
 
@@ -356,7 +356,7 @@ struct Index {
 
 
 
-#### 页面跳转和返回
+### 页面跳转和返回
 
 开发者想在entry模块中，添加一个按钮跳转至library模块中的menu页面（路径为：library/src/main/ets/pages/library_menu.ets），那么可以在使用方的代码（entry模块下的Index.ets，路径为：entry/src/main/ets/pages/Index.ets）里这样使用：
 

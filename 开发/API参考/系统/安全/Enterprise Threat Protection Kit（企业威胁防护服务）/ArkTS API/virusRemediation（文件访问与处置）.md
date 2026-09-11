@@ -1,6 +1,6 @@
 # virusRemediation（病毒检测与处置）
 
-更新时间：2026-07-28 11:23:46（官网已下线）
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/enterprisethreatprotection-virusremediation-interface
 **支持设备：** PC/2in1
@@ -10,7 +10,8 @@
 **起始版本：** 6.1.1(24)
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** PC/2in1
 
@@ -20,7 +21,8 @@ import { virusRemediation } from '@kit.EnterpriseThreatProtectionKit';
 
 
 
-#### IsolatedFileInfo
+## IsolatedFileInfo
+
 
 **支持设备：** PC/2in1
 
@@ -32,6 +34,7 @@ import { virusRemediation } from '@kit.EnterpriseThreatProtectionKit';
 
 **起始版本：** 6.1.1(24)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | id | string | 否 | 否 | 表示隔离ID，UUID格式，长度为36个字符。 |
@@ -42,7 +45,8 @@ import { virusRemediation } from '@kit.EnterpriseThreatProtectionKit';
 
 
 
-#### ScanTargetType
+## ScanTargetType
+
 
 **支持设备：** PC/2in1
 
@@ -54,6 +58,7 @@ import { virusRemediation } from '@kit.EnterpriseThreatProtectionKit';
 
 **起始版本：** 6.1.1(24)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | BUNDLE | 0 | 应用安装包目录。 |
@@ -62,7 +67,8 @@ import { virusRemediation } from '@kit.EnterpriseThreatProtectionKit';
 
 
 
-#### ScanCallback
+## ScanCallback
+
 
 **支持设备：** PC/2in1
 
@@ -76,7 +82,8 @@ import { virusRemediation } from '@kit.EnterpriseThreatProtectionKit';
 
 
 
-#### onReceive
+### onReceive
+
 
 **支持设备：** PC/2in1
 
@@ -91,6 +98,7 @@ onReceive(paths: string[]): void
 **起始版本：** 6.1.1(24)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -109,7 +117,8 @@ let onReceive: (paths: string[]) => void = (files: Array<string>) => {
 
 
 
-#### onComplete
+### onComplete
+
 
 **支持设备：** PC/2in1
 
@@ -133,7 +142,8 @@ let onComplete: () => void = () => {
 
 
 
-#### onError
+### onError
+
 
 **支持设备：** PC/2in1
 
@@ -148,6 +158,7 @@ onError(code: number, message: string): void
 **起始版本：** 6.1.1(24)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -165,7 +176,8 @@ let onError: (code: number, message: string) => void = (code: number, message: s
 
 
 
-#### QueryCallback
+## QueryCallback
+
 
 **支持设备：** PC/2in1
 
@@ -179,7 +191,8 @@ let onError: (code: number, message: string) => void = (code: number, message: s
 
 
 
-#### onQuery
+### onQuery
+
 
 **支持设备：** PC/2in1
 
@@ -194,6 +207,7 @@ onQuery(files: IsolatedFileInfo[]): void
 **起始版本：** 6.1.1(24)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -212,7 +226,8 @@ let onQuery: (files: virusRemediation.IsolatedFileInfo[]) => void = (files: viru
 
 
 
-#### onComplete
+### onComplete
+
 
 **支持设备：** PC/2in1
 
@@ -236,7 +251,8 @@ let onComplete: () => void = () => {
 
 
 
-#### onError
+### onError
+
 
 **支持设备：** PC/2in1
 
@@ -251,6 +267,7 @@ onError(code: number, message: string): void
 **起始版本：** 6.1.1(24)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -268,7 +285,8 @@ let onError: (code: number, message: string) => void = (code: number, message: s
 
 
 
-#### scanBundleFiles
+## scanBundleFiles
+
 
 **支持设备：** PC/2in1
 
@@ -286,6 +304,7 @@ scanBundleFiles(type: ScanTargetType, callback: ScanCallback, bundleName?: strin
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | ScanTargetType | 是 | 扫描对象类型，取值为0或1，其余取值无效。其中，0代表BUNDLE，即应用安装包目录；1代表SANDBOX，即应用el2级别加密数据目录。当需要扫描特定应用的安装包目录时，选择BUNDLE。 |
@@ -297,6 +316,7 @@ scanBundleFiles(type: ScanTargetType, callback: ScanCallback, bundleName?: strin
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API 错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-threat-protection)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -338,7 +358,8 @@ function startFileScanTask() {
 
 
 
-#### openFile
+## openFile
+
 
 **支持设备：** PC/2in1
 
@@ -356,12 +377,14 @@ openFile(path: string): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 默认路径范围下的绝对路径，路径长度不做限制。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -371,6 +394,7 @@ openFile(path: string): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API 错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-threat-protection)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -388,6 +412,7 @@ openFile(path: string): Promise&lt;number&gt;
 import { fileIo } from '@kit.CoreFileKit';
 
 function openFilePromise() {
+  // 目标文件路径，此处为示例路径，实际使用时需替换为用户指定的真实路径
   let path: string = '/example/path/to/file.txt';
   virusRemediation.openFile(path).then((fd: number) => {
     console.info(`Succeeded in opening file. path: ${path} , fd: ${fd}.`);
@@ -400,7 +425,8 @@ function openFilePromise() {
 
 
 
-#### queryIsolatedFiles
+## queryIsolatedFiles
+
 
 **支持设备：** PC/2in1
 
@@ -418,6 +444,7 @@ queryIsolatedFiles(callback: QueryCallback, batchNum?: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | QueryCallback | 是 | 回调函数，返回隔离文件信息列表，并在所有信息成功返回后通知用户查询结束。 |
@@ -427,6 +454,7 @@ queryIsolatedFiles(callback: QueryCallback, batchNum?: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API 错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-threat-protection)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -467,7 +495,8 @@ function startQueryTask() {
 
 
 
-#### isolateThreatFile
+## isolateThreatFile
+
 
 **支持设备：** PC/2in1
 
@@ -485,12 +514,14 @@ isolateThreatFile(path: string): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 待隔离文件的绝对路径，路径长度不做限制。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -500,6 +531,7 @@ isolateThreatFile(path: string): Promise&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API 错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-threat-protection)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -517,6 +549,7 @@ isolateThreatFile(path: string): Promise&lt;string&gt;
 
 ```text
 function isolateFilePromise() {
+  // 目标文件路径，此处为示例路径，实际使用时需替换为用户指定的真实路径
   let path: string = '/data/service/el2/test/test.txt';
   virusRemediation.isolateThreatFile(path).then((id: string) => {
     console.info(`Succeeded in isolating file. path: ${path} , id: ${id}.`);
@@ -528,7 +561,8 @@ function isolateFilePromise() {
 
 
 
-#### restoreIsolatedFile
+## restoreIsolatedFile
+
 
 **支持设备：** PC/2in1
 
@@ -546,12 +580,14 @@ restoreIsolatedFile(id: string): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | string | 是 | 待恢复文件的隔离ID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -561,6 +597,7 @@ restoreIsolatedFile(id: string): Promise&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API 错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-threat-protection)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -576,6 +613,7 @@ restoreIsolatedFile(id: string): Promise&lt;string&gt;
 
 ```text
 function restoreFilePromise() {
+  // 隔离文件ID，可通过queryIsolatedFiles()接口获取
   let id: string = 'example-id-12345';
   virusRemediation.restoreIsolatedFile(id).then((path: string) => {
     console.info(`Succeeded in restoring file. restore path: ${path} , id: ${id}.`);
@@ -587,7 +625,8 @@ function restoreFilePromise() {
 
 
 
-#### removeIsolatedFile
+## removeIsolatedFile
+
 
 **支持设备：** PC/2in1
 
@@ -605,12 +644,14 @@ removeIsolatedFile(id: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | string | 是 | 待删除文件的隔离ID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -620,6 +661,7 @@ removeIsolatedFile(id: string): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API 错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-threat-protection)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -634,6 +676,7 @@ removeIsolatedFile(id: string): Promise&lt;void&gt;
 
 ```text
 function removeIsolatedFilePromise() {
+  // 隔离文件ID，可通过queryIsolatedFiles()接口获取
   let id: string = 'example-id-12345';
   virusRemediation.removeIsolatedFile(id).then(() => {
     console.info(`Succeeded in removing file.`);
@@ -645,7 +688,8 @@ function removeIsolatedFilePromise() {
 
 
 
-#### terminateProcess
+## terminateProcess
+
 
 **支持设备：** PC/2in1
 
@@ -663,12 +707,14 @@ terminateProcess(pid: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pid | number | 是 | 待终止的威胁进程ID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -678,6 +724,7 @@ terminateProcess(pid: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API 错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-threat-protection)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

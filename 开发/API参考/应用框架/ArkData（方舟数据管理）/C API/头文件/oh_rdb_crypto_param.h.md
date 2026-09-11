@@ -1,13 +1,14 @@
 # oh_rdb_crypto_param.h
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-rdb-crypto-param-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供与关系型数据库加密参数相关的函数和枚举。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_Rdb_CryptoParam | OH_Rdb_CryptoParam | 指定打开加密数据库时使用的加密参数。 |
@@ -40,10 +44,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | Rdb_EncryptionAlgo | Rdb_EncryptionAlgo | 数据库加密算法。 |
@@ -53,10 +59,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_Rdb_CryptoParam *OH_Rdb_CreateCryptoParam(void) | 创建一个OH_Rdb_CryptoParam实例对象。 |
@@ -71,15 +79,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### Rdb_EncryptionAlgo
+### Rdb_EncryptionAlgo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Rdb_EncryptionAlgo
@@ -91,6 +101,7 @@ enum Rdb_EncryptionAlgo
  
 **起始版本：** 20
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | RDB_AES_256_GCM = 0 | 表示数据库使用RDB_AES_256_GCM加密。 |
@@ -100,9 +111,10 @@ enum Rdb_EncryptionAlgo
  
   
 
-#### Rdb_HmacAlgo
+### Rdb_HmacAlgo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Rdb_HmacAlgo
@@ -114,6 +126,7 @@ enum Rdb_HmacAlgo
  
 **起始版本：** 20
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | RDB_HMAC_SHA1 = 0 | RDB_HMAC_SHA1算法。 |
@@ -123,9 +136,10 @@ enum Rdb_HmacAlgo
  
   
 
-#### Rdb_KdfAlgo
+### Rdb_KdfAlgo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Rdb_KdfAlgo
@@ -137,6 +151,7 @@ enum Rdb_KdfAlgo
  
 **起始版本：** 20
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | RDB_KDF_SHA1 = 0 | RDB_KDF_SHA1算法。 |
@@ -146,15 +161,17 @@ enum Rdb_KdfAlgo
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Rdb_CreateCryptoParam()
+### OH_Rdb_CreateCryptoParam()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Rdb_CryptoParam *OH_Rdb_CreateCryptoParam(void)
@@ -168,16 +185,18 @@ OH_Rdb_CryptoParam *OH_Rdb_CreateCryptoParam(void)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| OH_Rdb_CryptoParam | 成功时返回指向OH_Rdb_CryptoParam实例的指针。 否则返回nullptr。使用完成后，必须通过OH_Rdb_DestroyCryptoParam接口释放内存。 |
+| OH_Rdb_CryptoParam * | 成功时返回指向OH_Rdb_CryptoParam实例的指针。 否则返回nullptr。使用完成后，必须通过OH_Rdb_DestroyCryptoParam接口释放内存。 |
  
  
   
 
-#### OH_Rdb_DestroyCryptoParam()
+### OH_Rdb_DestroyCryptoParam()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Rdb_DestroyCryptoParam(OH_Rdb_CryptoParam *param)
@@ -191,6 +210,7 @@ int OH_Rdb_DestroyCryptoParam(OH_Rdb_CryptoParam *param)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_CryptoParam *param | 表示指向OH_Rdb_CryptoParam实例的指针。 |
@@ -198,6 +218,7 @@ int OH_Rdb_DestroyCryptoParam(OH_Rdb_CryptoParam *param)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -205,9 +226,10 @@ int OH_Rdb_DestroyCryptoParam(OH_Rdb_CryptoParam *param)
  
   
 
-#### OH_Crypto_SetEncryptionKey()
+### OH_Crypto_SetEncryptionKey()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Crypto_SetEncryptionKey(OH_Rdb_CryptoParam *param, const uint8_t *key, int32_t length)
@@ -221,6 +243,7 @@ int OH_Crypto_SetEncryptionKey(OH_Rdb_CryptoParam *param, const uint8_t *key, in
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_CryptoParam *param | 表示指向OH_Rdb_CryptoParam实例的指针。 |
@@ -230,6 +253,7 @@ int OH_Crypto_SetEncryptionKey(OH_Rdb_CryptoParam *param, const uint8_t *key, in
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -237,9 +261,10 @@ int OH_Crypto_SetEncryptionKey(OH_Rdb_CryptoParam *param, const uint8_t *key, in
  
   
 
-#### OH_Crypto_SetIteration()
+### OH_Crypto_SetIteration()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Crypto_SetIteration(OH_Rdb_CryptoParam *param, int64_t iteration)
@@ -253,6 +278,7 @@ int OH_Crypto_SetIteration(OH_Rdb_CryptoParam *param, int64_t iteration)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_CryptoParam *param | 表示指向OH_Rdb_CryptoParam实例的指针。 |
@@ -261,6 +287,7 @@ int OH_Crypto_SetIteration(OH_Rdb_CryptoParam *param, int64_t iteration)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -268,9 +295,10 @@ int OH_Crypto_SetIteration(OH_Rdb_CryptoParam *param, int64_t iteration)
  
   
 
-#### OH_Crypto_SetEncryptionAlgo()
+### OH_Crypto_SetEncryptionAlgo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Crypto_SetEncryptionAlgo(OH_Rdb_CryptoParam *param, int32_t algo)
@@ -284,14 +312,16 @@ int OH_Crypto_SetEncryptionAlgo(OH_Rdb_CryptoParam *param, int32_t algo)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_CryptoParam *param | 表示指向OH_Rdb_CryptoParam实例的指针。 |
-| int32_t algo | 表示加密算法。 |
+| int32_t algo | 表示加密算法，取值必须是Rdb_EncryptionAlgo的枚举值之一。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -299,9 +329,10 @@ int OH_Crypto_SetEncryptionAlgo(OH_Rdb_CryptoParam *param, int32_t algo)
  
   
 
-#### OH_Crypto_SetHmacAlgo()
+### OH_Crypto_SetHmacAlgo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Crypto_SetHmacAlgo(OH_Rdb_CryptoParam *param, int32_t algo)
@@ -315,14 +346,16 @@ int OH_Crypto_SetHmacAlgo(OH_Rdb_CryptoParam *param, int32_t algo)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_CryptoParam *param | 表示指向OH_Rdb_CryptoParam实例的指针。 |
-| int32_t algo | 表示HMAC算法。 |
+| int32_t algo | 表示HMAC算法，取值必须是Rdb_HmacAlgo的枚举值之一。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -330,9 +363,10 @@ int OH_Crypto_SetHmacAlgo(OH_Rdb_CryptoParam *param, int32_t algo)
  
   
 
-#### OH_Crypto_SetKdfAlgo()
+### OH_Crypto_SetKdfAlgo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Crypto_SetKdfAlgo(OH_Rdb_CryptoParam *param, int32_t algo)
@@ -346,14 +380,16 @@ int OH_Crypto_SetKdfAlgo(OH_Rdb_CryptoParam *param, int32_t algo)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_CryptoParam *param | 表示指向OH_Rdb_CryptoParam实例的指针。 |
-| int32_t algo | 表示KDF算法。 |
+| int32_t algo | 表示KDF算法，取值必须是Rdb_KdfAlgo的枚举值之一。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -361,9 +397,10 @@ int OH_Crypto_SetKdfAlgo(OH_Rdb_CryptoParam *param, int32_t algo)
  
   
 
-#### OH_Crypto_SetCryptoPageSize()
+### OH_Crypto_SetCryptoPageSize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Crypto_SetCryptoPageSize(OH_Rdb_CryptoParam *param, int64_t size)
@@ -377,14 +414,16 @@ int OH_Crypto_SetCryptoPageSize(OH_Rdb_CryptoParam *param, int64_t size)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_CryptoParam *param | 表示指向OH_Rdb_CryptoParam实例的指针。 |
-| int64_t size | 表示页大小，单位为字节，取值应为2的幂值，最小值为1024，最大值65536。 |
+| int64_t size | 表示页大小，单位为字节，取值应为2的幂值，最小值为1024，最大值为65536。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |

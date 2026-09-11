@@ -75,7 +75,7 @@ struct SFAQ20250507142609641237 {
       textStyle.textColor = 0x0000ea;
       textStyle.isBold = true;
       textStyle.isItalic = false;
-      textPdfPage.addTextObject(text, 20, 120, textStyle); // 添加示例文字
+      textPdfPage.addTextObject(text, 20, 120, textStyle);<em> </em><em>// 添加示例文字</em>
 
       let randomNumber = '';
       const rand = cryptoFramework.createRandom();
@@ -83,7 +83,7 @@ struct SFAQ20250507142609641237 {
       randData.data.forEach((val) => {
         randomNumber = randomNumber + val;
       });
-      let savePath = this.getUIContext().getHostContext()?.filesDir + `/output${randomNumber}.pdf`; // 可用IDE在沙箱目录下找到
+      let savePath = this.getUIContext().getHostContext()?.filesDir + `/output${randomNumber}.pdf`;<em> </em><em>// 可用IDE在沙箱目录下找到</em>
       console.info('testTag', `pdf savePath = ${savePath}`);
 
       let result = pdfDocument.saveDocument(savePath);

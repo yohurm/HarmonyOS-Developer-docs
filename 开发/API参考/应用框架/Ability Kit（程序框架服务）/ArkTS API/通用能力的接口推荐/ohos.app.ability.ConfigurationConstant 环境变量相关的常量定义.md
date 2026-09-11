@@ -1,9 +1,9 @@
 # @ohos.app.ability.ConfigurationConstant (环境变量相关的常量定义)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-configurationconstant
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ConfigurationConstant模块提供了[Configuration](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-configuration)操作相关的系统预置枚举。
  
@@ -12,9 +12,10 @@ ConfigurationConstant模块提供了[Configuration](https://developer.huawei.com
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { ConfigurationConstant } from '@kit.AbilityKit';
@@ -22,9 +23,10 @@ import { ConfigurationConstant } from '@kit.AbilityKit';
  
   
 
-#### ColorMode
+## ColorMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示深浅色模式的枚举，用于[Configuration.colorMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-configuration#configuration)字段。开发者可以使用这些预置枚举设置或获取系统/应用的深浅色模式。
  
@@ -32,6 +34,7 @@ import { ConfigurationConstant } from '@kit.AbilityKit';
  
 **系统能力**：SystemCapability.Ability.AbilityBase
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | COLOR_MODE_NOT_SET | -1 | 表示未设置颜色模式。 |
@@ -41,9 +44,10 @@ import { ConfigurationConstant } from '@kit.AbilityKit';
  
   
 
-#### Direction
+## Direction
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示屏幕方向的枚举，用于[Configuration.direction](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-configuration#configuration)字段。开发者可以使用这些预置枚举设置或获取系统/应用的显示方向。
  
@@ -51,6 +55,7 @@ import { ConfigurationConstant } from '@kit.AbilityKit';
  
 **系统能力**：SystemCapability.Ability.AbilityBase
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DIRECTION_NOT_SET | -1 | 表示未设置方向。 |
@@ -60,9 +65,10 @@ import { ConfigurationConstant } from '@kit.AbilityKit';
  
   
 
-#### ScreenDensity
+## ScreenDensity
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示屏幕像素密度的枚举，用于[Configuration.screenDensity](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-configuration#configuration)字段。开发者可以使用这些预置枚举设置或获取屏幕的像素密度。
  
@@ -72,6 +78,7 @@ import { ConfigurationConstant } from '@kit.AbilityKit';
  
 **系统能力**：SystemCapability.Ability.AbilityBase
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SCREEN_DENSITY_NOT_SET | 0 | 表示未设置屏幕像素密度。 |

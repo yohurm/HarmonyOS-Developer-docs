@@ -1,9 +1,9 @@
 # Class (WebDownloadDelegate)
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webdownloaddelegate
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 WebDownloadDelegate是ArkWeb框架中用于监听和处理Web组件下载任务事件的委托类。当Web组件中的网页触发文件下载时（如用户点击下载链接或通过startDownload方法），下载任务的状态变化会通过该类的回调接口通知给应用。开发者通过setDownloadDelegate将WebDownloadDelegate实例注册到Web组件，从而接管下载流程的完整生命周期管理。
  
@@ -14,9 +14,10 @@ WebDownloadDelegate定义了四个下载生命周期回调：[onBeforeDownload](
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { webview } from '@kit.ArkWeb';
@@ -24,25 +25,27 @@ import { webview } from '@kit.ArkWeb';
  
   
 
-#### onBeforeDownload11+
+## onBeforeDownload11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onBeforeDownload(callback: Callback&lt;WebDownloadItem&gt;): void
  
-下载开始前通知给用户，用户需要在此接口中调用WebDownloadItem.start("xxx")并提供下载路径，否则下载会一直处于PENDING状态。
+下载开始前通知给应用，应用需要在此接口中调用WebDownloadItem.start("xxx")并提供下载路径，否则下载会一直处于PENDING状态。
  
 > [!NOTE]
-> 处于PENDING状态的下载任务会首先将文件保存至临时目录。在调用 WebDownloadItem.start 并指定目标路径后，临时文件将被重命名为目标文件名，未完成下载的部分会在调用WebDownloadItem.start并指定目标路径后直接下载到目标路径。若希望避免在调用WebDownloadItem.start前生成临时文件，可先通过 WebDownloadItem.cancel 来取消当前的下载任务，之后再使用 WebDownloadManager.resumeDownload 来恢复被取消的下载任务。
+> 处于PENDING状态的下载任务会首先将文件保存至临时目录。在调用 WebDownloadItem.start 并指定目标路径后，临时文件将被重命名为目标文件名，未完成下载的部分将直接下载到目标路径。若希望避免在调用WebDownloadItem.start前生成临时文件，可先通过 WebDownloadItem.cancel 来取消当前的下载任务，之后再使用 WebDownloadManager.resumeDownload 来恢复被取消的下载任务。
 
  
 **系统能力：** SystemCapability.Web.Webview.Core
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | Callback&lt;WebDownloadItem&gt; | 是 | 触发下载的回调。 |
+| callback | Callback&lt;WebDownloadItem&gt; | 是 | 下载开始前的回调。 |
  
  
 **示例：**
@@ -135,18 +138,20 @@ struct WebComponent {
  
   
 
-#### onDownloadUpdated11+
+## onDownloadUpdated11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDownloadUpdated(callback: Callback&lt;WebDownloadItem&gt;): void
  
-下载过程中的回调，通过该回调的参数可以了解下载进度等信息。
+下载过程中的回调，应用可通过此回调获取下载进度（百分比）、已接收字节数等信息，以便监控或更新下载状态。
  
 **系统能力：** SystemCapability.Web.Webview.Core
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;WebDownloadItem&gt; | 是 | 下载更新的回调。 |
@@ -242,18 +247,20 @@ struct WebComponent {
  
   
 
-#### onDownloadFinish11+
+## onDownloadFinish11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDownloadFinish(callback: Callback&lt;WebDownloadItem&gt;): void
  
-下载完成的通知。
+下载完成的通知。应用可通过此回调获取下载完成的下载任务信息，以便进行后续处理（如更新UI、通知用户等）。
  
 **系统能力：** SystemCapability.Web.Webview.Core
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;WebDownloadItem&gt; | 是 | 下载完成的回调。 |
@@ -349,18 +356,20 @@ struct WebComponent {
  
   
 
-#### onDownloadFailed11+
+## onDownloadFailed11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDownloadFailed(callback: Callback&lt;WebDownloadItem&gt;): void
  
-下载失败的通知。
+下载失败的通知。应用可通过此回调获取下载失败的详细信息，以便进行错误处理、重试或记录日志。
  
 **系统能力：** SystemCapability.Web.Webview.Core
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;WebDownloadItem&gt; | 是 | 下载失败的回调。 |

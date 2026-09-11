@@ -1,6 +1,6 @@
 # gameNearbyTransfer（游戏近场快传）
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservice-nearbytransfer
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -12,7 +12,8 @@
 **起始版本：** 5.1.0(18)
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -22,7 +23,8 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 
 
-#### CreateParameters
+## CreateParameters
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -33,6 +35,7 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 **系统能力：** SystemCapability.GameService.GameNearby
 
 **起始版本：** 5.1.0(18)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -47,7 +50,8 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 
 
-#### ConnectNotification
+## ConnectNotification
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -59,6 +63,7 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | connectState | ConnectState | 否 | 否 | 连接状态。 |
@@ -68,7 +73,8 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 
 
-#### BindParameters
+## BindParameters
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -80,6 +86,7 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | deviceId | string | 否 | 否 | 设备ID。字符长度范围：[1, 128]。 |
@@ -88,7 +95,8 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 
 
-#### NearbyGameDevice
+## NearbyGameDevice
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -100,6 +108,7 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | deviceName | string | 否 | 否 | 设备名。 |
@@ -109,7 +118,8 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 
 
-#### DiscoveryResult
+## DiscoveryResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -121,6 +131,7 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | nearbyGameDevices | Array&lt;NearbyGameDevice&gt; | 否 | 否 | 发现的设备列表。 |
@@ -128,7 +139,8 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 
 
-#### CreateResult
+## CreateResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -140,6 +152,7 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | localDeviceName | string | 否 | 否 | 本端设备名。 |
@@ -148,7 +161,8 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 
 
-#### TransferNotification
+## TransferNotification
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -160,6 +174,7 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | transferState | TransferState | 否 | 否 | 传输状态。 |
@@ -169,7 +184,8 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 
 
-#### FileInfo
+## FileInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -181,6 +197,7 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | path | string | 否 | 否 | 文件路径，使用沙箱路径，详情请参见应用沙箱目录。字符长度范围：[1, 2048]。 |
@@ -189,7 +206,8 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 
 
-#### PackageInfo
+## PackageInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -201,6 +219,7 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | name | string | 否 | 是 | 包名。字符长度范围：[0, 2048]。 |
@@ -211,7 +230,8 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 
 
-#### PackageFile
+## PackageFile
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -223,6 +243,7 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | srcPath | string | 否 | 否 | 源文件路径，为发送端应用沙箱路径，详情请参见应用沙箱目录。字符长度范围：[1, 2048]。完整路径。 |
@@ -231,7 +252,8 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 
 
-#### PackageData
+## PackageData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -243,6 +265,7 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | name | string | 否 | 是 | 包名。字符长度范围：[0, 2048]。 |
@@ -252,7 +275,8 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 
 
-#### ReturnResult
+## ReturnResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -264,6 +288,7 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | code | number | 否 | 否 | 返回码。具体取值请参考NearbyTransferErrorCode。 |
@@ -272,7 +297,8 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 
 
-#### PackageInfoResult
+## PackageInfoResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -284,6 +310,7 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | packageInfoResultCode | PackageInfoResultCode | 否 | 否 | 对比结果码值。 |
@@ -292,7 +319,8 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 
 
-#### TransferInfo
+## TransferInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -304,6 +332,7 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | expectedTime | number | 否 | 否 | 传输剩余时间，单位：s。 |
@@ -314,7 +343,8 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 
 
-#### RemoteInstallationInfo
+## RemoteInstallationInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -326,6 +356,7 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 **起始版本：** 6.1.0(23)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | installed | boolean | 否 | 否 | 安装包在接收端是否已安装。 - true：已安装。 - false：未安装。 默认值为false。 |
@@ -333,7 +364,8 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 
 
-#### Mode
+## Mode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -345,6 +377,7 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | API | 1 | API模式，即调用游戏近场快传API接口进行传输。 |
@@ -354,7 +387,8 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 
 
-#### ConnectState
+## ConnectState
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -366,6 +400,7 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CONNECTED | 0 | 连接成功。 |
@@ -374,7 +409,8 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 
 
-#### TransferState
+## TransferState
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -385,6 +421,7 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 **系统能力：** SystemCapability.GameService.GameNearby
 
 **起始版本：** 5.1.0(18)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -400,7 +437,8 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 
 
-#### PackageInfoResultCode
+## PackageInfoResultCode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -412,6 +450,7 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ERROR | -1 | 对比错误。 |
@@ -421,7 +460,8 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 
 
-#### ContentType
+## ContentType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -433,6 +473,7 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 **起始版本：** 6.1.0(23)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | RESOURCE_PACKAGE | 1 | 资源包，用于在对方已安装游戏的情况下传输游戏内资源（例如游戏地图等）。 |
@@ -441,7 +482,8 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 
 
-#### NearbyTransferErrorCode
+## NearbyTransferErrorCode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -454,6 +496,7 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 **起始版本：** 5.1.0(18)
 
 错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-gameservice)。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -469,7 +512,8 @@ import { gameNearbyTransfer } from '@kit.GameServiceKit';
 
 
 
-#### gameNearbyTransfer.on('connectNotify')
+## gameNearbyTransfer.on('connectNotify')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -485,6 +529,7 @@ on(type: 'connectNotify', callback: Callback&lt;ConnectNotification&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件类型，支持的事件为'connectNotify'，建链操作完成后触发该事件。 |
@@ -494,6 +539,7 @@ on(type: 'connectNotify', callback: Callback&lt;ConnectNotification&gt;): void
 **错误码：**
 
 错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -524,7 +570,8 @@ function connectNotifyCallBack(callback: gameNearbyTransfer.ConnectNotification)
 
 
 
-#### gameNearbyTransfer.off('connectNotify')
+## gameNearbyTransfer.off('connectNotify')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -540,6 +587,7 @@ off(type: 'connectNotify', callback?: Callback&lt;ConnectNotification&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件类型，支持的事件为'connectNotify'，建链操作完成后触发该事件。 |
@@ -549,6 +597,7 @@ off(type: 'connectNotify', callback?: Callback&lt;ConnectNotification&gt;): void
 **错误码：**
 
 错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -579,7 +628,8 @@ function connectNotifyCallBack(callback: gameNearbyTransfer.ConnectNotification)
 
 
 
-#### gameNearbyTransfer.on('discovery')
+## gameNearbyTransfer.on('discovery')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -595,6 +645,7 @@ on(type: 'discovery', callback: Callback&lt;DiscoveryResult&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件类型，支持的事件为'discovery'，发现设备操作完成后触发该事件。 |
@@ -604,6 +655,7 @@ on(type: 'discovery', callback: Callback&lt;DiscoveryResult&gt;): void
 **错误码：**
 
 错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-gameservice)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -637,7 +689,8 @@ function discoveryCallBack(callback: gameNearbyTransfer.DiscoveryResult) {
 
 
 
-#### gameNearbyTransfer.off('discovery')
+## gameNearbyTransfer.off('discovery')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -653,6 +706,7 @@ off(type: 'discovery', callback?: Callback&lt;DiscoveryResult&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件类型，支持的事件为'discovery'，发现设备操作完成后触发该事件。 |
@@ -662,6 +716,7 @@ off(type: 'discovery', callback?: Callback&lt;DiscoveryResult&gt;): void
 **错误码：**
 
 错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-gameservice)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -695,7 +750,8 @@ function discoveryCallBack(callback: gameNearbyTransfer.DiscoveryResult) {
 
 
 
-#### gameNearbyTransfer.on('receivePackageInfo')
+## gameNearbyTransfer.on('receivePackageInfo')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -711,6 +767,7 @@ on(type: 'receivePackageInfo', callback: Callback&lt;PackageInfo&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件类型，支持的事件为'receivePackageInfo'，收到接收方发送的自身文件信息后触发该事件。 |
@@ -720,6 +777,7 @@ on(type: 'receivePackageInfo', callback: Callback&lt;PackageInfo&gt;): void
 **错误码：**
 
 错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -749,7 +807,8 @@ function receivePackageInfoCallBack(callback: gameNearbyTransfer.PackageInfo) {
 
 
 
-#### gameNearbyTransfer.off('receivePackageInfo')
+## gameNearbyTransfer.off('receivePackageInfo')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -765,6 +824,7 @@ off(type: 'receivePackageInfo', callback?: Callback&lt;PackageInfo&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件类型，支持的事件为'receivePackageInfo'，收到接收方发送的自身文件信息后触发该事件。 |
@@ -774,6 +834,7 @@ off(type: 'receivePackageInfo', callback?: Callback&lt;PackageInfo&gt;): void
 **错误码：**
 
 错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -804,7 +865,8 @@ function receivePackageInfoCallBack(callback: gameNearbyTransfer.PackageInfo) {
 
 
 
-#### gameNearbyTransfer.on('transferNotify')
+## gameNearbyTransfer.on('transferNotify')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -820,6 +882,7 @@ on(type: 'transferNotify', callback: Callback&lt;TransferNotification&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件类型，支持的事件为'transferNotify'，文件传输过程中触发该事件。 |
@@ -829,6 +892,7 @@ on(type: 'transferNotify', callback: Callback&lt;TransferNotification&gt;): void
 **错误码：**
 
 错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -859,7 +923,8 @@ function transferNotifyCallBack(callback: gameNearbyTransfer.TransferNotificatio
 
 
 
-#### gameNearbyTransfer.off('transferNotify')
+## gameNearbyTransfer.off('transferNotify')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -875,6 +940,7 @@ off(type: 'transferNotify', callback?: Callback&lt;TransferNotification&gt;): vo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件类型，支持的事件为'transferNotify'，文件传输过程中触发该事件。 |
@@ -884,6 +950,7 @@ off(type: 'transferNotify', callback?: Callback&lt;TransferNotification&gt;): vo
 **错误码：**
 
 错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -914,7 +981,8 @@ function transferNotifyCallBack(callback: gameNearbyTransfer.TransferNotificatio
 
 
 
-#### gameNearbyTransfer.on('error')
+## gameNearbyTransfer.on('error')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -930,6 +998,7 @@ on(type: 'error', callback: Callback&lt;ReturnResult&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件类型，支持的事件为'error'，内部错误时触发该事件。 |
@@ -939,6 +1008,7 @@ on(type: 'error', callback: Callback&lt;ReturnResult&gt;): void
 **错误码：**
 
 错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -968,7 +1038,8 @@ function errorCallBack(callback: gameNearbyTransfer.ReturnResult) {
 
 
 
-#### gameNearbyTransfer.off('error')
+## gameNearbyTransfer.off('error')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -984,6 +1055,7 @@ off(type: 'error', callback?: Callback&lt;ReturnResult&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件类型，支持的事件为'error'。 |
@@ -993,6 +1065,7 @@ off(type: 'error', callback?: Callback&lt;ReturnResult&gt;): void
 **错误码：**
 
 错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1022,7 +1095,8 @@ function errorCallBack(callback: gameNearbyTransfer.ReturnResult) {
 
 
 
-#### gameNearbyTransfer.onRemoteInstallationInfoNotify
+## gameNearbyTransfer.onRemoteInstallationInfoNotify
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1038,6 +1112,7 @@ onRemoteInstallationInfoNotify(callback: Callback&lt;RemoteInstallationInfo&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;RemoteInstallationInfo&gt; | 是 | 回调函数，返回远程安装包结果信息对象。 |
@@ -1046,6 +1121,7 @@ onRemoteInstallationInfoNotify(callback: Callback&lt;RemoteInstallationInfo&gt;)
 **错误码：**
 
 错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-gameservice)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1074,7 +1150,8 @@ function remoteCallBack(callback: gameNearbyTransfer.RemoteInstallationInfo) {
 
 
 
-#### gameNearbyTransfer.offRemoteInstallationInfoNotify
+## gameNearbyTransfer.offRemoteInstallationInfoNotify
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1090,6 +1167,7 @@ offRemoteInstallationInfoNotify(callback?: Callback&lt;RemoteInstallationInfo&gt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;RemoteInstallationInfo&gt; | 否 | 回调函数，返回远程安装包结果信息对象。 如果该参数不为空，则取消当前callback订阅。如果该参数为空，则取消'offRemoteInstallationInfoNotify'事件的所有callback订阅。 |
@@ -1098,6 +1176,7 @@ offRemoteInstallationInfoNotify(callback?: Callback&lt;RemoteInstallationInfo&gt
 **错误码：**
 
 错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-gameservice)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1126,7 +1205,8 @@ function remoteCallBack(callback: gameNearbyTransfer.RemoteInstallationInfo) {
 
 
 
-#### gameNearbyTransfer.create
+## gameNearbyTransfer.create
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1142,12 +1222,14 @@ create(createParameters: CreateParameters): Promise&lt;CreateResult&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | createParameters | CreateParameters | 是 | 创建参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1157,6 +1239,7 @@ create(createParameters: CreateParameters): Promise&lt;CreateResult&gt;
 **错误码：**
 
 错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-gameservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1259,7 +1342,8 @@ struct Create {
 
 
 
-#### gameNearbyTransfer.publishNearbyGame
+## gameNearbyTransfer.publishNearbyGame
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1275,6 +1359,7 @@ publishNearbyGame(): Promise&lt;void&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -1283,6 +1368,7 @@ publishNearbyGame(): Promise&lt;void&gt;
 **错误码**：
 
 错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-gameservice)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1313,7 +1399,8 @@ try {
 
 
 
-#### gameNearbyTransfer.discoveryNearbyGame
+## gameNearbyTransfer.discoveryNearbyGame
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1329,6 +1416,7 @@ discoveryNearbyGame(): Promise&lt;void&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -1337,6 +1425,7 @@ discoveryNearbyGame(): Promise&lt;void&gt;
 **错误码**：
 
 错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-gameservice)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1367,7 +1456,8 @@ try {
 
 
 
-#### gameNearbyTransfer.bindNearbyGame
+## gameNearbyTransfer.bindNearbyGame
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1385,12 +1475,14 @@ bindNearbyGame(bindParameters: BindParameters): Promise&lt;void&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bindParameters | BindParameters | 是 | 绑定参数。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1400,6 +1492,7 @@ bindNearbyGame(bindParameters: BindParameters): Promise&lt;void&gt;
 **错误码**：
 
 错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-gameservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1435,7 +1528,8 @@ try {
 
 
 
-#### gameNearbyTransfer.autoBindNearbyGame
+## gameNearbyTransfer.autoBindNearbyGame
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1453,6 +1547,7 @@ autoBindNearbyGame(): Promise&lt;void&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -1461,6 +1556,7 @@ autoBindNearbyGame(): Promise&lt;void&gt;
 **错误码**：
 
 错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-gameservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1492,7 +1588,8 @@ try {
 
 
 
-#### gameNearbyTransfer.acceptCollaboration
+## gameNearbyTransfer.acceptCollaboration
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1510,12 +1607,14 @@ acceptCollaboration(acceptParameters: Record<string, object>): Promise&lt;void&g
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | acceptParameters | Record<string, object> | 是 | 设置接受参数。Record数量范围：[1, 1024]。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1525,6 +1624,7 @@ acceptCollaboration(acceptParameters: Record<string, object>): Promise&lt;void&g
 **错误码**：
 
 错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-gameservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1560,7 +1660,8 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### gameNearbyTransfer.sendPackageInfo
+## gameNearbyTransfer.sendPackageInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1578,12 +1679,14 @@ sendPackageInfo(packageInfo: PackageInfo): Promise&lt;void&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | packageInfo | PackageInfo | 是 | 包信息。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1593,6 +1696,7 @@ sendPackageInfo(packageInfo: PackageInfo): Promise&lt;void&gt;
 **错误码**：
 
 错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-gameservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1634,7 +1738,8 @@ try {
 
 
 
-#### gameNearbyTransfer.replyPackageInfoResult
+## gameNearbyTransfer.replyPackageInfoResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1652,12 +1757,14 @@ replyPackageInfoResult(packageInfoResult: PackageInfoResult): Promise&lt;void&gt
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | packageInfoResult | PackageInfoResult | 是 | 包信息对比结果。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1667,6 +1774,7 @@ replyPackageInfoResult(packageInfoResult: PackageInfoResult): Promise&lt;void&gt
 **错误码**：
 
 错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-gameservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1701,7 +1809,8 @@ try {
 
 
 
-#### gameNearbyTransfer.transferPackageData
+## gameNearbyTransfer.transferPackageData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1719,12 +1828,14 @@ transferPackageData(packageData: PackageData): Promise&lt;void&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | packageData | PackageData | 是 | 待传输的包数据信息。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1734,6 +1845,7 @@ transferPackageData(packageData: PackageData): Promise&lt;void&gt;
 **错误码**：
 
 错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-gameservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1771,7 +1883,8 @@ try {
 
 
 
-#### gameNearbyTransfer.destroy
+## gameNearbyTransfer.destroy
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1786,6 +1899,7 @@ destroy(): Promise&lt;void&gt;
 **起始版本：** 5.1.0(18)
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |

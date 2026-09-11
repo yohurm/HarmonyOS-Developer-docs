@@ -1,13 +1,14 @@
 # native_avsession.h
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avsession-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 媒体会话定义，可用于设置元数据、播放状态信息等操作。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_AVSession | OH_AVSession | 定义播控会话对象。播控会话对象可以使用OH_AVSession_Create方法创建。 |
@@ -41,16 +45,18 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnCommand)(OH_AVSession* session, AVSession_ControlCommand command, void* userData) | OH_AVSessionCallback_OnCommand | 通用的执行播控命令的回调。 |
-| typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnFastForward)(OH_AVSession* session, uint32_t seekTime, void* userData) | OH_AVSessionCallback_OnFastForward | 快进的回调。 |
-| typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnRewind)(OH_AVSession* session, uint32_t seekTime, void* userData) | OH_AVSessionCallback_OnRewind | 快退的回调。 |
-| typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnSeek)(OH_AVSession* session, uint64_t seekTime, void* userData) | OH_AVSessionCallback_OnSeek | 进度调节的回调。 |
+| typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnFastForward)(OH_AVSession* session, uint32_t seekTime, void* userData) | OH_AVSessionCallback_OnFastForward | 快进的回调。参数seekTime单位为毫秒(ms)。 |
+| typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnRewind)(OH_AVSession* session, uint32_t seekTime, void* userData) | OH_AVSessionCallback_OnRewind | 快退的回调。参数seekTime单位为毫秒(ms)。 |
+| typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnSeek)(OH_AVSession* session, uint64_t seekTime, void* userData) | OH_AVSessionCallback_OnSeek | 进度调节的回调。参数seekTime单位为毫秒(ms)。 |
 | typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnSetLoopMode)(OH_AVSession* session, AVSession_LoopMode curLoopMode, void* userData) | OH_AVSessionCallback_OnSetLoopMode | 设置循环模式的回调。 |
 | typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnToggleFavorite)(OH_AVSession* session, const char* assetId, void* userData) | OH_AVSessionCallback_OnToggleFavorite | 收藏的回调。 |
 | typedef AVSessionCallback_Result (*OH_AVSessionCallback_OutputDeviceChange)(OH_AVSession* session, AVSession_ConnectionState state, AVSession_OutputDeviceInfo* outputDeviceInfo) | OH_AVSessionCallback_OutputDeviceChange | 设备变化的回调。 |
@@ -65,19 +71,19 @@
 | AVSession_ErrCode OH_AVSession_SetPlaybackPosition(OH_AVSession* avsession, AVSession_PlaybackPosition* playbackPosition) | - | 设置播放位置。 |
 | AVSession_ErrCode OH_AVSession_SetFavorite(OH_AVSession* avsession, bool favorite) | - | 设置收藏状态。 |
 | AVSession_ErrCode OH_AVSession_SetLoopMode(OH_AVSession* avsession, AVSession_LoopMode loopMode) | - | 设置循环模式。 |
-| AVSession_ErrCode OH_AVSession_SetRemoteCastEnabled(OH_AVSession* avsession, bool enabled) | - | 请求使能远程投播。 |
+| AVSession_ErrCode OH_AVSession_SetRemoteCastEnabled(OH_AVSession* avsession, bool enabled) | - | 请求启用远程投播。 |
 | AVSession_ErrCode OH_AVSession_RegisterCommandCallback(OH_AVSession* avsession, AVSession_ControlCommand command, OH_AVSessionCallback_OnCommand callback, void* userData) | - | 注册通用播控的回调。 |
 | AVSession_ErrCode OH_AVSession_UnregisterCommandCallback(OH_AVSession* avsession, AVSession_ControlCommand command, OH_AVSessionCallback_OnCommand callback) | - | 取消注册通用播控的回调。 |
 | AVSession_ErrCode OH_AVSession_RegisterForwardCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnFastForward callback, void* userData) | - | 注册快进的回调。 |
 | AVSession_ErrCode OH_AVSession_UnregisterForwardCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnFastForward callback) | - | 取消注册快进的回调。 |
 | AVSession_ErrCode OH_AVSession_RegisterRewindCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnRewind callback, void* userData) | - | 注册快退的回调。 |
 | AVSession_ErrCode OH_AVSession_UnregisterRewindCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnRewind callback) | - | 取消注册快退的回调。 |
-| AVSession_ErrCode OH_AVSession_RegisterSeekCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnSeek callback, void* userData) | - | 注册跳转的回调。 |
-| AVSession_ErrCode OH_AVSession_UnregisterSeekCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnSeek callback) | - | 取消注册跳转的回调。 |
+| AVSession_ErrCode OH_AVSession_RegisterSeekCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnSeek callback, void* userData) | - | 注册进度调节的回调。 |
+| AVSession_ErrCode OH_AVSession_UnregisterSeekCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnSeek callback) | - | 取消注册进度调节的回调。 |
 | AVSession_ErrCode OH_AVSession_RegisterSetLoopModeCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnSetLoopMode callback, void* userData) | - | 注册设置循环模式的回调。 |
 | AVSession_ErrCode OH_AVSession_UnregisterSetLoopModeCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnSetLoopMode callback) | - | 取消注册设置循环模式的回调。 |
-| AVSession_ErrCode OH_AVSession_RegisterToggleFavoriteCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnToggleFavorite callback, void* userData) | - | 设置收藏的回调。 |
-| AVSession_ErrCode OH_AVSession_UnregisterToggleFavoriteCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnToggleFavorite callback) | - | 取消设置收藏的回调。 |
+| AVSession_ErrCode OH_AVSession_RegisterToggleFavoriteCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnToggleFavorite callback, void* userData) | - | 注册收藏的回调。 |
+| AVSession_ErrCode OH_AVSession_UnregisterToggleFavoriteCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnToggleFavorite callback) | - | 取消注册收藏的回调。 |
 | AVSession_ErrCode OH_AVSession_RegisterOutputDeviceChangeCallback(OH_AVSession* avsession, OH_AVSessionCallback_OutputDeviceChange callback) | - | 注册设备变化的回调。 |
 | AVSession_ErrCode OH_AVSession_UnregisterOutputDeviceChangeCallback(OH_AVSession* avsession, OH_AVSessionCallback_OutputDeviceChange callback) | - | 取消注册设备变化的回调。 |
 | AVSession_ErrCode OH_AVSession_AcquireSession(const char* sessionTag, const char* bundleName, const char* abilityName, OH_AVSession** avsession) | - | 获取已经存在的媒体会话对象。当不再使用媒体会话对象时，调用OH_AVSession_Destroy进行释放。 |
@@ -89,15 +95,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AVSessionCallback_OnCommand()
+### OH_AVSessionCallback_OnCommand()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnCommand)(OH_AVSession* session, AVSession_ControlCommand command, void* userData)
@@ -111,9 +119,10 @@ typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnCommand)(OH_AVSession*
  
   
 
-#### OH_AVSessionCallback_OnFastForward()
+### OH_AVSessionCallback_OnFastForward()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnFastForward)(OH_AVSession* session, uint32_t seekTime, void* userData)
@@ -121,15 +130,16 @@ typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnFastForward)(OH_AVSess
  
 **描述**
  
-快进的回调。
+快进的回调。参数seekTime单位为毫秒(ms)。
  
 **起始版本：** 13
  
   
 
-#### OH_AVSessionCallback_OnRewind()
+### OH_AVSessionCallback_OnRewind()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnRewind)(OH_AVSession* session, uint32_t seekTime, void* userData)
@@ -137,15 +147,16 @@ typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnRewind)(OH_AVSession* 
  
 **描述**
  
-快退的回调。
+快退的回调。参数seekTime单位为毫秒(ms)。
  
 **起始版本：** 13
  
   
 
-#### OH_AVSessionCallback_OnSeek()
+### OH_AVSessionCallback_OnSeek()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnSeek)(OH_AVSession* session, uint64_t seekTime, void* userData)
@@ -153,15 +164,16 @@ typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnSeek)(OH_AVSession* se
  
 **描述**
  
-进度调节的回调。
+进度调节的回调。参数seekTime单位为毫秒(ms)。
  
 **起始版本：** 13
  
   
 
-#### OH_AVSessionCallback_OnSetLoopMode()
+### OH_AVSessionCallback_OnSetLoopMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnSetLoopMode)(OH_AVSession* session, AVSession_LoopMode curLoopMode, void* userData)
@@ -175,9 +187,10 @@ typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnSetLoopMode)(OH_AVSess
  
   
 
-#### OH_AVSessionCallback_OnToggleFavorite()
+### OH_AVSessionCallback_OnToggleFavorite()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnToggleFavorite)(OH_AVSession* session, const char* assetId, void* userData)
@@ -191,9 +204,10 @@ typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnToggleFavorite)(OH_AVS
  
   
 
-#### OH_AVSessionCallback_OutputDeviceChange()
+### OH_AVSessionCallback_OutputDeviceChange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef AVSessionCallback_Result (*OH_AVSessionCallback_OutputDeviceChange)(OH_AVSession* session, AVSession_ConnectionState state, AVSession_OutputDeviceInfo* outputDeviceInfo)
@@ -207,9 +221,10 @@ typedef AVSessionCallback_Result (*OH_AVSessionCallback_OutputDeviceChange)(OH_A
  
   
 
-#### OH_AVSession_Create()
+### OH_AVSession_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVSession_Create(AVSession_Type sessionType, const char* sessionTag, const char* bundleName, const char* abilityName, OH_AVSession** avsession)
@@ -223,10 +238,11 @@ AVSession_ErrCode OH_AVSession_Create(AVSession_Type sessionType, const char* se
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AVSession_Type sessionType | 会话类型AVSession_Type。 |
-| const char* sessionTag | 会话标签。 |
+| const char* sessionTag | 应用设置的会话自定义标签。 |
 | const char* bundleName | 创建会话的包名。 |
 | const char* abilityName | 创建会话的Ability组件名。 |
 | OH_AVSession** avsession | 返回的媒体会话对象。 |
@@ -234,6 +250,7 @@ AVSession_ErrCode OH_AVSession_Create(AVSession_Type sessionType, const char* se
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：服务器内部错误。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数sessionType无效。 2. 参数sessionTag为nullptr。 3. 参数bundleName为nullptr。 4. 参数abilityName为nullptr。 5. 参数avsession为nullptr。 |
@@ -241,9 +258,10 @@ AVSession_ErrCode OH_AVSession_Create(AVSession_Type sessionType, const char* se
  
   
 
-#### OH_AVSession_Destroy()
+### OH_AVSession_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVSession_Destroy(OH_AVSession* avsession)
@@ -257,6 +275,7 @@ AVSession_ErrCode OH_AVSession_Destroy(OH_AVSession* avsession)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession* avsession | 媒体会话对象。 |
@@ -264,6 +283,7 @@ AVSession_ErrCode OH_AVSession_Destroy(OH_AVSession* avsession)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_INVALID_PARAMETER：参数avsession为nullptr。 |
@@ -271,9 +291,10 @@ AVSession_ErrCode OH_AVSession_Destroy(OH_AVSession* avsession)
  
   
 
-#### OH_AVSession_Activate()
+### OH_AVSession_Activate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVSession_Activate(OH_AVSession* avsession)
@@ -287,6 +308,7 @@ AVSession_ErrCode OH_AVSession_Activate(OH_AVSession* avsession)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession* avsession | 媒体会话对象。 |
@@ -294,6 +316,7 @@ AVSession_ErrCode OH_AVSession_Activate(OH_AVSession* avsession)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：会话服务异常。 AV_SESSION_ERR_INVALID_PARAMETER：参数avsession为nullptr。 |
@@ -301,9 +324,10 @@ AVSession_ErrCode OH_AVSession_Activate(OH_AVSession* avsession)
  
   
 
-#### OH_AVSession_Deactivate()
+### OH_AVSession_Deactivate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVSession_Deactivate(OH_AVSession* avsession)
@@ -317,6 +341,7 @@ AVSession_ErrCode OH_AVSession_Deactivate(OH_AVSession* avsession)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession* avsession | 媒体会话对象。 |
@@ -324,6 +349,7 @@ AVSession_ErrCode OH_AVSession_Deactivate(OH_AVSession* avsession)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：会话服务异常。 AV_SESSION_ERR_INVALID_PARAMETER：参数avsession为nullptr。 |
@@ -331,9 +357,10 @@ AVSession_ErrCode OH_AVSession_Deactivate(OH_AVSession* avsession)
  
   
 
-#### OH_AVSession_GetSessionType()
+### OH_AVSession_GetSessionType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVSession_GetSessionType(OH_AVSession* avsession, AVSession_Type* sessionType)
@@ -347,6 +374,7 @@ AVSession_ErrCode OH_AVSession_GetSessionType(OH_AVSession* avsession, AVSession
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession* avsession | 媒体会话对象。 |
@@ -355,6 +383,7 @@ AVSession_ErrCode OH_AVSession_GetSessionType(OH_AVSession* avsession, AVSession
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：会话服务异常。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avsession为nullptr。 2. 参数sessionType为nullptr。 |
@@ -362,9 +391,10 @@ AVSession_ErrCode OH_AVSession_GetSessionType(OH_AVSession* avsession, AVSession
  
   
 
-#### OH_AVSession_GetSessionId()
+### OH_AVSession_GetSessionId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVSession_GetSessionId(OH_AVSession* avsession, const char** sessionId)
@@ -378,6 +408,7 @@ AVSession_ErrCode OH_AVSession_GetSessionId(OH_AVSession* avsession, const char*
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession* avsession | 媒体会话对象。 |
@@ -386,6 +417,7 @@ AVSession_ErrCode OH_AVSession_GetSessionId(OH_AVSession* avsession, const char*
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avsession为nullptr。 2. 参数sessionId为nullptr。 |
@@ -393,9 +425,10 @@ AVSession_ErrCode OH_AVSession_GetSessionId(OH_AVSession* avsession, const char*
  
   
 
-#### OH_AVSession_SetAVMetadata()
+### OH_AVSession_SetAVMetadata()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVSession_SetAVMetadata(OH_AVSession* avsession, OH_AVMetadata* avmetadata)
@@ -409,6 +442,7 @@ AVSession_ErrCode OH_AVSession_SetAVMetadata(OH_AVSession* avsession, OH_AVMetad
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession* avsession | 媒体会话对象。 |
@@ -417,6 +451,7 @@ AVSession_ErrCode OH_AVSession_SetAVMetadata(OH_AVSession* avsession, OH_AVMetad
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：会话服务异常。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avsession为nullptr。 2. 参数avmetadata为nullptr。 |
@@ -424,9 +459,10 @@ AVSession_ErrCode OH_AVSession_SetAVMetadata(OH_AVSession* avsession, OH_AVMetad
  
   
 
-#### OH_AVSession_SetPlaybackState()
+### OH_AVSession_SetPlaybackState()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVSession_SetPlaybackState(OH_AVSession* avsession, AVSession_PlaybackState playbackState)
@@ -440,6 +476,7 @@ AVSession_ErrCode OH_AVSession_SetPlaybackState(OH_AVSession* avsession, AVSessi
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession* avsession | 媒体会话对象。 |
@@ -448,6 +485,7 @@ AVSession_ErrCode OH_AVSession_SetPlaybackState(OH_AVSession* avsession, AVSessi
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：会话服务异常。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avsession为nullptr。 2. 参数playbackState是无效的。 |
@@ -455,9 +493,10 @@ AVSession_ErrCode OH_AVSession_SetPlaybackState(OH_AVSession* avsession, AVSessi
  
   
 
-#### OH_AVSession_SetPlaybackPosition()
+### OH_AVSession_SetPlaybackPosition()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVSession_SetPlaybackPosition(OH_AVSession* avsession, AVSession_PlaybackPosition* playbackPosition)
@@ -471,6 +510,7 @@ AVSession_ErrCode OH_AVSession_SetPlaybackPosition(OH_AVSession* avsession, AVSe
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession* avsession | 媒体会话对象。 |
@@ -479,6 +519,7 @@ AVSession_ErrCode OH_AVSession_SetPlaybackPosition(OH_AVSession* avsession, AVSe
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：会话服务异常。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avsession为nullptr。 2. 参数playbackPosition为nullptr。 |
@@ -486,9 +527,10 @@ AVSession_ErrCode OH_AVSession_SetPlaybackPosition(OH_AVSession* avsession, AVSe
  
   
 
-#### OH_AVSession_SetFavorite()
+### OH_AVSession_SetFavorite()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVSession_SetFavorite(OH_AVSession* avsession, bool favorite)
@@ -502,6 +544,7 @@ AVSession_ErrCode OH_AVSession_SetFavorite(OH_AVSession* avsession, bool favorit
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession* avsession | 媒体会话对象。 |
@@ -510,6 +553,7 @@ AVSession_ErrCode OH_AVSession_SetFavorite(OH_AVSession* avsession, bool favorit
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：会话服务异常。 AV_SESSION_ERR_INVALID_PARAMETER：参数avsession为nullptr。 |
@@ -517,9 +561,10 @@ AVSession_ErrCode OH_AVSession_SetFavorite(OH_AVSession* avsession, bool favorit
  
   
 
-#### OH_AVSession_SetLoopMode()
+### OH_AVSession_SetLoopMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVSession_SetLoopMode(OH_AVSession* avsession, AVSession_LoopMode loopMode)
@@ -533,6 +578,7 @@ AVSession_ErrCode OH_AVSession_SetLoopMode(OH_AVSession* avsession, AVSession_Lo
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession* avsession | 媒体会话对象。 |
@@ -541,6 +587,7 @@ AVSession_ErrCode OH_AVSession_SetLoopMode(OH_AVSession* avsession, AVSession_Lo
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：会话服务异常。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avsession为nullptr。 2. 参数loopMode是无效的。 |
@@ -548,9 +595,10 @@ AVSession_ErrCode OH_AVSession_SetLoopMode(OH_AVSession* avsession, AVSession_Lo
  
   
 
-#### OH_AVSession_SetRemoteCastEnabled()
+### OH_AVSession_SetRemoteCastEnabled()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVSession_SetRemoteCastEnabled(OH_AVSession* avsession, bool enabled)
@@ -558,20 +606,22 @@ AVSession_ErrCode OH_AVSession_SetRemoteCastEnabled(OH_AVSession* avsession, boo
  
 **描述**
  
-请求使能远程投播。
+请求启用远程投播。
  
 **起始版本：** 23
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession* avsession | 媒体会话对象。 |
-| bool enabled | 是否使能远程投播。true表示使能，false表示不使能。 |
+| bool enabled | 是否启用远程投播。true表示启用，false表示不启用。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：会话服务异常。 AV_SESSION_ERR_CODE_SESSION_NOT_EXIST：会话不存在。 AV_SESSION_ERR_INVALID_PARAMETER：参数avsession为nullptr。 |
@@ -579,9 +629,10 @@ AVSession_ErrCode OH_AVSession_SetRemoteCastEnabled(OH_AVSession* avsession, boo
  
   
 
-#### OH_AVSession_RegisterCommandCallback()
+### OH_AVSession_RegisterCommandCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVSession_RegisterCommandCallback(OH_AVSession* avsession, AVSession_ControlCommand command, OH_AVSessionCallback_OnCommand callback, void* userData)
@@ -595,6 +646,7 @@ AVSession_ErrCode OH_AVSession_RegisterCommandCallback(OH_AVSession* avsession, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession* avsession | 媒体会话对象。 |
@@ -605,6 +657,7 @@ AVSession_ErrCode OH_AVSession_RegisterCommandCallback(OH_AVSession* avsession, 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_CODE_COMMAND_INVALID：控制命令无效。 AV_SESSION_ERR_SERVICE_EXCEPTION：会话服务异常。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avsession为nullptr。 2. 参数callback为nullptr。 |
@@ -612,9 +665,10 @@ AVSession_ErrCode OH_AVSession_RegisterCommandCallback(OH_AVSession* avsession, 
  
   
 
-#### OH_AVSession_UnregisterCommandCallback()
+### OH_AVSession_UnregisterCommandCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVSession_UnregisterCommandCallback(OH_AVSession* avsession, AVSession_ControlCommand command, OH_AVSessionCallback_OnCommand callback)
@@ -628,6 +682,7 @@ AVSession_ErrCode OH_AVSession_UnregisterCommandCallback(OH_AVSession* avsession
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession* avsession | 媒体会话对象。 |
@@ -637,6 +692,7 @@ AVSession_ErrCode OH_AVSession_UnregisterCommandCallback(OH_AVSession* avsession
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_CODE_COMMAND_INVALID：控制命令无效。 AV_SESSION_ERR_SERVICE_EXCEPTION：会话服务异常。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avsession为nullptr。 2. 参数callback为nullptr。 |
@@ -644,9 +700,10 @@ AVSession_ErrCode OH_AVSession_UnregisterCommandCallback(OH_AVSession* avsession
  
   
 
-#### OH_AVSession_RegisterForwardCallback()
+### OH_AVSession_RegisterForwardCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVSession_RegisterForwardCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnFastForward callback, void* userData)
@@ -660,6 +717,7 @@ AVSession_ErrCode OH_AVSession_RegisterForwardCallback(OH_AVSession* avsession, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession* avsession | 媒体会话对象。 |
@@ -669,6 +727,7 @@ AVSession_ErrCode OH_AVSession_RegisterForwardCallback(OH_AVSession* avsession, 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：会话服务异常。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avsession为nullptr。 2. 参数callback为nullptr。 |
@@ -676,9 +735,10 @@ AVSession_ErrCode OH_AVSession_RegisterForwardCallback(OH_AVSession* avsession, 
  
   
 
-#### OH_AVSession_UnregisterForwardCallback()
+### OH_AVSession_UnregisterForwardCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVSession_UnregisterForwardCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnFastForward callback)
@@ -692,6 +752,7 @@ AVSession_ErrCode OH_AVSession_UnregisterForwardCallback(OH_AVSession* avsession
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession* avsession | 媒体会话对象。 |
@@ -700,6 +761,7 @@ AVSession_ErrCode OH_AVSession_UnregisterForwardCallback(OH_AVSession* avsession
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：会话服务异常。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avsession为nullptr。 2. 参数callback为nullptr。 |
@@ -707,9 +769,10 @@ AVSession_ErrCode OH_AVSession_UnregisterForwardCallback(OH_AVSession* avsession
  
   
 
-#### OH_AVSession_RegisterRewindCallback()
+### OH_AVSession_RegisterRewindCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVSession_RegisterRewindCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnRewind callback, void* userData)
@@ -723,6 +786,7 @@ AVSession_ErrCode OH_AVSession_RegisterRewindCallback(OH_AVSession* avsession, O
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession* avsession | 媒体会话对象。 |
@@ -732,6 +796,7 @@ AVSession_ErrCode OH_AVSession_RegisterRewindCallback(OH_AVSession* avsession, O
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：会话服务异常。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avsession为nullptr。 2. 参数callback为nullptr。 |
@@ -739,9 +804,10 @@ AVSession_ErrCode OH_AVSession_RegisterRewindCallback(OH_AVSession* avsession, O
  
   
 
-#### OH_AVSession_UnregisterRewindCallback()
+### OH_AVSession_UnregisterRewindCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVSession_UnregisterRewindCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnRewind callback)
@@ -755,6 +821,7 @@ AVSession_ErrCode OH_AVSession_UnregisterRewindCallback(OH_AVSession* avsession,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession* avsession | 媒体会话对象。 |
@@ -763,6 +830,7 @@ AVSession_ErrCode OH_AVSession_UnregisterRewindCallback(OH_AVSession* avsession,
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：会话服务异常。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avsession为nullptr。 2. 参数callback为nullptr。 |
@@ -770,9 +838,10 @@ AVSession_ErrCode OH_AVSession_UnregisterRewindCallback(OH_AVSession* avsession,
  
   
 
-#### OH_AVSession_RegisterSeekCallback()
+### OH_AVSession_RegisterSeekCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVSession_RegisterSeekCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnSeek callback, void* userData)
@@ -780,12 +849,13 @@ AVSession_ErrCode OH_AVSession_RegisterSeekCallback(OH_AVSession* avsession, OH_
  
 **描述**
  
-注册跳转的回调。
+注册进度调节的回调。
  
 **起始版本：** 13
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession* avsession | 媒体会话对象。 |
@@ -795,6 +865,7 @@ AVSession_ErrCode OH_AVSession_RegisterSeekCallback(OH_AVSession* avsession, OH_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：会话服务异常。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avsession为nullptr。 2. 参数callback为nullptr。 |
@@ -802,9 +873,10 @@ AVSession_ErrCode OH_AVSession_RegisterSeekCallback(OH_AVSession* avsession, OH_
  
   
 
-#### OH_AVSession_UnregisterSeekCallback()
+### OH_AVSession_UnregisterSeekCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVSession_UnregisterSeekCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnSeek callback)
@@ -812,12 +884,13 @@ AVSession_ErrCode OH_AVSession_UnregisterSeekCallback(OH_AVSession* avsession, O
  
 **描述**
  
-取消注册跳转的回调。
+取消注册进度调节的回调。
  
 **起始版本：** 13
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession* avsession | 媒体会话对象。 |
@@ -826,6 +899,7 @@ AVSession_ErrCode OH_AVSession_UnregisterSeekCallback(OH_AVSession* avsession, O
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：会话服务异常。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avsession为nullptr。 2. 参数callback为nullptr。 |
@@ -833,9 +907,10 @@ AVSession_ErrCode OH_AVSession_UnregisterSeekCallback(OH_AVSession* avsession, O
  
   
 
-#### OH_AVSession_RegisterSetLoopModeCallback()
+### OH_AVSession_RegisterSetLoopModeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVSession_RegisterSetLoopModeCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnSetLoopMode callback, void* userData)
@@ -849,6 +924,7 @@ AVSession_ErrCode OH_AVSession_RegisterSetLoopModeCallback(OH_AVSession* avsessi
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession* avsession | 媒体会话对象。 |
@@ -858,6 +934,7 @@ AVSession_ErrCode OH_AVSession_RegisterSetLoopModeCallback(OH_AVSession* avsessi
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：会话服务异常。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avsession为nullptr。 2. 参数callback为nullptr。 |
@@ -865,9 +942,10 @@ AVSession_ErrCode OH_AVSession_RegisterSetLoopModeCallback(OH_AVSession* avsessi
  
   
 
-#### OH_AVSession_UnregisterSetLoopModeCallback()
+### OH_AVSession_UnregisterSetLoopModeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVSession_UnregisterSetLoopModeCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnSetLoopMode callback)
@@ -881,6 +959,7 @@ AVSession_ErrCode OH_AVSession_UnregisterSetLoopModeCallback(OH_AVSession* avses
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession* avsession | 媒体会话对象。 |
@@ -889,6 +968,7 @@ AVSession_ErrCode OH_AVSession_UnregisterSetLoopModeCallback(OH_AVSession* avses
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：会话服务异常。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avsession为nullptr。 2. 参数callback为nullptr。 |
@@ -896,9 +976,10 @@ AVSession_ErrCode OH_AVSession_UnregisterSetLoopModeCallback(OH_AVSession* avses
  
   
 
-#### OH_AVSession_RegisterToggleFavoriteCallback()
+### OH_AVSession_RegisterToggleFavoriteCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVSession_RegisterToggleFavoriteCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnToggleFavorite callback, void* userData)
@@ -906,21 +987,23 @@ AVSession_ErrCode OH_AVSession_RegisterToggleFavoriteCallback(OH_AVSession* avse
  
 **描述**
  
-设置收藏的回调。
+注册收藏的回调。
  
 **起始版本：** 13
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession* avsession | 媒体会话对象。 |
-| OH_AVSessionCallback_OnToggleFavorite callback | 设置收藏命令的回调。 |
+| OH_AVSessionCallback_OnToggleFavorite callback | 收藏命令的回调。 |
 | void* userData | 指向通过回调函数传递的应用数据指针。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：会话服务异常。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avsession为nullptr。 2. 参数callback为nullptr。 |
@@ -928,9 +1011,10 @@ AVSession_ErrCode OH_AVSession_RegisterToggleFavoriteCallback(OH_AVSession* avse
  
   
 
-#### OH_AVSession_UnregisterToggleFavoriteCallback()
+### OH_AVSession_UnregisterToggleFavoriteCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVSession_UnregisterToggleFavoriteCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnToggleFavorite callback)
@@ -938,20 +1022,22 @@ AVSession_ErrCode OH_AVSession_UnregisterToggleFavoriteCallback(OH_AVSession* av
  
 **描述**
  
-取消设置收藏的回调。
+取消注册收藏的回调。
  
 **起始版本：** 13
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession* avsession | 媒体会话对象。 |
-| OH_AVSessionCallback_OnToggleFavorite callback | 设置收藏命令的回调。 |
+| OH_AVSessionCallback_OnToggleFavorite callback | 收藏命令的回调。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：会话服务异常。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avsession为nullptr。 2. 参数callback为nullptr。 |
@@ -959,9 +1045,10 @@ AVSession_ErrCode OH_AVSession_UnregisterToggleFavoriteCallback(OH_AVSession* av
  
   
 
-#### OH_AVSession_RegisterOutputDeviceChangeCallback()
+### OH_AVSession_RegisterOutputDeviceChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVSession_RegisterOutputDeviceChangeCallback(OH_AVSession* avsession, OH_AVSessionCallback_OutputDeviceChange callback)
@@ -975,6 +1062,7 @@ AVSession_ErrCode OH_AVSession_RegisterOutputDeviceChangeCallback(OH_AVSession* 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession* avsession | 媒体会话对象。 |
@@ -983,6 +1071,7 @@ AVSession_ErrCode OH_AVSession_RegisterOutputDeviceChangeCallback(OH_AVSession* 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：会话服务异常。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avsession为nullptr。 2. 参数callback为nullptr。 |
@@ -990,9 +1079,10 @@ AVSession_ErrCode OH_AVSession_RegisterOutputDeviceChangeCallback(OH_AVSession* 
  
   
 
-#### OH_AVSession_UnregisterOutputDeviceChangeCallback()
+### OH_AVSession_UnregisterOutputDeviceChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVSession_UnregisterOutputDeviceChangeCallback(OH_AVSession* avsession, OH_AVSessionCallback_OutputDeviceChange callback)
@@ -1006,6 +1096,7 @@ AVSession_ErrCode OH_AVSession_UnregisterOutputDeviceChangeCallback(OH_AVSession
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession* avsession | 媒体会话对象。 |
@@ -1014,6 +1105,7 @@ AVSession_ErrCode OH_AVSession_UnregisterOutputDeviceChangeCallback(OH_AVSession
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：会话服务异常。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avsession为nullptr。 2. 参数callback为nullptr。 |
@@ -1021,9 +1113,10 @@ AVSession_ErrCode OH_AVSession_UnregisterOutputDeviceChangeCallback(OH_AVSession
  
   
 
-#### OH_AVSession_AcquireSession()
+### OH_AVSession_AcquireSession()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVSession_AcquireSession(const char* sessionTag, const char* bundleName, const char* abilityName, OH_AVSession** avsession)
@@ -1031,12 +1124,13 @@ AVSession_ErrCode OH_AVSession_AcquireSession(const char* sessionTag, const char
  
 **描述**
  
-获取已经存在的媒体会话对象。当不再使用媒体会话对象时，调用[OH_AVSession_Destroy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avsession-h#oh_avsession_destroy)进行释放。
+获取已经存在的媒体会话对象。当不再使用媒体会话对象时，调用[OH_AVSession_Destroy](#oh_avsession_destroy)进行释放。
  
 **起始版本：** 23
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char* sessionTag | 应用设置的会话自定义标签。 |
@@ -1047,6 +1141,7 @@ AVSession_ErrCode OH_AVSession_AcquireSession(const char* sessionTag, const char
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_CODE_SESSION_NOT_EXIST：会话不存在。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数sessionTag无效。 2. 参数bundleName无效。 3. 参数abilityName无效。 4. 参数avsession为nullptr。 |
@@ -1054,9 +1149,10 @@ AVSession_ErrCode OH_AVSession_AcquireSession(const char* sessionTag, const char
  
   
 
-#### OH_AVSession_CreateAVCastController()
+### OH_AVSession_CreateAVCastController()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVSession_CreateAVCastController(OH_AVSession* avsession, OH_AVCastController** avcastcontroller)
@@ -1070,6 +1166,7 @@ AVSession_ErrCode OH_AVSession_CreateAVCastController(OH_AVSession* avsession, O
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession* avsession | 媒体会话对象。 |
@@ -1078,6 +1175,7 @@ AVSession_ErrCode OH_AVSession_CreateAVCastController(OH_AVSession* avsession, O
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：会话服务异常。 AV_SESSION_ERR_CODE_SESSION_NOT_EXIST：会话不存在。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avsession为nullptr。 2. 参数avcastcontroller为nullptr。 |
@@ -1085,9 +1183,10 @@ AVSession_ErrCode OH_AVSession_CreateAVCastController(OH_AVSession* avsession, O
  
   
 
-#### OH_AVSession_StopCasting()
+### OH_AVSession_StopCasting()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVSession_StopCasting(OH_AVSession* avsession)
@@ -1101,6 +1200,7 @@ AVSession_ErrCode OH_AVSession_StopCasting(OH_AVSession* avsession)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession* avsession | 媒体会话对象。 |
@@ -1108,6 +1208,7 @@ AVSession_ErrCode OH_AVSession_StopCasting(OH_AVSession* avsession)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：会话服务异常。 AV_SESSION_ERR_CODE_SESSION_NOT_EXIST：会话不存在。 AV_SESSION_ERR_INVALID_PARAMETER：参数avsession为nullptr。 |
@@ -1115,9 +1216,10 @@ AVSession_ErrCode OH_AVSession_StopCasting(OH_AVSession* avsession)
  
   
 
-#### OH_AVSession_AcquireOutputDevice()
+### OH_AVSession_AcquireOutputDevice()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVSession_AcquireOutputDevice(OH_AVSession* avsession, AVSession_OutputDeviceInfo** outputDeviceInfo)
@@ -1131,6 +1233,7 @@ AVSession_ErrCode OH_AVSession_AcquireOutputDevice(OH_AVSession* avsession, AVSe
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession* avsession | 媒体会话对象。 |
@@ -1139,6 +1242,7 @@ AVSession_ErrCode OH_AVSession_AcquireOutputDevice(OH_AVSession* avsession, AVSe
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：会话服务异常。 AV_SESSION_ERR_CODE_SESSION_NOT_EXIST：会话不存在。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avsession为nullptr。 2. 参数outputDeviceInfo为nullptr。 |
@@ -1146,9 +1250,10 @@ AVSession_ErrCode OH_AVSession_AcquireOutputDevice(OH_AVSession* avsession, AVSe
  
   
 
-#### OH_AVSession_ReleaseOutputDevice()
+### OH_AVSession_ReleaseOutputDevice()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVSession_ReleaseOutputDevice(OH_AVSession* avsession, AVSession_OutputDeviceInfo *outputDeviceInfo)
@@ -1162,6 +1267,7 @@ AVSession_ErrCode OH_AVSession_ReleaseOutputDevice(OH_AVSession* avsession, AVSe
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVSession* avsession | 媒体会话对象。 |
@@ -1170,6 +1276,7 @@ AVSession_ErrCode OH_AVSession_ReleaseOutputDevice(OH_AVSession* avsession, AVSe
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avsession为nullptr。 2. 参数outputDeviceInfo为nullptr。 |

@@ -1,20 +1,21 @@
 # @ohos.ability.wantConstant (wantConstant)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-ability-wantconstant
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-wantConstant模块提供want中操作want常数和解释Flags说明的能力。
+wantConstant模块提供Want常量的操作方法，并说明Flags标志位的含义。
  
 > [!NOTE]
 > 本模块首批接口从API version 6开始支持，从API version 9废弃，替换模块为 @ohos.app.ability.wantConstant 。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import wantConstant from '@ohos.ability.wantConstant';
@@ -22,14 +23,16 @@ import wantConstant from '@ohos.ability.wantConstant';
  
   
 
-#### Action
+## Action
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 want操作的常数。用于表示要执行的通用操作。
  
 **系统能力**：SystemCapability.Ability.AbilityBase
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ACTION_HOME | ohos.want.action.home | 指示返回原点的操作。 |
@@ -62,14 +65,16 @@ want操作的常数。用于表示要执行的通用操作。
  
   
 
-#### Entity
+## Entity
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 want实体的常数。用于表示目标Ability额外的类别信息。
  
 **系统能力**：SystemCapability.Ability.AbilityBase
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ENTITY_DEFAULT | entity.system.default | 指示默认实体，如果未指定实体，则使用该实体。 |
@@ -81,14 +86,16 @@ want实体的常数。用于表示目标Ability额外的类别信息。
  
   
 
-#### Flags
+## Flags
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Flags说明。用于表示处理Want的方式。
  
 **系统能力**：SystemCapability.Ability.AbilityBase
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | FLAG_AUTH_READ_URI_PERMISSION | 0x00000001 | 指示对URI执行读取操作的授权。 |

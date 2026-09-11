@@ -1,6 +1,6 @@
-# ArkTS待机屏保卡片开发指导
+# ArkTS待机屏保卡片
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkui-ui-standby-form-development
 
@@ -13,7 +13,7 @@
 
   
 
-#### 亮点/特征
+## 亮点/特征
 
 - 丰富待机显示，提供个性美观的待机显示页面，打造全场景、个性化的“百变”心灵陪伴。
 - 提供情感陪伴和情绪价值，在工作的时候，日程待办，提升工作效率；在学习的时候，作为时钟摆台，陪伴学习。
@@ -21,7 +21,7 @@
  
   
 
-#### 约束和限制
+## 约束和限制
 1. 待机屏保卡片只支持 2*2尺寸的卡片。
 2. 待机屏保卡片不推荐展示用户个人隐私敏感数据。
 3. 待机屏保卡片有明确的UX设计规范。具体请参考设计指南中的[待机屏保](https://developer.huawei.com/consumer/cn/doc/design-guides/system-features-service-widget-0000002087671904#section966618274556)。
@@ -29,7 +29,7 @@
  
   
 
-#### 开启方式
+## 开启方式
 
 待机屏保功能在系统上默认是开启的，功能开关路径“设置>桌面和个性化>待机屏保设置”，开关界面如下图。
  
@@ -39,7 +39,7 @@
  
   
 
-#### 使用步骤
+## 使用步骤
 
 待机屏保支持卡片展示与卡片编辑功能（添加、移除），具体操作步骤如下：
  1. 进入待机屏保界面：插入充电器或开启“不充电可显示” 开关，设备横屏锁屏并与桌面夹角45°~90°稳定摆放（折叠机需切换为外屏；同时折叠机支持帐篷模式显示），即可进入待机屏保界面。
@@ -75,15 +75,15 @@
  
   
 
-#### 开发准备
+## 开发准备
 
   
 
-#### 待机屏保开放能力申请
+### 待机屏保开放能力申请
 
 待机屏保卡片会展示在设备的待机屏保界面，开发者需申请上架开放能力，用以保护数据隐私安全。
  
-因此在应用调试或发布时，必须使用[手动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section297715173233)，并在手动签名[申请Profile](https://developer.huawei.com/consumer/cn/doc/app/agc-help-debug-profile-0000002248181278)过程中[创建HarmonyOS应用](https://developer.huawei.com/consumer/cn/doc/app/agc-help-create-app-0000002247955506)，创建应用时参考如下指导为应用接入开放能力。
+因此在应用调试或发布时，必须使用[手动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing-manual)，并在手动签名[申请Profile](https://developer.huawei.com/consumer/cn/doc/app/agc-help-debug-profile-0000002248181278)过程中[创建HarmonyOS应用](https://developer.huawei.com/consumer/cn/doc/app/agc-help-create-app-0000002247955506)，创建应用时参考如下指导为应用接入开放能力。
  1. 登录AppGallery Connect，选择“开发与服务”。
 
   
@@ -118,7 +118,7 @@
  
   
 
-#### 开发步骤
+## 开发步骤
 
 下面给出示例，实现待机屏保卡片展示。
  1. [创建卡片](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widget-creation)。

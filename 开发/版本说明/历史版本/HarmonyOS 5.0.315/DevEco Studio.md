@@ -1,13 +1,14 @@
 # DevEco Studio
 
-更新时间：2026-06-27 01:41:31
+更新时间：2026-08-29 09:40:02
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/deveco-studio-new-features-503-release
 
-#### DevEco Studio 5.0.3 Release（5.0.9.310）兼容性配套关系
+## DevEco Studio 5.0.3 Release（5.0.9.310）兼容性配套关系
 
 DevEco Studio 5.0.9.310携带的工具列表、支持的API范围及开发态版本号信息如下：
   
+
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
 | DevEco Studio | DevEco Studio 5.0.3 Release（5.0.9.310） | - |
@@ -21,6 +22,7 @@ DevEco Studio 5.0.9.310携带的工具列表、支持的API范围及开发态版
  
 DevEco Studio 5.0.9.310配套使用的命令行工具列表、支持的API范围及开发态版本号信息如下：
   
+
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
 | Command Line | 5.0.9.310 | 命令行工具集版本。 |
@@ -35,10 +37,11 @@ DevEco Studio 5.0.9.310配套使用的命令行工具列表、支持的API范围
  
  
 
-#### DevEco Studio 5.0.3 Release（5.0.9.300）兼容性配套关系
+## DevEco Studio 5.0.3 Release（5.0.9.300）兼容性配套关系
 
 DevEco Studio 5.0.9.300携带的工具列表、支持的API范围及开发态版本号信息如下：
   
+
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
 | DevEco Studio | DevEco Studio 5.0.3 Release（5.0.9.300） | - |
@@ -52,6 +55,7 @@ DevEco Studio 5.0.9.300携带的工具列表、支持的API范围及开发态版
  
 DevEco Studio 5.0.9.300配套使用的命令行工具列表、支持的API范围及开发态版本号信息如下：
   
+
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
 | Command Line | 5.0.9.300 | 命令行工具集版本。 |
@@ -66,22 +70,22 @@ DevEco Studio 5.0.9.300配套使用的命令行工具列表、支持的API范围
  
  
 
-#### DevEco Studio 5.0.3 Release（5.0.9.310）新增和增强特性
+## DevEco Studio 5.0.3 Release（5.0.9.310）新增和增强特性
 
 无新增和增强特性。
  
  
 
-#### DevEco Studio 5.0.3 Release（5.0.9.300）新增和增强特性
+## DevEco Studio 5.0.3 Release（5.0.9.300）新增和增强特性
 
  
 
-#### 新增特性
+### 新增特性
 
 - DevEco Studio支持开发API 15工程。
 - 新建工程时，将在AppScope/resource/base/media目录下自动生成分层图标配置文件layered_image.json及前后背景图标foreground.png、background.png，并将app.json5中icon字段值设置为分层图标配置文件。具体请参考[app.json5](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-configuration-file#配置文件标签)中的icon标签。
 - AppAnalyzer的场景化体检新增支持三类场景：页面滑动、应用冷启动和页面内转场。具体请参考[体检场景](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-app-analyzer-scenes)。
-- 新增部分ACL权限支持通过自动签名快速申请。具体请参考[支持ACL权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section5301916183411)。
+- 新增部分ACL权限支持通过自动签名快速申请。具体请参考[支持ACL权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing-auto#section5301916183411)。
 - 工程级和HAR模块的build-profile.json5中buildOption/arkOptions下新增branchElimination字段，用于指定是否启用代码分支裁剪，减少编译产物大小，开启后，在release编译模式下，不会被执行到的代码分支会被裁剪掉。具体请参考[build-profile.json5](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-build-profile)。
 - 工程级、模块级build-profile.json5中新增以下参数。具体请参考[build-profile.json5](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-build-profile)。
 buildOption下新增removePermissions数组，用于指定编译时需要删除的依赖包中的冗余权限，模块本身的权限不会被删除，仅对HAP/HSP模块生效。
@@ -94,7 +98,7 @@ buildOption下新增removePermissions数组，用于指定编译时需要删除�
  
  
 
-#### 变更特性
+### 变更特性
 
 - 应用沙箱支持文件夹的新增、删除、上传、下载等操作，命令行方式访问应用沙箱更改为通过hdc工具进行访问。具体请参考[访问设备文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-device-file-explorer)。
 - 混淆助手的打开方式更改为菜单栏**Tools > ObfuscationHelper**。具体可参考[通过混淆助手配置保留选项](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-build-obfuscation#section19439175917123)。

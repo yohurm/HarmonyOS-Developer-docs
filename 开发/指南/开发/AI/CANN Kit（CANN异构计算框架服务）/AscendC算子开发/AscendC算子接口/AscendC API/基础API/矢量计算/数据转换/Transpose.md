@@ -1,10 +1,10 @@
 # Transpose
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-08-18 12:49:55
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-transpose
 
-#### 功能说明
+## 功能说明
 
 - 可实现16*16的二维矩阵数据块的转置。
 - 可实现[N, C, H, W]与[N, H, W, C]互相转换。
@@ -12,7 +12,7 @@
  
   
 
-#### 函数原型
+## 函数原型
 
 - 普通转置，支持16*16的二维矩阵数据块进行转置
 
@@ -34,17 +34,19 @@ void Transpose(const LocalTensor<T> &dstLocal, const LocalTensor<T> &srcLocal, c
  
   
 
-#### 参数说明
+## 参数说明
 
 **表1** 模板参数说明
   
+
 | 参数名 | 描述 |
 | --- | --- |
-| T | 操作数的数据类型。 普通转置接口： Kirin9020系列处理器，支持的数据类型为：half、int16_t、uint16_t KirinX90系列处理器，支持的数据类型为：half、int16_t、uint16_t 增强转置接口： 参考表4。 |
+| T | 操作数的数据类型。 普通转置接口： Kirin9020系列处理器、Kirin9030系列处理器、KirinX90系列处理器，支持的数据类型为：half、int16_t、uint16_t 增强转置接口： 参考表4。 |
  
  
 **表2** 接口参数说明
   
+
 | 参数名称 | 输入/输出 | 含义 |
 | --- | --- | --- |
 | dstLocal | 输出 | 目的操作数。 类型为LocalTensor，支持的TPosition为VECIN、VECCALC、VECOUT。 LocalTensor的起始地址需要32字节对齐。 |
@@ -55,6 +57,7 @@ void Transpose(const LocalTensor<T> &dstLocal, const LocalTensor<T> &srcLocal, c
  
 **表3** transposeParams结构体内参数说明
   
+
 | 参数名称 | 含义 |
 | --- | --- |
 | nSize | n轴长度，取值范围：m∈[0, 65535]。默认值为0。 |
@@ -66,6 +69,7 @@ void Transpose(const LocalTensor<T> &dstLocal, const LocalTensor<T> &srcLocal, c
  
 **表4** 增强转置接口支持的数据类型
   
+
 | transposeType | 支持的数据类型 |
 | --- | --- |
 | TRANSPOSE_ND2ND_B16 | 无 |
@@ -75,6 +79,7 @@ void Transpose(const LocalTensor<T> &dstLocal, const LocalTensor<T> &srcLocal, c
  
 **表5** 增强转置接口sharedTmpBuffer所需的大小
   
+
 | transposeType | sharedTmpBuffer所需的大小 |
 | --- | --- |
 | TRANSPOSE_ND2ND_B16 | 不需要临时Buffer。 |
@@ -84,15 +89,17 @@ void Transpose(const LocalTensor<T> &dstLocal, const LocalTensor<T> &srcLocal, c
  
   
 
-#### 支持的型号
+## 支持的型号
 
 Kirin9020系列处理器
+ 
+Kirin9030系列处理器
  
 KirinX90系列处理器
  
   
 
-#### 注意事项
+## 注意事项
 
 - 操作数地址偏移对齐要求请参见[通用约束](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-general-constraints)。
 - 该指令不可迭代（即不能通过repeatTimes重复）。
@@ -103,13 +110,13 @@ KirinX90系列处理器
  
   
 
-#### 返回值
+## 返回值
 
 无
  
   
 
-#### 调用示例
+## 调用示例
 
 - 普通接口调用示例，该示例对[16, 16]的half类型矩阵进行转置。
 

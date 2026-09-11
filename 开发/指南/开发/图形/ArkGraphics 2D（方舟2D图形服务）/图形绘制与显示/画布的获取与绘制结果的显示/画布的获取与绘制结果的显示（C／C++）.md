@@ -1,10 +1,10 @@
 # 画布的获取与绘制结果的显示（C/C++）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/canvas-get-result-draw-c
 
-#### 场景介绍
+## 场景介绍
 
 Canvas即画布，提供绘制基本图形的能力，用于在屏幕上绘制图形和处理图形。开发者可以通过Canvas实现自定义的绘图效果，增强应用的用户体验。
 
@@ -14,20 +14,21 @@ Canvas是图形绘制的核心，本章中提到的所有绘制操作（包括�
 
 
 
-#### 接口说明
+## 接口说明
 
-创建Canvas常用接口如下表所示，详细的使用和参数说明请见[drawing_canvas.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-canvas-h)。
+创建Canvas常用接口如下表所示，详细的使用和参数说明请见[drawing_canvas.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-canvas-h)和[drawing_surface.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-surface-h)。
+
 
 | 接口 | 描述 |
 | --- | --- |
-| OH_Drawing_Canvas* OH_Drawing_CanvasCreate (void) | 用于创建一个画布对象。 |
-| void OH_Drawing_CanvasBind (OH_Drawing_Canvas*, OH_Drawing_Bitmap*) | 用于将一个位图对象绑定到画布中，使得画布绘制的内容输出到位图中。 |
-| OH_Drawing_Canvas* OH_Drawing_SurfaceGetCanvas (OH_Drawing_Surface *) | 通过surface对象获取画布对象。 |
+| OH_Drawing_Canvas* OH_Drawing_CanvasCreate(void) | 用于创建一个画布对象。 |
+| void OH_Drawing_CanvasBind(OH_Drawing_Canvas* canvas, OH_Drawing_Bitmap* bitmap) | 用于将一个位图对象绑定到画布中，使得画布绘制的内容输出到位图中。 |
+| OH_Drawing_Canvas* OH_Drawing_SurfaceGetCanvas(OH_Drawing_Surface* surface) | 通过surface对象获取画布对象。 |
 
 
 
 
-#### 获取可直接显示的Canvas画布
+## 获取可直接显示的Canvas画布
 
 通过XComponent获取可直接显示的Canvas画布。
 1. 添加链接库。
@@ -105,13 +106,13 @@ OH_NativeWindow_NativeWindowFlushBuffer(nativeWindow_, buffer_, fenceFd_, region
 
 
 
-#### 离屏Canvas画布的获取与显示
+## 离屏Canvas画布的获取与显示
 
 目前有两种创建离屏Canvas的方式：创建CPU后端Canvas、创建GPU后端Canvas，这两种Canvas都需要依靠XComponent来完成绘制结果的上屏显示。由于历史原因，早期的Canvas都是CPU后端Canvas。目前已经支持GPU后端Canvas，GPU的并行计算能力更强，更适合图形绘制。但GPU后端Canvas对部分场景的支持还有欠缺，比如复杂的路径，对于简短文字的绘制性能也比不上CPU后端Canvas。
 
 
 
-#### CPU后端Canvas的创建与显示
+### CPU后端Canvas的创建与显示
 
 目前C/C++接口的绘制需要依赖于NativeWindow，CPU后端Canvas需要先离屏绘制，生成位图或像素图（从API Version 20开始支持），再借助XComponent上屏。
 
@@ -209,7 +210,7 @@ for (uint32_t i = 0; i < width * height; ++i) {
         pixels[i * RGBA_SIZE + 2] = 0xFF; // +2表示蓝色通道赋值，其余通道为0，颜色显蓝色
     }
 }
-// 设置位图格式（长、宽、颜色类型、透明度类型）
+// 设置位图格式（宽、高、颜色类型、透明度类型）
 OH_Pixelmap_InitializationOptions *createOps = nullptr;
 OH_PixelmapInitializationOptions_Create(&createOps);
 OH_PixelmapInitializationOptions_SetWidth(createOps, width);
@@ -226,10 +227,15 @@ OH_Drawing_Rect *src = OH_Drawing_RectCreate(0, 0, 600, 400);
 OH_Drawing_Rect *dst = OH_Drawing_RectCreate(value200_, value200_, value800_, value600_);
 // 采样选项对象
 OH_Drawing_SamplingOptions* samplingOptions = OH_Drawing_SamplingOptionsCreate(
-    OH_Drawing_FilterMode::FILTER_MODE_LINEAR, OH_Drawing_MipmapMode::MIPMAP_MODE_LINEAR);
+    FILTER_MODE_LINEAR, MIPMAP_MODE_LINEAR);
 // 绘制PixelMap
 OH_Drawing_CanvasDrawPixelMapRect(canvas, pixelMap, src, dst, samplingOptions);
 OH_PixelmapNative_Release(pixelMapNative);
+OH_PixelmapInitializationOptions_Release(createOps);
+OH_Drawing_PixelMapDissolve(pixelMap);
+OH_Drawing_RectDestroy(src);
+OH_Drawing_RectDestroy(dst);
+OH_Drawing_SamplingOptionsDestroy(samplingOptions);
 delete[] pixels;
 ```
 如果需要将背景设置为白色，需要执行以下步骤：
@@ -249,7 +255,7 @@ OH_Drawing_Rect *src = OH_Drawing_RectCreate(0, 0, 600, 400);
 OH_Drawing_Rect *dst = OH_Drawing_RectCreate(value200_, value200_, value800_, value600_);
 // 采样选项对象
 OH_Drawing_SamplingOptions* samplingOptions = OH_Drawing_SamplingOptionsCreate(
-    OH_Drawing_FilterMode::FILTER_MODE_LINEAR, OH_Drawing_MipmapMode::MIPMAP_MODE_LINEAR);
+    FILTER_MODE_LINEAR, MIPMAP_MODE_LINEAR);
 // 绘制PixelMap
 OH_Drawing_CanvasDrawPixelMapRect(canvas, pixelMap, src, dst, samplingOptions);
 ```
@@ -257,7 +263,7 @@ OH_Drawing_CanvasDrawPixelMapRect(canvas, pixelMap, src, dst, samplingOptions);
 
 
 
-#### GPU后端Canvas的创建与显示
+### GPU后端Canvas的创建与显示
 
 GPU后端Canvas指画布是基于GPU进行绘制的，GPU的并行计算能力优于CPU，适用于绘制图片或区域相对大的场景，但目前GPU后端的Canvas针对绘制复杂路径的能力还有欠缺。同CPU后端Canvas，目前C/C++接口的绘制需要依赖于XComponent，GPU后端Canvas需要先离屏绘制再借助XComponent上屏。
 1. 当前创建GPU后端的Canvas依赖EGL的能力，需要在CMakeLists.txt中添加EGL的动态依赖库。
@@ -430,6 +436,6 @@ void SampleGraphics::DeInitializeEglContext()
 
 
 
-#### 示例代码
+## 示例代码
 
  - [图形绘制（C/C++）](https://gitcode.com/HarmonyOS_Samples/guide-snippets/tree/master/ArkGraphics2D/Drawing/NDKGraphicsDraw)

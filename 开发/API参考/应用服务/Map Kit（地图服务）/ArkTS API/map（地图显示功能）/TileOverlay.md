@@ -1,11 +1,12 @@
 # Interface (TileOverlay)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-04 10:41:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-tileoverlay
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -15,11 +16,12 @@ import { map, mapCommon } from '@kit.MapKit';
  
   
 
-#### TileOverlay
+## TileOverlay
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-瓦片图层，继承[BaseOverlay](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-baseoverlay)。瓦片图层是一种基于[BaseOverlay](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-baseoverlay)实现的地图覆盖层，用于展示自定义瓦片。
+瓦片图层，继承[BaseOverlay](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-baseoverlay)。瓦片图层是一种基于[BaseOverlay](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-baseoverlay)实现的地图覆盖层，用于展示自定义瓦片。在调用map.[MapComponentController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-mapcomponentcontroller)类的[addTileOverlay](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-mapcomponentcontroller#addtileoverlay)方法时会返回该类型的实例。
  
 > [!NOTE]
 > 由于性能考虑，建议最多添加10个TileOverlay，且提供的图层瓦片分辨率是256*256。
@@ -47,7 +49,8 @@ let tileOverlay: map.TileOverlay = this.mapController?.addTileOverlay(params);
  
   
 
-#### clearTileCache
+### clearTileCache
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -71,7 +74,8 @@ tileOverlay.clearTileCache();
  
   
 
-#### setFadeIn
+### setFadeIn
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -89,6 +93,7 @@ setFadeIn(fadeIn: boolean): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fadeIn | boolean | 是 | 是否开启瓦片图层淡入。 - true：开启瓦片图层淡入。 - false：不开启瓦片图层淡入。 |
@@ -102,7 +107,8 @@ tileOverlay.setFadeIn(false);
  
   
 
-#### setTransparency
+### setTransparency
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -120,6 +126,7 @@ setTransparency(transparency: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | transparency | number | 是 | 瓦片图层的透明度。取值范围：[0, 1]。0表示不透明，1表示全透明，异常值不处理。 |
@@ -133,7 +140,8 @@ tileOverlay.setTransparency(0.5);
  
   
 
-#### getFadeIn
+### getFadeIn
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -151,6 +159,7 @@ getFadeIn(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回是否开启瓦片图层淡入。 - true：已开启瓦片图层淡入。 - false：未开启瓦片图层淡入。 |
@@ -164,7 +173,8 @@ let isFadeIn: boolean = tileOverlay.getFadeIn();
  
   
 
-#### getTransparency
+### getTransparency
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -182,6 +192,7 @@ getTransparency(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回瓦片图层的透明度。取值范围：[0, 1]，0表示不透明，1表示全透明。 |
@@ -195,7 +206,8 @@ let transparency: number = tileOverlay.getTransparency();
  
   
 
-#### clearDiskCache
+### clearDiskCache
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -213,6 +225,7 @@ clearDiskCache(): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |

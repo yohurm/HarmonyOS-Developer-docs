@@ -1,11 +1,12 @@
 # HandWrite
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/pen-handwrite-c
 **支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -17,16 +18,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 文件
+### 文件
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | native_handwrite_api.h | 声明用于对外提供手写能力。 |
@@ -34,10 +38,12 @@
  
   
 
-#### 结构体
+### 结构体
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | struct HandWrite_HistoricalPoint | 定义历史触摸点信息的结构体。 |
@@ -45,21 +51,25 @@
  
   
 
-#### 枚举
+### 枚举
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
-| enum Handwrite_ErrCode { E_NO_ERROR = 0, E_PARAMS = 401, E_INNER_ERROR = 1010400001, E_PERMISSION = 201 } | 定义手写错误码。 |
+| Handwrite_ErrCode { E_NO_ERROR = 0, E_PARAMS = 401, E_INNER_ERROR = 1010400001, E_PERMISSION = 201 } | 定义手写错误码。 |
  
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 函数 |
 | --- | --- |
 | int32_t HMS_HandWrite_GetPredictPoint(const HandWrite_HistoricalPoint* event, int32_t size, float *predictPointX, float *predictPointY) | 此接口用于获取预测点。 |
@@ -67,10 +77,12 @@
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 函数 |
 | --- | --- |
 | int32_t HMS_HandWrite_SetRefreshDelayOff(const char* xcomponentId, const bool enable) | 此接口用于提升手写笔书写时延。 |
@@ -78,13 +90,15 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### Handwrite_ErrCode
+### Handwrite_ErrCode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -98,6 +112,7 @@ enum Handwrite_ErrCode
  
 **起始版本：** 6.0.0(20)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | E_NO_ERROR = 0 | 执行成功。 |
@@ -108,13 +123,15 @@ enum Handwrite_ErrCode
  
   
 
-#### 函数说明
+## 函数说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### HMS_HandWrite_GetPredictPoint()
+### HMS_HandWrite_GetPredictPoint()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -129,6 +146,7 @@ int32_t HMS_HandWrite_GetPredictPoint(const HandWrite_HistoricalPoint* event,
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 描述 |
 | --- | --- |
 | event | 指示输入的历史点。 |
@@ -147,13 +165,15 @@ E_INNER_ERROR 1010400001 - 系统内部错误，相关资源加载失败。
  
   
 
-#### 函数说明
+## 函数说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### HMS_HandWrite_SetRefreshDelayOff()
+### HMS_HandWrite_SetRefreshDelayOff()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -167,6 +187,7 @@ int32_t HMS_HandWrite_SetRefreshDelayOff(const char* xcomponentId, const bool en
  
 **起始版本：** 26.0.0
   
+
 | 名称 | 描述 |
 | --- | --- |
 | xcomponentId | 自绘制控件的id。 |

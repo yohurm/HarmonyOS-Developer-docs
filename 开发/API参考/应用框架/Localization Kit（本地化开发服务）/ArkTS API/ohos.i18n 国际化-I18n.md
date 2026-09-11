@@ -1,9 +1,9 @@
 # @ohos.i18n (国际化-I18n)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i18n
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供系统相关的以及增强的[国际化](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/i18n-l10n)能力，包括区域管理、电话号码处理、日历等，相关接口为[ECMA 402](https://dev.ecma-international.org/publications-and-standards/standards/ecma-402/)标准中未定义的补充接口。[国际化-Intl](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-intl)模块提供了ECMA 402标准定义的基础国际化接口，与本模块共同使用可提供完整的国际化能力。接口中使用的名词定义如下：
 
@@ -16,9 +16,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { i18n } from '@kit.LocalizationKit';
@@ -26,9 +27,10 @@ import { i18n } from '@kit.LocalizationKit';
 
 
 
-#### System9+
+## System9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供系统属性相关的能力，包括语言地区名称翻译、支持的语言地区列表获取和系统语言地区获取等。
 
@@ -38,9 +40,10 @@ import { i18n } from '@kit.LocalizationKit';
 
 
 
-#### getDisplayCountry9+
+### getDisplayCountry9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getDisplayCountry(country: string, locale: string, sentenceCase?: boolean): string
 
@@ -52,6 +55,7 @@ static getDisplayCountry(country: string, locale: string, sentenceCase?: boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | country | string | 是 | 国家地区，要求是合法的国家地区码。 |
@@ -61,6 +65,7 @@ static getDisplayCountry(country: string, locale: string, sentenceCase?: boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 国家地区名称在指定语言下的翻译。 |
@@ -69,6 +74,7 @@ static getDisplayCountry(country: string, locale: string, sentenceCase?: boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.i18n错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-i18n)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -96,9 +102,10 @@ try {
 
 
 
-#### getDisplayLanguage9+
+### getDisplayLanguage9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getDisplayLanguage(language: string, locale: string, sentenceCase?: boolean): string
 
@@ -110,6 +117,7 @@ static getDisplayLanguage(language: string, locale: string, sentenceCase?: boole
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | language | string | 是 | 语言，要求是合法的语言ID。 |
@@ -119,6 +127,7 @@ static getDisplayLanguage(language: string, locale: string, sentenceCase?: boole
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 语言名称在指定语言下的翻译。 |
@@ -127,6 +136,7 @@ static getDisplayLanguage(language: string, locale: string, sentenceCase?: boole
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.i18n错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-i18n)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -151,9 +161,10 @@ try {
 
 
 
-#### getSystemLanguages9+
+### getSystemLanguages9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getSystemLanguages(): Array&lt;string&gt;
 
@@ -164,6 +175,7 @@ static getSystemLanguages(): Array&lt;string&gt;
 **系统能力：** SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -181,9 +193,10 @@ let systemLanguages: Array<string> = i18n.System.getSystemLanguages();
 
 
 
-#### getSystemCountries9+
+### getSystemCountries9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getSystemCountries(language: string): Array&lt;string&gt;
 
@@ -195,12 +208,14 @@ static getSystemCountries(language: string): Array&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | language | string | 是 | 合法的语言ID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -210,6 +225,7 @@ static getSystemCountries(language: string): Array&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.i18n错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-i18n)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -238,9 +254,10 @@ try {
 
 
 
-#### isSuggested9+
+### isSuggested9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static isSuggested(language: string, region?: string): boolean
 
@@ -252,6 +269,7 @@ static isSuggested(language: string, region?: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | language | string | 是 | 合法的语言ID，例如zh。 |
@@ -259,6 +277,7 @@ static isSuggested(language: string, region?: string): boolean
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -268,6 +287,7 @@ static isSuggested(language: string, region?: string): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.i18n错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-i18n)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -296,9 +316,10 @@ try {
 
 
 
-#### getSystemLanguage9+
+### getSystemLanguage9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getSystemLanguage(): string
 
@@ -311,6 +332,7 @@ static getSystemLanguage(): string
 **系统能力：** SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -327,9 +349,10 @@ let systemLanguage: string = i18n.System.getSystemLanguage(); // 如果系统语
 
 
 
-#### getSystemRegion9+
+### getSystemRegion9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getSystemRegion(): string
 
@@ -340,6 +363,7 @@ static getSystemRegion(): string
 **系统能力：** SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -356,9 +380,10 @@ let systemRegion: string = i18n.System.getSystemRegion(); // 如果系统地区�
 
 
 
-#### getSystemLocale(deprecated)
+### getSystemLocale(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getSystemLocale(): string
 
@@ -371,6 +396,7 @@ static getSystemLocale(): string
 **系统能力：** SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -387,9 +413,10 @@ let systemLocale: string = i18n.System.getSystemLocale(); // 如果系统语言�
 
 
 
-#### getSystemLocaleInstance20+
+### getSystemLocaleInstance20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getSystemLocaleInstance(): Intl.Locale
 
@@ -400,6 +427,7 @@ static getSystemLocaleInstance(): Intl.Locale
 **系统能力：** SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -416,9 +444,10 @@ let systemLocale: Intl.Locale = i18n.System.getSystemLocaleInstance();
 
 
 
-#### is24HourClock9+
+### is24HourClock9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static is24HourClock(): boolean
 
@@ -431,6 +460,7 @@ static is24HourClock(): boolean
 **系统能力：** SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -447,9 +477,10 @@ let is24HourClock: boolean = i18n.System.is24HourClock(); // 如果系统时制�
 
 
 
-#### getPreferredLanguageList9+
+### getPreferredLanguageList9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getPreferredLanguageList(): Array&lt;string&gt;
 
@@ -460,6 +491,7 @@ static getPreferredLanguageList(): Array&lt;string&gt;
 **系统能力：** SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -476,9 +508,10 @@ let preferredLanguageList: Array<string> = i18n.System.getPreferredLanguageList(
 
 
 
-#### getFirstPreferredLanguage9+
+### getFirstPreferredLanguage9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getFirstPreferredLanguage(): string
 
@@ -489,6 +522,7 @@ static getFirstPreferredLanguage(): string
 **系统能力：** SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -505,9 +539,10 @@ let firstPreferredLanguage: string = i18n.System.getFirstPreferredLanguage();
 
 
 
-#### setAppPreferredLanguage11+
+### setAppPreferredLanguage11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static setAppPreferredLanguage(language: string): void
 
@@ -519,6 +554,7 @@ static setAppPreferredLanguage(language: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | language | string | 是 | 合法的语言ID或'default'。 |
@@ -527,6 +563,7 @@ static setAppPreferredLanguage(language: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.i18n错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-i18n)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -550,9 +587,10 @@ try {
 
 
 
-#### getAppPreferredLanguage9+
+### getAppPreferredLanguage9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getAppPreferredLanguage(): string
 
@@ -563,6 +601,7 @@ static getAppPreferredLanguage(): string
 **系统能力：** SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -579,9 +618,10 @@ let appPreferredLanguage: string = i18n.System.getAppPreferredLanguage();
 
 
 
-#### getUsingLocalDigit9+
+### getUsingLocalDigit9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getUsingLocalDigit(): boolean
 
@@ -592,6 +632,7 @@ static getUsingLocalDigit(): boolean
 **系统能力：** SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -608,9 +649,10 @@ let usingLocalDigit: boolean = i18n.System.getUsingLocalDigit();
 
 
 
-#### getSimplifiedLanguage15+
+### getSimplifiedLanguage15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getSimplifiedLanguage(language?: string): string
 
@@ -622,12 +664,14 @@ static getSimplifiedLanguage(language?: string): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | language | string | 否 | 合法的语言ID。默认值：系统语言。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -637,6 +681,7 @@ static getSimplifiedLanguage(language?: string): string
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.i18n错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-i18n)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -663,9 +708,10 @@ try {
 
 
 
-#### getTemperatureType18+
+### getTemperatureType18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getTemperatureType(): TemperatureType
 
@@ -676,6 +722,7 @@ static getTemperatureType(): TemperatureType
 **系统能力：** SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -692,9 +739,10 @@ let temperatureType: i18n.TemperatureType = i18n.System.getTemperatureType();
 
 
 
-#### getTemperatureName18+
+### getTemperatureName18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getTemperatureName(type: TemperatureType): string
 
@@ -706,12 +754,14 @@ static getTemperatureName(type: TemperatureType): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | TemperatureType | 是 | 温度单位。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -721,6 +771,7 @@ static getTemperatureName(type: TemperatureType): string
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.i18n错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-i18n)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -748,9 +799,10 @@ try {
 
 
 
-#### getFirstDayOfWeek18+
+### getFirstDayOfWeek18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getFirstDayOfWeek(): WeekDay
 
@@ -761,6 +813,7 @@ static getFirstDayOfWeek(): WeekDay
 **系统能力：** SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -777,15 +830,17 @@ let firstDayOfWeek: i18n.WeekDay = i18n.System.getFirstDayOfWeek();
 
 
 
-#### TemperatureType18+
+## TemperatureType18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 温度单位的枚举。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Global.I18n
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -796,15 +851,17 @@ let firstDayOfWeek: i18n.WeekDay = i18n.System.getFirstDayOfWeek();
 
 
 
-#### WeekDay18+
+## WeekDay18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 周起始日的枚举，取值范围为周一至周日。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Global.I18n
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -819,9 +876,10 @@ let firstDayOfWeek: i18n.WeekDay = i18n.System.getFirstDayOfWeek();
 
 
 
-#### i18n.isRTL
+## i18n.isRTL
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isRTL(locale: string): boolean
 
@@ -833,12 +891,14 @@ isRTL(locale: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | locale | string | 是 | 表示区域ID的字符串，由语言、脚本、国家地区组成。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -856,9 +916,10 @@ let isArRTL: boolean = i18n.isRTL('ar-EG'); // 阿语是镜像语言，返回tru
 
 
 
-#### EntityRecognizer11+
+## EntityRecognizer11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供实体识别相关的能力，可以获取文本中实体的类型和起止位置。当前支持识别的实体包括电话号码和时间日期。
 
@@ -868,9 +929,10 @@ let isArRTL: boolean = i18n.isRTL('ar-EG'); // 阿语是镜像语言，返回tru
 
 
 
-#### constructor11+
+### constructor11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(locale?: string)
 
@@ -882,6 +944,7 @@ constructor(locale?: string)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | locale | string | 否 | 表示区域ID的字符串，由语言、脚本、国家地区组成，例如zh-Hans-CN。 默认值：系统当前区域ID。 |
@@ -890,6 +953,7 @@ constructor(locale?: string)
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.i18n错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-i18n)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -913,9 +977,10 @@ try {
 
 
 
-#### findEntityInfo11+
+### findEntityInfo11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 findEntityInfo(text: string): Array&lt;EntityInfoItem&gt;
 
@@ -927,12 +992,14 @@ findEntityInfo(text: string): Array&lt;EntityInfoItem&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | text | string | 是 | 输入文本。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -942,6 +1009,7 @@ findEntityInfo(text: string): Array&lt;EntityInfoItem&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -970,15 +1038,17 @@ try {
 
 
 
-#### EntityInfoItem11+
+## EntityInfoItem11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 实体信息属性。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Global.I18n
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -989,9 +1059,10 @@ try {
 
 
 
-#### i18n.getCalendar8+
+## i18n.getCalendar8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCalendar(locale: string, type? : string): Calendar
 
@@ -1003,6 +1074,7 @@ getCalendar(locale: string, type? : string): Calendar
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | locale | string | 是 | 表示区域ID的字符串，由语言、脚本、国家地区组成，例如zh-Hans-CN。 |
@@ -1010,6 +1082,7 @@ getCalendar(locale: string, type? : string): Calendar
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1024,9 +1097,10 @@ let calendar: i18n.Calendar = i18n.getCalendar('zh-Hans', 'chinese'); // 获取�
 
 
 
-#### Calendar
+## Calendar
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供历法相关的能力，包括历法名称获取和日期计算等。
 
@@ -1036,9 +1110,10 @@ let calendar: i18n.Calendar = i18n.getCalendar('zh-Hans', 'chinese'); // 获取�
 
 
 
-#### setTime8+
+### setTime8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setTime(date: Date): void
 
@@ -1049,6 +1124,7 @@ setTime(date: Date): void
 **系统能力：** SystemCapability.Global.I18n
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1067,9 +1143,10 @@ calendar.setTime(date);
 
 
 
-#### setTime8+
+### setTime8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setTime(time: number): void
 
@@ -1080,6 +1157,7 @@ setTime(time: number): void
 **系统能力：** SystemCapability.Global.I18n
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1097,9 +1175,10 @@ calendar.setTime(10540800000);
 
 
 
-#### set8+
+### set8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set(year: number, month: number, date:number, hour?: number, minute?: number, second?: number): void
 
@@ -1110,6 +1189,7 @@ set(year: number, month: number, date:number, hour?: number, minute?: number, se
 **系统能力：** SystemCapability.Global.I18n
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1132,9 +1212,10 @@ calendar.set(2021, 10, 1, 8, 0, 0); // 设置时间日期为2021.11.1 08:00:00
 
 
 
-#### setTimeZone8+
+### setTimeZone8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setTimeZone(timezone: string): void
 
@@ -1145,6 +1226,7 @@ setTimeZone(timezone: string): void
 **系统能力：** SystemCapability.Global.I18n
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1162,9 +1244,10 @@ calendar.setTimeZone('Asia/Shanghai');
 
 
 
-#### getTimeZone8+
+### getTimeZone8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTimeZone(): string
 
@@ -1175,6 +1258,7 @@ getTimeZone(): string
 **系统能力：** SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1193,9 +1277,10 @@ let timezone: string = calendar.getTimeZone(); // timezone = 'Asia/Shanghai'
 
 
 
-#### getFirstDayOfWeek8+
+### getFirstDayOfWeek8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFirstDayOfWeek(): number
 
@@ -1206,6 +1291,7 @@ getFirstDayOfWeek(): number
 **系统能力：** SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1223,9 +1309,10 @@ let firstDayOfWeek: number = calendar.getFirstDayOfWeek(); // firstDayOfWeek = 1
 
 
 
-#### setFirstDayOfWeek8+
+### setFirstDayOfWeek8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setFirstDayOfWeek(value: number): void
 
@@ -1236,6 +1323,7 @@ setFirstDayOfWeek(value: number): void
 **系统能力：** SystemCapability.Global.I18n
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1254,9 +1342,10 @@ let firstDayOfWeek: number = calendar.getFirstDayOfWeek(); // firstDayOfWeek = 3
 
 
 
-#### getMinimalDaysInFirstWeek8+
+### getMinimalDaysInFirstWeek8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMinimalDaysInFirstWeek(): number
 
@@ -1267,6 +1356,7 @@ getMinimalDaysInFirstWeek(): number
 **系统能力：** SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1284,9 +1374,10 @@ let minimalDaysInFirstWeek: number = calendar.getMinimalDaysInFirstWeek(); // mi
 
 
 
-#### setMinimalDaysInFirstWeek8+
+### setMinimalDaysInFirstWeek8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMinimalDaysInFirstWeek(value: number): void
 
@@ -1297,6 +1388,7 @@ setMinimalDaysInFirstWeek(value: number): void
 **系统能力：** SystemCapability.Global.I18n
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1315,9 +1407,10 @@ let minimalDaysInFirstWeek: number = calendar.getMinimalDaysInFirstWeek(); // mi
 
 
 
-#### get8+
+### get8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get(field: string): number
 
@@ -1329,12 +1422,14 @@ get(field: string): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 指定的日历属性，取值包括： "era"：纪元，例如公历中的公元前或者公元后。 "year"：年。 "month"：月，从0开始计数，0表示一月。 "date"：日。 "hour"：挂钟小时数。 "hour_of_day"：一天中的第几小时。 "minute"：分。 "second"：秒。 "millisecond"：毫秒。 "week_of_year"：一年中的第几周，按照星期计算周，第一周的归属各地有区别。 "year_woy"：一年中的第几周，按照数值计算周，例如一年中前1~7日属于第一周。 "week_of_month"：一个月中的第几周，按照星期计算周。 "day_of_week_in_month"：一月中的第几周，按照数值计算周，例如1-7日属于第一周。 "day_of_year"：一年中的第几天。 "day_of_week"：一周中的第几天(星期)。 "milliseconds_in_day"：一天中的第几毫秒。 "zone_offset"：以毫秒计时的时区固定偏移量（不含夏令时）。 "dst_offset"：以毫秒计时的夏令时偏移量。 "dow_local"：本地星期。 "extended_year"：扩展的年份数值，支持负数。 "julian_day"：儒略日，与当前时区相关。 "is_leap_month"：返回1表示是闰月，返回0表示不是闰月。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1353,9 +1448,10 @@ let hourOfDay: number = calendar.get('hour_of_day'); // hourOfDay = 8
 
 
 
-#### getDisplayName8+
+### getDisplayName8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDisplayName(locale: string): string
 
@@ -1367,12 +1463,14 @@ getDisplayName(locale: string): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | locale | string | 是 | 表示区域ID的字符串，由语言、脚本、国家地区组成。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1390,9 +1488,10 @@ let calendarName: string = calendar.getDisplayName('zh'); // calendarName = '佛
 
 
 
-#### isWeekend8+
+### isWeekend8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isWeekend(date?: Date): boolean
 
@@ -1404,12 +1503,14 @@ isWeekend(date?: Date): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | date | Date | 否 | 时间日期。 说明： 月份从0开始计数，0表示一月。 默认值：日历对象的当前日期。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1430,9 +1531,10 @@ isWeekend = calendar.isWeekend(date); // isWeekend = false
 
 
 
-#### add11+
+### add11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 add(field: string, amount: number): void
 
@@ -1444,6 +1546,7 @@ add(field: string, amount: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 指定的日历属性，目前支持的属性值有 year, month, week_of_year, week_of_month, date, day_of_year, day_of_week, day_of_week_in_month, hour, hour_of_day, minute, second, millisecond。 各取值代表的含义请参考get。 |
@@ -1453,6 +1556,7 @@ add(field: string, amount: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.i18n错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-i18n)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1479,9 +1583,10 @@ try {
 
 
 
-#### getTimeInMillis11+
+### getTimeInMillis11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTimeInMillis(): number
 
@@ -1492,6 +1597,7 @@ getTimeInMillis(): number
 **系统能力：** SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1510,9 +1616,10 @@ let millisecond: number = calendar.getTimeInMillis(); // millisecond = 5000
 
 
 
-#### compareDays11+
+### compareDays11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 compareDays(date: Date): number
 
@@ -1524,12 +1631,14 @@ compareDays(date: Date): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | date | Date | 是 | 时间日期。 说明： 月份从0开始计数，0表示一月。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1539,6 +1648,7 @@ compareDays(date: Date): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1564,9 +1674,10 @@ try {
 
 
 
-#### i18n.getChineseCalendar
+## i18n.getChineseCalendar
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getChineseCalendar(locale?: Intl.Locale): ChineseCalendar
 
@@ -1582,12 +1693,14 @@ getChineseCalendar(locale?: Intl.Locale): ChineseCalendar
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | locale | Intl.Locale | 否 | 区域对象，默认值：系统区域对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1603,17 +1716,19 @@ let calendar: i18n.ChineseCalendar = i18n.getChineseCalendar(locale);
 
 
 
-#### ChineseCalendar
+## ChineseCalendar
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供农历相关的能力，包括设置农历时间、判断指定年份某月是否存在闰月。继承自[Calendar](#calendar)，支持[Calendar](#calendar)的方法。
 
 
 
-#### setChineseCalendarTime
+### setChineseCalendarTime
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setChineseCalendarTime(chineseCalendarTime: ChineseCalendarTime): void
 
@@ -1628,6 +1743,7 @@ setChineseCalendarTime(chineseCalendarTime: ChineseCalendarTime): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1649,9 +1765,10 @@ calendar.setChineseCalendarTime({
 
 
 
-#### checkLeapMonth
+### checkLeapMonth
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static checkLeapMonth(gregorianYear: number, cyclicalYear: number, month: number): boolean
 
@@ -1667,6 +1784,7 @@ static checkLeapMonth(gregorianYear: number, cyclicalYear: number, month: number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | gregorianYear | number | 是 | 公历的年。 取值范围：[1900, 2100]。 |
@@ -1676,6 +1794,7 @@ static checkLeapMonth(gregorianYear: number, cyclicalYear: number, month: number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 是否存在闰月。true表示该月存在闰月，false表示该月不存在闰月。 |
@@ -1684,6 +1803,7 @@ static checkLeapMonth(gregorianYear: number, cyclicalYear: number, month: number
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.i18n错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-i18n)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1698,9 +1818,10 @@ let isExist = i18n.ChineseCalendar.checkLeapMonth(2026, 43, 2);
 
 
 
-#### ChineseCalendarTime
+## ChineseCalendarTime
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 农历时间对象。
 
@@ -1711,6 +1832,7 @@ let isExist = i18n.ChineseCalendar.checkLeapMonth(2026, 43, 2);
 **系统能力：** SystemCapability.Global.I18n
 
 **模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1726,9 +1848,10 @@ let isExist = i18n.ChineseCalendar.checkLeapMonth(2026, 43, 2);
 
 
 
-#### PhoneNumberFormat8+
+## PhoneNumberFormat8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供电话号码相关的能力，包括电话号码有效性判断、格式化和归属地获取。
 
@@ -1738,9 +1861,10 @@ let isExist = i18n.ChineseCalendar.checkLeapMonth(2026, 43, 2);
 
 
 
-#### constructor8+
+### constructor8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(country: string, options?: PhoneNumberFormatOptions)
 
@@ -1751,6 +1875,7 @@ constructor(country: string, options?: PhoneNumberFormatOptions)
 **系统能力：** SystemCapability.Global.I18n
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1769,9 +1894,10 @@ let phoneNumberFormat: i18n.PhoneNumberFormat = new i18n.PhoneNumberFormat('CN',
 
 
 
-#### isValidNumber8+
+### isValidNumber8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isValidNumber(phoneNumber: string): boolean
 
@@ -1783,12 +1909,14 @@ isValidNumber(phoneNumber: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | phoneNumber | string | 是 | 待判断的电话号码。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1806,9 +1934,10 @@ let isValidNumber: boolean = formatter.isValidNumber('158****2312'); // isValidN
 
 
 
-#### format8+
+### format8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 format(phoneNumber: string): string
 
@@ -1824,12 +1953,14 @@ format(phoneNumber: string): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | phoneNumber | string | 是 | 待格式化的电话号码。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1858,9 +1989,10 @@ for (let i = 0; i < phoneNumber.length; i++) {
 
 
 
-#### getLocationName9+
+### getLocationName9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLocationName(phoneNumber: string, locale: string): string
 
@@ -1876,6 +2008,7 @@ getLocationName(phoneNumber: string, locale: string): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | phoneNumber | string | 是 | 电话号码。获取其他地区电话号码的归属地时，需要在电话号码前加00+国际区号。 |
@@ -1883,6 +2016,7 @@ getLocationName(phoneNumber: string, locale: string): string
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1912,15 +2046,17 @@ formatResult = typingFormatter.getLocationName('133426', 'en'); // formatResult 
 
 
 
-#### PhoneNumberFormatOptions8+
+## PhoneNumberFormatOptions8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 电话号码格式化时可设置的配置项。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Global.I18n
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1929,15 +2065,17 @@ formatResult = typingFormatter.getLocationName('133426', 'en'); // formatResult 
 
 
 
-#### UnitInfo8+
+## UnitInfo8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 度量衡单位信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Global.I18n
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1947,9 +2085,10 @@ formatResult = typingFormatter.getLocationName('133426', 'en'); // formatResult 
 
 
 
-#### i18n.getInstance8+
+## i18n.getInstance8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getInstance(locale?: string): IndexUtil
 
@@ -1961,12 +2100,14 @@ getInstance(locale?: string): IndexUtil
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | locale | string | 否 | 表示区域ID的字符串，由语言、脚本、国家地区组成。 默认值：系统当前区域ID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1983,9 +2124,10 @@ let indexUtil: i18n.IndexUtil = i18n.getInstance('zh-CN');
 
 
 
-#### IndexUtil8+
+## IndexUtil8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供索引相关的能力，包括区域索引列表和文本索引值获取。
 
@@ -1995,9 +2137,10 @@ let indexUtil: i18n.IndexUtil = i18n.getInstance('zh-CN');
 
 
 
-#### getIndexList8+
+### getIndexList8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getIndexList(): Array&lt;string&gt;
 
@@ -2008,6 +2151,7 @@ getIndexList(): Array&lt;string&gt;
 **系统能力：** SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2027,9 +2171,10 @@ let indexList: Array<string> = indexUtil.getIndexList();
 
 
 
-#### addLocale8+
+### addLocale8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addLocale(locale: string): void
 
@@ -2040,6 +2185,7 @@ addLocale(locale: string): void
 **系统能力：** SystemCapability.Global.I18n
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2057,9 +2203,10 @@ indexUtil.addLocale('en-US');
 
 
 
-#### getIndex8+
+### getIndex8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getIndex(text: string): string
 
@@ -2071,12 +2218,14 @@ getIndex(text: string): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | text | string | 是 | 输入文本。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2094,9 +2243,10 @@ let index: string = indexUtil.getIndex('hi'); // index = 'H'
 
 
 
-#### i18n.getLineInstance8+
+## i18n.getLineInstance8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLineInstance(locale: string): BreakIterator
 
@@ -2108,12 +2258,14 @@ getLineInstance(locale: string): BreakIterator
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | locale | string | 是 | 表示区域ID的字符串，由语言、脚本、国家地区组成。 生成的BreakIterator将按照指定区域的规则计算可换行点的位置。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2130,9 +2282,10 @@ let iterator: i18n.BreakIterator = i18n.getLineInstance('en');
 
 
 
-#### BreakIterator8+
+## BreakIterator8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供文本换行相关的能力，包括可换行点的获取、移动和识别等。
 
@@ -2142,9 +2295,10 @@ let iterator: i18n.BreakIterator = i18n.getLineInstance('en');
 
 
 
-#### setLineBreakText8+
+### setLineBreakText8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setLineBreakText(text: string): void
 
@@ -2155,6 +2309,7 @@ setLineBreakText(text: string): void
 **系统能力：** SystemCapability.Global.I18n
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2172,9 +2327,10 @@ iterator.setLineBreakText('Apple is my favorite fruit.'); // 设置处理文本
 
 
 
-#### getLineBreakText8+
+### getLineBreakText8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLineBreakText(): string
 
@@ -2185,6 +2341,7 @@ getLineBreakText(): string
 **系统能力：** SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2203,9 +2360,10 @@ let breakText: string = iterator.getLineBreakText(); // breakText = 'Apple is my
 
 
 
-#### current8+
+### current8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 current(): number
 
@@ -2216,6 +2374,7 @@ current(): number
 **系统能力：** SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2234,9 +2393,10 @@ let currentPos: number = iterator.current(); // currentPos = 0
 
 
 
-#### first8+
+### first8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 first(): number
 
@@ -2247,6 +2407,7 @@ first(): number
 **系统能力：** SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2265,9 +2426,10 @@ let firstPos: number = iterator.first(); // firstPos = 0
 
 
 
-#### last8+
+### last8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 last(): number
 
@@ -2278,6 +2440,7 @@ last(): number
 **系统能力：** SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2296,9 +2459,10 @@ let lastPos: number = iterator.last(); // lastPos = 27
 
 
 
-#### next8+
+### next8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 next(index?: number): number
 
@@ -2310,12 +2474,14 @@ next(index?: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 否 | 换行迭代器将要移动的可换行点数，取值为整数。 正数表示向后移动index个可换行点，负数表示向前移动index个可换行点。 默认值：1。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2336,9 +2502,10 @@ pos = iterator.next(10); // pos = -1
 
 
 
-#### previous8+
+### previous8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 previous(): number
 
@@ -2349,6 +2516,7 @@ previous(): number
 **系统能力：** SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2369,9 +2537,10 @@ pos = iterator.previous(); // pos = 9
 
 
 
-#### following8+
+### following8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 following(offset: number): number
 
@@ -2383,12 +2552,14 @@ following(offset: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 是 | 将换行迭代器移动到文本指定位置的后面一个可换行点。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2409,9 +2580,10 @@ pos = iterator.current(); // pos = 27
 
 
 
-#### isBoundary8+
+### isBoundary8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isBoundary(offset: number): boolean
 
@@ -2423,12 +2595,14 @@ isBoundary(offset: number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 是 | 文本指定位置。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2448,9 +2622,10 @@ isBoundary = iterator.isBoundary(5); // isBoundary = false;
 
 
 
-#### i18n.getTimeZone
+## i18n.getTimeZone
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTimeZone(zoneID?: string): TimeZone
 
@@ -2462,12 +2637,14 @@ getTimeZone(zoneID?: string): TimeZone
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | zoneID | string | 否 | 时区ID。默认值：系统时区。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2484,9 +2661,10 @@ let timezone: i18n.TimeZone = i18n.getTimeZone('Asia/Shanghai');
 
 
 
-#### TimeZone
+## TimeZone
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供时区相关的能力，包括时区名称翻译、偏移量获取和跳变规则获取等。
 
@@ -2496,9 +2674,10 @@ let timezone: i18n.TimeZone = i18n.getTimeZone('Asia/Shanghai');
 
 
 
-#### getID
+### getID
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getID(): string
 
@@ -2509,6 +2688,7 @@ getID(): string
 **系统能力：** SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2526,9 +2706,10 @@ let timezoneID: string = timezone.getID(); // timezoneID = 'Asia/Shanghai'
 
 
 
-#### getDisplayName
+### getDisplayName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDisplayName(locale?: string, isDST?: boolean): string
 
@@ -2540,6 +2721,7 @@ getDisplayName(locale?: string, isDST?: boolean): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | locale | string | 否 | 表示区域ID的字符串，由语言、脚本、国家地区组成。默认值：系统当前区域ID。 |
@@ -2547,6 +2729,7 @@ getDisplayName(locale?: string, isDST?: boolean): string
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2564,9 +2747,10 @@ let timezoneName: string = timezone.getDisplayName('zh-CN', false); // timezoneN
 
 
 
-#### getRawOffset
+### getRawOffset
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRawOffset(): number
 
@@ -2577,6 +2761,7 @@ getRawOffset(): number
 **系统能力：** SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2594,9 +2779,10 @@ let offset: number = timezone.getRawOffset(); // offset = 28800000
 
 
 
-#### getOffset
+### getOffset
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOffset(date?: number): number
 
@@ -2608,12 +2794,14 @@ getOffset(date?: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | date | number | 否 | 待计算时区偏移量的时刻，单位为毫秒（ms）。默认值：系统时间。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2631,9 +2819,10 @@ let offset: number = timezone.getOffset(1234567890); // offset = 28800000
 
 
 
-#### getAvailableIDs9+
+### getAvailableIDs9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getAvailableIDs(): Array&lt;string&gt;
 
@@ -2644,6 +2833,7 @@ static getAvailableIDs(): Array&lt;string&gt;
 **系统能力：** SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2661,9 +2851,10 @@ let ids: Array<string> = i18n.TimeZone.getAvailableIDs();
 
 
 
-#### getAvailableZoneCityIDs9+
+### getAvailableZoneCityIDs9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getAvailableZoneCityIDs(): Array&lt;string&gt;
 
@@ -2674,6 +2865,7 @@ static getAvailableZoneCityIDs(): Array&lt;string&gt;
 **系统能力：** SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2691,9 +2883,10 @@ let cityIDs: Array<string> = i18n.TimeZone.getAvailableZoneCityIDs();
 
 
 
-#### getCityDisplayName9+
+### getCityDisplayName9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getCityDisplayName(cityID: string, locale: string): string
 
@@ -2705,6 +2898,7 @@ static getCityDisplayName(cityID: string, locale: string): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cityID | string | 是 | 时区城市ID。 |
@@ -2712,6 +2906,7 @@ static getCityDisplayName(cityID: string, locale: string): string
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2728,9 +2923,10 @@ let displayName: string = i18n.TimeZone.getCityDisplayName('Shanghai', 'zh-CN');
 
 
 
-#### getTimezoneFromCity9+
+### getTimezoneFromCity9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getTimezoneFromCity(cityID: string): TimeZone
 
@@ -2742,12 +2938,14 @@ static getTimezoneFromCity(cityID: string): TimeZone
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cityID | string | 是 | 时区城市ID，要求是系统支持的时区城市ID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2764,9 +2962,10 @@ let timezone: i18n.TimeZone = i18n.TimeZone.getTimezoneFromCity('Shanghai');
 
 
 
-#### getTimezonesByLocation10+
+### getTimezonesByLocation10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getTimezonesByLocation(longitude: number, latitude: number): Array&lt;TimeZone&gt;
 
@@ -2778,6 +2977,7 @@ static getTimezonesByLocation(longitude: number, latitude: number): Array&lt;Tim
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | longitude | number | 是 | 经度，范围[-180, 179.9)，东经取正值，西经取负值。 |
@@ -2785,6 +2985,7 @@ static getTimezonesByLocation(longitude: number, latitude: number): Array&lt;Tim
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2794,6 +2995,7 @@ static getTimezonesByLocation(longitude: number, latitude: number): Array&lt;Tim
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.i18n错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-i18n)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2821,9 +3023,10 @@ try {
 
 
 
-#### getZoneRules20+
+### getZoneRules20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getZoneRules(): ZoneRules
 
@@ -2834,6 +3037,7 @@ getZoneRules(): ZoneRules
 **系统能力：** SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2867,9 +3071,10 @@ let dateFormat: string =
 
 
 
-#### isDaylightSavingTime
+### isDaylightSavingTime
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isDaylightSavingTime(date: Date): boolean
 
@@ -2885,12 +3090,14 @@ isDaylightSavingTime(date: Date): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | date | Date | 是 | 时间日期。 说明： 月份从0开始计数，0表示一月。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2906,9 +3113,10 @@ let isDST = timezone.isDaylightSavingTime(new Date(2026, 3, 15));
 
 
 
-#### setAppDefaultTimeZoneById
+### setAppDefaultTimeZoneById
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static setAppDefaultTimeZoneById(zoneID: string): void
 
@@ -2928,6 +3136,7 @@ static setAppDefaultTimeZoneById(zoneID: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | zoneID | string | 是 | 应用设置默认的时区ID，如："Asia/Shanghai"。 |
@@ -2936,6 +3145,7 @@ static setAppDefaultTimeZoneById(zoneID: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.i18n错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-i18n)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2960,9 +3170,10 @@ try {
 
 
 
-#### getAppDefaultTimeZone
+### getAppDefaultTimeZone
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getAppDefaultTimeZone(): TimeZone
 
@@ -2977,6 +3188,7 @@ static getAppDefaultTimeZone(): TimeZone
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3004,9 +3216,10 @@ console.info(`getAppDefaultTimeZone success, time zone id: ${id}`);
 
 
 
-#### ZoneRules20+
+## ZoneRules20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供查询时区跳变规则的能力。
 
@@ -3016,9 +3229,10 @@ console.info(`getAppDefaultTimeZone success, time zone id: ${id}`);
 
 
 
-#### nextTransition20+
+### nextTransition20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 nextTransition(date?: number): ZoneOffsetTransition
 
@@ -3030,12 +3244,14 @@ nextTransition(date?: number): ZoneOffsetTransition
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | date | number | 否 | 从1970年1月1日0时0分0秒到指定时间之间的毫秒数。 默认值：系统时间。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3058,9 +3274,10 @@ let zoneOffsetTransition: i18n.ZoneOffsetTransition = zoneRules.nextTransition(d
 
 
 
-#### ZoneOffsetTransition20+
+## ZoneOffsetTransition20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供解析时区跳变规则的能力。
 
@@ -3070,9 +3287,10 @@ let zoneOffsetTransition: i18n.ZoneOffsetTransition = zoneRules.nextTransition(d
 
 
 
-#### getMilliseconds20+
+### getMilliseconds20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMilliseconds(): number
 
@@ -3083,6 +3301,7 @@ getMilliseconds(): number
 **系统能力：** SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3104,9 +3323,10 @@ zoneOffsetTransition.getMilliseconds(); // 跳变点的时间戳: 1762074000000
 
 
 
-#### getOffsetAfter20+
+### getOffsetAfter20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOffsetAfter(): number
 
@@ -3117,6 +3337,7 @@ getOffsetAfter(): number
 **系统能力：** SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3138,9 +3359,10 @@ zoneOffsetTransition.getOffsetAfter(); // 跳变后的偏移量: -28800000
 
 
 
-#### getOffsetBefore20+
+### getOffsetBefore20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOffsetBefore(): number
 
@@ -3151,6 +3373,7 @@ getOffsetBefore(): number
 **系统能力：** SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3172,9 +3395,10 @@ zoneOffsetTransition.getOffsetBefore(); // 跳变前的偏移量: -25200000
 
 
 
-#### Transliterator9+
+## Transliterator9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供文本音译相关的能力，包括音译支持范围获取和文本音译等。
 
@@ -3184,9 +3408,10 @@ zoneOffsetTransition.getOffsetBefore(); // 跳变前的偏移量: -25200000
 
 
 
-#### getAvailableIDs9+
+### getAvailableIDs9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getAvailableIDs(): string[]
 
@@ -3197,6 +3422,7 @@ static getAvailableIDs(): string[]
 **系统能力：** SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3215,9 +3441,10 @@ let ids: string[] = i18n.Transliterator.getAvailableIDs();
 
 
 
-#### getInstance9+
+### getInstance9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getInstance(id: string): Transliterator
 
@@ -3229,12 +3456,14 @@ static getInstance(id: string): Transliterator
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | string | 是 | 音译支持的转换ID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3251,9 +3480,10 @@ let transliterator: i18n.Transliterator = i18n.Transliterator.getInstance('Any-L
 
 
 
-#### transform9+
+### transform9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 transform(text: string): string
 
@@ -3265,12 +3495,14 @@ transform(text: string): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | text | string | 是 | 输入文本。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3301,9 +3533,10 @@ transliterateNames = transliterator.transform('长孙无忌'); // transliterateN
 
 
 
-#### Unicode9+
+## Unicode9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供字符属性相关的能力，包括判断字符是否为空格、数字和字母等。
 
@@ -3313,9 +3546,10 @@ transliterateNames = transliterator.transform('长孙无忌'); // transliterateN
 
 
 
-#### isDigit9+
+### isDigit9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static isDigit(ch: string): boolean
 
@@ -3327,12 +3561,14 @@ static isDigit(ch: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ch | string | 是 | 输入的字符。如果输入的是字符串，则只判断首字符的类别。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3349,9 +3585,10 @@ let isDigit: boolean = i18n.Unicode.isDigit('1'); // isDigit = true
 
 
 
-#### isSpaceChar9+
+### isSpaceChar9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static isSpaceChar(ch: string): boolean
 
@@ -3363,12 +3600,14 @@ static isSpaceChar(ch: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ch | string | 是 | 输入的字符。如果输入的是字符串，则只判断首字符的类别。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3385,9 +3624,10 @@ let isSpacechar: boolean = i18n.Unicode.isSpaceChar('a'); // isSpacechar = false
 
 
 
-#### isWhitespace9+
+### isWhitespace9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static isWhitespace(ch: string): boolean
 
@@ -3399,12 +3639,14 @@ static isWhitespace(ch: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ch | string | 是 | 输入的字符。如果输入的是字符串，则只判断首字符的类别。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3421,9 +3663,10 @@ let isWhitespace: boolean = i18n.Unicode.isWhitespace('a'); // isWhitespace = fa
 
 
 
-#### isRTL9+
+### isRTL9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static isRTL(ch: string): boolean
 
@@ -3435,12 +3678,14 @@ static isRTL(ch: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ch | string | 是 | 输入的字符。如果输入的是字符串，则只判断首字符的类别。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3457,9 +3702,10 @@ let isRtl: boolean = i18n.Unicode.isRTL('a'); // isRtl = false
 
 
 
-#### isIdeograph9+
+### isIdeograph9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static isIdeograph(ch: string): boolean
 
@@ -3471,12 +3717,14 @@ static isIdeograph(ch: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ch | string | 是 | 输入的字符。如果输入的是字符串，则只判断首字符的类别。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3493,9 +3741,10 @@ let isIdeograph: boolean = i18n.Unicode.isIdeograph('a'); // isIdeograph = false
 
 
 
-#### isLetter9+
+### isLetter9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static isLetter(ch: string): boolean
 
@@ -3507,12 +3756,14 @@ static isLetter(ch: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ch | string | 是 | 输入的字符。如果输入的是字符串，则只判断首字符的类别。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3529,9 +3780,10 @@ let isLetter: boolean = i18n.Unicode.isLetter('a'); // isLetter = true
 
 
 
-#### isLowerCase9+
+### isLowerCase9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static isLowerCase(ch: string): boolean
 
@@ -3543,12 +3795,14 @@ static isLowerCase(ch: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ch | string | 是 | 输入的字符。如果输入的是字符串，则只判断首字符的类别。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3565,9 +3819,10 @@ let isLowercase: boolean = i18n.Unicode.isLowerCase('a'); // isLowercase = true
 
 
 
-#### isUpperCase9+
+### isUpperCase9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static isUpperCase(ch: string): boolean
 
@@ -3579,12 +3834,14 @@ static isUpperCase(ch: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ch | string | 是 | 输入的字符。如果输入的是字符串，则只判断首字符的类别。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3601,9 +3858,10 @@ let isUppercase: boolean = i18n.Unicode.isUpperCase('a'); // isUppercase = false
 
 
 
-#### getType9+
+### getType9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getType(ch: string): string
 
@@ -3615,12 +3873,14 @@ static getType(ch: string): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ch | string | 是 | 输入的字符。如果输入的是字符串，则只判断首字符的类别。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3637,9 +3897,10 @@ let unicodeType: string = i18n.Unicode.getType('a'); // unicodeType = 'U_LOWERCA
 
 
 
-#### detectEncoding
+### detectEncoding
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static detectEncoding(bytes: Uint8Array): EncodingInfo
 
@@ -3655,12 +3916,14 @@ static detectEncoding(bytes: Uint8Array): EncodingInfo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bytes | Uint8Array | 是 | 输入字节流。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3678,9 +3941,10 @@ let info = i18n.Unicode.detectEncoding(uint8Array); // info.encodingName = 'UTF-
 
 
 
-#### EncodingInfo
+## EncodingInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 编码信息。
 
@@ -3692,6 +3956,7 @@ let info = i18n.Unicode.detectEncoding(uint8Array); // info.encodingName = 'UTF-
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | encodingName | string | 否 | 否 | 编码名称，取值包括：UTF-8，UTF-16BE，UTF-16LE，UTF-32BE，UTF-32LE，Shift_JIS，ISO-2022-JP，ISO-2022-CN，ISO-2022-KR，GB18030，Big5，EUC-JP，EUC-KR，ISO-8859-1，ISO-8859-2，ISO-8859-5，ISO-8859-6，ISO-8859-7，ISO-8859-8，ISO-8859-9，windows-1250，windows-1251，windows-1252，windows-1253，windows-1254，windows-1255，windows-1256，KOI8-R，IBM420，IBM424。 |
@@ -3700,9 +3965,10 @@ let info = i18n.Unicode.detectEncoding(uint8Array); // info.encodingName = 'UTF-
 
 
 
-#### I18NUtil9+
+## I18NUtil9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 国际化工具类，提供单位转换、获取日期顺序、获取时段名称、区域匹配和路径本地化等能力。
 
@@ -3712,9 +3978,10 @@ let info = i18n.Unicode.detectEncoding(uint8Array); // info.encodingName = 'UTF-
 
 
 
-#### unitConvert9+
+### unitConvert9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static unitConvert(fromUnit: UnitInfo, toUnit: UnitInfo, value: number, locale: string, style?: string): string
 
@@ -3726,6 +3993,7 @@ static unitConvert(fromUnit: UnitInfo, toUnit: UnitInfo, value: number, locale: 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fromUnit | UnitInfo | 是 | 需要转换的单位。 |
@@ -3736,6 +4004,7 @@ static unitConvert(fromUnit: UnitInfo, toUnit: UnitInfo, value: number, locale: 
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3755,9 +4024,10 @@ let convertResult: string =
 
 
 
-#### getDateOrder9+
+### getDateOrder9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getDateOrder(locale: string): string
 
@@ -3769,12 +4039,14 @@ static getDateOrder(locale: string): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | locale | string | 是 | 表示区域ID的字符串，由语言、脚本、国家地区组成，如：zh-Hans-CN。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3791,9 +4063,10 @@ let order: string = i18n.I18NUtil.getDateOrder('zh-CN'); // order = 'y-L-d'
 
 
 
-#### getTimePeriodName11+
+### getTimePeriodName11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getTimePeriodName(hour:number, locale?: string): string
 
@@ -3805,6 +4078,7 @@ static getTimePeriodName(hour:number, locale?: string): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | hour | number | 是 | 指定的时间，例如16。 |
@@ -3812,6 +4086,7 @@ static getTimePeriodName(hour:number, locale?: string): string
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3821,6 +4096,7 @@ static getTimePeriodName(hour:number, locale?: string): string
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.i18n错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-i18n)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3844,9 +4120,10 @@ try {
 
 
 
-#### getBestMatchLocale12+
+### getBestMatchLocale12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getBestMatchLocale(locale: string, localeList: string[]): string
 
@@ -3858,6 +4135,7 @@ static getBestMatchLocale(locale: string, localeList: string[]): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | locale | string | 是 | 待匹配的区域ID字符串，如：zh-Hans-CN。 |
@@ -3865,6 +4143,7 @@ static getBestMatchLocale(locale: string, localeList: string[]): string
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3874,6 +4153,7 @@ static getBestMatchLocale(locale: string, localeList: string[]): string
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.i18n错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-i18n)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3898,9 +4178,10 @@ try {
 
 
 
-#### getThreeLetterLanguage12+
+### getThreeLetterLanguage12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getThreeLetterLanguage(locale: string): string
 
@@ -3914,12 +4195,14 @@ static getThreeLetterLanguage(locale: string): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | locale | string | 是 | 待转换的语言二字母代码，如：zh。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3929,6 +4212,7 @@ static getThreeLetterLanguage(locale: string): string
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.i18n错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-i18n)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3952,9 +4236,10 @@ try {
 
 
 
-#### getThreeLetterRegion12+
+### getThreeLetterRegion12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getThreeLetterRegion(locale: string): string
 
@@ -3968,12 +4253,14 @@ static getThreeLetterRegion(locale: string): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | locale | string | 是 | 待转换的地区二字母代码，如：CN。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3983,6 +4270,7 @@ static getThreeLetterRegion(locale: string): string
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.i18n错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-i18n)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4006,9 +4294,10 @@ try {
 
 
 
-#### getUnicodeWrappedFilePath20+
+### getUnicodeWrappedFilePath20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getUnicodeWrappedFilePath(path: string, delimiter?: string, locale?: Intl.Locale): string
 
@@ -4022,6 +4311,7 @@ static getUnicodeWrappedFilePath(path: string, delimiter?: string, locale?: Intl
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 待处理的路径，如：/data/out/tmp。 |
@@ -4031,6 +4321,7 @@ static getUnicodeWrappedFilePath(path: string, delimiter?: string, locale?: Intl
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 本地化处理后的文件路径。如果区域对象表示的语言是镜像语言，则处理后的文件路径包含方向控制符，保证文件路径镜像显示。 |
@@ -4039,6 +4330,7 @@ static getUnicodeWrappedFilePath(path: string, delimiter?: string, locale?: Intl
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.i18n错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-i18n)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4065,9 +4357,10 @@ try {
 
 
 
-#### setUnicodeWrappedBidiDirection
+### setUnicodeWrappedBidiDirection
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static setUnicodeWrappedBidiDirection(text: string, direction: 'RTL' | 'LTR'): string
 
@@ -4087,6 +4380,7 @@ static setUnicodeWrappedBidiDirection(text: string, direction: 'RTL' | 'LTR'): s
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | text | string | 是 | 需要设置方向的文本。 |
@@ -4094,6 +4388,7 @@ static setUnicodeWrappedBidiDirection(text: string, direction: 'RTL' | 'LTR'): s
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4118,9 +4413,10 @@ try {
 
 
 
-#### convertCanonicalLocaleIdentifier
+### convertCanonicalLocaleIdentifier
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static convertCanonicalLocaleIdentifier(locale: string): string
 
@@ -4136,12 +4432,14 @@ static convertCanonicalLocaleIdentifier(locale: string): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | locale | string | 是 | 区域ID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4156,9 +4454,10 @@ let result: string = i18n.I18NUtil.convertCanonicalLocaleIdentifier('zh-cn'); //
 
 
 
-#### getUnicodeWrappedFilePath(deprecated)
+### getUnicodeWrappedFilePath(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getUnicodeWrappedFilePath(path: string, delimiter?: string, locale?: intl.Locale): string
 
@@ -4174,6 +4473,7 @@ static getUnicodeWrappedFilePath(path: string, delimiter?: string, locale?: intl
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 待处理的路径，如：/data/out/tmp。 |
@@ -4183,6 +4483,7 @@ static getUnicodeWrappedFilePath(path: string, delimiter?: string, locale?: intl
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 本地化处理后的文件路径。如果区域对象表示的语言是镜像语言，则处理后的文件路径包含方向控制符，保证文件路径镜像显示。 |
@@ -4191,6 +4492,7 @@ static getUnicodeWrappedFilePath(path: string, delimiter?: string, locale?: intl
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.i18n错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-i18n)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4217,9 +4519,10 @@ try {
 
 
 
-#### Normalizer10+
+## Normalizer10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供文本标准化的能力。
 
@@ -4229,9 +4532,10 @@ try {
 
 
 
-#### getInstance10+
+### getInstance10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getInstance(mode: NormalizerMode): Normalizer
 
@@ -4243,12 +4547,14 @@ static getInstance(mode: NormalizerMode): Normalizer
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | NormalizerMode | 是 | 文本标准化范式。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4258,6 +4564,7 @@ static getInstance(mode: NormalizerMode): Normalizer
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4280,9 +4587,10 @@ try {
 
 
 
-#### normalize10+
+### normalize10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 normalize(text: string): string
 
@@ -4294,12 +4602,14 @@ normalize(text: string): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | text | string | 是 | 输入文本。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4309,6 +4619,7 @@ normalize(text: string): string
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4332,15 +4643,17 @@ try {
 
 
 
-#### NormalizerMode10+
+## NormalizerMode10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文本标准化范式的枚举。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Global.I18n
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -4352,9 +4665,10 @@ try {
 
 
 
-#### HolidayManager11+
+## HolidayManager11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供解析节假日数据的能力，包括节假日判断和指定年份节假日列表获取等。
 
@@ -4364,9 +4678,10 @@ try {
 
 
 
-#### constructor11+
+### constructor11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(icsPath: String)
 
@@ -4378,6 +4693,7 @@ constructor(icsPath: String)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | icsPath | String | 是 | 在设备上有应用读取权限的iCalendar格式的ics文件路径。iCalendar格式是一种标准的互联网日历格式，用于存储日历数据。 |
@@ -4386,6 +4702,7 @@ constructor(icsPath: String)
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.i18n错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-i18n)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4410,9 +4727,10 @@ try {
 
 
 
-#### isHoliday11+
+### isHoliday11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isHoliday(date?: Date): boolean
 
@@ -4424,12 +4742,14 @@ isHoliday(date?: Date): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | date | Date | 否 | 时间日期。 说明： 月份从0开始计数，0表示一月。 默认值：当前日期。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4439,6 +4759,7 @@ isHoliday(date?: Date): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4464,9 +4785,10 @@ try {
 
 
 
-#### getHolidayInfoItemArray11+
+### getHolidayInfoItemArray11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getHolidayInfoItemArray(year?: number): Array<[HolidayInfoItem](#holidayinfoitem11)>
 
@@ -4478,12 +4800,14 @@ getHolidayInfoItemArray(year?: number): Array<[HolidayInfoItem](#holidayinfoitem
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | year | number | 否 | 年，例如2023。 默认值：当前年份。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4493,6 +4817,7 @@ getHolidayInfoItemArray(year?: number): Array<[HolidayInfoItem](#holidayinfoitem
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.i18n错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-i18n)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4518,15 +4843,17 @@ try {
 
 
 
-#### HolidayInfoItem11+
+## HolidayInfoItem11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 节假日信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Global.I18n
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -4539,15 +4866,17 @@ try {
 
 
 
-#### HolidayLocalName11+
+## HolidayLocalName11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 节假日名称在不同语言下的翻译。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Global.I18n
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -4557,9 +4886,10 @@ try {
 
 
 
-#### i18n.getSimpleDateTimeFormatByPattern20+
+## i18n.getSimpleDateTimeFormatByPattern20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSimpleDateTimeFormatByPattern(pattern: string, locale?: Intl.Locale): SimpleDateTimeFormat
 
@@ -4571,6 +4901,7 @@ getSimpleDateTimeFormatByPattern(pattern: string, locale?: Intl.Locale): SimpleD
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pattern | string | 是 | 合法的模式字符串，支持日期字段符号表中Field Patterns值的自由组合。同时，pattern支持传入自定义文本，文本内容以''标识。 |
@@ -4578,6 +4909,7 @@ getSimpleDateTimeFormatByPattern(pattern: string, locale?: Intl.Locale): SimpleD
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4587,6 +4919,7 @@ getSimpleDateTimeFormatByPattern(pattern: string, locale?: Intl.Locale): SimpleD
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.i18n错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-i18n)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4610,9 +4943,10 @@ try {
 
 
 
-#### i18n.getSimpleDateTimeFormatByPattern(deprecated)
+## i18n.getSimpleDateTimeFormatByPattern(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSimpleDateTimeFormatByPattern(pattern: string, locale?: intl.Locale): SimpleDateTimeFormat
 
@@ -4626,6 +4960,7 @@ getSimpleDateTimeFormatByPattern(pattern: string, locale?: intl.Locale): SimpleD
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pattern | string | 是 | 合法的模式字符串，支持日期字段符号表中Field Patterns值的自由组合。同时，pattern支持传入自定义文本，文本内容以''标识。 |
@@ -4633,6 +4968,7 @@ getSimpleDateTimeFormatByPattern(pattern: string, locale?: intl.Locale): SimpleD
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4642,6 +4978,7 @@ getSimpleDateTimeFormatByPattern(pattern: string, locale?: intl.Locale): SimpleD
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.i18n错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-i18n)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4665,9 +5002,10 @@ try {
 
 
 
-#### i18n.getSimpleDateTimeFormatBySkeleton20+
+## i18n.getSimpleDateTimeFormatBySkeleton20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSimpleDateTimeFormatBySkeleton(skeleton: string, locale?: Intl.Locale): SimpleDateTimeFormat
 
@@ -4679,6 +5017,7 @@ getSimpleDateTimeFormatBySkeleton(skeleton: string, locale?: Intl.Locale): Simpl
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | skeleton | string | 是 | 合法的框架字符串，支持日期字段符号表中Field Patterns值的自由组合。skeleton不支持传入自定义文本。 |
@@ -4686,6 +5025,7 @@ getSimpleDateTimeFormatBySkeleton(skeleton: string, locale?: Intl.Locale): Simpl
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4695,6 +5035,7 @@ getSimpleDateTimeFormatBySkeleton(skeleton: string, locale?: Intl.Locale): Simpl
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.i18n错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-i18n)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4718,9 +5059,10 @@ try {
 
 
 
-#### i18n.getSimpleDateTimeFormatBySkeleton(deprecated)
+## i18n.getSimpleDateTimeFormatBySkeleton(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSimpleDateTimeFormatBySkeleton(skeleton: string, locale?: intl.Locale): SimpleDateTimeFormat
 
@@ -4734,6 +5076,7 @@ getSimpleDateTimeFormatBySkeleton(skeleton: string, locale?: intl.Locale): Simpl
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | skeleton | string | 是 | 合法的框架字符串，支持日期字段符号表中Field Patterns值的自由组合。skeleton不支持传入自定义文本。 |
@@ -4741,6 +5084,7 @@ getSimpleDateTimeFormatBySkeleton(skeleton: string, locale?: intl.Locale): Simpl
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4750,6 +5094,7 @@ getSimpleDateTimeFormatBySkeleton(skeleton: string, locale?: intl.Locale): Simpl
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.i18n错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-i18n)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4773,9 +5118,10 @@ try {
 
 
 
-#### SimpleDateTimeFormat18+
+## SimpleDateTimeFormat18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供时间日期格式化的能力。
 
@@ -4785,9 +5131,10 @@ try {
 
 
 
-#### format18+
+### format18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 format(date: Date): string
 
@@ -4799,12 +5146,14 @@ format(date: Date): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | date | Date | 是 | 时间日期。 说明： 月份从0开始计数，0表示一月。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4838,17 +5187,19 @@ try {
 
 
 
-#### SymbolDateTimeFormat
+## SymbolDateTimeFormat
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供自定义时间日期符号的能力。继承自[Intl.DateTimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat)，支持[Intl.DateTimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat)的方法。
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(locale?: Intl.Locale, options?: SymbolDateTimeFormatOptions)
 
@@ -4864,6 +5215,7 @@ constructor(locale?: Intl.Locale, options?: SymbolDateTimeFormatOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | locale | Intl.Locale | 否 | 区域对象。默认值：系统区域对象。 |
@@ -4873,6 +5225,7 @@ constructor(locale?: Intl.Locale, options?: SymbolDateTimeFormatOptions)
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.i18n错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-i18n)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4893,9 +5246,10 @@ let formatter = new i18n.SymbolDateTimeFormat(locale, {
 
 
 
-#### format
+### format
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 format(date?: Date | number): string
 
@@ -4911,12 +5265,14 @@ format(date?: Date | number): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | date | Date \| number | 否 | 时间日期对象或时间日期对应的毫秒值。时间日期对象中月份从0开始计数，0表示一月。 默认值：系统时间。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4938,9 +5294,10 @@ let result = formatter.format(new Date(2026, 3, 26, 14, 20, 0)); // result = '�
 
 
 
-#### formatToParts
+### formatToParts
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 formatToParts(date?: Date | number): Intl.DateTimeFormatPart[]
 
@@ -4956,12 +5313,14 @@ formatToParts(date?: Date | number): Intl.DateTimeFormatPart[]
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | date | Date \| number | 否 | 时间日期对象或时间日期对应的毫秒值。时间日期对象中月份从0开始计数，0表示一月。 默认值：系统时间。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4983,9 +5342,10 @@ let parts = formatter.formatToParts(new Date(2026, 3, 26, 14, 20, 0)); // parts[
 
 
 
-#### formatRange
+### formatRange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 formatRange(startDate: Date | number | bigint, endDate: Date | number | bigint): string
 
@@ -5001,6 +5361,7 @@ formatRange(startDate: Date | number | bigint, endDate: Date | number | bigint):
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | startDate | Date \| number \| bigint | 是 | 时间日期对象或时间日期对应的毫秒值。时间日期对象中月份从0开始计数，0表示一月。 |
@@ -5008,6 +5369,7 @@ formatRange(startDate: Date | number | bigint, endDate: Date | number | bigint):
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5031,9 +5393,10 @@ let result = formatter.formatRange(startDate, endDate); // result = '下午2:20�
 
 
 
-#### formatRangeToParts
+### formatRangeToParts
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 formatRangeToParts(startDate: Date | number | bigint, endDate: Date | number | bigint): Intl.DateTimeRangeFormatPart[]
 
@@ -5049,6 +5412,7 @@ formatRangeToParts(startDate: Date | number | bigint, endDate: Date | number | b
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | startDate | Date \| number \| bigint | 是 | 时间日期对象或时间日期对应的毫秒值。时间日期对象中月份从0开始计数，0表示一月。 |
@@ -5056,6 +5420,7 @@ formatRangeToParts(startDate: Date | number | bigint, endDate: Date | number | b
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5079,9 +5444,10 @@ let parts = formatter.formatRangeToParts(startDate, endDate); // parts[0].type =
 
 
 
-#### parse
+### parse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 parse(text: string, lenientMode: boolean): number
 
@@ -5097,6 +5463,7 @@ parse(text: string, lenientMode: boolean): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | text | string | 是 | 待解析的本地化时间日期字符串。 |
@@ -5104,6 +5471,7 @@ parse(text: string, lenientMode: boolean): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5113,6 +5481,7 @@ parse(text: string, lenientMode: boolean): number
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.i18n错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-i18n)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5133,9 +5502,10 @@ let result = formatter.parse('2026年5月10日星期日', false); // result = 17
 
 
 
-#### resolvedOptions
+### resolvedOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 resolvedOptions(): ResolvedSymbolDateTimeFormatOptions
 
@@ -5150,6 +5520,7 @@ resolvedOptions(): ResolvedSymbolDateTimeFormatOptions
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5171,9 +5542,10 @@ let options = formatter.resolvedOptions(); // options.timeStyle = 'short', optio
 
 
 
-#### SymbolDateTimeFormatOptions
+### SymbolDateTimeFormatOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 创建自定义符号时间日期格式化对象时的可选配置项。继承自Intl.DateTimeFormatOptions，支持Intl.DateTimeFormatOptions的所有配置项，并且功能与其一致。
 
@@ -5185,6 +5557,7 @@ let options = formatter.resolvedOptions(); // options.timeStyle = 'short', optio
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | amPMSymbol | string[] \| undefined | 否 | 是 | 指定的上午和下午符号，要求数组长度不小于2，其中第一个元素为上午符号，第二个元素为下午符号。默认值：区域默认的符号。 |
@@ -5192,9 +5565,10 @@ let options = formatter.resolvedOptions(); // options.timeStyle = 'short', optio
 
 
 
-#### ResolvedSymbolDateTimeFormatOptions
+### ResolvedSymbolDateTimeFormatOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 自定义符号时间日期格式化对象配置项的解析结果。继承自Intl.ResolvedDateTimeFormatOptions，支持Intl.ResolvedDateTimeFormatOptions的所有配置项，并且功能与其一致。
 
@@ -5206,6 +5580,7 @@ let options = formatter.resolvedOptions(); // options.timeStyle = 'short', optio
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | amPMSymbol | string[] | 否 | 是 | 指定的上午和下午符号，其中第一个元素为上午符号，第二个元素为下午符号。默认值：区域默认的符号。 |
@@ -5213,9 +5588,10 @@ let options = formatter.resolvedOptions(); // options.timeStyle = 'short', optio
 
 
 
-#### StyledDateTimeFormat23+
+## StyledDateTimeFormat23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供富文本时间日期格式化的能力。
 
@@ -5225,9 +5601,10 @@ let options = formatter.resolvedOptions(); // options.timeStyle = 'short', optio
 
 
 
-#### constructor23+
+### constructor23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(dateTimeFormat: Intl.DateTimeFormat | SimpleDateTimeFormat, options?: StyledDateTimeFormatOptions)
 
@@ -5238,6 +5615,7 @@ constructor(dateTimeFormat: Intl.DateTimeFormat | SimpleDateTimeFormat, options?
 **系统能力：** SystemCapability.Global.I18n
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5284,9 +5662,10 @@ try {
 
 
 
-#### format23+
+### format23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 format(date: Date): StyledString
 
@@ -5298,12 +5677,14 @@ format(date: Date): StyledString
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | date | Date | 是 | 时间日期。 说明： 月份从0开始计数，0表示一月。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5339,15 +5720,17 @@ try {
 
 
 
-#### StyledDateTimeFormatOptions23+
+## StyledDateTimeFormatOptions23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 创建富文本显示的时间日期格式化对象时的可选配置项。
 
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Global.I18n
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -5365,17 +5748,19 @@ try {
 
 
 
-#### ISO8601DateTimeFormat
+## ISO8601DateTimeFormat
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 符合ISO 8601标准的日期格式化对象。
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(options?: ISO8601DateTimeFormatOptions)
 
@@ -5390,6 +5775,7 @@ constructor(options?: ISO8601DateTimeFormatOptions)
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5408,9 +5794,10 @@ let formatter = new i18n.ISO8601DateTimeFormat({
 
 
 
-#### format
+### format
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 format(date: Date): string
 
@@ -5426,12 +5813,14 @@ format(date: Date): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | date | Date | 是 | 时间日期。 说明： 月份从0开始计数，0表示一月。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5451,9 +5840,10 @@ let result = formatter.format(new Date(2026, 2, 15, 12, 0, 0));
 
 
 
-#### ISO8601DateTimeFormatOptions
+## ISO8601DateTimeFormatOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 符合ISO 8601标准的日期格式化对象创建时的配置项。
 
@@ -5464,6 +5854,7 @@ let result = formatter.format(new Date(2026, 2, 15, 12, 0, 0));
 **系统能力：** SystemCapability.Global.I18n
 
 **模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -5476,9 +5867,10 @@ let result = formatter.format(new Date(2026, 2, 15, 12, 0, 0));
 
 
 
-#### i18n.getSimpleNumberFormatBySkeleton20+
+## i18n.getSimpleNumberFormatBySkeleton20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSimpleNumberFormatBySkeleton(skeleton: string, locale?: Intl.Locale): SimpleNumberFormat
 
@@ -5490,6 +5882,7 @@ getSimpleNumberFormatBySkeleton(skeleton: string, locale?: Intl.Locale): SimpleN
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | skeleton | string | 是 | 合法的框架字符串，支持的字符及含义请参考Number Skeletons。 |
@@ -5497,6 +5890,7 @@ getSimpleNumberFormatBySkeleton(skeleton: string, locale?: Intl.Locale): SimpleN
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5506,6 +5900,7 @@ getSimpleNumberFormatBySkeleton(skeleton: string, locale?: Intl.Locale): SimpleN
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.i18n错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-i18n)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5529,9 +5924,10 @@ try {
 
 
 
-#### i18n.getSimpleNumberFormatBySkeleton(deprecated)
+## i18n.getSimpleNumberFormatBySkeleton(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSimpleNumberFormatBySkeleton(skeleton: string, locale?: intl.Locale): SimpleNumberFormat
 
@@ -5545,6 +5941,7 @@ getSimpleNumberFormatBySkeleton(skeleton: string, locale?: intl.Locale): SimpleN
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | skeleton | string | 是 | 合法的框架字符串，支持的字符及含义请参考Number Skeletons。 |
@@ -5552,6 +5949,7 @@ getSimpleNumberFormatBySkeleton(skeleton: string, locale?: intl.Locale): SimpleN
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5561,6 +5959,7 @@ getSimpleNumberFormatBySkeleton(skeleton: string, locale?: intl.Locale): SimpleN
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.i18n错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-i18n)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5584,9 +5983,10 @@ try {
 
 
 
-#### SimpleNumberFormat18+
+## SimpleNumberFormat18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 基于框架字符串提供数字格式化的能力。
 
@@ -5596,9 +5996,10 @@ try {
 
 
 
-#### format18+
+### format18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 format(value: number): string
 
@@ -5610,12 +6011,14 @@ format(value: number): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 数字对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5640,17 +6043,19 @@ try {
 
 
 
-#### SymbolNumberFormat
+## SymbolNumberFormat
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供自定义数字符号的能力。继承自[Intl.NumberFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat)，支持[Intl.NumberFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat)的方法。
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(locale?: Intl.Locale, options?: SymbolNumberFormatOptions)
 
@@ -5665,6 +6070,7 @@ constructor(locale?: Intl.Locale, options?: SymbolNumberFormatOptions)
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5687,9 +6093,10 @@ let formatter = new i18n.SymbolNumberFormat(locale, {
 
 
 
-#### format
+### format
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 format(value: number | bigint): string
 
@@ -5705,12 +6112,14 @@ format(value: number | bigint): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| bigint | 是 | 待格式化的数字。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5733,9 +6142,10 @@ let result = formatter.format(10); // result = '1(0)天'
 
 
 
-#### formatToParts
+### formatToParts
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 formatToParts(value?: number | bigint): Intl.NumberFormatPart[]
 
@@ -5751,12 +6161,14 @@ formatToParts(value?: number | bigint): Intl.NumberFormatPart[]
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| bigint | 否 | 待格式化的数字。默认值：NaN。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5779,9 +6191,10 @@ let result = formatter.formatToParts(10); // result[0].type = 'integer'
 
 
 
-#### formatRange
+### formatRange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 formatRange(startRange: number, endRange: number): string
 
@@ -5797,6 +6210,7 @@ formatRange(startRange: number, endRange: number): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | startRange | number | 是 | 起始数字。 |
@@ -5804,6 +6218,7 @@ formatRange(startRange: number, endRange: number): string
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5826,9 +6241,10 @@ let result = formatter.formatRange(10, 20); // result = '1(0)-2(0)天'
 
 
 
-#### formatRangeToParts
+### formatRangeToParts
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 formatRangeToParts(startRange: number, endRange: number): Intl.NumberFormatPart[]
 
@@ -5844,6 +6260,7 @@ formatRangeToParts(startRange: number, endRange: number): Intl.NumberFormatPart[
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | startRange | number | 是 | 起始数字。 |
@@ -5851,6 +6268,7 @@ formatRangeToParts(startRange: number, endRange: number): Intl.NumberFormatPart[
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5873,9 +6291,10 @@ let result = formatter.formatRangeToParts(10, 20); // result[0].type = 'integer'
 
 
 
-#### parse
+### parse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 parse(text: string, lenientMode: boolean): number
 
@@ -5891,6 +6310,7 @@ parse(text: string, lenientMode: boolean): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | text | string | 是 | 待解析的本地化数字字符串。 |
@@ -5898,6 +6318,7 @@ parse(text: string, lenientMode: boolean): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5907,6 +6328,7 @@ parse(text: string, lenientMode: boolean): number
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.i18n错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-i18n)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5925,9 +6347,10 @@ let result = formatter.parse('125 米', false); // result = 125
 
 
 
-#### resolvedOptions
+### resolvedOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 resolvedOptions(): ResolvedSymbolNumberFormatOptions
 
@@ -5942,6 +6365,7 @@ resolvedOptions(): ResolvedSymbolNumberFormatOptions
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5964,9 +6388,10 @@ let result = formatter.resolvedOptions(); // result.style = 'unit', result.unit 
 
 
 
-#### SymbolNumberFormatOptions
+### SymbolNumberFormatOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 创建自定义符号数字格式化对象时的可选配置项。继承自Intl.NumberFormatOptions，支持Intl.NumberFormatOptions的所有配置项，并且功能与其一致。
 
@@ -5977,6 +6402,7 @@ let result = formatter.resolvedOptions(); // result.style = 'unit', result.unit 
 **系统能力：** SystemCapability.Global.I18n
 
 **模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -5990,9 +6416,10 @@ let result = formatter.resolvedOptions(); // result.style = 'unit', result.unit 
 
 
 
-#### ResolvedSymbolNumberFormatOptions
+### ResolvedSymbolNumberFormatOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 自定义符号数字格式化对象配置项的解析结果。继承自Intl.ResolvedNumberFormatOptions，支持Intl.ResolvedNumberFormatOptions的所有配置项，并且功能与其一致。
 
@@ -6003,6 +6430,7 @@ let result = formatter.resolvedOptions(); // result.style = 'unit', result.unit 
 **系统能力：** SystemCapability.Global.I18n
 
 **模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -6016,9 +6444,10 @@ let result = formatter.resolvedOptions(); // result.style = 'unit', result.unit 
 
 
 
-#### StyledNumberFormat18+
+## StyledNumberFormat18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供富文本数字格式化的能力。
 
@@ -6028,9 +6457,10 @@ let result = formatter.resolvedOptions(); // result.style = 'unit', result.unit 
 
 
 
-#### constructor(deprecated)
+### constructor(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(numberFormat: intl.NumberFormat | SimpleNumberFormat, options?: StyledNumberFormatOptions)
 
@@ -6043,6 +6473,7 @@ constructor(numberFormat: intl.NumberFormat | SimpleNumberFormat, options?: Styl
 **系统能力：** SystemCapability.Global.I18n
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6088,9 +6519,10 @@ try {
 
 
 
-#### constructor20+
+### constructor20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(numberFormat: Intl.NumberFormat | SimpleNumberFormat, options?: StyledNumberFormatOptions)
 
@@ -6101,6 +6533,7 @@ constructor(numberFormat: Intl.NumberFormat | SimpleNumberFormat, options?: Styl
 **系统能力：** SystemCapability.Global.I18n
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6146,9 +6579,10 @@ try {
 
 
 
-#### format18+
+### format18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 format(value: number): StyledString
 
@@ -6160,12 +6594,14 @@ format(value: number): StyledString
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 需要格式化的数字。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6214,15 +6650,17 @@ try {
 
 
 
-#### StyledNumberFormatOptions18+
+## StyledNumberFormatOptions18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 创建富文本显示的数字格式化对象时的可选配置项。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Global.I18n
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -6234,9 +6672,10 @@ try {
 
 
 
-#### AdvancedMeasureFormat23+
+## AdvancedMeasureFormat23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供数字格式化能力，支持根据单位使用场景自动转换合适的单位。
 
@@ -6248,9 +6687,10 @@ try {
 
 
 
-#### constructor23+
+### constructor23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(numberFormat: Intl.NumberFormat, options?: AdvancedMeasureFormatOptions)
 
@@ -6263,6 +6703,7 @@ constructor(numberFormat: Intl.NumberFormat, options?: AdvancedMeasureFormatOpti
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6283,9 +6724,10 @@ let advancedMeasureFormat: i18n.AdvancedMeasureFormat = new i18n.AdvancedMeasure
 
 
 
-#### format23+
+### format23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 format(num: number): string
 
@@ -6299,12 +6741,14 @@ format(num: number): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | num | number | 是 | 需要格式化的数字。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6325,9 +6769,10 @@ let result = advancedMeasureFormat.format(100); // result = '37.778°C'
 
 
 
-#### AdvancedMeasureFormatOptions23+
+## AdvancedMeasureFormatOptions23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 创建数字格式化对象时的可选配置项。
 
@@ -6337,6 +6782,7 @@ let result = advancedMeasureFormat.format(100); // result = '37.778°C'
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | unitUsage | UnitUsage | 否 | 是 | 单位格式化使用场景的枚举。 |
@@ -6344,9 +6790,10 @@ let result = advancedMeasureFormat.format(100); // result = '37.778°C'
 
 
 
-#### UnitUsage23+
+## UnitUsage23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 单位格式化使用场景的枚举。
 
@@ -6355,6 +6802,7 @@ let result = advancedMeasureFormat.format(100); // result = '37.778°C'
 **系统能力：** SystemCapability.Global.I18n
 
 **模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -6385,9 +6833,10 @@ let result = advancedMeasureFormat.format(100); // result = '37.778°C'
 
 
 
-#### i18n.getDisplayCountry(deprecated)
+## i18n.getDisplayCountry(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDisplayCountry(country: string, locale: string, sentenceCase?: boolean): string
 
@@ -6399,6 +6848,7 @@ getDisplayCountry(country: string, locale: string, sentenceCase?: boolean): stri
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | country | string | 是 | 指定国家。 |
@@ -6407,6 +6857,7 @@ getDisplayCountry(country: string, locale: string, sentenceCase?: boolean): stri
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6424,9 +6875,10 @@ countryName = i18n.getDisplayCountry('zh-CN', 'en-GB'); // countryName = 'China'
 
 
 
-#### i18n.getDisplayLanguage(deprecated)
+## i18n.getDisplayLanguage(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDisplayLanguage(language: string, locale: string, sentenceCase?: boolean): string
 
@@ -6438,6 +6890,7 @@ getDisplayLanguage(language: string, locale: string, sentenceCase?: boolean): st
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | language | string | 是 | 指定语言。 |
@@ -6446,6 +6899,7 @@ getDisplayLanguage(language: string, locale: string, sentenceCase?: boolean): st
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6463,9 +6917,10 @@ languageName = i18n.getDisplayLanguage('zh', 'en-GB'); // languageName = 'Chines
 
 
 
-#### i18n.getSystemLanguage(deprecated)
+## i18n.getSystemLanguage(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSystemLanguage(): string
 
@@ -6476,6 +6931,7 @@ getSystemLanguage(): string
 **系统能力：** SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6492,9 +6948,10 @@ let systemLanguage: string = i18n.getSystemLanguage();
 
 
 
-#### i18n.getSystemRegion(deprecated)
+## i18n.getSystemRegion(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSystemRegion(): string
 
@@ -6505,6 +6962,7 @@ getSystemRegion(): string
 **系统能力：** SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6521,9 +6979,10 @@ let region: string = i18n.getSystemRegion();
 
 
 
-#### i18n.getSystemLocale(deprecated)
+## i18n.getSystemLocale(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSystemLocale(): string
 
@@ -6534,6 +6993,7 @@ getSystemLocale(): string
 **系统能力：** SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6550,9 +7010,10 @@ let locale: string = i18n.getSystemLocale();
 
 
 
-#### i18n.is24HourClock(deprecated)
+## i18n.is24HourClock(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 is24HourClock(): boolean
 
@@ -6563,6 +7024,7 @@ is24HourClock(): boolean
 **系统能力：** SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6579,9 +7041,10 @@ let is24HourClock: boolean = i18n.is24HourClock();
 
 
 
-#### i18n.set24HourClock(deprecated)
+## i18n.set24HourClock(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set24HourClock(option: boolean): boolean
 
@@ -6595,12 +7058,14 @@ set24HourClock(option: boolean): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | option | boolean | 是 | true表示开启系统24小时制开关，false表示关闭系统24小时制开关。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6618,9 +7083,10 @@ let success: boolean = i18n.set24HourClock(true);
 
 
 
-#### i18n.addPreferredLanguage(deprecated)
+## i18n.addPreferredLanguage(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addPreferredLanguage(language: string, index?: number): boolean
 
@@ -6634,6 +7100,7 @@ addPreferredLanguage(language: string, index?: number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | language | string | 是 | 待添加的偏好语言。 |
@@ -6641,6 +7108,7 @@ addPreferredLanguage(language: string, index?: number): boolean
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6660,9 +7128,10 @@ let success: boolean = i18n.addPreferredLanguage(language, index);
 
 
 
-#### i18n.removePreferredLanguage(deprecated)
+## i18n.removePreferredLanguage(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removePreferredLanguage(index: number): boolean
 
@@ -6676,12 +7145,14 @@ removePreferredLanguage(index: number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 待移除偏好语言在系统偏好语言列表中的位置。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6700,9 +7171,10 @@ let success: boolean = i18n.removePreferredLanguage(index);
 
 
 
-#### i18n.getPreferredLanguageList(deprecated)
+## i18n.getPreferredLanguageList(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPreferredLanguageList(): Array&lt;string&gt;
 
@@ -6713,6 +7185,7 @@ getPreferredLanguageList(): Array&lt;string&gt;
 **系统能力：** SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6729,9 +7202,10 @@ let preferredLanguageList: Array<string> = i18n.getPreferredLanguageList();
 
 
 
-#### i18n.getFirstPreferredLanguage(deprecated)
+## i18n.getFirstPreferredLanguage(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFirstPreferredLanguage(): string
 
@@ -6742,6 +7216,7 @@ getFirstPreferredLanguage(): string
 **系统能力：** SystemCapability.Global.I18n
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6758,15 +7233,17 @@ let firstPreferredLanguage: string = i18n.getFirstPreferredLanguage();
 
 
 
-#### Util(deprecated)
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## Util(deprecated)
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### unitConvert(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### unitConvert(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unitConvert(fromUnit: UnitInfo, toUnit: UnitInfo, value: number, locale: string, style?: string): string
 
@@ -6777,6 +7254,7 @@ unitConvert(fromUnit: UnitInfo, toUnit: UnitInfo, value: number, locale: string,
 **系统能力：** SystemCapability.Global.I18n
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6789,6 +7267,7 @@ unitConvert(fromUnit: UnitInfo, toUnit: UnitInfo, value: number, locale: string,
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 按照toUnit的单位格式化后，得到的字符串。 |
@@ -6796,15 +7275,17 @@ unitConvert(fromUnit: UnitInfo, toUnit: UnitInfo, value: number, locale: string,
 
 
 
-#### Character(deprecated)
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## Character(deprecated)
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### isDigit(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### isDigit(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isDigit(ch: string): boolean
 
@@ -6816,12 +7297,14 @@ isDigit(ch: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ch | string | 是 | 输入的字符。如果输入的是字符串，则只判断首字符的类别。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6830,9 +7313,10 @@ isDigit(ch: string): boolean
 
 
 
-#### isSpaceChar(deprecated)
+### isSpaceChar(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isSpaceChar(ch: string): boolean
 
@@ -6844,12 +7328,14 @@ isSpaceChar(ch: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ch | string | 是 | 输入的字符。如果输入的是字符串，则只判断首字符的类别。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6858,9 +7344,10 @@ isSpaceChar(ch: string): boolean
 
 
 
-#### isWhitespace(deprecated)
+### isWhitespace(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isWhitespace(ch: string): boolean
 
@@ -6872,12 +7359,14 @@ isWhitespace(ch: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ch | string | 是 | 输入的字符。如果输入的是字符串，则只判断首字符的类别。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6886,9 +7375,10 @@ isWhitespace(ch: string): boolean
 
 
 
-#### isRTL(deprecated)
+### isRTL(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isRTL(ch: string): boolean
 
@@ -6900,12 +7390,14 @@ isRTL(ch: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ch | string | 是 | 输入的字符。如果输入的是字符串，则只判断首字符的类别。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6914,9 +7406,10 @@ isRTL(ch: string): boolean
 
 
 
-#### isIdeograph(deprecated)
+### isIdeograph(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isIdeograph(ch: string): boolean
 
@@ -6928,12 +7421,14 @@ isIdeograph(ch: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ch | string | 是 | 输入的字符。如果输入的是字符串，则只判断首字符的类别。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6942,9 +7437,10 @@ isIdeograph(ch: string): boolean
 
 
 
-#### isLetter(deprecated)
+### isLetter(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isLetter(ch: string): boolean
 
@@ -6956,12 +7452,14 @@ isLetter(ch: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ch | string | 是 | 输入的字符。如果输入的是字符串，则只判断首字符的类别。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6970,9 +7468,10 @@ isLetter(ch: string): boolean
 
 
 
-#### isLowerCase(deprecated)
+### isLowerCase(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isLowerCase(ch: string): boolean
 
@@ -6984,12 +7483,14 @@ isLowerCase(ch: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ch | string | 是 | 输入的字符。如果输入的是字符串，则只判断首字符的类别。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6998,9 +7499,10 @@ isLowerCase(ch: string): boolean
 
 
 
-#### isUpperCase(deprecated)
+### isUpperCase(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isUpperCase(ch: string): boolean
 
@@ -7012,12 +7514,14 @@ isUpperCase(ch: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ch | string | 是 | 输入的字符。如果输入的是字符串，则只判断首字符的类别。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7026,9 +7530,10 @@ isUpperCase(ch: string): boolean
 
 
 
-#### getType(deprecated)
+### getType(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getType(ch: string): string
 
@@ -7040,12 +7545,14 @@ getType(ch: string): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ch | string | 是 | 输入的字符。如果输入的是字符串，则只判断首字符的类别。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |

@@ -1,9 +1,9 @@
 # WantAgentInfo
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-wantagent-wantagentinfo
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 WantAgentInfo用于定义触发WantAgent所需要的信息，可作为[getWantAgent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-wantagent#wantagentgetwantagent)的入参创建指定的WantAgent对象。适用于需要延迟执行Ability启动、发送公共事件等场景，支持自定义请求码和动作执行属性，帮助开发者灵活控制WantAgent的行为。
  
@@ -12,9 +12,10 @@ WantAgentInfo用于定义触发WantAgent所需要的信息，可作为[getWantAg
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { wantAgent as abilityWantAgent } from '@kit.AbilityKit';
@@ -22,14 +23,16 @@ import { wantAgent as abilityWantAgent } from '@kit.AbilityKit';
  
   
 
-#### WantAgentInfo
+## WantAgentInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义触发WantAgent所需要的信息，可以作为[getWantAgent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-wantagent#wantagentgetwantagent)的入参创建指定的WantAgent对象。
  
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | wants | Array&lt;Want&gt; | 否 | 否 | wants数组为预留能力，当前只支持一个want。传入多个时只取wants数组的第一个成员。 元服务API：从API version 12开始，该接口支持在元服务中使用。 |

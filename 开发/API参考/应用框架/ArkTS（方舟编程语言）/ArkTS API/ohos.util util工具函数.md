@@ -1,9 +1,9 @@
 # @ohos.util (util工具函数)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-util
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该模块主要提供常用的工具函数，实现字符串编解码（[TextEncoder](#textencoder)，[TextDecoder](#textdecoder)）、有理数运算（[RationalNumber8+](#rationalnumber8)）、缓冲区管理（[LRUCache9+](#lrucache9)）、范围判断（[ScopeHelper9+](#scopehelper9)）、Base64编解码（[Base64Helper9+](#base64helper9)）、内置对象类型检查（[types8+](#types8)）、对方法进行插桩和替换（[Aspect11+](#aspect11)）、虚拟机维测能力（[ArkTSVM23+](#arktsvm23)）、二进制流解码（[StringDecoder12+](#stringdecoder12)）、堆内存阈值配置（[HeapMemoryThreshold24+](#heapmemorythreshold24)）等功能。此外还提供获取对象Hash值（[util.getHash12+](#utilgethash12)）、获取主线程栈追踪信息（[util.getMainThreadStackTrace20+](#utilgetmainthreadstacktrace20)）等工具函数。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { util } from '@kit.ArkTS';
@@ -22,9 +23,10 @@ import { util } from '@kit.ArkTS';
 
 
 
-#### util.format9+
+## util.format9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 format(format: string, ...args: Object[]): string
 
@@ -36,6 +38,7 @@ format(format: string, ...args: Object[]): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | format | string | 是 | 格式化字符串，可以包含零个或多个占位符，用于指定要插入的参数的位置和格式。 |
@@ -44,12 +47,14 @@ format(format: string, ...args: Object[]): string
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 格式化后的字符串。 |
 
 
 **格式说明符：**
+
 
 | 格式说明符 | 说明 |
 | --- | --- |
@@ -132,9 +137,10 @@ console.info(formattedString);
 
 
 
-#### util.errnoToString9+
+## util.errnoToString9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 errnoToString(errno: number): string
 
@@ -146,12 +152,14 @@ errnoToString(errno: number): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | errno | number | 是 | 系统发生错误产生的错误码。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -169,6 +177,7 @@ console.info("result = " + result);
 
 **部分错误码及信息示例：**
 
+
 | 错误码 | 信息 |
 | --- | --- |
 | -1 | operation not permitted |
@@ -184,9 +193,10 @@ console.info("result = " + result);
 
 
 
-#### util.callbackWrapper
+## util.callbackWrapper
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 callbackWrapper(original: Function): (err: Object, value: Object)=>void
 
@@ -202,12 +212,14 @@ callbackWrapper(original: Function): (err: Object, value: Object)=>void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | original | Function | 是 | 异步函数，要求函数返回Promise对象。该异步函数的resolve值会作为回调的第二个参数传入，reject原因会作为回调的第一个参数传入。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -246,9 +258,10 @@ cb(args, (err : Object, ret : string) => {
 
 
 
-#### util.promisify9+
+## util.promisify9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 promisify(original: (err: Object, value: Object) => void): Function
 
@@ -260,12 +273,14 @@ promisify(original: (err: Object, value: Object) => void): Function
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | original | (err: Object, value: Object) => void | 是 | 回调函数中第一个参数err是拒绝原因（如果 Promise 已解决，则为 null），第二个参数value是已解决的值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -292,9 +307,10 @@ const addCall = util.promisify(util.callbackWrapper(fn));
 
 
 
-#### util.generateRandomUUID9+
+## util.generateRandomUUID9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 generateRandomUUID(entropyCache?: boolean): string
 
@@ -306,12 +322,14 @@ generateRandomUUID(entropyCache?: boolean): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | entropyCache | boolean | 否 | 是否使用已缓存的UUID，true表示使用缓存的UUID以提升性能（最多缓存128个UUID，缓存用尽后会重新生成以保证随机性），false表示不使用缓存的UUID，默认true。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -328,9 +346,10 @@ console.info("RFC 4122 Version 4 UUID:" + uuid);
 
 
 
-#### util.generateRandomBinaryUUID9+
+## util.generateRandomBinaryUUID9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 generateRandomBinaryUUID(entropyCache?: boolean): Uint8Array
 
@@ -342,12 +361,14 @@ generateRandomBinaryUUID(entropyCache?: boolean): Uint8Array
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | entropyCache | boolean | 否 | 是否使用已缓存的UUID，true表示使用缓存的UUID，false表示不使用缓存的UUID，默认true。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -364,9 +385,10 @@ console.info(JSON.stringify(uuid));
 
 
 
-#### util.parseUUID9+
+## util.parseUUID9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 parseUUID(uuid: string): Uint8Array
 
@@ -378,12 +400,14 @@ parseUUID(uuid: string): Uint8Array
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uuid | string | 是 | UUID字符串，必须符合RFC 4122版本规范。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -393,6 +417,7 @@ parseUUID(uuid: string): Uint8Array
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -409,9 +434,10 @@ console.info("uuid = " + uuid);
 
 
 
-#### util.printf(deprecated)
+## util.printf(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 printf(format: string, ...args: Object[]): string
 
@@ -425,6 +451,7 @@ printf(format: string, ...args: Object[]): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | format | string | 是 | 式样化字符串。 |
@@ -432,6 +459,7 @@ printf(format: string, ...args: Object[]): string
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -448,9 +476,10 @@ console.info(res);
 
 
 
-#### util.getErrorString(deprecated)
+## util.getErrorString(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getErrorString(errno: number): string
 
@@ -464,12 +493,14 @@ getErrorString(errno: number): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | errno | number | 是 | 系统发生错误产生的错误码。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -487,9 +518,10 @@ console.info("result = " + result);
 
 
 
-#### util.promiseWrapper(deprecated)
+## util.promiseWrapper(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 promiseWrapper(original: (err: Object, value: Object) => void): Object
 
@@ -503,12 +535,14 @@ promiseWrapper(original: (err: Object, value: Object) => void): Object
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | original | (err: Object, value: Object) => void | 是 | 采用错误优先回调模式的函数，第一个参数err是拒绝原因，第二个参数value是已解决的值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -517,9 +551,10 @@ promiseWrapper(original: (err: Object, value: Object) => void): Object
 
 
 
-#### util.getHash12+
+## util.getHash12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getHash(object: object): number
 
@@ -533,12 +568,14 @@ getHash(object: object): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | object | object | 是 | 需要获取Hash值的非原始类型对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -562,9 +599,10 @@ console.info('result2 is ' + result2);
 
 
 
-#### util.getMainThreadStackTrace20+
+## util.getMainThreadStackTrace20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMainThreadStackTrace(): string
 
@@ -577,6 +615,7 @@ getMainThreadStackTrace(): string
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -593,9 +632,10 @@ console.info(stack);
 
 
 
-#### MultithreadingDetectionOptions
+## MultithreadingDetectionOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 MultithreadingDetectionOptions是一个接口类，用于配置[ArkTSVM.setMultithreadingDetectionEnabled](#setmultithreadingdetectionenabled23)函数的行为参数。
 
@@ -607,6 +647,7 @@ MultithreadingDetectionOptions是一个接口类，用于配置[ArkTSVM.setMulti
 
 **属性：**
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | abort | boolean | 否 | 是 | 控制检测到多线程问题时是否崩溃。传入true表示检测到多线程问题时立即崩溃，适用于开发调试阶段需要快速暴露多线程问题的场景；传入false表示不崩溃仅上报故障信息，适用于生产环境需要保持服务可用性的场景。默认true。 |
@@ -616,17 +657,19 @@ MultithreadingDetectionOptions是一个接口类，用于配置[ArkTSVM.setMulti
 
 
 
-#### ArkTSVM23+
+## ArkTSVM23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ArkTSVM是一个类，用于给开发者提供虚拟机的诊断与维护能力，包括多线程安全检测、堆内存信息获取、内存泄漏防护、全局引用追踪和堆内存预警等功能。
 
 
 
-#### setMultithreadingDetectionEnabled23+
+### setMultithreadingDetectionEnabled23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static setMultithreadingDetectionEnabled(enabled: boolean, options?: MultithreadingDetectionOptions): void
 
@@ -639,6 +682,7 @@ options是用于配置多线程安全检测的行为参数。
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -671,9 +715,10 @@ util.ArkTSVM.setMultithreadingDetectionEnabled(true, {
 
 
 
-#### getAllVMHeapMemoryInfo24+
+### getAllVMHeapMemoryInfo24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getAllVMHeapMemoryInfo(): Promise<HeapMemoryInfo[]>
 
@@ -690,6 +735,7 @@ static getAllVMHeapMemoryInfo(): Promise<HeapMemoryInfo[]>
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -715,9 +761,10 @@ util.ArkTSVM.getAllVMHeapMemoryInfo().then(
 
 
 
-#### enableLocalHandleDetection24+
+### enableLocalHandleDetection24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static enableLocalHandleDetection(): void
 
@@ -806,9 +853,10 @@ napi_value dangerous_function(napi_env env, napi_callback_info info) {
 
 
 
-#### setTrackGlobalRef
+### setTrackGlobalRef
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static setTrackGlobalRef(enable: boolean): void
 
@@ -827,6 +875,7 @@ static setTrackGlobalRef(enable: boolean): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -874,9 +923,10 @@ try {
 
 
 
-#### onVMHeapMemoryPressure24+
+### onVMHeapMemoryPressure24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static onVMHeapMemoryPressure(callback: Callback&lt;string&gt;, heapMemoryThreshold: HeapMemoryThreshold): boolean
 
@@ -890,6 +940,7 @@ static onVMHeapMemoryPressure(callback: Callback&lt;string&gt;, heapMemoryThresh
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;string&gt; | 是 | 垃圾回收后内存达到预警阈值时触发的回调函数，字符串参数表示内存压力事件的类型。目前事件的类型有三种取值，"LocalHeapMemPressure"，"SharedHeapMemPressure"，"ProcessHeapMemPressure"。 |
@@ -897,6 +948,7 @@ static onVMHeapMemoryPressure(callback: Callback&lt;string&gt;, heapMemoryThresh
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -924,9 +976,10 @@ console.info('Registration result: ' + result);
 
 
 
-#### offVMHeapMemoryPressure24+
+### offVMHeapMemoryPressure24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static offVMHeapMemoryPressure(): void
 
@@ -946,15 +999,17 @@ util.ArkTSVM.offVMHeapMemoryPressure();
 
 
 
-#### HeapMemoryThreshold24+
+## HeapMemoryThreshold24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 堆内存预警阈值配置，用于指定触发回调的堆内存预警阈值。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Utils.Lang
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -965,15 +1020,17 @@ util.ArkTSVM.offVMHeapMemoryPressure();
 
 
 
-#### HeapMemoryInfo24+
+## HeapMemoryInfo24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述local堆或shared堆的内存信息，包含线程标识和堆内存大小等详细数据。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Utils.Lang
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -985,15 +1042,17 @@ util.ArkTSVM.offVMHeapMemoryPressure();
 
 
 
-#### TextDecoderOptions11+
+## TextDecoderOptions11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 解码相关选项参数，包含两个属性fatal和ignoreBOM。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1003,15 +1062,17 @@ util.ArkTSVM.offVMHeapMemoryPressure();
 
 
 
-#### DecodeToStringOptions12+
+## DecodeToStringOptions12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于配置decodeToString方法在解码字节流时的行为参数。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1020,15 +1081,17 @@ util.ArkTSVM.offVMHeapMemoryPressure();
 
 
 
-#### DecodeWithStreamOptions11+
+## DecodeWithStreamOptions11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 解码是否跟随附加数据块相关选项参数。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1037,17 +1100,19 @@ util.ArkTSVM.offVMHeapMemoryPressure();
 
 
 
-#### Aspect11+
+## Aspect11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Aspect类用于封装提供切面能力（Aspect Oriented Programming，简写AOP）的接口，这些接口可用于对类方法进行前后插桩或替换实现。
 
 
 
-#### addBefore11+
+### addBefore11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static addBefore(targetClass: Object, methodName: string, isStatic: boolean, before: Function): void
 
@@ -1058,6 +1123,7 @@ static addBefore(targetClass: Object, methodName: string, isStatic: boolean, bef
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1134,9 +1200,10 @@ console.info('MyClass.data is ' + MyClass.data);
 
 
 
-#### addAfter11+
+### addAfter11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static addAfter(targetClass: Object, methodName: string, isStatic: boolean, after: Function): void
 
@@ -1147,6 +1214,7 @@ static addAfter(targetClass: Object, methodName: string, isStatic: boolean, afte
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1214,9 +1282,10 @@ util.Aspect.addAfter(AroundTest, 'foo', false, () => {
 
 
 
-#### replace11+
+### replace11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static replace(targetClass: Object, methodName: string, isStatic: boolean, instead: Function) : void
 
@@ -1227,6 +1296,7 @@ static replace(targetClass: Object, methodName: string, isStatic: boolean, inste
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1275,21 +1345,24 @@ console.info('asp.msg is ' + asp.msg);
 
 
 
-#### TextDecoder
+## TextDecoder
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TextDecoder用于将字节数组解码为字符串，支持utf-8、utf-16le/be、iso-8859和windows-1251等不同的编码格式。
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** 以下各项对应的系统能力均为SystemCapability.Utils.Lang。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1300,9 +1373,10 @@ TextDecoder用于将字节数组解码为字符串，支持utf-8、utf-16le/be�
 
 
 
-#### constructor9+
+### constructor9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -1323,9 +1397,10 @@ console.info('retStr = ' + retStr);
 
 
 
-#### create9+
+### create9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static create(encoding?: string, options?: TextDecoderOptions): TextDecoder
 
@@ -1337,6 +1412,7 @@ static create(encoding?: string, options?: TextDecoderOptions): TextDecoder
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | encoding | string | 否 | 编码格式，支持格式参见encoding属性，默认值是'utf-8'。 |
@@ -1344,6 +1420,7 @@ static create(encoding?: string, options?: TextDecoderOptions): TextDecoder
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1365,9 +1442,10 @@ console.info('retStr = ' + retStr);
 
 
 
-#### decodeToString12+
+### decodeToString12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 decodeToString(input: Uint8Array, options?: DecodeToStringOptions): string
 
@@ -1383,6 +1461,7 @@ decodeToString(input: Uint8Array, options?: DecodeToStringOptions): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | input | Uint8Array | 是 | 需要解码的数组。 |
@@ -1390,6 +1469,7 @@ decodeToString(input: Uint8Array, options?: DecodeToStringOptions): string
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1435,9 +1515,10 @@ console.info("retJson = " + retJson);
 
 
 
-#### decodeWithStream(deprecated)
+### decodeWithStream(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 decodeWithStream(input: Uint8Array, options?: DecodeWithStreamOptions): string
 
@@ -1453,6 +1534,7 @@ decodeWithStream(input: Uint8Array, options?: DecodeWithStreamOptions): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | input | Uint8Array | 是 | 符合格式需要解码的数组。 |
@@ -1460,6 +1542,7 @@ decodeWithStream(input: Uint8Array, options?: DecodeWithStreamOptions): string
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1492,9 +1575,10 @@ console.info("retStr = " + retStr);
 
 
 
-#### constructor(deprecated)
+### constructor(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(encoding?: string, options?: { fatal?: boolean; ignoreBOM?: boolean })
 
@@ -1508,6 +1592,7 @@ TextDecoder的构造函数。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | encoding | string | 否 | 编码格式，默认值是'utf-8'。 |
@@ -1515,6 +1600,7 @@ TextDecoder的构造函数。
 
 
 **表1** options
+
 
 | 名称 | 参数类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1530,9 +1616,10 @@ let textDecoder = new util.TextDecoder("utf-8",{ignoreBOM: true});
 
 
 
-#### decode(deprecated)
+### decode(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 decode(input: Uint8Array, options?: { stream?: false }): string
 
@@ -1546,6 +1633,7 @@ decode(input: Uint8Array, options?: { stream?: false }): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | input | Uint8Array | 是 | 符合格式需要解码的数组。 |
@@ -1554,12 +1642,14 @@ decode(input: Uint8Array, options?: { stream?: false }): string
 
 **表2** options
 
+
 | 名称 | 参数类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | stream | boolean | 否 | 在随后的decode()调用中是否跟随附加数据块。如果以块的形式处理数据，则设置为true；如果处理数据未分块，则设置为false。默认为false。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1585,21 +1675,24 @@ console.info("retStr = " + retStr);
 
 
 
-#### EncodeIntoUint8ArrayInfo11+
+## EncodeIntoUint8ArrayInfo11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 编码后的信息，包含读取的字符数和写入的字节数。
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1609,9 +1702,10 @@ console.info("retStr = " + retStr);
 
 
 
-#### TextEncoder
+## TextEncoder
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TextEncoder将字符串编码为字节数组，支持多种编码格式。
 
@@ -1619,13 +1713,15 @@ TextEncoder将字符串编码为字节数组，支持多种编码格式。
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** 以下各项对应的系统能力均为SystemCapability.Utils.Lang。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1634,9 +1730,10 @@ TextEncoder将字符串编码为字节数组，支持多种编码格式。
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -1654,9 +1751,10 @@ let textEncoder = new util.TextEncoder();
 
 
 
-#### constructor9+
+### constructor9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(encoding?: string)
 
@@ -1667,6 +1765,7 @@ TextEncoder的构造函数。
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1681,9 +1780,10 @@ let textEncoder = new util.TextEncoder("utf-8");
 
 
 
-#### create12+
+### create12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static create(encoding?: string): TextEncoder
 
@@ -1695,12 +1795,14 @@ static create(encoding?: string): TextEncoder
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | encoding | string | 否 | 编码格式，默认值为'utf-8'。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1715,9 +1817,10 @@ let textEncoder = util.TextEncoder.create("utf-8");
 
 
 
-#### encodeInto9+
+### encodeInto9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 encodeInto(input?: string): Uint8Array
 
@@ -1729,12 +1832,14 @@ encodeInto(input?: string): Uint8Array
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | input | string | 否 | 需要编码的字符串，默认值是空字符串。当入参是空字符串时，返回undefined。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1752,9 +1857,10 @@ console.info("result = " + result);
 
 
 
-#### encodeIntoUint8Array9+
+### encodeIntoUint8Array9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 encodeIntoUint8Array(input: string, dest: Uint8Array): EncodeIntoUint8ArrayInfo
 
@@ -1766,6 +1872,7 @@ encodeIntoUint8Array(input: string, dest: Uint8Array): EncodeIntoUint8ArrayInfo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | input | string | 是 | 需要编码的字符串。 |
@@ -1773,6 +1880,7 @@ encodeIntoUint8Array(input: string, dest: Uint8Array): EncodeIntoUint8ArrayInfo
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1796,9 +1904,10 @@ console.info("result.written = " + result.written);
 
 
 
-#### encodeInto(deprecated)
+### encodeInto(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 encodeInto(input: string, dest: Uint8Array): { read: number; written: number }
 
@@ -1812,6 +1921,7 @@ encodeInto(input: string, dest: Uint8Array): { read: number; written: number }
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | input | string | 是 | 需要编码的字符串。 |
@@ -1819,6 +1929,7 @@ encodeInto(input: string, dest: Uint8Array): { read: number; written: number }
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1838,9 +1949,10 @@ console.info("uint8 = " + uint8);
 
 
 
-#### encode(deprecated)
+### encode(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 encode(input?: string): Uint8Array
 
@@ -1854,12 +1966,14 @@ encode(input?: string): Uint8Array
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | input | string | 否 | 需要编码的字符串，默认值是空字符串。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1877,17 +1991,19 @@ console.info("result = " + result);
 
 
 
-#### RationalNumber8+
+## RationalNumber8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 RationalNumber主要用于有理数的比较，并提供获取分子和分母的方法。RationalNumber内部以分子和分母存储有理数，创建时会自动对分数进行简化。需要注意的是：当分母为0时，有理数表示为Infinity；当分子和分母均为0时，有理数表示为NaN（非数字）。使用[toString()](#tostring8)方法可以将有理数转换为字符串形式，使用该类可以方便地进行有理数的各种操作。
 
 
 
-#### constructor9+
+### constructor9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -1905,9 +2021,10 @@ let rationalNumber = new util.RationalNumber();
 
 
 
-#### parseRationalNumber9+
+### parseRationalNumber9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static parseRationalNumber(numerator: number,denominator: number): RationalNumber
 
@@ -1923,6 +2040,7 @@ static parseRationalNumber(numerator: number,denominator: number): RationalNumbe
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | numerator | number | 是 | 分子，整数类型。取值范围：-Number.MAX_VALUE <= numerator <= Number.MAX_VALUE。 |
@@ -1930,6 +2048,7 @@ static parseRationalNumber(numerator: number,denominator: number): RationalNumbe
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1944,9 +2063,10 @@ let rationalNumber = util.RationalNumber.parseRationalNumber(1,2);
 
 
 
-#### createRationalFromString8+
+### createRationalFromString8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static createRationalFromString(rationalString: string): RationalNumber
 
@@ -1962,12 +2082,14 @@ static createRationalFromString(rationalString: string): RationalNumber
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rationalString | string | 是 | 有理数字符串格式，如"3/4"。若传入小数类型字符串格式，不会拦截但会输出错误信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1982,9 +2104,10 @@ let rational = util.RationalNumber.createRationalFromString("3/4");
 
 
 
-#### compare9+
+### compare9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 compare(another: RationalNumber): number​
 
@@ -1996,12 +2119,14 @@ compare(another: RationalNumber): number​
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | another | RationalNumber | 是 | 其他的有理数对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2020,9 +2145,10 @@ console.info("result = " + result);
 
 
 
-#### valueOf8+
+### valueOf8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 valueOf(): number
 
@@ -2033,6 +2159,7 @@ valueOf(): number
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2059,9 +2186,10 @@ console.info("result = " + result);
 
 
 
-#### equals8+
+### equals8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 equals(obj: Object): boolean
 
@@ -2073,12 +2201,14 @@ equals(obj: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | obj | Object | 是 | 用于与当前RationalNumber对象比较的对象，传入非RationalNumber类型时返回false。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2107,9 +2237,10 @@ console.info("result = " + result);
 
 
 
-#### getCommonFactor9+
+### getCommonFactor9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getCommonFactor(number1: number, number2: number): number
 
@@ -2125,6 +2256,7 @@ static getCommonFactor(number1: number, number2: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | number1 | number | 是 | 整数类型。-Number.MAX_VALUE <= number1 <= Number.MAX_VALUE。 |
@@ -2132,6 +2264,7 @@ static getCommonFactor(number1: number, number2: number): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2148,9 +2281,10 @@ console.info("result = " + result);
 
 
 
-#### getNumerator8+
+### getNumerator8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getNumerator(): number
 
@@ -2161,6 +2295,7 @@ getNumerator(): number
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2187,9 +2322,10 @@ console.info("result = " + result);
 
 
 
-#### getDenominator8+
+### getDenominator8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDenominator(): number
 
@@ -2200,6 +2336,7 @@ getDenominator(): number
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2226,9 +2363,10 @@ console.info("result = " + result);
 
 
 
-#### isZero8+
+### isZero8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isZero(): boolean
 
@@ -2239,6 +2377,7 @@ isZero(): boolean
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2265,9 +2404,10 @@ console.info("result = " + result);
 
 
 
-#### isNaN8+
+### isNaN8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isNaN(): boolean
 
@@ -2278,6 +2418,7 @@ isNaN(): boolean
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2304,9 +2445,10 @@ console.info("result = " + result);
 
 
 
-#### isFinite8+
+### isFinite8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isFinite(): boolean
 
@@ -2317,6 +2459,7 @@ isFinite(): boolean
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2343,9 +2486,10 @@ console.info("result = " + result);
 
 
 
-#### toString8+
+### toString8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toString(): string
 
@@ -2356,6 +2500,7 @@ toString(): string
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2382,9 +2527,10 @@ console.info("result = " + result);
 
 
 
-#### constructor(deprecated)
+### constructor(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(numerator: number,denominator: number)
 
@@ -2397,6 +2543,7 @@ RationalNumber的构造函数。
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2412,9 +2559,10 @@ let rationalNumber = new util.RationalNumber(1,2);
 
 
 
-#### compareTo(deprecated)
+### compareTo(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 compareTo(another: RationalNumber): number​
 
@@ -2428,12 +2576,14 @@ compareTo(another: RationalNumber): number​
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | another | RationalNumber | 是 | 其他的有理数对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2452,9 +2602,10 @@ console.info("result = " + result);
 
 
 
-#### getCommonDivisor(deprecated)
+### getCommonDivisor(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getCommonDivisor(number1: number,number2: number): number
 
@@ -2468,6 +2619,7 @@ static getCommonDivisor(number1: number,number2: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | number1 | number | 是 | 整数类型。-Number.MAX_VALUE <= number1 <= Number.MAX_VALUE。 |
@@ -2476,6 +2628,7 @@ static getCommonDivisor(number1: number,number2: number): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回两个给定数字的最大公约数。 |
@@ -2483,21 +2636,24 @@ static getCommonDivisor(number1: number,number2: number): number
 
 
 
-#### LRUCache9+
+## LRUCache9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 LRUCache用于在缓存空间不足时，将近期最少使用的数据替换为新数据。此设计基于资源访问的考虑：近期访问的数据，可能在不久的将来会再次访问。因此最少访问的数据被认为价值最低，应当优先从缓存中移除。
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** 以下各项对应的系统能力均为SystemCapability.Utils.Lang。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2517,9 +2673,10 @@ console.info('result = ' + result);
 
 
 
-#### constructor9+
+### constructor9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(capacity?: number)
 
@@ -2530,6 +2687,7 @@ constructor(capacity?: number)
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2544,9 +2702,10 @@ let lruCache = new util.LRUCache<number, number>();
 
 
 
-#### updateCapacity9+
+### updateCapacity9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateCapacity(newCapacity: number): void
 
@@ -2557,6 +2716,7 @@ updateCapacity(newCapacity: number): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2572,9 +2732,10 @@ pro.updateCapacity(100);
 
 
 
-#### toString9+
+### toString9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toString(): string
 
@@ -2585,6 +2746,7 @@ toString(): string
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2605,9 +2767,10 @@ console.info(pro.toString());
 
 
 
-#### getCapacity9+
+### getCapacity9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCapacity(): number
 
@@ -2618,6 +2781,7 @@ getCapacity(): number
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2635,9 +2799,10 @@ console.info('result = ' + result);
 
 
 
-#### clear9+
+### clear9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clear(): void
 
@@ -2663,9 +2828,10 @@ console.info('res = ' + res);
 
 
 
-#### getCreateCount9+
+### getCreateCount9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCreateCount(): number
 
@@ -2676,6 +2842,7 @@ getCreateCount(): number
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2706,9 +2873,10 @@ console.info('res = ' + res);
 
 
 
-#### getMissCount9+
+### getMissCount9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMissCount(): number
 
@@ -2719,6 +2887,7 @@ getMissCount(): number
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2738,9 +2907,10 @@ console.info('result = ' + result);
 
 
 
-#### getRemovalCount9+
+### getRemovalCount9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRemovalCount(): number
 
@@ -2751,6 +2921,7 @@ getRemovalCount(): number
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2771,9 +2942,10 @@ console.info('result = ' + result);
 
 
 
-#### getMatchCount9+
+### getMatchCount9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMatchCount(): number
 
@@ -2784,6 +2956,7 @@ getMatchCount(): number
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2803,9 +2976,10 @@ console.info('result = ' + result);
 
 
 
-#### getPutCount9+
+### getPutCount9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPutCount(): number
 
@@ -2816,6 +2990,7 @@ getPutCount(): number
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2834,9 +3009,10 @@ console.info('result = ' + result);
 
 
 
-#### isEmpty9+
+### isEmpty9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isEmpty(): boolean
 
@@ -2847,6 +3023,7 @@ isEmpty(): boolean
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2865,9 +3042,10 @@ console.info('result = ' + result);
 
 
 
-#### get9+
+### get9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get(key: K): V | undefined
 
@@ -2879,12 +3057,14 @@ get(key: K): V | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | K | 是 | 要查询的键。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2903,9 +3083,10 @@ console.info('result = ' + result);
 
 
 
-#### put9+
+### put9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 put(key: K,value: V): V
 
@@ -2917,6 +3098,7 @@ put(key: K,value: V): V
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | K | 是 | 要添加的键。 |
@@ -2924,6 +3106,7 @@ put(key: K,value: V): V
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2941,9 +3124,10 @@ console.info('result = ' + result);
 
 
 
-#### values9+
+### values9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 values(): V[]
 
@@ -2954,6 +3138,7 @@ values(): V[]
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2982,9 +3167,10 @@ console.info('result = ' + result);
 
 
 
-#### keys9+
+### keys9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 keys(): K[]
 
@@ -2995,6 +3181,7 @@ keys(): K[]
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3023,9 +3210,10 @@ console.info('result = ' + result);
 
 
 
-#### remove9+
+### remove9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 remove(key: K): V | undefined
 
@@ -3037,12 +3225,14 @@ remove(key: K): V | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | K | 是 | 要删除的键。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3061,9 +3251,10 @@ console.info('result = ' + result);
 
 
 
-#### afterRemoval9+
+### afterRemoval9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 afterRemoval(isEvict: boolean, key: K, value: V, newValue: V): void
 
@@ -3078,6 +3269,7 @@ afterRemoval(isEvict: boolean, key: K, value: V, newValue: V): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3169,9 +3361,10 @@ lru.clear();             // 清空整个缓冲区
 
 
 
-#### contains9+
+### contains9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contains(key: K): boolean
 
@@ -3183,12 +3376,14 @@ contains(key: K): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | K | 是 | 要检查的键。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3207,9 +3402,10 @@ console.info('result = ' + result);
 
 
 
-#### createDefault9+
+### createDefault9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createDefault(key: K): V
 
@@ -3221,12 +3417,14 @@ createDefault(key: K): V
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | K | 是 | 表示未匹配的键。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3244,9 +3442,10 @@ console.info('result = ' + result);
 
 
 
-#### entries9+
+### entries9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 entries(): IterableIterator<[K, V]>
 
@@ -3257,6 +3456,7 @@ entries(): IterableIterator<[K, V]>
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3280,9 +3480,10 @@ for (let value of pair) {
 
 
 
-#### [Symbol.iterator]9+
+### [Symbol.iterator]9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [Symbol.iterator](): IterableIterator<[K, V]>
 
@@ -3293,6 +3494,7 @@ for (let value of pair) {
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3316,9 +3518,10 @@ for (let value of pro) {
 
 
 
-#### ScopeComparable8+
+## ScopeComparable7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ScopeComparable类型的值需要实现compareTo方法，确保传入的数据具有可比性。
 
@@ -3326,9 +3529,10 @@ ScopeComparable类型的值需要实现compareTo方法，确保传入的数据�
 
 
 
-#### compareTo8+
+### compareTo8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 compareTo(other: ScopeComparable): boolean
 
@@ -3340,12 +3544,14 @@ compareTo(other: ScopeComparable): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | other | ScopeComparable | 是 | 表示要比较的值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3380,9 +3586,10 @@ class Temperature implements util.ScopeComparable {
 
 
 
-#### ScopeType8+
+## ScopeType8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ScopeType = ScopeComparable | number
 
@@ -3392,6 +3599,7 @@ type ScopeType = ScopeComparable | number
 
 **系统能力：** SystemCapability.Utils.Lang
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 表示值的类型为数字。 |
@@ -3400,17 +3608,19 @@ type ScopeType = ScopeComparable | number
 
 
 
-#### ScopeHelper9+
+## ScopeHelper9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ScopeHelper接口用于描述一个字段的有效范围，常用于输入值范围校验、配置参数区间判断等场景。构造函数用于创建具有指定下限和上限的对象，并要求这些对象必须具有可比性。通过ScopeHelper，开发者可以方便地进行范围交集、并集计算以及值是否在范围内的判断，避免无效数据进入业务逻辑。
 
 
 
-#### constructor9+
+### constructor9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(lowerObj: ScopeType, upperObj: ScopeType)
 
@@ -3421,6 +3631,7 @@ constructor(lowerObj: ScopeType, upperObj: ScopeType)
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3459,9 +3670,10 @@ console.info("range = " + range);
 
 
 
-#### toString9+
+### toString9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toString(): string
 
@@ -3472,6 +3684,7 @@ toString(): string
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3511,9 +3724,10 @@ console.info("result = " + result);
 
 
 
-#### intersect9+
+### intersect9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 intersect(range: ScopeHelper): ScopeHelper
 
@@ -3525,12 +3739,14 @@ intersect(range: ScopeHelper): ScopeHelper
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | range | ScopeHelper | 是 | 传入给定范围。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3573,9 +3789,10 @@ console.info("result = " + result);
 
 
 
-#### intersect9+
+### intersect9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 intersect(lowerObj:ScopeType,upperObj:ScopeType):ScopeHelper
 
@@ -3587,6 +3804,7 @@ intersect(lowerObj:ScopeType,upperObj:ScopeType):ScopeHelper
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | lowerObj | ScopeType | 是 | 给定范围的下限。 |
@@ -3594,6 +3812,7 @@ intersect(lowerObj:ScopeType,upperObj:ScopeType):ScopeHelper
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3635,9 +3854,10 @@ console.info("result = " + result);
 
 
 
-#### getUpper9+
+### getUpper9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUpper(): ScopeType
 
@@ -3648,6 +3868,7 @@ getUpper(): ScopeType
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3687,9 +3908,10 @@ console.info("result = " + result);
 
 
 
-#### getLower9+
+### getLower9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLower(): ScopeType
 
@@ -3700,6 +3922,7 @@ getLower(): ScopeType
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3739,9 +3962,10 @@ console.info("result = " + result);
 
 
 
-#### expand9+
+### expand9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 expand(lowerObj: ScopeType,upperObj: ScopeType): ScopeHelper
 
@@ -3753,6 +3977,7 @@ expand(lowerObj: ScopeType,upperObj: ScopeType): ScopeHelper
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | lowerObj | ScopeType | 是 | 给定范围的下限。 |
@@ -3760,6 +3985,7 @@ expand(lowerObj: ScopeType,upperObj: ScopeType): ScopeHelper
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3801,9 +4027,10 @@ console.info("result = " + result);
 
 
 
-#### expand9+
+### expand9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 expand(range: ScopeHelper): ScopeHelper
 
@@ -3815,12 +4042,14 @@ expand(range: ScopeHelper): ScopeHelper
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | range | ScopeHelper | 是 | 传入一个给定范围。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3863,9 +4092,10 @@ console.info("result = " + result);
 
 
 
-#### expand9+
+### expand9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 expand(value: ScopeType): ScopeHelper
 
@@ -3877,12 +4107,14 @@ expand(value: ScopeType): ScopeHelper
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ScopeType | 是 | 要检查是否在当前范围内的值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3923,9 +4155,10 @@ console.info("result = " + result);
 
 
 
-#### contains9+
+### contains9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contains(value: ScopeType): boolean
 
@@ -3937,12 +4170,14 @@ contains(value: ScopeType): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ScopeType | 是 | 传入一个给定值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3983,9 +4218,10 @@ console.info("result = " + result);
 
 
 
-#### contains9+
+### contains9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contains(range: ScopeHelper): boolean
 
@@ -3997,12 +4233,14 @@ contains(range: ScopeHelper): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | range | ScopeHelper | 是 | 传入一个给定范围。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4045,9 +4283,10 @@ console.info("result = " + result);
 
 
 
-#### clamp9+
+### clamp9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clamp(value: ScopeType): ScopeType
 
@@ -4059,12 +4298,14 @@ clamp(value: ScopeType): ScopeType
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ScopeType | 是 | 传入的给定值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4105,17 +4346,19 @@ console.info("result = " + result);
 
 
 
-#### Base64Helper9+
+## Base64Helper9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Base64Helper类提供Base64编解码和Base64URL编解码功能。Base64编码表包含A-Z、a-z、0-9这62个字符，以及"+"和"/"这两个特殊字符。在编码时，将原始数据按3个字节一组进行划分，得到若干个6位的数字，然后使用Base64编码表中对应的字符来表示这些数字。如果最后剩余1或2个字节，则需要使用"="字符进行补齐。Base64URL编码表包含A-Z、a-z、0-9以及"-"和"_"64个字符，Base64URL编码结果不含"="。
 
 
 
-#### constructor9+
+### constructor9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -4133,9 +4376,10 @@ let base64 = new util.Base64Helper();
 
 
 
-#### encodeSync9+
+### encodeSync9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 encodeSync(src: Uint8Array, options?: Type): Uint8Array
 
@@ -4147,6 +4391,7 @@ encodeSync(src: Uint8Array, options?: Type): Uint8Array
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | src | Uint8Array | 是 | 待编码的Uint8Array对象。 |
@@ -4154,6 +4399,7 @@ encodeSync(src: Uint8Array, options?: Type): Uint8Array
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4172,9 +4418,10 @@ console.info("result = " + result);
 
 
 
-#### encodeToStringSync9+
+### encodeToStringSync9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 encodeToStringSync(src: Uint8Array, options?: Type): string
 
@@ -4186,6 +4433,7 @@ encodeToStringSync(src: Uint8Array, options?: Type): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | src | Uint8Array | 是 | 待编码Uint8Array对象。 |
@@ -4193,6 +4441,7 @@ encodeToStringSync(src: Uint8Array, options?: Type): string
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4272,9 +4521,10 @@ aGVtZW5jZW9mYW55Y2FybmFscGxlYXN1cmU
 
 
 
-#### decodeSync9+
+### decodeSync9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 decodeSync(src: Uint8Array | string, options?: Type): Uint8Array
 
@@ -4286,6 +4536,7 @@ decodeSync(src: Uint8Array | string, options?: Type): Uint8Array
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | src | Uint8Array \| string | 是 | 待解码的Uint8Array对象或者字符串。 |
@@ -4293,6 +4544,7 @@ decodeSync(src: Uint8Array | string, options?: Type): Uint8Array
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4313,9 +4565,10 @@ console.info("result = " + result);
 
 
 
-#### encode9+
+### encode9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 encode(src: Uint8Array, options?: Type): Promise&lt;Uint8Array&gt;
 
@@ -4327,6 +4580,7 @@ encode(src: Uint8Array, options?: Type): Promise&lt;Uint8Array&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | src | Uint8Array | 是 | 待编码Uint8Array对象。 |
@@ -4334,6 +4588,7 @@ encode(src: Uint8Array, options?: Type): Promise&lt;Uint8Array&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4353,9 +4608,10 @@ base64Helper.encode(array).then((val) => {
 
 
 
-#### encodeToString9+
+### encodeToString9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 encodeToString(src: Uint8Array, options?: Type): Promise&lt;string&gt;
 
@@ -4367,6 +4623,7 @@ encodeToString(src: Uint8Array, options?: Type): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | src | Uint8Array | 是 | 异步编码输入Uint8Array对象。 |
@@ -4374,6 +4631,7 @@ encodeToString(src: Uint8Array, options?: Type): Promise&lt;string&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4398,9 +4656,10 @@ base64Helper.encodeToString(array, util.Type.MIME).then((val) => {
 
 
 
-#### decode9+
+### decode9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 decode(src: Uint8Array | string, options?: Type): Promise&lt;Uint8Array&gt;
 
@@ -4412,6 +4671,7 @@ decode(src: Uint8Array | string, options?: Type): Promise&lt;Uint8Array&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | src | Uint8Array \| string | 是 | 异步解码输入Uint8Array对象或者字符串。 |
@@ -4419,6 +4679,7 @@ decode(src: Uint8Array | string, options?: Type): Promise&lt;Uint8Array&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4440,17 +4701,19 @@ base64Helper.decode(array, util.Type.MIME).then((val) => {
 
 
 
-#### StringDecoder12+
+## StringDecoder12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供将二进制流解码为字符串的能力。支持的编码类型包括：utf-8、iso-8859-2、koi8-r、macintosh、windows-1250、windows-1251、gbk、gb18030、big5、utf-16be、utf-16le等。
 
 
 
-#### constructor12+
+### constructor12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(encoding?: string)
 
@@ -4461,6 +4724,7 @@ StringDecoder的构造函数，创建一个默认编码为'utf-8'的StringDecode
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4475,9 +4739,10 @@ let decoder = new util.StringDecoder();
 
 
 
-#### write12+
+### write12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 write(chunk: string | Uint8Array): string
 
@@ -4489,12 +4754,14 @@ write(chunk: string | Uint8Array): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | chunk | string \| Uint8Array | 是 | 需要解码的字符串。会根据输入的编码类型进行解码，参数为Uint8Array时正常解码，参数为string时会将参数直接返回。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4513,9 +4780,10 @@ console.info("decoded:", decoded);
 
 
 
-#### end12+
+### end12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 end(chunk?: string | Uint8Array): string
 
@@ -4527,12 +4795,14 @@ end(chunk?: string | Uint8Array): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | chunk | string \| Uint8Array | 否 | 需要解码的最后一部分数据。当还有剩余数据需要在结束解码时一并处理时传入此参数；不传入时默认为undefined，即仅返回内部缓冲区中存储的不完整字节序列的解码结果，不再处理新数据。要解码的字符串。默认为undefined。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4554,13 +4824,15 @@ console.info("endString:", endString);
 
 
 
-#### Type10+
+## Type10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Base64编码格式枚举。
 
 **系统能力：** SystemCapability.Utils.Lang
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -4572,17 +4844,19 @@ Base64编码格式枚举。
 
 
 
-#### types8+
+## types8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 types为不同类型的内置对象提供类型检查，可以避免由于类型错误导致的异常。该模块包含了多个工具函数，用于判断JS对象是否属于各种类型，例如：ArrayBuffer、Map、Set等。
 
 
 
-#### constructor8+
+### constructor8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -4600,9 +4874,10 @@ let type = new util.types();
 
 
 
-#### isAnyArrayBuffer8+
+### isAnyArrayBuffer8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isAnyArrayBuffer(value: Object): boolean
 
@@ -4614,12 +4889,14 @@ isAnyArrayBuffer(value: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4637,9 +4914,10 @@ console.info("result = " + result);
 
 
 
-#### isArrayBufferView8+
+### isArrayBufferView8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isArrayBufferView(value: Object): boolean
 
@@ -4653,12 +4931,14 @@ ArrayBufferView类型包括：Int8Array、Int16Array、Int32Array、Uint8Array�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4676,9 +4956,10 @@ console.info("result = " + result);
 
 
 
-#### isArgumentsObject8+
+### isArgumentsObject8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isArgumentsObject(value: Object): boolean
 
@@ -4690,12 +4971,14 @@ isArgumentsObject(value: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4716,9 +4999,10 @@ let f = foo();
 
 
 
-#### isArrayBuffer8+
+### isArrayBuffer8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isArrayBuffer(value: Object): boolean
 
@@ -4730,12 +5014,14 @@ isArrayBuffer(value: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4753,9 +5039,10 @@ console.info("result = " + result);
 
 
 
-#### isAsyncFunction8+
+### isAsyncFunction8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isAsyncFunction(value: Object): boolean
 
@@ -4767,12 +5054,14 @@ isAsyncFunction(value: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4822,9 +5111,10 @@ console.info("result = " + result2);
 
 
 
-#### isBooleanObject(deprecated)
+### isBooleanObject(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isBooleanObject(value: Object): boolean
 
@@ -4840,12 +5130,14 @@ isBooleanObject(value: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4863,9 +5155,10 @@ console.info("result = " + result);
 
 
 
-#### isBoxedPrimitive(deprecated)
+### isBoxedPrimitive(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isBoxedPrimitive(value: Object): boolean
 
@@ -4881,12 +5174,14 @@ isBoxedPrimitive(value: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4904,9 +5199,10 @@ console.info("result = " + result);
 
 
 
-#### isDataView8+
+### isDataView8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isDataView(value: Object): boolean
 
@@ -4918,12 +5214,14 @@ isDataView(value: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4942,9 +5240,10 @@ console.info("result = " + result);
 
 
 
-#### isDate8+
+### isDate8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isDate(value: Object): boolean
 
@@ -4956,12 +5255,14 @@ isDate(value: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4979,9 +5280,10 @@ console.info("result = " + result);
 
 
 
-#### isExternal8+
+### isExternal8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isExternal(value: Object): boolean
 
@@ -4993,12 +5295,14 @@ isExternal(value: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5054,9 +5358,10 @@ console.info("result01 = " + result01);
 
 
 
-#### isFloat32Array8+
+### isFloat32Array8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isFloat32Array(value: Object): boolean
 
@@ -5068,12 +5373,14 @@ isFloat32Array(value: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5091,9 +5398,10 @@ console.info("result = " + result);
 
 
 
-#### isFloat64Array8+
+### isFloat64Array8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isFloat64Array(value: Object): boolean
 
@@ -5105,12 +5413,14 @@ isFloat64Array(value: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5128,9 +5438,10 @@ console.info("result = " + result);
 
 
 
-#### isGeneratorFunction8+
+### isGeneratorFunction8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isGeneratorFunction(value: Object): boolean
 
@@ -5142,12 +5453,14 @@ isGeneratorFunction(value: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5194,9 +5507,10 @@ console.info("asyncGeneratorFunc.constructor.name === AsyncGeneratorFunction : "
 
 
 
-#### isGeneratorObject8+
+### isGeneratorObject8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isGeneratorObject(value: Object): boolean
 
@@ -5208,12 +5522,14 @@ isGeneratorObject(value: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5239,9 +5555,10 @@ console.info("result = " + result);
 
 
 
-#### isInt8Array8+
+### isInt8Array8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isInt8Array(value: Object): boolean
 
@@ -5253,12 +5570,14 @@ isInt8Array(value: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5276,9 +5595,10 @@ console.info("result = " + result);
 
 
 
-#### isInt16Array8+
+### isInt16Array8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isInt16Array(value: Object): boolean
 
@@ -5290,12 +5610,14 @@ isInt16Array(value: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5313,9 +5635,10 @@ console.info("result = " + result);
 
 
 
-#### isInt32Array8+
+### isInt32Array8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isInt32Array(value: Object): boolean
 
@@ -5327,12 +5650,14 @@ isInt32Array(value: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5350,9 +5675,10 @@ console.info("result = " + result);
 
 
 
-#### isMap8+
+### isMap8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isMap(value: Object): boolean
 
@@ -5364,12 +5690,14 @@ isMap(value: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5387,9 +5715,10 @@ console.info("result = " + result);
 
 
 
-#### isMapIterator8+
+### isMapIterator8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isMapIterator(value: Object): boolean
 
@@ -5401,12 +5730,14 @@ isMapIterator(value: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5425,9 +5756,10 @@ console.info("result = " + result);
 
 
 
-#### isNativeError8+
+### isNativeError8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isNativeError(value: Object): boolean
 
@@ -5439,12 +5771,14 @@ isNativeError(value: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5462,9 +5796,10 @@ console.info("result = " + result);
 
 
 
-#### isNumberObject(deprecated)
+### isNumberObject(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isNumberObject(value: Object): boolean
 
@@ -5480,12 +5815,14 @@ isNumberObject(value: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5503,9 +5840,10 @@ console.info("result = " + result);
 
 
 
-#### isPromise8+
+### isPromise8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isPromise(value: Object): boolean
 
@@ -5517,12 +5855,14 @@ isPromise(value: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5540,9 +5880,10 @@ console.info("result = " + result);
 
 
 
-#### isProxy8+
+### isProxy8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isProxy(value: Object): boolean
 
@@ -5554,12 +5895,14 @@ isProxy(value: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5581,9 +5924,10 @@ console.info("result = " + result);
 
 
 
-#### isRegExp8+
+### isRegExp8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isRegExp(value: Object): boolean
 
@@ -5595,12 +5939,14 @@ isRegExp(value: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5618,9 +5964,10 @@ console.info("result = " + result);
 
 
 
-#### isSet8+
+### isSet8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isSet(value: Object): boolean
 
@@ -5632,12 +5979,14 @@ isSet(value: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5656,9 +6005,10 @@ console.info("result = " + result);
 
 
 
-#### isSetIterator8+
+### isSetIterator8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isSetIterator(value: Object): boolean
 
@@ -5670,12 +6020,14 @@ isSetIterator(value: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5694,9 +6046,10 @@ console.info("result = " + result);
 
 
 
-#### isStringObject(deprecated)
+### isStringObject(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isStringObject(value: Object): boolean
 
@@ -5712,12 +6065,14 @@ isStringObject(value: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5735,9 +6090,10 @@ console.info("result = " + result);
 
 
 
-#### isSymbolObject(deprecated)
+### isSymbolObject(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isSymbolObject(value: Object): boolean
 
@@ -5753,12 +6109,14 @@ isSymbolObject(value: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5783,9 +6141,10 @@ console.info("result = " + result);
 
 
 
-#### isTypedArray8+
+### isTypedArray8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isTypedArray(value: Object): boolean
 
@@ -5799,12 +6158,14 @@ TypedArray类型，包括Int8Array、Int16Array、Int32Array、Uint8Array、Uint
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5822,9 +6183,10 @@ console.info("result = " + result);
 
 
 
-#### isUint8Array8+
+### isUint8Array8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isUint8Array(value: Object): boolean
 
@@ -5836,12 +6198,14 @@ isUint8Array(value: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5859,9 +6223,10 @@ console.info("result = " + result);
 
 
 
-#### isUint8ClampedArray8+
+### isUint8ClampedArray8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isUint8ClampedArray(value: Object): boolean
 
@@ -5873,12 +6238,14 @@ isUint8ClampedArray(value: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5896,9 +6263,10 @@ console.info("result = " + result);
 
 
 
-#### isUint16Array8+
+### isUint16Array8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isUint16Array(value: Object): boolean
 
@@ -5910,12 +6278,14 @@ isUint16Array(value: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5933,9 +6303,10 @@ console.info("result = " + result);
 
 
 
-#### isUint32Array8+
+### isUint32Array8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isUint32Array(value: Object): boolean
 
@@ -5947,12 +6318,14 @@ isUint32Array(value: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5970,9 +6343,10 @@ console.info("result = " + result);
 
 
 
-#### isWeakMap8+
+### isWeakMap8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isWeakMap(value: Object): boolean
 
@@ -5984,12 +6358,14 @@ isWeakMap(value: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6008,9 +6384,10 @@ console.info("result = " + result);
 
 
 
-#### isWeakSet8+
+### isWeakSet8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isWeakSet(value: Object): boolean
 
@@ -6022,12 +6399,14 @@ isWeakSet(value: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6045,9 +6424,10 @@ console.info("result = " + result);
 
 
 
-#### isBigInt64Array8+
+### isBigInt64Array8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isBigInt64Array(value: Object): boolean
 
@@ -6059,12 +6439,14 @@ isBigInt64Array(value: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6082,9 +6464,10 @@ console.info("result = " + result);
 
 
 
-#### isBigUint64Array8+
+### isBigUint64Array8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isBigUint64Array(value: Object): boolean
 
@@ -6096,12 +6479,14 @@ isBigUint64Array(value: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6119,9 +6504,10 @@ console.info("result = " + result);
 
 
 
-#### isModuleNamespaceObject8+
+### isModuleNamespaceObject8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isModuleNamespaceObject(value: Object): boolean
 
@@ -6133,12 +6519,14 @@ isModuleNamespaceObject(value: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6165,9 +6553,10 @@ console.info("result = " + result);
 
 
 
-#### isSharedArrayBuffer8+
+### isSharedArrayBuffer8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isSharedArrayBuffer(value: Object): boolean
 
@@ -6179,12 +6568,14 @@ isSharedArrayBuffer(value: Object): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | 待检测对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6202,9 +6593,10 @@ console.info("result = " + result);
 
 
 
-#### AutoFinalizer&lt;T&gt;22+
+## AutoFinalizer&lt;T&gt;22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 AutoFinalizer是一个接口类，用于在ArkTS对象释放时提供回调。通过实现回调接口，开发者可自定义对象被回收时自动触发的资源清理逻辑。
 
@@ -6214,9 +6606,10 @@ AutoFinalizer是一个接口类，用于在ArkTS对象释放时提供回调。�
 
 
 
-#### onFinalization22+
+### onFinalization22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onFinalization(heldValue: T): void
 
@@ -6228,6 +6621,7 @@ onFinalization(heldValue: T): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | heldValue | T | 是 | 当监听的对象被回收时，该值会被传递给onFinalization回调方法。 |
@@ -6235,17 +6629,19 @@ onFinalization(heldValue: T): void
 
 
 
-#### AutoFinalizerCleaner&lt;T&gt;22+
+## AutoFinalizerCleaner&lt;T&gt;22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 AutoFinalizerCleaner是用于关联对象生命周期与资源清理逻辑的工具类，需要和AutoFinalizer&lt;T&gt;一起使用。主要的作用是将实现了AutoFinalizer&lt;T&gt;接口的对象与特定值绑定，当对象被回收时自动触发资源清理回调。只使用AutoFinalizerCleaner而不实现AutoFinalizer接口没有任何功能。
 
 
 
-#### register&lt;T&gt;22+
+### register&lt;T&gt;22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static register&lt;T&gt;(obj: AutoFinalizer&lt;T&gt;, heldValue: T): void
 
@@ -6256,6 +6652,7 @@ static register&lt;T&gt;(obj: AutoFinalizer&lt;T&gt;, heldValue: T): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6282,9 +6679,10 @@ const device = new DeviceManageViewModel("test");
 
 
 
-#### LruBuffer(deprecated)
+## LruBuffer(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 8开始支持，从API version 9开始废弃，建议使用 LRUCache 9+ 替代。
@@ -6292,11 +6690,13 @@ const device = new DeviceManageViewModel("test");
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** 以下各项对应的系统能力均为SystemCapability.Utils.Lang。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -6318,9 +6718,10 @@ console.info("result = " + result);
 
 
 
-#### constructor(deprecated)
+### constructor(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(capacity?: number)
 
@@ -6333,6 +6734,7 @@ constructor(capacity?: number)
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6347,9 +6749,10 @@ let pro : util.LruBuffer<number,number> = new util.LruBuffer();
 
 
 
-#### updateCapacity(deprecated)
+### updateCapacity(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateCapacity(newCapacity: number): void
 
@@ -6362,6 +6765,7 @@ updateCapacity(newCapacity: number): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6377,9 +6781,10 @@ pro.updateCapacity(100);
 
 
 
-#### toString(deprecated)
+### toString(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toString(): string
 
@@ -6392,6 +6797,7 @@ toString(): string
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6412,9 +6818,10 @@ console.info("result = " + result);
 
 
 
-#### getCapacity(deprecated)
+### getCapacity(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCapacity(): number
 
@@ -6427,6 +6834,7 @@ getCapacity(): number
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6444,9 +6852,10 @@ console.info("result = " + result);
 
 
 
-#### clear(deprecated)
+### clear(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clear(): void
 
@@ -6469,9 +6878,10 @@ pro.clear();
 
 
 
-#### getCreateCount(deprecated)
+### getCreateCount(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCreateCount(): number
 
@@ -6484,6 +6894,7 @@ getCreateCount(): number
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6502,9 +6913,10 @@ console.info("result = " + result);
 
 
 
-#### getMissCount(deprecated)
+### getMissCount(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMissCount(): number
 
@@ -6517,6 +6929,7 @@ getMissCount(): number
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6536,9 +6949,10 @@ console.info("result = " + result);
 
 
 
-#### getRemovalCount(deprecated)
+### getRemovalCount(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRemovalCount(): number
 
@@ -6551,6 +6965,7 @@ getRemovalCount(): number
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6571,9 +6986,10 @@ console.info("result = " + result);
 
 
 
-#### getMatchCount(deprecated)
+### getMatchCount(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMatchCount(): number
 
@@ -6586,6 +7002,7 @@ getMatchCount(): number
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6605,9 +7022,10 @@ console.info("result = " + result);
 
 
 
-#### getPutCount(deprecated)
+### getPutCount(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPutCount(): number
 
@@ -6620,6 +7038,7 @@ getPutCount(): number
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6638,9 +7057,10 @@ console.info("result = " + result);
 
 
 
-#### isEmpty(deprecated)
+### isEmpty(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isEmpty(): boolean
 
@@ -6653,6 +7073,7 @@ isEmpty(): boolean
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6671,9 +7092,10 @@ console.info("result = " + result);
 
 
 
-#### get(deprecated)
+### get(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get(key: K): V | undefined
 
@@ -6687,12 +7109,14 @@ get(key: K): V | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | K | 是 | 要查询的键。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6711,9 +7135,10 @@ console.info("result = " + result);
 
 
 
-#### put(deprecated)
+### put(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 put(key: K,value: V): V
 
@@ -6727,6 +7152,7 @@ put(key: K,value: V): V
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | K | 是 | 要添加的键。 |
@@ -6734,6 +7160,7 @@ put(key: K,value: V): V
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6751,9 +7178,10 @@ console.info("result = " + result);
 
 
 
-#### values(deprecated)
+### values(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 values(): V[]
 
@@ -6766,6 +7194,7 @@ values(): V[]
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6786,9 +7215,10 @@ console.info("result = " + result);
 
 
 
-#### keys(deprecated)
+### keys(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 keys(): K[]
 
@@ -6801,6 +7231,7 @@ keys(): K[]
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6819,9 +7250,10 @@ console.info("result = " + result);
 
 
 
-#### remove(deprecated)
+### remove(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 remove(key: K): V | undefined
 
@@ -6835,12 +7267,14 @@ remove(key: K): V | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | K | 是 | 要删除的键。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6859,9 +7293,10 @@ console.info("result = " + result);
 
 
 
-#### afterRemoval(deprecated)
+### afterRemoval(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 afterRemoval(isEvict: boolean,key: K,value: V,newValue: V): void
 
@@ -6874,6 +7309,7 @@ afterRemoval(isEvict: boolean,key: K,value: V,newValue: V): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6910,9 +7346,10 @@ lru.put(33, 3);
 
 
 
-#### contains(deprecated)
+### contains(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contains(key: K): boolean
 
@@ -6926,12 +7363,14 @@ contains(key: K): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | K | 是 | 表示要检查的键。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6950,9 +7389,10 @@ console.info('result = ' + result);
 
 
 
-#### createDefault(deprecated)
+### createDefault(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createDefault(key: K): V
 
@@ -6966,12 +7406,14 @@ createDefault(key: K): V
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | K | 是 | 表示丢失的键。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6987,9 +7429,10 @@ let result = pro.createDefault(50);
 
 
 
-#### entries(deprecated)
+### entries(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 entries(): IterableIterator<[K, V]>
 
@@ -7002,6 +7445,7 @@ entries(): IterableIterator<[K, V]>
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7018,9 +7462,10 @@ let result = pro.entries();
 
 
 
-#### [Symbol.iterator](deprecated)
+### [Symbol.iterator](deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [Symbol.iterator](): IterableIterator<[K, V]>
 
@@ -7033,6 +7478,7 @@ let result = pro.entries();
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7049,9 +7495,10 @@ let result = pro[Symbol.iterator]();
 
 
 
-#### Scope(deprecated)
+## Scope(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 8开始支持，从API version 9开始废弃，建议使用 ScopeHelper 9+ 替代。
@@ -7059,9 +7506,10 @@ let result = pro[Symbol.iterator]();
 
 
 
-#### constructor(deprecated)
+### constructor(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(lowerObj: ScopeType, upperObj: ScopeType)
 
@@ -7074,6 +7522,7 @@ constructor(lowerObj: ScopeType, upperObj: ScopeType)
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -7113,9 +7562,10 @@ console.info("range = " + range);
 
 
 
-#### toString(deprecated)
+### toString(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toString(): string
 
@@ -7128,6 +7578,7 @@ toString(): string
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7167,9 +7618,10 @@ console.info("result = " + result);
 
 
 
-#### intersect(deprecated)
+### intersect(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 intersect(range: Scope): Scope
 
@@ -7183,12 +7635,14 @@ intersect(range: Scope): Scope
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | range | Scope | 是 | 传入一个给定范围。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7231,9 +7685,10 @@ console.info("result = " + result);
 
 
 
-#### intersect(deprecated)
+### intersect(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 intersect(lowerObj:ScopeType,upperObj:ScopeType):Scope
 
@@ -7247,6 +7702,7 @@ intersect(lowerObj:ScopeType,upperObj:ScopeType):Scope
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | lowerObj | ScopeType | 是 | 给定范围的下限。 |
@@ -7254,6 +7710,7 @@ intersect(lowerObj:ScopeType,upperObj:ScopeType):Scope
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7295,9 +7752,10 @@ console.info("result = " + result);
 
 
 
-#### getUpper(deprecated)
+### getUpper(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUpper(): ScopeType
 
@@ -7310,6 +7768,7 @@ getUpper(): ScopeType
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7349,9 +7808,10 @@ console.info("result = " + result);
 
 
 
-#### getLower(deprecated)
+### getLower(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLower(): ScopeType
 
@@ -7364,6 +7824,7 @@ getLower(): ScopeType
 **系统能力：** SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7403,9 +7864,10 @@ console.info("result = " + result);
 
 
 
-#### expand(deprecated)
+### expand(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 expand(lowerObj: ScopeType,upperObj: ScopeType): Scope
 
@@ -7419,6 +7881,7 @@ expand(lowerObj: ScopeType,upperObj: ScopeType): Scope
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | lowerObj | ScopeType | 是 | 给定范围的下限。 |
@@ -7426,6 +7889,7 @@ expand(lowerObj: ScopeType,upperObj: ScopeType): Scope
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7467,9 +7931,10 @@ console.info("result = " + result);
 
 
 
-#### expand(deprecated)
+### expand(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 expand(range: Scope): Scope
 
@@ -7483,12 +7948,14 @@ expand(range: Scope): Scope
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | range | Scope | 是 | 传入一个给定范围。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7531,9 +7998,10 @@ console.info("result = " + result);
 
 
 
-#### expand(deprecated)
+### expand(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 expand(value: ScopeType): Scope
 
@@ -7547,12 +8015,14 @@ expand(value: ScopeType): Scope
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ScopeType | 是 | 传入一个给定值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7593,9 +8063,10 @@ console.info("result = " + result);
 
 
 
-#### contains(deprecated)
+### contains(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contains(value: ScopeType): boolean
 
@@ -7609,12 +8080,14 @@ contains(value: ScopeType): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ScopeType | 是 | 传入一个给定值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7655,9 +8128,10 @@ console.info("result = " + result);
 
 
 
-#### contains(deprecated)
+### contains(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contains(range: Scope): boolean
 
@@ -7671,12 +8145,14 @@ contains(range: Scope): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | range | Scope | 是 | 传入一个给定范围。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7719,9 +8195,10 @@ console.info("result = " + result);
 
 
 
-#### clamp(deprecated)
+### clamp(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clamp(value: ScopeType): ScopeType
 
@@ -7735,12 +8212,14 @@ clamp(value: ScopeType): ScopeType
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ScopeType | 是 | 传入的给定值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7781,9 +8260,10 @@ console.info("result = " + result);
 
 
 
-#### Base64(deprecated)
+## Base64(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 8开始支持，从API version 9开始废弃，建议使用 Base64Helper 9+ 替代。
@@ -7791,9 +8271,10 @@ console.info("result = " + result);
 
 
 
-#### constructor(deprecated)
+### constructor(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -7813,9 +8294,10 @@ let base64 = new  util.Base64();
 
 
 
-#### encodeSync(deprecated)
+### encodeSync(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 encodeSync(src: Uint8Array): Uint8Array
 
@@ -7829,12 +8311,14 @@ encodeSync(src: Uint8Array): Uint8Array
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | src | Uint8Array | 是 | 编码输入Uint8数组。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7853,9 +8337,10 @@ console.info("result = " + result);
 
 
 
-#### encodeToStringSync(deprecated)
+### encodeToStringSync(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 encodeToStringSync(src: Uint8Array): string
 
@@ -7869,12 +8354,14 @@ encodeToStringSync(src: Uint8Array): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | src | Uint8Array | 是 | 编码输入Uint8数组。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7893,9 +8380,10 @@ console.info("result = " + result);
 
 
 
-#### decodeSync(deprecated)
+### decodeSync(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 decodeSync(src: Uint8Array | string): Uint8Array
 
@@ -7909,12 +8397,14 @@ decodeSync(src: Uint8Array | string): Uint8Array
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | src | Uint8Array \| string | 是 | 解码输入Uint8数组或者字符串。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7933,9 +8423,10 @@ console.info("result = " + result);
 
 
 
-#### encode(deprecated)
+### encode(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 encode(src: Uint8Array): Promise&lt;Uint8Array&gt;
 
@@ -7949,12 +8440,14 @@ encode(src: Uint8Array): Promise&lt;Uint8Array&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | src | Uint8Array | 是 | 异步编码输入Uint8数组。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7974,9 +8467,10 @@ base64.encode(array).then((val) => {
 
 
 
-#### encodeToString(deprecated)
+### encodeToString(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 encodeToString(src: Uint8Array): Promise&lt;string&gt;
 
@@ -7990,12 +8484,14 @@ encodeToString(src: Uint8Array): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | src | Uint8Array | 是 | 异步编码输入Uint8数组。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8015,9 +8511,10 @@ base64.encodeToString(array).then((val) => {
 
 
 
-#### decode(deprecated)
+### decode(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 decode(src: Uint8Array | string): Promise&lt;Uint8Array&gt;
 
@@ -8031,12 +8528,14 @@ decode(src: Uint8Array | string): Promise&lt;Uint8Array&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | src | Uint8Array \| string | 是 | 异步解码输入Uint8数组或者字符串。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |

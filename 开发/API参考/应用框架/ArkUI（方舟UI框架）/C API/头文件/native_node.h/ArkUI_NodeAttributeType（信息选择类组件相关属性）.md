@@ -1,15 +1,19 @@
 # ArkUI_NodeAttributeType（信息选择类组件相关属性）
 
-更新时间：2026-07-28 11:23:46（官网已下线）
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-node-h-nodeattributetype-informationselection
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_NodeAttributeType
 ```
   
 
-#### 概述
+## 概述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义ArkUI在Native侧可以设置信息选择类组件相关属性样式集合，包含DatePicker、TimePicker、TextPicker、CalendarPicker等组件属性设置。
  
@@ -21,7 +25,10 @@ enum ArkUI_NodeAttributeType
  
   
 
-#### NODE_DATE_PICKER_LUNAR
+## NODE_DATE_PICKER_LUNAR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_DATE_PICKER_LUNAR = MAX_NODE_SCOPE_NUM * ARKUI_NODE_DATE_PICKER = 13000
@@ -35,6 +42,7 @@ NODE_DATE_PICKER_LUNAR = MAX_NODE_SCOPE_NUM * ARKUI_NODE_DATE_PICKER = 13000
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否显示农历，默认值0。0表示不展示农历，1表示展示农历。 |
@@ -42,6 +50,7 @@ NODE_DATE_PICKER_LUNAR = MAX_NODE_SCOPE_NUM * ARKUI_NODE_DATE_PICKER = 13000
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否显示农历。返回0表示不展示农历，返回1表示展示农历。 |
@@ -49,13 +58,16 @@ NODE_DATE_PICKER_LUNAR = MAX_NODE_SCOPE_NUM * ARKUI_NODE_DATE_PICKER = 13000
  
   
 
-#### NODE_DATE_PICKER_START
+## NODE_DATE_PICKER_START
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_DATE_PICKER_START = 13001
 ```
  
-设置日期选择器组件选择器的起始日期，支持属性设置，属性重置和属性获取接口。设置的起始日期会限定日期选择的有效范围，超出范围的选中日期会自动调整。
+设置日期选择器组件的起始日期，支持属性设置，属性重置和属性获取接口。设置的起始日期会限定日期选择的有效范围，超出范围的选中日期会自动调整。
  
 作为属性设置方法参数、属性获取方法返回值[ArkUI_AttributeItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-arkui-attributeitem)格式如下。
  
@@ -63,6 +75,7 @@ NODE_DATE_PICKER_START = 13001
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 日期，默认值"1970-1-1"。格式：年-月-日，年份支持1或4位，月份和日期为1-2位数字。 |
@@ -70,6 +83,7 @@ NODE_DATE_PICKER_START = 13001
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .string | 设置的起始日期，格式为年-月-日。 |
@@ -77,13 +91,16 @@ NODE_DATE_PICKER_START = 13001
  
   
 
-#### NODE_DATE_PICKER_END
+## NODE_DATE_PICKER_END
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_DATE_PICKER_END = 13002
 ```
  
-设置日期选择器组件选择器的结束日期，支持属性设置，属性重置和属性获取接口。设置的结束日期会限定日期选择的有效范围，超出范围的选中日期会自动调整。
+设置日期选择器组件的结束日期，支持属性设置，属性重置和属性获取接口。设置的结束日期会限定日期选择的有效范围，超出范围的选中日期会自动调整。
  
 作为属性设置方法参数、属性获取方法返回值[ArkUI_AttributeItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-arkui-attributeitem)格式如下。
  
@@ -91,6 +108,7 @@ NODE_DATE_PICKER_END = 13002
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 日期，默认值"2100-12-31"。格式：年-月-日，年份支持1或4位，月份和日期为1-2位数字。 |
@@ -98,6 +116,7 @@ NODE_DATE_PICKER_END = 13002
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .string | 设置的结束日期，格式为年-月-日。 |
@@ -105,7 +124,10 @@ NODE_DATE_PICKER_END = 13002
  
   
 
-#### NODE_DATE_PICKER_SELECTED
+## NODE_DATE_PICKER_SELECTED
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_DATE_PICKER_SELECTED = 13003
@@ -119,6 +141,7 @@ NODE_DATE_PICKER_SELECTED = 13003
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 日期，默认值"2024-01-22"，未设置时使用默认值。格式：年-月-日，年份支持1或4位，月份和日期为1-2位数字。 |
@@ -126,6 +149,7 @@ NODE_DATE_PICKER_SELECTED = 13003
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .string | 选中的日期，格式为年-月-日。 |
@@ -133,7 +157,10 @@ NODE_DATE_PICKER_SELECTED = 13003
  
   
 
-#### NODE_DATE_PICKER_DISAPPEAR_TEXT_STYLE
+## NODE_DATE_PICKER_DISAPPEAR_TEXT_STYLE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_DATE_PICKER_DISAPPEAR_TEXT_STYLE = 13004
@@ -147,21 +174,26 @@ NODE_DATE_PICKER_DISAPPEAR_TEXT_STYLE = 13004
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| .string | 参数5个，格式为字符串，以 ';' 分割： 参数1： 文本颜色，#ARGB类型。 参数2： 文本大小，数字类型，单位fp。 参数3： 文本粗细，字符串枚举("bold", "normal", "bolder", "lighter", "medium", "regular")。 参数4： 文本字体列表，使用 ',' 进行分割。 参数5： 文本样式，字符串枚举("normal", "italic")。 如 "#ff182431;14;normal;Arial,HarmonyOS Sans;normal" 。未设置时使用系统默认样式。 |
+| .string | 参数5个，格式为字符串，以“;”分割： 参数1：文本颜色，#ARGB类型。 参数2：文本大小，数字类型，单位fp。 参数3：文本粗细，字符串枚举（“bold”，“normal”，“bolder”，“lighter”，“medium”，“regular”）。 参数4：文本字体列表，使用“,”进行分割。 参数5：文本样式，字符串枚举（“normal”, “italic”）。 如“#ff182431;14;normal;Arial,HarmonyOS Sans;normal”。未设置时使用系统默认样式。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| .string | 参数5个，格式为字符串，以 ';' 分割： 参数1： 文本颜色，#argb类型。 参数2： 文本大小，数字类型，单位fp。 参数3： 文本粗细，字符串枚举("bold", "normal", "bolder", "lighter", "medium", "regular")。 参数4： 文本字体列表，使用 ',' 进行分割。 参数5： 文本样式，字符串枚举("normal", "italic")。 如 "#ff182431;14;normal;Arial,HarmonyOS Sans;normal" 。 |
+| .string | 参数5个，格式为字符串，以“;”分割： 参数1：文本颜色，#ARGB类型。 参数2：文本大小，数字类型，单位fp。 参数3：文本粗细，字符串枚举（“bold”，“normal”，“bolder”，“lighter”，“medium”，“regular”）。 参数4：文本字体列表，使用“,”进行分割。 参数5：文本样式，字符串枚举（“normal”, “italic”）。 如“#ff182431;14;normal;Arial,HarmonyOS Sans;normal”。 |
  
  
   
 
-#### NODE_DATE_PICKER_TEXT_STYLE
+## NODE_DATE_PICKER_TEXT_STYLE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_DATE_PICKER_TEXT_STYLE = 13005
@@ -175,21 +207,26 @@ NODE_DATE_PICKER_TEXT_STYLE = 13005
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| .string | 参数5个，格式为字符串，以 ';' 分割： 参数1： 文本颜色，#argb类型。 参数2： 文本大小，数字类型，单位fp。 参数3： 文本粗细，字符串枚举("bold", "normal", "bolder", "lighter", "medium", "regular")。 参数4： 文本字体列表，使用 ',' 进行分割。 参数5： 文本样式，字符串枚举("normal", "italic")。 如 "#ff182431;14;normal;Arial,HarmonyOS Sans;normal" 。未设置时使用系统默认样式。 |
+| .string | 参数5个，格式为字符串，以“;”分割： 参数1：文本颜色，#ARGB类型。 参数2：文本大小，数字类型，单位fp。 参数3：文本粗细，字符串枚举（“bold”，“normal”，“bolder”，“lighter”，“medium”，“regular”）。 参数4：文本字体列表，使用“,”进行分割。 参数5：文本样式，字符串枚举（“normal”, “italic”）。 如“#ff182431;14;normal;Arial,HarmonyOS Sans;normal”。未设置时使用系统默认样式。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| .string | 参数5个，格式为字符串，以 ';' 分割： 参数1： 文本颜色，#argb类型。 参数2： 文本大小，数字类型，单位fp。 参数3： 文本粗细，字符串枚举("bold", "normal", "bolder", "lighter", "medium", "regular")。 参数4： 文本字体列表，使用 ',' 进行分割。 参数5： 文本样式，字符串枚举("normal", "italic")。 如 "#ff182431;14;normal;Arial,HarmonyOS Sans;normal" 。 |
+| .string | 参数5个，格式为字符串，以“;”分割： 参数1：文本颜色，#ARGB类型。 参数2：文本大小，数字类型，单位fp。 参数3：文本粗细，字符串枚举（“bold”，“normal”，“bolder”，“lighter”，“medium”，“regular”）。 参数4：文本字体列表，使用“,”进行分割。 参数5：文本样式，字符串枚举（“normal”, “italic”）。 如“#ff182431;14;normal;Arial,HarmonyOS Sans;normal”。 |
  
  
   
 
-#### NODE_DATE_PICKER_SELECTED_TEXT_STYLE
+## NODE_DATE_PICKER_SELECTED_TEXT_STYLE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_DATE_PICKER_SELECTED_TEXT_STYLE = 13006
@@ -203,21 +240,26 @@ NODE_DATE_PICKER_SELECTED_TEXT_STYLE = 13006
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| .string | 参数5个，格式为字符串，以 ';' 分割： 参数1： 文本颜色，#argb类型。 参数2： 文本大小，数字类型，单位fp。 参数3： 文本粗细，字符串枚举("bold", "normal", "bolder", "lighter", "medium", "regular")。 参数4： 文本字体列表，使用 ',' 进行分割。 参数5： 文本样式，字符串枚举("normal", "italic")。 如 "#ff182431;14;normal;Arial,HarmonyOS Sans;normal" 。未设置时使用系统默认样式。 |
+| .string | 参数5个，格式为字符串，以“;”分割： 参数1：文本颜色，#ARGB类型。 参数2：文本大小，数字类型，单位fp。 参数3：文本粗细，字符串枚举（“bold”，“normal”，“bolder”，“lighter”，“medium”，“regular”）。 参数4：文本字体列表，使用“,”进行分割。 参数5：文本样式，字符串枚举（“normal”, “italic”）。 如“#ff182431;14;normal;Arial,HarmonyOS Sans;normal”。未设置时使用系统默认样式。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| .string | 参数5个，格式为字符串，以 ';' 分割： 参数1： 文本颜色，#argb类型。 参数2： 文本大小，数字类型，单位fp。 参数3： 文本粗细，字符串枚举("bold", "normal", "bolder", "lighter", "medium", "regular")。 参数4： 文本字体列表，使用 ',' 进行分割。 参数5： 文本样式，字符串枚举("normal", "italic")。 如 "#ff182431;14;normal;Arial,HarmonyOS Sans;normal" 。 |
+| .string | 参数5个，格式为字符串，以“;”分割： 参数1：文本颜色，#ARGB类型。 参数2：文本大小，数字类型，单位fp。 参数3：文本粗细，字符串枚举（“bold”，“normal”，“bolder”，“lighter”，“medium”，“regular”）。 参数4：文本字体列表，使用“,”进行分割。 参数5：文本样式，字符串枚举（“normal”, “italic”）。 如“#ff182431;14;normal;Arial,HarmonyOS Sans;normal”。 |
  
  
   
 
-#### NODE_DATE_PICKER_MODE
+## NODE_DATE_PICKER_MODE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_DATE_PICKER_MODE = 13007
@@ -233,6 +275,7 @@ NODE_DATE_PICKER_MODE = 13007
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 显示的日期列类型。参数类型ArkUI_DatePickerMode。默认值：完整的日期列（年、月、日）。 |
@@ -240,6 +283,7 @@ NODE_DATE_PICKER_MODE = 13007
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 当前设置的日期列类型枚举值，类型为ArkUI_DatePickerMode。 |
@@ -247,7 +291,10 @@ NODE_DATE_PICKER_MODE = 13007
  
   
 
-#### NODE_DATE_PICKER_ENABLE_HAPTIC_FEEDBACK
+## NODE_DATE_PICKER_ENABLE_HAPTIC_FEEDBACK
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_DATE_PICKER_ENABLE_HAPTIC_FEEDBACK = 13008
@@ -261,6 +308,7 @@ NODE_DATE_PICKER_ENABLE_HAPTIC_FEEDBACK = 13008
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否开启触控反馈。1表示开启触控反馈，0表示不开启触控反馈。开启后，是否存在触控反馈取决于系统硬件支持情况。 |
@@ -268,6 +316,7 @@ NODE_DATE_PICKER_ENABLE_HAPTIC_FEEDBACK = 13008
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否开启触控反馈。1表示开启触控反馈，0表示不开启触控反馈。 |
@@ -275,7 +324,10 @@ NODE_DATE_PICKER_ENABLE_HAPTIC_FEEDBACK = 13008
  
   
 
-#### NODE_DATE_PICKER_CAN_LOOP
+## NODE_DATE_PICKER_CAN_LOOP
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_DATE_PICKER_CAN_LOOP = 13009
@@ -291,6 +343,7 @@ Picker组件可循环滚动属性，支持属性设置，属性重置和属性�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否可循环。1表示可循环，0表示不可循环。默认值：1，设置异常值时使用默认值。 |
@@ -298,6 +351,7 @@ Picker组件可循环滚动属性，支持属性设置，属性重置和属性�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 0表示不可循环，1表示可循环。 说明：可循环情况下，年份随着月份的循环滚动进行联动加减，月份随着日的循环滚动进行联动加减。 不可循环情况下，年/月/日到达本列的顶部或底部时，无法再进行滚动，年/月/日之间也无法再联动加减。 |
@@ -305,7 +359,10 @@ Picker组件可循环滚动属性，支持属性设置，属性重置和属性�
  
   
 
-#### NODE_TIME_PICKER_SELECTED
+## NODE_TIME_PICKER_SELECTED
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TIME_PICKER_SELECTED = MAX_NODE_SCOPE_NUM * ARKUI_NODE_TIME_PICKER = 14000
@@ -319,6 +376,7 @@ NODE_TIME_PICKER_SELECTED = MAX_NODE_SCOPE_NUM * ARKUI_NODE_TIME_PICKER = 14000
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 时间。默认值：当前系统时间。设置格式：时:分或时-分（例：23:59或23-59）。返回格式：时,分,秒（例：23,59,0）。 |
@@ -326,6 +384,7 @@ NODE_TIME_PICKER_SELECTED = MAX_NODE_SCOPE_NUM * ARKUI_NODE_TIME_PICKER = 14000
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .string | 选中的时间。格式：时,分,秒，使用,分隔（例：23,59,0）。 |
@@ -333,7 +392,10 @@ NODE_TIME_PICKER_SELECTED = MAX_NODE_SCOPE_NUM * ARKUI_NODE_TIME_PICKER = 14000
  
   
 
-#### NODE_TIME_PICKER_USE_MILITARY_TIME
+## NODE_TIME_PICKER_USE_MILITARY_TIME
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TIME_PICKER_USE_MILITARY_TIME = 14001
@@ -347,6 +409,7 @@ NODE_TIME_PICKER_USE_MILITARY_TIME = 14001
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否为24小时制，默认值：0。0表示展示时间为12小时制，1表示展示时间为24小时制。 |
@@ -354,6 +417,7 @@ NODE_TIME_PICKER_USE_MILITARY_TIME = 14001
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否为24小时制。返回0表示展示时间为12小时制（对应false），返回1表示展示时间为24小时制（对应true）。 |
@@ -361,7 +425,10 @@ NODE_TIME_PICKER_USE_MILITARY_TIME = 14001
  
   
 
-#### NODE_TIME_PICKER_DISAPPEAR_TEXT_STYLE
+## NODE_TIME_PICKER_DISAPPEAR_TEXT_STYLE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TIME_PICKER_DISAPPEAR_TEXT_STYLE = 14002
@@ -375,21 +442,26 @@ NODE_TIME_PICKER_DISAPPEAR_TEXT_STYLE = 14002
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| .string | 参数5个，格式为字符串，以 ';' 分割： 参数1： 文本颜色，#argb类型。 参数2： 文本大小，数字类型，单位fp。 参数3： 文本粗细，字符串枚举("bold", "normal", "bolder", "lighter", "medium", "regular")。 参数4： 文本字体列表，使用 ',' 进行分割。 参数5： 文本样式，字符串枚举("normal", "italic")。 如 "#ff182431;14;normal;Arial,HarmonyOS Sans;normal" 。未设置时使用系统默认样式。 |
+| .string | 参数5个，格式为字符串，以“;”分割： 参数1：文本颜色，#ARGB类型。 参数2：文本大小，数字类型，单位fp。 参数3：文本粗细，字符串枚举（“bold”，“normal”，“bolder”，“lighter”，“medium”，“regular”）。 参数4：文本字体列表，使用“,”进行分割。 参数5：文本样式，字符串枚举（“normal”, “italic”）。 如“#ff182431;14;normal;Arial,HarmonyOS Sans;normal”。未设置时使用系统默认样式。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| .string | 参数5个，格式为字符串，以 ';' 分割： 参数1： 文本颜色，#argb类型。 参数2： 文本大小，数字类型，单位fp。 参数3： 文本粗细，字符串枚举("bold", "normal", "bolder", "lighter", "medium", "regular")。 参数4： 文本字体列表，使用 ',' 进行分割。 参数5： 文本样式，字符串枚举("normal", "italic")。 如 "#ff182431;14;normal;Arial,HarmonyOS Sans;normal" 。 |
+| .string | 参数5个，格式为字符串，以“;”分割： 参数1：文本颜色，#ARGB类型。 参数2：文本大小，数字类型，单位fp。 参数3：文本粗细，字符串枚举（“bold”，“normal”，“bolder”，“lighter”，“medium”，“regular”）。 参数4：文本字体列表，使用“,”进行分割。 参数5：文本样式，字符串枚举（“normal”, “italic”）。 如“#ff182431;14;normal;Arial,HarmonyOS Sans;normal”。 |
  
  
   
 
-#### NODE_TIME_PICKER_TEXT_STYLE
+## NODE_TIME_PICKER_TEXT_STYLE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TIME_PICKER_TEXT_STYLE = 14003
@@ -403,21 +475,26 @@ NODE_TIME_PICKER_TEXT_STYLE = 14003
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| .string | 参数5个，格式为字符串，以 ';' 分割： 参数1： 文本颜色，#argb类型。 参数2： 文本大小，数字类型，单位fp。 参数3： 文本粗细，字符串枚举("bold", "normal", "bolder", "lighter", "medium", "regular")。 参数4： 文本字体列表，使用 ',' 进行分割。 参数5： 文本样式，字符串枚举("normal", "italic")。 如 "#ff182431;14;normal;Arial,HarmonyOS Sans;normal" 。未设置时使用系统默认样式。 |
+| .string | 参数5个，格式为字符串，以“;”分割： 参数1：文本颜色，#ARGB类型。 参数2：文本大小，数字类型，单位fp。 参数3：文本粗细，字符串枚举（“bold”，“normal”，“bolder”，“lighter”，“medium”，“regular”）。 参数4：文本字体列表，使用“,”进行分割。 参数5：文本样式，字符串枚举（“normal”, “italic”）。 如“#ff182431;14;normal;Arial,HarmonyOS Sans;normal”。未设置时使用系统默认样式。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| .string | 参数5个，格式为字符串，以 ';' 分割： 参数1： 文本颜色，#argb类型。 参数2： 文本大小，数字类型，单位fp。 参数3： 文本粗细，字符串枚举("bold", "normal", "bolder", "lighter", "medium", "regular")。 参数4： 文本字体列表，使用 ',' 进行分割。 参数5： 文本样式，字符串枚举("normal", "italic")。 如 "#ff182431;14;normal;Arial,HarmonyOS Sans;normal" 。 |
+| .string | 参数5个，格式为字符串，以“;”分割： 参数1：文本颜色，#ARGB类型。 参数2：文本大小，数字类型，单位fp。 参数3：文本粗细，字符串枚举（“bold”，“normal”，“bolder”，“lighter”，“medium”，“regular”）。 参数4：文本字体列表，使用“,”进行分割。 参数5：文本样式，字符串枚举（“normal”, “italic”）。 如“#ff182431;14;normal;Arial,HarmonyOS Sans;normal”。 |
  
  
   
 
-#### NODE_TIME_PICKER_SELECTED_TEXT_STYLE
+## NODE_TIME_PICKER_SELECTED_TEXT_STYLE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TIME_PICKER_SELECTED_TEXT_STYLE = 14004
@@ -431,21 +508,26 @@ NODE_TIME_PICKER_SELECTED_TEXT_STYLE = 14004
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| .string | 参数5个，格式为字符串，以 ';' 分割： 参数1： 文本颜色，#argb类型。 参数2： 文本大小，数字类型，单位fp。 参数3： 文本粗细，字符串枚举("bold", "normal", "bolder", "lighter", "medium", "regular")。 参数4： 文本字体列表，使用 ',' 进行分割。 参数5： 文本样式，字符串枚举("normal", "italic")。 如 "#ff182431;14;normal;Arial,HarmonyOS Sans;normal" 。未设置时使用系统默认样式。 |
+| .string | 参数5个，格式为字符串，以“;”分割： 参数1：文本颜色，#ARGB类型。 参数2：文本大小，数字类型，单位fp。 参数3：文本粗细，字符串枚举（“bold”，“normal”，“bolder”，“lighter”，“medium”，“regular”）。 参数4：文本字体列表，使用“,”进行分割。 参数5：文本样式，字符串枚举（“normal”, “italic”）。 如“#ff182431;14;normal;Arial,HarmonyOS Sans;normal”。未设置时使用系统默认样式。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| .string | 参数5个，格式为字符串，以 ';' 分割： 参数1： 文本颜色，#argb类型。 参数2： 文本大小，数字类型，单位fp。 参数3： 文本粗细，字符串枚举("bold", "normal", "bolder", "lighter", "medium", "regular")。 参数4： 文本字体列表，使用 ',' 进行分割。 参数5： 文本样式，字符串枚举("normal", "italic")。 如 "#ff182431;14;normal;Arial,HarmonyOS Sans;normal" 。 |
+| .string | 参数5个，格式为字符串，以“;”分割： 参数1：文本颜色，#ARGB类型。 参数2：文本大小，数字类型，单位fp。 参数3：文本粗细，字符串枚举（“bold”，“normal”，“bolder”，“lighter”，“medium”，“regular”）。 参数4：文本字体列表，使用“,”进行分割。 参数5：文本样式，字符串枚举（“normal”, “italic”）。 如“#ff182431;14;normal;Arial,HarmonyOS Sans;normal”。 |
  
  
   
 
-#### NODE_TIME_PICKER_START
+## NODE_TIME_PICKER_START
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TIME_PICKER_START = 14005
@@ -459,6 +541,7 @@ NODE_TIME_PICKER_START = 14005
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 时间。默认值："0:0"。设置时仅支持时:分，使用:或-分隔（例：12:59或12-59）。 |
@@ -466,6 +549,7 @@ NODE_TIME_PICKER_START = 14005
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .string | 设置的起始时间。格式：时:分:秒（例：0:0:0）。 |
@@ -473,7 +557,10 @@ NODE_TIME_PICKER_START = 14005
  
   
 
-#### NODE_TIME_PICKER_END
+## NODE_TIME_PICKER_END
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TIME_PICKER_END = 14006
@@ -487,6 +574,7 @@ NODE_TIME_PICKER_END = 14006
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 时间。默认值："23:59"。设置时仅支持时:分，使用:或-分隔（例：23:59或23-59）。 |
@@ -494,6 +582,7 @@ NODE_TIME_PICKER_END = 14006
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .string | 设置的结束时间。格式：时:分:秒（例：23:59:0）。 |
@@ -501,7 +590,10 @@ NODE_TIME_PICKER_END = 14006
  
   
 
-#### NODE_TIME_PICKER_ENABLE_CASCADE
+## NODE_TIME_PICKER_ENABLE_CASCADE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TIME_PICKER_ENABLE_CASCADE = 14007
@@ -517,6 +609,7 @@ NODE_TIME_PICKER_ENABLE_CASCADE = 14007
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 在12小时制时，设置上午和下午的标识是否会根据小时数自动切换，默认值：0。0表示不自动切换，1表示自动切换。 |
@@ -524,6 +617,7 @@ NODE_TIME_PICKER_ENABLE_CASCADE = 14007
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 在12小时制时，上午和下午的标识是否会根据小时数自动切换。返回0表示不自动切换（对应false），返回1表示自动切换（对应true）。 |
@@ -531,7 +625,10 @@ NODE_TIME_PICKER_ENABLE_CASCADE = 14007
  
   
 
-#### NODE_TEXT_PICKER_OPTION_RANGE
+## NODE_TEXT_PICKER_OPTION_RANGE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_PICKER_OPTION_RANGE = MAX_NODE_SCOPE_NUM * ARKUI_NODE_TEXT_PICKER = 15000
@@ -547,6 +644,7 @@ NODE_TEXT_PICKER_OPTION_RANGE = MAX_NODE_SCOPE_NUM * ARKUI_NODE_TEXT_PICKER = 15
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 使用的选择器类型ArkUI_TextPickerRangeType，默认值为ARKUI_TEXTPICKER_RANGETYPE_SINGLE。ARKUI_TEXTPICKER_RANGETYPE_SINGLE适用于单列选择，ARKUI_TEXTPICKER_RANGETYPE_MULTI适用于多列独立选择，ARKUI_TEXTPICKER_RANGETYPE_RANGE_CONTENT适用于单列带图片选择，ARKUI_TEXTPICKER_RANGETYPE_CASCADE适用于多列联动选择。 |
@@ -556,6 +654,7 @@ NODE_TEXT_PICKER_OPTION_RANGE = MAX_NODE_SCOPE_NUM * ARKUI_NODE_TEXT_PICKER = 15
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 使用的选择器类型ArkUI_TextPickerRangeType。 |
@@ -564,7 +663,10 @@ NODE_TEXT_PICKER_OPTION_RANGE = MAX_NODE_SCOPE_NUM * ARKUI_NODE_TEXT_PICKER = 15
  
   
 
-#### NODE_TEXT_PICKER_OPTION_SELECTED
+## NODE_TEXT_PICKER_OPTION_SELECTED
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_PICKER_OPTION_SELECTED = 15001
@@ -578,6 +680,7 @@ NODE_TEXT_PICKER_OPTION_SELECTED = 15001
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].u32 | 默认选中项在选择器选项数组中的索引值，取值范围为[0, length-1]。超出范围时抛出异常。多列选择器时，如存在多个索引值则逐个添加。默认值：0。 |
@@ -585,6 +688,7 @@ NODE_TEXT_PICKER_OPTION_SELECTED = 15001
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].u32 | 选中项在选择器选项数组中的索引值，如存在多个索引值则逐个添加。 |
@@ -592,7 +696,10 @@ NODE_TEXT_PICKER_OPTION_SELECTED = 15001
  
   
 
-#### NODE_TEXT_PICKER_OPTION_VALUE
+## NODE_TEXT_PICKER_OPTION_VALUE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_PICKER_OPTION_VALUE = 15002
@@ -606,6 +713,7 @@ NODE_TEXT_PICKER_OPTION_VALUE = 15002
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 选中项的值，如存在多个值则逐个添加，用分号分隔。默认值：空字符串，未设置时使用默认值。 |
@@ -613,6 +721,7 @@ NODE_TEXT_PICKER_OPTION_VALUE = 15002
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .string | 选中项的值，如存在多个值则逐个添加，用分号分隔。 |
@@ -620,7 +729,10 @@ NODE_TEXT_PICKER_OPTION_VALUE = 15002
  
   
 
-#### NODE_TEXT_PICKER_DISAPPEAR_TEXT_STYLE
+## NODE_TEXT_PICKER_DISAPPEAR_TEXT_STYLE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_PICKER_DISAPPEAR_TEXT_STYLE = 15003
@@ -634,21 +746,26 @@ NODE_TEXT_PICKER_DISAPPEAR_TEXT_STYLE = 15003
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| .string | 参数5个，格式为字符串，以 ';' 分割： 参数1： 文本颜色，#argb类型； 参数2： 文本大小，数字类型，单位fp； 参数3： 文本粗细，字符串枚举("bold", "normal", "bolder", "lighter", "medium", "regular")； 参数4： 文本字体列表，使用 ',' 进行分割； 参数5： 文本样式，字符串枚举("normal", "italic")。 如 "#ff182431;14;normal;Arial,HarmonyOS Sans;normal" 。未设置时使用系统默认样式。 |
+| .string | 参数5个，格式为字符串，以“;”分割： 参数1：文本颜色，#ARGB类型； 参数2：文本大小，数字类型，单位fp； 参数3：文本粗细，字符串枚举（“bold”，“normal”，“bolder”，“lighter”，“medium”，“regular”）； 参数4：文本字体列表，使用“,”进行分割； 参数5：文本样式，字符串枚举（“normal”, “italic”）。 如“#ff182431;14;normal;Arial,HarmonyOS Sans;normal”。未设置时使用系统默认样式。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| .string | 参数5个，格式为字符串，以 ';' 分割： 参数1： 文本颜色，#argb类型； 参数2： 文本大小，数字类型，单位fp； 参数3： 文本粗细，字符串枚举("bold", "normal", "bolder", "lighter", "medium", "regular")； 参数4： 文本字体列表，使用 ',' 进行分割； 参数5： 文本样式，字符串枚举("normal", "italic")； 如 "#ff182431;14;normal;Arial,HarmonyOS Sans;normal" 。 |
+| .string | 参数5个，格式为字符串，以“;”分割： 参数1：文本颜色，#ARGB类型； 参数2：文本大小，数字类型，单位fp； 参数3：文本粗细，字符串枚举（“bold”，“normal”，“bolder”，“lighter”，“medium”，“regular”）； 参数4：文本字体列表，使用“,”进行分割； 参数5：文本样式，字符串枚举（“normal”, “italic”）； 如“#ff182431;14;normal;Arial,HarmonyOS Sans;normal”。 |
  
  
   
 
-#### NODE_TEXT_PICKER_TEXT_STYLE
+## NODE_TEXT_PICKER_TEXT_STYLE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_PICKER_TEXT_STYLE = 15004
@@ -662,21 +779,26 @@ NODE_TEXT_PICKER_TEXT_STYLE = 15004
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| .string | 参数5个，格式为字符串，以 ';' 分割： 参数1： 文本颜色，#argb类型。 参数2： 文本大小，数字类型，单位fp。 参数3： 文本粗细，字符串枚举("bold", "normal", "bolder", "lighter", "medium", "regular")。 参数4： 文本字体列表，使用 ',' 进行分割。 参数5： 文本样式，字符串枚举("normal", "italic")。 如 "#ff182431;14;normal;Arial,HarmonyOS Sans;normal" 。未设置时使用系统默认样式。 |
+| .string | 参数5个，格式为字符串，以“;”分割： 参数1：文本颜色，#ARGB类型。 参数2：文本大小，数字类型，单位fp。 参数3：文本粗细，字符串枚举（“bold”，“normal”，“bolder”，“lighter”，“medium”，“regular”）。 参数4：文本字体列表，使用“,”进行分割。 参数5：文本样式，字符串枚举（“normal”, “italic”）。 如“#ff182431;14;normal;Arial,HarmonyOS Sans;normal”。未设置时使用系统默认样式。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| .string | 参数5个，格式为字符串，以 ';' 分割： 参数1： 文本颜色，#argb类型。 参数2： 文本大小，数字类型，单位fp。 参数3： 文本粗细，字符串枚举("bold", "normal", "bolder", "lighter", "medium", "regular")。 参数4： 文本字体列表，使用 ',' 进行分割。 参数5： 文本样式，字符串枚举("normal", "italic")。 如 "#ff182431;14;normal;Arial,HarmonyOS Sans;normal" 。 |
+| .string | 参数5个，格式为字符串，以“;”分割： 参数1：文本颜色，#ARGB类型。 参数2：文本大小，数字类型，单位fp。 参数3：文本粗细，字符串枚举（“bold”，“normal”，“bolder”，“lighter”，“medium”，“regular”）。 参数4：文本字体列表，使用“,”进行分割。 参数5：文本样式，字符串枚举（“normal”, “italic”）。 如“#ff182431;14;normal;Arial,HarmonyOS Sans;normal”。 |
  
  
   
 
-#### NODE_TEXT_PICKER_SELECTED_TEXT_STYLE
+## NODE_TEXT_PICKER_SELECTED_TEXT_STYLE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_PICKER_SELECTED_TEXT_STYLE = 15005
@@ -690,21 +812,26 @@ NODE_TEXT_PICKER_SELECTED_TEXT_STYLE = 15005
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| .string | 参数5个，格式为字符串，以 ';' 分割： 参数1： 文本颜色，#argb类型； 参数2： 文本大小，数字类型，单位fp； 参数3： 文本粗细，字符串枚举("bold", "normal", "bolder", "lighter", "medium", "regular")； 参数4： 文本字体列表，使用 ',' 进行分割； 参数5： 文本样式，字符串枚举("normal", "italic")； 如 "#ff182431;14;normal;Arial,HarmonyOS Sans;normal" 。未设置时使用系统默认样式。 |
+| .string | 参数5个，格式为字符串，以“;”分割： 参数1：文本颜色，#ARGB类型； 参数2：文本大小，数字类型，单位fp； 参数3：文本粗细，字符串枚举（“bold”，“normal”，“bolder”，“lighter”，“medium”，“regular”）； 参数4：文本字体列表，使用“,”进行分割； 参数5：文本样式，字符串枚举（“normal”, “italic”）； 如“#ff182431;14;normal;Arial,HarmonyOS Sans;normal”。未设置时使用系统默认样式。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| .string | 参数5个，格式为字符串，以 ';' 分割： 参数1： 文本颜色，#argb类型； 参数2： 文本大小，数字类型，单位fp； 参数3： 文本粗细，字符串枚举("bold", "normal", "bolder", "lighter", "medium", "regular")； 参数4： 文本字体列表，使用 ',' 进行分割； 参数5： 文本样式，字符串枚举("normal", "italic")； 如 "#ff182431;14;normal;Arial,HarmonyOS Sans;normal" 。 |
+| .string | 参数5个，格式为字符串，以“;”分割： 参数1：文本颜色，#ARGB类型； 参数2：文本大小，数字类型，单位fp； 参数3：文本粗细，字符串枚举（“bold”，“normal”，“bolder”，“lighter”，“medium”，“regular”）； 参数4：文本字体列表，使用“,”进行分割； 参数5：文本样式，字符串枚举（“normal”, “italic”）； 如“#ff182431;14;normal;Arial,HarmonyOS Sans;normal”。 |
  
  
   
 
-#### NODE_TEXT_PICKER_SELECTED_INDEX
+## NODE_TEXT_PICKER_SELECTED_INDEX
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_PICKER_SELECTED_INDEX = 15006
@@ -718,6 +845,7 @@ NODE_TEXT_PICKER_SELECTED_INDEX = 15006
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0...].i32 | 默认选中项在选择器选项数组中的索引值数组。用于多列选择器时设置每列的默认选中项索引。默认值：每列均为0。取值范围：每列索引值为[0, 对应列长度-1]，超出范围时抛出异常。 |
@@ -725,6 +853,7 @@ NODE_TEXT_PICKER_SELECTED_INDEX = 15006
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0...].i32 | 当前选中的索引值数组，用于多列选择器时表示每列的选中项索引。 |
@@ -732,7 +861,10 @@ NODE_TEXT_PICKER_SELECTED_INDEX = 15006
  
   
 
-#### NODE_TEXT_PICKER_CAN_LOOP
+## NODE_TEXT_PICKER_CAN_LOOP
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_PICKER_CAN_LOOP = 15007
@@ -748,6 +880,7 @@ Picker组件可循环滚动属性，支持属性设置，属性重置和属性�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 0表示不可循环，1表示可循环。默认值：1。 |
@@ -755,6 +888,7 @@ Picker组件可循环滚动属性，支持属性设置，属性重置和属性�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 0表示不可循环，1表示可循环。 |
@@ -762,7 +896,10 @@ Picker组件可循环滚动属性，支持属性设置，属性重置和属性�
  
   
 
-#### NODE_TEXT_PICKER_DEFAULT_PICKER_ITEM_HEIGHT
+## NODE_TEXT_PICKER_DEFAULT_PICKER_ITEM_HEIGHT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_PICKER_DEFAULT_PICKER_ITEM_HEIGHT = 15008
@@ -776,6 +913,7 @@ NODE_TEXT_PICKER_DEFAULT_PICKER_ITEM_HEIGHT = 15008
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 当前设置的选项高度值，单位为vp。默认值：40.0vp，未设置时使用默认值。 |
@@ -783,6 +921,7 @@ NODE_TEXT_PICKER_DEFAULT_PICKER_ITEM_HEIGHT = 15008
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 当前设置的选项高度值，单位为vp。 |
@@ -790,7 +929,10 @@ NODE_TEXT_PICKER_DEFAULT_PICKER_ITEM_HEIGHT = 15008
  
   
 
-#### NODE_TEXT_PICKER_COLUMN_WIDTHS
+## NODE_TEXT_PICKER_COLUMN_WIDTHS
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_PICKER_COLUMN_WIDTHS = 15009
@@ -804,27 +946,34 @@ NODE_TEXT_PICKER_COLUMN_WIDTHS = 15009
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 设置的第1个选择项列宽，为总宽度的百分比。默认情况下，所有选择项的列宽相等，默认值为不设置时各列均分。 |
 | .value[1]?.f32 | 设置的第2个选择项列宽，为总宽度的百分比。默认情况下，所有选择项的列宽相等。 |
-| .value[2]?.f32 | 设置的第3个选择项列宽，为总宽度的百分比。默认情况下，所有选择项的列宽相等。 ...。 |
+| .value[2]?.f32 | 设置的第3个选择项列宽，为总宽度的百分比。默认情况下，所有选择项的列宽相等。 |
+| ... | ... |
 | .value[n]?.f32 | 设置的第n+1个选择项列宽，为总宽度的百分比。默认情况下，所有选择项的列宽相等。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 第1列宽度，总宽度的百分比。 |
 | .value[1].f32 | 第2列宽度，总宽度的百分比。 |
-| .value[2].f32 | 第3列宽度，总宽度的百分比。 ...。 |
+| .value[2].f32 | 第3列宽度，总宽度的百分比。 |
+| ... | ... |
 | .value[n].f32 | 第n+1列宽度，总宽度的百分比。 |
  
  
   
 
-#### NODE_TEXT_PICKER_ENABLE_HAPTIC_FEEDBACK
+## NODE_TEXT_PICKER_ENABLE_HAPTIC_FEEDBACK
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_PICKER_ENABLE_HAPTIC_FEEDBACK = 15010
@@ -838,6 +987,7 @@ NODE_TEXT_PICKER_ENABLE_HAPTIC_FEEDBACK = 15010
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否开启触控反馈。1表示开启触控反馈，0表示不开启触控反馈。开启后，是否存在触控反馈取决于系统硬件支持情况。 |
@@ -845,6 +995,7 @@ NODE_TEXT_PICKER_ENABLE_HAPTIC_FEEDBACK = 15010
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否开启触控反馈。1表示开启触控反馈，0表示不开启触控反馈。 |
@@ -852,7 +1003,10 @@ NODE_TEXT_PICKER_ENABLE_HAPTIC_FEEDBACK = 15010
  
   
 
-#### NODE_TEXT_PICKER_SELECTED_BACKGROUND_STYLE
+## NODE_TEXT_PICKER_SELECTED_BACKGROUND_STYLE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_PICKER_SELECTED_BACKGROUND_STYLE = 15011
@@ -866,17 +1020,19 @@ NODE_TEXT_PICKER_SELECTED_BACKGROUND_STYLE = 15011
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].u32 | 背景颜色，采用 0xARGB 格式。其中A表示透明度(0x00完全透明~0xFF完全不透明)，RGB表示颜色值(0x000000~0xFFFFFF)，每个字节取值范围0x00~0xFF。例如，0xFF1122FF表示完全不透明的蓝色。 |
 | .value[1].f32 | 左上角的圆角半径，单位为VP。 |
 | .value[2].f32 | 右上角的圆角半径，单位为VP。 |
 | .value[3].f32 | 左下角的圆角半径，单位为VP。 |
-| .value[4].f32 | 右下角的圆角半径，单位为VP。 默认值：背景颜色：0x0C182431；圆角半径：24.0。 |
+| .value[4].f32 | 右下角的圆角半径，单位为VP。 背景颜色默认值：0x0C182431；圆角半径默认值：24.0。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].u32 | 背景颜色，采用 0xARGB 格式，例如，0xFF1122FF。 |
@@ -888,7 +1044,10 @@ NODE_TEXT_PICKER_SELECTED_BACKGROUND_STYLE = 15011
  
   
 
-#### NODE_PICKER_OPTION_SELECTED_INDEX
+## NODE_PICKER_OPTION_SELECTED_INDEX
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_PICKER_OPTION_SELECTED_INDEX = MAX_NODE_SCOPE_NUM * ARKUI_NODE_PICKER
@@ -902,6 +1061,7 @@ NODE_PICKER_OPTION_SELECTED_INDEX = MAX_NODE_SCOPE_NUM * ARKUI_NODE_PICKER
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].u32 | 索引值。默认值：0。 |
@@ -909,6 +1069,7 @@ NODE_PICKER_OPTION_SELECTED_INDEX = MAX_NODE_SCOPE_NUM * ARKUI_NODE_PICKER
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].u32 | 选择器数据选择范围内当前选中项的索引。 |
@@ -916,7 +1077,10 @@ NODE_PICKER_OPTION_SELECTED_INDEX = MAX_NODE_SCOPE_NUM * ARKUI_NODE_PICKER
  
   
 
-#### NODE_PICKER_ENABLE_HAPTIC_FEEDBACK
+## NODE_PICKER_ENABLE_HAPTIC_FEEDBACK
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_PICKER_ENABLE_HAPTIC_FEEDBACK = 1018001
@@ -930,6 +1094,7 @@ NODE_PICKER_ENABLE_HAPTIC_FEEDBACK = 1018001
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否启用触控反馈。1表示启用反馈，0表示不启用。默认值：1。开启后，是否存在触控反馈取决于系统硬件支持情况。 |
@@ -937,6 +1102,7 @@ NODE_PICKER_ENABLE_HAPTIC_FEEDBACK = 1018001
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否启用触控反馈。1表示启用反馈，0表示不启用。是否存在触控反馈取决于系统硬件支持情况。 |
@@ -944,7 +1110,10 @@ NODE_PICKER_ENABLE_HAPTIC_FEEDBACK = 1018001
  
   
 
-#### NODE_PICKER_CAN_LOOP
+## NODE_PICKER_CAN_LOOP
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_PICKER_CAN_LOOP = 1018002
@@ -960,6 +1129,7 @@ NODE_PICKER_CAN_LOOP = 1018002
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否支持滚动循环。1表示支持滚动循环，0表示不支持。默认值：1。 如果子组件的个数小于8个，无论设置为1还是0，都不会循环滚动。 |
@@ -967,6 +1137,7 @@ NODE_PICKER_CAN_LOOP = 1018002
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否支持滚动循环。返回0表示不支持滚动循环，返回1表示支持滚动循环。 |
@@ -974,7 +1145,10 @@ NODE_PICKER_CAN_LOOP = 1018002
  
   
 
-#### NODE_PICKER_SELECTION_INDICATOR
+## NODE_PICKER_SELECTION_INDICATOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_PICKER_SELECTION_INDICATOR = 1018003
@@ -988,6 +1162,7 @@ NODE_PICKER_SELECTION_INDICATOR = 1018003
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 参数类型为ArkUI_PickerIndicatorStyle。默认值： { type: PickerIndicatorType.BACKGROUND, borderRadius: { value:12, unit:LengthUnit.vp }, backgroundColor: 'sys.color.comp_background_tertiary' } 未设置时使用默认值。 |
@@ -995,6 +1170,7 @@ NODE_PICKER_SELECTION_INDICATOR = 1018003
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .object | 当前设置的选择指示器样式对象，类型为ArkUI_PickerIndicatorStyle。 |
@@ -1002,7 +1178,10 @@ NODE_PICKER_SELECTION_INDICATOR = 1018003
  
   
 
-#### NODE_PICKER_DISPLAYED_ITEM_COUNT
+## NODE_PICKER_DISPLAYED_ITEM_COUNT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_PICKER_DISPLAYED_ITEM_COUNT = 1018004
@@ -1016,6 +1195,7 @@ NODE_PICKER_DISPLAYED_ITEM_COUNT = 1018004
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 可见选项数量。取值范围为[2, 9]内的整数。传入小数时按向下取整处理；传入偶数时，会规范为不小于该值的奇数（例如2变为3、8变为9）。不在取值范围内时使用默认值7。 |
@@ -1023,6 +1203,7 @@ NODE_PICKER_DISPLAYED_ITEM_COUNT = 1018004
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 当前Picker容器可见选项的数量，取值范围为[2, 9]内的整数。 |
@@ -1030,7 +1211,10 @@ NODE_PICKER_DISPLAYED_ITEM_COUNT = 1018004
  
   
 
-#### NODE_PICKER_ITEM_HEIGHT
+## NODE_PICKER_ITEM_HEIGHT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_PICKER_ITEM_HEIGHT = 1018005
@@ -1044,6 +1228,7 @@ NODE_PICKER_ITEM_HEIGHT = 1018005
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 选项高度，单位为vp。有效范围为[40, 64]。小于40vp或大于64vp时使用默认值40vp。不支持百分比。 |
@@ -1051,6 +1236,7 @@ NODE_PICKER_ITEM_HEIGHT = 1018005
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 当前选项高度，单位为vp。 |
@@ -1058,7 +1244,10 @@ NODE_PICKER_ITEM_HEIGHT = 1018005
  
   
 
-#### NODE_CALENDAR_PICKER_HINT_RADIUS
+## NODE_CALENDAR_PICKER_HINT_RADIUS
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_CALENDAR_PICKER_HINT_RADIUS = MAX_NODE_SCOPE_NUM * ARKUI_NODE_CALENDAR_PICKER = 16000
@@ -1072,6 +1261,7 @@ NODE_CALENDAR_PICKER_HINT_RADIUS = MAX_NODE_SCOPE_NUM * ARKUI_NODE_CALENDAR_PICK
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 日历选中态底板圆角半径，默认值：16.0，单位为vp，表示底板样式为圆形。当输入参数为0.0时表示底板样式为直角矩形；当输入参数为(0.0, 16.0)时，底板样式为圆角矩形；当输入参数为负数或大于16.0时，恢复成默认值16.0。 |
@@ -1079,6 +1269,7 @@ NODE_CALENDAR_PICKER_HINT_RADIUS = MAX_NODE_SCOPE_NUM * ARKUI_NODE_CALENDAR_PICK
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 日历选中态底板圆角半径，默认值：16.0，单位为vp，表示底板样式为圆形。取值范围[0.0, 16.0]，其中取值为0.0表示底板样式为直角矩形。 |
@@ -1086,7 +1277,10 @@ NODE_CALENDAR_PICKER_HINT_RADIUS = MAX_NODE_SCOPE_NUM * ARKUI_NODE_CALENDAR_PICK
  
   
 
-#### NODE_CALENDAR_PICKER_SELECTED_DATE
+## NODE_CALENDAR_PICKER_SELECTED_DATE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_CALENDAR_PICKER_SELECTED_DATE = 16001
@@ -1100,6 +1294,7 @@ NODE_CALENDAR_PICKER_SELECTED_DATE = 16001
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].u32 | 选中的年。默认值：当前系统年份。传入无效值时使用默认值。 |
@@ -1109,6 +1304,7 @@ NODE_CALENDAR_PICKER_SELECTED_DATE = 16001
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].u32 | 选中的年。 |
@@ -1118,7 +1314,10 @@ NODE_CALENDAR_PICKER_SELECTED_DATE = 16001
  
   
 
-#### NODE_CALENDAR_PICKER_EDGE_ALIGNMENT
+## NODE_CALENDAR_PICKER_EDGE_ALIGNMENT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_CALENDAR_PICKER_EDGE_ALIGNMENT = 16002
@@ -1132,6 +1331,7 @@ NODE_CALENDAR_PICKER_EDGE_ALIGNMENT = 16002
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 对齐方式类型，参数类型ArkUI_CalendarAlignment。用于设置日历选择器相对入口组件的对齐位置。 |
@@ -1141,6 +1341,7 @@ NODE_CALENDAR_PICKER_EDGE_ALIGNMENT = 16002
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 对齐方式类型，参数类型ArkUI_CalendarAlignment。 |
@@ -1150,7 +1351,10 @@ NODE_CALENDAR_PICKER_EDGE_ALIGNMENT = 16002
  
   
 
-#### NODE_CALENDAR_PICKER_TEXT_STYLE
+## NODE_CALENDAR_PICKER_TEXT_STYLE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_CALENDAR_PICKER_TEXT_STYLE = 16003
@@ -1164,6 +1368,7 @@ NODE_CALENDAR_PICKER_TEXT_STYLE = 16003
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0]?.u32 | 入口区的文本颜色。未设置或执行resetAttribute后，使用系统主题 calendar_picker_entry_font_color 解析的值（具体色值随主题变化，可通过getAttribute获取）。 |
@@ -1173,6 +1378,7 @@ NODE_CALENDAR_PICKER_TEXT_STYLE = 16003
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].u32 | 入口区的文本颜色。 |
@@ -1182,7 +1388,10 @@ NODE_CALENDAR_PICKER_TEXT_STYLE = 16003
  
   
 
-#### NODE_CALENDAR_PICKER_START
+## NODE_CALENDAR_PICKER_START
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_CALENDAR_PICKER_START = 16004
@@ -1196,6 +1405,7 @@ NODE_CALENDAR_PICKER_START = 16004
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 日期。格式：年-月-日，年份支持1或4位，月份和日期为1-2位数字，如"1970-1-1"、"2024-05-20"。默认值：1970-1-1。 |
@@ -1203,6 +1413,7 @@ NODE_CALENDAR_PICKER_START = 16004
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .string | 设置的日历选择器开始日期，格式为年-月-日。 |
@@ -1210,7 +1421,10 @@ NODE_CALENDAR_PICKER_START = 16004
  
   
 
-#### NODE_CALENDAR_PICKER_END
+## NODE_CALENDAR_PICKER_END
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_CALENDAR_PICKER_END = 16005
@@ -1224,6 +1438,7 @@ NODE_CALENDAR_PICKER_END = 16005
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 日期。格式：年-月-日，年份支持1或4位，月份和日期为1-2位数字，如"2100-12-31"、"2025-1-25"。默认值："2100-12-31"。 |
@@ -1231,6 +1446,7 @@ NODE_CALENDAR_PICKER_END = 16005
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .string | 设置的日历选择器结束日期，格式为年-月-日。 |
@@ -1238,7 +1454,10 @@ NODE_CALENDAR_PICKER_END = 16005
  
   
 
-#### NODE_CALENDAR_PICKER_DISABLED_DATE_RANGE
+## NODE_CALENDAR_PICKER_DISABLED_DATE_RANGE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_CALENDAR_PICKER_DISABLED_DATE_RANGE = 16006
@@ -1252,13 +1471,15 @@ NODE_CALENDAR_PICKER_DISABLED_DATE_RANGE = 16006
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| .string | 禁用日期区间字符串。禁用日期区间："第一个区间开始日期,第一个区间结束日期,第二个区间开始日期,第二个区间结束日期,...,第n个区间开始日期,第n个区间结束日期"。 设置的禁用日期区间格式："1910-01-01,1910-12-31,2020-01-01,2020-12-31"。默认值：空字符串，表示不设置禁用日期区间。 |
+| .string | 禁用日期区间字符串。禁用日期区间："第一个区间开始日期，第一个区间结束日期，第二个区间开始日期，第二个区间结束日期，……，第n个区间开始日期，第n个区间结束日期"。 设置的禁用日期区间格式："1910-01-01,1910-12-31,2020-01-01,2020-12-31"。默认值：空字符串，表示不设置禁用日期区间。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .string | 设置的禁用日期区间字符串，格式为"开始日期,结束日期,..."，如"1910-01-01,1910-12-31"。 |
@@ -1266,7 +1487,10 @@ NODE_CALENDAR_PICKER_DISABLED_DATE_RANGE = 16006
  
   
 
-#### NODE_CALENDAR_PICKER_MARK_TODAY
+## NODE_CALENDAR_PICKER_MARK_TODAY
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_CALENDAR_PICKER_MARK_TODAY = 16007
@@ -1280,6 +1504,7 @@ NODE_CALENDAR_PICKER_MARK_TODAY = 16007
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 日历选择器在系统当前日期时，是否保持高亮显示。返回0表示不保持高亮显示，返回1表示保持高亮显示。 |
@@ -1287,6 +1512,7 @@ NODE_CALENDAR_PICKER_MARK_TODAY = 16007
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 日历选择器在系统当前日期时，是否保持高亮显示。 |

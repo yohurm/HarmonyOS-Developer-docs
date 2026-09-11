@@ -1,10 +1,10 @@
 # ABR功能开发
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-accelerate-abr
 
-#### 业务流程
+## 业务流程
 
 基于相机运动感知策略的ABR主要业务流程如下：
 
@@ -26,30 +26,28 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 
 本节阐述基于相机运动感知策略的ABR使用，从流程上分别阐述每个步骤的实现和调用。详细代码请参考[图形开发Sample（ABR）](https://gitcode.com/harmonyos_samples/adaptive-buffer-resolution-samplecode-clientdemo-cpp)。
 
 
 
-#### 设置项目配置项
+### 设置项目配置项
 
 在“src/main/module.json5”的module层级中添加以下配置。
 
-
-
 ```json
 "metadata": [
-  {
-    "name": "GraphicsAccelerateKit_ABR",
-    "value": "true"
-  },
-],
+     {
+       "name": "GraphicsAccelerateKit_ABR",
+       "value": "true"
+     },
+   ],
 ```
 
 
 
-#### 头文件引用
+### 头文件引用
 
 引用Graphics Accelerate Kit ABR头文件：abr_gles.h。
 
@@ -60,7 +58,7 @@
 
 
 
-#### 编写CMakeLists.txt
+### 编写CMakeLists.txt
 
 ```text
 find_library(
@@ -89,7 +87,7 @@ target_link_libraries(entry PUBLIC
 
 
 
-#### ABR初始化
+### ABR初始化
 
 在应用创建Surface后会触发其事件回调函数Core::OnSurfaceCreated()，在该函数中完成ABR上下文实例创建、ABR属性配置和功能激活。其中ABR上下文实例负责管理ABR整个生命周期。
 1. 调用[HMS_ABR_CreateContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_graphics_accelerate#hms_abr_createcontext)接口创建ABR上下文实例，指定图形API类型。如果返回nullptr，则说明ABR上下文实例创建失败，或当前硬件设备不支持开启ABR。
@@ -143,7 +141,7 @@ if (errorCode != ABR_SUCCESS) {
 
 
 
-#### 相机运动数据更新
+### 相机运动数据更新
 
 在帧循环中，ABR根据获取的实时相机运动数据进行Buffer分辨率因子决策。
 
@@ -166,13 +164,15 @@ if (errorCode != ABR_SUCCESS) {
 
 
 
-#### 自适应渲染
+### 自适应渲染
 
 在帧循环中，ABR将对所标记的Buffer进行自适应渲染处理。
 1. 选择着色器处理耗时较高的Buffer，并在Buffer渲染前绑定帧缓冲。
 
   
 ```text
+FBO fbo{};
+// ...
 // 创建帧缓冲对象
 glGenFramebuffers(1, &fbo.fbo_);
 CheckOpenGLError();
@@ -198,20 +198,18 @@ if (errorCode != ABR_SUCCESS) {
 
 
 
-#### 销毁ABR实例
+### 销毁ABR实例
 
 在Surface销毁时，会触发其事件回调函数Core::OnSurfaceDestroyed()，在该函数中完成ABR实例的销毁。
 
 调用[HMS_ABR_DestroyContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_graphics_accelerate#hms_abr_destroycontext)接口销毁ABR实例，释放内存资源。
-
-
 
 ```text
 // 销毁ABR上下文实例并释放内存资源
 ABR_ErrorCode errorCode = HMS_ABR_DestroyContext(&context_);
 predictionPaused_ = (errorCode == ABR_SUCCESS);
 if (errorCode != ABR_SUCCESS) {
-    GOLOGE("HMS_ABR_ContextDestroy execution failed, error code: %d.", errorCode);
+    GOLOGE("HMS_ABR_DestroyContext execution failed, error code: %d.", errorCode);
     return false;
 }
 ```

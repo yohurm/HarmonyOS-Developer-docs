@@ -1,9 +1,9 @@
 # @ohos.util.Stack (线性容器Stack)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-stack
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Stack基于数组的数据结构实现，特点是先进后出，只能在一端进行数据的插入和删除。
  
@@ -21,9 +21,10 @@ Stack和[Queue](https://developer.huawei.com/consumer/cn/doc/harmonyos-reference
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { Stack } from '@kit.ArkTS';
@@ -31,20 +32,23 @@ import { Stack } from '@kit.ArkTS';
  
   
 
-#### Stack
+## Stack
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
  
 **系统能力：** SystemCapability.Utils.Lang
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | length | number | 是 | 否 | Stack的元素个数。 |
@@ -52,9 +56,10 @@ import { Stack } from '@kit.ArkTS';
  
   
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
  
@@ -68,6 +73,7 @@ Stack的构造函数。调用后创建一个空的Stack实例对象，初始leng
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200012 | The Stack's constructor cannot be directly invoked. |
@@ -83,9 +89,10 @@ console.info("length:", stack.length);  // length: 0
  
   
 
-#### push
+### push
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 push(item: T): T
  
@@ -97,6 +104,7 @@ push(item: T): T
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | item | T | 是 | 需要在栈顶插入的元素。 |
@@ -104,6 +112,7 @@ push(item: T): T
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | T | 返回插入栈顶的元素。 |
@@ -113,6 +122,7 @@ push(item: T): T
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The push method cannot be bound. |
@@ -144,9 +154,10 @@ console.info("length:", stack.length);  // length: 3
  
   
 
-#### pop
+### pop
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pop(): T
  
@@ -158,6 +169,7 @@ pop(): T
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | T | 返回栈顶元素，栈为空时返回undefined。 |
@@ -167,6 +179,7 @@ pop(): T
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The pop method cannot be bound. |
@@ -188,9 +201,10 @@ console.info("result = " + result); // result = 4
  
   
 
-#### peek
+### peek
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 peek(): T
  
@@ -202,6 +216,7 @@ peek(): T
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | T | 返回栈顶元素，栈为空时返回undefined。 |
@@ -211,6 +226,7 @@ peek(): T
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The peek method cannot be bound. |
@@ -231,9 +247,10 @@ console.info("result:", result);  // result: 2
  
   
 
-#### locate
+### locate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 locate(element: T): number
  
@@ -245,6 +262,7 @@ locate(element: T): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | element | T | 是 | 待查找的元素。 |
@@ -252,6 +270,7 @@ locate(element: T): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 对应元素下标值，查找失败则返回-1。 |
@@ -261,6 +280,7 @@ locate(element: T): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The locate method cannot be bound. |
@@ -281,9 +301,10 @@ console.info("result:", result);  // result: 2
  
   
 
-#### forEach
+### forEach
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 forEach(callbackFn: (value: T, index?: number, stack?: Stack&lt;T&gt;) => void, thisArg?: Object): void
  
@@ -295,6 +316,7 @@ forEach(callbackFn: (value: T, index?: number, stack?: Stack&lt;T&gt;) => void, 
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callbackFn | function | 是 | 遍历每个元素时执行的回调函数。 |
@@ -303,6 +325,7 @@ forEach(callbackFn: (value: T, index?: number, stack?: Stack&lt;T&gt;) => void, 
  
 callbackFn的参数说明：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | T | 是 | 当前遍历到的元素。 |
@@ -314,6 +337,7 @@ callbackFn的参数说明：
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The forEach method cannot be bound. |
@@ -339,9 +363,10 @@ stack.forEach((value: number, index: number): void => {
  
   
 
-#### isEmpty
+### isEmpty
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isEmpty(): boolean
  
@@ -353,6 +378,7 @@ isEmpty(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 为空返回true，不为空返回false。 |
@@ -362,6 +388,7 @@ isEmpty(): boolean
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The isEmpty method cannot be bound. |
@@ -382,9 +409,10 @@ console.info("result:", result);  // result: false
  
   
 
-#### [Symbol.iterator]
+### [Symbol.iterator]
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [Symbol.iterator](): IterableIterator&lt;T&gt;
  
@@ -396,6 +424,7 @@ console.info("result:", result);  // result: false
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator&lt;T&gt; | 返回一个迭代器，用于按栈的存储顺序依次遍历Stack中的所有元素。 |
@@ -405,6 +434,7 @@ console.info("result:", result);  // result: false
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The Symbol.iterator method cannot be bound. |

@@ -1,13 +1,14 @@
 # native_audio_routing_manager.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-04 10:41:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-audio-routing-manager-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明与音频路由管理器相关的接口。
  
@@ -25,16 +26,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_AudioRoutingManager | OH_AudioRoutingManager | 声明音频路由管理器。用于管理音频路由相关功能。 |
@@ -42,10 +46,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | typedef int32_t (*OH_AudioRoutingManager_OnDeviceChangedCallback)(OH_AudioDevice_ChangeType type, OH_AudioDeviceDescriptorArray *audioDeviceDescriptorArray) | OH_AudioRoutingManager_OnDeviceChangedCallback | 此函数指针将指向用于返回更改的音频设备描述符的回调函数，可能返回多个音频设备描述符。 |
@@ -70,15 +76,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AudioRoutingManager_OnDeviceChangedCallback()
+### OH_AudioRoutingManager_OnDeviceChangedCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef int32_t (*OH_AudioRoutingManager_OnDeviceChangedCallback)(OH_AudioDevice_ChangeType type, OH_AudioDeviceDescriptorArray *audioDeviceDescriptorArray
@@ -93,6 +101,7 @@ typedef int32_t (*OH_AudioRoutingManager_OnDeviceChangedCallback)(OH_AudioDevice
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioDevice_ChangeType type | 设备连接状态类型。 OH_AudioDevice_ChangeType已连接或断开。 |
@@ -101,9 +110,10 @@ typedef int32_t (*OH_AudioRoutingManager_OnDeviceChangedCallback)(OH_AudioDevice
  
   
 
-#### OH_AudioRoutingManager_OnPreferredOutputDeviceChangedCallback()
+### OH_AudioRoutingManager_OnPreferredOutputDeviceChangedCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef int32_t (*OH_AudioRoutingManager_OnPreferredOutputDeviceChangedCallback)(OH_AudioDeviceDescriptorArray *audioDeviceDescriptorArray)
@@ -117,6 +127,7 @@ typedef int32_t (*OH_AudioRoutingManager_OnPreferredOutputDeviceChangedCallback)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioDeviceDescriptorArray *audioDeviceDescriptorArray | 音频设备描述符数组。 设置音频设备描述符值的指针变量，不能单独释放audioDeviceDescriptorArray指针，而是调用OH_AudioRoutingManager_ReleaseDevices来释放DeviceDescriptor数组。 |
@@ -124,9 +135,10 @@ typedef int32_t (*OH_AudioRoutingManager_OnPreferredOutputDeviceChangedCallback)
  
   
 
-#### OH_AudioRoutingManager_OnPreferredInputDeviceChangedCallback()
+### OH_AudioRoutingManager_OnPreferredInputDeviceChangedCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef int32_t (*OH_AudioRoutingManager_OnPreferredInputDeviceChangedCallback)(OH_AudioDeviceDescriptorArray *audioDeviceDescriptorArray)
@@ -140,6 +152,7 @@ typedef int32_t (*OH_AudioRoutingManager_OnPreferredInputDeviceChangedCallback)(
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioDeviceDescriptorArray *audioDeviceDescriptorArray | 音频设备描述符数组。 设置音频设备描述符值的指针变量，不能单独释放audioDeviceDescriptorArray指针，而是调用OH_AudioRoutingManager_ReleaseDevices 来释放DeviceDescriptor数组。 |
@@ -147,9 +160,10 @@ typedef int32_t (*OH_AudioRoutingManager_OnPreferredInputDeviceChangedCallback)(
  
   
 
-#### OH_AudioManager_GetAudioRoutingManager()
+### OH_AudioManager_GetAudioRoutingManager()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioManager_GetAudioRoutingManager(OH_AudioRoutingManager **audioRoutingManager)
@@ -165,6 +179,7 @@ OH_AudioCommon_Result OH_AudioManager_GetAudioRoutingManager(OH_AudioRoutingMana
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRoutingManager **audioRoutingManager | 指向OH_AudioRoutingManager指针的地址，用于接收获取的音频路由管理器实例。 |
@@ -172,6 +187,7 @@ OH_AudioCommon_Result OH_AudioManager_GetAudioRoutingManager(OH_AudioRoutingMana
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 |
@@ -179,9 +195,10 @@ OH_AudioCommon_Result OH_AudioManager_GetAudioRoutingManager(OH_AudioRoutingMana
  
   
 
-#### OH_AudioRoutingManager_GetDevices()
+### OH_AudioRoutingManager_GetDevices()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioRoutingManager_GetDevices(OH_AudioRoutingManager *audioRoutingManager, OH_AudioDevice_Flag deviceFlag, OH_AudioDeviceDescriptorArray **audioDeviceDescriptorArray)
@@ -195,6 +212,7 @@ OH_AudioCommon_Result OH_AudioRoutingManager_GetDevices(OH_AudioRoutingManager *
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRoutingManager *audioRoutingManager | 指向通过OH_AudioManager_GetAudioRoutingManager获取的音频路由管理器实例。 |
@@ -204,6 +222,7 @@ OH_AudioCommon_Result OH_AudioRoutingManager_GetDevices(OH_AudioRoutingManager *
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM： 1. 参数audioRoutingManager为nullptr； 2. 参数deviceFlag无效； 3. 参数audioDeviceDescriptorArray为nullptr。 AUDIOCOMMON_RESULT_ERROR_NO_MEMORY：内存不足。 |
@@ -211,9 +230,10 @@ OH_AudioCommon_Result OH_AudioRoutingManager_GetDevices(OH_AudioRoutingManager *
  
   
 
-#### OH_AudioRoutingManager_GetAvailableDevices()
+### OH_AudioRoutingManager_GetAvailableDevices()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioRoutingManager_GetAvailableDevices(OH_AudioRoutingManager *audioRoutingManager, OH_AudioDevice_Usage deviceUsage, OH_AudioDeviceDescriptorArray **audioDeviceDescriptorArray)
@@ -227,6 +247,7 @@ OH_AudioCommon_Result OH_AudioRoutingManager_GetAvailableDevices(OH_AudioRouting
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRoutingManager *audioRoutingManager | 指向通过OH_AudioManager_GetAudioRoutingManager获取的音频路由管理器实例。 |
@@ -236,6 +257,7 @@ OH_AudioCommon_Result OH_AudioRoutingManager_GetAvailableDevices(OH_AudioRouting
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM： 1. 参数audioRoutingManager为nullptr； 2. 参数deviceUsage无效； 3. 参数audioDeviceDescriptorArray为nullptr。 AUDIOCOMMON_RESULT_ERROR_NO_MEMORY：内存不足。 |
@@ -243,9 +265,10 @@ OH_AudioCommon_Result OH_AudioRoutingManager_GetAvailableDevices(OH_AudioRouting
  
   
 
-#### OH_AudioRoutingManager_GetPreferredOutputDevice()
+### OH_AudioRoutingManager_GetPreferredOutputDevice()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioRoutingManager_GetPreferredOutputDevice(OH_AudioRoutingManager *audioRoutingManager, OH_AudioStream_Usage streamUsage, OH_AudioDeviceDescriptorArray **audioDeviceDescriptorArray)
@@ -259,6 +282,7 @@ OH_AudioCommon_Result OH_AudioRoutingManager_GetPreferredOutputDevice(OH_AudioRo
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRoutingManager *audioRoutingManager | 指向通过OH_AudioManager_GetAudioRoutingManager获取的音频路由管理器实例。 |
@@ -268,6 +292,7 @@ OH_AudioCommon_Result OH_AudioRoutingManager_GetPreferredOutputDevice(OH_AudioRo
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM： 1. 参数audioRoutingManager为nullptr； 2. 参数streamUsage无效； 3. 参数audioDeviceDescriptorArray为nullptr。 AUDIOCOMMON_RESULT_ERROR_NO_MEMORY：内存不足。 |
@@ -275,9 +300,10 @@ OH_AudioCommon_Result OH_AudioRoutingManager_GetPreferredOutputDevice(OH_AudioRo
  
   
 
-#### OH_AudioRoutingManager_GetPreferredInputDevice()
+### OH_AudioRoutingManager_GetPreferredInputDevice()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioRoutingManager_GetPreferredInputDevice(OH_AudioRoutingManager *audioRoutingManager, OH_AudioStream_SourceType sourceType, OH_AudioDeviceDescriptorArray **audioDeviceDescriptorArray)
@@ -291,6 +317,7 @@ OH_AudioCommon_Result OH_AudioRoutingManager_GetPreferredInputDevice(OH_AudioRou
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRoutingManager *audioRoutingManager | 指向通过OH_AudioManager_GetAudioRoutingManager获取的音频路由管理器实例。 |
@@ -300,6 +327,7 @@ OH_AudioCommon_Result OH_AudioRoutingManager_GetPreferredInputDevice(OH_AudioRou
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM： 1. 参数audioRoutingManager为nullptr； 2. 参数sourceType无效； 3. 参数audioDeviceDescriptorArray为nullptr。 AUDIOCOMMON_RESULT_ERROR_NO_MEMORY：内存不足。 |
@@ -307,9 +335,10 @@ OH_AudioCommon_Result OH_AudioRoutingManager_GetPreferredInputDevice(OH_AudioRou
  
   
 
-#### OH_AudioRoutingManager_RegisterDeviceChangeCallback()
+### OH_AudioRoutingManager_RegisterDeviceChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioRoutingManager_RegisterDeviceChangeCallback(OH_AudioRoutingManager *audioRoutingManager, OH_AudioDevice_Flag deviceFlag, OH_AudioRoutingManager_OnDeviceChangedCallback callback)
@@ -323,6 +352,7 @@ OH_AudioCommon_Result OH_AudioRoutingManager_RegisterDeviceChangeCallback(OH_Aud
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRoutingManager *audioRoutingManager | 指向通过OH_AudioManager_GetAudioRoutingManager获取的音频路由管理器实例。 |
@@ -332,6 +362,7 @@ OH_AudioCommon_Result OH_AudioRoutingManager_RegisterDeviceChangeCallback(OH_Aud
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM： 1. 参数audioRoutingManager为nullptr； 2. 参数deviceFlag无效； 3. 参数callback为nullptr。 |
@@ -339,9 +370,10 @@ OH_AudioCommon_Result OH_AudioRoutingManager_RegisterDeviceChangeCallback(OH_Aud
  
   
 
-#### OH_AudioRoutingManager_UnregisterDeviceChangeCallback()
+### OH_AudioRoutingManager_UnregisterDeviceChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioRoutingManager_UnregisterDeviceChangeCallback(OH_AudioRoutingManager *audioRoutingManager, OH_AudioRoutingManager_OnDeviceChangedCallback callback)
@@ -355,6 +387,7 @@ OH_AudioCommon_Result OH_AudioRoutingManager_UnregisterDeviceChangeCallback(OH_A
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRoutingManager *audioRoutingManager | 指向通过OH_AudioManager_GetAudioRoutingManager获取的音频路由管理器实例。 |
@@ -363,6 +396,7 @@ OH_AudioCommon_Result OH_AudioRoutingManager_UnregisterDeviceChangeCallback(OH_A
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM： 1. 参数audioRoutingManager为nullptr； 2. 参数callback为nullptr。 |
@@ -370,9 +404,10 @@ OH_AudioCommon_Result OH_AudioRoutingManager_UnregisterDeviceChangeCallback(OH_A
  
   
 
-#### OH_AudioRoutingManager_RegisterPreferredOutputDevicesChangeCallback()
+### OH_AudioRoutingManager_RegisterPreferredOutputDevicesChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioRoutingManager_RegisterPreferredOutputDevicesChangeCallback(OH_AudioRoutingManager *audioRoutingManager, OH_AudioStream_Usage streamUsage, OH_AudioRoutingManager_OnPreferredOutputDeviceChangedCallback callback)
@@ -388,6 +423,7 @@ OH_AudioCommon_Result OH_AudioRoutingManager_RegisterPreferredOutputDevicesChang
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRoutingManager *audioRoutingManager | 音频路由管理器句柄。通过OH_AudioManager_GetAudioRoutingManager获取。 |
@@ -397,6 +433,7 @@ OH_AudioCommon_Result OH_AudioRoutingManager_RegisterPreferredOutputDevicesChang
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM：参数校验失败。 AUDIOCOMMON_RESULT_ERROR_SYSTEM：音频客户端在调用音频服务的过程中遇到系统错误，导致调用失败。 |
@@ -404,9 +441,10 @@ OH_AudioCommon_Result OH_AudioRoutingManager_RegisterPreferredOutputDevicesChang
  
   
 
-#### OH_AudioRoutingManager_UnregisterPreferredOutputDevicesChangeCallback()
+### OH_AudioRoutingManager_UnregisterPreferredOutputDevicesChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioRoutingManager_UnregisterPreferredOutputDevicesChangeCallback(OH_AudioRoutingManager *audioRoutingManager, OH_AudioRoutingManager_OnPreferredOutputDeviceChangedCallback callback)
@@ -420,6 +458,7 @@ OH_AudioCommon_Result OH_AudioRoutingManager_UnregisterPreferredOutputDevicesCha
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRoutingManager *audioRoutingManager | 音频路由管理器句柄。通过OH_AudioManager_GetAudioRoutingManager获取。 |
@@ -428,6 +467,7 @@ OH_AudioCommon_Result OH_AudioRoutingManager_UnregisterPreferredOutputDevicesCha
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM：参数校验失败。 AUDIOCOMMON_RESULT_ERROR_SYSTEM：音频客户端在调用音频服务的过程中遇到系统错误，导致调用失败。 |
@@ -435,9 +475,10 @@ OH_AudioCommon_Result OH_AudioRoutingManager_UnregisterPreferredOutputDevicesCha
  
   
 
-#### OH_AudioRoutingManager_RegisterPreferredInputDevicesChangeCallback()
+### OH_AudioRoutingManager_RegisterPreferredInputDevicesChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioRoutingManager_RegisterPreferredInputDevicesChangeCallback(OH_AudioRoutingManager *audioRoutingManager, OH_AudioStream_SourceType sourceType, OH_AudioRoutingManager_OnPreferredInputDeviceChangedCallback callback)
@@ -453,6 +494,7 @@ OH_AudioCommon_Result OH_AudioRoutingManager_RegisterPreferredInputDevicesChange
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRoutingManager *audioRoutingManager | 音频路由管理器句柄。通过OH_AudioManager_GetAudioRoutingManager获取。 |
@@ -462,6 +504,7 @@ OH_AudioCommon_Result OH_AudioRoutingManager_RegisterPreferredInputDevicesChange
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM：参数校验失败。 AUDIOCOMMON_RESULT_ERROR_SYSTEM：音频客户端在调用音频服务的过程中遇到系统错误，导致调用失败。 |
@@ -469,9 +512,10 @@ OH_AudioCommon_Result OH_AudioRoutingManager_RegisterPreferredInputDevicesChange
  
   
 
-#### OH_AudioRoutingManager_UnregisterPreferredInputDevicesChangeCallback()
+### OH_AudioRoutingManager_UnregisterPreferredInputDevicesChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioRoutingManager_UnregisterPreferredInputDevicesChangeCallback(OH_AudioRoutingManager *audioRoutingManager, OH_AudioRoutingManager_OnPreferredInputDeviceChangedCallback callback)
@@ -485,6 +529,7 @@ OH_AudioCommon_Result OH_AudioRoutingManager_UnregisterPreferredInputDevicesChan
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRoutingManager *audioRoutingManager | 音频路由管理器句柄。通过OH_AudioManager_GetAudioRoutingManager获取。 |
@@ -493,6 +538,7 @@ OH_AudioCommon_Result OH_AudioRoutingManager_UnregisterPreferredInputDevicesChan
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM：参数校验失败。 AUDIOCOMMON_RESULT_ERROR_SYSTEM：音频客户端在调用音频服务的过程中遇到系统错误，导致调用失败。 |
@@ -500,9 +546,10 @@ OH_AudioCommon_Result OH_AudioRoutingManager_UnregisterPreferredInputDevicesChan
  
   
 
-#### OH_AudioRoutingManager_ReleaseDevices()
+### OH_AudioRoutingManager_ReleaseDevices()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioRoutingManager_ReleaseDevices(OH_AudioRoutingManager *audioRoutingManager, OH_AudioDeviceDescriptorArray *audioDeviceDescriptorArray)
@@ -516,6 +563,7 @@ OH_AudioCommon_Result OH_AudioRoutingManager_ReleaseDevices(OH_AudioRoutingManag
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRoutingManager *audioRoutingManager | 指向通过OH_AudioManager_GetAudioRoutingManager获取的音频路由管理器实例。 |
@@ -524,6 +572,7 @@ OH_AudioCommon_Result OH_AudioRoutingManager_ReleaseDevices(OH_AudioRoutingManag
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM： 1. 参数audioRoutingManager为nullptr； 2. 参数audioDeviceDescriptorArray为nullptr。 |
@@ -531,9 +580,10 @@ OH_AudioCommon_Result OH_AudioRoutingManager_ReleaseDevices(OH_AudioRoutingManag
  
   
 
-#### OH_AudioRoutingManager_OnDeviceBlockStatusCallback()
+### OH_AudioRoutingManager_OnDeviceBlockStatusCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_AudioRoutingManager_OnDeviceBlockStatusCallback)(OH_AudioDeviceDescriptorArray *audioDeviceDescriptorArray, OH_AudioDevice_BlockStatus status, void *userData)
@@ -547,6 +597,7 @@ typedef void (*OH_AudioRoutingManager_OnDeviceBlockStatusCallback)(OH_AudioDevic
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioDeviceDescriptorArray *audioDeviceDescriptorArray | 音频设备描述符数组。由系统回调传入，调用者需调用OH_AudioRoutingManager_ReleaseDevices进行释放。 |
@@ -556,9 +607,10 @@ typedef void (*OH_AudioRoutingManager_OnDeviceBlockStatusCallback)(OH_AudioDevic
  
   
 
-#### OH_AudioRoutingManager_IsMicBlockDetectionSupported()
+### OH_AudioRoutingManager_IsMicBlockDetectionSupported()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioRoutingManager_IsMicBlockDetectionSupported(OH_AudioRoutingManager *audioRoutingManager, bool *supported)
@@ -572,6 +624,7 @@ OH_AudioCommon_Result OH_AudioRoutingManager_IsMicBlockDetectionSupported(OH_Aud
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRoutingManager *audioRoutingManager | 指向通过OH_AudioManager_GetAudioRoutingManager获取的音频路由管理器实例。 |
@@ -580,6 +633,7 @@ OH_AudioCommon_Result OH_AudioRoutingManager_IsMicBlockDetectionSupported(OH_Aud
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM： 1. 参数audioRoutingManager为nullptr； 2. 参数supported为nullptr。 |
@@ -587,9 +641,10 @@ OH_AudioCommon_Result OH_AudioRoutingManager_IsMicBlockDetectionSupported(OH_Aud
  
   
 
-#### OH_AudioRoutingManager_SetMicBlockStatusCallback()
+### OH_AudioRoutingManager_SetMicBlockStatusCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AudioCommon_Result OH_AudioRoutingManager_SetMicBlockStatusCallback(OH_AudioRoutingManager *audioRoutingManager, OH_AudioRoutingManager_OnDeviceBlockStatusCallback callback, void *userData)
@@ -605,15 +660,17 @@ OH_AudioCommon_Result OH_AudioRoutingManager_SetMicBlockStatusCallback(OH_AudioR
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AudioRoutingManager *audioRoutingManager | 指向通过OH_AudioManager_GetAudioRoutingManager获取的音频路由管理器实例。 |
-| OH_AudioRoutingManager_OnDeviceBlockStatusCallback callback | 函数指针将指向用于返回接受设备麦克风堵塞状态OH_AudioRoutingManager_OnDeviceBlockStatusCallback。 |
+| OH_AudioRoutingManager_OnDeviceBlockStatusCallback callback | 函数指针将指向用于返回接收设备麦克风堵塞状态OH_AudioRoutingManager_OnDeviceBlockStatusCallback。 |
 | void *userData | 用户自定义数据指针。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AudioCommon_Result | AUDIOCOMMON_RESULT_SUCCESS：函数执行成功。 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM： 1. 参数audioRoutingManager为nullptr； 2. 参数callback为nullptr。 |

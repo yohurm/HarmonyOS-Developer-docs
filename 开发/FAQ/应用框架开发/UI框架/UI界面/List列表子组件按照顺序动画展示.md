@@ -54,7 +54,7 @@ if (this.isShow) {
 ```text
 @Component
 struct CardItem {
-  // 创建List的每个子组件CardItem
+ <em> // 创建List的每个子组件CardItem</em>
   @Prop index: number;
   @State isAppear: boolean = false;
   build() {
@@ -69,13 +69,13 @@ struct CardItem {
     .opacity(this.isAppear ? 1 : 0)
     .translate({ x: this.isAppear ? 0 : 100 })
     .borderRadius(8)
-    // 增加动画效果
+    <em>// 增加动画效果</em>
     .animation({
       duration: 500,
       delay: this.index * 120,
       curve: Curve.EaseOut
     })
-    // 组件出现启动组件的入场动画
+   <em> // 组件出现启动组件的入场动画</em>
     .onAppear(() => {
       this.isAppear = true;
     })
@@ -89,13 +89,13 @@ struct CardItem {
 @Component
 struct ChainList {
   private data: number[] = [0, 1, 2, 3, 4, 5];
-  @State isShow: boolean = false;  // 是否展示List
+  @State isShow: boolean = false; <em> </em><em>// 是否展示List</em>
   build() {
     Column() {
       Button('show list').onClick(() => {
         this.isShow = !this.isShow;
       })
-      // 根据数据源this.data创建List
+    <em>  // 根据数据源this.data创建List</em>
       if (this.isShow) {
         List() {
           ForEach(this.data, (item: number) => {

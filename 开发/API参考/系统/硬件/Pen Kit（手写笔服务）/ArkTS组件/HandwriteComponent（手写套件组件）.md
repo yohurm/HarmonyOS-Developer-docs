@@ -1,6 +1,6 @@
 # HandwriteComponent（手写套件组件）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/pen-handwritecomponent
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -12,7 +12,8 @@
 **起始版本：** 5.0.0(12)
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -22,7 +23,8 @@ import { HandwriteController,HandwriteComponent, PenHspInfo, PenType, HiddenTool
 
 
 
-#### HandwriteComponent
+## HandwriteComponent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -33,6 +35,7 @@ import { HandwriteController,HandwriteComponent, PenHspInfo, PenType, HiddenTool
 **系统能力：** SystemCapability.Stylus.Handwrite
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -51,7 +54,8 @@ import { HandwriteController,HandwriteComponent, PenHspInfo, PenType, HiddenTool
 
 
 
-#### build
+### build
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -67,7 +71,8 @@ struct的默认构造函数，无法直接调用此方法。
 
 
 
-#### InitCallback
+## InitCallback
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -83,7 +88,8 @@ type InitCallback = () => void
 
 
 
-#### ScaleCallback
+## ScaleCallback
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -99,6 +105,7 @@ type ScaleCallback = (scale: number) => void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scale | number | 是 | 回调函数，返回当前画布的缩放值。 |
@@ -106,7 +113,8 @@ type ScaleCallback = (scale: number) => void
 
 
 
-#### DidScrollCallback
+## DidScrollCallback
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -122,6 +130,7 @@ type DidScrollCallback = (yOffset: number) => void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | yOffset | number | 是 | 当前画布的偏移量。单位vp。 |
@@ -129,7 +138,8 @@ type DidScrollCallback = (yOffset: number) => void
 
 
 
-#### PenType
+## PenType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -140,6 +150,7 @@ type DidScrollCallback = (yOffset: number) => void
 **系统能力：** SystemCapability.Stylus.Handwrite
 
 **起始版本：** 5.1.0(18)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -156,7 +167,8 @@ type DidScrollCallback = (yOffset: number) => void
 
 
 
-#### PenHspInfo
+## PenHspInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -170,6 +182,7 @@ type DidScrollCallback = (yOffset: number) => void
 
 **参数：**
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | penType | PenType | 否 | 否 | 笔刷类型。 5.1.0(18)版本仅支持通过number类型传参。 |
@@ -178,7 +191,8 @@ type DidScrollCallback = (yOffset: number) => void
 
 
 
-#### HiddenConfig
+## HiddenConfig
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -190,6 +204,7 @@ type DidScrollCallback = (yOffset: number) => void
 
 **起始版本：** 26.0.0
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | hiddenOptionalTools | HiddenToolType[] | 否 | 是 | 可隐藏的工具类集合。默认为[]。 |
@@ -198,7 +213,8 @@ type DidScrollCallback = (yOffset: number) => void
 
 
 
-#### HiddenToolType
+## HiddenToolType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -209,6 +225,7 @@ type DidScrollCallback = (yOffset: number) => void
 **系统能力：** SystemCapability.Stylus.Handwrite
 
 **起始版本：** 26.0.0
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

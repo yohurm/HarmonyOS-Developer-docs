@@ -1,9 +1,9 @@
 # @ohos.file.sendablePhotoAccessHelper (基于Sendable对象的相册管理模块)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-sendablephotoaccesshelper
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该模块基于[Sendable](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable)对象，提供相册管理功能，包括创建相册和访问、修改相册中的媒体数据。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { sendablePhotoAccessHelper } from '@kit.MediaLibraryKit';
@@ -22,9 +23,10 @@ import { sendablePhotoAccessHelper } from '@kit.MediaLibraryKit';
 
 
 
-#### sendablePhotoAccessHelper.getPhotoAccessHelper
+## sendablePhotoAccessHelper.getPhotoAccessHelper
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPhotoAccessHelper(context: Context): PhotoAccessHelper
 
@@ -38,12 +40,14 @@ getPhotoAccessHelper(context: Context): PhotoAccessHelper
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 传入Ability实例的上下文。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -54,6 +58,7 @@ getPhotoAccessHelper(context: Context): PhotoAccessHelper
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
@@ -63,7 +68,7 @@ getPhotoAccessHelper(context: Context): PhotoAccessHelper
 
 ```text
 // 此处获取的phAccessHelper实例为全局对象，后续使用到phAccessHelper的地方默认为使用此处获取的对象，如未添加此段代码报phAccessHelper未定义的错误请自行添加。
-// 请在组件内获取context，确保this.getUiContext().getHostContext()返回结果为UIAbilityContext
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
 import { common } from '@kit.AbilityKit';
 
 @Entry
@@ -83,17 +88,19 @@ struct Index {
 
 
 
-#### PhotoAccessHelper
+## PhotoAccessHelper
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供操作系统媒体资源能力的接口。
 
 
 
-#### getAssets
+### getAssets
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAssets(options: photoAccessHelper.FetchOptions): Promise<FetchResult&lt;PhotoAsset&gt;>
 
@@ -107,12 +114,14 @@ getAssets(options: photoAccessHelper.FetchOptions): Promise<FetchResult&lt;Photo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | photoAccessHelper.FetchOptions | 是 | 图片和视频检索选项。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -122,6 +131,7 @@ getAssets(options: photoAccessHelper.FetchOptions): Promise<FetchResult&lt;Photo
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -162,9 +172,10 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 
 
-#### getBurstAssets
+### getBurstAssets
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBurstAssets(burstKey: string, options: photoAccessHelper.FetchOptions): Promise<FetchResult&lt;PhotoAsset&gt;>
 
@@ -176,13 +187,15 @@ getBurstAssets(burstKey: string, options: photoAccessHelper.FetchOptions): Promi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| burstKey | string | 是 | 一组连拍照片的唯一标识：uuid（可传入PhotoKeys的BURST_KEY）。字符串长度为36字节。 |
+| burstKey | string | 是 | 一组连拍照片的唯一标识uuid，可传入PhotoKeys的BURST_KEY。字符串长度为36个字符。 |
 | options | photoAccessHelper.FetchOptions | 是 | 连拍照片检索选项。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -192,6 +205,7 @@ getBurstAssets(burstKey: string, options: photoAccessHelper.FetchOptions): Promi
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -217,12 +231,19 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
   };
   let fetchResult: sendablePhotoAccessHelper.FetchResult<sendablePhotoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
   let photoAssetList: Array<sendablePhotoAccessHelper.PhotoAsset> = await fetchResult.getAllObjects();
+  if (!photoAssetList || photoAssetList.length === 0) {
+  console.info('photoAssetList is empty');
+  return;
+  }
   let photoAsset: sendablePhotoAccessHelper.PhotoAsset;
   // burstKey为36位的uuid，可以根据photoAccessHelper.PhotoKeys获取。
   for(photoAsset of photoAssetList){
+    // 获取BURST_KEY（连拍照片唯一标识的键名），用于后续从photoAsset中提取burstKey值。
     let burstKey: string = photoAccessHelper.PhotoKeys.BURST_KEY.toString();
+    // 获取照片的burstKey（连拍照片唯一标识），用于后续查询同一连拍组下的所有照片。
     let photoAccessBurstKey: photoAccessHelper.MemberType = photoAsset.get(burstKey).toString();
     try {
+      // 根据burstKey查询同一连拍组下的所有照片资源。
       let fetchResult: sendablePhotoAccessHelper.FetchResult<sendablePhotoAccessHelper.PhotoAsset> = await
       phAccessHelper.getBurstAssets(photoAccessBurstKey, fetchOption);
       if (fetchResult !== undefined) {
@@ -241,9 +262,10 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 
 
-#### createAsset
+### createAsset
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAsset(photoType: PhotoType, extension: string, options?: photoAccessHelper.CreateOptions): Promise&lt;string&gt;
 
@@ -259,14 +281,16 @@ createAsset(photoType: PhotoType, extension: string, options?: photoAccessHelper
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | photoType | PhotoType | 是 | 创建的文件类型，IMAGE或者VIDEO类型。 |
 | extension | string | 是 | 文件名后缀参数，例如：'jpg'。字符串长度的取值范围为[1, 255]。 |
-| options | photoAccessHelper.CreateOptions | 否 | 创建选项，例如{title: 'testPhoto'}。 文件名中不允许出现非法英文字符。 API18开始，非法字符包括： \ / : * ? " < > \| API10-17，非法字符包括：. .. \ / : * ? " ' ` < > \| { } [ ] |
+| options | photoAccessHelper.CreateOptions | 否 | 创建选项，例如{title: 'testPhoto'}。 文件名中不允许出现非法字符。 API18开始，非法字符包括： \ / : * ? " < > \| API10-17，非法字符包括：. .. \ / : * ? " ' ` < > \| { } [ ] |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -276,6 +300,7 @@ createAsset(photoType: PhotoType, extension: string, options?: photoAccessHelper
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -310,9 +335,10 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 
 
-#### getAlbums
+### getAlbums
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAlbums(type: AlbumType, subtype: AlbumSubtype, options?: photoAccessHelper.FetchOptions): Promise<FetchResult&lt;Album&gt;>
 
@@ -326,6 +352,7 @@ getAlbums(type: AlbumType, subtype: AlbumSubtype, options?: photoAccessHelper.Fe
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | AlbumType | 是 | 相册类型。 |
@@ -335,6 +362,7 @@ getAlbums(type: AlbumType, subtype: AlbumSubtype, options?: photoAccessHelper.Fe
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<FetchResult&lt;Album&gt;> | Promise对象，返回获取相册的结果集。 |
@@ -343,6 +371,7 @@ getAlbums(type: AlbumType, subtype: AlbumSubtype, options?: photoAccessHelper.Fe
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -385,9 +414,10 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 
 
-#### getAlbums
+### getAlbums
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAlbums(options: photoAccessHelper.FetchOptions): Promise<FetchResult&lt;Album&gt;>
 
@@ -401,12 +431,14 @@ getAlbums(options: photoAccessHelper.FetchOptions): Promise<FetchResult&lt;Album
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | photoAccessHelper.FetchOptions | 是 | 检索选项。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -416,6 +448,7 @@ getAlbums(options: photoAccessHelper.FetchOptions): Promise<FetchResult&lt;Album
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -458,9 +491,10 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 
 
-#### release
+### release
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(): Promise&lt;void&gt;
 
@@ -470,6 +504,7 @@ release(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -478,6 +513,7 @@ release(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -494,13 +530,13 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
   try {
     console.info('use function...');
   } catch (err) {
-    console.error(`function error ...`);
+    console.error(`function error. Code: ${err.code}, message: ${err.message}`);
   }finally{
       try{
           phAccessHelper?.release();
           console.info(`release success`);
       } catch(e){
-          console.error(`release error :${e}`);
+          console.error(`release error. Code: ${e.code}, message: ${e.message}`);
       }
   }
 }
@@ -508,19 +544,22 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 
 
-#### PhotoAsset
+## PhotoAsset
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供封装文件属性的方法。
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -531,9 +570,10 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 
 
-#### convertToPhotoAsset
+### convertToPhotoAsset
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 convertToPhotoAsset(): photoAccessHelper.PhotoAsset
 
@@ -543,6 +583,7 @@ convertToPhotoAsset(): photoAccessHelper.PhotoAsset
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | photoAccessHelper.PhotoAsset | 返回非Sendable类型的PhotoAsset。 |
@@ -551,6 +592,7 @@ convertToPhotoAsset(): photoAccessHelper.PhotoAsset
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -586,24 +628,27 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 
 
-#### get
+### get
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get(member: string): photoAccessHelper.MemberType
 
-获取PhotoAsset成员参数的值。
+获取PhotoAsset成员属性的值。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| member | string | 是 | 成员参数名称，在get时，除了'uri'、'media_type'、'subtype'和'display_name'四个属性之外，其他的属性都需要在fetchColumns中填入需要get的PhotoKeys，例如：get title属性fetchColumns: ['title']。 |
+| member | string | 是 | 成员属性名称。 在get时，除了'uri'、'media_type'、'subtype'和'display_name'四个属性之外，其他的属性都需要在fetchColumns中填入需要get的PhotoKeys，例如：get title属性fetchColumns: ['title']。字符串长度的取值范围为[1, 255]。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -613,6 +658,7 @@ get(member: string): photoAccessHelper.MemberType
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -652,27 +698,30 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 
 
-#### set
+### set
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set(member: string, value: string): void
 
-设置PhotoAsset成员参数。
+设置PhotoAsset成员属性。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| member | string | 是 | 成员参数名称例如：PhotoKeys.TITLE。字符串长度的取值范围为[1, 255]。 |
-| value | string | 是 | 设置成员参数名称，只能修改PhotoKeys.TITLE的值。title的参数规格为： - 不应包含扩展名。 - 文件名字符串长度的取值范围为[1, 255]（资产文件名为标题+扩展名）。 - 不允许出现的非法英文字符，包括：. \ / : * ? " ' ` < > \| { } [ ] |
+| member | string | 是 | 成员属性名称例如：PhotoKeys.TITLE。字符串长度的取值范围为[1, 255]。 |
+| value | string | 是 | 设置成员属性的值，只能修改PhotoKeys.TITLE的值。title的参数规格为： - 不应包含扩展名。 - 文件名字符串长度的取值范围为[1, 255]（资产文件名为标题+扩展名）。 - 不允许出现的非法英文字符，包括：. \ / : * ? " ' ` < > \| { } [ ] |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -707,9 +756,10 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 
 
-#### commitModify
+### commitModify
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 commitModify(): Promise&lt;void&gt;
 
@@ -723,6 +773,7 @@ commitModify(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -731,6 +782,7 @@ commitModify(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -761,6 +813,7 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
   console.info('photoAsset get photoAssetTitle = ', photoAssetTitle);
   photoAsset.set(title, 'newTitle3');
   try {
+   // 将修改后的照片元数据提交到数据库进行持久化保存。
     await photoAsset.commitModify();
     let newPhotoAssetTitle: photoAccessHelper.MemberType = photoAsset.get(title);
     console.info('photoAsset get newPhotoAssetTitle = ', newPhotoAssetTitle);
@@ -772,9 +825,10 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 
 
-#### getThumbnail
+### getThumbnail
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getThumbnail(size?: image.Size): Promise<image.PixelMap>
 
@@ -786,12 +840,14 @@ getThumbnail(size?: image.Size): Promise<image.PixelMap>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| size | image.Size | 否 | 缩略图尺寸。 |
+| size | image.Size | 否 | 缩略图尺寸。默认尺寸为256×256。单位：像素（px）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -801,6 +857,7 @@ getThumbnail(size?: image.Size): Promise<image.PixelMap>
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -844,17 +901,19 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 
 
-#### FetchResult
+## FetchResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文件检索结果集。
 
 
 
-#### getCount
+### getCount
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCount(): number
 
@@ -864,6 +923,7 @@ getCount(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 检索到的文件总数。 |
@@ -872,6 +932,7 @@ getCount(): number
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -901,9 +962,10 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 
 
-#### isAfterLast
+### isAfterLast
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isAfterLast(): boolean
 
@@ -913,6 +975,7 @@ isAfterLast(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 当结果集指向最后一行时返回true，否则返回false。 |
@@ -921,6 +984,7 @@ isAfterLast(): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -955,9 +1019,10 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 
 
-#### close
+### close
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(): void
 
@@ -968,6 +1033,7 @@ close(): void
 **错误码：**
 
 详细错误码请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1001,9 +1067,10 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 
 
-#### getFirstObject
+### getFirstObject
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFirstObject(): Promise&lt;T&gt;
 
@@ -1013,14 +1080,16 @@ getFirstObject(): Promise&lt;T&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;T&gt; | Promise对象，返回结果集中第一个对象。 |
+| Promise&lt;T&gt; | Promise对象，返回结果集中第一个文件资产对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1050,9 +1119,10 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 
 
-#### getNextObject
+### getNextObject
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getNextObject(): Promise&lt;T&gt;
 
@@ -1064,14 +1134,16 @@ getNextObject(): Promise&lt;T&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;T&gt; | Promise对象，返回结果集中下一个对象。 |
+| Promise&lt;T&gt; | Promise对象，返回结果集中当前位置的下一个文件资产对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1102,9 +1174,10 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 
 
-#### getLastObject
+### getLastObject
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLastObject(): Promise&lt;T&gt;
 
@@ -1114,14 +1187,16 @@ getLastObject(): Promise&lt;T&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;T&gt; | Promise对象，返回结果集中最后一个对象。 |
+| Promise&lt;T&gt; | Promise对象，返回结果集中最后一个文件资产对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1151,9 +1226,10 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 
 
-#### getObjectByPosition
+### getObjectByPosition
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getObjectByPosition(index: number): Promise&lt;T&gt;
 
@@ -1163,6 +1239,7 @@ getObjectByPosition(index: number): Promise&lt;T&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 要获取的文件的索引，从0开始。 |
@@ -1170,14 +1247,16 @@ getObjectByPosition(index: number): Promise&lt;T&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;T&gt; | Promise对象，返回结果集中指定索引的一个对象。 |
+| Promise&lt;T&gt; | Promise对象，返回结果集中指定索引位置的文件资产对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1208,9 +1287,10 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 
 
-#### getAllObjects
+### getAllObjects
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllObjects(): Promise<Array&lt;T&gt;>
 
@@ -1220,6 +1300,7 @@ getAllObjects(): Promise<Array&lt;T&gt;>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;T&gt;> | Promise对象，返回结果集中所有文件资产数组。 |
@@ -1228,6 +1309,7 @@ getAllObjects(): Promise<Array&lt;T&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1257,19 +1339,22 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 
 
-#### Album
+## Album
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 实体相册
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1285,9 +1370,10 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 
 
-#### convertToPhotoAlbum
+### convertToPhotoAlbum
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 convertToPhotoAlbum(): photoAccessHelper.Album
 
@@ -1297,6 +1383,7 @@ convertToPhotoAlbum(): photoAccessHelper.Album
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | photoAccessHelper.Album | 返回非Sendable类型的Album。 |
@@ -1305,6 +1392,7 @@ convertToPhotoAlbum(): photoAccessHelper.Album
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1345,9 +1433,10 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 
 
-#### getAssets
+### getAssets
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAssets(options: photoAccessHelper.FetchOptions): Promise<FetchResult&lt;PhotoAsset&gt;>
 
@@ -1359,12 +1448,14 @@ getAssets(options: photoAccessHelper.FetchOptions): Promise<FetchResult&lt;Photo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | photoAccessHelper.FetchOptions | 是 | 检索选项。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1374,6 +1465,7 @@ getAssets(options: photoAccessHelper.FetchOptions): Promise<FetchResult&lt;Photo
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1414,19 +1506,21 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 
 
-#### commitModify
+### commitModify
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 commitModify(): Promise&lt;void&gt;
 
-更新相册属性修改到数据库中。使用Promise异步回调。
+将相册属性修改更新到数据库。使用Promise异步回调。
 
 **需要权限**：ohos.permission.WRITE_IMAGEVIDEO
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1436,6 +1530,7 @@ commitModify(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1461,6 +1556,7 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
   };
   let albumList: sendablePhotoAccessHelper.FetchResult<sendablePhotoAccessHelper.Album> = await phAccessHelper.getAlbums(sendablePhotoAccessHelper.AlbumType.USER, sendablePhotoAccessHelper.AlbumSubtype.USER_GENERIC, albumFetchOptions);
   let album: sendablePhotoAccessHelper.Album = await albumList.getFirstObject();
+ // 修改相册名称并将修改提交到数据库进行持久化保存。
   album.albumName = 'hello';
   album.commitModify().then(() => {
     console.info('commitModify successfully');
@@ -1472,15 +1568,17 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 
 
-#### PhotoType
+## PhotoType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，媒体文件类型。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1490,9 +1588,10 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 
 
-#### PhotoSubtype14+
+## PhotoSubtype14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，不同[PhotoAsset](#photoasset)的类型。
 
@@ -1500,22 +1599,25 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| DEFAULT | 0 | 默认照片类型。 |
+| DEFAULT | 0 | 默认照片文件类型。 |
 | MOVING_PHOTO | 3 | 动态照片文件类型。 |
 | BURST | 4 | 连拍照片文件类型。 |
 
 
 
 
-#### DynamicRangeType14+
+## DynamicRangeType14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，媒体文件的动态范围类型。
 
 **系统能力**: SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1525,13 +1627,15 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 
 
-#### AlbumType
+## AlbumType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，相册类型，表示是用户相册还是系统预置相册。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1541,13 +1645,15 @@ async function example(phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelp
 
 
 
-#### AlbumSubtype
+## AlbumSubtype
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，相册子类型，表示具体的相册类型。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

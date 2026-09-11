@@ -1,27 +1,30 @@
 # 简单文本绘制与显示（C/C++）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/simple-text-c
 
-#### 场景介绍
+## 场景介绍
 
 在一个简单的用户界面中，可能只需要展示几行静态文本，例如标签、按钮上的文字、菜单项或状态栏中的提示信息。此时，开发者只需要选择合适的字体、大小和颜色即可完成渲染。
- 
-  
 
-#### 接口说明
- 
+
+
+## 接口说明
+
+简单文本绘制的相关接口如下所示，详细接口说明请参考[drawing_text_typography.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-text-typography-h)。
+
+
 | 接口定义 | 描述 |
 | --- | --- |
 | OH_Drawing_TextStyle* OH_Drawing_CreateTextStyle(void) | 创建指向OH_Drawing_TextStyle对象的指针。 |
 | void OH_Drawing_SetTextStyleFontSize(OH_Drawing_TextStyle* style, double fontSize) | 设置字号。 |
 | void OH_Drawing_SetTextStyleFontWeight(OH_Drawing_TextStyle* style, int fontWeight) | 设置字重。 |
- 
- 
-  
 
-#### 开发步骤
+
+
+
+## 开发步骤
 1. 创建Canvas画布对象，画布Canvas对象创建方法具体可见[画布的获取与绘制结果的显示](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/canvas-get-result-draw-c)。
 2. 初始化段落样式，设置文本对齐方式为居中对齐。
 
@@ -85,10 +88,10 @@ OH_Drawing_DestroyTypographyHandler(handler);
 OH_Drawing_DestroyTypography(typography);
 ```
 
- 
-  
 
-#### 效果展示
+
+
+## 效果展示
 
 
 ![](assets/简单文本绘制与显示（C／C++）/file-20260514131646325-0.png)

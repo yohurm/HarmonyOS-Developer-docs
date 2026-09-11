@@ -1,9 +1,9 @@
 # AbilityStageContext
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-abilitystagecontext
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 AbilityStageContext是AbilityStage的上下文环境，继承自[Context](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-context)。AbilityStageContext提供访问特定于AbilityStage的资源的能力，适用于需要在AbilityStage生命周期中访问模块信息和环境配置的场景，可帮助开发者快速获取模块信息和环境配置。
  
@@ -12,9 +12,10 @@ AbilityStageContext是AbilityStage的上下文环境，继承自[Context](https:
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { common } from '@kit.AbilityKit';
@@ -22,19 +23,21 @@ import { common } from '@kit.AbilityKit';
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
  
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| currentHapModuleInfo | HapModuleInfo | 否 | 否 | AbilityStage对应的ModuleInfo对象，可用来获取当前模块的名称、路径等信息。 |
+| currentHapModuleInfo | HapModuleInfo | 否 | 否 | AbilityStage对应的HapModuleInfo对象，可用来获取当前模块的名称、路径等信息。 |
 | config | Configuration | 否 | 否 | 环境配置对象。 |
-| launchElement24+ | ElementName | 否 | 是 | 创建AbilityStage时的ElementName。 元服务API：从API version 24开始，该接口支持在元服务中使用。 |
+| launchElement24+ | ElementName | 否 | 是 | 创建AbilityStage时的元素名称信息。 元服务API：从API version 24开始，该接口支持在元服务中使用。 |
  
  
 **示例：**

@@ -1,18 +1,19 @@
 # 使用HTTP全局拦截器 (C/C++)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-httpinterceptor-guidelines
 
-#### 场景介绍
+## 场景介绍
 
 从API version 24开始，通过HTTP全局拦截器（全局HTTP拦截器包含只读拦截器和可修改拦截器），开发者可以在只读拦截器中监控HTTP流量，实现日志记录功能，也可以在可修改拦截器中添加自定义逻辑，实现修改请求头、修改响应头、修改响应体等功能。
 
 
 
-#### 接口说明
+## 接口说明
 
 HTTP全局拦截器常用接口如下表所示，详细的接口说明请参考[http_interceptor.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-net-http-interceptor-h)。
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -26,7 +27,7 @@ HTTP全局拦截器常用接口如下表所示，详细的接口说明请参考[
 
 
 
-#### 开发步骤
+## 开发步骤
 
 使用本文档涉及接口创建并使用HTTP全局拦截器时，需先创建Native C++工程，在源文件中封装相关接口，然后在ArkTS层调用封装好的接口，使用hilog或console.info等方法将日志打印到控制台或生成设备日志。
 
@@ -34,7 +35,7 @@ HTTP全局拦截器常用接口如下表所示，详细的接口说明请参考[
 
 
 
-#### 添加开发依赖
+### 添加开发依赖
 
 **添加动态链接库**
 
@@ -55,7 +56,7 @@ libhttp_interceptor.so
 
 
 
-#### 构建工程
+### 构建工程
 1. 在源文件中编写调用该API的代码，实现HTTP全局拦截器的处理函数和相关操作。
 
   
@@ -829,7 +830,7 @@ struct Index {
 
 
 
-#### 测试步骤
+## 测试步骤
 1. 连接设备，使用DevEco Studio打开搭建好的工程。
 2. 运行工程，设备上会弹出以下图片所示界面。
 
@@ -929,25 +930,25 @@ struct Index {
 
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/11oG_tRhSyqLReLCiaMvyg/zh-cn_image_0000002704393131.png?HW-CC-KV=V1&HW-CC-Date=20260813T095806Z&HW-CC-Expire=86400&HW-CC-Sign=4A3017FFC8BAA3F73E04DEF93AB626FF30AC718421D571D0385983605097B09D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/MvpgY3thR9OMgWO2heQbzA/zh-cn_image_0000002747211073.png?HW-CC-KV=V1&HW-CC-Date=20260911T073019Z&HW-CC-Expire=86400&HW-CC-Sign=DE361013EC2CB39D8FDF5878CCAC375AFBFF3C596D54C188A7A1281E7387223D)
 
 
  - 点击Remove All Read Only Response Interceptors按钮，移除组ID为1的所有只读响应拦截器。
 
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/9QuXUsGkTS2yAe2NS1-EdQ/zh-cn_image_0000002674633010.png?HW-CC-KV=V1&HW-CC-Date=20260813T095806Z&HW-CC-Expire=86400&HW-CC-Sign=4EA3C407891135CE41F5E5E0D18190F9A61BDD3D27E1EF86ECE0CCE2BDDEDBA4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/I_la4_l4QfKNclQnd4RAGA/zh-cn_image_0000002717771138.png?HW-CC-KV=V1&HW-CC-Date=20260911T073019Z&HW-CC-Expire=86400&HW-CC-Sign=FFF86DAA75CD3B9C999E21668E5241748261007FFE7F7EC4259AC7633A8F179C)
 
 
  - 点击Remove All Modify Request Interceptors按钮，移除组ID为2的所有可修改请求拦截器。
 
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/DqqnoJOgQBy8H1n921SFxg/zh-cn_image_0000002704272963.png?HW-CC-KV=V1&HW-CC-Date=20260813T095806Z&HW-CC-Expire=86400&HW-CC-Sign=92BA738170DB7BD143709ADF5B559C7B93AC4BCF9B94AE424408694FDE71571D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/CiaRZQPzQDOywGYIB15Ybg/zh-cn_image_0000002717611204.png?HW-CC-KV=V1&HW-CC-Date=20260911T073019Z&HW-CC-Expire=86400&HW-CC-Sign=1C529B4F02585A49F70A40C4BC788A2251F508B8A409C0E55BCA95F6CFB6A986)
 
 
  - 点击Remove All Modify Response Interceptors按钮，移除组ID为3的所有可修改响应拦截器。
 
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/nluw91CZQgmCvKEsDwbOtQ/zh-cn_image_0000002674473166.png?HW-CC-KV=V1&HW-CC-Date=20260813T095806Z&HW-CC-Expire=86400&HW-CC-Sign=FEC29E606D1D7573E6FF8B1E6DE43A622F59A7BEDB5BEAFF5FF045407E4CAAFC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/nrZPs3DFRh60nLg8lrpKDg/zh-cn_image_0000002747291157.png?HW-CC-KV=V1&HW-CC-Date=20260911T073019Z&HW-CC-Expire=86400&HW-CC-Sign=E8BB5E43C1C4F1FEE9ABEA2EA5CE31388B0859CED36E5D4EEEE7168D80915F71)

@@ -1,15 +1,19 @@
 # HiCollie错误码
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-hiviewdfx-hicollie
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!TIP]
 > 以下仅介绍本模块特有错误码，通用错误码请参考 通用错误码说明文档 。
 
 
 
-#### 29800001 系统服务获取失败
+## 29800001 系统服务获取失败
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -29,7 +33,10 @@ Wrong thread context. The function cannot be called from main thread.
 
 
 
-#### 29800002 远程调用失败
+## 29800002 远程调用失败
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -49,7 +56,10 @@ Remote call failed.
 
 
 
-#### 29800003 无效的timer名称
+## 29800003 无效的timer名称
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -69,7 +79,10 @@ timer name是无效的。
 
 
 
-#### 29800004 无效的timeout值
+## 29800004 无效的timeout值
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -89,7 +102,10 @@ timeout值是无效的。
 
 
 
-#### 29800005 错误的进程上下文
+## 29800005 错误的进程上下文
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -109,7 +125,10 @@ Wrong process context.
 
 
 
-#### 29800006 错误的timer id参数
+## 29800006 错误的timer id参数
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 

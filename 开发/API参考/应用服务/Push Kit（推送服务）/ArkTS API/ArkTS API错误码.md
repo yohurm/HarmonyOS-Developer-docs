@@ -1,18 +1,19 @@
 # ArkTS API错误码
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-error-code
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!TIP]
 > 以下仅介绍本模块特有错误码，通用错误码请参考 通用错误码说明文档 。
 
 
 
-#### 1000900001 系统错误
+## 1000900001 系统错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -32,7 +33,10 @@ System internal error.
 
 
 
-#### 1000900002 Extension不存在
+## 1000900002 Extension不存在
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -52,7 +56,10 @@ ExtensionAbility不存在。
 
 
 
-#### 1000900003 Extension回调执行失败
+## 1000900003 Extension回调执行失败
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -72,7 +79,10 @@ ExtensionAbility回调执行失败。
 
 
 
-#### 1000900004 ExtensionAbility回调执行超时
+## 1000900004 ExtensionAbility回调执行超时
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -92,9 +102,10 @@ ExtensionAbility回调执行超时。
 
 
 
-#### 1000900005 不允许重复注册相同的场景化消息
+## 1000900005 不允许重复注册相同的场景化消息
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -114,9 +125,10 @@ Messages of the same push type cannot be received repeatedly.
 
 
 
-#### 1000900006 连接AAID服务失败
+## 1000900006 连接AAID服务失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -136,9 +148,10 @@ PushService运行异常。
 
 
 
-#### 1000900007 AAID服务内部错误
+## 1000900007 AAID服务内部错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -158,9 +171,10 @@ PushService内部处理超时或异常。
 
 
 
-#### 1000900008 连接Push服务失败
+## 1000900008 连接Push服务失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -180,9 +194,10 @@ PushService运行异常。
 
 
 
-#### 1000900009 推送服务内部错误
+## 1000900009 推送服务内部错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -203,9 +218,10 @@ PushService内部处理任务时发生异常，将返回该错误码。
 
 
 
-#### 1000900010 APP身份验证失败
+## 1000900010 APP身份验证失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -224,7 +240,7 @@ Illegal application identity.
  - 在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)的“项目设置 > 开放能力管理”中未启用“推送服务”。请参见[开通推送服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-config-setting#操作步骤)步骤5、步骤6完成对应阶段的签名。
  - 在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)的“项目设置 > 开放能力管理”中已启用“推送服务”，但未重新申请Profile文件。请参见[开通推送服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-config-setting#操作步骤)步骤5、步骤6完成对应阶段的签名。
 
-      - 网络不可用。
+            - 网络不可用。
  - 华为服务端异常。
  - 不支持云真机调试。
 
@@ -235,9 +251,10 @@ Illegal application identity.
 
 
 
-#### 1000900011 网络不可用
+## 1000900011 网络不可用
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -257,9 +274,10 @@ The network is unavailable.
 
 
 
-#### 1000900012 未开通推送服务权益
+## 1000900012 未开通推送服务权益
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -279,9 +297,10 @@ Push rights are not activated.
 
 
 
-#### 1000900013 不允许跨区申请Token
+## 1000900013 不允许跨区申请Token
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -301,9 +320,10 @@ Cross-location application is not allowed to obtain the token.
 
 
 
-#### 1000900014 设备不支持申请Token
+## 1000900014 设备不支持申请Token
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -323,9 +343,10 @@ The device does not support getting token.
 
 
 
-#### 1000900015 绑定的应用内账号数量达到上限
+## 1000900015 绑定的应用内账号数量达到上限
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -345,9 +366,10 @@ The number of bound profile-app relationships exceeds the maximum.
 
 
 
-#### 1000900016 华为账号未登录
+## 1000900016 华为账号未登录
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -367,9 +389,10 @@ The os distributed account is not logged in.
 
 
 
-#### 1000900017 不支持当前操作
+## 1000900017 不支持当前操作
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -389,9 +412,10 @@ The device does not support current operation.
 
 
 
-#### 1000900018 请求频次超限
+## 1000900018 请求频次超限
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -411,9 +435,10 @@ Number of calls exceeded.
 
 
 
-#### 1000900019 模板ID非法
+## 1000900019 模板ID非法
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -433,9 +458,10 @@ Illegal entity id.
 
 
 
-#### 1000900020 应用的推送服务Token为空
+## 1000900020 应用的推送服务Token为空
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -455,9 +481,10 @@ App token is empty.
 
 
 
-#### 1000900021 应用未在AGC上注册
+## 1000900021 应用未在AGC上注册
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -477,9 +504,10 @@ App is not available or not registered.
 
 
 
-#### 1000900022 通知开关状态为关闭
+## 1000900022 通知开关状态为关闭
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -499,9 +527,10 @@ Notification switch off.
 
 
 
-#### 1000900023 模板ID数量超过上限
+## 1000900023 模板ID数量超过上限
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -521,9 +550,10 @@ Number of entity ids exceed the upper limit.
 
 
 
-#### 1000900024 展示订阅通知授权弹窗失败
+## 1000900024 展示订阅通知授权弹窗失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -543,9 +573,10 @@ Failed to display subscription UI.
 
 
 
-#### 1000900025 没有使用该模板ID的权益
+## 1000900025 没有使用该模板ID的权益
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -565,9 +596,10 @@ No rights to access entity id.
 
 
 
-#### 1000900026 模板ID的类型非法
+## 1000900026 模板ID的类型非法
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -587,9 +619,10 @@ Illegal entity type.
 
 
 
-#### 1000900030 用户未登录华为账号
+## 1000900030 用户未登录华为账号
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -609,9 +642,10 @@ The user has not logged in with HUAWEI ID.
 
 
 
-#### 1000900031 同类型的回调只能注册一次
+## 1000900031 同类型的回调只能注册一次
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -631,9 +665,10 @@ The same type of callback can be registered only once.
 
 
 
-#### 1000900032 服务通知设置不存在
+## 1000900032 服务通知设置不存在
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 

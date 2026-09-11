@@ -1,9 +1,9 @@
 # CanvasGradient对象
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-canvas-canvasgradient
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 > [!NOTE]
 > 从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
@@ -12,9 +12,10 @@
 渐变对象。
   
 
-#### addColorStop
+## addColorStop
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 addColorStop(offset: number, color: string): void
  
@@ -22,6 +23,7 @@ addColorStop(offset: number, color: string): void
  
 **参数：**
   
+
 | 参数 | 类型 | 描述 |
 | --- | --- | --- |
 | offset | number | 设置渐变点距离起点的位置占总体长度的比例，范围为0到1。 |

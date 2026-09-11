@@ -1,13 +1,14 @@
 # Rcp_ResponseCookies
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_rcp___response_cookies
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 响应Cookie。
  
@@ -19,16 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 成员变量
+### 成员变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | char * name | 响应Cookie名称。 |
@@ -48,15 +52,17 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### cookieAttributes
+### cookieAttributes
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Rcp_CookieAttributes* Rcp_ResponseCookies::cookieAttributes
@@ -68,9 +74,10 @@ Rcp_CookieAttributes* Rcp_ResponseCookies::cookieAttributes
  
   
 
-#### domain
+### domain
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 char* Rcp_ResponseCookies::domain
@@ -82,9 +89,10 @@ char* Rcp_ResponseCookies::domain
  
   
 
-#### expires
+### expires
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 char* Rcp_ResponseCookies::expires
@@ -96,9 +104,10 @@ char* Rcp_ResponseCookies::expires
  
   
 
-#### httpOnly
+### httpOnly
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool Rcp_ResponseCookies::httpOnly
@@ -110,9 +119,10 @@ bool Rcp_ResponseCookies::httpOnly
  
   
 
-#### maxAge
+### maxAge
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 uint64_t Rcp_ResponseCookies::maxAge
@@ -124,9 +134,10 @@ uint64_t Rcp_ResponseCookies::maxAge
  
   
 
-#### name
+### name
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 char* Rcp_ResponseCookies::name
@@ -138,9 +149,10 @@ char* Rcp_ResponseCookies::name
  
   
 
-#### next
+### next
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 struct Rcp_ResponseCookies* Rcp_ResponseCookies::next
@@ -152,9 +164,10 @@ struct Rcp_ResponseCookies* Rcp_ResponseCookies::next
  
   
 
-#### originString
+### originString
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 char* Rcp_ResponseCookies::originString
@@ -166,9 +179,10 @@ char* Rcp_ResponseCookies::originString
  
   
 
-#### path
+### path
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 char* Rcp_ResponseCookies::path
@@ -180,9 +194,10 @@ char* Rcp_ResponseCookies::path
  
   
 
-#### rawSize
+### rawSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 uint64_t Rcp_ResponseCookies::rawSize
@@ -194,9 +209,10 @@ uint64_t Rcp_ResponseCookies::rawSize
  
   
 
-#### sameSite
+### sameSite
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 char* Rcp_ResponseCookies::sameSite
@@ -208,9 +224,10 @@ char* Rcp_ResponseCookies::sameSite
  
   
 
-#### secure
+### secure
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool Rcp_ResponseCookies::secure
@@ -222,9 +239,10 @@ bool Rcp_ResponseCookies::secure
  
   
 
-#### value
+### value
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 char* Rcp_ResponseCookies::value

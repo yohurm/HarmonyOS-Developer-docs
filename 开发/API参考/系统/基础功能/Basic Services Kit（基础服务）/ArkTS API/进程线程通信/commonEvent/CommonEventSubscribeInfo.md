@@ -1,25 +1,27 @@
 # CommonEventSubscribeInfo
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-commonevent-commoneventsubscribeinfo
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-用于表示公共事件订阅者的信息，支持配置订阅的公共事件类型、发布者权限、发布者设备ID、用户ID、订阅优先级等参数，适用于应用需要订阅系统公共事件或自定义公共事件并精细化控制事件来源的场景。
- 
+用于表示公共事件订阅者的信息，支持配置订阅的公共事件类型、发布者权限、发布者设备ID、用户ID、订阅优先级等参数，适用于应用需要订阅[系统公共事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/common-event-glossary#system-common-event系统公共事件)或自定义公共事件并精细化控制事件来源的场景。
+
 > [!NOTE]
 > 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 订阅自定义公共事件后，任意应用都可以向订阅者发送潜在的恶意公共事件。通过本模块的publisherPermission和publisherBundleName参数，可以限制公共事件发布者的范围。
 
-  
 
-#### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
- 
+
 **系统能力：** SystemCapability.Notification.CommonEvent
-  
+
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | events | Array&lt;string&gt; | 否 | 否 | 表示要订阅的公共事件列表。 |

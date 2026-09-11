@@ -1,6 +1,6 @@
 # 不依赖UI组件的全局自定义弹出框 (openCustomDialog)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-uicontext-custom-dialog
 
@@ -15,9 +15,10 @@
 当isModal为true时，弹出框为模态弹窗，且弹窗周围的蒙层区不支持透传。isModal为false时，弹出框为非模态弹窗，且弹窗周围的蒙层区可以透传。因此如果需要同时允许弹出框的交互和弹出框外页面的交互行为，需要将弹出框设置为非模态。
 
 
-#### 生命周期
+## 生命周期
 
 弹出框提供了生命周期函数用于通知用户该弹出框的生命周期。生命周期的触发时序依次为：onWillAppear -> onDidAppear -> onWillDisappear -> onDidDisappear。
+
 
 | 名称 | 类型 | 说明 |
 | --- | --- | --- |
@@ -29,7 +30,7 @@
 
 
 
-#### 自定义弹出框的打开与关闭
+## 自定义弹出框的打开与关闭
 
 > [!NOTE]
 > 详细变量定义请参考 完整示例 。
@@ -86,7 +87,7 @@ PromptActionClassNew.ctx.getPromptAction().closeCustomDialog(PromptActionClassNe
 
 
 
-#### 更新自定义弹出框的内容
+## 更新自定义弹出框的内容
 
 ComponentContent与[BuilderNode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-buildernode)有相同的使用限制，不支持自定义组件使用[@Reusable](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-reusable)、[@Link](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-link)、[@Provide](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-provide-and-consume)、[@Consume](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-provide-and-consume)等装饰器，来同步弹出框弹出的页面与ComponentContent中自定义组件的状态。因此，若需要更新弹出框中自定义组件的内容可以通过ComponentContent提供的update方法来实现。
 
@@ -96,7 +97,7 @@ this.contentNode.update(new Params('update'))
 
 
 
-#### 更新自定义弹出框的属性
+## 更新自定义弹出框的属性
 
 通过updateCustomDialog可以动态更新弹出框的属性。目前支持更新弹出框的对齐方式、基于对齐方式的偏移量、是否点击蒙层自动关闭以及蒙层颜色，对应的属性分别为[BaseDialogOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-promptaction#basedialogoptions11)中的alignment、offset、autoCancel和maskColor。
 
@@ -116,7 +117,7 @@ PromptActionClassNew.ctx.getPromptAction().updateCustomDialog(PromptActionClassN
 
 
 
-#### 为弹出框内容和蒙层设置不同的动画效果
+## 为弹出框内容和蒙层设置不同的动画效果
 
 当弹出框出现时，内容与蒙层显示动效一致。若开发者希望为弹出框内容及蒙层设定不同动画效果，从API version 19开始，可通过[BaseDialogOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-promptaction#basedialogoptions11)中dialogTransition和maskTransition属性单独配置弹窗内容与蒙层的动画。具体的动画效果请参考[组件内转场 (transition)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-transition-animation-component)。
 
@@ -194,12 +195,12 @@ export struct CustomDialogComponentWithTransition {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/G35j75F-Q--rjyQaQ2azaA/zh-cn_image_0000002704272273.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095713Z&HW-CC-Expire=86400&HW-CC-Sign=D812F4743F7451A13CAF756F10D50E83A3F9B6D1D664EC8197CBEE53C5036DEC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/WtQQLNoVTsG0KLhs_8a_lg/zh-cn_image_0000002747210405.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072514Z&HW-CC-Expire=86400&HW-CC-Sign=74FF5725C10B8135CBAD85F3A560CF96265901EAE3849E00FB2A5B0CE73EF8C4)
 
 
 
 
-#### 设置弹出框避让软键盘的距离
+## 设置弹出框避让软键盘的距离
 
 为显示弹出框的独立性，弹出框弹出时会与周边进行避让，包括状态栏、导航条以及键盘等留有间距。故当软键盘弹出时，默认情况下，弹出框会自动避开软键盘，并与之保持16vp的距离。从API version 15开始，开发者可以利用[BaseDialogOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-promptaction#basedialogoptions11)中的keyboardAvoidMode和keyboardAvoidDistance这两个配置项，来设置弹出框在软键盘弹出时的行为，包括是否需要避开软键盘以及与软键盘之间的距离。
 
@@ -255,12 +256,12 @@ export struct CustomDialogWithKeyboardAvoidDistance {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/qLqToYHsTgmHy5HA3cUHYA/zh-cn_image_0000002674472474.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095713Z&HW-CC-Expire=86400&HW-CC-Sign=DC7DF6316696840915D14CAD5BD86383026C74F3B3528F2870E078B7F38DD00C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/4sxMUZsZSyqHELbQ3AXBgA/zh-cn_image_0000002717770470.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072514Z&HW-CC-Expire=86400&HW-CC-Sign=186B0DA4F1DABD2D57D5B154BFBA02352EA8564B5D99EBFF12489A7C300202E3)
 
 
 
 
-#### 完整示例
+## 完整示例
 
 ```ArkTS
 // PromptActionClassNew.ets
@@ -411,4 +412,4 @@ export struct OpenDialogAndUpdate {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/3BxjcbEbR1ONhGdJ3EBVeg/zh-cn_image_0000002704392441.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095713Z&HW-CC-Expire=86400&HW-CC-Sign=05DBD130CE63785B1A8379B3AAEBEED2B55F214A34EFB1B984CA077175AB0ACE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/VFAxy8eoRj6Y1zzOsFa1Zg/zh-cn_image_0000002717610536.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072514Z&HW-CC-Expire=86400&HW-CC-Sign=4173D226F2B272CF6A69CC9ED9C49A4B9D3854D4198E76210AD30AD235FE51CB)

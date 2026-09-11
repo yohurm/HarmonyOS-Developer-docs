@@ -1,6 +1,6 @@
 # OH_AudioEncInfo
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avscreencapture-oh-audioencinfo
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -10,7 +10,8 @@ typedef struct OH_AudioEncInfo {...} OH_AudioEncInfo
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -26,17 +27,20 @@ typedef struct OH_AudioEncInfo {...} OH_AudioEncInfo
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | int32_t audioBitrate | 音频编码比特率，用于设置音频编码的输出比特率。取值范围需参考具体编码格式支持的比特率范围，常见取值有48000、96000和128000。单位为比特每秒（bit/s）。超出编码格式支持范围时可能导致编码失败。 |
-| OH_AudioCodecFormat audioCodecFormat | 音频编码格式，用于指定屏幕录制时音频数据所采用的编码格式。不同编码格式对应不同的编码算法、压缩效率、兼容性和质量表现，选择合适的编码格式会影响音频文件的大小、播放兼容性和音质。支持的编码格式详见OH_AudioCodecFormat枚举定义。 |
+| OH_AudioCodecFormat audioCodecformat | 音频编码格式，用于指定屏幕录制时音频数据所采用的编码格式。不同编码格式对应不同的编码算法、压缩效率、兼容性和质量表现，选择合适的编码格式会影响音频文件的大小、播放兼容性和音质。支持的编码格式详见OH_AudioCodecFormat枚举定义。 |

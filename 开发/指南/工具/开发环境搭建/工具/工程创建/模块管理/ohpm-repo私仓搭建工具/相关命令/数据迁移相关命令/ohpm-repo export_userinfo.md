@@ -1,13 +1,13 @@
 # ohpm-repo export_userinfo
 
-更新时间：2026-01-15 06:51:04
+更新时间：2026-08-29 09:41:34
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo-export-userinfo
 
-导出用户必要的DB数据。
+导出用户的DB数据。
  
 
-#### 命令格式
+## 命令格式
 
 ```text
 ohpm-repo export_userinfo
@@ -15,9 +15,9 @@ ohpm-repo export_userinfo
  
  
 
-#### 功能描述
+## 功能描述
 
-在当前的工作目录导出记录了DB数据的export_userInfo_xxx.zip文件，其中包含加密组件和下面的10张数据表。
+在当前工作目录导出export_userInfo_xxx.zip文件，该文件记录了DB数据，包含加密组件和以下10张数据表。
  
 - user
 - group_member
@@ -33,7 +33,7 @@ ohpm-repo export_userinfo
  
  
 
-#### 示例
+## 示例
 
 执行以下命令：
  

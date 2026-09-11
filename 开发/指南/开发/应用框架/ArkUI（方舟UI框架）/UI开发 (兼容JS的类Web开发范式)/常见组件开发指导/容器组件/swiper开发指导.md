@@ -1,13 +1,13 @@
 # swiper开发指导
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-components-swiper
 
 swiper为滑动容器，提供切换显示子组件的能力。具体用法请参考[swiper](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-container-swiper)。
 
 
-#### 创建swiper组件
+## 创建swiper组件
 
 在pages/index目录下的hml文件中创建一个swiper组件。
 
@@ -65,7 +65,7 @@ text{
 
 
 
-#### 添加属性
+## 添加属性
 
 在swiper组件不开启循环播放（loop="false"）时添加自动播放属性（autoplay），设置自动播放时播放时间间隔（interval），页面会自动切换并停留在最后一个子组件页面。添加digital属性启用数字导航点，设置切换时为渐隐滑动效果（scrolleffect="fade"）。
 
@@ -126,7 +126,7 @@ text{
 
 
 
-#### 设置样式
+## 设置样式
 
 设置swiper组件的宽高，导航点指示器的直径大小（indicator-size）、颜色（indicator-color）、相对位置（indicator-top）及选中时的颜色（indicator-selected-color）。
 
@@ -186,7 +186,7 @@ text{
 
 
 
-#### 绑定事件
+## 绑定事件
 
 创建两个button组件添加点击事件，当点击后就调用showPrevious（显示上一个子组件）或showNext（显示下一个子组件）方法。添加select组件下拉选择时触发change事件后调用swipeTo方法跳转到指定轮播页面。swiper组件绑定change（当前显示的组件索引变化时触发）和finish（切换动画结束时触发）事件。
 
@@ -288,7 +288,7 @@ export default{
 
 
 
-#### 场景示例
+## 场景示例
 
 本场景中使用swiper创建一个轮播图，在轮播图底部制作一个缩略图，点击缩略图后调用swipeTo方法切换到对应的轮播图。
 

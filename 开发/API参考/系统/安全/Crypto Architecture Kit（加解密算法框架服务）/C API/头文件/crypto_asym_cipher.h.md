@@ -1,13 +1,14 @@
 # crypto_asym_cipher.h
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-crypto-asym-cipher-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义非对称加解密接口。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_CryptoAsymCipher | OH_CryptoAsymCipher | 非对称加解密结构体，表示非对称加解密上下文。 |
@@ -41,10 +45,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | CryptoSm2CiphertextSpec_item | CryptoSm2CiphertextSpec_item | 定义SM2密文规格项类型。 |
@@ -52,10 +58,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_Crypto_ErrCode OH_CryptoAsymCipher_Create(const char *algoName, OH_CryptoAsymCipher **ctx) | 根据给定的算法名称创建非对称加解密上下文。 注意：创建的资源必须通过OH_CryptoAsymCipher_Destroy销毁。 |
@@ -71,15 +79,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### CryptoSm2CiphertextSpec_item
+### CryptoSm2CiphertextSpec_item
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum CryptoSm2CiphertextSpec_item
@@ -91,6 +101,7 @@ enum CryptoSm2CiphertextSpec_item
  
 **起始版本：** 20
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | CRYPTO_SM2_CIPHERTEXT_C1_X = 0 | 公钥x，也称为C1x。 |
@@ -101,15 +112,17 @@ enum CryptoSm2CiphertextSpec_item
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_CryptoAsymCipher_Create()
+### OH_CryptoAsymCipher_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoAsymCipher_Create(const char *algoName, OH_CryptoAsymCipher **ctx)
@@ -125,6 +138,7 @@ OH_Crypto_ErrCode OH_CryptoAsymCipher_Create(const char *algoName, OH_CryptoAsym
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *algoName | [in] 非对称加解密算法名称，不能为NULL。取值如下： - RSA算法PKCS1填充模式：取值为"RSA\|PKCS1"。 - RSA算法OAEP填充模式：格式为"RSA\|PKCS1_OAEP\|摘要\|MGF1摘要"，示例："RSA\|PKCS1_OAEP\|SHA256\|MGF1_SHA256"。摘要支持"MD5"、"SHA1"、"SHA224"、"SHA256"、"SHA384"、"SHA512"。MGF1摘要支持"MGF1_SHA1"、"MGF1_SHA224"、"MGF1_SHA256"、"MGF1_SHA384"、"MGF1_SHA512"。 - RSA算法NoPadding填充模式：取值为"RSA\|NoPadding"。 - SM2算法：格式为"SM2\|摘要"，示例："SM2\|SM3"。摘要支持"MD5"、"SHA1"、"SHA224"、"SHA256"、"SHA384"、"SHA512"、"SM3"。 |
@@ -133,6 +147,7 @@ OH_Crypto_ErrCode OH_CryptoAsymCipher_Create(const char *algoName, OH_CryptoAsym
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_PARAMETER_CHECK_FAILED：algoName或ctx为NULL。 CRYPTO_NOT_SUPPORTED：不支持的算法。 CRYPTO_MEMORY_ERROR：内存分配失败。 CRYPTO_OPERTION_ERROR：加解密操作失败。 |
@@ -144,9 +159,10 @@ OH_Crypto_ErrCode OH_CryptoAsymCipher_Create(const char *algoName, OH_CryptoAsym
  
   
 
-#### OH_CryptoAsymCipher_Init()
+### OH_CryptoAsymCipher_Init()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoAsymCipher_Init(OH_CryptoAsymCipher *ctx, Crypto_CipherMode mode, OH_CryptoKeyPair *key)
@@ -160,6 +176,7 @@ OH_Crypto_ErrCode OH_CryptoAsymCipher_Init(OH_CryptoAsymCipher *ctx, Crypto_Ciph
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoAsymCipher *ctx | [in] 非对称加解密上下文。不能为NULL。 |
@@ -169,6 +186,7 @@ OH_Crypto_ErrCode OH_CryptoAsymCipher_Init(OH_CryptoAsymCipher *ctx, Crypto_Ciph
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_PARAMETER_CHECK_FAILED：ctx或key为NULL。 CRYPTO_NOT_SUPPORTED：不支持的操作或算法。 CRYPTO_MEMORY_ERROR：内存操作失败。 CRYPTO_OPERTION_ERROR：加解密初始化失败。 |
@@ -180,9 +198,10 @@ OH_Crypto_ErrCode OH_CryptoAsymCipher_Init(OH_CryptoAsymCipher *ctx, Crypto_Ciph
  
   
 
-#### OH_CryptoAsymCipher_Final()
+### OH_CryptoAsymCipher_Final()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoAsymCipher_Final(OH_CryptoAsymCipher *ctx, const Crypto_DataBlob *in, Crypto_DataBlob *out)
@@ -198,6 +217,7 @@ OH_Crypto_ErrCode OH_CryptoAsymCipher_Final(OH_CryptoAsymCipher *ctx, const Cryp
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoAsymCipher *ctx | [in] 非对称加解密上下文。不能为NULL。 |
@@ -207,6 +227,7 @@ OH_Crypto_ErrCode OH_CryptoAsymCipher_Final(OH_CryptoAsymCipher *ctx, const Cryp
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_PARAMETER_CHECK_FAILED：ctx、in或out为NULL。 CRYPTO_NOT_SUPPORTED：不支持的操作或算法。 CRYPTO_MEMORY_ERROR：内存分配失败。 CRYPTO_OPERTION_ERROR：加解密完成失败。可能的原因： RSA加密时明文超过密钥长度和填充模式允许的最大长度； RSA解密时密钥错误或密文损坏； SM2解密时密钥错误或密文损坏； SM2密文的ASN.1结构无效。 |
@@ -214,9 +235,10 @@ OH_Crypto_ErrCode OH_CryptoAsymCipher_Final(OH_CryptoAsymCipher *ctx, const Cryp
  
   
 
-#### OH_CryptoAsymCipher_Destroy()
+### OH_CryptoAsymCipher_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_CryptoAsymCipher_Destroy(OH_CryptoAsymCipher *ctx)
@@ -230,6 +252,7 @@ void OH_CryptoAsymCipher_Destroy(OH_CryptoAsymCipher *ctx)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoAsymCipher *ctx | [in] 非对称加解密上下文。 |
@@ -237,9 +260,10 @@ void OH_CryptoAsymCipher_Destroy(OH_CryptoAsymCipher *ctx)
  
   
 
-#### OH_CryptoSm2CiphertextSpec_Create()
+### OH_CryptoSm2CiphertextSpec_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoSm2CiphertextSpec_Create(Crypto_DataBlob *sm2Ciphertext, OH_CryptoSm2CiphertextSpec **spec)
@@ -255,6 +279,7 @@ OH_Crypto_ErrCode OH_CryptoSm2CiphertextSpec_Create(Crypto_DataBlob *sm2Cipherte
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Crypto_DataBlob *sm2Ciphertext | [in] DER格式的SM2密文，如果为NULL则创建空的SM2密文规格。 |
@@ -263,6 +288,7 @@ OH_Crypto_ErrCode OH_CryptoSm2CiphertextSpec_Create(Crypto_DataBlob *sm2Cipherte
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_PARAMETER_CHECK_FAILED：spec为NULL。 CRYPTO_NOT_SUPPORTED：不支持的操作或算法。 CRYPTO_MEMORY_ERROR：内存分配失败。 CRYPTO_OPERTION_ERROR：解析SM2密文失败。可能的原因：输入数据不是有效的DER编码SM2密文。 |
@@ -276,9 +302,10 @@ OH_Crypto_ErrCode OH_CryptoSm2CiphertextSpec_Create(Crypto_DataBlob *sm2Cipherte
  
   
 
-#### OH_CryptoSm2CiphertextSpec_GetItem()
+### OH_CryptoSm2CiphertextSpec_GetItem()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoSm2CiphertextSpec_GetItem(OH_CryptoSm2CiphertextSpec *spec, CryptoSm2CiphertextSpec_item item, Crypto_DataBlob *out)
@@ -294,6 +321,7 @@ OH_Crypto_ErrCode OH_CryptoSm2CiphertextSpec_GetItem(OH_CryptoSm2CiphertextSpec 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoSm2CiphertextSpec *spec | [in] SM2密文规格。不能为NULL。 |
@@ -303,6 +331,7 @@ OH_Crypto_ErrCode OH_CryptoSm2CiphertextSpec_GetItem(OH_CryptoSm2CiphertextSpec 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_PARAMETER_CHECK_FAILED：spec或out为NULL。 CRYPTO_NOT_SUPPORTED：不支持的操作或算法。 CRYPTO_MEMORY_ERROR：内存分配失败。 CRYPTO_OPERTION_ERROR：加解密操作失败。 |
@@ -310,9 +339,10 @@ OH_Crypto_ErrCode OH_CryptoSm2CiphertextSpec_GetItem(OH_CryptoSm2CiphertextSpec 
  
   
 
-#### OH_CryptoSm2CiphertextSpec_SetItem()
+### OH_CryptoSm2CiphertextSpec_SetItem()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoSm2CiphertextSpec_SetItem(OH_CryptoSm2CiphertextSpec *spec, CryptoSm2CiphertextSpec_item item, Crypto_DataBlob *in)
@@ -326,6 +356,7 @@ OH_Crypto_ErrCode OH_CryptoSm2CiphertextSpec_SetItem(OH_CryptoSm2CiphertextSpec 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoSm2CiphertextSpec *spec | [in] SM2密文规格。不能为NULL。 |
@@ -335,6 +366,7 @@ OH_Crypto_ErrCode OH_CryptoSm2CiphertextSpec_SetItem(OH_CryptoSm2CiphertextSpec 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_PARAMETER_CHECK_FAILED：spec或in为NULL、in->data为NULL或in->len为0。 CRYPTO_NOT_SUPPORTED：不支持的操作或算法。 CRYPTO_MEMORY_ERROR：深拷贝的内存分配失败。 CRYPTO_OPERTION_ERROR：加解密操作失败。 |
@@ -346,9 +378,10 @@ OH_Crypto_ErrCode OH_CryptoSm2CiphertextSpec_SetItem(OH_CryptoSm2CiphertextSpec 
  
   
 
-#### OH_CryptoSm2CiphertextSpec_Encode()
+### OH_CryptoSm2CiphertextSpec_Encode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Crypto_ErrCode OH_CryptoSm2CiphertextSpec_Encode(OH_CryptoSm2CiphertextSpec *spec, Crypto_DataBlob *out)
@@ -364,6 +397,7 @@ OH_Crypto_ErrCode OH_CryptoSm2CiphertextSpec_Encode(OH_CryptoSm2CiphertextSpec *
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoSm2CiphertextSpec *spec | [in] SM2密文规格。不能为NULL。 |
@@ -372,6 +406,7 @@ OH_Crypto_ErrCode OH_CryptoSm2CiphertextSpec_Encode(OH_CryptoSm2CiphertextSpec *
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Crypto_ErrCode | CRYPTO_SUCCESS：操作成功。 CRYPTO_PARAMETER_CHECK_FAILED：spec或out为NULL，或SM2密文字段（C1X、C1Y、C2、C3）未设置，或C3（hashData）长度不为32字节。 CRYPTO_NOT_SUPPORTED：不支持的操作或算法。 CRYPTO_MEMORY_ERROR：内存操作失败。 CRYPTO_OPERTION_ERROR：编码失败。 |
@@ -379,9 +414,10 @@ OH_Crypto_ErrCode OH_CryptoSm2CiphertextSpec_Encode(OH_CryptoSm2CiphertextSpec *
  
   
 
-#### OH_CryptoSm2CiphertextSpec_Destroy()
+### OH_CryptoSm2CiphertextSpec_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_CryptoSm2CiphertextSpec_Destroy(OH_CryptoSm2CiphertextSpec *spec)
@@ -395,6 +431,7 @@ void OH_CryptoSm2CiphertextSpec_Destroy(OH_CryptoSm2CiphertextSpec *spec)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CryptoSm2CiphertextSpec *spec | [in] SM2密文规格。 |

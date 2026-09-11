@@ -1,0 +1,16 @@
+# Media Library Kit
+
+更新时间：2026-08-29 09:40:02
+
+来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-medialibrarykit-7003
+
+| 操作 | 旧版本 | 新版本 | d.ts文件 |
+| --- | --- | --- | --- |
+| 删除API | 类名：photoAccessHelper； API声明：enum SearchSuggestionType 差异内容：enum SearchSuggestionType | NA | api/@ohos.file.photoAccessHelper.d.ts |
+| 删除API | 类名：SearchSuggestionType； API声明：TIME_GEO_LABEL = 0 差异内容：TIME_GEO_LABEL = 0 | NA | api/@ohos.file.photoAccessHelper.d.ts |
+| 删除API | 类名：SearchSuggestionType； API声明：TIME_GEO = 1 差异内容：TIME_GEO = 1 | NA | api/@ohos.file.photoAccessHelper.d.ts |
+| 删除API | 类名：SearchSuggestionType； API声明：TIME_LABEL = 2 差异内容：TIME_LABEL = 2 | NA | api/@ohos.file.photoAccessHelper.d.ts |
+| 删除API | 类名：SearchSuggestionType； API声明：TIME_PEOPLE_GEO_LABEL = 3 差异内容：TIME_PEOPLE_GEO_LABEL = 3 | NA | api/@ohos.file.photoAccessHelper.d.ts |
+| 删除API | 类名：SearchSuggestionType； API声明：TIME_PEOPLE_GEO = 4 差异内容：TIME_PEOPLE_GEO = 4 | NA | api/@ohos.file.photoAccessHelper.d.ts |
+| 删除API | 类名：SearchSuggestionType； API声明：TIME_PEOPLE_LABEL = 5 差异内容：TIME_PEOPLE_LABEL = 5 | NA | api/@ohos.file.photoAccessHelper.d.ts |
+| 删除API | 类名：SearchSuggestionType； API声明：TIME_PEOPLE = 6 差异内容：TIME_PEOPLE = 6 | NA | api/@ohos.file.photoAccessHelper.d.ts |

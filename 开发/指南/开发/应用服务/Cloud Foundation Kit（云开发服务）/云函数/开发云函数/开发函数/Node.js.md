@@ -1,16 +1,16 @@
 # Node.js
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundation-develop-function-nodejs
 
-#### 约束与限制
+## 约束与限制
 
 支持Phone、Tablet设备。并且从5.1.0(18)版本开始，新增支持Wearable设备；从5.1.1(19)版本开始，新增支持TV设备；从6.1.0(23)版本开始，新增支持PC/2in1设备。
  
   
 
-#### 入口方法
+## 入口方法
 
 入口方法定义如下：
  
@@ -31,7 +31,7 @@ module.exports.myHandler = function(event, context, callback, logger)
  
   
 
-#### 日志记录
+## 日志记录
 
 开发者可在代码中使用logger接口记录日志，后端已通过global.logger全局定义，目前支持四种级别：
  
@@ -43,7 +43,7 @@ module.exports.myHandler = function(event, context, callback, logger)
  
   
 
-#### 获取环境变量
+## 获取环境变量
 
 开发者可在代码中使用context.env.key访问环境变量，获取环境变量env1示例如下：
  
@@ -59,7 +59,7 @@ let env1 = context.env.env1;
  
   
 
-#### 异常处理
+## 异常处理
 
 开发者可以在函数代码中捕获异常，封装成error对象返回给调用方。对于函数执行期间被平台捕获的异常，平台同样以error对象形式返回给调用方。error对象定义如下。
  
@@ -90,7 +90,7 @@ try {
  
   
 
-#### 函数示例
+## 函数示例
 
 示例函数如下：
  
@@ -140,7 +140,7 @@ module.exports.myHandler = myHandler;
  
   
 
-#### 准备函数部署包
+## 准备函数部署包
 
 上传的Node.js函数部署包须使用如下结构，处理程序所在代码文件，例如示例中的handler.js，必须在zip包根目录下，依赖项放到node_modules目录下。
  
@@ -155,4 +155,4 @@ my-function.zip
 可通过npm工具的相关命令，安装与管理依赖。例如npm install xxx命令（执行路径无限制）可将依赖xxx自动安装到根目录的node_modules文件夹下。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/gcB_7OtZRcOFU_ectTs48Q/zh-cn_image_0000002685927197.png?HW-CC-KV=V1&HW-CC-Date=20260730T071959Z&HW-CC-Expire=86400&HW-CC-Sign=40004105665C2A9F540FB8CC41E2BF4BB0E4FAA8C9909637AF62A00A9EEAA52C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/ALh1gIoJTlSZiDEsyW_UGw/zh-cn_image_0000002717611716.png?HW-CC-KV=V1&HW-CC-Date=20260911T072715Z&HW-CC-Expire=86400&HW-CC-Sign=560077DFAE1A461DA637E86F4E8E13F526CE3032E62EBB47C2CCCC6D2E95C09F)

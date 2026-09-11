@@ -1,9 +1,9 @@
 # @ohos.app.ability.UIExtensionContentSession (带界面扩展能力的界面操作类)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiextensioncontentsession
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 UIExtensionContentSession是[UIExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiextensionability)组件的界面操作类，提供页面加载、设置宿主应用（UIExtensionAbility组件的拉起方）窗口隐私模式等功能。当宿主应用拉起指定的UIExtensionAbility组件时，系统创建UIExtensionContentSession对象，并通过[onSessionCreate](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiextensionability#onsessioncreate)回调传递给开发者。一个UIExtensionAbility组件对应一个UIExtensionContentSession对象，每个UIExtensionAbility组件的UIExtensionContentSession对象之间互不影响。
 
@@ -12,9 +12,10 @@ UIExtensionContentSession是[UIExtensionAbility](https://developer.huawei.com/co
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { UIExtensionContentSession } from '@kit.AbilityKit';
@@ -22,17 +23,19 @@ import { UIExtensionContentSession } from '@kit.AbilityKit';
 
 
 
-#### UIExtensionContentSession
+## UIExtensionContentSession
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 UIExtensionAbility组件的界面操作类，提供页面加载、设置宿主应用窗口隐私模式等功能。
 
 
 
-#### loadContent
+### loadContent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 loadContent(path: string, storage?: LocalStorage): void
 
@@ -41,6 +44,7 @@ loadContent(path: string, storage?: LocalStorage): void
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -51,6 +55,7 @@ loadContent(path: string, storage?: LocalStorage): void
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -86,9 +91,10 @@ export default class ShareExtAbility extends ShareExtensionAbility {
 
 
 
-#### loadContentByName18+
+### loadContentByName18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 loadContentByName(name: string, storage?: LocalStorage): void
 
@@ -97,6 +103,7 @@ loadContentByName(name: string, storage?: LocalStorage): void
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -107,6 +114,7 @@ loadContentByName(name: string, storage?: LocalStorage): void
 **错误码：**
 
 以下错误码详细介绍请参考[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -173,9 +181,10 @@ struct UIExtensionPage {
 
 
 
-#### terminateSelf
+### terminateSelf
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 terminateSelf(callback: AsyncCallback&lt;void&gt;): void
 
@@ -185,6 +194,7 @@ terminateSelf(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当接口调用成功，err为undefined，否则为错误对象。 |
@@ -193,6 +203,7 @@ terminateSelf(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -235,9 +246,10 @@ struct Index {
 
 
 
-#### terminateSelf
+### terminateSelf
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 terminateSelf(): Promise&lt;void&gt;
 
@@ -246,6 +258,7 @@ terminateSelf(): Promise&lt;void&gt;
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -288,9 +301,10 @@ struct Index {
 
 
 
-#### terminateSelfWithResult
+### terminateSelfWithResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 terminateSelfWithResult(parameter: AbilityResult, callback: AsyncCallback&lt;void&gt;): void
 
@@ -299,6 +313,7 @@ terminateSelfWithResult(parameter: AbilityResult, callback: AsyncCallback&lt;voi
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -309,6 +324,7 @@ terminateSelfWithResult(parameter: AbilityResult, callback: AsyncCallback&lt;voi
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -361,9 +377,10 @@ struct Index {
 
 
 
-#### terminateSelfWithResult
+### terminateSelfWithResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 terminateSelfWithResult(parameter: AbilityResult): Promise&lt;void&gt;
 
@@ -373,12 +390,14 @@ terminateSelfWithResult(parameter: AbilityResult): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | parameter | AbilityResult | 是 | 返回给宿主应用的信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -388,6 +407,7 @@ terminateSelfWithResult(parameter: AbilityResult): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -440,9 +460,10 @@ struct Index {
 
 
 
-#### setWindowPrivacyMode
+### setWindowPrivacyMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setWindowPrivacyMode(isPrivacyMode: boolean): Promise&lt;void&gt;
 
@@ -454,12 +475,14 @@ setWindowPrivacyMode(isPrivacyMode: boolean): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isPrivacyMode | boolean | 是 | 表示是否开启隐私模式。true表示开启；false表示关闭。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -469,6 +492,7 @@ setWindowPrivacyMode(isPrivacyMode: boolean): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -509,9 +533,10 @@ export default class ShareExtAbility extends ShareExtensionAbility {
 
 
 
-#### setWindowPrivacyMode
+### setWindowPrivacyMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setWindowPrivacyMode(isPrivacyMode: boolean, callback: AsyncCallback&lt;void&gt;): void
 
@@ -523,6 +548,7 @@ setWindowPrivacyMode(isPrivacyMode: boolean, callback: AsyncCallback&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isPrivacyMode | boolean | 是 | 表示是否开启隐私模式。true表示开启；false表示关闭。 |
@@ -532,6 +558,7 @@ setWindowPrivacyMode(isPrivacyMode: boolean, callback: AsyncCallback&lt;void&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -572,9 +599,10 @@ export default class ShareExtAbility extends ShareExtensionAbility {
 
 
 
-#### startAbilityByType11+
+### startAbilityByType11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startAbilityByType(type: string, wantParam: Record<string, Object>, abilityStartCallback: AbilityStartCallback, callback: AsyncCallback&lt;void&gt;): void
 
@@ -583,6 +611,7 @@ startAbilityByType(type: string, wantParam: Record<string, Object>, abilityStart
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -595,6 +624,7 @@ startAbilityByType(type: string, wantParam: Record<string, Object>, abilityStart
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -645,9 +675,10 @@ export default class ShareExtAbility extends ShareExtensionAbility {
 
 
 
-#### startAbilityByType11+
+### startAbilityByType11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startAbilityByType(type: string, wantParam: Record<string, Object>, abilityStartCallback: AbilityStartCallback): Promise&lt;void&gt;
 
@@ -656,6 +687,7 @@ startAbilityByType(type: string, wantParam: Record<string, Object>, abilityStart
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -666,6 +698,7 @@ startAbilityByType(type: string, wantParam: Record<string, Object>, abilityStart
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -674,6 +707,7 @@ startAbilityByType(type: string, wantParam: Record<string, Object>, abilityStart
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -724,9 +758,10 @@ export default class ShareExtAbility extends ShareExtensionAbility {
 
 
 
-#### getUIExtensionWindowProxy12+
+### getUIExtensionWindowProxy12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUIExtensionWindowProxy(): uiExtension.WindowProxy
 
@@ -736,6 +771,7 @@ getUIExtensionWindowProxy(): uiExtension.WindowProxy
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | uiExtension.WindowProxy | UIExtensionAbility组件的宿主应用窗口代理。 |
@@ -744,6 +780,7 @@ getUIExtensionWindowProxy(): uiExtension.WindowProxy
 **错误码：**
 
 以下错误码详细介绍请参考[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

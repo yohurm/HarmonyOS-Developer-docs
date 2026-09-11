@@ -1,13 +1,13 @@
 # ArkUI简介
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkui-overview
 
 ArkUI（方舟UI框架）为应用的UI开发提供了完整的基础设施，包括简洁的UI语法、丰富的UI功能（组件、布局、动画以及交互事件），以及实时界面预览工具等，可以支持开发者进行可视化界面开发。
 
 
-#### 基本概念
+## 基本概念
 
  - **UI：** 即用户界面。开发者可以将应用的用户界面设计为多个功能页面[NavDestination](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navdestination)，页面通过栈结构管理，并通过导航容器[Navigation](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation)完成页面间的调度管理如跳转、回退等操作，以实现应用内的功能解耦。
  - **组件：** UI构建与显示的最小单位，如列表、网格、按钮、单选框、进度条、文本等。开发者通过多种组件的组合，构建出满足自身应用诉求的完整界面。
@@ -15,57 +15,13 @@ ArkUI（方舟UI框架）为应用的UI开发提供了完整的基础设施，�
 
 
 
-#### 两种开发范式
+## 两种开发范式
 
 针对不同的应用场景及技术背景，方舟UI框架提供了两种开发范式，分别是[基于ArkTS的声明式开发范式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-development-overview)（简称“声明式开发范式”）和[兼容JS的类Web开发范式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-overview)（简称“类Web开发范式”）。
 
  - **声明式开发范式**：采用基于TypeScript声明式UI语法扩展而来的[ArkTS语言](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-get-started)，从组件、动画和状态管理三个维度提供UI绘制能力。
- - **类Web开发范式**：采用经典的
+ - **类Web开发范式**：采用经典的HML、CSS、JavaScript三段式开发方式，即使用HML标签文件搭建布局、使用CSS文件描述样式、使用JavaScript文件处理逻辑。该范式更符合Web前端开发者的使用习惯，便于快速将已有的Web应用改造成方舟UI框架应用。
 
-
-
-
-#### 模拟器支持情况
-
-本Kit支持模拟器，但与真机存在部分能力差异，具体差异如下。
-
- - 通用差异，请参见[模拟器与真机的差异](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-specification#section1227613205203)。
- - 其他差异，模拟器不支持的功能以及组件如下：
-
-| 组件名 | 不支持情况 |
-
-| --- | --- |
-
-| Image | 不支持enableAnalyzer |
-
-| 图像类型定义 | 不支持图像AI分析，例如ImageAnalyzerController |
-
-| @ohos.arkui.drawableDescriptor | HDR特性不支持，例如setHdrComposition |
-
-| OH_ArkUI_TextDataDetectorConfig | 不支持 |
-
-| EmbeddedComponent | 不支持 |
-
-| @ohos.pluginComponent | 不支持 |
-
-| toolbar | 不支持 |
-
-| @Preview装饰器 | 不支持 |
-
-| AbilityBase_Want | 不支持 |
-
-| ArkUI_EmbeddedComponentOption | 不支持 |
-
-| ArkUI_SelectedDragPreviewStyle | 不支持 |
-
-| embedded_component.h | 不支持 |
-
-| ArkUI_NodeAttributeType（EmbeddedComponent组件相关属性） | 不支持 |
-
-| restoreId | 不支持 |
-
-
-、CSS、JavaScript三段式开发方式，即使用HML标签文件搭建布局、使用CSS文件描述样式、使用JavaScript文件处理逻辑。该范式更符合Web前端开发者的使用习惯，便于快速将已有的Web应用改造成方舟UI框架应用。
 
 在开发一款新应用时，推荐采用声明式开发范式来构建UI，主要基于以下几点考虑：
 
@@ -82,11 +38,12 @@ ArkUI（方舟UI框架）为应用的UI开发提供了完整的基础设施，�
 
 
 
-#### 不同应用类型支持的开发范式
+## 不同应用类型支持的开发范式
 
 根据所选用[应用模型](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/stage-model-development-overview)（Stage模型、FA模型）和页面形态（应用或服务的普通页面、卡片）的不同，对应支持的UI开发范式也有所差异，详见下表。
 
 **表1** 支持的UI开发范式
+
 
 | 应用模型 | 页面形态 | 支持的UI开发范式 |
 | --- | --- | --- |
@@ -98,7 +55,7 @@ ArkUI（方舟UI框架）为应用的UI开发提供了完整的基础设施，�
 
 
 
-#### 分层API架构与选型建议
+## 分层API架构与选型建议
 
  - **声明式开发范式**：采用ArkTS语言，通过声明UI结构和状态，自动驱动界面渲染。开发者只需描述“界面应该是什么样”，无需手动管理UI更新。适用于复杂度较高、团队协作的应用开发，具有高开发效率、良好性能和易维护等优势。
 
@@ -113,12 +70,12 @@ ArkUI（方舟UI框架）为应用的UI开发提供了完整的基础设施，�
 
 
 
-#### 模拟器支持情况
+## 模拟器支持情况
 
 本Kit支持模拟器，但与真机存在部分能力差异，具体差异如下。
 
  - 通用差异，请参见[模拟器与真机的差异](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-specification#section1227613205203)。
- - 其他差异，模拟器不支持的功能以及组件如下：
+ - 其他差异，不支持模拟器的功能以及组件如下：
 
 | 组件名 | 不支持情况 |
 

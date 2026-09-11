@@ -1,6 +1,6 @@
 # Repeat：可复用的循环渲染
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-rendering-control-repeat
 
@@ -9,7 +9,7 @@
 
 
 
-#### 概述
+## 概述
 
 Repeat基于数组类型数据来进行循环渲染，一般与滚动容器组件配合使用。
 
@@ -23,7 +23,7 @@ Repeat根据容器组件的**显示区域和预加载区域**加载子组件。�
 
 
 
-#### 使用限制
+## 使用限制
 
  - Repeat必须在滚动类容器组件内使用，仅有[List](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)、[ListItemGroup](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-listitemgroup)、[Grid](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid)、[Swiper](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-swiper)以及[WaterFlow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow)组件支持Repeat懒加载场景。
 
@@ -40,11 +40,11 @@ Repeat根据容器组件的**显示区域和预加载区域**加载子组件。�
 
 
 
-#### 基础特性
+## 基础特性
 
 
 
-#### 子组件生成规则
+### 子组件生成规则
 
 Repeat通过[.each()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-rendering-control-repeat#each)和[.template()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-rendering-control-repeat#template)属性定义子组件生成规则。每个子组件必须有且仅有一个根节点。当Repeat仅包含一种类型的子组件时，可使用.each()属性定义子组件的生成规则。当Repeat包含多种类型的子组件时，可使用.template()属性分别定义不同类型子组件的生成规则。
 
@@ -155,7 +155,7 @@ struct RepeatExampleWithTemplates {
 
 
 
-#### 键值生成规则
+### 键值生成规则
 
 Repeat的[.key()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-rendering-control-repeat#key)属性为每个子组件生成一个键值。Repeat通过键值识别数组增加、删除哪些数据以及哪些数据改变了位置（索引）。
 
@@ -175,11 +175,11 @@ Repeat的[.key()](https://developer.huawei.com/consumer/cn/doc/harmonyos-referen
 
 键值生成示例：
 
-```text
+```ArkTS
 @ObservedV2
 class ExampleData {
-  @Trace str: string;
-  num: number;
+  @Trace public str: string;
+  public num: number;
 
   constructor(s: string, n: number) {
     this.str = s;
@@ -189,7 +189,7 @@ class ExampleData {
 
 @Entry
 @ComponentV2
-struct Index {
+struct RepeatKeyGeneration {
   @Local exampleList: Array<ExampleData> = [];
 
   aboutToAppear(): void {
@@ -218,7 +218,7 @@ struct Index {
 
 
 
-#### 懒加载能力说明
+### 懒加载能力说明
 
 Repeat加载子节点具有懒加载和全量加载两种模式。开发者可通过设置[.virtualScroll()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-rendering-control-repeat#virtualscroll)属性选择合适的加载模式。对于长列表场景，懒加载模式支持按需加载子组件，建议开发者优先使用懒加载模式。
 
@@ -244,7 +244,7 @@ Repeat加载子节点具有懒加载和全量加载两种模式。开发者可�
 
 
 
-#### 节点更新/复用能力说明
+### 节点更新/复用能力说明
 
 Repeat具有节点复用能力。Repeat子组件从组件树中移除时，会被存入缓存池中。后续创建新子组件时，会优先复用池中的节点。懒加载模式和全量加载模式下的复用流程细节存在差异，下文中将分别进行说明。
 
@@ -393,13 +393,13 @@ struct ChildItem {
 
 
 
-#### 高级特性
+## 高级特性
 
 除循环渲染、懒加载、组件复用等能力外，Repeat还提供了数据精准懒加载、拖拽排序、数据前插保持等高级特性，开发者可按需使用。
 
 
 
-#### 数据精准懒加载
+### 数据精准懒加载
 
 当数据源总长度较长，或数据项加载耗时较长时，可使用Repeat数据精准懒加载特性，避免在初始化时加载所有数据。Repeat数据精准懒加载特性从API version 19开始支持。
 
@@ -570,7 +570,7 @@ struct RepeatLazyLoadingInfinite {
 
 
 
-#### 拖拽排序
+### 拖拽排序
 
 当Repeat在[List](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)组件下使用，并且设置了[onMove](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-drag-sorting#onmove)事件，Repeat每次迭代都生成一个[ListItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-listitem)时，可以使能拖拽排序。Repeat拖拽排序特性从API version 19开始支持。
 
@@ -633,7 +633,7 @@ struct RepeatVirtualScrollOnMove {
 
 
 
-#### 数据前插保持
+### 数据前插保持
 
 数据前插保持，即在列表显示区域之前插入或删除数据后，保持显示区域子组件的滚动位置不变。
 
@@ -704,12 +704,12 @@ struct PreInsertDemo {
 运行效果：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/7l8ToUl3QhmmyYw7g7DORg/zh-cn_image_0000002704271961.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095709Z&HW-CC-Expire=86400&HW-CC-Sign=BBB4DAE2E08AF16BE9FADD9CE790CF8285FB874F1C1C074D39BCCC62D46EB1BA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/qFDYEIGcRPGSXxyGfa3Suw/zh-cn_image_0000002717610224.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=318F9B108886299F4942740D3F489024A6BC6CB0C08A6840A3604D4FC527F195)
 
 
 
 
-#### animateTo动效
+### animateTo动效
 
 从API version 24开始，当父容器组件为[List](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)时，Repeat支持通过[animateTo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#animateto)接口为其显示区域内的子组件设置过渡动画效果。
 
@@ -812,16 +812,16 @@ class ItemInfo {
 运行效果：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/ooJjd2HlS4SJURWOv4PFHA/zh-cn_image_0000002674472162.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095709Z&HW-CC-Expire=86400&HW-CC-Sign=B95DAEF44E298225656F975FE85EC94B5E5D192A317F9DD623586AEDD01DC4C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/hKS63O4DSPaInlxJ6aC80A/zh-cn_image_0000002747290175.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=2976E68B4D9FD3BC651EAE1EB2D2902D94D24E174B7804BF42BE9615EE29662A)
 
 
 
 
-#### 常见使用场景
+## 常见使用场景
 
 
 
-#### 数据展示&操作
+### 数据展示&操作
 
 下面的代码示例展示了Repeat修改数组的常见操作，包括**插入数据、修改数据、删除数据、交换数据**。点击下拉框选择索引index值，点击相应的按钮即可操作数据项，依次点击两个不同的数据项可以进行交换。
 
@@ -970,12 +970,12 @@ struct RepeatVirtualScroll {
 该示例代码展示了100项自定义类Repeat006Clazz的message字符串属性，[List](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)组件的[cachedCount](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list#cachedcount)属性设为2，模板'odd'和'even'的空闲节点缓存池大小分别设为3和1。运行后界面如下图所示：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/_NQnUJ-WQJm3N2I71tMDlQ/zh-cn_image_0000002704392131.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095709Z&HW-CC-Expire=86400&HW-CC-Sign=D27149396C964C880E6F19563A0D5E030EF5B17A5CC1567878747D14CB776F6F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/1kk0ZGUGRzqpOmj2LsPC-w/zh-cn_image_0000002747210093.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=4BAA9E2DED71E5B2992A54A4FBD0A3D7AE6C1AA1FE53D6BE33BA4567A63B02B3)
 
 
 
 
-#### Repeat嵌套
+### Repeat嵌套
 
 Repeat支持嵌套使用，示例代码如下：
 
@@ -1042,12 +1042,12 @@ struct NestedRepeat {
 运行效果：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/il0Z-4teS_Kb2ttRIDV7yg/zh-cn_image_0000002674632010.png?HW-CC-KV=V1&HW-CC-Date=20260813T095709Z&HW-CC-Expire=86400&HW-CC-Sign=099B61A67BD078A6B46CFA554F4CEBCDA0BBD88B946E751831C20CC934B24EEB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/BKaYWoPtRKCDc_M2bfkXNA/zh-cn_image_0000002717770160.png?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=0D261E7138EE88CC440EDBF8A73180CF19724B668EFB8708D6563B0B3E83CFF8)
 
 
 
 
-#### 父容器组件应用场景
+### 父容器组件应用场景
 
 本节展示Repeat与滚动容器组件的常见应用场景。
 
@@ -1153,7 +1153,7 @@ struct DemoList {
 右滑并点击按钮，或点击底部按钮，可删除视频卡片：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/TujNhGXLR5OvMVWLPPvMLw/zh-cn_image_0000002704271963.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095709Z&HW-CC-Expire=86400&HW-CC-Sign=AAC62407AF0DD54C6CB226E11BC2890DB419A115C8742F189308B632281B7BF7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/9V6Er5I5R_yG9NdEe92QPA/zh-cn_image_0000002717610226.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=818832991C197F8583600D0DFBB65E60B93B3092E3C66FF1F72AD40C159928CB)
 
 
 **与Grid组合使用**
@@ -1287,7 +1287,7 @@ struct DemoGrid {
 下拉屏幕，或点击刷新按钮，或点击“先前浏览至此，点击刷新”，可加载新的视频内容：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/tnyP0FwRTjKMvOILluzExQ/zh-cn_image_0000002674472164.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095709Z&HW-CC-Expire=86400&HW-CC-Sign=3E17F6BC18469A8665434FB996E5ED08C99690578A43E8E1FC384D9D8149C31B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/lGt5rupPRJaYd6L4DuBE8A/zh-cn_image_0000002747290177.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=F3D094D69DDF3FD74927DD048A43BD85D55F5EEE20F8D1B09A3700400657287C)
 
 
 **与Swiper组合使用**
@@ -1366,16 +1366,16 @@ struct DemoSwiper {
 定时1秒后加载图片，模拟网络延迟：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/AVniu-P1TL-rI0i9M-r8ig/zh-cn_image_0000002704392133.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095709Z&HW-CC-Expire=86400&HW-CC-Sign=3692026FB3B97D7F5C801B3D503A816C1C046F50DF6D737AD275A20B921CB2B7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/oolRgU8zRjeClRAlk3nngg/zh-cn_image_0000002747210095.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=4346B41BC39B1F3FEC4BF63A1CE3C63B70CCF8C7B026FF00A9FCC7B9F97A96A9)
 
 
 
 
-#### 常见问题
+## 常见问题
 
 
 
-#### 显示区域外增删数据时保持滚动位置不变
+### 显示区域外增删数据时保持滚动位置不变
 
 下面的场景示例中，滚动列表显示区域外的增删数据操作将影响[List](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)列表滚动条停留的位置：
 
@@ -1441,7 +1441,7 @@ struct RepeatTemplateSingle {
 运行效果：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/Xgi-4wdUSO-GB13pPBT8Cw/zh-cn_image_0000002674632012.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095709Z&HW-CC-Expire=86400&HW-CC-Sign=E9CD4C46BAC131DB8801FED19007148639B1004A7F3C901068AC54A5836F1F87)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/RmmQCX14SYODIPVAAsTGew/zh-cn_image_0000002717770162.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=7D0A1466D831D5090664FB8528EAD1E7FDBA2121BC9B03D2CE0F5FF97E99DA3D)
 
 
 以下为修正后的示例：
@@ -1523,12 +1523,12 @@ struct RepeatSingle {
 运行效果：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/8d0Ek4IZRvqDEQp1UsrGLA/zh-cn_image_0000002704271965.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095709Z&HW-CC-Expire=86400&HW-CC-Sign=CF63E709CBAB3845408946229576CBA3650DCC60C3CCD0D4F9B66FF2512DBE32)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/WVlAOgjGQ_avasTGB6yzSQ/zh-cn_image_0000002717610228.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=6ED2450BAD15ABE66BDB0D635F5F64A725B13D20A21DAF85EA2106717E7403E9)
 
 
 
 
-#### totalCount值大于数据源长度
+### totalCount值大于数据源长度
 
 当数据源总长度很大时，会使用懒加载的方式先加载一部分数据，为了使Repeat显示正确的滚动条样式，需要将数据总长度赋值给totalCount，即数据源全部加载完成前，totalCount大于array.length。
 
@@ -1626,18 +1626,18 @@ struct EntryCompSucc {
 示例代码运行效果：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/y3jCVgK4TqOFcuMRY7iqeQ/zh-cn_image_0000002674472166.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095709Z&HW-CC-Expire=86400&HW-CC-Sign=15FF8DF0D44C68A4634A7B76A9D76B5B564AEBAD9A21A2D1310592BE477A195A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/wxzRH7cbRBW2Nu6INbhK5Q/zh-cn_image_0000002747290179.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=B4148CAA36AA71DDDB8044A8C33A3F3565726A0E9859DAAA4799FD4633D5434A)
 
 
 
 
-#### 与@Builder混用时状态变量未刷新
+### 与@Builder混用时状态变量未刷新
 
 当Repeat与[@Builder](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-builder)混用时，如果只传递RepeatItem.item或RepeatItem.index，参数值的改变不会引起@Builder函数内的UI刷新。推荐使用[按引用传递](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-builder#按引用传递参数)，即将RepeatItem类型整体进行传参，组件才能监听到数据变化。除此之外，从API version 20开始，开发者可以通过使用[UIUtils.makeBinding()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-statemanagement#makebinding20)函数、[Binding](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-statemanagement#bindingt20)类和[MutableBinding](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-statemanagement#mutablebindingt20)类实现@Builder函数中状态变量的刷新。
 
 示例代码如下：
 
-```text
+```ArkTS
 import { UIUtils, Binding } from '@kit.ArkUI';
 
 @Entry
@@ -1676,9 +1676,12 @@ struct RepeatBuilderPage {
           .each((ri) => {
             ListItem() {
               Column({ space: 2 }) {
-                this.buildItem1(UIUtils.makeBinding<number>(() => ri.item)) // 使用UIUtils.makeBinding()函数实现@Builder函数中状态变量的刷新。
-                this.buildItem2(ri) // 按引用传递，状态变量的改变会引起@Builder函数内的UI刷新。
-                this.buildItem3(ri.item) // 反例。按值传递，状态变量的改变不会引起@Builder函数内的UI刷新。
+                // 使用UIUtils.makeBinding()函数实现@Builder函数中状态变量的刷新。
+                this.buildItem1(UIUtils.makeBinding<number>(() => ri.item))
+                // 按引用传递，状态变量的改变会引起@Builder函数内的UI刷新。
+                this.buildItem2(ri)
+                // 反例。按值传递，状态变量的改变不会引起@Builder函数内的UI刷新。
+                this.buildItem3(ri.item)
               }
             }.border({ width: 1 })
           }).virtualScroll()
@@ -1702,11 +1705,11 @@ struct RepeatBuilderPage {
 @Builder传参方式依次为makeBinding()、地址传递和值传递，界面展示如下图，进入页面后点击按钮改变数据。在@Builder构造函数中使用值传递传参不会引起函数内的UI刷新。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/K-iO84fhRlC_bvagGmpvSQ/zh-cn_image_0000002704392135.png?HW-CC-KV=V1&HW-CC-Date=20260813T095709Z&HW-CC-Expire=86400&HW-CC-Sign=15896531548AFF3A2542DE3E091D94E2178E01DC79B2DAA7083436269594F81A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/ieMjqZSySpyXiAwDF7kngA/zh-cn_image_0000002747210097.png?HW-CC-KV=V1&HW-CC-Date=20260911T072509Z&HW-CC-Expire=86400&HW-CC-Sign=127B87BAB5C9CA4CA9684623CFBC7E5E61409E3AE2541959D7170727327DF71D)
 
 
 
 
-#### expandSafeArea属性失效
+### expandSafeArea属性失效
 
 在API version 18之前，Repeat子组件声明expandSafeArea属性，子组件无法扩展至全屏；从API version 18开始，子组件声明expandSafeArea属性可正常扩展至全屏展示。

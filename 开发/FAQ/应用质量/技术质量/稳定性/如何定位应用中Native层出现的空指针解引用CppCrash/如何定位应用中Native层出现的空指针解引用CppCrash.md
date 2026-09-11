@@ -78,7 +78,7 @@ void doCallback(napi_env env, napi_status status, void *data) {
         LOGE("Invalid env or data");
         return;
     }
-    // ...
+   <em> // ...</em>
 }
 ```
 
@@ -94,7 +94,7 @@ void doCallback(napi_env env, napi_status status, void *data) {
       "cppFlags": "",
     }
   },
-  // ...
+  <em>// ...</em>
 }
 ```
 
@@ -167,10 +167,10 @@ napi_call_function(env, nullptr, callback, 1, &returnValue, &tempValue);
 
 - 在Native层中，首先在获取异步回调ArkTS层函数指针的时候，需要使用napi_create_reference创建强引用将指针缓存起来，在使用结束后，需要调用napi_delete_reference释放强引用，避免资源泄露。示例代码如下：
 ```text
-// 异步工作Native流程
+<em>// 异步工作Native流程</em>
 static napi_value StartAsyncWork(napi_env env, napi_callback_info info)
 {
-    // 从模块数据中获取函数引用
+    <em>// 从模块数据中获取函数引用</em>
     ModuleData* moduleData = nullptr;
     napi_get_instance_data(env, (void**)&moduleData);
 
@@ -179,11 +179,11 @@ static napi_value StartAsyncWork(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    // 创建新的工作数据
+  <em>  // 创建新的工作数据</em>
     AsyncWorkData* workData = new AsyncWorkData();
     workData->env = env;
 
-    // 为异步工作创建新的函数引用
+   <em> // 为异步工作创建新的函数引用</em>
     napi_value arktsFunc;
     if (napi_get_reference_value(env, moduleData->arktsFuncRef, &arktsFunc) != napi_ok) {
         delete workData;
@@ -191,14 +191,14 @@ static napi_value StartAsyncWork(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    // 创建新的引用给异步工作使用
+  <em>  // 创建新的引用给异步工作使用</em>
     if (napi_create_reference(env, arktsFunc, 1, &workData->arktsFuncRef) != napi_ok) {
         delete workData;
         napi_throw_error(env, nullptr, "为异步工作创建函数引用失败");
         return nullptr;
     }
 
-    // 创建异步工作
+<em>    // 创建异步工作</em>
     napi_async_work asyncWork;
     napi_value workName;
     napi_create_string_utf8(env, "MyProc", NAPI_AUTO_LENGTH, &workName);
@@ -210,7 +210,7 @@ static napi_value StartAsyncWork(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    // 排队执行异步工作
+   <em> // 排队执行异步工作</em>
     if (napi_queue_async_work(env, asyncWork) != napi_ok) {
         napi_delete_async_work(env, asyncWork);
         napi_delete_reference(env, workData->arktsFuncRef);
@@ -229,7 +229,7 @@ static napi_value StartAsyncWork(napi_env env, napi_callback_info info)
 
 - 在执行完数据的处理后，napi_create_async_work函数会回调doCallback函数，在该函数中，在使用napi_call_function函数调用ArkTS层函数指针前，使用napi_get_reference_value获取缓存中的ArkTS函数指针。示例代码如下：
 ```text
-// 异步工作完成回调（在主线程/JS线程中执行）
+<em>// 异步工作完成回调（在主线程/JS线程中执行）</em>
 void doCallback(napi_env env, napi_status status, void* data)
 {
     AsyncWorkData* workData = static_cast<AsyncWorkData*>(data);
@@ -239,15 +239,15 @@ void doCallback(napi_env env, napi_status status, void* data)
         return;
     }
 
-    // 安全地调用ArkTS函数
+ <em>   // 安全地调用ArkTS函数</em>
     if (workData->arktsFuncRef != nullptr) {
         napi_handle_scope scope;
         napi_status status;
 
-        // 创建作用域
+       <em> // 创建作用域</em>
         if (napi_open_handle_scope(env, &scope) != napi_ok) {
             OH_LOG_ERROR(LOG_APP, "打开handle scope失败");
-            // 清理工作数据
+          <em>  // 清理工作数据</em>
             if (workData->arktsFuncRef != nullptr) {
                 napi_delete_reference(env, workData->arktsFuncRef);
             }
@@ -258,10 +258,10 @@ void doCallback(napi_env env, napi_status status, void* data)
         napi_value arktsFunc;
         status = napi_get_reference_value(env, workData->arktsFuncRef, &arktsFunc);
         if (status == napi_ok && arktsFunc != nullptr) {
-            // 创建要传递给ArkTS函数的参数，本例为字符串
+          <em>  // 创建要传递给ArkTS函数的参数，本例为字符串</em>
             napi_value argv[1];
             napi_create_string_utf8(env, workData->resultMessage.c_str(), NAPI_AUTO_LENGTH, &argv[0]);
-            // 调用ArkTS函数
+           <em> // 调用ArkTS函数</em>
             napi_value global;
             napi_get_global(env, &global);
 
@@ -275,7 +275,7 @@ void doCallback(napi_env env, napi_status status, void* data)
         } else {
             OH_LOG_ERROR(LOG_APP, "获取ArkTS函数引用失败");
         }
-        // 关闭作用域
+      <em>  // 关闭作用域</em>
         napi_close_handle_scope(env, scope);
     }
 }
@@ -287,7 +287,7 @@ void doCallback(napi_env env, napi_status status, void* data)
  
 - entry/src/main/cpp/CMakeLists.txt：
 ```cpp
-# the minimum version of CMake.
+<em># the minimum version of CMake.</em>
 cmake_minimum_required(VERSION 3.5.0)
 project(SQI202505101216105442012)
 
@@ -306,9 +306,9 @@ target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so libuv.so)
 
 - entry/src/main/cpp/napi_init.cpp：
 ```text
-/*
- * Copyright (c) Huawei Technologies Co., Ltd. 2025-2025. All rights reserved.
- */
+<em>/*</em>
+<em> * Copyright (c) Huawei Technologies Co., Ltd. 2025-2025. All rights reserved.</em>
+<em> */</em>
 
 #include "napi/native_api.h"
 #include <thread>
@@ -317,39 +317,39 @@ target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so libuv.so)
 
 #undef LOG_DOMAIN
 #undef LOG_TAG
-#define LOG_DOMAIN 0x3200  // 全局domain宏，标识业务领域
-#define LOG_TAG "MY_TAG"   // 全局tag宏，标识模块日志tag
+#define LOG_DOMAIN 0x3200  <em>// 全局domain宏，标识业务领域</em>
+#define LOG_TAG "MY_TAG"  <em> // 全局tag宏，标识模块日志tag</em>
 
-// 异步工作数据结构
+<em>// 异步工作数据结构</em>
 struct AsyncWorkData {
     napi_env env = nullptr;
-    napi_ref arktsFuncRef = nullptr;  // 保存ArkTS函数的引用
-    std::string resultMessage;        // 要传递给ArkTS的结果
+    napi_ref arktsFuncRef = nullptr;  <em>// 保存ArkTS函数的引用</em>
+    std::string resultMessage;       <em> // 要传递给ArkTS的结果</em>
 };
 
-// 模块全局数据
+<em>// 模块全局数据</em>
 struct ModuleData {
     napi_ref arktsFuncRef = nullptr;
 };
 
-// 异步工作执行函数（在工作线程中执行）
+<em>// 异步工作执行函数（在工作线程中执行）</em>
 void ExecuteWork(napi_env env, void* data)
 {
     AsyncWorkData* workData = static_cast<AsyncWorkData*>(data);
 
-    // 模拟一些耗时操作
+   <em> // 模拟一些耗时操作</em>
     for (int i = 0; i < 3; i++) {
         OH_LOG_INFO(LOG_APP, "耗时异步流程执行中... %{public}d", i);
-        // 模拟工作耗时操作
+       <em> // 模拟工作耗时操作</em>
         std::this_thread::sleep_for(std::chrono::milliseconds(500));
     }
 
-    // 准备要传递给ArkTS的消息
+   <em> // 准备要传递给ArkTS的消息</em>
     workData->resultMessage = "来自Native层的异步完成消息，时间戳: " + 
                              std::to_string(uv_hrtime() / 1000000);
 }
 
-// 异步工作完成回调（在主线程/JS线程中执行）
+<em>// 异步工作完成回调（在主线程/JS线程中执行）</em>
 void doCallback(napi_env env, napi_status status, void* data)
 {
     AsyncWorkData* workData = static_cast<AsyncWorkData*>(data);
@@ -359,15 +359,15 @@ void doCallback(napi_env env, napi_status status, void* data)
         return;
     }
 
-    // 安全地调用ArkTS函数
+   <em> // 安全地调用ArkTS函数</em>
     if (workData->arktsFuncRef != nullptr) {
         napi_handle_scope scope;
         napi_status status;
 
-        // 创建作用域
+     <em>   // 创建作用域</em>
         if (napi_open_handle_scope(env, &scope) != napi_ok) {
             OH_LOG_ERROR(LOG_APP, "打开handle scope失败");
-            // 清理工作数据
+           <em> // 清理工作数据</em>
             if (workData->arktsFuncRef != nullptr) {
                 napi_delete_reference(env, workData->arktsFuncRef);
             }
@@ -378,10 +378,10 @@ void doCallback(napi_env env, napi_status status, void* data)
         napi_value arktsFunc;
         status = napi_get_reference_value(env, workData->arktsFuncRef, &arktsFunc);
         if (status == napi_ok && arktsFunc != nullptr) {
-            // 创建要传递给ArkTS函数的参数，本例为字符串
+           <em> // 创建要传递给ArkTS函数的参数，本例为字符串</em>
             napi_value argv[1];
             napi_create_string_utf8(env, workData->resultMessage.c_str(), NAPI_AUTO_LENGTH, &argv[0]);
-            // 调用ArkTS函数
+            <em>// 调用ArkTS函数</em>
             napi_value global;
             napi_get_global(env, &global);
 
@@ -395,12 +395,12 @@ void doCallback(napi_env env, napi_status status, void* data)
         } else {
             OH_LOG_ERROR(LOG_APP, "获取ArkTS函数引用失败");
         }
-        // 关闭作用域
+      <em>  // 关闭作用域</em>
         napi_close_handle_scope(env, scope);
     }
 }
 
-// 注册ArkTS函数的Native方法
+<em>// 注册ArkTS函数的Native方法</em>
 static napi_value RegisterArkTSFunction(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -419,7 +419,7 @@ static napi_value RegisterArkTSFunction(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    // 获取模块数据
+  <em>  // 获取模块数据</em>
     ModuleData* moduleData = nullptr;
     napi_get_instance_data(env, (void**)&moduleData);
     if (moduleData == nullptr) {
@@ -432,14 +432,14 @@ static napi_value RegisterArkTSFunction(napi_env env, napi_callback_info info)
             delete moduleData;
         }, nullptr);
     } else {
-        // 如果已经注册过函数，先清理旧的引用
+      <em>  // 如果已经注册过函数，先清理旧的引用</em>
         if (moduleData->arktsFuncRef != nullptr) {
             napi_delete_reference(env, moduleData->arktsFuncRef);
             moduleData->arktsFuncRef = nullptr;
         }
     }
 
-    // 创建对ArkTS函数的强引用，防止被GC
+   <em> // 创建对ArkTS函数的强引用，防止被GC</em>
     napi_status status = napi_create_reference(env, args[0], 1, &moduleData->arktsFuncRef);
     if (status != napi_ok) {
         napi_throw_error(env, nullptr, "创建函数引用失败");
@@ -453,10 +453,10 @@ static napi_value RegisterArkTSFunction(napi_env env, napi_callback_info info)
     return result;
 }
 
-// 异步工作Native流程
+<em>// 异步工作Native流程</em>
 static napi_value StartAsyncWork(napi_env env, napi_callback_info info)
 {
-    // 从模块数据中获取函数引用
+   <em> // 从模块数据中获取函数引用</em>
     ModuleData* moduleData = nullptr;
     napi_get_instance_data(env, (void**)&moduleData);
 
@@ -465,11 +465,11 @@ static napi_value StartAsyncWork(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    // 创建新的工作数据
+  <em>  // 创建新的工作数据</em>
     AsyncWorkData* workData = new AsyncWorkData();
     workData->env = env;
 
-    // 为异步工作创建新的函数引用
+   <em> // 为异步工作创建新的函数引用</em>
     napi_value arktsFunc;
     if (napi_get_reference_value(env, moduleData->arktsFuncRef, &arktsFunc) != napi_ok) {
         delete workData;
@@ -477,14 +477,14 @@ static napi_value StartAsyncWork(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    // 创建新的引用给异步工作使用
+   <em> // 创建新的引用给异步工作使用</em>
     if (napi_create_reference(env, arktsFunc, 1, &workData->arktsFuncRef) != napi_ok) {
         delete workData;
         napi_throw_error(env, nullptr, "为异步工作创建函数引用失败");
         return nullptr;
     }
 
-    // 创建异步工作
+   <em> // 创建异步工作</em>
     napi_async_work asyncWork;
     napi_value workName;
     napi_create_string_utf8(env, "MyProc", NAPI_AUTO_LENGTH, &workName);
@@ -496,7 +496,7 @@ static napi_value StartAsyncWork(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    // 排队执行异步工作
+   <em> // 排队执行异步工作</em>
     if (napi_queue_async_work(env, asyncWork) != napi_ok) {
         napi_delete_async_work(env, asyncWork);
         napi_delete_reference(env, workData->arktsFuncRef);
@@ -550,7 +550,7 @@ export const startAsyncWork: () => void;
 ```text
 import testNapi from 'libentry.so';
 
-// 要传递给Native层的回调函数
+<em>// 要传递给Native层的回调函数</em>
 function myArkTSFunction(message: string): void {
   console.info('ArkTS收到Native消息: ' + message);
 }
@@ -583,7 +583,7 @@ struct Index {
     .height('100%');
   }
 
-  // 注册回调函数到Native层
+ <em> // 注册回调函数到Native层</em>
   registerCallbackToNative(): void {
     try {
       testNapi.registerArkTSFunction(myArkTSFunction);
@@ -593,7 +593,7 @@ struct Index {
     }
   }
 
-  // 触发Native层的异步工作
+ <em> // 触发Native层的异步工作</em>
   triggerAsyncWork(): void {
     try {
       testNapi.startAsyncWork();

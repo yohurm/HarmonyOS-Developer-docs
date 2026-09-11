@@ -1,11 +1,12 @@
 # @hms.utilityApplication.screenTimeGuard.TimeGuardExtensionAbility（屏幕时间守护扩展Ability）
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/screentimeguard-timeguardextensionability
 **支持设备：** Phone | Tablet
 
-#### 模块概述
+## 模块概述
+
 
 **支持设备：** Phone | Tablet
 
@@ -17,7 +18,8 @@ TimeGuardExtensionAbility为轻量级的独立子进程，不允许唤醒主进�
  
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | Tablet
 
@@ -27,7 +29,8 @@ import { TimeGuardExtensionAbility } from '@kit.ScreenTimeGuardKit';
  
   
 
-#### 属性
+## 属性
+
 
 **支持设备：** Phone | Tablet
 
@@ -37,6 +40,7 @@ import { TimeGuardExtensionAbility } from '@kit.ScreenTimeGuardKit';
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | context | TimeGuardExtensionContext | 否 | 否 | TimeGuardExtensionAbility的上下文环境，继承自ExtensionContext。 |
@@ -44,7 +48,8 @@ import { TimeGuardExtensionAbility } from '@kit.ScreenTimeGuardKit';
  
   
 
-#### onStart
+## onStart
+
 
 **支持设备：** Phone | Tablet
 
@@ -60,6 +65,7 @@ onStart(strategyName: string): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | strategyName | string | 是 | 启动的守护策略名称。 |
@@ -67,6 +73,7 @@ onStart(strategyName: string): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -99,7 +106,8 @@ export default class EntryAbility extends TimeGuardExtensionAbility {
  
   
 
-#### onStop
+## onStop
+
 
 **支持设备：** Phone | Tablet
 
@@ -115,6 +123,7 @@ onStop(strategyName: string): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | strategyName | string | 是 | 停止的守护策略名称。 |
@@ -122,6 +131,7 @@ onStop(strategyName: string): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -154,7 +164,8 @@ export default class EntryAbility extends TimeGuardExtensionAbility {
  
   
 
-#### onUserAuthSwitchOn
+## onUserAuthSwitchOn
+
 
 **支持设备：** Phone | Tablet
 
@@ -170,6 +181,7 @@ onUserAuthSwitchOn(): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -201,7 +213,8 @@ export default class EntryAbility extends TimeGuardExtensionAbility {
  
   
 
-#### onUserAuthSwitchOff
+## onUserAuthSwitchOff
+
 
 **支持设备：** Phone | Tablet
 
@@ -217,6 +230,7 @@ onUserAuthSwitchOff(): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |

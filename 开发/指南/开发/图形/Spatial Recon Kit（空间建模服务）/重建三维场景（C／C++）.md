@@ -1,10 +1,10 @@
 # 重建三维场景（C/C++）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/spatial-recon-c-spatial-recon-pipeline
 
-#### 概要
+## 概要
 
 从6.1.0(23)开始，Spatial Recon Kit支持通过视觉输入对三维场景进行重建。使用本Kit进行重建，分为以下几个步骤。
 1. 开发者输入一系列图像和对应的信息（相机内参、位姿）。
@@ -15,7 +15,7 @@
 
 
 
-#### 输入数据帧
+## 输入数据帧
 
 Spatial Recon Kit要求开发者输入一系列图像和对应的信息（相机内参、位姿）。本Kit支持以下两种输入形式：
 1. 使用AR Engine的数据结构。
@@ -25,7 +25,7 @@ Spatial Recon Kit要求开发者输入一系列图像和对应的信息（相机
 
 
 
-#### 输入AR Engine的数据结构进行重建
+### 输入AR Engine的数据结构进行重建
 
 直接使用AR Engine的数据帧时，需要确保推入数据帧之前，先更新一次AR引擎的计算结果。
 
@@ -77,7 +77,7 @@ HMS_SpatialReconStatus ret = HMS_SpatialRecon_PushARFrame(spatialReconSession,
 
 
 
-#### 根据Spatial Recon Kit 定义的数据结构进行重建
+### 根据Spatial Recon Kit 定义的数据结构进行重建
 
 开发者也可以手动依据[HMS_SpatialRecon_DataFrame](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-spatialrecon-hms-spatialrecon-dataframe)结构体的定义进行自定义配置。
 
@@ -106,11 +106,11 @@ HMS_SpatialReconStatus ret= HMS_SpatialRecon_PushFrame(reconSession, &inputFrame
 
 
 
-#### 使用Spatial Recon Kit能力进行重建
+## 使用Spatial Recon Kit能力进行重建
 
 在获取了必要的输入以后，开发者可以调用[HMS_SpatialRecon_StartSession](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-spatial-recon-interface-h#hms_spatialrecon_startsession)函数进行重建。
 
-开发者需要根据当前应用是否处于前台运行，在每一次调用[HMS_SpatialRecon_StartSession](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-spatial-recon-interface-h#hms_spatialrecon_startsession)函数之后，使用[HMS_SpatialRecon_SetRunningMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-spatial-recon-interface-h#hms_spatialrecon_setrunningmode)设定对应的运行模式，让操作系统可以更好地分配计算资源。
+开发者需要根据当前应用是否处于前台运行，在每一次调用[HMS_SpatialRecon_StartSession](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-spatial-recon-interface-h#hms_spatialrecon_startsession)函数之后，使用[HMS_SpatialRecon_SetRunningMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-spatial-recon-interface-h#hms_spatialrecon_setrunningmode)设定对应的运行模式，让操作系统可以更好地分配计算资源。由于空间重建对性能开销较大，当前Spatial Recon Kit仅保证旗舰芯片（Kirin 9020/9030S/9030/9030 Pro及以后）上的用户体验，推荐在以上的芯片平台使用。在其他芯片上，即使通过此接口查询得到支持运行空间重建任务，Spatial Recon Kit也无法保证重建耗时和重建质量。
 
 此标志位如未正确设置，可能导致性能或者功耗劣化。
 
@@ -139,7 +139,7 @@ HMS_SpatialRecon_GetProgress(spatialReconSession, &progress, NULL);
 
 
 
-#### 暂停与继续
+## 暂停与继续
 
 Spatial Recon Kit支持重建过程中任意时刻要求暂停或继续。由于空间重建会消耗大量的系统资源，建议开发者在应用中提供开关，让用户能控制何时暂停、何时继续。
 
@@ -157,7 +157,7 @@ HMS_SpatialRecon_ResumeSession(spatialReconSession);
 
 
 
-#### 保存重建结果
+## 保存重建结果
 
 调用[HMS_SpatialRecon_StartSession](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-spatial-recon-interface-h#hms_spatialrecon_startsession)函数时，如果传入的writeInfo非空，重建结束以后会根据writeInfo配置的信息自动保存结果。如果传入的writeInfo为空，可以在重建结束以后手动保存结果。
 
@@ -174,7 +174,7 @@ HMS_SpatialReconStatus ret = HMS_SpatialRecon_SaveResultToFile(spatialReconSessi
 
 
 
-#### 注册支持额外数据输入的回调函数
+## 注册支持额外数据输入的回调函数
 
 从26.0.0开始，Spatial Recon Kit支持HMS_SpatialReconNGCallbackFunc回调函数，支持接收额外数据，供开发者使用。
 

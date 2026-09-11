@@ -1,6 +1,6 @@
 # TextReader（朗读控件）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/speech-textreader-api
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -10,7 +10,8 @@
 **起始版本：** 5.0.0(12)
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -20,7 +21,8 @@ import { TextReader } from '@kit.SpeechKit';
 
 
 
-#### 注意事项
+## 注意事项
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -28,7 +30,8 @@ import { TextReader } from '@kit.SpeechKit';
 
 
 
-#### init
+## init
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -50,6 +53,7 @@ init(context: common.BaseContext, readParams: ReaderParam): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.BaseContext | 是 | 当前应用上下文。 |
@@ -57,6 +61,7 @@ init(context: common.BaseContext, readParams: ReaderParam): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -66,6 +71,7 @@ init(context: common.BaseContext, readParams: ReaderParam): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -113,7 +119,8 @@ struct Index {
 
 
 
-#### start
+## start
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -133,6 +140,7 @@ start(readInfoList: ReadInfo[], articleId?: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | readInfoList | ReadInfo[] | 是 | 播放文章列表。 - 若列表的第一篇文章是有分类的（即带有category或categoryObject字段），后续文章不带分类，也会归为“其他”分类下。 - 若列表的第一篇是没有分类的，后续文章即使带分类，也不会生效。 |
@@ -140,6 +148,7 @@ start(readInfoList: ReadInfo[], articleId?: string): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -149,6 +158,7 @@ start(readInfoList: ReadInfo[], articleId?: string): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -193,7 +203,8 @@ TextReader.start(readInfoList).then(() => {
 
 
 
-#### start
+## start
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -213,6 +224,7 @@ start(readInfoList: ReadInfo[], articleId: string | undefined, startParams: Star
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | readInfoList | ReadInfo[] | 是 | 播放文章列表。 - 若列表的第一篇文章是有分类的（即带有category或categoryObject字段），后续文章不带分类，也会归为“其他”分类下。 - 若列表的第一篇是没有分类的，后续文章即使带分类，也不会生效。 |
@@ -222,6 +234,7 @@ start(readInfoList: ReadInfo[], articleId: string | undefined, startParams: Star
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -230,6 +243,7 @@ start(readInfoList: ReadInfo[], articleId: string | undefined, startParams: Star
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -278,7 +292,8 @@ TextReader.start(readInfoList, undefined, startParams).then(() => {
 
 
 
-#### stop
+## stop
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -298,6 +313,7 @@ stop(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -306,6 +322,7 @@ stop(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -327,7 +344,8 @@ TextReader.stop().then(() => {
 
 
 
-#### resetParam
+## resetParam
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -345,6 +363,7 @@ resetParam(paramName: ResetParamType) : void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | paramName | ResetParamType | 是 | 重置参数类型。 |
@@ -353,6 +372,7 @@ resetParam(paramName: ResetParamType) : void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -374,7 +394,8 @@ try {
 
 
 
-#### release
+## release
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -394,6 +415,7 @@ release(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -402,6 +424,7 @@ release(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -424,7 +447,8 @@ TextReader.release().then(() => {
 
 
 
-#### pause
+## pause
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -443,6 +467,7 @@ pause(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -463,7 +488,8 @@ try {
 
 
 
-#### resume
+## resume
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -482,6 +508,7 @@ resume(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -506,7 +533,8 @@ try {
 
 
 
-#### playPrev
+## playPrev
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -525,6 +553,7 @@ playPrev(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -546,7 +575,8 @@ try {
 
 
 
-#### playNext
+## playNext
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -565,6 +595,7 @@ playNext(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -586,7 +617,8 @@ try {
 
 
 
-#### hidePanel
+## hidePanel
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -605,6 +637,7 @@ hidePanel(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -625,7 +658,8 @@ try {
 
 
 
-#### showPanel
+## showPanel
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -644,6 +678,7 @@ showPanel(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -664,7 +699,8 @@ try {
 
 
 
-#### showMinibar
+## showMinibar
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -683,6 +719,7 @@ showMinibar(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -703,7 +740,8 @@ try {
 
 
 
-#### hideMinibar
+## hideMinibar
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -722,6 +760,7 @@ hideMinibar(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -742,7 +781,8 @@ try {
 
 
 
-#### queryReadState
+## queryReadState
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -760,12 +800,14 @@ queryReadState(id?: string): ReadState
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | string | 否 | 文章id，默认为当前正在朗读的文章id。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -775,6 +817,7 @@ queryReadState(id?: string): ReadState
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -796,7 +839,8 @@ try {
 
 
 
-#### setArticleContent
+## setArticleContent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -814,6 +858,7 @@ setArticleContent(id: string, content?: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | string | 是 | 文章id。 |
@@ -823,6 +868,7 @@ setArticleContent(id: string, content?: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -843,7 +889,8 @@ try {
 
 
 
-#### setArticle
+## setArticle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -861,6 +908,7 @@ setArticle(readInfo: ReadInfo): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | readInfo | ReadInfo | 是 | 文章信息，仅更新image、imageUrl、bodyInfo、bodyInfoObject；如果文章的ID不在列表中，则不会生效。 |
@@ -869,6 +917,7 @@ setArticle(readInfo: ReadInfo): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -907,7 +956,8 @@ try {
 
 
 
-#### loadMore
+## loadMore
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -925,6 +975,7 @@ loadMore(readInfos: ReadInfo[], isEnd: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | readInfos | ReadInfo[] | 是 | 要加载的文章列表。 |
@@ -934,6 +985,7 @@ loadMore(readInfos: ReadInfo[], isEnd: boolean): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1038,7 +1090,8 @@ struct Index {
 
 
 
-#### queryReadStateByCategoryId
+## queryReadStateByCategoryId
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1056,12 +1109,14 @@ queryReadStateByCategoryId(categoryId: string): ReadState
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | categoryId | string | 是 | 当前播报文章的分类id。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1071,6 +1126,7 @@ queryReadStateByCategoryId(categoryId: string): ReadState
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1090,7 +1146,8 @@ try {
 
 
 
-#### on('setArticle')
+## on('setArticle')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1110,6 +1167,7 @@ on(type: 'setArticle', callback: Callback&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'setArticle'，设置文章后，目标文章内容为空（bodyInfo值为空）时，触发该事件。 |
@@ -1119,6 +1177,7 @@ on(type: 'setArticle', callback: Callback&lt;string&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1141,7 +1200,8 @@ try {
 
 
 
-#### off('setArticle')
+## off('setArticle')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1159,6 +1219,7 @@ off(type: 'setArticle', callback?: Callback&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'setArticle'，设置文章后，触发该事件。 |
@@ -1168,6 +1229,7 @@ off(type: 'setArticle', callback?: Callback&lt;string&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1188,7 +1250,8 @@ try {
 
 
 
-#### on('clickArticle')
+## on('clickArticle')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1208,6 +1271,7 @@ on(type: 'clickArticle', callback: Callback&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'clickArticle'，点击文章标题，触发回调。 |
@@ -1217,6 +1281,7 @@ on(type: 'clickArticle', callback: Callback&lt;string&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1239,7 +1304,8 @@ try {
 
 
 
-#### off('clickArticle')
+## off('clickArticle')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1257,6 +1323,7 @@ off(type: 'clickArticle', callback?: Callback&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'clickArticle'，点击文章标题，取消回调。 |
@@ -1266,6 +1333,7 @@ off(type: 'clickArticle', callback?: Callback&lt;string&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1286,7 +1354,8 @@ try {
 
 
 
-#### on('clickAuthor')
+## on('clickAuthor')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1306,6 +1375,7 @@ on(type: 'clickAuthor', callback: Callback&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'clickAuthor'，点击作者，触发回调。 |
@@ -1315,6 +1385,7 @@ on(type: 'clickAuthor', callback: Callback&lt;string&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1337,7 +1408,8 @@ try {
 
 
 
-#### off('clickAuthor')
+## off('clickAuthor')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1355,6 +1427,7 @@ off(type: 'clickAuthor', callback?: Callback&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'clickAuthor'，点击作者事件，取消回调。 |
@@ -1364,6 +1437,7 @@ off(type: 'clickAuthor', callback?: Callback&lt;string&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1384,7 +1458,8 @@ try {
 
 
 
-#### on( 'clickNotification')
+## on( 'clickNotification')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1404,6 +1479,7 @@ on(type: 'clickNotification', callback: Callback&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'clickNotification'，点击通知栏，触发回调。预留参数，暂未支持。 |
@@ -1413,6 +1489,7 @@ on(type: 'clickNotification', callback: Callback&lt;string&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1435,7 +1512,8 @@ try {
 
 
 
-#### off('clickNotification')
+## off('clickNotification')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1453,6 +1531,7 @@ off(type: 'clickNotification', callback?: Callback&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'clickNotification'，点击通知栏事件，取消回调。 |
@@ -1462,6 +1541,7 @@ off(type: 'clickNotification', callback?: Callback&lt;string&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1482,7 +1562,8 @@ try {
 
 
 
-#### on('showPanel')
+## on('showPanel')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1502,6 +1583,7 @@ on(type: 'showPanel', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'showPanel'，拉起面板，触发回调。 |
@@ -1511,6 +1593,7 @@ on(type: 'showPanel', callback: Callback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1533,7 +1616,8 @@ try {
 
 
 
-#### off('showPanel')
+## off('showPanel')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1551,6 +1635,7 @@ off(type: 'showPanel', callback?: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'showPanel'，拉起面板，取消回调。 |
@@ -1560,6 +1645,7 @@ off(type: 'showPanel', callback?: Callback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1581,7 +1667,8 @@ try {
 
 
 
-#### on('hidePanel')
+## on('hidePanel')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1601,6 +1688,7 @@ on(type: 'hidePanel', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'hidePanel'，收回面板，触发回调。 |
@@ -1610,6 +1698,7 @@ on(type: 'hidePanel', callback: Callback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1632,7 +1721,8 @@ try {
 
 
 
-#### off('hidePanel')
+## off('hidePanel')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1650,6 +1740,7 @@ off(type: 'hidePanel', callback?: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'hidePanel'，收起面板，取消回调。 |
@@ -1659,6 +1750,7 @@ off(type: 'hidePanel', callback?: Callback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1680,7 +1772,8 @@ try {
 
 
 
-#### on('stop')
+## on('stop')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1700,6 +1793,7 @@ on(type: 'stop', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'stop'，调用stop接口或用户主动滑动通知栏退出。 |
@@ -1709,6 +1803,7 @@ on(type: 'stop', callback: Callback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1731,7 +1826,8 @@ try {
 
 
 
-#### off('stop')
+## off('stop')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1749,6 +1845,7 @@ off(type: 'stop', callback?: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'stop'，调用stop接口或用户主动滑动通知栏退出。 |
@@ -1758,6 +1855,7 @@ off(type: 'stop', callback?: Callback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1778,7 +1876,8 @@ try {
 
 
 
-#### on('release')
+## on('release')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1798,6 +1897,7 @@ on(type:'release', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'release'，调用release释放资源。 |
@@ -1807,6 +1907,7 @@ on(type:'release', callback: Callback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1829,7 +1930,8 @@ try {
 
 
 
-#### off('release')
+## off('release')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1847,6 +1949,7 @@ off(type: 'release', callback?: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'release'，调用release释放资源。 |
@@ -1856,6 +1959,7 @@ off(type: 'release', callback?: Callback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1876,7 +1980,8 @@ try {
 
 
 
-#### on('stateChange')
+## on('stateChange')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1896,6 +2001,7 @@ on(type: 'stateChange', callback: Callback&lt;ReadState&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'stateChange'，当前正在播放的文章状态变更时，触发该事件。 |
@@ -1905,6 +2011,7 @@ on(type: 'stateChange', callback: Callback&lt;ReadState&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1927,7 +2034,8 @@ try {
 
 
 
-#### off('stateChange')
+## off('stateChange')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1945,6 +2053,7 @@ off(type: 'stateChange', callback?: Callback&lt;ReadState&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'stateChange'，当前正在播放的文章状态变更时，触发该事件。 |
@@ -1954,6 +2063,7 @@ off(type: 'stateChange', callback?: Callback&lt;ReadState&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1974,7 +2084,8 @@ try {
 
 
 
-#### on('requestMore')
+## on('requestMore')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1994,6 +2105,7 @@ on(type: 'requestMore', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'requestMore'，请求更多文章时，触发该事件监听。 |
@@ -2003,6 +2115,7 @@ on(type: 'requestMore', callback: Callback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2025,7 +2138,8 @@ try {
 
 
 
-#### on('requestMore')
+## on('requestMore')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2045,6 +2159,7 @@ on(type: 'requestMore', callback: Callback&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'requestMore'，拉到播放列表底端请求更多文章时，触发该事件监听。 |
@@ -2054,6 +2169,7 @@ on(type: 'requestMore', callback: Callback&lt;string&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2074,7 +2190,8 @@ try {
 
 
 
-#### off('requestMore')
+## off('requestMore')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2092,6 +2209,7 @@ off(type: 'requestMore', callback?: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'requestMore'，请求更多文章时，触发该事件监听。 |
@@ -2101,6 +2219,7 @@ off(type: 'requestMore', callback?: Callback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2121,7 +2240,8 @@ try {
 
 
 
-#### off('requestMore')
+## off('requestMore')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2139,6 +2259,7 @@ off(type: 'requestMore', callback: Callback&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'requestMore'，请求更多文章时，触发该事件监听。 |
@@ -2148,6 +2269,7 @@ off(type: 'requestMore', callback: Callback&lt;string&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2170,7 +2292,8 @@ try {
 
 
 
-#### on('eventNotification')
+## on('eventNotification')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2190,6 +2313,7 @@ on(type: 'eventNotification' , callback: Callback&lt;NotificationEvent&gt;): voi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'eventNotification'，播控中心状态变化，触发该事件。 |
@@ -2199,6 +2323,7 @@ on(type: 'eventNotification' , callback: Callback&lt;NotificationEvent&gt;): voi
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2221,7 +2346,8 @@ try {
 
 
 
-#### off('eventNotification')
+## off('eventNotification')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2239,6 +2365,7 @@ off(type: 'eventNotification', callback?: Callback&lt;NotificationEvent&gt;): vo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型。事件回调类型，支持的事件为'eventNotification'，注销该事件。 |
@@ -2248,6 +2375,7 @@ off(type: 'eventNotification', callback?: Callback&lt;NotificationEvent&gt;): vo
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2268,7 +2396,8 @@ try {
 
 
 
-#### on('eventPanel')
+## on('eventPanel')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2288,6 +2417,7 @@ on(type: 'eventPanel', callback: Callback&lt;PanelEvent&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'eventPanel'，播放面板状态变化，其中PanelEvent中的BPC_10 click事件回调只支持手机。 |
@@ -2297,6 +2427,7 @@ on(type: 'eventPanel', callback: Callback&lt;PanelEvent&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2319,7 +2450,8 @@ try {
 
 
 
-#### off('eventPanel')
+## off('eventPanel')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2337,6 +2469,7 @@ off(type: 'eventPanel', callback?: Callback&lt;PanelEvent&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'eventPanel'，播放面板状态变化。 |
@@ -2346,6 +2479,7 @@ off(type: 'eventPanel', callback?: Callback&lt;PanelEvent&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2367,7 +2501,8 @@ try {
 
 
 
-#### on( 'eventReadList')
+## on( 'eventReadList')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2387,6 +2522,7 @@ on(type: 'eventReadList', callback: Callback<Array&lt;ListEventState&gt;>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'eventReadList'。 |
@@ -2396,6 +2532,7 @@ on(type: 'eventReadList', callback: Callback<Array&lt;ListEventState&gt;>): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2420,7 +2557,8 @@ try {
 
 
 
-#### off('eventReadList')
+## off('eventReadList')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2438,6 +2576,7 @@ off(type: 'eventReadList', callback?: Callback<Array&lt;ListEventState&gt;>): vo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'eventReadList'。 |
@@ -2447,6 +2586,7 @@ off(type: 'eventReadList', callback?: Callback<Array&lt;ListEventState&gt;>): vo
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2467,7 +2607,8 @@ try {
 
 
 
-#### on('readProgress')
+## on('readProgress')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2487,6 +2628,7 @@ on(type: 'readProgress', callback: Callback&lt;ReadProgress&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'readProgress'。 |
@@ -2496,6 +2638,7 @@ on(type: 'readProgress', callback: Callback&lt;ReadProgress&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2518,7 +2661,8 @@ try {
 
 
 
-#### off('readProgress')
+## off('readProgress')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2536,6 +2680,7 @@ off(type: 'readProgress', callback?: Callback&lt;ReadProgress&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'readProgress'。 |
@@ -2545,6 +2690,7 @@ off(type: 'readProgress', callback?: Callback&lt;ReadProgress&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2565,7 +2711,8 @@ try {
 
 
 
-#### Person
+## Person
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2579,6 +2726,7 @@ try {
 
 **起始版本：** 5.0.2(14)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | tone | number | 否 | 否 | 人物语气信息。 0：女声。 |
@@ -2587,7 +2735,8 @@ try {
 
 
 
-#### ReaderParam
+## ReaderParam
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2601,6 +2750,7 @@ try {
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | isVoiceBrandVisible | boolean | 否 | 否 | 是否显示播报品牌。 - 默认false：不显示品牌信息。 - 配置为true：显示品牌信息。 |
@@ -2612,13 +2762,14 @@ try {
 | isMinibarNeeded | boolean | 否 | 是 | 是否使用Minibar功能。 - 默认true：使用Minibar功能。 - 配置为false：不使用Minibar功能，这时hideMinibar、showMinibar 方法无效。 起始版本： 5.0.2(14) |
 | minibarParams | MinibarParams | 否 | 是 | Minibar位置设置，默认吸附左边。 起始版本： 5.0.2(14) |
 | customFeatures | CustomFeature[] | 否 | 是 | 朗读控件的自定义功能，默认空。 起始版本： 5.0.2(14) |
-| displayTab | DisplayTab | 否 | 是 | 显示Tab页配置，默认显示封面和内容页。 起始版本： 5.0.2(14) |
+| displayTab | DisplayTab | 否 | 是 | 显示Tab页配置，默认显示封面和内容页。 起始版本： 5.0.2(14) 设备行为差异： 该接口在PC/2in1中无效果，在其他设备类型中可正常调用。 |
 | reportProgressPeriod | number | 否 | 是 | 多久返回一次已播放时长日志信息，默认为0，表示不返回已播放时长日志信息。 单位：ms。 起始版本： 5.0.2(14) |
 
 
 
 
-#### StartParams
+## StartParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2630,6 +2781,7 @@ try {
 
 **起始版本：** 5.0.2(14)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | isMinibarHidden | boolean | 否 | 是 | Minibar是否隐藏。 - 默认false：不隐藏Minibar。 - 配置为true：隐藏Minibar。 元服务API： 从版本5.0.3(15)开始，该接口支持在元服务中使用。 |
@@ -2639,7 +2791,8 @@ try {
 
 
 
-#### MinibarParams
+## MinibarParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2651,6 +2804,7 @@ try {
 
 **起始版本：** 5.0.2(14)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | defaultAlignment | BarAlignment | 否 | 否 | Minibar默认吸附位置。 元服务API： 从版本5.0.3(15)开始，该接口支持在元服务中使用。 |
@@ -2661,7 +2815,8 @@ try {
 
 
 
-#### BusinessBrandInfo
+## BusinessBrandInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2675,6 +2830,7 @@ try {
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | panelName | string | 否 | 是 | - 播放面板顶部展示的业务名称，系统字体大小为标准时，英文占1个字符长度，中文占2个字符长度，累计超过24个字符长度时会省略显示。（系统字体大小有变动时，显示长度会有变化） - 当设备的高宽比符合特定比例（大于1.5，小于2或宽高相等）且设备处于折叠状态时，品牌信息将不会显示。 |
@@ -2685,7 +2841,8 @@ try {
 
 
 
-#### ReadState
+## ReadState
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2699,6 +2856,7 @@ try {
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | id | string | 否 | 否 | 文章id。 |
@@ -2709,7 +2867,8 @@ try {
 
 
 
-#### CustomFeature
+## CustomFeature
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2722,6 +2881,7 @@ try {
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.2(14)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2775,7 +2935,8 @@ struct Index {
 
 
 
-#### ReadInfo
+## ReadInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2789,6 +2950,7 @@ struct Index {
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | id | string | 否 | 否 | 文章标识ID，不能为空字符串。 |
@@ -2798,7 +2960,7 @@ struct Index {
 | date | TextInfo | 否 | 是 | 文章的时间（例:Mon Jul 08 2024 21:25:41 GMT+0800）。 预留参数，暂未支持。 |
 | image | image.PixelMap | 否 | 是 | 封面图图片。图片转为PixelMap后的最大大小为8MB。 若未传，采用默认封面图。 |
 | imageUrl | string | 否 | 是 | 文章封面图片链接。 若未传，采用默认封面图。图片的宽 * 高大于1024 * 2048时会进行压缩。 image和imageUrl同时存在的时候，image设置生效。 起始版本： 5.0.2(14) |
-| bodyInfo | string | 否 | 是 | setArticle以及loadMore接口必填。 实时朗读的正文信息。 对于6.0.2(22)及之前版本，正文中无标点符号和换行符的情况下，长度须小于等于10000字符。对于6.1.0(23)版本开始，正文长度支持10000字符以上。 |
+| bodyInfo | string | 否 | 是 | setArticle以及loadMore接口必填。 实时朗读的正文信息。 对于6.0.2(22)及之前版本，正文中无标点符号和换行符的情况下，长度须小于等于10000字符。对于6.1.0(23)及之后版本，正文长度支持10000字符以上。 |
 | bodyInfoObject | BodyInfo | 否 | 是 | 正文内容信息，默认空。与bodyInfo的区别是，bodyInfo只更新内容，bodyInfoObject会更新包含文章内容，封面图，文章标题等信息，若同时赋值，bodyInfoObject生效。 起始版本： 5.0.2(14) |
 | categoryObject | CategoryInfo | 否 | 是 | 文章分类信息，默认空。 起始版本： 5.0.2(14) |
 | audioInfo | AudioInfo[] | 否 | 是 | 音频信息，默认空。 若配置此参数，则优先使用传入音频进行播报。 起始版本： 5.0.2(14) |
@@ -2807,7 +2969,8 @@ struct Index {
 
 
 
-#### CategoryInfo
+## CategoryInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2823,6 +2986,7 @@ struct Index {
 
 **参数：**
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | id | string | 否 | 否 | 文章分类ID。 |
@@ -2832,7 +2996,8 @@ struct Index {
 
 
 
-#### TextInfo
+## TextInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2848,6 +3013,7 @@ struct Index {
 
 **参数：**
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | text | string | 否 | 否 | 文本。 |
@@ -2856,7 +3022,8 @@ struct Index {
 
 
 
-#### BodyInfo
+## BodyInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2872,6 +3039,7 @@ readInfo的正文内容信息
 
 **参数：**
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | BodyInfoType | 否 | 否 | 类型。 |
@@ -2880,7 +3048,8 @@ readInfo的正文内容信息
 
 
 
-#### AudioInfo
+## AudioInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2896,22 +3065,24 @@ readInfo的正文内容信息
 
 **参数：**
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | format | string | 否 | 否 | 音频信息格式，如mp3、mp4a、wma、wav。 |
 | duration | number | 否 | 否 | 音频信息的持续时间，单位：s。 |
 | size(deprecated) | number | 否 | 否 | 音频信息的大小，单位：byte。 说明： 从6.1.0(23)开始废弃。 |
-| person | Person | 否 | 是 | 音频信息的声音信息，包括音色、风格，语言等。 默认为如下参数 { tone: 3, style: 'interaction-broadcast' } |
+| person | Person | 否 | 是 | 音频信息的声音信息，包括音色、风格等。 默认为如下参数 { tone: 3, style: 'interaction-broadcast' } |
 | url | string | 否 | 否 | 音频信息的URL。 |
 
 
 
 
-#### ReadProgress
+## ReadProgress
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
-朗读控件中的音频信息
+朗读控件中的朗读进度信息。
 
 **系统能力：** SystemCapability.AI.Component.TextReader
 
@@ -2920,6 +3091,7 @@ readInfo的正文内容信息
 **起始版本：** 5.0.2(14)
 
 **参数：**
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2933,7 +3105,8 @@ readInfo的正文内容信息
 
 
 
-#### PanelEvent
+## PanelEvent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2949,6 +3122,7 @@ readInfo的正文内容信息
 
 **参数：**
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | id | string | 否 | 否 | 文章ID。 |
@@ -2958,7 +3132,8 @@ readInfo的正文内容信息
 
 
 
-#### NotificationEvent
+## NotificationEvent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2974,6 +3149,7 @@ readInfo的正文内容信息
 
 **参数：**
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | id | string | 否 | 否 | 文章ID。 |
@@ -2984,7 +3160,8 @@ readInfo的正文内容信息
 
 
 
-#### ListEventState
+## ListEventState
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3000,6 +3177,7 @@ readInfo的正文内容信息
 
 **参数：**
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | id | string | 否 | 否 | 文章ID。 |
@@ -3008,7 +3186,8 @@ readInfo的正文内容信息
 
 
 
-#### ResetParamType
+## ResetParamType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3022,6 +3201,7 @@ readInfo的正文内容信息
 
 **起始版本：** 5.0.2(14)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | BAR_PARAM | 1 | 重置Minibar参数。 |
@@ -3031,7 +3211,8 @@ readInfo的正文内容信息
 
 
 
-#### DisplayTab
+## DisplayTab
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3047,6 +3228,7 @@ readInfo的正文内容信息
 
 **起始版本：** 5.0.2(14)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | COVER_AND_CONTENT | 1 | 显示封面页和内容页，并且显示Tab标签按钮。 |
@@ -3056,7 +3238,8 @@ readInfo的正文内容信息
 
 
 
-#### BarAlignment
+## BarAlignment
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3070,6 +3253,7 @@ readInfo的正文内容信息
 
 **起始版本：** 5.0.2(14)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | LEFT | 1 | 吸附在左侧。 |
@@ -3078,7 +3262,8 @@ readInfo的正文内容信息
 
 
 
-#### BodyInfoType
+## BodyInfoType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3092,6 +3277,7 @@ readInfo的正文内容信息
 
 **起始版本：** 5.0.2(14)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CONTENT | 1 | 正文内容类型。 |
@@ -3100,7 +3286,8 @@ readInfo的正文内容信息
 
 
 
-#### CustomFeatureType
+## CustomFeatureType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3114,6 +3301,7 @@ readInfo的正文内容信息
 
 **起始版本：** 5.0.2(14)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SYSTEM | 1 | 系统自定义功能。 |
@@ -3122,7 +3310,8 @@ readInfo的正文内容信息
 
 
 
-#### ReadProgressType
+## ReadProgressType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3135,6 +3324,7 @@ readInfo的正文内容信息
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.2(14)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

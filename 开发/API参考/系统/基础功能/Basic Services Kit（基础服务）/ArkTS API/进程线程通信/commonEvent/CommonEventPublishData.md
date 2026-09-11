@@ -1,22 +1,24 @@
 # CommonEventPublishData
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-commonevent-commoneventpublishdata
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-用于封装公共事件发布时携带的数据和属性，包括事件数据（code/data）、订阅者权限、订阅者包名、是否有序/粘性事件及附加参数等，支持发布方对公共事件接收方范围、事件投递顺序及粘性特性进行精细化控制，适用于需要限定接收方、传递自定义事件数据或实现有序/粘性公共事件等场景。
+用于封装公共事件发布时携带的数据和属性，包括事件数据（code/data）、订阅者权限、订阅者包名、是否有序/粘性事件及附加参数等，支持发布方对公共事件接收方范围、事件投递顺序及粘性特性进行精细化控制，适用于需要限定接收方、传递自定义事件数据或实现有序/[粘性公共事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/common-event-glossary#sticky-common-event粘性公共事件)等场景。
 
 > [!NOTE]
 > 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 如果不加限制，任何应用都可以订阅公共事件并读取公共事件携带的信息，应避免在公共事件中携带敏感信息。通过本模块的subscriberPermissions和bundleName参数，可以限制公共事件接收方的范围。
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Notification.CommonEvent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

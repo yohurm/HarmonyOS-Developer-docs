@@ -1,10 +1,10 @@
 # NativeImage开发指导 (C/C++)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-image-guidelines
 
-#### 场景介绍
+## 场景介绍
 
 NativeImage是提供**Surface与OpenGL外部纹理相互绑定**的模块，表示图形队列的消费者端。开发者可以通过NativeImage接口接收和使用Buffer，并将Buffer关联输出到绑定的OpenGL外部纹理。
 
@@ -15,25 +15,26 @@ NativeImage常见的开发场景如下：
 
 
 
-#### 接口说明
+## 接口说明
+
 
 | 接口名 | 描述 |
 | --- | --- |
-| OH_NativeImage_Create (uint32_t textureId, uint32_t textureTarget) | 创建一个OH_NativeImage实例，该实例与OpenGL ES的纹理ID和纹理目标相关联。本接口需要与OH_NativeImage_Destroy接口配合使用，否则会存在内存泄露。 |
+| OH_NativeImage_Create (uint32_t textureId, uint32_t textureTarget) | 创建一个OH_NativeImage实例，该实例与OpenGL ES的纹理ID和纹理目标相关联。本接口需要与OH_NativeImage_Destroy接口配合使用，否则会存在内存泄漏。 |
 | OH_NativeImage_AcquireNativeWindow (OH_NativeImage *image) | 获取与OH_NativeImage相关联的OHNativeWindow指针，该OHNativeWindow在调用OH_NativeImage_Destroy时会将其释放，不需要调用OH_NativeWindow_DestroyNativeWindow释放，否则会出现访问已释放内存错误，可能会导致崩溃。 |
 | OH_NativeImage_AttachContext (OH_NativeImage *image, uint32_t textureId) | 将OH_NativeImage实例附加到当前OpenGL ES上下文，且该OpenGL ES纹理会绑定到 GL_TEXTURE_EXTERNAL_OES，并通过OH_NativeImage进行更新。 |
 | OH_NativeImage_DetachContext (OH_NativeImage *image) | 将OH_NativeImage实例从当前OpenGL ES上下文分离。 |
 | OH_NativeImage_UpdateSurfaceImage (OH_NativeImage *image) | 通过OH_NativeImage获取最新帧更新相关联的OpenGL ES纹理。 |
 | OH_NativeImage_GetTimestamp (OH_NativeImage *image) | 获取最近调用OH_NativeImage_UpdateSurfaceImage的纹理图像的相关时间戳。 |
-| OH_NativeImage_GetTransformMatrixV2 (OH_NativeImage *image, float matrix[16]) | 获取最近调用OH_NativeImage_UpdateSurfaceImage的纹理图像的变化矩阵。 |
+| OH_NativeImage_GetTransformMatrixV2 (OH_NativeImage *image, float matrix[16]) | 获取最近调用OH_NativeImage_UpdateSurfaceImage的纹理图像的变换矩阵。 |
 | OH_NativeImage_Destroy (OH_NativeImage **image) | 销毁通过OH_NativeImage_Create创建的OH_NativeImage实例，销毁后该OH_NativeImage指针会被赋值为空。 |
 
 
-详细的接口说明请参考[native_image](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-nativeimage)。
+详细的接口说明请参考[OH_NativeImage](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-nativeimage)。
 
 
 
-#### 开发步骤
+## 开发步骤
 
 以下步骤描述了如何使用NativeImage提供的Native API接口，创建OH_NativeImage实例作为消费者端，将数据内容更新到OpenGL外部纹理上。
 
@@ -363,20 +364,20 @@ if (result != SUCCESS) {
   
 ```cpp
 int32_t ret = OH_NativeImage_UpdateSurfaceImage(nativeImage_);
- if (ret != 0) {
-     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "RenderEngine",
-                 "OH_NativeImage_UpdateSurfaceImage failed, ret: %{public}d, texId: %{public}u",
-                 ret, nativeImageTexId_);
-     return;
- }
+    if (ret != 0) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "RenderEngine",
+                     "OH_NativeImage_UpdateSurfaceImage failed, ret: %{public}d, texId: %{public}u",
+                     ret, nativeImageTexId_);
+        return;
+    }
 
- UpdateTextureMatrix();
- if (imageRender_) {
-     imageRender_->Render();
- } else {
-     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "RenderEngine", "ImageRender is null");
- }
- // ...
+    UpdateTextureMatrix();
+    if (imageRender_) {
+        imageRender_->Render();
+    } else {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "RenderEngine", "ImageRender is null");
+    }
+    // ...
 
 void RenderEngine::UpdateTextureMatrix()
 {
@@ -384,7 +385,7 @@ void RenderEngine::UpdateTextureMatrix()
     int32_t ret = OH_NativeImage_GetTransformMatrixV2(nativeImage_, matrix);
     if (ret != 0) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "RenderEngine",
-                     "OH_NativeImage_GetTransformMatrix failed, ret: %{public}d", ret);
+                     "OH_NativeImage_GetTransformMatrixV2 failed, ret: %{public}d", ret);
         return;
     }
     imageRender_->SetTransformMatrix(matrix);

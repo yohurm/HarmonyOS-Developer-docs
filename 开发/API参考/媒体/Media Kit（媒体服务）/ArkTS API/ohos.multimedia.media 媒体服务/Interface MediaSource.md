@@ -1,9 +1,9 @@
 # Interface (MediaSource)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-mediasource
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 媒体数据信息。来源于[createMediaSourceWithUrl](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-f#mediacreatemediasourcewithurl12)。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { media } from '@kit.MediaKit';
@@ -22,9 +23,10 @@ import { media } from '@kit.MediaKit';
  
   
 
-#### setMimeType12+
+## setMimeType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMimeType(mimeType: AVMimeTypes): void
  
@@ -36,6 +38,7 @@ setMimeType(mimeType: AVMimeTypes): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mimeType | AVMimeTypes | 是 | 媒体MIME类型。 |
@@ -43,9 +46,10 @@ setMimeType(mimeType: AVMimeTypes): void
  
   
 
-#### setMediaResourceLoaderDelegate18+
+## setMediaResourceLoaderDelegate18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMediaResourceLoaderDelegate(resourceLoader: MediaSourceLoader): void
  
@@ -57,6 +61,7 @@ setMediaResourceLoaderDelegate(resourceLoader: MediaSourceLoader): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resourceLoader | MediaSourceLoader | 是 | 应用实现的媒体数据获取接口，方便播放器获取数据。 |
@@ -104,9 +109,10 @@ mediaSource.setMediaResourceLoaderDelegate(resourceLoader);
  
   
 
-#### enableOfflineCache23+
+## enableOfflineCache23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableOfflineCache(enable: boolean): void
  
@@ -116,6 +122,7 @@ enableOfflineCache(enable: boolean): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | boolean | 是 | 是否在视频播放期间启用离线缓存。true表示启用，false表示不启用。 |
@@ -123,9 +130,10 @@ enableOfflineCache(enable: boolean): void
  
   
 
-#### getID
+## getID
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getID(): string
  
@@ -141,6 +149,7 @@ getID(): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 返回媒体源的标识符，失败时返回空字符串。 |

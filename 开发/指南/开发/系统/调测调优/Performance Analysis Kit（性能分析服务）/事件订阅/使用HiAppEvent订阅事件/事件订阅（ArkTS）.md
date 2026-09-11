@@ -1,17 +1,18 @@
 # 事件订阅（ArkTS）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-watcher-app-events-arkts
 
 HiAppEvent提供了事件订阅接口，用于获取应用的事件。
 
 
-#### 接口说明
+## 接口说明
 
 API接口使用说明，包括参数使用限制和具体取值范围。请参考[@ohos.hiviewdfx.hiAppEvent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hiviewdfx-hiappevent)。
 
 **订阅接口功能介绍**：
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -25,6 +26,7 @@ API接口使用说明，包括参数使用限制和具体取值范围。请参�
 
 **打点接口功能介绍**：
 
+
 | 接口名 | 描述 |
 | --- | --- |
 | write(info: AppEventInfo, callback: AsyncCallback&lt;void&gt;): void | 应用事件异步打点方法，使用callback方式作为异步回调。 |
@@ -37,7 +39,7 @@ API接口使用说明，包括参数使用限制和具体取值范围。请参�
 
 
 
-#### 事件订阅开发指导
+## 事件订阅开发指导
 
 以订阅崩溃事件（系统事件）和按钮点击事件（应用事件）为例，说明开发步骤。
 1. 新建一个ArkTS应用工程，编辑工程中的“entry > src > main > ets > entryability > EntryAbility.ets”文件，导入所需的依赖模块：
@@ -181,7 +183,7 @@ Button('writeEvent ArkTS')
 
 
 
-#### 调测验证
+## 调测验证
 1. 点击DevEco Studio界面中的运行按钮，运行应用工程。在应用界面中点击“WatchAppCrash ArkTS&C++”按钮，触发崩溃事件。应用退出后，重新打开应用。
 2. 在HiLog窗口搜索“AppEvents”关键字，查看应用处理崩溃事件数据的日志：
 

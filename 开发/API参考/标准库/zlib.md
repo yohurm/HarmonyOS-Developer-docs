@@ -1,16 +1,23 @@
 # zlib
 
-更新时间：2026-03-09 02:50:43
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/zlib
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 简介
+## 简介
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [Zlib](https://zlib.net/)是基于C/C++语言实现的一个通用的数据压缩库。
  
   
 
-#### 支持的能力
+## 支持的能力
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Zlib库提供了内存中（in-memory）压缩、解压缩数据的能力，使用Deflate算法，可以设置不同的压缩级别，对各种类型的数据均有比较好的压缩效果；提供了对处理器和内存使用控制的能力，如果缓冲区足够大，压缩可以通过一个步骤完成，否则可以通过反复调用压缩接口完成。
  
@@ -20,7 +27,10 @@ Zlib库解码器会检查压缩数据的一致性，因此即使在输入损坏�
  
   
 
-#### 引入zlib能力
+## 引入zlib能力
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 如果开发者需要使用zlib相关功能，首先请添加头文件：
  
@@ -36,6 +46,9 @@ libz.so
  
   
 
-#### 接口列表
+## 接口列表
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 详见[Zlib库支持的接口文档](https://www.zlib.net/manual.html)。

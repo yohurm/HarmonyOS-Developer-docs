@@ -1,6 +1,6 @@
 # healthDataTypes (运动健康数据类型常量)(Lite)
 
-更新时间：2026-05-26 06:48:54
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/health-api-healthdatatypes-lite
 **支持设备：** lite_wearable
@@ -10,7 +10,8 @@
 **起始版本：** 6.1.1(24)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** lite_wearable
 
@@ -24,7 +25,8 @@ import healthStore from '@hms.health.store';
  
   
 
-#### 常量
+## 常量
+
 
 **支持设备：** lite_wearable
 
@@ -34,6 +36,7 @@ import healthStore from '@hms.health.store';
  
 **模型约束：** 此接口仅可在FA模型下使用。
   
+
 | 名称 | 类型 | 说明 |
 | --- | --- | --- |
 | WORKOUT | healthStore.DataType | 锻炼记录数据类型。 |

@@ -29,16 +29,16 @@
  
 当AudioCapturer的采样格式为SAMPLE_FORMAT_S16LE时，根据PCM音频数据计算音量分贝大小的参考代码如下：
 ```text
-// buffer：AudioCapturer录制的PCM音频数据
+<em>// buffer：AudioCapturer录制的PCM音频数据</em>
 private pcm2DB(buffer: ArrayBuffer): number {
-  const refAmplitude = 32767; // 采样深度为有符号16bit时，参考振幅值为最大正值32767。
-  const amplitudeArr = new Int16Array(buffer); // 16bit为一个采样点
+  const refAmplitude = 32767;<em> // 采样深度为有符号16bit时，参考振幅值为最大正值32767。</em>
+  const amplitudeArr = new Int16Array(buffer); <em>// 16bit为一个采样点</em>
   let sum: number = 0;
   for (let i = 0; i < amplitudeArr.length; i++) {
-    sum += amplitudeArr[i] * amplitudeArr[i]; // 计算平方和
+    sum += amplitudeArr[i] * amplitudeArr[i];<em> // 计算平方和</em>
   }
-  let rms = Math.sqrt(sum / amplitudeArr.length); // 计算均方根能量值
-  let db = 20 * Math.log10(rms / refAmplitude); // 计算音量分贝大小
+  let rms = Math.sqrt(sum / amplitudeArr.length);<em> // 计算均方根能量值</em>
+  let db = 20 * Math.log10(rms / refAmplitude); <em>// 计算音量分贝大小</em>
   return db;
 }
 ```
@@ -49,7 +49,7 @@ private pcm2DB(buffer: ArrayBuffer): number {
 如果需要获取音频流变化趋势，也可以调用getMaxAmplitudeForInputDevice()获取输入设备音频流的最大电平值，参考示例代码如下：
  
 ```text
-// 监听最大电平值
+<em>// 监听最大电平值</em>
 async getMaxAmplitude() {
   let audioManager = audio.getAudioManager();
   let audioVolumeManager: audio.AudioVolumeManager = audioManager.getVolumeManager();
@@ -150,16 +150,16 @@ struct Index {
     .alignItems(HorizontalAlign.Center);
   }
 
-  // buffer：AudioCapturer录制的PCM音频数据
+ <em> // buffer：AudioCapturer录制的PCM音频数据</em>
   private pcm2DB(buffer: ArrayBuffer): number {
-    const refAmplitude = 32767; // 采样深度为有符号16bit时，参考振幅值为最大正值32767。
-    const amplitudeArr = new Int16Array(buffer); // 16bit为一个采样点
+    const refAmplitude = 32767; <em>// 采样深度为有符号16bit时，参考振幅值为最大正值32767。</em>
+    const amplitudeArr = new Int16Array(buffer);<em> // 16bit为一个采样点</em>
     let sum: number = 0;
     for (let i = 0; i < amplitudeArr.length; i++) {
-      sum += amplitudeArr[i] * amplitudeArr[i]; // 计算平方和
+      sum += amplitudeArr[i] * amplitudeArr[i];<em> // 计算平方和</em>
     }
-    let rms = Math.sqrt(sum / amplitudeArr.length); // 计算均方根能量值
-    let db = 20 * Math.log10(rms / refAmplitude); // 计算音量分贝大小
+    let rms = Math.sqrt(sum / amplitudeArr.length); <em>// 计算均方根能量值</em>
+    let db = 20 * Math.log10(rms / refAmplitude); <em>// 计算音量分贝大小</em>
     return db;
   }
 
@@ -176,7 +176,7 @@ struct Index {
     }
   }
 
-  // 监听最大电平值
+ <em> // 监听最大电平值</em>
   async getMaxAmplitude() {
     let audioManager = audio.getAudioManager();
     let audioVolumeManager: audio.AudioVolumeManager = audioManager.getVolumeManager();

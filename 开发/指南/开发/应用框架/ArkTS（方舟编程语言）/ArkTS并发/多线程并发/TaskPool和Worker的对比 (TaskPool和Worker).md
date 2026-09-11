@@ -1,6 +1,6 @@
 # TaskPool和Worker的对比
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/taskpool-vs-worker
 
@@ -9,10 +9,11 @@ TaskPool和Worker的作用是为应用程序提供多线程运行环境，用于
 本文将从[实现特点](#实现特点对比)、[工作原理](#工作原理对比)、[适用场景](#适用场景对比)和[具体实践](#具体实践对比)四个方面对TaskPool与Worker进行全面对比分析，帮助开发者根据自身业务场景选择合适的并发方案。
   
 
-#### 实现特点对比
+## 实现特点对比
 
 **表1** TaskPool和Worker的实现特点对比
   
+
 | 实现 | TaskPool | Worker |
 | --- | --- | --- |
 | 线程运行环境 | 基于Worker线程池，由调度器统一管理。 | 每个Worker线程拥有独立的内存空间、EventLoop、CallStack等。 |
@@ -40,20 +41,20 @@ TaskPool和Worker的作用是为应用程序提供多线程运行环境，用于
  
   
 
-#### 工作原理对比
+## 工作原理对比
 
 TaskPool与Worker两种多线程并发能力均是基于Actor并发模型实现的。Worker主、子线程通过收发消息进行通信；TaskPool基于Worker做了更多场景化的功能封装，例如支持任务执行、任务Task或任务组TaskGroup的创建、任务优先级设置、取消任务等功能，且可以根据任务数量进行自动的扩容与缩容，还可以根据任务优先级进行任务调度。
  
   
 
-#### Worker工作原理
+### Worker工作原理
 
 Worker拥有独立的运行环境，每个Worker线程和主线程一样拥有自己的内存空间、消息队列（MessageQueue）、事件轮询机制（EventLoop）、调用栈（CallStack）等。线程之间通过Message进行交互，如下图所示：
  
 **图 1** Worker工作原理
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/MjWQ6wjaQYqMCBAc2Vigyg/zh-cn_image_0000002704391845.png?HW-CC-KV=V1&HW-CC-Date=20260813T095645Z&HW-CC-Expire=86400&HW-CC-Sign=1D119BDE5D2CB54857CCF280ED2D2CDE23B91E76879F49E708807EFA2EC081CE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/QH8qbiHmR_a1eu3V_jf0Bg/zh-cn_image_0000002747289891.png?HW-CC-KV=V1&HW-CC-Date=20260911T073101Z&HW-CC-Expire=86400&HW-CC-Sign=3C8D687FD8D00B9C211DFB409DC41C93F71FC3086D7EDF865E96BC03C4EF01BB)
 
  
 在多核的情况下（下图中的CPU 1和CPU 2能同时工作），多个Worker线程（下图中的Worker thread1和Worker thread2）可以同时执行，因此Worker线程做到了真正的并发，如下图所示：
@@ -61,24 +62,24 @@ Worker拥有独立的运行环境，每个Worker线程和主线程一样拥有�
 **图 2** 多核CPU下Worker并发原理图
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/zmplyvVPTjegXKE1rZOvDg/zh-cn_image_0000002674631724.png?HW-CC-KV=V1&HW-CC-Date=20260813T095645Z&HW-CC-Expire=86400&HW-CC-Sign=9C87DF0754CE938744C9BF58AEA5BED8E3C8AA37244897E2F5D2C419C950446B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/mOK_DPZ-TOSQLrUImQmEBA/zh-cn_image_0000002747209809.png?HW-CC-KV=V1&HW-CC-Date=20260911T073101Z&HW-CC-Expire=86400&HW-CC-Sign=C9A734BA4688895964041DAACAA864002F4FE6DFF4A47BCA99CFF58D3A734868)
 
  
   
 
-#### TaskPool工作原理
+### TaskPool工作原理
 
 TaskPool在Worker之上实现了调度器和Worker线程池，无需管理生命周期。在主线程（ArkTS Main Thread）中调用execute接口会将待执行的任务方法及参数信息，根据设置的任务优先级放入任务队列（TaskQueue）中等待调度执行。调度器会依据调度算法（优先级，防饥饿），从优先级队列中取出任务进行序列化，放入TaskPool中的Worker线程池，工作线程（ArkTS Worker Thread）根据调度器的安排执行任务方法，并将任务处理结果进行反序列化，最终以Promise-Then的方式返回给主线程。TaskPool的工作线程池会根据待执行的任务数量，任务的执行时间进行相应的扩容与缩容。原理图如下所示：
  
 **图 3** TaskPool工作原理图
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/rcS2TTpRTUWeoA9396MOPQ/zh-cn_image_0000002704271679.png?HW-CC-KV=V1&HW-CC-Date=20260813T095645Z&HW-CC-Expire=86400&HW-CC-Sign=9E7D9BEAC7E837960BFC16FAB25218F031F1F29A28DDD6672E18F1B8309426F5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/jfDEi28qT9WU2PTpHFQfLw/zh-cn_image_0000002717769876.png?HW-CC-KV=V1&HW-CC-Date=20260911T073101Z&HW-CC-Expire=86400&HW-CC-Sign=DB60F19ECD1D5359248AB752EA6071ED0F43DE2C4EE227903835BC0F04B3CE47)
 
  
   
 
-#### 适用场景对比
+## 适用场景对比
 
 TaskPool和Worker均支持多线程并发能力。TaskPool的工作线程会绑定系统的调度优先级，并支持负载均衡（自动扩缩容），相比之下，Worker需要开发者自行创建和销毁，存在一定的创建和管理成本。因此，在大多数场景下，推荐优先使用TaskPool。
  
@@ -86,7 +87,7 @@ Worker适用于需要长时间占据线程，并由开发者主动管理线程�
  
   
 
-#### 建议使用Worker的场景
+### 建议使用Worker的场景
 
 以下场景中，任务通常需要长时间运行或依赖线程上下文，适合使用Worker：
  
@@ -109,7 +110,7 @@ Worker适用于需要长时间占据线程，并由开发者主动管理线程�
  
   
 
-#### 建议使用TaskPool的场景
+### 建议使用TaskPool的场景
 
 以下场景中，任务通常相对独立，对调度、取消或管理能力有更高要求，适合使用TaskPool：
  
@@ -132,14 +133,14 @@ Worker适用于需要长时间占据线程，并由开发者主动管理线程�
  
   
 
-#### 具体实践对比
+## 具体实践对比
 
 本章节主要介绍Worker与TaskPool并发方案在ArkTS图片编辑场景下的使用及性能差异，分别从编码效率、线程创建耗时、数据传输、任务执行耗时、应用运行内存占用几个维度进行分析，对比不同方案各自的优缺点，以供开发者在遇到不同场景时参考。
  
 **图 4** ArkTS图片编辑效果
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/h1dATrVXRQSX_ByIm5urmg/zh-cn_image_0000002674471878.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095645Z&HW-CC-Expire=86400&HW-CC-Sign=3F963909539D06A5902C4F29A5727C497034AAAA7A361D57CE9F4E842BBFADD1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/wANEXVyxQaGyYjJLi-6rCQ/zh-cn_image_0000002717609942.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073101Z&HW-CC-Expire=86400&HW-CC-Sign=6AD4C5B52B0EB4C03F039FDA11934A734640F60A396D7C022491CAB373202B18)
 
  
 > [!NOTE]
@@ -148,7 +149,7 @@ Worker适用于需要长时间占据线程，并由开发者主动管理线程�
  
   
 
-#### 编码效率对比
+### 编码效率对比
 
 **使用Worker处理图片**
  
@@ -158,7 +159,7 @@ Worker适用于需要长时间占据线程，并由开发者主动管理线程�
  1. 根据任务数创建Worker实例，由于Worker最多同时运行的子线程数量为64个（API12新增支持，旧版本为8个），所以当任务数超过64时需要做相应限制，示例代码如下。
 
   
-```ArkTS
+```text
 let taskNum: number = 14; // The number of concurrent tasks is controlled, which can be adjusted according to the demand.
 let curTaskNum: number = taskNum <= 64 ? taskNum : 64; // Control allows up to 64 Worker instances to run at the same time.
 let Workers: worker.ThreadWorker[] = [];
@@ -171,7 +172,7 @@ for (let i = 0; i < curTaskNum; i++) { // Control the number of instantiations o
 2. 根据任务数将图片像素字节数进行拆分，并分配给已创建的Worker实例进行计算处理。
 
   
-```ArkTS
+```text
 // Split the picture pixel data ArrayBuffer according to the number of tasks N.
 function splitArrayBuffer(buffer: ArrayBuffer, taskCount: number): ArrayBuffer[] {
   const BYTES_PER_PIXEL = 4; // RGBA
@@ -209,7 +210,7 @@ function splitArrayBuffer(buffer: ArrayBuffer, taskCount: number): ArrayBuffer[]
 3. 接收到任务的Worker子线程会进行像素计算，并将计算结果返回给主线程。
 
   
-```ArkTS
+```text
 // The child thread receives the task and calculates it.
 WorkerPort.onmessage = (event: MessageEvents) => {
   let bufferArray: ArrayBuffer = event.data.buf;
@@ -247,7 +248,7 @@ function execColorInfo(bufferArray: ArrayBuffer, last: number, cur: number, hsvI
 4. 当主线程接收到子线程的计算结果时，如果还有剩余任务没有处理，就会复用该Worker子线程继续处理剩余任务；当所有任务都处理完成时，销毁所有子线程，并将所有任务处理结果进行合并进而更新UI。
 
   
-```ArkTS
+```text
 let num = 0; // Number of tasks processed
   let newBuffers: ArrayBuffer[] = [];
   for (let i = 0; i < taskNum; i++) {
@@ -381,7 +382,7 @@ function splitTask(buffers: ArrayBuffer[], type: AdjustId, value: number): taskp
  
   
 
-#### 线程创建耗时对比
+### 线程创建耗时对比
 
 从Worker与TaskPool的工作原理和编码效率对比，此处可以得知如下结论：
  
@@ -393,7 +394,7 @@ function splitTask(buffers: ArrayBuffer[], type: AdjustId, value: number): taskp
  
   
 
-#### 数据传输方式对比
+### 数据传输方式对比
 
 使用Worker与TaskPool处理并发任务时需要将数据从主线程传递到任务池的执行线程。目前支持传输的数据对象可以分为[普通对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/normal-object)、[ArrayBuffer对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arraybuffer-object)、[SharedArrayBuffer对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/shared-arraybuffer-object)、[Transferable对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/transferabled-object)、[Sendable对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/sendable-object)五种，具体可参考指南文档。Worker与TaskPool均提供了两种传递数据的方式。
  
@@ -409,6 +410,7 @@ TaskPool与Worker底层都是采用了同一套序列化与反序列化的机制
  
 **表 2** 一个任务时TaskPool序列化、反序列化耗时及效率情况
   
+
 | 方法 | 序列化数据量（bytes） | 序列化时间（μs） | 序列化效率（B/μs） | 反序列化时间（μs） | 反序列化效率（B/μs） |
 | --- | --- | --- | --- | --- | --- |
 | 方法 | 58 | 9.549 | 6.833 | 43.749 | 1.457 |
@@ -422,20 +424,20 @@ TaskPool与Worker都具有转移控制权、深拷贝两种方式，Worker不支
  
   
 
-#### 任务执行完成耗时对比
+### 任务执行完成耗时对比
 
 分别在中载、重载环境下运行，随着任务数的增多，图片编辑任务完成耗时，如下图所示：
  
 **图 5** 中载模型下Worker与TaskPool耗时对比
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/lqEDsJIOS4OqTXIMr4FOEQ/zh-cn_image_0000002704391847.png?HW-CC-KV=V1&HW-CC-Date=20260813T095645Z&HW-CC-Expire=86400&HW-CC-Sign=4FFBB8DDC32050AA8F5619F7E95524C55CF7D8BBBEC50E0B067D6336D0C6DB0E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/v7Vo90G_QrupuB6QBU-8BQ/zh-cn_image_0000002747289893.png?HW-CC-KV=V1&HW-CC-Date=20260911T073101Z&HW-CC-Expire=86400&HW-CC-Sign=B20E3EFFAB3E4A3975ADB6210BD305047E9C8947C322E93331E4E8DCCD4F712D)
 
  
 **图 6** 重载模型下TaskPool与Worker耗时对比
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/o6V5EL0SR5GWruFJiOXppQ/zh-cn_image_0000002674631726.png?HW-CC-KV=V1&HW-CC-Date=20260813T095645Z&HW-CC-Expire=86400&HW-CC-Sign=2A9B825B5B0E97554CFBD4D4D11DA7BB2963F67734A9A80EAD8A41CBEC082C0E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/AZvxlgHKT5KYTklqk_EpRw/zh-cn_image_0000002747209811.png?HW-CC-KV=V1&HW-CC-Date=20260911T073101Z&HW-CC-Expire=86400&HW-CC-Sign=91E60B7387FC6F0AC182CE25C9410C4E5C59C33181AC8B7DFCFD29266AE60503)
 
  
 从模型实验数据可以看出：
@@ -454,20 +456,20 @@ TaskPool与Worker都具有转移控制权、深拷贝两种方式，Worker不支
  
   
 
-#### 运行时内存占用对比
+### 运行时内存占用对比
 
 分别在中载、重载环境下，随着任务数的增多，统计图片编辑前一刻与完成任务时刻应用内存增量的变化情况，如下图所示：
  
 **图 7** 中载模型下TaskPool与Worker运行时内存占用对比
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/0bMjRqC3RsuOAkKnyQ_-Ug/zh-cn_image_0000002704271681.png?HW-CC-KV=V1&HW-CC-Date=20260813T095645Z&HW-CC-Expire=86400&HW-CC-Sign=1952F70EC6E0BC6B3693045CFA7B7EE9BAC06714BC9A5EFAE443C395CC6D2EC1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/lUc3cVhLTqeGro33umIPzw/zh-cn_image_0000002717769878.png?HW-CC-KV=V1&HW-CC-Date=20260911T073101Z&HW-CC-Expire=86400&HW-CC-Sign=9268FF735D0AD38AE0B3AD6E3EC10CB56C8F33344B24375A6A97E76BDF8C6321)
 
  
 **图 8** 重载模型下TaskPool与Worker运行时内存占用对比
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/du-1IfO1SzGf9CovH9-Y5g/zh-cn_image_0000002674471880.png?HW-CC-KV=V1&HW-CC-Date=20260813T095645Z&HW-CC-Expire=86400&HW-CC-Sign=C9F4AB2E0DF75066D93269B63E6A92850C14513DEBB607CD83241331DA27141A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/f3_NQsYlQYKt7DDBOIed-A/zh-cn_image_0000002717609944.png?HW-CC-KV=V1&HW-CC-Date=20260911T073101Z&HW-CC-Expire=86400&HW-CC-Sign=3E8E0BC719FF98DB4821B8BC9A095E62ADFECCA4A125E3C66507ECAA2ADFDCA6)
 
  
 从以上实验数据可以看出：
@@ -478,12 +480,13 @@ TaskPool与Worker都具有转移控制权、深拷贝两种方式，Worker不支
  
   
 
-#### 总结
+## 总结
 
 经过以上实现特点、工作原理、适用场景及具体实践的综合对比分析，总结如下：
  
 **表 3** TaskPool与Worker并发方案对比
   
+
 | 对比维度 | Worker | TaskPool |
 | --- | --- | --- |
 | 编码效率 | Worker需要开发者关注线程数量的上限，管理线程生命周期，随着任务的增多也会增加线程管理的复杂度。 | TaskPool简单易用，开发者更容易掌握。 |

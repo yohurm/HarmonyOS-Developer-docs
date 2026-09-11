@@ -1,16 +1,16 @@
 # 使用JSVM-API接口创建和获取string值
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-about-string
 
-#### 简介
+## 简介
 
 使用JSVM-API的六个字符串接口，可以实现JSVM模块与JavaScript字符串的交互功能。
  
   
 
-#### 基本概念
+## 基本概念
 
 string是编程中常用的数据类型。用于存储和操作文本数据，它们可用于构建用户界面元素，如标签、按钮和文本框，处理用户输入，验证和格式化数据。不同的编码方案支持不同的字符集和语言，以下是一些主要的编码方案及其区别：
  
@@ -22,8 +22,9 @@ string是编程中常用的数据类型。用于存储和操作文本数据，�
  
   
 
-#### 接口说明
+## 接口说明
  
+
 | 接口 | 功能说明 |
 | --- | --- |
 | OH_JSVM_GetValueStringUtf8 | 获取给定JavaScript string对象的Utf8编码字符串。 |
@@ -36,13 +37,13 @@ string是编程中常用的数据类型。用于存储和操作文本数据，�
  
   
 
-#### 使用示例
+## 使用示例
 
 JSVM-API接口开发流程参考[使用JSVM-API实现JS与C/C++语言交互开发流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-process)。本文仅展示接口对应的C++相关代码。
  
   
 
-#### OH_JSVM_GetValueStringUtf8
+### OH_JSVM_GetValueStringUtf8
 
 OH_JSVM_GetValueStringUtf8接口可以将JavaScript的字符类型的数据转换为utf8编码的字符。
  
@@ -108,7 +109,7 @@ JSVM GetValueStringUtf8 success: aaBC+-$%^你好123
  
   
 
-#### OH_JSVM_CreateStringUtf8
+### OH_JSVM_CreateStringUtf8
 
 用于创建一个UTF-8编码的JavaScript字符串。
  
@@ -160,7 +161,7 @@ JSVM CreateStringUtf8 success: 你好, World!, succeed in creating UTF-8 string!
  
   
 
-#### OH_JSVM_GetValueStringUtf16
+### OH_JSVM_GetValueStringUtf16
 
 OH_JSVM_GetValueStringUtf16，将JavaScript的字符类型的数据转换为utf16编码的字符。
  
@@ -230,7 +231,7 @@ JSVM GetValueStringUtf16 success: ahello。
  
   
 
-#### OH_JSVM_CreateStringUtf16
+### OH_JSVM_CreateStringUtf16
 
 用于创建一个UTF-16编码的JavaScript字符串。
  
@@ -288,7 +289,7 @@ JSVM CreateStringUtf16 success: 你好, World!, succeed in creating UTF-16 strin
  
   
 
-#### OH_JSVM_GetValueStringLatin1
+### OH_JSVM_GetValueStringLatin1
 
 OH_JSVM_GetValueStringLatin1接口可以将JavaScript的字符类型的数据转换为ISO-8859-1编码的字符。
  
@@ -348,7 +349,7 @@ const char *SRC_CALL_NATIVE = R"JS(
  
   
 
-#### OH_JSVM_CreateStringLatin1
+### OH_JSVM_CreateStringLatin1
 
 用于创建一个Latin1编码的JavaScript字符串。
  

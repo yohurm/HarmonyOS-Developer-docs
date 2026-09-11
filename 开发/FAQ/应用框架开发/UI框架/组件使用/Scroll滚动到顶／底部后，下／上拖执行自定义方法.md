@@ -45,7 +45,7 @@ struct ScrollDemo {
   build() {
     Column() {
       Scroll(this.scrollerForScroll) {
-        // 此处'app.media.startIcon'仅作示例
+       <em> // 此处'app.media.startIcon'仅作示例</em>
         Image($r('app.media.startIcon'))
           .size({ width: 400, height: 1050 });
       }
@@ -56,12 +56,12 @@ struct ScrollDemo {
         PanGesture(this.panOption)
           .onActionEnd((event: GestureEvent) => {
             console.info('PanGesture end');
-            // 滑动到底部并且继续滑动
+        <em>    // 滑动到底部并且继续滑动</em>
             if (this.scrollerForScroll.isAtEnd() && event.offsetY < 0) {
               console.info('执行自定义操作1');
             }
-            // 滑动到顶部并且继续滑动
-            const offsetRes = this.scrollerForScroll.currentOffset(); // 获取Scroll现在的位置
+         <em>   // 滑动到顶部并且继续滑动</em>
+            const offsetRes = this.scrollerForScroll.currentOffset(); <em>// 获取Scroll现在的位置</em>
             if (offsetRes.yOffset <= 0 && event.offsetY > 0) {
               console.info('执行自定义操作2');
             }

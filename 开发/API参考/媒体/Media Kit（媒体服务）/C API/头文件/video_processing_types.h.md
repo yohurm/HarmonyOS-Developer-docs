@@ -1,11 +1,12 @@
 # video_processing_types.h
 
-更新时间：2026-06-03 01:38:22
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-video-processing-types-h
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -23,31 +24,36 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 结构体
+### 结构体
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | VideoProcessing_ColorSpaceInfo | VideoProcessing_ColorSpaceInfo | 视频颜色空间信息数据结构。 |
-| OH_VideoProcessing | OH_VideoProcessing | 定义视频处理对象。 定义一个OH_VideoProcessing空指针，调用OH_VideoProcessing_Create创建视频处理实例，该指针在创建实例之前必须为空。用户可以对不同的处理类型创建不同的视频处理实例。 |
+| OH_VideoProcessing | OH_VideoProcessing | 定义视频处理对象。 定义一个OH_VideoProcessing空指针，用于调用OH_VideoProcessing_Create创建视频处理实例。用户可以对不同的处理类型创建不同的视频处理实例。 |
 | NativeWindow | OHNativeWindow | 定义NativeWindow对象。 |
 | OH_AVFormat | OH_AVFormat | 定义OH_AVFormat对象。 |
-| VideoProcessing_Callback | VideoProcessing_Callback | 视频处理回调对象类型。 定义一个VideoProcessing_Callback空指针，调用OH_VideoProcessingCallback_Create来创建一个回调对象。创建之前该指针必须为空。通过调用OH_VideoProcessing_RegisterCallback来向视频处理实例注册回调对象。 |
+| VideoProcessing_Callback | VideoProcessing_Callback | 视频处理回调对象类型。定义视频处理回调对象类型。使用OH_VideoProcessingCallback_Create创建回调对象前，需要将该类型的指针初始化为空指针。创建成功后，可通过调用OH_VideoProcessing_RegisterCallback，将回调对象注册到视频处理实例中。 |
  
  
   
 
-#### 枚举
+### 枚举
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | VideoDetailEnhancer_QualityLevel | VideoDetailEnhancer_QualityLevel | 用于细节增强的质量等级。 |
@@ -58,10 +64,12 @@
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | typedef void (*OH_VideoProcessingCallback_OnError)(OH_VideoProcessing* videoProcessor, VideoProcessing_ErrorCode error, void* userData) | OH_VideoProcessingCallback_OnError | 视频处理过程中报告错误的回调函数指针。 错误码VideoProcessing_ErrorCode：VIDEO_PROCESSING_ERROR_UNSUPPORTED_PROCESSING，不支持的处理，比如不支持输入输出的颜色空间类型转换。 VIDEO_PROCESSING_ERROR_INVALID_VALUE，无效的视频属性，比如视频的颜色空间无效。 VIDEO_PROCESSING_ERROR_NO_MEMORY，内存不足。 VIDEO_PROCESSING_ERROR_PROCESS_FAILED，处理过程中出错。 |
@@ -71,14 +79,16 @@
  
   
 
-#### 变量
+### 变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
-| const int32_t VIDEO_PROCESSING_TYPE_COLOR_SPACE_CONVERSION | 表示创建颜色空间转换视频处理实例。 调用OH_VideoProcessing_Create创建颜色空间转换视频处理实例，如果不支持该能力返回VideoProcessing_ErrorCode.VIDEO_PROCESSING_ERROR_UNSUPPORTED_PROCESSING。 起始版本： 12 |
-| const int32_t VIDEO_PROCESSING_TYPE_METADATA_GENERATION | 表示创建元数据生成视频处理实例。 调用OH_VideoProcessing_Create创建元数据生成视频处理实例，如果不支持该能力返回VideoProcessing_ErrorCode.VIDEO_PROCESSING_ERROR_UNSUPPORTED_PROCESSING。 起始版本： 12 |
+| const int32_t VIDEO_PROCESSING_TYPE_COLOR_SPACE_CONVERSION | 表示创建颜色空间转换视频处理实例。 调用OH_VideoProcessing_Create创建颜色空间转换视频处理实例，如果不支持该能力返回VideoProcessing_ErrorCode.VIDEO_PROCESSING_ERROR_UNSUPPORTED_PROCESSING。可以调用OH_VideoProcessing_IsColorSpaceConversionSupported来检查是否支持这种处理。 起始版本： 12 |
+| const int32_t VIDEO_PROCESSING_TYPE_METADATA_GENERATION | 表示创建元数据生成视频处理实例。 调用OH_VideoProcessing_Create创建元数据生成视频处理实例，如果不支持该能力返回VideoProcessing_ErrorCode.VIDEO_PROCESSING_ERROR_UNSUPPORTED_PROCESSING。可以调用OH_VideoProcessing_IsMetadataGenerationSupported来检查是否支持这种处理。 起始版本： 12 |
 | const int32_t VIDEO_PROCESSING_TYPE_DETAIL_ENHANCER | 表示创建细节增强视频处理实例。 调用OH_VideoProcessing_Create创建细节增强视频处理实例，如果不支持该能力返回VideoProcessing_ErrorCode.VIDEO_PROCESSING_ERROR_UNSUPPORTED_PROCESSING。 起始版本： 12 |
 | const char* VIDEO_DETAIL_ENHANCER_PARAMETER_KEY_QUALITY_LEVEL | 指定视频细节增强的质量等级，参考VideoDetailEnhancer_QualityLevel查看具体取值。 调用OH_VideoProcessing_SetParameter设置质量等级。 调用OH_VideoProcessing_GetParameter获取当前质量等级。 起始版本： 12 |
 | const char * VIDEO_METADATA_GENERATOR_STYLE_CONTROL | 指定视频元数据生成的风格模式。具体取值请参考VideoMetadataGeneratorStyleControl。调用OH_AVFormat_SetIntValue设置视频元数据生成的风格模式到AVFormat参数。调用OH_VideoProcessing_SetParameter设置当前视频元数据生成的风格模式。调用OH_VideoProcessing_GetParameter获取当前视频元数据生成的风格模式。 起始版本： 22 |
@@ -86,13 +96,15 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### VideoDetailEnhancer_QualityLevel
+### VideoDetailEnhancer_QualityLevel
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -106,6 +118,7 @@ enum VideoDetailEnhancer_QualityLevel
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | VIDEO_DETAIL_ENHANCER_QUALITY_LEVEL_NONE | 无细节增强。 |
@@ -122,7 +135,8 @@ enum VideoDetailEnhancer_QualityLevel
  
   
 
-#### VideoMetadataGeneratorStyleControl
+### VideoMetadataGeneratorStyleControl
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -136,6 +150,7 @@ enum VideoMetadataGeneratorStyleControl
  
 **起始版本：** 22
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | VIDEO_METADATA_GENERATOR_CONTRAST_MODE = 0 | 对比度优先模式。 |
@@ -152,7 +167,8 @@ enum VideoMetadataGeneratorStyleControl
  
   
 
-#### VideoProcessing_ErrorCode
+### VideoProcessing_ErrorCode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -166,24 +182,26 @@ enum VideoProcessing_ErrorCode
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | VIDEO_PROCESSING_SUCCESS | 处理成功。 |
 | VIDEO_PROCESSING_ERROR_INVALID_PARAMETER = 401 | 输入参数无效。以下情况都会返回该错误码： 1. 无效的输入或输出视频buffer，视频buffer为空。 2. 无效的参数，参数为空。 3. 无效的处理类型。 |
 | VIDEO_PROCESSING_ERROR_UNKNOWN = 29210001 | 未知错误，比如GPU计算失败或memcpy失败。 |
-| VIDEO_PROCESSING_ERROR_INITIALIZE_FAILED | 视频处理全局环境初始化失败，比如初始化GPU环境失败。 |
-| VIDEO_PROCESSING_ERROR_CREATE_FAILED | 创建视频处理实例失败，比如实例总数超出上限。 |
+| VIDEO_PROCESSING_ERROR_INITIALIZE_FAILED | 视频处理全局环境初始化失败，比如初始化GPU环境失败。请检查设备是否支持GPU加速，或尝试重启应用后重试。 |
+| VIDEO_PROCESSING_ERROR_CREATE_FAILED | 创建视频处理实例失败，比如实例总数超出上限。可调用OH_VideoProcessing_Destroy释放不再使用的实例后重试。 |
 | VIDEO_PROCESSING_ERROR_PROCESS_FAILED | 处理过程失败，比如处理时间超时。 |
-| VIDEO_PROCESSING_ERROR_UNSUPPORTED_PROCESSING | 不支持的处理类型，可以调用OH_VideoProcessing_IsXXXSupported来检查是否支持这种处理。 |
+| VIDEO_PROCESSING_ERROR_UNSUPPORTED_PROCESSING | 不支持的处理类型，比如试图创建不支持的视频处理实例。目前可对两种视频处理功能检查支持情况：OH_VideoProcessing_IsColorSpaceConversionSupported，OH_VideoProcessing_IsMetadataGenerationSupported。 |
 | VIDEO_PROCESSING_ERROR_OPERATION_NOT_PERMITTED | 不允许的操作，比如不满足调用接口所需的运行状态下调用该接口。 |
-| VIDEO_PROCESSING_ERROR_NO_MEMORY | 内存不足。 |
+| VIDEO_PROCESSING_ERROR_NO_MEMORY | 内存不足。请释放不再使用的资源后重试，或减少视频处理的分辨率。 |
 | VIDEO_PROCESSING_ERROR_INVALID_INSTANCE | 视频处理实例无效，比如视频处理实例为空实例。 |
 | VIDEO_PROCESSING_ERROR_INVALID_VALUE | 输入值无效，以下情况都会造成这种错误： 1. 视频buffer宽高太大或者颜色空间错误。 2. 参数包含无效的值，比如细节增强的质量等级错误。 |
  
  
   
 
-#### VideoProcessing_State
+### VideoProcessing_State
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -197,6 +215,7 @@ enum VideoProcessing_State
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | VIDEO_PROCESSING_STATE_RUNNING | 视频处理进行中。 |
@@ -205,13 +224,15 @@ enum VideoProcessing_State
  
   
 
-#### 函数说明
+## 函数说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### OH_VideoProcessingCallback_OnError()
+### OH_VideoProcessingCallback_OnError()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -237,6 +258,7 @@ VIDEO_PROCESSING_ERROR_PROCESS_FAILED，处理过程中出错。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_VideoProcessing* videoProcessor | 视频处理实例。 |
@@ -246,7 +268,8 @@ VIDEO_PROCESSING_ERROR_PROCESS_FAILED，处理过程中出错。
  
   
 
-#### OH_VideoProcessingCallback_OnState()
+### OH_VideoProcessingCallback_OnState()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -264,6 +287,7 @@ typedef void (*OH_VideoProcessingCallback_OnState)(OH_VideoProcessing* videoProc
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_VideoProcessing* videoProcessor | 视频处理实例。 |
@@ -273,7 +297,8 @@ typedef void (*OH_VideoProcessingCallback_OnState)(OH_VideoProcessing* videoProc
  
   
 
-#### OH_VideoProcessingCallback_OnNewOutputBuffer()
+### OH_VideoProcessingCallback_OnNewOutputBuffer()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -291,6 +316,7 @@ typedef void (*OH_VideoProcessingCallback_OnNewOutputBuffer)(OH_VideoProcessing*
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_VideoProcessing* videoProcessor | 视频处理实例。 |

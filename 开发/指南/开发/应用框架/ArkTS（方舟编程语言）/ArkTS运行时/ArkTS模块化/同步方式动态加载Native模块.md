@@ -1,17 +1,18 @@
 # 同步方式动态加载Native模块
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-apis-load-native-module
 
 [loadNativeModule (同步动态加载系统库接口)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-common-load-native-module)用于同步动态加载Native模块，目的是按需加载所需要的模块。
 
 
-#### 函数说明
+## 函数说明
 
 ```text
 loadNativeModule(moduleName: string): Object;
 ```
+
 
 | 参数 | 说明 |
 | --- | --- |
@@ -20,7 +21,8 @@ loadNativeModule(moduleName: string): Object;
 
 
 
-#### loadNativeModule支持的场景
+## loadNativeModule支持的场景
+
 
 | 场景 | 示例 |
 | --- | --- |
@@ -30,7 +32,7 @@ loadNativeModule(moduleName: string): Object;
 
 
 
-#### 使用注意事项
+## 使用注意事项
 
  - loadNativeModule仅支持在Stage模型的UI主线程中加载native模块。
  - 使用该接口会增加so文件的加载时间，使用前需评估其对应用性能和功能的影响。
@@ -68,7 +70,7 @@ loadNativeModule(moduleName: string): Object;
 
 
 
-#### 使用示例
+## 使用示例
 
 **示例1**：HAP加载系统库模块
 

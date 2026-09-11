@@ -1,10 +1,10 @@
 # 使用滑块视图容器 (Swiper)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-swiper
 
-#### 概述
+## 概述
 
 ArkUI开发框架支持在NDK接口使用滑块视图容器Swiper，提供子组件滑动轮播显示的能力。本文介绍NDK接口的开发指导，ArkTS指南请参考[创建轮播 (Swiper)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-create-looping)。
 
@@ -12,7 +12,7 @@ ArkUI开发框架支持在NDK接口使用滑块视图容器Swiper，提供子组
 
 
 
-#### 创建Swiper
+## 创建Swiper
 
 本示例通过调用[createNode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-arkui-nativenodeapi-1#createnode)创建ARKUI_NODE_SWIPER类型的UI组件节点，用于后续设置属性等操作。并通过[addChild](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-arkui-nativenodeapi-1#addchild)在Swiper组件下挂载了多个Text文本组件，作为内容显示。
 
@@ -27,9 +27,10 @@ AddChild(swiper, nodeApi);
 
 
 
-#### 设置常用属性
+## 设置常用属性
 
 本示例通过设置[ArkUI_NodeAttributeType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-node-h#arkui_nodeattributetype)中的属性调整页面显示效果，常见的属性如下：
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -63,7 +64,7 @@ nodeApi->setAttribute(swiper, NODE_SWIPER_AUTO_PLAY, &item);
 
 
 
-#### 设置导航指示器
+## 设置导航指示器
 
 本示例通过[OH_ArkUI_SwiperIndicator_Create](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-swiper-h#oh_arkui_swiperindicator_create)(ARKUI_SWIPER_INDICATOR_TYPE_DOT)创建圆点类型的导航指示器，并通过[OH_ArkUI_SwiperIndicator_SetEndPosition](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-swiper-h#oh_arkui_swiperindicator_setendposition)、[OH_ArkUI_SwiperIndicator_SetSelectedColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-swiper-h#oh_arkui_swiperindicator_setselectedcolor)接口分别设置导航指示器距离Swiper组件右边的距离和选中圆点的颜色。
 
@@ -91,9 +92,10 @@ OH_ArkUI_SwiperIndicator_Dispose(swiperIndicatorStyle);
 
 
 
-#### 监听事件
+## 监听事件
 
 本示例通过[registerNodeEvent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-arkui-nativenodeapi-1#registernodeevent)注册Swiper组件的对应支持的事件类型[ArkUI_NodeEventType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-node-h#arkui_nodeeventtype)，开发者可以通过[registerNodeEventReceiver](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-arkui-nativenodeapi-1#registernodeeventreceiver)注册的监听回调中，判断回调类型并解析对应的回调内容。涉及的回调如下：
+
 
 | 枚举项 | 描述 |
 | --- | --- |

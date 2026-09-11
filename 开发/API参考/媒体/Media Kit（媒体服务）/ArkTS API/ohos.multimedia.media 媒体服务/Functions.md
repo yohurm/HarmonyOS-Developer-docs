@@ -1,18 +1,19 @@
 # Functions
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-f
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { media } from '@kit.MediaKit';
@@ -20,9 +21,10 @@ import { media } from '@kit.MediaKit';
 
 
 
-#### media.createAVPlayer9+
+## media.createAVPlayer9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAVPlayer(callback: AsyncCallback&lt;AVPlayer&gt;): void
 
@@ -38,6 +40,7 @@ createAVPlayer(callback: AsyncCallback&lt;AVPlayer&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;AVPlayer&gt; | 是 | 回调函数。异步返回AVPlayer实例，失败时返回null。可用于音视频播放。 |
@@ -46,6 +49,7 @@ createAVPlayer(callback: AsyncCallback&lt;AVPlayer&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -70,9 +74,10 @@ media.createAVPlayer((error: BusinessError, video: media.AVPlayer) => {
 
 
 
-#### media.createAVPlayer9+
+## media.createAVPlayer9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAVPlayer(): Promise&lt;AVPlayer&gt;
 
@@ -88,6 +93,7 @@ createAVPlayer(): Promise&lt;AVPlayer&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;AVPlayer&gt; | Promise对象。成功时异步返回AVPlayer实例，可用于音视频播放。失败时返回null。 |
@@ -96,6 +102,7 @@ createAVPlayer(): Promise&lt;AVPlayer&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -122,9 +129,10 @@ media.createAVPlayer().then((video: media.AVPlayer) => {
 
 
 
-#### media.createAVRecorder9+
+## media.createAVRecorder9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAVRecorder(callback: AsyncCallback&lt;AVRecorder&gt;): void
 
@@ -138,6 +146,7 @@ createAVRecorder(callback: AsyncCallback&lt;AVRecorder&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;AVRecorder&gt; | 是 | 回调函数，返回AVRecorder实例，可用于录制音视频媒体。失败时返回null。 |
@@ -146,6 +155,7 @@ createAVRecorder(callback: AsyncCallback&lt;AVRecorder&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -170,9 +180,10 @@ media.createAVRecorder((error: BusinessError, recorder: media.AVRecorder) => {
 
 
 
-#### media.createAVRecorder9+
+## media.createAVRecorder9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAVRecorder(): Promise&lt;AVRecorder&gt;
 
@@ -188,6 +199,7 @@ createAVRecorder(): Promise&lt;AVRecorder&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;AVRecorder&gt; | Promise对象，返回AVRecorder实例，可用于录制音视频媒体。失败时返回null。 |
@@ -196,6 +208,7 @@ createAVRecorder(): Promise&lt;AVRecorder&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -221,7 +234,8 @@ media.createAVRecorder().then((recorder: media.AVRecorder) => {
 
 
 
-#### media.createAVTranscoder12+
+## media.createAVTranscoder12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -239,6 +253,7 @@ createAVTranscoder(): Promise&lt;AVTranscoder&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;AVTranscoder&gt; | Promise对象。异步返回AVTranscoder实例，失败时返回null。可用于视频转码。 |
@@ -247,6 +262,7 @@ createAVTranscoder(): Promise&lt;AVTranscoder&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -273,9 +289,10 @@ media.createAVTranscoder().then((transcoder: media.AVTranscoder) => {
 
 
 
-#### media.createAVMetadataExtractor11+
+## media.createAVMetadataExtractor11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAVMetadataExtractor(callback: AsyncCallback&lt;AVMetadataExtractor&gt;): void
 
@@ -285,6 +302,7 @@ createAVMetadataExtractor(callback: AsyncCallback&lt;AVMetadataExtractor&gt;): v
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;AVMetadataExtractor&gt; | 是 | 回调函数。当创建AVMetadataExtractor实例成功，err为undefined，data为获取到的AVMetadataExtractor实例，否则为错误对象。 |
@@ -293,6 +311,7 @@ createAVMetadataExtractor(callback: AsyncCallback&lt;AVMetadataExtractor&gt;): v
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -317,9 +336,10 @@ media.createAVMetadataExtractor((error: BusinessError, extractor: media.AVMetada
 
 
 
-#### media.createAVMetadataExtractor11+
+## media.createAVMetadataExtractor11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAVMetadataExtractor(): Promise&lt;AVMetadataExtractor&gt;
 
@@ -329,6 +349,7 @@ createAVMetadataExtractor(): Promise&lt;AVMetadataExtractor&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;AVMetadataExtractor&gt; | Promise对象。异步返回元数据获取类对象（AVMetadataExtractor）。 |
@@ -337,6 +358,7 @@ createAVMetadataExtractor(): Promise&lt;AVMetadataExtractor&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -363,9 +385,10 @@ media.createAVMetadataExtractor().then((extractor: media.AVMetadataExtractor) =>
 
 
 
-#### media.createSoundPool10+
+## media.createSoundPool10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createSoundPool(maxStreams: number, audioRenderInfo: audio.AudioRendererInfo, callback: AsyncCallback&lt;SoundPool&gt;): void
 
@@ -379,6 +402,7 @@ createSoundPool(maxStreams: number, audioRenderInfo: audio.AudioRendererInfo, ca
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | maxStreams | number | 是 | soundPool实例的最大播放的流数，设置范围为1-32的正整数。 |
@@ -389,6 +413,7 @@ createSoundPool(maxStreams: number, audioRenderInfo: audio.AudioRendererInfo, ca
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -419,9 +444,10 @@ media.createSoundPool(5, audioRendererInfo, (error, soundPool_: media.SoundPool)
 
 
 
-#### media.createSoundPool10+
+## media.createSoundPool10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createSoundPool(maxStreams: number, audioRenderInfo: audio.AudioRendererInfo): Promise&lt;SoundPool&gt;
 
@@ -435,6 +461,7 @@ createSoundPool(maxStreams: number, audioRenderInfo: audio.AudioRendererInfo): P
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | maxStreams | number | 是 | soundPool实例的最大播放的流数，设置范围为1-32的正整数。 |
@@ -442,6 +469,7 @@ createSoundPool(maxStreams: number, audioRenderInfo: audio.AudioRendererInfo): P
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -451,6 +479,7 @@ createSoundPool(maxStreams: number, audioRenderInfo: audio.AudioRendererInfo): P
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -483,7 +512,8 @@ media.createSoundPool(5, audioRendererInfo).then((soundpool_: media.SoundPool) =
 
 
 
-#### media.createAVScreenCaptureRecorder12+
+## media.createAVScreenCaptureRecorder12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -495,6 +525,7 @@ createAVScreenCaptureRecorder(): Promise&lt;AVScreenCaptureRecorder&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;AVScreenCaptureRecorder&gt; | Promise对象，返回AVScreenCaptureRecorder实例，失败时返回null。可用于进行屏幕录制。 |
@@ -503,6 +534,7 @@ createAVScreenCaptureRecorder(): Promise&lt;AVScreenCaptureRecorder&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -529,9 +561,10 @@ media.createAVScreenCaptureRecorder().then((captureRecorder: media.AVScreenCaptu
 
 
 
-#### media.createAVImageGenerator12+
+## media.createAVImageGenerator12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAVImageGenerator(callback: AsyncCallback&lt;AVImageGenerator&gt;): void
 
@@ -541,6 +574,7 @@ createAVImageGenerator(callback: AsyncCallback&lt;AVImageGenerator&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;AVImageGenerator&gt; | 是 | 回调函数。异步返回AVImageGenerator实例，失败时返回null。可用于获取视频缩略图。 |
@@ -549,6 +583,7 @@ createAVImageGenerator(callback: AsyncCallback&lt;AVImageGenerator&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -573,9 +608,10 @@ media.createAVImageGenerator((error: BusinessError, generator: media.AVImageGene
 
 
 
-#### media.createAVImageGenerator12+
+## media.createAVImageGenerator12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAVImageGenerator(): Promise&lt;AVImageGenerator&gt;
 
@@ -585,6 +621,7 @@ createAVImageGenerator(): Promise&lt;AVImageGenerator&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;AVImageGenerator&gt; | Promise对象。异步返回AVImageGenerator实例，失败时返回null。可用于获取视频缩略图。 |
@@ -593,6 +630,7 @@ createAVImageGenerator(): Promise&lt;AVImageGenerator&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -619,9 +657,10 @@ media.createAVImageGenerator().then((generator: media.AVImageGenerator) => {
 
 
 
-#### media.createMediaSourceWithUrl12+
+## media.createMediaSourceWithUrl12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createMediaSourceWithUrl(url: string, headers?: Record<string, string>): MediaSource
 
@@ -633,6 +672,7 @@ createMediaSourceWithUrl(url: string, headers?: Record<string, string>): MediaSo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | string | 是 | - 流媒体预下载媒体来源url，支持的流媒体格式：HLS、HTTP-FLV、Dash、HTTPS。 - 本地m3u8的fd路径。 |
@@ -640,6 +680,7 @@ createMediaSourceWithUrl(url: string, headers?: Record<string, string>): MediaSo
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -649,6 +690,7 @@ createMediaSourceWithUrl(url: string, headers?: Record<string, string>): MediaSo
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -660,7 +702,7 @@ createMediaSourceWithUrl(url: string, headers?: Record<string, string>): MediaSo
 
 ```text
 let headers: Record<string, string> = {"User-Agent" : "User-Agent-Value"};
-let mediaSource : media.MediaSource = media.createMediaSourceWithUrl("http://xxx",  headers);
+let mediaSource : media.MediaSource = media.createMediaSourceWithUrl("http://xxx", headers);
 ```
 
 **示例2：**
@@ -669,7 +711,6 @@ let mediaSource : media.MediaSource = media.createMediaSourceWithUrl("http://xxx
 import { media } from "@kit.MediaKit";
 
 async function test(context: Context){
-    // this.getUIContext().getHostContext();
     let mgr = context?.resourceManager;
     if (!mgr) {
         return;
@@ -687,9 +728,10 @@ async function test(context: Context){
 
 
 
-#### media.createMediaSourceWithStreamData19+
+## media.createMediaSourceWithStreamData19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createMediaSourceWithStreamData(streams: Array&lt;MediaStream&gt;): MediaSource
 
@@ -701,12 +743,14 @@ createMediaSourceWithStreamData(streams: Array&lt;MediaStream&gt;): MediaSource
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | streams | Array&lt;MediaStream&gt; | 是 | 可设置MediaStream数组，支持的流媒体格式：HTTP-FLV。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -725,9 +769,10 @@ let mediaSource : media.MediaSource = media.createMediaSourceWithStreamData(stre
 
 
 
-#### media.createMediaSourceWithFd
+## media.createMediaSourceWithFd
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createMediaSourceWithFd(fdSrc: AVFileDescriptor): MediaSource | undefined
 
@@ -743,12 +788,14 @@ createMediaSourceWithFd(fdSrc: AVFileDescriptor): MediaSource | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fdSrc | AVFileDescriptor | 是 | 媒体文件描述符。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -767,9 +814,10 @@ let mediaSource : media.MediaSource | undefined = media.createMediaSourceWithFd(
 
 
 
-#### media.createMediaSourceWithDataSource
+## media.createMediaSourceWithDataSource
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createMediaSourceWithDataSource(dataSrc: AVDataSrcDescriptor): MediaSource | undefined
 
@@ -785,12 +833,14 @@ createMediaSourceWithDataSource(dataSrc: AVDataSrcDescriptor): MediaSource | und
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dataSrc | AVDataSrcDescriptor | 是 | 流式媒体资源描述符。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -825,9 +875,10 @@ let mediaSource : media.MediaSource | undefined =  media.createMediaSourceWithDa
 
 
 
-#### media.createAudioPlayer(deprecated)
+## media.createAudioPlayer(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAudioPlayer(): AudioPlayer
 
@@ -840,6 +891,7 @@ createAudioPlayer(): AudioPlayer
 **系统能力：** SystemCapability.Multimedia.Media.AudioPlayer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -854,9 +906,10 @@ let audioPlayer: media.AudioPlayer = media.createAudioPlayer();
 
 
 
-#### media.createVideoPlayer(deprecated)
+## media.createVideoPlayer(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createVideoPlayer(callback: AsyncCallback&lt;VideoPlayer&gt;): void
 
@@ -869,6 +922,7 @@ createVideoPlayer(callback: AsyncCallback&lt;VideoPlayer&gt;): void
 **系统能力：** SystemCapability.Multimedia.Media.VideoPlayer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -893,9 +947,10 @@ media.createVideoPlayer((error: BusinessError, video: media.VideoPlayer) => {
 
 
 
-#### media.createVideoPlayer(deprecated)
+## media.createVideoPlayer(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createVideoPlayer(): Promise&lt;VideoPlayer&gt;
 
@@ -908,6 +963,7 @@ createVideoPlayer(): Promise&lt;VideoPlayer&gt;
 **系统能力：** SystemCapability.Multimedia.Media.VideoPlayer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -934,9 +990,10 @@ media.createVideoPlayer().then((video: media.VideoPlayer) => {
 
 
 
-#### media.createAudioRecorder(deprecated)
+## media.createAudioRecorder(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAudioRecorder(): AudioRecorder
 
@@ -949,6 +1006,7 @@ createAudioRecorder(): AudioRecorder
 **系统能力：** SystemCapability.Multimedia.Media.AudioRecorder
 
 **返回值:**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -963,9 +1021,10 @@ let audioRecorder: media.AudioRecorder = media.createAudioRecorder();
 
 
 
-#### media.createAVAdsController
+## media.createAVAdsController
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAVAdsController(player: AVPlayer): Promise<AVAdsController | undefined>
 
@@ -979,12 +1038,14 @@ createAVAdsController(player: AVPlayer): Promise<AVAdsController | undefined>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | player | AVPlayer | 是 | 已创建的播放器实例。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -994,6 +1055,7 @@ createAVAdsController(player: AVPlayer): Promise<AVAdsController | undefined>
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1021,9 +1083,10 @@ async function test() {
 
 
 
-#### media.createMediaSourceWithDirectory
+## media.createMediaSourceWithDirectory
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createMediaSourceWithDirectory(path: string): Promise<MediaSource | undefined>
 
@@ -1037,12 +1100,14 @@ createMediaSourceWithDirectory(path: string): Promise<MediaSource | undefined>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 用于创建媒体源的目录路径信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1052,6 +1117,7 @@ createMediaSourceWithDirectory(path: string): Promise<MediaSource | undefined>
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1078,9 +1144,10 @@ async function test() {
 
 
 
-#### media.createAVDownloaderManager
+## media.createAVDownloaderManager
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAVDownloaderManager(): Promise&lt;AVDownloaderManager&gt;
 
@@ -1093,6 +1160,7 @@ createAVDownloaderManager(): Promise&lt;AVDownloaderManager&gt;
 **系统能力：** SystemCapability.Multimedia.Media.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |

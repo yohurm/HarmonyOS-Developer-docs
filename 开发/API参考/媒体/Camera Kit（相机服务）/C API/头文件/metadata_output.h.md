@@ -1,13 +1,14 @@
 # metadata_output.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-metadata-output-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明元数据输出概念。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | MetadataOutput_Callbacks | MetadataOutput_Callbacks | 元数据输出的回调。 |
@@ -41,10 +45,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | typedef void (*OH_MetadataOutput_OnMetadataObjectAvailable)(Camera_MetadataOutput* metadataOutput, Camera_MetadataObject* metadataObject, uint32_t size) | OH_MetadataOutput_OnMetadataObjectAvailable | 在MetadataOutput_Callbacks中被调用的元数据输出元数据对象可用回调。 |
@@ -69,15 +75,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_MetadataOutput_OnMetadataObjectAvailable()
+### OH_MetadataOutput_OnMetadataObjectAvailable()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_MetadataOutput_OnMetadataObjectAvailable)(Camera_MetadataOutput* metadataOutput, Camera_MetadataObject* metadataObject, uint32_t size)
@@ -91,6 +99,7 @@ typedef void (*OH_MetadataOutput_OnMetadataObjectAvailable)(Camera_MetadataOutpu
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_MetadataOutput* metadataOutput | 传递回调的元数据输出实例。 |
@@ -100,9 +109,10 @@ typedef void (*OH_MetadataOutput_OnMetadataObjectAvailable)(Camera_MetadataOutpu
  
   
 
-#### OH_MetadataOutput_OnError()
+### OH_MetadataOutput_OnError()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_MetadataOutput_OnError)(Camera_MetadataOutput* metadataOutput, Camera_ErrorCode errorCode)
@@ -116,6 +126,7 @@ typedef void (*OH_MetadataOutput_OnError)(Camera_MetadataOutput* metadataOutput,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_MetadataOutput* metadataOutput | 传递回调的元数据输出实例。 |
@@ -128,9 +139,10 @@ typedef void (*OH_MetadataOutput_OnError)(Camera_MetadataOutput* metadataOutput,
  
   
 
-#### OH_MetadataOutput_RegisterCallback()
+### OH_MetadataOutput_RegisterCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_MetadataOutput_RegisterCallback(Camera_MetadataOutput* metadataOutput, MetadataOutput_Callbacks* callback)
@@ -144,6 +156,7 @@ Camera_ErrorCode OH_MetadataOutput_RegisterCallback(Camera_MetadataOutput* metad
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_MetadataOutput* metadataOutput | 元数据输出实例。 |
@@ -152,6 +165,7 @@ Camera_ErrorCode OH_MetadataOutput_RegisterCallback(Camera_MetadataOutput* metad
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -159,9 +173,10 @@ Camera_ErrorCode OH_MetadataOutput_RegisterCallback(Camera_MetadataOutput* metad
  
   
 
-#### OH_MetadataOutput_UnregisterCallback()
+### OH_MetadataOutput_UnregisterCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_MetadataOutput_UnregisterCallback(Camera_MetadataOutput* metadataOutput, MetadataOutput_Callbacks* callback)
@@ -175,6 +190,7 @@ Camera_ErrorCode OH_MetadataOutput_UnregisterCallback(Camera_MetadataOutput* met
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_MetadataOutput* metadataOutput | 元数据输出实例。 |
@@ -183,6 +199,7 @@ Camera_ErrorCode OH_MetadataOutput_UnregisterCallback(Camera_MetadataOutput* met
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -190,9 +207,10 @@ Camera_ErrorCode OH_MetadataOutput_UnregisterCallback(Camera_MetadataOutput* met
  
   
 
-#### OH_MetadataOutput_Start()
+### OH_MetadataOutput_Start()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_MetadataOutput_Start(Camera_MetadataOutput* metadataOutput)
@@ -206,6 +224,7 @@ Camera_ErrorCode OH_MetadataOutput_Start(Camera_MetadataOutput* metadataOutput)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_MetadataOutput* metadataOutput | 要启动的元数据输出实例。 |
@@ -213,6 +232,7 @@ Camera_ErrorCode OH_MetadataOutput_Start(Camera_MetadataOutput* metadataOutput)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -220,9 +240,10 @@ Camera_ErrorCode OH_MetadataOutput_Start(Camera_MetadataOutput* metadataOutput)
  
   
 
-#### OH_MetadataOutput_Stop()
+### OH_MetadataOutput_Stop()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_MetadataOutput_Stop(Camera_MetadataOutput* metadataOutput)
@@ -236,6 +257,7 @@ Camera_ErrorCode OH_MetadataOutput_Stop(Camera_MetadataOutput* metadataOutput)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_MetadataOutput* metadataOutput | 要停止的元数据输出实例。 |
@@ -243,6 +265,7 @@ Camera_ErrorCode OH_MetadataOutput_Stop(Camera_MetadataOutput* metadataOutput)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -250,9 +273,10 @@ Camera_ErrorCode OH_MetadataOutput_Stop(Camera_MetadataOutput* metadataOutput)
  
   
 
-#### OH_MetadataOutput_Release()
+### OH_MetadataOutput_Release()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_MetadataOutput_Release(Camera_MetadataOutput* metadataOutput)
@@ -266,6 +290,7 @@ Camera_ErrorCode OH_MetadataOutput_Release(Camera_MetadataOutput* metadataOutput
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_MetadataOutput* metadataOutput | 要释放的元数据输出实例。 |
@@ -273,6 +298,7 @@ Camera_ErrorCode OH_MetadataOutput_Release(Camera_MetadataOutput* metadataOutput
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -280,9 +306,10 @@ Camera_ErrorCode OH_MetadataOutput_Release(Camera_MetadataOutput* metadataOutput
  
   
 
-#### OH_MetadataOutput_AddMetadataObjectTypes()
+### OH_MetadataOutput_AddMetadataObjectTypes()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 Camera_ErrorCode OH_MetadataOutput_AddMetadataObjectTypes(Camera_MetadataOutput* metadataOutput, Camera_MetadataObjectType* types, uint32_t size)
@@ -296,6 +323,7 @@ Camera_ErrorCode OH_MetadataOutput_AddMetadataObjectTypes(Camera_MetadataOutput*
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_MetadataOutput* metadataOutput | 元数据输出实例。 |
@@ -305,6 +333,7 @@ Camera_ErrorCode OH_MetadataOutput_AddMetadataObjectTypes(Camera_MetadataOutput*
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -312,9 +341,10 @@ Camera_ErrorCode OH_MetadataOutput_AddMetadataObjectTypes(Camera_MetadataOutput*
  
   
 
-#### OH_MetadataOutput_RemoveMetadataObjectTypes()
+### OH_MetadataOutput_RemoveMetadataObjectTypes()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 Camera_ErrorCode OH_MetadataOutput_RemoveMetadataObjectTypes(Camera_MetadataOutput* metadataOutput, Camera_MetadataObjectType* types, uint32_t size)
@@ -328,6 +358,7 @@ Camera_ErrorCode OH_MetadataOutput_RemoveMetadataObjectTypes(Camera_MetadataOutp
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_MetadataOutput* metadataOutput | 元数据输出实例。 |
@@ -337,6 +368,7 @@ Camera_ErrorCode OH_MetadataOutput_RemoveMetadataObjectTypes(Camera_MetadataOutp
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -344,9 +376,10 @@ Camera_ErrorCode OH_MetadataOutput_RemoveMetadataObjectTypes(Camera_MetadataOutp
  
   
 
-#### OH_MetadataOutput_OnMetadataObjectExtAvailable()
+### OH_MetadataOutput_OnMetadataObjectExtAvailable()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_MetadataOutput_OnMetadataObjectExtAvailable)(void* context, OH_Camera_MetadataObjectExt** metadataObjectExt, uint32_t size)
@@ -360,6 +393,7 @@ typedef void (*OH_MetadataOutput_OnMetadataObjectExtAvailable)(void* context, OH
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | void* context | 用户提供的上下文指针。 |
@@ -369,9 +403,10 @@ typedef void (*OH_MetadataOutput_OnMetadataObjectExtAvailable)(void* context, OH
  
   
 
-#### OH_MetadataOutput_OnErrorExt()
+### OH_MetadataOutput_OnErrorExt()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_MetadataOutput_OnErrorExt)(void* context, Camera_ErrorCode errorCode)
@@ -385,6 +420,7 @@ typedef void (*OH_MetadataOutput_OnErrorExt)(void* context, Camera_ErrorCode err
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | void* context | 用户提供的上下文指针。 |
@@ -393,9 +429,10 @@ typedef void (*OH_MetadataOutput_OnErrorExt)(void* context, Camera_ErrorCode err
  
   
 
-#### OH_MetadataOutput_RegisterMetadataObjectExtAvailableCallback()
+### OH_MetadataOutput_RegisterMetadataObjectExtAvailableCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_MetadataOutput_RegisterMetadataObjectExtAvailableCallback(Camera_MetadataOutput* metadataOutput, void* context, OH_MetadataOutput_OnMetadataObjectExtAvailable callback)
@@ -409,15 +446,17 @@ Camera_ErrorCode OH_MetadataOutput_RegisterMetadataObjectExtAvailableCallback(Ca
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_MetadataOutput* metadataOutput | 元数据输出实例的指针。 |
 | void* context | 用户提供的上下文指针。 |
-| OH_MetadataOutput_OnMetadataObjectExtAvailable* callback | 监听元数据对象上报事件的回调的指针。 |
+| OH_MetadataOutput_OnMetadataObjectExtAvailable callback | 监听元数据对象上报事件的回调的指针。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：操作成功。 CAMERA_INVALID_ARGUMENT：参数缺失或参数类型错误。 |
@@ -425,9 +464,10 @@ Camera_ErrorCode OH_MetadataOutput_RegisterMetadataObjectExtAvailableCallback(Ca
  
   
 
-#### OH_MetadataOutput_UnregisterMetadataObjectExtAvailableCallback()
+### OH_MetadataOutput_UnregisterMetadataObjectExtAvailableCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_MetadataOutput_UnregisterMetadataObjectExtAvailableCallback(Camera_MetadataOutput* metadataOutput, void* context, OH_MetadataOutput_OnMetadataObjectExtAvailable callback)
@@ -441,15 +481,17 @@ Camera_ErrorCode OH_MetadataOutput_UnregisterMetadataObjectExtAvailableCallback(
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_MetadataOutput* metadataOutput | 元数据输出实例的指针。 |
 | void* context | 用户提供的上下文指针。 |
-| OH_MetadataOutput_OnMetadataObjectExtAvailable* callback | 监听元数据对象上报事件的回调的指针。 |
+| OH_MetadataOutput_OnMetadataObjectExtAvailable callback | 监听元数据对象上报事件的回调的指针。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：操作成功。 CAMERA_INVALID_ARGUMENT：参数缺失或参数类型错误。 |
@@ -457,9 +499,10 @@ Camera_ErrorCode OH_MetadataOutput_UnregisterMetadataObjectExtAvailableCallback(
  
   
 
-#### OH_MetadataOutput_RegisterErrorExtCallback()
+### OH_MetadataOutput_RegisterErrorExtCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_MetadataOutput_RegisterErrorExtCallback(Camera_MetadataOutput* metadataOutput, void* context, OH_MetadataOutput_OnErrorExt callback)
@@ -473,15 +516,17 @@ Camera_ErrorCode OH_MetadataOutput_RegisterErrorExtCallback(Camera_MetadataOutpu
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_MetadataOutput* metadataOutput | 元数据输出实例的指针。 |
 | void* context | 用户提供的上下文指针。 |
-| OH_MetadataOutput_OnErrorExt* callback | 监听错误事件的回调的指针。 |
+| OH_MetadataOutput_OnErrorExt callback | 监听错误事件的回调的指针。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：操作成功。 CAMERA_INVALID_ARGUMENT：参数缺失或参数类型错误。 |
@@ -489,9 +534,10 @@ Camera_ErrorCode OH_MetadataOutput_RegisterErrorExtCallback(Camera_MetadataOutpu
  
   
 
-#### OH_MetadataOutput_UnregisterErrorExtCallback()
+### OH_MetadataOutput_UnregisterErrorExtCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_MetadataOutput_UnregisterErrorExtCallback(Camera_MetadataOutput* metadataOutput, void* context, OH_MetadataOutput_OnErrorExt callback)
@@ -505,15 +551,17 @@ Camera_ErrorCode OH_MetadataOutput_UnregisterErrorExtCallback(Camera_MetadataOut
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_MetadataOutput* metadataOutput | 元数据输出实例的指针。 |
 | void* context | 用户提供的上下文指针。 |
-| OH_MetadataOutput_OnErrorExt* callback | 监听错误事件的回调的指针。 |
+| OH_MetadataOutput_OnErrorExt callback | 监听错误事件的回调的指针。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：操作成功。 CAMERA_INVALID_ARGUMENT：参数缺失或参数类型错误。 |
@@ -521,9 +569,10 @@ Camera_ErrorCode OH_MetadataOutput_UnregisterErrorExtCallback(Camera_MetadataOut
  
   
 
-#### OH_MetadataOutput_IsLockMetadataObjectTrackingSupported()
+### OH_MetadataOutput_IsLockMetadataObjectTrackingSupported()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_MetadataOutput_IsLockMetadataObjectTrackingSupported(const Camera_MetadataOutput* metadataOutput)
@@ -537,13 +586,15 @@ bool OH_MetadataOutput_IsLockMetadataObjectTrackingSupported(const Camera_Metada
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| Camera_MetadataOutput* metadataOutput | MetadataOutput实例的指针。 |
+| const Camera_MetadataOutput* metadataOutput | MetadataOutput实例的指针。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | true表示支持该功能。 false表示不支持该功能。 |
@@ -551,9 +602,10 @@ bool OH_MetadataOutput_IsLockMetadataObjectTrackingSupported(const Camera_Metada
  
   
 
-#### OH_MetadataOutput_LockMetadataObjectTracking()
+### OH_MetadataOutput_LockMetadataObjectTracking()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_MetadataOutput_LockMetadataObjectTracking(Camera_MetadataOutput* metadataOutput, Camera_Point* pointOfInterest)
@@ -571,6 +623,7 @@ Camera_ErrorCode OH_MetadataOutput_LockMetadataObjectTracking(Camera_MetadataOut
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_MetadataOutput* metadataOutput | 元数据输出实例的指针。 |
@@ -579,6 +632,7 @@ Camera_ErrorCode OH_MetadataOutput_LockMetadataObjectTracking(Camera_MetadataOut
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：操作成功。 CAMERA_INVALID_ARGUMENT：参数缺失或参数类型错误。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -586,9 +640,10 @@ Camera_ErrorCode OH_MetadataOutput_LockMetadataObjectTracking(Camera_MetadataOut
  
   
 
-#### OH_MetadataOutput_UnlockMetadataObjectTracking()
+### OH_MetadataOutput_UnlockMetadataObjectTracking()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_MetadataOutput_UnlockMetadataObjectTracking(Camera_MetadataOutput* metadataOutput)
@@ -602,6 +657,7 @@ Camera_ErrorCode OH_MetadataOutput_UnlockMetadataObjectTracking(Camera_MetadataO
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_MetadataOutput* metadataOutput | 元数据输出实例的指针。 |
@@ -609,6 +665,7 @@ Camera_ErrorCode OH_MetadataOutput_UnlockMetadataObjectTracking(Camera_MetadataO
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：操作成功。 CAMERA_INVALID_ARGUMENT：参数缺失或参数类型错误。 CAMERA_SESSION_NOT_CONFIG：捕获会话未配置。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |

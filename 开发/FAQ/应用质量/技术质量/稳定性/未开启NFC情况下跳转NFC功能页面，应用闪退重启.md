@@ -53,7 +53,7 @@ import { nfcController, tag } from '@kit.ConnectivityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { bundleManager } from '@kit.AbilityKit';
 
-let discTech : number[] = [tag.NFC_A]; // 用前台ability时所需要的技术代替
+let discTech : number[] = [tag.NFC_A]; <em>// 用前台ability时所需要的技术代替</em>
 let elementName : bundleManager.ElementName = {
   bundleName: 'com.example.commondemofordfx',
   abilityName: 'EntryAbility'
@@ -66,7 +66,7 @@ function readerModeCb(err : BusinessError, tagInfo : tag.TagInfo) {
     console.error('offCallback err: ' + err.message);
     return;
   }
-  // taginfo的其他操作
+  <em>// taginfo的其他操作</em>
 }
 
 @Entry
@@ -81,7 +81,7 @@ struct CheckNFCAbilityPage {
     this.checkNfcOpen();
   }
 
-  // 检查设备是否支持NFC能力
+ <em> // 检查设备是否支持NFC能力</em>
   checkNfcCapability() {
     if (!canIUse('SystemCapability.Communication.NFC.Core')) {
       hilog.error(0x0000, 'testTag', 'nfc unavailable.');
@@ -90,7 +90,7 @@ struct CheckNFCAbilityPage {
     this.nfcSupport = true;
   }
 
-  // 检查Nfc是否开启
+ <em> // 检查Nfc是否开启</em>
   checkNfcOpen() {
     if (!nfcController.isNfcOpen()) {
       hilog.error(0x0000, 'testTag', 'nfc disabled.');
@@ -106,14 +106,14 @@ struct CheckNFCAbilityPage {
     } catch (e) {
       hilog.error(0x0000, 'testTag',`tag.on error: ${(e as BusinessError).message}`);
       this.nfcRunFailMsg = `失败信息：${(e as BusinessError).message}`;
-      // 异常处理，例如提示弹窗。
+      <em>// 异常处理，例如提示弹窗。</em>
     }
   }
 
   build() {
     Column({ space: 20 }) {
       if (!this.nfcSupport) {
-        // 设备不支持NFC的情况
+       <em> // 设备不支持NFC的情况</em>
         Text('当前设备不支持NFC功能')
           .fontSize(20)
           .fontColor(Color.Red)
@@ -123,7 +123,7 @@ struct CheckNFCAbilityPage {
           .fontColor(Color.Red)
       }
       if (!this.nfcOpen) {
-        // 设备不支持NFC的情况
+       <em> // 设备不支持NFC的情况</em>
         Text('NFC功能未开启')
           .fontSize(20)
           .fontColor(Color.Red)

@@ -1,10 +1,10 @@
 # 使用JSVM-API接口进行WebAssembly模块相关开发
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-about-wasm
 
-#### 简介
+## 简介
 
 JSVM-API WebAssembly 接口提供了 WebAssembly 字节码编译、WebAssembly 函数优化、WebAssembly cache 序列化和反序列化的能力。
  
@@ -14,20 +14,21 @@ JSVM-API WebAssembly 接口提供了 WebAssembly 字节码编译、WebAssembly �
  
   
 
-#### 基本概念
+## 基本概念
 
-- **wasm module**：表示一个 WebAssembly 模块，(WebAssembly 简称为wasm)，通过OH_JSVM_CompileWasmModule可以将wasm字节码或wasm cache创建为wasm module。通过 OH_JSVM_IsWasmModuleObject 接口可以判断一个 JSVM_Value 是否是一个 wasm module。
+- **wasm module**：表示一个 WebAssembly 模块，(WebAssembly 简称为Wasm)，通过OH_JSVM_CompileWasmModule可以将Wasm字节码或wasm cache创建为wasm module。通过 OH_JSVM_IsWasmModuleObject 接口可以判断一个 JSVM_Value 是否是一个 wasm module。
 - **wasm function**：表示 wasm module 中定义的函数，wasm function 在导出后被外部代码使用。OH_JSVM_CompileWasmFunction 接口提供了将 wasm function 编译为优化后的机器码的能力，方便开发者对指定 wasm function 提前编译和函数粒度的并行编译。
 - **wasm cache**：对 wasm module 中的机器码进行序列化，生成的数据被称为 wasm cache。wasm cache 的创建和释放接口分别为 OH_JSVM_CreateWasmCache 和 OH_JSVM_ReleaseCache (对应的 cacheType 为 JSVM_CACHE_TYPE_WASM)。
 
  
   
 
-#### 接口说明
+## 接口说明
  
+
 | 接口 | 功能说明 |
 | --- | --- |
-| OH_JSVM_CompileWasmModule | 将 wasm 字节码同步编译为 wasm module。如果提供了 cache 参数，先尝试将 cache 反序列化为 wasm module，反序列化失败后再执行编译。如果没有 JIT 权限支持，则打印一行日志提示开发者。 |
+| OH_JSVM_CompileWasmModule | 将 Wasm 字节码同步编译为 wasm module。如果提供了 cache 参数，先尝试将 cache 反序列化为 wasm module，反序列化失败后再执行编译。如果没有 JIT 权限支持，则打印一行日志提示开发者。 |
 | OH_JSVM_CompileWasmFunction | 将 wasm module 中指定编号的函数编译为优化后的机器码，目前只使能了最高的优化等级，函数编号的合法性由接口调用者保证。如果没有 JIT 权限支持，则打印一行日志提示开发者。 |
 | OH_JSVM_IsWasmModuleObject | 判断传入的值是否是wasm module。 |
 | OH_JSVM_CreateWasmCache | 将 wasm module 中的机器码序列化为 wasm cache，如果 wasm module 不包含机器码，会导致序列化失败。如果没有 JIT 权限支持，则打印一行日志提示开发者。 |
@@ -36,8 +37,9 @@ JSVM-API WebAssembly 接口提供了 WebAssembly 字节码编译、WebAssembly �
  
   
 
-#### code cache 校验规格说明
+## code cache 校验规格说明
  
+
 | 规格 | 规格说明 |
 | --- | --- |
 | 完整性校验 | 由用户保证 |
@@ -47,7 +49,7 @@ JSVM-API WebAssembly 接口提供了 WebAssembly 字节码编译、WebAssembly �
  
   
 
-#### 使用示例
+## 使用示例
 
 参考 [使用JSVM-API实现JS与C/C++语言交互开发流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-process) 了解 JSVM-API 接口开发流程。本文仅展示接口对应的 C++ 代码。
  
@@ -202,7 +204,7 @@ static JSVM_Value WasmDemo(JSVM_Env env, JSVM_CallbackInfo info)
     // 通过将 wasm cache 赋值来模拟 cache 持久化，实际使用场景可能将 wasm cache 保存到文件
     std::vector<uint8_t> cacheBuffer(wasmCacheData, wasmCacheData + wasmCacheLength);
 
-    // cache 一旦保存完成后，需要显式释放，以免发生内存泄露
+    // cache 一旦保存完成后，需要显式释放，以免发生内存泄漏
     // 注意：传入的 JSVM_CacheType 必须匹配
     status = OH_JSVM_ReleaseCache(env, wasmCacheData, JSVM_CACHE_TYPE_WASM);
     CHECK_STATUS(status == JSVM_OK);

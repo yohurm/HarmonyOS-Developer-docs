@@ -30,9 +30,9 @@ import { ComponentContent, TargetInfo, PromptAction } from '@kit.ArkUI';
 
 export class PromptActionClass {
   private promptAction: PromptAction | null = null;
-  private contentNode: ComponentContent<Object> | null = null; // popup弹框组件内容
+  private contentNode: ComponentContent<Object> | null = null; <em>// popup弹框组件内容</em>
   private options: PopupCommonOptions | null = null;
-  private target: TargetInfo | null = null; // 目标组件信息
+  private target: TargetInfo | null = null; <em>// 目标组件信息</em>
   private isPartialUpdate: boolean = false;
 
 
@@ -61,7 +61,7 @@ export class PromptActionClass {
   }
 
 
-  // 打开popup
+ <em> // 打开popup</em>
   public openPopup() {
     if (this.promptAction != null) {
       this.promptAction.openPopup(this.contentNode, this.target, this.options)
@@ -75,7 +75,7 @@ export class PromptActionClass {
   }
 
 
-  // 关闭popup
+  <em>// 关闭popup</em>
   public closePopup() {
     if (this.promptAction != null) {
       this.promptAction.closePopup(this.contentNode)
@@ -89,7 +89,7 @@ export class PromptActionClass {
   }
 
 
-  // 更新popup
+ <em> // 更新popup</em>
   public updatePopup(options: PopupCommonOptions) {
     if (this.promptAction != null) {
       this.promptAction.updatePopup(this.contentNode, options, this.isPartialUpdate)
@@ -117,7 +117,7 @@ import { PromptActionClass } from 'custompopupsdk';
 import { ComponentContent, PromptAction } from '@kit.ArkUI';
 
 
-// 用于传递参数
+<em>// 用于传递参数</em>
 class Params {
   title: string = '';
   text: string = '';
@@ -133,7 +133,7 @@ class Params {
 }
 
 
-// popup内容
+<em>// popup内容</em>
 @Builder
 function buildText(params: Params) {
   Row() {
@@ -160,7 +160,7 @@ function buildText(params: Params) {
 
           Image($rawfile('xmark.svg')).width(18).height(18)
             .onClick(() => {
-              // 关闭popup
+             <em> // 关闭popup</em>
               params.promptActionClass.closePopup();
             })
             .margin({
@@ -193,7 +193,7 @@ function buildText(params: Params) {
           .fontWeight(500)
           .lineHeight(19)
           .onClick(() => {
-            // 更新popup内容样式
+           <em> // 更新popup内容样式</em>
             params.promptActionClass.updatePopup({
               enableArrow: false,
             });
@@ -230,10 +230,10 @@ struct Index {
   private uiContext: UIContext = this.getUIContext();
   private promptAction: PromptAction = this.uiContext.getPromptAction();
   private promptActionClass: PromptActionClass = new PromptActionClass();
-  private targetId: string | number = 0; // 目标组件id
+  private targetId: string | number = 0; <em>// 目标组件id</em>
   private contentNode: ComponentContent<Object> =
     new ComponentContent(this.uiContext, wrapBuilder(buildText),
-      new Params(this.title, this.text, this.promptActionClass)); // 初始化自定义popup组件
+      new Params(this.title, this.text, this.promptActionClass)); <em>// 初始化自定义popup组件</em>
   private options: PopupCommonOptions = { enableArrow: true, autoCancel: false };
 
 
@@ -244,7 +244,7 @@ struct Index {
         Text('给文本三加气泡')
           .fontColor('#0A59F7')
           .onClick(() => {
-            // 指定弹出组件ID
+           <em> // 指定弹出组件ID</em>
             let targetId = 'column3';
             if (targetId == undefined) {
               this.targetId = 0;
@@ -256,7 +256,7 @@ struct Index {
             this.promptActionClass.setOptions(this.options);
             this.promptActionClass.setIsPartialUpdate(false);
             this.promptActionClass.setTarget({ id: this.targetId });
-            // 打开popup
+        <em>    // 打开popup</em>
             this.promptActionClass.openPopup();
           })
       }
@@ -280,7 +280,7 @@ struct Index {
         Text('给文本二加气泡')
           .fontColor('#0A59F7')
           .onClick(() => {
-            // 指定组件ID
+        <em>    // 指定组件ID</em>
             let targetId = 'column2';
             if (targetId == undefined) {
               this.targetId = 0;
@@ -315,7 +315,7 @@ struct Index {
         Text('给文本一加气泡')
           .fontColor('#0A59F7')
           .onClick(() => {
-            // 指定组件ID
+          <em>  // 指定组件ID</em>
             let targetId = 'column1';
             if (targetId == undefined) {
               this.targetId = 0;

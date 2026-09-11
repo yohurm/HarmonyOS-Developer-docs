@@ -1,9 +1,9 @@
 # badge
 
-更新时间：2026-07-09 02:26:55
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-container-badge
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 5开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
@@ -12,17 +12,19 @@
 应用中如果有需用户关注的新事件提醒，可以采用新事件标记来标识。
   
 
-#### 权限列表
+## 权限列表
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
  
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持单个子组件。
  
@@ -32,12 +34,14 @@
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-attributes)外，还支持如下属性：
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | placement | string | rightTop | 否 | 事件提醒的数字标记或者圆点标记的位置，可选值为： - right：位于组件右边框。 - rightTop：位于组件边框右上角。 - left：位于组件左边框。 |
@@ -50,19 +54,21 @@
  
 **表1** BadgeConfig
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | badgeColor | &lt;color&gt; | #fa2a2d | 否 | 新事件标记背景色。 |
 | textColor | &lt;color&gt; | #ffffff | 否 | 数字标记的数字文本颜色。 |
-| textSize | &lt;length&gt; | 10px | 否 | 数字标记的数字文本大小。 |
-| badgeSize | &lt;length&gt; | 6px | 否 | 圆点标记的默认大小。 |
+| textSize | &lt;length&gt; | 10px | 否 | 数字标记的文本大小。 |
+| badgeSize | &lt;length&gt; | 6px | 否 | 圆点标记大小。 |
  
  
   
 
-#### 样式
+## 样式
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用样式](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-styles)。
  
@@ -72,25 +78,28 @@
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-events)。
  
   
 
-#### 方法
+## 方法
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用方法](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-methods)。
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 <!-- xxx.hml -->
@@ -138,4 +147,4 @@ export default {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/oKeNa7UmTei-mMhXhu9fVQ/zh-cn_image_0000002647588506.png?HW-CC-KV=V1&HW-CC-Date=20260723T012000Z&HW-CC-Expire=86400&HW-CC-Sign=59899EDD7D9A6DD981289F56A52F71EC110219E9B859B0FE6F4E5A90D3E4C7E6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/wS2FGwhSRX-lKtyNcP6lxQ/zh-cn_image_0000002717613228.png?HW-CC-KV=V1&HW-CC-Date=20260911T072957Z&HW-CC-Expire=86400&HW-CC-Sign=8AB43FBC13388691769E32831B19E6BC9DE36B2777B314724BABED1217F9BA2E)

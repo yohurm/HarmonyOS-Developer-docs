@@ -1,13 +1,14 @@
 # native_interface_bundle.h
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-interface-bundle-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供查询应用包信息的功能，包括应用包名、应用指纹、应用appId等。
 
@@ -23,15 +24,18 @@
 
 
 
-#### 汇总
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 汇总
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 结构体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -43,9 +47,11 @@
 
 
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -61,15 +67,17 @@
 
 
 
-#### 函数说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 函数说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### OH_NativeBundle_GetCurrentApplicationInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### OH_NativeBundle_GetCurrentApplicationInfo()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_NativeBundle_ApplicationInfo OH_NativeBundle_GetCurrentApplicationInfo()
@@ -83,6 +91,7 @@ OH_NativeBundle_ApplicationInfo OH_NativeBundle_GetCurrentApplicationInfo()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_NativeBundle_ApplicationInfo | 返回新创建的OH_NativeBundle_ApplicationInfo对象。如果返回的对象为NULL，则表示创建失败。 失败的可能原因是应用程序地址空间已满，导致空间分配失败。 |
@@ -90,9 +99,10 @@ OH_NativeBundle_ApplicationInfo OH_NativeBundle_GetCurrentApplicationInfo()
 
 
 
-#### OH_NativeBundle_GetAppId()
+### OH_NativeBundle_GetAppId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 char* OH_NativeBundle_GetAppId()
@@ -106,6 +116,7 @@ char* OH_NativeBundle_GetAppId()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | char* | 返回一个新创建的字符串，用于指示appId信息。如果返回的对象为NULL，则表示创建失败。 失败的可能原因是应用程序地址空间已满，导致空间分配失败。 |
@@ -113,9 +124,10 @@ char* OH_NativeBundle_GetAppId()
 
 
 
-#### OH_NativeBundle_GetAppIdentifier()
+### OH_NativeBundle_GetAppIdentifier()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 char* OH_NativeBundle_GetAppIdentifier()
@@ -129,6 +141,7 @@ char* OH_NativeBundle_GetAppIdentifier()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | char* | 返回一个新创建的字符串，用于指示应用程序标识符信息。如果返回的对象为NULL，则表示创建失败。 失败的可能原因是应用程序地址空间已满，导致空间分配失败。 |
@@ -136,9 +149,10 @@ char* OH_NativeBundle_GetAppIdentifier()
 
 
 
-#### OH_NativeBundle_GetMainElementName()
+### OH_NativeBundle_GetMainElementName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_NativeBundle_ElementName OH_NativeBundle_GetMainElementName()
@@ -152,6 +166,7 @@ OH_NativeBundle_ElementName OH_NativeBundle_GetMainElementName()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_NativeBundle_ElementName | 返回新创建的OH_NativeBundle_ElementName对象。如果返回的对象中存在为NULL的字段，则表示创建失败。 失败的可能原因是应用程序地址空间已满，导致空间分配失败。 |
@@ -159,9 +174,10 @@ OH_NativeBundle_ElementName OH_NativeBundle_GetMainElementName()
 
 
 
-#### OH_NativeBundle_GetCompatibleDeviceType()
+### OH_NativeBundle_GetCompatibleDeviceType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 char* OH_NativeBundle_GetCompatibleDeviceType()
@@ -175,6 +191,7 @@ char* OH_NativeBundle_GetCompatibleDeviceType()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | char* | 返回一个新创建的字符串，用于指示兼容设备类型。如果返回的对象为NULL，则表示创建失败。 失败的可能原因是应用程序地址空间已满，导致空间分配失败。 |
@@ -182,9 +199,10 @@ char* OH_NativeBundle_GetCompatibleDeviceType()
 
 
 
-#### OH_NativeBundle_IsDebugMode()
+### OH_NativeBundle_IsDebugMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_NativeBundle_IsDebugMode(bool* isDebugMode)
@@ -198,12 +216,14 @@ bool OH_NativeBundle_IsDebugMode(bool* isDebugMode)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | bool* isDebugMode | 表示应用是否处于调试模式，取值为true表示可调试模式，取值为false表示不可调试模式。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -212,9 +232,10 @@ bool OH_NativeBundle_IsDebugMode(bool* isDebugMode)
 
 
 
-#### OH_NativeBundle_GetModuleMetadata()
+### OH_NativeBundle_GetModuleMetadata()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_NativeBundle_ModuleMetadata* OH_NativeBundle_GetModuleMetadata(size_t* size)
@@ -228,12 +249,14 @@ OH_NativeBundle_ModuleMetadata* OH_NativeBundle_GetModuleMetadata(size_t* size)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | size_t* size | 表示模块元数据数组大小。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -242,9 +265,10 @@ OH_NativeBundle_ModuleMetadata* OH_NativeBundle_GetModuleMetadata(size_t* size)
 
 
 
-#### OH_NativeBundle_GetAbilityResourceInfo()
+### OH_NativeBundle_GetAbilityResourceInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 ```text
 BundleManager_ErrorCode OH_NativeBundle_GetAbilityResourceInfo(char* fileType, OH_NativeBundle_AbilityResourceInfo** abilityResourceInfo, size_t* size)
@@ -262,6 +286,7 @@ BundleManager_ErrorCode OH_NativeBundle_GetAbilityResourceInfo(char* fileType, O
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | char* fileType | 表示待查询的特定文件类型，推荐使用UTD类型，比如："general.plain-text"、"general.image"。目前也可以兼容使用MIME type类型和文件后缀名称，如："text/xml" 、 ".png"等。文件后缀与文件类型的映射关系参见UTD预置列表。不支持传"*/*"。 |
@@ -270,6 +295,7 @@ BundleManager_ErrorCode OH_NativeBundle_GetAbilityResourceInfo(char* fileType, O
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |

@@ -1,6 +1,6 @@
 # PdfView（PDF预览组件）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/pdf-arkts-pdfview-component
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -10,7 +10,8 @@
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -20,7 +21,8 @@ import { pdfService, pdfViewManager, PdfView } from '@kit.PDFKit';
  
   
 
-#### PdfView
+## PdfView
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -34,6 +36,7 @@ import { pdfService, pdfViewManager, PdfView } from '@kit.PDFKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 参数名 | 类型 | 说明 |
 | --- | --- | --- |
 | controller | pdfViewManager.PdfController | PdfView组件控制器。 |
@@ -45,7 +48,8 @@ import { pdfService, pdfViewManager, PdfView } from '@kit.PDFKit';
  
   
 
-#### build
+### build
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 

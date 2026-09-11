@@ -1,11 +1,11 @@
 # Interface (AudioManager)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiomanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-音频音量和设备管理。
+AudioManager是音频系统的核心管理模块。本模块提供音频系统管理能力，包括音频场景模式获取、音量控制、音频流管理、设备路由、会话管理、空间音频管理、录音管理等。开发者可通过AudioManager获取各个子管理器的实例以完成具体的音频管理任务。
  
 在使用AudioManager的接口之前，需先通过[getAudioManager](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-f#audiogetaudiomanager)获取AudioManager实例。
  
@@ -14,9 +14,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { audio } from '@kit.AudioKit';
@@ -24,9 +25,10 @@ import { audio } from '@kit.AudioKit';
  
   
 
-#### getAudioScene8+
+## getAudioScene8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAudioScene(callback: AsyncCallback&lt;AudioScene&gt;): void
  
@@ -36,6 +38,7 @@ getAudioScene(callback: AsyncCallback&lt;AudioScene&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;AudioScene&gt; | 是 | 回调函数。当获取音频场景模式成功，err为undefined，data为获取到的音频场景模式；否则为错误对象。 |
@@ -48,18 +51,19 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 audioManager.getAudioScene((err: BusinessError, value: audio.AudioScene) => {
   if (err) {
-    console.error(`Failed to obtain the audio scene mode. ${err}`);
+    console.error(`Failed to obtain the audio scene mode. Code: ${err.code}, message: ${err.message}`);
     return;
   }
-  console.info(`Callback invoked to indicate that the audio scene mode is obtained ${value}.`);
+  console.info(`Succeeded in obtaining the audio scene mode, audioScene: ${value}.`);
 });
 ```
  
   
 
-#### getAudioScene8+
+## getAudioScene8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAudioScene(): Promise&lt;AudioScene&gt;
  
@@ -69,6 +73,7 @@ getAudioScene(): Promise&lt;AudioScene&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;AudioScene&gt; | Promise对象，返回音频场景模式。 |
@@ -80,17 +85,18 @@ getAudioScene(): Promise&lt;AudioScene&gt;
 import { BusinessError } from '@kit.BasicServicesKit';
 
 audioManager.getAudioScene().then((value: audio.AudioScene) => {
-  console.info(`Promise returned to indicate that the audio scene mode is obtained ${value}.`);
-}).catch ((err: BusinessError) => {
-  console.error(`Failed to obtain the audio scene mode ${err}`);
+  console.info(`Succeeded in obtaining the audio scene mode, audioScene: ${value}.`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to obtain the audio scene mode. Code: ${err.code}, message: ${err.message}`);
 });
 ```
  
   
 
-#### getAudioSceneSync10+
+## getAudioSceneSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAudioSceneSync(): AudioScene
  
@@ -100,6 +106,7 @@ getAudioSceneSync(): AudioScene
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AudioScene | 音频场景模式。 |
@@ -112,18 +119,19 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 try {
   let value: audio.AudioScene = audioManager.getAudioSceneSync();
-  console.info(`indicate that the audio scene mode is obtained ${value}.`);
+  console.info(`Succeeded in obtaining the audio scene mode, audioScene: ${value}.`);
 } catch (err) {
   let error = err as BusinessError;
-  console.error(`Failed to obtain the audio scene mode ${error}`);
+  console.error(`Failed to obtain the audio scene mode. Code: ${error.code}, message: ${error.message}`);
 }
 ```
  
   
 
-#### on('audioSceneChange')20+
+## on('audioSceneChange')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'audioSceneChange', callback: Callback&lt;AudioScene&gt;): void
  
@@ -133,6 +141,7 @@ on(type: 'audioSceneChange', callback: Callback&lt;AudioScene&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'audioSceneChange'，当音频场景模式发生变化时，触发该事件。 |
@@ -143,28 +152,30 @@ on(type: 'audioSceneChange', callback: Callback&lt;AudioScene&gt;): void
  
 ```text
 audioManager.on('audioSceneChange', (audioScene: audio.AudioScene) => {
-  console.info(`audio scene : ${audioScene}.`);
+  console.info(`Audio scene changed, audioScene: ${audioScene}.`);
 });
 ```
  
   
 
-#### off('audioSceneChange')20+
+## off('audioSceneChange')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'audioSceneChange', callback?: Callback&lt;AudioScene&gt;): void
  
-取消监听音频场景变化事件。使用callback异步回调。
+取消监听音频场景变化事件。
  
 **系统能力：** SystemCapability.Multimedia.Audio.Communication
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型，支持的事件为'audioSceneChange'，当取消监听当前音频场景变化事件时，触发该事件。 |
-| callback | Callback&lt;AudioScene&gt; | 否 | 回调函数，返回当前音频场景模式。 |
+| type | string | 是 | 事件回调类型，支持的事件为'audioSceneChange'。 |
+| callback | Callback&lt;AudioScene&gt; | 否 | 回调函数。传入回调函数时，仅取消该回调对应的监听事件，需与on('audioSceneChange')绑定同一回调函数；不传参数时，取消此事件类型下所有已订阅的监听事件。 |
  
  
 **示例：**
@@ -175,7 +186,7 @@ audioManager.off('audioSceneChange');
 
 // 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
 let audioSceneChangeCallback = (audioScene: audio.AudioScene) => {
-  console.info(`audio scene : ${audioScene}.`);
+  console.info(`Audio scene changed, audioScene: ${audioScene}.`);
 };
 
 audioManager.on('audioSceneChange', audioSceneChangeCallback);
@@ -185,9 +196,10 @@ audioManager.off('audioSceneChange', audioSceneChangeCallback);
  
   
 
-#### getVolumeManager9+
+## getVolumeManager9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getVolumeManager(): AudioVolumeManager
  
@@ -199,24 +211,24 @@ getVolumeManager(): AudioVolumeManager
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| AudioVolumeManager | AudioVolumeManager实例。 |
+| AudioVolumeManager | 返回AudioVolumeManager实例。 |
  
  
 **示例：**
  
 ```text
-import { audio } from '@kit.AudioKit';
-
 let audioVolumeManager: audio.AudioVolumeManager = audioManager.getVolumeManager();
 ```
  
   
 
-#### getStreamManager9+
+## getStreamManager9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStreamManager(): AudioStreamManager
  
@@ -226,24 +238,24 @@ getStreamManager(): AudioStreamManager
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| AudioStreamManager | AudioStreamManager实例。 |
+| AudioStreamManager | 返回AudioStreamManager实例。 |
  
  
 **示例：**
  
 ```text
-import { audio } from '@kit.AudioKit';
-
 let audioStreamManager: audio.AudioStreamManager = audioManager.getStreamManager();
 ```
  
   
 
-#### getRoutingManager9+
+## getRoutingManager9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRoutingManager(): AudioRoutingManager
  
@@ -253,24 +265,24 @@ getRoutingManager(): AudioRoutingManager
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| AudioRoutingManager | AudioRoutingManager实例。 |
+| AudioRoutingManager | 返回AudioRoutingManager实例。 |
  
  
 **示例：**
  
 ```text
-import { audio } from '@kit.AudioKit';
-
 let audioRoutingManager: audio.AudioRoutingManager = audioManager.getRoutingManager();
 ```
  
   
 
-#### getSessionManager12+
+## getSessionManager12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSessionManager(): AudioSessionManager
  
@@ -282,22 +294,22 @@ getSessionManager(): AudioSessionManager
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| AudioSessionManager | AudioSessionManager实例。 |
+| AudioSessionManager | 返回AudioSessionManager实例。 |
  
  
 **示例：**
  
 ```text
-import { audio } from '@kit.AudioKit';
-
 let audioSessionManager: audio.AudioSessionManager = audioManager.getSessionManager();
 ```
  
   
 
-#### getSpatializationManager18+
+## getSpatializationManager18+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -309,27 +321,28 @@ getSpatializationManager(): AudioSpatializationManager
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| AudioSpatializationManager | AudioSpatializationManager实例。 |
+| AudioSpatializationManager | 返回AudioSpatializationManager实例。 |
  
  
 **示例：**
  
 ```text
-import { audio } from '@kit.AudioKit';
 let audioSpatializationManager: audio.AudioSpatializationManager = audioManager.getSpatializationManager();
 ```
  
   
 
-#### getDeviceEnhanceManager()
+## getDeviceEnhanceManager()
+
 
 **支持设备：** PC/2in1
 
 getDeviceEnhanceManager(): AudioDeviceEnhanceManager
  
-获取音频设备增强管理器实例。
+获取音频设备增强管理器。
  
 **起始版本：** 26.0.0
  
@@ -339,24 +352,24 @@ getDeviceEnhanceManager(): AudioDeviceEnhanceManager
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| AudioDeviceEnhanceManager | 返回一个AudioDeviceEnhanceManager实例。 |
+| AudioDeviceEnhanceManager | 返回AudioDeviceEnhanceManager实例。 |
  
  
 **示例：**
  
 ```text
-import { audio } from '@kit.AudioKit';
-
 let audioDeviceEnhanceManager: audio.AudioDeviceEnhanceManager = audioManager.getDeviceEnhanceManager();
 ```
  
   
 
-#### getDebuggingManager
+## getDebuggingManager
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDebuggingManager(): AudioDebuggingManager
  
@@ -370,6 +383,7 @@ getDebuggingManager(): AudioDebuggingManager
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AudioDebuggingManager | 返回AudioDebuggingManager实例。 |
@@ -378,15 +392,15 @@ getDebuggingManager(): AudioDebuggingManager
 **示例：**
  
 ```text
-import { audio } from '@kit.AudioKit';
 let debugManager: audio.AudioDebuggingManager = audioManager.getDebuggingManager();
 ```
  
   
 
-#### getRecordingManager
+## getRecordingManager
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRecordingManager(): AudioRecordingManager
  
@@ -400,24 +414,24 @@ getRecordingManager(): AudioRecordingManager
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| AudioRecordingManager | AudioRecordingManager实例。 |
+| AudioRecordingManager | 返回AudioRecordingManager实例。 |
  
  
 **示例：**
  
 ```text
-import { audio } from '@kit.AudioKit';
-
 let audioRecordingManager: audio.AudioRecordingManager = audioManager.getRecordingManager();
 ```
  
   
 
-#### setAudioParameter(deprecated)
+## setAudioParameter(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAudioParameter(key: string, value: string, callback: AsyncCallback&lt;void&gt;): void
  
@@ -435,6 +449,7 @@ setAudioParameter(key: string, value: string, callback: AsyncCallback&lt;void&gt
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 被设置的音频参数的键。 |
@@ -449,18 +464,19 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 audioManager.setAudioParameter('key_example', 'value_example', (err: BusinessError) => {
   if (err) {
-    console.error(`Failed to set the audio parameter. ${err}`);
+    console.error(`Failed to set the audio parameter. Code: ${err.code}, message: ${err.message}`);
     return;
   }
-  console.info('Callback invoked to indicate a successful setting of the audio parameter.');
+  console.info('Succeeded in setting the audio parameter.');
 });
 ```
  
   
 
-#### setAudioParameter(deprecated)
+## setAudioParameter(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAudioParameter(key: string, value: string): Promise&lt;void&gt;
  
@@ -478,6 +494,7 @@ setAudioParameter(key: string, value: string): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 被设置的音频参数的键。 |
@@ -486,6 +503,7 @@ setAudioParameter(key: string, value: string): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -494,16 +512,21 @@ setAudioParameter(key: string, value: string): Promise&lt;void&gt;
 **示例：**
  
 ```text
+import { BusinessError } from '@kit.BasicServicesKit';
+
 audioManager.setAudioParameter('key_example', 'value_example').then(() => {
-  console.info('Promise returned to indicate a successful setting of the audio parameter.');
+  console.info('Succeeded in setting the audio parameter.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to set the audio parameter. Code: ${err.code}, message: ${err.message}`);
 });
 ```
  
   
 
-#### getAudioParameter(deprecated)
+## getAudioParameter(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAudioParameter(key: string, callback: AsyncCallback&lt;string&gt;): void
  
@@ -519,6 +542,7 @@ getAudioParameter(key: string, callback: AsyncCallback&lt;string&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 待获取的音频参数的键。 |
@@ -532,18 +556,19 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 audioManager.getAudioParameter('key_example', (err: BusinessError, value: string) => {
   if (err) {
-    console.error(`Failed to obtain the value of the audio parameter. ${err}`);
+    console.error(`Failed to obtain the audio parameter. Code: ${err.code}, message: ${err.message}`);
     return;
   }
-  console.info(`Callback invoked to indicate that the value of the audio parameter is obtained ${value}.`);
+  console.info(`Succeeded in obtaining the audio parameter, value: ${value}.`);
 });
 ```
  
   
 
-#### getAudioParameter(deprecated)
+## getAudioParameter(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAudioParameter(key: string): Promise&lt;string&gt;
  
@@ -559,6 +584,7 @@ getAudioParameter(key: string): Promise&lt;string&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 待获取的音频参数的键。 |
@@ -566,6 +592,7 @@ getAudioParameter(key: string): Promise&lt;string&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回获取的音频参数值。 |
@@ -574,16 +601,21 @@ getAudioParameter(key: string): Promise&lt;string&gt;
 **示例：**
  
 ```text
+import { BusinessError } from '@kit.BasicServicesKit';
+
 audioManager.getAudioParameter('key_example').then((value: string) => {
-  console.info(`Promise returned to indicate that the value of the audio parameter is obtained ${value}.`);
+  console.info(`Succeeded in obtaining the audio parameter, value: ${value}.`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to obtain the audio parameter. Code: ${err.code}, message: ${err.message}`);
 });
 ```
  
   
 
-#### setVolume(deprecated)
+## setVolume(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setVolume(volumeType: AudioVolumeType, volume: number, callback: AsyncCallback&lt;void&gt;): void
  
@@ -601,6 +633,7 @@ setVolume(volumeType: AudioVolumeType, volume: number, callback: AsyncCallback&l
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | volumeType | AudioVolumeType | 是 | 音频音量类型。 |
@@ -615,18 +648,19 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 audioManager.setVolume(audio.AudioVolumeType.MEDIA, 10, (err: BusinessError) => {
   if (err) {
-    console.error(`Failed to set the volume. ${err}`);
+    console.error(`Failed to set the volume. Code: ${err.code}, message: ${err.message}`);
     return;
   }
-  console.info('Callback invoked to indicate a successful volume setting.');
+  console.info('Succeeded in setting the volume.');
 });
 ```
  
   
 
-#### setVolume(deprecated)
+## setVolume(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setVolume(volumeType: AudioVolumeType, volume: number): Promise&lt;void&gt;
  
@@ -644,6 +678,7 @@ setVolume(volumeType: AudioVolumeType, volume: number): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | volumeType | AudioVolumeType | 是 | 音频音量类型。 |
@@ -652,6 +687,7 @@ setVolume(volumeType: AudioVolumeType, volume: number): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -660,16 +696,21 @@ setVolume(volumeType: AudioVolumeType, volume: number): Promise&lt;void&gt;
 **示例：**
  
 ```text
+import { BusinessError } from '@kit.BasicServicesKit';
+
 audioManager.setVolume(audio.AudioVolumeType.MEDIA, 10).then(() => {
-  console.info('Promise returned to indicate a successful volume setting.');
+  console.info('Succeeded in setting the volume.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to set the volume. Code: ${err.code}, message: ${err.message}`);
 });
 ```
  
   
 
-#### getVolume(deprecated)
+## getVolume(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getVolume(volumeType: AudioVolumeType, callback: AsyncCallback&lt;number&gt;): void
  
@@ -683,6 +724,7 @@ getVolume(volumeType: AudioVolumeType, callback: AsyncCallback&lt;number&gt;): v
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | volumeType | AudioVolumeType | 是 | 音频音量类型。 |
@@ -696,18 +738,19 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 audioManager.getVolume(audio.AudioVolumeType.MEDIA, (err: BusinessError, value: number) => {
   if (err) {
-    console.error(`Failed to obtain the volume. ${err}`);
+    console.error(`Failed to obtain the volume. Code: ${err.code}, message: ${err.message}`);
     return;
   }
-  console.info('Callback invoked to indicate that the volume is obtained.');
+  console.info(`Succeeded in obtaining the volume, volume: ${value}.`);
 });
 ```
  
   
 
-#### getVolume(deprecated)
+## getVolume(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getVolume(volumeType: AudioVolumeType): Promise&lt;number&gt;
  
@@ -721,6 +764,7 @@ getVolume(volumeType: AudioVolumeType): Promise&lt;number&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | volumeType | AudioVolumeType | 是 | 音频音量类型。 |
@@ -728,6 +772,7 @@ getVolume(volumeType: AudioVolumeType): Promise&lt;number&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象，返回指定流的音量等级。指定流的音量等级范围可通过getMinVolume和getMaxVolume获取。 |
@@ -736,16 +781,21 @@ getVolume(volumeType: AudioVolumeType): Promise&lt;number&gt;
 **示例：**
  
 ```text
+import { BusinessError } from '@kit.BasicServicesKit';
+
 audioManager.getVolume(audio.AudioVolumeType.MEDIA).then((value: number) => {
-  console.info(`Promise returned to indicate that the volume is obtained ${value} .`);
+  console.info(`Succeeded in obtaining the volume, volume: ${value}.`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to obtain the volume. Code: ${err.code}, message: ${err.message}`);
 });
 ```
  
   
 
-#### getMinVolume(deprecated)
+## getMinVolume(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMinVolume(volumeType: AudioVolumeType, callback: AsyncCallback&lt;number&gt;): void
  
@@ -759,6 +809,7 @@ getMinVolume(volumeType: AudioVolumeType, callback: AsyncCallback&lt;number&gt;)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | volumeType | AudioVolumeType | 是 | 音频音量类型。 |
@@ -772,18 +823,19 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 audioManager.getMinVolume(audio.AudioVolumeType.MEDIA, (err: BusinessError, value: number) => {
   if (err) {
-    console.error(`Failed to obtain the minimum volume. ${err}`);
+    console.error(`Failed to obtain the minimum volume. Code: ${err.code}, message: ${err.message}`);
     return;
   }
-  console.info(`Callback invoked to indicate that the minimum volume is obtained. ${value}`);
+  console.info(`Succeeded in obtaining the minimum volume, minVolume: ${value}.`);
 });
 ```
  
   
 
-#### getMinVolume(deprecated)
+## getMinVolume(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMinVolume(volumeType: AudioVolumeType): Promise&lt;number&gt;
  
@@ -797,6 +849,7 @@ getMinVolume(volumeType: AudioVolumeType): Promise&lt;number&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | volumeType | AudioVolumeType | 是 | 音频音量类型。 |
@@ -804,6 +857,7 @@ getMinVolume(volumeType: AudioVolumeType): Promise&lt;number&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象，返回最小音量等级。 |
@@ -812,16 +866,21 @@ getMinVolume(volumeType: AudioVolumeType): Promise&lt;number&gt;
 **示例：**
  
 ```text
+import { BusinessError } from '@kit.BasicServicesKit';
+
 audioManager.getMinVolume(audio.AudioVolumeType.MEDIA).then((value: number) => {
-  console.info(`Promise returned to indicate that the minimum volume is obtained. ${value}`);
+  console.info(`Succeeded in obtaining the minimum volume, minVolume: ${value}.`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to obtain the minimum volume. Code: ${err.code}, message: ${err.message}`);
 });
 ```
  
   
 
-#### getMaxVolume(deprecated)
+## getMaxVolume(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMaxVolume(volumeType: AudioVolumeType, callback: AsyncCallback&lt;number&gt;): void
  
@@ -835,6 +894,7 @@ getMaxVolume(volumeType: AudioVolumeType, callback: AsyncCallback&lt;number&gt;)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | volumeType | AudioVolumeType | 是 | 音频音量类型。 |
@@ -848,18 +908,19 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 audioManager.getMaxVolume(audio.AudioVolumeType.MEDIA, (err: BusinessError, value: number) => {
   if (err) {
-    console.error(`Failed to obtain the maximum volume. ${err}`);
+    console.error(`Failed to obtain the maximum volume. Code: ${err.code}, message: ${err.message}`);
     return;
   }
-  console.info(`Callback invoked to indicate that the maximum volume is obtained. ${value}`);
+  console.info(`Succeeded in obtaining the maximum volume, maxVolume: ${value}.`);
 });
 ```
  
   
 
-#### getMaxVolume(deprecated)
+## getMaxVolume(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMaxVolume(volumeType: AudioVolumeType): Promise&lt;number&gt;
  
@@ -873,6 +934,7 @@ getMaxVolume(volumeType: AudioVolumeType): Promise&lt;number&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | volumeType | AudioVolumeType | 是 | 音频音量类型。 |
@@ -880,6 +942,7 @@ getMaxVolume(volumeType: AudioVolumeType): Promise&lt;number&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象，返回最大音量等级。 |
@@ -888,16 +951,21 @@ getMaxVolume(volumeType: AudioVolumeType): Promise&lt;number&gt;
 **示例：**
  
 ```text
+import { BusinessError } from '@kit.BasicServicesKit';
+
 audioManager.getMaxVolume(audio.AudioVolumeType.MEDIA).then((data: number) => {
-  console.info('Promise returned to indicate that the maximum volume is obtained.');
+  console.info(`Succeeded in obtaining the maximum volume, maxVolume: ${data}.`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to obtain the maximum volume. Code: ${err.code}, message: ${err.message}`);
 });
 ```
  
   
 
-#### mute(deprecated)
+## mute(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 mute(volumeType: AudioVolumeType, mute: boolean, callback: AsyncCallback&lt;void&gt;): void
  
@@ -913,6 +981,7 @@ mute(volumeType: AudioVolumeType, mute: boolean, callback: AsyncCallback&lt;void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | volumeType | AudioVolumeType | 是 | 音频音量类型。 |
@@ -927,18 +996,19 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 audioManager.mute(audio.AudioVolumeType.MEDIA, true, (err: BusinessError) => {
   if (err) {
-    console.error(`Failed to mute the stream. ${err}`);
+    console.error(`Failed to mute the stream. Code: ${err.code}, message: ${err.message}`);
     return;
   }
-  console.info('Callback invoked to indicate that the stream is muted.');
+  console.info('Succeeded in muting the stream.');
 });
 ```
  
   
 
-#### mute(deprecated)
+## mute(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 mute(volumeType: AudioVolumeType, mute: boolean): Promise&lt;void&gt;
  
@@ -954,6 +1024,7 @@ mute(volumeType: AudioVolumeType, mute: boolean): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | volumeType | AudioVolumeType | 是 | 音频音量类型。 |
@@ -962,6 +1033,7 @@ mute(volumeType: AudioVolumeType, mute: boolean): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -970,16 +1042,21 @@ mute(volumeType: AudioVolumeType, mute: boolean): Promise&lt;void&gt;
 **示例：**
  
 ```text
+import { BusinessError } from '@kit.BasicServicesKit';
+
 audioManager.mute(audio.AudioVolumeType.MEDIA, true).then(() => {
-  console.info('Promise returned to indicate that the stream is muted.');
+  console.info('Succeeded in muting the stream.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to mute the stream. Code: ${err.code}, message: ${err.message}`);
 });
 ```
  
   
 
-#### isMute(deprecated)
+## isMute(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isMute(volumeType: AudioVolumeType, callback: AsyncCallback&lt;boolean&gt;): void
  
@@ -993,6 +1070,7 @@ isMute(volumeType: AudioVolumeType, callback: AsyncCallback&lt;boolean&gt;): voi
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | volumeType | AudioVolumeType | 是 | 音频音量类型。 |
@@ -1006,18 +1084,19 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 audioManager.isMute(audio.AudioVolumeType.MEDIA, (err: BusinessError, value: boolean) => {
   if (err) {
-    console.error(`Failed to obtain the mute status. ${err}`);
+    console.error(`Failed to check whether the stream is muted. Code: ${err.code}, message: ${err.message}`);
     return;
   }
-  console.info(`Callback invoked to indicate that the mute status of the stream is obtained. ${value}`);
+  console.info(`Succeeded in checking whether the stream is muted, isMuted: ${value}.`);
 });
 ```
  
   
 
-#### isMute(deprecated)
+## isMute(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isMute(volumeType: AudioVolumeType): Promise&lt;boolean&gt;
  
@@ -1031,6 +1110,7 @@ isMute(volumeType: AudioVolumeType): Promise&lt;boolean&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | volumeType | AudioVolumeType | 是 | 音频音量类型。 |
@@ -1038,6 +1118,7 @@ isMute(volumeType: AudioVolumeType): Promise&lt;boolean&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示静音；返回false表示非静音。 |
@@ -1046,16 +1127,21 @@ isMute(volumeType: AudioVolumeType): Promise&lt;boolean&gt;
 **示例：**
  
 ```text
+import { BusinessError } from '@kit.BasicServicesKit';
+
 audioManager.isMute(audio.AudioVolumeType.MEDIA).then((value: boolean) => {
-  console.info(`Promise returned to indicate that the mute status of the stream is obtained ${value}.`);
+  console.info(`Succeeded in checking whether the stream is muted, isMuted: ${value}.`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to check whether the stream is muted. Code: ${err.code}, message: ${err.message}`);
 });
 ```
  
   
 
-#### isActive(deprecated)
+## isActive(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isActive(volumeType: AudioVolumeType, callback: AsyncCallback&lt;boolean&gt;): void
  
@@ -1069,6 +1155,7 @@ isActive(volumeType: AudioVolumeType, callback: AsyncCallback&lt;boolean&gt;): v
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | volumeType | AudioVolumeType | 是 | 音频音量类型。 |
@@ -1082,18 +1169,19 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 audioManager.isActive(audio.AudioVolumeType.MEDIA, (err: BusinessError, value: boolean) => {
   if (err) {
-    console.error(`Failed to obtain the active status of the stream. ${err}`);
+    console.error(`Failed to check whether the stream is active. Code: ${err.code}, message: ${err.message}`);
     return;
   }
-  console.info(`Callback invoked to indicate that the active status of the stream is obtained ${value}.`);
+  console.info(`Succeeded in checking whether the stream is active, isActive: ${value}.`);
 });
 ```
  
   
 
-#### isActive(deprecated)
+## isActive(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isActive(volumeType: AudioVolumeType): Promise&lt;boolean&gt;
  
@@ -1107,6 +1195,7 @@ isActive(volumeType: AudioVolumeType): Promise&lt;boolean&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | volumeType | AudioVolumeType | 是 | 音频音量类型。 |
@@ -1114,6 +1203,7 @@ isActive(volumeType: AudioVolumeType): Promise&lt;boolean&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示流状态为活跃；返回false表示流状态不活跃。 |
@@ -1122,16 +1212,21 @@ isActive(volumeType: AudioVolumeType): Promise&lt;boolean&gt;
 **示例：**
  
 ```text
+import { BusinessError } from '@kit.BasicServicesKit';
+
 audioManager.isActive(audio.AudioVolumeType.MEDIA).then((value: boolean) => {
-  console.info(`Promise returned to indicate that the active status of the stream is obtained ${value}.`);
+  console.info(`Succeeded in checking whether the stream is active, isActive: ${value}.`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to check whether the stream is active. Code: ${err.code}, message: ${err.message}`);
 });
 ```
  
   
 
-#### setRingerMode(deprecated)
+## setRingerMode(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setRingerMode(mode: AudioRingMode, callback: AsyncCallback&lt;void&gt;): void
  
@@ -1149,6 +1244,7 @@ setRingerMode(mode: AudioRingMode, callback: AsyncCallback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | AudioRingMode | 是 | 音频铃声模式。 |
@@ -1162,18 +1258,19 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 audioManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_NORMAL, (err: BusinessError) => {
   if (err) {
-    console.error(`Failed to set the ringer mode. ${err}`);
+    console.error(`Failed to set the ringer mode. Code: ${err.code}, message: ${err.message}`);
     return;
   }
-  console.info('Callback invoked to indicate a successful setting of the ringer mode.');
+  console.info('Succeeded in setting the ringer mode.');
 });
 ```
  
   
 
-#### setRingerMode(deprecated)
+## setRingerMode(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setRingerMode(mode: AudioRingMode): Promise&lt;void&gt;
  
@@ -1191,6 +1288,7 @@ setRingerMode(mode: AudioRingMode): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | AudioRingMode | 是 | 音频铃声模式。 |
@@ -1198,6 +1296,7 @@ setRingerMode(mode: AudioRingMode): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -1206,16 +1305,21 @@ setRingerMode(mode: AudioRingMode): Promise&lt;void&gt;
 **示例：**
  
 ```text
+import { BusinessError } from '@kit.BasicServicesKit';
+
 audioManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_NORMAL).then(() => {
-  console.info('Promise returned to indicate a successful setting of the ringer mode.');
+  console.info('Succeeded in setting the ringer mode.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to set the ringer mode. Code: ${err.code}, message: ${err.message}`);
 });
 ```
  
   
 
-#### getRingerMode(deprecated)
+## getRingerMode(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRingerMode(callback: AsyncCallback&lt;AudioRingMode&gt;): void
  
@@ -1229,6 +1333,7 @@ getRingerMode(callback: AsyncCallback&lt;AudioRingMode&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;AudioRingMode&gt; | 是 | 回调函数。当获取铃声模式成功，err为undefined，data为获取到的铃声模式；否则为错误对象。 |
@@ -1241,18 +1346,19 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 audioManager.getRingerMode((err: BusinessError, value: audio.AudioRingMode) => {
   if (err) {
-    console.error(`Failed to obtain the ringer mode. ${err}`);
+    console.error(`Failed to obtain the ringer mode. Code: ${err.code}, message: ${err.message}`);
     return;
   }
-  console.info(`Callback invoked to indicate that the ringer mode is obtained ${value}.`);
+  console.info(`Succeeded in obtaining the ringer mode, ringerMode: ${value}.`);
 });
 ```
  
   
 
-#### getRingerMode(deprecated)
+## getRingerMode(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRingerMode(): Promise&lt;AudioRingMode&gt;
  
@@ -1266,6 +1372,7 @@ getRingerMode(): Promise&lt;AudioRingMode&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;AudioRingMode&gt; | Promise对象，返回系统的铃声模式。 |
@@ -1274,16 +1381,21 @@ getRingerMode(): Promise&lt;AudioRingMode&gt;
 **示例：**
  
 ```text
+import { BusinessError } from '@kit.BasicServicesKit';
+
 audioManager.getRingerMode().then((value: audio.AudioRingMode) => {
-  console.info(`Promise returned to indicate that the ringer mode is obtained ${value}.`);
+  console.info(`Succeeded in obtaining the ringer mode, ringerMode: ${value}.`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to obtain the ringer mode. Code: ${err.code}, message: ${err.message}`);
 });
 ```
  
   
 
-#### getDevices(deprecated)
+## getDevices(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDevices(deviceFlag: DeviceFlag, callback: AsyncCallback&lt;AudioDeviceDescriptors&gt;): void
  
@@ -1297,6 +1409,7 @@ getDevices(deviceFlag: DeviceFlag, callback: AsyncCallback&lt;AudioDeviceDescrip
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceFlag | DeviceFlag | 是 | 音频设备类型。 |
@@ -1305,23 +1418,24 @@ getDevices(deviceFlag: DeviceFlag, callback: AsyncCallback&lt;AudioDeviceDescrip
  
 **示例：**
  
-```text
+```json
 import { BusinessError } from '@kit.BasicServicesKit';
 
 audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG, (err: BusinessError, value: audio.AudioDeviceDescriptors) => {
   if (err) {
-    console.error(`Failed to obtain the device list. ${err}`);
+    console.error(`Failed to obtain the device list. Code: ${err.code}, message: ${err.message}`);
     return;
   }
-  console.info('Callback invoked to indicate that the device list is obtained.');
+  console.info(`Succeeded in obtaining the device list, devices: ${JSON.stringify(value)}.`);
 });
 ```
  
   
 
-#### getDevices(deprecated)
+## getDevices(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDevices(deviceFlag: DeviceFlag): Promise&lt;AudioDeviceDescriptors&gt;
  
@@ -1335,6 +1449,7 @@ getDevices(deviceFlag: DeviceFlag): Promise&lt;AudioDeviceDescriptors&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceFlag | DeviceFlag | 是 | 音频设备类型。 |
@@ -1342,6 +1457,7 @@ getDevices(deviceFlag: DeviceFlag): Promise&lt;AudioDeviceDescriptors&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;AudioDeviceDescriptors&gt; | Promise对象，返回设备列表。 |
@@ -1349,17 +1465,22 @@ getDevices(deviceFlag: DeviceFlag): Promise&lt;AudioDeviceDescriptors&gt;
  
 **示例：**
  
-```text
+```json
+import { BusinessError } from '@kit.BasicServicesKit';
+
 audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG).then((data: audio.AudioDeviceDescriptors) => {
-  console.info('Promise returned to indicate that the device list is obtained.');
+  console.info(`Succeeded in obtaining the device list, devices: ${JSON.stringify(data)}.`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to obtain the device list. Code: ${err.code}, message: ${err.message}`);
 });
 ```
  
   
 
-#### setDeviceActive(deprecated)
+## setDeviceActive(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setDeviceActive(deviceType: ActiveDeviceType, active: boolean, callback: AsyncCallback&lt;void&gt;): void
  
@@ -1373,6 +1494,7 @@ setDeviceActive(deviceType: ActiveDeviceType, active: boolean, callback: AsyncCa
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceType | ActiveDeviceType | 是 | 活跃音频设备类型。 |
@@ -1387,18 +1509,19 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 audioManager.setDeviceActive(audio.ActiveDeviceType.SPEAKER, true, (err: BusinessError) => {
   if (err) {
-    console.error(`Failed to set the active status of the device. ${err}`);
+    console.error(`Failed to set the active status of the device. Code: ${err.code}, message: ${err.message}`);
     return;
   }
-  console.info('Callback invoked to indicate that the device is set to the active status.');
+  console.info('Succeeded in setting the active status of the device.');
 });
 ```
  
   
 
-#### setDeviceActive(deprecated)
+## setDeviceActive(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setDeviceActive(deviceType: ActiveDeviceType, active: boolean): Promise&lt;void&gt;
  
@@ -1412,6 +1535,7 @@ setDeviceActive(deviceType: ActiveDeviceType, active: boolean): Promise&lt;void&
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceType | ActiveDeviceType | 是 | 活跃音频设备类型。 |
@@ -1420,6 +1544,7 @@ setDeviceActive(deviceType: ActiveDeviceType, active: boolean): Promise&lt;void&
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -1428,16 +1553,21 @@ setDeviceActive(deviceType: ActiveDeviceType, active: boolean): Promise&lt;void&
 **示例：**
  
 ```text
+import { BusinessError } from '@kit.BasicServicesKit';
+
 audioManager.setDeviceActive(audio.ActiveDeviceType.SPEAKER, true).then(() => {
-  console.info('Promise returned to indicate that the device is set to the active status.');
+  console.info('Succeeded in setting the active status of the device.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to set the active status of the device. Code: ${err.code}, message: ${err.message}`);
 });
 ```
  
   
 
-#### isDeviceActive(deprecated)
+## isDeviceActive(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isDeviceActive(deviceType: ActiveDeviceType, callback: AsyncCallback&lt;boolean&gt;): void
  
@@ -1451,6 +1581,7 @@ isDeviceActive(deviceType: ActiveDeviceType, callback: AsyncCallback&lt;boolean&
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceType | ActiveDeviceType | 是 | 活跃音频设备类型。 |
@@ -1464,18 +1595,19 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 audioManager.isDeviceActive(audio.ActiveDeviceType.SPEAKER, (err: BusinessError, value: boolean) => {
   if (err) {
-    console.error(`Failed to obtain the active status of the device. ${err}`);
+    console.error(`Failed to check whether the device is active. Code: ${err.code}, message: ${err.message}`);
     return;
   }
-  console.info('Callback invoked to indicate that the active status of the device is obtained.');
+  console.info(`Succeeded in checking whether the device is active, isActive: ${value}.`);
 });
 ```
  
   
 
-#### isDeviceActive(deprecated)
+## isDeviceActive(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isDeviceActive(deviceType: ActiveDeviceType): Promise&lt;boolean&gt;
  
@@ -1489,6 +1621,7 @@ isDeviceActive(deviceType: ActiveDeviceType): Promise&lt;boolean&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceType | ActiveDeviceType | 是 | 活跃音频设备类型。 |
@@ -1496,6 +1629,7 @@ isDeviceActive(deviceType: ActiveDeviceType): Promise&lt;boolean&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示设备已激活；返回false表示设备未激活。 |
@@ -1504,16 +1638,21 @@ isDeviceActive(deviceType: ActiveDeviceType): Promise&lt;boolean&gt;
 **示例：**
  
 ```text
+import { BusinessError } from '@kit.BasicServicesKit';
+
 audioManager.isDeviceActive(audio.ActiveDeviceType.SPEAKER).then((value: boolean) => {
-  console.info(`Promise returned to indicate that the active status of the device is obtained ${value}.`);
+  console.info(`Succeeded in checking whether the device is active, isActive: ${value}.`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to check whether the device is active. Code: ${err.code}, message: ${err.message}`);
 });
 ```
  
   
 
-#### setMicrophoneMute(deprecated)
+## setMicrophoneMute(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMicrophoneMute(mute: boolean, callback: AsyncCallback&lt;void&gt;): void
  
@@ -1529,6 +1668,7 @@ setMicrophoneMute(mute: boolean, callback: AsyncCallback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mute | boolean | 是 | 是否设置麦克风为静音状态。true表示静音，false表示非静音。 |
@@ -1542,18 +1682,19 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 audioManager.setMicrophoneMute(true, (err: BusinessError) => {
   if (err) {
-    console.error(`Failed to mute the microphone. ${err}`);
+    console.error(`Failed to mute the microphone. Code: ${err.code}, message: ${err.message}`);
     return;
   }
-  console.info('Callback invoked to indicate that the microphone is muted.');
+  console.info('Succeeded in muting the microphone.');
 });
 ```
  
   
 
-#### setMicrophoneMute(deprecated)
+## setMicrophoneMute(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMicrophoneMute(mute: boolean): Promise&lt;void&gt;
  
@@ -1569,6 +1710,7 @@ setMicrophoneMute(mute: boolean): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mute | boolean | 是 | 是否设置麦克风为静音状态。true表示静音，false表示非静音。 |
@@ -1576,6 +1718,7 @@ setMicrophoneMute(mute: boolean): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -1584,16 +1727,21 @@ setMicrophoneMute(mute: boolean): Promise&lt;void&gt;
 **示例：**
  
 ```text
+import { BusinessError } from '@kit.BasicServicesKit';
+
 audioManager.setMicrophoneMute(true).then(() => {
-  console.info('Promise returned to indicate that the microphone is muted.');
+  console.info('Succeeded in muting the microphone.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to mute the microphone. Code: ${err.code}, message: ${err.message}`);
 });
 ```
  
   
 
-#### isMicrophoneMute(deprecated)
+## isMicrophoneMute(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isMicrophoneMute(callback: AsyncCallback&lt;boolean&gt;): void
  
@@ -1609,6 +1757,7 @@ isMicrophoneMute(callback: AsyncCallback&lt;boolean&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;boolean&gt; | 是 | 回调函数。当获取麦克风静音状态成功，err为undefined，data为true表示静音，false表示非静音；否则为错误对象。 |
@@ -1621,18 +1770,19 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 audioManager.isMicrophoneMute((err: BusinessError, value: boolean) => {
   if (err) {
-    console.error(`Failed to obtain the mute status of the microphone. ${err}`);
+    console.error(`Failed to check whether the microphone is muted. Code: ${err.code}, message: ${err.message}`);
     return;
   }
-  console.info(`Callback invoked to indicate that the mute status of the microphone is obtained ${value}.`);
+  console.info(`Succeeded in checking whether the microphone is muted, isMuted: ${value}.`);
 });
 ```
  
   
 
-#### isMicrophoneMute(deprecated)
+## isMicrophoneMute(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isMicrophoneMute(): Promise&lt;boolean&gt;
  
@@ -1648,6 +1798,7 @@ isMicrophoneMute(): Promise&lt;boolean&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示麦克风被静音；返回false表示麦克风未被静音。 |
@@ -1656,16 +1807,21 @@ isMicrophoneMute(): Promise&lt;boolean&gt;
 **示例：**
  
 ```text
+import { BusinessError } from '@kit.BasicServicesKit';
+
 audioManager.isMicrophoneMute().then((value: boolean) => {
-  console.info(`Promise returned to indicate that the mute status of the microphone is obtained ${value}.`);
+  console.info(`Succeeded in checking whether the microphone is muted, isMuted: ${value}.`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to check whether the microphone is muted. Code: ${err.code}, message: ${err.message}`);
 });
 ```
  
   
 
-#### on('deviceChange')(deprecated)
+## on('deviceChange')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'deviceChange', callback: Callback&lt;DeviceChangeAction&gt;): void
  
@@ -1679,6 +1835,7 @@ on(type: 'deviceChange', callback: Callback&lt;DeviceChangeAction&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'deviceChange'，当音频设备连接状态发生变化时，触发该事件。 |
@@ -1687,24 +1844,22 @@ on(type: 'deviceChange', callback: Callback&lt;DeviceChangeAction&gt;): void
  
 **示例：**
  
-```text
+```json
 audioManager.on('deviceChange', (deviceChanged: audio.DeviceChangeAction) => {
-  console.info(`device change type : ${deviceChanged.type} `);
-  console.info(`device descriptor size : ${deviceChanged.deviceDescriptors.length} `);
-  console.info(`device change descriptor : ${deviceChanged.deviceDescriptors[0].deviceRole} `);
-  console.info(`device change descriptor : ${deviceChanged.deviceDescriptors[0].deviceType} `);
+  console.info(`Device changed, deviceChanged: ${JSON.stringify(deviceChanged)}.`);
 });
 ```
  
   
 
-#### off('deviceChange')(deprecated)
+## off('deviceChange')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'deviceChange', callback?: Callback&lt;DeviceChangeAction&gt;): void
  
-取消监听音频设备连接变化事件。使用callback异步回调。
+取消监听音频设备连接变化事件。
  
 > [!NOTE]
 > 从API version 7开始支持，从API version 9开始废弃，建议使用 off('deviceChange') 替代。
@@ -1714,24 +1869,22 @@ off(type: 'deviceChange', callback?: Callback&lt;DeviceChangeAction&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型，支持的事件为'deviceChange'，当取消监听音频设备连接变化事件时，触发该事件。 |
-| callback | Callback&lt;DeviceChangeAction&gt; | 否 | 回调函数，返回设备更新详情。 |
+| type | string | 是 | 事件回调类型，支持的事件为'deviceChange'。 |
+| callback | Callback&lt;DeviceChangeAction&gt; | 否 | 回调函数。传入回调函数时，仅取消该回调对应的监听事件，需与on('deviceChange')绑定同一回调函数；不传参数时，取消此事件类型下所有已订阅的监听事件。 |
  
  
 **示例：**
  
-```text
+```json
 // 取消该事件的所有监听。
 audioManager.off('deviceChange');
 
 // 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
 let deviceChangeCallback = (deviceChanged: audio.DeviceChangeAction) => {
-  console.info(`device change type : ${deviceChanged.type} `);
-  console.info(`device descriptor size : ${deviceChanged.deviceDescriptors.length} `);
-  console.info(`device change descriptor : ${deviceChanged.deviceDescriptors[0].deviceRole} `);
-  console.info(`device change descriptor : ${deviceChanged.deviceDescriptors[0].deviceType} `);
+  console.info(`Device changed, deviceChanged: ${JSON.stringify(deviceChanged)}.`);
 };
 
 audioManager.on('deviceChange', deviceChangeCallback);
@@ -1741,9 +1894,10 @@ audioManager.off('deviceChange', deviceChangeCallback);
  
   
 
-#### on('interrupt')(deprecated)
+## on('interrupt')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'interrupt', interrupt: AudioInterrupt, callback: Callback&lt;InterruptAction&gt;): void
  
@@ -1759,6 +1913,7 @@ on(type: 'interrupt', interrupt: AudioInterrupt, callback: Callback&lt;Interrupt
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'interrupt'，当音频焦点状态发生变化时，触发该事件。 |
@@ -1768,7 +1923,7 @@ on(type: 'interrupt', interrupt: AudioInterrupt, callback: Callback&lt;Interrupt
  
 **示例：**
  
-```text
+```json
 import { audio } from '@kit.AudioKit';
 
 let interAudioInterrupt: audio.AudioInterrupt = {
@@ -1778,26 +1933,20 @@ let interAudioInterrupt: audio.AudioInterrupt = {
 };
 
 audioManager.on('interrupt', interAudioInterrupt, (interruptAction: audio.InterruptAction) => {
-  if (interruptAction.actionType === 0) {
-    console.info('An event to gain the audio focus starts.');
-    console.info(`Focus hint: ${interruptAction.hint} `);
-  }
-  if (interruptAction.actionType === 1) {
-    console.info('An audio interruption event starts.');
-    console.info(`Audio interruption hint: ${interruptAction.hint} `);
-  }
+  console.info(`Interrupt changed, interruptAction: ${JSON.stringify(interruptAction)}.`);
 });
 ```
  
   
 
-#### off('interrupt')(deprecated)
+## off('interrupt')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'interrupt', interrupt: AudioInterrupt, callback?: Callback&lt;InterruptAction&gt;): void
  
-取消监听音频打断事件。使用callback异步回调。
+取消监听音频打断事件。
  
 > [!NOTE]
 > 从API version 7开始支持，从API version 11开始废弃，建议使用 off('audioInterrupt') 替代。
@@ -1807,16 +1956,17 @@ off(type: 'interrupt', interrupt: AudioInterrupt, callback?: Callback&lt;Interru
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型，支持的事件为'interrupt'，当取消监听音频打断事件时，触发该事件。 |
+| type | string | 是 | 事件回调类型，支持的事件为'interrupt'。 |
 | interrupt | AudioInterrupt | 是 | 音频打断事件类型的参数。 |
-| callback | Callback&lt;InterruptAction&gt; | 否 | 回调函数，返回打断事件信息。 |
+| callback | Callback&lt;InterruptAction&gt; | 否 | 回调函数。传入回调函数时，仅取消该回调对应的监听事件，需与on('interrupt')绑定同一回调函数；不传参数时，取消此事件类型下所有已订阅的监听事件。 |
  
  
 **示例：**
  
-```text
+```json
 import { audio } from '@kit.AudioKit';
 
 let interAudioInterrupt: audio.AudioInterrupt = {
@@ -1830,14 +1980,7 @@ audioManager.off('interrupt', interAudioInterrupt);
 
 // 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
 let interruptCallback = (interruptAction: audio.InterruptAction) => {
-  if (interruptAction.actionType === 0) {
-    console.info('An event to gain the audio focus starts.');
-    console.info(`Focus hint: ${interruptAction.hint} `);
-  }
-  if (interruptAction.actionType === 1) {
-    console.info('An audio interruption event starts.');
-    console.info(`Audio interruption hint: ${interruptAction.hint} `);
-  }
+  console.info(`Interrupt changed, interruptAction: ${JSON.stringify(interruptAction)}.`);
 };
 
 audioManager.on('interrupt', interAudioInterrupt, interruptCallback);

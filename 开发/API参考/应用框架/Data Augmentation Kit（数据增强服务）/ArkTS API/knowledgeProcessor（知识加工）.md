@@ -1,6 +1,6 @@
 # knowledgeProcessor（知识加工）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/dataaugmentation-knowledgeprocessor-api
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -12,7 +12,8 @@
 **起始版本：** 6.0.0(20)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -22,7 +23,8 @@ import { knowledgeProcessor } from '@kit.DataAugmentationKit';
  
   
 
-#### getKnowledgeProcessor
+## getKnowledgeProcessor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -40,6 +42,7 @@ getKnowledgeProcessor(context: common.BaseContext, config: KnowledgeProcessorCon
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.BaseContext | 是 | 知识加工对象的上下文。 |
@@ -48,6 +51,7 @@ getKnowledgeProcessor(context: common.BaseContext, config: KnowledgeProcessorCon
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;KnowledgeProcessor&gt; | Promise对象，返回知识加工对象。该对象可用于获取知识加工状态（getStatus）、启动知识加工（startProcess）和停止知识加工（stopProcess）等操作。 |
@@ -55,6 +59,7 @@ getKnowledgeProcessor(context: common.BaseContext, config: KnowledgeProcessorCon
  
 **错误码：**
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1021400000 | Internal error. |
@@ -99,7 +104,8 @@ async function getProcessor() {
  
   
 
-#### cleanKnowledgeData
+## cleanKnowledgeData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -110,7 +116,7 @@ cleanKnowledgeData(context: common.Context, config: KnowledgeProcessorConfig): P
 在schema升级场景下，首次开库或调用[getKnowledgeProcessor](#getknowledgeprocessor)接口前调用cleanKnowledgeData接口，其他场景调用可能会导致知识库数据丢失或者数据损坏。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/xG2vD3MwSsyUbATY5E__fg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071601Z&HW-CC-Expire=86400&HW-CC-Sign=3893C7DE527DC08D9740F36416595688EED1B877C020F80A682EC08D37677EA8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/UW4lOiqeRsupxpqb-Cpn0Q/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072727Z&HW-CC-Expire=86400&HW-CC-Sign=E3E917AD04B10BC193C0A9FE93FA45416646763320BA430999062E090C974EFB)
  
  
 在schema升级场景中，为避免数据不一致，强烈建议仅在首次开库或调用getKnowledgeProcessor接口前调用cleanKnowledgeData接口以清理旧数据。非schema升级场景下请勿调用此接口，否则可能导致已有知识库数据永久丢失或损坏，且无法恢复。
@@ -125,6 +131,7 @@ cleanKnowledgeData(context: common.Context, config: KnowledgeProcessorConfig): P
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 知识加工对象的上下文。 |
@@ -133,6 +140,7 @@ cleanKnowledgeData(context: common.Context, config: KnowledgeProcessorConfig): P
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -140,6 +148,7 @@ cleanKnowledgeData(context: common.Context, config: KnowledgeProcessorConfig): P
  
 **错误码：**
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1021400001 | The knowledge source is not configured. |
@@ -180,7 +189,8 @@ async function cleanKnowledgeData() {
  
   
 
-#### KnowledgeProcessorConfig
+## KnowledgeProcessorConfig
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -192,6 +202,7 @@ async function cleanKnowledgeData() {
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sourceConfig | KnowledgeSourceConfig | 是 | 当前知识加工数据源配置。 |
@@ -201,7 +212,8 @@ async function cleanKnowledgeData() {
  
   
 
-#### KnowledgeSourceConfig
+## KnowledgeSourceConfig
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -213,6 +225,7 @@ async function cleanKnowledgeData() {
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rdbSource | relationalStore.StoreConfig | 否 | RDB数据库配置。加工数据源为RDB数据库时配置，当前版本仅支持RDB数据源，若不填该参数，接口返回错误码1021400001。 |
@@ -220,7 +233,8 @@ async function cleanKnowledgeData() {
  
   
 
-#### KnowledgeProcessConfig
+## KnowledgeProcessConfig
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -232,6 +246,7 @@ async function cleanKnowledgeData() {
  
 **起始版本：** 6.1.0(23)
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | KnowledgeProcessMode | 是 | 知识加工参数。倒排或者倒排+向量两种加工模式. |
@@ -239,7 +254,8 @@ async function cleanKnowledgeData() {
  
   
 
-#### ChatLLM
+## ChatLLM
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -255,6 +271,7 @@ chat(query: string): Promise&lt;string&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | query | string | 是 | 表示与LLM问答模型问答的问题信息。 |
@@ -262,6 +279,7 @@ chat(query: string): Promise&lt;string&gt;
  
 **返回值：**
   
+
 | 类型 | 必填 | 说明 |
 | --- | --- | --- |
 | Promise&lt;string&gt; | 是 | Promise对象，正常情况下返回问答结果，如果出现异常则返回空字符串。 |
@@ -269,7 +287,8 @@ chat(query: string): Promise&lt;string&gt;
  
   
 
-#### KnowledgeProcessMode
+## KnowledgeProcessMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -281,6 +300,7 @@ chat(query: string): Promise&lt;string&gt;
  
 **起始版本：** 6.1.0(23)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | INVERTED_INDEX | 1 | 倒排加工模式。 |
@@ -289,7 +309,8 @@ chat(query: string): Promise&lt;string&gt;
  
   
 
-#### KnowledgeProcessor
+## KnowledgeProcessor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -303,7 +324,8 @@ chat(query: string): Promise&lt;string&gt;
  
   
 
-#### getStatus
+### getStatus
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -319,6 +341,7 @@ getStatus(): Promise&lt;ProcessorStatus&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;ProcessorStatus&gt; | Promise对象，返回知识加工状态。 |
@@ -326,6 +349,7 @@ getStatus(): Promise&lt;ProcessorStatus&gt;
  
 **错误码：**
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1021400000 | Internal error. |
@@ -369,9 +393,10 @@ async function getStatus() {
  
   
 
-#### startProcess
+### startProcess
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** PC/2in1
 
 startProcess(config: KnowledgeProcessConfig): Promise&lt;void&gt;
  
@@ -385,6 +410,7 @@ startProcess(config: KnowledgeProcessConfig): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | config | KnowledgeProcessConfig | 是 | 知识加工配置。 |
@@ -392,6 +418,7 @@ startProcess(config: KnowledgeProcessConfig): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -399,6 +426,7 @@ startProcess(config: KnowledgeProcessConfig): Promise&lt;void&gt;
  
 **错误码：**
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Device type error. |
@@ -445,7 +473,8 @@ async function startProcess() {
  
   
 
-#### stopProcess
+### stopProcess
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -461,6 +490,7 @@ stopProcess(): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -501,7 +531,8 @@ async function stopProcess() {
  
   
 
-#### ProcessorStatus
+## ProcessorStatus
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -513,6 +544,7 @@ async function stopProcess() {
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DATA_REMAINING_TO_PROCESS | 0 | 存在待加工的数据。 |

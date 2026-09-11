@@ -1,16 +1,16 @@
 # CreateVecIndex
 
-更新时间：2026-07-17 09:35:24
+更新时间：2026-08-18 12:49:55
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-data-createvecindex
 
-#### 功能说明
+## 功能说明
 
 以firstValue为起始值创建向量索引。
  
   
 
-#### 函数原型
+## 函数原型
 
 tensor前n个数据计算：
  
@@ -21,28 +21,31 @@ __aicore__ inline void CreateVecIndex(LocalTensor<T> dstLocal, const T &firstVal
  
   
 
-#### 参数说明
+## 参数说明
 
 **表1** 参数说明
   
+
 | 参数名称 | 输入/输出 | 含义 |
 | --- | --- | --- |
-| dstLocal | 输出 | 目的操作数。 类型为LocalTensor，支持的TPosition为VECIN、VECCALC、VECOUT。 LocalTensor的起始地址需要32字节对齐。 Kirin9020系列处理器，支持的数据类型为：int8、int16、int32、float16、float KirinX90系列处理器，支持的数据类型为：int8、int16、int32、float16、float |
+| dstLocal | 输出 | 目的操作数。 类型为LocalTensor，支持的TPosition为VECIN、VECCALC、VECOUT。 LocalTensor的起始地址需要32字节对齐。 Kirin9020系列处理器、Kirin9030系列处理器、KirinX90系列处理器，支持的数据类型为：int8、int16、int32、float16、float。 |
 | firstValue | 输入 | 索引的第一个数值，数据类型需与dstLocal中元素的数据类型保持一致。 |
 | calCount | 输入 | 输入数据元素个数。 |
  
  
   
 
-#### 支持的型号
+## 支持的型号
 
 Kirin9020系列处理器
+ 
+Kirin9030系列处理器
  
 KirinX90系列处理器
  
   
 
-#### 注意事项
+## 注意事项
 
 - 操作数地址偏移对齐要求请参见[通用约束](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-general-constraints)。
 - firstValue需保证不超出dstLocal中元素数据类型对应的大小范围。
@@ -50,13 +53,13 @@ KirinX90系列处理器
  
   
 
-#### 返回值
+## 返回值
 
 无
  
   
 
-#### 调用示例
+## 调用示例
 
 本样例中只展示Compute流程中的部分代码。如果开发者需要运行样例代码，请将该代码段拷贝并替换[样例模板](#样例模板)中Compute函数相关代码片段即可。
  
@@ -75,7 +78,7 @@ AscendC::CreateVecIndex(dstLocal, (T)0, 128);
  
   
 
-#### 样例模板
+## 样例模板
 
 ```text
 #include "kernel_operator.h"

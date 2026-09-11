@@ -1,9 +1,9 @@
 # @ohos.app.ability.CompletionHandlerForAtomicService (打开元服务结果的操作类)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-completionhandlerforatomicservice
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 CompletionHandlerForAtomicService作为[AtomicServiceOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-atomicserviceoptions)的可选参数，用于接收打开元服务请求的结果。
  
@@ -12,9 +12,10 @@ CompletionHandlerForAtomicService作为[AtomicServiceOptions](https://developer.
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { CompletionHandlerForAtomicService } from '@kit.AbilityKit';
@@ -22,9 +23,10 @@ import { CompletionHandlerForAtomicService } from '@kit.AbilityKit';
  
   
 
-#### FailureCode
+## FailureCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 打开元服务失败的特定错误码。
  
@@ -32,6 +34,7 @@ import { CompletionHandlerForAtomicService } from '@kit.AbilityKit';
  
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | FAILURE_CODE_SYSTEM_MALFUNCTION | 0 | 表示由于系统错误（如跳转弹框崩溃）而无法打开元服务。 |
@@ -41,17 +44,19 @@ import { CompletionHandlerForAtomicService } from '@kit.AbilityKit';
  
   
 
-#### CompletionHandlerForAtomicService
+## CompletionHandlerForAtomicService
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 CompletionHandlerForAtomicService提供了[onAtomicServiceRequestSuccess](#onatomicservicerequestsuccess)和[onAtomicServiceRequestFailure](#onatomicservicerequestfailure)两个回调函数，分别在打开元服务成功和失败时回调。
  
   
 
-#### onAtomicServiceRequestSuccess
+### onAtomicServiceRequestSuccess
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onAtomicServiceRequestSuccess(appId: string): void
  
@@ -63,6 +68,7 @@ onAtomicServiceRequestSuccess(appId: string): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | appId | string | 是 | 被拉起元服务的appId。 |
@@ -74,9 +80,10 @@ onAtomicServiceRequestSuccess(appId: string): void
  
   
 
-#### onAtomicServiceRequestFailure
+### onAtomicServiceRequestFailure
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onAtomicServiceRequestFailure(appId: string, failureCode: FailureCode, failureMessage: string): void
  
@@ -88,6 +95,7 @@ onAtomicServiceRequestFailure(appId: string, failureCode: FailureCode, failureMe
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | appId | string | 是 | 被拉起元服务的appId。 |
@@ -101,7 +109,10 @@ onAtomicServiceRequestFailure(appId: string, failureCode: FailureCode, failureMe
  
   
 
-#### CompletionHandlerForAtomicService示例
+### CompletionHandlerForAtomicService示例
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```json
 import { AbilityConstant, AtomicServiceOptions, common, UIAbility, Want, CompletionHandlerForAtomicService, FailureCode } from '@kit.AbilityKit';

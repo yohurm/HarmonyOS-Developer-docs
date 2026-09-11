@@ -1,9 +1,9 @@
 # SceneResources
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-scene-resources
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供ArkGraphics 3D中常用的基本资源类型，包括着色器、材质、网格、动画、环境或图片等用于构建3D场景的各类资源。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { SceneResourceType, SceneResource, Shader, MaterialType, CullMode, Blend, RenderSort, PolygonMode, Material, MaterialProperty,
@@ -24,13 +25,15 @@ import { SceneResourceType, SceneResource, Shader, MaterialType, CullMode, Blend
 
 
 
-#### SceneResourceType
+## SceneResourceType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 场景资源类型枚举，对场景中的资源进行分类。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -48,19 +51,22 @@ import { SceneResourceType, SceneResource, Shader, MaterialType, CullMode, Blend
 
 
 
-#### SceneResource
+## SceneResource
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于表示场景中的资源。
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -71,9 +77,10 @@ import { SceneResourceType, SceneResource, Shader, MaterialType, CullMode, Blend
 
 
 
-#### destroy
+### destroy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 destroy(): void
 
@@ -107,19 +114,22 @@ function destroy(): void {
 
 
 
-#### Shader
+## Shader
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 着色器，继承自[SceneResource](#sceneresource)。
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -128,9 +138,10 @@ function destroy(): void {
 
 
 
-#### setShaderInputs23+
+### setShaderInputs23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setShaderInputs(inputs: Record<string, number | Vec2 | Vec3 | Vec4 | Image>): void
 
@@ -141,6 +152,7 @@ setShaderInputs(inputs: Record<string, number | Vec2 | Vec3 | Vec4 | Image>): vo
 **系统能力：** SystemCapability.ArkUi.Graphics3D
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -188,13 +200,15 @@ function setinputs(): void {
 
 
 
-#### MaterialType
+## MaterialType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 场景中物体材质类型枚举，定义材质的渲染方式。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -206,13 +220,15 @@ function setinputs(): void {
 
 
 
-#### CullMode20+
+## CullMode20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于设置基于物理渲染（PBR）材质的剔除模式枚举。通过控制剔除物体的正面或背面几何面片，提升渲染性能和视觉效果。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -223,13 +239,15 @@ function setinputs(): void {
 
 
 
-#### Blend20+
+## Blend20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于控制材质的透明效果。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -238,13 +256,15 @@ function setinputs(): void {
 
 
 
-#### RenderSort20+
+## RenderSort20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义材质物体的渲染顺序，控制不同物体在渲染管线中的绘制先后。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -254,13 +274,15 @@ function setinputs(): void {
 
 
 
-#### PolygonMode23+
+## PolygonMode23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 控制多边形绘制模式的枚举。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -271,20 +293,22 @@ function setinputs(): void {
 
 
 
-#### Material
+## Material
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 材质类型，继承自[SceneResource](#sceneresource)。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | materialType | MaterialType | 是 | 否 | 材质类型。 |
 | shadowReceiver20+ | boolean | 否 | 是 | 材质是否接收阴影。true表示该材质接收阴影，false表示不接收，默认值为false。 |
 | cullMode20+ | CullMode | 否 | 是 | 当前材质的剔除模式设置，用于控制是否剔除背面几何面片，默认值为BACK。 |
-| blend20+ | Blend | 否 | 是 | 材质的透明效果设置，默认值为undefined。 |
+| blend20+ | Blend | 否 | 是 | 材质的透明效果设置，默认值为undefined，即禁用材质的透明属性。 |
 | alphaCutoff20+ | number | 否 | 是 | 透明通道阈值，如果像素的alpha值等于或高于此阈值，则渲染该像素；如果低于此阈值，则不会渲染该像素。设置值小于1时，则开启该模式，取值范围为[0, 1]，默认值为1。 |
 | renderSort20+ | RenderSort | 否 | 是 | 渲染排序设置，用于控制材质在渲染管线中的渲染顺序，渲染图层id默认值为32，同一图层内的渲染顺序默认值为0。 |
 | polygonMode23+ | PolygonMode | 否 | 是 | 模型的多边形绘制模式，默认值为FILL。 |
@@ -292,13 +316,15 @@ function setinputs(): void {
 
 
 
-#### MaterialProperty20+
+## MaterialProperty20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 材质属性接口，用于定义材质所使用的纹理、属性因子及纹理采样器信息。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -309,13 +335,15 @@ function setinputs(): void {
 
 
 
-#### MetallicRoughnessMaterial20+
+## MetallicRoughnessMaterial20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于实现真实感外观的材质资源。采用基于物理渲染（PBR）的金属-粗糙度模型，通过调节金属度和粗糙度参数，可模拟金属、塑料等不同材质的表面光照与反射效果，继承自[Material](#material)。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -333,13 +361,15 @@ function setinputs(): void {
 
 
 
-#### ShaderMaterial
+## ShaderMaterial
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 着色器材质，继承自[Material](#material)。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -348,13 +378,15 @@ function setinputs(): void {
 
 
 
-#### UnlitMaterial23+
+## UnlitMaterial23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 不受光照影响的材质，其着色值只与设置的基础颜色有关，与光照条件无关，继承自[Material](#material)。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -363,9 +395,10 @@ function setinputs(): void {
 
 
 
-#### OcclusionMaterial23+
+## OcclusionMaterial23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 遮挡材质，能够遮挡场景中的其他物体但不会遮挡环境，继承自[Material](#material)。
 
@@ -373,13 +406,15 @@ function setinputs(): void {
 
 
 
-#### SamplerFilter20+
+## SamplerFilter20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 采样器过滤模式枚举，定义纹理采样时的插值方法，用于控制纹理在缩放或变形时如何计算最终像素的颜色值。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -389,13 +424,15 @@ function setinputs(): void {
 
 
 
-#### SamplerAddressMode20+
+## SamplerAddressMode20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 采样器寻址模式枚举，用于控制纹理坐标超出[0, 1]范围时的处理方式。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -406,13 +443,15 @@ function setinputs(): void {
 
 
 
-#### Sampler20+
+## Sampler20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 采样器接口，用于定义纹理贴图采样时的过滤方式。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -425,13 +464,15 @@ function setinputs(): void {
 
 
 
-#### SubMesh
+## SubMesh
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 子网格类型。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -442,13 +483,15 @@ function setinputs(): void {
 
 
 
-#### Morpher20+
+## Morpher20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于控制3D模型的形变，通过调整不同形变目标的权重，实现模型的动态变形效果。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -457,13 +500,15 @@ function setinputs(): void {
 
 
 
-#### Mesh
+## Mesh
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 网格类型，继承自[SceneResource](#sceneresource)。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -474,9 +519,10 @@ function setinputs(): void {
 
 
 
-#### MeshResource18+
+## MeshResource18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 网格资源，继承自[SceneResource](#sceneresource)。
 
@@ -484,19 +530,22 @@ function setinputs(): void {
 
 
 
-#### Animation
+## Animation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 动画类型，继承自[SceneResource](#sceneresource)。
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -509,9 +558,10 @@ function setinputs(): void {
 
 
 
-#### onFinished
+### onFinished
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onFinished(callback: Callback&lt;void&gt;): void
 
@@ -520,6 +570,7 @@ onFinished(callback: Callback&lt;void&gt;): void
 **系统能力：** SystemCapability.ArkUi.Graphics3D
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -548,15 +599,17 @@ function onFinished(): void {
 
 
 
-#### onStarted
+### onStarted
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onStarted(callback: Callback&lt;void&gt;): void
 
 当动画开始播放时执行的回调函数，start操作以及restart操作也会触发这个回调。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -587,9 +640,10 @@ function onStarted(): void {
 
 
 
-#### pause
+### pause
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pause(): void
 
@@ -617,9 +671,10 @@ function pause(): void {
 
 
 
-#### restart
+### restart
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 restart(): void
 
@@ -647,9 +702,10 @@ function restart(): void {
 
 
 
-#### seek
+### seek
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 seek(position: number): void
 
@@ -658,6 +714,7 @@ seek(position: number): void
 **系统能力：** SystemCapability.ArkUi.Graphics3D
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -684,9 +741,10 @@ function seek(): void {
 
 
 
-#### start
+### start
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 start(): void
 
@@ -714,9 +772,10 @@ function start(): void {
 
 
 
-#### stop
+### stop
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stop(): void
 
@@ -744,9 +803,10 @@ function stop(): void {
 
 
 
-#### finish
+### finish
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 finish(): void
 
@@ -774,13 +834,15 @@ function finish(): void {
 
 
 
-#### EnvironmentBackgroundType
+## EnvironmentBackgroundType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 环境背景类型枚举，用于定义场景的背景呈现方式。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -792,13 +854,15 @@ function finish(): void {
 
 
 
-#### Environment
+## Environment
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 环境类型，继承自[SceneResource](#sceneresource)。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -814,13 +878,15 @@ function finish(): void {
 
 
 
-#### Image
+## Image
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 图片类型，继承自[SceneResource](#sceneresource)。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -830,9 +896,10 @@ function finish(): void {
 
 
 
-#### ImageStream
+## ImageStream
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 流图片类型，继承自[Image](#image)。
 
@@ -842,6 +909,7 @@ function finish(): void {
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | surfaceId | string | 是 | 否 | 流ID，由数字字符组成，数字取值必须为大于0的整数。 |
@@ -849,19 +917,22 @@ function finish(): void {
 
 
 
-#### Effect21+
+## Effect21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 特效类型，继承自[SceneResource](#sceneresource)。由[createEffect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-scene#createeffect21)接口获得。
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -871,9 +942,10 @@ function finish(): void {
 
 
 
-#### getPropertyValue23+
+### getPropertyValue23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPropertyValue(propertyName: string): Object | null | undefined
 
@@ -885,12 +957,14 @@ getPropertyValue(propertyName: string): Object | null | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | propertyName | string | 是 | 特定特效属性的名称。目前支持的字符串为： -'exposure':该属性表示图像的曝光度。 -'vibrance': 该属性表示图像的自然饱和度。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -919,9 +993,10 @@ function getEffectProperty() {
 
 
 
-#### setPropertyValue23+
+### setPropertyValue23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setPropertyValue(propertyName: string, value: Object | undefined): boolean
 
@@ -933,6 +1008,7 @@ setPropertyValue(propertyName: string, value: Object | undefined): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | propertyName | string | 是 | 特定特效属性的名称。目前支持的字符串为： -'exposure':该属性表示图像的曝光度。 -'vibrance': 该属性表示图像的自然饱和度。 |
@@ -940,6 +1016,7 @@ setPropertyValue(propertyName: string, value: Object | undefined): boolean
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |

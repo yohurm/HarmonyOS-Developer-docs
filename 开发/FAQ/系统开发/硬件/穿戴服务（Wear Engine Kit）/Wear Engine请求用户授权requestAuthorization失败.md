@@ -16,19 +16,19 @@
 请求授权：
  
 ```text
-// 在使用Wear Engine服务前，请导入Wear Engine与相关模块
+<em>// 在使用Wear Engine服务前，请导入Wear Engine与相关模块</em>
 import { wearEngine } from '@kit.WearEngine';
 import { BusinessError } from '@kit.BasicServicesKit';
 
-// 步骤1：获取AuthClient对象
+<em>// 步骤1：获取AuthClient对象</em>
 let authClient: wearEngine.AuthClient = wearEngine.getAuthClient(this.getUIContext().getHostContext());
 
-// 步骤2：基于需要用户授权的权限定义权限请求类
+<em>// 步骤2：基于需要用户授权的权限定义权限请求类</em>
 let request: wearEngine.AuthorizationRequest = {
   permissions: [wearEngine.Permission.USER_STATUS]
 }
 
-// 步骤3：请求用户授权
+<em>// 步骤3：请求用户授权</em>
 authClient.requestAuthorization(request).then(result => {
   console.info(`Succeeded in requesting authorize, authorized permissions is ${result.permissions}`);
 }).catch((error: BusinessError) => {

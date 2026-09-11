@@ -1,9 +1,9 @@
 # Path2D对象
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-canvas-path2d
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 路径对象，支持通过对象的接口进行路径的描述，并通过Canvas的[stroke](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-canvas-canvasrenderingcontext2d#stroke)接口进行绘制。
  
@@ -12,19 +12,21 @@
 
   
 
-#### addPath
+## addPath
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-addPath(path: Object): void
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
+
+addPath(path: Path2D): void
  
 将另一个路径添加到当前的路径对象中。
  
 **参数：**
   
+
 | 参数 | 类型 | 描述 |
 | --- | --- | --- |
-| path | Object | 需要添加到当前路径的路径对象。 |
+| path | Path2D | 需要添加到当前路径的路径对象。 |
  
  
 **示例：**
@@ -56,9 +58,10 @@ export default {
  
   
 
-#### setTransform
+## setTransform
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 setTransform(scaleX: number, skewX: number, skewY: number, scaleY: number, translateX: number, translateY: number): void
  
@@ -66,6 +69,7 @@ setTransform(scaleX: number, skewX: number, skewY: number, scaleY: number, trans
  
 **参数：**
   
+
 | 参数 | 类型 | 描述 |
 | --- | --- | --- |
 | scaleX | number | x轴的缩放比例。 |
@@ -104,9 +108,10 @@ export default {
  
   
 
-#### closePath
+## closePath
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 closePath(): void
  
@@ -143,9 +148,10 @@ export default {
  
   
 
-#### moveTo
+## moveTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 moveTo(x: number, y: number): void
  
@@ -153,6 +159,7 @@ moveTo(x: number, y: number): void
  
 **参数：**
   
+
 | 参数 | 类型 | 描述 |
 | --- | --- | --- |
 | x | number | 目标点X轴坐标。 |
@@ -190,9 +197,10 @@ export default {
  
   
 
-#### lineTo
+## lineTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 lineTo(x: number, y: number): void
  
@@ -200,6 +208,7 @@ lineTo(x: number, y: number): void
  
 **参数：**
   
+
 | 参数 | 类型 | 描述 |
 | --- | --- | --- |
 | x | number | 目标点X轴坐标。 |
@@ -238,9 +247,10 @@ export default {
  
   
 
-#### bezierCurveTo
+## bezierCurveTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 bezierCurveTo(cp1x: number, cp1y: number, cp2x: number, cp2y: number, x: number, y: number): void
  
@@ -248,6 +258,7 @@ bezierCurveTo(cp1x: number, cp1y: number, cp2x: number, cp2y: number, x: number,
  
 **参数：**
   
+
 | 参数 | 类型 | 描述 |
 | --- | --- | --- |
 | cp1x | number | 第一个贝塞尔参数的x坐标值。 |
@@ -287,9 +298,10 @@ export default {
  
   
 
-#### quadraticCurveTo
+## quadraticCurveTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 quadraticCurveTo(cpx: number, cpy: number, x: number, y: number): void
  
@@ -297,6 +309,7 @@ quadraticCurveTo(cpx: number, cpy: number, x: number, y: number): void
  
 **参数：**
   
+
 | 参数 | 类型 | 描述 |
 | --- | --- | --- |
 | cpx | number | 贝塞尔参数的x坐标值。 |
@@ -334,9 +347,10 @@ export default {
  
   
 
-#### arc
+## arc
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 arc(x: number, y: number, radius: number, startAngle: number, endAngle: number, counterclockwise?: boolean): void
  
@@ -344,6 +358,7 @@ arc(x: number, y: number, radius: number, startAngle: number, endAngle: number, 
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | x | number | 是 | 弧线圆心的x坐标值。 |
@@ -382,9 +397,10 @@ export default {
  
   
 
-#### arcTo
+## arcTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 arcTo(x1: number, y1: number, x2: number, y2: number, radius: number): void
  
@@ -392,6 +408,7 @@ arcTo(x1: number, y1: number, x2: number, y2: number, radius: number): void
  
 **参数：**
   
+
 | 参数 | 类型 | 描述 |
 | --- | --- | --- |
 | x1 | number | 圆弧控制的第一个点的x坐标值。 |
@@ -429,9 +446,10 @@ export default {
  
   
 
-#### ellipse
+## ellipse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ellipse(x: number, y: number, radiusX: number, radiusY: number, rotation: number, startAngle: number, endAngle: number, counterclockwise?: number): void
  
@@ -439,6 +457,7 @@ ellipse(x: number, y: number, radiusX: number, radiusY: number, rotation: number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | x | number | 是 | 椭圆圆心的x轴坐标。 |
@@ -479,9 +498,10 @@ export default {
  
   
 
-#### rect
+## rect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 rect(x: number, y: number, width: number, height: number): void
  
@@ -489,6 +509,7 @@ rect(x: number, y: number, width: number, height: number): void
  
 **参数：**
   
+
 | 参数 | 类型 | 描述 |
 | --- | --- | --- |
 | x | number | 指定矩形的左上角x坐标值。 |

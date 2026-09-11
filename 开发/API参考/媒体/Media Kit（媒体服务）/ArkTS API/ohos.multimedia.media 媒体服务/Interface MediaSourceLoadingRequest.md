@@ -1,9 +1,9 @@
 # Interface (MediaSourceLoadingRequest)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-mediasourceloadingrequest
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于定义加载请求的对象。应用程序通过该对象来获取请求的资源位置，通过该对象和播放器进行数据交互。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { media } from '@kit.MediaKit';
@@ -22,14 +23,16 @@ import { media } from '@kit.MediaKit';
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
  
 **系统能力：** SystemCapability.Multimedia.Media.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | url | string | 否 | 否 | 资源URL，需要应用程序打开的资源路径。 |
@@ -38,9 +41,10 @@ import { media } from '@kit.MediaKit';
  
   
 
-#### respondData18+
+## respondData18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 respondData(uuid: number, offset: number, buffer: ArrayBuffer): number
  
@@ -52,6 +56,7 @@ respondData(uuid: number, offset: number, buffer: ArrayBuffer): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uuid | number | 是 | 资源句柄的标识。来源是SourceOpenCallback。 |
@@ -61,6 +66,7 @@ respondData(uuid: number, offset: number, buffer: ArrayBuffer): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 当前服务端接受的字节数。 - 返回值小于0表示操作失败。 - 返回值为-2时，表示播放器不再需要当前数据，客户端应停止当前读取过程。 - 返回值为-3时，表示播放器的缓冲区已满，客户端应等待下一次读取。 |
@@ -81,9 +87,10 @@ let num = request?.respondData(uuid, offset, buf);
  
   
 
-#### respondHeader18+
+## respondHeader18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 respondHeader(uuid: number, header?: Record<string, string>, redirectUrl?: string): void
  
@@ -95,6 +102,7 @@ respondHeader(uuid: number, header?: Record<string, string>, redirectUrl?: strin
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uuid | number | 是 | 资源句柄的标识。来源是SourceOpenCallback。 |
@@ -125,9 +133,10 @@ request?.respondHeader(uuid, header);
  
   
 
-#### finishLoading18+
+## finishLoading18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 finishLoading(uuid: number, state: LoadingRequestError): void
  
@@ -139,6 +148,7 @@ finishLoading(uuid: number, state: LoadingRequestError): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uuid | number | 是 | 资源句柄的标识。来源是SourceOpenCallback。 |

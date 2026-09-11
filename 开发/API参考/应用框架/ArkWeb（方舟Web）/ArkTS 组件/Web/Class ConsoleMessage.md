@@ -1,20 +1,21 @@
 # Class (ConsoleMessage)
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-consolemessage
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ConsoleMessage是Web组件中封装JavaScript控制台输出信息的对象。当网页通过console.log()、console.warn()、console.error()等方法输出日志时，该对象通过onConsole事件回调提供给应用，用于监控和检查网页调试输出。示例代码参考[onConsole事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-events#onconsole)。
  
 > [!NOTE]
-> 该组件首批接口从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 本Class首批接口从API version 8开始支持。 示例效果请以真机运行为准。
+> 该组件从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 本Class从API version 8开始支持。 示例效果请以真机运行为准。
 
   
 
-#### constructor(deprecated)
+## constructor(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(message: string, sourceId: string, lineNumber: number, messageLevel: MessageLevel)
  
@@ -28,6 +29,7 @@ ConsoleMessage的构造函数。
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | message | string | 是 | ConsoleMessage的日志输出信息。 |
@@ -38,9 +40,10 @@ ConsoleMessage的构造函数。
  
   
 
-#### constructor9+
+## constructor9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
  
@@ -50,47 +53,52 @@ ConsoleMessage的构造函数。
  
   
 
-#### getLineNumber
+## getLineNumber
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLineNumber(): number
  
-获取ConsoleMessage的行号。
+获取控制台输出在网页源文件中的行号。
  
 **系统能力：** SystemCapability.Web.Webview.Core
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| number | 返回ConsoleMessage的行号。 |
+| number | 返回控制台输出在网页源文件中的行号。 |
  
  
   
 
-#### getMessage
+## getMessage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMessage(): string
  
-获取ConsoleMessage的日志信息。
+获取控制台输出的日志信息。
  
 **系统能力：** SystemCapability.Web.Webview.Core
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| string | 返回ConsoleMessage的日志信息。 |
+| string | 返回控制台输出的日志信息。 |
  
  
   
 
-#### getMessageLevel
+## getMessageLevel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMessageLevel(): MessageLevel
  
@@ -100,6 +108,7 @@ getMessageLevel(): MessageLevel
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | MessageLevel | 返回ConsoleMessage的信息级别。 |
@@ -107,9 +116,10 @@ getMessageLevel(): MessageLevel
  
   
 
-#### getSourceId
+## getSourceId
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSourceId(): string
  
@@ -119,6 +129,7 @@ getSourceId(): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 返回网页源文件路径和文件名。 |
@@ -126,9 +137,10 @@ getSourceId(): string
  
   
 
-#### getSource23+
+## getSource23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSource(): ConsoleMessageSource
  
@@ -138,6 +150,7 @@ getSource(): ConsoleMessageSource
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ConsoleMessageSource | 返回ConsoleMessage的日志来源。 |

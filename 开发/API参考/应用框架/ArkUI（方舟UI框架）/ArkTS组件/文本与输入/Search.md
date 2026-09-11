@@ -1,28 +1,30 @@
 # Search
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 搜索框组件，支持搜索图标、清除按钮、搜索按钮、placeholder提示文本、自定义键盘等功能配置，适用于浏览器的搜索内容输入框、应用内搜索等场景。
 
 > [!NOTE]
-> 该组件从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 该组件仅支持单文本样式，若需实现富文本样式，建议使用 RichEditor 组件。
+> 该组件从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 该组件仅支持单文本样式，若需实现富文本样式，建议使用 RichEditor 组件。 如需设置触摸文本组件外部时是否清除文本选中和手柄，可使用 setTextSelectionClearPolicy 接口。
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Search(options?: SearchOptions)
 
@@ -32,6 +34,7 @@ Search(options?: SearchOptions)
 
 **参数:**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | SearchOptions | 否 | 搜索框组件初始化选项。当需要设置搜索框的初始值、提示文本、图标或控制器时传入此参数，不传入时使用默认配置。 |
@@ -39,9 +42,10 @@ Search(options?: SearchOptions)
 
 
 
-#### SearchOptions18+对象说明
+## SearchOptions18+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Search初始化参数。
 
@@ -55,6 +59,7 @@ Search初始化参数。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | value8+ | ResourceStr | 否 | 是 | 设置当前显示的搜索文本内容。当需要设置搜索框的初始文本内容时传入此参数，不传入时搜索框为空。 从API version 10开始，该参数支持$$双向绑定变量。 从API version 18开始，该参数支持!!双向绑定变量。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 从API version 20开始，支持Resource类型。 |
@@ -65,17 +70,19 @@ Search初始化参数。
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
 
 
 
-#### searchButton
+### searchButton
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 searchButton(value: ResourceStr, option?: SearchButtonOptions)
 
@@ -91,6 +98,7 @@ Wearable设备上默认字体大小为18fp。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceStr | 是 | 搜索框末尾搜索按钮文本内容。 从API version 20开始，支持Resource类型。 |
@@ -99,19 +107,21 @@ Wearable设备上默认字体大小为18fp。
 
 
 
-#### placeholderColor
+### placeholderColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 placeholderColor(value: ResourceColor)
 
-设置placeholder文本颜色。未通过该接口设置时，默认placeholder文本颜色为'#99182431'（深灰色，不透明度约为60%），Wearable设备上默认为'#99ffffff'（白色，不透明度约为60%）。
+设置placeholder文本颜色。未通过该接口设置时，默认placeholder文本颜色为'#99182431'（深灰色，不透明度为60%），Wearable设备上默认为'#99ffffff'（白色，不透明度为60%）。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -120,9 +130,10 @@ placeholderColor(value: ResourceColor)
 
 
 
-#### placeholderFont
+### placeholderFont
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 placeholderFont(value?: Font)
 
@@ -140,6 +151,7 @@ Wearable设备上默认字体大小为18fp。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Font | 否 | placeholder文本样式。不传入时使用系统默认字体样式。 |
@@ -147,9 +159,10 @@ Wearable设备上默认字体大小为18fp。
 
 
 
-#### textFont
+### textFont
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 textFont(value?: Font)
 
@@ -167,6 +180,7 @@ Wearable设备上默认字体大小为18fp。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Font | 否 | 搜索框内输入文本样式。不传入时使用系统默认字体样式。 |
@@ -174,9 +188,10 @@ Wearable设备上默认字体大小为18fp。
 
 
 
-#### textAlign9+
+### textAlign9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 textAlign(value: TextAlign)
 
@@ -192,6 +207,7 @@ textAlign(value: TextAlign)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | TextAlign | 是 | 文本在搜索框中的对齐方式。 |
@@ -199,9 +215,10 @@ textAlign(value: TextAlign)
 
 
 
-#### textDirection23+
+### textDirection23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 textDirection(direction: TextDirection | undefined)
 
@@ -215,6 +232,7 @@ textDirection(direction: TextDirection | undefined)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | direction | TextDirection \| undefined | 是 | 文本排版方向。 设置为undefined时，按照TextDirection.DEFAULT处理，表现为文本排版方向遵循组件布局方向。 |
@@ -222,9 +240,10 @@ textDirection(direction: TextDirection | undefined)
 
 
 
-#### strokeJoinStyle
+### strokeJoinStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 strokeJoinStyle(strokeJoinStyle: StrokeJoinStyle | undefined)
 
@@ -240,6 +259,7 @@ strokeJoinStyle(strokeJoinStyle: StrokeJoinStyle | undefined)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | strokeJoinStyle | StrokeJoinStyle \| undefined | 是 | 文本描边拐角样式。 值为undefined时，按照StrokeJoinStyle.MITER_JOIN处理，请参考StrokeJoinStyle，文本拐角处表现为锐角。 |
@@ -247,9 +267,10 @@ strokeJoinStyle(strokeJoinStyle: StrokeJoinStyle | undefined)
 
 
 
-#### shaderStyle
+### shaderStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 shaderStyle(shader: ShaderStyle | undefined)
 
@@ -269,6 +290,7 @@ shaderStyle(shader: ShaderStyle | undefined)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | shader | ShaderStyle \| undefined | 是 | 文本着色器效果。 说明： 当同时设置shaderStyle和strokeWidth时，shaderStyle不生效。 当同时设置shaderStyle和fontColor时，fontColor不生效。 值为undefined时，无渐变效果。 |
@@ -276,9 +298,10 @@ shaderStyle(shader: ShaderStyle | undefined)
 
 
 
-#### copyOption9+
+### copyOption9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 copyOption(value: CopyOptions)
 
@@ -294,6 +317,7 @@ copyOption(value: CopyOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | CopyOptions | 是 | 输入的文本是否可复制。 说明： 当copyOption不为CopyOptions.LocalDevice或CopyOptions.CROSS_DEVICE时，enableSelectedDataDetector功能不生效。 |
@@ -301,9 +325,10 @@ copyOption(value: CopyOptions)
 
 
 
-#### searchIcon10+
+### searchIcon10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 searchIcon(value: IconOptions | SymbolGlyphModifier)
 
@@ -319,6 +344,7 @@ Wearable设备上默认图标大小为16vp。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | IconOptions \| SymbolGlyphModifier | 是 | 左侧搜索图标样式。如果与参数icon同时设置，本属性优先生效。 浅色模式默认值： { size: '16vp', color: '#99000000', src: ' ' } 深色模式默认值： { size: '16vp', color: '#99ffffff', src: ' ' } |
@@ -326,13 +352,14 @@ Wearable设备上默认图标大小为16vp。
 
 
 
-#### cancelButton10+
+### cancelButton10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancelButton(value: CancelButtonOptions | CancelButtonSymbolOptions)
 
-设置右侧清除按钮样式。示例请参考[示例2（设置搜索和删除图标）](#示例2设置搜索和删除图标)和[示例11（设置symbol类型清除按钮）](#示例11设置symbol类型清除按钮)。未通过该接口设置时，默认清除按钮样式为CancelButtonStyle.INPUT（输入样式），图标大小为16vp（Wearable设备上默认图标大小为18fp），颜色为'#99ffffff'（白色，不透明度约为60%）。
+设置右侧清除按钮样式。示例请参考[示例2（设置搜索和删除图标）](#示例2设置搜索和删除图标)和[示例11（设置symbol类型清除按钮）](#示例11设置symbol类型清除按钮)。未通过该接口设置时，默认清除按钮样式为CancelButtonStyle.INPUT（输入样式），图标大小为16vp（Wearable设备上默认图标大小为18fp），颜色为'#99ffffff'（白色，不透明度为60%）。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -342,6 +369,7 @@ cancelButton(value: CancelButtonOptions | CancelButtonSymbolOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | CancelButtonOptions \| CancelButtonSymbolOptions | 是 | 右侧清除按钮样式。当style为CancelButtonStyle.CONSTANT时，默认显示清除样式。 |
@@ -349,13 +377,14 @@ cancelButton(value: CancelButtonOptions | CancelButtonSymbolOptions)
 
 
 
-#### fontColor10+
+### fontColor10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontColor(value: ResourceColor)
 
-设置输入文本的字体颜色。未通过该接口设置时，默认输入文本的字体颜色为'#FF182431'（深灰色），Wearable设备上默认为'#dbffffff'（白色，不透明度约为86%）。fontSize、fontStyle、fontWeight和fontFamily在[textFont](#textfont)属性中设置。
+设置输入文本的字体颜色。未通过该接口设置时，默认输入文本的字体颜色为'#FF182431'（深灰色），Wearable设备上默认为'#dbffffff'（白色，不透明度为86%）。fontSize、fontStyle、fontWeight和fontFamily在[textFont](#textfont)属性中设置。
 
 > [!NOTE]
 > 当同时设置fontColor和 shaderStyle 时，fontColor不生效。
@@ -369,6 +398,7 @@ fontColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 输入文本的字体颜色。 说明： 当同时设置fontColor和shaderStyle时，fontColor设置不生效。 |
@@ -376,9 +406,10 @@ fontColor(value: ResourceColor)
 
 
 
-#### caretStyle10+
+### caretStyle10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 caretStyle(value: CaretStyle)
 
@@ -396,6 +427,7 @@ caretStyle(value: CaretStyle)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | CaretStyle | 是 | 光标样式。 |
@@ -403,9 +435,10 @@ caretStyle(value: CaretStyle)
 
 
 
-#### enableKeyboardOnFocus10+
+### enableKeyboardOnFocus10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableKeyboardOnFocus(value: boolean)
 
@@ -421,6 +454,7 @@ enableKeyboardOnFocus(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | Search获焦时，是否主动拉起软键盘。 true表示主动拉起，false表示不主动拉起。 |
@@ -428,13 +462,14 @@ enableKeyboardOnFocus(value: boolean)
 
 
 
-#### selectionMenuHidden10+
+### selectionMenuHidden10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectionMenuHidden(value: boolean)
 
-设置是否不弹出系统文本选择菜单。未通过该接口设置时，默认弹出系统文本选择菜单。
+设置是否隐藏系统文本选择菜单。未通过该接口设置时，默认显示系统文本选择菜单。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -444,16 +479,18 @@ selectionMenuHidden(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | boolean | 是 | 是否不弹出系统文本选择菜单。 设置为true时，单击输入框光标、长按输入框、双击输入框、三击输入框或者右键输入框，不弹出系统文本选择菜单。 设置为false时，弹出系统文本选择菜单。 |
+| value | boolean | 是 | 是否隐藏系统文本选择菜单。 设置为true时，单击输入框光标、长按输入框、双击输入框、三击输入框或者右键输入框，隐藏系统文本选择菜单。 设置为false时，显示系统文本选择菜单。 |
 
 
 
 
-#### customKeyboard10+
+### customKeyboard10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 customKeyboard(value: CustomBuilder | ComponentContent | undefined, options?: KeyboardOptions)
 
@@ -485,6 +522,7 @@ customKeyboard(value: CustomBuilder | ComponentContent | undefined, options?: Ke
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | CustomBuilder \| ComponentContent22+ \| undefined22+ | 是 | 自定义键盘。设定值为undefined时，关闭自定义键盘。 |
@@ -493,9 +531,10 @@ customKeyboard(value: CustomBuilder | ComponentContent | undefined, options?: Ke
 
 
 
-#### type11+
+### type11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type(value: SearchType)
 
@@ -515,6 +554,7 @@ type(value: SearchType)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | SearchType | 是 | 输入框类型。 当同时设置了inputFilter且输入的字符不为空字符时，type接口附带的文本过滤效果失效。 |
@@ -522,9 +562,10 @@ type(value: SearchType)
 
 
 
-#### maxLength11+
+### maxLength11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 maxLength(value: number)
 
@@ -538,6 +579,7 @@ maxLength(value: number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 文本的最大输入字符数。取值范围：[0, +∞)。当value<0时，按照默认值处理，不设限制。 |
@@ -545,9 +587,10 @@ maxLength(value: number)
 
 
 
-#### enterKeyType12+
+### enterKeyType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enterKeyType(value: EnterKeyType)
 
@@ -561,6 +604,7 @@ enterKeyType(value: EnterKeyType)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | EnterKeyType | 是 | 输入法回车键类型。 |
@@ -568,9 +612,10 @@ enterKeyType(value: EnterKeyType)
 
 
 
-#### enableSelectedDataDetector22+
+### enableSelectedDataDetector22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableSelectedDataDetector(enable: boolean | undefined)
 
@@ -592,20 +637,22 @@ AI菜单生效时，选中范围内需包括且仅包括一个完整的AI实体�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| enable | boolean \| undefined | 是 | 开启选中文本实体识别。 true：开启识别，false：关闭识别。 |
+| enable | boolean \| undefined | 是 | 是否开启选中文本实体识别。 true：开启识别，false：关闭识别。 |
 
 
 
 
-#### lineHeight12+
+### lineHeight12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 lineHeight(value: number | string | Resource)
 
-设置文本的文本行高，设置值不大于0时，不限制文本行高，自适应字体大小，number类型时单位为fp。
+设置文本的行高，设置值不大于0时，不限制文本行高，自适应字体大小，number类型时单位为fp。
 
 > [!NOTE]
 > 特殊字符字体高度远超出同行的其他字符高度时，文本框出现截断、遮挡、内容相对位置发生变化等不符合预期的显示异常，需要开发者调整组件高度、行高等属性，修改对应的页面布局。
@@ -619,16 +666,18 @@ lineHeight(value: number | string | Resource)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number \| string \| Resource | 是 | 文本的文本行高。 number类型时单位为fp，string类型支持number类型取值的字符串形式，可以附带单位，例如"10"、"10fp"。 |
+| value | number \| string \| Resource | 是 | 文本的行高。 number类型时单位为fp，string类型支持number类型取值的字符串形式，可以附带单位，例如"10"、"10fp"。 |
 
 
 
 
-#### decoration12+
+### decoration12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 decoration(value: TextDecorationOptions)
 
@@ -646,6 +695,7 @@ decoration(value: TextDecorationOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | TextDecorationOptions | 是 | 文本装饰线对象。 |
@@ -653,9 +703,10 @@ decoration(value: TextDecorationOptions)
 
 
 
-#### letterSpacing12+
+### letterSpacing12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 letterSpacing(value: number | string | Resource)
 
@@ -673,6 +724,7 @@ letterSpacing(value: number | string | Resource)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| string \| Resource | 是 | 文本字符间距。 单位：fp |
@@ -680,9 +732,10 @@ letterSpacing(value: number | string | Resource)
 
 
 
-#### fontFeature12+
+### fontFeature12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontFeature(value: string)
 
@@ -704,6 +757,7 @@ fontFeature(value: string)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string | 是 | 文字特性效果，用于设置OpenType字体的高级排版能力，如连字、数字等宽等。 格式为："ss01" on。更多支持的属性详见fontFeature属性列表。 |
@@ -713,17 +767,18 @@ Font Feature当前支持的属性参见[fontFeature](https://developer.huawei.co
 
 设置Font Feature属性。Font Feature是OpenType字体的高级排版能力（如连字、数字等宽等特性），一般用于自定义字体，且需要字体本身支持该能力。
 
-更多Font Feature能力介绍可参考https://www.w3.org/TR/css-fonts-3/#font-feature-settings-prop和https://sparanoid.com/lab/opentype-features/。
+更多Font Feature能力介绍可参考[font-feature-settings property](https://www.w3.org/TR/css-fonts-3/#font-feature-settings-prop)和[OpenType Features](https://sparanoid.com/lab/opentype-features/)。
 
 
 
-#### selectedBackgroundColor12+
+### selectedBackgroundColor12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectedBackgroundColor(value: ResourceColor)
 
-设置文本选中底板颜色。如果未设置不透明度，默认为20%不透明度。
+设置文本选中高亮颜色。未通过该接口设置时，默认颜色为'#007DFF'（蓝色）。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -733,16 +788,18 @@ selectedBackgroundColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | ResourceColor | 是 | 文本选中底板颜色。如果未设置不透明度，默认为20%不透明度。 |
+| value | ResourceColor | 是 | 文本选中高亮颜色。如果未设置不透明度或设置为完全不透明，默认使用20%不透明度。 |
 
 
 
 
-#### inputFilter12+
+### inputFilter12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 inputFilter(value: ResourceStr, error?: Callback< string >)
 
@@ -760,6 +817,7 @@ inputFilter(value: ResourceStr, error?: Callback< string >)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceStr | 是 | 输入过滤器的正则表达式。匹配该表达式的输入允许显示，不匹配的输入将被过滤。 |
@@ -768,9 +826,10 @@ inputFilter(value: ResourceStr, error?: Callback< string >)
 
 
 
-#### textIndent12+
+### textIndent12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 textIndent(value: Dimension)
 
@@ -784,6 +843,7 @@ textIndent(value: Dimension)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Dimension | 是 | 首行文本缩进。 单位：vp 取值范围：大于等于0。设置负数时，按默认值处理。 |
@@ -791,9 +851,10 @@ textIndent(value: Dimension)
 
 
 
-#### minFontSize12+
+### minFontSize12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 minFontSize(value: number | string | Resource)
 
@@ -813,6 +874,7 @@ minFontSize小于或等于0时，自适应字号不生效，此时按照[textFon
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| string \| Resource | 是 | 文本最小显示字号。 单位：fp |
@@ -820,9 +882,10 @@ minFontSize小于或等于0时，自适应字号不生效，此时按照[textFon
 
 
 
-#### maxFontSize12+
+### maxFontSize12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 maxFontSize(value: number | string | Resource)
 
@@ -842,6 +905,7 @@ maxFontSize小于等于0或者maxFontSize小于minFontSize时，自适应字号�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| string \| Resource | 是 | 文本最大显示字号。 单位：fp |
@@ -849,9 +913,10 @@ maxFontSize小于等于0或者maxFontSize小于minFontSize时，自适应字号�
 
 
 
-#### halfLeading18+
+### halfLeading18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 halfLeading(halfLeading: Optional&lt;boolean&gt;)
 
@@ -865,6 +930,7 @@ halfLeading(halfLeading: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | halfLeading | Optional&lt;boolean&gt; | 是 | 设置文本是否垂直居中。 true表示将行间距平分至行的顶部与底部，false则不平分。 |
@@ -872,9 +938,10 @@ halfLeading(halfLeading: Optional&lt;boolean&gt;)
 
 
 
-#### minFontScale18+
+### minFontScale18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 minFontScale(scale: Optional<number | Resource>)
 
@@ -888,6 +955,7 @@ minFontScale(scale: Optional<number | Resource>)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scale | Optional<number \| Resource> | 是 | 文本最小的字体缩放倍数，支持undefined类型。 取值范围：[0, 1] 说明： 设置的值小于0时，按值为0处理。设置的值大于1，按值为1处理。设置undefined时维持原值，异常值默认不生效。 使用前需在工程中配置configuration.json文件和app.json5文件，具体详见示例19（设置最小字体范围与最大字体范围）。 |
@@ -895,9 +963,10 @@ minFontScale(scale: Optional<number | Resource>)
 
 
 
-#### maxFontScale18+
+### maxFontScale18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 maxFontScale(scale: Optional<number | Resource>)
 
@@ -911,6 +980,7 @@ maxFontScale(scale: Optional<number | Resource>)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scale | Optional<number \| Resource> | 是 | 文本最大的字体缩放倍数，支持undefined类型。 取值范围：[1, +∞) 说明： 设置的值小于1时，按值为1处理。设置undefined时维持原值，异常值默认不生效。 设置maxFontScale属性后，search组件内容最多放大到2倍。 使用前需在工程中配置configuration.json文件和app.json5文件，具体详见示例19（设置最小字体范围与最大字体范围）。 |
@@ -918,9 +988,10 @@ maxFontScale(scale: Optional<number | Resource>)
 
 
 
-#### editMenuOptions12+
+### editMenuOptions12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 editMenuOptions(editMenu: EditMenuOptions)
 
@@ -936,6 +1007,7 @@ editMenuOptions(editMenu: EditMenuOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | editMenu | EditMenuOptions | 是 | 扩展菜单选项，用于设置自定义菜单扩展项的文本内容、图标和回调方法。当需要在文本选择菜单中添加自定义选项时使用此参数。 |
@@ -943,9 +1015,10 @@ editMenuOptions(editMenu: EditMenuOptions)
 
 
 
-#### enablePreviewText12+
+### enablePreviewText12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enablePreviewText(enable: boolean)
 
@@ -965,6 +1038,7 @@ enablePreviewText(enable: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | boolean | 是 | 是否开启输入预上屏。 true表示开启输入预上屏，false表示不开启输入预上屏。 |
@@ -972,9 +1046,10 @@ enablePreviewText(enable: boolean)
 
 
 
-#### enableHapticFeedback13+
+### enableHapticFeedback13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableHapticFeedback(isEnabled: boolean)
 
@@ -998,6 +1073,7 @@ enableHapticFeedback(isEnabled: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isEnabled | boolean | 是 | 是否开启触控反馈。 true表示开启触控反馈，false表示不开启触控反馈。 |
@@ -1005,9 +1081,10 @@ enableHapticFeedback(isEnabled: boolean)
 
 
 
-#### autoCapitalizationMode20+
+### autoCapitalizationMode20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 autoCapitalizationMode(mode: AutoCapitalizationMode)
 
@@ -1021,6 +1098,7 @@ autoCapitalizationMode(mode: AutoCapitalizationMode)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | AutoCapitalizationMode | 是 | 自动大小写模式，用于设置输入法的大小写转换规则，具体实现以输入法应用为主。 |
@@ -1028,9 +1106,10 @@ autoCapitalizationMode(mode: AutoCapitalizationMode)
 
 
 
-#### keyboardAppearance15+
+### keyboardAppearance15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 keyboardAppearance(appearance: Optional&lt;KeyboardAppearance&gt;)
 
@@ -1044,6 +1123,7 @@ keyboardAppearance(appearance: Optional&lt;KeyboardAppearance&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | appearance | Optional&lt;KeyboardAppearance&gt; | 是 | 键盘样式。 |
@@ -1051,9 +1131,10 @@ keyboardAppearance(appearance: Optional&lt;KeyboardAppearance&gt;)
 
 
 
-#### strokeWidth20+
+### strokeWidth20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 strokeWidth(width: Optional&lt;LengthMetrics&gt;)
 
@@ -1071,16 +1152,18 @@ strokeWidth(width: Optional&lt;LengthMetrics&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| width | Optional&lt;LengthMetrics&gt; | 是 | 文本描边的宽度。如果LengthMetrics的unit值是PERCENT，当前设置不生效，按默认值处理。 若设置值小于0，显示实心字；若大于0，显示空心字。 说明： 当同时设置strokeWidth和shaderStyle时，shaderStyle不生效。 strokeJoinStyle仅在使用strokeWidth设置文本描边时生效。 |
+| width | Optional&lt;LengthMetrics&gt; | 是 | 文本描边的宽度。当LengthMetrics对象的unit属性为LengthUnit.PERCENT时，当前设置不生效，按默认值处理。 若设置值小于0，显示实心字；若大于0，显示空心字。 说明： 当同时设置strokeWidth和shaderStyle时，shaderStyle不生效。 strokeJoinStyle仅在使用strokeWidth设置文本描边时生效。 |
 
 
 
 
-#### strokeColor20+
+### strokeColor20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 strokeColor(color: Optional&lt;ResourceColor&gt;)
 
@@ -1094,6 +1177,7 @@ strokeColor(color: Optional&lt;ResourceColor&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | Optional&lt;ResourceColor&gt; | 是 | 描边颜色。未通过该接口设置时，默认描边颜色为字体颜色，设置异常值时取默认值。需配合strokeWidth设置描边宽度后生效。 |
@@ -1101,9 +1185,10 @@ strokeColor(color: Optional&lt;ResourceColor&gt;)
 
 
 
-#### stopBackPress15+
+### stopBackPress15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopBackPress(isStopped: Optional&lt;boolean&gt;)
 
@@ -1117,6 +1202,7 @@ stopBackPress(isStopped: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isStopped | Optional&lt;boolean&gt; | 是 | 是否阻止返回键。 true表示阻止，false表示不阻止。 异常值取默认值。 |
@@ -1124,9 +1210,10 @@ stopBackPress(isStopped: Optional&lt;boolean&gt;)
 
 
 
-#### enableAutoSpacing20+
+### enableAutoSpacing20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableAutoSpacing(enabled: Optional&lt;boolean&gt;)
 
@@ -1140,6 +1227,7 @@ enableAutoSpacing(enabled: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | Optional&lt;boolean&gt; | 是 | 是否开启中文与西文的自动间距。 true为开启自动间距，false为不开启。 |
@@ -1147,9 +1235,10 @@ enableAutoSpacing(enabled: Optional&lt;boolean&gt;)
 
 
 
-#### selectedDragPreviewStyle23+
+### selectedDragPreviewStyle23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectedDragPreviewStyle(value: SelectedDragPreviewStyle | undefined)
 
@@ -1163,6 +1252,7 @@ selectedDragPreviewStyle(value: SelectedDragPreviewStyle | undefined)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | SelectedDragPreviewStyle \| undefined | 是 | 文本拖拽时的背板样式。 设置为undefined时：背板颜色跟随主题，浅色模式显示白色，深色模式显示黑色。 |
@@ -1170,9 +1260,10 @@ selectedDragPreviewStyle(value: SelectedDragPreviewStyle | undefined)
 
 
 
-#### dividerColor23+
+### dividerColor23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 dividerColor(color: Optional&lt;ColorMetrics&gt;)
 
@@ -1186,6 +1277,7 @@ dividerColor(color: Optional&lt;ColorMetrics&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | Optional&lt;ColorMetrics&gt; | 是 | 设置分割线颜色。 默认使用系统的主题色：浅色模式下为0x33000000，表示黑色（20%不透明度），深色模式下为0x33FFFFFF，表示白色（20%不透明度）。 |
@@ -1193,9 +1285,10 @@ dividerColor(color: Optional&lt;ColorMetrics&gt;)
 
 
 
-#### compressLeadingPunctuation23+
+### compressLeadingPunctuation23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 compressLeadingPunctuation(enabled: Optional&lt;boolean&gt;)
 
@@ -1213,6 +1306,7 @@ compressLeadingPunctuation(enabled: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | Optional&lt;boolean&gt; | 是 | 是否开启行首标点符号压缩。 true表示开启行首标点符号压缩；false表示不开启行首标点符号压缩。 |
@@ -1220,9 +1314,10 @@ compressLeadingPunctuation(enabled: Optional&lt;boolean&gt;)
 
 
 
-#### includeFontPadding23+
+### includeFontPadding23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 includeFontPadding(include: Optional&lt;boolean&gt;)
 
@@ -1236,6 +1331,7 @@ includeFontPadding(include: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | include | Optional&lt;boolean&gt; | 是 | 是否在首行和尾行增加间距以避免文字截断。 true表示在首行和尾行增加间距；false表示在首行和尾行不增加间距。 |
@@ -1243,9 +1339,10 @@ includeFontPadding(include: Optional&lt;boolean&gt;)
 
 
 
-#### fallbackLineSpacing23+
+### fallbackLineSpacing23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fallbackLineSpacing(enabled: Optional&lt;boolean&gt;)
 
@@ -1259,6 +1356,7 @@ fallbackLineSpacing(enabled: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | Optional&lt;boolean&gt; | 是 | 行高是否基于文字实际高度自适应。 此接口仅当行高小于文字实际高度时生效。 true表示行高基于文字实际高度自适应；false表示行高不基于文字实际高度自适应。 |
@@ -1266,15 +1364,17 @@ fallbackLineSpacing(enabled: Optional&lt;boolean&gt;)
 
 
 
-#### IconOptions10+对象说明
+## IconOptions10+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1285,13 +1385,15 @@ fallbackLineSpacing(enabled: Optional&lt;boolean&gt;)
 
 
 
-#### SearchButtonOptions10+对象说明
+## SearchButtonOptions10+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1302,15 +1404,17 @@ fallbackLineSpacing(enabled: Optional&lt;boolean&gt;)
 
 
 
-#### CancelButtonStyle10+枚举说明
+## CancelButtonStyle10+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1321,15 +1425,17 @@ fallbackLineSpacing(enabled: Optional&lt;boolean&gt;)
 
 
 
-#### SearchType11+枚举说明
+## SearchType11+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 搜索输入框类型。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1339,20 +1445,22 @@ fallbackLineSpacing(enabled: Optional&lt;boolean&gt;)
 | EMAIL | 5 | 邮箱地址输入模式。 支持数字、字母、下划线、小数点、!、#、$、%、&、'、*、+、-、/、=、?、^、`、{、\|、}、~以及@字符（只能存在一个@字符）。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | NUMBER_DECIMAL12+ | 12 | 带小数点的数字输入模式。 支持数字、小数点（只能存在一个小数点）。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | URL12+ | 13 | 带URL的输入模式，无特殊限制。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| ONE_TIME_CODE20+ | 14 | 验证码输入模式，无特殊限制。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
+| ONE_TIME_CODE20+ | 14 | 验证码输入模式，无特殊限制。该模式下组件获焦后会默认拉起系统输入法。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
 
 
 
 
-#### CancelButtonOptions12+对象说明
+## CancelButtonOptions12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1362,15 +1470,17 @@ fallbackLineSpacing(enabled: Optional&lt;boolean&gt;)
 
 
 
-#### CancelButtonSymbolOptions12+对象说明
+## CancelButtonSymbolOptions12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1380,17 +1490,19 @@ fallbackLineSpacing(enabled: Optional&lt;boolean&gt;)
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)外，还支持以下事件：
 
 
 
-#### onSubmit
+### onSubmit
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onSubmit(callback: Callback&lt;string&gt;)
 
@@ -1402,6 +1514,7 @@ onSubmit(callback: Callback&lt;string&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;string&gt; | 是 | 搜索提交回调，其返回值为当前搜索框中输入的文本内容。 |
@@ -1409,9 +1522,10 @@ onSubmit(callback: Callback&lt;string&gt;)
 
 
 
-#### onSubmit14+
+### onSubmit14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onSubmit(callback: SearchSubmitCallback)
 
@@ -1425,6 +1539,7 @@ onSubmit(callback: SearchSubmitCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | SearchSubmitCallback | 是 | 点击搜索图标、搜索按钮或者按下软键盘搜索按钮时的回调事件。 |
@@ -1432,9 +1547,10 @@ onSubmit(callback: SearchSubmitCallback)
 
 
 
-#### onChange
+### onChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onChange(callback: EditableTextOnChangeCallback)
 
@@ -1442,11 +1558,16 @@ onChange(callback: EditableTextOnChangeCallback)
 
 在本回调中，若执行了光标操作，需要开发者在预上屏场景下依据previewText参数调整光标逻辑，以适应预上屏场景。
 
+> [!NOTE]
+> onWillChange和onChange形成will/did时序模式： onWillChange在文本变更前触发，可通过返回false拦截变更；返回true则允许变更，随后触发onChange。 onChange在变更完成后触发，无法拦截。 两者可以同时使用，onWillChange用于拦截控制，onChange用于获取变更结果。
+
+
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1455,16 +1576,17 @@ onChange(callback: EditableTextOnChangeCallback)
 
 
 
-#### onCopy
+### onCopy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onCopy(callback:Callback&lt;string&gt;)
 
 进行复制操作时，触发该回调。
 
 > [!NOTE]
-> onWillCopy先于onCopy触发。onWillCopy回调返回true时允许复制操作继续执行，返回false时拦截复制操作且不触发onCopy。两者可同时使用。
+> onWillCopy和onCopy形成will/did时序模式： onWillCopy在复制操作前触发，可通过返回false拦截复制操作；返回true则允许复制，随后触发onCopy。 onCopy在复制操作完成后触发，无法拦截。 两者可以同时使用，onWillCopy用于拦截控制，onCopy用于获取复制结果。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -1472,6 +1594,7 @@ onCopy(callback:Callback&lt;string&gt;)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1480,16 +1603,17 @@ onCopy(callback:Callback&lt;string&gt;)
 
 
 
-#### onWillCopy
+### onWillCopy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onWillCopy(callback: Callback<string, boolean>)
 
 在进行复制操作前，触发该回调。
 
 > [!NOTE]
-> onWillCopy先于onCopy触发。onWillCopy回调返回true时允许复制操作继续执行，返回false时拦截复制操作且不触发onCopy。两者可同时使用。
+> onWillCopy和onCopy形成will/did时序模式： onWillCopy在复制操作前触发，可通过返回false拦截复制操作；返回true则允许复制，随后触发onCopy。 onCopy在复制操作完成后触发，无法拦截。 两者可以同时使用，onWillCopy用于拦截控制，onCopy用于获取复制结果。
 
 
 **起始版本：** 26.0.0
@@ -1502,23 +1626,25 @@ onWillCopy(callback: Callback<string, boolean>)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | Callback<string, boolean> | 是 | 复制操作前的回调。回调参数类型为string时，表示将要被复制的文本内容。回调参数类型为boolean时，表示当前选中文本是否允许被复制，true：允许文本被复制；false：不允许文本被复制。 |
+| callback | Callback<string, boolean> | 是 | 复制操作前的回调。回调返回值为string时，表示将要被复制的文本内容。回调返回值为boolean时，表示当前选中文本是否允许被复制，返回true：允许文本被复制；返回false：不允许文本被复制。 |
 
 
 
 
-#### onCut
+### onCut
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onCut(callback:Callback&lt;string&gt;)
 
 进行剪切操作时，触发该回调。
 
 > [!NOTE]
-> onWillCut先于onCut触发。onWillCut回调返回true时允许剪切操作继续执行，返回false时拦截剪切操作且不触发onCut。两者可同时使用。
+> onWillCut和onCut形成will/did时序模式： onWillCut在剪切操作前触发，可通过返回false拦截剪切操作；返回true则允许剪切，随后触发onCut。 onCut在剪切操作完成后触发，无法拦截。 两者可以同时使用，onWillCut用于拦截控制，onCut用于获取剪切结果。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -1527,6 +1653,7 @@ onCut(callback:Callback&lt;string&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;string&gt; | 是 | 剪切回调，其返回值为剪切的文本内容。 |
@@ -1534,16 +1661,17 @@ onCut(callback:Callback&lt;string&gt;)
 
 
 
-#### onWillCut
+### onWillCut
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onWillCut(callback: Callback<string, boolean>)
 
 在进行剪切操作前，触发该回调。
 
 > [!NOTE]
-> onWillCut先于onCut触发。onWillCut回调返回true时允许剪切操作继续执行，返回false时拦截剪切操作且不触发onCut。两者可同时使用。
+> onWillCut和onCut形成will/did时序模式： onWillCut在剪切操作前触发，可通过返回false拦截剪切操作；返回true则允许剪切，随后触发onCut。 onCut在剪切操作完成后触发，无法拦截。 两者可以同时使用，onWillCut用于拦截控制，onCut用于获取剪切结果。
 
 
 **起始版本：** 26.0.0
@@ -1556,16 +1684,18 @@ onWillCut(callback: Callback<string, boolean>)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | Callback<string, boolean> | 是 | 剪切操作前的回调。回调参数类型为string时，表示将要被剪切的文本内容。回调参数类型为boolean时，表示当前选中文本是否允许被剪切，true：允许文本被剪切；false：不允许文本被剪切。 |
+| callback | Callback<string, boolean> | 是 | 剪切操作前的回调。回调参数类型为string时，表示将要被剪切的文本内容。回调返回值为boolean时，表示当前选中文本是否允许被剪切，true：允许文本被剪切；false：不允许文本被剪切。 |
 
 
 
 
-#### onPaste
+### onPaste
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onPaste(callback:OnPasteCallback )
 
@@ -1577,6 +1707,7 @@ onPaste(callback:OnPasteCallback )
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | OnPasteCallback | 是 | 粘贴回调，其返回值为粘贴的文本内容。 |
@@ -1584,9 +1715,10 @@ onPaste(callback:OnPasteCallback )
 
 
 
-#### onTextSelectionChange10+
+### onTextSelectionChange10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onTextSelectionChange(callback: OnTextSelectionChangeCallback)
 
@@ -1600,6 +1732,7 @@ onTextSelectionChange(callback: OnTextSelectionChangeCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | OnTextSelectionChangeCallback | 是 | 文本选择变化回调或光标位置变化回调。 |
@@ -1607,9 +1740,10 @@ onTextSelectionChange(callback: OnTextSelectionChangeCallback)
 
 
 
-#### onContentScroll10+
+### onContentScroll10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onContentScroll(callback: OnContentScrollCallback)
 
@@ -1623,6 +1757,7 @@ onContentScroll(callback: OnContentScrollCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | OnContentScrollCallback | 是 | 文本内容滚动回调，回调参数包括totalOffsetX（水平滚动偏移量）和totalOffsetY（垂直滚动偏移量）。 |
@@ -1630,9 +1765,10 @@ onContentScroll(callback: OnContentScrollCallback)
 
 
 
-#### onEditChange12+
+### onEditChange12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onEditChange(callback: Callback< boolean >)
 
@@ -1646,6 +1782,7 @@ onEditChange(callback: Callback< boolean >)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback< boolean > | 是 | 编辑状态改变回调，其返回值为true表示正在输入，false表示无焦点，无法输入文字。 |
@@ -1653,13 +1790,18 @@ onEditChange(callback: Callback< boolean >)
 
 
 
-#### onWillInsert12+
+### onWillInsert12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onWillInsert(callback: Callback<InsertValue, boolean>)
 
 在将要输入时，触发该回调。
+
+> [!NOTE]
+> onWillInsert和onDidInsert形成will/did时序模式： onWillInsert在插入操作前触发，可通过返回false拦截插入操作；返回true则允许插入，随后触发onDidInsert。 onDidInsert在插入完成后触发，无法拦截。 两者可以同时使用，onWillInsert用于拦截控制，onDidInsert用于获取插入结果。
+
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1668,6 +1810,7 @@ onWillInsert(callback: Callback<InsertValue, boolean>)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1676,13 +1819,18 @@ onWillInsert(callback: Callback<InsertValue, boolean>)
 
 
 
-#### onDidInsert12+
+### onDidInsert12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDidInsert(callback: Callback&lt;InsertValue&gt;)
 
 在输入完成时，触发该回调。
+
+> [!NOTE]
+> onWillInsert和onDidInsert形成will/did时序模式： onWillInsert在插入操作前触发，可通过返回false拦截插入操作；返回true则允许插入，随后触发onDidInsert。 onDidInsert在插入完成后触发，无法拦截。 两者可以同时使用，onWillInsert用于拦截控制，onDidInsert用于获取插入结果。
+
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1691,6 +1839,7 @@ onDidInsert(callback: Callback&lt;InsertValue&gt;)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1699,13 +1848,18 @@ onDidInsert(callback: Callback&lt;InsertValue&gt;)
 
 
 
-#### onWillDelete12+
+### onWillDelete12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onWillDelete(callback: Callback<DeleteValue, boolean>)
 
 在将要删除时，触发该回调。
+
+> [!NOTE]
+> 点击清除按钮不触发onWillDelete回调。 onWillDelete和onDidDelete形成will/did时序模式： onWillDelete在删除操作前触发，可通过返回false拦截删除操作；返回true则允许删除，随后触发onDidDelete。 onDidDelete在删除完成后触发，无法拦截。 两者可以同时使用，onWillDelete用于拦截控制，onDidDelete用于获取删除结果。
+
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1714,6 +1868,7 @@ onWillDelete(callback: Callback<DeleteValue, boolean>)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1722,16 +1877,17 @@ onWillDelete(callback: Callback<DeleteValue, boolean>)
 
 
 
-#### onDidDelete12+
+### onDidDelete12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDidDelete(callback: Callback&lt;DeleteValue&gt;)
 
 在删除完成时，触发该回调。
 
 > [!NOTE]
-> 点击清除按钮不触发onDidDelete回调。
+> 点击清除按钮不触发onDidDelete回调。 onWillDelete和onDidDelete形成will/did时序模式： onWillDelete在删除操作前触发，可通过返回false拦截删除操作；返回true则允许删除，随后触发onDidDelete。 onDidDelete在删除完成后触发，无法拦截。 两者可以同时使用，onWillDelete用于拦截控制，onDidDelete用于获取删除结果。
 
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -1742,6 +1898,7 @@ onDidDelete(callback: Callback&lt;DeleteValue&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;DeleteValue&gt; | 是 | 在删除完成时调用的回调。 仅支持系统输入法输入的场景。 |
@@ -1749,15 +1906,18 @@ onDidDelete(callback: Callback&lt;DeleteValue&gt;)
 
 
 
-#### onWillChange15+
+### onWillChange15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onWillChange(callback: Callback<EditableTextChangeValue, boolean>)
 
 在文本内容将要发生变化时，触发该回调。
 
-onWillChange的回调时序晚于onWillInsert、onWillDelete，早于onDidInsert、onDidDelete。
+> [!NOTE]
+> onWillChange的回调时序晚于onWillInsert、onWillDelete，早于onDidInsert、onDidDelete。 onWillChange和onChange形成will/did时序模式： onWillChange在文本变更前触发，可通过返回false拦截变更；返回true则允许变更，随后触发onChange。 onChange在变更完成后触发，无法拦截。 两者可以同时使用，onWillChange用于拦截控制，onChange用于获取变更结果。
+
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
@@ -1767,6 +1927,7 @@ onWillChange的回调时序晚于onWillInsert、onWillDelete，早于onDidInsert
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback<EditableTextChangeValue, boolean> | 是 | 在文本内容将要发生变化时的回调。 返回true时，表示正常修改。返回false时，表示拦截此次触发。 |
@@ -1774,9 +1935,10 @@ onWillChange的回调时序晚于onWillInsert、onWillDelete，早于onDidInsert
 
 
 
-#### onWillAttachIME20+
+### onWillAttachIME20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onWillAttachIME(callback: Callback&lt;IMEClient&gt;)
 
@@ -1798,6 +1960,7 @@ IMEClient仅在onWillAttachIME执行期间有效，不可进行异步调用。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;IMEClient&gt; | 是 | 在搜索框将要绑定输入法前触发该回调。 |
@@ -1805,15 +1968,19 @@ IMEClient仅在onWillAttachIME执行期间有效，不可进行异步调用。
 
 
 
-#### SearchController
+## SearchController
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Search组件的控制器继承自[TextContentControllerBase](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#textcontentcontrollerbase)，涉及的接口有[getTextContentRect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#gettextcontentrect)、[getTextContentLineCount](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#gettextcontentlinecount)、[getCaretOffset](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#getcaretoffset11)、[addText](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#addtext15)、[deleteText](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#deletetext15)、[getSelection](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#getselection15)、[clearPreviewText](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#clearpreviewtext17)、[setStyledPlaceholder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#setstyledplaceholder22)、[deleteBackward](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#deletebackward23)、[scrollToVisible](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#scrolltovisible23)。
 
 
 
-#### 导入对象
+### 导入对象
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 controller: SearchController = new SearchController();
@@ -1821,9 +1988,10 @@ controller: SearchController = new SearchController();
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -1835,9 +2003,10 @@ SearchController的构造函数。
 
 
 
-#### caretPosition
+### caretPosition
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 caretPosition(value: number): void
 
@@ -1849,6 +2018,7 @@ caretPosition(value: number): void
 
 **参数:**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 从字符串开始到光标所在位置的长度。 当value<0时，按照0处理。当value>字符串长度时，按照字符串长度处理。 |
@@ -1856,9 +2026,10 @@ caretPosition(value: number): void
 
 
 
-#### stopEditing10+
+### stopEditing10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopEditing(): void
 
@@ -1872,9 +2043,10 @@ stopEditing(): void
 
 
 
-#### setTextSelection12+
+### setTextSelection12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setTextSelection(selectionStart: number, selectionEnd: number, options?: SelectionOptions): void;
 
@@ -1892,6 +2064,7 @@ setTextSelection(selectionStart: number, selectionEnd: number, options?: Selecti
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | selectionStart | number | 是 | 文本选择区域起始位置，文本框中文字的起始位置为0。 当selectionStart小于0时，按照0处理；当selectionStart大于文字最大长度时，按照文字最大长度处理。 |
@@ -1901,9 +2074,10 @@ setTextSelection(selectionStart: number, selectionEnd: number, options?: Selecti
 
 
 
-#### SearchSubmitCallback14+
+## SearchSubmitCallback14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type SearchSubmitCallback = (searchContent: string, event?: SubmitEvent) => void
 
@@ -1917,6 +2091,7 @@ type SearchSubmitCallback = (searchContent: string, event?: SubmitEvent) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | searchContent | string | 是 | 当前搜索框中输入的文本内容。 |
@@ -1925,13 +2100,17 @@ type SearchSubmitCallback = (searchContent: string, event?: SubmitEvent) => void
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（设置与获取光标位置）
+
+
+### 示例1（设置与获取光标位置）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 8开始，该示例通过[controller](#searchcontroller)实现了光标位置的设置与获取的功能。
 
@@ -1980,12 +2159,15 @@ struct SearchExample {
 ```
 
 
-![](assets/Search/file-20260514164039525-29.gif)
+![](assets/Search/file-20260514164039525-7.png)
 
 
 
 
-#### 示例2（设置搜索和删除图标）
+### 示例2（设置搜索和删除图标）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[searchButton](#searchbutton)（从API version 8开始）、[searchIcon](#searchicon10)（从API version 10开始）、[cancelButton](#cancelbutton10)（从API version 10开始）属性展示了设置搜索和删除图标的效果。
 
@@ -2031,12 +2213,15 @@ struct SearchExample {
 ```
 
 
-![](assets/Search/file-20260514164039525-3.gif)
+![](assets/Search/file-20260514164039525-8.png)
 
 
 
 
-#### 示例3（设置自定义键盘）
+### 示例3（设置自定义键盘）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[customKeyboard](#customkeyboard10)（从API version 10开始）属性分别将value中的入参类型设置为[CustomBuilder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#custombuilder8)和[ComponentContent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-componentcontent#componentcontent-1)，实现了自定义键盘的功能。
 
@@ -2111,12 +2296,15 @@ struct SearchExample {
 ```
 
 
-![](assets/Search/file-20260514164039525-4.png)
+![](assets/Search/file-20260514164039525-9.png)
 
 
 
 
-#### 示例4（设置输入法回车键类型）
+### 示例4（设置输入法回车键类型）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[enterKeyType](#enterkeytype12)（从API version 12开始）属性实现了动态切换输入法回车键的效果。
 
@@ -2149,12 +2337,15 @@ struct SearchExample {
 ```
 
 
-![](assets/Search/file-20260514164039525-5.png)
+![](assets/Search/file-20260525091220700-001.gif)
 
 
 
 
-#### 示例5（设置文本样式）
+### 示例5（设置文本样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 12开始，该示例通过[lineHeight](#lineheight12)、[letterSpacing](#letterspacing12)、[decoration](#decoration12)属性展示了不同样式的文本效果。
 
@@ -2201,12 +2392,15 @@ struct SearchExample {
 ```
 
 
-![](assets/Search/file-20260514164039525-6.gif)
+![](assets/Search/file-20260525091220700-002.gif)
 
 
 
 
-#### 示例6（设置文字特性效果）
+### 示例6（设置文字特性效果）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[fontFeature](#fontfeature12)（从API version 12开始）属性实现了文本在不同文字特性下的展示效果。
 
@@ -2234,12 +2428,15 @@ struct SearchExample {
 ```
 
 
-![](assets/Search/file-20260514164039525-7.png)
+![](assets/Search/file-20260525091220700-003.gif)
 
 
 
 
-#### 示例7（自定义键盘避让）
+### 示例7（自定义键盘避让）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[customKeyboard](#customkeyboard10)（从API version 10开始）属性配置[KeyboardOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor#keyboardoptions12)（从API version 12开始）接口实现了自定义键盘避让的效果。
 
@@ -2249,7 +2446,7 @@ struct SearchExample {
 @Component
 struct SearchExample {
   controller: SearchController = new SearchController();
-  @State inputValue: string = "";
+  @State inputValue: string = '';
   @State height1: string | number = '80%';
   @State supportAvoidance: boolean = true;
 
@@ -2267,7 +2464,7 @@ struct SearchExample {
       Grid() {
         ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, '*', 0, '#'], (item: number | string) => {
           GridItem() {
-            Button(item + "")
+            Button(item + '')
               .width(110).onClick(() => {
               this.inputValue += item;
             })
@@ -2281,22 +2478,22 @@ struct SearchExample {
   build() {
     Column() {
       Row() {
-        Button("20%")
+        Button('20%')
           .fontSize(24)
           .onClick(() => {
-            this.height1 = "20%";
+            this.height1 = '20%';
           })
-        Button("80%")
+        Button('80%')
           .fontSize(24)
           .margin({ left: 20 })
           .onClick(() => {
-            this.height1 = "80%";
+            this.height1 = '80%';
           })
       }
       .justifyContent(FlexAlign.Center)
       .alignItems(VerticalAlign.Bottom)
       .height(this.height1)
-      .width("100%")
+      .width('100%')
       .padding({ bottom: 50 })
 
       Search({ controller: this.controller, value: this.inputValue })// 绑定自定义键盘
@@ -2312,12 +2509,15 @@ struct SearchExample {
 ```
 
 
-![](assets/Search/file-20260514164039525-8.png)
+![](assets/Search/file-20260525091220700-004.gif)
 
 
 
 
-#### 示例8（设置文本自适应）
+### 示例8（设置文本自适应）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 12开始，该示例通过[minFontSize](#minfontsize12)、[maxFontSize](#maxfontsize12)属性展示了文本自适应字号的效果。
 
@@ -2346,12 +2546,15 @@ struct SearchExample {
 ```
 
 
-![](assets/Search/file-20260514164039525-9.png)
+![](assets/Search/file-20260525091220700-005.png)
 
 
 
 
-#### 示例9（支持插入和删除回调）
+### 示例9（支持插入和删除回调）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 12开始，该示例通过[onWillInsert](#onwillinsert12)、[onDidInsert](#ondidinsert12)、[onWillDelete](#onwilldelete12)、[onDidDelete](#ondiddelete12)接口实现了插入和删除的效果。从API version 15开始，通过[onWillChange](#onwillchange15)接口展示了文本内容将要发生变化时的具体信息。
 
@@ -2467,12 +2670,15 @@ struct SearchExample {
 ```
 
 
-![](assets/Search/file-20260525091220700-001.gif)
+![](assets/Search/file-20260525091220701-006.png)
 
 
 
 
-#### 示例10（文本扩展自定义菜单）
+### 示例10（文本扩展自定义菜单）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 12开始，该示例通过[editMenuOptions](#editmenuoptions12)接口实现了文本设置自定义菜单扩展项的文本内容、图标以及回调的功能，同时，可以在[onPrepareMenu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#属性-1)（从API version 20开始）回调中，进行菜单数据的设置。
 
@@ -2514,20 +2720,20 @@ struct SearchExample {
     return menuItems;
   }
   onMenuItemClick = (menuItem: TextMenuItem, textRange: TextRange) => {
-    if (menuItem.id.equals(TextMenuItemId.of("create2"))) {
-      console.info("拦截 id: create2 start:" + textRange.start + "; end:" + textRange.end);
+    if (menuItem.id.equals(TextMenuItemId.of('create2'))) {
+      console.info('拦截 id: create2 start:' + textRange.start + '; end:' + textRange.end);
       return true;
     }
-    if (menuItem.id.equals(TextMenuItemId.of("prepare1"))) {
-      console.info("拦截 id: prepare1 start:" + textRange.start + "; end:" + textRange.end);
+    if (menuItem.id.equals(TextMenuItemId.of('prepare1'))) {
+      console.info('拦截 id: prepare1 start:' + textRange.start + '; end:' + textRange.end);
       return true;
     }
     if (menuItem.id.equals(TextMenuItemId.COPY)) {
-      console.info("拦截 COPY start:" + textRange.start + "; end:" + textRange.end);
+      console.info('拦截 id: COPY start:' + textRange.start + '; end:' + textRange.end);
       return true;
     }
     if (menuItem.id.equals(TextMenuItemId.SELECT_ALL)) {
-      console.info("不拦截 SELECT_ALL start:" + textRange.start + "; end:" + textRange.end);
+      console.info('不拦截 id: SELECT_ALL start:' + textRange.start + '; end:' + textRange.end);
       return false;
     }
     return false;
@@ -2560,19 +2766,22 @@ struct SearchExample {
           this.endIndex = selectionEnd;
         })
     }
-    .width("90%")
-    .margin("5%")
+    .width('90%')
+    .margin('5%')
   }
 }
 ```
 
 
-![](assets/Search/file-20260525091220700-002.gif)
+![](assets/Search/file-20260525091220701-007.gif)
 
 
 
 
-#### 示例11（设置symbol类型清除按钮）
+### 示例11（设置symbol类型清除按钮）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 10开始，该示例通过[searchIcon](#searchicon10)、[cancelButton](#cancelbutton10)属性展示了自定义右侧symbol类型清除按钮样式的效果。
 
@@ -2611,12 +2820,15 @@ struct SearchExample {
 ```
 
 
-![](assets/Search/file-20260525091220700-003.gif)
+![](assets/Search/file-20260525091220701-008.png)
 
 
 
 
-#### 示例12（设置文本是否可复制）
+### 示例12（设置文本是否可复制）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[copyOption](#copyoption9)、[onWillCopy](#onwillcopy)、[onWillCut](#onwillcut)接口展示如何设置文本复制、如何拦截系统复制、如何拦截系统剪切。
 
@@ -2634,8 +2846,8 @@ struct SearchExample {
 
   build() {
     Column({ space: 3 }) {
-      Text("copy: " + this.copyValue)
-      Text("cut:" + this.cutValue)
+      Text('copy: ' + this.copyValue)
+      Text('cut:' + this.cutValue)
       Search({ value: 'Search CopyOption:None', controller: this.controller })
         .width('95%')
         .height(40)
@@ -2684,12 +2896,15 @@ struct SearchExample {
 ```
 
 
-![](assets/Search/file-20260525091220700-004.gif)
+![](assets/Search/file-20260525091220701-009.png)
 
 
 
 
-#### 示例13（设置文本水平对齐/光标样式/选中背景色）
+### 示例13（设置文本水平对齐/光标样式/选中背景色）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[textAlign](#textalign9)（从API version 9开始）、[caretStyle](#caretstyle10)（从API version 10开始）、[selectedBackgroundColor](#selectedbackgroundcolor12)（从API version 12开始）属性展示如何设置文本的水平对齐、光标样式和选中背景色。
 
@@ -2718,12 +2933,15 @@ struct SearchExample {
 ```
 
 
-![](assets/Search/file-20260525091220700-005.png)
+![](assets/Search/file-20260525091220701-010.png)
 
 
 
 
-#### 示例14（设置默认获焦并拉起软键盘）
+### 示例14（设置默认获焦并拉起软键盘）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[defaultFocus](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-focus#defaultfocus9)（从API version 9开始）、[enableKeyboardOnFocus](#enablekeyboardonfocus10)（从API version 10开始）属性展示如何设置默认获焦并拉起软键盘。
 
@@ -2757,12 +2975,15 @@ struct SearchExample {
 ```
 
 
-![](assets/Search/file-20260525091220701-006.png)
+![](assets/Search/file-20260525091220702-011.png)
 
 
 
 
-#### 示例15（关闭系统文本选择菜单）
+### 示例15（关闭系统文本选择菜单）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[selectionMenuHidden](#selectionmenuhidden10)（从API version 10开始）属性展示如何关闭系统文本选择菜单。
 
@@ -2789,12 +3010,15 @@ struct SearchExample {
 ```
 
 
-![](assets/Search/file-20260525091220701-007.gif)
+![](assets/Search/file-20260525091220702-012.gif)
 
 
 
 
-#### 示例16（对输入的文本进行过滤）
+### 示例16（对输入的文本进行过滤）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 12开始，该示例通过[inputFilter](#inputfilter12)属性展示如何对输入的文本进行内容的过滤，以限制输入内容。
 
@@ -2826,12 +3050,15 @@ struct SearchExample {
 ```
 
 
-![](assets/Search/file-20260525091220701-008.png)
+![](assets/Search/file-20260525091220702-013.gif)
 
 
 
 
-#### 示例17（设置选中指定区域的文本内容）
+### 示例17（设置选中指定区域的文本内容）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[setTextSelection](#settextselection12)（从API version 12开始）方法展示如何设置选中指定区域的文本内容以及菜单的显隐策略。
 
@@ -2871,12 +3098,15 @@ struct SearchExample {
 ```
 
 
-![](assets/Search/file-20260525091220701-009.png)
+![](assets/Search/file-20260525091220702-014.gif)
 
 
 
 
-#### 示例18（设置文本滚动事件）
+### 示例18（设置文本滚动事件）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 10开始，该示例通过[onContentScroll](#oncontentscroll10)事件展示如何设置文本滚动事件的回调。
 
@@ -2908,12 +3138,15 @@ struct SearchExample {
 ```
 
 
-![](assets/Search/file-20260525091220701-010.png)
+![](assets/Search/file-20260525091220702-015.gif)
 
 
 
 
-#### 示例19（设置最小字体范围与最大字体范围）
+### 示例19（设置最小字体范围与最大字体范围）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 18开始，该示例通过[minFontScale](#minfontscale18)、[maxFontScale](#maxfontscale18)设置字体显示最小与最大范围。调整系统字体大小后，文本字体大小不会超过[minFontScale](#minfontscale18)、[maxFontScale](#maxfontscale18)设置的范围。如下示例展示了Search组件在不同的字体大小限制条件下，调整系统字体后的放大缩小效果。
 
@@ -2958,10 +3191,10 @@ struct SearchExample {
   build() {
     Column() {
       Column() {
-        Text("系统字体变大变小，变大变小aaaaaaaAAAAAA")
+        Text('系统字体变大变小，变大变小aaaaaaaAAAAAA')
         Blank(30)
-        Text("minFontScale = " + this.minFontScale)
-        Text("maxFontScale = " + this.maxFontScale)
+        Text('minFontScale = ' + this.minFontScale)
+        Text('maxFontScale = ' + this.maxFontScale)
         Search({
           placeholder: 'The text area can hold an unlimited amount of text. input your word...',
         })
@@ -2970,8 +3203,8 @@ struct SearchExample {
 
         Blank(30)
 
-        Text("minFontScale = " + this.minFontScale2)
-        Text("maxFontScale = " + this.maxFontScale2)
+        Text('minFontScale = ' + this.minFontScale2)
+        Text('maxFontScale = ' + this.maxFontScale2)
         Search({
           placeholder: 'The text area can hold an unlimited amount of text. input your word...',
         })
@@ -2984,14 +3217,17 @@ struct SearchExample {
 ```
 
 
-![](assets/Search/file-20260525091220702-011.png)
+![](assets/Search/file-20260525091220702-016.gif)
  
-![](assets/Search/file-20260525091220702-012.gif)
+![](assets/Search/file-20260525091220702-017.png)
 
 
 
 
-#### 示例20（设置文本描边）
+### 示例20（设置文本描边）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 20开始，该示例通过[strokeWidth](#strokewidth20)和[strokeColor](#strokecolor20)属性设置文本的描边宽度及颜色。
 
@@ -3041,12 +3277,15 @@ struct SearchExample {
 ```
 
 
-![](assets/Search/file-20260525091220702-013.gif)
+![](assets/Search/file-20260525091220702-018.gif)
 
 
 
 
-#### 示例21（设置中西文自动间距）
+### 示例21（设置中西文自动间距）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 20开始，该示例通过[enableAutoSpacing](#enableautospacing20)属性设置中西文自动间距。
 
@@ -3072,12 +3311,15 @@ struct SearchExample {
 ```
 
 
-![](assets/Search/file-20260525091220702-014.gif)
+![](assets/Search/file-20260525091220703-019.png)
 
 
 
 
-#### 示例22（设置placeholder富文本样式）
+### 示例22（设置placeholder富文本样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 22开始，该示例通过[setStyledPlaceholder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#setstyledplaceholder22)接口设置placeholder富文本样式。
 
@@ -3089,7 +3331,7 @@ import { LengthMetrics } from '@kit.ArkUI';
 @Component
 struct SearchExample {
   styledString: MutableStyledString =
-    new MutableStyledString("输入框富文本：文本",
+    new MutableStyledString('输入框富文本：文本',
       [
         {
           start: 0,
@@ -3130,7 +3372,7 @@ struct SearchExample {
   build() {
     Scroll() {
       Column() {
-        Text("Search placeholder富文本")
+        Text('Search placeholder富文本')
           .fontSize(8)
         Search({
           controller: this.controller
@@ -3145,12 +3387,15 @@ struct SearchExample {
 ```
 
 
-![](assets/Search/file-20260525091220702-015.gif)
+![](assets/Search/file-20260525091220703-020.png)
 
 
 
 
-#### 示例23（设置输入法扩展信息）
+### 示例23（设置输入法扩展信息）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 22开始，该示例通过[IMEClient](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#imeclient20对象说明)的setExtraConfig设置输入法扩展信息。
 
@@ -3178,7 +3423,10 @@ struct SearchExample {
 
 
 
-#### 示例24（设置输入框分割线颜色）
+### 示例24（设置输入框分割线颜色）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 23开始，该示例通过[dividerColor](#dividercolor23)接口设置输入框分割线颜色。
 
@@ -3198,16 +3446,16 @@ struct SearchExample {
   @State colorType: ColorMetrics[] =
     [this.colorTypeRGB, this.colorTypeARGB, this.colorTypeColorWithSpace, this.colorTypeRGBA, this.colorTypeRes];
   @State colorTypeName: string[] =
-    ["colorTypeRGB", "colorTypeARGB", "colorTypeColorWithSpace", "colorTypeRGBA", "colorTypeRes"];
+    ['colorTypeRGB', 'colorTypeARGB', 'colorTypeColorWithSpace', 'colorTypeRGBA', 'colorTypeRes'];
   @State count: number = 0;
 
   build() {
     Column() {
       Blank(30)
-      Search({ value: "Input search text" })
-        .searchButton("SEARCH", { fontSize: '14vp' })
+      Search({ value: 'Input search text' })
+        .searchButton('SEARCH', { fontSize: '14vp' })
         .dividerColor(this.colorType[this.count])
-      Button("Change ColorType: " + this.colorTypeName[this.count]).onClick(() => {
+      Button('Change ColorType: ' + this.colorTypeName[this.count]).onClick(() => {
         this.count = (this.count + 1) % (this.colorType.length)
       })
         .fontSize('14vp')
@@ -3218,12 +3466,15 @@ struct SearchExample {
 ```
 
 
-![](assets/Search/file-20260525091220702-016.gif)
+![](assets/Search/file-20260525091220703-021.png)
 
 
 
 
-#### 示例25（设置行首标点压缩）
+### 示例25（设置行首标点压缩）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[compressLeadingPunctuation](#compressleadingpunctuation23)接口设置行首标点压缩，左侧有间距的标点符号位于行首时，标点会直接压缩间距至左侧边界。
 
@@ -3236,12 +3487,12 @@ struct SearchExample {
 struct Index {
   build() {
     Column(){
-      Search({ value: "\u300C行首标点压缩打开" })
+      Search({ value: '\u300C行首标点压缩打开' })
         .compressLeadingPunctuation(true)
         .margin(5)
         .textFont({size:30})
         .width("90%")
-      Search({ value: "\u300C行首标点压缩关闭" })
+      Search({ value: '\u300C行首标点压缩关闭' })
         .compressLeadingPunctuation(false)
         .textFont({size:30})
         .width("90%")
@@ -3251,12 +3502,15 @@ struct Index {
 ```
 
 
-![](assets/Search/file-20260525091220702-017.png)
+![](assets/Search/file-20260525091220703-022.png)
 
 
 
 
-#### 示例26（设置自适应间距）
+### 示例26（设置自适应间距）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[includeFontPadding](#includefontpadding23)接口增加首行尾行间距和[fallbackLineSpacing](#fallbacklinespacing23)接口设置自适应行间距。
 
@@ -3322,12 +3576,15 @@ struct Index {
 ```
 
 
-![](assets/Search/file-20260525091220702-018.gif)
+![](assets/Search/file-20260525091220703-023.jpg)
 
 
 
 
-#### 示例27（设置文本拖拽时的背板样式）
+### 示例27（设置文本拖拽时的背板样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[selectedDragPreviewStyle](#selecteddragpreviewstyle23)接口设置文本拖拽时的背板样式。
 
@@ -3353,12 +3610,15 @@ struct SearchTest {
 ```
 
 
-![](assets/Search/file-20260525091220703-019.png)
+![](assets/Search/file-20260525091220703-024.jpg)
 
 
 
 
-#### 示例28（删除文本框内的最后一个字符）
+### 示例28（删除文本框内的最后一个字符）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过调用[deleteBackward](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#deletebackward23)接口删除文本框内最后一个字符。
 
@@ -3383,12 +3643,15 @@ struct Page {
 ```
 
 
-![](assets/Search/file-20260525091220703-020.png)
+![](assets/Search/file-20260525091220703-025.gif)
 
 
 
 
-#### 示例29（设置文本排版方向）
+### 示例29（设置文本排版方向）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[textDirection](#textdirection23)接口设置文本排版方向。
 
@@ -3431,12 +3694,15 @@ struct SearchExample {
 ```
 
 
-![](assets/Search/file-20260525091220703-021.png)
+![](assets/Search/file-20260525091220704-026.gif)
 
 
 
 
-#### 示例30（将指定范围的文字滚动到可视区内）
+### 示例30（将指定范围的文字滚动到可视区内）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例通过[scrollToVisible](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#scrolltovisible23)将可视区外的文本滚动到可视区内。
 
@@ -3455,7 +3721,7 @@ struct SearchExample {
       Search({ value: this.text, controller: this.controller })
         .width(336)
         .height(56)
-      Button("滚动文本到可视区").onClick(()=> {
+      Button('滚动文本到可视区').onClick(()=> {
         this.controller.scrollToVisible({ start: 22, end: 30})
       })
     }.width('100%').height('100%').backgroundColor('#F1F3F5')
@@ -3464,12 +3730,15 @@ struct SearchExample {
 ```
 
 
-![](assets/Search/file-20260525091220703-022.png)
+![](assets/Search/file-20260525091220704-027.png)
 
 
 
 
-#### 示例31（设置文本着色器效果）
+### 示例31（设置文本着色器效果）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[shaderStyle](#shaderstyle)接口实现对Search组件内文本着色效果。
 
@@ -3538,12 +3807,15 @@ struct ShaderColorStyle {
 ```
 
 
-![](assets/Search/file-20260525091220703-023.jpg)
+![](assets/Search/file-20260525091220704-028.gif)
 
 
 
 
-#### 示例32（设置文本选择的AI菜单）
+### 示例32（设置文本选择的AI菜单）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[enableSelectedDataDetector](#enableselecteddatadetector22)，配置文本选择AI菜单功能。
 
@@ -3571,4 +3843,4 @@ struct SearchExample {
 ```
 
 
-![](assets/Search/file-20260525091220703-024.jpg)
+![](assets/Search/file-20260525091220704-029.png)

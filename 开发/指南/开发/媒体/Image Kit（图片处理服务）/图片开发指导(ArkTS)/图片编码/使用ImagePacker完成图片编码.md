@@ -1,6 +1,6 @@
 # 使用ImagePacker完成图片编码
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-encoding
 
@@ -13,13 +13,13 @@
 从API版本26.0.0开始，支持使用[PackBinaryImageToTiffFile](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-imagepacker#packbinaryimagetotifffile)和[PackBinaryImageToTiffData](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-imagepacker#packbinaryimagetotiffdata)将二值图像数据编码为TIFF格式。
 
 
-#### 开发步骤
+## 开发步骤
 
 图片编码相关API的详细介绍请参见[ImagePacker](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-imagepacker)。
 
 
 
-#### 图片编码进文件流
+### 图片编码进文件流
 1. 导入相关模块包。
 
   
@@ -161,7 +161,7 @@ async function packToFileFromImageSource(context : Context, imageSource : image.
 
   
 
-  #### 示例代码
+  ## 示例代码
 
   
 [图片压缩](https://gitcode.com/HarmonyOS_Samples/image-compression)

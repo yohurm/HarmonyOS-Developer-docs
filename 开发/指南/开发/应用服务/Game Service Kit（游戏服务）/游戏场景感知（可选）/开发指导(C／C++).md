@@ -1,6 +1,6 @@
 # 开发指导(C/C++)
 
-更新时间：2026-04-30 02:41:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-gameperformance-access-procedure-c
 
@@ -11,7 +11,7 @@
 
 
 
-#### 业务流程
+## 业务流程
 
 
 ![](assets/开发指导(C／C++)/file-20260514131909971-0.png)
@@ -44,9 +44,10 @@
 
 
 
-#### 接口说明
+## 接口说明
 
 具体API说明详见[接口文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservice-game-performance)。
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -66,11 +67,11 @@
 
 
 
-#### 接入步骤
+## 接入步骤
 
 
 
-#### 在 CMake 脚本中链接动态库
+### 在 CMake 脚本中链接动态库
 
 ```text
 target_include_directories(entry PUBLIC ${HMOS_SDK_NATIVE}/sysroot/usr/include)
@@ -80,7 +81,7 @@ target_link_libraries(entry PUBLIC libgame_performance.z.so)
 
 
 
-#### 导入模块
+### 导入模块
 
 导入Game Service Kit。
 
@@ -91,7 +92,7 @@ target_link_libraries(entry PUBLIC libgame_performance.z.so)
 
 
 
-#### 初始化
+### 初始化
 
 导入相关模块后，需先调用[HMS_GamePerformance_Init](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservice-game-performance#hms_gameperformance_init)接口对游戏场景感知进行初始化。
 
@@ -125,7 +126,7 @@ HMS_GamePerformance_DestroyInitParameters(&initParameters);
 
 
 
-#### 注册温度变化回调
+### 注册温度变化回调
 
 调用[HMS_GamePerformance_RegisterThermalLevelChangedCallback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservice-game-performance#hms_gameperformance_registerthermallevelchangedcallback)接口可以注册温度变化回调，获取设备状态信息的通知，包括温度相关信息、GPU负载和CPU负载信息。
 
@@ -206,7 +207,7 @@ void registerCallback() {
 
 
 
-#### 取消注册指定温度变化回调
+### 取消注册指定温度变化回调
 
 调用[HMS_GamePerformance_UnregisterThermalLevelChangedCallback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservice-game-performance#hms_gameperformance_unregisterthermallevelchangedcallback)接口可以取消注册指定温度变化回调。
 
@@ -220,7 +221,7 @@ if (ret != GAME_PERFORMANCE_SUCCESS) {
 
 
 
-#### 取消注册所有温度变化回调
+### 取消注册所有温度变化回调
 
 可以通过调用[HMS_GamePerformance_UnregisterAllThermalLevelChangedCallbacks](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservice-game-performance#hms_gameperformance_unregisterallthermallevelchangedcallbacks)接口可以取消注册所有温度变化回调。
 
@@ -234,7 +235,7 @@ if (ret != GAME_PERFORMANCE_SUCCESS) {
 
 
 
-#### 上报游戏包信息
+### 上报游戏包信息
 
 初始化成功后，可以通过调用[HMS_GamePerformance_UpdatePackageInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservice-game-performance#hms_gameperformance_updatepackageinfo)接口上报游戏包信息。
 
@@ -264,7 +265,7 @@ HMS_GamePerformance_DestroyPackageInfo(&packageInfo);
 
 
 
-#### 上报游戏配置信息
+### 上报游戏配置信息
 
 初始化成功后，可以通过调用[HMS_GamePerformance_UpdateConfigInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservice-game-performance#hms_gameperformance_updateconfiginfo)接口上报游戏配置信息。
 
@@ -299,7 +300,7 @@ HMS_GamePerformance_DestroyConfigInfo(&configInfo);
 
 
 
-#### 上报游戏场景信息
+### 上报游戏场景信息
 
 初始化成功后，可以通过调用[HMS_GamePerformance_UpdateSceneInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservice-game-performance#hms_gameperformance_updatesceneinfo)接口上报游戏场景信息。
 
@@ -344,7 +345,7 @@ HMS_GamePerformance_DestroySceneInfo(&sceneInfo);
 
 
 
-#### 上报游戏网络信息
+### 上报游戏网络信息
 
 初始化成功后，可以通过调用[HMS_GamePerformance_UpdateNetInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservice-game-performance#hms_gameperformance_updatenetinfo)接口上报游戏网络信息。
 
@@ -375,7 +376,7 @@ HMS_GamePerformance_DestroyNetInfo(&netInfo);
 
 
 
-#### 上报游戏玩家信息
+### 上报游戏玩家信息
 
 初始化成功后，可以通过调用[HMS_GamePerformance_UpdatePlayerInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservice-game-performance#hms_gameperformance_updateplayerinfo)接口上报游戏玩家信息。
 
@@ -401,7 +402,7 @@ HMS_GamePerformance_DestroyPlayerInfo(&playerInfo);
 
 
 
-#### 查询GPU性能信息
+### 查询GPU性能信息
 
 除订阅设备状态变化的方式外，也可以通过调用[HMS_GamePerformance_QueryGpuInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservice-game-performance#hms_gameperformance_querygpuinfo)接口主动查询设备GPU性能信息。
 
@@ -433,7 +434,7 @@ HMS_GamePerformance_DestroyGpuInfo(&gpuInfo);
 
 
 
-#### 查询CPU性能信息
+### 查询CPU性能信息
 
 除订阅设备状态变化的方式外，也可以通过调用[HMS_GamePerformance_QueryCpuInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservice-game-performance#hms_gameperformance_querycpuinfo)接口主动查询设备CPU性能信息。
 
@@ -456,7 +457,7 @@ HMS_GamePerformance_DestroyCpuInfo(&cpuInfo);
 
 
 
-#### 查询温度相关信息
+### 查询温度相关信息
 
 除订阅设备状态变化的方式外，也可以通过调用[HMS_GamePerformance_QueryThermalInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservice-game-performance#hms_gameperformance_querythermalinfo)接口主动查询设备温控档位、温升趋势、当前的工作电流、系统建议的工作电流和系统建议的最大工作电流。
 

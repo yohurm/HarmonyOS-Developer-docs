@@ -1,9 +1,9 @@
 # OffscreenCanvas
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-offscreencanvas
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 OffscreenCanvas组件用于绘制自定义图形。
 
@@ -14,17 +14,19 @@ OffscreenCanvas组件用于绘制自定义图形。
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 不支持。
 
 
 
-#### constructor
+## constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(width: number, height: number)
 
@@ -38,6 +40,7 @@ constructor(width: number, height: number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | width | number | 是 | OffscreenCanvas组件的宽度。 异常值NaN和Infinity按无效值处理，负数按0处理。 单位：vp。 |
@@ -46,9 +49,10 @@ constructor(width: number, height: number)
 
 
 
-#### constructor12+
+## constructor12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(width: number, height: number, unit: LengthMetricsUnit)
 
@@ -64,6 +68,7 @@ constructor(width: number, height: number, unit: LengthMetricsUnit)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | width | number | 是 | OffscreenCanvas组件的宽度。 异常值NaN和Infinity按无效值处理，负数按0处理。 单位由unit参数决定，默认单位：vp。 |
@@ -73,9 +78,10 @@ constructor(width: number, height: number, unit: LengthMetricsUnit)
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -85,6 +91,7 @@ constructor(width: number, height: number, unit: LengthMetricsUnit)
 
 OffscreenCanvas支持以下属性：
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | width | number | 否 | 否 | OffscreenCanvas组件的宽度。 异常值NaN和Infinity按无效值处理，负数按0处理。 单位：vp。 |
@@ -93,7 +100,10 @@ OffscreenCanvas支持以下属性：
 
 
 
-#### width
+### width
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **示例：**
 
@@ -135,7 +145,10 @@ struct OffscreenCanvasPage {
 
 
 
-#### height
+### height
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **示例：**
 
@@ -177,15 +190,17 @@ struct OffscreenCanvasPage {
 
 
 
-#### 方法
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 方法
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### transferToImageBitmap
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### transferToImageBitmap
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 transferToImageBitmap(): ImageBitmap
 
@@ -202,6 +217,7 @@ transferToImageBitmap(): ImageBitmap
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -250,9 +266,10 @@ struct OffscreenCanvasPage {
 
 
 
-#### getContext10+
+### getContext10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getContext(contextType: "2d", options?: RenderingContextSettings): OffscreenCanvasRenderingContext2D
 
@@ -270,6 +287,7 @@ getContext(contextType: "2d", options?: RenderingContextSettings): OffscreenCanv
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | contextType | string | 是 | OffscreenCanvas组件绘图上下文的类型，当前仅支持"2d"类型。 "2d"：创建一个表示二维渲染上下文的OffscreenCanvasRenderingContext2D对象。 异常值undefined和null按无效值处理，接口返回undefined。 |
@@ -277,6 +295,7 @@ getContext(contextType: "2d", options?: RenderingContextSettings): OffscreenCanv
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -338,9 +357,10 @@ struct OffscreenCanvasExamplePage {
 
 
 
-#### OffscreenCanvas支持并发线程绘制
+## OffscreenCanvas支持并发线程绘制
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 11开始，当应用创建[Worker线程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/worker-introduction)，支持使用postMessage将OffscreenCanvas实例传到Worker中进行绘制，并使用onmessage接收Worker线程发送的ImageBitmap对象进行显示。
 

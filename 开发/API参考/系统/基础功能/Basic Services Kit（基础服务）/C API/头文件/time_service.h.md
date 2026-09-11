@@ -1,13 +1,14 @@
 # time_service.h
 
-更新时间：2026-08-04 06:06:24
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-time-service-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明获取时间时区信息的API。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | TimeService_ErrCode | TimeService_ErrCode | 枚举错误码。 |
@@ -40,10 +44,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | TimeService_ErrCode OH_TimeService_GetTimeZone(char *timeZone, uint32_t len) | 获取当前系统时区。 |
@@ -51,15 +57,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### TimeService_ErrCode
+### TimeService_ErrCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum TimeService_ErrCode
@@ -71,6 +79,7 @@ enum TimeService_ErrCode
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | TIMESERVICE_ERR_OK = 0 | 成功。 |
@@ -80,15 +89,17 @@ enum TimeService_ErrCode
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_TimeService_GetTimeZone()
+### OH_TimeService_GetTimeZone()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 TimeService_ErrCode OH_TimeService_GetTimeZone(char *timeZone, uint32_t len)
@@ -104,6 +115,7 @@ TimeService_ErrCode OH_TimeService_GetTimeZone(char *timeZone, uint32_t len)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | char *timeZone | 时区ID字符数组，成功时写入当前系统时区ID字符串，当timeZone不为NULL且操作失败时写入空字符串，字符串以'\0'结尾。 |
@@ -112,6 +124,7 @@ TimeService_ErrCode OH_TimeService_GetTimeZone(char *timeZone, uint32_t len)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | TimeService_ErrCode | 返回TIMESERVICE_ERR_OK表示成功。 返回TIMESERVICE_ERR_INTERNAL_ERROR表示获取系统参数失败，请稍后重试，若问题持续存在请检查系统服务状态。 返回TIMESERVICE_ERR_INVALID_PARAMETER表示timeZone为NULL指针或时区ID（不包括结束字符（'\0'））的大小大于或等于len，请确保timeZone为有效指针且len大于时区ID的实际长度。 |

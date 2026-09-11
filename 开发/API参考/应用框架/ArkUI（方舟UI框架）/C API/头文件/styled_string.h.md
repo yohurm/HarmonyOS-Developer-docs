@@ -1,13 +1,14 @@
 # styled_string.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-styled-string-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 在Native侧定义[ArkUI_NodeType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-node-h#arkui_nodetype)为ARKUI_NODE_TEXT的组件的文本样式和文本布局管理器。提供丰富的文本样式设置能力，包括字体样式（字体颜色、大小、粗细、风格）、文本装饰线、文本阴影、基线偏移、字符间距、行高、行间距等；支持图片、超链接、自定义绘制等特殊内容嵌入；提供段落级别的布局管理，包括对齐方式、缩进、段落间距等；支持文本手势交互能力，如点击、长按、触摸事件。适用于需要丰富文本样式展示、复杂文本布局、图文混排、文本交互等场景。
 
@@ -25,15 +26,18 @@
 
 
 
-#### 汇总
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 汇总
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 结构体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -59,28 +63,33 @@
 
 
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_ArkUI_StyledStringKey | OH_ArkUI_StyledStringKey | 属性字符串的样式类型枚举。 |
 | OH_ArkUI_SuperscriptStyle | OH_ArkUI_SuperscriptStyle | 定义文本上下角标样式枚举。 |
+| OH_ArkUI_TextEncoding | OH_ArkUI_TextEncoding | 文本布局查询接口支持的文本编码类型。 |
 
 
 
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 描述 |
 | --- | --- |
 | ArkUI_StyledString* OH_ArkUI_StyledString_Create(OH_Drawing_TypographyStyle* style, OH_Drawing_FontCollection* collection) | 创建指向ArkUI_StyledString对象的指针。 |
 | void OH_ArkUI_StyledString_Destroy(ArkUI_StyledString* handle) | 释放ArkUI_StyledString对象占用的内存。 |
 | void OH_ArkUI_StyledString_PushTextStyle(ArkUI_StyledString* handle, OH_Drawing_TextStyle* style) | 将新的排版风格设置到当前格式化字符串样式栈顶。 |
-| void OH_ArkUI_StyledString_AddText(ArkUI_StyledString* handle, const char* content) | 基于当前格式化字符串样式设置对应的文本内容。 |
+| void OH_ArkUI_StyledString_AddText(ArkUI_StyledString* handle, const char* content) | 基于当前格式化字符串样式添加对应的文本内容。 |
 | void OH_ArkUI_StyledString_PopTextStyle(ArkUI_StyledString* handle) | 将当前格式化字符串对象中栈顶样式出栈。 |
 | OH_Drawing_Typography* OH_ArkUI_StyledString_CreateTypography(ArkUI_StyledString* handle) | 基于格式化字符串对象创建指向OH_Drawing_Typography对象的指针，用于提前进行文本测算排版。OH_Drawing_Typography对象的生命周期由应用管理，当应用销毁该对象时，应同步调用NODE_TEXT_CONTENT_WITH_STYLED_STRING对应的reset方法进行置空，避免野指针崩溃风险。 |
 | void OH_ArkUI_StyledString_AddPlaceholder(ArkUI_StyledString* handle, OH_Drawing_PlaceholderSpan* placeholder) | 向格式化字符串中添加占位符。 |
@@ -304,6 +313,9 @@
 | ArkUI_ErrorCode OH_ArkUI_TextLayoutManager_GetCharacterPositionAtCoordinate(ArkUI_TextLayoutManager* layoutManager, double dx, double dy, OH_Drawing_PositionAndAffinity** outPos) | 获取距离指定坐标最近的字符的位置信息。与OH_ArkUI_TextLayoutManager_GetGlyphPositionAtCoordinate的区别：此方法返回字符级别的位置信息，适用于文本编辑、光标定位等基于字符编码的场景；而GetGlyphPositionAtCoordinate返回字形级别的位置信息，适用于渲染相关的精确定位场景。 |
 | ArkUI_ErrorCode OH_ArkUI_TextLayoutManager_GetGlyphRangeForCharacterRange(ArkUI_TextLayoutManager* layoutManager, OH_Drawing_Range* charRange, OH_Drawing_Range** outGlyphRange, OH_Drawing_Range** outActualCharRange) | 获取由指定字符范围所生成的字形范围。 |
 | ArkUI_ErrorCode OH_ArkUI_TextLayoutManager_GetCharacterRangeForGlyphRange(ArkUI_TextLayoutManager* layoutManager, OH_Drawing_Range* glyphRange, OH_Drawing_Range** outCharRange, OH_Drawing_Range** outActualGlyphRange) | 获取由指定字形范围所生成的字符范围。 |
+| ArkUI_ErrorCode OH_ArkUI_TextLayoutManager_GetCharacterPositionAtCoordinateWithEncoding(ArkUI_TextLayoutManager* layoutManager, double dx, double dy, OH_ArkUI_TextEncoding encoding, OH_Drawing_PositionAndAffinity** outPos) | 根据指定编码类型，获取距离指定坐标最近的字符位置信息。 |
+| ArkUI_ErrorCode OH_ArkUI_TextLayoutManager_GetGlyphRangeForCharacterRangeWithEncoding(ArkUI_TextLayoutManager* layoutManager, OH_Drawing_Range* charRange, OH_ArkUI_TextEncoding encoding, OH_Drawing_Range** outGlyphRange, OH_Drawing_Range** outActualCharRange) | 根据指定编码类型和文本字符范围，获取字形范围以及实际的字符范围。 |
+| ArkUI_ErrorCode OH_ArkUI_TextLayoutManager_GetCharacterRangeForGlyphRangeWithEncoding(ArkUI_TextLayoutManager* layoutManager, OH_Drawing_Range* glyphRange, OH_ArkUI_TextEncoding encoding, OH_Drawing_Range** outCharRange, OH_Drawing_Range** outActualGlyphRange) | 根据指定编码类型和文本字形范围，获取字符范围以及实际的字形范围。 |
 | ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetLinearGradient(OH_ArkUI_ParagraphStyle* paragraphStyle, const OH_ArkUI_LinearGradientOptions* linearGradient) | 设置段落样式的线性渐变。 |
 | ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetLinearGradient(const OH_ArkUI_ParagraphStyle* paragraphStyle, OH_ArkUI_LinearGradientOptions* linearGradient) | 获取段落样式的线性渐变。 |
 | ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetRadialGradient(OH_ArkUI_ParagraphStyle* paragraphStyle, const OH_ArkUI_RadialGradientOptions* radialGradient) | 设置段落样式的径向渐变。 |
@@ -314,15 +326,17 @@
 
 
 
-#### 枚举类型说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 枚举类型说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### OH_ArkUI_StyledStringKey
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### OH_ArkUI_StyledStringKey
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_ArkUI_StyledStringKey
@@ -333,6 +347,7 @@ enum OH_ArkUI_StyledStringKey
 属性字符串的样式类型枚举。
 
 **起始版本：** 24
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -355,9 +370,10 @@ enum OH_ArkUI_StyledStringKey
 
 
 
-#### OH_ArkUI_SuperscriptStyle
+### OH_ArkUI_SuperscriptStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_ArkUI_SuperscriptStyle
@@ -369,6 +385,7 @@ enum OH_ArkUI_SuperscriptStyle
 
 **起始版本：** 24
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_ARKUI_SUPERSCRIPTSTYLE_NORMAL = 0 | 普通文本样式，适用于不需要上下标效果的常规文本场景。 |
@@ -378,15 +395,41 @@ enum OH_ArkUI_SuperscriptStyle
 
 
 
-#### 函数说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+### OH_ArkUI_TextEncoding
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### OH_ArkUI_StyledString_Create()
+```text
+enum OH_ArkUI_TextEncoding
+```
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**描述**
+
+文本布局查询接口支持的文本编码类型。
+
+**起始版本：** 26.0.0
+
+
+| 枚举项 | 描述 |
+| --- | --- |
+| OH_ARKUI_TEXT_ENCODING_UTF8 = 0 | UTF-8编码。字符位置或字符范围按UTF-8字节偏移量计算。 |
+| OH_ARKUI_TEXT_ENCODING_UTF16 = 1 | UTF-16编码。字符位置或字符范围按UTF-16码元偏移量计算。 |
+
+
+
+
+## 函数说明
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+
+
+### OH_ArkUI_StyledString_Create()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_StyledString* OH_ArkUI_StyledString_Create(OH_Drawing_TypographyStyle* style, OH_Drawing_FontCollection* collection)
@@ -404,6 +447,7 @@ ArkUI_StyledString* OH_ArkUI_StyledString_Create(OH_Drawing_TypographyStyle* sty
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_TypographyStyle* style | 指向OH_Drawing_TypographyStyle的指针，由OH_Drawing_CreateTypographyStyle获取。 |
@@ -412,6 +456,7 @@ ArkUI_StyledString* OH_ArkUI_StyledString_Create(OH_Drawing_TypographyStyle* sty
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_StyledString* | 创建指向ArkUI_StyledString对象的指针。如果返回空指针，表示创建失败，可能原因包括地址空间已满或参数异常（如style、collection为空指针）。 |
@@ -419,9 +464,10 @@ ArkUI_StyledString* OH_ArkUI_StyledString_Create(OH_Drawing_TypographyStyle* sty
 
 
 
-#### OH_ArkUI_StyledString_Destroy()
+### OH_ArkUI_StyledString_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_StyledString_Destroy(ArkUI_StyledString* handle)
@@ -435,6 +481,7 @@ void OH_ArkUI_StyledString_Destroy(ArkUI_StyledString* handle)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_StyledString* handle | 指向ArkUI_StyledString对象的指针。 |
@@ -442,9 +489,10 @@ void OH_ArkUI_StyledString_Destroy(ArkUI_StyledString* handle)
 
 
 
-#### OH_ArkUI_StyledString_PushTextStyle()
+### OH_ArkUI_StyledString_PushTextStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_StyledString_PushTextStyle(ArkUI_StyledString* handle, OH_Drawing_TextStyle* style)
@@ -462,6 +510,7 @@ void OH_ArkUI_StyledString_PushTextStyle(ArkUI_StyledString* handle, OH_Drawing_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_StyledString* handle | 指向ArkUI_StyledString对象的指针。 |
@@ -470,9 +519,10 @@ void OH_ArkUI_StyledString_PushTextStyle(ArkUI_StyledString* handle, OH_Drawing_
 
 
 
-#### OH_ArkUI_StyledString_AddText()
+### OH_ArkUI_StyledString_AddText()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_StyledString_AddText(ArkUI_StyledString* handle, const char* content)
@@ -480,11 +530,12 @@ void OH_ArkUI_StyledString_AddText(ArkUI_StyledString* handle, const char* conte
 
 **描述**
 
-基于当前格式化字符串样式设置对应的文本内容。所添加的文本将使用当前栈顶的排版样式，该样式由[OH_ArkUI_StyledString_PushTextStyle](#oh_arkui_styledstring_pushtextstyle)压入。当栈顶样式通过[OH_ArkUI_StyledString_PopTextStyle](#oh_arkui_styledstring_poptextstyle)出栈后，后续添加的文本将使用新的栈顶样式。
+基于当前格式化字符串样式添加对应的文本内容。所添加的文本将使用当前栈顶的排版样式，该样式由[OH_ArkUI_StyledString_PushTextStyle](#oh_arkui_styledstring_pushtextstyle)压入。当栈顶样式通过[OH_ArkUI_StyledString_PopTextStyle](#oh_arkui_styledstring_poptextstyle)出栈后，后续添加的文本将使用新的栈顶样式。
 
 **起始版本：** 12
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -494,9 +545,10 @@ void OH_ArkUI_StyledString_AddText(ArkUI_StyledString* handle, const char* conte
 
 
 
-#### OH_ArkUI_StyledString_PopTextStyle()
+### OH_ArkUI_StyledString_PopTextStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_StyledString_PopTextStyle(ArkUI_StyledString* handle)
@@ -514,6 +566,7 @@ void OH_ArkUI_StyledString_PopTextStyle(ArkUI_StyledString* handle)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_StyledString* handle | 指向ArkUI_StyledString对象的指针。 |
@@ -521,9 +574,10 @@ void OH_ArkUI_StyledString_PopTextStyle(ArkUI_StyledString* handle)
 
 
 
-#### OH_ArkUI_StyledString_CreateTypography()
+### OH_ArkUI_StyledString_CreateTypography()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_Typography* OH_ArkUI_StyledString_CreateTypography(ArkUI_StyledString* handle)
@@ -541,12 +595,14 @@ OH_Drawing_Typography* OH_ArkUI_StyledString_CreateTypography(ArkUI_StyledString
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_StyledString* handle | 指向ArkUI_StyledString对象的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -555,9 +611,10 @@ OH_Drawing_Typography* OH_ArkUI_StyledString_CreateTypography(ArkUI_StyledString
 
 
 
-#### OH_ArkUI_StyledString_AddPlaceholder()
+### OH_ArkUI_StyledString_AddPlaceholder()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_StyledString_AddPlaceholder(ArkUI_StyledString* handle, OH_Drawing_PlaceholderSpan* placeholder)
@@ -565,11 +622,12 @@ void OH_ArkUI_StyledString_AddPlaceholder(ArkUI_StyledString* handle, OH_Drawing
 
 **描述**
 
-设置占位符，用于在格式化字符串中预留指定宽高的空白区域或嵌入自定义内容。其尺寸等信息由[OH_Drawing_PlaceholderSpan](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-oh-drawing-placeholderspan)指定。
+添加占位符，用于在格式化字符串中预留指定宽高的空白区域或嵌入自定义内容。其尺寸等信息由[OH_Drawing_PlaceholderSpan](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-oh-drawing-placeholderspan)指定。
 
 **起始版本：** 12
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -579,9 +637,10 @@ void OH_ArkUI_StyledString_AddPlaceholder(ArkUI_StyledString* handle, OH_Drawing
 
 
 
-#### OH_ArkUI_StyledString_Descriptor_Create()
+### OH_ArkUI_StyledString_Descriptor_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_StyledString_Descriptor* OH_ArkUI_StyledString_Descriptor_Create(void)
@@ -599,6 +658,7 @@ ArkUI_StyledString_Descriptor* OH_ArkUI_StyledString_Descriptor_Create(void)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_StyledString_Descriptor* | 指向ArkUI_StyledString_Descriptor对象的指针，用于存储属性字符串的文本和样式信息。 |
@@ -606,9 +666,10 @@ ArkUI_StyledString_Descriptor* OH_ArkUI_StyledString_Descriptor_Create(void)
 
 
 
-#### OH_ArkUI_StyledString_Descriptor_Destroy()
+### OH_ArkUI_StyledString_Descriptor_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_StyledString_Descriptor_Destroy(ArkUI_StyledString_Descriptor* descriptor)
@@ -622,6 +683,7 @@ void OH_ArkUI_StyledString_Descriptor_Destroy(ArkUI_StyledString_Descriptor* des
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_StyledString_Descriptor* descriptor | 指向ArkUI_StyledString_Descriptor对象的指针。 |
@@ -629,9 +691,10 @@ void OH_ArkUI_StyledString_Descriptor_Destroy(ArkUI_StyledString_Descriptor* des
 
 
 
-#### OH_ArkUI_UnmarshallStyledStringDescriptor()
+### OH_ArkUI_UnmarshallStyledStringDescriptor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_UnmarshallStyledStringDescriptor(uint8_t* buffer, size_t bufferSize, ArkUI_StyledString_Descriptor* descriptor)
@@ -645,6 +708,7 @@ int32_t OH_ArkUI_UnmarshallStyledStringDescriptor(uint8_t* buffer, size_t buffer
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint8_t* buffer | 待反序列化的字节数组。 |
@@ -654,6 +718,7 @@ int32_t OH_ArkUI_UnmarshallStyledStringDescriptor(uint8_t* buffer, size_t buffer
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常，可能原因包括传入参数为空指针或参数值不在有效范围内，请检查参数是否有效。 |
@@ -661,9 +726,10 @@ int32_t OH_ArkUI_UnmarshallStyledStringDescriptor(uint8_t* buffer, size_t buffer
 
 
 
-#### OH_ArkUI_MarshallStyledStringDescriptor()
+### OH_ArkUI_MarshallStyledStringDescriptor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_MarshallStyledStringDescriptor(uint8_t* buffer, size_t bufferSize, ArkUI_StyledString_Descriptor* descriptor, size_t* resultSize)
@@ -677,6 +743,7 @@ int32_t OH_ArkUI_MarshallStyledStringDescriptor(uint8_t* buffer, size_t bufferSi
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint8_t* buffer | 字节数组，用于存储属性字符串序列化后的数据。 |
@@ -687,6 +754,7 @@ int32_t OH_ArkUI_MarshallStyledStringDescriptor(uint8_t* buffer, size_t bufferSi
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常，可能原因包括传入参数为空指针或参数值不在有效范围内，请检查参数是否有效。 ARKUI_ERROR_CODE_INVALID_STYLED_STRING 属性字符串无效，可能原因包括属性字符串对象已被销毁或未正确创建，请确保使用有效的属性字符串对象。 |
@@ -694,9 +762,10 @@ int32_t OH_ArkUI_MarshallStyledStringDescriptor(uint8_t* buffer, size_t bufferSi
 
 
 
-#### OH_ArkUI_ConvertToHtml()
+### OH_ArkUI_ConvertToHtml()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 const char* OH_ArkUI_ConvertToHtml(ArkUI_StyledString_Descriptor* descriptor)
@@ -710,12 +779,14 @@ const char* OH_ArkUI_ConvertToHtml(ArkUI_StyledString_Descriptor* descriptor)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_StyledString_Descriptor* descriptor | 指向ArkUI_StyledString_Descriptor对象的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -724,9 +795,10 @@ const char* OH_ArkUI_ConvertToHtml(ArkUI_StyledString_Descriptor* descriptor)
 
 
 
-#### OH_ArkUI_StyledString_Descriptor_CreateWithString()
+### OH_ArkUI_StyledString_Descriptor_CreateWithString()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_StyledString_Descriptor* OH_ArkUI_StyledString_Descriptor_CreateWithString(const char* value, const OH_ArkUI_SpanStyle** styles, int32_t length)
@@ -744,6 +816,7 @@ ArkUI_StyledString_Descriptor* OH_ArkUI_StyledString_Descriptor_CreateWithString
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char* value | 属性字符串的纯文本内容。 |
@@ -753,6 +826,7 @@ ArkUI_StyledString_Descriptor* OH_ArkUI_StyledString_Descriptor_CreateWithString
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_StyledString_Descriptor* | 指向创建的ArkUI_StyledString_Descriptor对象的指针。 如果结果为空指针，表示创建失败，失败的原因是传入参数为空指针或参数值无效。 |
@@ -760,9 +834,10 @@ ArkUI_StyledString_Descriptor* OH_ArkUI_StyledString_Descriptor_CreateWithString
 
 
 
-#### OH_ArkUI_StyledString_Descriptor_CreateWithImageAttachment()
+### OH_ArkUI_StyledString_Descriptor_CreateWithImageAttachment()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_StyledString_Descriptor* OH_ArkUI_StyledString_Descriptor_CreateWithImageAttachment(const OH_ArkUI_ImageAttachment* value)
@@ -780,12 +855,14 @@ ArkUI_StyledString_Descriptor* OH_ArkUI_StyledString_Descriptor_CreateWithImageA
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_ImageAttachment* value | 指向OH_ArkUI_ImageAttachment对象的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -794,9 +871,10 @@ ArkUI_StyledString_Descriptor* OH_ArkUI_StyledString_Descriptor_CreateWithImageA
 
 
 
-#### OH_ArkUI_StyledString_Descriptor_CreateWithCustomSpan()
+### OH_ArkUI_StyledString_Descriptor_CreateWithCustomSpan()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_StyledString_Descriptor* OH_ArkUI_StyledString_Descriptor_CreateWithCustomSpan(const OH_ArkUI_CustomSpan* value)
@@ -814,12 +892,14 @@ ArkUI_StyledString_Descriptor* OH_ArkUI_StyledString_Descriptor_CreateWithCustom
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_CustomSpan* value | 指向OH_ArkUI_CustomSpan对象的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -828,9 +908,10 @@ ArkUI_StyledString_Descriptor* OH_ArkUI_StyledString_Descriptor_CreateWithCustom
 
 
 
-#### OH_ArkUI_StyledString_Descriptor_GetLength()
+### OH_ArkUI_StyledString_Descriptor_GetLength()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_GetLength(const ArkUI_StyledString_Descriptor* descriptor, int32_t* length)
@@ -844,6 +925,7 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_GetLength(const ArkUI_StyledStr
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_StyledString_Descriptor* descriptor | 指向ArkUI_StyledString_Descriptor对象的指针。 |
@@ -852,6 +934,7 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_GetLength(const ArkUI_StyledStr
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常，可能原因包括descriptor为空指针或length为空指针，请检查参数是否有效。 ARKUI_ERROR_CODE_INVALID_STYLED_STRING 属性字符串无效，可能原因包括属性字符串对象已被销毁或未正确创建，请确保使用有效的属性字符串对象。 |
@@ -859,9 +942,10 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_GetLength(const ArkUI_StyledStr
 
 
 
-#### OH_ArkUI_StyledString_Descriptor_GetString()
+### OH_ArkUI_StyledString_Descriptor_GetString()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_GetString(const ArkUI_StyledString_Descriptor* descriptor, char* buffer, int32_t bufferSize, int32_t* writeLength)
@@ -875,6 +959,7 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_GetString(const ArkUI_StyledStr
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_StyledString_Descriptor* descriptor | 指向ArkUI_StyledString_Descriptor对象的指针。 |
@@ -885,6 +970,7 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_GetString(const ArkUI_StyledStr
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常，可能原因包括descriptor为空指针、buffer为空指针或writeLength为空指针，请检查参数是否有效。 ARKUI_ERROR_CODE_INVALID_STYLED_STRING 属性字符串无效，可能原因包括属性字符串对象已被销毁或未正确创建，请确保使用有效的属性字符串对象。 ARKUI_ERROR_CODE_BUFFER_SIZE_ERROR 缓冲区大小不足，当提供的bufferSize小于实际需要写入的数据长度时返回此错误码。处理步骤：通过writeLength参数获取所需最小缓冲区大小，重新分配足够大小的缓冲区后再次调用。 |
@@ -892,9 +978,10 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_GetString(const ArkUI_StyledStr
 
 
 
-#### OH_ArkUI_StyledString_Descriptor_IsEqual()
+### OH_ArkUI_StyledString_Descriptor_IsEqual()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_IsEqual(const ArkUI_StyledString_Descriptor* firstDescriptor, const ArkUI_StyledString_Descriptor* secondDescriptor, bool* isEqual)
@@ -908,6 +995,7 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_IsEqual(const ArkUI_StyledStrin
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_StyledString_Descriptor* firstDescriptor | 指向ArkUI_StyledString_Descriptor对象的指针。 |
@@ -917,6 +1005,7 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_IsEqual(const ArkUI_StyledStrin
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_INVALID_STYLED_STRING 属性字符串无效。 |
@@ -924,9 +1013,10 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_IsEqual(const ArkUI_StyledStrin
 
 
 
-#### OH_ArkUI_StyledString_Descriptor_SubStyledString()
+### OH_ArkUI_StyledString_Descriptor_SubStyledString()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_SubStyledString(const ArkUI_StyledString_Descriptor* descriptor, ArkUI_StyledString_Descriptor* subDescriptor, uint32_t start, uint32_t length)
@@ -940,6 +1030,7 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_SubStyledString(const ArkUI_Sty
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_StyledString_Descriptor* descriptor | 指向ArkUI_StyledString_Descriptor对象的指针。 |
@@ -950,6 +1041,7 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_SubStyledString(const ArkUI_Sty
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_INVALID_STYLED_STRING 属性字符串无效。 |
@@ -957,9 +1049,10 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_SubStyledString(const ArkUI_Sty
 
 
 
-#### OH_ArkUI_StyledString_Descriptor_GetStyles()
+### OH_ArkUI_StyledString_Descriptor_GetStyles()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_GetStyles(const ArkUI_StyledString_Descriptor* descriptor, uint32_t start, uint32_t length, OH_ArkUI_StyledStringKey styledKey, OH_ArkUI_SpanStyle** styles, uint32_t stylesSize, uint32_t* writeLength)
@@ -972,6 +1065,7 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_GetStyles(const ArkUI_StyledStr
 **起始版本：** 24
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -986,6 +1080,7 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_GetStyles(const ArkUI_StyledStr
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_INVALID_STYLED_STRING 属性字符串无效。 |
@@ -993,9 +1088,10 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_GetStyles(const ArkUI_StyledStr
 
 
 
-#### OH_ArkUI_StyledString_Descriptor_FromHtml()
+### OH_ArkUI_StyledString_Descriptor_FromHtml()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_FromHtml(ArkUI_StyledString_Descriptor* descriptor, const char* html)
@@ -1009,6 +1105,7 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_FromHtml(ArkUI_StyledString_Des
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_StyledString_Descriptor* descriptor | 指向ArkUI_StyledString_Descriptor对象的指针。 |
@@ -1017,6 +1114,7 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_FromHtml(ArkUI_StyledString_Des
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_INVALID_STYLED_STRING 属性字符串无效。 |
@@ -1024,9 +1122,10 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_FromHtml(ArkUI_StyledString_Des
 
 
 
-#### OH_ArkUI_StyledString_Descriptor_ReplaceString()
+### OH_ArkUI_StyledString_Descriptor_ReplaceString()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_ReplaceString(ArkUI_StyledString_Descriptor* descriptor, uint32_t start, uint32_t length, const char* string)
@@ -1040,6 +1139,7 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_ReplaceString(ArkUI_StyledStrin
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_StyledString_Descriptor* descriptor | 指向ArkUI_StyledString_Descriptor对象的指针。 |
@@ -1050,6 +1150,7 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_ReplaceString(ArkUI_StyledStrin
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_INVALID_STYLED_STRING 属性字符串无效。 |
@@ -1057,9 +1158,10 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_ReplaceString(ArkUI_StyledStrin
 
 
 
-#### OH_ArkUI_StyledString_Descriptor_InsertString()
+### OH_ArkUI_StyledString_Descriptor_InsertString()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_InsertString(ArkUI_StyledString_Descriptor* descriptor, uint32_t start, const char* string)
@@ -1073,6 +1175,7 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_InsertString(ArkUI_StyledString
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_StyledString_Descriptor* descriptor | 指向ArkUI_StyledString_Descriptor对象的指针。 |
@@ -1082,6 +1185,7 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_InsertString(ArkUI_StyledString
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_INVALID_STYLED_STRING 属性字符串无效。 |
@@ -1089,9 +1193,10 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_InsertString(ArkUI_StyledString
 
 
 
-#### OH_ArkUI_StyledString_Descriptor_RemoveString()
+### OH_ArkUI_StyledString_Descriptor_RemoveString()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_RemoveString(ArkUI_StyledString_Descriptor* descriptor, uint32_t start, uint32_t length)
@@ -1105,6 +1210,7 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_RemoveString(ArkUI_StyledString
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_StyledString_Descriptor* descriptor | 指向ArkUI_StyledString_Descriptor对象的指针。 |
@@ -1114,6 +1220,7 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_RemoveString(ArkUI_StyledString
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_INVALID_STYLED_STRING 属性字符串无效。 |
@@ -1121,9 +1228,10 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_RemoveString(ArkUI_StyledString
 
 
 
-#### OH_ArkUI_StyledString_Descriptor_ReplaceStyle()
+### OH_ArkUI_StyledString_Descriptor_ReplaceStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_ReplaceStyle(ArkUI_StyledString_Descriptor* descriptor, const OH_ArkUI_SpanStyle* spanStyle)
@@ -1137,6 +1245,7 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_ReplaceStyle(ArkUI_StyledString
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_StyledString_Descriptor* descriptor | 指向ArkUI_StyledString_Descriptor对象的指针。 |
@@ -1145,6 +1254,7 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_ReplaceStyle(ArkUI_StyledString
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_INVALID_STYLED_STRING 属性字符串无效。 |
@@ -1152,9 +1262,10 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_ReplaceStyle(ArkUI_StyledString
 
 
 
-#### OH_ArkUI_StyledString_Descriptor_SetStyle()
+### OH_ArkUI_StyledString_Descriptor_SetStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_SetStyle(ArkUI_StyledString_Descriptor* descriptor, const OH_ArkUI_SpanStyle* spanStyle)
@@ -1168,6 +1279,7 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_SetStyle(ArkUI_StyledString_Des
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_StyledString_Descriptor* descriptor | 指向ArkUI_StyledString_Descriptor对象的指针。 |
@@ -1176,6 +1288,7 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_SetStyle(ArkUI_StyledString_Des
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_INVALID_STYLED_STRING 属性字符串无效。 |
@@ -1183,9 +1296,10 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_SetStyle(ArkUI_StyledString_Des
 
 
 
-#### OH_ArkUI_StyledString_Descriptor_RemoveStyle()
+### OH_ArkUI_StyledString_Descriptor_RemoveStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_RemoveStyle(ArkUI_StyledString_Descriptor* descriptor, uint32_t start, uint32_t length, OH_ArkUI_StyledStringKey styledKey)
@@ -1203,6 +1317,7 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_RemoveStyle(ArkUI_StyledString_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_StyledString_Descriptor* descriptor | 指向ArkUI_StyledString_Descriptor对象的指针。 |
@@ -1213,6 +1328,7 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_RemoveStyle(ArkUI_StyledString_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_INVALID_STYLED_STRING 属性字符串无效。 |
@@ -1220,9 +1336,10 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_RemoveStyle(ArkUI_StyledString_
 
 
 
-#### OH_ArkUI_StyledString_Descriptor_ClearStyles()
+### OH_ArkUI_StyledString_Descriptor_ClearStyles()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_ClearStyles(ArkUI_StyledString_Descriptor* descriptor)
@@ -1240,12 +1357,14 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_ClearStyles(ArkUI_StyledString_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_StyledString_Descriptor* descriptor | 指向ArkUI_StyledString_Descriptor对象的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1254,9 +1373,10 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_ClearStyles(ArkUI_StyledString_
 
 
 
-#### OH_ArkUI_StyledString_Descriptor_ReplaceStyledString()
+### OH_ArkUI_StyledString_Descriptor_ReplaceStyledString()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_ReplaceStyledString(ArkUI_StyledString_Descriptor* descriptor, uint32_t start, uint32_t length, const ArkUI_StyledString_Descriptor* other)
@@ -1270,6 +1390,7 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_ReplaceStyledString(ArkUI_Style
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_StyledString_Descriptor* descriptor | 指向ArkUI_StyledString_Descriptor对象的指针。 |
@@ -1280,6 +1401,7 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_ReplaceStyledString(ArkUI_Style
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_INVALID_STYLED_STRING 属性字符串无效。 |
@@ -1287,9 +1409,10 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_ReplaceStyledString(ArkUI_Style
 
 
 
-#### OH_ArkUI_StyledString_Descriptor_InsertStyledString()
+### OH_ArkUI_StyledString_Descriptor_InsertStyledString()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_InsertStyledString(ArkUI_StyledString_Descriptor* descriptor, uint32_t start, const ArkUI_StyledString_Descriptor* other)
@@ -1303,6 +1426,7 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_InsertStyledString(ArkUI_Styled
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_StyledString_Descriptor* descriptor | 指向ArkUI_StyledString_Descriptor对象的指针。 |
@@ -1312,6 +1436,7 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_InsertStyledString(ArkUI_Styled
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_INVALID_STYLED_STRING 属性字符串无效。 |
@@ -1319,9 +1444,10 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_InsertStyledString(ArkUI_Styled
 
 
 
-#### OH_ArkUI_StyledString_Descriptor_AppendStyledString()
+### OH_ArkUI_StyledString_Descriptor_AppendStyledString()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_AppendStyledString(ArkUI_StyledString_Descriptor* descriptor, const ArkUI_StyledString_Descriptor* other)
@@ -1335,6 +1461,7 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_AppendStyledString(ArkUI_Styled
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_StyledString_Descriptor* descriptor | 指向ArkUI_StyledString_Descriptor对象的指针。 |
@@ -1343,6 +1470,7 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_AppendStyledString(ArkUI_Styled
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_INVALID_STYLED_STRING 属性字符串无效。 |
@@ -1350,9 +1478,10 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_AppendStyledString(ArkUI_Styled
 
 
 
-#### OH_ArkUI_StyledString_Descriptor_InvalidateCustomSpan()
+### OH_ArkUI_StyledString_Descriptor_InvalidateCustomSpan()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_InvalidateCustomSpan(const ArkUI_StyledString_Descriptor* descriptor)
@@ -1370,12 +1499,14 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_InvalidateCustomSpan(const ArkU
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_StyledString_Descriptor* descriptor | 指向ArkUI_StyledString_Descriptor对象的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1384,9 +1515,10 @@ ArkUI_ErrorCode OH_ArkUI_StyledString_Descriptor_InvalidateCustomSpan(const ArkU
 
 
 
-#### OH_ArkUI_TextStyle_Create()
+### OH_ArkUI_TextStyle_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_ArkUI_TextStyle* OH_ArkUI_TextStyle_Create()
@@ -1404,6 +1536,7 @@ OH_ArkUI_TextStyle* OH_ArkUI_TextStyle_Create()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_ArkUI_TextStyle* | 指向OH_ArkUI_TextStyle对象的指针，用于定义文本字体样式。 |
@@ -1411,9 +1544,10 @@ OH_ArkUI_TextStyle* OH_ArkUI_TextStyle_Create()
 
 
 
-#### OH_ArkUI_TextStyle_Destroy()
+### OH_ArkUI_TextStyle_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_TextStyle_Destroy(OH_ArkUI_TextStyle* textStyle)
@@ -1427,6 +1561,7 @@ void OH_ArkUI_TextStyle_Destroy(OH_ArkUI_TextStyle* textStyle)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextStyle* textStyle | 指向OH_ArkUI_TextStyle对象的指针。 |
@@ -1434,9 +1569,10 @@ void OH_ArkUI_TextStyle_Destroy(OH_ArkUI_TextStyle* textStyle)
 
 
 
-#### OH_ArkUI_TextStyle_SetFontColor()
+### OH_ArkUI_TextStyle_SetFontColor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextStyle_SetFontColor(OH_ArkUI_TextStyle* textStyle, uint32_t fontColor)
@@ -1450,6 +1586,7 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_SetFontColor(OH_ArkUI_TextStyle* textStyle, u
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextStyle* textStyle | 指向OH_ArkUI_TextStyle对象的指针。 |
@@ -1458,6 +1595,7 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_SetFontColor(OH_ArkUI_TextStyle* textStyle, u
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1465,9 +1603,10 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_SetFontColor(OH_ArkUI_TextStyle* textStyle, u
 
 
 
-#### OH_ArkUI_TextStyle_GetFontColor()
+### OH_ArkUI_TextStyle_GetFontColor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextStyle_GetFontColor(const OH_ArkUI_TextStyle* textStyle, uint32_t* fontColor)
@@ -1481,6 +1620,7 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_GetFontColor(const OH_ArkUI_TextStyle* textSt
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_TextStyle* textStyle | 指向OH_ArkUI_TextStyle对象的指针。 |
@@ -1489,6 +1629,7 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_GetFontColor(const OH_ArkUI_TextStyle* textSt
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1496,9 +1637,10 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_GetFontColor(const OH_ArkUI_TextStyle* textSt
 
 
 
-#### OH_ArkUI_TextStyle_SetFontFamily()
+### OH_ArkUI_TextStyle_SetFontFamily()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextStyle_SetFontFamily(OH_ArkUI_TextStyle* textStyle, const char* fontFamily)
@@ -1512,6 +1654,7 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_SetFontFamily(OH_ArkUI_TextStyle* textStyle, 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextStyle* textStyle | 指向OH_ArkUI_TextStyle对象的指针。 |
@@ -1520,6 +1663,7 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_SetFontFamily(OH_ArkUI_TextStyle* textStyle, 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1527,9 +1671,10 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_SetFontFamily(OH_ArkUI_TextStyle* textStyle, 
 
 
 
-#### OH_ArkUI_TextStyle_GetFontFamily()
+### OH_ArkUI_TextStyle_GetFontFamily()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextStyle_GetFontFamily(const OH_ArkUI_TextStyle* textStyle, char* buffer, int32_t bufferSize, int32_t* writeLength)
@@ -1543,6 +1688,7 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_GetFontFamily(const OH_ArkUI_TextStyle* textS
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_TextStyle* textStyle | 指向OH_ArkUI_TextStyle对象的指针。 |
@@ -1553,6 +1699,7 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_GetFontFamily(const OH_ArkUI_TextStyle* textS
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_BUFFER_SIZE_ERROR 缓冲区大小不足，当提供的bufferSize小于实际需要写入的数据长度时返回此错误码。处理步骤：通过writeLength参数获取所需最小缓冲区大小，重新分配足够大小的缓冲区后再次调用。 |
@@ -1560,9 +1707,10 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_GetFontFamily(const OH_ArkUI_TextStyle* textS
 
 
 
-#### OH_ArkUI_TextStyle_SetFontSize()
+### OH_ArkUI_TextStyle_SetFontSize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextStyle_SetFontSize(OH_ArkUI_TextStyle* textStyle, float fontSize)
@@ -1576,6 +1724,7 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_SetFontSize(OH_ArkUI_TextStyle* textStyle, fl
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextStyle* textStyle | 指向OH_ArkUI_TextStyle对象的指针。 |
@@ -1584,6 +1733,7 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_SetFontSize(OH_ArkUI_TextStyle* textStyle, fl
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1591,9 +1741,10 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_SetFontSize(OH_ArkUI_TextStyle* textStyle, fl
 
 
 
-#### OH_ArkUI_TextStyle_GetFontSize()
+### OH_ArkUI_TextStyle_GetFontSize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextStyle_GetFontSize(const OH_ArkUI_TextStyle* textStyle, float* fontSize)
@@ -1607,6 +1758,7 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_GetFontSize(const OH_ArkUI_TextStyle* textSty
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_TextStyle* textStyle | 指向OH_ArkUI_TextStyle对象的指针。 |
@@ -1615,6 +1767,7 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_GetFontSize(const OH_ArkUI_TextStyle* textSty
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1622,9 +1775,10 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_GetFontSize(const OH_ArkUI_TextStyle* textSty
 
 
 
-#### OH_ArkUI_TextStyle_SetFontWeight()
+### OH_ArkUI_TextStyle_SetFontWeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextStyle_SetFontWeight(OH_ArkUI_TextStyle* textStyle, uint32_t fontWeight)
@@ -1638,6 +1792,7 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_SetFontWeight(OH_ArkUI_TextStyle* textStyle, 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextStyle* textStyle | 指向OH_ArkUI_TextStyle对象的指针。 |
@@ -1646,6 +1801,7 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_SetFontWeight(OH_ArkUI_TextStyle* textStyle, 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1653,9 +1809,10 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_SetFontWeight(OH_ArkUI_TextStyle* textStyle, 
 
 
 
-#### OH_ArkUI_TextStyle_GetFontWeight()
+### OH_ArkUI_TextStyle_GetFontWeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextStyle_GetFontWeight(const OH_ArkUI_TextStyle* textStyle, uint32_t* fontWeight)
@@ -1669,6 +1826,7 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_GetFontWeight(const OH_ArkUI_TextStyle* textS
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_TextStyle* textStyle | 指向OH_ArkUI_TextStyle对象的指针。 |
@@ -1677,6 +1835,7 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_GetFontWeight(const OH_ArkUI_TextStyle* textS
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1684,9 +1843,10 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_GetFontWeight(const OH_ArkUI_TextStyle* textS
 
 
 
-#### OH_ArkUI_TextStyle_SetFontStyle()
+### OH_ArkUI_TextStyle_SetFontStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextStyle_SetFontStyle(OH_ArkUI_TextStyle* textStyle, ArkUI_FontStyle fontStyle)
@@ -1700,6 +1860,7 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_SetFontStyle(OH_ArkUI_TextStyle* textStyle, A
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextStyle* textStyle | 指向OH_ArkUI_TextStyle对象的指针。 |
@@ -1708,6 +1869,7 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_SetFontStyle(OH_ArkUI_TextStyle* textStyle, A
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1715,9 +1877,10 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_SetFontStyle(OH_ArkUI_TextStyle* textStyle, A
 
 
 
-#### OH_ArkUI_TextStyle_GetFontStyle()
+### OH_ArkUI_TextStyle_GetFontStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextStyle_GetFontStyle(const OH_ArkUI_TextStyle* textStyle, ArkUI_FontStyle* fontStyle)
@@ -1731,6 +1894,7 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_GetFontStyle(const OH_ArkUI_TextStyle* textSt
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_TextStyle* textStyle | 指向OH_ArkUI_TextStyle对象的指针。 |
@@ -1739,6 +1903,7 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_GetFontStyle(const OH_ArkUI_TextStyle* textSt
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1746,9 +1911,10 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_GetFontStyle(const OH_ArkUI_TextStyle* textSt
 
 
 
-#### OH_ArkUI_TextStyle_SetStrokeWidth()
+### OH_ArkUI_TextStyle_SetStrokeWidth()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextStyle_SetStrokeWidth(OH_ArkUI_TextStyle* textStyle, float strokeWidth)
@@ -1762,6 +1928,7 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_SetStrokeWidth(OH_ArkUI_TextStyle* textStyle,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextStyle* textStyle | 指向OH_ArkUI_TextStyle对象的指针。 |
@@ -1770,6 +1937,7 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_SetStrokeWidth(OH_ArkUI_TextStyle* textStyle,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1777,9 +1945,10 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_SetStrokeWidth(OH_ArkUI_TextStyle* textStyle,
 
 
 
-#### OH_ArkUI_TextStyle_GetStrokeWidth()
+### OH_ArkUI_TextStyle_GetStrokeWidth()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextStyle_GetStrokeWidth(const OH_ArkUI_TextStyle* textStyle, float* strokeWidth)
@@ -1793,6 +1962,7 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_GetStrokeWidth(const OH_ArkUI_TextStyle* text
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_TextStyle* textStyle | 指向OH_ArkUI_TextStyle对象的指针。 |
@@ -1801,6 +1971,7 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_GetStrokeWidth(const OH_ArkUI_TextStyle* text
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1808,9 +1979,10 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_GetStrokeWidth(const OH_ArkUI_TextStyle* text
 
 
 
-#### OH_ArkUI_TextStyle_SetStrokeColor()
+### OH_ArkUI_TextStyle_SetStrokeColor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextStyle_SetStrokeColor(OH_ArkUI_TextStyle* textStyle, uint32_t strokeColor)
@@ -1824,6 +1996,7 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_SetStrokeColor(OH_ArkUI_TextStyle* textStyle,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextStyle* textStyle | 指向OH_ArkUI_TextStyle对象的指针。 |
@@ -1832,6 +2005,7 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_SetStrokeColor(OH_ArkUI_TextStyle* textStyle,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1839,9 +2013,10 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_SetStrokeColor(OH_ArkUI_TextStyle* textStyle,
 
 
 
-#### OH_ArkUI_TextStyle_GetStrokeColor()
+### OH_ArkUI_TextStyle_GetStrokeColor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextStyle_GetStrokeColor(const OH_ArkUI_TextStyle* textStyle, uint32_t* strokeColor)
@@ -1855,6 +2030,7 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_GetStrokeColor(const OH_ArkUI_TextStyle* text
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_TextStyle* textStyle | 指向OH_ArkUI_TextStyle对象的指针。 |
@@ -1863,6 +2039,7 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_GetStrokeColor(const OH_ArkUI_TextStyle* text
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1870,9 +2047,10 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_GetStrokeColor(const OH_ArkUI_TextStyle* text
 
 
 
-#### OH_ArkUI_TextStyle_SetSuperscript()
+### OH_ArkUI_TextStyle_SetSuperscript()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextStyle_SetSuperscript(OH_ArkUI_TextStyle* textStyle, OH_ArkUI_SuperscriptStyle superscript)
@@ -1886,6 +2064,7 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_SetSuperscript(OH_ArkUI_TextStyle* textStyle,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextStyle* textStyle | 指向OH_ArkUI_TextStyle对象的指针。 |
@@ -1894,6 +2073,7 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_SetSuperscript(OH_ArkUI_TextStyle* textStyle,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1901,9 +2081,10 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_SetSuperscript(OH_ArkUI_TextStyle* textStyle,
 
 
 
-#### OH_ArkUI_TextStyle_GetSuperscript()
+### OH_ArkUI_TextStyle_GetSuperscript()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextStyle_GetSuperscript(const OH_ArkUI_TextStyle* textStyle, OH_ArkUI_SuperscriptStyle* superscript)
@@ -1917,6 +2098,7 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_GetSuperscript(const OH_ArkUI_TextStyle* text
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_TextStyle* textStyle | 指向OH_ArkUI_TextStyle对象的指针。 |
@@ -1925,6 +2107,7 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_GetSuperscript(const OH_ArkUI_TextStyle* text
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -1932,9 +2115,10 @@ ArkUI_ErrorCode OH_ArkUI_TextStyle_GetSuperscript(const OH_ArkUI_TextStyle* text
 
 
 
-#### OH_ArkUI_SpanStyle_Create()
+### OH_ArkUI_SpanStyle_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_ArkUI_SpanStyle* OH_ArkUI_SpanStyle_Create()
@@ -1952,6 +2136,7 @@ OH_ArkUI_SpanStyle* OH_ArkUI_SpanStyle_Create()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_ArkUI_SpanStyle* | 指向OH_ArkUI_SpanStyle对象的指针，用于设置属性字符串样式的作用范围和具体样式。 |
@@ -1959,9 +2144,10 @@ OH_ArkUI_SpanStyle* OH_ArkUI_SpanStyle_Create()
 
 
 
-#### OH_ArkUI_SpanStyle_Destroy()
+### OH_ArkUI_SpanStyle_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_SpanStyle_Destroy(OH_ArkUI_SpanStyle* spanStyle)
@@ -1975,6 +2161,7 @@ void OH_ArkUI_SpanStyle_Destroy(OH_ArkUI_SpanStyle* spanStyle)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_SpanStyle* spanStyle | 指向OH_ArkUI_SpanStyle对象的指针。 |
@@ -1982,9 +2169,10 @@ void OH_ArkUI_SpanStyle_Destroy(OH_ArkUI_SpanStyle* spanStyle)
 
 
 
-#### OH_ArkUI_SpanStyle_GetStyledKey()
+### OH_ArkUI_SpanStyle_GetStyledKey()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetStyledKey(const OH_ArkUI_SpanStyle* spanStyle, OH_ArkUI_StyledStringKey* styledKey)
@@ -1998,6 +2186,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetStyledKey(const OH_ArkUI_SpanStyle* spanSt
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_SpanStyle* spanStyle | 指向OH_ArkUI_SpanStyle对象的指针。 |
@@ -2006,6 +2195,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetStyledKey(const OH_ArkUI_SpanStyle* spanSt
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -2013,9 +2203,10 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetStyledKey(const OH_ArkUI_SpanStyle* spanSt
 
 
 
-#### OH_ArkUI_SpanStyle_SetStart()
+### OH_ArkUI_SpanStyle_SetStart()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetStart(OH_ArkUI_SpanStyle* spanStyle, int32_t start)
@@ -2029,6 +2220,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetStart(OH_ArkUI_SpanStyle* spanStyle, int32
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_SpanStyle* spanStyle | 指向OH_ArkUI_SpanStyle对象的指针。 |
@@ -2037,6 +2229,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetStart(OH_ArkUI_SpanStyle* spanStyle, int32
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -2044,9 +2237,10 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetStart(OH_ArkUI_SpanStyle* spanStyle, int32
 
 
 
-#### OH_ArkUI_SpanStyle_GetStart()
+### OH_ArkUI_SpanStyle_GetStart()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetStart(const OH_ArkUI_SpanStyle* spanStyle, int32_t* start)
@@ -2060,6 +2254,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetStart(const OH_ArkUI_SpanStyle* spanStyle,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_SpanStyle* spanStyle | 指向OH_ArkUI_SpanStyle对象的指针。 |
@@ -2068,6 +2263,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetStart(const OH_ArkUI_SpanStyle* spanStyle,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -2075,9 +2271,10 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetStart(const OH_ArkUI_SpanStyle* spanStyle,
 
 
 
-#### OH_ArkUI_SpanStyle_SetLength()
+### OH_ArkUI_SpanStyle_SetLength()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetLength(OH_ArkUI_SpanStyle* spanStyle, int32_t length)
@@ -2091,13 +2288,15 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetLength(OH_ArkUI_SpanStyle* spanStyle, int3
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_SpanStyle* spanStyle | 指向OH_ArkUI_SpanStyle对象的指针。 |
-| int32_t length | 属性字符串样式对象的长度，需与OH_ArkUI_SpanStyle_SetStart配合使用以指定样式作用的范围。当length的值小于0或超出字符串长度与start的差值时，按字符串长度与start的差值处理。取值范围[0, 属性字符串的长度与参数start的差值]，按字符串长度与start的差值处理。 |
+| int32_t length | 属性字符串样式对象的长度，需与OH_ArkUI_SpanStyle_SetStart配合使用以指定样式作用的范围。取值范围[0, 属性字符串的长度与参数start的差值]。当length的值小于0或超出字符串长度与start的差值时，按字符串长度与start的差值处理。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2106,9 +2305,10 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetLength(OH_ArkUI_SpanStyle* spanStyle, int3
 
 
 
-#### OH_ArkUI_SpanStyle_GetLength()
+### OH_ArkUI_SpanStyle_GetLength()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetLength(const OH_ArkUI_SpanStyle* spanStyle, int32_t* length)
@@ -2122,6 +2322,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetLength(const OH_ArkUI_SpanStyle* spanStyle
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_SpanStyle* spanStyle | 指向OH_ArkUI_SpanStyle对象的指针。 |
@@ -2130,6 +2331,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetLength(const OH_ArkUI_SpanStyle* spanStyle
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -2137,9 +2339,10 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetLength(const OH_ArkUI_SpanStyle* spanStyle
 
 
 
-#### OH_ArkUI_SpanStyle_SetTextStyle()
+### OH_ArkUI_SpanStyle_SetTextStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetTextStyle(OH_ArkUI_SpanStyle* spanStyle, const OH_ArkUI_TextStyle* textStyle)
@@ -2157,6 +2360,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetTextStyle(OH_ArkUI_SpanStyle* spanStyle, c
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_SpanStyle* spanStyle | 指向OH_ArkUI_SpanStyle对象的指针。 |
@@ -2165,6 +2369,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetTextStyle(OH_ArkUI_SpanStyle* spanStyle, c
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -2172,9 +2377,10 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetTextStyle(OH_ArkUI_SpanStyle* spanStyle, c
 
 
 
-#### OH_ArkUI_SpanStyle_GetTextStyle()
+### OH_ArkUI_SpanStyle_GetTextStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetTextStyle(const OH_ArkUI_SpanStyle* spanStyle, OH_ArkUI_TextStyle* textStyle)
@@ -2188,6 +2394,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetTextStyle(const OH_ArkUI_SpanStyle* spanSt
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_SpanStyle* spanStyle | 指向OH_ArkUI_SpanStyle对象的指针。 |
@@ -2196,6 +2403,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetTextStyle(const OH_ArkUI_SpanStyle* spanSt
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -2203,9 +2411,10 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetTextStyle(const OH_ArkUI_SpanStyle* spanSt
 
 
 
-#### OH_ArkUI_SpanStyle_SetParagraphStyle()
+### OH_ArkUI_SpanStyle_SetParagraphStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetParagraphStyle(OH_ArkUI_SpanStyle* spanStyle, const OH_ArkUI_ParagraphStyle* paragraphStyle)
@@ -2216,12 +2425,13 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetParagraphStyle(OH_ArkUI_SpanStyle* spanSty
 设置属性字符串样式对象的段落样式。
 
 > [!NOTE]
-> 此操作会替换 OH_ArkUI_SpanStyle 对象中已设置的其他类型样式。一个SpanStyle对象只能持有一种类型的样式，设置新类型样式后，之前已设置的其他类型样式（如已设置的TextStyle、GestureStyle等）将被清除。
+> 此操作会替换 OH_ArkUI_SpanStyle 对象中已设置的其他类型样式。一个SpanStyle对象只能持有一种类型的样式，设置新类型样式后，之前已设置的其他类型样式（如已设置的TextStyle、GestureStyle等）将被清除。 每个段落的段落样式按首个占位设置的段落样式生效，未设置时，段落按被绑定组件的段落样式生效。 在API版本26.0.0之前，如果属性字符串段落内首个占位为OH_ArkUI_CustomSpan或OH_ArkUI_ImageAttachment时，设置在该段落上的段落样式不生效。从API版本26.0.0开始，设置段落样式生效。
 
 
 **起始版本：** 24
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -2231,6 +2441,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetParagraphStyle(OH_ArkUI_SpanStyle* spanSty
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -2238,9 +2449,10 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetParagraphStyle(OH_ArkUI_SpanStyle* spanSty
 
 
 
-#### OH_ArkUI_SpanStyle_GetParagraphStyle()
+### OH_ArkUI_SpanStyle_GetParagraphStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetParagraphStyle(const OH_ArkUI_SpanStyle* spanStyle, OH_ArkUI_ParagraphStyle* paragraphStyle)
@@ -2254,6 +2466,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetParagraphStyle(const OH_ArkUI_SpanStyle* s
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_SpanStyle* spanStyle | 指向OH_ArkUI_SpanStyle对象的指针。 |
@@ -2262,6 +2475,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetParagraphStyle(const OH_ArkUI_SpanStyle* s
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -2269,9 +2483,10 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetParagraphStyle(const OH_ArkUI_SpanStyle* s
 
 
 
-#### OH_ArkUI_SpanStyle_SetGestureStyle()
+### OH_ArkUI_SpanStyle_SetGestureStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetGestureStyle(OH_ArkUI_SpanStyle* spanStyle, const OH_ArkUI_GestureStyle* gestureStyle)
@@ -2289,6 +2504,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetGestureStyle(OH_ArkUI_SpanStyle* spanStyle
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_SpanStyle* spanStyle | 指向OH_ArkUI_SpanStyle对象的指针。 |
@@ -2297,6 +2513,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetGestureStyle(OH_ArkUI_SpanStyle* spanStyle
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -2304,9 +2521,10 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetGestureStyle(OH_ArkUI_SpanStyle* spanStyle
 
 
 
-#### OH_ArkUI_SpanStyle_GetGestureStyle()
+### OH_ArkUI_SpanStyle_GetGestureStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetGestureStyle(const OH_ArkUI_SpanStyle* spanStyle, OH_ArkUI_GestureStyle* gestureStyle)
@@ -2320,6 +2538,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetGestureStyle(const OH_ArkUI_SpanStyle* spa
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_SpanStyle* spanStyle | 指向OH_ArkUI_SpanStyle对象的指针。 |
@@ -2328,6 +2547,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetGestureStyle(const OH_ArkUI_SpanStyle* spa
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -2335,9 +2555,10 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetGestureStyle(const OH_ArkUI_SpanStyle* spa
 
 
 
-#### OH_ArkUI_SpanStyle_SetTextShadowStyle()
+### OH_ArkUI_SpanStyle_SetTextShadowStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetTextShadowStyle(OH_ArkUI_SpanStyle* spanStyle, const OH_ArkUI_TextShadowStyle* textShadowStyle)
@@ -2355,6 +2576,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetTextShadowStyle(OH_ArkUI_SpanStyle* spanSt
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_SpanStyle* spanStyle | 指向OH_ArkUI_SpanStyle对象的指针。 |
@@ -2363,6 +2585,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetTextShadowStyle(OH_ArkUI_SpanStyle* spanSt
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -2370,9 +2593,10 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetTextShadowStyle(OH_ArkUI_SpanStyle* spanSt
 
 
 
-#### OH_ArkUI_SpanStyle_GetTextShadowStyle()
+### OH_ArkUI_SpanStyle_GetTextShadowStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetTextShadowStyle(const OH_ArkUI_SpanStyle* spanStyle, OH_ArkUI_TextShadowStyle* textShadowStyle)
@@ -2386,6 +2610,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetTextShadowStyle(const OH_ArkUI_SpanStyle* 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_SpanStyle* spanStyle | 指向OH_ArkUI_SpanStyle对象的指针。 |
@@ -2394,6 +2619,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetTextShadowStyle(const OH_ArkUI_SpanStyle* 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -2401,9 +2627,10 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetTextShadowStyle(const OH_ArkUI_SpanStyle* 
 
 
 
-#### OH_ArkUI_SpanStyle_SetDecorationStyle()
+### OH_ArkUI_SpanStyle_SetDecorationStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetDecorationStyle(OH_ArkUI_SpanStyle* spanStyle, const OH_ArkUI_DecorationStyle* decorationStyle)
@@ -2421,6 +2648,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetDecorationStyle(OH_ArkUI_SpanStyle* spanSt
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_SpanStyle* spanStyle | 指向OH_ArkUI_SpanStyle对象的指针。 |
@@ -2429,6 +2657,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetDecorationStyle(OH_ArkUI_SpanStyle* spanSt
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -2436,9 +2665,10 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetDecorationStyle(OH_ArkUI_SpanStyle* spanSt
 
 
 
-#### OH_ArkUI_SpanStyle_GetDecorationStyle()
+### OH_ArkUI_SpanStyle_GetDecorationStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetDecorationStyle(const OH_ArkUI_SpanStyle* spanStyle, OH_ArkUI_DecorationStyle* decorationStyle)
@@ -2452,6 +2682,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetDecorationStyle(const OH_ArkUI_SpanStyle* 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_SpanStyle* spanStyle | 指向OH_ArkUI_SpanStyle对象的指针。 |
@@ -2460,6 +2691,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetDecorationStyle(const OH_ArkUI_SpanStyle* 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -2467,9 +2699,10 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetDecorationStyle(const OH_ArkUI_SpanStyle* 
 
 
 
-#### OH_ArkUI_SpanStyle_SetBaselineOffsetStyle()
+### OH_ArkUI_SpanStyle_SetBaselineOffsetStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetBaselineOffsetStyle(OH_ArkUI_SpanStyle* spanStyle, const OH_ArkUI_BaselineOffsetStyle* baselineOffsetStyle)
@@ -2487,6 +2720,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetBaselineOffsetStyle(OH_ArkUI_SpanStyle* sp
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_SpanStyle* spanStyle | 指向OH_ArkUI_SpanStyle对象的指针。 |
@@ -2495,6 +2729,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetBaselineOffsetStyle(OH_ArkUI_SpanStyle* sp
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -2502,9 +2737,10 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetBaselineOffsetStyle(OH_ArkUI_SpanStyle* sp
 
 
 
-#### OH_ArkUI_SpanStyle_GetBaselineOffsetStyle()
+### OH_ArkUI_SpanStyle_GetBaselineOffsetStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetBaselineOffsetStyle(const OH_ArkUI_SpanStyle* spanStyle, OH_ArkUI_BaselineOffsetStyle* baselineOffsetStyle)
@@ -2518,6 +2754,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetBaselineOffsetStyle(const OH_ArkUI_SpanSty
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_SpanStyle* spanStyle | 指向OH_ArkUI_SpanStyle对象的指针。 |
@@ -2526,6 +2763,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetBaselineOffsetStyle(const OH_ArkUI_SpanSty
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -2533,9 +2771,10 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetBaselineOffsetStyle(const OH_ArkUI_SpanSty
 
 
 
-#### OH_ArkUI_SpanStyle_SetLetterSpacingStyle()
+### OH_ArkUI_SpanStyle_SetLetterSpacingStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetLetterSpacingStyle(OH_ArkUI_SpanStyle* spanStyle, const OH_ArkUI_LetterSpacingStyle* letterSpacingStyle)
@@ -2553,6 +2792,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetLetterSpacingStyle(OH_ArkUI_SpanStyle* spa
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_SpanStyle* spanStyle | 指向OH_ArkUI_SpanStyle对象的指针。 |
@@ -2561,6 +2801,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetLetterSpacingStyle(OH_ArkUI_SpanStyle* spa
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -2568,9 +2809,10 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetLetterSpacingStyle(OH_ArkUI_SpanStyle* spa
 
 
 
-#### OH_ArkUI_SpanStyle_GetLetterSpacingStyle()
+### OH_ArkUI_SpanStyle_GetLetterSpacingStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetLetterSpacingStyle(const OH_ArkUI_SpanStyle* spanStyle, OH_ArkUI_LetterSpacingStyle* letterSpacingStyle)
@@ -2584,6 +2826,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetLetterSpacingStyle(const OH_ArkUI_SpanStyl
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_SpanStyle* spanStyle | 指向OH_ArkUI_SpanStyle对象的指针。 |
@@ -2592,6 +2835,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetLetterSpacingStyle(const OH_ArkUI_SpanStyl
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -2599,9 +2843,10 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetLetterSpacingStyle(const OH_ArkUI_SpanStyl
 
 
 
-#### OH_ArkUI_SpanStyle_SetLineHeightStyle()
+### OH_ArkUI_SpanStyle_SetLineHeightStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetLineHeightStyle(OH_ArkUI_SpanStyle* spanStyle, const OH_ArkUI_LineHeightStyle* lineHeightStyle)
@@ -2619,6 +2864,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetLineHeightStyle(OH_ArkUI_SpanStyle* spanSt
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_SpanStyle* spanStyle | 指向OH_ArkUI_SpanStyle对象的指针。 |
@@ -2627,6 +2873,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetLineHeightStyle(OH_ArkUI_SpanStyle* spanSt
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -2634,9 +2881,10 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetLineHeightStyle(OH_ArkUI_SpanStyle* spanSt
 
 
 
-#### OH_ArkUI_SpanStyle_GetLineHeightStyle()
+### OH_ArkUI_SpanStyle_GetLineHeightStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetLineHeightStyle(const OH_ArkUI_SpanStyle* spanStyle, OH_ArkUI_LineHeightStyle* lineHeightStyle)
@@ -2650,6 +2898,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetLineHeightStyle(const OH_ArkUI_SpanStyle* 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_SpanStyle* spanStyle | 指向OH_ArkUI_SpanStyle对象的指针。 |
@@ -2658,6 +2907,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetLineHeightStyle(const OH_ArkUI_SpanStyle* 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -2665,9 +2915,10 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetLineHeightStyle(const OH_ArkUI_SpanStyle* 
 
 
 
-#### OH_ArkUI_SpanStyle_SetUrlStyle()
+### OH_ArkUI_SpanStyle_SetUrlStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetUrlStyle(OH_ArkUI_SpanStyle* spanStyle, const OH_ArkUI_UrlStyle* urlStyle)
@@ -2685,6 +2936,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetUrlStyle(OH_ArkUI_SpanStyle* spanStyle, co
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_SpanStyle* spanStyle | 指向OH_ArkUI_SpanStyle对象的指针。 |
@@ -2693,6 +2945,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetUrlStyle(OH_ArkUI_SpanStyle* spanStyle, co
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -2700,9 +2953,10 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetUrlStyle(OH_ArkUI_SpanStyle* spanStyle, co
 
 
 
-#### OH_ArkUI_SpanStyle_GetUrlStyle()
+### OH_ArkUI_SpanStyle_GetUrlStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetUrlStyle(const OH_ArkUI_SpanStyle* spanStyle, OH_ArkUI_UrlStyle* urlStyle)
@@ -2716,6 +2970,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetUrlStyle(const OH_ArkUI_SpanStyle* spanSty
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_SpanStyle* spanStyle | 指向OH_ArkUI_SpanStyle对象的指针。 |
@@ -2724,6 +2979,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetUrlStyle(const OH_ArkUI_SpanStyle* spanSty
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -2731,9 +2987,10 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetUrlStyle(const OH_ArkUI_SpanStyle* spanSty
 
 
 
-#### OH_ArkUI_SpanStyle_SetBackgroundColorStyle()
+### OH_ArkUI_SpanStyle_SetBackgroundColorStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetBackgroundColorStyle(OH_ArkUI_SpanStyle* spanStyle, const OH_ArkUI_BackgroundColorStyle* backgroundColorStyle)
@@ -2751,6 +3008,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetBackgroundColorStyle(OH_ArkUI_SpanStyle* s
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_SpanStyle* spanStyle | 指向OH_ArkUI_SpanStyle对象的指针。 |
@@ -2759,6 +3017,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetBackgroundColorStyle(OH_ArkUI_SpanStyle* s
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -2766,9 +3025,10 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetBackgroundColorStyle(OH_ArkUI_SpanStyle* s
 
 
 
-#### OH_ArkUI_SpanStyle_GetBackgroundColorStyle()
+### OH_ArkUI_SpanStyle_GetBackgroundColorStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetBackgroundColorStyle(const OH_ArkUI_SpanStyle* spanStyle, OH_ArkUI_BackgroundColorStyle* backgroundColorStyle)
@@ -2782,6 +3042,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetBackgroundColorStyle(const OH_ArkUI_SpanSt
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_SpanStyle* spanStyle | 指向OH_ArkUI_SpanStyle对象的指针。 |
@@ -2790,6 +3051,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetBackgroundColorStyle(const OH_ArkUI_SpanSt
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -2797,9 +3059,10 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetBackgroundColorStyle(const OH_ArkUI_SpanSt
 
 
 
-#### OH_ArkUI_SpanStyle_SetUserDataSpan()
+### OH_ArkUI_SpanStyle_SetUserDataSpan()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetUserDataSpan(OH_ArkUI_SpanStyle* spanStyle, const OH_ArkUI_UserDataSpan* userDataSpan)
@@ -2817,6 +3080,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetUserDataSpan(OH_ArkUI_SpanStyle* spanStyle
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_SpanStyle* spanStyle | 指向OH_ArkUI_SpanStyle对象的指针。 |
@@ -2825,6 +3089,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetUserDataSpan(OH_ArkUI_SpanStyle* spanStyle
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -2832,9 +3097,10 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetUserDataSpan(OH_ArkUI_SpanStyle* spanStyle
 
 
 
-#### OH_ArkUI_SpanStyle_GetUserDataSpan()
+### OH_ArkUI_SpanStyle_GetUserDataSpan()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetUserDataSpan(const OH_ArkUI_SpanStyle* spanStyle, OH_ArkUI_UserDataSpan* userDataSpan)
@@ -2848,6 +3114,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetUserDataSpan(const OH_ArkUI_SpanStyle* spa
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_SpanStyle* spanStyle | 指向OH_ArkUI_SpanStyle对象的指针。 |
@@ -2856,6 +3123,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetUserDataSpan(const OH_ArkUI_SpanStyle* spa
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -2863,9 +3131,10 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetUserDataSpan(const OH_ArkUI_SpanStyle* spa
 
 
 
-#### OH_ArkUI_SpanStyle_SetCustomSpan()
+### OH_ArkUI_SpanStyle_SetCustomSpan()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetCustomSpan(OH_ArkUI_SpanStyle* spanStyle, const OH_ArkUI_CustomSpan* customSpan)
@@ -2883,6 +3152,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetCustomSpan(OH_ArkUI_SpanStyle* spanStyle, 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_SpanStyle* spanStyle | 指向OH_ArkUI_SpanStyle对象的指针。 |
@@ -2891,6 +3161,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetCustomSpan(OH_ArkUI_SpanStyle* spanStyle, 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -2898,9 +3169,10 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetCustomSpan(OH_ArkUI_SpanStyle* spanStyle, 
 
 
 
-#### OH_ArkUI_SpanStyle_GetCustomSpan()
+### OH_ArkUI_SpanStyle_GetCustomSpan()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetCustomSpan(const OH_ArkUI_SpanStyle* spanStyle, OH_ArkUI_CustomSpan* customSpan)
@@ -2914,6 +3186,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetCustomSpan(const OH_ArkUI_SpanStyle* spanS
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_SpanStyle* spanStyle | 指向OH_ArkUI_SpanStyle对象的指针。 |
@@ -2922,6 +3195,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetCustomSpan(const OH_ArkUI_SpanStyle* spanS
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -2929,9 +3203,10 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetCustomSpan(const OH_ArkUI_SpanStyle* spanS
 
 
 
-#### OH_ArkUI_SpanStyle_SetImageAttachment()
+### OH_ArkUI_SpanStyle_SetImageAttachment()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetImageAttachment(OH_ArkUI_SpanStyle* spanStyle, const OH_ArkUI_ImageAttachment* imageAttachment)
@@ -2949,6 +3224,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetImageAttachment(OH_ArkUI_SpanStyle* spanSt
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_SpanStyle* spanStyle | 指向OH_ArkUI_SpanStyle对象的指针。 |
@@ -2957,6 +3233,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetImageAttachment(OH_ArkUI_SpanStyle* spanSt
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -2964,9 +3241,10 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetImageAttachment(OH_ArkUI_SpanStyle* spanSt
 
 
 
-#### OH_ArkUI_SpanStyle_GetImageAttachment()
+### OH_ArkUI_SpanStyle_GetImageAttachment()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetImageAttachment(const OH_ArkUI_SpanStyle* spanStyle, OH_ArkUI_ImageAttachment* imageAttachment)
@@ -2980,6 +3258,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetImageAttachment(const OH_ArkUI_SpanStyle* 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_SpanStyle* spanStyle | 指向OH_ArkUI_SpanStyle对象的指针。 |
@@ -2988,6 +3267,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetImageAttachment(const OH_ArkUI_SpanStyle* 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -2995,9 +3275,10 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetImageAttachment(const OH_ArkUI_SpanStyle* 
 
 
 
-#### OH_ArkUI_LeadingMarginSpanDrawInfo_Create()
+### OH_ArkUI_LeadingMarginSpanDrawInfo_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_ArkUI_LeadingMarginSpanDrawInfo* OH_ArkUI_LeadingMarginSpanDrawInfo_Create()
@@ -3015,6 +3296,7 @@ OH_ArkUI_LeadingMarginSpanDrawInfo* OH_ArkUI_LeadingMarginSpanDrawInfo_Create()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_ArkUI_LeadingMarginSpanDrawInfo* | 指向OH_ArkUI_LeadingMarginSpanDrawInfo对象的指针，用于定义段落缩进的自定义绘制信息。 |
@@ -3022,9 +3304,10 @@ OH_ArkUI_LeadingMarginSpanDrawInfo* OH_ArkUI_LeadingMarginSpanDrawInfo_Create()
 
 
 
-#### OH_ArkUI_LeadingMarginSpanDrawInfo_Destroy()
+### OH_ArkUI_LeadingMarginSpanDrawInfo_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_LeadingMarginSpanDrawInfo_Destroy(OH_ArkUI_LeadingMarginSpanDrawInfo* drawInfo)
@@ -3038,6 +3321,7 @@ void OH_ArkUI_LeadingMarginSpanDrawInfo_Destroy(OH_ArkUI_LeadingMarginSpanDrawIn
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_LeadingMarginSpanDrawInfo* drawInfo | 指向OH_ArkUI_LeadingMarginSpanDrawInfo对象的指针。 |
@@ -3045,9 +3329,10 @@ void OH_ArkUI_LeadingMarginSpanDrawInfo_Destroy(OH_ArkUI_LeadingMarginSpanDrawIn
 
 
 
-#### OH_ArkUI_LeadingMarginSpanDrawInfo_SetX()
+### OH_ArkUI_LeadingMarginSpanDrawInfo_SetX()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_SetX(OH_ArkUI_LeadingMarginSpanDrawInfo* drawInfo, float x)
@@ -3061,6 +3346,7 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_SetX(OH_ArkUI_LeadingMarginSp
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_LeadingMarginSpanDrawInfo* drawInfo | 指向OH_ArkUI_LeadingMarginSpanDrawInfo对象的指针。 |
@@ -3069,6 +3355,7 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_SetX(OH_ArkUI_LeadingMarginSp
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3076,9 +3363,10 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_SetX(OH_ArkUI_LeadingMarginSp
 
 
 
-#### OH_ArkUI_LeadingMarginSpanDrawInfo_GetX()
+### OH_ArkUI_LeadingMarginSpanDrawInfo_GetX()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_GetX(const OH_ArkUI_LeadingMarginSpanDrawInfo* drawInfo, float* x)
@@ -3092,6 +3380,7 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_GetX(const OH_ArkUI_LeadingMa
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_LeadingMarginSpanDrawInfo* drawInfo | 指向OH_ArkUI_LeadingMarginSpanDrawInfo对象的指针。 |
@@ -3100,6 +3389,7 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_GetX(const OH_ArkUI_LeadingMa
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3107,9 +3397,10 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_GetX(const OH_ArkUI_LeadingMa
 
 
 
-#### OH_ArkUI_LeadingMarginSpanDrawInfo_SetTop()
+### OH_ArkUI_LeadingMarginSpanDrawInfo_SetTop()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_SetTop(OH_ArkUI_LeadingMarginSpanDrawInfo* drawInfo, float top)
@@ -3123,6 +3414,7 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_SetTop(OH_ArkUI_LeadingMargin
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_LeadingMarginSpanDrawInfo* drawInfo | 指向OH_ArkUI_LeadingMarginSpanDrawInfo对象的指针。 |
@@ -3131,6 +3423,7 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_SetTop(OH_ArkUI_LeadingMargin
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3138,9 +3431,10 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_SetTop(OH_ArkUI_LeadingMargin
 
 
 
-#### OH_ArkUI_LeadingMarginSpanDrawInfo_GetTop()
+### OH_ArkUI_LeadingMarginSpanDrawInfo_GetTop()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_GetTop(const OH_ArkUI_LeadingMarginSpanDrawInfo* drawInfo, float* top)
@@ -3154,6 +3448,7 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_GetTop(const OH_ArkUI_Leading
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_LeadingMarginSpanDrawInfo* drawInfo | 指向OH_ArkUI_LeadingMarginSpanDrawInfo对象的指针。 |
@@ -3162,6 +3457,7 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_GetTop(const OH_ArkUI_Leading
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3169,9 +3465,10 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_GetTop(const OH_ArkUI_Leading
 
 
 
-#### OH_ArkUI_LeadingMarginSpanDrawInfo_SetBottom()
+### OH_ArkUI_LeadingMarginSpanDrawInfo_SetBottom()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_SetBottom(OH_ArkUI_LeadingMarginSpanDrawInfo* drawInfo, float bottom)
@@ -3185,6 +3482,7 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_SetBottom(OH_ArkUI_LeadingMar
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_LeadingMarginSpanDrawInfo* drawInfo | 指向OH_ArkUI_LeadingMarginSpanDrawInfo对象的指针。 |
@@ -3193,6 +3491,7 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_SetBottom(OH_ArkUI_LeadingMar
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3200,9 +3499,10 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_SetBottom(OH_ArkUI_LeadingMar
 
 
 
-#### OH_ArkUI_LeadingMarginSpanDrawInfo_GetBottom()
+### OH_ArkUI_LeadingMarginSpanDrawInfo_GetBottom()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_GetBottom(const OH_ArkUI_LeadingMarginSpanDrawInfo* drawInfo, float* bottom)
@@ -3216,6 +3516,7 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_GetBottom(const OH_ArkUI_Lead
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_LeadingMarginSpanDrawInfo* drawInfo | 指向OH_ArkUI_LeadingMarginSpanDrawInfo对象的指针。 |
@@ -3224,6 +3525,7 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_GetBottom(const OH_ArkUI_Lead
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3231,9 +3533,10 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_GetBottom(const OH_ArkUI_Lead
 
 
 
-#### OH_ArkUI_LeadingMarginSpanDrawInfo_SetBaseline()
+### OH_ArkUI_LeadingMarginSpanDrawInfo_SetBaseline()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_SetBaseline(OH_ArkUI_LeadingMarginSpanDrawInfo* drawInfo, float baseline)
@@ -3247,6 +3550,7 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_SetBaseline(OH_ArkUI_LeadingM
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_LeadingMarginSpanDrawInfo* drawInfo | 指向OH_ArkUI_LeadingMarginSpanDrawInfo对象的指针。 |
@@ -3255,6 +3559,7 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_SetBaseline(OH_ArkUI_LeadingM
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3262,9 +3567,10 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_SetBaseline(OH_ArkUI_LeadingM
 
 
 
-#### OH_ArkUI_LeadingMarginSpanDrawInfo_GetBaseline()
+### OH_ArkUI_LeadingMarginSpanDrawInfo_GetBaseline()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_GetBaseline(const OH_ArkUI_LeadingMarginSpanDrawInfo* drawInfo, float* baseline)
@@ -3278,6 +3584,7 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_GetBaseline(const OH_ArkUI_Le
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_LeadingMarginSpanDrawInfo* drawInfo | 指向OH_ArkUI_LeadingMarginSpanDrawInfo对象的指针。 |
@@ -3286,6 +3593,7 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_GetBaseline(const OH_ArkUI_Le
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3293,9 +3601,10 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_GetBaseline(const OH_ArkUI_Le
 
 
 
-#### OH_ArkUI_LeadingMarginSpanDrawInfo_SetTextDirection()
+### OH_ArkUI_LeadingMarginSpanDrawInfo_SetTextDirection()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_SetTextDirection(OH_ArkUI_LeadingMarginSpanDrawInfo* drawInfo, ArkUI_TextDirection direction)
@@ -3309,6 +3618,7 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_SetTextDirection(OH_ArkUI_Lea
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_LeadingMarginSpanDrawInfo* drawInfo | 指向OH_ArkUI_LeadingMarginSpanDrawInfo对象的指针。 |
@@ -3317,6 +3627,7 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_SetTextDirection(OH_ArkUI_Lea
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3324,9 +3635,10 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_SetTextDirection(OH_ArkUI_Lea
 
 
 
-#### OH_ArkUI_LeadingMarginSpanDrawInfo_GetTextDirection()
+### OH_ArkUI_LeadingMarginSpanDrawInfo_GetTextDirection()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_GetTextDirection(const OH_ArkUI_LeadingMarginSpanDrawInfo* drawInfo, ArkUI_TextDirection* direction)
@@ -3340,6 +3652,7 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_GetTextDirection(const OH_Ark
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_LeadingMarginSpanDrawInfo* drawInfo | 指向OH_ArkUI_LeadingMarginSpanDrawInfo对象的指针。 |
@@ -3348,6 +3661,7 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_GetTextDirection(const OH_Ark
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3355,9 +3669,10 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_GetTextDirection(const OH_Ark
 
 
 
-#### OH_ArkUI_LeadingMarginSpanDrawInfo_SetStart()
+### OH_ArkUI_LeadingMarginSpanDrawInfo_SetStart()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_SetStart(OH_ArkUI_LeadingMarginSpanDrawInfo* drawInfo, uint32_t start)
@@ -3371,6 +3686,7 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_SetStart(OH_ArkUI_LeadingMarg
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_LeadingMarginSpanDrawInfo* drawInfo | 指向OH_ArkUI_LeadingMarginSpanDrawInfo对象的指针。 |
@@ -3379,6 +3695,7 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_SetStart(OH_ArkUI_LeadingMarg
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3386,9 +3703,10 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_SetStart(OH_ArkUI_LeadingMarg
 
 
 
-#### OH_ArkUI_LeadingMarginSpanDrawInfo_GetStart()
+### OH_ArkUI_LeadingMarginSpanDrawInfo_GetStart()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_GetStart(const OH_ArkUI_LeadingMarginSpanDrawInfo* drawInfo, uint32_t* start)
@@ -3402,6 +3720,7 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_GetStart(const OH_ArkUI_Leadi
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_LeadingMarginSpanDrawInfo* drawInfo | 指向OH_ArkUI_LeadingMarginSpanDrawInfo对象的指针。 |
@@ -3410,6 +3729,7 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_GetStart(const OH_ArkUI_Leadi
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3417,9 +3737,10 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_GetStart(const OH_ArkUI_Leadi
 
 
 
-#### OH_ArkUI_LeadingMarginSpanDrawInfo_SetEnd()
+### OH_ArkUI_LeadingMarginSpanDrawInfo_SetEnd()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_SetEnd(OH_ArkUI_LeadingMarginSpanDrawInfo* drawInfo, uint32_t end)
@@ -3433,6 +3754,7 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_SetEnd(OH_ArkUI_LeadingMargin
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_LeadingMarginSpanDrawInfo* drawInfo | 指向OH_ArkUI_LeadingMarginSpanDrawInfo对象的指针。 |
@@ -3441,6 +3763,7 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_SetEnd(OH_ArkUI_LeadingMargin
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3448,9 +3771,10 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_SetEnd(OH_ArkUI_LeadingMargin
 
 
 
-#### OH_ArkUI_LeadingMarginSpanDrawInfo_GetEnd()
+### OH_ArkUI_LeadingMarginSpanDrawInfo_GetEnd()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_GetEnd(const OH_ArkUI_LeadingMarginSpanDrawInfo* drawInfo, uint32_t* end)
@@ -3464,6 +3788,7 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_GetEnd(const OH_ArkUI_Leading
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_LeadingMarginSpanDrawInfo* drawInfo | 指向OH_ArkUI_LeadingMarginSpanDrawInfo对象的指针。 |
@@ -3472,6 +3797,7 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_GetEnd(const OH_ArkUI_Leading
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3479,9 +3805,10 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_GetEnd(const OH_ArkUI_Leading
 
 
 
-#### OH_ArkUI_LeadingMarginSpanDrawInfo_SetFirst()
+### OH_ArkUI_LeadingMarginSpanDrawInfo_SetFirst()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_SetFirst(OH_ArkUI_LeadingMarginSpanDrawInfo* drawInfo, bool first)
@@ -3495,6 +3822,7 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_SetFirst(OH_ArkUI_LeadingMarg
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_LeadingMarginSpanDrawInfo* drawInfo | 指向OH_ArkUI_LeadingMarginSpanDrawInfo对象的指针。 |
@@ -3503,6 +3831,7 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_SetFirst(OH_ArkUI_LeadingMarg
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3510,9 +3839,10 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_SetFirst(OH_ArkUI_LeadingMarg
 
 
 
-#### OH_ArkUI_LeadingMarginSpanDrawInfo_GetFirst()
+### OH_ArkUI_LeadingMarginSpanDrawInfo_GetFirst()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_GetFirst(const OH_ArkUI_LeadingMarginSpanDrawInfo* drawInfo, bool* first)
@@ -3526,6 +3856,7 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_GetFirst(const OH_ArkUI_Leadi
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_LeadingMarginSpanDrawInfo* drawInfo | 指向OH_ArkUI_LeadingMarginSpanDrawInfo对象的指针。 |
@@ -3534,6 +3865,7 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_GetFirst(const OH_ArkUI_Leadi
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3541,9 +3873,10 @@ ArkUI_ErrorCode OH_ArkUI_LeadingMarginSpanDrawInfo_GetFirst(const OH_ArkUI_Leadi
 
 
 
-#### OH_ArkUI_ParagraphStyle_Create()
+### OH_ArkUI_ParagraphStyle_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_ArkUI_ParagraphStyle* OH_ArkUI_ParagraphStyle_Create()
@@ -3561,6 +3894,7 @@ OH_ArkUI_ParagraphStyle* OH_ArkUI_ParagraphStyle_Create()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_ArkUI_ParagraphStyle* | 指向OH_ArkUI_ParagraphStyle对象的指针，用于定义段落样式。 |
@@ -3568,9 +3902,10 @@ OH_ArkUI_ParagraphStyle* OH_ArkUI_ParagraphStyle_Create()
 
 
 
-#### OH_ArkUI_ParagraphStyle_Destroy()
+### OH_ArkUI_ParagraphStyle_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_ParagraphStyle_Destroy(OH_ArkUI_ParagraphStyle* paragraphStyle)
@@ -3584,6 +3919,7 @@ void OH_ArkUI_ParagraphStyle_Destroy(OH_ArkUI_ParagraphStyle* paragraphStyle)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_ParagraphStyle* paragraphStyle | 指向OH_ArkUI_ParagraphStyle对象的指针。 |
@@ -3591,9 +3927,10 @@ void OH_ArkUI_ParagraphStyle_Destroy(OH_ArkUI_ParagraphStyle* paragraphStyle)
 
 
 
-#### OH_ArkUI_ParagraphStyle_SetTextAlign()
+### OH_ArkUI_ParagraphStyle_SetTextAlign()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetTextAlign(OH_ArkUI_ParagraphStyle* paragraphStyle, ArkUI_TextAlignment align)
@@ -3607,6 +3944,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetTextAlign(OH_ArkUI_ParagraphStyle* pa
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_ParagraphStyle* paragraphStyle | 指向OH_ArkUI_ParagraphStyle对象的指针。 |
@@ -3615,6 +3953,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetTextAlign(OH_ArkUI_ParagraphStyle* pa
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3622,9 +3961,10 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetTextAlign(OH_ArkUI_ParagraphStyle* pa
 
 
 
-#### OH_ArkUI_ParagraphStyle_GetTextAlign()
+### OH_ArkUI_ParagraphStyle_GetTextAlign()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetTextAlign(const OH_ArkUI_ParagraphStyle* paragraphStyle, ArkUI_TextAlignment* align)
@@ -3638,6 +3978,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetTextAlign(const OH_ArkUI_ParagraphSty
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_ParagraphStyle* paragraphStyle | 指向OH_ArkUI_ParagraphStyle对象的指针。 |
@@ -3646,6 +3987,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetTextAlign(const OH_ArkUI_ParagraphSty
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3653,9 +3995,10 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetTextAlign(const OH_ArkUI_ParagraphSty
 
 
 
-#### OH_ArkUI_ParagraphStyle_SetTextIndent()
+### OH_ArkUI_ParagraphStyle_SetTextIndent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetTextIndent(OH_ArkUI_ParagraphStyle* paragraphStyle, float textIndent)
@@ -3669,6 +4012,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetTextIndent(OH_ArkUI_ParagraphStyle* p
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_ParagraphStyle* paragraphStyle | 指向OH_ArkUI_ParagraphStyle对象的指针。 |
@@ -3677,6 +4021,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetTextIndent(OH_ArkUI_ParagraphStyle* p
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3684,9 +4029,10 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetTextIndent(OH_ArkUI_ParagraphStyle* p
 
 
 
-#### OH_ArkUI_ParagraphStyle_GetTextIndent()
+### OH_ArkUI_ParagraphStyle_GetTextIndent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetTextIndent(const OH_ArkUI_ParagraphStyle* paragraphStyle, float* textIndent)
@@ -3700,6 +4046,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetTextIndent(const OH_ArkUI_ParagraphSt
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_ParagraphStyle* paragraphStyle | 指向OH_ArkUI_ParagraphStyle对象的指针。 |
@@ -3708,6 +4055,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetTextIndent(const OH_ArkUI_ParagraphSt
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3715,9 +4063,10 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetTextIndent(const OH_ArkUI_ParagraphSt
 
 
 
-#### OH_ArkUI_ParagraphStyle_SetMaxLines()
+### OH_ArkUI_ParagraphStyle_SetMaxLines()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetMaxLines(OH_ArkUI_ParagraphStyle* paragraphStyle, int32_t maxLines)
@@ -3731,6 +4080,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetMaxLines(OH_ArkUI_ParagraphStyle* par
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_ParagraphStyle* paragraphStyle | 指向OH_ArkUI_ParagraphStyle对象的指针。 |
@@ -3739,6 +4089,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetMaxLines(OH_ArkUI_ParagraphStyle* par
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3746,9 +4097,10 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetMaxLines(OH_ArkUI_ParagraphStyle* par
 
 
 
-#### OH_ArkUI_ParagraphStyle_GetMaxLines()
+### OH_ArkUI_ParagraphStyle_GetMaxLines()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetMaxLines(const OH_ArkUI_ParagraphStyle* paragraphStyle, int32_t* maxLines)
@@ -3762,6 +4114,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetMaxLines(const OH_ArkUI_ParagraphStyl
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_ParagraphStyle* paragraphStyle | 指向OH_ArkUI_ParagraphStyle对象的指针。 |
@@ -3770,6 +4123,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetMaxLines(const OH_ArkUI_ParagraphStyl
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3777,9 +4131,10 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetMaxLines(const OH_ArkUI_ParagraphStyl
 
 
 
-#### OH_ArkUI_ParagraphStyle_SetOverflow()
+### OH_ArkUI_ParagraphStyle_SetOverflow()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetOverflow(OH_ArkUI_ParagraphStyle* paragraphStyle, ArkUI_TextOverflow overflow)
@@ -3793,6 +4148,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetOverflow(OH_ArkUI_ParagraphStyle* par
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_ParagraphStyle* paragraphStyle | 指向OH_ArkUI_ParagraphStyle对象的指针。 |
@@ -3801,6 +4157,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetOverflow(OH_ArkUI_ParagraphStyle* par
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3808,9 +4165,10 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetOverflow(OH_ArkUI_ParagraphStyle* par
 
 
 
-#### OH_ArkUI_ParagraphStyle_GetOverflow()
+### OH_ArkUI_ParagraphStyle_GetOverflow()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetOverflow(const OH_ArkUI_ParagraphStyle* paragraphStyle, ArkUI_TextOverflow* overflow)
@@ -3824,6 +4182,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetOverflow(const OH_ArkUI_ParagraphStyl
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_ParagraphStyle* paragraphStyle | 指向OH_ArkUI_ParagraphStyle对象的指针。 |
@@ -3832,6 +4191,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetOverflow(const OH_ArkUI_ParagraphStyl
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3839,9 +4199,10 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetOverflow(const OH_ArkUI_ParagraphStyl
 
 
 
-#### OH_ArkUI_ParagraphStyle_SetWordBreak()
+### OH_ArkUI_ParagraphStyle_SetWordBreak()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetWordBreak(OH_ArkUI_ParagraphStyle* paragraphStyle, ArkUI_WordBreak wordBreak)
@@ -3855,6 +4216,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetWordBreak(OH_ArkUI_ParagraphStyle* pa
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_ParagraphStyle* paragraphStyle | 指向OH_ArkUI_ParagraphStyle对象的指针。 |
@@ -3863,6 +4225,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetWordBreak(OH_ArkUI_ParagraphStyle* pa
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3870,9 +4233,10 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetWordBreak(OH_ArkUI_ParagraphStyle* pa
 
 
 
-#### OH_ArkUI_ParagraphStyle_GetWordBreak()
+### OH_ArkUI_ParagraphStyle_GetWordBreak()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetWordBreak(const OH_ArkUI_ParagraphStyle* paragraphStyle, ArkUI_WordBreak* wordBreak)
@@ -3886,6 +4250,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetWordBreak(const OH_ArkUI_ParagraphSty
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_ParagraphStyle* paragraphStyle | 指向OH_ArkUI_ParagraphStyle对象的指针。 |
@@ -3894,6 +4259,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetWordBreak(const OH_ArkUI_ParagraphSty
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3901,9 +4267,10 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetWordBreak(const OH_ArkUI_ParagraphSty
 
 
 
-#### OH_ArkUI_ParagraphStyle_SetLeadingMarginPixelMap()
+### OH_ArkUI_ParagraphStyle_SetLeadingMarginPixelMap()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetLeadingMarginPixelMap(OH_ArkUI_ParagraphStyle* paragraphStyle, struct OH_PixelmapNative* pixelmap)
@@ -3917,6 +4284,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetLeadingMarginPixelMap(OH_ArkUI_Paragr
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_ParagraphStyle* paragraphStyle | 指向OH_ArkUI_ParagraphStyle对象的指针。 |
@@ -3925,6 +4293,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetLeadingMarginPixelMap(OH_ArkUI_Paragr
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3932,9 +4301,10 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetLeadingMarginPixelMap(OH_ArkUI_Paragr
 
 
 
-#### OH_ArkUI_ParagraphStyle_GetLeadingMarginPixelMap()
+### OH_ArkUI_ParagraphStyle_GetLeadingMarginPixelMap()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetLeadingMarginPixelMap(const OH_ArkUI_ParagraphStyle* paragraphStyle, struct OH_PixelmapNative** pixelmap)
@@ -3948,6 +4318,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetLeadingMarginPixelMap(const OH_ArkUI_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_ParagraphStyle* paragraphStyle | 指向OH_ArkUI_ParagraphStyle对象的指针。 |
@@ -3956,6 +4327,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetLeadingMarginPixelMap(const OH_ArkUI_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3963,9 +4335,10 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetLeadingMarginPixelMap(const OH_ArkUI_
 
 
 
-#### OH_ArkUI_ParagraphStyle_SetLeadingMarginWidth()
+### OH_ArkUI_ParagraphStyle_SetLeadingMarginWidth()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetLeadingMarginWidth(OH_ArkUI_ParagraphStyle* paragraphStyle, uint32_t width)
@@ -3979,6 +4352,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetLeadingMarginWidth(OH_ArkUI_Paragraph
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_ParagraphStyle* paragraphStyle | 指向OH_ArkUI_ParagraphStyle对象的指针。 |
@@ -3987,6 +4361,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetLeadingMarginWidth(OH_ArkUI_Paragraph
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3994,9 +4369,10 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetLeadingMarginWidth(OH_ArkUI_Paragraph
 
 
 
-#### OH_ArkUI_ParagraphStyle_GetLeadingMarginWidth()
+### OH_ArkUI_ParagraphStyle_GetLeadingMarginWidth()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetLeadingMarginWidth(const OH_ArkUI_ParagraphStyle* paragraphStyle, uint32_t* width)
@@ -4010,6 +4386,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetLeadingMarginWidth(const OH_ArkUI_Par
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_ParagraphStyle* paragraphStyle | 指向OH_ArkUI_ParagraphStyle对象的指针。 |
@@ -4018,6 +4395,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetLeadingMarginWidth(const OH_ArkUI_Par
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -4025,9 +4403,10 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetLeadingMarginWidth(const OH_ArkUI_Par
 
 
 
-#### OH_ArkUI_ParagraphStyle_SetLeadingMarginHeight()
+### OH_ArkUI_ParagraphStyle_SetLeadingMarginHeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetLeadingMarginHeight(OH_ArkUI_ParagraphStyle* paragraphStyle, uint32_t height)
@@ -4041,6 +4420,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetLeadingMarginHeight(OH_ArkUI_Paragrap
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_ParagraphStyle* paragraphStyle | 指向OH_ArkUI_ParagraphStyle对象的指针。 |
@@ -4049,6 +4429,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetLeadingMarginHeight(OH_ArkUI_Paragrap
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -4056,9 +4437,10 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetLeadingMarginHeight(OH_ArkUI_Paragrap
 
 
 
-#### OH_ArkUI_ParagraphStyle_GetLeadingMarginHeight()
+### OH_ArkUI_ParagraphStyle_GetLeadingMarginHeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetLeadingMarginHeight(const OH_ArkUI_ParagraphStyle* paragraphStyle, uint32_t* height)
@@ -4072,6 +4454,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetLeadingMarginHeight(const OH_ArkUI_Pa
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_ParagraphStyle* paragraphStyle | 指向OH_ArkUI_ParagraphStyle对象的指针。 |
@@ -4080,6 +4463,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetLeadingMarginHeight(const OH_ArkUI_Pa
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -4087,9 +4471,10 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetLeadingMarginHeight(const OH_ArkUI_Pa
 
 
 
-#### OH_ArkUI_ParagraphStyle_SetParagraphSpacing()
+### OH_ArkUI_ParagraphStyle_SetParagraphSpacing()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetParagraphSpacing(OH_ArkUI_ParagraphStyle* paragraphStyle, uint32_t paragraphSpacing)
@@ -4103,6 +4488,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetParagraphSpacing(OH_ArkUI_ParagraphSt
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_ParagraphStyle* paragraphStyle | 指向OH_ArkUI_ParagraphStyle对象的指针。 |
@@ -4111,6 +4497,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetParagraphSpacing(OH_ArkUI_ParagraphSt
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -4118,9 +4505,10 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetParagraphSpacing(OH_ArkUI_ParagraphSt
 
 
 
-#### OH_ArkUI_ParagraphStyle_GetParagraphSpacing()
+### OH_ArkUI_ParagraphStyle_GetParagraphSpacing()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetParagraphSpacing(const OH_ArkUI_ParagraphStyle* paragraphStyle, uint32_t* paragraphSpacing)
@@ -4134,6 +4522,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetParagraphSpacing(const OH_ArkUI_Parag
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_ParagraphStyle* paragraphStyle | 指向OH_ArkUI_ParagraphStyle对象的指针。 |
@@ -4142,6 +4531,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetParagraphSpacing(const OH_ArkUI_Parag
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -4149,9 +4539,10 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetParagraphSpacing(const OH_ArkUI_Parag
 
 
 
-#### OH_ArkUI_ParagraphStyle_SetTextVerticalAlign()
+### OH_ArkUI_ParagraphStyle_SetTextVerticalAlign()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetTextVerticalAlign(OH_ArkUI_ParagraphStyle* paragraphStyle, ArkUI_TextVerticalAlignment verticalAlignment)
@@ -4165,6 +4556,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetTextVerticalAlign(OH_ArkUI_ParagraphS
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_ParagraphStyle* paragraphStyle | 指向OH_ArkUI_ParagraphStyle对象的指针。 |
@@ -4173,6 +4565,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetTextVerticalAlign(OH_ArkUI_ParagraphS
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -4180,9 +4573,10 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetTextVerticalAlign(OH_ArkUI_ParagraphS
 
 
 
-#### OH_ArkUI_ParagraphStyle_GetTextVerticalAlign()
+### OH_ArkUI_ParagraphStyle_GetTextVerticalAlign()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetTextVerticalAlign(const OH_ArkUI_ParagraphStyle* paragraphStyle, ArkUI_TextVerticalAlignment* verticalAlignment)
@@ -4196,6 +4590,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetTextVerticalAlign(const OH_ArkUI_Para
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_ParagraphStyle* paragraphStyle | 指向OH_ArkUI_ParagraphStyle对象的指针。 |
@@ -4204,6 +4599,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetTextVerticalAlign(const OH_ArkUI_Para
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -4211,9 +4607,10 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetTextVerticalAlign(const OH_ArkUI_Para
 
 
 
-#### OH_ArkUI_ParagraphStyle_RegisterOnDrawLeadingMarginCallback()
+### OH_ArkUI_ParagraphStyle_RegisterOnDrawLeadingMarginCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_RegisterOnDrawLeadingMarginCallback(OH_ArkUI_ParagraphStyle* paragraphStyle, void(*onDraw)(ArkUI_DrawContext* context, OH_ArkUI_LeadingMarginSpanDrawInfo* drawInfo))
@@ -4227,6 +4624,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_RegisterOnDrawLeadingMarginCallback(OH_A
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_ParagraphStyle* paragraphStyle | 指向OH_ArkUI_ParagraphStyle对象的指针。 |
@@ -4235,6 +4633,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_RegisterOnDrawLeadingMarginCallback(OH_A
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -4242,9 +4641,10 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_RegisterOnDrawLeadingMarginCallback(OH_A
 
 
 
-#### OH_ArkUI_ParagraphStyle_RegisterOnGetLeadingMarginCallback()
+### OH_ArkUI_ParagraphStyle_RegisterOnGetLeadingMarginCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_RegisterOnGetLeadingMarginCallback(OH_ArkUI_ParagraphStyle* paragraphStyle, float(*leadingMargin)())
@@ -4258,6 +4658,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_RegisterOnGetLeadingMarginCallback(OH_Ar
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_ParagraphStyle* paragraphStyle | 指向OH_ArkUI_ParagraphStyle对象的指针。 |
@@ -4266,6 +4667,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_RegisterOnGetLeadingMarginCallback(OH_Ar
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -4273,9 +4675,10 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_RegisterOnGetLeadingMarginCallback(OH_Ar
 
 
 
-#### OH_ArkUI_ParagraphStyle_SetTextDirection()
+### OH_ArkUI_ParagraphStyle_SetTextDirection()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetTextDirection(OH_ArkUI_ParagraphStyle* paragraphStyle, ArkUI_TextDirection textDirection)
@@ -4289,6 +4692,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetTextDirection(OH_ArkUI_ParagraphStyle
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_ParagraphStyle* paragraphStyle | 指向OH_ArkUI_ParagraphStyle对象的指针。 |
@@ -4297,6 +4701,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetTextDirection(OH_ArkUI_ParagraphStyle
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -4304,9 +4709,10 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetTextDirection(OH_ArkUI_ParagraphStyle
 
 
 
-#### OH_ArkUI_ParagraphStyle_GetTextDirection()
+### OH_ArkUI_ParagraphStyle_GetTextDirection()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetTextDirection(const OH_ArkUI_ParagraphStyle* paragraphStyle, ArkUI_TextDirection* textDirection)
@@ -4320,6 +4726,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetTextDirection(const OH_ArkUI_Paragrap
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_ParagraphStyle* paragraphStyle | 指向OH_ArkUI_ParagraphStyle对象的指针。 |
@@ -4328,6 +4735,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetTextDirection(const OH_ArkUI_Paragrap
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -4335,9 +4743,10 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetTextDirection(const OH_ArkUI_Paragrap
 
 
 
-#### OH_ArkUI_GestureStyle_Create()
+### OH_ArkUI_GestureStyle_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_ArkUI_GestureStyle* OH_ArkUI_GestureStyle_Create()
@@ -4355,6 +4764,7 @@ OH_ArkUI_GestureStyle* OH_ArkUI_GestureStyle_Create()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_ArkUI_GestureStyle* | 指向OH_ArkUI_GestureStyle对象的指针，用于定义事件手势样式。 |
@@ -4362,9 +4772,10 @@ OH_ArkUI_GestureStyle* OH_ArkUI_GestureStyle_Create()
 
 
 
-#### OH_ArkUI_GestureStyle_Destroy()
+### OH_ArkUI_GestureStyle_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_GestureStyle_Destroy(OH_ArkUI_GestureStyle* gestureStyle)
@@ -4378,6 +4789,7 @@ void OH_ArkUI_GestureStyle_Destroy(OH_ArkUI_GestureStyle* gestureStyle)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_GestureStyle* gestureStyle | 指向OH_ArkUI_GestureStyle对象的指针。 |
@@ -4385,9 +4797,10 @@ void OH_ArkUI_GestureStyle_Destroy(OH_ArkUI_GestureStyle* gestureStyle)
 
 
 
-#### OH_ArkUI_GestureStyle_RegisterOnClickCallback()
+### OH_ArkUI_GestureStyle_RegisterOnClickCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_GestureStyle_RegisterOnClickCallback(OH_ArkUI_GestureStyle* gestureStyle, void(*onClick)(ArkUI_NodeEvent*))
@@ -4401,6 +4814,7 @@ ArkUI_ErrorCode OH_ArkUI_GestureStyle_RegisterOnClickCallback(OH_ArkUI_GestureSt
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_GestureStyle* gestureStyle | 指向OH_ArkUI_GestureStyle对象的指针。 |
@@ -4409,6 +4823,7 @@ ArkUI_ErrorCode OH_ArkUI_GestureStyle_RegisterOnClickCallback(OH_ArkUI_GestureSt
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -4416,9 +4831,10 @@ ArkUI_ErrorCode OH_ArkUI_GestureStyle_RegisterOnClickCallback(OH_ArkUI_GestureSt
 
 
 
-#### OH_ArkUI_GestureStyle_RegisterOnLongPressCallback()
+### OH_ArkUI_GestureStyle_RegisterOnLongPressCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_GestureStyle_RegisterOnLongPressCallback(OH_ArkUI_GestureStyle* gestureStyle, void(*onLongPress)(ArkUI_GestureEvent*))
@@ -4432,6 +4848,7 @@ ArkUI_ErrorCode OH_ArkUI_GestureStyle_RegisterOnLongPressCallback(OH_ArkUI_Gestu
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_GestureStyle* gestureStyle | 指向OH_ArkUI_GestureStyle对象的指针。 |
@@ -4440,6 +4857,7 @@ ArkUI_ErrorCode OH_ArkUI_GestureStyle_RegisterOnLongPressCallback(OH_ArkUI_Gestu
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -4447,9 +4865,10 @@ ArkUI_ErrorCode OH_ArkUI_GestureStyle_RegisterOnLongPressCallback(OH_ArkUI_Gestu
 
 
 
-#### OH_ArkUI_GestureStyle_RegisterOnTouchCallback()
+### OH_ArkUI_GestureStyle_RegisterOnTouchCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_GestureStyle_RegisterOnTouchCallback(OH_ArkUI_GestureStyle* gestureStyle, void(*onTouch)(ArkUI_NodeEvent*))
@@ -4463,6 +4882,7 @@ ArkUI_ErrorCode OH_ArkUI_GestureStyle_RegisterOnTouchCallback(OH_ArkUI_GestureSt
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_GestureStyle* gestureStyle | 指向OH_ArkUI_GestureStyle对象的指针。 |
@@ -4471,6 +4891,7 @@ ArkUI_ErrorCode OH_ArkUI_GestureStyle_RegisterOnTouchCallback(OH_ArkUI_GestureSt
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -4478,9 +4899,10 @@ ArkUI_ErrorCode OH_ArkUI_GestureStyle_RegisterOnTouchCallback(OH_ArkUI_GestureSt
 
 
 
-#### OH_ArkUI_TextShadowStyle_Create()
+### OH_ArkUI_TextShadowStyle_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_ArkUI_TextShadowStyle* OH_ArkUI_TextShadowStyle_Create()
@@ -4498,6 +4920,7 @@ OH_ArkUI_TextShadowStyle* OH_ArkUI_TextShadowStyle_Create()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_ArkUI_TextShadowStyle* | 指向OH_ArkUI_TextShadowStyle对象的指针，用于定义文本阴影样式。 |
@@ -4505,9 +4928,10 @@ OH_ArkUI_TextShadowStyle* OH_ArkUI_TextShadowStyle_Create()
 
 
 
-#### OH_ArkUI_TextShadowStyle_Destroy()
+### OH_ArkUI_TextShadowStyle_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_TextShadowStyle_Destroy(OH_ArkUI_TextShadowStyle* textShadowStyle)
@@ -4521,6 +4945,7 @@ void OH_ArkUI_TextShadowStyle_Destroy(OH_ArkUI_TextShadowStyle* textShadowStyle)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextShadowStyle* textShadowStyle | 指向OH_ArkUI_TextShadowStyle对象的指针。 |
@@ -4528,9 +4953,10 @@ void OH_ArkUI_TextShadowStyle_Destroy(OH_ArkUI_TextShadowStyle* textShadowStyle)
 
 
 
-#### OH_ArkUI_TextShadowStyle_SetTextShadow()
+### OH_ArkUI_TextShadowStyle_SetTextShadow()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextShadowStyle_SetTextShadow(OH_ArkUI_TextShadowStyle* textShadowStyle, const OH_ArkUI_ShadowOptions** options, uint32_t length)
@@ -4544,6 +4970,7 @@ ArkUI_ErrorCode OH_ArkUI_TextShadowStyle_SetTextShadow(OH_ArkUI_TextShadowStyle*
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextShadowStyle* textShadowStyle | 指向OH_ArkUI_TextShadowStyle对象的指针。 |
@@ -4553,6 +4980,7 @@ ArkUI_ErrorCode OH_ArkUI_TextShadowStyle_SetTextShadow(OH_ArkUI_TextShadowStyle*
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -4560,9 +4988,10 @@ ArkUI_ErrorCode OH_ArkUI_TextShadowStyle_SetTextShadow(OH_ArkUI_TextShadowStyle*
 
 
 
-#### OH_ArkUI_TextShadowStyle_GetTextShadow()
+### OH_ArkUI_TextShadowStyle_GetTextShadow()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextShadowStyle_GetTextShadow(const OH_ArkUI_TextShadowStyle* textShadowStyle, OH_ArkUI_ShadowOptions** shadowOptions, uint32_t shadowOptionsSize, uint32_t* writeLength)
@@ -4576,6 +5005,7 @@ ArkUI_ErrorCode OH_ArkUI_TextShadowStyle_GetTextShadow(const OH_ArkUI_TextShadow
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_TextShadowStyle* textShadowStyle | 指向OH_ArkUI_TextShadowStyle对象的指针。 |
@@ -4586,6 +5016,7 @@ ArkUI_ErrorCode OH_ArkUI_TextShadowStyle_GetTextShadow(const OH_ArkUI_TextShadow
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -4593,9 +5024,10 @@ ArkUI_ErrorCode OH_ArkUI_TextShadowStyle_GetTextShadow(const OH_ArkUI_TextShadow
 
 
 
-#### OH_ArkUI_DecorationStyle_Create()
+### OH_ArkUI_DecorationStyle_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_ArkUI_DecorationStyle* OH_ArkUI_DecorationStyle_Create()
@@ -4613,6 +5045,7 @@ OH_ArkUI_DecorationStyle* OH_ArkUI_DecorationStyle_Create()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_ArkUI_DecorationStyle* | 指向OH_ArkUI_DecorationStyle对象的指针，用于定义文本装饰线样式。 |
@@ -4620,9 +5053,10 @@ OH_ArkUI_DecorationStyle* OH_ArkUI_DecorationStyle_Create()
 
 
 
-#### OH_ArkUI_DecorationStyle_Destroy()
+### OH_ArkUI_DecorationStyle_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_DecorationStyle_Destroy(OH_ArkUI_DecorationStyle* decorationStyle)
@@ -4636,6 +5070,7 @@ void OH_ArkUI_DecorationStyle_Destroy(OH_ArkUI_DecorationStyle* decorationStyle)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_DecorationStyle* decorationStyle | 指向OH_ArkUI_DecorationStyle对象的指针。 |
@@ -4643,9 +5078,10 @@ void OH_ArkUI_DecorationStyle_Destroy(OH_ArkUI_DecorationStyle* decorationStyle)
 
 
 
-#### OH_ArkUI_DecorationStyle_SetTextDecorationType()
+### OH_ArkUI_DecorationStyle_SetTextDecorationType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_DecorationStyle_SetTextDecorationType(OH_ArkUI_DecorationStyle* decorationStyle, ArkUI_TextDecorationType type)
@@ -4659,6 +5095,7 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyle_SetTextDecorationType(OH_ArkUI_Decorati
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_DecorationStyle* decorationStyle | 指向OH_ArkUI_DecorationStyle对象的指针。 |
@@ -4667,6 +5104,7 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyle_SetTextDecorationType(OH_ArkUI_Decorati
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -4674,9 +5112,10 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyle_SetTextDecorationType(OH_ArkUI_Decorati
 
 
 
-#### OH_ArkUI_DecorationStyle_GetTextDecorationType()
+### OH_ArkUI_DecorationStyle_GetTextDecorationType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_DecorationStyle_GetTextDecorationType(const OH_ArkUI_DecorationStyle* decorationStyle, ArkUI_TextDecorationType* type)
@@ -4690,6 +5129,7 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyle_GetTextDecorationType(const OH_ArkUI_De
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_DecorationStyle* decorationStyle | 指向OH_ArkUI_DecorationStyle对象的指针。 |
@@ -4698,6 +5138,7 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyle_GetTextDecorationType(const OH_ArkUI_De
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -4705,9 +5146,10 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyle_GetTextDecorationType(const OH_ArkUI_De
 
 
 
-#### OH_ArkUI_DecorationStyle_SetColor()
+### OH_ArkUI_DecorationStyle_SetColor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_DecorationStyle_SetColor(OH_ArkUI_DecorationStyle* decorationStyle, uint32_t color)
@@ -4721,6 +5163,7 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyle_SetColor(OH_ArkUI_DecorationStyle* deco
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_DecorationStyle* decorationStyle | 指向OH_ArkUI_DecorationStyle对象的指针。 |
@@ -4729,6 +5172,7 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyle_SetColor(OH_ArkUI_DecorationStyle* deco
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -4736,9 +5180,10 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyle_SetColor(OH_ArkUI_DecorationStyle* deco
 
 
 
-#### OH_ArkUI_DecorationStyle_GetColor()
+### OH_ArkUI_DecorationStyle_GetColor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_DecorationStyle_GetColor(const OH_ArkUI_DecorationStyle* decorationStyle, uint32_t* color)
@@ -4752,6 +5197,7 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyle_GetColor(const OH_ArkUI_DecorationStyle
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_DecorationStyle* decorationStyle | 指向OH_ArkUI_DecorationStyle对象的指针。 |
@@ -4760,6 +5206,7 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyle_GetColor(const OH_ArkUI_DecorationStyle
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -4767,9 +5214,10 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyle_GetColor(const OH_ArkUI_DecorationStyle
 
 
 
-#### OH_ArkUI_DecorationStyle_SetTextDecorationStyle()
+### OH_ArkUI_DecorationStyle_SetTextDecorationStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_DecorationStyle_SetTextDecorationStyle(OH_ArkUI_DecorationStyle* decorationStyle, ArkUI_TextDecorationStyle style)
@@ -4783,6 +5231,7 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyle_SetTextDecorationStyle(OH_ArkUI_Decorat
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_DecorationStyle* decorationStyle | 指向OH_ArkUI_DecorationStyle对象的指针。 |
@@ -4791,6 +5240,7 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyle_SetTextDecorationStyle(OH_ArkUI_Decorat
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -4798,9 +5248,10 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyle_SetTextDecorationStyle(OH_ArkUI_Decorat
 
 
 
-#### OH_ArkUI_DecorationStyle_GetTextDecorationStyle()
+### OH_ArkUI_DecorationStyle_GetTextDecorationStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_DecorationStyle_GetTextDecorationStyle(const OH_ArkUI_DecorationStyle* decorationStyle, ArkUI_TextDecorationStyle* style)
@@ -4814,6 +5265,7 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyle_GetTextDecorationStyle(const OH_ArkUI_D
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_DecorationStyle* decorationStyle | 指向OH_ArkUI_DecorationStyle对象的指针。 |
@@ -4822,6 +5274,7 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyle_GetTextDecorationStyle(const OH_ArkUI_D
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -4829,9 +5282,10 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyle_GetTextDecorationStyle(const OH_ArkUI_D
 
 
 
-#### OH_ArkUI_DecorationStyle_SetThicknessScale()
+### OH_ArkUI_DecorationStyle_SetThicknessScale()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_DecorationStyle_SetThicknessScale(OH_ArkUI_DecorationStyle* decorationStyle, float thicknessScale)
@@ -4845,6 +5299,7 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyle_SetThicknessScale(OH_ArkUI_DecorationSt
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_DecorationStyle* decorationStyle | 指向OH_ArkUI_DecorationStyle对象的指针。 |
@@ -4853,6 +5308,7 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyle_SetThicknessScale(OH_ArkUI_DecorationSt
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -4860,9 +5316,10 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyle_SetThicknessScale(OH_ArkUI_DecorationSt
 
 
 
-#### OH_ArkUI_DecorationStyle_GetThicknessScale()
+### OH_ArkUI_DecorationStyle_GetThicknessScale()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_DecorationStyle_GetThicknessScale(const OH_ArkUI_DecorationStyle* decorationStyle, float* thicknessScale)
@@ -4876,6 +5333,7 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyle_GetThicknessScale(const OH_ArkUI_Decora
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_DecorationStyle* decorationStyle | 指向OH_ArkUI_DecorationStyle对象的指针。 |
@@ -4884,6 +5342,7 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyle_GetThicknessScale(const OH_ArkUI_Decora
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -4891,9 +5350,10 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyle_GetThicknessScale(const OH_ArkUI_Decora
 
 
 
-#### OH_ArkUI_DecorationStyle_SetEnableMultiType()
+### OH_ArkUI_DecorationStyle_SetEnableMultiType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_DecorationStyle_SetEnableMultiType(OH_ArkUI_DecorationStyle* decorationStyle, bool enableMultiType)
@@ -4907,6 +5367,7 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyle_SetEnableMultiType(OH_ArkUI_DecorationS
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_DecorationStyle* decorationStyle | 指向OH_ArkUI_DecorationStyle对象的指针。 |
@@ -4915,6 +5376,7 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyle_SetEnableMultiType(OH_ArkUI_DecorationS
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -4922,9 +5384,10 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyle_SetEnableMultiType(OH_ArkUI_DecorationS
 
 
 
-#### OH_ArkUI_DecorationStyle_GetEnableMultiType()
+### OH_ArkUI_DecorationStyle_GetEnableMultiType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_DecorationStyle_GetEnableMultiType(const OH_ArkUI_DecorationStyle* decorationStyle, bool* enableMultiType)
@@ -4938,6 +5401,7 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyle_GetEnableMultiType(const OH_ArkUI_Decor
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_DecorationStyle* decorationStyle | 指向OH_ArkUI_DecorationStyle对象的指针。 |
@@ -4946,6 +5410,7 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyle_GetEnableMultiType(const OH_ArkUI_Decor
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -4953,9 +5418,10 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyle_GetEnableMultiType(const OH_ArkUI_Decor
 
 
 
-#### OH_ArkUI_BaselineOffsetStyle_Create()
+### OH_ArkUI_BaselineOffsetStyle_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_ArkUI_BaselineOffsetStyle* OH_ArkUI_BaselineOffsetStyle_Create()
@@ -4973,6 +5439,7 @@ OH_ArkUI_BaselineOffsetStyle* OH_ArkUI_BaselineOffsetStyle_Create()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_ArkUI_BaselineOffsetStyle* | 指向OH_ArkUI_BaselineOffsetStyle对象的指针，用于定义基线偏移量样式。 |
@@ -4980,9 +5447,10 @@ OH_ArkUI_BaselineOffsetStyle* OH_ArkUI_BaselineOffsetStyle_Create()
 
 
 
-#### OH_ArkUI_BaselineOffsetStyle_Destroy()
+### OH_ArkUI_BaselineOffsetStyle_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_BaselineOffsetStyle_Destroy(OH_ArkUI_BaselineOffsetStyle* baselineOffsetStyle)
@@ -4996,6 +5464,7 @@ void OH_ArkUI_BaselineOffsetStyle_Destroy(OH_ArkUI_BaselineOffsetStyle* baseline
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_BaselineOffsetStyle* baselineOffsetStyle | 指向OH_ArkUI_BaselineOffsetStyle对象的指针。 |
@@ -5003,9 +5472,10 @@ void OH_ArkUI_BaselineOffsetStyle_Destroy(OH_ArkUI_BaselineOffsetStyle* baseline
 
 
 
-#### OH_ArkUI_BaselineOffsetStyle_SetBaselineOffset()
+### OH_ArkUI_BaselineOffsetStyle_SetBaselineOffset()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_BaselineOffsetStyle_SetBaselineOffset(OH_ArkUI_BaselineOffsetStyle* baselineOffsetStyle, float baselineOffset)
@@ -5019,6 +5489,7 @@ ArkUI_ErrorCode OH_ArkUI_BaselineOffsetStyle_SetBaselineOffset(OH_ArkUI_Baseline
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_BaselineOffsetStyle* baselineOffsetStyle | 指向OH_ArkUI_BaselineOffsetStyle对象的指针。 |
@@ -5027,6 +5498,7 @@ ArkUI_ErrorCode OH_ArkUI_BaselineOffsetStyle_SetBaselineOffset(OH_ArkUI_Baseline
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -5034,9 +5506,10 @@ ArkUI_ErrorCode OH_ArkUI_BaselineOffsetStyle_SetBaselineOffset(OH_ArkUI_Baseline
 
 
 
-#### OH_ArkUI_BaselineOffsetStyle_GetBaselineOffset()
+### OH_ArkUI_BaselineOffsetStyle_GetBaselineOffset()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_BaselineOffsetStyle_GetBaselineOffset(const OH_ArkUI_BaselineOffsetStyle* baselineOffsetStyle, float* baselineOffset)
@@ -5050,6 +5523,7 @@ ArkUI_ErrorCode OH_ArkUI_BaselineOffsetStyle_GetBaselineOffset(const OH_ArkUI_Ba
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_BaselineOffsetStyle* baselineOffsetStyle | 指向OH_ArkUI_BaselineOffsetStyle对象的指针。 |
@@ -5058,6 +5532,7 @@ ArkUI_ErrorCode OH_ArkUI_BaselineOffsetStyle_GetBaselineOffset(const OH_ArkUI_Ba
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -5065,9 +5540,10 @@ ArkUI_ErrorCode OH_ArkUI_BaselineOffsetStyle_GetBaselineOffset(const OH_ArkUI_Ba
 
 
 
-#### OH_ArkUI_LetterSpacingStyle_Create()
+### OH_ArkUI_LetterSpacingStyle_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_ArkUI_LetterSpacingStyle* OH_ArkUI_LetterSpacingStyle_Create()
@@ -5085,6 +5561,7 @@ OH_ArkUI_LetterSpacingStyle* OH_ArkUI_LetterSpacingStyle_Create()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_ArkUI_LetterSpacingStyle* | 指向OH_ArkUI_LetterSpacingStyle对象的指针，用于定义字符间距样式。 |
@@ -5092,9 +5569,10 @@ OH_ArkUI_LetterSpacingStyle* OH_ArkUI_LetterSpacingStyle_Create()
 
 
 
-#### OH_ArkUI_LetterSpacingStyle_Destroy()
+### OH_ArkUI_LetterSpacingStyle_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_LetterSpacingStyle_Destroy(OH_ArkUI_LetterSpacingStyle* letterSpacingStyle)
@@ -5108,6 +5586,7 @@ void OH_ArkUI_LetterSpacingStyle_Destroy(OH_ArkUI_LetterSpacingStyle* letterSpac
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_LetterSpacingStyle* letterSpacingStyle | 指向OH_ArkUI_LetterSpacingStyle对象的指针。 |
@@ -5115,9 +5594,10 @@ void OH_ArkUI_LetterSpacingStyle_Destroy(OH_ArkUI_LetterSpacingStyle* letterSpac
 
 
 
-#### OH_ArkUI_LetterSpacingStyle_SetLetterSpacing()
+### OH_ArkUI_LetterSpacingStyle_SetLetterSpacing()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_LetterSpacingStyle_SetLetterSpacing(OH_ArkUI_LetterSpacingStyle* letterSpacingStyle, float letterSpacing)
@@ -5131,6 +5611,7 @@ ArkUI_ErrorCode OH_ArkUI_LetterSpacingStyle_SetLetterSpacing(OH_ArkUI_LetterSpac
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_LetterSpacingStyle* letterSpacingStyle | 指向OH_ArkUI_LetterSpacingStyle对象的指针。 |
@@ -5139,6 +5620,7 @@ ArkUI_ErrorCode OH_ArkUI_LetterSpacingStyle_SetLetterSpacing(OH_ArkUI_LetterSpac
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -5146,9 +5628,10 @@ ArkUI_ErrorCode OH_ArkUI_LetterSpacingStyle_SetLetterSpacing(OH_ArkUI_LetterSpac
 
 
 
-#### OH_ArkUI_LetterSpacingStyle_GetLetterSpacing()
+### OH_ArkUI_LetterSpacingStyle_GetLetterSpacing()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_LetterSpacingStyle_GetLetterSpacing(const OH_ArkUI_LetterSpacingStyle* letterSpacingStyle, float* letterSpacing)
@@ -5162,6 +5645,7 @@ ArkUI_ErrorCode OH_ArkUI_LetterSpacingStyle_GetLetterSpacing(const OH_ArkUI_Lett
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_LetterSpacingStyle* letterSpacingStyle | 指向OH_ArkUI_LetterSpacingStyle对象的指针。 |
@@ -5170,6 +5654,7 @@ ArkUI_ErrorCode OH_ArkUI_LetterSpacingStyle_GetLetterSpacing(const OH_ArkUI_Lett
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -5177,9 +5662,10 @@ ArkUI_ErrorCode OH_ArkUI_LetterSpacingStyle_GetLetterSpacing(const OH_ArkUI_Lett
 
 
 
-#### OH_ArkUI_LineHeightStyle_Create()
+### OH_ArkUI_LineHeightStyle_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_ArkUI_LineHeightStyle* OH_ArkUI_LineHeightStyle_Create()
@@ -5197,6 +5683,7 @@ OH_ArkUI_LineHeightStyle* OH_ArkUI_LineHeightStyle_Create()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_ArkUI_LineHeightStyle* | 指向OH_ArkUI_LineHeightStyle对象的指针，用于定义行高样式。 |
@@ -5204,9 +5691,10 @@ OH_ArkUI_LineHeightStyle* OH_ArkUI_LineHeightStyle_Create()
 
 
 
-#### OH_ArkUI_LineHeightStyle_Destroy()
+### OH_ArkUI_LineHeightStyle_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_LineHeightStyle_Destroy(OH_ArkUI_LineHeightStyle* lineHeightStyle)
@@ -5220,6 +5708,7 @@ void OH_ArkUI_LineHeightStyle_Destroy(OH_ArkUI_LineHeightStyle* lineHeightStyle)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_LineHeightStyle* lineHeightStyle | 指向OH_ArkUI_LineHeightStyle对象的指针。 |
@@ -5227,9 +5716,10 @@ void OH_ArkUI_LineHeightStyle_Destroy(OH_ArkUI_LineHeightStyle* lineHeightStyle)
 
 
 
-#### OH_ArkUI_LineHeightStyle_SetLineHeight()
+### OH_ArkUI_LineHeightStyle_SetLineHeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_LineHeightStyle_SetLineHeight(OH_ArkUI_LineHeightStyle* lineHeightStyle, float lineHeight)
@@ -5247,6 +5737,7 @@ ArkUI_ErrorCode OH_ArkUI_LineHeightStyle_SetLineHeight(OH_ArkUI_LineHeightStyle*
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_LineHeightStyle* lineHeightStyle | 指向OH_ArkUI_LineHeightStyle对象的指针。 |
@@ -5255,6 +5746,7 @@ ArkUI_ErrorCode OH_ArkUI_LineHeightStyle_SetLineHeight(OH_ArkUI_LineHeightStyle*
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -5262,9 +5754,10 @@ ArkUI_ErrorCode OH_ArkUI_LineHeightStyle_SetLineHeight(OH_ArkUI_LineHeightStyle*
 
 
 
-#### OH_ArkUI_LineHeightStyle_GetLineHeight()
+### OH_ArkUI_LineHeightStyle_GetLineHeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_LineHeightStyle_GetLineHeight(const OH_ArkUI_LineHeightStyle* lineHeightStyle, float* lineHeight)
@@ -5278,6 +5771,7 @@ ArkUI_ErrorCode OH_ArkUI_LineHeightStyle_GetLineHeight(const OH_ArkUI_LineHeight
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_LineHeightStyle* lineHeightStyle | 指向OH_ArkUI_LineHeightStyle对象的指针。 |
@@ -5286,6 +5780,7 @@ ArkUI_ErrorCode OH_ArkUI_LineHeightStyle_GetLineHeight(const OH_ArkUI_LineHeight
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -5293,9 +5788,10 @@ ArkUI_ErrorCode OH_ArkUI_LineHeightStyle_GetLineHeight(const OH_ArkUI_LineHeight
 
 
 
-#### OH_ArkUI_LineHeightStyle_SetLineHeightMultiple()
+### OH_ArkUI_LineHeightStyle_SetLineHeightMultiple()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_LineHeightStyle_SetLineHeightMultiple(OH_ArkUI_LineHeightStyle* lineHeightStyle, float lineHeightMultiple)
@@ -5313,6 +5809,7 @@ ArkUI_ErrorCode OH_ArkUI_LineHeightStyle_SetLineHeightMultiple(OH_ArkUI_LineHeig
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_LineHeightStyle* lineHeightStyle | 指向OH_ArkUI_LineHeightStyle对象的指针。 |
@@ -5321,6 +5818,7 @@ ArkUI_ErrorCode OH_ArkUI_LineHeightStyle_SetLineHeightMultiple(OH_ArkUI_LineHeig
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -5328,9 +5826,10 @@ ArkUI_ErrorCode OH_ArkUI_LineHeightStyle_SetLineHeightMultiple(OH_ArkUI_LineHeig
 
 
 
-#### OH_ArkUI_LineHeightStyle_GetLineHeightMultiple()
+### OH_ArkUI_LineHeightStyle_GetLineHeightMultiple()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_LineHeightStyle_GetLineHeightMultiple(const OH_ArkUI_LineHeightStyle* lineHeightStyle, float* lineHeightMultiple)
@@ -5344,6 +5843,7 @@ ArkUI_ErrorCode OH_ArkUI_LineHeightStyle_GetLineHeightMultiple(const OH_ArkUI_Li
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_LineHeightStyle* lineHeightStyle | 指向OH_ArkUI_LineHeightStyle对象的指针。 |
@@ -5352,6 +5852,7 @@ ArkUI_ErrorCode OH_ArkUI_LineHeightStyle_GetLineHeightMultiple(const OH_ArkUI_Li
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -5359,9 +5860,10 @@ ArkUI_ErrorCode OH_ArkUI_LineHeightStyle_GetLineHeightMultiple(const OH_ArkUI_Li
 
 
 
-#### OH_ArkUI_SpanStyle_SetLineSpacingStyle()
+### OH_ArkUI_SpanStyle_SetLineSpacingStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetLineSpacingStyle(OH_ArkUI_SpanStyle* spanStyle, const OH_ArkUI_LineSpacingStyle* lineSpacingStyle)
@@ -5379,6 +5881,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetLineSpacingStyle(OH_ArkUI_SpanStyle* spanS
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_SpanStyle* spanStyle | 指向OH_ArkUI_SpanStyle对象的指针。 |
@@ -5387,6 +5890,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetLineSpacingStyle(OH_ArkUI_SpanStyle* spanS
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -5394,9 +5898,10 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_SetLineSpacingStyle(OH_ArkUI_SpanStyle* spanS
 
 
 
-#### OH_ArkUI_SpanStyle_GetLineSpacingStyle()
+### OH_ArkUI_SpanStyle_GetLineSpacingStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetLineSpacingStyle(const OH_ArkUI_SpanStyle* spanStyle, OH_ArkUI_LineSpacingStyle* lineSpacingStyle)
@@ -5410,6 +5915,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetLineSpacingStyle(const OH_ArkUI_SpanStyle*
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_SpanStyle* spanStyle | 指向OH_ArkUI_SpanStyle对象的指针。 |
@@ -5418,6 +5924,7 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetLineSpacingStyle(const OH_ArkUI_SpanStyle*
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -5425,9 +5932,10 @@ ArkUI_ErrorCode OH_ArkUI_SpanStyle_GetLineSpacingStyle(const OH_ArkUI_SpanStyle*
 
 
 
-#### OH_ArkUI_LineSpacingStyle_Create()
+### OH_ArkUI_LineSpacingStyle_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_ArkUI_LineSpacingStyle* OH_ArkUI_LineSpacingStyle_Create()
@@ -5445,6 +5953,7 @@ OH_ArkUI_LineSpacingStyle* OH_ArkUI_LineSpacingStyle_Create()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_ArkUI_LineSpacingStyle* | 指向OH_ArkUI_LineSpacingStyle对象的指针，用于定义行间距样式。 |
@@ -5452,9 +5961,10 @@ OH_ArkUI_LineSpacingStyle* OH_ArkUI_LineSpacingStyle_Create()
 
 
 
-#### OH_ArkUI_LineSpacingStyle_Destroy()
+### OH_ArkUI_LineSpacingStyle_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_LineSpacingStyle_Destroy(OH_ArkUI_LineSpacingStyle* lineSpacingStyle)
@@ -5468,6 +5978,7 @@ void OH_ArkUI_LineSpacingStyle_Destroy(OH_ArkUI_LineSpacingStyle* lineSpacingSty
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_LineSpacingStyle* lineSpacingStyle | 指向OH_ArkUI_LineSpacingStyle对象的指针。 |
@@ -5475,9 +5986,10 @@ void OH_ArkUI_LineSpacingStyle_Destroy(OH_ArkUI_LineSpacingStyle* lineSpacingSty
 
 
 
-#### OH_ArkUI_LineSpacingStyle_SetLineSpacing()
+### OH_ArkUI_LineSpacingStyle_SetLineSpacing()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_LineSpacingStyle_SetLineSpacing(OH_ArkUI_LineSpacingStyle* lineSpacingStyle, float lineSpacing)
@@ -5495,6 +6007,7 @@ ArkUI_ErrorCode OH_ArkUI_LineSpacingStyle_SetLineSpacing(OH_ArkUI_LineSpacingSty
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_LineSpacingStyle* lineSpacingStyle | 指向OH_ArkUI_LineSpacingStyle对象的指针。 |
@@ -5503,6 +6016,7 @@ ArkUI_ErrorCode OH_ArkUI_LineSpacingStyle_SetLineSpacing(OH_ArkUI_LineSpacingSty
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -5510,9 +6024,10 @@ ArkUI_ErrorCode OH_ArkUI_LineSpacingStyle_SetLineSpacing(OH_ArkUI_LineSpacingSty
 
 
 
-#### OH_ArkUI_LineSpacingStyle_GetLineSpacing()
+### OH_ArkUI_LineSpacingStyle_GetLineSpacing()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_LineSpacingStyle_GetLineSpacing(const OH_ArkUI_LineSpacingStyle* lineSpacingStyle, float* lineSpacing)
@@ -5526,6 +6041,7 @@ ArkUI_ErrorCode OH_ArkUI_LineSpacingStyle_GetLineSpacing(const OH_ArkUI_LineSpac
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_LineSpacingStyle* lineSpacingStyle | 指向OH_ArkUI_LineSpacingStyle对象的指针。 |
@@ -5534,6 +6050,7 @@ ArkUI_ErrorCode OH_ArkUI_LineSpacingStyle_GetLineSpacing(const OH_ArkUI_LineSpac
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -5541,9 +6058,10 @@ ArkUI_ErrorCode OH_ArkUI_LineSpacingStyle_GetLineSpacing(const OH_ArkUI_LineSpac
 
 
 
-#### OH_ArkUI_LineSpacingStyle_SetOnlyBetweenLines()
+### OH_ArkUI_LineSpacingStyle_SetOnlyBetweenLines()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_LineSpacingStyle_SetOnlyBetweenLines(OH_ArkUI_LineSpacingStyle* lineSpacingStyle, bool onlyBetweenLines)
@@ -5557,6 +6075,7 @@ ArkUI_ErrorCode OH_ArkUI_LineSpacingStyle_SetOnlyBetweenLines(OH_ArkUI_LineSpaci
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_LineSpacingStyle* lineSpacingStyle | 指向OH_ArkUI_LineSpacingStyle对象的指针。 |
@@ -5565,6 +6084,7 @@ ArkUI_ErrorCode OH_ArkUI_LineSpacingStyle_SetOnlyBetweenLines(OH_ArkUI_LineSpaci
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -5572,9 +6092,10 @@ ArkUI_ErrorCode OH_ArkUI_LineSpacingStyle_SetOnlyBetweenLines(OH_ArkUI_LineSpaci
 
 
 
-#### OH_ArkUI_LineSpacingStyle_GetOnlyBetweenLines()
+### OH_ArkUI_LineSpacingStyle_GetOnlyBetweenLines()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_LineSpacingStyle_GetOnlyBetweenLines(const OH_ArkUI_LineSpacingStyle* lineSpacingStyle, bool* onlyBetweenLines)
@@ -5588,6 +6109,7 @@ ArkUI_ErrorCode OH_ArkUI_LineSpacingStyle_GetOnlyBetweenLines(const OH_ArkUI_Lin
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_LineSpacingStyle* lineSpacingStyle | 指向OH_ArkUI_LineSpacingStyle对象的指针。 |
@@ -5596,6 +6118,7 @@ ArkUI_ErrorCode OH_ArkUI_LineSpacingStyle_GetOnlyBetweenLines(const OH_ArkUI_Lin
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -5603,9 +6126,10 @@ ArkUI_ErrorCode OH_ArkUI_LineSpacingStyle_GetOnlyBetweenLines(const OH_ArkUI_Lin
 
 
 
-#### OH_ArkUI_BackgroundColorStyle_Create()
+### OH_ArkUI_BackgroundColorStyle_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_ArkUI_BackgroundColorStyle* OH_ArkUI_BackgroundColorStyle_Create()
@@ -5623,6 +6147,7 @@ OH_ArkUI_BackgroundColorStyle* OH_ArkUI_BackgroundColorStyle_Create()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_ArkUI_BackgroundColorStyle* | 指向OH_ArkUI_BackgroundColorStyle对象的指针，用于定义背景颜色样式。 |
@@ -5630,9 +6155,10 @@ OH_ArkUI_BackgroundColorStyle* OH_ArkUI_BackgroundColorStyle_Create()
 
 
 
-#### OH_ArkUI_BackgroundColorStyle_Destroy()
+### OH_ArkUI_BackgroundColorStyle_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_BackgroundColorStyle_Destroy(OH_ArkUI_BackgroundColorStyle* style)
@@ -5646,6 +6172,7 @@ void OH_ArkUI_BackgroundColorStyle_Destroy(OH_ArkUI_BackgroundColorStyle* style)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_BackgroundColorStyle* style | 指向OH_ArkUI_BackgroundColorStyle对象的指针。 |
@@ -5653,9 +6180,10 @@ void OH_ArkUI_BackgroundColorStyle_Destroy(OH_ArkUI_BackgroundColorStyle* style)
 
 
 
-#### OH_ArkUI_BackgroundColorStyle_SetColor()
+### OH_ArkUI_BackgroundColorStyle_SetColor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_BackgroundColorStyle_SetColor(OH_ArkUI_BackgroundColorStyle* style, uint32_t color)
@@ -5669,6 +6197,7 @@ ArkUI_ErrorCode OH_ArkUI_BackgroundColorStyle_SetColor(OH_ArkUI_BackgroundColorS
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_BackgroundColorStyle* style | 指向OH_ArkUI_BackgroundColorStyle对象的指针。 |
@@ -5677,6 +6206,7 @@ ArkUI_ErrorCode OH_ArkUI_BackgroundColorStyle_SetColor(OH_ArkUI_BackgroundColorS
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -5684,9 +6214,10 @@ ArkUI_ErrorCode OH_ArkUI_BackgroundColorStyle_SetColor(OH_ArkUI_BackgroundColorS
 
 
 
-#### OH_ArkUI_BackgroundColorStyle_GetColor()
+### OH_ArkUI_BackgroundColorStyle_GetColor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_BackgroundColorStyle_GetColor(const OH_ArkUI_BackgroundColorStyle* style, uint32_t* color)
@@ -5700,6 +6231,7 @@ ArkUI_ErrorCode OH_ArkUI_BackgroundColorStyle_GetColor(const OH_ArkUI_Background
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_BackgroundColorStyle* style | 指向OH_ArkUI_BackgroundColorStyle对象的指针。 |
@@ -5708,6 +6240,7 @@ ArkUI_ErrorCode OH_ArkUI_BackgroundColorStyle_GetColor(const OH_ArkUI_Background
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -5715,9 +6248,10 @@ ArkUI_ErrorCode OH_ArkUI_BackgroundColorStyle_GetColor(const OH_ArkUI_Background
 
 
 
-#### OH_ArkUI_BackgroundColorStyle_SetRadius()
+### OH_ArkUI_BackgroundColorStyle_SetRadius()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_BackgroundColorStyle_SetRadius(OH_ArkUI_BackgroundColorStyle* style, float topLeft, float topRight, float bottomLeft, float bottomRight)
@@ -5731,6 +6265,7 @@ ArkUI_ErrorCode OH_ArkUI_BackgroundColorStyle_SetRadius(OH_ArkUI_BackgroundColor
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_BackgroundColorStyle* style | 指向OH_ArkUI_BackgroundColorStyle对象的指针。 |
@@ -5742,6 +6277,7 @@ ArkUI_ErrorCode OH_ArkUI_BackgroundColorStyle_SetRadius(OH_ArkUI_BackgroundColor
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -5749,9 +6285,10 @@ ArkUI_ErrorCode OH_ArkUI_BackgroundColorStyle_SetRadius(OH_ArkUI_BackgroundColor
 
 
 
-#### OH_ArkUI_BackgroundColorStyle_GetRadius()
+### OH_ArkUI_BackgroundColorStyle_GetRadius()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_BackgroundColorStyle_GetRadius(const OH_ArkUI_BackgroundColorStyle* style, float* topLeft, float* topRight, float* bottomLeft, float* bottomRight)
@@ -5765,6 +6302,7 @@ ArkUI_ErrorCode OH_ArkUI_BackgroundColorStyle_GetRadius(const OH_ArkUI_Backgroun
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_BackgroundColorStyle* style | 指向OH_ArkUI_BackgroundColorStyle对象的指针。 |
@@ -5776,6 +6314,7 @@ ArkUI_ErrorCode OH_ArkUI_BackgroundColorStyle_GetRadius(const OH_ArkUI_Backgroun
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -5783,9 +6322,10 @@ ArkUI_ErrorCode OH_ArkUI_BackgroundColorStyle_GetRadius(const OH_ArkUI_Backgroun
 
 
 
-#### OH_ArkUI_UrlStyle_Create()
+### OH_ArkUI_UrlStyle_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_ArkUI_UrlStyle* OH_ArkUI_UrlStyle_Create()
@@ -5803,6 +6343,7 @@ OH_ArkUI_UrlStyle* OH_ArkUI_UrlStyle_Create()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_ArkUI_UrlStyle* | 指向OH_ArkUI_UrlStyle对象的指针，用于定义超链接样式。 |
@@ -5810,9 +6351,10 @@ OH_ArkUI_UrlStyle* OH_ArkUI_UrlStyle_Create()
 
 
 
-#### OH_ArkUI_UrlStyle_Destroy()
+### OH_ArkUI_UrlStyle_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_UrlStyle_Destroy(OH_ArkUI_UrlStyle* style)
@@ -5826,6 +6368,7 @@ void OH_ArkUI_UrlStyle_Destroy(OH_ArkUI_UrlStyle* style)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_UrlStyle* style | 指向OH_ArkUI_UrlStyle对象的指针。 |
@@ -5833,9 +6376,10 @@ void OH_ArkUI_UrlStyle_Destroy(OH_ArkUI_UrlStyle* style)
 
 
 
-#### OH_ArkUI_UrlStyle_SetUrl()
+### OH_ArkUI_UrlStyle_SetUrl()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_UrlStyle_SetUrl(OH_ArkUI_UrlStyle* style, const char* url)
@@ -5849,6 +6393,7 @@ ArkUI_ErrorCode OH_ArkUI_UrlStyle_SetUrl(OH_ArkUI_UrlStyle* style, const char* u
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_UrlStyle* style | 指向OH_ArkUI_UrlStyle对象的指针。 |
@@ -5857,6 +6402,7 @@ ArkUI_ErrorCode OH_ArkUI_UrlStyle_SetUrl(OH_ArkUI_UrlStyle* style, const char* u
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -5864,9 +6410,10 @@ ArkUI_ErrorCode OH_ArkUI_UrlStyle_SetUrl(OH_ArkUI_UrlStyle* style, const char* u
 
 
 
-#### OH_ArkUI_UrlStyle_GetUrl()
+### OH_ArkUI_UrlStyle_GetUrl()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_UrlStyle_GetUrl(const OH_ArkUI_UrlStyle* style, char* buffer, int32_t bufferSize, int32_t* writeLength)
@@ -5880,6 +6427,7 @@ ArkUI_ErrorCode OH_ArkUI_UrlStyle_GetUrl(const OH_ArkUI_UrlStyle* style, char* b
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_UrlStyle* style | 指向OH_ArkUI_UrlStyle对象的指针。 |
@@ -5890,6 +6438,7 @@ ArkUI_ErrorCode OH_ArkUI_UrlStyle_GetUrl(const OH_ArkUI_UrlStyle* style, char* b
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_BUFFER_SIZE_ERROR 缓冲区大小不足，可通过writeLength参数获取所需最小缓冲区大小，重新分配足够大小的缓冲区后再次调用。 |
@@ -5897,9 +6446,10 @@ ArkUI_ErrorCode OH_ArkUI_UrlStyle_GetUrl(const OH_ArkUI_UrlStyle* style, char* b
 
 
 
-#### OH_ArkUI_UserDataSpan_Create()
+### OH_ArkUI_UserDataSpan_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_ArkUI_UserDataSpan* OH_ArkUI_UserDataSpan_Create()
@@ -5917,6 +6467,7 @@ OH_ArkUI_UserDataSpan* OH_ArkUI_UserDataSpan_Create()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_ArkUI_UserDataSpan* | 指向OH_ArkUI_UserDataSpan对象的指针，用于定义用户数据Span样式。 |
@@ -5924,9 +6475,10 @@ OH_ArkUI_UserDataSpan* OH_ArkUI_UserDataSpan_Create()
 
 
 
-#### OH_ArkUI_UserDataSpan_Destroy()
+### OH_ArkUI_UserDataSpan_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_UserDataSpan_Destroy(OH_ArkUI_UserDataSpan* userDataSpan)
@@ -5940,6 +6492,7 @@ void OH_ArkUI_UserDataSpan_Destroy(OH_ArkUI_UserDataSpan* userDataSpan)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_UserDataSpan* userDataSpan | 指向OH_ArkUI_UserDataSpan对象的指针。 |
@@ -5947,9 +6500,10 @@ void OH_ArkUI_UserDataSpan_Destroy(OH_ArkUI_UserDataSpan* userDataSpan)
 
 
 
-#### OH_ArkUI_UserDataSpan_SetUserData()
+### OH_ArkUI_UserDataSpan_SetUserData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_UserDataSpan_SetUserData(OH_ArkUI_UserDataSpan* userDataSpan, void* userData)
@@ -5967,6 +6521,7 @@ ArkUI_ErrorCode OH_ArkUI_UserDataSpan_SetUserData(OH_ArkUI_UserDataSpan* userDat
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_UserDataSpan* userDataSpan | 指向OH_ArkUI_UserDataSpan对象的指针。 |
@@ -5975,6 +6530,7 @@ ArkUI_ErrorCode OH_ArkUI_UserDataSpan_SetUserData(OH_ArkUI_UserDataSpan* userDat
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -5982,9 +6538,10 @@ ArkUI_ErrorCode OH_ArkUI_UserDataSpan_SetUserData(OH_ArkUI_UserDataSpan* userDat
 
 
 
-#### OH_ArkUI_UserDataSpan_GetUserData()
+### OH_ArkUI_UserDataSpan_GetUserData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_UserDataSpan_GetUserData(const OH_ArkUI_UserDataSpan* userDataSpan, void** userData)
@@ -5998,6 +6555,7 @@ ArkUI_ErrorCode OH_ArkUI_UserDataSpan_GetUserData(const OH_ArkUI_UserDataSpan* u
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_UserDataSpan* userDataSpan | 指向OH_ArkUI_UserDataSpan对象的指针。 |
@@ -6006,6 +6564,7 @@ ArkUI_ErrorCode OH_ArkUI_UserDataSpan_GetUserData(const OH_ArkUI_UserDataSpan* u
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -6013,9 +6572,10 @@ ArkUI_ErrorCode OH_ArkUI_UserDataSpan_GetUserData(const OH_ArkUI_UserDataSpan* u
 
 
 
-#### OH_ArkUI_CustomSpan_Create()
+### OH_ArkUI_CustomSpan_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_ArkUI_CustomSpan* OH_ArkUI_CustomSpan_Create()
@@ -6025,13 +6585,14 @@ OH_ArkUI_CustomSpan* OH_ArkUI_CustomSpan_Create()
 
 创建[OH_ArkUI_CustomSpan](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-oh-arkui-customspan)对象。
 
-> [!NOTE]
+> [!TIP]
 > 当该对象不再使用时，调用 OH_ArkUI_CustomSpan_Destroy 销毁它。
 
 
 **起始版本：** 24
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6040,9 +6601,10 @@ OH_ArkUI_CustomSpan* OH_ArkUI_CustomSpan_Create()
 
 
 
-#### OH_ArkUI_CustomSpan_Destroy()
+### OH_ArkUI_CustomSpan_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_CustomSpan_Destroy(OH_ArkUI_CustomSpan* customSpan)
@@ -6056,6 +6618,7 @@ void OH_ArkUI_CustomSpan_Destroy(OH_ArkUI_CustomSpan* customSpan)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_CustomSpan* customSpan | 指向OH_ArkUI_CustomSpan对象的指针。 |
@@ -6063,9 +6626,10 @@ void OH_ArkUI_CustomSpan_Destroy(OH_ArkUI_CustomSpan* customSpan)
 
 
 
-#### OH_ArkUI_CustomSpan_RegisterOnMeasureCallback()
+### OH_ArkUI_CustomSpan_RegisterOnMeasureCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_CustomSpan_RegisterOnMeasureCallback(OH_ArkUI_CustomSpan* customSpan, ArkUI_CustomSpanMetrics*(*onMeasure)(float))
@@ -6079,6 +6643,7 @@ ArkUI_ErrorCode OH_ArkUI_CustomSpan_RegisterOnMeasureCallback(OH_ArkUI_CustomSpa
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_CustomSpan* customSpan | 指向OH_ArkUI_CustomSpan对象的指针。 |
@@ -6087,6 +6652,7 @@ ArkUI_ErrorCode OH_ArkUI_CustomSpan_RegisterOnMeasureCallback(OH_ArkUI_CustomSpa
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -6094,9 +6660,10 @@ ArkUI_ErrorCode OH_ArkUI_CustomSpan_RegisterOnMeasureCallback(OH_ArkUI_CustomSpa
 
 
 
-#### OH_ArkUI_CustomSpan_RegisterOnDrawCallback()
+### OH_ArkUI_CustomSpan_RegisterOnDrawCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_CustomSpan_RegisterOnDrawCallback(OH_ArkUI_CustomSpan* customSpan, void(*onDraw)(ArkUI_DrawContext*, ArkUI_CustomSpanDrawInfo*))
@@ -6110,6 +6677,7 @@ ArkUI_ErrorCode OH_ArkUI_CustomSpan_RegisterOnDrawCallback(OH_ArkUI_CustomSpan* 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_CustomSpan* customSpan | 指向OH_ArkUI_CustomSpan对象的指针。 |
@@ -6118,6 +6686,7 @@ ArkUI_ErrorCode OH_ArkUI_CustomSpan_RegisterOnDrawCallback(OH_ArkUI_CustomSpan* 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -6125,9 +6694,10 @@ ArkUI_ErrorCode OH_ArkUI_CustomSpan_RegisterOnDrawCallback(OH_ArkUI_CustomSpan* 
 
 
 
-#### OH_ArkUI_ImageAttachment_Create()
+### OH_ArkUI_ImageAttachment_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_ArkUI_ImageAttachment* OH_ArkUI_ImageAttachment_Create()
@@ -6145,6 +6715,7 @@ OH_ArkUI_ImageAttachment* OH_ArkUI_ImageAttachment_Create()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_ArkUI_ImageAttachment* | 指向OH_ArkUI_ImageAttachment对象的指针，用于定义图片样式对象。 |
@@ -6152,9 +6723,10 @@ OH_ArkUI_ImageAttachment* OH_ArkUI_ImageAttachment_Create()
 
 
 
-#### OH_ArkUI_ImageAttachment_Destroy()
+### OH_ArkUI_ImageAttachment_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_ImageAttachment_Destroy(OH_ArkUI_ImageAttachment* imageAttachment)
@@ -6168,6 +6740,7 @@ void OH_ArkUI_ImageAttachment_Destroy(OH_ArkUI_ImageAttachment* imageAttachment)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_ImageAttachment* imageAttachment | 指向OH_ArkUI_ImageAttachment对象的指针。 |
@@ -6175,9 +6748,10 @@ void OH_ArkUI_ImageAttachment_Destroy(OH_ArkUI_ImageAttachment* imageAttachment)
 
 
 
-#### OH_ArkUI_ImageAttachment_SetPixelMap()
+### OH_ArkUI_ImageAttachment_SetPixelMap()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetPixelMap(OH_ArkUI_ImageAttachment* imageAttachment, struct OH_PixelmapNative* pixelmap)
@@ -6195,6 +6769,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetPixelMap(OH_ArkUI_ImageAttachment* i
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_ImageAttachment* imageAttachment | 指向OH_ArkUI_ImageAttachment对象的指针。 |
@@ -6203,6 +6778,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetPixelMap(OH_ArkUI_ImageAttachment* i
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -6210,9 +6786,10 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetPixelMap(OH_ArkUI_ImageAttachment* i
 
 
 
-#### OH_ArkUI_ImageAttachment_GetPixelMap()
+### OH_ArkUI_ImageAttachment_GetPixelMap()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetPixelMap(const OH_ArkUI_ImageAttachment* imageAttachment, struct OH_PixelmapNative** pixelmap)
@@ -6226,6 +6803,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetPixelMap(const OH_ArkUI_ImageAttachm
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_ImageAttachment* imageAttachment | 指向OH_ArkUI_ImageAttachment对象的指针。 |
@@ -6234,6 +6812,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetPixelMap(const OH_ArkUI_ImageAttachm
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -6241,9 +6820,10 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetPixelMap(const OH_ArkUI_ImageAttachm
 
 
 
-#### OH_ArkUI_ImageAttachment_SetResource()
+### OH_ArkUI_ImageAttachment_SetResource()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetResource(OH_ArkUI_ImageAttachment* imageAttachment, const char* resource)
@@ -6261,6 +6841,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetResource(OH_ArkUI_ImageAttachment* i
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_ImageAttachment* imageAttachment | 指向OH_ArkUI_ImageAttachment对象的指针。 |
@@ -6269,6 +6850,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetResource(OH_ArkUI_ImageAttachment* i
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -6276,9 +6858,10 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetResource(OH_ArkUI_ImageAttachment* i
 
 
 
-#### OH_ArkUI_ImageAttachment_GetResource()
+### OH_ArkUI_ImageAttachment_GetResource()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetResource(const OH_ArkUI_ImageAttachment* imageAttachment, char* buffer, int32_t bufferSize, int32_t* writeLength)
@@ -6292,6 +6875,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetResource(const OH_ArkUI_ImageAttachm
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_ImageAttachment* imageAttachment | 指向OH_ArkUI_ImageAttachment对象的指针。 |
@@ -6302,6 +6886,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetResource(const OH_ArkUI_ImageAttachm
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_BUFFER_SIZE_ERROR 缓冲区大小不足。 |
@@ -6309,9 +6894,10 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetResource(const OH_ArkUI_ImageAttachm
 
 
 
-#### OH_ArkUI_ImageAttachment_SetSizeWidth()
+### OH_ArkUI_ImageAttachment_SetSizeWidth()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetSizeWidth(OH_ArkUI_ImageAttachment* imageAttachment, float width)
@@ -6325,6 +6911,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetSizeWidth(OH_ArkUI_ImageAttachment* 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_ImageAttachment* imageAttachment | 指向OH_ArkUI_ImageAttachment对象的指针。 |
@@ -6333,6 +6920,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetSizeWidth(OH_ArkUI_ImageAttachment* 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -6340,9 +6928,10 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetSizeWidth(OH_ArkUI_ImageAttachment* 
 
 
 
-#### OH_ArkUI_ImageAttachment_GetSizeWidth()
+### OH_ArkUI_ImageAttachment_GetSizeWidth()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetSizeWidth(const OH_ArkUI_ImageAttachment* imageAttachment, float* width)
@@ -6356,6 +6945,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetSizeWidth(const OH_ArkUI_ImageAttach
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_ImageAttachment* imageAttachment | 指向OH_ArkUI_ImageAttachment对象的指针。 |
@@ -6364,6 +6954,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetSizeWidth(const OH_ArkUI_ImageAttach
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -6371,9 +6962,10 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetSizeWidth(const OH_ArkUI_ImageAttach
 
 
 
-#### OH_ArkUI_ImageAttachment_SetSizeHeight()
+### OH_ArkUI_ImageAttachment_SetSizeHeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetSizeHeight(OH_ArkUI_ImageAttachment* imageAttachment, float height)
@@ -6387,6 +6979,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetSizeHeight(OH_ArkUI_ImageAttachment*
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_ImageAttachment* imageAttachment | 指向OH_ArkUI_ImageAttachment对象的指针。 |
@@ -6395,6 +6988,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetSizeHeight(OH_ArkUI_ImageAttachment*
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -6402,9 +6996,10 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetSizeHeight(OH_ArkUI_ImageAttachment*
 
 
 
-#### OH_ArkUI_ImageAttachment_GetSizeHeight()
+### OH_ArkUI_ImageAttachment_GetSizeHeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetSizeHeight(const OH_ArkUI_ImageAttachment* imageAttachment, float* height)
@@ -6418,6 +7013,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetSizeHeight(const OH_ArkUI_ImageAttac
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_ImageAttachment* imageAttachment | 指向OH_ArkUI_ImageAttachment对象的指针。 |
@@ -6426,6 +7022,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetSizeHeight(const OH_ArkUI_ImageAttac
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -6433,9 +7030,10 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetSizeHeight(const OH_ArkUI_ImageAttac
 
 
 
-#### OH_ArkUI_ImageAttachment_SetVerticalAlign()
+### OH_ArkUI_ImageAttachment_SetVerticalAlign()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetVerticalAlign(OH_ArkUI_ImageAttachment* imageAttachment, ArkUI_ImageSpanAlignment verticalAlign)
@@ -6449,6 +7047,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetVerticalAlign(OH_ArkUI_ImageAttachme
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_ImageAttachment* imageAttachment | 指向OH_ArkUI_ImageAttachment对象的指针。 |
@@ -6457,6 +7056,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetVerticalAlign(OH_ArkUI_ImageAttachme
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -6464,9 +7064,10 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetVerticalAlign(OH_ArkUI_ImageAttachme
 
 
 
-#### OH_ArkUI_ImageAttachment_GetVerticalAlign()
+### OH_ArkUI_ImageAttachment_GetVerticalAlign()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetVerticalAlign(const OH_ArkUI_ImageAttachment* imageAttachment, ArkUI_ImageSpanAlignment* verticalAlign)
@@ -6480,6 +7081,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetVerticalAlign(const OH_ArkUI_ImageAt
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_ImageAttachment* imageAttachment | 指向OH_ArkUI_ImageAttachment对象的指针。 |
@@ -6488,6 +7090,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetVerticalAlign(const OH_ArkUI_ImageAt
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -6495,9 +7098,10 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetVerticalAlign(const OH_ArkUI_ImageAt
 
 
 
-#### OH_ArkUI_ImageAttachment_SetObjectFit()
+### OH_ArkUI_ImageAttachment_SetObjectFit()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetObjectFit(OH_ArkUI_ImageAttachment* imageAttachment, ArkUI_ObjectFit objectFit)
@@ -6511,6 +7115,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetObjectFit(OH_ArkUI_ImageAttachment* 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_ImageAttachment* imageAttachment | 指向OH_ArkUI_ImageAttachment对象的指针。 |
@@ -6519,6 +7124,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetObjectFit(OH_ArkUI_ImageAttachment* 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -6526,9 +7132,10 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetObjectFit(OH_ArkUI_ImageAttachment* 
 
 
 
-#### OH_ArkUI_ImageAttachment_GetObjectFit()
+### OH_ArkUI_ImageAttachment_GetObjectFit()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetObjectFit(const OH_ArkUI_ImageAttachment* imageAttachment, ArkUI_ObjectFit* objectFit)
@@ -6542,6 +7149,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetObjectFit(const OH_ArkUI_ImageAttach
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_ImageAttachment* imageAttachment | 指向OH_ArkUI_ImageAttachment对象的指针。 |
@@ -6550,6 +7158,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetObjectFit(const OH_ArkUI_ImageAttach
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -6557,9 +7166,10 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetObjectFit(const OH_ArkUI_ImageAttach
 
 
 
-#### OH_ArkUI_ImageAttachment_SetMargin()
+### OH_ArkUI_ImageAttachment_SetMargin()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetMargin(OH_ArkUI_ImageAttachment* imageAttachment, ArkUI_Margin margin)
@@ -6573,6 +7183,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetMargin(OH_ArkUI_ImageAttachment* ima
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_ImageAttachment* imageAttachment | 指向OH_ArkUI_ImageAttachment对象的指针。 |
@@ -6581,6 +7192,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetMargin(OH_ArkUI_ImageAttachment* ima
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -6588,9 +7200,10 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetMargin(OH_ArkUI_ImageAttachment* ima
 
 
 
-#### OH_ArkUI_ImageAttachment_GetMargin()
+### OH_ArkUI_ImageAttachment_GetMargin()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetMargin(const OH_ArkUI_ImageAttachment* imageAttachment, ArkUI_Margin* margin)
@@ -6604,6 +7217,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetMargin(const OH_ArkUI_ImageAttachmen
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_ImageAttachment* imageAttachment | 指向OH_ArkUI_ImageAttachment对象的指针。 |
@@ -6612,6 +7226,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetMargin(const OH_ArkUI_ImageAttachmen
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -6619,9 +7234,10 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetMargin(const OH_ArkUI_ImageAttachmen
 
 
 
-#### OH_ArkUI_ImageAttachment_SetPadding()
+### OH_ArkUI_ImageAttachment_SetPadding()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetPadding(OH_ArkUI_ImageAttachment* imageAttachment, ArkUI_Margin padding)
@@ -6635,6 +7251,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetPadding(OH_ArkUI_ImageAttachment* im
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_ImageAttachment* imageAttachment | 指向OH_ArkUI_ImageAttachment对象的指针。 |
@@ -6643,6 +7260,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetPadding(OH_ArkUI_ImageAttachment* im
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -6650,9 +7268,10 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetPadding(OH_ArkUI_ImageAttachment* im
 
 
 
-#### OH_ArkUI_ImageAttachment_GetPadding()
+### OH_ArkUI_ImageAttachment_GetPadding()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetPadding(const OH_ArkUI_ImageAttachment* imageAttachment, ArkUI_Margin* padding)
@@ -6666,6 +7285,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetPadding(const OH_ArkUI_ImageAttachme
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_ImageAttachment* imageAttachment | 指向OH_ArkUI_ImageAttachment对象的指针。 |
@@ -6674,6 +7294,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetPadding(const OH_ArkUI_ImageAttachme
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -6681,9 +7302,10 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetPadding(const OH_ArkUI_ImageAttachme
 
 
 
-#### OH_ArkUI_ImageAttachment_SetBorderRadiuses()
+### OH_ArkUI_ImageAttachment_SetBorderRadiuses()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetBorderRadiuses(OH_ArkUI_ImageAttachment* imageAttachment, float topLeft, float topRight, float bottomLeft, float bottomRight)
@@ -6697,6 +7319,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetBorderRadiuses(OH_ArkUI_ImageAttachm
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_ImageAttachment* imageAttachment | 指向OH_ArkUI_ImageAttachment对象的指针。 |
@@ -6708,6 +7331,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetBorderRadiuses(OH_ArkUI_ImageAttachm
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -6715,9 +7339,10 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetBorderRadiuses(OH_ArkUI_ImageAttachm
 
 
 
-#### OH_ArkUI_ImageAttachment_GetBorderRadiuses()
+### OH_ArkUI_ImageAttachment_GetBorderRadiuses()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetBorderRadiuses(const OH_ArkUI_ImageAttachment* imageAttachment, float* topLeft, float* topRight, float* bottomLeft, float* bottomRight)
@@ -6731,6 +7356,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetBorderRadiuses(const OH_ArkUI_ImageA
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_ImageAttachment* imageAttachment | 指向OH_ArkUI_ImageAttachment对象的指针。 |
@@ -6742,6 +7368,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetBorderRadiuses(const OH_ArkUI_ImageA
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -6749,9 +7376,10 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetBorderRadiuses(const OH_ArkUI_ImageA
 
 
 
-#### OH_ArkUI_ImageAttachment_SetColorFilter()
+### OH_ArkUI_ImageAttachment_SetColorFilter()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetColorFilter(OH_ArkUI_ImageAttachment* imageAttachment, const float* colorFilter, uint32_t size)
@@ -6769,6 +7397,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetColorFilter(OH_ArkUI_ImageAttachment
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_ImageAttachment* imageAttachment | 指向OH_ArkUI_ImageAttachment对象的指针。 |
@@ -6778,6 +7407,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetColorFilter(OH_ArkUI_ImageAttachment
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -6785,9 +7415,10 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetColorFilter(OH_ArkUI_ImageAttachment
 
 
 
-#### OH_ArkUI_ImageAttachment_GetColorFilter()
+### OH_ArkUI_ImageAttachment_GetColorFilter()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetColorFilter(const OH_ArkUI_ImageAttachment* imageAttachment, float** colorFilter, uint32_t colorFilterSize, uint32_t* writeLength)
@@ -6801,6 +7432,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetColorFilter(const OH_ArkUI_ImageAtta
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_ImageAttachment* imageAttachment | 指向OH_ArkUI_ImageAttachment对象的指针。 |
@@ -6811,6 +7443,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetColorFilter(const OH_ArkUI_ImageAtta
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_BUFFER_SIZE_ERROR 缓冲区大小不足。 |
@@ -6818,9 +7451,10 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetColorFilter(const OH_ArkUI_ImageAtta
 
 
 
-#### OH_ArkUI_ImageAttachment_SetDrawingColorFilter()
+### OH_ArkUI_ImageAttachment_SetDrawingColorFilter()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetDrawingColorFilter(OH_ArkUI_ImageAttachment* imageAttachment, const OH_Drawing_ColorFilter* drawingColorFilter)
@@ -6838,6 +7472,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetDrawingColorFilter(OH_ArkUI_ImageAtt
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_ImageAttachment* imageAttachment | 指向OH_ArkUI_ImageAttachment对象的指针。 |
@@ -6846,6 +7481,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetDrawingColorFilter(OH_ArkUI_ImageAtt
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -6853,9 +7489,10 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetDrawingColorFilter(OH_ArkUI_ImageAtt
 
 
 
-#### OH_ArkUI_ImageAttachment_GetDrawingColorFilter()
+### OH_ArkUI_ImageAttachment_GetDrawingColorFilter()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetDrawingColorFilter(const OH_ArkUI_ImageAttachment* imageAttachment, OH_Drawing_ColorFilter* drawingColorFilter)
@@ -6869,6 +7506,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetDrawingColorFilter(const OH_ArkUI_Im
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_ImageAttachment* imageAttachment | 指向OH_ArkUI_ImageAttachment对象的指针。 |
@@ -6877,6 +7515,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetDrawingColorFilter(const OH_ArkUI_Im
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -6884,9 +7523,10 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetDrawingColorFilter(const OH_ArkUI_Im
 
 
 
-#### OH_ArkUI_ImageAttachment_SetSyncLoad()
+### OH_ArkUI_ImageAttachment_SetSyncLoad()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetSyncLoad(OH_ArkUI_ImageAttachment* imageAttachment, bool syncLoad)
@@ -6904,6 +7544,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetSyncLoad(OH_ArkUI_ImageAttachment* i
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_ImageAttachment* imageAttachment | 指向OH_ArkUI_ImageAttachment对象的指针。 |
@@ -6912,6 +7553,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetSyncLoad(OH_ArkUI_ImageAttachment* i
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -6919,9 +7561,10 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetSyncLoad(OH_ArkUI_ImageAttachment* i
 
 
 
-#### OH_ArkUI_ImageAttachment_GetSyncLoad()
+### OH_ArkUI_ImageAttachment_GetSyncLoad()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetSyncLoad(const OH_ArkUI_ImageAttachment* imageAttachment, bool* syncLoad)
@@ -6935,6 +7578,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetSyncLoad(const OH_ArkUI_ImageAttachm
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_ImageAttachment* imageAttachment | 指向OH_ArkUI_ImageAttachment对象的指针。 |
@@ -6943,6 +7587,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetSyncLoad(const OH_ArkUI_ImageAttachm
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -6950,9 +7595,10 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetSyncLoad(const OH_ArkUI_ImageAttachm
 
 
 
-#### OH_ArkUI_ImageAttachment_SetSupportSvg()
+### OH_ArkUI_ImageAttachment_SetSupportSvg()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetSupportSvg(OH_ArkUI_ImageAttachment* imageAttachment, bool supportSvg)
@@ -6966,6 +7612,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetSupportSvg(OH_ArkUI_ImageAttachment*
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_ImageAttachment* imageAttachment | 指向OH_ArkUI_ImageAttachment对象的指针。 |
@@ -6974,6 +7621,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetSupportSvg(OH_ArkUI_ImageAttachment*
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -6981,9 +7629,10 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_SetSupportSvg(OH_ArkUI_ImageAttachment*
 
 
 
-#### OH_ArkUI_ImageAttachment_GetSupportSvg()
+### OH_ArkUI_ImageAttachment_GetSupportSvg()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetSupportSvg(const OH_ArkUI_ImageAttachment* imageAttachment, bool* supportSvg)
@@ -6997,6 +7646,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetSupportSvg(const OH_ArkUI_ImageAttac
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_ImageAttachment* imageAttachment | 指向OH_ArkUI_ImageAttachment对象的指针。 |
@@ -7005,6 +7655,7 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetSupportSvg(const OH_ArkUI_ImageAttac
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -7012,9 +7663,10 @@ ArkUI_ErrorCode OH_ArkUI_ImageAttachment_GetSupportSvg(const OH_ArkUI_ImageAttac
 
 
 
-#### OH_ArkUI_TextEditorChangeEvent_GetRangeBefore()
+### OH_ArkUI_TextEditorChangeEvent_GetRangeBefore()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorChangeEvent_GetRangeBefore(const OH_ArkUI_TextEditorChangeEvent* event, uint32_t* start, uint32_t* end)
@@ -7028,6 +7680,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorChangeEvent_GetRangeBefore(const OH_ArkUI_Tex
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_TextEditorChangeEvent* event | 指向OH_ArkUI_TextEditorChangeEvent对象的指针。 |
@@ -7037,6 +7690,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorChangeEvent_GetRangeBefore(const OH_ArkUI_Tex
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -7044,9 +7698,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorChangeEvent_GetRangeBefore(const OH_ArkUI_Tex
 
 
 
-#### OH_ArkUI_TextEditorChangeEvent_GetReplacementStyledString()
+### OH_ArkUI_TextEditorChangeEvent_GetReplacementStyledString()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorChangeEvent_GetReplacementStyledString(const OH_ArkUI_TextEditorChangeEvent* event, ArkUI_StyledString_Descriptor* descriptor)
@@ -7060,6 +7715,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorChangeEvent_GetReplacementStyledString(const 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_TextEditorChangeEvent* event | 指向OH_ArkUI_TextEditorChangeEvent对象的指针。 |
@@ -7068,6 +7724,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorChangeEvent_GetReplacementStyledString(const 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -7075,9 +7732,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorChangeEvent_GetReplacementStyledString(const 
 
 
 
-#### OH_ArkUI_TextEditorChangeEvent_GetPreviewStyledString()
+### OH_ArkUI_TextEditorChangeEvent_GetPreviewStyledString()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorChangeEvent_GetPreviewStyledString(const OH_ArkUI_TextEditorChangeEvent* event, ArkUI_StyledString_Descriptor* descriptor)
@@ -7091,6 +7749,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorChangeEvent_GetPreviewStyledString(const OH_A
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_TextEditorChangeEvent* event | 指向OH_ArkUI_TextEditorChangeEvent对象的指针。 |
@@ -7099,6 +7758,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorChangeEvent_GetPreviewStyledString(const OH_A
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 ARKUI_ERROR_CODE_NO_ERROR 操作成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -7106,9 +7766,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorChangeEvent_GetPreviewStyledString(const OH_A
 
 
 
-#### OH_ArkUI_TextLayoutManager_Dispose()
+### OH_ArkUI_TextLayoutManager_Dispose()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_TextLayoutManager_Dispose(ArkUI_TextLayoutManager* layoutManager)
@@ -7122,6 +7783,7 @@ void OH_ArkUI_TextLayoutManager_Dispose(ArkUI_TextLayoutManager* layoutManager)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_TextLayoutManager* layoutManager | 指向ArkUI_TextLayoutManager对象的指针。 |
@@ -7129,9 +7791,10 @@ void OH_ArkUI_TextLayoutManager_Dispose(ArkUI_TextLayoutManager* layoutManager)
 
 
 
-#### OH_ArkUI_TextLayoutManager_GetLineCount()
+### OH_ArkUI_TextLayoutManager_GetLineCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextLayoutManager_GetLineCount(ArkUI_TextLayoutManager* layoutManager, int32_t* outLineCount)
@@ -7145,6 +7808,7 @@ ArkUI_ErrorCode OH_ArkUI_TextLayoutManager_GetLineCount(ArkUI_TextLayoutManager*
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_TextLayoutManager* layoutManager | 指向ArkUI_TextLayoutManager对象的指针。 |
@@ -7153,6 +7817,7 @@ ArkUI_ErrorCode OH_ArkUI_TextLayoutManager_GetLineCount(ArkUI_TextLayoutManager*
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -7160,9 +7825,10 @@ ArkUI_ErrorCode OH_ArkUI_TextLayoutManager_GetLineCount(ArkUI_TextLayoutManager*
 
 
 
-#### OH_ArkUI_TextLayoutManager_GetRectsForRange()
+### OH_ArkUI_TextLayoutManager_GetRectsForRange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextLayoutManager_GetRectsForRange(ArkUI_TextLayoutManager* layoutManager, int32_t start, int32_t end, OH_Drawing_RectWidthStyle widthStyle, OH_Drawing_RectHeightStyle heightStyle, OH_Drawing_TextBox** outTextBoxes)
@@ -7176,6 +7842,7 @@ ArkUI_ErrorCode OH_ArkUI_TextLayoutManager_GetRectsForRange(ArkUI_TextLayoutMana
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_TextLayoutManager* layoutManager | 指向ArkUI_TextLayoutManager对象的指针。 |
@@ -7188,6 +7855,7 @@ ArkUI_ErrorCode OH_ArkUI_TextLayoutManager_GetRectsForRange(ArkUI_TextLayoutMana
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -7195,9 +7863,10 @@ ArkUI_ErrorCode OH_ArkUI_TextLayoutManager_GetRectsForRange(ArkUI_TextLayoutMana
 
 
 
-#### OH_ArkUI_TextLayoutManager_GetGlyphPositionAtCoordinate()
+### OH_ArkUI_TextLayoutManager_GetGlyphPositionAtCoordinate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextLayoutManager_GetGlyphPositionAtCoordinate(ArkUI_TextLayoutManager* layoutManager, double dx, double dy, OH_Drawing_PositionAndAffinity** outPos)
@@ -7205,11 +7874,12 @@ ArkUI_ErrorCode OH_ArkUI_TextLayoutManager_GetGlyphPositionAtCoordinate(ArkUI_Te
 
 **描述**
 
-获取距离给定坐标最近的字形(glyph)的位置信息。返回的位置索引基于字形单位而非字符单位——字形是渲染视觉单位，与字符(character)可能存在多对多映射关系。例如文本为“世界Hello”，其字形索引范围为[0, 7]，一个汉字占三个字符，其对应的字符索引范围为[0, 11]。
+获取距离给定坐标最近的字符位置信息。返回的位置索引为UTF-16字符偏移量而非字形偏移量。字形(glyph)为渲染视觉单位，与字符(character)可能存在多对多映射关系。例如文本为“世界Hello”，其字形索引范围为[0, 7]，对应的UTF-8字符索引范围为[0, 11]，UTF-16字符索引范围为[0, 7]。
 
 **起始版本：** 22
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -7221,6 +7891,7 @@ ArkUI_ErrorCode OH_ArkUI_TextLayoutManager_GetGlyphPositionAtCoordinate(ArkUI_Te
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -7228,9 +7899,10 @@ ArkUI_ErrorCode OH_ArkUI_TextLayoutManager_GetGlyphPositionAtCoordinate(ArkUI_Te
 
 
 
-#### OH_ArkUI_TextLayoutManager_GetLineMetrics()
+### OH_ArkUI_TextLayoutManager_GetLineMetrics()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextLayoutManager_GetLineMetrics(ArkUI_TextLayoutManager* layoutManager, int32_t lineNumber, OH_Drawing_LineMetrics* outMetrics)
@@ -7244,6 +7916,7 @@ ArkUI_ErrorCode OH_ArkUI_TextLayoutManager_GetLineMetrics(ArkUI_TextLayoutManage
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_TextLayoutManager* layoutManager | 指向ArkUI_TextLayoutManager对象的指针。 |
@@ -7253,6 +7926,7 @@ ArkUI_ErrorCode OH_ArkUI_TextLayoutManager_GetLineMetrics(ArkUI_TextLayoutManage
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -7260,9 +7934,10 @@ ArkUI_ErrorCode OH_ArkUI_TextLayoutManager_GetLineMetrics(ArkUI_TextLayoutManage
 
 
 
-#### OH_ArkUI_TextLayoutManager_GetCharacterPositionAtCoordinate()
+### OH_ArkUI_TextLayoutManager_GetCharacterPositionAtCoordinate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextLayoutManager_GetCharacterPositionAtCoordinate(ArkUI_TextLayoutManager* layoutManager, double dx, double dy, OH_Drawing_PositionAndAffinity** outPos)
@@ -7278,6 +7953,7 @@ ArkUI_ErrorCode OH_ArkUI_TextLayoutManager_GetCharacterPositionAtCoordinate(ArkU
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_TextLayoutManager* layoutManager | 指向ArkUI_TextLayoutManager对象的指针。 |
@@ -7288,6 +7964,7 @@ ArkUI_ErrorCode OH_ArkUI_TextLayoutManager_GetCharacterPositionAtCoordinate(ArkU
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -7295,9 +7972,10 @@ ArkUI_ErrorCode OH_ArkUI_TextLayoutManager_GetCharacterPositionAtCoordinate(ArkU
 
 
 
-#### OH_ArkUI_TextLayoutManager_GetGlyphRangeForCharacterRange()
+### OH_ArkUI_TextLayoutManager_GetGlyphRangeForCharacterRange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextLayoutManager_GetGlyphRangeForCharacterRange(ArkUI_TextLayoutManager* layoutManager, OH_Drawing_Range* charRange, OH_Drawing_Range** outGlyphRange,
@@ -7312,6 +7990,7 @@ OH_Drawing_Range** outActualCharRange);
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_TextLayoutManager* layoutManager | 指向ArkUI_TextLayoutManager对象的指针。 |
@@ -7322,6 +8001,7 @@ OH_Drawing_Range** outActualCharRange);
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -7329,9 +8009,10 @@ OH_Drawing_Range** outActualCharRange);
 
 
 
-#### OH_ArkUI_TextLayoutManager_GetCharacterRangeForGlyphRange()
+### OH_ArkUI_TextLayoutManager_GetCharacterRangeForGlyphRange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextLayoutManager_GetCharacterRangeForGlyphRange(ArkUI_TextLayoutManager* layoutManager, OH_Drawing_Range* glyphRange, OH_Drawing_Range** outCharRange,
@@ -7346,6 +8027,7 @@ OH_Drawing_Range** outActualGlyphRange)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_TextLayoutManager* layoutManager | 指向ArkUI_TextLayoutManager对象的指针。 |
@@ -7356,6 +8038,7 @@ OH_Drawing_Range** outActualGlyphRange)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -7363,9 +8046,131 @@ OH_Drawing_Range** outActualGlyphRange)
 
 
 
-#### OH_ArkUI_ParagraphStyle_SetLinearGradient()
+### OH_ArkUI_TextLayoutManager_GetCharacterPositionAtCoordinateWithEncoding()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+```text
+ArkUI_ErrorCode OH_ArkUI_TextLayoutManager_GetCharacterPositionAtCoordinateWithEncoding(ArkUI_TextLayoutManager* layoutManager, double dx, double dy, OH_ArkUI_TextEncoding encoding, OH_Drawing_PositionAndAffinity** outPos)
+```
+
+**描述**
+
+根据指定编码类型，获取距离指定坐标最近的字符位置信息。
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+
+| 参数项 | 描述 |
+| --- | --- |
+| ArkUI_TextLayoutManager* layoutManager | 指向ArkUI_TextLayoutManager对象的指针。 |
+| double dx | 相对于控件的x坐标，单位为px。 |
+| double dy | 相对于控件的y坐标，单位为px。 |
+| OH_ArkUI_TextEncoding encoding | 字符位置使用的编码类型。 |
+| OH_Drawing_PositionAndAffinity** outPos | 指向OH_Drawing_PositionAndAffinity对象的二级指针。 |
+
+
+**返回：**
+
+
+| 类型 | 说明 |
+| --- | --- |
+| ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
+
+
+
+
+### OH_ArkUI_TextLayoutManager_GetGlyphRangeForCharacterRangeWithEncoding()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+```text
+ArkUI_ErrorCode OH_ArkUI_TextLayoutManager_GetGlyphRangeForCharacterRangeWithEncoding(ArkUI_TextLayoutManager* layoutManager, OH_Drawing_Range* charRange, OH_ArkUI_TextEncoding encoding,
+OH_Drawing_Range** outGlyphRange, OH_Drawing_Range** outActualCharRange)
+```
+
+**描述**
+
+根据指定编码类型和文本字符范围，获取字形范围以及实际的字符范围。
+
+> [!NOTE]
+> outGlyphRange、outActualCharRange返回的 OH_Drawing_Range 对象在使用完成后，需通过 OH_Drawing_ReleaseRangeBuffer 释放。
+
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+
+| 参数项 | 描述 |
+| --- | --- |
+| ArkUI_TextLayoutManager* layoutManager | 指向ArkUI_TextLayoutManager对象的指针。 |
+| OH_Drawing_Range* charRange | 指向OH_Drawing_Range对象的指针，表示字符索引范围。 |
+| OH_ArkUI_TextEncoding encoding | 字符索引范围使用的编码类型。 |
+| OH_Drawing_Range** outGlyphRange | 指向OH_Drawing_Range对象的二级指针，表示字形索引范围。 |
+| OH_Drawing_Range** outActualCharRange | 指向OH_Drawing_Range对象的二级指针，表示实际的字符索引范围。 |
+
+
+**返回：**
+
+
+| 类型 | 说明 |
+| --- | --- |
+| ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
+
+
+
+
+### OH_ArkUI_TextLayoutManager_GetCharacterRangeForGlyphRangeWithEncoding()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+```text
+ArkUI_ErrorCode OH_ArkUI_TextLayoutManager_GetCharacterRangeForGlyphRangeWithEncoding(ArkUI_TextLayoutManager* layoutManager, OH_Drawing_Range* glyphRange, OH_ArkUI_TextEncoding encoding,
+OH_Drawing_Range** outCharRange, OH_Drawing_Range** outActualGlyphRange)
+```
+
+**描述**
+
+根据指定编码类型和文本字形范围，获取字符范围以及实际的字形范围。
+
+> [!NOTE]
+> outCharRange、outActualGlyphRange返回的 OH_Drawing_Range 对象在使用完成后，需通过 OH_Drawing_ReleaseRangeBuffer 释放。
+
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+
+| 参数项 | 描述 |
+| --- | --- |
+| ArkUI_TextLayoutManager* layoutManager | 指向ArkUI_TextLayoutManager对象的指针。 |
+| OH_Drawing_Range* glyphRange | 指向OH_Drawing_Range对象的指针，表示字形索引范围。 |
+| OH_ArkUI_TextEncoding encoding | 字符索引范围使用的编码类型。 |
+| OH_Drawing_Range** outCharRange | 指向OH_Drawing_Range对象的二级指针，表示字符索引范围。 |
+| OH_Drawing_Range** outActualGlyphRange | 指向OH_Drawing_Range对象的二级指针，表示实际的字形索引范围。 |
+
+
+**返回：**
+
+
+| 类型 | 说明 |
+| --- | --- |
+| ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
+
+
+
+
+### OH_ArkUI_ParagraphStyle_SetLinearGradient()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetLinearGradient(OH_ArkUI_ParagraphStyle* paragraphStyle, const OH_ArkUI_LinearGradientOptions* linearGradient)
@@ -7379,6 +8184,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetLinearGradient(OH_ArkUI_ParagraphStyl
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_ParagraphStyle* paragraphStyle | 指向OH_ArkUI_ParagraphStyle对象的指针。 |
@@ -7387,6 +8193,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetLinearGradient(OH_ArkUI_ParagraphStyl
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -7394,9 +8201,10 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetLinearGradient(OH_ArkUI_ParagraphStyl
 
 
 
-#### OH_ArkUI_ParagraphStyle_GetLinearGradient()
+### OH_ArkUI_ParagraphStyle_GetLinearGradient()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetLinearGradient(const OH_ArkUI_ParagraphStyle* paragraphStyle, OH_ArkUI_LinearGradientOptions* linearGradient)
@@ -7410,6 +8218,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetLinearGradient(const OH_ArkUI_Paragra
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_ParagraphStyle* paragraphStyle | 指向OH_ArkUI_ParagraphStyle对象的指针。 |
@@ -7418,6 +8227,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetLinearGradient(const OH_ArkUI_Paragra
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -7425,9 +8235,10 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetLinearGradient(const OH_ArkUI_Paragra
 
 
 
-#### OH_ArkUI_ParagraphStyle_SetRadialGradient()
+### OH_ArkUI_ParagraphStyle_SetRadialGradient()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetRadialGradient(OH_ArkUI_ParagraphStyle* paragraphStyle, const OH_ArkUI_RadialGradientOptions* radialGradient)
@@ -7441,6 +8252,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetRadialGradient(OH_ArkUI_ParagraphStyl
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_ParagraphStyle* paragraphStyle | 指向OH_ArkUI_ParagraphStyle对象的指针。 |
@@ -7449,6 +8261,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetRadialGradient(OH_ArkUI_ParagraphStyl
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -7456,9 +8269,10 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetRadialGradient(OH_ArkUI_ParagraphStyl
 
 
 
-#### OH_ArkUI_ParagraphStyle_GetRadialGradient()
+### OH_ArkUI_ParagraphStyle_GetRadialGradient()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetRadialGradient(const OH_ArkUI_ParagraphStyle* paragraphStyle, OH_ArkUI_RadialGradientOptions* radialGradient)
@@ -7472,6 +8286,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetRadialGradient(const OH_ArkUI_Paragra
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_ParagraphStyle* paragraphStyle | 指向OH_ArkUI_ParagraphStyle对象的指针。 |
@@ -7480,6 +8295,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetRadialGradient(const OH_ArkUI_Paragra
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -7487,9 +8303,10 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetRadialGradient(const OH_ArkUI_Paragra
 
 
 
-#### OH_ArkUI_ParagraphStyle_SetTailIndents()
+### OH_ArkUI_ParagraphStyle_SetTailIndents()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetTailIndents(OH_ArkUI_ParagraphStyle* paragraphStyle, const float* tailIndents, uint32_t size)
@@ -7507,6 +8324,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetTailIndents(OH_ArkUI_ParagraphStyle* 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_ParagraphStyle* paragraphStyle | 指向OH_ArkUI_ParagraphStyle对象的指针。 |
@@ -7516,6 +8334,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetTailIndents(OH_ArkUI_ParagraphStyle* 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -7523,9 +8342,10 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_SetTailIndents(OH_ArkUI_ParagraphStyle* 
 
 
 
-#### OH_ArkUI_ParagraphStyle_GetTailIndents()
+### OH_ArkUI_ParagraphStyle_GetTailIndents()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetTailIndents(const OH_ArkUI_ParagraphStyle* paragraphStyle, float** tailIndents, uint32_t tailIndentsSize, uint32_t* writeLength)
@@ -7543,6 +8363,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetTailIndents(const OH_ArkUI_ParagraphS
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_ParagraphStyle* paragraphStyle | 指向OH_ArkUI_ParagraphStyle对象的指针。 |
@@ -7552,6 +8373,7 @@ ArkUI_ErrorCode OH_ArkUI_ParagraphStyle_GetTailIndents(const OH_ArkUI_ParagraphS
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |

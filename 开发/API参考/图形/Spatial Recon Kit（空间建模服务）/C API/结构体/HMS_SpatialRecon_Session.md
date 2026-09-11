@@ -1,15 +1,19 @@
 # HMS_SpatialRecon_Session
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-spatialrecon-hms-spatialrecon-session
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 typedef struct HMS_SpatialRecon_Session HMS_SpatialRecon_Session
 ```
   
 
-#### 概述
+## 概述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 定义用于空间重建会话句柄的结构体，用于3D场景重建。
  

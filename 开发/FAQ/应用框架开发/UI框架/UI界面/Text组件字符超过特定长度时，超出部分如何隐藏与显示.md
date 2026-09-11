@@ -38,35 +38,35 @@ import display from '@ohos.display';
 @Entry
 @Component
 struct Index {
-  // 长文本
+ <em> // 长文本</em>
   longMessage: string = '走在繁华的城市街头，明空感到无比紧张。他的心跳如雷鼓般擂动着胸膛，使得身上的伪装仿佛随时都要被揭开。然而，他仍然保持着冷静，凭借着过人的胆识与智慧，成功地躲过了敌人的层层封锁。\n' +
     '\n' +
     '　　最终，明空来到了敌对帮派的老巢。此时此刻，那里的守卫正沉浸在欢庆的氛围中，丝毫没有察觉到即将来临的危机。明空深吸一口气，压抑住内心的激动，悄然潜入了这座古老的建筑。';
-  // 最大显示行数
+ <em> // 最大显示行数</em>
   @State lines: number = 2;
-  // 长文本状态（展开 or 收起）
+  <em>// 长文本状态（展开 or 收起）</em>
   @State collapseText: string = '...';
-  // 屏幕宽度（单位px）
+ <em> // 屏幕宽度（单位px）</em>
   screenWidth: number = 0;
-  // 是否需要显示"展开"字样（注：当文本长度较短时就不需要“展开”）
+  <em>// </em><em>是否需要显示"展开"字样（注：当文本长度较短时就不需要“展开”）</em>
   @State isExpanded: boolean = false;
   uiContext: UIContext = this.getUIContext();
   uiContextMeasure: MeasureUtils = this.uiContext.getMeasureUtils();
-  // 测量文本宽度（单位px）
+  <em>// 测量文本宽度（单位px）</em>
   textWidth: number = this.uiContextMeasure.measureText({
     textContent: this.longMessage,
     fontSize: 20
   });
-  // 获取当前所有的display对象
+  <em>// 获取当前所有的display对象</em>
   promise: Promise<Array<display.Display>> = display.getAllDisplays();
 
   aboutToAppear() {
     console.info(`文本宽度为：${this.textWidth}`);
     this.promise.then((data: Array<display.Display>) => {
       console.info(`所有的屏幕信息：${JSON.stringify(data)}`);
-      // 单位为像素
+    <em>  // 单位为像素</em>
       this.screenWidth = data[0]["width"];
-      // 屏幕宽度 * 最大行数 * 组件宽度比例 和 文字测量宽度
+    <em>  // 屏幕宽度 * 最大行数 * 组件宽度比例 和 文字测量宽度</em>
       this.isExpanded = this.screenWidth * this.lines * 0.4 <= this.textWidth;
     }).catch((err: BusinessError) => {
       console.error(`Failed to obtain all the display objects. Code: ${JSON.stringify(err)}`);
@@ -92,22 +92,22 @@ struct Index {
             .onClick(() => {
               if (this.collapseText == '...') {
                 this.collapseText = '...收起';
-                // 展开动画
+              <em>  // 展开动画</em>
                 this.uiContext.animateTo({
                   duration: 150,
                   curve: curves.springMotion(0.5, 0.8),
                 }, () => {
-                  this.lines = -1; // 使得设置的最大行属性无效
+                  this.lines = -1; <em>// </em><em>使得设置的最大行属性无效</em>
                 });
               } else {
                 this.collapseText = '...';
-                // 收起动画
+               <em> // 收起动画</em>
                 this.uiContext.animateTo(
                   {
                     duration: 100,
                     curve: Curve.Friction,
                   }, () => {
-                  this.lines = 2; // 只显示2行
+                  this.lines = 2; <em>// </em><em>只显示2行</em>
                 });
               }
             })
@@ -147,7 +147,7 @@ struct TextDemo {
   textSize: number = 14;
 
   aboutToAppear(): void {
-    // 计算文字宽度
+   <em> // 计算文字宽度</em>
     this.textWidth = this.uiContextMeasure.measureText({
       textContent: this.textString,
       fontSize: this.textSize

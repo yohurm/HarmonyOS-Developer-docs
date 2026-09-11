@@ -1,22 +1,24 @@
 # Enums
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window-e
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 针对系统能力SystemCapability.Window.SessionManager，请先使用 canIUse() 接口判断当前设备是否支持此syscap及对应接口。
 
 
 
-#### WindowType7+
+## WindowType7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 窗口类型枚举。
 
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -29,13 +31,36 @@
 
 
 
-#### AvoidAreaType7+
+## WindowPostureMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+窗口姿态模式枚举。
+
+**系统能力：** SystemCapability.Window.SessionManager
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| DESKTOP_MODE | 0 | 桌面模式。当满足以下条件时处于桌面模式： 1. 当前设备折叠状态为半折叠状态（FoldStatus.FOLD_STATUS_HALF_FOLDED）； 2. 窗口所在屏幕通过getLiveCreaseRegion()获取的creaseRects宽度大于高度； 3. 窗口模式为全屏模式（WindowStatusType.FULL_SCREEN）或最大化模式（WindowStatusType.MAXIMIZE）。 4. 屏幕折痕区域位于窗口显示区域内。 |
+
+
+
+
+## AvoidAreaType7+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 窗口内容的避让区域的类型枚举。
 
 窗口内容做[沉浸式布局](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/immersive-window-feature#沉浸式布局)适配时，需要按照AvoidAreaType对应的[AvoidArea](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window-i#avoidarea7)做窗口内容避让。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -44,14 +69,15 @@
 | TYPE_SYSTEM_GESTURE9+ | 2 | 表示侧边返回手势区域。当前所有设备均无此类型避让区域。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | TYPE_KEYBOARD9+ | 3 | 表示固定态软键盘区域。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | TYPE_NAVIGATION_INDICATOR11+ | 4 | 表示底部导航区域。当三键导航显示时，底部导航避让区域始终存在。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
-| TYPE_FLOAT_NAVIGATION | 5 | 表示三键导航区域。需要调用setFloatNavigationAvoidAreaEnabled()接口使能后，才能获取到三键导航的避让区域，否则直接返回空的三键导航避让区域。 系统能力： SystemCapability.Window.SessionManager 起始版本： 26.0.0 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API version 26.0.0开始，该接口支持在元服务中使用。 |
+| TYPE_FLOAT_NAVIGATION | 5 | 表示三键导航区域。需要调用setFloatNavigationAvoidAreaEnabled()接口使能后，才能获取到三键导航的避让区域，否则直接返回空的三键导航避让区域。 系统能力： SystemCapability.Window.SessionManager 起始版本： 26.0.0 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
 
 
 
 
-#### SplitRatioPreference
+## SplitRatioPreference
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 窗口分屏比例的类型枚举。
 
@@ -62,6 +88,7 @@
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -76,11 +103,13 @@
 
 
 
-#### Orientation9+
+## Orientation9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 窗口显示方向类型枚举。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -91,7 +120,7 @@
 | LANDSCAPE_INVERTED | 4 | 表示反向横屏显示模式。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | AUTO_ROTATION | 5 | 跟随传感器自动旋转，可以旋转到竖屏、横屏、反向竖屏、反向横屏四个方向，且不受控制中心的旋转开关控制。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | AUTO_ROTATION_PORTRAIT | 6 | 跟随传感器自动竖向旋转，可以旋转到竖屏、反向竖屏，无法旋转到横屏、反向横屏，且不受控制中心的旋转开关控制。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.WindowManager.WindowManager.Core |
-| AUTO_ROTATION_LANDSCAPE | 7 | 跟随传感器自动横向旋转，可以旋转到横屏、反向横屏，无法旋转到竖屏、反向竖屏，且不受控制中心的旋转开关控制。 系统能力： SystemCapability.WindowManager.WindowManager.Core。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| AUTO_ROTATION_LANDSCAPE | 7 | 跟随传感器自动横向旋转，可以旋转到横屏、反向横屏，无法旋转到竖屏、反向竖屏，且不受控制中心的旋转开关控制。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | AUTO_ROTATION_RESTRICTED | 8 | 跟随传感器自动旋转，可以旋转到竖屏、横屏、反向竖屏、反向横屏四个方向，且受控制中心的旋转开关控制。 系统能力： SystemCapability.WindowManager.WindowManager.Core 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | AUTO_ROTATION_PORTRAIT_RESTRICTED | 9 | 跟随传感器自动竖向旋转，可以旋转到竖屏、反向竖屏，无法旋转到横屏、反向横屏，且受控制中心的旋转开关控制。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.WindowManager.WindowManager.Core |
 | AUTO_ROTATION_LANDSCAPE_RESTRICTED | 10 | 跟随传感器自动横向旋转，可以旋转到横屏、反向横屏，无法旋转到竖屏、反向竖屏，且受控制中心的旋转开关控制。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.WindowManager.WindowManager.Core |
@@ -106,15 +135,17 @@
 
 
 
-#### RectChangeReason12+
+## RectChangeReason12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 窗口矩形（窗口位置及窗口大小）变化的原因。
 
 **系统能力：** SystemCapability.Window.SessionManager
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -129,15 +160,17 @@
 
 
 
-#### ColorSpace8+
+## ColorSpace8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 色域模式。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -147,13 +180,15 @@
 
 
 
-#### WindowEventType10+
+## WindowEventType10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 窗口生命周期。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -166,9 +201,10 @@
 
 
 
-#### WindowStatusType11+
+## WindowStatusType11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 窗口模式枚举。
 
@@ -176,27 +212,30 @@
 
 **系统能力：** SystemCapability.Window.SessionManager
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| UNDEFINED | 0 | 表示APP未定义窗口模式。 |
-| FULL_SCREEN | 1 | 表示APP全屏模式。 自由窗口状态下，窗口铺满整个屏幕，默认无dock栏、标题栏和状态栏显示。 可通过maximize()和setTitleAndDockHoverShown()配置，当hover到热区时是否显示标题栏和dock栏。 当maximize()和setTitleAndDockHoverShown()接口都调用时，以最后调用设置的效果为准。 非自由窗口状态下，窗口铺满整个屏幕，无标题栏和dock栏显示。可通过setSpecificSystemBarEnabled()配置是否显示状态栏。 |
-| MAXIMIZE | 2 | 表示APP窗口最大化模式，自由窗口状态下，窗口铺满整个屏幕，不需要hover就可以显示dock栏、状态栏和标题栏。非自由窗口状态下，不存在该状态。 |
-| MINIMIZE | 3 | 表示APP窗口最小化模式。 |
-| FLOATING | 4 | 表示APP自由悬浮形式窗口模式，窗口可以自由移动和缩放，适用于需要多窗口同时使用的场景。 |
-| SPLIT_SCREEN | 5 | 表示APP分屏模式，屏幕同时显示两个应用窗口，每个窗口占据屏幕的一半空间，适用于多任务并行处理的场景。 |
+| UNDEFINED | 0 | 表示应用未定义窗口模式。 |
+| FULL_SCREEN | 1 | 表示应用全屏模式。 自由窗口状态下，窗口铺满整个屏幕，默认无dock栏、标题栏和状态栏显示。 可通过maximize()和setTitleAndDockHoverShown()配置，当悬停到热区时是否显示标题栏和dock栏。 当maximize()和setTitleAndDockHoverShown()接口都调用时，以最后调用设置的效果为准。 非自由窗口状态下，窗口铺满整个屏幕，无标题栏和dock栏显示。可通过setSpecificSystemBarEnabled()配置是否显示状态栏。 |
+| MAXIMIZE | 2 | 表示应用窗口最大化模式，自由窗口状态下，窗口铺满整个屏幕，不需要悬停就可以显示dock栏、状态栏和标题栏。非自由窗口状态下，不存在该状态。 |
+| MINIMIZE | 3 | 表示应用窗口最小化模式。 |
+| FLOATING | 4 | 表示应用自由悬浮窗口模式，窗口可以自由移动和缩放，适用于需要多窗口同时使用的场景。 |
+| SPLIT_SCREEN | 5 | 表示应用分屏模式，屏幕同时显示两个应用窗口，每个窗口占据屏幕的一半空间，适用于多任务并行处理的场景。 |
 
 
 
 
-#### PixelUnit22+
+## PixelUnit22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 像素单位枚举。
 
 物理像素单位和虚拟像素单位换算可使用[px2vp](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#px2vp12)和[vp2px](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#vp2px12)。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -206,27 +245,30 @@
 
 
 
-#### MaximizePresentation12+
+## MaximizePresentation12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 窗口最大化时的布局枚举。
 
 **系统能力：** SystemCapability.Window.SessionManager
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | FOLLOW_APP_IMMERSIVE_SETTING | 0 | 最大化时，跟随应用当前设置的全屏模式。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | EXIT_IMMERSIVE | 1 | 最大化时，如果当前窗口设置了全屏模式会退出全屏模式。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| ENTER_IMMERSIVE | 2 | 最大化时，进入全屏模式，鼠标Hover在热区上显示窗口标题栏和dock栏。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| ENTER_IMMERSIVE_DISABLE_TITLE_AND_DOCK_HOVER14+ | 3 | 最大化时，进入全屏模式，鼠标Hover在热区上不显示窗口标题栏和dock栏。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
+| ENTER_IMMERSIVE | 2 | 最大化时，进入全屏模式，鼠标悬停在热区上显示窗口标题栏和dock栏。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| ENTER_IMMERSIVE_DISABLE_TITLE_AND_DOCK_HOVER14+ | 3 | 最大化时，进入全屏模式，鼠标悬停在热区上不显示窗口标题栏和dock栏。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
 
 
 
 
-#### AcrossDisplayPresentation
+## AcrossDisplayPresentation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 折叠屏的跨屏策略枚举，用于控制折叠2in1设备在悬停态下主窗口最大化时的瀑布流模式行为。
 
@@ -235,6 +277,7 @@
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -245,15 +288,17 @@
 
 
 
-#### WindowAnimationCurve20+
+## WindowAnimationCurve20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 窗口动画曲线类型。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -264,15 +309,17 @@
 
 
 
-#### WindowTransitionType20+
+## WindowTransitionType20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 窗口转场动画类型枚举。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -281,13 +328,15 @@
 
 
 
-#### AnimationType20+
+## AnimationType20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | Tablet
 
 窗口动画类型枚举。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -296,13 +345,15 @@
 
 
 
-#### WindowAnchor20+
+## WindowAnchor20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 窗口锚点枚举。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -319,15 +370,17 @@
 
 
 
-#### RotationChangeType19+
+## RotationChangeType19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 窗口旋转事件类型。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -337,15 +390,17 @@
 
 
 
-#### RectType19+
+## RectType19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 窗口矩形区域坐标系类型。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -355,15 +410,17 @@
 
 
 
-#### GlobalWindowMode20+
+## GlobalWindowMode20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 窗口模式。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -375,13 +432,15 @@
 
 
 
-#### OcclusionState22+
+## OcclusionState22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 窗口可见性状态枚举。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -392,9 +451,10 @@
 
 
 
-#### WindowStageEventType9+
+## WindowStageEventType9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 WindowStage生命周期状态枚举。
 
@@ -403,6 +463,7 @@ WindowStage生命周期状态枚举。
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -416,15 +477,17 @@ WindowStage生命周期状态枚举。
 
 
 
-#### WindowStageLifecycleEventType20+
+## WindowStageLifecycleEventType20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 WindowStage生命周期的状态类型枚举。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -436,15 +499,17 @@ WindowStage生命周期的状态类型枚举。
 
 
 
-#### ModalityType14+
+## ModalityType14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 子窗口模态类型枚举。
 
 **系统能力：** SystemCapability.Window.SessionManager
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -454,13 +519,15 @@ WindowStage生命周期的状态类型枚举。
 
 
 
-#### ScreenshotEventType20+
+## ScreenshotEventType20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 截屏事件类型枚举。
 
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -473,9 +540,10 @@ WindowStage生命周期的状态类型枚举。
 
 
 
-#### OrientationExecutionResult
+## OrientationExecutionResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 窗口显示方向的执行结果枚举。
 
@@ -487,6 +555,7 @@ WindowStage生命周期的状态类型枚举。
 
 **系统能力：** SystemCapability.Window.SessionManager
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ORIENTATION_APPLIED | 0 | 设置的方向已生效。 |
@@ -496,13 +565,15 @@ WindowStage生命周期的状态类型枚举。
 
 
 
-#### RotationInfoType23+
+## RotationInfoType23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 旋转信息类型枚举。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

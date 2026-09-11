@@ -1,20 +1,21 @@
 # OH_Drawing_Image
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-oh-drawing-image
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct OH_Drawing_Image OH_Drawing_Image
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-定义一个用于描述绘制二维像素数组的图片。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+定义一个表示二维像素数组的图片，用于绘制操作。
  
 **起始版本：** 12
  

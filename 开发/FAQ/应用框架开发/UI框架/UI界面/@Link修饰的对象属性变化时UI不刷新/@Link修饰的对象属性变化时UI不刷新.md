@@ -4,7 +4,7 @@
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1440
 
-#### 问题现象
+## 问题现象
 
 场景一：嵌套对象或者对象数组的属性发生改变时，如何实现UI刷新？
  
@@ -12,7 +12,7 @@
  
  
 
-#### 背景知识
+## 背景知识
 
 ArkUI中[@Link装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-link#简单类型和类对象类型的link)是用于父子组件中的变量双向同步的。子组件通过@Link接收父组件传递的状态变量，当父组件/子组件任意一方发生改变时都会引起另一个同步变化。当装饰的是基本数据类型或者简单对象这类能直接被ArkUI框架观察到的就能触发页面实时渲染。对于复杂对象只能同步值的变化，无法触发UI渲染刷新。
  
@@ -20,7 +20,7 @@ ArkUI中[@Link装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-
  
  
 
-#### 解决方案
+## 解决方案
 
 场景一：
  

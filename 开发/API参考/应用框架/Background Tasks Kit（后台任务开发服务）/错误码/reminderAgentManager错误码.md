@@ -1,18 +1,19 @@
 # reminderAgentManager错误码
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-reminderagentmanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!TIP]
 > 以下仅介绍本模块特有错误码，通用错误码请参考 通用错误码说明文档 。
 
 
 
-#### 1700001 通知使能未开启
+## 1700001 通知使能未开启
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -32,9 +33,10 @@ Notification is not enabled.
 
 
 
-#### 1700002 提醒数量超出限制
+## 1700002 提醒数量超出限制
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -53,13 +55,14 @@ API版本26.0.0及以上，单个普通应用最多支持64个提醒。
 
 **处理步骤**
 1. 首先，确认是否[申请了代理提醒的使用权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agent-powered-reminder#约束与限制)。由于系统限制且HarmonyOS 5.1.1(19)及其之前版本存量设备较少，新申请的权限在HarmonyOS 5.1.1(19)及其之前版本不再生效，建议升级至HarmonyOS 6.0.0(20)及以上版本。
-2. 然后，在申请通过情况下，优先检查签名是否配置正确，如果配置不正确，需要重新生成Profile文件并使用[手动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing)；其次检查提醒数量是否超过规定数量，及时删除不必要的提醒。
+2. 然后，在申请通过情况下，优先检查签名是否配置正确，如果配置不正确，需要重新生成Profile文件并使用[手动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing-manual)；其次检查提醒数量是否超过规定数量，及时删除不必要的提醒。
 
 
 
-#### 1700003 提醒不存在
+## 1700003 提醒不存在
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -79,9 +82,10 @@ The reminder does not exist.
 
 
 
-#### 1700004 包名不存在
+## 1700004 包名不存在
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -101,9 +105,10 @@ The bundle name does not exist.
 
 
 
-#### 1700007 参数错误
+## 1700007 参数错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 

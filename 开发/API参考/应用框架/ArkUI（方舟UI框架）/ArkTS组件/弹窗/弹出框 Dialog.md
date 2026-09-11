@@ -1,9 +1,9 @@
 # 弹出框 (Dialog)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-dialog
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 弹出框是一种模态窗口，用于临时展示用户需关注的信息或待处理的操作，同时保持当前上下文环境。用户必须完成交互才能退出该模式。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { TipsDialog, SelectDialog, ConfirmDialog, AlertDialog, LoadingDialog, CustomContentDialog } from '@kit.ArkUI';
@@ -22,17 +23,19 @@ import { TipsDialog, SelectDialog, ConfirmDialog, AlertDialog, LoadingDialog, Cu
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
 
 
 
-#### TipsDialog
+## TipsDialog
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TipsDialog({controller: CustomDialogController, imageRes: ResourceStr | PixelMap, imageSize?: SizeOptions, title?: ResourceStr, content?: ResourceStr, checkTips?: ResourceStr, isChecked?: boolean, checkAction?: (isChecked: boolean) => void, onCheckedChange?: Callback&lt;boolean&gt;, primaryButton?: ButtonOptions, secondaryButton?: ButtonOptions, theme?: Theme | CustomTheme, themeColorMode?: ThemeColorMode})
 
@@ -41,6 +44,7 @@ TipsDialog({controller: CustomDialogController, imageRes: ResourceStr | PixelMap
 **装饰器类型：**@CustomDialog
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -61,9 +65,10 @@ TipsDialog({controller: CustomDialogController, imageRes: ResourceStr | PixelMap
 
 
 
-#### SelectDialog
+## SelectDialog
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 SelectDialog({controller: CustomDialogController, title: ResourceStr, content?: ResourceStr, selectedIndex?: number, confirm?: ButtonOptions, radioContent: Array&lt;SheetInfo&gt;, theme?: Theme | CustomTheme, themeColorMode?: ThemeColorMode})
 
@@ -72,6 +77,7 @@ SelectDialog({controller: CustomDialogController, title: ResourceStr, content?: 
 **装饰器类型：**@CustomDialog
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -87,9 +93,10 @@ SelectDialog({controller: CustomDialogController, title: ResourceStr, content?: 
 
 
 
-#### ConfirmDialog
+## ConfirmDialog
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ConfirmDialog({controller: CustomDialogController, title: ResourceStr, content?: ResourceStr, checkTips?: ResourceStr, isChecked?: boolean, onCheckedChange?: Callback&lt;boolean&gt;, primaryButton?: ButtonOptions, secondaryButton?: ButtonOptions, theme?: Theme | CustomTheme, themeColorMode?: ThemeColorMode})
 
@@ -98,6 +105,7 @@ ConfirmDialog({controller: CustomDialogController, title: ResourceStr, content?:
 **装饰器类型：**@CustomDialog
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -115,9 +123,10 @@ ConfirmDialog({controller: CustomDialogController, title: ResourceStr, content?:
 
 
 
-#### AlertDialog
+## AlertDialog
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 AlertDialog({controller: CustomDialogController, primaryTitle?: ResourceStr, secondaryTitle?: ResourceStr, content: ResourceStr, primaryButton?: ButtonOptions, secondaryButton?: ButtonOptions, theme?: Theme | CustomTheme, themeColorMode?: ThemeColorMode})
 
@@ -126,6 +135,7 @@ AlertDialog({controller: CustomDialogController, primaryTitle?: ResourceStr, sec
 **装饰器类型：**@CustomDialog
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -141,9 +151,10 @@ AlertDialog({controller: CustomDialogController, primaryTitle?: ResourceStr, sec
 
 
 
-#### LoadingDialog
+## LoadingDialog
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 LoadingDialog({Controller: CustomDialogController, content?: ResourceStr, theme?: Theme | CustomTheme, themeColorMode?: ThemeColorMode})
 
@@ -152,6 +163,7 @@ LoadingDialog({Controller: CustomDialogController, content?: ResourceStr, theme?
 **装饰器类型：**@CustomDialog
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -163,9 +175,10 @@ LoadingDialog({Controller: CustomDialogController, content?: ResourceStr, theme?
 
 
 
-#### CustomContentDialog12+
+## CustomContentDialog12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 CustomContentDialog({controller: CustomDialogController, contentBuilder: () => void, primaryTitle?: ResourceStr, secondaryTitle?: ResourceStr, localizedContentAreaPadding?: LocalizedPadding, contentAreaPadding?: Padding, buttons?: ButtonOptions[], theme?: Theme | CustomTheme, themeColorMode?: ThemeColorMode})
 
@@ -176,6 +189,7 @@ CustomContentDialog({controller: CustomDialogController, contentBuilder: () => v
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -196,9 +210,10 @@ CustomContentDialog({controller: CustomDialogController, contentBuilder: () => v
 
 
 
-#### PopoverDialog14+
+## PopoverDialog14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 PopoverDialog({visible: boolean, popover: PopoverOptions, targetBuilder: Callback&lt;void&gt;})
 
@@ -210,6 +225,7 @@ PopoverDialog({visible: boolean, popover: PopoverOptions, targetBuilder: Callbac
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | visible | boolean | 是 | @Link | 是否显示跟手弹出框。true表示显示弹出框，false表示隐藏弹出框。 默认值为false。 |
@@ -219,11 +235,13 @@ PopoverDialog({visible: boolean, popover: PopoverOptions, targetBuilder: Callbac
 
 
 
-#### ButtonOptions
+## ButtonOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -243,9 +261,10 @@ PopoverDialog({visible: boolean, popover: PopoverOptions, targetBuilder: Callbac
 
 
 
-#### PopoverOptions14+
+## PopoverOptions14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 跟手弹出框参数，用于设置弹出框内容、位置属性等。
 
@@ -261,21 +280,26 @@ PopoverDialog({visible: boolean, popover: PopoverOptions, targetBuilder: Callbac
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 不支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)。
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（上图下文弹出框）
+
+
+### 示例1（上图下文弹出框）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 上图下文弹出框，包含imageRes、content等内容。
 
@@ -334,7 +358,10 @@ struct Index {
 
 
 
-#### 示例2（纯列表弹出框）
+### 示例2（纯列表弹出框）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 纯列表弹出框，包含selectedIndex、radioContent等内容。
 
@@ -405,7 +432,10 @@ struct Index {
 
 
 
-#### 示例3（文本与勾选弹出框）
+### 示例3（文本与勾选弹出框）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文本与勾选弹出框，包含content、checkTips等内容。
 
@@ -472,7 +502,10 @@ struct Index {
 
 
 
-#### 示例4（纯文本弹出框）
+### 示例4（纯文本弹出框）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 纯文本弹出框，包含primaryTitle、secondaryTitle、content等内容。
 
@@ -531,7 +564,10 @@ struct Index {
 
 
 
-#### 示例5（进度加载类弹出框）
+### 示例5（进度加载类弹出框）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 进度加载类弹出框，包含content等内容。
 
@@ -576,7 +612,10 @@ struct Index {
 
 
 
-#### 示例6（自定义主题风格弹出框）
+### 示例6（自定义主题风格弹出框）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 自定义主题风格弹出框，包含content、theme等内容。
 
@@ -637,7 +676,10 @@ struct Index {
 
 
 
-#### 示例7（自定义深浅色模式弹出框）
+### 示例7（自定义深浅色模式弹出框）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 自定义深浅色模式弹出框，包含content、themeColorMode等内容。
 
@@ -678,12 +720,15 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/Kj3ADihjToCS81MwPwjCiA/zh-cn_image_0000002686088387.png?HW-CC-KV=V1&HW-CC-Date=20260730T071515Z&HW-CC-Expire=86400&HW-CC-Sign=5E3EAA6F9831BD23CACD5DBB26806DD2F62F0B589C6AD5B5477968483014C742)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/fuvnxS3lR0-InYjQWFb5RQ/zh-cn_image_0000002747293049.png?HW-CC-KV=V1&HW-CC-Date=20260911T073028Z&HW-CC-Expire=86400&HW-CC-Sign=5FC93CA3EDB618BE516D36D5EC50422E517425612DB286B3A6E0D451BA9D52B7)
 
 
 
 
-#### 示例8（自定义内容弹出框）
+### 示例8（自定义内容弹出框）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持自定义内容弹出框，包含contentBuilder、buttons等内容。
 
@@ -741,12 +786,15 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/8qXC_l0SSuqp41a_ID1oLQ/zh-cn_image_0000002685928555.png?HW-CC-KV=V1&HW-CC-Date=20260730T071515Z&HW-CC-Expire=86400&HW-CC-Sign=7544CC30369DBF68C8CDFBFDDD46EF17E5C3DB689A76E5E4125785917174D1FC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/a4YLzXNJR5CKmeqFEyrSog/zh-cn_image_0000002747212965.png?HW-CC-KV=V1&HW-CC-Date=20260911T073028Z&HW-CC-Expire=86400&HW-CC-Sign=21966D43D58D99A6F808581E9CAE703784DC9111AFF2DA88242CC4191A62EE89)
 
 
 
 
-#### 示例9（跟手弹出框）
+### 示例9（跟手弹出框）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 14开始，该示例展示了设置跟手弹出框（警告弹出框为例），包含visible、popover、targetBuilder等内容。
 
@@ -806,12 +854,15 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/N0Ts0JqzSBm5RqqzeQLZ3w/zh-cn_image_0000002656008878.png?HW-CC-KV=V1&HW-CC-Date=20260730T071515Z&HW-CC-Expire=86400&HW-CC-Sign=A9ECCA5446D9B0074BAA59247ABC1DF48CA06B6B4D4F4F5E819B73457FBA9AAF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/8zUGjYnBTt2qZHax2Of3AA/zh-cn_image_0000002717773032.png?HW-CC-KV=V1&HW-CC-Date=20260911T073028Z&HW-CC-Expire=86400&HW-CC-Sign=96529F302148ED2F4659EEA5DF2FA6B403717DDF8EF759AB409B46ECC15DE626)
 
 
 
 
-#### 示例10（弹出框按钮设置默认获焦）
+### 示例10（弹出框按钮设置默认获焦）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 18开始，该示例展示了设置默认获焦按钮弹出框（以AlertDialog为例），包含defaultFocus等内容。
 
@@ -862,4 +913,4 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/Pz5kekpEQauRBuQgdY1nHg/zh-cn_image_0000002655848958.png?HW-CC-KV=V1&HW-CC-Date=20260730T071515Z&HW-CC-Expire=86400&HW-CC-Sign=18E0D109CEDC6EF9F65B603ED7EE3022346D7E0042B0C1DF0D80FC78288943AD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/oGk-9rBqRQGzOxIKWg_wrA/zh-cn_image_0000002717613100.png?HW-CC-KV=V1&HW-CC-Date=20260911T073028Z&HW-CC-Expire=86400&HW-CC-Sign=ACDC5CC81B786A0E01724877FEC0E29AF0276E4A492B21186C09BB0DEE42086A)

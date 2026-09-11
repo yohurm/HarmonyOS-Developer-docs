@@ -1,11 +1,12 @@
 # Interface (BuildingOverlay)
 
-更新时间：2026-07-09 02:26:55
+更新时间：2026-09-04 10:41:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-buildingoverlay
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -15,11 +16,12 @@ import { map, mapCommon } from '@kit.MapKit';
  
   
 
-#### BuildingOverlay
+## BuildingOverlay
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-3D建筑。缩放层级达到16级或以上，才可正常显示3D建筑效果。
+3D建筑。缩放层级达到16级或以上，才可正常显示3D建筑效果。在调用map.[MapComponentController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-mapcomponentcontroller)类的[addBuildingOverlay](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-mapcomponentcontroller#addbuildingoverlay)方法时会返回该类型的实例。
  
 **模型约束：** 此接口仅可在Stage模型下使用。
  
@@ -197,7 +199,8 @@ let buildingOverlay: map.BuildingOverlay = await this.mapController.addBuildingO
  
   
 
-#### getId
+### getId
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -215,6 +218,7 @@ getId(): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 返回3D建筑的ID。 |
@@ -228,7 +232,8 @@ let id: string = buildingOverlay.getId();
  
   
 
-#### remove
+### remove
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -252,7 +257,8 @@ buildingOverlay.remove();
  
   
 
-#### setSideVisible
+### setSideVisible
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -270,6 +276,7 @@ setSideVisible(visible: boolean): void
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | visible | boolean | 是 | 是否显示3D建筑的侧面和顶部。 - true：显示 - false：不显示 |
@@ -283,7 +290,8 @@ buildingOverlay.setSideVisible(true);
  
   
 
-#### setFloorVisible
+### setFloorVisible
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -301,6 +309,7 @@ setFloorVisible(visible: boolean): void
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | visible | boolean | 是 | 是否显示建筑的所选楼层。 - true：显示 - false：不显示 |
@@ -314,7 +323,8 @@ buildingOverlay.setFloorVisible(true);
  
   
 
-#### setFloorBottomHeight
+### setFloorBottomHeight
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -332,6 +342,7 @@ setFloorBottomHeight(height: number): void
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | height | number | 是 | 所选楼层底部到地面的高度，单位：m，取值范围：大于等于0，异常值不处理。 |

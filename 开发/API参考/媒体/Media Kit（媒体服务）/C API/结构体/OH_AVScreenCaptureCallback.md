@@ -1,6 +1,6 @@
 # OH_AVScreenCaptureCallback
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avscreencapture-oh-avscreencapturecallback
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -10,7 +10,8 @@ typedef struct OH_AVScreenCaptureCallback {...} OH_AVScreenCaptureCallback
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -26,16 +27,19 @@ OH_AVScreenCaptureCallback是OH_AVScreenCapture中所有异步回调函数指针
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_AVScreenCaptureOnError onError | 录屏调用操作发生错误时触发的回调函数。当录屏过程中出现权限缺失、编码异常等错误时触发回调，开发者可根据错误类型进行重试或向用户提示。需先将包含该回调的结构体实例注册到OH_AVScreenCapture实例中，才能接收错误回调上报信息。可能上报的错误码请参考OH_AVSCREEN_CAPTURE_ErrCode。 从API version 12开始，推荐使用接口OH_AVScreenCapture_OnError替代。 |

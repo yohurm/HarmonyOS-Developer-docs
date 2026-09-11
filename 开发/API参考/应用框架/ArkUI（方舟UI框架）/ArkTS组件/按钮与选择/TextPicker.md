@@ -1,9 +1,9 @@
 # TextPicker
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textpicker
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 滑动选择文本、图片或图文混排内容的组件，用户可以按需创建单列数据选择器、多列非联动数据选择器和多列联动数据选择器，适用于需要用户从预设选项中选择数据的场景，如日期选择、地区选择、配置项设置等。组件支持循环滚动、自定义文本样式、分割线样式、渐隐效果、选择项高度调整、触控反馈、表冠灵敏度设置等特性，提供流畅的滑动交互体验和灵活的数据展示方式。
 
@@ -12,17 +12,19 @@
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该组件为基础组件，不建议包含子组件。
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TextPicker(options?: TextPickerOptions)
 
@@ -34,6 +36,7 @@ TextPicker(options?: TextPickerOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | TextPickerOptions | 否 | 配置文本选择器的参数。当需要自定义选择器的数据源、选中项、列宽等配置时传入此参数。参数缺省时组件无法显示。 |
@@ -41,13 +44,15 @@ TextPicker(options?: TextPickerOptions)
 
 
 
-#### TextPickerOptions对象说明
+## TextPickerOptions对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文本选择器的参数说明。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -59,9 +64,10 @@ TextPicker(options?: TextPickerOptions)
 
 
 
-#### TextPickerRangeContent10+对象说明
+## TextPickerRangeContent10+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 单列数据选择器的数据选项内容。
 
@@ -71,6 +77,7 @@ TextPicker(options?: TextPickerOptions)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | icon | string \| Resource | 否 | 否 | 图片资源。当icon为string类型时，表示图片存放的路径，例如"/common/hello.png"；当icon为Resource类型时，表示资源引用。 |
@@ -79,9 +86,10 @@ TextPicker(options?: TextPickerOptions)
 
 
 
-#### TextCascadePickerRangeContent10+对象说明
+## TextCascadePickerRangeContent10+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 多列联动数据选择器的数据选项内容。
 
@@ -91,6 +99,7 @@ TextPicker(options?: TextPickerOptions)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | text | string \| Resource | 否 | 否 | 文本信息。 说明：当文本长度大于列宽时，文本被截断。 |
@@ -99,9 +108,10 @@ TextPicker(options?: TextPickerOptions)
 
 
 
-#### DividerOptions12+对象说明
+## DividerOptions12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 分割线的信息。
 
@@ -110,6 +120,7 @@ TextPicker(options?: TextPickerOptions)
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -121,17 +132,19 @@ TextPicker(options?: TextPickerOptions)
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
 
 
 
-#### defaultPickerItemHeight
+### defaultPickerItemHeight
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 defaultPickerItemHeight(value: number | string)
 
@@ -143,6 +156,7 @@ defaultPickerItemHeight(value: number | string)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| string | 是 | 选择项的高度。 取值范围： number类型：[0, +∞)，单位为vp。 string类型：仅支持number类型取值的字符串形式，例如"56"。 默认值：选中项56vp，非选中项36vp。 说明： 设置该参数后，选中项与非选中项的高度均为所设置的值。 当value的值为负数时，使用默认值。 |
@@ -150,9 +164,10 @@ defaultPickerItemHeight(value: number | string)
 
 
 
-#### defaultPickerItemHeight18+
+### defaultPickerItemHeight18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 defaultPickerItemHeight(height: Optional<number | string>)
 
@@ -166,6 +181,7 @@ defaultPickerItemHeight(height: Optional<number | string>)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | height | Optional<number \| string> | 是 | 选择项的高度。 取值范围： number类型：[0, +∞)，单位为vp。 string类型：仅支持number类型取值的字符串形式，例如"56"。 默认值：选中项56vp，非选中项36vp。 说明： 1. 设置该参数后，选中项与非选中项的高度均为所设置的值。 2. 当height的值为undefined时，维持上次取值。 |
@@ -173,9 +189,10 @@ defaultPickerItemHeight(height: Optional<number | string>)
 
 
 
-#### disappearTextStyle10+
+### disappearTextStyle10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 disappearTextStyle(value: PickerTextStyle)
 
@@ -189,6 +206,7 @@ disappearTextStyle(value: PickerTextStyle)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | PickerTextStyle | 是 | 边缘项的文本颜色、字号、字体粗细。 默认值： { color: '#ff182431', font: { size: '14fp', weight: FontWeight.Regular } } 说明：未调用该方法设置样式时，使用默认值。 |
@@ -200,9 +218,10 @@ disappearTextStyle(value: PickerTextStyle)
 
 
 
-#### disappearTextStyle18+
+### disappearTextStyle18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 disappearTextStyle(style: Optional&lt;PickerTextStyle&gt;)
 
@@ -216,6 +235,7 @@ disappearTextStyle(style: Optional&lt;PickerTextStyle&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | Optional&lt;PickerTextStyle&gt; | 是 | 边缘项的文本颜色、字号、字体粗细。 默认值： { color: '#ff182431', font: { size: '14fp', weight: FontWeight.Regular } } 当style的值为undefined时，使用默认值。 |
@@ -227,9 +247,10 @@ disappearTextStyle(style: Optional&lt;PickerTextStyle&gt;)
 
 
 
-#### disappearTextStyle20+
+### disappearTextStyle20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 disappearTextStyle(style: Optional<PickerTextStyle|TextPickerTextStyle>)
 
@@ -243,6 +264,7 @@ disappearTextStyle(style: Optional<PickerTextStyle|TextPickerTextStyle>)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | Optional<PickerTextStyle\|TextPickerTextStyle> | 是 | 边缘项的文本颜色、字号、字体粗细、最大字号、最小字号、超长文本截断方式。 默认值： { color: '#ff182431', font: { size: '14fp', weight: FontWeight.Regular }, minFontSize: 0, maxFontSize: 0, overflow: TextOverflow.Clip } 当style的值为undefined时，使用默认值。 |
@@ -254,9 +276,10 @@ disappearTextStyle(style: Optional<PickerTextStyle|TextPickerTextStyle>)
 
 
 
-#### textStyle10+
+### textStyle10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 textStyle(value: PickerTextStyle)
 
@@ -270,6 +293,7 @@ textStyle(value: PickerTextStyle)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | PickerTextStyle | 是 | 待选项的文本颜色、字号、字体粗细。 默认值： { color: '#ff182431', font: { size: '16fp', weight: FontWeight.Regular } } 说明：未调用该方法设置样式时，使用默认值。 |
@@ -281,9 +305,10 @@ textStyle(value: PickerTextStyle)
 
 
 
-#### textStyle18+
+### textStyle18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 textStyle(style: Optional&lt;PickerTextStyle&gt;)
 
@@ -297,6 +322,7 @@ textStyle(style: Optional&lt;PickerTextStyle&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | Optional&lt;PickerTextStyle&gt; | 是 | 待选项的文本颜色、字号、字体粗细。 默认值： { color: '#ff182431', font: { size: '16fp', weight: FontWeight.Regular } } 当style的值为undefined时，使用默认值。 |
@@ -308,9 +334,10 @@ textStyle(style: Optional&lt;PickerTextStyle&gt;)
 
 
 
-#### textStyle20+
+### textStyle20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 textStyle(style: Optional<PickerTextStyle|TextPickerTextStyle>)
 
@@ -324,6 +351,7 @@ textStyle(style: Optional<PickerTextStyle|TextPickerTextStyle>)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | Optional<PickerTextStyle\|TextPickerTextStyle> | 是 | 待选项的文本颜色、字号、字体粗细、最大字号、最小字号、超长文本截断方式。 默认值： { color: '#ff182431', font: { size: '16fp', weight: FontWeight.Regular }, minFontSize: 0, maxFontSize: 0, overflow: TextOverflow.Clip } 当style的值为undefined时，使用默认值。 |
@@ -335,9 +363,10 @@ textStyle(style: Optional<PickerTextStyle|TextPickerTextStyle>)
 
 
 
-#### selectedTextStyle10+
+### selectedTextStyle10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 selectedTextStyle(value: PickerTextStyle)
 
@@ -351,6 +380,7 @@ selectedTextStyle(value: PickerTextStyle)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | PickerTextStyle | 是 | 选中项的文本颜色、字号、字体粗细。 默认值： { color: '#ff007dff', font: { size: '20fp', weight: FontWeight.Medium } } 说明：未调用该方法设置样式时，使用默认值。 |
@@ -358,9 +388,10 @@ selectedTextStyle(value: PickerTextStyle)
 
 
 
-#### selectedTextStyle18+
+### selectedTextStyle18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 selectedTextStyle(style: Optional&lt;PickerTextStyle&gt;)
 
@@ -374,6 +405,7 @@ selectedTextStyle(style: Optional&lt;PickerTextStyle&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | Optional&lt;PickerTextStyle&gt; | 是 | 选中项的文本颜色、字号、字体粗细。 默认值： { color: '#ff007dff', font: { size: '20fp', weight: FontWeight.Medium } } 当style的值为undefined时，使用默认值。 |
@@ -381,9 +413,10 @@ selectedTextStyle(style: Optional&lt;PickerTextStyle&gt;)
 
 
 
-#### selectedTextStyle20+
+### selectedTextStyle20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 selectedTextStyle(style: Optional<PickerTextStyle|TextPickerTextStyle>)
 
@@ -397,6 +430,7 @@ selectedTextStyle(style: Optional<PickerTextStyle|TextPickerTextStyle>)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | Optional<PickerTextStyle\|TextPickerTextStyle> | 是 | 选中项的文本颜色、字号、字体粗细、最大字号、最小字号、超长文本截断方式。 默认值： { color: '#ff007dff', font: { size: '20fp', weight: FontWeight.Medium }, minFontSize: 0, maxFontSize: 0, overflow: TextOverflow.Clip } 当style的值为undefined时，使用默认值。 |
@@ -404,9 +438,10 @@ selectedTextStyle(style: Optional<PickerTextStyle|TextPickerTextStyle>)
 
 
 
-#### selectedIndex10+
+### selectedIndex10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectedIndex(value: number | number[])
 
@@ -420,6 +455,7 @@ selectedIndex(value: number | number[])
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| number[] | 是 | 选中项在数据选择列表中的索引值，索引从0开始。 默认值：0 当value的值为负数或者超过数据选择列表的最大索引值时，使用默认值。 |
@@ -427,9 +463,10 @@ selectedIndex(value: number | number[])
 
 
 
-#### selectedIndex18+
+### selectedIndex18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectedIndex(index: Optional<number | number[]>)
 
@@ -443,6 +480,7 @@ selectedIndex(index: Optional<number | number[]>)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | Optional<number \| number[]> | 是 | 选中项在数据选择列表中的索引值，索引从0开始。 默认值：0 当index的值为undefined时，使用TextPickerOptions中的selected值。 当index的值为负数或者超过数据选择列表的最大索引值时，使用默认值。 |
@@ -450,9 +488,10 @@ selectedIndex(index: Optional<number | number[]>)
 
 
 
-#### canLoop10+
+### canLoop10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 canLoop(value: boolean)
 
@@ -466,6 +505,7 @@ canLoop(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否可循环滚动。 - true：可循环。 - false：不可循环。 默认值：true |
@@ -473,9 +513,10 @@ canLoop(value: boolean)
 
 
 
-#### canLoop18+
+### canLoop18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 canLoop(isLoop: Optional&lt;boolean&gt;)
 
@@ -489,6 +530,7 @@ canLoop(isLoop: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isLoop | Optional&lt;boolean&gt; | 是 | 是否可循环滚动。 - true：可循环。 - false：不可循环。 默认值：true 当isLoop的值为undefined时，使用默认值。 |
@@ -496,9 +538,10 @@ canLoop(isLoop: Optional&lt;boolean&gt;)
 
 
 
-#### divider12+
+### divider12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 divider(value: DividerOptions | null)
 
@@ -514,6 +557,7 @@ divider(value: DividerOptions | null)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | DividerOptions \| null | 是 | 分割线样式。当需要自定义分割线的线宽、边距、颜色时传入DividerOptions对象；当需要隐藏分割线时传入null；不传入时使用默认样式。 默认值： { strokeWidth: '2px', startMargin: 0, endMargin: 0, color: '#33000000' } 1. 当value设置为有效的DividerOptions时，按设置的样式显示分割线。 2. 当value设置为null时，不显示分割线。 |
@@ -521,9 +565,10 @@ divider(value: DividerOptions | null)
 
 
 
-#### divider18+
+### divider18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 divider(textDivider: Optional<DividerOptions | null>)
 
@@ -539,6 +584,7 @@ divider(textDivider: Optional<DividerOptions | null>)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | textDivider | Optional<DividerOptions \| null> | 是 | 默认值： { strokeWidth: '2px', startMargin: 0, endMargin: 0, color: '#33000000' } 1. 当textDivider的值为undefined时，使用默认值。 2. 当textDivider设置为有效的DividerOptions时，按设置的样式显示分割线。 3. 当textDivider设置为null时，不显示分割线。 |
@@ -546,9 +592,10 @@ divider(textDivider: Optional<DividerOptions | null>)
 
 
 
-#### gradientHeight12+
+### gradientHeight12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 gradientHeight(value: Dimension)
 
@@ -562,6 +609,7 @@ gradientHeight(value: Dimension)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Dimension | 是 | 内容区上下边缘的渐隐高度。 默认值：36vp 取值范围：[0, +∞)，支持百分比。 说明： 1. value设置为百分比时，100%为TextPicker高度的一半。 2. value设置为0时不显示渐隐效果。 3. value设置为数字且超过TextPicker高度的一半时，使用默认值。 4. 当value的值为负数时，使用默认值。 |
@@ -569,9 +617,10 @@ gradientHeight(value: Dimension)
 
 
 
-#### gradientHeight18+
+### gradientHeight18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 gradientHeight(height: Optional&lt;Dimension&gt;)
 
@@ -585,6 +634,7 @@ gradientHeight(height: Optional&lt;Dimension&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | height | Optional&lt;Dimension&gt; | 是 | 内容区上下边缘的渐隐高度。 默认值：36vp 取值范围：[0, +∞)，支持百分比。 说明： 1. height设置为百分比时，100%为TextPicker高度的一半。 2. height设置为0时不显示渐隐效果。 3. height设置为数字且超过TextPicker高度的一半时，使用默认值。 4. 当height的值为undefined或负数时，使用默认值。 |
@@ -592,9 +642,10 @@ gradientHeight(height: Optional&lt;Dimension&gt;)
 
 
 
-#### disableTextStyleAnimation15+
+### disableTextStyleAnimation15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 disableTextStyleAnimation(disabled: boolean)
 
@@ -608,6 +659,7 @@ disableTextStyleAnimation(disabled: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | disabled | boolean | 是 | 是否关闭滑动过程中文本样式变化的动效。 - true：关闭文本样式变化动效。 - false：不关闭文本样式变化动效。 默认值：false 说明： 设置为true时，滑动过程中无字号、字重、字体颜色等变化动效，且文本均显示为defaultTextStyle属性设置的样式。如未设置defaultTextStyle，则显示为Text组件默认样式。设置为false时，使用系统默认的滑动文本样式变化动效。 |
@@ -615,9 +667,10 @@ disableTextStyleAnimation(disabled: boolean)
 
 
 
-#### defaultTextStyle15+
+### defaultTextStyle15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 defaultTextStyle(style: TextPickerTextStyle)
 
@@ -631,6 +684,7 @@ defaultTextStyle(style: TextPickerTextStyle)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | TextPickerTextStyle | 是 | 设置关闭滑动过程中文本样式变化的动效时，各个选项的文本样式。 默认值：与Text组件默认值相同。 |
@@ -638,9 +692,10 @@ defaultTextStyle(style: TextPickerTextStyle)
 
 
 
-#### enableHapticFeedback18+
+### enableHapticFeedback18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableHapticFeedback(enable: Optional&lt;boolean&gt;)
 
@@ -653,6 +708,7 @@ enableHapticFeedback(enable: Optional&lt;boolean&gt;)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -671,9 +727,10 @@ enableHapticFeedback(enable: Optional&lt;boolean&gt;)
 
 
 
-#### digitalCrownSensitivity18+
+### digitalCrownSensitivity18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Wearable
 
 digitalCrownSensitivity(sensitivity: Optional&lt;CrownSensitivity&gt;)
 
@@ -687,6 +744,7 @@ digitalCrownSensitivity(sensitivity: Optional&lt;CrownSensitivity&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sensitivity | Optional&lt;CrownSensitivity&gt; | 是 | 表冠响应灵敏度。 默认值：CrownSensitivity.MEDIUM，响应速度适中。不同灵敏度值影响表冠滚动速度与选择项切换速度的对应关系，具体各枚举值的效果请参考CrownSensitivity。 |
@@ -698,9 +756,10 @@ digitalCrownSensitivity(sensitivity: Optional&lt;CrownSensitivity&gt;)
 
 
 
-#### selectedBackgroundStyle20+
+### selectedBackgroundStyle20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectedBackgroundStyle(style: Optional&lt;PickerBackgroundStyle&gt;)
 
@@ -714,6 +773,7 @@ selectedBackgroundStyle(style: Optional&lt;PickerBackgroundStyle&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | Optional&lt;PickerBackgroundStyle&gt; | 是 | 选中项背景的颜色和边框圆角半径，多列模式时会同时设置所有列的选中项背景的颜色和圆角半径。 默认值： { color: \$r('sys.color.comp_background_tertiary'), borderRadius: \$r('sys.float.corner_radius_level12') } |
@@ -721,17 +781,19 @@ selectedBackgroundStyle(style: Optional&lt;PickerBackgroundStyle&gt;)
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)外，还支持以下事件：
 
 
 
-#### onChange
+### onChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onChange(callback: (value: string | string[], index: number | number[]) => void)
 
@@ -745,6 +807,7 @@ onChange(callback: (value: string | string[], index: number | number[]) => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string \| string[]10+ | 是 | 当前选中项的文本。多列数据选择器的value为数组类型。 说明： 当显示文本或图片加文本列表时，value值为选中项中的文本值；当显示图片列表时，value值为空。 |
@@ -753,9 +816,10 @@ onChange(callback: (value: string | string[], index: number | number[]) => void)
 
 
 
-#### onChange18+
+### onChange18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onChange(callback: Optional&lt;OnTextPickerChangeCallback&gt;)
 
@@ -771,6 +835,7 @@ onChange(callback: Optional&lt;OnTextPickerChangeCallback&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Optional&lt;OnTextPickerChangeCallback&gt; | 是 | 滑动选中TextPicker文本内容后，触发的回调。 当callback的值为undefined时，不使用回调函数。 |
@@ -778,9 +843,10 @@ onChange(callback: Optional&lt;OnTextPickerChangeCallback&gt;)
 
 
 
-#### onScrollStop14+
+### onScrollStop14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onScrollStop(callback: TextPickerScrollStopCallback)
 
@@ -800,16 +866,18 @@ onScrollStop(callback: TextPickerScrollStopCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | TextPickerScrollStopCallback | 是 | 文本选择器的选项列滑动停止时触发该事件。 |
+| callback | TextPickerScrollStopCallback | 是 | 文本选择器的选项列滑动停止时触发该事件。回调签名：(value: string \| string[], index: number \| number[]) => void，其中value为当前选中项的文本，index为当前选中项的索引值（从0开始）。 |
 
 
 
 
-#### onScrollStop18+
+### onScrollStop18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onScrollStop(callback: Optional&lt;TextPickerScrollStopCallback&gt;)
 
@@ -829,6 +897,7 @@ onScrollStop(callback: Optional&lt;TextPickerScrollStopCallback&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Optional&lt;TextPickerScrollStopCallback&gt; | 是 | 文本选择器的选项列滑动停止时触发该事件。 当callback的值为undefined时，不使用回调函数。 |
@@ -836,9 +905,10 @@ onScrollStop(callback: Optional&lt;TextPickerScrollStopCallback&gt;)
 
 
 
-#### onEnterSelectedArea18+
+### onEnterSelectedArea18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onEnterSelectedArea(callback: TextPickerEnterSelectedAreaCallback)
 
@@ -856,16 +926,18 @@ onEnterSelectedArea(callback: TextPickerEnterSelectedAreaCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | TextPickerEnterSelectedAreaCallback | 是 | 滑动TextPicker过程中，选项进入分割线区域时触发的回调。 |
+| callback | TextPickerEnterSelectedAreaCallback | 是 | 滑动TextPicker过程中，选项进入分割线区域时触发的回调。回调签名：(value: string \| string[], index: number \| number[]) => void，其中value为当前选中项的文本，index为当前选中项的索引值（从0开始）。 |
 
 
 
 
-#### onAccept(deprecated) 
+### onAccept(deprecated) 
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onAccept(callback: (value: string, index: number) => void)
 
@@ -879,6 +951,7 @@ onAccept(callback: (value: string, index: number) => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string | 是 | 当前选中项的文本。 |
@@ -887,9 +960,10 @@ onAccept(callback: (value: string, index: number) => void)
 
 
 
-#### onCancel(deprecated) 
+### onCancel(deprecated) 
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onCancel(callback: () => void)
 
@@ -903,6 +977,7 @@ onCancel(callback: () => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | () => void | 是 | 点击弹窗中的“取消”按钮时触发该回调。 |
@@ -910,9 +985,10 @@ onCancel(callback: () => void)
 
 
 
-#### TextPickerTextStyle15+类型说明
+## TextPickerTextStyle15+类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文本样式选项，继承自[PickerTextStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-picker-common#pickertextstyle对象说明)。
 
@@ -921,6 +997,7 @@ onCancel(callback: () => void)
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -931,9 +1008,10 @@ onCancel(callback: () => void)
 
 
 
-#### OnTextPickerChangeCallback18+
+## OnTextPickerChangeCallback18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnTextPickerChangeCallback = (selectItem: string | string[], index: number | number[]) => void
 
@@ -947,6 +1025,7 @@ type OnTextPickerChangeCallback = (selectItem: string | string[], index: number 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | selectItem | string \| string[]10+ | 是 | 当前选中项的文本。多列数据选择器的selectItem为数组类型。 说明： 当选择器内容为文本或图文混排时，selectItem值为选中项中的文本值；当选择器内容为图片时，selectItem值为空。 |
@@ -955,9 +1034,10 @@ type OnTextPickerChangeCallback = (selectItem: string | string[], index: number 
 
 
 
-#### TextPickerScrollStopCallback14+
+## TextPickerScrollStopCallback14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type TextPickerScrollStopCallback = (value: string | string[], index: number | number[]) => void
 
@@ -971,6 +1051,7 @@ type TextPickerScrollStopCallback = (value: string | string[], index: number | n
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string \| string[] | 是 | 当前选中项的文本。多列数据选择器的value为数组类型。 说明： 当选择器内容为文本或图文混排时，value值为选中项中的文本值；当选择器内容为图片时，value值为空。 |
@@ -979,9 +1060,10 @@ type TextPickerScrollStopCallback = (value: string | string[], index: number | n
 
 
 
-#### TextPickerEnterSelectedAreaCallback18+
+## TextPickerEnterSelectedAreaCallback18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type TextPickerEnterSelectedAreaCallback = (value: string | string[], index: number | number[]) => void
 
@@ -995,6 +1077,7 @@ type TextPickerEnterSelectedAreaCallback = (value: string | string[], index: num
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string \| string[] | 是 | 当前选中项的文本。多列数据选择器的value为数组类型。 说明： 当选择器内容为文本或图文混排时，value值为选中项中的文本值；当选择器内容为图片时，value值为空。 |
@@ -1003,9 +1086,10 @@ type TextPickerEnterSelectedAreaCallback = (value: string | string[], index: num
 
 
 
-#### PickerBackgroundStyle20+
+## PickerBackgroundStyle20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 选择器选中项的背景样式，包括选中项的背景颜色和边框圆角半径。
 
@@ -1015,6 +1099,7 @@ type TextPickerEnterSelectedAreaCallback = (value: string | string[], index: num
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | color | ResourceColor | 否 | 是 | 选中项的背景颜色。 默认值： 'sys.color.comp_background_tertiary' 说明：未设置该属性时，使用默认值。 |
@@ -1023,13 +1108,17 @@ type TextPickerEnterSelectedAreaCallback = (value: string | string[], index: num
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（设置选择器列数）
+
+
+### 示例1（设置选择器列数）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置range实现单列数据选择器和多列数据选择器，并使用columnWidths调整每一列的宽度。
 
@@ -1120,12 +1209,15 @@ struct TextPickerExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/-HB9qdRRSZaA02n8xWeodg/zh-cn_image_0000002685928189.png?HW-CC-KV=V1&HW-CC-Date=20260730T071504Z&HW-CC-Expire=86400&HW-CC-Sign=A0856AF405F72F2ADB87D99FFD8B0E17FF5B8839A1A30C029A9B198280F6E62C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/H_CjiMGyQ3q9MEcLpEu7rw/zh-cn_image_0000002717612728.png?HW-CC-KV=V1&HW-CC-Date=20260911T073108Z&HW-CC-Expire=86400&HW-CC-Sign=75A8BCD98A1FE9E7D6E96AC9F8ACDC189035CF60BA360785D879B98F662C317B)
 
 
 
 
-#### 示例2（设置文本样式）
+### 示例2（设置文本样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例使用[disappearTextStyle](#disappeartextstyle10)、[textStyle](#textstyle10)、[selectedTextStyle](#selectedtextstyle10)设置文本选择器中的文本样式。
 
@@ -1162,12 +1254,15 @@ struct TextPickerExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/C-wR7yIXTXWgJk5eQwI_7A/zh-cn_image_0000002656008512.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071504Z&HW-CC-Expire=86400&HW-CC-Sign=C94E34ED2C2538B57089D971B2E8E557E1E41FFBEE02FB255ED8243156439B30)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/XFkvdnKETsuq3i-39Npj4w/zh-cn_image_0000002747292681.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073108Z&HW-CC-Expire=86400&HW-CC-Sign=04BEEEAF12D53B547101C9F85CDA9ABB7EA5BAF31BD93207B7FD84DAD3592BF7)
 
 
 
 
-#### 示例3（设置无分割线样式）
+### 示例3（设置无分割线样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置[divider](#divider12)为null实现无分割线样式的文本选择器。
 
@@ -1198,12 +1293,15 @@ struct TextPickerExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/-dSjxxNoTjSI7If7RI7vBQ/zh-cn_image_0000002655848592.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071504Z&HW-CC-Expire=86400&HW-CC-Sign=BDC542FD71A6BBE1D9D6312227B074EA878A6CD1DC8D8571C625A247A15DDB99)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/UizZjW3jRputor-1nbdIMA/zh-cn_image_0000002747212597.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073108Z&HW-CC-Expire=86400&HW-CC-Sign=C5C17EDC72795921F12158E00D02348AF85A8379B86D5D39300AD2A11EDD598B)
 
 
 
 
-#### 示例4（设置分割线样式）
+### 示例4（设置分割线样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置divider的DividerOptions设置文本选择器的分割线样式。
 
@@ -1239,12 +1337,15 @@ struct TextPickerExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/utED-Q4DRKyi8VGWolJNZg/zh-cn_image_0000002686088019.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071504Z&HW-CC-Expire=86400&HW-CC-Sign=9A68E9F0B6D62D0B74C4F7C174BD5D6900238F334B3E39DBD829AF8FDDBEC3D4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/576xygW9QOqa5K2JZDRAFw/zh-cn_image_0000002717772662.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073108Z&HW-CC-Expire=86400&HW-CC-Sign=55538733B2C886E20C7806915941A1DF1D1D2B5A043BA86B68363396FFE54993)
 
 
 
 
-#### 示例5（设置渐隐效果）
+### 示例5（设置渐隐效果）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置[gradientHeight](#gradientheight12)设置文本选择器的渐隐效果高度。
 
@@ -1275,12 +1376,15 @@ struct TextPickerExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/xXJaCeFBTrGlOgmm-5PE0Q/zh-cn_image_0000002685928191.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071504Z&HW-CC-Expire=86400&HW-CC-Sign=DE9827C2FFB57085C085BC72F93E4AF3C0F6B9F56EF20BAD9312CF64F10EFF08)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/uML7bQ-ZTCamMK8-kH6SVQ/zh-cn_image_0000002717612730.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073108Z&HW-CC-Expire=86400&HW-CC-Sign=B36EB8389678F938D00399363C54DB7C5D8B25A719FC8B757EBEEC20548E8C2D)
 
 
 
 
-#### 示例6（设置选择项高度）
+### 示例6（设置选择项高度）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置[defaultPickerItemHeight](#defaultpickeritemheight)设置选择项的高度。
 
@@ -1308,12 +1412,15 @@ struct TextPickerExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/9RqVqcABQOeY16auL_K3Zg/zh-cn_image_0000002656008514.png?HW-CC-KV=V1&HW-CC-Date=20260730T071504Z&HW-CC-Expire=86400&HW-CC-Sign=5474DD1192B9402293D16D712D1893D226F6B15F9C345F070B8E8875E97173CB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/TX3A_eciRjufF_IcXniguA/zh-cn_image_0000002747292683.png?HW-CC-KV=V1&HW-CC-Date=20260911T073108Z&HW-CC-Expire=86400&HW-CC-Sign=0D00DA940A79DF73858D5921A850729E26A27796047132C87C13B81CEE92EC48)
 
 
 
 
-#### 示例7（设置循环滚动）
+### 示例7（设置循环滚动）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置[canLoop](#canloop10)设置文本选择器是否循环滚动。
 
@@ -1352,12 +1459,15 @@ struct TextPickerExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/i4wYywvCSOyKXPCRdweriA/zh-cn_image_0000002655848594.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071504Z&HW-CC-Expire=86400&HW-CC-Sign=8C3857ACF8FA53AFCD9BD948BA54031D17FDC3ECA6698BFB80A2C248E875CC04)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/J1JrO4OyT6OdSuJzmvwqKA/zh-cn_image_0000002747212599.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073108Z&HW-CC-Expire=86400&HW-CC-Sign=534F7BC12410A3863CACE6C6E3B6554D52AB5E9EC617284D643410279EC23663)
 
 
 
 
-#### 示例8（设置选中项索引值）
+### 示例8（设置选中项索引值）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置[selectedIndex](#selectedindex10)设置默认选中项的索引值。
 
@@ -1384,12 +1494,15 @@ struct TextPickerExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/GfP3Hr_xQd-nFD78G_cSig/zh-cn_image_0000002686088021.png?HW-CC-KV=V1&HW-CC-Date=20260730T071504Z&HW-CC-Expire=86400&HW-CC-Sign=02CD3A89C11329D33DDBAEEE2AA13B1E3093F69846DD5E0DEB8FB636893F23D4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/LQ2Au2gyTkKe6ef0DoWFhA/zh-cn_image_0000002717772664.png?HW-CC-KV=V1&HW-CC-Date=20260911T073108Z&HW-CC-Expire=86400&HW-CC-Sign=E27BAE69B8FF0DD8C97A395E9B08696F0F22B0BC85E64A163053B0B017AA27F1)
 
 
 
 
-#### 示例9（设置关闭文本样式变化动效与对应文本样式）
+### 示例9（设置关闭文本样式变化动效与对应文本样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置[disableTextStyleAnimation](#disabletextstyleanimation15)、[defaultTextStyle](#defaulttextstyle15)实现关闭文本选择器文本样式变化的动效，并设置文本样式。
 
@@ -1425,12 +1538,15 @@ struct TextPickerExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/bMf0VlrMTn-tKCJ9B1ihDQ/zh-cn_image_0000002685928193.jpeg?HW-CC-KV=V1&HW-CC-Date=20260730T071504Z&HW-CC-Expire=86400&HW-CC-Sign=7424AE03052473B7FB93A1B614F901B50CE543107879E2FB8632A47905E1F574)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/DODI1O7OSKKMmwuojYuKPw/zh-cn_image_0000002717612732.jpeg?HW-CC-KV=V1&HW-CC-Date=20260911T073108Z&HW-CC-Expire=86400&HW-CC-Sign=BEDD14E035C4B1F2D1166151AA3F6C4B71028082927AB4F0C8AA3AF51B5E27D1)
 
 
 
 
-#### 示例10（设置选中项背景样式）
+### 示例10（设置选中项背景样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置[selectedBackgroundStyle](#selectedbackgroundstyle20)实现文本选择器选中项的背景样式。
 
@@ -1491,12 +1607,15 @@ struct TextPickerExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/f5yCLbS3SrOiBBqsCnht3g/zh-cn_image_0000002656008516.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071504Z&HW-CC-Expire=86400&HW-CC-Sign=BAB7081C34998BDA1A7BB51912FC50B1E1D6821BA5A374E827C236C189838F72)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/ZztQpF3mSteZWK4UZ16CQg/zh-cn_image_0000002747292685.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073108Z&HW-CC-Expire=86400&HW-CC-Sign=6AC46E9A4F2B52273343DA1BC1C327821992EF7BC83FD23409FEDDCA086FDE97)
 
 
 
 
-#### 示例11（设置文本的最大字号、最小字号、超长文本截断方式）
+### 示例11（设置文本的最大字号、最小字号、超长文本截断方式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置[disappearTextStyle](#disappeartextstyle20)、[textStyle](#textstyle20)和[selectedTextStyle](#selectedtextstyle20)，设置文本的颜色、最大字号、最小字号、超长文本截断方式。
 
@@ -1543,4 +1662,4 @@ struct TextPickerExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/9wLkHsHWQFqJEDMEJkoeXw/zh-cn_image_0000002655848596.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071504Z&HW-CC-Expire=86400&HW-CC-Sign=D0E89571BC928FF773F1E346CE856E6B8CC5CD714B4DBEEE4E90C8BBC0970E1E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/MFY3sMG-Re6dYjlPFPN56A/zh-cn_image_0000002747212601.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073108Z&HW-CC-Expire=86400&HW-CC-Sign=9E849A333433E54D8B696B937F10CF4FD19276E575838E1F89F00188D9253842)

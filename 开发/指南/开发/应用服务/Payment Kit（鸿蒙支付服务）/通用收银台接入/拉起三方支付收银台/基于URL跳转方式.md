@@ -1,6 +1,6 @@
 # 基于URL跳转方式
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-launch-third-party-payment-url
 
@@ -9,7 +9,7 @@
   跳转三方支付收银台示例代码如下：
 
   
-```text
+```ArkTS
 import { BusinessError } from '@kit.BasicServicesKit';
 import { paymentService } from '@kit.PaymentKit';
 import { common } from '@kit.AbilityKit';
@@ -22,13 +22,12 @@ struct Index {
    // 请使用开发者自己的订单信息（orderStr），跳转三方支付方式。
    const orderStr = '{"nextAction":"L","linkUrl":"","scheme":"","clientToken":"***"}';
    paymentService.requestPayment(this.context, orderStr, 'AP')
-     .then((payResult: paymentService.PayResult) => {
-       // 支付成功
-       console.info('succeeded in paying, pay result: ', payResult);
+     .then(() => {
+       console.info('requestPayment success');
      })
      .catch((error: BusinessError) => {
        // 支付失败
-       console.error(`failed to pay, error.code: ${error.code}, error.message: ${error.message}`);
+       console.error(`requestPayment failed, error.code: ${error.code}, error.message: ${error.message}`);
      });
  }
 

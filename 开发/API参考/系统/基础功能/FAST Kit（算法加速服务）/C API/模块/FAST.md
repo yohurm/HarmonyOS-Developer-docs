@@ -1,13 +1,14 @@
 # FAST
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-04 10:41:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/fast-kit-fast
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供FAST算法加速能力相关接口，实现应用启动、加载、响应时延等指标的优化。
  
@@ -15,18 +16,21 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 概述FAST Kit中文件、结构体、宏定义、类型定义、枚举和函数等信息。
  
   
 
-#### 文件
+### 文件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | fast_ads_segment_map.h | 线段表相关数据结构及函数定义。 |
@@ -43,10 +47,12 @@
  
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | struct FAST_Rect | 定义矩形的数据结构。 |
@@ -64,10 +70,12 @@
  
   
 
-#### 类型定义
+### 类型定义
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | typedef enum FAST_SegmentMapQueryType FAST_SegmentMapQueryType | 线段表支持的查询操作类型。 |
@@ -110,10 +118,12 @@
  
   
 
-#### 常量
+### 常量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | const uint32_t FAST_MAX_FFT_LOG2N = 16 | FFT支持的最大点数对应的以2为底的对数值。值为16，即最大点数为65536。 |
@@ -121,10 +131,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | FAST_SegmentMapQueryType { FAST_SEGMENTMAP_QUERY_TYPE_SUM = 0, FAST_SEGMENTMAP_QUERY_TYPE_MIN = 1, FAST_SEGMENTMAP_QUERY_TYPE_MAX = 2 } | 线段表支持的查询操作类型。 |
@@ -139,10 +151,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | FAST_EXPORT FAST_ErrorCode HMS_FAST_SegmentMap_CreateConfig (FAST_SegmentMapConfig **config) | 创建线段表不透明配置实例。 |
@@ -157,9 +171,9 @@
 | FAST_EXPORT void HMS_FAST_RectPartition_DestroyConfig (FAST_RectPartitionConfig *config) | 销毁矩形划分求解器的不透明配置。 |
 | FAST_EXPORT FAST_ErrorCode HMS_FAST_RectPartition_SetAlgo (FAST_RectPartitionConfig *config, const char *name) | 设置矩形划分求解器使用的算法。目前仅支持扫描线算法“SweepLineAlgo”，输出数量尽可能少（不保证最优性）的不相交矩形集合，复杂度为。 |
 | FAST_EXPORT FAST_ErrorCode HMS_FAST_RectPartition_Solve (FAST_RectPartitionConfig *config, size_t size, const FAST_Rect *origin, FAST_Rect *result, size_t *resultSize) | 在指定不透明配置下解决矩形划分问题。函数接收若干个彼此不相交的矩形作为输入，计算出覆盖相同区域的矩形划分方案，并使输出的矩形数量尽可能少。 说明： 1. 输入须保证矩形两两不相交（即任意两个矩形满足： 或 或或 ），否则函数返回FAST_ERROR_CODE_ILLEGAL_INPUT。 2. 函数能保证输出矩形的数量小于等于输入矩形的数量。 |
-| FAST_ErrorCode HMS_FAST_PolyRoot_ComputeRoots (const FAST_Poly *poly, const size_t maxRootCount, double *root, size_t *rootCount) | 计算多项式的给定实数根的实根。 |
-| FAST_ErrorCode HMS_FAST_PolyRoot_ComputeSingle (const FAST_Poly *poly, double *root) | 计算多项式的主导(绝对值最大)实根。 |
-| FAST_ErrorCode HMS_FAST_PolyRoot_ComputeRootIntervals (const FAST_Poly *poly, const size_t maxRootCount, double *leftBoundary, double *rightBoundary, size_t *rootCount) | 计算多项式给定个数实根的隔离区间，输出每个实根的左右边界。 |
+| FAST_ErrorCode HMS_FAST_PolyRoot_ComputeRoots (const FAST_Poly *poly, const size_t maxRootCount, double *root, size_t *rootCount) | 计算多项式的给定数量的实数根。 |
+| FAST_ErrorCode HMS_FAST_PolyRoot_ComputeSingle (const FAST_Poly *poly, double *root) | 计算多项式的绝对值最大的实根。 |
+| FAST_ErrorCode HMS_FAST_PolyRoot_ComputeRootIntervals (const FAST_Poly *poly, const size_t maxRootCount, double *leftBoundary, double *rightBoundary, size_t *rootCount) | 计算多项式给定数量的实根的隔离区间，输出每个实根的左右边界。 |
 | float HMS_FAST_DSP_Maxmgv (const float *input, size_t stride, size_t length) | 计算步长实数向量中的最大幅值（单精度）。 |
 | double HMS_FAST_DSP_MaxmgvD (const double *input, size_t stride, size_t length) | 计算步长实数向量中的最大幅值（双精度）。 |
 | void HMS_FAST_DSP_Maxvi (const float *input, size_t stride, size_t length, float *value, size_t *index) | 查找步长实数向量中的最大值及其索引（单精度）。 |
@@ -245,10 +259,10 @@
 | FAST_ErrorCode HMS_FAST_FFT_CreateConfig (FAST_FFTConfig** config, const uint32_t log2n) | 创建单精度FFT配置对象（log2n为FFT点数对应的以2为底的对数值，必须满足0<log2n<=FAST_MAX_FFT_LOG2N，即1到16）。 |
 | FAST_ErrorCode HMS_FAST_FFT_CreateConfigD (FAST_FFTConfig** config, const uint32_t log2n) | 创建双精度FFT配置对象（log2n为FFT点数对应的以2为底的对数值，必须满足0<log2n<=FAST_MAX_FFT_LOG2N，即1到16）。 |
 | void HMS_FAST_FFT_DestroyConfig (FAST_FFTConfig* config) | 销毁FFT配置对象并释放资源。 |
-| FAST_ErrorCode HMS_FAST_FFT_ForwardTransform (FAST_FFTConfig* config, const uint32_t length, const float input[], float outputRe[], float outputIm[]) | 计算单精度实数信号的FFT。 |
-| FAST_ErrorCode HMS_FAST_FFT_ForwardTransformD (FAST_FFTConfig* config, const uint32_t length, const double input[], double outputRe[], double outputIm[]) | 计算双精度实数信号的FFT。 |
-| FAST_ErrorCode HMS_FAST_FFT_InverseTransform (FAST_FFTConfig* config, const uint32_t length, const float inputRe[], const float inputIm[], float output[]) | 计算单精度复数频域信号的逆FFT。 |
-| FAST_ErrorCode HMS_FAST_FFT_InverseTransformD (FAST_FFTConfig* config, const uint32_t length, const double inputRe[], const double inputIm[], double output[]) | 计算双精度复数频域信号的逆FFT。 |
+| FAST_ErrorCode HMS_FAST_FFT_ForwardTransform (FAST_FFTConfig* config, const uint32_t length, const float input[], float outputRe[], float outputIm[]) | 计算单精度实数时域信号的DFT。 |
+| FAST_ErrorCode HMS_FAST_FFT_ForwardTransformD (FAST_FFTConfig* config, const uint32_t length, const double input[], double outputRe[], double outputIm[]) | 计算双精度实数时域信号的DFT。 |
+| FAST_ErrorCode HMS_FAST_FFT_InverseTransform (FAST_FFTConfig* config, const uint32_t length, const float inputRe[], const float inputIm[], float output[]) | 计算单精度复数频域序列的逆DFT。 |
+| FAST_ErrorCode HMS_FAST_FFT_InverseTransformD (FAST_FFTConfig* config, const uint32_t length, const double inputRe[], const double inputIm[], double output[]) | 计算双精度复数频域序列的逆DFT。 |
 | FAST_ErrorCode HMS_FAST_ConcurrentHashmap_Create (FAST_ConcurrentHashmapHandle* handle, HMS_FAST_ConcurrentHashmap_HashFunc hasher, HMS_FAST_ConcurrentHashmap_KeyEqualFunc equaler, float maxLoadFac, size_t numShards) | 使用给定配置创建并发哈希表。 |
 | void HMS_FAST_ConcurrentHashmap_Destroy (FAST_ConcurrentHashmapHandle handle) | 销毁指定并发哈希表。 |
 | FAST_ErrorCode HMS_FAST_ConcurrentHashmap_Insert (FAST_ConcurrentHashmapHandle handle, const FAST_ConcurrentHashmapKeyPtr key, const FAST_ConcurrentHashmapValuePtr value, FAST_ConcurrentHashmapValuePtr* originValue) | 将给定的键值对插入并发哈希表中，如果键已经存在，则使用value覆写原有的值，并将对应值的地址保存在originValue中。 |
@@ -286,15 +300,17 @@
  
   
 
-#### 类型定义说明
+## 类型定义说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### FAST_ErrorCode
+### FAST_ErrorCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 typedef enum FAST_ErrorCode FAST_ErrorCode
@@ -308,9 +324,10 @@ FAST Kit的错误码。
  
   
 
-#### FAST_Rect
+### FAST_Rect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 typedef struct FAST_Rect FAST_Rect
@@ -324,9 +341,10 @@ typedef struct FAST_Rect FAST_Rect
  
   
 
-#### FAST_RectPartitionConfig
+### FAST_RectPartitionConfig
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 typedef struct FAST_RectPartitionConfig FAST_RectPartitionConfig
@@ -340,9 +358,10 @@ typedef struct FAST_RectPartitionConfig FAST_RectPartitionConfig
  
   
 
-#### FAST_Poly
+### FAST_Poly
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 typedef struct FAST_Poly FAST_Poly
@@ -351,16 +370,17 @@ typedef struct FAST_Poly FAST_Poly
 **描述**
  
 定义稀疏格式多项式的数据结构。多项式
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/5v9IYZeEShiz10EVf3Lxjg/zh-cn_image_0000002686088885.png?HW-CC-KV=V1&HW-CC-Date=20260730T071635Z&HW-CC-Expire=86400&HW-CC-Sign=F9AB1FF8A0067407E3A920BB8B7A197ABECF1604AE563CB6CB4476CC5E555B35)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/xrqSSE3ES8ehrJ__U_zU4Q/zh-cn_image_0000002717773532.png?HW-CC-KV=V1&HW-CC-Date=20260911T072746Z&HW-CC-Expire=86400&HW-CC-Sign=AA35811251DF70BDF9B587338590DA26CEBBC1931AFBB3914514B237EF1184EE)
 由系数数组coeff和指数数组pow共同描述，且需按指数升序排列。
  
 **起始版本：** 26.0.0
  
   
 
-#### FAST_SegmentMapConfig
+### FAST_SegmentMapConfig
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 typedef struct FAST_SegmentMapConfig FAST_SegmentMapConfig
@@ -374,9 +394,10 @@ typedef struct FAST_SegmentMapConfig FAST_SegmentMapConfig
  
   
 
-#### FAST_SegmentMapHandle
+### FAST_SegmentMapHandle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 typedef void* FAST_SegmentMapHandle
@@ -390,9 +411,10 @@ typedef void* FAST_SegmentMapHandle
  
   
 
-#### FAST_SegmentMapQueryType
+### FAST_SegmentMapQueryType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 typedef enum FAST_SegmentMapQueryType FAST_SegmentMapQueryType
@@ -406,9 +428,10 @@ typedef enum FAST_SegmentMapQueryType FAST_SegmentMapQueryType
  
   
 
-#### FAST_SegmentMapUpdateType
+### FAST_SegmentMapUpdateType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 typedef enum FAST_SegmentMapUpdateType FAST_SegmentMapUpdateType
@@ -422,9 +445,10 @@ typedef enum FAST_SegmentMapUpdateType FAST_SegmentMapUpdateType
  
   
 
-#### FAST_ConcurrentHashmapHandle
+### FAST_ConcurrentHashmapHandle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 typedef void* FAST_ConcurrentHashmapHandle
@@ -438,9 +462,10 @@ typedef void* FAST_ConcurrentHashmapHandle
  
   
 
-#### FAST_ConcurrentHashmapKeyPtr
+### FAST_ConcurrentHashmapKeyPtr
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 typedef void* FAST_ConcurrentHashmapKeyPtr
@@ -454,9 +479,10 @@ typedef void* FAST_ConcurrentHashmapKeyPtr
  
   
 
-#### FAST_ConcurrentHashmapValuePtr
+### FAST_ConcurrentHashmapValuePtr
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 typedef void* FAST_ConcurrentHashmapValuePtr
@@ -470,9 +496,10 @@ typedef void* FAST_ConcurrentHashmapValuePtr
  
   
 
-#### HMS_FAST_ConcurrentHashmap_HashFunc
+### HMS_FAST_ConcurrentHashmap_HashFunc
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 typedef uint64_t (*HMS_FAST_ConcurrentHashmap_HashFunc)(const FAST_ConcurrentHashmapKeyPtr key)
@@ -486,9 +513,10 @@ typedef uint64_t (*HMS_FAST_ConcurrentHashmap_HashFunc)(const FAST_ConcurrentHas
  
   
 
-#### HMS_FAST_ConcurrentHashmap_KeyEqualFunc
+### HMS_FAST_ConcurrentHashmap_KeyEqualFunc
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 typedef int32_t (*HMS_FAST_ConcurrentHashmap_KeyEqualFunc)(
@@ -505,9 +533,10 @@ typedef int32_t (*HMS_FAST_ConcurrentHashmap_KeyEqualFunc)(
  
   
 
-#### HMS_FAST_ConcurrentHashmap_HookFunc
+### HMS_FAST_ConcurrentHashmap_HookFunc
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 typedef int32_t (*HMS_FAST_ConcurrentHashmap_HookFunc)(
@@ -525,9 +554,10 @@ typedef int32_t (*HMS_FAST_ConcurrentHashmap_HookFunc)(
  
   
 
-#### FAST_SplitComplex
+### FAST_SplitComplex
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 typedef struct FAST_SplitComplex FAST_SplitComplex
@@ -541,9 +571,10 @@ typedef struct FAST_SplitComplex FAST_SplitComplex
  
   
 
-#### FAST_SplitComplexD
+### FAST_SplitComplexD
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 typedef struct FAST_SplitComplexD FAST_SplitComplexD
@@ -557,9 +588,10 @@ typedef struct FAST_SplitComplexD FAST_SplitComplexD
  
   
 
-#### FAST_BiquadCoefficients
+### FAST_BiquadCoefficients
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 typedef struct FAST_BiquadCoefficients FAST_BiquadCoefficients
@@ -573,9 +605,10 @@ typedef struct FAST_BiquadCoefficients FAST_BiquadCoefficients
  
   
 
-#### FAST_BiquadCoefficientsD
+### FAST_BiquadCoefficientsD
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 typedef struct FAST_BiquadCoefficientsD FAST_BiquadCoefficientsD
@@ -589,9 +622,10 @@ typedef struct FAST_BiquadCoefficientsD FAST_BiquadCoefficientsD
  
   
 
-#### FAST_BiquadState
+### FAST_BiquadState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 typedef struct FAST_BiquadState FAST_BiquadState
@@ -605,9 +639,10 @@ typedef struct FAST_BiquadState FAST_BiquadState
  
   
 
-#### FAST_BiquadStateD
+### FAST_BiquadStateD
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 typedef struct FAST_BiquadStateD FAST_BiquadStateD
@@ -621,9 +656,10 @@ typedef struct FAST_BiquadStateD FAST_BiquadStateD
  
   
 
-#### FAST_Biquadm
+### FAST_Biquadm
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 typedef struct FAST_Biquadm FAST_Biquadm
@@ -637,9 +673,10 @@ typedef struct FAST_Biquadm FAST_Biquadm
  
   
 
-#### FAST_BiquadmD
+### FAST_BiquadmD
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 typedef struct FAST_BiquadmD FAST_BiquadmD
@@ -653,9 +690,10 @@ typedef struct FAST_BiquadmD FAST_BiquadmD
  
   
 
-#### FAST_FFTConfig
+### FAST_FFTConfig
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 typedef struct FAST_FFTConfig FAST_FFTConfig
@@ -669,9 +707,10 @@ typedef struct FAST_FFTConfig FAST_FFTConfig
  
   
 
-#### FAST_HashmapHandle
+### FAST_HashmapHandle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 typedef void* FAST_HashmapHandle
@@ -683,9 +722,10 @@ typedef void* FAST_HashmapHandle
  
   
 
-#### FAST_HashmapKeyPtr
+### FAST_HashmapKeyPtr
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 typedef void* FAST_HashmapKeyPtr
@@ -699,9 +739,10 @@ typedef void* FAST_HashmapKeyPtr
  
   
 
-#### FAST_HashmapValuePtr
+### FAST_HashmapValuePtr
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 typedef void* FAST_HashmapValuePtr
@@ -715,9 +756,10 @@ typedef void* FAST_HashmapValuePtr
  
   
 
-#### HMS_FAST_Hashmap_HashFunc
+### HMS_FAST_Hashmap_HashFunc
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 typedef uint64_t(* HMS_FAST_Hashmap_HashFunc) (const FAST_HashmapKeyPtr key)
@@ -731,6 +773,7 @@ typedef uint64_t(* HMS_FAST_Hashmap_HashFunc) (const FAST_HashmapKeyPtr key)
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | key | 要计算哈希的FAST_HashmapKeyPtr。 |
@@ -742,9 +785,10 @@ typedef uint64_t(* HMS_FAST_Hashmap_HashFunc) (const FAST_HashmapKeyPtr key)
  
   
 
-#### HMS_FAST_Hashmap_HookFunc
+### HMS_FAST_Hashmap_HookFunc
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 typedef int32_t(* HMS_FAST_Hashmap_HookFunc) (const FAST_HashmapKeyPtr key, FAST_HashmapValuePtr value, void* context)
@@ -758,6 +802,7 @@ typedef int32_t(* HMS_FAST_Hashmap_HookFunc) (const FAST_HashmapKeyPtr key, FAST
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | key | 正在访问的当前元素的键。 |
@@ -779,9 +824,10 @@ typedef int32_t(* HMS_FAST_Hashmap_HookFunc) (const FAST_HashmapKeyPtr key, FAST
  
   
 
-#### HMS_FAST_Hashmap_KeyEqualFunc
+### HMS_FAST_Hashmap_KeyEqualFunc
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 typedef int32_t(* HMS_FAST_Hashmap_KeyEqualFunc) (const FAST_HashmapKeyPtr leftKey, const FAST_HashmapKeyPtr rightKey)
@@ -795,6 +841,7 @@ typedef int32_t(* HMS_FAST_Hashmap_KeyEqualFunc) (const FAST_HashmapKeyPtr leftK
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | leftKey | 指向哈希表中键的指针，作为相等比较的左操作数传递。 |
@@ -807,9 +854,10 @@ typedef int32_t(* HMS_FAST_Hashmap_KeyEqualFunc) (const FAST_HashmapKeyPtr leftK
  
   
 
-#### HMS_FAST_SortElementPtr
+### HMS_FAST_SortElementPtr
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 typedef void* HMS_FAST_SortElementPtr
@@ -823,9 +871,10 @@ typedef void* HMS_FAST_SortElementPtr
  
   
 
-#### HMS_FAST_SortElementConstPtr
+### HMS_FAST_SortElementConstPtr
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 typedef const void* HMS_FAST_SortElementConstPtr
@@ -839,9 +888,10 @@ typedef const void* HMS_FAST_SortElementConstPtr
  
   
 
-#### HMS_FAST_Sort_CompFunc
+### HMS_FAST_Sort_CompFunc
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 typedef int32_t(* HMS_FAST_Sort_CompFunc) (HMS_FAST_SortElementConstPtr first, HMS_FAST_SortElementConstPtr second)
@@ -855,6 +905,7 @@ typedef int32_t(* HMS_FAST_Sort_CompFunc) (HMS_FAST_SortElementConstPtr first, H
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | first | 指向第一个元素的指针。 |
@@ -872,9 +923,10 @@ typedef int32_t(* HMS_FAST_Sort_CompFunc) (HMS_FAST_SortElementConstPtr first, H
  
   
 
-#### HMS_FAST_SortData
+### HMS_FAST_SortData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 typedef struct HMS_FAST_SortData HMS_FAST_SortData
@@ -888,9 +940,10 @@ typedef struct HMS_FAST_SortData HMS_FAST_SortData
  
   
 
-#### HMS_FAST_HannWindowType
+### HMS_FAST_HannWindowType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 typedef enum HMS_FAST_HannWindowType HMS_FAST_HannWindowType
@@ -904,9 +957,10 @@ typedef enum HMS_FAST_HannWindowType HMS_FAST_HannWindowType
  
   
 
-#### HMS_FAST_PerfHintConfigBuilder
+### HMS_FAST_PerfHintConfigBuilder
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct HMS_FAST_PerfHintConfigBuilder HMS_FAST_PerfHintConfigBuilder
@@ -920,9 +974,10 @@ typedef struct HMS_FAST_PerfHintConfigBuilder HMS_FAST_PerfHintConfigBuilder
  
   
 
-#### HMS_FAST_PerfHintConfig
+### HMS_FAST_PerfHintConfig
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct HMS_FAST_PerfHintConfig HMS_FAST_PerfHintConfig
@@ -936,15 +991,17 @@ typedef struct HMS_FAST_PerfHintConfig HMS_FAST_PerfHintConfig
  
   
 
-#### 常量说明
+## 常量说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### FAST_MAX_FFT_LOG2N
+### FAST_MAX_FFT_LOG2N
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 const uint32_t FAST_MAX_FFT_LOG2N = 16;
@@ -953,22 +1010,24 @@ const uint32_t FAST_MAX_FFT_LOG2N = 16;
 **描述**
  
 FFT支持的最大点数N对应的以2为底的对数值。即FAST_MAX_FFT_LOG2N=
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/xS6a52XXR8uIlYGaVIO2vQ/zh-cn_image_0000002685929053.png?HW-CC-KV=V1&HW-CC-Date=20260730T071635Z&HW-CC-Expire=86400&HW-CC-Sign=BBEADCB5CC6E0462EF4EA31CD3D41856DEFAD9704C413D4E6000E0D2132F6805)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/k9Ym2QjwQfCOJwDBH4jpSg/zh-cn_image_0000002717613600.png?HW-CC-KV=V1&HW-CC-Date=20260911T072746Z&HW-CC-Expire=86400&HW-CC-Sign=8B07F6E2744AB1602CCFD5B2C8FBD965F81079D953036AD156C9BDD518F1E046)
 ，其中N为FFT支持的最大点数，例如该值为16时，最大点数为65536。
  
 **起始版本**：26.0.0
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### FAST_ErrorCode
+### FAST_ErrorCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 enum FAST_ErrorCode
@@ -980,6 +1039,7 @@ FAST Kit的错误码。
  
 **起始版本：** 6.0.2(22)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | FAST_ERROR_CODE_SUCCESS = 1023100000 | 成功。 |
@@ -993,9 +1053,10 @@ FAST Kit的错误码。
  
   
 
-#### FAST_SegmentMapQueryType
+### FAST_SegmentMapQueryType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 enum FAST_SegmentMapQueryType
@@ -1009,6 +1070,7 @@ enum FAST_SegmentMapQueryType
  
 **起始版本：** 6.0.2(22)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | FAST_SEGMENTMAP_QUERY_TYPE_SUM | 区间求和查询。 |
@@ -1018,9 +1080,10 @@ enum FAST_SegmentMapQueryType
  
   
 
-#### FAST_SegmentMapUpdateType
+### FAST_SegmentMapUpdateType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 enum FAST_SegmentMapUpdateType
@@ -1034,6 +1097,7 @@ enum FAST_SegmentMapUpdateType
  
 **起始版本：** 6.0.2(22)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | FAST_SEGMENTMAP_UPDATE_TYPE_SET | 赋值更新，区间内的每一个元素赋同一个值。 |
@@ -1043,9 +1107,10 @@ enum FAST_SegmentMapUpdateType
  
   
 
-#### HMS_FAST_HannWindowType
+### HMS_FAST_HannWindowType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 enum HMS_FAST_HannWindowType
@@ -1057,6 +1122,7 @@ enum HMS_FAST_HannWindowType
  
 **起始版本：** 26.0.0
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | HMS_FAST_HANN_DENORMALIZE_FULL = 0x00 | 非归一化全窗。 |
@@ -1067,9 +1133,10 @@ enum HMS_FAST_HannWindowType
  
   
 
-#### HMS_FAST_SchedulingOptimization_SceneType
+### HMS_FAST_SchedulingOptimization_SceneType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum HMS_FAST_SchedulingOptimization_SceneType
@@ -1081,6 +1148,7 @@ enum HMS_FAST_SchedulingOptimization_SceneType
  
 **起始版本：** 26.0.0
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | HMS_FAST_APP_LAUNCH = 1 | 应用启动场景。 |
@@ -1096,9 +1164,10 @@ enum HMS_FAST_SchedulingOptimization_SceneType
  
   
 
-#### HMS_FAST_SchedulingOptimization_SceneState
+### HMS_FAST_SchedulingOptimization_SceneState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum HMS_FAST_SchedulingOptimization_SceneState
@@ -1110,6 +1179,7 @@ enum HMS_FAST_SchedulingOptimization_SceneState
  
 **起始版本：** 26.0.0
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | HMS_FAST_END | 结束系统性能优化。 |
@@ -1118,9 +1188,10 @@ enum HMS_FAST_SchedulingOptimization_SceneState
  
   
 
-#### HMS_FAST_SchedulingOptimization_DurationType
+### HMS_FAST_SchedulingOptimization_DurationType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum HMS_FAST_SchedulingOptimization_DurationType
@@ -1132,6 +1203,7 @@ enum HMS_FAST_SchedulingOptimization_DurationType
  
 **起始版本：** 26.0.0
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | HMS_FAST_SHORT | 短持续时间。单次最大持续时间：1，间隔大于3。单位：秒。 |
@@ -1141,9 +1213,10 @@ enum HMS_FAST_SchedulingOptimization_DurationType
  
   
 
-#### HMS_FAST_SchedulingOptimization_ErrorCode
+### HMS_FAST_SchedulingOptimization_ErrorCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum HMS_FAST_SchedulingOptimization_ErrorCode
@@ -1155,6 +1228,7 @@ enum HMS_FAST_SchedulingOptimization_ErrorCode
  
 **起始版本：** 26.0.0
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | HMS_FAST_ERR_SCHEDULING_OPTIMIZATION_SUCCESS | 成功。 |
@@ -1170,15 +1244,17 @@ enum HMS_FAST_SchedulingOptimization_ErrorCode
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### HMS_FAST_RectPartition_CreateConfig()
+### HMS_FAST_RectPartition_CreateConfig()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_EXPORT FAST_ErrorCode HMS_FAST_RectPartition_CreateConfig (FAST_RectPartitionConfig ** config)
@@ -1192,6 +1268,7 @@ FAST_EXPORT FAST_ErrorCode HMS_FAST_RectPartition_CreateConfig (FAST_RectPartiti
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | config | 指向矩形划分求解器不透明配置FAST_RectPartitionConfig的指针。 |
@@ -1207,9 +1284,10 @@ FAST_EXPORT FAST_ErrorCode HMS_FAST_RectPartition_CreateConfig (FAST_RectPartiti
  
   
 
-#### HMS_FAST_RectPartition_DestroyConfig()
+### HMS_FAST_RectPartition_DestroyConfig()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_EXPORT void HMS_FAST_RectPartition_DestroyConfig (FAST_RectPartitionConfig * config)
@@ -1223,6 +1301,7 @@ FAST_EXPORT void HMS_FAST_RectPartition_DestroyConfig (FAST_RectPartitionConfig 
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | config | 待销毁的矩形划分求解器的不透明配置FAST_RectPartitionConfig。 |
@@ -1230,9 +1309,10 @@ FAST_EXPORT void HMS_FAST_RectPartition_DestroyConfig (FAST_RectPartitionConfig 
  
   
 
-#### HMS_FAST_RectPartition_SetAlgo()
+### HMS_FAST_RectPartition_SetAlgo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_EXPORT FAST_ErrorCode HMS_FAST_RectPartition_SetAlgo (FAST_RectPartitionConfig * config, const char * name )
@@ -1246,6 +1326,7 @@ FAST_EXPORT FAST_ErrorCode HMS_FAST_RectPartition_SetAlgo (FAST_RectPartitionCon
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | config | 待设置的矩形划分求解器的不透明配置FAST_RectPartitionConfig。 |
@@ -1262,9 +1343,10 @@ FAST_EXPORT FAST_ErrorCode HMS_FAST_RectPartition_SetAlgo (FAST_RectPartitionCon
  
   
 
-#### HMS_FAST_RectPartition_Solve()
+### HMS_FAST_RectPartition_Solve()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_EXPORT FAST_ErrorCode HMS_FAST_RectPartition_Solve (FAST_RectPartitionConfig * config, size_t size, const FAST_Rect * origin, FAST_Rect * result, size_t * resultSize )
@@ -1278,6 +1360,7 @@ FAST_EXPORT FAST_ErrorCode HMS_FAST_RectPartition_Solve (FAST_RectPartitionConfi
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | config | 矩形划分求解器的不透明配置。如果参数config中未设置算法，默认的算法是扫描线算法“SweepLineAlgo”。 |
@@ -1303,9 +1386,10 @@ FAST_EXPORT FAST_ErrorCode HMS_FAST_RectPartition_Solve (FAST_RectPartitionConfi
  
   
 
-#### HMS_FAST_PolyRoot_ComputeRoots()
+### HMS_FAST_PolyRoot_ComputeRoots()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_ErrorCode HMS_FAST_PolyRoot_ComputeRoots (const FAST_Poly * poly, const size_t maxRootCount, double * root, size_t * rootCount )
@@ -1319,6 +1403,7 @@ FAST_ErrorCode HMS_FAST_PolyRoot_ComputeRoots (const FAST_Poly * poly, const siz
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | poly | 待求根的多项式FAST_Poly。 |
@@ -1337,9 +1422,10 @@ FAST_ErrorCode HMS_FAST_PolyRoot_ComputeRoots (const FAST_Poly * poly, const siz
  
   
 
-#### HMS_FAST_PolyRoot_ComputeSingle()
+### HMS_FAST_PolyRoot_ComputeSingle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_ErrorCode HMS_FAST_PolyRoot_ComputeSingle (const FAST_Poly * poly, double * root )
@@ -1353,6 +1439,7 @@ FAST_ErrorCode HMS_FAST_PolyRoot_ComputeSingle (const FAST_Poly * poly, double *
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | poly | 待求根的多项式FAST_Poly。 |
@@ -1369,9 +1456,10 @@ FAST_ErrorCode HMS_FAST_PolyRoot_ComputeSingle (const FAST_Poly * poly, double *
  
   
 
-#### HMS_FAST_PolyRoot_ComputeRootIntervals()
+### HMS_FAST_PolyRoot_ComputeRootIntervals()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_ErrorCode HMS_FAST_PolyRoot_ComputeRootIntervals (const FAST_Poly * poly, const size_t maxRootCount, double * leftBoundary, double * rightBoundary, size_t * rootCount )
@@ -1385,6 +1473,7 @@ FAST_ErrorCode HMS_FAST_PolyRoot_ComputeRootIntervals (const FAST_Poly * poly, c
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | poly | 待求根区间的多项式FAST_Poly。 |
@@ -1404,9 +1493,10 @@ FAST_ErrorCode HMS_FAST_PolyRoot_ComputeRootIntervals (const FAST_Poly * poly, c
  
   
 
-#### HMS_FAST_SegmentMap_Create()
+### HMS_FAST_SegmentMap_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_EXPORT FAST_ErrorCode HMS_FAST_SegmentMap_Create (FAST_SegmentMapHandle * handle, size_t size, const int32_t * array, FAST_SegmentMapConfig * config )
@@ -1420,6 +1510,7 @@ FAST_EXPORT FAST_ErrorCode HMS_FAST_SegmentMap_Create (FAST_SegmentMapHandle * h
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | handle | 指向线段表句柄FAST_SegmentMapHandle的指针。 |
@@ -1438,9 +1529,10 @@ FAST_EXPORT FAST_ErrorCode HMS_FAST_SegmentMap_Create (FAST_SegmentMapHandle * h
  
   
 
-#### HMS_FAST_SegmentMap_CreateConfig()
+### HMS_FAST_SegmentMap_CreateConfig()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_EXPORT FAST_ErrorCode HMS_FAST_SegmentMap_CreateConfig (FAST_SegmentMapConfig ** config)
@@ -1454,6 +1546,7 @@ FAST_EXPORT FAST_ErrorCode HMS_FAST_SegmentMap_CreateConfig (FAST_SegmentMapConf
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | config | 指向线段表不透明配置FAST_SegmentMapConfig的指针。 |
@@ -1469,9 +1562,10 @@ FAST_EXPORT FAST_ErrorCode HMS_FAST_SegmentMap_CreateConfig (FAST_SegmentMapConf
  
   
 
-#### HMS_FAST_SegmentMap_Destroy()
+### HMS_FAST_SegmentMap_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_EXPORT void HMS_FAST_SegmentMap_Destroy (FAST_SegmentMapHandle handle)
@@ -1485,6 +1579,7 @@ FAST_EXPORT void HMS_FAST_SegmentMap_Destroy (FAST_SegmentMapHandle handle)
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | handle | 待销毁线段表句柄FAST_SegmentMapHandle。 |
@@ -1492,9 +1587,10 @@ FAST_EXPORT void HMS_FAST_SegmentMap_Destroy (FAST_SegmentMapHandle handle)
  
   
 
-#### HMS_FAST_SegmentMap_DestroyConfig()
+### HMS_FAST_SegmentMap_DestroyConfig()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_EXPORT void HMS_FAST_SegmentMap_DestroyConfig (FAST_SegmentMapConfig * config)
@@ -1508,6 +1604,7 @@ FAST_EXPORT void HMS_FAST_SegmentMap_DestroyConfig (FAST_SegmentMapConfig * conf
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | config | 待销毁线段表不透明配置FAST_SegmentMapConfig。 |
@@ -1515,9 +1612,10 @@ FAST_EXPORT void HMS_FAST_SegmentMap_DestroyConfig (FAST_SegmentMapConfig * conf
  
   
 
-#### HMS_FAST_SegmentMap_Query()
+### HMS_FAST_SegmentMap_Query()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_EXPORT FAST_ErrorCode HMS_FAST_SegmentMap_Query (FAST_SegmentMapHandle handle, size_t left, size_t right, int32_t * result )
@@ -1531,6 +1629,7 @@ FAST_EXPORT FAST_ErrorCode HMS_FAST_SegmentMap_Query (FAST_SegmentMapHandle hand
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | handle | 线段表句柄。 |
@@ -1549,9 +1648,10 @@ FAST_EXPORT FAST_ErrorCode HMS_FAST_SegmentMap_Query (FAST_SegmentMapHandle hand
  
   
 
-#### HMS_FAST_SegmentMap_SetQueryType()
+### HMS_FAST_SegmentMap_SetQueryType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_EXPORT FAST_ErrorCode HMS_FAST_SegmentMap_SetQueryType (FAST_SegmentMapConfig * config, FAST_SegmentMapQueryType type )
@@ -1565,6 +1665,7 @@ FAST_EXPORT FAST_ErrorCode HMS_FAST_SegmentMap_SetQueryType (FAST_SegmentMapConf
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | config | 待修改的线段表不透明配置。 |
@@ -1579,9 +1680,10 @@ FAST_EXPORT FAST_ErrorCode HMS_FAST_SegmentMap_SetQueryType (FAST_SegmentMapConf
  
   
 
-#### HMS_FAST_SegmentMap_SetUpdateType()
+### HMS_FAST_SegmentMap_SetUpdateType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_EXPORT FAST_ErrorCode HMS_FAST_SegmentMap_SetUpdateType (FAST_SegmentMapConfig * config, FAST_SegmentMapUpdateType type )
@@ -1595,6 +1697,7 @@ FAST_EXPORT FAST_ErrorCode HMS_FAST_SegmentMap_SetUpdateType (FAST_SegmentMapCon
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | config | 待修改的线段表不透明配置。 |
@@ -1609,9 +1712,10 @@ FAST_EXPORT FAST_ErrorCode HMS_FAST_SegmentMap_SetUpdateType (FAST_SegmentMapCon
  
   
 
-#### HMS_FAST_SegmentMap_Update()
+### HMS_FAST_SegmentMap_Update()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_EXPORT FAST_ErrorCode HMS_FAST_SegmentMap_Update (FAST_SegmentMapHandle handle, size_t left, size_t right, int32_t value )
@@ -1625,6 +1729,7 @@ FAST_EXPORT FAST_ErrorCode HMS_FAST_SegmentMap_Update (FAST_SegmentMapHandle han
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | handle | 线段表句柄。 |
@@ -1643,9 +1748,10 @@ FAST_EXPORT FAST_ErrorCode HMS_FAST_SegmentMap_Update (FAST_SegmentMapHandle han
  
   
 
-#### HMS_FAST_Biquadm_Create()
+### HMS_FAST_Biquadm_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_ErrorCode HMS_FAST_Biquadm_Create (size_t numChannels, size_t numSections, size_t maxFrames, FAST_Biquadm ** filter)
@@ -1659,6 +1765,7 @@ FAST_ErrorCode HMS_FAST_Biquadm_Create (size_t numChannels, size_t numSections, 
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | numChannels | 信号通道数，必须大于0。 |
@@ -1679,9 +1786,10 @@ FAST_ErrorCode HMS_FAST_Biquadm_Create (size_t numChannels, size_t numSections, 
  
   
 
-#### HMS_FAST_Biquadm_CreateD()
+### HMS_FAST_Biquadm_CreateD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_ErrorCode HMS_FAST_Biquadm_CreateD (size_t numChannels, size_t numSections, size_t maxFrames, FAST_BiquadmD ** filter)
@@ -1695,6 +1803,7 @@ FAST_ErrorCode HMS_FAST_Biquadm_CreateD (size_t numChannels, size_t numSections,
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | numChannels | 信号通道数，必须大于0。 |
@@ -1715,9 +1824,10 @@ FAST_ErrorCode HMS_FAST_Biquadm_CreateD (size_t numChannels, size_t numSections,
  
   
 
-#### HMS_FAST_Biquadm_Destroy()
+### HMS_FAST_Biquadm_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_Biquadm_Destroy (FAST_Biquadm * filter)
@@ -1731,6 +1841,7 @@ void HMS_FAST_Biquadm_Destroy (FAST_Biquadm * filter)
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | filter | 待销毁的二阶滤波器实例。 |
@@ -1738,9 +1849,10 @@ void HMS_FAST_Biquadm_Destroy (FAST_Biquadm * filter)
  
   
 
-#### HMS_FAST_Biquadm_DestroyD()
+### HMS_FAST_Biquadm_DestroyD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_Biquadm_DestroyD (FAST_BiquadmD * filter)
@@ -1754,6 +1866,7 @@ void HMS_FAST_Biquadm_DestroyD (FAST_BiquadmD * filter)
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | filter | 待销毁的二阶滤波器实例。 |
@@ -1761,9 +1874,10 @@ void HMS_FAST_Biquadm_DestroyD (FAST_BiquadmD * filter)
  
   
 
-#### HMS_FAST_Biquadm_SetCoeffSingle()
+### HMS_FAST_Biquadm_SetCoeffSingle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_ErrorCode HMS_FAST_Biquadm_SetCoeffSingle (FAST_Biquadm * filter, const float * coeff, size_t stride)
@@ -1771,12 +1885,13 @@ FAST_ErrorCode HMS_FAST_Biquadm_SetCoeffSingle (FAST_Biquadm * filter, const flo
  
 **描述**
  
-从单精度源数组设置所有二阶滤波器系数（单精度滤波器）。系数按每节[b0, b1, b2, a1, a2]的顺序排列。
+从单精度源数组设置所有二阶滤波器系数（单精度滤波器）。系数按每个（通道，节）对排列，顺序为 [b0, b1, b2, a1, a2]。按通道为主顺序排列：记录索引为：通道 * 节数 + 节。
  
 **起始版本：** 6.1.1(24)
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | filter | 指向已初始化的二阶滤波器组的指针。 |
@@ -1794,9 +1909,10 @@ FAST_ErrorCode HMS_FAST_Biquadm_SetCoeffSingle (FAST_Biquadm * filter, const flo
  
   
 
-#### HMS_FAST_Biquadm_SetCoeffDouble()
+### HMS_FAST_Biquadm_SetCoeffDouble()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_ErrorCode HMS_FAST_Biquadm_SetCoeffDouble (FAST_Biquadm * filter, const double * coeff, size_t stride)
@@ -1804,12 +1920,13 @@ FAST_ErrorCode HMS_FAST_Biquadm_SetCoeffDouble (FAST_Biquadm * filter, const dou
  
 **描述**
  
-从双精度源数组设置所有二阶滤波器系数（单精度滤波器）。系数按每节[b0, b1, b2, a1, a2]的顺序排列。
+从双精度源数组设置所有二阶滤波器系数（单精度滤波器）。系数按每个（通道，节）对排列，顺序为 [b0, b1, b2, a1, a2]。按通道为主顺序排列：记录索引为：通道 * 节数 + 节。
  
 **起始版本：** 6.1.1(24)
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | filter | 指向已初始化的二阶滤波器组的指针。 |
@@ -1827,9 +1944,10 @@ FAST_ErrorCode HMS_FAST_Biquadm_SetCoeffDouble (FAST_Biquadm * filter, const dou
  
   
 
-#### HMS_FAST_Biquadm_SetCoeffSingleD()
+### HMS_FAST_Biquadm_SetCoeffSingleD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_ErrorCode HMS_FAST_Biquadm_SetCoeffSingleD (FAST_BiquadmD * filter, const float * coeff, size_t stride)
@@ -1837,12 +1955,13 @@ FAST_ErrorCode HMS_FAST_Biquadm_SetCoeffSingleD (FAST_BiquadmD * filter, const f
  
 **描述**
  
-从单精度源数组设置所有二阶滤波器系数（双精度滤波器）。系数按每节[b0, b1, b2, a1, a2]的顺序排列。
+从单精度源数组设置所有二阶滤波器系数（双精度滤波器）。系数按每个（通道，节）对排列，顺序为 [b0, b1, b2, a1, a2]。按通道为主顺序排列：记录索引为：通道 * 节数 + 节。
  
 **起始版本：** 6.1.1(24)
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | filter | 指向已初始化的二阶滤波器组的指针。 |
@@ -1860,9 +1979,10 @@ FAST_ErrorCode HMS_FAST_Biquadm_SetCoeffSingleD (FAST_BiquadmD * filter, const f
  
   
 
-#### HMS_FAST_Biquadm_SetCoeffDoubleD()
+### HMS_FAST_Biquadm_SetCoeffDoubleD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_ErrorCode HMS_FAST_Biquadm_SetCoeffDoubleD (FAST_BiquadmD * filter, const double * coeff, size_t stride)
@@ -1870,12 +1990,13 @@ FAST_ErrorCode HMS_FAST_Biquadm_SetCoeffDoubleD (FAST_BiquadmD * filter, const d
  
 **描述**
  
-从双精度源数组设置所有二阶滤波器系数（双精度滤波器）。系数按每节[b0, b1, b2, a1, a2]的顺序排列。
+从双精度源数组设置所有二阶滤波器系数（双精度滤波器）。系数按每个（通道，节）对排列，顺序为 [b0, b1, b2, a1, a2]。按通道为主顺序排列：记录索引为：通道 * 节数 + 节。
  
 **起始版本：** 6.1.1(24)
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | filter | 指向已初始化的二阶滤波器组的指针。 |
@@ -1893,9 +2014,10 @@ FAST_ErrorCode HMS_FAST_Biquadm_SetCoeffDoubleD (FAST_BiquadmD * filter, const d
  
   
 
-#### HMS_FAST_Biquadm_SetActiveFilters()
+### HMS_FAST_Biquadm_SetActiveFilters()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_ErrorCode HMS_FAST_Biquadm_SetActiveFilters (FAST_Biquadm * filter, const uint8_t * activeMask)
@@ -1903,12 +2025,13 @@ FAST_ErrorCode HMS_FAST_Biquadm_SetActiveFilters (FAST_Biquadm * filter, const u
  
 **描述**
  
-设置二阶滤波器节的激活掩码（单精度）。掩码顺序为：[ch0_sec0, ch0_sec1, ch0_sec2, ..., ch1_sec0, ch1_sec1, ch1_sec2, ...]。
+设置二阶滤波器节的激活掩码（单精度）。掩码顺序为：[sec0, sec1, ...]。
  
 **起始版本：** 6.1.1(24)
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | filter | 指向已初始化的二阶滤波器组的指针。 |
@@ -1925,9 +2048,10 @@ FAST_ErrorCode HMS_FAST_Biquadm_SetActiveFilters (FAST_Biquadm * filter, const u
  
   
 
-#### HMS_FAST_Biquadm_SetActiveFiltersD()
+### HMS_FAST_Biquadm_SetActiveFiltersD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_ErrorCode HMS_FAST_Biquadm_SetActiveFiltersD (FAST_BiquadmD * filter, const uint8_t * activeMask)
@@ -1935,12 +2059,13 @@ FAST_ErrorCode HMS_FAST_Biquadm_SetActiveFiltersD (FAST_BiquadmD * filter, const
  
 **描述**
  
-设置二阶滤波器节的激活掩码（双精度）。掩码顺序为：[ch0_sec0, ch0_sec1, ch0_sec2, ..., ch1_sec0, ch1_sec1, ch1_sec2, ...]。
+设置二阶滤波器节的激活掩码（双精度）。掩码顺序为：[sec0, sec1, ...]。
  
 **起始版本：** 6.1.1(24)
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | filter | 指向已初始化的二阶滤波器组的指针。 |
@@ -1957,9 +2082,10 @@ FAST_ErrorCode HMS_FAST_Biquadm_SetActiveFiltersD (FAST_BiquadmD * filter, const
  
   
 
-#### HMS_FAST_Biquadm()
+### HMS_FAST_Biquadm()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_ErrorCode HMS_FAST_Biquadm (FAST_Biquadm * filter, const float ** input, const size_t strideInput, float ** output, const size_t strideOutput, size_t length)
@@ -1973,6 +2099,7 @@ FAST_ErrorCode HMS_FAST_Biquadm (FAST_Biquadm * filter, const float ** input, co
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | filter | 已初始化的滤波器组。 |
@@ -1993,9 +2120,10 @@ FAST_ErrorCode HMS_FAST_Biquadm (FAST_Biquadm * filter, const float ** input, co
  
   
 
-#### HMS_FAST_BiquadmD()
+### HMS_FAST_BiquadmD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_ErrorCode HMS_FAST_BiquadmD (FAST_BiquadmD * filter, const double ** input, const size_t strideInput, double ** output, const size_t strideOutput, size_t length)
@@ -2009,6 +2137,7 @@ FAST_ErrorCode HMS_FAST_BiquadmD (FAST_BiquadmD * filter, const double ** input,
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | filter | 已初始化的滤波器组。 |
@@ -2029,9 +2158,10 @@ FAST_ErrorCode HMS_FAST_BiquadmD (FAST_BiquadmD * filter, const double ** input,
  
   
 
-#### HMS_FAST_DSP_Maxmgv()
+### HMS_FAST_DSP_Maxmgv()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 float HMS_FAST_DSP_Maxmgv (const float * input, size_t stride, size_t length)
@@ -2045,6 +2175,7 @@ float HMS_FAST_DSP_Maxmgv (const float * input, size_t stride, size_t length)
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 输入向量指针。 |
@@ -2058,9 +2189,10 @@ float HMS_FAST_DSP_Maxmgv (const float * input, size_t stride, size_t length)
  
   
 
-#### HMS_FAST_DSP_MaxmgvD()
+### HMS_FAST_DSP_MaxmgvD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 double HMS_FAST_DSP_MaxmgvD (const double * input, size_t stride, size_t length)
@@ -2074,6 +2206,7 @@ double HMS_FAST_DSP_MaxmgvD (const double * input, size_t stride, size_t length)
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 输入向量指针。 |
@@ -2087,9 +2220,10 @@ double HMS_FAST_DSP_MaxmgvD (const double * input, size_t stride, size_t length)
  
   
 
-#### HMS_FAST_DSP_Maxvi()
+### HMS_FAST_DSP_Maxvi()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_Maxvi (const float * input, size_t stride, size_t length, float * value, size_t * index)
@@ -2103,6 +2237,7 @@ void HMS_FAST_DSP_Maxvi (const float * input, size_t stride, size_t length, floa
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 输入向量指针。 |
@@ -2118,9 +2253,10 @@ void HMS_FAST_DSP_Maxvi (const float * input, size_t stride, size_t length, floa
  
   
 
-#### HMS_FAST_DSP_MaxviD()
+### HMS_FAST_DSP_MaxviD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_MaxviD (const double * input, size_t stride, size_t length, double * value, size_t * index)
@@ -2134,6 +2270,7 @@ void HMS_FAST_DSP_MaxviD (const double * input, size_t stride, size_t length, do
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 输入向量指针。 |
@@ -2149,9 +2286,10 @@ void HMS_FAST_DSP_MaxviD (const double * input, size_t stride, size_t length, do
  
   
 
-#### HMS_FAST_DSP_Sve()
+### HMS_FAST_DSP_Sve()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 float HMS_FAST_DSP_Sve (const float * input, size_t stride, size_t length)
@@ -2165,6 +2303,7 @@ float HMS_FAST_DSP_Sve (const float * input, size_t stride, size_t length)
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 输入向量指针。 |
@@ -2178,9 +2317,10 @@ input[i]的和。如果length为0，则返回0.0f。
  
   
 
-#### HMS_FAST_DSP_SveD()
+### HMS_FAST_DSP_SveD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 double HMS_FAST_DSP_SveD (const double * input, size_t stride, size_t length)
@@ -2194,6 +2334,7 @@ double HMS_FAST_DSP_SveD (const double * input, size_t stride, size_t length)
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 输入向量指针。 |
@@ -2207,9 +2348,10 @@ input[i]的和。如果length为0，则返回0.0。
  
   
 
-#### HMS_FAST_DSP_Svemg()
+### HMS_FAST_DSP_Svemg()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 float HMS_FAST_DSP_Svemg (const float * input, size_t stride, size_t length)
@@ -2223,6 +2365,7 @@ float HMS_FAST_DSP_Svemg (const float * input, size_t stride, size_t length)
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 输入向量指针。 |
@@ -2236,9 +2379,10 @@ float HMS_FAST_DSP_Svemg (const float * input, size_t stride, size_t length)
  
   
 
-#### HMS_FAST_DSP_SvemgD()
+### HMS_FAST_DSP_SvemgD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 double HMS_FAST_DSP_SvemgD (const double * input, size_t stride, size_t length)
@@ -2252,6 +2396,7 @@ double HMS_FAST_DSP_SvemgD (const double * input, size_t stride, size_t length)
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 输入向量指针。 |
@@ -2265,9 +2410,10 @@ double HMS_FAST_DSP_SvemgD (const double * input, size_t stride, size_t length)
  
   
 
-#### HMS_FAST_DSP_Meamgv()
+### HMS_FAST_DSP_Meamgv()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 float HMS_FAST_DSP_Meamgv (const float * input, size_t stride, size_t length)
@@ -2281,6 +2427,7 @@ float HMS_FAST_DSP_Meamgv (const float * input, size_t stride, size_t length)
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 输入向量指针。 |
@@ -2294,9 +2441,10 @@ float HMS_FAST_DSP_Meamgv (const float * input, size_t stride, size_t length)
  
   
 
-#### HMS_FAST_DSP_MeamgvD()
+### HMS_FAST_DSP_MeamgvD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 double HMS_FAST_DSP_MeamgvD (const double * input, size_t stride, size_t length)
@@ -2310,6 +2458,7 @@ double HMS_FAST_DSP_MeamgvD (const double * input, size_t stride, size_t length)
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 输入向量指针。 |
@@ -2323,9 +2472,10 @@ double HMS_FAST_DSP_MeamgvD (const double * input, size_t stride, size_t length)
  
   
 
-#### HMS_FAST_DSP_Dotpr()
+### HMS_FAST_DSP_Dotpr()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 float HMS_FAST_DSP_Dotpr (const float * inputA, size_t strideA, const float * inputB, size_t strideB, size_t length)
@@ -2339,6 +2489,7 @@ float HMS_FAST_DSP_Dotpr (const float * inputA, size_t strideA, const float * in
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | inputA | 第一个输入向量。 |
@@ -2354,9 +2505,10 @@ float HMS_FAST_DSP_Dotpr (const float * inputA, size_t strideA, const float * in
  
   
 
-#### HMS_FAST_DSP_DotprD()
+### HMS_FAST_DSP_DotprD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 double HMS_FAST_DSP_DotprD (const double * inputA, size_t strideA, const double * inputB, size_t strideB, size_t length)
@@ -2370,6 +2522,7 @@ double HMS_FAST_DSP_DotprD (const double * inputA, size_t strideA, const double 
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | inputA | 第一个输入向量。 |
@@ -2385,9 +2538,10 @@ double HMS_FAST_DSP_DotprD (const double * inputA, size_t strideA, const double 
  
   
 
-#### HMS_FAST_DSP_Vsbsm()
+### HMS_FAST_DSP_Vsbsm()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_Vsbsm (const float * inputA, size_t strideA, const float * inputB, size_t strideB, float scalar, float * outputC, size_t strideC, size_t length)
@@ -2401,6 +2555,7 @@ void HMS_FAST_DSP_Vsbsm (const float * inputA, size_t strideA, const float * inp
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | inputA | 第一个输入向量。 |
@@ -2419,9 +2574,10 @@ void HMS_FAST_DSP_Vsbsm (const float * inputA, size_t strideA, const float * inp
  
   
 
-#### HMS_FAST_DSP_VsbsmD()
+### HMS_FAST_DSP_VsbsmD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_VsbsmD (const double * inputA, size_t strideA, const double * inputB, size_t strideB, double scalar, double * outputC, size_t strideC, size_t length)
@@ -2435,6 +2591,7 @@ void HMS_FAST_DSP_VsbsmD (const double * inputA, size_t strideA, const double * 
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | inputA | 第一个输入向量。 |
@@ -2453,9 +2610,10 @@ void HMS_FAST_DSP_VsbsmD (const double * inputA, size_t strideA, const double * 
  
   
 
-#### HMS_FAST_DSP_Ctoz()
+### HMS_FAST_DSP_Ctoz()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_Ctoz (const float * input, size_t strideInput, FAST_SplitComplex * output, size_t strideOutput, size_t length)
@@ -2469,6 +2627,7 @@ void HMS_FAST_DSP_Ctoz (const float * input, size_t strideInput, FAST_SplitCompl
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 交错复数输入（长度为复数数量的2倍）。 |
@@ -2484,9 +2643,10 @@ void HMS_FAST_DSP_Ctoz (const float * input, size_t strideInput, FAST_SplitCompl
  
   
 
-#### HMS_FAST_DSP_CtozD()
+### HMS_FAST_DSP_CtozD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_CtozD (const double * input, size_t strideInput, FAST_SplitComplexD * output, size_t strideOutput, size_t length)
@@ -2500,6 +2660,7 @@ void HMS_FAST_DSP_CtozD (const double * input, size_t strideInput, FAST_SplitCom
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 交错复数输入（长度为复数数量的2倍）。 |
@@ -2515,9 +2676,10 @@ void HMS_FAST_DSP_CtozD (const double * input, size_t strideInput, FAST_SplitCom
  
   
 
-#### HMS_FAST_DSP_Ztoc()
+### HMS_FAST_DSP_Ztoc()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_Ztoc (const FAST_SplitComplex * input, size_t strideInput, float * output, size_t strideOutput, size_t length)
@@ -2531,6 +2693,7 @@ void HMS_FAST_DSP_Ztoc (const FAST_SplitComplex * input, size_t strideInput, flo
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 分离复数输入结构体。 |
@@ -2546,9 +2709,10 @@ void HMS_FAST_DSP_Ztoc (const FAST_SplitComplex * input, size_t strideInput, flo
  
   
 
-#### HMS_FAST_DSP_ZtocD()
+### HMS_FAST_DSP_ZtocD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_ZtocD (const FAST_SplitComplexD * input, size_t strideInput, double * output, size_t strideOutput, size_t length)
@@ -2562,6 +2726,7 @@ void HMS_FAST_DSP_ZtocD (const FAST_SplitComplexD * input, size_t strideInput, d
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 分离复数输入结构体。 |
@@ -2577,9 +2742,10 @@ void HMS_FAST_DSP_ZtocD (const FAST_SplitComplexD * input, size_t strideInput, d
  
   
 
-#### HMS_FAST_DSP_Zvabs()
+### HMS_FAST_DSP_Zvabs()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_Zvabs (const FAST_SplitComplex * input, size_t strideInput, float * output, size_t strideOutput, size_t length)
@@ -2593,6 +2759,7 @@ void HMS_FAST_DSP_Zvabs (const FAST_SplitComplex * input, size_t strideInput, fl
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 分离格式复数输入向量指针。 |
@@ -2608,9 +2775,10 @@ void HMS_FAST_DSP_Zvabs (const FAST_SplitComplex * input, size_t strideInput, fl
  
   
 
-#### HMS_FAST_DSP_ZvabsD()
+### HMS_FAST_DSP_ZvabsD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_ZvabsD (const FAST_SplitComplexD * input, size_t strideInput, double * output, size_t strideOutput, size_t length)
@@ -2624,6 +2792,7 @@ void HMS_FAST_DSP_ZvabsD (const FAST_SplitComplexD * input, size_t strideInput, 
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 分离格式复数输入向量指针。 |
@@ -2639,9 +2808,10 @@ void HMS_FAST_DSP_ZvabsD (const FAST_SplitComplexD * input, size_t strideInput, 
  
   
 
-#### HMS_FAST_DSP_Zvmags()
+### HMS_FAST_DSP_Zvmags()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_Zvmags (const FAST_SplitComplex * input, size_t strideInput, float * output, size_t strideOutput, size_t length)
@@ -2655,6 +2825,7 @@ void HMS_FAST_DSP_Zvmags (const FAST_SplitComplex * input, size_t strideInput, f
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 分离格式复数输入向量指针。 |
@@ -2670,9 +2841,10 @@ void HMS_FAST_DSP_Zvmags (const FAST_SplitComplex * input, size_t strideInput, f
  
   
 
-#### HMS_FAST_DSP_ZvmagsD()
+### HMS_FAST_DSP_ZvmagsD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_ZvmagsD (const FAST_SplitComplexD * input, size_t strideInput, double * output, size_t strideOutput, size_t length)
@@ -2686,6 +2858,7 @@ void HMS_FAST_DSP_ZvmagsD (const FAST_SplitComplexD * input, size_t strideInput,
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 分离格式复数输入向量指针。 |
@@ -2701,9 +2874,10 @@ void HMS_FAST_DSP_ZvmagsD (const FAST_SplitComplexD * input, size_t strideInput,
  
   
 
-#### HMS_FAST_DSP_Zvphas()
+### HMS_FAST_DSP_Zvphas()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_Zvphas (const FAST_SplitComplex * input, size_t strideInput, float * output, size_t strideOutput, size_t length)
@@ -2717,6 +2891,7 @@ void HMS_FAST_DSP_Zvphas (const FAST_SplitComplex * input, size_t strideInput, f
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 分离格式复数输入向量指针。 |
@@ -2732,9 +2907,10 @@ void HMS_FAST_DSP_Zvphas (const FAST_SplitComplex * input, size_t strideInput, f
  
   
 
-#### HMS_FAST_DSP_ZvphasD()
+### HMS_FAST_DSP_ZvphasD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_ZvphasD (const FAST_SplitComplexD * input, size_t strideInput, double * output, size_t strideOutput, size_t length)
@@ -2748,6 +2924,7 @@ void HMS_FAST_DSP_ZvphasD (const FAST_SplitComplexD * input, size_t strideInput,
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 分离格式复数输入向量指针。 |
@@ -2763,9 +2940,10 @@ void HMS_FAST_DSP_ZvphasD (const FAST_SplitComplexD * input, size_t strideInput,
  
   
 
-#### HMS_FAST_DSP_Vsmul()
+### HMS_FAST_DSP_Vsmul()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_Vsmul (const float * input, size_t strideInput, const float scalar, float * output, size_t strideOutput, size_t length)
@@ -2779,6 +2957,7 @@ void HMS_FAST_DSP_Vsmul (const float * input, size_t strideInput, const float sc
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 输入向量指针。 |
@@ -2795,9 +2974,10 @@ void HMS_FAST_DSP_Vsmul (const float * input, size_t strideInput, const float sc
  
   
 
-#### HMS_FAST_DSP_VsmulD()
+### HMS_FAST_DSP_VsmulD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_VsmulD (const double * input, size_t strideInput, const double scalar, double * output, size_t strideOutput, size_t length)
@@ -2811,6 +2991,7 @@ void HMS_FAST_DSP_VsmulD (const double * input, size_t strideInput, const double
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 输入向量指针。 |
@@ -2827,9 +3008,10 @@ void HMS_FAST_DSP_VsmulD (const double * input, size_t strideInput, const double
  
   
 
-#### HMS_FAST_DSP_Vsdiv()
+### HMS_FAST_DSP_Vsdiv()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_Vsdiv (const float * input, size_t strideInput, const float scalar, float * output, size_t strideOutput, size_t length)
@@ -2843,6 +3025,7 @@ void HMS_FAST_DSP_Vsdiv (const float * input, size_t strideInput, const float sc
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 输入向量指针。 |
@@ -2859,9 +3042,10 @@ void HMS_FAST_DSP_Vsdiv (const float * input, size_t strideInput, const float sc
  
   
 
-#### HMS_FAST_DSP_VsdivD()
+### HMS_FAST_DSP_VsdivD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_VsdivD (const double * input, size_t strideInput, const double scalar, double * output, size_t strideOutput, size_t length)
@@ -2875,6 +3059,7 @@ void HMS_FAST_DSP_VsdivD (const double * input, size_t strideInput, const double
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 输入向量指针。 |
@@ -2891,9 +3076,10 @@ void HMS_FAST_DSP_VsdivD (const double * input, size_t strideInput, const double
  
   
 
-#### HMS_FAST_DSP_Svdiv()
+### HMS_FAST_DSP_Svdiv()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_Svdiv (const float scalar, const float * input, size_t strideInput, float * output, size_t strideOutput, size_t length)
@@ -2907,6 +3093,7 @@ void HMS_FAST_DSP_Svdiv (const float scalar, const float * input, size_t strideI
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | scalar | 被除数标量。 |
@@ -2923,9 +3110,10 @@ void HMS_FAST_DSP_Svdiv (const float scalar, const float * input, size_t strideI
  
   
 
-#### HMS_FAST_DSP_SvdivD()
+### HMS_FAST_DSP_SvdivD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_SvdivD (const double scalar, const double * input, size_t strideInput, double * output, size_t strideOutput, size_t length)
@@ -2939,6 +3127,7 @@ void HMS_FAST_DSP_SvdivD (const double scalar, const double * input, size_t stri
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | scalar | 被除数标量。 |
@@ -2955,9 +3144,10 @@ void HMS_FAST_DSP_SvdivD (const double scalar, const double * input, size_t stri
  
   
 
-#### HMS_FAST_DSP_Vsadd()
+### HMS_FAST_DSP_Vsadd()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_Vsadd (const float * input, size_t strideInput, const float scalar, float * output, size_t strideOutput, size_t length)
@@ -2971,6 +3161,7 @@ void HMS_FAST_DSP_Vsadd (const float * input, size_t strideInput, const float sc
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 输入向量指针。 |
@@ -2987,9 +3178,10 @@ void HMS_FAST_DSP_Vsadd (const float * input, size_t strideInput, const float sc
  
   
 
-#### HMS_FAST_DSP_VsaddD()
+### HMS_FAST_DSP_VsaddD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_VsaddD (const double * input, size_t strideInput, const double scalar, double * output, size_t strideOutput, size_t length)
@@ -3003,6 +3195,7 @@ void HMS_FAST_DSP_VsaddD (const double * input, size_t strideInput, const double
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 输入向量指针。 |
@@ -3019,9 +3212,10 @@ void HMS_FAST_DSP_VsaddD (const double * input, size_t strideInput, const double
  
   
 
-#### HMS_FAST_DSP_Vadd()
+### HMS_FAST_DSP_Vadd()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_Vadd (const float * inputA, size_t strideA, const float * inputB, size_t strideB, float * outputC, size_t strideC, size_t length)
@@ -3035,6 +3229,7 @@ void HMS_FAST_DSP_Vadd (const float * inputA, size_t strideA, const float * inpu
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | inputA | 输入向量A指针。 |
@@ -3052,9 +3247,10 @@ void HMS_FAST_DSP_Vadd (const float * inputA, size_t strideA, const float * inpu
  
   
 
-#### HMS_FAST_DSP_VaddD()
+### HMS_FAST_DSP_VaddD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_VaddD (const double * inputA, size_t strideA, const double * inputB, size_t strideB, double * outputC, size_t strideC, size_t length)
@@ -3068,6 +3264,7 @@ void HMS_FAST_DSP_VaddD (const double * inputA, size_t strideA, const double * i
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | inputA | 输入向量A指针。 |
@@ -3085,9 +3282,10 @@ void HMS_FAST_DSP_VaddD (const double * inputA, size_t strideA, const double * i
  
   
 
-#### HMS_FAST_DSP_Vsub()
+### HMS_FAST_DSP_Vsub()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_Vsub (const float * inputA, size_t strideA, const float * inputB, size_t strideB, float * outputC, size_t strideC, size_t length)
@@ -3101,6 +3299,7 @@ void HMS_FAST_DSP_Vsub (const float * inputA, size_t strideA, const float * inpu
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | inputA | 输入向量A指针。 |
@@ -3118,9 +3317,10 @@ void HMS_FAST_DSP_Vsub (const float * inputA, size_t strideA, const float * inpu
  
   
 
-#### HMS_FAST_DSP_VsubD()
+### HMS_FAST_DSP_VsubD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_VsubD (const double * inputA, size_t strideA, const double * inputB, size_t strideB, double * outputC, size_t strideC, size_t length)
@@ -3134,6 +3334,7 @@ void HMS_FAST_DSP_VsubD (const double * inputA, size_t strideA, const double * i
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | inputA | 输入向量A指针。 |
@@ -3151,9 +3352,10 @@ void HMS_FAST_DSP_VsubD (const double * inputA, size_t strideA, const double * i
  
   
 
-#### HMS_FAST_DSP_Vmul()
+### HMS_FAST_DSP_Vmul()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_Vmul (const float * inputA, size_t strideA, const float * inputB, size_t strideB, float * outputC, size_t strideC, size_t length)
@@ -3167,6 +3369,7 @@ void HMS_FAST_DSP_Vmul (const float * inputA, size_t strideA, const float * inpu
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | inputA | 输入向量A指针。 |
@@ -3184,9 +3387,10 @@ void HMS_FAST_DSP_Vmul (const float * inputA, size_t strideA, const float * inpu
  
   
 
-#### HMS_FAST_DSP_VmulD()
+### HMS_FAST_DSP_VmulD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_VmulD (const double * inputA, size_t strideA, const double * inputB, size_t strideB, double * outputC, size_t strideC, size_t length)
@@ -3200,6 +3404,7 @@ void HMS_FAST_DSP_VmulD (const double * inputA, size_t strideA, const double * i
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | inputA | 输入向量A指针。 |
@@ -3217,9 +3422,10 @@ void HMS_FAST_DSP_VmulD (const double * inputA, size_t strideA, const double * i
  
   
 
-#### HMS_FAST_DSP_Vdiv()
+### HMS_FAST_DSP_Vdiv()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_Vdiv (const float * inputA, size_t strideA, const float * inputB, size_t strideB, float * outputC, size_t strideC, size_t length)
@@ -3233,6 +3439,7 @@ void HMS_FAST_DSP_Vdiv (const float * inputA, size_t strideA, const float * inpu
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | inputA | 输入向量A指针（被除数）。 |
@@ -3250,9 +3457,10 @@ void HMS_FAST_DSP_Vdiv (const float * inputA, size_t strideA, const float * inpu
  
   
 
-#### HMS_FAST_DSP_VdivD()
+### HMS_FAST_DSP_VdivD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_VdivD (const double * inputA, size_t strideA, const double * inputB, size_t strideB, double * outputC, size_t strideC, size_t length)
@@ -3266,6 +3474,7 @@ void HMS_FAST_DSP_VdivD (const double * inputA, size_t strideA, const double * i
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | inputA | 输入向量A指针（被除数）。 |
@@ -3283,9 +3492,10 @@ void HMS_FAST_DSP_VdivD (const double * inputA, size_t strideA, const double * i
  
   
 
-#### HMS_FAST_DSP_Vdist()
+### HMS_FAST_DSP_Vdist()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_Vdist (const float * inputA, size_t strideA, const float * inputB, size_t strideB, float * outputC, size_t strideC, size_t length)
@@ -3299,6 +3509,7 @@ void HMS_FAST_DSP_Vdist (const float * inputA, size_t strideA, const float * inp
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | inputA | 输入向量A指针。 |
@@ -3316,9 +3527,10 @@ void HMS_FAST_DSP_Vdist (const float * inputA, size_t strideA, const float * inp
  
   
 
-#### HMS_FAST_DSP_VdistD()
+### HMS_FAST_DSP_VdistD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_VdistD (const double * inputA, size_t strideA, const double * inputB, size_t strideB, double * outputC, size_t strideC, size_t length)
@@ -3332,6 +3544,7 @@ void HMS_FAST_DSP_VdistD (const double * inputA, size_t strideA, const double * 
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | inputA | 输入向量A指针。 |
@@ -3349,9 +3562,10 @@ void HMS_FAST_DSP_VdistD (const double * inputA, size_t strideA, const double * 
  
   
 
-#### HMS_FAST_DSP_Svesq()
+### HMS_FAST_DSP_Svesq()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 float HMS_FAST_DSP_Svesq (const float * input, size_t stride, size_t length)
@@ -3365,6 +3579,7 @@ float HMS_FAST_DSP_Svesq (const float * input, size_t stride, size_t length)
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 输入向量指针。 |
@@ -3378,9 +3593,10 @@ float HMS_FAST_DSP_Svesq (const float * input, size_t stride, size_t length)
  
   
 
-#### HMS_FAST_DSP_SvesqD()
+### HMS_FAST_DSP_SvesqD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 double HMS_FAST_DSP_SvesqD (const double * input, size_t stride, size_t length)
@@ -3394,6 +3610,7 @@ double HMS_FAST_DSP_SvesqD (const double * input, size_t stride, size_t length)
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 输入向量指针。 |
@@ -3407,9 +3624,10 @@ double HMS_FAST_DSP_SvesqD (const double * input, size_t stride, size_t length)
  
   
 
-#### HMS_FAST_DSP_Minvi()
+### HMS_FAST_DSP_Minvi()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_Minvi (const float * input, size_t stride, size_t length, float * value, size_t * index)
@@ -3423,6 +3641,7 @@ void HMS_FAST_DSP_Minvi (const float * input, size_t stride, size_t length, floa
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 输入向量指针。 |
@@ -3438,9 +3657,10 @@ void HMS_FAST_DSP_Minvi (const float * input, size_t stride, size_t length, floa
  
   
 
-#### HMS_FAST_DSP_MinviD()
+### HMS_FAST_DSP_MinviD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_MinviD (const double * input, size_t stride, size_t length, double * value, size_t * index)
@@ -3454,6 +3674,7 @@ void HMS_FAST_DSP_MinviD (const double * input, size_t stride, size_t length, do
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 输入向量指针。 |
@@ -3469,9 +3690,10 @@ void HMS_FAST_DSP_MinviD (const double * input, size_t stride, size_t length, do
  
   
 
-#### HMS_FAST_DSP_Vsq()
+### HMS_FAST_DSP_Vsq()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_Vsq (const float * input, size_t strideInput, float * output, size_t strideOutput, size_t length)
@@ -3485,6 +3707,7 @@ void HMS_FAST_DSP_Vsq (const float * input, size_t strideInput, float * output, 
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 输入向量指针。 |
@@ -3500,9 +3723,10 @@ void HMS_FAST_DSP_Vsq (const float * input, size_t strideInput, float * output, 
  
   
 
-#### HMS_FAST_DSP_VsqD()
+### HMS_FAST_DSP_VsqD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_VsqD (const double * input, size_t strideInput, double * output, size_t strideOutput, size_t length)
@@ -3516,6 +3740,7 @@ void HMS_FAST_DSP_VsqD (const double * input, size_t strideInput, double * outpu
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 输入向量指针。 |
@@ -3531,9 +3756,10 @@ void HMS_FAST_DSP_VsqD (const double * input, size_t strideInput, double * outpu
  
   
 
-#### HMS_FAST_DSP_Vabs()
+### HMS_FAST_DSP_Vabs()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_Vabs (const float * input, size_t strideInput, float * output, size_t strideOutput, size_t length)
@@ -3547,6 +3773,7 @@ void HMS_FAST_DSP_Vabs (const float * input, size_t strideInput, float * output,
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 输入向量指针。 |
@@ -3562,9 +3789,10 @@ void HMS_FAST_DSP_Vabs (const float * input, size_t strideInput, float * output,
  
   
 
-#### HMS_FAST_DSP_VabsD()
+### HMS_FAST_DSP_VabsD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_VabsD (const double * input, size_t strideInput, double * output, size_t strideOutput, size_t length)
@@ -3578,6 +3806,7 @@ void HMS_FAST_DSP_VabsD (const double * input, size_t strideInput, double * outp
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 输入向量指针。 |
@@ -3593,9 +3822,10 @@ void HMS_FAST_DSP_VabsD (const double * input, size_t strideInput, double * outp
  
   
 
-#### HMS_FAST_DSP_Vthr()
+### HMS_FAST_DSP_Vthr()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_Vthr (const float * input, size_t strideInput, const float threshold, float * output, size_t strideOutput, size_t length)
@@ -3609,6 +3839,7 @@ void HMS_FAST_DSP_Vthr (const float * input, size_t strideInput, const float thr
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 输入向量指针。 |
@@ -3625,9 +3856,10 @@ void HMS_FAST_DSP_Vthr (const float * input, size_t strideInput, const float thr
  
   
 
-#### HMS_FAST_DSP_VthrD()
+### HMS_FAST_DSP_VthrD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_VthrD (const double * input, size_t strideInput, const double threshold, double * output, size_t strideOutput, size_t length)
@@ -3641,6 +3873,7 @@ void HMS_FAST_DSP_VthrD (const double * input, size_t strideInput, const double 
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 输入向量指针。 |
@@ -3657,9 +3890,10 @@ void HMS_FAST_DSP_VthrD (const double * input, size_t strideInput, const double 
  
   
 
-#### HMS_FAST_DSP_Vrvrs()
+### HMS_FAST_DSP_Vrvrs()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_Vrvrs (float * vector, size_t stride, size_t length)
@@ -3673,6 +3907,7 @@ void HMS_FAST_DSP_Vrvrs (float * vector, size_t stride, size_t length)
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | vector | 待反转的向量指针。 |
@@ -3686,9 +3921,10 @@ void HMS_FAST_DSP_Vrvrs (float * vector, size_t stride, size_t length)
  
   
 
-#### HMS_FAST_DSP_VrvrsD()
+### HMS_FAST_DSP_VrvrsD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_VrvrsD (double * vector, size_t stride, size_t length)
@@ -3702,6 +3938,7 @@ void HMS_FAST_DSP_VrvrsD (double * vector, size_t stride, size_t length)
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | vector | 待反转的向量指针。 |
@@ -3715,9 +3952,10 @@ void HMS_FAST_DSP_VrvrsD (double * vector, size_t stride, size_t length)
  
   
 
-#### HMS_FAST_DSP_Vspdp()
+### HMS_FAST_DSP_Vspdp()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_Vspdp (const float * input, size_t strideInput, double * output, size_t strideOutput, size_t length)
@@ -3731,6 +3969,7 @@ void HMS_FAST_DSP_Vspdp (const float * input, size_t strideInput, double * outpu
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 单精度输入向量指针。 |
@@ -3746,9 +3985,10 @@ void HMS_FAST_DSP_Vspdp (const float * input, size_t strideInput, double * outpu
  
   
 
-#### HMS_FAST_DSP_Vdpsp()
+### HMS_FAST_DSP_Vdpsp()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_Vdpsp (const double * input, size_t strideInput, float * output, size_t strideOutput, size_t length)
@@ -3762,6 +4002,7 @@ void HMS_FAST_DSP_Vdpsp (const double * input, size_t strideInput, float * outpu
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 双精度输入向量指针。 |
@@ -3777,9 +4018,10 @@ void HMS_FAST_DSP_Vdpsp (const double * input, size_t strideInput, float * outpu
  
   
 
-#### HMS_FAST_DSP_Vfill()
+### HMS_FAST_DSP_Vfill()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_Vfill (float * vector, size_t stride, size_t length, const float scalar)
@@ -3793,6 +4035,7 @@ void HMS_FAST_DSP_Vfill (float * vector, size_t stride, size_t length, const flo
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | vector | 待填充的向量指针。 |
@@ -3807,9 +4050,10 @@ void HMS_FAST_DSP_Vfill (float * vector, size_t stride, size_t length, const flo
  
   
 
-#### HMS_FAST_DSP_VfillD()
+### HMS_FAST_DSP_VfillD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_VfillD (double * vector, size_t stride, size_t length, const double scalar)
@@ -3823,6 +4067,7 @@ void HMS_FAST_DSP_VfillD (double * vector, size_t stride, size_t length, const d
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | vector | 待填充的向量指针。 |
@@ -3837,9 +4082,10 @@ void HMS_FAST_DSP_VfillD (double * vector, size_t stride, size_t length, const d
  
   
 
-#### HMS_FAST_DSP_Vclr()
+### HMS_FAST_DSP_Vclr()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_Vclr (float * vector, size_t stride, size_t length)
@@ -3853,6 +4099,7 @@ void HMS_FAST_DSP_Vclr (float * vector, size_t stride, size_t length)
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | vector | 输出向量指针。 |
@@ -3866,9 +4113,10 @@ void HMS_FAST_DSP_Vclr (float * vector, size_t stride, size_t length)
  
   
 
-#### HMS_FAST_DSP_VclrD()
+### HMS_FAST_DSP_VclrD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_VclrD (double * vector, size_t stride, size_t length)
@@ -3882,6 +4130,7 @@ void HMS_FAST_DSP_VclrD (double * vector, size_t stride, size_t length)
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | vector | 输出向量指针。 |
@@ -3895,9 +4144,10 @@ void HMS_FAST_DSP_VclrD (double * vector, size_t stride, size_t length)
  
   
 
-#### HMS_FAST_DSP_Conv()
+### HMS_FAST_DSP_Conv()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_Conv (const float * input, size_t strideInput, const float * filter, size_t strideFilter, float * output, size_t strideOutput, size_t outputLength, size_t filterLength)
@@ -3911,6 +4161,7 @@ void HMS_FAST_DSP_Conv (const float * input, size_t strideInput, const float * f
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 输入信号向量指针。 |
@@ -3933,9 +4184,10 @@ input缓冲区长度必须大于outputLength + filterLength - 1，否则将产�
  
   
 
-#### HMS_FAST_DSP_ConvD()
+### HMS_FAST_DSP_ConvD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_ConvD (const double * input, size_t strideInput, const double * filter, size_t strideFilter, double * output, size_t strideOutput, size_t outputLength, size_t filterLength)
@@ -3949,6 +4201,7 @@ void HMS_FAST_DSP_ConvD (const double * input, size_t strideInput, const double 
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | input | 输入信号向量指针。 |
@@ -3971,9 +4224,10 @@ input缓冲区长度必须大于outputLength + filterLength - 1，否则将产�
  
   
 
-#### HMS_FAST_DSP_HannWindow()
+### HMS_FAST_DSP_HannWindow()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_HannWindow (float * output, size_t length, HMS_FAST_HannWindowType type)
@@ -3987,6 +4241,7 @@ void HMS_FAST_DSP_HannWindow (float * output, size_t length, HMS_FAST_HannWindow
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | output | 输出向量指针，用于存放窗系数。 |
@@ -4000,9 +4255,10 @@ void HMS_FAST_DSP_HannWindow (float * output, size_t length, HMS_FAST_HannWindow
  
   
 
-#### HMS_FAST_DSP_HannWindowD()
+### HMS_FAST_DSP_HannWindowD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_HannWindowD (double * output, size_t length, HMS_FAST_HannWindowType type)
@@ -4016,6 +4272,7 @@ void HMS_FAST_DSP_HannWindowD (double * output, size_t length, HMS_FAST_HannWind
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | output | 输出向量指针，用于存放窗系数。 |
@@ -4029,9 +4286,10 @@ void HMS_FAST_DSP_HannWindowD (double * output, size_t length, HMS_FAST_HannWind
  
   
 
-#### HMS_FAST_DSP_Mmul()
+### HMS_FAST_DSP_Mmul()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_Mmul (const float * matrixA, size_t strideA, const float * matrixB, size_t strideB, float * matrixC, size_t strideC, size_t rowsM, size_t colsN, size_t colsP)
@@ -4045,6 +4303,7 @@ void HMS_FAST_DSP_Mmul (const float * matrixA, size_t strideA, const float * mat
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | matrixA | 矩阵A指针。 |
@@ -4064,9 +4323,10 @@ void HMS_FAST_DSP_Mmul (const float * matrixA, size_t strideA, const float * mat
  
   
 
-#### HMS_FAST_DSP_MmulD()
+### HMS_FAST_DSP_MmulD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_MmulD (const double * matrixA, size_t strideA, const double * matrixB, size_t strideB, double * matrixC, size_t strideC, size_t rowsM, size_t colsN, size_t colsP)
@@ -4080,6 +4340,7 @@ void HMS_FAST_DSP_MmulD (const double * matrixA, size_t strideA, const double * 
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | matrixA | 矩阵A指针。 |
@@ -4099,9 +4360,10 @@ void HMS_FAST_DSP_MmulD (const double * matrixA, size_t strideA, const double * 
  
   
 
-#### HMS_FAST_DSP_Vvpow()
+### HMS_FAST_DSP_Vvpow()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_Vvpow (const float * inputA, const float * inputB, float * outputC, size_t length)
@@ -4115,6 +4377,7 @@ void HMS_FAST_DSP_Vvpow (const float * inputA, const float * inputB, float * out
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | inputA | 底数向量A指针。 |
@@ -4129,9 +4392,10 @@ void HMS_FAST_DSP_Vvpow (const float * inputA, const float * inputB, float * out
  
   
 
-#### HMS_FAST_DSP_VvpowD()
+### HMS_FAST_DSP_VvpowD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_VvpowD (const double * inputA, const double * inputB, double * outputC, size_t length)
@@ -4145,6 +4409,7 @@ void HMS_FAST_DSP_VvpowD (const double * inputA, const double * inputB, double *
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | inputA | 底数向量A指针。 |
@@ -4159,9 +4424,10 @@ void HMS_FAST_DSP_VvpowD (const double * inputA, const double * inputB, double *
  
   
 
-#### HMS_FAST_DSP_Vsort()
+### HMS_FAST_DSP_Vsort()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_Vsort (float * vector, size_t length, int order)
@@ -4175,6 +4441,7 @@ void HMS_FAST_DSP_Vsort (float * vector, size_t length, int order)
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | vector | 待排序的向量指针（输入/输出）。 |
@@ -4188,9 +4455,10 @@ void HMS_FAST_DSP_Vsort (float * vector, size_t length, int order)
  
   
 
-#### HMS_FAST_DSP_VsortD()
+### HMS_FAST_DSP_VsortD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_DSP_VsortD (double * vector, size_t length, int order)
@@ -4204,6 +4472,7 @@ void HMS_FAST_DSP_VsortD (double * vector, size_t length, int order)
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | vector | 待排序的向量指针（输入/输出）。 |
@@ -4217,9 +4486,10 @@ void HMS_FAST_DSP_VsortD (double * vector, size_t length, int order)
  
   
 
-#### HMS_FAST_FFT_CreateConfig()
+### HMS_FAST_FFT_CreateConfig()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_ErrorCode HMS_FAST_FFT_CreateConfig (FAST_FFTConfig** config, const uint32_t log2n)
@@ -4233,6 +4503,7 @@ FAST_ErrorCode HMS_FAST_FFT_CreateConfig (FAST_FFTConfig** config, const uint32_
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | config | 指向快速傅里叶变换的不透明配置FAST_FFTConfig的指针。 |
@@ -4251,9 +4522,10 @@ FAST_ErrorCode HMS_FAST_FFT_CreateConfig (FAST_FFTConfig** config, const uint32_
  
   
 
-#### HMS_FAST_FFT_CreateConfigD()
+### HMS_FAST_FFT_CreateConfigD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_ErrorCode HMS_FAST_FFT_CreateConfigD (FAST_FFTConfig** config, const uint32_t log2n)
@@ -4267,6 +4539,7 @@ FAST_ErrorCode HMS_FAST_FFT_CreateConfigD (FAST_FFTConfig** config, const uint32
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | config | 指向快速傅里叶变换的不透明配置FAST_FFTConfig的指针。 |
@@ -4285,9 +4558,10 @@ FAST_ErrorCode HMS_FAST_FFT_CreateConfigD (FAST_FFTConfig** config, const uint32
  
   
 
-#### HMS_FAST_FFT_DestroyConfig()
+### HMS_FAST_FFT_DestroyConfig()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_FFT_DestroyConfig (FAST_FFTConfig* config)
@@ -4301,6 +4575,7 @@ void HMS_FAST_FFT_DestroyConfig (FAST_FFTConfig* config)
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | config | 待销毁的FFT的不透明配置FAST_FFTConfig。 |
@@ -4312,9 +4587,10 @@ void HMS_FAST_FFT_DestroyConfig (FAST_FFTConfig* config)
  
   
 
-#### HMS_FAST_FFT_ForwardTransform()
+### HMS_FAST_FFT_ForwardTransform()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_ErrorCode HMS_FAST_FFT_ForwardTransform (FAST_FFTConfig* config, const uint32_t length, const float input[], float outputRe[], float outputIm[])
@@ -4330,6 +4606,7 @@ FAST_ErrorCode HMS_FAST_FFT_ForwardTransform (FAST_FFTConfig* config, const uint
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | config | 有效的FFT配置，由HMS_FAST_FFT_CreateConfig创建。 |
@@ -4349,9 +4626,10 @@ FAST_ErrorCode HMS_FAST_FFT_ForwardTransform (FAST_FFTConfig* config, const uint
  
   
 
-#### HMS_FAST_FFT_ForwardTransformD()
+### HMS_FAST_FFT_ForwardTransformD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_ErrorCode HMS_FAST_FFT_ForwardTransformD (FAST_FFTConfig* config, const uint32_t length, const double input[], double outputRe[], double outputIm[])
@@ -4365,6 +4643,7 @@ FAST_ErrorCode HMS_FAST_FFT_ForwardTransformD (FAST_FFTConfig* config, const uin
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | config | 有效的FFT配置，由HMS_FAST_FFT_CreateConfigD创建。 |
@@ -4384,9 +4663,10 @@ FAST_ErrorCode HMS_FAST_FFT_ForwardTransformD (FAST_FFTConfig* config, const uin
  
   
 
-#### HMS_FAST_FFT_InverseTransform()
+### HMS_FAST_FFT_InverseTransform()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_ErrorCode HMS_FAST_FFT_InverseTransform (FAST_FFTConfig* config, const uint32_t length, const float inputRe[], const float inputIm[], float output[])
@@ -4400,6 +4680,7 @@ FAST_ErrorCode HMS_FAST_FFT_InverseTransform (FAST_FFTConfig* config, const uint
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | config | 有效的FFT配置，由HMS_FAST_FFT_CreateConfig 创建。 |
@@ -4419,9 +4700,10 @@ FAST_ErrorCode HMS_FAST_FFT_InverseTransform (FAST_FFTConfig* config, const uint
  
   
 
-#### HMS_FAST_FFT_InverseTransformD()
+### HMS_FAST_FFT_InverseTransformD()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_ErrorCode HMS_FAST_FFT_InverseTransformD (FAST_FFTConfig* config, const uint32_t length, const double inputRe[], const double inputIm[], double output[])
@@ -4435,6 +4717,7 @@ FAST_ErrorCode HMS_FAST_FFT_InverseTransformD (FAST_FFTConfig* config, const uin
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | config | 有效的FFT配置，由HMS_FAST_FFT_CreateConfigD创建。 |
@@ -4454,9 +4737,10 @@ length不等于2^log2n时，返回[FAST_ERROR_CODE_ILLEGAL_INPUT](#fast_errorcod
  
   
 
-#### HMS_FAST_ConcurrentHashmap_Create()
+### HMS_FAST_ConcurrentHashmap_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_ErrorCode HMS_FAST_ConcurrentHashmap_Create(
@@ -4476,6 +4760,7 @@ FAST_ErrorCode HMS_FAST_ConcurrentHashmap_Create(
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | handle | 并发哈希表句柄。 |
@@ -4495,9 +4780,10 @@ FAST_ErrorCode HMS_FAST_ConcurrentHashmap_Create(
  
   
 
-#### HMS_FAST_ConcurrentHashmap_Destroy()
+### HMS_FAST_ConcurrentHashmap_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_ConcurrentHashmap_Destroy(FAST_ConcurrentHashmapHandle handle)
@@ -4511,6 +4797,7 @@ void HMS_FAST_ConcurrentHashmap_Destroy(FAST_ConcurrentHashmapHandle handle)
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | handle | 待销毁的并发哈希表句柄。 |
@@ -4518,9 +4805,10 @@ void HMS_FAST_ConcurrentHashmap_Destroy(FAST_ConcurrentHashmapHandle handle)
  
   
 
-#### HMS_FAST_ConcurrentHashmap_Insert()
+### HMS_FAST_ConcurrentHashmap_Insert()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_ErrorCode HMS_FAST_ConcurrentHashmap_Insert(
@@ -4539,6 +4827,7 @@ FAST_ErrorCode HMS_FAST_ConcurrentHashmap_Insert(
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | handle | 并发哈希表句柄。 |
@@ -4559,9 +4848,10 @@ FAST_ErrorCode HMS_FAST_ConcurrentHashmap_Insert(
  
   
 
-#### HMS_FAST_ConcurrentHashmap_Find()
+### HMS_FAST_ConcurrentHashmap_Find()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_ErrorCode HMS_FAST_ConcurrentHashmap_Find(
@@ -4579,6 +4869,7 @@ FAST_ErrorCode HMS_FAST_ConcurrentHashmap_Find(
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | handle | 并发哈希表句柄。 |
@@ -4596,9 +4887,10 @@ FAST_ErrorCode HMS_FAST_ConcurrentHashmap_Find(
  
   
 
-#### HMS_FAST_ConcurrentHashmap_Erase()
+### HMS_FAST_ConcurrentHashmap_Erase()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_ErrorCode HMS_FAST_ConcurrentHashmap_Erase(
@@ -4617,6 +4909,7 @@ FAST_ErrorCode HMS_FAST_ConcurrentHashmap_Erase(
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | handle | 并发哈希表句柄。 |
@@ -4635,9 +4928,10 @@ FAST_ErrorCode HMS_FAST_ConcurrentHashmap_Erase(
  
   
 
-#### HMS_FAST_ConcurrentHashmap_TryInsert()
+### HMS_FAST_ConcurrentHashmap_TryInsert()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_ErrorCode HMS_FAST_ConcurrentHashmap_TryInsert(
@@ -4655,6 +4949,7 @@ FAST_ErrorCode HMS_FAST_ConcurrentHashmap_TryInsert(
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | handle | 并发哈希表句柄。 |
@@ -4672,9 +4967,10 @@ FAST_ErrorCode HMS_FAST_ConcurrentHashmap_TryInsert(
  
   
 
-#### HMS_FAST_ConcurrentHashmap_Size()
+### HMS_FAST_ConcurrentHashmap_Size()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 size_t HMS_FAST_ConcurrentHashmap_Size(FAST_ConcurrentHashmapHandle handle)
@@ -4688,6 +4984,7 @@ size_t HMS_FAST_ConcurrentHashmap_Size(FAST_ConcurrentHashmapHandle handle)
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | handle | 并发哈希表句柄。 |
@@ -4699,9 +4996,10 @@ size_t HMS_FAST_ConcurrentHashmap_Size(FAST_ConcurrentHashmapHandle handle)
  
   
 
-#### HMS_FAST_ConcurrentHashmap_Clear()
+### HMS_FAST_ConcurrentHashmap_Clear()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_ConcurrentHashmap_Clear(FAST_ConcurrentHashmapHandle handle)
@@ -4715,6 +5013,7 @@ void HMS_FAST_ConcurrentHashmap_Clear(FAST_ConcurrentHashmapHandle handle)
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | handle | 并发哈希表句柄。 |
@@ -4722,9 +5021,10 @@ void HMS_FAST_ConcurrentHashmap_Clear(FAST_ConcurrentHashmapHandle handle)
  
   
 
-#### HMS_FAST_ConcurrentHashmap_EraseIf()
+### HMS_FAST_ConcurrentHashmap_EraseIf()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 size_t HMS_FAST_ConcurrentHashmap_EraseIf(
@@ -4744,6 +5044,7 @@ size_t HMS_FAST_ConcurrentHashmap_EraseIf(
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | handle | 并发哈希表句柄。 |
@@ -4759,9 +5060,10 @@ size_t HMS_FAST_ConcurrentHashmap_EraseIf(
  
   
 
-#### HMS_FAST_ConcurrentHashmap_Traverse()
+### HMS_FAST_ConcurrentHashmap_Traverse()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_ConcurrentHashmap_Traverse(
@@ -4781,6 +5083,7 @@ void HMS_FAST_ConcurrentHashmap_Traverse(
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | handle | 并发哈希表句柄。 |
@@ -4792,9 +5095,10 @@ void HMS_FAST_ConcurrentHashmap_Traverse(
  
   
 
-#### HMS_FAST_Hashmap_Clear()
+### HMS_FAST_Hashmap_Clear()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_Hashmap_Clear (FAST_HashmapHandle handle)
@@ -4808,6 +5112,7 @@ void HMS_FAST_Hashmap_Clear (FAST_HashmapHandle handle)
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | handle | 哈希表句柄。 |
@@ -4819,9 +5124,10 @@ void HMS_FAST_Hashmap_Clear (FAST_HashmapHandle handle)
  
   
 
-#### HMS_FAST_Hashmap_Create()
+### HMS_FAST_Hashmap_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_ErrorCode HMS_FAST_Hashmap_Create (FAST_HashmapHandle* handle, HMS_FAST_Hashmap_HashFunc hasher, HMS_FAST_Hashmap_KeyEqualFunc equaler)
@@ -4835,6 +5141,7 @@ FAST_ErrorCode HMS_FAST_Hashmap_Create (FAST_HashmapHandle* handle, HMS_FAST_Has
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | handle | 存储创建的哈希表句柄指针。 |
@@ -4852,9 +5159,10 @@ FAST_ErrorCode HMS_FAST_Hashmap_Create (FAST_HashmapHandle* handle, HMS_FAST_Has
  
   
 
-#### HMS_FAST_Hashmap_Destroy()
+### HMS_FAST_Hashmap_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_Hashmap_Destroy (FAST_HashmapHandle handle)
@@ -4868,6 +5176,7 @@ void HMS_FAST_Hashmap_Destroy (FAST_HashmapHandle handle)
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | handle | 要销毁的哈希表句柄。 |
@@ -4883,9 +5192,10 @@ void HMS_FAST_Hashmap_Destroy (FAST_HashmapHandle handle)
  
   
 
-#### HMS_FAST_Hashmap_Erase()
+### HMS_FAST_Hashmap_Erase()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_ErrorCode HMS_FAST_Hashmap_Erase (FAST_HashmapHandle handle, const FAST_HashmapKeyPtr key, FAST_HashmapKeyPtr* originKey, FAST_HashmapValuePtr* originValue)
@@ -4899,6 +5209,7 @@ FAST_ErrorCode HMS_FAST_Hashmap_Erase (FAST_HashmapHandle handle, const FAST_Has
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | handle | 哈希表句柄。 |
@@ -4921,9 +5232,10 @@ FAST_ErrorCode HMS_FAST_Hashmap_Erase (FAST_HashmapHandle handle, const FAST_Has
  
   
 
-#### HMS_FAST_Hashmap_EraseIf()
+### HMS_FAST_Hashmap_EraseIf()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 size_t HMS_FAST_Hashmap_EraseIf (FAST_HashmapHandle handle, HMS_FAST_Hashmap_HookFunc condFunc, void* condCtx, HMS_FAST_Hashmap_HookFunc freeFunc, void* freeCtx)
@@ -4937,6 +5249,7 @@ size_t HMS_FAST_Hashmap_EraseIf (FAST_HashmapHandle handle, HMS_FAST_Hashmap_Hoo
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | handle | 哈希表句柄。 |
@@ -4952,9 +5265,10 @@ size_t HMS_FAST_Hashmap_EraseIf (FAST_HashmapHandle handle, HMS_FAST_Hashmap_Hoo
  
   
 
-#### HMS_FAST_Hashmap_Find()
+### HMS_FAST_Hashmap_Find()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_ErrorCode HMS_FAST_Hashmap_Find (FAST_HashmapHandle handle, const FAST_HashmapKeyPtr key, FAST_HashmapValuePtr* value)
@@ -4968,6 +5282,7 @@ FAST_ErrorCode HMS_FAST_Hashmap_Find (FAST_HashmapHandle handle, const FAST_Hash
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | handle | 哈希表句柄。 |
@@ -4985,9 +5300,10 @@ FAST_ErrorCode HMS_FAST_Hashmap_Find (FAST_HashmapHandle handle, const FAST_Hash
  
   
 
-#### HMS_FAST_Hashmap_Insert()
+### HMS_FAST_Hashmap_Insert()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_ErrorCode HMS_FAST_Hashmap_Insert (FAST_HashmapHandle handle, const FAST_HashmapKeyPtr key, const FAST_HashmapValuePtr value, FAST_HashmapValuePtr* originValue)
@@ -5001,6 +5317,7 @@ FAST_ErrorCode HMS_FAST_Hashmap_Insert (FAST_HashmapHandle handle, const FAST_Ha
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | handle | 哈希表句柄。 |
@@ -5027,9 +5344,10 @@ FAST_ErrorCode HMS_FAST_Hashmap_Insert (FAST_HashmapHandle handle, const FAST_Ha
  
   
 
-#### HMS_FAST_Hashmap_Size()
+### HMS_FAST_Hashmap_Size()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 size_t HMS_FAST_Hashmap_Size (FAST_HashmapHandle handle)
@@ -5043,6 +5361,7 @@ size_t HMS_FAST_Hashmap_Size (FAST_HashmapHandle handle)
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | handle | 哈希表句柄。 |
@@ -5054,9 +5373,10 @@ size_t HMS_FAST_Hashmap_Size (FAST_HashmapHandle handle)
  
   
 
-#### HMS_FAST_Hashmap_Traverse()
+### HMS_FAST_Hashmap_Traverse()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 void HMS_FAST_Hashmap_Traverse (FAST_HashmapHandle handle, HMS_FAST_Hashmap_HookFunc condFunc, void* condCtx, HMS_FAST_Hashmap_HookFunc workFunc, void* workCtx)
@@ -5070,6 +5390,7 @@ void HMS_FAST_Hashmap_Traverse (FAST_HashmapHandle handle, HMS_FAST_Hashmap_Hook
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | handle | 哈希表句柄。 |
@@ -5089,9 +5410,10 @@ condFunc和workFunc都在内部锁下调用；避免在这些回调中阻塞或�
  
   
 
-#### HMS_FAST_Hashmap_TryInsert()
+### HMS_FAST_Hashmap_TryInsert()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_ErrorCode HMS_FAST_Hashmap_TryInsert (FAST_HashmapHandle handle, const FAST_HashmapKeyPtr key, const FAST_HashmapValuePtr value)
@@ -5105,6 +5427,7 @@ FAST_ErrorCode HMS_FAST_Hashmap_TryInsert (FAST_HashmapHandle handle, const FAST
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | handle | 哈希表句柄。 |
@@ -5128,9 +5451,10 @@ FAST_ErrorCode HMS_FAST_Hashmap_TryInsert (FAST_HashmapHandle handle, const FAST
  
   
 
-#### HMS_FAST_Algo_Sort()
+### HMS_FAST_Algo_Sort()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_ErrorCode HMS_FAST_Algo_Sort (HMS_FAST_SortData * data, HMS_FAST_Sort_CompFunc comp)
@@ -5144,6 +5468,7 @@ FAST_ErrorCode HMS_FAST_Algo_Sort (HMS_FAST_SortData * data, HMS_FAST_Sort_CompF
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | data | 待排序数据的描述符。data->data不能为NULL，data->sizeOf必须大于0，data->length必须大于0。 |
@@ -5162,9 +5487,10 @@ FAST_ErrorCode HMS_FAST_Algo_Sort (HMS_FAST_SortData * data, HMS_FAST_Sort_CompF
  
   
 
-#### HMS_FAST_Algo_PartialSortAt()
+### HMS_FAST_Algo_PartialSortAt()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_ErrorCode HMS_FAST_Algo_PartialSortAt (HMS_FAST_SortData * data, size_t offset, size_t count, HMS_FAST_Sort_CompFunc comp)
@@ -5186,6 +5512,7 @@ FAST_ErrorCode HMS_FAST_Algo_PartialSortAt (HMS_FAST_SortData * data, size_t off
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | data | 待排序数据的描述符。与HMS_FAST_Algo_Sort要求相同。 |
@@ -5206,9 +5533,10 @@ FAST_ErrorCode HMS_FAST_Algo_PartialSortAt (HMS_FAST_SortData * data, size_t off
  
   
 
-#### HMS_FAST_Algo_NaturalSort()
+### HMS_FAST_Algo_NaturalSort()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_ErrorCode HMS_FAST_Algo_NaturalSort (HMS_FAST_SortData * data, int32_t ascend)
@@ -5222,6 +5550,7 @@ FAST_ErrorCode HMS_FAST_Algo_NaturalSort (HMS_FAST_SortData * data, int32_t asce
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | data | 待排序数据的描述符。data->data不能为NULL，data->sizeOf必须大于0，data->length必须大于0。注意：data->sizeOf必须等于sizeof(char*)。 |
@@ -5247,9 +5576,10 @@ FAST_ErrorCode HMS_FAST_Algo_NaturalSort (HMS_FAST_SortData * data, int32_t asce
  
   
 
-#### HMS_FAST_Algo_NaturalPartialSortAt()
+### HMS_FAST_Algo_NaturalPartialSortAt()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FAST_ErrorCode HMS_FAST_Algo_NaturalPartialSortAt (HMS_FAST_SortData * data, size_t offset, size_t count, int32_t ascend)
@@ -5263,6 +5593,7 @@ FAST_ErrorCode HMS_FAST_Algo_NaturalPartialSortAt (HMS_FAST_SortData * data, siz
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | data | 待排序数据的描述符。与HMS_FAST_Algo_NaturalSort要求相同。 |
@@ -5283,9 +5614,10 @@ FAST_ErrorCode HMS_FAST_Algo_NaturalPartialSortAt (HMS_FAST_SortData * data, siz
  
   
 
-#### HMS_FAST_PerfHintConfigBuilder_Create()
+### HMS_FAST_PerfHintConfigBuilder_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 HMS_FAST_SchedulingOptimization_ErrorCode HMS_FAST_PerfHintConfigBuilder_Create (HMS_FAST_PerfHintConfigBuilder** builder)
@@ -5299,6 +5631,7 @@ HMS_FAST_SchedulingOptimization_ErrorCode HMS_FAST_PerfHintConfigBuilder_Create 
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | builder | 指向创建的构建器实例的引用。 |
@@ -5314,9 +5647,10 @@ HMS_FAST_SchedulingOptimization_ErrorCode HMS_FAST_PerfHintConfigBuilder_Create 
  
   
 
-#### HMS_FAST_PerfHintConfigBuilder_Destroy()
+### HMS_FAST_PerfHintConfigBuilder_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void HMS_FAST_PerfHintConfigBuilder_Destroy (HMS_FAST_PerfHintConfigBuilder* builder)
@@ -5330,6 +5664,7 @@ void HMS_FAST_PerfHintConfigBuilder_Destroy (HMS_FAST_PerfHintConfigBuilder* bui
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | builder | 构建器实例指针。 |
@@ -5337,9 +5672,10 @@ void HMS_FAST_PerfHintConfigBuilder_Destroy (HMS_FAST_PerfHintConfigBuilder* bui
  
   
 
-#### HMS_FAST_PerfHintConfigBuilder_SetSceneType()
+### HMS_FAST_PerfHintConfigBuilder_SetSceneType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 HMS_FAST_SchedulingOptimization_ErrorCode HMS_FAST_PerfHintConfigBuilder_SetSceneType (HMS_FAST_PerfHintConfigBuilder* builder, HMS_FAST_SchedulingOptimization_SceneType sceneType)
@@ -5353,6 +5689,7 @@ HMS_FAST_SchedulingOptimization_ErrorCode HMS_FAST_PerfHintConfigBuilder_SetScen
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | builder | 构建器实例指针。 |
@@ -5367,9 +5704,10 @@ HMS_FAST_SchedulingOptimization_ErrorCode HMS_FAST_PerfHintConfigBuilder_SetScen
  
   
 
-#### HMS_FAST_PerfHintConfigBuilder_SetSceneState()
+### HMS_FAST_PerfHintConfigBuilder_SetSceneState()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 HMS_FAST_SchedulingOptimization_ErrorCode HMS_FAST_PerfHintConfigBuilder_SetSceneState (HMS_FAST_PerfHintConfigBuilder* builder, HMS_FAST_SchedulingOptimization_SceneState sceneState)
@@ -5383,6 +5721,7 @@ HMS_FAST_SchedulingOptimization_ErrorCode HMS_FAST_PerfHintConfigBuilder_SetScen
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | builder | 构建器实例指针。 |
@@ -5397,9 +5736,10 @@ HMS_FAST_SchedulingOptimization_ErrorCode HMS_FAST_PerfHintConfigBuilder_SetScen
  
   
 
-#### HMS_FAST_PerfHintConfigBuilder_SetDurationType()
+### HMS_FAST_PerfHintConfigBuilder_SetDurationType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 HMS_FAST_SchedulingOptimization_ErrorCode HMS_FAST_PerfHintConfigBuilder_SetDurationType (HMS_FAST_PerfHintConfigBuilder* builder, HMS_FAST_SchedulingOptimization_DurationType durationType)
@@ -5413,6 +5753,7 @@ HMS_FAST_SchedulingOptimization_ErrorCode HMS_FAST_PerfHintConfigBuilder_SetDura
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | builder | 构建器实例指针。 |
@@ -5427,9 +5768,10 @@ HMS_FAST_SchedulingOptimization_ErrorCode HMS_FAST_PerfHintConfigBuilder_SetDura
  
   
 
-#### HMS_FAST_PerfHintConfigBuilder_SetTids()
+### HMS_FAST_PerfHintConfigBuilder_SetTids()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 HMS_FAST_SchedulingOptimization_ErrorCode HMS_FAST_PerfHintConfigBuilder_SetTids (HMS_FAST_PerfHintConfigBuilder* builder, int* tids, uint32_t tidsSize)
@@ -5443,6 +5785,7 @@ HMS_FAST_SchedulingOptimization_ErrorCode HMS_FAST_PerfHintConfigBuilder_SetTids
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | builder | 构建器实例指针。 |
@@ -5458,9 +5801,10 @@ HMS_FAST_SchedulingOptimization_ErrorCode HMS_FAST_PerfHintConfigBuilder_SetTids
  
   
 
-#### HMS_FAST_PerfHintConfigBuilder_Build()
+### HMS_FAST_PerfHintConfigBuilder_Build()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 HMS_FAST_SchedulingOptimization_ErrorCode HMS_FAST_PerfHintConfigBuilder_Build (HMS_FAST_PerfHintConfigBuilder* builder, HMS_FAST_PerfHintConfig** config)
@@ -5474,6 +5818,7 @@ HMS_FAST_SchedulingOptimization_ErrorCode HMS_FAST_PerfHintConfigBuilder_Build (
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | builder | 构建器实例指针。 |
@@ -5490,9 +5835,10 @@ HMS_FAST_SchedulingOptimization_ErrorCode HMS_FAST_PerfHintConfigBuilder_Build (
  
   
 
-#### HMS_FAST_PerfHintConfig_Destroy()
+### HMS_FAST_PerfHintConfig_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void HMS_FAST_PerfHintConfig_Destroy (HMS_FAST_PerfHintConfig* config)
@@ -5506,6 +5852,7 @@ void HMS_FAST_PerfHintConfig_Destroy (HMS_FAST_PerfHintConfig* config)
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | config | 配置参数实例指针。 |
@@ -5513,9 +5860,10 @@ void HMS_FAST_PerfHintConfig_Destroy (HMS_FAST_PerfHintConfig* config)
  
   
 
-#### HMS_FAST_SchedulingOptimization_PerfHint()
+### HMS_FAST_SchedulingOptimization_PerfHint()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 HMS_FAST_SchedulingOptimization_ErrorCode HMS_FAST_SchedulingOptimization_PerfHint (const HMS_FAST_PerfHintConfig* config)
@@ -5529,6 +5877,7 @@ HMS_FAST_SchedulingOptimization_ErrorCode HMS_FAST_SchedulingOptimization_PerfHi
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | config | 指向系统性能优化配置参数的指针。 |

@@ -1,6 +1,6 @@
 # ScsiPeripheral_Device
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-scsiperipheralddk-scsiperipheral-device
 **支持设备：** PC/2in1
@@ -10,11 +10,12 @@ typedef struct ScsiPeripheral_Device ScsiPeripheral_Device
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** PC/2in1
 
-不透明的SCSI设备结构体。
+不透明的SCSI设备结构体，用于表示与SCSI外设交互的设备句柄。
  
 **起始版本：** 18
  

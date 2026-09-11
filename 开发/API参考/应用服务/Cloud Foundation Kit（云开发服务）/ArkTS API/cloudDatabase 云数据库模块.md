@@ -1,18 +1,19 @@
 # cloudDatabase (云数据库模块)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/cloudfoundation-clouddatabase
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供使用云数据库进行数据写入、查询、删除等操作的能力。
  
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { cloudDatabase } from '@kit.CloudFoundationKit';
@@ -20,9 +21,10 @@ import { cloudDatabase } from '@kit.CloudFoundationKit';
  
   
 
-#### zone
+## zone
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 zone(zone: string): DatabaseZone
  
@@ -38,6 +40,7 @@ zone(zone: string): DatabaseZone
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | zone | string | 是 | zone的名称。 |
@@ -45,6 +48,7 @@ zone(zone: string): DatabaseZone
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DatabaseZone | 云数据库处理数据的实例。 |
@@ -60,9 +64,10 @@ let databaseZone = cloudDatabase.zone('storageArea');
  
   
 
-#### DatabaseZone
+## DatabaseZone
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 云数据库处理数据的实例。
  
@@ -76,9 +81,10 @@ let databaseZone = cloudDatabase.zone('storageArea');
  
   
 
-#### query
+### query
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 query<T extends DatabaseObject>(condition: DatabaseQuery&lt;T&gt;): Promise<T[]>
  
@@ -96,6 +102,7 @@ query<T extends DatabaseObject>(condition: DatabaseQuery&lt;T&gt;): Promise<T[]>
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | condition | DatabaseQuery&lt;T&gt; | 是 | 提供丰富的查询条件。 |
@@ -103,6 +110,7 @@ query<T extends DatabaseObject>(condition: DatabaseQuery&lt;T&gt;): Promise<T[]>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<T[]> | Promise对象，返回查询结果。 |
@@ -112,6 +120,7 @@ query<T extends DatabaseObject>(condition: DatabaseQuery&lt;T&gt;): Promise<T[]>
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cloudfoundation)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | No Internet permission. |
@@ -171,9 +180,10 @@ async () => {
  
   
 
-#### query
+### query
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 query<T extends DatabaseObject>(condition: DatabaseQuery&lt;T&gt;, callback: AsyncCallback<T[]>): void
  
@@ -191,6 +201,7 @@ query<T extends DatabaseObject>(condition: DatabaseQuery&lt;T&gt;, callback: Asy
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | condition | DatabaseQuery&lt;T&gt; | 是 | 提供丰富的查询条件。 |
@@ -201,6 +212,7 @@ query<T extends DatabaseObject>(condition: DatabaseQuery&lt;T&gt;, callback: Asy
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cloudfoundation)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | No Internet permission. |
@@ -235,9 +247,10 @@ databaseZone.query(condition, (err: BusinessError, bookInfoArray) => {
  
   
 
-#### calculateQuery
+### calculateQuery
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 calculateQuery<T extends DatabaseObject>(condition: DatabaseQuery&lt;T&gt;, fieldName: string, calculate: QueryCalculate): Promise&lt;number&gt;
  
@@ -255,6 +268,7 @@ calculateQuery<T extends DatabaseObject>(condition: DatabaseQuery&lt;T&gt;, fiel
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | condition | DatabaseQuery&lt;T&gt; | 是 | 提供丰富的查询条件。 |
@@ -264,6 +278,7 @@ calculateQuery<T extends DatabaseObject>(condition: DatabaseQuery&lt;T&gt;, fiel
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象。返回查询字段名称算术运算结果。 |
@@ -273,6 +288,7 @@ calculateQuery<T extends DatabaseObject>(condition: DatabaseQuery&lt;T&gt;, fiel
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cloudfoundation)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | No Internet permission. |
@@ -307,9 +323,10 @@ async () => {
  
   
 
-#### calculateQuery
+### calculateQuery
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 calculateQuery<T extends DatabaseObject>(condition: DatabaseQuery&lt;T&gt;, fieldName: string, calculate: QueryCalculate, callback: AsyncCallback&lt;number&gt;): void
  
@@ -327,6 +344,7 @@ calculateQuery<T extends DatabaseObject>(condition: DatabaseQuery&lt;T&gt;, fiel
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | condition | DatabaseQuery&lt;T&gt; | 是 | 提供丰富的查询条件。 |
@@ -339,6 +357,7 @@ calculateQuery<T extends DatabaseObject>(condition: DatabaseQuery&lt;T&gt;, fiel
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cloudfoundation)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | No Internet permission. |
@@ -374,9 +393,10 @@ databaseZone.calculateQuery(condition, 'keyInteger', cloudDatabase.QueryCalculat
  
   
 
-#### upsert
+### upsert
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 upsert<T extends DatabaseObject>(objectList: T[] | T): Promise&lt;number&gt;
  
@@ -394,6 +414,7 @@ upsert<T extends DatabaseObject>(objectList: T[] | T): Promise&lt;number&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | objectList | T[] \| T | 是 | 一个或多个对象。 |
@@ -401,6 +422,7 @@ upsert<T extends DatabaseObject>(objectList: T[] | T): Promise&lt;number&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象。返回更新成功的数据数量。 |
@@ -410,6 +432,7 @@ upsert<T extends DatabaseObject>(objectList: T[] | T): Promise&lt;number&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cloudfoundation)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | No Internet permission. |
@@ -448,9 +471,10 @@ async () => {
  
   
 
-#### upsert
+### upsert
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 upsert<T extends DatabaseObject>(objectList: T[] | T, callback: AsyncCallback&lt;number&gt;): void
  
@@ -468,6 +492,7 @@ upsert<T extends DatabaseObject>(objectList: T[] | T, callback: AsyncCallback&lt
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | objectList | T[] \| T | 是 | 一个或多个对象。 |
@@ -478,6 +503,7 @@ upsert<T extends DatabaseObject>(objectList: T[] | T, callback: AsyncCallback&lt
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cloudfoundation)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | No Internet permission. |
@@ -516,9 +542,10 @@ databaseZone.upsert([book, book1], (err: BusinessError, num) => {
  
   
 
-#### delete
+### delete
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 delete<T extends DatabaseObject>(objectList: T[] | T): Promise&lt;number&gt;
  
@@ -536,6 +563,7 @@ delete<T extends DatabaseObject>(objectList: T[] | T): Promise&lt;number&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | objectList | T[] \| T | 是 | 一个或多个对象。 |
@@ -543,6 +571,7 @@ delete<T extends DatabaseObject>(objectList: T[] | T): Promise&lt;number&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象。返回删除成功的数据数量。 |
@@ -552,6 +581,7 @@ delete<T extends DatabaseObject>(objectList: T[] | T): Promise&lt;number&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cloudfoundation)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | No Internet permission. |
@@ -587,9 +617,10 @@ async () => {
  
   
 
-#### delete
+### delete
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 delete<T extends DatabaseObject>(objectList: T[] | T, callback: AsyncCallback&lt;number&gt;): void
  
@@ -607,6 +638,7 @@ delete<T extends DatabaseObject>(objectList: T[] | T, callback: AsyncCallback&lt
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | objectList | T[] \| T | 是 | 一个或多个对象。 |
@@ -617,6 +649,7 @@ delete<T extends DatabaseObject>(objectList: T[] | T, callback: AsyncCallback&lt
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cloudfoundation)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | No Internet permission. |
@@ -658,9 +691,10 @@ async () => {
  
   
 
-#### DatabaseObject
+## DatabaseObject
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 数据库数据类型基类，在云端生成表结构时继承。
  
@@ -674,9 +708,10 @@ async () => {
  
   
 
-#### naturalbase_ClassName
+### naturalbase_ClassName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 naturalbase_ClassName(): string
  
@@ -692,6 +727,7 @@ naturalbase_ClassName(): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 返回数据类型基类名称，需要与创建的对象类型名称一致。 |
@@ -714,9 +750,10 @@ export { BookInfo };
  
   
 
-#### FieldType
+## FieldType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type FieldType = string | number | boolean | Uint8Array | Date
  
@@ -730,6 +767,7 @@ type FieldType = string | number | boolean | Uint8Array | Date
  
 **起始版本：** 5.0.0(12)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 表示值类型为字符，可取任意值。 |
@@ -741,9 +779,10 @@ type FieldType = string | number | boolean | Uint8Array | Date
  
   
 
-#### QueryCalculate
+## QueryCalculate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举， 查询算术计算类型。
  
@@ -755,6 +794,7 @@ type FieldType = string | number | boolean | Uint8Array | Date
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | AVERAGE | 0 | 计算平均数。 |
@@ -766,9 +806,10 @@ type FieldType = string | number | boolean | Uint8Array | Date
  
   
 
-#### DatabaseQuery<T extends DatabaseObject>
+## DatabaseQuery<T extends DatabaseObject>
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供丰富的谓词查询来构建查询条件。根据谓词查询方法构造自己的DatabaseQuery对象。
  
@@ -782,9 +823,10 @@ type FieldType = string | number | boolean | Uint8Array | Date
  
   
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(entityClass: new () => T)
  
@@ -800,6 +842,7 @@ constructor(entityClass: new () => T)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | entityClass | new () => T | 是 | 数据对象的实体类。 |
@@ -816,9 +859,10 @@ let condition = new cloudDatabase.DatabaseQuery(BookInfo);
  
   
 
-#### equalTo
+### equalTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 equalTo(fieldName: string, value: FieldType): DatabaseQuery&lt;T&gt;
  
@@ -834,6 +878,7 @@ equalTo(fieldName: string, value: FieldType): DatabaseQuery&lt;T&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fieldName | string | 是 | 实体类中的字段名。 |
@@ -842,6 +887,7 @@ equalTo(fieldName: string, value: FieldType): DatabaseQuery&lt;T&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DatabaseQuery&lt;T&gt; | DatabaseQuery对象。 |
@@ -870,9 +916,10 @@ async () => {
  
   
 
-#### notEqualTo
+### notEqualTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 notEqualTo(fieldName: string, value: FieldType): DatabaseQuery&lt;T&gt;
  
@@ -888,6 +935,7 @@ notEqualTo(fieldName: string, value: FieldType): DatabaseQuery&lt;T&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fieldName | string | 是 | 实体类中的字段名。 |
@@ -896,6 +944,7 @@ notEqualTo(fieldName: string, value: FieldType): DatabaseQuery&lt;T&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DatabaseQuery&lt;T&gt; | DatabaseQuery对象。 |
@@ -925,9 +974,10 @@ async () => {
  
   
 
-#### beginsWith
+### beginsWith
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 beginsWith(fieldName: string, value: FieldType): DatabaseQuery&lt;T&gt;
  
@@ -943,6 +993,7 @@ beginsWith(fieldName: string, value: FieldType): DatabaseQuery&lt;T&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fieldName | string | 是 | 实体类中的字段名。 |
@@ -951,6 +1002,7 @@ beginsWith(fieldName: string, value: FieldType): DatabaseQuery&lt;T&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DatabaseQuery&lt;T&gt; | DatabaseQuery对象。 |
@@ -979,9 +1031,10 @@ async () => {
  
   
 
-#### endsWith
+### endsWith
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 endsWith(fieldName: string, value: FieldType): DatabaseQuery&lt;T&gt;
  
@@ -997,6 +1050,7 @@ endsWith(fieldName: string, value: FieldType): DatabaseQuery&lt;T&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fieldName | string | 是 | 实体类中的字段名。 |
@@ -1005,6 +1059,7 @@ endsWith(fieldName: string, value: FieldType): DatabaseQuery&lt;T&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DatabaseQuery&lt;T&gt; | DatabaseQuery对象。 |
@@ -1033,9 +1088,10 @@ async () => {
  
   
 
-#### contains
+### contains
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contains(fieldName: string, value: FieldType): DatabaseQuery&lt;T&gt;
  
@@ -1051,6 +1107,7 @@ contains(fieldName: string, value: FieldType): DatabaseQuery&lt;T&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fieldName | string | 是 | 实体类中的字段名。 |
@@ -1059,6 +1116,7 @@ contains(fieldName: string, value: FieldType): DatabaseQuery&lt;T&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DatabaseQuery&lt;T&gt; | DatabaseQuery对象。 |
@@ -1087,9 +1145,10 @@ async () => {
  
   
 
-#### greaterThan
+### greaterThan
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 greaterThan(fieldName: string, value: FieldType): DatabaseQuery&lt;T&gt;
  
@@ -1105,6 +1164,7 @@ greaterThan(fieldName: string, value: FieldType): DatabaseQuery&lt;T&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fieldName | string | 是 | 实体类中的字段名。 |
@@ -1113,6 +1173,7 @@ greaterThan(fieldName: string, value: FieldType): DatabaseQuery&lt;T&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DatabaseQuery&lt;T&gt; | DatabaseQuery对象。 |
@@ -1141,9 +1202,10 @@ async () => {
  
   
 
-#### greaterThanOrEqualTo
+### greaterThanOrEqualTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 greaterThanOrEqualTo(fieldName: string, value: FieldType): DatabaseQuery&lt;T&gt;
  
@@ -1159,6 +1221,7 @@ greaterThanOrEqualTo(fieldName: string, value: FieldType): DatabaseQuery&lt;T&gt
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fieldName | string | 是 | 实体类中的字段名。 |
@@ -1167,6 +1230,7 @@ greaterThanOrEqualTo(fieldName: string, value: FieldType): DatabaseQuery&lt;T&gt
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DatabaseQuery&lt;T&gt; | DatabaseQuery对象。 |
@@ -1195,9 +1259,10 @@ async () => {
  
   
 
-#### lessThan
+### lessThan
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 lessThan(fieldName: string, value: FieldType): DatabaseQuery&lt;T&gt;
  
@@ -1213,6 +1278,7 @@ lessThan(fieldName: string, value: FieldType): DatabaseQuery&lt;T&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fieldName | string | 是 | 实体类中的字段名。 |
@@ -1221,6 +1287,7 @@ lessThan(fieldName: string, value: FieldType): DatabaseQuery&lt;T&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DatabaseQuery&lt;T&gt; | DatabaseQuery对象。 |
@@ -1249,9 +1316,10 @@ async () => {
  
   
 
-#### lessThanOrEqualTo
+### lessThanOrEqualTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 lessThanOrEqualTo(fieldName: string, value: FieldType): DatabaseQuery&lt;T&gt;
  
@@ -1267,6 +1335,7 @@ lessThanOrEqualTo(fieldName: string, value: FieldType): DatabaseQuery&lt;T&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fieldName | string | 是 | 实体类中的字段名。 |
@@ -1275,6 +1344,7 @@ lessThanOrEqualTo(fieldName: string, value: FieldType): DatabaseQuery&lt;T&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DatabaseQuery&lt;T&gt; | DatabaseQuery对象。 |
@@ -1303,9 +1373,10 @@ async () => {
  
   
 
-#### in
+### in
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 in(fieldName: string, values: FieldType[]): DatabaseQuery&lt;T&gt;
  
@@ -1321,6 +1392,7 @@ in(fieldName: string, values: FieldType[]): DatabaseQuery&lt;T&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fieldName | string | 是 | 实体类中的字段名。 |
@@ -1329,6 +1401,7 @@ in(fieldName: string, values: FieldType[]): DatabaseQuery&lt;T&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DatabaseQuery&lt;T&gt; | DatabaseQuery对象。 |
@@ -1357,9 +1430,10 @@ async () => {
  
   
 
-#### isNull
+### isNull
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isNull(fieldName: string): DatabaseQuery&lt;T&gt;
  
@@ -1375,6 +1449,7 @@ isNull(fieldName: string): DatabaseQuery&lt;T&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fieldName | string | 是 | 实体类中的字段名。 |
@@ -1382,6 +1457,7 @@ isNull(fieldName: string): DatabaseQuery&lt;T&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DatabaseQuery&lt;T&gt; | DatabaseQuery对象。 |
@@ -1410,9 +1486,10 @@ async () => {
  
   
 
-#### isNotNull
+### isNotNull
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isNotNull(fieldName: string): DatabaseQuery&lt;T&gt;
  
@@ -1428,6 +1505,7 @@ isNotNull(fieldName: string): DatabaseQuery&lt;T&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fieldName | string | 是 | 实体类中的字段名。 |
@@ -1435,6 +1513,7 @@ isNotNull(fieldName: string): DatabaseQuery&lt;T&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DatabaseQuery&lt;T&gt; | DatabaseQuery对象。 |
@@ -1463,9 +1542,10 @@ async () => {
  
   
 
-#### orderByAsc
+### orderByAsc
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 orderByAsc(fieldName: string): DatabaseQuery&lt;T&gt;
  
@@ -1481,6 +1561,7 @@ orderByAsc(fieldName: string): DatabaseQuery&lt;T&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fieldName | string | 是 | 实体类中的字段名。 |
@@ -1488,6 +1569,7 @@ orderByAsc(fieldName: string): DatabaseQuery&lt;T&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DatabaseQuery&lt;T&gt; | DatabaseQuery对象。 |
@@ -1516,9 +1598,10 @@ async () => {
  
   
 
-#### orderByDesc
+### orderByDesc
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 orderByDesc(fieldName: string): DatabaseQuery&lt;T&gt;
  
@@ -1534,6 +1617,7 @@ orderByDesc(fieldName: string): DatabaseQuery&lt;T&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fieldName | string | 是 | 实体类中的字段名。 |
@@ -1541,6 +1625,7 @@ orderByDesc(fieldName: string): DatabaseQuery&lt;T&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DatabaseQuery&lt;T&gt; | DatabaseQuery对象。 |
@@ -1569,9 +1654,10 @@ async () => {
  
   
 
-#### orderByRandom
+### orderByRandom
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 orderByRandom(): DatabaseQuery&lt;T&gt;
  
@@ -1591,6 +1677,7 @@ orderByRandom(): DatabaseQuery&lt;T&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DatabaseQuery&lt;T&gt; | DatabaseQuery对象。 |
@@ -1619,9 +1706,10 @@ async () => {
  
   
 
-#### limit
+### limit
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 limit(count: number, offset?: number): DatabaseQuery&lt;T&gt;
  
@@ -1637,6 +1725,7 @@ limit(count: number, offset?: number): DatabaseQuery&lt;T&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | count | number | 是 | 限制可以获得的数据记录数量。 |
@@ -1645,6 +1734,7 @@ limit(count: number, offset?: number): DatabaseQuery&lt;T&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DatabaseQuery&lt;T&gt; | DatabaseQuery对象。 |
@@ -1674,9 +1764,10 @@ async () => {
  
   
 
-#### beginGroup
+### beginGroup
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 beginGroup(): DatabaseQuery&lt;T&gt;
  
@@ -1696,6 +1787,7 @@ beginGroup(): DatabaseQuery&lt;T&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DatabaseQuery&lt;T&gt; | DatabaseQuery对象。 |
@@ -1724,9 +1816,10 @@ async () => {
  
   
 
-#### endGroup
+### endGroup
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 endGroup(): DatabaseQuery&lt;T&gt;
  
@@ -1746,6 +1839,7 @@ endGroup(): DatabaseQuery&lt;T&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DatabaseQuery&lt;T&gt; | DatabaseQuery对象。 |
@@ -1774,9 +1868,10 @@ async () => {
  
   
 
-#### or
+### or
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 or(): DatabaseQuery&lt;T&gt;
  
@@ -1796,6 +1891,7 @@ or(): DatabaseQuery&lt;T&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DatabaseQuery&lt;T&gt; | DatabaseQuery对象。 |
@@ -1824,9 +1920,10 @@ async () => {
  
   
 
-#### and
+### and
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 and(): DatabaseQuery&lt;T&gt;
  
@@ -1846,6 +1943,7 @@ and(): DatabaseQuery&lt;T&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DatabaseQuery&lt;T&gt; | DatabaseQuery对象。 |

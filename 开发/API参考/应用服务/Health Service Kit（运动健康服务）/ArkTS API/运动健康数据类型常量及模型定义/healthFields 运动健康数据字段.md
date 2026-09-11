@@ -1,6 +1,6 @@
 # healthFields (运动健康数据字段)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/health-api-healthfields
 **支持设备：** Phone | Tablet | Wearable
@@ -10,7 +10,8 @@
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -24,7 +25,8 @@ import { healthStore } from '@kit.HealthServiceKit';
  
   
 
-#### AdventuresDetail
+## AdventuresDetail
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -36,6 +38,7 @@ import { healthStore } from '@kit.HealthServiceKit';
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | markPoint | MarkPoint[] | 否 | 是 | 标记点采样详情列表，若未填写，默认为空。 |
@@ -44,7 +47,8 @@ import { healthStore } from '@kit.HealthServiceKit';
  
   
 
-#### AdventuresSummary
+## AdventuresSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -56,6 +60,7 @@ import { healthStore } from '@kit.HealthServiceKit';
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | calorie | CalorieSummary | 否 | 否 | 卡路里统计。 |
@@ -67,7 +72,8 @@ import { healthStore } from '@kit.HealthServiceKit';
  
   
 
-#### Altitude
+## Altitude
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -79,6 +85,7 @@ import { healthStore } from '@kit.HealthServiceKit';
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | altitude | number | 否 | 否 | 海拔。 单位：m |
@@ -86,7 +93,8 @@ import { healthStore } from '@kit.HealthServiceKit';
  
   
 
-#### AltitudeSummary
+## AltitudeSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -98,6 +106,7 @@ import { healthStore } from '@kit.HealthServiceKit';
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | max | number | 否 | 否 | 最大值。 单位：m |
@@ -109,7 +118,8 @@ import { healthStore } from '@kit.HealthServiceKit';
  
   
 
-#### BasketballDetail
+## BasketballDetail
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -121,6 +131,7 @@ import { healthStore } from '@kit.HealthServiceKit';
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | exerciseHeartRate | ExerciseHeartRate[] | 否 | 是 | 运动心率详情列表，若未填写，默认为空。 |
@@ -130,7 +141,8 @@ import { healthStore } from '@kit.HealthServiceKit';
  
   
 
-#### BasketballFeature
+## BasketballFeature
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -142,6 +154,7 @@ import { healthStore } from '@kit.HealthServiceKit';
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | overallScore | number | 否 | 否 | 综合评分。 |
@@ -154,7 +167,8 @@ import { healthStore } from '@kit.HealthServiceKit';
  
   
 
-#### BasketballSummary
+## BasketballSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -166,6 +180,7 @@ import { healthStore } from '@kit.HealthServiceKit';
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | basketballFeature | BasketballFeature | 否 | 否 | 篮球特征数据。 |
@@ -176,7 +191,8 @@ import { healthStore } from '@kit.HealthServiceKit';
  
   
 
-#### BiathlonDetail
+## BiathlonDetail
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -188,6 +204,7 @@ import { healthStore } from '@kit.HealthServiceKit';
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | exerciseHeartRate | ExerciseHeartRate[] | 否 | 是 | 运动心率详情列表，若未填写，默认为空。 |
@@ -196,7 +213,8 @@ import { healthStore } from '@kit.HealthServiceKit';
  
   
 
-#### BiathlonSummary
+## BiathlonSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -210,6 +228,7 @@ type BiathlonSummary = SportsSummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | calorie | CalorieSummary | 否 | 否 | 卡路里统计。 |
@@ -218,7 +237,8 @@ type BiathlonSummary = SportsSummary
  
   
 
-#### BloodOxygenSaturation
+## BloodOxygenSaturation
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -230,6 +250,7 @@ type BiathlonSummary = SportsSummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | spo2 | number | 否 | 否 | 血氧饱和度。 单位：% 取值范围：(0, 100] |
@@ -237,7 +258,8 @@ type BiathlonSummary = SportsSummary
  
   
 
-#### BloodOxygenSaturationAggregation
+## BloodOxygenSaturationAggregation
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -249,6 +271,7 @@ type BiathlonSummary = SportsSummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | spo2 | Omit<AggregateMetrics, 'sum' \| 'count'> | 否 | 否 | 血氧饱和度聚合统计。 |
@@ -256,7 +279,8 @@ type BiathlonSummary = SportsSummary
  
   
 
-#### BloodPressure
+## BloodPressure
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -268,6 +292,7 @@ type BiathlonSummary = SportsSummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | bloodPressureSystolic | number | 否 | 否 | 收缩压，即高压。 单位：mmHg 取值范围： (0, ∞) |
@@ -279,7 +304,8 @@ type BiathlonSummary = SportsSummary
  
   
 
-#### BodyTemperature
+## BodyTemperature
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -291,6 +317,7 @@ type BiathlonSummary = SportsSummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | bodyTemperature | number | 否 | 否 | 体温。 单位：°C 取值范围：[34, 42] |
@@ -298,7 +325,8 @@ type BiathlonSummary = SportsSummary
  
   
 
-#### BodyTemperatureAggregation
+## BodyTemperatureAggregation
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -310,6 +338,7 @@ type BiathlonSummary = SportsSummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | bodyTemperature | Omit<AggregateMetrics, 'sum' \| 'last'> | 否 | 否 | 体温聚合统计。 |
@@ -317,7 +346,8 @@ type BiathlonSummary = SportsSummary
  
   
 
-#### BreathHoldingTestDetail
+## BreathHoldingTestDetail
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -331,6 +361,7 @@ type BreathHoldingTestDetail = SportsDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | exerciseHeartRate | ExerciseHeartRate[] | 否 | 是 | 运动心率详情列表，若未填写，默认为空。 |
@@ -338,7 +369,8 @@ type BreathHoldingTestDetail = SportsDetail
  
   
 
-#### BreathHoldingTestFeature
+## BreathHoldingTestFeature
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -350,6 +382,7 @@ type BreathHoldingTestDetail = SportsDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | diaphragmTime | number | 否 | 否 | 横膈膜打点时间。 单位：s |
@@ -357,7 +390,8 @@ type BreathHoldingTestDetail = SportsDetail
  
   
 
-#### BreathHoldingTestSummary
+## BreathHoldingTestSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -369,6 +403,7 @@ type BreathHoldingTestDetail = SportsDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | breathHoldingTestFeature | BreathHoldingTestFeature | 否 | 否 | 闭气测试特征统计。 |
@@ -377,7 +412,8 @@ type BreathHoldingTestDetail = SportsDetail
  
   
 
-#### BreathHoldingTrainDetail
+## BreathHoldingTrainDetail
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -391,6 +427,7 @@ type BreathHoldingTrainDetail = SportsDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | exerciseHeartRate | ExerciseHeartRate[] | 否 | 是 | 运动心率详情列表，若未填写，默认为空。 |
@@ -398,7 +435,8 @@ type BreathHoldingTrainDetail = SportsDetail
  
   
 
-#### BreathHoldingTrainFeature
+## BreathHoldingTrainFeature
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -410,6 +448,7 @@ type BreathHoldingTrainDetail = SportsDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | breathTime | number | 否 | 否 | 呼吸时间。 单位：s |
@@ -419,7 +458,8 @@ type BreathHoldingTrainDetail = SportsDetail
  
   
 
-#### BreathHoldingTrainSummary
+## BreathHoldingTrainSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -431,6 +471,7 @@ type BreathHoldingTrainDetail = SportsDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | breathHoldingTrainFeature | BreathHoldingTrainFeature | 否 | 否 | 闭气训练特征统计。 |
@@ -439,7 +480,8 @@ type BreathHoldingTrainDetail = SportsDetail
  
   
 
-#### Cadence
+## Cadence
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -451,6 +493,7 @@ type BreathHoldingTrainDetail = SportsDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | cadence | number | 否 | 否 | 步频。 单位：步数/分钟 取值范围：[0, ∞) |
@@ -458,7 +501,8 @@ type BreathHoldingTrainDetail = SportsDetail
  
   
 
-#### CadenceSummary
+## CadenceSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -472,6 +516,7 @@ type CadenceSummary = QuantitySummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | avg | number | 否 | 否 | 平均值。 单位：步数/分钟 取值范围：[0, ∞) |
@@ -481,7 +526,8 @@ type CadenceSummary = QuantitySummary
  
   
 
-#### CalorieSummary
+## CalorieSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -493,6 +539,7 @@ type CadenceSummary = QuantitySummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | totalCalories | number | 否 | 否 | 卡路里总和。 单位：cal 取值范围：(0, ∞) |
@@ -500,9 +547,10 @@ type CadenceSummary = QuantitySummary
  
   
 
-#### CervicalMucus
+## CervicalMucus
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 私处分泌物采样数据字段列表，继承[healthStore.SequencePoint](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/health-api-healthstore#sequencepoint)。
  
@@ -512,6 +560,7 @@ type CadenceSummary = QuantitySummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | cervicalMucus | number | 否 | 否 | 私处分泌物。 取值参考如下： 0：未选中 1：干燥 2：粘稠 3：蛋清状 4：水状 5：乳液状 |
@@ -519,7 +568,8 @@ type CadenceSummary = QuantitySummary
  
   
 
-#### CyclingDetail
+## CyclingDetail
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -531,6 +581,7 @@ type CadenceSummary = QuantitySummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | exerciseHeartRate | ExerciseHeartRate[] | 否 | 是 | 运动心率详情列表，若未填写，默认为空。 |
@@ -544,7 +595,8 @@ type CadenceSummary = QuantitySummary
  
   
 
-#### CyclingSummary
+## CyclingSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -556,6 +608,7 @@ type CadenceSummary = QuantitySummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | distance | DistanceSummary | 否 | 否 | 距离统计。 |
@@ -571,7 +624,8 @@ type CadenceSummary = QuantitySummary
  
   
 
-#### DailyActivities
+## DailyActivities
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -583,6 +637,7 @@ type CadenceSummary = QuantitySummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | step | number | 否 | 否 | 步数。 单位：步 取值范围：[0, 500) |
@@ -597,7 +652,8 @@ type CadenceSummary = QuantitySummary
  
   
 
-#### DailyActivitiesAggregation
+## DailyActivitiesAggregation
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -611,6 +667,7 @@ type CadenceSummary = QuantitySummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | step | Omit<AggregateMetrics, 'max' \| 'min' \| 'avg' \| 'last' \| 'count'> | 否 | 否 | 步数聚合统计。 |
@@ -623,7 +680,8 @@ type CadenceSummary = QuantitySummary
  
   
 
-#### DistanceSummary
+## DistanceSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -635,6 +693,7 @@ type CadenceSummary = QuantitySummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | totalDistance | number | 否 | 否 | 距离统计。 单位：m 取值范围：(0, ∞) |
@@ -642,7 +701,8 @@ type CadenceSummary = QuantitySummary
  
   
 
-#### DivingDepth
+## DivingDepth
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -654,6 +714,7 @@ type CadenceSummary = QuantitySummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | depth | number | 否 | 否 | 潜水深度。 单位：m |
@@ -661,7 +722,8 @@ type CadenceSummary = QuantitySummary
  
   
 
-#### DivingDepthSummary
+## DivingDepthSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -675,6 +737,7 @@ type DivingDepthSummary = Omit<QuantitySummary, 'min'>
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | avg | number | 否 | 否 | 平均值。 单位：m 取值范围：[0, ∞) |
@@ -683,7 +746,8 @@ type DivingDepthSummary = Omit<QuantitySummary, 'min'>
  
   
 
-#### DivingDetail
+## DivingDetail
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -695,6 +759,7 @@ type DivingDepthSummary = Omit<QuantitySummary, 'min'>
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | divingDepth | DivingDepth[] | 否 | 是 | 潜水深度详情列表，若未填写，默认为空。 |
@@ -703,7 +768,8 @@ type DivingDepthSummary = Omit<QuantitySummary, 'min'>
  
   
 
-#### DivingFeature
+## DivingFeature
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -715,6 +781,7 @@ type DivingDepthSummary = Omit<QuantitySummary, 'min'>
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | divingTime | number | 否 | 否 | 潜水时间。 单位：s |
@@ -731,7 +798,8 @@ type DivingDepthSummary = Omit<QuantitySummary, 'min'>
  
   
 
-#### DivingSummary
+## DivingSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -743,6 +811,7 @@ type DivingDepthSummary = Omit<QuantitySummary, 'min'>
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | divingFeature | DivingFeature | 否 | 否 | 自由潜水特征数据。 |
@@ -753,9 +822,10 @@ type DivingDepthSummary = Omit<QuantitySummary, 'min'>
  
   
 
-#### Dysmenorrhea
+## Dysmenorrhea
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 痛经程度采样数据字段列表，继承[healthStore.SequencePoint](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/health-api-healthstore#sequencepoint)。
  
@@ -765,6 +835,7 @@ type DivingDepthSummary = Omit<QuantitySummary, 'min'>
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | level | number | 否 | 否 | 痛经程度。 取值参考如下： 0：未选中 1：轻 2：中 3：重 |
@@ -772,7 +843,8 @@ type DivingDepthSummary = Omit<QuantitySummary, 'min'>
  
   
 
-#### EllipticalDetail
+## EllipticalDetail
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -784,6 +856,7 @@ type DivingDepthSummary = Omit<QuantitySummary, 'min'>
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | exerciseHeartRate | ExerciseHeartRate[] | 否 | 是 | 运动心率详情列表，若未填写，默认为空。 |
@@ -795,7 +868,8 @@ type DivingDepthSummary = Omit<QuantitySummary, 'min'>
  
   
 
-#### EllipticalSummary
+## EllipticalSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -807,6 +881,7 @@ type DivingDepthSummary = Omit<QuantitySummary, 'min'>
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | calorie | CalorieSummary | 否 | 否 | 卡路里统计。 |
@@ -822,7 +897,8 @@ type DivingDepthSummary = Omit<QuantitySummary, 'min'>
  
   
 
-#### Emotion
+## Emotion
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -834,6 +910,7 @@ type DivingDepthSummary = Omit<QuantitySummary, 'min'>
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | emotionStatus | number | 否 | 否 | 情绪状态。 取值范围：[0, 100) 当前运动健康App仅展示以下值： 1：不愉悦 2：平静 3：愉悦 |
@@ -841,7 +918,8 @@ type DivingDepthSummary = Omit<QuantitySummary, 'min'>
  
   
 
-#### ExerciseHeartRate
+## ExerciseHeartRate
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -853,6 +931,7 @@ type DivingDepthSummary = Omit<QuantitySummary, 'min'>
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | bpm | number | 否 | 否 | 运动心率详情。 单位：次/分钟 取值范围：(0, 255) |
@@ -860,7 +939,8 @@ type DivingDepthSummary = Omit<QuantitySummary, 'min'>
  
   
 
-#### ExerciseHeartRateSummary
+## ExerciseHeartRateSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -874,6 +954,7 @@ type ExerciseHeartRateSummary = QuantitySummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | avg | number | 否 | 否 | 平均值。 单位：次/分钟 取值范围：[0, ∞) |
@@ -883,7 +964,8 @@ type ExerciseHeartRateSummary = QuantitySummary
  
   
 
-#### GolfCourseModelDetail
+## GolfCourseModelDetail
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -895,6 +977,7 @@ type ExerciseHeartRateSummary = QuantitySummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | exerciseHeartRate | ExerciseHeartRate[] | 否 | 是 | 运动心率详情列表，若未填写，默认为空。 |
@@ -903,7 +986,8 @@ type ExerciseHeartRateSummary = QuantitySummary
  
   
 
-#### GolfCourseModelFeature
+## GolfCourseModelFeature
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -915,6 +999,7 @@ type ExerciseHeartRateSummary = QuantitySummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | golfSwingCount | number | 否 | 否 | 总挥杆数。 |
@@ -944,7 +1029,8 @@ type ExerciseHeartRateSummary = QuantitySummary
  
   
 
-#### GolfCourseModelSummary
+## GolfCourseModelSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -956,6 +1042,7 @@ type ExerciseHeartRateSummary = QuantitySummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | golfCourseModelFeature | GolfCourseModelFeature | 否 | 否 | 高尔夫场地模式特征数据。 |
@@ -969,7 +1056,8 @@ type ExerciseHeartRateSummary = QuantitySummary
  
   
 
-#### GolfPracticeDetail
+## GolfPracticeDetail
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -983,6 +1071,7 @@ type GolfPracticeDetail = SportsDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | exerciseHeartRate | ExerciseHeartRate[] | 否 | 是 | 运动心率详情列表，若未填写，默认为空。 |
@@ -990,7 +1079,8 @@ type GolfPracticeDetail = SportsDetail
  
   
 
-#### GolfPracticeFeature
+## GolfPracticeFeature
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1002,6 +1092,7 @@ type GolfPracticeDetail = SportsDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | golfSwingCount | number | 否 | 否 | 总挥杆数。 |
@@ -1014,7 +1105,8 @@ type GolfPracticeDetail = SportsDetail
  
   
 
-#### GolfPracticeSummary
+## GolfPracticeSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1026,6 +1118,7 @@ type GolfPracticeDetail = SportsDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | golfPracticeFeature | GolfPracticeFeature | 否 | 否 | 高尔夫练习场模式特征数据。 |
@@ -1035,7 +1128,8 @@ type GolfPracticeDetail = SportsDetail
  
   
 
-#### HeartRate
+## HeartRate
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1047,6 +1141,7 @@ type GolfPracticeDetail = SportsDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | bpm | number | 否 | 否 | 动态心率。 单位：次/分钟 取值范围：[0, ∞) |
@@ -1054,7 +1149,8 @@ type GolfPracticeDetail = SportsDetail
  
   
 
-#### HeartRateAggregation
+## HeartRateAggregation
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1066,6 +1162,7 @@ type GolfPracticeDetail = SportsDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | bpm | Omit<AggregateMetrics, 'avg' \| 'sum' \| 'count'> | 否 | 否 | 动态心率聚合统计。 |
@@ -1073,7 +1170,8 @@ type GolfPracticeDetail = SportsDetail
  
   
 
-#### HeartRateVariability
+## HeartRateVariability
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1085,6 +1183,7 @@ type GolfPracticeDetail = SportsDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | heartRateVariabilityRMSSD | number | 否 | 否 | 心率变异性。 单位：ms 取值范围：(0, 200] |
@@ -1092,7 +1191,8 @@ type GolfPracticeDetail = SportsDetail
  
   
 
-#### Height
+## Height
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1104,6 +1204,7 @@ type GolfPracticeDetail = SportsDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | height | number | 否 | 否 | 身高。 单位：cm |
@@ -1111,7 +1212,8 @@ type GolfPracticeDetail = SportsDetail
  
   
 
-#### Jump
+## Jump
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1123,6 +1225,7 @@ type GolfPracticeDetail = SportsDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | jumpHeight | number | 否 | 否 | 纵跃高度。 单位：m |
@@ -1131,7 +1234,8 @@ type GolfPracticeDetail = SportsDetail
  
   
 
-#### JumpingRopeDetail
+## JumpingRopeDetail
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1143,6 +1247,7 @@ type GolfPracticeDetail = SportsDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | exerciseHeartRate | ExerciseHeartRate[] | 否 | 是 | 运动心率详情列表，若未填写，默认为空。 |
@@ -1151,7 +1256,8 @@ type GolfPracticeDetail = SportsDetail
  
   
 
-#### JumpingRopeFeature
+## JumpingRopeFeature
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1163,6 +1269,7 @@ type GolfPracticeDetail = SportsDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | skipNum | number | 否 | 否 | 跳绳个数。 取值范围：[0, ∞) |
@@ -1174,7 +1281,8 @@ type GolfPracticeDetail = SportsDetail
  
   
 
-#### JumpingRopeSummary
+## JumpingRopeSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1186,6 +1294,7 @@ type GolfPracticeDetail = SportsDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | jumpingRopeFeature | JumpingRopeFeature | 否 | 否 | 跳绳特征数据。 |
@@ -1196,7 +1305,8 @@ type GolfPracticeDetail = SportsDetail
  
   
 
-#### JumpSummary
+## JumpSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1208,6 +1318,7 @@ type GolfPracticeDetail = SportsDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | jumpTimes | number | 否 | 否 | 跳跃次数。 |
@@ -1217,7 +1328,8 @@ type GolfPracticeDetail = SportsDetail
  
   
 
-#### Location
+## Location
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1229,6 +1341,7 @@ type GolfPracticeDetail = SportsDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | latitude | number | 否 | 否 | 纬度。 单位：度 取值范围：[-90, 90] |
@@ -1237,7 +1350,8 @@ type GolfPracticeDetail = SportsDetail
  
   
 
-#### LocationSummary
+## LocationSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1249,6 +1363,7 @@ type GolfPracticeDetail = SportsDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | coordinate | string | 否 | 否 | 坐标系。 取值参考如下： 'GCJ02' 'WGS84' 'BD09' |
@@ -1260,7 +1375,8 @@ type GolfPracticeDetail = SportsDetail
  
   
 
-#### MarkPoint
+## MarkPoint
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1272,6 +1388,7 @@ type GolfPracticeDetail = SportsDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | sn | number | 否 | 否 | 序号。 |
@@ -1284,9 +1401,10 @@ type GolfPracticeDetail = SportsDetail
  
   
 
-#### MenstrualCycle
+## MenstrualCycle
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 生理周期数据字段列表。
  
@@ -1296,6 +1414,7 @@ type GolfPracticeDetail = SportsDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | status | number | 否 | 否 | 当日状态。 取值参考如下： 0：普通状态 100：普通经期 101：经期第一天 102：经期最后一天 2：排卵日 300：普通预测经期 301：预测经期第一天 302：预测经期最后一天 400：普通易孕期 401：易孕期第一天 402：易孕期最后一天 403：易孕期只有一天 |
@@ -1304,9 +1423,10 @@ type GolfPracticeDetail = SportsDetail
  
   
 
-#### MenstrualCycleDetail
+## MenstrualCycleDetail
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 生理周期详情数据字段列表。
  
@@ -1316,6 +1436,7 @@ type GolfPracticeDetail = SportsDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | menstrualFlow | MenstrualFlow[] | 否 | 是 | 月经流量采样列表，若未填写，默认为空。 |
@@ -1330,9 +1451,10 @@ type GolfPracticeDetail = SportsDetail
  
   
 
-#### MenstrualFlow
+## MenstrualFlow
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 月经流量采样数据字段列表，继承[healthStore.SequencePoint](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/health-api-healthstore#sequencepoint)。
  
@@ -1342,6 +1464,7 @@ type GolfPracticeDetail = SportsDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | volume | number | 否 | 否 | 月经流量。 取值参考如下： 0：未选中 1：少 2：正常 3：多 |
@@ -1349,9 +1472,10 @@ type GolfPracticeDetail = SportsDetail
  
   
 
-#### Mood
+## Mood
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 心情采样数据字段列表，继承[healthStore.SequencePoint](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/health-api-healthstore#sequencepoint)。
  
@@ -1361,6 +1485,7 @@ type GolfPracticeDetail = SportsDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | mood | string | 否 | 否 | 心情。 取值为逗号间隔的字符串，例：'1,2,3'。 取值参考如下： 0：开心 1：悲伤 2：敏感 3：焦虑 4：生气 5：兴奋 6：压抑 7：放松 |
@@ -1368,7 +1493,8 @@ type GolfPracticeDetail = SportsDetail
  
   
 
-#### MountainHikeDetail
+## MountainHikeDetail
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1380,6 +1506,7 @@ type GolfPracticeDetail = SportsDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | exerciseHeartRate | ExerciseHeartRate[] | 否 | 是 | 运动心率详情列表，若未填写，默认为空。 |
@@ -1390,7 +1517,8 @@ type GolfPracticeDetail = SportsDetail
  
   
 
-#### MountainHikeSummary
+## MountainHikeSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1402,6 +1530,7 @@ type GolfPracticeDetail = SportsDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | distance | DistanceSummary | 否 | 否 | 距离统计。 |
@@ -1413,7 +1542,8 @@ type GolfPracticeDetail = SportsDetail
  
   
 
-#### OpenWaterSwimDetail
+## OpenWaterSwimDetail
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1425,6 +1555,7 @@ type GolfPracticeDetail = SportsDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | exerciseHeartRate | ExerciseHeartRate[] | 否 | 是 | 运动心率详情列表，若未填写，默认为空。 |
@@ -1436,7 +1567,8 @@ type GolfPracticeDetail = SportsDetail
  
   
 
-#### OpenWaterSwimFeature
+## OpenWaterSwimFeature
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1448,6 +1580,7 @@ type GolfPracticeDetail = SportsDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | pullTimes | number | 否 | 否 | 划水次数。 |
@@ -1456,7 +1589,8 @@ type GolfPracticeDetail = SportsDetail
  
   
 
-#### OpenWaterSwimSummary
+## OpenWaterSwimSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1468,6 +1602,7 @@ type GolfPracticeDetail = SportsDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | openWaterSwimFeature | OpenWaterSwimFeature | 否 | 否 | 开放水域游泳特征数据。 |
@@ -1480,9 +1615,10 @@ type GolfPracticeDetail = SportsDetail
  
   
 
-#### OvulationTestPaper
+## OvulationTestPaper
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 排卵试纸采样数据字段列表，继承[healthStore.SequencePoint](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/health-api-healthstore#sequencepoint)。
  
@@ -1492,6 +1628,7 @@ type GolfPracticeDetail = SportsDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | result | number | 否 | 否 | 结果。 取值参考如下： 0：未选中 1：阴 2：弱阳 3：强阳 |
@@ -1499,7 +1636,8 @@ type GolfPracticeDetail = SportsDetail
  
   
 
-#### PedalingCadence
+## PedalingCadence
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1511,6 +1649,7 @@ type GolfPracticeDetail = SportsDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | rpm | number | 否 | 否 | 踏频详情。 单位：转/分钟 取值范围：[0, ∞) |
@@ -1518,7 +1657,8 @@ type GolfPracticeDetail = SportsDetail
  
   
 
-#### PedalingCadenceSummary
+## PedalingCadenceSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1532,6 +1672,7 @@ type PedalingCadenceSummary = QuantitySummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | avg | number | 否 | 否 | 平均值。 单位：转/分钟 取值范围：[0, ∞) |
@@ -1541,9 +1682,10 @@ type PedalingCadenceSummary = QuantitySummary
  
   
 
-#### PhysicalSymptoms
+## PhysicalSymptoms
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 身体症状采样数据字段列表，继承[healthStore.SequencePoint](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/health-api-healthstore#sequencepoint)。
  
@@ -1553,6 +1695,7 @@ type PedalingCadenceSummary = QuantitySummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | physicalSymptoms | string | 否 | 否 | 身体症状。 取值为逗号间隔的字符串，例：'1,2,3'。 取值参考如下： 1：腹部胀痛 2：疲劳 3：呕吐 4：腰背酸痛 6：眩晕 7：头痛 8：乳房胀痛 9：腹部绞痛 10：一切正常 11：抽筋 12：浮肿 13：失眠 14：腹泻 15：小腹坠疼 16：潮热 17：点滴出血 |
@@ -1560,7 +1703,8 @@ type PedalingCadenceSummary = QuantitySummary
  
   
 
-#### PoolSwimDetail
+## PoolSwimDetail
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1572,6 +1716,7 @@ type PedalingCadenceSummary = QuantitySummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | exerciseHeartRate | ExerciseHeartRate[] | 否 | 是 | 运动心率详情列表，若未填写，默认为空。 |
@@ -1582,7 +1727,8 @@ type PedalingCadenceSummary = QuantitySummary
  
   
 
-#### PoolSwimFeature
+## PoolSwimFeature
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1594,6 +1740,7 @@ type PedalingCadenceSummary = QuantitySummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | pullTimes | number | 否 | 否 | 划水次数。 |
@@ -1604,7 +1751,8 @@ type PedalingCadenceSummary = QuantitySummary
  
   
 
-#### PoolSwimSummary
+## PoolSwimSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1616,6 +1764,7 @@ type PedalingCadenceSummary = QuantitySummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | poolSwimFeature | PoolSwimFeature | 否 | 否 | 泳池游泳特征数据。 |
@@ -1629,7 +1778,8 @@ type PedalingCadenceSummary = QuantitySummary
  
   
 
-#### Power
+## Power
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1641,6 +1791,7 @@ type PedalingCadenceSummary = QuantitySummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | power | number | 否 | 否 | 功率详情。 单位：W 取值范围：[0, ∞) |
@@ -1648,7 +1799,8 @@ type PedalingCadenceSummary = QuantitySummary
  
   
 
-#### PowerSummary
+## PowerSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1662,6 +1814,7 @@ type PowerSummary = QuantitySummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | avg | number | 否 | 否 | 平均值。 单位：W 取值范围：[0, ∞) |
@@ -1671,7 +1824,8 @@ type PowerSummary = QuantitySummary
  
   
 
-#### QuantitySummary
+## QuantitySummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1683,6 +1837,7 @@ type PowerSummary = QuantitySummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | avg | number | 否 | 否 | 平均值。 取值范围：[0, ∞) |
@@ -1692,7 +1847,8 @@ type PowerSummary = QuantitySummary
  
   
 
-#### Resistance
+## Resistance
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1704,6 +1860,7 @@ type PowerSummary = QuantitySummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | resLevel | number | 否 | 否 | 阻力等级。 取值范围：[1, 100] |
@@ -1711,7 +1868,8 @@ type PowerSummary = QuantitySummary
  
   
 
-#### ResistanceSummary
+## ResistanceSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1723,6 +1881,7 @@ type PowerSummary = QuantitySummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | resLv1LowerLimit | number | 否 | 否 | 阻力区间1下限。 取值范围：[1, 100] |
@@ -1742,7 +1901,8 @@ type PowerSummary = QuantitySummary
  
   
 
-#### RestingHeartRate
+## RestingHeartRate
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1754,6 +1914,7 @@ type PowerSummary = QuantitySummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | restBpm | number | 否 | 否 | 静息心率。 单位：次/分钟 取值范围：[0, ∞) |
@@ -1761,7 +1922,8 @@ type PowerSummary = QuantitySummary
  
   
 
-#### RestingHeartRateAggregation
+## RestingHeartRateAggregation
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1773,6 +1935,7 @@ type PowerSummary = QuantitySummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | restBpm | Omit<AggregateMetrics, 'sum' \| 'count' \| 'max' \| 'min' \| 'avg'> | 否 | 否 | 静息心率聚合统计。 |
@@ -1780,7 +1943,8 @@ type PowerSummary = QuantitySummary
  
   
 
-#### RowerDetail
+## RowerDetail
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1792,6 +1956,7 @@ type PowerSummary = QuantitySummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | exerciseHeartRate | ExerciseHeartRate[] | 否 | 是 | 运动心率详情列表，若未填写，默认为空。 |
@@ -1803,7 +1968,8 @@ type PowerSummary = QuantitySummary
  
   
 
-#### RowerFeature
+## RowerFeature
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1817,6 +1983,7 @@ type RowerFeature = RowingFeature
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | strokesNum | number | 否 | 否 | 累计桨次。 |
@@ -1824,7 +1991,8 @@ type RowerFeature = RowingFeature
  
   
 
-#### RowerSummary
+## RowerSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1836,6 +2004,7 @@ type RowerFeature = RowingFeature
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | rowerFeature | RowerFeature | 否 | 否 | 划船机特征数据。 |
@@ -1850,7 +2019,8 @@ type RowerFeature = RowingFeature
  
   
 
-#### RowingDetail
+## RowingDetail
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1862,6 +2032,7 @@ type RowerFeature = RowingFeature
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | exerciseHeartRate | ExerciseHeartRate[] | 否 | 是 | 运动心率详情列表，若未填写，默认为空。 |
@@ -1870,7 +2041,8 @@ type RowerFeature = RowingFeature
  
   
 
-#### RowingFeature
+## RowingFeature
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1882,6 +2054,7 @@ type RowerFeature = RowingFeature
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | strokesNum | number | 否 | 否 | 累计桨次。 |
@@ -1889,7 +2062,8 @@ type RowerFeature = RowingFeature
  
   
 
-#### RowingSummary
+## RowingSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1901,6 +2075,7 @@ type RowerFeature = RowingFeature
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | rowingFeature | RowingFeature | 否 | 否 | 赛艇特征数据。 |
@@ -1912,7 +2087,8 @@ type RowerFeature = RowingFeature
  
   
 
-#### RunningDetail
+## RunningDetail
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1924,6 +2100,7 @@ type RowerFeature = RowingFeature
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | exerciseHeartRate | ExerciseHeartRate[] | 否 | 是 | 运动心率详情列表，若未填写，默认为空。 |
@@ -1936,7 +2113,8 @@ type RowerFeature = RowingFeature
  
   
 
-#### RunningFeature
+## RunningFeature
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1948,6 +2126,7 @@ type RowerFeature = RowingFeature
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | avgPace | number | 否 | 否 | 平均配速。 取值范围：[0, ∞) 单位：s/km |
@@ -1958,7 +2137,8 @@ type RowerFeature = RowingFeature
  
   
 
-#### RunningForm
+## RunningForm
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1970,6 +2150,7 @@ type RowerFeature = RowingFeature
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | groundContactTime | number | 否 | 否 | 触地时间。 单位：ms 取值范围：[0, 5000] |
@@ -1989,7 +2170,8 @@ type RowerFeature = RowingFeature
  
   
 
-#### RunningFormSummary
+## RunningFormSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2001,6 +2183,7 @@ type RowerFeature = RowingFeature
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | avgGroundContactTime | number | 否 | 否 | 平均触地时间。 单位：ms 取值范围：[0, 5000] |
@@ -2021,7 +2204,8 @@ type RowerFeature = RowingFeature
  
   
 
-#### RunningSummary
+## RunningSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2033,6 +2217,7 @@ type RowerFeature = RowingFeature
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | distance | DistanceSummary | 否 | 否 | 距离统计。 |
@@ -2049,7 +2234,8 @@ type RowerFeature = RowingFeature
  
   
 
-#### ScubaDivingDetail
+## ScubaDivingDetail
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2061,6 +2247,7 @@ type RowerFeature = RowingFeature
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | divingDepth | DivingDepth[] | 否 | 是 | 潜水深度详情列表，若未填写，默认为空。 |
@@ -2069,7 +2256,8 @@ type RowerFeature = RowingFeature
  
   
 
-#### ScubaDivingFeature
+## ScubaDivingFeature
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2081,6 +2269,7 @@ type RowerFeature = RowingFeature
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | divingTime | number | 否 | 否 | 潜水时间。 单位：s |
@@ -2099,7 +2288,8 @@ type RowerFeature = RowingFeature
  
   
 
-#### ScubaDivingSummary
+## ScubaDivingSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2111,6 +2301,7 @@ type RowerFeature = RowingFeature
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | scubaDivingFeature | ScubaDivingFeature | 否 | 否 | 水肺潜水特征数据。 |
@@ -2121,9 +2312,10 @@ type RowerFeature = RowingFeature
  
   
 
-#### Sexuality
+## Sexuality
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 性行为采样数据字段列表，继承[healthStore.SequencePoint](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/health-api-healthstore#sequencepoint)。
  
@@ -2133,6 +2325,7 @@ type RowerFeature = RowingFeature
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | sexuality | number | 否 | 否 | 性行为。 取值参考如下： 0：未选中 1：无 2：有保护 3：无保护 |
@@ -2140,7 +2333,8 @@ type RowerFeature = RowingFeature
  
   
 
-#### SkiingDetail
+## SkiingDetail
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2154,6 +2348,7 @@ type SkiingDetail = MountainHikeDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | exerciseHeartRate | ExerciseHeartRate[] | 否 | 是 | 运动心率详情列表，若未填写，默认为空。 |
@@ -2164,7 +2359,8 @@ type SkiingDetail = MountainHikeDetail
  
   
 
-#### SkiingFeature
+## SkiingFeature
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2176,6 +2372,7 @@ type SkiingDetail = MountainHikeDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | tripTimes | number | 否 | 否 | 趟数。 |
@@ -2187,7 +2384,8 @@ type SkiingDetail = MountainHikeDetail
  
   
 
-#### SkiingSummary
+## SkiingSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2199,6 +2397,7 @@ type SkiingDetail = MountainHikeDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | distance | DistanceSummary | 否 | 否 | 距离统计。 |
@@ -2210,9 +2409,10 @@ type SkiingDetail = MountainHikeDetail
  
   
 
-#### Skin
+## Skin
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 皮肤状态采样数据字段列表，继承[healthStore.SequencePoint](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/health-api-healthstore#sequencepoint)。
  
@@ -2222,6 +2422,7 @@ type SkiingDetail = MountainHikeDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | skinStatus | string | 否 | 否 | 皮肤状态。 取值参考如下： 0：未选中 1：好 2：出油 4：干燥 8：粉刺 16：冒痘 |
@@ -2229,7 +2430,8 @@ type SkiingDetail = MountainHikeDetail
  
   
 
-#### SkinTemperature
+## SkinTemperature
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2241,6 +2443,7 @@ type SkiingDetail = MountainHikeDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | skinTemperature | number | 否 | 否 | 皮肤温度。 单位：°C 取值范围：[20, 42] |
@@ -2248,7 +2451,8 @@ type SkiingDetail = MountainHikeDetail
  
   
 
-#### SkinTemperatureAggregation
+## SkinTemperatureAggregation
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2260,6 +2464,7 @@ type SkiingDetail = MountainHikeDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | skinTemperature | Omit<AggregateMetrics, 'sum' \| 'last'> | 否 | 否 | 皮肤体温聚合统计。 |
@@ -2267,7 +2472,8 @@ type SkiingDetail = MountainHikeDetail
  
   
 
-#### SkipSpeed
+## SkipSpeed
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2279,6 +2485,7 @@ type SkiingDetail = MountainHikeDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | skipSpeed | number | 否 | 否 | 跳绳速度详情。 单位：个/分钟 取值范围：[0, ∞) |
@@ -2286,7 +2493,8 @@ type SkiingDetail = MountainHikeDetail
  
   
 
-#### SkipSpeedSummary
+## SkipSpeedSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2300,6 +2508,7 @@ type SkipSpeedSummary = QuantitySummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | avg | number | 否 | 否 | 平均值。 单位：个/分钟 取值范围：[0, ∞) |
@@ -2309,7 +2518,8 @@ type SkipSpeedSummary = QuantitySummary
  
   
 
-#### SledDetail
+## SledDetail
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2321,6 +2531,7 @@ type SkipSpeedSummary = QuantitySummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | exerciseHeartRate | ExerciseHeartRate[] | 否 | 是 | 运动心率详情列表，若未填写，默认为空。 |
@@ -2329,7 +2540,8 @@ type SkipSpeedSummary = QuantitySummary
  
   
 
-#### SledSummary
+## SledSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2343,6 +2555,7 @@ type SledSummary = SportsSummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | calorie | CalorieSummary | 否 | 否 | 热量统计。 |
@@ -2351,7 +2564,8 @@ type SledSummary = SportsSummary
  
   
 
-#### Sleep
+## Sleep
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2363,6 +2577,7 @@ type SledSummary = SportsSummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | fallAsleepTime | number | 否 | 否 | 分期睡眠最早入睡时间点。 单位：ms 取值范围：[0, ∞) |
@@ -2390,7 +2605,8 @@ type SledSummary = SportsSummary
  
   
 
-#### SleepDetail
+## SleepDetail
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2402,6 +2618,7 @@ type SledSummary = SportsSummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | sleepSegment | SleepSegment[] | 否 | 是 | 睡眠状态采样列表，若未填写，默认设置覆盖全部睡眠时间的详情，睡眠状态值为7。 |
@@ -2409,7 +2626,8 @@ type SledSummary = SportsSummary
  
   
 
-#### SleepNap
+## SleepNap
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2421,6 +2639,7 @@ type SledSummary = SportsSummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | noonDuration | number | 否 | 否 | 午睡时长(零星小睡）。 单位：s 取值范围：[0, ∞) |
@@ -2429,7 +2648,8 @@ type SledSummary = SportsSummary
  
   
 
-#### SleepSegment
+## SleepSegment
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2441,6 +2661,7 @@ type SledSummary = SportsSummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | sleepStatus | number | 否 | 否 | 睡眠状态。 取值范围： 0：未知 1：深睡 2：浅睡 3：REM 4：清醒 5：午睡（零星小睡） 6：卧床 7：睡眠（手工） |
@@ -2449,7 +2670,8 @@ type SledSummary = SportsSummary
  
   
 
-#### SnowboardingDetail
+## SnowboardingDetail
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2463,6 +2685,7 @@ type SnowboardingDetail = MountainHikeDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | exerciseHeartRate | ExerciseHeartRate[] | 否 | 是 | 运动心率详情列表，若未填写，默认为空。 |
@@ -2473,7 +2696,8 @@ type SnowboardingDetail = MountainHikeDetail
  
   
 
-#### SnowboardingFeature
+## SnowboardingFeature
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2487,6 +2711,7 @@ type SnowboardingFeature = SkiingFeature
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | tripTimes | number | 否 | 否 | 趟数。 |
@@ -2498,7 +2723,8 @@ type SnowboardingFeature = SkiingFeature
  
   
 
-#### SnowboardingSummary
+## SnowboardingSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2510,6 +2736,7 @@ type SnowboardingFeature = SkiingFeature
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | distance | DistanceSummary | 否 | 否 | 距离统计。 |
@@ -2521,7 +2748,8 @@ type SnowboardingFeature = SkiingFeature
  
   
 
-#### Speed
+## Speed
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2533,6 +2761,7 @@ type SnowboardingFeature = SkiingFeature
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | speed | number | 否 | 否 | 速度详情。 单位：m/s 取值范围：[0, ∞) |
@@ -2540,7 +2769,8 @@ type SnowboardingFeature = SkiingFeature
  
   
 
-#### SpeedSummary
+## SpeedSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2554,6 +2784,7 @@ type SpeedSummary = QuantitySummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | avg | number | 否 | 否 | 平均值。 单位：m/s 取值范围：[0, ∞) |
@@ -2563,7 +2794,8 @@ type SpeedSummary = QuantitySummary
  
   
 
-#### SportsDetail
+## SportsDetail
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2575,6 +2807,7 @@ type SpeedSummary = QuantitySummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | exerciseHeartRate | ExerciseHeartRate[] | 否 | 是 | 运动心率详情列表，若未填写，默认为空。 |
@@ -2582,7 +2815,8 @@ type SpeedSummary = QuantitySummary
  
   
 
-#### SportsSummary
+## SportsSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2594,6 +2828,7 @@ type SpeedSummary = QuantitySummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | calorie | CalorieSummary | 否 | 否 | 热量统计。 |
@@ -2602,7 +2837,8 @@ type SpeedSummary = QuantitySummary
  
   
 
-#### StepSummary
+## StepSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2614,6 +2850,7 @@ type SpeedSummary = QuantitySummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | totalSteps | number | 否 | 否 | 步数总值。 取值范围：(0, ∞) |
@@ -2621,7 +2858,8 @@ type SpeedSummary = QuantitySummary
  
   
 
-#### Stress
+## Stress
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2633,6 +2871,7 @@ type SpeedSummary = QuantitySummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | stressScore | number | 否 | 否 | 压力得分。 取值范围：[1, 99] |
@@ -2640,7 +2879,8 @@ type SpeedSummary = QuantitySummary
  
   
 
-#### StressAggregation
+## StressAggregation
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2652,6 +2892,7 @@ type SpeedSummary = QuantitySummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | stressScore | Omit<AggregateMetrics, 'sum'> | 否 | 否 | 压力得分聚合统计。 |
@@ -2659,7 +2900,8 @@ type SpeedSummary = QuantitySummary
  
   
 
-#### StrokeRate
+## StrokeRate
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2671,6 +2913,7 @@ type SpeedSummary = QuantitySummary
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | spm | number | 否 | 否 | 桨频。 单位：次/分钟 |
@@ -2678,7 +2921,8 @@ type SpeedSummary = QuantitySummary
  
   
 
-#### StrokeRateSummary
+## StrokeRateSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2692,6 +2936,7 @@ type StrokeRateSummary = Omit<QuantitySummary, 'min'>
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | avg | number | 否 | 否 | 平均值。 单位：次/分钟 取值范围: [0, ∞) |
@@ -2700,7 +2945,8 @@ type StrokeRateSummary = Omit<QuantitySummary, 'min'>
  
   
 
-#### SwimStrokeRate
+## SwimStrokeRate
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2712,6 +2958,7 @@ type StrokeRateSummary = Omit<QuantitySummary, 'min'>
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | spm | number | 否 | 否 | 游泳划水频率。 单位：次/分钟 |
@@ -2719,7 +2966,8 @@ type StrokeRateSummary = Omit<QuantitySummary, 'min'>
  
   
 
-#### SwimStrokeRateSummary
+## SwimStrokeRateSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2733,6 +2981,7 @@ type SwimStrokeRateSummary = Omit<QuantitySummary, 'max' | 'min'>
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | avg | number | 否 | 否 | 平均值。 单位：次/分钟 取值范围: [0, ∞) |
@@ -2740,7 +2989,8 @@ type SwimStrokeRateSummary = Omit<QuantitySummary, 'max' | 'min'>
  
   
 
-#### Swolf
+## Swolf
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2752,6 +3002,7 @@ SWOLF采样数据字段列表，继承[healthStore.SequencePoint](https://develo
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | swolf | number | 否 | 否 | SWOLF. |
@@ -2759,7 +3010,8 @@ SWOLF采样数据字段列表，继承[healthStore.SequencePoint](https://develo
  
   
 
-#### SwolfSummary
+## SwolfSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2773,6 +3025,7 @@ SWOLF统计数据字段列表。
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | avg | number | 否 | 否 | 平均值。 取值范围: [0, ∞) |
@@ -2782,7 +3035,8 @@ SWOLF统计数据字段列表。
  
   
 
-#### WalkingDetail
+## WalkingDetail
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2794,6 +3048,7 @@ SWOLF统计数据字段列表。
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | exerciseHeartRate | ExerciseHeartRate[] | 否 | 是 | 运动心率详情列表，若未填写，默认为空。 |
@@ -2805,7 +3060,8 @@ SWOLF统计数据字段列表。
  
   
 
-#### WalkingSummary
+## WalkingSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2817,6 +3073,7 @@ SWOLF统计数据字段列表。
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | distance | DistanceSummary | 否 | 否 | 距离统计。 |
@@ -2831,7 +3088,8 @@ SWOLF统计数据字段列表。
  
   
 
-#### WaterTemperature
+## WaterTemperature
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2843,6 +3101,7 @@ SWOLF统计数据字段列表。
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | temperature | number | 否 | 否 | 温度。 单位：°C |
@@ -2850,7 +3109,8 @@ SWOLF统计数据字段列表。
  
   
 
-#### WaterTemperatureSummary
+## WaterTemperatureSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2864,6 +3124,7 @@ type WaterTemperatureSummary = Omit<QuantitySummary, 'avg'>
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | max | number | 否 | 否 | 最大值。 单位：°C 取值范围: [0, ∞) |
@@ -2872,7 +3133,8 @@ type WaterTemperatureSummary = Omit<QuantitySummary, 'avg'>
  
   
 
-#### Weight
+## Weight
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2884,6 +3146,7 @@ type WaterTemperatureSummary = Omit<QuantitySummary, 'avg'>
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | bodyWeight | number | 否 | 否 | 体重。 单位：kg 取值范围：[0.1, 500] |

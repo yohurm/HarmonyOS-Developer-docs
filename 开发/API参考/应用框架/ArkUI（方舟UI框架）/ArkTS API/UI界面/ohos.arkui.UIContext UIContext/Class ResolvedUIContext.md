@@ -1,9 +1,9 @@
 # Class (ResolvedUIContext)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-resolveduicontext
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ResolvedUIContext用于表示通过[resolveUIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#resolveuicontext22)获取到的UIContext实例及其解析策略，适用于需要获取并识别UIContext来源策略的场景。
  
@@ -12,9 +12,10 @@ ResolvedUIContext用于表示通过[resolveUIContext](https://developer.huawei.c
 
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
  
@@ -22,6 +23,7 @@ ResolvedUIContext用于表示通过[resolveUIContext](https://developer.huawei.c
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | strategy | ResolveStrategy | 否 | 否 | UIContext的解析策略，用于标识resolveUIContext返回该UIContext实例时采用的解析规则。 |

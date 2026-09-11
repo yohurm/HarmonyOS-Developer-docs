@@ -1,20 +1,21 @@
 # Class (AVCastPickerHelper)
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-avsession-avcastpickerhelper
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-投播半模态对象，可拉起半模态窗口，选择投播设备。在使用前，需要创建AVCastPickerHelper实例。
+投播选择器对象，样式显示为半模态，实际会绑定全模态页面，可用于选择本地和投播设备。在使用前，需要创建AVCastPickerHelper实例。
 
 > [!NOTE]
-> 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 本Class首批接口从API version 14开始支持。 AVCastPickerHelper样式显示为半模态，实际会绑定 全模态页面（bindContentCover） 。
+> 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 本Class首批接口从API version 14开始支持。 AVCastPickerHelper样式显示为半模态，实际会绑定 全模态页面（bindContentCover） 。 本模块从API版本26.0.0开始支持Wearable设备。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { avSession } from '@kit.AVSessionKit';
@@ -22,7 +23,8 @@ import { avSession } from '@kit.AVSessionKit';
 
 
 
-#### constructor14+
+## constructor14+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -36,6 +38,7 @@ constructor(context: Context)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文（仅支持UIAbilityContext）。 |
@@ -44,6 +47,7 @@ constructor(context: Context)
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[媒体会话管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avsession)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -81,7 +85,8 @@ struct Index {
 
 
 
-#### select14+
+## select14+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -95,12 +100,14 @@ select(options?: AVCastPickerOptions): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | AVCastPickerOptions | 否 | AVCastPicker选择选项。无此参数时，以AVCastPickerOptions默认值拉起。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -110,6 +117,7 @@ select(options?: AVCastPickerOptions): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -143,19 +151,21 @@ this.avCastPicker.select(avCastPickerOptions).then(() => {
 
 
 
-#### resetCommunicationDevice21+
+## resetCommunicationDevice21+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 resetCommunicationDevice(): Promise&lt;void&gt;
 
-将应用通话设备恢复至默认设备。例如，在语音通话场景下，手机设备的通话装置将恢复为听筒。使用Promise异步回调。
+将应用通话设备恢复至默认设备。例如，在语音通话场景下，手机设备的通话设备将恢复为听筒。使用Promise异步回调。
 
 **元服务API：** 从API version 21开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVCast
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -178,7 +188,8 @@ async function avCastPicker(context: common.Context) {
 
 
 
-#### on('pickerStateChange')14+
+## on('pickerStateChange')14+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -194,6 +205,7 @@ on(type: 'pickerStateChange', callback: Callback&lt;AVCastPickerState&gt;) : voi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持事件'pickerStateChange'：当半模态窗口变化时，触发该事件。 |
@@ -203,6 +215,7 @@ on(type: 'pickerStateChange', callback: Callback&lt;AVCastPickerState&gt;) : voi
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[媒体会话管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avsession)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -227,7 +240,8 @@ async function onPickerStateChange(context: common.Context) {
 
 
 
-#### off('pickerStateChange')14+
+## off('pickerStateChange')14+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -241,15 +255,17 @@ off(type: 'pickerStateChange', callback?: Callback&lt;AVCastPickerState&gt;) : v
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 取消对应的监听事件，支持事件'pickerStateChange'。 |
-| callback | Callback&lt;AVCastPickerState&gt; | 否 | 回调函数，参数state是变化后的半模态窗口状态。 当监听事件取消成功，err为undefined，否则返回错误对象。 该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
+| type | string | 是 | 需要取消的监听事件类型，当前支持的事件类型为'pickerStateChange'。 |
+| callback | Callback&lt;AVCastPickerState&gt; | 否 | 需要取消的回调函数，与on接口注册时的回调函数保持一致。如果不填写该参数，则取消所有已注册的回调。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[媒体会话管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avsession)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

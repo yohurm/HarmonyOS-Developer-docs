@@ -1,17 +1,17 @@
 # @ohos.commonEventManager (公共事件模块)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-commoneventmanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供公共事件的发布、订阅、取消订阅等能力。公共事件是一种系统级的事件通知机制，允许应用在系统状态变化（如开机完成、电量变化、屏幕亮灭等）或业务自定义事件发生时，向订阅了该事件的应用发送通知，实现跨组件、跨应用的信息传递。
 
 本模块涉及的关键概念：
 
- - 无序公共事件：CES在转发公共事件时，不考虑订阅者是否接收到该事件，也不保证订阅者接收到该事件的顺序与其订阅顺序一致。
- - 有序公共事件：CES在转发公共事件时，根据订阅者设置的优先级等级，优先将公共事件发送给优先级较高的订阅者，等待其成功接收该公共事件之后再将事件发送给优先级较低的订阅者。如果有多个订阅者具有相同的优先级，则他们将随机接收到公共事件。
- - 粘性公共事件：能够让订阅者收到在订阅前已经发送的公共事件就是粘性公共事件。普通的公共事件只能在订阅后发送才能收到，而粘性公共事件的特殊性就是可以先发送后订阅，同时也支持先订阅后发送。发送粘性公共事件必须是系统应用或系统服务。
+ - [无序公共事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/common-event-glossary#unordered-common-event无序公共事件)：CES在转发公共事件时，不考虑订阅者是否接收到该事件，也不保证订阅者接收到该事件的顺序与其订阅顺序一致。
+ - [有序公共事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/common-event-glossary#ordered-common-event有序公共事件)：CES在转发公共事件时，根据订阅者设置的优先级等级，优先将公共事件发送给优先级较高的订阅者，等待其成功接收该公共事件之后再将事件发送给优先级较低的订阅者。如果有多个订阅者具有相同的优先级，则他们将随机接收到公共事件。
+ - [粘性公共事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/common-event-glossary#sticky-common-event粘性公共事件)：能够让订阅者收到在订阅前已经发送的公共事件就是粘性公共事件。普通的公共事件只能在订阅后发送才能收到，而粘性公共事件的特殊性就是可以先发送后订阅，同时也支持先订阅后发送。发送粘性公共事件必须是系统应用或系统服务。
 
 
 **API 组合使用关系说明：**
@@ -38,9 +38,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { commonEventManager } from '@kit.BasicServicesKit';
@@ -48,17 +49,19 @@ import { commonEventManager } from '@kit.BasicServicesKit';
 
 
 
-#### Support
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-系统公共事件是指由系统服务或系统应用发布的事件，订阅这些公共事件需要特定的权限，并使用相应的事件值，详见[系统定义的公共事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/commoneventmanager-definitions)。
+## Support
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### commonEventManager.publish
+[系统公共事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/common-event-glossary#system-common-event系统公共事件)是指由系统服务或系统应用发布的事件，订阅这些公共事件需要特定的权限，并使用相应的事件值，详见[系统定义的公共事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/commoneventmanager-definitions)。
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+## commonEventManager.publish
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 publish(event: string, callback: AsyncCallback&lt;void&gt;): void
 
@@ -70,6 +73,7 @@ publish(event: string, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 表示要发布的公共事件。详见系统定义的公共事件。 |
@@ -79,6 +83,7 @@ publish(event: string, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[公共事件错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-commoneventservice)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -110,9 +115,10 @@ try {
 
 
 
-#### commonEventManager.publish
+## commonEventManager.publish
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 publish(event: string, options: CommonEventPublishData, callback: AsyncCallback&lt;void&gt;): void
 
@@ -124,6 +130,7 @@ publish(event: string, options: CommonEventPublishData, callback: AsyncCallback&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 表示要发布的公共事件。详见系统定义的公共事件。 |
@@ -134,6 +141,7 @@ publish(event: string, options: CommonEventPublishData, callback: AsyncCallback&
 **错误码：**
 
 以下错误码的详细介绍请参见[公共事件错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-commoneventservice)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -172,9 +180,10 @@ try {
 
 
 
-#### commonEventManager.createSubscriber
+## commonEventManager.createSubscriber
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createSubscriber(subscribeInfo: CommonEventSubscribeInfo, callback: AsyncCallback&lt;CommonEventSubscriber&gt;): void
 
@@ -186,6 +195,7 @@ createSubscriber(subscribeInfo: CommonEventSubscribeInfo, callback: AsyncCallbac
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | subscribeInfo | CommonEventSubscribeInfo | 是 | 表示订阅信息。 |
@@ -195,6 +205,7 @@ createSubscriber(subscribeInfo: CommonEventSubscribeInfo, callback: AsyncCallbac
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -232,9 +243,10 @@ try {
 
 
 
-#### commonEventManager.createSubscriber
+## commonEventManager.createSubscriber
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createSubscriber(subscribeInfo: CommonEventSubscribeInfo): Promise&lt;CommonEventSubscriber&gt;
 
@@ -246,12 +258,14 @@ createSubscriber(subscribeInfo: CommonEventSubscribeInfo): Promise&lt;CommonEven
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | subscribeInfo | CommonEventSubscribeInfo | 是 | 表示订阅信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -261,6 +275,7 @@ createSubscriber(subscribeInfo: CommonEventSubscribeInfo): Promise&lt;CommonEven
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -289,9 +304,10 @@ commonEventManager.createSubscriber(subscribeInfo).then((commonEventSubscriber: 
 
 
 
-#### commonEventManager.createSubscriberSync10+
+## commonEventManager.createSubscriberSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createSubscriberSync(subscribeInfo: CommonEventSubscribeInfo): CommonEventSubscriber
 
@@ -303,12 +319,14 @@ createSubscriberSync(subscribeInfo: CommonEventSubscribeInfo): CommonEventSubscr
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | subscribeInfo | CommonEventSubscribeInfo | 是 | 表示订阅信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -318,6 +336,7 @@ createSubscriberSync(subscribeInfo: CommonEventSubscribeInfo): CommonEventSubscr
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -346,9 +365,10 @@ try {
 
 
 
-#### commonEventManager.subscribe
+## commonEventManager.subscribe
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 subscribe(subscriber: CommonEventSubscriber, callback: AsyncCallback&lt;CommonEventData&gt;): void
 
@@ -360,6 +380,7 @@ subscribe(subscriber: CommonEventSubscriber, callback: AsyncCallback&lt;CommonEv
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | subscriber | CommonEventSubscriber | 是 | 表示订阅者对象。 |
@@ -369,6 +390,7 @@ subscribe(subscriber: CommonEventSubscriber, callback: AsyncCallback&lt;CommonEv
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[公共事件错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-commoneventservice)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -422,9 +444,10 @@ try {
 
 
 
-#### commonEventManager.unsubscribe
+## commonEventManager.unsubscribe
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unsubscribe(subscriber: CommonEventSubscriber, callback?: AsyncCallback&lt;void&gt;): void
 
@@ -436,6 +459,7 @@ unsubscribe(subscriber: CommonEventSubscriber, callback?: AsyncCallback&lt;void&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | subscriber | CommonEventSubscriber | 是 | 表示订阅者对象。 |
@@ -445,6 +469,7 @@ unsubscribe(subscriber: CommonEventSubscriber, callback?: AsyncCallback&lt;void&
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[公共事件错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-commoneventservice)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -517,9 +542,10 @@ setTimeout(() => {
 
 
 
-#### commonEventManager.subscribeToEvent20+
+## commonEventManager.subscribeToEvent20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 subscribeToEvent(subscriber: CommonEventSubscriber, callback: Callback&lt;CommonEventData&gt;): Promise&lt;void&gt;
 
@@ -531,6 +557,7 @@ subscribeToEvent(subscriber: CommonEventSubscriber, callback: Callback&lt;Common
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | subscriber | CommonEventSubscriber | 是 | 表示订阅者对象。 |
@@ -538,6 +565,7 @@ subscribeToEvent(subscriber: CommonEventSubscriber, callback: Callback&lt;Common
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -547,6 +575,7 @@ subscribeToEvent(subscriber: CommonEventSubscriber, callback: Callback&lt;Common
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[公共事件错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-commoneventservice)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -600,9 +629,10 @@ try {
 
 
 
-#### CommonEventData10+
+## CommonEventData10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type CommonEventData = _CommonEventData
 
@@ -612,6 +642,7 @@ type CommonEventData = _CommonEventData
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _CommonEventData | 表示公共事件的数据。 |
@@ -619,9 +650,10 @@ type CommonEventData = _CommonEventData
 
 
 
-#### CommonEventSubscriber10+
+## CommonEventSubscriber10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type CommonEventSubscriber = _CommonEventSubscriber
 
@@ -631,6 +663,7 @@ type CommonEventSubscriber = _CommonEventSubscriber
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _CommonEventSubscriber | 描述公共事件的订阅者。 |
@@ -638,9 +671,10 @@ type CommonEventSubscriber = _CommonEventSubscriber
 
 
 
-#### CommonEventSubscribeInfo10+
+## CommonEventSubscribeInfo10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type CommonEventSubscribeInfo = _CommonEventSubscribeInfo
 
@@ -650,6 +684,7 @@ type CommonEventSubscribeInfo = _CommonEventSubscribeInfo
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _CommonEventSubscribeInfo | 用于表示订阅者的信息。 |
@@ -657,9 +692,10 @@ type CommonEventSubscribeInfo = _CommonEventSubscribeInfo
 
 
 
-#### CommonEventPublishData10+
+## CommonEventPublishData10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type CommonEventPublishData = _CommonEventPublishData
 
@@ -668,6 +704,7 @@ type CommonEventPublishData = _CommonEventPublishData
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
+
 
 | 类型 | 说明 |
 | --- | --- |

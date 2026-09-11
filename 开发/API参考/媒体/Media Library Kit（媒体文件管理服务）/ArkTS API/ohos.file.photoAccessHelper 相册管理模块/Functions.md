@@ -1,18 +1,19 @@
 # Functions
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-photoaccesshelper-f
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
@@ -20,9 +21,10 @@ import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
 
 
-#### photoAccessHelper.getPhotoAccessHelper
+## photoAccessHelper.getPhotoAccessHelper
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPhotoAccessHelper(context: Context): PhotoAccessHelper
 
@@ -36,12 +38,14 @@ getPhotoAccessHelper(context: Context): PhotoAccessHelper
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 传入Ability实例的上下文。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -52,6 +56,7 @@ getPhotoAccessHelper(context: Context): PhotoAccessHelper
 
 接口抛出错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
@@ -60,16 +65,17 @@ getPhotoAccessHelper(context: Context): PhotoAccessHelper
 **示例：**
 
 ```text
-// 此处获取的phAccessHelper实例为全局对象，后续使用到phAccessHelper的地方默认为使用此处获取的对象，如未添加此段代码报phAccessHelper未定义的错误请自行添加。
+// phAccessHelper为全局对象，后续使用时请确保已获取该实例。
 // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
 import { common } from '@kit.AbilityKit';
+import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
 @Entry
 @Component
 struct Index {
   build() {
     Row() {
-      Button("example").onClick(async () => {
+        Button('example').onClick(async () => {
         let context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
         let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
       }).width('100%')

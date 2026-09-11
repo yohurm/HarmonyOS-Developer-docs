@@ -1,6 +1,6 @@
 # 音频编创开发概述(C/C++)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-suite
 
@@ -15,7 +15,7 @@
 
 
 
-#### 引擎
+## 引擎
 
 [OHAudioSuite](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohaudiosuite)中的引擎是一个统一管理音频管线、控制[离线编辑(C/C++)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-suite-manual-rendering)和[实时预览(C/C++)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-suite-real-time-rendering)的对象，开发者可以根据自身的需求搭建音频处理链。调用方式如上图所示，由应用发起，先调用[OHAudioSuite](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohaudiosuite)的接口依次创建引擎、管线、节点，再把创建的节点在管线内连接起来，用于传输PCM（Pulse Code Modulation）音频数据，使对应的效果节点实现音效处理能力。当管线停止时，开发者可以有限制地（具体规则请参考[管线的使用规则](#管线的使用规则)）连接、断开和移除节点，通过调节节点编排实现复杂的音效处理。
 
@@ -23,28 +23,29 @@
 
 
 
-#### 节点
+## 节点
 
 
 
-#### 节点的介绍
+### 节点的介绍
 
 节点是音频渲染的最小单元，根据节点功能提供对应的音效处理能力，节点本身无法单独调用，必须依附管线和引擎才能使用。
 
 [OHAudioSuite](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohaudiosuite)支持三种节点类型，分别是输入节点、输出节点、效果节点。
 
+
 | 节点类型 | 说明 |
 | --- | --- |
-| INPUT_NODE | 输入节点，支持开发者输入各种格式的PCM音频数据。 |
-| EFFECT_NODE | 效果节点，添加音频效果，支持单输入单输出和多输入单输出。 |
-| OUTPUT_NODE | 输出节点，支持设置输出的PCM音频格式。 |
+| 输入节点 | 支持输入各种格式的PCM音频数据。 |
+| 效果节点 | 提供音频效果处理功能。 当前支持的效果节点及详细说明请参考音频效果(C/C++)。 |
+| 输出节点 | 支持设置输出音频的PCM格式。 |
 
 
 节点完整类型详见[OH_AudioNode_Type](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-audio-suite-base-h#oh_audionode_type)。
 
 
 
-#### 节点的作用
+### 节点的作用
 
  - 输入节点负责处理PCM音频数据输入，从应用侧获取数据。
  - 输出节点负责处理PCM音频数据输出，开发者可以设置音频数据的输出格式。
@@ -55,7 +56,7 @@
 
 
 
-#### 管线
+## 管线
 
 管线是一个统一管理音频节点连接、配置的对象，支持两种工作模式，分别是[离线编辑(C/C++)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-suite-manual-rendering)和[实时预览(C/C++)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-suite-real-time-rendering)。
 
@@ -69,6 +70,7 @@
 
 状态的功能如下表所示。
 
+
 | 状态名 | 功能 |
 | --- | --- |
 | stopped | 初始状态，或者工作状态经过OH_AudioSuiteEngine_StopPipeline()命令进入该状态。 切换到stopped状态后，各节点将释放缓存。 |
@@ -77,7 +79,7 @@
 
 
 
-#### 管线的作用
+### 管线的作用
 
  - 管线是[OHAudioSuite](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohaudiosuite)中支持应用渲染PCM音频数据的音效链路。管线支持节点之间的灵活组网，给开发者提供更丰富、更灵活的音频编创体验。
  - 管线使用的场景如下：
@@ -87,7 +89,7 @@
 
 
 
-#### 管线的使用规则
+### 管线的使用规则
 
 管线由节点编排组成，管线创建节点规则如下所示。
 
@@ -113,6 +115,6 @@
 
 
 
-#### 完整示例代码
+## 完整示例代码
 
  - [音频编创示例代码](https://gitcode.com/HarmonyOS_Samples/guide-snippets/tree/master/Media/Audio/AudioSuiteSample)

@@ -1,9 +1,9 @@
 # 日期滑动选择器弹窗 (DatePickerDialog)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-datepicker-dialog
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 根据指定的日期范围创建日期滑动选择器并展示在弹窗上。该组件适用于需要用户快速选择日期的应用场景，如日程安排、活动安排、生日设置等。使用该组件可以简化开发流程，提供统一的日期选择用户体验，并支持多种自定义选项以满足不同需求。
 
@@ -12,15 +12,17 @@
 
 
 
-#### DatePickerDialog
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## DatePickerDialog
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### show(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### show(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 static show(options?: DatePickerDialogOptions)
 
@@ -38,6 +40,7 @@ static show(options?: DatePickerDialogOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | DatePickerDialogOptions | 否 | 配置日期选择器弹窗的参数，缺省时不弹出弹窗。 |
@@ -45,9 +48,10 @@ static show(options?: DatePickerDialogOptions)
 
 
 
-#### DatePickerDialogOptions对象说明
+## DatePickerDialogOptions对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 日期选择器弹窗选项。
 
@@ -56,6 +60,7 @@ static show(options?: DatePickerDialogOptions)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -96,9 +101,10 @@ static show(options?: DatePickerDialogOptions)
 
 
 
-#### LunarSwitchStyle14+对象说明
+## LunarSwitchStyle14+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 定义了DatePickerDialog组件中农历切换开关的样式。
 
@@ -110,6 +116,7 @@ static show(options?: DatePickerDialogOptions)
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | selectedColor | ResourceColor | 否 | 是 | 设置开关开启时开关的背景颜色。 默认值：\$r('sys.color.ohos_id_color_text_primary_actived')。 |
@@ -119,9 +126,10 @@ static show(options?: DatePickerDialogOptions)
 
 
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 > [!NOTE]
 > 推荐通过使用 UIContext 中的 showDatePickerDialog 来明确UI的执行上下文。
@@ -129,7 +137,10 @@ static show(options?: DatePickerDialogOptions)
 
 
 
-#### 示例1（设置显示时间）
+### 示例1（设置显示时间）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例通过showTime、useMilitaryTime、dateTimeOptions设置显示时间。
 
@@ -188,7 +199,10 @@ struct DatePickerDialogExample {
 
 
 
-#### 示例2（自定义样式）
+### 示例2（自定义样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例通过配置disappearTextStyle、textStyle、selectedTextStyle、acceptButtonStyle、cancelButtonStyle实现了自定义文本以及按钮样式。
 
@@ -275,7 +289,10 @@ struct DatePickerDialogExample {
 
 
 
-#### 示例3（悬停态弹窗）
+### 示例3（悬停态弹窗）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例展示了在折叠屏悬停态下设置弹窗布局区域的效果。
 
@@ -337,7 +354,10 @@ struct DatePickerDialogExample {
 
 
 
-#### 示例4（设置弹窗位置）
+### 示例4（设置弹窗位置）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例通过alignment、offset设置弹窗的位置。
 
@@ -377,7 +397,10 @@ struct DatePickerDialogExample {
 
 
 
-#### 示例5（设置遮蔽区）
+### 示例5（设置遮蔽区）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例通过maskRect设置遮蔽区。
 
@@ -421,7 +444,10 @@ struct DatePickerDialogExample {
 
 
 
-#### 示例6（设置弹窗背板）
+### 示例6（设置弹窗背板）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例通过backgroundColor、backgroundBlurStyle、shadow设置弹窗背板。
 
@@ -462,7 +488,10 @@ struct DatePickerDialogExample {
 
 
 
-#### 示例7（设置公历农历）
+### 示例7（设置公历农历）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例通过lunar、lunarSwitch设置弹窗显示公历或农历。
 
@@ -517,7 +546,10 @@ struct DatePickerDialogExample {
 
 
 
-#### 示例8（设置显示月、日列）
+### 示例8（设置显示月、日列）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例通过配置mode参数实现显示月、日两列。
 
@@ -551,12 +583,15 @@ struct DatePickerDialogExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/6YOOZ-3LRnGZvsW_U8S2HA/zh-cn_image_0000002685928539.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071515Z&HW-CC-Expire=86400&HW-CC-Sign=7BE176C83FFEDB48D48D384CE99BE8F2CA053EC7FADA3B39E30C163F283A0EB8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/MaQH3aIASW2PnvJrRyFwNQ/zh-cn_image_0000002717773012.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=350386319021EFD0FDF953480C19DFF05A6D66BAD7CA202B53D16F9243D56366)
 
 
 
 
-#### 示例9（设置循环滚动）
+### 示例9（设置循环滚动）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 从API version 20开始，可以通过配置canLoop参数设置是否循环滚动。
 
@@ -599,12 +634,15 @@ struct DatePickerDialogExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/biuVyq89QBewleIGD4Jjjg/zh-cn_image_0000002656008862.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071515Z&HW-CC-Expire=86400&HW-CC-Sign=38D3E8096446643085A32BD1306ACC70C5B6C64410D91A83140FD0EF62261208)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/NAx04FBfT0a6zaXCTPI6ig/zh-cn_image_0000002717613082.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=DF65B2A4265FB07DCAFA2CCA7C681D1AC0FE7BCFFAAD73D385FA0589DF573001)
 
 
 
 
-#### 示例10（自定义背景模糊效果参数）
+### 示例10（自定义背景模糊效果参数）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 从API version 19开始，可以通过配置[backgroundBlurStyleOptions](#datepickerdialogoptions对象说明)，实现自定义背景模糊效果。
 
@@ -643,12 +681,15 @@ struct DatePickerDialogExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/uJ_hMmGgQNODBxOjLeN2xA/zh-cn_image_0000002655848942.png?HW-CC-KV=V1&HW-CC-Date=20260730T071515Z&HW-CC-Expire=86400&HW-CC-Sign=05C17E18600BF636C5D920B1F8B0B416BFB21C8AFCE4F0F17ECBC87F3DEC204B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/BvzO-QO8T42qjmawu3Ru3Q/zh-cn_image_0000002747293033.png?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=8515E0C268A2848B1A7A8D14A03E9C99C5A8C79E90430EEBA90597BEE1580794)
 
 
 
 
-#### 示例11（自定义背景效果参数）
+### 示例11（自定义背景效果参数）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 从API version 19开始，该示例通过配置[backgroundEffect](#datepickerdialogoptions对象说明)，实现自定义背景效果。
 
@@ -688,4 +729,44 @@ struct DatePickerDialogExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/hgtGrIECQy2gH4pZPst3Lg/zh-cn_image_0000002686088373.png?HW-CC-KV=V1&HW-CC-Date=20260730T071515Z&HW-CC-Expire=86400&HW-CC-Sign=8141D46ABB8C7A26E363652BB44C7FC4E7B5D98EFAEECFD2AEC544632EAD0B65)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/GVr_JF4eQtm3mDe2JfM0mw/zh-cn_image_0000002747212949.png?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=027D98F119CF4C358432D05BBDCF0447B63C7D6D0B4CC4CF6EE63A26677B6648)
+
+
+
+
+### 示例12（设置系统材质）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+该示例通过配置[systemMaterial](#datepickerdialogoptions对象说明)，实现系统材质效果。
+
+从API版本26.0.0开始，在DatePickerDialogOptions中新增了systemMaterial属性。
+
+```text
+import { uiMaterial } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct DatePickerDialogExample {
+  selectedDate: Date = new Date('2010-01-01');
+
+  build() {
+    Stack({ alignContent: Alignment.Top }) {
+      Column() {
+        Button('DatePickerDialog')
+          .margin(20)
+          .onClick(() => {
+            this.getUIContext().showDatePickerDialog({
+              selected: this.selectedDate,
+              systemMaterial: new uiMaterial.ImmersiveMaterial({ style: uiMaterial.ImmersiveStyle.ULTRA_THICK })
+            });
+          })
+      }.width('100%')
+    }
+  }
+}
+```
+
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/Vtw-2jo7QPyIbp7I6QDF8Q/zh-cn_image_0000002717773014.png?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=F6D7E1430AAFB680117033BAB234EB0D2DBE04F192EA49B7C452C31BE45B6A83)

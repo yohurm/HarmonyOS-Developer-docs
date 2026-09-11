@@ -1,9 +1,9 @@
 # GridContainer
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-gridcontainer
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 纵向排布栅格布局容器，仅在栅格布局场景中使用。栅格布局通过将容器宽度划分为指定列数，实现响应式布局，子组件可占用不同的列数和偏移量。适用于响应式页面布局、多栏目内容展示、仪表盘布局等场景。
  
@@ -12,23 +12,26 @@
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 可以包含子组件。
  
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### GridContainer(deprecated)
+### GridContainer(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 GridContainer(value?: GridContainerOptions)
  
@@ -42,6 +45,7 @@ GridContainer(value?: GridContainerOptions)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | GridContainerOptions | 否 | GridContainer配置参数，用于设置栅格布局的列数、设备宽度类型、列间距和两侧间距。不传入时使用默认配置。 |
@@ -49,11 +53,12 @@ GridContainer(value?: GridContainerOptions)
  
   
 
-#### GridContainerOptions(deprecated)对象说明
+## GridContainerOptions(deprecated)对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-栅格栅格布局容器配置参数对象，用于设置GridContainer组件的列数、设备宽度类型、列间距和两侧间距。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+栅格布局容器配置参数对象，用于设置GridContainer组件的列数、设备宽度类型、列间距和两侧间距。
  
 > [!TIP]
 > 从API version 7开始支持，从API version 9开始废弃。建议使用 GridColOptions 或 GridRowOptions 替代。
@@ -61,6 +66,7 @@ GridContainer(value?: GridContainerOptions)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | columns | number \| 'auto' | 否 | 是 | 当前布局总列数，number类型需为正整数。设置为number时使用固定列数布局；设置为'auto'时，系统根据设备宽度类型自动确定列数（XS为2列，SM为4列，MD为8列，LG为12列）。传入0或负数时视为未设置，系统自动确定列数。 默认值：'auto' |
@@ -71,9 +77,10 @@ GridContainer(value?: GridContainerOptions)
  
   
 
-#### SizeType(deprecated)枚举说明
+## SizeType(deprecated)枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设备宽度类型枚举，用于在栅格布局中区分不同宽度的设备类型，实现响应式布局。
  
@@ -83,6 +90,7 @@ GridContainer(value?: GridContainerOptions)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 说明 |
 | --- | --- |
 | XS | 最小宽度类型设备，宽度≤320vp。 |
@@ -94,25 +102,28 @@ GridContainer(value?: GridContainerOptions)
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)和Column组件的[属性方法](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-column#属性)。
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)。
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```ArkTS
 // xxx.ets
@@ -189,4 +200,4 @@ struct GridContainerExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/qeRngaiCRISt6pX7nGJjSw/zh-cn_image_0000002655849072.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071522Z&HW-CC-Expire=86400&HW-CC-Sign=67B2289A1DEF7881840B16D50D9D5B65582AC3F9D5093475F7111688095F1A1C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/gC1zZt3RSkOw1dJy80yTXg/zh-cn_image_0000002747293167.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073112Z&HW-CC-Expire=86400&HW-CC-Sign=B6F91834D27C7EA94DCEDE63BD287773DF640BE0B487DDBB8B22B1FC84741F2E)

@@ -1,13 +1,13 @@
 # AnimateTo使用迁移
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-migration-animateto
 
 在状态管理从V1迁移至V2的过程中，[animateTo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#animateto)执行动画前如需修改状态变量，可参考本文档的适配方案。
 
 
-#### 执行动画前重新定义初始态场景
+## 执行动画前重新定义初始态场景
 
 **V1实现代码如下：**
 
@@ -99,11 +99,11 @@ struct Index {
 
 
 
-#### 迁移方案
+## 迁移方案
 
 
 
-#### API version 22之前的迁移方案
+### API version 22之前的迁移方案
 
 从API version 22之前，可以使用一个duration为0的[animateToImmediately](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-explicit-animatetoimmediately#animatetoimmediately)将额外的修改先刷新，再执行原来的动画达成预期的效果。
 
@@ -151,7 +151,7 @@ struct Index {
 
 
 
-#### API version 22及以后的迁移方案
+### API version 22及以后的迁移方案
 
 从API version 22开始，可以使用[applySync接口](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-applysync-flushupdates-flushuiupdates)实现预期的显示效果。
 

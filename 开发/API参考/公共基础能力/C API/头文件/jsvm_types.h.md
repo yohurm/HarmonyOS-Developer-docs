@@ -1,11 +1,12 @@
 # jsvm_types.h
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-jsvm-types-h
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -23,15 +24,18 @@
 
 
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 
 
-#### 宏定义
+### 宏定义
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -40,9 +44,11 @@
 
 
 
-#### 结构体
+### 结构体
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -81,9 +87,11 @@
 
 
 
-#### 枚举
+### 枚举
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -114,9 +122,11 @@
 
 
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -132,9 +142,11 @@
 
 
 
-#### 变量
+### 变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -143,13 +155,15 @@
 
 
 
-#### 枚举类型说明
+## 枚举类型说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 
 
-#### JSVM_PropertyAttributes
+### JSVM_PropertyAttributes
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -162,6 +176,7 @@ enum JSVM_PropertyAttributes
 用于控制JavaScript对象属性的行为。
 
 **起始版本：** 11
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -179,7 +194,8 @@ enum JSVM_PropertyAttributes
 
 
 
-#### JSVM_ValueType
+### JSVM_ValueType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -192,6 +208,7 @@ enum JSVM_ValueType
 描述JSVM_Value的类型。
 
 **起始版本：** 11
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -209,7 +226,8 @@ enum JSVM_ValueType
 
 
 
-#### JSVM_TypedarrayType
+### JSVM_TypedarrayType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -222,6 +240,7 @@ enum JSVM_TypedarrayType
 描述TypedArray的类型。
 
 **起始版本：** 11
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -240,7 +259,8 @@ enum JSVM_TypedarrayType
 
 
 
-#### JSVM_Status
+### JSVM_Status
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -253,6 +273,7 @@ enum JSVM_Status
 表示JSVM-API调用成功或失败的完整状态码。
 
 **起始版本：** 11
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -286,7 +307,8 @@ enum JSVM_Status
 
 
 
-#### JSVM_KeyCollectionMode
+### JSVM_KeyCollectionMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -300,6 +322,7 @@ enum JSVM_KeyCollectionMode
 
 **起始版本：** 11
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | JSVM_KEY_INCLUDE_PROTOTYPES | 也包含对象原型链上的属性。 |
@@ -308,7 +331,8 @@ enum JSVM_KeyCollectionMode
 
 
 
-#### JSVM_KeyFilter
+### JSVM_KeyFilter
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -322,6 +346,7 @@ enum JSVM_KeyFilter
 
 **起始版本：** 11
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | JSVM_KEY_ALL_PROPERTIES = 0 | 所有属性的键。 |
@@ -334,7 +359,8 @@ enum JSVM_KeyFilter
 
 
 
-#### JSVM_KeyConversion
+### JSVM_KeyConversion
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -348,6 +374,7 @@ enum JSVM_KeyConversion
 
 **起始版本：** 11
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | JSVM_KEY_KEEP_NUMBERS | 将返回整数索引的数字。 |
@@ -356,7 +383,8 @@ enum JSVM_KeyConversion
 
 
 
-#### JSVM_MemoryPressureLevel
+### JSVM_MemoryPressureLevel
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -370,6 +398,7 @@ enum JSVM_MemoryPressureLevel
 
 **起始版本：** 11
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | JSVM_MEMORY_PRESSURE_LEVEL_NONE | 无压力。 |
@@ -380,7 +409,8 @@ enum JSVM_MemoryPressureLevel
 
 
 
-#### JSVM_CompileMode
+### JSVM_CompileMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -394,6 +424,7 @@ enum JSVM_CompileMode
 
 **起始版本：** 12
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | JSVM_COMPILE_MODE_DEFAULT | 默认编译模式。 |
@@ -405,7 +436,8 @@ enum JSVM_CompileMode
 
 
 
-#### JSVM_CompileOptionId
+### JSVM_CompileOptionId
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -418,6 +450,7 @@ enum JSVM_CompileOptionId
 JSVM_CompileOptions 中的 id 对应类型，每个值有对应的 content 类型。JSVM_COMPILE_ENABLE_SOURCE_MAP 的类型为 bool，当 JSVM_ScriptOrigin 中的 sourceMapUrl 不为空时生效。
 
 **起始版本：** 12
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -432,7 +465,8 @@ JSVM_CompileOptions 中的 id 对应类型，每个值有对应的 content 类�
 
 
 
-#### JSVM_RegExpFlags
+### JSVM_RegExpFlags
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -445,6 +479,7 @@ enum JSVM_RegExpFlags
 正则表达式标志位。它们可以用来启用一组标志。
 
 **起始版本：** 12
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -462,7 +497,8 @@ enum JSVM_RegExpFlags
 
 
 
-#### JSVM_InitializedFlag
+### JSVM_InitializedFlag
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -476,6 +512,7 @@ enum JSVM_InitializedFlag
 
 **起始版本：** 12
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | JSVM_ZERO_INITIALIZED | 初始化为0。 |
@@ -484,7 +521,8 @@ enum JSVM_InitializedFlag
 
 
 
-#### JSVM_WasmOptLevel
+### JSVM_WasmOptLevel
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -498,6 +536,7 @@ WebAssembly 函数优化等级。
 
 **起始版本：** 12
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | JSVM_WASM_OPT_BASELINE = 10 | baseline 优化等级。 |
@@ -506,7 +545,8 @@ WebAssembly 函数优化等级。
 
 
 
-#### JSVM_CacheType
+### JSVM_CacheType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -520,6 +560,7 @@ enum JSVM_CacheType
 
 **起始版本：** 12
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | JSVM_CACHE_TYPE_JS | JS 缓存，由接口 OH_JSVM_CreateCodeCache 生成。 |
@@ -528,7 +569,8 @@ enum JSVM_CacheType
 
 
 
-#### JSVM_MicrotaskPolicy
+### JSVM_MicrotaskPolicy
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -542,6 +584,7 @@ JSVM 微任务执行策略。
 
 **起始版本：** 18
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | JSVM_MICROTASK_EXPLICIT = 0 | 调用 OH_JSVM_PerformMicrotaskCheckpoint 方法后微任务执行。 |
@@ -550,7 +593,8 @@ JSVM 微任务执行策略。
 
 
 
-#### JSVM_TraceCategory
+### JSVM_TraceCategory
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -563,6 +607,7 @@ enum JSVM_TraceCategory
 JSVM 内部 Trace 事件的类别。
 
 **起始版本：** 18
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -577,7 +622,8 @@ JSVM 内部 Trace 事件的类别。
 
 
 
-#### JSVM_CBTriggerTimeForGC
+### JSVM_CBTriggerTimeForGC
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -591,6 +637,7 @@ enum JSVM_CBTriggerTimeForGC
 
 **起始版本：** 18
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | JSVM_CB_TRIGGER_BEFORE_GC | 在GC之前触发回调函数。 |
@@ -599,7 +646,8 @@ enum JSVM_CBTriggerTimeForGC
 
 
 
-#### JSVM_GCType
+### JSVM_GCType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -613,6 +661,7 @@ GC类型。
 
 **起始版本：** 18
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | JSVM_GC_TYPE_SCAVENGE = 1 << 0 | GC算法为Scavenge。 |
@@ -625,7 +674,8 @@ GC类型。
 
 
 
-#### JSVM_GCCallbackFlags
+### JSVM_GCCallbackFlags
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -638,6 +688,7 @@ enum JSVM_GCCallbackFlags
 GC回调函数标记。
 
 **起始版本：** 18
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -652,7 +703,8 @@ GC回调函数标记。
 
 
 
-#### JSVM_PromiseRejectEvent
+### JSVM_PromiseRejectEvent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -666,6 +718,7 @@ promise-reject事件。
 
 **起始版本：** 18
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | JSVM_PROMISE_REJECT_OTHER_REASONS = 0 | Promise被拒绝，但拒绝的原因未知或不明确。 |
@@ -677,7 +730,8 @@ promise-reject事件。
 
 
 
-#### JSVM_MessageErrorLevel
+### JSVM_MessageErrorLevel
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -691,6 +745,7 @@ message的报错级别。
 
 **起始版本：** 18
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | JSVM_MESSAGE_LOG = (1 << 0) | Log级别的信息。 |
@@ -703,7 +758,8 @@ message的报错级别。
 
 
 
-#### JSVM_DefineClassOptionsId
+### JSVM_DefineClassOptionsId
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -717,6 +773,7 @@ enum JSVM_DefineClassOptionsId
 
 **起始版本：** 18
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | JSVM_DEFINE_CLASS_NORMAL | 在常规模式下定义Class。 |
@@ -726,7 +783,8 @@ enum JSVM_DefineClassOptionsId
 
 
 
-#### JSVM_DebugOption
+### JSVM_DebugOption
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -740,6 +798,7 @@ enum JSVM_DebugOption
 
 **起始版本：** 20
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | JSVM_SCOPE_CHECK | scope校验功能。 |
@@ -747,13 +806,15 @@ enum JSVM_DebugOption
 
 
 
-#### 函数说明
+## 函数说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 
 
-#### JSVM_Finalize()
+### JSVM_Finalize()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -769,7 +830,8 @@ typedef void (JSVM_CDECL* JSVM_Finalize)(JSVM_Env env,void* finalizeData,void* f
 
 
 
-#### JSVM_FinalizeArrayBuffer()
+### JSVM_FinalizeArrayBuffer()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -782,7 +844,7 @@ typedef void(JSVM_CDECL* JSVM_FinalizeArrayBuffer)(JSVM_Env env,void* finalizeDa
 **描述**
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/CiAonUGaRyiMPbAT4n7GBw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095544Z&HW-CC-Expire=86400&HW-CC-Sign=0D41767325D31A6056A59C7C384B21949F24D76D3D1FD5B0C1B37D39AE947F31)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/x6aIJkdqRo6EEKlE2wTpxQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072326Z&HW-CC-Expire=86400&HW-CC-Sign=03A0BA1FC6240178F4E82A80A1DCFD9819C939F88E1D24902B10D9F69194B620)
 
 
 此接口是实验性接口，需定义JSVM_EXPERIMENTAL宏后方可使用。
@@ -801,7 +863,8 @@ typedef void(JSVM_CDECL* JSVM_FinalizeArrayBuffer)(JSVM_Env env,void* finalizeDa
 
 
 
-#### JSVM_OutputStream()
+### JSVM_OutputStream()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -817,6 +880,7 @@ typedef bool (JSVM_CDECL* JSVM_OutputStream)(const char* data,int size,void* str
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回true表示流可以继续接收数据，返回false将中止流。 |
@@ -824,7 +888,8 @@ typedef bool (JSVM_CDECL* JSVM_OutputStream)(const char* data,int size,void* str
 
 
 
-#### JSVM_HandlerForGC()
+### JSVM_HandlerForGC()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -840,7 +905,8 @@ GC回调的函数指针类型。
 
 
 
-#### JSVM_HandlerForHeapThreshold()
+### JSVM_HandlerForHeapThreshold()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -856,7 +922,8 @@ typedef void(JSVM_CDECL* JSVM_HandlerForHeapThreshold)(JSVM_VM vm, uint64_t thre
 
 
 
-#### JSVM_HandlerForOOMError()
+### JSVM_HandlerForOOMError()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -872,7 +939,8 @@ OOM-Error回调的函数指针类型。
 
 
 
-#### JSVM_HandlerForFatalError()
+### JSVM_HandlerForFatalError()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -888,7 +956,8 @@ Fatal-Error回调的函数指针类型。
 
 
 
-#### JSVM_HandlerForPromiseReject()
+### JSVM_HandlerForPromiseReject()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 

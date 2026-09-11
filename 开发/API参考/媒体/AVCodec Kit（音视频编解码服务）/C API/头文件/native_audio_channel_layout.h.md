@@ -1,13 +1,14 @@
 # native_audio_channel_layout.h
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-audio-channel-layout-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 在录制和播放时的扬声器布局。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_AudioChannelSet | OH_AudioChannelSet | 音频声道集合。 将每一个声道映射为int64的变量。 |
@@ -42,15 +46,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AudioChannelSet
+### OH_AudioChannelSet
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AudioChannelSet
@@ -66,6 +72,7 @@ enum OH_AudioChannelSet
  
 **起始版本：** 11
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | CH_SET_FRONT_LEFT = 1ULL << 0U | 左前声道。 |
@@ -102,9 +109,10 @@ enum OH_AudioChannelSet
  
   
 
-#### OH_AmbAttributeSet
+### OH_AmbAttributeSet
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AmbAttributeSet
@@ -120,6 +128,7 @@ enum OH_AmbAttributeSet
  
 **起始版本：** 11
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AMB_ORD_1 = 1ULL << 0U | 一阶高保真立体声混响。 |
@@ -134,9 +143,10 @@ enum OH_AmbAttributeSet
  
   
 
-#### OH_AudioChannelLayout
+### OH_AudioChannelLayout
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AudioChannelLayout
@@ -152,6 +162,7 @@ enum OH_AudioChannelLayout
  
 **起始版本：** 11
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | CH_LAYOUT_UNKNOWN = 0ULL | 未知声道布局。 |

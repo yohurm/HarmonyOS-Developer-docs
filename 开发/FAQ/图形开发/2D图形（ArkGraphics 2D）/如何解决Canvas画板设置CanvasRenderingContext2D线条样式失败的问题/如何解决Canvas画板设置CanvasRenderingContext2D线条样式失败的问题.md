@@ -11,15 +11,15 @@
 问题代码示例参考如下：
  
 ```text
-// 画板
+<em>// 画板</em>
 @Component
 export struct CanvasView {
   @ObjectLink dataModel: CanvasDataModel;
-  // 是否显示画板边框
+  <em>// 是否显示画板边框</em>
   showBorder: boolean = true;
-  // 画笔颜色
+ <em> // 画笔颜色</em>
   brushColor: Color | string = Color.Red;
-  // 画笔粗细
+ <em> // 画笔粗细</em>
   @Prop brushSize: number = 6;
   private settings: RenderingContextSettings = new RenderingContextSettings(true);
   private context: CanvasRenderingContext2D = new CanvasRenderingContext2D(this.settings);
@@ -32,7 +32,7 @@ export struct CanvasView {
     fingers: 1
   });
   private canvasLoaded: boolean = false
-  // 绘制
+ <em> // 绘制</em>
   private draw(startX: number, startY: number, endX: number, endY: number) {
     this.context.moveTo(startX, startY);
     this.context.lineTo(endX, endY);
@@ -42,7 +42,7 @@ export struct CanvasView {
   build() {
     Flex({ direction: FlexDirection.Column }) {
       Stack() {
-        // 画板
+       <em> // 画板</em>
         Canvas(this.context)
           .height('100%')
           .width('100%')
@@ -63,7 +63,7 @@ export struct CanvasView {
             }          })
           .gesture(
             PanGesture(this.panOption)
-              .onActionStart((event: GestureEvent) => { // 滑动手势识别回调
+              .onActionStart((event: GestureEvent) => {<em> // 滑动手势识别回调</em>
                 this.isDown = true;
                 if (event.fingerList.length > 0) {
                   this.lastX = event.fingerList[0].localX;
@@ -71,7 +71,7 @@ export struct CanvasView {
                 }
                 this.context.beginPath();
               })
-              .onActionUpdate((event: GestureEvent) => { // 滑动手势更新回调
+              .onActionUpdate((event: GestureEvent) => {<em> // 滑动手势更新回调</em>
                 if (this.isDown) {
                   if (event.fingerList.length > 0) {
                     let _x = event.fingerList[0].localX;
@@ -82,7 +82,7 @@ export struct CanvasView {
                   }
                 }
               })
-              .onActionEnd(() => { // 长按手势结束回调
+              .onActionEnd(() => {<em> // 长按手势结束回调</em>
                 this.isDown = false;
                 this.context.closePath();
               })
@@ -134,11 +134,11 @@ export struct CanvasView {
 @Prop传递数据时具有一个延迟效果，可以通过设置setTimeout等待数据传递完成后再开始绘图，确保Canvas尺寸就绪：
 ```text
 .onReady(() => {
-  // 添加尺寸判断
+  <em>// 添加尺寸判断</em>
   if (this.context.width === 0 || this.context.height === 0) {
     setTimeout(() => {
       this.initCanvas();
-    }, 16); // 延迟16ms等待布局完成
+    }, 16); <em>// </em><em>延迟16ms等待布局完成</em>
   } else {
     this.initCanvas();
   }
@@ -154,15 +154,15 @@ import common from '@ohos.app.ability.common';
 import { image } from '@kit.ImageKit';
 import { Size } from '@kit.ArkUI';
 
-// 画板
+<em>// 画板</em>
 @Component
 export struct CanvasView {
   @ObjectLink dataModel: CanvasDataModel;
-  // 是否显示画板边框
+  <em>// 是否显示画板边框</em>
   showBorder: boolean = true;
-  // 画笔颜色
+ <em> // 画笔颜色</em>
   brushColor: Color | string = Color.Red;
-  // 画笔粗细
+ <em> // 画笔粗细</em>
   @Prop brushSize: number = 6;
   private settings: RenderingContextSettings = new RenderingContextSettings(true);
   private context: CanvasRenderingContext2D = new CanvasRenderingContext2D(this.settings);
@@ -175,14 +175,14 @@ export struct CanvasView {
     fingers: 1
   });
 
-  // 绘制
+ <em> // 绘制</em>
   private draw(startX: number, startY: number, endX: number, endY: number) {
     this.context.moveTo(startX, startY);
     this.context.lineTo(endX, endY);
     this.context.stroke();
   };
 
-  // 新增初始化方法
+ <em> // 新增初始化方法</em>
   private initCanvas() {
     this.context.font = '60px sans-serif';
     this.context.lineWidth = this.brushSize;
@@ -196,7 +196,7 @@ export struct CanvasView {
   build() {
     Flex({ direction: FlexDirection.Column }) {
       Stack() {
-        // 画板
+       <em> // 画板</em>
         Canvas(this.context)
           .height('100%')
           .width('100%')
@@ -205,18 +205,18 @@ export struct CanvasView {
           .borderWidth(this.showBorder ? 1 : 0)
           .backgroundColor(Color.Gray)
           .onReady(() => {
-            // 添加尺寸判断
+          <em>  // 添加尺寸判断</em>
             if (this.context.width === 0 || this.context.height === 0) {
               setTimeout(() => {
                 this.initCanvas();
-              }, 16); // 延迟16ms等待布局完成
+              }, 16); <em>// 延迟16ms等待布局完成</em>
             } else {
               this.initCanvas();
             }
           })
           .gesture(
             PanGesture(this.panOption)
-              .onActionStart((event: GestureEvent) => { // 滑动手势识别回调
+              .onActionStart((event: GestureEvent) => {<em> // 滑动手势识别回调</em>
                 this.isDown = true;
                 if (event.fingerList.length > 0) {
                   this.lastX = event.fingerList[0].localX;
@@ -224,7 +224,7 @@ export struct CanvasView {
                 }
                 this.context.beginPath();
               })
-              .onActionUpdate((event: GestureEvent) => { // 滑动手势更新回调
+              .onActionUpdate((event: GestureEvent) => {<em> // 滑动手势更新回调</em>
                 if (this.isDown) {
                   if (event.fingerList.length > 0) {
                     let _x = event.fingerList[0].localX;
@@ -235,7 +235,7 @@ export struct CanvasView {
                   }
                 }
               })
-              .onActionEnd(() => { // 长按手势结束回调
+              .onActionEnd(() => {<em> // 长按手势结束回调</em>
                 this.isDown = false;
                 this.context.closePath();
               })
@@ -256,11 +256,11 @@ export class DrawingInfo {
 
 @Observed
 export class CanvasDataModel {
-  // 关联的签字类型
+ <em> // 关联的签字类型</em>
   signType: string = '1';
-  // 图像
+ <em> // 图像</em>
   drawingInfo?: DrawingInfo;
-  // 签署姓名的时候需要签的字
+ <em> // 签署姓名的时候需要签的字</em>
   signText?: string;
 }
 ;
@@ -287,7 +287,7 @@ struct DrawingCanvasPageView {
     };
   };
 
-  // 设置为横屏展示
+ <em> // 设置为横屏展示</em>
   onPageShow(): void {
     let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
     window.getLastWindow(context).then((lastWindow) => {
@@ -295,14 +295,14 @@ struct DrawingCanvasPageView {
     });
   };
 
-  // 获取当前日期
+<em>  // 获取当前日期</em>
   getCurrentTime() {
     let dt = new Date();
     return `${dt.getFullYear()}/${dt.getMonth() + 1}/${dt.getDate()}`;
   };
 
   aboutToAppear(): void {
-    // 普通签字
+   <em> // 普通签字</em>
     this.canvasDataModelList.push({
       signType: '1'
     });
@@ -321,14 +321,14 @@ struct DrawingCanvasPageView {
         justifyContent: FlexAlign.SpaceBetween,
         alignItems: ItemAlign.Center
       }) {
-        // 日期提示
+      <em>  // 日期提示</em>
         Text(
           `请在下方签字（当前日期：${this.getCurrentTime()}）`,
         )
           .fontColor(Color.Grey)
           .fontSize(16)
           .textAlign(TextAlign.Center);
-        // 完成签字
+      <em>  // 完成签字</em>
         Text('完成')
           .fontWeight(FontWeight.Bold)
           .width(44)
@@ -337,11 +337,11 @@ struct DrawingCanvasPageView {
       .width('100%')
       .padding({ left: 16, right: 16 });
 
-      // 画板区域
+    <em>  // 画板区域</em>
       Tabs({ barPosition: BarPosition.Start, controller: this.tabController }) {
         ForEach(this.canvasDataModelList, (item: CanvasDataModel, index) => {
           TabContent() {
-            // 画板
+          <em>  // 画板</em>
             CanvasView({
               dataModel: item
             });

@@ -1,9 +1,9 @@
 # @ohos.app.ability.autoFillManager (自动填充框架)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-autofillmanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 autoFillManager模块为应用提供账号、密码、地址、电话号码等用户信息的自动填充能力。
 
@@ -14,9 +14,10 @@ autoFillManager模块为应用提供账号、密码、地址、电话号码等�
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { autoFillManager } from '@kit.AbilityKit';
@@ -24,9 +25,10 @@ import { autoFillManager } from '@kit.AbilityKit';
 
 
 
-#### OnFillSuccessFn
+## OnFillSuccessFn
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnFillSuccessFn = (viewData: ViewData) => void
 
@@ -42,6 +44,7 @@ type OnFillSuccessFn = (viewData: ViewData) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | viewData | ViewData | 是 | 自动填充的视图数据信息。 |
@@ -49,9 +52,10 @@ type OnFillSuccessFn = (viewData: ViewData) => void
 
 
 
-#### OnFillFailureFn
+## OnFillFailureFn
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnFillFailureFn = (result: FillFailureResult) => void
 
@@ -67,6 +71,7 @@ type OnFillFailureFn = (result: FillFailureResult) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | result | FillFailureResult | 是 | 表示自动填充失败结果。 |
@@ -74,9 +79,10 @@ type OnFillFailureFn = (result: FillFailureResult) => void
 
 
 
-#### AutoSaveCallback
+## AutoSaveCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 当保存请求完成时所触发的回调接口。
 
@@ -88,9 +94,10 @@ type OnFillFailureFn = (result: FillFailureResult) => void
 
 
 
-#### onSuccess
+### onSuccess
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onSuccess(): void
 
@@ -108,9 +115,10 @@ onSuccess(): void
 
 
 
-#### onFailure
+### onFailure
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onFailure(): void
 
@@ -128,9 +136,10 @@ onFailure(): void
 
 
 
-#### AutoFillCallback
+## AutoFillCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 当填充请求完成时所触发的回调接口。
 
@@ -144,9 +153,10 @@ onFailure(): void
 
 
 
-#### onSuccess
+### onSuccess
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onSuccess: OnFillSuccessFn
 
@@ -162,6 +172,7 @@ onSuccess: OnFillSuccessFn
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OnFillSuccessFn | 当填充请求成功时，会触发该回调。 |
@@ -173,9 +184,10 @@ onSuccess: OnFillSuccessFn
 
 
 
-#### onFailure
+### onFailure
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onFailure: OnFillFailureFn
 
@@ -190,6 +202,7 @@ onFailure: OnFillFailureFn
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -206,9 +219,10 @@ onFailure: OnFillFailureFn
 
 
 
-#### autoFillManager.requestAutoSave
+## autoFillManager.requestAutoSave
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestAutoSave(context: UIContext, callback?: AutoSaveCallback): void
 
@@ -224,6 +238,7 @@ requestAutoSave(context: UIContext, callback?: AutoSaveCallback): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 将在其中执行保存操作的UI上下文。 |
@@ -233,6 +248,7 @@ requestAutoSave(context: UIContext, callback?: AutoSaveCallback): void
 **错误码：**
 
 以下错误码的详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -339,9 +355,10 @@ struct Index {
 
 
 
-#### autoFillManager.requestAutoSave
+## autoFillManager.requestAutoSave
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestAutoSave(context: UIContext, request: SaveRequest, callback?: AutoSaveCallback): void
 
@@ -357,6 +374,7 @@ requestAutoSave(context: UIContext, request: SaveRequest, callback?: AutoSaveCal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 将在其中执行保存操作的UI上下文。 |
@@ -367,6 +385,7 @@ requestAutoSave(context: UIContext, request: SaveRequest, callback?: AutoSaveCal
 **错误码：**
 
 以下错误码的详细介绍请参考[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -455,9 +474,10 @@ struct Index {
 
 
 
-#### autoFillManager.requestAutoFill
+## autoFillManager.requestAutoFill
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestAutoFill(context: UIContext, request: FillRequest, callback?: AutoFillCallback): void
 
@@ -473,6 +493,7 @@ requestAutoFill(context: UIContext, request: FillRequest, callback?: AutoFillCal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | UIContext | 是 | 将在其中执行填充操作的UI上下文。 |
@@ -483,6 +504,7 @@ requestAutoFill(context: UIContext, request: FillRequest, callback?: AutoFillCal
 **错误码：**
 
 以下错误码的详细介绍请参考[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -572,9 +594,10 @@ struct Index {
 
 
 
-#### ViewData
+## ViewData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ViewData = _ViewData.default
 
@@ -588,6 +611,7 @@ type ViewData = _ViewData.default
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _ViewData.default | 表示自动填充的视图数据信息。 |
@@ -595,9 +619,10 @@ type ViewData = _ViewData.default
 
 
 
-#### PageNodeInfo
+## PageNodeInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type PageNodeInfo = _PageNodeInfo.default
 
@@ -611,6 +636,7 @@ type PageNodeInfo = _PageNodeInfo.default
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _PageNodeInfo.default | 表示自动填充的页面节点信息。 |
@@ -618,9 +644,10 @@ type PageNodeInfo = _PageNodeInfo.default
 
 
 
-#### FillRequest
+## FillRequest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type FillRequest = _AutoFillRequest.FillRequest
 
@@ -634,6 +661,7 @@ type FillRequest = _AutoFillRequest.FillRequest
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _AutoFillRequest.FillRequest | 表示自动填充的请求信息。 |
@@ -641,9 +669,10 @@ type FillRequest = _AutoFillRequest.FillRequest
 
 
 
-#### SaveRequest
+## SaveRequest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type SaveRequest = _AutoFillRequest.SaveRequest
 
@@ -657,6 +686,7 @@ type SaveRequest = _AutoFillRequest.SaveRequest
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _AutoFillRequest.SaveRequest | 表示自动保存的请求信息。 |
@@ -664,9 +694,10 @@ type SaveRequest = _AutoFillRequest.SaveRequest
 
 
 
-#### AutoFillRect
+## AutoFillRect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AutoFillRect = _AutoFillRect.default
 
@@ -680,6 +711,7 @@ type AutoFillRect = _AutoFillRect.default
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _AutoFillRect.default | 表示用于自动填充的矩形区域。 |
@@ -687,9 +719,10 @@ type AutoFillRect = _AutoFillRect.default
 
 
 
-#### FillFailureResult
+## FillFailureResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type FillFailureResult = _FillFailureResult
 
@@ -702,6 +735,7 @@ type FillFailureResult = _FillFailureResult
 **系统能力**：SystemCapability.Ability.AbilityRuntime.AbilityCore
 
 **模型约束**：此接口仅可在Stage模型下使用。
+
 
 | 类型 | 说明 |
 | --- | --- |

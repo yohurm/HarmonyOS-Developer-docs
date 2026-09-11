@@ -1,13 +1,14 @@
 # oh_rdb_transaction.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-rdb-transaction-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供与数据库事务相关的函数和枚举。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_RDB_TransOptions | OH_RDB_TransOptions | 定义OH_RDB_TransOptions结构类型。 |
@@ -41,10 +45,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_RDB_TransType | OH_RDB_TransType | 表示关系型数据库事务类型。 |
@@ -52,10 +58,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_RDB_TransOptions *OH_RdbTrans_CreateOptions(void) | 创建事务配置对象。 |
@@ -82,15 +90,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_RDB_TransType
+### OH_RDB_TransType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_RDB_TransType
@@ -102,6 +112,7 @@ enum OH_RDB_TransType
  
 **起始版本：** 18
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | RDB_TRANS_DEFERRED = 0 | 在首次访问数据库之前，事务默认设置不会启动。 |
@@ -112,15 +123,17 @@ enum OH_RDB_TransType
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_RdbTrans_CreateOptions()
+### OH_RdbTrans_CreateOptions()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_RDB_TransOptions *OH_RdbTrans_CreateOptions(void)
@@ -134,16 +147,18 @@ OH_RDB_TransOptions *OH_RdbTrans_CreateOptions(void)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| OH_RDB_TransOptions | 执行成功时返回指向OH_RDB_TransOptions实例的指针。否则返回nullptr。 使用完成后，必须通过OH_RdbTrans_DestroyOptions接口释放内存。 |
+| OH_RDB_TransOptions * | 执行成功时返回指向OH_RDB_TransOptions实例的指针。否则返回NULL。 使用完成后，必须通过OH_RdbTrans_DestroyOptions接口释放内存。 |
  
  
   
 
-#### OH_RdbTrans_DestroyOptions()
+### OH_RdbTrans_DestroyOptions()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_RdbTrans_DestroyOptions(OH_RDB_TransOptions *options)
@@ -157,6 +172,7 @@ int OH_RdbTrans_DestroyOptions(OH_RDB_TransOptions *options)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_RDB_TransOptions *options | 指向OH_RDB_TransOptions实例的指针。 |
@@ -164,6 +180,7 @@ int OH_RdbTrans_DestroyOptions(OH_RDB_TransOptions *options)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回错误码。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 |
@@ -171,9 +188,10 @@ int OH_RdbTrans_DestroyOptions(OH_RDB_TransOptions *options)
  
   
 
-#### OH_RdbTransOption_SetType()
+### OH_RdbTransOption_SetType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_RdbTransOption_SetType(OH_RDB_TransOptions *options, OH_RDB_TransType type)
@@ -187,6 +205,7 @@ int OH_RdbTransOption_SetType(OH_RDB_TransOptions *options, OH_RDB_TransType typ
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_RDB_TransOptions *options | 指向OH_RDB_TransOptions实例的指针。 |
@@ -195,6 +214,7 @@ int OH_RdbTransOption_SetType(OH_RDB_TransOptions *options, OH_RDB_TransType typ
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回错误码。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 |
@@ -202,9 +222,10 @@ int OH_RdbTransOption_SetType(OH_RDB_TransOptions *options, OH_RDB_TransType typ
  
   
 
-#### OH_RdbTrans_Commit()
+### OH_RdbTrans_Commit()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_RdbTrans_Commit(OH_Rdb_Transaction *trans)
@@ -218,6 +239,7 @@ int OH_RdbTrans_Commit(OH_Rdb_Transaction *trans)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Transaction *trans | 指向OH_Rdb_Transaction实例的指针。 |
@@ -225,6 +247,7 @@ int OH_RdbTrans_Commit(OH_Rdb_Transaction *trans)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行结果。 返回RDB_OK表示成功。 返回RDB_E_ERROR表示数据库常见错误。 返回RDB_E_INVALID_ARGS表示无效参数。 返回RDB_E_ALREADY_CLOSED表示数据库已经关闭。 返回RDB_E_SQLITE_FULL表示SQLite错误码：数据库已满。 返回RDB_E_SQLITE_CORRUPT表示数据库损坏。 返回RDB_E_SQLITE_PERM表示SQLite错误码：访问权限被拒绝。 返回RDB_E_SQLITE_BUSY表示SQLite错误码：数据库文件被锁定。 返回RDB_E_SQLITE_NOMEM表示SQLite错误码：数据库内存不足。 返回RDB_E_SQLITE_READONLY表示SQLite错误码：尝试写入只读数据库。 返回RDB_E_SQLITE_IOERR表示SQLite错误码：磁盘I/O错误。 |
@@ -232,9 +255,10 @@ int OH_RdbTrans_Commit(OH_Rdb_Transaction *trans)
  
   
 
-#### OH_RdbTrans_Rollback()
+### OH_RdbTrans_Rollback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_RdbTrans_Rollback(OH_Rdb_Transaction *trans)
@@ -248,6 +272,7 @@ int OH_RdbTrans_Rollback(OH_Rdb_Transaction *trans)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Transaction *trans | 指向OH_Rdb_Transaction实例的指针。 |
@@ -255,6 +280,7 @@ int OH_RdbTrans_Rollback(OH_Rdb_Transaction *trans)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行结果。 返回RDB_OK表示成功。 返回RDB_E_ERROR表示数据库常见错误。 返回RDB_E_INVALID_ARGS表示无效参数。 返回RDB_E_ALREADY_CLOSED表示数据库已经关闭。 返回RDB_E_SQLITE_FULL表示SQLite错误码：数据库已满。 返回RDB_E_SQLITE_CORRUPT表示数据库损坏。 返回RDB_E_SQLITE_PERM表示SQLite错误码：访问权限被拒绝。 返回RDB_E_SQLITE_BUSY表示SQLite错误码：数据库文件被锁定。 返回RDB_E_SQLITE_NOMEM表示SQLite错误码：数据库内存不足。 返回RDB_E_SQLITE_READONLY表示SQLite错误码：尝试写入只读数据库。 返回RDB_E_SQLITE_IOERR表示SQLite错误码：磁盘I/O错误。 |
@@ -262,9 +288,10 @@ int OH_RdbTrans_Rollback(OH_Rdb_Transaction *trans)
  
   
 
-#### OH_RdbTrans_Insert()
+### OH_RdbTrans_Insert()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_RdbTrans_Insert(OH_Rdb_Transaction *trans, const char *table, const OH_VBucket *row, int64_t *rowId)
@@ -278,6 +305,7 @@ int OH_RdbTrans_Insert(OH_Rdb_Transaction *trans, const char *table, const OH_VB
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Transaction *trans | 指向OH_Rdb_Transaction实例的指针。 |
@@ -288,6 +316,7 @@ int OH_RdbTrans_Insert(OH_Rdb_Transaction *trans, const char *table, const OH_VB
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行结果。 返回RDB_OK表示成功。 返回RDB_E_ERROR表示数据库常见错误。 返回RDB_E_INVALID_ARGS表示无效参数。 返回RDB_E_ALREADY_CLOSED表示数据库已经关闭。 返回RDB_E_WAL_SIZE_OVER_LIMIT表示WAL日志文件大小超过默认值。 返回RDB_E_SQLITE_FULL表示SQLite错误码：数据库已满。 返回RDB_E_SQLITE_CORRUPT表示数据库损坏。 返回RDB_E_SQLITE_PERM表示SQLite错误码：访问权限被拒绝。 返回RDB_E_SQLITE_BUSY表示SQLite错误码：数据库文件被锁定。 返回RDB_E_SQLITE_LOCKED表示SQLite错误码：数据库中的表被锁定。 返回RDB_E_SQLITE_NOMEM表示SQLite错误码：数据库内存不足。 返回RDB_E_SQLITE_READONLY表示SQLite错误码：尝试写入只读数据库。 返回RDB_E_SQLITE_IOERR表示SQLite错误码：磁盘I/O错误。 返回RDB_E_SQLITE_TOO_BIG表示SQLite错误码：TEXT或BLOB超出大小限制。 返回RDB_E_SQLITE_MISMATCH表示SQLite错误码：数据类型不匹配。 |
@@ -295,9 +324,10 @@ int OH_RdbTrans_Insert(OH_Rdb_Transaction *trans, const char *table, const OH_VB
  
   
 
-#### OH_RdbTrans_InsertWithConflictResolution()
+### OH_RdbTrans_InsertWithConflictResolution()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_RdbTrans_InsertWithConflictResolution(OH_Rdb_Transaction *trans, const char *table, const OH_VBucket *row, Rdb_ConflictResolution resolution, int64_t *rowId)
@@ -311,6 +341,7 @@ int OH_RdbTrans_InsertWithConflictResolution(OH_Rdb_Transaction *trans, const ch
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Transaction *trans | 指向OH_Rdb_Transaction实例的指针。 |
@@ -322,6 +353,7 @@ int OH_RdbTrans_InsertWithConflictResolution(OH_Rdb_Transaction *trans, const ch
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行结果。 返回RDB_OK表示成功。 返回RDB_E_ERROR表示数据库常见错误。 返回RDB_E_INVALID_ARGS表示输入参数无效。 返回RDB_E_ALREADY_CLOSED表示数据库已关闭。 返回RDB_E_WAL_SIZE_OVER_LIMIT表示WAL日志文件大小超过默认值。 返回RDB_E_SQLITE_FULL表示SQLite错误码：数据库已满。 返回RDB_E_SQLITE_CORRUPT表示数据库损坏。 返回RDB_E_SQLITE_PERM表示SQLite错误码：访问权限被拒绝。 返回RDB_E_SQLITE_BUSY表示SQLite错误码：数据库文件被锁定。 返回RDB_E_SQLITE_LOCKED表示SQLite错误码：数据库中的表被锁定。 返回RDB_E_SQLITE_NOMEM表示SQLite错误码：数据库内存不足。 返回RDB_E_SQLITE_READONLY表示SQLite错误码：尝试写入只读数据库。 返回RDB_E_SQLITE_IOERR表示SQLite错误码：磁盘I/O错误。 返回RDB_E_SQLITE_TOO_BIG表示SQLite错误码：TEXT或BLOB超出大小限制。 返回RDB_E_SQLITE_MISMATCH表示SQLite错误码：数据类型不匹配。 返回RDB_E_SQLITE_CONSTRAINT表示SQLite错误码：违反约束导致操作中止。 |
@@ -329,9 +361,10 @@ int OH_RdbTrans_InsertWithConflictResolution(OH_Rdb_Transaction *trans, const ch
  
   
 
-#### OH_RdbTrans_BatchInsert()
+### OH_RdbTrans_BatchInsert()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_RdbTrans_BatchInsert(OH_Rdb_Transaction *trans, const char *table, const OH_Data_VBuckets *rows, Rdb_ConflictResolution resolution, int64_t *changes)
@@ -351,6 +384,7 @@ int OH_RdbTrans_BatchInsert(OH_Rdb_Transaction *trans, const char *table, const 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Transaction *trans | 指向OH_Rdb_Transaction实例的指针。 |
@@ -362,6 +396,7 @@ int OH_RdbTrans_BatchInsert(OH_Rdb_Transaction *trans, const char *table, const 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行结果。 返回RDB_OK表示成功。 返回RDB_E_ERROR表示数据库常见错误。 返回RDB_E_INVALID_ARGS表示无效参数。 返回RDB_E_ALREADY_CLOSED表示数据库已经关闭。 返回RDB_E_WAL_SIZE_OVER_LIMIT表示WAL日志文件大小超过默认值。 返回RDB_E_SQLITE_FULL表示SQLite错误码：数据库已满。 返回RDB_E_SQLITE_CORRUPT表示数据库损坏。 返回RDB_E_SQLITE_PERM表示SQLite错误码：访问权限被拒绝。 返回RDB_E_SQLITE_BUSY表示SQLite错误码：数据库文件被锁定。 返回RDB_E_SQLITE_LOCKED表示SQLite错误码：数据库中的表被锁定。 返回RDB_E_SQLITE_NOMEM表示SQLite错误码：数据库内存不足。 返回RDB_E_SQLITE_READONLY表示SQLite错误码：尝试写入只读数据库。 返回RDB_E_SQLITE_IOERR表示SQLite错误码：磁盘I/O错误。 返回RDB_E_SQLITE_TOO_BIG表示SQLite错误码：TEXT或BLOB超出大小限制。 返回RDB_E_SQLITE_MISMATCH表示SQLite错误码：数据类型不匹配。 返回RDB_E_SQLITE_CONSTRAINT表示SQLite错误码：SQLite约束。 |
@@ -369,9 +404,10 @@ int OH_RdbTrans_BatchInsert(OH_Rdb_Transaction *trans, const char *table, const 
  
   
 
-#### OH_RdbTrans_Update()
+### OH_RdbTrans_Update()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_RdbTrans_Update(OH_Rdb_Transaction *trans, const OH_VBucket *row, const OH_Predicates *predicates, int64_t *changes)
@@ -385,6 +421,7 @@ int OH_RdbTrans_Update(OH_Rdb_Transaction *trans, const OH_VBucket *row, const O
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Transaction *trans | 指向OH_Rdb_Transaction实例的指针。 |
@@ -395,6 +432,7 @@ int OH_RdbTrans_Update(OH_Rdb_Transaction *trans, const OH_VBucket *row, const O
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行结果。 返回RDB_OK表示成功。 返回RDB_E_ERROR表示数据库常见错误。 返回RDB_E_INVALID_ARGS表示无效参数。 返回RDB_E_ALREADY_CLOSED表示数据库已经关闭。 返回RDB_E_WAL_SIZE_OVER_LIMIT表示WAL日志文件大小超过默认值。 返回RDB_E_SQLITE_FULL表示SQLite错误码：数据库已满。 返回RDB_E_SQLITE_CORRUPT表示数据库损坏。 返回RDB_E_SQLITE_PERM表示SQLite错误码：访问权限被拒绝。 返回RDB_E_SQLITE_BUSY表示SQLite错误码：数据库文件被锁定。 返回RDB_E_SQLITE_LOCKED表示SQLite错误码：数据库中的表被锁定。 返回RDB_E_SQLITE_NOMEM表示SQLite错误码：数据库内存不足。 返回RDB_E_SQLITE_READONLY表示SQLite错误码：尝试写入只读数据库。 返回RDB_E_SQLITE_IOERR表示SQLite错误码：磁盘I/O错误。 返回RDB_E_SQLITE_TOO_BIG表示SQLite错误码：TEXT或BLOB超出大小限制。 返回RDB_E_SQLITE_MISMATCH表示SQLite错误码：数据类型不匹配。 |
@@ -402,9 +440,10 @@ int OH_RdbTrans_Update(OH_Rdb_Transaction *trans, const OH_VBucket *row, const O
  
   
 
-#### OH_RdbTrans_UpdateWithConflictResolution()
+### OH_RdbTrans_UpdateWithConflictResolution()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_RdbTrans_UpdateWithConflictResolution(OH_Rdb_Transaction *trans, const OH_VBucket *row, const OH_Predicates *predicates, Rdb_ConflictResolution resolution, int64_t *changes)
@@ -418,6 +457,7 @@ int OH_RdbTrans_UpdateWithConflictResolution(OH_Rdb_Transaction *trans, const OH
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Transaction *trans | 指向OH_Rdb_Transaction实例的指针。 |
@@ -429,6 +469,7 @@ int OH_RdbTrans_UpdateWithConflictResolution(OH_Rdb_Transaction *trans, const OH
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行结果。 返回RDB_OK表示成功。 返回RDB_E_ERROR表示数据库常见错误。 返回RDB_E_INVALID_ARGS表示输入参数无效。 返回RDB_E_ALREADY_CLOSED表示数据库已关闭。 返回RDB_E_WAL_SIZE_OVER_LIMIT表示WAL日志文件大小超过默认值。 返回RDB_E_SQLITE_FULL表示SQLite错误码：数据库已满。 返回RDB_E_SQLITE_CORRUPT表示数据库损坏。 返回RDB_E_SQLITE_PERM表示SQLite错误码：访问权限被拒绝。 返回RDB_E_SQLITE_BUSY表示SQLite错误码：数据库文件被锁定。 返回RDB_E_SQLITE_LOCKED表示SQLite错误码：数据库中的表被锁定。 返回RDB_E_SQLITE_NOMEM表示SQLite错误码：数据库内存不足。 返回RDB_E_SQLITE_READONLY表示SQLite错误码：尝试写入只读数据库。 返回RDB_E_SQLITE_IOERR表示SQLite错误码：磁盘I/O错误。 返回RDB_E_SQLITE_TOO_BIG表示SQLite错误码：TEXT或BLOB超出大小限制。 返回RDB_E_SQLITE_MISMATCH表示SQLite错误码：数据类型不匹配。 返回RDB_E_SQLITE_CONSTRAINT表示SQLite错误码：违反约束导致操作中止。 |
@@ -436,9 +477,10 @@ int OH_RdbTrans_UpdateWithConflictResolution(OH_Rdb_Transaction *trans, const OH
  
   
 
-#### OH_RdbTrans_Delete()
+### OH_RdbTrans_Delete()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_RdbTrans_Delete(OH_Rdb_Transaction *trans, const OH_Predicates *predicates, int64_t *changes)
@@ -452,15 +494,17 @@ int OH_RdbTrans_Delete(OH_Rdb_Transaction *trans, const OH_Predicates *predicate
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Transaction *trans | 指向OH_Rdb_Transaction实例的指针。 |
 | const OH_Predicates *predicates | 表示OH_Predicates指定的删除条件。 |
-| int64_t *changes | 表示删除成功的次数。 |
+| int64_t *changes | 输出参数，表示删除成功的次数。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行结果。 返回RDB_OK表示成功。 返回RDB_E_ERROR表示数据库常见错误。 返回RDB_E_INVALID_ARGS表示无效参数。 返回RDB_E_ALREADY_CLOSED表示数据库已经关闭。 返回RDB_E_WAL_SIZE_OVER_LIMIT表示WAL日志文件大小超过默认值。 返回RDB_E_SQLITE_FULL表示SQLite错误码：数据库已满。 返回RDB_E_SQLITE_CORRUPT表示数据库损坏。 返回RDB_E_SQLITE_PERM表示SQLite错误码：访问权限被拒绝。 返回RDB_E_SQLITE_BUSY表示SQLite错误码：数据库文件被锁定。 返回RDB_E_SQLITE_LOCKED表示SQLite错误码：数据库中的表被锁定。 返回RDB_E_SQLITE_NOMEM表示SQLite错误码：数据库内存不足。 返回RDB_E_SQLITE_READONLY表示SQLite错误码：尝试写入只读数据库。 返回RDB_E_SQLITE_IOERR表示SQLite错误码：磁盘I/O错误。 返回RDB_E_SQLITE_TOO_BIG表示SQLite错误码：TEXT或BLOB超出大小限制。 返回RDB_E_SQLITE_MISMATCH表示SQLite错误码：数据类型不匹配。 |
@@ -468,9 +512,10 @@ int OH_RdbTrans_Delete(OH_Rdb_Transaction *trans, const OH_Predicates *predicate
  
   
 
-#### OH_RdbTrans_Query()
+### OH_RdbTrans_Query()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Cursor *OH_RdbTrans_Query(OH_Rdb_Transaction *trans, const OH_Predicates *predicates, const char *columns[], int len)
@@ -484,6 +529,7 @@ OH_Cursor *OH_RdbTrans_Query(OH_Rdb_Transaction *trans, const OH_Predicates *pre
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Transaction *trans | 指向OH_Rdb_Transaction实例的指针。 |
@@ -494,16 +540,18 @@ OH_Cursor *OH_RdbTrans_Query(OH_Rdb_Transaction *trans, const OH_Predicates *pre
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| OH_Cursor | 如果执行成功，则返回指向OH_Cursor实例的指针。如果数据库已关闭或数据库没有响应，则返回空。 |
+| OH_Cursor * | 如果执行成功，则返回指向OH_Cursor实例的指针。如果数据库已关闭或数据库没有响应，则返回NULL。 |
  
  
   
 
-#### OH_RdbTrans_QuerySql()
+### OH_RdbTrans_QuerySql()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Cursor *OH_RdbTrans_QuerySql(OH_Rdb_Transaction *trans, const char *sql, const OH_Data_Values *args)
@@ -517,6 +565,7 @@ OH_Cursor *OH_RdbTrans_QuerySql(OH_Rdb_Transaction *trans, const char *sql, cons
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Transaction *trans | 指向OH_Rdb_Transaction实例的指针。 |
@@ -526,16 +575,18 @@ OH_Cursor *OH_RdbTrans_QuerySql(OH_Rdb_Transaction *trans, const char *sql, cons
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| OH_Cursor | 如果执行成功，则返回指向OH_Cursor实例的指针。如果数据库已关闭或数据库没有响应，则返回空。 |
+| OH_Cursor * | 如果执行成功，则返回指向OH_Cursor实例的指针。如果数据库已关闭或数据库没有响应，则返回NULL。 |
  
  
   
 
-#### OH_RdbTrans_Execute()
+### OH_RdbTrans_Execute()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_RdbTrans_Execute(OH_Rdb_Transaction *trans, const char *sql, const OH_Data_Values *args, OH_Data_Value **result)
@@ -551,6 +602,7 @@ int OH_RdbTrans_Execute(OH_Rdb_Transaction *trans, const char *sql, const OH_Dat
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Transaction *trans | 指向OH_Rdb_Transaction实例的指针。 |
@@ -561,6 +613,7 @@ int OH_RdbTrans_Execute(OH_Rdb_Transaction *trans, const char *sql, const OH_Dat
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行结果。 返回RDB_OK表示成功。 返回RDB_E_ERROR表示数据库常见错误。 返回RDB_E_INVALID_ARGS表示无效参数。 返回RDB_E_ALREADY_CLOSED表示数据库已经关闭。 返回RDB_E_WAL_SIZE_OVER_LIMIT表示WAL日志文件大小超过默认值。 返回RDB_E_SQLITE_FULL表示SQLite错误码：数据库已满。 返回RDB_E_SQLITE_CORRUPT表示数据库损坏。 返回RDB_E_SQLITE_PERM表示SQLite错误码：访问权限被拒绝。 返回RDB_E_SQLITE_BUSY表示SQLite错误码：数据库文件被锁定。 返回RDB_E_SQLITE_LOCKED表示SQLite错误码：数据库中的表被锁定。 返回RDB_E_SQLITE_NOMEM表示SQLite错误码：数据库内存不足。 返回RDB_E_SQLITE_READONLY表示SQLite错误码：尝试写入只读数据库。 返回RDB_E_SQLITE_IOERR表示SQLite错误码：磁盘I/O错误。 返回RDB_E_SQLITE_TOO_BIG表示SQLite错误码：TEXT或BLOB超出大小限制。 返回RDB_E_SQLITE_MISMATCH表示SQLite错误码：数据类型不匹配。 |
@@ -568,9 +621,10 @@ int OH_RdbTrans_Execute(OH_Rdb_Transaction *trans, const char *sql, const OH_Dat
  
   
 
-#### OH_RdbTrans_Destroy()
+### OH_RdbTrans_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_RdbTrans_Destroy(OH_Rdb_Transaction *trans)
@@ -584,6 +638,7 @@ int OH_RdbTrans_Destroy(OH_Rdb_Transaction *trans)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Transaction *trans | 指向OH_Rdb_Transaction实例的指针。 |
@@ -591,6 +646,7 @@ int OH_RdbTrans_Destroy(OH_Rdb_Transaction *trans)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回错误码。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 |
@@ -598,9 +654,10 @@ int OH_RdbTrans_Destroy(OH_Rdb_Transaction *trans)
  
   
 
-#### OH_RdbTrans_QueryWithoutRowCount()
+### OH_RdbTrans_QueryWithoutRowCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Cursor *OH_RdbTrans_QueryWithoutRowCount(OH_Rdb_Transaction *trans, const OH_Predicates *predicates, const char * const columns[], int len)
@@ -614,6 +671,7 @@ OH_Cursor *OH_RdbTrans_QueryWithoutRowCount(OH_Rdb_Transaction *trans, const OH_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Transaction *trans | 指向OH_Rdb_Transaction实例的指针。 |
@@ -624,16 +682,18 @@ OH_Cursor *OH_RdbTrans_QueryWithoutRowCount(OH_Rdb_Transaction *trans, const OH_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| OH_Cursor * | 如果执行成功，则返回指向OH_Cursor实例的指针。如果数据库已关闭或数据库没有响应，则返回nullptr。 |
+| OH_Cursor * | 如果执行成功，则返回指向OH_Cursor实例的指针。如果数据库已关闭或数据库没有响应，则返回NULL。 |
  
  
   
 
-#### OH_RdbTrans_QuerySqlWithoutRowCount()
+### OH_RdbTrans_QuerySqlWithoutRowCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Cursor *OH_RdbTrans_QuerySqlWithoutRowCount(OH_Rdb_Transaction *trans, const char *sql, const OH_Data_Values *args)
@@ -647,6 +707,7 @@ OH_Cursor *OH_RdbTrans_QuerySqlWithoutRowCount(OH_Rdb_Transaction *trans, const 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Transaction *trans | 指向OH_Rdb_Transaction实例的指针。 |
@@ -656,16 +717,18 @@ OH_Cursor *OH_RdbTrans_QuerySqlWithoutRowCount(OH_Rdb_Transaction *trans, const 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| OH_Cursor * | 如果执行成功，则返回指向OH_Cursor实例的指针。如果数据库已关闭或数据库没有响应，则返回nullptr。 |
+| OH_Cursor * | 如果执行成功，则返回指向OH_Cursor实例的指针。如果数据库已关闭或数据库没有响应，则返回NULL。 |
  
  
   
 
-#### OH_RdbTrans_BatchInsertWithReturning()
+### OH_RdbTrans_BatchInsertWithReturning()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_RdbTrans_BatchInsertWithReturning(OH_Rdb_Transaction *trans, const char *table, const OH_Data_VBuckets *rows, Rdb_ConflictResolution resolution, OH_RDB_ReturningContext *context)
@@ -687,6 +750,7 @@ int OH_RdbTrans_BatchInsertWithReturning(OH_Rdb_Transaction *trans, const char *
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Transaction *trans | 指向OH_Rdb_Transaction实例的指针。 |
@@ -698,6 +762,7 @@ int OH_RdbTrans_BatchInsertWithReturning(OH_Rdb_Transaction *trans, const char *
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行结果。 返回RDB_OK表示执行成功。 返回RDB_E_INVALID_ARGS表示输入参数无效。 返回RDB_E_WAL_SIZE_OVER_LIMIT表示WAL文件大小超过默认限制。 返回RDB_E_NOT_SUPPORTED表示不支持的操作。 返回RDB_E_DATABASE_BUSY表示数据库忙。 返回RDB_E_ALREADY_CLOSED表示数据库已关闭。 返回RDB_E_SQLITE_FULL表示SQLite错误：数据库已满。 返回RDB_E_SQLITE_CORRUPT表示数据库损坏。 返回RDB_E_SQLITE_BUSY表示SQLite错误：数据库文件被锁定。 返回RDB_E_SQLITE_LOCKED表示SQLite错误：数据库中的表被锁定。 返回RDB_E_SQLITE_IOERR表示SQLite错误：发生某种磁盘I/O错误。 返回RDB_E_SQLITE_TOO_BIG表示SQLite错误：TEXT或BLOB超出大小限制。 返回RDB_E_SQLITE_MISMATCH表示SQLite错误：数据类型不匹配。 返回RDB_E_SQLITE_CONSTRAINT表示SQLite错误：由于违反约束而中止。 返回RDB_E_SQLITE_ERROR表示SQLite错误。可能原因：语法错误，例如表或列不存在。 具体错误码可参考OH_Rdb_ErrCode。 |
@@ -705,9 +770,10 @@ int OH_RdbTrans_BatchInsertWithReturning(OH_Rdb_Transaction *trans, const char *
  
   
 
-#### OH_RdbTrans_UpdateWithReturning()
+### OH_RdbTrans_UpdateWithReturning()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_RdbTrans_UpdateWithReturning(OH_Rdb_Transaction *trans, OH_VBucket *row, OH_Predicates *predicates, Rdb_ConflictResolution resolution, OH_RDB_ReturningContext *context)
@@ -721,6 +787,7 @@ int OH_RdbTrans_UpdateWithReturning(OH_Rdb_Transaction *trans, OH_VBucket *row, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Transaction *trans | 指向OH_Rdb_Transaction实例的指针。 |
@@ -732,6 +799,7 @@ int OH_RdbTrans_UpdateWithReturning(OH_Rdb_Transaction *trans, OH_VBucket *row, 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行结果。 返回RDB_OK表示执行成功。 返回RDB_E_INVALID_ARGS表示输入参数无效。 返回RDB_E_WAL_SIZE_OVER_LIMIT表示WAL文件大小超过默认限制。 返回RDB_E_NOT_SUPPORTED表示不支持的操作。 返回RDB_E_EMPTY_VALUES_BUCKET表示值桶为空。 返回RDB_E_DATABASE_BUSY表示数据库忙。 返回RDB_E_ALREADY_CLOSED表示数据库已关闭。 返回RDB_E_SQLITE_FULL表示SQLite错误：数据库已满。 返回RDB_E_SQLITE_CORRUPT表示数据库损坏。 返回RDB_E_SQLITE_BUSY表示SQLite错误：数据库文件被锁定。 返回RDB_E_SQLITE_LOCKED表示SQLite错误：数据库中的表被锁定。 返回RDB_E_SQLITE_IOERR表示SQLite错误：发生某种磁盘I/O错误。 返回RDB_E_SQLITE_TOO_BIG表示SQLite错误：TEXT或BLOB超出大小限制。 返回RDB_E_SQLITE_MISMATCH表示SQLite错误：数据类型不匹配。 返回RDB_E_SQLITE_CONSTRAINT表示SQLite错误：由于违反约束而中止。 返回RDB_E_SQLITE_ERROR表示SQLite错误。可能原因：语法错误，例如表或列不存在。 具体错误码可参考OH_Rdb_ErrCode。 |
@@ -739,9 +807,10 @@ int OH_RdbTrans_UpdateWithReturning(OH_Rdb_Transaction *trans, OH_VBucket *row, 
  
   
 
-#### OH_RdbTrans_DeleteWithReturning()
+### OH_RdbTrans_DeleteWithReturning()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_RdbTrans_DeleteWithReturning(OH_Rdb_Transaction *trans, OH_Predicates *predicates, OH_RDB_ReturningContext *context)
@@ -755,6 +824,7 @@ int OH_RdbTrans_DeleteWithReturning(OH_Rdb_Transaction *trans, OH_Predicates *pr
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Rdb_Transaction *trans | 指向OH_Rdb_Transaction实例的指针。 |
@@ -764,6 +834,7 @@ int OH_RdbTrans_DeleteWithReturning(OH_Rdb_Transaction *trans, OH_Predicates *pr
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行结果。 返回RDB_OK表示执行成功。 返回RDB_E_INVALID_ARGS表示输入参数无效。 返回RDB_E_WAL_SIZE_OVER_LIMIT表示WAL文件大小超过默认限制。 返回RDB_E_NOT_SUPPORTED表示不支持的操作。 返回RDB_E_DATABASE_BUSY表示数据库忙。 返回RDB_E_ALREADY_CLOSED表示数据库已关闭。 返回RDB_E_SQLITE_FULL表示SQLite错误：数据库已满。 返回RDB_E_SQLITE_CORRUPT表示数据库损坏。 返回RDB_E_SQLITE_BUSY表示SQLite错误：数据库文件被锁定。 返回RDB_E_SQLITE_LOCKED表示SQLite错误：数据库中的表被锁定。 返回RDB_E_SQLITE_IOERR表示SQLite错误：发生某种磁盘I/O错误。 返回RDB_E_SQLITE_TOO_BIG表示SQLite错误：TEXT或BLOB超出大小限制。 返回RDB_E_SQLITE_MISMATCH表示SQLite错误：数据类型不匹配。 返回RDB_E_SQLITE_ERROR表示SQLite错误。可能原因：语法错误，例如表或列不存在。 具体错误码可参考OH_Rdb_ErrCode。 |

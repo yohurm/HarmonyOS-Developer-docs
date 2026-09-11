@@ -1,9 +1,9 @@
 # pushService（推送服务基础能力）
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-pushservice
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块作为HarmonyOS消息推送的基础模块，提供Push Token管理、应用内多账号消息推送及消息接收等核心能力。
 
@@ -13,7 +13,7 @@
 Push Token是Push Kit为应用分配的推送令牌，每台设备上每个应用的Push Token具有唯一性。开发者获取Push Token后需上报到应用服务器，用于向终端设备推送消息，Push Cloud将根据消息体中携带的Push Token，将消息下发至目标设备的目标应用。推送消息流程图如下。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/V8FdgZgzQhif8t2xkRvmwg/zh-cn_image_0000002704395881.png?HW-CC-KV=V1&HW-CC-Date=20260813T095539Z&HW-CC-Expire=86400&HW-CC-Sign=B6B572525E5F5F9B60952328E94238AEC8DE89928B3E1FDA6684D9DFA7086F82)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/iqtEacXmTiqfeZ5RPLuCWg/zh-cn_image_0000002717773900.png?HW-CC-KV=V1&HW-CC-Date=20260911T073045Z&HW-CC-Expire=86400&HW-CC-Sign=9F9A81DEFC5B8B370B9364418F95463EB9CC94ECCB4618AC78D1744DD418F815)
 
 
 若应用服务器未及时更新Push Token，将影响消息的正常推送。
@@ -43,6 +43,7 @@ Push Token是设备与应用实例的唯一标识，与应用内账号无关。�
 
 应用服务器调用REST API推送以下类型消息时，消息内容将传递给应用，由应用自行完成业务处理。
 
+
 | 消息类型 | 限制 | 说明 |
 | --- | --- | --- |
 | 通知消息 | 应用在前台 | 推送消息时，开发者需在消息体中携带foregroundShow字段并赋值为false。 |
@@ -54,7 +55,7 @@ Push Token是设备与应用实例的唯一标识，与应用内账号无关。�
 接收消息流程图如下：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/C1XIZdR3RoG6XJCFGh50aw/zh-cn_image_0000002674635754.png?HW-CC-KV=V1&HW-CC-Date=20260813T095539Z&HW-CC-Expire=86400&HW-CC-Sign=7EC013121C0FC18440EF50434F8580E41D8AF876F3E56920341AB740A1A80E43)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/i4wD_91oRIS0_2M0_DSQ8w/zh-cn_image_0000002717613970.png?HW-CC-KV=V1&HW-CC-Date=20260911T073045Z&HW-CC-Expire=86400&HW-CC-Sign=C36398D19B32384E24DB845D24409C245EBB4D82DBF4637355065DAA7A480812)
 
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -66,9 +67,10 @@ Push Token是设备与应用实例的唯一标识，与应用内账号无关。�
 **起始版本：** 4.0.0(10)
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { pushService } from '@kit.PushKit';
@@ -76,9 +78,10 @@ import { pushService } from '@kit.PushKit';
 
 
 
-#### pushService.getToken
+## pushService.getToken
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getToken(callback: AsyncCallback&lt;string&gt;): void
 
@@ -96,6 +99,7 @@ getToken(callback: AsyncCallback&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;string&gt; | 是 | 回调函数。Token获取成功时，字符长度为112，err为undefined；Token获取失败时返回错误对象。长度可能会变化，建议预留长度大于112。 |
@@ -104,6 +108,7 @@ getToken(callback: AsyncCallback&lt;string&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-error-code)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -199,9 +204,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### pushService.getToken
+## pushService.getToken
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getToken(): Promise&lt;string&gt;
 
@@ -219,6 +225,7 @@ getToken(): Promise&lt;string&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象。返回Token，字符长度为112。长度可能会变化，建议预留长度大于112。 |
@@ -227,6 +234,7 @@ getToken(): Promise&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-error-code)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -319,9 +327,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### pushService.deleteToken
+## pushService.deleteToken
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteToken(callback: AsyncCallback&lt;void&gt;): void
 
@@ -339,6 +348,7 @@ deleteToken(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当删除Token成功，err为undefined，否则为错误对象。 |
@@ -347,6 +357,7 @@ deleteToken(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-error-code)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -396,9 +407,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### pushService.deleteToken
+## pushService.deleteToken
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteToken(): Promise&lt;void&gt;
 
@@ -416,6 +428,7 @@ deleteToken(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -424,6 +437,7 @@ deleteToken(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-error-code)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -472,13 +486,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### pushService.bindAppProfileId
+## pushService.bindAppProfileId
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 bindAppProfileId(appProfileType: pushCommon.AppProfileType, appProfileId: string, callback: AsyncCallback&lt;void&gt;): void
 
-绑定应用内账号匿名标识，使用callback异步回调。在应用内登录或切换账号时，建立当前登录账号与Push Kit的绑定关系，Push Kit以该标识进行消息定向发送。
+绑定应用内账号匿名标识，使用callback异步回调。在应用内登录或切换账号时，建立当前登录账号与Push Token的绑定关系，Push Kit以该标识进行消息定向发送。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -490,6 +505,7 @@ bindAppProfileId(appProfileType: pushCommon.AppProfileType, appProfileId: string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | appProfileType | pushCommon.AppProfileType | 是 | 绑定账号类型，分为华为账号和应用账号。 |
@@ -500,6 +516,7 @@ bindAppProfileId(appProfileType: pushCommon.AppProfileType, appProfileId: string
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-error-code)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -564,13 +581,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### pushService.bindAppProfileId
+## pushService.bindAppProfileId
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 bindAppProfileId(appProfileType: pushCommon.AppProfileType, appProfileId: string): Promise&lt;void&gt;
 
-绑定应用内账号匿名标识，使用Promise异步回调。在应用内登录或切换账号时，建立当前登录账号与Push Kit的绑定关系，Push Kit以该标识进行消息定向发送。
+绑定应用内账号匿名标识，使用Promise异步回调。在应用内登录或切换账号时，建立当前登录账号与Push Token的绑定关系，Push Kit以该标识进行消息定向发送。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -582,6 +600,7 @@ bindAppProfileId(appProfileType: pushCommon.AppProfileType, appProfileId: string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | appProfileType | pushCommon.AppProfileType | 是 | 绑定账号类型，分为华为账号和应用账号。 |
@@ -589,6 +608,7 @@ bindAppProfileId(appProfileType: pushCommon.AppProfileType, appProfileId: string
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -598,6 +618,7 @@ bindAppProfileId(appProfileType: pushCommon.AppProfileType, appProfileId: string
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-error-code)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -660,13 +681,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### pushService.unbindAppProfileId
+## pushService.unbindAppProfileId
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unbindAppProfileId(appProfileId: string, callback: AsyncCallback&lt;void&gt;): void
 
-解绑应用内账号匿名标识，使用callback异步回调。在应用内退出账号时，解除账号与Push Kit的绑定关系。
+解绑应用内账号匿名标识，使用callback异步回调。在应用内退出账号时，解除账号与Push Token的绑定关系。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -678,6 +700,7 @@ unbindAppProfileId(appProfileId: string, callback: AsyncCallback&lt;void&gt;): v
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | appProfileId | string | 是 | 账号匿名标识，配置为调用bindAppProfileId()时设置的appProfileId。最大长度为64，若长度超限，调用REST API接口会报错。 |
@@ -687,6 +710,7 @@ unbindAppProfileId(appProfileId: string, callback: AsyncCallback&lt;void&gt;): v
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-error-code)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -739,13 +763,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### pushService.unbindAppProfileId
+## pushService.unbindAppProfileId
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unbindAppProfileId(appProfileId: string): Promise&lt;void&gt;
 
-解绑应用内账号匿名标识，使用Promise异步回调。在应用内退出账号时，解除账号与Push Kit的绑定关系。
+解绑应用内账号匿名标识，使用Promise异步回调。在应用内退出账号时，解除账号与Push Token的绑定关系。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -757,12 +782,14 @@ unbindAppProfileId(appProfileId: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | appProfileId | string | 是 | 账号匿名标识，配置为调用bindAppProfileId()时设置的appProfileId。最大长度为64，若长度超限，调用REST API接口会报错。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -772,6 +799,7 @@ unbindAppProfileId(appProfileId: string): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-error-code)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -820,9 +848,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### pushService.PushType
+## pushService.PushType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type PushType = 'DEFAULT' | 'IM' | 'VoIP' | 'BACKGROUND' | 'EMERGENCY'
 
@@ -836,6 +865,7 @@ type PushType = 'DEFAULT' | 'IM' | 'VoIP' | 'BACKGROUND' | 'EMERGENCY'
 
 **起始版本：** 5.0.2(14)
 
+
 | 类型 | 说明 |
 | --- | --- |
 | 'DEFAULT' | 通知消息场景。 |
@@ -847,9 +877,10 @@ type PushType = 'DEFAULT' | 'IM' | 'VoIP' | 'BACKGROUND' | 'EMERGENCY'
 
 
 
-#### pushService.receiveMessage
+## pushService.receiveMessage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 receiveMessage(pushType: PushType, ability: Ability, onMessage: Callback<pushCommon.PushPayload>): void
 
@@ -865,6 +896,7 @@ receiveMessage(pushType: PushType, ability: Ability, onMessage: Callback<pushCom
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pushType | PushType | 是 | 场景化消息类型。 说明： · pushService.PushType中EMERGENCY（紧急事件消息场景）起始版本：5.0.0(12)。本场景仅为地震灾害等特殊场景使用。 · pushService.PushType中DEFAULT（通知消息场景）起始版本：5.0.2(14)。调用示例代码请参考应用在前台时处理通知消息中步骤3。 · IM（语音播报消息场景）调用示例代码请参考开发步骤中步骤3。 · VoIP（应用内通话消息场景） 调用示例代码请参考开发步骤中步骤2。 · BACKGROUND（后台消息场景） 调用示例代码请参考开发步骤中步骤5。 |
@@ -875,6 +907,7 @@ receiveMessage(pushType: PushType, ability: Ability, onMessage: Callback<pushCom
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-error-code)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -993,9 +1026,10 @@ export default class PushMessageAbility extends UIAbility {
 
 
 
-#### pushService.on('tokenUpdate')
+## pushService.on('tokenUpdate')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 on(type: 'tokenUpdate', ability: Ability, callback: Callback&lt;string&gt;): void
 
@@ -1011,6 +1045,7 @@ on(type: 'tokenUpdate', ability: Ability, callback: Callback&lt;string&gt;): voi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'tokenUpdate'，即token更新事件。 |
@@ -1021,6 +1056,7 @@ on(type: 'tokenUpdate', ability: Ability, callback: Callback&lt;string&gt;): voi
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-error-code)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1082,9 +1118,10 @@ export default class PushMessageAbility extends UIAbility {
 
 
 
-#### pushService.off('tokenUpdate')
+## pushService.off('tokenUpdate')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 off(type: 'tokenUpdate', callback?: Callback&lt;string&gt;): void
 
@@ -1100,6 +1137,7 @@ off(type: 'tokenUpdate', callback?: Callback&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'tokenUpdate'，即token更新事件。 |
@@ -1109,6 +1147,7 @@ off(type: 'tokenUpdate', callback?: Callback&lt;string&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-error-code)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1146,9 +1185,10 @@ export default class PushMessageAbility extends UIAbility {
 
 
 
-#### pushService.on('distributedMessageReceive')
+## pushService.on('distributedMessageReceive')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 on(type: 'distributedMessageReceive', callee: Callee, callback: DistributedMessageCallback): void
 
@@ -1168,6 +1208,7 @@ on(type: 'distributedMessageReceive', callee: Callee, callback: DistributedMessa
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'distributedMessageReceive'，即分布式消息接收事件。 |
@@ -1178,6 +1219,7 @@ on(type: 'distributedMessageReceive', callee: Callee, callback: DistributedMessa
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-error-code)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1225,9 +1267,10 @@ export default class PushMessageAbility extends UIAbility {
 
 
 
-#### pushService.off('distributedMessageReceive')
+## pushService.off('distributedMessageReceive')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 off(type: 'distributedMessageReceive', callback?: DistributedMessageCallback): void
 
@@ -1243,6 +1286,7 @@ off(type: 'distributedMessageReceive', callback?: DistributedMessageCallback): v
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'distributedMessageReceive'即分布式消息接收事件。 |
@@ -1252,6 +1296,7 @@ off(type: 'distributedMessageReceive', callback?: DistributedMessageCallback): v
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-error-code)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1288,9 +1333,10 @@ export default class PushMessageAbility extends UIAbility {
 
 
 
-#### DistributedMessageCallback
+## DistributedMessageCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 type DistributedMessageCallback = (PushPayload: pushCommon.PushPayload) => Promise&lt;DistributedMessageResult&gt;
 
@@ -1306,12 +1352,14 @@ type DistributedMessageCallback = (PushPayload: pushCommon.PushPayload) => Promi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | PushPayload | pushCommon.PushPayload | 是 | 分布式消息数据的参数定义。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1320,9 +1368,10 @@ type DistributedMessageCallback = (PushPayload: pushCommon.PushPayload) => Promi
 
 
 
-#### DistributedMessageResult
+## DistributedMessageResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 distributedMessageReceive事件中使用的回调类型。
 
@@ -1336,6 +1385,7 @@ distributedMessageReceive事件中使用的回调类型。
 
 **参数：**
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | resultCode | ResultCode | 否 | 否 | 回调函数执行结果，枚举类型，见枚举ResultCode说明。 |
@@ -1343,9 +1393,10 @@ distributedMessageReceive事件中使用的回调类型。
 
 
 
-#### ResultCode
+## ResultCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 表示[DistributedMessageCallback](#distributedmessagecallback)回调函数执行结果的枚举。
 
@@ -1356,6 +1407,7 @@ distributedMessageReceive事件中使用的回调类型。
 **设备行为差异：** 对于6.1.0(23)以前版本，该枚举值在Phone、Tablet中可正常使用，在其他设备类型中无效果。对于6.1.0(23)及之后版本，该枚举值在Phone、Tablet、PC/2in1中可正常使用，在其他设备类型中无效果。
 
 **起始版本：** 6.0.0(20)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

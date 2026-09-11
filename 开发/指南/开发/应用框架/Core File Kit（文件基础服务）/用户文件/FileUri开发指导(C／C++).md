@@ -1,22 +1,22 @@
 # FileUri开发指导(C/C++)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-fileuri-guidelines
 
-#### 场景介绍
+## 场景介绍
 
 FileUri提供了关于文件URI的基本操作，将URI转换成对应的沙箱路径、将应用沙箱路径转换成对应应用自己的URI、获取URI所在目录路径的URI等接口能力，方便应用对文件分享业务中URI的访问。
 
 
 
-#### 基本概念
+## 基本概念
 
 **结果集**：满足使用场景的路径或URI。
 
 
 
-#### 约束限制
+## 约束限制
 
  - URI转路径时，URI来源建议使用系统能力获取，例如：picker、剪贴板、拖拽、及系统提供的路径转URI接口等系统能力返回的URI；如果转换应用或用户拼接的URI，则转换后的路径可能无法访问。
  - 为保证数据的准确性，在转换或判断过程中应保持单对象处理，避免资源竞争导致数据异常。
@@ -24,9 +24,10 @@ FileUri提供了关于文件URI的基本操作，将URI转换成对应的沙箱�
 
 
 
-#### 接口说明
+## 接口说明
 
 接口的详细说明，请参考[oh_file_uri.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-file-uri-h)。
+
 
 | 接口名称 | 描述 |
 | --- | --- |
@@ -39,7 +40,7 @@ FileUri提供了关于文件URI的基本操作，将URI转换成对应的沙箱�
 
 
 
-#### 开发步骤
+## 开发步骤
 
 **在CMake脚本中链接动态库**
 

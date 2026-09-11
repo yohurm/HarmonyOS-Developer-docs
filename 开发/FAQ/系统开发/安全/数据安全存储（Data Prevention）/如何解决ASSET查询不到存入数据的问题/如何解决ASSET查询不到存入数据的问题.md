@@ -119,9 +119,9 @@ struct AssetStoreExample {
 
   query() {
     let query: asset.AssetMap = new Map();
-    // 设置查询关键资产别名
+    <em>// 设置查询关键资产别名</em>
     query.set(asset.Tag.ALIAS, this.stringToArray('alias'));
-    // 设置查询关键资产返回结果类型
+   <em> // 设置查询关键资产返回结果类型</em>
     query.set(asset.Tag.RETURN_TYPE, asset.ReturnType.ALL);
     try {
       let res: Array<asset.AssetMap> = asset.querySync(query);

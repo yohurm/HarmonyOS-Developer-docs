@@ -1,10 +1,10 @@
 # GetTensorC
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-18 12:49:55
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-gettensorc
 
-#### 功能说明
+## 功能说明
 
 Iterate后，获取一块C矩阵片，可以直接输出到GM tensor中。
  
@@ -18,7 +18,7 @@ Iterate后，获取一块C矩阵片，可以直接输出到GM tensor中。
  
   
 
-#### 函数原型
+## 函数原型
 
 - 获取C矩阵，输出至GM
 
@@ -49,10 +49,11 @@ __aicore__ inline void GetTensorC(const LocalTensor<DstT>& c, uint8_t enAtomic =
  
   
 
-#### 参数说明
+## 参数说明
 
 **表1** 模板参数说明
   
+
 | 参数名 | 描述 |
 | --- | --- |
 | sync | 设置同步或者异步模式：同步模式设置为true，异步模式设置为false。 |
@@ -60,9 +61,10 @@ __aicore__ inline void GetTensorC(const LocalTensor<DstT>& c, uint8_t enAtomic =
  
 **表2** 接口参数说明
   
+
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
-| gm | 输出 | 取出C矩阵到GM，数据格式可以为ND或NZ。 Kirin9020系列处理器，支持的数据类型为：half |
+| gm | 输出 | 取出C矩阵到GM，数据格式可以为ND或NZ。 Kirin9020系列处理器、Kirin9030系列处理器，支持的数据类型为：half。 |
 | enAtomic | 输入 | 是否开启Atomic操作，默认值为0 。 参数取值： 0：不开启Atomic操作 1：开启AtomicAdd累加操作 2：开启AtomicMax求最大值操作 3：开启AtomicMin求最小值操作 |
 | enSequentialWrite | 输入 | 是否开启连续写模式（连续写，写入[baseM, baseN]。非连续写，写入[singleCoreM, singleCoreN]中对应的位置），默认值false（非连续写模式）。 说明： 非连续写模式，内部会按照迭代顺序算好偏移，开发者不需要关注。如果开发者需要自己决定排布顺序，可以选择连续写模式，自行按照自己设定的偏移进行搬运操作。 |
  
@@ -81,25 +83,27 @@ __aicore__ inline void GetTensorC(const LocalTensor<DstT>& c, uint8_t enAtomic =
  
   
 
-#### 返回值
+## 返回值
 
 无
  
   
 
-#### 支持的型号
+## 支持的型号
 
 Kirin9020系列处理器
  
+Kirin9030系列处理器
+ 
   
 
-#### 注意事项
+## 注意事项
 
 传入的C矩阵地址空间大小需要保证不小于baseM * baseN。
  
   
 
-#### 调用示例
+## 调用示例
 
 - 获取C矩阵，输出至GM，同步模式样例
 

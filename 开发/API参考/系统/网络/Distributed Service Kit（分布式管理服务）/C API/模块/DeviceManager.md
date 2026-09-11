@@ -1,24 +1,29 @@
 # DeviceManager
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-devicemanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-分布式设备管理模块，用于获取可信设备和本地设备的相关信息。
- 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+分布式设备管理模块，用于获取可信设备和本地设备的基本信息。可信设备指已通过设备认证建立信任关系的设备，基本信息包括设备名称、设备类型、设备标识、设备状态等。该模块提供设备发现、设备绑定、设备信息查询、设备状态监听等功能，适用于分布式跨设备协同、设备互联等场景，实现业务协同与数据共享。
+
+开发者可通过该模块提供的接口获取设备信息，完成分布式设备管理相关的开发任务。模块设计逻辑和使用说明，请参见[分布式设备管理开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicemanager-guidelines)。
+
 **起始版本：** 20
- 
-  
 
-#### 文件汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
- 
+
+## 文件汇总
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+
 | 名称 | 描述 |
 | --- | --- |
 | oh_device_manager.h | 提供访问可信设备和本地设备信息的接口。引用文件：<distributedhardware/device_manager/oh_device_manager.h> |

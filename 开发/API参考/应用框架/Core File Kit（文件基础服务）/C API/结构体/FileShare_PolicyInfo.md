@@ -1,6 +1,6 @@
 # FileShare_PolicyInfo
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-fileshare-fileshare-policyinfo
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -10,11 +10,12 @@ typedef struct FileShare_PolicyInfo {...} FileShare_PolicyInfo
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
-需要授予或使能权限URI的策略信息。
+需要授予或激活URI访问权限的策略信息，用于描述跨应用文件共享场景中的目标URI和访问模式。
  
 **起始版本：** 12
  
@@ -24,18 +25,21 @@ typedef struct FileShare_PolicyInfo {...} FileShare_PolicyInfo
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
-| char *uri | 需要授予或使能权限的URI。 |
-| unsigned int length | URI的字节长度。 |
-| unsigned int operationMode | 授予或使能权限的URI访问模式。 示例：FileShare_OperationMode.READ_MODE 、 FileShare_OperationMode.WRITE_MODE 或者 FileShare_OperationMode.READ_MODE\|FileShare_OperationMode.WRITE_MODE。 |
+| char *uri | 需要授予或激活访问权限的URI，需符合系统URI格式规范。 |
+| unsigned int length | uri指向字符串的字节长度，不包含字符串结束符'\0'。 |
+| unsigned int operationMode | 授予或激活权限的URI访问模式。READ_MODE表示读取权限，WRITE_MODE表示写入权限。 示例：FileShare_OperationMode.READ_MODE、FileShare_OperationMode.WRITE_MODE， 或者 FileShare_OperationMode.READ_MODE\|FileShare_OperationMode.WRITE_MODE。 |

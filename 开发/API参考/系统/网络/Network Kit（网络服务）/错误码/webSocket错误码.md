@@ -1,16 +1,19 @@
 # webSocket错误码
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-websocket
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!TIP]
 > 以下仅介绍本模块特有错误码，通用错误码请参考 通用错误码 说明文档。
 
 
 
-#### 200 连接失败
+## 200 连接失败
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -34,9 +37,10 @@ WebSocket连接失败。
 
 
 
-#### 2302001 Websocket URL错误
+## 2302001 Websocket URL错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -52,15 +56,16 @@ WebSocket URL错误。
 
 **处理步骤**
 
-1.检查URL是否为空或者未包含正确的协议（ws://或wss://)。
+1.检查URL是否为空或者未包含正确的协议（ws://或wss://）。
 
 2.检查URL长度是否超过2048个字符。
 
 
 
-#### 2302002 Websocket 证书不存在
+## 2302002 Websocket 证书不存在
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -82,9 +87,10 @@ WebSocket 证书不存在。
 
 
 
-#### 2302003 Websocket 连接已经存在
+## 2302003 Websocket 连接已经存在
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -104,9 +110,10 @@ WebSocket 连接已经建立。
 
 
 
-#### 2302004 WebsocketServer 无法在指定的NIC（网络接口）上进行网络监听
+## 2302004 WebsocketServer 无法在指定的NIC（网络接口）上进行网络监听
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -118,17 +125,18 @@ WebSocketServer无法在指定的NIC上进行网络监听。
 
 **可能原因**
 
-WebSocketServer服务器配置文件中的ip地址无效。
+WebSocketServer服务器配置文件中的IP地址无效。
 
 **处理步骤**
 
-检查网络连接是否正常，检查ip地址有效性。
+检查网络连接是否正常，检查IP地址有效性。
 
 
 
-#### 2302005 WebsocketServer 无法在指定的端口上进行网络监听
+## 2302005 WebsocketServer 无法在指定的端口上进行网络监听
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -148,9 +156,10 @@ WebSocketServer服务器配置文件中的端口号无效。
 
 
 
-#### 2302007 WebsocketServer当前监听的端口已被占用
+## 2302007 WebsocketServer当前监听的端口已被占用
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -170,9 +179,10 @@ WebsocketServer当前监听的端口已经被占用。
 
 
 
-#### 2302998 不允许访问域名
+## 2302998 不允许访问域名
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -192,9 +202,10 @@ It is not allowed to access this domain.
 
 
 
-#### 2302999 内部错误
+## 2302999 内部错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 

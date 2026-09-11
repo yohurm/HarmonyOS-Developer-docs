@@ -1,9 +1,9 @@
 # @ohos.account.osAccount (系统账号管理)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-osaccount
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供管理系统账号的基础能力，包括系统账号的添加、删除、查询、设置、订阅、启动等功能。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { osAccount } from '@kit.BasicServicesKit';
@@ -22,9 +23,10 @@ import { osAccount } from '@kit.BasicServicesKit';
 
 
 
-#### osAccount.getAccountManager
+## osAccount.getAccountManager
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAccountManager(): AccountManager
 
@@ -33,6 +35,7 @@ getAccountManager(): AccountManager
 **系统能力：** SystemCapability.Account.OsAccount
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -47,9 +50,10 @@ let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
 
 
 
-#### osAccount.isDomainAccountSupported
+## osAccount.isDomainAccountSupported
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isDomainAccountSupported(): Promise&lt;boolean&gt;
 
@@ -63,6 +67,7 @@ isDomainAccountSupported(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示支持域账号；返回false表示不支持。 |
@@ -71,6 +76,7 @@ isDomainAccountSupported(): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -96,13 +102,15 @@ try {
 
 
 
-#### OsAccountType
+## OsAccountType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示系统账号类型的枚举。
 
 **系统能力：** SystemCapability.Account.OsAccount
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -113,17 +121,19 @@ try {
 
 
 
-#### AccountManager
+## AccountManager
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 系统账号管理类。
 
 
 
-#### checkMultiOsAccountEnabled9+
+### checkMultiOsAccountEnabled9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checkMultiOsAccountEnabled(callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -133,6 +143,7 @@ checkMultiOsAccountEnabled(callback: AsyncCallback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;boolean&gt; | 是 | 回调函数。返回true表示支持多系统账号；返回false表示不支持。 |
@@ -141,6 +152,7 @@ checkMultiOsAccountEnabled(callback: AsyncCallback&lt;boolean&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -170,9 +182,10 @@ try {
 
 
 
-#### checkMultiOsAccountEnabled9+
+### checkMultiOsAccountEnabled9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checkMultiOsAccountEnabled(): Promise&lt;boolean&gt;
 
@@ -182,6 +195,7 @@ checkMultiOsAccountEnabled(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示支持多系统账号；返回false表示不支持。 |
@@ -190,6 +204,7 @@ checkMultiOsAccountEnabled(): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -216,9 +231,10 @@ try {
 
 
 
-#### checkOsAccountActivated(deprecated)
+### checkOsAccountActivated(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checkOsAccountActivated(localId: number, callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -234,6 +250,7 @@ checkOsAccountActivated(localId: number, callback: AsyncCallback&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | localId | number | 是 | 系统账号ID。 |
@@ -243,6 +260,7 @@ checkOsAccountActivated(localId: number, callback: AsyncCallback&lt;boolean&gt;)
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -279,9 +297,10 @@ try {
 
 
 
-#### checkOsAccountActivated(deprecated)
+### checkOsAccountActivated(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checkOsAccountActivated(localId: number): Promise&lt;boolean&gt;
 
@@ -297,12 +316,14 @@ checkOsAccountActivated(localId: number): Promise&lt;boolean&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | localId | number | 是 | 系统账号ID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -312,6 +333,7 @@ checkOsAccountActivated(localId: number): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -346,9 +368,10 @@ try {
 
 
 
-#### isOsAccountConstraintEnabled11+
+### isOsAccountConstraintEnabled11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isOsAccountConstraintEnabled(constraint: string): Promise&lt;boolean&gt;
 
@@ -358,12 +381,14 @@ isOsAccountConstraintEnabled(constraint: string): Promise&lt;boolean&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | constraint | string | 是 | 指定的约束名称。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -373,6 +398,7 @@ isOsAccountConstraintEnabled(constraint: string): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -403,9 +429,10 @@ try {
 
 
 
-#### checkOsAccountConstraintEnabled(deprecated)
+### checkOsAccountConstraintEnabled(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checkOsAccountConstraintEnabled(localId: number, constraint: string, callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -421,6 +448,7 @@ checkOsAccountConstraintEnabled(localId: number, constraint: string, callback: A
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | localId | number | 是 | 系统账号ID。 |
@@ -431,6 +459,7 @@ checkOsAccountConstraintEnabled(localId: number, constraint: string, callback: A
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -468,9 +497,10 @@ try {
 
 
 
-#### checkOsAccountConstraintEnabled(deprecated)
+### checkOsAccountConstraintEnabled(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checkOsAccountConstraintEnabled(localId: number, constraint: string): Promise&lt;boolean&gt;
 
@@ -486,6 +516,7 @@ checkOsAccountConstraintEnabled(localId: number, constraint: string): Promise&lt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | localId | number | 是 | 系统账号ID。 |
@@ -493,6 +524,7 @@ checkOsAccountConstraintEnabled(localId: number, constraint: string): Promise&lt
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -502,6 +534,7 @@ checkOsAccountConstraintEnabled(localId: number, constraint: string): Promise&lt
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -537,9 +570,10 @@ try {
 
 
 
-#### checkOsAccountTestable9+
+### checkOsAccountTestable9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checkOsAccountTestable(callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -549,6 +583,7 @@ checkOsAccountTestable(callback: AsyncCallback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;boolean&gt; | 是 | 回调函数。返回true表示当前账号为测试账号；返回false表示当前账号非测试账号。 |
@@ -557,6 +592,7 @@ checkOsAccountTestable(callback: AsyncCallback&lt;boolean&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -586,9 +622,10 @@ try {
 
 
 
-#### checkOsAccountTestable9+
+### checkOsAccountTestable9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checkOsAccountTestable(): Promise&lt;boolean&gt;
 
@@ -598,6 +635,7 @@ checkOsAccountTestable(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示当前账号为测试账号；返回false表示当前账号非测试账号。 |
@@ -606,6 +644,7 @@ checkOsAccountTestable(): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -632,9 +671,10 @@ try {
 
 
 
-#### isOsAccountUnlocked11+
+### isOsAccountUnlocked11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isOsAccountUnlocked(): Promise&lt;boolean&gt;
 
@@ -644,6 +684,7 @@ isOsAccountUnlocked(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示当前账号已解锁；返回false表示当前账号未解锁。 |
@@ -652,6 +693,7 @@ isOsAccountUnlocked(): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -678,9 +720,10 @@ try {
 
 
 
-#### checkOsAccountVerified(deprecated)
+### checkOsAccountVerified(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checkOsAccountVerified(callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -694,6 +737,7 @@ checkOsAccountVerified(callback: AsyncCallback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;boolean&gt; | 是 | 回调函数。返回true表示当前账号已认证解锁；返回false表示当前账号未认证解锁。 |
@@ -702,6 +746,7 @@ checkOsAccountVerified(callback: AsyncCallback&lt;boolean&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -730,9 +775,10 @@ try {
 
 
 
-#### checkOsAccountVerified(deprecated)
+### checkOsAccountVerified(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checkOsAccountVerified(): Promise&lt;boolean&gt;
 
@@ -746,6 +792,7 @@ checkOsAccountVerified(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示当前账号已认证解锁；返回false表示当前账号未认证解锁。 |
@@ -754,6 +801,7 @@ checkOsAccountVerified(): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -780,9 +828,10 @@ try {
 
 
 
-#### checkOsAccountVerified(deprecated)
+### checkOsAccountVerified(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checkOsAccountVerified(localId: number, callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -798,6 +847,7 @@ checkOsAccountVerified(localId: number, callback: AsyncCallback&lt;boolean&gt;):
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | localId | number | 是 | 系统账号ID。 |
@@ -807,6 +857,7 @@ checkOsAccountVerified(localId: number, callback: AsyncCallback&lt;boolean&gt;):
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -841,9 +892,10 @@ try {
 
 
 
-#### checkOsAccountVerified(deprecated)
+### checkOsAccountVerified(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checkOsAccountVerified(localId: number): Promise&lt;boolean&gt;
 
@@ -859,12 +911,14 @@ checkOsAccountVerified(localId: number): Promise&lt;boolean&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | localId | number | 是 | 系统账号ID。不填则检查当前系统账号是否已验证。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -874,6 +928,7 @@ checkOsAccountVerified(localId: number): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -906,9 +961,10 @@ try {
 
 
 
-#### getOsAccountCount9+
+### getOsAccountCount9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOsAccountCount(callback: AsyncCallback&lt;number&gt;): void
 
@@ -920,6 +976,7 @@ getOsAccountCount(callback: AsyncCallback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;number&gt; | 是 | 回调函数。如果获取成功，err为null，data为已创建的系统账号的数量；否则为错误对象。 |
@@ -928,6 +985,7 @@ getOsAccountCount(callback: AsyncCallback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -958,9 +1016,10 @@ try {
 
 
 
-#### getOsAccountCount9+
+### getOsAccountCount9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOsAccountCount(): Promise&lt;number&gt;
 
@@ -972,6 +1031,7 @@ getOsAccountCount(): Promise&lt;number&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象，返回已创建的系统账号的数量。 |
@@ -980,6 +1040,7 @@ getOsAccountCount(): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1007,9 +1068,10 @@ try {
 
 
 
-#### getOsAccountLocalId9+
+### getOsAccountLocalId9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOsAccountLocalId(callback: AsyncCallback&lt;number&gt;): void
 
@@ -1019,6 +1081,7 @@ getOsAccountLocalId(callback: AsyncCallback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;number&gt; | 是 | 回调函数。如果获取成功，err为null，data为当前进程所属的系统账号ID；否则为错误对象。 |
@@ -1027,6 +1090,7 @@ getOsAccountLocalId(callback: AsyncCallback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1056,9 +1120,10 @@ try {
 
 
 
-#### getOsAccountLocalId9+
+### getOsAccountLocalId9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOsAccountLocalId(): Promise&lt;number&gt;
 
@@ -1068,6 +1133,7 @@ getOsAccountLocalId(): Promise&lt;number&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象，返回当前进程所属的系统账号ID。 |
@@ -1076,6 +1142,7 @@ getOsAccountLocalId(): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1102,9 +1169,10 @@ try {
 
 
 
-#### getOsAccountLocalIdForUid9+
+### getOsAccountLocalIdForUid9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOsAccountLocalIdForUid(uid: number, callback: AsyncCallback&lt;number&gt;): void
 
@@ -1113,6 +1181,7 @@ getOsAccountLocalIdForUid(uid: number, callback: AsyncCallback&lt;number&gt;): v
 **系统能力：** SystemCapability.Account.OsAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1123,6 +1192,7 @@ getOsAccountLocalIdForUid(uid: number, callback: AsyncCallback&lt;number&gt;): v
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1157,9 +1227,10 @@ try {
 
 
 
-#### getOsAccountLocalIdForUid9+
+### getOsAccountLocalIdForUid9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOsAccountLocalIdForUid(uid: number): Promise&lt;number&gt;
 
@@ -1169,12 +1240,14 @@ getOsAccountLocalIdForUid(uid: number): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uid | number | 是 | 进程uid。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1184,6 +1257,7 @@ getOsAccountLocalIdForUid(uid: number): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1216,9 +1290,10 @@ try {
 
 
 
-#### getOsAccountLocalIdForUidSync10+
+### getOsAccountLocalIdForUidSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOsAccountLocalIdForUidSync(uid: number): number
 
@@ -1228,12 +1303,14 @@ getOsAccountLocalIdForUidSync(uid: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uid | number | 是 | 进程uid。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1243,6 +1320,7 @@ getOsAccountLocalIdForUidSync(uid: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1271,9 +1349,10 @@ try {
 
 
 
-#### getOsAccountLocalIds
+### getOsAccountLocalIds
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOsAccountLocalIds(): Promise<number[]>
 
@@ -1289,6 +1368,7 @@ getOsAccountLocalIds(): Promise<number[]>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<number[]> | Promise对象，返回所有非系统级的操作系统账号的本地ID。 |
@@ -1297,6 +1377,7 @@ getOsAccountLocalIds(): Promise<number[]>
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1324,9 +1405,10 @@ try {
 
 
 
-#### getOsAccountLocalIdForDomain9+
+### getOsAccountLocalIdForDomain9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOsAccountLocalIdForDomain(domainInfo: DomainAccountInfo, callback: AsyncCallback&lt;number&gt;): void
 
@@ -1338,6 +1420,7 @@ getOsAccountLocalIdForDomain(domainInfo: DomainAccountInfo, callback: AsyncCallb
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | domainInfo | DomainAccountInfo | 是 | 域账号信息。 |
@@ -1347,6 +1430,7 @@ getOsAccountLocalIdForDomain(domainInfo: DomainAccountInfo, callback: AsyncCallb
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1380,9 +1464,10 @@ try {
 
 
 
-#### getOsAccountLocalIdForDomain9+
+### getOsAccountLocalIdForDomain9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOsAccountLocalIdForDomain(domainInfo: DomainAccountInfo): Promise&lt;number&gt;
 
@@ -1394,12 +1479,14 @@ getOsAccountLocalIdForDomain(domainInfo: DomainAccountInfo): Promise&lt;number&g
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | domainInfo | DomainAccountInfo | 是 | 域账号信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1409,6 +1496,7 @@ getOsAccountLocalIdForDomain(domainInfo: DomainAccountInfo): Promise&lt;number&g
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1440,9 +1528,10 @@ try {
 
 
 
-#### getOsAccountConstraints(deprecated)
+### getOsAccountConstraints(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOsAccountConstraints(localId: number, callback: AsyncCallback<Array&lt;string&gt;>): void
 
@@ -1458,6 +1547,7 @@ getOsAccountConstraints(localId: number, callback: AsyncCallback<Array&lt;string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | localId | number | 是 | 系统账号ID。 |
@@ -1467,6 +1557,7 @@ getOsAccountConstraints(localId: number, callback: AsyncCallback<Array&lt;string
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1503,9 +1594,10 @@ try {
 
 
 
-#### getOsAccountConstraints(deprecated)
+### getOsAccountConstraints(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOsAccountConstraints(localId: number): Promise<Array&lt;string&gt;>
 
@@ -1521,12 +1613,14 @@ getOsAccountConstraints(localId: number): Promise<Array&lt;string&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | localId | number | 是 | 系统账号ID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1536,6 +1630,7 @@ getOsAccountConstraints(localId: number): Promise<Array&lt;string&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1570,9 +1665,10 @@ try {
 
 
 
-#### getActivatedOsAccountLocalIds9+
+### getActivatedOsAccountLocalIds9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getActivatedOsAccountLocalIds(callback: AsyncCallback<Array&lt;number&gt;>): void
 
@@ -1582,6 +1678,7 @@ getActivatedOsAccountLocalIds(callback: AsyncCallback<Array&lt;number&gt;>): voi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<Array&lt;number&gt;> | 是 | 回调函数。如果查询成功，err为null，data为当前处于激活状态的系统账号的ID列表；否则为错误对象。 |
@@ -1590,6 +1687,7 @@ getActivatedOsAccountLocalIds(callback: AsyncCallback<Array&lt;number&gt;>): voi
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1622,9 +1720,10 @@ try {
 
 
 
-#### getActivatedOsAccountLocalIds9+
+### getActivatedOsAccountLocalIds9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getActivatedOsAccountLocalIds(): Promise<Array&lt;number&gt;>
 
@@ -1634,6 +1733,7 @@ getActivatedOsAccountLocalIds(): Promise<Array&lt;number&gt;>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;number&gt;> | Promise对象，返回当前处于激活状态的系统账号的ID列表。 |
@@ -1642,6 +1742,7 @@ getActivatedOsAccountLocalIds(): Promise<Array&lt;number&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1668,9 +1769,10 @@ try {
 
 
 
-#### getCurrentOsAccount(deprecated)
+### getCurrentOsAccount(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCurrentOsAccount(callback: AsyncCallback&lt;OsAccountInfo&gt;): void
 
@@ -1686,6 +1788,7 @@ getCurrentOsAccount(callback: AsyncCallback&lt;OsAccountInfo&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;OsAccountInfo&gt; | 是 | 回调函数。如果查询成功，err为null，data为当前进程所属的系统账号信息；否则为错误对象。 |
@@ -1694,6 +1797,7 @@ getCurrentOsAccount(callback: AsyncCallback&lt;OsAccountInfo&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1724,9 +1828,10 @@ try {
 
 
 
-#### getCurrentOsAccount(deprecated)
+### getCurrentOsAccount(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCurrentOsAccount(): Promise&lt;OsAccountInfo&gt;
 
@@ -1742,6 +1847,7 @@ getCurrentOsAccount(): Promise&lt;OsAccountInfo&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;OsAccountInfo&gt; | Promise对象，返回当前进程所属的系统账号信息。 |
@@ -1750,6 +1856,7 @@ getCurrentOsAccount(): Promise&lt;OsAccountInfo&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1777,9 +1884,10 @@ try {
 
 
 
-#### getOsAccountType9+
+### getOsAccountType9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOsAccountType(callback: AsyncCallback&lt;OsAccountType&gt;): void
 
@@ -1789,6 +1897,7 @@ getOsAccountType(callback: AsyncCallback&lt;OsAccountType&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;OsAccountType&gt; | 是 | 回调函数。如果查询成功，err为null，data为当前进程所属的系统账号的账号类型；否则为错误对象。 |
@@ -1797,6 +1906,7 @@ getOsAccountType(callback: AsyncCallback&lt;OsAccountType&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1826,9 +1936,10 @@ try {
 
 
 
-#### getOsAccountType9+
+### getOsAccountType9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOsAccountType(): Promise&lt;OsAccountType&gt;
 
@@ -1838,6 +1949,7 @@ getOsAccountType(): Promise&lt;OsAccountType&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;OsAccountType&gt; | Promise对象，返回当前进程所属的系统账号的账号类型。 |
@@ -1846,6 +1958,7 @@ getOsAccountType(): Promise&lt;OsAccountType&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1872,9 +1985,10 @@ try {
 
 
 
-#### queryDistributedVirtualDeviceId9+
+### queryDistributedVirtualDeviceId9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 queryDistributedVirtualDeviceId(callback: AsyncCallback&lt;string&gt;): void
 
@@ -1886,6 +2000,7 @@ queryDistributedVirtualDeviceId(callback: AsyncCallback&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;string&gt; | 是 | 回调函数。如果获取成功，err为null，data为分布式虚拟设备ID；否则为错误对象。 |
@@ -1894,6 +2009,7 @@ queryDistributedVirtualDeviceId(callback: AsyncCallback&lt;string&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1924,9 +2040,10 @@ try {
 
 
 
-#### queryDistributedVirtualDeviceId9+
+### queryDistributedVirtualDeviceId9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 queryDistributedVirtualDeviceId(): Promise&lt;string&gt;
 
@@ -1938,6 +2055,7 @@ queryDistributedVirtualDeviceId(): Promise&lt;string&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回分布式虚拟设备ID。 |
@@ -1946,6 +2064,7 @@ queryDistributedVirtualDeviceId(): Promise&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1973,9 +2092,10 @@ try {
 
 
 
-#### getOsAccountLocalIdForSerialNumber9+
+### getOsAccountLocalIdForSerialNumber9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOsAccountLocalIdForSerialNumber(serialNumber: number, callback: AsyncCallback&lt;number&gt;): void
 
@@ -1984,6 +2104,7 @@ getOsAccountLocalIdForSerialNumber(serialNumber: number, callback: AsyncCallback
 **系统能力：** SystemCapability.Account.OsAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1994,6 +2115,7 @@ getOsAccountLocalIdForSerialNumber(serialNumber: number, callback: AsyncCallback
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2029,9 +2151,10 @@ try {
 
 
 
-#### getOsAccountLocalIdForSerialNumber9+
+### getOsAccountLocalIdForSerialNumber9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOsAccountLocalIdForSerialNumber(serialNumber: number): Promise&lt;number&gt;
 
@@ -2041,12 +2164,14 @@ getOsAccountLocalIdForSerialNumber(serialNumber: number): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | serialNumber | number | 是 | 账号SN码。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2056,6 +2181,7 @@ getOsAccountLocalIdForSerialNumber(serialNumber: number): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2089,9 +2215,10 @@ try {
 
 
 
-#### getSerialNumberForOsAccountLocalId9+
+### getSerialNumberForOsAccountLocalId9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSerialNumberForOsAccountLocalId(localId: number, callback: AsyncCallback&lt;number&gt;): void
 
@@ -2100,6 +2227,7 @@ getSerialNumberForOsAccountLocalId(localId: number, callback: AsyncCallback&lt;n
 **系统能力：** SystemCapability.Account.OsAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2110,6 +2238,7 @@ getSerialNumberForOsAccountLocalId(localId: number, callback: AsyncCallback&lt;n
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2145,9 +2274,10 @@ try {
 
 
 
-#### getSerialNumberForOsAccountLocalId9+
+### getSerialNumberForOsAccountLocalId9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSerialNumberForOsAccountLocalId(localId: number): Promise&lt;number&gt;
 
@@ -2157,12 +2287,14 @@ getSerialNumberForOsAccountLocalId(localId: number): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | localId | number | 是 | 系统账号ID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2172,6 +2304,7 @@ getSerialNumberForOsAccountLocalId(localId: number): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2205,9 +2338,10 @@ try {
 
 
 
-#### isMultiOsAccountEnable(deprecated)
+### isMultiOsAccountEnable(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isMultiOsAccountEnable(callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -2220,6 +2354,7 @@ isMultiOsAccountEnable(callback: AsyncCallback&lt;boolean&gt;): void
 **系统能力：** SystemCapability.Account.OsAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2243,9 +2378,10 @@ accountManager.isMultiOsAccountEnable((err: BusinessError, isEnabled: boolean) =
 
 
 
-#### isMultiOsAccountEnable(deprecated)
+### isMultiOsAccountEnable(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isMultiOsAccountEnable(): Promise&lt;boolean&gt;
 
@@ -2258,6 +2394,7 @@ isMultiOsAccountEnable(): Promise&lt;boolean&gt;
 **系统能力：** SystemCapability.Account.OsAccount
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2279,9 +2416,10 @@ accountManager.isMultiOsAccountEnable().then((isEnabled: boolean) => {
 
 
 
-#### isOsAccountActived(deprecated)
+### isOsAccountActived(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isOsAccountActived(localId: number, callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -2296,6 +2434,7 @@ isOsAccountActived(localId: number, callback: AsyncCallback&lt;boolean&gt;): voi
 **系统能力：** SystemCapability.Account.OsAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2324,9 +2463,10 @@ accountManager.isOsAccountActived(localId, (err: BusinessError, isActived: boole
 
 
 
-#### isOsAccountActived(deprecated)
+### isOsAccountActived(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isOsAccountActived(localId: number): Promise&lt;boolean&gt;
 
@@ -2342,12 +2482,14 @@ isOsAccountActived(localId: number): Promise&lt;boolean&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | localId | number | 是 | 系统账号ID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2373,9 +2515,10 @@ accountManager.isOsAccountActived(localId).then((isActived: boolean) => {
 
 
 
-#### isOsAccountConstraintEnable(deprecated)
+### isOsAccountConstraintEnable(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isOsAccountConstraintEnable(localId: number, constraint: string, callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -2390,6 +2533,7 @@ isOsAccountConstraintEnable(localId: number, constraint: string, callback: Async
 **系统能力：** SystemCapability.Account.OsAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2420,9 +2564,10 @@ accountManager.isOsAccountConstraintEnable(localId, constraint, (err: BusinessEr
 
 
 
-#### isOsAccountConstraintEnable(deprecated)
+### isOsAccountConstraintEnable(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isOsAccountConstraintEnable(localId: number, constraint: string): Promise&lt;boolean&gt;
 
@@ -2438,6 +2583,7 @@ isOsAccountConstraintEnable(localId: number, constraint: string): Promise&lt;boo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | localId | number | 是 | 系统账号ID。 |
@@ -2445,6 +2591,7 @@ isOsAccountConstraintEnable(localId: number, constraint: string): Promise&lt;boo
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2471,9 +2618,10 @@ accountManager.isOsAccountConstraintEnable(localId, constraint).then((isEnabled:
 
 
 
-#### isTestOsAccount(deprecated)
+### isTestOsAccount(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isTestOsAccount(callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -2486,6 +2634,7 @@ isTestOsAccount(callback: AsyncCallback&lt;boolean&gt;): void
 **系统能力：** SystemCapability.Account.OsAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2509,9 +2658,10 @@ accountManager.isTestOsAccount((err: BusinessError, isTestable: boolean) => {
 
 
 
-#### isTestOsAccount(deprecated)
+### isTestOsAccount(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isTestOsAccount(): Promise&lt;boolean&gt;
 
@@ -2524,6 +2674,7 @@ isTestOsAccount(): Promise&lt;boolean&gt;
 **系统能力：** SystemCapability.Account.OsAccount
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2545,9 +2696,10 @@ let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
 
 
 
-#### isOsAccountVerified(deprecated)
+### isOsAccountVerified(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isOsAccountVerified(callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -2562,6 +2714,7 @@ isOsAccountVerified(callback: AsyncCallback&lt;boolean&gt;): void
 **系统能力：** SystemCapability.Account.OsAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2585,9 +2738,10 @@ accountManager.isOsAccountVerified((err: BusinessError, isVerified: boolean) => 
 
 
 
-#### isOsAccountVerified(deprecated)
+### isOsAccountVerified(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isOsAccountVerified(localId: number, callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -2602,6 +2756,7 @@ isOsAccountVerified(localId: number, callback: AsyncCallback&lt;boolean&gt;): vo
 **系统能力：** SystemCapability.Account.OsAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2628,9 +2783,10 @@ accountManager.isOsAccountVerified(localId, (err: BusinessError, isVerified: boo
 
 
 
-#### isOsAccountVerified(deprecated)
+### isOsAccountVerified(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isOsAccountVerified(localId?: number): Promise&lt;boolean&gt;
 
@@ -2646,12 +2802,14 @@ isOsAccountVerified(localId?: number): Promise&lt;boolean&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | localId | number | 否 | 系统账号ID。不填则检查当前系统账号是否已验证，默认为-1。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2673,9 +2831,10 @@ accountManager.isOsAccountVerified().then((isVerified: boolean) => {
 
 
 
-#### getCreatedOsAccountsCount(deprecated)
+### getCreatedOsAccountsCount(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCreatedOsAccountsCount(callback: AsyncCallback&lt;number&gt;): void
 
@@ -2690,6 +2849,7 @@ getCreatedOsAccountsCount(callback: AsyncCallback&lt;number&gt;): void
 **系统能力：** SystemCapability.Account.OsAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2713,9 +2873,10 @@ accountManager.getCreatedOsAccountsCount((err: BusinessError, count: number)=>{
 
 
 
-#### getCreatedOsAccountsCount(deprecated)
+### getCreatedOsAccountsCount(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCreatedOsAccountsCount(): Promise&lt;number&gt;
 
@@ -2730,6 +2891,7 @@ getCreatedOsAccountsCount(): Promise&lt;number&gt;
 **系统能力：** SystemCapability.Account.OsAccount
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2751,9 +2913,10 @@ accountManager.getCreatedOsAccountsCount().then((count: number) => {
 
 
 
-#### getOsAccountLocalIdFromProcess(deprecated)
+### getOsAccountLocalIdFromProcess(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOsAccountLocalIdFromProcess(callback: AsyncCallback&lt;number&gt;): void
 
@@ -2766,6 +2929,7 @@ getOsAccountLocalIdFromProcess(callback: AsyncCallback&lt;number&gt;): void
 **系统能力：** SystemCapability.Account.OsAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2789,9 +2953,10 @@ accountManager.getOsAccountLocalIdFromProcess((err: BusinessError, localId: numb
 
 
 
-#### getOsAccountLocalIdFromProcess(deprecated)
+### getOsAccountLocalIdFromProcess(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOsAccountLocalIdFromProcess(): Promise&lt;number&gt;
 
@@ -2804,6 +2969,7 @@ getOsAccountLocalIdFromProcess(): Promise&lt;number&gt;
 **系统能力：** SystemCapability.Account.OsAccount
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2825,9 +2991,10 @@ accountManager.getOsAccountLocalIdFromProcess().then((localId: number) => {
 
 
 
-#### getOsAccountLocalIdFromUid(deprecated)
+### getOsAccountLocalIdFromUid(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOsAccountLocalIdFromUid(uid: number, callback: AsyncCallback&lt;number&gt;): void
 
@@ -2840,6 +3007,7 @@ getOsAccountLocalIdFromUid(uid: number, callback: AsyncCallback&lt;number&gt;): 
 **系统能力：** SystemCapability.Account.OsAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2867,9 +3035,10 @@ accountManager.getOsAccountLocalIdFromUid(uid, (err: BusinessError, localId: num
 
 
 
-#### getOsAccountLocalIdFromUid(deprecated)
+### getOsAccountLocalIdFromUid(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOsAccountLocalIdFromUid(uid: number): Promise&lt;number&gt;
 
@@ -2883,12 +3052,14 @@ getOsAccountLocalIdFromUid(uid: number): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uid | number | 是 | 进程uid。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2913,9 +3084,10 @@ accountManager.getOsAccountLocalIdFromUid(uid).then((localId: number) => {
 
 
 
-#### getOsAccountLocalIdFromDomain(deprecated)
+### getOsAccountLocalIdFromDomain(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOsAccountLocalIdFromDomain(domainInfo: DomainAccountInfo, callback: AsyncCallback&lt;number&gt;): void
 
@@ -2930,6 +3102,7 @@ getOsAccountLocalIdFromDomain(domainInfo: DomainAccountInfo, callback: AsyncCall
 **系统能力：** SystemCapability.Account.OsAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2955,9 +3128,10 @@ accountManager.getOsAccountLocalIdFromDomain(domainInfo, (err: BusinessError, lo
 
 
 
-#### getOsAccountLocalIdFromDomain(deprecated)
+### getOsAccountLocalIdFromDomain(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOsAccountLocalIdFromDomain(domainInfo: DomainAccountInfo): Promise&lt;number&gt;
 
@@ -2973,12 +3147,14 @@ getOsAccountLocalIdFromDomain(domainInfo: DomainAccountInfo): Promise&lt;number&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | domainInfo | DomainAccountInfo | 是 | 域账号信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3001,9 +3177,10 @@ accountManager.getOsAccountLocalIdFromDomain(domainInfo).then((localId: number) 
 
 
 
-#### getOsAccountAllConstraints(deprecated)
+### getOsAccountAllConstraints(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOsAccountAllConstraints(localId: number, callback: AsyncCallback<Array&lt;string&gt;>): void
 
@@ -3018,6 +3195,7 @@ getOsAccountAllConstraints(localId: number, callback: AsyncCallback<Array&lt;str
 **系统能力：** SystemCapability.Account.OsAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3046,9 +3224,10 @@ accountManager.getOsAccountAllConstraints(localId, (err: BusinessError, constrai
 
 
 
-#### getOsAccountAllConstraints(deprecated)
+### getOsAccountAllConstraints(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOsAccountAllConstraints(localId: number): Promise<Array&lt;string&gt;>
 
@@ -3064,12 +3243,14 @@ getOsAccountAllConstraints(localId: number): Promise<Array&lt;string&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | localId | number | 是 | 系统账号ID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3095,9 +3276,10 @@ accountManager.getOsAccountAllConstraints(localId).then((constraints: string[]) 
 
 
 
-#### queryActivatedOsAccountIds(deprecated)
+### queryActivatedOsAccountIds(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 queryActivatedOsAccountIds(callback: AsyncCallback<Array&lt;number&gt;>): void
 
@@ -3110,6 +3292,7 @@ queryActivatedOsAccountIds(callback: AsyncCallback<Array&lt;number&gt;>): void
 **系统能力：** SystemCapability.Account.OsAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3136,9 +3319,10 @@ accountManager.queryActivatedOsAccountIds((err: BusinessError, idArray: number[]
 
 
 
-#### queryActivatedOsAccountIds(deprecated)
+### queryActivatedOsAccountIds(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 queryActivatedOsAccountIds(): Promise<Array&lt;number&gt;>
 
@@ -3151,6 +3335,7 @@ queryActivatedOsAccountIds(): Promise<Array&lt;number&gt;>
 **系统能力：** SystemCapability.Account.OsAccount
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3172,9 +3357,10 @@ accountManager.queryActivatedOsAccountIds().then((idArray: number[]) => {
 
 
 
-#### queryCurrentOsAccount(deprecated)
+### queryCurrentOsAccount(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 queryCurrentOsAccount(callback: AsyncCallback&lt;OsAccountInfo&gt;): void
 
@@ -3189,6 +3375,7 @@ queryCurrentOsAccount(callback: AsyncCallback&lt;OsAccountInfo&gt;): void
 **系统能力：** SystemCapability.Account.OsAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3212,9 +3399,10 @@ accountManager.queryCurrentOsAccount((err: BusinessError, curAccountInfo: osAcco
 
 
 
-#### queryCurrentOsAccount(deprecated)
+### queryCurrentOsAccount(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 queryCurrentOsAccount(): Promise&lt;OsAccountInfo&gt;
 
@@ -3229,6 +3417,7 @@ queryCurrentOsAccount(): Promise&lt;OsAccountInfo&gt;
 **系统能力：** SystemCapability.Account.OsAccount
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3250,9 +3439,10 @@ accountManager.queryCurrentOsAccount().then((accountInfo: osAccount.OsAccountInf
 
 
 
-#### getOsAccountTypeFromProcess(deprecated)
+### getOsAccountTypeFromProcess(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOsAccountTypeFromProcess(callback: AsyncCallback&lt;OsAccountType&gt;): void
 
@@ -3265,6 +3455,7 @@ getOsAccountTypeFromProcess(callback: AsyncCallback&lt;OsAccountType&gt;): void
 **系统能力：** SystemCapability.Account.OsAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3288,9 +3479,10 @@ accountManager.getOsAccountTypeFromProcess((err: BusinessError, accountType: osA
 
 
 
-#### getOsAccountTypeFromProcess(deprecated)
+### getOsAccountTypeFromProcess(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOsAccountTypeFromProcess(): Promise&lt;OsAccountType&gt;
 
@@ -3303,6 +3495,7 @@ getOsAccountTypeFromProcess(): Promise&lt;OsAccountType&gt;
 **系统能力：** SystemCapability.Account.OsAccount
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3324,9 +3517,10 @@ accountManager.getOsAccountTypeFromProcess().then((accountType: osAccount.OsAcco
 
 
 
-#### getDistributedVirtualDeviceId(deprecated)
+### getDistributedVirtualDeviceId(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDistributedVirtualDeviceId(callback: AsyncCallback&lt;string&gt;): void
 
@@ -3341,6 +3535,7 @@ getDistributedVirtualDeviceId(callback: AsyncCallback&lt;string&gt;): void
 **系统能力：** SystemCapability.Account.OsAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3364,9 +3559,10 @@ accountManager.getDistributedVirtualDeviceId((err: BusinessError, virtualID: str
 
 
 
-#### getDistributedVirtualDeviceId(deprecated)
+### getDistributedVirtualDeviceId(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDistributedVirtualDeviceId(): Promise&lt;string&gt;
 
@@ -3381,6 +3577,7 @@ getDistributedVirtualDeviceId(): Promise&lt;string&gt;
 **系统能力：** SystemCapability.Account.OsAccount
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3402,9 +3599,10 @@ accountManager.getDistributedVirtualDeviceId().then((virtualID: string) => {
 
 
 
-#### getOsAccountLocalIdBySerialNumber(deprecated)
+### getOsAccountLocalIdBySerialNumber(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOsAccountLocalIdBySerialNumber(serialNumber: number, callback: AsyncCallback&lt;number&gt;): void
 
@@ -3417,6 +3615,7 @@ getOsAccountLocalIdBySerialNumber(serialNumber: number, callback: AsyncCallback&
 **系统能力：** SystemCapability.Account.OsAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3444,9 +3643,10 @@ accountManager.getOsAccountLocalIdBySerialNumber(serialNumber, (err: BusinessErr
 
 
 
-#### getOsAccountLocalIdBySerialNumber(deprecated)
+### getOsAccountLocalIdBySerialNumber(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOsAccountLocalIdBySerialNumber(serialNumber: number): Promise&lt;number&gt;
 
@@ -3460,12 +3660,14 @@ getOsAccountLocalIdBySerialNumber(serialNumber: number): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | serialNumber | number | 是 | 账号SN码。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3490,9 +3692,10 @@ accountManager.getOsAccountLocalIdBySerialNumber(serialNumber).then((localId: nu
 
 
 
-#### getSerialNumberByOsAccountLocalId(deprecated)
+### getSerialNumberByOsAccountLocalId(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSerialNumberByOsAccountLocalId(localId: number, callback: AsyncCallback&lt;number&gt;): void
 
@@ -3505,6 +3708,7 @@ getSerialNumberByOsAccountLocalId(localId: number, callback: AsyncCallback&lt;nu
 **系统能力：** SystemCapability.Account.OsAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3533,9 +3737,10 @@ accountManager.getSerialNumberByOsAccountLocalId(localId, (err: BusinessError, s
 
 
 
-#### getSerialNumberByOsAccountLocalId(deprecated)
+### getSerialNumberByOsAccountLocalId(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSerialNumberByOsAccountLocalId(localId: number): Promise&lt;number&gt;
 
@@ -3549,12 +3754,14 @@ getSerialNumberByOsAccountLocalId(localId: number): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | localId | number | 是 | 系统账号ID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3580,9 +3787,10 @@ accountManager.getSerialNumberByOsAccountLocalId(localId).then((serialNumber: nu
 
 
 
-#### getOsAccountName12+
+### getOsAccountName12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOsAccountName(): Promise&lt;string&gt;
 
@@ -3592,6 +3800,7 @@ getOsAccountName(): Promise&lt;string&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回调用方所属系统账号的名称。 |
@@ -3600,6 +3809,7 @@ getOsAccountName(): Promise&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3626,9 +3836,10 @@ try {
 
 
 
-#### getOsAccountNameByLocalId
+### getOsAccountNameByLocalId
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOsAccountNameByLocalId(localId: number): Promise&lt;string&gt;
 
@@ -3644,12 +3855,14 @@ getOsAccountNameByLocalId(localId: number): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | localId | number | 是 | 目标系统账号的本地ID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3659,6 +3872,7 @@ getOsAccountNameByLocalId(localId: number): Promise&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3688,9 +3902,10 @@ try {
 
 
 
-#### getForegroundOsAccountLocalId15+
+### getForegroundOsAccountLocalId15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getForegroundOsAccountLocalId(): Promise&lt;number&gt;
 
@@ -3700,6 +3915,7 @@ getForegroundOsAccountLocalId(): Promise&lt;number&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象，返回前台系统账号的ID。 |
@@ -3708,6 +3924,7 @@ getForegroundOsAccountLocalId(): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3734,9 +3951,10 @@ try {
 
 
 
-#### getOsAccountDomainInfo15+
+### getOsAccountDomainInfo15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOsAccountDomainInfo(localId: number): Promise&lt;DomainAccountInfo&gt;
 
@@ -3748,12 +3966,14 @@ getOsAccountDomainInfo(localId: number): Promise&lt;DomainAccountInfo&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | localId | number | 是 | 系统账号ID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3763,6 +3983,7 @@ getOsAccountDomainInfo(localId: number): Promise&lt;DomainAccountInfo&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3794,19 +4015,21 @@ accountManager.getOsAccountDomainInfo(localId).then((domainAccountInfo: osAccoun
 
 
 
-#### DomainAccountManager18+
+## DomainAccountManager18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 域账号管理类。
 
 
 
-#### updateAccountInfo18+
+### updateAccountInfo18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-updateAccountInfo(oldAccountInfo: DomainAccountInfo, newAccountInfo: DomainAccountInfo): Promise&lt;void&gt;
+**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+static updateAccountInfo(oldAccountInfo: DomainAccountInfo, newAccountInfo: DomainAccountInfo): Promise&lt;void&gt;
 
 修改指定域账号信息。使用Promise异步回调。
 
@@ -3816,6 +4039,7 @@ updateAccountInfo(oldAccountInfo: DomainAccountInfo, newAccountInfo: DomainAccou
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | oldAccountInfo | DomainAccountInfo | 是 | 表示旧域账号信息。 |
@@ -3823,6 +4047,7 @@ updateAccountInfo(oldAccountInfo: DomainAccountInfo, newAccountInfo: DomainAccou
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3832,6 +4057,7 @@ updateAccountInfo(oldAccountInfo: DomainAccountInfo, newAccountInfo: DomainAccou
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3866,13 +4092,15 @@ try {
 
 
 
-#### OsAccountInfo
+## OsAccountInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示系统账号信息。
 
 **系统能力：** SystemCapability.Account.OsAccount
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -3895,31 +4123,35 @@ try {
 
 
 
-#### DomainAccountInfo8+
+## DomainAccountInfo8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示域账号信息。
 
 **系统能力：** SystemCapability.Account.OsAccount
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| domain | string | 否 | 否 | 域名。 |
-| accountName | string | 否 | 否 | 域账号名。 |
+| domain | string | 否 | 否 | 域名。最大长度为128个字节。 |
+| accountName | string | 否 | 否 | 域账号名。最大长度为256个字节。 |
 | serverConfigId18+ | string | 否 | 是 | 域账号配置ID，默认为空字符串。 |
 | additionalInfo | Record<string, Object> | 否 | 是 | 域账号附加信息，默认为空。 起始版本： 26.0.0 模型约束：此接口仅可在Stage模型下使用。 |
 
 
 
 
-#### DomainServerConfig18+
+## DomainServerConfig18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 域服务器配置。
 
 **系统能力：** SystemCapability.Account.OsAccount
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -3930,17 +4162,19 @@ try {
 
 
 
-#### DomainServerConfigManager18+
+## DomainServerConfigManager18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 域服务器配置管理类。
 
 
 
-#### addServerConfig18+
+### addServerConfig18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 static addServerConfig(parameters: Record<string, Object>): Promise&lt;DomainServerConfig&gt;
 
@@ -3952,12 +4186,14 @@ static addServerConfig(parameters: Record<string, Object>): Promise&lt;DomainSer
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | parameters | Record<string, Object> | 是 | 表示域服务器配置参数，用于配置域服务器的连接信息。参数对象包含服务器地址、端口等配置项。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3967,6 +4203,7 @@ static addServerConfig(parameters: Record<string, Object>): Promise&lt;DomainSer
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3998,9 +4235,10 @@ osAccount.DomainServerConfigManager.addServerConfig(configParams).then((
 
 
 
-#### removeServerConfig18+
+### removeServerConfig18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 static removeServerConfig(configId: string): Promise&lt;void&gt;
 
@@ -4012,12 +4250,14 @@ static removeServerConfig(configId: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | configId | string | 是 | 表示服务器配置标识。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4027,6 +4267,7 @@ static removeServerConfig(configId: string): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4058,9 +4299,10 @@ osAccount.DomainServerConfigManager.addServerConfig(configParams).then((
 
 
 
-#### updateServerConfig18+
+### updateServerConfig18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 static updateServerConfig(configId: string, parameters: Record<string, Object>): Promise&lt;DomainServerConfig&gt;
 
@@ -4072,6 +4314,7 @@ static updateServerConfig(configId: string, parameters: Record<string, Object>):
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | configId | string | 是 | 表示服务器配置标识。 |
@@ -4079,6 +4322,7 @@ static updateServerConfig(configId: string, parameters: Record<string, Object>):
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4088,6 +4332,7 @@ static updateServerConfig(configId: string, parameters: Record<string, Object>):
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4125,9 +4370,10 @@ osAccount.DomainServerConfigManager.addServerConfig(configParams).then((
 
 
 
-#### getServerConfig18+
+### getServerConfig18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 static getServerConfig(configId: string): Promise&lt;DomainServerConfig&gt;
 
@@ -4139,12 +4385,14 @@ static getServerConfig(configId: string): Promise&lt;DomainServerConfig&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | configId | string | 是 | 表示服务器配置标识。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4154,6 +4402,7 @@ static getServerConfig(configId: string): Promise&lt;DomainServerConfig&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4187,9 +4436,10 @@ osAccount.DomainServerConfigManager.addServerConfig(configParams).then((
 
 
 
-#### getAllServerConfigs18+
+### getAllServerConfigs18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 static getAllServerConfigs(): Promise<Array&lt;DomainServerConfig&gt;>
 
@@ -4201,6 +4451,7 @@ static getAllServerConfigs(): Promise<Array&lt;DomainServerConfig&gt;>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;DomainServerConfig&gt;> | Promise对象，返回获取的所有域服务器配置。 |
@@ -4209,6 +4460,7 @@ static getAllServerConfigs(): Promise<Array&lt;DomainServerConfig&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4241,9 +4493,10 @@ osAccount.DomainServerConfigManager.addServerConfig(configParams).then((
 
 
 
-#### getAccountServerConfig18+
+### getAccountServerConfig18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 static getAccountServerConfig(domainAccountInfo: DomainAccountInfo): Promise&lt;DomainServerConfig&gt;
 
@@ -4255,12 +4508,14 @@ static getAccountServerConfig(domainAccountInfo: DomainAccountInfo): Promise&lt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | domainAccountInfo | DomainAccountInfo | 是 | 表示目标域账号信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4270,6 +4525,7 @@ static getAccountServerConfig(domainAccountInfo: DomainAccountInfo): Promise&lt;
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4298,9 +4554,11 @@ osAccount.DomainServerConfigManager.getAccountServerConfig(accountInfo).then((
 
 
 
-#### 系统账号约束列表
+## 系统账号约束列表
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 约束 | 说明 |
 | --- | --- |

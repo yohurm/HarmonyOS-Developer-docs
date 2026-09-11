@@ -117,12 +117,12 @@ struct Scene3 {
   build() {
     Column() {
       Text() {
-        // 在文本前后增加空格控制左右距离
+     <em>   // 在文本前后增加空格控制左右距离</em>
         Span(' 标题 ')
           .fontSize('20fp')
           .textBackgroundStyle({ color: Color.Green, radius: '5vp' })
           .fontColor(Color.White);
-        // 直接增加空格控制间距
+      <em>  // 直接增加空格控制间距</em>
         Span(' ').letterSpacing(10);
         Span('我是一段文本我是一段文本我是一段文本，我是一段文本我是一段文本我是一段文本，我是一段文本我是一段文本我是一段文本')
           .fontSize('20fp');

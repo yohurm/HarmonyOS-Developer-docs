@@ -1,6 +1,6 @@
 # Contacts错误码
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-contacts
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
@@ -10,7 +10,8 @@
 
 
 
-#### 16700001 系统内部错误
+## 16700001 系统内部错误
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -32,7 +33,8 @@ General error.
 
 
 
-#### 16700002 参数检查失败
+## 16700002 参数检查失败
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -55,7 +57,8 @@ Invalid parameter value.
 
 
 
-#### 16700003 禁止后台调用
+## 16700003 禁止后台调用
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -77,7 +80,8 @@ Background usage is prohibited.
 
 
 
-#### 16700004 联系人数量超过限制
+## 16700004 联系人数量超过限制
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -99,7 +103,8 @@ The number of contacts exceeds the limit.
 
 
 
-#### 16700101 查询数据库失败
+## 16700101 查询数据库失败
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -121,7 +126,8 @@ Failed to get value from contacts data.
 
 
 
-#### 16700102 增删改数据库失败
+## 16700102 增删改数据库失败
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -143,7 +149,8 @@ Failed to set value to contacts data.
 
 
 
-#### 16700103 用户取消
+## 16700103 用户取消
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -165,7 +172,8 @@ User cancel.
 
 
 
-#### 401 打开联系人头像文件失败
+## 401 打开联系人头像文件失败
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -187,13 +195,17 @@ Failed to open contact portrait file.
 
 
 
-#### 401 系统内部错误
+## 401 系统内部错误
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 
 
-#### 内部关联联系人ID无效
+### 内部关联联系人ID无效
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 **错误信息**
 
@@ -213,7 +225,10 @@ Internal error. Invalid contact id. Failed to generate contact profile.
 
 
 
-#### 保存联系人头像失败
+### 保存联系人头像失败
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 **错误信息**
 
@@ -233,7 +248,10 @@ Internal error. Failed to save contact portrait.
 
 
 
-#### 数据库查询插入结果集为空指针
+### 数据库查询插入结果集为空指针
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 **错误信息**
 
@@ -253,7 +271,10 @@ Internal error. The query resultSet is nullptr.
 
 
 
-#### 数据库查询插入结果集存在但无数据
+### 数据库查询插入结果集存在但无数据
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 **错误信息**
 
@@ -273,7 +294,10 @@ Internal error. The query resultSet is empty.
 
 
 
-#### 内部关联联系人rawId无效
+### 内部关联联系人rawId无效
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 **错误信息**
 

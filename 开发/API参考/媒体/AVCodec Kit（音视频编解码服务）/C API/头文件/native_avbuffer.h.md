@@ -1,13 +1,14 @@
 # native_avbuffer.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avbuffer-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明了媒体数据结构AVBuffer的函数接口。
 
@@ -25,15 +26,18 @@
 
 
 
-#### 汇总
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 汇总
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 结构体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -43,9 +47,11 @@
 
 
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -62,15 +68,17 @@
 
 
 
-#### 函数说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 函数说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### OH_AVBuffer_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### OH_AVBuffer_Create()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVBuffer *OH_AVBuffer_Create(int32_t capacity)
@@ -86,12 +94,14 @@ OH_AVBuffer *OH_AVBuffer_Create(int32_t capacity)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | int32_t capacity | 创建内存的大小，单位字节。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -100,9 +110,10 @@ OH_AVBuffer *OH_AVBuffer_Create(int32_t capacity)
 
 
 
-#### OH_AVBuffer_Destroy()
+### OH_AVBuffer_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVBuffer_Destroy(OH_AVBuffer *buffer)
@@ -118,12 +129,14 @@ OH_AVErrCode OH_AVBuffer_Destroy(OH_AVBuffer *buffer)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVBuffer *buffer | 指向OH_AVBuffer实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -132,9 +145,10 @@ OH_AVErrCode OH_AVBuffer_Destroy(OH_AVBuffer *buffer)
 
 
 
-#### OH_AVBuffer_GetBufferAttr()
+### OH_AVBuffer_GetBufferAttr()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVBuffer_GetBufferAttr(OH_AVBuffer *buffer, OH_AVCodecBufferAttr *attr)
@@ -150,6 +164,7 @@ OH_AVErrCode OH_AVBuffer_GetBufferAttr(OH_AVBuffer *buffer, OH_AVCodecBufferAttr
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVBuffer *buffer | 指向OH_AVBuffer实例的指针。 |
@@ -158,6 +173,7 @@ OH_AVErrCode OH_AVBuffer_GetBufferAttr(OH_AVBuffer *buffer, OH_AVCodecBufferAttr
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：操作成功。 AV_ERR_INVALID_VAL：可能的原因： 1. 输入的buffer或attr为空指针。 2. buffer结构校验失败。 |
@@ -165,9 +181,10 @@ OH_AVErrCode OH_AVBuffer_GetBufferAttr(OH_AVBuffer *buffer, OH_AVCodecBufferAttr
 
 
 
-#### OH_AVBuffer_SetBufferAttr()
+### OH_AVBuffer_SetBufferAttr()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVBuffer_SetBufferAttr(OH_AVBuffer *buffer, const OH_AVCodecBufferAttr *attr)
@@ -183,6 +200,7 @@ OH_AVErrCode OH_AVBuffer_SetBufferAttr(OH_AVBuffer *buffer, const OH_AVCodecBuff
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVBuffer *buffer | 指向OH_AVBuffer实例的指针。 |
@@ -191,6 +209,7 @@ OH_AVErrCode OH_AVBuffer_SetBufferAttr(OH_AVBuffer *buffer, const OH_AVCodecBuff
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：操作成功。 AV_ERR_INVALID_VAL：可能的原因： 1. 输入的buffer或attr为空指针。 2. buffer结构校验失败。 3. 输入buffer中内存的size或offset是无效值。 |
@@ -198,9 +217,10 @@ OH_AVErrCode OH_AVBuffer_SetBufferAttr(OH_AVBuffer *buffer, const OH_AVCodecBuff
 
 
 
-#### OH_AVBuffer_GetParameter()
+### OH_AVBuffer_GetParameter()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVFormat *OH_AVBuffer_GetParameter(OH_AVBuffer *buffer)
@@ -216,12 +236,14 @@ OH_AVFormat *OH_AVBuffer_GetParameter(OH_AVBuffer *buffer)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVBuffer *buffer | 指向OH_AVBuffer实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -230,9 +252,10 @@ OH_AVFormat *OH_AVBuffer_GetParameter(OH_AVBuffer *buffer)
 
 
 
-#### OH_AVBuffer_SetParameter()
+### OH_AVBuffer_SetParameter()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVBuffer_SetParameter(OH_AVBuffer *buffer, const OH_AVFormat *format)
@@ -248,6 +271,7 @@ OH_AVErrCode OH_AVBuffer_SetParameter(OH_AVBuffer *buffer, const OH_AVFormat *fo
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVBuffer *buffer | 指向OH_AVBuffer实例的指针。 |
@@ -256,6 +280,7 @@ OH_AVErrCode OH_AVBuffer_SetParameter(OH_AVBuffer *buffer, const OH_AVFormat *fo
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：操作成功。 AV_ERR_INVALID_VAL：可能的原因： 1. 输入的buffer或format为空指针。 2. 输入buffer的meta为空指针。 3. buffer结构校验失败。 |
@@ -263,9 +288,10 @@ OH_AVErrCode OH_AVBuffer_SetParameter(OH_AVBuffer *buffer, const OH_AVFormat *fo
 
 
 
-#### OH_AVBuffer_GetAddr()
+### OH_AVBuffer_GetAddr()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 uint8_t *OH_AVBuffer_GetAddr(OH_AVBuffer *buffer)
@@ -281,12 +307,14 @@ uint8_t *OH_AVBuffer_GetAddr(OH_AVBuffer *buffer)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVBuffer *buffer | 指向OH_AVBuffer实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -295,9 +323,10 @@ uint8_t *OH_AVBuffer_GetAddr(OH_AVBuffer *buffer)
 
 
 
-#### OH_AVBuffer_GetCapacity()
+### OH_AVBuffer_GetCapacity()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_AVBuffer_GetCapacity(OH_AVBuffer *buffer)
@@ -313,12 +342,14 @@ int32_t OH_AVBuffer_GetCapacity(OH_AVBuffer *buffer)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVBuffer *buffer | 指向OH_AVBuffer实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -327,9 +358,10 @@ int32_t OH_AVBuffer_GetCapacity(OH_AVBuffer *buffer)
 
 
 
-#### OH_AVBuffer_GetNativeBuffer()
+### OH_AVBuffer_GetNativeBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_NativeBuffer *OH_AVBuffer_GetNativeBuffer(OH_AVBuffer *buffer)
@@ -345,12 +377,14 @@ OH_NativeBuffer *OH_AVBuffer_GetNativeBuffer(OH_AVBuffer *buffer)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVBuffer *buffer | 指向OH_AVBuffer实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |

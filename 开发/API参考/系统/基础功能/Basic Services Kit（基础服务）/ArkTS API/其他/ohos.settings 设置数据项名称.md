@@ -1,9 +1,9 @@
 # @ohos.settings (设置数据项名称)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-settings
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供访问设置数据项的能力。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { settings } from '@kit.BasicServicesKit';
@@ -22,19 +23,22 @@ import { settings } from '@kit.BasicServicesKit';
 
 
 
-#### domainName
+## domainName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供查询的域名。
 
 
 
-#### 常量
+### 常量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Applications.Settings.Core
+
 
 | 名称 | 类型 | 只读 | 说明 |
 | --- | --- | --- | --- |
@@ -44,19 +48,22 @@ import { settings } from '@kit.BasicServicesKit';
 
 
 
-#### date
+## date
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供设置时间和日期格式的数据项。
 
 
 
-#### 常量
+### 常量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Applications.Settings.Core
+
 
 | 名称 | 类型 | 只读 | 说明 |
 | --- | --- | --- | --- |
@@ -68,19 +75,22 @@ import { settings } from '@kit.BasicServicesKit';
 
 
 
-#### display
+## display
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供设置显示效果的数据项。
 
 
 
-#### 常量
+### 常量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Applications.Settings.Core
+
 
 | 名称 | 类型 | 只读 | 说明 |
 | --- | --- | --- | --- |
@@ -99,19 +109,22 @@ import { settings } from '@kit.BasicServicesKit';
 
 
 
-#### general
+## general
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供设置设备常规信息的数据项。
 
 
 
-#### 常量
+### 常量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Applications.Settings.Core
+
 
 | 名称 | 类型 | 只读 | 说明 |
 | --- | --- | --- | --- |
@@ -135,19 +148,22 @@ import { settings } from '@kit.BasicServicesKit';
 
 
 
-#### input
+## input
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供设置有关输入法信息的数据项。
 
 
 
-#### 常量
+### 常量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Applications.Settings.Core
+
 
 | 名称 | 类型 | 只读 | 说明 |
 | --- | --- | --- | --- |
@@ -163,19 +179,22 @@ import { settings } from '@kit.BasicServicesKit';
 
 
 
-#### network
+## network
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供设置网络信息的数据项。
 
 
 
-#### 常量
+### 常量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Applications.Settings.Core
+
 
 | 名称 | 类型 | 只读 | 说明 |
 | --- | --- | --- | --- |
@@ -186,19 +205,22 @@ import { settings } from '@kit.BasicServicesKit';
 
 
 
-#### phone
+## phone
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供设置来电和去电接听方式的数据项。
 
 
 
-#### 常量
+### 常量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Applications.Settings.Core
+
 
 | 名称 | 类型 | 只读 | 说明 |
 | --- | --- | --- | --- |
@@ -207,19 +229,22 @@ import { settings } from '@kit.BasicServicesKit';
 
 
 
-#### sound
+## sound
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供设置声音效果的数据项。
 
 
 
-#### 常量
+### 常量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Applications.Settings.Core
+
 
 | 名称 | 类型 | 只读 | 说明 |
 | --- | --- | --- | --- |
@@ -238,19 +263,22 @@ import { settings } from '@kit.BasicServicesKit';
 
 
 
-#### TTS
+## TTS
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供设置文本到语音(TTS)转换信息的数据项。
 
 
 
-#### 常量
+### 常量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Applications.Settings.Core
+
 
 | 名称 | 类型 | 只读 | 说明 |
 | --- | --- | --- | --- |
@@ -262,19 +290,22 @@ import { settings } from '@kit.BasicServicesKit';
 
 
 
-#### wireless
+## wireless
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供设置无线网络信息的数据项。
 
 
 
-#### 常量
+### 常量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Applications.Settings.Core
+
 
 | 名称 | 类型 | 只读 | 说明 |
 | --- | --- | --- | --- |
@@ -295,9 +326,10 @@ import { settings } from '@kit.BasicServicesKit';
 
 
 
-#### settings.setValue10+
+## settings.setValue10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setValue(context: Context, name: string, value: string, callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -310,6 +342,7 @@ setValue(context: Context, name: string, value: string, callback: AsyncCallback&
 **需要权限**： ohos.permission.MANAGE_SETTINGS，仅系统应用可用。
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -335,9 +368,10 @@ settings.setValue(context, settings.display.SCREEN_BRIGHTNESS_STATUS, '100', (st
 
 
 
-#### settings.setValue10+
+## settings.setValue10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setValue(context: Context, name: string, value: string): Promise&lt;boolean&gt;
 
@@ -351,6 +385,7 @@ setValue(context: Context, name: string, value: string): Promise&lt;boolean&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文（仅支持UIAbilityContext和ExtensionContext）。 Stage模型的应用Context定义见Context。 |
@@ -359,6 +394,7 @@ setValue(context: Context, name: string, value: string): Promise&lt;boolean&gt;
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -381,9 +417,10 @@ settings.setValue(context, settings.display.SCREEN_BRIGHTNESS_STATUS, '100').the
 
 
 
-#### settings.setValue11+
+## settings.setValue11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setValue(context: Context, name: string, value: string, domainName: string): Promise&lt;boolean&gt;
 
@@ -401,6 +438,7 @@ setValue(context: Context, name: string, value: string, domainName: string): Pro
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文（仅支持UIAbilityContext和ExtensionContext）。 Stage模型的应用Context定义见Context。 |
@@ -411,6 +449,7 @@ setValue(context: Context, name: string, value: string, domainName: string): Pro
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示操作成功，返回false表示操作失败。 |
@@ -419,6 +458,7 @@ setValue(context: Context, name: string, value: string, domainName: string): Pro
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -441,9 +481,10 @@ settings.setValue(context, settings.display.SCREEN_BRIGHTNESS_STATUS, '100', set
 
 
 
-#### settings.getValue10+
+## settings.getValue10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getValue(context: Context, name: string, callback: AsyncCallback&lt;string&gt;): void
 
@@ -454,6 +495,7 @@ getValue(context: Context, name: string, callback: AsyncCallback&lt;string&gt;):
 **系统能力**：SystemCapability.Applications.Settings.Core
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -481,9 +523,10 @@ settings.getValue(context, settings.display.SCREEN_BRIGHTNESS_STATUS, (err, valu
 
 
 
-#### settings.getValue10+
+## settings.getValue10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getValue(context: Context, name: string): Promise&lt;string&gt;
 
@@ -495,6 +538,7 @@ getValue(context: Context, name: string): Promise&lt;string&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文（仅支持UIAbilityContext和ExtensionContext）。 Stage模型的应用Context定义见Context。 |
@@ -502,6 +546,7 @@ getValue(context: Context, name: string): Promise&lt;string&gt;
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -523,9 +568,10 @@ settings.getValue(context, settings.display.SCREEN_BRIGHTNESS_STATUS).then((valu
 
 
 
-#### settings.getValue11+
+## settings.getValue11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getValue(context: Context, name: string, domainName: string): Promise&lt;string&gt;
 
@@ -542,6 +588,7 @@ getValue(context: Context, name: string, domainName: string): Promise&lt;string&
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文（仅支持UIAbilityContext和ExtensionContext）。 Stage模型的应用Context定义见Context。 |
@@ -550,6 +597,7 @@ getValue(context: Context, name: string, domainName: string): Promise&lt;string&
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -572,9 +620,10 @@ settings.getValue(context, settings.display.SCREEN_BRIGHTNESS_STATUS, settings.d
 
 
 
-#### settings.getValueSync10+
+## settings.getValueSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getValueSync(context: Context, name: string, defValue: string): string
 
@@ -586,6 +635,7 @@ getValueSync(context: Context, name: string, defValue: string): string
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文（仅支持UIAbilityContext和ExtensionContext）。 Stage模型的应用Context定义见Context。 |
@@ -594,6 +644,7 @@ getValueSync(context: Context, name: string, defValue: string): string
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -614,9 +665,10 @@ let value = settings.getValueSync(context, settings.display.SCREEN_BRIGHTNESS_ST
 
 
 
-#### settings.getValueSync11+
+## settings.getValueSync11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getValueSync(context: Context, name: string, defValue: string, domainName: string): string
 
@@ -633,6 +685,7 @@ getValueSync(context: Context, name: string, defValue: string, domainName: strin
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文（仅支持UIAbilityContext和ExtensionContext）。 Stage模型的应用Context定义见Context。 |
@@ -642,6 +695,7 @@ getValueSync(context: Context, name: string, defValue: string, domainName: strin
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -662,9 +716,10 @@ let value = settings.getValueSync(context, settings.display.SCREEN_BRIGHTNESS_ST
 
 
 
-#### settings.setValueSync10+
+## settings.setValueSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setValueSync(context: Context, name: string, value: string): boolean
 
@@ -682,6 +737,7 @@ setValueSync(context: Context, name: string, value: string): boolean
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文（仅支持UIAbilityContext和ExtensionContext）。 Stage模型的应用Context定义见Context。 |
@@ -690,6 +746,7 @@ setValueSync(context: Context, name: string, value: string): boolean
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -710,9 +767,10 @@ let ret = settings.setValueSync(context, settings.display.SCREEN_BRIGHTNESS_STAT
 
 
 
-#### settings.setValueSync11+
+## settings.setValueSync11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setValueSync(context: Context, name: string, value: string, domainName: string): boolean
 
@@ -734,6 +792,7 @@ setValueSync(context: Context, name: string, value: string, domainName: string):
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文（仅支持UIAbilityContext和ExtensionContext）。 Stage模型的应用Context定义见Context。 |
@@ -744,6 +803,7 @@ setValueSync(context: Context, name: string, value: string, domainName: string):
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回设置数据项的值是否成功的结果。true表示设置成功，false表示设置失败。 |
@@ -752,6 +812,7 @@ setValueSync(context: Context, name: string, value: string, domainName: string):
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -772,9 +833,10 @@ let ret = settings.setValueSync(context, settings.display.SCREEN_BRIGHTNESS_STAT
 
 
 
-#### settings.registerKeyObserver11+
+## settings.registerKeyObserver11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 registerKeyObserver(context: Context, name: string, domainName: string, observer:AsyncCallback&lt;void&gt;): boolean
 
@@ -786,6 +848,7 @@ registerKeyObserver(context: Context, name: string, domainName: string, observer
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文（仅支持UIAbilityContext和ExtensionContext）。 Stage模型的应用Context定义见Context。 |
@@ -795,6 +858,7 @@ registerKeyObserver(context: Context, name: string, domainName: string, observer
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -817,9 +881,10 @@ settings.registerKeyObserver(context, settings.display.SCREEN_BRIGHTNESS_STATUS,
 
 
 
-#### settings.unregisterKeyObserver11+
+## settings.unregisterKeyObserver11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unregisterKeyObserver(context: Context, name: string, domainName: string): boolean
 
@@ -831,6 +896,7 @@ unregisterKeyObserver(context: Context, name: string, domainName: string): boole
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文（仅支持UIAbilityContext和ExtensionContext）。 Stage模型的应用Context定义见Context。 |
@@ -839,6 +905,7 @@ unregisterKeyObserver(context: Context, name: string, domainName: string): boole
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -858,9 +925,10 @@ let ret = settings.unregisterKeyObserver(context, settings.display.SCREEN_BRIGHT
 
 
 
-#### settings.openNetworkManagerSettings18+
+## settings.openNetworkManagerSettings18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 openNetworkManagerSettings(context: Context): Promise&lt;boolean&gt;
 
@@ -874,12 +942,14 @@ openNetworkManagerSettings(context: Context): Promise&lt;boolean&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文（仅支持UIAbilityContext和UIExtensionContext）。 Stage模型的应用Context定义见Context。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -889,6 +959,7 @@ openNetworkManagerSettings(context: Context): Promise&lt;boolean&gt;
 **错误码**：
 
 以下错误码详细介绍请参考[设置数据项错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-settings)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -912,9 +983,10 @@ settings.openNetworkManagerSettings(context).then((status) => {
 
 
 
-#### settings.enableAirplaneMode(deprecated)
+## settings.enableAirplaneMode(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableAirplaneMode(enable: boolean, callback: AsyncCallback&lt;void&gt;): void
 
@@ -927,6 +999,7 @@ enableAirplaneMode(enable: boolean, callback: AsyncCallback&lt;void&gt;): void
 **系统能力**：SystemCapability.Applications.Settings.Core
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -949,9 +1022,10 @@ settings.enableAirplaneMode(isEnabled, (err:Error) => {
 
 
 
-#### settings.enableAirplaneMode(deprecated)
+## settings.enableAirplaneMode(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableAirplaneMode(enable: boolean): Promise&lt;void&gt;
 
@@ -965,12 +1039,14 @@ enableAirplaneMode(enable: boolean): Promise&lt;void&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | boolean | 是 | 是否开启飞行模式。true表示开启，false表示禁用。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -990,9 +1066,10 @@ settings.enableAirplaneMode(isEnabled).then(() => {
 
 
 
-#### settings.canShowFloating(deprecated)
+## settings.canShowFloating(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 canShowFloating(callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -1005,6 +1082,7 @@ canShowFloating(callback: AsyncCallback&lt;boolean&gt;): void
 **系统能力**：SystemCapability.Applications.Settings.Core
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1025,9 +1103,10 @@ settings.canShowFloating((err:Error, status: boolean) => {
 
 
 
-#### settings.canShowFloating(deprecated)
+## settings.canShowFloating(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 canShowFloating(): Promise&lt;boolean&gt;
 
@@ -1040,6 +1119,7 @@ canShowFloating(): Promise&lt;boolean&gt;
 **系统能力**：SystemCapability.Applications.Settings.Core
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1056,9 +1136,10 @@ settings.canShowFloating().then((status:boolean) => {
 
 
 
-#### settings.getUriSync(deprecated)
+## settings.getUriSync(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUriSync(name: string): string
 
@@ -1072,12 +1153,14 @@ getUriSync(name: string): string
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 数据项的名称。数据项名称分为以下两种： - 上述任意一个数据库中已存在的数据项。 - 开发者自行添加的数据项。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1093,9 +1176,10 @@ let uriVar:string = settings.getUriSync(settings.display.SCREEN_BRIGHTNESS_STATU
 
 
 
-#### settings.getURI(deprecated)
+## settings.getURI(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getURI(name: string, callback: AsyncCallback&lt;object&gt;): void
 
@@ -1108,6 +1192,7 @@ getURI(name: string, callback: AsyncCallback&lt;object&gt;): void
 **系统能力**：SystemCapability.Applications.Settings.Core
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1125,9 +1210,10 @@ settings.getURI(settings.display.SCREEN_BRIGHTNESS_STATUS, (uri:string) => {
 
 
 
-#### settings.getURI(deprecated)
+## settings.getURI(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getURI(name: string): Promise&lt;object&gt;
 
@@ -1141,12 +1227,14 @@ getURI(name: string): Promise&lt;object&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 数据项的名称。数据项名称分为以下两种： - 上述任意一个数据库中已存在的数据项。 - 开发者自行添加的数据项。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1163,13 +1251,14 @@ settings.getURI(settings.display.SCREEN_BRIGHTNESS_STATUS).then((uri:string) => 
 
 
 
-#### settings.getValue(deprecated)
+## settings.getValue(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getValue(dataAbilityHelper: DataAbilityHelper, name: string, callback: AsyncCallback&lt;object&gt;): void
 
-获取数据库中DEVICE_SHARED域指定数据项的值。使用callback异步回调。
+获取数据库中DEVICE_SHARD域指定数据项的值。使用callback异步回调。
 
 > [!NOTE]
 > 从 API version 7开始支持，从API version 9开始废弃，建议使用 getValue() 替代。
@@ -1180,6 +1269,7 @@ getValue(dataAbilityHelper: DataAbilityHelper, name: string, callback: AsyncCall
 **系统能力**：SystemCapability.Applications.Settings.Core
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1206,9 +1296,10 @@ settings.getValue(helper, settings.display.SCREEN_BRIGHTNESS_STATUS, (err:Error,
 
 
 
-#### settings.getValue(deprecated)
+## settings.getValue(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getValue(dataAbilityHelper: DataAbilityHelper, name: string): Promise&lt;object&gt;
 
@@ -1224,6 +1315,7 @@ getValue(dataAbilityHelper: DataAbilityHelper, name: string): Promise&lt;object&
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dataAbilityHelper | DataAbilityHelper | 是 | 数据管理辅助类。 |
@@ -1231,6 +1323,7 @@ getValue(dataAbilityHelper: DataAbilityHelper, name: string): Promise&lt;object&
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1251,9 +1344,10 @@ settings.getValue(helper, settings.display.SCREEN_BRIGHTNESS_STATUS).then((value
 
 
 
-#### settings.getValueSync(deprecated)
+## settings.getValueSync(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getValueSync(dataAbilityHelper: DataAbilityHelper, name: string, defValue: string): string
 
@@ -1269,6 +1363,7 @@ getValueSync(dataAbilityHelper: DataAbilityHelper, name: string, defValue: strin
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dataAbilityHelper | DataAbilityHelper | 是 | 数据管理辅助类。 |
@@ -1277,6 +1372,7 @@ getValueSync(dataAbilityHelper: DataAbilityHelper, name: string, defValue: strin
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1296,9 +1392,10 @@ let value:string = settings.getValueSync(helper, settings.display.SCREEN_BRIGHTN
 
 
 
-#### settings.setValueSync(deprecated)
+## settings.setValueSync(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setValueSync(dataAbilityHelper: DataAbilityHelper, name: string, value: string): boolean
 
@@ -1320,6 +1417,7 @@ setValueSync(dataAbilityHelper: DataAbilityHelper, name: string, value: string):
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dataAbilityHelper | DataAbilityHelper | 是 | 数据管理辅助类。 |
@@ -1328,6 +1426,7 @@ setValueSync(dataAbilityHelper: DataAbilityHelper, name: string, value: string):
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1347,9 +1446,10 @@ let ret:string = settings.setValueSync(helper, settings.display.SCREEN_BRIGHTNES
 
 
 
-#### settings.openInputMethodSettings23+
+## settings.openInputMethodSettings23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | Tablet
 
 openInputMethodSettings(context: Context): void
 
@@ -1363,6 +1463,7 @@ openInputMethodSettings(context: Context): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文（仅支持UIAbilityContext和UIExtensionContext）。 Stage模型的应用Context定义见Context。 |
@@ -1371,6 +1472,7 @@ openInputMethodSettings(context: Context): void
 **错误码**：
 
 以下错误码详细介绍请参考[设置数据项错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-settings)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1391,9 +1493,10 @@ settings.openInputMethodSettings(context);
 
 
 
-#### settings.openInputMethodDetail23+
+## settings.openInputMethodDetail23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | Tablet
 
 openInputMethodDetail(context: Context, bundleName: string, inputMethodId: string): void
 
@@ -1407,6 +1510,7 @@ openInputMethodDetail(context: Context, bundleName: string, inputMethodId: strin
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文（仅支持UIAbilityContext和UIExtensionContext）。 Stage模型的应用Context定义见Context。 |
@@ -1417,6 +1521,7 @@ openInputMethodDetail(context: Context, bundleName: string, inputMethodId: strin
 **错误码**：
 
 以下错误码详细介绍请参考[设置数据项错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-settings)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1439,9 +1544,10 @@ settings.openInputMethodDetail(context, bundleName, inputMethodId);
 
 
 
-#### settings.openBiometricsSettingsPage24+
+## settings.openBiometricsSettingsPage24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 openBiometricsSettingsPage(context: Context): void
 
@@ -1455,6 +1561,7 @@ openBiometricsSettingsPage(context: Context): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文（仅支持UIAbilityContext和UIExtensionContext）。 Stage模型的应用Context定义见Context。 |
@@ -1463,6 +1570,7 @@ openBiometricsSettingsPage(context: Context): void
 **错误码**：
 
 以下错误码详细介绍请参考[设置数据项错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-settings)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1487,9 +1595,10 @@ try {
 
 
 
-#### settings.openNfcSettingsPage24+
+## settings.openNfcSettingsPage24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | Tablet | Wearable
 
 openNfcSettingsPage(context: Context): void
 
@@ -1503,6 +1612,7 @@ openNfcSettingsPage(context: Context): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文（仅支持UIAbilityContext和UIExtensionContext）。 Stage模型的应用Context定义见Context。 |
@@ -1511,6 +1621,7 @@ openNfcSettingsPage(context: Context): void
 **错误码**：
 
 以下错误码详细介绍请参考[设置数据项错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-settings)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1535,9 +1646,10 @@ try {
 
 
 
-#### settings.openDoubleClickSettingsPage24+
+## settings.openDoubleClickSettingsPage24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Wearable
 
 openDoubleClickSettingsPage(context: Context): void
 
@@ -1551,6 +1663,7 @@ openDoubleClickSettingsPage(context: Context): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文（仅支持UIAbilityContext和ExtensionContext）。 Stage模型的应用Context定义见Context。 |
@@ -1559,6 +1672,7 @@ openDoubleClickSettingsPage(context: Context): void
 **错误码**：
 
 以下错误码详细介绍请参考[设置数据项错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-settings)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1583,9 +1697,10 @@ try {
 
 
 
-#### settings.isDoubleClickAppForSelf24+
+## settings.isDoubleClickAppForSelf24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Wearable
 
 isDoubleClickAppForSelf(): Promise&lt;boolean&gt;
 
@@ -1598,6 +1713,7 @@ isDoubleClickAppForSelf(): Promise&lt;boolean&gt;
 **设备行为差异**：该接口仅在Wearable设备中可正常调用，在其他设备调用不生效。
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1616,9 +1732,10 @@ settings.isDoubleClickAppForSelf().then((result: boolean) => {
 
 
 
-#### settings.openMobileNetworkSettingsPage
+## settings.openMobileNetworkSettingsPage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | Tablet
 
 openMobileNetworkSettingsPage(context: Context): void
 
@@ -1634,6 +1751,7 @@ openMobileNetworkSettingsPage(context: Context): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文（仅支持UIAbilityContext和UIExtensionContext）。 Stage模型的应用Context定义见Context。 |
@@ -1642,6 +1760,7 @@ openMobileNetworkSettingsPage(context: Context): void
 **错误码**：
 
 以下错误码详细介绍请参考[设置数据项错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-settings)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1666,9 +1785,10 @@ try {
 
 
 
-#### settings.openDisplaySettingsPage
+## settings.openDisplaySettingsPage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 openDisplaySettingsPage(context: Context): void
 
@@ -1684,6 +1804,7 @@ openDisplaySettingsPage(context: Context): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文（仅支持UIAbilityContext和UIExtensionContext）。 Stage模型的应用Context定义见Context。 |
@@ -1692,6 +1813,7 @@ openDisplaySettingsPage(context: Context): void
 **错误码**：
 
 以下错误码详细介绍请参考[设置数据项错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-settings)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1716,9 +1838,10 @@ try {
 
 
 
-#### settings.openScreenRefreshRateSettingsPage
+## settings.openScreenRefreshRateSettingsPage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 openScreenRefreshRateSettingsPage(context: Context): void
 
@@ -1734,6 +1857,7 @@ openScreenRefreshRateSettingsPage(context: Context): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文（仅支持UIAbilityContext和UIExtensionContext）。 Stage模型的应用Context定义见Context。 |
@@ -1742,6 +1866,7 @@ openScreenRefreshRateSettingsPage(context: Context): void
 **错误码**：
 
 以下错误码详细介绍请参考[设置数据项错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-settings)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1766,9 +1891,10 @@ try {
 
 
 
-#### settings.openSoundSettingsPage
+## settings.openSoundSettingsPage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | Tablet
 
 openSoundSettingsPage(context: Context): void
 
@@ -1784,6 +1910,7 @@ openSoundSettingsPage(context: Context): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文（仅支持UIAbilityContext和UIExtensionContext）。 Stage模型的应用Context定义见Context。 |
@@ -1792,6 +1919,7 @@ openSoundSettingsPage(context: Context): void
 **错误码**：
 
 以下错误码详细介绍请参考[设置数据项错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-settings)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1816,9 +1944,10 @@ try {
 
 
 
-#### settings.openAboutDeviceSettingsPage
+## settings.openAboutDeviceSettingsPage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 openAboutDeviceSettingsPage(context: Context): void
 
@@ -1834,6 +1963,7 @@ openAboutDeviceSettingsPage(context: Context): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文（仅支持UIAbilityContext和UIExtensionContext）。 Stage模型的应用Context定义见Context。 |
@@ -1842,6 +1972,7 @@ openAboutDeviceSettingsPage(context: Context): void
 **错误码**：
 
 以下错误码详细介绍请参考[设置数据项错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-settings)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1866,9 +1997,10 @@ try {
 
 
 
-#### settings.openAppDetailSettingsPage
+## settings.openAppDetailSettingsPage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 openAppDetailSettingsPage(context: Context, bundleName: string, appIndex?: number): void
 
@@ -1884,6 +2016,7 @@ openAppDetailSettingsPage(context: Context, bundleName: string, appIndex?: numbe
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文（仅支持UIAbilityContext和UIExtensionContext）。 Stage模型的应用Context定义见Context。 |
@@ -1894,6 +2027,7 @@ openAppDetailSettingsPage(context: Context, bundleName: string, appIndex?: numbe
 **错误码**：
 
 以下错误码详细介绍请参考[设置数据项错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-settings)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

@@ -1,6 +1,6 @@
 # 数据防泄漏服务开发指导(ArkTS)
 
-更新时间：2026-04-28 03:31:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/dlp-guidelines
 
@@ -18,9 +18,10 @@ DLP是系统提供的系统级的数据防泄漏解决方案，提供一种称�
 正常情况下，应用不会感知到沙箱的存在，访问的也是解密后的明文，和访问普通文件没有区别，但由于DLP沙箱会限制其访问外部的权限（例如网络、剪切板、截屏、录屏、蓝牙等）。为了更好的用户体验，需要应用进行适配，例如文件只读的情况下，不应显示“保存”按钮，不应主动联网等。
 
 
-#### 沙箱限制
+## 沙箱限制
 
 当应用进入DLP沙箱状态时，可以申请的权限将受到限制，根据DLP文件授权类型不同，限制也不相同，如下表：
+
 
 | 权限名 | 说明 | 授权类型：只读 | 授权类型：编辑/文件拥有者 |
 | --- | --- | --- | --- |
@@ -33,7 +34,8 @@ DLP是系统提供的系统级的数据防泄漏解决方案，提供一种称�
 
 
 
-#### 接口说明
+## 接口说明
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -57,7 +59,7 @@ DLP是系统提供的系统级的数据防泄漏解决方案，提供一种称�
 
 
 
-#### 开发步骤
+## 开发步骤
 
 DLP作为HarmonyOS系统级数据防泄漏方案，可以让应用在零适配或低代码适配的情况下接入DLP能力，打开DLP文件。
 
@@ -72,7 +74,7 @@ DLP作为HarmonyOS系统级数据防泄漏方案，可以让应用在零适配�
 
 
 
-#### 预置操作
+### 预置操作
 
 本文档提供接口示例代码，如需要了解工程项目创建方式，可参考[工程创建](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-project)。
 
@@ -109,7 +111,7 @@ DLP作为HarmonyOS系统级数据防泄漏方案，可以让应用在零适配�
 
 
 
-#### 导入模块
+### 导入模块
 
 引入[dlpPermission](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-dlppermission)模块。
 
@@ -119,7 +121,7 @@ import { dlpPermission } from '@kit.DataProtectionKit';
 
 
 
-#### 应用支持打开DLP文件绑定的FUSE文件
+### 应用支持打开DLP文件绑定的FUSE文件
 
 一般情况下，应用如果支持打开[预置操作](#预置操作)中指定文件类型的文件，没有对传入的Want做特定限制的情况下，不需要适配即可打开FUSE文件。
 
@@ -231,7 +233,7 @@ function writeFileContent(dlpFuseUri: string, content: string): void {
 
 
 
-#### 应用根据DLP文件的权限对界面进行适配
+### 应用根据DLP文件的权限对界面进行适配
 
 DLP沙箱分身中可以调用[getDLPPermissionInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-dlppermission#dlppermissiongetdlppermissioninfo)方法查询当前系统登陆的域账号用户对本DLP文件的用户权限和操作权限，不同用户权限可以对应不同的对文档的操作权限。
 
@@ -254,7 +256,7 @@ getDLPPermissionInfo返回的data为[DLPPermissionInfo](https://developer.huawei
 
 
 
-#### 应用与DLP沙箱分身数据共享
+### 应用与DLP沙箱分身数据共享
 
 DLP沙箱分身是普通应用的分身，所有数据都是全新的，如果二者之间有些数据需要实现共享，可以通过DLP框架提供的应用与DLP沙箱分身数据共享机制实现。一种典型的使用场景是原应用与DLP沙箱分身之间共用是否已经弹出过隐私声明弹框的配置信息。
 
@@ -345,7 +347,7 @@ async function getSandboxAppConfig() {
 
 
 
-#### 应用支持更新最近打开记录
+### 应用支持更新最近打开记录
 
 当应用有最近打开记录场景时，可以使用DLP框架提供的接口适配最近打开记录。可从以下场景适配：
 
@@ -420,7 +422,7 @@ export default class TestAbility extends UIAbility {
 
 
 
-#### 应用内支持打开选定的DLP文件
+### 应用内支持打开选定的DLP文件
 
 应用可以支持从最近打开列表、文件选择器中选择DLP文件，打开DLP文件的场景，按如下流程适配：
 1. 设置[Want](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-ability-want)参数，指定action为"ohos.want.action.viewData"，bundleName、abilityName分别为选择打开DLP文件的应用的bundleName、abilityName，uri为需要打开的DLP文件的uri，在parameters中设置fileName的name值为DLP文件的文件名。
@@ -461,7 +463,7 @@ function openDlpFile(dlpUri: string, fileName: string) {
 
 
 
-#### 应用内支持对DLP文件权限设置
+### 应用内支持对DLP文件权限设置
 
 应用内可以集成权限设置按钮，当已打开一个普通文件后，点击权限设置按钮，拉起DLP管理应用的模态设置权限页面，生成DLP文件。也可以在DLP沙箱分身中查看当前正在打开的DLP文件的操作权限。
 
@@ -504,7 +506,7 @@ try {
   hilog.error(0x0000, TAG, 'startDLPManagerForResult error:' + (err as BusinessError).code + (err as BusinessError).message);
 }
 ```
-      - **DLP沙箱分身内权限修改，查看和解除**
+            - **DLP沙箱分身内权限修改，查看和解除**
 
   
 如果当前的账号是DLP文档的创建者，则该用户拥有修改这个DLP文件权限或者解除这个DLP文档权限还原为普通文件的能力，调用以下代码，拉起DLP管理应用的设置权限页面，在该页面中选择更改加密进行权限修改或者解除加密；如果当前账号拥有DLP文档只读或者编辑权限，调用以下代码则可以查看当前用户权限内容。
@@ -560,7 +562,7 @@ dlpPermission.getDLPPermissionInfo().then((data:dlpPermission.DLPPermissionInfo)
 
 
 
-#### 其他DLP能力增强
+### 其他DLP能力增强
 
  - **判断一个文件是否是DLP文件**
 
@@ -677,11 +679,11 @@ async function getRetentionSandboxList() {
 
 
 
-#### 典型问题自排查
+## 典型问题自排查
 
 
 
-#### 应用可以打开正常文件，无法打开FUSE文件
+### 应用可以打开正常文件，无法打开FUSE文件
 
  - 排查是否对want做了特定限制，导致DLP沙箱分身无法获取到FUSE文件。
  - 排查是否以读写权限打开了只读的FUSE文件。

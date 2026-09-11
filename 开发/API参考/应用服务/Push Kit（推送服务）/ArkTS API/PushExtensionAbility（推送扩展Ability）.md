@@ -1,9 +1,9 @@
 # PushExtensionAbility（推送扩展Ability）
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-extension-ability
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 仅对系统应用开放，暂不对外开放申请。
@@ -27,17 +27,19 @@ PushExtensionAbility为推送扩展Ability，提供获取消息数据和生命�
 **起始版本：** 4.0.0(10)
   
 
-#### 约束限制
+## 约束限制
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 为保障系统安全性和稳定性，防止PushExtensionAbility滥用系统资源，系统对其能力进行管控， 不支持部分模块的引用，详情请参考[附录](#附录)。
  
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { PushExtensionAbility } from '@kit.PushKit';
@@ -45,9 +47,10 @@ import { PushExtensionAbility } from '@kit.PushKit';
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **模型约束：** 属性仅可在Stage模型下使用。
  
@@ -57,6 +60,7 @@ import { PushExtensionAbility } from '@kit.PushKit';
  
 **起始版本：** 4.0.0(10)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | context | PushExtensionContext | 否 | 否 | PushExtensionAbility的上下文环境，继承自ExtensionContext。 |
@@ -64,9 +68,10 @@ import { PushExtensionAbility } from '@kit.PushKit';
  
   
 
-#### onReceiveMessage
+## onReceiveMessage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onReceiveMessage(payload: pushCommon.PushPayload): void
  
@@ -82,6 +87,7 @@ onReceiveMessage(payload: pushCommon.PushPayload): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | payload | pushCommon.PushPayload | 是 | 拉起应用子进程的后台消息数据。 |
@@ -123,9 +129,10 @@ export default class PushExtAbility extends PushExtensionAbility {
  
   
 
-#### onDestroy
+## onDestroy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDestroy(): void
  
@@ -174,12 +181,14 @@ export default class PushExtAbility extends PushExtensionAbility {
  
   
 
-#### 附录
+## 附录
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 PushExtensionAbility不支持以下模块的引用。
   
+
 | Kit | 模块 |
 | --- | --- |
 | Notification Kit | @ohos.notification (Notification模块) @ohos.notificationManager (NotificationManager模块) |

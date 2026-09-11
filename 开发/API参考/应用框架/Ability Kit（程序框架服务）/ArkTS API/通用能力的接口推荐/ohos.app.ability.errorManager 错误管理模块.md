@@ -1,9 +1,9 @@
 # @ohos.app.ability.errorManager (错误管理模块)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-errormanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ErrorManager模块提供对应用运行时各类异常的全局观测能力，包括注册和注销错误观测器，主要用于监测应用崩溃（JS_CRASH）、应用冻屏（APP_FREEZE）、未捕获的Promise异常、资源超基线等错误场景。通过设置监听器，开发者可以实时捕获异常信息、追踪问题根源、记录关键指标，从而提高应用的稳定性监控能力，加快故障排查和定位效率，提升应用质量和用户体验。
 
@@ -12,9 +12,10 @@ ErrorManager模块提供对应用运行时各类异常的全局观测能力，�
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { errorManager } from '@kit.AbilityKit';
@@ -22,9 +23,10 @@ import { errorManager } from '@kit.AbilityKit';
 
 
 
-#### errorManager.on('error')
+## errorManager.on('error')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'error', observer: ErrorObserver): number
 
@@ -40,6 +42,7 @@ on(type: 'error', observer: ErrorObserver): number
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写'error'，表示错误观测器。 |
@@ -47,6 +50,7 @@ on(type: 'error', observer: ErrorObserver): number
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -56,6 +60,7 @@ on(type: 'error', observer: ErrorObserver): number
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -94,13 +99,16 @@ try {
 
 
 
-#### errorManager.on('globalErrorOccurred')18+
+## errorManager.on('globalErrorOccurred')18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'globalErrorOccurred', observer: GlobalObserver): void
 
 在进程中的任意线程中注册 errorManager.on 接口，监听整个进程中任意线程的异常。观测器捕获到该异常时应用不退出，建议在回调函数执行完后，增加同步退出操作。
+
+开发者需要自行维护自定义异常处理回调函数的生命周期，保证异常回调时，自定义异常处理回调函数没有被释放。
 
 配对调用：与[errorManager.off('globalErrorOccurred')](#errormanageroffglobalerroroccurred18)方法配合使用，使用完成后可调用off方法注销监听器。
 
@@ -109,6 +117,7 @@ on(type: 'globalErrorOccurred', observer: GlobalObserver): void
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -119,6 +128,7 @@ on(type: 'globalErrorOccurred', observer: GlobalObserver): void
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -151,15 +161,18 @@ try {
 
 
 
-#### errorManager.off('globalErrorOccurred')18+
+## errorManager.off('globalErrorOccurred')18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'globalErrorOccurred', observer?: GlobalObserver): void
 
 注销错误观测器，注销当前注册在同一线程的callback全局监听。
 
 如果传入的回调不在通过on方法注册的回调队列中，将抛出16300004错误码，因此建议使用try-catch逻辑进行处理。
+
+建议开发者在进程回收时，调用注销错误观测器，如果其他线程发送异常回调时，可能因找不到自定义异常处理回调函数而发生崩溃。
 
 配对调用：与[errorManager.on('globalErrorOccurred')](#errormanageronglobalerroroccurred18)方法配合使用。
 
@@ -169,15 +182,17 @@ off(type: 'globalErrorOccurred', observer?: GlobalObserver): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写'globalErrorOccurred'，表示错误观测器。 |
-| observer | GlobalObserver | 否 | 由on方法注册的callback。建议使用该参数。若不传该参数，则清除所有通过on方法注册的observer；若传该参数，则仅删除指定的observer。 |
+| observer | GlobalObserver | 否 | 由on方法注册的自定义异常处理回调函数。建议使用该参数。若不传该参数，则清除所有通过on方法注册的observer；若传该参数，则仅删除指定的observer。 |
 
 
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -211,9 +226,10 @@ try {
 
 
 
-#### errorManager.off('error')
+## errorManager.off('error')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'error', observerId: number, callback: AsyncCallback&lt;void&gt;): void
 
@@ -229,6 +245,7 @@ off(type: 'error', observerId: number, callback: AsyncCallback&lt;void&gt;): voi
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写'error'，表示错误观测器。 |
@@ -239,6 +256,7 @@ off(type: 'error', observerId: number, callback: AsyncCallback&lt;void&gt;): voi
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -271,9 +289,10 @@ try {
 
 
 
-#### errorManager.off('error')
+## errorManager.off('error')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'error', observerId: number): Promise&lt;void&gt;
 
@@ -289,6 +308,7 @@ off(type: 'error', observerId: number): Promise&lt;void&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写'error'，表示错误观测器。 |
@@ -296,6 +316,7 @@ off(type: 'error', observerId: number): Promise&lt;void&gt;
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -305,6 +326,7 @@ off(type: 'error', observerId: number): Promise&lt;void&gt;
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -337,9 +359,10 @@ try {
 
 
 
-#### errorManager.on('loopObserver')12+
+## errorManager.on('loopObserver')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'loopObserver', timeout: number, observer: LoopObserver): void
 
@@ -357,6 +380,7 @@ on(type: 'loopObserver', timeout: number, observer: LoopObserver): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写'loopObserver'，表示注册主线程消息处理耗时监听器。 |
@@ -367,6 +391,7 @@ on(type: 'loopObserver', timeout: number, observer: LoopObserver): void
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -396,13 +421,16 @@ try {
 
 
 
-#### errorManager.on('globalUnhandledRejectionDetected')18+
+## errorManager.on('globalUnhandledRejectionDetected')18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'globalUnhandledRejectionDetected', observer: GlobalObserver): void
 
 在进程中任意线程注册被拒绝Promise监听器，注册后可以捕获到当前进程中未被捕获到的Promise rejection。
+
+开发者需要自行维护自定义异常处理回调函数的生命周期，保证异常回调时，自定义异常处理回调函数没有被释放。
 
 配对调用：与[errorManager.off('globalUnhandledRejectionDetected')](#errormanageroffglobalunhandledrejectiondetected18)方法配合使用，使用完成后可调用off方法注销监听器。
 
@@ -412,15 +440,17 @@ on(type: 'globalUnhandledRejectionDetected', observer: GlobalObserver): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 填写'globalUnhandledRejectionDetected'，表示注册被拒绝Promise监听器。 回调函数入参：(reason: Error \| any, promise: Promise&lt;any&gt;) => void，其中reason为被拒绝的理由（通常是Error类型），Promise为被拒绝的Promise对象。 |
+| type | string | 是 | 填写'globalUnhandledRejectionDetected'，表示注册被拒绝Promise监听器。 |
 | observer | GlobalObserver | 是 | 注册被拒绝Promise的callback。 |
 
 
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -454,15 +484,16 @@ let promise1 = new Promise<void>(() => {}).then(() => {
 
 
 
-#### errorManager.on('unhandledRejection')12+
+## errorManager.on('unhandledRejection')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'unhandledRejection', observer: UnhandledRejectionObserver): void
 
 注册被拒绝Promise监听器。注册后可以捕获到当前线程中未被捕获到的Promise rejection。
 
-仅在主线程中使用。使用线程出错时，将抛出错误码，因此建议使用try-catch逻辑进行处理。
+接口入参不符合要求时，将抛出错误码，因此建议使用try-catch逻辑进行处理。
 
 配对调用：与[errorManager.off('unhandledRejection')](#errormanageroffunhandledrejection12)方法配合使用，使用完成后可调用off方法注销监听器释放资源。
 
@@ -471,6 +502,7 @@ on(type: 'unhandledRejection', observer: UnhandledRejectionObserver): void
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -482,10 +514,10 @@ on(type: 'unhandledRejection', observer: UnhandledRejectionObserver): void
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 16200001 | If the caller is invalid. |
 
 
 **示例**：
@@ -513,9 +545,10 @@ let promise1 = new Promise<void>(() => {}).then(() => {
 
 
 
-#### errorManager.on('freeze')18+
+## errorManager.on('freeze')18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'freeze', observer: FreezeObserver): void
 
@@ -526,7 +559,7 @@ on(type: 'freeze', observer: FreezeObserver): void
 配对调用：与[errorManager.off('freeze')](#errormanagerofffreeze18)方法配合使用，使用完成后可调用off方法注销监听器。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/0TlLzROkQySOf4nK3KHYVg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071422Z&HW-CC-Expire=86400&HW-CC-Sign=0E049F690F8E34589E1D60632E794835B166958FC2E74F9A05C68180C33BAF6A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/VFeYbNToSKOz4WZpdoEoDg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072830Z&HW-CC-Expire=86400&HW-CC-Sign=2B95B7F7D374BD675BCEA8DA761F3D1EC009B42C68FE2785A9A53EE33EE3A6A1)
 
 
 如果该回调函数执行时间超过1s，可能导致[AppRecovery](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-apprecovery)功能不可用。通过解析hilog日志中的begin与Freeze callback execution completed两者的时间差可以计算回调函数执行时长，如果超过1秒，可以尝试采用异步处理、减少阻塞操作、优化数据结构等方法优化回调逻辑，降低执行时长。
@@ -541,6 +574,7 @@ on(type: 'freeze', observer: FreezeObserver): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写'freeze'，表示应用主线程freeze观测器。 |
@@ -550,6 +584,7 @@ on(type: 'freeze', observer: FreezeObserver): void
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -576,9 +611,10 @@ try {
 
 
 
-#### errorManager.off('loopObserver')12+
+## errorManager.off('loopObserver')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'loopObserver', observer?: LoopObserver): void
 
@@ -594,6 +630,7 @@ off(type: 'loopObserver', observer?: LoopObserver): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写'loopObserver'，表示应用主线程观测器。 |
@@ -604,6 +641,7 @@ off(type: 'loopObserver', observer?: LoopObserver): void
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
@@ -613,6 +651,7 @@ off(type: 'loopObserver', observer?: LoopObserver): void
 
 ```text
 import { errorManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 try {
   errorManager.off('loopObserver');
@@ -625,13 +664,16 @@ try {
 
 
 
-#### errorManager.off('globalUnhandledRejectionDetected')18+
+## errorManager.off('globalUnhandledRejectionDetected')18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'globalUnhandledRejectionDetected', observer?: GlobalObserver): void
 
 注销被拒绝Promise监听器，注销后无法监听进程中的Promise异常。
+
+建议开发者在进程回收时，调用注销错误观测器，如果其他线程发送异常回调时，可能因找不到自定义异常处理回调函数而发生崩溃。
 
 如果传入的回调不在通过on方法注册的回调队列中，将抛出16300004错误码，因此建议使用try-catch逻辑进行处理。
 
@@ -643,6 +685,7 @@ off(type: 'globalUnhandledRejectionDetected', observer?: GlobalObserver): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写'globalUnhandledRejectionDetected'，表示注销被拒绝Promise监听器。 |
@@ -652,6 +695,7 @@ off(type: 'globalUnhandledRejectionDetected', observer?: GlobalObserver): void
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -688,15 +732,16 @@ errorManager.off('globalUnhandledRejectionDetected', promiseFunc);
 
 
 
-#### errorManager.off('unhandledRejection')12+
+## errorManager.off('unhandledRejection')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'unhandledRejection', observer?: UnhandledRejectionObserver): void
 
 注销被拒绝Promise监听器。
 
-仅在主线程中使用。使用线程出错时，将抛出错误码，因此建议使用try-catch逻辑进行处理。
+接口入参不符合要求时，将抛出错误码，因此建议使用try-catch逻辑进行处理。
 
 配对调用：与[errorManager.on('unhandledRejection')](#errormanageronunhandledrejection12)方法配合使用。
 
@@ -705,6 +750,7 @@ off(type: 'unhandledRejection', observer?: UnhandledRejectionObserver): void
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -716,10 +762,10 @@ off(type: 'unhandledRejection', observer?: UnhandledRejectionObserver): void
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 16200001 | If the caller is invalid. |
 | 16300004 | If the observer does not exist. |
 
 
@@ -775,9 +821,10 @@ errorManager.off('unhandledRejection', observer);
 
 
 
-#### errorManager.off('freeze')18+
+## errorManager.off('freeze')18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'freeze', observer?: FreezeObserver): void
 
@@ -795,6 +842,7 @@ off(type: 'freeze', observer?: FreezeObserver): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 填写'freeze'，表示应用主线程freeze观测器。 |
@@ -804,6 +852,7 @@ off(type: 'freeze', observer?: FreezeObserver): void
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -832,9 +881,10 @@ try {
 
 
 
-#### errorManager.setDefaultErrorHandler21+
+## errorManager.setDefaultErrorHandler21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setDefaultErrorHandler(defaultHandler?: ErrorHandler): ErrorHandler
 
@@ -852,12 +902,14 @@ setDefaultErrorHandler(defaultHandler?: ErrorHandler): ErrorHandler
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | defaultHandler | ErrorHandler | 否 | 新注册的错误处理器，缺省时默认值为空。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -867,6 +919,7 @@ setDefaultErrorHandler(defaultHandler?: ErrorHandler): ErrorHandler
 **错误码**：
 
 以下错误码详细介绍请参考[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -896,9 +949,10 @@ oldHandler = errorManager.setDefaultErrorHandler(errorHandler);
 
 
 
-#### errorManager.setDefaultResourceUsageObserver24+
+## errorManager.setDefaultResourceUsageObserver24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setDefaultResourceUsageObserver(defaultObserver?: ResourceUsageObserver): ResourceUsageObserver
 
@@ -918,12 +972,14 @@ setDefaultResourceUsageObserver(defaultObserver?: ResourceUsageObserver): Resour
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | defaultObserver | ResourceUsageObserver | 否 | 新注册的资源观察者，缺省时默认值为空。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -933,6 +989,7 @@ setDefaultResourceUsageObserver(defaultObserver?: ResourceUsageObserver): Resour
 **错误码**：
 
 以下错误码详细介绍请参考[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -962,9 +1019,10 @@ oldObserver = errorManager.setDefaultResourceUsageObserver(resourceUsageObserver
 
 
 
-#### errorManager.setDefaultFreezeObserver
+## errorManager.setDefaultFreezeObserver
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setDefaultFreezeObserver(defaultObserver?: FreezeObserver) : FreezeObserver
 
@@ -973,7 +1031,7 @@ setDefaultFreezeObserver(defaultObserver?: FreezeObserver) : FreezeObserver
 如果传入非法参数或在子线程调用，将抛出错误码并返回undefined，因此建议使用try-catch逻辑进行处理。
 
 > [!NOTE]
-> 该接口请勿与 on('freeze') 或 off('freeze') 接口混用。
+> 该接口以下场景会返回空指针，使用返回值前必须进行判空处理，避免空指针解引用导致应用崩溃： 开发者注册的处理器为空时。 首次注册时，上一次注册的处理器为空。 该接口请勿与 on('freeze') 或 off('freeze') 接口混用。
 
 
 **起始版本：** 26.0.0
@@ -986,21 +1044,24 @@ setDefaultFreezeObserver(defaultObserver?: FreezeObserver) : FreezeObserver
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| defaultObserver | FreezeObserver | 否 | 新注册的错误处理器，默认值为空。 当参数为空时，后续注册的处理器将无法与前序已注册的处理器建立关联，从而中断链式调用。 |
+| defaultObserver | FreezeObserver | 否 | 新注册的freeze观察者，默认值为空。 当参数为空时，后续注册的处理器将无法与前序已注册的处理器建立关联，从而中断链式调用。 |
 
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| FreezeObserver | 返回上一次注册的错误处理器。 |
+| FreezeObserver | 返回上一次注册的处理器。 |
 
 
 **错误码**：
 
 以下错误码详细介绍请参考[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1039,9 +1100,10 @@ export function setFreezeHandler() {
 
 
 
-#### ErrorObserver
+## ErrorObserver
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ErrorObserver = _ErrorObserver.default
 
@@ -1051,6 +1113,7 @@ ErrorObserver模块。该模块定义了错误观测器的接口，包含onUnhan
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _ErrorObserver.default | ErrorObserver模块。 |
@@ -1058,19 +1121,21 @@ ErrorObserver模块。该模块定义了错误观测器的接口，包含onUnhan
 
 
 
-#### LoopObserver12+
+## LoopObserver12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type LoopObserver = _LoopObserver
 
-LoopObserver模块。定义异常监听，可作为 errormanager.on 函数的参数，监听并处理当前应用主线程超时的事件。
+LoopObserver模块。定义异常监听，可作为 errorManager.on 函数的参数，监听并处理当前应用主线程超时的事件。
 
 该接口通过在ArkUI事件循环的消息处理前后记录时间戳，计算消息执行时长，当执行时长超过设定的timeout阈值时触发onLoopTimeOut回调。详细监测机制请参见[LoopObserver](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-loopobserver)。
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1079,9 +1144,10 @@ LoopObserver模块。定义异常监听，可作为 errormanager.on 函数的参
 
 
 
-#### UnhandledRejectionObserver12+
+## UnhandledRejectionObserver12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type UnhandledRejectionObserver = (reason: Error | any, promise: Promise&lt;any&gt;) => void
 
@@ -1093,6 +1159,7 @@ type UnhandledRejectionObserver = (reason: Error | any, promise: Promise&lt;any&
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | reason | Error \| any | 是 | 通常是Error类型，表示被拒绝的理由。 |
@@ -1101,9 +1168,10 @@ type UnhandledRejectionObserver = (reason: Error | any, promise: Promise&lt;any&
 
 
 
-#### FreezeObserver18+
+## FreezeObserver18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type FreezeObserver = () => void
 
@@ -1115,19 +1183,21 @@ type FreezeObserver = () => void
 
 
 
-#### GlobalObserver18+
+## GlobalObserver18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type GlobalObserver = (reason: GlobalError) => void
 
-定义异常监听，可以作为[errorManager.on('globalErrorOccurred')](#errormanageronglobalerroroccurred18)和[errorManager.on('globalUnhandledRejectionDetected')](#errormanageronglobalunhandledrejectiondetected18)的入参，用于监听应用事件处理超时的情况。通过回调机制实时获取消息实际执行时间，帮助开发者及时发现和定位故障问题。
+定义异常监听，可以作为[errorManager.on('globalErrorOccurred')](#errormanageronglobalerroroccurred18)和[errorManager.on('globalUnhandledRejectionDetected')](#errormanageronglobalunhandledrejectiondetected18)的入参，用于监听全局异常事件和未捕获的Promise rejection。通过回调机制获取异常详情，帮助开发者及时发现和定位故障问题。
 
 **元服务API**：从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1136,15 +1206,17 @@ type GlobalObserver = (reason: GlobalError) => void
 
 
 
-#### GlobalError18+
+## GlobalError18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-有关异常事件名字、消息、错误堆栈信息、异常线程名称和类型的对象。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+有关异常事件名字、消息、错误堆栈信息、异常线程名称和类型的对象。继承自Error。
 
 **元服务API**：从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1154,15 +1226,17 @@ type GlobalObserver = (reason: GlobalError) => void
 
 
 
-#### InstanceType18+
+## InstanceType18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 虚拟机的实例类型。
 
 **元服务API**：从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.AbilityCore
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1174,17 +1248,21 @@ type GlobalObserver = (reason: GlobalError) => void
 
 
 
-#### ErrorHandler21+
+## ErrorHandler21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ErrorHandler = (errObject: Error) => void
+
+定义错误处理器函数类型，用于处理JS异常，作为[errorManager.setDefaultErrorHandler](#errormanagersetdefaulterrorhandler21)的参数类型，在异常发生时被调用，接收异常对象并执行自定义错误处理逻辑。
 
 **元服务API**：从API version 21开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1193,9 +1271,10 @@ type ErrorHandler = (errObject: Error) => void
 
 
 
-#### ResourceUsageObserver24+
+## ResourceUsageObserver24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ResourceUsageObserver = (resourceType: ResourceType, resourceSize: number, detailInfo?: Record<string, number>) => void
 
@@ -1209,6 +1288,7 @@ type ResourceUsageObserver = (resourceType: ResourceType, resourceSize: number, 
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resourceType | ResourceType | 是 | 表示应用资源超基线的类型。 |
@@ -1218,9 +1298,10 @@ type ResourceUsageObserver = (resourceType: ResourceType, resourceSize: number, 
 
 
 
-#### ResourceType24+
+## ResourceType24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 应用资源超基线的类型。
 
@@ -1229,6 +1310,7 @@ type ResourceUsageObserver = (resourceType: ResourceType, resourceSize: number, 
 **元服务API**：从API version 24开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.AbilityCore
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

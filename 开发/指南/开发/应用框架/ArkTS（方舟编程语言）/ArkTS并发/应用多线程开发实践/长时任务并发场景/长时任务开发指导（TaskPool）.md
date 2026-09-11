@@ -1,13 +1,13 @@
 # 长时任务开发指导 (TaskPool)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/long-time-task-guide
 
 此处提供使用TaskPool进行长时任务的开发指导，以定期采集传感器数据为例。
   
 
-#### 使用TaskPool进行传感器数据监听
+## 使用TaskPool进行传感器数据监听
 1. 导入所需的模块。
 
   
@@ -34,7 +34,7 @@ async function sensorListener(): Promise<void> {
 }
 ```
 
-3. 给sensor添加ohos.permission.ACCELEROMETER权限，在module.json5中添加如下代码。
+3. 给应用添加ohos.permission.ACCELEROMETER权限，在module.json5中的"module"字段中添加如下代码示例的"requestPermissions"字段，配置相关权限。
 
   
 ```json

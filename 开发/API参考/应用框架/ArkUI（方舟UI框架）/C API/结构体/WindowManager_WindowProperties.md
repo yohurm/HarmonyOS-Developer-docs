@@ -1,18 +1,19 @@
 # WindowManager_WindowProperties
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-windowmanager-windowproperties
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct {...} WindowManager_WindowProperties
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 窗口属性。
  
@@ -24,20 +25,23 @@ typedef struct {...} WindowManager_WindowProperties
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 成员变量
+### 成员变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | WindowManager_Rect windowRect | 窗口的位置和尺寸。 |
-| WindowManager_Rect drawableRect | 窗口内可绘制区域的尺寸。 |
+| WindowManager_Rect drawableRect | 窗口内可绘制区域的位置和尺寸。 |
 | WindowManager_WindowType type | 窗口类型。 |
 | bool isFullScreen | 窗口是否全屏模式。默认值为false。true表示窗口是全屏模式，false表示窗口是非全屏模式。 |
 | bool isLayoutFullScreen | 窗口布局是否沉浸式。默认值为false。true表示窗口布局是沉浸式，false表示窗口布局是非沉浸式。 |
@@ -48,4 +52,4 @@ typedef struct {...} WindowManager_WindowProperties
 | bool isPrivacyMode | 窗口是否打开隐私模式。默认值为false。true表示窗口打开隐私模式，false表示窗口关闭隐私模式。 |
 | bool isTransparent | 窗口是否透明。默认值为false。true表示窗口透明，false表示窗口非透明。 |
 | uint32_t id | 窗口id。默认值为0，该参数为整数。 |
-| uint32_t displayId | 窗口所在屏幕的id，默认返回主屏幕id，该参数为整数 |
+| uint32_t displayId | 窗口所在屏幕的ID，默认返回主屏幕ID，该参数为整数。 |

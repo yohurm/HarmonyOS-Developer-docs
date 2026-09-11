@@ -1,20 +1,21 @@
 # @ohos.bluetooth.baseProfile (蓝牙baseProfile模块)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bluetooth-baseprofile
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-本模块提供不同的蓝牙技术协议的基础公共方法。
+本模块提供不同的蓝牙技术协议的基础公共方法，为[A2DP](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#a2dp)、[HFP](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#hfp)、[PAN](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#pan)等蓝牙[Profile](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#profile)提供连接状态查询、连接状态订阅与取消订阅等公共能力，适用于需要在应用中统一管理多种蓝牙Profile连接状态的场景。
 
 > [!NOTE]
 > 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { baseProfile } from '@kit.ConnectivityKit';
@@ -22,17 +23,19 @@ import { baseProfile } from '@kit.ConnectivityKit';
 
 
 
-#### BaseProfile
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-基础Profile接口定义，提供订阅和获取连接状态等公共能力。如：[A2dpSourceProfile](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bluetooth-a2dp#a2dpsourceprofile)、[HandsFreeAudioGatewayProfile](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bluetooth-hfp#handsfreeaudiogatewayprofile)等[Profile](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#profile)类型都继承于该类。
+## BaseProfile
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### ProfileConnectionState
+基础Profile接口定义，提供订阅和获取连接状态等公共能力。如：[A2dpSourceProfile](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bluetooth-a2dp#a2dpsourceprofile)、[HandsFreeAudioGatewayProfile](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bluetooth-hfp#handsfreeaudiogatewayprofile)等Profile类型都继承于该类。
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+## ProfileConnectionState
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ProfileConnectionState = constant.ProfileConnectionState
 
@@ -42,6 +45,7 @@ type ProfileConnectionState = constant.ProfileConnectionState
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | constant.ProfileConnectionState | 本端和对端蓝牙设备间的Profile连接状态。 |
@@ -49,9 +53,10 @@ type ProfileConnectionState = constant.ProfileConnectionState
 
 
 
-#### StateChangeParam
+## StateChangeParam
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本端和对端蓝牙设备间Profile连接状态变化参数。
 
@@ -59,25 +64,28 @@ type ProfileConnectionState = constant.ProfileConnectionState
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | deviceId | string | 否 | 否 | 对端设备地址，例如："XX:XX:XX:XX:XX:XX"。 |
 | state | ProfileConnectionState | 否 | 否 | Profile连接状态。 |
 | cause12+ | DisconnectCause | 否 | 否 | Profile断开连接的原因。 |
-| role | PanRole | 否 | 是 | 当前对端设备对应的PAN角色。 起始版本：26.0.0 |
+| role | PanRole | 否 | 是 | 当前对端设备对应的PAN角色。仅PAN Profile连接状态发生变化时返回该字段，非PAN场景下该字段不存在。 起始版本：26.0.0 |
 
 
 
 
-#### DisconnectCause12+
+## DisconnectCause12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，Profile断开连接的原因。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
 **模型约束**：此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -91,9 +99,10 @@ type ProfileConnectionState = constant.ProfileConnectionState
 
 
 
-#### PanRole
+## PanRole
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，PAN的不同角色。
 
@@ -103,6 +112,7 @@ type ProfileConnectionState = constant.ProfileConnectionState
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ROLE_PANNAP | 0 | NAP角色。 |
@@ -111,13 +121,14 @@ type ProfileConnectionState = constant.ProfileConnectionState
 
 
 
-#### BaseProfile.getConnectedDevices
+## BaseProfile.getConnectedDevices
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getConnectedDevices(): Array&lt;string&gt;
 
-获取和本端设备间已连接Profile的对端设备列表。
+获取和本端设备间已连接Profile的对端设备列表。例如，在蓝牙音频播放应用中，可通过该方法获取当前已连接的A2DP音频设备列表以进行设备展示或管理。
 
 **需要权限**：
 
@@ -131,6 +142,7 @@ getConnectedDevices(): Array&lt;string&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;string&gt; | 返回已连接Profile的对端设备列表。 基于信息安全考虑，此处获取的设备地址为虚拟MAC地址。 - 已配对的地址不会变更。 - 若该设备重启蓝牙开关，重新获取到的虚拟地址会立即变更。 - 若取消配对，蓝牙子系统会根据该地址的实际使用情况，决策后续变更时机；若其他应用正在使用该地址，则不会立刻变更。 - 若要持久化保存该地址，可使用access.addPersistentDeviceId方法。 |
@@ -139,6 +151,7 @@ getConnectedDevices(): Array&lt;string&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -166,13 +179,14 @@ try {
 
 
 
-#### BaseProfile.getConnectionState
+## BaseProfile.getConnectionState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getConnectionState(deviceId: string): ProfileConnectionState
 
-获取和对端设备间Profile的连接状态。
+获取和对端设备间Profile的连接状态。例如，在蓝牙应用中判断设备是否已连接，以决定是否可以发起数据传输或更新设备连接状态显示。
 
  - 从API version 21开始，此接口支持使用对端设备的实际MAC地址获取Profile连接状态。
 
@@ -185,12 +199,14 @@ getConnectionState(deviceId: string): ProfileConnectionState
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 对端设备地址，例如："XX:XX:XX:XX:XX:XX"。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -200,6 +216,7 @@ getConnectionState(deviceId: string): ProfileConnectionState
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -228,13 +245,14 @@ try {
 
 
 
-#### BaseProfile.on('connectionStateChange')
+## BaseProfile.on('connectionStateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'connectionStateChange', callback: Callback&lt;StateChangeParam&gt;): void
 
-订阅Profile的连接状态变化事件。使用Callback异步回调。
+订阅Profile的连接状态变化事件。使用Callback异步回调。例如，在蓝牙音频应用中，当耳机连接或断开时实时更新播放界面状态或提示用户。
 
 **需要权限**：
 
@@ -248,6 +266,7 @@ on(type: 'connectionStateChange', callback: Callback&lt;StateChangeParam&gt;): v
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'connectionStateChange'，表示Profile连接状态变化事件。 当Profile连接状态变化时，触发该事件。 |
@@ -257,6 +276,7 @@ on(type: 'connectionStateChange', callback: Callback&lt;StateChangeParam&gt;): v
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -284,9 +304,10 @@ try {
 
 
 
-#### BaseProfile.off('connectionStateChange')
+## BaseProfile.off('connectionStateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'connectionStateChange', callback?: Callback<[StateChangeParam](#statechangeparam)>): void
 
@@ -300,15 +321,17 @@ off(type: 'connectionStateChange', callback?: Callback<[StateChangeParam](#state
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'connectionStateChange'，表示Profile连接状态变化事件。 |
-| callback | Callback&lt;StateChangeParam&gt; | 否 | 指定取消订阅的回调函数通知。 若传参，则需与BaseProfile.on('connectionStateChange')中的回调函数一致；若无传参，则取消订阅该type对应的所有回调函数通知。 |
+| callback | Callback&lt;StateChangeParam&gt; | 否 | 指定取消订阅的回调函数。 若传参，则需与BaseProfile.on('connectionStateChange')中的回调函数一致，此时取消订阅该回调函数；若传入的回调与已订阅的回调不一致，则无法取消对应订阅；若无传参，则取消订阅该type对应的所有回调函数。 |
 
 
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

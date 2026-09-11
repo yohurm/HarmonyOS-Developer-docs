@@ -1,10 +1,10 @@
 # 通过向量数据库实现数据持久化 (C/C++)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-vector-store-guidelines
 
-#### 场景介绍
+## 场景介绍
 
 向量数据库是一种支持存储、管理和检索向量数据的数据库，也支持标量的关系型数据处理。数据类型"floatvector"用来存储数据向量化的结果，从而实现对这些数据的快速检索和相似性搜索‌。
 
@@ -12,7 +12,7 @@
 
 
 
-#### 基本概念
+## 基本概念
 
  - **结果集**：指用户查询之后的结果集合，可以对数据进行访问。结果集提供了灵活的数据访问方式，可以更方便地拿到用户想要的数据。
  - **floatvector**：该数据类型表示向量数据，例如[1.0, 3.0, 2.4, 5.1, 6.2, 11.7]。
@@ -20,7 +20,7 @@
 
 
 
-#### 约束限制
+## 约束限制
 
  - 系统默认日志方式是[WAL](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-terminology#wal模式)（Write Ahead Log）模式，系统默认落盘方式是[FULL模式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-terminology#full模式)。
  - 数据库中默认有4个读连接和1个写连接，线程获取到空闲读连接时，即可进行读取操作。当没有空闲读连接时，会创建新的读连接。
@@ -31,15 +31,16 @@
 
 
 
-#### 规格限制
+## 规格限制
 
 详情见[规格限制](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persistence-by-vector-store#规格限制)。
 
 
 
-#### 接口说明
+## 接口说明
 
 详细的接口说明请参考[RDB](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-rdb)。
+
 
 | 接口名称 | 描述 |
 | --- | --- |
@@ -56,7 +57,7 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 
 **添加动态链接库**
 
@@ -327,20 +328,31 @@ CREATE TABLE table_name(column_name type [, ...]) [WITH(parameter = value [, ...
   **表4** 数据老化策略参数(parameter)
 
 | 参数名称 | 必填 | 取值范围和使用说明 |
+
 | --- | --- | --- |
+
 | time_col | 是 | 列名。类型必须为整数且不为空。 |
+
 | interval | 否 | 老化任务线程的执行间隔时间，超过该时间后执行写操作，触发老化任务，删除符合老化条件的数据；若在间隔时间内执行写操作，不会触发老化任务。取值范围是[5 second, 1 year]，时间单位支持second、minute、hour、day、month、year，不区分大小写或复数形式(1 hour和1 hours均可)，默认是1 day。 |
+
 | ttl | 否 | 数据保留时间。取值范围是[1 hour, 1 year]，时间单位支持second、minute、hour、day、month、year，不区分大小写或复数形式(1 hour和1 hours均可)，默认是3 month。 |
+
 | max_num | 否 | 数据量限制。取值范围是[100, 1024]，默认是1024。老化任务在执行完过期数据删除后，如剩余表内数据超过max_num行，则会找到距离过期时间最近的时间点，删除该时间点对应的所有数据，直到数据量少于max_num。 |
 
   时间相关参数会按数值换算为秒作为原子单位，取值规则如下所示：
 
 | 单位 | 向下换算为秒取值 |
+
 | --- | --- |
+
 | year | 365 * 24 * 60 * 60 |
+
 | month | 30 * 24 * 60 * 60 |
+
 | day | 24 * 60 * 60 |
+
 | hour | 60 * 60 |
+
 | minute | 60 |
 
   例如配置ttl = '3 months'，实际ttl会被换算为3 * (30 * 24 * 60 * 60) = 7776000 seconds。

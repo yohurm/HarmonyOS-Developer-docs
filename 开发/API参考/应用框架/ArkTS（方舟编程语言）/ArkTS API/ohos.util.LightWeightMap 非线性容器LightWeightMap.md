@@ -1,9 +1,9 @@
 # @ohos.util.LightWeightMap (非线性容器LightWeightMap)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-lightweightmap
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 LightWeightMap可用于存储具有关联关系的key-value键值对，其中key值唯一，每个key对应一个value。
  
@@ -26,9 +26,10 @@ LightWeightMap和[HashMap](https://developer.huawei.com/consumer/cn/doc/harmonyo
 
   
 
-#### 规格限制
+## 规格限制
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 当LightWeightMap存入的key为number类型且值大于INT32_MAX（即2147483647）或小于INT32_MIN（即-2147483648）时，针对LightWeightMap的操作，其结果可能与预期不一致。
  
@@ -46,9 +47,10 @@ console.info('result:', lightWeightMap.hasKey(key));  // result: true
  
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { LightWeightMap } from '@kit.ArkTS';
@@ -56,20 +58,23 @@ import { LightWeightMap } from '@kit.ArkTS';
  
   
 
-#### LightWeightMap
+## LightWeightMap
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
  
 **系统能力：** SystemCapability.Utils.Lang
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | length | number | 是 | 否 | LightWeightMap的元素个数。 |
@@ -77,9 +82,10 @@ import { LightWeightMap } from '@kit.ArkTS';
  
   
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
  
@@ -93,6 +99,7 @@ LightWeightMap的构造函数，创建一个空的LightWeightMap实例。
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200012 | The LightWeightMap's constructor cannot be directly invoked. |
@@ -106,9 +113,10 @@ let lightWeightMap = new LightWeightMap<string, number>();
  
   
 
-#### isEmpty
+### isEmpty
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isEmpty(): boolean
  
@@ -120,6 +128,7 @@ isEmpty(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 为空返回true，不为空返回false。 |
@@ -129,6 +138,7 @@ isEmpty(): boolean
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The isEmpty method cannot be bound. |
@@ -144,9 +154,10 @@ console.info("result:", result);  // result: true
  
   
 
-#### hasAll
+### hasAll
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hasAll(map: LightWeightMap<K, V>): boolean
  
@@ -158,6 +169,7 @@ hasAll(map: LightWeightMap<K, V>): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | map | LightWeightMap<K, V> | 是 | 用于比较的LightWeightMap对象，判断当前实例是否包含此map中的所有元素。 |
@@ -165,6 +177,7 @@ hasAll(map: LightWeightMap<K, V>): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 包含所有元素返回true，否则返回false。 |
@@ -174,6 +187,7 @@ hasAll(map: LightWeightMap<K, V>): boolean
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The hasAll method cannot be bound. |
@@ -193,9 +207,10 @@ console.info("result = ", result); // result = true
  
   
 
-#### hasKey
+### hasKey
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hasKey(key: K): boolean
  
@@ -207,6 +222,7 @@ hasKey(key: K): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | K | 是 | 指定key。当key为number类型且值大于INT32_MAX或小于INT32_MIN时，结果可能与预期不一致。 |
@@ -214,6 +230,7 @@ hasKey(key: K): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 包含指定key返回true，否则返回false。 |
@@ -223,6 +240,7 @@ hasKey(key: K): boolean
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The hasKey method cannot be bound. |
@@ -239,9 +257,10 @@ console.info("result:", result);  // result: true
  
   
 
-#### hasValue
+### hasValue
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hasValue(value: V): boolean
  
@@ -253,6 +272,7 @@ hasValue(value: V): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | V | 是 | 要判断是否包含的value。 |
@@ -260,6 +280,7 @@ hasValue(value: V): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 包含指定元素返回true，否则返回false。 |
@@ -269,6 +290,7 @@ hasValue(value: V): boolean
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The hasValue method cannot be bound. |
@@ -285,9 +307,10 @@ console.info("result:", result);  // result: true
  
   
 
-#### increaseCapacityTo
+### increaseCapacityTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 increaseCapacityTo(minimumCapacity: number): void
  
@@ -299,6 +322,7 @@ increaseCapacityTo(minimumCapacity: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | minimumCapacity | number | 是 | 需要容纳的元素数量。取值需大于等于0，大于等于当前元素个数时扩容生效，否则不变更容量。 |
@@ -308,6 +332,7 @@ increaseCapacityTo(minimumCapacity: number): void
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The increaseCapacityTo method cannot be bound. |
@@ -322,9 +347,10 @@ lightWeightMap.increaseCapacityTo(10);
  
   
 
-#### get
+### get
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get(key: K): V
  
@@ -336,6 +362,7 @@ get(key: K): V
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | K | 是 | 指定key。 |
@@ -343,6 +370,7 @@ get(key: K): V
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | V | 返回key映射的value值。 |
@@ -352,6 +380,7 @@ get(key: K): V
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The get method cannot be bound. |
@@ -369,9 +398,10 @@ console.info("result:", result);  // result: 356
  
   
 
-#### getIndexOfKey
+### getIndexOfKey
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getIndexOfKey(key: K): number
  
@@ -383,6 +413,7 @@ getIndexOfKey(key: K): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | K | 是 | 被查找的元素。 |
@@ -390,6 +421,7 @@ getIndexOfKey(key: K): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回key元素首次出现的下标值，查找失败返回-1。 |
@@ -399,6 +431,7 @@ getIndexOfKey(key: K): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The getIndexOfKey method cannot be bound. |
@@ -416,9 +449,10 @@ console.info("result:", result);  // result: 0
  
   
 
-#### getIndexOfValue
+### getIndexOfValue
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getIndexOfValue(value: V): number
  
@@ -430,6 +464,7 @@ getIndexOfValue(value: V): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | V | 是 | 要查找首次出现下标位置的值。 |
@@ -437,6 +472,7 @@ getIndexOfValue(value: V): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回value元素首次出现的下标值，查找失败返回-1。 |
@@ -446,6 +482,7 @@ getIndexOfValue(value: V): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The getIndexOfValue method cannot be bound. |
@@ -463,9 +500,10 @@ console.info("result:", result);  // result: 1
  
   
 
-#### getKeyAt
+### getKeyAt
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getKeyAt(index: number): K
  
@@ -477,6 +515,7 @@ getKeyAt(index: number): K
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 所查找的下标。需要小于等于INT32_MAX即2147483647。 |
@@ -484,6 +523,7 @@ getKeyAt(index: number): K
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | K | 返回该下标对应的元素键值对中key值，如果未找到则返回undefined。 |
@@ -493,6 +533,7 @@ getKeyAt(index: number): K
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of index is out of range. |
@@ -511,9 +552,10 @@ console.info("result:", result);  // result: squirrel
  
   
 
-#### setAll
+### setAll
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAll(map: LightWeightMap<K, V>): void
  
@@ -525,6 +567,7 @@ setAll(map: LightWeightMap<K, V>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | map | LightWeightMap<K, V> | 是 | 提供添加元素的LightWeightMap。 |
@@ -534,6 +577,7 @@ setAll(map: LightWeightMap<K, V>): void
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The setAll method cannot be bound. |
@@ -553,9 +597,10 @@ console.info("result:", result);  // result: 356
  
   
 
-#### set
+### set
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set(key: K, value: V): Object
  
@@ -567,6 +612,7 @@ set(key: K, value: V): Object
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | K | 是 | 添加或更新成员数据的键名。当key为number类型且值大于INT32_MAX或小于INT32_MIN时，结果可能与预期不一致。 |
@@ -575,6 +621,7 @@ set(key: K, value: V): Object
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Object | 返回添加或更新后的LightWeightMap实例对象。 |
@@ -584,6 +631,7 @@ set(key: K, value: V): Object
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The set method cannot be bound. |
@@ -599,9 +647,10 @@ console.info("result:", result);  // result: squirrel:123
  
   
 
-#### remove
+### remove
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 remove(key: K): V
  
@@ -613,6 +662,7 @@ remove(key: K): V
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | K | 是 | 指定key。 |
@@ -620,6 +670,7 @@ remove(key: K): V
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | V | 返回删除元素的值。 |
@@ -629,6 +680,7 @@ remove(key: K): V
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The remove method cannot be bound. |
@@ -645,9 +697,10 @@ console.info("result:", result);  // result: 356
  
   
 
-#### removeAt
+### removeAt
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeAt(index: number): boolean
  
@@ -659,6 +712,7 @@ removeAt(index: number): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 要删除的元素的下标位置。取值范围：[0, length-1]，需小于等于INT32_MAX即2147483647。 |
@@ -666,6 +720,7 @@ removeAt(index: number): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 成功删除元素返回true，否则返回false。 |
@@ -675,6 +730,7 @@ removeAt(index: number): boolean
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The removeAt method cannot be bound. |
@@ -692,9 +748,10 @@ console.info("result:", result);  // result: true
  
   
 
-#### setValueAt
+### setValueAt
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setValueAt(index: number, newValue: V): boolean
  
@@ -706,6 +763,7 @@ setValueAt(index: number, newValue: V): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 指定下标。需要小于等于INT32_MAX即2147483647。 |
@@ -714,6 +772,7 @@ setValueAt(index: number, newValue: V): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 成功替换返回true，否则返回false。 |
@@ -723,6 +782,7 @@ setValueAt(index: number, newValue: V): boolean
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of index is out of range. |
@@ -741,9 +801,10 @@ console.info("result:", lightWeightMap.get("squirrel"));  // result: 3546
  
   
 
-#### getValueAt
+### getValueAt
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getValueAt(index: number): V
  
@@ -755,6 +816,7 @@ getValueAt(index: number): V
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 指定下标。需要小于等于INT32_MAX即2147483647。 |
@@ -762,6 +824,7 @@ getValueAt(index: number): V
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | V | 返回指定下标对应键值对中的值。 |
@@ -771,6 +834,7 @@ getValueAt(index: number): V
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of index is out of range. |
@@ -789,9 +853,10 @@ console.info("result:", result);  // result: 123
  
   
 
-#### clear
+### clear
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clear(): void
  
@@ -805,6 +870,7 @@ clear(): void
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The clear method cannot be bound. |
@@ -823,9 +889,10 @@ console.info("result:", result);  // result: true
  
   
 
-#### keys
+### keys
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 keys(): IterableIterator&lt;K&gt;
  
@@ -837,6 +904,7 @@ keys(): IterableIterator&lt;K&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator&lt;K&gt; | 返回一个迭代器。 |
@@ -846,6 +914,7 @@ keys(): IterableIterator&lt;K&gt;
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The keys method cannot be bound. |
@@ -868,9 +937,10 @@ for (let key of keys) {
  
   
 
-#### values
+### values
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 values(): IterableIterator&lt;V&gt;
  
@@ -882,6 +952,7 @@ values(): IterableIterator&lt;V&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator&lt;V&gt; | 返回一个迭代器。 |
@@ -891,6 +962,7 @@ values(): IterableIterator&lt;V&gt;
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The values method cannot be bound. |
@@ -913,9 +985,10 @@ for (let value of values) {
  
   
 
-#### forEach
+### forEach
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 forEach(callbackFn: (value?: V, key?: K, map?: LightWeightMap<K, V>) => void, thisArg?: Object): void
  
@@ -927,6 +1000,7 @@ forEach(callbackFn: (value?: V, key?: K, map?: LightWeightMap<K, V>) => void, th
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callbackFn | function | 是 | 回调函数，用于遍历LightWeightMap实例中的元素及下标。 |
@@ -935,6 +1009,7 @@ forEach(callbackFn: (value?: V, key?: K, map?: LightWeightMap<K, V>) => void, th
  
 callbackFn的参数说明：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | V | 否 | 当前遍历到的元素键值对的值。 |
@@ -946,6 +1021,7 @@ callbackFn的参数说明：
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The forEach method cannot be bound. |
@@ -977,9 +1053,10 @@ for (let i = 0; i < 10; i++) {
  
   
 
-#### entries
+### entries
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 entries(): IterableIterator<[K, V]>
  
@@ -991,6 +1068,7 @@ entries(): IterableIterator<[K, V]>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator<[K, V]> | 返回包含此映射中所有键值对的迭代器对象。 |
@@ -1000,6 +1078,7 @@ entries(): IterableIterator<[K, V]>
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The entries method cannot be bound. |
@@ -1033,9 +1112,10 @@ for(let i = 0; i < 10; i++) {
  
   
 
-#### toString
+### toString
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toString(): String
  
@@ -1047,6 +1127,7 @@ toString(): String
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | String | 返回将此映射中键值对拼接而成的字符串。 |
@@ -1056,6 +1137,7 @@ toString(): String
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The toString method cannot be bound. |
@@ -1073,9 +1155,10 @@ console.info("result:", result);  // result: sparrow:356,squirrel:123
  
   
 
-#### [Symbol.iterator]
+### [Symbol.iterator]
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [Symbol.iterator](): IterableIterator<[K, V]>
  
@@ -1087,6 +1170,7 @@ console.info("result:", result);  // result: sparrow:356,squirrel:123
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator<[K, V]> | 返回一个迭代器。 |
@@ -1096,6 +1180,7 @@ console.info("result:", result);  // result: sparrow:356,squirrel:123
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The Symbol.iterator method cannot be bound. |

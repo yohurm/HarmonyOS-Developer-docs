@@ -1,11 +1,12 @@
 # Interface (Marker)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-marker
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -15,7 +16,8 @@ import { map, mapCommon } from '@kit.MapKit';
  
   
 
-#### Marker
+## Marker
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -43,7 +45,8 @@ let marker: map.Marker = await this.mapController.addMarker(markerOptions);
  
   
 
-#### getTitle
+### getTitle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -61,6 +64,7 @@ getTitle(): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 信息窗的标题。 |
@@ -74,7 +78,8 @@ let title: string = marker.getTitle();
  
   
 
-#### getSnippet
+### getSnippet
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -92,6 +97,7 @@ getSnippet(): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 信息窗的子标题。 |
@@ -105,7 +111,8 @@ let snippet: string = marker.getSnippet();
  
   
 
-#### getAlpha
+### getAlpha
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -123,6 +130,7 @@ getAlpha(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 标记的透明度，取值范围：[0, 1]。 |
@@ -136,7 +144,8 @@ let alpha: number = marker.getAlpha();
  
   
 
-#### getPosition
+### getPosition
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -154,6 +163,7 @@ getPosition(): mapCommon.LatLng
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | mapCommon.LatLng | 标记的位置。 |
@@ -167,7 +177,8 @@ let position: mapCommon.LatLng = marker.getPosition();
  
   
 
-#### getRotation
+### getRotation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -185,6 +196,7 @@ getRotation(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 标记的旋转角度，单位：度。 |
@@ -198,7 +210,8 @@ let rotation: number = marker.getRotation();
  
   
 
-#### isClickable
+### isClickable
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -216,6 +229,7 @@ isClickable(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 标记是否可以点击。 - true：可以 - false：不可以 |
@@ -229,7 +243,8 @@ let isClickable: boolean = marker.isClickable();
  
   
 
-#### isDraggable
+### isDraggable
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -247,6 +262,7 @@ isDraggable(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 标记是否可以通过长按来拖拽。 - true：可以 - false：不可以 |
@@ -260,7 +276,8 @@ let isDraggable: boolean = marker.isDraggable();
  
   
 
-#### isFlat
+### isFlat
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -278,6 +295,7 @@ isFlat(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 标记是否平贴地图。 - true：平贴地图 - false：面对相机 |
@@ -291,7 +309,8 @@ let isFlat: boolean = marker.isFlat();
  
   
 
-#### setAlpha
+### setAlpha
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -309,6 +328,7 @@ setAlpha(alpha: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | alpha | number | 是 | 标记的透明度，取值范围：[0, 1]，异常值不处理。 0：完全透明 1：完全不透明 |
@@ -322,7 +342,8 @@ marker.setAlpha(0.5);
  
   
 
-#### setClickable
+### setClickable
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -340,6 +361,7 @@ setClickable(clickable: boolean): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | clickable | boolean | 是 | 设置标记是否可以点击，异常值不处理。 - true：可以 - false：不可以 |
@@ -353,7 +375,8 @@ marker.setClickable(true);
  
   
 
-#### setDraggable
+### setDraggable
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -371,6 +394,7 @@ setDraggable(draggable: boolean): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | draggable | boolean | 是 | 是否可以长按拖拽，异常值不处理。 - true：可以 - false：不可以 |
@@ -384,7 +408,8 @@ marker.setDraggable(true);
  
   
 
-#### setFlat
+### setFlat
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -402,6 +427,7 @@ setFlat(flat: boolean): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | flat | boolean | 是 | 是否平贴地图，异常值不处理。 - true：平贴地图 - false：面对相机 |
@@ -415,7 +441,8 @@ marker.setFlat(true);
  
   
 
-#### setIcon
+### setIcon
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -433,6 +460,7 @@ setIcon(icon: string | image.PixelMap | Resource): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | icon | string \| image.PixelMap \| Resource | 是 | 标记的图标，异常值不处理。 - 图片格式支持jpg、jpeg、png、gif（只支持显示第一帧）、webp、svg。 - string类型入参支持两种格式： - 资源相对路径格式：图标存放在resources/rawfile，icon参数传入rawfile文件夹下的相对路径。 - toDataURL格式（如data:image/png;base64,&lt;图片的Base64字节编码值&gt;） 说明： 从5.0.0(12)版本开始，icon属性支持Resource和image.PixelMap类型。 |
@@ -440,6 +468,7 @@ setIcon(icon: string | image.PixelMap | Resource): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -454,7 +483,8 @@ await marker.setIcon('icon/test.png');
  
   
 
-#### setMarkerAnchor
+### setMarkerAnchor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -476,6 +506,7 @@ setMarkerAnchor(anchorU: number, anchorV: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | anchorU | number | 是 | 锚点的水平坐标，以图像宽度的比例，取值范围：[0, 1]，异常值不处理。 |
@@ -490,7 +521,8 @@ marker.setMarkerAnchor(1.0, 1.0);
  
   
 
-#### setPosition
+### setPosition
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -508,6 +540,7 @@ setPosition(latLng: mapCommon.LatLng): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | latLng | mapCommon.LatLng | 是 | 标记的位置坐标，异常值不处理。 |
@@ -525,7 +558,8 @@ marker.setPosition(position);
  
   
 
-#### setRotation
+### setRotation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -543,6 +577,7 @@ setRotation(rotation: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rotation | number | 是 | 标记的旋转角度，单位：度。 以正北方向为0度、顺时针方向为正的角度，取值范围：[0, 360)。超出取值范围的值会换算成取值范围内的值，比如361会被换算成1，-1换算为359，null和undefined不处理。 |
@@ -556,7 +591,8 @@ marker.setRotation(30);
  
   
 
-#### setTitle
+### setTitle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -574,6 +610,7 @@ setTitle(title: string): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | title | string | 是 | 信息窗口的标题，信息窗的最大宽度为136vp，超长字串超出部分用省略号“…”表示，异常值不处理。 |
@@ -587,7 +624,8 @@ marker.setTitle("title");
  
   
 
-#### setSnippet
+### setSnippet
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -605,6 +643,7 @@ setSnippet(snippet: string): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | snippet | string | 是 | 信息窗口的子标题，信息窗的最大宽度为136vp，超长字串超出部分用省略号“…”表示，异常值不处理。 |
@@ -618,7 +657,8 @@ marker.setSnippet("su");
  
   
 
-#### setInfoWindowAnchor
+### setInfoWindowAnchor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -636,6 +676,7 @@ setInfoWindowAnchor(anchorU: number, anchorV: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | anchorU | number | 是 | 锚点在水平方向上的位置，取值范围：[0, 1]，异常值不处理。 |
@@ -650,7 +691,8 @@ marker.setInfoWindowAnchor(0.5, 0.5);
  
   
 
-#### setInfoWindowVisible
+### setInfoWindowVisible
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -668,6 +710,7 @@ setInfoWindowVisible(visible: boolean): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | visible | boolean | 是 | 设置信息窗是否可见，异常值不处理。 - true：可见 - false：不可见 |
@@ -681,7 +724,8 @@ marker.setInfoWindowVisible(true);
  
   
 
-#### isInfoWindowVisible
+### isInfoWindowVisible
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -699,6 +743,7 @@ isInfoWindowVisible(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 信息窗口是否可见。 - true：可见 - false：不可见 |
@@ -712,7 +757,8 @@ let visible: boolean = marker.isInfoWindowVisible();
  
   
 
-#### setAnimation
+### setAnimation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -730,6 +776,7 @@ setAnimation(animation: Animation): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | animation | Animation | 是 | 动画，异常值不处理。 |
@@ -757,7 +804,8 @@ marker.setAnimation(animation);
  
   
 
-#### startAnimation
+### startAnimation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -796,7 +844,8 @@ marker.startAnimation();
  
   
 
-#### clearAnimation
+### clearAnimation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -820,7 +869,8 @@ marker.clearAnimation();
  
   
 
-#### getAltitude
+### getAltitude
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -838,6 +888,7 @@ getAltitude(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 相对于地面的高度，单位：m。 |
@@ -851,7 +902,8 @@ let altitude: number = marker.getAltitude();
  
   
 
-#### setAltitude
+### setAltitude
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -869,6 +921,7 @@ setAltitude(altitude: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | altitude | number | 是 | 相对于地面的高度，单位：m，异常值不处理。 |
@@ -882,7 +935,8 @@ marker.setAltitude(500);
  
   
 
-#### setAnnotationVisible
+### setAnnotationVisible
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -900,6 +954,7 @@ setAnnotationVisible(visible: boolean): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | visible | boolean | 是 | 标记是否显示文本，异常值不处理。 - true：显示 - false：不显示 |
@@ -913,7 +968,8 @@ marker.setAnnotationVisible(true);
  
   
 
-#### isAnnotationVisible
+### isAnnotationVisible
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -931,6 +987,7 @@ isAnnotationVisible(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 标记文本是否可见。 - true：可见 - false：不可见 |
@@ -944,7 +1001,8 @@ let isVisible = marker.isAnnotationVisible();
  
   
 
-#### setPriority
+### setPriority
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -962,6 +1020,7 @@ setPriority(priority: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | priority | number | 是 | 设置标记的碰撞优先级。数值越大，优先级越低，两个标记（Marker）碰撞时优先级低的标记（Marker）被隐藏。该值为整数，取值范围：[0, 65535]，超出范围不处理，异常值不处理。 |
@@ -975,7 +1034,8 @@ marker.setPriority(50);
  
   
 
-#### getPriority
+### getPriority
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -993,6 +1053,7 @@ getPriority(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 标记的碰撞优先级。数值越大，优先级越低，两个标记（Marker）碰撞时优先级低的标记（Marker）被隐藏。 |
@@ -1006,7 +1067,8 @@ let priority: number = marker.getPriority();
  
   
 
-#### setIconBuilder
+### setIconBuilder
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1024,6 +1086,7 @@ setIconBuilder(iconBuilder: CustomBuilder): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | iconBuilder | CustomBuilder | 是 | 自定义组件，异常值不处理。 |
@@ -1031,6 +1094,7 @@ setIconBuilder(iconBuilder: CustomBuilder): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -1040,6 +1104,7 @@ setIconBuilder(iconBuilder: CustomBuilder): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1002601005 | Failed to generate the icon of the custom component. |
@@ -1069,7 +1134,8 @@ try {
  
   
 
-#### setOffset
+### setOffset
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1087,6 +1153,7 @@ setOffset(x: number, y: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | x | number | 是 | X轴方向的偏移量，单位：px，原点是图标的中心点，null、undefined和NaN不处理。 |
@@ -1101,7 +1168,8 @@ marker.setOffset(20, 20);
  
   
 
-#### getOffsetX
+### getOffsetX
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1119,6 +1187,7 @@ getOffsetX(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 获取标记图标在X轴方向的偏移量，单位：px，原点是图标的中心点。 |
@@ -1132,7 +1201,8 @@ let X: number = marker.getOffsetX();
  
   
 
-#### getOffsetY
+### getOffsetY
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1150,6 +1220,7 @@ getOffsetY(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 获取标记图标在Y轴方向的偏移量，单位：px，原点是图标的中心点。 |

@@ -1,11 +1,12 @@
 # OpenGTX_ConfigDescription
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_open_g_t_x___config_description
 **支持设备：** Phone | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -19,16 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OpenGTX_LTPO_Mode mode | LTPO方案模式，支持场景模式、触控模式、自适应模式。 |
@@ -48,13 +52,15 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### appVersion
+### appVersion
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -68,7 +74,8 @@ char* OpenGTX_ConfigDescription::appVersion
  
   
 
-#### engineType
+### engineType
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -82,7 +89,8 @@ OpenGTX_EngineType OpenGTX_ConfigDescription::engineType
  
   
 
-#### engineVersion
+### engineVersion
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -96,7 +104,8 @@ char* OpenGTX_ConfigDescription::engineVersion
  
   
 
-#### gameKeyThreadIds[5]
+### gameKeyThreadIds[5]
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -110,7 +119,8 @@ int32_t OpenGTX_ConfigDescription::gameKeyThreadIds[5]
  
   
 
-#### gameMainThreadId
+### gameMainThreadId
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -124,7 +134,8 @@ int32_t OpenGTX_ConfigDescription::gameMainThreadId
  
   
 
-#### gameRenderThreadId
+### gameRenderThreadId
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -138,7 +149,8 @@ int32_t OpenGTX_ConfigDescription::gameRenderThreadId
  
   
 
-#### gameType
+### gameType
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -152,7 +164,8 @@ OpenGTX_GameType OpenGTX_ConfigDescription::gameType
  
   
 
-#### mode
+### mode
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -166,7 +179,8 @@ LTPO方案模式，支持场景模式、触控模式、自适应模式。
  
   
 
-#### packageName
+### packageName
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -180,7 +194,8 @@ char* OpenGTX_ConfigDescription::packageName
  
   
 
-#### pictureQualityMaxLevel
+### pictureQualityMaxLevel
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -194,7 +209,8 @@ OpenGTX_PictureQualityMaxLevel OpenGTX_ConfigDescription::pictureQualityMaxLevel
  
   
 
-#### resolutionMaxValue
+### resolutionMaxValue
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -208,7 +224,8 @@ OpenGTX_ResolutionValue OpenGTX_ConfigDescription::resolutionMaxValue
  
   
 
-#### targetFPS
+### targetFPS
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -222,7 +239,8 @@ int32_t OpenGTX_ConfigDescription::targetFPS
  
   
 
-#### vulkanSupport
+### vulkanSupport
+
 
 **支持设备：** Phone | Tablet | TV
 

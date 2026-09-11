@@ -1,14 +1,21 @@
 [
   {
-    "slug": "hap-bin",
-    "name": "应用程序包集成bin文件（PC/2in1）",
     "file": "开发基础知识/典型场景的开发指导/应用程序包集成bin文件（PC／2in1）/应用程序包集成bin文件（PC／2in1）.md",
+    "name": "应用程序包集成bin文件（PC/2in1）",
+    "slug": "hap-bin",
     "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hap-bin"
   },
   {
-    "slug": "native-cross-har-hsp-interface-call",
-    "name": "Native侧跨HAR/HSP模块接口调用",
     "file": "开发基础知识/典型场景的开发指导/Native侧跨HAR／HSP模块接口调用/Native侧跨HAR／HSP模块接口调用.md",
+    "name": "Native侧跨HAR/HSP模块接口调用",
+    "slug": "native-cross-har-hsp-interface-call",
     "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-cross-har-hsp-interface-call"
+  },
+  {
+    "file": "开发基础知识/典型场景的开发指导/开发与使用应用插件（PC-2in1）.md",
+    "name": "开发与使用应用插件（PC/2in1）",
+    "slug": "plugin-package",
+    "title": "开发与使用应用插件（PC/2in1）",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/plugin-package"
   }
 ]

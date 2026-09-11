@@ -1,9 +1,9 @@
 # @ohos.util.LightWeightSet (非线性容器LightWeightSet)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-lightweightset
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 LightWeightSet可用于存储一系列值，存储元素中value唯一。
  
@@ -24,9 +24,10 @@ T：Type，表示LightWeightSet中存储元素的类型。
 
   
 
-#### 规格限制
+## 规格限制
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 当LightWeightSet存入的value为number类型且值大于INT32_MAX（2147483647）或小于INT32_MIN（-2147483648）时，针对LightWeightSet的操作，其结果可能与预期不一致。
  
@@ -44,9 +45,10 @@ console.info("result:", lightWeightSet.has(value));  // result: true
  
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { LightWeightSet } from '@kit.ArkTS';
@@ -54,20 +56,23 @@ import { LightWeightSet } from '@kit.ArkTS';
  
   
 
-#### LightWeightSet
+## LightWeightSet
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
  
 **系统能力：** SystemCapability.Utils.Lang
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | length | number | 是 | 否 | LightWeightSet的元素个数。 |
@@ -75,9 +80,10 @@ import { LightWeightSet } from '@kit.ArkTS';
  
   
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
  
@@ -91,6 +97,7 @@ LightWeightSet的构造函数。
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200012 | The LightWeightSet's constructor cannot be directly invoked. |
@@ -105,9 +112,10 @@ let lightWeightSet = new LightWeightSet<number | string>();
  
   
 
-#### isEmpty
+### isEmpty
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isEmpty(): boolean
  
@@ -119,6 +127,7 @@ isEmpty(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 为空返回true，不为空返回false。 |
@@ -128,6 +137,7 @@ isEmpty(): boolean
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The isEmpty method cannot be bound. |
@@ -144,9 +154,10 @@ console.info("result:", result);  // result: true
  
   
 
-#### add
+### add
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 add(obj: T): boolean
  
@@ -158,6 +169,7 @@ add(obj: T): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | obj | T | 是 | 添加的成员数据。若添加的值已存在于容器中，则不会重复添加。 |
@@ -165,6 +177,7 @@ add(obj: T): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 成功添加元素返回true，要添加的元素已存在时返回false。 |
@@ -174,6 +187,7 @@ add(obj: T): boolean
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The add method cannot be bound. |
@@ -190,9 +204,10 @@ console.info("result:", result);  // result: true
  
   
 
-#### addAll
+### addAll
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addAll(set: LightWeightSet&lt;T&gt;): boolean
  
@@ -204,6 +219,7 @@ addAll(set: LightWeightSet&lt;T&gt;): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | set | LightWeightSet&lt;T&gt; | 是 | 提供添加元素的LightWeightSet。 |
@@ -211,6 +227,7 @@ addAll(set: LightWeightSet&lt;T&gt;): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 成功添加元素返回true，否则返回false。 |
@@ -220,6 +237,7 @@ addAll(set: LightWeightSet&lt;T&gt;): boolean
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The addAll method cannot be bound. |
@@ -241,9 +259,10 @@ console.info("result:", result);  // result: true
  
   
 
-#### hasAll
+### hasAll
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hasAll(set: LightWeightSet&lt;T&gt;): boolean
  
@@ -255,6 +274,7 @@ hasAll(set: LightWeightSet&lt;T&gt;): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | set | LightWeightSet&lt;T&gt; | 是 | 用于判断当前容器是否包含其所有元素的目标集合。 |
@@ -262,6 +282,7 @@ hasAll(set: LightWeightSet&lt;T&gt;): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | true表示容器中包含目标集合中的所有元素，false表示容器中不包含目标集合中的全部元素。 |
@@ -271,6 +292,7 @@ hasAll(set: LightWeightSet&lt;T&gt;): boolean
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The hasAll method cannot be bound. |
@@ -291,9 +313,10 @@ console.info("result:", result);  // result: true
  
   
 
-#### has
+### has
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 has(key: T): boolean
  
@@ -305,6 +328,7 @@ has(key: T): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | T | 是 | 指定查找的元素，用于判断容器中是否包含该元素。 |
@@ -312,6 +336,7 @@ has(key: T): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | true表示容器中包含指定元素，false表示容器中不包含指定元素。 |
@@ -321,6 +346,7 @@ has(key: T): boolean
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The has method cannot be bound. |
@@ -338,9 +364,10 @@ console.info("result:", result);  // result: true
  
   
 
-#### increaseCapacityTo
+### increaseCapacityTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 increaseCapacityTo(minimumCapacity: number): void
  
@@ -352,6 +379,7 @@ increaseCapacityTo(minimumCapacity: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | minimumCapacity | number | 是 | 需要容纳的元素数量。若传入值小于当前元素个数，则不会变更容量。 |
@@ -361,6 +389,7 @@ increaseCapacityTo(minimumCapacity: number): void
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of minimumCapacity is out of range. |
@@ -377,9 +406,10 @@ lightWeightSet.increaseCapacityTo(10);
  
   
 
-#### getIndexOf
+### getIndexOf
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getIndexOf(key: T): number
  
@@ -391,6 +421,7 @@ getIndexOf(key: T): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | T | 是 | 查找的指定key。 |
@@ -398,6 +429,7 @@ getIndexOf(key: T): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 在LightWeightSet中指定数据的下标。若LightWeightSet中没有要查找的元素，则返回一个负值。表示目标哈希值应该插入的位置，插入位置是从1开始计数的，负号表示这是一个插入位置而不是索引。 |
@@ -407,6 +439,7 @@ getIndexOf(key: T): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The getIndexOf method cannot be bound. |
@@ -425,9 +458,10 @@ console.info("result:", result);  // result: 0
  
   
 
-#### remove
+### remove
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 remove(key: T): T
  
@@ -439,6 +473,7 @@ remove(key: T): T
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | T | 是 | 指定要删除的元素。 |
@@ -446,6 +481,7 @@ remove(key: T): T
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | T | 返回删除的元素。 |
@@ -455,6 +491,7 @@ remove(key: T): T
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The remove method cannot be bound. |
@@ -473,9 +510,10 @@ console.info("result:", result);  // result: sparrow
  
   
 
-#### removeAt
+### removeAt
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeAt(index: number): boolean
  
@@ -487,6 +525,7 @@ removeAt(index: number): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 指定下标，取值范围[0, length-1]，且需要小于等于INT32_MAX即2147483647。超出有效下标范围时返回false。 |
@@ -494,6 +533,7 @@ removeAt(index: number): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 成功删除元素返回true，指定下标不存在或超出范围时返回false。 |
@@ -503,6 +543,7 @@ removeAt(index: number): boolean
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The removeAt method cannot be bound. |
@@ -521,9 +562,10 @@ console.info("result:", result);  // result: true
  
   
 
-#### getValueAt
+### getValueAt
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getValueAt(index: number): T
  
@@ -535,6 +577,7 @@ getValueAt(index: number): T
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 指定下标。需要小于等于INT32_MAX即2147483647。 |
@@ -542,6 +585,7 @@ getValueAt(index: number): T
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | T | 返回指定下标位置的元素值。 |
@@ -551,6 +595,7 @@ getValueAt(index: number): T
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The getValueAt method cannot be bound. |
@@ -569,9 +614,10 @@ console.info("result:", result);  // result: squirrel
  
   
 
-#### clear
+### clear
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clear(): void
  
@@ -585,6 +631,7 @@ clear(): void
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The clear method cannot be bound. |
@@ -604,9 +651,10 @@ console.info("result:", result);  // result: true
  
   
 
-#### toString
+### toString
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toString(): String
  
@@ -618,6 +666,7 @@ toString(): String
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | String | 返回包含容器中所有元素的字符串。 |
@@ -636,9 +685,10 @@ console.info("result:", result);  // result: sparrow,squirrel
  
   
 
-#### toArray
+### toArray
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toArray(): Array&lt;T&gt;
  
@@ -650,6 +700,7 @@ toArray(): Array&lt;T&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;T&gt; | 返回包含此容器中所有元素的数组。 |
@@ -659,6 +710,7 @@ toArray(): Array&lt;T&gt;
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The toArray method cannot be bound. |
@@ -678,9 +730,10 @@ console.info(result.toString());
  
   
 
-#### values
+### values
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 values(): IterableIterator&lt;T&gt;
  
@@ -692,6 +745,7 @@ values(): IterableIterator&lt;T&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator&lt;T&gt; | 返回包含LightWeightSet中所有value的迭代器对象。 |
@@ -701,6 +755,7 @@ values(): IterableIterator&lt;T&gt;
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The values method cannot be bound. |
@@ -723,9 +778,10 @@ for (let value of values) {
  
   
 
-#### forEach
+### forEach
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 forEach(callbackFn: (value?: T, key?: T, set?: LightWeightSet&lt;T&gt;) => void, thisArg?: Object): void
  
@@ -737,6 +793,7 @@ forEach(callbackFn: (value?: T, key?: T, set?: LightWeightSet&lt;T&gt;) => void,
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callbackFn | function | 是 | 回调函数，用于遍历LightWeightSet实例对象上的元素及其下标。 |
@@ -745,6 +802,7 @@ forEach(callbackFn: (value?: T, key?: T, set?: LightWeightSet&lt;T&gt;) => void,
  
 callbackFn的参数说明：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | T | 否 | 当前遍历到的元素的值，默认值为首个元素的值。 |
@@ -756,6 +814,7 @@ callbackFn的参数说明：
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The forEach method cannot be bound. |
@@ -788,9 +847,10 @@ for (let i = 0; i < 10; i++) {
  
   
 
-#### entries
+### entries
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 entries(): IterableIterator<[T, T]>
  
@@ -802,6 +862,7 @@ entries(): IterableIterator<[T, T]>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator<[T, T]> | 返回包含LightWeightSet中所有键值对的迭代器对象，每一项为[key, value]结构的数组。 |
@@ -811,6 +872,7 @@ entries(): IterableIterator<[T, T]>
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The entries method cannot be bound. |
@@ -843,9 +905,10 @@ for(let i = 0; i < 10; i++) {
  
   
 
-#### [Symbol.iterator]
+### [Symbol.iterator]
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [Symbol.iterator](): IterableIterator&lt;T&gt;
  
@@ -857,6 +920,7 @@ for(let i = 0; i < 10; i++) {
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator&lt;T&gt; | 返回遍历LightWeightSet中所有元素的迭代器对象，每一项为容器中的元素值。 |
@@ -866,6 +930,7 @@ for(let i = 0; i < 10; i++) {
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The Symbol.iterator method cannot be bound. |
@@ -909,9 +974,10 @@ for (let i = 0; i < 10; i++) {
  
   
 
-#### equal(deprecated)
+### equal(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 equal(obj: Object): boolean
  
@@ -925,6 +991,7 @@ equal(obj: Object): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | obj | Object | 是 | 与当前容器比较元素构成是否相同的对象，可为仅含string或number的LightWeightSet或数组。 |
@@ -932,6 +999,7 @@ equal(obj: Object): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 当obj为仅含string或number的LightWeightSet或数组，且对象内部元素构成相同时，返回true；其他情况返回false。 |
@@ -941,6 +1009,7 @@ equal(obj: Object): boolean
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The equal method cannot be bound. |

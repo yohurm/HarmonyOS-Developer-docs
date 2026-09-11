@@ -1,6 +1,6 @@
 # stateStyles：多态样式
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-statestyles
 
@@ -11,7 +11,7 @@
 
 
 
-#### 概述
+## 概述
 
 stateStyles是属性方法，可以根据UI内部状态来设置样式，类似于css伪类，但语法不同。ArkUI提供以下七种状态：
 
@@ -30,11 +30,11 @@ stateStyles是属性方法，可以根据UI内部状态来设置样式，类似�
 
 
 
-#### 使用场景
+## 使用场景
 
 
 
-#### 基础场景
+### 基础场景
 
 下面的示例展示了stateStyles最基本的使用场景。Button1处于第一个组件，Button2处于第二个组件。按压时显示为pressed态指定的灰色。使用Tab键走焦，Button1获焦并显示为focused态指定的粉色。当Button2获焦的时候，Button2显示为focused态指定的粉色，Button1失焦显示normal态指定的蓝色。
 
@@ -82,7 +82,7 @@ struct StateStylesSample {
 
 
 
-#### @Styles和stateStyles联合使用
+### @Styles和stateStyles联合使用
 
 以下示例通过@Styles指定stateStyles的不同状态。
 
@@ -114,12 +114,12 @@ struct MyComponent {
 **图2** 正常态和按压态
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/tBri__71TcShfEEEjcJBJQ/zh-cn_image_0000002704391947.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095702Z&HW-CC-Expire=86400&HW-CC-Sign=AAFF285F63CFD45F7194AABFD06A3246AC138474F74F5D268F70B5C28F2AC3AE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/TXJYXZ7SSmOqPfwE-BUsIQ/zh-cn_image_0000002747289991.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072113Z&HW-CC-Expire=86400&HW-CC-Sign=C28469CA564F7A132155CB9693FF0DDD82220ECC18ECB260F7B240DCA1C26463)
 
 
 
 
-#### 在stateStyles里使用常规变量和状态变量
+### 在stateStyles里使用常规变量和状态变量
 
 stateStyles可以通过this绑定组件内的常规变量和状态变量。
 
@@ -157,4 +157,4 @@ Button默认normal态显示蓝色，第一次按下Tab键让Button获焦显示�
 **图3** 点击改变获焦态样式
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/GqhuZ9TVR3GYIBxIeS4GwQ/zh-cn_image_0000002674631824.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095702Z&HW-CC-Expire=86400&HW-CC-Sign=6268AA0CC599E7B08E1E3448D03C579DAFF56798C911DD4C550A794E051EBF75)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/vKV2XDfUSg64l5pkMl7T9Q/zh-cn_image_0000002747209909.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072113Z&HW-CC-Expire=86400&HW-CC-Sign=4A6BAECA87FADB2CABD3FD99CD9B906CE5C9965A0315E72F03CDCED96983AF96)

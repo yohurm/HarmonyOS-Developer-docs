@@ -27,9 +27,9 @@
 @Entry
 @Component
 struct Index {
-  @State actualText: string = ''; // 存储真实密码
-  @State displayText: string = ''; // 显示用圆点
-  @State isShowPassword: boolean = false; // 判断是否隐藏密码
+  @State actualText: string = ''; <em>// 存储真实密码</em>
+  @State displayText: string = ''; <em>// 显示用圆点</em>
+  @State isShowPassword: boolean = false; <em>// 判断是否隐藏密码</em>
 
 
   insertStringAt(str: string, index: number, insert: string) {
@@ -63,15 +63,15 @@ struct Index {
             return true;
           } else {
             let options = changeInfo.options!;
-            // 先删除
+           <em> // 先删除</em>
             let rangeBefore = options.rangeBefore;
             let afterDelStr = this.delStringAt(oldContent, rangeBefore.start!, rangeBefore.end!);
-            // 再添加
+          <em>  // 再添加</em>
             let rangeAfter = options.rangeAfter;
             let addStr = newContent.substring(rangeAfter.start!, rangeAfter.end!);
             let afterAddStr = this.insertStringAt(afterDelStr, rangeAfter.start!, addStr);
             this.actualText = afterAddStr;
-            // 判断是否隐藏密码
+          <em>  // 判断是否隐藏密码</em>
             if (!this.isShowPassword) {
               this.displayText = ' '.repeat(afterAddStr.length);
             } else {
@@ -92,9 +92,9 @@ struct Index {
 @Entry
 @Component
 struct PasswordInputTwo {
-  @State actualText: string = ''; // 存储真实密码
-  @State displayText: string = ''; // 显示用圆点
-  @State isShowPassword: boolean = false; // 判断是否隐藏密码
+  @State actualText: string = '';<em> // 存储真实密码</em>
+  @State displayText: string = ''; <em>// 显示用圆点</em>
+  @State isShowPassword: boolean = false; <em>// 判断是否隐藏密码</em>
 
 
   insertStringAt(str: string, index: number, insert: string) {
@@ -128,15 +128,15 @@ struct PasswordInputTwo {
             return true;
           } else {
             let options = changeInfo.options!;
-            // 先删除
+           <em> // 先删除</em>
             let rangeBefore = options.rangeBefore;
             let afterDelStr = this.delStringAt(oldContent, rangeBefore.start!, rangeBefore.end!);
-            // 再添加
+          <em>  // 再添加</em>
             let rangeAfter = options.rangeAfter;
             let addStr = newContent.substring(rangeAfter.start!, rangeAfter.end!);
             let afterAddStr = this.insertStringAt(afterDelStr, rangeAfter.start!, addStr);
             this.actualText = afterAddStr;
-            // 判断是否隐藏密码
+          <em>  // 判断是否隐藏密码</em>
             if (!this.isShowPassword) {
               this.displayText = ' '.repeat(afterAddStr.length);
             } else {

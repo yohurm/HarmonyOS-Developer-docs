@@ -1,30 +1,38 @@
 # jsonObject（Entity返回参数说明）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/natural-language-json-object-api
+**支持设备：** Phone | PC/2in1 | Tablet
 
 [Entity](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/natural-language-text-processing-api#entity)返回值中jsonObject的参数详细说明。
   
 
-#### 基础类
+## 基础类
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 时间实体
+### 时间实体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 识别文本中出现的时间，返回类型为JSONObject，键为“time”，键对应的值类型为JSONArray，数组里值类型为JSONObject，具体字段如下表。
   
+
 | 参数名 | 类型 | 是否必选 | 说明 |
 | --- | --- | --- | --- |
 | repeat | string | 否 | 周期。 |
 | rrule | string | 否 | 周期标识，不一定准确，具体以repeat为准（参考数据，不建议使用）。 |
 | start | string | 否 | 开始时间。 示例如下： 1. 2021-08-28T08:00:00（日期和精确时间） 2. 2021-08-28TM（日期和模糊时间） 3. 2021-08-28（日期） 4. T08:00:00（周期时间，没有明确日期，例如“每天8点”） 5. TM（周期时间，没有明确日期，例如“每天早上”） 说明： T为分隔符，T前面为年月日，T后面为时间点，可以是精确时间，可以是用粒度表示的模糊时间。 |
 | suggestStart | string | 否 | 具体开始时间。 大多数情况下，suggestStart与start相同，但在某些表面上是单个时间，但实际是时间段的时候两者有区别。当文本描述的是一个时间段（如“1月”）时，suggestStart提供该时间段的起始具体日期。 示例如下： 1. “1月”，start（2021-01），end（2021-01），suggestStart（2021-01-01），suggestEnd（2021-01-31） 2. “1月到3月”，start（2021-01），end（2021-03），suggestStart（2021-01-01），suggestEnd（2021-03-31） |
-| startTimestamp | number | 否 | 开始默认时间戳，因时间不一定完整，该时间戳不一定准确，具体以start和suggestStart为准（参考数据，不建议使用）。 |
+| startTimestamp | number | 否 | 开始时间戳（单位：ms）。当start为模糊时间时，该时间戳可能不准确，建议以suggestStart为准。 |
 | end | string | 否 | 结束时间。 |
 | suggestEnd | string | 否 | 具体结束时间。大多数情况下，suggestEnd与end相同，但在某些表面上是单个时间，但实际是时间段的时候两者有区别。 |
-| endTimestamp | number | 否 | 结束时间戳（参考数据，不建议使用）。 |
+| endTimestamp | number | 否 | 结束时间戳（单位：ms）。当end为模糊时间时，该时间戳可能不准确，建议以suggestEnd为准。 |
 | maxSection | string | 否 | 最大时间粒度。 P：精确时间。 M：早晨。 F：上午。 N：中午。 A：下午。 L：傍晚。 E：晚上。 W：凌晨。 |
 | minSection | string | 否 | 最小时间粒度。 |
 | isContainFuzzyTime | boolean | 是 | 是否包含模糊时间。true：包含；false：不包含。默认为false。 |
@@ -48,10 +56,14 @@
  
   
 
-#### 地点实体
+### 地点实体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 识别文本中出现的地点，返回类型为JSONObject，键为“location”，键对应的值类型为JSONArray，数组里值类型为JSONObject，具体字段如下表。
   
+
 | 参数名 | 类型 | 是否必选 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 地点类型：首层核心地点的实际类型。比如: “银行旁边的邮政局”， type：参考邮政局的类型。 |
@@ -62,6 +74,7 @@
  
 地点实体内，coreLocation参数的定义，具体字段如下表。
   
+
 | 子参数 | 类型 | 是否必选 | 说明 |
 | --- | --- | --- | --- |
 | oriText | string | 是 | 地点实体。 |
@@ -82,6 +95,7 @@
  
 coreLocation内，参数类型为JSONObject的参数的定义，具体字段如下表。
   
+
 | 子参数 | 类型 | 是否必选 | 说明 |
 | --- | --- | --- | --- |
 | value | string | 否 | 地点类型对应的地点信息。 |
@@ -90,10 +104,14 @@ coreLocation内，参数类型为JSONObject的参数的定义，具体字段如�
  
   
 
-#### 姓名实体
+### 姓名实体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 识别文本中出现的人名，返回类型为JSONObject，键为“name”，键对应的值类型为JSONArray，数组里的值类型为JSONObject，具体字段如下表。
   
+
 | 参数名 | 类型 | 是否必选 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | nr（正式），nrn（昵称），nrt（称谓），nrx（其他）。 |
@@ -101,10 +119,14 @@ coreLocation内，参数类型为JSONObject的参数的定义，具体字段如�
  
   
 
-#### 手机号实体
+### 手机号实体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 识别文本中出现的电话号码，返回类型为JSONObject，键为“phoneNum”，键对应的值类型为JSONArray，数组里的值类型为JSONObject，具体字段如下表。
   
+
 | 参数名 | 类型 | 是否必选 | 说明 |
 | --- | --- | --- | --- |
 | type | number | 是 | 号码类型，0（固话）、1（手机）。 |
@@ -114,26 +136,39 @@ coreLocation内，参数类型为JSONObject的参数的定义，具体字段如�
  
   
 
-#### 邮箱实体
+### 邮箱实体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 识别文本中出现的邮箱，返回类型为JSONObject，键为“email”，键对应的值为空。
  
   
 
-#### URL实体
+### URL实体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 识别文本中出现的URL，返回类型为JSONObject， 键为“url”，键对应的值为空。
  
   
 
-#### 娱乐类
+## 娱乐类
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 火车车次实体
+### 火车车次实体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 识别文本中出现的火车车次，返回类型为JSONObject， 键为“trainNo”，键对应的值类型为JSONArray，数组里的值类型为JSONObject，具体字段如下表。
   
+
 | 参数名 | 类型 | 是否必选 | 说明 |
 | --- | --- | --- | --- |
 | sequence | number | 是 | 对应实体出现频率。 |
@@ -141,20 +176,30 @@ coreLocation内，参数类型为JSONObject的参数的定义，具体字段如�
  
   
 
-#### 航班号实体
+### 航班号实体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 识别文本中出现的飞机航班，返回类型为JSONObject， 键为“flightNo”，键对应的值为空。
  
   
 
-#### 生活类
+## 生活类
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 快递单号实体
+### 快递单号实体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 识别文本中出现的快递单号，返回类型为JSONObject，键为“expressNo”，键对应的值类型为JSONArray，数组里的值类型为JSONObject，具体字段如下表。
   
+
 | 参数名 | 类型 | 是否必选 | 说明 |
 | --- | --- | --- | --- |
 | isTailNum | number | 是 | 是否为单号尾号，0（不是尾号）、1（是尾号）。 |
@@ -162,10 +207,14 @@ coreLocation内，参数类型为JSONObject的参数的定义，具体字段如�
  
   
 
-#### 身份证号实体
+### 身份证号实体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 识别文本中出现的身份证号，返回类型为JSONObject， 键为“idNo”，键对应的值类型为JSONArray，数组里的值类型为JSONObject，具体字段如下表。
   
+
 | 参数名 | 类型 | 是否必选 | 说明 |
 | --- | --- | --- | --- |
 | number | string | 是 | 身份证号码字串。 |
@@ -176,10 +225,14 @@ coreLocation内，参数类型为JSONObject的参数的定义，具体字段如�
  
   
 
-#### 验证码实体
+### 验证码实体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 识别文本中出现的验证码，返回类型为JSONObject， 键为“verificationCode”，键对应的值类型为JSONArray，数组里的值类型为JSONObject，具体字段如下表。
   
+
 | 参数名 | 类型 | 是否必选 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 验证码类型（取原文内容，如：验证码、校验码等）。 |
@@ -188,10 +241,14 @@ coreLocation内，参数类型为JSONObject的参数的定义，具体字段如�
  
   
 
-#### 银行卡号实体
+### 银行卡号实体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 识别文本中出现的银行卡号，返回类型为JSONObject， 键为“bankCardNo”，键对应的值类型为JSONArray，数组里的值类型为JSONObject，具体字段如下表。
   
+
 | 参数名 | 类型 | 是否必选 | 说明 |
 | --- | --- | --- | --- |
 | number | number | 是 | 银行卡号中的数字。 |

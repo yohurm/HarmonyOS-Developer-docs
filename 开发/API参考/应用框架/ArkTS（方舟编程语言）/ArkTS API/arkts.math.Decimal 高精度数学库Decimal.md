@@ -1,9 +1,9 @@
 # @arkts.math.Decimal (高精度数学库Decimal)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkts-decimal
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Decimal用于提供高精度数学运算的能力，支持高精度浮点计算。
 
@@ -12,9 +12,10 @@ Decimal用于提供高精度数学运算的能力，支持高精度浮点计算�
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { Decimal } from '@kit.ArkTS';
@@ -22,9 +23,10 @@ import { Decimal } from '@kit.ArkTS';
 
 
 
-#### Value
+## Value
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Value = string | number | Decimal
 
@@ -36,6 +38,7 @@ type Value = string | number | Decimal
 
 **系统能力**：SystemCapability.Utils.Lang
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 表示值类型为字符串，用于构造Decimal时可接受数字格式的字符串。 |
@@ -45,9 +48,10 @@ type Value = string | number | Decimal
 
 
 
-#### Rounding
+## Rounding
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Rounding = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8
 
@@ -58,6 +62,7 @@ type Rounding = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Utils.Lang
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -74,9 +79,10 @@ type Rounding = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8
 
 
 
-#### Modulo
+## Modulo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Modulo = Rounding | 9
 
@@ -88,6 +94,7 @@ type Modulo = Rounding | 9
 
 **系统能力**：SystemCapability.Utils.Lang
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Rounding | 模运算下的舍入类型。与Rounding表示的舍入模式相同。 |
@@ -96,15 +103,17 @@ type Modulo = Rounding | 9
 
 
 
-#### DecimalConfig
+## DecimalConfig
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于设置Decimal的配置属性，可使用[Decimal.set](#set)方法进行配置。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Utils.Lang
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -121,21 +130,24 @@ type Modulo = Rounding | 9
 
 
 
-#### Decimal
+## Decimal
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 任意精度的Decimal类型。
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Utils.Lang
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -146,13 +158,15 @@ type Modulo = Rounding | 9
 
 
 
-#### 常量
+### 常量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Utils.Lang
+
 
 | 名称 | 类型 | 值 | 说明 |
 | --- | --- | --- | --- |
@@ -170,9 +184,10 @@ type Modulo = Rounding | 9
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(n: Value)
 
@@ -184,6 +199,7 @@ Decimal的构造函数。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 构造Decimal时的初始值。 |
@@ -192,6 +208,7 @@ Decimal的构造函数。
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -207,9 +224,10 @@ console.info("test Decimal constructor:" + data.toString()); // 'test Decimal co
 
 
 
-#### abs
+### abs
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 abs(): Decimal
 
@@ -220,6 +238,7 @@ abs(): Decimal
 **系统能力**：SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -235,9 +254,10 @@ console.info("test Decimal abs:" + data.toString()); // 'test Decimal abs:0.5'
 
 
 
-#### floor
+### floor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 floor(): Decimal
 
@@ -248,6 +268,7 @@ floor(): Decimal
 **系统能力**：SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -263,9 +284,10 @@ console.info("test Decimal floor:" + data.toString()); // 'test Decimal floor:1'
 
 
 
-#### ceil
+### ceil
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ceil(): Decimal
 
@@ -276,6 +298,7 @@ ceil(): Decimal
 **系统能力**：SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -291,9 +314,10 @@ console.info("test Decimal ceil:" + data.toString()); // 'test Decimal ceil:2'
 
 
 
-#### trunc
+### trunc
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 trunc(): Decimal
 
@@ -304,6 +328,7 @@ trunc(): Decimal
 **系统能力**：SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -319,9 +344,10 @@ console.info("test Decimal trunc:" + data.toString()); // 'test Decimal trunc:2'
 
 
 
-#### clamp
+### clamp
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clamp(min: Value, max: Value): Decimal
 
@@ -333,6 +359,7 @@ clamp(min: Value, max: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | min | Value | 是 | 限制的最小值。包含该值。 |
@@ -340,6 +367,7 @@ clamp(min: Value, max: Value): Decimal
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -349,6 +377,7 @@ clamp(min: Value, max: Value): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -371,9 +400,10 @@ console.info("test Decimal clamp:" + data3.toString()); // 'test Decimal clamp:7
 
 
 
-#### add
+### add
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 add(n: Value): Decimal
 
@@ -385,12 +415,14 @@ add(n: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 加法运算的加数。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -400,6 +432,7 @@ add(n: Value): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -415,9 +448,10 @@ console.info("test Decimal add:" + data.toString()); // 'test Decimal add:1'
 
 
 
-#### sub
+### sub
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sub(n: Value): Decimal
 
@@ -429,12 +463,14 @@ sub(n: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 减法运算的减数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -444,6 +480,7 @@ sub(n: Value): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -459,9 +496,10 @@ console.info("test Decimal sub:" + data.toString()); // 'test Decimal sub:0.5'
 
 
 
-#### mul
+### mul
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 mul(n: Value): Decimal
 
@@ -473,12 +511,14 @@ mul(n: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 乘法运算的乘数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -488,6 +528,7 @@ mul(n: Value): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -503,9 +544,10 @@ console.info("test Decimal mul:" + data.toString()); // 'test Decimal mul:0.5'
 
 
 
-#### div
+### div
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 div(n: Value): Decimal
 
@@ -517,12 +559,14 @@ div(n: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 除法运算的除数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -532,6 +576,7 @@ div(n: Value): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -547,9 +592,10 @@ console.info("test Decimal div:" + data.toString()); // 'test Decimal div:2'
 
 
 
-#### mod
+### mod
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 mod(n: Value): Decimal
 
@@ -561,12 +607,14 @@ mod(n: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 模运算的除数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -576,6 +624,7 @@ mod(n: Value): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -591,9 +640,10 @@ console.info("test Decimal mod:" + data.toString()); // 'test Decimal mod:0'
 
 
 
-#### sqrt
+### sqrt
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sqrt(): Decimal
 
@@ -604,6 +654,7 @@ sqrt(): Decimal
 **系统能力**：SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -619,9 +670,10 @@ console.info("test Decimal sqrt:" + data.toString()); // 'test Decimal sqrt:1.73
 
 
 
-#### cbrt
+### cbrt
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cbrt(): Decimal
 
@@ -632,6 +684,7 @@ cbrt(): Decimal
 **系统能力**：SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -647,9 +700,10 @@ console.info("test Decimal cbrt:" + data.toString()); // 'test Decimal cbrt:1.44
 
 
 
-#### pow
+### pow
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pow(n: Value): Decimal
 
@@ -661,12 +715,14 @@ pow(n: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 幂运算的指数值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -676,6 +732,7 @@ pow(n: Value): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -692,9 +749,10 @@ console.info("test Decimal pow:" + data.toString()); // 'test Decimal pow:0.1111
 
 
 
-#### exp
+### exp
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 exp(): Decimal
 
@@ -706,6 +764,7 @@ exp(): Decimal
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Decimal | 返回自然指数运算后的Decimal对象实例。 |
@@ -714,6 +773,7 @@ exp(): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -729,9 +789,10 @@ console.info("test Decimal exp:" + data.toString()); // 'test Decimal exp:7.3890
 
 
 
-#### log
+### log
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 log(n: Value): Decimal
 
@@ -743,12 +804,14 @@ log(n: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 对数计算的底数值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -758,6 +821,7 @@ log(n: Value): Decimal
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -774,9 +838,10 @@ console.info("test Decimal log:" + data.toString()); // 'test Decimal log:0.125'
 
 
 
-#### ln
+### ln
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ln(): Decimal
 
@@ -788,6 +853,7 @@ ln(): Decimal
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Decimal | 返回自然对数运算后的Decimal对象实例。 |
@@ -796,6 +862,7 @@ ln(): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -811,9 +878,10 @@ console.info("test Decimal ln:" + data.toString()); // 'test Decimal ln:69.28456
 
 
 
-#### cos
+### cos
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cos(): Decimal
 
@@ -824,6 +892,7 @@ cos(): Decimal
 **系统能力**：SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -839,9 +908,10 @@ console.info("test Decimal cos:" + data.toString()); // 'test Decimal cos:0.9689
 
 
 
-#### sin
+### sin
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sin(): Decimal
 
@@ -852,6 +922,7 @@ sin(): Decimal
 **系统能力**：SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -867,9 +938,10 @@ console.info("test Decimal sin:" + data.toString()); // 'test Decimal sin:0.6816
 
 
 
-#### tan
+### tan
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 tan(): Decimal
 
@@ -880,6 +952,7 @@ tan(): Decimal
 **系统能力**：SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -895,9 +968,10 @@ console.info("test Decimal tan:" + data.toString()); // 'test Decimal tan:0.9315
 
 
 
-#### cosh
+### cosh
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cosh(): Decimal
 
@@ -908,6 +982,7 @@ cosh(): Decimal
 **系统能力**：SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -923,9 +998,10 @@ console.info("test Decimal cosh:" + data.toString()); // 'test Decimal cosh:1.12
 
 
 
-#### sinh
+### sinh
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sinh(): Decimal
 
@@ -936,6 +1012,7 @@ sinh(): Decimal
 **系统能力**：SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -951,9 +1028,10 @@ console.info("test Decimal sinh:" + data.toString()); // 'test Decimal sinh:0.52
 
 
 
-#### tanh
+### tanh
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 tanh(): Decimal
 
@@ -964,6 +1042,7 @@ tanh(): Decimal
 **系统能力**：SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -979,9 +1058,10 @@ console.info("test Decimal tanh:" + data.toString()); // 'test Decimal tanh:0.46
 
 
 
-#### acos
+### acos
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 acos(): Decimal
 
@@ -993,6 +1073,7 @@ acos(): Decimal
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Decimal | 返回计算反余弦值的Decimal对象实例。 |
@@ -1001,6 +1082,7 @@ acos(): Decimal
 **错误码**：
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1016,9 +1098,10 @@ console.info("test Decimal acos:" + data.toString()); // 'test Decimal acos:1.04
 
 
 
-#### asin
+### asin
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 asin(): Decimal
 
@@ -1030,6 +1113,7 @@ asin(): Decimal
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Decimal | 返回计算反正弦值的Decimal对象实例。 |
@@ -1038,6 +1122,7 @@ asin(): Decimal
 **错误码**：
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1053,9 +1138,10 @@ console.info("test Decimal asin:" + data.toString()); // 'test Decimal asin:0.84
 
 
 
-#### atan
+### atan
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 atan(): Decimal
 
@@ -1067,6 +1153,7 @@ atan(): Decimal
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Decimal | 返回计算反正切值的Decimal对象实例。 |
@@ -1075,6 +1162,7 @@ atan(): Decimal
 **错误码**：
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1090,9 +1178,10 @@ console.info("test Decimal atan:" + data.toString()); // 'test Decimal atan:0.64
 
 
 
-#### acosh
+### acosh
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 acosh(): Decimal
 
@@ -1104,6 +1193,7 @@ acosh(): Decimal
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Decimal | 返回计算反双曲余弦值的Decimal对象实例。 |
@@ -1112,6 +1202,7 @@ acosh(): Decimal
 **错误码**：
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1127,9 +1218,10 @@ console.info("test Decimal acosh:" + data.toString()); // 'test Decimal acosh:4.
 
 
 
-#### asinh
+### asinh
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 asinh(): Decimal
 
@@ -1141,6 +1233,7 @@ asinh(): Decimal
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Decimal | 返回计算反双曲正弦值的Decimal对象实例。 |
@@ -1149,6 +1242,7 @@ asinh(): Decimal
 **错误码**：
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1164,9 +1258,10 @@ console.info("test Decimal asinh:" + data.toString()); // 'test Decimal asinh:4.
 
 
 
-#### atanh
+### atanh
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 atanh(): Decimal
 
@@ -1178,6 +1273,7 @@ atanh(): Decimal
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Decimal | 返回计算反双曲正切值的Decimal对象实例。 |
@@ -1186,6 +1282,7 @@ atanh(): Decimal
 **错误码**：
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1201,9 +1298,10 @@ console.info("test Decimal atanh:" + data.toString()); // 'test Decimal atanh:0.
 
 
 
-#### comparedTo
+### comparedTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 comparedTo(n: Value): number
 
@@ -1215,12 +1313,14 @@ comparedTo(n: Value): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 待比较的值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1230,6 +1330,7 @@ comparedTo(n: Value): number
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1250,9 +1351,10 @@ console.info("test Decimal comparedTo:" + data3); // 'test Decimal comparedTo:-1
 
 
 
-#### equals
+### equals
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 equals(n: Value): boolean
 
@@ -1264,12 +1366,14 @@ equals(n: Value): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 待比较的值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1279,6 +1383,7 @@ equals(n: Value): boolean
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1295,9 +1400,10 @@ console.info("test Decimal equals:" + data1); // 'test Decimal equals:false'
 
 
 
-#### greaterThan
+### greaterThan
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 greaterThan(n: Value): boolean
 
@@ -1309,12 +1415,14 @@ greaterThan(n: Value): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 待比较的值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1324,6 +1432,7 @@ greaterThan(n: Value): boolean
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1340,9 +1449,10 @@ console.info("test Decimal greaterThan:" + data1); // 'test Decimal greaterThan:
 
 
 
-#### greaterThanOrEqualTo
+### greaterThanOrEqualTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 greaterThanOrEqualTo(n: Value): boolean
 
@@ -1354,12 +1464,14 @@ greaterThanOrEqualTo(n: Value): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 待比较的值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1369,6 +1481,7 @@ greaterThanOrEqualTo(n: Value): boolean
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1385,9 +1498,10 @@ console.info("test Decimal greaterThanOrEqualTo:" + data1); // 'test Decimal gre
 
 
 
-#### lessThan
+### lessThan
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 lessThan(n: Value): boolean
 
@@ -1399,12 +1513,14 @@ lessThan(n: Value): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 待比较的值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1414,6 +1530,7 @@ lessThan(n: Value): boolean
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1430,9 +1547,10 @@ console.info("test Decimal lessThan:" + data1); // 'test Decimal lessThan:false'
 
 
 
-#### lessThanOrEqualTo
+### lessThanOrEqualTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 lessThanOrEqualTo(n: Value): boolean
 
@@ -1444,12 +1562,14 @@ lessThanOrEqualTo(n: Value): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 待比较的值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1459,6 +1579,7 @@ lessThanOrEqualTo(n: Value): boolean
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1475,9 +1596,10 @@ console.info("test Decimal lessThanOrEqualTo:" + data1); // 'test Decimal lessTh
 
 
 
-#### isFinite
+### isFinite
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isFinite(): boolean
 
@@ -1488,6 +1610,7 @@ isFinite(): boolean
 **系统能力**：SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1504,9 +1627,10 @@ console.info("test Decimal isFinite:" + data1); // 'test Decimal isFinite:true'
 
 
 
-#### isInteger
+### isInteger
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isInteger(): boolean
 
@@ -1517,6 +1641,7 @@ isInteger(): boolean
 **系统能力**：SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1533,9 +1658,10 @@ console.info("test Decimal isInteger:" + data1); // 'test Decimal isInteger:fals
 
 
 
-#### isNaN
+### isNaN
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isNaN(): boolean
 
@@ -1546,6 +1672,7 @@ isNaN(): boolean
 **系统能力**：SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1562,9 +1689,10 @@ console.info("test Decimal isNaN:" + data1); // 'test Decimal isNaN:true'
 
 
 
-#### isNegative
+### isNegative
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isNegative(): boolean
 
@@ -1575,6 +1703,7 @@ isNegative(): boolean
 **系统能力**：SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1595,9 +1724,10 @@ console.info("test Decimal isNegative:" + data3); // 'test Decimal isNegative:tr
 
 
 
-#### isPositive
+### isPositive
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isPositive(): boolean
 
@@ -1608,6 +1738,7 @@ isPositive(): boolean
 **系统能力**：SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1628,9 +1759,10 @@ console.info("test Decimal isPositive:" + data3); // 'test Decimal isPositive:tr
 
 
 
-#### isZero
+### isZero
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isZero(): boolean
 
@@ -1641,6 +1773,7 @@ isZero(): boolean
 **系统能力**：SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1657,9 +1790,10 @@ console.info("test Decimal isZero:" + data1.toString()); // 'test Decimal isZero
 
 
 
-#### dividedToIntegerBy
+### dividedToIntegerBy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 dividedToIntegerBy(n: Value): Decimal
 
@@ -1671,12 +1805,14 @@ dividedToIntegerBy(n: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 除法的除数值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1686,6 +1822,7 @@ dividedToIntegerBy(n: Value): Decimal
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1703,9 +1840,10 @@ console.info("test Decimal dividedToIntegerBy:" + data2.toString()); // 'test De
 
 
 
-#### negate
+### negate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 negate(): Decimal
 
@@ -1716,6 +1854,7 @@ negate(): Decimal
 **系统能力**：SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1732,9 +1871,10 @@ console.info("test Decimal negate:" + data1.toString()); // 'test Decimal negate
 
 
 
-#### toBinary
+### toBinary
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toBinary(): string
 
@@ -1745,6 +1885,7 @@ toBinary(): string
 **系统能力**：SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1761,9 +1902,10 @@ console.info("test Decimal toBinary:" + data1); // 'test Decimal toBinary:0b1000
 
 
 
-#### toBinary
+### toBinary
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toBinary(significantDigits: number): string
 
@@ -1777,12 +1919,14 @@ toBinary(significantDigits: number): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | significantDigits | number | 是 | 转换时保留的有效数字，取值范围为[1, 1e9]的整数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1792,6 +1936,7 @@ toBinary(significantDigits: number): string
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1808,9 +1953,10 @@ console.info("test Decimal toBinary:" + data1); // 'test Decimal toBinary:0b1p+8
 
 
 
-#### toBinary
+### toBinary
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toBinary(significantDigits: number, rounding: Rounding): string
 
@@ -1822,6 +1968,7 @@ toBinary(significantDigits: number, rounding: Rounding): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | significantDigits | number | 是 | 转换时保留的有效数字，取值范围为[1, 1e9]的整数。 |
@@ -1829,6 +1976,7 @@ toBinary(significantDigits: number, rounding: Rounding): string
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1838,6 +1986,7 @@ toBinary(significantDigits: number, rounding: Rounding): string
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1854,9 +2003,10 @@ console.info("test Decimal toBinary:" + data1); // 'test Decimal toBinary:0b1p+8
 
 
 
-#### toOctal
+### toOctal
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toOctal(): string
 
@@ -1867,6 +2017,7 @@ toOctal(): string
 **系统能力**：SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1883,9 +2034,10 @@ console.info("test Decimal toOctal:" + data1); // 'test Decimal toOctal:0o400'
 
 
 
-#### toOctal
+### toOctal
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toOctal(significantDigits: number): string
 
@@ -1899,12 +2051,14 @@ toOctal(significantDigits: number): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | significantDigits | number | 是 | 转换时保留的有效数字，取值范围为[1, 1e9]的整数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1914,6 +2068,7 @@ toOctal(significantDigits: number): string
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1930,9 +2085,10 @@ console.info("test Decimal toOctal:" + data1); // 'test Decimal toOctal:0o1p+8'
 
 
 
-#### toOctal
+### toOctal
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toOctal(significantDigits: number, rounding: Rounding): string
 
@@ -1944,6 +2100,7 @@ toOctal(significantDigits: number, rounding: Rounding): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | significantDigits | number | 是 | 转换时保留的有效数字，取值范围为[1, 1e9]的整数。 |
@@ -1951,6 +2108,7 @@ toOctal(significantDigits: number, rounding: Rounding): string
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1960,6 +2118,7 @@ toOctal(significantDigits: number, rounding: Rounding): string
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1976,9 +2135,10 @@ console.info("test Decimal toOctal:" + data1); // 'test Decimal toOctal:0o1p+8'
 
 
 
-#### toHexadecimal
+### toHexadecimal
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toHexadecimal(): string
 
@@ -1989,6 +2149,7 @@ toHexadecimal(): string
 **系统能力**：SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2005,9 +2166,10 @@ console.info("test Decimal toHexadecimal:" + data1); // 'test Decimal toHexadeci
 
 
 
-#### toHexadecimal
+### toHexadecimal
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toHexadecimal(significantDigits: number): string
 
@@ -2021,12 +2183,14 @@ toHexadecimal(significantDigits: number): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | significantDigits | number | 是 | 转换时保留的有效数字，取值范围为[1, 1e9]的整数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2036,6 +2200,7 @@ toHexadecimal(significantDigits: number): string
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2052,9 +2217,10 @@ console.info("test Decimal toHexadecimal:" + data1); // 'test Decimal toHexadeci
 
 
 
-#### toHexadecimal
+### toHexadecimal
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toHexadecimal(significantDigits: number, rounding: Rounding): string
 
@@ -2066,6 +2232,7 @@ toHexadecimal(significantDigits: number, rounding: Rounding): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | significantDigits | number | 是 | 转换时保留的有效数字，取值范围为[1, 1e9]的整数。 |
@@ -2073,6 +2240,7 @@ toHexadecimal(significantDigits: number, rounding: Rounding): string
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2082,6 +2250,7 @@ toHexadecimal(significantDigits: number, rounding: Rounding): string
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2098,19 +2267,21 @@ console.info("test Decimal toHexadecimal:" + data1); // 'test Decimal toHexadeci
 
 
 
-#### toDecimalPlaces
+### toDecimalPlaces
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toDecimalPlaces(): Decimal
 
-返回一个保留小数点后指定位数的Decimal对象，不进行小数的取舍。
+返回一个保留小数点后指定位数的Decimal对象，不进行小数的舍入。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2127,9 +2298,10 @@ console.info("test Decimal toDecimalPlaces:" + data1.toString()); // 'test Decim
 
 
 
-#### toDecimalPlaces
+### toDecimalPlaces
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toDecimalPlaces(decimalPlaces: number): Decimal
 
@@ -2143,12 +2315,14 @@ toDecimalPlaces(decimalPlaces: number): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | decimalPlaces | number | 是 | 转换时保留的小数点后有效位数，取值范围为[0, 1e9]的整数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2158,6 +2332,7 @@ toDecimalPlaces(decimalPlaces: number): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2174,9 +2349,10 @@ console.info("test Decimal toDecimalPlaces:" + data1.toString()); // 'test Decim
 
 
 
-#### toDecimalPlaces
+### toDecimalPlaces
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toDecimalPlaces(decimalPlaces: number, rounding: Rounding): Decimal
 
@@ -2188,6 +2364,7 @@ toDecimalPlaces(decimalPlaces: number, rounding: Rounding): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | decimalPlaces | number | 是 | 转换时保留的小数点后有效位数，取值范围为[0, 1e9]的整数。 |
@@ -2195,6 +2372,7 @@ toDecimalPlaces(decimalPlaces: number, rounding: Rounding): Decimal
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2204,6 +2382,7 @@ toDecimalPlaces(decimalPlaces: number, rounding: Rounding): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2221,9 +2400,10 @@ data1 = data.toDecimalPlaces(1, Decimal.ROUND_DOWN); // data1：'9876.5'
 
 
 
-#### toExponential
+### toExponential
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toExponential(): string
 
@@ -2234,6 +2414,7 @@ toExponential(): string
 **系统能力**：SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2250,9 +2431,10 @@ console.info("test Decimal toExponential:" + data1); // 'test Decimal toExponent
 
 
 
-#### toExponential
+### toExponential
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toExponential(decimalPlaces: number): string
 
@@ -2266,12 +2448,14 @@ toExponential(decimalPlaces: number): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | decimalPlaces | number | 是 | 转换时保留的小数点后有效位数，取值范围为[0, 1e9]的整数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2281,6 +2465,7 @@ toExponential(decimalPlaces: number): string
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2299,9 +2484,10 @@ data1 = data.toExponential(3); // data1：'4.560e+1'
 
 
 
-#### toExponential
+### toExponential
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toExponential(decimalPlaces: number, rounding: Rounding): string
 
@@ -2313,6 +2499,7 @@ toExponential(decimalPlaces: number, rounding: Rounding): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | decimalPlaces | number | 是 | 转换时保留的小数点后有效位数，取值范围为[0, 1e9]的整数。 |
@@ -2320,6 +2507,7 @@ toExponential(decimalPlaces: number, rounding: Rounding): string
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2329,6 +2517,7 @@ toExponential(decimalPlaces: number, rounding: Rounding): string
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2345,19 +2534,21 @@ console.info("test Decimal toExponential:" + data1); // 'test Decimal toExponent
 
 
 
-#### toFixed
+### toFixed
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toFixed(): string
 
-将数值转换为十进制定点模式表示的字符串，不进行小数的取舍。
+将数值转换为十进制定点模式表示的字符串，不进行小数的舍入。
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2374,9 +2565,10 @@ console.info("test Decimal toFixed:" + data1); // 'test Decimal toFixed:3.456'
 
 
 
-#### toFixed
+### toFixed
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toFixed(decimalPlaces: number): string
 
@@ -2390,12 +2582,14 @@ toFixed(decimalPlaces: number): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | decimalPlaces | number | 是 | 转换时保留的小数点后有效位数，取值范围为[0, 1e9]的整数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2405,6 +2599,7 @@ toFixed(decimalPlaces: number): string
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2423,9 +2618,10 @@ data1 = data.toFixed(5); // data1：'3.45600'
 
 
 
-#### toFixed
+### toFixed
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toFixed(decimalPlaces: number, rounding: Rounding): string
 
@@ -2437,6 +2633,7 @@ toFixed(decimalPlaces: number, rounding: Rounding): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | decimalPlaces | number | 是 | 转换时保留的小数点后有效位数，取值范围为[0, 1e9]的整数。 |
@@ -2444,6 +2641,7 @@ toFixed(decimalPlaces: number, rounding: Rounding): string
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2453,6 +2651,7 @@ toFixed(decimalPlaces: number, rounding: Rounding): string
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2469,9 +2668,10 @@ console.info("test Decimal toFixed:" + data1); // data1：'test Decimal toFixed:
 
 
 
-#### toFraction
+### toFraction
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toFraction(): Decimal[]
 
@@ -2482,6 +2682,7 @@ toFraction(): Decimal[]
 **系统能力**：SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2498,9 +2699,10 @@ console.info("test Decimal toFraction:" + data1.toString()); // 'test Decimal to
 
 
 
-#### toFraction
+### toFraction
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toFraction(maxDenominator: Value): Decimal[]
 
@@ -2512,12 +2714,14 @@ toFraction(maxDenominator: Value): Decimal[]
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | maxDenominator | Value | 是 | 分母的最大值。包含该值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2527,6 +2731,7 @@ toFraction(maxDenominator: Value): Decimal[]
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2547,9 +2752,10 @@ data1 = pi.toFraction(1); // data1：'3, 1'
 
 
 
-#### toNearest
+### toNearest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toNearest(n: Value): Decimal
 
@@ -2561,12 +2767,14 @@ toNearest(n: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 参考的指定值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2576,6 +2784,7 @@ toNearest(n: Value): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2592,9 +2801,10 @@ console.info("test Decimal toNearest:" + data1.toString()); // 'test Decimal toN
 
 
 
-#### toNearest
+### toNearest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toNearest(n: Value, rounding: Rounding): Decimal
 
@@ -2606,6 +2816,7 @@ toNearest(n: Value, rounding: Rounding): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 参考的指定值。 |
@@ -2613,6 +2824,7 @@ toNearest(n: Value, rounding: Rounding): Decimal
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2622,6 +2834,7 @@ toNearest(n: Value, rounding: Rounding): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2639,9 +2852,10 @@ data1 = data.toNearest(0.5, Decimal.ROUND_DOWN); // data1：'9'
 
 
 
-#### toPrecision
+### toPrecision
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toPrecision(): string
 
@@ -2652,6 +2866,7 @@ toPrecision(): string
 **系统能力**：SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2668,9 +2883,10 @@ console.info("test Decimal toPrecision:" + data1); // 'test Decimal toPrecision:
 
 
 
-#### toPrecision
+### toPrecision
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toPrecision(significantDigits: number): string
 
@@ -2684,12 +2900,14 @@ toPrecision(significantDigits: number): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | significantDigits | number | 是 | 转换时保留的有效数字，取值范围为[1, 1e9]的整数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2699,6 +2917,7 @@ toPrecision(significantDigits: number): string
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2716,9 +2935,10 @@ data1 = data.toPrecision(5); // data1：'45.600'
 
 
 
-#### toPrecision
+### toPrecision
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toPrecision(significantDigits: number, rounding: Rounding): string
 
@@ -2730,6 +2950,7 @@ toPrecision(significantDigits: number, rounding: Rounding): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | significantDigits | number | 是 | 转换时保留的有效数字，取值范围为[1, 1e9]的整数。 |
@@ -2737,6 +2958,7 @@ toPrecision(significantDigits: number, rounding: Rounding): string
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2746,6 +2968,7 @@ toPrecision(significantDigits: number, rounding: Rounding): string
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2762,9 +2985,10 @@ data1 = data.toPrecision(2, Decimal.ROUND_DOWN); // data1：'45'
 
 
 
-#### toSignificantDigits
+### toSignificantDigits
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toSignificantDigits(): Decimal
 
@@ -2775,6 +2999,7 @@ toSignificantDigits(): Decimal
 **系统能力**：SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2791,9 +3016,10 @@ console.info("test Decimal toSignificantDigits:" + data1.toString()); // 'test D
 
 
 
-#### toSignificantDigits
+### toSignificantDigits
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toSignificantDigits(significantDigits: number): Decimal
 
@@ -2807,12 +3033,14 @@ toSignificantDigits(significantDigits: number): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | significantDigits | number | 是 | 转换时保留的有效数字，取值范围为[1, 1e9]的整数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2822,6 +3050,7 @@ toSignificantDigits(significantDigits: number): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2838,9 +3067,10 @@ console.info("test Decimal toSignificantDigits:" + data1.toString()); // 'test D
 
 
 
-#### toSignificantDigits
+### toSignificantDigits
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toSignificantDigits(significantDigits: number, rounding: Rounding): Decimal
 
@@ -2852,6 +3082,7 @@ toSignificantDigits(significantDigits: number, rounding: Rounding): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | significantDigits | number | 是 | 转换时保留的有效数字，取值范围为[1, 1e9]的整数。 |
@@ -2859,6 +3090,7 @@ toSignificantDigits(significantDigits: number, rounding: Rounding): Decimal
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2868,6 +3100,7 @@ toSignificantDigits(significantDigits: number, rounding: Rounding): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2884,9 +3117,10 @@ console.info("test Decimal toSignificantDigits:" + data1.toString()); // 'test D
 
 
 
-#### toNumber
+### toNumber
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toNumber(): number
 
@@ -2897,6 +3131,7 @@ toNumber(): number
 **系统能力**：SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2913,9 +3148,10 @@ console.info("test Decimal toNumber:" + data1.toString()); // 'test Decimal toNu
 
 
 
-#### toString
+### toString
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toString(): string
 
@@ -2926,6 +3162,7 @@ toString(): string
 **系统能力**：SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2951,9 +3188,10 @@ data1 = data2.toString(); // data1:'1.23e-7'
 
 
 
-#### valueOf
+### valueOf
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 valueOf(): string
 
@@ -2964,6 +3202,7 @@ valueOf(): string
 **系统能力**：SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2980,9 +3219,10 @@ console.info("test Decimal valueOf:" + data1); // 'test Decimal valueOf:-0'
 
 
 
-#### decimalPlaces
+### decimalPlaces
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 decimalPlaces(): number
 
@@ -2993,6 +3233,7 @@ decimalPlaces(): number
 **系统能力**：SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3009,9 +3250,10 @@ console.info("test Decimal decimalPlaces:" + data1); // 'test Decimal decimalPla
 
 
 
-#### precision
+### precision
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 precision(): number
 
@@ -3022,6 +3264,7 @@ precision(): number
 **系统能力**：SystemCapability.Utils.Lang
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3038,9 +3281,10 @@ console.info("test Decimal precision:" + data1); // 'test Decimal precision:4'
 
 
 
-#### precision
+### precision
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 precision(includeZeros: boolean | number): number
 
@@ -3052,12 +3296,14 @@ precision(includeZeros: boolean | number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | includeZeros | boolean \| number | 是 | 是否计算整数部分尾随零。true或1表示计算整数部分尾随零，false或0表示不计算整数部分尾随零。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3067,6 +3313,7 @@ precision(includeZeros: boolean | number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3084,9 +3331,10 @@ data1 = data.precision(true); // data1:'6'
 
 
 
-#### abs
+### abs
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static abs(n: Value): Decimal
 
@@ -3098,12 +3346,14 @@ static abs(n: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 取绝对值的参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3113,6 +3363,7 @@ static abs(n: Value): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3128,9 +3379,10 @@ console.info("test Decimal abs:" + data.toString()); // 'test Decimal abs:0.5'
 
 
 
-#### floor
+### floor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static floor(n: Value): Decimal
 
@@ -3142,12 +3394,14 @@ static floor(n: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 需要舍入的值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3157,6 +3411,7 @@ static floor(n: Value): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3172,9 +3427,10 @@ console.info("test Decimal floor:" + data.toString()); // 'test Decimal floor:1'
 
 
 
-#### ceil
+### ceil
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static ceil(n: Value): Decimal
 
@@ -3186,12 +3442,14 @@ static ceil(n: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 需要舍入的值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3201,6 +3459,7 @@ static ceil(n: Value): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3216,9 +3475,10 @@ console.info("test Decimal ceil:" + data.toString()); // 'test Decimal ceil:2'
 
 
 
-#### trunc
+### trunc
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static trunc(n: Value): Decimal
 
@@ -3230,12 +3490,14 @@ static trunc(n: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 需要截断的值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3245,6 +3507,7 @@ static trunc(n: Value): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3260,9 +3523,10 @@ console.info("test Decimal trunc:" + data.toString()); // 'test Decimal trunc:2'
 
 
 
-#### clamp
+### clamp
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static clamp(n: Value, min: Value, max: Value): Decimal
 
@@ -3274,6 +3538,7 @@ static clamp(n: Value, min: Value, max: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 需要被限制的值。 |
@@ -3283,6 +3548,7 @@ static clamp(n: Value, min: Value, max: Value): Decimal
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Decimal | 返回符合范围的Decimal对象实例。 |
@@ -3291,6 +3557,7 @@ static clamp(n: Value, min: Value, max: Value): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3307,9 +3574,10 @@ console.info("test Decimal clamp:" + data.toString()); // 'test Decimal clamp:10
 
 
 
-#### add
+### add
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static add(x: Value, y: Value): Decimal
 
@@ -3321,6 +3589,7 @@ static add(x: Value, y: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | x | Value | 是 | 加法的一个加数。 |
@@ -3328,6 +3597,7 @@ static add(x: Value, y: Value): Decimal
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3337,6 +3607,7 @@ static add(x: Value, y: Value): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3352,9 +3623,10 @@ console.info("test Decimal add:" + data.toString()); // 'test Decimal add:1'
 
 
 
-#### sum
+### sum
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static sum(...n: Value[]): Decimal
 
@@ -3366,12 +3638,14 @@ static sum(...n: Value[]): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value[] | 否 | 加数的序列。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3381,6 +3655,7 @@ static sum(...n: Value[]): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3396,9 +3671,10 @@ console.info("test Decimal sum:" + data.toString()); // 'test Decimal sum:1'
 
 
 
-#### sub
+### sub
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static sub(x: Value, y: Value): Decimal
 
@@ -3410,6 +3686,7 @@ static sub(x: Value, y: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | x | Value | 是 | 减法的被减数。 |
@@ -3417,6 +3694,7 @@ static sub(x: Value, y: Value): Decimal
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3426,6 +3704,7 @@ static sub(x: Value, y: Value): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3441,9 +3720,10 @@ console.info("test Decimal sub:" + data.toString()); // 'test Decimal sub:0.5'
 
 
 
-#### mul
+### mul
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static mul(x: Value, y: Value): Decimal
 
@@ -3455,6 +3735,7 @@ static mul(x: Value, y: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | x | Value | 是 | 乘法的被乘数。 |
@@ -3462,6 +3743,7 @@ static mul(x: Value, y: Value): Decimal
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3471,6 +3753,7 @@ static mul(x: Value, y: Value): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3486,9 +3769,10 @@ console.info("test Decimal mul:" + data.toString()); // 'test Decimal mul:0.5'
 
 
 
-#### div
+### div
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static div(x: Value, y: Value): Decimal
 
@@ -3500,6 +3784,7 @@ static div(x: Value, y: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | x | Value | 是 | 除法的被除数。 |
@@ -3507,6 +3792,7 @@ static div(x: Value, y: Value): Decimal
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3516,6 +3802,7 @@ static div(x: Value, y: Value): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3531,9 +3818,10 @@ console.info("test Decimal div:" + data.toString()); // 'test Decimal div:2'
 
 
 
-#### mod
+### mod
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static mod(x: Value, y: Value): Decimal
 
@@ -3545,6 +3833,7 @@ static mod(x: Value, y: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | x | Value | 是 | 模运算的被除数。 |
@@ -3552,6 +3841,7 @@ static mod(x: Value, y: Value): Decimal
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3561,6 +3851,7 @@ static mod(x: Value, y: Value): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3576,9 +3867,10 @@ console.info("test Decimal mod:" + data.toString()); // 'test Decimal mod:0'
 
 
 
-#### sqrt
+### sqrt
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static sqrt(n: Value): Decimal
 
@@ -3590,12 +3882,14 @@ static sqrt(n: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 取平方根的值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3605,6 +3899,7 @@ static sqrt(n: Value): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3620,9 +3915,10 @@ console.info("test Decimal sqrt:" + data.toString()); // 'test Decimal sqrt:1.73
 
 
 
-#### cbrt
+### cbrt
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static cbrt(n: Value): Decimal
 
@@ -3634,12 +3930,14 @@ static cbrt(n: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 取立方根的值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3649,6 +3947,7 @@ static cbrt(n: Value): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3664,9 +3963,10 @@ console.info("test Decimal cbrt:" + data.toString()); // 'test Decimal cbrt:1.44
 
 
 
-#### pow
+### pow
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static pow(base: Value, exponent: Value): Decimal
 
@@ -3678,6 +3978,7 @@ static pow(base: Value, exponent: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | base | Value | 是 | 幂运算的底数的值。 |
@@ -3685,6 +3986,7 @@ static pow(base: Value, exponent: Value): Decimal
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3694,6 +3996,7 @@ static pow(base: Value, exponent: Value): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3710,9 +4013,10 @@ console.info("test Decimal pow:" + data.toString()); // 'test Decimal pow:0.1111
 
 
 
-#### exp
+### exp
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static exp(n: Value): Decimal
 
@@ -3724,12 +4028,14 @@ static exp(n: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 需要求自然指数的值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3739,6 +4045,7 @@ static exp(n: Value): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3755,9 +4062,10 @@ console.info("test Decimal exp:" + data.toString()); // 'test Decimal exp:7.3890
 
 
 
-#### log
+### log
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static log(n: Value, base: Value): Decimal
 
@@ -3769,6 +4077,7 @@ static log(n: Value, base: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 对数运算的真数。 |
@@ -3776,6 +4085,7 @@ static log(n: Value, base: Value): Decimal
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3785,6 +4095,7 @@ static log(n: Value, base: Value): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3801,9 +4112,10 @@ console.info("test Decimal log:" + data.toString()); // 'test Decimal log:0.125'
 
 
 
-#### ln
+### ln
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static ln(n: Value): Decimal
 
@@ -3815,12 +4127,14 @@ static ln(n: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 对数运算的真数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3830,6 +4144,7 @@ static ln(n: Value): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3846,9 +4161,10 @@ console.info("test Decimal ln:" + data.toString()); // 'test Decimal ln:69.28456
 
 
 
-#### log2
+### log2
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static log2(n: Value): Decimal
 
@@ -3860,12 +4176,14 @@ static log2(n: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 对数运算的真数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3875,6 +4193,7 @@ static log2(n: Value): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3891,9 +4210,10 @@ console.info("test Decimal log2:" + data.toString()); // 'test Decimal log2:2'
 
 
 
-#### log10
+### log10
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static log10(n: Value): Decimal
 
@@ -3905,12 +4225,14 @@ static log10(n: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 对数运算的真数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3920,6 +4242,7 @@ static log10(n: Value): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3936,9 +4259,10 @@ console.info("test Decimal log10:" + data.toString()); // 'test Decimal log10:4'
 
 
 
-#### cos
+### cos
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static cos(n: Value): Decimal
 
@@ -3950,12 +4274,14 @@ static cos(n: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 要求余弦值的值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3965,6 +4291,7 @@ static cos(n: Value): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3980,9 +4307,10 @@ console.info("test Decimal cos:" + data.toString()); // 'test Decimal cos:0.9689
 
 
 
-#### sin
+### sin
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static sin(n: Value): Decimal
 
@@ -3994,12 +4322,14 @@ static sin(n: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 要求正弦值的值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4009,6 +4339,7 @@ static sin(n: Value): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4024,9 +4355,10 @@ console.info("test Decimal sin:" + data.toString()); // 'test Decimal sin:0.6816
 
 
 
-#### tan
+### tan
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static tan(n: Value): Decimal
 
@@ -4038,12 +4370,14 @@ static tan(n: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 要求的正切值的值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4053,6 +4387,7 @@ static tan(n: Value): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4068,9 +4403,10 @@ console.info("test Decimal tan:" + data.toString()); // 'test Decimal tan:0.9315
 
 
 
-#### cosh
+### cosh
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static cosh(n: Value): Decimal
 
@@ -4082,12 +4418,14 @@ static cosh(n: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 需要求的双曲余弦值的值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4097,6 +4435,7 @@ static cosh(n: Value): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4112,9 +4451,10 @@ console.info("test Decimal cosh:" + data.toString()); // 'test Decimal cosh:1.12
 
 
 
-#### sinh
+### sinh
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static sinh(n: Value): Decimal
 
@@ -4126,12 +4466,14 @@ static sinh(n: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 需要求的双曲正弦值的值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4141,6 +4483,7 @@ static sinh(n: Value): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4156,9 +4499,10 @@ console.info("test Decimal sinh:" + data.toString()); // 'test Decimal sinh:0.52
 
 
 
-#### tanh
+### tanh
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static tanh(n: Value): Decimal
 
@@ -4170,12 +4514,14 @@ static tanh(n: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 需要求双曲正切值的值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4185,6 +4531,7 @@ static tanh(n: Value): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4200,9 +4547,10 @@ console.info("test Decimal tanh:" + data.toString()); // 'test Decimal tanh:0.46
 
 
 
-#### acos
+### acos
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static acos(n: Value): Decimal
 
@@ -4214,12 +4562,14 @@ static acos(n: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 需要求反余弦值的值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4229,6 +4579,7 @@ static acos(n: Value): Decimal
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4245,9 +4596,10 @@ console.info("test Decimal acos:" + data.toString()); // 'test Decimal acos:1.04
 
 
 
-#### asin
+### asin
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static asin(n: Value): Decimal
 
@@ -4259,12 +4611,14 @@ static asin(n: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 需要求反正弦值的值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4274,6 +4628,7 @@ static asin(n: Value): Decimal
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4290,9 +4645,10 @@ console.info("test Decimal asin:" + data.toString()); // 'test Decimal asin:0.84
 
 
 
-#### atan
+### atan
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static atan(n: Value): Decimal
 
@@ -4304,12 +4660,14 @@ static atan(n: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 需要求反正切值的值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4319,6 +4677,7 @@ static atan(n: Value): Decimal
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4335,9 +4694,10 @@ console.info("test Decimal atan:" + data.toString()); // 'test Decimal atan:0.64
 
 
 
-#### acosh
+### acosh
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static acosh(n: Value): Decimal
 
@@ -4349,12 +4709,14 @@ static acosh(n: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 需要求反双曲余弦值的值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4364,6 +4726,7 @@ static acosh(n: Value): Decimal
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4380,9 +4743,10 @@ console.info("test Decimal acosh:" + data.toString()); // 'test Decimal acosh:4.
 
 
 
-#### asinh
+### asinh
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static asinh(n: Value): Decimal
 
@@ -4394,12 +4758,14 @@ static asinh(n: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 需要求反双曲正弦值的值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4409,6 +4775,7 @@ static asinh(n: Value): Decimal
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4425,9 +4792,10 @@ console.info("test Decimal asinh:" + data.toString()); // 'test Decimal asinh:4.
 
 
 
-#### atanh
+### atanh
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static atanh(n: Value): Decimal
 
@@ -4439,12 +4807,14 @@ static atanh(n: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 需要求反双曲正切值的值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4454,6 +4824,7 @@ static atanh(n: Value): Decimal
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4470,9 +4841,10 @@ console.info("test Decimal atanh:" + data.toString()); // 'test Decimal atanh:0.
 
 
 
-#### atan2
+### atan2
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static atan2(y: Value, x: Value): Decimal
 
@@ -4484,6 +4856,7 @@ static atan2(y: Value, x: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | y | Value | 是 | y坐标值，用于计算y/x的反正切值并确定象限。 |
@@ -4491,6 +4864,7 @@ static atan2(y: Value, x: Value): Decimal
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4500,6 +4874,7 @@ static atan2(y: Value, x: Value): Decimal
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4516,9 +4891,10 @@ console.info("test Decimal atan2:" + data.toString()); // 'test Decimal atan2:0.
 
 
 
-#### hypot
+### hypot
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static hypot(...n: Value[]): Decimal
 
@@ -4530,12 +4906,14 @@ static hypot(...n: Value[]): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value[] | 否 | 需要求平方和的序列。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4545,6 +4923,7 @@ static hypot(...n: Value[]): Decimal
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4560,9 +4939,10 @@ console.info("test Decimal hypot:" + data.toString()); // 'test Decimal hypot:5.
 
 
 
-#### max
+### max
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static max(...n: Value[]): Decimal
 
@@ -4574,12 +4954,14 @@ static max(...n: Value[]): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value[] | 否 | 需要求最大值的序列。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4589,6 +4971,7 @@ static max(...n: Value[]): Decimal
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4604,9 +4987,10 @@ console.info("test Decimal max:" + data.toString()); // 'test Decimal max:4'
 
 
 
-#### min
+### min
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static min(...n: Value[]): Decimal
 
@@ -4618,12 +5002,14 @@ static min(...n: Value[]): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value[] | 否 | 需要求最小值的序列。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4633,6 +5019,7 @@ static min(...n: Value[]): Decimal
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4648,9 +5035,10 @@ console.info("test Decimal min:" + data.toString()); // 'test Decimal min:2'
 
 
 
-#### random
+### random
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static random(): Decimal
 
@@ -4662,6 +5050,7 @@ static random(): Decimal
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Decimal | 大于等于0小于1的随机值的Decimal对象实例。 |
@@ -4670,6 +5059,7 @@ static random(): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4684,9 +5074,10 @@ let data: Decimal = Decimal.random();
 
 
 
-#### random
+### random
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static random(significantDigits: number): Decimal
 
@@ -4698,12 +5089,14 @@ static random(significantDigits: number): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | significantDigits | number | 是 | 随机值保留的有效数字。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4713,6 +5106,7 @@ static random(significantDigits: number): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4728,9 +5122,10 @@ let data: Decimal = Decimal.random(20);
 
 
 
-#### sign
+### sign
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static sign(n: Value): number
 
@@ -4742,6 +5137,7 @@ static sign(n: Value): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 需要判断的值。 |
@@ -4749,14 +5145,17 @@ static sign(n: Value): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| number | 返回参数的符号判断结果。 1：参数为正数。 -1：参数为负数。 0：参数为0。 NaN：参数为NaN。 |
+| Decimal | 适用版本：12-17。返回参数的符号判断结果。 |
+| number | 适用版本：18+。返回参数的符号判断结果。 1：参数为正数。 -1：参数为负数。 0：参数为0。 NaN：参数为NaN。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4793,9 +5192,10 @@ console.info("test Decimal sign:" + data8); // 'test Decimal sign:NaN'
 
 
 
-#### round
+### round
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static round(n: Value): Decimal
 
@@ -4807,12 +5207,14 @@ static round(n: Value): Decimal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | n | Value | 是 | 需要舍入的值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4822,6 +5224,7 @@ static round(n: Value): Decimal
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4838,9 +5241,10 @@ console.info("test Decimal round:" + data.toString()); // 'test Decimal round:3'
 
 
 
-#### set
+### set
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static set(config: DecimalConfig):void
 
@@ -4852,6 +5256,7 @@ static set(config: DecimalConfig):void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | config | DecimalConfig | 是 | 需要配置的属性集合。 |
@@ -4860,6 +5265,7 @@ static set(config: DecimalConfig):void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

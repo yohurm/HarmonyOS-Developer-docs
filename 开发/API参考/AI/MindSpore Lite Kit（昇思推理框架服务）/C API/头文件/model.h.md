@@ -1,13 +1,14 @@
 # model.h
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-model-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供了模型相关接口，可以用于模型创建、模型推理等，该接口是非线程安全的。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_AI_TensorHandleArray | OH_AI_TensorHandleArray | 张量数组结构体，用于存储张量数组指针和张量数组长度。 |
@@ -44,10 +48,12 @@
  
   
 
-#### 宏定义
+### 宏定义
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_AI_MAX_SHAPE_NUM 32 | 张量最大维度数。 起始版本： 9 |
@@ -55,10 +61,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | typedef bool (*OH_AI_KernelCallBack)(const OH_AI_TensorHandleArray inputs, const OH_AI_TensorHandleArray outputs,const OH_AI_CallBackParam kernel_Info) | OH_AI_KernelCallBack | 回调函数指针。 该函数指针是用于设置OH_AI_ModelPredict函数参数中的两个回调函数。 该指针指向的函数需要包含三个参数，其中inputs和outputs对应了算子的输入和输出张量，kernel_Info表示当前算子的信息。 可以通过回调函数监控算子执行的情况，例如统计算子的执行时间，校验算子的正确性等等。 |
@@ -97,15 +105,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AI_KernelCallBack()
+### OH_AI_KernelCallBack()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef bool (*OH_AI_KernelCallBack)(const OH_AI_TensorHandleArray inputs, const OH_AI_TensorHandleArray outputs,const OH_AI_CallBackParam kernel_Info)
@@ -125,6 +135,7 @@ typedef bool (*OH_AI_KernelCallBack)(const OH_AI_TensorHandleArray inputs, const
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_AI_TensorHandleArray inputs | 模型输入对应的张量数组结构体。 |
@@ -134,6 +145,7 @@ typedef bool (*OH_AI_KernelCallBack)(const OH_AI_TensorHandleArray inputs, const
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 回调执行是否成功，若成功返回true，失败则返回false。 |
@@ -141,9 +153,10 @@ typedef bool (*OH_AI_KernelCallBack)(const OH_AI_TensorHandleArray inputs, const
  
   
 
-#### OH_AI_ModelCreate()
+### OH_AI_ModelCreate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_ModelHandle OH_AI_ModelCreate(void)
@@ -157,6 +170,7 @@ OH_AI_API OH_AI_ModelHandle OH_AI_ModelCreate(void)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_ModelHandle | 模型对象指针。 |
@@ -164,9 +178,10 @@ OH_AI_API OH_AI_ModelHandle OH_AI_ModelCreate(void)
  
   
 
-#### OH_AI_ModelDestroy()
+### OH_AI_ModelDestroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API void OH_AI_ModelDestroy(OH_AI_ModelHandle *model)
@@ -180,6 +195,7 @@ OH_AI_API void OH_AI_ModelDestroy(OH_AI_ModelHandle *model)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_ModelHandle *model | 模型对象指针。 |
@@ -187,9 +203,10 @@ OH_AI_API void OH_AI_ModelDestroy(OH_AI_ModelHandle *model)
  
   
 
-#### OH_AI_ModelBuild()
+### OH_AI_ModelBuild()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_Status OH_AI_ModelBuild(OH_AI_ModelHandle model, const void *model_data, size_t data_size,OH_AI_ModelType model_type, const OH_AI_ContextHandle model_context)
@@ -205,6 +222,7 @@ OH_AI_API OH_AI_Status OH_AI_ModelBuild(OH_AI_ModelHandle model, const void *mod
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_ModelHandle model | 模型对象指针。 |
@@ -216,6 +234,7 @@ OH_AI_API OH_AI_Status OH_AI_ModelBuild(OH_AI_ModelHandle model, const void *mod
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_Status | 枚举类型的状态码OH_AI_Status，若成功返回OH_AI_STATUS_SUCCESS，失败则返回具体错误码。 |
@@ -223,9 +242,10 @@ OH_AI_API OH_AI_Status OH_AI_ModelBuild(OH_AI_ModelHandle model, const void *mod
  
   
 
-#### OH_AI_ModelBuildFromFile()
+### OH_AI_ModelBuildFromFile()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_Status OH_AI_ModelBuildFromFile(OH_AI_ModelHandle model, const char *model_path,OH_AI_ModelType model_type, const OH_AI_ContextHandle model_context)
@@ -241,6 +261,7 @@ OH_AI_API OH_AI_Status OH_AI_ModelBuildFromFile(OH_AI_ModelHandle model, const c
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_ModelHandle model | 模型对象指针。 |
@@ -251,6 +272,7 @@ OH_AI_API OH_AI_Status OH_AI_ModelBuildFromFile(OH_AI_ModelHandle model, const c
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_Status | 枚举类型的状态码OH_AI_Status，若成功返回OH_AI_STATUS_SUCCESS，失败则返回具体错误码。 |
@@ -258,9 +280,10 @@ OH_AI_API OH_AI_Status OH_AI_ModelBuildFromFile(OH_AI_ModelHandle model, const c
  
   
 
-#### OH_AI_ModelResize()
+### OH_AI_ModelResize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_Status OH_AI_ModelResize(OH_AI_ModelHandle model, const OH_AI_TensorHandleArray inputs,OH_AI_ShapeInfo *shape_infos, size_t shape_info_num)
@@ -274,6 +297,7 @@ OH_AI_API OH_AI_Status OH_AI_ModelResize(OH_AI_ModelHandle model, const OH_AI_Te
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_ModelHandle model | 模型对象指针。 |
@@ -284,6 +308,7 @@ OH_AI_API OH_AI_Status OH_AI_ModelResize(OH_AI_ModelHandle model, const OH_AI_Te
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_Status | 枚举类型的状态码OH_AI_Status，若成功返回OH_AI_STATUS_SUCCESS，失败则返回具体错误码。 |
@@ -291,9 +316,10 @@ OH_AI_API OH_AI_Status OH_AI_ModelResize(OH_AI_ModelHandle model, const OH_AI_Te
  
   
 
-#### OH_AI_ModelPredict()
+### OH_AI_ModelPredict()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_Status OH_AI_ModelPredict(OH_AI_ModelHandle model, const OH_AI_TensorHandleArray inputs,OH_AI_TensorHandleArray *outputs, const OH_AI_KernelCallBack before,const OH_AI_KernelCallBack after)
@@ -307,6 +333,7 @@ OH_AI_API OH_AI_Status OH_AI_ModelPredict(OH_AI_ModelHandle model, const OH_AI_T
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_ModelHandle model | 模型对象指针。 |
@@ -318,6 +345,7 @@ OH_AI_API OH_AI_Status OH_AI_ModelPredict(OH_AI_ModelHandle model, const OH_AI_T
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_Status | 枚举类型的状态码OH_AI_Status，若成功返回OH_AI_STATUS_SUCCESS，失败则返回具体错误码。 |
@@ -325,9 +353,10 @@ OH_AI_API OH_AI_Status OH_AI_ModelPredict(OH_AI_ModelHandle model, const OH_AI_T
  
   
 
-#### OH_AI_ModelGetInputs()
+### OH_AI_ModelGetInputs()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_TensorHandleArray OH_AI_ModelGetInputs(const OH_AI_ModelHandle model)
@@ -341,6 +370,7 @@ OH_AI_API OH_AI_TensorHandleArray OH_AI_ModelGetInputs(const OH_AI_ModelHandle m
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_AI_ModelHandle model | 模型对象指针。 |
@@ -348,6 +378,7 @@ OH_AI_API OH_AI_TensorHandleArray OH_AI_ModelGetInputs(const OH_AI_ModelHandle m
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_TensorHandleArray | 模型输入对应的张量数组结构体。 |
@@ -355,9 +386,10 @@ OH_AI_API OH_AI_TensorHandleArray OH_AI_ModelGetInputs(const OH_AI_ModelHandle m
  
   
 
-#### OH_AI_ModelGetOutputs()
+### OH_AI_ModelGetOutputs()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_TensorHandleArray OH_AI_ModelGetOutputs(const OH_AI_ModelHandle model)
@@ -371,6 +403,7 @@ OH_AI_API OH_AI_TensorHandleArray OH_AI_ModelGetOutputs(const OH_AI_ModelHandle 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_AI_ModelHandle model | 模型对象指针。 |
@@ -378,6 +411,7 @@ OH_AI_API OH_AI_TensorHandleArray OH_AI_ModelGetOutputs(const OH_AI_ModelHandle 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_TensorHandleArray | 模型输出对应的张量数组结构体。 |
@@ -385,9 +419,10 @@ OH_AI_API OH_AI_TensorHandleArray OH_AI_ModelGetOutputs(const OH_AI_ModelHandle 
  
   
 
-#### OH_AI_ModelGetInputByTensorName()
+### OH_AI_ModelGetInputByTensorName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_TensorHandle OH_AI_ModelGetInputByTensorName(const OH_AI_ModelHandle model, const char *tensor_name)
@@ -401,6 +436,7 @@ OH_AI_API OH_AI_TensorHandle OH_AI_ModelGetInputByTensorName(const OH_AI_ModelHa
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_AI_ModelHandle model | 模型对象指针。 |
@@ -409,6 +445,7 @@ OH_AI_API OH_AI_TensorHandle OH_AI_ModelGetInputByTensorName(const OH_AI_ModelHa
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_TensorHandle | tensor_name所对应的输入张量的张量指针，如果输入中没有该张量则返回空。 |
@@ -416,9 +453,10 @@ OH_AI_API OH_AI_TensorHandle OH_AI_ModelGetInputByTensorName(const OH_AI_ModelHa
  
   
 
-#### OH_AI_ModelGetOutputByTensorName()
+### OH_AI_ModelGetOutputByTensorName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_TensorHandle OH_AI_ModelGetOutputByTensorName(const OH_AI_ModelHandle model, const char *tensor_name)
@@ -432,6 +470,7 @@ OH_AI_API OH_AI_TensorHandle OH_AI_ModelGetOutputByTensorName(const OH_AI_ModelH
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_AI_ModelHandle model | 模型对象指针。 |
@@ -440,6 +479,7 @@ OH_AI_API OH_AI_TensorHandle OH_AI_ModelGetOutputByTensorName(const OH_AI_ModelH
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_TensorHandle | tensor_name所对应的输出张量的张量指针，如果输出中没有该张量则返回空。 |
@@ -447,9 +487,10 @@ OH_AI_API OH_AI_TensorHandle OH_AI_ModelGetOutputByTensorName(const OH_AI_ModelH
  
   
 
-#### OH_AI_TrainCfgCreate()
+### OH_AI_TrainCfgCreate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_TrainCfgHandle OH_AI_TrainCfgCreate()
@@ -463,6 +504,7 @@ OH_AI_API OH_AI_TrainCfgHandle OH_AI_TrainCfgCreate()
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_TrainCfgHandle | 训练配置对象指针。 |
@@ -470,9 +512,10 @@ OH_AI_API OH_AI_TrainCfgHandle OH_AI_TrainCfgCreate()
  
   
 
-#### OH_AI_TrainCfgDestroy()
+### OH_AI_TrainCfgDestroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API void OH_AI_TrainCfgDestroy(OH_AI_TrainCfgHandle *train_cfg)
@@ -486,6 +529,7 @@ OH_AI_API void OH_AI_TrainCfgDestroy(OH_AI_TrainCfgHandle *train_cfg)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_TrainCfgHandle *train_cfg | 训练配置对象指针。 |
@@ -493,9 +537,10 @@ OH_AI_API void OH_AI_TrainCfgDestroy(OH_AI_TrainCfgHandle *train_cfg)
  
   
 
-#### OH_AI_TrainCfgGetLossName()
+### OH_AI_TrainCfgGetLossName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API char **OH_AI_TrainCfgGetLossName(OH_AI_TrainCfgHandle train_cfg, size_t *num)
@@ -509,6 +554,7 @@ OH_AI_API char **OH_AI_TrainCfgGetLossName(OH_AI_TrainCfgHandle train_cfg, size_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_TrainCfgHandle train_cfg | 训练配置对象指针。 |
@@ -517,6 +563,7 @@ OH_AI_API char **OH_AI_TrainCfgGetLossName(OH_AI_TrainCfgHandle train_cfg, size_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API char ** | 损失函数的名称列表。 |
@@ -524,9 +571,10 @@ OH_AI_API char **OH_AI_TrainCfgGetLossName(OH_AI_TrainCfgHandle train_cfg, size_
  
   
 
-#### OH_AI_TrainCfgSetLossName()
+### OH_AI_TrainCfgSetLossName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API void OH_AI_TrainCfgSetLossName(OH_AI_TrainCfgHandle train_cfg, const char **loss_name, size_t num)
@@ -540,6 +588,7 @@ OH_AI_API void OH_AI_TrainCfgSetLossName(OH_AI_TrainCfgHandle train_cfg, const c
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_TrainCfgHandle train_cfg | 训练配置对象指针。 |
@@ -549,9 +598,10 @@ OH_AI_API void OH_AI_TrainCfgSetLossName(OH_AI_TrainCfgHandle train_cfg, const c
  
   
 
-#### OH_AI_TrainCfgGetOptimizationLevel()
+### OH_AI_TrainCfgGetOptimizationLevel()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_OptimizationLevel OH_AI_TrainCfgGetOptimizationLevel(OH_AI_TrainCfgHandle train_cfg)
@@ -565,6 +615,7 @@ OH_AI_API OH_AI_OptimizationLevel OH_AI_TrainCfgGetOptimizationLevel(OH_AI_Train
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_TrainCfgHandle train_cfg | 训练配置对象指针。 |
@@ -572,6 +623,7 @@ OH_AI_API OH_AI_OptimizationLevel OH_AI_TrainCfgGetOptimizationLevel(OH_AI_Train
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_OptimizationLevel | 优化等级。 |
@@ -579,9 +631,10 @@ OH_AI_API OH_AI_OptimizationLevel OH_AI_TrainCfgGetOptimizationLevel(OH_AI_Train
  
   
 
-#### OH_AI_TrainCfgSetOptimizationLevel()
+### OH_AI_TrainCfgSetOptimizationLevel()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API void OH_AI_TrainCfgSetOptimizationLevel(OH_AI_TrainCfgHandle train_cfg, OH_AI_OptimizationLevel level)
@@ -595,6 +648,7 @@ OH_AI_API void OH_AI_TrainCfgSetOptimizationLevel(OH_AI_TrainCfgHandle train_cfg
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_TrainCfgHandle train_cfg | 训练配置对象指针。 |
@@ -603,9 +657,10 @@ OH_AI_API void OH_AI_TrainCfgSetOptimizationLevel(OH_AI_TrainCfgHandle train_cfg
  
   
 
-#### OH_AI_TrainModelBuild()
+### OH_AI_TrainModelBuild()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_Status OH_AI_TrainModelBuild(OH_AI_ModelHandle model, const void *model_data, size_t data_size,OH_AI_ModelType model_type, const OH_AI_ContextHandle model_context,const OH_AI_TrainCfgHandle train_cfg)
@@ -619,6 +674,7 @@ OH_AI_API OH_AI_Status OH_AI_TrainModelBuild(OH_AI_ModelHandle model, const void
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_ModelHandle model | 模型对象指针。 |
@@ -631,6 +687,7 @@ OH_AI_API OH_AI_Status OH_AI_TrainModelBuild(OH_AI_ModelHandle model, const void
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_Status | 枚举类型的状态码OH_AI_Status，若成功返回OH_AI_STATUS_SUCCESS，失败则返回具体错误码。 |
@@ -638,9 +695,10 @@ OH_AI_API OH_AI_Status OH_AI_TrainModelBuild(OH_AI_ModelHandle model, const void
  
   
 
-#### OH_AI_TrainModelBuildFromFile()
+### OH_AI_TrainModelBuildFromFile()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_Status OH_AI_TrainModelBuildFromFile(OH_AI_ModelHandle model, const char *model_path,OH_AI_ModelType model_type,const OH_AI_ContextHandle model_context,const OH_AI_TrainCfgHandle train_cfg)
@@ -654,6 +712,7 @@ OH_AI_API OH_AI_Status OH_AI_TrainModelBuildFromFile(OH_AI_ModelHandle model, co
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_ModelHandle model | 模型对象指针。 |
@@ -665,6 +724,7 @@ OH_AI_API OH_AI_Status OH_AI_TrainModelBuildFromFile(OH_AI_ModelHandle model, co
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_Status | 枚举类型的状态码OH_AI_Status，若成功返回OH_AI_STATUS_SUCCESS，失败则返回具体错误码。 |
@@ -672,9 +732,10 @@ OH_AI_API OH_AI_Status OH_AI_TrainModelBuildFromFile(OH_AI_ModelHandle model, co
  
   
 
-#### OH_AI_RunStep()
+### OH_AI_RunStep()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_Status OH_AI_RunStep(OH_AI_ModelHandle model, const OH_AI_KernelCallBack before,const OH_AI_KernelCallBack after)
@@ -688,6 +749,7 @@ OH_AI_API OH_AI_Status OH_AI_RunStep(OH_AI_ModelHandle model, const OH_AI_Kernel
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_ModelHandle model | 模型对象指针。 |
@@ -697,6 +759,7 @@ OH_AI_API OH_AI_Status OH_AI_RunStep(OH_AI_ModelHandle model, const OH_AI_Kernel
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_Status | 枚举类型的状态码OH_AI_Status，若成功返回OH_AI_STATUS_SUCCESS，失败则返回具体错误码。 |
@@ -704,9 +767,10 @@ OH_AI_API OH_AI_Status OH_AI_RunStep(OH_AI_ModelHandle model, const OH_AI_Kernel
  
   
 
-#### OH_AI_ModelSetLearningRate()
+### OH_AI_ModelSetLearningRate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_Status OH_AI_ModelSetLearningRate(OH_AI_ModelHandle model, float learning_rate)
@@ -720,6 +784,7 @@ OH_AI_API OH_AI_Status OH_AI_ModelSetLearningRate(OH_AI_ModelHandle model, float
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_ModelHandle model | 模型对象指针。 |
@@ -728,6 +793,7 @@ OH_AI_API OH_AI_Status OH_AI_ModelSetLearningRate(OH_AI_ModelHandle model, float
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_Status | 枚举类型的状态码OH_AI_Status，若成功返回OH_AI_STATUS_SUCCESS，失败则返回具体错误码。 |
@@ -735,9 +801,10 @@ OH_AI_API OH_AI_Status OH_AI_ModelSetLearningRate(OH_AI_ModelHandle model, float
  
   
 
-#### OH_AI_ModelGetLearningRate()
+### OH_AI_ModelGetLearningRate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API float OH_AI_ModelGetLearningRate(OH_AI_ModelHandle model)
@@ -751,6 +818,7 @@ OH_AI_API float OH_AI_ModelGetLearningRate(OH_AI_ModelHandle model)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_ModelHandle model | 模型对象指针。 |
@@ -758,6 +826,7 @@ OH_AI_API float OH_AI_ModelGetLearningRate(OH_AI_ModelHandle model)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API float | 学习率，没有设置优化器时为0.0。 |
@@ -765,9 +834,10 @@ OH_AI_API float OH_AI_ModelGetLearningRate(OH_AI_ModelHandle model)
  
   
 
-#### OH_AI_ModelGetWeights()
+### OH_AI_ModelGetWeights()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_TensorHandleArray OH_AI_ModelGetWeights(OH_AI_ModelHandle model)
@@ -781,6 +851,7 @@ OH_AI_API OH_AI_TensorHandleArray OH_AI_ModelGetWeights(OH_AI_ModelHandle model)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_ModelHandle model | 模型对象指针。 |
@@ -788,6 +859,7 @@ OH_AI_API OH_AI_TensorHandleArray OH_AI_ModelGetWeights(OH_AI_ModelHandle model)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_TensorHandleArray | 模型的所有权重Tensor。 |
@@ -795,9 +867,10 @@ OH_AI_API OH_AI_TensorHandleArray OH_AI_ModelGetWeights(OH_AI_ModelHandle model)
  
   
 
-#### OH_AI_ModelUpdateWeights()
+### OH_AI_ModelUpdateWeights()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_Status OH_AI_ModelUpdateWeights(OH_AI_ModelHandle model, const OH_AI_TensorHandleArray new_weights)
@@ -811,6 +884,7 @@ OH_AI_API OH_AI_Status OH_AI_ModelUpdateWeights(OH_AI_ModelHandle model, const O
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_ModelHandle model | 模型对象指针。 |
@@ -819,6 +893,7 @@ OH_AI_API OH_AI_Status OH_AI_ModelUpdateWeights(OH_AI_ModelHandle model, const O
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_Status | 枚举类型的状态码OH_AI_Status，若成功返回OH_AI_STATUS_SUCCESS，失败则返回具体错误码。 |
@@ -826,9 +901,10 @@ OH_AI_API OH_AI_Status OH_AI_ModelUpdateWeights(OH_AI_ModelHandle model, const O
  
   
 
-#### OH_AI_ModelGetTrainMode()
+### OH_AI_ModelGetTrainMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API bool OH_AI_ModelGetTrainMode(OH_AI_ModelHandle model)
@@ -842,6 +918,7 @@ OH_AI_API bool OH_AI_ModelGetTrainMode(OH_AI_ModelHandle model)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_ModelHandle model | 模型对象指针。 |
@@ -849,6 +926,7 @@ OH_AI_API bool OH_AI_ModelGetTrainMode(OH_AI_ModelHandle model)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API bool | 表示是否是训练模式。true表示是训练模式，false表示不是训练模式。 |
@@ -856,9 +934,10 @@ OH_AI_API bool OH_AI_ModelGetTrainMode(OH_AI_ModelHandle model)
  
   
 
-#### OH_AI_ModelSetTrainMode()
+### OH_AI_ModelSetTrainMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_Status OH_AI_ModelSetTrainMode(OH_AI_ModelHandle model, bool train)
@@ -872,6 +951,7 @@ OH_AI_API OH_AI_Status OH_AI_ModelSetTrainMode(OH_AI_ModelHandle model, bool tra
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_ModelHandle model | 模型对象指针。 |
@@ -880,6 +960,7 @@ OH_AI_API OH_AI_Status OH_AI_ModelSetTrainMode(OH_AI_ModelHandle model, bool tra
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_Status | 枚举类型的状态码OH_AI_Status，若成功返回OH_AI_STATUS_SUCCESS，失败则返回具体错误码。 |
@@ -887,9 +968,10 @@ OH_AI_API OH_AI_Status OH_AI_ModelSetTrainMode(OH_AI_ModelHandle model, bool tra
  
   
 
-#### OH_AI_ModelSetupVirtualBatch()
+### OH_AI_ModelSetupVirtualBatch()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_Status OH_AI_ModelSetupVirtualBatch(OH_AI_ModelHandle model, int virtual_batch_multiplier, float lr,float momentum)
@@ -903,6 +985,7 @@ OH_AI_API OH_AI_Status OH_AI_ModelSetupVirtualBatch(OH_AI_ModelHandle model, int
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_ModelHandle model | 模型对象指针。 |
@@ -913,6 +996,7 @@ OH_AI_API OH_AI_Status OH_AI_ModelSetupVirtualBatch(OH_AI_ModelHandle model, int
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_Status | 枚举类型的状态码OH_AI_Status，若成功返回OH_AI_STATUS_SUCCESS，失败则返回具体错误码。 |
@@ -920,9 +1004,10 @@ OH_AI_API OH_AI_Status OH_AI_ModelSetupVirtualBatch(OH_AI_ModelHandle model, int
  
   
 
-#### OH_AI_ExportModel()
+### OH_AI_ExportModel()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_Status OH_AI_ExportModel(OH_AI_ModelHandle model, OH_AI_ModelType model_type, const char *model_file,OH_AI_QuantizationType quantization_type, bool export_inference_only,char **output_tensor_name, size_t num)
@@ -936,6 +1021,7 @@ OH_AI_API OH_AI_Status OH_AI_ExportModel(OH_AI_ModelHandle model, OH_AI_ModelTyp
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_ModelHandle model | 模型对象指针。 |
@@ -949,6 +1035,7 @@ OH_AI_API OH_AI_Status OH_AI_ExportModel(OH_AI_ModelHandle model, OH_AI_ModelTyp
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_Status | 枚举类型的状态码OH_AI_Status，若成功返回OH_AI_STATUS_SUCCESS，失败则返回具体错误码。 |
@@ -956,9 +1043,10 @@ OH_AI_API OH_AI_Status OH_AI_ExportModel(OH_AI_ModelHandle model, OH_AI_ModelTyp
  
   
 
-#### OH_AI_ExportModelBuffer()
+### OH_AI_ExportModelBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_Status OH_AI_ExportModelBuffer(OH_AI_ModelHandle model, OH_AI_ModelType model_type, void *model_data,size_t *data_size, OH_AI_QuantizationType quantization_type,bool export_inference_only, char **output_tensor_name, size_t num)
@@ -972,6 +1060,7 @@ OH_AI_API OH_AI_Status OH_AI_ExportModelBuffer(OH_AI_ModelHandle model, OH_AI_Mo
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_ModelHandle model | 模型对象指针。 |
@@ -986,6 +1075,7 @@ OH_AI_API OH_AI_Status OH_AI_ExportModelBuffer(OH_AI_ModelHandle model, OH_AI_Mo
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_Status | 枚举类型的状态码OH_AI_Status，若成功返回OH_AI_STATUS_SUCCESS，失败则返回具体错误码。 |
@@ -993,9 +1083,10 @@ OH_AI_API OH_AI_Status OH_AI_ExportModelBuffer(OH_AI_ModelHandle model, OH_AI_Mo
  
   
 
-#### OH_AI_ExportWeightsCollaborateWithMicro()
+### OH_AI_ExportWeightsCollaborateWithMicro()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_Status OH_AI_ExportWeightsCollaborateWithMicro(OH_AI_ModelHandle model, OH_AI_ModelType model_type,const char *weight_file, bool is_inference,bool enable_fp16, char **changeable_weights_name,size_t num)
@@ -1009,6 +1100,7 @@ OH_AI_API OH_AI_Status OH_AI_ExportWeightsCollaborateWithMicro(OH_AI_ModelHandle
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_ModelHandle model | 模型对象指针。 |
@@ -1022,6 +1114,7 @@ OH_AI_API OH_AI_Status OH_AI_ExportWeightsCollaborateWithMicro(OH_AI_ModelHandle
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_Status | 枚举类型的状态码OH_AI_Status，若成功返回OH_AI_STATUS_SUCCESS，失败则返回具体错误码。 |
@@ -1029,9 +1122,10 @@ OH_AI_API OH_AI_Status OH_AI_ExportWeightsCollaborateWithMicro(OH_AI_ModelHandle
  
   
 
-#### OH_AI_ModelLoadConfig()
+### OH_AI_ModelLoadConfig()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_Status OH_AI_ModelLoadConfig(OH_AI_ModelHandle model, const char *config_path);
@@ -1045,6 +1139,7 @@ OH_AI_API OH_AI_Status OH_AI_ModelLoadConfig(OH_AI_ModelHandle model, const char
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_ModelHandle model | 模型对象指针。 |
@@ -1053,6 +1148,7 @@ OH_AI_API OH_AI_Status OH_AI_ModelLoadConfig(OH_AI_ModelHandle model, const char
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_Status | 枚举类型的状态码OH_AI_Status，若成功返回OH_AI_STATUS_SUCCESS，失败则返回具体错误码。 |
@@ -1060,9 +1156,10 @@ OH_AI_API OH_AI_Status OH_AI_ModelLoadConfig(OH_AI_ModelHandle model, const char
  
   
 
-#### OH_AI_ModelPredictWithConfig()
+### OH_AI_ModelPredictWithConfig()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AI_API OH_AI_Status OH_AI_ModelPredictWithConfig(OH_AI_ModelHandle model, const OH_AI_TensorHandleArray inputs, OH_AI_TensorHandleArray *outputs, const char *config, const OH_AI_KernelCallBack before, const OH_AI_KernelCallBack after)
@@ -1076,6 +1173,7 @@ OH_AI_API OH_AI_Status OH_AI_ModelPredictWithConfig(OH_AI_ModelHandle model, con
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AI_ModelHandle model | 模型对象指针。 |
@@ -1088,6 +1186,7 @@ OH_AI_API OH_AI_Status OH_AI_ModelPredictWithConfig(OH_AI_ModelHandle model, con
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AI_API OH_AI_Status | 枚举类型的状态码OH_AI_Status，若成功返回OH_AI_STATUS_SUCCESS，失败则返回具体错误码。 |

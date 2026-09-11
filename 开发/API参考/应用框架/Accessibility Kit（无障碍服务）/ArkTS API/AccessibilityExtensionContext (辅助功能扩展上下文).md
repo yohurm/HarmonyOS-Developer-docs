@@ -1,6 +1,6 @@
 # AccessibilityExtensionContext (辅助功能扩展上下文)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-accessibilityextensioncontext
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
@@ -14,7 +14,8 @@ AccessibilityExtensionContext是AccessibilityExtensionAbility上下文环境，�
 
 
 
-#### 使用说明
+## 使用说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -32,7 +33,8 @@ class EntryAbility extends AccessibilityExtensionAbility {
 
 
 
-#### ElementAttributeValues
+## ElementAttributeValues
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -44,7 +46,11 @@ class EntryAbility extends AccessibilityExtensionAbility {
 
 
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -108,7 +114,8 @@ class EntryAbility extends AccessibilityExtensionAbility {
 
 
 
-#### FocusDirection
+## FocusDirection
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -117,6 +124,7 @@ type FocusDirection = 'up' | 'down' | 'left' | 'right' | 'forward' | 'backward'
 表示查询下一焦点元素的方向。
 
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Core
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -130,7 +138,8 @@ type FocusDirection = 'up' | 'down' | 'left' | 'right' | 'forward' | 'backward'
 
 
 
-#### FocusType
+## FocusType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -140,6 +149,7 @@ type FocusType = 'accessibility' | 'normal'
 
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | 'accessibility' | 表示无障碍的焦点类型。 |
@@ -148,13 +158,15 @@ type FocusType = 'accessibility' | 'normal'
 
 
 
-#### Rect
+## Rect
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 表示矩形区域。
 
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -166,7 +178,8 @@ type FocusType = 'accessibility' | 'normal'
 
 
 
-#### WindowType
+## WindowType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -176,6 +189,7 @@ type WindowType = 'application' | 'system'
 
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | 'application' | 表示应用窗口类型。 |
@@ -184,7 +198,8 @@ type WindowType = 'application' | 'system'
 
 
 
-#### AccessibilityExtensionContext
+## AccessibilityExtensionContext
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -192,7 +207,8 @@ type WindowType = 'application' | 'system'
 
 
 
-#### setTargetBundleName(deprecated)
+### setTargetBundleName(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -208,12 +224,14 @@ setTargetBundleName(targetNames: Array&lt;string&gt;): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | targetNames | Array&lt;string&gt; | 是 | 设置关注应用的包名。设置后，服务仅接收关注应用的无障碍事件；未设置时默认接收所有应用的无障碍事件；取消关注应用时传空数组。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -223,6 +241,7 @@ setTargetBundleName(targetNames: Array&lt;string&gt;): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -245,7 +264,8 @@ axContext.setTargetBundleName(targetNames).then(() => {
 
 
 
-#### setTargetBundleName(deprecated)
+### setTargetBundleName(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -261,6 +281,7 @@ setTargetBundleName(targetNames: Array&lt;string&gt;, callback: AsyncCallback&lt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | targetNames | Array&lt;string&gt; | 是 | 设置关注应用的包名。设置后，服务仅接收关注应用的无障碍事件；未设置时默认接收所有应用的无障碍事件；取消关注应用时传空数组。 |
@@ -270,6 +291,7 @@ setTargetBundleName(targetNames: Array&lt;string&gt;, callback: AsyncCallback&lt
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -298,7 +320,8 @@ try {
 
 
 
-#### getFocusElement(deprecated)
+### getFocusElement(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -314,12 +337,14 @@ getFocusElement(isAccessibilityFocus?: boolean): Promise&lt;AccessibilityElement
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isAccessibilityFocus | boolean | 否 | 获取的是否是无障碍焦点元素，true表示是无障碍焦点元素，false表示不是无障碍焦点元素，默认值为false。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -329,6 +354,7 @@ getFocusElement(isAccessibilityFocus?: boolean): Promise&lt;AccessibilityElement
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[无障碍子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-accessibility)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -355,7 +381,8 @@ axContext.getFocusElement().then((data: AccessibilityElement) => {
 
 
 
-#### getFocusElement(deprecated)
+### getFocusElement(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -371,6 +398,7 @@ getFocusElement(callback: AsyncCallback&lt;AccessibilityElement&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;AccessibilityElement&gt; | 是 | 回调函数。当获取焦点元素成功，err为undefined，data为当前对应的焦点元素；否则为错误对象。 |
@@ -379,6 +407,7 @@ getFocusElement(callback: AsyncCallback&lt;AccessibilityElement&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[无障碍子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-accessibility)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -407,7 +436,8 @@ axContext.getFocusElement((err: BusinessError, data: AccessibilityElement) => {
 
 
 
-#### getFocusElement(deprecated)
+### getFocusElement(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -423,6 +453,7 @@ getFocusElement(isAccessibilityFocus: boolean, callback: AsyncCallback&lt;Access
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isAccessibilityFocus | boolean | 是 | 获取的是否是无障碍焦点元素，true表示是无障碍焦点元素，false表示不是无障碍焦点元素。 |
@@ -432,6 +463,7 @@ getFocusElement(isAccessibilityFocus: boolean, callback: AsyncCallback&lt;Access
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[无障碍子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-accessibility)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -461,7 +493,8 @@ axContext.getFocusElement(isAccessibilityFocus, (err: BusinessError, data: Acces
 
 
 
-#### getWindowRootElement(deprecated)
+### getWindowRootElement(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -477,12 +510,14 @@ getWindowRootElement(windowId?: number): Promise&lt;AccessibilityElement&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | windowId | number | 否 | 指定窗口的编号，未指定则从当前活跃窗口获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -492,6 +527,7 @@ getWindowRootElement(windowId?: number): Promise&lt;AccessibilityElement&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[无障碍子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-accessibility)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -518,7 +554,8 @@ axContext.getWindowRootElement().then((data: AccessibilityElement) => {
 
 
 
-#### getWindowRootElement(deprecated)
+### getWindowRootElement(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -534,6 +571,7 @@ getWindowRootElement(callback: AsyncCallback&lt;AccessibilityElement&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;AccessibilityElement&gt; | 是 | 回调函数。当获取根节点元素成功，err为undefined，data为当前活跃窗口的根节点元素；否则为错误对象。 |
@@ -542,6 +580,7 @@ getWindowRootElement(callback: AsyncCallback&lt;AccessibilityElement&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[无障碍子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-accessibility)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -570,7 +609,8 @@ axContext.getWindowRootElement((err: BusinessError, data: AccessibilityElement) 
 
 
 
-#### getWindowRootElement(deprecated)
+### getWindowRootElement(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -586,6 +626,7 @@ getWindowRootElement(windowId: number, callback: AsyncCallback&lt;AccessibilityE
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | windowId | number | 是 | 指定窗口的编号。 |
@@ -595,6 +636,7 @@ getWindowRootElement(windowId: number, callback: AsyncCallback&lt;AccessibilityE
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[无障碍子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-accessibility)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -624,7 +666,8 @@ axContext.getWindowRootElement(windowId, (err: BusinessError, data: Accessibilit
 
 
 
-#### getWindows(deprecated)
+### getWindows(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -640,12 +683,14 @@ getWindows(displayId?: number): Promise<Array&lt;AccessibilityElement&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | displayId | number | 否 | 指定的屏幕编号，未指定则从默认主屏幕获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -655,6 +700,7 @@ getWindows(displayId?: number): Promise<Array&lt;AccessibilityElement&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[无障碍子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-accessibility)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -678,7 +724,8 @@ axContext.getWindows().then((data: AccessibilityElement[]) => {
 
 
 
-#### getWindows(deprecated)
+### getWindows(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -694,6 +741,7 @@ getWindows(callback: AsyncCallback<Array&lt;AccessibilityElement&gt;>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<Array&lt;AccessibilityElement&gt;> | 是 | 回调函数。当获取窗口成功，err为undefined，data为默认主屏幕的所有窗口；否则为错误对象。 |
@@ -702,6 +750,7 @@ getWindows(callback: AsyncCallback<Array&lt;AccessibilityElement&gt;>): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[无障碍子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-accessibility)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -727,7 +776,8 @@ axContext.getWindows((err: BusinessError, data: AccessibilityElement[]) => {
 
 
 
-#### getWindows(deprecated)
+### getWindows(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -743,6 +793,7 @@ getWindows(displayId: number, callback: AsyncCallback<Array&lt;AccessibilityElem
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | displayId | number | 是 | 指定的屏幕编号，用于标识要获取窗口的屏幕。 |
@@ -752,6 +803,7 @@ getWindows(displayId: number, callback: AsyncCallback<Array&lt;AccessibilityElem
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[无障碍子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-accessibility)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -778,7 +830,8 @@ axContext.getWindows(displayId, (err: BusinessError, data: AccessibilityElement[
 
 
 
-#### injectGesture(deprecated)
+### injectGesture(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -794,12 +847,14 @@ injectGesture(gesturePath: GesturePath): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | gesturePath | GesturePath | 是 | 表示手势的路径信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -809,6 +864,7 @@ injectGesture(gesturePath: GesturePath): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[无障碍子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-accessibility)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -838,7 +894,8 @@ axContext.injectGesture(gesturePath).then(() => {
 
 
 
-#### injectGesture(deprecated)
+### injectGesture(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -854,6 +911,7 @@ injectGesture(gesturePath: GesturePath, callback: AsyncCallback&lt;void&gt;): vo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | gesturePath | GesturePath | 是 | 表示手势的路径信息。 |
@@ -863,6 +921,7 @@ injectGesture(gesturePath: GesturePath, callback: AsyncCallback&lt;void&gt;): vo
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[无障碍子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-accessibility)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -893,7 +952,8 @@ axContext.injectGesture(gesturePath, (err: BusinessError) => {
 
 
 
-#### injectGestureSync(deprecated)
+### injectGestureSync(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -909,6 +969,7 @@ injectGestureSync(gesturePath: GesturePath): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | gesturePath | GesturePath | 是 | 表示手势的路径信息。 |
@@ -917,6 +978,7 @@ injectGestureSync(gesturePath: GesturePath): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[无障碍子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-accessibility)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -940,7 +1002,8 @@ axContext.injectGestureSync(gesturePath);
 
 
 
-#### AccessibilityElement
+## AccessibilityElement
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -950,7 +1013,8 @@ axContext.injectGestureSync(gesturePath);
 
 
 
-#### attributeNames(deprecated)
+### attributeNames(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -965,6 +1029,7 @@ attributeNames<T extends keyof ElementAttributeValues>() : Promise<Array&lt;T&gt
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -987,7 +1052,8 @@ rootElement.attributeNames().then((data: ElementAttributeKeys[]) => {
 
 
 
-#### attributeNames(deprecated)
+### attributeNames(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1002,6 +1068,7 @@ attributeNames<T extends keyof ElementAttributeValues>(callback: AsyncCallback<A
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1026,7 +1093,8 @@ rootElement.attributeNames((err: BusinessError, data: ElementAttributeKeys[]) =>
 
 
 
-#### attributeValue(deprecated)
+### attributeValue(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1042,12 +1110,14 @@ attributeValue<T extends keyof ElementAttributeValues>(attributeName: T): Promis
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | attributeName | ElementAttributeKeys | 是 | 表示属性的名称。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1057,6 +1127,7 @@ attributeValue<T extends keyof ElementAttributeValues>(attributeName: T): Promis
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[无障碍子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-accessibility)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1082,7 +1153,8 @@ rootElement.attributeValue(attributeName).then((data: string) => {
 
 
 
-#### attributeValue(deprecated)
+### attributeValue(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1098,6 +1170,7 @@ attributeValue<T extends keyof ElementAttributeValues>(attributeName: T, callbac
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | attributeName | ElementAttributeKeys | 是 | 表示属性的名称。 |
@@ -1107,6 +1180,7 @@ attributeValue<T extends keyof ElementAttributeValues>(attributeName: T, callbac
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[无障碍子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-accessibility)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1134,7 +1208,8 @@ rootElement.attributeValue(attributeName, (err: BusinessError, data: string) => 
 
 
 
-#### actionNames(deprecated)
+### actionNames(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1149,6 +1224,7 @@ actionNames(): Promise<Array&lt;string&gt;>
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1170,7 +1246,8 @@ rootElement.actionNames().then((data: string[]) => {
 
 
 
-#### actionNames(deprecated)
+### actionNames(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1185,6 +1262,7 @@ actionNames(callback: AsyncCallback<Array&lt;string&gt;>): void
 **系统能力：** SystemCapability.BarrierFree.Accessibility.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1208,7 +1286,8 @@ rootElement.actionNames((err: BusinessError, data: string[]) => {
 
 
 
-#### performAction(deprecated)
+### performAction(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1224,6 +1303,7 @@ performAction(actionName: string, parameters?: object): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | actionName | string | 是 | 表示操作的名称，取值参考Action。 |
@@ -1231,6 +1311,7 @@ performAction(actionName: string, parameters?: object): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1240,6 +1321,7 @@ performAction(actionName: string, parameters?: object): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[无障碍子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-accessibility)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1304,7 +1386,8 @@ rootElement.performAction('setCursorPosition', {
 
 
 
-#### performAction(deprecated)
+### performAction(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1320,6 +1403,7 @@ performAction(actionName: string, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | actionName | string | 是 | 表示操作的名称，取值参考Action。 |
@@ -1329,6 +1413,7 @@ performAction(actionName: string, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[无障碍子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-accessibility)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1355,7 +1440,8 @@ rootElement.performAction(actionName, (err: BusinessError) => {
 
 
 
-#### performAction(deprecated)
+### performAction(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1371,6 +1457,7 @@ performAction(actionName: string, parameters: object, callback: AsyncCallback&lt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | actionName | string | 是 | 表示操作的名称，取值参考Action。 |
@@ -1381,6 +1468,7 @@ performAction(actionName: string, parameters: object, callback: AsyncCallback&lt
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[无障碍子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-accessibility)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1408,7 +1496,8 @@ rootElement.performAction(actionName, parameters, (err: BusinessError) => {
 
 
 
-#### findElement('content')(deprecated)
+### findElement('content')(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1424,6 +1513,7 @@ findElement(type: 'content', condition: string): Promise<Array&lt;AccessibilityE
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定为'content'，表示查找的类型为节点元素内容。 |
@@ -1431,6 +1521,7 @@ findElement(type: 'content', condition: string): Promise<Array&lt;AccessibilityE
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1440,6 +1531,7 @@ findElement(type: 'content', condition: string): Promise<Array&lt;AccessibilityE
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1464,7 +1556,8 @@ rootElement.findElement('content', condition).then((data: AccessibilityElement[]
 
 
 
-#### findElement('content')(deprecated)
+### findElement('content')(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1480,6 +1573,7 @@ findElement(type: 'content', condition: string, callback: AsyncCallback<Array&lt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定为'content'，表示查找的类型为节点元素内容。 |
@@ -1490,6 +1584,7 @@ findElement(type: 'content', condition: string, callback: AsyncCallback<Array&lt
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1516,7 +1611,8 @@ rootElement.findElement('content', condition, (err: BusinessError, data: Accessi
 
 
 
-#### findElement('focusType')(deprecated)
+### findElement('focusType')(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1532,6 +1628,7 @@ findElement(type: 'focusType', condition: FocusType): Promise&lt;AccessibilityEl
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定为'focusType'，表示查询的类型为节点的焦点元素类型。 |
@@ -1539,6 +1636,7 @@ findElement(type: 'focusType', condition: FocusType): Promise&lt;AccessibilityEl
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1548,6 +1646,7 @@ findElement(type: 'focusType', condition: FocusType): Promise&lt;AccessibilityEl
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1572,7 +1671,8 @@ rootElement.findElement('focusType', condition).then((data: AccessibilityElement
 
 
 
-#### findElement('focusType')(deprecated)
+### findElement('focusType')(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1588,6 +1688,7 @@ findElement(type: 'focusType', condition: FocusType, callback: AsyncCallback&lt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定为'focusType'，表示查询的类型为节点的焦点元素类型。 |
@@ -1598,6 +1699,7 @@ findElement(type: 'focusType', condition: FocusType, callback: AsyncCallback&lt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1624,7 +1726,8 @@ rootElement.findElement('focusType', condition, (err: BusinessError, data: Acces
 
 
 
-#### findElement('focusDirection')(deprecated)
+### findElement('focusDirection')(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1640,6 +1743,7 @@ findElement(type: 'focusDirection', condition: FocusDirection): Promise&lt;Acces
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定为'focusDirection'，表示查询的类型为节点的下一焦点元素方向。 |
@@ -1647,6 +1751,7 @@ findElement(type: 'focusDirection', condition: FocusDirection): Promise&lt;Acces
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1656,6 +1761,7 @@ findElement(type: 'focusDirection', condition: FocusDirection): Promise&lt;Acces
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1680,7 +1786,8 @@ rootElement.findElement('focusDirection', condition).then((data: AccessibilityEl
 
 
 
-#### findElement('focusDirection')(deprecated)
+### findElement('focusDirection')(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1696,6 +1803,7 @@ findElement(type: 'focusDirection', condition: FocusDirection, callback: AsyncCa
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定为'focusDirection'，表示查询的类型为节点的下一焦点元素方向。 |
@@ -1706,6 +1814,7 @@ findElement(type: 'focusDirection', condition: FocusDirection, callback: AsyncCa
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

@@ -1,9 +1,9 @@
 # @ohos.distributedsched.proxyChannelManager (代理通道管理)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-proxychannelmanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 软总线具备常驻运行能力，可为跨设备通信提供稳定可靠的底层通道。本模块基于软总线进程开发，支持手机与穿戴设备间的数据互通，可为用户提供无缝的设备互联体验，同时降低开发者跨设备通信的实现复杂度，无需自行处理底层通信协议和进程唤醒逻辑。使用场景：手机侧应用与穿戴设备侧应用协同时，当手机侧应用不在前台时，手机侧应用的下行消息经由通知服务器，通过代理模块发送给穿戴设备侧；当穿戴设备向手机发送数据时，代理模块可动态唤醒手机侧对应应用进程以接收和处理数据。模块核心功能包括：代理通道管理、数据路由管理、应用状态感知和唤醒、全链路状态监控。
 
@@ -18,9 +18,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { proxyChannelManager } from '@kit.DistributedServiceKit';
@@ -28,9 +29,10 @@ import { proxyChannelManager } from '@kit.DistributedServiceKit';
 
 
 
-#### 使用说明
+## 使用说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 调用模块接口前，需要完成如下配置：
 1. 申请ohos.permission.ACCESS_BLUETOOTH权限。如何配置和申请权限，具体操作请参考[声明权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions)和[向用户申请授权](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/request-user-authorization)。
@@ -44,9 +46,10 @@ import { proxyChannelManager } from '@kit.DistributedServiceKit';
 
 
 
-#### proxyChannelManager.openProxyChannel
+## proxyChannelManager.openProxyChannel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | Tablet
 
 openProxyChannel(channelInfo: ChannelInfo): Promise&lt;number&gt;
 
@@ -62,12 +65,14 @@ openProxyChannel(channelInfo: ChannelInfo): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | channelInfo | ChannelInfo | 是 | 代理通道的链路类型及对端设备的MAC地址和对端监听服务的UUID信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -77,6 +82,7 @@ openProxyChannel(channelInfo: ChannelInfo): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参考[代理通道管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-proxychannelmanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -132,9 +138,10 @@ struct Index {
 
 
 
-#### proxyChannelManager.closeProxyChannel
+## proxyChannelManager.closeProxyChannel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | Tablet
 
 closeProxyChannel(channelId: number): void
 
@@ -150,6 +157,7 @@ closeProxyChannel(channelId: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | channelId | number | 是 | 打开代理通道时获取的channelId，取值范围为1~2147483647。使用无效或已关闭的channelId将返回错误码32390004，超出取值范围时返回错误码32390006。channelId仅在代理通道可用时生效，通道关闭或断连后将不可用。 |
@@ -158,6 +166,7 @@ closeProxyChannel(channelId: number): void
 **错误码：**
 
 以下错误码的详细介绍请参考[代理通道管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-proxychannelmanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -200,9 +209,10 @@ struct Index {
 
 
 
-#### proxyChannelManager.sendData
+## proxyChannelManager.sendData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | Tablet
 
 sendData(channelId: number, data: ArrayBuffer): Promise&lt;void&gt;
 
@@ -218,6 +228,7 @@ sendData(channelId: number, data: ArrayBuffer): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | channelId | number | 是 | 打开代理通道时获取的channelId，取值范围为1~2147483647。使用无效或已关闭的channelId将返回错误码32390004，超出取值范围时返回错误码32390006。channelId仅在代理通道可用时生效，通道关闭或断连后将不可用。 |
@@ -225,6 +236,7 @@ sendData(channelId: number, data: ArrayBuffer): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -234,6 +246,7 @@ sendData(channelId: number, data: ArrayBuffer): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参考[代理通道管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-proxychannelmanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -282,9 +295,10 @@ struct Index {
 
 
 
-#### proxyChannelManager.on('receiveData')
+## proxyChannelManager.on('receiveData')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | Tablet
 
 on(type: 'receiveData', channelId: number, callback: Callback&lt;DataInfo&gt;): void
 
@@ -300,6 +314,7 @@ on(type: 'receiveData', channelId: number, callback: Callback&lt;DataInfo&gt;): 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 设置订阅类型，固定取值为'receiveData'。 |
@@ -310,6 +325,7 @@ on(type: 'receiveData', channelId: number, callback: Callback&lt;DataInfo&gt;): 
 **错误码：**
 
 以下错误码的详细介绍请参考[代理通道管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-proxychannelmanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -351,9 +367,10 @@ struct Index {
 
 
 
-#### proxyChannelManager.off('receiveData')
+## proxyChannelManager.off('receiveData')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | Tablet
 
 off(type: 'receiveData', channelId: number, callback?: Callback&lt;DataInfo&gt;): void
 
@@ -369,6 +386,7 @@ off(type: 'receiveData', channelId: number, callback?: Callback&lt;DataInfo&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 设置订阅类型，固定取值为'receiveData'。 |
@@ -379,6 +397,7 @@ off(type: 'receiveData', channelId: number, callback?: Callback&lt;DataInfo&gt;)
 **错误码：**
 
 以下错误码的详细介绍请参考[代理通道管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-proxychannelmanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -418,9 +437,10 @@ struct Index {
 
 
 
-#### proxyChannelManager.on('channelStateChange')
+## proxyChannelManager.on('channelStateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | Tablet
 
 on(type: 'channelStateChange', channelId: number, callback: Callback&lt;ChannelStateInfo&gt;): void
 
@@ -436,6 +456,7 @@ on(type: 'channelStateChange', channelId: number, callback: Callback&lt;ChannelS
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 设置订阅类型，固定取值为'channelStateChange'。 |
@@ -446,6 +467,7 @@ on(type: 'channelStateChange', channelId: number, callback: Callback&lt;ChannelS
 **错误码：**
 
 以下错误码的详细介绍请参考[代理通道管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-proxychannelmanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -487,9 +509,10 @@ struct Index {
 
 
 
-#### proxyChannelManager.off('channelStateChange')
+## proxyChannelManager.off('channelStateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | Tablet
 
 off(type: 'channelStateChange', channelId: number, callback?: Callback&lt;ChannelStateInfo&gt;): void
 
@@ -505,6 +528,7 @@ off(type: 'channelStateChange', channelId: number, callback?: Callback&lt;Channe
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 设置订阅类型，固定取值为'channelStateChange'。 |
@@ -515,6 +539,7 @@ off(type: 'channelStateChange', channelId: number, callback?: Callback&lt;Channe
 **错误码：**
 
 以下错误码的详细介绍请参考[代理通道管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-proxychannelmanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -554,13 +579,15 @@ struct Index {
 
 
 
-#### DataInfo
+## DataInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 存放接收的数据信息，包括通道ID和数据。
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -570,13 +597,15 @@ struct Index {
 
 
 
-#### ChannelInfo
+## ChannelInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 打开代理通道函数的入参，包括代理通道的链路类型、对端设备的MAC地址和监听服务的UUID。
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -587,13 +616,15 @@ struct Index {
 
 
 
-#### ChannelStateInfo
+## ChannelStateInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 当代理通道状态变化时，用于表示代理通道的连接状态。
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -603,13 +634,15 @@ struct Index {
 
 
 
-#### ChannelState
+## ChannelState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通道状态发生变化时，代理通道上报的通道连接状态。
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -621,13 +654,15 @@ struct Index {
 
 
 
-#### LinkType
+## LinkType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 链路类型。
 
 **系统能力**：SystemCapability.DistributedSched.AppCollaboration
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

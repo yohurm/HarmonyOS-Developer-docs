@@ -1,16 +1,16 @@
 # Native与Sendable ArkTS对象绑定
 
-更新时间：2026-03-23 08:10:50
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-sendable-napi
 
-#### 场景介绍
+## 场景介绍
 
 通过napi_wrap_sendable将[Sendable](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable) ArkTS对象与Native的C++对象绑定，后续操作时再通过napi_unwrap_sendable将ArkTS对象绑定的C++对象取出，并对其进行操作。
 
 
 
-#### 使用示例
+## 使用示例
 1. 接口声明、编译配置以及模块注册
 
   **接口声明**

@@ -1,16 +1,17 @@
 # OH_AudioSuite_SpaceRenderRotationParams
 
-更新时间：2026-06-03 01:38:22（官网已下线）
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohaudiosuite-oh-audiosuite-spacerenderrotationparams
 **支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
-typedef struct {...} OH_AudioSuite_SpaceRenderRotationParams
+typedef struct OH_AudioSuite_SpaceRenderRotationParams {...} OH_AudioSuite_SpaceRenderRotationParams
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -24,20 +25,23 @@ typedef struct {...} OH_AudioSuite_SpaceRenderRotationParams
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | float x | 空间中的X坐标。取值范围为[-5.0, 5.0]，单位为米。 |
 | float y | 空间中的Y坐标。取值范围为[-5.0, 5.0]，单位为米。 |
 | float z | 空间中的Z坐标。取值范围为[-5.0, 5.0]，单位为米。 |
 | int32_t surroundTime | 单周环绕时间。取值范围为[2, 40]，单位为秒。 |
-| OH_AudioSuite_SurroundDirection surroundDirection | 单周环绕方向。取值范围为[0, 1]。 |
+| OH_AudioSuite_SurroundDirection surroundDirection | 环绕方向。0表示逆时针旋转，1表示顺时针旋转。 |

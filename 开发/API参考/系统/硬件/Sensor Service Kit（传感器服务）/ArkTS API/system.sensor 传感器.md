@@ -1,6 +1,6 @@
 # @system.sensor (传感器)
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-system-sensor
 **支持设备：** Wearable | lite_wearable
@@ -20,7 +20,8 @@
 
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -30,13 +31,15 @@ import { Sensor } from '@kit.SensorServiceKit';
  
   
 
-#### Sensor
+## Sensor
+
 
 **支持设备：** Wearable | lite_wearable
 
   
 
-#### Sensor.subscribeAccelerometer
+### Sensor.subscribeAccelerometer
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -54,10 +57,11 @@ import { Sensor } from '@kit.SensorServiceKit';
  
 **系统能力**：SystemCapability.Sensors.Sensor.Lite
  
-**需要权限**：ohos.permission.ACCELEROMETER，该权限为系统权限
+**需要权限**：ohos.permission.ACCELEROMETER
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | subscribeAccelerometerOptions | 是 | 用于设置加速度传感器订阅的参数，包括回调频率和回调函数。 |
@@ -401,7 +405,8 @@ export default {
  
   
 
-#### Sensor.unsubscribeAccelerometer
+### Sensor.unsubscribeAccelerometer
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -419,7 +424,7 @@ static unsubscribeAccelerometer(): void
  
 **系统能力**：SystemCapability.Sensors.Sensor.Lite
  
-**需要权限**：ohos.permission.ACCELEROMETER，该权限为系统权限
+**需要权限**：ohos.permission.ACCELEROMETER
  
 **ArkTS示例**：
  
@@ -435,7 +440,8 @@ Sensor.unsubscribeAccelerometer();
  
   
 
-#### Sensor.subscribeCompass
+### Sensor.subscribeCompass
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -455,6 +461,7 @@ Sensor.unsubscribeAccelerometer();
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | SubscribeCompassOptions | 是 | 用于设置罗盘传感器订阅的参数，包括回调函数。 |
@@ -494,7 +501,8 @@ Sensor.subscribeCompass(subscribeCompassOptions);
  
   
 
-#### Sensor.unsubscribeCompass
+### Sensor.unsubscribeCompass
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -526,7 +534,8 @@ Sensor.unsubscribeCompass();
  
   
 
-#### Sensor.subscribeProximity
+### Sensor.subscribeProximity
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -548,6 +557,7 @@ Sensor.unsubscribeCompass();
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | SubscribeProximityOptions | 是 | 用于设置距离传感器订阅的参数，包括回调函数。 |
@@ -587,7 +597,8 @@ sensor.subscribeProximity(subscribeProximityOptions);
  
   
 
-#### Sensor.unsubscribeProximity
+### Sensor.unsubscribeProximity
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -621,7 +632,8 @@ Sensor.unsubscribeProximity();
  
   
 
-#### Sensor.subscribeLight
+### Sensor.subscribeLight
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -643,6 +655,7 @@ Sensor.unsubscribeProximity();
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | SubscribeLightOptions | 是 | 当环境光传感器数据发生变化时调用。 |
@@ -682,7 +695,8 @@ sensor.subscribeLight(subscribeLightOptions);
  
   
 
-#### Sensor.unsubscribeLight
+### Sensor.unsubscribeLight
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -716,7 +730,8 @@ Sensor.unsubscribeLight();
  
   
 
-#### Sensor.subscribeStepCounter
+### Sensor.subscribeStepCounter
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -738,6 +753,7 @@ Sensor.unsubscribeLight();
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | SubscribeStepCounterOptions | 是 | 当步进计数器传感器数据发生变化时调用。 |
@@ -777,7 +793,8 @@ sensor.subscribeStepCounter(subscribeStepCounterOptions);
  
   
 
-#### Sensor.unsubscribeStepCounter
+### Sensor.unsubscribeStepCounter
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -811,7 +828,8 @@ Sensor.unsubscribeStepCounter();
  
   
 
-#### Sensor.subscribeBarometer
+### Sensor.subscribeBarometer
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -831,6 +849,7 @@ static subscribeBarometer(options: SubscribeBarometerOptions): void
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | SubscribeBarometerOptions | 是 | 当气压计传感器数据发生变化时调用。 |
@@ -870,7 +889,8 @@ sensor.subscribeBarometer(subscribeBarometerOptions);
  
   
 
-#### Sensor.unsubscribeBarometer
+### Sensor.unsubscribeBarometer
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -902,7 +922,8 @@ Sensor.unsubscribeBarometer();
  
   
 
-#### Sensor.subscribeHeartRate
+### Sensor.subscribeHeartRate
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -924,6 +945,7 @@ Sensor.unsubscribeBarometer();
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | SubscribeHeartRateOptions | 是 | 当心率传感器数据发生变化时调用。 |
@@ -963,7 +985,8 @@ sensor.subscribeHeartRate(subscribeHeartRateOptions);
  
   
 
-#### Sensor.unsubscribeHeartRate
+### Sensor.unsubscribeHeartRate
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -997,7 +1020,8 @@ Sensor.unsubscribeHeartRate();
  
   
 
-#### Sensor.subscribeOnBodyState
+### Sensor.subscribeOnBodyState
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1017,6 +1041,7 @@ Sensor.unsubscribeHeartRate();
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | SubscribeOnBodyStateOptions | 是 | 当佩戴状态改变时调用。 |
@@ -1056,7 +1081,8 @@ sensor.subscribeOnBodyState(subscribeOnBodyStateOptions);
  
   
 
-#### Sensor.unsubscribeOnBodyState
+### Sensor.unsubscribeOnBodyState
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1088,7 +1114,8 @@ Sensor.unsubscribeOnBodyState();
  
   
 
-#### Sensor.getOnBodyState
+### Sensor.getOnBodyState
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1108,6 +1135,7 @@ Sensor.unsubscribeOnBodyState();
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | GetOnBodyStateOptions | 是 | 获取传感器所在设备佩戴状态时调用。 |
@@ -1147,7 +1175,8 @@ sensor.getOnBodyState(getOnBodyStateOptions);
  
   
 
-#### Sensor.subscribeDeviceOrientation6+
+### Sensor.subscribeDeviceOrientation6+
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1169,6 +1198,7 @@ sensor.getOnBodyState(getOnBodyStateOptions);
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | SubscribeDeviceOrientationOptions | 是 | 用于设置设备方向传感器订阅的参数，包括回调频率和回调函数。 |
@@ -1214,7 +1244,8 @@ sensor.subscribeDeviceOrientation(subscribeDeviceOrientationOptions);
  
   
 
-#### Sensor.unsubscribeDeviceOrientation6+
+### Sensor.unsubscribeDeviceOrientation6+
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1248,7 +1279,8 @@ Sensor.unsubscribeDeviceOrientation();
  
   
 
-#### Sensor.subscribeGyroscope6+
+### Sensor.subscribeGyroscope6+
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1266,10 +1298,11 @@ Sensor.unsubscribeDeviceOrientation();
  
 **系统能力**：SystemCapability.Sensors.Sensor.Lite
  
-**需要权限**：ohos.permission.GYROSCOPE，该权限为系统权限
+**需要权限**：ohos.permission.GYROSCOPE
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | SubscribeGyroscopeOptions | 是 | 用于设置陀螺仪传感器订阅的参数，包括回调频率和回调函数。 |
@@ -1315,7 +1348,8 @@ sensor.subscribeGyroscope(subscribeGyroscopeOptions);
  
   
 
-#### Sensor.unsubscribeGyroscope6+
+### Sensor.unsubscribeGyroscope6+
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1331,7 +1365,7 @@ static unsubscribeGyroscope(): void
 > 除Lite Wearable外，从API version 8开始，建议使用 GYROSCOPE 替代。 系统能力 ：SystemCapability.Sensors.Sensor.Lite
 
  
-**需要权限**：ohos.permission.GYROSCOPE，该权限为系统权限
+**需要权限**：ohos.permission.GYROSCOPE
  
 **ArkTS示例**：
  
@@ -1347,7 +1381,8 @@ Sensor.unsubscribeGyroscope();
  
   
 
-#### subscribeAccelerometerOptions
+## subscribeAccelerometerOptions
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1357,6 +1392,7 @@ Sensor.unsubscribeGyroscope();
  
 **需要权限**：ohos.permission.ACCELEROMETER
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | interval | string | 否 | 否 | 频率参数，加速度的回调函数执行频率。 默认值：'normal'。 可选值： -'game'：极高的回调频率，20ms/次，适用于游戏场景。 -'ui'：较高的回调频率，60ms/次，适用于UI更新场景。 -'normal'：普通的回调频率，200ms/次，适用于低功耗场景。 |
@@ -1366,7 +1402,8 @@ Sensor.unsubscribeGyroscope();
  
   
 
-#### AccelerometerResponse
+## AccelerometerResponse
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1376,6 +1413,7 @@ Sensor.unsubscribeGyroscope();
  
 **需要权限**：ohos.permission.ACCELEROMETER
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | x | number | 否 | 否 | 施加在设备x轴的加速度。单位：m/s²。取值范围：取值为实际上报物理量，由硬件传感器决定。 |
@@ -1385,7 +1423,8 @@ Sensor.unsubscribeGyroscope();
  
   
 
-#### SubscribeCompassOptions
+## SubscribeCompassOptions
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1393,6 +1432,7 @@ Sensor.unsubscribeGyroscope();
  
 **系统能力**：SystemCapability.Sensors.Sensor.Lite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | success | CompassResponse | 否 | 否 | 罗盘数据改变后触发的回调函数，回调参数为CompassResponse对象。 |
@@ -1401,7 +1441,8 @@ Sensor.unsubscribeGyroscope();
  
   
 
-#### CompassResponse
+## CompassResponse
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1409,6 +1450,7 @@ Sensor.unsubscribeGyroscope();
  
 **系统能力**：SystemCapability.Sensors.Sensor.Lite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | direction | number | 否 | 否 | 设备面对的方向度数。单位：°（度）。取值范围：[0, 360)，0表示朝北。取值为实际上报物理量。 |
@@ -1416,7 +1458,8 @@ Sensor.unsubscribeGyroscope();
  
   
 
-#### SubscribeProximityOptions
+## SubscribeProximityOptions
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1426,6 +1469,7 @@ Sensor.unsubscribeGyroscope();
  
 **设备行为差异**：该接口在Wearable、Lite Wearable中可正常调用，在其他设备类型中无效果。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | success | ProximityResponse | 否 | 否 | 距离感应数据改变后调用的回调函数，回调参数为ProximityResponse对象。 |
@@ -1434,7 +1478,8 @@ Sensor.unsubscribeGyroscope();
  
   
 
-#### ProximityResponse
+## ProximityResponse
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1444,6 +1489,7 @@ Sensor.unsubscribeGyroscope();
  
 **设备行为差异**：该接口在Wearable、Lite Wearable中可正常调用，在其他设备类型中无效果。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | distance | number | 否 | 否 | 可见物体相对于设备显示屏的接近或远离状态。取值说明：0表示物体接近屏幕（近状态），大于0表示物体远离屏幕（远状态）。具体远状态数值由硬件传感器决定。 |
@@ -1451,7 +1497,8 @@ Sensor.unsubscribeGyroscope();
  
   
 
-#### SubscribeLightOptions
+## SubscribeLightOptions
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1461,6 +1508,7 @@ Sensor.unsubscribeGyroscope();
  
 **设备行为差异**：该接口在Wearable、Lite Wearable中可正常调用，在其他设备类型中无效果。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | success | LightResponse | 否 | 否 | 光线感应数据改变后的回调函数，回调参数为LightResponse对象。 |
@@ -1469,7 +1517,8 @@ Sensor.unsubscribeGyroscope();
  
   
 
-#### LightResponse
+## LightResponse
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1479,6 +1528,7 @@ Sensor.unsubscribeGyroscope();
  
 **设备行为差异**：该接口在Wearable、Lite Wearable中可正常调用，在其他设备类型中无效果。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | intensity | number | 否 | 否 | 环境光线强度。单位：lux（勒克斯）。取值范围：取值为实际上报物理量，由硬件传感器决定。 |
@@ -1486,7 +1536,8 @@ Sensor.unsubscribeGyroscope();
  
   
 
-#### SubscribeStepCounterOptions
+## SubscribeStepCounterOptions
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1496,6 +1547,7 @@ Sensor.unsubscribeGyroscope();
  
 **系统能力**：SystemCapability.Sensors.Sensor.Lite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | success | StepCounterResponse | 否 | 否 | 计步传感器数据改变后的回调函数，回调参数为StepCounterResponse对象。 |
@@ -1504,7 +1556,8 @@ Sensor.unsubscribeGyroscope();
  
   
 
-#### StepCounterResponse
+## StepCounterResponse
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1514,6 +1567,7 @@ Sensor.unsubscribeGyroscope();
  
 **系统能力**：SystemCapability.Sensors.Sensor.Lite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | steps | number | 否 | 否 | 计步传感器重启后累计记录的步数。取值范围：大于等于0的整数，取值为实际上报物理量。传感器重启后步数从0重新开始累计。 |
@@ -1521,7 +1575,8 @@ Sensor.unsubscribeGyroscope();
  
   
 
-#### SubscribeBarometerOptions
+## SubscribeBarometerOptions
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1529,6 +1584,7 @@ Sensor.unsubscribeGyroscope();
  
 **系统能力**：SystemCapability.Sensors.Sensor.Lite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | success | BarometerResponse | 否 | 否 | 气压计传感器数据改变后的回调函数，回调参数为BarometerResponse对象。 |
@@ -1537,7 +1593,8 @@ Sensor.unsubscribeGyroscope();
  
   
 
-#### BarometerResponse
+## BarometerResponse
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1545,6 +1602,7 @@ Sensor.unsubscribeGyroscope();
  
 **系统能力**：SystemCapability.Sensors.Sensor.Lite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | pressure | number | 否 | 否 | 气压值。单位：Pa（帕斯卡）。取值范围：取值为实际上报物理量，由硬件传感器决定。标准大气压约为101325 Pa。 |
@@ -1552,7 +1610,8 @@ Sensor.unsubscribeGyroscope();
  
   
 
-#### SubscribeHeartRateOptions
+## SubscribeHeartRateOptions
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1562,6 +1621,7 @@ Sensor.unsubscribeGyroscope();
  
 **系统能力**：SystemCapability.Sensors.Sensor.Lite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | success | HeartRateResponse | 否 | 否 | 心率传感器数据改变后的回调函数，回调参数为HeartRateResponse对象。回调频率固定为5s/次。 |
@@ -1570,7 +1630,8 @@ Sensor.unsubscribeGyroscope();
  
   
 
-#### HeartRateResponse
+## HeartRateResponse
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1580,6 +1641,7 @@ Sensor.unsubscribeGyroscope();
  
 **系统能力**：SystemCapability.Sensors.Sensor.Lite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | heartRate | number | 否 | 否 | 心率值。单位：bpm（beats per minute，每分钟心跳次数）。取值范围：取值为实际上报物理量，由硬件传感器决定。正常成人静息心率约为60-100 bpm。 |
@@ -1587,7 +1649,8 @@ Sensor.unsubscribeGyroscope();
  
   
 
-#### SubscribeOnBodyStateOptions
+## SubscribeOnBodyStateOptions
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1595,6 +1658,7 @@ Sensor.unsubscribeGyroscope();
  
 **系统能力**：SystemCapability.Sensors.Sensor.Lite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | success | OnBodyStateResponse | 否 | 否 | 传感器所在设备佩戴状态改变后的回调函数，回调参数为OnBodyStateResponse对象。 |
@@ -1603,7 +1667,8 @@ Sensor.unsubscribeGyroscope();
  
   
 
-#### OnBodyStateResponse
+## OnBodyStateResponse
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1611,6 +1676,7 @@ Sensor.unsubscribeGyroscope();
  
 **系统能力**：SystemCapability.Sensors.Sensor.Lite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | value | boolean | 否 | 否 | 是否已佩戴设备。取值说明：true表示已佩戴，false表示未佩戴。 |
@@ -1618,7 +1684,8 @@ Sensor.unsubscribeGyroscope();
  
   
 
-#### GetOnBodyStateOptions
+## GetOnBodyStateOptions
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1626,6 +1693,7 @@ Sensor.unsubscribeGyroscope();
  
 **系统能力**：SystemCapability.Sensors.Sensor.Lite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | success | OnBodyStateResponse | 否 | 否 | 接口调用成功的回调函数，回调参数为OnBodyStateResponse对象。 |
@@ -1635,7 +1703,8 @@ Sensor.unsubscribeGyroscope();
  
   
 
-#### SubscribeDeviceOrientationOptions6+
+## SubscribeDeviceOrientationOptions6+
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1645,6 +1714,7 @@ Sensor.unsubscribeGyroscope();
  
 **设备行为差异**：该接口在Wearable、Lite Wearable中可正常调用，在其他设备类型中无效果。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | interval | string | 否 | 否 | 频率参数，设备方向传感器的回调函数执行频率。 默认值：'normal'。 可选值： -'game'：极高的回调频率，20ms/次，适用于游戏场景。 -'ui'：较高的回调频率，60ms/次，适用于UI更新场景。 -'normal'：普通的回调频率，200ms/次，适用于低功耗场景。 |
@@ -1654,7 +1724,8 @@ Sensor.unsubscribeGyroscope();
  
   
 
-#### DeviceOrientationResponse6+
+## DeviceOrientationResponse6+
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1664,6 +1735,7 @@ Sensor.unsubscribeGyroscope();
  
 **设备行为差异**：该接口在Wearable、Lite Wearable中可正常调用，在其他设备类型中无效果。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | alpha | number | 否 | 否 | 当设备坐标X/Y和地球X/Y重合时，绕着Z轴转动的夹角。单位：°（度）。取值范围：[0, 360)。 |
@@ -1673,7 +1745,8 @@ Sensor.unsubscribeGyroscope();
  
   
 
-#### SubscribeGyroscopeOptions6+
+## SubscribeGyroscopeOptions6+
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1683,6 +1756,7 @@ Sensor.unsubscribeGyroscope();
  
 **系统能力**：SystemCapability.Sensors.Sensor.Lite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | interval | string | 否 | 否 | 频率参数，陀螺仪的回调函数执行频率。 默认值：'normal'。 可选值： -'game'：极高的回调频率，20ms/次，适用于游戏场景。 -'ui'：较高的回调频率，60ms/次，适用于UI更新场景。 -'normal'：普通的回调频率，200ms/次，适用于低功耗场景。 |
@@ -1692,7 +1766,8 @@ Sensor.unsubscribeGyroscope();
  
   
 
-#### GyroscopeResponse6+
+## GyroscopeResponse6+
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -1702,6 +1777,7 @@ Sensor.unsubscribeGyroscope();
  
 **系统能力**：SystemCapability.Sensors.Sensor.Lite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | x | number | 否 | 否 | x轴的旋转角速度。单位：rad/s（弧度/秒）。取值范围：取值为实际上报物理量，由硬件传感器决定。 |

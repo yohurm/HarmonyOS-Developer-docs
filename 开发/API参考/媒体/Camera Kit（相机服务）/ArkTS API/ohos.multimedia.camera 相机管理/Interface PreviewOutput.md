@@ -1,9 +1,9 @@
 # Interface (PreviewOutput)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-previewoutput
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 预览输出类。继承[CameraOutput](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-cameraoutput)。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { camera } from '@kit.CameraKit';
@@ -22,9 +23,10 @@ import { camera } from '@kit.CameraKit';
 
 
 
-#### on('frameStart')
+## on('frameStart')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'frameStart', callback: AsyncCallback&lt;void&gt;): void
 
@@ -39,6 +41,7 @@ on(type: 'frameStart', callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -66,9 +69,10 @@ function registerPreviewOutputFrameStart(previewOutput: camera.PreviewOutput): v
 
 
 
-#### off('frameStart')
+## off('frameStart')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'frameStart', callback?: AsyncCallback&lt;void&gt;): void
 
@@ -79,6 +83,7 @@ off(type: 'frameStart', callback?: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -96,9 +101,10 @@ function unregisterPreviewOutputFrameStart(previewOutput: camera.PreviewOutput):
 
 
 
-#### on('frameEnd')
+## on('frameEnd')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'frameEnd', callback: AsyncCallback&lt;void&gt;): void
 
@@ -113,6 +119,7 @@ on(type: 'frameEnd', callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -140,9 +147,10 @@ function registerPreviewOutputFrameEnd(previewOutput: camera.PreviewOutput): voi
 
 
 
-#### off('frameEnd')
+## off('frameEnd')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'frameEnd', callback?: AsyncCallback&lt;void&gt;): void
 
@@ -153,6 +161,7 @@ off(type: 'frameEnd', callback?: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -170,9 +179,10 @@ function unregisterPreviewOutputFrameEnd(previewOutput: camera.PreviewOutput): v
 
 
 
-#### on('error')
+## on('error')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'error', callback: ErrorCallback): void
 
@@ -187,6 +197,7 @@ on(type: 'error', callback: ErrorCallback): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -210,9 +221,10 @@ function registerPreviewOutputError(previewOutput: camera.PreviewOutput): void {
 
 
 
-#### off('error')
+## off('error')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'error', callback?: ErrorCallback): void
 
@@ -223,6 +235,7 @@ off(type: 'error', callback?: ErrorCallback): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -240,9 +253,10 @@ function unregisterPreviewOutputError(previewOutput: camera.PreviewOutput): void
 
 
 
-#### getSupportedFrameRates12+
+## getSupportedFrameRates12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSupportedFrameRates(): Array&lt;FrameRateRange&gt;
 
@@ -253,6 +267,7 @@ getSupportedFrameRates(): Array&lt;FrameRateRange&gt;
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -270,9 +285,10 @@ function getSupportedFrameRates(previewOutput: camera.PreviewOutput): Array<came
 
 
 
-#### setFrameRate12+
+## setFrameRate12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setFrameRate(minFps: number, maxFps: number): void
 
@@ -290,6 +306,7 @@ setFrameRate(minFps: number, maxFps: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | minFps | number | 是 | 最小帧率（单位：fps），当传入的最大值小于最小值时，传参异常，接口不生效。 |
@@ -299,6 +316,7 @@ setFrameRate(minFps: number, maxFps: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -316,9 +334,10 @@ function setFrameRateRange(previewOutput: camera.PreviewOutput, frameRateRange: 
 
 
 
-#### getActiveFrameRate12+
+## getActiveFrameRate12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getActiveFrameRate(): FrameRateRange
 
@@ -331,6 +350,7 @@ getActiveFrameRate(): FrameRateRange
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -348,9 +368,10 @@ function getActiveFrameRate(previewOutput: camera.PreviewOutput): camera.FrameRa
 
 
 
-#### getActiveProfile12+
+## getActiveProfile12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getActiveProfile(): Profile
 
@@ -362,6 +383,7 @@ getActiveProfile(): Profile
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Profile | 当前生效的配置信息 |
@@ -370,6 +392,7 @@ getActiveProfile(): Profile
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -396,9 +419,10 @@ function testGetActiveProfile(previewOutput: camera.PreviewOutput): camera.Profi
 
 
 
-#### getPreviewRotation12+
+## getPreviewRotation12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPreviewRotation(displayRotation?: number): ImageRotation
 
@@ -417,12 +441,14 @@ getPreviewRotation(displayRotation?: number): ImageRotation
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | displayRotation | number | 否 | 显示设备的屏幕旋转角度，通过display.getDefaultDisplaySync获得。 从API version 23开始，入参displayRotation为可选参数，当不传入参数时，由系统获取displayRotation进行预览旋转角度计算。 单位为度数（degree），取值范围为[0, 360]。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -432,6 +458,7 @@ getPreviewRotation(displayRotation?: number): ImageRotation
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -473,9 +500,10 @@ function testGetPreviewRotationWithOutParam(previewOutput: camera.PreviewOutput)
 
 
 
-#### setPreviewRotation12+
+## setPreviewRotation12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setPreviewRotation(previewRotation: ImageRotation, isDisplayLocked?: boolean): void
 
@@ -487,6 +515,7 @@ setPreviewRotation(previewRotation: ImageRotation, isDisplayLocked?: boolean): v
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | previewRotation | ImageRotation | 是 | 预览旋转角度 |
@@ -496,6 +525,7 @@ setPreviewRotation(previewRotation: ImageRotation, isDisplayLocked?: boolean): v
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -522,9 +552,10 @@ function testSetPreviewRotation(previewOutput: camera.PreviewOutput, previewRota
 
 
 
-#### start(deprecated)
+## start(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 start(callback: AsyncCallback&lt;void&gt;): void
 
@@ -538,6 +569,7 @@ start(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当开始输出预览流成功，err为undefined，否则为错误对象。错误码类型CameraErrorCode。 |
@@ -546,6 +578,7 @@ start(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -570,9 +603,10 @@ function startPreviewOutput(previewOutput: camera.PreviewOutput): void {
 
 
 
-#### start(deprecated)
+## start(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 start(): Promise&lt;void&gt;
 
@@ -586,6 +620,7 @@ start(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -594,6 +629,7 @@ start(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -616,9 +652,10 @@ function startPreviewOutput(previewOutput: camera.PreviewOutput): void {
 
 
 
-#### stop(deprecated)
+## stop(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stop(callback: AsyncCallback&lt;void&gt;): void
 
@@ -631,6 +668,7 @@ stop(callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -655,9 +693,10 @@ function stopPreviewOutput(previewOutput: camera.PreviewOutput): void {
 
 
 
-#### stop(deprecated)
+## stop(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stop(): Promise&lt;void&gt;
 
@@ -670,6 +709,7 @@ stop(): Promise&lt;void&gt;
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -692,9 +732,10 @@ function stopPreviewOutput(previewOutput: camera.PreviewOutput): void {
 
 
 
-#### isBandwidthCompressionSupported23+
+## isBandwidthCompressionSupported23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isBandwidthCompressionSupported(): boolean
 
@@ -705,6 +746,7 @@ isBandwidthCompressionSupported(): boolean
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -731,9 +773,10 @@ function isBandwidthCompressionSupported(previewOutput: camera.PreviewOutput): b
 
 
 
-#### enableBandwidthCompression23+
+## enableBandwidthCompression23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableBandwidthCompression(enabled: boolean): void
 
@@ -751,6 +794,7 @@ enableBandwidthCompression(enabled: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 是否使能预览带宽压缩。true表示使能，false表示不使能。 |
@@ -759,6 +803,7 @@ enableBandwidthCompression(enabled: boolean): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -785,9 +830,10 @@ function enableBandwidthCompression(previewOutput: camera.PreviewOutput, enabled
 
 
 
-#### addDeferredSurface24+
+## addDeferredSurface24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addDeferredSurface(surfaceId: string): void
 
@@ -799,6 +845,7 @@ addDeferredSurface(surfaceId: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | surfaceId | string | 是 | 从XComponent组件获取的surfaceId。 |
@@ -807,6 +854,7 @@ addDeferredSurface(surfaceId: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -841,9 +889,10 @@ async function preview(cameraManager: camera.CameraManager, cameraInfo: camera.C
 
 
 
-#### isLogViewAssistSupported
+## isLogViewAssistSupported
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isLogViewAssistSupported(): boolean
 
@@ -862,6 +911,7 @@ LOG视频下，查询是否支持辅助监看功能。辅助监看开启后，�
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -888,9 +938,10 @@ function isLogViewAssistSupported(previewOutput: camera.PreviewOutput): boolean 
 
 
 
-#### setLogViewAssistEnable
+## setLogViewAssistEnable
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | Tablet
 
 setLogViewAssistEnable(enable: boolean): void
 
@@ -910,6 +961,7 @@ LOG视频下，使能辅助监看之前，可先使用方法[isLogViewAssistSupp
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | boolean | 是 | 是否使能辅助监看。true表示使能，false表示不使能。 |
@@ -918,6 +970,7 @@ LOG视频下，使能辅助监看之前，可先使用方法[isLogViewAssistSupp
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

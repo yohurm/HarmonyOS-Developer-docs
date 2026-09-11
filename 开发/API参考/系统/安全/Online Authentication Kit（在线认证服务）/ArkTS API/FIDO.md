@@ -1,22 +1,23 @@
 # FIDO
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/onlineauthentication-fido-api
 **支持设备：** Phone | PC/2in1 | Tablet
 
 本模块提供FIDO UAF本地免密认证能力，通过生物特征代替密码，支持免密登录，免密支付等业务场景，包括：
  
-1、开通FIDO免密身份认证功能。
+1、开通FIDO免密认证功能。
  
-2、使用FIDO免密身份认证功能。
+2、使用FIDO免密认证功能。
  
-3、关闭FIDO免密身份认证功能。
+3、关闭FIDO免密认证功能。
  
 **起始版本：** 4.1.0(11)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -29,7 +30,8 @@ import { fido } from '@kit.OnlineAuthenticationKit';
  
   
 
-#### ChannelBinding
+## ChannelBinding
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -43,6 +45,7 @@ import { fido } from '@kit.OnlineAuthenticationKit';
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | serverEndPoint | string | 否 | 是 | TLS服务器证书的base64url编码哈希值。长度由不同三方服务器限制，默认值为空。长度限制0到128。 |
@@ -54,7 +57,8 @@ import { fido } from '@kit.OnlineAuthenticationKit';
  
   
 
-#### UAFMessage
+## UAFMessage
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -68,6 +72,7 @@ UAF字典对象，包含原始的UAF协议消息和附加数据。
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | uafProtocolMessage | string | 否 | 否 | UAF协议消息。长度由不同三方服务器限制。注意其中若有challenge、transaction等字段，则包含上述字段的TA请求报文不可超过2048字节。 |
@@ -92,7 +97,8 @@ UAF字典对象，包含原始的UAF协议消息和附加数据。
  
   
 
-#### Version
+## Version
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -106,6 +112,7 @@ UAF协议版本信息。
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | major | number | 否 | 否 | 主要版本，默认值为1。 |
@@ -114,7 +121,8 @@ UAF协议版本信息。
  
   
 
-#### RgbPaletteEntry
+## RgbPaletteEntry
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -128,6 +136,7 @@ RGB三元调色板。
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | r | number | 否 | 否 | 红色样本值，取值为0~255。 |
@@ -137,7 +146,8 @@ RGB三元调色板。
  
   
 
-#### DisplayPNGCharacteristicsDescriptor
+## DisplayPNGCharacteristicsDescriptor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -151,6 +161,7 @@ PNG图片特征对象。
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | width | number | 否 | 否 | 图片宽度（dpi），长度满足uint32。 |
@@ -165,7 +176,8 @@ PNG图片特征对象。
  
   
 
-#### Authenticator
+## Authenticator
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -179,6 +191,7 @@ PNG图片特征对象。
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | title | string | 是 | 否 | 认证器名，长度由不同三方服务器限制。 |
@@ -202,7 +215,8 @@ PNG图片特征对象。
  
   
 
-#### DiscoveryData
+## DiscoveryData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -216,6 +230,7 @@ FIDO UAF客户端软件状态和可用的认证器数据。
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | supportedUAFVersions | Array&lt;Version&gt; | 否 | 否 | 客户端支持的FIDO UAF协议版本列表。 |
@@ -226,7 +241,8 @@ FIDO UAF客户端软件状态和可用的认证器数据。
  
   
 
-#### discover
+## fido.discover
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -244,6 +260,7 @@ discover(context: common.Context): Promise&lt;DiscoveryData&gt;
  
 **参数:**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 当前ability的应用上下文信息。 |
@@ -251,6 +268,7 @@ discover(context: common.Context): Promise&lt;DiscoveryData&gt;
  
 **返回值:**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;DiscoveryData&gt; | Promise对象。返回包含当前设备软件支持的认证器数据的对象。 |
@@ -260,6 +278,7 @@ discover(context: common.Context): Promise&lt;DiscoveryData&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[FIDO免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-fido)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -289,7 +308,8 @@ discover(context: common.Context): Promise&lt;DiscoveryData&gt;
  
   
 
-#### checkPolicy
+## fido.checkPolicy
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -307,6 +327,7 @@ checkPolicy(context: common.Context, uafRequest: UAFMessage): Promise&lt;void&gt
  
 **参数:**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | ability的context。 |
@@ -315,6 +336,7 @@ checkPolicy(context: common.Context, uafRequest: UAFMessage): Promise&lt;void&gt
  
 **返回值:**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -324,6 +346,7 @@ checkPolicy(context: common.Context, uafRequest: UAFMessage): Promise&lt;void&gt
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[FIDO免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-fido)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -360,7 +383,8 @@ checkPolicy(context: common.Context, uafRequest: UAFMessage): Promise&lt;void&gt
  
   
 
-#### processUAFOperation
+## fido.processUAFOperation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -378,6 +402,7 @@ processUAFOperation(context: common.Context, uafRequest: UAFMessage, channelBind
  
 **参数:**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | ability的context。 |
@@ -387,6 +412,7 @@ processUAFOperation(context: common.Context, uafRequest: UAFMessage, channelBind
  
 **返回值:**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;UAFMessage&gt; | Promise对象。返回包含签名后响应数据的UAFMessage消息对象。 |
@@ -396,6 +422,7 @@ processUAFOperation(context: common.Context, uafRequest: UAFMessage, channelBind
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[FIDO免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-fido)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -439,13 +466,14 @@ processUAFOperation(context: common.Context, uafRequest: UAFMessage, channelBind
  
   
 
-#### notifyUAFResult
+## fido.notifyUAFResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 notifyUAFResult(context: common.Context, uafResponse: UAFMessage): Promise&lt;void&gt;
  
-通知FIDO认证器FIDO免密身份认证功能的开启结果。使用Promise异步回调。
+通知FIDO认证器FIDO免密认证功能的开启结果。使用Promise异步回调。
  
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
  
@@ -457,6 +485,7 @@ notifyUAFResult(context: common.Context, uafResponse: UAFMessage): Promise&lt;vo
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | ability的context。 |
@@ -465,6 +494,7 @@ notifyUAFResult(context: common.Context, uafResponse: UAFMessage): Promise&lt;vo
  
 **返回值:**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -474,6 +504,7 @@ notifyUAFResult(context: common.Context, uafResponse: UAFMessage): Promise&lt;vo
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[FIDO免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-fido)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |

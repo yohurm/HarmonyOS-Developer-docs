@@ -1,6 +1,6 @@
 # Print_Property
 
-更新时间：2026-03-09 02:50:43
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-print-print-property
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -10,11 +10,12 @@ typedef struct {...} Print_Property
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
-表示打印机属性。
+Print_Property表示打印机属性，以键值对形式描述打印机的各类属性信息，开发者可通过该结构体获取或设置打印机的属性参数。
  
 **起始版本：** 12
  
@@ -24,17 +25,20 @@ typedef struct {...} Print_Property
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
-| char *key | 属性关键字。 |
-| char *value | 属性值。 |
+| char *key | 属性键，用于标识打印机属性的类型，取值须为OH_Print模块定义的有效属性名称。 |
+| char *value | 属性值，与属性键key对应的值内容，其格式和有效范围取决于对应的属性键。 |

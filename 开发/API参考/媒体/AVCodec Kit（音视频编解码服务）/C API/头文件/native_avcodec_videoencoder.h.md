@@ -1,13 +1,14 @@
 # native_avcodec_videoencoder.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avcodec-videoencoder-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明用于视频编码的接口。
 
@@ -27,11 +28,13 @@
 
 
 
-#### 接口状态矩阵
+### 接口状态矩阵
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 下方是不同状态下是否可以调用接口的情况概览，√表示可以调用，×表示不可调用。
+
 
 | 接口 | Initialized | Configured | Prepared | Flushed | Running | EndOfStream | Error | Released |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -65,15 +68,18 @@
 
 
 
-#### 汇总
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 汇总
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 枚举
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -82,9 +88,11 @@
 
 
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -122,15 +130,17 @@
 
 
 
-#### 枚举类型说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 枚举类型说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### OH_VideoEncodeBitrateMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### OH_VideoEncodeBitrateMode
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_VideoEncodeBitrateMode
@@ -148,6 +158,7 @@ enum OH_VideoEncodeBitrateMode
 
 **替代接口：** [OH_BitrateMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avcodec-base-h#oh_bitratemode)
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | CBR = 0 | 恒定码率模式。 替代接口： BITRATE_MODE_CBR |
@@ -157,15 +168,17 @@ enum OH_VideoEncodeBitrateMode
 
 
 
-#### 函数说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 函数说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### OH_VideoEncoder_OnNeedInputParameter()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### OH_VideoEncoder_OnNeedInputParameter()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_VideoEncoder_OnNeedInputParameter)(OH_AVCodec *codec, uint32_t index, OH_AVFormat *parameter, void *userData)
@@ -185,6 +198,7 @@ typedef void (*OH_VideoEncoder_OnNeedInputParameter)(OH_AVCodec *codec, uint32_t
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频编码实例的指针。 |
@@ -195,9 +209,10 @@ typedef void (*OH_VideoEncoder_OnNeedInputParameter)(OH_AVCodec *codec, uint32_t
 
 
 
-#### OH_VideoEncoder_CreateByMime()
+### OH_VideoEncoder_CreateByMime()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVCodec *OH_VideoEncoder_CreateByMime(const char *mime)
@@ -213,12 +228,14 @@ OH_AVCodec *OH_VideoEncoder_CreateByMime(const char *mime)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *mime | MIME类型描述字符串，请参阅AVCODEC_MIME_TYPE类型变量。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -227,9 +244,10 @@ OH_AVCodec *OH_VideoEncoder_CreateByMime(const char *mime)
 
 
 
-#### OH_VideoEncoder_CreateByName()
+### OH_VideoEncoder_CreateByName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVCodec *OH_VideoEncoder_CreateByName(const char *name)
@@ -247,12 +265,14 @@ OH_AVCodec *OH_VideoEncoder_CreateByName(const char *name)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *name | 视频编码器名称。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -261,9 +281,10 @@ OH_AVCodec *OH_VideoEncoder_CreateByName(const char *name)
 
 
 
-#### OH_VideoEncoder_CreatePrimaryWithPreproc()
+### OH_VideoEncoder_CreatePrimaryWithPreproc()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoEncoder_CreatePrimaryWithPreproc(const char *mime, OH_AVCodec **codec)
@@ -283,6 +304,7 @@ OH_AVErrCode OH_VideoEncoder_CreatePrimaryWithPreproc(const char *mime, OH_AVCod
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *mime | MIME类型字符串，不可为NULL。必须是支持的类型。 |
@@ -291,6 +313,7 @@ OH_AVErrCode OH_VideoEncoder_CreatePrimaryWithPreproc(const char *mime, OH_AVCod
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：mime为NULL / codec为NULL / MIME类型不支持。 AV_ERR_NO_MEMORY：内存分配失败。 |
@@ -298,9 +321,10 @@ OH_AVErrCode OH_VideoEncoder_CreatePrimaryWithPreproc(const char *mime, OH_AVCod
 
 
 
-#### OH_VideoEncoder_CreateSecondaryFromPrimary()
+### OH_VideoEncoder_CreateSecondaryFromPrimary()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoEncoder_CreateSecondaryFromPrimary(OH_AVCodec *primary, OH_AVCodec **codec)
@@ -324,6 +348,7 @@ OH_AVErrCode OH_VideoEncoder_CreateSecondaryFromPrimary(OH_AVCodec *primary, OH_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *primary | 主编码器句柄，必须由OH_VideoEncoder_CreatePrimaryWithPreproc创建，不可为NULL。 |
@@ -332,6 +357,7 @@ OH_AVErrCode OH_VideoEncoder_CreateSecondaryFromPrimary(OH_AVCodec *primary, OH_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：primary为NULL / codec为NULL / primary不是有效的主编码器。 AV_ERR_OPERATE_NOT_PERMIT：主编码器已存在关联的副编码器。 AV_ERR_NO_MEMORY：内存分配失败。 |
@@ -339,9 +365,10 @@ OH_AVErrCode OH_VideoEncoder_CreateSecondaryFromPrimary(OH_AVCodec *primary, OH_
 
 
 
-#### OH_VideoEncoder_Destroy()
+### OH_VideoEncoder_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoEncoder_Destroy(OH_AVCodec *codec)
@@ -357,12 +384,14 @@ OH_AVErrCode OH_VideoEncoder_Destroy(OH_AVCodec *codec)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频编码实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -371,9 +400,10 @@ OH_AVErrCode OH_VideoEncoder_Destroy(OH_AVCodec *codec)
 
 
 
-#### OH_VideoEncoder_SetCallback()
+### OH_VideoEncoder_SetCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoEncoder_SetCallback(OH_AVCodec *codec, OH_AVCodecAsyncCallback callback, void *userData)
@@ -393,6 +423,7 @@ OH_AVErrCode OH_VideoEncoder_SetCallback(OH_AVCodec *codec, OH_AVCodecAsyncCallb
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频编码实例的指针。 |
@@ -402,6 +433,7 @@ OH_AVErrCode OH_VideoEncoder_SetCallback(OH_AVCodec *codec, OH_AVCodecAsyncCallb
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_NO_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。 AV_ERR_INVALID_VAL：输入的codec指针为非编码器实例，或者为空指针。 AV_ERR_UNKNOWN：未知错误。 AV_ERR_OPERATE_NOT_PERMIT：操作不允许。 |
@@ -409,9 +441,10 @@ OH_AVErrCode OH_VideoEncoder_SetCallback(OH_AVCodec *codec, OH_AVCodecAsyncCallb
 
 
 
-#### OH_VideoEncoder_RegisterCallback()
+### OH_VideoEncoder_RegisterCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoEncoder_RegisterCallback(OH_AVCodec *codec, OH_AVCodecCallback callback, void *userData)
@@ -427,6 +460,7 @@ OH_AVErrCode OH_VideoEncoder_RegisterCallback(OH_AVCodec *codec, OH_AVCodecCallb
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频编码实例的指针。 |
@@ -436,6 +470,7 @@ OH_AVErrCode OH_VideoEncoder_RegisterCallback(OH_AVCodec *codec, OH_AVCodecCallb
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_NO_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。 AV_ERR_INVALID_VAL：输入的codec指针为非编码器实例，或者为空指针。 AV_ERR_UNKNOWN：未知错误。 AV_ERR_OPERATE_NOT_PERMIT：操作不允许。 |
@@ -443,9 +478,10 @@ OH_AVErrCode OH_VideoEncoder_RegisterCallback(OH_AVCodec *codec, OH_AVCodecCallb
 
 
 
-#### OH_VideoEncoder_RegisterParameterCallback()
+### OH_VideoEncoder_RegisterParameterCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoEncoder_RegisterParameterCallback(OH_AVCodec *codec, OH_VideoEncoder_OnNeedInputParameter onInputParameter, void *userData)
@@ -463,6 +499,7 @@ OH_AVErrCode OH_VideoEncoder_RegisterParameterCallback(OH_AVCodec *codec, OH_Vid
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频编码实例的指针。 |
@@ -472,6 +509,7 @@ OH_AVErrCode OH_VideoEncoder_RegisterParameterCallback(OH_AVCodec *codec, OH_Vid
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_NO_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。 AV_ERR_INVALID_VAL：输入的codec指针为非编码器实例，或者为空指针。 AV_ERR_UNKNOWN：未知错误。 AV_ERR_OPERATE_NOT_PERMIT：操作不允许。 AV_ERR_INVALID_STATE：本接口必须在OH_VideoEncoder_Configure接口前调用，如果在其他状态时调用，则返回此错误码。 |
@@ -479,9 +517,10 @@ OH_AVErrCode OH_VideoEncoder_RegisterParameterCallback(OH_AVCodec *codec, OH_Vid
 
 
 
-#### OH_VideoEncoder_Configure()
+### OH_VideoEncoder_Configure()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoEncoder_Configure(OH_AVCodec *codec, OH_AVFormat *format)
@@ -499,6 +538,7 @@ OH_AVErrCode OH_VideoEncoder_Configure(OH_AVCodec *codec, OH_AVFormat *format)
 
 参数校验：
 
+
 | Key | 配置正常范围的值 | 配置超出范围的值 | 不配置该参数 |
 | --- | --- | --- | --- |
 | OH_MD_KEY_WIDTH | AV_ERR_OK | AV_ERR_INVALID_VAL | AV_ERR_INVALID_VAL |
@@ -507,6 +547,7 @@ OH_AVErrCode OH_VideoEncoder_Configure(OH_AVCodec *codec, OH_AVFormat *format)
 | OH_MD_KEY_FRAME_RATE | AV_ERR_OK | AV_ERR_INVALID_VAL | AV_ERR_OK |
 | OH_MD_KEY_PROFILE 请参阅OH_MD_KEY_PROFILE | AV_ERR_OK | AV_ERR_INVALID_VAL | AV_ERR_OK |
 | OH_MD_KEY_I_FRAME_INTERVAL | AV_ERR_OK | \ | AV_ERR_OK |
+
 
 
 | OH_MD_KEY_ BITRATE | OH_MD_KEY_ QUALITY | OH_MD_KEY_ VIDEO_ENCODER_BITRATE_MODE | 返回值 | 说明 |
@@ -530,6 +571,7 @@ OH_AVErrCode OH_VideoEncoder_Configure(OH_AVCodec *codec, OH_AVFormat *format)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频编码实例的指针。 |
@@ -538,6 +580,7 @@ OH_AVErrCode OH_VideoEncoder_Configure(OH_AVCodec *codec, OH_AVFormat *format)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_NO_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。 AV_ERR_INVALID_VAL：1. 输入的codec指针为非编码器实例，或者为空指针；2. 输入format参数不支持。 AV_ERR_UNKNOWN：未知错误。 AV_ERR_OPERATE_NOT_PERMIT：操作不允许。 AV_ERR_INVALID_STATE：本接口必须在OH_VideoEncoder_Prepare接口前调用，如果在其他状态时调用，则返回此错误码。 AV_ERR_UNSUPPORT：不支持的像素格式。 |
@@ -545,9 +588,10 @@ OH_AVErrCode OH_VideoEncoder_Configure(OH_AVCodec *codec, OH_AVFormat *format)
 
 
 
-#### OH_VideoEncoder_Prepare()
+### OH_VideoEncoder_Prepare()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoEncoder_Prepare(OH_AVCodec *codec)
@@ -563,12 +607,14 @@ OH_AVErrCode OH_VideoEncoder_Prepare(OH_AVCodec *codec)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频编码实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -577,9 +623,10 @@ OH_AVErrCode OH_VideoEncoder_Prepare(OH_AVCodec *codec)
 
 
 
-#### OH_VideoEncoder_Start()
+### OH_VideoEncoder_Start()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoEncoder_Start(OH_AVCodec *codec)
@@ -599,12 +646,14 @@ Buffer模式下，编码器会立即触发输入回调，开发者每完成一�
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频编码实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -613,9 +662,10 @@ Buffer模式下，编码器会立即触发输入回调，开发者每完成一�
 
 
 
-#### OH_VideoEncoder_Stop()
+### OH_VideoEncoder_Stop()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoEncoder_Stop(OH_AVCodec *codec)
@@ -631,12 +681,14 @@ OH_AVErrCode OH_VideoEncoder_Stop(OH_AVCodec *codec)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频编码实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -645,9 +697,10 @@ OH_AVErrCode OH_VideoEncoder_Stop(OH_AVCodec *codec)
 
 
 
-#### OH_VideoEncoder_Flush()
+### OH_VideoEncoder_Flush()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoEncoder_Flush(OH_AVCodec *codec)
@@ -665,12 +718,14 @@ OH_AVErrCode OH_VideoEncoder_Flush(OH_AVCodec *codec)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频编码实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -679,9 +734,10 @@ OH_AVErrCode OH_VideoEncoder_Flush(OH_AVCodec *codec)
 
 
 
-#### OH_VideoEncoder_Reset()
+### OH_VideoEncoder_Reset()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoEncoder_Reset(OH_AVCodec *codec)
@@ -697,12 +753,14 @@ OH_AVErrCode OH_VideoEncoder_Reset(OH_AVCodec *codec)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频编码实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -711,9 +769,10 @@ OH_AVErrCode OH_VideoEncoder_Reset(OH_AVCodec *codec)
 
 
 
-#### OH_VideoEncoder_GetOutputDescription()
+### OH_VideoEncoder_GetOutputDescription()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVFormat *OH_VideoEncoder_GetOutputDescription(OH_AVCodec *codec)
@@ -731,12 +790,14 @@ OH_AVFormat *OH_VideoEncoder_GetOutputDescription(OH_AVCodec *codec)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频编码实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -745,9 +806,10 @@ OH_AVFormat *OH_VideoEncoder_GetOutputDescription(OH_AVCodec *codec)
 
 
 
-#### OH_VideoEncoder_SetParameter()
+### OH_VideoEncoder_SetParameter()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoEncoder_SetParameter(OH_AVCodec *codec, OH_AVFormat *format)
@@ -765,6 +827,7 @@ OH_AVErrCode OH_VideoEncoder_SetParameter(OH_AVCodec *codec, OH_AVFormat *format
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频编码实例的指针。 |
@@ -773,6 +836,7 @@ OH_AVErrCode OH_VideoEncoder_SetParameter(OH_AVCodec *codec, OH_AVFormat *format
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_NO_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。 AV_ERR_INVALID_VAL：1. 输入的codec指针为非编码器实例，或者为空指针；2. 输入format参数不支持。 AV_ERR_UNKNOWN：未知错误。 AV_ERR_OPERATE_NOT_PERMIT：操作不允许。 AV_ERR_INVALID_STATE：当前编码器状态不支持调用本接口。 |
@@ -780,9 +844,10 @@ OH_AVErrCode OH_VideoEncoder_SetParameter(OH_AVCodec *codec, OH_AVFormat *format
 
 
 
-#### OH_VideoEncoder_GetSurface()
+### OH_VideoEncoder_GetSurface()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoEncoder_GetSurface(OH_AVCodec *codec, OHNativeWindow **window)
@@ -798,6 +863,7 @@ OH_AVErrCode OH_VideoEncoder_GetSurface(OH_AVCodec *codec, OHNativeWindow **wind
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频编码实例的指针。 |
@@ -806,6 +872,7 @@ OH_AVErrCode OH_VideoEncoder_GetSurface(OH_AVCodec *codec, OHNativeWindow **wind
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：输入的codec指针为非编码器实例，或者为空指针。 AV_ERR_OPERATE_NOT_PERMIT：操作不允许。 |
@@ -813,9 +880,10 @@ OH_AVErrCode OH_VideoEncoder_GetSurface(OH_AVCodec *codec, OHNativeWindow **wind
 
 
 
-#### OH_VideoEncoder_FreeOutputData()
+### OH_VideoEncoder_FreeOutputData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoEncoder_FreeOutputData(OH_AVCodec *codec, uint32_t index)
@@ -835,6 +903,7 @@ OH_AVErrCode OH_VideoEncoder_FreeOutputData(OH_AVCodec *codec, uint32_t index)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频编码实例的指针。 |
@@ -843,6 +912,7 @@ OH_AVErrCode OH_VideoEncoder_FreeOutputData(OH_AVCodec *codec, uint32_t index)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_NO_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。 AV_ERR_INVALID_VAL：输入的codec指针为非编码器实例，或者为空指针。 AV_ERR_UNKNOWN：未知错误。 AV_ERR_OPERATE_NOT_PERMIT：操作不允许。 AV_ERR_INVALID_STATE：当前编码器状态不支持调用本接口。 |
@@ -850,9 +920,10 @@ OH_AVErrCode OH_VideoEncoder_FreeOutputData(OH_AVCodec *codec, uint32_t index)
 
 
 
-#### OH_VideoEncoder_NotifyEndOfStream()
+### OH_VideoEncoder_NotifyEndOfStream()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoEncoder_NotifyEndOfStream(OH_AVCodec *codec)
@@ -868,12 +939,14 @@ OH_AVErrCode OH_VideoEncoder_NotifyEndOfStream(OH_AVCodec *codec)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频编码实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -882,9 +955,10 @@ OH_AVErrCode OH_VideoEncoder_NotifyEndOfStream(OH_AVCodec *codec)
 
 
 
-#### OH_VideoEncoder_PushInputData()
+### OH_VideoEncoder_PushInputData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoEncoder_PushInputData(OH_AVCodec *codec, uint32_t index, OH_AVCodecBufferAttr attr)
@@ -904,6 +978,7 @@ OH_AVErrCode OH_VideoEncoder_PushInputData(OH_AVCodec *codec, uint32_t index, OH
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频编码实例的指针。 |
@@ -913,6 +988,7 @@ OH_AVErrCode OH_VideoEncoder_PushInputData(OH_AVCodec *codec, uint32_t index, OH
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_NO_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。 AV_ERR_INVALID_VAL： 1. 输入的codec指针为非编码器实例，或者为空指针； 2. index非法，该错误不影响后续编码流程。 AV_ERR_UNKNOWN：未知错误。 AV_ERR_OPERATE_NOT_PERMIT：操作不允许。 AV_ERR_INVALID_STATE：当前编码器状态不支持调用本接口。 |
@@ -920,9 +996,10 @@ OH_AVErrCode OH_VideoEncoder_PushInputData(OH_AVCodec *codec, uint32_t index, OH
 
 
 
-#### OH_VideoEncoder_PushInputBuffer()
+### OH_VideoEncoder_PushInputBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoEncoder_PushInputBuffer(OH_AVCodec *codec, uint32_t index)
@@ -938,6 +1015,7 @@ Buffer模式下，将index对应的OH_AVBuffer送入编码器编码。
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频编码实例的指针。 |
@@ -946,6 +1024,7 @@ Buffer模式下，将index对应的OH_AVBuffer送入编码器编码。
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_NO_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。 AV_ERR_INVALID_VAL： 1. 输入的codec指针为非编码器实例，或者为空指针； 2. index非法，该错误不影响后续编码流程。 AV_ERR_UNKNOWN：未知错误。 AV_ERR_OPERATE_NOT_PERMIT：操作不允许。 AV_ERR_INVALID_STATE：当前编码器状态不支持调用本接口。 |
@@ -953,9 +1032,10 @@ Buffer模式下，将index对应的OH_AVBuffer送入编码器编码。
 
 
 
-#### OH_VideoEncoder_PushInputParameter()
+### OH_VideoEncoder_PushInputParameter()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoEncoder_PushInputParameter(OH_AVCodec *codec, uint32_t index)
@@ -971,6 +1051,7 @@ Surface模式下，将index对应帧的编码参数送入编码器编码。
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频编码实例的指针。 |
@@ -979,6 +1060,7 @@ Surface模式下，将index对应帧的编码参数送入编码器编码。
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_NO_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。 AV_ERR_INVALID_VAL： 1. 输入的codec指针为非编码器实例，或者为空指针； 2. index非法，该错误不影响后续编码流程。 AV_ERR_UNKNOWN：未知错误。 AV_ERR_OPERATE_NOT_PERMIT：操作不允许。 AV_ERR_INVALID_STATE：当前编码器状态不支持调用本接口。 |
@@ -986,9 +1068,10 @@ Surface模式下，将index对应帧的编码参数送入编码器编码。
 
 
 
-#### OH_VideoEncoder_FreeOutputBuffer()
+### OH_VideoEncoder_FreeOutputBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoEncoder_FreeOutputBuffer(OH_AVCodec *codec, uint32_t index)
@@ -1006,6 +1089,7 @@ OH_AVErrCode OH_VideoEncoder_FreeOutputBuffer(OH_AVCodec *codec, uint32_t index)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频编码实例的指针。 |
@@ -1014,6 +1098,7 @@ OH_AVErrCode OH_VideoEncoder_FreeOutputBuffer(OH_AVCodec *codec, uint32_t index)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_NO_MEMORY：输入的编码实例内部异常，如内部出现异常空指针。 AV_ERR_INVALID_VAL： 1. 输入的codec指针为非编码器实例，或者为空指针； 2. index非法，该错误不影响后续编码流程。 AV_ERR_UNKNOWN：未知错误。 AV_ERR_OPERATE_NOT_PERMIT：操作不允许。 AV_ERR_INVALID_STATE：当前编码器状态不支持调用本接口。 |
@@ -1021,9 +1106,10 @@ OH_AVErrCode OH_VideoEncoder_FreeOutputBuffer(OH_AVCodec *codec, uint32_t index)
 
 
 
-#### OH_VideoEncoder_GetInputDescription()
+### OH_VideoEncoder_GetInputDescription()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVFormat *OH_VideoEncoder_GetInputDescription(OH_AVCodec *codec)
@@ -1041,12 +1127,14 @@ OH_AVFormat *OH_VideoEncoder_GetInputDescription(OH_AVCodec *codec)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频编码实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1055,9 +1143,10 @@ OH_AVFormat *OH_VideoEncoder_GetInputDescription(OH_AVCodec *codec)
 
 
 
-#### OH_VideoEncoder_IsValid()
+### OH_VideoEncoder_IsValid()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoEncoder_IsValid(OH_AVCodec *codec, bool *isValid)
@@ -1073,6 +1162,7 @@ OH_AVErrCode OH_VideoEncoder_IsValid(OH_AVCodec *codec, bool *isValid)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向视频编码实例的指针。 |
@@ -1081,6 +1171,7 @@ OH_AVErrCode OH_VideoEncoder_IsValid(OH_AVCodec *codec, bool *isValid)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：输入的codec指针为非编码器实例，或者为空指针。 |
@@ -1088,9 +1179,10 @@ OH_AVErrCode OH_VideoEncoder_IsValid(OH_AVCodec *codec, bool *isValid)
 
 
 
-#### OH_VideoEncoder_QueryInputBuffer()
+### OH_VideoEncoder_QueryInputBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoEncoder_QueryInputBuffer(struct OH_AVCodec *codec, uint32_t *index, int64_t timeoutUs)
@@ -1110,6 +1202,7 @@ OH_AVErrCode OH_VideoEncoder_QueryInputBuffer(struct OH_AVCodec *codec, uint32_t
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVCodec *codec | 指向视频编码实例的指针。 |
@@ -1119,6 +1212,7 @@ OH_AVErrCode OH_VideoEncoder_QueryInputBuffer(struct OH_AVCodec *codec, uint32_t
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_NO_MEMORY：输入的编码器实例已经销毁。 AV_ERR_INVALID_VAL：输入的codec指针为非编码器实例，或者为空指针。 AV_ERR_UNKNOWN：未知错误。 AV_ERR_INVALID_STATE：当前编码器状态不支持调用本接口。 AV_ERR_OPERATE_NOT_PERMIT：禁止异步模式下使用。 AV_ERR_TRY_AGAIN_LATER：查询失败，建议等待短暂间隔后重试。 |
@@ -1126,9 +1220,10 @@ OH_AVErrCode OH_VideoEncoder_QueryInputBuffer(struct OH_AVCodec *codec, uint32_t
 
 
 
-#### OH_VideoEncoder_GetInputBuffer()
+### OH_VideoEncoder_GetInputBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVBuffer *OH_VideoEncoder_GetInputBuffer(struct OH_AVCodec *codec, uint32_t index)
@@ -1146,6 +1241,7 @@ OH_AVBuffer *OH_VideoEncoder_GetInputBuffer(struct OH_AVCodec *codec, uint32_t i
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVCodec *codec | 指向视频编码实例的指针。 |
@@ -1154,6 +1250,7 @@ OH_AVBuffer *OH_VideoEncoder_GetInputBuffer(struct OH_AVCodec *codec, uint32_t i
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVBuffer * | 如果执行成功，则返回一个指向OH_AVBuffer实例的指针，否则返回NULL。 |
@@ -1161,9 +1258,10 @@ OH_AVBuffer *OH_VideoEncoder_GetInputBuffer(struct OH_AVCodec *codec, uint32_t i
 
 
 
-#### OH_VideoEncoder_QueryOutputBuffer()
+### OH_VideoEncoder_QueryOutputBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_VideoEncoder_QueryOutputBuffer(struct OH_AVCodec *codec, uint32_t *index, int64_t timeoutUs)
@@ -1181,6 +1279,7 @@ OH_AVErrCode OH_VideoEncoder_QueryOutputBuffer(struct OH_AVCodec *codec, uint32_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVCodec *codec | 指向视频编码实例的指针。 |
@@ -1190,6 +1289,7 @@ OH_AVErrCode OH_VideoEncoder_QueryOutputBuffer(struct OH_AVCodec *codec, uint32_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_NO_MEMORY：输入的编码器实例已经销毁。 AV_ERR_INVALID_VAL：输入的codec指针为非编码器实例，或者为空指针。 AV_ERR_UNKNOWN：未知错误。 AV_ERR_INVALID_STATE：当前编码器状态不支持调用本接口。 AV_ERR_OPERATE_NOT_PERMIT：禁止异步模式下使用。 AV_ERR_STREAM_CHANGED：流格式已变更，可以通过调用OH_VideoEncoder_GetOutputDescription接口获取新的流信息。 AV_ERR_TRY_AGAIN_LATER：查询失败，建议等待短暂间隔后重试。 |
@@ -1197,9 +1297,10 @@ OH_AVErrCode OH_VideoEncoder_QueryOutputBuffer(struct OH_AVCodec *codec, uint32_
 
 
 
-#### OH_VideoEncoder_GetOutputBuffer()
+### OH_VideoEncoder_GetOutputBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVBuffer *OH_VideoEncoder_GetOutputBuffer(struct OH_AVCodec *codec, uint32_t index)
@@ -1217,6 +1318,7 @@ OH_AVBuffer *OH_VideoEncoder_GetOutputBuffer(struct OH_AVCodec *codec, uint32_t 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVCodec *codec | 指向视频编码实例的指针。 |
@@ -1224,6 +1326,7 @@ OH_AVBuffer *OH_VideoEncoder_GetOutputBuffer(struct OH_AVCodec *codec, uint32_t 
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |

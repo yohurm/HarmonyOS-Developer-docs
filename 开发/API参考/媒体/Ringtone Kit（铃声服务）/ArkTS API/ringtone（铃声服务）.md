@@ -1,6 +1,6 @@
 # ringtone（铃声服务）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ringtone-ringtone
 **支持设备：** Phone | Tablet
@@ -10,7 +10,8 @@ ringtone提供铃声设置的功能。
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | Tablet
 
@@ -20,7 +21,8 @@ import { ringtone } from '@kit.RingtoneKit';
  
   
 
-#### RingtoneType
+## RingtoneType
+
 
 **支持设备：** Phone | Tablet
 
@@ -32,6 +34,7 @@ import { ringtone } from '@kit.RingtoneKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CALL | 0 | 来电铃声。 |
@@ -42,7 +45,8 @@ import { ringtone } from '@kit.RingtoneKit';
  
   
 
-#### RingtoneErrors
+## RingtoneErrors
+
 
 **支持设备：** Phone | Tablet
 
@@ -54,6 +58,7 @@ import { ringtone } from '@kit.RingtoneKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ERROR_INVALID_PARAM | 401 | 参数非法。 |
@@ -67,7 +72,8 @@ import { ringtone } from '@kit.RingtoneKit';
  
   
 
-#### ringtone.getSupportedRingtoneTypes
+## ringtone.getSupportedRingtoneTypes
+
 
 **支持设备：** Phone | Tablet
 
@@ -83,6 +89,7 @@ getSupportedRingtoneTypes(): Array&lt;RingtoneType&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;RingtoneType&gt; | 当前系统支持自定义的铃声类型。 |
@@ -124,7 +131,8 @@ struct Index {
  
   
 
-#### ringtone.getSupportedRingtoneTypes
+## ringtone.getSupportedRingtoneTypes
+
 
 **支持设备：** Phone | Tablet
 
@@ -140,6 +148,7 @@ getSupportedRingtoneTypes(mediaType: uniformTypeDescriptor.UniformDataType): Arr
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mediaType | uniformTypeDescriptor.UniformDataType | 是 | 待查询的文件类型。 |
@@ -147,6 +156,7 @@ getSupportedRingtoneTypes(mediaType: uniformTypeDescriptor.UniformDataType): Arr
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;RingtoneType&gt; | 当前系统支持自定义的铃声类型。 |
@@ -189,7 +199,8 @@ struct Index {
  
   
 
-#### ringtone.getSupportedDataTypes
+## ringtone.getSupportedDataTypes
+
 
 **支持设备：** Phone | Tablet
 
@@ -205,6 +216,7 @@ getSupportedDataTypes(ringtoneType: RingtoneType): Array<uniformTypeDescriptor.U
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ringtoneType | RingtoneType | 是 | 待查询的铃声类型。 |
@@ -212,6 +224,7 @@ getSupportedDataTypes(ringtoneType: RingtoneType): Array<uniformTypeDescriptor.U
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Array<uniformTypeDescriptor.UniformDataType> | 返回对应铃声类型支持的文件类型。 |
@@ -221,6 +234,7 @@ getSupportedDataTypes(ringtoneType: RingtoneType): Array<uniformTypeDescriptor.U
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes:ringtoneType is invalid. |
@@ -271,7 +285,8 @@ struct Index {
  
   
 
-#### ringtone.getSupportedMaxDuration
+## ringtone.getSupportedMaxDuration
+
 
 **支持设备：** Phone | Tablet
 
@@ -287,6 +302,7 @@ getSupportedMaxDuration(ringtoneType: RingtoneType, dataType: uniformTypeDescrip
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ringtoneType | RingtoneType | 是 | 待查询的铃声类型。 |
@@ -295,6 +311,7 @@ getSupportedMaxDuration(ringtoneType: RingtoneType, dataType: uniformTypeDescrip
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回对应类型的铃声和文件支持的最大时长（单位：s），其中闹钟铃声时长为300s，短信铃声和通知铃声时长为7s，来电铃声时长为60s。 |
@@ -304,6 +321,7 @@ getSupportedMaxDuration(ringtoneType: RingtoneType, dataType: uniformTypeDescrip
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes:data type does not match the ringtone type. |
@@ -354,7 +372,8 @@ struct Index {
  
   
 
-#### ringtone.getSupportedMaxSize
+## ringtone.getSupportedMaxSize
+
 
 **支持设备：** Phone | Tablet
 
@@ -370,6 +389,7 @@ getSupportedMaxSize(ringtoneType: RingtoneType, dataType: uniformTypeDescriptor.
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ringtoneType | RingtoneType | 是 | 待查询的铃声类型。 |
@@ -378,6 +398,7 @@ getSupportedMaxSize(ringtoneType: RingtoneType, dataType: uniformTypeDescriptor.
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回对应类型的铃声和文件支持的最大文件大小（单位：kb），其中视频大小限制200MB及以下，音频大小无限制返回-1。 |
@@ -387,6 +408,7 @@ getSupportedMaxSize(ringtoneType: RingtoneType, dataType: uniformTypeDescriptor.
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ringtone)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1011600005 | The data type does not match the ringtone type. |
@@ -437,7 +459,8 @@ struct Index {
  
   
 
-#### ringtone.startRingtoneSetting
+## ringtone.startRingtoneSetting
+
 
 **支持设备：** Phone | Tablet
 
@@ -453,6 +476,7 @@ startRingtoneSetting(context: common.UIAbilityContext, path: string, name: strin
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | UIAbility上下文。 |
@@ -465,6 +489,7 @@ startRingtoneSetting(context: common.UIAbilityContext, path: string, name: strin
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ringtone)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: context is invalid. |
@@ -528,7 +553,8 @@ struct Index {
  
   
 
-#### ringtone.startRingtoneSetting
+## ringtone.startRingtoneSetting
+
 
 **支持设备：** Phone | Tablet
 
@@ -544,6 +570,7 @@ startRingtoneSetting(context: common.UIAbilityContext, path: string, name: strin
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | UIAbility上下文。 |
@@ -553,6 +580,7 @@ startRingtoneSetting(context: common.UIAbilityContext, path: string, name: strin
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;RingtoneType&gt; | Promise对象。返回用户选择设置的铃声类型。 |
@@ -562,6 +590,7 @@ startRingtoneSetting(context: common.UIAbilityContext, path: string, name: strin
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ringtone)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: context is invalid. |

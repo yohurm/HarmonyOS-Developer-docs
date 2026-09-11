@@ -1,13 +1,14 @@
 # drawing_color_filter.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-color-filter-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明与绘图模块中的颜色滤波器对象相关的函数。
  
@@ -25,16 +26,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_Drawing_ColorFilter* OH_Drawing_ColorFilterCreateBlendMode(uint32_t color, OH_Drawing_BlendMode blendMode) | 创建具有混合模式的颜色滤波器。 |
@@ -49,15 +53,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Drawing_ColorFilterCreateBlendMode()
+### OH_Drawing_ColorFilterCreateBlendMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ColorFilter* OH_Drawing_ColorFilterCreateBlendMode(uint32_t color, OH_Drawing_BlendMode blendMode)
@@ -73,6 +79,7 @@ OH_Drawing_ColorFilter* OH_Drawing_ColorFilterCreateBlendMode(uint32_t color, OH
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t color | 表示颜色，是一个32位（ARGB）变量。 |
@@ -81,6 +88,7 @@ OH_Drawing_ColorFilter* OH_Drawing_ColorFilterCreateBlendMode(uint32_t color, OH
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ColorFilter* | 返回创建的颜色滤波器对象的指针。 |
@@ -88,9 +96,10 @@ OH_Drawing_ColorFilter* OH_Drawing_ColorFilterCreateBlendMode(uint32_t color, OH
  
   
 
-#### OH_Drawing_ColorFilterCreateCompose()
+### OH_Drawing_ColorFilterCreateCompose()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ColorFilter* OH_Drawing_ColorFilterCreateCompose(OH_Drawing_ColorFilter* outerColorFilter,OH_Drawing_ColorFilter* innerColorFilter)
@@ -110,6 +119,7 @@ outerColorFilter、innerColorFilter任意一个为NULL时返回OH_DRAWING_ERROR_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_ColorFilter* outerColorFilter | 指向颜色滤波器对象一的指针。 |
@@ -118,6 +128,7 @@ outerColorFilter、innerColorFilter任意一个为NULL时返回OH_DRAWING_ERROR_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ColorFilter* | 返回创建的颜色滤波器对象的指针。 |
@@ -125,9 +136,10 @@ outerColorFilter、innerColorFilter任意一个为NULL时返回OH_DRAWING_ERROR_
  
   
 
-#### OH_Drawing_ColorFilterCreateMatrix()
+### OH_Drawing_ColorFilterCreateMatrix()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ColorFilter* OH_Drawing_ColorFilterCreateMatrix(const float matrix[20])
@@ -147,6 +159,7 @@ matrix为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | matrix | 表示矩阵，以长度为20的浮点数组表示。 |
@@ -154,6 +167,7 @@ matrix为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ColorFilter* | 返回创建的颜色滤波器对象的指针。 |
@@ -161,9 +175,10 @@ matrix为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
   
 
-#### OH_Drawing_ColorFilterCreateLinearToSrgbGamma()
+### OH_Drawing_ColorFilterCreateLinearToSrgbGamma()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ColorFilter* OH_Drawing_ColorFilterCreateLinearToSrgbGamma(void)
@@ -179,6 +194,7 @@ OH_Drawing_ColorFilter* OH_Drawing_ColorFilterCreateLinearToSrgbGamma(void)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ColorFilter* | 返回创建的颜色滤波器对象的指针。 |
@@ -186,9 +202,10 @@ OH_Drawing_ColorFilter* OH_Drawing_ColorFilterCreateLinearToSrgbGamma(void)
  
   
 
-#### OH_Drawing_ColorFilterCreateSrgbGammaToLinear()
+### OH_Drawing_ColorFilterCreateSrgbGammaToLinear()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ColorFilter* OH_Drawing_ColorFilterCreateSrgbGammaToLinear(void)
@@ -204,6 +221,7 @@ OH_Drawing_ColorFilter* OH_Drawing_ColorFilterCreateSrgbGammaToLinear(void)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ColorFilter* | 返回创建的颜色滤波器对象的指针。 |
@@ -211,9 +229,10 @@ OH_Drawing_ColorFilter* OH_Drawing_ColorFilterCreateSrgbGammaToLinear(void)
  
   
 
-#### OH_Drawing_ColorFilterCreateLuma()
+### OH_Drawing_ColorFilterCreateLuma()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ColorFilter* OH_Drawing_ColorFilterCreateLuma(void)
@@ -229,6 +248,7 @@ OH_Drawing_ColorFilter* OH_Drawing_ColorFilterCreateLuma(void)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ColorFilter* | 返回创建的颜色滤波器对象的指针。 |
@@ -236,9 +256,10 @@ OH_Drawing_ColorFilter* OH_Drawing_ColorFilterCreateLuma(void)
  
   
 
-#### OH_Drawing_ColorFilterCreateLighting()
+### OH_Drawing_ColorFilterCreateLighting()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ColorFilter* OH_Drawing_ColorFilterCreateLighting(uint32_t mulColor, uint32_t addColor)
@@ -254,6 +275,7 @@ OH_Drawing_ColorFilter* OH_Drawing_ColorFilterCreateLighting(uint32_t mulColor, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t mulColor | 用来乘法运算的颜色值。 |
@@ -262,6 +284,7 @@ OH_Drawing_ColorFilter* OH_Drawing_ColorFilterCreateLighting(uint32_t mulColor, 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ColorFilter* | 返回创建的颜色滤波器对象的指针。 |
@@ -269,9 +292,10 @@ OH_Drawing_ColorFilter* OH_Drawing_ColorFilterCreateLighting(uint32_t mulColor, 
  
   
 
-#### OH_Drawing_ColorFilterDestroy()
+### OH_Drawing_ColorFilterDestroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_ColorFilterDestroy(OH_Drawing_ColorFilter* colorFilter)
@@ -287,6 +311,7 @@ void OH_Drawing_ColorFilterDestroy(OH_Drawing_ColorFilter* colorFilter)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_ColorFilter* colorFilter | 表示指向颜色滤波器对象的指针。 |

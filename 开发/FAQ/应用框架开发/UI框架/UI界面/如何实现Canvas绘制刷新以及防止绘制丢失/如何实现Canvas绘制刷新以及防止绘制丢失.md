@@ -4,13 +4,13 @@
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1049
 
-#### 问题现象
+## 问题现象
 
 Canvas动态绘制时，如何实现内容实时刷新与防止绘制丢失是两大核心问题，如何有效解决？
  
  
 
-#### 背景知识
+## 背景知识
 
 - [Canvas](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-canvas)：提供画布组件，用于自定义绘制图形。
 - [onReady](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-canvas#onready)：Canvas组件初始化完成或者发生大小变化时的事件回调，当该事件被触发时画布被清空。
@@ -19,7 +19,7 @@ Canvas动态绘制时，如何实现内容实时刷新与防止绘制丢失是�
  
  
 
-#### 解决方案
+## 解决方案
 
 - **场景一**：Canvas绘制如何刷新。Canvas无自动重绘机制，需要手动触发绘制刷新，共有4种实现方式，对比如下：
 
@@ -67,7 +67,7 @@ struct CanvasClearRect {
   }
 
   private draw() {
-    // 用clearRect清除画布中内容
+   <em> // 用clearRect清除画布中内容</em>
     this.context.clearRect(0, 0, 300, 400);
     this.context.fillStyle = '#0097D4';
     this.context.beginPath();
@@ -79,7 +79,7 @@ struct CanvasClearRect {
  实现效果如下：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/nMEP6PLoTBGvJWOrt41tIg/zh-cn_image_0000002628565454.png?HW-CC-KV=V1&HW-CC-Date=20260818T063535Z&HW-CC-Expire=86400&HW-CC-Sign=5B663606290A3D98AB602A5010D7154E520287ECC73018DAA777ACE23B8A5DC4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/nMEP6PLoTBGvJWOrt41tIg/zh-cn_image_0000002628565454.png?HW-CC-KV=V1&HW-CC-Date=20260911T072742Z&HW-CC-Expire=86400&HW-CC-Sign=B6C1A349C1BBD9F905C60F8A9771471192E5BB2BFCC20CD36FA2E22C6FA8A59B)
 
 - **方式二**：利用[reset](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-common-method#reset12)方法重置画布状态，清空绘制路径，代码示例如下：
 ```text
@@ -88,7 +88,7 @@ struct CanvasClearRect {
 struct CanvasReset {
   private settings: RenderingContextSettings = new RenderingContextSettings(true);
   private context: CanvasRenderingContext2D = new CanvasRenderingContext2D(this.settings);
-  // "common/images/example.png"需要替换为开发者所需的图像资源文件
+ <em> // "common/images/example.png"需要替换为开发者所需的图像资源文件</em>
   private img: ImageBitmap = new ImageBitmap('common/images/example.png');
   private angle: number = Math.PI * 5 / 4;
 
@@ -115,7 +115,7 @@ struct CanvasReset {
   }
 
   private draw() {
-    // 这里clearRect无法清除路径，需要用reset重置画布状态
+  <em>  // 这里clearRect无法清除路径，需要用reset重置画布状态</em>
     this.context.reset();
     let width = 300;
     this.context.beginPath();
@@ -129,7 +129,7 @@ struct CanvasReset {
  实现效果如下：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/Nd3YS6KXRbSYNpyVpa9kqQ/zh-cn_image_0000002658924761.png?HW-CC-KV=V1&HW-CC-Date=20260818T063535Z&HW-CC-Expire=86400&HW-CC-Sign=7DDC2484D1498A0809DA173E32C9B28617788E095D753CA4C1A10058DA5AF67F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/Nd3YS6KXRbSYNpyVpa9kqQ/zh-cn_image_0000002658924761.png?HW-CC-KV=V1&HW-CC-Date=20260911T072742Z&HW-CC-Expire=86400&HW-CC-Sign=7AB542B361844438834E80AB7AB10E7A2DA3426B41367426C53DB86C086722B1)
 
 - **方式三**：利用[@Watch](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-watch)装饰器监听状态变量，当数据刷新时，触发重新绘制逻辑，示例参考：[Canvas绘制内容如何动态更新](https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-225)。
 - **方式四**：利用@Monitor装饰器监听嵌套Class对象属性的变化，代码示例如下：
@@ -188,7 +188,7 @@ struct CanvasMonitor {
  实现效果如下：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/078VejpcTIyo5mIpLhMDGw/zh-cn_image_0000002628405556.png?HW-CC-KV=V1&HW-CC-Date=20260818T063535Z&HW-CC-Expire=86400&HW-CC-Sign=1AF29134B1CFC6359825C46FBF509D1CB9A1290FD6C0BABD9370449DE1331400)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/078VejpcTIyo5mIpLhMDGw/zh-cn_image_0000002628405556.png?HW-CC-KV=V1&HW-CC-Date=20260911T072742Z&HW-CC-Expire=86400&HW-CC-Sign=9DD6C479D7B6F1BF0E03C5E4BC63B37960E01B2A6C7FF9E39BADC99350962EE2)
 
 
  - **场景二**：Canvas绘制防止丢失。Canvas的onReady方法在Canvas组件初始化完成或者发生大小变化时会触发。比如折叠屏展开场景、横竖屏切换场景以及动态扩展Canvas组件宽高场景，可能会触发onReady方法，这时在onReady方法之外绘制的内容就会丢失，需要恢复绘制，共有2种实现方式，对比如下：
@@ -221,7 +221,7 @@ struct CanvasOnAreaChange {
           this.context.fillStyle = '#0097D4';
         })
         .onAreaChange(() => {
-          // 监听尺寸变化事件，重新绘制，恢复画布
+          <em>// 监听尺寸变化事件，重新绘制，恢复画布</em>
           this.draw();
         })
         .backgroundColor('#f1f3f5');
@@ -238,7 +238,7 @@ struct CanvasOnAreaChange {
   }
 
   private draw() {
-    // 用clearRect清除画布中内容
+    <em>// 用clearRect清除画布中内容</em>
     this.context.clearRect(0, 0, 300, 400);
     this.context.fillRect(50, 100, 200, 100);
   }
@@ -247,14 +247,14 @@ struct CanvasOnAreaChange {
  效果预览：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/8BOBoWreRQStM9WuM7yqKg/zh-cn_image_0000002658804829.png?HW-CC-KV=V1&HW-CC-Date=20260818T063535Z&HW-CC-Expire=86400&HW-CC-Sign=4E96C49493A17F37F1AD45FB55BAA74023A909895BDB088D3D3846B13CA6DC6A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/8BOBoWreRQStM9WuM7yqKg/zh-cn_image_0000002658804829.png?HW-CC-KV=V1&HW-CC-Date=20260911T072742Z&HW-CC-Expire=86400&HW-CC-Sign=2C1845B7D004DEF52FC4FCE4B5B76484D6677E8A56862A329BD685E884A0D941)
 
 
  
  
  
 
-#### 常见FAQ
+## 常见FAQ
 
 Q：在onReady方法中绘制了较多的内容，当Canvas尺寸变化时会触发重绘，引发闪烁如何解决？
  

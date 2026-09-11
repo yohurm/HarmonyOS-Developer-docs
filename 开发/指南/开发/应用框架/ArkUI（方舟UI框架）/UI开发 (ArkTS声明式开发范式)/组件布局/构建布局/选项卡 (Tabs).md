@@ -1,10 +1,10 @@
 # 选项卡 (Tabs)
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigation-tabs
 
-#### 概述
+## 概述
 
 在日常开发中，开发者经常遇到使用Tabs作为导航的场景，包括多层嵌套的Tabs、自定义Tabs样式、Tabs数据加载和动态变更显示的Tabs等。
  
@@ -21,7 +21,7 @@
  
   
 
-#### 布局方式
+## 布局方式
 
 Tabs组件的页面组成包含两个部分，分别是[TabContent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent)和[TabBar](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent#tabbar)。TabContent是内容页，TabBar是导航页签栏，页面结构如下图所示，根据不同的导航类型，布局会有区别，可以分为底部导航、顶部导航、侧边导航，其导航栏分别位于底部、顶部和侧边。
  
@@ -91,7 +91,7 @@ Tabs() {
  
   
 
-#### 底部导航
+### 底部导航
 
 底部导航是应用中最常见的一种导航方式。底部导航位于应用一级页面的底部，用户打开应用，能够分清整个应用的功能分类，以及页签对应的内容，并且其位于底部更加方便用户单手操作。底部导航一般作为应用的主导航形式存在，其作用是将用户关心的内容按照功能进行分类，迎合用户使用习惯，方便在不同模块间的内容切换。
  
@@ -114,7 +114,7 @@ Tabs({ barPosition: BarPosition.End }) {
  
   
 
-#### 顶部导航
+### 顶部导航
 
 当内容分类较多，用户对不同内容的浏览概率相差不大，需要经常快速切换时，一般采用顶部导航模式进行设计，作为对底部导航内容的进一步划分，常见一些资讯类应用对内容的分类为关注、视频、数码，或者主题应用中对主题进行进一步划分为图片、视频、字体等。
  
@@ -133,7 +133,7 @@ Tabs({ barPosition: BarPosition.Start }) {
  
   
 
-#### 侧边导航
+### 侧边导航
 
 侧边导航是应用较为少见的一种导航模式，更多适用于横屏界面，用于对应用进行导航操作，由于用户的视觉习惯是从左到右，侧边导航栏默认为左侧侧边栏。
  
@@ -162,13 +162,13 @@ Tabs({ barPosition: BarPosition.Start }) {
  
   
 
-#### Tabs显示排版
+## Tabs显示排版
 
 在Tabs组件的应用场景中，开发者通常会自定义Tabs的布局和样式。本章节将介绍Tabs组件提供的几种常用的布局和样式功能。
  
   
 
-#### 页签对齐方式
+### 页签对齐方式
 
 当页签数量不足，无法铺满屏幕宽度或高度，或者铺满后影响到UI美观时，Tabs提供了自定义导航条页签对齐方式的API。例如，在应用的二级导航中，如果页签较少，可以考虑将页签居左对齐。
  
@@ -188,7 +188,7 @@ Tabs({ barPosition: BarPosition.Start }) {
  
 定义tabBarModifier属性，并将其作为参数构造Tabs，然后通过tabBarModifier设置对齐方式。
  
-```ArkTS
+```text
 @Component
 export default struct InTabsComponent {
   // ...
@@ -215,7 +215,7 @@ export default struct InTabsComponent {
  
   
 
-#### 自定义页签
+### 自定义页签
 
 对于底部导航栏，通常用于应用主页面的功能区分。为了更好的用户体验，开发者通常会自定义页签样式。开发者可以使用Tabs组件提供的定制页签样式的API，将页签自定义为图标加文字标题的形式，并且在选中和非选中的状态下，提供不同的样式。
  
@@ -231,7 +231,7 @@ Tabs组件的[tabBar()](https://developer.huawei.com/consumer/cn/doc/harmonyos-r
  1. 定义currentIndex属性。
 
   
-```ArkTS
+```text
 @Component
 export default struct OutTabsComponent {
   @State currentIndex: number = 0;
@@ -242,7 +242,7 @@ export default struct OutTabsComponent {
 2. 定义@Builder装饰器修饰的自定义样式构建方法tabBuilder()。
 
   
-```ArkTS
+```text
 @Builder
 tabBuilder(index: number, name: string | Resource, icon: Resource) {
   Column() {
@@ -269,7 +269,7 @@ tabBuilder(index: number, name: string | Resource, icon: Resource) {
 3. 将tabBuilder()方法传入Tabs，并在Tabs注册onChange()函数，并在其中更新currentIndex属性。
 
   
-```ArkTS
+```text
 Tabs({
   // ...
 }) {
@@ -287,7 +287,7 @@ Tabs({
  
   
 
-#### Tabs吸顶
+### Tabs吸顶
 
 在一些二级导航栏页面中，二级页签的内容上方通常会放置一些banner位或其他优先级较高的内容，并且在向上滑动时会退出显示区域。为了提供更好的用户体验，建议在上划的过程中，导航条能够吸附在顶部，便于用户进行内容切换。
  
@@ -303,7 +303,7 @@ Tabs({
  
 在Tabs父组件上嵌套Scroll组件，TabContent中的List组件显示内容，List组件本身是可滑动的，仅需设置其滑动触发行为即可。
  
-```ArkTS
+```json
 Scroll() {
   Column() {
     BannerComponent()
@@ -344,14 +344,14 @@ Scroll() {
  
   
 
-#### TabsBar显示效果
+### TabsBar显示效果
 
 在某些UI设计风格中，可能需要为TabBar采用特殊样式，比如首页导航栏的毛玻璃背景效果等。
  
 - 通过设置Tabs组件的[barOverlap](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#baroverlap10)属性，可以实现TabBar变模糊并叠加在TabContent之上，并且配合[barBackgroundBlurStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#barbackgroundblurstyle11)属性实现毛玻璃效果。详情请参见[TabBar背景模糊效果](https://developer.huawei.com/consumer/cn/doc/architecture-guides/tab_bar_blur-0000002257193008)。
 
   
-```ArkTS
+```text
 Tabs({
   // ...
 }) {
@@ -369,7 +369,7 @@ Tabs({
 - 通过[barModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#tabsoptions15)设置tabBar的clip属性，实现页签超出tabBar区域显示效果。详情请参见[页签超出TabBar区域显示](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#示例15页签超出tabbar区域显示)。
 
   
-```ArkTS
+```text
 @Component
 export default struct OutTabComponent {
   // ...
@@ -406,7 +406,7 @@ export default struct OutTabComponent {
 - 通过配置[fadingEdge](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#fadingedge10)(true)实现TabBar边缘渐隐。详情请参见[设置TabBar渐隐](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#示例5设置tabbar渐隐)。
 
   
-```ArkTS
+```text
 Tabs({controller: this.subController}){
   // ...
 }
@@ -420,7 +420,7 @@ Tabs({controller: this.subController}){
 - 通过TabsController的[setTabBarTranslate()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#settabbartranslate13)、[setTabBarOpacity()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#settabbaropacity13)方法可以设置TabBar偏移量及透明度。详情请参见[设置TabBar平移距离和不透明度](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#示例12设置tabbar平移距离和不透明度)。
 
   
-```ArkTS
+```text
 @Component
 export default struct InTabComponent {
   // ...
@@ -456,13 +456,13 @@ export default struct InTabComponent {
  
   
 
-#### Tabs滑动
+## Tabs滑动
 
 Tabs组件在用户交互方面提供了丰富的特性，其中与滑动动作相关的交互尤为常见。下文将介绍几种与Tabs和滑动动作相关的特性。
  
   
 
-#### 固定导航栏
+### 固定导航栏
 
 当内容分类较为固定且不具有拓展性时，例如底部导航内容分类一般固定，分类数量一般在3-5个，此时使用固定导航栏。固定导航栏不可滚动，无法被拖拽滚动，内容均分tabBar的宽度。
  
@@ -482,7 +482,7 @@ Tabs({ barPosition: BarPosition.End }) {
  
   
 
-#### 双层Tabs嵌套滑动
+### 双层Tabs嵌套滑动
 
 在应用开发中，开发者经常遇到多层Tabs嵌套使用的场景。如果父子Tabs组件均需滑动切换时，开发者需要对父子Tabs的滑动切换行为进行约束，以避免冲突。通常做法是，让滑动操作优先切换子Tabs页签，当子Tabs页签切换到最后一个后，再触发父Tabs的页签切换。
  
@@ -502,7 +502,7 @@ Tabs({ barPosition: BarPosition.End }) {
  1. 外层Tabs组件中定义[TabsController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#tabscontroller)属性，以及内层Tabs双向绑定的状态属性变量switchNext及其监听函数。当监听到需要切换页签时，利用TabsController切换到对应页签。因为本示例外层Tabs和内层Tabs封装到不同的自定义组件中了，所以需要@Link修饰的switchNext变量作为父子组件的交互媒介。
 
   
-```ArkTS
+```text
 @Component
 export default struct OutTabsComponent {
   // ...
@@ -533,7 +533,7 @@ export default struct OutTabsComponent {
 2. 内层Tabs组件在最后一个TabContent中注册滑动事件处理函数，监听向左滑动作，触发时修改switchNext变量值传递给外层Tabs组件触发切换。
 
   
-```ArkTS
+```json
 @Component
 export default struct InTabsComponent {
   // ...
@@ -567,7 +567,7 @@ export default struct InTabsComponent {
 3. 注意滑动切换在自定义切换动画场景下失效，故需要注释掉切换动画函数注册。
 
   
-```ArkTS
+```text
 Tabs({
   barPosition: BarPosition.Start,
   controller: this.subsController,
@@ -581,7 +581,7 @@ Tabs({
  
   
 
-#### 可滚动Tabs页签栏+更多按钮
+### 可滚动Tabs页签栏+更多按钮
 
 可滚动页签栏通常设置在顶部或侧边导航栏，当内容分类较多，屏幕显示区域无法完全展示所有分类页签时，该页签栏允许用户通过滚动来访问隐藏的页签内容。
  
@@ -597,7 +597,7 @@ Tabs({
  
 设置barMode属性为BarMode.Scrollable，并利用[Stack](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-stack-layout)布局在TabBar右上角添加更多按钮。
  
-```ArkTS
+```text
 Stack({ alignContent: Alignment.TopEnd }) {
   Row() {
     Image($r('app.media.more'))
@@ -638,13 +638,13 @@ Stack({ alignContent: Alignment.TopEnd }) {
  
   
 
-#### 禁用TabContent左右滑动
+### 禁用TabContent左右滑动
 
 默认情况下，导航栏支持滑动切换。当存在多级导航栏嵌套或导航栏中的其他组件需要占用滑动动作时，为避免滑动响应冲突，开发者可选择禁用Tabs组件的滑动切换功能。通过将Tabs组件的[scrollable](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#scrollable)属性设置为false，可以禁止通过滑动TabContent来切换页签。同样，若想禁用边缘回弹效果，可将[edgeEffect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#edgeeffect12)的值设置为EdgeEffect.None。
  
 示例代码：
  
-```ArkTS
+```text
 build() {
   Tabs({
     // ...
@@ -659,13 +659,13 @@ build() {
  
   
 
-#### Tabs页签加载/更新
+## Tabs页签加载/更新
 
 在使用Tabs组件进行开发时，特别是当Tabs组件作为二级导航使用时，业务需求往往需要对Tabs的标签页进行更精细的控制。下文将介绍几种定制标签页显示逻辑的场景。
  
   
 
-#### 显示指定页签与预加载
+### 显示指定页签与预加载
 
 Tabs组件的TabContent默认在首次切换到该标签页时加载。如果TabContent中的内容或初始化逻辑较为复杂，加载速度较慢，则会影响标签页切换的流畅性，进而影响用户体验。此时，如果应用能在切换前预加载相应的标签页，将显著提升使用流畅度。
  
@@ -681,7 +681,7 @@ Tabs组件的TabContent默认在首次切换到该标签页时加载。如果Tab
  
 定义subsController属性，并在Tabs的onChange函数中调用[preloadItem()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#preloaditems12)预加载当前页签两侧页签。
  
-```ArkTS
+```text
 @Component
 export default struct InTabsComponent {
   // ...
@@ -716,7 +716,7 @@ export default struct InTabsComponent {
  
   
 
-#### 切换至指定页签
+### 切换至指定页签
 
 在不使用自定义导航栏时，默认的Tabs会实现切换逻辑。在使用了自定义导航栏后，默认的Tabs仅实现滑动内容页和点击页签时内容页的切换逻辑，页签切换逻辑需要自行实现。即用户滑动内容页和点击页签时，页签栏需要同步切换至内容页对应的页签。
  
@@ -841,7 +841,7 @@ export struct ContentPageNoAndTabLinkage {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/X3yQeWcJQ16z1hHsiS5HkQ/zh-cn_image_0000002674632116.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095710Z&HW-CC-Expire=86400&HW-CC-Sign=3705EF51D12DBF4C2C2670B358D70D1A4EB47C9624FA36C2C911D2FBC44C50DF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/HKDRFL19R0evM8bPSYdl4Q/zh-cn_image_0000002717610332.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072152Z&HW-CC-Expire=86400&HW-CC-Sign=0D3E9468B2E4A708BCE8535B06B618F57210E1AD80B7457CF526B53B5D46EF72)
 
  
 开发者可以通过Tabs组件的[onContentWillChange](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#oncontentwillchange12)接口，设置自定义拦截回调函数。拦截回调函数在下一个页面即将展示时被调用，如果回调返回true，新页面可以展示；如果回调返回false，新页面不会展示，仍显示原来页面。
@@ -860,17 +860,17 @@ Tabs({ barPosition: BarPosition.End, index: this.currentIndex, controller: this.
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/HzTcGiSxT8ul2iLtmkV5EQ/zh-cn_image_0000002704272069.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095710Z&HW-CC-Expire=86400&HW-CC-Sign=416890DA8A715BE284AA3C8F9F5927B5AC30B108CC865701FE90A0578CE74441)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/etj5Nr_bQy2OblqHBYdg6w/zh-cn_image_0000002747290283.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072152Z&HW-CC-Expire=86400&HW-CC-Sign=EB2E955AEAED13CF1E51A28CF56911A5CC273F2D181615605A9D5737B9D699C7)
 
  
   
 
-#### 增删Tabs页签
+### 增删Tabs页签
 
 在日常的应用开发中，经常需要实现用户自定义选择频道的功能。通常，这些自定义选择的频道会通过Tabs组件来展示，因此需要动态地更新Tabs的页签。本示例设计了一对父子组件来演示这一功能。父组件负责显示页签及其内容，并在页签栏的最右侧设置一个“更多”按钮。点击此按钮会弹出一个窗口，供用户选择需要显示的页签。该弹窗内容由子组件提供，关闭弹窗后，父组件的页签将被更新。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/oMDFktLZSmaMScyL4VbEsw/zh-cn_image_0000002674472272.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095710Z&HW-CC-Expire=86400&HW-CC-Sign=7BD3A5DA2BC57F8CEDF985B8BFC13AB7973584040089DC367FB7B77270CCEFCF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/DUfXi1fKQLmE3RbIVCAl4g/zh-cn_image_0000002747210201.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072152Z&HW-CC-Expire=86400&HW-CC-Sign=D4A367E0C023DCB2DA56F95511F1AFC7B5E5371BA87B86DA53247B3DA65DB952)
 
  
 **实现原理**
@@ -878,14 +878,14 @@ Tabs({ barPosition: BarPosition.End, index: this.currentIndex, controller: this.
 定义selectTabsViewModel对象，其中的数组allTabs表示所有可选择页签，数组selectedTabs表示选中的需要显示的页签，并通过[@Link](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-link)绑定到父组件InTabComponent和子组件SelectTabsComponent中。子组件SelectTabsComponent作为一个弹窗用于选择需要显示的页签。选择完成后，关闭弹窗并更新 selectTabsViewModel对象中的选中页签数组 selectedTabs，以触发父组件InTabComponent的页签更新。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/t4TcWKGqR-GWEWdt4ZOWow/zh-cn_image_0000002704392239.png?HW-CC-KV=V1&HW-CC-Date=20260813T095710Z&HW-CC-Expire=86400&HW-CC-Sign=C3ADE0992BD48B38FEB7B17FA4530FA9D91A41A485F249D8797ACA6445DC38B7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/kFi52QNjRJSW6R7p8rZjOQ/zh-cn_image_0000002717770268.png?HW-CC-KV=V1&HW-CC-Date=20260911T072152Z&HW-CC-Expire=86400&HW-CC-Sign=EFDD8084DB1E7B6C143E1B71BD8E1C4F48BCA011C8EE81BFD42345351D6E6D33)
 
  
 **开发步骤**
  1. 定义SelectTabsViewModel类，包含所有可选择页签数组allTabs属性，和需要显示的页签数组selectedTabs属性，及更新显示页签数组的方法updateSelectedTabs()。
 
   
-```ArkTS
+```text
 @Observed
 class TabItemArray extends Array<TabItemViewModel> {
 }
@@ -915,7 +915,7 @@ export default class SelectTabsViewModel {
 2. 在InTabsComponent中定义selectTabsViewModel属性，并且在aboutToAppear()方法中初始化。
 
   
-```ArkTS
+```text
 @Component
 export default struct InTabsComponent {
   @State selectTabsViewModel: SelectTabsViewModel = new SelectTabsViewModel();
@@ -933,7 +933,7 @@ export default struct InTabsComponent {
 3. 利用ForEach组件将selectTabsViewModel.selectedTabs属性绑定到Tabs的页签上。
 
   
-```ArkTS
+```json
 Tabs({
   // ...
 }) {
@@ -954,7 +954,7 @@ Tabs({
 4. 在更多按钮的弹窗中初始化SelectTabsComponent，并将selectTabsViewModel属性作为双向绑定属性传入。在关闭弹窗处理函数中调用selectTabsViewModel.updateSelectedTabs()方法，更新需要显示的组件。
 
   
-```ArkTS
+```text
 @Builder
 sheetBuilder() {
   SelectTabsComponent({ selectTabsViewModel: this.selectTabsViewModel })
@@ -997,7 +997,7 @@ build() {
 5. 在SelectTabsComponent中将selectTabsViewModel.allTabs属性渲染成toggle组件，并且注册toggle组件的切换处理函数onChange()，在其中修改该页签的选择状态isChecked属性，供更新显示页签方法selectTabsViewModel.updateSelectedTabs()使用。
 
   
-```ArkTS
+```json
 @Component
 export default struct SelectTabsComponent {
   @State checkedChange: boolean = false;
@@ -1029,7 +1029,7 @@ export default struct SelectTabsComponent {
  
   
 
-#### 控制页面缓存数
+### 控制页面缓存数
 
 从API version 19开始，开发者可以通过[cachedMaxCount](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#cachedmaxcount19)接口，设置子组件的最大缓存个数和缓存模式。默认情况下Tabs创建时会一次性预加载所有TabContent，而且已加载的页面不会释放，可能会带来性能内存问题。此时可以设置[cachedMaxCount](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#cachedmaxcount19)属性控制缓存的页面数量，设置此属性后不会进行页面预加载，使用懒加载机制(仅切换到页面时才加载)，当切换页面时根据所设置的[TabsCacheMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#tabscachemode19枚举说明)决定保留缓存或者释放页面。
  
@@ -1038,7 +1038,7 @@ export default struct SelectTabsComponent {
 
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/JceEMYu3R76iu86kQn6iew/zh-cn_image_0000002674632118.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095710Z&HW-CC-Expire=86400&HW-CC-Sign=32C4A498FF9ACDEF9998E632A06AA6F6C4A877EB9EC504FC195C4D3D8992C6E8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/IaZaEXj4SMqtarRbh-qeqg/zh-cn_image_0000002717610334.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072152Z&HW-CC-Expire=86400&HW-CC-Sign=34587EC6B6D5B828D632075543DF8989B798783B14A5641701389FA79DBEBA3A)
 
  
 ```ArkTS
@@ -1102,36 +1102,36 @@ struct MyComponent {
  1. 如图所示，使用默认翻页动画，CACHE_BOTH_SIDE模式，n设置为2，点击TabBar切换到yellow页，TabContent1~3被缓存。再切换到red页，TabContent1、2释放，TabContent3~5被缓存。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/XbFq097_R_OZX-gBeP6OYA/zh-cn_image_0000002704272071.png?HW-CC-KV=V1&HW-CC-Date=20260813T095710Z&HW-CC-Expire=86400&HW-CC-Sign=5D3555BF8B94AC8CA2FF3FA1A38F9B4ADF6F6601B082623B7AC3741E859462D0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/gekaYRqzTU6P3anR3PjfxA/zh-cn_image_0000002747290285.png?HW-CC-KV=V1&HW-CC-Date=20260911T072152Z&HW-CC-Expire=86400&HW-CC-Sign=A44C3ECB51634BD2EAE426E5989FDD418CDDF0054B930F6755742A8B34EFAA32)
 
 2. 如图所示，使用默认翻页动画，CACHE_LATEST_SWITCHED模式，n设置为2，点击TabBar切换到yellow页，TabContent1、3被缓存，TabContent2释放。再切换到red页，TabContent1、3、5被缓存，TabContent4释放。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/zvAqmBSkRauQO6dFHQ8S_Q/zh-cn_image_0000002674472274.png?HW-CC-KV=V1&HW-CC-Date=20260813T095710Z&HW-CC-Expire=86400&HW-CC-Sign=928B075B19A79C4905E98B076965C349E15AB4F5D0D2F1F82B7B046E302B99D4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/hOcpBNw4RNKzytflUEGVHg/zh-cn_image_0000002747210203.png?HW-CC-KV=V1&HW-CC-Date=20260911T072152Z&HW-CC-Expire=86400&HW-CC-Sign=53978E645B8794FEC0DAC33A392EDD72F133C04E0FF93F639C2BA778388E5C76)
 
 3. 如图所示，关闭翻页动画，CACHE_BOTH_SIDE模式，n设置为2，点击TabBar切换到yellow页，TabContent1、3被缓存。再切换到red页，TabContent3、5被缓存，TabContent1释放。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/ZSbecKAISles_fSCZgeuCA/zh-cn_image_0000002704392241.png?HW-CC-KV=V1&HW-CC-Date=20260813T095710Z&HW-CC-Expire=86400&HW-CC-Sign=D1D3B2EC11AE4C201D4D199CC42A1B1274117ABA3EC103AF8081F3C077925FA2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/949L2SUZQ8y_gSh19UzfJA/zh-cn_image_0000002717770270.png?HW-CC-KV=V1&HW-CC-Date=20260911T072152Z&HW-CC-Expire=86400&HW-CC-Sign=5BB11F51F9379F8B0C53C9F1C3179769208B83877C7E43F8B9F09685E653EE2B)
 
 4. 如图所示，关闭翻页动画，CACHE_LATEST_SWITCHED模式，n设置为2，点击TabBar切换到yellow页，TabContent1、3被缓存。再切换到red页，TabContent1、3、5被缓存。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/cB5UjXjBRQS2JwA5U9l_dA/zh-cn_image_0000002674632120.png?HW-CC-KV=V1&HW-CC-Date=20260813T095710Z&HW-CC-Expire=86400&HW-CC-Sign=35D544DB42D733DE036CBF1C61276B93727D5F4A509CD067CE0B5BE47A7848D6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/5sYQvCaNQLqE3--947E8fQ/zh-cn_image_0000002717610336.png?HW-CC-KV=V1&HW-CC-Date=20260911T072152Z&HW-CC-Expire=86400&HW-CC-Sign=03A457675961FB83E11B9B68B33538E667E8D49E8E6E8198141CDC7CDB439126)
 
  
   
 
-#### Tabs切换动效
+## Tabs切换动效
 
   
 
-#### TabContent切换动画
+### TabContent切换动画
 
 Tabs 自带的页签切换动画为平移动画。若开发者需实现更高级的动画效果，可通过Tabs提供的API实现自定义动画。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/2po35ig8R7SyOtLRWdvccw/zh-cn_image_0000002704272073.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095710Z&HW-CC-Expire=86400&HW-CC-Sign=B4F09A37FEBC638A0F2C0E59D04E07AE3F137C83EFA6742403EFE0FEE41A90A1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/HAiBHNNSRs-qsUHyQYt2KA/zh-cn_image_0000002747290287.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072152Z&HW-CC-Expire=86400&HW-CC-Sign=6D755C0451BBFBE58ADDD7143D312A1AEFFF86707E9FAA8A7C260C846E1E1DAF)
 
  
 **实现原理**
@@ -1139,7 +1139,7 @@ Tabs 自带的页签切换动画为平移动画。若开发者需实现更高级
 使用[customContentTransition()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#customcontenttransition11)函数来自定义Tabs页面的切换动画。本场景采用属性动画实现，开发者可以定义由@State修饰的可动画属性，并在build()方法中将这些属性绑定到对应的页签上。这里，淡入淡出动画选用了TabContent的尺寸属性scale和透明度属性opacity作为生成动画属性。然后，在[customContentTransition()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#customcontenttransition11)函数中，设置动画的起始帧和结束帧对应的可动画属性值，系统将自动补全中间帧从而生成动画。关于属性动画详情可参考：[实现属性动画](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-attribute-animation-apis)。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/q0UZPzgHSSmySdSCJuo_mg/zh-cn_image_0000002674472276.png?HW-CC-KV=V1&HW-CC-Date=20260813T095710Z&HW-CC-Expire=86400&HW-CC-Sign=1EC2BDCDEC6A91D99CD9E7C7FFA3428639C2F17BE3FFC98EA679E0EEDA30A4E2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/vEdV8pyxSi6k0OPfQKNWcA/zh-cn_image_0000002747210205.png?HW-CC-KV=V1&HW-CC-Date=20260911T072152Z&HW-CC-Expire=86400&HW-CC-Sign=CEA2CA91258E0F4824B8FF21B8E8CB45A31D9D60D1DC2B74063F18BF9984DB94)
 
  
 > [!NOTE]
@@ -1163,7 +1163,7 @@ export default struct InTabsComponent {
 2. 将属性数组绑定到对应的页签上。
 
   
-```ArkTS
+```json
 Tabs({
   // ...
 }) {
@@ -1187,7 +1187,7 @@ Tabs({
 3. 定义Tabs的自定义转场函数。
 
   
-```ArkTS
+```text
 @Component
 export default struct InTabsComponent {
   // ...
@@ -1228,7 +1228,7 @@ export default struct InTabsComponent {
 4. 将转场函数作为参数传递给Tabs的customContentTransition()方法。
 
   
-```ArkTS
+```text
 Tabs({
   barPosition: BarPosition.Start,
   controller: this.subsController,
@@ -1242,12 +1242,12 @@ Tabs({
  
   
 
-#### 自定义Tabs页签切换联动
+### 自定义Tabs页签切换联动
 
 在自定义页签样式中，页签的选中和非选中状态显示样式不同时，页签的样式依赖于Tabs组件的切换动作。这种情况下，需要实现Tabs页签的联动，页签切换时，页签样式自动变更。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/CCeA3tY9RRiCB63q5fm5OQ/zh-cn_image_0000002704392243.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095710Z&HW-CC-Expire=86400&HW-CC-Sign=9DCF8F478455295F18E686145BD7474E54E554E58807F7E80458937A42B41B32)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/lvFK15J9Txe7MUc5Uuvn1w/zh-cn_image_0000002717770272.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072152Z&HW-CC-Expire=86400&HW-CC-Sign=DEC6C73247DBA7814A62553FB67CC6C4DBE88FE99276506CF00AE493A92E2EEF)
 
  
 **实现原理**
@@ -1258,7 +1258,7 @@ Tabs({
  
 定义currentIndex属性，tabBuilder方法，并在onChange函数中更新currentIndex属性值。
  
-```ArkTS
+```text
 @Component
 export default struct OutTabsComponent {
   @State currentIndex: number = 0;
@@ -1298,7 +1298,7 @@ export default struct OutTabsComponent {
  
   
 
-#### 支持适老化
+## 支持适老化
 
 在适老化大字体场景下，底部页签提供大字体弹窗显示内容。当组件识别到大字体时，基于设置的文字和图标等内容，构建长按提示弹窗。当用户长按弹窗后，滑动到下一个页签位置时，使用新页签的弹窗提示内容替换上一个页签提示内容，抬手关闭弹窗并切换到对应TabContent内容页。
  
@@ -1307,7 +1307,7 @@ export default struct OutTabsComponent {
 
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/cDmAHsPPQ5awNZnpnVchLg/zh-cn_image_0000002674632122.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095710Z&HW-CC-Expire=86400&HW-CC-Sign=441C9F8C32BD9A4880730A04430503AE9C2BD5F634BB0B8EBC242801704FC53C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/hjnwsPadSkqMfn8VNmrNSA/zh-cn_image_0000002717610338.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072152Z&HW-CC-Expire=86400&HW-CC-Sign=9983E144C6AC31EA32994E3675BEE7C9F7FFBECB471F7CCED5C799765E465E84)
 
  
 ```ArkTS
@@ -1350,23 +1350,23 @@ export struct AgeFriendlyTabs {
  
   
 
-#### 常见问题
+## 常见问题
 
   
 
-#### 如何实现页面懒加载效果
+### 如何实现页面懒加载效果
 
 Tabs页面不支持懒加载。 若要实现页面懒加载效果，可以通过自定义TabBar与[Swiper](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-create-looping)组件结合[LazyForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-lazyforeach)来实现页面的懒加载和释放。在使用Tabs组件时，仅保留TabBar，TabContent部分留空，用Swiper组件替代TabContent以显示内容。定义一个数值属性currentIndex，利用[TabsController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#tabscontroller)、[SwiperController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-swiper#swipercontroller)及onchange函数，使其同时绑定Tabs组件和Swiper组件，从而实现联动。这是因为Swiper组件内支持LazyForEach组件，而原生Tabs组件不支持。在Swiper中利用LazyForEach显示内容，以实现Tabs的懒加载效果。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/1kBFqiZFRIyoQKuTZcHLxQ/zh-cn_image_0000002704272075.png?HW-CC-KV=V1&HW-CC-Date=20260813T095710Z&HW-CC-Expire=86400&HW-CC-Sign=8DFC4FAB8B2ADDF732D7B7A8D39BDE9597A8DFF812C1D9CE95FADA53C945F6AB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/FEeAHLeDRjaeotKcLfQ-3g/zh-cn_image_0000002747290289.png?HW-CC-KV=V1&HW-CC-Date=20260911T072152Z&HW-CC-Expire=86400&HW-CC-Sign=00782B25CCBF9AF15F7FB28D41430980FFDA27DE324B1C9786EB4BF2390B5A85)
 
  
 详情请参见[页面懒加载和释放](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#示例13页面懒加载和释放)。
  
   
 
-#### 示例代码
+## 示例代码
 
 - [基于Tabs组件实现常见导航样式](https://gitcode.com/HarmonyOS_Samples/multi-tab-navigation)
 - [基于Tab组件实现增删Tab的功能](https://gitcode.com/HarmonyOS_Samples/handle-tabs)

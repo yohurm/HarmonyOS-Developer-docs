@@ -1,6 +1,6 @@
 # OH_AudioSuitePipelineStruct
 
-更新时间：2026-03-09 02:50:43
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohaudiosuite-oh-audiosuitepipelinestruct
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -10,7 +10,8 @@ typedef struct OH_AudioSuitePipelineStruct OH_AudioSuitePipeline
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 

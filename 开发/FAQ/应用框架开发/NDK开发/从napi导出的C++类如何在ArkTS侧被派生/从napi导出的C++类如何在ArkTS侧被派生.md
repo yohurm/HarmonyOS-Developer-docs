@@ -25,10 +25,10 @@ napi导出的C++类，支持被派生。
 #include <hilog/log.h>
 #undef LOG_DOMAIN
 #undef LOG_TAG
-#define LOG_DOMAIN 0x3200  // 全局domain宏，标识业务领域
-#define LOG_TAG "MY_TAG"   // 全局tag宏，标识模块日志tag
+#define LOG_DOMAIN 0x3200  <em>// 全局domain宏，标识业务领域</em>
+#define LOG_TAG "MY_TAG" <em>  // 全局tag宏，标识模块日志tag</em>
 
-// 类/结构体
+<em>// 类/结构体</em>
 struct Person {
     Person(int mage, std::string mname, double mweight) : age(mage), name(mname), weight(mweight)
     {
@@ -45,14 +45,14 @@ struct Person {
     double weight;
 };
 
-// 全局函数
+<em>// 全局函数</em>
 Person MakePerson()
 {
     Person person(91, "aki", 128.8);
     return person;
 }
 
-// Aki JSBind语法糖
+<em>// Aki JSBind语法糖</em>
 JSBIND_GLOBAL()
 {
     JSBIND_FUNCTION(MakePerson);
@@ -67,7 +67,7 @@ JSBIND_CLASS(Person)
     JSBIND_PROPERTY(weight);
 }
 
-// TODO：知识点：使用JSBIND_ADDON注册OpenHarmony Native插件，可从JavaScript import导入插件。注册AKI插件名:即为编译*.so名称，规则与NAPI一致。这里注册AKI插件名为:akiusepractice
+<em>// TODO：知识点：使用JSBIND_ADDON注册OpenHarmony Native插件，可从JavaScript import导入插件。注册AKI插件名:即为编译*.so名称，规则与NAPI一致。这里注册AKI插件名为:akiusepractice</em>
 JSBIND_ADDON(akiusepractice)
 ```
 
@@ -92,15 +92,15 @@ ohpm install @ohos/aki
 
 4. 在CMakeLists.txt中链接AKI库。
 ```cpp
-# 设置AKI根路径
+<em># 设置AKI根路径</em>
 set(AKI_ROOT_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../../../oh_modules/@ohos/aki)
-# 将CMAKE_MODULE_PATH变量的值设置为AKI_ROOT_PATH变量的值，这样CMake在查找自定义模块时会查看这个路径。
+<em># 将CMAKE_MODULE_PATH变量的值设置为AKI_ROOT_PATH变量的值，这样CMake在查找自定义模块时会查看这个路径。</em>
 set(CMAKE_MODULE_PATH ${AKI_ROOT_PATH})
-# 用于查找并加载名为"Aki"的库
+<em># 用于查找并加载名为"Aki"的库</em>
 find_package(Aki REQUIRED)
-# 创建并编译一个akiusepractice库
+<em># 创建并编译一个akiusepractice库</em>
 add_library(akiusepractice SHARED pluginPlan.cpp)
-# 将Aki::libjsbind库链接到akiusepractice
+<em># 将Aki::libjsbind库链接到akiusepractice</em>
 target_link_libraries(akiusepractice PUBLIC Aki::libjsbind libhilog_ndk.z.so)
 ```
 
@@ -108,7 +108,7 @@ target_link_libraries(akiusepractice PUBLIC Aki::libjsbind libhilog_ndk.z.so)
 ```text
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import testNapi from 'libentry.so';
-import libAki from 'libakiusepractice.so'; // 导入自定义AKI插件
+import libAki from 'libakiusepractice.so'; <em>// 导入自定义AKI插件</em>
 
 const DOMAIN = 0x0000;
 
@@ -151,14 +151,14 @@ struct Index {
  
 - **方案二****：****通过napi_define_class建立ArkTS类与C++侧的映射关系，并将对应的对象挂载到export上导出，后用extends继承。**1. C++侧：napi_init.cpp中定义使用的类结构。
 ```text
-/*
- * Copyright (c) Huawei Technologies Co., Ltd. 2025-2025. All rights reserved.
- */
+<em>/*</em>
+<em> * Copyright (c) Huawei Technologies Co., Ltd. 2025-2025. All rights reserved.</em>
+<em> */</em>
 #include "napi/native_api.h"
 #include <hilog/log.h>
 #include <string>
 
-// 定义C++的类
+<em>// 定义C++的类</em>
 class MyDemo {
 public:
     MyDemo(){};
@@ -183,28 +183,28 @@ double MyDemo::Sub(double a, double b)
     return a - b + 1000;
 }
 
-// ArkTS对象构造器
+<em>// ArkTS对象构造器</em>
 static napi_value JsConstructor(napi_env env, napi_callback_info info)
 {
-    // 创建Napi对象
+   <em> // 创建Napi对象</em>
     napi_value jDemo = nullptr;
     size_t argc = 0;
     napi_value args[1] = {0};
-    // 获取构造函数的入参
+ <em>   // 获取构造函数的入参</em>
     napi_get_cb_info(env, info, &argc, args, &jDemo, nullptr);
-    // 参数通过args[0]获取
+  <em>  // 参数通过args[0]获取</em>
     char name[50];
     size_t result = 0;
     napi_get_value_string_utf8(env, args[0], name, sizeof(name) + 1, &result);
-    // 创建C对象
+   <em> // 创建C对象</em>
     MyDemo *cDemo = new MyDemo(name);
     OH_LOG_INFO(LOG_APP, "%{public}s", (cDemo->m_name).c_str());
-    // 设置JS对象name属性
+   <em> // 设置JS对象name属性</em>
     napi_set_named_property(env, jDemo, "name", args[0]);
-    // 将JS对象与C++对象绑定
+  <em>  // 将JS对象与C++对象绑定</em>
     napi_wrap(
         env, jDemo, cDemo,
-        // 定义回调函数，用于回收JS对象，用于销毁C++对象并防止内存泄漏
+      <em>  // 定义回调函数，用于回收JS对象，用于销毁C++对象并防止内存泄漏</em>
         [](napi_env env, void *finalize_data, void *finalize_hint) {
             MyDemo *cDemo = (MyDemo *)finalize_data;
             delete cDemo;
@@ -214,7 +214,7 @@ static napi_value JsConstructor(napi_env env, napi_callback_info info)
     return jDemo;
 }
 
-// ArkTS对象add函数
+<em>// ArkTS对象add函数</em>
 static napi_value JsAdd(napi_env env, napi_callback_info info)
 {
     size_t argc = 2;
@@ -222,9 +222,9 @@ static napi_value JsAdd(napi_env env, napi_callback_info info)
     napi_value jDemo = nullptr;
     napi_get_cb_info(env, info, &argc, args, &jDemo, nullptr);
     MyDemo *cDemo = nullptr;
-    // 将ArkTS对象转换为C对象
+   <em> // 将ArkTS对象转换为C对象</em>
     napi_unwrap(env, jDemo, (void **)&cDemo);
-    // 获取ArkTS传递的参数
+   <em> // 获取ArkTS传递的参数</em>
     int value0;
     napi_get_value_int32(env, args[0], &value0);
     int value1;
@@ -235,7 +235,7 @@ static napi_value JsAdd(napi_env env, napi_callback_info info)
     return jResult;
 }
 
-// ArkTS对象sub函数
+<em>// ArkTS对象sub函数</em>
 static napi_value JsSub(napi_env env, napi_callback_info info)
 {
     size_t argc = 2;
@@ -243,9 +243,9 @@ static napi_value JsSub(napi_env env, napi_callback_info info)
     napi_value jDemo = nullptr;
     napi_get_cb_info(env, info, &argc, args, &jDemo, nullptr);
     MyDemo *cDemo = nullptr;
-    // 将ArkTS对象转换为C对象
+    <em>// 将ArkTS对象转换为C对象</em>
     napi_unwrap(env, jDemo, (void **)&cDemo);
-    // 获取ArkTS传递的参数
+   <em> // 获取ArkTS传递的参数</em>
     int value0;
     napi_get_value_int32(env, args[0], &value0);
     int value1;
@@ -271,7 +271,7 @@ static napi_value Add(napi_env env, napi_callback_info info)
     int value1;
     napi_get_value_int32(env, args[1], &value1);
     MyDemo *demo = new MyDemo();
-    // 调用类的成员函数
+   <em> // 调用类的成员函数</em>
     int result = demo->Add(value0, value1);
     napi_value sum;
     napi_create_int32(env, result, &sum);
@@ -293,7 +293,7 @@ static napi_value Sub(napi_env env, napi_callback_info info)
     int value1;
     napi_get_value_int32(env, args[1], &value1);
     MyDemo *demo = new MyDemo();
-    // 调用类的成员函数
+  <em>  // 调用类的成员函数</em>
     int result = demo->Sub(value0, value1);
     napi_value num;
     napi_create_int32(env, result, &num);
@@ -310,12 +310,12 @@ static napi_value Init(napi_env env, napi_value exports)
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
 
-    // 通过napi_fine_class建立ArkTS类和C++端的映射关系，然后将相应的对象挂载到export上
+  <em>  // 通过napi_fine_class建立ArkTS类和C++端的映射关系，然后将相应的对象挂载到export上</em>
     napi_property_descriptor classProp[] = {{"add", nullptr, JsAdd, nullptr, nullptr, nullptr, napi_default, nullptr},
                                             {"sub", nullptr, JsSub, nullptr, nullptr, nullptr, napi_default, nullptr}};
     napi_value jDemo = nullptr;
     const char *jDemoName = "MyDemo";
-    // 建立ArkTS构造函数与C++方法之间的关联
+   <em> // 建立ArkTS构造函数与C++方法之间的关联</em>
     napi_define_class(env, jDemoName, sizeof(jDemoName), JsConstructor, nullptr,
                       sizeof(classProp) / sizeof(classProp[0]), classProp, &jDemo);
     napi_set_named_property(env, exports, jDemoName, jDemo);
@@ -345,7 +345,7 @@ extern "C" __attribute__((constructor)) void RegisterEntryModule(void)
 declare namespace testNapi {
   const add: (a: number, b: number) => number;
   const sub: (a: number, b: number) => number;
-  // 定义ArkTS接口
+  <em>// 定义ArkTS接口</em>
   class MyDemo {
     constructor(name:string)
     name: string
@@ -362,7 +362,7 @@ export default testNapi;
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import testNapi from 'libentry.so';
 
-class Employee extends testNapi.MyDemo { // 继承C++的类
+class Employee extends testNapi.MyDemo { <em>// 继承C++的类</em>
   salary: number = 0;
   calculateTaxes(): number {
     return this.salary * 0.42;

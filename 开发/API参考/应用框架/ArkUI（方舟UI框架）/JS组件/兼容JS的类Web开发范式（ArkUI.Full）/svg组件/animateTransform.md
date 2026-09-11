@@ -1,9 +1,9 @@
 # animateTransform
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-svg-animatetransform
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 > [!NOTE]
 > 该组件从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
@@ -14,28 +14,32 @@ transform动效，支持的组件范围：
 &lt;circle&gt;, &lt;ellipse&gt;, &lt;line&gt;, &lt;path&gt;, &lt;polygon&gt;, &lt;polyline&gt;, &lt;rect&gt;, &lt;text&gt;
   
 
-#### 权限列表
+## 权限列表
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 无
  
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 不支持。
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 支持animate属性和以下表格中的属性。
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | type | [translate \| scale \| rotate \| skewX \| skewY] | - | 是 | 设置transform动画的类型 |
@@ -43,9 +47,10 @@ transform动效，支持的组件范围：
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```xml
 <!-- xxx.hml -->
@@ -234,4 +239,4 @@ transform动效，支持的组件范围：
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/vIrGsvVoSCicnF13sXsG6w/zh-cn_image_0000002626071044.gif?HW-CC-KV=V1&HW-CC-Date=20260624T015943Z&HW-CC-Expire=86400&HW-CC-Sign=DD1F942DED93419DC9F37A01D0588146284331AF4CFC7E7DDA23AEB4E60EA138)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/x2uhJLP1TgK5m_TCSBILaw/zh-cn_image_0000002717773238.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072958Z&HW-CC-Expire=86400&HW-CC-Sign=B7290F3D37A3874E669E54B81F34FA7EDF8CBF9C803C4FCAAD4D0B52083DAD6B)

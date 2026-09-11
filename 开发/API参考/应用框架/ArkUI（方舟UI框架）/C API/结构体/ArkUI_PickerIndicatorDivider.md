@@ -1,18 +1,19 @@
 # ArkUI_PickerIndicatorDivider
 
-更新时间：2026-07-28 11:23:46（官网已下线）
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-arkui-pickerindicatordivider
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct {...} ArkUI_PickerIndicatorDivider
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于定义分割线样式指示器的样式参数，支持自定义分割线的线宽、颜色以及与容器侧边的距离，适用于需要美化Picker控件分割线外观的场景。开发者可通过配置该结构体实现个性化分割线效果，提升UI界面的美观度和用户体验。
  
@@ -26,16 +27,19 @@ typedef struct {...} ArkUI_PickerIndicatorDivider
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 成员变量
+### 成员变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | float strokeWidth | 分割线的线宽。 默认值：0 单位：vp 取值范围：[0, 选中项高度的一半（即20vp）]。 小于0时设置失败，大于选中项高度的一半时使用默认值0。不支持百分比类型。 |

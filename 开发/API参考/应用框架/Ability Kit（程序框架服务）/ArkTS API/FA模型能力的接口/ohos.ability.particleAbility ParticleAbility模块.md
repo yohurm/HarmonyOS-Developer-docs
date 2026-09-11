@@ -1,9 +1,9 @@
 # @ohos.ability.particleAbility (ParticleAbility模块)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-ability-particleability
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 particleAbility模块提供了操作Data和Service类型的Ability的能力，包括启动、停止指定的particleAbility，获取dataAbilityHelper，连接、断连指定的ServiceAbility等。
 
@@ -12,17 +12,19 @@ particleAbility模块提供了操作Data和Service类型的Ability的能力，�
 
 
 
-#### 使用限制
+## 使用限制
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 particleAbility模块用来对Data和Service类型的Ability进行操作。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { particleAbility } from '@kit.AbilityKit';
@@ -30,9 +32,10 @@ import { particleAbility } from '@kit.AbilityKit';
 
 
 
-#### particleAbility.startAbility
+## particleAbility.startAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startAbility(parameter: StartAbilityParameter, callback: AsyncCallback&lt;void&gt;): void
 
@@ -45,6 +48,7 @@ startAbility(parameter: StartAbilityParameter, callback: AsyncCallback&lt;void&g
 **系统能力**：SystemCapability.Ability.AbilityRuntime.FAModel
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -83,9 +87,10 @@ particleAbility.startAbility(
 
 
 
-#### particleAbility.startAbility
+## particleAbility.startAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startAbility(parameter: StartAbilityParameter): Promise&lt;void&gt;
 
@@ -99,12 +104,14 @@ startAbility(parameter: StartAbilityParameter): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | parameter | StartAbilityParameter | 是 | 表示启动的ability。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -137,9 +144,10 @@ particleAbility.startAbility(
 
 
 
-#### particleAbility.terminateSelf
+## particleAbility.terminateSelf
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 terminateSelf(callback: AsyncCallback&lt;void&gt;): void
 
@@ -148,6 +156,7 @@ terminateSelf(callback: AsyncCallback&lt;void&gt;): void
 **系统能力**：SystemCapability.Ability.AbilityRuntime.FAModel
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -170,9 +179,10 @@ particleAbility.terminateSelf(
 
 
 
-#### particleAbility.terminateSelf
+## particleAbility.terminateSelf
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 terminateSelf(): Promise&lt;void&gt;
 
@@ -181,6 +191,7 @@ terminateSelf(): Promise&lt;void&gt;
 **系统能力**：SystemCapability.Ability.AbilityRuntime.FAModel
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -199,9 +210,10 @@ particleAbility.terminateSelf().then(() => {
 
 
 
-#### particleAbility.acquireDataAbilityHelper
+## particleAbility.acquireDataAbilityHelper
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 acquireDataAbilityHelper(uri: string): DataAbilityHelper
 
@@ -215,12 +227,14 @@ acquireDataAbilityHelper(uri: string): DataAbilityHelper
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| uri | string | 是 | 表示要打开的文件的路径。 |
+| uri | string | 是 | 表示要访问的DataAbility的URI。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -238,9 +252,10 @@ particleAbility.acquireDataAbilityHelper(uri);
 
 
 
-#### particleAbility.startBackgroundRunning(deprecated)
+## particleAbility.startBackgroundRunning(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startBackgroundRunning(id: number, request: NotificationRequest, callback: AsyncCallback&lt;void&gt;): void
 
@@ -255,6 +270,7 @@ startBackgroundRunning(id: number, request: NotificationRequest, callback: Async
 
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -309,9 +325,10 @@ wantAgent.getWantAgent(wantAgentInfo).then((wantAgentObj) => {
 
 
 
-#### particleAbility.startBackgroundRunning(deprecated)
+## particleAbility.startBackgroundRunning(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startBackgroundRunning(id: number, request: NotificationRequest): Promise&lt;void&gt;
 
@@ -327,6 +344,7 @@ startBackgroundRunning(id: number, request: NotificationRequest): Promise&lt;voi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | number | 是 | 长时任务通知id号。 |
@@ -334,6 +352,7 @@ startBackgroundRunning(id: number, request: NotificationRequest): Promise&lt;voi
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -382,9 +401,10 @@ wantAgent.getWantAgent(wantAgentInfo).then((wantAgentObj) => {
 
 
 
-#### particleAbility.cancelBackgroundRunning(deprecated)
+## particleAbility.cancelBackgroundRunning(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancelBackgroundRunning(callback: AsyncCallback&lt;void&gt;): void
 
@@ -397,6 +417,7 @@ cancelBackgroundRunning(callback: AsyncCallback&lt;void&gt;): void
 
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -422,9 +443,10 @@ particleAbility.cancelBackgroundRunning(callback);
 
 
 
-#### particleAbility.cancelBackgroundRunning(deprecated)
+## particleAbility.cancelBackgroundRunning(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancelBackgroundRunning(): Promise&lt;void&gt;
 
@@ -437,6 +459,7 @@ cancelBackgroundRunning(): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -458,9 +481,10 @@ particleAbility.cancelBackgroundRunning().then(() => {
 
 
 
-#### particleAbility.connectAbility
+## particleAbility.connectAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 connectAbility(request: Want, options:ConnectOptions): number
 
@@ -474,6 +498,7 @@ connectAbility(request: Want, options:ConnectOptions): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | Want | 是 | 表示被连接的ServiceAbility。 |
@@ -481,6 +506,7 @@ connectAbility(request: Want, options:ConnectOptions): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -521,9 +547,10 @@ particleAbility.disconnectAbility(connId).then((data) => {
 
 
 
-#### particleAbility.disconnectAbility
+## particleAbility.disconnectAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 disconnectAbility(connection: number, callback:AsyncCallback&lt;void&gt;): void
 
@@ -532,6 +559,7 @@ disconnectAbility(connection: number, callback:AsyncCallback&lt;void&gt;): void
 **系统能力**：SystemCapability.Ability.AbilityRuntime.FAModel
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -570,9 +598,10 @@ particleAbility.disconnectAbility(connId, (err) => {
 
 
 
-#### particleAbility.disconnectAbility
+## particleAbility.disconnectAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 disconnectAbility(connection: number): Promise&lt;void&gt;
 
@@ -582,12 +611,14 @@ disconnectAbility(connection: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | connection | number | 是 | 表示断开连接的ServiceAbility的ID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -628,13 +659,15 @@ particleAbility.disconnectAbility(connId).then(() => {
 
 
 
-#### ErrorCode
+## ErrorCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义启动Ability时返回的错误码。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.FAModel
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

@@ -1,6 +1,6 @@
-# @Once：初始化同步一次
+# @Once装饰器：初始化同步一次
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-once
 
@@ -13,7 +13,7 @@
 
 
 
-#### 概述
+## 概述
 
 @Once装饰器在变量初始化时接受外部传入值进行初始化，后续数据源更改不会同步给子组件：
 
@@ -25,9 +25,10 @@
 
 
 
-#### 装饰器使用规则说明
+## 装饰器使用规则说明
 
 @Once装饰器作为辅助装饰器，本身没有装饰类型要求和变量观察能力。
+
 
 | @Once变量装饰器 | 说明 |
 | --- | --- |
@@ -37,7 +38,7 @@
 
 
 
-#### 限制条件
+## 限制条件
 
  - @Once仅在[@ComponentV2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-custom-components#componentv2)装饰的自定义组件中与@Param搭配使用。
 
@@ -67,11 +68,11 @@ struct MyComponent {
 
 
 
-#### 使用场景
+## 使用场景
 
 
 
-#### 变量仅初始化同步一次
+### 变量仅初始化同步一次
 
 @Once用于期望变量仅初始化同步数据源一次，之后不再继续同步变化的场景。
 
@@ -116,12 +117,12 @@ struct MyComponent {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/KxPC_asMQaCP8R6hrOY1Mw/zh-cn_image_0000002704392017.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=25A516C74C8A7CE0DA94A2488CE22623A47DB0DDAED1E139394561890E7FBB98)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/LqKLYd5BTxqt6EtLdlLVZA/zh-cn_image_0000002747290061.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072120Z&HW-CC-Expire=86400&HW-CC-Sign=CECC74F4D4C47EC179958C0F66E0A483CDDE1C96B95431ADD2197E112BDFCD34)
 
 
 
 
-#### 本地修改@Param变量
+### 本地修改@Param变量
 
 当@Once与@Param结合使用时，可以解除@Param无法在本地修改的限制，并能够触发UI刷新。此时，使用@Param和@Once的效果类似于[@Local](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-local)，但@Param和@Once还能接收外部传入的初始值。
 
@@ -200,4 +201,4 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/db_c5tnGReiW1FTNNXnQEA/zh-cn_image_0000002674631894.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=FA06CF5A11FB6167768E62B651EBAD767CCCBC77D369AD73C98064BEBB0600C7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/IpJMoX_USsKdgQLO9Hb4-A/zh-cn_image_0000002747209979.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072120Z&HW-CC-Expire=86400&HW-CC-Sign=15DC95EC8C440BCE59FA7C8F0C8C0FF470086855546460DEE5AD187E087AC141)

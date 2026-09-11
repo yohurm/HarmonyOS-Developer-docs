@@ -45,7 +45,7 @@ struct LowCodeTitleView{
   @Local changes:string = ''
 
   aboutToAppear(): void {
-    this.changes = this.ids // 数据更新是在子组件的aboutToAppear方法里完成的
+    this.changes = this.ids <em>// </em><em>数据更新是在子组件的aboutToAppear方法里完成的</em>
   }
 
   build() {
@@ -61,7 +61,7 @@ struct Index {
   @Local dataArr: Array<string> = [];
   aboutToAppear(): void {
     for (let i = 0; i < 50; i++) {
-      this.dataArr.push(`data_${i}`); // 为数组添加一些数据
+      this.dataArr.push(`data_${i}`); <em>// 为数组添加一些数据</em>
     }
   }
   build() {
@@ -117,7 +117,7 @@ class Title {
 
 @ComponentV2
 struct LowCodeTitleView {
-  @Param title: Title = new Title(0, '标题内容'); // 数据从父组件传递给子组件，不走aboutToAppear
+  @Param title: Title = new Title(0, '标题内容');<em> </em><em>// 数据从父组件传递给子组件，不走aboutToAppear</em>
 
   build() {
     Column() {
@@ -133,14 +133,14 @@ struct RepeatLoadDataDemo {
 
   aboutToAppear(): void {
     for (let i = 0; i < 50; i++) {
-      this.dataArr.push(new Title(i, '标题内容')); // 为数组添加一些数据
+      this.dataArr.push(new Title(i, '标题内容'));<em> </em><em>// 为数组添加一些数据</em>
     }
   }
 
   build() {
     RelativeContainer() {
       List({ space: 3 }) {
-        Repeat<Title>(this.dataArr) // 把更新的数据放在数据源里
+        Repeat<Title>(this.dataArr) <em>// 把更新的数据放在数据源里</em>
           .each((ri: RepeatItem<Title>) => {
             ListItem() {
               LowCodeTitleView({
@@ -192,7 +192,7 @@ export class ItemDataV2 {
 struct RepeatDemo {
   @Local imageList: Array<ItemDataV2> = this.getFirstPageData();
 
-  // 模拟的第一页的数据
+ <em> // 模拟的第一页的数据</em>
   getFirstPageData(): Array<ItemDataV2> {
     let imageList: Array<ItemDataV2> = [];
     imageList.push(...getItemData(2, 10));
@@ -201,7 +201,7 @@ struct RepeatDemo {
 
   build() {
     Column() {
-      Button('addItem').onClick(() => { // 点击按钮添加一页的数据
+      Button('addItem').onClick(() => { <em>// 点击按钮添加一页的数据</em>
         this.addTestData();
       });
 
@@ -229,7 +229,7 @@ struct RepeatDemo {
     }.expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.BOTTOM]);
   }
 
-  // 添加一页的数据
+ <em> // 添加一页的数据</em>
   addTestData(): void {
     let count = this.imageList.length;
     let moreArr: ItemDataV2[] = getItemData(count, 10);
@@ -255,9 +255,9 @@ struct RepeatDemo {
   }
 }
 
-let swiperImg: Array<Resource> = [$r('app.media.backImage')]; // 背景图
+let swiperImg: Array<Resource> = [$r('app.media.backImage')]; <em>// </em><em>背景图</em>
 
-// 创建模拟的数据
+<em>// </em><em>创建模拟的数据</em>
 function getItemData(start: number, count: number): ItemDataV2[] {
   let arr: ItemDataV2[] = [];
   for (let i = 0; i < count; i++) {

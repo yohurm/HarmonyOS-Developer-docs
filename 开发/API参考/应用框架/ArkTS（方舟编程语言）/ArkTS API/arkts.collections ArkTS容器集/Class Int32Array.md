@@ -1,9 +1,9 @@
 # Class (Int32Array)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-arkts-collections-int32array
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 一种线性数据结构，底层基于[ArrayBuffer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-arkts-collections-arraybuffer)实现。
  
@@ -14,9 +14,10 @@
 **装饰器类型：**@Sendable
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { collections } from '@kit.ArkTS';
@@ -24,14 +25,16 @@ import { collections } from '@kit.ArkTS';
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
  
 **系统能力：** SystemCapability.Utils.Lang
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | buffer | ArrayBuffer | 是 | 否 | ArkTS Int32Array底层使用的buffer。 |
@@ -43,9 +46,10 @@ import { collections } from '@kit.ArkTS';
  
   
 
-#### constructor
+## constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
  
@@ -59,6 +63,7 @@ constructor()
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200012 | The Int32Array's constructor cannot be directly invoked. |
@@ -73,9 +78,10 @@ let int32Array: collections.Int32Array = new collections.Int32Array();
  
   
 
-#### constructor
+## constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(length: number)
  
@@ -87,6 +93,7 @@ constructor(length: number)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | length | number | 是 | 用于指定ArkTS Int32Array的长度，取值需为非负整数。 |
@@ -96,6 +103,7 @@ constructor(length: number)
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200012 | The Int32Array's constructor cannot be directly invoked. |
@@ -110,9 +118,10 @@ let int32Array: collections.Int32Array = new collections.Int32Array(12);
  
   
 
-#### constructor
+## constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(elements: Iterable&lt;number&gt;)
  
@@ -124,6 +133,7 @@ constructor(elements: Iterable&lt;number&gt;)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | elements | Iterable&lt;number&gt; | 是 | 可迭代数字集合，用于构造ArkTS Int32Array对象。 |
@@ -133,6 +143,7 @@ constructor(elements: Iterable&lt;number&gt;)
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200012 | The Int32Array's constructor cannot be directly invoked. |
@@ -149,9 +160,10 @@ let int32Array: collections.Int32Array = new collections.Int32Array(set);
  
   
 
-#### constructor
+## constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(array: ArrayLike&lt;number&gt; | ArrayBuffer)
  
@@ -163,6 +175,7 @@ constructor(array: ArrayLike&lt;number&gt; | ArrayBuffer)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | array | ArrayLike&lt;number&gt; \| ArrayBuffer | 是 | 用于构造ArkTS Int32Array的对象。当参数类型是ArrayBuffer时buffer所占的字节数需是4的整数倍。 |
@@ -172,6 +185,7 @@ constructor(array: ArrayLike&lt;number&gt; | ArrayBuffer)
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200012 | The Int32Array's constructor cannot be directly invoked. |
@@ -202,9 +216,10 @@ let int32Array2: collections.Int32Array = new collections.Int32Array(int32Array1
  
   
 
-#### constructor
+## constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(buffer: ArrayBuffer, byteOffset?: number, length?: number)
  
@@ -216,6 +231,7 @@ constructor(buffer: ArrayBuffer, byteOffset?: number, length?: number)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | buffer | ArrayBuffer | 是 | 用于构造ArkTS Int32Array的ArrayBuffer对象。buffer所占的字节数需是4的整数倍。 |
@@ -227,6 +243,7 @@ constructor(buffer: ArrayBuffer, byteOffset?: number, length?: number)
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200012 | The Int32Array's constructor cannot be directly invoked. |
@@ -244,9 +261,10 @@ console.info("[" + int32Array1 + "]"); // [2, 3, 4, 5, 6]
  
   
 
-#### from
+## from
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static from(arrayLike: ArrayLike&lt;number&gt;): Int32Array
  
@@ -258,6 +276,7 @@ static from(arrayLike: ArrayLike&lt;number&gt;): Int32Array
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | arrayLike | ArrayLike&lt;number&gt; | 是 | 用于构造ArkTS Int32Array的ArrayLike对象。 |
@@ -265,6 +284,7 @@ static from(arrayLike: ArrayLike&lt;number&gt;): Int32Array
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Int32Array | 新创建的ArkTS Int32Array对象。 |
@@ -279,9 +299,10 @@ let array: collections.Int32Array = collections.Int32Array.from(arrayLike); // a
  
   
 
-#### from
+## from
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static from&lt;T&gt;(arrayLike: ArrayLike&lt;T&gt;, mapFn: TypedArrayFromMapFn<T, number>): Int32Array
  
@@ -293,6 +314,7 @@ static from&lt;T&gt;(arrayLike: ArrayLike&lt;T&gt;, mapFn: TypedArrayFromMapFn<T
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | arrayLike | ArrayLike&lt;T&gt; | 是 | 用于构造ArkTS Int32Array的ArrayLike对象。 |
@@ -301,6 +323,7 @@ static from&lt;T&gt;(arrayLike: ArrayLike&lt;T&gt;, mapFn: TypedArrayFromMapFn<T
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Int32Array | 新创建的ArkTS Int32Array对象。 |
@@ -328,9 +351,10 @@ let array: collections.Int32Array = collections.Int32Array.from<string>(
  
   
 
-#### from
+## from
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static from(arrayLike: Iterable&lt;number&gt;, mapFn?: TypedArrayFromMapFn<number, number>): Int32Array
  
@@ -342,6 +366,7 @@ static from(arrayLike: Iterable&lt;number&gt;, mapFn?: TypedArrayFromMapFn<numbe
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | arrayLike | Iterable&lt;number&gt; | 是 | 用于构造ArkTS Int32Array的可迭代对象。 |
@@ -350,6 +375,7 @@ static from(arrayLike: Iterable&lt;number&gt;, mapFn?: TypedArrayFromMapFn<numbe
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Int32Array | 新创建的ArkTS Int32Array对象。 |
@@ -374,9 +400,10 @@ let array: collections.Int32Array = collections.Int32Array.from(
  
   
 
-#### of18+
+## of18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static of(...items: number[]): Int32Array
  
@@ -388,6 +415,7 @@ static of(...items: number[]): Int32Array
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | items | number[] | 否 | 用于创建数组的元素，参数个数可变。默认值为空数组。 |
@@ -395,6 +423,7 @@ static of(...items: number[]): Int32Array
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Int32Array | 新的ArkTS Int32Array对象。 |
@@ -410,9 +439,10 @@ console.info(int32Array.toString()); // 预期输出：1,2,3,4
  
   
 
-#### toString18+
+## toString18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toString(): string
  
@@ -424,6 +454,7 @@ toString(): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 一个包含数组所有元素的字符串，各元素以逗号分隔。 |
@@ -433,6 +464,7 @@ toString(): string
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The toString method cannot be bound. |
@@ -449,9 +481,10 @@ console.info(stringArray); // 预期输出：1,2,3,4,5
  
   
 
-#### toLocaleString18+
+## toLocaleString18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toLocaleString(): string
  
@@ -463,6 +496,7 @@ toLocaleString(): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 一个包含数组所有元素的字符串，各元素以本地化格式表示并以逗号分隔。 |
@@ -472,6 +506,7 @@ toLocaleString(): string
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The toLocaleString method cannot be bound. |
@@ -489,9 +524,10 @@ console.info(stringArray); // 预期输出：1 000,2 000,3 000
  
   
 
-#### copyWithin
+## copyWithin
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 copyWithin(target: number, start: number, end?: number): Int32Array
  
@@ -503,6 +539,7 @@ copyWithin(target: number, start: number, end?: number): Int32Array
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | target | number | 是 | 目标起始位置的索引，如果target < 0，则会从target + Int32Array.length位置开始。 |
@@ -512,6 +549,7 @@ copyWithin(target: number, start: number, end?: number): Int32Array
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Int32Array | 修改后的ArkTS Int32Array。 |
@@ -521,6 +559,7 @@ copyWithin(target: number, start: number, end?: number): Int32Array
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The copyWithin method cannot be bound. |
@@ -537,9 +576,10 @@ let copied: collections.Int32Array = int32Array.copyWithin(3, 1, 3);
  
   
 
-#### some
+## some
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 some(predicate: TypedArrayPredicateFn<number, Int32Array>): boolean
  
@@ -551,6 +591,7 @@ some(predicate: TypedArrayPredicateFn<number, Int32Array>): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | predicate | TypedArrayPredicateFn<number, Int32Array> | 是 | 用于测试的断言函数。 |
@@ -558,6 +599,7 @@ some(predicate: TypedArrayPredicateFn<number, Int32Array>): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 如果存在元素满足指定条件返回true，否则返回false。 |
@@ -567,6 +609,7 @@ some(predicate: TypedArrayPredicateFn<number, Int32Array>): boolean
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The some method cannot be bound. |
@@ -584,9 +627,10 @@ int32Array.some((element: number) => element < 0); // true
  
   
 
-#### every
+## every
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 every(predicate: TypedArrayPredicateFn<number, Int32Array>): boolean
  
@@ -598,6 +642,7 @@ every(predicate: TypedArrayPredicateFn<number, Int32Array>): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | predicate | TypedArrayPredicateFn<number, Int32Array> | 是 | 用于测试的断言函数。 |
@@ -605,6 +650,7 @@ every(predicate: TypedArrayPredicateFn<number, Int32Array>): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 如果所有元素都满足指定条件则返回true，否则返回false。 |
@@ -614,6 +660,7 @@ every(predicate: TypedArrayPredicateFn<number, Int32Array>): boolean
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The every method cannot be bound. |
@@ -631,9 +678,10 @@ int32Array.every((element: number) => element > 0);  // false
  
   
 
-#### fill
+## fill
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fill(value: number, start?: number, end?: number): Int32Array
  
@@ -645,6 +693,7 @@ fill(value: number, start?: number, end?: number): Int32Array
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 待填充的值。 |
@@ -654,6 +703,7 @@ fill(value: number, start?: number, end?: number): Int32Array
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Int32Array | 填充后的ArkTS Int32Array。 |
@@ -663,6 +713,7 @@ fill(value: number, start?: number, end?: number): Int32Array
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The fill method cannot be bound. |
@@ -683,9 +734,10 @@ new collections.Int32Array(arrayLike).fill(4, 1, 2); // Int32Array [1, 4, 3]
  
   
 
-#### filter
+## filter
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 filter(predicate: TypedArrayPredicateFn<number, Int32Array>): Int32Array
  
@@ -697,6 +749,7 @@ filter(predicate: TypedArrayPredicateFn<number, Int32Array>): Int32Array
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | predicate | TypedArrayPredicateFn<number, Int32Array> | 是 | 用于元素过滤的断言函数。 |
@@ -704,6 +757,7 @@ filter(predicate: TypedArrayPredicateFn<number, Int32Array>): Int32Array
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Int32Array | 过滤后的ArkTS Int32Array对象。 |
@@ -713,6 +767,7 @@ filter(predicate: TypedArrayPredicateFn<number, Int32Array>): Int32Array
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The filter method cannot be bound. |
@@ -729,9 +784,10 @@ let filtered: collections.Int32Array = array.filter((element: number) => element
  
   
 
-#### find
+## find
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 find(predicate: TypedArrayPredicateFn<number, Int32Array>): number | undefined
  
@@ -743,6 +799,7 @@ find(predicate: TypedArrayPredicateFn<number, Int32Array>): number | undefined
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | predicate | TypedArrayPredicateFn<number, Int32Array> | 是 | 用于元素查找的断言函数。 |
@@ -750,6 +807,7 @@ find(predicate: TypedArrayPredicateFn<number, Int32Array>): number | undefined
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number \| undefined | 第一个满足条件的元素的值；如果所有元素都不满足条件，则返回undefined。 |
@@ -759,6 +817,7 @@ find(predicate: TypedArrayPredicateFn<number, Int32Array>): number | undefined
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The find method cannot be bound. |
@@ -775,9 +834,10 @@ array.find((element: number) => element > 4); // undefined
  
   
 
-#### findIndex
+## findIndex
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 findIndex(predicate: TypedArrayPredicateFn<number, Int32Array>): number
  
@@ -789,6 +849,7 @@ findIndex(predicate: TypedArrayPredicateFn<number, Int32Array>): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | predicate | TypedArrayPredicateFn<number, Int32Array> | 是 | 用于元素查找的断言函数。 |
@@ -796,6 +857,7 @@ findIndex(predicate: TypedArrayPredicateFn<number, Int32Array>): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 第一个满足条件的元素索引；如果所有元素都不满足条件，则返回-1。 |
@@ -805,6 +867,7 @@ findIndex(predicate: TypedArrayPredicateFn<number, Int32Array>): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The findIndex method cannot be bound. |
@@ -820,9 +883,10 @@ let foundIndex: number = array.findIndex((element: number) => element % 2 === 0)
  
   
 
-#### forEach
+## forEach
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 forEach(callbackFn: TypedArrayForEachCallback<number, Int32Array>): void
  
@@ -834,6 +898,7 @@ forEach(callbackFn: TypedArrayForEachCallback<number, Int32Array>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callbackFn | TypedArrayForEachCallback<number, Int32Array> | 是 | 用于对每个元素执行的回调函数。 |
@@ -843,6 +908,7 @@ forEach(callbackFn: TypedArrayForEachCallback<number, Int32Array>): void
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The forEach method cannot be bound. |
@@ -860,9 +926,10 @@ int32Array.forEach((value: number, index: number, array: collections.Int32Array)
  
   
 
-#### indexOf
+## indexOf
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 indexOf(searchElement: number, fromIndex?: number): number
  
@@ -874,6 +941,7 @@ indexOf(searchElement: number, fromIndex?: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | searchElement | number | 是 | 待查找的元素值。 |
@@ -882,6 +950,7 @@ indexOf(searchElement: number, fromIndex?: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 数组中元素的第一个索引；没有找到，则返回-1。 |
@@ -891,6 +960,7 @@ indexOf(searchElement: number, fromIndex?: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The indexOf method cannot be bound. |
@@ -909,9 +979,10 @@ array.indexOf(9, -2); // 2
  
   
 
-#### lastIndexOf18+
+## lastIndexOf18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 lastIndexOf(searchElement: number, fromIndex?: number): number
  
@@ -923,6 +994,7 @@ lastIndexOf(searchElement: number, fromIndex?: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | searchElement | number | 是 | 待查找的元素值。 |
@@ -931,6 +1003,7 @@ lastIndexOf(searchElement: number, fromIndex?: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 数组中给定元素的最后一个索引；没有找到，则返回-1。 |
@@ -940,6 +1013,7 @@ lastIndexOf(searchElement: number, fromIndex?: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The lastIndexOf method cannot be bound. |
@@ -958,9 +1032,10 @@ console.info(array.lastIndexOf(9, -2) + ''); // 预期输出：-1
  
   
 
-#### join
+## join
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 join(separator?: string): string
  
@@ -972,6 +1047,7 @@ join(separator?: string): string
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | separator | string | 否 | 分隔字符串。如果省略，则使用逗号分隔。 |
@@ -979,6 +1055,7 @@ join(separator?: string): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 包含所有元素拼接成的字符串。如果ArkTS Int32Array为空，则返回空字符串。 |
@@ -988,6 +1065,7 @@ join(separator?: string): string
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The join method cannot be bound. |
@@ -1003,9 +1081,10 @@ let joined: string = array.join('-'); // "1-2-3-4-5"
  
   
 
-#### map
+## map
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 map(callbackFn: TypedArrayMapCallback<number, Int32Array>): Int32Array
  
@@ -1017,6 +1096,7 @@ map(callbackFn: TypedArrayMapCallback<number, Int32Array>): Int32Array
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callbackFn | TypedArrayMapCallback<number, Int32Array> | 是 | 回调函数。 |
@@ -1024,6 +1104,7 @@ map(callbackFn: TypedArrayMapCallback<number, Int32Array>): Int32Array
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Int32Array | 新ArkTS Int32Array对象。 |
@@ -1033,6 +1114,7 @@ map(callbackFn: TypedArrayMapCallback<number, Int32Array>): Int32Array
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The map method cannot be bound. |
@@ -1048,9 +1130,10 @@ const mapped: collections.Int32Array = array.map(Math.sqrt); // Int32Array [5, 6
  
   
 
-#### reduce
+## reduce
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reduce(callbackFn: TypedArrayReduceCallback<number, number, Int32Array>): number
  
@@ -1062,6 +1145,7 @@ reduce(callbackFn: TypedArrayReduceCallback<number, number, Int32Array>): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callbackFn | TypedArrayReduceCallback<number, number, Int32Array> | 是 | 归约函数。 |
@@ -1069,6 +1153,7 @@ reduce(callbackFn: TypedArrayReduceCallback<number, number, Int32Array>): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 由归约函数返回的结果。 |
@@ -1078,6 +1163,7 @@ reduce(callbackFn: TypedArrayReduceCallback<number, number, Int32Array>): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The reduce method cannot be bound. |
@@ -1094,9 +1180,10 @@ let reducedValue: number = array.reduce((accumulator: number, value: number) => 
  
   
 
-#### reduceRight18+
+## reduceRight18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reduceRight(callbackFn: TypedArrayReduceCallback<number, number, Int32Array>): number
  
@@ -1108,6 +1195,7 @@ reduceRight(callbackFn: TypedArrayReduceCallback<number, number, Int32Array>): n
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callbackFn | TypedArrayReduceCallback<number, number, Int32Array> | 是 | 归约函数。 |
@@ -1115,6 +1203,7 @@ reduceRight(callbackFn: TypedArrayReduceCallback<number, number, Int32Array>): n
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 由归约函数返回的结果。 |
@@ -1124,6 +1213,7 @@ reduceRight(callbackFn: TypedArrayReduceCallback<number, number, Int32Array>): n
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The reduceRight method cannot be bound. |
@@ -1140,9 +1230,10 @@ console.info(reducedValue + ''); // 预期输出：15
  
   
 
-#### reduce
+## reduce
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reduce(callbackFn: TypedArrayReduceCallback<number, number, Int32Array>, initialValue: number): number
  
@@ -1154,6 +1245,7 @@ reduce(callbackFn: TypedArrayReduceCallback<number, number, Int32Array>, initial
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callbackFn | TypedArrayReduceCallback<number, number, Int32Array> | 是 | 归约函数。 |
@@ -1162,6 +1254,7 @@ reduce(callbackFn: TypedArrayReduceCallback<number, number, Int32Array>, initial
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 由归约函数返回的结果。 |
@@ -1171,6 +1264,7 @@ reduce(callbackFn: TypedArrayReduceCallback<number, number, Int32Array>, initial
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The reduce method cannot be bound. |
@@ -1187,9 +1281,10 @@ let reducedValue: number = array.reduce((accumulator: number, value: number) => 
  
   
 
-#### reduceRight18+
+## reduceRight18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reduceRight<U = number>(callbackFn: TypedArrayReduceCallback<U, number, Int32Array>, initialValue: U): U
  
@@ -1201,6 +1296,7 @@ reduceRight<U = number>(callbackFn: TypedArrayReduceCallback<U, number, Int32Arr
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callbackFn | TypedArrayReduceCallback<U, number, Int32Array> | 是 | 归约函数。 |
@@ -1209,6 +1305,7 @@ reduceRight<U = number>(callbackFn: TypedArrayReduceCallback<U, number, Int32Arr
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | U | 由归约函数返回的结果。 |
@@ -1218,6 +1315,7 @@ reduceRight<U = number>(callbackFn: TypedArrayReduceCallback<U, number, Int32Arr
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The reduceRight method cannot be bound. |
@@ -1234,9 +1332,10 @@ console.info(reducedValue + ''); // 预期输出：16
  
   
 
-#### reduce
+## reduce
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reduce&lt;U&gt;(callbackFn: TypedArrayReduceCallback<U, number, Int32Array>, initialValue: U): U
  
@@ -1248,6 +1347,7 @@ reduce&lt;U&gt;(callbackFn: TypedArrayReduceCallback<U, number, Int32Array>, ini
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callbackFn | TypedArrayReduceCallback<U, number, Int32Array> | 是 | 归约函数。 |
@@ -1256,6 +1356,7 @@ reduce&lt;U&gt;(callbackFn: TypedArrayReduceCallback<U, number, Int32Array>, ini
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | U | 由归约函数返回的结果。 |
@@ -1265,6 +1366,7 @@ reduce&lt;U&gt;(callbackFn: TypedArrayReduceCallback<U, number, Int32Array>, ini
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The reduce method cannot be bound. |
@@ -1281,9 +1383,10 @@ let reducedValue: string = array.reduce<string>((accumulator: string, value: num
  
   
 
-#### reverse
+## reverse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reverse(): Int32Array
  
@@ -1295,6 +1398,7 @@ reverse(): Int32Array
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Int32Array | 反转后的ArkTS Int32Array对象。 |
@@ -1304,6 +1408,7 @@ reverse(): Int32Array
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The reverse method cannot be bound. |
@@ -1319,9 +1424,10 @@ let reversed: collections.Int32Array = array.reverse(); // Int32Array [5, 4, 3, 
  
   
 
-#### set
+## set
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set(array: ArrayLike&lt;number&gt;, offset?: number): void
  
@@ -1333,6 +1439,7 @@ set(array: ArrayLike&lt;number&gt;, offset?: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | array | ArrayLike&lt;number&gt; | 是 | 用于设置的ArrayLike对象。 |
@@ -1343,6 +1450,7 @@ set(array: ArrayLike&lt;number&gt;, offset?: number): void
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The set method cannot be bound. |
@@ -1359,9 +1467,10 @@ array.set([1, 2, 3], 3); // Int32Array [0, 0, 0, 1, 2, 3, 0, 0]
  
   
 
-#### slice
+## slice
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 slice(start?: number, end?: number): Int32Array
  
@@ -1373,6 +1482,7 @@ slice(start?: number, end?: number): Int32Array
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | start | number | 否 | 开始索引，如果start < 0，则会从start + Int32Array.length位置开始。默认值为0。 |
@@ -1381,6 +1491,7 @@ slice(start?: number, end?: number): Int32Array
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Int32Array | 包含原ArkTS Int32Array指定范围元素的新ArkTS Int32Array对象。 |
@@ -1390,6 +1501,7 @@ slice(start?: number, end?: number): Int32Array
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The slice method cannot be bound. |
@@ -1407,9 +1519,10 @@ array.slice(-2); // Int32Array [4, 5]
  
   
 
-#### sort
+## sort
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sort(compareFn?: TypedArrayCompareFn&lt;number&gt;): Int32Array
  
@@ -1421,6 +1534,7 @@ sort(compareFn?: TypedArrayCompareFn&lt;number&gt;): Int32Array
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | compareFn | TypedArrayCompareFn&lt;number&gt; | 否 | 用于确定元素顺序的函数。默认使用升序排序。 |
@@ -1428,6 +1542,7 @@ sort(compareFn?: TypedArrayCompareFn&lt;number&gt;): Int32Array
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Int32Array | 排序后的ArkTS Int32Array对象。 |
@@ -1437,6 +1552,7 @@ sort(compareFn?: TypedArrayCompareFn&lt;number&gt;): Int32Array
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The sort method cannot be bound. |
@@ -1457,9 +1573,10 @@ array.sort((first: number, second: number) => second - first); // Int32Array [5,
  
   
 
-#### subarray
+## subarray
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 subarray(begin?: number, end?: number): Int32Array
  
@@ -1471,6 +1588,7 @@ subarray(begin?: number, end?: number): Int32Array
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | begin | number | 否 | 开始索引，如果begin < 0，则会从begin + Int32Array.length位置开始。默认值为0。 |
@@ -1479,6 +1597,7 @@ subarray(begin?: number, end?: number): Int32Array
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Int32Array | 基于相同ArrayBuffer的新ArkTS Int32Array对象。 |
@@ -1488,6 +1607,7 @@ subarray(begin?: number, end?: number): Int32Array
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The subarray method cannot be bound. |
@@ -1504,9 +1624,10 @@ subArray.set([10, 20, 30]); // Int32Array [10, 20, 30, 4, 5]
  
   
 
-#### at
+## at
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 at(index: number): number | undefined
  
@@ -1518,6 +1639,7 @@ at(index: number): number | undefined
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 要返回的ArkTS Int32Array元素的索引（从零开始），取值为整数。如果index < 0，则会访问index + Int32Array.length位置的元素。 |
@@ -1525,6 +1647,7 @@ at(index: number): number | undefined
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number \| undefined | 指定索引的元素；如果不存在，则返回undefined。 |
@@ -1534,6 +1657,7 @@ at(index: number): number | undefined
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The at method cannot be bound. |
@@ -1551,9 +1675,10 @@ console.info("element: " + array.at(6));  // element: undefined
  
   
 
-#### includes
+## includes
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 includes(searchElement: number, fromIndex?: number): boolean
  
@@ -1565,6 +1690,7 @@ includes(searchElement: number, fromIndex?: number): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | searchElement | number | 是 | 待搜索的元素。 |
@@ -1573,6 +1699,7 @@ includes(searchElement: number, fromIndex?: number): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 如果ArkTS Int32Array包含指定的元素，则返回true；否则返回false。 |
@@ -1582,6 +1709,7 @@ includes(searchElement: number, fromIndex?: number): boolean
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The includes method cannot be bound. |
@@ -1599,9 +1727,10 @@ console.info("includes: " + array.includes(3, 3)); // includes: false
  
   
 
-#### entries
+## entries
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 entries(): IterableIterator<[number, number]>
  
@@ -1613,6 +1742,7 @@ entries(): IterableIterator<[number, number]>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator<[number, number]> | 包含ArkTS Int32Array中每个元素键值对的迭代器对象。 |
@@ -1622,6 +1752,7 @@ entries(): IterableIterator<[number, number]>
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The entries method cannot be bound. |
@@ -1640,9 +1771,10 @@ console.info("value: " + iterator.next().value); // value: 2,33
  
   
 
-#### keys
+## keys
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 keys(): IterableIterator&lt;number&gt;
  
@@ -1654,6 +1786,7 @@ keys(): IterableIterator&lt;number&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator&lt;number&gt; | 包含ArkTS Int32Array中每个元素的键（索引）的迭代器对象。 |
@@ -1663,6 +1796,7 @@ keys(): IterableIterator&lt;number&gt;
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The keys method cannot be bound. |
@@ -1681,9 +1815,10 @@ for (const key of iterator) {
  
   
 
-#### values
+## values
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 values(): IterableIterator&lt;number&gt;
  
@@ -1695,6 +1830,7 @@ values(): IterableIterator&lt;number&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator&lt;number&gt; | 包含ArkTS Int32Array中每个元素值的迭代器对象。 |
@@ -1704,6 +1840,7 @@ values(): IterableIterator&lt;number&gt;
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The values method cannot be bound. |
@@ -1722,9 +1859,10 @@ for (const value of iterator) {
  
   
 
-#### [Symbol.iterator]
+## [Symbol.iterator]
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [Symbol.iterator](): IterableIterator&lt;number&gt;
  
@@ -1740,6 +1878,7 @@ for (const value of iterator) {
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator&lt;number&gt; | 包含ArkTS Int32Array中每个元素值的迭代器对象。 |
@@ -1749,6 +1888,7 @@ for (const value of iterator) {
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The Symbol.iterator method cannot be bound. |
@@ -1766,9 +1906,10 @@ for (let item of int32Array) {
  
   
 
-#### [index: number]
+## [index: number]
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [index: number]: number
  
@@ -1780,6 +1921,7 @@ for (let item of int32Array) {
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 从0开始的元素索引。取值范围为[0, Int32Array.length - 1]。 |
@@ -1787,6 +1929,7 @@ for (let item of int32Array) {
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回指定索引位置的元素值。 |

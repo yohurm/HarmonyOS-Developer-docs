@@ -1,18 +1,19 @@
-# HdsVisualComponent
+# HdsVisualComponent (视效组件)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hds-visual-component
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+**支持设备：** Phone | PC/2in1 | Tablet
 
 HdsVisualComponent组件承载复杂视效实现，应用开发者通过HdsVisualComponent选择具体视效场景完成复杂视效的开发。
  
 **起始版本：** 6.0.0(20)
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 > [!NOTE]
 > HdsVisualComponentAttribute是用于配置HdsVisualComponent组件属性的关键接口。6.0.1(21)及之前版本，导入HdsVisualComponent组件后需要开发者手动导入HdsVisualComponentAttribute，否则会编译报错。从6.0.2(22)版本开始，编译工具链识别到导入HdsVisualComponent组件后，会自动导入HdsVisualComponentAttribute，无需开发者手动导入。 如果开发者手动导入HdsVisualComponentAttribute，DevEco Studio会显示置灰，6.0.1(21)及之前版本删除会编译报错，从6.0.2(22)版本开始，删除对功能无影响。
@@ -32,17 +33,19 @@ import { HdsVisualComponent, HdsSceneController, HdsSceneType, hdsEffect } from 
  
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 无
  
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 HdsVisualComponent()
  
@@ -58,17 +61,19 @@ HdsVisualComponent()
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)，还支持以下属性：
  
   
 
-#### scene
+### scene
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 scene(sceneType: HdsSceneType, controller: HdsSceneController, callback?: HdsSceneFinishCallback, frameRateRange?: hdsEffect.ExpectedFrameRateRange)
  
@@ -82,6 +87,7 @@ scene(sceneType: HdsSceneType, controller: HdsSceneController, callback?: HdsSce
  
 **起始版本：** 6.0.0(20)
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sceneType | HdsSceneType | 是 | 视效场景类型。 |
@@ -92,17 +98,19 @@ scene(sceneType: HdsSceneType, controller: HdsSceneController, callback?: HdsSce
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)。
  
   
 
-#### HdsSceneType
+## HdsSceneType
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 视效场景。
  
@@ -112,6 +120,7 @@ scene(sceneType: HdsSceneType, controller: HdsSceneController, callback?: HdsSce
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DUAL_EDGE_FLOW_LIGHT_WITH_BACKGROUND_MASK | 0 | 自带背景的双边流光。 说明：该场景在TV中无效果，在其他设备类型中可正常显示。 |
@@ -119,9 +128,10 @@ scene(sceneType: HdsSceneType, controller: HdsSceneController, callback?: HdsSce
  
   
 
-#### HdsSceneFinishCallback
+## HdsSceneFinishCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 type HdsSceneFinishCallback = () => void
  
@@ -137,9 +147,10 @@ type HdsSceneFinishCallback = () => void
  
   
 
-#### HdsSceneController
+## HdsSceneController
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 场景控制器。
  
@@ -153,9 +164,10 @@ type HdsSceneFinishCallback = () => void
  
   
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 constructor()
  
@@ -171,9 +183,10 @@ HdsSceneController的构造函数。
  
   
 
-#### start
+### start
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 start(): void
  
@@ -187,9 +200,10 @@ start(): void
  
   
 
-#### pause
+### pause
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 pause(): void
  
@@ -203,9 +217,10 @@ pause(): void
  
   
 
-#### resume
+### resume
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 resume(): void
  
@@ -219,9 +234,10 @@ resume(): void
  
   
 
-#### stop
+### stop
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 stop(): void
  
@@ -235,9 +251,10 @@ stop(): void
  
   
 
-#### setSceneParams
+### setSceneParams
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 setSceneParams(params: SceneParams): HdsSceneController
  
@@ -251,6 +268,7 @@ setSceneParams(params: SceneParams): HdsSceneController
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | SceneParams | 是 | 场景参数。 |
@@ -258,6 +276,7 @@ setSceneParams(params: SceneParams): HdsSceneController
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | HdsSceneController | 返回HdsSceneController对象。 |
@@ -265,9 +284,10 @@ setSceneParams(params: SceneParams): HdsSceneController
  
   
 
-#### SceneParams
+## SceneParams
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 type SceneParams = DualEdgeFlowLightWithMaskParam
  
@@ -279,6 +299,7 @@ type SceneParams = DualEdgeFlowLightWithMaskParam
  
 **起始版本：** 6.0.0(20)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DualEdgeFlowLightWithMaskParam | 双边边缘流光视效参数。 |
@@ -286,9 +307,10 @@ type SceneParams = DualEdgeFlowLightWithMaskParam
  
   
 
-#### DualEdgeFlowLightWithMaskParam
+## DualEdgeFlowLightWithMaskParam
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 双边边缘流光视效参数。
  
@@ -298,6 +320,7 @@ type SceneParams = DualEdgeFlowLightWithMaskParam
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | backgroundMaskColors | Array&lt;ResourceColor&gt; | 否 | 否 | 背景蒙层颜色数组。 |
@@ -307,9 +330,10 @@ type SceneParams = DualEdgeFlowLightWithMaskParam
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 // 从6.0.2(22)版本开始，无需手动导入HdsVisualComponentAttribute。具体请参考HdsVisualComponent的导入模块说明。
@@ -347,4 +371,4 @@ struct EdgeFlowLightVisualComponent {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/sPqR7BG6QG-dQ9MGEBUkvg/zh-cn_image_0000002704395499.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095502Z&HW-CC-Expire=86400&HW-CC-Sign=FAB4599A878F3D77D40E1BD76C042ABFFD731962B8A113D0EE45B28C0AAE0AD9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/R8MpyGeYQFagGl_g9L6Nhg/zh-cn_image_0000002747213451.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073130Z&HW-CC-Expire=86400&HW-CC-Sign=D11AC97A27F302FBDB0ECA7C328AFA5ECF2ED848369D23FE791D42F873BB5376)

@@ -1,10 +1,10 @@
 # printf
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-18 12:49:55
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-commissioning-interfaces-printf
 
-#### 函数功能
+## 函数功能
 
 基于算子工程开发的算子，可以使用该接口实现CPU侧/NPU侧调试场景下的格式化输出功能。
  
@@ -33,7 +33,7 @@ fmt string 291
  
   
 
-#### 函数原型
+## 函数原型
 
 ```text
 void printf(__gm__ const char* fmt, Args&&... args)
@@ -42,8 +42,9 @@ void PRINTF(__gm__ const char* fmt, Args&&... args)
  
   
 
-#### 参数说明
+## 参数说明
  
+
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
 | fmt | 输入 | 格式控制字符串，包含两种类型的对象：普通字符和转换说明。 - 普通字符将原样不动地打印输出。 - 转换说明并不直接输出而是用于控制printf中参数的转换和打印。每个转换说明都由一个百分号字符（%）开始，以转换说明结束，从而说明输出数据的类型 。 支持的转换类型包括： - %d / %i：输出十进制数，支持打印的数据类型：bool/int8_t/int16_t/int32_t/int64_t - %f：输出实数，支持打印的数据类型：float/half/bfloat16_t - %x：输出十六进制整数，支持打印的数据类型：int8_t/int16_t/int32_t/int64_t/uint8_t/uint16_t/uint32_t/uint64_t - %s：输出字符串 - %u：输出unsigned类型数据，支持打印的数据类型：bool/uint8_t/uint16_t/uint32_t/uint64_t - %p：输出指针地址 |
@@ -52,21 +53,23 @@ void PRINTF(__gm__ const char* fmt, Args&&... args)
  
   
 
-#### 返回值
+## 返回值
 
 无
  
   
 
-#### 支持的型号
+## 支持的型号
 
 Kirin9020系列处理器
+ 
+Kirin9030系列处理器
  
 KirinX90系列处理器
  
   
 
-#### 注意事项
+## 注意事项
 
 - 本接口不支持打印除换行符之外的其他转义字符。
 - 如果开发者需要包含标准库头文件stdio.h和cstdio，请在kernel_operator.h头文件之前包含，避免printf符号冲突。
@@ -75,7 +78,7 @@ KirinX90系列处理器
  
   
 
-#### 调用示例
+## 调用示例
 
 ```text
 #include "kernel_operator.h"

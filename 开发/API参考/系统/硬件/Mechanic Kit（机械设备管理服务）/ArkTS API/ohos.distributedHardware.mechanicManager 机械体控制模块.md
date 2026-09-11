@@ -1,6 +1,6 @@
 # @ohos.distributedHardware.mechanicManager (机械体控制模块)
 
-更新时间：2026-06-12 06:54:11
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-mechanicmanager
 **支持设备：** Phone | Tablet
@@ -12,7 +12,8 @@
 
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | Tablet
 
@@ -22,7 +23,8 @@ import { mechanicManager } from '@kit.MechanicKit';
  
   
 
-#### mechanicManager.on('attachStateChange')
+## mechanicManager.on('attachStateChange')
+
 
 **支持设备：** Phone | Tablet
 
@@ -34,6 +36,7 @@ on(type: 'attachStateChange', callback: Callback&lt;AttachStateChangeInfo&gt;): 
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | 'attachStateChange' | 是 | 注册监听事件的类型。取值为：'attachStateChange'。 |
@@ -44,6 +47,7 @@ on(type: 'attachStateChange', callback: Callback&lt;AttachStateChangeInfo&gt;): 
  
 以下的错误码的详细介绍请参见[机械体控制模块错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-mechanic)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 33300001 | Service exception. |
@@ -67,7 +71,8 @@ console.info('Succeeded in registering callback.');
  
   
 
-#### mechanicManager.off('attachStateChange')
+## mechanicManager.off('attachStateChange')
+
 
 **支持设备：** Phone | Tablet
 
@@ -79,6 +84,7 @@ off(type: 'attachStateChange', callback?: Callback&lt;AttachStateChangeInfo&gt;)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | 'attachStateChange' | 是 | 取消注册监听事件的类型。取值为：'attachStateChange'。 |
@@ -89,6 +95,7 @@ off(type: 'attachStateChange', callback?: Callback&lt;AttachStateChangeInfo&gt;)
  
 以下的错误码的详细介绍请参见[机械体控制模块错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-mechanic)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 33300001 | Service exception. |
@@ -110,7 +117,8 @@ console.info('Succeeded in unregistering callback.');
  
   
 
-#### mechanicManager.getAttachedMechDevices
+## mechanicManager.getAttachedMechDevices
+
 
 **支持设备：** Phone | Tablet
 
@@ -122,6 +130,7 @@ getAttachedMechDevices(): MechInfo[]
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | MechInfo[] | 已连接机械体设备的列表。 |
@@ -131,6 +140,7 @@ getAttachedMechDevices(): MechInfo[]
  
 以下的错误码的详细介绍请参见[机械体控制模块错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-mechanic)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 33300001 | Service exception. |
@@ -147,7 +157,8 @@ console.info(`'device list:' ${mechanicInfos}`);
  
   
 
-#### mechanicManager.setCameraTrackingEnabled
+## mechanicManager.setCameraTrackingEnabled
+
 
 **支持设备：** Phone | Tablet
 
@@ -159,6 +170,7 @@ setCameraTrackingEnabled(isEnabled: boolean): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isEnabled | boolean | 是 | 是否启用摄像头跟踪， true表示启用摄像头跟踪，false表示禁用摄像头跟踪。 |
@@ -168,6 +180,7 @@ setCameraTrackingEnabled(isEnabled: boolean): void
  
 以下的错误码的详细介绍请参见[机械体控制模块错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-mechanic)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 33300001 | Service exception. |
@@ -186,7 +199,8 @@ console.info('Succeeded in enabling tracking.');
  
   
 
-#### mechanicManager.getCameraTrackingEnabled
+## mechanicManager.getCameraTrackingEnabled
+
 
 **支持设备：** Phone | Tablet
 
@@ -198,6 +212,7 @@ getCameraTrackingEnabled(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 摄像头跟踪启用状态，true表示已启用，false表示已禁用。 |
@@ -207,6 +222,7 @@ getCameraTrackingEnabled(): boolean
  
 以下的错误码的详细介绍请参见[机械体控制模块错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-mechanic)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 33300001 | Service exception. |
@@ -224,7 +240,8 @@ console.info(`'current tracking status:' ${enabled}`);
  
   
 
-#### mechanicManager.on('trackingStateChange')
+## mechanicManager.on('trackingStateChange')
+
 
 **支持设备：** Phone | Tablet
 
@@ -236,6 +253,7 @@ on(type: 'trackingStateChange', callback: Callback&lt;TrackingEventInfo&gt;): vo
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | 'trackingStateChange' | 是 | 注册监听事件的类型。取值为：'trackingStateChange'。 |
@@ -246,6 +264,7 @@ on(type: 'trackingStateChange', callback: Callback&lt;TrackingEventInfo&gt;): vo
  
 以下的错误码的详细介绍请参见[机械体控制模块错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-mechanic)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 33300001 | Service exception. |
@@ -267,7 +286,8 @@ console.info('Succeeded in registering callback.');
  
   
 
-#### mechanicManager.off('trackingStateChange')
+## mechanicManager.off('trackingStateChange')
+
 
 **支持设备：** Phone | Tablet
 
@@ -279,6 +299,7 @@ off(type: 'trackingStateChange', callback?: Callback&lt;TrackingEventInfo&gt;): 
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | 'trackingStateChange' | 是 | 取消注册的监听事件类型。取值为：'trackingStateChange'。 |
@@ -289,6 +310,7 @@ off(type: 'trackingStateChange', callback?: Callback&lt;TrackingEventInfo&gt;): 
  
 以下的错误码的详细介绍请参见[机械体控制模块错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-mechanic)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 33300001 | Service exception. |
@@ -310,7 +332,8 @@ console.info('Succeeded in unregistering callback.');
  
   
 
-#### mechanicManager.getCameraTrackingLayout
+## mechanicManager.getCameraTrackingLayout
+
 
 **支持设备：** Phone | Tablet
 
@@ -322,6 +345,7 @@ getCameraTrackingLayout(): CameraTrackingLayout
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | CameraTrackingLayout | 获取到的当前机械体设备摄像头跟踪布局。 |
@@ -331,6 +355,7 @@ getCameraTrackingLayout(): CameraTrackingLayout
  
 以下的错误码的详细介绍请参见[机械体控制模块错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-mechanic)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 33300001 | Service exception. |
@@ -348,7 +373,8 @@ console.info(`'Succeeded in querying layout, current layout:' ${layout}`);
  
   
 
-#### mechanicManager.isControlSupported()
+## mechanicManager.isControlSupported()
+
 
 **支持设备：** Phone | Tablet
 
@@ -362,6 +388,7 @@ isControlSupported(mechDeviceType?: MechDeviceType): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mechDeviceType | MechDeviceType | 否 | 机械体设备的类型。 |
@@ -369,6 +396,7 @@ isControlSupported(mechDeviceType?: MechDeviceType): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 当前设备是否支持某类设备的机械体设备控制。true表示支持，false表示不支持。 |
@@ -385,7 +413,8 @@ console.info(`isSupported: ${isSupported}`);
  
   
 
-#### MechInfo
+## MechInfo
+
 
 **支持设备：** Phone | Tablet
 
@@ -393,6 +422,7 @@ console.info(`isSupported: ${isSupported}`);
  
 **系统能力**：SystemCapability.Mechanic.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | mechId | number | 否 | 否 | 机械体设备ID，取值为大于等于0的整数。 |
@@ -402,7 +432,8 @@ console.info(`isSupported: ${isSupported}`);
  
   
 
-#### TrackingEventInfo
+## TrackingEventInfo
+
 
 **支持设备：** Phone | Tablet
 
@@ -410,6 +441,7 @@ console.info(`isSupported: ${isSupported}`);
  
 **系统能力**：SystemCapability.Mechanic.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | event | TrackingEvent | 否 | 否 | 跟踪事件。 |
@@ -417,7 +449,8 @@ console.info(`isSupported: ${isSupported}`);
  
   
 
-#### AttachStateChangeInfo
+## AttachStateChangeInfo
+
 
 **支持设备：** Phone | Tablet
 
@@ -425,6 +458,7 @@ console.info(`isSupported: ${isSupported}`);
  
 **系统能力**：SystemCapability.Mechanic.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | state | AttachState | 否 | 否 | 设备连接状态。 |
@@ -433,7 +467,8 @@ console.info(`isSupported: ${isSupported}`);
  
   
 
-#### TrackingEvent
+## TrackingEvent
+
 
 **支持设备：** Phone | Tablet
 
@@ -441,6 +476,7 @@ console.info(`isSupported: ${isSupported}`);
  
 **系统能力**：SystemCapability.Mechanic.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CAMERA_TRACKING_USER_ENABLED | 0 | 用户启用了摄像头跟踪。 |
@@ -450,7 +486,8 @@ console.info(`isSupported: ${isSupported}`);
  
   
 
-#### MechDeviceType
+## MechDeviceType
+
 
 **支持设备：** Phone | Tablet
 
@@ -458,6 +495,7 @@ console.info(`isSupported: ${isSupported}`);
  
 **系统能力**：SystemCapability.Mechanic.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | GIMBAL_DEVICE | 0 | 便携式云台设备。 |
@@ -465,7 +503,8 @@ console.info(`isSupported: ${isSupported}`);
  
   
 
-#### AttachState
+## AttachState
+
 
 **支持设备：** Phone | Tablet
 
@@ -473,6 +512,7 @@ console.info(`isSupported: ${isSupported}`);
  
 **系统能力**：SystemCapability.Mechanic.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ATTACHED | 0 | 设备已连接。 |
@@ -481,7 +521,8 @@ console.info(`isSupported: ${isSupported}`);
  
   
 
-#### CameraTrackingLayout
+## CameraTrackingLayout
+
 
 **支持设备：** Phone | Tablet
 
@@ -489,6 +530,7 @@ console.info(`isSupported: ${isSupported}`);
  
 **系统能力**：SystemCapability.Mechanic.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DEFAULT | 0 | 系统默认跟踪布局。 |

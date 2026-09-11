@@ -1,6 +1,6 @@
 # cloudResPrefetch（预加载模块）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/cloudfoundation-cloudresprefetch
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -10,7 +10,8 @@
 起始版本：5.0.3(15)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -20,7 +21,8 @@ import { cloudResPrefetch } from '@kit.CloudFoundationKit';
  
   
 
-#### registerPrefetchTask
+## registerPrefetchTask
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -38,6 +40,7 @@ registerPrefetchTask(options: PrefetchOptions): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | PrefetchOptions | 是 | 周期性预加载任务的初始化配置参数。 |
@@ -47,6 +50,7 @@ registerPrefetchTask(options: PrefetchOptions): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cloudfoundation)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
@@ -72,7 +76,8 @@ try {
  
   
 
-#### PrefetchOptions
+## PrefetchOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -86,6 +91,7 @@ try {
  
 **起始版本：** 5.0.3(15)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | token | string | 否 | 是 | 自定义用户级别的访问令牌。会携带透传至开发者自己的函数中，由开发者自行完成认证。 |
@@ -94,7 +100,8 @@ try {
  
   
 
-#### getPrefetchResult
+## getPrefetchResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -110,6 +117,7 @@ getPrefetchResult(mode: PrefetchMode, callback: AsyncCallback&lt;PrefetchResult&
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | PrefetchMode | 是 | 预加载类型。 元服务API： 从版本5.0.3(15)开始，该接口支持在元服务中使用。 |
@@ -121,6 +129,7 @@ getPrefetchResult(mode: PrefetchMode, callback: AsyncCallback&lt;PrefetchResult&
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cloudfoundation)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
@@ -175,7 +184,8 @@ cloudResPrefetch.getPrefetchResult(cloudResPrefetch.PrefetchMode.LINK_PREFETCH,
  
   
 
-#### getPrefetchResult
+## getPrefetchResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -191,6 +201,7 @@ getPrefetchResult(mode: PrefetchMode, params?: PrefetchParams): Promise&lt;Prefe
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | PrefetchMode | 是 | 预加载类型。 元服务API： 从版本5.0.3(15)开始，该接口支持在元服务中使用。 |
@@ -199,6 +210,7 @@ getPrefetchResult(mode: PrefetchMode, params?: PrefetchParams): Promise&lt;Prefe
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;PrefetchResult&gt; | Promise对象，返回获取的预加载数据。 |
@@ -208,6 +220,7 @@ getPrefetchResult(mode: PrefetchMode, params?: PrefetchParams): Promise&lt;Prefe
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-cloudfoundation)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
@@ -256,7 +269,8 @@ cloudResPrefetch.getPrefetchResult(cloudResPrefetch.PrefetchMode.LINK_PREFETCH, 
  
   
 
-#### PrefetchMode
+## PrefetchMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -268,6 +282,7 @@ cloudResPrefetch.getPrefetchResult(cloudResPrefetch.PrefetchMode.LINK_PREFETCH, 
  
 **起始版本：** 5.0.3(15)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | INSTALL_PREFETCH | 1 | 安装预加载。 元服务API： 从版本5.0.3(15)开始，该接口支持在元服务中使用。 |
@@ -277,7 +292,8 @@ cloudResPrefetch.getPrefetchResult(cloudResPrefetch.PrefetchMode.LINK_PREFETCH, 
  
   
 
-#### PrefetchParams
+## PrefetchParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -289,6 +305,7 @@ cloudResPrefetch.getPrefetchResult(cloudResPrefetch.PrefetchMode.LINK_PREFETCH, 
  
 **起始版本：** 6.1.0(23)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | link | string | 否 | 是 | 跳链安装预加载延迟链接。 说明： 元服务不支持该字段。 |
@@ -296,7 +313,8 @@ cloudResPrefetch.getPrefetchResult(cloudResPrefetch.PrefetchMode.LINK_PREFETCH, 
  
   
 
-#### PrefetchResult
+## PrefetchResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -310,6 +328,7 @@ cloudResPrefetch.getPrefetchResult(cloudResPrefetch.PrefetchMode.LINK_PREFETCH, 
  
 **起始版本：** 5.0.3(15)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | result | string \| Object | 否 | 否 | 返回的预加载数据，字符串或JSON字符串转换的Object对象。 |

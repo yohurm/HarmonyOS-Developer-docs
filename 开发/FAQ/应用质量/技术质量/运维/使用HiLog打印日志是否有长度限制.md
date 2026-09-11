@@ -17,7 +17,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 
 const HILOG_MAX_BYTES = 4096;
 
-// Split the string by byte limit.
+<em>// Split the string by byte limit.</em>
 function splitByByteLimit(str: string, limit: number): string[] {
   const result: string[] = [];
   let start = 0;

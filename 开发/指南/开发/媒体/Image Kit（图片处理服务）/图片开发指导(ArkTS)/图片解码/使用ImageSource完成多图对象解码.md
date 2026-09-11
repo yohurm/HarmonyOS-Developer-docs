@@ -1,6 +1,6 @@
 # 使用ImageSource完成多图对象解码
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-picture-decoding
 
@@ -9,9 +9,10 @@
 Picture是包含主图、辅助图和元数据的多图对象。主图包含主要图像信息，辅助图用于存储与主图相关的附加信息（如HDR增益图GAINMAP），元数据用于存储与图片相关的其他信息。Picture适用于HDR图片处理、HEIF专业格式解码等场景。
 
 
-#### Picture与PixelMap的区别
+## Picture与PixelMap的区别
 
 Picture和PixelMap是两种不同的图片解码对象，适用于不同的场景：
+
 
 | 对象类型 | 适用场景 | 特性 |
 | --- | --- | --- |
@@ -27,7 +28,7 @@ Picture和PixelMap是两种不同的图片解码对象，适用于不同的场�
 
 
 
-#### 开发步骤
+## 开发步骤
 
 图片解码相关API的详细介绍请参见[ImageSource](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-imagesource)。
 1. 全局导入Image模块。
@@ -147,11 +148,17 @@ const imageSource: image.ImageSource = image.createImageSource(rawFileDescriptor
   解码时可指定需要解码的辅助图类型。辅助图本身不作为独立图像直接显示，而是作为辅助数据参与图像处理（如HDR合成、深度信息提取等）。常见的辅助图类型包括：
 
 | 辅助图类型 | 说明 |
+
 | --- | --- |
+
 | GAINMAP | 增益图，用于HDR图像的高动态范围渲染。 |
+
 | DEPTH_MAP | 深度图，存储像素距离信息，用于3D重建、背景分离等场景。 |
+
 | UNREFOCUS_MAP | 未重对焦原图，用于人像虚化后期处理。 |
+
 | LINEAR_MAP | 线性图，用于视觉效果增强与色彩后期处理。 |
+
 | FRAGMENT_MAP | 水印裁剪图，用于水印移除、原图恢复等场景。 |
 
   

@@ -27,35 +27,35 @@ import { BusinessError } from '@kit.BasicServicesKit';
 @Entry
 @Component
 struct TcpSocketReconnect {
-  // 1.tcpSocket实例
+  <em>// 1.tcpSocket实例</em>
   @State tcpSocket: socket.TCPSocket | null = null;
 
-  // 2.创建socket实例
+ <em> // 2.创建socket实例</em>
   createSocket() {
     this.tcpSocket = socket.constructTCPSocketInstance();
     this.registerEvents();
   }
 
-  // 3.注册事件监听
+<em>  // 3.注册事件监听</em>
   registerEvents() {
     this.tcpSocket?.on('close', () => {
       console.info('Connection closed');
-      // 获取当前tcpSocket连接状态
+      <em>// </em><em>获取当前tcpSocket连接状态</em>
       this.tcpSocket?.getState((err: BusinessError, data: socket.SocketStateBase) => {
         if (err) {
           console.error('getState fail');
           return;
         }
         console.info('getState success:', JSON.stringify(data));
-        // 如果tcpSocket未关闭连接，释放旧连接，然后开始重连
-        // 如果tcpSocket已关闭连接，说明用户需要主动断开，无需重连
+      <em>  // 如果tcpSocket未关闭连接，释放旧连接，然后开始重连</em>
+<em>        // 如果tcpSocket已关闭连接，说明用户需要主动断开，无需重连</em>
         if (data.isConnected) {
           try {
             this.tcpSocket?.close();
           } catch (err) {
             console.error('Close error:', JSON.stringify(data));
           }
-          // 触发重连。注：此处应根据开发者业务所需，判断是否需要触发重连
+          <em>// </em><em>触发重连。注：此处应根据开发者业务所需，判断是否需要触发重连</em>
           this.reconnect();
         }
       });
@@ -63,20 +63,20 @@ struct TcpSocketReconnect {
 
     this.tcpSocket?.on('error', (err: BusinessError) => {
       console.error('Error occurred:', JSON.stringify(err));
-      this.reconnect(); // 错误时触发重连
+      this.reconnect();<em> </em><em>// 错误时触发重连</em>
     });
   }
 
-  // 4.实现重连逻辑
+<em>  // 4.实现重连逻辑</em>
   reconnect() {
     console.info('Reconnecting...');
-    // 创建新连接
+   <em> // 创建新连接</em>
     this.createSocket();
     this.connectToServer();
 
   }
 
-  // 5.建立连接
+  <em>// 5.建立连接</em>
   connectToServer() {
     let address: socket.NetAddress = {
       address: '36.137.xxx.xxx',
@@ -94,11 +94,11 @@ struct TcpSocketReconnect {
   build() {
     Column() {
       Button('初始化实例/创建回连机制').onClick(() => {
-        // 初始化实例/创建回连机制
+        <em>// </em><em>初始化实例/创建回连机制</em>
         this.createSocket();
       }).margin(15);
       Button('建立连接').onClick(() => {
-        // 建立连接
+     <em>   // 建立连接</em>
         this.connectToServer();
       });
     }

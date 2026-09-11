@@ -1,15 +1,19 @@
 # ArkUI_NodeAttributeType（富文本类组件相关属性）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-node-h-nodeattributetype-richeditor
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_NodeAttributeType
 ```
   
 
-#### 概述
+## 概述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义ArkUI在Native侧可以设置的富文本类组件属性样式集合，用于定制TextEditor组件的外观样式、交互行为和排版效果，满足不同业务场景下对富文本编辑器的差异化配置需求。
  
@@ -21,7 +25,10 @@ enum ArkUI_NodeAttributeType
  
   
 
-#### NODE_TEXT_EDITOR_ENTER_KEY_TYPE
+## NODE_TEXT_EDITOR_ENTER_KEY_TYPE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_EDITOR_ENTER_KEY_TYPE = MAX_NODE_SCOPE_NUM * ARKUI_NODE_TEXT_EDITOR = 22000
@@ -35,6 +42,7 @@ TextEditor组件回车键类型，支持属性设置、属性重置和属性获�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 回车键类型，参数类型ArkUI_EnterKeyType，默认值为ARKUI_ENTER_KEY_TYPE_NEW_LINE。 |
@@ -42,6 +50,7 @@ TextEditor组件回车键类型，支持属性设置、属性重置和属性获�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 回车键类型，参数类型ArkUI_EnterKeyType。 |
@@ -49,7 +58,10 @@ TextEditor组件回车键类型，支持属性设置、属性重置和属性获�
  
   
 
-#### NODE_TEXT_EDITOR_CARET_COLOR
+## NODE_TEXT_EDITOR_CARET_COLOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_EDITOR_CARET_COLOR = 22001
@@ -63,6 +75,7 @@ TextEditor组件光标颜色，支持属性设置、属性重置和属性获取�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].u32 | 光标颜色，采用0xARGB格式，例如0xFFFF0000表示红色。默认跟随系统主题。 |
@@ -70,6 +83,7 @@ TextEditor组件光标颜色，支持属性设置、属性重置和属性获取�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].u32 | 光标颜色，采用0xARGB格式，例如0xFFFF0000表示红色。默认跟随系统主题。 |
@@ -77,7 +91,10 @@ TextEditor组件光标颜色，支持属性设置、属性重置和属性获取�
  
   
 
-#### NODE_TEXT_EDITOR_SCROLL_BAR_COLOR
+## NODE_TEXT_EDITOR_SCROLL_BAR_COLOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_EDITOR_SCROLL_BAR_COLOR = 22002
@@ -91,6 +108,7 @@ TextEditor组件滚动条颜色，支持属性设置、属性重置和属性获�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .data[0].u32 | 滚动条颜色，采用0xARGB格式，例如0xFFFF0000表示红色。默认跟随系统主题。 |
@@ -98,6 +116,7 @@ TextEditor组件滚动条颜色，支持属性设置、属性重置和属性获�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .data[0].u32 | 滚动条颜色，采用0xARGB格式，例如0xFFFF0000表示红色。默认跟随系统主题。 |
@@ -105,7 +124,10 @@ TextEditor组件滚动条颜色，支持属性设置、属性重置和属性获�
  
   
 
-#### NODE_TEXT_EDITOR_BAR_STATE
+## NODE_TEXT_EDITOR_BAR_STATE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_EDITOR_BAR_STATE = 22003
@@ -119,6 +141,7 @@ TextEditor组件滚动条显示模式，支持属性设置、属性重置和属�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 滚动条显示模式，参数类型ArkUI_BarState，默认值为ARKUI_BAR_STATE_AUTO。 |
@@ -126,6 +149,7 @@ TextEditor组件滚动条显示模式，支持属性设置、属性重置和属�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 滚动条显示模式，参数类型ArkUI_BarState。 |
@@ -133,7 +157,10 @@ TextEditor组件滚动条显示模式，支持属性设置、属性重置和属�
  
   
 
-#### NODE_TEXT_EDITOR_ENABLE_DATA_DETECTOR
+## NODE_TEXT_EDITOR_ENABLE_DATA_DETECTOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_EDITOR_ENABLE_DATA_DETECTOR = 22004
@@ -147,6 +174,7 @@ TextEditor组件文本实体识别功能开关，启用后，文本中的电话�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否启用文本实体识别功能，0表示禁用，1表示启用，默认值为0。推荐在需要自动识别并高亮文本中实体信息的场景下设置此属性。 |
@@ -154,6 +182,7 @@ TextEditor组件文本实体识别功能开关，启用后，文本中的电话�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否启用了文本实体识别功能，0表示禁用，1表示启用。 |
@@ -161,7 +190,10 @@ TextEditor组件文本实体识别功能开关，启用后，文本中的电话�
  
   
 
-#### NODE_TEXT_EDITOR_DATA_DETECTOR_CONFIG
+## NODE_TEXT_EDITOR_DATA_DETECTOR_CONFIG
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_EDITOR_DATA_DETECTOR_CONFIG = 22005
@@ -175,6 +207,7 @@ TextEditor组件文本实体识别配置，设置后，可配置识别类型、�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 文本实体识别配置，设置后可指定需要识别的文本实体类型（如电话号码、邮箱、链接等）及识别后的交互行为。仅在启用文本实体识别功能(NODE_TEXT_EDITOR_ENABLE_DATA_DETECTOR设置为1)后传入此参数以自定义识别类型，不传入时使用系统默认识别配置。参数类型ArkUI_TextDataDetectorConfig。 |
@@ -182,7 +215,10 @@ TextEditor组件文本实体识别配置，设置后，可配置识别类型、�
  
   
 
-#### NODE_TEXT_EDITOR_EDIT_MENU_OPTIONS
+## NODE_TEXT_EDITOR_EDIT_MENU_OPTIONS
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_EDITOR_EDIT_MENU_OPTIONS = 22006
@@ -196,6 +232,7 @@ TextEditor组件扩展菜单选项，支持属性设置和属性重置。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 扩展菜单选项，设置后可自定义默认菜单项的行为，或添加自定义选项内容。参数类型ArkUI_TextEditMenuOptions。 |
@@ -203,7 +240,10 @@ TextEditor组件扩展菜单选项，支持属性设置和属性重置。
  
   
 
-#### NODE_TEXT_EDITOR_PLACEHOLDER
+## NODE_TEXT_EDITOR_PLACEHOLDER
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_EDITOR_PLACEHOLDER = 22007
@@ -217,6 +257,7 @@ TextEditor组件无输入时的提示文本选项，支持属性设置和属性�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 无输入时的提示文本选项，参数类型ArkUI_TextEditorPlaceholderOptions。不传入时，编辑器无输入状态下不显示提示文本。 |
@@ -224,7 +265,10 @@ TextEditor组件无输入时的提示文本选项，支持属性设置和属性�
  
   
 
-#### NODE_TEXT_EDITOR_STYLED_STRING_CONTROLLER
+## NODE_TEXT_EDITOR_STYLED_STRING_CONTROLLER
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_EDITOR_STYLED_STRING_CONTROLLER = 22008
@@ -238,6 +282,7 @@ TextEditor组件属性字符串控制器，支持属性设置。设置后，可�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 属性字符串控制器，参数类型ArkUI_TextEditorStyledStringController。 |
@@ -245,7 +290,10 @@ TextEditor组件属性字符串控制器，支持属性设置。设置后，可�
  
   
 
-#### NODE_TEXT_EDITOR_ENABLE_PREVIEW_TEXT
+## NODE_TEXT_EDITOR_ENABLE_PREVIEW_TEXT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_EDITOR_ENABLE_PREVIEW_TEXT = 22009
@@ -259,6 +307,7 @@ TextEditor组件预上屏功能开关，启用后，组件内显示输入法输�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否启用预上屏功能，0表示禁用，1表示启用，默认值为1。 |
@@ -266,6 +315,7 @@ TextEditor组件预上屏功能开关，启用后，组件内显示输入法输�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否启用预上屏功能，0表示禁用，1表示启用。 |
@@ -273,7 +323,10 @@ TextEditor组件预上屏功能开关，启用后，组件内显示输入法输�
  
   
 
-#### NODE_TEXT_EDITOR_LAYOUT_MANAGER
+## NODE_TEXT_EDITOR_LAYOUT_MANAGER
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_EDITOR_LAYOUT_MANAGER = 22010
@@ -287,6 +340,7 @@ TextEditor组件TextLayoutManager获取，获取后，可通过布局管理器�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .object | 布局管理器，可通过该管理器查询文本的布局信息。参数类型ArkUI_TextLayoutManager。 |
@@ -294,13 +348,16 @@ TextEditor组件TextLayoutManager获取，获取后，可通过布局管理器�
  
   
 
-#### NODE_TEXT_EDITOR_ENABLE_SELECTED_DATA_DETECTOR
+## NODE_TEXT_EDITOR_ENABLE_SELECTED_DATA_DETECTOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_EDITOR_ENABLE_SELECTED_DATA_DETECTOR = 22011
 ```
  
-TextEditor组件文本选择识别AI菜单开关，支持属性设置、属性重置和属性获取。启用后，用户选中特殊文本实体时将弹出AI识别菜单，提供基于选中文本内容的智能识别和操作选项。
+TextEditor组件的AI菜单开关，用于控制选中特殊文本实体时是否弹出AI识别菜单。该功能支持属性的设置、重置与获取，启用后可基于选中文本内容提供智能识别及操作选项。
  
 作为属性设置方法参数、属性获取方法返回值[ArkUI_AttributeItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-arkui-attributeitem)格式如下。
  
@@ -308,6 +365,7 @@ TextEditor组件文本选择识别AI菜单开关，支持属性设置、属性�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否启用文本选择识别的AI菜单，0表示禁用，1表示启用，默认值为1。 |
@@ -315,6 +373,7 @@ TextEditor组件文本选择识别AI菜单开关，支持属性设置、属性�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否启用了文本选择识别的AI菜单，0表示禁用，1表示启用。 |
@@ -322,7 +381,10 @@ TextEditor组件文本选择识别AI菜单开关，支持属性设置、属性�
  
   
 
-#### NODE_TEXT_EDITOR_SELECTED_BACKGROUND_COLOR
+## NODE_TEXT_EDITOR_SELECTED_BACKGROUND_COLOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_EDITOR_SELECTED_BACKGROUND_COLOR = 22012
@@ -336,6 +398,7 @@ TextEditor组件选中内容背景颜色，支持属性设置、属性重置和�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .data[0].u32 | 选中内容的背景颜色，采用0xARGB格式，例如0xFFFF0000表示红色。默认跟随系统主题。 |
@@ -343,6 +406,7 @@ TextEditor组件选中内容背景颜色，支持属性设置、属性重置和�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .data[0].u32 | 选中内容的背景颜色，采用0xARGB格式，例如0xFFFF0000表示红色。默认跟随系统主题。 |
@@ -350,7 +414,10 @@ TextEditor组件选中内容背景颜色，支持属性设置、属性重置和�
  
   
 
-#### NODE_TEXT_EDITOR_ENABLE_KEYBOARD_ON_FOCUS
+## NODE_TEXT_EDITOR_ENABLE_KEYBOARD_ON_FOCUS
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_EDITOR_ENABLE_KEYBOARD_ON_FOCUS = 22013
@@ -364,6 +431,7 @@ TextEditor组件非点击获焦时拉起输入法开关，支持属性设置、�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 非点击获焦时是否拉起输入法，0表示不拉起，1表示拉起，默认值为1。 |
@@ -371,6 +439,7 @@ TextEditor组件非点击获焦时拉起输入法开关，支持属性设置、�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 非点击获焦时是否拉起输入法，0表示不拉起，1表示拉起。 |
@@ -378,7 +447,10 @@ TextEditor组件非点击获焦时拉起输入法开关，支持属性设置、�
  
   
 
-#### NODE_TEXT_EDITOR_MAX_LENGTH
+## NODE_TEXT_EDITOR_MAX_LENGTH
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_EDITOR_MAX_LENGTH = 22014
@@ -392,6 +464,7 @@ TextEditor组件最大字符数，支持属性设置、属性重置和属性获�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 文本编辑器允许输入的最大长度，取值范围为[0, +∞)，超出此限制后将阻止继续输入文本。设置为0、负数或未设置该属性时不限制输入长度。 |
@@ -399,6 +472,7 @@ TextEditor组件最大字符数，支持属性设置、属性重置和属性获�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 文本编辑器允许输入的最大长度。 |
@@ -406,7 +480,10 @@ TextEditor组件最大字符数，支持属性设置、属性重置和属性获�
  
   
 
-#### NODE_TEXT_EDITOR_MAX_LINES
+## NODE_TEXT_EDITOR_MAX_LINES
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_EDITOR_MAX_LINES = 22015
@@ -420,13 +497,15 @@ TextEditor组件内容最大行数，支持属性设置、属性重置和属性�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].i32 | 文本编辑器最大行数限制，取值范围[0, +∞)。取值为0时按无穷大处理；设置为0、负数或未设置该属性时不限制行数。建议在需要固定显示高度的场景下设置该参数。 |
+| .value[0].i32 | 文本编辑器最大行数限制，取值范围：(0, +∞)。设置为0、负数或未设置该属性时，取默认值UINT32_MAX，不限制行数。建议在需要固定显示高度的场景下设置该参数。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 文本编辑器最大行数限制。 |
@@ -434,13 +513,16 @@ TextEditor组件内容最大行数，支持属性设置、属性重置和属性�
  
   
 
-#### NODE_TEXT_EDITOR_ENABLE_HAPTIC_FEEDBACK
+## NODE_TEXT_EDITOR_ENABLE_HAPTIC_FEEDBACK
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_EDITOR_ENABLE_HAPTIC_FEEDBACK = 22016
 ```
  
-TextEditor组件触觉反馈开关，启用后，在文本拖选等交互操作时将产生触觉反馈震动响应，支持属性设置、属性重置和属性获取。
+TextEditor组件触感反馈开关，启用后，在文本拖选等交互操作时将产生触感反馈震动响应，支持属性设置、属性重置和属性获取。
  
 作为属性设置方法参数、属性获取方法返回值[ArkUI_AttributeItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-arkui-attributeitem)格式如下。
  
@@ -448,21 +530,26 @@ TextEditor组件触觉反馈开关，启用后，在文本拖选等交互操作�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].i32 | 是否在文本编辑器中启用触觉反馈，0表示不启用，1表示启用，默认值为1。 |
+| .value[0].i32 | 是否在文本编辑器中启用触感反馈，0表示不启用，1表示启用，默认值为1。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| .value[0].i32 | 是否启用了触觉反馈，0表示不启用，1表示启用。 |
+| .value[0].i32 | 是否启用了触感反馈，0表示不启用，1表示启用。 |
  
  
   
 
-#### NODE_TEXT_EDITOR_COPY_OPTIONS
+## NODE_TEXT_EDITOR_COPY_OPTIONS
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_EDITOR_COPY_OPTIONS = 22017
@@ -476,6 +563,7 @@ TextEditor组件复制选项，支持属性设置、属性重置和属性获取�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 复制选项，参数类型ArkUI_CopyOptions，默认值为ARKUI_COPY_OPTIONS_LOCAL_DEVICE。 |
@@ -483,6 +571,7 @@ TextEditor组件复制选项，支持属性设置、属性重置和属性获取�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 复制选项，参数类型ArkUI_CopyOptions。 |
@@ -490,7 +579,10 @@ TextEditor组件复制选项，支持属性设置、属性重置和属性获取�
  
   
 
-#### NODE_TEXT_EDITOR_KEYBOARD_APPEARANCE
+## NODE_TEXT_EDITOR_KEYBOARD_APPEARANCE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_EDITOR_KEYBOARD_APPEARANCE = 22018
@@ -504,6 +596,7 @@ TextEditor组件键盘外观，支持属性设置、属性重置和属性获取�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 键盘外观，参数类型ArkUI_KeyboardAppearance，默认值为ARKUI_KEYBOARD_APPEARANCE_NONE_IMMERSIVE。 |
@@ -511,6 +604,7 @@ TextEditor组件键盘外观，支持属性设置、属性重置和属性获取�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 文本编辑器当前设置的键盘外观类型，参数类型ArkUI_KeyboardAppearance。 |
@@ -518,7 +612,10 @@ TextEditor组件键盘外观，支持属性设置、属性重置和属性获取�
  
   
 
-#### NODE_TEXT_EDITOR_STOP_BACK_PRESS
+## NODE_TEXT_EDITOR_STOP_BACK_PRESS
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_EDITOR_STOP_BACK_PRESS = 22019
@@ -532,6 +629,7 @@ TextEditor组件是否阻止返回键事件向上层传播，支持属性设置�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否阻止返回事件传播，0表示不阻止，1表示阻止，默认值为0。推荐在编辑器有未保存内容或需要拦截返回键防止意外退出的场景设置为1。 |
@@ -539,6 +637,7 @@ TextEditor组件是否阻止返回键事件向上层传播，支持属性设置�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否阻止返回事件传播，0表示不阻止，1表示阻止。 |
@@ -546,7 +645,10 @@ TextEditor组件是否阻止返回键事件向上层传播，支持属性设置�
  
   
 
-#### NODE_TEXT_EDITOR_ENABLE_AUTO_SPACING
+## NODE_TEXT_EDITOR_ENABLE_AUTO_SPACING
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_EDITOR_ENABLE_AUTO_SPACING = 22020
@@ -560,6 +662,7 @@ TextEditor组件中西文自动间距开关，支持属性设置、属性重置�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否启用中西文自动间距，0表示不启用，1表示启用，默认值为0。推荐在包含中英文混排内容的编辑场景设置为1，以改善混排文本的阅读体验。 |
@@ -567,6 +670,7 @@ TextEditor组件中西文自动间距开关，支持属性设置、属性重置�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否启用中西文自动间距，0表示不启用，1表示启用。 |
@@ -574,7 +678,10 @@ TextEditor组件中西文自动间距开关，支持属性设置、属性重置�
  
   
 
-#### NODE_TEXT_EDITOR_CUSTOM_KEYBOARD
+## NODE_TEXT_EDITOR_CUSTOM_KEYBOARD
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_EDITOR_CUSTOM_KEYBOARD = 22021
@@ -588,6 +695,7 @@ TextEditor组件自定义键盘。当需要替换系统默认键盘时传入此�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 自定义键盘，参数类型ArkUI_NodeHandle。 |
@@ -596,6 +704,7 @@ TextEditor组件自定义键盘。当需要替换系统默认键盘时传入此�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .object | 自定义键盘，参数类型ArkUI_NodeHandle。 |
@@ -604,7 +713,10 @@ TextEditor组件自定义键盘。当需要替换系统默认键盘时传入此�
  
   
 
-#### NODE_TEXT_EDITOR_BIND_SELECTION_MENU
+## NODE_TEXT_EDITOR_BIND_SELECTION_MENU
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_EDITOR_BIND_SELECTION_MENU = 22022
@@ -618,6 +730,7 @@ TextEditor组件自定义文本选择菜单绑定，支持属性设置和属性�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 自定义选择菜单，不传入时使用系统默认文本选择菜单。参数类型ArkUI_TextEditorSelectionMenuOptions。 |
@@ -625,7 +738,10 @@ TextEditor组件自定义文本选择菜单绑定，支持属性设置和属性�
  
   
 
-#### NODE_TEXT_EDITOR_INCLUDE_FONT_PADDING
+## NODE_TEXT_EDITOR_INCLUDE_FONT_PADDING
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_EDITOR_INCLUDE_FONT_PADDING = 22023
@@ -639,6 +755,7 @@ TextEditor组件首行尾行防截断间距开关，启用后，在首行和尾�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否添加首行尾行防截断间距，0表示不添加，1表示添加，默认值为0。 |
@@ -646,6 +763,7 @@ TextEditor组件首行尾行防截断间距开关，启用后，在首行和尾�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否添加首行尾行防截断间距，0表示不添加，1表示添加。 |
@@ -653,7 +771,10 @@ TextEditor组件首行尾行防截断间距开关，启用后，在首行和尾�
  
   
 
-#### NODE_TEXT_EDITOR_FALLBACK_LINE_SPACING
+## NODE_TEXT_EDITOR_FALLBACK_LINE_SPACING
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_EDITOR_FALLBACK_LINE_SPACING = 22024
@@ -667,6 +788,7 @@ TextEditor组件行高自适应开关，在多行文字叠加时，行高可以�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 行高是否自适应，0表示不自适应，1表示自适应，默认值为0。 |
@@ -674,6 +796,7 @@ TextEditor组件行高自适应开关，在多行文字叠加时，行高可以�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 行高是否自适应，0表示不自适应，1表示自适应。 |
@@ -681,7 +804,10 @@ TextEditor组件行高自适应开关，在多行文字叠加时，行高可以�
  
   
 
-#### NODE_TEXT_EDITOR_COMPRESS_LEADING_PUNCTUATION
+## NODE_TEXT_EDITOR_COMPRESS_LEADING_PUNCTUATION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_EDITOR_COMPRESS_LEADING_PUNCTUATION = 22025
@@ -695,6 +821,7 @@ TextEditor组件行首标点符号压缩开关，启用后，行首的标点符�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否启用行首标点符号压缩，0表示不启用，1表示启用，默认值为0。 |
@@ -702,6 +829,7 @@ TextEditor组件行首标点符号压缩开关，启用后，行首的标点符�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否启用行首标点符号压缩，0表示不启用，1表示启用。 |
@@ -709,7 +837,10 @@ TextEditor组件行首标点符号压缩开关，启用后，行首的标点符�
  
   
 
-#### NODE_TEXT_EDITOR_SELECTED_DRAG_PREVIEW_STYLE
+## NODE_TEXT_EDITOR_SELECTED_DRAG_PREVIEW_STYLE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_EDITOR_SELECTED_DRAG_PREVIEW_STYLE = 22026
@@ -723,6 +854,7 @@ TextEditor组件选中拖拽预览样式，支持属性设置、属性重置和�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 选中拖拽预览样式配置，参数类型ArkUI_SelectedDragPreviewStyle。当需要自定义选中文本拖拽时的预览效果时传入此参数，不传入时使用系统默认拖拽预览样式。 |
@@ -730,6 +862,7 @@ TextEditor组件选中拖拽预览样式，支持属性设置、属性重置和�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .object | 选中拖拽预览样式配置，参数类型ArkUI_SelectedDragPreviewStyle。 |
@@ -737,7 +870,10 @@ TextEditor组件选中拖拽预览样式，支持属性设置、属性重置和�
  
   
 
-#### NODE_TEXT_EDITOR_SINGLE_LINE
+## NODE_TEXT_EDITOR_SINGLE_LINE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_EDITOR_SINGLE_LINE = 22027
@@ -751,6 +887,7 @@ TextEditor组件单行模式开关，支持属性设置、属性重置和属性�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否启用单行模式，0表示不启用，1表示启用，默认值为0。 |
@@ -758,6 +895,7 @@ TextEditor组件单行模式开关，支持属性设置、属性重置和属性�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否启用单行模式，0表示不启用，1表示启用。 |
@@ -765,7 +903,10 @@ TextEditor组件单行模式开关，支持属性设置、属性重置和属性�
  
   
 
-#### NODE_TEXT_EDITOR_ORPHAN_CHAR_OPTIMIZATION
+## NODE_TEXT_EDITOR_ORPHAN_CHAR_OPTIMIZATION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_EDITOR_ORPHAN_CHAR_OPTIMIZATION = 22028
@@ -779,6 +920,7 @@ TextEditor组件孤字优化开关，支持属性设置、属性重置和属性�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否启用孤字优化，0表示不启用，1表示启用。默认值为0。仅在ArkUI_WordBreak属性为非ARKUI_WORD_BREAK_BREAK_ALL时生效。 |
@@ -786,6 +928,7 @@ TextEditor组件孤字优化开关，支持属性设置、属性重置和属性�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否启用孤字优化，0表示不启用，1表示启用。 |
@@ -793,7 +936,10 @@ TextEditor组件孤字优化开关，支持属性设置、属性重置和属性�
  
   
 
-#### NODE_TEXT_EDITOR_HORIZONTAL_SCROLLING
+## NODE_TEXT_EDITOR_HORIZONTAL_SCROLLING
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_EDITOR_HORIZONTAL_SCROLLING = 22029
@@ -807,6 +953,7 @@ NODE_TEXT_EDITOR_HORIZONTAL_SCROLLING = 22029
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否启用水平滚动，0表示不启用水平滚动，1表示启用水平滚动。默认值为0。 |
@@ -814,6 +961,7 @@ NODE_TEXT_EDITOR_HORIZONTAL_SCROLLING = 22029
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否启用水平滚动，0表示不启用水平滚动，1表示启用水平滚动。 |
@@ -821,7 +969,10 @@ NODE_TEXT_EDITOR_HORIZONTAL_SCROLLING = 22029
  
   
 
-#### NODE_TEXT_EDITOR_PUNCTUATION_OVERFLOW
+## NODE_TEXT_EDITOR_PUNCTUATION_OVERFLOW
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TEXT_EDITOR_PUNCTUATION_OVERFLOW = 22030
@@ -837,6 +988,7 @@ NODE_TEXT_EDITOR_PUNCTUATION_OVERFLOW = 22030
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否启用行尾标点符号悬挂，0表示不启用标点符号悬挂，1表示启用标点符号悬挂。默认值为0。 |
@@ -844,6 +996,7 @@ NODE_TEXT_EDITOR_PUNCTUATION_OVERFLOW = 22030
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否启用行尾标点符号悬挂，0表示不启用行尾标点符号悬挂，1表示启用行尾标点符号悬挂。 |

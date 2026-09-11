@@ -1,9 +1,9 @@
 # Class (Console)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-logs
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供了一个简单的调试控制台，类似于浏览器提供的JavaScript控制台机制。
 
@@ -12,9 +12,10 @@
 
 
 
-#### console.debug
+## console.debug
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static debug(message: string, ...arguments: any[]): void
 
@@ -27,6 +28,7 @@ static debug(message: string, ...arguments: any[]): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -48,9 +50,10 @@ console.debug('count:'); // 仅打印message
 
 
 
-#### console.log
+## console.log
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static log(message: string, ...arguments: any[]): void
 
@@ -63,6 +66,7 @@ static log(message: string, ...arguments: any[]): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -84,13 +88,14 @@ console.log('count:'); // 仅打印message
 
 
 
-#### console.info
+## console.info
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static info(message: string, ...arguments: any[]): void
 
-以格式化输出方式打印日志信息。(console.log()的别名）。
+以格式化输出方式打印日志信息（console.log()的别名）。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -99,6 +104,7 @@ static info(message: string, ...arguments: any[]): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -120,9 +126,10 @@ console.info('count:'); // 仅打印message
 
 
 
-#### console.warn
+## console.warn
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static warn(message: string, ...arguments: any[]): void
 
@@ -135,6 +142,7 @@ static warn(message: string, ...arguments: any[]): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -156,9 +164,10 @@ console.warn('warn:'); // 仅打印message
 
 
 
-#### console.error
+## console.error
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static error(message: string, ...arguments: any[]): void
 
@@ -171,6 +180,7 @@ static error(message: string, ...arguments: any[]): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -192,9 +202,10 @@ console.error('error:'); // 仅打印message
 
 
 
-#### console.assert10+
+## console.assert10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static assert(value?: Object, ...arguments: Object[]): void
 
@@ -206,6 +217,7 @@ static assert(value?: Object, ...arguments: Object[]): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 否 | 语句结果值。若value为假（false）或者省略，则输出以"Assertion failed"开头。如果value为真值（true），则无打印。 |
@@ -215,6 +227,7 @@ static assert(value?: Object, ...arguments: Object[]): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -236,9 +249,10 @@ console.assert();
 
 
 
-#### console.count10+
+## console.count10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static count(label?: string): void
 
@@ -250,6 +264,7 @@ static count(label?: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | label | string | 否 | 计数器标签名。默认值为'default'。 |
@@ -258,6 +273,7 @@ static count(label?: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -283,9 +299,10 @@ console.count()
 
 
 
-#### console.countReset10+
+## console.countReset10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static countReset(label?: string): void
 
@@ -297,6 +314,7 @@ static countReset(label?: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | label | string | 否 | 计数器标签名。默认值为'default'。 |
@@ -305,6 +323,7 @@ static countReset(label?: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -323,9 +342,10 @@ console.count('abc');
 
 
 
-#### console.dir10+
+## console.dir10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static dir(dir?: Object): void
 
@@ -336,6 +356,7 @@ static dir(dir?: Object): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -365,9 +386,10 @@ console.dir(); // 无打印
 
 
 
-#### console.dirxml10+
+## console.dirxml10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static dirxml(...arguments: Object[]): void
 
@@ -378,6 +400,7 @@ static dirxml(...arguments: Object[]): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -398,9 +421,10 @@ console.dirxml('count:');
 
 
 
-#### console.group10+
+## console.group10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static group(...arguments: Object[]): void
 
@@ -413,6 +437,7 @@ static group(...arguments: Object[]): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -437,9 +462,10 @@ console.info("level 2");
 
 
 
-#### console.groupCollapsed10+
+## console.groupCollapsed10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static groupCollapsed(...arguments: Object[]): void
 
@@ -450,6 +476,7 @@ static groupCollapsed(...arguments: Object[]): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -474,9 +501,10 @@ console.info("level 2");
 
 
 
-#### console.groupEnd10+
+## console.groupEnd10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static groupEnd(): void
 
@@ -503,9 +531,10 @@ console.info("outer");
 
 
 
-#### console.table10+
+## console.table10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static table(tableData?: Object): void
 
@@ -516,6 +545,7 @@ static table(tableData?: Object): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -547,9 +577,10 @@ console.table({ a: [1, 2, 3, 4, 5], b: 5, c: { e: 5 } });
 
 
 
-#### console.time10+
+## console.time10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static time(label?: string): void
 
@@ -561,6 +592,7 @@ static time(label?: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | label | string | 否 | 计时器标识。默认值为'default'。 |
@@ -569,6 +601,7 @@ static time(label?: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -583,9 +616,10 @@ console.time('abc');
 
 
 
-#### console.timeEnd10+
+## console.timeEnd10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static timeEnd(label?: string): void
 
@@ -597,6 +631,7 @@ static timeEnd(label?: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | label | string | 否 | 计时器标识。默认值为'default'。 |
@@ -605,6 +640,7 @@ static timeEnd(label?: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -621,9 +657,10 @@ console.timeEnd('abc');
 
 
 
-#### console.timeLog10+
+## console.timeLog10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static timeLog(label?: string, ...arguments: Object[]): void
 
@@ -635,6 +672,7 @@ static timeLog(label?: string, ...arguments: Object[]): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | label | string | 否 | 计时器标识。默认值为'default'。 |
@@ -644,6 +682,7 @@ static timeLog(label?: string, ...arguments: Object[]): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -662,9 +701,10 @@ console.timeEnd('timer1');
 
 
 
-#### console.trace10+
+## console.trace10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static trace(...arguments: Object[]): void
 
@@ -675,6 +715,7 @@ static trace(...arguments: Object[]): void
 **系统能力：** SystemCapability.Utils.Lang
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -696,9 +737,10 @@ console.trace("Show the trace");
 
 
 
-#### console.traceHybridStack12+
+## console.traceHybridStack12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static traceHybridStack(): void
 

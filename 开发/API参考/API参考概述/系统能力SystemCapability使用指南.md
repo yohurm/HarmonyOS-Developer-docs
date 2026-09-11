@@ -1,13 +1,13 @@
 # 系统能力SystemCapability使用指南
 
-更新时间：2026-06-12 06:54:11
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/syscap
 
 本文将系统阐述SystemCapability（SysCap）的定义、用途，以及在单设备与多设备应用开发场景下的适配开发策略。
 
 
-#### 什么是SystemCapability（SysCap）
+## 什么是SystemCapability（SysCap）
 
 SystemCapability，下文统一简称为SysCap，用于标识一组实现特定开放能力的API集合，如下图所示。
 
@@ -25,7 +25,7 @@ SystemCapability，下文统一简称为SysCap，用于标识一组实现特定�
 
 
 
-#### SysCap的用途
+## SysCap的用途
 
 SysCap的用途：
 1. 首要职责：隔离不同设备类型之间的开放能力差异。
@@ -47,7 +47,7 @@ SysCap的用途：
 
 
 
-#### SysCap与SDK和Kit的关系
+## SysCap与SDK和Kit的关系
 
 SysCap与SDK、Kit形成结构化、层级化结构，如下图所示：
 
@@ -68,9 +68,13 @@ SysCap与SDK、Kit形成结构化、层级化结构，如下图所示：
 
 
 
-#### SysCap与Device type的关系
+## SysCap与Device type的关系
 
-在SDK的“device-define”文件夹下，以json文件定义了各设备类型支持的SysCap集合。例如：tablet.json文件定义了Tablet设备支持SystemCapability.ArkUI.ArkUI.Full、SystemCapability.Communication.NFC.Core等SysCap。如下图所示：
+在SDK的“device-define”文件夹下，以json文件定义了各设备类型支持的SysCap集合。例如：tablet.json文件定义了Tablet设备支持SystemCapability.ArkUI.ArkUI.Full、SystemCapability.Communication.NFC.Core等SysCap。
+
+SDK的“device-define”文件夹可在DevEco Studio左侧项目栏的“外部库（External Libraries） > ArkTS-HarmonyOS-{版本号}(hms) > api > device-define”中查看。
+
+如下图所示：
 
 
 ![](assets/系统能力SystemCapability使用指南/file-20260514163658228-5.png)
@@ -100,7 +104,7 @@ DevEco Studio自动识别项目中的设备类型，定位SDK“device-define”
 
 
 
-#### SysCap适配应用开发
+## SysCap适配应用开发
 
 如前文所述，SysCap是隔离设备类型间开放能力差异的机制；但在实际应用开发中，完成SysCap层面的隔离判断后，还需要关注：
 1. 同一设备类型下的不同设备型号，可能因硬件配置差异等因素导致同一SysCap下的部分API调用异常；
@@ -112,7 +116,7 @@ DevEco Studio自动识别项目中的设备类型，定位SDK“device-define”
 
 
 
-#### 使用canIUse判断SysCap是否可调用
+### 使用canIUse判断SysCap是否可调用
 
 使用[canIUse](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-syscap#caniuse)接口判断SysCap对应的API集合是否可调用：true表示可调用，false表示不可调用（该SysCap在对应设备类型中未包含）。
 
@@ -144,7 +148,7 @@ if (result) {
 
 
 
-#### 使用能力查询接口判断API是否可用
+### 使用能力查询接口判断API是否可用
 
 使用系统侧的isXXXAvailable()、isXXXSupported()、canMakeXXX()等接口判断API是否可用。
 
@@ -173,7 +177,7 @@ try {
 
 
 
-#### 主动监听扩展能力变化
+### 主动监听扩展能力变化
 
 在硬件动态扩展场景中，部分硬件插拔会导致能力变化，开发者可以主动监听扩展能力变化。
 
@@ -197,7 +201,7 @@ registerCameraStatus(cameraManager: camera.CameraManager): void {
 
 
 
-#### 错误码异常处理
+### 错误码异常处理
 
 为应对调用接口可能出现的异常情况，开发者还需进行错误码异常处理。
 1. 同步接口必须使用try...catch处理异常，避免应用功能崩溃。
@@ -247,7 +251,7 @@ media.createAVScreenCaptureRecorder().then((captureRecorder: media.AVScreenCaptu
 
 
 
-#### 单设备及多设备应用开发场景下的适配开发
+## 单设备及多设备应用开发场景下的适配开发
 
 应用开发可分为：
 1. 单设备应用开发：指应用工程的Device type只配置1个设备类型；
@@ -255,24 +259,24 @@ media.createAVScreenCaptureRecorder().then((captureRecorder: media.AVScreenCaptu
 
 
 
-#### 单设备应用开发场景下的适配开发
+### 单设备应用开发场景下的适配开发
 
 单设备应用开发时，DevEco Studio只识别到一种设备类型，适配开发过程如下图所示：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/LLvp0H2OR9q49C0mc_hdeQ/zh-cn_image_0000002659101463.png?HW-CC-KV=V1&HW-CC-Date=20260701T014229Z&HW-CC-Expire=86400&HW-CC-Sign=629BD3FC0320626D5A8434827BEB44CBF099B4C38BCAC3F56A9DF72917B5660F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/yOR3tjPbTwKcpbdQfhEimA/zh-cn_image_0000002717612356.png?HW-CC-KV=V1&HW-CC-Date=20260911T073100Z&HW-CC-Expire=86400&HW-CC-Sign=0FB90D58D814DEA86AAB21DE7AF8F604B9C93CD13490A2D1C07E63D61DD0C127)
 
 1. 如果存在API在同一设备类型下的不同设备型号存在能力不一致的情况，需使用能力查询接口判断接口能力可用性（注意：此处的能力查询机制并非canIUse，请参见[使用能力查询接口判断API是否可用](#使用能力查询接口判断api是否可用)）；
 2. 为了避免调用接口出现的异常情况，需要开发者进行错误码异常处理。
 
 
 
-#### 多设备应用开发场景下的适配开发
+### 多设备应用开发场景下的适配开发
 
 多设备应用开发时，DevEco Studio需同时识别多种设备类型，适配开发过程如下图所示：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/-cPwAUg8QIyD6LNMWoO66g/zh-cn_image_0000002628862114.png?HW-CC-KV=V1&HW-CC-Date=20260701T014229Z&HW-CC-Expire=86400&HW-CC-Sign=9AC22FB0B93DD239F768E98366C04E10AC31D9088F26C14B911DB0748172F458)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/3sGd0gk3QTeIpQLDI-ey-Q/zh-cn_image_0000002747292309.png?HW-CC-KV=V1&HW-CC-Date=20260911T073100Z&HW-CC-Expire=86400&HW-CC-Sign=E7BC5E25B2228F3E6F73784F2368C498A562DBA4CFE838B4E4BE5BAD9E03B16C)
 
 1. 使用canIUse判断并集内交集外的SysCap集合是否可用；
 

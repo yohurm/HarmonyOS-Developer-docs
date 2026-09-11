@@ -1,11 +1,13 @@
 # trafficLane
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/car-appendix-trafficlane
+**支持设备：** Phone | Tablet
 
 车道线映射关系。
   
+
 | trafficLane（16进制） | 显示内容参考样式 | 含义 |
 | --- | --- | --- |
 | 0001 |  | 公交车道。 |

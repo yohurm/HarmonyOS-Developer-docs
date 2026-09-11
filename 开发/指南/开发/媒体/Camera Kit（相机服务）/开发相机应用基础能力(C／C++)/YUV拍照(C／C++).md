@@ -1,26 +1,40 @@
 # YUV拍照(C/C++)
 
-更新时间：2026-07-17 09:35:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera-yuv-shooting
 
 从API version 23开始，相机框架提供YUV格式图片拍照能力。与普通拍照相比，YUV拍照获取到的是未经过编码的图像数据，完整保留了传感器捕获的原始亮度和色度信息，适用于视频编码或专业处理。同时，拍摄过程会产生更高的能耗开销，保存会占用更多的存储空间。
 
 
-#### 开发步骤
+## 开发步骤
 
 详细的相机功能API说明请参考Camera模块描述[OH_Camera](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-camera)。
 1. 导入NDK接口，接口中提供了相机相关的属性和方法，导入方法如下。
 
   
 ```text
-// 导入NDK接口头文件。
 #include <cstdint>
-#include <cstdlib>
-#include <cstring>
-#include <string.h>
-#include <new>
+#include <cstdio>
+#include <fcntl.h>
+#include <map>
+#include <string>
+#include <vector>
+#include <native_buffer/native_buffer.h>
+#include "iostream"
+#include "mutex"
+
 #include "hilog/log.h"
+#include "ohcamera/camera.h"
+#include "ohcamera/camera_input.h"
+#include "ohcamera/capture_session.h"
+#include "ohcamera/photo_output.h"
+#include "ohcamera/preview_output.h"
+#include "ohcamera/video_output.h"
+#include "ohcamera/camera_manager.h"
+#include "common/log_common.h"
+
+#include "multimedia/image_framework/image/image_native.h"
 #include "multimedia/image_framework/image/image_source_native.h"
 #include "multimedia/image_framework/image/image_packer_native.h"
 #include "multimedia/media_library/media_access_helper_capi.h"
@@ -28,14 +42,10 @@
 #include "multimedia/media_library/media_asset_capi.h"
 #include "multimedia/media_library/media_asset_change_request_capi.h"
 #include "multimedia/media_library/media_asset_manager_capi.h"
-#include "ohcamera/camera.h"
-#include "ohcamera/camera_input.h"
-#include "ohcamera/camera_manager.h"
-#include "ohcamera/capture_session.h"
+#include "multimedia/media_library/moving_photo_capi.h"
 #include "ohcamera/photo_native.h"
-#include "ohcamera/photo_output.h"
-#include "ohcamera/preview_output.h"
-#include "ohcamera/video_output.h"
+#include <window_manager/oh_display_info.h>
+#include <window_manager/oh_display_manager.h>
 ```
 
 2. 在CMake脚本中链接相关动态库。
@@ -64,19 +74,21 @@ target_link_libraries(entry PUBLIC
 
   
 ```text
-Camera_OutputCapability* GetSupportedFullCameraOutputCapability(Camera_Manager* cameraManager, Camera_Device &camera)
+Camera_OutputCapability* NDKCamera::GetSupportedFullCameraOutputCapability(Camera_Manager* cameraManager,
+    Camera_Device &camera)
 {
-     Camera_OutputCapability* cameraOutputCapability = nullptr;
-     // 获取相机设备支持的输出流能力。
-     const Camera_Profile* previewProfile = nullptr;
-     const Camera_Profile* photoProfile = nullptr;
-     Camera_ErrorCode ret = OH_CameraManager_GetSupportedFullCameraOutputCapabilityWithSceneMode(cameraManager, &camera,
-         Camera_SceneMode::NORMAL_PHOTO, &cameraOutputCapability);
-     if (cameraOutputCapability == nullptr || ret != CAMERA_OK) {
-         OH_LOG_ERROR(LOG_APP, "OH_CameraManager_GetSupportedCameraOutputCapability failed.");
-         return nullptr;
-     }
-     return cameraOutputCapability;
+    Camera_OutputCapability* cameraOutputCapability = nullptr;
+    // 获取相机设备支持的输出流能力。
+    const Camera_Profile* previewProfile = nullptr;
+    const Camera_Profile* photoProfile = nullptr;
+    Camera_ErrorCode ret = OH_CameraManager_GetSupportedFullCameraOutputCapabilityWithSceneMode(cameraManager, &camera,
+        Camera_SceneMode::NORMAL_PHOTO, &cameraOutputCapability);
+    if (cameraOutputCapability == nullptr || ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_CameraManager_GetSupportedCameraOutputCapability failed.");
+        return cameraOutputCapability;
+    }
+    // ...
+    return cameraOutputCapability;
 }
 ```
 
@@ -88,15 +100,20 @@ Camera_OutputCapability* GetSupportedFullCameraOutputCapability(Camera_Manager* 
 
   
 ```text
-Camera_PhotoOutput* CreatePhotoOutput(Camera_Manager* cameraManager, const Camera_Profile* photoProfile)
+Camera_ErrorCode NDKCamera::CreatePhotoOutputWithoutSurfaceId()
 {
-    Camera_PhotoOutput* photoOutput = nullptr;
+    DRAWING_LOGD("NDKCamera::CreatePhotoOutputWithoutSurfaceId into createWithoutSurfaceID branch!");
+    OH_LOG_INFO(LOG_APP, "CreatePhotoOutputWithoutSurfaceId format: %{public}d!", cameraProfile_->format);
+    OH_LOG_INFO(LOG_APP, "CreatePhotoOutputWithoutSurfaceId width: %{public}d!", cameraProfile_->size.width);
+    OH_LOG_INFO(LOG_APP, "CreatePhotoOutputWithoutSurfaceId height: %{public}d!", cameraProfile_->size.height);
     // 无需传入surfaceId，直接创建拍照流。
-    Camera_ErrorCode ret = OH_CameraManager_CreatePhotoOutputWithoutSurface(cameraManager, photoProfile, &photoOutput);
-    if (photoOutput == nullptr || ret != CAMERA_OK) {
-        OH_LOG_ERROR(LOG_APP, "OH_CameraManager_CreatePhotoOutputWithoutSurface failed.");
+    ret_ = OH_CameraManager_CreatePhotoOutputWithoutSurface(cameraManager_, cameraProfile_, &photoOutput_);
+    if (photoOutput_ == nullptr || ret_ != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "CreatePhotoOutputWithoutSurfaceId failed.");
+        return CAMERA_INVALID_ARGUMENT;
     }
-    return photoOutput;
+    PhotoOutputRegisterCallback();
+    return ret_;
 }
 ```
 
@@ -141,14 +158,24 @@ Camera_PhotoOutput* CreatePhotoOutput(Camera_Manager* cameraManager, const Camer
 
   
 ```text
-Camera_ErrorCode Capture(Camera_PhotoOutput* photoOutput)
+Camera_ErrorCode NDKCamera::TakePicture(int32_t degree)
 {
-    Camera_ErrorCode ret = OH_PhotoOutput_Capture(photoOutput);
-    if (ret == CAMERA_OK) {
-        OH_LOG_INFO(LOG_APP, "OH_PhotoOutput_Capture success ");
-    } else {
-        OH_LOG_ERROR(LOG_APP, "OH_PhotoOutput_Capture failed. %d ", ret);
-    }
+    Camera_ErrorCode ret = CAMERA_OK;
+    Camera_ImageRotation imageRotation;
+    bool isMirSupported;
+    OH_PhotoOutput_IsMirrorSupported(photoOutput_, &isMirSupported);
+    OH_PhotoOutput_GetPhotoRotation(photoOutput_, degree, &imageRotation);
+    imageRotation = Camera_ImageRotation::CAMERA_IMAGE_ROTATION_0;
+
+    Camera_PhotoCaptureSetting curPhotoSetting = {
+        quality : QUALITY_LEVEL_HIGH,
+        rotation : imageRotation,
+        mirror : isMirSupported
+    };
+    ret = OH_PhotoOutput_Capture_WithCaptureSetting(photoOutput_, curPhotoSetting);
+    OH_LOG_INFO(LOG_APP, "TakePicture get quality %{public}d, rotation %{public}d, mirror %{public}d",
+        curPhotoSetting.quality, curPhotoSetting.rotation, curPhotoSetting.mirror);
+    OH_LOG_INFO(LOG_APP, "TakePicture ret = %{public}d.", ret);
     return ret;
 }
 ```
@@ -156,7 +183,7 @@ Camera_ErrorCode Capture(Camera_PhotoOutput* photoOutput)
 
   
 
-  #### 状态监听
+  ## 状态监听
 
   在相机应用开发过程中，可以随时监听拍照输出流状态，包括拍照流开始、拍照帧的开始与结束、拍摄下一张图片是否就绪、拍照输出流的错误。
 
@@ -165,11 +192,12 @@ Camera_ErrorCode Capture(Camera_PhotoOutput* photoOutput)
 
   
 ```text
-void PhotoOutputOnFrameStart(Camera_PhotoOutput* photoOutput)
+void PhotoOutputOnFrameStart(Camera_PhotoOutput *photoOutput)
 {
     OH_LOG_INFO(LOG_APP, "PhotoOutputOnFrameStart");
 }
-void PhotoOutputOnFrameShutter(Camera_PhotoOutput* photoOutput, Camera_FrameShutterInfo* info)
+
+void PhotoOutputOnFrameShutter(Camera_PhotoOutput *photoOutput, Camera_FrameShutterInfo *info)
 {
     OH_LOG_INFO(LOG_APP, "PhotoOutputOnFrameShutter");
 }
@@ -179,7 +207,7 @@ void PhotoOutputOnFrameShutter(Camera_PhotoOutput* photoOutput, Camera_FrameShut
 
   
 ```text
-void PhotoOutputOnFrameEnd(Camera_PhotoOutput* photoOutput, int32_t frameCount)
+void PhotoOutputOnFrameEnd(Camera_PhotoOutput *photoOutput, int32_t frameCount)
 {
     OH_LOG_INFO(LOG_APP, "PhotoOutput frameCount = %{public}d", frameCount);
 }
@@ -189,13 +217,13 @@ void PhotoOutputOnFrameEnd(Camera_PhotoOutput* photoOutput, int32_t frameCount)
 
   
 ```text
-static bool g_captureReadyFlag = false;
-void CaptureReadyCb(Camera_PhotoOutput* photoOutput) {
-  g_captureReadyFlag = true;
-  OH_LOG_INFO(LOG_APP, "PhotoOutputOnCaptureReady captureReadyFlag = %{public}d", g_captureReadyFlag);
+void CaptureReadyCb(Camera_PhotoOutput* photoOutput)
+{
+    g_captureReadyFlag = true;
+    OH_LOG_INFO(LOG_APP, "PhotoOutputOnCaptureReady captureReadyFlag = %{public}d", g_captureReadyFlag);
 }
 
-void OnPhotoOutputOnCaptureReady(Camera_PhotoOutput* photoOutput)
+void NDKCamera::RegisterCaptureReadyCallback(Camera_PhotoOutput* photoOutput)
 {
     OH_LOG_INFO(LOG_APP, "PhotoOutputOnCaptureReady");
     Camera_ErrorCode ret = OH_PhotoOutput_RegisterCaptureReadyCallback(photoOutput, CaptureReadyCb);
@@ -206,29 +234,8 @@ void OnPhotoOutputOnCaptureReady(Camera_PhotoOutput* photoOutput)
 
   
 ```text
-void PhotoOutputOnError(Camera_PhotoOutput* photoOutput, Camera_ErrorCode errorCode)
+void PhotoOutputOnError(Camera_PhotoOutput *photoOutput, Camera_ErrorCode errorCode)
 {
     OH_LOG_INFO(LOG_APP, "PhotoOutput errorCode = %{public}d", errorCode);
-}
-```
-
-```text
-PhotoOutput_Callbacks* GetPhotoOutputListener()
-{
-    static PhotoOutput_Callbacks photoOutputListener = {
-        .onFrameStart = PhotoOutputOnFrameStart,
-        .onFrameShutter = PhotoOutputOnFrameShutter,
-        .onFrameEnd = PhotoOutputOnFrameEnd,
-        .onError = PhotoOutputOnError
-    };
-    return &photoOutputListener;
-}
-Camera_ErrorCode RegisterPhotoOutputCallback(Camera_PhotoOutput* photoOutput)
-{
-    Camera_ErrorCode ret = OH_PhotoOutput_RegisterCallback(photoOutput, GetPhotoOutputListener());
-    if (ret != CAMERA_OK) {
-        OH_LOG_ERROR(LOG_APP, "OH_PhotoOutput_RegisterCallback failed.");
-    }
-    return ret;
 }
 ```

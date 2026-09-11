@@ -1,16 +1,16 @@
 # SIGABRT进程主动终止故障模式说明
 
-更新时间：2026-07-22 06:05:01
+更新时间：2026-09-09 06:06:31
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-cppcrash-sigabrt-fault-mode
 
-#### 根因描述
+## 根因描述
 
 SIGABRT进程异常终止，通常为进程自身调用标准函数库的abort()函数导致，崩溃原因位于调用abort()函数的代码中。程序检测到异常时触发该终止，如线程创建失败、文件描述符使用异常等。基础库（如C库等）进行校验操作时，校验失败会主动终止进程。若内存被破坏间接导致abort，则定位困难；因为内存损坏可能发生在其他地方，但最终表现为abort()被调用。
  
  
 
-#### 问题分析思路
+## 问题分析思路
 
 此类问题，通常有以下几种可能：
  
@@ -29,12 +29,12 @@ SIGABRT进程异常终止，通常为进程自身调用标准函数库的abort()
 问题分析的步骤如下：
  1. **确认类型**：查看崩溃日志文件中是否包含LastFatalMessage字段，该字段用于显示进程终止的原因，可根据其内容查阅相关文件或代码，确认崩溃原因。
 2. **调用栈分析**：找到触发abort的调用栈，通常跳过libc.so等系统库栈帧，根据栈帧崩溃文件名，转到业务代码栈帧查看崩溃函数，同时结合该处历史崩溃情况，缩小分析范围。
-3. **代码分析**：通过[llvm-addr2line](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)工具，结合调用栈文件和地址偏移，定位到具体业务代码行。根据代码上下文，分析其中存在的逻辑问题，找到触发abort的原因，必要时沿栈帧多分析几层。
+3. **代码分析**：参考[C++堆栈解析流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)，使用llvm-addr2line工具结合调用栈文件和地址偏移，定位到具体业务代码行。根据代码上下文，分析其中存在的逻辑问题，找到触发abort的原因，必要时沿栈帧多分析几层。
 4. **更多日志**：结合崩溃日志文件中的其他信息，以及hilog、kmsg等日志，还原故障现场信息，进行定位。
  
  
 
-#### 关键字
+## 关键字
 
 关注CppCrash故障日志中是否有如下关键字：
  
@@ -45,11 +45,11 @@ SIGABRT进程异常终止，通常为进程自身调用标准函数库的abort()
  
  
 
-#### 案例分析
+## 案例分析
 
  
 
-#### 案例一：主动abort触发故障
+### 案例一：主动abort触发故障
 
 **问题现象**
  
@@ -67,8 +67,8 @@ SIGABRT进程异常终止，通常为进程自身调用标准函数库的abort()
 
   
 ```cpp
-Reason:Signal:SIGABRT(SI_TKILL)@0x01317bef00002b7b from:11131:20020207
-LastFatalMessage:Assertion failed: pc != nullptr (.../entry/src/main/cpp/sigabort/sigabort.cpp: TriggerAssertAbort: 37)
+Reason:Signal:SIGABRT(SI_TKILL)@<span style="color: rgb(0,0,255);">0x01317bef00002b7b</span> from:<span style="color: rgb(0,0,255);">11131:20020207</span>
+LastFatalMessage:Assertion failed: pc != nullptr (.../entry/src/main/cpp/sigabort/sigabort.cpp: TriggerAssertAbort: <span style="color: rgb(0,0,255);">37</span>)
 ```
  说明1：LastFatalMessage是进程退出前的最后一条fatal级别日志，对于SIGABRT类崩溃问题其一般能提供程序主动异常终止的原因，对定位该类问题有很大帮助。
 2. 分析崩溃栈。ld-musl-aarch64.so.1中的栈帧，为触发abort的常见流程，可以跳过该部分到业务栈帧。
@@ -77,15 +77,15 @@ LastFatalMessage:Assertion failed: pc != nullptr (.../entry/src/main/cpp/sigabor
 
   
 ```text
-Fault thread info:
-Tid:11131, Name:ppcrashanalysis
-#00 pc 00000000001d78dc /system/lib/ld-musl-aarch64.so.1(raise+228)(5c1c07696048fe989cb4fc766531ce2e)
-#01 pc 000000000017f000 /system/lib/ld-musl-aarch64.so.1(abort+20)(5c1c07696048fe989cb4fc766531ce2e)
-#02 pc 000000000017f258 /system/lib/ld-musl-aarch64.so.1(__assert_fail+344)(5c1c07696048fe989cb4fc766531ce2e)
-#03 pc 0000000000021e58 /data/storage/el1/bundle/libs/arm64/libentry.so(TriggerAssertAbort(napi_env__*, napi_callback_info__*)+108)(9292a79a3a85a8e682ac2c774db1d42ff07d1ac4)
+Fault thread <span style="color: rgb(80,160,79);">info:</span>
+Tid:<span style="color: rgb(0,0,255);">11131</span>, Name:ppcrashanalysis
+#<span style="color: rgb(0,0,255);">00</span> pc 00000000001d78dc /system/lib/ld-<span style="color: rgb(0,0,255);">musl-aarch64.so.1</span>(raise+<span style="color: rgb(0,0,255);">228</span>)(<span style="color: rgb(0,0,255);">5c1c07696048fe989cb4fc766531ce2e</span>)
+#<span style="color: rgb(0,0,255);">01</span> pc 000000000017f000 /system/lib/ld-<span style="color: rgb(0,0,255);">musl-aarch64.so.1</span>(abort+<span style="color: rgb(0,0,255);">20</span>)(<span style="color: rgb(0,0,255);">5c1c07696048fe989cb4fc766531ce2e</span>)
+#<span style="color: rgb(0,0,255);">02</span> pc 000000000017f258 /system/lib/ld-<span style="color: rgb(0,0,255);">musl-aarch64.so.1</span>(__assert_fail+<span style="color: rgb(0,0,255);">344</span>)(<span style="color: rgb(0,0,255);">5c1c07696048fe989cb4fc766531ce2e</span>)
+#<span style="color: rgb(0,0,255);">03</span> pc 0000000000021e58 /data/storage/el1/bundle/libs/arm64/libentry.so(TriggerAssertAbort(napi_env__*, napi_callback_info__*)+<span style="color: rgb(0,0,255);">108</span>)(<span style="color: rgb(0,0,255);">9292a79a3a85a8e682ac2c774db1d42ff07d1ac4</span>)
 ```
  说明2：通常认为标准库、系统库较为稳定，因此优先分析崩溃栈帧中的业务部分调用栈。
-3. 使用[llvm-addr2line](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)工具定位行号并找到执行上下文。
+3. 参考[C++堆栈解析流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)使用llvm-addr2line工具定位行号找到执行上下文。
 
   通常用法为 llvm-addr2line -Cfie libentry.so 0000000000021e58，即可定位到代码行号，so为带符号版本。
 
@@ -103,19 +103,19 @@ napi_value TriggerAssertAbort(napi_env env, napi_callback_info info)
     return {};
 }
 ```
- 说明3：由于pc初始化为空，assert时，触发abort()。
+ 说明3：由于pc初始化为空，assert判断失败时，隐式调用abort()函数。
  
 
  
 **问题结论与总结**
  
-应用主动调用abort()函数触发故障。
+应用代码，通过使用assert判空，主动调用abort()函数，触发故障。
  
 
  
  
 
-#### 案例二：因资源不足导致线程创建失败进而崩溃
+### 案例二：因资源不足导致线程创建失败进而崩溃
 
 **问题现象**
  
@@ -147,13 +147,13 @@ Tid:52028, Name:ppcrashanalysis
 #04 pc 00000000000af9f8 /data/storage/el1/bundle/libs/arm64/libc++_shared.so(d2aeda5d2b106eca7953ec5f8909f164a1df0abb)
 #05 pc 00000000000b2aa8 /data/storage/el1/bundle/libs/arm64/libc++_shared.so(d2aeda5d2b106eca7953ec5f8909f164a1df0abb)
 #06 pc 00000000000b2a24 /data/storage/el1/bundle/libs/arm64/libc++_shared.so(__cxa_throw+124)(d2aeda5d2b106eca7953ec5f8909f164a1df0abb)
-#07 pc 000000000001c30c /data/storage/el1/bundle/libs/arm64/libentry.so(TriggerThreadNoMemoryAbort(napi_env__*, napi_callback_info__*)+148)(6f0c5bd0722b8e63a18fcd4150b89c84a85c927a)
+<span style="color: rgb(255,0,0);">#07 pc 000000000001c30c /data/storage/el1/bundle/libs/arm64/libentry.so(TriggerThreadNoMemoryAbort(napi_env__*, napi_callback_info__*)+148)(6f0c5bd0722b8e63a18fcd4150b89c84a85c927a)</span>
 #08 pc 00000000000695fc /system/lib64/platformsdk/libace_napi.z.so(panda::JSValueRef ArkNativeFunctionCallBack<true>(panda::JsiRuntimeCallInfo*)+284)(f28a6a2c8c07c7d146adaaac012d68e9)
 ```
 
 
   说明2：通过栈帧初步可以判断#07为正常业务操作，触发异常。
-3. 使用[llvm-addr2line](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)工具定位行号并找到执行上下文。根据第#07栈帧找到代码如下。
+3. 参考[C++堆栈解析流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)使用llvm-addr2line工具定位行号找到执行上下文。根据第#07栈帧找到代码如下。
 
   
 ```cpp
@@ -177,17 +177,17 @@ napi_value TriggerThreadNoMemoryAbort(napi_env env, napi_callback_info info)
  
 **问题结论与总结**
  
-应用创建线程超限触发异常。
+应用创建线程数量超限，触发异常。
  
 
  
 **修复建议**
  
-线程资源使用完成后，要及时回收释放相关资源。
+线程资源使用完成后，要及时回收，释放相关资源。
  
  
 
-#### 案例三：库函数校验失败触发崩溃
+### 案例三：库函数校验失败触发崩溃
 
 **问题现象**
  
@@ -204,7 +204,7 @@ Reason:Signal:SIGABRT(SI_TKILL)@0x01317c0100006f7d from:28541:20020225
 LastFatalMessage:Musl Fortify runtime error: file descriptor 1540 >= FD_SETSIZE 1024
 ```
  说明1：musl库校验失败，触发崩溃。
-2. 分析调用栈特征。识别为代码执行触发了句柄异常。
+2. 分析调用栈特征，识别为代码执行触发了句柄异常。
 
   证据2：
 
@@ -220,7 +220,7 @@ Tid:52731, Name:ppcrashanalysis
 #05 pc 00000000000695fc /system/lib64/platformsdk/libace_napi.z.so(panda::JSValueRef ArkNativeFunctionCallBack<true>(panda::JsiRuntimeCallInfo*)+284)(f28a6a2c8c07c7d146adaaac012d68e9)
 ```
  说明2：C库主动调用abort()函数，需要回溯到对应业务侧代码上下文进行分析。
-3. 使用[llvm-addr2line](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)工具定位行号并找到执行上下文。
+3. 参考[C++堆栈解析流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)使用llvm-addr2line工具定位行号找到执行上下文。
 
   
 ```text
@@ -280,7 +280,7 @@ void __fd_chk(int fd)
 #define FD_SETSIZE                      1024
 #endif
 ```
- 可以看到__fortify_error会主动调用abort()函数导致进程退出。
+ 可以看到__fortify_error()会主动调用abort()函数导致进程退出。
 
   
 ```text
@@ -315,25 +315,27 @@ void __fortify_error(const char* info, ...)
 1540->/dev/null native object of unknown type 0
 ```
 
-6. 进一步分析业务发现为使用select()函数监听FD时校验FD数量超限触发进程主动终止。
+6. 进一步分析业务发现，代码使用select()体系接口监听FD，在执行FD_SET()宏时因fd超出FD_SETSIZE（1024）限制触发musl库校验失败，进程主动终止。
  
 
  
 **问题结论与总结**
  
-libc中select()函数限制监控的FD不超过1024，超过会触发进程主动终止。
+libc中select()体系接口限制监控的FD不超过1024，FD_SET()宏的fortify校验发现fd超过1024时会调用abort()触发进程主动终止。
  
 
  
 **修复建议**
  
-根据使用场景，选择合适的系统API，可以使用poll()函数替换使用select()函数。
+
+ 
+根据使用场景选择合适的系统API，使用poll()函数替换select()函数。poll()使用pollfd结构体管理监听对象，没有FD_SETSIZE（1024）的数量限制。若必须使用select()，需在执行FD_SET()宏前校验fd小于FD_SETSIZE，超出限制的fd不写入fd_set。
  
 
  
  
 
-#### 案例四：符号冲突导致异常捕获失败
+### 案例四：符号冲突导致异常捕获失败
 
 **问题现象**
  
@@ -352,7 +354,7 @@ LastFatalMessage:terminating due to uncaught exception of type vip::VError: VErr
  说明1：提示有未捕获异常，导致崩溃。
 2. 查看异常栈帧。
 
-  证据2：根据调用栈，可以看到在#09层栈中抛出异常，跳过中间系统栈帧。
+  证据2：根据调用栈，可以看到在#07层栈中抛出异常，跳过中间系统栈帧。
 
   
 ```text
@@ -396,7 +398,7 @@ extern "C" const char* TestCatchVError()
  说明2：此处未按照预期捕获vip::VError，导致了程序崩溃。
 3. 分析更多上下文。
 
-  #09帧调用TestCatch()函数。
+  #09帧间接调用TestCatchVError()函数。
 
   
 ```cpp
@@ -480,7 +482,7 @@ $ llvm-nm -CD libB.so | grep 'typeinfo for vip::VError'
  
  
 
-#### 案例五：类型转换异常触发崩溃
+### 案例五：类型转换异常触发崩溃
 
 **问题现象**
  
@@ -516,7 +518,7 @@ Tid:54874, Name:ppcrashanalysis
 #08 pc 000000000001c5e8 /data/storage/el1/bundle/libs/arm64/libentry.so(TriggerBadCastAbort(napi_env__*, napi_callback_info__*)+104)(6f0c5bd0722b8e63a18fcd4150b89c84a85c927a)
 ```
  说明2：C库主动调用abort()函数，需要找到对应业务侧代码进行定位。
-3. 基于崩溃栈定位行号。
+3. 参考[C++堆栈解析流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)使用llvm-addr2line工具定位行号。
 
   找到业务栈帧：#08 pc 000000000001c5e8 /data/storage/el1/bundle/libs/arm64/libentry.so(TriggerBadCastAbort(napi_env__*, napi_callback_info__*)+104)(6f0c5bd0722b8e63a18fcd4150b89c84a85c927a)。
 
@@ -538,7 +540,7 @@ napi_value TriggerBadCastAbort(napi_env env, napi_callback_info info)
  
 **问题结论与总结**
  
-基类不能向子类转换。
+对象向下转型时，如果对象不是目标类型，dynamic_cast会抛出bad_cast异常触发崩溃。
  
 
  
@@ -550,7 +552,7 @@ napi_value TriggerBadCastAbort(napi_env env, napi_callback_info info)
  
  
 
-#### 案例六：数组越界触发崩溃
+### 案例六：数组越界触发崩溃
 
 **问题现象**
  
@@ -614,13 +616,13 @@ napi_value TriggerVectorExceptionAbort(napi_env env, napi_callback_info info)
  
 **修复建议**
  
-数组通过下标访问时需要严格校验下标的合法性。
+数组通过下标访问时需要严格校验下标的合法性，避免越界访问。或者使用try-catch捕获std::out_of_range异常，并进行相应的业务处理。
  
 
  
  
 
-#### 案例七：NAPI触发异常
+### 案例七：NAPI触发异常
 
 **问题现象**
  
@@ -651,7 +653,7 @@ Tid:57078, Name:ppcrashanalysis
 #03 pc 000000000001c92c /data/storage/el1/bundle/libs/arm64/libentry.so(TriggerNapiFatalAbort(napi_env__*, napi_callback_info__*)+44)(6f0c5bd0722b8e63a18fcd4150b89c84a85c927a)
 ```
  说明2：NAPI接口内部检测到异常，调用napi_fatal_error触发abort。
-3. 基于崩溃栈定位行号。
+3. 参考[C++堆栈解析流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)使用llvm-addr2line工具定位行号。
 
   溯源#03 pc 000000000001c92c /data/storage/el1/bundle/libs/arm64/libentry.so(TriggerNapiFatalAbort(napi_env__*, napi_callback_info__*)+44)(6f0c5bd0722b8e63a18fcd4150b89c84a85c927a) 崩溃行号。
 
@@ -685,7 +687,7 @@ NAPI接口调用失败时，框架会主动调用abort终止进程。
  
  
 
-#### 案例八：字符串转化异常
+### 案例八：字符串转化异常
 
 **问题现象**
  
@@ -722,7 +724,7 @@ Tid:57660, Name:ppcrashanalysis
 #09 pc 000000000001c974 /data/storage/el1/bundle/libs/arm64/libentry.so(TriggerStrCastNumAbort(napi_env__*, napi_callback_info__*)+68)(6f0c5bd0722b8e63a18fcd4150b89c84a85c927a)
 ```
  说明2：stoi转换失败后，主动调用abort()函数终止进程。
-3. 基于崩溃栈定位行号。
+3. 参考[C++堆栈解析流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)使用llvm-addr2line工具定位行号。
 
   溯源#09 pc 000000000001c974 /data/storage/el1/bundle/libs/arm64/libentry.so(TriggerStrCastNumAbort(napi_env__*, napi_callback_info__*)+68)(6f0c5bd0722b8e63a18fcd4150b89c84a85c927a) 崩溃行号。
 
@@ -753,16 +755,16 @@ napi_value TriggerStrCastNumAbort(napi_env env, napi_callback_info info)
  
  
 
-#### 常见易错代码预防建议
+## 常见易错代码预防建议
 
  
 
-#### 资源类API接口，需要成对使用，避免造成资源泄漏
+### 资源类API接口，需要成对使用，避免造成资源泄漏
 
 资源分配失败，会导致应用闪退等未定义行为。
  
  
 
-#### 在主动调用abort前，先写入fatal信息
+### 在主动调用abort前，先写入fatal信息
 
 应用提前写入abort信息后，可以在崩溃文件中直接展示出来，可参考[hilog.fatal()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hilog#hilogfatal)和[OH_LOG_FATAL()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-log-h#oh_log_fatal)使用指导。

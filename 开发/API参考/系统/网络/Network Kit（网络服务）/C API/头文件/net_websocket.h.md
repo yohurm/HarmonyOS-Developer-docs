@@ -1,13 +1,14 @@
 # net_websocket.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-net-websocket-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义WebSocket客户端模块的接口。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | struct WebSocket *OH_WebSocketClient_Constructor(WebSocket_OnOpenCallback onOpen, WebSocket_OnMessageCallback onMessage,WebSocket_OnErrorCallback onError, WebSocket_OnCloseCallback onclose) | WebSocket客户端的构造函数。 |
@@ -45,15 +49,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_WebSocketClient_Constructor()
+### OH_WebSocketClient_Constructor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 struct WebSocket *OH_WebSocketClient_Constructor(WebSocket_OnOpenCallback onOpen, WebSocket_OnMessageCallback onMessage,WebSocket_OnErrorCallback onError, WebSocket_OnCloseCallback onclose)
@@ -69,6 +75,7 @@ WebSocket客户端的构造函数。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | WebSocket_OnOpenCallback onOpen | 客户端定义的建立连接消息的回调函数。 |
@@ -79,6 +86,7 @@ WebSocket客户端的构造函数。
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | struct WebSocket * | 成功返回客户端指针，失败返回为NULL。 |
@@ -86,9 +94,10 @@ WebSocket客户端的构造函数。
  
   
 
-#### OH_WebSocketClient_AddHeader()
+### OH_WebSocketClient_AddHeader()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_WebSocketClient_AddHeader(struct WebSocket *client, struct WebSocket_Header header)
@@ -104,6 +113,7 @@ int OH_WebSocketClient_AddHeader(struct WebSocket *client, struct WebSocket_Head
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct WebSocket *client | 客户端指针。 |
@@ -112,6 +122,7 @@ int OH_WebSocketClient_AddHeader(struct WebSocket *client, struct WebSocket_Head
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回值为0表示执行成功，返回值不为0表示失败。返回值详细信息可以查看OH_Websocket_ErrCode。 |
@@ -119,9 +130,10 @@ int OH_WebSocketClient_AddHeader(struct WebSocket *client, struct WebSocket_Head
  
   
 
-#### OH_WebSocketClient_Connect()
+### OH_WebSocketClient_Connect()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_WebSocketClient_Connect(struct WebSocket *client, const char *url, struct WebSocket_RequestOptions options)
@@ -139,6 +151,7 @@ int OH_WebSocketClient_Connect(struct WebSocket *client, const char *url, struct
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct WebSocket *client | 客户端指针。 |
@@ -148,6 +161,7 @@ int OH_WebSocketClient_Connect(struct WebSocket *client, const char *url, struct
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回值为0表示执行成功，返回值不为0表示失败。返回值详细信息可以查看OH_Websocket_ErrCode。 |
@@ -155,9 +169,10 @@ int OH_WebSocketClient_Connect(struct WebSocket *client, const char *url, struct
  
   
 
-#### OH_WebSocketClient_Send()
+### OH_WebSocketClient_Send()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_WebSocketClient_Send(struct WebSocket *client, char *data, size_t length)
@@ -175,6 +190,7 @@ int OH_WebSocketClient_Send(struct WebSocket *client, char *data, size_t length)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct WebSocket *client | 客户端。 |
@@ -184,6 +200,7 @@ int OH_WebSocketClient_Send(struct WebSocket *client, char *data, size_t length)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回值为0表示执行成功，返回值不为0表示失败。返回值详细信息可以查看OH_Websocket_ErrCode。 |
@@ -191,9 +208,10 @@ int OH_WebSocketClient_Send(struct WebSocket *client, char *data, size_t length)
  
   
 
-#### OH_WebSocketClient_Close()
+### OH_WebSocketClient_Close()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_WebSocketClient_Close(struct WebSocket *client, struct WebSocket_CloseOption options)
@@ -211,6 +229,7 @@ int OH_WebSocketClient_Close(struct WebSocket *client, struct WebSocket_CloseOpt
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct WebSocket *client | 客户端。 |
@@ -219,6 +238,7 @@ int OH_WebSocketClient_Close(struct WebSocket *client, struct WebSocket_CloseOpt
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回值为0表示执行成功，返回值不为0表示失败。返回值详细信息可以查看OH_Websocket_ErrCode。 |
@@ -226,9 +246,10 @@ int OH_WebSocketClient_Close(struct WebSocket *client, struct WebSocket_CloseOpt
  
   
 
-#### OH_WebSocketClient_Destroy()
+### OH_WebSocketClient_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_WebSocketClient_Destroy(struct WebSocket *client)
@@ -241,7 +262,7 @@ int OH_WebSocketClient_Destroy(struct WebSocket *client)
 2. 调用[OH_WebSocketClient_Close](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-net-websocket-h#oh_websocketclient_close)关闭WebSocket连接。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/TENJZ0rVR7-QQNH7KoO3ZA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071625Z&HW-CC-Expire=86400&HW-CC-Sign=3DB875F2DF4640163594D3346FF925136CB4CB64AF9110F622957DD8D9C46AAA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/8eMuI2AKTri6Ruze0GgDUA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072641Z&HW-CC-Expire=86400&HW-CC-Sign=D2B621040426DFA707CC83338355457C46A89A39EB6D756EB294283FE748A947)
  
  
 确保触发[WebSocket_OnCloseCallback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-net-websocket-type-h#websocket_onclosecallback)回调后再调用该接口，否则系统内存资源被释放后可能出现socket泄露以及连接未关闭的情况。
@@ -256,6 +277,7 @@ int OH_WebSocketClient_Destroy(struct WebSocket *client)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct WebSocket *client | 客户端。 |
@@ -263,6 +285,7 @@ int OH_WebSocketClient_Destroy(struct WebSocket *client)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回值为0表示执行成功，返回值不为0表示失败。返回值详细信息可以查看OH_Websocket_ErrCode。 |

@@ -1,6 +1,6 @@
 # UsbControlRequestSetup
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-usbddk-usbcontrolrequestsetup
 **支持设备：** PC/2in1
@@ -10,7 +10,8 @@ typedef struct UsbControlRequestSetup {...} __attribute__((aligned(8))) UsbContr
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** PC/2in1
 
@@ -24,16 +25,19 @@ typedef struct UsbControlRequestSetup {...} __attribute__((aligned(8))) UsbContr
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** PC/2in1
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** PC/2in1
  
+
 | 名称 | 描述 |
 | --- | --- |
 | uint8_t bmRequestType | 请求类型。 |

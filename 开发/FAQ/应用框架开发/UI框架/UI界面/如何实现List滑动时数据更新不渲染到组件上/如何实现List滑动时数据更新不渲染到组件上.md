@@ -34,7 +34,7 @@ struct ListScrollDemo {
 
   @Monitor('temp')
   onStrChange() {
-    // 非滚动状态，把状态变量更新到数据源
+  <em>  // 非滚动状态，把状态变量更新到数据源</em>
     if (!this.isScroll) {
       this.dataArr[5] = this.temp;
     }
@@ -46,7 +46,7 @@ struct ListScrollDemo {
     }
 
     setInterval(() => {
-      // 模拟数据刷新
+     <em> // 模拟数据刷新</em>
       this.temp = JSON.stringify(this.num);
       this.num++;
     }, 1000);
@@ -77,7 +77,7 @@ struct ListScrollDemo {
       }
     })
     .onScrollStop(() => {
-      // 滚动停止时，将最新中间变量的值更新到数据源
+     <em> // 滚动停止时，将最新中间变量的值更新到数据源</em>
       this.dataArr[5] = this.temp;
     })
   }

@@ -1,13 +1,13 @@
 # CanvasRenderingContext2D对象
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-components-canvasrenderingcontext2d
 
 使用CanvasRenderingContext2D在Canvas画布组件上进行绘制，绘制对象可以是图形、文本、线段、图片等。具体请参考[CanvasRenderingContext2D对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-canvas-canvasrenderingcontext2d)。
 
 
-#### 画线段
+## 画线段
 
 使用moveTo和lineTo画出一条线段，当使用closePath方法时会结束当前路径形成一个封闭图形。设置quadraticCurveTo（二次贝塞尔曲线）或bezierCurveTo（三次贝塞尔曲线）的值组成图形。
 
@@ -209,7 +209,7 @@ export default {
 
 
 
-#### 画边框
+## 画边框
 
 全局定义画布（el）及画笔（ctx），初始化创建一个边框宽度为5的长方形。对边框的宽度（lineWidth）、颜色（strokeStyle）、虚化程度（setLineDash）进行改变，选用select组件添加change事件，下拉选择时触发change事件后画出改变后的图形。
 
@@ -308,7 +308,7 @@ export default {
 
 
 
-#### 填充渐变色
+## 填充渐变色
 
 添加[createLinearGradient](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-common-method#createlineargradient)和[createRadialGradient](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-common-method#createradialgradient)属性创建渐变容器，接着用addColorStop方法添加多个色块组成渐变色，再设置fillStyle为gradient将渐变色填充到矩形中，最后设置阴影的模糊级别（shadowBlur）、阴影颜色（shadowColor）及阴影偏移量（shadowOffset）。
 
@@ -437,7 +437,7 @@ export default {
 
 
 
-#### 填充文字
+## 填充文字
 
 先创建文本，再用[fillText](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-common-method#filltext)方法把文字写在画布上。通过[globalAlpha](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-common-property#globalalpha)属性改变基线透明度，使基线不会挡住文字，再设置[textAlign](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-common-property#textalign)和[textBaseline](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-common-property#textbaseline)属性确定文字基于基线的位置。
 
@@ -575,7 +575,7 @@ export default {
 
 
 
-#### 添加图片
+## 添加图片
 
 创建图片对象后使用[drawImage](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-common-method#drawimage)方法画出图片，给图片设置一些动画样式如scale（缩放）、translate（平移）或rotate（旋转）。
 
@@ -755,7 +755,7 @@ export default {
 
 
 
-#### 添加方法
+## 添加方法
 
 save方法可对画笔样式进行存储，restore可对存储的画笔进行恢复。如下面的示例，先设置画笔为红色，在保存画笔后对画布进行清除并改变画笔为蓝色，当我们直接使用画笔时会画出一个蓝色矩形，对存储的画笔进行恢复后就可画出红色矩形。
 
@@ -844,4 +844,4 @@ export default {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/j8xRtyFkTCmFoz6SC-DErA/zh-cn_image_0000002655846712.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071857Z&HW-CC-Expire=86400&HW-CC-Sign=60E5647754D1BECCDB241BF372FFED0E1730373D3B6920901E57E78730230083)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/0qwvq7EDSxqi7jS8fBVwrQ/zh-cn_image_0000002717610824.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073133Z&HW-CC-Expire=86400&HW-CC-Sign=9AAB5C73B733F8625339947F19CF246B1B276F351BCE2E09C82AEF084D744D32)

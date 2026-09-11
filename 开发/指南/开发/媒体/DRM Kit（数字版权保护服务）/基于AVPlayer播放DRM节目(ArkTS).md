@@ -1,13 +1,13 @@
 # 基于AVPlayer播放DRM节目(ArkTS)
 
-更新时间：2026-06-03 01:38:22
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/drm-avplayer-arkts-integration
 
 开发者可以调用DRM Kit和Media Kit的ArkTS接口实现AVPlayer播放器，完成DRM节目播放。
 
 
-#### 开发步骤
+## 开发步骤
 1. 导入DRM Kit和Media Kit接口。
 
   
@@ -31,14 +31,14 @@ let playerHandle: media.AVPlayer;
 async function initPlayer() {
 playerHandle = await media.createAVPlayer();
 playerHandle.on('mediaKeySystemInfoUpdate', async (mediaKeySystemInfo: drm.MediaKeySystemInfo[]) => {
-console.info('player has received drmInfo signal: ' + JSON.stringify(mediaKeySystemInfo))
+  console.info('player has received drmInfo signal: ' + JSON.stringify(mediaKeySystemInfo))
 // 处理DRM信息。
 // 设置解密session。
 })
 }
 ```
 
-4. 调用[createMediaKeySystem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-drm-f#drmcreatemediakeysystem)和[createMediaKeySession](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-drm-mediakeysystem#createmediakeysession)根据DRM信息中的uuid创建MediaKeySystem和MediaKeySession实例。
+4. 调用[createMediaKeySystem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-drm-f#drmcreatemediakeysystem)和[createMediaKeySession](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-drm-mediakeysystem#createmediakeysession-1)根据DRM信息中的uuid创建MediaKeySystem和MediaKeySession实例。
 
   
 ```text

@@ -1,13 +1,14 @@
 # image_source_native.h
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-source-native-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 图片解码API。
 
@@ -25,15 +26,18 @@
 
 
 
-#### 汇总
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 汇总
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 结构体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -46,9 +50,11 @@
 
 
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -59,9 +65,11 @@
 
 
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -135,15 +143,17 @@
 
 
 
-#### 枚举类型说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 枚举类型说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### IMAGE_DYNAMIC_RANGE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### IMAGE_DYNAMIC_RANGE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum IMAGE_DYNAMIC_RANGE
@@ -155,6 +165,7 @@ enum IMAGE_DYNAMIC_RANGE
 
 **起始版本：** 12
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | IMAGE_DYNAMIC_RANGE_AUTO = 0 | 根据图片自适应处理。 |
@@ -164,9 +175,10 @@ enum IMAGE_DYNAMIC_RANGE
 
 
 
-#### IMAGE_ALLOCATOR_TYPE
+### IMAGE_ALLOCATOR_TYPE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum IMAGE_ALLOCATOR_TYPE
@@ -178,6 +190,7 @@ enum IMAGE_ALLOCATOR_TYPE
 
 **起始版本：** 15
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | IMAGE_ALLOCATOR_TYPE_AUTO = 0 | 由系统决定使用DMA内存或共享内存来创建PixelMap。 |
@@ -187,9 +200,10 @@ enum IMAGE_ALLOCATOR_TYPE
 
 
 
-#### Image_CropAndScaleStrategy
+### Image_CropAndScaleStrategy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Image_CropAndScaleStrategy
@@ -211,6 +225,7 @@ enum Image_CropAndScaleStrategy
 
 **起始版本：** 18
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | IMAGE_CROP_AND_SCALE_STRATEGY_SCALE_FIRST = 1 | 先缩放，后裁剪。 |
@@ -219,15 +234,17 @@ enum Image_CropAndScaleStrategy
 
 
 
-#### 函数说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 函数说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### OH_ImageSourceInfo_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### OH_ImageSourceInfo_Create()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceInfo_Create(OH_ImageSource_Info **info)
@@ -241,12 +258,14 @@ Image_ErrorCode OH_ImageSourceInfo_Create(OH_ImageSource_Info **info)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageSource_Info **info | 被操作的OH_ImageSource_Info指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -255,9 +274,10 @@ Image_ErrorCode OH_ImageSourceInfo_Create(OH_ImageSource_Info **info)
 
 
 
-#### OH_ImageSourceInfo_GetWidth()
+### OH_ImageSourceInfo_GetWidth()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceInfo_GetWidth(OH_ImageSource_Info *info, uint32_t *width)
@@ -271,6 +291,7 @@ Image_ErrorCode OH_ImageSourceInfo_GetWidth(OH_ImageSource_Info *info, uint32_t 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageSource_Info *info | 被操作的OH_ImageSource_Info指针。 |
@@ -279,6 +300,7 @@ Image_ErrorCode OH_ImageSourceInfo_GetWidth(OH_ImageSource_Info *info, uint32_t 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -286,9 +308,10 @@ Image_ErrorCode OH_ImageSourceInfo_GetWidth(OH_ImageSource_Info *info, uint32_t 
 
 
 
-#### OH_ImageSourceInfo_GetHeight()
+### OH_ImageSourceInfo_GetHeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceInfo_GetHeight(OH_ImageSource_Info *info, uint32_t *height)
@@ -302,6 +325,7 @@ Image_ErrorCode OH_ImageSourceInfo_GetHeight(OH_ImageSource_Info *info, uint32_t
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageSource_Info *info | 被操作的OH_ImageSource_Info指针。 |
@@ -310,6 +334,7 @@ Image_ErrorCode OH_ImageSourceInfo_GetHeight(OH_ImageSource_Info *info, uint32_t
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -317,9 +342,10 @@ Image_ErrorCode OH_ImageSourceInfo_GetHeight(OH_ImageSource_Info *info, uint32_t
 
 
 
-#### OH_ImageSourceInfo_GetDynamicRange()
+### OH_ImageSourceInfo_GetDynamicRange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceInfo_GetDynamicRange(OH_ImageSource_Info *info, bool *isHdr)
@@ -333,6 +359,7 @@ Image_ErrorCode OH_ImageSourceInfo_GetDynamicRange(OH_ImageSource_Info *info, bo
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageSource_Info *info | 被操作的OH_ImageSource_Info指针。 |
@@ -341,6 +368,7 @@ Image_ErrorCode OH_ImageSourceInfo_GetDynamicRange(OH_ImageSource_Info *info, bo
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数校验错误。 |
@@ -348,9 +376,10 @@ Image_ErrorCode OH_ImageSourceInfo_GetDynamicRange(OH_ImageSource_Info *info, bo
 
 
 
-#### OH_ImageSourceInfo_GetMimeType()
+### OH_ImageSourceInfo_GetMimeType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceInfo_GetMimeType(OH_ImageSource_Info *info, Image_MimeType *mimetype)
@@ -368,6 +397,7 @@ Image_ErrorCode OH_ImageSourceInfo_GetMimeType(OH_ImageSource_Info *info, Image_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageSource_Info *info | OH_ImageSource_Info指针。 |
@@ -376,6 +406,7 @@ Image_ErrorCode OH_ImageSourceInfo_GetMimeType(OH_ImageSource_Info *info, Image_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_SOURCE_INVALID_PARAMETER：参数错误，INFO或者MIME类型为空。 |
@@ -383,9 +414,10 @@ Image_ErrorCode OH_ImageSourceInfo_GetMimeType(OH_ImageSource_Info *info, Image_
 
 
 
-#### OH_ImageSourceInfo_Release()
+### OH_ImageSourceInfo_Release()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceInfo_Release(OH_ImageSource_Info *info)
@@ -399,12 +431,14 @@ Image_ErrorCode OH_ImageSourceInfo_Release(OH_ImageSource_Info *info)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageSource_Info *info | 被操作的OH_ImageSource_Info指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -413,9 +447,10 @@ Image_ErrorCode OH_ImageSourceInfo_Release(OH_ImageSource_Info *info)
 
 
 
-#### OH_DecodingOptions_Create()
+### OH_DecodingOptions_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_DecodingOptions_Create(OH_DecodingOptions **options)
@@ -429,12 +464,14 @@ Image_ErrorCode OH_DecodingOptions_Create(OH_DecodingOptions **options)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_DecodingOptions **options | 被操作的OH_DecodingOptions指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -443,9 +480,10 @@ Image_ErrorCode OH_DecodingOptions_Create(OH_DecodingOptions **options)
 
 
 
-#### OH_DecodingOptions_GetPixelFormat()
+### OH_DecodingOptions_GetPixelFormat()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_DecodingOptions_GetPixelFormat(OH_DecodingOptions *options, int32_t *pixelFormat)
@@ -459,6 +497,7 @@ Image_ErrorCode OH_DecodingOptions_GetPixelFormat(OH_DecodingOptions *options, i
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_DecodingOptions *options | 被操作的OH_DecodingOptions指针。 |
@@ -467,6 +506,7 @@ Image_ErrorCode OH_DecodingOptions_GetPixelFormat(OH_DecodingOptions *options, i
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -474,9 +514,10 @@ Image_ErrorCode OH_DecodingOptions_GetPixelFormat(OH_DecodingOptions *options, i
 
 
 
-#### OH_DecodingOptions_SetPixelFormat()
+### OH_DecodingOptions_SetPixelFormat()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_DecodingOptions_SetPixelFormat(OH_DecodingOptions *options,int32_t pixelFormat)
@@ -490,6 +531,7 @@ Image_ErrorCode OH_DecodingOptions_SetPixelFormat(OH_DecodingOptions *options,in
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_DecodingOptions *options | 被操作的OH_DecodingOptions指针。 |
@@ -498,6 +540,7 @@ Image_ErrorCode OH_DecodingOptions_SetPixelFormat(OH_DecodingOptions *options,in
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -505,9 +548,10 @@ Image_ErrorCode OH_DecodingOptions_SetPixelFormat(OH_DecodingOptions *options,in
 
 
 
-#### OH_DecodingOptions_GetIndex()
+### OH_DecodingOptions_GetIndex()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_DecodingOptions_GetIndex(OH_DecodingOptions *options, uint32_t *index)
@@ -521,6 +565,7 @@ Image_ErrorCode OH_DecodingOptions_GetIndex(OH_DecodingOptions *options, uint32_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_DecodingOptions *options | 被操作的OH_DecodingOptions指针。 |
@@ -529,6 +574,7 @@ Image_ErrorCode OH_DecodingOptions_GetIndex(OH_DecodingOptions *options, uint32_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -536,9 +582,10 @@ Image_ErrorCode OH_DecodingOptions_GetIndex(OH_DecodingOptions *options, uint32_
 
 
 
-#### OH_DecodingOptions_SetIndex()
+### OH_DecodingOptions_SetIndex()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_DecodingOptions_SetIndex(OH_DecodingOptions *options, uint32_t index)
@@ -552,6 +599,7 @@ Image_ErrorCode OH_DecodingOptions_SetIndex(OH_DecodingOptions *options, uint32_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_DecodingOptions *options | 被操作的OH_DecodingOptions指针。 |
@@ -560,6 +608,7 @@ Image_ErrorCode OH_DecodingOptions_SetIndex(OH_DecodingOptions *options, uint32_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -567,9 +616,10 @@ Image_ErrorCode OH_DecodingOptions_SetIndex(OH_DecodingOptions *options, uint32_
 
 
 
-#### OH_DecodingOptions_GetRotate()
+### OH_DecodingOptions_GetRotate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_DecodingOptions_GetRotate(OH_DecodingOptions *options, float *rotate)
@@ -583,6 +633,7 @@ Image_ErrorCode OH_DecodingOptions_GetRotate(OH_DecodingOptions *options, float 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_DecodingOptions *options | 被操作的OH_DecodingOptions指针。 |
@@ -591,6 +642,7 @@ Image_ErrorCode OH_DecodingOptions_GetRotate(OH_DecodingOptions *options, float 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -598,9 +650,10 @@ Image_ErrorCode OH_DecodingOptions_GetRotate(OH_DecodingOptions *options, float 
 
 
 
-#### OH_DecodingOptions_SetRotate()
+### OH_DecodingOptions_SetRotate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_DecodingOptions_SetRotate(OH_DecodingOptions *options, float rotate)
@@ -614,6 +667,7 @@ Image_ErrorCode OH_DecodingOptions_SetRotate(OH_DecodingOptions *options, float 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_DecodingOptions *options | 被操作的OH_DecodingOptions指针。 |
@@ -622,6 +676,7 @@ Image_ErrorCode OH_DecodingOptions_SetRotate(OH_DecodingOptions *options, float 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -629,9 +684,10 @@ Image_ErrorCode OH_DecodingOptions_SetRotate(OH_DecodingOptions *options, float 
 
 
 
-#### OH_DecodingOptions_GetDesiredSize()
+### OH_DecodingOptions_GetDesiredSize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_DecodingOptions_GetDesiredSize(OH_DecodingOptions *options, Image_Size *desiredSize)
@@ -645,6 +701,7 @@ Image_ErrorCode OH_DecodingOptions_GetDesiredSize(OH_DecodingOptions *options, I
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_DecodingOptions *options | 被操作的OH_DecodingOptions指针。 |
@@ -653,6 +710,7 @@ Image_ErrorCode OH_DecodingOptions_GetDesiredSize(OH_DecodingOptions *options, I
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -660,9 +718,10 @@ Image_ErrorCode OH_DecodingOptions_GetDesiredSize(OH_DecodingOptions *options, I
 
 
 
-#### OH_DecodingOptions_SetDesiredSize()
+### OH_DecodingOptions_SetDesiredSize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_DecodingOptions_SetDesiredSize(OH_DecodingOptions *options, Image_Size *desiredSize)
@@ -676,6 +735,7 @@ Image_ErrorCode OH_DecodingOptions_SetDesiredSize(OH_DecodingOptions *options, I
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_DecodingOptions *options | 被操作的OH_DecodingOptions指针。 |
@@ -684,6 +744,7 @@ Image_ErrorCode OH_DecodingOptions_SetDesiredSize(OH_DecodingOptions *options, I
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -691,9 +752,10 @@ Image_ErrorCode OH_DecodingOptions_SetDesiredSize(OH_DecodingOptions *options, I
 
 
 
-#### OH_DecodingOptions_GetDesiredRegion()
+### OH_DecodingOptions_GetDesiredRegion()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_DecodingOptions_GetDesiredRegion(OH_DecodingOptions *options, Image_Region *desiredRegion)
@@ -709,6 +771,7 @@ Image_ErrorCode OH_DecodingOptions_GetDesiredRegion(OH_DecodingOptions *options,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_DecodingOptions *options | 被操作的OH_DecodingOptions指针。 |
@@ -717,6 +780,7 @@ Image_ErrorCode OH_DecodingOptions_GetDesiredRegion(OH_DecodingOptions *options,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -724,9 +788,10 @@ Image_ErrorCode OH_DecodingOptions_GetDesiredRegion(OH_DecodingOptions *options,
 
 
 
-#### OH_DecodingOptions_SetDesiredRegion()
+### OH_DecodingOptions_SetDesiredRegion()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_DecodingOptions_SetDesiredRegion(OH_DecodingOptions *options, Image_Region *desiredRegion)
@@ -742,6 +807,7 @@ Image_ErrorCode OH_DecodingOptions_SetDesiredRegion(OH_DecodingOptions *options,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_DecodingOptions *options | 被操作的OH_DecodingOptions指针。 |
@@ -750,6 +816,7 @@ Image_ErrorCode OH_DecodingOptions_SetDesiredRegion(OH_DecodingOptions *options,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -757,9 +824,10 @@ Image_ErrorCode OH_DecodingOptions_SetDesiredRegion(OH_DecodingOptions *options,
 
 
 
-#### OH_DecodingOptions_GetDesiredDynamicRange()
+### OH_DecodingOptions_GetDesiredDynamicRange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_DecodingOptions_GetDesiredDynamicRange(OH_DecodingOptions *options, int32_t *desiredDynamicRange)
@@ -773,6 +841,7 @@ Image_ErrorCode OH_DecodingOptions_GetDesiredDynamicRange(OH_DecodingOptions *op
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_DecodingOptions *options | 被操作的OH_DecodingOptions指针。 |
@@ -781,6 +850,7 @@ Image_ErrorCode OH_DecodingOptions_GetDesiredDynamicRange(OH_DecodingOptions *op
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数校验错误。 |
@@ -788,9 +858,10 @@ Image_ErrorCode OH_DecodingOptions_GetDesiredDynamicRange(OH_DecodingOptions *op
 
 
 
-#### OH_DecodingOptions_SetDesiredDynamicRange()
+### OH_DecodingOptions_SetDesiredDynamicRange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_DecodingOptions_SetDesiredDynamicRange(OH_DecodingOptions *options, int32_t desiredDynamicRange)
@@ -804,6 +875,7 @@ Image_ErrorCode OH_DecodingOptions_SetDesiredDynamicRange(OH_DecodingOptions *op
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_DecodingOptions *options | 被操作的OH_DecodingOptions指针。 |
@@ -812,6 +884,7 @@ Image_ErrorCode OH_DecodingOptions_SetDesiredDynamicRange(OH_DecodingOptions *op
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数校验错误。 |
@@ -819,9 +892,10 @@ Image_ErrorCode OH_DecodingOptions_SetDesiredDynamicRange(OH_DecodingOptions *op
 
 
 
-#### OH_DecodingOptions_GetDesiredColorSpace()
+### OH_DecodingOptions_GetDesiredColorSpace()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_DecodingOptions_GetDesiredColorSpace(OH_DecodingOptions *options, int32_t *colorSpace)
@@ -835,6 +909,7 @@ Image_ErrorCode OH_DecodingOptions_GetDesiredColorSpace(OH_DecodingOptions *opti
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_DecodingOptions *options | 解码参数。 |
@@ -843,6 +918,7 @@ Image_ErrorCode OH_DecodingOptions_GetDesiredColorSpace(OH_DecodingOptions *opti
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_SOURCE_INVALID_PARAMETER：参数错误。options或colorSpace为空。 |
@@ -850,9 +926,10 @@ Image_ErrorCode OH_DecodingOptions_GetDesiredColorSpace(OH_DecodingOptions *opti
 
 
 
-#### OH_DecodingOptions_SetDesiredColorSpace()
+### OH_DecodingOptions_SetDesiredColorSpace()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_DecodingOptions_SetDesiredColorSpace(OH_DecodingOptions *options, int32_t colorSpace)
@@ -866,6 +943,7 @@ Image_ErrorCode OH_DecodingOptions_SetDesiredColorSpace(OH_DecodingOptions *opti
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_DecodingOptions *options | 解码参数。 |
@@ -874,6 +952,7 @@ Image_ErrorCode OH_DecodingOptions_SetDesiredColorSpace(OH_DecodingOptions *opti
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_SOURCE_INVALID_PARAMETER：参数错误。options为空，或者传入了不支持的colorSpace。 |
@@ -881,9 +960,10 @@ Image_ErrorCode OH_DecodingOptions_SetDesiredColorSpace(OH_DecodingOptions *opti
 
 
 
-#### OH_DecodingOptions_SetCropAndScaleStrategy()
+### OH_DecodingOptions_SetCropAndScaleStrategy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_DecodingOptions_SetCropAndScaleStrategy(OH_DecodingOptions *options, int32_t cropAndScaleStrategy)
@@ -897,6 +977,7 @@ Image_ErrorCode OH_DecodingOptions_SetCropAndScaleStrategy(OH_DecodingOptions *o
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_DecodingOptions *options | 被操作的OH_DecodingOptions指针。 |
@@ -905,6 +986,7 @@ Image_ErrorCode OH_DecodingOptions_SetCropAndScaleStrategy(OH_DecodingOptions *o
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：options空指针或者cropAndScaleStrategy取值不在Image_CropAndScaleStrategy枚举值定义之中。 |
@@ -912,9 +994,10 @@ Image_ErrorCode OH_DecodingOptions_SetCropAndScaleStrategy(OH_DecodingOptions *o
 
 
 
-#### OH_DecodingOptions_GetCropAndScaleStrategy()
+### OH_DecodingOptions_GetCropAndScaleStrategy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_DecodingOptions_GetCropAndScaleStrategy(OH_DecodingOptions *options, int32_t *cropAndScaleStrategy)
@@ -928,6 +1011,7 @@ Image_ErrorCode OH_DecodingOptions_GetCropAndScaleStrategy(OH_DecodingOptions *o
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_DecodingOptions *options | 被操作的OH_DecodingOptions指针。 |
@@ -936,6 +1020,7 @@ Image_ErrorCode OH_DecodingOptions_GetCropAndScaleStrategy(OH_DecodingOptions *o
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：options或者cropAndScaleStrategy为空指针。 |
@@ -943,9 +1028,10 @@ Image_ErrorCode OH_DecodingOptions_GetCropAndScaleStrategy(OH_DecodingOptions *o
 
 
 
-#### OH_DecodingOptions_GetCropRegion()
+### OH_DecodingOptions_GetCropRegion()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_DecodingOptions_GetCropRegion(OH_DecodingOptions *options, Image_Region *cropRegion)
@@ -959,6 +1045,7 @@ Image_ErrorCode OH_DecodingOptions_GetCropRegion(OH_DecodingOptions *options, Im
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_DecodingOptions *options | 指向解码参数指针。 |
@@ -967,6 +1054,7 @@ Image_ErrorCode OH_DecodingOptions_GetCropRegion(OH_DecodingOptions *options, Im
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：操作成功。 IMAGE_SOURCE_INVALID_PARAMETER：options或cropRegion为空。 |
@@ -974,9 +1062,10 @@ Image_ErrorCode OH_DecodingOptions_GetCropRegion(OH_DecodingOptions *options, Im
 
 
 
-#### OH_DecodingOptions_SetCropRegion()
+### OH_DecodingOptions_SetCropRegion()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_DecodingOptions_SetCropRegion(OH_DecodingOptions *options, Image_Region *cropRegion)
@@ -990,6 +1079,7 @@ Image_ErrorCode OH_DecodingOptions_SetCropRegion(OH_DecodingOptions *options, Im
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_DecodingOptions *options | 指向解码参数指针。 |
@@ -998,6 +1088,7 @@ Image_ErrorCode OH_DecodingOptions_SetCropRegion(OH_DecodingOptions *options, Im
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：操作成功。 IMAGE_SOURCE_INVALID_PARAMETER：options或cropRegion为空。 |
@@ -1005,9 +1096,10 @@ Image_ErrorCode OH_DecodingOptions_SetCropRegion(OH_DecodingOptions *options, Im
 
 
 
-#### OH_DecodingOptions_Release()
+### OH_DecodingOptions_Release()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_DecodingOptions_Release(OH_DecodingOptions *options)
@@ -1021,12 +1113,14 @@ Image_ErrorCode OH_DecodingOptions_Release(OH_DecodingOptions *options)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_DecodingOptions *options | 被操作的OH_DecodingOptions指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1035,9 +1129,10 @@ Image_ErrorCode OH_DecodingOptions_Release(OH_DecodingOptions *options)
 
 
 
-#### OH_ImageSourceNative_CreateFromUri()
+### OH_ImageSourceNative_CreateFromUri()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceNative_CreateFromUri(char *uri, size_t uriSize, OH_ImageSourceNative **res)
@@ -1051,6 +1146,7 @@ Image_ErrorCode OH_ImageSourceNative_CreateFromUri(char *uri, size_t uriSize, OH
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | char *uri | 指向图像源URI的指针。只接受文件URI或Base64 URI。当前文件资源只支持绝对路径。 |
@@ -1060,6 +1156,7 @@ Image_ErrorCode OH_ImageSourceNative_CreateFromUri(char *uri, size_t uriSize, OH
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 IMAGE_BAD_SOURCE：解码数据源异常。 |
@@ -1067,9 +1164,10 @@ Image_ErrorCode OH_ImageSourceNative_CreateFromUri(char *uri, size_t uriSize, OH
 
 
 
-#### OH_ImageSourceNative_CreateFromFd()
+### OH_ImageSourceNative_CreateFromFd()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceNative_CreateFromFd(int32_t fd, OH_ImageSourceNative **res)
@@ -1083,6 +1181,7 @@ Image_ErrorCode OH_ImageSourceNative_CreateFromFd(int32_t fd, OH_ImageSourceNati
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | int32_t fd | 文件描述符fd。 |
@@ -1091,6 +1190,7 @@ Image_ErrorCode OH_ImageSourceNative_CreateFromFd(int32_t fd, OH_ImageSourceNati
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -1098,9 +1198,10 @@ Image_ErrorCode OH_ImageSourceNative_CreateFromFd(int32_t fd, OH_ImageSourceNati
 
 
 
-#### OH_ImageSourceNative_CreateFromData()
+### OH_ImageSourceNative_CreateFromData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceNative_CreateFromData(uint8_t *data, size_t dataSize, OH_ImageSourceNative **res)
@@ -1122,6 +1223,7 @@ data数据应该是未解码的数据，不要传入类似于RGBA，YUV的像素
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint8_t *data | 图像缓冲区数据。 |
@@ -1131,6 +1233,7 @@ data数据应该是未解码的数据，不要传入类似于RGBA，YUV的像素
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 IMAGE_BAD_SOURCE：解码数据源异常。 |
@@ -1138,9 +1241,10 @@ data数据应该是未解码的数据，不要传入类似于RGBA，YUV的像素
 
 
 
-#### OH_ImageSourceNative_CreateFromDataWithUserBuffer()
+### OH_ImageSourceNative_CreateFromDataWithUserBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceNative_CreateFromDataWithUserBuffer(uint8_t *data, size_t datalength, OH_ImageSourceNative **imageSource)
@@ -1158,6 +1262,7 @@ Image_ErrorCode OH_ImageSourceNative_CreateFromDataWithUserBuffer(uint8_t *data,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint8_t *data | 数据缓存指针。 |
@@ -1167,6 +1272,7 @@ Image_ErrorCode OH_ImageSourceNative_CreateFromDataWithUserBuffer(uint8_t *data,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_SOURCE_INVALID_PARAMETER：data或imageSource是空指针，datalength为0。 |
@@ -1174,9 +1280,10 @@ Image_ErrorCode OH_ImageSourceNative_CreateFromDataWithUserBuffer(uint8_t *data,
 
 
 
-#### OH_ImageSourceNative_CreateFromRawFile()
+### OH_ImageSourceNative_CreateFromRawFile()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceNative_CreateFromRawFile(RawFileDescriptor *rawFile, OH_ImageSourceNative **res)
@@ -1190,6 +1297,7 @@ Image_ErrorCode OH_ImageSourceNative_CreateFromRawFile(RawFileDescriptor *rawFil
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | RawFileDescriptor *rawFile | 指示raw文件的文件描述符。 |
@@ -1198,6 +1306,7 @@ Image_ErrorCode OH_ImageSourceNative_CreateFromRawFile(RawFileDescriptor *rawFil
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -1205,9 +1314,10 @@ Image_ErrorCode OH_ImageSourceNative_CreateFromRawFile(RawFileDescriptor *rawFil
 
 
 
-#### OH_ImageSourceNative_CreatePixelmap()
+### OH_ImageSourceNative_CreatePixelmap()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceNative_CreatePixelmap(OH_ImageSourceNative *source, OH_DecodingOptions *options, OH_PixelmapNative **pixelmap)
@@ -1227,6 +1337,7 @@ Image_ErrorCode OH_ImageSourceNative_CreatePixelmap(OH_ImageSourceNative *source
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageSourceNative *source | 被操作的OH_ImageSourceNative指针。 |
@@ -1236,6 +1347,7 @@ Image_ErrorCode OH_ImageSourceNative_CreatePixelmap(OH_ImageSourceNative *source
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -1243,9 +1355,10 @@ Image_ErrorCode OH_ImageSourceNative_CreatePixelmap(OH_ImageSourceNative *source
 
 
 
-#### OH_ImageSourceNative_CreatePixelmapUsingAllocator()
+### OH_ImageSourceNative_CreatePixelmapUsingAllocator()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceNative_CreatePixelmapUsingAllocator(OH_ImageSourceNative *source, OH_DecodingOptions *options, IMAGE_ALLOCATOR_TYPE allocator, OH_PixelmapNative **pixelmap)
@@ -1267,6 +1380,7 @@ Image_ErrorCode OH_ImageSourceNative_CreatePixelmapUsingAllocator(OH_ImageSource
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageSourceNative *source | 被操作的OH_ImageSourceNative指针。 |
@@ -1277,6 +1391,7 @@ Image_ErrorCode OH_ImageSourceNative_CreatePixelmapUsingAllocator(OH_ImageSource
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 IMAGE_BAD_SOURCE：数据源异常。 IMAGE_SOURCE_UNSUPPORTED_MIME_TYPE：不支持的MIME类型。 IMAGE_SOURCE_TOO_LARGE：图像过大。 IMAGE_SOURCE_UNSUPPORTED_ALLOCATOR_TYPE：不支持的分配器类型。例如，使用共享内存解码HDR图像，因为只有DMA支持HDR元数据。 IMAGE_SOURCE_UNSUPPORTED_OPTIONS：不支持的选项。例如，无法将图像转换为所需的像素格式。 IMAGE_DECODE_FAILED：解码失败。 IMAGE_SOURCE_ALLOC_FAILED：内存分配失败。 |
@@ -1284,9 +1399,10 @@ Image_ErrorCode OH_ImageSourceNative_CreatePixelmapUsingAllocator(OH_ImageSource
 
 
 
-#### OH_ImageSourceNative_CreatePixelmapList()
+### OH_ImageSourceNative_CreatePixelmapList()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceNative_CreatePixelmapList(OH_ImageSourceNative *source, OH_DecodingOptions *options, OH_PixelmapNative *resVecPixMap[], size_t size)
@@ -1308,6 +1424,7 @@ Image_ErrorCode OH_ImageSourceNative_CreatePixelmapList(OH_ImageSourceNative *so
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageSourceNative *source | 被操作的OH_ImageSourceNative指针。 |
@@ -1318,6 +1435,7 @@ Image_ErrorCode OH_ImageSourceNative_CreatePixelmapList(OH_ImageSourceNative *so
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 IMAGE_UNSUPPORTED_OPERATION：操作不支持。 |
@@ -1325,9 +1443,10 @@ Image_ErrorCode OH_ImageSourceNative_CreatePixelmapList(OH_ImageSourceNative *so
 
 
 
-#### OH_ImageSourceNative_CreatePicture()
+### OH_ImageSourceNative_CreatePicture()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceNative_CreatePicture(OH_ImageSourceNative *source, OH_DecodingOptionsForPicture *options, OH_PictureNative **picture)
@@ -1343,6 +1462,7 @@ Image_ErrorCode OH_ImageSourceNative_CreatePicture(OH_ImageSourceNative *source,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageSourceNative *source | 被操作的OH_ImageSourceNative指针。 |
@@ -1352,6 +1472,7 @@ Image_ErrorCode OH_ImageSourceNative_CreatePicture(OH_ImageSourceNative *source,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 IMAGE_DECODE_FAILED：解码失败。 |
@@ -1359,9 +1480,10 @@ Image_ErrorCode OH_ImageSourceNative_CreatePicture(OH_ImageSourceNative *source,
 
 
 
-#### OH_ImageSourceNative_CreatePictureAtIndex()
+### OH_ImageSourceNative_CreatePictureAtIndex()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceNative_CreatePictureAtIndex(OH_ImageSourceNative *source, uint32_t index, OH_PictureNative **picture)
@@ -1375,6 +1497,7 @@ Image_ErrorCode OH_ImageSourceNative_CreatePictureAtIndex(OH_ImageSourceNative *
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageSourceNative *source | 被操作的OH_ImageSourceNative指针。 |
@@ -1384,6 +1507,7 @@ Image_ErrorCode OH_ImageSourceNative_CreatePictureAtIndex(OH_ImageSourceNative *
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_SOURCE：数据源异常。 IMAGE_SOURCE_UNSUPPORTED_MIME_TYPE：不支持的MIME类型。 IMAGE_SOURCE_TOO_LARGE：图像过大。 IMAGE_SOURCE_UNSUPPORTED_OPTIONS：不支持的选项。例如，无效的图片序号。 IMAGE_DECODE_FAILED：解码失败。 |
@@ -1391,9 +1515,10 @@ Image_ErrorCode OH_ImageSourceNative_CreatePictureAtIndex(OH_ImageSourceNative *
 
 
 
-#### OH_ImageSourceNative_GetDelayTimeList()
+### OH_ImageSourceNative_GetDelayTimeList()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceNative_GetDelayTimeList(OH_ImageSourceNative *source, int32_t *delayTimeList, size_t size)
@@ -1407,6 +1532,7 @@ Image_ErrorCode OH_ImageSourceNative_GetDelayTimeList(OH_ImageSourceNative *sour
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageSourceNative *source | 被操作的OH_ImageSourceNative指针。 |
@@ -1416,6 +1542,7 @@ Image_ErrorCode OH_ImageSourceNative_GetDelayTimeList(OH_ImageSourceNative *sour
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -1423,9 +1550,10 @@ Image_ErrorCode OH_ImageSourceNative_GetDelayTimeList(OH_ImageSourceNative *sour
 
 
 
-#### OH_ImageSourceNative_GetImageInfo()
+### OH_ImageSourceNative_GetImageInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceNative_GetImageInfo(OH_ImageSourceNative *source, int32_t index, OH_ImageSource_Info *info)
@@ -1439,6 +1567,7 @@ Image_ErrorCode OH_ImageSourceNative_GetImageInfo(OH_ImageSourceNative *source, 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageSourceNative *source | 被操作的OH_ImageSourceNative指针。 |
@@ -1448,6 +1577,7 @@ Image_ErrorCode OH_ImageSourceNative_GetImageInfo(OH_ImageSourceNative *source, 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -1455,9 +1585,10 @@ Image_ErrorCode OH_ImageSourceNative_GetImageInfo(OH_ImageSourceNative *source, 
 
 
 
-#### OH_ImageSourceNative_GetImageProperty()
+### OH_ImageSourceNative_GetImageProperty()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceNative_GetImageProperty(OH_ImageSourceNative *source, Image_String *key, Image_String *value)
@@ -1473,6 +1604,7 @@ Image_ErrorCode OH_ImageSourceNative_GetImageProperty(OH_ImageSourceNative *sour
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageSourceNative *source | 被操作的OH_ImageSourceNative指针。OH_ImageSourceNative使用完成后需要主动释放，参见OH_ImageSourceNative_Release。 |
@@ -1482,6 +1614,7 @@ Image_ErrorCode OH_ImageSourceNative_GetImageProperty(OH_ImageSourceNative *sour
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -1489,9 +1622,10 @@ Image_ErrorCode OH_ImageSourceNative_GetImageProperty(OH_ImageSourceNative *sour
 
 
 
-#### OH_ImageSourceNative_GetImagePropertyShort()
+### OH_ImageSourceNative_GetImagePropertyShort()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceNative_GetImagePropertyShort(OH_ImageSourceNative *source, Image_String *key, uint16_t *value)
@@ -1509,6 +1643,7 @@ Image_ErrorCode OH_ImageSourceNative_GetImagePropertyShort(OH_ImageSourceNative 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageSourceNative *source | 被查询属性的ImageSource。 |
@@ -1518,6 +1653,7 @@ Image_ErrorCode OH_ImageSourceNative_GetImagePropertyShort(OH_ImageSourceNative 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_SOURCE_INVALID_PARAMETER：source、key或value为nullptr。 IMAGE_SOURCE_UNSUPPORTED_MIME_TYPE：不支持查询当前mimetype的图像属性。 IMAGE_SOURCE_UNSUPPORTED_METADATA：指定的元数据不存在，或者不是短整型的值。 |
@@ -1525,9 +1661,10 @@ Image_ErrorCode OH_ImageSourceNative_GetImagePropertyShort(OH_ImageSourceNative 
 
 
 
-#### OH_ImageSourceNative_GetImagePropertyLong()
+### OH_ImageSourceNative_GetImagePropertyLong()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceNative_GetImagePropertyLong(OH_ImageSourceNative *source, Image_String *key, uint32_t *value)
@@ -1545,6 +1682,7 @@ Image_ErrorCode OH_ImageSourceNative_GetImagePropertyLong(OH_ImageSourceNative *
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageSourceNative *source | 被查询属性的ImageSource。 |
@@ -1554,6 +1692,7 @@ Image_ErrorCode OH_ImageSourceNative_GetImagePropertyLong(OH_ImageSourceNative *
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_SOURCE_INVALID_PARAMETER：source、key或value为nullptr。 IMAGE_SOURCE_UNSUPPORTED_MIME_TYPE：不支持查询当前mimetype的图像属性。 IMAGE_SOURCE_UNSUPPORTED_METADATA：指定的元数据不存在，或者不是长整型的值。 |
@@ -1561,9 +1700,10 @@ Image_ErrorCode OH_ImageSourceNative_GetImagePropertyLong(OH_ImageSourceNative *
 
 
 
-#### OH_ImageSourceNative_GetImagePropertyDouble()
+### OH_ImageSourceNative_GetImagePropertyDouble()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceNative_GetImagePropertyDouble(OH_ImageSourceNative *source, Image_String *key, double *value)
@@ -1581,6 +1721,7 @@ Image_ErrorCode OH_ImageSourceNative_GetImagePropertyDouble(OH_ImageSourceNative
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageSourceNative *source | 被查询属性的ImageSource。 |
@@ -1590,6 +1731,7 @@ Image_ErrorCode OH_ImageSourceNative_GetImagePropertyDouble(OH_ImageSourceNative
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_SOURCE_INVALID_PARAMETER：source、key或value为nullptr。 IMAGE_SOURCE_UNSUPPORTED_MIME_TYPE：不支持查询当前mimetype的图像属性。 IMAGE_SOURCE_UNSUPPORTED_METADATA：指定的元数据不存在，或者不是浮点型的值。 |
@@ -1597,9 +1739,10 @@ Image_ErrorCode OH_ImageSourceNative_GetImagePropertyDouble(OH_ImageSourceNative
 
 
 
-#### OH_ImageSourceNative_GetImagePropertyArraySize()
+### OH_ImageSourceNative_GetImagePropertyArraySize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceNative_GetImagePropertyArraySize(OH_ImageSourceNative *source, Image_String *key, size_t *size)
@@ -1617,6 +1760,7 @@ Image_ErrorCode OH_ImageSourceNative_GetImagePropertyArraySize(OH_ImageSourceNat
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageSourceNative *source | 被查询属性的ImageSource。 |
@@ -1626,6 +1770,7 @@ Image_ErrorCode OH_ImageSourceNative_GetImagePropertyArraySize(OH_ImageSourceNat
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_SOURCE_INVALID_PARAMETER：source、key或value为nullptr。 IMAGE_SOURCE_UNSUPPORTED_MIME_TYPE：不支持查询当前mimetype的图像属性。 IMAGE_SOURCE_UNSUPPORTED_METADATA：指定的元数据不存在，或者不是数组或字符串类型的值。 |
@@ -1633,9 +1778,10 @@ Image_ErrorCode OH_ImageSourceNative_GetImagePropertyArraySize(OH_ImageSourceNat
 
 
 
-#### OH_ImageSourceNative_GetImagePropertyString()
+### OH_ImageSourceNative_GetImagePropertyString()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceNative_GetImagePropertyString(OH_ImageSourceNative *source, Image_String *key, char *value, size_t size)
@@ -1653,6 +1799,7 @@ Image_ErrorCode OH_ImageSourceNative_GetImagePropertyString(OH_ImageSourceNative
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageSourceNative *source | 被查询属性的ImageSource。 |
@@ -1663,6 +1810,7 @@ Image_ErrorCode OH_ImageSourceNative_GetImagePropertyString(OH_ImageSourceNative
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_SOURCE_INVALID_PARAMETER：source、key或value为nullptr。 IMAGE_SOURCE_UNSUPPORTED_MIME_TYPE：不支持查询当前mimetype的图像属性。 IMAGE_SOURCE_UNSUPPORTED_METADATA：指定的元数据不存在，或者不是字符串类型的值。 |
@@ -1670,9 +1818,10 @@ Image_ErrorCode OH_ImageSourceNative_GetImagePropertyString(OH_ImageSourceNative
 
 
 
-#### OH_ImageSourceNative_GetImagePropertyIntArray()
+### OH_ImageSourceNative_GetImagePropertyIntArray()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceNative_GetImagePropertyIntArray(OH_ImageSourceNative *source, Image_String *key, int32_t *value, size_t size)
@@ -1690,6 +1839,7 @@ Image_ErrorCode OH_ImageSourceNative_GetImagePropertyIntArray(OH_ImageSourceNati
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageSourceNative *source | 被查询属性的ImageSource。 |
@@ -1700,6 +1850,7 @@ Image_ErrorCode OH_ImageSourceNative_GetImagePropertyIntArray(OH_ImageSourceNati
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_SOURCE_INVALID_PARAMETER：source、key或value为nullptr。 IMAGE_SOURCE_UNSUPPORTED_MIME_TYPE：不支持查询当前mimetype的图像属性。 IMAGE_SOURCE_UNSUPPORTED_METADATA：指定的元数据不存在，或者不是整型数组类型的值。 |
@@ -1707,9 +1858,10 @@ Image_ErrorCode OH_ImageSourceNative_GetImagePropertyIntArray(OH_ImageSourceNati
 
 
 
-#### OH_ImageSourceNative_GetImagePropertyDoubleArray()
+### OH_ImageSourceNative_GetImagePropertyDoubleArray()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceNative_GetImagePropertyDoubleArray(OH_ImageSourceNative *source, Image_String *key, double *value, size_t size)
@@ -1727,6 +1879,7 @@ Image_ErrorCode OH_ImageSourceNative_GetImagePropertyDoubleArray(OH_ImageSourceN
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageSourceNative *source | 被查询属性的ImageSource。 |
@@ -1737,6 +1890,7 @@ Image_ErrorCode OH_ImageSourceNative_GetImagePropertyDoubleArray(OH_ImageSourceN
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_SOURCE_INVALID_PARAMETER：source、key或value为nullptr。 IMAGE_SOURCE_UNSUPPORTED_MIME_TYPE：不支持查询当前mimetype的图像属性。 IMAGE_SOURCE_UNSUPPORTED_METADATA：指定的元数据不存在，或者不是浮点型数组类型的值。 |
@@ -1744,9 +1898,10 @@ Image_ErrorCode OH_ImageSourceNative_GetImagePropertyDoubleArray(OH_ImageSourceN
 
 
 
-#### OH_ImageSourceNative_GetImagePropertyBlob()
+### OH_ImageSourceNative_GetImagePropertyBlob()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceNative_GetImagePropertyBlob(OH_ImageSourceNative *source, Image_String *key, void *value, size_t size)
@@ -1764,6 +1919,7 @@ Image_ErrorCode OH_ImageSourceNative_GetImagePropertyBlob(OH_ImageSourceNative *
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageSourceNative *source | 被查询属性的ImageSource。 |
@@ -1774,6 +1930,7 @@ Image_ErrorCode OH_ImageSourceNative_GetImagePropertyBlob(OH_ImageSourceNative *
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_SOURCE_INVALID_PARAMETER：source、key或value为nullptr。 IMAGE_SOURCE_UNSUPPORTED_MIME_TYPE：不支持查询当前mimetype的图像属性。 IMAGE_SOURCE_UNSUPPORTED_METADATA：指定的元数据不存在，或者不是二进制对象类型的值。 |
@@ -1781,9 +1938,10 @@ Image_ErrorCode OH_ImageSourceNative_GetImagePropertyBlob(OH_ImageSourceNative *
 
 
 
-#### OH_ImageSourceNative_ModifyImagePropertyShort()
+### OH_ImageSourceNative_ModifyImagePropertyShort()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceNative_ModifyImagePropertyShort(OH_ImageSourceNative *source, Image_String *key, uint16_t value)
@@ -1797,6 +1955,7 @@ Image_ErrorCode OH_ImageSourceNative_ModifyImagePropertyShort(OH_ImageSourceNati
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageSourceNative *source | 被修改属性的ImageSource。 |
@@ -1806,6 +1965,7 @@ Image_ErrorCode OH_ImageSourceNative_ModifyImagePropertyShort(OH_ImageSourceNati
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_SOURCE_INVALID_PARAMETER：source、key或value为nullptr。 IMAGE_SOURCE_UNSUPPORTED_MIME_TYPE：不支持查询当前mimetype的图像属性。 IMAGE_SOURCE_UNSUPPORTED_METADATA：指定的元数据不存在，或者不是短整型的值。 |
@@ -1813,9 +1973,10 @@ Image_ErrorCode OH_ImageSourceNative_ModifyImagePropertyShort(OH_ImageSourceNati
 
 
 
-#### OH_ImageSourceNative_ModifyImagePropertyLong()
+### OH_ImageSourceNative_ModifyImagePropertyLong()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceNative_ModifyImagePropertyLong(OH_ImageSourceNative *source, Image_String *key, uint32_t value)
@@ -1829,6 +1990,7 @@ Image_ErrorCode OH_ImageSourceNative_ModifyImagePropertyLong(OH_ImageSourceNativ
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageSourceNative *source | 被修改属性的ImageSource。 |
@@ -1838,6 +2000,7 @@ Image_ErrorCode OH_ImageSourceNative_ModifyImagePropertyLong(OH_ImageSourceNativ
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_SOURCE_INVALID_PARAMETER：source、key或value为nullptr。 IMAGE_SOURCE_UNSUPPORTED_MIME_TYPE：不支持查询当前mimetype的图像属性。 IMAGE_SOURCE_UNSUPPORTED_METADATA：指定的元数据不存在，或者不是长整型的值。 |
@@ -1845,9 +2008,10 @@ Image_ErrorCode OH_ImageSourceNative_ModifyImagePropertyLong(OH_ImageSourceNativ
 
 
 
-#### OH_ImageSourceNative_ModifyImagePropertyDouble()
+### OH_ImageSourceNative_ModifyImagePropertyDouble()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceNative_ModifyImagePropertyDouble(OH_ImageSourceNative *source, Image_String *key, double value)
@@ -1861,6 +2025,7 @@ Image_ErrorCode OH_ImageSourceNative_ModifyImagePropertyDouble(OH_ImageSourceNat
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageSourceNative *source | 被修改属性的ImageSource。 |
@@ -1870,6 +2035,7 @@ Image_ErrorCode OH_ImageSourceNative_ModifyImagePropertyDouble(OH_ImageSourceNat
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_SOURCE_INVALID_PARAMETER：source、key或value为nullptr。 IMAGE_SOURCE_UNSUPPORTED_MIME_TYPE：不支持查询当前mimetype的图像属性。 IMAGE_SOURCE_UNSUPPORTED_METADATA：指定的元数据不存在，或者不是浮点型的值。 |
@@ -1877,9 +2043,10 @@ Image_ErrorCode OH_ImageSourceNative_ModifyImagePropertyDouble(OH_ImageSourceNat
 
 
 
-#### OH_ImageSourceNative_ModifyImagePropertyIntArray()
+### OH_ImageSourceNative_ModifyImagePropertyIntArray()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceNative_ModifyImagePropertyIntArray(OH_ImageSourceNative *source, Image_String *key, int32_t *value, size_t size)
@@ -1893,6 +2060,7 @@ Image_ErrorCode OH_ImageSourceNative_ModifyImagePropertyIntArray(OH_ImageSourceN
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageSourceNative *source | 被修改属性的ImageSource。 |
@@ -1903,6 +2071,7 @@ Image_ErrorCode OH_ImageSourceNative_ModifyImagePropertyIntArray(OH_ImageSourceN
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_SOURCE_INVALID_PARAMETER：source、key或value为nullptr。 IMAGE_SOURCE_UNSUPPORTED_MIME_TYPE：不支持查询当前mimetype的图像属性。 IMAGE_SOURCE_UNSUPPORTED_METADATA：指定的元数据不存在，或者不是整型数组类型的值。 |
@@ -1910,9 +2079,10 @@ Image_ErrorCode OH_ImageSourceNative_ModifyImagePropertyIntArray(OH_ImageSourceN
 
 
 
-#### OH_ImageSourceNative_ModifyImagePropertyDoubleArray()
+### OH_ImageSourceNative_ModifyImagePropertyDoubleArray()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceNative_ModifyImagePropertyDoubleArray(OH_ImageSourceNative *source, Image_String *key, double *value, size_t size)
@@ -1926,6 +2096,7 @@ Image_ErrorCode OH_ImageSourceNative_ModifyImagePropertyDoubleArray(OH_ImageSour
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageSourceNative *source | 被修改属性的ImageSource。 |
@@ -1936,6 +2107,7 @@ Image_ErrorCode OH_ImageSourceNative_ModifyImagePropertyDoubleArray(OH_ImageSour
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_SOURCE_INVALID_PARAMETER：source、key或value为nullptr。 IMAGE_SOURCE_UNSUPPORTED_MIME_TYPE：不支持查询当前mimetype的图像属性。 IMAGE_SOURCE_UNSUPPORTED_METADATA：指定的元数据不存在，或者不是浮点型数组类型的值。 |
@@ -1943,9 +2115,10 @@ Image_ErrorCode OH_ImageSourceNative_ModifyImagePropertyDoubleArray(OH_ImageSour
 
 
 
-#### OH_ImageSourceNative_ModifyImagePropertyBlob()
+### OH_ImageSourceNative_ModifyImagePropertyBlob()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceNative_ModifyImagePropertyBlob(OH_ImageSourceNative *source, Image_String *key, void *value, size_t size)
@@ -1959,6 +2132,7 @@ Image_ErrorCode OH_ImageSourceNative_ModifyImagePropertyBlob(OH_ImageSourceNativ
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageSourceNative *source | 被修改属性的ImageSource。 |
@@ -1969,6 +2143,7 @@ Image_ErrorCode OH_ImageSourceNative_ModifyImagePropertyBlob(OH_ImageSourceNativ
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_SOURCE_INVALID_PARAMETER：source、key或value为nullptr。 IMAGE_SOURCE_UNSUPPORTED_MIME_TYPE：不支持查询当前mimetype的图像属性。 IMAGE_SOURCE_UNSUPPORTED_METADATA：指定的元数据不存在，或者不是二进制对象类型的值。 |
@@ -1976,9 +2151,10 @@ Image_ErrorCode OH_ImageSourceNative_ModifyImagePropertyBlob(OH_ImageSourceNativ
 
 
 
-#### OH_ImageSourceNative_GetImagePropertyWithNull()
+### OH_ImageSourceNative_GetImagePropertyWithNull()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceNative_GetImagePropertyWithNull(OH_ImageSourceNative *source, Image_String *key, Image_String *value)
@@ -1998,6 +2174,7 @@ Image_ErrorCode OH_ImageSourceNative_GetImagePropertyWithNull(OH_ImageSourceNati
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageSourceNative *source | 被操作的OH_ImageSourceNative指针。OH_ImageSourceNative使用完成后需要主动释放，参见OH_ImageSourceNative_Release。 |
@@ -2007,6 +2184,7 @@ Image_ErrorCode OH_ImageSourceNative_GetImagePropertyWithNull(OH_ImageSourceNati
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_SOURCE_INVALID_PARAMETER：source、key或value为空。 |
@@ -2014,9 +2192,10 @@ Image_ErrorCode OH_ImageSourceNative_GetImagePropertyWithNull(OH_ImageSourceNati
 
 
 
-#### OH_ImageSourceNative_ModifyImageProperty()
+### OH_ImageSourceNative_ModifyImageProperty()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceNative_ModifyImageProperty(OH_ImageSourceNative *source, Image_String *key, Image_String *value)
@@ -2034,6 +2213,7 @@ Image_ErrorCode OH_ImageSourceNative_ModifyImageProperty(OH_ImageSourceNative *s
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageSourceNative *source | 被操作的OH_ImageSourceNative指针。OH_ImageSourceNative使用完成后需要主动释放，参见OH_ImageSourceNative_Release。 |
@@ -2043,6 +2223,7 @@ Image_ErrorCode OH_ImageSourceNative_ModifyImageProperty(OH_ImageSourceNative *s
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -2050,9 +2231,10 @@ Image_ErrorCode OH_ImageSourceNative_ModifyImageProperty(OH_ImageSourceNative *s
 
 
 
-#### OH_ImageSourceNative_GetFrameCount()
+### OH_ImageSourceNative_GetFrameCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceNative_GetFrameCount(OH_ImageSourceNative *source, uint32_t *frameCount)
@@ -2066,6 +2248,7 @@ Image_ErrorCode OH_ImageSourceNative_GetFrameCount(OH_ImageSourceNative *source,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageSourceNative *source | 被操作的OH_ImageSourceNative指针。 |
@@ -2074,6 +2257,7 @@ Image_ErrorCode OH_ImageSourceNative_GetFrameCount(OH_ImageSourceNative *source,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -2081,9 +2265,10 @@ Image_ErrorCode OH_ImageSourceNative_GetFrameCount(OH_ImageSourceNative *source,
 
 
 
-#### OH_ImageSourceNative_GetSupportedFormats()
+### OH_ImageSourceNative_GetSupportedFormats()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceNative_GetSupportedFormats(Image_MimeType **supportedFormats, size_t *length)
@@ -2099,6 +2284,7 @@ Image_ErrorCode OH_ImageSourceNative_GetSupportedFormats(Image_MimeType **suppor
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Image_MimeType **supportedFormats | 支持解码的图片格式。 |
@@ -2107,6 +2293,7 @@ Image_ErrorCode OH_ImageSourceNative_GetSupportedFormats(Image_MimeType **suppor
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：操作成功。 IMAGE_SOURCE_INVALID_PARAMETER：参数异常，supportedFormats或length为空。 |
@@ -2114,9 +2301,10 @@ Image_ErrorCode OH_ImageSourceNative_GetSupportedFormats(Image_MimeType **suppor
 
 
 
-#### OH_ImageSourceNative_Release()
+### OH_ImageSourceNative_Release()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceNative_Release(OH_ImageSourceNative *source)
@@ -2132,12 +2320,14 @@ Image_ErrorCode OH_ImageSourceNative_Release(OH_ImageSourceNative *source)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageSourceNative *source | 要释放的OH_ImageSourceNative指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2146,9 +2336,10 @@ Image_ErrorCode OH_ImageSourceNative_Release(OH_ImageSourceNative *source)
 
 
 
-#### OH_DecodingOptionsForPicture_Create()
+### OH_DecodingOptionsForPicture_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_DecodingOptionsForPicture_Create(OH_DecodingOptionsForPicture **options)
@@ -2164,12 +2355,14 @@ Image_ErrorCode OH_DecodingOptionsForPicture_Create(OH_DecodingOptionsForPicture
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_DecodingOptionsForPicture **options | 被操作的OH_DecodingOptionsForPicture指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2178,9 +2371,10 @@ Image_ErrorCode OH_DecodingOptionsForPicture_Create(OH_DecodingOptionsForPicture
 
 
 
-#### OH_DecodingOptionsForPicture_GetDesiredAuxiliaryPictures()
+### OH_DecodingOptionsForPicture_GetDesiredAuxiliaryPictures()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_DecodingOptionsForPicture_GetDesiredAuxiliaryPictures(OH_DecodingOptionsForPicture *options, Image_AuxiliaryPictureType **desiredAuxiliaryPictures, size_t *length)
@@ -2198,6 +2392,7 @@ Image_ErrorCode OH_DecodingOptionsForPicture_GetDesiredAuxiliaryPictures(OH_Deco
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_DecodingOptionsForPicture *options | 被操作的OH_DecodingOptionsForPicture指针。 |
@@ -2207,6 +2402,7 @@ Image_ErrorCode OH_DecodingOptionsForPicture_GetDesiredAuxiliaryPictures(OH_Deco
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -2214,9 +2410,10 @@ Image_ErrorCode OH_DecodingOptionsForPicture_GetDesiredAuxiliaryPictures(OH_Deco
 
 
 
-#### OH_DecodingOptionsForPicture_SetDesiredAuxiliaryPictures()
+### OH_DecodingOptionsForPicture_SetDesiredAuxiliaryPictures()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_DecodingOptionsForPicture_SetDesiredAuxiliaryPictures(OH_DecodingOptionsForPicture *options, Image_AuxiliaryPictureType *desiredAuxiliaryPictures, size_t length)
@@ -2234,6 +2431,7 @@ Image_ErrorCode OH_DecodingOptionsForPicture_SetDesiredAuxiliaryPictures(OH_Deco
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_DecodingOptionsForPicture *options | 被操作的OH_DecodingOptionsForPicture指针。 |
@@ -2243,6 +2441,7 @@ Image_ErrorCode OH_DecodingOptionsForPicture_SetDesiredAuxiliaryPictures(OH_Deco
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -2250,9 +2449,10 @@ Image_ErrorCode OH_DecodingOptionsForPicture_SetDesiredAuxiliaryPictures(OH_Deco
 
 
 
-#### OH_DecodingOptionsForPicture_Release()
+### OH_DecodingOptionsForPicture_Release()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_DecodingOptionsForPicture_Release(OH_DecodingOptionsForPicture *options)
@@ -2266,12 +2466,14 @@ Image_ErrorCode OH_DecodingOptionsForPicture_Release(OH_DecodingOptionsForPictur
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_DecodingOptionsForPicture *options | 要释放的OH_DecodingOptionsForPicture指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2280,9 +2482,10 @@ Image_ErrorCode OH_DecodingOptionsForPicture_Release(OH_DecodingOptionsForPictur
 
 
 
-#### OH_ImageSourceNative_CreateImageRawData()
+### OH_ImageSourceNative_CreateImageRawData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceNative_CreateImageRawData(const OH_ImageSourceNative *source, OH_ImageRawData **rawData)
@@ -2302,6 +2505,7 @@ Image_ErrorCode OH_ImageSourceNative_CreateImageRawData(const OH_ImageSourceNati
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ImageSourceNative *source | 指向图像源的指针。 |
@@ -2310,6 +2514,7 @@ Image_ErrorCode OH_ImageSourceNative_CreateImageRawData(const OH_ImageSourceNati
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_SOURCE：源错误。 IMAGE_SOURCE_INVALID_PARAMETER：rawData对象无效。 IMAGE_SOURCE_UNSUPPORTED_MIME_TYPE：不支持的MIME类型。 |
@@ -2317,9 +2522,10 @@ Image_ErrorCode OH_ImageSourceNative_CreateImageRawData(const OH_ImageSourceNati
 
 
 
-#### OH_ImageSourceNative_GetBufferFromRawData()
+### OH_ImageSourceNative_GetBufferFromRawData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceNative_GetBufferFromRawData(const OH_ImageRawData *rawData, uint8_t **data, size_t *length)
@@ -2335,6 +2541,7 @@ Image_ErrorCode OH_ImageSourceNative_GetBufferFromRawData(const OH_ImageRawData 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ImageRawData *rawData | 指向rawData对象的指针。 |
@@ -2344,6 +2551,7 @@ Image_ErrorCode OH_ImageSourceNative_GetBufferFromRawData(const OH_ImageRawData 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_SOURCE_INVALID_PARAMETER：rawData对象无效。 |
@@ -2351,9 +2559,10 @@ Image_ErrorCode OH_ImageSourceNative_GetBufferFromRawData(const OH_ImageRawData 
 
 
 
-#### OH_ImageSourceNative_GetBitsPerPixelFromRawData()
+### OH_ImageSourceNative_GetBitsPerPixelFromRawData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceNative_GetBitsPerPixelFromRawData(const OH_ImageRawData *rawData, uint8_t *bitsPerPixel)
@@ -2367,6 +2576,7 @@ Image_ErrorCode OH_ImageSourceNative_GetBitsPerPixelFromRawData(const OH_ImageRa
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ImageRawData *rawData | 指向rawData对象的指针。 |
@@ -2375,6 +2585,7 @@ Image_ErrorCode OH_ImageSourceNative_GetBitsPerPixelFromRawData(const OH_ImageRa
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_SOURCE_INVALID_PARAMETER：rawData对象无效。 |
@@ -2382,9 +2593,10 @@ Image_ErrorCode OH_ImageSourceNative_GetBitsPerPixelFromRawData(const OH_ImageRa
 
 
 
-#### OH_ImageSourceNative_DestroyImageRawData()
+### OH_ImageSourceNative_DestroyImageRawData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_ImageSourceNative_DestroyImageRawData(OH_ImageRawData *rawData)
@@ -2400,12 +2612,14 @@ Image_ErrorCode OH_ImageSourceNative_DestroyImageRawData(OH_ImageRawData *rawDat
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageRawData *rawData | 指向rawData对象的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |

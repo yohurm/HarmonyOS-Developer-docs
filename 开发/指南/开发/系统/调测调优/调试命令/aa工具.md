@@ -1,13 +1,13 @@
 # aa工具
 
-更新时间：2026-06-12 06:54:11
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/aa-tool
 
 Ability assistant（Ability助手，简称为aa），是用于启动应用和启动测试用例的工具，为开发者提供基本的应用调试和测试能力，例如启动应用组件、强制停止进程、打印应用组件相关信息等。
 
 
-#### 环境要求
+## 环境要求
 
 在使用本工具前，开发者需要先获取[hdc工具](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hdc#环境准备)，执行hdc shell。
 
@@ -23,7 +23,8 @@ hdc shell "aa process -b com.example.myapplication -a EntryAbility -p perf-cmd"
 
 
 
-#### aa工具命令列表
+## aa工具命令列表
+
 
 | 命令 | 描述 |
 | --- | --- |
@@ -43,7 +44,7 @@ hdc shell "aa process -b com.example.myapplication -a EntryAbility -p perf-cmd"
 
 
 
-#### 帮助命令（help）
+## 帮助命令（help）
 
 ```bash
 # 显示帮助信息
@@ -52,7 +53,7 @@ aa help
 
 
 
-#### 启动命令（start）
+## 启动命令（start）
 
 启动一个应用组件，目标组件可以是FA模型的PageAbility和ServiceAbility组件，也可以是Stage模型的UIAbility和ServiceExtensionAbility组件，且目标组件相应配置文件中的exported标签不能配置为false。
 
@@ -66,6 +67,7 @@ aa start [-d <deviceId>] [-U <URI>] [-t <type>] [-A <action>] [-e <entity>] [-u 
 ```
 
 **启动命令参数列表**
+
 
 | 参数 | 参数说明 |
 | --- | --- |
@@ -103,6 +105,7 @@ aa start [-d <deviceId>] [-U <URI>] [-t <type>] [-A <action>] [-e <entity>] [-u 
 当启动成功时，返回"start ability successfully."；当启动失败时，返回"error: failed to start ability."，同时会包含相应的失败信息。
 
 **错误码**：
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -207,7 +210,7 @@ aa start -A ohos.want.action.viewData -U https://www.example.com
 
 
 
-#### 停止命令（stop-service）
+## 停止命令（stop-service）
 
 停止命令。用于停止一个应用组件，目标组件可以是FA模型的ServiceAbility组件，也可以是Stage模型的ExtensionAbility组件。
 
@@ -216,6 +219,7 @@ aa stop-service [-d <deviceId>] -a <abilityName> -b <bundleName> [-m <moduleName
 ```
 
 **停止命令参数列表**
+
 
 | 参数 | 参数说明 |
 | --- | --- |
@@ -231,6 +235,7 @@ aa stop-service [-d <deviceId>] -a <abilityName> -b <bundleName> [-m <moduleName
 当成功停止ServiceAbility或ExtensionAbility时，返回"stop service ability successfully."；当停止失败时，返回"error: failed to stop service ability."。
 
 **错误码**：
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -250,7 +255,7 @@ aa stop-service -a EntryAbility -b com.example.myapplication -m entry
 
 
 
-#### 打印命令（dump(deprecated)）
+## 打印命令（dump(deprecated)）
 
 用于打印应用组件的相关信息。
 
@@ -264,11 +269,12 @@ aa dump -a
 
 **打印命令参数列表**
 
+
 | 参数 | 二级参数 | 参数说明 |
 | --- | --- | --- |
 | -h/--help | - | 帮助信息。 |
 | -a/--all | - | 打印所有mission内的应用组件信息。 |
-| -l/--mission-list | type（缺省打印全部） | 服务侧为了方便管理任务链，内部维护了4种类型的任务链。 可取值： - NORMAL：正常启动的任务链(比如A拉起B拉起C, 则对应的任务链是A->B->C) - DEFAULT_STANDARD：已经被破坏的任务链中的任务, 启动模式为multiton的任务被放到该任务链中, 这里面的任务之间没有关联关系 - DEFAULT_SINGLE：已经被破坏的任务链中的任务, 启动模式为singleton的任务被放到该任务链中, 这里面的任务之间没有关联关系 - LAUNCHER：launcher的任务链 |
+| -l/--mission-list | type（缺省打印全部） | 服务侧为了方便管理任务链，内部维护了4种类型的任务链。 可取值： - NORMAL：正常启动的任务链（比如A拉起B拉起C, 则对应的任务链是A->B->C） - DEFAULT_STANDARD：已经被破坏的任务链中的任务，启动模式为multiton的任务被放到该任务链中，这里面的任务之间没有关联关系 - DEFAULT_SINGLE：已经被破坏的任务链中的任务，启动模式为singleton的任务被放到该任务链中，这里面的任务之间没有关联关系 - LAUNCHER：launcher的任务链 |
 | -e/--extension | elementName | 打印扩展组件信息。 |
 | -u/--userId | UserId | 打印指定UserId的栈信息，需要和其他参数组合使用，例如aa dump -a -u 100、aa dump -d -u 100。 |
 | -d/--data | - | 打印DataAbility相关信息。 |
@@ -279,6 +285,7 @@ aa dump -a
 
 
 **错误码**：
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -302,7 +309,7 @@ aa dump -l
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/2D_yJIF1TpS5YrSQJUPQng/zh-cn_image_0000002626229084.png?HW-CC-KV=V1&HW-CC-Date=20260624T020900Z&HW-CC-Expire=86400&HW-CC-Sign=71249AB6CDD0A9B2C14010F85473876A68D5B7215BB93DB66C2DB18B017D30AF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/MdBRunzERjOHqXgdcCVWUA/zh-cn_image_0000002747211173.png?HW-CC-KV=V1&HW-CC-Date=20260911T072243Z&HW-CC-Expire=86400&HW-CC-Sign=6F506F3E18586C33EAF13F2EB105598981735E031A3ADCE870EDAEFA3B4A8E81)
 
 
 ```bash
@@ -311,12 +318,12 @@ aa dump -i 105
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/jZiwkVzdRg2lCfgpklok_w/zh-cn_image_0000002626069174.png?HW-CC-KV=V1&HW-CC-Date=20260624T020900Z&HW-CC-Expire=86400&HW-CC-Sign=A9E2189365862486870A89D8D91ED0869FE45F187BB2D39D2BABEC2A5D7D3C9F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/Cl7IOOpkSwmU6Q6MBPXXcQ/zh-cn_image_0000002717771238.png?HW-CC-KV=V1&HW-CC-Date=20260911T072243Z&HW-CC-Expire=86400&HW-CC-Sign=EBC5501EA5854DC3F62665FD6A9A885584BEEC9444BDB6498ED8415278A449C8)
 
 
 
 
-#### 强制停止进程命令（force-stop）
+## 强制停止进程命令（force-stop）
 
 通过bundleName强制停止一个进程。
 
@@ -325,6 +332,7 @@ aa force-stop <bundle-name> [-p pid] [-r kill-reason]
 ```
 
 **强制停止进程命令参数列表**
+
 
 | 参数 | 参数说明 |
 | --- | --- |
@@ -337,6 +345,7 @@ aa force-stop <bundle-name> [-p pid] [-r kill-reason]
 当成功强制停止该进程时，返回"force stop process successfully."；当强制停止失败时，返回"error: failed to force stop process."。
 
 **错误码**：
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -355,7 +364,7 @@ aa force-stop com.example.myapplication
 
 
 
-#### 启动测试框架命令（test）
+## 启动测试框架命令（test）
 
 根据所携带的参数启动测试框架。
 
@@ -368,6 +377,7 @@ aa test -b <bundleName> [-m <module-name>] [-p <package-name>] [-s class <test-c
 
 
 **启动测试框架命令参数列表**
+
 
 | 参数 | 参数说明 |
 | --- | --- |
@@ -392,6 +402,7 @@ aa test -b <bundleName> [-m <module-name>] [-p <package-name>] [-s class <test-c
 
 **错误码**：
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10104002 | Failed to retrieve specified package information. |
@@ -413,7 +424,7 @@ aa test -b com.example.myapplication -m entry_test -s timeout 10000 -s unittest 
 
 
 
-#### 进入调试模式命令（attach）
+## 进入调试模式命令（attach）
 
 通过bundleName使指定应用进入调试模式。
 
@@ -422,6 +433,7 @@ aa attach -b <bundleName>
 ```
 
 **进入调试模式命令参数列表**
+
 
 | 参数 | 参数说明 |
 | --- | --- |
@@ -434,6 +446,7 @@ aa attach -b <bundleName>
 当应用成功进入调试模式时，返回"attach app debug successfully."；当给定参数不合法时，返回"fail: unknown option."并打印帮助信息。
 
 **错误码**：
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -453,7 +466,7 @@ aa attach -b com.example.myapplication
 
 
 
-#### 退出调试模式命令（detach）
+## 退出调试模式命令（detach）
 
 通过bundleName使指定应用退出调试模式。
 
@@ -462,6 +475,7 @@ aa detach -b <bundleName>
 ```
 
 **退出调试模式命令参数列表**
+
 
 | 参数 | 参数说明 |
 | --- | --- |
@@ -474,6 +488,7 @@ aa detach -b <bundleName>
 当应用成功退出调试模式时，返回"detach app debug successfully."；当给定参数不合法时，返回"fail: unknown option."并打印帮助信息。
 
 **错误码**：
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -493,7 +508,7 @@ aa detach -b com.example.myapplication
 
 
 
-#### 等待调试命令（appdebug）
+## 等待调试命令（appdebug）
 
 用于设置、取消设置应用等待调试状态，以及获取处于等待调试状态的应用包名和持久化信息。等待调试状态只对debug类型应用生效。appdebug的设置命令只对单个应用生效，当重复设置时，应用包名与持久化状态会替换成最新设置内容。
 
@@ -502,6 +517,7 @@ aa appdebug -b <bundleName> [-p]
 ```
 
 **等待调试命令参数列表**
+
 
 | 参数 | 二级参数 | 参数说明 |
 | --- | --- | --- |
@@ -517,6 +533,7 @@ aa appdebug -b <bundleName> [-p]
 当执行成功时，返回"app debug successfully."；当执行失败时，返回"error: failed to app debug."；当失败原因为非开发者模式时，返回"error: not developer mode."。
 
 **错误码**：
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -544,7 +561,7 @@ aa appdebug -g
 
 
 
-#### 应用调试/调优命令（process）
+## 应用调试/调优命令（process）
 
 对应用进行调试或调优，DevEco Studio用该命令集成调试和调优工具。
 
@@ -557,6 +574,7 @@ aa process -b <bundleName> -a <abilityName> [-m <moduleName>] [-p <perf-cmd>] [-
 ```
 
 **应用调试/调优命令参数列表**
+
 
 | 参数 | 参数说明 |
 | --- | --- |
@@ -572,6 +590,7 @@ aa process -b <bundleName> -a <abilityName> [-m <moduleName>] [-p <perf-cmd>] [-
 **返回值**：
 
 当执行成功时，返回"start native process successfully."；当执行失败时，返回"error: failed to start native process."；当给定参数不合法时，返回"error: option requires a value."并打印帮助信息。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -592,7 +611,7 @@ aa process -b com.example.myapplication -a EntryAbility -p perf-cmd [-S]
 
 
 
-#### onMemoryLevel回调命令（send-memory-level）
+## onMemoryLevel回调命令（send-memory-level）
 
 从API version 13开始，开发者可以通过该命令来调试应用的[onMemoryLevel](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-abilitystage#onmemorylevel)生命周期。通过在参数中指定进程的pid和内存使用级别来触发该进程的onMemoryLevel生命周期回调。该命令只提供基本的应用调试能力，不能完全模拟真实的内存加压测试场景。
 
@@ -602,6 +621,7 @@ aa send-memory-level -p <processId> -l <memoryLevel>
 ```
 
 **参数列表**
+
 
 | 参数 | 参数说明 |
 | --- | --- |
@@ -613,6 +633,7 @@ aa send-memory-level -p <processId> -l <memoryLevel>
 **返回值**：
 
 当执行成功时，返回"send memory level successfully."；当执行失败时，返回"error: failed to send memory level."；当给定参数值缺失时，返回"fail: unknown option."并打印帮助信息。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -629,7 +650,7 @@ aa send-memory-level -p 6066 -l 0
 
 
 
-#### 应用预启动命令（pre-start）
+## 应用预启动命令（pre-start）
 
 从 API version 26.0.0 开始，开发者可以通过此命令在后台预先启动应用，以提升用户点击应用的启动速度。当前支持预启动应用到生命周期的特定阶段，即会先将应用预启动到[onDidForeground](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability#ondidforeground20)阶段（前台窗口会隐藏不显示），若默认30秒内用户未手动点击应用，系统会自动将应用预启动到[onDidBackground](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability#ondidbackground20)阶段。
 
@@ -638,6 +659,7 @@ aa pre-start -m <MODE> -b <BUNDLE-NAME> -u <USER-ID>
 ```
 
 **参数列表**
+
 
 | 参数 | 参数说明 |
 | --- | --- |
@@ -652,6 +674,7 @@ aa pre-start -m <MODE> -b <BUNDLE-NAME> -u <USER-ID>
 当执行成功时，返回"prestart successfully."；当执行失败时，返回"error: failed to prestart."；当输入未知参数时返回"fail: unknown option."并打印帮助信息。
 
 **错误码**：
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -670,11 +693,11 @@ aa pre-start -h
 
 
 
-#### aa工具错误码
+## aa工具错误码
 
 
 
-#### 10103001 目标Ability可见性校验失败
+### 10103001 目标Ability可见性校验失败
 
 **错误信息**
 
@@ -694,7 +717,7 @@ Failed to verify the visibility of the target ability.
 
 
 
-#### 10104001 指定的Ability不存在
+### 10104001 指定的Ability不存在
 
 **错误信息**
 
@@ -723,7 +746,7 @@ hdc shell bm dump -n 包名
 
 
 
-#### 10104003 指定的pid不存在
+### 10104003 指定的pid不存在
 
 **错误信息**
 
@@ -743,7 +766,7 @@ The specified pid does not exist.
 
 
 
-#### 10104004 指定的内存使用级别不存在
+### 10104004 指定的内存使用级别不存在
 
 **错误信息**
 
@@ -763,7 +786,7 @@ The specified level does not exist.
 
 
 
-#### 10105001 Ability服务连接失败
+### 10105001 Ability服务连接失败
 
 **错误信息**
 
@@ -783,7 +806,7 @@ Failed to connect to the ability service.
 
 
 
-#### 10105002 获取Ability信息失败
+### 10105002 获取Ability信息失败
 
 **错误信息**
 
@@ -807,7 +830,7 @@ hdc shell bm dump -a
 
 
 
-#### 10105003 App服务连接失败
+### 10105003 App服务连接失败
 
 **错误信息**
 
@@ -827,7 +850,7 @@ App服务连接失败。
 
 
 
-#### 10106001 当前设备不是开发者模式
+### 10106001 当前设备不是开发者模式
 
 **错误信息**
 
@@ -849,7 +872,7 @@ The current device is not in developer mode.
 
 
 
-#### 10106002 不支持release签名的应用程序
+### 10106002 不支持release签名的应用程序
 
 **错误信息**
 
@@ -869,7 +892,7 @@ aa start命令的参数wl、wt、wh、ww或aa test命令不支持release签名�
 
 
 
-#### 10106003 不支持的预启动模式
+### 10106003 不支持的预启动模式
 
 **错误信息**
 
@@ -889,7 +912,7 @@ aa pre-start 命令的 -m 参数指定的值不是 1。当前仅支持模式 1�
 
 
 
-#### 10100101 获取应用信息失败
+### 10100101 获取应用信息失败
 
 **错误信息**
 
@@ -918,7 +941,7 @@ hdc shell bm dump -n 包名
 
 
 
-#### 10100102 aa start命令无法拉起UIExtensionAbility
+### 10100102 aa start命令无法拉起UIExtensionAbility
 
 **错误信息**
 
@@ -938,7 +961,7 @@ aa start命令不支持启动UIExtensionAbility。
 
 
 
-#### 10103101 隐式启动未查找到匹配应用
+### 10103101 隐式启动未查找到匹配应用
 
 **错误信息**
 
@@ -962,7 +985,7 @@ Failed to find a matching application for implicit launch.
 
 
 
-#### 10103102 传入的AppCloneIndex是一个无效值
+### 10103102 传入的AppCloneIndex是一个无效值
 
 **错误信息**
 
@@ -982,7 +1005,7 @@ aa start命令的参数中携带的AppCloneIndex是一个无效值，则返回�
 
 
 
-#### 10106101 上一个Ability未启动完成，先缓存在队列中等待后续启动
+### 10106101 上一个Ability未启动完成，先缓存在队列中等待后续启动
 
 **错误信息**
 
@@ -1002,7 +1025,7 @@ The current ability will be placed in the queue to wait for the previous ability
 
 
 
-#### 10106102 启动应用时，设备处于锁屏状态
+### 10106102 启动应用时，设备处于锁屏状态
 
 **错误信息**
 
@@ -1022,7 +1045,7 @@ The device screen is locked during the application launch.
 
 
 
-#### 10106103 目标应用为到期众测应用
+### 10106103 目标应用为到期众测应用
 
 **错误信息**
 
@@ -1042,7 +1065,7 @@ The target application is an expired crowdtesting application.
 
 
 
-#### 10106105 目标应用被管控
+### 10106105 目标应用被管控
 
 **错误信息**
 
@@ -1072,7 +1095,7 @@ The target application is under control.
 
 
 
-#### 10106106 目标应用被EDM管控
+### 10106106 目标应用被EDM管控
 
 **错误信息**
 
@@ -1092,7 +1115,7 @@ The target application is managed by EDM.
 
 
 
-#### 10106107 当前设备不支持使用窗口选项
+### 10106107 当前设备不支持使用窗口选项
 
 **错误信息**
 
@@ -1112,7 +1135,7 @@ The current device does not support using window options.
 
 
 
-#### 10107102 指定的进程权限校验失败
+### 10107102 指定的进程权限校验失败
 
 **错误信息**
 
@@ -1132,7 +1155,7 @@ Permission verification failed for the specified process.
 
 
 
-#### 10108101 拉起Ability时内部错误
+### 10108101 拉起Ability时内部错误
 
 **错误信息**
 
@@ -1152,7 +1175,7 @@ An internal error occurs while attempting to launch the ability.
 
 
 
-#### 10103201 目标Ability不是ServiceAbility类型
+### 10103201 目标Ability不是ServiceAbility类型
 
 **错误信息**
 
@@ -1172,7 +1195,7 @@ aa stop命令停止ServiceAbility时，-a的参数abilityName对应的Ability不
 
 
 
-#### 10104002 获取指定包信息失败
+### 10104002 获取指定包信息失败
 
 **错误信息**
 
@@ -1196,7 +1219,7 @@ hdc shell bm dump -a
 
 
 
-#### 10106401 杀死进程失败
+### 10106401 杀死进程失败
 
 **错误信息**
 
@@ -1222,7 +1245,7 @@ hdc shell bm dump -a
 
 
 
-#### 10106402 常驻进程无法被杀死
+### 10106402 常驻进程无法被杀死
 
 **错误信息**
 
@@ -1246,7 +1269,7 @@ aa force-stop命令指定的bundleName是常驻进程。
 
 
 
-#### 10108501 aa test命令内部错误
+### 10108501 aa test命令内部错误
 
 **错误信息**
 
@@ -1266,7 +1289,7 @@ An internal error occurs during the execution of the aa test command.
 
 
 
-#### 10108601 进入/退出调试模式时内部错误
+### 10108601 进入/退出调试模式时内部错误
 
 **错误信息**
 
@@ -1286,7 +1309,7 @@ An internal error occurs while attempting to enter/exit debug mode.
 
 
 
-#### 10103601 指定的包名不存在
+### 10103601 指定的包名不存在
 
 **错误信息**
 
@@ -1310,7 +1333,7 @@ hdc shell bm dump -a
 
 
 
-#### 10106701 目标应用不是Debug应用
+### 10106701 目标应用不是Debug应用
 
 **错误信息**
 

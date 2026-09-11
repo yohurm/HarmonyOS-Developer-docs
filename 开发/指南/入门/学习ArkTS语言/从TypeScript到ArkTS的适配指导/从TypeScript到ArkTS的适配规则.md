@@ -1,6 +1,6 @@
 # 从TypeScript到ArkTS的适配规则
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/typescript-to-arkts-migration-guide
 
@@ -45,13 +45,13 @@ function addTen(x: number): number {
 根据开发者的反馈和实际场景的数据，未来将逐步减少不支持的特性。
   
 
-#### 概述
+## 概述
 
 本节罗列了ArkTS不支持或部分支持的TypeScript特性。完整的列表以及详细的代码示例和重构建议，请参考[约束说明](#约束说明)。更多案例请参考[适配指导案例](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-more-cases)。
  
   
 
-#### 强制使用静态类型
+### 强制使用静态类型
 
 静态类型是ArkTS的重要特性之一。当程序使用静态类型时，所有类型在编译时已知，这有助于开发者理解代码中的数据结构。编译器可以提前验证代码的正确性，减少运行时的类型检查，从而提升性能。
  
@@ -85,7 +85,7 @@ any类型在TypeScript中并不常见，仅约1%的TypeScript代码库使用。�
  
   
 
-#### 禁止在运行时变更对象布局
+### 禁止在运行时变更对象布局
 
 为实现最佳性能，ArkTS要求在程序执行期间不能更改对象的布局。换句话说，ArkTS禁止以下行为：
  
@@ -149,7 +149,7 @@ console.info('Distance between p5 and p6: ' + distance(p5, p6));
  
   
 
-#### 限制运算符的语义
+### 限制运算符的语义
 
 为获得更好的性能并鼓励开发者编写更清晰的代码，ArkTS限制了一些运算符的语义。详细的语义限制，请参考[约束说明](#约束说明)。
  
@@ -167,7 +167,7 @@ let s = +'42'; // 编译时错误
  
   
 
-#### 不支持 structural typing
+### 不支持 structural typing
 
 假设两个不相关的类T和U都拥有相同的publicAPI：
  
@@ -223,11 +223,11 @@ greeter(t); // 是否允许？
  
   
 
-#### 约束说明
+## 约束说明
 
   
 
-#### 对象的属性名必须是合法的标识符
+### 对象的属性名必须是合法的标识符
 
 **规则：**arkts-identifiers-as-prop-names
  
@@ -279,7 +279,7 @@ let obj: Record<string, number> = {
  
   
 
-#### 类型、命名空间的命名必须唯一
+### 类型、命名空间的命名必须唯一
 
 **规则：**arkts-unique-names
  
@@ -305,7 +305,7 @@ type T = number[]; // 为避免名称冲突，此处不允许使用X
  
   
 
-#### 使用let而非var
+### 使用let而非var
 
 **规则：**arkts-no-var
  
@@ -364,7 +364,7 @@ scopedLet = 5; // 编译时错误
  
   
 
-#### 使用具体的类型而非any或unknown
+### 使用具体的类型而非any或unknown
 
 **规则：**arkts-no-any-unknown
  
@@ -397,7 +397,7 @@ let valueO2: Object = 42;
  
   
 
-#### 需要显式标注对象字面量的类型
+### 需要显式标注对象字面量的类型
 
 **规则：**arkts-no-untyped-obj-literals
  
@@ -584,7 +584,7 @@ getPoint({x: 5, y: 10});
  
   
 
-#### 数组字面量必须仅包含可推断类型的元素
+### 数组字面量必须仅包含可推断类型的元素
 
 **规则：**arkts-no-noninferrable-arr-literals
  
@@ -614,7 +614,7 @@ let a2: C[] = [{n: 1, s: '1'}, {n: 2, s: '2'}];    // a2的类型为“C[]”
  
   
 
-#### 不支持解构赋值
+### 不支持解构赋值
 
 **规则：**arkts-no-destruct-assignment
  
@@ -655,7 +655,7 @@ for (let i = 1; i < data.length; ++i) {
  
   
 
-#### 不支持解构变量声明
+### 不支持解构变量声明
 
 **规则：**arkts-no-destruct-decls
  
@@ -700,7 +700,7 @@ let y = zp.y;
  
   
 
-#### 不支持确定赋值断言
+### 不支持确定赋值断言
 
 **规则：**arkts-no-definite-assignment
  
@@ -738,7 +738,7 @@ console.info('x = ' + x);
  
   
 
-#### 强制进行严格类型检查
+### 强制进行严格类型检查
 
 **级别：错误**
  
@@ -819,7 +819,7 @@ c.initAge(10);
  
   
 
-#### 不允许通过注释关闭类型检查
+### 不允许通过注释关闭类型检查
 
 **规则：**arkts-strict-typing-required
  
@@ -852,7 +852,7 @@ let s2: string = null; // 编译时报错
  
   
 
-#### 使用箭头函数而非函数表达式
+### 使用箭头函数而非函数表达式
 
 **规则：**arkts-no-func-expressions
  
@@ -880,7 +880,7 @@ let f = (s: string) => {
  
   
 
-#### 限制省略函数返回类型标注
+### 限制省略函数返回类型标注
 
 **规则：**arkts-no-implicit-return-types
  
@@ -941,7 +941,7 @@ doOperation(2, 3);
  
   
 
-#### 不支持参数解构的函数声明
+### 不支持参数解构的函数声明
 
 **规则：**arkts-no-destruct-params
  
@@ -983,7 +983,7 @@ function main() {
  
   
 
-#### 不支持在函数内声明函数
+### 不支持在函数内声明函数
 
 **规则：**arkts-no-nested-funcs
  
@@ -1027,7 +1027,7 @@ function addNum(a: number, b: number): void {
  
   
 
-#### 不支持在函数和类的静态方法中使用this
+### 不支持在函数和类的静态方法中使用this
 
 **规则：**arkts-no-standalone-this
  
@@ -1075,7 +1075,7 @@ function main(): void {
  
   
 
-#### 不支持生成器函数
+### 不支持生成器函数
 
 **规则：**arkts-no-generators
  
@@ -1118,7 +1118,7 @@ foo();
  
   
 
-#### 不支持对函数声明属性
+### 不支持对函数声明属性
 
 **规则：**arkts-no-func-props
  
@@ -1130,7 +1130,7 @@ foo();
  
   
 
-#### 不支持Function.apply和Function.call
+### 不支持Function.apply和Function.call
 
 **规则：**arkts-no-func-apply-call
  
@@ -1142,7 +1142,7 @@ ArkTS不允许使用标准库函数Function.apply和Function.call，因为这些
  
   
 
-#### 不支持Function.bind
+### 不支持Function.bind
 
 **规则：**arkts-no-func-bind
  
@@ -1154,7 +1154,7 @@ ArkTS禁用标准库函数Function.bind。标准库使用这些函数显式设�
  
   
 
-#### 不支持以#开头的私有字段
+### 不支持以#开头的私有字段
 
 **规则：**arkts-no-private-identifiers
  
@@ -1182,7 +1182,7 @@ class C {
  
   
 
-#### 仅支持一个静态块
+### 仅支持一个静态块
 
 **规则：**arkts-no-multiple-static-blocks
  
@@ -1222,7 +1222,7 @@ class C {
  
   
 
-#### 不支持在constructor中声明字段
+### 不支持在constructor中声明字段
 
 **规则：**arkts-no-ctor-prop-decls
  
@@ -1274,7 +1274,7 @@ class Person {
  
   
 
-#### 不支持使用类表达式
+### 不支持使用类表达式
 
 **规则：**arkts-no-class-literals
  
@@ -1318,7 +1318,7 @@ const rectangle = new TestRectangle(0.0, 0.0);
  
   
 
-#### 类不允许implements
+### 类不允许implements
 
 **规则：**arkts-implements-only-iface
  
@@ -1354,7 +1354,7 @@ class C1 implements C {
  
   
 
-#### 不支持修改对象的方法
+### 不支持修改对象的方法
 
 **规则：**arkts-no-method-reassignment
  
@@ -1418,7 +1418,7 @@ c3.foo(); // Extra foo
  
   
 
-#### class不能被用作对象
+### class不能被用作对象
 
 **规则：**arkts-no-classes-as-obj
  
@@ -1430,7 +1430,7 @@ c3.foo(); // Extra foo
  
   
 
-#### 使用class而非具有call signature的类型
+### 使用class而非具有call signature的类型
 
 **规则：**arkts-no-call-signatures
  
@@ -1475,7 +1475,7 @@ doSomething(new DescribableFunction());
  
   
 
-#### 使用class而非具有构造签名的类型
+### 使用class而非具有构造签名的类型
 
 **规则：**arkts-no-ctor-signatures-type
  
@@ -1516,7 +1516,7 @@ function fn(s: string): SomeObject {
  
   
 
-#### 不支持index signature
+### 不支持index signature
 
 **规则：**arkts-no-indexed-signatures
  
@@ -1555,7 +1555,7 @@ const secondItem = myArray.f[1];
  
   
 
-#### 不支持通过索引访问字段
+### 不支持通过索引访问字段
 
 **规则：**arkts-no-props-by-index
  
@@ -1628,7 +1628,7 @@ arr[0];
  
   
 
-#### 对象字面量不能用于类型声明
+### 对象字面量不能用于类型声明
 
 **规则：**arkts-no-obj-literals-as-types
  
@@ -1664,7 +1664,7 @@ type S = Set<O>;
  
   
 
-#### 不支持在原型上赋值
+### 不支持在原型上赋值
 
 **规则：**arkts-no-prototype-assignment
  
@@ -1708,7 +1708,7 @@ class C {
  
   
 
-#### 需要显式标注泛型函数类型实参
+### 需要显式标注泛型函数类型实参
 
 **规则：**arkts-no-inferred-generic-params
  
@@ -1754,7 +1754,7 @@ let z = greet<string>();
  
   
 
-#### 使用继承而非intersection type
+### 使用继承而非intersection type
 
 **规则：**arkts-no-intersection-types
  
@@ -1798,7 +1798,7 @@ interface Employee extends Identity,  Contact {}
  
   
 
-#### 不支持this类型
+### 不支持this类型
 
 **规则：**arkts-no-typing-with-this
  
@@ -1842,7 +1842,7 @@ class C {
  
   
 
-#### 不支持条件类型
+### 不支持条件类型
 
 **规则：**arkts-no-conditional-types
  
@@ -1876,7 +1876,7 @@ type YI<Item, T extends Array<Item>> = Item;
  
   
 
-#### 不支持索引访问类型
+### 不支持索引访问类型
 
 **规则：**arkts-no-aliases-by-index
  
@@ -1888,7 +1888,7 @@ ArkTS不支持索引访问类型。
  
   
 
-#### 不支持structural typing
+### 不支持structural typing
 
 **规则：**arkts-no-structural-typing
  
@@ -2004,7 +2004,7 @@ foo(new Y());
  
   
 
-#### 不支持映射类型
+### 不支持映射类型
 
 **规则：**arkts-no-mapped-types
  
@@ -2038,7 +2038,7 @@ class CFlags {
  
   
 
-#### 使用instanceof和as进行类型保护
+### 使用instanceof和as进行类型保护
 
 **规则：**arkts-no-is
  
@@ -2116,7 +2116,7 @@ function main(): void {
  
   
 
-#### 不支持一些utility类型
+### 不支持一些utility类型
 
 **规则：**arkts-no-utility-types
  
@@ -2132,7 +2132,7 @@ ArkTS仅支持Partial、Required、Readonly和Record，不支持TypeScript中其
  
   
 
-#### 不支持as const断言
+### 不支持as const断言
 
 **规则：**arkts-no-as-const
  
@@ -2176,7 +2176,7 @@ let z: Label = {
  
   
 
-#### 类型转换仅支持as T语法
+### 类型转换仅支持as T语法
 
 **规则：**arkts-as-casts
  
@@ -2234,7 +2234,7 @@ let e1 = (new Number(5.0)) instanceof Number; // true
  
   
 
-#### 不支持在catch语句标注类型
+### 不支持在catch语句标注类型
 
 **规则：**arkts-no-types-in-catch
  
@@ -2266,7 +2266,7 @@ try {
  
   
 
-#### 不支持for .. in
+### 不支持for .. in
 
 **规则：**arkts-no-for-in
  
@@ -2296,7 +2296,7 @@ for (let i = 0; i < a.length; ++i) {
  
   
 
-#### 不支持with语句
+### 不支持with语句
 
 **规则：**arkts-no-with
  
@@ -2324,7 +2324,7 @@ let area: number = Math.PI * r * r;
  
   
 
-#### 限制throw语句中表达式的类型
+### 限制throw语句中表达式的类型
 
 **规则：**arkts-limited-throw
  
@@ -2350,7 +2350,7 @@ throw new Error();
  
   
 
-#### 逗号运算符,仅用在for循环语句中
+### 逗号运算符,仅用在for循环语句中
 
 **规则：**arkts-no-comma-outside-loops
  
@@ -2395,7 +2395,7 @@ x = x++;
  
   
 
-#### 不支持require和import赋值表达式
+### 不支持require和import赋值表达式
 
 **规则：**arkts-no-require
  
@@ -2419,7 +2419,7 @@ import * as m from './ExportMod'
  
   
 
-#### 不支持export = ...语法
+### 不支持export = ...语法
 
 **规则：**arkts-no-export-assignment
  
@@ -2465,7 +2465,7 @@ let p = Pt.Point.origin;
  
   
 
-#### 不支持ambient module声明
+### 不支持ambient module声明
 
 **规则：**arkts-no-ambient-decls
  
@@ -2492,7 +2492,7 @@ import { normalize } from './ExportMod'
  
   
 
-#### 不支持在模块名中使用通配符
+### 不支持在模块名中使用通配符
 
 **规则：**arkts-no-module-wildcards
  
@@ -2532,7 +2532,7 @@ console.info('N.foo called: ' + m.N.foo(42));
  
   
 
-#### 不支持通用模块定义(UMD)
+### 不支持通用模块定义(UMD)
 
 **规则：**arkts-no-umd
  
@@ -2568,7 +2568,7 @@ mathLib.isPrime(2)
  
   
 
-#### 不支持导入断言
+### 不支持导入断言
 
 **规则：**arkts-no-import-assertions
  
@@ -2593,7 +2593,7 @@ import { Something } from './ExportMod'
  
   
 
-#### 允许.ets文件import.ets/.ts/.js文件源码, 不允许.ts/.js文件import.ets文件源码
+### 允许.ets文件import.ets/.ts/.js文件源码, 不允许.ts/.js文件import.ets文件源码
 
 **规则：**arkts-no-ts-deps
  
@@ -2633,7 +2633,7 @@ import { C } from './ExportMod'
  
   
 
-#### 不支持在import语句前使用其他语句
+### 不支持在import语句前使用其他语句
 
 **规则：**arkts-no-misplaced-imports
  
@@ -2669,7 +2669,7 @@ import('module2').then(() => {}).catch(() => {})  // 动态import
  
   
 
-#### 命名空间不能被用作对象
+### 命名空间不能被用作对象
 
 **规则：**arkts-no-ns-as-obj
  
@@ -2702,7 +2702,7 @@ MyNamespace.x = 2;
  
   
 
-#### 不支持命名空间中的非声明语句
+### 不支持命名空间中的非声明语句
 
 **规则：**arkts-no-ns-statements
  
@@ -2738,7 +2738,7 @@ A.init();
  
   
 
-#### 接口中不支持构造签名
+### 接口中不支持构造签名
 
 **规则：**arkts-no-ctor-signatures-iface
  
@@ -2774,7 +2774,7 @@ function fn(i: I) {
  
   
 
-#### 接口不能继承具有相同方法的两个接口
+### 接口不能继承具有相同方法的两个接口
 
 **规则：**arkts-no-extend-same-prop
  
@@ -2871,7 +2871,7 @@ class C implements Mover, Shaker {
  
   
 
-#### 接口不能继承类
+### 接口不能继承类
 
 **规则：**arkts-extends-only-class
  
@@ -2907,7 +2907,7 @@ interface SelectableControl extends Control {
  
   
 
-#### 一元运算符+、-和~仅适用于数值类型
+### 一元运算符+、-和~仅适用于数值类型
 
 **规则：**arkts-no-polymorphic-unops
  
@@ -2965,7 +2965,7 @@ let y = +returnString(); // 编译时错误
  
   
 
-#### 不支持delete运算符
+### 不支持delete运算符
 
 **规则：**arkts-no-delete
  
@@ -3002,7 +3002,7 @@ p.y = null;
  
   
 
-#### 仅允许在表达式中使用typeof运算符
+### 仅允许在表达式中使用typeof运算符
 
 **规则：**arkts-no-type-query
  
@@ -3036,7 +3036,7 @@ let s2: string;
  
   
 
-#### 部分支持instanceof运算符
+### 部分支持instanceof运算符
 
 **规则：**arkts-instanceof-ref-types
  
@@ -3063,7 +3063,7 @@ let result = num instanceof Number; // 编译报错
  
   
 
-#### 不支持in运算符
+### 不支持in运算符
 
 **规则：**arkts-no-in
  
@@ -3097,7 +3097,7 @@ let b = p instanceof Person; // true，且属性name一定存在
  
   
 
-#### 部分支持展开运算符
+### 部分支持展开运算符
 
 **规则：**arkts-no-spread
  
@@ -3169,7 +3169,7 @@ let arr4 = [...arr1, 10, ...arr2, 11, ...arr3];
  
   
 
-#### 只能使用类型相同的编译时表达式初始化枚举成员
+### 只能使用类型相同的编译时表达式初始化枚举成员
 
 **规则：**arkts-no-enum-mixed-types
  
@@ -3219,7 +3219,7 @@ enum E2 {
  
   
 
-#### 不支持enum声明合并
+### 不支持enum声明合并
 
 **规则：**arkts-no-enum-merging
  
@@ -3259,7 +3259,7 @@ enum ColorSet {
  
   
 
-#### 不支持声明合并
+### 不支持声明合并
 
 **规则：**arkts-no-decl-merging
  
@@ -3301,7 +3301,7 @@ interface Document {
  
   
 
-#### 不支持Symbol()API
+### 不支持Symbol()API
 
 **规则：**arkts-no-symbol
  
@@ -3315,7 +3315,7 @@ ArkTS只支持Symbol.iterator。
  
   
 
-#### 不支持globalThis
+### 不支持globalThis
 
 **规则：**arkts-no-globalthis
  
@@ -3351,7 +3351,7 @@ let x = M.abc;
  
   
 
-#### 不支持new.target
+### 不支持new.target
 
 **规则：**arkts-no-new-target
  
@@ -3363,7 +3363,7 @@ ArkTS没有原型的概念，因此不支持new.target。此特性不符合静�
  
   
 
-#### 限制使用标准库
+### 限制使用标准库
 
 **规则：**arkts-limited-stdlib
  
@@ -3411,7 +3411,7 @@ handler.preventExtensions()、handler.set()、handler.setPrototypeOf()
  
   
 
-#### 限制使用ESObject类型
+### 限制使用ESObject类型
 
 **规则：**arkts-limited-esobj
  
@@ -3453,7 +3453,7 @@ function f() {
  
   
 
-#### 不支持JSX表达式
+### 不支持JSX表达式
 
 **规则：**arkts-no-jsx
  
@@ -3465,7 +3465,7 @@ function f() {
  
   
 
-#### 不支持构造函数类型
+### 不支持构造函数类型
 
 **规则：**arkts-no-ctor-signatures-funcs
  

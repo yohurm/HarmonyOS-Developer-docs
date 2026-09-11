@@ -1,9 +1,9 @@
 # Interface (ImageReceiver)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-imagereceiver
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ImageReceiver类，用于获取组件surface id、接收最新的图片和读取下一张图片以及释放ImageReceiver实例。ImageReceiver作为图片的接收方和消费者，其参数属性实际上不会对接收到的图片产生影响。图片属性的配置应在发送方和生产者上进行，如相机预览流[createPreviewOutput](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-cameramanager#createpreviewoutput)。
  
@@ -18,9 +18,10 @@ ImageReceiver类，用于获取组件surface id、接收最新的图片和读取
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { image } from '@kit.ImageKit';
@@ -28,12 +29,14 @@ import { image } from '@kit.ImageKit';
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Multimedia.Image.ImageReceiver
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | size9+ | Size | 是 | 否 | 图片大小。该参数不会影响接收到的图片大小，实际返回大小由生产者决定，如相机。 |
@@ -43,9 +46,10 @@ import { image } from '@kit.ImageKit';
  
   
 
-#### getReceivingSurfaceId9+
+## getReceivingSurfaceId9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getReceivingSurfaceId(callback: AsyncCallback&lt;string&gt;): void
  
@@ -55,6 +59,7 @@ getReceivingSurfaceId(callback: AsyncCallback&lt;string&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;string&gt; | 是 | 回调函数，当获取surface id成功，err为undefined，data为获取到的surface id；否则为错误对象。 |
@@ -78,9 +83,10 @@ async function GetReceivingSurfaceId(receiver : image.ImageReceiver) {
  
   
 
-#### getReceivingSurfaceId9+
+## getReceivingSurfaceId9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getReceivingSurfaceId(): Promise&lt;string&gt;
  
@@ -90,6 +96,7 @@ getReceivingSurfaceId(): Promise&lt;string&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回surface id。 |
@@ -111,9 +118,10 @@ async function GetReceivingSurfaceId(receiver : image.ImageReceiver) {
  
   
 
-#### readLatestImage9+
+## readLatestImage9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readLatestImage(callback: AsyncCallback&lt;Image&gt;): void
  
@@ -131,6 +139,7 @@ readLatestImage(callback: AsyncCallback&lt;Image&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;Image&gt; | 是 | 回调函数，当读取最新图片成功，err为undefined，data为获取到的最新图片；否则为错误对象。 |
@@ -167,9 +176,10 @@ async function ReadLatestImage(receiver : image.ImageReceiver) {
  
   
 
-#### readLatestImage9+
+## readLatestImage9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readLatestImage(): Promise&lt;Image&gt;
  
@@ -187,6 +197,7 @@ readLatestImage(): Promise&lt;Image&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Image&gt; | Promise对象，返回最新图片。 |
@@ -221,9 +232,10 @@ async function ReadLatestImage(receiver : image.ImageReceiver) {
  
   
 
-#### readNextImage9+
+## readNextImage9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readNextImage(callback: AsyncCallback&lt;Image&gt;): void
  
@@ -241,6 +253,7 @@ readNextImage(callback: AsyncCallback&lt;Image&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;Image&gt; | 是 | 回调函数，当获取下一张图片成功，err为undefined，data为获取到的下一张图片；否则为错误对象。 |
@@ -277,16 +290,17 @@ async function ReadNextImage(receiver : image.ImageReceiver) {
  
   
 
-#### readNextImage9+
+## readNextImage9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readNextImage(): Promise&lt;Image&gt;
  
 从ImageReceiver读取下一张图片。使用Promise异步回调。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/A7ZvvoucTi2km_LJEqWVYg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095521Z&HW-CC-Expire=86400&HW-CC-Sign=E4981A9889EA91BBBF929E6EA087ED12B429D3F4E27547752B3F088D0C7E3B8E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/3yQeycbtRgG9Bp4XTYVZPg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072210Z&HW-CC-Expire=86400&HW-CC-Sign=35FB79279C3CF9BE5C6875B64CF2250FCB169891A33AAE1EF0EB1E79F61B7CC4)
  
  
 此接口需要在[on](#on9)回调触发后调用，才能正常地接收到数据。且此接口返回的[Image](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-image)对象使用完毕后需要调用[release](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-image#release9)方法释放，释放后才可以继续接收新的数据。
@@ -297,6 +311,7 @@ readNextImage(): Promise&lt;Image&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Image&gt; | Promise对象，返回下一张图片。 |
@@ -331,9 +346,10 @@ async function ReadNextImage(receiver : image.ImageReceiver) {
  
   
 
-#### on9+
+## on9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'imageArrival', callback: AsyncCallback&lt;void&gt;): void
  
@@ -343,6 +359,7 @@ on(type: 'imageArrival', callback: AsyncCallback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 注册事件的类型，固定为'imageArrival'，接收图片到达时触发。 |
@@ -367,9 +384,10 @@ async function On(receiver : image.ImageReceiver) {
  
   
 
-#### off13+
+## off13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'imageArrival', callback?: AsyncCallback&lt;void&gt;): void
  
@@ -379,6 +397,7 @@ off(type: 'imageArrival', callback?: AsyncCallback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 注册事件的类型，固定为'imageArrival'，释放buffer时触发。 |
@@ -399,9 +418,10 @@ async function Off(receiver : image.ImageReceiver) {
  
   
 
-#### release9+
+## release9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(callback: AsyncCallback&lt;void&gt;): void
  
@@ -415,6 +435,7 @@ release(callback: AsyncCallback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数，当释放ImageReceiver实例成功，err为undefined，否则为错误对象。 |
@@ -438,9 +459,10 @@ async function Release(receiver : image.ImageReceiver) {
  
   
 
-#### release9+
+## release9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(): Promise&lt;void&gt;
  
@@ -454,6 +476,7 @@ release(): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |

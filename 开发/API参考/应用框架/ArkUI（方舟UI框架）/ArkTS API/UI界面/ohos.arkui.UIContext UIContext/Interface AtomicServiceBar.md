@@ -1,9 +1,9 @@
 # Interface (AtomicServiceBar)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-atomicservicebar
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 AtomicServiceBar提供对元服务menuBar的属性设置能力，支持设置menuBar的可见性、背景颜色、标题内容、标题字体样式、图标颜色，以及获取menuBar的布局信息和监听布局变化。适用于需要在元服务中自定义menuBar外观和行为的场景。
 
@@ -12,9 +12,10 @@ AtomicServiceBar提供对元服务menuBar的属性设置能力，支持设置men
 
 
 
-#### setVisible11+
+## setVisible11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setVisible(visible: boolean): void
 
@@ -29,6 +30,7 @@ setVisible(visible: boolean): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -66,9 +68,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### setBackgroundColor11+
+## setBackgroundColor11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setBackgroundColor(color:Nullable<Color | number | string>): void
 
@@ -83,6 +86,7 @@ setBackgroundColor(color:Nullable<Color | number | string>): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -120,9 +124,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### setTitleContent11+
+## setTitleContent11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setTitleContent(content: string): void
 
@@ -137,6 +142,7 @@ setTitleContent(content: string): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -174,9 +180,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### setTitleFontStyle11+
+## setTitleFontStyle11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setTitleFontStyle(font: FontStyle): void
 
@@ -191,6 +198,7 @@ setTitleFontStyle(font: FontStyle): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -228,9 +236,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### setIconColor11+
+## setIconColor11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setIconColor(color:Nullable<Color | number | string>): void
 
@@ -245,6 +254,7 @@ setIconColor(color:Nullable<Color | number | string>): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -282,9 +292,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getBarRect15+
+## getBarRect15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBarRect(): Frame
 
@@ -299,6 +310,7 @@ getBarRect(): Frame
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -333,9 +345,10 @@ struct Index {
 
 
 
-#### onBarRectChange
+## onBarRectChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onBarRectChange(callback: Callback&lt;Frame&gt;): void
 
@@ -348,6 +361,7 @@ onBarRectChange(callback: Callback&lt;Frame&gt;): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |

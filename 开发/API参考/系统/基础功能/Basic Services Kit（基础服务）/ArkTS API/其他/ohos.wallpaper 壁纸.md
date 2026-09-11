@@ -1,6 +1,6 @@
 # @ohos.wallpaper (壁纸)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-wallpaper
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -12,7 +12,8 @@
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -22,13 +23,15 @@ import { wallpaper } from '@kit.BasicServicesKit';
 
 
 
-#### WallpaperType7+
+## WallpaperType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 定义壁纸的枚举类型。
 
 **系统能力**: SystemCapability.MiscServices.Wallpaper
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -38,7 +41,8 @@ import { wallpaper } from '@kit.BasicServicesKit';
 
 
 
-#### RgbaColor(deprecated)
+## RgbaColor(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -50,6 +54,7 @@ import { wallpaper } from '@kit.BasicServicesKit';
 
 **系统能力**: SystemCapability.MiscServices.Wallpaper
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | red | number | 否 | 否 | 表示红色值，范围为 0 到 255。 |
@@ -60,7 +65,8 @@ import { wallpaper } from '@kit.BasicServicesKit';
 
 
 
-#### wallpaper.on('colorChange')(deprecated)
+## wallpaper.on('colorChange')(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -76,6 +82,7 @@ on(type: 'colorChange', callback: (colors: Array&lt;RgbaColor&gt;, wallpaperType
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 取值为'colorChange'，表示壁纸颜色变化结果上报事件。 |
@@ -84,20 +91,24 @@ on(type: 'colorChange', callback: (colors: Array&lt;RgbaColor&gt;, wallpaperType
 
 **示例：**
 
-```json
+```text
+import { BusinessError } from '@kit.BasicServicesKit';
+
 try {
     let listener = (colors: Array<wallpaper.RgbaColor>, wallpaperType: wallpaper.WallpaperType): void => {
         console.info(`wallpaper color changed.`);
     };
     wallpaper.on('colorChange', listener);
 } catch (error) {
-    console.error(`failed to on because: ${JSON.stringify(error)}`);
+    let err = error as BusinessError;
+    console.error(`Failed to on. Code: ${err.code}, message: ${err.message}`);
 }
 ```
 
 
 
-#### wallpaper.off('colorChange')(deprecated)
+## wallpaper.off('colorChange')(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -113,6 +124,7 @@ off(type: 'colorChange', callback?: (colors: Array&lt;RgbaColor&gt;, wallpaperTy
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 取值为'colorChange'，表示取消订阅壁纸颜色变化结果上报事件。 |
@@ -121,40 +133,46 @@ off(type: 'colorChange', callback?: (colors: Array&lt;RgbaColor&gt;, wallpaperTy
 
 **示例：**
 
-```json
+```text
+import { BusinessError } from '@kit.BasicServicesKit';
+
 let listener = (colors: Array<wallpaper.RgbaColor>, wallpaperType: wallpaper.WallpaperType): void => {
     console.info(`wallpaper color changed.`);
 };
 try {
     wallpaper.on('colorChange', listener);
 } catch (error) {
-    console.error(`failed to on because: ${JSON.stringify(error)}`);
+    let err = error as BusinessError;
+    console.error(`Failed to on. Code: ${error.code}, message: ${error.message}`);
 }
 
 try {
     // 取消订阅listener
     wallpaper.off('colorChange', listener);
 } catch (error) {
-    console.error(`failed to off because: ${JSON.stringify(error)}`);
+    let err = error as BusinessError;
+    console.error(`Failed to off. Code: ${err.code}, message: ${err.message}`);
 }
 
 try {
     // 取消所有'colorChange'类型的订阅
     wallpaper.off('colorChange');
 } catch (error) {
-    console.error(`failed to off because: ${JSON.stringify(error)}`);
+    let err = error as BusinessError;
+    console.error(`Failed to off. Code: ${error.code}, message: ${error.message}`);
 }
 ```
 
 
 
-#### wallpaper.getColors(deprecated)
+## wallpaper.getColors(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 getColors(wallpaperType: WallpaperType, callback: AsyncCallback<Array&lt;RgbaColor&gt;>): void
 
-获取指定类型壁纸的主要颜色信息。
+获取指定类型壁纸的主要颜色信息。使用callback异步回调。
 
 > [!NOTE]
 > 从 API version 7开始支持，从API version 9开始废弃。
@@ -164,10 +182,11 @@ getColors(wallpaperType: WallpaperType, callback: AsyncCallback<Array&lt;RgbaCol
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | wallpaperType | WallpaperType | 是 | 壁纸类型。 |
-| callback | AsyncCallback<Array&lt;RgbaColor&gt;> | 是 | 回调函数，返回壁纸的主要颜色信息。 |
+| callback | AsyncCallback<Array&lt;RgbaColor&gt;> | 是 | 回调函数。当获取壁纸主要颜色信息成功，err为undefined，data为获取到的壁纸主要颜色信息；否则为错误对象。 |
 
 
 **示例：**
@@ -177,7 +196,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 wallpaper.getColors(wallpaper.WallpaperType.WALLPAPER_SYSTEM, (error: BusinessError, data: Array<wallpaper.RgbaColor>) => {
     if (error) {
-        console.error(`failed to getColors because: ${JSON.stringify(error)}`);
+        console.error(`Failed to getColors. Code: ${error.code}, message: ${error.message}`);
         return;
     }
     console.info(`success to getColors: ${JSON.stringify(data)}`);
@@ -186,13 +205,14 @@ wallpaper.getColors(wallpaper.WallpaperType.WALLPAPER_SYSTEM, (error: BusinessEr
 
 
 
-#### wallpaper.getColors(deprecated)
+## wallpaper.getColors(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 getColors(wallpaperType: WallpaperType): Promise<Array&lt;RgbaColor&gt;>
 
-获取指定类型壁纸的主要颜色信息。
+获取指定类型壁纸的主要颜色信息。使用Promise异步回调。
 
 > [!NOTE]
 > 从 API version 7开始支持，从API version 9开始废弃。
@@ -202,6 +222,7 @@ getColors(wallpaperType: WallpaperType): Promise<Array&lt;RgbaColor&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | wallpaperType | WallpaperType | 是 | 壁纸类型。 |
@@ -209,9 +230,10 @@ getColors(wallpaperType: WallpaperType): Promise<Array&lt;RgbaColor&gt;>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise<Array&lt;RgbaColor&gt;> | 返回壁纸的主要颜色信息。 |
+| Promise<Array&lt;RgbaColor&gt;> | Promise对象，返回壁纸的主要颜色信息。 |
 
 
 **示例：**
@@ -222,19 +244,20 @@ import { BusinessError } from '@kit.BasicServicesKit';
 wallpaper.getColors(wallpaper.WallpaperType.WALLPAPER_SYSTEM).then((data: Array<wallpaper.RgbaColor>) => {
     console.info(`success to getColors: ${JSON.stringify(data)}`);
   }).catch((error: BusinessError) => {
-    console.error(`failed to getColors because: ${JSON.stringify(error)}`);
+    console.error(`Failed to getColors. Code: ${error.code}, message: ${error.message}`);
 });
 ```
 
 
 
-#### wallpaper.getId(deprecated)
+## wallpaper.getId(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 getId(wallpaperType: WallpaperType, callback: AsyncCallback&lt;number&gt;): void
 
-获取指定类型壁纸的ID。
+获取指定类型壁纸的ID。使用callback异步回调。
 
 > [!NOTE]
 > 从 API version 7开始支持，从API version 9开始废弃。
@@ -244,10 +267,11 @@ getId(wallpaperType: WallpaperType, callback: AsyncCallback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | wallpaperType | WallpaperType | 是 | 壁纸类型。 |
-| callback | AsyncCallback&lt;number&gt; | 是 | 回调函数，返回壁纸的ID。如果配置了指定类型的壁纸就返回一个大于等于0的数，否则返回-1。取值范围是-1到（2^31-1）。 |
+| callback | AsyncCallback&lt;number&gt; | 是 | 回调函数。当获取壁纸ID成功，err为undefined，data为获取到的壁纸ID；否则为错误对象。 |
 
 
 **示例：**
@@ -255,9 +279,9 @@ getId(wallpaperType: WallpaperType, callback: AsyncCallback&lt;number&gt;): void
 ```json
 import { BusinessError } from '@kit.BasicServicesKit';
 
-wallpaper.getId(wallpaper.WallpaperType.WALLPAPER_SYSTEM, (error: BusinessError, data: Number) => {
+wallpaper.getId(wallpaper.WallpaperType.WALLPAPER_SYSTEM, (error: BusinessError, data: number) => {
     if (error) {
-        console.error(`failed to getId because: ${JSON.stringify(error)}`);
+        console.error(`Failed to getId. Code: ${error.code}, message: ${error.message}`);
         return;
     }
     console.info(`success to getId: ${JSON.stringify(data)}`);
@@ -266,13 +290,14 @@ wallpaper.getId(wallpaper.WallpaperType.WALLPAPER_SYSTEM, (error: BusinessError,
 
 
 
-#### wallpaper.getId(deprecated)
+## wallpaper.getId(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 getId(wallpaperType: WallpaperType): Promise&lt;number&gt;
 
-获取指定类型壁纸的ID。
+获取指定类型壁纸的ID。使用Promise异步回调。
 
 > [!NOTE]
 > 从 API version 7开始支持，从API version 9开始废弃。
@@ -281,6 +306,7 @@ getId(wallpaperType: WallpaperType): Promise&lt;number&gt;
 **系统能力**: SystemCapability.MiscServices.Wallpaper
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -289,9 +315,10 @@ getId(wallpaperType: WallpaperType): Promise&lt;number&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;number&gt; | 壁纸的ID。如果配置了这种壁纸类型的壁纸就返回一个大于等于0的数，否则返回-1。取值范围是-1到（2^31-1）。 |
+| Promise&lt;number&gt; | Promise对象，返回壁纸的ID。如果配置了这种壁纸类型的壁纸就返回一个大于等于0的数，否则返回-1。取值范围是-1到（2^31-1）。 |
 
 
 **示例：**
@@ -299,22 +326,23 @@ getId(wallpaperType: WallpaperType): Promise&lt;number&gt;
 ```json
 import { BusinessError } from '@kit.BasicServicesKit';
 
-wallpaper.getId(wallpaper.WallpaperType.WALLPAPER_SYSTEM).then((data: Number) => {
+wallpaper.getId(wallpaper.WallpaperType.WALLPAPER_SYSTEM).then((data: number) => {
     console.info(`success to getId: ${JSON.stringify(data)}`);
   }).catch((error: BusinessError) => {
-    console.error(`failed to getId because: ${JSON.stringify(error)}`);
+    console.error(`Failed to getId. Code: ${error.code}, message: ${error.message}`);
 });
 ```
 
 
 
-#### wallpaper.getMinHeight(deprecated)
+## wallpaper.getMinHeight(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 getMinHeight(callback: AsyncCallback&lt;number&gt;): void
 
-获取壁纸的最小高度值。
+获取壁纸的最小高度值。使用callback异步回调。
 
 > [!NOTE]
 > 从 API version 7开始支持，从API version 9开始废弃。
@@ -324,9 +352,10 @@ getMinHeight(callback: AsyncCallback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback&lt;number&gt; | 是 | 回调函数，返回壁纸的最小高度值，单位是像素。如果返回值等于0，说明没有设置壁纸，调用者应该使用默认显示的高度值代替。 |
+| callback | AsyncCallback&lt;number&gt; | 是 | 回调函数。当获取壁纸的最小高度值（单位为像素）成功，err为undefined，data为获取到的壁纸的最小高度值；否则为错误对象。 |
 
 
 **示例：**
@@ -334,9 +363,9 @@ getMinHeight(callback: AsyncCallback&lt;number&gt;): void
 ```json
 import { BusinessError } from '@kit.BasicServicesKit';
 
-wallpaper.getMinHeight((error: BusinessError, data: Number) => {
+wallpaper.getMinHeight((error: BusinessError, data: number) => {
     if (error) {
-        console.error(`failed to getMinHeight because: ${JSON.stringify(error)}`);
+        console.error(`Failed to getMinHeight. Code: ${error.code}, message: ${error.message}`);
         return;
     }
     console.info(`success to getMinHeight: ${JSON.stringify(data)}`);
@@ -345,13 +374,14 @@ wallpaper.getMinHeight((error: BusinessError, data: Number) => {
 
 
 
-#### wallpaper.getMinHeight(deprecated)
+## wallpaper.getMinHeight(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 getMinHeight(): Promise&lt;number&gt;
 
-获取壁纸的最小高度值。
+获取壁纸的最小高度值。使用Promise异步回调。
 
 > [!NOTE]
 > 从 API version 7开始支持，从API version 9开始废弃。
@@ -361,9 +391,10 @@ getMinHeight(): Promise&lt;number&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;number&gt; | 返回壁纸的最小高度值，单位是像素。如果返回值等于0，说明没有设置壁纸，调用者应该使用默认显示的高度值代替。 |
+| Promise&lt;number&gt; | Promise对象，返回壁纸的最小高度值，单位为像素。如果返回值等于0，说明没有设置壁纸，调用者应该使用默认显示的高度值代替。 |
 
 
 **示例：**
@@ -371,22 +402,23 @@ getMinHeight(): Promise&lt;number&gt;
 ```json
 import { BusinessError } from '@kit.BasicServicesKit';
 
-wallpaper.getMinHeight().then((data: Number) => {
+wallpaper.getMinHeight().then((data: number) => {
     console.info(`success to getMinHeight: ${JSON.stringify(data)}`);
 }).catch((error: BusinessError) => {
-    console.error(`failed to getMinHeight because: ${JSON.stringify(error)}`);
+    console.error(`Failed to getMinHeight. Code: ${error.code}, message: ${error.message}`);
 });
 ```
 
 
 
-#### wallpaper.getMinWidth(deprecated)
+## wallpaper.getMinWidth(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 getMinWidth(callback: AsyncCallback&lt;number&gt;): void
 
-获取壁纸的最小宽度值。
+获取壁纸的最小宽度值。使用callback异步回调。
 
 > [!NOTE]
 > 从 API version 7开始支持，从API version 9开始废弃。
@@ -396,9 +428,10 @@ getMinWidth(callback: AsyncCallback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback&lt;number&gt; | 是 | 回调函数，壁纸的最小宽度值，单位是像素。如果返回值等于0，说明没有设置壁纸，调用者应该使用默认显示的宽度值代替。 |
+| callback | AsyncCallback&lt;number&gt; | 是 | 回调函数。当获取壁纸的最小宽度值（单位为像素）成功，err为undefined，data为获取到的壁纸的最小宽度值；否则为错误对象。 |
 
 
 **示例：**
@@ -406,9 +439,9 @@ getMinWidth(callback: AsyncCallback&lt;number&gt;): void
 ```json
 import { BusinessError } from '@kit.BasicServicesKit';
 
-wallpaper.getMinWidth((error: BusinessError, data: Number) => {
+wallpaper.getMinWidth((error: BusinessError, data: number) => {
     if (error) {
-        console.error(`failed to getMinWidth because: ${JSON.stringify(error)}`);
+        console.error(`Failed to getMinWidth. Code: ${error.code}, message: ${error.message}`);
         return;
     }
     console.info(`success to getMinWidth: ${JSON.stringify(data)}`);
@@ -417,13 +450,14 @@ wallpaper.getMinWidth((error: BusinessError, data: Number) => {
 
 
 
-#### wallpaper.getMinWidth(deprecated)
+## wallpaper.getMinWidth(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 getMinWidth(): Promise&lt;number&gt;
 
-获取壁纸的最小宽度值。
+获取壁纸的最小宽度值。使用Promise异步回调。
 
 > [!NOTE]
 > 从 API version 7开始支持，从API version 9开始废弃。
@@ -433,9 +467,10 @@ getMinWidth(): Promise&lt;number&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;number&gt; | 壁纸的最小宽度值，单位是像素。如果返回值等于0，说明没有设置壁纸，调用者应该使用默认显示的宽度值代替。 |
+| Promise&lt;number&gt; | Promise对象，返回壁纸的最小宽度值（单位为像素）。如果返回值等于0，说明没有设置壁纸，调用者应该使用默认显示的宽度值代替。 |
 
 
 **示例：**
@@ -443,22 +478,23 @@ getMinWidth(): Promise&lt;number&gt;
 ```json
 import { BusinessError } from '@kit.BasicServicesKit';
 
-wallpaper.getMinWidth().then((data: Number) => {
+wallpaper.getMinWidth().then((data: number) => {
     console.info(`success to getMinWidth: ${JSON.stringify(data)}`);
   }).catch((error: BusinessError) => {
-    console.error(`failed to getMinWidth because: ${JSON.stringify(error)}`);
+    console.error(`Failed to getMinWidth. Code: ${error.code}, message: ${error.message}`);
 });
 ```
 
 
 
-#### wallpaper.getFile(deprecated)
+## wallpaper.getFile(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 getFile(wallpaperType: WallpaperType, callback: AsyncCallback&lt;number&gt;): void
 
-获取指定类型的壁纸文件。
+获取指定类型的壁纸文件。使用callback异步回调。
 
 > [!NOTE]
 > 从 API version 8开始支持，从API version 9开始废弃。
@@ -470,10 +506,11 @@ getFile(wallpaperType: WallpaperType, callback: AsyncCallback&lt;number&gt;): vo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | wallpaperType | WallpaperType | 是 | 壁纸类型。 |
-| callback | AsyncCallback&lt;number&gt; | 是 | 回调函数，调用成功则返回壁纸文件描述符ID，调用失败则返回error信息。 |
+| callback | AsyncCallback&lt;number&gt; | 是 | 回调函数。当获取壁纸文件成功，err为undefined，data为获取到的壁纸文件描述符ID；否则为错误对象。 |
 
 
 **示例：**
@@ -483,7 +520,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 wallpaper.getFile(wallpaper.WallpaperType.WALLPAPER_SYSTEM, (error: BusinessError, data: number) => {
     if (error) {
-        console.error(`failed to getFile because: ${JSON.stringify(error)}`);
+        console.error(`Failed to getFile. Code: ${error.code}, message: ${error.message}`);
         return;
     }
     console.info(`success to getFile: ${JSON.stringify(data)}`);
@@ -492,13 +529,14 @@ wallpaper.getFile(wallpaper.WallpaperType.WALLPAPER_SYSTEM, (error: BusinessErro
 
 
 
-#### wallpaper.getFile(deprecated)
+## wallpaper.getFile(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 getFile(wallpaperType: WallpaperType): Promise&lt;number&gt;
 
-获取指定类型的壁纸文件。
+获取指定类型的壁纸文件。使用Promise异步回调。
 
 > [!NOTE]
 > 从 API version 8开始支持，从API version 9开始废弃。
@@ -510,6 +548,7 @@ getFile(wallpaperType: WallpaperType): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | wallpaperType | WallpaperType | 是 | 壁纸类型。 |
@@ -517,9 +556,10 @@ getFile(wallpaperType: WallpaperType): Promise&lt;number&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;number&gt; | 调用成功则返回壁纸文件描述符ID，调用失败则返回error信息。 |
+| Promise&lt;number&gt; | Promise对象，返回壁纸文件描述符ID。 |
 
 
 **示例：**
@@ -530,19 +570,20 @@ import { BusinessError } from '@kit.BasicServicesKit';
 wallpaper.getFile(wallpaper.WallpaperType.WALLPAPER_SYSTEM).then((data: number) => {
     console.info(`success to getFile: ${JSON.stringify(data)}`);
   }).catch((error: BusinessError) => {
-    console.error(`failed to getFile because: ${JSON.stringify(error)}`);
+    console.error(`Failed to getFile. Code: ${error.code}, message: ${error.message}`);
 });
 ```
 
 
 
-#### wallpaper.isChangePermitted(deprecated)
+## wallpaper.isChangePermitted(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 isChangePermitted(callback: AsyncCallback&lt;boolean&gt;): void
 
-是否允许应用改变当前用户的壁纸。
+是否允许应用改变当前用户的壁纸。使用callback异步回调。
 
 > [!NOTE]
 > 从 API version 7开始支持，从API version 9开始废弃。
@@ -552,9 +593,10 @@ isChangePermitted(callback: AsyncCallback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback&lt;boolean&gt; | 是 | 回调函数，返回是否允许应用改变当前用户的壁纸。如果允许返回true，否则返回false。 |
+| callback | AsyncCallback&lt;boolean&gt; | 是 | 回调函数。返回true表示允许应用改变当前用户的壁纸；返回false表示不允许。 |
 
 
 **示例：**
@@ -562,9 +604,9 @@ isChangePermitted(callback: AsyncCallback&lt;boolean&gt;): void
 ```json
 import { BusinessError } from '@kit.BasicServicesKit';
 
-wallpaper.isChangePermitted((error: BusinessError, data: Boolean) => {
+wallpaper.isChangePermitted((error: BusinessError, data: boolean) => {
     if (error) {
-        console.error(`failed to isChangePermitted because: ${JSON.stringify(error)}`);
+        console.error(`Failed to isChangePermitted. Code: ${error.code}, message: ${error.message}`);
         return;
     }
     console.info(`success to isChangePermitted: ${JSON.stringify(data)}`);
@@ -573,13 +615,14 @@ wallpaper.isChangePermitted((error: BusinessError, data: Boolean) => {
 
 
 
-#### wallpaper.isChangePermitted(deprecated)
+## wallpaper.isChangePermitted(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 isChangePermitted(): Promise&lt;boolean&gt;
 
-是否允许应用改变当前用户的壁纸。
+是否允许应用改变当前用户的壁纸。使用Promise异步回调。
 
 > [!NOTE]
 > 从 API version 7开始支持，从API version 9开始废弃。
@@ -589,9 +632,10 @@ isChangePermitted(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;boolean&gt; | 返回是否允许应用改变当前用户的壁纸。如果允许返回true，否则返回false。 |
+| Promise&lt;boolean&gt; | Promise对象。返回true表示允许应用改变当前用户的壁纸；返回false表示不允许。 |
 
 
 **示例：**
@@ -599,22 +643,23 @@ isChangePermitted(): Promise&lt;boolean&gt;
 ```json
 import { BusinessError } from '@kit.BasicServicesKit';
 
-wallpaper.isChangePermitted().then((data: Boolean) => {
+wallpaper.isChangePermitted().then((data: boolean) => {
     console.info(`success to isChangePermitted: ${JSON.stringify(data)}`);
 }).catch((error: BusinessError) => {
-    console.error(`failed to isChangePermitted because: ${JSON.stringify(error)}`);
+    console.error(`Failed to isChangePermitted. Code: ${error.code}, message: ${error.message}`);
 });
 ```
 
 
 
-#### wallpaper.isOperationAllowed(deprecated)
+## wallpaper.isOperationAllowed(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 isOperationAllowed(callback: AsyncCallback&lt;boolean&gt;): void
 
-是否允许用户设置壁纸。
+是否允许用户设置壁纸。使用callback异步回调。
 
 > [!NOTE]
 > 从 API version 7开始支持，从API version 9开始废弃。
@@ -624,9 +669,10 @@ isOperationAllowed(callback: AsyncCallback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback&lt;boolean&gt; | 是 | 回调函数，返回是否允许用户设置壁纸。如果允许返回true，否则返回false。 |
+| callback | AsyncCallback&lt;boolean&gt; | 是 | 回调函数。返回true表示允许用户设置壁纸；返回false表示不允许。 |
 
 
 **示例：**
@@ -634,9 +680,9 @@ isOperationAllowed(callback: AsyncCallback&lt;boolean&gt;): void
 ```json
 import { BusinessError } from '@kit.BasicServicesKit';
 
-wallpaper.isOperationAllowed((error: BusinessError, data: Boolean) => {
+wallpaper.isOperationAllowed((error: BusinessError, data: boolean) => {
     if (error) {
-        console.error(`failed to isOperationAllowed because: ${JSON.stringify(error)}`);
+        console.error(`Failed to isOperationAllowed. Code: ${error.code}, message: ${error.message}`);
         return;
     }
     console.info(`success to isOperationAllowed: ${JSON.stringify(data)}`);
@@ -645,13 +691,14 @@ wallpaper.isOperationAllowed((error: BusinessError, data: Boolean) => {
 
 
 
-#### wallpaper.isOperationAllowed(deprecated)
+## wallpaper.isOperationAllowed(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 isOperationAllowed(): Promise&lt;boolean&gt;
 
-是否允许用户设置壁纸。
+是否允许用户设置壁纸。使用Promise异步回调。
 
 > [!NOTE]
 > 从 API version 7开始支持，从API version 9开始废弃。
@@ -661,9 +708,10 @@ isOperationAllowed(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;boolean&gt; | 异步回调函数，返回是否允许用户设置壁纸。如果允许返回true，否则返回false。 |
+| Promise&lt;boolean&gt; | Promise对象。返回true表示允许用户设置壁纸；返回false表示不允许。 |
 
 
 **示例：**
@@ -671,22 +719,23 @@ isOperationAllowed(): Promise&lt;boolean&gt;
 ```json
 import { BusinessError } from '@kit.BasicServicesKit';
 
-wallpaper.isOperationAllowed().then((data: Boolean) => {
+wallpaper.isOperationAllowed().then((data: boolean) => {
     console.info(`success to isOperationAllowed: ${JSON.stringify(data)}`);
   }).catch((error: BusinessError) => {
-    console.error(`failed to isOperationAllowed because: ${JSON.stringify(error)}`);
+    console.error(`Failed to isOperationAllowed. Code: ${error.code}, message: ${error.message}`);
 });
 ```
 
 
 
-#### wallpaper.reset(deprecated)
+## wallpaper.reset(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 reset(wallpaperType: WallpaperType, callback: AsyncCallback&lt;void&gt;): void
 
-移除指定类型的壁纸，恢复为默认显示的壁纸。
+移除指定类型的壁纸，恢复为默认显示的壁纸。使用callback异步回调。
 
 > [!NOTE]
 > 从 API version 7开始支持，从API version 9开始废弃。
@@ -698,20 +747,21 @@ reset(wallpaperType: WallpaperType, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | wallpaperType | WallpaperType | 是 | 壁纸类型。 |
-| callback | AsyncCallback&lt;void&gt; | 是 | 回调函数，移除壁纸成功，error为undefined，否则返回error信息。 |
+| callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当移除壁纸成功，err为undefined，否则为错误对象。 |
 
 
 **示例：**
 
-```json
+```text
 import { BusinessError } from '@kit.BasicServicesKit';
 
 wallpaper.reset(wallpaper.WallpaperType.WALLPAPER_SYSTEM, (error: BusinessError) => {
     if (error) {
-        console.error(`failed to reset because: ${JSON.stringify(error)}`);
+        console.error(`Failed to reset. Code: ${error.code}, message: ${error.message}`);
         return;
     }
     console.info(`success to reset.`);
@@ -720,13 +770,14 @@ wallpaper.reset(wallpaper.WallpaperType.WALLPAPER_SYSTEM, (error: BusinessError)
 
 
 
-#### wallpaper.reset(deprecated)
+## wallpaper.reset(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 reset(wallpaperType: WallpaperType): Promise&lt;void&gt;
 
-移除指定类型的壁纸，恢复为默认显示的壁纸。
+移除指定类型的壁纸，恢复为默认显示的壁纸。使用Promise异步回调。
 
 > [!NOTE]
 > 从 API version 7开始支持，从API version 9开始废弃。
@@ -737,6 +788,7 @@ reset(wallpaperType: WallpaperType): Promise&lt;void&gt;
 **系统能力**: SystemCapability.MiscServices.Wallpaper
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -745,32 +797,34 @@ reset(wallpaperType: WallpaperType): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | 无返回结果的Promise对象。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **示例：**
 
-```json
+```text
 import { BusinessError } from '@kit.BasicServicesKit';
 
 wallpaper.reset(wallpaper.WallpaperType.WALLPAPER_SYSTEM).then(() => {
     console.info(`success to reset.`);
 }).catch((error: BusinessError) => {
-    console.error(`failed to reset because: ${JSON.stringify(error)}`);
+    console.error(`Failed to reset. Code: ${error.code}, message: ${error.message}`);
 });
 ```
 
 
 
-#### wallpaper.setWallpaper(deprecated)
+## wallpaper.setWallpaper(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 setWallpaper(source: string | image.PixelMap, wallpaperType: WallpaperType, callback: AsyncCallback&lt;void&gt;): void
 
-将指定资源设置为指定类型的壁纸。
+将指定资源设置为指定类型的壁纸。使用callback异步回调。
 
 > [!NOTE]
 > 从 API version 7开始支持，从API version 9开始废弃。
@@ -782,31 +836,32 @@ setWallpaper(source: string | image.PixelMap, wallpaperType: WallpaperType, call
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | source | string \| image.PixelMap | 是 | JPEG或PNG文件的Uri路径，或者PNG格式文件的位图。 |
 | wallpaperType | WallpaperType | 是 | 壁纸类型。 |
-| callback | AsyncCallback&lt;void&gt; | 是 | 回调函数，设置壁纸成功，error为undefined，否则返回error信息。 |
+| callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当设置壁纸成功，err为undefined，否则为错误对象。 |
 
 
 **示例：**
 
-```json
+```text
 import { BusinessError } from '@kit.BasicServicesKit';
 import { image } from '@kit.ImageKit';
 
 // source类型为string
-let wallpaperPath = "/data/storage/el2/base/haps/entry/files/js.jpeg";
+let wallpaperPath = '/data/storage/el2/base/haps/entry/files/js.jpeg';
 wallpaper.setWallpaper(wallpaperPath, wallpaper.WallpaperType.WALLPAPER_SYSTEM, (error: BusinessError) => {
     if (error) {
-        console.error(`failed to setWallpaper because: ${JSON.stringify(error)}`);
-       return;
-       }
+        console.error(`Failed to setWallpaper. Code: ${error.code}, message: ${error.message}`);
+        return;
+    }
     console.info(`success to setWallpaper.`);
 });
 
 // source类型为image.PixelMap
-let imageSource = image.createImageSource("file://" + wallpaperPath);
+let imageSource = image.createImageSource('file://' + wallpaperPath);
 let opts: image.DecodingOptions = {
     desiredSize: {
         height: 3648,
@@ -816,25 +871,26 @@ let opts: image.DecodingOptions = {
 imageSource.createPixelMap(opts).then((pixelMap: image.PixelMap) => {
     wallpaper.setWallpaper(pixelMap, wallpaper.WallpaperType.WALLPAPER_SYSTEM, (error: BusinessError) => {
         if (error) {
-            console.error(`failed to setWallpaper because: ${JSON.stringify(error)}`);
+            console.error(`Failed to setWallpaper. Code: ${error.code}, message: ${error.message}`);
             return;
         }
         console.info(`success to setWallpaper.`);
     });
 }).catch((error: BusinessError) => {
-    console.error(`failed to createPixelMap because: ${JSON.stringify(error)}`);
+    console.error(`Failed to createPixelMap. Code: ${error.code}, message: ${error.message}`);
 });
 ```
 
 
 
-#### wallpaper.setWallpaper(deprecated)
+## wallpaper.setWallpaper(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 setWallpaper(source: string | image.PixelMap, wallpaperType: WallpaperType): Promise&lt;void&gt;
 
-将指定资源设置为指定类型的壁纸。
+将指定资源设置为指定类型的壁纸。使用Promise异步回调。
 
 > [!NOTE]
 > 从 API version 7开始支持，从API version 9开始废弃。
@@ -846,6 +902,7 @@ setWallpaper(source: string | image.PixelMap, wallpaperType: WallpaperType): Pro
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | source | string \| image.PixelMap | 是 | JPEG或PNG文件的Uri路径，或者PNG格式文件的位图。 |
@@ -854,27 +911,28 @@ setWallpaper(source: string | image.PixelMap, wallpaperType: WallpaperType): Pro
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | 无返回结果的Promise对象。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **示例：**
 
-```json
+```text
 import { BusinessError } from '@kit.BasicServicesKit';
 import { image } from '@kit.ImageKit';
 
 // source类型为string
-let wallpaperPath = "/data/storage/el2/base/haps/entry/files/js.jpeg";
+let wallpaperPath = '/data/storage/el2/base/haps/entry/files/js.jpeg';
 wallpaper.setWallpaper(wallpaperPath, wallpaper.WallpaperType.WALLPAPER_SYSTEM).then(() => {
     console.info(`success to setWallpaper.`);
   }).catch((error: BusinessError) => {
-    console.error(`failed to setWallpaper because: ${JSON.stringify(error)}`);
+    console.error(`Failed to setWallpaper. Code: ${error.code}, message: ${error.message}`);
 });
   
 // source类型为image.PixelMap
-let imageSource = image.createImageSource("file://" + wallpaperPath);
+let imageSource = image.createImageSource('file://' + wallpaperPath);
 let opts: image.DecodingOptions = {
     desiredSize: {
         height: 3648,
@@ -885,9 +943,9 @@ imageSource.createPixelMap(opts).then((pixelMap: image.PixelMap) => {
     wallpaper.setWallpaper(pixelMap, wallpaper.WallpaperType.WALLPAPER_SYSTEM).then(() => {
         console.info(`success to setWallpaper.`);
     }).catch((error: BusinessError) => {
-        console.error(`failed to setWallpaper because: ${JSON.stringify(error)}`);
+        console.error(`Failed to setWallpaper. Code: ${error.code}, message: ${error.message}`);
     });
   }).catch((error: BusinessError) => {
-    console.error(`failed to createPixelMap because: ${JSON.stringify(error)}`);
+    console.error(`Failed to createPixelMap. Code: ${error.code}, message: ${error.message}`);
 });
 ```

@@ -1,6 +1,6 @@
 # @ohos.app.ability.FenceExtensionAbility (FenceExtensionAbility)
 
-更新时间：2026-03-09 02:50:43
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-fenceextensionability
 **支持设备：** Phone | Tablet
@@ -12,7 +12,8 @@ FenceExtensionAbility为开发者提供的地理围栏相关的能力，继承�
 
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | Tablet
 
@@ -22,7 +23,17 @@ import { FenceExtensionAbility } from '@kit.LocationKit';
  
   
 
-#### FenceExtensionAbility
+## 约束限制
+
+
+**支持设备：** Phone | Tablet
+
+为保障系统安全性和稳定性，防止FenceExtensionAbility滥用系统资源，系统对其能力进行管控，不支持部分模块的引用，详情请参考[附录](#附录)。
+ 
+  
+
+## FenceExtensionAbility
+
 
 **支持设备：** Phone | Tablet
 
@@ -30,12 +41,16 @@ import { FenceExtensionAbility } from '@kit.LocationKit';
  
   
 
-#### 属性
+### 属性
+
 
 **支持设备：** Phone | Tablet
 
 **系统能力**：SystemCapability.Location.Location.Geofence
+ 
+**模型约束**：此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | context | FenceExtensionContext | 否 | 否 | 围栏服务上下文。 |
@@ -43,18 +58,22 @@ import { FenceExtensionAbility } from '@kit.LocationKit';
  
   
 
-#### onFenceStatusChange
+### onFenceStatusChange
+
 
 **支持设备：** Phone | Tablet
 
-onFenceStatusChange(transition: geoLocationManager.GeofenceTransition, additions: Record<string, string>): void;
+onFenceStatusChange(transition: geoLocationManager.GeofenceTransition, additions: Record<string, string>): void
  
 接收系统通知的地理围栏事件，根据围栏事件类型和数据进行相应处理。
  
 **系统能力**：SystemCapability.Location.Location.Geofence
  
+**模型约束**：此接口仅可在Stage模型下使用。
+ 
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | transition | geoLocationManager.GeofenceTransition | 是 | 地理围栏事件信息；包含地理围栏ID和具体的地理围栏事件。 |
@@ -81,8 +100,8 @@ export class MyFenceExtensionAbility extends FenceExtensionAbility {
           abilityName: 'EntryAbility',
           parameters:
           {
-            "geofenceId": transition?.geofenceId,
-            "transitionEvent": transition?.transitionEvent,
+            'geofenceId': transition?.geofenceId,
+            'transitionEvent': transition?.transitionEvent,
           }
         } as Want
       ],
@@ -110,15 +129,18 @@ export class MyFenceExtensionAbility extends FenceExtensionAbility {
  
   
 
-#### onDestroy
+### onDestroy
+
 
 **支持设备：** Phone | Tablet
 
-onDestroy(): void;
+onDestroy(): void
  
 接收FenceExtensionAbility的销毁事件并处理，会在FenceExtensionAbility销毁前回调。
  
 **系统能力**：SystemCapability.Location.Location.Geofence
+ 
+**模型约束**：此接口仅可在Stage模型下使用。
  
 **示例：**
  
@@ -132,3 +154,55 @@ class MyFenceExtensionAbility extends FenceExtensionAbility {
   }
 }
 ```
+ 
+  
+
+## 附录
+
+
+**支持设备：** Phone | Tablet
+
+FenceExtensionAbility不支持以下模块的引用。
+  
+
+| Kit | 模块 |
+| --- | --- |
+| Ability Kit | @ohos.ability.featureAbility (FeatureAbility模块) |
+| Ability Kit | @ohos.ability.particleAbility (ParticleAbility模块) |
+| Ability Kit | @ohos.bundle.launcherBundleManager (launcherBundleManager模块) |
+| Ability Kit | @ohos.continuation.continuationManager (流转/协同管理) |
+| Ability Kit | UIAbilityContext |
+| AppGallery Kit | privacyManager（隐私管理服务） |
+| ArkUI | @ohos.window (窗口) |
+| Audio Kit | @ohos.multimedia.audio (音频管理) |
+| AVSession Kit | @ohos.multimedia.avsession (媒体会话管理) |
+| Background Tasks Kit | @ohos.resourceschedule.backgroundTaskManager (后台任务管理) |
+| Background Tasks Kit | @ohos.reminderAgent (后台代理提醒) |
+| Background Tasks Kit | @ohos.reminderAgentManager (后台代理提醒) |
+| Background Tasks Kit | @ohos.resourceschedule.backgroundTaskManager (后台任务管理) |
+| Basic Services Kit | @ohos.account.appAccount (应用账号管理) |
+| Basic Services Kit | @ohos.account.distributedAccount (分布式账号管理) |
+| Basic Services Kit | @ohos.account.osAccount (系统账号管理) |
+| Basic Services Kit | @ohos.deviceInfo (设备信息) |
+| Basic Services Kit | @ohos.request (上传下载) |
+| Basic Services Kit | @ohos.wallpaper (壁纸) |
+| Camera Kit | @ohos.multimedia.camera (相机管理) |
+| Contacts Kit | @ohos.connectedTag (有源标签) |
+| Contacts Kit | @ohos.contact (联系人) |
+| Connectivity Kit | @ohos.nfc.cardEmulation (标准NFC-cardEmulation) |
+| Connectivity Kit | @ohos.nfc.controller (标准NFC) |
+| Connectivity Kit | @ohos.nfc.tag (标准NFC-Tag) |
+| Connectivity Kit | nfctech (标准NFC-Tag Nfc 技术) |
+| Connectivity Kit | tagSession (标准NFC-Tag TagSession) |
+| Form Kit | @ohos.application.formError (formError) |
+| MDM Kit | @ohos.enterprise.adminManager（admin权限管理） |
+| Media Kit | @ohos.multimedia.media (媒体服务) |
+| Performance Analysis Kit | @ohos.hidebug (Debug调试) |
+| Sensor Service Kit | @ohos.vibrator (振动) |
+| Telephony Kit | @ohos.telephony.call (拨打电话) |
+| Telephony Kit | @ohos.telephony.data (蜂窝数据) |
+| Telephony Kit | @ohos.telephony.observer (observer) |
+| Telephony Kit | @ohos.telephony.radio (网络搜索) |
+| Telephony Kit | @ohos.telephony.sim (SIM卡管理) |
+| Telephony Kit | @ohos.telephony.sms (短信服务) |
+| User Authentication Kit | @ohos.userIAM.userAuth (用户认证) |

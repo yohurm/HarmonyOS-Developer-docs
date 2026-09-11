@@ -1,6 +1,6 @@
 # @ohos.security.CryptoExtensionAbility (密钥扩展能力)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoextensionability
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -24,7 +24,8 @@ init操作，初始化密钥会话，并返回会话句柄信息。
 
 
 
-#### 约束限制
+## 约束限制
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -32,7 +33,8 @@ CryptoExtensionAbility作为密钥管理扩展能力，为减少安全攻击面�
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -42,7 +44,8 @@ import { huks, huksExternalCrypto, CryptoExtensionAbility } from '@kit.Universal
 
 
 
-#### HuksCryptoExtensionResultCode
+## HuksCryptoExtensionResultCode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -51,6 +54,7 @@ import { huks, huksExternalCrypto, CryptoExtensionAbility } from '@kit.Universal
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Security.Huks.CryptoExtension
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -66,13 +70,15 @@ import { huks, huksExternalCrypto, CryptoExtensionAbility } from '@kit.Universal
 
 
 
-#### HuksCryptoExtensionCertInfo
+## HuksCryptoExtensionCertInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 [HuksCryptoExtensionResult](#hukscryptoextensionresult)中的certs数组中的元素。
 
 **系统能力：** SystemCapability.Security.Huks.CryptoExtension
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -83,13 +89,15 @@ import { huks, huksExternalCrypto, CryptoExtensionAbility } from '@kit.Universal
 
 
 
-#### HuksCryptoExtensionResult
+## HuksCryptoExtensionResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 接口返回值的通用类型。
 
 **系统能力：** SystemCapability.Security.Huks.CryptoExtension
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -106,7 +114,8 @@ import { huks, huksExternalCrypto, CryptoExtensionAbility } from '@kit.Universal
 
 
 
-#### HuksCryptoExtensionParam
+## HuksCryptoExtensionParam
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -118,6 +127,7 @@ import { huks, huksExternalCrypto, CryptoExtensionAbility } from '@kit.Universal
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | tag | huksExternalCrypto.HuksExternalCryptoTag \| huks.HuksTag \| number | 否 | 否 | 标签。 |
@@ -126,7 +136,8 @@ import { huks, huksExternalCrypto, CryptoExtensionAbility } from '@kit.Universal
 
 
 
-#### HuksCryptoExtensionParams
+## HuksCryptoExtensionParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -138,6 +149,7 @@ import { huks, huksExternalCrypto, CryptoExtensionAbility } from '@kit.Universal
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | properties | HuksCryptoExtensionParam[] | 否 | 否 | 属性，用于存储HuksCryptoExtensionParam的数组。默认为undefined。 |
@@ -146,7 +158,8 @@ import { huks, huksExternalCrypto, CryptoExtensionAbility } from '@kit.Universal
 
 
 
-#### CryptoExtensionAbility
+## CryptoExtensionAbility
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -158,7 +171,8 @@ CryptoExtensionAbility可以隔离不同的UKey驱动厂商实现的差异。
 
 
 
-#### onOpenResource
+### onOpenResource
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -170,6 +184,7 @@ onOpenResource(resourceId: string, params: Array<huksExternalCrypto.HuksExternal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resourceId | string | 是 | 资源ID。 |
@@ -177,6 +192,7 @@ onOpenResource(resourceId: string, params: Array<huksExternalCrypto.HuksExternal
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -204,7 +220,8 @@ export default class CryptoExtension extends CryptoExtensionAbility {
 
 
 
-#### onCloseResource
+### onCloseResource
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -216,6 +233,7 @@ onCloseResource(handle: string, params: Array<huksExternalCrypto.HuksExternalCry
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handle | string | 是 | 会话句柄。 |
@@ -223,6 +241,7 @@ onCloseResource(handle: string, params: Array<huksExternalCrypto.HuksExternalCry
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -249,7 +268,8 @@ export default class CryptoExtension extends CryptoExtensionAbility {
 
 
 
-#### onGetProperty
+### onGetProperty
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -261,6 +281,7 @@ onGetProperty(handle: string, propertyId: string, params: Array<huksExternalCryp
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handle | string | 是 | 资源句柄。 |
@@ -269,6 +290,7 @@ onGetProperty(handle: string, propertyId: string, params: Array<huksExternalCryp
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -297,7 +319,8 @@ export default class CryptoExtension extends CryptoExtensionAbility {
 
 
 
-#### onSetProperty
+### onSetProperty
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -313,6 +336,7 @@ onSetProperty(handle: string, propertyId: string, params: HuksCryptoExtensionPar
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handle | string | 是 | 资源句柄。 |
@@ -321,6 +345,7 @@ onSetProperty(handle: string, propertyId: string, params: HuksCryptoExtensionPar
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -347,7 +372,8 @@ export default class CryptoExtension extends CryptoExtensionAbility {
 
 
 
-#### onAuthUkeyPin
+### onAuthUkeyPin
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -359,6 +385,7 @@ onAuthUkeyPin(handle: string, params: Array<huksExternalCrypto.HuksExternalCrypt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handle | string | 是 | 资源句柄。 |
@@ -366,6 +393,7 @@ onAuthUkeyPin(handle: string, params: Array<huksExternalCrypto.HuksExternalCrypt
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -393,7 +421,8 @@ export default class CryptoExtension extends CryptoExtensionAbility {
 
 
 
-#### onGetUkeyPinAuthState
+### onGetUkeyPinAuthState
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -405,6 +434,7 @@ onGetUkeyPinAuthState(handle: string, params: Array<huksExternalCrypto.HuksExter
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handle | string | 是 | 资源句柄。 |
@@ -412,6 +442,7 @@ onGetUkeyPinAuthState(handle: string, params: Array<huksExternalCrypto.HuksExter
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -439,7 +470,8 @@ export default class CryptoExtension extends CryptoExtensionAbility {
 
 
 
-#### onClearUkeyPinAuthState
+### onClearUkeyPinAuthState
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -451,6 +483,7 @@ onClearUkeyPinAuthState(handle: string, params: Array<huksExternalCrypto.HuksExt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handle | string | 是 | 会话句柄。 |
@@ -458,6 +491,7 @@ onClearUkeyPinAuthState(handle: string, params: Array<huksExternalCrypto.HuksExt
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -483,7 +517,8 @@ export default class CryptoExtension extends CryptoExtensionAbility {
 
 
 
-#### onInitSession
+### onInitSession
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -495,6 +530,7 @@ onInitSession(handle: string, params: huks.HuksOptions | HuksCryptoExtensionPara
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handle | string | 是 | 资源句柄。 |
@@ -502,6 +538,7 @@ onInitSession(handle: string, params: huks.HuksOptions | HuksCryptoExtensionPara
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -528,7 +565,8 @@ export default class CryptoExtension extends CryptoExtensionAbility {
 
 
 
-#### onUpdateSession
+### onUpdateSession
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -540,6 +578,7 @@ onUpdateSession(initHandle: string, params: huks.HuksOptions | HuksCryptoExtensi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | initHandle | string | 是 | 资源句柄。 |
@@ -547,6 +586,7 @@ onUpdateSession(initHandle: string, params: huks.HuksOptions | HuksCryptoExtensi
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -574,7 +614,8 @@ export default class CryptoExtension extends CryptoExtensionAbility {
 
 
 
-#### onFinishSession
+### onFinishSession
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -586,6 +627,7 @@ onFinishSession(initHandle: string, params: huks.HuksOptions | HuksCryptoExtensi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | initHandle | string | 是 | 资源句柄。 |
@@ -593,6 +635,7 @@ onFinishSession(initHandle: string, params: huks.HuksOptions | HuksCryptoExtensi
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -620,7 +663,8 @@ export default class CryptoExtension extends CryptoExtensionAbility {
 
 
 
-#### onExportCertificate
+### onExportCertificate
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -632,6 +676,7 @@ onExportCertificate(resourceId: string, params?: Array<huksExternalCrypto.HuksEx
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resourceId | string | 是 | 资源ID。会附带在HuksCryptoExtensionCertInfo中。 |
@@ -639,6 +684,7 @@ onExportCertificate(resourceId: string, params?: Array<huksExternalCrypto.HuksEx
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -649,7 +695,7 @@ onExportCertificate(resourceId: string, params?: Array<huksExternalCrypto.HuksEx
 
 ```text
 import { huksExternalCrypto, CryptoExtensionAbility, HuksCryptoExtensionResult,
-  HuksCryptoExtensionCertInfo } from '@kit.UniversalKeystoreKit';
+  HuksCryptoExtensionCertInfo, HuksCryptoExtensionParam } from '@kit.UniversalKeystoreKit';
 
 export default class CryptoExtension extends CryptoExtensionAbility {
   onExportCertificate(resourceId: string, params?: Array<huksExternalCrypto.HuksExternalCryptoParam> | HuksCryptoExtensionParam[]): Promise<HuksCryptoExtensionResult> {
@@ -667,7 +713,8 @@ export default class CryptoExtension extends CryptoExtensionAbility {
 
 
 
-#### onEnumCertificates
+### onEnumCertificates
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -679,12 +726,14 @@ onEnumCertificates(params?: Array<huksExternalCrypto.HuksExternalCryptoParam> | 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | Array<huksExternalCrypto.HuksExternalCryptoParam> \| HuksCryptoExtensionParam[] | 否 | 操作属性。默认获取签名类型的证书，也可以通过参数HUKS_EXT_CRYPTO_TAG_PURPOSE指定获取证书类型，支持的类型包括签名验签、加解密等。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -712,7 +761,8 @@ export default class CryptoExtension extends CryptoExtensionAbility {
 
 
 
-#### onGetResourceId
+### onGetResourceId
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -728,12 +778,14 @@ onGetResourceId(params: HuksCryptoExtensionParam[]):Promise&lt;HuksCryptoExtensi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | HuksCryptoExtensionParam[] | 是 | 获取资源ID所需的属性参数。必选TAG包括：HUKS_EXT_CRYPTO_TAG_RESOURCE_INFO（厂商自定义的资源信息）、HUKS_EXT_CRYPTO_TAG_UID（调用方身份）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -760,7 +812,8 @@ export default class CryptoExtension extends CryptoExtensionAbility {
 
 
 
-#### onImportCertificate
+### onImportCertificate
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -776,6 +829,7 @@ onImportCertificate(handle: string, params: HuksCryptoExtensionParam[], certInfo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handle | string | 是 | 导入证书的资源句柄。 |
@@ -784,6 +838,7 @@ onImportCertificate(handle: string, params: HuksCryptoExtensionParam[], certInfo
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -811,7 +866,8 @@ export default class CryptoExtension extends CryptoExtensionAbility {
 
 
 
-#### onGenerateKeyItem
+### onGenerateKeyItem
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -827,6 +883,7 @@ onGenerateKeyItem(handle: string, params: HuksCryptoExtensionParam[]): Promise&l
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handle | string | 是 | 待生成密钥的资源句柄。 |
@@ -834,6 +891,7 @@ onGenerateKeyItem(handle: string, params: HuksCryptoExtensionParam[]): Promise&l
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -878,7 +936,8 @@ export default class CryptoExtension extends CryptoExtensionAbility {
 
 
 
-#### onExportKeyItem
+### onExportKeyItem
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -894,6 +953,7 @@ onExportKeyItem(handle: string, params: HuksCryptoExtensionParam[]): Promise&lt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handle | string | 是 | 待导出公钥的资源句柄。 |
@@ -901,6 +961,7 @@ onExportKeyItem(handle: string, params: HuksCryptoExtensionParam[]): Promise&lt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -937,7 +998,8 @@ export default class CryptoExtension extends CryptoExtensionAbility {
 
 
 
-#### onImportWrappedKeyItem
+### onImportWrappedKeyItem
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -953,6 +1015,7 @@ onImportWrappedKeyItem(handle: string, wrappingHandle: string, params: HuksCrypt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handle | string | 是 | 待导入密钥的资源句柄。 |
@@ -962,6 +1025,7 @@ onImportWrappedKeyItem(handle: string, wrappingHandle: string, params: HuksCrypt
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1005,11 +1069,13 @@ export default class CryptoExtension extends CryptoExtensionAbility {
 
 
 
-#### 附录
+## 附录
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 CryptoExtensionAbility不支持以下模块的引用。
+
 
 | Kit | 模块 |
 | --- | --- |

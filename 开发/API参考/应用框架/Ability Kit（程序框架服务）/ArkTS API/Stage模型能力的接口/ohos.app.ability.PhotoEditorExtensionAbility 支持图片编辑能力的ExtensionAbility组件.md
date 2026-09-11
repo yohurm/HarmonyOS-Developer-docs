@@ -1,6 +1,6 @@
 # @ohos.app.ability.PhotoEditorExtensionAbility (支持图片编辑能力的ExtensionAbility组件)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-photoeditorextensionability
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -12,19 +12,21 @@ PhotoEditorExtensionAbility继承自[ExtensionAbility](https://developer.huawei.
 
   
 
-#### 实现效果
+## 实现效果
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 下图为通过PhotoEditorExtensionAbility实现的图片编辑扩展页面示意图，页面的布局与功能可以根据实际需要开发。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/G-or-yXpRvOHeVGOd1evYA/zh-cn_image_0000002659101465.png?HW-CC-KV=V1&HW-CC-Date=20260701T014232Z&HW-CC-Expire=86400&HW-CC-Sign=8284B95D527D03A83684E0B38661BC4772A5CDD982316009A7D0DE85D78289A8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/GZrwFYg4RuCC2XBoa8CSOw/zh-cn_image_0000002717612358.png?HW-CC-KV=V1&HW-CC-Date=20260911T072830Z&HW-CC-Expire=86400&HW-CC-Sign=951CC37F20B9693693A475BB2D4A545F86FD799F1631FF11185A887FA5C54548)
 
  
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
@@ -34,18 +36,21 @@ import { PhotoEditorExtensionAbility } from '@kit.AbilityKit';
  
   
 
-#### PhotoEditorExtensionAbility
+## PhotoEditorExtensionAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 属性
+### 属性
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 **系统能力：** SystemCapability.Ability.AppExtension.PhotoEditorExtension
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | context | PhotoEditorExtensionContext | 否 | 否 | PhotoEditorExtensionAbility的上下文，提供保存图片能力。 |
@@ -53,7 +58,8 @@ import { PhotoEditorExtensionAbility } from '@kit.AbilityKit';
  
   
 
-#### onCreate
+### onCreate
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -81,7 +87,8 @@ export default class ExamplePhotoEditorAbility extends PhotoEditorExtensionAbili
  
   
 
-#### onStartContentEditing
+### onStartContentEditing
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -95,6 +102,7 @@ onStartContentEditing(uri: string, want: Want, session: UIExtensionContentSessio
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uri | string | 是 | 待编辑的原始图片uri，格式为file://&lt;bundleName&gt;/&lt;sandboxPath&gt;。 |
@@ -118,9 +126,10 @@ export default class ExamplePhotoEditorAbility extends PhotoEditorExtensionAbili
  
   
 
-#### onForeground
+### onForeground
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onForeground(): void
  
@@ -146,9 +155,10 @@ export default class ExamplePhotoEditorAbility extends PhotoEditorExtensionAbili
  
   
 
-#### onBackground
+### onBackground
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onBackground(): void
  
@@ -174,7 +184,8 @@ export default class ExamplePhotoEditorAbility extends PhotoEditorExtensionAbili
  
   
 
-#### onDestroy
+### onDestroy
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -188,6 +199,7 @@ onDestroy(): void | Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | void \| Promise&lt;void&gt; | 无返回结果或者无返回结果的Promise对象。 |

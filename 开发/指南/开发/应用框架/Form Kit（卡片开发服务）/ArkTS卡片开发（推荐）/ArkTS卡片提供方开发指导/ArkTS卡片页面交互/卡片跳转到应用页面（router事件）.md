@@ -1,6 +1,6 @@
 # 卡片跳转到应用页面（router事件）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widget-event-router
 
@@ -15,7 +15,7 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 创建动态卡片，在工程的entry模块中，新建名为WidgetEventRouterCard的ArkTS卡片。
 2. 构建ArkTS卡片页面代码布局，卡片页面布局中有两个按钮，点击其中一个按钮时调用postCardAction向指定UIAbility发送router事件，并在事件内定义需要传递的内容。
 
@@ -301,7 +301,7 @@ struct FunB {
 
 
 
-#### 运行效果
+## 运行效果
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/laWxwThkTtWt1PmX11eBHw/zh-cn_image_0000002704392941.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095745Z&HW-CC-Expire=86400&HW-CC-Sign=26A05CF33D2B9F507A031328390BBFCECBA4558386216ACA7379CE276CF90866)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/J1Ur3JvURQ-m0Trws5wLew/zh-cn_image_0000002717611014.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072513Z&HW-CC-Expire=86400&HW-CC-Sign=CB14CE0854EC4CBAD0E5CDFADD550C15987C1D230400D97F63D59408C55E560C)

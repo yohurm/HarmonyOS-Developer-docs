@@ -1,0 +1,240 @@
+[
+  {
+    "file": "沉浸光感功耗优化.md",
+    "name": "沉浸光感功耗优化",
+    "slug": "arkts-immersive-light-sense-constraints",
+    "title": "沉浸光感功耗优化",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-immersive-light-sense-constraints"
+  },
+  {
+    "file": "组件适配沉浸光感.md",
+    "name": "组件适配沉浸光感",
+    "slug": "arkts-immersive-light-sense-component-adaptation",
+    "title": "组件适配沉浸光感",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-immersive-light-sense-component-adaptation"
+  },
+  {
+    "file": "应用启动流程.md",
+    "name": "应用启动流程",
+    "slug": "application-startup-process",
+    "title": "应用启动流程",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-startup-process"
+  },
+  {
+    "file": "沉浸式系统材质视效.md",
+    "name": "沉浸式系统材质视效",
+    "slug": "arkts-immersive-light-sense-common-capability",
+    "title": "沉浸式系统材质视效",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-immersive-light-sense-common-capability"
+  },
+  {
+    "file": "开启沉浸光感.md",
+    "name": "开启沉浸光感",
+    "slug": "arkts-immersive-light-sense-enable",
+    "title": "开启沉浸光感",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-immersive-light-sense-enable"
+  },
+  {
+    "file": "沉浸光感典型场景.md",
+    "name": "沉浸光感典型场景",
+    "slug": "arkts-immersive-light-sample",
+    "title": "沉浸光感典型场景",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-immersive-light-sample"
+  },
+  {
+    "file": "子进程开发指导（ArkTS）.md",
+    "name": "子进程开发指导（ArkTS）",
+    "slug": "arkts-child-process-development-guideline",
+    "title": "子进程开发指导（ArkTS）",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-child-process-development-guideline"
+  },
+  {
+    "file": "沉浸光感简介.md",
+    "name": "沉浸光感简介",
+    "slug": "arkts-immersive-light-sense-overview",
+    "title": "沉浸光感简介",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-immersive-light-sense-overview"
+  },
+  {
+    "file": "Navigation常见问题.md",
+    "name": "Navigation常见问题",
+    "slug": "arkts-navigation-faq",
+    "title": "Navigation常见问题",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigation-faq"
+  },
+  {
+    "file": "ArkTS卡片编辑.md",
+    "name": "ArkTS卡片编辑",
+    "slug": "arkts-ui-widget-event-formeditextensionability",
+    "title": "ArkTS卡片编辑",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widget-event-formeditextensionability"
+  },
+  {
+    "file": "Agent Framework Kit术语.md",
+    "name": "Agent Framework Kit术语",
+    "slug": "hmaf-glossary",
+    "title": "Agent Framework Kit术语",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hmaf-glossary"
+  },
+  {
+    "file": "性能优化：缓存插件实践.md",
+    "name": "性能优化：缓存插件实践",
+    "slug": "ide-cache-practice",
+    "title": "性能优化：缓存插件实践",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-cache-practice"
+  },
+  {
+    "file": "版本说明.md",
+    "name": "版本说明",
+    "slug": "ide-deveco-code-releasenote",
+    "title": "版本说明",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-code-releasenote"
+  },
+  {
+    "file": "版本说明.md",
+    "name": "版本说明",
+    "slug": "ide-deveco-cli-releasenote",
+    "title": "版本说明",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-cli-releasenote"
+  },
+  {
+    "file": "命令.md",
+    "name": "命令",
+    "slug": "ide-deveco-code-options",
+    "title": "命令",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-code-options"
+  },
+  {
+    "file": "常用开发任务.md",
+    "name": "常用开发任务",
+    "slug": "ide-deveco-cli-developtask",
+    "title": "常用开发任务",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-cli-developtask"
+  },
+  {
+    "file": "性能优化：混合语言工程Sync优化实践.md",
+    "name": "性能优化：混合语言工程Sync优化实践",
+    "slug": "ide-mix-language-sync-practice",
+    "title": "性能优化：混合语言工程Sync优化实践",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-mix-language-sync-practice"
+  },
+  {
+    "file": "位置模拟.md",
+    "name": "位置模拟",
+    "slug": "ide-mock-location",
+    "title": "位置模拟",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-mock-location"
+  },
+  {
+    "file": "性能-内存优化：多目标编译优化实践.md",
+    "name": "性能/内存优化：多目标编译优化实践",
+    "slug": "ide-multi-product-target-practice",
+    "title": "性能/内存优化：多目标编译优化实践",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-multi-product-target-practice"
+  },
+  {
+    "file": "常见问题.md",
+    "name": "常见问题",
+    "slug": "ide-profiler-faq",
+    "title": "常见问题",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-profiler-faq"
+  },
+  {
+    "file": "性能-内存优化：多HAP-HSP工程编译优化实践.md",
+    "name": "性能/内存优化：多HAP/HSP工程编译优化实践",
+    "slug": "ide-multi-hap-hsp-practice",
+    "title": "性能/内存优化：多HAP/HSP工程编译优化实践",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-multi-hap-hsp-practice"
+  },
+  {
+    "file": "DevEco Profiler术语.md",
+    "name": "DevEco Profiler术语",
+    "slug": "ide-profiler-glossary",
+    "title": "DevEco Profiler术语",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-profiler-glossary"
+  },
+  {
+    "file": "内存优化：远程编译实践.md",
+    "name": "内存优化：远程编译实践",
+    "slug": "ide-remote-compile-practice",
+    "title": "内存优化：远程编译实践",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-remote-compile-practice"
+  },
+  {
+    "file": "Intents Kit术语.md",
+    "name": "Intents Kit术语",
+    "slug": "intents-glossary",
+    "title": "Intents Kit术语",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-glossary"
+  },
+  {
+    "file": "独立进程开发指导.md",
+    "name": "独立进程开发指导",
+    "slug": "isolation-process-development-guideline",
+    "title": "独立进程开发指导",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/isolation-process-development-guideline"
+  },
+  {
+    "file": "性能优化：自定义插件和任务优化实践.md",
+    "name": "性能优化：自定义插件和任务优化实践",
+    "slug": "ide-plugin-task-practice",
+    "title": "性能优化：自定义插件和任务优化实践",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-plugin-task-practice"
+  },
+  {
+    "file": "自动签名.md",
+    "name": "自动签名",
+    "slug": "ide-signing-auto",
+    "title": "自动签名",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing-auto"
+  },
+  {
+    "file": "手动签名.md",
+    "name": "手动签名",
+    "slug": "ide-signing-manual",
+    "title": "手动签名",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing-manual"
+  },
+  {
+    "file": "MindSpore Lite Kit术语.md",
+    "name": "MindSpore Lite Kit术语",
+    "slug": "mindspore-lite-term",
+    "title": "MindSpore Lite Kit术语",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-lite-term"
+  },
+  {
+    "file": "Neural Network Runtime Kit术语.md",
+    "name": "Neural Network Runtime Kit术语",
+    "slug": "neural-network-runtime-glossary",
+    "title": "Neural Network Runtime Kit术语",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/neural-network-runtime-glossary"
+  },
+  {
+    "file": "进程模型概述.md",
+    "name": "进程模型概述",
+    "slug": "process-model-overview",
+    "title": "进程模型概述",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/process-model-overview"
+  },
+  {
+    "file": "UI Design Kit术语.md",
+    "name": "UI Design Kit术语",
+    "slug": "ui-design-glossary",
+    "title": "UI Design Kit术语",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-glossary"
+  },
+  {
+    "file": "XEngine Kit术语.md",
+    "name": "XEngine Kit术语",
+    "slug": "xengine-kit-glossary",
+    "title": "XEngine Kit术语",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xengine-kit-glossary"
+  },
+  {
+    "file": "使用ModularObjectDispatcher实现动态接口调用 (C-C++).md",
+    "name": "使用ModularObjectDispatcher实现动态接口调用 (C/C++)",
+    "slug": "modular-object-dispatcher-development",
+    "title": "使用ModularObjectDispatcher实现动态接口调用 (C/C++)",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/modular-object-dispatcher-development"
+  }
+]

@@ -1,13 +1,14 @@
 # types.h
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-types-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供了MindSpore Lite支持的模型文件类型和设备类型。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | NNRTDeviceDesc | NNRTDeviceDesc | NNRt设备信息描述，包含设备ID，设备名称等信息。 |
@@ -40,10 +44,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_AI_ModelType | OH_AI_ModelType | 模型文件的类型。 |
@@ -57,15 +63,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
   
 
-#### OH_AI_ModelType
+### OH_AI_ModelType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 ```text
 enum OH_AI_ModelType
@@ -77,6 +85,7 @@ enum OH_AI_ModelType
  
 **起始版本：** 9
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_AI_MODELTYPE_MINDIR = 0 | 模型类型是MindIR，对应的模型文件后缀为.ms。 |
@@ -85,9 +94,10 @@ enum OH_AI_ModelType
  
   
 
-#### OH_AI_DeviceType
+### OH_AI_DeviceType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 ```text
 enum OH_AI_DeviceType
@@ -99,6 +109,7 @@ enum OH_AI_DeviceType
  
 **起始版本：** 9
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_AI_DEVICETYPE_CPU = 0 | 设备类型是CPU。 |
@@ -110,9 +121,10 @@ enum OH_AI_DeviceType
  
   
 
-#### OH_AI_NNRTDeviceType
+### OH_AI_NNRTDeviceType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 ```text
 enum OH_AI_NNRTDeviceType
@@ -124,6 +136,7 @@ NNRt管理的硬件设备类型。
  
 **起始版本：** 10
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_AI_NNRTDEVICE_OTHERS = 0 | 设备类型不属于以下3种，则属于其它。 |
@@ -134,9 +147,10 @@ NNRt管理的硬件设备类型。
  
   
 
-#### OH_AI_PerformanceMode
+### OH_AI_PerformanceMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 ```text
 enum OH_AI_PerformanceMode
@@ -148,6 +162,7 @@ NNRt硬件的工作性能模式。
  
 **起始版本：** 10
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_AI_PERFORMANCE_NONE = 0 | 无特殊设置。 |
@@ -159,9 +174,10 @@ NNRt硬件的工作性能模式。
  
   
 
-#### OH_AI_Priority
+### OH_AI_Priority
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 ```text
 enum OH_AI_Priority
@@ -173,6 +189,7 @@ NNRt推理任务优先级。
  
 **起始版本：** 10
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_AI_PRIORITY_NONE = 0 | 无优先级偏好。 |
@@ -183,9 +200,10 @@ NNRt推理任务优先级。
  
   
 
-#### OH_AI_OptimizationLevel
+### OH_AI_OptimizationLevel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 ```text
 enum OH_AI_OptimizationLevel
@@ -197,6 +215,7 @@ enum OH_AI_OptimizationLevel
  
 **起始版本：** 11
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_AI_KO0 = 0 | 无优化等级。 |
@@ -208,9 +227,10 @@ enum OH_AI_OptimizationLevel
  
   
 
-#### OH_AI_QuantizationType
+### OH_AI_QuantizationType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 ```text
 enum OH_AI_QuantizationType
@@ -222,6 +242,7 @@ enum OH_AI_QuantizationType
  
 **起始版本：** 11
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_AI_NO_QUANT = 0 | 不做量化。 |

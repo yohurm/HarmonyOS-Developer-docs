@@ -1,22 +1,23 @@
 # ToolBarV2
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-toolbarv2
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
-工具栏用于展示针对当前界面内容的操作选项，在界面底部显示，适用于需要为用户提供快速操作入口的场景。底部最多显示5个入口，超过则收纳入“更多”子项中，在最右侧显示。适用于需要对当前页面内容进行快捷操作的场景，可帮助用户快速访问常用功能，提升操作效率。
+工具栏用于展示针对当前界面内容的操作选项，在界面底部显示。底部最多显示5个入口，超过则收纳入“更多”子项中，在最右侧显示。
 
 该组件基于[状态管理（V2）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state-management-overview#状态管理v2)实现，相较于[状态管理（V1）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state-management-overview#状态管理v1)，状态管理（V2）增强了对数据对象的深度观察与管理能力，不再局限于组件层级。借助状态管理（V2），开发者可以通过该组件更灵活地控制工具栏的数据和状态，实现更高效的用户界面刷新。
 
 > [!NOTE]
-> 该组件从API version 18开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 该组件仅可在Stage模型下使用。 如果ToolBarV2设置 通用属性 和 通用事件 ，编译工具链会额外生成节点__Common__，并将通用属性或通用事件挂载在__Common__上，而不是直接应用到ToolBarV2本身。这可能导致开发者设置的通用属性或通用事件不生效或不符合预期，因此，不建议ToolBarV2设置通用属性和通用事件。 当系统切换深浅色模式时，工具栏背景色不会自动跟随切换。
+> 该组件从API version 18开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 该组件仅可在Stage模型下使用。 如果ToolBarV2设置 通用属性 和 通用事件 ，编译工具链会额外生成节点__Common__，并将通用属性或通用事件挂载在__Common__上，而不是直接应用到ToolBarV2本身。这可能导致开发者设置的通用属性或通用事件不生效或不符合预期，因此，不建议ToolBarV2设置通用属性和通用事件。 系统切换深浅色模式，工具栏背景色不支持自动切换。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 import { ToolBarV2 } from '@kit.ArkUI';
@@ -24,17 +25,19 @@ import { ToolBarV2 } from '@kit.ArkUI';
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 无
 
 
 
-#### ToolBarV2
+## ToolBarV2
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ToolBarV2({toolBarList: ToolBarV2Item[], activatedIndex?: number, dividerModifier: DividerModifier, toolBarModifier: ToolBarV2Modifier})
 
@@ -48,19 +51,21 @@ ToolBarV2({toolBarList: ToolBarV2Item[], activatedIndex?: number, dividerModifie
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
+
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
-| toolBarList | ToolBarV2Item[] | 是 | @Param @Require | 工具栏子项列表，最多显示5个子项，超过则收纳至"更多"子项中。 |
-| activatedIndex | number | 否 | @Param | 被激活的子项索引。 默认值：-1，即无工具栏子项为激活态。 取值范围：[-1,4]。 |
-| dividerModifier | DividerModifier | 否 | @Param | 工具栏头部分割线属性，可设置分割线高度、颜色等。设置后在工具栏顶部显示指定样式的分割线。 默认不生效。 |
-| toolBarModifier | ToolBarV2Modifier | 否 | @Param | 工具栏属性，可设置工具栏高度、背景色、内边距（仅在工具栏子项数量小于5时生效）、是否显示按压态。设置后工具栏将按指定样式自定义外观。 默认不生效。 |
+| toolBarList | ToolBarV2Item[] | 是 | @Param @Require | 工具栏列表。 |
+| activatedIndex | number | 否 | @Param | 激活态的子项。 默认值：-1，即无工具栏子项为激活态。 取值范围：[-1,4]。 |
+| dividerModifier | DividerModifier | 否 | @Param | 工具栏头部分割线属性，可设置分割线高度、颜色等。 默认不生效。 |
+| toolBarModifier | ToolBarV2Modifier | 否 | @Param | 工具栏属性，可设置工具栏高度、背景色、内边距（仅在工具栏子项数量小于5时生效）、是否显示按压态。 默认不生效。 |
 
 
 
 
-#### ToolBarV2Item
+## ToolBarV2Item
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 定义工具栏子项。
 
@@ -74,24 +79,29 @@ ToolBarV2({toolBarList: ToolBarV2Item[], activatedIndex?: number, dividerModifie
 
 
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | content | ToolBarV2ItemText | 否 | 否 | 工具栏子项的文本。 装饰器类型：@Trace |
 | action | ToolBarV2ItemAction | 否 | 是 | 工具栏子项点击事件。 默认无点击事件。 装饰器类型：@Trace |
 | icon | ToolBarV2ItemIconType | 否 | 是 | 工具栏子项的图标。 默认不显示图标。 装饰器类型：@Trace |
-| state | ToolBarV2ItemState | 否 | 是 | 工具栏子项的状态。 默认值：ToolBarV2ItemState.ENABLE。 装饰器类型：@Trace |
+| state | ToolBarV2ItemState | 否 | 是 | 工具栏子项的状态。 默认为ToolBarV2ItemState.ENABLE。 装饰器类型：@Trace |
 | accessibilityText | ResourceStr | 否 | 是 | 工具栏子项的无障碍文本属性。当组件不包含文本属性时，屏幕朗读选中此组件时不播报，使用者无法清楚地知道当前选中了什么组件。为了解决此场景，开发人员可为不包含文字信息的组件设置无障碍文本，当屏幕朗读选中此组件时播报无障碍文本的内容，帮助屏幕朗读的使用者清楚地知道自己选中了什么组件。 默认值为当前项content属性内容。 装饰器类型：@Trace |
 | accessibilityDescription | ResourceStr | 否 | 是 | 工具栏子项的无障碍描述。此描述用于向用户详细解释当前组件，开发人员应为组件的这一属性提供较为详尽的文本说明，以协助用户理解即将执行的操作及其可能产生的后果。特别是当这些后果无法仅从组件的属性和无障碍文本中直接获知时。如果组件同时具备文本属性和无障碍说明属性，当组件被选中时，系统将首先播报组件的文本属性，随后播报无障碍说明属性的内容。 默认值：“单指双击即可执行”。 装饰器类型：@Trace |
-| accessibilityLevel | string | 否 | 是 | 工具栏子项无障碍重要性。用于控制当前项是否可被无障碍辅助服务所识别。 支持的值为： "auto"：当前值转换为"yes"。 "yes"：当前组件可被无障碍辅助服务所识别。 "no"：当前组件不可被无障碍辅助服务所识别。 "no-hide-descendants"：当前组件及其所有子组件不可被无障碍辅助服务所识别。 默认值："auto" 装饰器类型：@Trace |
+| accessibilityLevel | string | 否 | 是 | 工具栏子项无障碍重要性。用于控制当前项是否可被无障碍辅助服务所识别。 支持的值为： "auto"：当前组件会转换"yes"。 "yes"：当前组件可被无障碍辅助服务所识别。 "no"：当前组件不可被无障碍辅助服务所识别。 "no-hide-descendants"：当前组件及其所有子组件不可被无障碍辅助服务所识别。 默认值："auto" 装饰器类型：@Trace |
 
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 constructor(options: ToolBarV2ItemOptions)
 
@@ -105,6 +115,7 @@ ToolBarV2Item的构造函数。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ToolBarV2ItemOptions | 是 | 工具栏子项信息。 |
@@ -112,9 +123,10 @@ ToolBarV2Item的构造函数。
 
 
 
-#### ToolBarV2ItemOptions
+## ToolBarV2ItemOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 用于构建ToolBarV2Item对象。
 
@@ -124,6 +136,7 @@ ToolBarV2Item的构造函数。
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | content | ToolBarV2ItemText | 否 | 否 | 工具栏子项的文本。 |
@@ -132,14 +145,15 @@ ToolBarV2Item的构造函数。
 | state | ToolBarV2ItemState | 否 | 是 | 工具栏子项的状态。 默认为ToolBarV2ItemState.ENABLE。 |
 | accessibilityText | ResourceStr | 否 | 是 | 工具栏子项的无障碍文本属性。当组件不包含文本属性时，屏幕朗读选中此组件时不播报，使用者无法清楚地知道当前选中了什么组件。为了解决此场景，开发人员可为不包含文字信息的组件设置无障碍文本，当屏幕朗读选中此组件时播报无障碍文本的内容，帮助屏幕朗读的使用者清楚地知道自己选中了什么组件。 默认值为当前项content属性内容。 |
 | accessibilityDescription | ResourceStr | 否 | 是 | 工具栏子项的无障碍描述。此描述用于向用户详细解释当前组件，开发人员应为组件的这一属性提供较为详尽的文本说明，以协助用户理解即将执行的操作及其可能产生的后果。特别是当这些后果无法仅从组件的属性和无障碍文本中直接获知时。如果组件同时具备文本属性和无障碍说明属性，当组件被选中时，系统将首先播报组件的文本属性，随后播报无障碍说明属性的内容。 默认值为“单指双击即可执行”。 |
-| accessibilityLevel | string | 否 | 是 | 工具栏子项无障碍重要性。用于控制当前项是否可被无障碍辅助服务所识别。 支持的值为： "auto"：当前值转换为"yes"。 "yes"：当前组件可被无障碍辅助服务所识别。 "no"：当前组件不可被无障碍辅助服务所识别。 "no-hide-descendants"：当前组件及其所有子组件不可被无障碍辅助服务所识别。 默认值："auto" |
+| accessibilityLevel | string | 否 | 是 | 工具栏子项无障碍重要性。用于控制当前项是否可被无障碍辅助服务所识别。 支持的值为： "auto"：当前组件会转换"yes"。 "yes"：当前组件可被无障碍辅助服务所识别。 "no"：当前组件不可被无障碍辅助服务所识别。 "no-hide-descendants"：当前组件及其所有子组件不可被无障碍辅助服务所识别。 默认值："auto" |
 
 
 
 
-#### ToolBarV2ItemAction
+## ToolBarV2ItemAction
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 type ToolBarV2ItemAction = (index: number) => void
 
@@ -153,16 +167,18 @@ type ToolBarV2ItemAction = (index: number) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| index | number | 是 | 触发点击事件的工具栏子项索引。 |
+| index | number | 是 | 工具栏子项点击事件的回调。 -index: 表示触发事件的工具栏子项索引。 |
 
 
 
 
-#### ToolBarV2ItemText
+## ToolBarV2ItemText
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 定义工具栏子项的文本。
 
@@ -176,7 +192,11 @@ type ToolBarV2ItemAction = (index: number) => void
 
 
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -187,9 +207,10 @@ type ToolBarV2ItemAction = (index: number) => void
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 constructor(options: ToolBarV2ItemTextOptions)
 
@@ -203,6 +224,7 @@ ToolBarV2ItemText的构造函数。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ToolBarV2ItemTextOptions | 是 | 工具栏子项文本信息。 |
@@ -210,9 +232,10 @@ ToolBarV2ItemText的构造函数。
 
 
 
-#### ToolBarV2ItemTextOptions
+## ToolBarV2ItemTextOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 用于构建ToolBarV2ItemText对象。
 
@@ -221,6 +244,7 @@ ToolBarV2ItemText的构造函数。
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -231,9 +255,10 @@ ToolBarV2ItemText的构造函数。
 
 
 
-#### ToolBarV2ItemImage
+## ToolBarV2ItemImage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 定义工具栏子项的普通图标。
 
@@ -247,7 +272,11 @@ ToolBarV2ItemText的构造函数。
 
 
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -258,9 +287,10 @@ ToolBarV2ItemText的构造函数。
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 constructor(options: ToolBarV2ItemImageOptions)
 
@@ -274,6 +304,7 @@ ToolBarV2ItemImage的构造函数。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ToolBarV2ItemImageOptions | 是 | 工具栏子项图标信息。 |
@@ -281,9 +312,10 @@ ToolBarV2ItemImage的构造函数。
 
 
 
-#### ToolBarV2ItemImageOptions
+## ToolBarV2ItemImageOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 用于构建ToolBarV2ItemImage对象。
 
@@ -292,6 +324,7 @@ ToolBarV2ItemImage的构造函数。
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -302,9 +335,10 @@ ToolBarV2ItemImage的构造函数。
 
 
 
-#### ToolBarV2ItemIconType
+## ToolBarV2ItemIconType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 type ToolBarV2ItemIconType = ToolBarV2ItemImage | ToolBarV2SymbolGlyph
 
@@ -316,6 +350,7 @@ type ToolBarV2ItemIconType = ToolBarV2ItemImage | ToolBarV2SymbolGlyph
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ToolBarV2ItemImage | 用于定义普通图标。 |
@@ -324,11 +359,12 @@ type ToolBarV2ItemIconType = ToolBarV2ItemImage | ToolBarV2SymbolGlyph
 
 
 
-#### ToolBarV2Modifier
+## ToolBarV2Modifier
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-ToolBarV2Modifier提供设置工具栏高度(height)、背景色(backgroundColor)、左右内边距（padding，仅在子项数量小于5个时生效）、是否显示按压态（stateEffect）的方法。
+**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+ToolBarV2Modifier提供设置工具栏高度(height)、背景色(backgroundColor)、左右内边距（padding，仅在item小于5个时生效）、是否显示按压态（stateEffect）的方法。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -338,13 +374,14 @@ ToolBarV2Modifier提供设置工具栏高度(height)、背景色(backgroundColor
 
 
 
-#### backgroundColor
+### backgroundColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 backgroundColor(backgroundColor: ColorMetrics): ToolBarV2Modifier
 
-设置工具栏背景色的接口，调用该方法可自定义绘制。
+自定义绘制工具栏背景色的接口，若重载该方法则可进行工具栏背景色的自定义绘制。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -353,6 +390,7 @@ backgroundColor(backgroundColor: ColorMetrics): ToolBarV2Modifier
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -361,20 +399,22 @@ backgroundColor(backgroundColor: ColorMetrics): ToolBarV2Modifier
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| ToolBarV2Modifier | 设置背景色后的ToolBarV2Modifier对象，可用于链式调用其他方法进一步自定义工具栏样式。 |
+| ToolBarV2Modifier | 设置backgroundColor后的ToolBarV2Modifier对象。 |
 
 
 
 
-#### padding
+### padding
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 padding(padding: LengthMetrics): ToolBarV2Modifier
 
-设置工具栏左右内边距的接口，调用该方法可自定义绘制。
+自定义绘制工具栏左右内边距的接口，若重载该方法则可进行工具栏左右内边距的自定义绘制。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -384,27 +424,30 @@ padding(padding: LengthMetrics): ToolBarV2Modifier
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| padding | LengthMetrics | 是 | 工具栏左右内边距，仅在子项数量小于5个时生效，超过则设置值无效。 当子项数量少于5个时，工具栏默认左右内边距为24vp；当子项数量达到或超过5个时，工具栏默认左右内边距为0vp。 |
+| padding | LengthMetrics | 是 | 工具栏左右内边距，仅在子项数量小于5个时生效。 当子项数量少于5个时，工具栏默认左右内边距为24vp；当子项数量达到或超过5个时，工具栏默认左右内边距为0。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| ToolBarV2Modifier | 设置内边距后的ToolBarV2Modifier对象，可用于链式调用其他方法进一步自定义工具栏样式。 |
+| ToolBarV2Modifier | 设置padding后的ToolBarV2Modifier对象。 |
 
 
 
 
-#### height
+### height
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 height(height: LengthMetrics): ToolBarV2Modifier
 
-设置工具栏高度的接口，调用该方法可自定义绘制，此高度不包含分割线高度。
+自定义绘制工具栏高度的接口，若重载该方法则可进行工具栏高度的自定义绘制，此高度不包含分割线高度。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -413,6 +456,7 @@ height(height: LengthMetrics): ToolBarV2Modifier
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -421,16 +465,18 @@ height(height: LengthMetrics): ToolBarV2Modifier
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| ToolBarV2Modifier | 设置高度后的ToolBarV2Modifier对象，可用于链式调用其他方法进一步自定义工具栏样式。 |
+| ToolBarV2Modifier | 设置height后的ToolBarV2Modifier对象。 |
 
 
 
 
-#### stateEffect
+### stateEffect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 stateEffect(stateEffect: boolean): ToolBarV2Modifier
 
@@ -444,6 +490,7 @@ stateEffect(stateEffect: boolean): ToolBarV2Modifier
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | stateEffect | boolean | 是 | 工具栏是否显示按压态效果。 true为显示按压态效果，false为移除按压态效果。默认为true。 |
@@ -451,16 +498,18 @@ stateEffect(stateEffect: boolean): ToolBarV2Modifier
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| ToolBarV2Modifier | 设置按压态效果后的ToolBarV2Modifier对象，可用于链式调用其他方法进一步自定义工具栏样式。 |
+| ToolBarV2Modifier | 设置stateEffect后的ToolBarV2Modifier对象。 |
 
 
 
 
-#### ToolBarV2ItemState
+## ToolBarV2ItemState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 工具栏子项状态枚举。
 
@@ -469,6 +518,7 @@ stateEffect(stateEffect: boolean): ToolBarV2Modifier
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -479,9 +529,10 @@ stateEffect(stateEffect: boolean): ToolBarV2Modifier
 
 
 
-#### ToolBarV2SymbolGlyph
+## ToolBarV2SymbolGlyph
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ToolBarV2SymbolGlyph定义Symbol图标的属性。
 
@@ -495,7 +546,11 @@ ToolBarV2SymbolGlyph定义Symbol图标的属性。
 
 
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -505,9 +560,10 @@ ToolBarV2SymbolGlyph定义Symbol图标的属性。
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 constructor(options: ToolBarV2SymbolGlyphOptions)
 
@@ -521,6 +577,7 @@ ToolBarV2SymbolGlyph的构造函数。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ToolBarV2SymbolGlyphOptions | 是 | Symbol图标信息。 |
@@ -528,17 +585,19 @@ ToolBarV2SymbolGlyph的构造函数。
 
 
 
-#### ToolBarV2SymbolGlyphOptions
+## ToolBarV2SymbolGlyphOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-ToolBarV2SymbolGlyphOptions定义Symbol图标的属性。
+**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+ToolBarV2SymbolGlyphOptions定义图标的属性。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -548,13 +607,17 @@ ToolBarV2SymbolGlyphOptions定义Symbol图标的属性。
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 示例1（工具栏不同状态的默认效果）
+
+
+### 示例1（工具栏不同状态的默认效果）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例展示了工具栏子项state属性分别设置ENABLE、DISABLE、ACTIVATE状态的不同显示效果。
 
@@ -675,7 +738,10 @@ struct Index {
 
 
 
-#### 示例2（设置工具栏自定义样式）
+### 示例2（设置工具栏自定义样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例通过设置属性ToolBarV2Modifier自定义工具栏高度、背景色、按压效果等样式。
 
@@ -811,7 +877,10 @@ struct Index {
 
 
 
-#### 示例3（设置工具栏自定义播报）
+### 示例3（设置工具栏自定义播报）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例通过设置工具栏子项属性accessibilityText、accessibilityDescription、accessibilityLevel自定义屏幕朗读播报文本。
 
@@ -936,4 +1005,4 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/nJxyDQuUSRSvUjCUPmprvg/zh-cn_image_0000002656008962.png?HW-CC-KV=V1&HW-CC-Date=20260730T071520Z&HW-CC-Expire=86400&HW-CC-Sign=FF9A36AF257ADF0B16C97CF441F9BE428D137B34ABFF2E52548DA9E4F7A882BE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/Idp8CsHzSkSo2Eh6vqYJiA/zh-cn_image_0000002717613184.png?HW-CC-KV=V1&HW-CC-Date=20260911T073030Z&HW-CC-Expire=86400&HW-CC-Sign=56CBFBD53C8B34BF30BF3D9BABFBC401EB5A94B83BDF14330678796F644C2335)

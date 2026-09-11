@@ -1,9 +1,9 @@
 # Interface (PixelMap)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-pixelmap
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 图像像素类，用于读取或写入图像数据以及获取图像信息，同时支持图像变换（缩放、平移、旋转、翻转、裁剪）、设置不透明度、提取Alpha通道、色彩空间设置等操作，适用于图像处理、图像编辑、图像显示等需要进行像素级数据操作的场景。在调用PixelMap的方法前，需要先通过[image.createPixelMapFromPixels](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-f#imagecreatepixelmapfrompixels)或[image.createPixelMapUsingAllocator](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-f#imagecreatepixelmapusingallocator20)系列接口传入像素数据创建一个PixelMap对象，也可以通过[ImageSource](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-imagesource)进行图片解码创建PixelMap对象。目前PixelMap序列化大小最大为128MiB，超过会渲染失败。PixelMap大小的计算方式为：宽 * 高 * 每像素占用字节数（详情请参考[PixelMapFormat](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-e#pixelmapformat7)）。
 
@@ -18,9 +18,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { image } from '@kit.ImageKit';
@@ -28,11 +29,13 @@ import { image } from '@kit.ImageKit';
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -42,9 +45,10 @@ import { image } from '@kit.ImageKit';
 
 
 
-#### readAllPixelsToBuffer
+## readAllPixelsToBuffer
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readAllPixelsToBuffer(dst: ArrayBuffer): Promise&lt;void&gt;
 
@@ -62,12 +66,14 @@ readAllPixelsToBuffer(dst: ArrayBuffer): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dst | ArrayBuffer | 是 | 目标缓冲区，获取的像素数据会被拷贝至该缓冲区。缓冲区内像素的格式与PixelMap相同，不包含内存对齐填充字节。缓冲区的大小可通过getPixelBytesNumber接口获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -77,6 +83,7 @@ readAllPixelsToBuffer(dst: ArrayBuffer): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -107,9 +114,10 @@ function readAllPixelsToBuffer(pixelMap: image.PixelMap) {
 
 
 
-#### readAllPixelsToBufferSync
+## readAllPixelsToBufferSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readAllPixelsToBufferSync(dst: ArrayBuffer): void
 
@@ -127,6 +135,7 @@ readAllPixelsToBufferSync(dst: ArrayBuffer): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dst | ArrayBuffer | 是 | 目标缓冲区，获取的像素数据会被拷贝至该缓冲区。缓冲区内像素的格式与PixelMap相同，不包含内存对齐填充字节。缓冲区的大小由getPixelBytesNumber接口获取。 |
@@ -135,6 +144,7 @@ readAllPixelsToBufferSync(dst: ArrayBuffer): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -165,9 +175,10 @@ function readAllPixelsToBufferSync(pixelMap: image.PixelMap) {
 
 
 
-#### readPixelsToBuffer7+
+## readPixelsToBuffer7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readPixelsToBuffer(dst: ArrayBuffer): Promise&lt;void&gt;
 
@@ -185,12 +196,14 @@ readPixelsToBuffer(dst: ArrayBuffer): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dst | ArrayBuffer | 是 | 目标缓冲区，获取的像素数据会被拷贝至该缓冲区。缓冲区内像素的格式与PixelMap相同，不包含内存对齐填充字节。缓冲区的大小由getPixelBytesNumber接口获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -214,9 +227,10 @@ function readPixelsToBuffer(pixelMap: image.PixelMap) {
 
 
 
-#### readPixelsToBuffer7+
+## readPixelsToBuffer7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readPixelsToBuffer(dst: ArrayBuffer, callback: AsyncCallback&lt;void&gt;): void
 
@@ -233,6 +247,7 @@ readPixelsToBuffer(dst: ArrayBuffer, callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -259,9 +274,10 @@ function readPixelsToBuffer(pixelMap: image.PixelMap) {
 
 
 
-#### readPixelsToBufferSync12+
+## readPixelsToBufferSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readPixelsToBufferSync(dst: ArrayBuffer): void
 
@@ -279,6 +295,7 @@ readPixelsToBufferSync(dst: ArrayBuffer): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dst | ArrayBuffer | 是 | 目标缓冲区，获取的像素数据会被拷贝至该缓冲区。缓冲区内像素的格式与PixelMap相同，不包含内存对齐填充字节。缓冲区的大小由getPixelBytesNumber接口获取。 |
@@ -286,12 +303,13 @@ readPixelsToBufferSync(dst: ArrayBuffer): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed |
-| 501 | Resource Unavailable |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 501 | Resource Unavailable. |
 
 
 **示例：**
@@ -313,9 +331,10 @@ function readPixelsToBufferSync(pixelMap: image.PixelMap) {
 
 
 
-#### readPixelsToArea
+## readPixelsToArea
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readPixelsToArea(area: PositionArea): Promise&lt;void&gt;
 
@@ -337,12 +356,14 @@ readPixelsToArea(area: PositionArea): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | area | PositionArea | 是 | 读取的区域数据。 该区域由PositionArea.region指定，获取的像素数据会被拷贝至PositionArea.pixels缓冲区。如果PixelMap的像素格式为YUV类型，则获取的像素数据格式与PixelMap相同，否则会被转换为BGRA_8888格式。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -352,6 +373,7 @@ readPixelsToArea(area: PositionArea): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -414,9 +436,10 @@ function readPixelsToAreaYUV(pixelMap: image.PixelMap) {
 
 
 
-#### readPixelsToAreaSync
+## readPixelsToAreaSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readPixelsToAreaSync(area: PositionArea): void
 
@@ -438,6 +461,7 @@ readPixelsToAreaSync(area: PositionArea): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | area | PositionArea | 是 | 读取的区域数据。 该区域由PositionArea.region指定，获取的像素数据会被拷贝至PositionArea.pixels缓冲区。如果PixelMap的像素格式为YUV类型，则获取的像素数据格式与PixelMap相同，否则会被转换为BGRA_8888格式。 |
@@ -446,6 +470,7 @@ readPixelsToAreaSync(area: PositionArea): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -508,9 +533,10 @@ function readPixelsToAreaSyncYUV(pixelMap: image.PixelMap) {
 
 
 
-#### readPixels7+
+## readPixels7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readPixels(area: PositionArea): Promise&lt;void&gt;
 
@@ -528,12 +554,14 @@ readPixels(area: PositionArea): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | area | PositionArea | 是 | 读取的区域数据。 该区域由PositionArea.region指定，获取的像素数据会被拷贝至PositionArea.pixels缓冲区。如果PixelMap的像素格式为YUV类型，则获取的像素数据格式与PixelMap相同，否则会被转换为BGRA_8888格式。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -578,9 +606,10 @@ function readPixelsYUV(pixelMap: image.PixelMap) {
 
 
 
-#### readPixels7+
+## readPixels7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readPixels(area: PositionArea, callback: AsyncCallback&lt;void&gt;): void
 
@@ -597,6 +626,7 @@ readPixels(area: PositionArea, callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -646,9 +676,10 @@ function readPixelsYUV(pixelMap: image.PixelMap) {
 
 
 
-#### readPixelsSync12+
+## readPixelsSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readPixelsSync(area: PositionArea): void
 
@@ -664,6 +695,7 @@ readPixelsSync(area: PositionArea): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | area | PositionArea | 是 | 读取的区域数据。 该区域由PositionArea.region指定，获取的像素数据会被拷贝至PositionArea.pixels缓冲区。如果PixelMap的像素格式为YUV类型，则获取的像素数据格式与PixelMap相同，否则会被转换为BGRA_8888格式。 |
@@ -671,12 +703,13 @@ readPixelsSync(area: PositionArea): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed |
-| 501 | Resource Unavailable |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 501 | Resource Unavailable. |
 
 
 **示例：**
@@ -703,9 +736,10 @@ function readPixelsSync(pixelMap: image.PixelMap) {
 
 
 
-#### writePixelsFromArea
+## writePixelsFromArea
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writePixelsFromArea(area: PositionArea): Promise&lt;void&gt;
 
@@ -727,12 +761,14 @@ writePixelsFromArea(area: PositionArea): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | area | PositionArea | 是 | 写入的区域数据。 该区域由PositionArea.region指定，PositionArea.pixels缓冲区内的像素数据会被写入PixelMap的该区域。如果PixelMap的像素格式为YUV类型，则缓冲区内的像素数据格式需与PixelMap相同，否则需要为BGRA_8888格式。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -742,6 +778,7 @@ writePixelsFromArea(area: PositionArea): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -819,9 +856,10 @@ function writePixelsFromAreaYUV(pixelMap: image.PixelMap) {
 
 
 
-#### writePixelsFromAreaSync
+## writePixelsFromAreaSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writePixelsFromAreaSync(area: PositionArea): void
 
@@ -843,6 +881,7 @@ writePixelsFromAreaSync(area: PositionArea): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | area | PositionArea | 是 | 写入的区域数据。 该区域由PositionArea.region指定，PositionArea.pixels缓冲区内的像素数据会被写入PixelMap的该区域。如果PixelMap的像素格式为YUV类型，则缓冲区内的像素数据格式需与PixelMap相同，否则需要为BGRA_8888格式。 |
@@ -851,6 +890,7 @@ writePixelsFromAreaSync(area: PositionArea): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -928,9 +968,10 @@ function writePixelsFromAreaSyncYUV(pixelMap: image.PixelMap) {
 
 
 
-#### writePixels7+
+## writePixels7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writePixels(area: PositionArea): Promise&lt;void&gt;
 
@@ -948,12 +989,14 @@ writePixels(area: PositionArea): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | area | PositionArea | 是 | 写入的区域数据。 该区域由PositionArea.region指定，PositionArea.pixels缓冲区内的像素数据会被写入PixelMap的该区域。如果PixelMap的像素格式为YUV类型，则缓冲区内的像素数据格式需与PixelMap相同，否则需要为BGRA_8888格式。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1004,9 +1047,10 @@ function writePixelsYUV(pixelMap: image.PixelMap) {
 
 
 
-#### writePixels7+
+## writePixels7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writePixels(area: PositionArea, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1023,6 +1067,7 @@ writePixels(area: PositionArea, callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1078,9 +1123,10 @@ function writePixelsYUV(pixelMap: image.PixelMap) {
 
 
 
-#### writePixelsSync12+
+## writePixelsSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writePixelsSync(area: PositionArea): void
 
@@ -1098,6 +1144,7 @@ writePixelsSync(area: PositionArea): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | area | PositionArea | 是 | 写入的区域数据。 该区域由PositionArea.region指定，PositionArea.pixels缓冲区内的像素数据会被写入PixelMap的该区域。如果PixelMap的像素格式为YUV类型，则缓冲区内的像素数据格式需与PixelMap相同，否则需要为BGRA_8888格式。 |
@@ -1105,12 +1152,13 @@ writePixelsSync(area: PositionArea): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed |
-| 501 | Resource Unavailable |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 501 | Resource Unavailable. |
 
 
 **示例：**
@@ -1141,9 +1189,10 @@ function writePixelsSync(pixelMap: image.PixelMap) {
 
 
 
-#### writeAllPixelsFromBuffer
+## writeAllPixelsFromBuffer
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeAllPixelsFromBuffer(src: ArrayBuffer): Promise&lt;void&gt;
 
@@ -1161,12 +1210,14 @@ writeAllPixelsFromBuffer(src: ArrayBuffer): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | src | ArrayBuffer | 是 | 源数据缓冲区，该缓冲区内的图像像素数据会被写入PixelMap。缓冲区内的像素数据必须是整个PixelMap的像素数据，且像素格式需与PixelMap相同，不包含内存对齐填充字节。缓冲区的大小可通过getPixelBytesNumber接口获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1176,6 +1227,7 @@ writeAllPixelsFromBuffer(src: ArrayBuffer): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1215,9 +1267,10 @@ function writeAllPixelsFromBuffer(pixelMap: image.PixelMap) {
 
 
 
-#### writeAllPixelsFromBufferSync
+## writeAllPixelsFromBufferSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeAllPixelsFromBufferSync(src: ArrayBuffer): void
 
@@ -1235,6 +1288,7 @@ writeAllPixelsFromBufferSync(src: ArrayBuffer): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | src | ArrayBuffer | 是 | 源数据缓冲区，该缓冲区内的图像像素数据会被写入PixelMap。缓冲区内的像素数据必须是整个PixelMap的像素数据，且像素格式需与PixelMap相同，不包含内存对齐填充字节。缓冲区的大小可通过getPixelBytesNumber接口获取。 |
@@ -1243,6 +1297,7 @@ writeAllPixelsFromBufferSync(src: ArrayBuffer): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1282,9 +1337,10 @@ function writeAllPixelsFromBufferSync(pixelMap: image.PixelMap) {
 
 
 
-#### writeBufferToPixels7+
+## writeBufferToPixels7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeBufferToPixels(src: ArrayBuffer): Promise&lt;void&gt;
 
@@ -1302,12 +1358,14 @@ writeBufferToPixels(src: ArrayBuffer): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | src | ArrayBuffer | 是 | 源数据缓冲区，该缓冲区内的图像像素数据会被写入PixelMap。缓冲区内的像素数据必须是整个PixelMap的像素数据，且像素格式需与PixelMap相同，不包含内存对齐填充字节。缓冲区的大小可通过getPixelBytesNumber接口获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1335,9 +1393,10 @@ function writeBufferToPixels(pixelMap: image.PixelMap) {
 
 
 
-#### writeBufferToPixels7+
+## writeBufferToPixels7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeBufferToPixels(src: ArrayBuffer, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1354,6 +1413,7 @@ writeBufferToPixels(src: ArrayBuffer, callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1384,9 +1444,10 @@ function writeBufferToPixels(pixelMap: image.PixelMap) {
 
 
 
-#### writeBufferToPixelsSync12+
+## writeBufferToPixelsSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeBufferToPixelsSync(src: ArrayBuffer): void
 
@@ -1402,6 +1463,7 @@ writeBufferToPixelsSync(src: ArrayBuffer): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | src | ArrayBuffer | 是 | 源数据缓冲区，该缓冲区内的图像像素数据会被写入PixelMap。缓冲区内的像素数据必须是整个PixelMap的像素数据，且像素格式需与PixelMap相同，不包含内存对齐填充字节。缓冲区的大小可通过getPixelBytesNumber接口获取。 |
@@ -1409,12 +1471,13 @@ writeBufferToPixelsSync(src: ArrayBuffer): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed |
-| 501 | Resource Unavailable |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 501 | Resource Unavailable. |
 
 
 **示例：**
@@ -1440,9 +1503,10 @@ function writeBufferToPixelsSync(pixelMap: image.PixelMap) {
 
 
 
-#### getImageInfo7+
+## getImageInfo7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getImageInfo(): Promise&lt;ImageInfo&gt;
 
@@ -1455,6 +1519,7 @@ getImageInfo(): Promise&lt;ImageInfo&gt;
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1477,9 +1542,10 @@ function getImageInfo(pixelMap: image.PixelMap) {
 
 
 
-#### getImageInfo7+
+## getImageInfo7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getImageInfo(callback: AsyncCallback&lt;ImageInfo&gt;): void
 
@@ -1492,6 +1558,7 @@ getImageInfo(callback: AsyncCallback&lt;ImageInfo&gt;): void
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1516,9 +1583,10 @@ function getImageInfo(pixelMap: image.PixelMap) {
 
 
 
-#### getImageInfoSync12+
+## getImageInfoSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getImageInfoSync(): ImageInfo
 
@@ -1532,6 +1600,7 @@ getImageInfoSync(): ImageInfo
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageInfo | 图像像素信息。 |
@@ -1541,9 +1610,10 @@ getImageInfoSync(): ImageInfo
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 501 | Resource Unavailable |
+| 501 | Resource Unavailable. |
 
 
 **示例：**
@@ -1564,9 +1634,10 @@ function getImageInfoSync(pixelMap: image.PixelMap) {
 
 
 
-#### getBytesNumberPerRow7+
+## getBytesNumberPerRow7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBytesNumberPerRow(): number
 
@@ -1579,6 +1650,7 @@ getBytesNumberPerRow(): number
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1595,9 +1667,10 @@ function getBytesNumberPerRow(pixelMap: image.PixelMap) {
 
 
 
-#### getPixelBytesNumber7+
+## getPixelBytesNumber7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPixelBytesNumber(): number
 
@@ -1610,6 +1683,7 @@ getPixelBytesNumber(): number
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1626,9 +1700,10 @@ function getPixelBytesNumber(pixelMap: image.PixelMap) {
 
 
 
-#### getDensity9+
+## getDensity9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDensity(): number
 
@@ -1641,6 +1716,7 @@ getDensity(): number
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1657,13 +1733,18 @@ function getDensity(pixelMap: image.PixelMap) {
 
 
 
-#### setOpacity
+## setOpacity
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setOpacity(value: number): Promise&lt;void&gt;
 
-设置PixelMap的不透明度，指定的不透明度值将被应用于所有像素，不受原图不透明度的影响。YUV格式的图像不支持设置不透明度。使用Promise异步回调。
+设置PixelMap的不透明度，指定的不透明度值将被应用于所有像素，不受原图不透明度的影响。使用Promise异步回调。
+
+> [!NOTE]
+> YUV格式的图像不支持设置不透明度。
+
 
 **起始版本：** 26.0.0
 
@@ -1677,12 +1758,14 @@ setOpacity(value: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | 是 | 不透明度值。取值范围是(0.0, 1.0]，1.0表示完全不透明，数值越接近0.0则透明度越高。 |
+| value | number | 是 | 不透明度的值。取值范围是(0.0, 1.0]，1.0表示完全不透明，数值越接近0.0则透明度越高。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1692,6 +1775,7 @@ setOpacity(value: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1722,13 +1806,18 @@ function setOpacity(pixelMap: image.PixelMap) {
 
 
 
-#### setOpacitySync
+## setOpacitySync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setOpacitySync(value: number): void
 
-设置PixelMap的不透明度，指定的不透明度值将被应用于所有像素，不受原图不透明度的影响。YUV格式的图像不支持设置不透明度。同步返回结果。
+设置PixelMap的不透明度，指定的不透明度值将被应用于所有像素，不受原图不透明度的影响。同步返回结果。
+
+> [!NOTE]
+> YUV格式的图像不支持设置不透明度。
+
 
 **起始版本：** 26.0.0
 
@@ -1742,14 +1831,16 @@ setOpacitySync(value: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | 是 | 不透明度值。取值范围是(0.0, 1.0]，1.0表示完全不透明，数值越接近0.0则透明度越高。 |
+| value | number | 是 | 不透明度的值。取值范围是(0.0, 1.0]，1.0表示完全不透明，数值越接近0.0则透明度越高。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1780,16 +1871,17 @@ function setOpacitySync(pixelMap: image.PixelMap) {
 
 
 
-#### opacity9+
+## opacity9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 opacity(rate: number, callback: AsyncCallback&lt;void&gt;): void
 
-设置PixelMap的不透明度，指定的不透明度值将被应用于所有像素，不受原图不透明度的影响。YUV格式的图像不支持设置不透明度。使用callback异步回调。
+设置PixelMap的不透明度，指定的不透明度值将被应用于所有像素，不受原图不透明度的影响。使用callback异步回调。
 
 > [!NOTE]
-> 从API版本26.0.0开始，建议使用 setOpacity 代替，以获得更完善的异常处理能力。
+> YUV格式的图像不支持设置不透明度。 从API版本26.0.0开始，建议使用 setOpacity 代替，以获得更完善的异常处理能力。
 
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
@@ -1800,9 +1892,10 @@ opacity(rate: number, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| rate | number | 是 | 不透明度的值，取值范围是(0, 1]。1.0表示完全不透明，数值越接近0.0则透明度越高。 |
+| rate | number | 是 | 不透明度的值，取值范围是(0.0, 1.0]。1.0表示完全不透明，数值越接近0.0则透明度越高。 |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当设置透明比率成功，err为undefined，否则为错误对象。 |
 
 
@@ -1825,16 +1918,17 @@ function opacity(pixelMap: image.PixelMap) {
 
 
 
-#### opacity9+
+## opacity9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 opacity(rate: number): Promise&lt;void&gt;
 
-设置PixelMap的不透明度，指定的不透明度值将被应用于所有像素，不受原图不透明度的影响。YUV格式的图像不支持设置不透明度。使用Promise异步回调。
+设置PixelMap的不透明度，指定的不透明度值将被应用于所有像素，不受原图不透明度的影响。使用Promise异步回调。
 
 > [!NOTE]
-> 从API版本26.0.0开始，建议使用 setOpacity 代替，以获得更完善的异常处理能力。
+> YUV格式的图像不支持设置不透明度。 从API版本26.0.0开始，建议使用 setOpacity 代替，以获得更完善的异常处理能力。
 
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
@@ -1845,12 +1939,14 @@ opacity(rate: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| rate | number | 是 | 不透明度的值，取值范围是(0, 1]。1.0表示完全不透明，数值越接近0.0则透明度越高。 |
+| rate | number | 是 | 不透明度的值，取值范围是(0.0, 1.0]。1.0表示完全不透明，数值越接近0.0则透明度越高。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1874,16 +1970,17 @@ function opacity(pixelMap: image.PixelMap) {
 
 
 
-#### opacitySync12+
+## opacitySync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 opacitySync(rate: number): void
 
-设置PixelMap的不透明度，指定的不透明度值将被应用于所有像素，不受原图不透明度的影响。YUV格式的图像不支持设置不透明度。同步返回结果。
+设置PixelMap的不透明度，指定的不透明度值将被应用于所有像素，不受原图不透明度的影响。同步返回结果。
 
 > [!NOTE]
-> 从API版本26.0.0开始，建议使用 setOpacitySync 代替，以获得更完善的异常处理能力。
+> YUV格式的图像不支持设置不透明度。 从API版本26.0.0开始，建议使用 setOpacitySync 代替，以获得更完善的异常处理能力。
 
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -1892,19 +1989,21 @@ opacitySync(rate: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| rate | number | 是 | 不透明度的值，取值范围是(0, 1]。1.0表示完全不透明，数值越接近0.0则透明度越高。 |
+| rate | number | 是 | 不透明度的值，取值范围是(0.0, 1.0]。1.0表示完全不透明，数值越接近0.0则透明度越高。 |
 
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed |
-| 501 | Resource Unavailable |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 501 | Resource Unavailable. |
 
 
 **示例：**
@@ -1926,16 +2025,17 @@ function opacitySync(pixelMap: image.PixelMap) {
 
 
 
-#### extractAlphaPixelMap
+## extractAlphaPixelMap
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 extractAlphaPixelMap(): Promise&lt;PixelMap&gt;
 
-提取当前PixelMap的Alpha通道数据，并生成一个仅包含Alpha通道信息的ALPHA_U8格式的PixelMap。生成的新PixelMap不可编辑，可用于阴影效果。YUV格式不支持此接口。使用Promise异步回调。
+提取当前PixelMap的Alpha通道数据，并生成一个仅包含Alpha通道信息的ALPHA_U8格式的PixelMap。生成的新PixelMap不可编辑，可用于阴影效果。使用Promise异步回调。
 
 > [!NOTE]
-> 若原PixelMap的格式是ALPHA_F16，则新生成的PixelMap将维持ALPHA_F16格式。
+> YUV格式不支持此接口。 如果原PixelMap的格式是ALPHA_F16，则新生成的PixelMap将维持ALPHA_F16格式。
 
 
 **起始版本：** 26.0.0
@@ -1950,6 +2050,7 @@ extractAlphaPixelMap(): Promise&lt;PixelMap&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;PixelMap&gt; | Promise对象，返回仅包含Alpha通道信息的ALPHA_U8格式的PixelMap。 |
@@ -1958,6 +2059,7 @@ extractAlphaPixelMap(): Promise&lt;PixelMap&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1986,16 +2088,17 @@ function extractAlphaPixelMap(pixelMap: image.PixelMap) {
 
 
 
-#### extractAlphaPixelMapSync
+## extractAlphaPixelMapSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 extractAlphaPixelMapSync(): PixelMap
 
-提取当前PixelMap的Alpha通道数据，并生成一个仅包含Alpha通道信息的ALPHA_U8格式的PixelMap。生成的新PixelMap不可编辑，可用于阴影效果。YUV格式不支持此接口。同步返回结果。
+提取当前PixelMap的Alpha通道数据，并生成一个仅包含Alpha通道信息的ALPHA_U8格式的PixelMap。生成的新PixelMap不可编辑，可用于阴影效果。同步返回结果。
 
 > [!NOTE]
-> 若原PixelMap的格式是ALPHA_F16，则新生成的PixelMap将维持ALPHA_F16格式。
+> YUV格式不支持此接口。 如果原PixelMap的格式是ALPHA_F16，则新生成的PixelMap将维持ALPHA_F16格式。
 
 
 **起始版本：** 26.0.0
@@ -2010,6 +2113,7 @@ extractAlphaPixelMapSync(): PixelMap
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | PixelMap | 返回仅包含Alpha通道信息的ALPHA_U8格式的PixelMap。 |
@@ -2018,6 +2122,7 @@ extractAlphaPixelMapSync(): PixelMap
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2046,16 +2151,17 @@ function extractAlphaPixelMapSync(pixelMap: image.PixelMap) {
 
 
 
-#### createAlphaPixelmap9+
+## createAlphaPixelmap9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAlphaPixelmap(): Promise&lt;PixelMap&gt;
 
-根据Alpha通道的信息，生成一个仅包含Alpha通道信息的ALPHA_8格式的PixelMap，生成的新PixelMap不可编辑，可用于阴影效果。YUV格式不支持此接口。使用Promise异步回调。
+根据Alpha通道的信息，生成一个仅包含Alpha通道信息的ALPHA_8格式的PixelMap，生成的新PixelMap不可编辑，可用于阴影效果。使用Promise异步回调。
 
 > [!NOTE]
-> 若原PixelMap的格式是ALPHA_F16，则新生成的PixelMap将维持ALPHA_F16格式。 从API版本26.0.0开始，建议使用 extractAlphaPixelMap 代替，以获得更完善的异常处理能力。
+> YUV格式不支持此接口。 如果原PixelMap的格式是ALPHA_F16，则新生成的PixelMap将维持ALPHA_F16格式。 从API版本26.0.0开始，建议使用 extractAlphaPixelMap 代替，以获得更完善的异常处理能力。
 
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
@@ -2065,6 +2171,7 @@ createAlphaPixelmap(): Promise&lt;PixelMap&gt;
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2087,16 +2194,17 @@ function createAlphaPixelmap(pixelMap: image.PixelMap) {
 
 
 
-#### createAlphaPixelmap9+
+## createAlphaPixelmap9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAlphaPixelmap(callback: AsyncCallback&lt;PixelMap&gt;): void
 
-根据Alpha通道的信息，来生成一个仅包含Alpha通道信息的ALPHA_8格式的PixelMap，生成的新PixelMap不可编辑，可用于阴影效果。YUV格式不支持此接口。使用callback异步回调。
+根据Alpha通道的信息，来生成一个仅包含Alpha通道信息的ALPHA_8格式的PixelMap，生成的新PixelMap不可编辑，可用于阴影效果。使用callback异步回调。
 
 > [!NOTE]
-> 若原PixelMap的格式是ALPHA_F16，则新生成的PixelMap将维持ALPHA_F16格式。 从API版本26.0.0开始，建议使用 extractAlphaPixelMap 代替，以获得更完善的异常处理能力。
+> YUV格式不支持此接口。 如果原PixelMap的格式是ALPHA_F16，则新生成的PixelMap将维持ALPHA_F16格式。 从API版本26.0.0开始，建议使用 extractAlphaPixelMap 代替，以获得更完善的异常处理能力。
 
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
@@ -2106,6 +2214,7 @@ createAlphaPixelmap(callback: AsyncCallback&lt;PixelMap&gt;): void
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2130,16 +2239,17 @@ function createAlphaPixelmap(pixelMap: image.PixelMap) {
 
 
 
-#### createAlphaPixelmapSync12+
+## createAlphaPixelmapSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAlphaPixelmapSync(): PixelMap
 
-根据Alpha通道的信息，生成一个仅包含Alpha通道信息的ALPHA_8格式的PixelMap，生成的新PixelMap不可编辑，可用于阴影效果。YUV格式不支持此接口。同步返回结果。
+根据Alpha通道的信息，生成一个仅包含Alpha通道信息的ALPHA_8格式的PixelMap，生成的新PixelMap不可编辑，可用于阴影效果。同步返回结果。
 
 > [!NOTE]
-> 若原PixelMap的格式是ALPHA_F16，则新生成的PixelMap将维持ALPHA_F16格式。 从API版本26.0.0开始，建议使用 extractAlphaPixelMapSync 代替，以获得更完善的异常处理能力。
+> YUV格式不支持此接口。 如果原PixelMap的格式是ALPHA_F16，则新生成的PixelMap将维持ALPHA_F16格式。 从API版本26.0.0开始，建议使用 extractAlphaPixelMapSync 代替，以获得更完善的异常处理能力。
 
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -2148,6 +2258,7 @@ createAlphaPixelmapSync(): PixelMap
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | PixelMap | 成功同步返回仅包含Alpha通道信息的ALPHA_8格式的PixelMap对象，失败抛出异常。 |
@@ -2155,12 +2266,13 @@ createAlphaPixelmapSync(): PixelMap
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Parameter verification failed |
-| 501 | Resource Unavailable |
+| 401 | Parameter error. Possible causes: 1.Parameter verification failed. |
+| 501 | Resource Unavailable. |
 
 
 **示例：**
@@ -2185,16 +2297,17 @@ function createAlphaPixelmapSync(pixelMap: image.PixelMap) {
 
 
 
-#### applyScale
+## applyScale
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 applyScale(x: number, y: number, level?: AntiAliasingLevel): Promise&lt;void&gt;
 
 根据指定的宽高缩放倍数和缩放算法对PixelMap进行缩放。使用Promise异步回调。
 
 > [!NOTE]
-> 建议宽高的缩放倍数取正数，否则会产生翻转效果。 缩放倍数 = 缩放后的图像尺寸 / 缩放前的图像尺寸。
+> 缩放倍数 = 缩放后的图像尺寸 / 缩放前的图像尺寸。
 
 
 **起始版本：** 26.0.0
@@ -2209,14 +2322,16 @@ applyScale(x: number, y: number, level?: AntiAliasingLevel): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| x | number | 是 | 宽度的缩放倍数。取值不能为0。 |
-| y | number | 是 | 高度的缩放倍数。取值不能为0。 |
+| x | number | 是 | 宽度的缩放倍数。 取值不能为0，建议取正数，否则会产生翻转效果。 |
+| y | number | 是 | 高度的缩放倍数。 取值不能为0，建议取正数，否则会产生翻转效果。 |
 | level | AntiAliasingLevel | 否 | 采用的缩放算法。该参数对于ASTC格式的PixelMap不生效。默认值为AntiAliasingLevel.NONE。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2226,6 +2341,7 @@ applyScale(x: number, y: number, level?: AntiAliasingLevel): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2257,16 +2373,17 @@ function applyScale(pixelMap: image.PixelMap) {
 
 
 
-#### applyScaleSync
+## applyScaleSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 applyScaleSync(x: number, y: number, level?: AntiAliasingLevel): void
 
 根据指定的宽高缩放倍数和缩放算法对PixelMap进行缩放。同步返回结果。
 
 > [!NOTE]
-> 建议宽高的缩放倍数取正数，否则会产生翻转效果。 缩放倍数 = 缩放后的图像尺寸 / 缩放前的图像尺寸。
+> 缩放倍数 = 缩放后的图像尺寸 / 缩放前的图像尺寸。
 
 
 **起始版本：** 26.0.0
@@ -2281,16 +2398,18 @@ applyScaleSync(x: number, y: number, level?: AntiAliasingLevel): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| x | number | 是 | 宽度的缩放倍数。取值不能为0。 |
-| y | number | 是 | 高度的缩放倍数。取值不能为0。 |
+| x | number | 是 | 宽度的缩放倍数。 取值不能为0，建议取正数，否则会产生翻转效果。 |
+| y | number | 是 | 高度的缩放倍数。 取值不能为0，建议取正数，否则会产生翻转效果。 |
 | level | AntiAliasingLevel | 否 | 采用的缩放算法。该参数对于ASTC格式的PixelMap不生效。默认值为AntiAliasingLevel.NONE。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2322,16 +2441,17 @@ function applyScaleSync(pixelMap: image.PixelMap) {
 
 
 
-#### scale9+
+## scale9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scale(x: number, y: number, callback: AsyncCallback&lt;void&gt;): void
 
-根据输入的宽高的缩放倍数对图片进行缩放。使用callback异步回调。
+根据输入的宽高缩放倍数对图片进行缩放。使用callback异步回调。
 
 > [!NOTE]
-> 建议宽高的缩放倍数取正数，否则会产生翻转效果。 宽高的缩放倍数 = 缩放后的图片宽高 / 缩放前的图片宽高。 从API版本26.0.0开始，建议使用 applyScale 代替，以获得更完善的异常处理能力。
+> 宽高的缩放倍数 = 缩放后的图片宽高 / 缩放前的图片宽高。 从API版本26.0.0开始，建议使用 applyScale 代替，以获得更完善的异常处理能力。
 
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
@@ -2342,10 +2462,11 @@ scale(x: number, y: number, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| x | number | 是 | 宽度的缩放倍数。取值不能为0。 |
-| y | number | 是 | 高度的缩放倍数。取值不能为0。 |
+| x | number | 是 | 宽度的缩放倍数。 取值不能为0，建议取正数，否则会产生翻转效果。 |
+| y | number | 是 | 高度的缩放倍数。 取值不能为0，建议取正数，否则会产生翻转效果。 |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当对图片进行缩放成功，err为undefined，否则为错误对象。 |
 
 
@@ -2369,16 +2490,17 @@ function scale(pixelMap: image.PixelMap) {
 
 
 
-#### scale9+
+## scale9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scale(x: number, y: number): Promise&lt;void&gt;
 
-根据输入的宽高的缩放倍数对图片进行缩放。使用Promise异步回调。
+根据输入的宽高缩放倍数对图片进行缩放。使用Promise异步回调。
 
 > [!NOTE]
-> 建议宽高的缩放倍数取正数，否则会产生翻转效果。 宽高的缩放倍数 = 缩放后的图片宽高 / 缩放前的图片宽高。 从API版本26.0.0开始，建议使用 applyScale 代替，以获得更完善的异常处理能力。
+> 宽高的缩放倍数 = 缩放后的图片宽高 / 缩放前的图片宽高。 从API版本26.0.0开始，建议使用 applyScale 代替，以获得更完善的异常处理能力。
 
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
@@ -2389,13 +2511,15 @@ scale(x: number, y: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| x | number | 是 | 宽度的缩放倍数。取值不能为0。 |
-| y | number | 是 | 高度的缩放倍数。取值不能为0。 |
+| x | number | 是 | 宽度的缩放倍数。 取值不能为0，建议取正数，否则会产生翻转效果。 |
+| y | number | 是 | 高度的缩放倍数。 取值不能为0，建议取正数，否则会产生翻转效果。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2420,16 +2544,17 @@ function scale(pixelMap: image.PixelMap) {
 
 
 
-#### scaleSync12+
+## scaleSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scaleSync(x: number, y: number): void
 
-根据输入的宽高的缩放倍数对图片进行缩放。同步返回结果。
+根据输入的宽高缩放倍数对图片进行缩放。同步返回结果。
 
 > [!NOTE]
-> 建议宽高的缩放倍数取正数，否则会产生翻转效果。 宽高的缩放倍数 = 缩放后的图片宽高 / 缩放前的图片宽高。 从API版本26.0.0开始，建议使用 applyScaleSync 代替，以获得更完善的异常处理能力。
+> 宽高的缩放倍数 = 缩放后的图片宽高 / 缩放前的图片宽高。 从API版本26.0.0开始，建议使用 applyScaleSync 代替，以获得更完善的异常处理能力。
 
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -2438,20 +2563,22 @@ scaleSync(x: number, y: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| x | number | 是 | 宽度的缩放倍数。取值不能为0。 |
-| y | number | 是 | 高度的缩放倍数。取值不能为0。 |
+| x | number | 是 | 宽度的缩放倍数。 取值不能为0，建议取正数，否则会产生翻转效果。 |
+| y | number | 是 | 高度的缩放倍数。 取值不能为0，建议取正数，否则会产生翻转效果。 |
 
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed |
-| 501 | Resource Unavailable |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 501 | Resource Unavailable. |
 
 
 **示例：**
@@ -2474,16 +2601,17 @@ function scaleSync(pixelMap: image.PixelMap) {
 
 
 
-#### scale12+
+## scale12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scale(x: number, y: number, level: AntiAliasingLevel): Promise&lt;void&gt;
 
 根据指定的缩放算法和输入的宽高的缩放倍数对图片进行缩放。使用Promise异步回调。
 
 > [!NOTE]
-> 建议宽高的缩放倍数取正数，否则会产生翻转效果。 宽高的缩放倍数 = 缩放后的图片宽高 / 缩放前的图片宽高。 从API版本26.0.0开始，建议使用 applyScale 代替，以获得更完善的异常处理能力。
+> 宽高的缩放倍数 = 缩放后的图片宽高 / 缩放前的图片宽高。 从API版本26.0.0开始，建议使用 applyScale 代替，以获得更完善的异常处理能力。
 
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
@@ -2494,14 +2622,16 @@ scale(x: number, y: number, level: AntiAliasingLevel): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| x | number | 是 | 宽度的缩放倍数。取值不能为0。 |
-| y | number | 是 | 高度的缩放倍数。取值不能为0。 |
+| x | number | 是 | 宽度的缩放倍数。 取值不能为0，建议取正数，否则会产生翻转效果。 |
+| y | number | 是 | 高度的缩放倍数。 取值不能为0，建议取正数，否则会产生翻转效果。 |
 | level | AntiAliasingLevel | 是 | 采用的缩放算法。该参数对于ASTC格式的PixelMap不生效。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2510,12 +2640,13 @@ scale(x: number, y: number, level: AntiAliasingLevel): Promise&lt;void&gt;
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed |
-| 501 | Resource Unavailable |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 501 | Resource Unavailable. |
 
 
 **示例：**
@@ -2536,16 +2667,17 @@ function scaleSync(pixelMap: image.PixelMap) {
 
 
 
-#### scaleSync12+
+## scaleSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scaleSync(x: number, y: number, level: AntiAliasingLevel): void
 
 根据指定的缩放算法和输入的宽高的缩放倍数对图片进行缩放。同步返回结果。
 
 > [!NOTE]
-> 建议宽高的缩放倍数取正数，否则会产生翻转效果。 宽高的缩放倍数 = 缩放后的图片宽高 / 缩放前的图片宽高。 从API版本26.0.0开始，建议使用 applyScaleSync 代替，以获得更完善的异常处理能力。
+> 宽高的缩放倍数 = 缩放后的图片宽高 / 缩放前的图片宽高。 从API版本26.0.0开始，建议使用 applyScaleSync 代替，以获得更完善的异常处理能力。
 
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -2554,21 +2686,23 @@ scaleSync(x: number, y: number, level: AntiAliasingLevel): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| x | number | 是 | 宽度的缩放倍数。取值不能为0。 |
-| y | number | 是 | 高度的缩放倍数。取值不能为0。 |
+| x | number | 是 | 宽度的缩放倍数。 取值不能为0，建议取正数，否则会产生翻转效果。 |
+| y | number | 是 | 高度的缩放倍数。 取值不能为0，建议取正数，否则会产生翻转效果。 |
 | level | AntiAliasingLevel | 是 | 采用的缩放算法。该参数对于ASTC格式的PixelMap不生效。 |
 
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed |
-| 501 | Resource Unavailable |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 501 | Resource Unavailable. |
 
 
 **示例：**
@@ -2591,9 +2725,10 @@ function scaleSync(pixelMap: image.PixelMap) {
 
 
 
-#### createScaledPixelMap18+
+## createScaledPixelMap18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createScaledPixelMap(x: number, y: number, level?: AntiAliasingLevel): Promise&lt;PixelMap&gt;
 
@@ -2607,14 +2742,16 @@ createScaledPixelMap(x: number, y: number, level?: AntiAliasingLevel): Promise&l
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| x | number | 是 | 宽度的缩放倍数。取值不能为0。 |
-| y | number | 是 | 高度的缩放倍数。取值不能为0。 |
+| x | number | 是 | 宽度的缩放倍数。 取值不能为0，建议取正数，否则会产生翻转效果。 |
+| y | number | 是 | 高度的缩放倍数。 取值不能为0，建议取正数，否则会产生翻转效果。 |
 | level | AntiAliasingLevel | 否 | 采用的缩放算法，默认值为AntiAliasingLevel.NONE。该参数对于ASTC格式的PixelMap不生效。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2623,12 +2760,13 @@ createScaledPixelMap(x: number, y: number, level?: AntiAliasingLevel): Promise&l
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed |
-| 501 | Resource Unavailable |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 501 | Resource Unavailable. |
 
 
 **示例：**
@@ -2649,9 +2787,10 @@ function createScaledPixelMap(pixelMap: image.PixelMap) {
 
 
 
-#### createScaledPixelMapSync18+
+## createScaledPixelMapSync18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createScaledPixelMapSync(x: number, y: number, level?: AntiAliasingLevel): PixelMap
 
@@ -2665,14 +2804,16 @@ createScaledPixelMapSync(x: number, y: number, level?: AntiAliasingLevel): Pixel
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| x | number | 是 | 宽度的缩放倍数。取值不能为0。 |
-| y | number | 是 | 高度的缩放倍数。取值不能为0。 |
+| x | number | 是 | 宽度的缩放倍数。 取值不能为0，建议取正数，否则会产生翻转效果。 |
+| y | number | 是 | 高度的缩放倍数。 取值不能为0，建议取正数，否则会产生翻转效果。 |
 | level | AntiAliasingLevel | 否 | 采用的缩放算法，默认值为AntiAliasingLevel.NONE。该参数对于ASTC格式的PixelMap不生效。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2681,12 +2822,13 @@ createScaledPixelMapSync(x: number, y: number, level?: AntiAliasingLevel): Pixel
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed |
-| 501 | Resource Unavailable |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 501 | Resource Unavailable. |
 
 
 **示例：**
@@ -2709,9 +2851,10 @@ function createScaledPixelMapSync(pixelMap: image.PixelMap) {
 
 
 
-#### createCroppedAndScaledPixelMap22+
+## createCroppedAndScaledPixelMap22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createCroppedAndScaledPixelMap(region: Region, x: number, y: number, level?: AntiAliasingLevel): Promise&lt;PixelMap&gt;
 
@@ -2725,15 +2868,17 @@ createCroppedAndScaledPixelMap(region: Region, x: number, y: number, level?: Ant
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | region | Region | 是 | 裁剪的区域。取值范围不能超过图片的宽和高。单位：像素（px）。 |
-| x | number | 是 | 宽度的缩放倍数。取值不能为0。 |
-| y | number | 是 | 高度的缩放倍数。取值不能为0。 |
+| x | number | 是 | 宽度的缩放倍数。 取值不能为0，建议取正数，否则会产生翻转效果。 |
+| y | number | 是 | 高度的缩放倍数。 取值不能为0，建议取正数，否则会产生翻转效果。 |
 | level | AntiAliasingLevel | 否 | 采用的缩放算法。默认值为AntiAliasingLevel.NONE。该参数对于ASTC格式的PixelMap不生效。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2743,6 +2888,7 @@ createCroppedAndScaledPixelMap(region: Region, x: number, y: number, level?: Ant
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2778,9 +2924,10 @@ function createCroppedAndScaledPixelMap(pixelMap: image.PixelMap) {
 
 
 
-#### createCroppedAndScaledPixelMapSync22+
+## createCroppedAndScaledPixelMapSync22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createCroppedAndScaledPixelMapSync(region: Region, x: number, y: number, level?: AntiAliasingLevel): PixelMap
 
@@ -2794,15 +2941,17 @@ createCroppedAndScaledPixelMapSync(region: Region, x: number, y: number, level?:
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | region | Region | 是 | 裁剪的区域。取值范围不能超过图片的宽和高。单位：像素（px）。 |
-| x | number | 是 | 宽度的缩放倍数。取值不能为0。 |
-| y | number | 是 | 高度的缩放倍数。取值不能为0。 |
+| x | number | 是 | 宽度的缩放倍数。 取值不能为0，建议取正数，否则会产生翻转效果。 |
+| y | number | 是 | 高度的缩放倍数。 取值不能为0，建议取正数，否则会产生翻转效果。 |
 | level | AntiAliasingLevel | 否 | 采用的缩放算法。默认值为AntiAliasingLevel.NONE。该参数对于ASTC格式的PixelMap不生效。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2812,6 +2961,7 @@ createCroppedAndScaledPixelMapSync(region: Region, x: number, y: number, level?:
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2847,9 +2997,10 @@ function createCroppedAndScaledPixelMapSync(pixelMap: image.PixelMap) {
 
 
 
-#### clone18+
+## clone18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clone(): Promise&lt;PixelMap&gt;
 
@@ -2863,6 +3014,7 @@ clone(): Promise&lt;PixelMap&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;PixelMap&gt; | Promise对象，返回拷贝的PixelMap。 |
@@ -2871,6 +3023,7 @@ clone(): Promise&lt;PixelMap&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2897,9 +3050,10 @@ function clone(pixelMap: image.PixelMap) {
 
 
 
-#### cloneSync18+
+## cloneSync18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cloneSync(): PixelMap
 
@@ -2913,6 +3067,7 @@ cloneSync(): PixelMap
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | PixelMap | 成功同步返回拷贝的PixelMap对象，失败抛出异常。 |
@@ -2921,6 +3076,7 @@ cloneSync(): PixelMap
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2949,9 +3105,10 @@ function cloneSync(pixelMap: image.PixelMap) {
 
 
 
-#### applyTranslate
+## applyTranslate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 applyTranslate(x: number, y: number): Promise&lt;void&gt;
 
@@ -2973,6 +3130,7 @@ applyTranslate(x: number, y: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | x | number | 是 | 横向平移的距离。方向为正数向右，负数向左。取值范围是(-图像宽度, +∞)。单位：像素（px）。 取值为负数时，平移的效果等同于裁剪掉自图像左侧起的x列像素。 |
@@ -2980,6 +3138,7 @@ applyTranslate(x: number, y: number): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2989,6 +3148,7 @@ applyTranslate(x: number, y: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3020,9 +3180,10 @@ function applyTranslate(pixelMap: image.PixelMap) {
 
 
 
-#### applyTranslateSync
+## applyTranslateSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 applyTranslateSync(x: number, y: number): void
 
@@ -3044,6 +3205,7 @@ applyTranslateSync(x: number, y: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | x | number | 是 | 横向平移的距离。方向为正数向右，负数向左。取值范围是(-图像宽度, +∞)。单位：像素（px）。 取值为负数时，平移的效果等同于裁剪掉自图像左侧起的x列像素。 |
@@ -3053,6 +3215,7 @@ applyTranslateSync(x: number, y: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3084,9 +3247,10 @@ function applyTranslateSync(pixelMap: image.PixelMap) {
 
 
 
-#### translate9+
+## translate9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 translate(x: number, y: number, callback: AsyncCallback&lt;void&gt;): void
 
@@ -3103,6 +3267,7 @@ translate(x: number, y: number, callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3131,9 +3296,10 @@ function translate(pixelMap: image.PixelMap) {
 
 
 
-#### translate9+
+## translate9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 translate(x: number, y: number): Promise&lt;void&gt;
 
@@ -3151,6 +3317,7 @@ translate(x: number, y: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | x | number | 是 | 横向平移的距离。方向为正数向右，负数向左。取值范围是(-图像宽度, +∞)。单位：像素（px）。 取值为负数时，平移的效果等同于裁剪掉自图像左侧起的x列像素。 |
@@ -3158,6 +3325,7 @@ translate(x: number, y: number): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3182,9 +3350,10 @@ function translate(pixelMap: image.PixelMap) {
 
 
 
-#### translateSync12+
+## translateSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 translateSync(x: number, y: number): void
 
@@ -3200,6 +3369,7 @@ translateSync(x: number, y: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | x | number | 是 | 横向平移的距离。方向为正数向右，负数向左。取值范围是(-图像宽度, +∞)。单位：像素（px）。 取值为负数时，平移的效果等同于裁剪掉自图像左侧起的x列像素。 |
@@ -3208,12 +3378,13 @@ translateSync(x: number, y: number): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed |
-| 501 | Resource Unavailable |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 501 | Resource Unavailable. |
 
 
 **示例：**
@@ -3236,16 +3407,17 @@ function translateSync(pixelMap: image.PixelMap) {
 
 
 
-#### applyRotate
+## applyRotate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 applyRotate(angle: number): Promise&lt;void&gt;
 
-根据指定的角度对PixelMap进行旋转。YUV格式仅支持90°倍数的旋转角。使用Promise异步回调。
+根据指定的角度对PixelMap进行旋转。使用Promise异步回调。
 
 > [!NOTE]
-> 图像旋转角度的取值范围为[0, 360]。超出取值范围时，将根据圆周360°自动矫正。例如，-100°与260°效果相同。 当旋转角度不是90°的倍数时，图像的尺寸会扩大为旋转后的外接矩形尺寸，以容纳旋转后的图像内容。例如：正方形图像旋转45°后，输出图像的尺寸（边长）变为原图像的√2倍。
+> YUV格式仅支持90°倍数的旋转角。 图像旋转角度的取值范围为[0, 360]。超出取值范围时，将根据圆周360°自动矫正。例如，-100°与260°效果相同。 当旋转角度不是90°的倍数时，图像的尺寸会扩大为旋转后的外接矩形尺寸，以容纳旋转后的图像内容。例如：正方形图像旋转45°后，输出图像的尺寸（边长）变为原图像的√2倍。
 
 
 **起始版本：** 26.0.0
@@ -3260,12 +3432,14 @@ applyRotate(angle: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | angle | number | 是 | 旋转的角度。方向为正数顺时针，负数逆时针。单位：角度（°）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3275,6 +3449,7 @@ applyRotate(angle: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3305,16 +3480,17 @@ function applyRotate(pixelMap: image.PixelMap) {
 
 
 
-#### applyRotateSync
+## applyRotateSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 applyRotateSync(angle: number): void
 
-根据指定的角度对PixelMap进行旋转。YUV格式仅支持90°倍数的旋转角。同步返回结果。
+根据指定的角度对PixelMap进行旋转。同步返回结果。
 
 > [!NOTE]
-> 图像旋转角度的取值范围为[0, 360]。超出取值范围时，将根据圆周360°自动矫正。例如，-100°与260°效果相同。 当旋转角度不是90°的倍数时，图像的尺寸会扩大为旋转后的外接矩形尺寸，以容纳旋转后的图像内容。例如：正方形图像旋转45°后，输出图像的尺寸（边长）变为原图像的√2倍。
+> YUV格式仅支持90°倍数的旋转角。 图像旋转角度的取值范围为[0, 360]。超出取值范围时，将根据圆周360°自动矫正。例如，-100°与260°效果相同。 当旋转角度不是90°的倍数时，图像的尺寸会扩大为旋转后的外接矩形尺寸，以容纳旋转后的图像内容。例如：正方形图像旋转45°后，输出图像的尺寸（边长）变为原图像的√2倍。
 
 
 **起始版本：** 26.0.0
@@ -3329,6 +3505,7 @@ applyRotateSync(angle: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | angle | number | 是 | 旋转的角度。方向为正数顺时针，负数逆时针。单位：角度（°）。 |
@@ -3337,6 +3514,7 @@ applyRotateSync(angle: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3367,16 +3545,17 @@ function applyRotateSync(pixelMap: image.PixelMap) {
 
 
 
-#### rotate9+
+## rotate9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 rotate(angle: number, callback: AsyncCallback&lt;void&gt;): void
 
-根据输入的角度对图片进行旋转，YUV格式仅支持90°倍数的旋转角。使用callback异步回调。
+根据输入的角度对图片进行旋转。使用callback异步回调。
 
 > [!NOTE]
-> 图像旋转的角度取值范围：[0, 360]。超出取值范围时，根据圆周360°自动矫正。例如，-100°与260°效果相同。 如果图片旋转的角度不是90的整数倍，旋转后图片的尺寸会发生改变。 从API版本26.0.0开始，建议使用 applyRotate 代替，以获得更完善的异常处理能力。
+> YUV格式仅支持90°倍数的旋转角。 图像旋转的角度取值范围：[0, 360]。超出取值范围时，根据圆周360°自动矫正。例如，-100°与260°效果相同。 如果图片旋转的角度不是90的整数倍，旋转后图片的尺寸会发生改变。 从API版本26.0.0开始，建议使用 applyRotate 代替，以获得更完善的异常处理能力。
 
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
@@ -3386,6 +3565,7 @@ rotate(angle: number, callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3412,16 +3592,17 @@ function rotate(pixelMap: image.PixelMap) {
 
 
 
-#### rotate9+
+## rotate9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 rotate(angle: number): Promise&lt;void&gt;
 
-根据输入的角度对图片进行旋转，YUV格式仅支持90°倍数的旋转角。使用Promise异步回调。
+根据输入的角度对图片进行旋转。使用Promise异步回调。
 
 > [!NOTE]
-> 图像旋转的角度取值范围：[0, 360]。超出取值范围时，根据圆周360°自动矫正。例如，-100°与260°效果相同。 如果图片旋转的角度不是90的整数倍，旋转后图片的尺寸会发生改变。 从API版本26.0.0开始，建议使用 applyRotate 代替，以获得更完善的异常处理能力。
+> YUV格式仅支持90°倍数的旋转角。 图像旋转的角度取值范围：[0, 360]。超出取值范围时，根据圆周360°自动矫正。例如，-100°与260°效果相同。 如果图片旋转的角度不是90的整数倍，旋转后图片的尺寸会发生改变。 从API版本26.0.0开始，建议使用 applyRotate 代替，以获得更完善的异常处理能力。
 
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
@@ -3432,12 +3613,14 @@ rotate(angle: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | angle | number | 是 | 图像旋转的角度。方向为正数顺时针，负数逆时针。单位：角度（°）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3461,16 +3644,17 @@ function rotate(pixelMap: image.PixelMap) {
 
 
 
-#### rotateSync12+
+## rotateSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 rotateSync(angle: number): void
 
-根据输入的角度对图片进行旋转，YUV格式仅支持90°倍数的旋转角。同步返回结果。
+根据输入的角度对图片进行旋转。同步返回结果。
 
 > [!NOTE]
-> 图像旋转的角度取值范围：[0, 360]。超出取值范围时，根据圆周360°自动矫正。例如，-100°与260°效果相同。 如果图片旋转的角度不是90的整数倍，旋转后图片的尺寸会发生改变。 从API版本26.0.0开始，建议使用 applyRotateSync 代替，以获得更完善的异常处理能力。
+> YUV格式仅支持90°倍数的旋转角。 图像旋转的角度取值范围：[0, 360]。超出取值范围时，根据圆周360°自动矫正。例如，-100°与260°效果相同。 如果图片旋转的角度不是90的整数倍，旋转后图片的尺寸会发生改变。 从API版本26.0.0开始，建议使用 applyRotateSync 代替，以获得更完善的异常处理能力。
 
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -3479,6 +3663,7 @@ rotateSync(angle: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | angle | number | 是 | 图像旋转的角度。方向为正数顺时针，负数逆时针。单位：角度（°）。 |
@@ -3486,12 +3671,13 @@ rotateSync(angle: number): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed |
-| 501 | Resource Unavailable |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 501 | Resource Unavailable. |
 
 
 **示例：**
@@ -3513,9 +3699,10 @@ function rotateSync(pixelMap: image.PixelMap) {
 
 
 
-#### applyFlip
+## applyFlip
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 applyFlip(horizontal: boolean, vertical: boolean): Promise&lt;void&gt;
 
@@ -3533,6 +3720,7 @@ applyFlip(horizontal: boolean, vertical: boolean): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | horizontal | boolean | 是 | 是否进行水平翻转。true表示进行水平翻转，false表示不进行水平翻转。 |
@@ -3540,6 +3728,7 @@ applyFlip(horizontal: boolean, vertical: boolean): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3549,6 +3738,7 @@ applyFlip(horizontal: boolean, vertical: boolean): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3580,9 +3770,10 @@ function applyFlip(pixelMap: image.PixelMap) {
 
 
 
-#### applyFlipSync
+## applyFlipSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 applyFlipSync(horizontal: boolean, vertical: boolean): void
 
@@ -3600,6 +3791,7 @@ applyFlipSync(horizontal: boolean, vertical: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | horizontal | boolean | 是 | 是否进行水平翻转。true表示进行水平翻转，false表示不进行水平翻转。 |
@@ -3609,6 +3801,7 @@ applyFlipSync(horizontal: boolean, vertical: boolean): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3640,9 +3833,10 @@ function applyFlipSync(pixelMap: image.PixelMap) {
 
 
 
-#### flip9+
+## flip9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 flip(horizontal: boolean, vertical: boolean, callback: AsyncCallback&lt;void&gt;): void
 
@@ -3659,6 +3853,7 @@ flip(horizontal: boolean, vertical: boolean, callback: AsyncCallback&lt;void&gt;
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3687,9 +3882,10 @@ function flip(pixelMap: image.PixelMap) {
 
 
 
-#### flip9+
+## flip9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 flip(horizontal: boolean, vertical: boolean): Promise&lt;void&gt;
 
@@ -3707,6 +3903,7 @@ flip(horizontal: boolean, vertical: boolean): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | horizontal | boolean | 是 | true表示进行水平翻转，false表示不进行水平翻转。 |
@@ -3714,6 +3911,7 @@ flip(horizontal: boolean, vertical: boolean): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3738,9 +3936,10 @@ function flip(pixelMap: image.PixelMap) {
 
 
 
-#### flipSync12+
+## flipSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 flipSync(horizontal: boolean, vertical: boolean): void
 
@@ -3756,6 +3955,7 @@ flipSync(horizontal: boolean, vertical: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | horizontal | boolean | 是 | true表示进行水平翻转，false表示不进行水平翻转。 |
@@ -3764,12 +3964,13 @@ flipSync(horizontal: boolean, vertical: boolean): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed |
-| 501 | Resource Unavailable |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 501 | Resource Unavailable. |
 
 
 **示例：**
@@ -3792,9 +3993,10 @@ function flipSync(pixelMap: image.PixelMap) {
 
 
 
-#### applyCrop
+## applyCrop
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 applyCrop(region: Region): Promise&lt;void&gt;
 
@@ -3812,12 +4014,14 @@ applyCrop(region: Region): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | region | Region | 是 | 裁剪的区域，区域范围不能超过图片的宽高。单位：像素（px）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3827,6 +4031,7 @@ applyCrop(region: Region): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3866,9 +4071,10 @@ function applyCrop(pixelMap: image.PixelMap) {
 
 
 
-#### applyCropSync
+## applyCropSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 applyCropSync(region: Region): void
 
@@ -3886,6 +4092,7 @@ applyCropSync(region: Region): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | region | Region | 是 | 裁剪的区域，区域范围不能超过图片的宽高。单位：像素（px）。 |
@@ -3894,6 +4101,7 @@ applyCropSync(region: Region): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3933,13 +4141,14 @@ function applyCropSync(pixelMap: image.PixelMap) {
 
 
 
-#### crop9+
+## crop9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 crop(region: Region, callback: AsyncCallback&lt;void&gt;): void
 
-根据输入的尺寸对图片进行裁剪。使用callback异步回调。
+根据输入的区域信息对图片进行裁剪。使用callback异步回调。
 
 > [!NOTE]
 > 从API版本26.0.0开始，建议使用 applyCrop 代替，以获得更完善的异常处理能力。
@@ -3952,6 +4161,7 @@ crop(region: Region, callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3978,13 +4188,14 @@ function crop(pixelMap: image.PixelMap) {
 
 
 
-#### crop9+
+## crop9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 crop(region: Region): Promise&lt;void&gt;
 
-根据输入的尺寸对图片进行裁剪。使用Promise异步回调。
+根据输入的区域信息对图片进行裁剪。使用Promise异步回调。
 
 > [!NOTE]
 > 从API版本26.0.0开始，建议使用 applyCrop 代替，以获得更完善的异常处理能力。
@@ -3998,12 +4209,14 @@ crop(region: Region): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | region | Region | 是 | 裁剪的区域，包含起始坐标和宽高。取值范围不能超过图片的宽高。单位：像素（px）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4027,13 +4240,14 @@ function crop(pixelMap: image.PixelMap) {
 
 
 
-#### cropSync12+
+## cropSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cropSync(region: Region): void
 
-根据输入的尺寸裁剪图片。同步返回结果。
+根据输入的区域信息对图片进行裁剪。同步返回结果。
 
 > [!NOTE]
 > 从API版本26.0.0开始，建议使用 applyCropSync 代替，以获得更完善的异常处理能力。
@@ -4045,6 +4259,7 @@ cropSync(region: Region): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | region | Region | 是 | 裁剪的区域，包含起始坐标和宽高。取值范围不能超过图片的宽高。单位：像素（px）。 |
@@ -4052,12 +4267,13 @@ cropSync(region: Region): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed |
-| 501 | Resource Unavailable |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+| 501 | Resource Unavailable. |
 
 
 **示例：**
@@ -4079,9 +4295,10 @@ function cropSync(pixelMap: image.PixelMap) {
 
 
 
-#### getColorSpace10+
+## getColorSpace10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getColorSpace(): colorSpaceManager.ColorSpaceManager
 
@@ -4091,6 +4308,7 @@ getColorSpace(): colorSpaceManager.ColorSpaceManager
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | colorSpaceManager.ColorSpaceManager | 图像色彩空间信息。如果图像不含色彩空间信息，则会抛出异常。 |
@@ -4099,6 +4317,7 @@ getColorSpace(): colorSpaceManager.ColorSpaceManager
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4125,9 +4344,10 @@ function getColorSpace(pixelMap: image.PixelMap) {
 
 
 
-#### setColorSpace10+
+## setColorSpace10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setColorSpace(colorSpace: colorSpaceManager.ColorSpaceManager): void
 
@@ -4137,6 +4357,7 @@ setColorSpace(colorSpace: colorSpaceManager.ColorSpaceManager): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | colorSpace | colorSpaceManager.ColorSpaceManager | 是 | 图像色彩空间信息。 |
@@ -4145,6 +4366,7 @@ setColorSpace(colorSpace: colorSpaceManager.ColorSpaceManager): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4173,17 +4395,23 @@ function setColorSpace(pixelMap: image.PixelMap) {
 
 
 
-#### applyColorSpace11+
+## applyColorSpace11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 applyColorSpace(targetColorSpace: colorSpaceManager.ColorSpaceManager, callback: AsyncCallback&lt;void&gt;): void
 
 根据输入的目标色彩空间对图像的像素颜色进行色彩空间转换。使用callback异步回调。
 
+> [!NOTE]
+> 本接口仅执行色彩空间之间的数学转换，不包含HDR到SDR的色调映射。当源图像为HDR色彩空间（传输函数为HLG或PQ，例如BT2020_HLG、BT2020_PQ、P3_HLG、P3_PQ等）且目标为SDR色彩空间（传输函数为sRGB gamma，例如SRGB、DISPLAY_P3、DCI_P3、ADOBE_RGB_1998等）时，直接调用本接口会导致图像整体偏亮、泛白、高光细节丢失。 从API版本12开始，如果要将HDR色彩空间转换为SDR色彩空间，请先调用 toSdr 完成HDR到SDR的转换和色调映射，再按需调用本接口在SDR色彩空间之间转换。
+
+
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4193,11 +4421,12 @@ applyColorSpace(targetColorSpace: colorSpaceManager.ColorSpaceManager, callback:
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
 | 62980104 | Failed to initialize the internal object. |
 | 62980108 | Failed to convert the color space. |
 | 62980115 | Invalid image parameter. |
@@ -4224,17 +4453,23 @@ function applyColorSpace(pixelMap: image.PixelMap) {
 
 
 
-#### applyColorSpace11+
+## applyColorSpace11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 applyColorSpace(targetColorSpace: colorSpaceManager.ColorSpaceManager): Promise&lt;void&gt;
 
 根据输入的目标色彩空间对图像的像素颜色进行色彩空间转换。使用Promise异步回调。
 
+> [!NOTE]
+> 本接口仅执行色彩空间之间的数学转换，不包含HDR到SDR的色调映射。当源图像为HDR色彩空间（传输函数为HLG或PQ，例如BT2020_HLG、BT2020_PQ、P3_HLG、P3_PQ等）且目标为SDR色彩空间（传输函数为sRGB gamma，例如SRGB、DISPLAY_P3、DCI_P3、ADOBE_RGB_1998等）时，直接调用本接口会导致图像整体偏亮、泛白、高光细节丢失。 从API版本12开始，如果要将HDR色彩空间转换为SDR色彩空间，请先调用 toSdr 完成HDR到SDR的转换和色调映射，再按需调用本接口在SDR色彩空间之间转换。
+
+
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4243,6 +4478,7 @@ applyColorSpace(targetColorSpace: colorSpaceManager.ColorSpaceManager): Promise&
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -4250,11 +4486,12 @@ applyColorSpace(targetColorSpace: colorSpaceManager.ColorSpaceManager): Promise&
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
 | 62980104 | Failed to initialize the internal object. |
 | 62980108 | Failed to convert the color space. |
 | 62980115 | Invalid image parameter. |
@@ -4279,9 +4516,10 @@ function applyColorSpace(pixelMap: image.PixelMap) {
 
 
 
-#### toSdr12+
+## toSdr12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toSdr(): Promise&lt;void&gt;
 
@@ -4291,6 +4529,7 @@ toSdr(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -4299,6 +4538,7 @@ toSdr(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4334,9 +4574,10 @@ async function toSdr(context: Context) {
 
 
 
-#### getMetadata12+
+## getMetadata12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMetadata(key: HdrMetadataKey): HdrMetadataValue
 
@@ -4350,12 +4591,14 @@ getMetadata(key: HdrMetadataKey): HdrMetadataValue
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | HdrMetadataKey | 是 | HDR元数据的关键字，可用于查询对应值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4364,7 +4607,8 @@ getMetadata(key: HdrMetadataKey): HdrMetadataValue
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4404,9 +4648,10 @@ function getMetadata(context: Context) {
 
 
 
-#### setMetadata12+
+## setMetadata12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMetadata(key: HdrMetadataKey, value: HdrMetadataValue): Promise&lt;void&gt;
 
@@ -4420,6 +4665,7 @@ setMetadata(key: HdrMetadataKey, value: HdrMetadataValue): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | HdrMetadataKey | 是 | HDR元数据的关键字，用于设置对应值。 |
@@ -4428,6 +4674,7 @@ setMetadata(key: HdrMetadataKey, value: HdrMetadataValue): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -4435,7 +4682,8 @@ setMetadata(key: HdrMetadataKey, value: HdrMetadataValue): Promise&lt;void&gt;
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4471,9 +4719,10 @@ function setMetadata(pixelMap: image.PixelMap) { // 入参pixelMap内存类型�
 
 
 
-#### setTransferDetached12+
+## setTransferDetached12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setTransferDetached(detached: boolean): void
 
@@ -4482,6 +4731,7 @@ setTransferDetached(detached: boolean): void
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4492,9 +4742,10 @@ setTransferDetached(detached: boolean): void
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 501 | Resource Unavailable |
+| 501 | Resource Unavailable. |
 
 
 **示例：**
@@ -4549,9 +4800,10 @@ struct Demo {
 
 
 
-#### marshalling10+
+## marshalling10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 marshalling(sequence: rpc.MessageSequence): void
 
@@ -4561,6 +4813,7 @@ marshalling(sequence: rpc.MessageSequence): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sequence | rpc.MessageSequence | 是 | 新创建的MessageSequence。 |
@@ -4569,6 +4822,7 @@ marshalling(sequence: rpc.MessageSequence): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4617,10 +4871,7 @@ async function marshal() {
     size: { height: 4, width: 6 },
     alphaType: image.AlphaType.UNPREMUL
   };
-  let pixelMap: image.PixelMap | undefined = undefined;
-  await image.createPixelMap(color, opts).then((srcPixelMap: image.PixelMap) => {
-    pixelMap = srcPixelMap;
-  })
+  let pixelMap: image.PixelMap | undefined = await image.createPixelMap(color, opts);
   if (pixelMap != undefined) {
     // 序列化。
     let parcelable: MySequence = new MySequence(pixelMap);
@@ -4636,21 +4887,23 @@ async function marshal() {
 
 
 
-#### unmarshalling10+
+## unmarshalling10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unmarshalling(sequence: rpc.MessageSequence): Promise&lt;PixelMap&gt;
 
 从MessageSequence中反序列化并获取PixelMap。使用Promise异步回调。
 
 > [!NOTE]
-> 如需使用同步方式反序列化并创建PixelMap可使用： createPixelMapFromParcel 。
+> 如需使用同步方式反序列化并创建PixelMap可使用 createPixelMapFromParcel 。
 
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4658,6 +4911,7 @@ unmarshalling(sequence: rpc.MessageSequence): Promise&lt;PixelMap&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4667,6 +4921,7 @@ unmarshalling(sequence: rpc.MessageSequence): Promise&lt;PixelMap&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4716,10 +4971,7 @@ async function unmarshal() {
     size: { height: 4, width: 6 },
     alphaType: image.AlphaType.UNPREMUL
   };
-  let pixelMap: image.PixelMap | undefined = undefined;
-  await image.createPixelMap(color, opts).then((srcPixelMap: image.PixelMap) => {
-    pixelMap = srcPixelMap;
-  })
+  let pixelMap: image.PixelMap | undefined = await image.createPixelMap(color, opts);
   if (pixelMap != undefined) {
     // 序列化。
     let parcelable: MySequence = new MySequence(pixelMap);
@@ -4735,9 +4987,10 @@ async function unmarshal() {
 
 
 
-#### release7+
+## release7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(): Promise&lt;void&gt;
 
@@ -4748,7 +5001,7 @@ release(): Promise&lt;void&gt;
 释放时应确保该对象的所有异步方法均执行完成，且后续不再使用该对象。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/-mi6c1XtSvqRbo9A3PSAPA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095522Z&HW-CC-Expire=86400&HW-CC-Sign=5CAAB9B25D6DDEEABCB2C32B0FE5DEE302FEB610BF92C53A242E7B1B5367BE4B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/GqbzTtvASd2N4-OSO_xudQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072438Z&HW-CC-Expire=86400&HW-CC-Sign=AC357FB9D598D1C5CB695317589441C4A4D1C1F1ACE24F06D90F5F4C816AA675)
 
 
 释放指的是ArkTS对象释放与之关联的native对象的管理权。仅当所有管理该native对象的ArkTS对象都被释放时，native对象占用的内存才会被回收。
@@ -4762,6 +5015,7 @@ release(): Promise&lt;void&gt;
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4784,9 +5038,10 @@ function release(pixelMap: image.PixelMap) {
 
 
 
-#### release7+
+## release7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(callback: AsyncCallback&lt;void&gt;): void
 
@@ -4797,7 +5052,7 @@ release(callback: AsyncCallback&lt;void&gt;): void
 释放时应确保该对象的所有异步方法均执行完成，且后续不再使用该对象。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/Rt6W6VzMQuCUyGRSaBWnKQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095522Z&HW-CC-Expire=86400&HW-CC-Sign=C4A2D630AB1E0652E0298FF5B140299709E12C005E8445882476B5EF3F38755F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/U5Yx8GSjR0ySN1L7CuLxvw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072438Z&HW-CC-Expire=86400&HW-CC-Sign=777B298F09BA66B4D77A87487E471C37204326DD5511B83D6EBEA0326D5964AB)
 
 
 释放指的是ArkTS对象释放与之关联的native对象的管理权。仅当所有管理该native对象的ArkTS对象都被释放时，native对象占用的内存才会被回收。
@@ -4811,6 +5066,7 @@ release(callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4835,9 +5091,10 @@ function release(pixelMap: image.PixelMap) {
 
 
 
-#### convertPixelFormat12+
+## convertPixelFormat12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 convertPixelFormat(targetPixelFormat: PixelMapFormat): Promise&lt;void&gt;
 
@@ -4848,7 +5105,7 @@ YUV和RGB类型互转。使用Promise异步回调。
 从API version 18开始，可用于ASTC_4x4类型转为RGBA_8888类型，目前仅支持ASTC_4x4转为RGBA_8888。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/5SgiS_kpSIi0kIwgsZkz_w/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095522Z&HW-CC-Expire=86400&HW-CC-Sign=AAE434D3B230A93C4BCD237EE8AE8FBE42538C4FE2DFE98AF07E8A5AB406948C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/ZBGZnSV7RMGSSTGl5UgGWA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072438Z&HW-CC-Expire=86400&HW-CC-Sign=EE4051A25720171DF5358C728E70C3E78234D5A324572FABC659DBCC8E4B41E7)
 
 
 仅在ASTC_4x4格式的图像需要进行像素访问时，建议调用此接口将ASTC_4x4类型转为RGBA_8888类型。由于使用ASTC_4x4反解为RGBA_8888时延较高，其余情况下不推荐使用。
@@ -4859,12 +5116,14 @@ YUV和RGB类型互转。使用Promise异步回调。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | targetPixelFormat | PixelMapFormat | 是 | 目标像素格式，用于YUV和RGB类型互转，或者ASTC_4x4类型转为RGBA_8888类型。目前仅支持NV12/NV21与RGB_888/RGBA_8888/RGB_565/BGRA_8888/RGBA_F16互转，YCRCB_P010/YCBCR_P010与RGBA_1010102互转，ASTC_4x4转为RGBA_8888。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4875,13 +5134,14 @@ YUV和RGB类型互转。使用Promise异步回调。
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 62980111 | The image source data is incomplete. |
 | 62980115 | Invalid input parameter. |
 | 62980178 | Failed to create the pixelmap. |
-| 62980274 | The conversion failed |
-| 62980276 | The type to be converted is an unsupported target pixel format |
+| 62980274 | The conversion failed. |
+| 62980276 | The type to be converted is an unsupported target pixel format. |
 
 
 **示例：**
@@ -4902,26 +5162,33 @@ function convertPixelFormat(pixelMap: image.PixelMap) {
 
 
 
-#### setMemoryNameSync13+
+## setMemoryNameSync13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMemoryNameSync(name: string): void
 
 设置PixelMap的内存标识符，便于在内存调试或问题定位时识别该内存。
 
+> [!NOTE]
+> 仅支持DMA和SHARE_MEMORY内存类型的PixelMap设置内存标识符。
+
+
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| name | string | 是 | PixelMap内存标识符，只允许DMA和SHARE_MEMORY内存类型的PixelMap设置。DMA内存设置名称长度取值范围为[1, 255]字节，SHARE_MEMORY内存设置名称长度取值范围为[1, 244]字节。 |
+| name | string | 是 | 需要设置的内存标识符。DMA内存标识符的字符串长度取值范围为[1, 255]字节，SHARE_MEMORY内存标识符的字符串长度取值范围为[1, 244]字节。 |
 
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4948,9 +5215,10 @@ function setMemoryNameSync(pixelMap: image.PixelMap) {
 
 
 
-#### getUniqueId22+
+## getUniqueId22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUniqueId(): number
 
@@ -4960,6 +5228,7 @@ getUniqueId(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 唯一ID。取值为正整数。 |
@@ -4968,6 +5237,7 @@ getUniqueId(): number
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4992,16 +5262,17 @@ function getUniqueId(pixelMap: image.PixelMap) {
 
 
 
-#### isReleased22+
+## isReleased22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isReleased(): boolean
 
 检查PixelMap对象是否已被释放。如果已被释放，则任何访问该对象内部数据的方法调用将会失败。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/V94sTDw6TPKanari0VATvA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095522Z&HW-CC-Expire=86400&HW-CC-Sign=37E6C1F3D79EF0693C7FEE21EFBBB1A6A4CB309F6C7E8AA75B455F1855C2198C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/M0Mc-fnSR2GyBDpFbEYrsA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072438Z&HW-CC-Expire=86400&HW-CC-Sign=80BDBBDB1F4B1656955441C78B1D1877E2497AAB91283265078F1738F79213E7)
 
 
 释放指的是ArkTS对象释放与之关联的native对象的管理权。仅当所有管理该native对象的ArkTS对象都被释放时，native对象占用的内存才会被回收。
@@ -5011,6 +5282,7 @@ isReleased(): boolean
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |

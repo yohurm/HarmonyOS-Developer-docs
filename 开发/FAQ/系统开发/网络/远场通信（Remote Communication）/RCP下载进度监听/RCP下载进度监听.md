@@ -37,7 +37,7 @@ import { common } from '@kit.AbilityKit';
 @Component
 struct ProgressListen {
   @State progress: number = 0;
-  downloadUrl: string = 'xxxxxxx'; // 需更换为真实地址
+  downloadUrl: string = 'xxxxxxx'; <em>// 需更换为真实地址</em>
   context = this.getUIContext().getHostContext() as common.UIAbilityContext;
   filePath = `${this.context.filesDir}/test.png`;
 
@@ -61,25 +61,25 @@ struct ProgressListen {
     .width('100%');
   }
 
-  // 下载文件监听进度
+  <em>// 下载文件监听进度</em>
   getDownloadProgress(url: string) {
     const customHttpEventsHandler: rcp.HttpEventsHandler = {
       onDownloadProgress: (totalSize: number, transferredSize: number) => {
         this.progress = transferredSize / totalSize * 100;
       },
 
-      // 数据完成接收监听
+     <em> // 数据完成接收监听</em>
       onDataEnd: () => {
         console.info('Data transfer complete');
       },
 
-      // 取消数据接收监听
+      <em>// 取消数据接收监听</em>
       onCanceled: () => {
         console.info('Request/response canceled');
       },
     };
 
-    // TracingConfiguration用于获取请求期间详细信息
+   <em> // TracingConfiguration用于获取请求期间详细信息</em>
     const tracingConfig: rcp.TracingConfiguration = {
       verbose: true,
       collectTimeInfo: true,
@@ -92,7 +92,7 @@ struct ProgressListen {
       }
     });
 
-    // 下载文件
+  <em>  // 下载文件</em>
     session.downloadToFile(url, { kind: 'file', file: this.filePath }).then(() => {
       session.close();
     }).catch(() => {

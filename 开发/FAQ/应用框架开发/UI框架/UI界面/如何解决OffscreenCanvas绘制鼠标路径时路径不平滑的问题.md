@@ -19,7 +19,7 @@ PC应用使用OffscreenCanvas离屏画布绘制鼠标路径，绘制路径不平
 ```text
 import { display } from '@kit.ArkUI';
 
-// 绘画状态接口
+<em>// 绘画状态接口</em>
 export class DrawingState {
   isDrawing: boolean = false;
   currentColor: string = 'rgb(0,255,0)';
@@ -28,9 +28,9 @@ export class DrawingState {
   startY: number = 0;
 }
 
-/**
- *  canvas绘画工具类
- */
+<em>/**</em>
+<em> *  canvas绘画工具类</em>
+<em> */</em>
 @ObservedV2
 export class CanvasUtils {
   static instance: CanvasUtils | null = null;
@@ -52,11 +52,11 @@ export class CanvasUtils {
     startY: 0
   };
 
-  // 初始化画布
+  <em>// 初始化画布</em>
   initCanvas() {
-    // 填充背景色
+    <em>// 填充背景色</em>
     this.offscreenCanvas.fillStyle = '#000';
-    // 填充一个矩形
+    <em>// 填充一个矩形</em>
     this.offscreenCanvas.fillRect(0, 0, this.getWidth(), this.getHeight());
     this.offscreenCanvas.lineCap = 'round';
     this.offscreenCanvas.lineJoin = 'round';
@@ -75,7 +75,7 @@ export class CanvasUtils {
   }
 
 
-  // 设置绘画样式
+  <em>// 设置绘画样式</em>
   setupDrawingStyle() {
     this.offscreenCanvas.strokeStyle = this.drawingState.currentColor;
     this.offscreenCanvas.lineWidth = this.drawingState.currentSize;
@@ -84,7 +84,7 @@ export class CanvasUtils {
     this.canvasRenderingContext.transferFromImageBitmap(this.offscreenCanvas.transferToImageBitmap());
   }
 
-  // 开始绘画
+  <em>// 开始绘画</em>
   startDrawing(event: MouseEvent) {
     this.drawingState.isDrawing = true;
     this.drawingState.startX = event.displayX;
@@ -95,21 +95,21 @@ export class CanvasUtils {
     this.canvasRenderingContext.transferFromImageBitmap(this.offscreenCanvas.transferToImageBitmap());
   }
 
-  // 绘画中
+  <em>// 绘画中</em>
   drawing(event: MouseEvent) {
     if (!this.drawingState.isDrawing) {
       return;
     }
-    // 从当前点到指定点路径连接
+    <em>// 从当前点到指定点路径连接</em>
     this.offscreenCanvas.lineTo(event.displayX, event.displayY);
-    // 根据当前路径进行边框绘制操作
+    <em>// 根据当前路径进行边框绘制操作</em>
     this.offscreenCanvas.stroke();
     this.offscreenCanvas.globalCompositeOperation = 'source-over';
     this.canvasRenderingContext.transferFromImageBitmap(this.offscreenCanvas.transferToImageBitmap());
   }
 
 
-  // 结束绘画
+  <em>// 结束绘画</em>
   stopDrawing() {
     if (this.drawingState.isDrawing) {
       this.drawingState.isDrawing = false;
@@ -127,7 +127,7 @@ struct Index {
   build() {
     Stack({ alignContent: Alignment.TopStart }) {
 
-      // 画布
+      <em>// 画布</em>
       Canvas(this.canvasUtils.canvasRenderingContext)
         .width('100%')
         .height('100%')
@@ -207,7 +207,7 @@ struct Index {
 ```text
 import { display } from '@kit.ArkUI';
 
-// 绘画状态接口
+<em>// 绘画状态接口</em>
 export class DrawingState {
   isDrawing: boolean = false;
   currentColor: string = 'rgb(0,255,0)';
@@ -216,9 +216,9 @@ export class DrawingState {
   startY: number = 0;
 }
 
-/**
- *  canvas绘画工具类
- */
+<em>/**</em>
+<em> *  canvas绘画工具类</em>
+<em> */</em>
 @ObservedV2
 export class CanvasUtils {
   static instance: CanvasUtils | null = null;
@@ -238,11 +238,11 @@ export class CanvasUtils {
     startY: 0
   };
 
-  // 初始化画布
+  <em>// 初始化画布</em>
   initCanvas() {
-    // 填充背景色
+    <em>// 填充背景色</em>
     this.canvasRenderingContext.fillStyle = '#000';
-    // 填充一个矩形
+    <em>// 填充一个矩形</em>
     this.canvasRenderingContext.fillRect(0, 0, this.getWidth(), this.getHeight());
     this.canvasRenderingContext.lineCap = 'round';
     this.canvasRenderingContext.lineJoin = 'round';
@@ -258,7 +258,7 @@ export class CanvasUtils {
     return displayInstance.height;
   }
 
-  // 设置绘画样式
+  <em>// 设置绘画样式</em>
   setupDrawingStyle() {
     this.canvasRenderingContext.strokeStyle = this.drawingState.currentColor;
     this.canvasRenderingContext.lineWidth = this.drawingState.currentSize;
@@ -266,7 +266,7 @@ export class CanvasUtils {
     this.canvasRenderingContext.shadowBlur = 0;
   }
 
-  // 开始绘画
+  <em>// 开始绘画</em>
   startDrawing(event: MouseEvent) {
     this.drawingState.isDrawing = true;
     this.drawingState.startX = event.displayX;
@@ -276,19 +276,19 @@ export class CanvasUtils {
     this.canvasRenderingContext.moveTo(event.displayX, event.displayY);
   }
 
-  // 绘画中
+  <em>// 绘画中</em>
   drawing(event: MouseEvent) {
     if (!this.drawingState.isDrawing) {
       return;
     }
-    // 从当前点到指定点路径连接
+    <em>// 从当前点到指定点路径连接</em>
     this.canvasRenderingContext.lineTo(event.displayX, event.displayY);
-    // 根据当前路径进行边框绘制操作
+    <em>// 根据当前路径进行边框绘制操作</em>
     this.canvasRenderingContext.stroke();
     this.canvasRenderingContext.globalCompositeOperation = 'source-over';
   }
 
-  // 结束绘画
+  <em>// 结束绘画</em>
   stopDrawing() {
     if (this.drawingState.isDrawing) {
       this.drawingState.isDrawing = false;
@@ -304,7 +304,7 @@ struct CanvasRenderingContext2DDemo {
 
   build() {
     Stack({ alignContent: Alignment.TopStart }) {
-      // 画布
+      <em>// 画布</em>
       Canvas(this.canvasUtils.canvasRenderingContext)
         .width('100%')
         .height('100%')

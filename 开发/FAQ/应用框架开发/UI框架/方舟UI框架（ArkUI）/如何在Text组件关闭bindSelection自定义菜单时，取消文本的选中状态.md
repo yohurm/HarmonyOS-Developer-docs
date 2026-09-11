@@ -18,7 +18,7 @@
 struct TextMenuUnchecked {
   controller: TextController = new TextController();
   options: TextOptions = { controller: this.controller };
-  @State start: number = -1; // Unchecked state
+  @State start: number = -1; <em>// Unchecked state</em>
   @State end: number = -1;
 
   build() {
@@ -34,7 +34,7 @@ struct TextMenuUnchecked {
         }
         .selection(this.start, this.end)
         .copyOption(CopyOptions.InApp)
-        // Long press to bring up a custom menu
+      <em>  // Long press to bring up a custom menu</em>
         .bindSelectionMenu(TextSpanType.TEXT, this.buildCustomSelectionMenu, TextResponseType.LONG_PRESS, {
           onDisappear: () => {
             console.info(`Custom selection menu callback when closed`);
@@ -43,7 +43,7 @@ struct TextMenuUnchecked {
             console.info(`Callback when custom selection menu pops up`);
           }
         })
-       <strong> // When the selected area changes, trigger a callback to update the starting and ending subscripts of the selected area</strong>
+       <em><strong> // When the selected area changes, trigger a callback to update the starting and ending subscripts of the selected area</strong></em>
         .onTextSelectionChange((selectionStart: number, selectionEnd: number) => {
           this.start = selectionStart;
           this.end = selectionEnd;
@@ -72,7 +72,7 @@ struct TextMenuUnchecked {
             content: 'Right Click Menu 1',
             labelInfo: ''
           })
-            .onClick(() => { //When clicking on the custom menu, reset the starting and ending subscripts of the selected area
+            .onClick(() => { <em>//When clicking on the custom menu, reset the starting and ending subscripts of the selected area</em>
               this.start = -1;
               this.end = -1;
               try {

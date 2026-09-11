@@ -1,6 +1,6 @@
 # 显示图片 (Image)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-graphics-display
 
@@ -17,13 +17,13 @@ Image(src: PixelMap | ResourceStr | DrawableDescriptor)
 如果图片加载过程中出现白色块，请参考[Image白块解决方案](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-image-white-lump-solution)。如果图片加载时间过长，请参考[预置图片资源加载优化](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-texture-compression-improve-performance)。
 
 
-#### 加载图片资源
+## 加载图片资源
 
 Image支持加载存档图、多媒体像素图和可绘制描述符三种类型。
 
 
 
-#### 存档图类型数据源
+### 存档图类型数据源
 
 存档图类型的数据源可以分为本地资源、网络资源、Resource资源、媒体库资源和base64。
 
@@ -72,7 +72,7 @@ Image('images/view.jpg')
 // $r('app.string.LoadingResources')需要替换为开发者所需的资源文件，资源文件中的value值请替换为真实路径
 Image($r('app.string.LoadingResources'))
 ```
-      - Resource资源
+            - Resource资源
 
   使用资源格式可以跨包/跨模块引入图片，resources文件夹下的图片都可以通过$r资源接口读取到并转换到Resource格式。
 
@@ -109,7 +109,7 @@ Image($rawfile('example1.png'))
 
   支持file://路径前缀的字符串，用于访问通过[选择器](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-file-picker)提供的图片路径。
 
-1. 调用接口获取图库的照片url。          
+1. 调用接口获取图库的照片url。         
 ```ArkTS
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -165,7 +165,7 @@ struct MediaLibraryFile {
 ```
 
 
-2. 从媒体库获取的url格式通常如下。          
+2. 从媒体库获取的url格式通常如下。         
 ```ArkTS
 // 'file://media/Photos/5'需要替换为开发者所需的资源文件，资源文件中的value值请替换为真实路径
 Image('file://media/Photos/5')
@@ -181,7 +181,7 @@ Image('file://media/Photos/5')
 
 
 
-#### 多媒体像素图
+### 多媒体像素图
 
 PixelMap是图片解码后的像素图，具体用法请参考[Image Kit简介](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-overview)。以下示例将加载的网络图片返回的数据解码成PixelMap格式，再显示在Image组件上。
 
@@ -237,7 +237,7 @@ struct HttpExample {
 
 
 
-#### 可绘制描述符
+### 可绘制描述符
 
 DrawableDescriptor是ArkUI提供的一种高级图片抽象机制，它通过将图片资源封装为可编程对象，实现了传统Image组件难以实现的动态组合与运行时控制功能。开发者可利用它实现图片的分层叠加（如徽章图标）、动态属性调整（如颜色滤镜）、复杂动画序列等高级效果，适用于需要灵活控制图片展现或实现复杂视觉交互的场景。详细使用方法，请参考[DrawableDescriptor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-drawabledescriptor)。
 
@@ -366,7 +366,7 @@ struct DrawableDescriptorType {
 
 
 
-#### 显示矢量图
+## 显示矢量图
 
 Image组件可显示矢量图（SVG格式的图片），SVG标签文档请参考[SVG标签说明](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-svg)。
 
@@ -395,7 +395,7 @@ Image($r('app.media.cloud'))
 
 
 
-#### 矢量图引用位图
+### 矢量图引用位图
 
 如果Image加载的SVG图源中包含对本地位图的引用，则SVG图源的路径应当设置为以ets为根目录的工程路径，同时，本地位图的路径应设置为与SVG图源同级的相对路径。
 
@@ -428,13 +428,13 @@ SVG图源通过&lt;image&gt;标签的xlink:href属性指定本地位图路径，
 
 
 
-#### 添加属性
+## 添加属性
 
 给Image组件设置属性可以使图片显示更灵活，达到一些自定义的效果。以下是几个常用属性的使用示例，完整属性信息详见[Image](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image)。
 
 
 
-#### 设置图片缩放类型
+### 设置图片缩放类型
 
 通过设置[objectFit](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image#objectfit)属性，可以使图片在高度和宽度确定的框内进行缩放。
 
@@ -530,7 +530,7 @@ struct ImageScalingType {
 
 
 
-#### 图片插值
+### 图片插值
 
 当原图分辨率较低并放大显示时，图片会变得模糊并出现锯齿。这时可以使用[interpolation](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image#interpolation)属性对图片进行插值，以提高显示清晰度。
 
@@ -595,7 +595,7 @@ struct ImageInterpolationType {
 
 
 
-#### 设置图片重复样式
+### 设置图片重复样式
 
 通过objectRepeat属性设置图片的重复样式方式，重复样式请参考[ImageRepeat](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#imagerepeat)枚举说明。
 
@@ -651,7 +651,7 @@ struct ImageRepetitionStyle {
 
 
 
-#### 设置图片渲染模式
+### 设置图片渲染模式
 
 通过renderMode属性设置图片的渲染模式为原色或黑白。
 
@@ -692,7 +692,7 @@ struct SetImageRenderingMode {
 
 
 
-#### 设置图片解码尺寸
+### 设置图片解码尺寸
 
 通过sourceSize属性设置图片解码尺寸，降低图片的分辨率。
 
@@ -744,7 +744,7 @@ struct SetImageDecodingSize {
 
 
 
-#### 为图片添加滤镜效果
+### 为图片添加滤镜效果
 
 通过colorFilter调整图片的像素颜色，为图片添加滤镜。完整的示例及开发指导请参考[基于colorFilter实现图片滤镜效果](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-implementing-image-filters)。
 
@@ -777,12 +777,12 @@ struct AddFilterEffectsToImages {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/NGslo2beStqoi4QW93ZNYw/zh-cn_image_0000002704272221.png?HW-CC-KV=V1&HW-CC-Date=20260813T095712Z&HW-CC-Expire=86400&HW-CC-Sign=F92B6167FFDF45162718CF96CB027870679455126C5A71D8C826FBA8E45014A8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/0c2G_LCjSn6vLnLQYDkvLA/zh-cn_image_0000002747290435.png?HW-CC-KV=V1&HW-CC-Date=20260911T072504Z&HW-CC-Expire=86400&HW-CC-Sign=615F0813DC82F3ABD7F752D69FFE03B880E3F2B562170B48600CABD371DBB73E)
 
 
 
 
-#### 同步加载图片
+### 同步加载图片
 
 一般情况下，图片加载流程会异步进行，以避免阻塞主线程，影响UI交互。但是特定情况下，图片刷新时会出现闪烁，这时可以使用syncLoad属性，使图片同步加载，从而避免出现闪烁。不建议图片加载较长时间时使用，会导致页面无法响应。
 
@@ -794,7 +794,7 @@ Image($r('app.media.icon'))
 
 
 
-#### 设置图片拉伸
+### 设置图片拉伸
 
 通过Image组件的resizable属性实现精准图片拉伸，其核心原理是：使用特定规则划分图片的固定区域与可拉伸区域，当图片拉伸时，仅对可拉伸区域进行拉伸，固定区域保持原始尺寸与形态不变。
 
@@ -802,7 +802,7 @@ resizable属性参数类型为[ResizableOptions](https://developer.huawei.com/co
 
 
 
-#### 事件调用
+## 事件调用
 
 通过在Image组件上绑定onComplete事件，图片加载成功后可以获取图片的必要信息。如果图片加载失败，也可以通过绑定onError回调来获得结果。
 
@@ -853,4 +853,4 @@ struct EventCall {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/4YA8CdqxQNeLr-g9oZT7_Q/zh-cn_image_0000002674472422.png?HW-CC-KV=V1&HW-CC-Date=20260813T095712Z&HW-CC-Expire=86400&HW-CC-Sign=9D0CCE3D3F28BBA76CD9DC83A6F001BEFA9EE7E0D74FEBD0EC30F6BBA737F33B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/Hhunc9PrRfy9FSp0QPsQ8g/zh-cn_image_0000002747210353.png?HW-CC-KV=V1&HW-CC-Date=20260911T072504Z&HW-CC-Expire=86400&HW-CC-Sign=7AB4866BABF8C923A2109EFD0440822FE5C538B2FF537E872C8DFB79BFD40BE7)

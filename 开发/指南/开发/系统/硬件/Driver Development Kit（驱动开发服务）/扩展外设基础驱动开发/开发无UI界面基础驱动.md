@@ -1,16 +1,16 @@
 # 开发无UI界面基础驱动
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/driverextensionability
 
-#### 场景介绍
+## 场景介绍
 
 无UI界面的基础驱动，适用于不需要通过UI界面设置驱动能力的简单设备，例如鼠标、键盘等，保证设备的即插即用功能即可。开发者可以通过DriverExtensionAbility实现此类应用的开发。
 
 
 
-#### 基本概念
+## 基本概念
 
  - DriverExtensionAbility
 
@@ -21,13 +21,13 @@
 
 
 
-#### 环境搭建
+## 环境搭建
 
 请参考[环境准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/environmental-preparation)完成开发前的准备工作。
 
 
 
-#### 开发步骤
+## 开发步骤
 
 开发者在实现一个驱动时，需要在DevEco Studio工程中手动新建一个DriverExtensionAbility，具体步骤如下：
 1. 创建新工程，请参考[创建一个新的工程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-create-new-project)，创建一个HarmonyOS工程。（如果在[开发带UI界面基础驱动](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/externaldevice-guidelines)已经创建，则此处不需要创建。）
@@ -185,7 +185,7 @@ export default class DriverExtAbility extends DriverExtensionAbility {
 
 
 
-#### 扩展设备能力
+## 扩展设备能力
 
 扩展外设管理目前提供了HidDdk、UsbDdk、USBSerialDDK和ScsiPeripheralDDK四种能力，用于扩展外设专项驱动的开发。具体使用方法，请参考：
 
@@ -197,9 +197,15 @@ export default class DriverExtAbility extends DriverExtensionAbility {
 
 
 
-#### 应用签名
+## 应用签名
 
-**注意：** 先配置权限，再自动签名。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/poRTzrtvTrqCbEyREI9_eQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072734Z&HW-CC-Expire=86400&HW-CC-Sign=F8D423345BF4C33FD932B783620694808EB024895660E5C35527BB97EE66551B)
+
+
+先配置权限，再自动签名。
+
+
 
 应用需要配置签名文件才能在设备上运行，并且扩展外设管理客户端开发，需要配置扩展外设的权限：ohos.permission.ACCESS_EXTENSIONAL_DEVICE_DRIVER。
 
@@ -213,4 +219,4 @@ export default class DriverExtAbility extends DriverExtensionAbility {
 2. HarmonyAppProvision配置文件中，修改acls字段，跨级别申请权限，可参考[申请使用受限权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions-in-acl)。
 
 
-完成权限配置后，可参考[自动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing)对应用进行签名。
+完成权限配置后，可参考[自动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing-auto)对应用进行签名。

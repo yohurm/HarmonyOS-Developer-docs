@@ -1,15 +1,16 @@
 # drawing_text_global.h
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-text-global-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-提供文本全局信息的相关接口，比如设置文本渲染高对比度模式等。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+提供文本全局信息的相关接口，如设置文本渲染高对比度模式、未定义字形的呈现方式等。
  
 **引用文件：** <native_drawing/drawing_text_global.h>
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_Drawing_TextHighContrast | OH_Drawing_TextHighContrast | 文本渲染高对比度模式枚举。 |
@@ -41,27 +45,31 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | void OH_Drawing_SetTextHighContrast(OH_Drawing_TextHighContrast action) | 设置文本渲染高对比度模式。 |
-| void OH_Drawing_SetTextUndefinedGlyphDisplay(OH_Drawing_TextUndefinedGlyphDisplay undefinedGlyphDisplay) | 控制未定义字形的呈现方式，影响此后渲染的所有文本。 |
+| void OH_Drawing_SetTextUndefinedGlyphDisplay(OH_Drawing_TextUndefinedGlyphDisplay undefinedGlyphDisplay) | 设置未定义字形的呈现方式，调用此接口后影响本进程后续渲染的所有文本。 |
  
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Drawing_TextHighContrast
+### OH_Drawing_TextHighContrast
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Drawing_TextHighContrast
@@ -73,18 +81,20 @@ enum OH_Drawing_TextHighContrast
  
 **起始版本：** 20
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | TEXT_FOLLOW_SYSTEM_HIGH_CONTRAST | 跟随系统设置中的高对比度文字配置。 |
-| TEXT_APP_DISABLE_HIGH_CONTRAST | 关闭APP的文本渲染高对比度配置，该模式的优先级要高于系统设置中的高对比度文字配置。 |
-| TEXT_APP_ENABLE_HIGH_CONTRAST | 开启APP的文本渲染高对比度配置，该模式的优先级要高于系统设置中的高对比度文字配置。 |
+| TEXT_APP_DISABLE_HIGH_CONTRAST | 关闭应用的文本渲染高对比度配置，该模式的优先级要高于系统设置中的高对比度文字配置。 |
+| TEXT_APP_ENABLE_HIGH_CONTRAST | 开启应用的文本渲染高对比度配置，该模式的优先级要高于系统设置中的高对比度文字配置。 |
  
  
   
 
-#### OH_Drawing_TextUndefinedGlyphDisplay
+### OH_Drawing_TextUndefinedGlyphDisplay
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Drawing_TextUndefinedGlyphDisplay
@@ -98,6 +108,7 @@ enum OH_Drawing_TextUndefinedGlyphDisplay
  
 **起始版本：** 20
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | TEXT_NO_GLYPH_USE_DEFAULT = 0 | 使用字体文件中定义的默认字形（可能是空框、空白或自定义符号等）。 |
@@ -106,15 +117,17 @@ enum OH_Drawing_TextUndefinedGlyphDisplay
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Drawing_SetTextHighContrast()
+### OH_Drawing_SetTextHighContrast()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_SetTextHighContrast(OH_Drawing_TextHighContrast action)
@@ -126,7 +139,7 @@ void OH_Drawing_SetTextHighContrast(OH_Drawing_TextHighContrast action)
  
 该接口设置后整个进程都会生效，进程内所有页面共用相同模式。
  
-可调用此接口设置，也可通过系统设置界面中高对比度文字配置开关进行开启/关闭。使用此接口设置开启/关闭文本渲染高对比度配置的优先级高于系统开关设置。
+可通过调用此接口设置文本渲染高对比度模式，也可通过系统设置界面中高对比度文字配置开关进行开启/关闭。使用此接口设置文本渲染高对比度的优先级高于系统设置。
  
 该接口针对应用的文字自绘制场景不生效。
  
@@ -136,6 +149,7 @@ void OH_Drawing_SetTextHighContrast(OH_Drawing_TextHighContrast action)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_TextHighContrast action | 表示文本渲染高对比度模式，为OH_Drawing_TextHighContrast类型的枚举值。 |
@@ -143,9 +157,10 @@ void OH_Drawing_SetTextHighContrast(OH_Drawing_TextHighContrast action)
  
   
 
-#### OH_Drawing_SetTextUndefinedGlyphDisplay()
+### OH_Drawing_SetTextUndefinedGlyphDisplay()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_SetTextUndefinedGlyphDisplay(OH_Drawing_TextUndefinedGlyphDisplay undefinedGlyphDisplay)
@@ -153,7 +168,7 @@ void OH_Drawing_SetTextUndefinedGlyphDisplay(OH_Drawing_TextUndefinedGlyphDispla
  
 **描述**
  
-控制未定义字形的呈现方式，影响此后渲染的所有文本。
+设置未定义字形的呈现方式，调用此接口后影响本进程后续渲染的所有文本。
  
 **系统能力：** SystemCapability.Graphic.Graphic2D.NativeDrawing
  
@@ -161,6 +176,7 @@ void OH_Drawing_SetTextUndefinedGlyphDisplay(OH_Drawing_TextUndefinedGlyphDispla
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_TextUndefinedGlyphDisplay undefinedGlyphDisplay | 表示显示未定义字形的方式，为OH_Drawing_TextUndefinedGlyphDisplay类型的枚举值。 |

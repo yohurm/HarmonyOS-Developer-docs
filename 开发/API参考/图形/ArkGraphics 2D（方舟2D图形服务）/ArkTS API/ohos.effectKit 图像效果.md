@@ -1,9 +1,9 @@
 # @ohos.effectKit (图像效果)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-effectkit
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 图像效果模块提供了处理图像的基础能力，包括亮度调节、模糊化、灰度调节和智能取色等。effectKit用于离线处理图像（如pixelmap、png、jpeg）以获得视觉效果，而uiEffect则实时接入渲染服务，针对屏幕帧缓存进行处理以获得动态视觉效果。
 
@@ -19,9 +19,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { effectKit } from "@kit.ArkGraphics2D";
@@ -29,9 +30,10 @@ import { effectKit } from "@kit.ArkGraphics2D";
 
 
 
-#### effectKit.createEffect
+## effectKit.createEffect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createEffect(source: image.PixelMap): Filter
 
@@ -45,12 +47,14 @@ createEffect(source: image.PixelMap): Filter
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | source | image.PixelMap | 是 | image模块创建的PixelMap实例。可通过图片解码或直接创建获得，具体可见Image Kit简介。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -79,9 +83,10 @@ image.createPixelMap(color, opts).then((pixelMap) => {
 
 
 
-#### effectKit.createColorPicker
+## effectKit.createColorPicker
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createColorPicker(source: image.PixelMap): Promise&lt;ColorPicker&gt;
 
@@ -95,12 +100,14 @@ createColorPicker(source: image.PixelMap): Promise&lt;ColorPicker&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | source | image.PixelMap | 是 | image模块创建的PixelMap实例。可通过图片解码或直接创建获得，具体可见Image Kit简介。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -110,6 +117,7 @@ createColorPicker(source: image.PixelMap): Promise&lt;ColorPicker&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -144,9 +152,10 @@ image.createPixelMap(color, opts).then((pixelMap) => {
 
 
 
-#### effectKit.createColorPicker10+
+## effectKit.createColorPicker10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createColorPicker(source: image.PixelMap, region: Array&lt;number&gt;): Promise&lt;ColorPicker&gt;
 
@@ -160,6 +169,7 @@ createColorPicker(source: image.PixelMap, region: Array&lt;number&gt;): Promise&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | source | image.PixelMap | 是 | image模块创建的PixelMap实例。可通过图片解码或直接创建获得，具体可见Image Kit简介。 |
@@ -167,6 +177,7 @@ createColorPicker(source: image.PixelMap, region: Array&lt;number&gt;): Promise&
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -176,6 +187,7 @@ createColorPicker(source: image.PixelMap, region: Array&lt;number&gt;): Promise&
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -210,9 +222,10 @@ image.createPixelMap(color, opts).then((pixelMap) => {
 
 
 
-#### effectKit.createColorPicker
+## effectKit.createColorPicker
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createColorPicker(source: image.PixelMap, callback: AsyncCallback&lt;ColorPicker&gt;): void
 
@@ -226,6 +239,7 @@ createColorPicker(source: image.PixelMap, callback: AsyncCallback&lt;ColorPicker
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | source | image.PixelMap | 是 | image模块创建的PixelMap实例。可通过图片解码或直接创建获得，具体可见Image Kit简介。 |
@@ -235,6 +249,7 @@ createColorPicker(source: image.PixelMap, callback: AsyncCallback&lt;ColorPicker
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -269,9 +284,10 @@ image.createPixelMap(color, opts).then((pixelMap) => {
 
 
 
-#### effectKit.createColorPicker10+
+## effectKit.createColorPicker10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createColorPicker(source: image.PixelMap, region:Array&lt;number&gt;, callback: AsyncCallback&lt;ColorPicker&gt;): void
 
@@ -285,6 +301,7 @@ createColorPicker(source: image.PixelMap, region:Array&lt;number&gt;, callback: 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | source | image.PixelMap | 是 | image模块创建的PixelMap实例。可通过图片解码或直接创建获得，具体可见Image Kit简介。 |
@@ -295,6 +312,7 @@ createColorPicker(source: image.PixelMap, region:Array&lt;number&gt;, callback: 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -329,9 +347,10 @@ image.createPixelMap(color, opts).then((pixelMap) => {
 
 
 
-#### Color
+## Color
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 颜色类，用于保存取色的结果。
 
@@ -340,6 +359,7 @@ image.createPixelMap(color, opts).then((pixelMap) => {
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -351,13 +371,15 @@ image.createPixelMap(color, opts).then((pixelMap) => {
 
 
 
-#### TileMode14+
+## TileMode14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 着色器效果平铺模式的枚举。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -369,17 +391,19 @@ image.createPixelMap(color, opts).then((pixelMap) => {
 
 
 
-#### ColorPicker
+## ColorPicker
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 取色类，用于从一张图像数据中获取它的主要颜色。在调用ColorPicker的方法前，需要先通过[createColorPicker](#effectkitcreatecolorpicker)创建一个ColorPicker实例。
 
 
 
-#### getMainColor
+### getMainColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMainColor(): Promise&lt;Color&gt;
 
@@ -392,6 +416,7 @@ getMainColor(): Promise&lt;Color&gt;
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -434,9 +459,10 @@ image.createPixelMap(color, opts).then((pixelMap) => {
 
 
 
-#### getMainColorSync
+### getMainColorSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMainColorSync(): Color
 
@@ -449,6 +475,7 @@ getMainColorSync(): Color
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -489,9 +516,10 @@ image.createPixelMap(color, opts).then((pixelMap) => {
 
 
 
-#### getLargestProportionColor10+
+### getLargestProportionColor10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLargestProportionColor(): Color
 
@@ -504,6 +532,7 @@ getLargestProportionColor(): Color
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -544,9 +573,10 @@ image.createPixelMap(color, opts).then((pixelMap) => {
 
 
 
-#### getTopProportionColors12+
+### getTopProportionColors12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTopProportionColors(colorCount: number): Array<Color | null>
 
@@ -560,12 +590,14 @@ getTopProportionColors(colorCount: number): Array<Color | null>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | colorCount | number | 是 | 需要取主色的个数，向下取整。 说明： 在HarmonyOS 6.1.0之前，取值范围为[1, 10]，取色个数大于10视为取前10个；从HarmonyOS 6.1.0开始，取值范围为[1, 20]，取色个数大于20视为取前20个。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -610,9 +642,10 @@ image.createPixelMap(color, opts).then((pixelMap) => {
 
 
 
-#### getHighestSaturationColor10+
+### getHighestSaturationColor10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getHighestSaturationColor(): Color
 
@@ -625,6 +658,7 @@ getHighestSaturationColor(): Color
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -665,9 +699,10 @@ image.createPixelMap(color, opts).then((pixelMap) => {
 
 
 
-#### getAverageColor10+
+### getAverageColor10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAverageColor(): Color
 
@@ -680,6 +715,7 @@ getAverageColor(): Color
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -720,9 +756,10 @@ image.createPixelMap(color, opts).then((pixelMap) => {
 
 
 
-#### isBlackOrWhiteOrGrayColor10+
+### isBlackOrWhiteOrGrayColor10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isBlackOrWhiteOrGrayColor(color: number): boolean
 
@@ -736,12 +773,14 @@ isBlackOrWhiteOrGrayColor(color: number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | number | 是 | 需要判断是否黑白灰色的颜色值，取值范围[0x0, 0xFFFFFFFF]。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -778,17 +817,19 @@ image.createPixelMap(color, opts).then((pixelMap) => {
 
 
 
-#### Filter
+## Filter
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 图像效果类，用于将指定的效果添加到输入图像中。在调用Filter的方法前，需要先通过[createEffect](#effectkitcreateeffect)创建一个Filter实例。
 
 
 
-#### blur
+### blur
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 blur(radius: number): Filter
 
@@ -806,12 +847,14 @@ blur(radius: number): Filter
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | radius | number | 是 | 模糊半径，单位为px。模糊效果与所设置的值成正比，值越大效果越明显。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -887,9 +930,10 @@ struct Index {
 
 
 
-#### blur14+
+### blur14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 blur(radius: number, tileMode: TileMode): Filter
 
@@ -903,6 +947,7 @@ blur(radius: number, tileMode: TileMode): Filter
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | radius | number | 是 | 模糊半径，单位为px。模糊效果与所设置的值成正比，值越大效果越明显。 |
@@ -910,6 +955,7 @@ blur(radius: number, tileMode: TileMode): Filter
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -985,9 +1031,10 @@ struct Index {
 
 
 
-#### invert12+
+### invert12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 invert(): Filter
 
@@ -996,6 +1043,7 @@ invert(): Filter
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1070,9 +1118,10 @@ struct Index {
 
 
 
-#### setColorMatrix12+
+### setColorMatrix12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setColorMatrix(colorMatrix: Array&lt;number&gt;): Filter
 
@@ -1082,12 +1131,14 @@ setColorMatrix(colorMatrix: Array&lt;number&gt;): Filter
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | colorMatrix | Array&lt;number&gt; | 是 | 自定义颜色矩阵。 用于创建效果滤镜的 5x4 大小的矩阵，矩阵元素取值范围为[0, 1]，0和1代表的是矩阵中对应位置的颜色通道的权重，0代表该颜色通道不参与计算，1代表该颜色通道参与计算并保持原始权重。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1097,6 +1148,7 @@ setColorMatrix(colorMatrix: Array&lt;number&gt;): Filter
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1172,14 +1224,15 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/mokSR7EyS5ax_vwBz8_z_Q/zh-cn_image_0000002626231562.png?HW-CC-KV=V1&HW-CC-Date=20260624T020306Z&HW-CC-Expire=86400&HW-CC-Sign=47BC84EED0C87CC51FB91684D62042025DE659116B33ACFDA7D0EA22F88C4840)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/oV6gspxrRDu5u482jEMzRg/zh-cn_image_0000002717773848.png?HW-CC-KV=V1&HW-CC-Date=20260911T072856Z&HW-CC-Expire=86400&HW-CC-Sign=DFD117200BCE6A1C50477AAF8CC3E1D8BB9DDF83552917494C0111FADE64C419)
 
 
 
 
-#### brightness
+### brightness
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 brightness(bright: number): Filter
 
@@ -1193,12 +1246,14 @@ brightness(bright: number): Filter
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bright | number | 是 | 高亮程度，取值范围为[0, 1]，取值为0时图像保持不变，取值为1时图像达到预设的最大亮度。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1269,14 +1324,15 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/YserRW-tSeSLIKfNKlFsHg/zh-cn_image_0000002626071650.png?HW-CC-KV=V1&HW-CC-Date=20260624T020306Z&HW-CC-Expire=86400&HW-CC-Sign=04FF22C99C8281A1738FE177737795253C7ED380CB9ACC39AC6F50B4B737C82B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/euQHk82gTn6J0thcbKtCxQ/zh-cn_image_0000002717613918.png?HW-CC-KV=V1&HW-CC-Date=20260911T072856Z&HW-CC-Expire=86400&HW-CC-Sign=27D3D734DB7F22B4BBE908BCBE7A1E2962865ADA04550A0038D29B3B47B0B33F)
 
 
 
 
-#### grayscale
+### grayscale
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 grayscale(): Filter
 
@@ -1289,6 +1345,7 @@ grayscale(): Filter
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1358,14 +1415,15 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/FdrHlnqsRka-xg3nb0wOnw/zh-cn_image_0000002656470927.png?HW-CC-KV=V1&HW-CC-Date=20260624T020306Z&HW-CC-Expire=86400&HW-CC-Sign=D43F773A5492EFD9B114221EFFE204259A742DD71C5909D4841A84F0AC5A7CB4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/DRUPUf25QTOIxmhJPYCoNA/zh-cn_image_0000002747293869.png?HW-CC-KV=V1&HW-CC-Date=20260911T072856Z&HW-CC-Expire=86400&HW-CC-Sign=60C9169E32A45FA19B7FFFA7A98C8450ED8C659BB454A203B5ED3AEDF9EDA0CA)
 
 
 
 
-#### getEffectPixelMap11+
+### getEffectPixelMap11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEffectPixelMap(): Promise<image.PixelMap>
 
@@ -1378,6 +1436,7 @@ getEffectPixelMap(): Promise<image.PixelMap>
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1408,9 +1467,10 @@ image.createPixelMap(color, opts).then((pixelMap) => {
 
 
 
-#### getEffectPixelMap20+
+### getEffectPixelMap20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEffectPixelMap(useCpuRender : boolean): Promise<image.PixelMap>
 
@@ -1424,12 +1484,14 @@ getEffectPixelMap(useCpuRender : boolean): Promise<image.PixelMap>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | useCpuRender | boolean | 是 | 指定渲染模式。true表示使用CPU渲染，false表示使用GPU渲染。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1460,9 +1522,10 @@ image.createPixelMap(color, opts).then((pixelMap) => {
 
 
 
-#### getPixelMap(deprecated)
+### getPixelMap(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPixelMap(): image.PixelMap
 
@@ -1475,6 +1538,7 @@ getPixelMap(): image.PixelMap
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |

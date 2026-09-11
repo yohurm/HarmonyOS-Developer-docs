@@ -1,9 +1,9 @@
 # Interface (CameraManager)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-cameramanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 相机管理器类，使用前需要通过[getCameraManager](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-f#cameragetcameramanager)接口获取相机管理实例。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { camera } from '@kit.CameraKit';
@@ -22,9 +23,10 @@ import { camera } from '@kit.CameraKit';
 
 
 
-#### getSupportedCameras
+## getSupportedCameras
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSupportedCameras(): Array&lt;CameraDevice&gt;
 
@@ -37,6 +39,7 @@ getSupportedCameras(): Array&lt;CameraDevice&gt;
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -62,9 +65,10 @@ function getSupportedCameras(cameraManager: camera.CameraManager): Array<camera.
 
 
 
-#### getSupportedSceneModes11+
+## getSupportedSceneModes11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSupportedSceneModes(camera: CameraDevice): Array&lt;SceneMode&gt;
 
@@ -76,12 +80,14 @@ getSupportedSceneModes(camera: CameraDevice): Array&lt;SceneMode&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | camera | CameraDevice | 是 | 相机设备，通过getSupportedCameras接口获取。传参异常时，会返回错误码7400101。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -107,9 +113,10 @@ function getSupportedSceneModes(cameraManager: camera.CameraManager, camera: cam
 
 
 
-#### getSupportedOutputCapability11+
+## getSupportedOutputCapability11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSupportedOutputCapability(camera: CameraDevice, mode: SceneMode): CameraOutputCapability
 
@@ -121,6 +128,7 @@ getSupportedOutputCapability(camera: CameraDevice, mode: SceneMode): CameraOutpu
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | camera | CameraDevice | 是 | 相机设备，通过 getSupportedCameras 接口获取。 |
@@ -128,6 +136,7 @@ getSupportedOutputCapability(camera: CameraDevice, mode: SceneMode): CameraOutpu
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -145,9 +154,10 @@ function getSupportedOutputCapability(camera: camera.CameraDevice, cameraManager
 
 
 
-#### getSupportedFullOutputCapability23+
+## getSupportedFullOutputCapability23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSupportedFullOutputCapability(camera: CameraDevice, mode: SceneMode): CameraOutputCapability
 
@@ -165,6 +175,7 @@ getSupportedFullOutputCapability(camera: CameraDevice, mode: SceneMode): CameraO
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | camera | CameraDevice | 是 | 相机设备信息，通过getSupportedCameras接口获取。 |
@@ -172,6 +183,7 @@ getSupportedFullOutputCapability(camera: CameraDevice, mode: SceneMode): CameraO
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -191,9 +203,10 @@ function getSupportedFullOutputCapability(camera: camera.CameraDevice, cameraMan
 
 
 
-#### isCameraMuted
+## isCameraMuted
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isCameraMuted(): boolean
 
@@ -204,6 +217,7 @@ isCameraMuted(): boolean
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -221,9 +235,10 @@ function isCameraMuted(cameraManager: camera.CameraManager): boolean {
 
 
 
-#### createCameraInput
+## createCameraInput
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createCameraInput(camera: CameraDevice): CameraInput
 
@@ -239,12 +254,14 @@ createCameraInput(camera: CameraDevice): CameraInput
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | camera | CameraDevice | 是 | CameraDevice对象，通过 getSupportedCameras 接口获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -254,6 +271,7 @@ createCameraInput(camera: CameraDevice): CameraInput
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -282,9 +300,10 @@ function createCameraInput(camera: camera.CameraDevice, cameraManager: camera.Ca
 
 
 
-#### createCameraInput
+## createCameraInput
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createCameraInput(position: CameraPosition, type: CameraType): CameraInput
 
@@ -300,6 +319,7 @@ createCameraInput(position: CameraPosition, type: CameraType): CameraInput
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | position | CameraPosition | 是 | 相机位置，首先通过 getSupportedCameras 接口获取支持的相机设备对象，然后根据返回的相机设备对象获取设备位置信息。 |
@@ -307,6 +327,7 @@ createCameraInput(position: CameraPosition, type: CameraType): CameraInput
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -316,6 +337,7 @@ createCameraInput(position: CameraPosition, type: CameraType): CameraInput
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -346,9 +368,10 @@ function createCameraInput(camera: camera.CameraDevice, cameraManager: camera.Ca
 
 
 
-#### createPreviewOutput
+## createPreviewOutput
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPreviewOutput(profile: Profile, surfaceId: string): PreviewOutput
 
@@ -360,6 +383,7 @@ createPreviewOutput(profile: Profile, surfaceId: string): PreviewOutput
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | profile | Profile | 是 | 支持的预览配置信息，通过getSupportedOutputCapability接口获取。 |
@@ -367,6 +391,7 @@ createPreviewOutput(profile: Profile, surfaceId: string): PreviewOutput
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -376,6 +401,7 @@ createPreviewOutput(profile: Profile, surfaceId: string): PreviewOutput
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -404,9 +430,10 @@ function createPreviewOutput(cameraOutputCapability: camera.CameraOutputCapabili
 
 
 
-#### createPreviewOutput12+
+## createPreviewOutput12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPreviewOutput(surfaceId: string): PreviewOutput
 
@@ -418,12 +445,14 @@ createPreviewOutput(surfaceId: string): PreviewOutput
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | surfaceId | string | 是 | 从XComponent或者ImageReceiver组件获取的surfaceId。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -433,6 +462,7 @@ createPreviewOutput(surfaceId: string): PreviewOutput
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -460,9 +490,10 @@ function createPreviewOutput(cameraManager: camera.CameraManager, surfaceId: str
 
 
 
-#### createDeferredPreviewOutput24+
+## createDeferredPreviewOutput24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createDeferredPreviewOutput(profile: Profile): PreviewOutput
 
@@ -474,12 +505,14 @@ createDeferredPreviewOutput(profile: Profile): PreviewOutput
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | profile | Profile | 是 | 支持的预览配置信息，通过getSupportedOutputCapability接口获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -489,6 +522,7 @@ createDeferredPreviewOutput(profile: Profile): PreviewOutput
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -517,9 +551,10 @@ function createPreviewOutput(cameraOutputCapability: camera.CameraOutputCapabili
 
 
 
-#### createPhotoOutput11+
+## createPhotoOutput11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPhotoOutput(profile?: Profile): PhotoOutput
 
@@ -531,12 +566,14 @@ createPhotoOutput(profile?: Profile): PhotoOutput
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | profile | Profile | 否 | 支持的拍照配置信息，通过getSupportedOutputCapability接口获取。 API version 11时，该参数必填；从API version 12开始，如果使用preconfig进行预配置，传入profile参数会覆盖preconfig的预配置参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -546,6 +583,7 @@ createPhotoOutput(profile?: Profile): PhotoOutput
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -574,15 +612,17 @@ function createPhotoOutput(cameraOutputCapability: camera.CameraOutputCapability
 
 
 
-#### createVideoOutput
+## createVideoOutput
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createVideoOutput(profile: VideoProfile, surfaceId: string): VideoOutput
 
 创建录像输出对象，同步返回结果。
 
 在录像模式下，使能SDR或HDR_VIVID拍摄效果时，CameraFormat与ColorSpace必须按照下列表格中的对应关系配置，若不满足表格中CameraFormat与ColorSpace配置，会导致预览异常等问题。
+
 
 | SDR/HDR拍摄 | CameraFormat | ColorSpace |
 | --- | --- | --- |
@@ -596,6 +636,7 @@ createVideoOutput(profile: VideoProfile, surfaceId: string): VideoOutput
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | profile | VideoProfile | 是 | 支持的录像配置信息，通过getSupportedOutputCapability接口获取。 |
@@ -603,6 +644,7 @@ createVideoOutput(profile: VideoProfile, surfaceId: string): VideoOutput
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -612,6 +654,7 @@ createVideoOutput(profile: VideoProfile, surfaceId: string): VideoOutput
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -640,9 +683,10 @@ function createVideoOutput(cameraOutputCapability: camera.CameraOutputCapability
 
 
 
-#### createVideoOutput12+
+## createVideoOutput12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createVideoOutput(surfaceId: string): VideoOutput
 
@@ -654,12 +698,14 @@ createVideoOutput(surfaceId: string): VideoOutput
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | surfaceId | string | 是 | 从AVRecorder获取的surfaceId。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -669,6 +715,7 @@ createVideoOutput(surfaceId: string): VideoOutput
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -696,9 +743,10 @@ function createVideoOutput(cameraManager: camera.CameraManager, surfaceId: strin
 
 
 
-#### createMetadataOutput
+## createMetadataOutput
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createMetadataOutput(metadataObjectTypes: Array&lt;MetadataObjectType&gt;): MetadataOutput
 
@@ -710,12 +758,14 @@ createMetadataOutput(metadataObjectTypes: Array&lt;MetadataObjectType&gt;): Meta
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | metadataObjectTypes | Array&lt;MetadataObjectType&gt; | 是 | metadata流类型信息，通过getSupportedOutputCapability接口获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -725,6 +775,7 @@ createMetadataOutput(metadataObjectTypes: Array&lt;MetadataObjectType&gt;): Meta
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -752,9 +803,10 @@ function createMetadataOutput(cameraManager: camera.CameraManager, cameraOutputC
 
 
 
-#### createSession11+
+## createSession11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createSession<T extends Session>(mode: SceneMode): T
 
@@ -766,12 +818,14 @@ createSession<T extends Session>(mode: SceneMode): T
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | SceneMode | 是 | 相机支持的模式。如果传入的参数异常（如超出范围、传入null或未定义等），实际接口不会生效。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -781,6 +835,7 @@ createSession<T extends Session>(mode: SceneMode): T
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -808,9 +863,10 @@ function createSession(cameraManager: camera.CameraManager, mode: camera.SceneMo
 
 
 
-#### on('cameraStatus')
+## on('cameraStatus')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'cameraStatus', callback: AsyncCallback&lt;CameraStatusInfo&gt;): void
 
@@ -825,6 +881,7 @@ on(type: 'cameraStatus', callback: AsyncCallback&lt;CameraStatusInfo&gt;): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -853,9 +910,10 @@ function registerCameraStatus(cameraManager: camera.CameraManager): void {
 
 
 
-#### off('cameraStatus')
+## off('cameraStatus')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'cameraStatus', callback?: AsyncCallback&lt;CameraStatusInfo&gt;): void
 
@@ -866,6 +924,7 @@ off(type: 'cameraStatus', callback?: AsyncCallback&lt;CameraStatusInfo&gt;): voi
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -883,9 +942,10 @@ function unregisterCameraStatus(cameraManager: camera.CameraManager): void {
 
 
 
-#### on('foldStatusChange')12+
+## on('foldStatusChange')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'foldStatusChange', callback: AsyncCallback&lt;FoldStatusInfo&gt;): void
 
@@ -900,6 +960,7 @@ on(type: 'foldStatusChange', callback: AsyncCallback&lt;FoldStatusInfo&gt;): voi
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -928,9 +989,10 @@ function registerFoldStatusChange(cameraManager: camera.CameraManager): void {
 
 
 
-#### off('foldStatusChange')12+
+## off('foldStatusChange')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'foldStatusChange', callback?: AsyncCallback&lt;FoldStatusInfo&gt;): void
 
@@ -941,6 +1003,7 @@ off(type: 'foldStatusChange', callback?: AsyncCallback&lt;FoldStatusInfo&gt;): v
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -958,9 +1021,10 @@ function unregisterFoldStatusChange(cameraManager: camera.CameraManager): void {
 
 
 
-#### isTorchSupported11+
+## isTorchSupported11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isTorchSupported(): boolean
 
@@ -971,6 +1035,7 @@ isTorchSupported(): boolean
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -988,9 +1053,10 @@ function isTorchSupported(cameraManager: camera.CameraManager): boolean {
 
 
 
-#### isTorchModeSupported11+
+## isTorchModeSupported11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isTorchModeSupported(mode: TorchMode): boolean
 
@@ -1002,12 +1068,14 @@ isTorchModeSupported(mode: TorchMode): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | TorchMode | 是 | 手电筒模式。传参为null或者undefined，作为0处理，手电筒关闭。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1025,9 +1093,10 @@ function isTorchModeSupported(cameraManager: camera.CameraManager, torchMode: ca
 
 
 
-#### getTorchMode11+
+## getTorchMode11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTorchMode(): TorchMode
 
@@ -1038,6 +1107,7 @@ getTorchMode(): TorchMode
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1056,9 +1126,10 @@ function getTorchMode(cameraManager: camera.CameraManager): camera.TorchMode | u
 
 
 
-#### setTorchMode11+
+## setTorchMode11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setTorchMode(mode: TorchMode): void
 
@@ -1070,6 +1141,7 @@ setTorchMode(mode: TorchMode): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | TorchMode | 是 | 手电筒模式。传参为null或者undefined，作为0处理，手电筒关闭。 |
@@ -1078,6 +1150,7 @@ setTorchMode(mode: TorchMode): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1104,9 +1177,10 @@ function setTorchMode(cameraManager: camera.CameraManager, torchMode: camera.Tor
 
 
 
-#### on('torchStatusChange')11+
+## on('torchStatusChange')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'torchStatusChange', callback: AsyncCallback&lt;TorchStatusInfo&gt;): void
 
@@ -1121,6 +1195,7 @@ on(type: 'torchStatusChange', callback: AsyncCallback&lt;TorchStatusInfo&gt;): v
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1148,9 +1223,10 @@ function registerTorchStatusChange(cameraManager: camera.CameraManager): void {
 
 
 
-#### off('torchStatusChange')11+
+## off('torchStatusChange')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'torchStatusChange', callback?: AsyncCallback&lt;TorchStatusInfo&gt;): void
 
@@ -1161,6 +1237,7 @@ off(type: 'torchStatusChange', callback?: AsyncCallback&lt;TorchStatusInfo&gt;):
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1178,9 +1255,10 @@ function unregisterTorchStatusChange(cameraManager: camera.CameraManager): void 
 
 
 
-#### isTorchLevelControlSupported
+## isTorchLevelControlSupported
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 isTorchLevelControlSupported(): boolean
 
@@ -1195,6 +1273,7 @@ isTorchLevelControlSupported(): boolean
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1212,9 +1291,10 @@ function isTorchLevelControlSupported(cameraManager: camera.CameraManager): bool
 
 
 
-#### setTorchModeOnWithLevel
+## setTorchModeOnWithLevel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 setTorchModeOnWithLevel(torchLevel: number): void
 
@@ -1230,6 +1310,7 @@ setTorchModeOnWithLevel(torchLevel: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | torchLevel | number | 是 | 手电筒亮度级别。通常范围是[0.0, 1.0]（0.0为最暗，1.0为最亮）。 |
@@ -1238,6 +1319,7 @@ setTorchModeOnWithLevel(torchLevel: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1256,9 +1338,10 @@ function SetTorchModeOnWithLevel(cameraManager: camera.CameraManager, torchLevel
 
 
 
-#### getCameraDevice18+
+## getCameraDevice18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCameraDevice(position: CameraPosition, type: CameraType): CameraDevice
 
@@ -1272,6 +1355,7 @@ getCameraDevice(position: CameraPosition, type: CameraType): CameraDevice
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | position | CameraPosition | 是 | 需要得到的CameraDevice对象对应的CameraPosition条件。 |
@@ -1279,6 +1363,7 @@ getCameraDevice(position: CameraPosition, type: CameraType): CameraDevice
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1288,6 +1373,7 @@ getCameraDevice(position: CameraPosition, type: CameraType): CameraDevice
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1314,9 +1400,10 @@ function getCameraDevice(cameraManager: camera.CameraManager, position: camera.C
 
 
 
-#### getCameraDevices23+
+## getCameraDevices23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCameraDevices(position: CameraPosition, types: Array&lt;CameraType&gt;, connectType: ConnectionType): Array&lt;CameraDevice&gt;
 
@@ -1328,6 +1415,7 @@ getCameraDevices(position: CameraPosition, types: Array&lt;CameraType&gt;, conne
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | position | CameraPosition | 是 | 相机的位置。 |
@@ -1337,6 +1425,7 @@ getCameraDevices(position: CameraPosition, types: Array&lt;CameraType&gt;, conne
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;CameraDevice&gt; | 根据相机位置、相机类型数组和连接类型查询符合条件的相机列表。 |
@@ -1345,6 +1434,7 @@ getCameraDevices(position: CameraPosition, types: Array&lt;CameraType&gt;, conne
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1371,9 +1461,10 @@ function getCameraDevices(cameraManager: camera.CameraManager, position: camera.
 
 
 
-#### getCameraConcurrentInfos18+
+## getCameraConcurrentInfos18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCameraConcurrentInfos(cameras: Array&lt;CameraDevice&gt;): Array&lt;CameraConcurrentInfo&gt;
 
@@ -1385,12 +1476,14 @@ getCameraConcurrentInfos(cameras: Array&lt;CameraDevice&gt;): Array&lt;CameraCon
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cameras | Array&lt;CameraDevice&gt; | 是 | 一组CameraDevice相机设备，并得到与这一组CameraDevice对应的并发信息，推荐设置为由getCameraDevice获取的前置与后置两个用于并发的相机设备。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1400,6 +1493,7 @@ getCameraConcurrentInfos(cameras: Array&lt;CameraDevice&gt;): Array&lt;CameraCon
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1428,9 +1522,10 @@ function getCameraConcurrentInfos(cameraManager: camera.CameraManager,
 
 
 
-#### getSupportedOutputCapability(deprecated)
+## getSupportedOutputCapability(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSupportedOutputCapability(camera: CameraDevice): CameraOutputCapability
 
@@ -1444,12 +1539,14 @@ getSupportedOutputCapability(camera: CameraDevice): CameraOutputCapability
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | camera | CameraDevice | 是 | 相机设备，通过 getSupportedCameras 接口获取。传参异常时，会返回错误码。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1467,9 +1564,10 @@ function getSupportedOutputCapability(camera: camera.CameraDevice, cameraManager
 
 
 
-#### createPhotoOutput(deprecated)
+## createPhotoOutput(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPhotoOutput(profile: Profile, surfaceId: string): PhotoOutput
 
@@ -1483,6 +1581,7 @@ createPhotoOutput(profile: Profile, surfaceId: string): PhotoOutput
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | profile | Profile | 是 | 支持的拍照配置信息，通过getSupportedOutputCapability接口获取。 |
@@ -1490,6 +1589,7 @@ createPhotoOutput(profile: Profile, surfaceId: string): PhotoOutput
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1499,6 +1599,7 @@ createPhotoOutput(profile: Profile, surfaceId: string): PhotoOutput
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1524,9 +1625,10 @@ function createPhotoOutput(cameraOutputCapability: camera.CameraOutputCapability
 
 
 
-#### createCaptureSession(deprecated)
+## createCaptureSession(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createCaptureSession(): CaptureSession
 
@@ -1540,6 +1642,7 @@ createCaptureSession(): CaptureSession
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | CaptureSession | CaptureSession实例。接口调用失败会返回相应错误码，错误码类型CameraErrorCode。 |
@@ -1548,6 +1651,7 @@ createCaptureSession(): CaptureSession
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

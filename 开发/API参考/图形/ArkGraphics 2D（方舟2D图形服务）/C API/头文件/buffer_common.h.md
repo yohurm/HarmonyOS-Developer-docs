@@ -1,13 +1,14 @@
 # buffer_common.h
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-buffer-common-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供NativeBuffer模块的公共类型定义。
 
@@ -23,29 +24,34 @@
 
 
 
-#### 汇总
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 汇总
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 结构体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_NativeBuffer_ColorXY | OH_NativeBuffer_ColorXY | 表示基色的X和Y坐标。 |
-| OH_NativeBuffer_Smpte2086 | OH_NativeBuffer_Smpte2086 | 表示smpte2086静态元数据。 |
+| OH_NativeBuffer_Smpte2086 | OH_NativeBuffer_Smpte2086 | 表示SMPTE 2086静态元数据。 |
 | OH_NativeBuffer_Cta861 | OH_NativeBuffer_Cta861 | 表示CTA-861.3静态元数据。 |
 | OH_NativeBuffer_StaticMetadata | OH_NativeBuffer_StaticMetadata | 表示HDR静态元数据。 |
 
 
 
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -54,19 +60,23 @@
 | OH_NativeBuffer_MetadataKey | OH_NativeBuffer_MetadataKey | 表示OH_NativeBuffer的描述信息的键值，如HDR元数据，ROI元数据等。 |
 | OH_NativeBuffer_Format | OH_NativeBuffer_Format | OH_NativeBuffer格式的枚举。 |
 | OH_NativeBuffer_TransformType | OH_NativeBuffer_TransformType | OH_NativeBuffer转换类型的枚举。 |
+| OH_NativeBuffer_VideoDimensionType | OH_NativeBuffer_VideoDimensionType | 视频维度类型枚举。 |
+| OH_NativeBuffer_3D_MetadataKey | OH_NativeBuffer_3D_MetadataKey | NativeBuffer的3D元数据属性枚举。 |
 
 
 
 
-#### 枚举类型说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 枚举类型说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### OH_NativeBuffer_ColorSpace
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### OH_NativeBuffer_ColorSpace
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_NativeBuffer_ColorSpace
@@ -83,6 +93,7 @@ API version 12之前，使用该枚举请引用native_buffer.h头文件；从API
 **系统能力：** SystemCapability.Graphic.Graphic2D.NativeBuffer
 
 **起始版本：** 11
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -124,9 +135,10 @@ API version 12之前，使用该枚举请引用native_buffer.h头文件；从API
 
 
 
-#### OH_NativeBuffer_MetadataType
+### OH_NativeBuffer_MetadataType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_NativeBuffer_MetadataType
@@ -139,6 +151,7 @@ OH_NativeBuffer的图像标准。
 **系统能力：** SystemCapability.Graphic.Graphic2D.NativeBuffer
 
 **起始版本：** 12
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -154,9 +167,10 @@ OH_NativeBuffer的图像标准。
 
 
 
-#### OH_NativeBuffer_MetadataKey
+### OH_NativeBuffer_MetadataKey
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_NativeBuffer_MetadataKey
@@ -170,6 +184,7 @@ enum OH_NativeBuffer_MetadataKey
 
 **起始版本：** 12
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_HDR_METADATA_TYPE | 元数据类型，其值见OH_NativeBuffer_MetadataType，size为OH_NativeBuffer_MetadataType大小。 |
@@ -180,9 +195,10 @@ enum OH_NativeBuffer_MetadataKey
 
 
 
-#### OH_NativeBuffer_Format
+### OH_NativeBuffer_Format
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_NativeBuffer_Format
@@ -199,6 +215,7 @@ API version 22之前，使用该枚举请引用native_buffer.h头文件；从API
 **系统能力：** SystemCapability.Graphic.Graphic2D.NativeBuffer
 
 **起始版本：** 10
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -250,9 +267,10 @@ API version 22之前，使用该枚举请引用native_buffer.h头文件；从API
 
 
 
-#### OH_NativeBuffer_TransformType
+### OH_NativeBuffer_TransformType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_NativeBuffer_TransformType
@@ -270,6 +288,7 @@ API version 22之前，使用该枚举请引用native_buffer.h头文件；从API
 
 **起始版本：** 12
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | NATIVEBUFFER_ROTATE_NONE = 0 | 不旋转。 |
@@ -284,3 +303,56 @@ API version 22之前，使用该枚举请引用native_buffer.h头文件；从API
 | NATIVEBUFFER_FLIP_V_ROT180 | 垂直翻转并旋转180度。 |
 | NATIVEBUFFER_FLIP_H_ROT270 | 水平翻转并旋转270度。 |
 | NATIVEBUFFER_FLIP_V_ROT270 | 垂直翻转并旋转270度。 |
+
+
+
+
+### OH_NativeBuffer_VideoDimensionType
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+```text
+enum OH_NativeBuffer_VideoDimensionType
+```
+
+**描述**
+
+视频维度类型枚举。
+
+**系统能力：** SystemCapability.Graphic.Graphic2D.NativeBuffer
+
+**起始版本：** 26.0.0
+
+
+| 枚举项 | 描述 |
+| --- | --- |
+| OH_VIDEO_DIM_TYPE_2D = 0 | 二维视频。 |
+| OH_VIDEO_DIM_TYPE_3D_SBS | 三维视频，格式：左右排列。 |
+| OH_VIDEO_DIM_TYPE_3D_TAB | 三维视频，格式：上下排列。 |
+| OH_VIDEO_DIM_TYPE_BUTT | 无效视频维度类型。 |
+
+
+
+
+### OH_NativeBuffer_3D_MetadataKey
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+```text
+enum OH_NativeBuffer_3D_MetadataKey
+```
+
+**描述**
+
+NativeBuffer的3D元数据属性枚举。
+
+**系统能力：** SystemCapability.Graphic.Graphic2D.NativeBuffer
+
+**起始版本：** 26.0.0
+
+
+| 枚举项 | 描述 |
+| --- | --- |
+| OH_VIDEO_DIM_TYPE | NativeBuffer视频维度类型，具体取值范围可见OH_NativeBuffer_VideoDimensionType。 |

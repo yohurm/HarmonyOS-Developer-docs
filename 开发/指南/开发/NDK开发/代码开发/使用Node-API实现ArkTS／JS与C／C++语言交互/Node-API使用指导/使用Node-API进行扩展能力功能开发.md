@@ -1,10 +1,10 @@
 # 使用Node-API进行扩展能力功能开发
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-about-extension
 
-#### 简介
+## 简介
 
 [扩展能力](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-data-types-interfaces#扩展能力)接口进一步扩展了Node-API的功能，提供了一些额外的接口，用于在Node-API模块中与ArkTS进行更灵活的交互和定制，这些接口可以用于创建自定义ArkTS对象等场景。
  
@@ -31,12 +31,13 @@ import { taskpool } from '@kit.ArkTS';
  
   
 
-#### 模块加载
+## 模块加载
 
   
 
-#### 接口描述
+### 接口描述
  
+
 | 接口 | 描述 |
 | --- | --- |
 | napi_load_module | 用于在Node-API模块中将abc文件作为模块加载，返回模块的命名空间，适用于需要在运行时动态加载模块或资源的应用程序，从而实现灵活的扩展和定制。 |
@@ -46,7 +47,7 @@ import { taskpool } from '@kit.ArkTS';
  
   
 
-#### 使用示例
+### 使用示例
 
 **napi_load_module**
  
@@ -134,12 +135,13 @@ hilog.info(0x0000, 'testTag', 'Test Node-API 2 + 3 = %{public}d', testNapi.add(2
  
   
 
-#### ArkTS Object相关
+## ArkTS Object相关
 
   
 
-#### 接口描述
+### 接口描述
  
+
 | 接口 | 描述 |
 | --- | --- |
 | napi_create_object_with_properties | 用于在Node-API模块中使用给定的napi_property_descriptor创建ArkTS Object。descriptor的键名必须为string，且不可转为number。 |
@@ -148,7 +150,7 @@ hilog.info(0x0000, 'testTag', 'Test Node-API 2 + 3 = %{public}d', testNapi.add(2
  
   
 
-#### 使用示例
+### 使用示例
 
 **napi_create_object_with_properties**
  
@@ -246,12 +248,13 @@ try {
  
   
 
-#### 运行指定abc文件
+## 运行指定abc文件
 
   
 
-#### 接口描述
+### 接口描述
  
+
 | 接口 | 描述 |
 | --- | --- |
 | napi_run_script_path | 用于在Node-API模块中运行指定abc文件。 |
@@ -259,7 +262,7 @@ try {
  
   
 
-#### 使用示例
+### 使用示例
 
 **napi_run_script_path**
  
@@ -331,12 +334,13 @@ add(1, 2);
  
   
 
-#### 异步工作对象加入队列并指定优先级
+## 异步工作对象加入队列并指定优先级
 
   
 
-#### 接口描述
+### 接口描述
  
+
 | 接口 | 描述 |
 | --- | --- |
 | napi_queue_async_work_with_qos | 用于将异步工作对象加入队列，让开发者能够根据QoS优先级来管理和调度异步工作的执行，从而更好地满足程序的性能和响应需求。 |
@@ -344,7 +348,7 @@ add(1, 2);
  
   
 
-#### 使用示例
+### 使用示例
 
 **napi_queue_async_work_with_qos**
  
@@ -352,12 +356,13 @@ add(1, 2);
  
   
 
-#### 给ArkTS对象绑定回调和回调所需的参数
+## 给ArkTS对象绑定回调和回调所需的参数
 
   
 
-#### 接口描述
+### 接口描述
  
+
 | 接口 | 描述 |
 | --- | --- |
 | napi_coerce_to_native_binding_object | 用于给ArkTS对象绑定回调和回调所需的参数，其作用是为了给ArkTS对象携带Native信息。 |
@@ -365,7 +370,7 @@ add(1, 2);
  
   
 
-#### 使用示例
+### 使用示例
 
 **napi_coerce_to_native_binding_object**
  
@@ -681,12 +686,13 @@ test01();
  
   
 
-#### 事件循环
+## 事件循环
 
   
 
-#### 接口描述
+### 接口描述
  
+
 | 接口 | 描述 |
 | --- | --- |
 | napi_run_event_loop | 触发底层的事件循环。 |
@@ -695,7 +701,7 @@ test01();
  
   
 
-#### 使用示例
+### 使用示例
 
 **napi_run_event_loop、napi_stop_event_loop**
  
@@ -703,12 +709,13 @@ test01();
  
   
 
-#### ArkTS基础运行时环境
+## ArkTS基础运行时环境
 
   
 
-#### 接口描述
+### 接口描述
  
+
 | 接口 | 描述 |
 | --- | --- |
 | napi_create_ark_runtime | 创建基础运行时环境。 |
@@ -717,7 +724,7 @@ test01();
  
   
 
-#### 使用示例
+### 使用示例
 
 **napi_create_ark_runtime、napi_destroy_ark_runtime**
  
@@ -725,12 +732,13 @@ test01();
  
   
 
-#### 序列化和反序列化
+## 序列化和反序列化
 
   
 
-#### 接口描述
+### 接口描述
  
+
 | 接口 | 描述 |
 | --- | --- |
 | napi_serialize | 将ArkTS对象转换为native数据。第一个参数env是接口执行的ArkTS环境；第二个参数object是待序列化的ArkTS对象；第三个参数transfer_list是存放需要以transfer传递的arrayBuffer的array，如不涉及可传undefined；第四个参数clone_list是存放需要克隆传递的Sendable对象的array，如不涉及可传undefined；第五个参数result是序列化结果。 |
@@ -740,7 +748,7 @@ test01();
  
   
 
-#### 使用示例
+### 使用示例
 
 **napi_serialize、napi_deserialize、napi_delete_serialization_data**
  
@@ -808,12 +816,13 @@ hilog.info(0x0000, 'testTag', ' Node-API aboutSerialize: %{public}d', testNapi.a
  
   
 
-#### 根据任务指定的优先级和入队方式进行处理异步线程向ArkTS线程投递的任务
+## 根据任务指定的优先级和入队方式进行处理异步线程向ArkTS线程投递的任务
 
   
 
-#### 接口描述
+### 接口描述
  
+
 | 接口 | 描述 |
 | --- | --- |
 | napi_call_threadsafe_function_with_priority | 将指定优先级和入队方式的任务投递到ArkTS主线程。 |
@@ -821,7 +830,7 @@ hilog.info(0x0000, 'testTag', ' Node-API aboutSerialize: %{public}d', testNapi.a
  
   
 
-#### 使用示例
+### 使用示例
 
 **napi_call_threadsafe_function_with_priority**
  
@@ -829,12 +838,13 @@ hilog.info(0x0000, 'testTag', ' Node-API aboutSerialize: %{public}d', testNapi.a
  
   
 
-#### Sendable相关
+## Sendable相关
 
   
 
-#### 接口描述
+### 接口描述
  
+
 | 接口 | 描述 |
 | --- | --- |
 | napi_is_sendable | 判断给定ArkTS value是否是Sendable的。 |
@@ -852,7 +862,7 @@ hilog.info(0x0000, 'testTag', ' Node-API aboutSerialize: %{public}d', testNapi.a
  
   
 
-#### 使用示例
+### 使用示例
 
 **napi_is_sendable**
  
@@ -1331,12 +1341,13 @@ target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so)
  
   
 
-#### napi_wrap接口增强
+## napi_wrap接口增强
 
   
 
-#### 接口描述
+### 接口描述
  
+
 | 接口 | 描述 |
 | --- | --- |
 | napi_wrap_enhance | 在ArkTS对象上绑定一个native对象实例并指定实例大小，运行时会统计传入的实例大小并将其累加，当累计大小达到GC触发阈值时，运行时会启动垃圾回收流程。开发者可以指定绑定的回调函数是否异步执行，如果是异步执行，回调函数必须保证是线程安全的。 |
@@ -1344,7 +1355,7 @@ target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so)
  
   
 
-#### 使用示例
+### 使用示例
 
 **napi_wrap_enhance**
  
@@ -1394,12 +1405,13 @@ testNapi.testNapiWrapEnhance();
  
   
 
-#### napi提供多上下文环境能力
+## napi提供多上下文环境能力
 
   
 
-#### 接口描述
+### 接口描述
  
+
 | 接口 | 描述 |
 | --- | --- |
 | napi_create_ark_context | 创建基础运行时上下文环境。 |
@@ -1409,7 +1421,7 @@ testNapi.testNapiWrapEnhance();
  
   
 
-#### 使用示例
+### 使用示例
 
 **napi_create_ark_context、napi_switch_ark_context、napi_destroy_ark_context**
  
@@ -1417,12 +1429,13 @@ testNapi.testNapiWrapEnhance();
  
   
 
-#### napi提供通过指针访问ArkTS String内存数据的功能
+## napi提供通过指针访问ArkTS String内存数据的功能
 
   
 
-#### 接口描述
+### 接口描述
  
+
 | 接口 | 描述 |
 | --- | --- |
 | napi_get_buffer_string_utf16_in_critical_scope | 获取以Utf16编码的ArkTS String的内存数据缓冲区 |
@@ -1430,7 +1443,7 @@ testNapi.testNapiWrapEnhance();
  
   
 
-#### 使用示例
+### 使用示例
 
 **napi_get_buffer_string_utf16_in_critical_scope**
  
@@ -1438,12 +1451,13 @@ testNapi.testNapiWrapEnhance();
  
   
 
-#### napi实现临界区作用域
+## napi实现临界区作用域
 
   
 
-#### 接口描述
+### 接口描述
  
+
 | 接口 | 描述 |
 | --- | --- |
 | napi_open_critical_scope | 打开临界区作用域 |
@@ -1452,7 +1466,7 @@ testNapi.testNapiWrapEnhance();
  
   
 
-#### 使用示例
+### 使用示例
 
 **napi_open_critical_scope、napi_close_critical_scope**
  
@@ -1460,12 +1474,13 @@ testNapi.testNapiWrapEnhance();
  
   
 
-#### napi支持创建轻量级的强引用对象
+## napi支持创建轻量级的强引用对象
 
   
 
-#### 接口描述
+### 接口描述
  
+
 | 接口 | 描述 |
 | --- | --- |
 | napi_create_strong_reference | 创建指向ArkTS对象的强引用 |
@@ -1475,20 +1490,21 @@ testNapi.testNapiWrapEnhance();
  
   
 
-#### 使用示例
+### 使用示例
 
-**napi_create_strong_reference、napi_delete_strong_reference、napi_get_value_strong_reference**
+**napi_create_strong_reference、napi_delete_strong_reference、napi_get_strong_reference_value**
  
 [使用扩展的Node-API接口创建、销毁和使用强引用对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-about-strong-reference)
  
   
 
-#### napi支持创建Sendable的强引用
+## napi支持创建Sendable的强引用
 
   
 
-#### 接口描述
+### 接口描述
  
+
 | 接口 | 描述 |
 | --- | --- |
 | napi_create_strong_sendable_reference | 创建指向Sendable ArkTS对象的Sendable强引用。 |
@@ -1498,7 +1514,7 @@ testNapi.testNapiWrapEnhance();
  
   
 
-#### 使用示例
+### 使用示例
 
 **napi_create_strong_sendable_reference、napi_delete_strong_sendable_reference、napi_get_strong_sendable_reference_value**
  
@@ -1506,12 +1522,13 @@ testNapi.testNapiWrapEnhance();
  
   
 
-#### napi支持抛出错误对象的code属性类型为number的ArkTS Error
+## napi支持抛出错误对象的code属性类型为number的ArkTS Error
 
   
 
-#### 接口描述
+### 接口描述
  
+
 | 接口 | 描述 |
 | --- | --- |
 | napi_throw_business_error | 抛出带文本信息的ArkTS Error，其错误对象的code属性类型为number。 |
@@ -1519,7 +1536,7 @@ testNapi.testNapiWrapEnhance();
  
   
 
-#### 使用示例
+### 使用示例
 
 **napi_throw_business_error**
  
@@ -1527,12 +1544,13 @@ testNapi.testNapiWrapEnhance();
  
   
 
-#### napi支持基于调用点内联缓存的快速属性访问
+## napi支持基于调用点内联缓存的快速属性访问
 
   
 
-#### 接口描述
+### 接口描述
  
+
 | 接口 | 描述 |
 | --- | --- |
 | napi_create_callsite_info | 创建调用点信息句柄，用于缓存属性访问的内联缓存信息。 |
@@ -1543,7 +1561,7 @@ testNapi.testNapiWrapEnhance();
  
   
 
-#### 使用示例
+### 使用示例
 
 **napi_create_callsite_info、napi_delete_callsite_info、napi_get_property_with_callsite_info、napi_set_property_with_callsite_info**
  

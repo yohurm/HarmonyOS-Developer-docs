@@ -1,11 +1,12 @@
 # FG_DispatchDescription_GLES
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_f_g___dispatch_description___g_l_e_s
 **支持设备：** Phone | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -19,16 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | uint32_t inputColor | 真实渲染帧颜色缓冲区索引，支持格式包括GL_RGBA8、GL_R11F_G11F_B10F、GL_RGBA16F。 取值范围：[0, 2^32 -1]。 |
@@ -40,13 +44,15 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### inputColor
+### inputColor
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -60,7 +66,8 @@ uint32_t FG_DispatchDescription_GLES::inputColor
  
   
 
-#### inputDepthStencil
+### inputDepthStencil
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -74,7 +81,8 @@ uint32_t FG_DispatchDescription_GLES::inputDepthStencil
  
   
 
-#### invViewProj
+### invViewProj
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -88,7 +96,8 @@ FG_Mat4x4 FG_DispatchDescription_GLES::invViewProj
  
   
 
-#### outputColor
+### outputColor
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -102,7 +111,8 @@ uint32_t FG_DispatchDescription_GLES::outputColor
  
   
 
-#### viewProj
+### viewProj
+
 
 **支持设备：** Phone | Tablet | TV
 

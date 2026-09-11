@@ -1,9 +1,9 @@
 # Ellipse
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawing-components-ellipse
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 椭圆绘制组件。该组件通过设置宽度和高度属性绘制椭圆形状，在给定的矩形区域内渲染椭圆轮廓和填充区域。
  
@@ -12,23 +12,26 @@
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
  
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### Ellipse
+### Ellipse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 new Ellipse(options?: EllipseOptions)
  
@@ -42,6 +45,7 @@ new Ellipse(options?: EllipseOptions)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | EllipseOptions | 否 | 椭圆绘制配置选项，包含宽度和高度设置。不传入时使用默认尺寸（宽度和高度均为0）。 异常值undefined和null按照无效值处理，本次设置不生效。 **说明：**从API version 18开始，使用EllipseOptions参数时需在Stage模型下使用。 |
@@ -49,9 +53,10 @@ new Ellipse(options?: EllipseOptions)
  
   
 
-#### Ellipse
+### Ellipse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Ellipse(options?: EllipseOptions)
  
@@ -65,6 +70,7 @@ Ellipse(options?: EllipseOptions)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | EllipseOptions | 否 | 椭圆绘制配置选项，包含宽度和高度设置。不传入时使用默认尺寸（宽度和高度均为0）。 异常值undefined和null按照无效值处理，本次设置不生效。 **说明：**从API version 18开始，使用EllipseOptions参数时需在Stage模型下使用。 |
@@ -72,9 +78,10 @@ Ellipse(options?: EllipseOptions)
  
   
 
-#### EllipseOptions18+对象说明
+## EllipseOptions18+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于描述Ellipse组件绘制属性。
  
@@ -90,6 +97,7 @@ Ellipse(options?: EllipseOptions)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | width7+ | Length | 否 | 是 | 宽度，取值范围≥0。 默认值：0 默认单位：vp 异常值undefined、null、NaN和Infinity按照默认值处理。 从API version 20开始，支持Resource类型。 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -98,21 +106,26 @@ Ellipse(options?: EllipseOptions)
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)以及[图形绘制通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawing-components-common)。
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 示例1（组件属性绘制）
+### 示例1（组件属性绘制）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过fillOpacity、stroke属性分别绘制椭圆的透明度、边框颜色。
  
@@ -143,7 +156,10 @@ struct EllipseExample {
  
   
 
-#### 示例2（宽和高使用不同参数类型绘制椭圆）
+### 示例2（宽和高使用不同参数类型绘制椭圆）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 width、height属性分别使用不同的长度类型绘制椭圆。
  
@@ -166,12 +182,15 @@ struct EllipseTypeExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/_LzbfKiWTmGW2ZRBT1z3iA/zh-cn_image_0000002704274775.png?HW-CC-KV=V1&HW-CC-Date=20260813T095449Z&HW-CC-Expire=86400&HW-CC-Sign=7DDA252200B088EDC62DAFA49F084E6A3F25BEE11F96442C4755835B496EF4CE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/ohQASJ9DQH6f9zB8nd6ajA/zh-cn_image_0000002717613026.png?HW-CC-KV=V1&HW-CC-Date=20260911T073117Z&HW-CC-Expire=86400&HW-CC-Sign=B9FED5D0826BBCE7228CBD90EEBB32AE2302B45EC48E6E6B27308CB77870D7E3)
 
  
   
 
-#### 示例3（使用attributeModifier动态设置Ellipse组件的属性）
+### 示例3（使用attributeModifier动态设置Ellipse组件的属性）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 以下示例展示了如何使用attributeModifier动态设置Ellipse组件的fill、fillOpacity、stroke、strokeDashArray、strokeDashOffset、strokeLineCap、strokeOpacity、strokeWidth和antiAlias属性。
  
@@ -208,4 +227,4 @@ struct EllipseModifierDemo {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/NWw5zwxcSNiQ9GdwQoUPiQ/zh-cn_image_0000002674474984.png?HW-CC-KV=V1&HW-CC-Date=20260813T095449Z&HW-CC-Expire=86400&HW-CC-Sign=D4481CAFD5169976E4A24E0F15A17F8276B7D14144640EE23E15BC917E5E09FE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/8AezXP3RQPyk59GXfyg7zA/zh-cn_image_0000002747292979.png?HW-CC-KV=V1&HW-CC-Date=20260911T073117Z&HW-CC-Expire=86400&HW-CC-Sign=69B4CBF9F5981F52FB11A127A2E9B603C3224EDB81E01637C12FE3A4AA647A6E)

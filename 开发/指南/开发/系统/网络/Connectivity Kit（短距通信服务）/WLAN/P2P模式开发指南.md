@@ -1,16 +1,16 @@
 # P2P模式开发指南
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/p2p-development-guide
 
-#### 简介
+## 简介
 
 P2P模式，主要提供了WLAN设备的一种点对点连接技术，它可以在两台STA之间直接建立TCP/IP连接，并不需要AP的参与。
 
 
 
-#### 场景介绍
+## 场景介绍
 
 主要场景有：
 
@@ -20,11 +20,12 @@ P2P模式，主要提供了WLAN设备的一种点对点连接技术，它可以�
 
 
 
-#### 接口说明
+## 接口说明
 
 完整的JS API说明以及示例代码请参考：[P2P接口](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-wifimanager)。
 
 具体接口说明如下表。
+
 
 | 接口名 | 功能描述 |
 | --- | --- |
@@ -44,11 +45,11 @@ P2P模式，主要提供了WLAN设备的一种点对点连接技术，它可以�
 
 
 
-#### 主要场景开发步骤
+## 主要场景开发步骤
 
 
 
-#### 创建/删除P2P群组
+### 创建/删除P2P群组
 1. import需要的Wi-Fi模块。
 
   
@@ -127,7 +128,7 @@ try {
 
 
 
-#### 建立P2P连接
+### 建立P2P连接
 1. import需要的Wi-Fi模块。
 
   
@@ -248,7 +249,7 @@ console.info("start discover devices -> " + wifiManager.startDiscoverDevices());
 
 
 
-#### 获取对端IP以及Socket通信
+### 获取对端IP以及Socket通信
 1. import需要的Wi-Fi模块。
 2. 开启设备的Wi-Fi。
 3. 需要SystemCapability.Communication.WiFi.P2P系统能力。

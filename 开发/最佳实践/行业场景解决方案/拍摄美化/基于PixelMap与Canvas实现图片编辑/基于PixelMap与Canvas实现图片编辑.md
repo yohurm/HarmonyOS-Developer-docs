@@ -4,7 +4,7 @@
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-pixelmap-canvas-image-editing
 
-#### 概述
+## 概述
 
 [Canvas](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-canvas)是ArkUI框架中用于自定义绘制图形的核心组件，提供了灵活的绘制能力，支持绘制基础形状、文本、图片以及复杂的图形变换。
  
@@ -12,6 +12,7 @@
  
 相关场景描述及关键技术点如下表所示：
   
+
 | 功能描述 | 场景描述 | 关键技术点 |
 | --- | --- | --- |
 | 图片平移 | 沿水平/垂直方向调整图片位置，用于构图微调。 | 通过Canvas.drawImage()结合图片偏移量，在画布上重绘图片实现平移。 |
@@ -39,79 +40,79 @@
  
  
 
-#### 图片信息展示
+## 图片信息展示
 
  
 
-#### 场景描述
+### 场景描述
 
 获取图片信息展示在页面中。如下图所示：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/fST4JmJrR0qmSVZjrLH6Vw/zh-cn_image_0000002701055813.png?HW-CC-KV=V1&HW-CC-Date=20260818T063558Z&HW-CC-Expire=86400&HW-CC-Sign=025F3E1BB66F9D9860D627D44DF8A5141D763F0F710DC15AB9AD7B2320314EAA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/5Nht8JWpT5yCQW1W1X8wFg/zh-cn_image_0000002701055813.png?HW-CC-KV=V1&HW-CC-Date=20260911T072526Z&HW-CC-Expire=86400&HW-CC-Sign=5A6262CE5217767BD1BD9ADA5F8CA66817D7AD5AE9BF5D12315E60A79229D719)
 
  
  
 
-#### 实现原理
+### 实现原理
 
 具体实现原理可参考《基于PixelMap编解码编辑图片开发实践》的图片信息展示[实现原理](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-pixelmap-image-editing#section1261510595272)。
  
  
 
-#### 开发步骤
+### 开发步骤
 
 具体开发步骤可参考《基于PixelMap编解码编辑图片开发实践》的图片信息展示[开发步骤](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-pixelmap-image-editing#section19815184162818)。
  
  
 
-#### 图片按比例裁剪
+## 图片按比例裁剪
 
  
 
-#### 场景描述
+### 场景描述
 
 将图片按照1:1、4:3或16:9进行裁剪。实现效果如下图：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/jmKm76VWT8-3N0N9mSVl9w/zh-cn_image_0000002671336004.gif?HW-CC-KV=V1&HW-CC-Date=20260818T063558Z&HW-CC-Expire=86400&HW-CC-Sign=294ADC8CACA5C2AAD21F9A2C878EF0E993C5C2E11D0CDFB333988064CB1CCC23)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/Vkf-3XOLQPiAog6alawo2g/zh-cn_image_0000002671336004.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072526Z&HW-CC-Expire=86400&HW-CC-Sign=8B70A059C5D98FE24D4A485E8AFC77F8E2905FA603F017CE6FA97D68B25A8B43)
 
  
  
 
-#### 实现原理
+### 实现原理
 
 具体实现原理可参考《基于PixelMap编解码编辑图片开发实践》的图片按比例裁剪[实现原理](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-pixelmap-image-editing#section65881029132712)。
  
  
 
-#### 开发步骤
+### 开发步骤
 
 具体开发步骤可参考《基于PixelMap编解码编辑图片开发实践》的图片按比例裁剪[开发步骤](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-pixelmap-image-editing#section185153402718)。
  
  
 
-#### 图片平移
+## 图片平移
 
  
 
-#### 场景描述
+### 场景描述
 
 通过滑动Slider，在横向/纵向调节图片位置。实现效果如下图：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/52_E5R8EQxyixPu7Wy2ahw/zh-cn_image_0000002671176148.gif?HW-CC-KV=V1&HW-CC-Date=20260818T063558Z&HW-CC-Expire=86400&HW-CC-Sign=2801AF6A24544F47FD8840C28C543AA62EECD96E12D23EA5AE7A6B02E3BE5BE7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/dygGb2BSR8G7N6Q7H_173Q/zh-cn_image_0000002671176148.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072526Z&HW-CC-Expire=86400&HW-CC-Sign=8561F866229A838453B5D642BAB34D139EE95E20B7DBD4C454F6D179F1E27DF9)
 
  
  
 
-#### 实现原理
+### 实现原理
 
 通过Slider控制横向/纵向的偏移量，将偏移量叠加到图片在Canvas上的绘制坐标中，触发画布重绘实现图片平移效果。
  
  
 
-#### 开发步骤
+### 开发步骤
 1. 在Slider组件的onChange()事件中，调用sliderChange()方法将滑块值换算为像素偏移量。
 ```ArkTS
 sliderChange(value: number, mode: SliderChangeMode) {
@@ -186,27 +187,27 @@ drawImageOnCanvas() {
  
  
 
-#### 图片旋转
+## 图片旋转
 
  
 
-#### 场景描述
+### 场景描述
 
 点击图片旋转按钮，改变图片显示方向。实现效果如下图：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/2ngSPIMGQ3mFl70S5Oaj_Q/zh-cn_image_0000002701095735.gif?HW-CC-KV=V1&HW-CC-Date=20260818T063558Z&HW-CC-Expire=86400&HW-CC-Sign=BDA890DF2A6BEEAEA14631AEF92DE857519A91ED72EF232F51C11636046F62B4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/R62MmVXFQ0y6Ms5IZxHzAg/zh-cn_image_0000002701095735.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072526Z&HW-CC-Expire=86400&HW-CC-Sign=63C01D4726FC32658FD47D4A612566C330F362190B0F78442656106F2DB507D4)
 
  
  
 
-#### 实现原理
+### 实现原理
 1. 通过[rotateSync()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-pixelmap#rotatesync12)方法，对像素图执行-90°逆时针旋转，旋转后像素图宽高互换，重新排列像素数据。
 2. 旋转导致图片宽高比反转，重新计算图片在画布中的居中显示尺寸与位置，通过calculateImageDisplaySize()方法交换基准宽高，确保旋转后图片仍正确适配画布。
  
  
 
-#### 开发步骤
+### 开发步骤
 1. 定义clonePixelMap()方法克隆像素图，避免直接修改原始数据。
 
   通过[getImageInfoSync()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-pixelmap#getimageinfosync12)获取图像像素信息，使用[readPixelsToBufferSync()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-pixelmap#readpixelstobuffersync12)按照PixelMap的像素格式，读取PixelMap的图像像素数据写入缓冲区，并调用[createPixelMapSync()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-imagesource#createpixelmapsync12)通过图片解码参数创建PixelMap对象。
@@ -332,21 +333,21 @@ this.previewPixelMap?.getImageInfo().then((info) => {
 
   
 
-  #### 图片镜像翻转
+  ## 图片镜像翻转
 
   
 
-  #### 场景描述
+  ### 场景描述
 
   点击镜像翻转按钮，使图片进行水平翻转。实现效果如下图：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/UkZdHVGtRHuW6xrqvmloyw/zh-cn_image_0000002701055815.gif?HW-CC-KV=V1&HW-CC-Date=20260818T063558Z&HW-CC-Expire=86400&HW-CC-Sign=62F16EBA56A076787AAFBEC08BBC6EF0379034C36ECBBE29D73F7441B9F0A507)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/zTLdTHnlT8WhC8lxXbc7lA/zh-cn_image_0000002701055815.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072526Z&HW-CC-Expire=86400&HW-CC-Sign=B78605AA1EADE3B2F33F07386A8C107946FF45D7A941E59155D5ED0B227BC9C6)
 
 
   
 
-  #### 实现原理
+  ### 实现原理
 
   通过[flip()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-pixelmap#flip9-1)方法，根据输入的条件对图片进行翻转。
 
@@ -357,7 +358,7 @@ horizontal：true表示进行水平翻转；false表示不进行水平翻转。
  
  
 
-#### 开发步骤
+### 开发步骤
 1. 在PixelMapManager类中定义mirrorImage()，调用[flip()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-pixelmap#flip9-1)方法对图片进行翻转，并更新预览。
 ```ArkTS
 mirrorImage(mirrorType: MirrorType) {
@@ -386,27 +387,27 @@ mirrorImage() {
  
  
 
-#### 图片等比缩放
+## 图片等比缩放
 
  
 
-#### 场景描述
+### 场景描述
 
 滑动Slider，图片按照比例进行缩小或放大。实现效果如下图：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/JqiAcvipRn6b_5WmL0Nz2Q/zh-cn_image_0000002671336006.gif?HW-CC-KV=V1&HW-CC-Date=20260818T063558Z&HW-CC-Expire=86400&HW-CC-Sign=84119F8A045471658D6F4F065DC80BBE9ED4756692E0D1E72E53EB9861EDB41A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/rO7sqy3LSZi49xxBQoHFIQ/zh-cn_image_0000002671336006.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072526Z&HW-CC-Expire=86400&HW-CC-Sign=F6EEB980C1C3A4418C674D5BC1692C7E1D14CC8DBFC2BAB230513DEDDF2E7AD9)
 
  
  
 
-#### 实现原理
+### 实现原理
 1. 通过[scale()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-pixelmap#scale9-1)方法，根据输入宽高的缩放倍数对图片进行缩放。
 2. 缩放后像素图尺寸变化，在calculateImageDisplaySize()方法中，根据缩放因子重新计算图片在画布中的显示尺寸。
  
  
 
-#### 开发步骤
+### 开发步骤
 1. 在PixelMapManager类中定义editImageScale()，调用[scale()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-pixelmap#scale9-1)方法根据传入的缩放系数对图片进行缩放。
 ```ArkTS
 async editImageScale(scale: number) {
@@ -439,21 +440,21 @@ async sliderZoomChange(value: number, mode: SliderChangeMode) {
 
   
 
-  #### 图片亮度调节
+  ## 图片亮度调节
 
   
 
-  #### 场景描述
+  ### 场景描述
 
   滑动Slider，调节图片显示亮度。实现效果如下图：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/rCIv_bMTRaaEmejhzLH0pA/zh-cn_image_0000002671176158.gif?HW-CC-KV=V1&HW-CC-Date=20260818T063558Z&HW-CC-Expire=86400&HW-CC-Sign=2F583AB72E4E303CD320E21725C8C0F82761615AB578A9CBFB8D3537284FAF97)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/MhqNtkltRMGbI2fv00_Qug/zh-cn_image_0000002671176158.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072526Z&HW-CC-Expire=86400&HW-CC-Sign=B347050A49DDB57BD901ED25CB1C02BF7322AF4E113E58002B7E4BADB6EAB0C6)
 
 
   
 
-  #### 实现原理
+  ### 实现原理
 
   通过线性缩放每个像素的RGB分量来改变图像的整体明暗程度。
 
@@ -475,7 +476,7 @@ async sliderZoomChange(value: number, mode: SliderChangeMode) {
  
  
 
-#### 开发步骤
+### 开发步骤
 1. 定义execColorInfo()接收像素缓冲区、上次值、当前值、调节类型，计算调整后的RGB值，并确保值转回0~255范围内，返回处理后的缓冲区。
 ```ts
 export function execColorInfo(bufferArray: ArrayBuffer, last: number, cur: number, hsvIndex: number) {
@@ -598,47 +599,47 @@ async sliderChange(value: number, mode: SliderChangeMode) {
  
  
 
-#### 图片透明度调节
+## 图片透明度调节
 
  
 
-#### 场景描述
+### 场景描述
 
 滑动Slider，调节图片透明度。实现效果如下图：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/g580p1VMR5KOnz41WbHixA/zh-cn_image_0000002701095807.gif?HW-CC-KV=V1&HW-CC-Date=20260818T063558Z&HW-CC-Expire=86400&HW-CC-Sign=F428E83F62F59B8E8D3161F99568066C517DB19E1D4C9154A6456FB788341A48)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/s3zZ0QI-S7K0RMAA7lEVjg/zh-cn_image_0000002701095807.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072526Z&HW-CC-Expire=86400&HW-CC-Sign=9442062E581765272F28F8517CB79406731D4342FC888A0838BCCB01D5226300)
 
  
  
 
-#### 实现原理
+### 实现原理
 
 具体实现原理可参考《基于PixelMap编解码编辑图片开发实践》的图片透明度调节[实现原理](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-pixelmap-image-editing#section995644621711)。
  
  
 
-#### 开发步骤
+### 开发步骤
 
 具体开发步骤可参考《基于PixelMap编解码编辑图片开发实践》的图片透明度调节[开发步骤](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-pixelmap-image-editing#section1682132314184)。
  
  
 
-#### 图片饱和度调节
+## 图片饱和度调节
 
  
 
-#### 场景描述
+### 场景描述
 
 滑动Slider，调节图片饱和度。实现效果如下图：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/s69_6YuyTPer81P9Gdqvcg/zh-cn_image_0000002701055983.gif?HW-CC-KV=V1&HW-CC-Date=20260818T063558Z&HW-CC-Expire=86400&HW-CC-Sign=8589686AE0FA0E6954B04329586AE73BC4B500945F4919A190F9021258AD26ED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/CxABzttKQSi-ZCNR1X9CYA/zh-cn_image_0000002701055983.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072526Z&HW-CC-Expire=86400&HW-CC-Sign=4EB3CD635582BD2217041BE8BE2E9283B322215741A5FBD3021EF9325DB6B00F)
 
  
  
 
-#### 实现原理
+### 实现原理
 
 通过调整像素与其灰度值的距离，改变色彩鲜艳程度。
  
@@ -661,7 +662,7 @@ async sliderChange(value: number, mode: SliderChangeMode) {
  
  
 
-#### 开发步骤
+### 开发步骤
 1. 在execColorInfo()内，提取图片RGB值并进行归一化处理，并调整饱和度向灰度值靠近或远离，将调整后的值转回0~255范围内写入缓冲区。
 ```ts
 export function execColorInfo(bufferArray: ArrayBuffer, last: number, cur: number, hsvIndex: number) {
@@ -739,27 +740,27 @@ async adjustImage(currentAdjustData: number[]) {
  
  
 
-#### 图片黑白滤镜
+## 图片黑白滤镜
 
  
 
-#### 场景描述
+### 场景描述
 
 选中黑白滤镜，图片显示黑白效果。实现效果如下图：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/HHiOjVwlRx6CEJx3Qa_vQw/zh-cn_image_0000002671336186.png?HW-CC-KV=V1&HW-CC-Date=20260818T063558Z&HW-CC-Expire=86400&HW-CC-Sign=DB9BCCB847B8CDA2F1911F06861FBD0BBCDFD79A6B5343C0C5BC2DD5F60C0229)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/aCaOWcZrQamNi1GNU9gdFQ/zh-cn_image_0000002671336186.png?HW-CC-KV=V1&HW-CC-Date=20260911T072526Z&HW-CC-Expire=86400&HW-CC-Sign=94C79EA69C505E5E3870556DB1B437AA3EEB88C708F7E42101BE79A5818A2F1F)
 
  
  
 
-#### 实现原理
+### 实现原理
 
 通过[effectKit.createEffect()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-effectkit#effectkitcreateeffect)创建滤镜效果器，调用[grayscale()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-effectkit#grayscale)方法为图片添加灰度效果。
  
  
 
-#### 开发步骤
+### 开发步骤
 1. 在PixelMapManager类中定义handleFilter()方法，通过[effectKit.createEffect()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-effectkit#effectkitcreateeffect)创建filter图像效果对象，通过传入的type值判断调用对应方法添加滤镜效果。
 
   type为FilterType.GRAYSCALE：调用[grayscale()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-effectkit#grayscale)给图片添加灰度效果。
@@ -819,105 +820,105 @@ ForEach(this.filterData, (item: filterDataType, index) => {
  
  
 
-#### 图片高亮滤镜
+## 图片高亮滤镜
 
  
 
-#### 场景描述
+### 场景描述
 
 选中高亮滤镜，图片显示高亮效果。实现效果如下图：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/cdT7jPLzSJeM98VymW2ehg/zh-cn_image_0000002671176350.png?HW-CC-KV=V1&HW-CC-Date=20260818T063558Z&HW-CC-Expire=86400&HW-CC-Sign=D831A1BE64D71EEA947A2D82B370DEAC51A7C3EADD00245612A50BD62C96622F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/xWR13ruIRtWUNCgjf0sWDA/zh-cn_image_0000002671176350.png?HW-CC-KV=V1&HW-CC-Date=20260911T072526Z&HW-CC-Expire=86400&HW-CC-Sign=5635A01C85E9FC275465867D300B2C88F43E700E9EFFE777024D2E76052C1C34)
 
  
  
 
-#### 实现原理
+### 实现原理
 
 具体实现原理可参考《基于PixelMap编解码编辑图片开发实践》的图片高亮滤镜[实现原理](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-pixelmap-image-editing#section93811654111718)。
  
  
 
-#### 开发步骤
+### 开发步骤
 
 具体开发步骤可参考《基于PixelMap编解码编辑图片开发实践》的图片高亮滤镜[开发步骤](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-pixelmap-image-editing#section44851932151820)。
  
  
 
-#### 图片反转滤镜
+## 图片反转滤镜
 
  
 
-#### 场景描述
+### 场景描述
 
 选中反转滤镜，图片显示反转效果。实现效果如下图：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/JcmHfTYORAinV7a095UxCQ/zh-cn_image_0000002701095969.png?HW-CC-KV=V1&HW-CC-Date=20260818T063558Z&HW-CC-Expire=86400&HW-CC-Sign=CD6F5FD223143A022DC0D0F634136DD17A71D62197E1317E61055C8E09CC5486)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/s4fiNXzoQ-CvAnDbutIByw/zh-cn_image_0000002701095969.png?HW-CC-KV=V1&HW-CC-Date=20260911T072526Z&HW-CC-Expire=86400&HW-CC-Sign=3871D88F9482AC177503FB47C4F7308672B4B37D6A58D082C2B6B5BFDA5B4D27)
 
  
  
 
-#### 实现原理
+### 实现原理
 
 具体实现原理可参考《基于PixelMap编解码编辑图片开发实践》的图片反转滤镜[实现原理](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-pixelmap-image-editing#section13668105616177)。
  
  
 
-#### 开发步骤
+### 开发步骤
 
 具体开发步骤可参考《基于PixelMap编解码编辑图片开发实践》的图片反转滤镜[开发步骤](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-pixelmap-image-editing#section762153411810)。
  
  
 
-#### 图片模糊滤镜
+## 图片模糊滤镜
 
  
 
-#### 场景描述
+### 场景描述
 
 选中模糊滤镜，图片显示模糊效果。实现效果如下图：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/1FeA14_kRCaZM10f1bPcTQ/zh-cn_image_0000002701056087.png?HW-CC-KV=V1&HW-CC-Date=20260818T063558Z&HW-CC-Expire=86400&HW-CC-Sign=4A64DB8659145D759F37CCF7B303E30C2B9E140C91B99A62B91A7857D9CD97F6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/3urDirH1R9uX6L1O4Ugv7g/zh-cn_image_0000002701056087.png?HW-CC-KV=V1&HW-CC-Date=20260911T072526Z&HW-CC-Expire=86400&HW-CC-Sign=C28EFB401E9D55D6D48519AC44887942EA3295D37ABC78E7E1F2C484E76B5802)
 
  
  
 
-#### 实现原理
+### 实现原理
 
 具体实现原理可参考《基于PixelMap编解码编辑图片开发实践》的图片模糊滤镜[实现原理](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-pixelmap-image-editing#section111617598176)。
  
  
 
-#### 开发步骤
+### 开发步骤
 
 具体开发步骤可参考《基于PixelMap编解码编辑图片开发实践》的图片模糊滤镜[开发步骤](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-pixelmap-image-editing#section24363011810)。
  
  
 
-#### 图片水印编辑
+## 图片水印编辑
 
  
 
-#### 场景描述
+### 场景描述
 
 点击水印编辑，在弹窗中输入水印内容为图片添加水印，同时可以调整水印的位置、大小、透明度、旋转角度、选择是否重复等。实现效果如下图：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/biu0CwqpQvKGntulMExAZg/zh-cn_image_0000002671336272.gif?HW-CC-KV=V1&HW-CC-Date=20260818T063558Z&HW-CC-Expire=86400&HW-CC-Sign=0E9FF267FF3F88444A2F53FB33F638BF01E72B491D4F9861F85C056383C4B27C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/IMT5q7IyRsOgfAOS1OJ5lA/zh-cn_image_0000002671336272.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072526Z&HW-CC-Expire=86400&HW-CC-Sign=2230DEC1B5216F46D32347C56865FD02E6DC6F895F83217269ABE4128162E750)
 
  
  
 
-#### 实现原理
+### 实现原理
 
 通过[OffscreenCanvas](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-offscreencanvas)将原图绘制到Canvas，利用[OffscreenCanvasRenderingContext2D](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-offscreencanvasrenderingcontext2d)设置水印字体/透明度/旋转后，通过[fillText()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-common-method#filltext)绘制水印文字，最后获取合成后的PixelMap更新预览。重复水印则是在Canvas上按照固定间距进行循环绘制。
  
  
 
-#### 开发步骤
+### 开发步骤
 1. 在PixelMapManager类中定义addTextWatermark()方法，用以绘制单条水印：
 - 通过getImageInfo()获取图片原始尺寸，调用[px2vp()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#px2vp12)将px转为vp。
 ```ArkTS
@@ -1017,6 +1018,6 @@ private async addWatermark() {
  
  
 
-#### 示例代码
+## 示例代码
 
 - [基于PixelMap与Canvas实现图片编辑](https://gitcode.com/HarmonyOS_Samples/image-canvas-edit)

@@ -1,6 +1,6 @@
-# HdsActionBar
+# HdsActionBar (操作栏)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdsactionbar
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -10,7 +10,8 @@
 **起始版本：** 6.0.0(20)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -20,7 +21,8 @@ import { HdsActionBar } from '@kit.UIDesignKit';
  
   
 
-#### HdsActionBar
+## HdsActionBar
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -38,6 +40,7 @@ HdsActionBar核心操作组件。
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | primaryButton | ActionBarButton | 否 | @Param | 主按钮。 |
@@ -53,7 +56,8 @@ HdsActionBar核心操作组件。
  
   
 
-#### ActionBarButton
+## ActionBarButton
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -69,7 +73,8 @@ HdsActionBar核心操作组件。
  
   
 
-#### 属性
+### 属性
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -83,6 +88,7 @@ ActionBarButton的属性。
  
 **参数：**
   
+
 | 名称 | 类型 | 只读 | 可选 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- | --- |
 | width | LengthMetrics | 否 | 是 | @Trace | 圆形按钮的宽度。 说明：支持px,vp,fp,lpx单位，不支持percent。 |
@@ -105,7 +111,8 @@ ActionBarButton的属性。
  
   
 
-#### constructor
+### constructor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -121,6 +128,7 @@ ActionBarButton的构造函数。
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ActionBarButtonOptions | 是 | HdsActionBar的按钮参数。 |
@@ -128,7 +136,8 @@ ActionBarButton的构造函数。
  
   
 
-#### ActionBarButtonOptions
+## ActionBarButtonOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -142,6 +151,7 @@ ActionBarButton的构造函数。
  
 **参数：**
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | width | LengthMetrics | 否 | 是 | 圆形按钮的宽度。 说明：支持px,vp,fp,lpx单位，不支持percent。 |
@@ -165,7 +175,8 @@ ActionBarButton的构造函数。
  
   
 
-#### ActionBarStyle
+## ActionBarStyle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -181,7 +192,8 @@ ActionBarButton的构造函数。
  
   
 
-#### 属性
+### 属性
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -195,6 +207,7 @@ ActionBarStyle的属性。
  
 **参数：**
   
+
 | 名称 | 类型 | 只读 | 可选 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- | --- |
 | height | LengthMetrics | 否 | 是 | @Trace | HdsActionBar的背板高度。 |
@@ -211,7 +224,8 @@ ActionBarStyle的属性。
  
   
 
-#### constructor
+### constructor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -227,6 +241,7 @@ ActionBarStyle的构造函数。
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ActionBarStyleOptions | 是 | HdsActionBar的样式参数。 |
@@ -234,7 +249,8 @@ ActionBarStyle的构造函数。
  
   
 
-#### ActionBarStyleOptions
+## ActionBarStyleOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -248,6 +264,7 @@ ActionBarStyle的构造函数。
  
 **参数：**
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | height | LengthMetrics | 否 | 是 | HdsActionBar的背板高度。 |
@@ -264,7 +281,8 @@ ActionBarStyle的构造函数。
  
   
 
-#### 示例
+## 示例
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 

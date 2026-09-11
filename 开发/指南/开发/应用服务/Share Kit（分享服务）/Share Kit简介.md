@@ -1,6 +1,6 @@
 # Share Kit简介
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-introduction
 
@@ -35,7 +35,7 @@ Share Kit提供的[SampleCode示例工程](https://gitcode.com/harmonyos_samples
 
 
 
-#### 基本概念
+## 基本概念
 
  - 宿主应用
 
@@ -65,12 +65,13 @@ Share Kit提供的[SampleCode示例工程](https://gitcode.com/harmonyos_samples
 
 
 
-#### 运行机制
+## 运行机制
 
 **图4** 分享运行机制
 
 
 ![](assets/Share%20Kit简介/file-20260514132203037-3.png)
+
 
 
 | 应用类型 | 相关逻辑 |
@@ -81,14 +82,18 @@ Share Kit提供的[SampleCode示例工程](https://gitcode.com/harmonyos_samples
 
 
 
-#### 约束与限制
+## 约束与限制
 
  - 设备限制
 
 | 能力 | 是否支持手机 | 是否支持平板 | 是否支持PC/2in1 | 是否支持TV |
+
 | --- | --- | --- | --- | --- |
+
 | 系统分享 | 支持 | 支持 | 支持 | 部分支持（仅支持分享到周边设备，不支持系统操作及分享给其他应用） |
+
 | 碰一碰分享 | 支持 | 支持 | 支持 | 不支持 |
+
 | 隔空传送 | 支持 | 支持 | 支持 | 不支持 |
  - 使用限制
 
@@ -100,7 +105,7 @@ Share Kit提供的[SampleCode示例工程](https://gitcode.com/harmonyos_samples
 
 
 
-#### 模拟器支持情况
+## 模拟器支持情况
 
 本Kit支持模拟器。
 

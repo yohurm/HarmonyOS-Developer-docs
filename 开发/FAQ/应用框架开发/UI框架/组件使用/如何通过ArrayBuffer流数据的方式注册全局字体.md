@@ -34,9 +34,9 @@ struct Index {
   message: string = 'Hello World';
 
   aboutToAppear(): void {
-    // 此处是模拟的读取本地字体文件后得到ArrayBuffer，实际场景中可以直接传入字体的ArrayBuffer
-    const fontName = 'MyCustomFont'; // 自定义字体名称
-    const fontPath = 'XXXX.ttf'; // 此处仅为示例，请开发者替换为可用的字体文件。
+    <em>// </em><em>此处是模拟的读取本地字体文件后得到ArrayBuffer，实际场景中可以直接传入字体的ArrayBuffer</em>
+    const fontName = 'MyCustomFont'; <em>// 自定义字体名称</em>
+    const fontPath = 'XXXX.ttf'; <em>// </em><em>此处仅为示例，请开发者替换为可用的字体文件。</em>
     const file = this.getUIContext().getHostContext()?.resourceManager.getRawFileContentSync(fontPath);
     fontNapi.registerFontFamily(fontName, file?.buffer);
   }
@@ -57,9 +57,9 @@ struct Index {
 NAPI实现：
  
 ```text
-/*
- * Copyright (c) Huawei Technologies Co., Ltd. 2025-2025. All rights reserved.
- */
+<em>/*</em>
+<em> * Copyright (c) Huawei Technologies Co., Ltd. 2025-2025. All rights reserved.</em>
+<em> */</em>
 
 
 #include "napi/native_api.h"
@@ -68,20 +68,20 @@ NAPI实现：
 
 static napi_value registerFontFamily(napi_env env, napi_callback_info info) 
 {
-    // 获取全局字体集对象OH_Drawing_FontCollection
+   <em> // 获取全局字体集对象OH_Drawing_FontCollection</em>
     OH_Drawing_FontCollection *fontCollection = OH_Drawing_GetFontCollectionGlobalInstance();
     size_t argc = 2;
     napi_value args[2];
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    // 获取字体名称
+   <em> // 获取字体名称</em>
     char fontName[256];
     size_t fontNameLen;
     napi_get_value_string_utf8(env, args[0], fontName, sizeof(fontName), &fontNameLen);
-    // 获取字体的ArrayBuffer数据
+ <em>   // 获取字体的ArrayBuffer数据</em>
     void *bufferData;
     size_t bufferLength;
     napi_get_arraybuffer_info(env, args[1], &bufferData, &bufferLength);
-    // 注册字体
+   <em> // 注册字体</em>
     OH_Drawing_RegisterFontBuffer(fontCollection, fontName, reinterpret_cast<uint8_t *>(bufferData), bufferLength);
     return nullptr;
 }

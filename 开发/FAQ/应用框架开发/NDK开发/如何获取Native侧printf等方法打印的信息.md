@@ -23,27 +23,27 @@ Native侧重定向方法主体。
 #define LOG_TAG "Pure" 
  
 static napi_value Redirect(napi_env env, napi_callback_info info) { 
-    // Get the JS parameters of the function 
+  <em>  // Get the JS parameters of the function </em>
     size_t argc = 1; 
     napi_value argv[1] = {nullptr}; 
     napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr); 
-    // Resolve parameter 1, the destination directory for saving the file
+   <em> // Resolve parameter 1, the destination directory for saving the file</em>
     size_t targetDirectoryNameSize; 
     char targetDirectoryNameBuf[512]; 
     napi_get_value_string_utf8(env, argv[0], targetDirectoryNameBuf, sizeof(targetDirectoryNameBuf), 
                                &targetDirectoryNameSize); 
-    std::string targetDirectoryName(targetDirectoryNameBuf, targetDirectoryNameSize); // target directory 
+    std::string targetDirectoryName(targetDirectoryNameBuf, targetDirectoryNameSize); <em>// target directory </em>
     OH_LOG_INFO(LOG_APP, "C++Received target path on the side === %{public}s", targetDirectoryNameBuf); 
-    std::string targetSandboxPath = targetDirectoryName + "/Log.log"; // Saved file path 
+    std::string targetSandboxPath = targetDirectoryName + "/Log.log"; <em>// Saved file path </em>
      
-    // Use the freopen function to associate files with standard output 
+  <em>  // Use the freopen function to associate files with standard output </em>
     FILE *stdoutFile = NULL; 
     FILE *stderrFile = NULL; 
     stdoutFile = freopen(targetSandboxPath.c_str(), "a", stdout); 
     stderrFile = freopen(targetSandboxPath.c_str(), "a", stderr); 
     if (NULL == stdoutFile || NULL == stderrFile) { 
         OH_LOG_INFO(LOG_APP, "Recreate！"); 
-        // Opening the file output stream of the sandbox file will create a file
+      <em>  // Opening the file output stream of the sandbox file will create a file</em>
         std::ofstream outputFile(targetSandboxPath, std::ios::binary); 
         if (!outputFile) { 
             OH_LOG_ERROR(LOG_APP, "Unable to create target file!"); 

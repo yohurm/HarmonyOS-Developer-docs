@@ -1,6 +1,6 @@
 # 使用扩展的Node-API接口创建和销毁临界区作用域及访问字符串内容
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-about-critical
 
@@ -15,7 +15,7 @@ Node-API扩展接口napi_open_critical_scope用于打开临界区作用域，nap
 
   
 
-#### 场景介绍
+## 场景介绍
 
 调用临界接口前，必须通过napi_open_critical_scope打开临界区作用域，并在临界区作用域内进行调用。
  
@@ -23,8 +23,9 @@ Node-API扩展接口napi_open_critical_scope用于打开临界区作用域，nap
  
   
 
-#### 临界区作用域的打开、关闭及临界接口的使用
+## 临界区作用域的打开、关闭及临界接口的使用
  
+
 | 接口 | 描述 | 临界区作用域外执行的状态码 |
 | --- | --- | --- |
 | napi_open_critical_scope | 打开临界区作用域 | NA |
@@ -33,7 +34,7 @@ Node-API扩展接口napi_open_critical_scope用于打开临界区作用域，nap
  
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/ZLsOhGpsR1CJlDWQe7MFkQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260818T063551Z&HW-CC-Expire=86400&HW-CC-Sign=4AADAC2A224A0AFBA445237E3F4A606AE97544780B418B70A75B4C61A25BA2F2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/Xs9iN150SL2raNUqB0-bhw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T073138Z&HW-CC-Expire=86400&HW-CC-Sign=955427D95479D2F2E96F0F1C726DBBC19733AE6435FE3D722B424AB583E7F100)
  
  
 1.当ArkTS String以UTF-16编码存储时，napi_get_buffer_string_utf16_in_critical_scope才能正确获取其内存缓冲区，否则该函数返回错误。
@@ -44,7 +45,7 @@ Node-API扩展接口napi_open_critical_scope用于打开临界区作用域，nap
  
   
 
-#### 示例代码
+## 示例代码
 
 - 模块注册
 
@@ -103,8 +104,7 @@ static std::vector<char16_t> GetValueStringUtf16(napi_env env, napi_value value)
    if (napi_get_value_string_utf16(env, value, nullptr, 0, &strLength) != napi_ok) {
       return {};
    }
-   /*
-    * Node-API接口要求缓冲区长度大于字符串内容长度，用于写入C字符串结束标记。
+   /* Node-API接口要求缓冲区长度大于字符串内容长度，用于写入C字符串结束标记。
     * 因此，需要获取完整字符串内容时，缓冲区大小应为字符串长度 + 1。
     */
    std::vector<char16_t> result(strLength + 1);

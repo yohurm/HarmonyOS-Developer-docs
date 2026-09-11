@@ -1,9 +1,9 @@
 # @ohos.net.http (数据请求)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-http
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供HTTP数据请求能力。应用可以通过HTTP发起一个数据请求，支持常见的GET、POST、OPTIONS、HEAD、PUT、DELETE、PATCH、TRACE、CONNECT方法。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { http } from '@kit.NetworkKit';
@@ -22,9 +23,10 @@ import { http } from '@kit.NetworkKit';
 
 
 
-#### 完整示例
+## 完整示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 在本文档的示例中，通过this.context来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需在页面中使用UIAbilityContext提供的能力，请参见 获取UIAbility的上下文信息 。
@@ -159,9 +161,10 @@ httpRequest.request(// 填写HTTP请求的URL地址，可以带参数也可以�
 
 
 
-#### http.createHttp
+## http.createHttp
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createHttp(): HttpRequest
 
@@ -176,6 +179,7 @@ createHttp(): HttpRequest
 **系统能力**：SystemCapability.Communication.NetStack
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -192,17 +196,19 @@ let httpRequest = http.createHttp();
 
 
 
-#### HttpRequest
+## HttpRequest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 HTTP请求任务。在调用HttpRequest的方法前，需要先通过[createHttp()](#httpcreatehttp)创建一个任务。
 
 
 
-#### request
+### request
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 request(url: string, callback: AsyncCallback&lt;HttpResponse&gt;): void
 
@@ -220,6 +226,7 @@ request(url: string, callback: AsyncCallback&lt;HttpResponse&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | string | 是 | 发起网络请求的URL地址。示例：https://www.test.com |
@@ -231,6 +238,7 @@ request(url: string, callback: AsyncCallback&lt;HttpResponse&gt;): void
 以下错误码的详细介绍参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HTTP错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-http)。
 
 HTTP错误码映射关系：2300000 + curl错误码。更多常用错误码可参考：[curl错误码](https://curl.se/libcurl/c/libcurl-errors.html)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -291,9 +299,10 @@ httpRequest.request("EXAMPLE_URL", (err: Error, data: http.HttpResponse) => {
 
 
 
-#### request
+### request
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 request(url: string, options: HttpRequestOptions, callback: AsyncCallback&lt;HttpResponse&gt;):void
 
@@ -311,6 +320,7 @@ request(url: string, options: HttpRequestOptions, callback: AsyncCallback&lt;Htt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | string | 是 | 发起网络请求的URL地址。 |
@@ -323,6 +333,7 @@ request(url: string, options: HttpRequestOptions, callback: AsyncCallback&lt;Htt
 以下错误码的详细介绍参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HTTP错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-http)。
 
 HTTP错误码映射关系：2300000 + curl错误码。更多常用错误码可参考：[curl错误码](https://curl.se/libcurl/c/libcurl-errors.html)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -408,9 +419,10 @@ httpRequest.request("EXAMPLE_URL", options, (err: Error, data: http.HttpResponse
 
 
 
-#### request
+### request
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 request(url: string, options? : HttpRequestOptions): Promise&lt;HttpResponse&gt;
 
@@ -428,6 +440,7 @@ request(url: string, options? : HttpRequestOptions): Promise&lt;HttpResponse&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | string | 是 | 发起网络请求的URL地址。 |
@@ -435,6 +448,7 @@ request(url: string, options? : HttpRequestOptions): Promise&lt;HttpResponse&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -446,6 +460,7 @@ request(url: string, options? : HttpRequestOptions): Promise&lt;HttpResponse&gt;
 以下错误码的详细介绍参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HTTP错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-http)。
 
 HTTP错误码映射关系：2300000 + curl错误码。更多常用错误码可参考：[curl错误码](https://curl.se/libcurl/c/libcurl-errors.html)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -520,9 +535,10 @@ promise.then((data:http.HttpResponse) => {
 
 
 
-#### destroy
+### destroy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 destroy(): void
 
@@ -543,9 +559,10 @@ httpRequest.destroy();
 
 
 
-#### requestInStream10+
+### requestInStream10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestInStream(url: string, callback: AsyncCallback&lt;number&gt;): void
 
@@ -559,6 +576,7 @@ requestInStream(url: string, callback: AsyncCallback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | string | 是 | 发起网络请求的URL地址。 |
@@ -570,6 +588,7 @@ requestInStream(url: string, callback: AsyncCallback&lt;number&gt;): void
 以下错误码的详细介绍参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HTTP错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-http)。
 
 HTTP错误码映射关系：2300000 + curl错误码。更多常用错误码可参考：[curl错误码](https://curl.se/libcurl/c/libcurl-errors.html)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -627,9 +646,10 @@ httpRequest.requestInStream("EXAMPLE_URL", (err: BusinessError, data: number) =>
 
 
 
-#### requestInStream10+
+### requestInStream10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestInStream(url: string, options: HttpRequestOptions, callback: AsyncCallback&lt;number&gt;): void
 
@@ -643,6 +663,7 @@ requestInStream(url: string, options: HttpRequestOptions, callback: AsyncCallbac
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | string | 是 | 发起网络请求的URL地址。 |
@@ -655,6 +676,7 @@ requestInStream(url: string, options: HttpRequestOptions, callback: AsyncCallbac
 以下错误码的详细介绍参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HTTP错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-http)。
 
 HTTP错误码映射关系：2300000 + curl错误码。更多常用错误码可参考：[curl错误码](https://curl.se/libcurl/c/libcurl-errors.html)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -734,9 +756,10 @@ httpRequest.requestInStream("EXAMPLE_URL", options, (err: BusinessError<void> , 
 
 
 
-#### requestInStream10+
+### requestInStream10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestInStream(url: string, options? : HttpRequestOptions): Promise&lt;number&gt;
 
@@ -750,6 +773,7 @@ requestInStream(url: string, options? : HttpRequestOptions): Promise&lt;number&g
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | string | 是 | 发起网络请求的URL地址。 |
@@ -757,6 +781,7 @@ requestInStream(url: string, options? : HttpRequestOptions): Promise&lt;number&g
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -768,6 +793,7 @@ requestInStream(url: string, options? : HttpRequestOptions): Promise&lt;number&g
 以下错误码的详细介绍参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HTTP错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-http)。
 
 HTTP错误码映射关系：2300000 + curl错误码。更多常用错误码可参考：[curl错误码](https://curl.se/libcurl/c/libcurl-errors.html)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -836,9 +862,10 @@ promise.then((data: number) => {
 
 
 
-#### requestSync
+### requestSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestSync(url: string, options?: HttpRequestOptions): HttpResponse
 
@@ -858,6 +885,7 @@ requestSync(url: string, options?: HttpRequestOptions): HttpResponse
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | string | 是 | 发起网络请求的URL地址。 |
@@ -865,6 +893,7 @@ requestSync(url: string, options?: HttpRequestOptions): HttpResponse
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -876,6 +905,7 @@ requestSync(url: string, options?: HttpRequestOptions): HttpResponse
 以下错误码的详细介绍参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HTTP错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-http)。
 
 HTTP错误码映射关系：2300000 + curl错误码。更多常用错误码可参考：[curl错误码](https://curl.se/libcurl/c/libcurl-errors.html)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -958,9 +988,10 @@ httpRequest.destroy();
 
 
 
-#### enableAutoCookie
+### enableAutoCookie
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableAutoCookie(enable: boolean): void
 
@@ -977,6 +1008,7 @@ enableAutoCookie(enable: boolean): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1011,9 +1043,10 @@ httpRequest.request(url, {
 
 
 
-#### on("headerReceive")(deprecated)
+### on("headerReceive")(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: "headerReceive", callback: AsyncCallback&lt;Object&gt;): void
 
@@ -1026,6 +1059,7 @@ on(type: "headerReceive", callback: AsyncCallback&lt;Object&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1047,9 +1081,10 @@ httpRequest.on("headerReceive", (data: BusinessError) => {
 
 
 
-#### off("headerReceive")(deprecated)
+### off("headerReceive")(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: "headerReceive", callback?: AsyncCallback&lt;Object&gt;): void
 
@@ -1062,6 +1097,7 @@ off(type: "headerReceive", callback?: AsyncCallback&lt;Object&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1080,9 +1116,10 @@ httpRequest.off("headerReceive");
 
 
 
-#### on("headersReceive")8+
+### on("headersReceive")8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: "headersReceive", callback: Callback&lt;Object&gt;): void
 
@@ -1093,6 +1130,7 @@ on(type: "headersReceive", callback: Callback&lt;Object&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1114,9 +1152,10 @@ httpRequest.off("headersReceive");
 
 
 
-#### off("headersReceive")8+
+### off("headersReceive")8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: "headersReceive", callback?: Callback&lt;Object&gt;): void
 
@@ -1127,6 +1166,7 @@ off(type: "headersReceive", callback?: Callback&lt;Object&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1148,9 +1188,10 @@ httpRequest.off("headersReceive");
 
 
 
-#### once("headersReceive")8+
+### once("headersReceive")8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: "headersReceive", callback: Callback&lt;Object&gt;): void
 
@@ -1161,6 +1202,7 @@ once(type: "headersReceive", callback: Callback&lt;Object&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1181,9 +1223,10 @@ httpRequest.once("headersReceive", (header: Object) => {
 
 
 
-#### on("dataReceive")10+
+### on("dataReceive")10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: "dataReceive", callback: Callback&lt;ArrayBuffer&gt;): void
 
@@ -1194,6 +1237,7 @@ on(type: "dataReceive", callback: Callback&lt;ArrayBuffer&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1215,9 +1259,10 @@ httpRequest.off("dataReceive");
 
 
 
-#### off("dataReceive")10+
+### off("dataReceive")10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: "dataReceive", callback?: Callback&lt;ArrayBuffer&gt;): void
 
@@ -1228,6 +1273,7 @@ off(type: "dataReceive", callback?: Callback&lt;ArrayBuffer&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1249,9 +1295,10 @@ httpRequest.off("dataReceive");
 
 
 
-#### on("dataEnd")10+
+### on("dataEnd")10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: "dataEnd", callback: Callback&lt;void&gt;): void
 
@@ -1262,6 +1309,7 @@ on(type: "dataEnd", callback: Callback&lt;void&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1283,9 +1331,10 @@ httpRequest.off("dataEnd");
 
 
 
-#### off("dataEnd")10+
+### off("dataEnd")10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: "dataEnd", callback?: Callback&lt;void&gt;): void
 
@@ -1296,6 +1345,7 @@ off(type: "dataEnd", callback?: Callback&lt;void&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1317,9 +1367,10 @@ httpRequest.off("dataEnd");
 
 
 
-#### on('dataReceiveProgress')10+
+### on('dataReceiveProgress')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'dataReceiveProgress', callback: Callback&lt;DataReceiveProgressInfo&gt;): void
 
@@ -1330,6 +1381,7 @@ on(type: 'dataReceiveProgress', callback: Callback&lt;DataReceiveProgressInfo&gt
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1351,9 +1403,10 @@ httpRequest.off("dataReceiveProgress");
 
 
 
-#### off('dataReceiveProgress')10+
+### off('dataReceiveProgress')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'dataReceiveProgress', callback?: Callback&lt;DataReceiveProgressInfo&gt;): void
 
@@ -1364,6 +1417,7 @@ off(type: 'dataReceiveProgress', callback?: Callback&lt;DataReceiveProgressInfo&
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1385,9 +1439,10 @@ httpRequest.off("dataReceiveProgress");
 
 
 
-#### on('dataSendProgress')11+
+### on('dataSendProgress')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'dataSendProgress', callback: Callback&lt;DataSendProgressInfo&gt;): void
 
@@ -1398,6 +1453,7 @@ on(type: 'dataSendProgress', callback: Callback&lt;DataSendProgressInfo&gt;): vo
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1419,9 +1475,10 @@ httpRequest.off("dataSendProgress");
 
 
 
-#### off('dataSendProgress')11+
+### off('dataSendProgress')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'dataSendProgress', callback?: Callback&lt;DataSendProgressInfo&gt;): void
 
@@ -1432,6 +1489,7 @@ off(type: 'dataSendProgress', callback?: Callback&lt;DataSendProgressInfo&gt;): 
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1453,13 +1511,15 @@ httpRequest.off("dataSendProgress");
 
 
 
-#### HttpRequestOptions
+## HttpRequestOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 发起HTTP请求时，可选配置信息。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1470,7 +1530,7 @@ httpRequest.off("dataSendProgress");
 | expectDataType9+ | HttpDataType | 否 | 是 | 指定返回数据的类型，默认无此字段。如果设置了此参数，系统将优先返回指定的类型。当指定其类型为Object时，最大长度为65536字符数。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | usingCache9+ | boolean | 否 | 是 | 是否使用缓存，true表示请求时优先读取缓存，false表示不使用缓存；默认为true，请求时优先读取缓存。缓存跟随当前进程生效，新缓存会替换旧缓存。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | priority9+ | number | 否 | 是 | HTTP/HTTPS请求并发优先级，值越大优先级越高，范围[1,1000]，默认为1，超出范围将设置为默认值。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
-| header | Object | 否 | 是 | HTTP请求头字段。当请求方式为"POST" "PUT" "DELETE" 或者""时，默认{'content-Type': 'application/json'}， 否则默认{'content-Type': 'application/x-www-form-urlencoded'}。 如果head中包含number类型的字段，最大支持int64的整数。 header字段支持JSON格式如 完整示例 和Record<string, string>格式输入。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| header | Object | 否 | 是 | HTTP请求头字段。当请求方式为"POST" "PUT" "DELETE" 或者""时，默认{'content-Type': 'application/json'}， 否则默认{'content-Type': 'application/x-www-form-urlencoded'}。 如果header中包含number类型的字段，最大支持int64的整数。 header字段支持JSON格式如 完整示例 和Record<string, string>格式输入。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | readTimeout | number | 否 | 是 | 读取超时时间。单位为毫秒（ms），默认为60000ms。传入值需为uint32_t范围内的整数。 设置为0表示不会出现超时情况。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | connectTimeout | number | 否 | 是 | 连接超时时间。单位为毫秒（ms），默认为60000ms。传入值需为uint32_t范围内的整数。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | usingProtocol9+ | HttpProtocol | 否 | 是 | HTTP请求使用的协议版本。未指定时，由系统自动协商最适合的协议版本。若指定HTTP3，由于HTTP3协议的安全限制，需通过TlsConfig指定TLS 版本为1.3，且目标域名支持HTTP3协议，才能启用HTTP3，否则将协商降级。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -1503,13 +1563,15 @@ httpRequest.off("dataSendProgress");
 
 
 
-#### RequestMethod
+## RequestMethod
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 HTTP 请求方法。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1526,13 +1588,15 @@ HTTP 请求方法。
 
 
 
-#### ResponseCode
+## ResponseCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 发起请求返回的响应码。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1576,13 +1640,15 @@ HTTP 请求方法。
 
 
 
-#### HttpResponse
+## HttpResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 request方法回调函数的返回值类型。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1597,13 +1663,15 @@ request方法回调函数的返回值类型。
 
 
 
-#### ClientCert11+
+## ClientCert11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 客户端证书类型。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1615,13 +1683,15 @@ request方法回调函数的返回值类型。
 
 
 
-#### PerformanceTiming11+
+## PerformanceTiming11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 性能打点(单位：ms)。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1639,15 +1709,17 @@ request方法回调函数的返回值类型。
 
 
 
-#### ConnectionExtraInfo24+
+## ConnectionExtraInfo24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 HTTP请求交互的详细信息。
 
 **系统能力**：SystemCapability.Communication.NetStack
 
 **模型约束**：此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1666,15 +1738,17 @@ HTTP请求交互的详细信息。
 
 
 
-#### DataReceiveProgressInfo11+
+## DataReceiveProgressInfo11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 数据接收信息。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1684,9 +1758,10 @@ HTTP请求交互的详细信息。
 
 
 
-#### DataSendProgressInfo11+
+## DataSendProgressInfo11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 数据发送信息。
 
@@ -1696,7 +1771,11 @@ HTTP请求交互的详细信息。
 
 
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1706,13 +1785,15 @@ HTTP请求交互的详细信息。
 
 
 
-#### MultiFormData11+
+## MultiFormData11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 多部分表单数据的类型。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1725,9 +1806,10 @@ HTTP请求交互的详细信息。
 
 
 
-#### http.createHttpResponseCache9+
+## http.createHttpResponseCache9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createHttpResponseCache(cacheSize?: number): HttpResponseCache
 
@@ -1739,12 +1821,14 @@ createHttpResponseCache(cacheSize?: number): HttpResponseCache
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cacheSize | number | 否 | 响应缓存大小，单位为Byte。取值范围为1*1024*1024到10*1024*1024，即1MB到10MB。默认值为10MB。超出10MB时设置为10MB；小于1MB时，设置为1MB。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1761,9 +1845,10 @@ let httpResponseCache = http.createHttpResponseCache();
 
 
 
-#### HttpResponseCache9+
+## HttpResponseCache9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 存储HTTP访问请求响应的对象。在调用HttpResponseCache的方法前，需要先通过[createHttpResponseCache()](#httpcreatehttpresponsecache9)创建一个任务。
 
@@ -1795,9 +1880,10 @@ Cache-Control为通用报头，但通常是在服务器端进行的，允许定�
 
 
 
-#### flush9+
+### flush9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 flush(callback: AsyncCallback&lt;void&gt;): void
 
@@ -1808,6 +1894,7 @@ flush(callback: AsyncCallback&lt;void&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1841,9 +1928,10 @@ httpRequest.request("EXAMPLE_URL", (err: BusinessError, data: http.HttpResponse)
 
 
 
-#### flush9+
+### flush9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 flush(): Promise&lt;void&gt;
 
@@ -1854,6 +1942,7 @@ flush(): Promise&lt;void&gt;
 **系统能力**：SystemCapability.Communication.NetStack
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1883,9 +1972,10 @@ promise.then((data: http.HttpResponse) => {
 
 
 
-#### delete9+
+### delete9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 delete(callback: AsyncCallback&lt;void&gt;): void
 
@@ -1896,6 +1986,7 @@ delete(callback: AsyncCallback&lt;void&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1930,9 +2021,10 @@ httpRequest.request("EXAMPLE_URL").then(data => {
 
 
 
-#### delete9+
+### delete9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 delete(): Promise&lt;void&gt;
 
@@ -1943,6 +2035,7 @@ delete(): Promise&lt;void&gt;
 **系统能力**：SystemCapability.Communication.NetStack
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1971,15 +2064,17 @@ httpRequest.request("EXAMPLE_URL").then(data => {
 
 
 
-#### HttpDataType9+
+## HttpDataType9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 HTTP的数据类型。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1990,13 +2085,15 @@ HTTP的数据类型。
 
 
 
-#### HttpProtocol9+
+## HttpProtocol9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 HTTP协议版本。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2007,13 +2104,15 @@ HTTP协议版本。
 
 
 
-#### CertType11+
+## CertType11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，证书类型。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2024,13 +2123,15 @@ HTTP协议版本。
 
 
 
-#### CertificatePinning12+
+## CertificatePinning12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 由应用配置的证书。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2040,9 +2141,10 @@ HTTP协议版本。
 
 
 
-#### HttpProxy10+
+## HttpProxy10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type HttpProxy = connection.HttpProxy
 
@@ -2052,6 +2154,7 @@ type HttpProxy = connection.HttpProxy
 
 **系统能力**：SystemCapability.Communication.NetStack
 
+
 | 类型 | 说明 |
 | --- | --- |
 | connection.HttpProxy | 网络代理配置信息。 |
@@ -2059,9 +2162,10 @@ type HttpProxy = connection.HttpProxy
 
 
 
-#### Socks5Proxy
+## Socks5Proxy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Socks5Proxy = connection.Socks5Proxy
 
@@ -2073,6 +2177,7 @@ SOCKS5代理配置信息。
 
 **系统能力**：SystemCapability.Communication.NetStack
 
+
 | 类型 | 说明 |
 | --- | --- |
 | connection.Socks5Proxy | SOCKS5代理配置信息。 |
@@ -2080,9 +2185,10 @@ SOCKS5代理配置信息。
 
 
 
-#### QueryParamValue
+## QueryParamValue
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type QueryParamValue = string | number | boolean | null | undefined
 
@@ -2093,6 +2199,7 @@ QueryParamObject中允许使用的单个参数值类型。
 **系统能力**：SystemCapability.Communication.NetStack
 
 **模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2105,9 +2212,10 @@ QueryParamObject中允许使用的单个参数值类型。
 
 
 
-#### QueryParamObject
+## QueryParamObject
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type QueryParamObject = Record<string, QueryParamValue | QueryParamValue[]>
 
@@ -2119,6 +2227,7 @@ type QueryParamObject = Record<string, QueryParamValue | QueryParamValue[]>
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Record<string, QueryParamValue \| QueryParamValue[]> | 键值对象类型，用于构造URL查询参数。每个属性名作为URL参数的key，属性值作为参数值。 说明： (1) 对象的每个属性名作为URL参数的key，属性值作为参数值。例如{ scene: 'demo', page: 1 }会序列化为scene=demo&page=1。 (2) 当属性值为数组时，会展开为同名多参数。例如{ tag: ['a', 'b'] }会序列化为tag=a&tag=b。 (3) key和value由系统自动进行URL编码，开发者应传入原始未编码内容。 (4) 如需严格控制参数顺序或重复键顺序，建议直接使用queryParams的string形式。 |
@@ -2126,13 +2235,15 @@ type QueryParamObject = Record<string, QueryParamValue | QueryParamValue[]>
 
 
 
-#### AddressFamily15+
+## AddressFamily15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，解析目标域名时限定的地址类型。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2143,15 +2254,17 @@ type QueryParamObject = Record<string, QueryParamValue | QueryParamValue[]>
 
 
 
-#### Credential18+
+## Credential18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 会话中服务器身份验证设置所使用的身份验证凭据，包括用户名和密码。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2161,15 +2274,17 @@ type QueryParamObject = Record<string, QueryParamValue | QueryParamValue[]>
 
 
 
-#### ServerAuthentication18+
+## ServerAuthentication18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 HTTP服务器身份验证。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2179,15 +2294,17 @@ HTTP服务器身份验证。
 
 
 
-#### TlsConfig18+
+## TlsConfig18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TLS加密版本及套件配置。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2198,15 +2315,17 @@ TLS加密版本及套件配置。
 
 
 
-#### TlsVersion18+
+## TlsVersion18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，TLS版本号。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2218,9 +2337,10 @@ TLS加密版本及套件配置。
 
 
 
-#### TlsOptions18+
+## TlsOptions18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type TlsOptions = 'system' | TlsConfig
 
@@ -2230,6 +2350,7 @@ TLS配置。
 
 **系统能力**：SystemCapability.Communication.NetStack
 
+
 | 类型 | 说明 |
 | --- | --- |
 | 'system' | 表示使用系统的TLS版本，是未进行TLS设置的默认值，值固定为'system'字符串。 |
@@ -2238,9 +2359,10 @@ TLS配置。
 
 
 
-#### RemoteValidation18+
+## RemoteValidation18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type RemoteValidation = 'system' | 'skip' | ValidationCallback
 
@@ -2249,6 +2371,7 @@ type RemoteValidation = 'system' | 'skip' | ValidationCallback
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2259,9 +2382,10 @@ type RemoteValidation = 'system' | 'skip' | ValidationCallback
 
 
 
-#### X509Cert
+## X509Cert
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type X509Cert = cert.X509Cert
 
@@ -2273,6 +2397,7 @@ X509证书对象。
 
 **系统能力**：SystemCapability.Communication.NetStack
 
+
 | 类型 | 说明 |
 | --- | --- |
 | cert.X509Cert | X509证书对象。 |
@@ -2280,9 +2405,10 @@ X509证书对象。
 
 
 
-#### ValidationContext
+## ValidationContext
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 验证远端服务器身份时的证书上下文信息，作为[ValidationCallback](#validationcallback)的参数传入。
 
@@ -2291,6 +2417,7 @@ X509证书对象。
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2302,9 +2429,10 @@ X509证书对象。
 
 
 
-#### ValidationCallback
+## ValidationCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ValidationCallback = (context: ValidationContext) => boolean | Promise&lt;boolean&gt;
 
@@ -2318,12 +2446,14 @@ type ValidationCallback = (context: ValidationContext) => boolean | Promise&lt;b
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | ValidationContext | 是 | 证书验证上下文，包含证书链、主机名和IP地址等信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2332,9 +2462,10 @@ type ValidationCallback = (context: ValidationContext) => boolean | Promise&lt;b
 
 
 
-#### AuthenticationType18+
+## AuthenticationType18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AuthenticationType = 'basic' | 'ntlm' | 'digest'
 
@@ -2343,6 +2474,7 @@ type AuthenticationType = 'basic' | 'ntlm' | 'digest'
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2353,9 +2485,10 @@ type AuthenticationType = 'basic' | 'ntlm' | 'digest'
 
 
 
-#### CipherSuite18+
+## CipherSuite18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type CipherSuite = TlsV13CipherSuite
 
@@ -2365,6 +2498,7 @@ type CipherSuite = TlsV13CipherSuite
 
 **系统能力**：SystemCapability.Communication.NetStack
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TlsV13CipherSuite | 表示值的类型为TlsV13CipherSuite。 |
@@ -2372,9 +2506,10 @@ type CipherSuite = TlsV13CipherSuite
 
 
 
-#### TlsV13CipherSuite18+
+## TlsV13CipherSuite18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type TlsV13CipherSuite = TlsV12CipherSuite | TlsV13SpecificCipherSuite
 
@@ -2384,6 +2519,7 @@ TLS1.3的加密套件声明函数，支持TLS1.3版本，兼容TLS1.2版本。
 
 **系统能力**：SystemCapability.Communication.NetStack
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TlsV12CipherSuite | 表示值的类型为TlsV11CipherSuite。 |
@@ -2392,9 +2528,10 @@ TLS1.3的加密套件声明函数，支持TLS1.3版本，兼容TLS1.2版本。
 
 
 
-#### TlsV12CipherSuite18+
+## TlsV12CipherSuite18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type TlsV12CipherSuite = TlsV11CipherSuite | TlsV12SpecificCipherSuite
 
@@ -2404,6 +2541,7 @@ TLS1.2的加密套件声明函数，支持TLS1.2版本，兼容TLS1.1版本。
 
 **系统能力**：SystemCapability.Communication.NetStack
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TlsV11CipherSuite | 表示值的类型为TlsV11CipherSuite。 |
@@ -2412,9 +2550,10 @@ TLS1.2的加密套件声明函数，支持TLS1.2版本，兼容TLS1.1版本。
 
 
 
-#### TlsV11CipherSuite18+
+## TlsV11CipherSuite18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type TlsV11CipherSuite = TlsV10CipherSuite
 
@@ -2424,6 +2563,7 @@ TLS1.1的加密套件声明函数，与TLS1.0的加密套件相同。
 
 **系统能力**：SystemCapability.Communication.NetStack
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TlsV10CipherSuite | 表示值的类型为TlsV10CipherSuite。 |
@@ -2431,9 +2571,10 @@ TLS1.1的加密套件声明函数，与TLS1.0的加密套件相同。
 
 
 
-#### TlsV10CipherSuite18+
+## TlsV10CipherSuite18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type TlsV10CipherSuite = TlsV10SpecificCipherSuite
 
@@ -2443,6 +2584,7 @@ TLS1.0的加密套件声明函数。
 
 **系统能力**：SystemCapability.Communication.NetStack
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TlsV10SpecificCipherSuite | 表示值的类型为TlsV10SpecificCipherSuite。 |
@@ -2450,9 +2592,10 @@ TLS1.0的加密套件声明函数。
 
 
 
-#### TlsV13SpecificCipherSuite18+
+## TlsV13SpecificCipherSuite18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type TlsV13SpecificCipherSuite = 'TLS_AES_128_GCM_SHA256' | 'TLS_AES_256_GCM_SHA384' | 'TLS_CHACHA20_POLY1305_SHA256'
 
@@ -2461,6 +2604,7 @@ TLS1.3及以上版本支持的加密套件。
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2471,9 +2615,10 @@ TLS1.3及以上版本支持的加密套件。
 
 
 
-#### TlsV12SpecificCipherSuite18+
+## TlsV12SpecificCipherSuite18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type TlsV12SpecificCipherSuite = 'TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256' | 'TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256' |
 
@@ -2489,6 +2634,7 @@ TLS1.2及以上版本支持的加密套件。
 
 **系统能力**：SystemCapability.Communication.NetStack
 
+
 | 类型 | 说明 |
 | --- | --- |
 | 'TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256' | 表示值的类型为字符串，可取'TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256'。 |
@@ -2503,9 +2649,10 @@ TLS1.2及以上版本支持的加密套件。
 
 
 
-#### TlsV10SpecificCipherSuite18+
+## TlsV10SpecificCipherSuite18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type TlsV10SpecificCipherSuite = 'TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA' | 'TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA' |
 
@@ -2518,6 +2665,7 @@ TLS1.0及以上版本支持的加密套件。
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2532,9 +2680,10 @@ TLS1.0及以上版本支持的加密套件。
 
 
 
-#### SslType20+
+## SslType20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type SslType = 'TLS' | 'TLCP'
 
@@ -2544,6 +2693,7 @@ type SslType = 'TLS' | 'TLCP'
 
 **系统能力**：SystemCapability.Communication.NetStack
 
+
 | 类型 | 说明 |
 | --- | --- |
 | 'TLS' | 表示使用TLS安全通信协议，值固定为'TLS'字符串。 |
@@ -2552,15 +2702,17 @@ type SslType = 'TLS' | 'TLCP'
 
 
 
-#### InterceptorType22+
+## InterceptorType22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 HTTP拦截器的类型枚举。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2573,9 +2725,10 @@ HTTP拦截器的类型枚举。
 
 
 
-#### HttpRequestContext22+
+## HttpRequestContext22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 HTTP请求上下文数据。该对象实例在拦截器的[interceptorHandle](#interceptorhandle22)方法中作为参数传入，开发者可以通过该对象获取和修改HTTP请求的相关信息。
 
@@ -2585,7 +2738,11 @@ HTTP请求上下文数据。该对象实例在拦截器的[interceptorHandle](#i
 
 
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2596,9 +2753,10 @@ HTTP请求上下文数据。该对象实例在拦截器的[interceptorHandle](#i
 
 
 
-#### ChainContinue22+
+## ChainContinue22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ChainContinue = boolean
 
@@ -2608,6 +2766,7 @@ type ChainContinue = boolean
 
 **系统能力**：SystemCapability.Communication.NetStack
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | true表示继续处理拦截器链，false表示终止并返回HTTP响应。 |
@@ -2615,9 +2774,10 @@ type ChainContinue = boolean
 
 
 
-#### HttpInterceptor22+
+## HttpInterceptor22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 HTTP拦截器接口。用户可以实现此接口来定义拦截处理函数。
 
@@ -2627,7 +2787,11 @@ HTTP拦截器接口。用户可以实现此接口来定义拦截处理函数。
 
 
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2636,9 +2800,10 @@ HTTP拦截器接口。用户可以实现此接口来定义拦截处理函数。
 
 
 
-#### interceptorHandle22+
+### interceptorHandle22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 interceptorHandle(reqContext: HttpRequestContext, rspContext: HttpResponse): Promise&lt;ChainContinue&gt;
 
@@ -2650,6 +2815,7 @@ interceptorHandle(reqContext: HttpRequestContext, rspContext: HttpResponse): Pro
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | reqContext | HttpRequestContext | 是 | 经过HTTP拦截器的请求参数的上下文。 |
@@ -2657,6 +2823,7 @@ interceptorHandle(reqContext: HttpRequestContext, rspContext: HttpResponse): Pro
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2685,9 +2852,10 @@ let customInterceptor = new CustomInterceptor();
 
 
 
-#### HttpInterceptorChain22+
+## HttpInterceptorChain22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 HTTP拦截器链。
 
@@ -2705,9 +2873,10 @@ let interceptorChain = new http.HttpInterceptorChain();
 
 
 
-#### addChain22+
+### addChain22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addChain(chain: HttpInterceptor[]): boolean
 
@@ -2723,12 +2892,14 @@ addChain(chain: HttpInterceptor[]): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | chain | HttpInterceptor[] | 是 | 拦截器实例组成的拦截链，支持传入单个或者多个不同类型的拦截器。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2740,6 +2911,7 @@ addChain(chain: HttpInterceptor[]): boolean
 以下错误码的详细介绍参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HTTP错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-http)。
 
 HTTP错误码映射关系：2300000 + curl错误码。更多常用错误码可参考：[curl错误码](https://curl.se/libcurl/c/libcurl-errors.html)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2793,9 +2965,10 @@ try {
 
 
 
-#### getChain22+
+### getChain22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getChain(): HttpInterceptor[]
 
@@ -2806,6 +2979,7 @@ getChain(): HttpInterceptor[]
 **系统能力**：SystemCapability.Communication.NetStack
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2850,9 +3024,10 @@ console.info(`Current interceptor chain has ${chain.length} interceptors`);
 
 
 
-#### apply22+
+### apply22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 apply(httpRequest: HttpRequest): boolean
 
@@ -2868,12 +3043,14 @@ apply(httpRequest: HttpRequest): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | httpRequest | HttpRequest | 是 | 要发起HTTP请求的HttpRequest。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2885,6 +3062,7 @@ apply(httpRequest: HttpRequest): boolean
 以下错误码的详细介绍参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[HTTP错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-http)。
 
 HTTP错误码映射关系：2300000 + curl错误码。更多常用错误码可参考：[curl错误码](https://curl.se/libcurl/c/libcurl-errors.html)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2959,9 +3137,10 @@ httpRequest.request("EXAMPLE_URL", {
 
 
 
-#### PathPreference23+
+## PathPreference23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type PathPreference = 'auto' | 'primaryCellular' | 'secondaryCellular'
 
@@ -2972,6 +3151,7 @@ HTTP请求指定特定网络的类型枚举。
 
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 类型 | 说明 |
 | --- | --- |

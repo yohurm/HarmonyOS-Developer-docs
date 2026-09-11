@@ -1,18 +1,19 @@
 # Interfaces (其他)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-photoaccesshelper-i
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
@@ -20,14 +21,15 @@ import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
 
 
-#### MediaChangeRequest11+
+## MediaChangeRequest11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 媒体变更请求，资产变更请求和相册变更请求的父类型。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/X_Pmpa21TXGPgy1VBDFT8Q/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071715Z&HW-CC-Expire=86400&HW-CC-Sign=51E3672838CB328854756933FCE551D0C6DFA0CC5012302566EEEBE8AB0ADFE4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/CaWnxk5-SreCDC9vXAzMeA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072257Z&HW-CC-Expire=86400&HW-CC-Sign=86AD69FF0785DE436839647EC6B248FC69607766778CD2CE7989E2B66744896D)
 
 
 媒体变更请求必须在调用[applyChanges](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-photoaccesshelper-photoaccesshelper#applychanges11)后才会生效。
@@ -36,15 +38,17 @@ import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **元服务API**：从API version 23开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -53,19 +57,21 @@ import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
 
 
-#### CreateOptions
+## CreateOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 图片或视频的创建选项。
 
 title参数的规格如下：
 
  - 不应包含扩展名。
- - 文件名字符串长度为1~255。
+ - 文件名的字符串长度为1~255个字符。
 
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -75,65 +81,73 @@ title参数的规格如下：
 
 
 
-#### FetchOptions
+## FetchOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 检索条件。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| fetchColumns | Array&lt;string&gt; | 否 | 否 | 检索条件，指定列名查询。 对于照片，如果该参数为空，默认查询'uri'、'media_type'、'subtype'和'display_name'，使用get接口获取当前对象的其他属性时将会报错。示例：fetchColumns: ['uri', 'title']。 对于相册，如果该参数为空，默认查询'uri'和'album_name'。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
-| predicates | dataSharePredicates.DataSharePredicates | 否 | 否 | 谓词查询，显示过滤条件。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
+| fetchColumns | Array&lt;string&gt; | 否 | 否 | 检索条件，指定列名查询。 对于照片，如果该参数为空，默认查询'uri'、'media_type'、'subtype'和'display_name'，使用get接口获取除上述默认属性外的其他属性时将会报错。示例：fetchColumns: ['uri', 'title']。 对于相册，如果该参数为空，默认查询'uri'和'album_name'。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
+| predicates | dataSharePredicates.DataSharePredicates | 否 | 否 | 谓词查询，用于指定过滤条件。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
 
 
 
 
-#### RequestOptions11+
+## RequestOptions11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 请求策略。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| deliveryMode | DeliveryMode | 否 | 否 | 请求资源分发模式，可以指定对于该资源的请求策略，可被配置为快速模式，高质量模式，均衡模式三种策略。 |
+| deliveryMode | DeliveryMode | 否 | 否 | 请求资源分发模式，可配置为快速模式、高质量模式、均衡模式三种策略。 |
 | compatibleMode15+ | CompatibleMode | 否 | 是 | 配置HDR视频资源转码模式，可指定配置为转码和不转码两种策略。默认为原视频资源内容模式即不转码。 |
-| mediaAssetProgressHandler15+ | MediaAssetProgressHandler | 否 | 是 | 配置HDR视频转码为SDR视频时的进度级回调。 |
+| mediaAssetProgressHandler15+ | MediaAssetProgressHandler | 否 | 是 | 配置HDR视频转码为SDR视频时的进度级回调。 当需要监控HDR视频转码进度时配置此参数。不填写时无法获取转码进度。 |
 
 
 
 
-#### ChangeData
+## ChangeData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 监听器回调函数的返回值。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | NotifyType | 否 | 否 | ChangeData的通知类型。 |
-| uris | Array&lt;string&gt; | 否 | 否 | 相同NotifyType的所有uri，可以是PhotoAsset或Album。 |
+| uris | Array&lt;string&gt; | 否 | 否 | 相同NotifyType的所有URI字符串，对应PhotoAsset或Album的URI。 |
 | extraUris | Array&lt;string&gt; | 否 | 否 | 相册中变动文件的uri数组。可能为undefined，使用前需要检查是否为undefined。 |
 
 
 
 
-#### TextContextInfo12+
+## TextContextInfo12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文本信息，用于推荐图片的文本信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -173,15 +187,17 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### PhotoCreationConfig12+
+## PhotoCreationConfig12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 保存图片/视频到媒体库的配置，包括保存的文件名等。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -193,9 +209,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### CreationSetting23+
+## CreationSetting23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 保存图片或视频到媒体库时的配置项，包括保存的文件名、文件类型和其他相关参数。
 
@@ -204,6 +221,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -214,13 +232,15 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### PhotoAssetChangeInfo20+
+## PhotoAssetChangeInfo20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 媒体资产（图片/视频）信息。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -232,13 +252,15 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### PhotoAssetChangeData20+
+## PhotoAssetChangeData20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 媒体资产（图片/视频）的具体变更数据。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -250,13 +272,15 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### PhotoAssetChangeInfos20+
+## PhotoAssetChangeInfos20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 媒体资产（图片/视频）的变更通知信息。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -267,13 +291,15 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### AlbumChangeInfo20+
+## AlbumChangeInfo20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 相册信息。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -289,13 +315,15 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### AlbumChangeData20+
+## AlbumChangeData20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 相册的具体变更数据。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -305,13 +333,15 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### AlbumChangeInfos20+
+## AlbumChangeInfos20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 相册的变更通知信息。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -322,9 +352,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### GridPinchMode23+
+## GridPinchMode23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 picker内宫格的捏合模式。
 
@@ -334,6 +365,7 @@ picker内宫格的捏合模式。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | gridPinchModeType | GridPinchModeType | 否 | 是 | 宫格捏合模式类型，配置即支持捏合功能，反之不支持捏合功能。 |
@@ -342,9 +374,10 @@ picker内宫格的捏合模式。
 
 
 
-#### AssetCompatibleCapability24+
+## AssetCompatibleCapability24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 资产兼容能力。
 
@@ -352,17 +385,19 @@ picker内宫格的捏合模式。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| supportedHighResolution | boolean | 否 | 否 | 是否支持启用高分辨率资产。true表示支持，false表示不支持。 元服务API: 从API version 24开始，该接口支持在元服务中使用。 |
-| supportedMimeType | Array&lt;string&gt; | 否 | 是 | 支持MIME types的类型。 - 配置image/heic表示应用支持heif格式。 - 配置image/jpeg表示应用仅支持jpeg格式不支持heif格式。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| supportedHighResolution | boolean | 否 | 否 | 表示应用是否支持获取高分辨率的媒体资源。true表示支持高分辨率资源请求，false表示仅支持标准分辨率资源。 元服务API: 从API version 24开始，该接口支持在元服务中使用。 |
+| supportedMimeType | Array&lt;string&gt; | 否 | 是 | 支持的MIME类型。 - 配置image/heic表示应用支持heif格式。 - 配置image/jpeg表示应用仅支持jpeg格式不支持heif格式。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
 
 
 
 
-#### MediaLibraryAvailability
+## MediaLibraryAvailability
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 媒体库可用性信息。
 
@@ -371,6 +406,7 @@ picker内宫格的捏合模式。
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

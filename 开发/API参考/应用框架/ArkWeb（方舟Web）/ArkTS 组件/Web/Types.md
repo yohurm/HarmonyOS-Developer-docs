@@ -1,20 +1,21 @@
 # Types
 
-更新时间：2026-07-09 02:26:55
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-t
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本文档提供 ArkWeb 组件中使用的类型定义，包括 Web 控制器及各类事件回调函数类型。其中，WebviewController 用于控制 Web 组件的行为；各类回调函数类型为开发者提供 Web 组件运行过程中多种事件场景的事件监听和处理能力。
  
 > [!NOTE]
-> 该组件首批接口从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 示例效果请以真机运行为准。
+> 该组件从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 示例效果请以真机运行为准。
 
   
 
-#### WebviewController9+
+## WebviewController9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type WebviewController = import('../api/@ohos.web.webview').default.WebviewController
  
@@ -22,6 +23,7 @@ type WebviewController = import('../api/@ohos.web.webview').default.WebviewContr
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 类型 | 说明 |
 | --- | --- |
 | import('../api/@ohos.web.webview').default.WebviewController | 通过WebviewController可以控制Web组件各种行为。一个WebviewController对象只能控制一个Web组件，且必须在Web组件和WebviewController绑定后，才能调用WebviewController上的方法（静态方法除外）。 |
@@ -29,9 +31,10 @@ type WebviewController = import('../api/@ohos.web.webview').default.WebviewContr
  
   
 
-#### OnAdsBlockedCallback12+
+## OnAdsBlockedCallback12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 type OnAdsBlockedCallback = (details: AdsBlockedDetails) => void
  
@@ -41,6 +44,7 @@ type OnAdsBlockedCallback = (details: AdsBlockedDetails) => void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | details | AdsBlockedDetails | 是 | 发生广告拦截时，广告资源信息。 |
@@ -48,28 +52,31 @@ type OnAdsBlockedCallback = (details: AdsBlockedDetails) => void
  
   
 
-#### OnSslErrorEventCallback12+
+## OnSslErrorEventCallback12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnSslErrorEventCallback = (sslErrorEvent: SslErrorEvent) => void
  
-用户加载资源时发生SSL错误时触发的回调。
+用户加载资源时发生SSL错误时触发的回调，返回SSL错误详细信息。
  
 **系统能力：** SystemCapability.Web.Webview.Core
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| sslErrorEvent | SslErrorEvent | 是 | 用户加载资源时发生SSL错误时触发的回调详情。 |
+| sslErrorEvent | SslErrorEvent | 是 | 用户加载资源时发生SSL错误时传递的详细信息。 |
  
  
   
 
-#### OnVerifyPinCallback22+
+## OnVerifyPinCallback22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnVerifyPinCallback = (verifyPinEvent: VerifyPinEvent) => void
  
@@ -79,6 +86,7 @@ type OnVerifyPinCallback = (verifyPinEvent: VerifyPinEvent) => void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | verifyPinEvent | VerifyPinEvent | 是 | 需要用户进行PIN码认证时触发的回调详情。 |
@@ -86,9 +94,10 @@ type OnVerifyPinCallback = (verifyPinEvent: VerifyPinEvent) => void
  
   
 
-#### OnContextMenuHideCallback11+
+## OnContextMenuHideCallback11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnContextMenuHideCallback = () => void
  
@@ -98,9 +107,10 @@ type OnContextMenuHideCallback = () => void
  
   
 
-#### OnRenderProcessNotRespondingCallback12+
+## OnRenderProcessNotRespondingCallback12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnRenderProcessNotRespondingCallback = (data : RenderProcessNotRespondingData) => void
  
@@ -110,6 +120,7 @@ type OnRenderProcessNotRespondingCallback = (data : RenderProcessNotRespondingDa
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | RenderProcessNotRespondingData | 是 | 渲染进程无响应的详细信息。 |
@@ -117,9 +128,10 @@ type OnRenderProcessNotRespondingCallback = (data : RenderProcessNotRespondingDa
  
   
 
-#### OnRenderProcessRespondingCallback12+
+## OnRenderProcessRespondingCallback12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnRenderProcessRespondingCallback = () => void
  
@@ -129,9 +141,10 @@ type OnRenderProcessRespondingCallback = () => void
  
   
 
-#### OnViewportFitChangedCallback12+
+## OnViewportFitChangedCallback12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 type OnViewportFitChangedCallback = (viewportFit: ViewportFit) => void
  
@@ -141,6 +154,7 @@ type OnViewportFitChangedCallback = (viewportFit: ViewportFit) => void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | viewportFit | ViewportFit | 是 | 网页meta中viewport-fit配置的视口类型。 |
@@ -148,9 +162,10 @@ type OnViewportFitChangedCallback = (viewportFit: ViewportFit) => void
  
   
 
-#### OnNativeEmbedVisibilityChangeCallback12+
+## OnNativeEmbedVisibilityChangeCallback12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnNativeEmbedVisibilityChangeCallback = (nativeEmbedVisibilityInfo: NativeEmbedVisibilityInfo) => void
  
@@ -160,16 +175,18 @@ type OnNativeEmbedVisibilityChangeCallback = (nativeEmbedVisibilityInfo: NativeE
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| nativeEmbedVisibilityInfo | NativeEmbedVisibilityInfo | 是 | 提供同层标签的可见性信息。 |
+| nativeEmbedVisibilityInfo | NativeEmbedVisibilityInfo | 是 | 提供同层标签可见性变化的信息。 |
  
  
   
 
-#### OnFullScreenEnterCallback12+
+## OnFullScreenEnterCallback12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnFullScreenEnterCallback = (event: FullScreenEnterEvent) => void
  
@@ -179,6 +196,7 @@ Web组件进入全屏时触发的回调。
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | FullScreenEnterEvent | 是 | Web组件进入全屏的回调事件详情。 |
@@ -186,18 +204,20 @@ Web组件进入全屏时触发的回调。
  
   
 
-#### OnFirstMeaningfulPaintCallback12+
+## OnFirstMeaningfulPaintCallback12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnFirstMeaningfulPaintCallback = (firstMeaningfulPaint: [FirstMeaningfulPaint](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-i#firstmeaningfulpaint12)) => void
  
-网页绘制页面度量信息的回调，当网页加载完页面主要内容时会触发该回调。
+网页首次绘制页面主要内容度量的回调，当网页加载完页面主要内容时会触发此回调。与OnLargestContentfulPaintCallback关注最大内容元素绘制时间、OnFirstScreenPaintCallback关注首屏可见内容渲染完成相比，本回调更关注主要内容是否加载完成，适合评估用户可见内容的加载体验。
  
 **系统能力：** SystemCapability.Web.Webview.Core
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | firstMeaningfulPaint | FirstMeaningfulPaint | 是 | 绘制页面主要内容度量的详细信息。 |
@@ -205,18 +225,20 @@ type OnFirstMeaningfulPaintCallback = (firstMeaningfulPaint: [FirstMeaningfulPai
  
   
 
-#### OnLargestContentfulPaintCallback12+
+## OnLargestContentfulPaintCallback12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnLargestContentfulPaintCallback = (largestContentfulPaint: [LargestContentfulPaint](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-i#largestcontentfulpaint12)) => void
  
-网页绘制页面最大内容度量信息的回调。
+当网页绘制最大内容区域时触发的回调，用于获取最大内容绘制的性能度量信息。适用于需要监控网页加载性能、优化页面渲染速度等场景。与OnFirstMeaningfulPaintCallback关注主要内容加载完成、OnFirstScreenPaintCallback关注首屏可见内容渲染完成相比，本回调关注最大内容元素的绘制时间，适合评估页面渲染完成度和性能瓶颈。
  
 **系统能力：** SystemCapability.Web.Webview.Core
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | largestContentfulPaint | LargestContentfulPaint | 是 | 网页绘制页面最大内容度量的详细信息。 |
@@ -224,9 +246,10 @@ type OnLargestContentfulPaintCallback = (largestContentfulPaint: [LargestContent
  
   
 
-#### OnNavigationEntryCommittedCallback11+
+## OnNavigationEntryCommittedCallback11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnNavigationEntryCommittedCallback = (loadCommittedDetails: [LoadCommittedDetails](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-i#loadcommitteddetails11)) => void
  
@@ -236,6 +259,7 @@ type OnNavigationEntryCommittedCallback = (loadCommittedDetails: [LoadCommittedD
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | loadCommittedDetails | LoadCommittedDetails | 是 | 提供已提交跳转的网页的详细信息。 |
@@ -243,9 +267,10 @@ type OnNavigationEntryCommittedCallback = (loadCommittedDetails: [LoadCommittedD
  
   
 
-#### OnSafeBrowsingCheckResultCallback11+
+## OnSafeBrowsingCheckResultCallback11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnSafeBrowsingCheckResultCallback = (threatType: ThreatType) => void
  
@@ -255,6 +280,7 @@ type OnSafeBrowsingCheckResultCallback = (threatType: ThreatType) => void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | threatType | ThreatType | 是 | 定义网站threat类型。 |
@@ -262,9 +288,10 @@ type OnSafeBrowsingCheckResultCallback = (threatType: ThreatType) => void
  
   
 
-#### OnIntelligentTrackingPreventionCallback12+
+## OnIntelligentTrackingPreventionCallback12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 type OnIntelligentTrackingPreventionCallback = (details: IntelligentTrackingPreventionDetails) => void
  
@@ -274,6 +301,7 @@ type OnIntelligentTrackingPreventionCallback = (details: IntelligentTrackingPrev
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | details | IntelligentTrackingPreventionDetails | 是 | 提供智能防跟踪拦截的详细信息。 |
@@ -281,18 +309,20 @@ type OnIntelligentTrackingPreventionCallback = (details: IntelligentTrackingPrev
  
   
 
-#### OnOverrideUrlLoadingCallback12+
+## OnOverrideUrlLoadingCallback12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnOverrideUrlLoadingCallback = (webResourceRequest: WebResourceRequest) => boolean
  
-onOverrideUrlLoading的回调。
+用于拦截URL加载请求的回调，可阻止特定URL的加载或进行自定义处理。适用于需要拦截广告、阻止恶意网站跳转等场景。
  
 **系统能力：** SystemCapability.Web.Webview.Core
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | webResourceRequest | WebResourceRequest | 是 | url请求的相关信息。 |
@@ -300,6 +330,7 @@ onOverrideUrlLoading的回调。
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回true表示阻止此次加载，否则允许此次加载。 |
@@ -307,9 +338,10 @@ onOverrideUrlLoading的回调。
  
   
 
-#### WebKeyboardCallback12+
+## WebKeyboardCallback12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type WebKeyboardCallback = (keyboardCallbackInfo: WebKeyboardCallbackInfo) => WebKeyboardOptions
  
@@ -319,6 +351,7 @@ type WebKeyboardCallback = (keyboardCallbackInfo: WebKeyboardCallbackInfo) => We
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyboardCallbackInfo | WebKeyboardCallbackInfo | 是 | 拦截网页拉起软键盘回调通知的入参，其中包括WebKeyboardController、可编辑元素的属性。 |
@@ -326,6 +359,7 @@ type WebKeyboardCallback = (keyboardCallbackInfo: WebKeyboardCallbackInfo) => We
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | WebKeyboardOptions | 回调函数通过返回WebKeyboardOptions来决定ArkWeb内核拉起不同类型的软键盘。 |
@@ -333,9 +367,10 @@ type WebKeyboardCallback = (keyboardCallbackInfo: WebKeyboardCallbackInfo) => We
  
   
 
-#### OnOverrideErrorPageCallback20+
+## OnOverrideErrorPageCallback20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnOverrideErrorPageCallback = (errorPageEvent: OnErrorReceiveEvent) => string
  
@@ -345,6 +380,7 @@ onOverrideErrorPage的回调函数，网页加载失败时触发。
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | errorPageEvent | OnErrorReceiveEvent | 是 | 网页加载遇到错误时返回的相关信息。 |
@@ -352,6 +388,7 @@ onOverrideErrorPage的回调函数，网页加载失败时触发。
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 返回以Base64编码的HTML文本内容。 |
@@ -359,9 +396,10 @@ onOverrideErrorPage的回调函数，网页加载失败时触发。
  
   
 
-#### MouseInfoCallback20+
+## MouseInfoCallback20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type MouseInfoCallback = (event: NativeEmbedMouseInfo) => void
  
@@ -371,6 +409,7 @@ type MouseInfoCallback = (event: NativeEmbedMouseInfo) => void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | NativeEmbedMouseInfo | 是 | 提供鼠标/触摸板在同层标签上单击或长按的详细信息。 |
@@ -382,9 +421,10 @@ type MouseInfoCallback = (event: NativeEmbedMouseInfo) => void
  
   
 
-#### OnNativeEmbedObjectParamChangeCallback21+
+## OnNativeEmbedObjectParamChangeCallback21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnNativeEmbedObjectParamChangeCallback = (event: NativeEmbedParamDataInfo) => void
  
@@ -394,6 +434,7 @@ type OnNativeEmbedObjectParamChangeCallback = (event: NativeEmbedParamDataInfo) 
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | NativeEmbedParamDataInfo | 是 | object标签内嵌param元素的详细变化信息。 |
@@ -405,9 +446,10 @@ type OnNativeEmbedObjectParamChangeCallback = (event: NativeEmbedParamDataInfo) 
  
   
 
-#### OnDetectBlankScreenCallback22+
+## OnDetectBlankScreenCallback22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnDetectBlankScreenCallback = (event: BlankScreenDetectionEventInfo) => void
  
@@ -417,6 +459,7 @@ type OnDetectBlankScreenCallback = (event: BlankScreenDetectionEventInfo) => voi
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | BlankScreenDetectionEventInfo | 是 | 检测到白屏时的详细信息。 |
@@ -428,9 +471,10 @@ type OnDetectBlankScreenCallback = (event: BlankScreenDetectionEventInfo) => voi
  
   
 
-#### OnCameraCaptureStateChangeCallback23+
+## OnCameraCaptureStateChangeCallback23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnCameraCaptureStateChangeCallback = (event: CameraCaptureStateChangeInfo) => void
  
@@ -440,6 +484,7 @@ type OnCameraCaptureStateChangeCallback = (event: CameraCaptureStateChangeInfo) 
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | CameraCaptureStateChangeInfo | 是 | 网页摄像头状态发生改变时，返回原来的状态和改变后的状态。 |
@@ -447,9 +492,10 @@ type OnCameraCaptureStateChangeCallback = (event: CameraCaptureStateChangeInfo) 
  
   
 
-#### OnMicrophoneCaptureStateChangeCallback23+
+## OnMicrophoneCaptureStateChangeCallback23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnMicrophoneCaptureStateChangeCallback = (event: MicrophoneCaptureStateChangeInfo) => void
  
@@ -459,6 +505,7 @@ type OnMicrophoneCaptureStateChangeCallback = (event: MicrophoneCaptureStateChan
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | MicrophoneCaptureStateChangeInfo | 是 | 网页麦克风状态发生改变时，返回原来的状态和改变后的状态。 |
@@ -466,9 +513,10 @@ type OnMicrophoneCaptureStateChangeCallback = (event: MicrophoneCaptureStateChan
  
   
 
-#### TextSelectionChangeCallback23+
+## TextSelectionChangeCallback23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type TextSelectionChangeCallback = (selectionText: string) => void
  
@@ -478,6 +526,7 @@ onTextSelectionChange的回调，选区内容改变时触发。
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | selectionText | string | 是 | 返回所选文本的内容。 |
@@ -489,18 +538,20 @@ onTextSelectionChange的回调，选区内容改变时触发。
  
   
 
-#### OnFirstScreenPaintCallback23+
+## OnFirstScreenPaintCallback23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnFirstScreenPaintCallback = (firstScreenPaint: FirstScreenPaint) => void
  
-检测到首屏渲染结束时会触发此回调。
+检测到首屏渲染结束时会触发此回调。与OnFirstMeaningfulPaintCallback关注主要内容加载完成、OnLargestContentfulPaintCallback关注最大内容元素绘制时间相比，本回调更关注首屏可见内容的渲染完成时间，适合评估用户首次视觉体验。
  
 **系统能力：** SystemCapability.Web.Webview.Core
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | firstScreenPaint | FirstScreenPaint | 是 | 检测到首屏渲染时的详细信息。 |
@@ -512,9 +563,10 @@ type OnFirstScreenPaintCallback = (firstScreenPaint: FirstScreenPaint) => void
  
   
 
-#### OnCreateAISession
+## OnCreateAISession
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnCreateAISession = (id: string, params: string, result: OnAISessionCallback) => boolean
  
@@ -528,15 +580,17 @@ AI会话创建回调函数类型。允许自定义模型初始化和结果处理
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | string | 是 | 会话任务ID。 |
-| params | string | 是 | 会话创建时传递的上下文数据。 |
+| params | string | 是 | 会话创建时传递的上下文数据，JSON字符串格式。 |
 | result | OnAISessionCallback | 是 | 用于通知系统会话创建结果的回调函数。 |
  
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | true表示使用自定义逻辑，跳过系统默认行为；false表示继续执行系统默认逻辑。 |
@@ -544,9 +598,10 @@ AI会话创建回调函数类型。允许自定义模型初始化和结果处理
  
   
 
-#### OnExecuteAIAction
+## OnExecuteAIAction
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnExecuteAIAction = (id: string, params: string, result: OnAISessionCallback) => void
  
@@ -560,18 +615,20 @@ AI会话执行操作回调函数类型。用于自定义实现AI模型执行。
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | string | 是 | 会话任务ID。 |
-| params | string | 是 | 执行操作时传递的上下文数据。 |
+| params | string | 是 | 执行操作时传递的上下文数据，JSON字符串格式。 |
 | result | OnAISessionCallback | 是 | 用于通知系统操作执行结果的回调函数。 |
  
  
   
 
-#### OnDestroyAISession
+## OnDestroyAISession
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnDestroyAISession = (id: string) => void
  
@@ -585,6 +642,7 @@ AI会话销毁回调函数类型。用于清理与自定义AI模型关联的资�
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | string | 是 | 会话任务ID。 |
@@ -592,9 +650,10 @@ AI会话销毁回调函数类型。用于清理与自定义AI模型关联的资�
  
   
 
-#### OnAISessionCallback
+## OnAISessionCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnAISessionCallback = (state: AISessionResultType, content: string) => void
  
@@ -608,17 +667,19 @@ AI会话操作结果回调函数类型。用于报告会话创建或执行的结
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | state | AISessionResultType | 是 | AI会话创建或执行的状态结果。 |
-| content | string | 是 | AI会话的响应内容。 |
+| content | string | 是 | AI会话的响应内容，文本或JSON格式，包含AI模型生成的回复内容。 |
  
  
   
 
-#### OnInputmethodAttachedCallback
+## OnInputmethodAttachedCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnInputmethodAttachedCallback = () => void;
  

@@ -1,18 +1,19 @@
 # NFC错误码
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 > [!TIP]
 > 以下仅介绍本模块特有错误码，通用错误码请参考 通用错误码说明文档 。
 
 
 
-#### 3100101 开关NFC异常
+## 3100101 开关NFC异常
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -33,9 +34,10 @@ NFC服务内部执行NFC打开或关闭异常。
 
 
 
-#### 3100201 NFC服务读写Tag错误
+## 3100201 NFC服务读写Tag错误
 
-**支持设备：** Phone | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -61,9 +63,10 @@ NFC服务执行Tag业务逻辑遇到错误。
 
 
 
-#### 3100202 应用状态错误
+## 3100202 应用状态错误
 
-**支持设备：** Phone | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -83,9 +86,10 @@ The element state is invalid.
 
 
 
-#### 3100203 接口调用顺序错误
+## 3100203 接口调用顺序错误
 
-**支持设备：** Phone | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -105,9 +109,10 @@ The off() API can be called only when the on() has been called.
 
 
 
-#### 3100204 NFC芯片I/O异常
+## 3100204 NFC芯片I/O异常
 
-**支持设备：** Phone | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -127,9 +132,10 @@ NFC Tag不支持所执行的读写操作。
 
 
 
-#### 3100301 NFC卡模拟状态异常
+## 3100301 NFC卡模拟状态异常
 
-**支持设备：** Phone | Wearable | lite_wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -149,9 +155,10 @@ NFC服务执行卡模拟业务逻辑遇到错误。
 
 
 
-#### 3200101 有源NFC标签状态异常
+## 3200101 有源NFC标签状态异常
 
-**支持设备：** PC/2in1
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 

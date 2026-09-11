@@ -1,13 +1,13 @@
 # list开发指导
 
-更新时间：2026-03-09 02:50:43
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-components-list
 
 list是用来显示列表的组件，包含一系列相同宽度的列表项，适合连续、多行地呈现同类数据。具体用法请参考[list API](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-container-list)。
 
 
-#### 创建list组件
+## 创建list组件
 
 在pages/index目录下的hml文件中创建一个list组件。
 
@@ -49,7 +49,7 @@ list是用来显示列表的组件，包含一系列相同宽度的列表项，�
 
 
 
-#### 添加滚动条
+## 添加滚动条
 
 设置scrollbar属性为on即可在屏幕右侧生成滚动条，实现长列表或者屏幕滚动等效果。
 
@@ -91,7 +91,7 @@ list是用来显示列表的组件，包含一系列相同宽度的列表项，�
 
 
 
-#### 添加侧边索引栏
+## 添加侧边索引栏
 
 设置indexer属性为自定义索引时，索引栏会显示在列表右边界处，indexer属性设置为true，默认为字母索引表。
 
@@ -127,7 +127,7 @@ list是用来显示列表的组件，包含一系列相同宽度的列表项，�
 
 
 
-#### 实现列表折叠和展开
+## 实现列表折叠和展开
 
 为list组件添加groupcollapse和groupexpand事件实现列表的折叠和展开。
 
@@ -203,7 +203,7 @@ export default {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/1FD5OZgkSTGe2lSIFnJseg/zh-cn_image_0000002611833983.gif?HW-CC-KV=V1&HW-CC-Date=20260528T030428Z&HW-CC-Expire=86400&HW-CC-Sign=3D0C4BD5942CF8EA498D4591EF806EC4CE0ED6DB47E2D0FC99DC4CC8452FFA12)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/qXxRC3qPRuWuBf7iSLx2lQ/zh-cn_image_0000002747290729.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073133Z&HW-CC-Expire=86400&HW-CC-Sign=D0883EFC09BEC063691CE6D8712DE8EBDE10D2B873E27D2DD86874C1D4299DD4)
 
 
 > [!NOTE]
@@ -212,7 +212,7 @@ export default {
 
 
 
-#### 场景示例
+## 场景示例
 
 在本场景中，开发者可以根据字母索引表查找对应联系人。
 
@@ -220,7 +220,7 @@ export default {
 <!-- xxx.hml -->
 <div class="doc-page"> 
   <text style="font-size: 35px; font-weight: 500; text-align: center; margin-top: 20px; margin-bottom: 20px;"> 
-      Contacts 
+      <span>Contacts</span> 
   </text> 
   <list class="list" indexer="true"> 
     <list-item class="item" for="{{namelist}}" type="{{$item.section}}" section="{{$item.section}}"> 
@@ -318,4 +318,4 @@ export default {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/TogapG9lQZmEdPO8dwQBwA/zh-cn_image_0000002581274236.gif?HW-CC-KV=V1&HW-CC-Date=20260528T030428Z&HW-CC-Expire=86400&HW-CC-Sign=400FD58B75E9394E70013156C093606A46B878579CB19862FABC808D12CF8E7D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/371jdFFcQ0Cu5oFJU_ZJ_A/zh-cn_image_0000002747210647.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073133Z&HW-CC-Expire=86400&HW-CC-Sign=E6B1314F01A44ED7B09274968BBA593DEC0D458AC60D99628308803652AFA861)

@@ -1,26 +1,27 @@
 # 使用Node-API接口进行ArrayBuffer相关开发
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-about-arraybuffer
 
-#### 简介
+## 简介
 
 ArrayBuffer是ArkTS中的一种数据类型，用于表示通用的、固定长度的原始二进制数据缓冲区。它提供了一种在ArkTS中有效地表示和操作原始二进制数据的方式。
  
   
 
-#### 基本概念
+## 基本概念
 
 - **ArrayBuffer**：ArrayBuffer对象用来表示一个通用的、固定长度的原始二进制数据缓冲区。不能直接操作ArrayBuffer的内容，而是需要包装成TypedArray对象或DataView对象来读写。ArrayBuffer常用于处理大量的二进制数据，如文件、网络数据包等。
 
  
   
 
-#### 场景和功能介绍
+## 场景和功能介绍
 
 以下Node-API接口用于操作ArrayBuffer类型的数据。
   
+
 | 接口 | 描述 |
 | --- | --- |
 | napi_is_arraybuffer | 检查一个值是否为ArrayBuffer，以确保正在处理正确的数据类型。需要注意的是，此函数只能判断一个值是否为ArrayBuffer，而不能判断一个值是否为TypedArray。要判断一个值是否为TypedArray，可以使用napi_is_typedarray函数。 |
@@ -32,7 +33,7 @@ ArrayBuffer是ArkTS中的一种数据类型，用于表示通用的、固定长�
  
   
 
-#### 使用示例
+## 使用示例
 
 Node-API接口开发流程参考[使用Node-API实现跨语言交互开发流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-process)，本文仅对接口对应C++及ArkTS相关代码进行展示。
  
@@ -53,7 +54,7 @@ import testNapi from 'libentry.so';
  
   
 
-#### napi_is_arraybuffer
+### napi_is_arraybuffer
 
 判断给定ArkTS value是否为ArrayBuffer。
  
@@ -116,7 +117,7 @@ Test Node-API napi_is_arraybuffer: false
  
   
 
-#### napi_get_arraybuffer_info
+### napi_get_arraybuffer_info
 
 获取ArrayBuffer的底层数据缓冲区和长度。接口只能处理ArrayBuffer类型，请勿将其他类型传入接口。若想从Uint8Array类型中取到ArrayBuffer，需要在ArkTS侧执行.buffer操作。
  
@@ -194,13 +195,13 @@ Test Node-API napi_get_arraybuffer_info byteLength: 5 buffer: {"0":1,"1":2,"2":3
  
   
 
-#### napi_detach_arraybuffer
+### napi_detach_arraybuffer
 
 分离给定ArrayBuffer的底层数据。
  
   
 
-#### napi_is_detached_arraybuffer
+### napi_is_detached_arraybuffer
 
 判断给定的ArrayBuffer是否已被分离。
  
@@ -272,7 +273,7 @@ Test Node-API napi_is_detached_arraybuffer two: true
  
   
 
-#### napi_create_arraybuffer
+### napi_create_arraybuffer
 
 用于在C/C++中创建一个具有指定字节长度的ArkTS ArrayBuffer对象，如果调用者想要直接操作缓冲区，则可以选择将底层缓冲区返回给调用者。要从ArkTS写入此缓冲区，需要创建类型化数组或DataView对象。
  
@@ -346,7 +347,7 @@ Test Node-API napi_create_arraybuffer:[object ArrayBuffer]
  
   
 
-#### 注意事项
+## 注意事项
 
 - **生命周期和内存管理**：在使用Node-API处理ArrayBuffer时，需注意，void*类型的buffer数据段生命周期由引擎管理，[不允许用户自己delete，否则会double free](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-guidelines#防止重复释放获取的buffer)。
 - **需注意申请buffer大小**：当byte_length很大时，分配失败并不会抛异常，参数data指向的内存为nullptr。建议对*data == nullptr做严格判断，并对超大byte_length做限额检验，避免OOM。

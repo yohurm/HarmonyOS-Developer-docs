@@ -1,10 +1,10 @@
 # 使用HiCollie监控函数执行时间超长问题（C/C++）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hicollie-settimer-guidelines-ndk
 
-#### 简介
+## 简介
 
 任务执行超时指要监控的业务代码逻辑执行时长超过业务逻辑预期时间。本文面向开发者介绍HiCollie模块对外提供函数执行时间超长的检测能力。
 
@@ -18,7 +18,8 @@
 
 
 
-#### 接口说明
+## 接口说明
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -32,7 +33,7 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 
 下文将展示如何在应用内增加一个按钮，并单击该按钮以调用HiCollie NDK接口。
 1. 在DevEco Studio中，新建Native C++工程，目录结构如下：
@@ -99,7 +100,7 @@ static napi_value TestHiCollieTimerNdk(napi_env env, napi_callback_info info)
     HiCollie_ErrorCode errorCode = OH_HiCollie_SetTimer(param, &id);  // 注册HiCollieTimer函数执行时长超时检测一次性任务
     if (errorCode == HICOLLIE_SUCCESS) {  // HiCollieTimer任务注册成功
         OH_LOG_INFO(LogType::LOG_APP, "HiCollieTimer taskId: %{public}d", id); // 打印任务id
-        sleep(2);  // 模拟执行耗时函数，在这里简单的将线程阻塞2s
+        sleep(2);  // 模拟执行耗时函数，在这里简单地将线程阻塞2s
         OH_HiCollie_CancelTimer(id);  // 根据id取消已注册任务
     }
     return nullptr;

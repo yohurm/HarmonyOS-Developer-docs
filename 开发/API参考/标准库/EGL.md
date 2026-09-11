@@ -1,13 +1,17 @@
 # EGL
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/egl
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [EGL](https://registry.khronos.org/EGL/sdk/docs/man/) 是Khronos官方提供的渲染API (如[OpenGLES](https://registry.khronos.org/OpenGL-Refpages/es3/) 或 OpenVG) 与底层窗口系统之间的接口。HarmonyOS 现已支持 EGL。
 
 
-#### 引入EGL能力
+## 引入EGL能力
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 如果开发者需要使用EGL相关功能，首先请添加头文件：
 
@@ -33,7 +37,10 @@ EGL_EGLEXT_PROTOTYPES
 
 
 
-#### 部分扩展接口使用说明
+## 部分扩展接口使用说明
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **eglGetNativeClientBufferANDROID**
 
@@ -147,7 +154,10 @@ OH_NativeWindow_DestroyNativeWindowBuffer((OHNativeWindowBuffer*)clientBuffer);
 
 
 
-#### 支持的接口说明
+## 支持的接口说明
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 HarmonyOS目前支持EGL部分接口，支持的接口会随着版本演进，持续更新。
 

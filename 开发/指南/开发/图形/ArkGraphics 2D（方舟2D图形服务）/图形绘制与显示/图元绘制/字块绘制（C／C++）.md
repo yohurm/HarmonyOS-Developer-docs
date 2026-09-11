@@ -1,10 +1,10 @@
 # 字块绘制（C/C++）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/textblock-drawing-c
 
-#### 场景介绍
+## 场景介绍
 
 字块（TextBlob）是指文本的集合。无论是单个的文字还是大块的文本，都可以通过字块来绘制。
 
@@ -14,7 +14,7 @@
 
 
 
-#### 基本字块绘制
+## 基本字块绘制
 
 使用OH_Drawing_CanvasDrawTextBlob()接口绘制字块，接口接受4个参数，分别为：画布Canvas对象、字块对象、文字基线左端点的x坐标和y坐标。
 
@@ -40,7 +40,7 @@ OH_Drawing_FontSetTextSize(font, value100_);
 const char *str = "Hello world";
 // 创建字块对象
 OH_Drawing_TextBlob *textBlob =
-    OH_Drawing_TextBlobCreateFromString(str, font, OH_Drawing_TextEncoding::TEXT_ENCODING_UTF8);
+    OH_Drawing_TextBlobCreateFromString(str, font, TEXT_ENCODING_UTF8);
 // 绘制字块
 OH_Drawing_CanvasDrawTextBlob(canvas, textBlob, value200_, value800_);
 // 释放字块对象
@@ -55,7 +55,7 @@ OH_Drawing_FontDestroy(font);
 
 
 
-#### 文字描边
+## 文字描边
 
 基于基本的字块绘制，还可以通过画笔实现文字描边效果，描边效果的更多介绍请参考[描边效果](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/basic-drawing-effect-c#描边效果)。
 
@@ -63,7 +63,7 @@ OH_Drawing_FontDestroy(font);
 
 
 
-#### 英文文字描边
+### 英文文字描边
 
 英文文字描边的简要示例和示意图如下：
 
@@ -85,7 +85,7 @@ OH_Drawing_FontSetTextSize(font, value150_);
 const char *str = "Hello world";
 // 创建字块对象
 OH_Drawing_TextBlob *textBlob =
-    OH_Drawing_TextBlobCreateFromString(str, font, OH_Drawing_TextEncoding::TEXT_ENCODING_UTF8);
+    OH_Drawing_TextBlobCreateFromString(str, font, TEXT_ENCODING_UTF8);
 // 绘制字块
 OH_Drawing_CanvasDrawTextBlob(canvas, textBlob, value200_, value800_);
 // 去除描边效果
@@ -102,7 +102,7 @@ OH_Drawing_PenDestroy(pen);
 
 
 
-#### 中文文字描边
+### 中文文字描边
 
 首先需要通过画笔描边，然后需要调用画刷填充内部颜色，去除字体中间的杂质和重叠部分，实现中文文字描边效果。
 
@@ -115,7 +115,7 @@ OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
 OH_Drawing_Pen *pen = OH_Drawing_PenCreate();
 // 设置画刷抗锯齿
 OH_Drawing_BrushSetAntiAlias(brush, true);
-// 设置画刷描边颜色
+// 设置画刷填充颜色
 OH_Drawing_BrushSetColor(brush, OH_Drawing_ColorSetArgb(0xFF, 0xFF, 0xFF, 0xFF));
 // 设置画笔抗锯齿
 OH_Drawing_PenSetAntiAlias(pen, true);
@@ -132,14 +132,16 @@ OH_Drawing_FontSetTextSize(font, value150_);
 const char *str = "你好";
 // 创建字块对象
 OH_Drawing_TextBlob *textBlob =
-    OH_Drawing_TextBlobCreateFromString(str, font, OH_Drawing_TextEncoding::TEXT_ENCODING_UTF8);
+    OH_Drawing_TextBlobCreateFromString(str, font, TEXT_ENCODING_UTF8);
 // 绘制字块
 OH_Drawing_CanvasDrawTextBlob(canvas, textBlob, value200_, value800_);
 // 去除描边效果
 OH_Drawing_CanvasDetachPen(canvas);
-// 设置画刷描边效果
+// 设置画刷填充效果
 OH_Drawing_CanvasAttachBrush(canvas, brush);
 OH_Drawing_CanvasDrawTextBlob(canvas, textBlob, value200_, value800_);
+// 去除画布中的画刷
+OH_Drawing_CanvasDetachBrush(canvas);
 
 // 销毁各类对象
 OH_Drawing_TextBlobDestroy(textBlob);
@@ -154,7 +156,7 @@ OH_Drawing_BrushDestroy(brush);
 
 
 
-#### 文字渐变
+## 文字渐变
 
 基于基本字块绘制，还可以通过着色器实现文字渐变的效果，着色器的更多介绍请参考[着色器效果](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/complex-drawing-effect-c#着色器效果)。
 
@@ -171,7 +173,7 @@ uint32_t colors[] = {0xFFFFFF00, 0xFFFF0000, 0xFF0000FF};
 float pos[] = {0.0f, 0.5f, 1.0f};
 // 创建线性渐变着色器效果
 OH_Drawing_ShaderEffect *colorShaderEffect =
-    OH_Drawing_ShaderEffectCreateLinearGradient(startPt, endPt, colors, pos, 3, OH_Drawing_TileMode::CLAMP);
+    OH_Drawing_ShaderEffectCreateLinearGradient(startPt, endPt, colors, pos, 3, CLAMP);
 // 创建画刷对象
 OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
 // 基于画刷设置着色器效果
@@ -185,7 +187,7 @@ OH_Drawing_FontSetTextSize(font, value150_);
 const char *str = "Hello world";
 // 创建字块对象
 OH_Drawing_TextBlob *textBlob =
-    OH_Drawing_TextBlobCreateFromString(str, font, OH_Drawing_TextEncoding::TEXT_ENCODING_UTF8);
+    OH_Drawing_TextBlobCreateFromString(str, font, TEXT_ENCODING_UTF8);
 // 绘制字块
 OH_Drawing_CanvasDrawTextBlob(canvas, textBlob, value200_, value800_);
 // 取消填充效果
@@ -194,6 +196,9 @@ OH_Drawing_CanvasDetachBrush(canvas);
 OH_Drawing_TextBlobDestroy(textBlob);
 OH_Drawing_FontDestroy(font);
 OH_Drawing_BrushDestroy(brush);
+OH_Drawing_ShaderEffectDestroy(colorShaderEffect);
+OH_Drawing_PointDestroy(startPt);
+OH_Drawing_PointDestroy(endPt);
 ```
 
 
@@ -202,7 +207,7 @@ OH_Drawing_BrushDestroy(brush);
 
 
 
-#### 主题字体
+## 主题字体
 
 主题字体，特指系统**主题应用**中能使用的字体，属于一种特殊的自定义字体。如需涉及文本测量和布局排版相关内容，可参考[使用主题字体（C/C++）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/theme-font-c)。
 
@@ -219,7 +224,7 @@ OH_Drawing_FontSetThemeFontFollowed(font, true);
 const char *str = "Hello World";
 // 创建字块对象
 OH_Drawing_TextBlob *textBlob =
-    OH_Drawing_TextBlobCreateFromString(str, font, OH_Drawing_TextEncoding::TEXT_ENCODING_UTF8);
+    OH_Drawing_TextBlobCreateFromString(str, font, TEXT_ENCODING_UTF8);
 // 绘制字块
 OH_Drawing_CanvasDrawTextBlob(canvas, textBlob, value200_, value800_);
 // 释放字块对象
@@ -227,6 +232,7 @@ OH_Drawing_TextBlobDestroy(textBlob);
 // 释放字型对象
 OH_Drawing_FontDestroy(font);
 ```
+
 
 | 未跟随主题字体的效果图 | 跟随主题字体的效果图（不同主题字体显示效果不同，此处仅示意） |
 | --- | --- |
@@ -239,7 +245,7 @@ OH_Drawing_FontDestroy(font);
 
 
 
-#### 单字绘制
+## 单字绘制
 
 单字绘制是图形渲染中针对文本渲染的一种精细化控制技术。相比字块绘制，其核心优势在于能够利用字体退化机制，在当前字体无法显示某字符时，自动退化到使用系统字体绘制字符，提升对特殊字符的兼容性，避免字符缺失。同时，单字绘制支持逐字符配置字体特征（如连字、替代字形），满足复杂排版需求，增强用户体验。详细API说明请见[drawing_canvas.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-canvas-h#oh_drawing_canvasdrawsinglecharacter)。
 
@@ -269,7 +275,7 @@ OH_Drawing_FontDestroy(font);
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/MEWQFmFjS96ZpA3d3pF4ag/zh-cn_image_0000002674633320.jpg?HW-CC-KV=V1&HW-CC-Date=20260813T095835Z&HW-CC-Expire=86400&HW-CC-Sign=792B35B2958A192B0B823176383691A355704817C200177B4F2ECF4FEBCDC878)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/iGsN_KgHTTeMcG-PAnKX7w/zh-cn_image_0000002717771448.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T073102Z&HW-CC-Expire=86400&HW-CC-Sign=C2C8700CBA2617D0C466C036B8585B6AF4F32688F0F20778990A1633B8186730)
 
 
 进阶场景：绘制带字体特征的字符。
@@ -303,7 +309,7 @@ OH_Drawing_FontDestroy(font);
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/AXurIu6YT6qIrEPV_fdMGQ/zh-cn_image_0000002704273277.png?HW-CC-KV=V1&HW-CC-Date=20260813T095835Z&HW-CC-Expire=86400&HW-CC-Sign=ED81F76E44B180CE0375076C3DD5B849366A89FDC9E18CBBF2788D59C040C1FE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/yj1lUnvfQZq5wFOy8o9c1A/zh-cn_image_0000002717611516.png?HW-CC-KV=V1&HW-CC-Date=20260911T073102Z&HW-CC-Expire=86400&HW-CC-Sign=82E7937721E4494640825549B611702F7F838706E462376E23D190F868A12EC4)
 
 
 > [!NOTE]
@@ -312,6 +318,6 @@ OH_Drawing_FontDestroy(font);
 
 
 
-#### 示例代码
+## 示例代码
 
  - [图形绘制（C/C++）](https://gitcode.com/HarmonyOS_Samples/guide-snippets/tree/master/ArkGraphics2D/Drawing/NDKGraphicsDraw)

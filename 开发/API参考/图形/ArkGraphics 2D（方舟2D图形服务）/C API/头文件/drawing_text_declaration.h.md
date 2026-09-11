@@ -1,13 +1,14 @@
 # drawing_text_declaration.h
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-text-declaration-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供2D绘制文本相关的数据结构声明。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_Drawing_FontCollection | OH_Drawing_FontCollection | 用于加载字体。 |
@@ -42,13 +46,13 @@
 | OH_Drawing_LineTypography | OH_Drawing_LineTypography | 用于从一段文字中提取单行数据进行排版。 |
 | OH_Drawing_TypographyCreate | OH_Drawing_TypographyCreate | 用于创建OH_Drawing_Typography。 |
 | OH_Drawing_TextBox | OH_Drawing_TextBox | 用于接收文本框的矩形大小、方向和数量大小。 |
-| OH_Drawing_PositionAndAffinity | OH_Drawing_PositionAndAffinity | 用于接收字体的位置和亲和性。 |
-| OH_Drawing_Range | OH_Drawing_Range | 用于接收字体的起始位置和结束位置。 |
+| OH_Drawing_PositionAndAffinity | OH_Drawing_PositionAndAffinity | 用于接收文本的位置和光标的亲和性。 |
+| OH_Drawing_Range | OH_Drawing_Range | 用于接收文本的起始位置和结束位置。 |
 | OH_Drawing_TextShadow | OH_Drawing_TextShadow | 用于管理文本阴影。 |
-| OH_Drawing_FontParser | OH_Drawing_FontParser | 用来解析系统字体文件。 |
+| OH_Drawing_FontParser | OH_Drawing_FontParser | 用于解析系统字体文件。 |
 | OH_Drawing_TextTab | OH_Drawing_TextTab | 用于管理文本制表符。 |
 | OH_Drawing_TextLine | OH_Drawing_TextLine | 用于管理文本行。 |
 | OH_Drawing_Run | OH_Drawing_Run | 用于管理文本渲染单元。 |
-| OH_Drawing_FontFullDescriptor | OH_Drawing_FontFullDescriptor | 用于描述字体的详细信息，即字体描述符。 |
+| OH_Drawing_FontFullDescriptor | OH_Drawing_FontFullDescriptor | 用于描述字体的详细信息。 |
 | OH_Drawing_FontVariationAxis | OH_Drawing_FontVariationAxis | 用于描述字体可变轴。 |
 | OH_Drawing_FontVariationInstance | OH_Drawing_FontVariationInstance | 用于描述字体可变实例，存放预设的可变字体样式信息。 |

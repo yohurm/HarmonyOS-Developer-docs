@@ -1,11 +1,12 @@
 # AIP
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/dataaugmentation-capi-aip
 **支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -17,16 +18,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 文件
+### 文件
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | aip_error_code.h | 描述错误码信息。 |
@@ -34,10 +38,12 @@
  
   
 
-#### 类型定义
+### 类型定义
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | typedef enum OH_Aip_ErrCode OH_Aip_ErrCode | 错误码。 |
@@ -45,10 +51,12 @@
  
   
 
-#### 枚举
+### 枚举
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_Aip_ErrCode { AIP_OK = 0, AIP_E_EXEC_ERR = 1021200005, AIP_E_OUT_OF_RANGE = 1021200006, AIP_E_NO_SUCH_FIELD = 1021200007, AIP_E_OVER_LIMIT = 1021200008, AIP_E_CONDITION_OVER_LIMIT = 1021200009, AIP_E_INVALID_ARGS = 1021200010, AIP_E_EMBEDDING_ERR = 1021200012 } | 错误码信息。 |
@@ -56,13 +64,15 @@
  
   
 
-#### 类型定义说明
+## 类型定义说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### OH_Aip_ErrCode
+### OH_Aip_ErrCode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -78,13 +88,15 @@ typedef enum OH_Aip_ErrCode OH_Aip_ErrCode;
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### OH_Aip_ErrCode
+### OH_Aip_ErrCode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -98,6 +110,7 @@ enum OH_Aip_ErrCode;
  
 **起始版本：** 6.0.0(20)
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AIP_OK = 0 | 操作成功。 |

@@ -1,13 +1,13 @@
 # Canvas对象
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-components-canvas
 
 Canvas组件提供画布，用于自定义绘制图形。具体用法请参考[CanvasRenderingContext2D对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-canvas-canvasrenderingcontext2d)。
 
 
-#### 创建Canvas组件
+## 创建Canvas组件
 
 在pages/index目录下的hml文件中创建一个Canvas组件。
 
@@ -44,7 +44,7 @@ canvas {
 
 
 
-#### 添加样式
+## 添加样式
 
 Canvas组件设置宽（width）、高（height）、背景色（background-color）及边框样式（border）。
 
@@ -80,7 +80,7 @@ canvas {
 
 
 
-#### 添加事件
+## 添加事件
 
 Canvas添加长按事件，长按后可获取Canvas组件的dataUrl值（toDataURL方法返回的图片信息），打印在下方文本区域内。
 
@@ -148,7 +148,7 @@ export default {
 ```
 
 
-![](assets/Canvas对象/file-20260708103903340eff4b.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/6SNudrcGQamUEoP7-Drscg/zh-cn_image_0000002747210691.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073133Z&HW-CC-Expire=86400&HW-CC-Sign=77CF6B1FBFEEC2A10C3BC70517E63185D5465F68D4C2B0BA4634A6902A1BF2EF)
 
 
 > [!NOTE]

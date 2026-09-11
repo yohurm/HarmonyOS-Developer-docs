@@ -1,11 +1,12 @@
 # NetworkBoost_NetworkQosArray
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/network-boost-c-struct-network_qos_array
 **支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -19,16 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | uint32_t pathNum | 网络质量信息中的路径数量，取值范围 [1, 4]。 |
@@ -37,13 +41,15 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### networkQos
+### networkQos
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -57,7 +63,8 @@ NetworkBoost_NetworkQos NetworkBoost_NetworkQosArray::networkQos[NETBOOST_MAX_PA
  
   
 
-#### pathNum
+### pathNum
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 

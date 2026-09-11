@@ -1,9 +1,9 @@
 # GridRow
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-gridrow
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 栅格布局可以为布局提供规律性的结构，解决多尺寸多设备的动态布局问题，保证不同设备上各个模块的布局一致性。
 
@@ -16,17 +16,19 @@
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 可以包含GridCol子组件。
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 GridRow(option?: GridRowOptions)
 
@@ -40,6 +42,7 @@ GridRow(option?: GridRowOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | option | GridRowOptions | 否 | 栅格行布局容器的布局选项。当需要自定义栅格布局（如设置列数、间距、断点位置、排列方向等）时传入此参数。不传入时使用默认配置。GridRow需与GridCol子组件配合使用。 |
@@ -47,9 +50,10 @@ GridRow(option?: GridRowOptions)
 
 
 
-#### GridRowOptions对象说明
+## GridRowOptions对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置栅格行布局容器的布局选项。
 
@@ -58,6 +62,7 @@ GridRow(option?: GridRowOptions)
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -69,9 +74,10 @@ GridRow(option?: GridRowOptions)
 
 
 
-#### GutterOption
+## GutterOption
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 栅格布局间距类型，用于描述栅格子组件不同方向的间距。
 
@@ -81,6 +87,7 @@ GridRow(option?: GridRowOptions)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | x | Length \| GridRowSizeOption | 否 | 是 | 栅格子组件水平方向间距。取值范围：大于等于0的数值或字符串。 默认值：0vp。 非法值：按默认值处理。 单位：vp |
@@ -89,9 +96,10 @@ GridRow(option?: GridRowOptions)
 
 
 
-#### GridRowColumnOption
+## GridRowColumnOption
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 栅格在不同宽度设备类型下的栅格列数配置。
 
@@ -119,6 +127,7 @@ columns: {md:4, lg:8} // 等于配置 columns: {xs:4, sm:4, md:4, lg:8, xl:8, xx
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | xs | number | 否 | 是 | 在最小宽度类型设备上，栅格容器组件的栅格列数。取值为大于0的整数。 - API version 20之前：默认值为12。 - API version 20及之后：默认值为2。 非法值：按默认值处理。 |
@@ -131,9 +140,10 @@ columns: {md:4, lg:8} // 等于配置 columns: {xs:4, sm:4, md:4, lg:8, xl:8, xx
 
 
 
-#### GridRowSizeOption
+## GridRowSizeOption
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 栅格在不同宽度设备类型下的gutter大小配置。
 
@@ -142,6 +152,7 @@ columns: {md:4, lg:8} // 等于配置 columns: {xs:4, sm:4, md:4, lg:8, xl:8, xx
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -155,9 +166,10 @@ columns: {md:4, lg:8} // 等于配置 columns: {xs:4, sm:4, md:4, lg:8, xl:8, xx
 
 
 
-#### BreakPoints
+## BreakPoints
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置栅格容器组件的断点。更多断点的说明参考[栅格容器断点](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-grid-layout#栅格容器断点)。
 
@@ -166,6 +178,7 @@ columns: {md:4, lg:8} // 等于配置 columns: {xs:4, sm:4, md:4, lg:8, xl:8, xx
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -184,9 +197,10 @@ columns: {md:4, lg:8} // 等于配置 columns: {xs:4, sm:4, md:4, lg:8, xl:8, xx
 
 
 
-#### BreakpointsReference枚举说明
+## BreakpointsReference枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置栅格容器组件的断点参照物。
 
@@ -196,6 +210,7 @@ columns: {md:4, lg:8} // 等于配置 columns: {xs:4, sm:4, md:4, lg:8, xl:8, xx
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | WindowSize | 0 | 以窗口为参照。断点计算基于应用窗口尺寸，适用于需要根据窗口整体大小变化进行响应式布局的场景。 |
@@ -204,9 +219,10 @@ columns: {md:4, lg:8} // 等于配置 columns: {xs:4, sm:4, md:4, lg:8, xl:8, xx
 
 
 
-#### GridRowDirection枚举说明
+## GridRowDirection枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 栅格元素排列方向。
 
@@ -220,6 +236,7 @@ columns: {md:4, lg:8} // 等于配置 columns: {xs:4, sm:4, md:4, lg:8, xl:8, xx
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | Row | 0 | 栅格元素按照行方向排列。适用于常规LTR（从左到右）布局场景。 |
@@ -228,17 +245,19 @@ columns: {md:4, lg:8} // 等于配置 columns: {xs:4, sm:4, md:4, lg:8, xl:8, xx
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
 
 
 
-#### alignItems10+
+### alignItems10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 alignItems(value: ItemAlign)
 
@@ -254,6 +273,7 @@ alignItems(value: ItemAlign)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ItemAlign | 是 | GridRow中的GridCol交叉轴方向对齐方式。 默认值：ItemAlign.Start 非法值：按默认值处理。 说明： ItemAlign支持的枚举：ItemAlign.Start、ItemAlign.Center、ItemAlign.End、ItemAlign.Stretch。 |
@@ -261,17 +281,19 @@ alignItems(value: ItemAlign)
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)外，还支持以下事件：
 
 
 
-#### onBreakpointChange
+### onBreakpointChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onBreakpointChange(callback: (breakpoints: string) => void)
 
@@ -289,6 +311,7 @@ onBreakpointChange(callback: (breakpoints: string) => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | (breakpoints: string) => void | 是 | 断点变化时触发的回调函数。参数breakpoints表示当前断点值，取值为"xs"、"sm"、"md"、"lg"、"xl"、"xxl"。 |
@@ -296,13 +319,17 @@ onBreakpointChange(callback: (breakpoints: string) => void)
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（栅格布局的基本用法）
+
+
+### 示例1（栅格布局的基本用法）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例展示GridRow组件的基本用法。
 
@@ -339,12 +366,15 @@ struct GridRowExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/1XGjdJx8QVeBmMTRlPpWVA/zh-cn_image_0000002656008392.png?HW-CC-KV=V1&HW-CC-Date=20260730T071459Z&HW-CC-Expire=86400&HW-CC-Sign=A2DE331BF701E8F800EF7485E38BA76B4A3473ED1D61333FAF1374B1ED487D14)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/AisWuUnST2mf9TP3CZ61JA/zh-cn_image_0000002747292561.png?HW-CC-KV=V1&HW-CC-Date=20260911T073113Z&HW-CC-Expire=86400&HW-CC-Sign=9BEC61CE86074589C6BE856BF0A668319F72DB426ECB0322EDEAC70F9FEA3F52)
 
 
 
 
-#### 示例2（AlignItems的基本用法）
+### 示例2（AlignItems的基本用法）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例展示GridCol组件在不同alignItems对齐方式下的效果。
 
@@ -411,4 +441,4 @@ struct GridRowExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/MHoI2PHaTk-xE4gmoNyFEA/zh-cn_image_0000002655848472.png?HW-CC-KV=V1&HW-CC-Date=20260730T071459Z&HW-CC-Expire=86400&HW-CC-Sign=09FF215FFADA8F04007FABF4E7114EE4A2535CBC6DEA7623FE543473DCAAC4B7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/R_ychib0TzWLCPamxTlGfA/zh-cn_image_0000002747212477.png?HW-CC-KV=V1&HW-CC-Date=20260911T073113Z&HW-CC-Expire=86400&HW-CC-Sign=99BE79CB769485AE8CB8410862D0FC1601C341C5965B6C9C2573F8813F588EF4)

@@ -1,6 +1,6 @@
 # PhotoEditorExtensionContext
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-photoeditorextensioncontext
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -12,7 +12,8 @@ PhotoEditorExtensionContext是PhotoEditorExtensionAbility的上下文，继承�
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -22,7 +23,8 @@ import { common } from '@kit.AbilityKit';
 
 
 
-#### PhotoEditorExtensionContext.saveEditedContentWithUri
+## PhotoEditorExtensionContext.saveEditedContentWithUri
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -36,12 +38,14 @@ saveEditedContentWithUri(uri: string): Promise&lt;AbilityResult&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uri | string | 是 | 编辑后图片的uri，格式为file://&lt;bundleName&gt;/&lt;sandboxPath&gt;。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -51,6 +55,7 @@ saveEditedContentWithUri(uri: string): Promise&lt;AbilityResult&gt;
 **错误码：**
 
 以下错误码详细介绍参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -121,7 +126,8 @@ struct Index {
 
 
 
-#### PhotoEditorExtensionContext.saveEditedContentWithImage
+## PhotoEditorExtensionContext.saveEditedContentWithImage
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -135,6 +141,7 @@ saveEditedContentWithImage(pixeMap: image.PixelMap, option: image.PackingOption)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pixeMap | image.PixelMap | 是 | 编辑过的图片image.PixelMap。 |
@@ -142,6 +149,7 @@ saveEditedContentWithImage(pixeMap: image.PixelMap, option: image.PackingOption)
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -151,6 +159,7 @@ saveEditedContentWithImage(pixeMap: image.PixelMap, option: image.PackingOption)
 **错误码：**
 
 以下错误码详细介绍参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

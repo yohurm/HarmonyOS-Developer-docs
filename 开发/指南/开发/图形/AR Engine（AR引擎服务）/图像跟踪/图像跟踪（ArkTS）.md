@@ -1,21 +1,22 @@
 # 图像跟踪（ArkTS）
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-image-track
 
 本章节给出了关键开发步骤，完整代码可以参考[示例代码](https://gitcode.com/HarmonyOS_Samples/arengine_samplecode_clientdemo_arkts)。
 
 
-#### 约束与限制
+## 约束与限制
 
 从5.1.0(18)开始，图像跟踪能力支持部分Phone、部分Tablet设备。请参考[硬件要求](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-preparations#硬件要求)判断设备是否支持图像跟踪特性（[ARENGINE_FEATURE_TYPE_IMAGE](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-api-arengine#arfeaturetype)）。
 
 
 
-#### 接口说明
+## 接口说明
 
 图像识别主要依赖[ARAugmentedImageDatabase](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-api-arengine#araugmentedimagedatabase)、[ARImage](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-api-arengine#arimage)，以下接口为图像识别相关接口。详细接口和说明，请参考[AR Engine API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-api-arengine)。
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -34,7 +35,7 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 
 AR Engine仅输出识别到的平面数据。为便于用户观察，可使用AGP（Ark Graphics Platform）渲染引擎或者[XComponent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-xcomponent)绘制识别的平面。关于AGP的介绍可以查看[ArkGraphics 3D简介](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkgraphics3d-overview)和[AGP引擎](https://gitcode.com/openharmony/graphic_graphic_3d)。
 
@@ -42,13 +43,13 @@ AR Engine仅输出识别到的平面数据。为便于用户观察，可使用AG
 
 
 
-#### 创建UI页面
+### 创建UI页面
 
 首先创建一个初始UI页面“ARImage.ets”，设置两个按钮，用于实现“添加本地图片”和“读取本地数据库”两个功能，分别命名“ARImageByAdd.ets”和“ARImageByDatabase.ets”。并配置路由进行页面间跳转，页面路由配置详细可查看[组件导航(Navigation) (推荐)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigation-navigation)。
 
 
 
-#### ARImage页面
+### ARImage页面
 
 ```text
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -127,7 +128,7 @@ struct ARImage {
 
 
 
-#### ARImageByAdd页面
+### ARImageByAdd页面
 
 加载本地图片模式。
 1. 选择本地图片进行图像识别能力所需要导入的模块如下：
@@ -432,7 +433,7 @@ const errcode: collections.Map<number, string> = new collections.Map<number, str
 
 
 
-#### ARImageByDatabase页面
+### ARImageByDatabase页面
 
 加载本地数据库模式。
 1. 选择本地数据库进行图像识别能力所需要导入的模块如下：

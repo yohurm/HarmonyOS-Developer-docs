@@ -1,6 +1,6 @@
 # Contacts Kit简介
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/contacts-intro
 
@@ -9,7 +9,7 @@ Contacts Kit（联系人服务）可以帮助开发者轻松实现联系人的�
 详情请参考[@ohos.contact (联系人)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-contact)文档。
 
 
-#### 能力范围
+## 能力范围
 
 通过Contacts Kit，开发者可以对联系人进行管理，包括增加、删除、修改、查询联系人信息。开发者还可以通过Picker的方式，拉起联系人列表。
 
@@ -35,7 +35,7 @@ Contacts Kit（联系人服务）可以帮助开发者轻松实现联系人的�
 
 
 
-#### 使用Picker选择联系人
+## 使用Picker选择联系人
 
 当用户选择联系人的时候，通过Picker的方式，拉起联系人列表，引导用户完成界面操作，接口本身无需申请权限。
 1. 导入相关的联系人模块。
@@ -65,7 +65,7 @@ contact.selectContacts({
 
 
 
-#### 联系人管理（受限开放）
+## 联系人管理（受限开放）
 
 若需要在应用内实现管理联系人的功能，可以使用permissions接口获取应用对联系人的编辑权限。
 1. 声明接口调用所需要的权限。
@@ -126,7 +126,7 @@ struct Contact {
 
 
 
-#### 模拟器支持情况
+## 模拟器支持情况
 
 本Kit支持模拟器。
 

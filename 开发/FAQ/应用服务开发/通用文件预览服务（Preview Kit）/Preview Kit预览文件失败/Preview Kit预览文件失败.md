@@ -81,26 +81,26 @@ struct PreviewKit {
     Column() {
       Button('预览文件')
         .onClick(() => {
-          // 先将待预览的文件写入沙箱中
+         <em> // 先将待预览的文件写入沙箱中</em>
           let uiContext = this.getUIContext().getHostContext() as Context;
           let resMgr = uiContext.resourceManager;
-          // 请将需要预览的文件放在工程目录的/resources/base/media/下，此处以video.mp4为例，请按需修改文件名
+        <em>  // 请将需要预览的文件放在工程目录的/resources/base/media/下，此处以video.mp4为例，请按需修改文件名</em>
           const resource = resMgr.getMediaContentSync($r('app.media.video').id);
-          // 应用沙箱中的文件，此处以video.mp4为例，请按需修改文件名
+      <em>    // 应用沙箱中的文件，此处以video.mp4为例，请按需修改文件名</em>
           const targetPath = uiContext.filesDir + '/' + 'video.mp4';
-          // 创建写入流
+        <em>  // 创建写入流</em>
           const file = fs.openSync(targetPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
           let stream = fs.fdopenStreamSync(file.fd, 'r+');
-          // 写入文件
+        <em>  // 写入文件</em>
           try {
             stream.writeSync(resource.buffer);
           } finally {
             stream.closeSync();
           }
-          // 将沙箱文件路径转成uri形式，防止预览失败
+         <em> // 将沙箱文件路径转成uri形式，防止预览失败</em>
           let uri = fileUri.getUriFromPath(targetPath);
           console.log('Preview-kit ' + uiContext.filesDir);
-          // 传入支持的文件类型且文件存在时会返回true
+         <em> // 传入支持的文件类型且文件存在时会返回true</em>
           filePreview.canPreview(uiContext, uri).then((result) => {
             console.info(`Preview-kit Succeeded in obtaining the result of whether it can be previewed. result = ${result}`);
           }).catch((err: BusinessError) => {
@@ -119,7 +119,7 @@ struct PreviewKit {
             uri: uri,
             mimeType: 'video/mp4'
           };
-          // 打开文件预览
+        <em>  // 打开文件预览</em>
           filePreview.openPreview(uiContext, fileInfo, displayInfo)
             .then(() => {
               console.info('Preview-kit Succeeded in opening preview');

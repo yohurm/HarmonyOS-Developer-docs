@@ -1,13 +1,13 @@
 # 消息认证码计算CMAC(C/C++)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-compute-cmac-ndk
 
 CMAC通过使用分组密码（如AES）和一个密钥来生成认证码，确保消息在传输过程中未被篡改。
 
 
-#### 开发步骤
+## 开发步骤
 
 在调用update接口传入数据时，可以[一次性传入](#cmac一次性传入)，也可以把数据人工[分段传入](#cmac分段传入)。对于同一段数据而言，是否分段，计算结果没有差异。对于数据量较大的数据，开发者可以根据实际需求选择是否分段传入。
 
@@ -15,7 +15,7 @@ CMAC通过使用分组密码（如AES）和一个密钥来生成认证码，确�
 
 
 
-#### CMAC（一次性传入）
+### CMAC（一次性传入）
 1. 调用[OH_CryptoSymKeyGenerator_Create](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-crypto-sym-key-h#oh_cryptosymkeygenerator_create)、[OH_CryptoSymKeyGenerator_Generate](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-crypto-sym-key-h#oh_cryptosymkeygenerator_generate)生成密钥算法为AES128的对称密钥（symKey）。
 2. 调用[OH_CryptoMac_Create](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-crypto-mac-h#oh_cryptomac_create)，指定字符串参数'CMAC'，创建MAC算法为CMAC的MAC生成器。
 3. 调用[OH_CryptoMac_SetParam](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-crypto-mac-h#oh_cryptomac_setparam)，指定参数CRYPTO_MAC_CIPHER_NAME_STR，设置分组密码算法名称。
@@ -154,7 +154,7 @@ cleanup:
 
 
 
-#### CMAC（分段传入）
+### CMAC（分段传入）
 
 与一次性传入的步骤基本相同，区别在于多次调用[OH_CryptoMac_Update](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-crypto-mac-h#oh_cryptomac_update)来处理分段数据。
 

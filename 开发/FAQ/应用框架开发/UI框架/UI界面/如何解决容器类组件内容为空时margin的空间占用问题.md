@@ -40,23 +40,23 @@
 @Entry
 @Component
 struct PageMargin {
-  @State dataSource: string[] = []; // 数据源
-  @State content: boolean = false; // 自行保存容器内部状态
-  @State rowWidth: number = 0; // 状态变量，保存容器组件的宽度
+  @State dataSource: string[] = []; <em>// </em><em>数据源</em>
+  @State content: boolean = false; <em>// </em><em>自行保存容器内部状态</em>
+  @State rowWidth: number = 0; <em>// </em><em>状态变量，保存容器组件的宽度</em>
 
   build() {
     Column({ space: 16 }) {
-      // 方案一
+     <em> // 方案一</em>
       Column() {
-        // 当前Column中无组件
+      <em>  // 当前Column中无组件</em>
       }
       .onAreaChange((oldValue: Area, newValue: Area) => {
         this.rowWidth = newValue.width as number;
         console.info(`rowWidth: ${this.rowWidth}`);
       })
       .backgroundColor('#0a59f7')
-      .margin(this.rowWidth <= 1 ? '0' : '20vp'); // 依据宽度控制margin
-      // 方案二
+      .margin(this.rowWidth <= 1 ? '0' : '20vp');<em> </em><em>// 依据宽度控制margin</em>
+    <em>  // </em><em>方案二</em>
       Column({ space: 16 }) {
         Button('toggle')
           .backgroundColor('#0a59f7')
@@ -69,7 +69,7 @@ struct PageMargin {
       }
       .margin(this.content === true ? '20vp' : '0');
 
-      // 方案三
+    <em>  // 方案三</em>
       Button('add dataSource')
         .backgroundColor('#0a59f7')
         .onClick(() => {

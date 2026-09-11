@@ -1,9 +1,9 @@
 # SymbolSpan
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-symbolspan
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 SymbolSpan作为Text组件的子组件，用于在文本中显示系统预置的图标小符号（Symbol图标）。支持设置颜色、大小、粗细、渲染策略和动效策略等属性，适用于需要在文本中嵌入图标符号的场景，如状态指示、功能标识等。SymbolSpan仅支持系统预置的symbol资源，可继承父组件Text的属性设置。
  
@@ -12,17 +12,19 @@ SymbolSpan作为Text组件的子组件，用于在文本中显示系统预置的
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 不支持子组件。
  
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 SymbolSpan(value: Resource)
  
@@ -34,6 +36,7 @@ SymbolSpan(value: Resource)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Resource | 是 | SymbolSpan组件的资源引用，如 \$r('sys.symbol.ohos_wifi')。仅支持系统预置的symbol资源，引用非symbol资源将显示异常。 |
@@ -45,17 +48,19 @@ SymbolSpan(value: Resource)
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 不支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)，支持以下属性：
  
   
 
-#### fontColor
+### fontColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontColor(value: Array&lt;ResourceColor&gt;)
  
@@ -73,6 +78,7 @@ fontColor(value: Array&lt;ResourceColor&gt;)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Array&lt;ResourceColor&gt; | 是 | SymbolSpan组件颜色。具体颜色渲染模式及其说明请参考SymbolRenderingStrategy。 |
@@ -80,9 +86,10 @@ fontColor(value: Array&lt;ResourceColor&gt;)
  
   
 
-#### fontSize
+### fontSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontSize(value: number | string | Resource)
  
@@ -100,6 +107,7 @@ fontSize(value: number | string | Resource)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| string \| Resource | 是 | SymbolSpan组件大小。 取值范围：[0, +∞) 单位：fp |
@@ -107,9 +115,10 @@ fontSize(value: number | string | Resource)
  
   
 
-#### fontWeight
+### fontWeight
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontWeight(value: number | FontWeight | string)
  
@@ -129,6 +138,7 @@ sys.symbol.ohos_lungs图标不支持设置fontWeight。
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| FontWeight \| string | 是 | SymbolSpan组件字体粗细。 number类型取值[100, 900]，取值间隔为100，默认为400，取值越大，字体越粗。string类型仅支持number类型取值的字符串形式，例如“400”，以及“bold”、“bolder”、“lighter”、“regular”、“medium”，分别对应FontWeight中相应的枚举值。设置过大可能会在不同字体下有截断。传入超出取值范围或不符合间隔要求的值时取默认值。 |
@@ -136,9 +146,10 @@ sys.symbol.ohos_lungs图标不支持设置fontWeight。
  
   
 
-#### fontWeight
+### fontWeight
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontWeight(value: number | FontWeight | ResourceStr, fontWeightConfigs?: FontWeightConfigs)
  
@@ -158,17 +169,19 @@ sys.symbol.ohos_lungs图标不支持设置fontWeight。
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| FontWeight \| ResourceStr | 是 | SymbolSpan组件字体粗细。 number类型取值[100, 900]，取值间隔为100，默认为400，取值越大，字体越粗。string类型仅支持number类型取值的字符串形式，例如“400”，以及“bold”、“bolder”、“lighter”、“regular”、“medium”，分别对应FontWeight中相应的枚举值。设置过大可能会在不同字体下有截断。 传入超出取值范围的值时取默认值。传入不符合间隔要求的值时，若设置fontWeightConfigs的enableVariableFontWeight为true，使用传入值；若设置为false，使用默认值。 |
-| fontWeightConfigs | FontWeightConfigs | 否 | 字体粗细配置。当需要启用可变字重调节（设置非100整数倍的精细字重值如220、660）或跟随设备字体粗细级别自动更新字重时传入此参数。默认值继承FontWeightConfigs。 |
+| fontWeightConfigs | FontWeightConfigs | 否 | 字体粗细配置。当需要启用可变字重调节（设置非100整数倍的精细字重值如220、660）或跟随设备字体粗细级别自动更新字重时传入此参数。 默认值：{ enableVariableFontWeight: false, enableDeviceFontWeightCategory: true } |
  
  
   
 
-#### renderingStrategy
+### renderingStrategy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 renderingStrategy(value: SymbolRenderingStrategy)
  
@@ -188,6 +201,7 @@ SINGLE表示单色渲染，适用于需要统一颜色的图标显示场景；MU
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | SymbolRenderingStrategy | 是 | SymbolSpan渲染策略。 |
@@ -196,14 +210,15 @@ SINGLE表示单色渲染，适用于需要统一颜色的图标显示场景；MU
 不同渲染策略效果可参考以下示意图。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/wjx7OSj7QUerXTPSmXTiYA/zh-cn_image_0000002655848712.png?HW-CC-KV=V1&HW-CC-Date=20260730T071506Z&HW-CC-Expire=86400&HW-CC-Sign=01E64EC2A197E29F2820B52A3C535CD9DC23EA571026DD6D009451B2880931BF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/9TCBy-C0T5azyRkKGhdIHQ/zh-cn_image_0000002747292803.png?HW-CC-KV=V1&HW-CC-Date=20260911T073108Z&HW-CC-Expire=86400&HW-CC-Sign=75614DAF3453A82B1A71314CB38E419AC06E8AB3461AF04971EAA69AEFA55543)
 
  
   
 
-#### effectStrategy
+### effectStrategy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 effectStrategy(value: SymbolEffectStrategy)
  
@@ -225,6 +240,7 @@ NONE表示无动效，适用于静态展示场景；SCALE表示整体缩放动�
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | SymbolEffectStrategy | 是 | SymbolSpan动效策略。 |
@@ -232,9 +248,10 @@ NONE表示无动效，适用于静态展示场景；SCALE表示整体缩放动�
  
   
 
-#### attributeModifier12+
+### attributeModifier12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 attributeModifier(modifier: AttributeModifier&lt;SymbolSpanAttribute&gt;)
  
@@ -246,6 +263,7 @@ attributeModifier(modifier: AttributeModifier&lt;SymbolSpanAttribute&gt;)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | modifier | AttributeModifier&lt;SymbolSpanAttribute&gt; | 是 | 动态设置组件的属性。 |
@@ -253,21 +271,26 @@ attributeModifier(modifier: AttributeModifier&lt;SymbolSpanAttribute&gt;)
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 不支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)。
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 示例1（设置渲染和动效策略）
+### 示例1（设置渲染和动效策略）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 11开始，该示例通过[renderingStrategy](#renderingstrategy)、[effectStrategy](#effectstrategy)属性展示了不同的渲染和动效策略。
  
@@ -373,12 +396,15 @@ struct Index {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/cTBb9pmCRtqmED_X6SRTzA/zh-cn_image_0000002686088143.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071506Z&HW-CC-Expire=86400&HW-CC-Sign=D8431C96466B940214A7344F2C54F008FF1239A94228058ECE5279C3A45E8EF8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/xxis8GwbRACnFltZdZHEDw/zh-cn_image_0000002747212719.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073108Z&HW-CC-Expire=86400&HW-CC-Sign=8B23AB7C9EB2098F56A5287F0AD784A5C6C1D863C6E6BA136634A49065A7A215)
 
  
   
 
-#### 示例2（设置动态属性）
+### 示例2（设置动态属性）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 12开始，该示例通过[attributeModifier](#attributemodifier12)属性创建指定样式图标。
  
@@ -411,12 +437,15 @@ struct Index {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/pkvr5CKbR_eSvNEA8tZCnA/zh-cn_image_0000002685928313.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071506Z&HW-CC-Expire=86400&HW-CC-Sign=249842CFF8B0EB80B234F99B6CD9972C4C486E0850923AA39AE22BC049DE4AE1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/4kS3c1B2TUyo4FKucywOeA/zh-cn_image_0000002717772784.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073108Z&HW-CC-Expire=86400&HW-CC-Sign=C6DC9A6B6404E42693FA293424CD1FD871835AC1DFB3F26405C8DBD43FB6B1E4)
 
  
   
 
-#### 示例3（设置字体粗细）
+### 示例3（设置字体粗细）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[fontWeight](#fontweight-1)属性展示SymbolSpan不同粗细配置下的效果：第一行图标小符号展示启用可变字重后，分别设置字重值为220和660的效果；第二行图标小符号展示在将设备的系统字体粗细设置为粗体后，分别设置跟随和不跟随设备的字体粗细级别自动更新的效果。
  
@@ -487,4 +516,4 @@ struct Index {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/dD35MvvjTa2cT9TcMVQ12Q/zh-cn_image_0000002656008634.png?HW-CC-KV=V1&HW-CC-Date=20260730T071506Z&HW-CC-Expire=86400&HW-CC-Sign=5141042A62B65F647C17F6E5E7E79478A772EA8996AB30DEEEB241B96C62B35E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/HdftmeMRRLmDV8_2zHclPg/zh-cn_image_0000002717612852.png?HW-CC-KV=V1&HW-CC-Date=20260911T073108Z&HW-CC-Expire=86400&HW-CC-Sign=E441DDD5D28F121179E0DD6C6CD864D748CAF14F29D6FE6ECECB14D8341D644C)

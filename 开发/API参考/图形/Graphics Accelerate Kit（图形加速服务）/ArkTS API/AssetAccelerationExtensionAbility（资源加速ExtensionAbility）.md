@@ -1,6 +1,6 @@
 # AssetAccelerationExtensionAbility（资源加速ExtensionAbility）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/graphics-accelerate-extensionability
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -10,7 +10,8 @@
 **起始版本：** 5.1.0(18)
   
 
-#### 约束限制
+## 约束限制
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -42,7 +43,8 @@
  
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -52,7 +54,8 @@ import { AssetAccelerationExtensionAbility } from '@kit.GraphicsAccelerateKit';
  
   
 
-#### AssetAccelerationExtensionInfo
+## AssetAccelerationExtensionInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -64,6 +67,7 @@ import { AssetAccelerationExtensionAbility } from '@kit.GraphicsAccelerateKit';
  
 **起始版本：** 5.1.0(18)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | maxBackgroundDownloadSize | number | 是 | 否 | 最大的资源大小，单位：Byte。只有当用户设备剩余存储空间大于maxBackgroundDownloadSize的三倍时，资源加速ExtensionAbility才会使能。 默认值：0。 maxBackgroundDownloadSize为用户在AGC平台上申请资源预下载服务时填写的包体大小。 |
@@ -72,7 +76,8 @@ import { AssetAccelerationExtensionAbility } from '@kit.GraphicsAccelerateKit';
  
   
 
-#### ContentRequestType
+## ContentRequestType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -86,6 +91,7 @@ type ContentRequestType = 'INSTALL' | 'UPDATE' | 'IDLE'
  
 **起始版本：** 5.1.0(18)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | 'INSTALL' | 安装。 |
@@ -95,7 +101,8 @@ type ContentRequestType = 'INSTALL' | 'UPDATE' | 'IDLE'
  
   
 
-#### AssetAccelerationExtensionAbility
+## AssetAccelerationExtensionAbility
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -109,7 +116,8 @@ type ContentRequestType = 'INSTALL' | 'UPDATE' | 'IDLE'
  
   
 
-#### 属性
+### 属性
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -119,6 +127,7 @@ type ContentRequestType = 'INSTALL' | 'UPDATE' | 'IDLE'
  
 **起始版本：** 5.1.0(18)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | context | AssetAccelerationExtensionContext | 否 | 否 | AssetAccelerationExtensionAbility的上下文环境，继承自ExtensionContext。 |
@@ -126,7 +135,8 @@ type ContentRequestType = 'INSTALL' | 'UPDATE' | 'IDLE'
  
   
 
-#### onDownloadContentRequest
+### onDownloadContentRequest
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -142,6 +152,7 @@ onDownloadContentRequest(requestType: ContentRequestType, manifestUrl: string, a
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | requestType | ContentRequestType | 是 | 内容请求类型。 |
@@ -151,6 +162,7 @@ onDownloadContentRequest(requestType: ContentRequestType, manifestUrl: string, a
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<assetDownloadManager.AssetDownloadConfig[]> | Promise对象。返回资源包下载任务的配置信息列表，最多返回200条配置信息。 |
@@ -188,7 +200,8 @@ export default class AssetAccelExtAbility extends AssetAccelerationExtensionAbil
  
   
 
-#### onDownloadWithAppControl
+### onDownloadWithAppControl
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -204,6 +217,7 @@ onDownloadWithAppControl(requestType: ContentRequestType, manifestUrl: string, a
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | requestType | ContentRequestType | 是 | 内容请求类型。 |
@@ -213,6 +227,7 @@ onDownloadWithAppControl(requestType: ContentRequestType, manifestUrl: string, a
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。 - 返回true：应用自身下载器已开启资源包下载。 - 返回false：应用自身下载器无下载任务。 |
@@ -242,7 +257,8 @@ export default class AssetAccelExtAbility extends AssetAccelerationExtensionAbil
  
   
 
-#### onBackgroundDownloadSucceeded
+### onBackgroundDownloadSucceeded
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -258,6 +274,7 @@ onBackgroundDownloadSucceeded(downloadTask: assetDownloadManager.AssetDownloadTa
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | downloadTask | assetDownloadManager.AssetDownloadTask | 是 | 下载任务信息。 |
@@ -266,6 +283,7 @@ onBackgroundDownloadSucceeded(downloadTask: assetDownloadManager.AssetDownloadTa
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -290,7 +308,8 @@ export default class AssetAccelExtAbility extends AssetAccelerationExtensionAbil
  
   
 
-#### onBackgroundDownloadFailed
+### onBackgroundDownloadFailed
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -306,6 +325,7 @@ onBackgroundDownloadFailed(downloadTask: assetDownloadManager.AssetDownloadTask,
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | downloadTask | assetDownloadManager.AssetDownloadTask | 是 | 下载任务信息。 |
@@ -314,6 +334,7 @@ onBackgroundDownloadFailed(downloadTask: assetDownloadManager.AssetDownloadTask,
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -338,7 +359,8 @@ export default class AssetAccelExtAbility extends AssetAccelerationExtensionAbil
  
   
 
-#### onExtensionWillTerminate
+### onExtensionWillTerminate
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -354,6 +376,7 @@ onExtensionWillTerminate(error?: BusinessError&lt;void&gt;): Promise&lt;void&gt;
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | error | BusinessError&lt;void&gt; | 否 | 错误码： 401：参数错误。 1016600005：资源加速ExtensionAbility方法执行超时。 1016600006：资源加速ExtensionAbility生命周期方法出现异常。 1016600094：服务异常。 |
@@ -361,6 +384,7 @@ onExtensionWillTerminate(error?: BusinessError&lt;void&gt;): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |

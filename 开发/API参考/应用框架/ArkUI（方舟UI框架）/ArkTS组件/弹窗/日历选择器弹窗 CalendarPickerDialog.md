@@ -1,9 +1,9 @@
 # 日历选择器弹窗 (CalendarPickerDialog)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-calendarpicker-dialog
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 点击日期弹出日历选择器弹窗，可在弹窗内选择日期。适用于需要在应用中进行日期选择的场景，如日程管理、预订系统、表单填写等。
 
@@ -12,15 +12,17 @@
 
 
 
-#### CalendarPickerDialog
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## CalendarPickerDialog
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### show
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### show
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 static show(options?: CalendarDialogOptions): void
 
@@ -36,6 +38,7 @@ static show(options?: CalendarDialogOptions): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | CalendarDialogOptions | 否 | 配置日历选择器弹窗的参数，缺省时无法弹出弹窗。 |
@@ -43,9 +46,10 @@ static show(options?: CalendarDialogOptions): void
 
 
 
-#### CalendarDialogOptions对象说明
+## CalendarDialogOptions对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 日历选择器弹窗选项。
 
@@ -56,6 +60,7 @@ static show(options?: CalendarDialogOptions): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **设备行为差异：** 该接口在Wearable设备上不支持，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -85,13 +90,17 @@ static show(options?: CalendarDialogOptions): void
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 示例1（设置弹窗背板）
+
+
+### 示例1（设置弹窗背板）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例通过[CalendarDialogOptions](#calendardialogoptions对象说明)的backgroundColor、backgroundBlurStyle、shadow设置日历选择器弹窗背板。
 
@@ -151,7 +160,10 @@ struct CalendarPickerDialogExample {
 
 
 
-#### 示例2（自定义按钮样式）
+### 示例2（自定义按钮样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 从API version 12开始，该示例通过配置[CalendarDialogOptions](#calendardialogoptions对象说明)的acceptButtonStyle、cancelButtonStyle实现自定义日历选择器弹窗按钮样式。
 
@@ -211,7 +223,10 @@ struct CalendarPickerDialogExample {
 
 
 
-#### 示例3（悬停态弹窗）
+### 示例3（悬停态弹窗）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 从API version 14开始，该示例展示了在折叠屏悬停态下设置dialog布局区域的效果。
 
@@ -265,7 +280,10 @@ struct CalendarPickerDialogExample {
 
 
 
-#### 示例4（设置日期选中态底板样式）
+### 示例4（设置日期选中态底板样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 从API version 10开始，该示例通过[CalendarOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-calendarpicker#calendaroptions对象说明)的hintRadius设置日期选中态底板样式。
 
@@ -303,7 +321,10 @@ struct CalendarPickerDialogExample {
 
 
 
-#### 示例5（设置开始日期和结束日期）
+### 示例5（设置开始日期和结束日期）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 从API version 18开始，该示例通过[CalendarOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-calendarpicker#calendaroptions对象说明)的start和end设置日历选择器弹窗的开始日期和结束日期。
 
@@ -340,7 +361,10 @@ struct CalendarPickerDialogExample {
 
 
 
-#### 示例6（设置系统当前日期在日历选择器弹窗内保持高亮显示，并设置禁用日期区间）
+### 示例6（设置系统当前日期在日历选择器弹窗内保持高亮显示，并设置禁用日期区间）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 从API version 19开始，该示例通过配置[CalendarDialogOptions](#calendardialogoptions对象说明)的markToday，使系统当前日期在日历选择器弹窗内保持高亮显示，并通过配置[CalendarOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-calendarpicker#calendaroptions对象说明)的disabledDateRange设置禁用的日期区间。
 
@@ -376,7 +400,10 @@ struct CalendarPickerDialogExample {
 
 
 
-#### 示例7（自定义背景模糊效果参数）
+### 示例7（自定义背景模糊效果参数）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 从API version 19开始，该示例通过配置[backgroundBlurStyleOptions](#calendardialogoptions对象说明)，实现自定义背景模糊效果。
 
@@ -414,12 +441,15 @@ struct CalendarPickerDialogExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/iq4L-_vPQRGJ_8jaCXck4g/zh-cn_image_0000002686088367.png?HW-CC-KV=V1&HW-CC-Date=20260730T071515Z&HW-CC-Expire=86400&HW-CC-Sign=714BF5BFF7A3B009D1FFC3A420AB0D6C334A818A5129CBCFB8D52B13F463E18E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/O5oJGBa5ROGK9MUDvJ0Brg/zh-cn_image_0000002747293027.png?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=172382D35B3E9DAEB07A2B5046C3551499085A2BADCB7E03D4B47730D3AB68A3)
 
 
 
 
-#### 示例8（自定义背景效果参数）
+### 示例8（自定义背景效果参数）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 从API version 19开始，该示例通过配置[backgroundEffect](#calendardialogoptions对象说明)，实现自定义背景效果。
 
@@ -458,4 +488,44 @@ struct CalendarPickerDialogExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/WBDVl3wAT5SWpxBptgYApg/zh-cn_image_0000002685928535.png?HW-CC-KV=V1&HW-CC-Date=20260730T071515Z&HW-CC-Expire=86400&HW-CC-Sign=7A7EED980C7102AF9FE08387CCCD7963BB9B12938CDE713374F1ED0913D4A835)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/Zcev2vXHQmeLZ2dwcH8xPw/zh-cn_image_0000002747212943.png?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=5636EE678DD209D16E52D71AFA51FBF13E2930154802FC7A95177FC4FBC5DB83)
+
+
+
+
+### 示例9（设置系统材质）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+该示例通过配置[systemMaterial](#calendardialogoptions对象说明)，实现系统材质效果。
+
+从API版本26.0.0开始，在CalendarDialogOptions中新增了systemMaterial属性。
+
+```text
+import { uiMaterial } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct CalendarPickerDialogExample {
+  private selectedDate: Date = new Date('2025-08-05');
+
+  build() {
+    Stack({ alignContent: Alignment.Top }) {
+      Column() {
+        Button('Show CalendarPicker Dialog')
+          .margin(20)
+          .onClick(() => {
+            CalendarPickerDialog.show({
+              selected: this.selectedDate,
+              systemMaterial: new uiMaterial.ImmersiveMaterial({ style: uiMaterial.ImmersiveStyle.ULTRA_THICK })
+            });
+          })
+      }.width('100%')
+    }
+  }
+}
+```
+
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/yyo_dVXlRQuia01C44C3dw/zh-cn_image_0000002717773008.png?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=3BCE98340AB6453348A55A5612E265F8A54F3ACBCAF7962FDAF752F8D7EFB4AC)

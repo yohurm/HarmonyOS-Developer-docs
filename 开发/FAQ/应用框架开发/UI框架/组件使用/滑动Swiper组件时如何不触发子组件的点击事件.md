@@ -104,7 +104,7 @@ struct TapGestureExample {
   build() {
     Column() {
       Swiper() {
-        // 单指双击文本触发手势事件
+       <em> // 单指双击文本触发手势事件</em>
         Text('Click twice').fontSize(28)
           .gesture(
             TapGesture({ count: 2, distanceThreshold: 50 })

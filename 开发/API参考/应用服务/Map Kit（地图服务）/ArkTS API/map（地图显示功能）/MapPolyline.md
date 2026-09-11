@@ -1,11 +1,12 @@
 # Interface (MapPolyline)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-mappolyline
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -15,7 +16,8 @@ import { map, mapCommon } from '@kit.MapKit';
  
   
 
-#### MapPolyline
+## MapPolyline
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -56,7 +58,8 @@ let mapPolyline = await this.mapController.addPolyline(polylineOption);
  
   
 
-#### getColor
+### getColor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -74,6 +77,7 @@ getColor(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | ARGB格式颜色值。 |
@@ -87,7 +91,8 @@ let color: number = mapPolyline.getColor();
  
   
 
-#### getColors
+### getColors
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -105,6 +110,7 @@ getColors(): Array&lt;number&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;number&gt; | 折线的分段颜色值数组。 |
@@ -118,7 +124,8 @@ let colors: Array<number> = mapPolyline.getColors();
  
   
 
-#### getEndCap
+### getEndCap
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -136,6 +143,7 @@ getEndCap(): mapCommon.CapStyle
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | mapCommon.CapStyle | 折线的末尾端点样式。 |
@@ -149,7 +157,8 @@ let endCap: mapCommon.CapStyle = mapPolyline.getEndCap();
  
   
 
-#### getJointType
+### getJointType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -167,6 +176,7 @@ getJointType(): mapCommon.JointType
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | mapCommon.JointType | 折线除起始和结束顶点之外的所有顶点的节点类型属性。 |
@@ -180,7 +190,8 @@ let jointType: mapCommon.JointType = mapPolyline.getJointType();
  
   
 
-#### getPatterns
+### getPatterns
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -198,6 +209,7 @@ getPatterns(): Array<mapCommon.PatternItem>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Array<mapCommon.PatternItem> | 折线的样式属性。 |
@@ -211,7 +223,8 @@ let patterns: Array<mapCommon.PatternItem> = mapPolyline.getPatterns();
  
   
 
-#### getPoints
+### getPoints
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -229,6 +242,7 @@ getPoints(): Array<mapCommon.LatLng>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Array<mapCommon.LatLng> | 折线的顶点坐标属性。 |
@@ -242,7 +256,8 @@ let points: Array<mapCommon.LatLng> = mapPolyline.getPoints();
  
   
 
-#### getStartCap
+### getStartCap
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -260,6 +275,7 @@ getStartCap(): mapCommon.CapStyle
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | mapCommon.CapStyle | 折线的起始端点样式。 |
@@ -273,7 +289,8 @@ let startCap: mapCommon.CapStyle = mapPolyline.getStartCap();
  
   
 
-#### getWidth
+### getWidth
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -291,6 +308,7 @@ getWidth(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 折线的宽度属性，单位：px。 |
@@ -304,7 +322,8 @@ let width: number = mapPolyline.getWidth();
  
   
 
-#### isClickable
+### isClickable
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -322,6 +341,7 @@ isClickable(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 折线的可点击性。 - true：可点击 - false：不可点击 |
@@ -335,7 +355,8 @@ let isClickable: boolean = mapPolyline.isClickable();
  
   
 
-#### isGeodesic
+### isGeodesic
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -353,6 +374,7 @@ isGeodesic(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 折线的大地线属性。 - true：大地线 - false：非大地线 |
@@ -366,7 +388,8 @@ let isGeodesic: boolean = mapPolyline.isGeodesic();
  
   
 
-#### isGradient
+### isGradient
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -384,6 +407,7 @@ isGradient(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 折线的渐变属性。 - true：渐变 - false：不渐变 |
@@ -397,7 +421,8 @@ let isGradient: boolean = mapPolyline.isGradient();
  
   
 
-#### setClickable
+### setClickable
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -415,6 +440,7 @@ setClickable(clickable: boolean): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | clickable | boolean | 是 | 设置折线是否可以点击，异常值不处理。 - true：可以 - false：不可以 |
@@ -428,7 +454,8 @@ mapPolyline.setClickable(true);
  
   
 
-#### setColor
+### setColor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -446,6 +473,7 @@ setColor(color: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | number | 是 | ARGB格式颜色值，异常值不处理。 |
@@ -459,7 +487,8 @@ mapPolyline.setColor(0xff000000);
  
   
 
-#### setColors
+### setColors
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -477,6 +506,7 @@ setColors(colors: Array&lt;number&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | colors | Array&lt;number&gt; | 是 | 多段颜色，ARGB格式颜色值数组，异常值不处理。 |
@@ -490,7 +520,8 @@ mapPolyline.setColors([0xffffff00, 0xff000000]);
  
   
 
-#### setEndCap
+### setEndCap
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -508,6 +539,7 @@ setEndCap(endCap: mapCommon.CapStyle): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | endCap | mapCommon.CapStyle | 是 | 折线的末尾端点样式，异常值不处理。 |
@@ -521,7 +553,8 @@ mapPolyline.setEndCap(mapCommon.CapStyle.BUTT);
  
   
 
-#### setGeodesic
+### setGeodesic
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -539,6 +572,7 @@ setGeodesic(geodesic: boolean): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | geodesic | boolean | 是 | 将折线的每个线段绘制为大地线，异常值不处理。 - true：每段绘制为大地线 - false：不是大地线 |
@@ -552,7 +586,8 @@ mapPolyline.setGeodesic(true);
  
   
 
-#### setGradient
+### setGradient
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -570,6 +605,7 @@ setGradient(gradient: boolean): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | gradient | boolean | 是 | 设置折线的渐变属性是否启用，异常值不处理。 - true：渐变 - false：不渐变 |
@@ -583,7 +619,8 @@ mapPolyline.setGradient(true);
  
   
 
-#### setJointType
+### setJointType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -601,6 +638,7 @@ setJointType(jointType: mapCommon.JointType): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | jointType | mapCommon.JointType | 是 | 节点类型，异常值不处理。 |
@@ -614,7 +652,8 @@ mapPolyline.setJointType(mapCommon.JointType.DEFAULT);
  
   
 
-#### setPatterns
+### setPatterns
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -632,6 +671,7 @@ setPatterns(patterns: Array<mapCommon.PatternItem>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | patterns | Array<mapCommon.PatternItem> | 是 | PatternItem对象的集合，异常值不处理。 |
@@ -650,7 +690,8 @@ mapPolyline.setPatterns(linePattern);
  
   
 
-#### setPoints
+### setPoints
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -668,6 +709,7 @@ setPoints(points: Array<mapCommon.LatLng>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | points | Array<mapCommon.LatLng> | 是 | 折线顶点的集合。默认情况下，折线不闭合；要形成闭合的折线，起点和终点必须相同，异常值不处理。 |
@@ -688,7 +730,8 @@ mapPolyline.setPoints(points);
  
   
 
-#### setStartCap
+### setStartCap
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -706,6 +749,7 @@ setStartCap(startCap: mapCommon.CapStyle): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | startCap | mapCommon.CapStyle | 是 | 折线的起始端点样式，异常值不处理。 |
@@ -719,7 +763,8 @@ mapPolyline.setStartCap(mapCommon.CapStyle.BUTT);
  
   
 
-#### setWidth
+### setWidth
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -737,6 +782,7 @@ setWidth(width: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | width | number | 是 | 折线的宽度，单位：px，取值范围：大于等于0，异常值不处理。 |
@@ -750,7 +796,8 @@ mapPolyline.setWidth(20);
  
   
 
-#### setCustomTexture
+### setCustomTexture
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -768,6 +815,7 @@ setCustomTexture(customTexture: ResourceStr | image.PixelMap): Promise&lt;void&g
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | customTexture | ResourceStr \| image.PixelMap | 是 | 折线纹理。建议纹理使用没有背景色（透明色）的图片，异常值不处理。 |
@@ -775,6 +823,7 @@ setCustomTexture(customTexture: ResourceStr | image.PixelMap): Promise&lt;void&g
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -789,7 +838,8 @@ await mapPolyline.setCustomTexture("icon/naviline_arrow.png");
  
   
 
-#### setCustomTexture
+### setCustomTexture
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -807,6 +857,7 @@ setCustomTexture(customTexture: ResourceStr | image.PixelMap, isTextureMappingUs
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | customTexture | ResourceStr \| image.PixelMap | 是 | 折线纹理。建议纹理使用没有背景色（透明色）的图片，异常值不处理。 |
@@ -815,6 +866,7 @@ setCustomTexture(customTexture: ResourceStr | image.PixelMap, isTextureMappingUs
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -829,7 +881,8 @@ await mapPolyline.setCustomTexture("icon/naviline_arrow.png", true);
  
   
 
-#### setCustomTextureIndexes
+### setCustomTextureIndexes
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -847,6 +900,7 @@ setCustomTextureIndexes(customTextureIndexes: number[]): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | customTextureIndexes | number[] | 是 | 每个坐标对应的纹理索引。数组长度需要和points的数量保持一致，数组中的元素取值范围：自然数，异常值不处理。 |
@@ -854,6 +908,7 @@ setCustomTextureIndexes(customTextureIndexes: number[]): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -867,7 +922,8 @@ await mapPolyline.setCustomTextureIndexes([0,1,0]);
  
   
 
-#### addLineText
+### addLineText
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -885,6 +941,7 @@ addLineText(lineText: mapCommon.LineText): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | lineText | mapCommon.LineText | 是 | 折线的线条文本参数，异常值作为无响应处理。 |
@@ -907,7 +964,8 @@ mapPolyline.addLineText(textLine);
  
   
 
-#### removeLineText
+### removeLineText
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 

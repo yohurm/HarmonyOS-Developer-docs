@@ -1,9 +1,9 @@
 # PasteButton
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-security-components-pastebutton
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 安全控件的粘贴控件。用户点击粘贴控件，应用可以临时获取读取剪贴板权限。
 
@@ -12,13 +12,17 @@
 
 
 
-#### 关键Class/Interface介绍
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 关键Class/Interface介绍
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 核心枚举类型
+
+
+### 核心枚举类型
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
  - **[PasteIconStyle](#pasteiconstyle)：** 粘贴控件图标风格枚举，用于指定控件展示的图标风格。
  - **[PasteDescription](#pastedescription)：** 粘贴控件文本描述枚举，用于指定控件展示的文本描述。
@@ -27,7 +31,10 @@
 
 
 
-#### 核心接口类型
+### 核心接口类型
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
  - **[PasteButtonOptions](#pastebuttonoptions)：** 粘贴控件配置对象，用于指定图标、文字和按钮类型等元素属性。
  - **[PasteButtonCallback](#pastebuttoncallback18)：** 粘贴控件点击回调类型，用于返回点击事件、授权结果和错误信息。
@@ -35,23 +42,26 @@
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 不支持。
 
 
 
-#### 接口
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 接口
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### PasteButton
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### PasteButton
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 PasteButton()
 
@@ -67,9 +77,10 @@ PasteButton()
 
 
 
-#### PasteButton
+### PasteButton
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 PasteButton(options: PasteButtonOptions)
 
@@ -85,6 +96,7 @@ PasteButton(options: PasteButtonOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | PasteButtonOptions | 是 | 粘贴控件的配置选项，用于指定图标、文本和按钮类型等元素属性。建议至少显式设置icon或text中的一项，以便用户清楚识别控件用途。 若icon和text都未传入，则options不生效，控件显示为默认样式： { icon: PasteIconStyle.LINES, text: PasteDescription.PASTE, buttonType: ButtonType.Capsule } |
@@ -92,9 +104,10 @@ PasteButton(options: PasteButtonOptions)
 
 
 
-#### PasteButtonOptions
+## PasteButtonOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于设置粘贴控件的图标、文本、按钮类型等属性。
 
@@ -108,6 +121,7 @@ PasteButton(options: PasteButtonOptions)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | icon | PasteIconStyle | 否 | 是 | 设置粘贴控件的图标风格。 不传入该参数表示不显示图标；若同时也不传text，控件将显示为默认样式。 |
@@ -117,17 +131,19 @@ PasteButton(options: PasteButtonOptions)
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 不支持通用属性，仅继承[安全控件通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-securitycomponent-attributes)。
 
 
 
-#### PasteIconStyle
+## PasteIconStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 粘贴控件的图标风格。
 
@@ -137,6 +153,7 @@ PasteButton(options: PasteButtonOptions)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | LINES | 0 | 粘贴控件展示线条样式图标。 |
@@ -144,9 +161,10 @@ PasteButton(options: PasteButtonOptions)
 
 
 
-#### PasteDescription
+## PasteDescription
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 粘贴控件的文本描述。
 
@@ -156,6 +174,7 @@ PasteButton(options: PasteButtonOptions)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | PASTE | 0 | 粘贴控件的文字描述为“粘贴”。 |
@@ -163,9 +182,10 @@ PasteButton(options: PasteButtonOptions)
 
 
 
-#### PasteButtonOnClickResult
+## PasteButtonOnClickResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 粘贴控件点击后的授权结果。
 
@@ -175,6 +195,7 @@ PasteButton(options: PasteButtonOptions)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SUCCESS | 0 | 粘贴控件点击后权限授权成功。 |
@@ -183,9 +204,10 @@ PasteButton(options: PasteButtonOptions)
 
 
 
-#### PasteButtonCallback18+
+## PasteButtonCallback18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type PasteButtonCallback = (event: ClickEvent, result: PasteButtonOnClickResult, error?: BusinessError&lt;void&gt;) => void
 
@@ -199,6 +221,7 @@ type PasteButtonCallback = (event: ClickEvent, result: PasteButtonOnClickResult,
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | ClickEvent | 是 | 点击事件对象，包含点击的位置、时间戳、输入设备等信息。 |
@@ -208,17 +231,19 @@ type PasteButtonCallback = (event: ClickEvent, result: PasteButtonOnClickResult,
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 不支持通用事件，仅支持以下事件：
 
 
 
-#### onClick
+### onClick
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onClick(event: PasteButtonCallback)
 
@@ -234,6 +259,7 @@ onClick(event: PasteButtonCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | PasteButtonCallback | 是 | 点击事件的回调函数，用于处理粘贴控件点击后的授权结果。 在API version 10-17时，参数类型为(event: ClickEvent, result: PasteButtonOnClickResult) => void；从API version 18开始，统一使用PasteButtonCallback，可额外获取error信息。 |
@@ -241,9 +267,10 @@ onClick(event: PasteButtonCallback)
 
 
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```ArkTS
 // xxx.ets
@@ -299,4 +326,4 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/dyrVYsGhQmqncwTRK1rw9w/zh-cn_image_0000002685928561.png?HW-CC-KV=V1&HW-CC-Date=20260730T071515Z&HW-CC-Expire=86400&HW-CC-Sign=4F466065FB5DBE3D4615F867ECE29AA711B9D88C1325358B2425A679C26A3AE6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/V8sPhi5GS7qNkcPi-uYOwA/zh-cn_image_0000002747212969.png?HW-CC-KV=V1&HW-CC-Date=20260911T073120Z&HW-CC-Expire=86400&HW-CC-Sign=EFC847539813A9B05AF0A35E8032A23EF0465E37A915056E8C2E639AD0BE91FC)

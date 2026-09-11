@@ -1,6 +1,6 @@
 # subjectSegmentation（主体分割）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/core-vision-subjectsegmentation-api
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -10,7 +10,8 @@ Core Vision Kit根据配置参数（如最多检测多少个物体、是否输�
 **起始版本：** 5.0.0(12)
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -20,7 +21,8 @@ import { subjectSegmentation } from '@kit.CoreVisionKit';
 
 
 
-#### VisionInfo
+## VisionInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -32,6 +34,7 @@ import { subjectSegmentation } from '@kit.CoreVisionKit';
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | pixelMap | image.PixelMap | 否 | 否 | 待识别的图片。对于图片的要求请参见约束与限制。 |
@@ -39,7 +42,8 @@ import { subjectSegmentation } from '@kit.CoreVisionKit';
 
 
 
-#### SegmentationConfig
+## SegmentationConfig
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -51,6 +55,7 @@ import { subjectSegmentation } from '@kit.CoreVisionKit';
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | maxCount | number | 否 | 是 | 最多输出主体个数。取值范围为[1,20]个，以主体在原图中的面积占比降序排序，默认为6，超出范围则报错。 |
@@ -60,7 +65,8 @@ import { subjectSegmentation } from '@kit.CoreVisionKit';
 
 
 
-#### Rectangle
+## Rectangle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -72,6 +78,7 @@ import { subjectSegmentation } from '@kit.CoreVisionKit';
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | left | number | 否 | 否 | 边界框左上角的x坐标。 |
@@ -82,7 +89,8 @@ import { subjectSegmentation } from '@kit.CoreVisionKit';
 
 
 
-#### SubjectResult
+## SubjectResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -94,6 +102,7 @@ import { subjectSegmentation } from '@kit.CoreVisionKit';
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | foregroundImage | image.PixelMap | 否 | 否 | 显著性主体前景图。 |
@@ -103,7 +112,8 @@ import { subjectSegmentation } from '@kit.CoreVisionKit';
 
 
 
-#### SegmentationResult
+## SegmentationResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -115,6 +125,7 @@ import { subjectSegmentation } from '@kit.CoreVisionKit';
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | subjectCount | number | 否 | 否 | 表示返回的主体个数，实际返回数量为画面中检测到的主体数量和maxCount中的较小值，受SegmentationConfig中maxCount参数的限制。 |
@@ -124,7 +135,8 @@ import { subjectSegmentation } from '@kit.CoreVisionKit';
 
 
 
-#### subjectSegmentation.init
+## subjectSegmentation.init
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -139,6 +151,7 @@ init(): Promise&lt;boolean&gt;
 **起始版本：** 5.0.0(12)
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -186,7 +199,8 @@ struct Page {
 
 
 
-#### subjectSegmentation.release
+## subjectSegmentation.release
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -201,6 +215,7 @@ release(): Promise&lt;void&gt;
 **起始版本：** 5.0.0(12)
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -248,7 +263,8 @@ struct Page {
 
 
 
-#### subjectSegmentation.doSegmentation
+## subjectSegmentation.doSegmentation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -264,6 +280,7 @@ doSegmentation(visionInfo: VisionInfo, config?: SegmentationConfig): Promise&lt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | visionInfo | VisionInfo | 是 | 图片实例。 |
@@ -271,6 +288,7 @@ doSegmentation(visionInfo: VisionInfo, config?: SegmentationConfig): Promise&lt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -280,6 +298,7 @@ doSegmentation(visionInfo: VisionInfo, config?: SegmentationConfig): Promise&lt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Core Vision Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-core-vision)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

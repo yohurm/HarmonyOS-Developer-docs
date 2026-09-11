@@ -34,7 +34,7 @@
   
 数据类实现LazyDataSource1.ets：
 ```text
-// 重写数据类
+<em>// 重写数据类</em>
 @Observed
 export class ObservedArray<T> extends Array<T> {
   constructor(args?: T[]) {
@@ -47,25 +47,25 @@ export class ObservedArray<T> extends Array<T> {
 }
 
 
-// 数据更新监听处理
+<em>// 数据更新监听处理</em>
 class BasicDataSource<T> implements IDataSource {
   private listeners: DataChangeListener[] = [];
 
 
-  // 数据交给上层处理，若未定义则抛出错误
+ <em> // 数据交给上层处理，若未定义则抛出错误</em>
   totalCount(): number {
     throw new Error('Method not implemented.');
   }
 
 
-  // 数据交给上层处理，若未定义则抛出错误
+ <em> // 数据交给上层处理，若未定义则抛出错误</em>
   getData(index: number): T {
     console.info(`index: ${index}`);
     throw new Error('Method not implemented.');
   }
 
 
-  // 数据添加处理
+ <em> // 数据添加处理</em>
   public notifyDataArrayAdd(index: number, count: number, key: string[]): void {
     this.listeners.forEach(listener => {
       listener.onDatasetChange([{
@@ -78,7 +78,7 @@ class BasicDataSource<T> implements IDataSource {
   }
 
 
-  // 注册监听
+ <em> // 注册监听</em>
   registerDataChangeListener(listener: DataChangeListener): void {
     if (this.listeners.indexOf(listener) < 0) {
       this.listeners.push(listener);
@@ -86,7 +86,7 @@ class BasicDataSource<T> implements IDataSource {
   }
 
 
-  // 取消监听
+<em>  // 取消监听</em>
   unregisterDataChangeListener(listener: DataChangeListener): void {
     const pos = this.listeners.indexOf(listener);
     if (pos >= 0) {
@@ -95,7 +95,7 @@ class BasicDataSource<T> implements IDataSource {
   }
 
 
-  // 数据重新加载
+ <em> // 数据重新加载</em>
   notifyDataReload(): void {
     this.listeners.forEach(listener => {
       listener.onDataReloaded();
@@ -104,24 +104,24 @@ class BasicDataSource<T> implements IDataSource {
 }
 
 
-// 业务数据操作
+<em>// 业务数据操作</em>
 export class LazyDataSource<T> extends BasicDataSource<T> {
   dataArray: T[] = [];
 
 
-  // 获取数据数量
+<em>  // 获取数据数量</em>
   public totalCount(): number {
     return this.dataArray.length;
   }
 
 
-  // 获取指定数据
+ <em> // 获取指定数据</em>
   public getData(index: number): T {
     return this.dataArray[index];
   }
 
 
-  // 指定位置添加数据
+ <em> // 指定位置添加数据</em>
   public pushDataPositionArray(index: number, newData: ObservedArray<T>, key: string[]): void {
     this.dataArray.splice(index, 0, ...newData);
     this.notifyDataArrayAdd(index, newData.length, key);
@@ -143,7 +143,7 @@ export struct Index1 {
   @Local timer: number = 1;
 
 
-  // 生成数据
+  <em>// 生成数据</em>
   aboutToAppear(): void {
     let arr: string[] = [];
     for (let i = 0; i < 30; i++) {
@@ -154,7 +154,7 @@ export struct Index1 {
   }
 
 
-  // 刷新UI提示
+ <em> // 刷新UI提示</em>
   @Builder
   getRefreshBuilder() {
     Row({ space: 8 }) {
@@ -168,7 +168,7 @@ export struct Index1 {
   }
 
 
-  // 添加数据
+ <em> // 添加数据</em>
   addData(timer: number) {
     let arr: string[] = [];
     for (let index = 5; index > 0; index--) {
@@ -196,7 +196,7 @@ export struct Index1 {
             };
           }, (item: string) => item.toString());
         }
-        .maintainVisibleContentPosition(true) // 设置可见内容位置不变
+        .maintainVisibleContentPosition(true) <em>// 设置可见内容位置不变</em>
         .width('100%')
         .height('100%')
         .scrollBar(BarState.Off)
@@ -352,9 +352,9 @@ export struct Index2 {
       arr.push(`第 ${timer} 次 add HeadItem ${i}`);
     }
     setTimeout(() => {
-      // 向lazyDataModel数据源头部添加一组数据，并使用scrollToIndex、scrollTo滚动到指定位置，使当前页面顶部展示数据不变。
+     <em> // 向lazyDataModel数据源头部添加一组数据，并使用scrollToIndex、scrollTo滚动到指定位置，使当前页面顶部展示数据不变。</em>
       this.lazyDataModel.pushDataPositionArray(0, arr);
-      // 使用scrollToIndex滚动到指定Item索引位置
+    <em>  // 使用scrollToIndex滚动到指定Item索引位置</em>
       this.listScroller.scrollToIndex(arr.length);
       this.isRefreshing = false;
     }, 500);
@@ -377,7 +377,7 @@ export struct Index2 {
               .padding({ left: 10, right: 10 });
             }
             .onAreaChange((newValue: Area) => {
-              this.listItemHeight = Number(newValue.height); // 获取item的高度
+              this.listItemHeight = Number(newValue.height); <em>// 获取item的高度</em>
             });
           }, (item: string) => item.toString());
         }

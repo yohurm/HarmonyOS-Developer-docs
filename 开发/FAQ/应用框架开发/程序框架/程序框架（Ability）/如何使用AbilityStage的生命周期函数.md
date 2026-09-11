@@ -13,11 +13,11 @@ import { AbilityStage, Want } from '@kit.AbilityKit';
 
 export default class MyAbilityStage extends AbilityStage {
   onCreate(): void {
-    // When the HAP of the application is first loaded, initialize the operation for the module
+    <em>// When the HAP of the application is first loaded, initialize the operation for the module</em>
   }
 
   onAcceptWant(want: Want): string {
-    // Triggered only when UIAbility is configured in specified startup mode
+    <em>// Triggered only when UIAbility is configured in specified startup mode</em>
     return 'MyAbilityStage';
   }
 }

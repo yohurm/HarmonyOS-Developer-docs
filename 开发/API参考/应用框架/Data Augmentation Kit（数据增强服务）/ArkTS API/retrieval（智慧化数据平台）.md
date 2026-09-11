@@ -1,6 +1,6 @@
 # retrieval（智慧化数据平台）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/dataaugmentation-retrieval-api
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -16,7 +16,8 @@
 **起始版本：** 6.0.0(20)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -26,7 +27,8 @@ import { retrieval } from '@kit.DataAugmentationKit';
  
   
 
-#### getRetriever
+## getRetriever
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -42,6 +44,7 @@ getRetriever(config: RetrievalConfig): Promise&lt;Retriever&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | config | RetrievalConfig | 是 | 检索器的配置信息。该参数用于配置检索器的行为，包括不同检索回路的配置信息数组。其中，channelConfigs字段为必填项，表示不同检索回路的配置信息数组。 |
@@ -49,6 +52,7 @@ getRetriever(config: RetrievalConfig): Promise&lt;Retriever&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Retriever&gt; | Promise对象，返回检索器对象。 |
@@ -118,7 +122,8 @@ struct Page {
  
   
 
-#### RetrievalConfig
+## RetrievalConfig
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -130,6 +135,7 @@ struct Page {
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | channelConfigs | Array&lt;ChannelConfig&gt; | 是 | 不同检索回路的配置信息数组。 |
@@ -137,7 +143,8 @@ struct Page {
  
   
 
-#### ChannelConfig
+## ChannelConfig
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -149,6 +156,7 @@ struct Page {
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | channelType | ChannelType | 否 | 否 | 当前检索回路的数据库类型。 |
@@ -158,7 +166,8 @@ struct Page {
  
   
 
-#### ChannelType
+## ChannelType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -170,6 +179,7 @@ struct Page {
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | VECTOR_DATABASE | 0 | 向量数据库。 |
@@ -178,7 +188,8 @@ struct Page {
  
   
 
-#### DbConfig
+## DbConfig
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -192,6 +203,7 @@ type DbConfig = relationalStore.StoreConfig
  
 **起始版本：** 6.0.0(20)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | relationalStore.StoreConfig | 数据库配置。 |
@@ -199,7 +211,8 @@ type DbConfig = relationalStore.StoreConfig
  
   
 
-#### Retriever
+## Retriever
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -215,7 +228,8 @@ type DbConfig = relationalStore.StoreConfig
  
   
 
-#### retrieveRdb
+### retrieveRdb
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -231,6 +245,7 @@ retrieveRdb(query: string, condition: RetrievalCondition): Promise&lt;RdbRecords
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | query | string | 是 | 当前检索的查询词,长度上限为1000字节。 |
@@ -239,6 +254,7 @@ retrieveRdb(query: string, condition: RetrievalCondition): Promise&lt;RdbRecords
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;RdbRecords&gt; | Promise对象，返回检索召回数据。 |
@@ -248,6 +264,7 @@ retrieveRdb(query: string, condition: RetrievalCondition): Promise&lt;RdbRecords
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-dataaugmentation)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1021200001 | The database is corrupted. |
@@ -508,7 +525,8 @@ async retrieve() {
  
   
 
-#### RetrievalCondition
+## RetrievalCondition
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -520,6 +538,7 @@ async retrieve() {
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | recallConditions | Array&lt;RecallCondition&gt; | 否 | 否 | 召回的条件，数组中的每个元素对应一个召回操作。 |
@@ -530,7 +549,8 @@ async retrieve() {
  
   
 
-#### ExplanationConfig
+## ExplanationConfig
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -542,6 +562,7 @@ async retrieve() {
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | groundTruths | Array&lt;string&gt; | 否 | 否 | 待解释的文档id，为字符串类型可取任意值。 |
@@ -549,7 +570,8 @@ async retrieve() {
  
   
 
-#### RecallCondition
+## RecallCondition
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -563,6 +585,7 @@ type RecallCondition = InvertedIndexRecallCondition | VectorRecallCondition
  
 **起始版本：** 6.0.0(20)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | InvertedIndexRecallCondition | 倒排召回条件。 |
@@ -571,7 +594,8 @@ type RecallCondition = InvertedIndexRecallCondition | VectorRecallCondition
  
   
 
-#### InvertedIndexRecallCondition
+## InvertedIndexRecallCondition
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -583,6 +607,7 @@ type RecallCondition = InvertedIndexRecallCondition | VectorRecallCondition
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | ftsTableName | string | 否 | 否 | 倒排检索所用的fts（Full-Text Search）数据表的名称，用于执行bm25函数输入。必须为存在的表名且不能为空字符串。 |
@@ -597,7 +622,8 @@ type RecallCondition = InvertedIndexRecallCondition | VectorRecallCondition
  
   
 
-#### ColumnName
+## ColumnName
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -611,6 +637,7 @@ type ColumnName = string
  
 **起始版本：** 6.0.0(20)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 数据表列名对应的类型，为字符串类型可取任意值。 |
@@ -618,7 +645,8 @@ type ColumnName = string
  
   
 
-#### RecallName
+## RecallName
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -632,6 +660,7 @@ type RecallName = string
  
 **起始版本：** 6.0.0(20)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 召回路径名称对应的类型，类型为字符串，可取任意值。 |
@@ -639,7 +668,8 @@ type RecallName = string
  
   
 
-#### FilterInfo
+## FilterInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -651,6 +681,7 @@ type RecallName = string
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | columns | Array&lt;ColumnName&gt; | 否 | 否 | 被过滤的列名称。 |
@@ -661,7 +692,8 @@ type RecallName = string
  
   
 
-#### FilterValue
+## FilterValue
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -675,6 +707,7 @@ type FilterValue = string | number | bigint
  
 **起始版本：** 6.0.0(20)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | FilterValue 收到的类型为string则过滤条件为字符串类型 |
@@ -684,7 +717,8 @@ type FilterValue = string | number | bigint
  
   
 
-#### FilterRange
+## FilterRange
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -696,6 +730,7 @@ type FilterValue = string | number | bigint
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | max | number | 是 | 最大过滤值。 |
@@ -704,7 +739,8 @@ type FilterValue = string | number | bigint
  
   
 
-#### Operator
+## Operator
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -716,6 +752,7 @@ type FilterValue = string | number | bigint
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | OP_EQ | '=' | &lt;column&gt;等于&lt;filterValue&gt;。 |
@@ -733,7 +770,8 @@ type FilterValue = string | number | bigint
  
   
 
-#### InvertedIndexStrategy
+## InvertedIndexStrategy
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -747,6 +785,7 @@ type InvertedIndexStrategy = Bm25Strategy | ExactMatchingStrategy | ProximityStr
  
 **起始版本：** 6.0.0(20)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Bm25Strategy | 部分命中策略，检索目标只要命中查询词中的80%核心词就可以被召回，召回结果基于bm25算法进行评分，适用于对检索目标匹配要求较宽松的场景。 |
@@ -756,7 +795,8 @@ type InvertedIndexStrategy = Bm25Strategy | ExactMatchingStrategy | ProximityStr
  
   
 
-#### Bm25Strategy
+## Bm25Strategy
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -768,6 +808,7 @@ type InvertedIndexStrategy = Bm25Strategy | ExactMatchingStrategy | ProximityStr
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | bm25Weight | number | 否 | 否 | bm25策略的打分权重，在多种倒排策略并存的情况下，控制该策略对最终召回结果的评分影响程度。 |
@@ -776,7 +817,8 @@ type InvertedIndexStrategy = Bm25Strategy | ExactMatchingStrategy | ProximityStr
  
   
 
-#### ExactMatchingStrategy
+## ExactMatchingStrategy
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -788,6 +830,7 @@ type InvertedIndexStrategy = Bm25Strategy | ExactMatchingStrategy | ProximityStr
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | exactMatchingWeight | number | 否 | 否 | 精确场景匹配策略的打分权重，在多种倒排策略并存的情况下，控制该策略对最终召回结果的评分影响程度。 |
@@ -796,7 +839,8 @@ type InvertedIndexStrategy = Bm25Strategy | ExactMatchingStrategy | ProximityStr
  
   
 
-#### ProximityStrategy
+## ProximityStrategy
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -808,6 +852,7 @@ type InvertedIndexStrategy = Bm25Strategy | ExactMatchingStrategy | ProximityStr
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | proximityWeight | number | 否 | 否 | 近似与乱序匹配策略的打分权重，在多种倒排策略并存的情况下，控制该策略对最终召回结果的评分影响程度。 |
@@ -817,7 +862,8 @@ type InvertedIndexStrategy = Bm25Strategy | ExactMatchingStrategy | ProximityStr
  
   
 
-#### VectorRecallCondition
+## VectorRecallCondition
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -829,6 +875,7 @@ type InvertedIndexStrategy = Bm25Strategy | ExactMatchingStrategy | ProximityStr
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | vectorQuery | VectorQuery | 否 | 否 | 用于向量检索的查询词向量。 |
@@ -842,7 +889,8 @@ type InvertedIndexStrategy = Bm25Strategy | ExactMatchingStrategy | ProximityStr
  
   
 
-#### VectorQuery
+## VectorQuery
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -854,6 +902,7 @@ type InvertedIndexStrategy = Bm25Strategy | ExactMatchingStrategy | ProximityStr
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | column | ColumnName | 否 | 否 | 待匹配向量字段名。必须为指定的向量数据库中存在的向量类型字段。 |
@@ -863,7 +912,8 @@ type InvertedIndexStrategy = Bm25Strategy | ExactMatchingStrategy | ProximityStr
  
   
 
-#### RerankMethod
+## RerankMethod
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -875,6 +925,7 @@ type InvertedIndexStrategy = Bm25Strategy | ExactMatchingStrategy | ProximityStr
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | rerankType | RerankType | 否 | 否 | 重排算法，取值类型为枚举类RerankType，可选项为RRF、FUSED_SCORE，分别指向rrf排序算法以及分数融合排序算法。默认值为RRF。 |
@@ -884,7 +935,8 @@ type InvertedIndexStrategy = Bm25Strategy | ExactMatchingStrategy | ProximityStr
  
   
 
-#### RerankType
+## RerankType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -896,6 +948,7 @@ type InvertedIndexStrategy = Bm25Strategy | ExactMatchingStrategy | ProximityStr
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | RRF | 0 | Reciprocal Rank Fusion(RRF)方法。根据各路召回位置信息进行分档排序。 适用场景：对结果多样性要求较高的场景，希望每路结果平等输出。 |
@@ -904,7 +957,8 @@ type InvertedIndexStrategy = Bm25Strategy | ExactMatchingStrategy | ProximityStr
  
   
 
-#### RerankParameter
+## RerankParameter
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -918,6 +972,7 @@ type RerankParameter = InvertedIndexRerankParameter| VectorRerankParameter
  
 **起始版本：** 6.0.0(20)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | InvertedIndexRerankParameter | 重排参数为InvertedIndexRerankParameter。 |
@@ -926,7 +981,8 @@ type RerankParameter = InvertedIndexRerankParameter| VectorRerankParameter
  
   
 
-#### InvertedIndexRerankParameter
+## InvertedIndexRerankParameter
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -938,6 +994,7 @@ type RerankParameter = InvertedIndexRerankParameter| VectorRerankParameter
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | invertedIndexWeights | Record<RecallName, number> | 否 | 否 | 每路召回的重排权重，体现各路召回在重排过程中的重要性。key为各路召回RecallCondition的RecallName，value为对应那一路召回的权重。 权重值必须为非负数。如果未定义某一路召回的权重，则默认值为1。 |
@@ -945,7 +1002,8 @@ type RerankParameter = InvertedIndexRerankParameter| VectorRerankParameter
  
   
 
-#### VectorRerankParameter
+## VectorRerankParameter
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -957,6 +1015,7 @@ type RerankParameter = InvertedIndexRerankParameter| VectorRerankParameter
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | vectorWeights | Record<RecallName, number> | 否 | 否 | 每路召回的重排权重，体现各路召回在重排过程中的重要性。key为各路召回RecallCondition的RecallName，value为对应那一路召回的权重。权重值必须为非负数。如果未定义某一路召回的权重，则默认值为1。 |
@@ -966,7 +1025,8 @@ type RerankParameter = InvertedIndexRerankParameter| VectorRerankParameter
  
   
 
-#### RdbRecords
+## RdbRecords
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -978,6 +1038,7 @@ type RerankParameter = InvertedIndexRerankParameter| VectorRerankParameter
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | records | Array&lt;ItemInfo&gt; | 否 | 否 | 检索结果 |
@@ -986,7 +1047,8 @@ type RerankParameter = InvertedIndexRerankParameter| VectorRerankParameter
  
   
 
-#### ItemInfo
+## ItemInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -998,6 +1060,7 @@ type RerankParameter = InvertedIndexRerankParameter| VectorRerankParameter
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | primaryKey | string | 否 | 否 | 检索结果的主键。 |
@@ -1010,7 +1073,8 @@ type RerankParameter = InvertedIndexRerankParameter| VectorRerankParameter
  
   
 
-#### RecallScore
+## RecallScore
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1022,6 +1086,7 @@ type RerankParameter = InvertedIndexRerankParameter| VectorRerankParameter
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | score | number | 否 | 否 | 召回得分。 |
@@ -1030,7 +1095,8 @@ type RerankParameter = InvertedIndexRerankParameter| VectorRerankParameter
  
   
 
-#### SimilarityLevel
+## SimilarityLevel
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1042,6 +1108,7 @@ type RerankParameter = InvertedIndexRerankParameter| VectorRerankParameter
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NONE | 0 | 保留值，暂无特定含义。 |

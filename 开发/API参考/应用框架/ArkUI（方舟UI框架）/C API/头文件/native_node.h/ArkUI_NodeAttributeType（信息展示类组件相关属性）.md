@@ -1,15 +1,19 @@
 # ArkUI_NodeAttributeType（信息展示类组件相关属性）
 
-更新时间：2026-07-28 11:23:46（官网已下线）
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-node-h-nodeattributetype-informationdisplay
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_NodeAttributeType
 ```
   
 
-#### 概述
+## 概述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义ArkUI在Native侧用于设置信息展示类组件的属性样式，支持LoadingProgress、Progress等组件的颜色、动画、进度值、类型等属性配置，适用于需要在Native层精细控制信息展示组件外观和行为的场景。通过统一的属性集合接口，开发者可以便捷地实现加载动画控制、进度可视化、样式自定义等功能。
  
@@ -21,7 +25,10 @@ enum ArkUI_NodeAttributeType
  
   
 
-#### NODE_LOADING_PROGRESS_COLOR
+## NODE_LOADING_PROGRESS_COLOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_LOADING_PROGRESS_COLOR = MAX_NODE_SCOPE_NUM * ARKUI_NODE_LOADING_PROGRESS = 6000
@@ -35,6 +42,7 @@ NODE_LOADING_PROGRESS_COLOR = MAX_NODE_SCOPE_NUM * ARKUI_NODE_LOADING_PROGRESS =
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].u32 | 前景颜色数值，0xargb格式，形如 0xFFFF0000 表示红色。默认值：跟随主题。 |
@@ -42,6 +50,7 @@ NODE_LOADING_PROGRESS_COLOR = MAX_NODE_SCOPE_NUM * ARKUI_NODE_LOADING_PROGRESS =
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].u32 | 前景颜色数值，0xargb格式。 |
@@ -49,7 +58,10 @@ NODE_LOADING_PROGRESS_COLOR = MAX_NODE_SCOPE_NUM * ARKUI_NODE_LOADING_PROGRESS =
  
   
 
-#### NODE_LOADING_PROGRESS_ENABLE_LOADING
+## NODE_LOADING_PROGRESS_ENABLE_LOADING
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_LOADING_PROGRESS_ENABLE_LOADING = 6001
@@ -63,21 +75,26 @@ LoadingProgress动画显示属性，支持属性设置、属性重置和属性�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].i32 | 1时不显示动画，1时显示动画。默认值为1。 |
+| .value[0].i32 | 0时不显示动画，1时显示动画。默认值为1。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| .value[0].i32 | 1时不显示动画，1时显示动画。 |
+| .value[0].i32 | 0时不显示动画，1时显示动画。 |
  
  
   
 
-#### NODE_PROGRESS_VALUE
+## NODE_PROGRESS_VALUE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_PROGRESS_VALUE = MAX_NODE_SCOPE_NUM * ARKUI_NODE_PROGRESS = 10000
@@ -91,6 +108,7 @@ NODE_PROGRESS_VALUE = MAX_NODE_SCOPE_NUM * ARKUI_NODE_PROGRESS = 10000
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 进度条当前值，取值范围为[0, total]，默认值为0。超出范围时自动修正至有效范围边界值。 |
@@ -98,6 +116,7 @@ NODE_PROGRESS_VALUE = MAX_NODE_SCOPE_NUM * ARKUI_NODE_PROGRESS = 10000
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 进度条当前值，取值范围为[0, total]，默认值为0。 |
@@ -105,7 +124,10 @@ NODE_PROGRESS_VALUE = MAX_NODE_SCOPE_NUM * ARKUI_NODE_PROGRESS = 10000
  
   
 
-#### NODE_PROGRESS_TOTAL
+## NODE_PROGRESS_TOTAL
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_PROGRESS_TOTAL = 10001
@@ -119,6 +141,7 @@ NODE_PROGRESS_TOTAL = 10001
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 进度条总长，取值范围为(0, +∞)，默认值为100，需大于0。传入小于等于0的值时不生效。 |
@@ -126,6 +149,7 @@ NODE_PROGRESS_TOTAL = 10001
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 进度条总长，取值范围为(0, +∞)，默认值为100。 |
@@ -133,7 +157,10 @@ NODE_PROGRESS_TOTAL = 10001
  
   
 
-#### NODE_PROGRESS_COLOR
+## NODE_PROGRESS_COLOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_PROGRESS_COLOR = 10002
@@ -147,6 +174,7 @@ NODE_PROGRESS_COLOR = 10002
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].u32 | 颜色数值，0xargb格式，形如 0xFFFF0000 表示红色。默认值：跟随主题。 |
@@ -154,6 +182,7 @@ NODE_PROGRESS_COLOR = 10002
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].u32 | 颜色数值，0xargb格式。 |
@@ -161,7 +190,10 @@ NODE_PROGRESS_COLOR = 10002
  
   
 
-#### NODE_PROGRESS_TYPE
+## NODE_PROGRESS_TYPE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_PROGRESS_TYPE = 10003
@@ -175,6 +207,7 @@ NODE_PROGRESS_TYPE = 10003
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 进度条类型，具体枚举值及含义参见ArkUI_ProgressType。默认值为ARKUI_PROGRESS_TYPE_LINEAR。 |
@@ -182,6 +215,7 @@ NODE_PROGRESS_TYPE = 10003
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 进度条类型。 |
@@ -189,7 +223,10 @@ NODE_PROGRESS_TYPE = 10003
  
   
 
-#### NODE_PROGRESS_LINEAR_STYLE
+## NODE_PROGRESS_LINEAR_STYLE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_PROGRESS_LINEAR_STYLE = 10004
@@ -203,6 +240,7 @@ NODE_PROGRESS_LINEAR_STYLE = 10004
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 使用ArkUI_ProgressLinearStyleOption对象设置组件样式。 |
@@ -210,6 +248,7 @@ NODE_PROGRESS_LINEAR_STYLE = 10004
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .object | 返回ArkUI_ProgressLinearStyleOption对象，包含线性进度条的样式信息。 |

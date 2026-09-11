@@ -1,9 +1,9 @@
 # @ohos.bluetooth.access (蓝牙access模块)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bluetooth-access
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供了打开和关闭蓝牙、获取蓝牙开关状态以及其他相关方法。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { access } from '@kit.ConnectivityKit';
@@ -22,9 +23,10 @@ import { access } from '@kit.ConnectivityKit';
 
 
 
-#### access.enableBluetooth
+## access.enableBluetooth
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableBluetooth(): void
 
@@ -44,6 +46,7 @@ enableBluetooth(): void
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -67,9 +70,10 @@ try {
 
 
 
-#### access.enableBluetoothAsync20+
+## access.enableBluetoothAsync20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableBluetoothAsync(): Promise&lt;void&gt;
 
@@ -88,6 +92,7 @@ enableBluetoothAsync(): Promise&lt;void&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -96,6 +101,7 @@ enableBluetoothAsync(): Promise&lt;void&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -125,9 +131,10 @@ try {
 
 
 
-#### access.disableBluetooth
+## access.disableBluetooth
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 disableBluetooth(): void
 
@@ -147,6 +154,7 @@ disableBluetooth(): void
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -170,9 +178,10 @@ try {
 
 
 
-#### access.disableBluetoothAsync20+
+## access.disableBluetoothAsync20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 disableBluetoothAsync(): Promise&lt;void&gt;
 
@@ -191,6 +200,7 @@ disableBluetoothAsync(): Promise&lt;void&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -199,6 +209,7 @@ disableBluetoothAsync(): Promise&lt;void&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -228,19 +239,26 @@ try {
 
 
 
-#### access.getState
+## access.getState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getState(): BluetoothState
 
 获取蓝牙开关状态。
+
+**需要权限**：
+
+ - API版本10-12：ohos.permission.ACCESS_BLUETOOTH
+
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -250,6 +268,7 @@ getState(): BluetoothState
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -273,19 +292,26 @@ try {
 
 
 
-#### access.on('stateChange')
+## access.on('stateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'stateChange', callback: Callback&lt;BluetoothState&gt;): void
 
 订阅本端蓝牙开关状态变化事件。使用Callback异步回调。从API18开始不再校验ohos.permission.ACCESS_BLUETOOTH权限。
+
+**需要权限**：
+
+ - API版本10-17：ohos.permission.ACCESS_BLUETOOTH
+
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -296,6 +322,7 @@ on(type: 'stateChange', callback: Callback&lt;BluetoothState&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -322,19 +349,26 @@ try {
 
 
 
-#### access.off('stateChange')
+## access.off('stateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'stateChange', callback?: Callback&lt;BluetoothState&gt;): void
 
 取消订阅本端蓝牙开关状态变化事件。从API18开始不再校验ohos.permission.ACCESS_BLUETOOTH权限。
+
+**需要权限**：
+
+ - API版本10-17：ohos.permission.ACCESS_BLUETOOTH
+
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -345,6 +379,7 @@ off(type: 'stateChange', callback?: Callback&lt;BluetoothState&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -372,9 +407,10 @@ try {
 
 
 
-#### access.addPersistentDeviceId16+
+## access.addPersistentDeviceId16+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addPersistentDeviceId(deviceId: string): Promise&lt;void&gt;
 
@@ -382,7 +418,7 @@ addPersistentDeviceId(deviceId: string): Promise&lt;void&gt;
 
  - 应用通过蓝牙相关接口，如扫描等途径获取到的设备地址（虚拟MAC地址）和实际的设备MAC地址不同。蓝牙子系统会保存一个虚拟MAC地址和实际设备MAC地址的映射关系。若应用想长期对该蓝牙设备进行操作使用，建议用此接口持久化存储该设备的虚拟MAC地址，后续可直接使用，该地址映射关系不会再改变。
  - 指定持久化存储的虚拟MAC地址需是有效的（可使用[access.isValidRandomDeviceId](#accessisvalidrandomdeviceid16)判断）。
- - 使用该接口时，开发者应确保该虚拟MAC地址对应的对端蓝牙设备实际地址是保持不变的，若对端设备实际地址发生变化，持久化存储的地址信息将失效，无法继续使用。
+ - 使用该接口时，开发者应确保该虚拟MAC地址对应的对端蓝牙设备实际地址是保持不变的，若对端设备实际地址发生变化，持久化存储的地址信息将失效，无法继续使用；若应用卸载重装过，持久化将失效，该应用需重新添加。
  - 可调用[access.deletePersistentDeviceId](#accessdeletepersistentdeviceid16)删除已持久化存储的虚拟MAC地址。
 
 
@@ -394,12 +430,14 @@ addPersistentDeviceId(deviceId: string): Promise&lt;void&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 对端设备的虚拟MAC地址，例如："XX:XX:XX:XX:XX:XX"。 该地址一般来源于蓝牙扫描结果，如：可通过调用startScan或connection.startBluetoothDiscovery扫描得到。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -409,6 +447,7 @@ addPersistentDeviceId(deviceId: string): Promise&lt;void&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -435,9 +474,10 @@ try {
 
 
 
-#### access.deletePersistentDeviceId16+
+## access.deletePersistentDeviceId16+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deletePersistentDeviceId(deviceId: string): Promise&lt;void&gt;
 
@@ -454,12 +494,14 @@ deletePersistentDeviceId(deviceId: string): Promise&lt;void&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 对端设备的虚拟MAC地址，例如："XX:XX:XX:XX:XX:XX"， 该地址一般来源于蓝牙扫描结果，如：通过调用startScan或connection.startBluetoothDiscovery扫描得到。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -469,6 +511,7 @@ deletePersistentDeviceId(deviceId: string): Promise&lt;void&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -494,9 +537,10 @@ try {
 
 
 
-#### access.getPersistentDeviceIds16+
+## access.getPersistentDeviceIds16+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPersistentDeviceIds(): string[];
 
@@ -510,6 +554,7 @@ getPersistentDeviceIds(): string[];
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string[] | 持久化存储过的蓝牙虚拟MAC地址列表。 |
@@ -518,6 +563,7 @@ getPersistentDeviceIds(): string[];
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -541,9 +587,10 @@ try {
 
 
 
-#### access.isValidRandomDeviceId16+
+## access.isValidRandomDeviceId16+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isValidRandomDeviceId(deviceId: string): boolean;
 
@@ -560,12 +607,14 @@ isValidRandomDeviceId(deviceId: string): boolean;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 对端设备的虚拟MAC地址，例如："XX:XX:XX:XX:XX:XX"。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -575,6 +624,7 @@ isValidRandomDeviceId(deviceId: string): boolean;
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -601,9 +651,10 @@ try {
 
 
 
-#### access.convertUuid22+
+## access.convertUuid22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 convertUuid(uuid: string): string
 
@@ -621,12 +672,14 @@ convertUuid(uuid: string): string
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uuid | string | 是 | 16bit、32bit、128bit的UUID。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -649,9 +702,10 @@ try {
 
 
 
-#### access.isBluetoothSupported
+## access.isBluetoothSupported
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isBluetoothSupported(): boolean
 
@@ -665,6 +719,7 @@ isBluetoothSupported(): boolean
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 查询本机是否支持蓝牙能力。true 表示本机支持蓝牙能力，false 表示本机不支持蓝牙能力。 |
@@ -673,6 +728,7 @@ isBluetoothSupported(): boolean
 **错误码**：
 
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bluetoothmanager)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -692,15 +748,17 @@ try {
 
 
 
-#### BluetoothState
+## BluetoothState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，蓝牙开关状态。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

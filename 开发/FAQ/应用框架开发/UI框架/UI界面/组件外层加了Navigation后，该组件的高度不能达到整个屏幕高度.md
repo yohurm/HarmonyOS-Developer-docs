@@ -69,13 +69,13 @@ struct PrivatePage {
     Navigation() {
       RelativeContainer() {
         Row() {
-          Image($r('app.media.startIcon')) // 根据实际情况添加图片
+          Image($r('app.media.startIcon'))<em> </em><em>// 根据实际情况添加图片</em>
             .width('90%')
             .height(200);
         }
         .padding({ top: 20 })
         .justifyContent(FlexAlign.Center)
-        // 设置对齐规则
+        <em>// 设置对齐规则</em>
         .alignRules({
           left: { anchor: '__container__', align: HorizontalAlign.Start },
           right: { anchor: '__container__', align: HorizontalAlign.End },

@@ -1,9 +1,9 @@
 # NotificationUserInput
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-notification-notificationuserinput
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 保存用户输入的通知消息。
  
@@ -12,12 +12,14 @@
 
   
 
-#### NotificationUserInput
+## NotificationUserInput
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.Notification.Notification
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | inputKey | string | 否 | 否 | 用户输入时用于标识此输入的key。 |

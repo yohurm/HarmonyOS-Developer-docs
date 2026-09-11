@@ -1,20 +1,20 @@
 # SIGILL非法指令故障模式说明
 
-更新时间：2026-07-14 02:11:31
+更新时间：2026-08-26 06:47:01
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-cppcrash-sigill-fault-mode
 
-#### ILL_ILLOPC非法操作码异常
+## ILL_ILLOPC非法操作码异常
 
  
 
-#### 根因描述
+### 根因描述
 
 ILL_ILLOPC是一种非法操作码异常，属于SIGILL信号类型。当CPU尝试执行一个无效或未定义的机器指令时，会触发此异常。
  
  
 
-#### 问题分析思路
+### 问题分析思路
 
 此类问题，通常情况下会有如下几种可能：
  
@@ -34,8 +34,9 @@ napi_value TriggerUD2Instruction(napi_env env, napi_callback_info info)
 }
 ```
  
-备注：CFI检测拦截也会使用此指令，如遇栈帧符号信息包含.cfi内容，按照CFI问题排查分析， CFI检查机制触发信号场景对照表：
+备注：CFI检测拦截也会使用此指令，如遇栈帧符号信息包含.cfi内容，按照CFI问题排查分析，CFI检查机制触发信号场景对照表：
   
+
 | 信号 | si_code | 触发场景和机制 | 典型架构/实现 | 底层指令/异常 | 关键特征 |
 | SIGTRAP | TRAP_BRKPT | 软件CFI校验失败 | ARM64(LLVM -fsanitize=cfi配置) | brk #0 | 编译器插入，内核按照断点信号处理 |
 | SIGILL | ILL_ILLOPC | 软件CFI校验失败 | x86_64/ARM64(udf配置) | ud2/udf #0 | CPU视为非法操作码 |
@@ -64,14 +65,14 @@ napi_value TriggerUndefinedInstruction(napi_env env, napi_callback_info info)
 
  
 问题分析的步骤如下：
- 1. **确****认类型：**查看CppCrash故障日志中的Reason字段，确认信号为SIGILL(ILL_ILLOPC)。
+ 1. **确认类型：**查看CppCrash故障日志中的Reason字段，确认信号为SIGILL(ILL_ILLOPC)。
 2. **分析PC地址值：**关注崩溃地址（PC值）是否在代码段地址范围。
 3. **地址是否4字节对齐：**关注PC对应地址是否4字节对齐。
 4. **指令有效性排查：**是否为当前CPU架构支持指令，是否为有效指令。
  
  
 
-#### 关键字
+### 关键字
 
 关注CppCrash故障日志中是否有如下关键字。
  
@@ -81,7 +82,7 @@ napi_value TriggerUndefinedInstruction(napi_env env, napi_callback_info info)
  
  
 
-#### 案例分析
+### 案例分析
 
 **案例一：无效指令触发故障**
  
@@ -108,7 +109,7 @@ App running unique id:1975637108740622813
 Process life time:9s
 Process Memory(kB): 113418(Rss)
 Device Memory(kB): Total 11699072, Free 283332, Available 5270528
-<strong>Reason:Signal:SIGILL(ILL_ILLOPC)@000000000000000000 </strong>
+<strong><span style="color: rgb(255,0,0);">Reason:Signal:SIGILL(ILL_ILLOPC)@000000000000000000 </span></strong>
 Fault thread info:
 Tid:40168, Name:ppcrashanalysis
 #00 pc 00000000000286b0 /data/storage/el1/bundle/libs/arm64/libentry.so(TriggerUD2Instruction(napi_env__*, napi_callback_info__*)+12)(4687a4d714038f89c2e644d7b764097814597256)
@@ -135,7 +136,7 @@ x28:0000000000000000 x29:0000007ea9ccb440
 lr:0000005a0b69dad4 sp:0000007ea9ccb200 pc:0000005a2e7e86b0
 pstate:0000000080001000 esr:0000000000000000
 ... 
-maps：
+<em>maps：</em>
 5a2e7c0000-5a2e7d7000 r--p 00000000 /data/storage/el1/bundle/libs/arm64/libentry.so
 5a2e7d7000-5a2e804000 r-xp 00016000 /data/storage/el1/bundle/libs/arm64/libentry.so
 5a2e804000-5a2e806000 r--p 00042000 /data/storage/el1/bundle/libs/arm64/libentry.so
@@ -153,7 +154,7 @@ maps：
 ```text
 .text:0000000000092AEC      DCD 0x3C00B0F
 ```
- 按照[C++堆栈解析流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)找到对应代码位置。
+ 参考[C++堆栈解析流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)使用llvm-addr2line工具定位到对应代码位置。
 
   
 ```cpp
@@ -204,7 +205,7 @@ App running unique id:16554467495764280840
 Process life time:27s
 Process Memory(kB): 80236(Rss)
 Device Memory(kB): Total 11699072, Free 464960, Available 5491712
-<strong>Reason:Signal:SIGILL(ILL_ILLOPC)@000000000000000000 </strong>
+<strong><span style="color: rgb(255,0,0);">Reason:Signal:SIGILL(ILL_ILLOPC)@000000000000000000 </span></strong>
 Fault thread info:
 Tid:40645, Name:ppcrashanalysis
 #00 pc 00000000000286cc /data/storage/el1/bundle/libs/arm64/libentry.so(TriggerUndefinedInstruction(napi_env__*, napi_callback_info__*)+12)(4687a4d714038f89c2e644d7b764097814597256)
@@ -231,7 +232,7 @@ x28:0000000000000000 x29:0000007ea9ccb440
 lr:0000005a0b69dad4 sp:0000007ea9ccb200 pc:0000005a2e5686cc
 pstate:0000000080001000 esr:0000000000000000
 ...
-maps：
+<em>maps：</em>
 5a2e540000-5a2e557000 r--p 00000000 /data/storage/el1/bundle/libs/arm64/libentry.so
 5a2e557000-5a2e584000 r-xp 00016000 /data/storage/el1/bundle/libs/arm64/libentry.so
 5a2e584000-5a2e586000 r--p 00042000 /data/storage/el1/bundle/libs/arm64/libentry.so
@@ -249,7 +250,7 @@ maps：
 ```text
 .text:0000000000092AEC      DCD 0
 ```
- 通过[llvm-addr2line](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)工具找到对应代码位置。
+ 参考[C++堆栈解析流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception-stack-parsing-principle#section1735713501344)使用llvm-addr2line工具找到对应代码位置。
 
   
 ```cpp
@@ -275,6 +276,6 @@ napi_value TriggerUndefinedInstruction(napi_env env, napi_callback_info info)
  
  
 
-#### 常见易错代码预防建议
+### 常见易错代码预防建议
 1. 开启编译选项CMAKE_C_FLAGS="-march=armv8-a"，锁定硬件架构与编译，拦截指令集架构不匹配问题。
 2. 代码静态分析，禁用内联汇编，使用NDK API，避免嵌入无效指令。

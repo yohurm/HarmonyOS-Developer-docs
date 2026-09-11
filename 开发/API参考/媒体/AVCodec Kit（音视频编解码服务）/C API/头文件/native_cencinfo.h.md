@@ -1,13 +1,14 @@
 # native_cencinfo.h
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-cencinfo-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明用于设置解密参数的Native API。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | DrmSubsample | DrmSubsample | Subsample结构类型定义。 |
@@ -42,10 +46,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | DrmCencAlgorithm | DrmCencAlgorithm | Drm CENC算法类型。 |
@@ -54,10 +60,12 @@
  
   
 
-#### 宏定义
+### 宏定义
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | DRM_KEY_ID_SIZE 16 | Key id长度为16字节。 起始版本： 12 |
@@ -67,10 +75,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_AVCencInfo *OH_AVCencInfo_Create() | 创建用于设置cencInfo的OH_AVCencInfo实例。 |
@@ -84,15 +94,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### DrmCencAlgorithm
+### DrmCencAlgorithm
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum DrmCencAlgorithm
@@ -104,6 +116,7 @@ Drm CENC算法类型。
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | DRM_ALG_CENC_UNENCRYPTED = 0x0 | 不加密算法。 |
@@ -116,9 +129,10 @@ Drm CENC算法类型。
  
   
 
-#### DrmCencInfoMode
+### DrmCencInfoMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum DrmCencInfoMode
@@ -130,6 +144,7 @@ enum DrmCencInfoMode
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | DRM_CENC_INFO_KEY_IV_SUBSAMPLES_SET = 0x0 | keyId/iv/subsample信息已设置。 |
@@ -138,15 +153,17 @@ enum DrmCencInfoMode
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AVCencInfo_Create()
+### OH_AVCencInfo_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVCencInfo *OH_AVCencInfo_Create()
@@ -162,6 +179,7 @@ OH_AVCencInfo *OH_AVCencInfo_Create()
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVCencInfo * | 返回新创建的OH_AVCencInfo对象。如果返回nullptr，则表示创建对象失败。 可能失败的原因：应用程序地址空间已满，或者对象中的数据初始化失败。 |
@@ -169,9 +187,10 @@ OH_AVCencInfo *OH_AVCencInfo_Create()
  
   
 
-#### OH_AVCencInfo_Destroy()
+### OH_AVCencInfo_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVCencInfo_Destroy(OH_AVCencInfo *cencInfo)
@@ -189,6 +208,7 @@ OH_AVErrCode OH_AVCencInfo_Destroy(OH_AVCencInfo *cencInfo)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCencInfo *cencInfo | 指向OH_AVCencInfo实例的指针。 |
@@ -196,6 +216,7 @@ OH_AVErrCode OH_AVCencInfo_Destroy(OH_AVCencInfo *cencInfo)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：cencInfo为空。 |
@@ -203,9 +224,10 @@ OH_AVErrCode OH_AVCencInfo_Destroy(OH_AVCencInfo *cencInfo)
  
   
 
-#### OH_AVCencInfo_SetAlgorithm()
+### OH_AVCencInfo_SetAlgorithm()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVCencInfo_SetAlgorithm(OH_AVCencInfo *cencInfo, enum DrmCencAlgorithm algo)
@@ -221,6 +243,7 @@ OH_AVErrCode OH_AVCencInfo_SetAlgorithm(OH_AVCencInfo *cencInfo, enum DrmCencAlg
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCencInfo *cencInfo | 指向OH_AVCencInfo实例的指针。 |
@@ -229,6 +252,7 @@ OH_AVErrCode OH_AVCencInfo_SetAlgorithm(OH_AVCencInfo *cencInfo, enum DrmCencAlg
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：cencInfo为空。 |
@@ -236,9 +260,10 @@ OH_AVErrCode OH_AVCencInfo_SetAlgorithm(OH_AVCencInfo *cencInfo, enum DrmCencAlg
  
   
 
-#### OH_AVCencInfo_SetKeyIdAndIv()
+### OH_AVCencInfo_SetKeyIdAndIv()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVCencInfo_SetKeyIdAndIv(OH_AVCencInfo *cencInfo, uint8_t *keyId, uint32_t keyIdLen, uint8_t *iv, uint32_t ivLen)
@@ -254,6 +279,7 @@ OH_AVErrCode OH_AVCencInfo_SetKeyIdAndIv(OH_AVCencInfo *cencInfo, uint8_t *keyId
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCencInfo *cencInfo | 指向OH_AVCencInfo实例的指针。 |
@@ -265,6 +291,7 @@ OH_AVErrCode OH_AVCencInfo_SetKeyIdAndIv(OH_AVCencInfo *cencInfo, uint8_t *keyId
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：cencInfo为空、keyId为空、keyIdLen != DRM_KEY_ID_SIZE、iv是空、ivLen != DRM_KEY_IV_SIZE、keyId拷贝失败，或者iv拷贝失败。 |
@@ -272,9 +299,10 @@ OH_AVErrCode OH_AVCencInfo_SetKeyIdAndIv(OH_AVCencInfo *cencInfo, uint8_t *keyId
  
   
 
-#### OH_AVCencInfo_SetSubsampleInfo()
+### OH_AVCencInfo_SetSubsampleInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVCencInfo_SetSubsampleInfo(OH_AVCencInfo *cencInfo, uint32_t encryptedBlockCount, uint32_t skippedBlockCount, uint32_t firstEncryptedOffset, uint32_t subsampleCount, DrmSubsample *subsamples)
@@ -290,6 +318,7 @@ OH_AVErrCode OH_AVCencInfo_SetSubsampleInfo(OH_AVCencInfo *cencInfo, uint32_t en
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCencInfo *cencInfo | 指向OH_AVCencInfo实例的指针。 |
@@ -302,6 +331,7 @@ OH_AVErrCode OH_AVCencInfo_SetSubsampleInfo(OH_AVCencInfo *cencInfo, uint32_t en
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：cencInfo为空、subsampleCount > DRM_KEY_MAX_SUB_SAMPLE_NUM，或者subsamples为空。 |
@@ -309,9 +339,10 @@ OH_AVErrCode OH_AVCencInfo_SetSubsampleInfo(OH_AVCencInfo *cencInfo, uint32_t en
  
   
 
-#### OH_AVCencInfo_SetMode()
+### OH_AVCencInfo_SetMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVCencInfo_SetMode(OH_AVCencInfo *cencInfo, enum DrmCencInfoMode mode)
@@ -327,6 +358,7 @@ OH_AVErrCode OH_AVCencInfo_SetMode(OH_AVCencInfo *cencInfo, enum DrmCencInfoMode
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCencInfo *cencInfo | 指向OH_AVCencInfo实例的指针。 |
@@ -335,6 +367,7 @@ OH_AVErrCode OH_AVCencInfo_SetMode(OH_AVCencInfo *cencInfo, enum DrmCencInfoMode
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：cencInfo为空。 |
@@ -342,9 +375,10 @@ OH_AVErrCode OH_AVCencInfo_SetMode(OH_AVCencInfo *cencInfo, enum DrmCencInfoMode
  
   
 
-#### OH_AVCencInfo_SetAVBuffer()
+### OH_AVCencInfo_SetAVBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVCencInfo_SetAVBuffer(OH_AVCencInfo *cencInfo, OH_AVBuffer *buffer)
@@ -360,6 +394,7 @@ OH_AVErrCode OH_AVCencInfo_SetAVBuffer(OH_AVCencInfo *cencInfo, OH_AVBuffer *buf
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCencInfo *cencInfo | 指向OH_AVCencInfo实例的指针。 |
@@ -368,6 +403,7 @@ OH_AVErrCode OH_AVCencInfo_SetAVBuffer(OH_AVCencInfo *cencInfo, OH_AVBuffer *buf
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：cencInfo为空、buffer为空、buffer->buffer_为空，或者buffer->buffer_->meta_为空。 |

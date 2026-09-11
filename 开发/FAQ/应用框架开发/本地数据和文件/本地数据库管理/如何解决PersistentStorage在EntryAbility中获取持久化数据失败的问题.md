@@ -60,11 +60,11 @@ export default class EntryAbility extends UIAbility {
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
-    // Main window is created, set main page for this ability
+   <em> // Main window is created, set main page for this ability</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
     windowStage.loadContent('pages/Index', (err) => {
-      // 创建PersistentStorage对象
+  <em>    // 创建PersistentStorage对象</em>
       PersistentStorage.persistProp('token', '');
       if (err.code) {
         hilog.error(DOMAIN, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err));
@@ -75,17 +75,17 @@ export default class EntryAbility extends UIAbility {
   }
 
   onWindowStageDestroy(): void {
-    // Main window is destroyed, release UI related resources
+ <em>   // Main window is destroyed, release UI related resources</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
   }
 
   onForeground(): void {
-    // Ability has brought to foreground
+   <em> // Ability has brought to foreground</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onForeground');
   }
 
   onBackground(): void {
-    // Ability has back to background
+  <em>  // Ability has back to background</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onBackground');
   }
 };
@@ -99,7 +99,7 @@ struct Index {
   @State message: string = '这是首页';
 
   aboutToAppear(): void {
-    // 获取token信息，判断如果未登录，则跳转登录页
+  <em>  // 获取token信息，判断如果未登录，则跳转登录页</em>
     const token = AppStorage.get('token') as string;
     if (token == '') {
       this.getUIContext().getRouter().pushUrl({
@@ -144,7 +144,7 @@ struct Login {
         .fontSize($r('app.float.page_text_font_size'))
         .fontWeight(FontWeight.Bold)
         .onClick(() => {
-          // 在登录页通过AppStorage保存Token信息
+      <em>    // 在登录页通过AppStorage保存Token信息</em>
           AppStorage.setOrCreate('token', '123456');
           this.getUIContext().getRouter().pushUrl({
             url: 'pages/Index'
@@ -169,27 +169,27 @@ class TokenPreferences {
   context: Context | undefined = undefined;
   tokenName: string = 'TOKEN';
 
-  // 获取实例
+<em>  // 获取实例</em>
   getStore() {
     let options: preferences.Options = { name: this.tokenName };
     return preferences.getPreferencesSync(this.context, options);
   }
 
-  // 增
+<em>  // 增</em>
   async insert(value: string) {
     const dataPreferences = await this.getStore();
     dataPreferences.putSync(this.tokenName, value);
     dataPreferences.flush();
   }
 
-  // 删
+<em>  // 删</em>
   async delete() {
     const dataPreferences = await this.getStore();
     dataPreferences.deleteSync(this.tokenName);
     dataPreferences.flush();
   }
 
-  // 查
+ <em> // 查</em>
   async query() {
     const dataPreferences = await this.getStore();
     const value = dataPreferences.getSync(this.tokenName, '') as string;
@@ -228,7 +228,7 @@ export default class EntryAbility extends UIAbility {
   }
 
   async onWindowStageCreate(windowStage: window.WindowStage): Promise<void> {
-    // Main window is created, set main page for this ability
+  <em>  // Main window is created, set main page for this ability</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
     tokenPreferences.context = this.context;
     const token = await tokenPreferences.query();
@@ -244,17 +244,17 @@ export default class EntryAbility extends UIAbility {
   }
 
   onWindowStageDestroy(): void {
-    // Main window is destroyed, release UI related resources
+  <em>  // Main window is destroyed, release UI related resources</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
   }
 
   onForeground(): void {
-    // Ability has brought to foreground
+ <em>   // Ability has brought to foreground</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onForeground');
   }
 
   onBackground(): void {
-    // Ability has back to background
+  <em>  // Ability has back to background</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onBackground');
   }
 };
@@ -276,9 +276,9 @@ struct Login {
         .fontSize($r('app.float.page_text_font_size'))
         .fontWeight(FontWeight.Bold)
         .onClick(() => {
-          // 持久化存储
+       <em>   // 持久化存储</em>
           tokenPreferences.insert('654321');
-          // 跳转首页
+       <em>   // 跳转首页</em>
           this.getUIContext().getRouter().pushUrl({
             url: 'pages/Index'
           }).catch(() => {
@@ -296,7 +296,7 @@ struct Login {
 ```text
 import { tokenPreferences } from '../utils/TokenPreferences';
 
-// 首页
+<em>// </em><em>首页</em>
 @Entry
 @Component
 struct Index {
@@ -309,7 +309,7 @@ struct Index {
         .fontSize($r('app.float.page_text_font_size'))
         .fontWeight(FontWeight.Bold)
         .onClick(() => {
-          // 删除首选项
+        <em>  // 删除首选项</em>
           tokenPreferences.delete();
           this.getUIContext().getRouter().pushUrl({
             url: 'pages/Login'

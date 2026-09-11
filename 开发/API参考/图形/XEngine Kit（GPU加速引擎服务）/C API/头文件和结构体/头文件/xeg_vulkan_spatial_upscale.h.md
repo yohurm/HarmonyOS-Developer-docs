@@ -1,11 +1,12 @@
 # xeg_vulkan_spatial_upscale.h
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-kit-xeg-vulkan-spatial-upscale-8h
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -23,16 +24,19 @@ XEngine空域GPU超分特性Vulkan接口。使用此头文件的接口前需要�
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 结构体
+### 结构体
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | struct XEG_SpatialUpscaleCreateInfo | 此结构体描述创建XEG_SpatialUpscale对象的信息，当结构体中的信息变化时，需要创建新的XEG_SpatialUpscale对象。 |
@@ -41,10 +45,12 @@ XEngine空域GPU超分特性Vulkan接口。使用此头文件的接口前需要�
  
   
 
-#### 类型定义
+### 类型定义
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | VK_DEFINE_HANDLE(XEG_SpatialUpscale) | XEG_SpatialUpscale的句柄。 |
@@ -57,10 +63,12 @@ XEngine空域GPU超分特性Vulkan接口。使用此头文件的接口前需要�
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | VKAPI_ATTR VkResult VKAPI_CALL HMS_XEG_CreateSpatialUpscale (VkDevice device, const XEG_SpatialUpscaleCreateInfo *pXegSpatialUpscaleCreateInfo, XEG_SpatialUpscale *pXegSpatialUpscale) | 创建XEG_SpatialUpscale对象。 |

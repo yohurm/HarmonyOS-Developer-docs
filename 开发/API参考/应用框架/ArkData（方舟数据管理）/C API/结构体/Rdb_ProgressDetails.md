@@ -1,18 +1,19 @@
 # Rdb_ProgressDetails
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-rdb-rdb-progressdetails
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct Rdb_ProgressDetails {...} Rdb_ProgressDetails
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述数据库整体执行端云同步任务上传和下载的统计信息。
  
@@ -24,19 +25,22 @@ typedef struct Rdb_ProgressDetails {...} Rdb_ProgressDetails
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 成员变量
+### 成员变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | int version | 表示Rdb_ProgressDetails结构体的版本。 |
 | int schedule | 表示端云同步过程。 |
-| int code | 表示端云同步过程的状态。 |
+| int code | 表示端云同步过程的状态码。 |
 | int32_t tableLength | 表示端云同步的表的数量。 |

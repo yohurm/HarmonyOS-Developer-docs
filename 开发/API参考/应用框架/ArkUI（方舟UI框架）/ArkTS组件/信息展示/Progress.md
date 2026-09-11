@@ -1,9 +1,9 @@
 # Progress
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-progress
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 进度条组件，用于显示内容加载或操作处理等进度。支持线性、环形、圆形、胶囊等多种样式，可自定义颜色、渐变效果和动效，适用于文件下载、数据加载、任务处理等需要展示进度状态的场景。通过丰富的样式与动效配置，可快速实现进度可视化，提升用户体验。
  
@@ -12,17 +12,19 @@
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
  
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Progress(options: ProgressOptions)
  
@@ -36,6 +38,7 @@ Progress(options: ProgressOptions)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ProgressOptions | 是 | 按进度条类型不同，设置不同属性的进度条组件参数。 |
@@ -43,29 +46,30 @@ Progress(options: ProgressOptions)
  
   
 
-#### ProgressOptions对象说明
+## ProgressOptions对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 进度条选项。
  
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
- 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| value | number | 否 | 否 | 指定当前进度值。 默认值：0 取值范围：[0, total]，设置小于0的数值时置为0，设置大于total的数值时置为total，设置非法值时按默认值处理。 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 |
-| total | number | 否 | 是 | 指定进度总长。设置小于0的数值时置为100。 默认值：100 取值范围：(0, +∞)。 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 |
-| type8+ | ProgressType | 否 | 是 | 指定进度条类型。 默认值：ProgressType.Linear 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 说明： 不同的type需分别对应相应的style属性设置，详细映射关系参考ProgressStyleMap。 |
+| value | number | 否 | 否 | 指定当前进度值。 默认值：0 取值范围：[0, total]，设置小于0的数值时置为0，设置大于total的数值时置为total，设置非法值时按默认值处理。 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| total | number | 否 | 是 | 指定进度总长。设置小于0的数值时置为100。 默认值：100 取值范围：(0, +∞)。 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| type8+ | Type | 否 | 是 | 指定进度条类型。Type继承于ProgressStyleMap。 默认值：ProgressType.Linear 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 说明： 不同的ProgressType需分别对应相应的style属性设置，详细映射关系参考ProgressStyleMap。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | style(deprecated) | ProgressStyle | 否 | 是 | 指定进度条样式。 从API version 7开始支持，从API version 8开始废弃。建议使用type替代。 默认值：ProgressStyle.Linear |
  
  
   
 
-#### ProgressType8+枚举说明
+## ProgressType8+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 进度条类型。
  
@@ -75,6 +79,7 @@ Progress(options: ProgressOptions)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | Linear | 0 | 线性样式。从API version 9开始，当高度大于宽度时，自适应垂直显示。 |
@@ -86,9 +91,10 @@ Progress(options: ProgressOptions)
  
   
 
-#### ProgressStyle枚举说明
+## ProgressStyle枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 进度条样式。
  
@@ -98,20 +104,22 @@ Progress(options: ProgressOptions)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | Linear | 0 | 线性样式，进度条沿直线方向从一端逐渐填充至另一端。 |
-| Ring8+ | 1 | 环形圆环逐渐显示直至完全填充。 |
+| Ring8+ | 1 | 环形无刻度样式，环形圆环逐渐显示直至完全填充。 |
 | Eclipse | 2 | 圆形样式，显示类似月圆月缺的进度展示效果，从月牙逐渐变化至满月。 |
-| ScaleRing8+ | 3 | 环形有刻度样式，显示类似时钟刻度形式的进度展示效果。 |
-| Capsule8+ | 4 | 胶囊样式，头尾两端圆弧处的进度展示效果与Eclipse相同，中段的进度展示效果与Linear相同。当高度大于宽度时，自适应垂直显示。 |
+| ScaleRing8+ | 3 | 环形有刻度样式，显示类似时钟刻度形式的进度展示效果。从API version 9开始，刻度外圈出现重叠时自动转换为环形无刻度进度条。 |
+| Capsule8+ | 4 | 胶囊样式，头尾两端圆弧处的进度展示效果与Eclipse相同，中段的进度展示效果与Linear相同。从API version 9开始，当高度大于宽度时，自适应垂直显示。 |
  
  
   
 
-#### ProgressStyleMap10+对象说明
+## ProgressStyleMap10+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 进度条类型和样式的映射表。
  
@@ -121,20 +129,22 @@ Progress(options: ProgressOptions)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 |
 | --- | --- |
-| ProgressType.Linear | LinearStyleOptions10+ \| ProgressStyleOptions |
-| ProgressType.Ring | RingStyleOptions10+ \| ProgressStyleOptions |
-| ProgressType.Eclipse | EclipseStyleOptions10+ \| ProgressStyleOptions |
-| ProgressType.ScaleRing | ScaleRingStyleOptions10+ \| ProgressStyleOptions |
-| ProgressType.Capsule | CapsuleStyleOptions10+ \| ProgressStyleOptions |
+| [ProgressType.Linear] | LinearStyleOptions \| ProgressStyleOptions |
+| [ProgressType.Ring] | RingStyleOptions \| ProgressStyleOptions |
+| [ProgressType.Eclipse] | EclipseStyleOptions \| ProgressStyleOptions |
+| [ProgressType.ScaleRing] | ScaleRingStyleOptions \| ProgressStyleOptions |
+| [ProgressType.Capsule] | CapsuleStyleOptions \| ProgressStyleOptions |
  
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
  
@@ -144,9 +154,10 @@ Progress(options: ProgressOptions)
  
   
 
-#### value
+### value
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 value(value: number)
  
@@ -160,6 +171,7 @@ value(value: number)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 当前进度值。 默认值：0 取值范围：[0, total]，设置小于0的数值时置为0，设置大于total的数值时置为total，设置非法值时按默认值处理。 说明： 当Ring类型进度条的status设置为ProgressStatus.LOADING时，设置进度值不生效。 |
@@ -167,9 +179,10 @@ value(value: number)
  
   
 
-#### color
+### color
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 color(value: ResourceColor | LinearGradient)
  
@@ -187,6 +200,7 @@ color(value: ResourceColor | LinearGradient)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor \| LinearGradient | 是 | 进度条前景色。 从API version 10开始支持利用LinearGradient设置Ring样式的渐变色，从API version 23开始支持利用LinearGradient设置Linear样式和Capsule样式的渐变色。 默认值： - Capsule： API version 9及以下：'#ff007dff' API version 10：'#33006cde' API version 11及以上：'#33007dff' - Ring： API version 9及以下：'#ff007dff' API version 10及以上：起始端：'#ff86c1ff'，结束端：'#ff254ff7' - 其他样式：'#ff007dff' |
@@ -194,11 +208,12 @@ color(value: ResourceColor | LinearGradient)
  
   
 
-#### style8+
+### style8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-style(value: ProgressStyleOptions | CapsuleStyleOptions | RingStyleOptions | LinearStyleOptions | ScaleRingStyleOptions | EclipseStyleOptions)
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+style(value: Style)
  
 设置组件的样式。
  
@@ -210,16 +225,18 @@ style(value: ProgressStyleOptions | CapsuleStyleOptions | RingStyleOptions | Lin
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | ProgressStyleOptions8+ \| CapsuleStyleOptions10+ \| RingStyleOptions10+ \| LinearStyleOptions10+ \| ScaleRingStyleOptions10+ \| EclipseStyleOptions10+ | 是 | 组件的样式。 说明： 不同的type需分别对应相应的style属性设置，详细映射关系参考ProgressStyleMap。 - CapsuleStyleOptions：设置Capsule的样式。 - RingStyleOptions：设置Ring的样式。 - LinearStyleOptions：设置Linear的样式。 - ScaleRingStyleOptions：设置ScaleRing的样式。 - EclipseStyleOptions：设置Eclipse的样式。 - ProgressStyleOptions：仅可设置各类型进度条的strokeWidth、scaleCount、scaleWidth，仅对支持这些样式设置的进度条生效。 |
+| value | Style | 是 | 组件的样式。Style继承于ProgressStyleMap。 说明： 不同的ProgressType需分别对应相应的style属性设置，详细映射关系参考ProgressStyleMap。 - CapsuleStyleOptions：设置Capsule的样式。 - RingStyleOptions：设置Ring的样式。 - LinearStyleOptions：设置Linear的样式。 - ScaleRingStyleOptions：设置ScaleRing的样式。 - EclipseStyleOptions：设置Eclipse的样式。 - ProgressStyleOptions：仅可设置各类型进度条的strokeWidth、scaleCount、scaleWidth，仅对支持这些样式设置的进度条生效。 |
  
  
   
 
-#### contentModifier12+
+### contentModifier12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contentModifier(modifier:ContentModifier&lt;ProgressConfiguration&gt;)
  
@@ -233,6 +250,7 @@ contentModifier(modifier:ContentModifier&lt;ProgressConfiguration&gt;)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | modifier | ContentModifier&lt;ProgressConfiguration&gt; | 是 | 在Progress组件上，定制内容区的方法。 modifier：内容修改器，开发者需要自定义class实现ContentModifier接口。 |
@@ -240,9 +258,10 @@ contentModifier(modifier:ContentModifier&lt;ProgressConfiguration&gt;)
  
   
 
-#### privacySensitive12+
+### privacySensitive12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 privacySensitive(isPrivacySensitiveMode: Optional&lt;boolean&gt;)
  
@@ -262,6 +281,7 @@ privacySensitive(isPrivacySensitiveMode: Optional&lt;boolean&gt;)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isPrivacySensitiveMode | Optional&lt;boolean&gt; | 是 | 设置隐私敏感，隐私模式下进度清零，文字将被遮罩。true：打开隐私敏感；false：关闭隐私敏感。 默认值：false 说明： 设置null表示不敏感。 |
@@ -269,9 +289,10 @@ privacySensitive(isPrivacySensitiveMode: Optional&lt;boolean&gt;)
  
   
 
-#### ProgressConfiguration12+
+## ProgressConfiguration12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 进度条配置。继承自[CommonConfiguration](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-content-modifier#commonconfigurationt)。
  
@@ -281,6 +302,7 @@ privacySensitive(isPrivacySensitiveMode: Optional&lt;boolean&gt;)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | value | number | 否 | 否 | 当前进度值。当设置的数值小于0时，将其置为0。当设置的数值大于total时，将其置为total。 默认值：0 取值范围：[0, total] 说明： 当Ring类型进度条的status设置为ProgressStatus.LOADING时，设置进度值不生效。 |
@@ -289,9 +311,10 @@ privacySensitive(isPrivacySensitiveMode: Optional&lt;boolean&gt;)
  
   
 
-#### CommonProgressStyleOptions10+
+## CommonProgressStyleOptions10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 进度条通用样式选项。
  
@@ -301,6 +324,7 @@ privacySensitive(isPrivacySensitiveMode: Optional&lt;boolean&gt;)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | enableSmoothEffect | boolean | 否 | 是 | 进度平滑动效的开关。开启平滑动效后设置进度，进度会从当前值渐变至设定值，页面会有进度变化的动效；否则进度从当前值突变至设定值，页面无动效。 true：表示开启进度平滑动效。 false：表示关闭进度平滑动效。 默认值：true |
@@ -308,9 +332,10 @@ privacySensitive(isPrivacySensitiveMode: Optional&lt;boolean&gt;)
  
   
 
-#### ScanEffectOptions10+
+## ScanEffectOptions10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 扫光效果选项。
  
@@ -320,6 +345,7 @@ privacySensitive(isPrivacySensitiveMode: Optional&lt;boolean&gt;)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | enableScanEffect | boolean | 否 | 是 | 扫光效果的开关。仅支持ProgressType类型为Linear、Ring、Capsule的进度条。 true：表示开启扫光效果。 false：表示关闭扫光效果。 默认值：false |
@@ -327,9 +353,10 @@ privacySensitive(isPrivacySensitiveMode: Optional&lt;boolean&gt;)
  
   
 
-#### ProgressStyleOptions8+
+## ProgressStyleOptions8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 进度条样式选项。
  
@@ -341,6 +368,7 @@ privacySensitive(isPrivacySensitiveMode: Optional&lt;boolean&gt;)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | strokeWidth | Length | 否 | 是 | 设置进度条宽度（不支持百分比设置）。 默认值：4.0vp 取值范围：大于0的数值。 超出取值范围或设置非法值时按默认值处理。 |
@@ -350,36 +378,37 @@ privacySensitive(isPrivacySensitiveMode: Optional&lt;boolean&gt;)
  
   
 
-#### CapsuleStyleOptions10+
+## CapsuleStyleOptions10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 胶囊样式选项。
  
 继承自[ScanEffectOptions](#scaneffectoptions10)和[CommonProgressStyleOptions](#commonprogressstyleoptions10)。
  
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
- 
 **模型约束：** 此接口仅可在Stage模型下使用。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| borderColor | ResourceColor | 否 | 是 | 内描边颜色。 默认值： API version 10：'#33006cde' API version 11及以上：'#33007dff' |
-| borderWidth | Length | 否 | 是 | 内描边宽度。 默认值：1vp 取值范围：大于等于0的数值，不支持百分比设置。 超出取值范围或设置非法值时按默认值处理。 |
-| content | ResourceStr | 否 | 是 | 文本内容，应用可自定义。 当需要在Capsule进度条上显示自定义文本时传入此参数；不传入时不显示文本内容（若需显示百分比文本，可设置showDefaultPercentage为true）。 从API version 20开始，支持Resource类型。 |
-| font | Font | 否 | 是 | 文本样式。 默认值： 文本大小（不支持百分比设置）：12fp 其他文本参数跟随Text组件的主题值。 |
-| fontColor | ResourceColor | 否 | 是 | 文本颜色。 默认值：'#ff182431' |
-| showDefaultPercentage | boolean | 否 | 是 | 显示百分比文本的开关。开启后，进度条上显示当前进度的百分比。设置了content属性时该属性不生效。 true：表示显示百分比文本；false：表示不显示百分比文本。 默认值：false |
-| borderRadius18+ | LengthMetrics | 否 | 是 | Capsule进度条圆角半径（不支持百分比设置）。 取值范围：[0, 组件高度/2]。默认值：组件高度 / 2。 设置非法数值时，按照默认值处理。 |
+| borderColor | ResourceColor | 否 | 是 | 内描边颜色。 默认值： API version 10：'#33006cde' API version 11及以上：'#33007dff' 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| borderWidth | Length | 否 | 是 | 内描边宽度。 默认值：1vp 取值范围：大于等于0的数值，不支持百分比设置。 超出取值范围或设置非法值时按默认值处理。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| content | ResourceStr | 否 | 是 | 文本内容，应用可自定义。 当需要在Capsule进度条上显示自定义文本时传入此参数；不传入时不显示文本内容（若需显示百分比文本，可设置showDefaultPercentage为true）。 从API version 20开始，支持Resource类型。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| font | Font | 否 | 是 | 文本样式。 默认值： 文本大小（不支持百分比设置）：12fp 其他文本参数跟随Text组件的主题值。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| fontColor | ResourceColor | 否 | 是 | 文本颜色。 默认值：'#ff182431' 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| showDefaultPercentage | boolean | 否 | 是 | 显示百分比文本的开关。开启后，进度条上显示当前进度的百分比。设置了content属性时该属性不生效。 true：表示显示百分比文本；false：表示不显示百分比文本。 默认值：false 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| borderRadius18+ | LengthMetrics | 否 | 是 | Capsule进度条圆角半径（不支持百分比设置）。 取值范围：[0, 组件高度/2]。默认值：组件高度 / 2。 设置非法数值时，按照默认值处理。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
  
  
   
 
-#### RingStyleOptions10+
+## RingStyleOptions10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 环形无刻度样式选项。
  
@@ -391,18 +420,20 @@ privacySensitive(isPrivacySensitiveMode: Optional&lt;boolean&gt;)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | strokeWidth | Length | 否 | 是 | 设置进度条宽度。 默认值：4.0vp 取值范围：大于0的数值，不支持百分比设置。 超出取值范围或设置非法值时按默认值处理。 当宽度大于等于半径时，宽度默认修改为半径值的二分之一。 |
 | shadow | boolean | 否 | 是 | 进度条阴影开关。 true：表示打开进度条阴影；false：表示关闭进度条阴影。 默认值：false |
-| status | ProgressStatus10+ | 否 | 是 | 设置进度条状态。当设置为ProgressStatus.LOADING时会开启检查更新动效，此时设置进度值不生效。当从ProgressStatus.LOADING设置为ProgressStatus.PROGRESSING时，检查更新动效会执行到终点再停止。 默认值：ProgressStatus.PROGRESSING |
+| status | ProgressStatus10+ | 否 | 是 | 设置进度条状态。当设置为ProgressStatus.LOADING时会开启检查更新动效。当从ProgressStatus.LOADING设置为ProgressStatus.PROGRESSING时，检查更新动效会执行到终点再停止。 默认值：ProgressStatus.PROGRESSING 说明： 当设置为ProgressStatus.LOADING时，进度值设置不生效，具体参见value属性说明。 |
  
  
   
 
-#### LinearStyleOptions10+
+## LinearStyleOptions10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 线性样式选项。
  
@@ -414,6 +445,7 @@ privacySensitive(isPrivacySensitiveMode: Optional&lt;boolean&gt;)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | strokeWidth | Length | 否 | 是 | 设置进度条宽度。 默认值：4.0vp 取值范围：大于0的数值，不支持百分比设置。 超出取值范围或设置非法值时按默认值处理。 |
@@ -422,9 +454,10 @@ privacySensitive(isPrivacySensitiveMode: Optional&lt;boolean&gt;)
  
   
 
-#### ScaleRingStyleOptions10+
+## ScaleRingStyleOptions10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 环形有刻度样式选项。
  
@@ -436,18 +469,20 @@ privacySensitive(isPrivacySensitiveMode: Optional&lt;boolean&gt;)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| strokeWidth | Length | 否 | 是 | 设置进度条宽度。 默认值：4.0vp 取值范围：大于0的数值，不支持百分比设置。 超出取值范围或设置非法值时按默认值处理。 |
+| strokeWidth | Length | 否 | 是 | 设置进度条宽度。 默认值：4.0vp 取值范围：大于0的数值（单位：vp），不支持百分比设置。 超出取值范围或设置非法值时按默认值处理。 |
 | scaleCount | number | 否 | 是 | 设置环形进度条总刻度数。 默认值：120 取值范围：[2, min(width, height)*π/scaleWidth]，超出取值范围时，样式显示为环形无刻度进度条。 在scaleCount和scaleWidth都与默认值相等的情况下，设置组件宽度或高度小于77vp会显示为环形无刻度进度条。 |
-| scaleWidth | Length | 否 | 是 | 设置环形进度条刻度粗细（不支持百分比设置）。 默认值：2.0vp 取值范围：大于0的数值。 刻度粗细大于进度条宽度时，使用系统默认粗细。 在scaleCount和scaleWidth都与默认值相等的情况下，设置组件宽度或高度小于77vp会显示为环形无刻度进度条。 |
+| scaleWidth | Length | 否 | 是 | 设置环形进度条刻度粗细（不支持百分比设置）。 默认值：2.0vp 取值范围：大于0的数值（单位：vp）。 刻度粗细大于进度条宽度时，使用系统默认粗细。 在scaleCount和scaleWidth都与默认值相等的情况下，设置组件宽度或高度小于77vp会显示为环形无刻度进度条。 |
  
  
   
 
-#### EclipseStyleOptions10+
+## EclipseStyleOptions10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 圆形样式选项。圆形样式的显示类似月圆月缺的进度展示效果，从月牙逐渐变化至满月。
  
@@ -461,9 +496,10 @@ privacySensitive(isPrivacySensitiveMode: Optional&lt;boolean&gt;)
  
   
 
-#### ProgressStatus10+枚举说明
+## ProgressStatus10+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 进度条的当前状态。
  
@@ -473,6 +509,7 @@ privacySensitive(isPrivacySensitiveMode: Optional&lt;boolean&gt;)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | LOADING | 'LOADING' | 加载中状态。开启检查更新动效，此时设置进度值不生效。 |
@@ -481,21 +518,26 @@ privacySensitive(isPrivacySensitiveMode: Optional&lt;boolean&gt;)
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)。
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 示例1（设置进度条的类型）
+### 示例1（设置进度条的类型）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[ProgressOptions](#progressoptions对象说明)的入参type，实现了设置进度条类型的功能。
  
@@ -563,7 +605,10 @@ struct ProgressExample {
  
   
 
-#### 示例2（设置环形进度条属性）
+### 示例2（设置环形进度条属性）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[style](#style8)接口的strokeWidth和shadow属性，实现了环形进度条视觉属性设置功能。
  
@@ -597,7 +642,10 @@ struct ProgressExample {
  
   
 
-#### 示例3（设置环形进度条动画）
+### 示例3（设置环形进度条动画）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[style](#style8)接口的status和enableScanEffect属性，实现了环形进度条动效的开关功能。
  
@@ -628,7 +676,10 @@ struct ProgressExample {
  
   
 
-#### 示例4（设置胶囊形进度条属性）
+### 示例4（设置胶囊形进度条属性）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[style](#style8)接口的borderColor、borderWidth、content、font、fontColor、enableScanEffect、showDefaultPercentage属性，实现胶囊形进度条的视觉属性设置。
  
@@ -662,7 +713,10 @@ struct ProgressExample {
  
   
 
-#### 示例5（设置进度平滑动效）
+### 示例5（设置进度平滑动效）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[style](#style8)接口的enableSmoothEffect属性，实现了进度平滑动效开关的功能。
  
@@ -708,7 +762,10 @@ struct Index {
  
   
 
-#### 示例6（设置定制内容区）
+### 示例6（设置定制内容区）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[contentModifier](#contentmodifier12)接口，实现了自定义进度条的功能，自定义实现星形，其中总进度为3，且当前值可通过按钮进行增减，达到的进度使用自定义颜色填充。
  
@@ -792,7 +849,10 @@ struct Index {
  
   
 
-#### 示例7（设置隐私隐藏）
+### 示例7（设置隐私隐藏）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[privacySensitive](#privacysensitive12)属性，实现了隐私隐藏效果。效果展示需要卡片框架支持。
  
@@ -833,7 +893,10 @@ struct ProgressExample {
  
   
 
-#### 示例8（设置Capsule进度条圆角半径）
+### 示例8（设置Capsule进度条圆角半径）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[CapsuleStyleOptions](#capsulestyleoptions10)的入参borderRadius，实现了Capsule类型进度条圆角半径设置。
  
@@ -874,7 +937,10 @@ struct ProgressExample {
  
   
 
-#### 示例9（设置线性进度条和胶囊进度条属性）
+### 示例9（设置线性进度条和胶囊进度条属性）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 23开始，该示例通过[color](#color)属性中的LinearGradient，实现线性进度条和胶囊进度条渐变色的功能。
  

@@ -1,6 +1,6 @@
 # gamePlayer（基础游戏服务）
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservice-gameplayer
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -12,7 +12,8 @@
 **起始版本：** 4.0.0(10)
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -22,7 +23,8 @@ import { gamePlayer } from '@kit.GameServiceKit';
 
 
 
-#### GSKLocalPlayer
+## GSKLocalPlayer
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -33,6 +35,7 @@ import { gamePlayer } from '@kit.GameServiceKit';
 **系统能力：** SystemCapability.Game.GameService.GamePlayer
 
 **起始版本：** 4.0.0(10)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -46,7 +49,8 @@ import { gamePlayer } from '@kit.GameServiceKit';
 
 
 
-#### GSKPlayerRole
+## GSKPlayerRole
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -58,11 +62,8 @@ import { gamePlayer } from '@kit.GameServiceKit';
 
 **起始版本：** 4.0.0(10)
 
-
-![](assets/gamePlayer（基础游戏服务）/file-20260708103003e7f448b4.png)
-
-
-gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
+> [!NOTE]
+> gamePlayerId、teamPlayerId、thirdOpenId的参数值要求如下： 若是互通场景，teamPlayerId和thirdOpenId必须为空，需要传入gamePlayerId。 若是绑定场景，gamePlayerId必须为空，需要传入teamPlayerId和thirdOpenId。
 
 
 
@@ -79,7 +80,8 @@ gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
 
 
 
-#### ThirdUserInfo
+## ThirdUserInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -95,6 +97,7 @@ gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
 > 华为账号合规校验时，无需传isRealName、isAdult、ageRange参数。
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | thirdOpenId | string | 否 | 否 | 游戏官方账号ID。若无，则传空字符串""。 最大长度128个字符。 |
@@ -105,7 +108,8 @@ gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
 
 
 
-#### UnionLoginParam
+## UnionLoginParam
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -117,6 +121,7 @@ gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | thirdAccountInfos | Array&lt;ThirdAccountInfo&gt; | 否 | 否 | 游戏官方账号信息，用于在联合登录面板中展示。不同账号的账号名称不能相同。 说明：若只需实现华为账号快速登录，此参数传空数组。 |
@@ -126,7 +131,8 @@ gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
 
 
 
-#### ThirdAccountInfo
+## ThirdAccountInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -138,6 +144,7 @@ gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | accountIcon | Resource | 否 | 否 | 游戏官方账号图标资源信息。总和最大支持35KB。 当前仅支持\$r("app.media.name")生成的Resource对象，不支持\$rawfile('filename')生成的Resource对象。 |
@@ -148,7 +155,8 @@ gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
 
 
 
-#### BoundPlayerInfo
+## BoundPlayerInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -160,6 +168,7 @@ gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | thirdOpenId | string | 否 | 否 | 游戏官方账号ID。 |
@@ -168,7 +177,8 @@ gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
 
 
 
-#### BindType
+## BindType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -180,6 +190,7 @@ gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CP_ACCOUNT_LEVEL | 0 | 开发者级别。 |
@@ -188,7 +199,8 @@ gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
 
 
 
-#### UnionLoginResult
+## UnionLoginResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -199,6 +211,7 @@ gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
 **系统能力：** SystemCapability.Game.GameService.GamePlayer
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -211,7 +224,8 @@ gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
 
 
 
-#### PlayerChangedResult
+## PlayerChangedResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -223,6 +237,7 @@ gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | event | PlayerChangedEvent | 否 | 否 | 玩家变化事件。 |
@@ -231,7 +246,8 @@ gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
 
 
 
-#### PlayerChangedEvent
+## PlayerChangedEvent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -243,6 +259,7 @@ gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SWITCH_GAME_ACCOUNT | 0 | 玩家切换游戏账号。 |
@@ -250,7 +267,8 @@ gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
 
 
 
-#### ThirdUserAgeRange
+## ThirdUserAgeRange
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -262,6 +280,7 @@ gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | AGE_RANGE_8 | 1 | 玩家实名认证年龄小于8周岁。 |
@@ -272,7 +291,8 @@ gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
 
 
 
-#### LoginPanelType
+## LoginPanelType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -284,6 +304,7 @@ gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ICON | 0 | - 除了华为账号，联合登录面板上最多还可以展示三个游戏官方账号。 - 开发者可以设置isOnTop参数，置顶登录面板上的任一种游戏官方账号。 |
@@ -292,7 +313,8 @@ gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
 
 
 
-#### GameErrorCode
+## GameErrorCode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -305,6 +327,7 @@ gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
 **起始版本：** 4.1.0(11)
 
 错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-gameservice)。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -339,7 +362,8 @@ gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
 
 
 
-#### gamePlayer.init
+## gamePlayer.init
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -355,12 +379,14 @@ init(context: common.UIAbilityContext): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | 上下文信息。 说明：严格要求继承UIAbility，并且获取上下文的时机是onWindowStageCreate生命周期中页面加载成功后。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -394,7 +420,8 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### gamePlayer.init
+## gamePlayer.init
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -409,6 +436,7 @@ init(context: common.UIAbilityContext, callback: AsyncCallback&lt;void&gt;): voi
 **起始版本：** 4.0.0(10)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -443,7 +471,8 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### gamePlayer.unionLogin
+## gamePlayer.unionLogin
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -459,6 +488,7 @@ unionLogin(context: common.UIAbilityContext, loginParam: UnionLoginParam): Promi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | 上下文信息。 |
@@ -466,6 +496,7 @@ unionLogin(context: common.UIAbilityContext, loginParam: UnionLoginParam): Promi
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -475,6 +506,7 @@ unionLogin(context: common.UIAbilityContext, loginParam: UnionLoginParam): Promi
 **错误码：**
 
 错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-gameservice)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -545,7 +577,8 @@ struct UnionLogin {
 
 
 
-#### gamePlayer.getLocalPlayer
+## gamePlayer.getLocalPlayer
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -561,12 +594,14 @@ getLocalPlayer(context: common.UIAbilityContext): Promise&lt;GSKLocalPlayer&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | 上下文信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -576,6 +611,7 @@ getLocalPlayer(context: common.UIAbilityContext): Promise&lt;GSKLocalPlayer&gt;
 **错误码：**
 
 错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-gameservice)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -633,7 +669,8 @@ struct GetLocalPlayer {
 
 
 
-#### gamePlayer.getLocalPlayer
+## gamePlayer.getLocalPlayer
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -649,6 +686,7 @@ getLocalPlayer(context: common.UIAbilityContext, callback: AsyncCallback&lt;GSKL
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | 上下文信息。 |
@@ -658,6 +696,7 @@ getLocalPlayer(context: common.UIAbilityContext, callback: AsyncCallback&lt;GSKL
 **错误码：**
 
 错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-gameservice)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -717,7 +756,8 @@ struct GetLocalPlayer {
 
 
 
-#### gamePlayer.bindPlayer
+## gamePlayer.bindPlayer
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -733,6 +773,7 @@ bindPlayer(context: common.UIAbilityContext, thirdOpenId: string, teamPlayerId: 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | 上下文信息。 |
@@ -742,6 +783,7 @@ bindPlayer(context: common.UIAbilityContext, thirdOpenId: string, teamPlayerId: 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -750,6 +792,7 @@ bindPlayer(context: common.UIAbilityContext, thirdOpenId: string, teamPlayerId: 
 **错误码：**
 
 错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-gameservice)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -808,7 +851,8 @@ struct BindPlayer {
 
 
 
-#### gamePlayer.unbindPlayer
+## gamePlayer.unbindPlayer
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -824,6 +868,7 @@ unbindPlayer(context: common.UIAbilityContext, thirdOpenId: string, teamPlayerId
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | 上下文信息。 |
@@ -833,6 +878,7 @@ unbindPlayer(context: common.UIAbilityContext, thirdOpenId: string, teamPlayerId
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -841,6 +887,7 @@ unbindPlayer(context: common.UIAbilityContext, thirdOpenId: string, teamPlayerId
 **错误码：**
 
 错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-gameservice)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -899,7 +946,8 @@ struct UnbindPlayer {
 
 
 
-#### gamePlayer.verifyLocalPlayer
+## gamePlayer.verifyLocalPlayer
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -915,6 +963,7 @@ verifyLocalPlayer(context: common.UIAbilityContext, thirdUserInfo: ThirdUserInfo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | 上下文信息。 |
@@ -922,6 +971,7 @@ verifyLocalPlayer(context: common.UIAbilityContext, thirdUserInfo: ThirdUserInfo
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -931,6 +981,7 @@ verifyLocalPlayer(context: common.UIAbilityContext, thirdUserInfo: ThirdUserInfo
 **错误码：**
 
 错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-gameservice)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -994,7 +1045,8 @@ struct VerifyLocalPlayer {
 
 
 
-#### gamePlayer.savePlayerRole
+## gamePlayer.savePlayerRole
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1010,6 +1062,7 @@ savePlayerRole(context: common.UIAbilityContext, request: GSKPlayerRole): Promis
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | 上下文信息。 |
@@ -1017,6 +1070,7 @@ savePlayerRole(context: common.UIAbilityContext, request: GSKPlayerRole): Promis
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1070,7 +1124,8 @@ struct SavePlayerRole {
 
 
 
-#### gamePlayer.savePlayerRole
+## gamePlayer.savePlayerRole
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1085,6 +1140,7 @@ savePlayerRole(context: common.UIAbilityContext, request: GSKPlayerRole, callbac
 **起始版本：** 4.0.0(10)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1140,7 +1196,8 @@ struct SavePlayerRole {
 
 
 
-#### gamePlayer.on('playerChanged')
+## gamePlayer.on('playerChanged')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1156,6 +1213,7 @@ on(type: 'playerChanged', callback: Callback&lt;PlayerChangedResult&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件类型，固定为'playerChanged'事件。 |
@@ -1165,6 +1223,7 @@ on(type: 'playerChanged', callback: Callback&lt;PlayerChangedResult&gt;): void
 **错误码：**
 
 错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1196,7 +1255,8 @@ try {
 
 
 
-#### gamePlayer.off('playerChanged')
+## gamePlayer.off('playerChanged')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1212,6 +1272,7 @@ off(type: 'playerChanged', callback?: Callback&lt;PlayerChangedResult&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 取消监听的事件类型，固定为'playerChanged'事件。 |
@@ -1221,6 +1282,7 @@ off(type: 'playerChanged', callback?: Callback&lt;PlayerChangedResult&gt;): void
 **错误码：**
 
 错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1267,7 +1329,8 @@ try {
 
 
 
-#### MiniGameLoginParam
+## MiniGameLoginParam
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1279,6 +1342,7 @@ try {
 
 **起始版本：** 6.0.1(21)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | gameAppId | string | 否 | 否 | 小游戏APP ID。小游戏APP ID来源于开发者在AppGallery Connect中创建小游戏时自动生成的APP ID，具体请参见为小游戏创建APP ID。 最大长度64个字符。 |
@@ -1287,7 +1351,8 @@ try {
 
 
 
-#### MiniGamePlayer
+## MiniGamePlayer
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1298,6 +1363,7 @@ try {
 **系统能力：** SystemCapability.Game.GameService.GamePlayer
 
 **起始版本：** 6.0.1(21)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1311,7 +1377,8 @@ try {
 
 
 
-#### gamePlayer.on('miniGameAddictionPrevented')
+## gamePlayer.on('miniGameAddictionPrevented')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1327,6 +1394,7 @@ on(type: 'miniGameAddictionPrevented', callback: Callback&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件类型，固定为'miniGameAddictionPrevented'事件。 |
@@ -1336,6 +1404,7 @@ on(type: 'miniGameAddictionPrevented', callback: Callback&lt;string&gt;): void
 **错误码：**
 
 错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-gameservice)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1365,7 +1434,8 @@ try {
 
 
 
-#### gamePlayer.off('miniGameAddictionPrevented')
+## gamePlayer.off('miniGameAddictionPrevented')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1381,6 +1451,7 @@ off(type: 'miniGameAddictionPrevented', callback?: Callback&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件类型，固定为'miniGameAddictionPrevented'事件。 |
@@ -1390,6 +1461,7 @@ off(type: 'miniGameAddictionPrevented', callback?: Callback&lt;string&gt;): void
 **错误码：**
 
 错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-gameservice)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1434,7 +1506,8 @@ try {
 
 
 
-#### gamePlayer.miniGameLogin
+## gamePlayer.miniGameLogin
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1450,6 +1523,7 @@ miniGameLogin(context: common.Context, loginParam: MiniGameLoginParam): Promise&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文信息。 |
@@ -1457,6 +1531,7 @@ miniGameLogin(context: common.Context, loginParam: MiniGameLoginParam): Promise&
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1466,6 +1541,7 @@ miniGameLogin(context: common.Context, loginParam: MiniGameLoginParam): Promise&
 **错误码：**
 
 错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-gameservice)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1531,7 +1607,8 @@ struct MiniGameLogin {
 
 
 
-#### gamePlayer.miniGamePay
+## gamePlayer.miniGamePay
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1547,6 +1624,7 @@ miniGamePay(context: common.Context, parameter: PurchaseParameter): Promise&lt;C
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文信息。 |
@@ -1554,6 +1632,7 @@ miniGamePay(context: common.Context, parameter: PurchaseParameter): Promise&lt;C
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1563,6 +1642,7 @@ miniGamePay(context: common.Context, parameter: PurchaseParameter): Promise&lt;C
 **错误码：**
 
 错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-gameservice)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1634,7 +1714,8 @@ struct MiniGamePay {
 
 
 
-#### PurchaseParameter
+## PurchaseParameter
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1646,6 +1727,7 @@ struct MiniGamePay {
 
 **起始版本：** 4.0.0(10)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | productId | string | 否 | 否 | 待支付的商品ID。每个产品ID必须在当前应用中存在且唯一。商品ID来源于开发者在AppGallery Connect中配置商品信息时设置的“商品ID”，具体请参见配置商品信息。 |
@@ -1656,7 +1738,8 @@ struct MiniGamePay {
 
 
 
-#### ProductType
+## ProductType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1668,6 +1751,7 @@ struct MiniGamePay {
 
 **起始版本：** 4.0.0(10)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CONSUMABLE | 0 | 消耗型商品。 |
@@ -1677,7 +1761,8 @@ struct MiniGamePay {
 
 
 
-#### PurchaseResult
+## PurchaseResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1689,6 +1774,7 @@ struct MiniGamePay {
 
 **起始版本：** 4.0.0(10)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | inAppPurchaseData | string | 否 | 否 | 订单数据的JSON字符串。 |
@@ -1698,7 +1784,8 @@ struct MiniGamePay {
 
 
 
-#### CreatePurchaseResult
+## CreatePurchaseResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1709,6 +1796,7 @@ struct MiniGamePay {
 **系统能力：** SystemCapability.Game.GameService.GamePlayer
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

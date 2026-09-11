@@ -1,11 +1,12 @@
 # Interface (MapEventManager)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-04 10:41:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-mapeventmanager
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -15,11 +16,12 @@ import { map, mapCommon } from '@kit.MapKit';
  
   
 
-#### MapEventManager
+## MapEventManager
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-地图监听事件管理器。
+地图监听事件管理器。获取地图的控制器类mapController参见[MapComponentController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-mapcomponentcontroller#mapcomponentcontroller)。
  
 **模型约束：** 此接口仅可在Stage模型下使用。
  
@@ -37,7 +39,8 @@ let mapEventManager: map.MapEventManager = this.mapController.getEventManager();
  
   
 
-#### on('cameraChange')
+### on('cameraChange')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -55,6 +58,7 @@ on(type: 'cameraChange', callback: Callback<mapCommon.LatLng>): void
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'cameraChange'：监听地图相机状态变化事件。 |
@@ -80,7 +84,8 @@ mapEventManager.on("cameraChange", callback3);
  
   
 
-#### off('cameraChange')
+### off('cameraChange')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -98,6 +103,7 @@ off(type: 'cameraChange', callback?: Callback<mapCommon.LatLng>): void
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'cameraChange'：监听地图相机状态变化事件。 |
@@ -127,7 +133,8 @@ mapEventManager.off('cameraChange');
  
   
 
-#### on('cameraIdle')
+### on('cameraIdle')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -145,6 +152,7 @@ on(type: 'cameraIdle', callback: Callback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'cameraIdle'：监听相机移动结束事件。 |
@@ -170,7 +178,8 @@ mapEventManager.on("cameraIdle", callback3);
  
   
 
-#### off('cameraIdle')
+### off('cameraIdle')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -188,6 +197,7 @@ off(type: 'cameraIdle', callback?: Callback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'cameraIdle'：监听相机移动结束事件。 |
@@ -217,7 +227,8 @@ mapEventManager.off('cameraIdle');
  
   
 
-#### on('cameraMoveCancel')
+### on('cameraMoveCancel')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -235,6 +246,7 @@ on(type: 'cameraMoveCancel', callback: Callback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'cameraMoveCancel'：监听地图相机移动取消事件。 |
@@ -260,7 +272,8 @@ mapEventManager.on("cameraMoveCancel", callback3);
  
   
 
-#### off('cameraMoveCancel')
+### off('cameraMoveCancel')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -278,6 +291,7 @@ off(type: 'cameraMoveCancel', callback?: Callback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'cameraMoveCancel'：监听地图相机移动取消事件。 |
@@ -307,7 +321,8 @@ mapEventManager.off('cameraMoveCancel');
  
   
 
-#### on('cameraMove')
+### on('cameraMove')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -325,6 +340,7 @@ on(type: 'cameraMove', callback: Callback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'cameraMove'：监听相机移动事件。 |
@@ -350,7 +366,8 @@ mapEventManager.on("cameraMove", callback3);
  
   
 
-#### off('cameraMove')
+### off('cameraMove')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -368,6 +385,7 @@ off(type: 'cameraMove', callback?: Callback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'cameraMove'：监听相机移动事件。 |
@@ -397,7 +415,8 @@ mapEventManager.off('cameraMove');
  
   
 
-#### on('cameraMoveStart')
+### on('cameraMoveStart')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -415,6 +434,7 @@ on(type: 'cameraMoveStart', callback: Callback&lt;number&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'cameraMoveStart'：监听相机移动开始事件。 |
@@ -440,7 +460,8 @@ mapEventManager.on("cameraMoveStart", callback3);
  
   
 
-#### off('cameraMoveStart')
+### off('cameraMoveStart')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -458,6 +479,7 @@ off(type: 'cameraMoveStart', callback?: Callback&lt;number&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'cameraMoveStart'：监听相机移动开始事件。 |
@@ -488,7 +510,8 @@ mapEventManager.off('cameraMoveStart');
  
   
 
-#### on('mapClick')
+### on('mapClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -506,6 +529,7 @@ on(type: 'mapClick', callback: Callback<mapCommon.LatLng>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'mapClick'：监听地图点击事件。 |
@@ -531,7 +555,8 @@ mapEventManager.on("mapClick", callback3);
  
   
 
-#### off('mapClick')
+### off('mapClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -549,6 +574,7 @@ off(type: 'mapClick', callback?: Callback<[mapCommon.LatLng](https://developer.h
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'mapClick'：监听地图点击事件。 |
@@ -579,7 +605,8 @@ mapEventManager.off('mapClick');
  
   
 
-#### on('mapLoad')
+### on('mapLoad')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -597,6 +624,7 @@ on(type: 'mapLoad', callback: Callback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'mapLoad'：监听地图加载事件。 |
@@ -622,7 +650,8 @@ mapEventManager.on("mapLoad", callback3);
  
   
 
-#### off('mapLoad')
+### off('mapLoad')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -640,6 +669,7 @@ off(type: 'mapLoad', callback?: Callback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'mapLoad'：监听地图加载事件。 |
@@ -670,7 +700,8 @@ mapEventManager.off('mapLoad');
  
   
 
-#### on('mapLongClick')
+### on('mapLongClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -688,6 +719,7 @@ on(type: 'mapLongClick', callback: Callback<mapCommon.LatLng>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'mapLongClick'：监听地图长按事件。 |
@@ -713,7 +745,8 @@ mapEventManager.on("mapLongClick", callback3);
  
   
 
-#### off('mapLongClick')
+### off('mapLongClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -731,6 +764,7 @@ off(type: 'mapLongClick', callback?: Callback<mapCommon.LatLng>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'mapLongClick'：监听地图长按事件。 |
@@ -761,7 +795,8 @@ mapEventManager.off('mapLongClick');
  
   
 
-#### on('myLocationButtonClick')
+### on('myLocationButtonClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -779,6 +814,7 @@ on(type: 'myLocationButtonClick', callback: Callback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'myLocationButtonClick'：监听我的位置按钮点击事件。 |
@@ -804,7 +840,8 @@ mapEventManager.on("myLocationButtonClick", callback3);
  
   
 
-#### off('myLocationButtonClick')
+### off('myLocationButtonClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -822,6 +859,7 @@ off(type: 'myLocationButtonClick', callback?: Callback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'myLocationButtonClick'：监听我的位置按钮点击事件。 |
@@ -852,7 +890,8 @@ mapEventManager.off('myLocationButtonClick');
  
   
 
-#### on('myLocationClick')
+### on('myLocationClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -870,6 +909,7 @@ on(type: 'myLocationClick', callback: Callback<mapCommon.LatLng>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'myLocationClick'：监听我的位置点击事件。 |
@@ -895,7 +935,8 @@ mapEventManager.on("myLocationClick", callback3);
  
   
 
-#### off('myLocationClick')
+### off('myLocationClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -913,6 +954,7 @@ off(type: 'myLocationClick', callback?: Callback<mapCommon.LatLng>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'myLocationClick'：监听我的位置点击事件。 |
@@ -943,7 +985,8 @@ mapEventManager.off('myLocationClick');
  
   
 
-#### on('poiClick')
+### on('poiClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -961,6 +1004,7 @@ on(type: 'poiClick', callback: Callback<mapCommon.Poi>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'poiClick'：监听POI点击事件。 |
@@ -986,7 +1030,8 @@ mapEventManager.on("poiClick", callback3);
  
   
 
-#### off('poiClick')
+### off('poiClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1004,6 +1049,7 @@ off(type: 'poiClick', callback?: Callback<mapCommon.Poi>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'poiClick'：监听POI点击事件。 |
@@ -1034,7 +1080,8 @@ mapEventManager.off('poiClick');
  
   
 
-#### on('markerClick')
+### on('markerClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1052,6 +1099,7 @@ on(type: 'markerClick', callback: Callback&lt;Marker&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'markerClick'：监听标记点击事件。 |
@@ -1077,7 +1125,8 @@ mapEventManager.on("markerClick", callback3);
  
   
 
-#### off('markerClick')
+### off('markerClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1095,6 +1144,7 @@ off(type: 'markerClick', callback?: Callback&lt;Marker&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'markerClick'：监听标记点击事件。 |
@@ -1125,7 +1175,8 @@ mapEventManager.off('markerClick');
  
   
 
-#### on('markerDragStart')
+### on('markerDragStart')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1143,6 +1194,7 @@ on(type: 'markerDragStart', callback: Callback&lt;Marker&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'markerDragStart'：监听标记开始拖拽事件。 |
@@ -1168,7 +1220,8 @@ mapEventManager.on("markerDragStart", callback3);
  
   
 
-#### off('markerDragStart')
+### off('markerDragStart')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1186,6 +1239,7 @@ off(type: 'markerDragStart', callback?: Callback&lt;Marker&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'markerDragStart'：监听标记开始拖拽事件。 |
@@ -1216,7 +1270,8 @@ mapEventManager.off('markerDragStart');
  
   
 
-#### on('markerDrag')
+### on('markerDrag')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1234,6 +1289,7 @@ on(type: 'markerDrag', callback: Callback&lt;Marker&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'markerDrag'：监听标记拖拽事件。 |
@@ -1259,7 +1315,8 @@ mapEventManager.on("markerDrag", callback3);
  
   
 
-#### off('markerDrag')
+### off('markerDrag')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1277,6 +1334,7 @@ off(type: 'markerDrag', callback?: Callback&lt;Marker&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'markerDrag'：监听标记拖拽事件。 |
@@ -1307,7 +1365,8 @@ mapEventManager.off('markerDrag');
  
   
 
-#### on('markerDragEnd')
+### on('markerDragEnd')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1325,6 +1384,7 @@ on(type: 'markerDragEnd', callback: Callback&lt;Marker&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'markerDragEnd'：监听标记拖拽结束事件。 |
@@ -1350,7 +1410,8 @@ mapEventManager.on("markerDragEnd", callback3);
  
   
 
-#### off('markerDragEnd')
+### off('markerDragEnd')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1368,6 +1429,7 @@ off(type: 'markerDragEnd', callback?: Callback&lt;Marker&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'markerDragEnd'：监听标记拖动结束事件。 |
@@ -1398,7 +1460,8 @@ mapEventManager.off('markerDragEnd');
  
   
 
-#### on('circleClick')
+### on('circleClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1416,6 +1479,7 @@ on(type: 'circleClick', callback: Callback&lt;MapCircle&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'circleClick'：监听圆点击事件。 |
@@ -1441,7 +1505,8 @@ mapEventManager.on("circleClick", callback3);
  
   
 
-#### off('circleClick')
+### off('circleClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1459,6 +1524,7 @@ off(type: 'circleClick', callback?: Callback&lt;MapCircle&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'circleClick'：监听圆点击事件。 |
@@ -1489,7 +1555,8 @@ mapEventManager.off('circleClick');
  
   
 
-#### on('polylineClick')
+### on('polylineClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1507,6 +1574,7 @@ on(type: 'polylineClick', callback: Callback&lt;MapPolyline&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'polylineClick'：监听折线点击事件。 |
@@ -1532,7 +1600,8 @@ mapEventManager.on("polylineClick", callback3);
  
   
 
-#### off('polylineClick')
+### off('polylineClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1550,6 +1619,7 @@ off(type: 'polylineClick', callback?: Callback&lt;MapPolyline&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'polylineClick'：监听折线点击事件。 |
@@ -1580,7 +1650,8 @@ mapEventManager.off('polylineClick');
  
   
 
-#### on('polygonClick')
+### on('polygonClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1598,6 +1669,7 @@ on(type: 'polygonClick', callback: Callback&lt;MapPolygon&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'polygonClick'：监听多边形点击事件。 |
@@ -1623,7 +1695,8 @@ mapEventManager.on("polygonClick", callback3);
  
   
 
-#### off('polygonClick')
+### off('polygonClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1641,6 +1714,7 @@ off(type: 'polygonClick', callback?: Callback&lt;MapPolygon&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'polygonClick'：监听多边形点击事件。 |
@@ -1671,7 +1745,8 @@ mapEventManager.off('polygonClick');
  
   
 
-#### on('infoWindowClick')
+### on('infoWindowClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1689,6 +1764,7 @@ on(type: 'infoWindowClick', callback: Callback&lt;Marker&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'infoWindowClick'：监听信息窗点击事件。 |
@@ -1714,7 +1790,8 @@ mapEventManager.on("infoWindowClick", callback3);
  
   
 
-#### off('infoWindowClick')
+### off('infoWindowClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1732,6 +1809,7 @@ off(type: 'infoWindowClick', callback?: Callback<[Marker](https://developer.huaw
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'infoWindowClick'：监听信息窗点击事件。 |
@@ -1762,7 +1840,8 @@ mapEventManager.off('infoWindowClick');
  
   
 
-#### on('infoWindowClose')
+### on('infoWindowClose')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1780,6 +1859,7 @@ on(type: 'infoWindowClose', callback: Callback&lt;Marker&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'infoWindowClose'：监听信息窗关闭事件。 |
@@ -1805,7 +1885,8 @@ mapEventManager.on("infoWindowClose", callback3);
  
   
 
-#### off('infoWindowClose')
+### off('infoWindowClose')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1823,6 +1904,7 @@ off(type: 'infoWindowClose', callback?: Callback&lt;Marker&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'infoWindowClose'：监听信息窗关闭事件。 |
@@ -1853,7 +1935,8 @@ mapEventManager.off('infoWindowClose');
  
   
 
-#### on('pointAnnotationClick')
+### on('pointAnnotationClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1871,6 +1954,7 @@ on(type: 'pointAnnotationClick', callback: Callback&lt;PointAnnotation&gt;): voi
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'pointAnnotationClick'：监听点注释点击事件。 |
@@ -1896,7 +1980,8 @@ mapEventManager.on("pointAnnotationClick", callback3);
  
   
 
-#### off('pointAnnotationClick')
+### off('pointAnnotationClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1914,6 +1999,7 @@ off(type: 'pointAnnotationClick', callback?: Callback&lt;PointAnnotation&gt;): v
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'pointAnnotationClick'：监听点注释点击事件。 |
@@ -1944,7 +2030,8 @@ mapEventManager.off('pointAnnotationClick');
  
   
 
-#### on('bubbleClick')
+### on('bubbleClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1962,6 +2049,7 @@ on(type: 'bubbleClick', callback: Callback&lt;Bubble&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'bubbleClick'：监听气泡点击事件。 |
@@ -1987,7 +2075,8 @@ mapEventManager.on("bubbleClick", callback3);
  
   
 
-#### off('bubbleClick')
+### off('bubbleClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2005,6 +2094,7 @@ off(type: 'bubbleClick', callback?: Callback&lt;Bubble&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'bubbleClick'：监听气泡点击事件。 |
@@ -2035,7 +2125,8 @@ mapEventManager.off('bubbleClick');
  
   
 
-#### on('imageOverlayClick')
+### on('imageOverlayClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2053,6 +2144,7 @@ on(type: 'imageOverlayClick', callback: Callback&lt;ImageOverlay&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'imageOverlayClick'：监听覆盖物点击事件。 |
@@ -2078,7 +2170,8 @@ mapEventManager.on("imageOverlayClick", callback3);
  
   
 
-#### off('imageOverlayClick')
+### off('imageOverlayClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2096,6 +2189,7 @@ off(type: 'imageOverlayClick', callback?: Callback&lt;ImageOverlay&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'imageOverlayClick'：监听覆盖物点击事件。 |
@@ -2126,7 +2220,8 @@ mapEventManager.off('imageOverlayClick');
  
   
 
-#### on('error')
+### on('error')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2144,6 +2239,7 @@ on(type: 'error', callback: ErrorCallback): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'error'：监听异常事件。 |
@@ -2171,7 +2267,8 @@ mapEventManager.on("error", callback3);
  
   
 
-#### off('error')
+### off('error')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2189,6 +2286,7 @@ off(type: 'error', callback?: ErrorCallback): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'error'：监听异常事件。 |
@@ -2221,9 +2319,10 @@ mapEventManager.off('error');
  
   
 
-#### on('indoorMapEnter')
+### on('indoorMapEnter')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 on(type: 'indoorMapEnter', callback: Callback&lt;IndoorMapInfo&gt;): void
  
@@ -2241,6 +2340,7 @@ on(type: 'indoorMapEnter', callback: Callback&lt;IndoorMapInfo&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'indoorMapEnter'：监听室内图进入事件。 |
@@ -2251,6 +2351,7 @@ on(type: 'indoorMapEnter', callback: Callback&lt;IndoorMapInfo&gt;): void
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
@@ -2267,9 +2368,10 @@ mapEventManager.on("indoorMapEnter", callback);
  
   
 
-#### off('indoorMapEnter')
+### off('indoorMapEnter')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 off(type: 'indoorMapEnter', callback?: Callback&lt;IndoorMapInfo&gt;): void
  
@@ -2287,6 +2389,7 @@ off(type: 'indoorMapEnter', callback?: Callback&lt;IndoorMapInfo&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'indoorMapEnter'：监听室内图进入事件。 |
@@ -2297,6 +2400,7 @@ off(type: 'indoorMapEnter', callback?: Callback&lt;IndoorMapInfo&gt;): void
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
@@ -2316,9 +2420,10 @@ mapEventManager.off('indoorMapEnter', callback);
  
   
 
-#### on('indoorMapExit')
+### on('indoorMapExit')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 on(type: 'indoorMapExit', callback: Callback&lt;void&gt;): void
  
@@ -2336,6 +2441,7 @@ on(type: 'indoorMapExit', callback: Callback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'indoorMapExit'：监听室内图退出事件。 |
@@ -2346,6 +2452,7 @@ on(type: 'indoorMapExit', callback: Callback&lt;void&gt;): void
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
@@ -2362,9 +2469,10 @@ mapEventManager.on("indoorMapExit", callback);
  
   
 
-#### off('indoorMapExit')
+### off('indoorMapExit')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 off(type: 'indoorMapExit', callback?: Callback&lt;void&gt;): void
  
@@ -2382,6 +2490,7 @@ off(type: 'indoorMapExit', callback?: Callback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'indoorMapExit'：监听室内图退出事件。 |
@@ -2392,6 +2501,7 @@ off(type: 'indoorMapExit', callback?: Callback&lt;void&gt;): void
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
@@ -2411,7 +2521,8 @@ mapEventManager.off('indoorMapExit', callback);
  
   
 
-#### on('massPointOverlayClick')
+### on('massPointOverlayClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2429,6 +2540,7 @@ on(type: 'massPointOverlayClick', callback: MassPointOverlayCallback): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'massPointOverlayClick'：用于监听海量点图层的点击事件。 |
@@ -2449,7 +2561,8 @@ mapEventManager.on('massPointOverlayClick', massCallback);
  
   
 
-#### off('massPointOverlayClick')
+### off('massPointOverlayClick')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2467,6 +2580,7 @@ off(type: 'massPointOverlayClick', callback?: MassPointOverlayCallback): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'massPointOverlayClick'：监听海量点图层点击退出事件。 |
@@ -2491,7 +2605,8 @@ mapEventManager.off('massPointOverlayClick');
  
   
 
-#### onMarkerLongClick
+### onMarkerLongClick
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2509,6 +2624,7 @@ onMarkerLongClick(callback: Callback&lt;Marker&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;Marker&gt; | 是 | 标记长按事件的回调函数，返回Marker。 |
@@ -2533,7 +2649,8 @@ mapEventManager.onMarkerLongClick(callback3);
  
   
 
-#### offMarkerLongClick
+### offMarkerLongClick
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2551,6 +2668,7 @@ offMarkerLongClick(callback?: Callback&lt;Marker&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;Marker&gt; | 否 | 标记长按事件的回调函数，返回Marker。 - callback为空：取消所有callback回调。 - callback非空：取消指定的callback回调。 |
@@ -2580,7 +2698,8 @@ mapEventManager.offMarkerLongClick();
  
   
 
-#### onPoiLongClick
+### onPoiLongClick
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2598,6 +2717,7 @@ onPoiLongClick(callback: Callback<mapCommon.Poi>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback<mapCommon.Poi> | 是 | 地图上POI长按事件的回调函数，返回mapCommon.Poi。 |
@@ -2622,7 +2742,8 @@ mapEventManager.onPoiLongClick(callback3);
  
   
 
-#### offPoiLongClick
+### offPoiLongClick
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2640,6 +2761,7 @@ offPoiLongClick(callback?: Callback<mapCommon.Poi>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback<mapCommon.Poi> | 否 | 地图上POI长按事件的回调函数，返回mapCommon.Poi。 - callback为空：取消所有callback回调。 - callback非空：取消指定的callback回调。 |

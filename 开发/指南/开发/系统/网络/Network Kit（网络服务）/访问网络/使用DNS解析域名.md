@@ -1,14 +1,15 @@
 # 使用DNS解析域名
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/net-dns
 
-#### 场景介绍
+## 场景介绍
 
 域名解析（DNS, Domain Name System）功能允许应用将主机名（域名）转换为IP地址。支持中文字符与ASCII码之间的转换、获取指定域名的IP地址列表、以及在不同网络环境下进行域名解析。
 
 当前支持功能如下：
+
 
 | 功能名称 | 功能描述 | 开始支持的版本 |
 | --- | --- | --- |
@@ -20,7 +21,7 @@
 
 
 
-#### DNS解析支持中文域名转码
+## DNS解析支持中文域名转码
 
 从API version 23开始，DNS解析支持中文转码，支持中文域名与ASCII编码之间的相互转换。
 
@@ -111,7 +112,7 @@ this.hostVal = connection.getDnsUnicode(this.hostVal);
 
 
 
-#### DNS接口支持配置获取的IP地址类型
+## DNS接口支持配置获取的IP地址类型
 
 从API version 23开始，DNS解析支持通过options参数指定IP地址类型（如 IPv4 或 IPv6），也支持在特定的网络连接NetHandle上按给定的IP类型解析主机名，从而实现更精准的地址解析。
 

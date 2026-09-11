@@ -1,9 +1,9 @@
 # DialogV2
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-dialogv2
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 弹出框是一种模态窗口，用于在保持当前上下文环境时，临时展示用户需关注的信息或待处理的操作，用户在弹出框内完成交互。模态弹出框需要用户进行交互才能够退出模态模式。DialogV2提供了提示、选择、确认、警告、加载等多种类型的弹出框，适用于确认删除、显示加载进度、用户选择项、重要提示等场景，帮助开发者简化模态对话框的实现，提供一致的用户交互体验。
 
@@ -14,9 +14,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { TipsDialogV2, SelectDialogV2, ConfirmDialogV2, AlertDialogV2, LoadingDialogV2, CustomContentDialogV2, PopoverDialogV2 } from '@kit.ArkUI';
@@ -24,17 +25,19 @@ import { TipsDialogV2, SelectDialogV2, ConfirmDialogV2, AlertDialogV2, LoadingDi
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
 
 
 
-#### TipsDialogV2
+## TipsDialogV2
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TipsDialogV2({imageRes: ResourceStr | PixelMap, imageSize?: SizeOptions, imageBorderColor?: ColorMetrics, imageBorderWidth?: LengthMetrics, title?: ResourceStr, content?: ResourceStr, checkTips?: ResourceStr, checked?: boolean, onCheckedChange?: AdvancedDialogV2OnCheckedChange, primaryButton?: AdvancedDialogV2Button, secondaryButton?: AdvancedDialogV2Button})
 
@@ -45,6 +48,7 @@ TipsDialogV2({imageRes: ResourceStr | PixelMap, imageSize?: SizeOptions, imageBo
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -63,9 +67,10 @@ TipsDialogV2({imageRes: ResourceStr | PixelMap, imageSize?: SizeOptions, imageBo
 
 
 
-#### AdvancedDialogV2OnCheckedChange
+## AdvancedDialogV2OnCheckedChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AdvancedDialogV2OnCheckedChange = (checked: boolean) => void
 
@@ -77,6 +82,7 @@ checkbox选中状态改变事件。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | checked | boolean | 是 | 表示checkbox选中状态。 checked为true时，表示checkbox已选中。checked为false时，表示checkbox未选中。 |
@@ -84,9 +90,10 @@ checkbox选中状态改变事件。
 
 
 
-#### SelectDialogV2
+## SelectDialogV2
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 SelectDialogV2({title: ResourceStr, content?: ResourceStr, selectedIndex?: number, confirm?: AdvancedDialogV2Button, radioContent: SheetInfo[]})
 
@@ -97,6 +104,7 @@ SelectDialogV2({title: ResourceStr, content?: ResourceStr, selectedIndex?: numbe
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -109,9 +117,10 @@ SelectDialogV2({title: ResourceStr, content?: ResourceStr, selectedIndex?: numbe
 
 
 
-#### ConfirmDialogV2
+## ConfirmDialogV2
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ConfirmDialogV2({title: ResourceStr, content?: ResourceStr, checkTips?: ResourceStr, checked?: boolean, onCheckedChange?: AdvancedDialogV2OnCheckedChange, primaryButton?: AdvancedDialogV2Button, secondaryButton?: AdvancedDialogV2Button})
 
@@ -122,6 +131,7 @@ ConfirmDialogV2({title: ResourceStr, content?: ResourceStr, checkTips?: Resource
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -136,9 +146,10 @@ ConfirmDialogV2({title: ResourceStr, content?: ResourceStr, checkTips?: Resource
 
 
 
-#### AlertDialogV2
+## AlertDialogV2
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 AlertDialogV2({primaryTitle?: ResourceStr, secondaryTitle?: ResourceStr, content: ResourceStr, primaryButton?: AdvancedDialogV2Button, secondaryButton?: AdvancedDialogV2Button})
 
@@ -149,6 +160,7 @@ AlertDialogV2({primaryTitle?: ResourceStr, secondaryTitle?: ResourceStr, content
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -161,9 +173,10 @@ AlertDialogV2({primaryTitle?: ResourceStr, secondaryTitle?: ResourceStr, content
 
 
 
-#### LoadingDialogV2
+## LoadingDialogV2
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 LoadingDialogV2({content?: ResourceStr})
 
@@ -175,6 +188,7 @@ LoadingDialogV2({content?: ResourceStr})
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | content | ResourceStr | 否 | @Param | 加载弹出框内容。 默认为空。 说明： 内容超过十行会显示“...”。 |
@@ -182,9 +196,10 @@ LoadingDialogV2({content?: ResourceStr})
 
 
 
-#### CustomContentDialogV2
+## CustomContentDialogV2
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 CustomContentDialogV2({contentBuilder: () => void, primaryTitle?: ResourceStr, secondaryTitle?: ResourceStr, contentAreaPadding?: LocalizedPadding, buttons?: AdvancedDialogV2Button[]})
 
@@ -195,6 +210,7 @@ CustomContentDialogV2({contentBuilder: () => void, primaryTitle?: ResourceStr, s
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -207,9 +223,10 @@ CustomContentDialogV2({contentBuilder: () => void, primaryTitle?: ResourceStr, s
 
 
 
-#### PopoverDialogV2OnVisibleChange
+## PopoverDialogV2OnVisibleChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type PopoverDialogV2OnVisibleChange = (visible: boolean) => void
 
@@ -221,6 +238,7 @@ type PopoverDialogV2OnVisibleChange = (visible: boolean) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | visible | boolean | 是 | 表示跟手弹出框显示状态。 值为true时跟手弹出框显示，为false时隐藏。 |
@@ -228,9 +246,10 @@ type PopoverDialogV2OnVisibleChange = (visible: boolean) => void
 
 
 
-#### PopoverDialogV2
+## PopoverDialogV2
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 PopoverDialogV2({visible: boolean, $visible?: PopoverDialogV2OnVisibleChange, popover: PopoverDialogV2Options, targetBuilder: CustomBuilder})
 
@@ -242,6 +261,7 @@ PopoverDialogV2({visible: boolean, $visible?: PopoverDialogV2OnVisibleChange, po
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | visible | boolean | 是 | @Param @Require | 跟手弹出框的显示状态。 值为true时跟手弹出框显示，为false时隐藏。 |
@@ -252,9 +272,10 @@ PopoverDialogV2({visible: boolean, $visible?: PopoverDialogV2OnVisibleChange, po
 
 
 
-#### PopoverDialogV2Options
+## PopoverDialogV2Options
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 跟手弹出框参数，用于设置弹出框内容、位置属性等。
 
@@ -270,9 +291,10 @@ PopoverDialogV2({visible: boolean, $visible?: PopoverDialogV2OnVisibleChange, po
 
 
 
-#### AdvancedDialogV2ButtonAction
+## AdvancedDialogV2ButtonAction
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AdvancedDialogV2ButtonAction = () => void
 
@@ -284,15 +306,17 @@ type AdvancedDialogV2ButtonAction = () => void
 
 
 
-#### AdvancedDialogV2Button
+## AdvancedDialogV2Button
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 弹出框操作区按钮。
 
 **装饰器类型：**@ObservedV2
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -313,9 +337,10 @@ type AdvancedDialogV2ButtonAction = () => void
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(options: AdvancedDialogV2ButtonOptions)
 
@@ -327,6 +352,7 @@ AdvancedDialogV2Button的构造函数。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | AdvancedDialogV2ButtonOptions | 是 | 按钮配置信息。 |
@@ -334,13 +360,15 @@ AdvancedDialogV2Button的构造函数。
 
 
 
-#### AdvancedDialogV2ButtonOptions
+## AdvancedDialogV2ButtonOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于初始化AdvancedDialogV2Button对象。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -357,13 +385,17 @@ AdvancedDialogV2Button的构造函数。
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（上图下文弹出框）
+
+
+### 示例1（上图下文弹出框）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 上图下文弹出框，包含imageRes、content等内容。
 
@@ -380,7 +412,7 @@ struct Index {
     // 构建提示弹出框，配置图片、内容、勾选状态和操作按钮
     TipsDialogV2({
       imageRes: $r('sys.media.ohos_ic_public_voice'),
-      content: '想要卸载这个APP嘛?',
+      content: '想要卸载这个APP吗?',
       title: 'TipsDialogV2',
       checkTips: '不再提示',
       checked: this.checked,
@@ -435,7 +467,10 @@ struct Index {
 
 
 
-#### 示例2（纯列表弹出框）
+### 示例2（纯列表弹出框）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 纯列表弹出框，包含selectedIndex、radioContent等内容。
 
@@ -509,7 +544,10 @@ struct Index {
 
 
 
-#### 示例3（文本与勾选弹出框）
+### 示例3（文本与勾选弹出框）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文本与勾选弹出框，包含content、checkTips等内容。
 
@@ -581,7 +619,10 @@ struct Index {
 
 
 
-#### 示例4（纯文本弹出框）
+### 示例4（纯文本弹出框）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 纯文本弹出框，包含primaryTitle、secondaryTitle、content等内容。
 
@@ -645,7 +686,10 @@ struct Index {
 
 
 
-#### 示例5（进度加载类弹出框）
+### 示例5（进度加载类弹出框）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 进度加载类弹出框，包含content等内容。
 
@@ -694,12 +738,15 @@ struct Index {
 
 
 
-#### 示例6（使用WithTheme自定义主题的弹出框）
+### 示例6（使用WithTheme自定义主题的弹出框）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 使用WithTheme自定义主题的弹出框，通过WithTheme包装LoadingDialogV2实现主题风格定制。
 
 ```text
-import { CustomColors, CustomTheme, LoadingDialogV2, UIContext, WithTheme  } from '@kit.ArkUI';
+import { CustomColors, CustomTheme, LoadingDialogV2, UIContext } from '@kit.ArkUI';
 
 class CustomThemeImpl implements CustomTheme {
   colors?: CustomColors;
@@ -752,12 +799,15 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/cqFFHqaGS-SsACr7cZDt5A/zh-cn_image_0000002679967338.png?HW-CC-KV=V1&HW-CC-Date=20260818T063504Z&HW-CC-Expire=86400&HW-CC-Sign=F4C90BA48C597CAC269A53FB190B17D6260A203BC8F5C7C392C06E57428EB49C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/AkGcoUQkQDuKIQtPmA-PaQ/zh-cn_image_0000002747213007.png?HW-CC-KV=V1&HW-CC-Date=20260911T073028Z&HW-CC-Expire=86400&HW-CC-Sign=FFE4627D5E5CBC12B08F96DB052387A2973D83C260ABBF88099AF7185B88BB3A)
 
 
 
 
-#### 示例7（自定义内容弹出框）
+### 示例7（自定义内容弹出框）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持自定义内容弹出框，包含contentBuilder、buttons等内容。
 
@@ -817,12 +867,15 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/WBO7B7vHRxi--7xaqk2SFg/zh-cn_image_0000002709647147.png?HW-CC-KV=V1&HW-CC-Date=20260818T063504Z&HW-CC-Expire=86400&HW-CC-Sign=F68C8E67E4EB85C9F4CE6858695F86F753A4B694E6D7FCC724A892652028C068)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/Na2Yk4XqSAibesITz02EqA/zh-cn_image_0000002717773072.png?HW-CC-KV=V1&HW-CC-Date=20260911T073028Z&HW-CC-Expire=86400&HW-CC-Sign=F4809B600B82CFB355A505A95E58904E59CEFA93DFE4B0FD48BDEAB63A34862C)
 
 
 
 
-#### 示例8（跟手弹出框）
+### 示例8（跟手弹出框）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 跟手弹出框（警告弹出框为例），包含visible、popover、targetBuilder等内容。
 
@@ -879,4 +932,4 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/ZRWt2YcSRj6mdGwhrHg5Yg/zh-cn_image_0000002679807476.png?HW-CC-KV=V1&HW-CC-Date=20260818T063504Z&HW-CC-Expire=86400&HW-CC-Sign=3E094C4A481EDFDC76EAEC30773233D0196B2FD195CAC4CE4D0F341D76AB7616)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/tpCnq_8ITdCBe-Or114UAA/zh-cn_image_0000002717613140.png?HW-CC-KV=V1&HW-CC-Date=20260911T073028Z&HW-CC-Expire=86400&HW-CC-Sign=816E607B0AD795EC8908FCD89D891C1C4133B283D9381EA350F80C0A6D9651BC)

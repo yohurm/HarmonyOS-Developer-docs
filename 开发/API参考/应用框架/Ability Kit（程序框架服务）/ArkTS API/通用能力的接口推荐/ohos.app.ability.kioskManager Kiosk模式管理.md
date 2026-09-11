@@ -1,9 +1,9 @@
 # @ohos.app.ability.kioskManager (Kiosk模式管理)
 
-更新时间：2026-07-24 10:38:53
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-kioskmanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet
 
 KioskManager模块提供Kiosk模式管理能力，包括系统进入/退出Kiosk模式操作。
 
@@ -14,9 +14,10 @@ Kiosk模式是一种特殊的设备锁定模式，可以确保设备界面只服
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 import { kioskManager } from '@kit.AbilityKit';
@@ -24,9 +25,10 @@ import { kioskManager } from '@kit.AbilityKit';
 
 
 
-#### kioskManager.enterKioskMode
+## kioskManager.enterKioskMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 enterKioskMode(context: UIAbilityContext): Promise&lt;void&gt;
 
@@ -38,12 +40,14 @@ enterKioskMode(context: UIAbilityContext): Promise&lt;void&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| context | UIAbilityContext | 是 | 需要进入kiosk模式的UIAbility的上下文。 |
+| context | UIAbilityContext | 是 | 需要进入Kiosk模式的UIAbility的上下文。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -53,6 +57,7 @@ enterKioskMode(context: UIAbilityContext): Promise&lt;void&gt;
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -97,9 +102,10 @@ struct Index {
 
 
 
-#### kioskManager.exitKioskMode
+## kioskManager.exitKioskMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 exitKioskMode(context: UIAbilityContext): Promise&lt;void&gt;
 
@@ -113,12 +119,14 @@ exitKioskMode(context: UIAbilityContext): Promise&lt;void&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| context | UIAbilityContext | 是 | 需要退出kiosk模式的UIAbility的上下文。 |
+| context | UIAbilityContext | 是 | 需要退出Kiosk模式的UIAbility的上下文。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -128,6 +136,7 @@ exitKioskMode(context: UIAbilityContext): Promise&lt;void&gt;
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -171,15 +180,17 @@ struct Index {
 
 
 
-#### KioskStatus
+## KioskStatus
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 type KioskStatus = _KioskStatus
 
 Kiosk状态信息，包括系统是否处于Kiosk模式以及该模式下的应用信息。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 类型 | 说明 |
 | --- | --- |

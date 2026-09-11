@@ -1,6 +1,6 @@
 # ScsiPeripheral_CapacityInfo
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-scsiperipheralddk-scsiperipheral-capacityinfo
 **支持设备：** PC/2in1
@@ -10,11 +10,12 @@ typedef struct ScsiPeripheral_CapacityInfo {...} ScsiPeripheral_CapacityInfo
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** PC/2in1
 
-SCSI read capacity 数据。
+SCSI READ CAPACITY结构体。用于在开发SCSI设备驱动时获取设备的存储容量信息，支持进行分区管理、可用空间检查和存储资源分配等操作。
  
 **起始版本：** 18
  
@@ -24,17 +25,20 @@ SCSI read capacity 数据。
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** PC/2in1
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** PC/2in1
  
+
 | 名称 | 描述 |
 | --- | --- |
-| uint32_t lbAddress | 返回的逻辑单元地址。 |
-| uint32_t lbLength | 单个逻辑单元长度，单位：字节。 |
+| uint32_t lbAddress | 返回的逻辑块地址，表示可寻址的最后一块逻辑块的编号，逻辑块总数为该值加1。 |
+| uint32_t lbLength | 单个逻辑块长度（单位：Byte）。表示每个逻辑块的字节大小，通常为512、2048或4096等标准值，具体取决于设备类型和格式化方式。 |

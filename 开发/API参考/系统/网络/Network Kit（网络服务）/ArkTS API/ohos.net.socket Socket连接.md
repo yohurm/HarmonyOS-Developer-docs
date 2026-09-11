@@ -1,9 +1,9 @@
 # @ohos.net.socket (Socket连接)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-socket
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供利用Socket进行数据传输的能力，支持TCPSocket、UDPSocket、WebSocket和TLSSocket。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { socket } from '@kit.NetworkKit';
@@ -22,9 +23,10 @@ import { socket } from '@kit.NetworkKit';
 
 
 
-#### socket.constructUDPSocketInstance
+## socket.constructUDPSocketInstance
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructUDPSocketInstance(): UDPSocket
 
@@ -33,6 +35,7 @@ constructUDPSocketInstance(): UDPSocket
 **系统能力**：SystemCapability.Communication.NetStack
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -48,17 +51,19 @@ let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
 
 
 
-#### UDPSocket
+## UDPSocket
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 UDPSocket连接。在调用UDPSocket的方法前，需要先通过[socket.constructUDPSocketInstance](#socketconstructudpsocketinstance)创建UDPSocket对象。
 
 
 
-#### bind
+### bind
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 bind(address: NetAddress, callback: AsyncCallback&lt;void&gt;): void
 
@@ -70,6 +75,7 @@ bind(address: NetAddress, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | address | NetAddress | 是 | 本端地址信息，参考NetAddress。 |
@@ -79,6 +85,7 @@ bind(address: NetAddress, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -108,9 +115,10 @@ udp.bind(bindAddr, (err: BusinessError) => {
 
 
 
-#### bind
+### bind
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 bind(address: NetAddress): Promise&lt;void&gt;
 
@@ -122,12 +130,14 @@ bind(address: NetAddress): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | address | NetAddress | 是 | 本端地址信息，参考NetAddress。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -137,6 +147,7 @@ bind(address: NetAddress): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -164,9 +175,10 @@ udp.bind(bindAddr).then(() => {
 
 
 
-#### send
+### send
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 send(options: UDPSendOptions, callback: AsyncCallback&lt;void&gt;): void
 
@@ -180,6 +192,7 @@ send(options: UDPSendOptions, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | UDPSendOptions | 是 | UDPSocket发送参数，参考UDPSendOptions。 |
@@ -190,18 +203,19 @@ send(options: UDPSendOptions, callback: AsyncCallback&lt;void&gt;): void
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
 | 201 | Permission denied. |
-| 2301206 | Socks5 failed to connect to the proxy server. |
-| 2301207 | Socks5 username or password is invalid. |
-| 2301208 | Socks5 failed to connect to the remote server. |
-| 2301209 | Socks5 failed to negotiate the authentication method. |
-| 2301210 | Socks5 failed to send the message. |
-| 2301211 | Socks5 failed to receive the message. |
-| 2301212 | Socks5 serialization error. |
-| 2301213 | Socks5 deserialization error. |
+| 2301206 | Socks5 failed to connect to the proxy server. 适用版本：18+ |
+| 2301207 | Socks5 username or password is invalid. 适用版本：18+ |
+| 2301208 | Socks5 failed to connect to the remote server. 适用版本：18+ |
+| 2301209 | Socks5 failed to negotiate the authentication method. 适用版本：18+ |
+| 2301210 | Socks5 failed to send the message. 适用版本：18+ |
+| 2301211 | Socks5 failed to receive the message. 适用版本：18+ |
+| 2301212 | Socks5 serialization error. 适用版本：18+ |
+| 2301213 | Socks5 deserialization error. 适用版本：18+ |
 
 
 **示例：**
@@ -287,9 +301,10 @@ udp.send(sendOptions, (err: BusinessError) => {
 
 
 
-#### send
+### send
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 send(options: UDPSendOptions): Promise&lt;void&gt;
 
@@ -303,12 +318,14 @@ send(options: UDPSendOptions): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | UDPSendOptions | 是 | UDPSocket发送参数，参考UDPSendOptions。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -319,18 +336,19 @@ send(options: UDPSendOptions): Promise&lt;void&gt;
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
 | 201 | Permission denied. |
-| 2301206 | Socks5 failed to connect to the proxy server. |
-| 2301207 | Socks5 username or password is invalid. |
-| 2301208 | Socks5 failed to connect to the remote server. |
-| 2301209 | Socks5 failed to negotiate the authentication method. |
-| 2301210 | Socks5 failed to send the message. |
-| 2301211 | Socks5 failed to receive the message. |
-| 2301212 | Socks5 serialization error. |
-| 2301213 | Socks5 deserialization error. |
+| 2301206 | Socks5 failed to connect to the proxy server. 适用版本：18+ |
+| 2301207 | Socks5 username or password is invalid. 适用版本：18+ |
+| 2301208 | Socks5 failed to connect to the remote server. 适用版本：18+ |
+| 2301209 | Socks5 failed to negotiate the authentication method. 适用版本：18+ |
+| 2301210 | Socks5 failed to send the message. 适用版本：18+ |
+| 2301211 | Socks5 failed to receive the message. 适用版本：18+ |
+| 2301212 | Socks5 serialization error. 适用版本：18+ |
+| 2301213 | Socks5 deserialization error. 适用版本：18+ |
 
 
 **示例：**
@@ -410,9 +428,10 @@ udp.send(sendOptions).then(() => {
 
 
 
-#### close
+### close
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(callback: AsyncCallback&lt;void&gt;): void
 
@@ -424,6 +443,7 @@ close(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。关闭UDPSocket连接后触发回调函数。 |
@@ -432,6 +452,7 @@ close(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -456,9 +477,10 @@ udp.close((err: BusinessError) => {
 
 
 
-#### close
+### close
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(): Promise&lt;void&gt;
 
@@ -470,6 +492,7 @@ close(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -478,6 +501,7 @@ close(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -500,9 +524,10 @@ udp.close().then(() => {
 
 
 
-#### getState
+### getState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getState(callback: AsyncCallback&lt;SocketStateBase&gt;): void
 
@@ -518,6 +543,7 @@ getState(callback: AsyncCallback&lt;SocketStateBase&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;SocketStateBase&gt; | 是 | 回调函数。成功返回UDPSocket状态信息，失败返回错误码、错误信息。 |
@@ -526,6 +552,7 @@ getState(callback: AsyncCallback&lt;SocketStateBase&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -561,9 +588,10 @@ udp.bind(bindAddr, (err: BusinessError) => {
 
 
 
-#### getState
+### getState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getState(): Promise&lt;SocketStateBase&gt;
 
@@ -579,6 +607,7 @@ getState(): Promise&lt;SocketStateBase&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;SocketStateBase&gt; | 以Promise形式返回获取UDPSocket状态的结果。 |
@@ -587,6 +616,7 @@ getState(): Promise&lt;SocketStateBase&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -620,9 +650,10 @@ udp.bind(bindAddr, (err: BusinessError) => {
 
 
 
-#### getSocketFd23+
+### getSocketFd23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSocketFd(): Promise&lt;number&gt;
 
@@ -638,6 +669,7 @@ getSocketFd(): Promise&lt;number&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象，返回Socket的文件描述符。 |
@@ -646,6 +678,7 @@ getSocketFd(): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -678,9 +711,10 @@ udp.bind(bindAddr)
 
 
 
-#### setExtraOptions
+### setExtraOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setExtraOptions(options: UDPExtraOptions, callback: AsyncCallback&lt;void&gt;): void
 
@@ -696,6 +730,7 @@ setExtraOptions(options: UDPExtraOptions, callback: AsyncCallback&lt;void&gt;): 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | UDPExtraOptions | 是 | UDPSocket连接的其他属性，参考UDPExtraOptions。 |
@@ -705,6 +740,7 @@ setExtraOptions(options: UDPExtraOptions, callback: AsyncCallback&lt;void&gt;): 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -749,9 +785,10 @@ udp.bind(bindAddr, (err: BusinessError) => {
 
 
 
-#### setExtraOptions
+### setExtraOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setExtraOptions(options: UDPExtraOptions): Promise&lt;void&gt;
 
@@ -767,12 +804,14 @@ setExtraOptions(options: UDPExtraOptions): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | UDPExtraOptions | 是 | UDPSocket连接的其他属性，参考UDPExtraOptions。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -782,6 +821,7 @@ setExtraOptions(options: UDPExtraOptions): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -824,9 +864,10 @@ udp.bind(bindAddr, (err: BusinessError) => {
 
 
 
-#### getLocalAddress12+
+### getLocalAddress12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLocalAddress(): Promise&lt;NetAddress&gt;
 
@@ -840,6 +881,7 @@ getLocalAddress(): Promise&lt;NetAddress&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;NetAddress&gt; | 以Promise形式返回获取本地socket地址的结果。 |
@@ -848,6 +890,7 @@ getLocalAddress(): Promise&lt;NetAddress&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -882,9 +925,10 @@ udp.bind(bindAddr).then(() => {
 
 
 
-#### on('message')
+### on('message')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'message', callback: Callback&lt;SocketMessageInfo&gt;): void
 
@@ -893,6 +937,7 @@ on(type: 'message', callback: Callback&lt;SocketMessageInfo&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -923,9 +968,10 @@ udp.on('message', (value: socket.SocketMessageInfo) => {
 
 
 
-#### off('message')
+### off('message')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'message', callback?: Callback&lt;SocketMessageInfo&gt;): void
 
@@ -934,6 +980,7 @@ off(type: 'message', callback?: Callback&lt;SocketMessageInfo&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -967,9 +1014,10 @@ udp.off('message');
 
 
 
-#### on('listening' | 'close')
+### on('listening' | 'close')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'listening' | 'close', callback: Callback&lt;void&gt;): void
 
@@ -978,6 +1026,7 @@ on(type: 'listening' | 'close', callback: Callback&lt;void&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1002,9 +1051,10 @@ udp.on('close', () => {
 
 
 
-#### off('listening' | 'close')
+### off('listening' | 'close')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'listening' | 'close', callback?: Callback&lt;void&gt;): void
 
@@ -1013,6 +1063,7 @@ off(type: 'listening' | 'close', callback?: Callback&lt;void&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1045,9 +1096,10 @@ udp.off('close');
 
 
 
-#### on('error')
+### on('error')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'error', callback: ErrorCallback): void
 
@@ -1056,6 +1108,7 @@ on(type: 'error', callback: ErrorCallback): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1077,9 +1130,10 @@ udp.on('error', (err: BusinessError) => {
 
 
 
-#### off('error')
+### off('error')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'error', callback?: ErrorCallback): void
 
@@ -1088,6 +1142,7 @@ off(type: 'error', callback?: ErrorCallback): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1113,30 +1168,34 @@ udp.off('error');
 
 
 
-#### NetAddress
+## NetAddress
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 目标地址信息。
 
 **系统能力**：SystemCapability.Communication.NetStack
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | address11+ | string | 否 | 否 | IP地址。 |
 | port | number | 否 | 否 | 端口号 ，范围0~65535。如果不指定系统随机分配端口。 |
-| family | number | 否 | 否 | 网络协议类型，可选类型： - 1：IPv4。默认为1。 - 2：IPv6。地址为IPV6类型，该字段必须被显式指定为2。 - 3：Domain18+。地址为Domain类型，该字段必须被显式指定为3。当前仅支持TCPSocket.connect和TLSSocket.connect。 |
+| family | number | 否 | 否 | 网络协议类型，可选类型： - 1：IPv4。默认为1。 - 2：IPv6。地址为IPv6类型，该字段必须被显式指定为2。 - 3：Domain18+。地址为Domain类型，该字段必须被显式指定为3。当前仅支持TCPSocket.connect和TLSSocket.connect。 |
 
 
 
 
-#### ProxyOptions18+
+## ProxyOptions18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Socket代理信息。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1148,13 +1207,15 @@ Socket代理信息。
 
 
 
-#### ProxyTypes18+
+## ProxyTypes18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Socket代理类型。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1164,13 +1225,15 @@ Socket代理类型。
 
 
 
-#### UDPSendOptions
+## UDPSendOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 UDPSocket发送参数。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1181,13 +1244,15 @@ UDPSocket发送参数。
 
 
 
-#### UDPExtraOptions
+## UDPExtraOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 UDPSocket连接的其他属性。继承自[ExtraOptionsBase](#extraoptionsbase)。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1196,13 +1261,15 @@ UDPSocket连接的其他属性。继承自[ExtraOptionsBase](#extraoptionsbase)�
 
 
 
-#### SocketMessageInfo11+
+## SocketMessageInfo11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 socket连接信息
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1212,13 +1279,15 @@ socket连接信息
 
 
 
-#### SocketStateBase
+## SocketStateBase
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Socket的状态信息。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1229,13 +1298,15 @@ Socket的状态信息。
 
 
 
-#### SocketRemoteInfo
+## SocketRemoteInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Socket的连接信息。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1247,9 +1318,10 @@ Socket的连接信息。
 
 
 
-#### UDP 错误码说明
+## UDP 错误码说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 UDP 其余错误码映射形式为：2301000 + Linux内核错误码。
 
@@ -1257,9 +1329,10 @@ UDP 其余错误码映射形式为：2301000 + Linux内核错误码。
 
 
 
-#### socket.constructMulticastSocketInstance11+
+## socket.constructMulticastSocketInstance11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructMulticastSocketInstance(): MulticastSocket
 
@@ -1268,6 +1341,7 @@ constructMulticastSocketInstance(): MulticastSocket
 **系统能力**：SystemCapability.Communication.NetStack
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1283,17 +1357,19 @@ let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance(
 
 
 
-#### MulticastSocket11+
+## MulticastSocket11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 MulticastSocket连接。在调用MulticastSocket的方法前，需要先通过[socket.constructMulticastSocketInstance](#socketconstructmulticastsocketinstance11)创建MulticastSocket对象。
 
 
 
-#### setReuseAddress
+### setReuseAddress
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setReuseAddress(reuse: boolean): void
 
@@ -1310,6 +1386,7 @@ setReuseAddress(reuse: boolean): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1344,9 +1421,10 @@ try {
 
 
 
-#### addMembership11+
+### addMembership11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addMembership(multicastAddress: NetAddress, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1362,6 +1440,7 @@ addMembership(multicastAddress: NetAddress, callback: AsyncCallback&lt;void&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | multicastAddress | NetAddress | 是 | 目标地址信息，参考NetAddress。 |
@@ -1371,6 +1450,7 @@ addMembership(multicastAddress: NetAddress, callback: AsyncCallback&lt;void&gt;)
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1402,9 +1482,10 @@ multicast.addMembership(addr, (err: Object) => {
 
 
 
-#### addMembership11+
+### addMembership11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addMembership(multicastAddress: NetAddress): Promise&lt;void&gt;
 
@@ -1420,12 +1501,14 @@ addMembership(multicastAddress: NetAddress): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | multicastAddress | NetAddress | 是 | 目标地址信息，参考NetAddress。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1435,6 +1518,7 @@ addMembership(multicastAddress: NetAddress): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1463,9 +1547,10 @@ multicast.addMembership(addr).then(() => {
 
 
 
-#### dropMembership11+
+### dropMembership11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 dropMembership(multicastAddress: NetAddress, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1481,6 +1566,7 @@ dropMembership(multicastAddress: NetAddress, callback: AsyncCallback&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | multicastAddress | NetAddress | 是 | 目标地址信息，参考NetAddress。 |
@@ -1490,6 +1576,7 @@ dropMembership(multicastAddress: NetAddress, callback: AsyncCallback&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1520,9 +1607,10 @@ multicast.dropMembership(addr, (err: Object) => {
 
 
 
-#### dropMembership11+
+### dropMembership11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 dropMembership(multicastAddress: NetAddress): Promise&lt;void&gt;
 
@@ -1538,12 +1626,14 @@ dropMembership(multicastAddress: NetAddress): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | multicastAddress | NetAddress | 是 | 目标地址信息，参考NetAddress。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1553,6 +1643,7 @@ dropMembership(multicastAddress: NetAddress): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1581,9 +1672,10 @@ multicast.dropMembership(addr).then(() => {
 
 
 
-#### setMulticastTTL11+
+### setMulticastTTL11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMulticastTTL(ttl: number, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1597,6 +1689,7 @@ setMulticastTTL(ttl: number, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ttl | number | 是 | ttl设置数值，类型为数字number。 |
@@ -1606,6 +1699,7 @@ setMulticastTTL(ttl: number, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1632,9 +1726,10 @@ multicast.setMulticastTTL(ttl, (err: Object) => {
 
 
 
-#### setMulticastTTL11+
+### setMulticastTTL11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMulticastTTL(ttl: number): Promise&lt;void&gt;
 
@@ -1648,12 +1743,14 @@ setMulticastTTL(ttl: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ttl | number | 是 | ttl设置数值，类型为数字Number。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1663,6 +1760,7 @@ setMulticastTTL(ttl: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1686,9 +1784,10 @@ multicast.setMulticastTTL(8).then(() => {
 
 
 
-#### getMulticastTTL11+
+### getMulticastTTL11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMulticastTTL(callback: AsyncCallback&lt;number&gt;): void
 
@@ -1702,6 +1801,7 @@ getMulticastTTL(callback: AsyncCallback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;number&gt; | 是 | 回调函数。失败返回错误码、错误信息。 |
@@ -1710,6 +1810,7 @@ getMulticastTTL(callback: AsyncCallback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1734,9 +1835,10 @@ multicast.getMulticastTTL((err: Object, value: Number) => {
 
 
 
-#### getMulticastTTL11+
+### getMulticastTTL11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMulticastTTL(): Promise&lt;number&gt;
 
@@ -1750,6 +1852,7 @@ getMulticastTTL(): Promise&lt;number&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | 以Promise形式返回当前TTL数值。 |
@@ -1758,6 +1861,7 @@ getMulticastTTL(): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1780,9 +1884,10 @@ multicast.getMulticastTTL().then((value: Number) => {
 
 
 
-#### setLoopbackMode11+
+### setLoopbackMode11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setLoopbackMode(flag: boolean, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1796,6 +1901,7 @@ setLoopbackMode(flag: boolean, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | flag | boolean | 是 | 是否开启环回模式。true表示环回模式开启，false表示环回模式关闭。 |
@@ -1805,6 +1911,7 @@ setLoopbackMode(flag: boolean, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1829,9 +1936,10 @@ multicast.setLoopbackMode(false, (err: Object) => {
 
 
 
-#### setLoopbackMode11+
+### setLoopbackMode11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setLoopbackMode(flag: boolean): Promise&lt;void&gt;
 
@@ -1845,12 +1953,14 @@ setLoopbackMode(flag: boolean): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | flag | boolean | 是 | 是否开启环回模式。true表示环回模式开启，false表示环回模式关闭。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1860,6 +1970,7 @@ setLoopbackMode(flag: boolean): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1882,9 +1993,10 @@ multicast.setLoopbackMode(false).then(() => {
 
 
 
-#### getLoopbackMode11+
+### getLoopbackMode11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLoopbackMode(callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -1898,6 +2010,7 @@ getLoopbackMode(callback: AsyncCallback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;boolean&gt; | 是 | 回调函数。返回值为环回模式状态，true表示环回模式开启，false表示环回模式关闭。 |
@@ -1906,6 +2019,7 @@ getLoopbackMode(callback: AsyncCallback&lt;boolean&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1930,9 +2044,10 @@ multicast.getLoopbackMode((err: Object, value: Boolean) => {
 
 
 
-#### getLoopbackMode11+
+### getLoopbackMode11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLoopbackMode(): Promise&lt;boolean&gt;
 
@@ -1946,6 +2061,7 @@ getLoopbackMode(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示环回模式开启，返回false表示环回模式关闭。 |
@@ -1954,6 +2070,7 @@ getLoopbackMode(): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1976,9 +2093,10 @@ multicast.getLoopbackMode().then((value: Boolean) => {
 
 
 
-#### getSocketFd23+
+### getSocketFd23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSocketFd(): Promise&lt;number&gt;
 
@@ -1996,6 +2114,7 @@ getSocketFd(): Promise&lt;number&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象，返回Socket的文件描述符。 |
@@ -2004,6 +2123,7 @@ getSocketFd(): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2036,9 +2156,10 @@ multicast.bind(bindAddr)
 
 
 
-#### socket.constructTCPSocketInstance
+## socket.constructTCPSocketInstance
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructTCPSocketInstance(): TCPSocket
 
@@ -2047,6 +2168,7 @@ constructTCPSocketInstance(): TCPSocket
 **系统能力**：SystemCapability.Communication.NetStack
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2062,17 +2184,19 @@ let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
 
 
 
-#### TCPSocket
+## TCPSocket
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TCPSocket连接。在调用TCPSocket的方法前，需要先通过[socket.constructTCPSocketInstance](#socketconstructtcpsocketinstance)创建TCPSocket对象。
 
 
 
-#### bind
+### bind
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 bind(address: NetAddress, callback: AsyncCallback&lt;void&gt;): void
 
@@ -2088,6 +2212,7 @@ bind(address: NetAddress, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | address | NetAddress | 是 | 本端地址信息，参考NetAddress。 |
@@ -2097,6 +2222,7 @@ bind(address: NetAddress, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2126,9 +2252,10 @@ tcp.bind(bindAddr, (err: BusinessError) => {
 
 
 
-#### bind
+### bind
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 bind(address: NetAddress): Promise&lt;void&gt;
 
@@ -2144,12 +2271,14 @@ bind(address: NetAddress): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | address | NetAddress | 是 | 本端地址信息，参考NetAddress。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2159,6 +2288,7 @@ bind(address: NetAddress): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2186,9 +2316,10 @@ tcp.bind(bindAddr).then(() => {
 
 
 
-#### connect
+### connect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 connect(options: TCPConnectOptions, callback: AsyncCallback&lt;void&gt;): void
 
@@ -2204,6 +2335,7 @@ connect(options: TCPConnectOptions, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | TCPConnectOptions | 是 | TCPSocket连接的参数，参考TCPConnectOptions。 |
@@ -2214,18 +2346,19 @@ connect(options: TCPConnectOptions, callback: AsyncCallback&lt;void&gt;): void
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
 | 201 | Permission denied. |
-| 2301206 | Socks5 failed to connect to the proxy server. |
-| 2301207 | Socks5 username or password is invalid. |
-| 2301208 | Socks5 failed to connect to the remote server. |
-| 2301209 | Socks5 failed to negotiate the authentication method. |
-| 2301210 | Socks5 failed to send the message. |
-| 2301211 | Socks5 failed to receive the message. |
-| 2301212 | Socks5 serialization error. |
-| 2301213 | Socks5 deserialization error. |
+| 2301206 | Socks5 failed to connect to the proxy server. 适用版本：18+ |
+| 2301207 | Socks5 username or password is invalid. 适用版本：18+ |
+| 2301208 | Socks5 failed to connect to the remote server. 适用版本：18+ |
+| 2301209 | Socks5 failed to negotiate the authentication method. 适用版本：18+ |
+| 2301210 | Socks5 failed to send the message. 适用版本：18+ |
+| 2301211 | Socks5 failed to receive the message. 适用版本：18+ |
+| 2301212 | Socks5 serialization error. 适用版本：18+ |
+| 2301213 | Socks5 deserialization error. 适用版本：18+ |
 
 
 **示例：**
@@ -2289,9 +2422,10 @@ tcp.connect(tcpconnectoptions, (err: BusinessError) => {
 
 
 
-#### connect
+### connect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 connect(options: TCPConnectOptions): Promise&lt;void&gt;
 
@@ -2307,12 +2441,14 @@ connect(options: TCPConnectOptions): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | TCPConnectOptions | 是 | TCPSocket连接的参数，参考TCPConnectOptions。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2323,18 +2459,19 @@ connect(options: TCPConnectOptions): Promise&lt;void&gt;
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
 | 201 | Permission denied. |
-| 2301206 | Socks5 failed to connect to the proxy server. |
-| 2301207 | Socks5 username or password is invalid. |
-| 2301208 | Socks5 failed to connect to the remote server. |
-| 2301209 | Socks5 failed to negotiate the authentication method. |
-| 2301210 | Socks5 failed to send the message. |
-| 2301211 | Socks5 failed to receive the message. |
-| 2301212 | Socks5 serialization error. |
-| 2301213 | Socks5 deserialization error. |
+| 2301206 | Socks5 failed to connect to the proxy server. 适用版本：18+ |
+| 2301207 | Socks5 username or password is invalid. 适用版本：18+ |
+| 2301208 | Socks5 failed to connect to the remote server. 适用版本：18+ |
+| 2301209 | Socks5 failed to negotiate the authentication method. 适用版本：18+ |
+| 2301210 | Socks5 failed to send the message. 适用版本：18+ |
+| 2301211 | Socks5 failed to receive the message. 适用版本：18+ |
+| 2301212 | Socks5 serialization error. 适用版本：18+ |
+| 2301213 | Socks5 deserialization error. 适用版本：18+ |
 
 
 **示例：**
@@ -2394,9 +2531,10 @@ tcp.connect(tcpconnectoptions).then(() => {
 
 
 
-#### send
+### send
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 send(options: TCPSendOptions, callback: AsyncCallback&lt;void&gt;): void
 
@@ -2412,6 +2550,7 @@ send(options: TCPSendOptions, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | TCPSendOptions | 是 | TCPSocket发送请求的参数，参考TCPSendOptions。 |
@@ -2421,6 +2560,7 @@ send(options: TCPSendOptions, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2460,9 +2600,10 @@ tcp.connect(tcpconnectoptions, () => {
 
 
 
-#### send
+### send
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 send(options: TCPSendOptions): Promise&lt;void&gt;
 
@@ -2478,12 +2619,14 @@ send(options: TCPSendOptions): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | TCPSendOptions | 是 | TCPSocket发送请求的参数，参考TCPSendOptions。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2493,6 +2636,7 @@ send(options: TCPSendOptions): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2530,9 +2674,10 @@ tcp.connect(tcpconnectoptions, () => {
 
 
 
-#### close
+### close
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(callback: AsyncCallback&lt;void&gt;): void
 
@@ -2544,6 +2689,7 @@ close(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。失败返回错误码、错误信息。 |
@@ -2552,6 +2698,7 @@ close(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2577,9 +2724,10 @@ tcp.close((err: BusinessError) => {
 
 
 
-#### close
+### close
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(): Promise&lt;void&gt;
 
@@ -2591,6 +2739,7 @@ close(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -2599,6 +2748,7 @@ close(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2622,9 +2772,10 @@ tcp.close().then(() => {
 
 
 
-#### getRemoteAddress
+### getRemoteAddress
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRemoteAddress(callback: AsyncCallback&lt;NetAddress&gt;): void
 
@@ -2640,6 +2791,7 @@ getRemoteAddress(callback: AsyncCallback&lt;NetAddress&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;NetAddress&gt; | 是 | 回调函数。成功时返回对端Socket地址，失败时返回错误码、错误信息。 |
@@ -2648,6 +2800,7 @@ getRemoteAddress(callback: AsyncCallback&lt;NetAddress&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2683,9 +2836,10 @@ tcp.connect(tcpconnectoptions, () => {
 
 
 
-#### getRemoteAddress
+### getRemoteAddress
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRemoteAddress(): Promise&lt;NetAddress&gt;
 
@@ -2701,6 +2855,7 @@ getRemoteAddress(): Promise&lt;NetAddress&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;NetAddress&gt; | 以Promise形式返回获取对端socket地址的结果。 |
@@ -2709,6 +2864,7 @@ getRemoteAddress(): Promise&lt;NetAddress&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2744,9 +2900,10 @@ tcp.connect(tcpconnectoptions).then(() => {
 
 
 
-#### getState
+### getState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getState(callback: AsyncCallback&lt;SocketStateBase&gt;): void
 
@@ -2762,6 +2919,7 @@ getState(callback: AsyncCallback&lt;SocketStateBase&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;SocketStateBase&gt; | 是 | 回调函数。成功时获取TCPSocket状态，失败时返回错误码、错误信息。 |
@@ -2770,6 +2928,7 @@ getState(callback: AsyncCallback&lt;SocketStateBase&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2805,9 +2964,10 @@ tcp.connect(tcpconnectoptions, () => {
 
 
 
-#### getState
+### getState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getState(): Promise&lt;SocketStateBase&gt;
 
@@ -2823,6 +2983,7 @@ getState(): Promise&lt;SocketStateBase&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;SocketStateBase&gt; | 以Promise形式返回获取TCPSocket状态的结果。 |
@@ -2831,6 +2992,7 @@ getState(): Promise&lt;SocketStateBase&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2866,9 +3028,10 @@ tcp.connect(tcpconnectoptions).then(() => {
 
 
 
-#### getSocketFd10+
+### getSocketFd10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSocketFd(callback: AsyncCallback&lt;number&gt;): void
 
@@ -2881,6 +3044,7 @@ getSocketFd(callback: AsyncCallback&lt;number&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2916,9 +3080,10 @@ tcp.getSocketFd((err: BusinessError, data: number) => {
 
 
 
-#### getSocketFd10+
+### getSocketFd10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSocketFd(): Promise&lt;number&gt;
 
@@ -2931,6 +3096,7 @@ getSocketFd(): Promise&lt;number&gt;
 **系统能力**：SystemCapability.Communication.NetStack
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2965,9 +3131,10 @@ tcp.getSocketFd().then((data: number) => {
 
 
 
-#### setExtraOptions
+### setExtraOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setExtraOptions(options: TCPExtraOptions, callback: AsyncCallback&lt;void&gt;): void
 
@@ -2983,6 +3150,7 @@ setExtraOptions(options: TCPExtraOptions, callback: AsyncCallback&lt;void&gt;): 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | TCPExtraOptions | 是 | TCPSocket连接的其他属性，参考TCPExtraOptions。 |
@@ -2992,6 +3160,7 @@ setExtraOptions(options: TCPExtraOptions, callback: AsyncCallback&lt;void&gt;): 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3045,9 +3214,10 @@ tcp.connect(tcpconnectoptions, () => {
 
 
 
-#### setExtraOptions
+### setExtraOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setExtraOptions(options: TCPExtraOptions): Promise&lt;void&gt;
 
@@ -3063,12 +3233,14 @@ setExtraOptions(options: TCPExtraOptions): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | TCPExtraOptions | 是 | TCPSocket连接的其他属性，参考TCPExtraOptions。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3078,6 +3250,7 @@ setExtraOptions(options: TCPExtraOptions): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3129,9 +3302,10 @@ tcp.connect(tcpconnectoptions, () => {
 
 
 
-#### getLocalAddress12+
+### getLocalAddress12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLocalAddress(): Promise&lt;NetAddress&gt;
 
@@ -3145,6 +3319,7 @@ getLocalAddress(): Promise&lt;NetAddress&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;NetAddress&gt; | 以Promise形式返回获取本地socket地址的结果。 |
@@ -3153,6 +3328,7 @@ getLocalAddress(): Promise&lt;NetAddress&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3186,9 +3362,10 @@ tcp.bind(bindAddr).then(() => {
 
 
 
-#### on('message')
+### on('message')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'message', callback: Callback&lt;SocketMessageInfo&gt;): void
 
@@ -3197,6 +3374,7 @@ on(type: 'message', callback: Callback&lt;SocketMessageInfo&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3226,9 +3404,10 @@ tcp.on('message', (value: socket.SocketMessageInfo) => {
 
 
 
-#### off('message')
+### off('message')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'message', callback?: Callback&lt;SocketMessageInfo&gt;): void
 
@@ -3237,6 +3416,7 @@ off(type: 'message', callback?: Callback&lt;SocketMessageInfo&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3270,9 +3450,10 @@ tcp.off('message');
 
 
 
-#### on('connect' | 'close')
+### on('connect' | 'close')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'connect' | 'close', callback: Callback&lt;void&gt;): void
 
@@ -3281,6 +3462,7 @@ on(type: 'connect' | 'close', callback: Callback&lt;void&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3305,9 +3487,10 @@ tcp.on('close', () => {
 
 
 
-#### off('connect' | 'close')
+### off('connect' | 'close')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'connect' | 'close', callback?: Callback&lt;void&gt;): void
 
@@ -3316,6 +3499,7 @@ off(type: 'connect' | 'close', callback?: Callback&lt;void&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3348,9 +3532,10 @@ tcp.off('close');
 
 
 
-#### on('error')
+### on('error')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'error', callback: ErrorCallback): void
 
@@ -3359,6 +3544,7 @@ on(type: 'error', callback: ErrorCallback): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3380,9 +3566,10 @@ tcp.on('error', (err: BusinessError) => {
 
 
 
-#### off('error')
+### off('error')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'error', callback?: ErrorCallback): void
 
@@ -3391,6 +3578,7 @@ off(type: 'error', callback?: ErrorCallback): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3416,13 +3604,15 @@ tcp.off('error');
 
 
 
-#### TCPConnectOptions
+## TCPConnectOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TCPSocket连接的参数。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -3433,13 +3623,15 @@ TCPSocket连接的参数。
 
 
 
-#### TCPSendOptions
+## TCPSendOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TCPSocket发送请求的参数。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -3449,13 +3641,15 @@ TCPSocket发送请求的参数。
 
 
 
-#### TCPExtraOptions
+## TCPExtraOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TCPSocket连接的其他属性。继承自[ExtraOptionsBase](#extraoptionsbase)。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -3468,9 +3662,10 @@ TCPSocket连接的其他属性。继承自[ExtraOptionsBase](#extraoptionsbase)�
 
 
 
-#### socket.constructTCPSocketServerInstance10+
+## socket.constructTCPSocketServerInstance10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructTCPSocketServerInstance(): TCPSocketServer
 
@@ -3479,6 +3674,7 @@ constructTCPSocketServerInstance(): TCPSocketServer
 **系统能力**：SystemCapability.Communication.NetStack
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3494,17 +3690,19 @@ let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance(
 
 
 
-#### TCPSocketServer10+
+## TCPSocketServer10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TCPSocketServer连接。在调用TCPSocketServer的方法前，需要先通过[socket.constructTCPSocketServerInstance](#socketconstructtcpsocketserverinstance10)创建TCPSocketServer对象。
 
 
 
-#### listen10+
+### listen10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 listen(address: NetAddress, callback: AsyncCallback&lt;void&gt;): void
 
@@ -3520,6 +3718,7 @@ listen(address: NetAddress, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | address | NetAddress | 是 | 目标地址信息。 |
@@ -3529,6 +3728,7 @@ listen(address: NetAddress, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3564,9 +3764,10 @@ tcpServer.listen(listenAddr, (err: BusinessError) => {
 
 
 
-#### listen10+
+### listen10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 listen(address: NetAddress): Promise&lt;void&gt;
 
@@ -3582,12 +3783,14 @@ listen(address: NetAddress): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | address | NetAddress | 是 | 目标地址信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3597,6 +3800,7 @@ listen(address: NetAddress): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3630,9 +3834,10 @@ tcpServer.listen(listenAddr).then(() => {
 
 
 
-#### getState10+
+### getState10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getState(callback: AsyncCallback&lt;SocketStateBase&gt;): void
 
@@ -3648,6 +3853,7 @@ getState(callback: AsyncCallback&lt;SocketStateBase&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;SocketStateBase&gt; | 是 | 回调函数。失败时返回错误码、错误信息。 |
@@ -3656,6 +3862,7 @@ getState(callback: AsyncCallback&lt;SocketStateBase&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3695,9 +3902,10 @@ tcpServer.getState((err: BusinessError, data: socket.SocketStateBase) => {
 
 
 
-#### getState10+
+### getState10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getState(): Promise&lt;SocketStateBase&gt;
 
@@ -3713,6 +3921,7 @@ getState(): Promise&lt;SocketStateBase&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;SocketStateBase&gt; | 以Promise形式返回获取TCPSocket状态的结果。 |
@@ -3721,6 +3930,7 @@ getState(): Promise&lt;SocketStateBase&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3757,9 +3967,10 @@ tcpServer.getState().then((data: socket.SocketStateBase) => {
 
 
 
-#### getSocketFd23+
+### getSocketFd23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSocketFd(): Promise&lt;number&gt;
 
@@ -3775,6 +3986,7 @@ getSocketFd(): Promise&lt;number&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象，返回Socket的文件描述符。 |
@@ -3783,6 +3995,7 @@ getSocketFd(): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3815,9 +4028,10 @@ tcpServer.listen(listenAddr).then(() => {
 
 
 
-#### setExtraOptions10+
+### setExtraOptions10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setExtraOptions(options: TCPExtraOptions, callback: AsyncCallback&lt;void&gt;): void
 
@@ -3833,6 +4047,7 @@ setExtraOptions(options: TCPExtraOptions, callback: AsyncCallback&lt;void&gt;): 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | TCPExtraOptions | 是 | TCPSocketServer连接的其他属性。 |
@@ -3842,6 +4057,7 @@ setExtraOptions(options: TCPExtraOptions, callback: AsyncCallback&lt;void&gt;): 
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3897,9 +4113,10 @@ tcpServer.setExtraOptions(tcpExtraOptions, (err: BusinessError) => {
 
 
 
-#### setExtraOptions10+
+### setExtraOptions10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setExtraOptions(options: TCPExtraOptions): Promise&lt;void&gt;
 
@@ -3915,12 +4132,14 @@ setExtraOptions(options: TCPExtraOptions): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | TCPExtraOptions | 是 | TCPSocketServer连接的其他属性。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3930,6 +4149,7 @@ setExtraOptions(options: TCPExtraOptions): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3984,9 +4204,10 @@ tcpServer.setExtraOptions(tcpExtraOptions).then(() => {
 
 
 
-#### getLocalAddress12+
+### getLocalAddress12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLocalAddress(): Promise&lt;NetAddress&gt;
 
@@ -4000,6 +4221,7 @@ getLocalAddress(): Promise&lt;NetAddress&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;NetAddress&gt; | 以Promise形式返回获取本地socket地址的结果。 |
@@ -4008,6 +4230,7 @@ getLocalAddress(): Promise&lt;NetAddress&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4041,9 +4264,10 @@ tcpServer.listen(listenAddr).then(() => {
 
 
 
-#### on('connect')10+
+### on('connect')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'connect', callback: Callback&lt;TCPSocketConnection&gt;): void
 
@@ -4057,6 +4281,7 @@ on(type: 'connect', callback: Callback&lt;TCPSocketConnection&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅的事件类型。'connect'：连接事件。 |
@@ -4066,6 +4291,7 @@ on(type: 'connect', callback: Callback&lt;TCPSocketConnection&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4099,9 +4325,10 @@ tcpServer.listen(listenAddr, (err: BusinessError) => {
 
 
 
-#### off('connect')10+
+### off('connect')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'connect', callback?: Callback&lt;TCPSocketConnection&gt;): void
 
@@ -4110,6 +4337,7 @@ off(type: 'connect', callback?: Callback&lt;TCPSocketConnection&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4120,6 +4348,7 @@ off(type: 'connect', callback?: Callback&lt;TCPSocketConnection&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4157,9 +4386,10 @@ tcpServer.listen(listenAddr, (err: BusinessError) => {
 
 
 
-#### on('error')10+
+### on('error')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'error', callback: ErrorCallback): void
 
@@ -4173,6 +4403,7 @@ on(type: 'error', callback: ErrorCallback): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅的事件类型。'error'：error事件。 |
@@ -4182,6 +4413,7 @@ on(type: 'error', callback: ErrorCallback): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4215,9 +4447,10 @@ tcpServer.listen(listenAddr, (err: BusinessError) => {
 
 
 
-#### off('error')10+
+### off('error')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'error', callback?: ErrorCallback): void
 
@@ -4226,6 +4459,7 @@ off(type: 'error', callback?: ErrorCallback): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4236,6 +4470,7 @@ off(type: 'error', callback?: ErrorCallback): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4273,9 +4508,10 @@ tcpServer.listen(listenAddr, (err: BusinessError) => {
 
 
 
-#### close20+
+### close20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(): Promise&lt;void&gt;
 
@@ -4291,6 +4527,7 @@ TCPSocketServer停止监听并释放通过[listen](#listen10)方法绑定的端�
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -4299,6 +4536,7 @@ TCPSocketServer停止监听并释放通过[listen](#listen10)方法绑定的端�
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4333,9 +4571,10 @@ tcpServer.listen(listenAddr).then(() => {
 
 
 
-#### TCPSocketConnection10+
+## TCPSocketConnection10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TCPSocketConnection连接，即TCPSocket客户端与服务端的连接。在调用TCPSocketConnection的方法前，需要先获取TCPSocketConnection对象。
 
@@ -4347,7 +4586,11 @@ TCPSocketConnection连接，即TCPSocket客户端与服务端的连接。在调�
 
 
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -4356,9 +4599,10 @@ TCPSocketConnection连接，即TCPSocket客户端与服务端的连接。在调�
 
 
 
-#### send10+
+### send10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 send(options: TCPSendOptions, callback: AsyncCallback&lt;void&gt;): void
 
@@ -4374,6 +4618,7 @@ send(options: TCPSendOptions, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | TCPSendOptions | 是 | TCPSocketConnection发送请求的参数。 |
@@ -4383,6 +4628,7 @@ send(options: TCPSendOptions, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4410,9 +4656,10 @@ tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
 
 
 
-#### send10+
+### send10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 send(options: TCPSendOptions): Promise&lt;void&gt;
 
@@ -4428,12 +4675,14 @@ send(options: TCPSendOptions): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | TCPSendOptions | 是 | TCPSocketConnection发送请求的参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4443,6 +4692,7 @@ send(options: TCPSendOptions): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4473,9 +4723,10 @@ tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
 
 
 
-#### close10+
+### close10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(callback: AsyncCallback&lt;void&gt;): void
 
@@ -4487,6 +4738,7 @@ close(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。失败时返回错误码、错误信息。 |
@@ -4495,6 +4747,7 @@ close(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4524,9 +4777,10 @@ tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
 
 
 
-#### close10+
+### close10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(): Promise&lt;void&gt;
 
@@ -4538,6 +4792,7 @@ close(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -4546,6 +4801,7 @@ close(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4571,9 +4827,10 @@ tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
 
 
 
-#### getRemoteAddress10+
+### getRemoteAddress10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRemoteAddress(callback: AsyncCallback&lt;NetAddress&gt;): void
 
@@ -4589,6 +4846,7 @@ getRemoteAddress(callback: AsyncCallback&lt;NetAddress&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;NetAddress&gt; | 是 | 回调函数。失败时返回错误码、错误信息。 |
@@ -4597,6 +4855,7 @@ getRemoteAddress(callback: AsyncCallback&lt;NetAddress&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4626,9 +4885,10 @@ tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
 
 
 
-#### getRemoteAddress10+
+### getRemoteAddress10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRemoteAddress(): Promise&lt;NetAddress&gt;
 
@@ -4644,6 +4904,7 @@ getRemoteAddress(): Promise&lt;NetAddress&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;NetAddress&gt; | 以Promise形式返回获取对端socket地址的结果。 |
@@ -4652,6 +4913,7 @@ getRemoteAddress(): Promise&lt;NetAddress&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4678,9 +4940,10 @@ tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
 
 
 
-#### getLocalAddress12+
+### getLocalAddress12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLocalAddress(): Promise&lt;NetAddress&gt;
 
@@ -4690,6 +4953,7 @@ getLocalAddress(): Promise&lt;NetAddress&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;NetAddress&gt; | 以Promise形式返回获取本地socket地址的结果。 |
@@ -4698,6 +4962,7 @@ getLocalAddress(): Promise&lt;NetAddress&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4747,9 +5012,10 @@ tcpServer.listen(listenAddr, (err: BusinessError) => {
 
 
 
-#### getSocketFd23+
+### getSocketFd23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSocketFd(): Promise&lt;number&gt;
 
@@ -4765,6 +5031,7 @@ getSocketFd(): Promise&lt;number&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象，返回Socket的文件描述符。 |
@@ -4773,6 +5040,7 @@ getSocketFd(): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4806,9 +5074,10 @@ tcpServer.listen(listenAddr, (err: BusinessError) => {
 
 
 
-#### on('message')10+
+### on('message')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'message', callback: Callback&lt;SocketMessageInfo&gt;): void
 
@@ -4817,6 +5086,7 @@ on(type: 'message', callback: Callback&lt;SocketMessageInfo&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4827,6 +5097,7 @@ on(type: 'message', callback: Callback&lt;SocketMessageInfo&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4858,9 +5129,10 @@ tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
 
 
 
-#### off('message')10+
+### off('message')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'message', callback?: Callback&lt;SocketMessageInfo&gt;): void
 
@@ -4869,6 +5141,7 @@ off(type: 'message', callback?: Callback&lt;SocketMessageInfo&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4879,6 +5152,7 @@ off(type: 'message', callback?: Callback&lt;SocketMessageInfo&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4913,9 +5187,10 @@ tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
 
 
 
-#### on('close')10+
+### on('close')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'close', callback: Callback&lt;void&gt;): void
 
@@ -4924,6 +5199,7 @@ on(type: 'close', callback: Callback&lt;void&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4934,6 +5210,7 @@ on(type: 'close', callback: Callback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4956,9 +5233,10 @@ tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
 
 
 
-#### off('close')10+
+### off('close')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'close', callback?: Callback&lt;void&gt;): void
 
@@ -4967,6 +5245,7 @@ off(type: 'close', callback?: Callback&lt;void&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4977,6 +5256,7 @@ off(type: 'close', callback?: Callback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5002,9 +5282,10 @@ tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
 
 
 
-#### on('error')10+
+### on('error')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'error', callback: ErrorCallback): void
 
@@ -5013,6 +5294,7 @@ on(type: 'error', callback: ErrorCallback): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5023,6 +5305,7 @@ on(type: 'error', callback: ErrorCallback): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5045,9 +5328,10 @@ tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
 
 
 
-#### off('error')10+
+### off('error')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'error', callback?: ErrorCallback): void
 
@@ -5056,6 +5340,7 @@ off(type: 'error', callback?: ErrorCallback): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5066,6 +5351,7 @@ off(type: 'error', callback?: ErrorCallback): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5092,9 +5378,10 @@ tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
 
 
 
-#### TCP 错误码说明
+## TCP 错误码说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TCP 其余错误码映射形式为：2301000 + Linux内核错误码。
 
@@ -5102,9 +5389,10 @@ TCP 其余错误码映射形式为：2301000 + Linux内核错误码。
 
 
 
-#### socket.constructLocalSocketInstance11+
+## socket.constructLocalSocketInstance11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructLocalSocketInstance(): LocalSocket
 
@@ -5113,6 +5401,7 @@ constructLocalSocketInstance(): LocalSocket
 **系统能力**：SystemCapability.Communication.NetStack
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5128,17 +5417,19 @@ let client: socket.LocalSocket = socket.constructLocalSocketInstance();
 
 
 
-#### LocalSocket11+
+## LocalSocket11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 LocalSocket连接。在调用LocalSocket的方法前，需要先通过[socket.constructLocalSocketInstance](#socketconstructlocalsocketinstance11)创建LocalSocket对象。
 
 
 
-#### bind11+
+### bind11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 bind(address: LocalAddress): Promise&lt;void&gt;;
 
@@ -5152,12 +5443,14 @@ bind(address: LocalAddress): Promise&lt;void&gt;;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | address | LocalAddress | 是 | 本端地址信息，参考LocalAddress。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5167,6 +5460,7 @@ bind(address: LocalAddress): Promise&lt;void&gt;;
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5201,9 +5495,10 @@ client.bind(address).then(() => {
 
 
 
-#### connect11+
+### connect11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 connect(options: LocalConnectOptions): Promise&lt;void&gt;
 
@@ -5217,12 +5512,14 @@ connect(options: LocalConnectOptions): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | LocalConnectOptions | 是 | LocalSocket连接的参数，参考LocalConnectOptions。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5232,6 +5529,7 @@ connect(options: LocalConnectOptions): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5271,9 +5569,10 @@ client.connect(connectOpt).then(() => {
 
 
 
-#### send11+
+### send11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 send(options: LocalSendOptions): Promise&lt;void&gt;
 
@@ -5287,12 +5586,14 @@ send(options: LocalSendOptions): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | LocalSendOptions | 是 | LocalSocket发送请求的参数，参考LocalSendOptions。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5302,6 +5603,7 @@ send(options: LocalSendOptions): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5346,9 +5648,10 @@ client.send(sendOpt).then(() => {
 
 
 
-#### close11+
+### close11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(): Promise&lt;void&gt;
 
@@ -5358,6 +5661,7 @@ close(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -5366,6 +5670,7 @@ close(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5388,9 +5693,10 @@ client.close().then(() => {
 
 
 
-#### getState11+
+### getState11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getState(): Promise&lt;SocketStateBase&gt;
 
@@ -5403,6 +5709,7 @@ getState(): Promise&lt;SocketStateBase&gt;
 **系统能力**：SystemCapability.Communication.NetStack
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5443,9 +5750,10 @@ client.connect(connectOpt).then(() => {
 
 
 
-#### getSocketFd11+
+### getSocketFd11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSocketFd(): Promise&lt;number&gt;
 
@@ -5458,6 +5766,7 @@ getSocketFd(): Promise&lt;number&gt;
 **系统能力**：SystemCapability.Communication.NetStack
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5498,9 +5807,10 @@ client.getSocketFd().then((data: number) => {
 
 
 
-#### setExtraOptions11+
+### setExtraOptions11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setExtraOptions(options: ExtraOptionsBase): Promise&lt;void&gt;
 
@@ -5514,12 +5824,14 @@ setExtraOptions(options: ExtraOptionsBase): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ExtraOptionsBase | 是 | LocalSocket连接的其他属性，参考ExtraOptionsBase。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5529,6 +5841,7 @@ setExtraOptions(options: ExtraOptionsBase): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5575,9 +5888,10 @@ client.connect(connectOpt).then(() => {
 
 
 
-#### getExtraOptions11+
+### getExtraOptions11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getExtraOptions(): Promise&lt;ExtraOptionsBase&gt;;
 
@@ -5591,6 +5905,7 @@ getExtraOptions(): Promise&lt;ExtraOptionsBase&gt;;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;ExtraOptionsBase&gt; | 以Promise形式返回设置LocalSocket套接字的属性。 |
@@ -5599,6 +5914,7 @@ getExtraOptions(): Promise&lt;ExtraOptionsBase&gt;;
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5639,9 +5955,10 @@ client.connect(connectOpt).then(() => {
 
 
 
-#### getLocalAddress12+
+### getLocalAddress12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLocalAddress(): Promise&lt;string&gt;
 
@@ -5655,6 +5972,7 @@ getLocalAddress(): Promise&lt;string&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | 以Promise形式返回获取本地socket地址的结果。 |
@@ -5663,6 +5981,7 @@ getLocalAddress(): Promise&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5702,9 +6021,10 @@ client.bind(address).then(() => {
 
 
 
-#### on('message')11+
+### on('message')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'message', callback: Callback&lt;LocalSocketMessageInfo&gt;): void
 
@@ -5713,6 +6033,7 @@ on(type: 'message', callback: Callback&lt;LocalSocketMessageInfo&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5723,6 +6044,7 @@ on(type: 'message', callback: Callback&lt;LocalSocketMessageInfo&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5748,9 +6070,10 @@ client.on('message', (value: socket.LocalSocketMessageInfo) => {
 
 
 
-#### off('message')11+
+### off('message')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'message', callback?: Callback&lt;LocalSocketMessageInfo&gt;): void
 
@@ -5759,6 +6082,7 @@ off(type: 'message', callback?: Callback&lt;LocalSocketMessageInfo&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5769,6 +6093,7 @@ off(type: 'message', callback?: Callback&lt;LocalSocketMessageInfo&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5797,9 +6122,10 @@ client.off('message');
 
 
 
-#### on('connect')11+
+### on('connect')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'connect', callback: Callback&lt;void&gt;): void
 
@@ -5808,6 +6134,7 @@ on(type: 'connect', callback: Callback&lt;void&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5818,6 +6145,7 @@ on(type: 'connect', callback: Callback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5837,9 +6165,10 @@ client.on('connect', () => {
 
 
 
-#### off('connect')11+
+### off('connect')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'connect', callback?: Callback&lt;void&gt;): void
 
@@ -5848,6 +6177,7 @@ off(type: 'connect', callback?: Callback&lt;void&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5858,6 +6188,7 @@ off(type: 'connect', callback?: Callback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5881,9 +6212,10 @@ client.off('connect');
 
 
 
-#### on('close')11+
+### on('close')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'close', callback: Callback&lt;void&gt;): void
 
@@ -5892,6 +6224,7 @@ on(type: 'close', callback: Callback&lt;void&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5902,6 +6235,7 @@ on(type: 'close', callback: Callback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5922,9 +6256,10 @@ client.on('close', callback);
 
 
 
-#### off('close')11+
+### off('close')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'close', callback?: Callback&lt;void&gt;): void
 
@@ -5933,6 +6268,7 @@ off(type: 'close', callback?: Callback&lt;void&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5943,6 +6279,7 @@ off(type: 'close', callback?: Callback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5966,9 +6303,10 @@ client.off('close');
 
 
 
-#### on('error')11+
+### on('error')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'error', callback: ErrorCallback): void
 
@@ -5977,6 +6315,7 @@ on(type: 'error', callback: ErrorCallback): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5987,6 +6326,7 @@ on(type: 'error', callback: ErrorCallback): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6006,9 +6346,10 @@ client.on('error', (err: Object) => {
 
 
 
-#### off('error')11+
+### off('error')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'error', callback?: ErrorCallback): void
 
@@ -6017,6 +6358,7 @@ off(type: 'error', callback?: ErrorCallback): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6027,6 +6369,7 @@ off(type: 'error', callback?: ErrorCallback): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6050,13 +6393,15 @@ client.off('error');
 
 
 
-#### LocalSocketMessageInfo11+
+## LocalSocketMessageInfo11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 LocalSocket客户端与服务端通信时接收的数据。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -6067,13 +6412,15 @@ LocalSocket客户端与服务端通信时接收的数据。
 
 
 
-#### LocalAddress11+
+## LocalAddress11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 LocalSocket本地套接字文件路径信息，在传入套接字路径进行绑定时，会在此路径下创建套接字文件。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -6082,13 +6429,15 @@ LocalSocket本地套接字文件路径信息，在传入套接字路径进行绑
 
 
 
-#### LocalConnectOptions11+
+## LocalConnectOptions11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 LocalSocket客户端在连接服务端时传入的参数信息。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -6098,13 +6447,15 @@ LocalSocket客户端在连接服务端时传入的参数信息。
 
 
 
-#### LocalSendOptions11+
+## LocalSendOptions11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 LocalSocket发送请求的参数。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -6114,13 +6465,15 @@ LocalSocket发送请求的参数。
 
 
 
-#### ExtraOptionsBase
+## ExtraOptionsBase
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Socket套接字的基础属性。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -6132,9 +6485,10 @@ Socket套接字的基础属性。
 
 
 
-#### socket.constructLocalSocketServerInstance11+
+## socket.constructLocalSocketServerInstance11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructLocalSocketServerInstance(): LocalSocketServer
 
@@ -6143,6 +6497,7 @@ constructLocalSocketServerInstance(): LocalSocketServer
 **系统能力**：SystemCapability.Communication.NetStack
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6158,17 +6513,19 @@ let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance
 
 
 
-#### LocalSocketServer11+
+## LocalSocketServer11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 LocalSocketServer类。在调用LocalSocketServer的方法前，需要先通过[socket.constructLocalSocketServerInstance](#socketconstructlocalsocketserverinstance11)创建LocalSocketServer对象。
 
 
 
-#### listen11+
+### listen11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 listen(address: LocalAddress): Promise&lt;void&gt;
 
@@ -6182,12 +6539,14 @@ listen(address: LocalAddress): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | address | LocalAddress | 是 | 目标地址信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6197,6 +6556,7 @@ listen(address: LocalAddress): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6232,9 +6592,10 @@ server.listen(addr).then(() => {
 
 
 
-#### getState11+
+### getState11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getState(): Promise&lt;SocketStateBase&gt;
 
@@ -6247,6 +6608,7 @@ getState(): Promise&lt;SocketStateBase&gt;
 **系统能力**：SystemCapability.Communication.NetStack
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6284,9 +6646,10 @@ server.getState().then((data: socket.SocketStateBase) => {
 
 
 
-#### setExtraOptions11+
+### setExtraOptions11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setExtraOptions(options: ExtraOptionsBase): Promise&lt;void&gt;
 
@@ -6300,12 +6663,14 @@ setExtraOptions(options: ExtraOptionsBase): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ExtraOptionsBase | 是 | LocalSocketServer连接的其他属性。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6315,6 +6680,7 @@ setExtraOptions(options: ExtraOptionsBase): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6335,7 +6701,7 @@ import { common } from '@kit.AbilityKit';
 let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
 let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
 let sandboxPath: string = context.filesDir + '/testSocket';
-let listenAddr: socket.NetAddress = {
+let listenAddr: socket.LocalAddress = {
   address: sandboxPath
 }
 server.listen(listenAddr).then(() => {
@@ -6358,9 +6724,10 @@ server.setExtraOptions(options).then(() => {
 
 
 
-#### getExtraOptions11+
+### getExtraOptions11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getExtraOptions(): Promise&lt;ExtraOptionsBase&gt;;
 
@@ -6374,6 +6741,7 @@ getExtraOptions(): Promise&lt;ExtraOptionsBase&gt;;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;ExtraOptionsBase&gt; | 以Promise形式返回套接字的属性。 |
@@ -6382,6 +6750,7 @@ getExtraOptions(): Promise&lt;ExtraOptionsBase&gt;;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6418,9 +6787,10 @@ server.getExtraOptions().then((options: socket.ExtraOptionsBase) => {
 
 
 
-#### getLocalAddress12+
+### getLocalAddress12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLocalAddress(): Promise&lt;string&gt;
 
@@ -6434,6 +6804,7 @@ getLocalAddress(): Promise&lt;string&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | 以Promise形式返回获取本地socket地址的结果。 |
@@ -6442,6 +6813,7 @@ getLocalAddress(): Promise&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6481,9 +6853,10 @@ server.listen(listenAddr).then(() => {
 
 
 
-#### getSocketFd23+
+### getSocketFd23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSocketFd(): Promise&lt;number&gt;
 
@@ -6496,6 +6869,7 @@ getSocketFd(): Promise&lt;number&gt;
 **系统能力**：SystemCapability.Communication.NetStack
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6533,9 +6907,10 @@ server.listen(listenAddr).then(() => {
 
 
 
-#### on('connect')11+
+### on('connect')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'connect', callback: Callback&lt;LocalSocketConnection&gt;): void
 
@@ -6549,6 +6924,7 @@ on(type: 'connect', callback: Callback&lt;LocalSocketConnection&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅的事件类型。'connect'：连接事件。 |
@@ -6558,6 +6934,7 @@ on(type: 'connect', callback: Callback&lt;LocalSocketConnection&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6579,9 +6956,10 @@ server.on('connect', (connection: socket.LocalSocketConnection) => {
 
 
 
-#### off('connect')11+
+### off('connect')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'connect', callback?: Callback&lt;LocalSocketConnection&gt;): void
 
@@ -6590,6 +6968,7 @@ off(type: 'connect', callback?: Callback&lt;LocalSocketConnection&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6600,6 +6979,7 @@ off(type: 'connect', callback?: Callback&lt;LocalSocketConnection&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6625,9 +7005,10 @@ server.off('connect');
 
 
 
-#### on('error')11+
+### on('error')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'error', callback: ErrorCallback): void
 
@@ -6641,6 +7022,7 @@ on(type: 'error', callback: ErrorCallback): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅的事件类型。'error'：error事件。 |
@@ -6650,6 +7032,7 @@ on(type: 'error', callback: ErrorCallback): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6669,9 +7052,10 @@ server.on('error', (err: Object) => {
 
 
 
-#### off('error')11+
+### off('error')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'error', callback?: ErrorCallback): void
 
@@ -6680,6 +7064,7 @@ off(type: 'error', callback?: ErrorCallback): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6690,6 +7075,7 @@ off(type: 'error', callback?: ErrorCallback): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6713,9 +7099,10 @@ server.off('error');
 
 
 
-#### close20+
+### close20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(): Promise&lt;void&gt;
 
@@ -6729,6 +7116,7 @@ LocalSocketServer停止监听并释放通过[listen](#listen11)方法绑定的�
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -6737,6 +7125,7 @@ LocalSocketServer停止监听并释放通过[listen](#listen11)方法绑定的�
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6775,9 +7164,10 @@ localserver.listen(addr).then(() => {
 
 
 
-#### LocalSocketConnection11+
+## LocalSocketConnection11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 LocalSocketConnection连接，即LocalSocket客户端与服务端的会话连接。在调用LocalSocketConnection的方法前，需要先获取LocalSocketConnection对象。
 
@@ -6789,7 +7179,11 @@ LocalSocketConnection连接，即LocalSocket客户端与服务端的会话连接
 
 
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -6798,9 +7192,10 @@ LocalSocketConnection连接，即LocalSocket客户端与服务端的会话连接
 
 
 
-#### send11+
+### send11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 send(options: LocalSendOptions): Promise&lt;void&gt;
 
@@ -6814,12 +7209,14 @@ send(options: LocalSendOptions): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | LocalSendOptions | 是 | LocalSocketConnection发送请求的参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6829,6 +7226,7 @@ send(options: LocalSendOptions): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6857,9 +7255,10 @@ server.on('connect', (connection: socket.LocalSocketConnection) => {
 
 
 
-#### close11+
+### close11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(): Promise&lt;void&gt;
 
@@ -6869,6 +7268,7 @@ close(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -6877,6 +7277,7 @@ close(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6900,9 +7301,10 @@ server.on('connect', (connection: socket.LocalSocketConnection) => {
 
 
 
-#### getLocalAddress12+
+### getLocalAddress12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLocalAddress(): Promise&lt;string&gt;
 
@@ -6912,6 +7314,7 @@ getLocalAddress(): Promise&lt;string&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | 以Promise形式返回获取本地socket地址的结果。 |
@@ -6920,6 +7323,7 @@ getLocalAddress(): Promise&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6966,9 +7370,10 @@ server.listen(localAddr).then(() => {
 
 
 
-#### getSocketFd23+
+### getSocketFd23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSocketFd(): Promise&lt;number&gt;
 
@@ -6981,6 +7386,7 @@ getSocketFd(): Promise&lt;number&gt;
 **系统能力**：SystemCapability.Communication.NetStack
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7019,9 +7425,10 @@ server.listen(listenAddr).then(() => {
 
 
 
-#### on('message')11+
+### on('message')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'message', callback: Callback&lt;LocalSocketMessageInfo&gt;): void
 
@@ -7030,6 +7437,7 @@ on(type: 'message', callback: Callback&lt;LocalSocketMessageInfo&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -7040,6 +7448,7 @@ on(type: 'message', callback: Callback&lt;LocalSocketMessageInfo&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7082,9 +7491,10 @@ server.on('connect', (connection: socket.LocalSocketConnection) => {
 
 
 
-#### off('message')11+
+### off('message')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'message', callback?: Callback&lt;LocalSocketMessageInfo&gt;): void
 
@@ -7093,6 +7503,7 @@ off(type: 'message', callback?: Callback&lt;LocalSocketMessageInfo&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -7103,6 +7514,7 @@ off(type: 'message', callback?: Callback&lt;LocalSocketMessageInfo&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7134,9 +7546,10 @@ server.on('connect', (connection: socket.LocalSocketConnection) => {
 
 
 
-#### on('close')11+
+### on('close')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'close', callback: Callback&lt;void&gt;): void
 
@@ -7145,6 +7558,7 @@ on(type: 'close', callback: Callback&lt;void&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -7155,6 +7569,7 @@ on(type: 'close', callback: Callback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7176,9 +7591,10 @@ server.on('connect', (connection: socket.LocalSocketConnection) => {
 
 
 
-#### off('close')11+
+### off('close')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'close', callback?: Callback&lt;void&gt;): void
 
@@ -7187,6 +7603,7 @@ off(type: 'close', callback?: Callback&lt;void&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -7197,6 +7614,7 @@ off(type: 'close', callback?: Callback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7222,9 +7640,10 @@ server.on('connect', (connection: socket.LocalSocketConnection) => {
 
 
 
-#### on('error')11+
+### on('error')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'error', callback: ErrorCallback): void
 
@@ -7233,6 +7652,7 @@ on(type: 'error', callback: ErrorCallback): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -7243,6 +7663,7 @@ on(type: 'error', callback: ErrorCallback): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7264,9 +7685,10 @@ server.on('connect', (connection: socket.LocalSocketConnection) => {
 
 
 
-#### off('error')11+
+### off('error')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'error', callback?: ErrorCallback): void
 
@@ -7275,6 +7697,7 @@ off(type: 'error', callback?: ErrorCallback): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -7285,6 +7708,7 @@ off(type: 'error', callback?: ErrorCallback): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7310,9 +7734,10 @@ server.on('connect', (connection: socket.LocalSocketConnection) => {
 
 
 
-#### LocalSocket 错误码说明
+## LocalSocket 错误码说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 LocalSocket 错误码映射形式为：2301000 + Linux内核错误码。
 
@@ -7320,9 +7745,10 @@ LocalSocket 错误码映射形式为：2301000 + Linux内核错误码。
 
 
 
-#### socket.constructTLSSocketInstance9+
+## socket.constructTLSSocketInstance9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructTLSSocketInstance(): TLSSocket
 
@@ -7331,6 +7757,7 @@ constructTLSSocketInstance(): TLSSocket
 **系统能力**：SystemCapability.Communication.NetStack
 
 **返回值:**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7347,9 +7774,10 @@ let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
 
 
 
-#### socket.constructTLSSocketInstance12+
+## socket.constructTLSSocketInstance12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructTLSSocketInstance(tcpSocket: TCPSocket): TLSSocket
 
@@ -7363,12 +7791,14 @@ constructTLSSocketInstance(tcpSocket: TCPSocket): TLSSocket
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | tcpSocket | TCPSocket | 是 | 需要进行升级的TCPSocket对象。 |
 
 
 **返回值:**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7378,6 +7808,7 @@ constructTLSSocketInstance(tcpSocket: TCPSocket): TLSSocket
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7417,17 +7848,19 @@ tcp.connect(tcpconnectoptions, (err: BusinessError) => {
 
 
 
-#### TLSSocket9+
+## TLSSocket9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TLSSocket连接。在调用TLSSocket的方法前，需要先通过[socket.constructTLSSocketInstance](#socketconstructtlssocketinstance9)创建TLSSocket对象。
 
 
 
-#### bind9+
+### bind9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 bind(address: NetAddress, callback: AsyncCallback&lt;void&gt;): void
 
@@ -7443,6 +7876,7 @@ bind(address: NetAddress, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | address | NetAddress | 是 | 本端地址信息，参考NetAddress。 |
@@ -7452,6 +7886,7 @@ bind(address: NetAddress, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7483,9 +7918,10 @@ tls.bind(bindAddr, (err: BusinessError) => {
 
 
 
-#### bind9+
+### bind9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 bind(address: NetAddress): Promise&lt;void&gt;
 
@@ -7501,12 +7937,14 @@ bind(address: NetAddress): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | address | NetAddress | 是 | 本端地址信息，参考NetAddress。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7516,6 +7954,7 @@ bind(address: NetAddress): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7545,9 +7984,10 @@ tls.bind(bindAddr).then(() => {
 
 
 
-#### getState9+
+### getState9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getState(callback: AsyncCallback&lt;SocketStateBase&gt;): void
 
@@ -7557,6 +7997,7 @@ getState(callback: AsyncCallback&lt;SocketStateBase&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;SocketStateBase&gt; | 是 | 回调函数。成功返回TLSSocket状态，失败返回错误码、错误信息。 |
@@ -7565,6 +8006,7 @@ getState(callback: AsyncCallback&lt;SocketStateBase&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7601,9 +8043,10 @@ tls.getState((err: BusinessError, data: socket.SocketStateBase) => {
 
 
 
-#### getState9+
+### getState9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getState(): Promise&lt;SocketStateBase&gt;
 
@@ -7613,6 +8056,7 @@ getState(): Promise&lt;SocketStateBase&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;SocketStateBase&gt; | 以Promise形式返回获取TLSSocket状态的结果。失败返回错误码，错误信息。 |
@@ -7621,6 +8065,7 @@ getState(): Promise&lt;SocketStateBase&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7655,9 +8100,10 @@ tls.getState().then(() => {
 
 
 
-#### setExtraOptions9+
+### setExtraOptions9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setExtraOptions(options: TCPExtraOptions, callback: AsyncCallback&lt;void&gt;): void
 
@@ -7666,6 +8112,7 @@ setExtraOptions(options: TCPExtraOptions, callback: AsyncCallback&lt;void&gt;): 
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -7676,6 +8123,7 @@ setExtraOptions(options: TCPExtraOptions, callback: AsyncCallback&lt;void&gt;): 
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7730,9 +8178,10 @@ tls.setExtraOptions(tcpExtraOptions, (err: BusinessError) => {
 
 
 
-#### setExtraOptions9+
+### setExtraOptions9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setExtraOptions(options: TCPExtraOptions): Promise&lt;void&gt;
 
@@ -7742,12 +8191,14 @@ setExtraOptions(options: TCPExtraOptions): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | TCPExtraOptions | 是 | TCPSocket连接的其他属性，参考TCPExtraOptions。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7757,6 +8208,7 @@ setExtraOptions(options: TCPExtraOptions): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7809,9 +8261,10 @@ tls.setExtraOptions(tcpExtraOptions).then(() => {
 
 
 
-#### on('message')9+
+### on('message')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'message', callback: Callback&lt;SocketMessageInfo&gt;): void
 
@@ -7825,15 +8278,17 @@ on(type: 'message', callback: Callback&lt;SocketMessageInfo&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅的事件类型。'message'：接收消息事件。 |
-| callback | Callback&lt;SocketMessageInfo&gt; | 是 | 回调函数。TLSSocket连接订阅某类接受消息事件触发的调用函数，返回TLSSocket连接信息。 |
+| callback | Callback&lt;SocketMessageInfo&gt; | 是 | 回调函数。TLSSocket连接订阅某类接收消息事件触发的调用函数，返回TLSSocket连接信息。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7873,9 +8328,10 @@ tls.bind(bindAddr, (err: BusinessError) => {
 
 
 
-#### off('message')9+
+### off('message')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'message', callback?: Callback&lt;SocketMessageInfo&gt;): void
 
@@ -7885,13 +8341,15 @@ off(type: 'message', callback?: Callback&lt;SocketMessageInfo&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅的事件类型。'message'：接收消息事件。 |
-| callback | Callback&lt;SocketMessageInfo&gt; | 否 | 回调函数。TLSSocket连接取消订阅某类接受消息事件触发的调用函数，返回TLSSocket连接信息。 |
+| callback | Callback&lt;SocketMessageInfo&gt; | 否 | 回调函数。TLSSocket连接取消订阅某类接收消息事件触发的调用函数，返回TLSSocket连接信息。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7923,9 +8381,10 @@ tls.off('message', callback);
 
 
 
-#### on('connect' | 'close')9+
+### on('connect' | 'close')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'connect' | 'close', callback: Callback&lt;void&gt;): void
 
@@ -7939,6 +8398,7 @@ on(type: 'connect' | 'close', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅的事件类型。 - 'connect'：连接事件。 - 'close'：关闭事件。 |
@@ -7946,6 +8406,7 @@ on(type: 'connect' | 'close', callback: Callback&lt;void&gt;): void
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7980,9 +8441,10 @@ tls.bind(bindAddr, (err: BusinessError) => {
 
 
 
-#### off('connect' | 'close')9+
+### off('connect' | 'close')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'connect' | 'close', callback?: Callback&lt;void&gt;): void
 
@@ -7992,6 +8454,7 @@ off(type: 'connect' | 'close', callback?: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅的事件类型。 - 'connect'：连接事件。 - 'close'：关闭事件。 |
@@ -7999,6 +8462,7 @@ off(type: 'connect' | 'close', callback?: Callback&lt;void&gt;): void
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -8029,9 +8493,10 @@ tls.off('close', callback2);
 
 
 
-#### on('error')9+
+### on('error')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'error', callback: ErrorCallback): void
 
@@ -8045,6 +8510,7 @@ on(type: 'error', callback: ErrorCallback): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅的事件类型。'error'：error事件。 |
@@ -8052,6 +8518,7 @@ on(type: 'error', callback: ErrorCallback): void
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -8083,9 +8550,10 @@ tls.bind(bindAddr, (err: BusinessError) => {
 
 
 
-#### off('error')9+
+### off('error')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'error', callback?: ErrorCallback): void
 
@@ -8095,6 +8563,7 @@ off(type: 'error', callback?: ErrorCallback): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅的事件类型。'error'：error事件。 |
@@ -8102,6 +8571,7 @@ off(type: 'error', callback?: ErrorCallback): void
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -8125,9 +8595,10 @@ tls.off('error', callback);
 
 
 
-#### connect9+
+### connect9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 connect(options: TLSConnectOptions, callback: AsyncCallback&lt;void&gt;): void
 
@@ -8137,6 +8608,7 @@ connect(options: TLSConnectOptions, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | TLSConnectOptions | 是 | TLSSocket连接所需要的参数。 |
@@ -8144,6 +8616,7 @@ connect(options: TLSConnectOptions, callback: AsyncCallback&lt;void&gt;): void
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -8162,14 +8635,14 @@ connect(options: TLSConnectOptions, callback: AsyncCallback&lt;void&gt;): void
 | 2303505 | An error occurred in the TLS system call. |
 | 2303506 | Failed to close the TLS connection. |
 | 2300002 | System internal error. |
-| 2301206 | Socks5 failed to connect to the proxy server. |
-| 2301207 | Socks5 username or password is invalid. |
-| 2301208 | Socks5 failed to connect to the remote server. |
-| 2301209 | Socks5 failed to negotiate the authentication method. |
-| 2301210 | Socks5 failed to send the message. |
-| 2301211 | Socks5 failed to receive the message. |
-| 2301212 | Socks5 serialization error. |
-| 2301213 | Socks5 deserialization error. |
+| 2301206 | Socks5 failed to connect to the proxy server. 适用版本：18+ |
+| 2301207 | Socks5 username or password is invalid. 适用版本：18+ |
+| 2301208 | Socks5 failed to connect to the remote server. 适用版本：18+ |
+| 2301209 | Socks5 failed to negotiate the authentication method. 适用版本：18+ |
+| 2301210 | Socks5 failed to send the message. 适用版本：18+ |
+| 2301211 | Socks5 failed to receive the message. 适用版本：18+ |
+| 2301212 | Socks5 serialization error. 适用版本：18+ |
+| 2301213 | Socks5 deserialization error. 适用版本：18+ |
 
 
 **示例：**
@@ -8326,9 +8799,10 @@ tlsOneWay.connect(tlsOneWayConnectOptions, (err: BusinessError) => {
 
 
 
-#### connect9+
+### connect9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 connect(options: TLSConnectOptions): Promise&lt;void&gt;
 
@@ -8338,6 +8812,7 @@ connect(options: TLSConnectOptions): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | TLSConnectOptions | 是 | 连接所需要的参数。 |
@@ -8345,12 +8820,14 @@ connect(options: TLSConnectOptions): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 以Promise形式返回，成功无返回，失败返回错误码，错误信息。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -8369,14 +8846,14 @@ connect(options: TLSConnectOptions): Promise&lt;void&gt;
 | 2303505 | An error occurred in the TLS system call. |
 | 2303506 | Failed to close the TLS connection. |
 | 2300002 | System internal error. |
-| 2301206 | Socks5 failed to connect to the proxy server. |
-| 2301207 | Socks5 username or password is invalid. |
-| 2301208 | Socks5 failed to connect to the remote server. |
-| 2301209 | Socks5 failed to negotiate the authentication method. |
-| 2301210 | Socks5 failed to send the message. |
-| 2301211 | Socks5 failed to receive the message. |
-| 2301212 | Socks5 serialization error. |
-| 2301213 | Socks5 deserialization error. |
+| 2301206 | Socks5 failed to connect to the proxy server. 适用版本：18+ |
+| 2301207 | Socks5 username or password is invalid. 适用版本：18+ |
+| 2301208 | Socks5 failed to connect to the remote server. 适用版本：18+ |
+| 2301209 | Socks5 failed to negotiate the authentication method. 适用版本：18+ |
+| 2301210 | Socks5 failed to send the message. 适用版本：18+ |
+| 2301211 | Socks5 failed to receive the message. 适用版本：18+ |
+| 2301212 | Socks5 serialization error. 适用版本：18+ |
+| 2301213 | Socks5 deserialization error. 适用版本：18+ |
 
 
 **示例：**
@@ -8541,9 +9018,10 @@ tlsOneWay.connect(tlsOneWayConnectOptions).then(() => {
 
 
 
-#### getRemoteAddress9+
+### getRemoteAddress9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRemoteAddress(callback: AsyncCallback&lt;NetAddress&gt;): void
 
@@ -8553,12 +9031,14 @@ getRemoteAddress(callback: AsyncCallback&lt;NetAddress&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;NetAddress&gt; | 是 | 回调函数。成功返回对端的socket地址，失败返回错误码、错误信息。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -8584,9 +9064,10 @@ tls.getRemoteAddress((err: BusinessError, data: socket.NetAddress) => {
 
 
 
-#### getRemoteAddress9+
+### getRemoteAddress9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRemoteAddress(): Promise&lt;NetAddress&gt;
 
@@ -8596,12 +9077,14 @@ getRemoteAddress(): Promise&lt;NetAddress&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;NetAddress&gt; | 以Promise形式返回获取对端socket地址的结果。失败返回错误码，错误信息。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -8625,9 +9108,10 @@ tls.getRemoteAddress().then(() => {
 
 
 
-#### getCertificate9+
+### getCertificate9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCertificate(callback: AsyncCallback<[X509CertRawData](#x509certrawdata9)>): void
 
@@ -8637,12 +9121,14 @@ getCertificate(callback: AsyncCallback<[X509CertRawData](#x509certrawdata9)>): v
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;X509CertRawData&gt; | 是 | 回调函数，成功返回本地的证书，失败返回错误码、错误信息。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -8669,9 +9155,10 @@ tls.getCertificate((err: BusinessError, data: socket.X509CertRawData) => {
 
 
 
-#### getCertificate9+
+### getCertificate9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCertificate():Promise<[X509CertRawData](#x509certrawdata9)>
 
@@ -8681,12 +9168,14 @@ getCertificate():Promise<[X509CertRawData](#x509certrawdata9)>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;X509CertRawData&gt; | 以Promise形式返回本地的数字证书的结果。失败返回错误码，错误信息。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -8714,9 +9203,10 @@ tls.getCertificate().then((data: socket.X509CertRawData) => {
 
 
 
-#### getRemoteCertificate9+
+### getRemoteCertificate9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRemoteCertificate(callback: AsyncCallback<[X509CertRawData](#x509certrawdata9)>): void
 
@@ -8726,12 +9216,14 @@ getRemoteCertificate(callback: AsyncCallback<[X509CertRawData](#x509certrawdata9
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;X509CertRawData&gt; | 是 | 回调函数，返回服务端的证书。失败返回错误码、错误信息。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -8760,9 +9252,10 @@ tls.getRemoteCertificate((err: BusinessError, data: socket.X509CertRawData) => {
 
 
 
-#### getRemoteCertificate9+
+### getRemoteCertificate9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRemoteCertificate():Promise<[X509CertRawData](#x509certrawdata9)>
 
@@ -8772,12 +9265,14 @@ getRemoteCertificate():Promise<[X509CertRawData](#x509certrawdata9)>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;X509CertRawData&gt; | 以Promise形式返回服务端的数字证书的结果。失败返回错误码，错误信息。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -8804,9 +9299,10 @@ tls.getRemoteCertificate().then((data: socket.X509CertRawData) => {
 
 
 
-#### getProtocol9+
+### getProtocol9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getProtocol(callback: AsyncCallback&lt;string&gt;): void
 
@@ -8816,12 +9312,14 @@ getProtocol(callback: AsyncCallback&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;string&gt; | 是 | 回调函数，返回通信的协议。失败返回错误码、错误信息。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -8848,9 +9346,10 @@ tls.getProtocol((err: BusinessError, data: string) => {
 
 
 
-#### getProtocol9+
+### getProtocol9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getProtocol():Promise&lt;string&gt;
 
@@ -8860,12 +9359,14 @@ getProtocol():Promise&lt;string&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | 以Promise形式返回通信的协议。失败返回错误码，错误信息。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -8890,9 +9391,10 @@ tls.getProtocol().then((data: string) => {
 
 
 
-#### getCipherSuite9+
+### getCipherSuite9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCipherSuite(callback: AsyncCallback<Array&lt;string&gt;>): void
 
@@ -8902,12 +9404,14 @@ getCipherSuite(callback: AsyncCallback<Array&lt;string&gt;>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<Array&lt;string&gt;> | 是 | 回调函数，返回通信双方支持的加密套件。失败返回错误码、错误信息。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -8935,9 +9439,10 @@ tls.getCipherSuite((err: BusinessError, data: Array<string>) => {
 
 
 
-#### getCipherSuite9+
+### getCipherSuite9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCipherSuite(): Promise<Array&lt;string&gt;>
 
@@ -8947,12 +9452,14 @@ getCipherSuite(): Promise<Array&lt;string&gt;>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;string&gt;> | 以Promise形式返回通信双方支持的加密套件。失败返回错误码，错误信息。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -8978,9 +9485,10 @@ tls.getCipherSuite().then((data: Array<string>) => {
 
 
 
-#### getSignatureAlgorithms9+
+### getSignatureAlgorithms9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSignatureAlgorithms(callback: AsyncCallback<Array&lt;string&gt;>): void
 
@@ -8990,12 +9498,14 @@ getSignatureAlgorithms(callback: AsyncCallback<Array&lt;string&gt;>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<Array&lt;string&gt;> | 是 | 回调函数，返回双方支持的签名算法。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9021,9 +9531,10 @@ tls.getSignatureAlgorithms((err: BusinessError, data: Array<string>) => {
 
 
 
-#### getSignatureAlgorithms9+
+### getSignatureAlgorithms9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSignatureAlgorithms(): Promise<Array&lt;string&gt;>
 
@@ -9033,12 +9544,14 @@ getSignatureAlgorithms(): Promise<Array&lt;string&gt;>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;string&gt;> | 以Promise形式返回获取到的双方支持的签名算法。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9062,9 +9575,10 @@ tls.getSignatureAlgorithms().then((data: Array<string>) => {
 
 
 
-#### getLocalAddress12+
+### getLocalAddress12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLocalAddress(): Promise&lt;NetAddress&gt;
 
@@ -9078,12 +9592,14 @@ getLocalAddress(): Promise&lt;NetAddress&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;NetAddress&gt; | 以Promise形式返回获取本地socket地址的结果。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9108,9 +9624,10 @@ tls.getLocalAddress().then((localAddress: socket.NetAddress) => {
 
 
 
-#### getSocketFd16+
+### getSocketFd16+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSocketFd(): Promise&lt;number&gt;
 
@@ -9123,6 +9640,7 @@ getSocketFd(): Promise&lt;number&gt;
 **系统能力**：SystemCapability.Communication.NetStack
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -9153,9 +9671,10 @@ tls.getSocketFd().then((data: number) => {
 
 
 
-#### send9+
+### send9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 send(data: string | ArrayBuffer, callback: AsyncCallback&lt;void&gt;): void
 
@@ -9165,6 +9684,7 @@ send(data: string | ArrayBuffer, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | string \| ArrayBuffer | 是 | 发送的数据内容。 |
@@ -9172,6 +9692,7 @@ send(data: string | ArrayBuffer, callback: AsyncCallback&lt;void&gt;): void
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9201,9 +9722,10 @@ tls.send("xxxx", (err: BusinessError) => {
 
 
 
-#### send9+
+### send9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 send(data: string | ArrayBuffer): Promise&lt;void&gt;
 
@@ -9213,6 +9735,7 @@ send(data: string | ArrayBuffer): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | string \| ArrayBuffer | 是 | 发送的数据内容。 |
@@ -9220,12 +9743,14 @@ send(data: string | ArrayBuffer): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 以Promise形式返回,返回TLSSocket发送数据的结果。失败返回错误码，错误信息。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9253,9 +9778,10 @@ tls.send("xxxx").then(() => {
 
 
 
-#### close9+
+### close9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(callback: AsyncCallback&lt;void&gt;): void
 
@@ -9265,12 +9791,14 @@ close(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数,成功返回TLSSocket关闭连接的结果。失败返回错误码、错误信息。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9299,9 +9827,10 @@ tls.close((err: BusinessError) => {
 
 
 
-#### close9+
+### close9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(): Promise&lt;void&gt;
 
@@ -9311,12 +9840,14 @@ close(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 以Promise形式返回,返回TLSSocket关闭连接的结果。失败返回错误码，错误信息。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9343,13 +9874,15 @@ tls.close().then(() => {
 
 
 
-#### TLSConnectOptions9+
+## TLSConnectOptions9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TLS连接的操作。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -9363,13 +9896,15 @@ TLS连接的操作。
 
 
 
-#### TLSSecureOptions9+
+## TLSSecureOptions9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TLS安全相关操作。当本地证书cert和私钥key不为空时，开启双向验证模式。cert和key其中一项为空时，开启单向验证模式。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -9386,13 +9921,15 @@ TLS安全相关操作。当本地证书cert和私钥key不为空时，开启双�
 
 
 
-#### Protocol9+
+## Protocol9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TLS通信的协议版本。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -9402,15 +9939,17 @@ TLS通信的协议版本。
 
 
 
-#### X509CertRawData9+
+## X509CertRawData9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type X509CertRawData = cert.EncodingBlob
 
 存储证书的数据。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -9419,9 +9958,10 @@ type X509CertRawData = cert.EncodingBlob
 
 
 
-#### socket.constructTLSSocketServerInstance10+
+## socket.constructTLSSocketServerInstance10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructTLSSocketServerInstance(): TLSSocketServer
 
@@ -9430,6 +9970,7 @@ constructTLSSocketServerInstance(): TLSSocketServer
 **系统能力**：SystemCapability.Communication.NetStack
 
 **返回值:**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -9447,24 +9988,26 @@ let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance(
 
 
 
-#### TLSSocketServer10+
+## TLSSocketServer10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TLSSocketServer连接。在调用TLSSocketServer的方法前，需要先通过[socket.constructTLSSocketServerInstance](#socketconstructtlssocketserverinstance10)创建TLSSocketServer对象。
 
 
 
-#### listen10+
+### listen10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 listen(options: TLSConnectOptions, callback: AsyncCallback&lt;void&gt;): void
 
-绑定IP地址和端口，在TLSSocketServer上bind成功之后，监听客户端的连接，创建和初始化TLS会话，实现建立连接过程，加载证书秘钥并验证，使用callback异步回调。
+绑定IP地址和端口，在TLSSocketServer上bind成功之后，监听客户端的连接，创建和初始化TLS会话，实现建立连接过程，加载证书密钥并验证，使用callback异步回调。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/8jBlB9ljSqCoRwxme3C6ng/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260624T020116Z&HW-CC-Expire=86400&HW-CC-Sign=1743D8D03CA1DC93CD01354AA015CA955CA68D6052F742F4ADF2A41D654B1C61)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/4WB2-GWGRwWyOuTBHU48Iw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072938Z&HW-CC-Expire=86400&HW-CC-Sign=457E0D67A4DD16A4F28A3190126326EB6B4AA7C99E1B9ABB4D75B987FC2F4BC1)
 
 
 IP地址设置为0.0.0.0时，可以监听本机所有地址。
@@ -9477,6 +10020,7 @@ IP地址设置为0.0.0.0时，可以监听本机所有地址。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | TLSConnectOptions | 是 | TLSSocketServer连接所需要的参数。 |
@@ -9484,6 +10028,7 @@ IP地址设置为0.0.0.0时，可以监听本机所有地址。
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9535,19 +10080,21 @@ tlsServer.listen(tlsConnectOptions, (err: BusinessError) => {
 
 
 
-#### listen10+
+### listen10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 listen(options: TLSConnectOptions): Promise&lt;void&gt;
 
-绑定IP地址和端口，在TLSSocketServer上bind成功之后，监听客户端的连接，并创建和初始化TLS会话，实现建立连接过程，加载证书秘钥并验证，使用Promise异步回调。
+绑定IP地址和端口，在TLSSocketServer上bind成功之后，监听客户端的连接，并创建和初始化TLS会话，实现建立连接过程，加载证书密钥并验证，使用Promise异步回调。
 
 **需要权限**：ohos.permission.INTERNET
 
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -9556,12 +10103,14 @@ listen(options: TLSConnectOptions): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 以Promise形式返回，成功返回空，失败返回错误码，错误信息。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9615,9 +10164,10 @@ tlsServer.listen(tlsConnectOptions).then(() => {
 
 
 
-#### getState10+
+### getState10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getState(callback: AsyncCallback&lt;SocketStateBase&gt;): void
 
@@ -9631,12 +10181,14 @@ getState(callback: AsyncCallback&lt;SocketStateBase&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;SocketStateBase&gt; | 是 | 回调函数。成功返回TLSSocketServer状态，失败返回错误码、错误信息。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9687,9 +10239,10 @@ tlsServer.getState((err: BusinessError, data: socket.SocketStateBase) => {
 
 
 
-#### getState10+
+### getState10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getState(): Promise&lt;SocketStateBase&gt;
 
@@ -9703,12 +10256,14 @@ getState(): Promise&lt;SocketStateBase&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;SocketStateBase&gt; | 以Promise形式返回获取TLSSocketServer状态的结果。失败返回错误码，错误信息。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9756,9 +10311,10 @@ tlsServer.getState().then(() => {
 
 
 
-#### getSocketFd23+
+### getSocketFd23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSocketFd(): Promise&lt;number&gt;
 
@@ -9774,6 +10330,7 @@ getSocketFd(): Promise&lt;number&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象，返回Socket的文件描述符。 |
@@ -9782,6 +10339,7 @@ getSocketFd(): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9828,9 +10386,10 @@ tlsServer.listen(tlsConnectOptions).then(() => {
 
 
 
-#### setExtraOptions10+
+### setExtraOptions10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setExtraOptions(options: TCPExtraOptions, callback: AsyncCallback&lt;void&gt;): void
 
@@ -9844,6 +10403,7 @@ setExtraOptions(options: TCPExtraOptions, callback: AsyncCallback&lt;void&gt;): 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | TCPExtraOptions | 是 | TLSSocketServer连接的其他属性。 |
@@ -9851,6 +10411,7 @@ setExtraOptions(options: TCPExtraOptions, callback: AsyncCallback&lt;void&gt;): 
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9917,9 +10478,10 @@ tlsServer.setExtraOptions(tcpExtraOptions, (err: BusinessError) => {
 
 
 
-#### setExtraOptions10+
+### setExtraOptions10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setExtraOptions(options: TCPExtraOptions): Promise&lt;void&gt;
 
@@ -9933,6 +10495,7 @@ setExtraOptions(options: TCPExtraOptions): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | TCPExtraOptions | 是 | TLSSocketServer连接的其他属性。 |
@@ -9940,12 +10503,14 @@ setExtraOptions(options: TCPExtraOptions): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 以Promise形式返回，成功返回空，失败返回错误码，错误信息。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -10010,9 +10575,10 @@ tlsServer.setExtraOptions(tcpExtraOptions).then(() => {
 
 
 
-#### getCertificate10+
+### getCertificate10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCertificate(callback: AsyncCallback<[X509CertRawData](#x509certrawdata9)>): void
 
@@ -10026,12 +10592,14 @@ getCertificate(callback: AsyncCallback<[X509CertRawData](#x509certrawdata9)>): v
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;X509CertRawData&gt; | 是 | 回调函数，成功返回本地的证书，失败返回错误码、错误信息。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -10086,9 +10654,10 @@ tlsServer.getCertificate((err: BusinessError, data: socket.X509CertRawData) => {
 
 
 
-#### getCertificate10+
+### getCertificate10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCertificate():Promise<[X509CertRawData](#x509certrawdata9)>
 
@@ -10102,12 +10671,14 @@ getCertificate():Promise<[X509CertRawData](#x509certrawdata9)>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;X509CertRawData&gt; | 以Promise形式返回本地的数字证书的结果。失败返回错误码，错误信息。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -10159,9 +10730,10 @@ tlsServer.getCertificate().then((data: socket.X509CertRawData) => {
 
 
 
-#### getProtocol10+
+### getProtocol10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getProtocol(callback: AsyncCallback&lt;string&gt;): void
 
@@ -10175,12 +10747,14 @@ getProtocol(callback: AsyncCallback&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;string&gt; | 是 | 回调函数，返回通信的协议。失败返回错误码、错误信息。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -10232,9 +10806,10 @@ tlsServer.getProtocol((err: BusinessError, data: string) => {
 
 
 
-#### getProtocol10+
+### getProtocol10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getProtocol():Promise&lt;string&gt;
 
@@ -10248,12 +10823,14 @@ getProtocol():Promise&lt;string&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | 以Promise形式返回通信的协议。失败返回错误码，错误信息。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -10302,9 +10879,10 @@ tlsServer.getProtocol().then((data: string) => {
 
 
 
-#### getLocalAddress12+
+### getLocalAddress12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLocalAddress(): Promise&lt;NetAddress&gt;
 
@@ -10318,12 +10896,14 @@ getLocalAddress(): Promise&lt;NetAddress&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;NetAddress&gt; | 以Promise形式返回获取本地socket地址的结果。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -10348,9 +10928,10 @@ tlsServer.getLocalAddress().then((localAddress: socket.NetAddress) => {
 
 
 
-#### on('connect')10+
+### on('connect')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'connect', callback: Callback&lt;TLSSocketConnection&gt;): void
 
@@ -10364,6 +10945,7 @@ on(type: 'connect', callback: Callback&lt;TLSSocketConnection&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅的事件类型。'connect'：连接事件。 |
@@ -10371,6 +10953,7 @@ on(type: 'connect', callback: Callback&lt;TLSSocketConnection&gt;): void
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -10415,9 +10998,10 @@ tlsServer.listen(tlsConnectOptions).then(() => {
 
 
 
-#### off('connect')10+
+### off('connect')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'connect', callback?: Callback&lt;TLSSocketConnection&gt;): void
 
@@ -10431,6 +11015,7 @@ off(type: 'connect', callback?: Callback&lt;TLSSocketConnection&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅的事件类型。'connect'：连接事件。 |
@@ -10438,6 +11023,7 @@ off(type: 'connect', callback?: Callback&lt;TLSSocketConnection&gt;): void
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -10487,9 +11073,10 @@ tlsServer.off('connect');
 
 
 
-#### on('error')10+
+### on('error')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'error', callback: ErrorCallback): void
 
@@ -10503,6 +11090,7 @@ on(type: 'error', callback: ErrorCallback): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅的事件类型。'error'：error事件。 |
@@ -10510,6 +11098,7 @@ on(type: 'error', callback: ErrorCallback): void
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -10554,9 +11143,10 @@ tlsServer.on('error', (err: BusinessError) => {
 
 
 
-#### off('error')10+
+### off('error')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'error', callback?: ErrorCallback): void
 
@@ -10570,6 +11160,7 @@ off(type: 'error', callback?: ErrorCallback): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅的事件类型。'error'：error事件。 |
@@ -10577,6 +11168,7 @@ off(type: 'error', callback?: ErrorCallback): void
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -10626,9 +11218,10 @@ tlsServer.off('error');
 
 
 
-#### close20+
+### close20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(): Promise&lt;void&gt;
 
@@ -10644,6 +11237,7 @@ TLSSocketServer停止监听并释放通过[listen](#listen10-2)方法绑定的�
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -10652,6 +11246,7 @@ TLSSocketServer停止监听并释放通过[listen](#listen10-2)方法绑定的�
 **错误码：**
 
 以下错误码的详细介绍请参见[Socket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-socket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -10700,9 +11295,10 @@ tlsServer.listen(tlsConnectOptions).then(() => {
 
 
 
-#### TLSSocketConnection10+
+## TLSSocketConnection10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TLSSocketConnection连接，即TLSSocket客户端与服务端的连接。在调用TLSSocketConnection的方法前，需要先获取TLSSocketConnection对象。
 
@@ -10714,7 +11310,11 @@ TLSSocketConnection连接，即TLSSocket客户端与服务端的连接。在调�
 
 
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -10723,9 +11323,10 @@ TLSSocketConnection连接，即TLSSocket客户端与服务端的连接。在调�
 
 
 
-#### send10+
+### send10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 send(data: string | ArrayBuffer, callback: AsyncCallback&lt;void&gt;): void
 
@@ -10735,6 +11336,7 @@ send(data: string | ArrayBuffer, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | string \| ArrayBuffer | 是 | TLSSocketServer发送数据所需要的参数。 |
@@ -10742,6 +11344,7 @@ send(data: string | ArrayBuffer, callback: AsyncCallback&lt;void&gt;): void
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -10798,9 +11401,10 @@ tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
 
 
 
-#### send10+
+### send10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 send(data: string | ArrayBuffer): Promise&lt;void&gt;
 
@@ -10810,6 +11414,7 @@ send(data: string | ArrayBuffer): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | string \| ArrayBuffer | 是 | TLSSocketServer发送数据所需要的参数。 |
@@ -10817,12 +11422,14 @@ send(data: string | ArrayBuffer): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 以Promise形式返回，成功返回空，失败返回错误码，错误信息。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -10877,9 +11484,10 @@ tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
 
 
 
-#### close10+
+### close10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(callback: AsyncCallback&lt;void&gt;): void
 
@@ -10889,12 +11497,14 @@ close(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数，成功返回空，失败返回错误码、错误信息。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -10950,9 +11560,10 @@ tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
 
 
 
-#### close10+
+### close10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(): Promise&lt;void&gt;
 
@@ -10962,12 +11573,14 @@ close(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 以Promise形式返回，成功返回空。失败返回错误码，错误信息。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -11019,9 +11632,10 @@ tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
 
 
 
-#### getRemoteAddress10+
+### getRemoteAddress10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRemoteAddress(callback: AsyncCallback&lt;NetAddress&gt;): void
 
@@ -11031,12 +11645,14 @@ getRemoteAddress(callback: AsyncCallback&lt;NetAddress&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;NetAddress&gt; | 是 | 回调函数。成功返回对端的socket地址，失败返回错误码、错误信息。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -11089,9 +11705,10 @@ tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
 
 
 
-#### getRemoteAddress10+
+### getRemoteAddress10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRemoteAddress(): Promise&lt;NetAddress&gt;
 
@@ -11101,12 +11718,14 @@ getRemoteAddress(): Promise&lt;NetAddress&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;NetAddress&gt; | 以Promise形式返回获取对端socket地址的结果。失败返回错误码，错误信息。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -11156,9 +11775,10 @@ tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
 
 
 
-#### getRemoteCertificate10+
+### getRemoteCertificate10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRemoteCertificate(callback: AsyncCallback<[X509CertRawData](#x509certrawdata9)>): void
 
@@ -11168,12 +11788,14 @@ getRemoteCertificate(callback: AsyncCallback<[X509CertRawData](#x509certrawdata9
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;X509CertRawData&gt; | 是 | 回调函数，返回对端的证书。失败返回错误码、错误信息。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -11229,9 +11851,10 @@ tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
 
 
 
-#### getRemoteCertificate10+
+### getRemoteCertificate10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRemoteCertificate():Promise<[X509CertRawData](#x509certrawdata9)>
 
@@ -11241,12 +11864,14 @@ getRemoteCertificate():Promise<[X509CertRawData](#x509certrawdata9)>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;X509CertRawData&gt; | 以Promise形式返回对端的数字证书的结果。失败返回错误码，错误信息。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -11299,9 +11924,10 @@ tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
 
 
 
-#### getCipherSuite10+
+### getCipherSuite10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCipherSuite(callback: AsyncCallback<Array&lt;string&gt;>): void
 
@@ -11311,12 +11937,14 @@ getCipherSuite(callback: AsyncCallback<Array&lt;string&gt;>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<Array&lt;string&gt;> | 是 | 回调函数，返回通信双方支持的加密套件。失败返回错误码、错误信息。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -11371,9 +11999,10 @@ tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
 
 
 
-#### getCipherSuite10+
+### getCipherSuite10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCipherSuite(): Promise<Array&lt;string&gt;>
 
@@ -11383,12 +12012,14 @@ getCipherSuite(): Promise<Array&lt;string&gt;>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;string&gt;> | 以Promise形式返回通信双方支持的加密套件。失败返回错误码，错误信息。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -11440,9 +12071,10 @@ tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
 
 
 
-#### getSignatureAlgorithms10+
+### getSignatureAlgorithms10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSignatureAlgorithms(callback: AsyncCallback<Array&lt;string&gt;>): void
 
@@ -11452,12 +12084,14 @@ getSignatureAlgorithms(callback: AsyncCallback<Array&lt;string&gt;>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<Array&lt;string&gt;> | 是 | 回调函数，返回双方支持的签名算法。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -11510,9 +12144,10 @@ tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
 
 
 
-#### getSignatureAlgorithms10+
+### getSignatureAlgorithms10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSignatureAlgorithms(): Promise<Array&lt;string&gt;>
 
@@ -11522,12 +12157,14 @@ getSignatureAlgorithms(): Promise<Array&lt;string&gt;>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;string&gt;> | 以Promise形式返回获取到的双方支持的签名算法。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -11577,9 +12214,10 @@ tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
 
 
 
-#### getLocalAddress12+
+### getLocalAddress12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLocalAddress(): Promise&lt;NetAddress&gt;
 
@@ -11593,12 +12231,14 @@ getLocalAddress(): Promise&lt;NetAddress&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;NetAddress&gt; | 以Promise形式返回获取本地socket地址的结果。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -11650,9 +12290,10 @@ tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
 
 
 
-#### getSocketFd23+
+### getSocketFd23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSocketFd(): Promise&lt;number&gt;
 
@@ -11668,6 +12309,7 @@ getSocketFd(): Promise&lt;number&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象，返回Socket的文件描述符。 |
@@ -11676,6 +12318,7 @@ getSocketFd(): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -11724,9 +12367,10 @@ tlsServer.listen(tlsConnectOptions).then(() => {
 
 
 
-#### on('message')10+
+### on('message')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'message', callback: Callback&lt;SocketMessageInfo&gt;): void
 
@@ -11736,6 +12380,7 @@ on(type: 'message', callback: Callback&lt;SocketMessageInfo&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅的事件类型。'message'：接收消息事件。 |
@@ -11743,6 +12388,7 @@ on(type: 'message', callback: Callback&lt;SocketMessageInfo&gt;): void
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -11798,9 +12444,10 @@ tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
 
 
 
-#### off('message')10+
+### off('message')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'message', callback?: Callback&lt;SocketMessageInfo&gt;): void
 
@@ -11810,6 +12457,7 @@ off(type: 'message', callback?: Callback&lt;SocketMessageInfo&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅的事件类型。'message'：接收消息事件。 |
@@ -11817,6 +12465,7 @@ off(type: 'message', callback?: Callback&lt;SocketMessageInfo&gt;): void
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -11876,9 +12525,10 @@ tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
 
 
 
-#### on('close')10+
+### on('close')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'close', callback: Callback&lt;void&gt;): void
 
@@ -11888,6 +12538,7 @@ on(type: 'close', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅的事件类型。'close'：关闭事件。 |
@@ -11895,6 +12546,7 @@ on(type: 'close', callback: Callback&lt;void&gt;): void
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -11941,9 +12593,10 @@ tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
 
 
 
-#### off('close')10+
+### off('close')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'close', callback?: Callback&lt;void&gt;): void
 
@@ -11953,6 +12606,7 @@ off(type: 'close', callback?: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅的事件类型。'close'：关闭事件。 |
@@ -11960,6 +12614,7 @@ off(type: 'close', callback?: Callback&lt;void&gt;): void
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -12011,9 +12666,10 @@ tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
 
 
 
-#### on('error')10+
+### on('error')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'error', callback: ErrorCallback): void
 
@@ -12023,6 +12679,7 @@ on(type: 'error', callback: ErrorCallback): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅的事件类型。'error'：error事件。 |
@@ -12030,6 +12687,7 @@ on(type: 'error', callback: ErrorCallback): void
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -12077,9 +12735,10 @@ tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
 
 
 
-#### off('error')10+
+### off('error')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'error', callback?: ErrorCallback): void
 
@@ -12089,6 +12748,7 @@ off(type: 'error', callback?: ErrorCallback): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅的事件类型。'error'：error事件。 |
@@ -12096,6 +12756,7 @@ off(type: 'error', callback?: ErrorCallback): void
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

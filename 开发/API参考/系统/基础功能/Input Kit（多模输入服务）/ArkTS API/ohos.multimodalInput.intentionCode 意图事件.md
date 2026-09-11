@@ -1,9 +1,9 @@
 # @ohos.multimodalInput.intentionCode (意图事件)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-intentioncode
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 将键盘输入设备的原始事件映射为归一化交互的意图事件，如键盘上空格键映射后的事件为INTENTION_SELECT，意图为选中。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { IntentionCode } from '@kit.InputKit';
@@ -22,9 +23,10 @@ import { IntentionCode } from '@kit.InputKit';
  
   
 
-#### IntentionCode
+## IntentionCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 意图事件枚举值。
  
@@ -32,6 +34,7 @@ import { IntentionCode } from '@kit.InputKit';
  
 **系统能力：** SystemCapability.MultimodalInput.Input.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | INTENTION_UNKNOWN | -1 | 未知意图 |

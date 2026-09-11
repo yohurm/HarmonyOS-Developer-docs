@@ -1,9 +1,9 @@
 # @ohos.process (获取进程相关的信息)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-process
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 获取进程相关的信息，提供进程管理的相关功能。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { process } from '@kit.ArkTS';
@@ -22,14 +23,16 @@ import { process } from '@kit.ArkTS';
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Utils.Lang
  
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | uid | number | 是 | 否 | 进程的用户标识。 |
@@ -39,9 +42,10 @@ import { process } from '@kit.ArkTS';
  
   
 
-#### EventListener
+## EventListener
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type EventListener = (evt: Object) => void
  
@@ -53,6 +57,7 @@ type EventListener = (evt: Object) => void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | evt | Object | 是 | 用户事件。 |
@@ -60,9 +65,10 @@ type EventListener = (evt: Object) => void
  
   
 
-#### process.isIsolatedProcess8+
+## process.isIsolatedProcess8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isIsolatedProcess(): boolean
  
@@ -74,6 +80,7 @@ isIsolatedProcess(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回判断结果。如果进程被隔离则返回true，否则返回false。 |
@@ -87,9 +94,10 @@ let result = process.isIsolatedProcess();
  
   
 
-#### process.is64Bit8+
+## process.is64Bit8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 is64Bit(): boolean
  
@@ -101,6 +109,7 @@ is64Bit(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回判断结果。如果运行环境是64位则返回true，否则返回false。 |
@@ -114,9 +123,10 @@ let result = process.is64Bit();
  
   
 
-#### process.getStartRealtime8+
+## process.getStartRealtime8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStartRealtime(): number
  
@@ -128,6 +138,7 @@ getStartRealtime(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回经过的实时时间。单位：毫秒。 |
@@ -141,9 +152,10 @@ let realtime = process.getStartRealtime();
  
   
 
-#### process.getPastCpuTime8+
+## process.getPastCpuTime8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPastCpuTime(): number
  
@@ -155,6 +167,7 @@ getPastCpuTime(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回经过的CPU时间。单位：毫秒。 |
@@ -168,9 +181,10 @@ let result = process.getPastCpuTime();
  
   
 
-#### process.abort
+## process.abort
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 abort(): void
  
@@ -188,9 +202,10 @@ process.abort();
  
   
 
-#### process.uptime
+## process.uptime
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 uptime(): number
  
@@ -202,6 +217,7 @@ uptime(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 当前系统已运行的时间。单位：秒。 |
@@ -215,9 +231,10 @@ let time = process.uptime();
  
   
 
-#### process.kill(deprecated)
+## process.kill(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 kill(signal: number, pid: number): boolean
  
@@ -231,6 +248,7 @@ kill(signal: number, pid: number): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | signal | number | 是 | 发送的信号。 |
@@ -239,6 +257,7 @@ kill(signal: number, pid: number): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 信号发送成功返回true，失败返回false。 |
@@ -253,9 +272,10 @@ let result = process.kill(28, pid);
  
   
 
-#### process.exit(deprecated)
+## process.exit(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 exit(code: number): void
  
@@ -271,6 +291,7 @@ exit(code: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | code | number | 是 | 进程的退出码。 |
@@ -284,9 +305,10 @@ process.exit(0);
  
   
 
-#### process.getUidForName(deprecated)
+## process.getUidForName(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUidForName(v: string): number
  
@@ -300,6 +322,7 @@ getUidForName(v: string): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | v | string | 是 | 用户名。 |
@@ -307,6 +330,7 @@ getUidForName(v: string): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回用户uid。 |
@@ -320,9 +344,10 @@ let pres = process.getUidForName("tool");
  
   
 
-#### process.getThreadPriority(deprecated)
+## process.getThreadPriority(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getThreadPriority(v: number): number
  
@@ -336,6 +361,7 @@ getThreadPriority(v: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | v | number | 是 | 指定的线程tid。 |
@@ -343,6 +369,7 @@ getThreadPriority(v: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回线程的优先级。优先级顺序取决于当前操作系统。 |
@@ -357,9 +384,10 @@ let pres = process.getThreadPriority(tid);
  
   
 
-#### process.isAppUid(deprecated)
+## process.isAppUid(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isAppUid(v: number): boolean
  
@@ -373,6 +401,7 @@ isAppUid(v: number): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | v | number | 是 | 应用程序的uid。 |
@@ -380,6 +409,7 @@ isAppUid(v: number): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回判断结果。如果是应用程序的uid则返回true，否则返回false。 |
@@ -395,9 +425,10 @@ let result = process.isAppUid(pres);
  
   
 
-#### process.getSystemConfig(deprecated)
+## process.getSystemConfig(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSystemConfig(name: number): number
  
@@ -411,6 +442,7 @@ getSystemConfig(name: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | number | 是 | 指定系统配置参数名。 |
@@ -418,6 +450,7 @@ getSystemConfig(name: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回系统配置信息。 |
@@ -432,9 +465,10 @@ let pres = process.getSystemConfig(_SC_ARG_MAX);
  
   
 
-#### process.getEnvironmentVar(deprecated)
+## process.getEnvironmentVar(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEnvironmentVar(name: string): string
  
@@ -448,6 +482,7 @@ getEnvironmentVar(name: string): string
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 环境变量名。 |
@@ -455,6 +490,7 @@ getEnvironmentVar(name: string): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 返回环境变量名对应的值。 |
@@ -468,9 +504,10 @@ let pres = process.getEnvironmentVar("PATH");
  
   
 
-#### ProcessManager9+
+## ProcessManager9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供进程管理相关接口，包括进程uid判断、用户信息查询、线程优先级获取、环境变量获取、进程退出和信号发送等功能。
  
@@ -478,9 +515,10 @@ let pres = process.getEnvironmentVar("PATH");
  
   
 
-#### isAppUid9+
+### isAppUid9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isAppUid(v: number): boolean
  
@@ -492,6 +530,7 @@ isAppUid(v: number): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | v | number | 是 | 应用程序的uid。可通过process.uid获取。 |
@@ -499,6 +538,7 @@ isAppUid(v: number): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回判断结果。如果是应用程序的uid则返回true，否则返回false。 |
@@ -518,9 +558,10 @@ console.info("result:", result); // result: true
  
   
 
-#### getUidForName9+
+### getUidForName9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUidForName(v: string): number
  
@@ -532,6 +573,7 @@ getUidForName(v: string): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | v | string | 是 | 用户名。 |
@@ -539,6 +581,7 @@ getUidForName(v: string): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 获取用户uid，如果用户不存在则返回-1。 |
@@ -555,9 +598,10 @@ let pres = processManager.getUidForName("tool");
  
   
 
-#### getThreadPriority9+
+### getThreadPriority9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getThreadPriority(v: number): number
  
@@ -569,6 +613,7 @@ getThreadPriority(v: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | v | number | 是 | 指定的线程tid。可通过process.tid获取。 |
@@ -576,6 +621,7 @@ getThreadPriority(v: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回线程的优先级。优先级顺序取决于当前操作系统。 |
@@ -594,9 +640,10 @@ let pres = processManager.getThreadPriority(tid);
  
   
 
-#### getSystemConfig9+
+### getSystemConfig9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSystemConfig(name: number): number
  
@@ -608,6 +655,7 @@ getSystemConfig(name: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | number | 是 | 指定系统配置参数名。 |
@@ -615,6 +663,7 @@ getSystemConfig(name: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回系统配置信息。如果配置不存在，返回-1。 |
@@ -633,9 +682,10 @@ let pres = processManager.getSystemConfig(_SC_ARG_MAX);
  
   
 
-#### getEnvironmentVar9+
+### getEnvironmentVar9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEnvironmentVar(name: string): string
  
@@ -647,6 +697,7 @@ getEnvironmentVar(name: string): string
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 环境变量名。 |
@@ -654,6 +705,7 @@ getEnvironmentVar(name: string): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 返回指定环境变量名对应的值。如果环境变量不存在，返回undefined。 |
@@ -670,9 +722,10 @@ let pres = processManager.getEnvironmentVar("PATH");
  
   
 
-#### exit9+
+### exit9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 exit(code: number): void
  
@@ -686,6 +739,7 @@ exit(code: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | code | number | 是 | 进程的退出码。 |
@@ -700,9 +754,10 @@ processManager.exit(0);
  
   
 
-#### kill9+
+### kill9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 kill(signal: number, pid: number): boolean
  
@@ -714,6 +769,7 @@ kill(signal: number, pid: number): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | signal | number | 是 | 发送特定的信号给指定进程。 取值范围：1 <= signal <= 64。 |
@@ -722,6 +778,7 @@ kill(signal: number, pid: number): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 信号是否发送成功。如果信号发送成功则返回true，否则返回false。 |

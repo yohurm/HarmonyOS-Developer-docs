@@ -1,9 +1,9 @@
-# HdsTabs
+# HdsTabs (底部页签)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdstabs
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+**支持设备：** Phone | PC/2in1 | Tablet
 
 本模块提供Tabs容器组件的分割线样式，模糊样式和页签侧边栏半屏居中对齐样式的效果。
 
@@ -12,9 +12,10 @@ HdsTabs组件是根视图容器，一般作为Page页面的根容器使用。Hds
 **起始版本：** 6.0.0(20)
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 > [!NOTE]
 > HdsTabsAttribute是用于配置HdsTabs组件属性的关键接口。6.0.1(21)及之前版本，导入HdsTabs组件后需要开发者手动导入HdsTabsAttribute，否则会编译报错。从6.0.2(22)版本开始，编译工具链识别到导入HdsTabs组件后，会自动导入HdsTabsAttribute，无需开发者手动导入。 如果开发者手动导入HdsTabsAttribute，DevEco Studio会显示置灰，6.0.1(21)及之前版本删除会编译报错，从6.0.2(22)版本开始，删除对功能无影响。
@@ -34,9 +35,10 @@ import { HdsTabs, HdsTabsController, bleedIconStyle, CustomTabBuilder } from '@k
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 子组件为[TabContent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent)。
 
@@ -44,9 +46,10 @@ import { HdsTabs, HdsTabsController, bleedIconStyle, CustomTabBuilder } from '@k
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 HdsTabs(options?: HdsTabsOptions)
 
@@ -62,6 +65,7 @@ HdsTabs(options?: HdsTabsOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | HdsTabsOptions | 否 | HdsTabs组件参数。 |
@@ -69,9 +73,10 @@ HdsTabs(options?: HdsTabsOptions)
 
 
 
-#### HdsTabsOptions
+## HdsTabsOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 HdsTabs组件参数，继承自[TabsOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#tabsoptions15)。
 
@@ -83,6 +88,7 @@ HdsTabs组件参数，继承自[TabsOptions](https://developer.huawei.com/consum
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | controller | HdsTabsController | 否 | 是 | HdsTabs控制器。 默认值：undefined。 |
@@ -90,9 +96,10 @@ HdsTabs组件参数，继承自[TabsOptions](https://developer.huawei.com/consum
 
 
 
-#### HdsTabsController
+## HdsTabsController
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 HdsTabs组件的控制器，用于控制HdsTabs组件进行页签切换。不支持一个HdsTabsController控制多个HdsTabs组件，继承自[TabsController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#tabscontroller)。
 
@@ -106,9 +113,10 @@ HdsTabs组件的控制器，用于控制HdsTabs组件进行页签切换。不支
 
 
 
-#### bindScroller
+### bindScroller
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 bindScroller(value: number, scroller: Scroller, parentScroller?: Scroller): void
 
@@ -124,6 +132,7 @@ HdsTabs的控制器绑定内容区的滚动组件。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 页签的索引，索引从0开始计算。 |
@@ -133,9 +142,10 @@ HdsTabs的控制器绑定内容区的滚动组件。
 
 
 
-#### unbindScroller
+### unbindScroller
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 unbindScroller(scroller: Scroller): void
 
@@ -151,6 +161,7 @@ HdsTabs的控制器解除绑定内容区的滚动组件。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scroller | Scroller | 是 | 滚动组件的控制器。 |
@@ -158,9 +169,10 @@ HdsTabs的控制器解除绑定内容区的滚动组件。
 
 
 
-#### applyMiniBarStyle
+### applyMiniBarStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 applyMiniBarStyle(style: HdsBarStyle): void
 
@@ -176,6 +188,7 @@ HdsTabs的控制器更新[迷你栏](https://developer.huawei.com/consumer/cn/do
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | HdsBarStyle | 是 | 迷你栏样式 |
@@ -183,9 +196,10 @@ HdsTabs的控制器更新[迷你栏](https://developer.huawei.com/consumer/cn/do
 
 
 
-#### applyHideAnimation
+### applyHideAnimation
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 applyHideAnimation(mode: HdsAnimationMode): void
 
@@ -201,6 +215,7 @@ HdsTabs的控制器调用页签栏和[迷你栏](https://developer.huawei.com/co
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | HdsAnimationMode | 是 | 动效模式。 |
@@ -208,9 +223,10 @@ HdsTabs的控制器调用页签栏和[迷你栏](https://developer.huawei.com/co
 
 
 
-#### applyShowAnimation
+### applyShowAnimation
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 applyShowAnimation(mode: HdsAnimationMode): void
 
@@ -226,6 +242,7 @@ HdsTabs的控制器调用页签栏和[迷你栏](https://developer.huawei.com/co
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | HdsAnimationMode | 是 | 动效模式。 |
@@ -233,9 +250,10 @@ HdsTabs的控制器调用页签栏和[迷你栏](https://developer.huawei.com/co
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
 
@@ -243,9 +261,10 @@ HdsTabs的控制器调用页签栏和[迷你栏](https://developer.huawei.com/co
 
 
 
-#### vertical
+### vertical
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 vertical(value: boolean)
 
@@ -261,6 +280,7 @@ vertical(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否为纵向Tab。 true：纵向Tabs。 false：横向Tabs。 默认值：false。 当横向Tabs设置height为auto时，HdsTabs组件高度自适应子组件高度，即为tabBar高度+divider线宽+TabContent高度+上下padding值+上下border宽度。 当纵向Tabs设置width为auto时，HdsTabs组件宽度自适应子组件宽度，即为tabBar宽度+divider线宽+TabContent宽度+左右padding值+左右border宽度。 尽量保持每一个页面中的子组件尺寸大小一致，避免滑动页面时出现页面切换动画跳动现象。 |
@@ -268,9 +288,10 @@ vertical(value: boolean)
 
 
 
-#### barPosition
+### barPosition
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 barPosition(value: BarPosition)
 
@@ -286,6 +307,7 @@ barPosition(value: BarPosition)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | BarPosition | 是 | 设置Tabs的页签位置。 默认值：BarPosition.Start。 |
@@ -293,9 +315,10 @@ barPosition(value: BarPosition)
 
 
 
-#### scrollable
+### scrollable
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 scrollable(value: boolean)
 
@@ -311,6 +334,7 @@ scrollable(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否可以通过滑动页面进行页面切换。 true：可以通过滑动页面来切换页面。 false：不可通过滑动页面来切换页面。 默认值：true。 |
@@ -318,9 +342,10 @@ scrollable(value: boolean)
 
 
 
-#### barWidth
+### barWidth
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 barWidth(value: Length)
 
@@ -336,16 +361,18 @@ barWidth(value: Length)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | Length | 是 | TabBar的宽度值，单位：vp。若设置值小于0或大于Tabs宽度值时，按默认值显示。 默认值： - 未设置SubTabBarStyle和BottomTabBarStyle的TabBar且vertical属性为false时，默认值为Tabs的宽度。 - 未设置SubTabBarStyle和BottomTabBarStyle的TabBar且vertical属性为true时，默认值为56vp。 - 设置SubTabBarStyle样式且vertical属性为false时，默认值为Tabs的宽度。 - 设置SubTabBarStyle样式且vertical属性为true时，默认值为56vp。 - 设置BottomTabBarStyle样式且vertical属性为true时，默认值为96vp。 - 设置BottomTabBarStyle样式且vertical属性为false时，默认值为Tabs的宽度。 |
+| value | Length | 是 | TabBar的宽度值，单位：vp。若设置值小于0或大于Tabs宽度值时，按默认值显示。 默认值： - 设置属性vertical为false时，默认值为HdsTabs组件的宽度。 - 设置属性vertical为true时，默认值为96vp。 |
 
 
 
 
-#### barHeight
+### barHeight
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 barHeight(value: Length)
 
@@ -361,16 +388,18 @@ barHeight(value: Length)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | Length | 是 | TabBar的高度值。单位：vp。设置为'auto'时，TabBar自适应子组件高度，仅在横向Tabs下有效。设置为小于0或大于Tabs高度值时，按默认值显示。 默认值： - 未设置带样式的TabBar且vertical属性为false时，默认值为48vp。 - 未设置带样式的TabBar且vertical属性为true时，默认值为Tabs的高度。 - 设置SubTabBarStyle样式且vertical属性为false时，默认值为48vp。设置SubTabBarStyle样式且vertical属性为true时，默认值为Tabs的高度。 - 设置BottomTabBarStyle样式且vertical属性为true时，默认值为Tabs的高度。 - 设置BottomTabBarStyle样式且vertical属性为false时，默认值为48vp。 - 设置Tabs为悬浮样式时，默认值为56vp。 |
+| value | Length | 是 | TabBar的高度值。单位：vp。设置为'auto'时，TabBar自适应子组件高度，仅在横向Tabs下有效。设置为小于0或大于Tabs高度值时，按默认值显示。 默认值： - 设置属性vertical为false时，默认值为48vp。 - 设置属性vertical为true时，默认值为HdsTabs组件的高度。 - 设置HdsTabs为悬浮样式时，默认值为56vp。 |
 
 
 
 
-#### animationDuration
+### animationDuration
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 animationDuration(value: number)
 
@@ -386,6 +415,7 @@ animationDuration(value: number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 点击TabBar页签或调用TabsController的changeIndex接口切换TabContent的动画时长。 默认值： - 不设置该属性或设置为异常值情况下，若存在BottomTabBarStyle样式的TabBar时，默认值为0。 - 设置所有TabBar为非BottomTabBarStyle样式时，默认值为300。 单位：ms。 取值范围：[0, +∞)。 |
@@ -393,9 +423,10 @@ animationDuration(value: number)
 
 
 
-#### barOverlap
+### barOverlap
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 barOverlap(value: boolean)
 
@@ -411,6 +442,7 @@ barOverlap(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | TabBar是否背后变模糊并叠加在TabContent之上。 true：TabBar背后变模糊并叠加在TabContent之上，并且barBackgroundBlurStyle属性默认模糊材质的BlurStyle值修改为'BlurStyle.COMPONENT_THICK'。 false：无模糊和叠加效果。 默认值：false。 |
@@ -418,9 +450,10 @@ barOverlap(value: boolean)
 
 
 
-#### barBackgroundColor
+### barBackgroundColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 barBackgroundColor(value: ResourceColor)
 
@@ -436,6 +469,7 @@ barBackgroundColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | TabBar的背景颜色。 默认值：Color.Transparent。 |
@@ -443,9 +477,10 @@ barBackgroundColor(value: ResourceColor)
 
 
 
-#### barBackgroundBlurStyle
+### barBackgroundBlurStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 barBackgroundBlurStyle(style: BlurStyle, options?: BackgroundBlurStyleOptions)
 
@@ -461,6 +496,7 @@ barBackgroundBlurStyle(style: BlurStyle, options?: BackgroundBlurStyleOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | BlurStyle | 是 | 背景模糊样式。 |
@@ -469,9 +505,10 @@ barBackgroundBlurStyle(style: BlurStyle, options?: BackgroundBlurStyleOptions)
 
 
 
-#### barBackgroundEffect
+### barBackgroundEffect
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 barBackgroundEffect(options: BackgroundEffectOptions)
 
@@ -487,6 +524,7 @@ barBackgroundEffect(options: BackgroundEffectOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | BackgroundEffectOptions | 是 | 设置TabBar背景属性包括：模糊半径、亮度、饱和度、颜色等。 |
@@ -494,9 +532,10 @@ barBackgroundEffect(options: BackgroundEffectOptions)
 
 
 
-#### barMode
+### barMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 barMode(value: HdsBarMode, options?: ScrollableBarModeOptions)
 
@@ -512,6 +551,7 @@ barMode(value: HdsBarMode, options?: ScrollableBarModeOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | HdsBarMode | 是 | 所有TabBar都使用实际布局宽度，当设置为BarMode.Scrollable时，若实际布局宽度超过总宽度（横向Tabs的barWidth，纵向Tabs的barHeight），则具有滑动效果；当设置为HALF_SCREEN_FIXED时，所有页签总高度之和为HdsTabs组件高度的四分之一，且处在二分之一屏的居中位置。 说明：当设置为HALF_SCREEN_FIXED样式时： 1. 依赖页签位于侧边栏，vertical设置为true。 2. 依赖页签使用BottomTabBarStyle样式。 |
@@ -520,9 +560,10 @@ barMode(value: HdsBarMode, options?: ScrollableBarModeOptions)
 
 
 
-#### divider
+### divider
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 divider(value: Optional&lt;HdsDividerStyle&gt;)
 
@@ -538,6 +579,7 @@ divider(value: Optional&lt;HdsDividerStyle&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Optional&lt;HdsDividerStyle&gt; | 是 | 分割线样式，默认跟手渐变。 mode：分割线模式，可以设置为常隐，常显和跟手渐变显隐（当内容区超过页签栏）。 style：分割线的样式。 |
@@ -549,9 +591,10 @@ divider(value: Optional&lt;HdsDividerStyle&gt;)
 
 
 
-#### barBackgroundStyle
+### barBackgroundStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 barBackgroundStyle(backgroundStyle: Optional&lt;HdsTabsBackgroundStyle&gt;)
 
@@ -567,9 +610,10 @@ barBackgroundStyle(backgroundStyle: Optional&lt;HdsTabsBackgroundStyle&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| backgroundStyle | Optional&lt;HdsTabsBackgroundStyle&gt; | 是 | 设置模糊的颜色和高度，默认模糊效果失效。 |
+| backgroundStyle | Optional&lt;HdsTabsBackgroundStyle&gt; | 是 | 设置模糊的颜色和高度。 默认值：渐变模糊颜色浅色模式#CCFFFFFF，深色模式#CC000000。渐变模糊高度等于TabBar组件高度+32vp。 |
 
 
 > [!NOTE]
@@ -578,9 +622,10 @@ barBackgroundStyle(backgroundStyle: Optional&lt;HdsTabsBackgroundStyle&gt;)
 
 
 
-#### blurStrategy
+### blurStrategy
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 blurStrategy(value: BlurStrategy)
 
@@ -596,6 +641,7 @@ blurStrategy(value: BlurStrategy)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | BlurStrategy | 是 | 设置页签栏的模糊生效策略。 默认值：BlurStrategy.ADAPTIVE。 |
@@ -603,9 +649,10 @@ blurStrategy(value: BlurStrategy)
 
 
 
-#### cachedMaxCount
+### cachedMaxCount
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 cachedMaxCount(count: number, mode: TabsCacheMode)
 
@@ -621,6 +668,7 @@ cachedMaxCount(count: number, mode: TabsCacheMode)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | count | number | 是 | 子组件的最大缓存个数。超出范围时自动释放不再需要的子组件。 取值范围：大于等于0。 |
@@ -629,9 +677,10 @@ cachedMaxCount(count: number, mode: TabsCacheMode)
 
 
 
-#### barFloatingStyle
+### barFloatingStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 barFloatingStyle(barFloatingStyle?: Optional&lt;HdsTabsFloatingStyle&gt;)
 
@@ -647,6 +696,7 @@ barFloatingStyle(barFloatingStyle?: Optional&lt;HdsTabsFloatingStyle&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | barFloatingStyle | Optional&lt;HdsTabsFloatingStyle&gt; | 否 | 设置页签为悬浮样式。 |
@@ -654,9 +704,10 @@ barFloatingStyle(barFloatingStyle?: Optional&lt;HdsTabsFloatingStyle&gt;)
 
 
 
-#### HdsTabsFloatingStyle
+## HdsTabsFloatingStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 设置页签栏的悬浮样式属性。
 
@@ -668,25 +719,27 @@ barFloatingStyle(barFloatingStyle?: Optional&lt;HdsTabsFloatingStyle&gt;)
 
 **起始版本：** 6.1.0(23)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| barWidth | HdsBarWidthRangeOptions | 否 | 是 | 页签栏分档宽度。 默认值：页签个数小于等于3时，且HdsTabs宽度小于600vp，单个页签宽度76vp，当HdsTabs宽度大于等于600vp时，单个页签宽度80vp。页签个数大于等于4时，页签栏最大宽度不超过328vp。 |
-| barSideMargin | Length | 否 | 是 | 页签栏与HdsTabs左右边距。 默认值：HdsTabs宽度小于600vp时，默认边距16vp；HdsTabs宽度在600vp-840vp之间，默认边距24vp，HdsTabs宽度大于840vp，默认边距32vp。 |
-| barBottomMargin | Length | 否 | 是 | 页签栏与HdsTabs底部距离。 默认值：页签栏距离底部0vp。 |
+| barWidth | HdsBarWidthRangeOptions | 否 | 是 | 页签栏分档宽度。 默认值：页签个数小于等于3时，且HdsTabs宽度小于600vp，页签栏宽度等于76vp*页签个数+8vp，当HdsTabs宽度大于等于600vp时，页签栏宽度等于80vp*页签个数+8vp。页签个数大于等于4时，页签栏最大宽度不超过328vp。 |
+| barSideMargin | Length | 否 | 是 | 页签栏与HdsTabs左右边距，不支持设置百分比单位。 默认值：HdsTabs宽度小于600vp时，默认边距16vp；HdsTabs宽度在600vp-840vp之间，默认边距24vp，HdsTabs宽度大于840vp，默认边距32vp。 |
+| barBottomMargin | Length | 否 | 是 | 页签栏与HdsTabs底部距离，不支持设置百分比单位。 默认值：页签栏默认距离HdsTabs底部0vp。 |
 | gradientMask | HdsTabsBackgroundStyle | 否 | 是 | 背板蒙层的样式设置，可用来设置背板蒙层的高度和颜色。 默认值：蒙层颜色浅色模式是#CCF1F3F5，深色模式是#99000000。蒙层高度等于页签栏默认高度加16vp。 说明： 蒙层高度不可设置为0。 |
 | miniBar | HdsTabsMiniBar | 否 | 是 | 迷你栏的属性配置。 默认值：undefined，表示没有迷你栏。 |
 | adaptToHandedness | boolean | 否 | 是 | 左右跟手开关。 true：跟手。 false：不跟手。 默认值：false。 说明： 左右手跟手能力依赖底层硬件，部分历史设备硬件能力不支持。 |
 | lightColor | ResourceColor | 否 | 是 | 页签栏光效颜色。 默认值：深色模式#33E5E5E5，浅色模式#33fffffff。 |
-| barOpacity | number | 否 | 是 | 页签栏透明度，1表示不透明，0表示完全透明。 默认值：1。 |
+| barOpacity | number | 否 | 是 | 页签栏透明度，1表示不透明，0表示完全透明，取值范围为[0, 1]。 默认值：1。 |
 | thermoCtrl | boolean | 否 | 是 | 温控开关。 true：开启温控。 false：不开启温控。 默认值：false。 |
 | systemMaterialEffect | SystemMaterialParams | 否 | 是 | 材质参数。 默认值：undefined，没有新材质。 |
 
 
 
 
-#### HdsBarWidthRangeOptions
+## HdsBarWidthRangeOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 设置页签栏或[迷你栏](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-hds-tabs-bar-floating#迷你栏)的分档宽度。
 
@@ -698,18 +751,20 @@ barFloatingStyle(barFloatingStyle?: Optional&lt;HdsTabsFloatingStyle&gt;)
 
 **起始版本：** 6.1.0(23)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| smallWidth | Length | 否 | 是 | 当HdsTabs宽度小于440vp时，页签栏或迷你栏的宽度。 默认值：页签个数小于等于3，且HdsTabs宽度小于600vp时，单个页签宽度76vp。页签个数大于等于4时，页签栏最大宽度不超过328vp。迷你栏最大宽度不超过328vp。 说明：暂不支持百分比。 |
-| mediumWidth | Length | 否 | 是 | 当HdsTabs宽度在440vp-600vp之间，或宽度在600-840vp之间且高宽比小于0.8时，页签栏或迷你栏的宽度。 默认值：页签个数小于等于3，且HdsTabs宽度小于600vp时，单个页签宽度76vp，HdsTabs宽度大于600vp时，单个页签宽度80vp。页签个数大于等于4时，页签栏最大宽度不超过328vp。迷你栏最大宽度不超过328vp。 说明：暂不支持百分比。 |
-| largeWidth | Length | 否 | 是 | 当HdsTabs宽度大于840vp，或宽度在600vp-840vp之间且高宽比大于0.8时，页签栏或迷你栏的宽度。 默认值：页签个数小于等于3，单个页签宽度80vp。页签个数大于等于4时，页签栏最大宽度不超过328vp。迷你栏最大宽度不超过328vp。 说明：暂不支持百分比。 |
+| smallWidth | Length | 否 | 是 | 当HdsTabs宽度小于440vp时，页签栏或迷你栏的宽度，不支持设置百分比单位。 默认值：页签个数小于等于3，且HdsTabs宽度小于600vp时，页签栏宽度等于76vp*页签个数+8vp。页签个数大于等于4时，页签栏最大宽度不超过328vp。迷你栏最大宽度不超过328vp。 |
+| mediumWidth | Length | 否 | 是 | 当HdsTabs宽度在440vp-600vp之间，或宽度在600-840vp之间且高宽比小于0.8时，页签栏或迷你栏的宽度，不支持设置百分比单位。 默认值：页签个数小于等于3，且HdsTabs宽度小于600vp时，页签栏宽度等于76vp*页签个数+8vp，HdsTabs宽度大于600vp时，页签栏宽度等于80vp*页签个数+8vp。页签个数大于等于4时，页签栏最大宽度不超过328vp。迷你栏最大宽度不超过328vp。 |
+| largeWidth | Length | 否 | 是 | 当HdsTabs宽度大于840vp，或宽度在600vp-840vp之间且高宽比大于0.8时，页签栏或迷你栏的宽度，不支持设置百分比单位。 默认值：页签个数小于等于3，页签栏宽度等于80vp*页签个数+8vp。页签个数大于等于4时，页签栏最大宽度不超过328vp。迷你栏最大宽度不超过328vp。 |
 
 
 
 
-#### HdsTabsMiniBar
+## HdsTabsMiniBar
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 设置迷你栏的属性。
 
@@ -720,6 +775,7 @@ barFloatingStyle(barFloatingStyle?: Optional&lt;HdsTabsFloatingStyle&gt;)
 **设备行为差异：** 该接口在TV无效果，在其他设备类型中可正常调用。
 
 **起始版本：** 6.1.0(23)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -741,9 +797,10 @@ barFloatingStyle(barFloatingStyle?: Optional&lt;HdsTabsFloatingStyle&gt;)
 
 
 
-#### SystemMaterialParams
+## SystemMaterialParams
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 材质效果参数。
 
@@ -755,6 +812,7 @@ barFloatingStyle(barFloatingStyle?: Optional&lt;HdsTabsFloatingStyle&gt;)
 
 **起始版本：** 6.1.0(23)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | materialType | hdsMaterial.MaterialType | 否 | 是 | 设置材质类型。 默认值：hdsMaterial.MaterialType.NONE。 |
@@ -763,9 +821,10 @@ barFloatingStyle(barFloatingStyle?: Optional&lt;HdsTabsFloatingStyle&gt;)
 
 
 
-#### HdsAnimationMode
+## HdsAnimationMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 显示隐藏动效模式。
 
@@ -777,6 +836,7 @@ barFloatingStyle(barFloatingStyle?: Optional&lt;HdsTabsFloatingStyle&gt;)
 
 **起始版本：** 6.1.0(23)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SCROLL_ANIMATION | 0 | 滚动动效。 |
@@ -785,9 +845,10 @@ barFloatingStyle(barFloatingStyle?: Optional&lt;HdsTabsFloatingStyle&gt;)
 
 
 
-#### HdsBarStyle
+## HdsBarStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 页签栏和[迷你栏](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-hds-tabs-bar-floating#迷你栏)样式类型枚举。
 
@@ -799,6 +860,7 @@ barFloatingStyle(barFloatingStyle?: Optional&lt;HdsTabsFloatingStyle&gt;)
 
 **起始版本：** 6.1.0(23)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | COLLAPSE | 0 | 折叠样式。 |
@@ -807,9 +869,10 @@ barFloatingStyle(barFloatingStyle?: Optional&lt;HdsTabsFloatingStyle&gt;)
 
 
 
-#### HdsBarLayoutMode
+## HdsBarLayoutMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 minibar和tabbar的布局模式枚举。
 
@@ -821,6 +884,7 @@ minibar和tabbar的布局模式枚举。
 
 **起始版本：** 6.1.1(24)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | HORIZONTAL | 0 | 水平布局：minibar和tabbar是水平左右布局模式。 |
@@ -829,9 +893,10 @@ minibar和tabbar的布局模式枚举。
 
 
 
-#### HdsTabsBarChangeMode
+## HdsTabsBarChangeMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 页签栏和[迷你栏](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-hds-tabs-bar-floating#迷你栏)更新模式。
 
@@ -843,6 +908,7 @@ minibar和tabbar的布局模式枚举。
 
 **起始版本：** 6.1.0(23)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NORMAL | 0 | 普通模式。屏幕尺寸更新触发迷你栏和页签栏样式和宽度更新。 |
@@ -852,9 +918,10 @@ minibar和tabbar的布局模式枚举。
 
 
 
-#### BarStyleChangeCallback
+## BarStyleChangeCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 type BarStyleChangeCallback = (miniBarStyle: HdsBarStyle, tabBarStyle: HdsBarStyle, miniBarWidth: number, tabBarWidth: number, mode: HdsTabsBarChangeMode) => void
 
@@ -870,6 +937,7 @@ type BarStyleChangeCallback = (miniBarStyle: HdsBarStyle, tabBarStyle: HdsBarSty
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | miniBarStyle | HdsBarStyle | 是 | 迷你栏样式。 |
@@ -881,9 +949,10 @@ type BarStyleChangeCallback = (miniBarStyle: HdsBarStyle, tabBarStyle: HdsBarSty
 
 
 
-#### MiniBarAnimationStartCallback
+## MiniBarAnimationStartCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 type MiniBarAnimationStartCallback = (style: HdsBarStyle, width: number) => void
 
@@ -899,6 +968,7 @@ type MiniBarAnimationStartCallback = (style: HdsBarStyle, width: number) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | HdsBarStyle | 是 | 动效开始时迷你栏的状态。 |
@@ -907,9 +977,10 @@ type MiniBarAnimationStartCallback = (style: HdsBarStyle, width: number) => void
 
 
 
-#### MiniBarAnimationEndCallback
+## MiniBarAnimationEndCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 type MiniBarAnimationEndCallback = (style: HdsBarStyle) => void
 
@@ -925,6 +996,7 @@ type MiniBarAnimationEndCallback = (style: HdsBarStyle) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | HdsBarStyle | 是 | 动效结束时迷你栏的状态。 |
@@ -932,9 +1004,10 @@ type MiniBarAnimationEndCallback = (style: HdsBarStyle) => void
 
 
 
-#### TabBarAnimationStartCallback
+## TabBarAnimationStartCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 type TabBarAnimationStartCallback = (style: HdsBarStyle, width: number) => void
 
@@ -950,6 +1023,7 @@ type TabBarAnimationStartCallback = (style: HdsBarStyle, width: number) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | HdsBarStyle | 是 | 动效开始时页签栏的状态。 |
@@ -958,9 +1032,10 @@ type TabBarAnimationStartCallback = (style: HdsBarStyle, width: number) => void
 
 
 
-#### HdsDividerStyle
+## HdsDividerStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 页签栏分割线配置。
 
@@ -972,6 +1047,7 @@ type TabBarAnimationStartCallback = (style: HdsBarStyle, width: number) => void
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | mode | DividerMode | 否 | 否 | 页签栏分割线显示类型。 默认值：DividerMode.FOLLOW_SCROLL。 |
@@ -980,11 +1056,12 @@ type TabBarAnimationStartCallback = (style: HdsBarStyle, width: number) => void
 
 
 
-#### HdsTabsBackgroundStyle
+## HdsTabsBackgroundStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
 
-渐变模糊样式。
+**支持设备：** Phone | PC/2in1 | Tablet
+
+页签背景样式。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -994,23 +1071,26 @@ type TabBarAnimationStartCallback = (style: HdsBarStyle, width: number) => void
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| maskColor | ResourceColor | 否 | 是 | 渐变模糊的颜色设置。 默认值：#CCFFFFFF。 |
-| maskHeight | number | 否 | 是 | 渐变模糊的高度设置。 默认值：组件高度（包含底部TabBar高度）+32vp。 |
+| maskColor | ResourceColor | 否 | 是 | 页签背景颜色。 |
+| maskHeight | number | 否 | 是 | 页签背景高度。 |
 
 
 
 
-#### 事件
-
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+## 事件
 
 
+**支持设备：** Phone | PC/2in1 | Tablet
 
-#### onChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+### onChange
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 onChange(event: Callback&lt;number&gt;)
 
@@ -1026,6 +1106,7 @@ onChange(event: Callback&lt;number&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | Callback&lt;number&gt; | 是 | 底部页签切换时触发该事件，获取切换后的页签下标。 |
@@ -1033,9 +1114,10 @@ onChange(event: Callback&lt;number&gt;)
 
 
 
-#### onAnimationStart
+### onAnimationStart
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 onAnimationStart(handler: OnTabsAnimationStartCallback)
 
@@ -1051,6 +1133,7 @@ onAnimationStart(handler: OnTabsAnimationStartCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handler | OnTabsAnimationStartCallback | 是 | 切换的动画开始时触发该事件。 |
@@ -1058,9 +1141,10 @@ onAnimationStart(handler: OnTabsAnimationStartCallback)
 
 
 
-#### onContentWillChange
+### onContentWillChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 onContentWillChange(handler: OnTabsContentWillChangeCallback)
 
@@ -1083,6 +1167,7 @@ onContentWillChange(handler: OnTabsContentWillChangeCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handler | OnTabsContentWillChangeCallback | 是 | 自定义Tabs页面切换拦截事件能力。 |
@@ -1090,9 +1175,10 @@ onContentWillChange(handler: OnTabsContentWillChangeCallback)
 
 
 
-#### onTabBarClick
+### onTabBarClick
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 onTabBarClick(event: Callback&lt;number&gt;)
 
@@ -1108,6 +1194,7 @@ Tab页签点击后触发的事件回调。
 
 参数：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | Callback&lt;number&gt; | 是 | 返回被点击的页签索引，索引从0开始计算。 |
@@ -1115,9 +1202,10 @@ Tab页签点击后触发的事件回调。
 
 
 
-#### onSelected
+### onSelected
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 onSelected(event: Callback&lt;number&gt;)
 
@@ -1139,6 +1227,7 @@ onSelected(event: Callback&lt;number&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | Callback&lt;number&gt; | 是 | 当前选中元素的索引。 |
@@ -1146,9 +1235,10 @@ onSelected(event: Callback&lt;number&gt;)
 
 
 
-#### onUnselected
+### onUnselected
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 onUnselected(event: Callback&lt;number&gt;)
 
@@ -1170,6 +1260,7 @@ onUnselected(event: Callback&lt;number&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | Callback&lt;number&gt; | 是 | 将要隐藏元素的索引。 |
@@ -1177,9 +1268,10 @@ onUnselected(event: Callback&lt;number&gt;)
 
 
 
-#### ExtendBarMode
+## ExtendBarMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 页签栏布局模式枚举。
 
@@ -1191,6 +1283,7 @@ onUnselected(event: Callback&lt;number&gt;)
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | HALF_SCREEN_FIXED | 100 | 页签栏布局模式：半屏居中布局。 |
@@ -1198,9 +1291,10 @@ onUnselected(event: Callback&lt;number&gt;)
 
 
 
-#### DividerMode
+## DividerMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 页签栏分割线显示类型枚举。
 
@@ -1212,6 +1306,7 @@ onUnselected(event: Callback&lt;number&gt;)
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | VISIBLE | 0 | 页签栏分割线显示类型：常显。 |
@@ -1221,9 +1316,10 @@ onUnselected(event: Callback&lt;number&gt;)
 
 
 
-#### HdsBarMode
+## HdsBarMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 type HdsBarMode= ExtendBarMode | BarMode
 
@@ -1237,6 +1333,7 @@ HdsBarMode页签栏的布局模式和扩展模式设置。
 
 **起始版本：** 6.0.0(20)
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ExtendBarMode | TabBar扩展的布局模式。 |
@@ -1245,9 +1342,10 @@ HdsBarMode页签栏的布局模式和扩展模式设置。
 
 
 
-#### bleedIconStyle
+## bleedIconStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 bleedIconStyle(builder: CustomTabBuilder): void
 
@@ -1265,6 +1363,7 @@ bleedIconStyle(builder: CustomTabBuilder): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | builder | CustomTabBuilder | 是 | 设置自定义组件出血效果。 |
@@ -1272,9 +1371,10 @@ bleedIconStyle(builder: CustomTabBuilder): void
 
 
 
-#### CustomTabBuilder
+## CustomTabBuilder
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 type CustomTabBuilder= () => void
 
@@ -1290,9 +1390,10 @@ type CustomTabBuilder= () => void
 
 
 
-#### HdsTabsModifier
+## HdsTabsModifier
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 动态设置HdsTabs组件的属性和样式，继承自[HdsTabsAttribute](#属性)。
 
@@ -1306,9 +1407,10 @@ type CustomTabBuilder= () => void
 
 
 
-#### applyNormalAttribute
+### applyNormalAttribute
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 applyNormalAttribute?(instance: HdsTabsAttribute): void
 
@@ -1324,6 +1426,7 @@ applyNormalAttribute?(instance: HdsTabsAttribute): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | instance | HdsTabsAttribute | 是 | 动态设置HdsTabs组件的属性。 |
@@ -1331,13 +1434,17 @@ applyNormalAttribute?(instance: HdsTabsAttribute): void
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet
 
-#### 支持分割线出现和消失
+
+
+### 支持分割线出现和消失
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 通过设置分割线属性中的类型 ，控制分割线的常显、常隐、跟手效果。
 
@@ -1441,6 +1548,7 @@ struct Index {
 
 **表1** 效果
 
+
 | 常显 | 常隐 | 跟手 |
 | --- | --- | --- |
 |  |  |  |
@@ -1448,7 +1556,10 @@ struct Index {
 
 
 
-#### 支持渐变模糊
+### 支持渐变模糊
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 通过设置HdsTabs组件的barBackgroundStyle样式，可以自定义模糊的颜色和高度，实现渐变模糊。
 
@@ -1491,12 +1602,15 @@ struct Index {
 效果：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/SJJGO7m9SoapB1xhCS1U4w/zh-cn_image_0000002704275323.png?HW-CC-KV=V1&HW-CC-Date=20260813T095502Z&HW-CC-Expire=86400&HW-CC-Sign=961D266B4EC19E86D07F5D62F93AB7B006257D150D309E1ABCE2D92B81D8832F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/CESljtiPThurr4g26ze2qA/zh-cn_image_0000002717613582.png?HW-CC-KV=V1&HW-CC-Date=20260911T073132Z&HW-CC-Expire=86400&HW-CC-Sign=BC182914B85F651CEA35CF42CB92F0797B04C04CD7931A4BB52F9F98567CFCB9)
 
 
 
 
-#### 支持出血效果
+### 支持出血效果
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 通过设置HdsTabs组件TabContent的tabBar样式，可以实现出血效果。
 
@@ -1544,12 +1658,15 @@ struct Index {
 效果：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/zSGCWAJmS1eRQ7oM-PY1SQ/zh-cn_image_0000002674475532.jpg?HW-CC-KV=V1&HW-CC-Date=20260813T095502Z&HW-CC-Expire=86400&HW-CC-Sign=EFC2E1FC8666CADAED9F702C049D395E7D89D13871CB8C327B80450571D7DDA8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/AA0OQf3xQ6e47LPuJnMkPQ/zh-cn_image_0000002747293535.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T073132Z&HW-CC-Expire=86400&HW-CC-Sign=CCA0AFF6B9557D245618EBB35DDB3DEA0462641343FA78001B701B8325410D4F)
 
 
 
 
-#### 页签半屏居中对齐布局
+### 页签半屏居中对齐布局
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 通过设置HdsTabs组件的barMode样式为ExtendBarMode.HALF_SCREEN_FIXED，页签高度是Tabs高度的四分之一均分，并且半屏居中对齐。
 
@@ -1594,12 +1711,15 @@ struct Index {
 效果：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/LE3Jpl1FRcSx5xy5evffyQ/zh-cn_image_0000002704395497.jpg?HW-CC-KV=V1&HW-CC-Date=20260813T095502Z&HW-CC-Expire=86400&HW-CC-Sign=42813AF558DD45E319BE98359EC8B2CEFD9B48D3548B74B688AF9E2D284DBDF1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/U1O6AHKFS5WhCQfjuL01qw/zh-cn_image_0000002747213449.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T073132Z&HW-CC-Expire=86400&HW-CC-Sign=5A8FB936D90E6C29A261D429772E3281D73F6D27D4D0F7DFD87A137CDEFF515A)
 
 
 
 
-#### 页签栏悬浮样式
+### 页签栏悬浮样式
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 通过设置HdsTabs组件的barFloatingStyle样式，并设置barOverlap为true，vertical为false，barPosition为BarPosition.End，可实现页签栏的悬浮样式。若在barFloatingStyle中设置miniBar，则可实现迷你栏。
 
@@ -1684,4 +1804,4 @@ struct Index {
 效果：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/NYK5cVaGRECjxVb9u5EkkA/zh-cn_image_0000002674635372.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095502Z&HW-CC-Expire=86400&HW-CC-Sign=569A4266F8CBD870D228160C903E955112EC30C2BAA29E611490391A2ECB6A72)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/5ShG2ERnQZicllTf8xbmkQ/zh-cn_image_0000002717773516.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073132Z&HW-CC-Expire=86400&HW-CC-Sign=D9983496376E248DDF929F0A9D67A5352C54619E97A307D41ACA32B4086E2C28)

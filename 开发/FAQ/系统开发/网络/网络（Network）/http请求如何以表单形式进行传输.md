@@ -25,23 +25,23 @@ httpRequest.request(
   'https:xxx',
   {
     method: http.RequestMethod.POST,
-    // Optional, default is http.RequestMethod.GET//Developers can add header fields according to their own business needs
-    header: { 'Content-Type': 'application/x-www-form-urlencoded' }, // This field is used to pass content when using POST requests
+    <em>// Optional, default is http.RequestMethod.GET//Developers can add header fields according to their own business needs</em>
+    header: { 'Content-Type': 'application/x-www-form-urlencoded' }, <em>// This field is used to pass content when using POST requests</em>
     extraData: data,
-    connectTimeout: 60000, // Optional, default is 60000ms
-    readTimeout: 60000, // Optional, default is 60000ms
+    connectTimeout: 60000, <em>// Optional, default is 60000ms</em>
+    readTimeout: 60000, <em>// Optional, default is 60000ms</em>
   }, (err, data) => {
   if (!err) {
-    // Data.read is the HTTP response content, which can be parsed according to business needs
+    <em>// Data.read is the HTTP response content, which can be parsed according to business needs</em>
     console.info('Result:' + JSON.stringify(data.result));
     console.info('code:' +
-    JSON.stringify(data.responseCode)); // Data.reader is an HTTP response header that can be parsed according to business needs
+    JSON.stringify(data.responseCode)); <em>// Data.reader is an HTTP response header that can be parsed according to business needs</em>
     console.info('header:' + JSON.stringify(data.header));
     console.info('cookies:' +
-    JSON.stringify(data.cookies)); // Starting from API8
+    JSON.stringify(data.cookies)); <em>// Starting from API8</em>
   } else {
-    console.info('error:' + JSON.stringify(err)); // Unsubscribe from HTTP response header events
-    httpRequest.off('headersReceive'); // When the request is exhausted, call the destroy method to actively destroy it.
+    console.info('error:' + JSON.stringify(err)); <em>// Unsubscribe from HTTP response header events</em>
+    httpRequest.off('headersReceive'); <em>// When the request is exhausted, call the destroy method to actively destroy it.</em>
     httpRequest.destroy();
   }
 })

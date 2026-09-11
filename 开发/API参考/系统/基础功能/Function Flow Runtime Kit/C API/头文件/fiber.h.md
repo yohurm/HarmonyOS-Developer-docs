@@ -1,13 +1,14 @@
 # fiber.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-fiber-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明纤程的C接口。纤程是一种轻量级的用户态线程，用于在用户空间内实现高效的任务调度和上下文切换。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | FFRT_C_API int ffrt_fiber_init(ffrt_fiber_t* fiber, void(*func)(void*), void* arg, void* stack, size_t stack_size) | 初始化纤程。初始化纤程结构，使其准备好被执行。调用者需负责分配stack指向的栈内存，并保证该内存在纤程整个生命周期内有效。 |
@@ -41,15 +45,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### ffrt_fiber_init()
+### ffrt_fiber_init()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API int ffrt_fiber_init(ffrt_fiber_t* fiber, void(*func)(void*), void* arg, void* stack, size_t stack_size)
@@ -63,6 +69,7 @@ FFRT_C_API int ffrt_fiber_init(ffrt_fiber_t* fiber, void(*func)(void*), void* ar
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_fiber_t* fiber | 指向待初始化的纤程结构的指针。 |
@@ -74,6 +81,7 @@ FFRT_C_API int ffrt_fiber_init(ffrt_fiber_t* fiber, void(*func)(void*), void* ar
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API int | 纤程初始化成功时返回ffrt_success； stack_size过小（不足以容纳纤程上下文）时返回ffrt_error_inval。 |
@@ -81,9 +89,10 @@ FFRT_C_API int ffrt_fiber_init(ffrt_fiber_t* fiber, void(*func)(void*), void* ar
  
   
 
-#### ffrt_fiber_switch()
+### ffrt_fiber_switch()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API void ffrt_fiber_switch(ffrt_fiber_t* from, ffrt_fiber_t* to)
@@ -97,6 +106,7 @@ FFRT_C_API void ffrt_fiber_switch(ffrt_fiber_t* from, ffrt_fiber_t* to)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_fiber_t* from | 指向用于保存当前上下文的纤程的指针。 |

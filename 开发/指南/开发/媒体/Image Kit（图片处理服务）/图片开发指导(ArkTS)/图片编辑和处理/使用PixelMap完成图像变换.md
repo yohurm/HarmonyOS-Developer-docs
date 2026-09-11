@@ -1,13 +1,13 @@
 # 使用PixelMap完成图像变换
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-transformation
 
 图片处理指对PixelMap进行相关的操作，如获取图片信息、裁剪、缩放、偏移、旋转、翻转、设置透明度、读写像素数据等。图片处理主要包括图像变换、[位图操作](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-pixelmap-operation)，本文介绍图像变换。
 
 
-#### 开发步骤
+## 开发步骤
 
 图像变换相关API的详细介绍请参见[Interface (PixelMap)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-pixelmap)。
 1. 完成[图片解码](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-decoding)，获取PixelMap对象。
@@ -133,7 +133,7 @@ this.pixelMap.opacity(0.5).then(() => {
 
   
 
-  #### 示例代码
+  ## 示例代码
 
   
 [拼图](https://gitcode.com/HarmonyOS_Samples/game-puzzle)

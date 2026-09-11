@@ -1,13 +1,14 @@
 # CodecBase
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-codecbase
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 CodecBase模块提供用于音视频封装、解封装、编解码基础功能的变量、属性以及函数，包括编解码器基础结构体、异步回调机制、MIME类型定义、媒体描述键、用户自定义数据源以及视频特定配置等。本模块是AVCodec Kit的基础模块，为视频编码器、视频解码器、音频编码器、音频解码器、封装器、解封装器等模块提供通用的类型定义和属性键。
 
@@ -30,9 +31,11 @@ CodecBase模块提供用于音视频封装、解封装、编解码基础功能�
 
 
 
-#### 文件汇总
+## 文件汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -42,11 +45,13 @@ CodecBase模块提供用于音视频封装、解封装、编解码基础功能�
 
 
 
-#### 媒体编解码格式
+## 媒体编解码格式
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于描述媒体编解码格式的名字如下表。类型是常量字符串。
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -106,9 +111,10 @@ CodecBase模块提供用于音视频封装、解封装、编解码基础功能�
 
 
 
-#### 媒体数据键值对
+## 媒体数据键值对
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于描述媒体数据的键值对查找表如下。键的类型是常量字符串，值的类型可以是int32_t/int64_t/float/double/char */uint8_t *。
 
@@ -116,9 +122,11 @@ CodecBase模块提供用于音视频封装、解封装、编解码基础功能�
 
 
 
-#### 能力查询专有的键值对
+### 能力查询专有的键值对
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -127,9 +135,11 @@ CodecBase模块提供用于音视频封装、解封装、编解码基础功能�
 
 
 
-#### 音视频公共的键值对
+### 音视频公共的键值对
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -144,9 +154,11 @@ CodecBase模块提供用于音视频封装、解封装、编解码基础功能�
 
 
 
-#### 视频专有的键值对
+### 视频专有的键值对
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -215,9 +227,11 @@ CodecBase模块提供用于音视频封装、解封装、编解码基础功能�
 
 
 
-#### 音频专有的键值对
+### 音频专有的键值对
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -247,9 +261,11 @@ CodecBase模块提供用于音视频封装、解封装、编解码基础功能�
 
 
 
-#### 封装/解封装专有的键值对
+### 封装/解封装专有的键值对
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 描述 |
 | --- | --- |

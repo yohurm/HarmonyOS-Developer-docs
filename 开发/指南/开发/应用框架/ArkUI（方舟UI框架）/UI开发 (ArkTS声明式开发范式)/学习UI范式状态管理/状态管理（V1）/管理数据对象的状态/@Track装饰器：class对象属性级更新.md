@@ -1,6 +1,6 @@
 # @Track装饰器：class对象属性级更新
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-track
 
@@ -13,13 +13,13 @@
 
 
 
-#### 概述
+## 概述
 
 @Track是class对象的属性装饰器。当一个class对象是状态变量时，@Track装饰的属性发生变化，只会触发该属性关联的UI更新；如果class类中使用了@Track装饰器，则未被@Track装饰器装饰的属性不能在UI中使用，如果使用，会发生运行时报错。
 
 
 
-#### class属性级更新说明
+## class属性级更新说明
 
 状态管理V1中@State等装饰器默认支持观察第一层属性的变化，第一层属性的变化虽然可以触发更新，但无法做到类属性级的观察，下面的例子就展示了这一限制：
 
@@ -79,7 +79,7 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/OfNEqmCyTgSFVYYe2ANU2g/zh-cn_image_0000002704271819.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=C846FA0B4B64B88A6ED0E0F4D649C056072ABB3E5B70329D3716A99AC0B1CA03)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/2UjG7xoLSGmHyXBPCFZCIw/zh-cn_image_0000002717770016.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072513Z&HW-CC-Expire=86400&HW-CC-Sign=28B644D9089B6F6CCE7BCCC28E25A5FBA6B8773F0CDD6058ADA0753C874B2494)
 
 
 > [!NOTE]
@@ -110,7 +110,8 @@ Component 2 render
 
 
 
-#### 装饰器说明
+## 装饰器说明
+
 
 | @Track变量装饰器 | 说明 |
 | --- | --- |
@@ -120,7 +121,7 @@ Component 2 render
 
 
 
-#### 观察变化和行为表现
+## 观察变化和行为表现
 
 当一个class对象是状态变量时，@Track装饰的属性发生变化，该属性关联的UI触发更新。
 
@@ -208,7 +209,7 @@ struct AddLog {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/8cEmXGEWQ6OSz0w1BNAzQA/zh-cn_image_0000002674472020.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=BA59DE8C22509C829966EE3F745C29B87F572C297A432F3299984411270C77FD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/BIP2xSYETuaDtTLVJgTyNA/zh-cn_image_0000002717610082.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072513Z&HW-CC-Expire=86400&HW-CC-Sign=116054DDAC8D0DA32BD0986C5F7A742AC029A804EDA728FB7D3C322F9A6B10A8)
 
 
 在上面的示例中：
@@ -230,7 +231,7 @@ Text 4 is rendered
 
 
 
-#### 限制条件
+## 限制条件
 
  - 如果class类中使用了@Track装饰器，那么该class类中非@Track装饰的属性不能在@Component UI中使用，包括不能绑定在组件上、不能用于初始化子组件，错误的使用将导致运行时报错，从API version 23开始，将返回错误码[140110](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-statemanagement#section140110-在ui中使用非track装饰的属性发生运行时报错)，详见[在UI中使用非@Track装饰的属性发生运行时报错](#在ui中使用非track装饰的属性发生运行时报错)；可以在非UI中使用非@Track装饰的属性，如事件回调函数中、生命周期函数中等。
  - API version 19及以后，@Track使用在[@ComponentV2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-custom-components#componentv2)的UI中，不会引起运行时报错，但依旧不会刷新，详见[@Observed+@Track装饰的class（V1->V2）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-mixusage#传递class类型v1-v2)、[@Observed+@Track装饰的class（V2->V1）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-mixusage#传递class类型v2-v1)。
@@ -239,11 +240,11 @@ Text 4 is rendered
 
 
 
-#### 使用场景
+## 使用场景
 
 
 
-#### @Track和自定义组件更新
+### @Track和自定义组件更新
 
 以下示例展示组件更新和@Track的处理步骤。对象log是@State装饰的状态变量，logInfo是@Track装饰的成员属性，其余成员属性都是非@Track装饰的，而且也不准备在UI中更新它们的值。
 
@@ -300,7 +301,7 @@ struct AddLog {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/-X0LpB52SbqGdWq8vGILhA/zh-cn_image_0000002704391989.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=362D14F1EA40548A35295B803758FB9006A3860B33CBF7EF518A32879AC9B8AC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/sgZ989WJTQaRm9MGXtUzLg/zh-cn_image_0000002747290033.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072513Z&HW-CC-Expire=86400&HW-CC-Sign=02B5958983F2555425C513FA19CFEF6963253D83ADFA4A598C5DD57182822B2D)
 
 
 处理步骤：
@@ -309,11 +310,11 @@ struct AddLog {
 
 
 
-#### 常见问题
+## 常见问题
 
 
 
-#### 在UI中使用非@Track装饰的属性发生运行时报错
+### 在UI中使用非@Track装饰的属性发生运行时报错
 
 在UI中使用非@Track装饰的属性，运行时会报错，从API version 23开始，将返回错误码140110。需要给age也添加@Track装饰器。
 

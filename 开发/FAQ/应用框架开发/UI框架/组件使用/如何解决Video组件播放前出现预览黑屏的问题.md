@@ -47,8 +47,8 @@ Video组件在未播放视频内容之前是黑色的，开始播放后，再点
   
 ```text
 Video({
-  src: $r('app.media.videoTest'), // $r('app.media.videoTest')仅作展示，使用时请开发者自行替换
-  previewUri: $r('app.media.example'), // $r('app.media.example')仅作展示，使用时请开发者自行替换
+  src: $r('app.media.videoTest'), <em>// $r('app.media.videoTest')仅作展示，使用时请开发者自行替换</em>
+  previewUri: $r('app.media.example'), <em>// $r('app.media.example')仅作展示，使用时请开发者自行替换</em>
   controller: this.controller
 })
   .height('50%');
@@ -61,17 +61,17 @@ Video({
   
 ```text
 Video({
-  src: $r('app.media.videoTest'), // $r('app.media.videoTest')仅作展示，使用时请开发者自行替换
+  src: $r('app.media.videoTest'), <em>// $r('app.media.videoTest')仅作展示，使用时请开发者自行替换</em>
   controller: this.controller
 })
   .visibility(this.isVisible)
-  .autoPlay(true) // 设置自动播放
+  .autoPlay(true) <em>// 设置自动播放</em>
   .loop(true)
   .controls(true)
   .width('100%')
   .height('50%')
   .onStart(() => {
-    setTimeout(() => { // 使用setTimeout设置延迟跳过黑屏阶段
+    setTimeout(() => { <em>// 使用setTimeout设置延迟跳过黑屏阶段</em>
       this.controller.setCurrentTime(1, SeekMode.PreviousKeyframe);
       this.isVisible = Visibility.Visible;
     }, 150);
@@ -92,24 +92,24 @@ struct video {
   build() {
     Column() {
       Video({
-        src: $r('app.media.videoTest'), // $r('app.media.videoTest')仅作展示，使用时请开发者自行替换
-        previewUri: $r('app.media.example'), // $r('app.media.example')仅作展示，使用时请开发者自行替换
+        src: $r('app.media.videoTest'),<em> // $r('app.media.videoTest')仅作展示，使用时请开发者自行替换</em>
+        previewUri: $r('app.media.example'), <em>// $r('app.media.example')仅作展示，使用时请开发者自行替换</em>
         controller: this.controller
       })
         .height('50%');
 
       Video({
-        src: $r('app.media.videoTest'), // $r('app.media.videoTest')仅作展示，使用时请开发者自行替换
+        src: $r('app.media.videoTest'), <em>// $r('app.media.videoTest')仅作展示，使用时请开发者自行替换</em>
         controller: this.controller
       })
         .visibility(this.isVisible)
-        .autoPlay(true) // 设置自动播放
+        .autoPlay(true) <em>// 设置自动播放</em>
         .loop(true)
         .controls(true)
         .width('100%')
         .height('50%')
         .onStart(() => {
-          setTimeout(() => { // 使用setTimeout设置延迟跳过黑屏阶段
+          setTimeout(() => { <em>// 使用setTimeout设置延迟跳过黑屏阶段</em>
             this.controller.setCurrentTime(1, SeekMode.PreviousKeyframe);
             this.isVisible = Visibility.Visible;
           }, 150);

@@ -1,9 +1,9 @@
 # @ohos.file.cloudSync (端云同步能力)
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-file-cloudsync
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet
 
 该模块向应用提供端云同步能力，包括启动/停止端云同步以及启动/停止原图下载功能。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 import { cloudSync } from '@kit.CoreFileKit';
@@ -22,9 +23,10 @@ import { cloudSync } from '@kit.CoreFileKit';
 
 
 
-#### SyncState12+
+## SyncState12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 端云同步状态，为枚举类型。
 
@@ -33,6 +35,7 @@ import { cloudSync } from '@kit.CoreFileKit';
 
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -46,9 +49,10 @@ import { cloudSync } from '@kit.CoreFileKit';
 
 
 
-#### ErrorType12+
+## ErrorType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 端云同步失败类型，为枚举类型。
 
@@ -59,6 +63,7 @@ import { cloudSync } from '@kit.CoreFileKit';
 
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -75,19 +80,22 @@ import { cloudSync } from '@kit.CoreFileKit';
 
 
 
-#### SyncProgress12+
+## SyncProgress12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 端云同步过程。
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -97,13 +105,15 @@ import { cloudSync } from '@kit.CoreFileKit';
 
 
 
-#### State11+
+## State11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 云文件下载状态，为枚举类型。
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -115,19 +125,22 @@ import { cloudSync } from '@kit.CoreFileKit';
 
 
 
-#### DownloadProgress11+
+## DownloadProgress11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 云文件下载过程。
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -140,9 +153,10 @@ import { cloudSync } from '@kit.CoreFileKit';
 
 
 
-#### FileSync12+
+## FileSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 云盘同步对象，用于支撑文件管理器应用完成云盘文件的端云同步流程。在使用前，需要先创建FileSync实例。
 
@@ -150,9 +164,10 @@ import { cloudSync } from '@kit.CoreFileKit';
 
 
 
-#### constructor12+
+### constructor12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 constructor()
 
@@ -163,6 +178,7 @@ constructor()
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -177,9 +193,10 @@ let fileSync = new cloudSync.FileSync()
 
 
 
-#### on('progress')12+
+### on('progress')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 on(event: 'progress', callback: Callback&lt;SyncProgress&gt;): void
 
@@ -191,6 +208,7 @@ on(event: 'progress', callback: Callback&lt;SyncProgress&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 订阅的事件类型，取值为'progress'（同步过程事件）。 |
@@ -200,6 +218,7 @@ on(event: 'progress', callback: Callback&lt;SyncProgress&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -220,9 +239,10 @@ fileSync.on('progress', callback);
 
 
 
-#### off('progress')12+
+### off('progress')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 off(event: 'progress', callback?: Callback&lt;SyncProgress&gt;): void
 
@@ -231,6 +251,7 @@ off(event: 'progress', callback?: Callback&lt;SyncProgress&gt;): void
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -241,6 +262,7 @@ off(event: 'progress', callback?: Callback&lt;SyncProgress&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -264,9 +286,10 @@ fileSync.off('progress', callback);
 
 
 
-#### start12+
+### start12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 start(): Promise&lt;void&gt;
 
@@ -276,6 +299,7 @@ start(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -284,6 +308,7 @@ start(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -316,9 +341,10 @@ fileSync.start().then(() => {
 
 
 
-#### start12+
+### start12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 start(callback: AsyncCallback&lt;void&gt;): void
 
@@ -328,6 +354,7 @@ start(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。异步启动端云同步。 |
@@ -336,6 +363,7 @@ start(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -364,9 +392,10 @@ fileSync.start((err: BusinessError) => {
 
 
 
-#### stop12+
+### stop12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 stop(): Promise&lt;void&gt;
 
@@ -378,6 +407,7 @@ stop(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -386,6 +416,7 @@ stop(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -409,9 +440,10 @@ fileSync.stop().then(() => {
 
 
 
-#### stop12+
+### stop12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 stop(callback: AsyncCallback&lt;void&gt;): void
 
@@ -423,6 +455,7 @@ stop(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。异步停止端云同步。 |
@@ -431,6 +464,7 @@ stop(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -456,9 +490,10 @@ fileSync.stop((err: BusinessError) => {
 
 
 
-#### getLastSyncTime12+
+### getLastSyncTime12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 getLastSyncTime(): Promise&lt;number&gt;
 
@@ -468,6 +503,7 @@ getLastSyncTime(): Promise&lt;number&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象，返回上次同步时间。 |
@@ -476,6 +512,7 @@ getLastSyncTime(): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -500,9 +537,10 @@ fileSync.getLastSyncTime().then((timeStamp: number) => {
 
 
 
-#### getLastSyncTime12+
+### getLastSyncTime12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 getLastSyncTime(callback: AsyncCallback&lt;number&gt;): void
 
@@ -512,6 +550,7 @@ getLastSyncTime(callback: AsyncCallback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;number&gt; | 是 | 回调函数。异步获取上次同步时间。 |
@@ -520,6 +559,7 @@ getLastSyncTime(callback: AsyncCallback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -546,9 +586,10 @@ fileSync.getLastSyncTime((err: BusinessError, timeStamp: number) => {
 
 
 
-#### CloudFileCache11+
+## CloudFileCache11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 云盘文件缓存对象，用来支撑文件管理应用原文件下载流程。
 
@@ -556,9 +597,10 @@ fileSync.getLastSyncTime((err: BusinessError, timeStamp: number) => {
 
 
 
-#### constructor11+
+### constructor11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 constructor()
 
@@ -569,6 +611,7 @@ constructor()
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -583,9 +626,10 @@ let fileCache = new cloudSync.CloudFileCache();
 
 
 
-#### on('progress')11+
+### on('progress')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 on(event: 'progress', callback: Callback&lt;DownloadProgress&gt;): void
 
@@ -594,6 +638,7 @@ on(event: 'progress', callback: Callback&lt;DownloadProgress&gt;): void
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -604,6 +649,7 @@ on(event: 'progress', callback: Callback&lt;DownloadProgress&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -631,9 +677,10 @@ try {
 
 
 
-#### on('batchDownload')20+
+### on('batchDownload')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 on(event: 'batchDownload', callback: Callback&lt;MultiDownloadProgress&gt;): void
 
@@ -642,6 +689,7 @@ on(event: 'batchDownload', callback: Callback&lt;MultiDownloadProgress&gt;): voi
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -652,6 +700,7 @@ on(event: 'batchDownload', callback: Callback&lt;MultiDownloadProgress&gt;): voi
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -684,9 +733,10 @@ try {
 
 
 
-#### off('progress')11+
+### off('progress')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 off(event: 'progress', callback?: Callback&lt;DownloadProgress&gt;): void
 
@@ -695,6 +745,7 @@ off(event: 'progress', callback?: Callback&lt;DownloadProgress&gt;): void
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -705,6 +756,7 @@ off(event: 'progress', callback?: Callback&lt;DownloadProgress&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -734,9 +786,10 @@ try {
 
 
 
-#### off('batchDownload')20+
+### off('batchDownload')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 off(event: 'batchDownload', callback?: Callback&lt;MultiDownloadProgress&gt;): void
 
@@ -745,6 +798,7 @@ off(event: 'batchDownload', callback?: Callback&lt;MultiDownloadProgress&gt;): v
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -755,6 +809,7 @@ off(event: 'batchDownload', callback?: Callback&lt;MultiDownloadProgress&gt;): v
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -783,9 +838,10 @@ try {
 
 
 
-#### start11+
+### start11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 start(uri: string): Promise&lt;void&gt;
 
@@ -795,12 +851,14 @@ start(uri: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uri | string | 是 | 待下载文件uri。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -810,6 +868,7 @@ start(uri: string): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -848,9 +907,10 @@ fileCache.start(uri).then(() => {
 
 
 
-#### start11+
+### start11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 start(uri: string, callback: AsyncCallback&lt;void&gt;): void
 
@@ -859,6 +919,7 @@ start(uri: string, callback: AsyncCallback&lt;void&gt;): void
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -869,6 +930,7 @@ start(uri: string, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -900,9 +962,10 @@ fileCache.start(uri, (err: BusinessError) => {
 
 
 
-#### startBatch20+
+### startBatch20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 startBatch(uris: Array&lt;string&gt;, fileType?: DownloadFileType): Promise&lt;number&gt;
 
@@ -914,6 +977,7 @@ startBatch(uris: Array&lt;string&gt;, fileType?: DownloadFileType): Promise&lt;n
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uris | Array&lt;string&gt; | 是 | URI列表，一次调用最多支持传入400个URI，超过报错22400004。 |
@@ -921,6 +985,7 @@ startBatch(uris: Array&lt;string&gt;, fileType?: DownloadFileType): Promise&lt;n
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -930,6 +995,7 @@ startBatch(uris: Array&lt;string&gt;, fileType?: DownloadFileType): Promise&lt;n
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -965,9 +1031,10 @@ fileCache.startBatch(uriList, cloudSync.DownloadFileType.CONTENT).then((download
 
 
 
-#### stop11+
+### stop11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 stop(uri: string, needClean?: boolean): Promise&lt;void&gt;
 
@@ -979,6 +1046,7 @@ stop(uri: string, needClean?: boolean): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uri | string | 是 | 待下载文件uri。 |
@@ -986,6 +1054,7 @@ stop(uri: string, needClean?: boolean): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -995,6 +1064,7 @@ stop(uri: string, needClean?: boolean): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1023,9 +1093,10 @@ fileCache.stop(uri, true).then(() => {
 
 
 
-#### stop11+
+### stop11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 stop(uri: string, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1037,6 +1108,7 @@ stop(uri: string, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uri | string | 是 | 待下载文件uri。 |
@@ -1046,6 +1118,7 @@ stop(uri: string, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1076,9 +1149,10 @@ fileCache.stop(uri, (err: BusinessError) => {
 
 
 
-#### stopBatch20+
+### stopBatch20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 stopBatch(downloadId: number, needClean?: boolean): Promise&lt;void&gt;
 
@@ -1090,6 +1164,7 @@ stopBatch(downloadId: number, needClean?: boolean): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | downloadId | number | 是 | 需要停止缓存的任务ID。 |
@@ -1097,6 +1172,7 @@ stopBatch(downloadId: number, needClean?: boolean): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1106,6 +1182,7 @@ stopBatch(downloadId: number, needClean?: boolean): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1141,9 +1218,10 @@ if (needStop && taskId > 0) {
 
 
 
-#### cleanFileCache20+
+### cleanFileCache20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 cleanFileCache(uri: string): void
 
@@ -1153,6 +1231,7 @@ cleanFileCache(uri: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uri | string | 是 | 待删除缓存文件的URI。 |
@@ -1161,6 +1240,7 @@ cleanFileCache(uri: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1193,9 +1273,10 @@ try {
 
 
 
-#### cleanAllFileCache
+### cleanAllFileCache
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 cleanAllFileCache(): Promise&lt;void&gt;
 
@@ -1209,6 +1290,7 @@ cleanAllFileCache(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1217,6 +1299,7 @@ cleanAllFileCache(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1240,9 +1323,10 @@ fileCache.cleanAllFileCache().then(() => {
 
 
 
-#### getCachedTotalSize
+### getCachedTotalSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 getCachedTotalSize(): Promise&lt;number&gt;
 
@@ -1256,6 +1340,7 @@ getCachedTotalSize(): Promise&lt;number&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象，返回已缓存文件总大小。 |
@@ -1264,6 +1349,7 @@ getCachedTotalSize(): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1287,13 +1373,15 @@ fileCache.getCachedTotalSize().then((totalDownloadSize: number) => {
 
 
 
-#### DownloadErrorType11+
+## DownloadErrorType11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 端云下载错误类型，为枚举类型。
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1307,13 +1395,15 @@ fileCache.getCachedTotalSize().then((totalDownloadSize: number) => {
 
 
 
-#### DownloadFileType20+
+## DownloadFileType20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 云盘缓存文件类型的枚举。
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1324,13 +1414,15 @@ fileCache.getCachedTotalSize().then((totalDownloadSize: number) => {
 
 
 
-#### FailedFileInfo20+
+## FailedFileInfo20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 云文件批量缓存失败列表及失败原因。
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1340,19 +1432,22 @@ fileCache.getCachedTotalSize().then((totalDownloadSize: number) => {
 
 
 
-#### MultiDownloadProgress20+
+## MultiDownloadProgress20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 云文件批量缓存的进度信息。
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1368,9 +1463,10 @@ fileCache.getCachedTotalSize().then((totalDownloadSize: number) => {
 
 
 
-#### getFailedFiles20+
+### getFailedFiles20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 getFailedFiles(): Array&lt;FailedFileInfo&gt;
 
@@ -1380,6 +1476,7 @@ getFailedFiles(): Array&lt;FailedFileInfo&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;FailedFileInfo&gt; | 返回缓存失败的文件URI列表及其对应的错误类型。 |
@@ -1388,6 +1485,7 @@ getFailedFiles(): Array&lt;FailedFileInfo&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1428,9 +1526,10 @@ fileCache.startBatch(uriList, cloudSync.DownloadFileType.CONTENT).then((download
 
 
 
-#### getSuccessfulFiles20+
+### getSuccessfulFiles20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 getSuccessfulFiles(): Array&lt;string&gt;
 
@@ -1440,6 +1539,7 @@ getSuccessfulFiles(): Array&lt;string&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;string&gt; | 数组类型，返回缓存成功的文件URI列表。 |
@@ -1448,6 +1548,7 @@ getSuccessfulFiles(): Array&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1486,9 +1587,10 @@ fileCache.startBatch(uriList, cloudSync.DownloadFileType.CONTENT).then((download
 
 
 
-#### cloudSync.registerChange12+
+## cloudSync.registerChange12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 registerChange(uri: string, recursion: boolean, callback: Callback&lt;ChangeData&gt;): void
 
@@ -1497,6 +1599,7 @@ registerChange(uri: string, recursion: boolean, callback: Callback&lt;ChangeData
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1509,6 +1612,7 @@ registerChange(uri: string, recursion: boolean, callback: Callback&lt;ChangeData
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The input parameter is invalid. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
@@ -1539,9 +1643,10 @@ cloudSync.unregisterChange(uri);
 
 
 
-#### cloudSync.unregisterChange12+
+## cloudSync.unregisterChange12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 unregisterChange(uri: string): void
 
@@ -1550,6 +1655,7 @@ unregisterChange(uri: string): void
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1560,6 +1666,7 @@ unregisterChange(uri: string): void
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The input parameter is invalid. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
@@ -1590,13 +1697,15 @@ cloudSync.unregisterChange(uri);
 
 
 
-#### NotifyType12+
+## NotifyType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 数据变更通知类型。
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1608,13 +1717,15 @@ cloudSync.unregisterChange(uri);
 
 
 
-#### ChangeData12+
+## ChangeData12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 定义变更数据。
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1625,19 +1736,22 @@ cloudSync.unregisterChange(uri);
 
 
 
-#### HistoryVersion20+
+## HistoryVersion20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 端云文件历史版本信息，调用端云文件版本管理类[FileVersion](#fileversion20)的[gethistoryversionlist](#gethistoryversionlist20)方法时，历史版本列表中的属性。
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1665,19 +1779,22 @@ cloudSync.unregisterChange(uri);
 
 
 
-#### VersionDownloadProgress20+
+## VersionDownloadProgress20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 历史版本文件下载状态和进度信息，调用端云文件版本管理类[FileVersion](#fileversion20)的[downloadHistoryVersion](#downloadhistoryversion20)方法时，回调函数的入参类型。
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1688,17 +1805,19 @@ cloudSync.unregisterChange(uri);
 
 
 
-#### FileVersion20+
+## FileVersion20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 端云文件版本管理类。支持对端云文件的历史版本进行管理，提供获取文件历史版本信息列表的能力，通过历史版本信息，可将历史版本下载到本地；并提供历史版本文件替换当前本地文件的能力，针对版本冲突，提供查询冲突标志，解除冲突标志的能力。
 
 
 
-#### constructor20+
+### constructor20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 constructor()
 
@@ -1709,6 +1828,7 @@ constructor()
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1723,9 +1843,10 @@ let fileVersion = new cloudSync.FileVersion();
 
 
 
-#### getHistoryVersionList20+
+### getHistoryVersionList20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 getHistoryVersionList(uri: string, versionNumLimit: number): Promise<Array&lt;HistoryVersion&gt;>
 
@@ -1739,6 +1860,7 @@ getHistoryVersionList(uri: string, versionNumLimit: number): Promise<Array&lt;Hi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uri | string | 是 | 文件的URI。 |
@@ -1746,6 +1868,7 @@ getHistoryVersionList(uri: string, versionNumLimit: number): Promise<Array&lt;Hi
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1755,6 +1878,7 @@ getHistoryVersionList(uri: string, versionNumLimit: number): Promise<Array&lt;Hi
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1791,9 +1915,10 @@ fileVersion.getHistoryVersionList(uri, limit).then((versionList: Array<cloudSync
 
 
 
-#### downloadHistoryVersion20+
+### downloadHistoryVersion20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 downloadHistoryVersion(uri: string, versionId: string, callback: Callback<[VersionDownloadProgress](#versiondownloadprogress20)>): Promise&lt;string&gt;
 
@@ -1802,6 +1927,7 @@ downloadHistoryVersion(uri: string, versionId: string, callback: Callback<[Versi
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1812,6 +1938,7 @@ downloadHistoryVersion(uri: string, versionId: string, callback: Callback<[Versi
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回历史版本临时存储文件的URI。 |
@@ -1820,6 +1947,7 @@ downloadHistoryVersion(uri: string, versionId: string, callback: Callback<[Versi
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1864,9 +1992,10 @@ fileVersion.downloadHistoryVersion(uri, versionId, callback).then((fileUri: stri
 
 
 
-#### replaceFileWithHistoryVersion20+
+### replaceFileWithHistoryVersion20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 replaceFileWithHistoryVersion(originalUri: string, versionUri: string): Promise&lt;void&gt;
 
@@ -1876,6 +2005,7 @@ replaceFileWithHistoryVersion(originalUri: string, versionUri: string): Promise&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | originalUri | string | 是 | 本地文件的URI。 |
@@ -1883,6 +2013,7 @@ replaceFileWithHistoryVersion(originalUri: string, versionUri: string): Promise&
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1892,6 +2023,7 @@ replaceFileWithHistoryVersion(originalUri: string, versionUri: string): Promise&
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1945,9 +2077,10 @@ fileVersion.replaceFileWithHistoryVersion(uri, versionUri).then(() => {
 
 
 
-#### isFileConflict20+
+### isFileConflict20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 isFileConflict(uri: string): Promise&lt;boolean&gt;
 
@@ -1959,12 +2092,14 @@ isFileConflict(uri: string): Promise&lt;boolean&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uri | string | 是 | 文件的URI。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1974,6 +2109,7 @@ isFileConflict(uri: string): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2006,9 +2142,10 @@ fileVersion.isFileConflict(uri).then((isConflict: boolean) => {
 
 
 
-#### clearFileConflict20+
+### clearFileConflict20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 clearFileConflict(uri: string): Promise&lt;void&gt;
 
@@ -2018,12 +2155,14 @@ clearFileConflict(uri: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uri | string | 是 | 待清除冲突标志的文件URI。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2033,6 +2172,7 @@ clearFileConflict(uri: string): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2072,9 +2212,10 @@ fileVersion.clearFileConflict(uri).then(() => {
 
 
 
-#### cloudSync.getCoreFileSyncState20+
+## cloudSync.getCoreFileSyncState20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 getCoreFileSyncState(uri: string): FileState
 
@@ -2084,12 +2225,14 @@ getCoreFileSyncState(uri: string): FileState
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uri | string | 是 | 待获取云盘文件同步上行状态的文件URI。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2099,6 +2242,7 @@ getCoreFileSyncState(uri: string): FileState
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2131,13 +2275,15 @@ try {
 
 
 
-#### FileState20+
+## FileState20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 端云文件同步状态，为枚举类型。
 
 **系统能力**：SystemCapability.FileManagement.DistributedFileService.CloudSync.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

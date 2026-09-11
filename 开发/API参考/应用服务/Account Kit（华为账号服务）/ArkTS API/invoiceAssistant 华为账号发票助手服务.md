@@ -1,11 +1,12 @@
 # @hms.core.account.invoiceAssistant (华为账号发票助手服务)
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-api-invoiceassistant
 **支持设备：** Phone | PC/2in1 | Tablet
 
-#### 模块概述
+## 模块概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -15,7 +16,8 @@
  
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -25,7 +27,8 @@ import { invoiceAssistant } from '@kit.AccountKit';
  
   
 
-#### InvoiceAssistantErrorCode
+## InvoiceAssistantErrorCode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -39,6 +42,7 @@ import { invoiceAssistant } from '@kit.AccountKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | USER_CANCELED | 1010060001 | 用户取消发票助手服务。 |
@@ -53,7 +57,8 @@ import { invoiceAssistant } from '@kit.AccountKit';
  
   
 
-#### InvoiceTitle
+## InvoiceTitle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -67,6 +72,7 @@ import { invoiceAssistant } from '@kit.AccountKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | string | 否 | 否 | 抬头类型，0-个人 1-企业。 |
@@ -80,7 +86,8 @@ import { invoiceAssistant } from '@kit.AccountKit';
  
   
 
-#### selectInvoiceTitle
+## selectInvoiceTitle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -98,6 +105,7 @@ selectInvoiceTitle(context: common.Context): Promise&lt;InvoiceTitle&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | Context上下文。 应用可支持的Context有：UIAbilityContext和UIExtensionContext。不支持应用在半模态、弹出框、子窗口等非全页面组件中使用UIExtensionContext调用。 元服务可支持的Context有：UIAbilityContext。 |
@@ -105,6 +113,7 @@ selectInvoiceTitle(context: common.Context): Promise&lt;InvoiceTitle&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;InvoiceTitle&gt; | Promise对象，返回InvoiceTitle对象。 |
@@ -114,6 +123,7 @@ selectInvoiceTitle(context: common.Context): Promise&lt;InvoiceTitle&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account-kit)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |

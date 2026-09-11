@@ -1,13 +1,13 @@
-# 使用XComponent实现画中画功能开发（ArkTS）
+# 使用XComponent实现画中画功能开发 (ArkTS)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pipwindow-xcomponent
 
 本文以视频播放为例，介绍通过XComponent实现画中画功能的基本开发步骤。
   
 
-#### 约束与限制
+## 约束与限制
 
 - HarmonyOS 6.0.0之前，支持在Phone、Tablet设备使用XComponent实现画中画功能开发；从HarmonyOS 6.0.0开始，支持在Phone、PC/2in1、Tablet设备使用XComponent实现画中画功能开发。
 - 仅支持以[XComponent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-xcomponent)作为媒体流播放组件的界面进入画中画模式，XComponent的type必须为XComponentType.SURFACE。
@@ -18,7 +18,7 @@
  
   
 
-#### 开发步骤
+## 开发步骤
 1. 创建画中画控制器，注册生命周期事件以及控制事件回调。
 
   
@@ -195,6 +195,20 @@ export struct Page1 {
 
 - 通过create(config: PiPConfiguration)接口创建画中画控制器实例。
 
+  
+```text
+startPip() {
+  // ...
+  PiPWindow.create(config).then((controller: PiPWindow.PiPController) => {
+    this.pipController = controller;
+    // ...
+  }).catch((err: BusinessError) => {
+    Logger.error(`Failed to create pip controller. Cause:${err.code}, message:${err.message}`);
+  });
+}
+```
+
+
   - 创建画中画控制器实例后，注册生命周期事件以及控制事件回调。
 
   
@@ -265,7 +279,7 @@ startPip() {
 }
 ```
 
-- 通过画中画控制器实例的setAutoStartEnabled接口设置是否需要在应用返回桌面时自动启动画中画。
+- 通过画中画控制器实例的[setAutoStartEnabled](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-pipwindow#setautostartenabled)接口设置在拉起画中画的应用主窗退后台时是否自动启动画中画，默认不自动拉起。在开启自动拉起的情况下，当应用主窗为[智慧多窗悬浮窗](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/multi-window-intro#悬浮窗)状态且被收入侧边栏时，应用主窗虽退后台，但不会自动拉起画中画。在使用XComponent方案实现画中画功能并结合Navigation进行路由管理时，首次调用setAutoStartEnabled(true)方法，系统会缓存当前应用传入的NavigationId的栈顶信息。
 
   
 ```ArkTS

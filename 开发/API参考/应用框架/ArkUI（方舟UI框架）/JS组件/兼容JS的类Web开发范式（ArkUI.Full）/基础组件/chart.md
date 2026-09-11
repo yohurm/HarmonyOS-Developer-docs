@@ -1,9 +1,9 @@
 # chart
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-basic-chart
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 > [!NOTE]
 > 从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
@@ -12,28 +12,32 @@
 图表组件，用于呈现线形图、柱状图、量规图、进度类圆形图表、加载类圆形图表、占比类圆形图表界面。
   
 
-#### 权限列表
+## 权限列表
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 无
  
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 不支持。
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-attributes)外，还支持如下属性：
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | type | string | line | 否 | 设置图表类型（不支持动态修改），可选项有： - bar：柱状图。 - line：线形图。 - gauge：量规图。 - progress5+：进度类圆形图表。 - loading5+：加载类圆形图表。 - rainbow5+：占比类圆形图表。 |
@@ -46,6 +50,7 @@
  
 **表1** ChartOptions
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | xAxis | ChartAxis | - | 是 | x轴参数设置。可以设置x轴最小值、最大值、刻度数以及是否显示。 |
@@ -55,6 +60,7 @@
  
 **表2** ChartDataset
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | strokeColor | &lt;color&gt; | #ff6384 | 否 | 仅线形图支持设置线条颜色。 |
@@ -65,6 +71,7 @@
  
 **表3** ChartAxis
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | min | number | 0 | 否 | 轴的最小值，仅线形图支持负数。 |
@@ -76,6 +83,7 @@
  
 **表4** ChartSeries
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | lineStyle | ChartLineStyle | - | 否 | 线样式设置，如线宽、是否平滑。 |
@@ -87,6 +95,7 @@
  
 **表5** ChartLineStyle
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | width | &lt;length&gt; | 1px | 否 | 线宽设置。 |
@@ -95,6 +104,7 @@
  
 **表6** PointStyle
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | shape | string | circle | 否 | 高亮点的形状。可选值为： - circle：圆形。 - square：方形。 - triangle：三角形。 |
@@ -106,6 +116,7 @@
  
 **表7** ChartLoop
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | margin | &lt;length&gt; | 1 | 否 | 擦除点的个数（最新绘制的点与最老的点之间的横向距离）。轻量设备margin和topPoint/bottomPoint/headPoint同时使用时，有概率出现point正好位于擦除区域的情况，导致point不可见，因此不建议同时使用。 |
@@ -114,6 +125,7 @@
  
 **表8** Point5+
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | value | number | 0 | 是 | 表示绘制点的Y轴坐标。 |
@@ -127,6 +139,7 @@
  
 **表9** DataSegment5+
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | startColor | Color | - | 否 | 起始位置的颜色，设置startColor必须设置endColor。不设置startColor时，会使用系统默认预置的颜色数组，具体颜色值见下表。 |
@@ -135,6 +148,7 @@
 | name | string | - | 否 | 此类数据的名称。 |
  
   
+
 | 数据组 | 浅色主题 | 深色主题 |
 | --- | --- | --- |
 | 0 | 起始颜色：#f7ce00，结束颜色：#f99b11 | 起始颜色：#d1a738，结束颜色：#eb933d |
@@ -150,6 +164,7 @@
  
 当类型为量规图时，还支持如下属性：
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | percent | number | 0 | 否 | 当前值占整体的百分比，取值范围为0-100。 |
@@ -157,12 +172,14 @@
  
   
 
-#### 样式
+## 样式
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 除支持[通用样式](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-styles)外，还支持如下样式：
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | stroke-width | &lt;length&gt; | 32px（量规） 24px（占比类圆形图表） | 否 | 量规、占比类圆形图表组件刻度条的宽度。 |
@@ -179,20 +196,23 @@
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-events)。
  
   
 
-#### 方法
+## 方法
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 除支持[通用方法](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-methods)外，还支持如下方法：
   
+
 | 方法 | 参数 | 描述 |
 | --- | --- | --- |
 | append | { serial: number, data: Array&lt;number&gt;, } | 向已有的数据序列中动态添加数据，根据serial指定目标序列，serial为datasets数组的下标，从0开始。假设serial的值为index，使用data数据更新datasets[index].data。仅线形图支持，按横坐标加1递增（与xAxis min/max设置相关）。 |
@@ -200,9 +220,10 @@
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 1. 线形图
 
   
@@ -474,4 +495,4 @@ export default {
 }
 ```
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/Ai9VZkquQfGRQKGhgb1ugw/zh-cn_image_0000002628862944.gif?HW-CC-KV=V1&HW-CC-Date=20260701T014401Z&HW-CC-Expire=86400&HW-CC-Sign=E5B3CD1AFDB7B40ECE90B5CC7C68E8527BF38B3C62864804AFCEE648F1FC0AE3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/lPUlOpjqTuy68YnZ4Ui0_A/zh-cn_image_0000002747213107.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072953Z&HW-CC-Expire=86400&HW-CC-Sign=FAE3B1F9A4847B50840350885D80C1ED620BF4AA830290E2EBD7B13346649224)

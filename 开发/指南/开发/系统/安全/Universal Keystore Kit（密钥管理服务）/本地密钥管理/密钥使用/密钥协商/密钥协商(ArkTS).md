@@ -1,13 +1,13 @@
 # 密钥协商(ArkTS)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-key-agreement-arkts
 
 以X25519，DH和ECDH三个协商密钥类型为例，在密钥由HUKS管理的情况下，完成密钥协商。具体的场景介绍及支持的算法规格，请参考[密钥协商支持的算法](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-key-agreement-overview#支持的算法)。
 
 
-#### 开发步骤
+## 开发步骤
 
 **生成密钥**
 
@@ -30,6 +30,7 @@
 
 密钥协商时，可指定参数HUKS_TAG_DERIVED_AGREED_KEY_STORAGE_FLAG（可选），用于标识协商得到的密钥是否由HUKS管理。
 
+
 | 生成 | 协商 | 规格 |
 | --- | --- | --- |
 | HUKS_STORAGE_ONLY_USED_IN_HUKS | HUKS_STORAGE_ONLY_USED_IN_HUKS | 密钥由HUKS管理 |
@@ -47,13 +48,13 @@
 
 
 
-#### 开发案例
+## 开发案例
 
 下面分别以X25519、DH和ECDH密钥为例，进行协商。
 
 
 
-#### X25519非对称密钥协商用例
+### X25519非对称密钥协商用例
 
 准备X25519密钥协商材料：
 
@@ -292,7 +293,7 @@ async function testAgree() {
 
 
 
-#### DH密钥协商用例
+### DH密钥协商用例
 
 ```ArkTS
 /*
@@ -562,7 +563,7 @@ async function huksDhAgreeTest() {
 
 
 
-#### ECDH密钥协商用例
+### ECDH密钥协商用例
 
 准备ECDH密钥协商材料：
 

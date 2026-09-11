@@ -1,11 +1,12 @@
 # udmf_err_code.h
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-udmf-err-code-h
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 枚举
+### 枚举
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | Udmf_ErrCode | Udmf_ErrCode | 错误码信息。 |
@@ -41,13 +45,15 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### Udmf_ErrCode
+### Udmf_ErrCode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -61,6 +67,7 @@ enum Udmf_ErrCode
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | UDMF_E_OK = 0 | 执行成功。 |
@@ -70,7 +77,8 @@ enum Udmf_ErrCode
  
   
 
-#### Udmf_ListenerStatus
+### Udmf_ListenerStatus
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -84,6 +92,7 @@ enum Udmf_ListenerStatus
  
 **起始版本：** 15
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | UDMF_FINISHED = 0 | 表示获取数据成功。 |

@@ -1,21 +1,26 @@
 # Interfaces (其他)
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-avmusictemplate-i
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 本模块首批接口从API version 23开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 本模块仅适用于API version 23及以上版本的Car设备。
 
 
 
-#### MediaTab
+## MediaTab
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 媒体标签页的定义。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -27,13 +32,17 @@
 
 
 
-#### OperResult
+## OperResult
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 操作结果的定义。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -43,13 +52,17 @@
 
 
 
-#### MediaTabContent
+## MediaTabContent
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 媒体标签页内容的定义。继承自[OperResult](#operresult)。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -59,13 +72,17 @@
 
 
 
-#### Compilation
+## Compilation
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 合集的定义。继承自[OperResult](#operresult)。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -79,13 +96,17 @@
 
 
 
-#### Banner
+## Banner
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 海报的定义。继承自[MediaEntity](#mediaentity)。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -94,13 +115,17 @@
 
 
 
-#### Album
+## Album
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 专辑的定义。继承自[MediaEntity](#mediaentity)。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -112,13 +137,17 @@
 
 
 
-#### Ranking
+## Ranking
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 排行榜的定义。继承自[MediaEntity](#mediaentity)。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -127,13 +156,17 @@
 
 
 
-#### MediaEntity
+## MediaEntity
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 媒体实例的定义。继承自[OperResult](#operresult)。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -149,13 +182,17 @@
 
 
 
-#### QueryMediaEntityParam
+## QueryMediaEntityParam
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 查询媒体实例参数的定义。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -169,13 +206,17 @@
 
 
 
-#### EpisodeRange
+## EpisodeRange
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 剧集的范围的定义。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -185,13 +226,17 @@
 
 
 
-#### PageMediaEntity
+## PageMediaEntity
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 标签页媒体的定义。继承自[OperResult](#operresult)。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -207,13 +252,17 @@
 
 
 
-#### Single
+## Single
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 单曲的定义。继承自[MediaEntity](#mediaentity)。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -229,13 +278,17 @@
 
 
 
-#### PlayInfo
+## PlayInfo
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 播放信息的定义。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -261,13 +314,17 @@
 
 
 
-#### FavoriteData
+## FavoriteData
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 收藏/订阅的定义。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -278,13 +335,17 @@
 
 
 
-#### SettingItem
+## SettingItem
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置项的定义。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -298,13 +359,17 @@
 
 
 
-#### SettingContent
+## SettingContent
 
-设置内容的定义（音频模板里有定义设置页面，设置内容用于设置页的填充）。
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+设置内容的定义。用于在音频模板的设置页面中展示或配置相关内容。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -316,13 +381,17 @@
 
 
 
-#### QrCodeInfo
+## QrCodeInfo
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 二维码信息的定义。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -339,13 +408,17 @@
 
 
 
-#### DialogActionInfo
+## DialogActionInfo
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 对话框动作信息的定义。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -356,13 +429,17 @@
 
 
 
-#### DialogInfo
+## DialogInfo
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 对话框信息的定义。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -377,13 +454,17 @@
 
 
 
-#### DialogButtonInfo
+## DialogButtonInfo
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 对话框按钮信息的定义。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -394,13 +475,17 @@
 
 
 
-#### MemberPurchaseInfo
+## MemberPurchaseInfo
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 会员购买信息的定义。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -413,13 +498,17 @@
 
 
 
-#### CustomElement
+## CustomElement
 
-“我的主页”自定义元素的定义。继承自[OperResult](#operresult)。
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+“我的主页”（应用内用户个人主页）自定义元素的定义。继承自[OperResult](#operresult)。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -431,13 +520,17 @@
 
 
 
-#### UserInfo
+## UserInfo
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用户信息的定义。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -451,13 +544,17 @@
 
 
 
-#### SearchPlayInfo
+## SearchPlayInfo
 
-搜播信息的定义。
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+搜播（搜索播放）信息的定义。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -467,13 +564,17 @@
 
 
 
-#### SearchPlayMusicInfo
+## SearchPlayMusicInfo
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 搜播的音频信息的定义。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -486,13 +587,17 @@
 
 
 
-#### SearchPlayMusicItem
+## SearchPlayMusicItem
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 搜播的音频项目的定义。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -502,13 +607,17 @@
 
 
 
-#### SearchPlayVideoInfo
+## SearchPlayVideoInfo
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 搜播的视频信息的定义。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

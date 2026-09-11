@@ -4,13 +4,13 @@
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1215
 
-#### 问题现象
+## 问题现象
 
 为Grid组件添加点击事件以实现缩放动画效果时，如何实现只点击特定GridItem项的功能？
  
  
 
-#### 背景知识
+## 背景知识
 
 - [Grid](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid)是HarmonyOS提供的一种网格容器，由行和列分割的单元格所组成，通过指定项目所在的单元格做出各种各样的布局。网格布局具有较强的页面均分能力，子组件占比控制能力，是一种重要的自适应布局。
 - [scale](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-common-method#scale)属性用于设置canvas画布的缩放变换属性，后续的绘制操作将按照缩放比例进行缩放。
@@ -18,7 +18,7 @@
  
  
 
-#### 解决方案
+## 解决方案
 1. GridLayoutOptions是Grid组件的布局选项，在该对象中设置onGetRectByIndex方法用以初始化整个Grid组件。
 ```text
 layoutOptions: GridLayoutOptions = {
@@ -134,4 +134,4 @@ struct GridClick {
 运行效果图如下所示：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/75i5ZdyGReGBTygk03_dRw/zh-cn_image_0000002628593594.png?HW-CC-KV=V1&HW-CC-Date=20260818T063536Z&HW-CC-Expire=86400&HW-CC-Sign=DEC36932C2BD4EB0E35AB4906340BA469ADDACC899FC3F3BE63461CAC52A02B2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/75i5ZdyGReGBTygk03_dRw/zh-cn_image_0000002628593594.png?HW-CC-KV=V1&HW-CC-Date=20260911T072743Z&HW-CC-Expire=86400&HW-CC-Sign=4907867EFA8CDBC5705979DE344DA52E5F848261C8D84D35F726AF8AA8787ECD)

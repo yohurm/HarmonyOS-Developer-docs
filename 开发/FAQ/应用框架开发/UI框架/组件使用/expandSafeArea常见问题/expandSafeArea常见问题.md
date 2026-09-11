@@ -246,7 +246,7 @@ struct CanvasExample {
   "module": {
     "metadata": [
       {
-        "name": "avoid_cutout", // 设置挖空区避让
+        "name": "avoid_cutout", <em>// 设置挖空区避让</em>
         "value": "true"
       }
     ],

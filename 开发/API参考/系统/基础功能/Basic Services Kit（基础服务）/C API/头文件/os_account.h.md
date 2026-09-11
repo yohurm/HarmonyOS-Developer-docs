@@ -1,13 +1,14 @@
 # os_account.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-os-account-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明访问和管理系统账号信息的API。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OsAccount_ErrCode OH_OsAccount_GetName(char *buffer, size_t buffer_size) | 获取调用方进程所属的系统账号的名称。 |
@@ -41,15 +45,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_OsAccount_GetName()
+### OH_OsAccount_GetName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OsAccount_ErrCode OH_OsAccount_GetName(char *buffer, size_t buffer_size)
@@ -65,6 +71,7 @@ OsAccount_ErrCode OH_OsAccount_GetName(char *buffer, size_t buffer_size)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | char *buffer | 名称字符数组，其应具有能够存放名称和结束字符（'\0'）的空间，且最大长度为LOGIN_NAME_MAX。 |
@@ -73,6 +80,7 @@ OsAccount_ErrCode OH_OsAccount_GetName(char *buffer, size_t buffer_size)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OsAccount_ErrCode | OS_ACCOUNT_ERR_OK：操作成功。 OS_ACCOUNT_ERR_INTERNAL_ERROR：内部错误。 OS_ACCOUNT_ERR_INVALID_PARAMETER：表示buffer为空指针或名称长度（包括结束字符'\0'）大于buffer_size。 |
@@ -80,9 +88,10 @@ OsAccount_ErrCode OH_OsAccount_GetName(char *buffer, size_t buffer_size)
  
   
 
-#### OH_OsAccount_GetNameByLocalId()
+### OH_OsAccount_GetNameByLocalId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OsAccount_ErrCode OH_OsAccount_GetNameByLocalId(int32_t localId, char *name, size_t name_size)
@@ -98,6 +107,7 @@ OsAccount_ErrCode OH_OsAccount_GetNameByLocalId(int32_t localId, char *name, siz
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | int32_t localId | 目标系统账号的本地ID。 |
@@ -107,6 +117,7 @@ OsAccount_ErrCode OH_OsAccount_GetNameByLocalId(int32_t localId, char *name, siz
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OsAccount_ErrCode | OS_ACCOUNT_ERR_OK：操作成功。 OS_ACCOUNT_ERR_PERMISSION_DENIED：权限被拒绝。 OS_ACCOUNT_ERR_INTERNAL_ERROR：内部错误。 OS_ACCOUNT_ERR_INVALID_PARAMETER：name为空指针或名称长度（包括结束字符'\0'）大于name_size。 OS_ACCOUNT_ERR_ACCOUNT_NOT_FOUND：未找到账号。 OS_ACCOUNT_ERR_RESTRICTED_ACCOUNT：账号受限。 |

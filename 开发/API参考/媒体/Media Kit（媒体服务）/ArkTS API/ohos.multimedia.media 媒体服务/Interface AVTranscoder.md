@@ -1,11 +1,11 @@
 # Interface (AVTranscoder)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avtranscoder
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-视频转码管理接口，用于视频转码。在调用AVTranscoder的方法前，需要先通过[createAVTranscoder()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-f#mediacreateavtranscoder12)构建一个AVTranscoder实例。
+视频转码管理类，用于视频转码。在调用AVTranscoder的方法前，需要先通过[createAVTranscoder()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-f#mediacreateavtranscoder12)构建一个AVTranscoder实例。
 
 视频转码demo可参考：[视频转码开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-avtranscoder-for-transcodering)
 
@@ -14,7 +14,8 @@
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -24,13 +25,15 @@ import { media } from '@kit.MediaKit';
 
 
 
-#### 属性
+## 属性
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVTranscoder
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -40,7 +43,8 @@ import { media } from '@kit.MediaKit';
 
 
 
-#### addWatermark
+## addWatermark
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -60,6 +64,7 @@ addWatermark(watermark: image.PixelMap, config: WatermarkConfiguration): Promise
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | watermark | image.PixelMap | 是 | 水印图像。 |
@@ -67,6 +72,7 @@ addWatermark(watermark: image.PixelMap, config: WatermarkConfiguration): Promise
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -76,6 +82,7 @@ addWatermark(watermark: image.PixelMap, config: WatermarkConfiguration): Promise
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -99,8 +106,8 @@ async function test() {
   // 配置水印参数。
   let watermarkConfig: media.WatermarkConfiguration = {
       // 根据实际需求配置水印参数，单位为像素（px）。
-      top: 40,
-      left: 40,
+      top : 40,
+      left : 40,
       width: 200,
       height: 300,
   };
@@ -115,7 +122,8 @@ async function test() {
 
 
 
-#### prepare12+
+## prepare12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -129,12 +137,14 @@ prepare(config: AVTranscoderConfig): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | config | AVTranscoderConfig | 是 | 配置视频转码的相关参数。 当config中设置的目标视频分辨率宽videoFrameWidth大于原视频的宽或目标视频分辨率高videoFrameHeight大于原视频的高时，会上报错误码401。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -144,6 +154,7 @@ prepare(config: AVTranscoderConfig): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -182,7 +193,8 @@ async function test() {
 
 
 
-#### start12+
+## start12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -198,6 +210,7 @@ start(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -206,6 +219,7 @@ start(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -233,7 +247,8 @@ async function test() {
 
 
 
-#### pause12+
+## pause12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -249,6 +264,7 @@ pause(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -257,6 +273,7 @@ pause(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -284,7 +301,8 @@ async function test() {
 
 
 
-#### resume12+
+## resume12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -300,6 +318,7 @@ resume(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -308,6 +327,7 @@ resume(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -335,7 +355,8 @@ async function test() {
 
 
 
-#### cancel12+
+## cancel12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -351,6 +372,7 @@ cancel(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -359,6 +381,7 @@ cancel(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -386,7 +409,8 @@ async function test() {
 
 
 
-#### release12+
+## release12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -402,6 +426,7 @@ release(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -410,6 +435,7 @@ release(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -436,7 +462,8 @@ async function test() {
 
 
 
-#### on('progressUpdate')12+
+## on('progressUpdate')12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -449,6 +476,7 @@ on(type:'progressUpdate', callback: Callback&lt;number&gt;):void
 **系统能力：** SystemCapability.Multimedia.Media.AVTranscoder
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -472,7 +500,8 @@ async function test() {
 
 
 
-#### off('progressUpdate')12+
+## off('progressUpdate')12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -485,6 +514,7 @@ off(type:'progressUpdate', callback?: Callback&lt;number&gt;): void
 **系统能力：** SystemCapability.Multimedia.Media.AVTranscoder
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -506,7 +536,8 @@ async function test() {
 
 
 
-#### on('error')12+
+## on('error')12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -522,15 +553,17 @@ on(type: 'error', callback: ErrorCallback): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 转码错误事件回调类型'error'。转码过程中发生错误，触发该事件。 |
+| type | string | 是 | 转码错误事件回调类型'error'。 - 'error'：录制过程中发生错误，触发该事件。 |
 | callback | ErrorCallback | 是 | 转码错误事件回调方法。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -561,7 +594,8 @@ async function test() {
 
 
 
-#### off('error')12+
+## off('error')12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -574,6 +608,7 @@ off(type:'error', callback?: ErrorCallback): void
 **系统能力：** SystemCapability.Multimedia.Media.AVTranscoder
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -595,13 +630,14 @@ async function test() {
 
 
 
-#### on('complete')12+
+## on('complete')12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 on(type: 'complete', callback: Callback&lt;void&gt;): void
 
-注册转码完成事件，并通过注册的回调方法通知开发者。开发者只能注册一个完成事件的回调方法，当开发者重复注册时，以最后一次注册的回调接口为准。使用callback异步回调。
+注册转码完成事件，并通过注册的回调方法通知开发者。开发者只能注册一个进度更新事件的回调方法，当开发者重复注册时，以最后一次注册的回调接口为准。使用callback异步回调。
 
 当AVTranscoder上报complete事件时，当前转码操作已完成，开发者需要通过[release()](#release12)退出转码操作。
 
@@ -611,9 +647,10 @@ on(type: 'complete', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 完成事件回调类型，支持的事件：'complete'，在转码完成时系统会自动触发此事件。 |
+| type | string | 是 | 完成事件回调类型，支持的事件：'complete'，在转码过程中系统会自动触发此事件。 |
 | callback | Callback&lt;void&gt; | 是 | 回调函数，返回完成事件回调方法。 |
 
 
@@ -640,7 +677,8 @@ async function test() {
 
 
 
-#### off('complete')12+
+## off('complete')12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -653,6 +691,7 @@ off(type:'complete', callback?: Callback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Media.AVTranscoder
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |

@@ -1,16 +1,17 @@
 # IFAA
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/onlineauthentication-ifaa-api
 **支持设备：** Phone | PC/2in1 | Tablet
 
-IFAA提供移动端免密身份认证能力，实现接入IIFAA（互联网可信认证联盟）的业务免密登录，免密支付等业务场景（注：IFAA在本文中指HarmonyOS系统免密认证模块，IIFAA在本文中指联盟及相关技术规范）。
+IFAA提供移动端免密认证能力，实现接入IIFAA（互联网可信认证联盟）的业务免密登录，免密支付等业务场景（注：IFAA在本文中指HarmonyOS系统免密认证模块，IIFAA在本文中指联盟及相关技术规范）。
  
 **起始版本：** 4.1.0(11)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -20,7 +21,8 @@ import { ifaa } from '@kit.OnlineAuthenticationKit';
  
   
 
-#### getVersionSync
+## ifaa.getVersionSync
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -38,6 +40,7 @@ getVersionSync(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回IFAA免密认证的接口版本号。 |
@@ -47,6 +50,7 @@ getVersionSync(): number
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Device type error. 适用版本：6.0.1(21)+ |
@@ -62,7 +66,8 @@ console.info('Succeeded in doing getVersionSync. version:', res);
  
   
 
-#### getAnonymousIdSync
+## ifaa.getAnonymousIdSync
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -80,6 +85,7 @@ getAnonymousIdSync(userToken: Uint8Array): Uint8Array
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | userToken | Uint8Array | 是 | 唯一标识用户的id。 |
@@ -87,6 +93,7 @@ getAnonymousIdSync(userToken: Uint8Array): Uint8Array
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Uint8Array | 返回IFAA免密认证的匿名化ID。 |
@@ -96,6 +103,7 @@ getAnonymousIdSync(userToken: Uint8Array): Uint8Array
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[IFAA免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-ifaa)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -116,7 +124,8 @@ console.info('Succeeded in doing getAnonymousIdSync. anonymousId:', getAnonIdRes
  
   
 
-#### getAnonymousId
+## ifaa.getAnonymousId
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -134,6 +143,7 @@ getAnonymousId(userToken: Uint8Array): Promise&lt;Uint8Array&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | userToken | Uint8Array | 是 | 唯一标识用户的id。 |
@@ -141,6 +151,7 @@ getAnonymousId(userToken: Uint8Array): Promise&lt;Uint8Array&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Uint8Array&gt; | Promise对象，返回匿名化ID。 |
@@ -150,6 +161,7 @@ getAnonymousId(userToken: Uint8Array): Promise&lt;Uint8Array&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[IFAA免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-ifaa)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -176,7 +188,8 @@ getAnonIdPromise.then(result => {
  
   
 
-#### getAnonymousId
+## ifaa.getAnonymousId
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -194,6 +207,7 @@ getAnonymousId(userToken: Uint8Array, callback: AsyncCallback&lt;Uint8Array&gt;)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | userToken | Uint8Array | 是 | 唯一标识用户的id。 |
@@ -204,6 +218,7 @@ getAnonymousId(userToken: Uint8Array, callback: AsyncCallback&lt;Uint8Array&gt;)
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[IFAA免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-ifaa)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -232,7 +247,8 @@ ifaa.getAnonymousId(arg,
  
   
 
-#### queryStatusSync
+## ifaa.queryStatusSync
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -250,6 +266,7 @@ queryStatusSync(userToken: Uint8Array): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | userToken | Uint8Array | 是 | 唯一标识用户的id。 |
@@ -257,6 +274,7 @@ queryStatusSync(userToken: Uint8Array): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回IFAA免密认证的开通状态。true代表已开通，false代表未开通。 |
@@ -266,6 +284,7 @@ queryStatusSync(userToken: Uint8Array): boolean
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[IFAA免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-ifaa)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -289,7 +308,8 @@ if (status) {
  
   
 
-#### queryStatus
+## ifaa.queryStatus
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -307,6 +327,7 @@ queryStatus(userToken: Uint8Array): Promise&lt;boolean&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | userToken | Uint8Array | 是 | 唯一标识用户的id。 |
@@ -314,6 +335,7 @@ queryStatus(userToken: Uint8Array): Promise&lt;boolean&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象，true代表已开通，false代表未开通。 |
@@ -323,6 +345,7 @@ queryStatus(userToken: Uint8Array): Promise&lt;boolean&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[IFAA免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-ifaa)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -349,7 +372,8 @@ promise.then(queryStatusResult => {
  
   
 
-#### queryStatus
+## ifaa.queryStatus
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -367,6 +391,7 @@ queryStatus(userToken: Uint8Array, callback: AsyncCallback&lt;boolean&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | userToken | Uint8Array | 是 | 唯一标识用户的id。 |
@@ -377,6 +402,7 @@ queryStatus(userToken: Uint8Array, callback: AsyncCallback&lt;boolean&gt;): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[IFAA免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-ifaa)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -405,7 +431,8 @@ ifaa.queryStatus(arg,
  
   
 
-#### register
+## ifaa.register
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -423,6 +450,7 @@ register(registerData: Uint8Array): Promise&lt;Uint8Array&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | registerData | Uint8Array | 是 | IIFAA服务器下发的TLV格式的开通数据。 |
@@ -430,6 +458,7 @@ register(registerData: Uint8Array): Promise&lt;Uint8Array&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Uint8Array&gt; | Promise对象，返回开通数据。 |
@@ -439,6 +468,7 @@ register(registerData: Uint8Array): Promise&lt;Uint8Array&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[IFAA免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-ifaa)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -465,7 +495,8 @@ registerPromise.then(registerResult => {
  
   
 
-#### register
+## ifaa.register
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -483,6 +514,7 @@ register(registerData: Uint8Array, callback: AsyncCallback&lt;Uint8Array&gt;): v
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | registerData | Uint8Array | 是 | IIFAA服务器下发的TLV格式的开通数据。 |
@@ -493,6 +525,7 @@ register(registerData: Uint8Array, callback: AsyncCallback&lt;Uint8Array&gt;): v
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[IFAA免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-ifaa)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -520,7 +553,8 @@ ifaa.register(arg, (err: BusinessError, registerResult: Uint8Array) => {
  
   
 
-#### preAuthSync
+## ifaa.preAuthSync
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -538,6 +572,7 @@ preAuthSync(): Uint8Array
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Uint8Array | 返回IFAA免密认证的预认证参数，其中存在用于后续进行生物认证时所需的挑战值（challenge）。 |
@@ -547,6 +582,7 @@ preAuthSync(): Uint8Array
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[IFAA免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-ifaa)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Device type error. 适用版本：6.0.1(21)+ |
@@ -564,7 +600,8 @@ console.info('Succeeded in doing preAuthSync. preAuthResult:', preAuthResult);
  
   
 
-#### preAuth
+## ifaa.preAuth
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -582,6 +619,7 @@ preAuth(): Promise&lt;Uint8Array&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Uint8Array&gt; | Promise对象，返回预认证数据。 |
@@ -591,6 +629,7 @@ preAuth(): Promise&lt;Uint8Array&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[IFAA免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-ifaa)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Device type error. 适用版本：6.0.1(21)+ |
@@ -614,7 +653,8 @@ preAuthPromise.then(preAuthResult => {
  
   
 
-#### preAuth
+## ifaa.preAuth
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -632,6 +672,7 @@ preAuth(callback: AsyncCallback&lt;Uint8Array&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;Uint8Array&gt; | 是 | 回调函数。操作成功时，err为undefined，data为获取到的预认证数据；否则为错误对象。 |
@@ -641,6 +682,7 @@ preAuth(callback: AsyncCallback&lt;Uint8Array&gt;): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[IFAA免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-ifaa)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -667,7 +709,8 @@ ifaa.preAuth(
  
   
 
-#### authSync
+## ifaa.authSync
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -685,6 +728,7 @@ IFAA免密认证，同步返回结果。
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | authToken | Uint8Array | 是 | 用户身份认证通过的凭证（通过用户认证模块可获取，调用@ohos.userIAM.userAuth的getUserAuthInstance）。 |
@@ -693,6 +737,7 @@ IFAA免密认证，同步返回结果。
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Uint8Array | 返回TLV格式的认证结果。 |
@@ -702,6 +747,7 @@ IFAA免密认证，同步返回结果。
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[IFAA免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-ifaa)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -724,7 +770,8 @@ console.info('Succeeded in doing authSync. authResult:', authResult);
  
   
 
-#### auth
+## ifaa.auth
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -742,6 +789,7 @@ IFAA免密认证，使用Promise异步回调。
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | authToken | Uint8Array | 是 | 用户身份认证通过的凭证（通过用户认证模块可获取，调用@ohos.userIAM.userAuth的getUserAuthInstance）。 |
@@ -750,6 +798,7 @@ IFAA免密认证，使用Promise异步回调。
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Uint8Array&gt; | Promise对象，返回TLV格式的认证结果。 |
@@ -759,6 +808,7 @@ IFAA免密认证，使用Promise异步回调。
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[IFAA免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-ifaa)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -787,7 +837,8 @@ authPromise.then(authResult => {
  
   
 
-#### auth
+## ifaa.auth
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -805,6 +856,7 @@ IFAA免密认证，使用Callback异步回调。
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | authToken | Uint8Array | 是 | 用户身份认证通过的凭证（通过用户认证模块可获取，调用@ohos.userIAM.userAuth的getUserAuthInstance）。 |
@@ -816,6 +868,7 @@ IFAA免密认证，使用Callback异步回调。
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[IFAA免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-ifaa)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -846,7 +899,8 @@ ifaa.auth(token, arg,
  
   
 
-#### deregisterSync
+## ifaa.deregisterSync
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -864,6 +918,7 @@ deregisterSync(deregisterData: Uint8Array): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deregisterData | Uint8Array | 是 | IIFAA服务器下发的TLV格式的注销数据。 |
@@ -873,6 +928,7 @@ deregisterSync(deregisterData: Uint8Array): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[IFAA免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-ifaa)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -891,7 +947,8 @@ ifaa.deregisterSync(arg);
  
   
 
-#### deregister
+## ifaa.deregister
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -909,6 +966,7 @@ deregister(deregisterData: Uint8Array): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deregisterData | Uint8Array | 是 | IIFAA服务器下发的TLV格式的注销数据。 |
@@ -916,6 +974,7 @@ deregister(deregisterData: Uint8Array): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果的Promise对象。 |
@@ -925,6 +984,7 @@ deregister(deregisterData: Uint8Array): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[IFAA免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-ifaa)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -950,7 +1010,8 @@ promise.then(()=> {
  
   
 
-#### deregister
+## ifaa.deregister
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -968,6 +1029,7 @@ deregister(deregisterData: Uint8Array, callback: AsyncCallback&lt;void&gt;): voi
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deregisterData | Uint8Array | 是 | IIFAA服务器下发的TLV格式的注销数据。 |
@@ -978,6 +1040,7 @@ deregister(deregisterData: Uint8Array, callback: AsyncCallback&lt;void&gt;): voi
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[IFAA免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-ifaa)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -1005,7 +1068,8 @@ ifaa.deregister(arg,
  
   
 
-#### getProtocolVersionSync
+## ifaa.getProtocolVersionSync
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1023,6 +1087,7 @@ getProtocolVersionSync(): Uint8Array
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Uint8Array | 返回IFAA免密认证的协议版本号。 |
@@ -1032,6 +1097,7 @@ getProtocolVersionSync(): Uint8Array
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[IFAA免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-ifaa)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Device type error. 适用版本：6.0.1(21)+ |
@@ -1047,7 +1113,8 @@ let res: Uint8Array = ifaa.getProtocolVersionSync();
  
   
 
-#### getProtocolVersion
+## ifaa.getProtocolVersion
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1065,6 +1132,7 @@ getProtocolVersion(): Promise&lt;Uint8Array&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Uint8Array&gt; | Promise对象，返回协议版本号。 |
@@ -1074,6 +1142,7 @@ getProtocolVersion(): Promise&lt;Uint8Array&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[IFAA免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-ifaa)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Device type error. 适用版本：6.0.1(21)+ |
@@ -1097,7 +1166,8 @@ promise.then(result => {
  
   
 
-#### getProtocolVersion
+## ifaa.getProtocolVersion
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1115,6 +1185,7 @@ getProtocolVersion(callback: AsyncCallback&lt;Uint8Array&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;Uint8Array&gt; | 是 | 回调函数。操作成功时，err为undefined，data为获取到的协议版本号；否则为错误对象。 |
@@ -1124,6 +1195,7 @@ getProtocolVersion(callback: AsyncCallback&lt;Uint8Array&gt;): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[IFAA免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-ifaa)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -1150,7 +1222,8 @@ ifaa.getProtocolVersion(
  
   
 
-#### getSupportedCertTypesSync
+## ifaa.getSupportedCertTypesSync
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1168,6 +1241,7 @@ getSupportedCertTypesSync(): Uint8Array
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Uint8Array | 返回IFAA免密认证支持的证书格式。 |
@@ -1177,6 +1251,7 @@ getSupportedCertTypesSync(): Uint8Array
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[IFAA免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-ifaa)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Device type error. 适用版本：6.0.1(21)+ |
@@ -1194,7 +1269,8 @@ console.info('Succeeded in doing getSupportedCertTypesSync. supportedCertTypes:'
  
   
 
-#### getSupportedCertTypes
+## ifaa.getSupportedCertTypes
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1212,6 +1288,7 @@ getSupportedCertTypes(): Promise&lt;Uint8Array&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Uint8Array&gt; | Promise对象，返回支持的证书格式。 |
@@ -1221,6 +1298,7 @@ getSupportedCertTypes(): Promise&lt;Uint8Array&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[IFAA免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-ifaa)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Device type error. 适用版本：6.0.1(21)+ |
@@ -1244,7 +1322,8 @@ promise.then(result => {
  
   
 
-#### getSupportedCertTypes
+## ifaa.getSupportedCertTypes
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1262,6 +1341,7 @@ getSupportedCertTypes(callback: AsyncCallback&lt;Uint8Array&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;Uint8Array&gt; | 是 | 回调函数。操作成功时，err为undefined，data为获取到的证书格式；否则为错误对象。 |
@@ -1271,6 +1351,7 @@ getSupportedCertTypes(callback: AsyncCallback&lt;Uint8Array&gt;): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[IFAA免密认证错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-ifaa)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |

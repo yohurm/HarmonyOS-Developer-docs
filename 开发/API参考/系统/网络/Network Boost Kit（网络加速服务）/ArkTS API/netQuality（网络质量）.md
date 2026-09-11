@@ -1,6 +1,6 @@
 # netQuality（网络质量）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/networkboost-netquality
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -10,7 +10,8 @@
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -20,7 +21,8 @@ import { netQuality } from '@kit.NetworkBoostKit';
  
   
 
-#### netQuality.on('netQosChange')
+## netQuality.on('netQosChange')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -40,6 +42,7 @@ on(type: 'netQosChange', callback: Callback<Array&lt;NetworkQos&gt;>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定填写"netQosChange"字符串，表示网络质量变化事件。 |
@@ -50,6 +53,7 @@ on(type: 'netQosChange', callback: Callback<Array&lt;NetworkQos&gt;>): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -78,7 +82,8 @@ try {
  
   
 
-#### netQuality.off('netQosChange')
+## netQuality.off('netQosChange')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -98,6 +103,7 @@ off(type: 'netQosChange', callback?: Callback<Array&lt;NetworkQos&gt;>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定填写"netQosChange"字符串，表示连接状态变化事件。 |
@@ -108,6 +114,7 @@ off(type: 'netQosChange', callback?: Callback<Array&lt;NetworkQos&gt;>): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -129,7 +136,8 @@ try {
  
   
 
-#### netQuality.on('netSceneChange')
+## netQuality.on('netSceneChange')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -149,6 +157,7 @@ on(type: 'netSceneChange', callback: Callback<Array&lt;NetworkScene&gt;>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定填写"netSceneChange"字符串，表示网络场景变化事件。 |
@@ -159,6 +168,7 @@ on(type: 'netSceneChange', callback: Callback<Array&lt;NetworkScene&gt;>): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -190,7 +200,8 @@ try {
  
   
 
-#### netQuality.off('netSceneChange')
+## netQuality.off('netSceneChange')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -210,6 +221,7 @@ off(type: 'netSceneChange', callback?: Callback<Array&lt;NetworkScene&gt;>): voi
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定填写"netSceneChange"字符串，表示网络场景变化事件。 |
@@ -220,6 +232,7 @@ off(type: 'netSceneChange', callback?: Callback<Array&lt;NetworkScene&gt;>): voi
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -241,7 +254,8 @@ try {
  
   
 
-#### netQuality.reportQoe
+## netQuality.reportQoe
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -261,6 +275,7 @@ reportQoe(appQoe: AppQoe): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | appQoe | AppQoe | 是 | 表示应用需要反馈的传输体验信息。 |
@@ -270,6 +285,7 @@ reportQoe(appQoe: AppQoe): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verify error. |
@@ -297,7 +313,8 @@ try {
  
   
 
-#### AppQoe
+## AppQoe
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -311,6 +328,7 @@ try {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | serviceType | ServiceType | 否 | 否 | 应用的业务类型。 |
@@ -319,7 +337,8 @@ try {
  
   
 
-#### NetworkQos
+## NetworkQos
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -333,6 +352,7 @@ try {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | pathType | PathType | 否 | 否 | 表明相应的数据路径上的网络质量信息。 |
@@ -347,7 +367,8 @@ try {
  
   
 
-#### PathType
+## PathType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -361,6 +382,7 @@ try {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CELLULAR_PRIMARY | 0 | 蜂窝主卡。 |
@@ -371,7 +393,8 @@ try {
  
   
 
-#### RateBps
+## RateBps
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -387,6 +410,7 @@ type RateBps = number
  
 **起始版本：** 5.0.0(12)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 表示值的类型为number，可取任意正数，单位为bps。 |
@@ -394,7 +418,8 @@ type RateBps = number
  
   
 
-#### ServiceType
+## ServiceType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -410,6 +435,7 @@ type ServiceType = 'default' | 'background' | 'realtimeVoice' | 'realtimeVideo' 
  
 **起始版本：** 5.0.0(12)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | 'default' | 表示默认服务类型，值固定为'default'字符串。 |
@@ -440,7 +466,8 @@ type ServiceType = 'default' | 'background' | 'realtimeVoice' | 'realtimeVideo' 
  
   
 
-#### QoeType
+## QoeType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -456,6 +483,7 @@ type QoeType = 'good' | BadQoeCause
  
 **起始版本：** 5.0.0(12)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | 'good' | 表示体验良好，值固定为'good'字符串。 |
@@ -464,7 +492,8 @@ type QoeType = 'good' | BadQoeCause
  
   
 
-#### BadQoeCause
+## BadQoeCause
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -480,6 +509,7 @@ type BadQoeCause = 'unknown' | 'serverErr' | 'noData' | 'packetLost' | 'packetOu
  
 **起始版本：** 5.0.0(12)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | 'unknown' | 表示未知原因，值固定为'unknown'字符串。 |
@@ -493,7 +523,8 @@ type BadQoeCause = 'unknown' | 'serverErr' | 'noData' | 'packetLost' | 'packetOu
  
   
 
-#### 速率带宽级别
+## 速率带宽级别
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -507,6 +538,7 @@ type BadQoeCause = 'unknown' | 'serverErr' | 'noData' | 'packetLost' | 'packetOu
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 值 | 说明 |
 | --- | --- | --- | --- |
 | BPS | number | 1 | 1bps |
@@ -518,7 +550,8 @@ type BadQoeCause = 'unknown' | 'serverErr' | 'noData' | 'packetLost' | 'packetOu
  
   
 
-#### NetworkScene
+## NetworkScene
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -532,6 +565,7 @@ type BadQoeCause = 'unknown' | 'serverErr' | 'noData' | 'packetLost' | 'packetOu
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | pathType | PathType | 否 | 否 | 表明相应的数据路径上的网络场景信息。 |
@@ -542,7 +576,8 @@ type BadQoeCause = 'unknown' | 'serverErr' | 'noData' | 'packetLost' | 'packetOu
  
   
 
-#### WeakSignalPrediction
+## WeakSignalPrediction
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -556,6 +591,7 @@ type BadQoeCause = 'unknown' | 'serverErr' | 'noData' | 'packetLost' | 'packetOu
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | isLastPredictionValid | boolean | 否 | 否 | 最近一次的弱信号预测是否有效，true表示最近一次的弱信号预测依旧有效，false表示最近一次的弱信号预测失效，此时startTime和duration参数忽略。 |
@@ -565,7 +601,8 @@ type BadQoeCause = 'unknown' | 'serverErr' | 'noData' | 'packetLost' | 'packetOu
  
   
 
-#### Scene
+## Scene
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -581,6 +618,7 @@ type Scene = 'normal' | 'congestion' | 'frequentHandover' | 'weakSignal'
  
 **起始版本：** 5.0.0(12)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | 'normal' | 表示正常场景，值固定为'normal'字符串。 |
@@ -591,7 +629,8 @@ type Scene = 'normal' | 'congestion' | 'frequentHandover' | 'weakSignal'
  
   
 
-#### DataSpeedSimpleAction
+## DataSpeedSimpleAction
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -607,6 +646,7 @@ type DataSpeedSimpleAction = 'suspendData' | 'decreaseData' | 'increaseData' | '
  
 **起始版本：** 5.0.0(12)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | 'suspendData' | 表示停止发包，值固定为'suspendData'字符串。 |
@@ -617,7 +657,8 @@ type DataSpeedSimpleAction = 'suspendData' | 'decreaseData' | 'increaseData' | '
  
   
 
-#### RecommendedAction
+## RecommendedAction
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -633,6 +674,7 @@ type RecommendedAction = 'doCaching' | DataSpeedSimpleAction
  
 **起始版本：** 5.0.0(12)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | 'doCaching' | 表示做缓存动作，值固定为'doCaching'字符串。 |

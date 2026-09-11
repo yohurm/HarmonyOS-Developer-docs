@@ -1,11 +1,12 @@
 # xeg_gles_neural_upscale.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-kit-xeg-gles-neural-upscale-8h
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -27,16 +28,19 @@ XEngine空域AI超分特性OpenGL ES接口。使用此头文件中的接口前�
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 宏定义
+### 宏定义
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | XEG_NEURAL_UPSCALE_SCISSOR 0x1U | 用于通过HMS_XEG_NeuralUpscaleParameter接口设置超分的裁剪窗口参数，裁剪窗口用于确定对输入图像采样的区域。 使用此宏定义设置裁剪窗口参数时，向接口传递的param值必须是长度为4的无符号整数数组，否则将产生未定义行为，如渲染效果不正确或者程序崩溃。数组中的值依次为：x，y，width，height，其中x、y确定裁剪窗口的左下角，width、height分别确定裁剪窗口的宽和高。 可选参数，不设置裁剪窗口参数时的默认值为(0, 0, 输入纹理的宽, 输入纹理的高)。 |
@@ -46,10 +50,12 @@ XEngine空域AI超分特性OpenGL ES接口。使用此头文件中的接口前�
  
   
 
-#### 类型定义
+### 类型定义
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | typedef void(GL_APIENTRYP PFN_HMS_XEG_NEURALUPSCALEPARAMETER) (GLenum pname, GLvoid *param) | 设置空域AI超分输入参数的函数指针定义。 |
@@ -58,10 +64,12 @@ XEngine空域AI超分特性OpenGL ES接口。使用此头文件中的接口前�
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | GL_APICALL void GL_APIENTRY HMS_XEG_NeuralUpscaleParameter (GLenum pname, GLvoid *param) | 设置空域AI超分输入参数。 |

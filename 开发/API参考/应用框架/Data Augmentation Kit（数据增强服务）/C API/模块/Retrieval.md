@@ -1,11 +1,12 @@
 # Retrieval
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/dataaugmentation-capi-retrieval
 **支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -15,16 +16,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 文件
+### 文件
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | aip_retrieval.h | 提供知识检索相关的接口。 |
@@ -36,10 +40,12 @@
  
   
 
-#### 类型定义
+### 类型定义
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | typedef struct OH_Retrieval_Retriever OH_Retrieval_Retriever | 定义检索器类型，检索器是进行检索的句柄。 |
@@ -57,10 +63,12 @@
  
   
 
-#### 枚举
+### 枚举
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | Retrieval_Channel_Type { RETRIEVAL_TYPE_VECTOR = 1 } | 定义数据索引类型，目前仅包括向量索引数据。 |
@@ -68,10 +76,12 @@
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | int OH_Retrieval_CreateRetriever (const OH_Retrieval_Config *config, OH_Retrieval_Retriever **retriever) | 获取检索器。 |
@@ -103,13 +113,15 @@
  
   
 
-#### 类型定义说明
+## 类型定义说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### OH_Retrieval_Callback
+### OH_Retrieval_Callback
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -125,6 +137,7 @@ typedef void (*OH_Retrieval_Callback)(void *context, OH_Retrieval_Record *record
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 表示用户提供的上下文数据。 |
@@ -134,7 +147,8 @@ typedef void (*OH_Retrieval_Callback)(void *context, OH_Retrieval_Record *record
  
   
 
-#### OH_Retrieval_Condition
+### OH_Retrieval_Condition
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -150,7 +164,8 @@ typedef struct OH_Retrieval_Condition OH_Retrieval_Condition
  
   
 
-#### OH_Retrieval_Config
+### OH_Retrieval_Config
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -166,7 +181,8 @@ typedef struct OH_Retrieval_Config OH_Retrieval_Config
  
   
 
-#### OH_Retrieval_DbConfig
+### OH_Retrieval_DbConfig
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -182,7 +198,8 @@ typedef struct OH_Retrieval_DbConfig OH_Retrieval_DbConfig
  
   
 
-#### OH_Retrieval_Query
+### OH_Retrieval_Query
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -198,7 +215,8 @@ typedef struct OH_Retrieval_Query OH_Retrieval_Query
  
   
 
-#### OH_Retrieval_Record
+### OH_Retrieval_Record
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -214,7 +232,8 @@ typedef struct OH_Retrieval_Record OH_Retrieval_Record
  
   
 
-#### OH_Retrieval_RecordItem
+### OH_Retrieval_RecordItem
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -230,7 +249,8 @@ typedef struct OH_Retrieval_RecordItem OH_Retrieval_RecordItem
  
   
 
-#### OH_Retrieval_Retriever
+### OH_Retrieval_Retriever
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -246,7 +266,8 @@ typedef struct OH_Retrieval_Retriever OH_Retrieval_Retriever
  
   
 
-#### OH_Retrieval_SubCondition
+### OH_Retrieval_SubCondition
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -262,7 +283,8 @@ typedef struct OH_Retrieval_SubCondition OH_Retrieval_SubCondition
  
   
 
-#### OH_Retrieval_VectorCondition
+### OH_Retrieval_VectorCondition
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -278,7 +300,8 @@ typedef struct OH_Retrieval_SubCondition OH_Retrieval_VectorCondition
  
   
 
-#### Retrieval_Channel_Type
+### Retrieval_Channel_Type
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -294,13 +317,15 @@ typedef enum Retrieval_Channel_Type Retrieval_Channel_Type
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### Retrieval_Channel_Type
+### Retrieval_Channel_Type
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -314,6 +339,7 @@ enum Retrieval_Channel_Type
  
 **起始版本：** 6.0.0(20)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | RETRIEVAL_TYPE_VECTOR | 表示向量索引，其对应的数值为1。 |
@@ -321,13 +347,15 @@ enum Retrieval_Channel_Type
  
   
 
-#### 函数说明
+## 函数说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### OH_Retrieval_AddConfig()
+### OH_Retrieval_AddConfig()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -343,6 +371,7 @@ int OH_Retrieval_AddConfig(OH_Retrieval_Config *config, Retrieval_Channel_Type c
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | config | 指向检索配置 OH_Retrieval_Config 实例的指针。 |
@@ -354,6 +383,7 @@ int OH_Retrieval_AddConfig(OH_Retrieval_Config *config, Retrieval_Channel_Type c
  
 返回函数的执行状态。执行成功返回AIP_OK。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 0 | 操作成功 |
@@ -366,7 +396,8 @@ int OH_Retrieval_AddConfig(OH_Retrieval_Config *config, Retrieval_Channel_Type c
  
   
 
-#### OH_Retrieval_AddSubCondition()
+### OH_Retrieval_AddSubCondition()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -382,6 +413,7 @@ int OH_Retrieval_AddSubCondition(OH_Retrieval_Condition *condition, OH_Retrieval
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | condition | 指向检索条件OH_Retrieval_Condition实例的指针。 |
@@ -392,6 +424,7 @@ int OH_Retrieval_AddSubCondition(OH_Retrieval_Condition *condition, OH_Retrieval
  
 返回函数的执行状态。执行成功返回AIP_OK。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 0 | 操作成功 |
@@ -405,7 +438,8 @@ int OH_Retrieval_AddSubCondition(OH_Retrieval_Condition *condition, OH_Retrieval
  
   
 
-#### OH_Retrieval_CreateCondition()
+### OH_Retrieval_CreateCondition()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -429,7 +463,8 @@ OH_Retrieval_Condition *OH_Retrieval_CreateCondition()
  
   
 
-#### OH_Retrieval_CreateConfig()
+### OH_Retrieval_CreateConfig()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -453,7 +488,8 @@ OH_Retrieval_Config *OH_Retrieval_CreateConfig()
  
   
 
-#### OH_Retrieval_CreateDbConfig()
+### OH_Retrieval_CreateDbConfig()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -477,7 +513,8 @@ OH_Retrieval_DbConfig *OH_Retrieval_CreateDbConfig()
  
   
 
-#### OH_Retrieval_CreateQuery()
+### OH_Retrieval_CreateQuery()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -501,7 +538,8 @@ OH_Retrieval_Query *OH_Retrieval_CreateQuery()
  
   
 
-#### OH_Retrieval_CreateRetriever()
+### OH_Retrieval_CreateRetriever()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -517,6 +555,7 @@ int OH_Retrieval_CreateRetriever(const OH_Retrieval_Config *config, OH_Retrieval
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | config | 创建检索器时，需要输入检索器的配置项OH_Retrieval_Config。 |
@@ -527,6 +566,7 @@ int OH_Retrieval_CreateRetriever(const OH_Retrieval_Config *config, OH_Retrieval
  
 返回函数的执行状态。执行成功返回AIP_OK。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 0 | 操作成功 |
@@ -539,7 +579,8 @@ int OH_Retrieval_CreateRetriever(const OH_Retrieval_Config *config, OH_Retrieval
  
   
 
-#### OH_Retrieval_CreateVectorCondition()
+### OH_Retrieval_CreateVectorCondition()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -563,7 +604,8 @@ OH_Retrieval_VectorCondition *OH_Retrieval_CreateVectorCondition()
  
   
 
-#### OH_Retrieval_DestroyCondition()
+### OH_Retrieval_DestroyCondition()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -579,6 +621,7 @@ int OH_Retrieval_DestroyCondition(OH_Retrieval_Condition *condition)
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | condition | 指向检索条件OH_Retrieval_Condition的指针。 |
@@ -588,6 +631,7 @@ int OH_Retrieval_DestroyCondition(OH_Retrieval_Condition *condition)
  
 返回函数的执行状态。执行成功返回AIP_OK。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 0 | 操作成功 |
@@ -600,7 +644,8 @@ int OH_Retrieval_DestroyCondition(OH_Retrieval_Condition *condition)
  
   
 
-#### OH_Retrieval_DestroyConfig()
+### OH_Retrieval_DestroyConfig()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -616,6 +661,7 @@ int OH_Retrieval_DestroyConfig(OH_Retrieval_Config *config)
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | config | 指向检索配置OH_Retrieval_Config的指针。 |
@@ -625,6 +671,7 @@ int OH_Retrieval_DestroyConfig(OH_Retrieval_Config *config)
  
 返回函数的执行状态。执行成功返回AIP_OK。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 0 | 操作成功 |
@@ -637,7 +684,8 @@ int OH_Retrieval_DestroyConfig(OH_Retrieval_Config *config)
  
   
 
-#### OH_Retrieval_DestroyDbConfig()
+### OH_Retrieval_DestroyDbConfig()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -653,6 +701,7 @@ int OH_Retrieval_DestroyDbConfig(OH_Retrieval_DbConfig *dbConfig)
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | dbConfig | 表示指向OH_Retrieval_DbConfig实例的指针。 |
@@ -662,6 +711,7 @@ int OH_Retrieval_DestroyDbConfig(OH_Retrieval_DbConfig *dbConfig)
  
 返回函数的执行状态。执行成功返回AIP_OK。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 0 | 操作成功 |
@@ -674,7 +724,8 @@ int OH_Retrieval_DestroyDbConfig(OH_Retrieval_DbConfig *dbConfig)
  
   
 
-#### OH_Retrieval_DestroyQuery()
+### OH_Retrieval_DestroyQuery()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -690,6 +741,7 @@ int OH_Retrieval_DestroyQuery(OH_Retrieval_Query *query)
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | query | 指向检索词OH_Retrieval_Query的指针。 |
@@ -699,6 +751,7 @@ int OH_Retrieval_DestroyQuery(OH_Retrieval_Query *query)
  
 返回函数的执行状态。执行成功返回AIP_OK。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 0 | 操作成功 |
@@ -711,7 +764,8 @@ int OH_Retrieval_DestroyQuery(OH_Retrieval_Query *query)
  
   
 
-#### OH_Retrieval_DestroyRecord()
+### OH_Retrieval_DestroyRecord()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -727,6 +781,7 @@ int OH_Retrieval_DestroyRecord(OH_Retrieval_Record *record)
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | record | 指向检索结果OH_Retrieval_Record的指针。 |
@@ -736,6 +791,7 @@ int OH_Retrieval_DestroyRecord(OH_Retrieval_Record *record)
  
 返回函数的执行状态。执行成功返回AIP_OK。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 0 | 操作成功 |
@@ -748,7 +804,8 @@ int OH_Retrieval_DestroyRecord(OH_Retrieval_Record *record)
  
   
 
-#### OH_Retrieval_DestroyRetriever()
+### OH_Retrieval_DestroyRetriever()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -764,6 +821,7 @@ int OH_Retrieval_DestroyRetriever(OH_Retrieval_Retriever *retriever)
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | retriever | 指向检索器OH_Retrieval_Retriever的指针。 |
@@ -773,6 +831,7 @@ int OH_Retrieval_DestroyRetriever(OH_Retrieval_Retriever *retriever)
  
 返回函数的执行状态。执行成功返回AIP_OK。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 0 | 操作成功 |
@@ -785,7 +844,8 @@ int OH_Retrieval_DestroyRetriever(OH_Retrieval_Retriever *retriever)
  
   
 
-#### OH_Retrieval_DestroySubCondition()
+### OH_Retrieval_DestroySubCondition()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -801,6 +861,7 @@ int OH_Retrieval_DestroySubCondition(OH_Retrieval_SubCondition *condition)
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | condition | 指向检索条件OH_Retrieval_SubCondition的指针。 |
@@ -810,6 +871,7 @@ int OH_Retrieval_DestroySubCondition(OH_Retrieval_SubCondition *condition)
  
 返回函数的执行状态。执行成功返回AIP_OK。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 0 | 操作成功 |
@@ -822,7 +884,8 @@ int OH_Retrieval_DestroySubCondition(OH_Retrieval_SubCondition *condition)
  
   
 
-#### OH_Retrieval_DestroyVectorCondition()
+### OH_Retrieval_DestroyVectorCondition()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -838,6 +901,7 @@ int OH_Retrieval_DestroyVectorCondition(OH_Retrieval_VectorCondition *condition)
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | condition | 指向向量检索条件OH_Retrieval_VectorCondition的指针。 |
@@ -847,6 +911,7 @@ int OH_Retrieval_DestroyVectorCondition(OH_Retrieval_VectorCondition *condition)
  
 返回函数的执行状态。执行成功返回AIP_OK。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 0 | 操作成功 |
@@ -859,7 +924,8 @@ int OH_Retrieval_DestroyVectorCondition(OH_Retrieval_VectorCondition *condition)
  
   
 
-#### OH_Retrieval_GetItemSize()
+### OH_Retrieval_GetItemSize()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -875,6 +941,7 @@ int OH_Retrieval_GetItemSize(const OH_Retrieval_RecordItem *items, const char *f
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | items | 指向数据库bucket数组OH_Retrieval_RecordItem实例的指针。 |
@@ -886,6 +953,7 @@ int OH_Retrieval_GetItemSize(const OH_Retrieval_RecordItem *items, const char *f
  
 返回函数的执行状态。执行成功返回AIP_OK。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 0 | 操作成功 |
@@ -899,7 +967,8 @@ int OH_Retrieval_GetItemSize(const OH_Retrieval_RecordItem *items, const char *f
  
   
 
-#### OH_Retrieval_GetItemText()
+### OH_Retrieval_GetItemText()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -915,6 +984,7 @@ int OH_Retrieval_GetItemText(const OH_Retrieval_RecordItem *items, const char *f
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | items | 指向数据库bucket数组OH_Retrieval_RecordItem实例的指针。 |
@@ -927,6 +997,7 @@ int OH_Retrieval_GetItemText(const OH_Retrieval_RecordItem *items, const char *f
  
 返回函数的执行状态。执行成功返回AIP_OK。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 0 | 操作成功 |
@@ -940,7 +1011,8 @@ int OH_Retrieval_GetItemText(const OH_Retrieval_RecordItem *items, const char *f
  
   
 
-#### OH_Retrieval_GetRecordItem()
+### OH_Retrieval_GetRecordItem()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -956,6 +1028,7 @@ int OH_Retrieval_GetRecordItem(const OH_Retrieval_Record *record, uint32_t index
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | record | 指向检索结果OH_Retrieval_Record实例的指针。 |
@@ -967,6 +1040,7 @@ int OH_Retrieval_GetRecordItem(const OH_Retrieval_Record *record, uint32_t index
  
 返回函数的执行状态。执行成功返回AIP_OK。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 0 | 操作成功 |
@@ -980,7 +1054,8 @@ int OH_Retrieval_GetRecordItem(const OH_Retrieval_Record *record, uint32_t index
  
   
 
-#### OH_Retrieval_GetRecordLength()
+### OH_Retrieval_GetRecordLength()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -996,6 +1071,7 @@ int OH_Retrieval_GetRecordLength(const OH_Retrieval_Record *record, uint32_t *le
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | record | 指向检索结果OH_Retrieval_Record实例的指针。 |
@@ -1006,6 +1082,7 @@ int OH_Retrieval_GetRecordLength(const OH_Retrieval_Record *record, uint32_t *le
  
 返回函数的执行状态。执行成功返回AIP_OK。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 0 | 操作成功 |
@@ -1018,7 +1095,8 @@ int OH_Retrieval_GetRecordLength(const OH_Retrieval_Record *record, uint32_t *le
  
   
 
-#### OH_Retrieval_Retrieve()
+### OH_Retrieval_Retrieve()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1034,6 +1112,7 @@ int OH_Retrieval_Retrieve(const OH_Retrieval_Retriever *retriever, const OH_Retr
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | retriever | 检索器句柄，指向OH_Retrieval_Retriever实例的指针。 |
@@ -1047,6 +1126,7 @@ int OH_Retrieval_Retrieve(const OH_Retrieval_Retriever *retriever, const OH_Retr
  
 返回函数的执行状态。执行成功返回AIP_OK。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 0 | 操作成功 |
@@ -1061,7 +1141,8 @@ int OH_Retrieval_Retrieve(const OH_Retrieval_Retriever *retriever, const OH_Retr
  
   
 
-#### OH_Retrieval_SetDbConfig()
+### OH_Retrieval_SetDbConfig()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1077,6 +1158,7 @@ int OH_Retrieval_SetDbConfig(OH_Retrieval_DbConfig *dbConfig, OH_Rdb_ConfigV2 *r
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | dbConfig | 表示指向OH_Retrieval_DbConfig实例的指针。 |
@@ -1087,6 +1169,7 @@ int OH_Retrieval_SetDbConfig(OH_Retrieval_DbConfig *dbConfig, OH_Rdb_ConfigV2 *r
  
 返回函数的执行状态。执行成功返回AIP_OK。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 0 | 操作成功 |
@@ -1099,7 +1182,8 @@ int OH_Retrieval_SetDbConfig(OH_Retrieval_DbConfig *dbConfig, OH_Rdb_ConfigV2 *r
  
   
 
-#### OH_Retrieval_SetOriginalQuestion()
+### OH_Retrieval_SetOriginalQuestion()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1115,6 +1199,7 @@ int OH_Retrieval_SetOriginalQuestion(OH_Retrieval_Query *query, const char *ques
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | query | 指向检索词OH_Retrieval_Query实例的指针。 |
@@ -1125,6 +1210,7 @@ int OH_Retrieval_SetOriginalQuestion(OH_Retrieval_Query *query, const char *ques
  
 返回函数的执行状态。执行成功返回AIP_OK。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 0 | 操作成功 |
@@ -1138,7 +1224,8 @@ int OH_Retrieval_SetOriginalQuestion(OH_Retrieval_Query *query, const char *ques
  
   
 
-#### OH_Retrieval_SetSimilarityThreshold()
+### OH_Retrieval_SetSimilarityThreshold()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1154,6 +1241,7 @@ int OH_Retrieval_SetSimilarityThreshold(OH_Retrieval_VectorCondition *condition,
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | condition | 指向检索条件OH_Retrieval_VectorCondition实例的指针。 |
@@ -1164,6 +1252,7 @@ int OH_Retrieval_SetSimilarityThreshold(OH_Retrieval_VectorCondition *condition,
  
 返回函数的执行状态。执行成功返回AIP_OK。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 0 | 操作成功 |
@@ -1176,7 +1265,8 @@ int OH_Retrieval_SetSimilarityThreshold(OH_Retrieval_VectorCondition *condition,
  
   
 
-#### OH_Retrieval_SetVectorRecallLimit()
+### OH_Retrieval_SetVectorRecallLimit()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1192,6 +1282,7 @@ int OH_Retrieval_SetVectorRecallLimit(OH_Retrieval_VectorCondition *condition, u
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | condition | 指向检索条件OH_Retrieval_VectorCondition实例的指针。 |
@@ -1202,6 +1293,7 @@ int OH_Retrieval_SetVectorRecallLimit(OH_Retrieval_VectorCondition *condition, u
  
 返回函数的执行状态。执行成功返回AIP_OK。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 0 | 操作成功 |

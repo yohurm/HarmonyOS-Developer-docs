@@ -1,6 +1,6 @@
 # 使用AVPlayer播放流媒体(C/C++)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ndk-avplayer-for-streaming
 
@@ -19,7 +19,7 @@
 
 
 
-#### 开发建议
+## 开发建议
 
 当前指导仅介绍如何实现流媒体资源播放，如需播放本地资源，请参考[使用AVPlayer播放视频(C/C++)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ndk-avplayer-for-video-playback)。如果在应用开发过程中涉及后台播放、播放冲突等情况，请根据实际需要参考以下说明。
 
@@ -32,7 +32,7 @@
 
 
 
-#### 开发步骤及注意事项
+## 开发步骤及注意事项
 
  - 在CMake脚本中链接动态库。
 
@@ -78,8 +78,11 @@ OH_AVPlayer *player = OH_AVPlayer_Create();
   支持的监听事件如下所示：
 
 | 事件类型 | 说明 |
+
 | --- | --- |
+
 | OH_AVPlayerOnInfoCallback | 必要事件，监听播放器的过程信息。 需要播放器在AV_IDLE状态下、未调用设置资源接口前完成设置监听。如果在调用设置资源接口后再设置监听，会导致无法收到资源设置过程中上报的OH_AVPlayerOnInfoCallback事件。 |
+
 | OH_AVPlayerOnErrorCallback | 必要事件，监听播放器的错误信息。 需要播放器在AV_IDLE状态下、未调用设置资源接口前完成设置监听。如果在调用设置资源接口后再设置监听，会导致无法收到资源设置过程中上报的OH_AVPlayerOnErrorCallback事件。 |
 
   
@@ -304,6 +307,6 @@ static napi_value NAPI_Global_Release(napi_env env, napi_callback_info info) {
 
 
 
-#### 运行完整示例
+## 运行完整示例
 1. 新建工程，下载[示例工程](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/Media/AVPlayer/AVPlayerNDKStreamingMedia)。
 2. 编译新建工程并运行。

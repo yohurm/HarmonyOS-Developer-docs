@@ -1,11 +1,12 @@
 # @hms.utilityApplication.screenTimeGuard.appPicker（应用选择）
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/screentimeguard-app-picker
 **支持设备：** Phone | Tablet
 
-#### 模块概述
+## 模块概述
+
 
 **支持设备：** Phone | Tablet
 
@@ -23,7 +24,8 @@
  
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | Tablet
 
@@ -33,7 +35,8 @@ import { appPicker } from '@kit.ScreenTimeGuardKit';
  
   
 
-#### startAppPicker
+## startAppPicker
+
 
 **支持设备：** Phone | Tablet
 
@@ -51,6 +54,7 @@ startAppPicker(context: common.Context, appSelection: guardService.AppInfo): Pro
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 应用上下文（仅支持UIAbilityContext）。 |
@@ -59,6 +63,7 @@ startAppPicker(context: common.Context, appSelection: guardService.AppInfo): Pro
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<string[]> | Promise对象，返回用户已勾选应用的token数组。当用户未选择任何应用时返回空数组。 |
@@ -68,6 +73,7 @@ startAppPicker(context: common.Context, appSelection: guardService.AppInfo): Pro
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-screentimeguard)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. |
@@ -108,7 +114,8 @@ struct TestPage {
  
   
 
-#### startAppForm
+## startAppForm
+
 
 **支持设备：** Phone | Tablet
 
@@ -126,6 +133,7 @@ startAppForm(context: common.Context, appSelection: guardService.AppInfo, appSub
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 应用上下文（仅支持UIAbilityContext）。 |
@@ -136,6 +144,7 @@ startAppForm(context: common.Context, appSelection: guardService.AppInfo, appSub
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -145,6 +154,7 @@ startAppForm(context: common.Context, appSelection: guardService.AppInfo, appSub
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-screentimeguard)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. |

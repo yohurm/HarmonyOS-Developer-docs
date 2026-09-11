@@ -1,6 +1,6 @@
 # 指定二进制数据转换非对称密钥对(ArkTS)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-convert-binary-data-to-asym-key-pair
 
@@ -11,9 +11,9 @@
 
 
 
-#### 指定二进制数据转换RSA密钥对
+## 指定二进制数据转换RSA密钥对
 
-对应的算法规格请查看[非对称密钥生成和转换规格：RSA](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-asym-key-generation-conversion-spec#rsa)。
+对应的算法规格请查看[非对称密钥生成和转换规格：RSA](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-key-generation-conversion#rsa)。
 1. 获取RSA公钥或私钥二进制数据，封装成[DataBlob](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#datablob)对象。
 
   公钥和私钥可单独传入，此处示例传入公钥。
@@ -81,9 +81,9 @@ function convertAsyKeySync() {
 
 
 
-#### 指定二进制数据转换ECC密钥对
+## 指定二进制数据转换ECC密钥对
 
-查看[非对称密钥生成和转换规格：ECC](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-asym-key-generation-conversion-spec#ecc)。
+查看[非对称密钥生成和转换规格：ECC](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-key-generation-conversion#ecc)。
 1. 获取ECC公钥或私钥二进制数据，封装成[DataBlob](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#datablob)对象。
 
   公钥和私钥可以只传入其中一个，此处示例以传入公钥和私钥为例。
@@ -108,7 +108,7 @@ function convertEccAsyKey() {
   let pubKeyBlob: cryptoFramework.DataBlob = { data: pubKeyArray };
   let priKeyBlob: cryptoFramework.DataBlob = { data: priKeyArray };
   let generator = cryptoFramework.createAsyKeyGenerator('ECC256');
-  generator.convertKey(pubKeyBlob, priKeyBlob, (error, data) => {
+  generator.convertKey(pubKeyBlob, priKeyBlob, (error, keyPair) => {
     if (error) {
       console.error(`convertKey failed: errCode: ${error.code}, message: ${error.message}`);
       return;
@@ -151,9 +151,9 @@ function convertECCAsyKeySync() {
 
 
 
-#### 指定PKCS8二进制数据转换ECC私钥
+## 指定PKCS8二进制数据转换ECC私钥
 
-查看[非对称密钥生成和转换规格：ECC](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-asym-key-generation-conversion-spec#ecc)。
+查看[非对称密钥生成和转换规格：ECC](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-key-generation-conversion#ecc)。
 
 获取ECC公钥或私钥二进制数据，封装成[DataBlob](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#datablob)对象再转为ECC密钥格式。示例如下：
 1. 调用[cryptoFramework.createAsyKeyGenerator](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#cryptoframeworkcreateasykeygenerator)，指定字符串参数'ECC256'，创建密钥算法为ECC、密钥长度为256位的非对称密钥生成器（AsyKeyGenerator）。
@@ -167,30 +167,33 @@ async function main() {
   // 创建一个AsyKeyGenerator实例
   let eccGenerator = cryptoFramework.createAsyKeyGenerator('ECC256');
   // 使用密钥生成器随机生成非对称密钥对
-  let keyGenPromise = eccGenerator.generateKeyPair();
-  keyGenPromise.then(keyPair => {
+  try {
+    let keyPair = await eccGenerator.generateKeyPair();
     let pubKey = keyPair.pubKey;
     let priKey = keyPair.priKey;
     // 获取非对称密钥对ECC的二进制数据
     let pubBlob = pubKey.getEncoded();
     let skBlob = priKey.getEncodedDer('PKCS8');
     let generator = cryptoFramework.createAsyKeyGenerator('ECC256');
-    generator.convertKey(pubBlob, skBlob, (error, data) => {
+    generator.convertKey(pubBlob, skBlob, (error, _keyPair) => {
       if (error) {
         console.error(`convertKey failed: errCode: ${error.code}, message: ${error.message}`);
         return;
       }
       console.info('convertKey result: success.');
     });
-  });
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`generateKeyPair failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 
 
 
-#### 指定二进制数据转换SM2密钥对
+## 指定二进制数据转换SM2密钥对
 
-查看[非对称密钥生成和转换规格：SM2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-asym-key-generation-conversion-spec#sm2)。
+查看[非对称密钥生成和转换规格：SM2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-key-generation-conversion#sm2)。
 1. 获取SM2公钥或私钥的二进制数据，封装成[DataBlob](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#datablob)对象。
 
   公钥和私钥可以只传入其中一个，示例以传入公钥和私钥为例。
@@ -216,7 +219,7 @@ function convertSM2AsyKey() {
   let pubKeyBlob: cryptoFramework.DataBlob = { data: pubKeyArray };
   let priKeyBlob: cryptoFramework.DataBlob = { data: priKeyArray };
   let generator = cryptoFramework.createAsyKeyGenerator('SM2_256');
-  generator.convertKey(pubKeyBlob, priKeyBlob, (error, data) => {
+  generator.convertKey(pubKeyBlob, priKeyBlob, (error, keyPair) => {
     if (error) {
       console.error(`convertKey failed: errCode: ${error.code}, message: ${error.message}`);
       return;

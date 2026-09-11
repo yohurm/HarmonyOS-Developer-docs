@@ -1,11 +1,12 @@
 # image_processing.h
 
-更新时间：2026-06-03 01:38:22
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-processing-h
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -23,15 +24,18 @@
 
 
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -54,13 +58,15 @@
 
 
 
-#### 函数说明
+## 函数说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 
 
-#### OH_ImageProcessing_InitializeEnvironment()
+### OH_ImageProcessing_InitializeEnvironment()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -78,6 +84,7 @@ ImageProcessing_ErrorCode OH_ImageProcessing_InitializeEnvironment(void)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageProcessing_ErrorCode | 如果初始化成功，则返回IMAGE_PROCESSING_SUCCESS，否则返回IMAGE_PROCESSING_ERROR_INITIALIZE_FAILED。 |
@@ -85,7 +92,8 @@ ImageProcessing_ErrorCode OH_ImageProcessing_InitializeEnvironment(void)
 
 
 
-#### OH_ImageProcessing_DeinitializeEnvironment()
+### OH_ImageProcessing_DeinitializeEnvironment()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -103,6 +111,7 @@ ImageProcessing_ErrorCode OH_ImageProcessing_DeinitializeEnvironment(void)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageProcessing_ErrorCode | 如果反初始化成功，则返回IMAGE_PROCESSING_SUCCESS。 如果存在图片处理实例未被销毁或OH_ImageProcessing_InitializeEnvironment接口未被调用，则返回IMAGE_PROCESSING_ERROR_OPERATION_NOT_PERMITTED。 |
@@ -110,7 +119,8 @@ ImageProcessing_ErrorCode OH_ImageProcessing_DeinitializeEnvironment(void)
 
 
 
-#### OH_ImageProcessing_IsColorSpaceConversionSupported()
+### OH_ImageProcessing_IsColorSpaceConversionSupported()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -126,13 +136,15 @@ bool OH_ImageProcessing_IsColorSpaceConversionSupported(const ImageProcessing_Co
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ImageProcessing_ColorSpaceInfo* sourceImageInfo | 指向输入图片色彩空间信息的指针。 |
-| const ImageProcessing_ColorSpaceInfo* destinationImageInfo | 指向输出图片色彩空间信息的指针， |
+| const ImageProcessing_ColorSpaceInfo* destinationImageInfo | 指向输出图片色彩空间信息的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -141,7 +153,8 @@ bool OH_ImageProcessing_IsColorSpaceConversionSupported(const ImageProcessing_Co
 
 
 
-#### OH_ImageProcessing_IsCompositionSupported()
+### OH_ImageProcessing_IsCompositionSupported()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -157,6 +170,7 @@ bool OH_ImageProcessing_IsCompositionSupported(const ImageProcessing_ColorSpaceI
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ImageProcessing_ColorSpaceInfo* sourceImageInfo | 指向输入图片色彩空间信息的指针。 |
@@ -166,6 +180,7 @@ bool OH_ImageProcessing_IsCompositionSupported(const ImageProcessing_ColorSpaceI
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 如果支持HDR双层图片转换HDR单层图片能力，返回true。 如果不支持此能力，返回false。 |
@@ -173,7 +188,8 @@ bool OH_ImageProcessing_IsCompositionSupported(const ImageProcessing_ColorSpaceI
 
 
 
-#### OH_ImageProcessing_IsDecompositionSupported()
+### OH_ImageProcessing_IsDecompositionSupported()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -189,6 +205,7 @@ bool OH_ImageProcessing_IsDecompositionSupported(const ImageProcessing_ColorSpac
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ImageProcessing_ColorSpaceInfo* sourceImageInfo | 指向输入图片色彩空间信息的指针。 |
@@ -198,6 +215,7 @@ bool OH_ImageProcessing_IsDecompositionSupported(const ImageProcessing_ColorSpac
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 如果支持HDR单层图片转换为HDR双层图片能力，返回true。 如果不支持此能力，返回false。 |
@@ -205,7 +223,8 @@ bool OH_ImageProcessing_IsDecompositionSupported(const ImageProcessing_ColorSpac
 
 
 
-#### OH_ImageProcessing_IsMetadataGenerationSupported()
+### OH_ImageProcessing_IsMetadataGenerationSupported()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -221,12 +240,14 @@ bool OH_ImageProcessing_IsMetadataGenerationSupported(const ImageProcessing_Colo
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ImageProcessing_ColorSpaceInfo* sourceImageInfo | 指向输入图片色彩空间信息的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -235,7 +256,8 @@ bool OH_ImageProcessing_IsMetadataGenerationSupported(const ImageProcessing_Colo
 
 
 
-#### OH_ImageProcessing_Create()
+### OH_ImageProcessing_Create()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -251,6 +273,7 @@ ImageProcessing_ErrorCode OH_ImageProcessing_Create(OH_ImageProcessing** imagePr
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageProcessing** imageProcessor | 输出参数。指针*imageProcessor指向一个新的图片处理对象。指针*imageProcessor在传递前必须是一个空指针。 |
@@ -259,6 +282,7 @@ ImageProcessing_ErrorCode OH_ImageProcessing_Create(OH_ImageProcessing** imagePr
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageProcessing_ErrorCode | 如果创建成功，则返回IMAGE_PROCESSING_SUCCESS。 当指定的图片处理类型不支持时，返回IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING，例如如果不支持图片元数据生成能力，则返回不支持该处理类型。 当创建失败时，返回IMAGE_PROCESSING_ERROR_CREATE_FAILED。 当该实例为空或指向该实例的指针为空时，返回IMAGE_PROCESSING_ERROR_INVALID_INSTANCE。 当指定的图片处理类型无效时，返回IMAGE_PROCESSING_ERROR_INVALID_PARAMETER。 |
@@ -266,7 +290,8 @@ ImageProcessing_ErrorCode OH_ImageProcessing_Create(OH_ImageProcessing** imagePr
 
 
 
-#### OH_ImageProcessing_Destroy()
+### OH_ImageProcessing_Destroy()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -282,12 +307,14 @@ ImageProcessing_ErrorCode OH_ImageProcessing_Destroy(OH_ImageProcessing* imagePr
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageProcessing* imageProcessor | 指向图片处理模块实例的指针。当实例被销毁时，建议该指针设置为空。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -296,7 +323,8 @@ ImageProcessing_ErrorCode OH_ImageProcessing_Destroy(OH_ImageProcessing* imagePr
 
 
 
-#### OH_ImageProcessing_SetParameter()
+### OH_ImageProcessing_SetParameter()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -312,6 +340,7 @@ ImageProcessing_ErrorCode OH_ImageProcessing_SetParameter(OH_ImageProcessing* im
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageProcessing* imageProcessor | 指向图片处理模块实例的指针。 |
@@ -320,6 +349,7 @@ ImageProcessing_ErrorCode OH_ImageProcessing_SetParameter(OH_ImageProcessing* im
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageProcessing_ErrorCode | 如果设置参数成功，则返回IMAGE_PROCESSING_SUCCESS。 当该实例为空或该实例不是图片处理模块实例时，返回IMAGE_PROCESSING_ERROR_INVALID_INSTANCE。 当参数为空时，返回IMAGE_PROCESSING_ERROR_INVALID_PARAMETER。 当部分参数无效时，返回IMAGE_PROCESSING_ERROR_INVALID_VALUE，例如参数包含不支持的参数键或值。 当内存分配失败时，返回IMAGE_PROCESSING_ERROR_NO_MEMORY。 |
@@ -327,7 +357,8 @@ ImageProcessing_ErrorCode OH_ImageProcessing_SetParameter(OH_ImageProcessing* im
 
 
 
-#### OH_ImageProcessing_GetParameter()
+### OH_ImageProcessing_GetParameter()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -343,6 +374,7 @@ ImageProcessing_ErrorCode OH_ImageProcessing_GetParameter(OH_ImageProcessing* im
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageProcessing* imageProcessor | 指向图片处理模块实例的指针。 |
@@ -351,6 +383,7 @@ ImageProcessing_ErrorCode OH_ImageProcessing_GetParameter(OH_ImageProcessing* im
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageProcessing_ErrorCode | 如果获取参数成功，则返回IMAGE_PROCESSING_SUCCESS。 当该实例为空或该实例不是图片处理模块实例时，返回IMAGE_PROCESSING_ERROR_INVALID_INSTANCE。 当参数为空时，返回IMAGE_PROCESSING_ERROR_INVALID_PARAMETER。 |
@@ -358,7 +391,8 @@ ImageProcessing_ErrorCode OH_ImageProcessing_GetParameter(OH_ImageProcessing* im
 
 
 
-#### OH_ImageProcessing_ConvertColorSpace()
+### OH_ImageProcessing_ConvertColorSpace()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -374,6 +408,7 @@ ImageProcessing_ErrorCode OH_ImageProcessing_ConvertColorSpace(OH_ImageProcessin
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageProcessing* imageProcessor | 指向图片处理模块实例的指针。该实例应该由IMAGE_PROCESSING_TYPE_COLOR_SPACE_CONVERSION类型创建。 |
@@ -383,6 +418,7 @@ ImageProcessing_ErrorCode OH_ImageProcessing_ConvertColorSpace(OH_ImageProcessin
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageProcessing_ErrorCode | 如果图片处理成功，则返回IMAGE_PROCESSING_SUCCESS。 当该实例为空或该实例不是图片处理模块实例时，返回IMAGE_PROCESSING_ERROR_INVALID_INSTANCE。 当图片为空时，返回IMAGE_PROCESSING_ERROR_INVALID_PARAMETER。 当图片的某些属性无效时，返回IMAGE_PROCESSING_ERROR_INVALID_VALUE，例如图片的色彩空间是不支持的。 当该图片处理不支持时，返回IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING。 当该图片处理中返回错误时，返回IMAGE_PROCESSING_ERROR_PROCESS_FAILED。 当内存分配失败时，返回IMAGE_PROCESSING_ERROR_NO_MEMORY。 |
@@ -390,7 +426,8 @@ ImageProcessing_ErrorCode OH_ImageProcessing_ConvertColorSpace(OH_ImageProcessin
 
 
 
-#### OH_ImageProcessing_Compose()
+### OH_ImageProcessing_Compose()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -406,6 +443,7 @@ ImageProcessing_ErrorCode OH_ImageProcessing_Compose(OH_ImageProcessing* imagePr
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageProcessing* imageProcessor | 指向图片处理模块实例的指针。该实例应该由IMAGE_PROCESSING_TYPE_COMPOSITION类型创建。 |
@@ -416,6 +454,7 @@ ImageProcessing_ErrorCode OH_ImageProcessing_Compose(OH_ImageProcessing* imagePr
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageProcessing_ErrorCode | 如果图片处理成功，则返回IMAGE_PROCESSING_SUCCESS。 当该实例为空或该实例不是图片处理模块实例时，返回IMAGE_PROCESSING_ERROR_INVALID_INSTANCE。 当图片为空时，返回IMAGE_PROCESSING_ERROR_INVALID_PARAMETER。 当图片的某些属性无效时，返回IMAGE_PROCESSING_ERROR_INVALID_VALUE，例如图片的色彩空间是不支持的。 当该图片处理不支持时，返回IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING。 当该图片处理中返回错误时，返回IMAGE_PROCESSING_ERROR_PROCESS_FAILED。 当内存分配失败时，返回IMAGE_PROCESSING_ERROR_NO_MEMORY。 |
@@ -423,7 +462,8 @@ ImageProcessing_ErrorCode OH_ImageProcessing_Compose(OH_ImageProcessing* imagePr
 
 
 
-#### OH_ImageProcessing_Decompose()
+### OH_ImageProcessing_Decompose()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -439,6 +479,7 @@ ImageProcessing_ErrorCode OH_ImageProcessing_Decompose(OH_ImageProcessing* image
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageProcessing* imageProcessor | 指向图片处理模块实例的指针。该实例应该由IMAGE_PROCESSING_TYPE_DECOMPOSITION类型创建。 |
@@ -449,6 +490,7 @@ ImageProcessing_ErrorCode OH_ImageProcessing_Decompose(OH_ImageProcessing* image
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageProcessing_ErrorCode | 如果图片处理成功，则返回IMAGE_PROCESSING_SUCCESS。 当该实例为空或该实例不是图片处理模块实例时，返回IMAGE_PROCESSING_ERROR_INVALID_INSTANCE。 当图片为空时，返回IMAGE_PROCESSING_ERROR_INVALID_PARAMETER。 当图片的某些属性无效时，返回IMAGE_PROCESSING_ERROR_INVALID_VALUE，例如图片的色彩空间是不支持的。 当该图片处理不支持时，返回IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING。 当该图片处理中返回错误时，返回IMAGE_PROCESSING_ERROR_PROCESS_FAILED。 当内存分配失败时，返回IMAGE_PROCESSING_ERROR_NO_MEMORY。 |
@@ -456,7 +498,8 @@ ImageProcessing_ErrorCode OH_ImageProcessing_Decompose(OH_ImageProcessing* image
 
 
 
-#### OH_ImageProcessing_GenerateMetadata()
+### OH_ImageProcessing_GenerateMetadata()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -472,6 +515,7 @@ ImageProcessing_ErrorCode OH_ImageProcessing_GenerateMetadata(OH_ImageProcessing
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageProcessing* imageProcessor | 指向图片处理模块实例的指针。该实例应该由IMAGE_PROCESSING_TYPE_METADATA_GENERATION类型创建。 |
@@ -480,6 +524,7 @@ ImageProcessing_ErrorCode OH_ImageProcessing_GenerateMetadata(OH_ImageProcessing
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageProcessing_ErrorCode | 如果图片处理成功，则返回IMAGE_PROCESSING_SUCCESS。 当该实例为空或该实例不是图片处理模块实例时，返回IMAGE_PROCESSING_ERROR_INVALID_INSTANCE。 当图片为空时，返回IMAGE_PROCESSING_ERROR_INVALID_PARAMETER。 当图片的某些属性无效时，返回IMAGE_PROCESSING_ERROR_INVALID_VALUE，例如图片的色彩空间是不支持的。 当该图片处理不支持时，返回IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING。 当该图片处理中返回错误时，返回IMAGE_PROCESSING_ERROR_PROCESS_FAILED。 当内存分配失败时，返回IMAGE_PROCESSING_ERROR_NO_MEMORY。 |
@@ -487,7 +532,8 @@ ImageProcessing_ErrorCode OH_ImageProcessing_GenerateMetadata(OH_ImageProcessing
 
 
 
-#### OH_ImageProcessing_EnhanceDetail()
+### OH_ImageProcessing_EnhanceDetail()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -503,6 +549,7 @@ ImageProcessing_ErrorCode OH_ImageProcessing_EnhanceDetail(OH_ImageProcessing* i
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ImageProcessing* imageProcessor | 指向图片处理模块实例的指针。该实例应该由IMAGE_PROCESSING_TYPE_DETAIL_ENHANCER类型创建。 |
@@ -511,6 +558,7 @@ ImageProcessing_ErrorCode OH_ImageProcessing_EnhanceDetail(OH_ImageProcessing* i
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |

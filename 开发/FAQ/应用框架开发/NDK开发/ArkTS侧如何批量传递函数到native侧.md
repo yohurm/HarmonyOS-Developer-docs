@@ -24,67 +24,67 @@
  
 - cpp文件：将数组传入到c++侧后，通过napi_get_element方法分别获得数组中的两个匿名函数及DataModel对象。在通过napi_get_named_property方法获取DataModel对象中的方法，最后通过napi_call_function方法分别调用获得的方法。
 ```text
-/*
- * Copyright (c) Huawei Technologies Co., Ltd. 2026-2026. All rights reserved.
- */
+<em>/*</em>
+<em> * Copyright (c) Huawei Technologies Co., Ltd. 2026-2026. All rights reserved.</em>
+<em> */</em>
 #include "napi/native_api.h"
 static napi_value Test(napi_env env, napi_callback_info info)
 {
-    // 期望从ArkTS侧获取的参数的数量，napi_value可理解为ArkTS value在native方法中的表现形式。
+   <em> // 期望从ArkTS侧获取的参数的数量，napi_value可理解为ArkTS value在native方法中的表现形式。</em>
     size_t argc = 1;
     napi_value args[1] = {nullptr};
 
-    // 从info中，拿到从ArkTS侧传递过来的参数，此处获取了一个ArkTS参数，即arg[0]。
+   <em> // 从info中，拿到从ArkTS侧传递过来的参数，此处获取了一个ArkTS参数，即arg[0]。</em>
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    // 从arg[0]中获取ts侧传递的方法。
+    <em>// 从arg[0]中获取ts侧传递的方法。</em>
     napi_value mul = nullptr;
     napi_get_element(env, args[0], 0, &mul);
 
     napi_value div = nullptr;
     napi_get_element(env, args[0], 1, &div);
 
-    // 从arg[0]中获取ts侧传递的对象。
+   <em> // 从arg[0]中获取ts侧传递的对象。</em>
     napi_value DataModel = nullptr;
     napi_get_element(env, args[0], 2, &DataModel);
 
-    // 获取对象中的方法。
+  <em>  // 获取对象中的方法。</em>
     napi_value add, sub;
     napi_get_named_property(env, DataModel, "add", &add);
     napi_get_named_property(env, DataModel, "sub", &sub);
 
-    // 创建参数数组。
+   <em> // 创建参数数组。</em>
     napi_value arr[2];
     napi_create_int32(env, 10, &arr[0]);
     napi_create_int32(env, 5, &arr[1]);
 
-    // 创建一个ArkTS number作为ArkTS function的入参。
+   <em> // 创建一个ArkTS number作为ArkTS function的入参。</em>
     napi_value argv = nullptr;
     napi_create_int32(env, 2, &argv);
 
-    // 创建一个初始长度为length的数组result。
+    <em>// 创建一个初始长度为length的数组result。</em>
     napi_value result;
     if (napi_ok != napi_create_array_with_length(env, 4, &result)) {
         return nullptr;
     }
 
-    // napi_call_function函数可以传递多个参数，传递函数的入参个数、类型、返回值类型不一致都适用此方法。
+   <em> // napi_call_function函数可以传递多个参数，传递函数的入参个数、类型、返回值类型不一致都适用此方法。</em>
     napi_value resultAdd;
-    // 调用方法add。
-    // napi_call_function传递两个参数。
+  <em>  // 调用方法add。</em>
+  <em>  // napi_call_function传递两个参数。</em>
     napi_call_function(env, nullptr, add, 2, arr, &resultAdd);
     napi_set_element(env, result, 1, resultAdd);
-    // 调用方法sub
+   <em> // 调用方法sub</em>
     napi_value resultSub;
     napi_call_function(env, nullptr, sub, 2, arr, &resultSub);
     napi_set_element(env, result, 2, resultSub);
 
-    // 调用方法mul。
-    // napi_call_function传递一个参数。
+  <em>  // 调用方法mul。</em>
+<em>    // napi_call_function传递一个参数。</em>
     napi_value resultMul;
     napi_call_function(env, nullptr, mul, 1, &argv, &resultMul);
     napi_set_element(env, result, 3, resultMul);
 
-    // 调用方法div。
+    <em>// 调用方法div。</em>
     napi_value resultDiv;
     napi_call_function(env, nullptr, div, 1, &argv, &resultDiv);
     napi_set_element(env, result, 4, resultDiv);

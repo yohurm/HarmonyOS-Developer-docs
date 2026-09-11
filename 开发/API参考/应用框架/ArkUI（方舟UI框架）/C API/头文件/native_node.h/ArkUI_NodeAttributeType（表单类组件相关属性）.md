@@ -1,15 +1,19 @@
 # ArkUI_NodeAttributeType（表单类组件相关属性）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-node-h-nodeattributetype-form
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_NodeAttributeType
 ```
   
 
-#### 概述
+## 概述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义ArkUI在Native侧可以设置的表单类组件相关属性样式集合，包含Toggle、Button、CheckBox、CheckBoxGroup、Slider、Radio等组件属性设置。
  
@@ -21,7 +25,10 @@ enum ArkUI_NodeAttributeType
  
   
 
-#### NODE_TOGGLE_SELECTED_COLOR
+## NODE_TOGGLE_SELECTED_COLOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TOGGLE_SELECTED_COLOR = MAX_NODE_SCOPE_NUM * ARKUI_NODE_TOGGLE = 5000
@@ -35,6 +42,7 @@ NODE_TOGGLE_SELECTED_COLOR = MAX_NODE_SCOPE_NUM * ARKUI_NODE_TOGGLE = 5000
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].u32 | 背景色数值，0xARGB格式，形如 0xFFFF0000 表示红色。 |
@@ -42,6 +50,7 @@ NODE_TOGGLE_SELECTED_COLOR = MAX_NODE_SCOPE_NUM * ARKUI_NODE_TOGGLE = 5000
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].u32 | 背景色数值，0xARGB格式。 |
@@ -49,7 +58,10 @@ NODE_TOGGLE_SELECTED_COLOR = MAX_NODE_SCOPE_NUM * ARKUI_NODE_TOGGLE = 5000
  
   
 
-#### NODE_TOGGLE_SWITCH_POINT_COLOR
+## NODE_TOGGLE_SWITCH_POINT_COLOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TOGGLE_SWITCH_POINT_COLOR = 5001
@@ -63,6 +75,7 @@ Switch类型的圆形滑块颜色属性，支持属性设置，属性重置和�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].u32 | 圆形滑块颜色数值，0xARGB格式，形如 0xFFFF0000 表示红色。 |
@@ -70,6 +83,7 @@ Switch类型的圆形滑块颜色属性，支持属性设置，属性重置和�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].u32 | 圆形滑块颜色数值，0xARGB格式。 |
@@ -77,7 +91,10 @@ Switch类型的圆形滑块颜色属性，支持属性设置，属性重置和�
  
   
 
-#### NODE_TOGGLE_VALUE
+## NODE_TOGGLE_VALUE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TOGGLE_VALUE = 5002
@@ -91,6 +108,7 @@ Switch类型的开关值，支持属性设置，属性重置和属性获取接�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 设置开关的值，true表示开启。 |
@@ -98,6 +116,7 @@ Switch类型的开关值，支持属性设置，属性重置和属性获取接�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 设置开关的值。 |
@@ -105,7 +124,10 @@ Switch类型的开关值，支持属性设置，属性重置和属性获取接�
  
   
 
-#### NODE_TOGGLE_UNSELECTED_COLOR
+## NODE_TOGGLE_UNSELECTED_COLOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_TOGGLE_UNSELECTED_COLOR = 5003
@@ -119,6 +141,7 @@ NODE_TOGGLE_UNSELECTED_COLOR = 5003
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].u32 | 背景色数值，0xARGB格式，形如 0xFFFF0000 表示红色。 |
@@ -126,6 +149,7 @@ NODE_TOGGLE_UNSELECTED_COLOR = 5003
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].u32 | 背景色数值，0xARGB格式。 |
@@ -133,7 +157,10 @@ NODE_TOGGLE_UNSELECTED_COLOR = 5003
  
   
 
-#### NODE_BUTTON_LABEL
+## NODE_BUTTON_LABEL
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_BUTTON_LABEL = MAX_NODE_SCOPE_NUM * ARKUI_NODE_BUTTON = 9000
@@ -147,6 +174,7 @@ button按钮的文本内容属性，支持属性设置，属性重置和属性�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 默认文本的内容。 |
@@ -154,6 +182,7 @@ button按钮的文本内容属性，支持属性设置，属性重置和属性�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .string | 默认文本的内容。 |
@@ -161,7 +190,10 @@ button按钮的文本内容属性，支持属性设置，属性重置和属性�
  
   
 
-#### NODE_BUTTON_TYPE
+## NODE_BUTTON_TYPE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_BUTTON_TYPE = 9001
@@ -175,6 +207,7 @@ Button按钮的类型属性，支持属性设置，属性重置和属性获取�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 设置Button按钮的类型，参数类型ArkUI_ButtonType，默认值为ARKUI_BUTTON_TYPE_CAPSULE。 |
@@ -182,6 +215,7 @@ Button按钮的类型属性，支持属性设置，属性重置和属性获取�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 获取Button按钮的类型，参数类型ArkUI_ButtonType，默认值为ARKUI_BUTTON_TYPE_CAPSULE。 |
@@ -189,7 +223,10 @@ Button按钮的类型属性，支持属性设置，属性重置和属性获取�
  
   
 
-#### NODE_BUTTON_MIN_FONT_SCALE
+## NODE_BUTTON_MIN_FONT_SCALE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_BUTTON_MIN_FONT_SCALE = 9002
@@ -203,6 +240,7 @@ Button按钮的最小字体缩放倍数属性，支持属性设置，属性重�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 设置Button按钮的最小字体缩放倍数，默认单位fp。 |
@@ -210,6 +248,7 @@ Button按钮的最小字体缩放倍数属性，支持属性设置，属性重�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 获取Button按钮的最小字体缩放倍数，默认单位fp。 |
@@ -217,7 +256,10 @@ Button按钮的最小字体缩放倍数属性，支持属性设置，属性重�
  
   
 
-#### NODE_BUTTON_MAX_FONT_SCALE
+## NODE_BUTTON_MAX_FONT_SCALE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_BUTTON_MAX_FONT_SCALE = 9003
@@ -231,6 +273,7 @@ Button按钮的最大字体缩放倍数属性，支持属性设置，属性重�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 设置Button按钮的最大字体缩放倍数，默认单位fp。 |
@@ -238,6 +281,7 @@ Button按钮的最大字体缩放倍数属性，支持属性设置，属性重�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 获取Button按钮的最大字体缩放倍数，默认单位fp。 |
@@ -245,7 +289,10 @@ Button按钮的最大字体缩放倍数属性，支持属性设置，属性重�
  
   
 
-#### NODE_CHECKBOX_SELECT
+## NODE_CHECKBOX_SELECT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_CHECKBOX_SELECT = MAX_NODE_SCOPE_NUM * ARKUI_NODE_CHECKBOX = 11000
@@ -259,6 +306,7 @@ NODE_CHECKBOX_SELECT = MAX_NODE_SCOPE_NUM * ARKUI_NODE_CHECKBOX = 11000
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 1表示选中，0表示不选中。 |
@@ -266,6 +314,7 @@ NODE_CHECKBOX_SELECT = MAX_NODE_SCOPE_NUM * ARKUI_NODE_CHECKBOX = 11000
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 1表示选中，0表示不选中。 |
@@ -273,7 +322,10 @@ NODE_CHECKBOX_SELECT = MAX_NODE_SCOPE_NUM * ARKUI_NODE_CHECKBOX = 11000
  
   
 
-#### NODE_CHECKBOX_SELECT_COLOR
+## NODE_CHECKBOX_SELECT_COLOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_CHECKBOX_SELECT_COLOR = 11001
@@ -287,6 +339,7 @@ NODE_CHECKBOX_SELECT_COLOR = 11001
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].u32 | 多选框选中状态颜色，类型为0xARGB，如0xFF1122FF。 |
@@ -294,6 +347,7 @@ NODE_CHECKBOX_SELECT_COLOR = 11001
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].u32 | 多选框选中状态颜色，类型为0xARGB，如0xFF1122FF。 |
@@ -301,7 +355,10 @@ NODE_CHECKBOX_SELECT_COLOR = 11001
  
   
 
-#### NODE_CHECKBOX_UNSELECT_COLOR
+## NODE_CHECKBOX_UNSELECT_COLOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_CHECKBOX_UNSELECT_COLOR = 11002
@@ -315,6 +372,7 @@ NODE_CHECKBOX_UNSELECT_COLOR = 11002
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].u32 | 边框颜色，类型为0xARGB，如0xFF1122FF。 |
@@ -322,6 +380,7 @@ NODE_CHECKBOX_UNSELECT_COLOR = 11002
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].u32 | 边框颜色，类型为0xARGB，如0xFF1122FF。 |
@@ -329,7 +388,10 @@ NODE_CHECKBOX_UNSELECT_COLOR = 11002
  
   
 
-#### NODE_CHECKBOX_MARK
+## NODE_CHECKBOX_MARK
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_CHECKBOX_MARK = 11003
@@ -343,6 +405,7 @@ NODE_CHECKBOX_MARK = 11003
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].u32 | 边框颜色，类型为0xARGB，如0xFF1122FF。 |
@@ -352,6 +415,7 @@ NODE_CHECKBOX_MARK = 11003
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].u32 | 边框颜色，类型为0xARGB，如0xFF1122FF。 |
@@ -361,7 +425,10 @@ NODE_CHECKBOX_MARK = 11003
  
   
 
-#### NODE_CHECKBOX_SHAPE
+## NODE_CHECKBOX_SHAPE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_CHECKBOX_SHAPE = 11004
@@ -375,6 +442,7 @@ CheckBox组件形状，支持属性设置，属性重置和属性获取。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 组件形状，参数类型ArkUI_CheckboxShape。 |
@@ -382,6 +450,7 @@ CheckBox组件形状，支持属性设置，属性重置和属性获取。
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 组件形状，参数类型ArkUI_CheckboxShape。 |
@@ -389,7 +458,10 @@ CheckBox组件形状，支持属性设置，属性重置和属性获取。
  
   
 
-#### NODE_CHECKBOX_NAME
+## NODE_CHECKBOX_NAME
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_CHECKBOX_NAME = 11005
@@ -403,6 +475,7 @@ NODE_CHECKBOX_NAME = 11005
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 组件名称。 |
@@ -410,6 +483,7 @@ NODE_CHECKBOX_NAME = 11005
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .string | 组件名称。 |
@@ -417,7 +491,10 @@ NODE_CHECKBOX_NAME = 11005
  
   
 
-#### NODE_CHECKBOX_GROUP
+## NODE_CHECKBOX_GROUP
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_CHECKBOX_GROUP = 11006
@@ -431,6 +508,7 @@ NODE_CHECKBOX_GROUP = 11006
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 组名称。 |
@@ -438,6 +516,7 @@ NODE_CHECKBOX_GROUP = 11006
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .string | 组名称。 |
@@ -445,7 +524,10 @@ NODE_CHECKBOX_GROUP = 11006
  
   
 
-#### NODE_SLIDER_BLOCK_COLOR
+## NODE_SLIDER_BLOCK_COLOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SLIDER_BLOCK_COLOR = MAX_NODE_SCOPE_NUM * ARKUI_NODE_SLIDER = 17000
@@ -459,6 +541,7 @@ Slider滑块的颜色，支持属性设置，属性重置和属性获取。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].u32 | 滑块的颜色，类型为0xARGB，如0xFF1122FF。 |
@@ -466,6 +549,7 @@ Slider滑块的颜色，支持属性设置，属性重置和属性获取。
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].u32 | 滑块的颜色，类型为0xARGB，如0xFF1122FF。 |
@@ -473,7 +557,10 @@ Slider滑块的颜色，支持属性设置，属性重置和属性获取。
  
   
 
-#### NODE_SLIDER_TRACK_COLOR
+## NODE_SLIDER_TRACK_COLOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SLIDER_TRACK_COLOR = 17001
@@ -487,6 +574,7 @@ Slider滑轨的背景颜色，支持属性设置，属性重置和属性获取�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].u32 | 背景颜色，类型为0xARGB，如0xFF1122FF。 |
@@ -494,6 +582,7 @@ Slider滑轨的背景颜色，支持属性设置，属性重置和属性获取�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].u32 | 背景颜色，类型为0xARGB，如0xFF1122FF。 |
@@ -501,7 +590,10 @@ Slider滑轨的背景颜色，支持属性设置，属性重置和属性获取�
  
   
 
-#### NODE_SLIDER_SELECTED_COLOR
+## NODE_SLIDER_SELECTED_COLOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SLIDER_SELECTED_COLOR = 17002
@@ -515,6 +607,7 @@ Slider滑轨的已滑动部分颜色，支持属性设置，属性重置和属�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].u32 | 已滑动部分颜色，类型为0xARGB，如0xFF1122FF。 |
@@ -522,6 +615,7 @@ Slider滑轨的已滑动部分颜色，支持属性设置，属性重置和属�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].u32 | 已滑动部分颜色，类型为0xARGB，如0xFF1122FF。 |
@@ -529,7 +623,10 @@ Slider滑轨的已滑动部分颜色，支持属性设置，属性重置和属�
  
   
 
-#### NODE_SLIDER_SHOW_STEPS
+## NODE_SLIDER_SHOW_STEPS
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SLIDER_SHOW_STEPS = 17003
@@ -543,6 +640,7 @@ NODE_SLIDER_SHOW_STEPS = 17003
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否显示步长刻度值，1表示显示，0表示不显示，默认值为0。 |
@@ -550,6 +648,7 @@ NODE_SLIDER_SHOW_STEPS = 17003
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否显示步长刻度值，1表示显示，0表示不显示，默认值为0。 |
@@ -557,7 +656,10 @@ NODE_SLIDER_SHOW_STEPS = 17003
  
   
 
-#### NODE_SLIDER_BLOCK_STYLE
+## NODE_SLIDER_BLOCK_STYLE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SLIDER_BLOCK_STYLE = 17004
@@ -571,6 +673,7 @@ Slider滑块形状参数，支持属性设置，属性重置和属性获取。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 形状参数。参数类型ArkUI_SliderBlockStyle。 |
@@ -584,6 +687,7 @@ Slider滑块形状参数，支持属性设置，属性重置和属性获取。
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 形状参数。参数类型ArkUI_SliderBlockStyle。 |
@@ -597,7 +701,10 @@ Slider滑块形状参数，支持属性设置，属性重置和属性获取。
  
   
 
-#### NODE_SLIDER_VALUE
+## NODE_SLIDER_VALUE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SLIDER_VALUE = 17005
@@ -611,6 +718,7 @@ slider进度值，支持属性设置，属性重置和属性获取。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 进度值。 |
@@ -618,6 +726,7 @@ slider进度值，支持属性设置，属性重置和属性获取。
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 进度值。 |
@@ -625,7 +734,10 @@ slider进度值，支持属性设置，属性重置和属性获取。
  
   
 
-#### NODE_SLIDER_MIN_VALUE
+## NODE_SLIDER_MIN_VALUE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SLIDER_MIN_VALUE = 17006
@@ -639,6 +751,7 @@ slider最小值，支持属性设置，属性重置和属性获取。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 进度值的最小值。 |
@@ -646,6 +759,7 @@ slider最小值，支持属性设置，属性重置和属性获取。
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 进度值的最小值。 |
@@ -653,7 +767,10 @@ slider最小值，支持属性设置，属性重置和属性获取。
  
   
 
-#### NODE_SLIDER_MAX_VALUE
+## NODE_SLIDER_MAX_VALUE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SLIDER_MAX_VALUE = 17007
@@ -667,6 +784,7 @@ slider最大值，支持属性设置，属性重置和属性获取。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 进度值的最大值。 |
@@ -674,6 +792,7 @@ slider最大值，支持属性设置，属性重置和属性获取。
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 进度值的最大值。 |
@@ -681,7 +800,10 @@ slider最大值，支持属性设置，属性重置和属性获取。
  
   
 
-#### NODE_SLIDER_STEP
+## NODE_SLIDER_STEP
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SLIDER_STEP = 17008
@@ -695,6 +817,7 @@ Slider滑动步长，支持属性设置，属性重置和属性获取。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 滑动步长，取值范围：[0.01, 100]。 |
@@ -702,6 +825,7 @@ Slider滑动步长，支持属性设置，属性重置和属性获取。
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 滑动步长，取值范围：[0.01, 100]。 |
@@ -709,7 +833,10 @@ Slider滑动步长，支持属性设置，属性重置和属性获取。
  
   
 
-#### NODE_SLIDER_DIRECTION
+## NODE_SLIDER_DIRECTION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SLIDER_DIRECTION = 17009
@@ -723,6 +850,7 @@ Slider滑动条滑动方向，支持属性设置，属性重置和属性获取�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 滑动方向，参数类型ArkUI_SliderDirection。 |
@@ -730,6 +858,7 @@ Slider滑动条滑动方向，支持属性设置，属性重置和属性获取�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 滑动方向，参数类型ArkUI_SliderDirection。 |
@@ -737,7 +866,10 @@ Slider滑动条滑动方向，支持属性设置，属性重置和属性获取�
  
   
 
-#### NODE_SLIDER_REVERSE
+## NODE_SLIDER_REVERSE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SLIDER_REVERSE = 17010
@@ -751,6 +883,7 @@ Slider滑动条取值范围是否反向，支持属性设置，属性重置和�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否反向，1表示反向，0表示不反向。 |
@@ -758,6 +891,7 @@ Slider滑动条取值范围是否反向，支持属性设置，属性重置和�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否反向，1表示反向，0表示不反向。 |
@@ -765,7 +899,10 @@ Slider滑动条取值范围是否反向，支持属性设置，属性重置和�
  
   
 
-#### NODE_SLIDER_STYLE
+## NODE_SLIDER_STYLE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SLIDER_STYLE = 17011
@@ -779,6 +916,7 @@ Slider的滑块与滑轨显示样式，支持属性设置，属性重置和属�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 显示样式，参数类型ArkUI_SliderStyle。 |
@@ -786,6 +924,7 @@ Slider的滑块与滑轨显示样式，支持属性设置，属性重置和属�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 显示样式，参数类型ArkUI_SliderStyle。 |
@@ -793,7 +932,10 @@ Slider的滑块与滑轨显示样式，支持属性设置，属性重置和属�
  
   
 
-#### NODE_SLIDER_TRACK_THICKNESS
+## NODE_SLIDER_TRACK_THICKNESS
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SLIDER_TRACK_THICKNESS = 17012
@@ -807,6 +949,7 @@ Slider滑块的滑轨粗细属性，支持属性设置，属性重置和属性�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 滑轨的粗细，单位为vp；当参数NODE_SLIDER_STYLE的值设置为ARKUI_SLIDER_STYLE_OUT_SET时为4.0vp，设置为ARKUI_SLIDER_STYLE_IN_SET时为20.0vp。 |
@@ -814,6 +957,7 @@ Slider滑块的滑轨粗细属性，支持属性设置，属性重置和属性�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 滑轨的粗细，单位为vp。 |
@@ -821,7 +965,10 @@ Slider滑块的滑轨粗细属性，支持属性设置，属性重置和属性�
  
   
 
-#### NODE_SLIDER_ENABLE_HAPTIC_FEEDBACK
+## NODE_SLIDER_ENABLE_HAPTIC_FEEDBACK
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SLIDER_ENABLE_HAPTIC_FEEDBACK = 17013
@@ -837,21 +984,26 @@ NODE_SLIDER_ENABLE_HAPTIC_FEEDBACK = 17013
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].f32 | 是否开启触控反馈。默认值：true，true表示开启触控反馈，false则表示不开启触控反馈。 |
+| .value[0].i32 | 是否开启触控反馈。默认值：true，true表示开启触控反馈，false则表示不开启触控反馈。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| .value[0].f32 | 是否开启触控反馈。 |
+| .value[0].i32 | 是否开启触控反馈。 |
  
  
   
 
-#### NODE_SLIDER_PREFIX
+## NODE_SLIDER_PREFIX
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SLIDER_PREFIX = 17014
@@ -865,6 +1017,7 @@ NODE_SLIDER_PREFIX = 17014
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 参数类型 ArkUI_NodeHandle。前缀组件将放置在Slider组件的起始位置，通常在LTR布局的左侧。 |
@@ -872,7 +1025,10 @@ NODE_SLIDER_PREFIX = 17014
  
   
 
-#### NODE_SLIDER_SUFFIX
+## NODE_SLIDER_SUFFIX
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SLIDER_SUFFIX = 17015
@@ -886,6 +1042,7 @@ NODE_SLIDER_SUFFIX = 17015
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 参数类型 ArkUI_NodeHandle。后缀组件将放置在Slider组件的尾侧位置，通常在LTR布局的右侧。 |
@@ -893,7 +1050,10 @@ NODE_SLIDER_SUFFIX = 17015
  
   
 
-#### NODE_SLIDER_BLOCK_LINEAR_GRADIENT_COLOR
+## NODE_SLIDER_BLOCK_LINEAR_GRADIENT_COLOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SLIDER_BLOCK_LINEAR_GRADIENT_COLOR = 17016
@@ -907,6 +1067,7 @@ Slider滑块的线性渐变颜色，支持属性设置，属性重置和属性�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 参数类型为ArkUI_ColorStop。指定相对比例位置处的渐变色颜色，设置非法颜色直接跳过： - colors：渐变色颜色。 - stops：渐变位置。 - size：颜色个数。 |
@@ -914,6 +1075,7 @@ Slider滑块的线性渐变颜色，支持属性设置，属性重置和属性�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .object | 参数类型为ArkUI_ColorStop。指定相对比例位置处的渐变色颜色： - colors：渐变色颜色。 - stops：渐变位置。 - size：颜色个数。 |
@@ -921,7 +1083,10 @@ Slider滑块的线性渐变颜色，支持属性设置，属性重置和属性�
  
   
 
-#### NODE_SLIDER_TRACK_LINEAR_GRADIENT_COLOR
+## NODE_SLIDER_TRACK_LINEAR_GRADIENT_COLOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SLIDER_TRACK_LINEAR_GRADIENT_COLOR = 17017
@@ -935,6 +1100,7 @@ Slider滑轨的背景线性渐变颜色，支持属性设置，属性重置和�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 参数类型为ArkUI_ColorStop。指定相对比例位置处的渐变色颜色，设置非法颜色直接跳过： - colors：渐变色颜色。 - stops：渐变位置。 - size：颜色个数。 |
@@ -942,6 +1108,7 @@ Slider滑轨的背景线性渐变颜色，支持属性设置，属性重置和�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .object | 参数类型为ArkUI_ColorStop。指定相对比例位置处的渐变色颜色： - colors：渐变色颜色。 - stops：渐变位置。 - size：颜色个数。 |
@@ -949,7 +1116,10 @@ Slider滑轨的背景线性渐变颜色，支持属性设置，属性重置和�
  
   
 
-#### NODE_SLIDER_SELECTED_LINEAR_GRADIENT_COLOR
+## NODE_SLIDER_SELECTED_LINEAR_GRADIENT_COLOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SLIDER_SELECTED_LINEAR_GRADIENT_COLOR = 17018
@@ -963,6 +1133,7 @@ Slider滑轨的已滑动部分线性渐变颜色，支持属性设置，属性�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 参数类型为ArkUI_ColorStop。指定相对比例位置处的渐变色颜色，设置非法颜色直接跳过： - colors：渐变色颜色。 - stops：渐变位置。 - size：颜色个数。 |
@@ -970,6 +1141,7 @@ Slider滑轨的已滑动部分线性渐变颜色，支持属性设置，属性�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .object | 参数类型为ArkUI_ColorStop。指定相对比例位置处的渐变色颜色： - colors：渐变色颜色。 - stops：渐变位置。 - size：颜色个数。 |
@@ -977,7 +1149,10 @@ Slider滑轨的已滑动部分线性渐变颜色，支持属性设置，属性�
  
   
 
-#### NODE_RADIO_CHECKED
+## NODE_RADIO_CHECKED
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_RADIO_CHECKED = MAX_NODE_SCOPE_NUM * ARKUI_NODE_RADIO = 18000
@@ -991,6 +1166,7 @@ NODE_RADIO_CHECKED = MAX_NODE_SCOPE_NUM * ARKUI_NODE_RADIO = 18000
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 单选框的选中状态，默认值false。值为true时，单选框被选中。值为false时，单选框不被选中。 |
@@ -998,6 +1174,7 @@ NODE_RADIO_CHECKED = MAX_NODE_SCOPE_NUM * ARKUI_NODE_RADIO = 18000
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 单选框的选中状态。 |
@@ -1005,7 +1182,10 @@ NODE_RADIO_CHECKED = MAX_NODE_SCOPE_NUM * ARKUI_NODE_RADIO = 18000
  
   
 
-#### NODE_RADIO_STYLE
+## NODE_RADIO_STYLE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_RADIO_STYLE = 18001
@@ -1019,6 +1199,7 @@ NODE_RADIO_STYLE = 18001
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0]?.u32 | 开启状态底板颜色，类型为0xARGB，默认值为0xFF007DFF。 |
@@ -1028,6 +1209,7 @@ NODE_RADIO_STYLE = 18001
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].u32 | 开启状态底板颜色，类型为0xARGB，默认值为0xFF007DFF。 |
@@ -1037,7 +1219,10 @@ NODE_RADIO_STYLE = 18001
  
   
 
-#### NODE_RADIO_VALUE
+## NODE_RADIO_VALUE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_RADIO_VALUE = 18002
@@ -1051,6 +1236,7 @@ NODE_RADIO_VALUE = 18002
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 单选框的值。 |
@@ -1058,6 +1244,7 @@ NODE_RADIO_VALUE = 18002
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .string | 单选框的值。 |
@@ -1065,7 +1252,10 @@ NODE_RADIO_VALUE = 18002
  
   
 
-#### NODE_RADIO_GROUP
+## NODE_RADIO_GROUP
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_RADIO_GROUP = 18003
@@ -1079,6 +1269,7 @@ NODE_RADIO_GROUP = 18003
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 当前单选框的所属群组名称。 |
@@ -1086,6 +1277,7 @@ NODE_RADIO_GROUP = 18003
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .string | 当前单选框的所属群组名称。 |
@@ -1093,7 +1285,10 @@ NODE_RADIO_GROUP = 18003
  
   
 
-#### NODE_CHECKBOX_GROUP_NAME
+## NODE_CHECKBOX_GROUP_NAME
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_CHECKBOX_GROUP_NAME = MAX_NODE_SCOPE_NUM * ARKUI_NODE_CHECKBOX_GROUP = 21000
@@ -1107,6 +1302,7 @@ NODE_CHECKBOX_GROUP_NAME = MAX_NODE_SCOPE_NUM * ARKUI_NODE_CHECKBOX_GROUP = 2100
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 组件名称。 |
@@ -1114,6 +1310,7 @@ NODE_CHECKBOX_GROUP_NAME = MAX_NODE_SCOPE_NUM * ARKUI_NODE_CHECKBOX_GROUP = 2100
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .string | 组件名称。 |
@@ -1121,7 +1318,10 @@ NODE_CHECKBOX_GROUP_NAME = MAX_NODE_SCOPE_NUM * ARKUI_NODE_CHECKBOX_GROUP = 2100
  
   
 
-#### NODE_CHECKBOX_GROUP_SELECT_ALL
+## NODE_CHECKBOX_GROUP_SELECT_ALL
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_CHECKBOX_GROUP_SELECT_ALL = 21001
@@ -1135,6 +1335,7 @@ NODE_CHECKBOX_GROUP_SELECT_ALL = 21001
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否设置全选1表示选中，0表示不选中。 |
@@ -1142,6 +1343,7 @@ NODE_CHECKBOX_GROUP_SELECT_ALL = 21001
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 1表示选中，0表示不选中。 |
@@ -1149,7 +1351,10 @@ NODE_CHECKBOX_GROUP_SELECT_ALL = 21001
  
   
 
-#### NODE_CHECKBOX_GROUP_SELECTED_COLOR
+## NODE_CHECKBOX_GROUP_SELECTED_COLOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_CHECKBOX_GROUP_SELECTED_COLOR = 21002
@@ -1163,6 +1368,7 @@ NODE_CHECKBOX_GROUP_SELECTED_COLOR = 21002
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].u32 | CheckBoxGroup多选框选中状态颜色，0xARGB格式。例如0xFF1122FF。 |
@@ -1170,6 +1376,7 @@ NODE_CHECKBOX_GROUP_SELECTED_COLOR = 21002
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].u32 | CheckBoxGroup多选框选中状态颜色，0xARGB格式。例如0xFF1122FF。 |
@@ -1177,7 +1384,10 @@ NODE_CHECKBOX_GROUP_SELECTED_COLOR = 21002
  
   
 
-#### NODE_CHECKBOX_GROUP_UNSELECTED_COLOR
+## NODE_CHECKBOX_GROUP_UNSELECTED_COLOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_CHECKBOX_GROUP_UNSELECTED_COLOR = 21003
@@ -1191,6 +1401,7 @@ NODE_CHECKBOX_GROUP_UNSELECTED_COLOR = 21003
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].u32 | 边框颜色，类型为0xARGB，如0xFF1122FF。 |
@@ -1198,6 +1409,7 @@ NODE_CHECKBOX_GROUP_UNSELECTED_COLOR = 21003
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].u32 | 边框颜色，类型为0xARGB，如0xFF1122FF。 |
@@ -1205,7 +1417,10 @@ NODE_CHECKBOX_GROUP_UNSELECTED_COLOR = 21003
  
   
 
-#### NODE_CHECKBOX_GROUP_MARK
+## NODE_CHECKBOX_GROUP_MARK
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_CHECKBOX_GROUP_MARK = 21004
@@ -1219,6 +1434,7 @@ NODE_CHECKBOX_GROUP_MARK = 21004
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].u32 | 边框颜色，类型为0xARGB，如0xFF1122FF。 |
@@ -1228,6 +1444,7 @@ NODE_CHECKBOX_GROUP_MARK = 21004
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].u32 | 边框颜色，类型为0xARGB，如0xFF1122FF。 |
@@ -1237,7 +1454,10 @@ NODE_CHECKBOX_GROUP_MARK = 21004
  
   
 
-#### NODE_CHECKBOX_GROUP_SHAPE
+## NODE_CHECKBOX_GROUP_SHAPE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_CHECKBOX_GROUP_SHAPE = 21005
@@ -1251,6 +1471,7 @@ NODE_CHECKBOX_GROUP_SHAPE = 21005
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 组件形状，参数类型ArkUI_CheckboxShape。 |
@@ -1258,6 +1479,7 @@ NODE_CHECKBOX_GROUP_SHAPE = 21005
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 组件形状，参数类型ArkUI_CheckboxShape。 |

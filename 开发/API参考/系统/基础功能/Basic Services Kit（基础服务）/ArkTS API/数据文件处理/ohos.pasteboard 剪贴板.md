@@ -1,9 +1,9 @@
 # @ohos.pasteboard (剪贴板)
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-pasteboard
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供管理系统剪贴板的能力，支持系统复制、粘贴功能。系统剪贴板支持对文本、HTML、URI、Want、PixelMap等内容的操作。
 
@@ -12,17 +12,19 @@
 
 
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供系统剪贴板管理能力。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { pasteboard } from '@kit.BasicServicesKit';
@@ -30,13 +32,15 @@ import { pasteboard } from '@kit.BasicServicesKit';
 
 
 
-#### 常量
+## 常量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
+
 
 | 名称 | 类型 | 值 | 说明 |
 | --- | --- | --- | --- |
@@ -50,9 +54,10 @@ import { pasteboard } from '@kit.BasicServicesKit';
 
 
 
-#### ValueType9+
+## ValueType9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ValueType = string | image.PixelMap | Want | ArrayBuffer
 
@@ -61,6 +66,7 @@ type ValueType = string | image.PixelMap | Want | ArrayBuffer
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -72,9 +78,10 @@ type ValueType = string | image.PixelMap | Want | ArrayBuffer
 
 
 
-#### pasteboard.createData9+
+## pasteboard.createData9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createData(mimeType: string, value: ValueType): PasteData
 
@@ -90,13 +97,15 @@ createData(mimeType: string, value: ValueType): PasteData
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| mimeType | string | 是 | 剪贴板数据对应的MIME类型，可以是常量中已定义的类型，包括HTML类型，WANT类型，纯文本类型，URI类型，PIXELMAP类型；也可以是自定义的MIME类型，开发者可自定义此参数值，mimeType长度不能超过1024字节。 |
+| mimeType | string | 是 | 剪贴板数据对应的MIME类型，可以是常量中已定义的类型，包括HTML类型，Want类型，纯文本类型，URI类型，PixelMap类型；也可以是自定义的MIME类型，开发者可自定义此参数值，mimeType长度不能超过1024字节。 |
 | value | ValueType | 是 | 自定义数据内容。建议根据实际场景选择合适的数据类型，使用过大的数据对象会影响应用复制粘贴性能和内存占用。对于ArrayBuffer类型，建议合理设置数据大小；对于PixelMap类型，建议及时释放不再使用的对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -106,6 +115,7 @@ createData(mimeType: string, value: ValueType): PasteData
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -132,9 +142,10 @@ let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_
 
 
 
-#### pasteboard.createData14+
+## pasteboard.createData14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createData(data: Record<string, ValueType>): PasteData
 
@@ -146,12 +157,14 @@ createData(data: Record<string, ValueType>): PasteData
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| data | Record<string, ValueType> | 是 | Record的key为剪贴板数据对应的MIME类型。可以是常量中已定义的类型，包括HTML类型，WANT类型，纯文本类型，URI类型，PIXELMAP类型。也可以是自定义的MIME类型，可自定义此参数值，mimeType长度不能超过1024字节。 Record的value为key中指定MIME类型对应的数据。 Record中的首个key-value指定的MIME类型，会作为剪贴板内容对象中首个PasteDataRecord的默认MIME类型，非默认类型的数据在粘贴时只能使用getData接口读取。 |
+| data | Record<string, ValueType> | 是 | Record的key为剪贴板数据对应的MIME类型。可以是常量中已定义的类型，包括HTML类型，Want类型，纯文本类型，URI类型，PixelMap类型。也可以是自定义的MIME类型，可自定义此参数值，mimeType长度不能超过1024字节。 Record的value为key中指定MIME类型对应的数据。 Record中的首个key-value指定的MIME类型，会作为剪贴板内容对象中首个PasteDataRecord的默认MIME类型，非默认类型的数据在粘贴时只能使用getData接口读取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -161,6 +174,7 @@ createData(data: Record<string, ValueType>): PasteData
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -192,9 +206,10 @@ let pasteData: pasteboard.PasteData = pasteboard.createData(record);
 
 
 
-#### pasteboard.createRecord9+
+## pasteboard.createRecord9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createRecord(mimeType: string, value: ValueType): PasteDataRecord
 
@@ -212,13 +227,15 @@ createRecord(mimeType: string, value: ValueType): PasteDataRecord
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| mimeType | string | 是 | 剪贴板数据对应的MIME类型，可以是常量中已定义的类型，包括HTML类型，WANT类型，纯文本类型，URI类型，PIXELMAP类型；也可以是自定义的MIME类型，开发者可自定义此参数值，mimeType长度不能超过1024字节。 |
+| mimeType | string | 是 | 剪贴板数据对应的MIME类型，可以是常量中已定义的类型，包括HTML类型，Want类型，纯文本类型，URI类型，PixelMap类型；也可以是自定义的MIME类型，开发者可自定义此参数值，mimeType长度不能超过1024字节。 |
 | value | ValueType | 是 | 指定类型对应的数据内容。建议根据实际场景选择合适的数据类型，避免使用过大的数据对象以免影响剪贴板性能和内存占用。对于ArrayBuffer类型，建议合理设置数据大小；对于PixelMap类型，建议及时释放不再使用的对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -228,6 +245,7 @@ createRecord(mimeType: string, value: ValueType): PasteDataRecord
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -256,9 +274,10 @@ pasteData.replaceRecord(0, record);
 
 
 
-#### pasteboard.getSystemPasteboard
+## pasteboard.getSystemPasteboard
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSystemPasteboard(): SystemPasteboard
 
@@ -271,6 +290,7 @@ getSystemPasteboard(): SystemPasteboard
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -286,9 +306,10 @@ const systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteb
 
 
 
-#### ShareOption9+
+## ShareOption9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 可粘贴数据的范围类型枚举。
 
@@ -296,18 +317,20 @@ const systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteb
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | INAPP | 0 | 表示仅允许同应用内粘贴。 |
 | LOCALDEVICE | 1 | 表示允许在任何应用内粘贴。用户在“设置-多设备协同-跨设备剪贴板开关”选项中控制允许跨设备粘贴，表示允许跨设备在任何应用内粘贴。 |
-| CROSSDEVICE(deprecated) | 2 | 表示允许跨设备在任何应用内粘贴。 从API version 12开始废弃，无替代接口和替代方法，后续由用户在“设置-多设备协同-跨设备剪贴板开关”选项中控制是否允许跨设备粘贴。 |
+| CROSSDEVICE(deprecated) | 2 | 表示允许在任何应用内粘贴。 从API version 12开始废弃，无替代接口和替代方法，后续由用户在“设置-多设备协同-跨设备剪贴板开关”选项中控制是否允许跨设备粘贴。 |
 
 
 
 
-#### pasteboard.createHtmlData(deprecated)
+## pasteboard.createHtmlData(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createHtmlData(htmlText: string): PasteData
 
@@ -321,12 +344,14 @@ createHtmlData(htmlText: string): PasteData
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | htmlText | string | 是 | HTML内容，需符合标准HTML格式。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -342,9 +367,10 @@ let pasteData: pasteboard.PasteData = pasteboard.createHtmlData(html);
 
 
 
-#### pasteboard.createWantData(deprecated)
+## pasteboard.createWantData(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createWantData(want: Want): PasteData
 
@@ -358,12 +384,14 @@ createWantData(want: Want): PasteData
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | Want内容。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -384,9 +412,10 @@ let pasteData: pasteboard.PasteData = pasteboard.createWantData(object);
 
 
 
-#### pasteboard.createPlainTextData(deprecated)
+## pasteboard.createPlainTextData(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPlainTextData(text: string): PasteData
 
@@ -400,12 +429,14 @@ createPlainTextData(text: string): PasteData
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | text | string | 是 | 纯文本内容。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -420,9 +451,10 @@ let pasteData: pasteboard.PasteData = pasteboard.createPlainTextData('content');
 
 
 
-#### pasteboard.createUriData(deprecated)
+## pasteboard.createUriData(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createUriData(uri: string): PasteData
 
@@ -436,12 +468,14 @@ createUriData(uri: string): PasteData
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uri | string | 是 | URI内容，需符合标准URI格式。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -456,9 +490,10 @@ let pasteData: pasteboard.PasteData = pasteboard.createUriData('dataability:///c
 
 
 
-#### pasteboard.createHtmlTextRecord(deprecated)
+## pasteboard.createHtmlTextRecord(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createHtmlTextRecord(htmlText: string): PasteDataRecord
 
@@ -472,12 +507,14 @@ createHtmlTextRecord(htmlText: string): PasteDataRecord
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | htmlText | string | 是 | HTML内容，需符合标准HTML格式。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -493,9 +530,10 @@ let record: pasteboard.PasteDataRecord = pasteboard.createHtmlTextRecord(html);
 
 
 
-#### pasteboard.createWantRecord(deprecated)
+## pasteboard.createWantRecord(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createWantRecord(want: Want): PasteDataRecord
 
@@ -509,12 +547,14 @@ createWantRecord(want: Want): PasteDataRecord
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | Want内容。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -535,9 +575,10 @@ let record: pasteboard.PasteDataRecord = pasteboard.createWantRecord(object);
 
 
 
-#### pasteboard.createPlainTextRecord(deprecated)
+## pasteboard.createPlainTextRecord(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPlainTextRecord(text: string): PasteDataRecord
 
@@ -551,12 +592,14 @@ createPlainTextRecord(text: string): PasteDataRecord
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | text | string | 是 | 纯文本内容。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -571,9 +614,10 @@ let record: pasteboard.PasteDataRecord = pasteboard.createPlainTextRecord('hello
 
 
 
-#### pasteboard.createUriRecord(deprecated)
+## pasteboard.createUriRecord(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createUriRecord(uri: string): PasteDataRecord
 
@@ -587,12 +631,14 @@ createUriRecord(uri: string): PasteDataRecord
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uri | string | 是 | URI内容，需符合标准URI格式。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -607,15 +653,17 @@ let record: pasteboard.PasteDataRecord = pasteboard.createUriRecord('dataability
 
 
 
-#### PasteDataProperty7+
+## PasteDataProperty7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义剪贴板中所有内容条目的属性，包含时间戳、数据类型、粘贴范围以及一些附加数据等，该属性必须通过[setProperty](#setproperty9)方法，才能设置到剪贴板中。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -629,15 +677,17 @@ let record: pasteboard.PasteDataRecord = pasteboard.createUriRecord('dataability
 
 
 
-#### FileConflictOptions15+
+## FileConflictOptions15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义文件拷贝冲突时的选项。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -647,15 +697,17 @@ let record: pasteboard.PasteDataRecord = pasteboard.createUriRecord('dataability
 
 
 
-#### ProgressIndicator15+
+## ProgressIndicator15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义进度条指示选项，可选择是否采用系统默认进度显示。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -665,15 +717,17 @@ let record: pasteboard.PasteDataRecord = pasteboard.createUriRecord('dataability
 
 
 
-#### ProgressInfo15+
+## ProgressInfo15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义进度上报的数据结构，且仅当进度指示选项[ProgressIndicator](#progressindicator15)设置为NONE时才会上报此信息。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -682,9 +736,10 @@ let record: pasteboard.PasteDataRecord = pasteboard.createUriRecord('dataability
 
 
 
-#### ProgressListener15+
+## ProgressListener15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ProgressListener = (progress: ProgressInfo) => void
 
@@ -696,6 +751,7 @@ type ProgressListener = (progress: ProgressInfo) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | progress | ProgressInfo | 是 | 定义进度上报的数据结构，且仅当进度指示选项ProgressIndicator设置为NONE时才会上报此信息。 |
@@ -703,9 +759,10 @@ type ProgressListener = (progress: ProgressInfo) => void
 
 
 
-#### ProgressSignal15+
+## ProgressSignal15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义进度取消的函数，在粘贴过程中可选择取消任务，且仅当进度指示选项[ProgressIndicator](#progressindicator15)设置为NONE时此参数才生效。
 
@@ -713,9 +770,10 @@ type ProgressListener = (progress: ProgressInfo) => void
 
 
 
-#### cancel15+
+### cancel15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancel(): void
 
@@ -771,9 +829,10 @@ struct PasteboardTest {
 
 
 
-#### GetDataParams15+
+## GetDataParams15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 应用在使用剪贴板提供的文件拷贝能力的情况下需要的参数，包含目标路径、文件冲突选项、进度条类型等。调用本接口前，需确保无其他拷贝或粘贴操作正在进行。
 
@@ -781,9 +840,10 @@ struct PasteboardTest {
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| destUri | string | 否 | 是 | 拷贝文件的目标路径对应的URI。若不支持文件处理，则不需要设置此参数；若应用涉及复杂文件处理策略或需要区分文件多路径存储，建议不设置此参数，由应用自行完成文件复制处理，默认为空。 |
+| destUri | string | 否 | 是 | 贝文件的目标路径对应的URI。若不支持文件处理，则不需要设置此参数；若应用涉及复杂文件处理策略或需要区分文件多路径存储，建议不设置此参数，由应用自行完成文件复制处理，默认为空。 |
 | fileConflictOptions | FileConflictOptions | 否 | 是 | 定义文件拷贝冲突时的选项。OVERWRITE（覆盖）适合需要确保目标路径使用最新文件内容的场景；SKIP（跳过）适合需要保留目标路径原有文件、避免意外覆盖的场景。默认为OVERWRITE。 |
 | progressIndicator | ProgressIndicator | 否 | 否 | 定义进度条指示选项，可选择是否采用系统默认进度显示。设置为DEFAULT时采用系统默认进度显示；设置为NONE时需应用自行处理进度，此时progressListener和progressSignal参数才有效。 |
 | progressListener | ProgressListener | 否 | 是 | 定义进度数据变化的订阅函数，用于获取粘贴过程的进度。仅当progressIndicator设置为NONE时此参数才生效，可设置该项自行处理进度显示；当progressIndicator设置为DEFAULT时此参数无效。默认为空（不监听进度）。 |
@@ -792,21 +852,24 @@ struct PasteboardTest {
 
 
 
-#### PasteDataRecord7+
+## PasteDataRecord7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 对于剪贴板中内容记录的抽象定义，称之为条目。剪贴板内容部分由一个或者多个条目构成，例如一条文本内容、一份HTML、一个URI或者一个Want。不支持在创建PasteDataRecord之后，修改PasteDataRecord的默认数据类型的值，应在创建PasteDataRecord时指定正确的默认数据类型的值。如需刷新PasteDataRecord的属性值，请使用[addEntry](#addentry14)。
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -821,9 +884,10 @@ struct PasteboardTest {
 
 
 
-#### toPlainText9+
+### toPlainText9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toPlainText(): string
 
@@ -834,6 +898,7 @@ toPlainText(): string
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -850,27 +915,30 @@ console.info(`Succeeded in converting to text. Text: ${text}`);
 
 
 
-#### addEntry14+
+### addEntry14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addEntry(type: string, value: ValueType): void
 
-往一个PasteDataRecord中额外添加一种样式的自定义数据。此方式添加的MIME类型都不是Record的默认类型，粘贴时只能使用[getData](#getdata14)接口读取对应数据。
+往一个PasteDataRecord中额外添加一种样式的数据。此方式添加的MIME类型都不是Record的默认类型，粘贴时只能使用[getData](#getdata14)接口读取对应数据。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 剪贴板数据对应的MIME类型，可以是常量中已定义的类型，包括HTML类型，WANT类型，纯文本类型，URI类型，PIXELMAP类型；也可以是自定义的MIME类型，开发者可自定义此参数值，mimeType长度不能超过1024字节。 |
+| type | string | 是 | 剪贴板数据对应的MIME类型，可以是常量中已定义的类型，包括HTML类型，Want类型，纯文本类型，URI类型，PixelMap类型；也可以是自定义的MIME类型，开发者可自定义此参数值，mimeType长度不能超过1024字节。 |
 | value | ValueType | 是 | 自定义数据内容。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[剪贴板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pasteboard)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -892,9 +960,10 @@ record.addEntry(pasteboard.MIMETYPE_TEXT_HTML, html);
 
 
 
-#### getValidTypes14+
+### getValidTypes14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getValidTypes(types: Array&lt;string&gt;): Array&lt;string&gt;
 
@@ -906,12 +975,14 @@ getValidTypes(types: Array&lt;string&gt;): Array&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | types | Array&lt;string&gt; | 是 | MIME类型列表，设置后用于与剪贴板中数据的MIME类型进行交集匹配，返回匹配成功的类型列表。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -921,6 +992,7 @@ getValidTypes(types: Array&lt;string&gt;): Array&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[剪贴板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pasteboard)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -945,9 +1017,10 @@ let types: string[] = record.getValidTypes([
 
 
 
-#### getData14+
+### getData14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getData(type: string): Promise&lt;ValueType&gt;
 
@@ -957,12 +1030,14 @@ getData(type: string): Promise&lt;ValueType&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | MIME类型，取值范围：长度不超过1024字节。超出范围时返回错误码401。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -972,6 +1047,7 @@ getData(type: string): Promise&lt;ValueType&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[剪贴板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pasteboard)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1003,9 +1079,10 @@ record.getData(pasteboard.MIMETYPE_TEXT_URI).then((value: pasteboard.ValueType) 
 
 
 
-#### convertToText(deprecated)
+### convertToText(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 convertToText(callback: AsyncCallback&lt;string&gt;): void
 
@@ -1019,6 +1096,7 @@ convertToText(callback: AsyncCallback&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;string&gt; | 是 | 回调函数，当转换成功，err为undefined，data为强制转换的文本内容；否则返回错误信息。 |
@@ -1027,6 +1105,7 @@ convertToText(callback: AsyncCallback&lt;string&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1050,9 +1129,10 @@ record.convertToText((err: BusinessError, data: string) => {
 
 
 
-#### convertToText(deprecated)
+### convertToText(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 convertToText(): Promise&lt;string&gt;
 
@@ -1065,6 +1145,7 @@ convertToText(): Promise&lt;string&gt;
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1086,9 +1167,10 @@ record.convertToText().then((data: string) => {
 
 
 
-#### PasteData
+## PasteData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 剪贴板内容对象。剪贴板内容包含一个或者多个内容条目（[PasteDataRecord](#pastedatarecord7)）以及属性描述对象（[PasteDataProperty](#pastedataproperty7)）。
 
@@ -1098,9 +1180,10 @@ record.convertToText().then((data: string) => {
 
 
 
-#### getPrimaryText
+### getPrimaryText
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPrimaryText(): string
 
@@ -1111,6 +1194,7 @@ getPrimaryText(): string
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1136,9 +1220,10 @@ systemPasteboard.getData().then((pasteData: pasteboard.PasteData) => {
 
 
 
-#### getPrimaryHtml7+
+### getPrimaryHtml7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPrimaryHtml(): string
 
@@ -1149,6 +1234,7 @@ getPrimaryHtml(): string
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1170,9 +1256,10 @@ systemPasteboard.getData().then((pasteData: pasteboard.PasteData) => {
 
 
 
-#### getPrimaryWant7+
+### getPrimaryWant7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPrimaryWant(): Want
 
@@ -1183,6 +1270,7 @@ getPrimaryWant(): Want
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1205,9 +1293,10 @@ systemPasteboard.getData().then((pasteData: pasteboard.PasteData) => {
 
 
 
-#### getPrimaryUri7+
+### getPrimaryUri7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPrimaryUri(): string
 
@@ -1218,6 +1307,7 @@ getPrimaryUri(): string
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1239,9 +1329,10 @@ systemPasteboard.getData().then((pasteData: pasteboard.PasteData) => {
 
 
 
-#### getPrimaryPixelMap9+
+### getPrimaryPixelMap9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPrimaryPixelMap(): image.PixelMap
 
@@ -1252,6 +1343,7 @@ getPrimaryPixelMap(): image.PixelMap
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1282,19 +1374,21 @@ image.createPixelMap(buffer, opt).then((pixelMap: image.PixelMap) => {
 
 
 
-#### addRecord7+
+### addRecord7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addRecord(record: PasteDataRecord): void
 
-向当前剪贴板内容中添加一条条目，同时也会将条目类型添加到[PasteDataProperty](#pastedataproperty7)的mimeTypes中。入参均不能为空，否则添加操作无效。
+向当前剪贴板内容中添加一条条目，同时也会将条目类型添加到[PasteDataProperty](#pastedataproperty7)的mimeTypes中。入参均不能为空，否则添加失败。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1316,9 +1410,10 @@ pasteData.addRecord(htmlRecord);
 
 
 
-#### addRecord9+
+### addRecord9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addRecord(mimeType: string, value: ValueType): void
 
@@ -1332,6 +1427,7 @@ addRecord(mimeType: string, value: ValueType): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mimeType | string | 是 | 数据的MIME类型，取值范围：长度不超过1024字节。超出范围时返回错误码401。 |
@@ -1342,10 +1438,11 @@ addRecord(mimeType: string, value: ValueType): void
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[剪贴板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pasteboard)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types; 3. Parameter verification failed. |
-| 12900002 | The number of records exceeds the upper limit, 适用版本： 9 - 9 |
+| 12900002 | The number of records exceeds the upper limit. 适用版本： 9 - 9 |
 
 
 **示例：**
@@ -1359,9 +1456,10 @@ pasteData.addRecord('app/xml', dataXml);
 
 
 
-#### getMimeTypes7+
+### getMimeTypes7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMimeTypes(): Array&lt;string&gt;
 
@@ -1372,6 +1470,7 @@ getMimeTypes(): Array&lt;string&gt;
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1387,9 +1486,10 @@ let types: string[] = pasteData.getMimeTypes();
 
 
 
-#### getPrimaryMimeType7+
+### getPrimaryMimeType7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPrimaryMimeType(): string
 
@@ -1400,6 +1500,7 @@ getPrimaryMimeType(): string
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1415,9 +1516,10 @@ let type: string = pasteData.getPrimaryMimeType();
 
 
 
-#### getProperty7+
+### getProperty7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getProperty(): PasteDataProperty
 
@@ -1428,6 +1530,7 @@ getProperty(): PasteDataProperty
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1443,9 +1546,10 @@ let property: pasteboard.PasteDataProperty = pasteData.getProperty();
 
 
 
-#### setProperty9+
+### setProperty9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setProperty(property: PasteDataProperty): void
 
@@ -1457,6 +1561,7 @@ setProperty(property: PasteDataProperty): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | property | PasteDataProperty | 是 | 属性描述对象，设置后更新剪贴板内容的属性信息，包括时间戳、数据类型、粘贴范围等。 |
@@ -1465,6 +1570,7 @@ setProperty(property: PasteDataProperty): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1523,9 +1629,10 @@ pasteData.setProperty(prop);
 
 
 
-#### getRecord9+
+### getRecord9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRecord(index: number): PasteDataRecord
 
@@ -1537,12 +1644,14 @@ getRecord(index: number): PasteDataRecord
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 指定条目的下标。有效取值范围：[0, getRecordCount()-1]，超出范围会触发错误码12900001。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1552,6 +1661,7 @@ getRecord(index: number): PasteDataRecord
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[剪贴板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pasteboard)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1568,9 +1678,10 @@ let record: pasteboard.PasteDataRecord = pasteData.getRecord(0);
 
 
 
-#### getRecordCount7+
+### getRecordCount7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRecordCount(): number
 
@@ -1581,6 +1692,7 @@ getRecordCount(): number
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1596,9 +1708,10 @@ let count: number = pasteData.getRecordCount();
 
 
 
-#### getTag7+
+### getTag7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTag(): string
 
@@ -1609,6 +1722,7 @@ getTag(): string
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1624,9 +1738,10 @@ let tag: string = pasteData.getTag();
 
 
 
-#### hasType9+
+### hasType9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hasType(mimeType: string): boolean
 
@@ -1638,12 +1753,14 @@ hasType(mimeType: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| mimeType | string | 是 | 待查询的数据类型。可以是常量中已定义的类型，包括： - HTML类型 - WANT类型 - 纯文本类型 - URI类型 - PIXELMAP类型 也可以是自定义的MIME类型，长度不能超过1024字节。 |
+| mimeType | string | 是 | 待查询的数据类型。可以是常量中已定义的类型，包括： - HTML类型 - Want类型 - 纯文本类型 - URI类型 - PixelMap类型 也可以是自定义的MIME类型，长度不能超过1024字节。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1653,6 +1770,7 @@ hasType(mimeType: string): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1668,9 +1786,10 @@ let hasType: boolean = pasteData.hasType(pasteboard.MIMETYPE_TEXT_PLAIN);
 
 
 
-#### removeRecord9+
+### removeRecord9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeRecord(index: number): void
 
@@ -1682,6 +1801,7 @@ removeRecord(index: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 指定的下标。有效取值范围：[0, getRecordCount()-1]，超出范围会触发错误码12900001。 |
@@ -1690,6 +1810,7 @@ removeRecord(index: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[剪贴板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pasteboard)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1706,9 +1827,10 @@ pasteData.removeRecord(0);
 
 
 
-#### replaceRecord9+
+### replaceRecord9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 replaceRecord(index: number, record: PasteDataRecord): void
 
@@ -1720,6 +1842,7 @@ replaceRecord(index: number, record: PasteDataRecord): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 指定的下标。有效取值范围：[0, getRecordCount()-1]，超出范围会触发错误码12900001。 |
@@ -1729,6 +1852,7 @@ replaceRecord(index: number, record: PasteDataRecord): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[剪贴板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pasteboard)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1746,9 +1870,10 @@ pasteData.replaceRecord(0, record);
 
 
 
-#### pasteStart12+
+### pasteStart12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pasteStart(): void
 
@@ -1784,13 +1909,14 @@ systemPasteboard.getData((err: BusinessError, pasteData: pasteboard.PasteData) =
 
 
 
-#### pasteComplete12+
+### pasteComplete12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pasteComplete(): void
 
-通知剪贴板服务数据使用已完成，可释放跨设备通道等资源。应在pasteStart之后、完成数据处理后调用，避免资源浪费。未调用可能导致跨设备通道长时间占用，影响后续跨设备粘贴操作。
+通知剪贴板服务数据使用已完成，可释放跨设备通道等资源。应在调用pasteStart之后、完成数据处理后调用，避免资源浪费。未调用可能导致跨设备通道长时间占用，影响后续跨设备粘贴操作。
 
 pasteComplete与其他接口的使用步骤可参考：
 1. getData()获取剪贴板数据
@@ -1819,9 +1945,10 @@ systemPasteboard.getData((err: BusinessError, pasteData: pasteboard.PasteData) =
 
 
 
-#### addHtmlRecord(deprecated)
+### addHtmlRecord(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addHtmlRecord(htmlText: string): void
 
@@ -1834,6 +1961,7 @@ addHtmlRecord(htmlText: string): void
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1850,9 +1978,10 @@ pasteData.addHtmlRecord(html);
 
 
 
-#### addWantRecord(deprecated)
+### addWantRecord(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addWantRecord(want: Want): void
 
@@ -1865,6 +1994,7 @@ addWantRecord(want: Want): void
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1886,9 +2016,10 @@ pasteData.addWantRecord(object);
 
 
 
-#### addTextRecord(deprecated)
+### addTextRecord(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addTextRecord(text: string): void
 
@@ -1901,6 +2032,7 @@ addTextRecord(text: string): void
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1916,9 +2048,10 @@ pasteData.addTextRecord('good');
 
 
 
-#### addUriRecord(deprecated)
+### addUriRecord(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addUriRecord(uri: string): void
 
@@ -1931,6 +2064,7 @@ addUriRecord(uri: string): void
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1946,9 +2080,10 @@ pasteData.addUriRecord('dataability:///com.example.myapplication1/user.txt');
 
 
 
-#### getRecordAt(deprecated)
+### getRecordAt(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRecordAt(index: number): PasteDataRecord
 
@@ -1962,12 +2097,14 @@ getRecordAt(index: number): PasteDataRecord
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 指定条目的下标。有效取值范围：[0, getRecordCount()-1]，超出范围返回错误码401。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1977,6 +2114,7 @@ getRecordAt(index: number): PasteDataRecord
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1992,9 +2130,10 @@ let record: pasteboard.PasteDataRecord = pasteData.getRecordAt(0);
 
 
 
-#### hasMimeType(deprecated)
+### hasMimeType(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hasMimeType(mimeType: string): boolean
 
@@ -2008,12 +2147,14 @@ hasMimeType(mimeType: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| mimeType | string | 是 | 待查询的数据类型。可以是常量中已定义的类型，包括： - HTML类型 - WANT类型 - 纯文本类型 - URI类型 - PIXELMAP类型 也可以是自定义的MIME类型，长度不能超过1024字节。 |
+| mimeType | string | 是 | 待查询的数据类型。可以是常量中已定义的类型，包括： - HTML类型 - Want类型 - 纯文本类型 - URI类型 - PixelMap类型 也可以是自定义的MIME类型，长度不能超过1024字节。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2023,6 +2164,7 @@ hasMimeType(mimeType: string): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2038,9 +2180,10 @@ let hasType: boolean = pasteData.hasMimeType(pasteboard.MIMETYPE_TEXT_PLAIN);
 
 
 
-#### removeRecordAt(deprecated)
+### removeRecordAt(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeRecordAt(index: number): boolean
 
@@ -2054,12 +2197,14 @@ removeRecordAt(index: number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 指定的下标。有效取值范围：[0, getRecordCount()-1]，超出范围返回错误码401。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2069,6 +2214,7 @@ removeRecordAt(index: number): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2084,9 +2230,10 @@ let isRemove: boolean = pasteData.removeRecordAt(0);
 
 
 
-#### replaceRecordAt(deprecated)
+### replaceRecordAt(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 replaceRecordAt(index: number, record: PasteDataRecord): boolean
 
@@ -2100,6 +2247,7 @@ replaceRecordAt(index: number, record: PasteDataRecord): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 指定的下标。有效取值范围：[0, getRecordCount()-1]，超出范围返回错误码401。 |
@@ -2107,6 +2255,7 @@ replaceRecordAt(index: number, record: PasteDataRecord): boolean
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2123,9 +2272,10 @@ let isReplace: boolean = pasteData.replaceRecordAt(0, record);
 
 
 
-#### SystemPasteboard
+## SystemPasteboard
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 系统剪贴板对象。
 
@@ -2137,9 +2287,10 @@ const systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteb
 
 
 
-#### on('update')7+
+### on('update')7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'update', callback: () =>void): void
 
@@ -2158,6 +2309,7 @@ on(type: 'update', callback: () =>void): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 取值为'update'，表示系统剪贴板内容变化事件，其他值无效。 |
@@ -2167,6 +2319,7 @@ on(type: 'update', callback: () =>void): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2188,9 +2341,10 @@ systemPasteboard.on('update', listener);
 
 
 
-#### off('update')7+
+### off('update')7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'update', callback?: () =>void): void
 
@@ -2207,6 +2361,7 @@ off(type: 'update', callback?: () =>void): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 取值为'update'，表示系统剪贴板内容变化事件。 |
@@ -2216,6 +2371,7 @@ off(type: 'update', callback?: () =>void): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2237,9 +2393,10 @@ systemPasteboard.off('update', listener);
 
 
 
-#### clearData9+
+### clearData9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clearData(callback: AsyncCallback&lt;void&gt;): void
 
@@ -2253,6 +2410,7 @@ clearData(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当成功清空时，err为undefined；否则为错误对象。 |
@@ -2261,6 +2419,7 @@ clearData(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2284,9 +2443,10 @@ systemPasteboard.clearData((err, data) => {
 
 
 
-#### clearData9+
+### clearData9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clearData(): Promise&lt;void&gt;
 
@@ -2297,6 +2457,7 @@ clearData(): Promise&lt;void&gt;
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2318,9 +2479,10 @@ systemPasteboard.clearData().then((data: void) => {
 
 
 
-#### setData9+
+### setData9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setData(data: PasteData, callback: AsyncCallback&lt;void&gt;): void
 
@@ -2341,6 +2503,7 @@ setData(data: PasteData, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | PasteData | 是 | PasteData对象，设置后会将该数据写入系统剪贴板，供应用读取和粘贴使用。 |
@@ -2350,6 +2513,7 @@ setData(data: PasteData, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[剪贴板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pasteboard)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2377,9 +2541,10 @@ systemPasteboard.setData(pasteData, (err, data) => {
 
 
 
-#### setData9+
+### setData9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setData(data: PasteData): Promise&lt;void&gt;
 
@@ -2393,12 +2558,14 @@ setData(data: PasteData): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | PasteData | 是 | PasteData对象。调用本接口前，需确保无其他拷贝或粘贴操作正在进行。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2408,6 +2575,7 @@ setData(data: PasteData): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[剪贴板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pasteboard)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2435,21 +2603,25 @@ systemPasteboard.setData(pasteData).then((data: void) => {
 
 
 
-#### getData9+
+### getData9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getData(callback: AsyncCallback&lt;PasteData&gt;): void
 
 读取系统剪贴板内容，使用callback异步回调。将剪贴板数据封装为PasteData对象返回。 调用此方法后，系统将从剪贴板服务读取当前内容，通过callback返回PasteData对象。读取成功后，应用可以通过PasteData对象的方法获取具体的数据内容（如文本、HTML、URI等）。适用于需要异步读取剪贴板内容的场景，如UI响应优先、避免阻塞主线程。与[getDataSync](#getdatasync11)相比，getData不会阻塞UI线程，适合处理大量数据或远端数据。
 
-**需要权限：** ohos.permission.READ_PASTEBOARD，应用访问剪贴板内容需[申请访问剪贴板权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/get-pastedata-permission-guidelines)。[使用粘贴控件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pastebutton)访问剪贴板内容的应用，可以无需申请权限。
+应用使用自定义控件访问剪贴板内容需[申请访问剪贴板权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/get-pastedata-permission-guidelines)。应用[使用粘贴控件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pastebutton)访问剪贴板内容，无需申请权限。
+
+**需要权限：** ohos.permission.READ_PASTEBOARD
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2459,6 +2631,7 @@ getData(callback: AsyncCallback&lt;PasteData&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[剪贴板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pasteboard)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2487,9 +2660,10 @@ systemPasteboard.getData((err: BusinessError, pasteData: pasteboard.PasteData) =
 
 
 
-#### getData9+
+### getData9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getData(): Promise&lt;PasteData&gt;
 
@@ -2497,13 +2671,16 @@ getData(): Promise&lt;PasteData&gt;
 
 **使用场景：** 适用于应用需要使用标准化数据结构[UnifiedData](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-data-unifieddatachannel#unifieddata)读取剪贴板数据的场景。
 
-**需要权限：** ohos.permission.READ_PASTEBOARD，应用访问剪贴板内容需[申请访问剪贴板权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/get-pastedata-permission-guidelines)。[使用粘贴控件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pastebutton)访问剪贴板内容的应用，可以无需申请权限。
+应用使用自定义控件访问剪贴板内容需[申请访问剪贴板权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/get-pastedata-permission-guidelines)。应用[使用粘贴控件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pastebutton)访问剪贴板内容，无需申请权限。
+
+**需要权限：** ohos.permission.READ_PASTEBOARD
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2513,6 +2690,7 @@ getData(): Promise&lt;PasteData&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[剪贴板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pasteboard)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2538,9 +2716,10 @@ systemPasteboard.getData().then((pasteData: pasteboard.PasteData) => {
 
 
 
-#### hasRemoteData24+
+### hasRemoteData24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hasRemoteData(): boolean
 
@@ -2551,6 +2730,7 @@ hasRemoteData(): boolean
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2568,9 +2748,10 @@ console.info(`Succeeded in checking the remote data. Result: ${result}`);
 
 
 
-#### hasData9+
+### hasData9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hasData(callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -2584,6 +2765,7 @@ hasData(callback: AsyncCallback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;boolean&gt; | 是 | 回调函数，用于接收剪贴板是否有内容的判断结果。返回true表示系统剪贴板中有内容，返回false表示系统剪贴板中没有内容。 |
@@ -2592,6 +2774,7 @@ hasData(callback: AsyncCallback&lt;boolean&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2615,9 +2798,10 @@ systemPasteboard.hasData((err: BusinessError, data: boolean) => {
 
 
 
-#### hasData9+
+### hasData9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hasData(): Promise&lt;boolean&gt;
 
@@ -2628,6 +2812,7 @@ hasData(): Promise&lt;boolean&gt;
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2649,9 +2834,10 @@ systemPasteboard.hasData().then((data: boolean) => {
 
 
 
-#### clear(deprecated)
+### clear(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clear(callback: AsyncCallback&lt;void&gt;): void
 
@@ -2665,6 +2851,7 @@ clear(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当成功清空时，err为undefined；否则为错误对象。 |
@@ -2673,6 +2860,7 @@ clear(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2694,9 +2882,10 @@ systemPasteboard.clear((err, data) => {
 
 
 
-#### clear(deprecated)
+### clear(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clear(): Promise&lt;void&gt;
 
@@ -2709,6 +2898,7 @@ clear(): Promise&lt;void&gt;
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2730,9 +2920,10 @@ systemPasteboard.clear().then((data) => {
 
 
 
-#### getPasteData(deprecated)
+### getPasteData(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPasteData(callback: AsyncCallback&lt;PasteData&gt;): void
 
@@ -2746,6 +2937,7 @@ getPasteData(callback: AsyncCallback&lt;PasteData&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;PasteData&gt; | 是 | 回调函数。当读取成功，err为undefined，data为返回的系统剪贴板数据；否则返回错误对象。 |
@@ -2754,6 +2946,7 @@ getPasteData(callback: AsyncCallback&lt;PasteData&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2780,9 +2973,10 @@ systemPasteboard.getPasteData((err: BusinessError, pasteData: pasteboard.PasteDa
 
 
 
-#### getPasteData(deprecated)
+### getPasteData(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPasteData(): Promise&lt;PasteData&gt;
 
@@ -2795,6 +2989,7 @@ getPasteData(): Promise&lt;PasteData&gt;
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2819,9 +3014,10 @@ systemPasteboard.getPasteData().then((pasteData: pasteboard.PasteData) => {
 
 
 
-#### hasPasteData(deprecated)
+### hasPasteData(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hasPasteData(callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -2835,6 +3031,7 @@ hasPasteData(callback: AsyncCallback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;boolean&gt; | 是 | 返回true表示系统剪贴板中有内容，返回false表示系统剪贴板中没有内容。 |
@@ -2843,6 +3040,7 @@ hasPasteData(callback: AsyncCallback&lt;boolean&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2866,9 +3064,10 @@ systemPasteboard.hasPasteData((err: BusinessError, data: boolean) => {
 
 
 
-#### hasPasteData(deprecated)
+### hasPasteData(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hasPasteData(): Promise&lt;boolean&gt;
 
@@ -2881,6 +3080,7 @@ hasPasteData(): Promise&lt;boolean&gt;
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2902,9 +3102,10 @@ systemPasteboard.hasPasteData().then((data: boolean) => {
 
 
 
-#### setPasteData(deprecated)
+### setPasteData(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setPasteData(data: PasteData, callback: AsyncCallback&lt;void&gt;): void
 
@@ -2918,6 +3119,7 @@ setPasteData(data: PasteData, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | PasteData | 是 | PasteData对象。 |
@@ -2927,6 +3129,7 @@ setPasteData(data: PasteData, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2949,9 +3152,10 @@ systemPasteboard.setPasteData(pasteData, (err, data) => {
 
 
 
-#### setPasteData(deprecated)
+### setPasteData(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setPasteData(data: PasteData): Promise&lt;void&gt;
 
@@ -2965,12 +3169,14 @@ setPasteData(data: PasteData): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | PasteData | 是 | PasteData对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2993,9 +3199,10 @@ systemPasteboard.setPasteData(pasteData).then((data: void) => {
 
 
 
-#### isRemoteData11+
+### isRemoteData11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isRemoteData(): boolean
 
@@ -3007,6 +3214,7 @@ isRemoteData(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 判断剪贴板中的数据是否来自其他设备。剪贴板数据来自其他设备返回true；剪贴板数据来自本设备返回false。 |
@@ -3015,6 +3223,7 @@ isRemoteData(): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[剪贴板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pasteboard)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3035,9 +3244,10 @@ try {
 
 
 
-#### getDataSource11+
+### getDataSource11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDataSource(): string
 
@@ -3051,6 +3261,7 @@ getDataSource(): string
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 数据来源的应用名称。 |
@@ -3059,6 +3270,7 @@ getDataSource(): string
 **错误码：**
 
 以下错误码的详细介绍请参见[剪贴板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pasteboard)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3079,9 +3291,10 @@ try {
 
 
 
-#### hasDataType11+
+### hasDataType11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hasDataType(mimeType: string): boolean
 
@@ -3093,12 +3306,14 @@ hasDataType(mimeType: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mimeType | string | 是 | 数据类型，设置后用于检查剪贴板内容中是否存在该类型的特定数据。其长度不能超过1024字节，超出范围时返回错误码401。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3108,6 +3323,7 @@ hasDataType(mimeType: string): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[剪贴板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pasteboard)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3129,9 +3345,10 @@ try {
 
 
 
-#### clearDataSync11+
+### clearDataSync11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clearDataSync(): void
 
@@ -3146,6 +3363,7 @@ clearDataSync(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[剪贴板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pasteboard)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3166,21 +3384,25 @@ try {
 
 
 
-#### getDataSync11+
+### getDataSync11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDataSync(): PasteData
 
 读取系统剪贴板内容，此接口为同步接口。适用于应用需要在关键业务流程中同步获取剪贴板数据，或需要立即处理剪贴板内容的场景。避免在UI线程调用此接口，以免阻塞界面；处理大量数据或远端数据时，建议使用异步接口[getData](#getdata9)。
 
-**需要权限：** ohos.permission.READ_PASTEBOARD，应用访问剪贴板内容需[申请访问剪贴板权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/get-pastedata-permission-guidelines)。[使用粘贴控件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pastebutton)访问剪贴板内容的应用，可以无需申请权限。
+应用使用自定义控件访问剪贴板内容需[申请访问剪贴板权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/get-pastedata-permission-guidelines)。应用[使用粘贴控件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pastebutton)访问剪贴板内容，无需申请权限。
+
+**需要权限：** ohos.permission.READ_PASTEBOARD
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3190,6 +3412,7 @@ getDataSync(): PasteData
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[剪贴板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pasteboard)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3211,9 +3434,10 @@ try {
 
 
 
-#### setDataSync11+
+### setDataSync11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setDataSync(data: PasteData): void
 
@@ -3227,6 +3451,7 @@ setDataSync(data: PasteData): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | PasteData | 是 | 需要写入剪贴板中的数据。 |
@@ -3235,6 +3460,7 @@ setDataSync(data: PasteData): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[剪贴板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pasteboard)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3257,9 +3483,10 @@ try {
 
 
 
-#### hasDataSync11+
+### hasDataSync11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hasDataSync(): boolean
 
@@ -3271,6 +3498,7 @@ hasDataSync(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回true表示系统剪贴板中有内容，返回false表示系统剪贴板中没有内容。 |
@@ -3279,6 +3507,7 @@ hasDataSync(): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[剪贴板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pasteboard)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3299,9 +3528,10 @@ try {
 
 
 
-#### getUnifiedData12+
+### getUnifiedData12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUnifiedData(): Promise<unifiedDataChannel.UnifiedData>
 
@@ -3309,13 +3539,16 @@ getUnifiedData(): Promise<unifiedDataChannel.UnifiedData>
 
 **使用场景：** 适用于需要使用标准化数据结构[UnifiedData](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-data-unifieddatachannel#unifieddata)进行跨应用数据交换的场景。当应用需要与其他支持UnifiedData的应用进行数据共享，或需要处理复杂的多类型数据时，使用本接口。与[getData](#getdata14)相比，getUnifiedData提供了更标准化的数据格式。
 
-**需要权限：** ohos.permission.READ_PASTEBOARD，应用访问剪贴板内容需[申请访问剪贴板权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/get-pastedata-permission-guidelines)。[使用粘贴控件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pastebutton)访问剪贴板内容的应用，可以无需申请权限。
+应用使用自定义控件访问剪贴板内容需[申请访问剪贴板权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/get-pastedata-permission-guidelines)。应用[使用粘贴控件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pastebutton)访问剪贴板内容，无需申请权限。
+
+**需要权限：** ohos.permission.READ_PASTEBOARD
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3325,6 +3558,7 @@ getUnifiedData(): Promise<unifiedDataChannel.UnifiedData>
 **错误码：**
 
 以下错误码的详细介绍请参见[剪贴板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pasteboard)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3354,9 +3588,10 @@ systemPasteboard.getUnifiedData().then((data) => {
 
 
 
-#### getUnifiedDataSync12+
+### getUnifiedDataSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUnifiedDataSync(): unifiedDataChannel.UnifiedData
 
@@ -3364,13 +3599,16 @@ getUnifiedDataSync(): unifiedDataChannel.UnifiedData
 
 **使用场景：** 适用于需要同步使用标准化数据结构UnifiedData进行跨应用数据交换的场景。当应用需要在关键业务流程中立即获取剪贴板数据，且需要与其他支持UnifiedData的应用进行数据共享时使用。由于获取剪贴板中数据的时延受数据量大小与网络环境的影响，调用此接口可能耗时较长，建议开发者在非UI线程调用。
 
-**需要权限：** ohos.permission.READ_PASTEBOARD，应用访问剪贴板内容需[申请访问剪贴板权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/get-pastedata-permission-guidelines)。[使用粘贴控件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pastebutton)访问剪贴板内容的应用，可以无需申请权限。
+应用使用自定义控件访问剪贴板内容需[申请访问剪贴板权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/get-pastedata-permission-guidelines)。应用[使用粘贴控件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pastebutton)访问剪贴板内容，无需申请权限。
+
+**需要权限：** ohos.permission.READ_PASTEBOARD
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3380,6 +3618,7 @@ getUnifiedDataSync(): unifiedDataChannel.UnifiedData
 **错误码：**
 
 以下错误码的详细介绍请参见[剪贴板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pasteboard)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3403,9 +3642,10 @@ try {
 
 
 
-#### setUnifiedData12+
+### setUnifiedData12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setUnifiedData(data: unifiedDataChannel.UnifiedData): Promise&lt;void&gt;
 
@@ -3419,12 +3659,14 @@ setUnifiedData(data: unifiedDataChannel.UnifiedData): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | unifiedDataChannel.UnifiedData | 是 | 需要写入剪贴板中的数据。调用本接口前，需确保无其他拷贝或粘贴操作正在进行。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3434,6 +3676,7 @@ setUnifiedData(data: unifiedDataChannel.UnifiedData): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[剪贴板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pasteboard)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3471,9 +3714,10 @@ systemPasteboard.setUnifiedData(data).then((data: void) => {
 
 
 
-#### setUnifiedDataSync12+
+### setUnifiedDataSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setUnifiedDataSync(data: unifiedDataChannel.UnifiedData): void
 
@@ -3487,6 +3731,7 @@ setUnifiedDataSync(data: unifiedDataChannel.UnifiedData): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | unifiedDataChannel.UnifiedData | 是 | 需要写入剪贴板中的数据内容。支持跨应用数据交换，其他应用可通过统一数据结构读取该内容。 |
@@ -3495,6 +3740,7 @@ setUnifiedDataSync(data: unifiedDataChannel.UnifiedData): void
 **错误码：**
 
 以下错误码的详细介绍请参见[剪贴板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pasteboard)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3534,9 +3780,10 @@ try {
 
 
 
-#### setAppShareOptions14+
+### setAppShareOptions14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAppShareOptions(shareOptions: ShareOption): void
 
@@ -3557,6 +3804,7 @@ setAppShareOptions(shareOptions: ShareOption): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | shareOptions | ShareOption | 是 | 可粘贴的范围，参数只允许pasteboard.ShareOption.INAPP。传入其他值时返回错误码401。 |
@@ -3565,6 +3813,7 @@ setAppShareOptions(shareOptions: ShareOption): void
 **错误码：**
 
 以下错误码的详细介绍请参见[剪贴板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pasteboard)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3587,9 +3836,10 @@ try {
 
 
 
-#### removeAppShareOptions14+
+### removeAppShareOptions14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeAppShareOptions(): void
 
@@ -3612,6 +3862,7 @@ removeAppShareOptions(): void
 
 以下错误码的详细介绍请参见[剪贴板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pasteboard)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. |
@@ -3631,13 +3882,15 @@ try {
 
 
 
-#### Pattern13+
+### Pattern13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 剪贴板支持检测的模式类型。
 
 **系统能力：** SystemCapability.MiscServices.Pasteboard
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -3650,9 +3903,10 @@ try {
 
 
 
-#### detectPatterns13+
+### detectPatterns13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 detectPatterns(patterns: Array&lt;Pattern&gt;): Promise<Array&lt;Pattern&gt;>
 
@@ -3664,12 +3918,14 @@ detectPatterns(patterns: Array&lt;Pattern&gt;): Promise<Array&lt;Pattern&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | patterns | Array&lt;Pattern&gt; | 是 | 需要在剪贴板中检测的模式，用于检查剪贴板数据是否符合特定格式。可选值包括：URL(URL类型)、NUMBER(数字类型)、EMAIL_ADDRESS(邮箱地址类型)等。取值范围：数组元素数量不限，元素值只能为Pattern枚举值。传入无效值时返回错误码401。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3679,6 +3935,7 @@ detectPatterns(patterns: Array&lt;Pattern&gt;): Promise<Array&lt;Pattern&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3710,9 +3967,10 @@ systemPasteboard.detectPatterns(patterns).then((data: Array<pasteboard.Pattern>)
 
 
 
-#### getMimeTypes14+
+### getMimeTypes14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMimeTypes(): Promise<Array&lt;string&gt;>
 
@@ -3723,6 +3981,7 @@ getMimeTypes(): Promise<Array&lt;string&gt;>
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3744,9 +4003,10 @@ systemPasteboard.getMimeTypes().then((data: Array<string>) => {
 
 
 
-#### getDataWithProgress15+
+### getDataWithProgress15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDataWithProgress(params: GetDataParams): Promise&lt;PasteData&gt;
 
@@ -3754,7 +4014,9 @@ getDataWithProgress(params: GetDataParams): Promise&lt;PasteData&gt;
 
 **使用场景：** 适用于应用需要粘贴大文件时，需要显示拷贝进度或需要监听拷贝过程以便在必要时取消操作的场景。
 
-**需要权限：** ohos.permission.READ_PASTEBOARD，应用访问剪贴板内容需[申请访问剪贴板权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/get-pastedata-permission-guidelines)。[使用粘贴控件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pastebutton)访问剪贴板内容的应用，可以无需申请权限。
+应用使用自定义控件访问剪贴板内容需[申请访问剪贴板权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/get-pastedata-permission-guidelines)。应用[使用粘贴控件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pastebutton)访问剪贴板内容，无需申请权限。
+
+**需要权限：** ohos.permission.READ_PASTEBOARD
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
@@ -3762,12 +4024,14 @@ getDataWithProgress(params: GetDataParams): Promise&lt;PasteData&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | GetDataParams | 是 | 应用在使用剪贴板提供的文件拷贝能力的情况下需要的参数，包含目标路径、文件冲突选项、进度条类型等。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3777,6 +4041,7 @@ getDataWithProgress(params: GetDataParams): Promise&lt;PasteData&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[剪贴板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pasteboard)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3833,9 +4098,10 @@ struct PasteboardTest {
 
 
 
-#### getChangeCount18+
+### getChangeCount18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getChangeCount(): number
 
@@ -3852,6 +4118,7 @@ getChangeCount(): number
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3874,9 +4141,10 @@ try {
 
 
 
-#### UpdateCallback22+
+### UpdateCallback22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type UpdateCallback = () => void
 
@@ -3886,9 +4154,10 @@ type UpdateCallback = () => void
 
 
 
-#### onRemoteUpdate22+
+### onRemoteUpdate22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onRemoteUpdate(callback: UpdateCallback): void
 
@@ -3904,6 +4173,7 @@ onRemoteUpdate(callback: UpdateCallback): void
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3922,9 +4192,10 @@ systemPasteboard.onRemoteUpdate(listener);
 
 
 
-#### offRemoteUpdate(callback?: UpdateCallback)22+
+### offRemoteUpdate(callback?: UpdateCallback)22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offRemoteUpdate(callback?: UpdateCallback): void
 
@@ -3940,6 +4211,7 @@ offRemoteUpdate(callback?: UpdateCallback): void
 **系统能力：** SystemCapability.MiscServices.Pasteboard
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |

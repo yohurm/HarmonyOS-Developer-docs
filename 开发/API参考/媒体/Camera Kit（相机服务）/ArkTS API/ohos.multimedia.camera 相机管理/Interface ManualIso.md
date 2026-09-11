@@ -1,9 +1,9 @@
 # Interface (ManualIso)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-manualiso
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ManualIso继承自[ManualIsoQuery](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-manualisoquery)。
  
@@ -14,9 +14,10 @@ ManualIso继承自[ManualIsoQuery](https://developer.huawei.com/consumer/cn/doc/
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { camera } from '@kit.CameraKit';
@@ -24,9 +25,10 @@ import { camera } from '@kit.CameraKit';
  
   
 
-#### getIso24+
+## getIso24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getIso(): number
  
@@ -38,6 +40,7 @@ getIso(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 当前ISO值。 |
@@ -47,6 +50,7 @@ getIso(): number
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400102 | Operation not allowed, the inputDevice or the session is abnormal. |
@@ -73,9 +77,10 @@ function getIso(photoSession: camera.PhotoSession): number {
  
   
 
-#### setIso24+
+## setIso24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setIso(iso: number): void
  
@@ -89,6 +94,7 @@ setIso(iso: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | iso | number | 是 | ISO感光度值。 |
@@ -98,6 +104,7 @@ setIso(iso: number): void
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400102 | Operation not allowed, the inputDevice or the session is abnormal. |

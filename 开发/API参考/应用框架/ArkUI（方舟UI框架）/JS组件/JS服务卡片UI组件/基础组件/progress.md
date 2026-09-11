@@ -1,9 +1,9 @@
 # progress
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-service-widget-basic-progress
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 进度条，用于显示内容加载或操作的处理进度。
  
@@ -12,20 +12,23 @@
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 不支持。
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-service-widget-common-attributes)外，还支持如下属性：
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | type | string | horizontal | 否 | 设置进度条的类型，该属性不支持动态修改，可选值为： - horizontal：线性进度条。 - circular：loading样式进度条。 - ring：圆环形进度条。 - scale-ring：带刻度圆环形进度条。 - arc：弧形进度条。 - eclipse：圆形进度条，展现类似月圆月缺的进度展示效果。 |
@@ -36,31 +39,40 @@
 - 类型为horizontal、ring、scale-ring时，支持如下属性：
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
+
 | --- | --- | --- | --- | --- |
+
 | percent | number | 0 | 否 | 当前进度。取值范围为0-100。 |
-| secondarypercent(Rich) | number | 0 | 否 | 次级进度。取值范围为0-100。 |
+
+| secondarypercent | number | 0 | 否 | 次级进度。取值范围为0-100。 |
 - 类型为ring、scale-ring时，支持如下属性：
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
+
 | --- | --- | --- | --- | --- |
+
 | clockwise | boolean | true | 否 | 圆环形进度条是否采用顺时针。 |
 - 类型为arc、eclipse时，支持如下属性：
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
+
 | --- | --- | --- | --- | --- |
+
 | percent | number | 0 | 否 | 当前进度。取值范围为0-100。 |
 
  
   
 
-#### 样式
+## 样式
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用样式](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-service-widget-common-styles)外，还支持如下样式：
  
 type=horizontal
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | color | &lt;color&gt; | #ff007dff | 否 | 设置进度条的颜色。 |
@@ -71,6 +83,7 @@ type=horizontal
  
 type=circular
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | color | &lt;color&gt; | - | 否 | loading进度条上的圆点颜色。 |
@@ -78,6 +91,7 @@ type=circular
  
 type=ring, scale-ring
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | color | &lt;color&gt; \| <linear-gradient> | - | 否 | 环形进度条的颜色，ring类型支持线性渐变色设置。 线性渐变色仅支持两个颜色参数设置格式，如color = linear-gradient(#ff0000, #00ff00)。 |
@@ -90,6 +104,7 @@ type=ring, scale-ring
  
 type=arc
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | color | &lt;color&gt; | - | 否 | 弧形进度条的颜色。 |
@@ -104,17 +119,19 @@ type=arc
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-service-widget-common-events)。
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 <!--xxx.hml -->
@@ -143,4 +160,4 @@ type=arc
 **4*4卡片**
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/q7E7IhnTR8KtvsuOsuw4YQ/zh-cn_image_0000002659102537.png?HW-CC-KV=V1&HW-CC-Date=20260701T014405Z&HW-CC-Expire=86400&HW-CC-Sign=A3F66777B9A7469F3B1148ED19831971CB4A3EC1FA022855A23C31A6B1E75029)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/gqQOsZoARACY3GP11vfqCA/zh-cn_image_0000002717613484.png?HW-CC-KV=V1&HW-CC-Date=20260911T073002Z&HW-CC-Expire=86400&HW-CC-Sign=75D50628925B4CD7EDDD4ED8E6FA63239E9296D89AA12ACE6B68592B009BFC95)

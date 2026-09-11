@@ -1,10 +1,10 @@
 # Function Flow Runtime并发队列(C)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ffrt-concurrency-concurrent-queue-c
 
-#### 概述
+## 概述
 
 FFRT并发队列提供了设置任务优先级（Priority）和队列并发度的能力，使得队列中的任务能同时在多个线程上执行，获得更高的并行效果。
  
@@ -14,7 +14,7 @@ FFRT并发队列提供了设置任务优先级（Priority）和队列并发度�
  
   
 
-#### 示例：银行服务系统
+## 示例：银行服务系统
 
 举例实现一个银行服务系统，每个客户向系统提交一个服务请求，可以区分普通用户和VIP用户，VIP用户的服务请求可以优先得到执行。银行系统中有2个窗口，可以并行取出用户提交的服务请求办理。
  
@@ -38,7 +38,7 @@ FFRT并发队列提供了设置任务优先级（Priority）和队列并发度�
 ```
  
 ```cpp
-const int SLEEP_TIME = 100 * 1000;
+const int SLEEP_TIME = 100 * 1000; // 100ms
 const int BANK_CONCURRENCY = 2;
 
 ffrt_queue_t CreateBankSystem(const char *name, int concurrency)
@@ -84,7 +84,9 @@ ffrt_task_handle_t CommitRequest(ffrt_queue_t bank, void (*func)(void *), const 
     ffrt_task_attr_set_queue_priority(&task_attr, level);
     ffrt_task_attr_set_delay(&task_attr, delay);
 
-    return ffrt_queue_submit_h_f(bank, func, (void*)name, &task_attr);
+    ffrt_task_handle_t handle = ffrt_queue_submit_h_f(bank, func, (void*)name, &task_attr);
+    ffrt_task_attr_destroy(&task_attr);
+    return handle;
 }
 
 // 封装取消队列任务函数
@@ -137,10 +139,11 @@ int ConcurrentQueueCExec()
  
   
 
-#### 接口说明
+## 接口说明
 
 上述样例中涉及到主要的FFRT的接口如下，详情请参考[Function Flow Runtime C API](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ffrt-api-guideline-c)里的方法：
   
+
 | 名称 | 描述 |
 | --- | --- |
 | ffrt_queue_create | 创建队列。 |
@@ -156,7 +159,7 @@ int ConcurrentQueueCExec()
  
   
 
-#### 约束限制
+## 约束限制
 1. ffrt_queue_attr_t必须先调用ffrt_queue_attr_init初始化后再设置/获取属性，不再使用后需要显式调用ffrt_queue_attr_destroy释放资源。
 2. ffrt_queue_t必须在进程退出前显式调用ffrt_queue_destroy释放资源。
 3. 并发队列最大并发度建议控制在合理范围内，配置过大超过Worker线程数没有意义，配置过小可能导致系统资源利用率不足。

@@ -1,18 +1,19 @@
 # dataTransfer（星闪数传能力）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-data-transfer-api
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供了星闪数据传输的功能。
 
 **起始版本：** 5.1.0(18)
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { dataTransfer } from '@kit.NearLinkKit';
@@ -20,9 +21,10 @@ import { dataTransfer } from '@kit.NearLinkKit';
 
 
 
-#### ConnectionState
+## ConnectionState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ConnectionState = constant.ConnectionState
 
@@ -34,6 +36,7 @@ type ConnectionState = constant.ConnectionState
 
 **起始版本：** 5.1.0(18)
 
+
 | 类型 | 说明 |
 | --- | --- |
 | constant.ConnectionState | 和远端设备的连接状态。 |
@@ -41,9 +44,10 @@ type ConnectionState = constant.ConnectionState
 
 
 
-#### createPort
+## createPort
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPort(uuid: string): void
 
@@ -59,6 +63,7 @@ createPort(uuid: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uuid | string | 是 | 可填写16字节星闪服务UUID，或填写2字节支持数传的星闪标准服务UUID。UUID格式参考“星闪标准服务标识”。 |
@@ -67,6 +72,7 @@ createPort(uuid: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -96,9 +102,10 @@ try {
 
 
 
-#### destroyPort
+## destroyPort
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 destroyPort(uuid: string): void
 
@@ -114,6 +121,7 @@ destroyPort(uuid: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uuid | string | 是 | 可填写16字节星闪服务UUID，或填写2字节支持数传的星闪标准服务UUID。UUID格式参考“星闪标准服务”。 |
@@ -122,6 +130,7 @@ destroyPort(uuid: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -150,9 +159,10 @@ try {
 
 
 
-#### connect
+## connect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 connect(params: ConnectionParams): Promise&lt;void&gt;
 
@@ -168,12 +178,14 @@ connect(params: ConnectionParams): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | ConnectionParams | 是 | 指明端口的连接参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -183,6 +195,7 @@ connect(params: ConnectionParams): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -218,9 +231,10 @@ try {
 
 
 
-#### disconnect
+## disconnect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 disconnect(params: ConnectionParams): Promise&lt;void&gt;
 
@@ -236,12 +250,14 @@ disconnect(params: ConnectionParams): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | ConnectionParams | 是 | 指明端口的连接参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -251,6 +267,7 @@ disconnect(params: ConnectionParams): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -286,9 +303,10 @@ try {
 
 
 
-#### on('connectionStateChanged')
+## on('connectionStateChanged')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'connectionStateChanged', callback: Callback&lt;ConnectionResult&gt;): void
 
@@ -304,15 +322,17 @@ on(type: 'connectionStateChanged', callback: Callback&lt;ConnectionResult&gt;): 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型，支持的事件为'connectionStateChanged'，表示连接状态发生变化的事件。 当端口通道连接状态发生变化时，触发该事件。 当调用datatransfer.connect或datatransfer.disconnect时，可能引起连接状态发生变化。 |
+| type | string | 是 | 事件回调类型，支持的事件为'connectionStateChanged'，表示连接状态发生变化的事件。 当端口通道连接状态发生变化时，触发该事件。 当调用dataTransfer.connect或dataTransfer.disconnect时，可能引起连接状态发生变化。 |
 | callback | Callback&lt;ConnectionResult&gt; | 是 | 回调函数，返回与远端设备端口连接参数的协商结果。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -340,9 +360,10 @@ try {
 
 
 
-#### off('connectionStateChanged')
+## off('connectionStateChanged')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'connectionStateChanged', callback?: Callback&lt;ConnectionResult&gt;): void
 
@@ -358,6 +379,7 @@ off(type: 'connectionStateChanged', callback?: Callback&lt;ConnectionResult&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'connectionStateChanged'，表示数传连接状态发生变化的事件。 |
@@ -367,6 +389,7 @@ off(type: 'connectionStateChanged', callback?: Callback&lt;ConnectionResult&gt;)
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -391,9 +414,10 @@ try {
 
 
 
-#### getConnectionState
+## getConnectionState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getConnectionState(params: ConnectionStateParams): ConnectionState
 
@@ -409,12 +433,14 @@ getConnectionState(params: ConnectionStateParams): ConnectionState
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | ConnectionStateParams | 是 | 指明端口的连接参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -424,6 +450,7 @@ getConnectionState(params: ConnectionStateParams): ConnectionState
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -454,9 +481,10 @@ try {
 
 
 
-#### writeData
+## writeData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeData(params: DataParams): Promise&lt;void&gt;
 
@@ -472,12 +500,14 @@ writeData(params: DataParams): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | DataParams | 是 | 指明发送数据的参数，包含远端设备地址、服务UUID以及发送的数据包。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -487,6 +517,7 @@ writeData(params: DataParams): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -528,9 +559,10 @@ try {
 
 
 
-#### on('readData')
+## on('readData')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'readData', callback: Callback&lt;DataParams&gt;): void
 
@@ -546,6 +578,7 @@ on(type: 'readData', callback: Callback&lt;DataParams&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'readData'，表示端口通道数据接收事件。 当收到远端设备的端口数据时，触发该事件。 |
@@ -555,6 +588,7 @@ on(type: 'readData', callback: Callback&lt;DataParams&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -582,9 +616,10 @@ try {
 
 
 
-#### off('readData')
+## off('readData')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'readData', callback?: Callback&lt;DataParams&gt;): void
 
@@ -600,6 +635,7 @@ off(type: 'readData', callback?: Callback&lt;DataParams&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'readData'，表示端口通道数据接收事件。 |
@@ -609,6 +645,7 @@ off(type: 'readData', callback?: Callback&lt;DataParams&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -633,9 +670,10 @@ try {
 
 
 
-#### ConnectionParams
+## ConnectionParams
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 发起端口连接的参数。
 
@@ -645,19 +683,21 @@ try {
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | address | string | 否 | 否 | 远端设备的星闪地址。地址格式参考：11:22:33:AA:BB:FF。 |
 | uuid | string | 否 | 否 | 星闪服务UUID，例如：37bea880-fc70-11ea-b720-000000004386。UUID格式参考星闪标准服务UUID。 |
-| mtu | number | 否 | 是 | 期望发送数据的包长，单位为byte。范围[0, 65535]，默认值为512。 |
+| mtu | number | 否 | 是 | 期望发送数据的包长，单位：字节。范围[0, 65535]，默认值为512。 |
 | transferMode | TransferMode | 否 | 是 | 表示和远端设备的数据传输模式。默认值是BASIC。 |
 
 
 
 
-#### DataParams
+## DataParams
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 端口数据发送和接收的参数。
 
@@ -666,6 +706,7 @@ try {
 **系统能力：** SystemCapability.Communication.NearLink.Core
 
 **起始版本：** 5.1.0(18)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -676,9 +717,10 @@ try {
 
 
 
-#### ConnectionResult
+## ConnectionResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 与远端设备端口连接参数的协商结果
 
@@ -688,19 +730,21 @@ try {
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | address | string | 否 | 否 | 远端设备的星闪地址。地址格式参考：11:22:33:AA:BB:FF。 |
 | uuid | string | 否 | 否 | 星闪服务UUID，例如：37bea880-fc70-11ea-b720-000000004386。UUID格式参考星闪标准服务UUID。 |
-| mtu | number | 否 | 否 | 协商后的发送和接收数据的包长，单位为byte，范围[0, 65535]。 |
+| mtu | number | 否 | 否 | 协商后的发送和接收数据的包长，单位：字节，范围[0, 65535]。 |
 | state | ConnectionState | 否 | 否 | 与远端设备的连接状态。 |
 
 
 
 
-#### ConnectionStateParams
+## ConnectionStateParams
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 获取端口通道连接状态所需参数。
 
@@ -710,6 +754,7 @@ try {
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | address | string | 否 | 否 | 远端设备的星闪地址。地址格式参考：11:22:33:AA:BB:FF。 |
@@ -718,9 +763,10 @@ try {
 
 
 
-#### TransferMode
+## TransferMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示和远端设备的数据传输模式，为枚举值。
 
@@ -729,6 +775,7 @@ try {
 **系统能力：** SystemCapability.Communication.NearLink.Core
 
 **起始版本：** 5.1.0(18)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

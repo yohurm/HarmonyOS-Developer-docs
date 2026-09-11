@@ -15,18 +15,18 @@ struct CustomFontSetting {
   build() {
     Column() {
       Text(this.message)
-        .fontSize(53) // Default unit is fp, which changes with system display size.
+        .fontSize(53) <em>// Default unit is fp, which changes with system display size.</em>
       Text(this.message)
-        .fontSize(this.getUIContext().fp2px(160) + 'px') // Use pixel units, unaffected by system display size.
+        .fontSize(this.getUIContext().fp2px(160) + 'px') <em>// Use pixel units, unaffected by system display size.</em>
       Blank()
         .color(0xff0000)
         .height(30)
         .width(226)
-        .margin({ bottom: 20 }) // Default unit vp changes with system display size.
+        .margin({ bottom: 20 }) <em>// Default unit vp changes with system display size.</em>
       Blank()
         .color(0xff0000)
         .height(30 + 'px')
-        .width(this.getUIContext().vp2px(672) + 'px') // Use pixel units, unaffected by system display size.
+        .width(this.getUIContext().vp2px(672) + 'px') <em>// Use pixel units, unaffected by system display size.</em>
     }
   }
 }

@@ -1,13 +1,14 @@
 # media_asset_change_request_capi.h
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-media-asset-change-request-capi-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义与媒体资产更改请求相关的API。提供更改资产的能力。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_MediaAssetChangeRequest* OH_MediaAssetChangeRequest_Create(OH_MediaAsset* mediaAsset) | 创建OH_MediaAssetChangeRequest实例。 |
@@ -46,15 +50,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_MediaAssetChangeRequest_Create()
+### OH_MediaAssetChangeRequest_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_MediaAssetChangeRequest* OH_MediaAssetChangeRequest_Create(OH_MediaAsset* mediaAsset)
@@ -68,6 +74,7 @@ OH_MediaAssetChangeRequest* OH_MediaAssetChangeRequest_Create(OH_MediaAsset* med
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_MediaAsset* mediaAsset | OH_MediaAsset实例。 |
@@ -75,6 +82,7 @@ OH_MediaAssetChangeRequest* OH_MediaAssetChangeRequest_Create(OH_MediaAsset* med
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_MediaAssetChangeRequest* | MEDIA_LIBRARY_OK：方法调用成功。 MEDIA_LIBRARY_PARAMETER_ERROR：参数错误。可能的原因： 1. 未指定强制参数。 2. 参数类型不正确。 3. 参数验证失败。 MEDIA_LIBRARY_INTERNAL_SYSTEM_ERROR：内部系统错误。 |
@@ -82,9 +90,10 @@ OH_MediaAssetChangeRequest* OH_MediaAssetChangeRequest_Create(OH_MediaAsset* med
  
   
 
-#### OH_MediaAssetChangeRequest_AddResourceWithUri()
+### OH_MediaAssetChangeRequest_AddResourceWithUri()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 MediaLibrary_ErrorCode OH_MediaAssetChangeRequest_AddResourceWithUri(OH_MediaAssetChangeRequest* changeRequest,MediaLibrary_ResourceType resourceType, char* fileUri)
@@ -98,6 +107,7 @@ MediaLibrary_ErrorCode OH_MediaAssetChangeRequest_AddResourceWithUri(OH_MediaAss
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_MediaAssetChangeRequest* changeRequest | OH_MediaAssetChangeRequest实例。 |
@@ -107,6 +117,7 @@ MediaLibrary_ErrorCode OH_MediaAssetChangeRequest_AddResourceWithUri(OH_MediaAss
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | MediaLibrary_ErrorCode | MEDIA_LIBRARY_OK：方法调用成功。 MEDIA_LIBRARY_PARAMETER_ERROR：参数错误。可能的原因： 1. 未指定强制参数。 2. 参数类型不正确。 3. 参数验证失败。 MEDIA_LIBRARY_NO_SUCH_FILE：文件不存在。 MEDIA_LIBRARY_INTERNAL_SYSTEM_ERROR：内部系统错误。 MEDIA_LIBRARY_OPERATION_NOT_SUPPORTED：不支持该操作。 |
@@ -114,9 +125,10 @@ MediaLibrary_ErrorCode OH_MediaAssetChangeRequest_AddResourceWithUri(OH_MediaAss
  
   
 
-#### OH_MediaAssetChangeRequest_AddResourceWithBuffer()
+### OH_MediaAssetChangeRequest_AddResourceWithBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 MediaLibrary_ErrorCode OH_MediaAssetChangeRequest_AddResourceWithBuffer(OH_MediaAssetChangeRequest* changeRequest,MediaLibrary_ResourceType resourceType, uint8_t* buffer, uint32_t length)
@@ -130,16 +142,18 @@ MediaLibrary_ErrorCode OH_MediaAssetChangeRequest_AddResourceWithBuffer(OH_Media
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_MediaAssetChangeRequest* changeRequest | OH_MediaAssetChangeRequest实例。 |
 | MediaLibrary_ResourceType resourceType | 要添加的资源的类型。 |
 | uint8_t* buffer | 要添加的数据缓冲区。 |
-| uint32_t length | 数据缓冲区的长度。 |
+| uint32_t length | 数据缓冲区的长度，单位：字节（Byte）。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | MediaLibrary_ErrorCode | MEDIA_LIBRARY_OK：方法调用成功。 MEDIA_LIBRARY_PARAMETER_ERROR：参数错误。可能的原因： 1. 未指定强制参数。 2. 参数类型不正确。 3. 参数验证失败。 MEDIA_LIBRARY_INTERNAL_SYSTEM_ERROR：内部系统错误。 MEDIA_LIBRARY_OPERATION_NOT_SUPPORTED：不支持该操作。 |
@@ -147,9 +161,10 @@ MediaLibrary_ErrorCode OH_MediaAssetChangeRequest_AddResourceWithBuffer(OH_Media
  
   
 
-#### OH_MediaAssetChangeRequest_GetWriteCacheHandler()
+### OH_MediaAssetChangeRequest_GetWriteCacheHandler()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 MediaLibrary_ErrorCode OH_MediaAssetChangeRequest_GetWriteCacheHandler(OH_MediaAssetChangeRequest* changeRequest,int32_t* fd)
@@ -165,14 +180,16 @@ MediaLibrary_ErrorCode OH_MediaAssetChangeRequest_GetWriteCacheHandler(OH_MediaA
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_MediaAssetChangeRequest* changeRequest | OH_MediaAssetChangeRequest实例。 |
-| int32_t* fd | 临时文件写句柄。 |
+| int32_t* fd | 输出参数，用于获取临时文件的写句柄，通过该句柄可以向临时文件写入数据。使用完毕后请及时关闭句柄，避免资源泄漏。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | MediaLibrary_ErrorCode | MEDIA_LIBRARY_OK：方法调用成功。 MEDIA_LIBRARY_PARAMETER_ERROR：参数错误。可能的原因： 1. 未指定强制参数。 2. 参数类型不正确。 3. 参数验证失败。 MEDIA_LIBRARY_INTERNAL_SYSTEM_ERROR：内部系统错误。 MEDIA_LIBRARY_PERMISSION_DENIED：没有权限。 MEDIA_LIBRARY_OPERATION_NOT_SUPPORTED：不支持该操作。 |
@@ -180,9 +197,10 @@ MediaLibrary_ErrorCode OH_MediaAssetChangeRequest_GetWriteCacheHandler(OH_MediaA
  
   
 
-#### OH_MediaAssetChangeRequest_SaveCameraPhoto()
+### OH_MediaAssetChangeRequest_SaveCameraPhoto()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 MediaLibrary_ErrorCode OH_MediaAssetChangeRequest_SaveCameraPhoto(OH_MediaAssetChangeRequest* changeRequest,MediaLibrary_ImageFileType imageFileType)
@@ -190,18 +208,17 @@ MediaLibrary_ErrorCode OH_MediaAssetChangeRequest_SaveCameraPhoto(OH_MediaAssetC
  
 **描述**
  
-拍照场景下，使用该接口保存相机拍摄的照片资源。
+保存相机拍摄的照片资源。
  
-非YUV拍摄模式下，照片资源保存的编码格式与[Camera_Format](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-camera-h#camera_format)中的编码格式保持一致。
- 
-YUV拍摄模式下，该接口根据[MediaLibrary_ImageFileType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-media-asset-base-capi-h#medialibrary_imagefiletype)将YUV对象编码保存为指定格式。
- 
-当该接口与[OH_MediaAssetChangeRequest_AddResourceWithUri](#oh_mediaassetchangerequest_addresourcewithuri)或[OH_MediaAssetChangeRequest_AddResourceWithBuffer](#oh_mediaassetchangerequest_addresourcewithbuffer)组合使用时，照片资源保存的编码格式与[OH_MediaAssetChangeRequest_AddResourceWithUri](#oh_mediaassetchangerequest_addresourcewithuri)或[OH_MediaAssetChangeRequest_AddResourceWithBuffer](#oh_mediaassetchangerequest_addresourcewithbuffer)添加资源的编码格式保持一致。
+> [!NOTE]
+> 非YUV拍摄模式下，照片资源保存的编码格式与 Camera_Format 中的编码格式保持一致。 YUV拍摄模式下，该接口根据 MediaLibrary_ImageFileType 将YUV对象编码保存为指定格式。 当该接口与 OH_MediaAssetChangeRequest_AddResourceWithUri 或 OH_MediaAssetChangeRequest_AddResourceWithBuffer 组合使用时，照片资源保存的编码格式与 OH_MediaAssetChangeRequest_AddResourceWithUri 或 OH_MediaAssetChangeRequest_AddResourceWithBuffer 添加资源的编码格式保持一致。
+
  
 **起始版本：** 12
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_MediaAssetChangeRequest* changeRequest | OH_MediaAssetChangeRequest实例。 |
@@ -210,6 +227,7 @@ YUV拍摄模式下，该接口根据[MediaLibrary_ImageFileType](https://develop
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | MediaLibrary_ErrorCode | MEDIA_LIBRARY_OK：方法调用成功。 MEDIA_LIBRARY_PARAMETER_ERROR：参数错误。可能的原因： 1. 未指定强制参数。 2. 参数类型不正确。 3. 参数验证失败。 MEDIA_LIBRARY_INTERNAL_SYSTEM_ERROR：内部系统错误。 MEDIA_LIBRARY_OPERATION_NOT_SUPPORTED：不支持该操作。 |
@@ -217,9 +235,10 @@ YUV拍摄模式下，该接口根据[MediaLibrary_ImageFileType](https://develop
  
   
 
-#### OH_MediaAssetChangeRequest_DiscardCameraPhoto()
+### OH_MediaAssetChangeRequest_DiscardCameraPhoto()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 MediaLibrary_ErrorCode OH_MediaAssetChangeRequest_DiscardCameraPhoto(OH_MediaAssetChangeRequest* changeRequest)
@@ -233,6 +252,7 @@ MediaLibrary_ErrorCode OH_MediaAssetChangeRequest_DiscardCameraPhoto(OH_MediaAss
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_MediaAssetChangeRequest* changeRequest | OH_MediaAssetChangeRequest实例。 |
@@ -240,6 +260,7 @@ MediaLibrary_ErrorCode OH_MediaAssetChangeRequest_DiscardCameraPhoto(OH_MediaAss
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | MediaLibrary_ErrorCode | MEDIA_LIBRARY_OK：方法调用成功。 MEDIA_LIBRARY_PARAMETER_ERROR：参数错误。可能的原因： 1. 未指定强制参数。 2. 参数类型不正确。 3. 参数验证失败。 MEDIA_LIBRARY_INTERNAL_SYSTEM_ERROR：内部系统错误。 MEDIA_LIBRARY_OPERATION_NOT_SUPPORTED：不支持该操作。 |
@@ -247,9 +268,10 @@ MediaLibrary_ErrorCode OH_MediaAssetChangeRequest_DiscardCameraPhoto(OH_MediaAss
  
   
 
-#### OH_MediaAssetChangeRequest_Release()
+### OH_MediaAssetChangeRequest_Release()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 MediaLibrary_ErrorCode OH_MediaAssetChangeRequest_Release(OH_MediaAssetChangeRequest* changeRequest)
@@ -263,6 +285,7 @@ MediaLibrary_ErrorCode OH_MediaAssetChangeRequest_Release(OH_MediaAssetChangeReq
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_MediaAssetChangeRequest* changeRequest | OH_MediaAssetChangeRequest实例。 |
@@ -270,6 +293,7 @@ MediaLibrary_ErrorCode OH_MediaAssetChangeRequest_Release(OH_MediaAssetChangeReq
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | MediaLibrary_ErrorCode | MEDIA_LIBRARY_OK：方法调用成功。 MEDIA_LIBRARY_PARAMETER_ERROR：参数错误。可能的原因： 1. 未指定强制参数。 2. 参数类型不正确。 3. 参数验证失败。 |

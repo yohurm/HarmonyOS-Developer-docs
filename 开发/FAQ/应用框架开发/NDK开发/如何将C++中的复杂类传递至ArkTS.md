@@ -27,7 +27,7 @@
 ```text
 #include "napi/native_api.h"
 
-// 创建SubObj对象
+<em>// 创建SubObj对象</em>
 napi_value CreateSubObj(napi_env env, int age) 
 {
     napi_value subObj;
@@ -40,27 +40,27 @@ napi_value CreateSubObj(napi_env env, int age)
     return subObj;
 }
 
-// 创建SuperObj对象
+<em>// 创建SuperObj对象</em>
 static napi_value CreateSuperObj(napi_env env, napi_callback_info info) 
 {
-    // 创建主对象
+   <em> // 创建主对象</em>
     napi_value superObj;
     napi_create_object(env, &superObj);
 
-    // 添加基础属性
+  <em>  // 添加基础属性</em>
     napi_value mainAge;
     napi_create_int32(env, 40, &mainAge);
     napi_set_named_property(env, superObj, "age", mainAge);
 
-    // 添加子对象
+  <em>  // 添加子对象</em>
     napi_value subObj = CreateSubObj(env, 25);
     napi_set_named_property(env, superObj, "subObj", subObj);
 
-    // 创建子对象数组
+   <em> // 创建子对象数组</em>
     napi_value subObjs;
     napi_create_array(env, &subObjs);
 
-    // 向数组添加元素
+   <em> // 向数组添加元素</em>
     for (int i = 0; i < 3; i++) {
         napi_value item = CreateSubObj(env, i + 10);
         napi_set_element(env, subObjs, i, item);    
@@ -354,7 +354,7 @@ Q：如何在使用NAPI接口导出两个类的同时定义两个类的继承关
 A：当前NAPI未提供实现继承对象的方法。可以参考JavaScript修改原型链的方法，达到类似的效果：
  
 ```text
-// 定义构造函数
+<em>// 定义构造函数</em>
 function Person(name, age) {
     this.name = name
     this.age = age
@@ -367,7 +367,7 @@ Person.prototype.eatting = function () {
     console.info("吃饭")
 }
 
-// 定义学生类
+<em>// 定义学生类</em>
 function Student(name, age, sno, score) {
     this.name = name
     this.age = age
@@ -375,7 +375,7 @@ function Student(name, age, sno, score) {
     this.score = score
 }
 
-// 创建一个父类的实例对象(new Person())用这个实例对象来作为子类的原型对象
+<em>// 创建一个父类的实例对象(new Person())用这个实例对象来作为子类的原型对象</em>
 let p1 = new Person()
 
 Student.prototype = p1
@@ -384,7 +384,7 @@ Student.prototype.studying = function () {
     console.info("学习")
 }
 
-// 实现方法继承
+<em>// 实现方法继承</em>
 let stu1 = new Student("hdc", 21, 111, 100)
-stu1.running() // 跑步
+stu1.running() <em>// 跑步</em>
 ```

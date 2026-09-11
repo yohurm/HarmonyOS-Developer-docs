@@ -34,21 +34,21 @@
 @Component
 struct ListSwipe {
   @State itemIndexArr: number[] = [0, 1, 2, 3, 4, 5];
-  // 存储每个列表项的滑动状态（0：未滑动，-110：完全滑出）
+ <em> // 存储每个列表项的滑动状态（0：未滑动，-110：完全滑出）</em>
   @State swipeStatus: number[] = [];
 
 
   aboutToAppear() {
-    // 初始化滑动状态数组，与列表项数量一致
+  <em>  // 初始化滑动状态数组，与列表项数量一致</em>
     this.itemIndexArr.forEach(() => {
       this.swipeStatus.push(0);
     });
   }
 
 
-  // 切换滑动状态的方法
+  <em>// 切换滑动状态的方法</em>
   toggleSwipe(index: number) {
-    // 如果当前未滑动则滑出，已滑出则收起
+   <em> // 如果当前未滑动则滑出，已滑出则收起</em>
     this.swipeStatus[index] = this.swipeStatus[index] === 0 ? -110 : 0;
   }
 
@@ -59,7 +59,7 @@ struct ListSwipe {
       Button('按钮')
         .width(80)
         .onClick(() => {
-          // 按需添加功能
+        <em>  // 按需添加功能</em>
           console.info(`index: ${index}`);
         });
     }
@@ -75,11 +75,11 @@ struct ListSwipe {
         ForEach(this.itemIndexArr, (item: number, index: number) => {
           ListItem() {
             Stack({ alignContent: Alignment.End }) {
-              // 滑动操作按钮（始终在底层）
+            <em>  // 滑动操作按钮（始终在底层）</em>
               this.itemEnd(index);
 
 
-              // 列表项主内容（可滑动部分）
+         <em>     // 列表项主内容（可滑动部分）</em>
               Row() {
                 Text('' + item)
                   .fontSize(16);
@@ -91,21 +91,21 @@ struct ListSwipe {
               .padding({ left: 16, right: 16 })
               .backgroundColor(Color.White)
               .onClick(() => {
-                // 点击图片触发滑动状态切换
+           <em>     // 点击图片触发滑动状态切换</em>
                 this.toggleSwipe(index);
               })
-              // 通过translate实现滑动效果
+         <em>     // 通过translate实现滑动效果</em>
               .translate({ x: this.swipeStatus[index] })
-              // 添加滑动动画
+             <em> // 添加滑动动画</em>
               .animation({
                 duration: 300,
                 curve: Curve.EaseOut
               })
-              // 支持手动滑动手势
+             <em> // 支持手动滑动手势</em>
               .gesture(
                 PanGesture({ direction: PanDirection.Horizontal })
                   .onActionUpdate((event: GestureEvent) => {
-                    // 限制滑动范围在0到110之间
+                  <em>  // 限制滑动范围在0到110之间</em>
                     let newX = (this.swipeStatus[index] + event.offsetX) as number;
                     if (newX > 0) {
                       newX = 0;
@@ -116,7 +116,7 @@ struct ListSwipe {
                     this.swipeStatus[index] = newX;
                   })
                   .onActionEnd(() => {
-                    // 滑动结束后自动调整状态（超过一半则完全展开，否则收起）
+                   <em> // 滑动结束后自动调整状态（超过一半则完全展开，否则收起）</em>
                     if (this.swipeStatus[index] < -65) {
                       this.swipeStatus[index] = -110;
                     } else {

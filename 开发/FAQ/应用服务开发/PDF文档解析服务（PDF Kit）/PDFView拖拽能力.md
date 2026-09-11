@@ -45,7 +45,7 @@ struct PdfDemo {
 
   async aboutToAppear(): Promise<void> {
     try {
-      // 确保rawfile目录下有pdf文件
+      <em>// 确保rawfile目录下有pdf文件</em>
       await this.copyRawFileToSdcard(this.context, 'testDemo.pdf');
       promptAction.openToast({ message: '全部拷贝完成' });
       const filePath = `${this.context.filesDir}/testDemo.pdf`;
@@ -82,11 +82,11 @@ struct PdfDemo {
     }
   }
 
-  // 拷贝pdf文件到应用沙箱目录
+  <em>// 拷贝pdf文件到应用沙箱目录</em>
   private copyRawFileToSdcard(context: common.Context, pdfName: string): Promise<void> {
     return new Promise((resolve) => {
       let destRoot = context.filesDir;
-      // rawfile下的文件名
+      <em>// rawfile下的文件名</em>
       let srcFileName = pdfName;
       let destFilePath = `${destRoot}/${srcFileName}`;
       context.resourceManager.getRawFileContent(srcFileName, (error: BusinessError, data: Uint8Array) => {

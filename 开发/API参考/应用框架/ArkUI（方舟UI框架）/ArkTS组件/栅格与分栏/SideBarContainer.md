@@ -1,9 +1,9 @@
 # SideBarContainer
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-sidebarcontainer
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供侧边栏可以显示和隐藏的容器，通过子组件定义侧边栏和内容区，第一个子组件表示侧边栏，第二个子组件表示内容区。支持侧边栏导航布局场景，通过控制按钮或手势切换侧边栏显隐，可提升应用导航效率。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 可以包含子组件。
 
@@ -24,9 +25,10 @@
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 SideBarContainer( type?: SideBarContainerType )
 
@@ -38,6 +40,7 @@ SideBarContainer( type?: SideBarContainerType )
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SideBarContainerType | 否 | 设置侧边栏的显示类型。 默认值：SideBarContainerType.Embed |
@@ -45,17 +48,19 @@ SideBarContainer( type?: SideBarContainerType )
 
 
 
-#### SideBarContainerType枚举说明
+## SideBarContainerType枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 容器内侧边栏类型枚举。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| Embed | 0 | 侧边栏嵌入到组件内，和内容区并列显示。适用于需要同时展示侧边栏和内容区的场景。 整体容器大小不变时，显示侧边栏会导致内容区缩小，隐藏侧边栏会扩大内容区。 组件尺寸小于minContentWidth + minSideBarWidth，并且未设置showSideBar时，默认不显示侧边栏。 设置了showSideBar属性时，以showSideBar属性设置的值为准。 未设置minSideBarWidth或minContentWidth时，采用对应接口的默认值进行计算。 组件在自动隐藏后，如果通过点击控制按钮唤出侧边栏，则侧边栏悬浮在内容区上显示。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| Embed | 0 | 侧边栏嵌入到组件内，和内容区并列显示。适用于需要同时展示侧边栏和内容区的场景。 整体容器大小不变时，显示侧边栏会导致内容区缩小，隐藏侧边栏会扩大内容区。 组件尺寸小于minContentWidth + minSideBarWidth，并且未设置showSideBar时，侧边栏自动隐藏。 设置了showSideBar属性时，以showSideBar属性设置的值为准。 未设置minSideBarWidth或minContentWidth时，采用对应接口的默认值进行计算。 组件在自动隐藏后，如果通过点击控制按钮唤出侧边栏，则侧边栏悬浮在内容区上显示。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | Overlay | 1 | 侧边栏浮在内容区上面，不会影响内容区的大小。适用于需要临时展示侧边栏的场景。 组件尺寸小于minContentWidth时，内容区会被截断显示。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | AUTO10+ | 2 | 组件尺寸大于等于minSideBarWidth + minContentWidth时，采用Embed模式显示。 组件尺寸小于minSideBarWidth + minContentWidth时，采用Overlay模式显示。适用于需要响应式布局或多设备适配的场景。 未设置minSideBarWidth或minContentWidth时，会使用未设置接口的默认值进行计算，若计算的值小于600vp，则使用600vp作为模式切换的临界值。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | DISPLACE | 3 | 侧边栏和内容区并列显示，内容区超出部分移出组件外。侧边栏展开时，内容区显示灰色蒙层（颜色为#33000000）并被禁用事件，点击内容区可收起侧边栏。 起始版本： 26.0.0 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
@@ -63,23 +68,25 @@ SideBarContainer( type?: SideBarContainerType )
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
 
 
 
-#### showSideBar
+### showSideBar
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showSideBar(value: boolean)
 
 设置是否显示侧边栏。设置该属性值后会触发侧边栏的显示/隐藏动画。
 
-当showSideBar属性未设置时，依据组件大小进行自动显示：小于[minSideBarWidth](#minsidebarwidth) + [minContentWidth](#mincontentwidth10)时默认不显示侧边栏，大于等于时默认显示侧边栏。
+当showSideBar属性未设置时，依据组件大小进行自动显示：小于minSideBarWidth + minContentWidth时默认不显示侧边栏，大于等于时默认显示侧边栏。
 
 从API version 10开始，该属性支持[$$](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-two-way-sync)双向绑定变量。
 
@@ -89,6 +96,7 @@ showSideBar(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否显示侧边栏。 true：显示侧边栏 false：不显示侧边栏 默认值：true |
@@ -96,9 +104,10 @@ showSideBar(value: boolean)
 
 
 
-#### controlButton
+### controlButton
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 controlButton(value: ButtonStyle)
 
@@ -110,26 +119,29 @@ controlButton(value: ButtonStyle)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | ButtonStyle | 是 | 侧边栏控制按钮的样式，用于配置控制按钮的位置、大小和图标。 |
+| value | ButtonStyle | 是 | 侧边栏控制按钮的属性，用于配置控制按钮的位置、大小和图标。 |
 
 
 
 
-#### showControlButton
+### showControlButton
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showControlButton(value: boolean)
 
-设置是否显示控制按钮。控制按钮用于控制showSideBar属性的切换，点击可显示或隐藏侧边栏，并更新showSideBar属性值。
+设置是否显示控制按钮。控制按钮用于控制showSideBar属性的切换，点击可显示或隐藏侧边栏。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -142,9 +154,10 @@ showControlButton(value: boolean)
 
 
 
-#### sideBarWidth
+### sideBarWidth
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sideBarWidth(value: number)
 
@@ -158,6 +171,7 @@ sideBarWidth(value: number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 侧边栏的宽度。 默认值：240vp 单位：vp 取值范围：[0, +∞) 异常值时取默认值。 说明： API version 10以下版本的默认值为200vp，API version 10及以上版本的默认值为240vp。 |
@@ -165,9 +179,10 @@ sideBarWidth(value: number)
 
 
 
-#### sideBarWidth9+
+### sideBarWidth9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sideBarWidth(value: Length)
 
@@ -181,6 +196,7 @@ sideBarWidth(value: Length)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Length | 是 | 侧边栏的宽度。 默认值：240vp 单位：vp 取值范围：[0, +∞) 异常值时取默认值。 说明： API version 9的默认值为200vp，API version 10及以上版本的默认值为240vp。 |
@@ -188,9 +204,10 @@ sideBarWidth(value: Length)
 
 
 
-#### minSideBarWidth
+### minSideBarWidth
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 minSideBarWidth(value: number)
 
@@ -204,16 +221,18 @@ minSideBarWidth优先于侧边栏子组件minWidth，minSideBarWidth未设置时
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | 是 | 侧边栏最小宽度。 默认值：API version 9及以下版本默认值为200vp，API version 10及以上版本的默认值为240vp。 单位：vp 取值范围：[0, +∞) 异常值时取默认值。 |
+| value | number | 是 | 侧边栏最小宽度。 默认值：API version 9及以下版本默认值为200vp，API version 10的默认值为240vp。 单位：vp 取值范围：[0, +∞) 异常值时取默认值。 |
 
 
 
 
-#### minSideBarWidth9+
+### minSideBarWidth9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 minSideBarWidth(value: Length)
 
@@ -227,16 +246,18 @@ minSideBarWidth优先于侧边栏子组件minWidth，minSideBarWidth未设置时
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | Length | 是 | 侧边栏最小宽度。 默认值：API version 9及以下版本默认值为200vp，API version 10及以上版本的默认值为240vp。 单位：vp 取值范围：[0, +∞) 异常值时取默认值。 |
+| value | Length | 是 | 侧边栏最小宽度。 默认值：API version 9及以下版本默认值为200vp，API version 10的默认值为240vp。 单位：vp 取值范围：[0, +∞) 异常值时取默认值。 |
 
 
 
 
-#### maxSideBarWidth
+### maxSideBarWidth
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 maxSideBarWidth(value: number)
 
@@ -250,16 +271,18 @@ maxSideBarWidth优先于侧边栏子组件maxWidth，maxSideBarWidth未设置时
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | 是 | 侧边栏最大宽度。 默认值：280vp 单位：vp 取值范围：[0, +∞) 异常值时取默认值。 值不能超过侧边栏容器本身宽度，超过则使用侧边栏容器本身宽度。 |
+| value | number | 是 | 设置侧边栏最大宽度。 默认值：280vp 单位：vp 取值范围：[0, +∞) 异常值时取默认值。 值不能超过侧边栏容器本身宽度，超过则使用侧边栏容器本身宽度。 |
 
 
 
 
-#### maxSideBarWidth9+
+### maxSideBarWidth9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 maxSideBarWidth(value: Length)
 
@@ -273,16 +296,18 @@ maxSideBarWidth优先于侧边栏子组件maxWidth，maxSideBarWidth未设置时
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | Length | 是 | 侧边栏最大宽度。 默认值：280vp 单位：vp 取值范围：[0, +∞) 异常值时取默认值。 值不能超过侧边栏容器本身宽度，超过则使用侧边栏容器本身宽度。 |
+| value | Length | 是 | 设置侧边栏最大宽度。 默认值：280vp 单位：vp 取值范围：[0, +∞) 异常值时取默认值。 值不能超过侧边栏容器本身宽度，超过则使用侧边栏容器本身宽度。 |
 
 
 
 
-#### autoHide9+
+### autoHide9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 autoHide(value: boolean)
 
@@ -296,6 +321,7 @@ autoHide(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 侧边栏拖拽到小于最小宽度后，是否自动隐藏。 true：会自动隐藏 false：不会自动隐藏 默认值：true |
@@ -303,9 +329,10 @@ autoHide(value: boolean)
 
 
 
-#### sideBarPosition9+
+### sideBarPosition9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sideBarPosition(value: SideBarPosition)
 
@@ -317,6 +344,7 @@ sideBarPosition(value: SideBarPosition)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | SideBarPosition | 是 | 侧边栏显示位置。 默认值：SideBarPosition.Start |
@@ -324,9 +352,10 @@ sideBarPosition(value: SideBarPosition)
 
 
 
-#### divider10+
+### divider10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 divider(value: DividerStyle | null)
 
@@ -340,6 +369,7 @@ divider(value: DividerStyle | null)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | DividerStyle \| null | 是 | 分割线的样式。 默认为DividerStyle：显示分割线。 - null或undefined：分割线样式保持默认值，不做任何改变。 说明： API version 11及以下版本，null效果为不显示分割线。 |
@@ -347,9 +377,10 @@ divider(value: DividerStyle | null)
 
 
 
-#### minContentWidth10+
+### minContentWidth10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 minContentWidth(value: Dimension)
 
@@ -377,6 +408,7 @@ minContentWidth优先于侧边栏的[maxSideBarWidth](#maxsidebarwidth)与sideBa
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Dimension | 是 | SideBarContainer组件内容区可显示的最小宽度。 默认值：360vp 取值范围：[0, +∞) 设置为小于0时按默认值处理。 |
@@ -384,9 +416,10 @@ minContentWidth优先于侧边栏的[maxSideBarWidth](#maxsidebarwidth)与sideBa
 
 
 
-#### showSideBarWithGesture
+### showSideBarWithGesture
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showSideBarWithGesture(value: boolean)
 
@@ -406,6 +439,7 @@ showSideBarWithGesture(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 设置是否支持通过手势滑动显示或隐藏侧边栏。 true：支持手势滑动控制。 false：不支持手势滑动控制。 默认值：false |
@@ -413,15 +447,17 @@ showSideBarWithGesture(value: boolean)
 
 
 
-#### ButtonStyle对象说明
+## ButtonStyle对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置侧边栏控制按钮的样式。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -434,9 +470,10 @@ showSideBarWithGesture(value: boolean)
 
 
 
-#### ButtonIconOptions18+对象说明
+## ButtonIconOptions18+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置侧边栏控制按钮的图标。
 
@@ -450,6 +487,7 @@ showSideBarWithGesture(value: boolean)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | shown8+ | string \| PixelMap \| Resource | 否 | 否 | 设置侧边栏显示时控制按钮的图标。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -459,15 +497,17 @@ showSideBarWithGesture(value: boolean)
 
 
 
-#### SideBarPosition9+枚举说明
+## SideBarPosition9+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 侧边栏显示位置。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -477,14 +517,15 @@ showSideBarWithGesture(value: boolean)
 
 
 
-#### DividerStyle10+对象说明
+## DividerStyle10+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置分割线的样式。
 
 > [!NOTE]
-> 针对侧边栏子组件设置 width ， height 时，宽高都不生效。 针对侧边栏内容区设置 width ， height 时，宽高都不生效，默认占满SideBarContainer的剩余空间。 当 showSideBar 属性未设置时，依据组件大小进行自动显示： 小于 minSideBarWidth + minContentWidth ：默认不显示侧边栏。 大于等于 minSideBarWidth + minContentWidth ：默认显示侧边栏。
+> 针对侧边栏子组件设置 width ， height 时，宽高都不生效。 针对侧边栏内容区设置 width ， height 时，宽高都不生效，默认占满SideBarContainer的剩余空间。 当 showSideBar 属性未设置时，依据组件大小进行自动显示： 小于 minSideBarWidth + minContentWidth ：默认不显示侧边栏。 大于等于minSideBarWidth + minContentWidth：默认显示侧边栏。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -492,6 +533,7 @@ showSideBarWithGesture(value: boolean)
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -503,17 +545,19 @@ showSideBarWithGesture(value: boolean)
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)外，还支持以下事件：
 
 
 
-#### onChange
+### onChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onChange(callback: (value: boolean) => void)
 
@@ -530,16 +574,18 @@ onChange(callback: (value: boolean) => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | boolean | 是 | 侧边栏的显示状态。true表示显示，false表示隐藏。 |
+| value | boolean | 是 | true表示显示，false表示隐藏。 |
 
 
 
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例主要演示如何使用侧边栏组件及页面布局效果。
 
@@ -600,4 +646,4 @@ struct SideBarContainerExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/zRX8sgdsQeOj2vJGSwlINA/zh-cn_image_0000002655848474.png?HW-CC-KV=V1&HW-CC-Date=20260730T071459Z&HW-CC-Expire=86400&HW-CC-Sign=203BCC72E40E2193EB48BCE014050AD3F499B07A8C9A4A15281D1F463F529F81)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/I9QFi3AuQ6mHlEGyCPoY-w/zh-cn_image_0000002747212479.png?HW-CC-KV=V1&HW-CC-Date=20260911T073114Z&HW-CC-Expire=86400&HW-CC-Sign=4A2ABA7804E100EE502AC3A37925666CFA7C368038CD944270121461E1610B3D)

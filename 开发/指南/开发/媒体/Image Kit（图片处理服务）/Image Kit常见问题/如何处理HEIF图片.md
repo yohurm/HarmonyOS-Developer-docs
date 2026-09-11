@@ -1,10 +1,10 @@
 # 如何处理HEIF图片
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/heif-adapter-faq
 
-#### HEIF图片介绍
+## HEIF图片介绍
 
 HEIF图片（High Efficiency Image File Format，HEIF，也称高效图像文件格式），是一个用于单张图像或图像序列的文件格式。它由动态影像专家小组（MPEG）开发，并在MPEG-H Part 12（ISO/IEC 23008-12）中定义。
 
@@ -22,11 +22,11 @@ ArkWeb图片上传可参考：[使用Web组件上传文件](https://developer.hu
 
 
 
-#### 常见问题
+## 常见问题
 
 
 
-#### 上传HEIF图片时提示：“不支持的格式”
+### 上传HEIF图片时提示：“不支持的格式”
 
 可以使用ImageSource[属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-imagesource#属性)中的supportedFormats和ImagePacker[属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-imagepacker#属性)中的supportedFormats，来查看系统支持编解码的图片格式。只要查询到的结果中包含"image/heic"，即代表该设备支持HEIF图片编解码。
 
@@ -40,7 +40,7 @@ ArkWeb图片上传可参考：[使用Web组件上传文件](https://developer.hu
 
 
 
-#### 为什么通过PhotoViewPicker或URI获取HEIF图片时得到JPEG图片？
+### 为什么通过PhotoViewPicker或URI获取HEIF图片时得到JPEG图片？
 
 **可能原因**
 
@@ -137,7 +137,7 @@ async function openFirstPhotoAssetFd(
 
 
 
-#### 获取到图片后，为什么格式、文件大小存在异常？部分图片显示不完整？
+### 获取到图片后，为什么格式、文件大小存在异常？部分图片显示不完整？
 
 **可能原因**
 
@@ -220,7 +220,7 @@ static int64_t GetFinalFileSizeByFd(int32_t fd)
 
 
 
-#### 担心使用HEIF格式图片存在兼容性问题，需使用JPEG或PNG格式的图片，如何操作
+### 担心使用HEIF格式图片存在兼容性问题，需使用JPEG或PNG格式的图片，如何操作
 
 可以借助Image Kit的图片编解码能力，将HEIF图片转码成JPEG或PNG格式的图片。
 

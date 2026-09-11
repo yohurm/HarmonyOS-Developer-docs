@@ -1,11 +1,12 @@
 # Interface (PointAnnotation)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-pointannotation
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -15,7 +16,8 @@ import { map, mapCommon } from '@kit.MapKit';
  
   
 
-#### PointAnnotation
+## PointAnnotation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -48,7 +50,8 @@ let pointAnnotation: map.PointAnnotation = await this.mapController.addPointAnno
  
   
 
-#### getPosition
+### getPosition
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -66,6 +69,7 @@ getPosition(): mapCommon.LatLng
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | mapCommon.LatLng | 点注释的锚点坐标。 |
@@ -79,7 +83,8 @@ let position: mapCommon.LatLng = pointAnnotation.getPosition();
  
   
 
-#### getTitleText
+### getTitleText
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -97,6 +102,7 @@ getTitleText(): mapCommon.Text
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | mapCommon.Text | 获取点注释第一标题的属性。 |
@@ -110,7 +116,8 @@ let titleText: mapCommon.Text = pointAnnotation.getTitleText();
  
   
 
-#### setTitleText
+### setTitleText
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -128,6 +135,7 @@ setTitleText(text: mapCommon.Text): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | text | mapCommon.Text | 是 | 第一标题属性（除content），异常值不处理。 说明： 约束条件：fontSize、strokeWidth大于等于0。 |
@@ -149,7 +157,8 @@ pointAnnotation.setTitleText({
  
   
 
-#### setTitleAnimation
+### setTitleAnimation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -167,6 +176,7 @@ setTitleAnimation(animation: FontSizeAnimation): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | animation | FontSizeAnimation | 是 | 点注释的标题动画。 |
@@ -197,7 +207,8 @@ pointAnnotation.startTitleAnimation();
  
   
 
-#### startTitleAnimation
+### startTitleAnimation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 

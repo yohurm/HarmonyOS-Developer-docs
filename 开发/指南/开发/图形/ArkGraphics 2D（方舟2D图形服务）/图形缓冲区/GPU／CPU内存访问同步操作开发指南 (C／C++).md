@@ -1,10 +1,10 @@
 # GPU/CPU内存访问同步操作开发指南 (C/C++)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-fence-guidelines
 
-#### 场景介绍
+## 场景介绍
 
 NativeFence是管理fenceFd同步状态的模块。fenceFd是一种文件描述符，用于实现GPU和CPU之间的内存访问同步。当GPU或CPU需要访问共享内存时，通过fenceFd进行同步：一方创建fenceFd并设置为阻塞状态，另一方在完成操作后发送同步信号解除阻塞。
 
@@ -12,11 +12,12 @@ NativeFence是管理fenceFd同步状态的模块。fenceFd是一种文件描述�
 
 
 
-#### 接口说明
+## 接口说明
+
 
 | 接口名 | 描述 |
 | --- | --- |
-| OH_NativeFence_IsValid (int fenceFd) | 检查fenceFd是否有效。 |
+| OH_NativeFence_IsValid (int fenceFd) | 检查fenceFd是否合法。 |
 | OH_NativeFence_Wait (int fenceFd, uint32_t timeout) | 阻塞传入的fenceFd，超时参数指定了允许等待的最长时间。 |
 | OH_NativeFence_WaitForever (int fenceFd) | 永久阻塞传入的fenceFd。 |
 | OH_NativeFence_Close (int fenceFd) | 关闭fenceFd。 |
@@ -26,7 +27,7 @@ NativeFence是管理fenceFd同步状态的模块。fenceFd是一种文件描述�
 
 
 
-#### 开发步骤
+## 开发步骤
 
 以下步骤描述了如何使用NativeFence提供的Native API接口。
 

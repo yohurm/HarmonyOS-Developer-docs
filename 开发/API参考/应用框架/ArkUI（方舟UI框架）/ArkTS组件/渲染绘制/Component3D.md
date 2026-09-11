@@ -1,9 +1,9 @@
 # Component3D
 
-更新时间：2026-06-16 09:03:21
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-component3d
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 3D渲染组件，用于将ArkGraphics 3D场景或glTF（.gltf文件和.glb文件）模型渲染到ArkUI界面中，支持自定义场景模式与自动场景模式，并提供自定义渲染管线能力。
 
@@ -12,17 +12,19 @@
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Component3D(sceneOptions?: SceneOptions)
 
@@ -32,6 +34,7 @@ Component3D(sceneOptions?: SceneOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sceneOptions | SceneOptions | 否 | 3D场景配置选项，默认值为undefined。 说明： 3D场景配置选项在控件创建后不支持动态修改。 |
@@ -39,15 +42,17 @@ Component3D(sceneOptions?: SceneOptions)
 
 
 
-#### SceneOptions对象说明
+## SceneOptions对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Component3D组件配置选项。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -57,15 +62,17 @@ Component3D组件配置选项。
 
 
 
-#### ModelType枚举说明
+## ModelType枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 渲染合成模式类型枚举，用于指定3D场景的渲染输出方式。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -75,9 +82,10 @@ Component3D组件配置选项。
 
 
 
-#### Scene12+
+## Scene12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Scene = import('../api/@ohos.graphics.scene').Scene
 
@@ -87,6 +95,7 @@ type Scene = import('../api/@ohos.graphics.scene').Scene
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
 
+
 | 类型 | 说明 |
 | --- | --- |
 | import('../api/@ohos.graphics.scene').Scene | 用于设置场景。 |
@@ -94,17 +103,19 @@ type Scene = import('../api/@ohos.graphics.scene').Scene
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
 
 
 
-#### environment
+### environment
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 environment(uri: ResourceStr)
 
@@ -116,6 +127,7 @@ environment(uri: ResourceStr)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uri | ResourceStr | 是 | 3D环境资源。 |
@@ -123,9 +135,10 @@ environment(uri: ResourceStr)
 
 
 
-#### customRender
+### customRender
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 customRender(uri: ResourceStr, selfRenderUpdate: boolean)
 
@@ -137,6 +150,7 @@ customRender(uri: ResourceStr, selfRenderUpdate: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uri | ResourceStr | 是 | 自定义渲染管线的配置文件。 |
@@ -145,9 +159,10 @@ customRender(uri: ResourceStr, selfRenderUpdate: boolean)
 
 
 
-#### shader
+### shader
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 shader(uri: ResourceStr)
 
@@ -159,6 +174,7 @@ shader(uri: ResourceStr)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uri | ResourceStr | 是 | 自定义渲染的shader文件资源。详细.shader文件格式请参考.shader资源文件格式要求。 |
@@ -166,9 +182,10 @@ shader(uri: ResourceStr)
 
 
 
-#### shaderImageTexture
+### shaderImageTexture
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 shaderImageTexture(uri: ResourceStr)
 
@@ -180,6 +197,7 @@ shaderImageTexture(uri: ResourceStr)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uri | ResourceStr | 是 | 自定义渲染用到的纹理资源。 |
@@ -187,9 +205,10 @@ shaderImageTexture(uri: ResourceStr)
 
 
 
-#### shaderInputBuffer
+### shaderInputBuffer
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 shaderInputBuffer(buffer: Array&lt;number&gt;)
 
@@ -201,6 +220,7 @@ shaderInputBuffer(buffer: Array&lt;number&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | buffer | Array&lt;number&gt; | 是 | 自定义渲染用到的动效参数，数组长度范围为[0, 1048576]。 |
@@ -208,9 +228,10 @@ shaderInputBuffer(buffer: Array&lt;number&gt;)
 
 
 
-#### renderWidth
+### renderWidth
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 renderWidth(value: Dimension)
 
@@ -226,6 +247,7 @@ renderWidth(value: Dimension)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Dimension | 是 | 3D渲染分辨率的宽度，当前仅支持设置Dimension.Percentage，取值范围是[0, 100%]。 |
@@ -233,9 +255,10 @@ renderWidth(value: Dimension)
 
 
 
-#### renderHeight
+### renderHeight
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 renderHeight(value: Dimension)
 
@@ -251,6 +274,7 @@ renderHeight(value: Dimension)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Dimension | 是 | 3D渲染分辨率的高度，当前仅支持设置Dimension.Percentage，取值范围是[0, 100%]。 |
@@ -258,17 +282,19 @@ renderHeight(value: Dimension)
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)。
 
 
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 示例效果请以真机运行为准，当前DevEco Studio预览器不支持。
 

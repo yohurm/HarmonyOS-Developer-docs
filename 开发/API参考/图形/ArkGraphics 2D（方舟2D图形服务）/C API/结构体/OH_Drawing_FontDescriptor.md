@@ -1,18 +1,19 @@
 # OH_Drawing_FontDescriptor
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-oh-drawing-fontdescriptor
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct OH_Drawing_FontDescriptor {...} OH_Drawing_FontDescriptor
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述系统字体详细信息的结构体。
  
@@ -24,16 +25,19 @@ typedef struct OH_Drawing_FontDescriptor {...} OH_Drawing_FontDescriptor
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 成员变量
+### 成员变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | char* path | 系统字体的文件路径。 |
@@ -44,5 +48,5 @@ typedef struct OH_Drawing_FontDescriptor {...} OH_Drawing_FontDescriptor
 | int weight | 系统字体的粗细程度。 |
 | int width | 系统字体的宽窄风格属性。 |
 | int italic | 系统字体倾斜度。 |
-| bool monoSpace | 系统字体是否紧凑。true表示字体紧凑，false表示字体非紧凑。 |
+| bool monoSpace | 系统字体是否等宽。true表示字体等宽，false表示字体非等宽。 |
 | bool symbolic | 系统字体是否支持符号字体。true表示支持符号字体，false表示不支持符号字体。 |

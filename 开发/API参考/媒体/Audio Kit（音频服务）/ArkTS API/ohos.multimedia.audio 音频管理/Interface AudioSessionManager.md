@@ -1,11 +1,11 @@
 # Interface (AudioSessionManager)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiosessionmanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-音频会话管理。
+AudioSessionManager是音频系统中的会话管理模块。本模块提供音频会话管理能力，包括音频会话的激活和停用、音频焦点控制、音频设备选择和切换、音频场景设置等。当开发者需要协调多个应用的音频播放行为、解决音频焦点冲突问题时，使用本模块接口完成相关操作。适用于媒体播放、VoIP通话、游戏等需要精细化音频管理的场景。
 
 在使用AudioSessionManager的接口之前，需先通过[getSessionManager](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiomanager#getsessionmanager12)获取AudioSessionManager实例。
 
@@ -14,9 +14,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { audio } from '@kit.AudioKit';
@@ -24,9 +25,10 @@ import { audio } from '@kit.AudioKit';
 
 
 
-#### activateAudioSession12+
+## activateAudioSession12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 activateAudioSession(strategy: AudioSessionStrategy): Promise&lt;void&gt;
 
@@ -38,6 +40,7 @@ activateAudioSession(strategy: AudioSessionStrategy): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | strategy | AudioSessionStrategy | 是 | 音频会话策略。 |
@@ -45,14 +48,16 @@ activateAudioSession(strategy: AudioSessionStrategy): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -66,22 +71,24 @@ activateAudioSession(strategy: AudioSessionStrategy): Promise&lt;void&gt;
 ```text
 import { BusinessError } from '@kit.BasicServicesKit';
 
+// 设置音频会话并发模式为混音模式。
 let strategy: audio.AudioSessionStrategy = {
   concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_MIX_WITH_OTHERS
 };
 
 audioSessionManager.activateAudioSession(strategy).then(() => {
-  console.info('activateAudioSession SUCCESS');
+  console.info('Succeeded in activating the audio session.');
 }).catch((err: BusinessError) => {
-  console.error(`ERROR: ${err}`);
+  console.error(`Failed to activate the audio session. Code: ${err.code}, message: ${err.message}`);
 });
 ```
 
 
 
-#### deactivateAudioSession12+
+## deactivateAudioSession12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deactivateAudioSession(): Promise&lt;void&gt;
 
@@ -93,14 +100,16 @@ deactivateAudioSession(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -113,17 +122,18 @@ deactivateAudioSession(): Promise&lt;void&gt;
 import { BusinessError } from '@kit.BasicServicesKit';
 
 audioSessionManager.deactivateAudioSession().then(() => {
-  console.info('deactivateAudioSession SUCCESS');
+  console.info('Succeeded in deactivating the audio session.');
 }).catch((err: BusinessError) => {
-  console.error(`ERROR: ${err}`);
+  console.error(`Failed to deactivate the audio session. Code: ${err.code}, message: ${err.message}`);
 });
 ```
 
 
 
-#### isAudioSessionActivated12+
+## isAudioSessionActivated12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isAudioSessionActivated(): boolean
 
@@ -134,6 +144,7 @@ isAudioSessionActivated(): boolean
 **系统能力：** SystemCapability.Multimedia.Audio.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -148,9 +159,10 @@ let isActivated = audioSessionManager.isAudioSessionActivated();
 
 
 
-#### on('audioSessionDeactivated')12+
+## on('audioSessionDeactivated')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'audioSessionDeactivated', callback: Callback&lt;AudioSessionDeactivatedEvent&gt;): void
 
@@ -162,6 +174,7 @@ on(type: 'audioSessionDeactivated', callback: Callback&lt;AudioSessionDeactivate
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'audioSessionDeactivated'，当音频会话停用时，触发该事件。 |
@@ -172,6 +185,7 @@ on(type: 'audioSessionDeactivated', callback: Callback&lt;AudioSessionDeactivate
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1.Mandatory parameters unspecified. 2.Incorrect parameter types. |
@@ -180,22 +194,23 @@ on(type: 'audioSessionDeactivated', callback: Callback&lt;AudioSessionDeactivate
 
 **示例：**
 
-```text
+```json
 audioSessionManager.on('audioSessionDeactivated',
   (audioSessionDeactivatedEvent: audio.AudioSessionDeactivatedEvent) => {
-  console.info(`reason of audioSessionDeactivated: ${audioSessionDeactivatedEvent.reason} `);
+  console.info(`Audio session deactivated, audioSessionDeactivatedEvent: ${JSON.stringify(audioSessionDeactivatedEvent)}.`);
 });
 ```
 
 
 
-#### off('audioSessionDeactivated')12+
+## off('audioSessionDeactivated')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'audioSessionDeactivated', callback?: Callback&lt;AudioSessionDeactivatedEvent&gt;): void
 
-取消监听音频会话停用事件。使用callback异步回调。
+取消监听音频会话停用事件。
 
 **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
@@ -203,15 +218,17 @@ off(type: 'audioSessionDeactivated', callback?: Callback&lt;AudioSessionDeactiva
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型，支持的事件为'audioSessionDeactivated'，当取消监听音频会话停用事件时，触发该事件。 |
-| callback | Callback&lt;AudioSessionDeactivatedEvent&gt; | 否 | 回调函数，返回音频会话停用原因。 |
+| type | string | 是 | 事件回调类型，支持的事件为'audioSessionDeactivated'。 |
+| callback | Callback&lt;AudioSessionDeactivatedEvent&gt; | 否 | 回调函数。传入回调函数时，仅取消该回调对应的监听事件，需与on('audioSessionDeactivated')绑定同一回调函数；不传参数时，取消此事件类型下所有已订阅的监听事件。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -221,13 +238,13 @@ off(type: 'audioSessionDeactivated', callback?: Callback&lt;AudioSessionDeactiva
 
 **示例：**
 
-```text
+```json
 // 取消该事件的所有监听。
 audioSessionManager.off('audioSessionDeactivated');
 
 // 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
 let audioSessionDeactivatedCallback = (audioSessionDeactivatedEvent: audio.AudioSessionDeactivatedEvent) => {
-  console.info(`reason of audioSessionDeactivated: ${audioSessionDeactivatedEvent.reason} `);
+  console.info(`Audio session deactivated, audioSessionDeactivatedEvent: ${JSON.stringify(audioSessionDeactivatedEvent)}.`);
 };
 
 audioSessionManager.on('audioSessionDeactivated', audioSessionDeactivatedCallback);
@@ -237,9 +254,10 @@ audioSessionManager.off('audioSessionDeactivated', audioSessionDeactivatedCallba
 
 
 
-#### setAudioSessionScene20+
+## setAudioSessionScene20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAudioSessionScene(scene: AudioSessionScene): void
 
@@ -249,6 +267,7 @@ setAudioSessionScene(scene: AudioSessionScene): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scene | AudioSessionScene | 是 | 音频会话场景。 |
@@ -257,6 +276,7 @@ setAudioSessionScene(scene: AudioSessionScene): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -273,9 +293,10 @@ audioSessionManager.setAudioSessionScene(audio.AudioSessionScene.AUDIO_SESSION_S
 
 
 
-#### on('audioSessionStateChanged')20+
+## on('audioSessionStateChanged')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'audioSessionStateChanged', callback: Callback&lt;AudioSessionStateChangedEvent&gt;): void
 
@@ -284,6 +305,7 @@ on(type: 'audioSessionStateChanged', callback: Callback&lt;AudioSessionStateChan
 **系统能力：** SystemCapability.Multimedia.Audio.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -295,6 +317,7 @@ on(type: 'audioSessionStateChanged', callback: Callback&lt;AudioSessionStateChan
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 6800101 | Parameter verification failed. |
@@ -304,35 +327,38 @@ on(type: 'audioSessionStateChanged', callback: Callback&lt;AudioSessionStateChan
 
 **示例：**
 
-```text
+```json
 audioSessionManager.on('audioSessionStateChanged', (audioSessionStateChangedEvent: audio.AudioSessionStateChangedEvent) => {
-  console.info(`hint of audioSessionStateChanged: ${audioSessionStateChangedEvent.stateChangeHint} `);
+  console.info(`Audio session state changed, audioSessionStateChangedEvent: ${JSON.stringify(audioSessionStateChangedEvent)}.`);
 });
 ```
 
 
 
-#### off('audioSessionStateChanged')20+
+## off('audioSessionStateChanged')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'audioSessionStateChanged', callback?: Callback&lt;AudioSessionStateChangedEvent&gt;): void
 
-取消监听音频会话状态变更事件。使用callback异步回调。
+取消监听音频会话状态变更事件。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Core
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型，支持的事件为'audioSessionStateChanged'，当音频会话状态变更时，触发该事件。 |
-| callback | Callback&lt;AudioSessionStateChangedEvent&gt; | 否 | 回调函数，返回音频会话变更提示信息。 |
+| type | string | 是 | 事件回调类型，支持的事件为'audioSessionStateChanged'。 |
+| callback | Callback&lt;AudioSessionStateChangedEvent&gt; | 否 | 回调函数。传入回调函数时，仅取消该回调对应的监听事件，需与on('audioSessionStateChanged')绑定同一回调函数；不传参数时，取消此事件类型下所有已订阅的监听事件。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -342,13 +368,13 @@ off(type: 'audioSessionStateChanged', callback?: Callback&lt;AudioSessionStateCh
 
 **示例：**
 
-```text
+```json
 // 取消该事件的所有监听。
 audioSessionManager.off('audioSessionStateChanged');
 
 // 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
 let audioSessionStateChangedCallback = (audioSessionStateChangedEvent: audio.AudioSessionStateChangedEvent) => {
-  console.info(`hint of audioSessionStateChanged: ${audioSessionStateChangedEvent.stateChangeHint} `);
+  console.info(`Audio session state changed, audioSessionStateChangedEvent: ${JSON.stringify(audioSessionStateChangedEvent)}.`);
 };
 
 audioSessionManager.on('audioSessionStateChanged', audioSessionStateChangedCallback);
@@ -358,9 +384,10 @@ audioSessionManager.off('audioSessionStateChanged', audioSessionStateChangedCall
 
 
 
-#### setDefaultOutputDevice20+
+## setDefaultOutputDevice20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setDefaultOutputDevice(deviceType: DeviceType): Promise&lt;void&gt;
 
@@ -376,6 +403,7 @@ setDefaultOutputDevice(deviceType: DeviceType): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceType | DeviceType | 是 | 设备类型。 仅支持以下设备：EARPIECE（听筒）、SPEAKER（扬声器）和DEFAULT（系统默认设备）。 |
@@ -383,14 +411,16 @@ setDefaultOutputDevice(deviceType: DeviceType): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -405,17 +435,18 @@ setDefaultOutputDevice(deviceType: DeviceType): Promise&lt;void&gt;
 import { BusinessError } from '@kit.BasicServicesKit';
 
 audioSessionManager.setDefaultOutputDevice(audio.DeviceType.SPEAKER).then(() => {
-  console.info('setDefaultOutputDevice Success!');
+  console.info('Succeeded in setting the default output device.');
 }).catch((err: BusinessError) => {
-  console.error(`setDefaultOutputDevice Fail: ${err}`);
+  console.error(`Failed to set the default output device. Code: ${err.code}, message: ${err.message}`);
 });
 ```
 
 
 
-#### getDefaultOutputDevice20+
+## getDefaultOutputDevice20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDefaultOutputDevice(): DeviceType
 
@@ -425,6 +456,7 @@ getDefaultOutputDevice(): DeviceType
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | DeviceType | 设备类型。 仅支持以下设备：EARPIECE（听筒）、SPEAKER（扬声器）和DEFAULT（系统默认设备）。 |
@@ -433,6 +465,7 @@ getDefaultOutputDevice(): DeviceType
 **错误码：**
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -448,16 +481,17 @@ let deviceType = audioSessionManager.getDefaultOutputDevice();
 
 
 
-#### setMediaOutputDevice
+## setMediaOutputDevice
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMediaOutputDevice(deviceType: DeviceType): Promise&lt;void&gt;
 
 当连接其他音频外设（如蓝牙耳机或有线耳机）时，将媒体输出设备切换为内置扬声器。使用Promise异步回调。
 
 > [!NOTE]
-> 本接口仅适用于媒体播放场景，并且会作用于应用内发起的所有媒体流。 若存在更高优先级的并发播放流或用户手动选择输出设备，则应用程序实际使用的输出设备将与本接口设置的设备不同。应用程序可通过监听 CurrentOutputDeviceChangedEvent 事件获取当前活跃的输出设备。 当应用程序需要清除之前通过接口设置的扬声器输出配置时，可通过调用接口将媒体输出设备设置为DEFAULT（系统默认设备）来实现。该设置仅在应用程序运行期间有效，当应用程序退出时，此接口的设置将自动清除。
+> 本接口仅适用于媒体播放场景，并且会作用于应用内发起的所有媒体流。 若存在更高优先级的并发播放流或用户手动选择输出设备，则应用实际使用的输出设备将与本接口设置的设备不同。应用可通过监听 CurrentOutputDeviceChangedEvent 事件获取当前活跃的输出设备。 当应用需要清除之前通过接口设置的扬声器输出配置时，可通过调用接口将媒体输出设备设置为DEFAULT（系统默认设备）来实现。该设置仅在应用运行期间有效，当应用退出时，此接口的设置将自动清除。
 
 
 **起始版本：** 26.0.0
@@ -470,12 +504,14 @@ setMediaOutputDevice(deviceType: DeviceType): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceType | DeviceType | 是 | 设备类型。 仅支持以下设备：SPEAKER（扬声器）和DEFAULT（系统默认设备）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -485,6 +521,7 @@ setMediaOutputDevice(deviceType: DeviceType): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -498,17 +535,18 @@ setMediaOutputDevice(deviceType: DeviceType): Promise&lt;void&gt;
 import { BusinessError } from '@kit.BasicServicesKit';
 
 audioSessionManager.setMediaOutputDevice(audio.DeviceType.SPEAKER).then(() => {
-  console.info('setMediaOutputDevice Success!');
+  console.info('Succeeded in setting the media output device.');
 }).catch((err: BusinessError) => {
-  console.error(`setMediaOutputDevice Fail: ${err}`);
+  console.error(`Failed to set the media output device. Code: ${err.code}, message: ${err.message}`);
 });
 ```
 
 
 
-#### on('currentOutputDeviceChanged')20+
+## on('currentOutputDeviceChanged')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'currentOutputDeviceChanged', callback: Callback&lt;CurrentOutputDeviceChangedEvent&gt;): void
 
@@ -517,6 +555,7 @@ on(type: 'currentOutputDeviceChanged', callback: Callback&lt;CurrentOutputDevice
 **系统能力：** SystemCapability.Multimedia.Audio.Device
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -528,6 +567,7 @@ on(type: 'currentOutputDeviceChanged', callback: Callback&lt;CurrentOutputDevice
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 6800101 | Parameter verification failed. |
@@ -537,11 +577,9 @@ on(type: 'currentOutputDeviceChanged', callback: Callback&lt;CurrentOutputDevice
 
 **示例：**
 
-```text
-import { audio } from '@kit.AudioKit';
-
+```json
 let currentOutputDeviceChangedCallback = (currentOutputDeviceChangedEvent: audio.CurrentOutputDeviceChangedEvent) => {
-  console.info(`reason of currentOutputDeviceChanged: ${currentOutputDeviceChangedEvent.changeReason} `);
+  console.info(`Current output device changed, currentOutputDeviceChangedEvent: ${JSON.stringify(currentOutputDeviceChangedEvent)}.`);
 };
 
 audioSessionManager.on('currentOutputDeviceChanged', currentOutputDeviceChangedCallback);
@@ -549,27 +587,30 @@ audioSessionManager.on('currentOutputDeviceChanged', currentOutputDeviceChangedC
 
 
 
-#### off('currentOutputDeviceChanged')20+
+## off('currentOutputDeviceChanged')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'currentOutputDeviceChanged', callback?: Callback&lt;CurrentOutputDeviceChangedEvent&gt;): void
 
-取消监听当前输出设备的变化事件，并使用callback进行异步回调。
+取消监听当前输出设备的变化事件。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Device
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型，支持的事件为'currentOutputDeviceChanged'，当前输出设备发生变化时，触发该事件。 |
-| callback | Callback&lt;CurrentOutputDeviceChangedEvent&gt; | 否 | 回调函数，用于返回当前输出设备变化的信息。 |
+| type | string | 是 | 事件回调类型，支持的事件为'currentOutputDeviceChanged'。 |
+| callback | Callback&lt;CurrentOutputDeviceChangedEvent&gt; | 否 | 回调函数。传入回调函数时，仅取消该回调对应的监听事件，需与on('currentOutputDeviceChanged')绑定同一回调函数；不传参数时，取消此事件类型下所有已订阅的监听事件。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -579,13 +620,13 @@ off(type: 'currentOutputDeviceChanged', callback?: Callback&lt;CurrentOutputDevi
 
 **示例：**
 
-```text
+```json
 // 取消该事件的所有监听。
 audioSessionManager.off('currentOutputDeviceChanged');
 
 // 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
 let currentOutputDeviceChangedCallback = (currentOutputDeviceChangedEvent: audio.CurrentOutputDeviceChangedEvent) => {
-  console.info(`reason of currentOutputDeviceChanged: ${currentOutputDeviceChangedEvent.changeReason} `);
+  console.info(`Current output device changed, currentOutputDeviceChangedEvent: ${JSON.stringify(currentOutputDeviceChangedEvent)}.`);
 };
 
 audioSessionManager.on('currentOutputDeviceChanged', currentOutputDeviceChangedCallback);
@@ -595,9 +636,10 @@ audioSessionManager.off('currentOutputDeviceChanged', currentOutputDeviceChanged
 
 
 
-#### getAvailableDevices21+
+## getAvailableDevices21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAvailableDevices(deviceUsage: DeviceUsage): AudioDeviceDescriptors
 
@@ -607,12 +649,14 @@ getAvailableDevices(deviceUsage: DeviceUsage): AudioDeviceDescriptors
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceUsage | DeviceUsage | 是 | 音频设备类型（根据用途分类）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -623,6 +667,7 @@ getAvailableDevices(deviceUsage: DeviceUsage): AudioDeviceDescriptors
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 6800101 | Parameter verification failed. |
@@ -631,23 +676,24 @@ getAvailableDevices(deviceUsage: DeviceUsage): AudioDeviceDescriptors
 
 **示例：**
 
-```text
+```json
 import { BusinessError } from '@kit.BasicServicesKit';
 
 try {
   let data: audio.AudioDeviceDescriptors = audioSessionManager.getAvailableDevices(audio.DeviceUsage.MEDIA_OUTPUT_DEVICES);
-  console.info('Succeeded in doing getAvailableDevices.');
+  console.info(`Succeeded in obtaining available devices, audioDeviceDescriptors: ${JSON.stringify(data)}.`);
 } catch (err) {
   let error = err as BusinessError;
-   console.error(`Failed to getAvailableDevices. Code: ${error.code}, message: ${error.message}`);
+  console.error(`Failed to obtain available devices. Code: ${error.code}, message: ${error.message}`);
 }
 ```
 
 
 
-#### on('availableDeviceChange')21+
+## on('availableDeviceChange')21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'availableDeviceChange', deviceUsage: DeviceUsage, callback: Callback&lt;DeviceChangeAction&gt;): void
 
@@ -656,6 +702,7 @@ on(type: 'availableDeviceChange', deviceUsage: DeviceUsage, callback: Callback&l
 **系统能力：** SystemCapability.Multimedia.Audio.Device
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -668,6 +715,7 @@ on(type: 'availableDeviceChange', deviceUsage: DeviceUsage, callback: Callback&l
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 6800101 | Parameter verification failed. |
@@ -676,20 +724,18 @@ on(type: 'availableDeviceChange', deviceUsage: DeviceUsage, callback: Callback&l
 
 **示例：**
 
-```text
+```json
 audioSessionManager.on('availableDeviceChange', audio.DeviceUsage.MEDIA_INPUT_DEVICES, (deviceChanged: audio.DeviceChangeAction) => {
-  console.info('device change type : ' + deviceChanged.type);
-  console.info('device descriptor size : ' + deviceChanged.deviceDescriptors.length);
-  console.info('device change descriptor : ' + deviceChanged.deviceDescriptors[0].deviceRole);
-  console.info('device change descriptor : ' + deviceChanged.deviceDescriptors[0].deviceType);
+  console.info(`Available device changed, deviceChangeAction: ${JSON.stringify(deviceChanged)}.`);
 });
 ```
 
 
 
-#### off('availableDeviceChange')21+
+## off('availableDeviceChange')21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'availableDeviceChange', callback?: Callback&lt;DeviceChangeAction&gt;): void
 
@@ -699,15 +745,17 @@ off(type: 'availableDeviceChange', callback?: Callback&lt;DeviceChangeAction&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型，支持的事件为'availableDeviceChange'，当取消监听音频可选设备连接变化事件时，触发该事件。 |
-| callback | Callback&lt;DeviceChangeAction&gt; | 否 | 回调函数，返回可选设备更新详情。 |
+| type | string | 是 | 事件回调类型，支持的事件为'availableDeviceChange'。 |
+| callback | Callback&lt;DeviceChangeAction&gt; | 否 | 回调函数。传入回调函数时，仅取消该回调对应的监听事件，需与on('availableDeviceChange')绑定同一回调函数；不传参数时，取消此事件类型下所有已订阅的监听事件。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -716,16 +764,13 @@ off(type: 'availableDeviceChange', callback?: Callback&lt;DeviceChangeAction&gt;
 
 **示例：**
 
-```text
+```json
 // 取消该事件的所有监听。
 audioSessionManager.off('availableDeviceChange');
 
 // 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
 let availableDeviceChangeCallback = (deviceChanged: audio.DeviceChangeAction) => {
-  console.info('device change type : ' + deviceChanged.type);
-  console.info('device descriptor size : ' + deviceChanged.deviceDescriptors.length);
-  console.info('device change descriptor : ' + deviceChanged.deviceDescriptors[0].deviceRole);
-  console.info('device change descriptor : ' + deviceChanged.deviceDescriptors[0].deviceType);
+  console.info(`Available device changed, deviceChangeAction: ${JSON.stringify(deviceChanged)}.`);
 };
 
 audioSessionManager.on('availableDeviceChange', audio.DeviceUsage.MEDIA_INPUT_DEVICES, availableDeviceChangeCallback);
@@ -735,21 +780,23 @@ audioSessionManager.off('availableDeviceChange', availableDeviceChangeCallback);
 
 
 
-#### selectMediaInputDevice21+
+## selectMediaInputDevice21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectMediaInputDevice(inputAudioDevice: AudioDeviceDescriptor): Promise&lt;void&gt;
 
 设置媒体输入设备。使用Promise异步回调。
 
 > [!NOTE]
-> 本接口不适用于VoIP通话录音，即 SourceType 为SOURCE_TYPE_VOICE_COMMUNICATION的场景不适用。 本接口调用前需要先调用 getAvailableDevices 接口查询到当前可用输入设备列表，从列表中选择输入设备。 当系统中存在其他更高优先级的应用录音流时，实际使用的输入设备会跟随其他高优先级应用所选的输入设备。 应用程序可以监听 currentInputDeviceChanged 事件来获得实际的输入设备。
+> 本接口不适用于VoIP通话录音，即 SourceType 为SOURCE_TYPE_VOICE_COMMUNICATION的场景不适用。 本接口调用前需要先调用 getAvailableDevices 接口查询到当前可用输入设备列表，从列表中选择输入设备。 当系统中存在其他更高优先级的应用录音流时，实际使用的输入设备会跟随其他高优先级应用所选的输入设备。 应用可以监听 currentInputDeviceChanged 事件来获得实际的输入设备。
 
 
 **系统能力：** SystemCapability.Multimedia.Audio.Device
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -757,6 +804,7 @@ selectMediaInputDevice(inputAudioDevice: AudioDeviceDescriptor): Promise&lt;void
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -767,6 +815,7 @@ selectMediaInputDevice(inputAudioDevice: AudioDeviceDescriptor): Promise&lt;void
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 6800101 | Parameter verification failed, for example, the selected device does not exist. |
@@ -775,31 +824,34 @@ selectMediaInputDevice(inputAudioDevice: AudioDeviceDescriptor): Promise&lt;void
 
 **示例：**
 
-```text
+```json
 import { BusinessError } from '@kit.BasicServicesKit';
 
 try {
+  // 获取可用音频输入设备列表，用于后续选择输入设备
   let data: audio.AudioDeviceDescriptors = audioSessionManager.getAvailableDevices(audio.DeviceUsage.MEDIA_INPUT_DEVICES);
-  console.info('Succeeded in doing getAvailableDevices.');
+  console.info(`Succeeded in obtaining available devices, audioDeviceDescriptors: ${JSON.stringify(data)}.`);
 
   if (data[0]) {
+    // 选择第一个可用设备作为音频输入设备。
     audioSessionManager.selectMediaInputDevice(data[0]).then(() => {
-      console.info('Succeeded in doing selectMediaInputDevice.');
+      console.info('Succeeded in selecting the media input device.');
     }).catch((selectErr: BusinessError) => {
-      console.error(`Failed to selectMediaInputDevice. Code: ${selectErr.code}, message: ${selectErr.message}`);
+      console.error(`Failed to select the media input device. Code: ${selectErr.code}, message: ${selectErr.message}`);
     });
   }
 } catch (err) {
   let error = err as BusinessError;
-  console.error(`Failed to getAvailableDevices. Code: ${error.code}, message: ${error.message}`);
+  console.error(`Failed to obtain available devices. Code: ${error.code}, message: ${error.message}`);
 }
 ```
 
 
 
-#### getSelectedMediaInputDevice21+
+## getSelectedMediaInputDevice21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSelectedMediaInputDevice(): AudioDeviceDescriptor
 
@@ -808,6 +860,7 @@ getSelectedMediaInputDevice(): AudioDeviceDescriptor
 **系统能力：** SystemCapability.Multimedia.Audio.Device
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -818,6 +871,7 @@ getSelectedMediaInputDevice(): AudioDeviceDescriptor
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 6800301 | Audio client call audio service error, System error. |
@@ -825,23 +879,24 @@ getSelectedMediaInputDevice(): AudioDeviceDescriptor
 
 **示例：**
 
-```text
+```json
 import { BusinessError } from '@kit.BasicServicesKit';
 
 try {
   let device: audio.AudioDeviceDescriptor = audioSessionManager.getSelectedMediaInputDevice();
-  console.info('Succeeded in doing getSelectedMediaInputDevice.');
+  console.info(`Succeeded in obtaining the selected media input device, audioDeviceDescriptor: ${JSON.stringify(device)}.`);
 } catch (err) {
   let error = err as BusinessError;
-  console.error(`Failed to getSelectedMediaInputDevice. Code: ${error.code}, message: ${error.message}`);
+  console.error(`Failed to obtain the selected media input device. Code: ${error.code}, message: ${error.message}`);
 }
 ```
 
 
 
-#### clearSelectedMediaInputDevice21+
+## clearSelectedMediaInputDevice21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clearSelectedMediaInputDevice(): Promise&lt;void&gt;
 
@@ -851,6 +906,7 @@ clearSelectedMediaInputDevice(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -859,6 +915,7 @@ clearSelectedMediaInputDevice(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -871,36 +928,39 @@ clearSelectedMediaInputDevice(): Promise&lt;void&gt;
 import { BusinessError } from '@kit.BasicServicesKit';
 
 audioSessionManager.clearSelectedMediaInputDevice().then(() => {
-  console.info('Succeeded in doing clearSelectedMediaInputDevice.');
+  console.info('Succeeded in clearing the selected media input device.');
 }).catch((err: BusinessError) => {
-  console.error(`Failed to clearSelectedMediaInputDevice. Code: ${err.code}, message: ${err.message}`);
+  console.error(`Failed to clear the selected media input device. Code: ${err.code}, message: ${err.message}`);
 });
 ```
 
 
 
-#### setBluetoothAndNearlinkPreferredRecordCategory21+
+## setBluetoothAndNearlinkPreferredRecordCategory21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setBluetoothAndNearlinkPreferredRecordCategory(category: BluetoothAndNearlinkPreferredRecordCategory): Promise&lt;void&gt;
 
-设置在使用蓝牙或星闪进行录音时，应用程序的设备偏好分类。使用Promise异步回调。
+设置在使用蓝牙或星闪进行录音时，应用的设备偏好分类。使用Promise异步回调。
 
 > [!NOTE]
-> 应用程序可以在蓝牙或星闪连接之前设置此分类，系统将在设备连接时优先使用蓝牙或星闪进行录音。 当系统中存在其他更高优先级的应用录音流时，实际使用的输入设备会跟随其他高优先级应用所选的输入设备。 应用程序可以监听 currentInputDeviceChanged 事件来获得实际的输入设备。
+> 应用可以在蓝牙或星闪连接之前设置此分类，系统将在设备连接时优先使用蓝牙或星闪进行录音。 当系统中存在其他更高优先级的应用录音流时，实际使用的输入设备会跟随其他高优先级应用所选的输入设备。 应用可以监听 currentInputDeviceChanged 事件来获得实际的输入设备。
 
 
 **系统能力：** SystemCapability.Multimedia.Audio.Device
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| category | BluetoothAndNearlinkPreferredRecordCategory | 是 | 在使用蓝牙或星闪进行录音时，应用程序的设备偏好分类。 |
+| category | BluetoothAndNearlinkPreferredRecordCategory | 是 | 在使用蓝牙或星闪进行录音时，应用的设备偏好分类。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -910,6 +970,7 @@ setBluetoothAndNearlinkPreferredRecordCategory(category: BluetoothAndNearlinkPre
 **错误码：**
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -922,19 +983,22 @@ setBluetoothAndNearlinkPreferredRecordCategory(category: BluetoothAndNearlinkPre
 ```text
 import { BusinessError } from '@kit.BasicServicesKit';
 
-const category = audio.BluetoothAndNearlinkPreferredRecordCategory.PREFERRED_LOW_LATENCY;
+// 设置蓝牙和星闪录音偏好为低延迟模式，优先使用低延迟设备。
+let category = audio.BluetoothAndNearlinkPreferredRecordCategory.PREFERRED_LOW_LATENCY;
+
 audioSessionManager.setBluetoothAndNearlinkPreferredRecordCategory(category).then(() => {
-  console.info('Succeeded in doing setBluetoothAndNearlinkPreferredRecordCategory.');
+  console.info('Succeeded in setting the bluetooth and nearlink preferred record category.');
 }).catch((err: BusinessError) => {
-  console.error(`Failed to setBluetoothAndNearlinkPreferredRecordCategory. Code: ${err.code}, message: ${err.message}`);
+  console.error(`Failed to set the bluetooth and nearlink preferred record category. Code: ${err.code}, message: ${err.message}`);
 });
 ```
 
 
 
-#### getBluetoothAndNearlinkPreferredRecordCategory21+
+## getBluetoothAndNearlinkPreferredRecordCategory21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBluetoothAndNearlinkPreferredRecordCategory(): BluetoothAndNearlinkPreferredRecordCategory
 
@@ -944,14 +1008,16 @@ getBluetoothAndNearlinkPreferredRecordCategory(): BluetoothAndNearlinkPreferredR
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| BluetoothAndNearlinkPreferredRecordCategory | 在使用蓝牙或星闪进行录音时，应用程序的设备偏好分类。 |
+| BluetoothAndNearlinkPreferredRecordCategory | 返回当前已设置的蓝牙或星闪录音设备偏好分类。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -965,18 +1031,19 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 try {
   let category: audio.BluetoothAndNearlinkPreferredRecordCategory = audioSessionManager.getBluetoothAndNearlinkPreferredRecordCategory();
-  console.info('Succeeded in doing getBluetoothAndNearlinkPreferredRecordCategory.');
+  console.info(`Succeeded in obtaining the bluetooth and nearlink preferred record category, category: ${category}.`);
 } catch (err) {
   let error = err as BusinessError;
-  console.error(`Failed to getBluetoothAndNearlinkPreferredRecordCategory. Code: ${error.code}, message: ${error.message}`);
+  console.error(`Failed to obtain the bluetooth and nearlink preferred record category. Code: ${error.code}, message: ${error.message}`);
 }
 ```
 
 
 
-#### on('currentInputDeviceChanged')21+
+## on('currentInputDeviceChanged')21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'currentInputDeviceChanged', callback: Callback&lt;CurrentInputDeviceChangedEvent&gt;): void
 
@@ -985,6 +1052,7 @@ on(type: 'currentInputDeviceChanged', callback: Callback&lt;CurrentInputDeviceCh
 **系统能力：** SystemCapability.Multimedia.Audio.Device
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -996,6 +1064,7 @@ on(type: 'currentInputDeviceChanged', callback: Callback&lt;CurrentInputDeviceCh
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 6800101 | Parameter verification failed. |
@@ -1004,11 +1073,9 @@ on(type: 'currentInputDeviceChanged', callback: Callback&lt;CurrentInputDeviceCh
 
 **示例：**
 
-```text
-import { audio } from '@kit.AudioKit';
-
+```json
 let currentInputDeviceChangedCallback = (currentInputDeviceChangedEvent: audio.CurrentInputDeviceChangedEvent) => {
-  console.info(`reason of currentInputDeviceChanged: ${currentInputDeviceChangedEvent.changeReason} `);
+  console.info(`Current input device changed, currentInputDeviceChangedEvent: ${JSON.stringify(currentInputDeviceChangedEvent)}.`);
 };
 
 audioSessionManager.on('currentInputDeviceChanged', currentInputDeviceChangedCallback);
@@ -1016,9 +1083,10 @@ audioSessionManager.on('currentInputDeviceChanged', currentInputDeviceChangedCal
 
 
 
-#### off('currentInputDeviceChanged')21+
+## off('currentInputDeviceChanged')21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'currentInputDeviceChanged', callback?: Callback&lt;CurrentInputDeviceChangedEvent&gt;): void
 
@@ -1028,15 +1096,17 @@ off(type: 'currentInputDeviceChanged', callback?: Callback&lt;CurrentInputDevice
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型，支持的事件为'currentInputDeviceChanged'，当前输入设备发生变化时，触发该事件。 |
-| callback | Callback&lt;CurrentInputDeviceChangedEvent&gt; | 否 | 回调函数，用于返回当前输入设备变化的信息。 |
+| type | string | 是 | 事件回调类型，支持的事件为'currentInputDeviceChanged'。 |
+| callback | Callback&lt;CurrentInputDeviceChangedEvent&gt; | 否 | 回调函数。传入回调函数时，仅取消该回调对应的监听事件，需与on('currentInputDeviceChanged')绑定同一回调函数；不传参数时，取消此事件类型下所有已订阅的监听事件。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1045,13 +1115,13 @@ off(type: 'currentInputDeviceChanged', callback?: Callback&lt;CurrentInputDevice
 
 **示例：**
 
-```text
+```json
 // 取消该事件的所有监听。
 audioSessionManager.off('currentInputDeviceChanged');
 
 // 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
 let currentInputDeviceChangedCallback = (currentInputDeviceChangedEvent: audio.CurrentInputDeviceChangedEvent) => {
-  console.info(`reason of currentInputDeviceChanged: ${currentInputDeviceChangedEvent.changeReason} `);
+  console.info(`Current input device changed, currentInputDeviceChangedEvent: ${JSON.stringify(currentInputDeviceChangedEvent)}.`);
 };
 
 audioSessionManager.on('currentInputDeviceChanged', currentInputDeviceChangedCallback);
@@ -1061,9 +1131,10 @@ audioSessionManager.off('currentInputDeviceChanged', currentInputDeviceChangedCa
 
 
 
-#### enableMuteSuggestionWhenMixWithOthers23+
+## enableMuteSuggestionWhenMixWithOthers23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableMuteSuggestionWhenMixWithOthers(enable: boolean): void
 
@@ -1071,7 +1142,7 @@ enableMuteSuggestionWhenMixWithOthers(enable: boolean): void
 
 通常，当使用混音模式时，如果其他应用同时播放音频，会和其他应用进行混音播放。但在某些场景下（如游戏或广播），应用自身会通过静音自身的音频以给用户提供更好的体验。
 
-如果启用此功能，当订阅音频会话状态更改事件后静音建议和取消静音建议提示将通过[AudioSessionStateChangedEvent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-i#audiosessionstatechangedevent20)回调发送。收到静音建议表示其他应用程序开始播放音频，且播放的音频和本应用的音频不能混音。
+如果启用此功能，当订阅音频会话状态更改事件后静音建议和取消静音建议提示将通过[AudioSessionStateChangedEvent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-i#audiosessionstatechangedevent20)回调发送。收到静音建议表示其他应用开始播放音频，且播放的音频和本应用的音频不能混音。
 
 此功能仅支持已设置[AudioSessionScene](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-e#audiosessionscene20)并激活模式为CONCURRENCY_MIX_WITH_OTHERS的音频会话使用。并且仅在激活音频会话期间生效一次，每次激活音频会话前都必须重新启用。
 
@@ -1083,14 +1154,16 @@ enableMuteSuggestionWhenMixWithOthers(enable: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| enable | boolean | 是 | 是否启用混音播放下接收静音播放建议通知功能。true表示启用，false表示不启用。 |
+| enable | boolean | 是 | 是否启用混音播放下静音播放建议通知功能。true表示启用，false表示不启用。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1101,14 +1174,15 @@ enableMuteSuggestionWhenMixWithOthers(enable: boolean): void
 **示例：**
 
 ```text
-audio.getAudioManager().getSessionManager().enableMuteSuggestionWhenMixWithOthers(true);
+audioSessionManager.enableMuteSuggestionWhenMixWithOthers(true);
 ```
 
 
 
-#### setCapturerMuteHint24+
+## setCapturerMuteHint24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCapturerMuteHint(mute: boolean): Promise&lt;void&gt;
 
@@ -1124,12 +1198,14 @@ setCapturerMuteHint(mute: boolean): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mute | boolean | 是 | 应用自身给系统音频模块上报的静音状态。true表示应用将当前流静音，false表示取消静音。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1139,6 +1215,7 @@ setCapturerMuteHint(mute: boolean): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1151,17 +1228,18 @@ setCapturerMuteHint(mute: boolean): Promise&lt;void&gt;
 import { BusinessError } from '@kit.BasicServicesKit';
 
 audioSessionManager.setCapturerMuteHint(true).then(() => {
-  console.info('Successfully set capturer mute hint.');
+  console.info('Succeeded in setting the capturer mute hint.');
 }).catch((err: BusinessError) => {
-  console.error(`Failed to setCapturerMuteHint. Code: ${err.code}, message: ${err.message}`);
+  console.error(`Failed to set the capturer mute hint. Code: ${err.code}, message: ${err.message}`);
 });
 ```
 
 
 
-#### isOtherMediaPlaying23+
+## isOtherMediaPlaying23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isOtherMediaPlaying(): boolean
 
@@ -1172,6 +1250,7 @@ isOtherMediaPlaying(): boolean
 **系统能力：** SystemCapability.Multimedia.Audio.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1186,9 +1265,10 @@ let isExistence = audioSessionManager.isOtherMediaPlaying();
 
 
 
-#### setAudioSessionBehavior24+
+## setAudioSessionBehavior24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAudioSessionBehavior(behavior: number): void
 
@@ -1204,6 +1284,7 @@ setAudioSessionBehavior(behavior: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | behavior | number | 是 | 用于设置音频会话行为。 该参数可以是单个标志，也可以是多个标志的按位OR组合。 当前支持的音频会话行为详见AudioSessionBehaviorFlags中定义的标志。 |
@@ -1212,6 +1293,7 @@ setAudioSessionBehavior(behavior: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1222,6 +1304,7 @@ setAudioSessionBehavior(behavior: number): void
 **示例：**
 
 ```text
+// 设置音频会话行为为被打断时静音，当音频被其他应用打断时自动静音。
 let behavior: number = audio.AudioSessionBehaviorFlags.MUTE_WHEN_INTERRUPTED;
 audioSessionManager.setAudioSessionBehavior(behavior);
 ```

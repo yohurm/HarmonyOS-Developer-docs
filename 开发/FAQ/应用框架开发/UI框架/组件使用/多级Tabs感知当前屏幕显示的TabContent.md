@@ -43,7 +43,7 @@ struct FirstTabs {
     Column() {
       Tabs({ barPosition: BarPosition.End, index: 0, controller: this.controller }) {
         TabContent() {
-          SecondTabs(); // 二级Tabs
+          SecondTabs(); <em>// 二级Tabs</em>
         }.tabBar({ icon: $r('app.media.startIcon'), text: '首页' });
 
         TabContent() {
@@ -75,7 +75,7 @@ struct FirstTabs {
 
 - 二级Tabs代码实现：
 ```text
-// 二级Tabs
+<em>// </em><em>二级Tabs</em>
 @Component
 struct SecondTabs {
   controller: TabsController = new TabsController();
@@ -84,7 +84,7 @@ struct SecondTabs {
     Column() {
       Tabs({ barPosition: BarPosition.Start, index: 0, controller: this.controller }) {
         TabContent() {
-          ThirdTabs(); // 三级Tabs
+          ThirdTabs();<em> </em><em>// 三级Tabs</em>
         }.tabBar('北京');
 
         TabContent() {
@@ -114,7 +114,7 @@ struct SecondTabs {
 
 - 三级Tabs代码实现：
 ```text
-// 三级Tabs
+<em>// </em><em>三级Tabs</em>
 @Component
 struct ThirdTabs {
   controller: TabsController = new TabsController();
@@ -134,7 +134,7 @@ struct ThirdTabs {
           console.info('天安门：onWillHide');
         })
         .onVisibleAreaChange([0.0, 1.0], (isExpanding: boolean, currentRatio: number) => {
-          // 组件可见区域变化时触发该回调
+      <em>    // 组件可见区域变化时触发该回调</em>
           if (isExpanding && currentRatio >= 0) {
             console.info('天安门：开始显示');
           }

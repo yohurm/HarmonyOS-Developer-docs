@@ -1,18 +1,19 @@
 # Enums
 
-更新时间：2026-07-09 02:26:55
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-e
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
-> 该组件首批接口从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+> 该组件从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
   
 
-#### MessageLevel
+## MessageLevel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ConsoleMessage的信息级别。
  
@@ -22,6 +23,7 @@ ConsoleMessage的信息级别。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | Debug | 1 | 调试级别。 |
@@ -33,14 +35,16 @@ ConsoleMessage的信息级别。
  
   
 
-#### ConsoleMessageSource23+
+## ConsoleMessageSource23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ConsoleMessage的日志来源。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | XML | 0 | 由Web的 XML/HTML 解析器生成的日志（如 HTML 语法错误、XML 格式异常），比如HTML 标签未闭合导致的解析警告。 |
@@ -60,35 +64,39 @@ ConsoleMessage的日志来源。
  
   
 
-#### MixedMode
+## MixedMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 混合内容模式。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | All | 0 | 宽松模式：允许加载HTTP和HTTPS混合内容。所有不安全的内容都可以被加载。 |
-| Compatible | 1 | 兼容模式：混合内容兼容性模式，部分不安全的内容可能被加载。 |
+| Compatible | 1 | 兼容模式：允许部分HTTP内容在HTTPS页面中加载。 |
 | None | 2 | 严格模式：不允许加载HTTP和HTTPS混合内容。 |
  
  
   
 
-#### HitTestType(deprecated)
+## HitTestType(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 点击事件检测结果类型。
  
  **系统能力：** SystemCapability.Web.Webview.Core
  
 > [!NOTE]
-> 从API version9开始支持，从API version 21开始废弃。建议使用 WebHitTestType 替代。
+> 从API version 9开始支持，从API version 21开始废弃。建议使用 WebHitTestType 替代。
 
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | EditText | 0 | 可编辑的区域。 |
@@ -103,14 +111,16 @@ ConsoleMessage的日志来源。
  
   
 
-#### CacheMode
+## CacheMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 缓存模式。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | Default9+ | 0 | 优先使用未过期cache加载资源，无效或无cache时从网络获取。 |
@@ -121,25 +131,28 @@ ConsoleMessage的日志来源。
  
   
 
-#### OverScrollMode11+
+## OverScrollMode11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置Web的过滚动模式为关闭或开启。
  
  **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| NEVER | 0 | Web过滚动模式关闭。 |
-| ALWAYS | 1 | Web过滚动模式开启。 |
+| NEVER | 0 | Web过滚动模式关闭。适用于不需要额外滚动效果的页面，如内容高度与容器高度匹配的场景。 |
+| ALWAYS | 1 | Web过滚动模式开启。适用于需要增强滚动反馈的场景，如列表页面或需要明确滚动边界指示的场景。 |
  
  
   
 
-#### BlurOnKeyboardHideMode14+
+## BlurOnKeyboardHideMode14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置手动收起软键盘时Web元素是否失焦。
  
@@ -147,39 +160,44 @@ ConsoleMessage的日志来源。
  
 **参数：**
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| SILENT | 0 | 软键盘收起时Web组件失焦功能关闭，当用户手动收起软键盘时焦点仍在文本框。 |
-| BLUR | 1 | 软键盘收起时Web组件失焦功能开启，当用户手动收起软键盘时，焦点会从文本框转移到Web的body上，文本框失焦。 |
+| SILENT | 0 | 软键盘收起时Web组件失焦功能关闭，当用户手动收起软键盘时焦点仍在文本框。适用于需要保持输入焦点的场景。 |
+| BLUR | 1 | 软键盘收起时Web组件失焦功能开启，当用户手动收起软键盘时，焦点会从文本框转移到Web的body上，文本框失焦。适用于需要标准输入框行为的场景。 |
  
  
   
 
-#### WebDarkMode9+
+## WebDarkMode9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-Web深色模式的配置。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+Web深色模式的配置，用于控制网页内容的深色主题显示，帮助开发者根据用户偏好和系统主题提升视觉体验和可读性。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | Off | 0 | Web深色模式关闭。 |
 | On | 1 | Web深色模式开启。 |
-| Auto | 2 | Web深色模式跟随系统。 |
+| Auto | 2 | Web深色模式跟随系统。适用于Web组件主题需要与系统保持一致的场景，推荐使用此模式以提供一致的用户体验。 |
  
  
   
 
-#### WebCaptureMode10+
+## WebCaptureMode10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Web屏幕捕获模式。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | HOME_SCREEN | 0 | 主屏捕获模式。 |
@@ -187,14 +205,16 @@ Web屏幕捕获模式。
  
   
 
-#### ThreatType11+
+## ThreatType11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义网站风险类型。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | THREAT_ILLEGAL | 0 | 非法网站。 |
@@ -207,14 +227,16 @@ Web屏幕捕获模式。
  
   
 
-#### RenderExitReason9+
+## RenderExitReason9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onRenderExited接口返回的渲染进程退出的具体原因。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ProcessAbnormalTermination | 0 | 渲染进程异常退出，可能原因包括：渲染进程启动超时、达到进程数量上限导致系统回收旧渲染进程、多个页签同时关闭等。 |
@@ -226,14 +248,16 @@ onRenderExited接口返回的渲染进程退出的具体原因。
  
   
 
-#### SslError9+
+## SslError9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onSslErrorEventReceive接口返回的SSL错误的具体原因。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | Invalid | 0 | 一般错误。 |
@@ -244,14 +268,16 @@ onSslErrorEventReceive接口返回的SSL错误的具体原因。
  
   
 
-#### FileSelectorMode9+
+## FileSelectorMode9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-文件选择器的模式。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+文件选择器的模式，用于控制文件选择器的打开方式和行为，帮助开发者实现文件上传等文件操作场景。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | FileOpenMode | 0 | 打开上传单个文件。 |
@@ -262,30 +288,34 @@ onSslErrorEventReceive接口返回的SSL错误的具体原因。
  
   
 
-#### WebLayoutMode11+
+## WebLayoutMode11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-Web布局模式的配置。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+Web布局模式的配置，用于控制Web内容的页面布局方式，帮助开发者根据屏幕尺寸和显示需求优化网页的适配性和用户体验。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| NONE | 0 | Web布局跟随系统。 |
-| FIT_CONTENT | 1 | Web基于页面大小的自适应网页布局。 |
+| NONE | 0 | Web布局跟随系统。适用于传统网页布局场景，保持与系统默认行为一致。 |
+| FIT_CONTENT | 1 | Web基于页面大小的自适应网页布局。适用于需要根据屏幕尺寸自动调整布局的场景，推荐用于移动端网页优化。 |
  
  
   
 
-#### RenderProcessNotRespondingReason12+
+## RenderProcessNotRespondingReason12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 触发渲染进程无响应回调的原因。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | INPUT_TIMEOUT | 0 | 发送给渲染进程的input事件响应超时。 |
@@ -294,14 +324,16 @@ Web布局模式的配置。
  
   
 
-#### ProtectedResourceType9+
+## ProtectedResourceType9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-受保护的资源类型。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+ProtectedResourceType枚举定义了Web组件需要访问的受保护资源类型，用于控制MIDI、相机、麦克风、传感器等敏感资源的访问权限，帮助开发者在保护用户隐私的同时提供丰富的Web功能。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 | 可申请的权限 |
 | --- | --- | --- | --- |
 | MidiSysex | TYPE_MIDI_SYSEX | MIDI SYSEX资源。 目前仅支持权限事件上报，MIDI设备的使用还未支持。 | 暂不支持申请使用MIDI(Musical Instrument Digital Interface)设备相关权限。 |
@@ -312,14 +344,16 @@ Web布局模式的配置。
  
   
 
-#### ContextMenuSourceType9+
+## ContextMenuSourceType9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 触发上下文菜单的事件来源。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | None | 0 | 其他事件来源。 |
@@ -329,14 +363,16 @@ Web布局模式的配置。
  
   
 
-#### ContextMenuMediaType9+
+## ContextMenuMediaType9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 触发上下文菜单的网页元素类型。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | None | 0 | 其他非图片媒体类型。 |
@@ -345,14 +381,16 @@ Web布局模式的配置。
  
   
 
-#### ContextMenuDataMediaType22+
+## ContextMenuDataMediaType22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 触发上下文菜单的网页元素类型（增强获取类型能力）。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NONE | 0 | 默认值，表示当前上下文菜单不关联任何媒体类型（例如右键文本或空白区域）。 |
@@ -364,17 +402,19 @@ Web布局模式的配置。
  
   
 
-#### ContextMenuInputFieldType9+
+## ContextMenuInputFieldType9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 输入框类型。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| None | 0 | 非输入框。 |
+| None | 0 | 非输入框，指不可编辑的网页元素，如按钮、div、span等普通HTML元素。 |
 | PlainText | 1 | 纯文本类型，包括text、search、email等。 |
 | Password | 2 | 密码类型。 |
 | Number | 3 | 数字类型。 |
@@ -384,14 +424,16 @@ Web布局模式的配置。
  
   
 
-#### NativeEmbedStatus11+
+## NativeEmbedStatus11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义同层标签生命周期，当加载页面中有同层标签会触发CREATE，同层标签移动或者放大会触发UPDATE，退出页面会触发DESTROY。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CREATE | 0 | 同层标签创建。 |
@@ -403,14 +445,16 @@ Web布局模式的配置。
  
   
 
-#### NativeEmbedParamStatus21+
+## NativeEmbedParamStatus21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义同层渲染object标签内嵌param元素的状态变化类型，当添加param元素时触发ADD，修改param元素属性触发UPDATE，删除param元素触发DELETE。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ADD | 0 | 添加param元素。 |
@@ -420,14 +464,16 @@ Web布局模式的配置。
  
   
 
-#### ContextMenuEditStateFlags9+
+## ContextMenuEditStateFlags9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持以按位或的方式使用此枚举。例如，如果需要同时支持CAN_CUT、CAN_COPY和CAN_SELECT_ALL，可使用CAN_CUT | CAN_COPY | CAN_SELECT_ALL或11。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NONE | 0 | 不可编辑。 |
@@ -439,14 +485,16 @@ Web布局模式的配置。
  
   
 
-#### WebNavigationType11+
+## WebNavigationType11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义navigation类型。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | UNKNOWN | 0 | 未知类型。 |
@@ -458,9 +506,10 @@ Web布局模式的配置。
  
   
 
-#### RenderMode12+
+## RenderMode12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义Web组件的渲染方式，默认为异步渲染模式。
  
@@ -468,6 +517,7 @@ Web布局模式的配置。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ASYNC_RENDER | 0 | Web组件异步渲染模式，ArkWeb组件作为图形surface节点，独立送显，Web组件的高度最大规格不超过7,680 px（物理像素）。 |
@@ -476,31 +526,35 @@ Web布局模式的配置。
  
   
 
-#### ViewportFit12+
+## ViewportFit12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 网页meta中viewport-fit配置的视口类型。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| AUTO | 0 | 默认值，整个网页可见。 |
-| CONTAINS | 1 | 初始布局视口和视觉视口为适应设备显示屏的最大矩形内。 |
-| COVER | 2 | 初始布局视口和视觉视口为设备物理屏幕的外接矩形内。 |
+| AUTO | 0 | 默认值，整个网页可见。适用于希望网页完全在可视区域内显示的场景，推荐用于大多数常规网页。 |
+| CONTAINS | 1 | 初始布局视口和视觉视口为适应设备显示屏的最大矩形内。适用于需要确保内容完全在安全区域内的场景，如避免刘海屏遮挡重要内容。 |
+| COVER | 2 | 初始布局视口和视觉视口为设备物理屏幕的外接矩形内。适用于需要网页内容延伸到屏幕边缘的场景，如全屏背景效果或沉浸式体验。 |
  
  
   
 
-#### WebKeyboardAvoidMode12+
+## WebKeyboardAvoidMode12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 软键盘避让的模式。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | RESIZE_VISUAL | 0 | 软键盘避让时，仅调整可视视口大小，不调整布局视口大小。 |
@@ -511,9 +565,10 @@ Web布局模式的配置。
  
   
 
-#### WebElementType13+
+## WebElementType13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 网页元素信息。
  
@@ -521,6 +576,7 @@ Web布局模式的配置。
  
 **参数：**
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | IMAGE | 1 | 网页元素为图像类型。 |
@@ -530,9 +586,10 @@ Web布局模式的配置。
  
   
 
-#### WebResponseType13+
+## WebResponseType13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 菜单的响应类型。
  
@@ -540,6 +597,7 @@ Web布局模式的配置。
  
 **参数：**
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | LONG_PRESS | 1 | 通过长按触发菜单弹出。 |
@@ -548,16 +606,18 @@ Web布局模式的配置。
  
   
 
-#### AudioSessionType20+
+## AudioSessionType20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-应用中Web音频类型。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+应用中Web音频类型，用于控制Web音频的音频流类型和行为，帮助开发者根据应用场景优化音频体验，如支持网页游戏声音与系统音乐同时播放。
  
 **系统能力：** SystemCapability.Web.Webview.Core
  
 **参数：**
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | AMBIENT | 3 | 适用于网页游戏场景，支持Web游戏声音与系统音乐同时播放。对应系统音频流类型STREAM_USAGE_GAME。 |
@@ -565,14 +625,16 @@ Web布局模式的配置。
  
   
 
-#### GestureFocusMode20+
+## GestureFocusMode20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 手势获焦的模式。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DEFAULT | 0 | 默认值，Web会在触摸按下屏幕时申请获焦，包括点击、长按、滑动、缩放等任何触摸屏幕的手势行为。 |
@@ -581,14 +643,16 @@ Web布局模式的配置。
  
   
 
-#### WebRotateEffect22+
+## WebRotateEffect22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 组件旋转时，宽高动画过程中组件内容如何填充以适应新尺寸的方式。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | TOPLEFT_EFFECT | 0 | 默认值，组件旋转时，保持动画终态的内容大小，并且内容始终与组件保持左上角对齐。 |
@@ -597,14 +661,16 @@ Web布局模式的配置。
  
   
 
-#### WebBypassVsyncCondition20+
+## WebBypassVsyncCondition20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 跳过渲染vsync条件。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NONE | 0 | 默认值，按vsync调度流程绘制。 |
@@ -613,33 +679,37 @@ Web布局模式的配置。
  
   
 
-#### PdfLoadResult20+
+## PdfLoadResult20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-定义PDF页面的加载结果。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+定义PDF页面的加载结果，用于标识PDF文件加载过程中的各种状态和错误类型，帮助开发者在PDF显示失败时进行错误诊断和用户提示。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | LOAD_SUCCESS | 0 | PDF页面加载成功。 |
-| PARSE_ERROR_FILE | 1 | PDF文件加载失败的错误码。 |
-| PARSE_ERROR_FORMAT | 2 | PDF文件格式不支持的错误码。 |
-| PARSE_ERROR_PASSWORD | 3 | PDF文件密码不正确的错误码。 |
-| PARSE_ERROR_HANDLER | 4 | PDF文件处理失败的错误码。 |
+| PARSE_ERROR_FILE | 1 | PDF文件加载失败。 |
+| PARSE_ERROR_FORMAT | 2 | PDF文件格式不支持。 |
+| PARSE_ERROR_PASSWORD | 3 | PDF文件密码不正确。 |
+| PARSE_ERROR_HANDLER | 4 | PDF文件处理失败。 |
  
  
   
 
-#### DetectedBlankScreenReason22+
+## DetectedBlankScreenReason22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-白屏的具体原因。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+白屏的具体原因，用于标识页面白屏现象的底层原因，帮助开发者快速定位问题来源，提升页面加载问题的排查效率和用户体验。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NO_CONTENTFUL_NODES | 0 | 没有命中任何有内容的节点。 当检测策略为DETECTION_CONTENTFUL_NODES_SEVENTEEN时可能触发。 |
@@ -648,14 +718,16 @@ Web布局模式的配置。
  
   
 
-#### BlankScreenDetectionMethod22+
+## BlankScreenDetectionMethod22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-白屏检测使用的检测策略的方法。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+白屏检测使用的检测策略的方法，用于定义页面内容检测的具体算法和点位，帮助开发者在检测准确性和性能开销之间取得平衡，及时发现页面渲染异常。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DETECTION_CONTENTFUL_NODES_SEVENTEEN | 0 | 以17点检测法进行页面检测。当检测点命中已经渲染了且有意义的节点，则认为有命中。有意义的节点指的是图片，视频和文字节点。 当无命中，或少于用户设置阈值命中时，则认为是白屏或者近似白屏。 其中，检测的17个点位包括： 中心点 (1个)： 位于页面的几何中心。 内部网格交点 (16个)：在页面区域内定义一个5×5 的均匀网格，这16个点即为页面内4条垂直等分线和4条水平等分线的交点。 |
@@ -663,14 +735,16 @@ Web布局模式的配置。
  
   
 
-#### CredentialType22+
+## CredentialType22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-凭证类型。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+凭证类型，用于定义身份认证中使用的凭证种类。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CREDENTIAL_USER | 2 | 用户凭证。 |
@@ -680,14 +754,16 @@ Web布局模式的配置。
  
   
 
-#### PinVerifyResult22+
+## PinVerifyResult22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-PIN码认证结果。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+PIN码认证结果，用于标识PIN码验证的执行状态。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | PIN_VERIFICATION_SUCCESS | 0 | 成功。 |
@@ -696,14 +772,16 @@ PIN码认证结果。
  
   
 
-#### CameraCaptureState23+
+## CameraCaptureState23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-定义摄像头使用状态的值。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+定义摄像头使用状态的值，用于标识摄像头的当前工作状态，帮助开发者实时监控摄像头资源使用情况，优化资源管理和用户隐私保护。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NONE | 0 | 摄像头未工作。 |
@@ -713,14 +791,16 @@ PIN码认证结果。
  
   
 
-#### MicrophoneCaptureState23+
+## MicrophoneCaptureState23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-定义麦克风使用状态的值。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+定义麦克风使用状态的值，用于标识麦克风的当前工作状态，帮助开发者实时监控麦克风资源使用情况，优化资源管理和用户隐私保护。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NONE | 0 | 麦克风未工作。 |
@@ -730,14 +810,16 @@ PIN码认证结果。
  
   
 
-#### NavigationPolicy23+
+## NavigationPolicy23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-WebView中新窗口的打开方式。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+WebView中新窗口的打开方式，支持弹窗、新窗口、前台和后台标签页等多种方式。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NEW_POPUP | 0 | 在新弹窗中打开。 |
@@ -748,9 +830,10 @@ WebView中新窗口的打开方式。
  
   
 
-#### ScrollDirectionalLockType
+## ScrollDirectionalLockType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义滑动方向锁定的场景类型。
  
@@ -760,6 +843,7 @@ WebView中新窗口的打开方式。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ALL | 0 | 所有场景都支持滑动锁定。 |
@@ -768,9 +852,10 @@ WebView中新窗口的打开方式。
  
   
 
-#### ScrollbarLayoutPolicy
+## ScrollbarLayoutPolicy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义滚动条布局模式控制参数的枚举类型。
  
@@ -780,6 +865,7 @@ WebView中新窗口的打开方式。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CONTENT | 0 | 滚动条左右布局模式跟随css设定。 |
@@ -788,9 +874,10 @@ WebView中新窗口的打开方式。
  
   
 
-#### AISessionType
+## AISessionType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持的AI会话类型。
  
@@ -800,6 +887,7 @@ WebView中新窗口的打开方式。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | TRANSLATOR | 1 | 翻译模型。 |
@@ -813,9 +901,10 @@ WebView中新窗口的打开方式。
  
   
 
-#### AISessionResultType
+## AISessionResultType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 AI会话操作的结果状态。
  
@@ -825,6 +914,7 @@ AI会话操作的结果状态。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SUCCESS | 0 | 操作执行成功。 |
@@ -834,11 +924,12 @@ AI会话操作的结果状态。
  
   
 
-#### WebKeyboardAppearanceMode
+## WebKeyboardAppearanceMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-WebView中输入法沉浸模式。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+WebView中输入法沉浸模式，用于控制软键盘的显示风格，帮助开发者根据应用主题和用户偏好提供一致性的视觉体验，支持默认外观、系统跟随、浅色和深色沉浸式风格。
  
 **起始版本：** 26.0.0
  
@@ -846,6 +937,7 @@ WebView中输入法沉浸模式。
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NONE_IMMERSIVE | 0 | 默认外观模式，不采用沉浸式风格。 |

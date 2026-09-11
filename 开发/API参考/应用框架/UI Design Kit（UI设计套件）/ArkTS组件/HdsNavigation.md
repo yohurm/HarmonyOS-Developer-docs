@@ -1,20 +1,21 @@
-# HdsNavigation
+# HdsNavigation (导航根视图容器)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdsnavigation
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 本模块提供导航组件的能力，默认支持标题栏随内容区滚动的动态模糊样式。6.0.0(20)及以上版本，推荐使用[bindToScrollable](#bindtoscrollable)、[bindToNestedScrollable](#bindtonestedscrollable)属性绑定导航组件和可滚动容器组件后，再使用导航组件滚动相关的功能，从而获得更优的体验。如滚动生效动态模糊样式，标题栏随内容区滚动动态显隐功能等。
 
-HdsNavigation组件是路由导航的根视图容器，一般作为Page页面的根容器使用，其内部默认包含了标题栏、内容区和工具栏。其中内容区默认首页显示导航内容（HdsNavigation的子组件）或非首页显示（[HdsNavDestination](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdsnavdestination)的子组件），首页和非首页通过路由进行切换。
+HdsNavigation组件是路由导航的根视图容器，一般作为Page页面的根容器使用，其内部默认包含了标题栏、内容区和工具栏。其中内容区默认首页显示导航内容（HdsNavigation的子组件）或非首页显示（[HdsNavDestination (导航子页面容器)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdsnavdestination)的子组件），首页和非首页通过路由进行切换。
 
 **起始版本：** 5.1.0(18)
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 > [!NOTE]
 > HdsNavigationAttribute是用于配置HdsNavigation组件属性的关键接口。6.0.1(21)及之前版本，导入HdsNavigation组件后需要开发者手动导入HdsNavigationAttribute，否则会编译报错。从6.0.2(22)版本开始，编译工具链识别到导入HdsNavigation组件后，会自动导入HdsNavigationAttribute，无需开发者手动导入。 如果开发者手动导入HdsNavigationAttribute，DevEco Studio会显示置灰，6.0.1(21)及之前版本删除会编译报错，从6.0.2(22)版本开始，删除对功能无影响。
@@ -34,15 +35,17 @@ import { HdsNavigation } from '@kit.UIDesignKit';
 
 
 
-#### 子组件
-
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
-
-可以包含子组件。 推荐使用[NavPathStack](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation#navpathstack10)配合[HdsNavDestination](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdsnavdestination)属性进行页面路由。
+## 子组件
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 接口
+可以包含子组件。 推荐使用[NavPathStack](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation#navpathstack10)配合[HdsNavDestination (导航子页面容器)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdsnavdestination)属性进行页面路由。
+
+
+
+## 接口
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -58,6 +61,7 @@ HdsNavigation(pathInfos?: NavPathStack)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pathInfos | NavPathStack | 否 | 路由栈信息。 |
@@ -65,7 +69,8 @@ HdsNavigation(pathInfos?: NavPathStack)
 
 
 
-#### 属性
+## 属性
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -73,7 +78,8 @@ HdsNavigation(pathInfos?: NavPathStack)
 
 
 
-#### titleBar
+### titleBar
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -91,6 +97,7 @@ titleBar(options?: HdsNavigationTitleBarOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | HdsNavigationTitleBarOptions | 否 | 标题栏配置信息。 |
@@ -98,7 +105,8 @@ titleBar(options?: HdsNavigationTitleBarOptions)
 
 
 
-#### titleMode
+### titleMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -114,6 +122,7 @@ titleMode(value: HdsNavigationTitleMode)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | HdsNavigationTitleMode | 是 | 页面标题栏显示模式。 默认值：HdsNavigationTitleMode.FREE。 |
@@ -121,7 +130,8 @@ titleMode(value: HdsNavigationTitleMode)
 
 
 
-#### toolbarConfiguration
+### toolbarConfiguration
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -141,6 +151,7 @@ toolbarConfiguration(value: Array&lt;ToolbarItem&gt; | CustomBuilder, options?: 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Array&lt;ToolbarItem&gt; \| CustomBuilder | 是 | 工具栏内容。 使用Array&lt;ToolbarItem&gt;写法设置的工具栏有如下特性： - 如果为Stack模式，不推荐使用该写法。推荐使用CustomBuilder配合ToolBar组件写法，避免布局显示问题。 - 工具栏所有选项均分底部工具栏，在每个均分内容区布局文本和图标。 - 最多支持显示5个图标，多余的图标会被放入自动生成的更多图标。 使用CustomBuilder写法为用户自定义工具栏选项，除均分底部工具栏外不具备以上功能。 |
@@ -149,7 +160,8 @@ toolbarConfiguration(value: Array&lt;ToolbarItem&gt; | CustomBuilder, options?: 
 
 
 
-#### hideToolBar
+### hideToolBar
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -165,6 +177,7 @@ hideToolBar(hide: boolean, animated?: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | hide | boolean | 是 | 是否隐藏工具栏。 默认值：false。 - true： 隐藏工具栏。 - false：显示工具栏。 |
@@ -173,7 +186,8 @@ hideToolBar(hide: boolean, animated?: boolean)
 
 
 
-#### hideTitleBar
+### hideTitleBar
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -189,6 +203,7 @@ hideTitleBar(hide: boolean, animated?: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | hide | boolean | 是 | 是否隐藏标题栏。 默认值：false。 - true：隐藏标题栏。 - false：显示标题栏。 |
@@ -197,7 +212,8 @@ hideTitleBar(hide: boolean, animated?: boolean)
 
 
 
-#### hideBackButton
+### hideBackButton
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -213,6 +229,7 @@ hideBackButton(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否隐藏标题栏中的返回键。 默认值：false。 - true：隐藏返回键。 - false：显示返回键。 |
@@ -220,7 +237,8 @@ hideBackButton(value: boolean)
 
 
 
-#### navBarWidth
+### navBarWidth
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -236,6 +254,7 @@ navBarWidth(value: Length)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Length | 是 | 导航栏宽度。 默认值：240。单位：vp。 undefined：行为不做处理，导航栏宽度与默认值保持一致。 |
@@ -243,7 +262,8 @@ navBarWidth(value: Length)
 
 
 
-#### navBarPosition
+### navBarPosition
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -259,6 +279,7 @@ navBarPosition(value: NavBarPosition)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | NavBarPosition | 是 | 导航栏位置。 默认值：NavBarPosition.Start。 |
@@ -266,7 +287,8 @@ navBarPosition(value: NavBarPosition)
 
 
 
-#### mode
+### mode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -282,6 +304,7 @@ mode(value: NavigationMode)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | NavigationMode | 是 | 导航栏的显示模式。 默认值：NavigationMode.Auto。 自适应：基于组件宽度自适应单栏和双栏。 |
@@ -289,7 +312,8 @@ mode(value: NavigationMode)
 
 
 
-#### divider
+### divider
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -305,6 +329,7 @@ divider(style: NavigationDividerStyle | null)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | NavigationDividerStyle \| null | 是 | 设置双栏分割线样式。 配置为null时：隐藏分割线。 |
@@ -312,7 +337,8 @@ divider(style: NavigationDividerStyle | null)
 
 
 
-#### hideNavBar
+### hideNavBar
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -328,6 +354,7 @@ hideNavBar(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否隐藏导航栏。设置为false时，不隐藏导航栏。设置为true时，隐藏HdsNavigation的导航栏，包括标题栏、内容区和工具栏。如果此时路由栈中存在HdsNavDestination页面，则直接显示栈顶HdsNavDestination页面，反之显示空白。 默认值：false。 |
@@ -335,7 +362,8 @@ hideNavBar(value: boolean)
 
 
 
-#### navDestination
+### navDestination
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -351,6 +379,7 @@ navDestination(builder: NavDestinationBuilder)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | builder | NavDestinationBuilder | 是 | 创建HdsNavDestination组件。 |
@@ -358,7 +387,8 @@ navDestination(builder: NavDestinationBuilder)
 
 
 
-#### navBarWidthRange
+### navBarWidthRange
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -376,6 +406,7 @@ navBarWidthRange(value: NavBarWidthRangeOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | NavBarWidthRangeOptions | 是 | 导航栏最小和最大宽度配置。 |
@@ -383,7 +414,8 @@ navBarWidthRange(value: NavBarWidthRangeOptions)
 
 
 
-#### minContentWidth
+### minContentWidth
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -401,6 +433,7 @@ minContentWidth(value: Dimension)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Dimension | 是 | 导航栏内容区最小宽度。 默认值：360。单位：vp。 undefined：行为不做处理，导航栏内容区最小宽度与默认值保持一致。 |
@@ -412,7 +445,8 @@ minContentWidth(value: Dimension)
 
 
 
-#### ignoreLayoutSafeArea
+### ignoreLayoutSafeArea
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -428,6 +462,7 @@ ignoreLayoutSafeArea(types?: Array&lt;LayoutSafeAreaType&gt;, edges?: Array&lt;L
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | types | Array &lt;LayoutSafeAreaType&gt; | 否 | 配置扩展安全区域的类型。 默认值：[LayoutSafeAreaType.SYSTEM]。 |
@@ -440,7 +475,8 @@ ignoreLayoutSafeArea(types?: Array&lt;LayoutSafeAreaType&gt;, edges?: Array&lt;L
 
 
 
-#### systemBarStyle
+### systemBarStyle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -456,6 +492,7 @@ systemBarStyle(originalStyle: Optional&lt;SystemBarStyle&gt;, scrollEffectStyle:
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | originalStyle | Optional&lt;SystemBarStyle&gt; | 是 | 系统状态栏初始样式。未设置systemBarStyle属性时，颜色默认值同主标题栏字体颜色。 |
@@ -468,7 +505,8 @@ systemBarStyle(originalStyle: Optional&lt;SystemBarStyle&gt;, scrollEffectStyle:
 
 
 
-#### recoverable
+### recoverable
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -484,6 +522,7 @@ recoverable(recoverable: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | recoverable | Optional&lt;boolean&gt; | 是 | HdsNavigation是否可恢复，默认为不可恢复。 默认值：false。 - true：页面栈可恢复。 - false：页面栈不可恢复。 |
@@ -495,7 +534,8 @@ recoverable(recoverable: Optional&lt;boolean&gt;)
 
 
 
-#### dynamicHideTitleBar
+### dynamicHideTitleBar
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -511,6 +551,7 @@ dynamicHideTitleBar(value: DynamicHideParams)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | DynamicHideParams | 是 | 标题栏跟随内容区滚动动态显隐配置。 当标题栏模式为HdsNavigationTitleMode.MODAL时该接口设置无效。 不支持在显隐过程中动态切换属性。 |
@@ -518,7 +559,8 @@ dynamicHideTitleBar(value: DynamicHideParams)
 
 
 
-#### bindToScrollable
+### bindToScrollable
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -534,6 +576,7 @@ bindToScrollable(scrollers: Array&lt;Scroller&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scrollers | Array&lt;Scroller&gt; | 是 | 可滚动容器组件的控制器。 |
@@ -541,7 +584,8 @@ bindToScrollable(scrollers: Array&lt;Scroller&gt;)
 
 
 
-#### bindToNestedScrollable
+### bindToNestedScrollable
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -557,6 +601,7 @@ bindToNestedScrollable(scrollers: Array&lt;NestedScrollInfo&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scrollers | Array&lt;NestedScrollInfo&gt; | 是 | 嵌套的可滚动容器组件的控制器。 |
@@ -568,7 +613,8 @@ bindToNestedScrollable(scrollers: Array&lt;NestedScrollInfo&gt;)
 
 
 
-#### enableDragBar
+### enableDragBar
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -584,6 +630,7 @@ enableDragBar(isEnabled: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isEnabled | Optional&lt;boolean&gt; | 是 | 是否开启拖拽条，默认为无拖拽条样式。 默认值：false。 - true：有拖拽条样式。 - false：无拖拽条样式。 |
@@ -591,7 +638,8 @@ enableDragBar(isEnabled: Optional&lt;boolean&gt;)
 
 
 
-#### enableModeChangeAnimation
+### enableModeChangeAnimation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -607,6 +655,7 @@ enableModeChangeAnimation(isEnabled: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isEnabled | Optional&lt;boolean&gt; | 是 | 是否开启单双栏切换动效。 默认值：true。 - true：开启单双栏切换动效。 - false：关闭单双栏切换动效。 |
@@ -614,7 +663,8 @@ enableModeChangeAnimation(isEnabled: Optional&lt;boolean&gt;)
 
 
 
-#### withTheme
+### withTheme
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -628,6 +678,7 @@ withTheme(value: WithThemeOptions)
 
 **起始版本：** 6.1.0(23)
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | WithThemeOptions | 是 | WithTheme能力配置信息。 |
@@ -635,7 +686,8 @@ withTheme(value: WithThemeOptions)
 
 
 
-#### splitPlaceholder
+### splitPlaceholder
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -649,6 +701,7 @@ HdsNavigation双栏模式下，支持设置右侧页面显示默认占位页，�
 
 **起始版本：** 6.1.0(23)
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | placeholder | ComponentContent | 是 | 设置Navigation双栏模式下右侧的默认占位页。 |
@@ -656,7 +709,8 @@ HdsNavigation双栏模式下，支持设置右侧页面显示默认占位页，�
 
 
 
-#### enableVisibilityLifecycleWithContentCover
+### enableVisibilityLifecycleWithContentCover
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -670,6 +724,7 @@ enableVisibilityLifecycleWithContentCover(isEnabled: Optional&lt;boolean&gt;)
 
 **起始版本：** 6.1.0(23)
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isEnabled | Optional&lt;boolean&gt; | 是 | 是否启用HdsNavDestination页面onShown、onHidden生命周期与全模态的联动触发。 默认值：true。 - true：全模态拉起时，会触发当前HdsNavDestination页面的onHidden生命周期；全模态关闭时，会触发当前HdsNavDestination页面的onShown生命周期。 - false：HdsNavDestination页面onHidden、onShown生命周期不会因为全模态的拉起、关闭而触发。 |
@@ -677,13 +732,15 @@ enableVisibilityLifecycleWithContentCover(isEnabled: Optional&lt;boolean&gt;)
 
 
 
-#### 事件
+## 事件
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 
 
-#### onNavBarStateChange
+### onNavBarStateChange
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -699,14 +756,16 @@ onNavBarStateChange(callback: Callback&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callBack | Callback&lt;boolean&gt; | 是 | 回调函数。返回true表示显示导航栏，返回false表示隐藏导航栏。 |
+| callback | Callback&lt;boolean&gt; | 是 | 回调函数。返回true表示显示导航栏，返回false表示隐藏导航栏。 |
 
 
 
 
-#### onNavigationModeChange
+### onNavigationModeChange
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -722,6 +781,7 @@ onNavigationModeChange(callback: Callback&lt;NavigationMode&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;NavigationMode&gt; | 是 | 回调函数。 - 返回NavigationMode.Split时，表示当前HdsNavigation显示为双栏模式。 - 返回NavigationMode.Stack时，表示当前HdsNavigation显示为单栏。 |
@@ -729,7 +789,8 @@ onNavigationModeChange(callback: Callback&lt;NavigationMode&gt;)
 
 
 
-#### onTitleModeChange
+### onTitleModeChange
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -745,6 +806,7 @@ onTitleModeChange(callback: Callback&lt;HdsNavigationTitleMode&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;HdsNavigationTitleMode&gt; | 是 | 回调函数，返回当前标题栏显示模式。 |
@@ -752,7 +814,8 @@ onTitleModeChange(callback: Callback&lt;HdsNavigationTitleMode&gt;)
 
 
 
-#### customNavContentTransition
+### customNavContentTransition
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -768,6 +831,7 @@ customNavContentTransition(delegate: CustomTransitionDelegate)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | delegate | CustomTransitionDelegate | 是 | 自定义转场动画回调方法。 |
@@ -775,7 +839,8 @@ customNavContentTransition(delegate: CustomTransitionDelegate)
 
 
 
-#### ScrollEffectType
+## ScrollEffectType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -787,6 +852,7 @@ customNavContentTransition(delegate: CustomTransitionDelegate)
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | COMMON_BLUR | 0 | 标题栏的模糊样式类型：通用模糊。 对组件背景进行均匀的模糊处理，模糊强度一致，边界清晰，用于强调控件与内容的层级分隔。 滑动内容进入/离开标题栏区域过程中，模糊背板和分割线透明渐变出现/消失。此方式适用于非沉浸式场景。 |
@@ -797,7 +863,8 @@ customNavContentTransition(delegate: CustomTransitionDelegate)
 
 
 
-#### HdsNavigationTitleMode
+## HdsNavigationTitleMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -809,6 +876,7 @@ customNavContentTransition(delegate: CustomTransitionDelegate)
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | FREE | 0 | 标题随着内容向上滚动而缩小（子标题的大小不变、淡出）。向下滚动内容到顶时则恢复原样。 未滚动状态，标题栏高度与FULL模式一致；滚动时，标题栏的最小高度与MINI模式一致。 推荐搭配bindToScrollable/bindToNestedScrollable体验更佳的联动效果。 |
@@ -819,7 +887,8 @@ customNavContentTransition(delegate: CustomTransitionDelegate)
 
 
 
-#### DividerShowType
+## DividerShowType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -831,6 +900,7 @@ customNavContentTransition(delegate: CustomTransitionDelegate)
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | OFF | 0 | 分割线始终不显示。 |
@@ -840,7 +910,8 @@ customNavContentTransition(delegate: CustomTransitionDelegate)
 
 
 
-#### TextStyleMode
+## TextStyleMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -852,6 +923,7 @@ customNavContentTransition(delegate: CustomTransitionDelegate)
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NORMAL | 200 | 普通文本模式。 胶囊按钮，圆角为sys.float.corner_radius_level10。 |
@@ -860,7 +932,8 @@ customNavContentTransition(delegate: CustomTransitionDelegate)
 
 
 
-#### BottomBuilderShowType
+## BottomBuilderShowType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -872,6 +945,7 @@ bottomBuilder显示类型枚举。
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DIRECTLY_SHOW | 0 | 直接显示bottomBuilder。 |
@@ -880,7 +954,8 @@ bottomBuilder显示类型枚举。
 
 
 
-#### HideMode
+## HideMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -892,6 +967,7 @@ bottomBuilder显示类型枚举。
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SCROLL_UP_TO | 0 | 上滑到固定位置隐藏，下滑到固定位置显示。 |
@@ -902,7 +978,8 @@ bottomBuilder显示类型枚举。
 
 
 
-#### IconStyleMode
+## IconStyleMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -914,6 +991,7 @@ bottomBuilder显示类型枚举。
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SMALL | 100 | 小图标模式，图标默认大小为18vp * 18vp。 |
@@ -923,7 +1001,8 @@ bottomBuilder显示类型枚举。
 
 
 
-#### BlurStrategy
+## BlurStrategy
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -935,6 +1014,7 @@ bottomBuilder显示类型枚举。
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ENABLE | 0 | 使能模糊效果。 |
@@ -944,7 +1024,8 @@ bottomBuilder显示类型枚举。
 
 
 
-#### TitleSize
+## TitleSize
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -956,6 +1037,7 @@ bottomBuilder显示类型枚举。
 
 **起始版本：** 6.1.0(23)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | TITLE_S | 0 | 小号标题。 |
@@ -964,7 +1046,8 @@ bottomBuilder显示类型枚举。
 
 
 
-#### NavDestinationBuilder
+## NavDestinationBuilder
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -980,6 +1063,7 @@ type NavDestinationBuilder = (name: string, pageInfos: Object) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 创建的HdsNavDestination页面的名称。 |
@@ -988,7 +1072,8 @@ type NavDestinationBuilder = (name: string, pageInfos: Object) => void
 
 
 
-#### CustomTransitionDelegate
+## CustomTransitionDelegate
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1004,6 +1089,7 @@ type CustomTransitionDelegate = (from: NavContentInfo, to: NavContentInfo, opera
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | from | NavContentInfo | 是 | 退场Destination的页面。 |
@@ -1013,6 +1099,7 @@ type CustomTransitionDelegate = (from: NavContentInfo, to: NavContentInfo, opera
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | NavigationAnimatedTransition \| undefined | 自定义转场动画协议。 undefined：返回未定义，执行默认转场动效。 |
@@ -1020,7 +1107,8 @@ type CustomTransitionDelegate = (from: NavContentInfo, to: NavContentInfo, opera
 
 
 
-#### IconType
+## IconType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1034,6 +1122,7 @@ HdsNavigation标题栏上单个图标型菜单项支持的图片资源类型。
 
 **起始版本：** 5.1.0(18)
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ResourceStr | 字符串类型。 |
@@ -1043,7 +1132,8 @@ HdsNavigation标题栏上单个图标型菜单项支持的图片资源类型。
 
 
 
-#### HdsNavigationMenuItemOptions
+## HdsNavigationMenuItemOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1057,6 +1147,7 @@ HdsNavigation标题栏菜单项配置。
 
 **起始版本：** 5.1.0(18)
 
+
 | 类型 | 说明 |
 | --- | --- |
 | HdsNavigationBadgeIconOptions | 带信息提醒的图标配置信息。 |
@@ -1064,7 +1155,8 @@ HdsNavigation标题栏菜单项配置。
 
 
 
-#### HdsNavigationBackButtonItemOptions
+## HdsNavigationBackButtonItemOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1078,6 +1170,7 @@ HdsNavigation标题栏返回按钮配置。
 
 **起始版本：** 5.1.0(18)
 
+
 | 类型 | 说明 |
 | --- | --- |
 | HdsNavigationIconOptions | 图标配置信息。 |
@@ -1085,9 +1178,10 @@ HdsNavigation标题栏返回按钮配置。
 
 
 
-#### BuilderType
+## BuilderType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 type BuilderType = ComponentContent | BuilderOptions
 
@@ -1099,6 +1193,7 @@ type BuilderType = ComponentContent | BuilderOptions
 
 **起始版本：** 26.0.0
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ComponentContent | 组件内容封装类型。 |
@@ -1107,7 +1202,8 @@ type BuilderType = ComponentContent | BuilderOptions
 
 
 
-#### HdsNavigationBackgroundStyle
+## HdsNavigationBackgroundStyle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1119,16 +1215,18 @@ HdsNavigation标题栏背景板样式。
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| backgroundColor | ResourceColor | 否 | 是 | 标题栏背景板背景色。 默认值： 模糊样式类型为COMMON_BLUR或GRADUAL_BLUR时，背景色默认值均为透明色。 模糊样式类型为GRADIENT_BLUR时，背景色生效线性径向渐变色，具体默认值分以下场景： - 若ScrollEffectOptions.enableScrollEffect为true，在TitleBarStyleOptions.originalStyle中，backgroundColor默认值为透明色；在TitleBarStyleOptions.scrollEffectStyle中，backgroundColor默认值为#99000000。 - 若ScrollEffectOptions.enableScrollEffect为false，仅在TitleBarStyleOptions.originalStyle中，backgroundColor生效，默认值为透明色。 从6.1.0(23)开始，新增如下背景色默认规则： 当模糊样式类型为GRADIENT_BLUR并已配置systemMaterialEffect，或者模糊类型为IMMERSIVE_GRADIENT_BLUR时，对应默认值如下： - 若ScrollEffectOptions.enableScrollEffect为true，默认值为透明色；若ScrollEffectOptions.enableScrollEffect为false，默认值为\$r('sys.color.comp_background_gray')。 - 仅当ScrollEffectOptions.enableScrollEffect为true时生效，默认值为\$r('sys.color.comp_background_gray')。 |
+| backgroundColor | ResourceColor | 否 | 是 | 标题栏背景板背景色。 当模糊样式类型为COMMON_BLUR或GRADUAL_BLUR时，背景色默认值均为透明色。 当模糊样式类型为GRADIENT_BLUR或IMMERSIVE_GRADIENT_BLUR时，背景色生效线性径向渐变色。背景色生效规则及默认值分以下场景： 1. 当模糊样式类型为GRADIENT_BLUR时： -当ScrollEffectOptions.enableScrollEffect为false时，TitleBarStyleOptions.originalStyle中的backgroundColor默认值为#99000000；TitleBarStyleOptions.scrollEffectStyle中的backgroundColor不生效。 -当ScrollEffectOptions.enableScrollEffect为true时，TitleBarStyleOptions.originalStyle中的backgroundColor默认值为透明色，且不支持自定义配置。TitleBarStyleOptions.scrollEffectStyle中的backgroundColor默认值为#99000000。 从API版本6.1.0(23)开始，新增如下背景色生效规则及默认值： 2. 当模糊样式类型为GRADIENT_BLUR并配置沉浸光感属性TitleBarStyleOptions.systemMaterialEffect时： -当ScrollEffectOptions.enableScrollEffect为false时，TitleBarStyleOptions.originalStyle中的backgroundColor默认值为\$r('sys.color.comp_background_gray')。 -当ScrollEffectOptions.enableScrollEffect为true时，TitleBarStyleOptions.originalStyle中的backgroundColor默认值为透明色；TitleBarStyleOptions.scrollEffectStyle中的backgroundColor默认值为\$r('sys.color.comp_background_gray')。 从API版本26.0.0开始，新增支持自定义配置TitleBarStyleOptions.originalStyle中的backgroundColor。 3. 当模糊样式类型为IMMERSIVE_GRADIENT_BLUR时： - 当ScrollEffectOptions.enableScrollEffect为false时： 若未同时配置沉浸光感属性TitleBarStyleOptions.systemMaterialEffect属性，TitleBarStyleOptions.originalStyle中的backgroundColor默认值为#99000000，且不支持自定义配置。 若已同时配置沉浸光感属性TitleBarStyleOptions.systemMaterialEffect属性，TitleBarStyleOptions.originalStyle中的backgroundColor默认值为\$r('sys.color.comp_background_gray')。 -当ScrollEffectOptions.enableScrollEffect为true时，TitleBarStyleOptions.scrollEffectStyle中的backgroundColor默认值为\$r('sys.color.comp_background_gray')；TitleBarStyleOptions.originalStyle中的backgroundColor默认值为透明色。 从API版本26.0.0开始，若已同时配置沉浸光感属性TitleBarStyleOptions.systemMaterialEffect属性，新增支持自定义配置TitleBarStyleOptions.originalStyle中的backgroundColor。 |
 | maskExtraHeight | number | 否 | 是 | 标题栏模糊蒙层超出标题栏的额外高度。该配置只在模糊样式类型配置为GRADIENT_BLUR时生效。单位：vp。 默认值：32。单位：vp。 起始版本： 6.0.0(20) |
 | blurRadius | number | 否 | 是 | 标题栏模糊半径。仅在模糊样式类型配置为渐变模糊GRADIENT_BLUR及沉浸式渐变模糊IMMERSIVE_GRADIENT_BLUR时生效。取值范围为[0.0, 128.0]。超出取值范围时，按默认值处理。 默认值： - 作为TitleBarStyleOptions.originalStyle中的属性时，当ScrollEffectOptions.enableScrollEffect为true时，默认值为0.0；当ScrollEffectOptions.enableScrollEffect为false，未配置systemMaterialEffect时，默认值为16.0，配置systemMaterialEffect时，默认值为12.0。 - 作为TitleBarStyleOptions.scrollEffectStyle中的属性时，仅在ScrollEffectOptions.enableScrollEffect为true时生效，未配置systemMaterialEffect时，默认值为16.0，配置systemMaterialEffect时，默认值为12.0。 起始版本： 6.1.0(23) |
 
 
 
 
-#### HdsNavigationTitleStyle
+## HdsNavigationTitleStyle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1140,6 +1238,7 @@ HdsNavigation标题栏的标题样式。
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | mainTitleColor | ResourceColor | 否 | 是 | 标题栏主标题颜色。 默认值： - 当模糊样式类型配置为COMMON_BLUR时，主标题默认颜色为\$r('sys.color.font_primary')。 - 当模糊样式类型配置为GRADUAL_BLUR时，动态样式生效前，主标题默认颜色为\$r('sys.color.font_on_primary')，动态样式生效后，主标题默认颜色为\$r('sys.color.font_primary')。 - 当模糊样式类型配置为GRADIENT_BLUR且ScrollEffectOptions.enableScrollEffect配置为false时，主标题默认颜色为\$r('sys.color.font_on_primary')。 - 当模糊样式类型配置为GRADIENT_BLUR且ScrollEffectOptions.enableScrollEffect配置为true时，动态样式生效前，主标题默认颜色为\$r('sys.color.font_primary')，动态样式生效后，主标题默认颜色为\$r('sys.color.font_on_primary')。 |
@@ -1150,7 +1249,8 @@ HdsNavigation标题栏的标题样式。
 
 
 
-#### HdsNavigationIconItemStyle
+## HdsNavigationIconItemStyle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1162,6 +1262,7 @@ HdsNavigation标题栏的图标样式。
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | backgroundColor | ResourceColor | 否 | 是 | 标题栏图标背景色。 默认值： - 当模糊样式类型配置为COMMON_BLUR时，图标背板默认色为\$r('sys.color.comp_background_tertiary')。 - 当模糊样式类型配置为GRADUAL_BLUR时，默认值为透明色，同时生效提亮压暗样式。 - 当模糊样式类型配置为GRADIENT_BLUR且ScrollEffectOptions.enableScrollEffect配置为false时，默认值为透明色，同时生效提亮压暗样式。 - 当模糊样式类型配置为GRADIENT_BLUR且ScrollEffectOptions.enableScrollEffect配置为true时，动态样式生效前，背景色默认值为\$r('sys.color.comp_background_tertiary')，动态样式生效后，默认值为透明色，同时生效提亮压暗样式。 |
@@ -1171,7 +1272,8 @@ HdsNavigation标题栏的图标样式。
 
 
 
-#### HdsNavigationDividerStyle
+## HdsNavigationDividerStyle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1183,6 +1285,7 @@ HdsNavigation标题栏的分割线样式。
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | dividerColor | ResourceColor | 否 | 是 | 标题栏分割线颜色。 默认值：\$r('sys.color.comp_divider')。 |
@@ -1190,7 +1293,8 @@ HdsNavigation标题栏的分割线样式。
 
 
 
-#### HdsTitleBarContentStyle
+## HdsTitleBarContentStyle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1201,6 +1305,7 @@ HdsNavigation标题栏的内容区样式。
 **系统能力：** SystemCapability.UIDesign.HDSComponent.Core
 
 **起始版本：** 5.1.0(18)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1213,7 +1318,8 @@ HdsNavigation标题栏的内容区样式。
 
 
 
-#### HdsNavigationTitleBarStyle
+## HdsNavigationTitleBarStyle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1225,6 +1331,7 @@ HdsNavigation标题栏样式。
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | backgroundStyle | HdsNavigationBackgroundStyle | 否 | 是 | HdsNavigation标题栏背板样式。 |
@@ -1233,7 +1340,8 @@ HdsNavigation标题栏样式。
 
 
 
-#### ScrollEffectOptions
+## ScrollEffectOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1245,18 +1353,20 @@ HdsNavigation标题栏的动态样式参数配置。
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | enableScrollEffect | boolean | 否 | 是 | 配置标题栏是否随内容区滚动的总偏移量动态生效标题栏样式。 默认值：true。 - true：内容区滚动的总偏移量从blurEffectiveStartOffset到blurEffectiveEndOffset，标题栏样式从originalStyle到scrollEffectStyle线性过渡。 - false：不随内容区滚动动态生效标题栏样式，仅生效originalStyle。 |
 | scrollEffectType | ScrollEffectType | 否 | 是 | 标题栏模糊样式类型。 默认值：ScrollEffectType.COMMON_BLUR。 |
 | enableRefreshOffsetChange | boolean | 否 | 是 | 是否响应内容区Refresh组件的滚动。 默认值：true。 - true：随内容区Refresh组件的滚动变化生效对应的标题栏样式。 - false：不随内容区Refresh组件的滚动变化生效对应的标题栏样式。 起始版本： 6.1.0(23) |
 | blurEffectiveStartOffset | LengthMetrics | 否 | 是 | 动态样式线性过渡的起始位置。当内容区滚动的总偏移量超过该值时，标题栏开始从originalStyle到scrollEffectStyle线性过渡。 取值范围[0,+∞)。 默认值：LengthMetric.vp(0)。 超出取值范围时，按默认值处理。 |
-| blurEffectiveEndOffset | LengthMetrics | 否 | 是 | 动态样式线性过渡的终点位置。当内容区滚动的总偏移量超过该值时，标题栏的动态样式过渡结束，固定为scrollEffectStyle。 取值范围[0,+∞)。 若设置数值小于blurEffectiveStartOffset，按默认值处理。 默认值： - 标题栏模糊样式类型设置为ScrollEffectType.COMMON_BLUR或者ScrollEffectType.GRADIENT_BLUR时，默认值为LengthMetric.vp(8)。 - 标题栏模糊样式类型设置为ScrollEffectType.GRADUAL_BLUR，默认值为LengthMetric.vp(56)。 |
+| blurEffectiveEndOffset | LengthMetrics | 否 | 是 | 动态样式线性过渡的终点位置。当内容区滚动的总偏移量超过该值时，标题栏的动态样式过渡结束，固定为scrollEffectStyle。 取值范围[0,+∞)。 若设置数值小于blurEffectiveStartOffset，按默认值处理。 默认值： - 标题栏模糊样式类型设置为ScrollEffectType.COMMON_BLUR时，默认值为LengthMetric.vp(8)。 - 标题栏模糊样式类型设置为ScrollEffectType.GRADIENT_BLUR时，默认值为LengthMetric.vp(8)。起始版本： 6.0.0(20) - 标题栏模糊样式类型设置为ScrollEffectType.GRADUAL_BLUR，默认值为LengthMetric.vp(56)。起始版本： 6.0.0(20) -标题栏模糊样式类型设置为ScrollEffectType.IMMERSIVE_GRADIENT_BLUR，默认值为LengthMetric.vp(56)。起始版本： 6.1.0(23) |
 
 
 
 
-#### TitleBarStyleOptions
+## TitleBarStyleOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1267,6 +1377,7 @@ HdsNavigation标题栏的样式配置。
 **系统能力：** SystemCapability.UIDesign.HDSComponent.Core
 
 **起始版本：** 5.1.0(18)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1280,7 +1391,8 @@ HdsNavigation标题栏的样式配置。
 
 
 
-#### HdsNavigationBadgeOptions
+## HdsNavigationBadgeOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1292,6 +1404,7 @@ HdsNavigation标题栏的信息标记配置。
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | count | number | 否 | 是 | 设置提醒信息数，大于99时，显示“99+”。 取值范围：[-2147483648,2147483647]。超出范围时会加上或减去4294967296，使得值仍在范围内，非整数时会舍去小数部分取整数部分。 默认值：-1。 设置为小于等于0时，不显示信息标记。 |
@@ -1301,7 +1414,8 @@ HdsNavigation标题栏的信息标记配置。
 
 
 
-#### HdsNavigationIconOptions
+## HdsNavigationIconOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1312,6 +1426,7 @@ HdsNavigation标题栏上图标配置信息。
 **系统能力：** SystemCapability.UIDesign.HDSComponent.Core
 
 **起始版本：** 5.1.0(18)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1325,7 +1440,8 @@ HdsNavigation标题栏上图标配置信息。
 
 
 
-#### HdsNavigationBadgeIconOptions
+## HdsNavigationBadgeIconOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1337,6 +1453,7 @@ HdsNavigation标题栏上带信息提醒的图标配置信息。
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | content | HdsNavigationIconOptions | 否 | 是 | 图标配置信息。 |
@@ -1345,7 +1462,8 @@ HdsNavigation标题栏上带信息提醒的图标配置信息。
 
 
 
-#### HdsNavigationMenuContentOptions
+## HdsNavigationMenuContentOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1357,6 +1475,7 @@ HdsNavigation标题栏的菜单区域内容配置。
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | value | Array&lt;HdsNavigationMenuItemOptions&gt; | 否 | 是 | 菜单栏的图标配置。 |
@@ -1366,7 +1485,8 @@ HdsNavigation标题栏的菜单区域内容配置。
 
 
 
-#### MultiWindowEntryInAPPMenuParams
+## MultiWindowEntryInAPPMenuParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1378,6 +1498,7 @@ HdsNavigation标题栏的菜单区域应用内多窗配置。
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | want | Want | 否 | 否 | 需要启动窗口的参数，有以下要求： - 必填字段：abilityName, moduleName和bundleName； - 应用限制：所有指定的名称（abilityName, moduleName 和bundleName）必须属于当前应用； - 跨应用限制：多窗口功能不支持跨应用的能力。 |
@@ -1385,7 +1506,8 @@ HdsNavigation标题栏的菜单区域应用内多窗配置。
 
 
 
-#### HdsNavigationTitle
+## HdsNavigationTitle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1396,6 +1518,7 @@ HdsNavigation标题栏的标题资源配置。字符串超长时，如果不设�
 **系统能力：** SystemCapability.UIDesign.HDSComponent.Core
 
 **起始版本：** 5.1.0(18)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1412,7 +1535,8 @@ HdsNavigation标题栏的标题资源配置。字符串超长时，如果不设�
 
 
 
-#### BottomBuilderParams
+## BottomBuilderParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1423,6 +1547,7 @@ HdsNavigation标题栏底部自定义区域配置。
 **系统能力：** SystemCapability.UIDesign.HDSComponent.Core
 
 **起始版本：** 6.0.0(20)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1435,7 +1560,8 @@ HdsNavigation标题栏底部自定义区域配置。
 
 
 
-#### HdsNavigationDividerParams
+## HdsNavigationDividerParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1447,6 +1573,7 @@ HdsNavigation标题栏分割线配置，该参数不支持动态切换。
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | showType | DividerShowType | 否 | 是 | 设置标题栏分割线显示类型。 默认值：DividerShowType.AUTO。 |
@@ -1454,7 +1581,8 @@ HdsNavigation标题栏分割线配置，该参数不支持动态切换。
 
 
 
-#### TitleBarContentOptions
+## TitleBarContentOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1465,6 +1593,7 @@ HdsNavigation标题栏的内容区配置信息。
 **系统能力：** SystemCapability.UIDesign.HDSComponent.Core
 
 **起始版本：** 5.1.0(18)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1481,7 +1610,8 @@ HdsNavigation标题栏的内容区配置信息。
 
 
 
-#### PaddingOptions
+## PaddingOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1493,6 +1623,7 @@ HdsNavigation标题栏的内容区配置信息。
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | start | LengthMetrics | 否 | 是 | 标题栏起始端内间距。 默认值：页面宽度小于600vp时，默认值为16vp，页面宽度大于等于840vp时，默认值为32vp，其他场景默认值为24vp。 |
@@ -1501,7 +1632,8 @@ HdsNavigation标题栏的内容区配置信息。
 
 
 
-#### NavBarWidthRangeOptions
+## NavBarWidthRangeOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1513,6 +1645,7 @@ HdsNavigation标题栏的内容区配置信息。
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | minWidth | Dimension | 否 | 是 | 导航栏最小宽度。 默认值：240vp。 |
@@ -1521,7 +1654,8 @@ HdsNavigation标题栏的内容区配置信息。
 
 
 
-#### HdsNavigationTitleBarOptions
+## HdsNavigationTitleBarOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1532,6 +1666,7 @@ HdsNavigation标题栏配置信息。
 **系统能力：** SystemCapability.UIDesign.HDSComponent.Core
 
 **起始版本：** 5.1.0(18)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1545,7 +1680,8 @@ HdsNavigation标题栏配置信息。
 
 
 
-#### DynamicHideParams
+## DynamicHideParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1556,6 +1692,7 @@ HdsNavigation标题栏动态显隐配置信息。
 **系统能力：** SystemCapability.UIDesign.HDSComponent.Core
 
 **起始版本：** 6.0.0(20)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1569,7 +1706,8 @@ HdsNavigation标题栏动态显隐配置信息。
 
 
 
-#### NestedScrollInfo
+## NestedScrollInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1581,6 +1719,7 @@ HdsNavigation标题栏动态显隐配置信息。
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | parent | Scroller | 否 | 否 | 可滚动容器组件的控制器。 |
@@ -1589,7 +1728,8 @@ HdsNavigation标题栏动态显隐配置信息。
 
 
 
-#### WithThemeOptions
+## WithThemeOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1601,6 +1741,7 @@ HdsNavigation标题栏动态显隐配置信息。
 
 **起始版本：** 6.1.0(23)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | enableThemeColorMode | boolean | 否 | 是 | 是否支持WithTheme作用域内组件自定义深浅色配置。 默认值：false。 - true：支持WithTheme作用域内自定义深浅色配置。 - false：不支持WithTheme作用域内自定义深浅色配置。 |
@@ -1608,9 +1749,10 @@ HdsNavigation标题栏动态显隐配置信息。
 
 
 
-#### SystemMaterialParams
+## SystemMaterialParams
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 材质效果参数。
 
@@ -1622,6 +1764,7 @@ HdsNavigation标题栏动态显隐配置信息。
 
 **起始版本：** 6.1.0(23)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | materialType | hdsMaterial.MaterialType | 否 | 是 | 设置材质类型。 默认值：hdsMaterial.MaterialType.NONE。 |
@@ -1630,7 +1773,8 @@ HdsNavigation标题栏动态显隐配置信息。
 
 
 
-#### BuilderOptions
+## BuilderOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1642,6 +1786,7 @@ HdsNavigation标题栏动态显隐配置信息。
 
 **起始版本：** 26.0.0
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | builder | CustomBuilder | 否 | 是 | 用户自定义组件。 |
@@ -1650,13 +1795,17 @@ HdsNavigation标题栏动态显隐配置信息。
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 设置动态模糊样式
+
+
+### 设置动态模糊样式
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 通过titleBar属性，自定义设置标题栏随内容区滚动的动态模糊样式。
 
@@ -1789,7 +1938,10 @@ struct Index {
 
 
 
-#### 设置菜单消息提醒
+### 设置菜单消息提醒
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 通过设置标题栏上菜单配置中的badge属性，使用信息提醒能力，在菜单项右上角附加消息提醒。
 
@@ -1857,7 +2009,10 @@ struct Index {
 
 
 
-#### 设置自定义区域
+### 设置自定义区域
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 通过设置titleBar属性中的stackBuilder，bottomBuilder属性，可以使用标题栏的自定义区域设置能力。
 
@@ -1949,7 +2104,10 @@ struct Index {
 
 
 
-#### 设置标题栏的动态显隐
+### 设置标题栏的动态显隐
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 通过设置dynamicHideTitleBar属性，可以使用标题栏随内容区动态显隐能力。
 
@@ -2020,7 +2178,10 @@ struct Index {
 
 
 
-#### 设置标题栏图标样式
+### 设置标题栏图标样式
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 通过设置[HdsNavigationIconOptions](#hdsnavigationiconoptions)属性中的type属性，可以设置图标为文字型或者图片型图标。
 
@@ -2100,7 +2261,10 @@ struct Index {
 
 
 
-#### 半模态标题栏样式
+### 半模态标题栏样式
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 通过titleMode设置半模态标题栏显示模式，半模态模式下，可以在subTitle右侧区域设置用户自定义的subTitleBuilder。半模态样式下，设置图标类型为IconStyleMode.SMALL，同时不设置图标资源时，默认显示关闭按钮。
 
@@ -2197,7 +2361,10 @@ struct SheetTransitionExample {
 
 
 
-#### 图标上绑定自定义menu
+### 图标上绑定自定义menu
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 通过设置菜单项[HdsNavigationIconOptions](#hdsnavigationiconoptions)中的componentId属性，结合[promptAction.openMenu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-promptaction#openmenu18)方法，绑定[TargetInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-i#targetinfo18)中的Id属性为设置的componentId，可以在对应的图标上弹出用户自定义菜单。
 
@@ -2294,7 +2461,10 @@ struct Index {
 
 
 
-#### 设置应用内多窗图标
+### 设置应用内多窗图标
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 创建一级导航组件，通过配置titleBar中的menu上的multiWindowEntryInAPPMenu属性，实现应用内多窗图标设置。
 
@@ -2351,7 +2521,10 @@ struct MultiWindowEntryInAPPTest {
 
 
 
-#### 设置HdsNavigation双栏模式
+### 设置HdsNavigation双栏模式
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例主要展示HdsNavigation在双栏模式下，右侧显示默认占位页。
 
@@ -2422,7 +2595,10 @@ struct Index {
 
 
 
-#### 设置标题栏沉浸式样式
+### 设置标题栏沉浸式样式
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例主要展示HdsNavigation配置沉浸式模糊和材质的各类型效果。
 
@@ -2534,11 +2710,14 @@ struct Index {
 
 
 
-#### 通过onReady获取栈
+### 通过onReady获取栈
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例主要演示如下两点功能：
 1. [NavPathStack](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation#navpathstack10)无需声明为状态变量，也可以实现路由栈操作功能。
-2. [HdsNavDestination](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdsnavdestination)通过[onReady](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdsnavdestination#onready)事件能够拿到对应的NavPathInfo和所属的[NavPathStack](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation#navpathstack10)。
+2. [HdsNavDestination (导航子页面容器)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdsnavdestination)通过[onReady](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdsnavdestination#onready)事件能够拿到对应的NavPathInfo和所属的[NavPathStack](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation#navpathstack10)。
 
 **示例：**
 

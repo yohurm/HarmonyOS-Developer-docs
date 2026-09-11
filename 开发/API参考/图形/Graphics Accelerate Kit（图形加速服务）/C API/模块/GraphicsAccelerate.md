@@ -1,11 +1,12 @@
 # GraphicsAccelerate
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_graphics_accelerate
 **支持设备：** Phone | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -17,16 +18,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### 文件
+### 文件
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | abr_base.h | 声明不区分图形API平台的ABR（自适应稳态渲染）接口。 |
@@ -39,10 +43,12 @@
  
   
 
-#### 结构体
+### 结构体
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | struct ABR_Vector3 | 此结构体描述ABR三维向量。 |
@@ -71,10 +77,12 @@
  
   
 
-#### 类型定义
+### 类型定义
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | typedef struct ABR_Context ABR_Context | 此结构体描述ABR上下文。 |
@@ -125,10 +133,12 @@
  
   
 
-#### 枚举
+### 枚举
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | ABR_RenderAPI_Type { RENDER_API_GLES = 0 } | 此枚举描述ABR支持的图形API类型。RENDER_API_GLES表示OpenGL ES API。 |
@@ -151,10 +161,12 @@
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | ABR_Context* HMS_ABR_CreateContext(ABR_RenderAPI_Type type) | 创建ABR上下文实例，每次调用会新建ABR_Context对象，并返回指向ABR_Context对象的指针，当前仅支持RENDER_API_GLES类型，其他类型会导致创建上下文失败。 |
@@ -213,13 +225,15 @@
  
   
 
-#### 类型定义说明
+## 类型定义说明
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### ABR_CameraData
+### ABR_CameraData
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -235,7 +249,8 @@ typedef struct ABR_CameraData ABR_CameraData
  
   
 
-#### ABR_Context
+### ABR_Context
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -251,7 +266,8 @@ typedef struct ABR_Context ABR_Context
  
   
 
-#### ABR_ErrorCode
+### ABR_ErrorCode
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -267,7 +283,8 @@ typedef enum ABR_ErrorCode ABR_ErrorCode
  
   
 
-#### ABR_RenderAPI_Type
+### ABR_RenderAPI_Type
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -283,7 +300,8 @@ typedef enum ABR_RenderAPI_Type ABR_RenderAPI_Type
  
   
 
-#### ABR_Vector3
+### ABR_Vector3
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -299,7 +317,8 @@ typedef struct ABR_Vector3 ABR_Vector3
  
   
 
-#### FG_AlgorithmModeInfo
+### FG_AlgorithmModeInfo
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -315,7 +334,8 @@ typedef struct FG_AlgorithmModeInfo FG_AlgorithmModeInfo
  
   
 
-#### FG_Context_GLES
+### FG_Context_GLES
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -331,7 +351,8 @@ typedef struct FG_Context_GLES FG_Context_GLES
  
   
 
-#### FG_Context_VK
+### FG_Context_VK
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -347,7 +368,8 @@ typedef struct FG_Context_VK FG_Context_VK
  
   
 
-#### FG_ContextDescription_VK
+### FG_ContextDescription_VK
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -363,7 +385,8 @@ typedef struct FG_ContextDescription_VK FG_ContextDescription_VK
  
   
 
-#### FG_CvvZSemantic
+### FG_CvvZSemantic
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -379,7 +402,8 @@ typedef enum FG_CvvZSemantic FG_CvvZSemantic
  
   
 
-#### FG_Dimension2D
+### FG_Dimension2D
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -395,7 +419,8 @@ typedef struct FG_Dimension2D FG_Dimension2D
  
   
 
-#### FG_DispatchDescription_GLES
+### FG_DispatchDescription_GLES
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -411,7 +436,8 @@ typedef struct FG_DispatchDescription_GLES FG_DispatchDescription_GLES
  
   
 
-#### FG_DispatchDescription_VK
+### FG_DispatchDescription_VK
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -427,7 +453,8 @@ typedef struct FG_DispatchDescription_VK FG_DispatchDescription_VK
  
   
 
-#### FG_ErrorCode
+### FG_ErrorCode
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -443,7 +470,8 @@ typedef enum FG_ErrorCode FG_ErrorCode
  
   
 
-#### FG_Image_VK
+### FG_Image_VK
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -459,7 +487,8 @@ typedef struct FG_Image_VK FG_Image_VK
  
   
 
-#### FG_ImageFormat_GLES
+### FG_ImageFormat_GLES
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -475,7 +504,8 @@ typedef enum FG_ImageFormat_GLES FG_ImageFormat_GLES
  
   
 
-#### FG_ImageFormat_VK
+### FG_ImageFormat_VK
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -491,7 +521,8 @@ typedef struct FG_ImageFormat_VK FG_ImageFormat_VK
  
   
 
-#### FG_ImageInfo_VK
+### FG_ImageInfo_VK
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -507,7 +538,8 @@ typedef struct FG_ImageInfo_VK FG_ImageInfo_VK
  
   
 
-#### FG_ImageSync_VK
+### FG_ImageSync_VK
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -523,7 +555,8 @@ typedef struct FG_ImageSync_VK FG_ImageSync_VK
  
   
 
-#### FG_Mat4x4
+### FG_Mat4x4
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -539,7 +572,8 @@ typedef struct FG_Mat4x4 FG_Mat4x4
  
   
 
-#### FG_MeMode
+### FG_MeMode
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -555,7 +589,8 @@ typedef enum FG_MeMode FG_MeMode
  
   
 
-#### FG_PredictionMode
+### FG_PredictionMode
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -571,7 +606,8 @@ typedef enum FG_PredictionMode FG_PredictionMode
  
   
 
-#### FG_PresentMode
+### FG_PresentMode
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -587,7 +623,8 @@ typedef enum FG_PresentMode FG_PresentMode
  
   
 
-#### FG_FeatureType
+### FG_FeatureType
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -603,7 +640,8 @@ typedef enum FG_FeatureType FG_FeatureType
  
   
 
-#### FG_ResolutionInfo
+### FG_ResolutionInfo
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -619,7 +657,8 @@ typedef struct FG_ResolutionInfo FG_ResolutionInfo
  
   
 
-#### FG_Vec3D
+### FG_Vec3D
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -635,7 +674,8 @@ typedef struct FG_Vec3D FG_Vec3D
  
   
 
-#### FG_PerFrameExtendedCameraInfo
+### FG_PerFrameExtendedCameraInfo
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -651,7 +691,8 @@ typedef struct FG_PerFrameExtendedCameraInfo FG_PerFrameExtendedCameraInfo
  
   
 
-#### FG_IntegrationInfo
+### FG_IntegrationInfo
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -667,7 +708,8 @@ typedef struct FG_IntegrationInfo
  
   
 
-#### OpenGTX_ConfigDescription
+### OpenGTX_ConfigDescription
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -683,7 +725,8 @@ typedef struct OpenGTX_ConfigDescription OpenGTX_ConfigDescription
  
   
 
-#### OpenGTX_Context
+### OpenGTX_Context
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -699,7 +742,8 @@ typedef struct OpenGTX_Context OpenGTX_Context
  
   
 
-#### OpenGTX_DeviceInfoCallback
+### OpenGTX_DeviceInfoCallback
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -715,6 +759,7 @@ typedef void(* OpenGTX_DeviceInfoCallback) (OpenGTX_TempLevel)
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | OpenGTX_TempLevel | 设备的温度级别OpenGTX_TempLevel。 |
@@ -722,7 +767,8 @@ typedef void(* OpenGTX_DeviceInfoCallback) (OpenGTX_TempLevel)
  
   
 
-#### OpenGTX_EngineType
+### OpenGTX_EngineType
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -738,7 +784,8 @@ typedef enum OpenGTX_EngineType OpenGTX_EngineType
  
   
 
-#### OpenGTX_ErrorCode
+### OpenGTX_ErrorCode
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -754,7 +801,8 @@ typedef enum OpenGTX_ErrorCode OpenGTX_ErrorCode
  
   
 
-#### OpenGTX_FrameRenderInfo
+### OpenGTX_FrameRenderInfo
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -770,7 +818,8 @@ typedef struct OpenGTX_FrameRenderInfo OpenGTX_FrameRenderInfo
  
   
 
-#### OpenGTX_GameSceneInfo
+### OpenGTX_GameSceneInfo
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -786,7 +835,8 @@ typedef struct OpenGTX_GameSceneInfo OpenGTX_GameSceneInfo
  
   
 
-#### OpenGTX_GameType
+### OpenGTX_GameType
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -802,7 +852,8 @@ typedef enum OpenGTX_GameType OpenGTX_GameType
  
   
 
-#### OpenGTX_LTPO_Mode
+### OpenGTX_LTPO_Mode
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -818,7 +869,8 @@ typedef enum OpenGTX_LTPO_Mode OpenGTX_LTPO_Mode
  
   
 
-#### OpenGTX_NetworkInfo
+### OpenGTX_NetworkInfo
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -834,7 +886,8 @@ typedef struct OpenGTX_NetworkInfo OpenGTX_NetworkInfo
  
   
 
-#### OpenGTX_NetworkLatency
+### OpenGTX_NetworkLatency
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -850,7 +903,8 @@ typedef struct OpenGTX_NetworkLatency OpenGTX_NetworkLatency
  
   
 
-#### OpenGTX_PictureQualityMaxLevel
+### OpenGTX_PictureQualityMaxLevel
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -866,7 +920,8 @@ typedef enum OpenGTX_PictureQualityMaxLevel OpenGTX_PictureQualityMaxLevel
  
   
 
-#### OpenGTX_ResolutionValue
+### OpenGTX_ResolutionValue
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -882,7 +937,8 @@ typedef struct OpenGTX_ResolutionValue OpenGTX_ResolutionValue
  
   
 
-#### OpenGTX_SceneID
+### OpenGTX_SceneID
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -898,7 +954,8 @@ typedef enum OpenGTX_SceneID OpenGTX_SceneID
  
   
 
-#### OpenGTX_TempLevel
+### OpenGTX_TempLevel
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -914,7 +971,8 @@ typedef enum OpenGTX_TempLevel OpenGTX_TempLevel
  
   
 
-#### OpenGTX_Vector3
+### OpenGTX_Vector3
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -930,13 +988,15 @@ typedef struct OpenGTX_Vector3 OpenGTX_Vector3
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### ABR_ErrorCode
+### ABR_ErrorCode
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -950,6 +1010,7 @@ enum ABR_ErrorCode
  
 **起始版本：** 5.0.0(12)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | ABR_SUCCESS | 接口执行成功。 |
@@ -963,7 +1024,8 @@ enum ABR_ErrorCode
  
   
 
-#### ABR_RenderAPI_Type
+### ABR_RenderAPI_Type
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -977,6 +1039,7 @@ enum ABR_RenderAPI_Type
  
 **起始版本：** 5.0.0(12)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | RENDER_API_GLES | OpenGL ES API |
@@ -984,7 +1047,8 @@ enum ABR_RenderAPI_Type
  
   
 
-#### FG_CvvZSemantic
+### FG_CvvZSemantic
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -998,6 +1062,7 @@ enum FG_CvvZSemantic
  
 **起始版本：** 5.0.0(12)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | FG_CVV_Z_SEMANTIC_MINUS_ONE_TO_ONE_FORWARD_Z | 投影变换后的齐次裁剪空间Z/W范围在[-1, 1]之间，深度测试比较函数为less equal，如OpenGL ES API平台。 |
@@ -1008,7 +1073,8 @@ enum FG_CvvZSemantic
  
   
 
-#### FG_ErrorCode
+### FG_ErrorCode
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1022,6 +1088,7 @@ enum FG_ErrorCode
  
 **起始版本：** 5.0.0(12)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | FG_SUCCESS | 接口执行成功。 |
@@ -1033,7 +1100,8 @@ enum FG_ErrorCode
  
   
 
-#### FG_ImageFormat_GLES
+### FG_ImageFormat_GLES
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1047,6 +1115,7 @@ enum FG_ImageFormat_GLES
  
 **起始版本：** 5.0.0(12)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | FG_FORMAT_R8G8B8A8_UNORM | GL_RGBA8图像格式。 |
@@ -1056,7 +1125,8 @@ enum FG_ImageFormat_GLES
  
   
 
-#### FG_MeMode
+### FG_MeMode
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1070,6 +1140,7 @@ enum FG_MeMode
  
 **起始版本：** 5.0.0(12)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | FG_ME_MODE_BASIC | 基础模式，即利用历史帧颜色信息、深度信息及相机矩阵信息进行运动估计。 |
@@ -1078,7 +1149,8 @@ enum FG_MeMode
  
   
 
-#### FG_PredictionMode
+### FG_PredictionMode
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1092,6 +1164,7 @@ enum FG_PredictionMode
  
 **起始版本：** 5.0.0(12)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | FG_PREDICTION_MODE_INTERPOLATION | 内插模式，即通过第N-1帧真实渲染帧及第N帧真实渲染帧生成N-0.5帧预测帧。该模式适用于高渲染画质游戏和对运行平滑度要求高的游戏，如角色扮演游戏、竞速类游戏等。 |
@@ -1100,7 +1173,8 @@ enum FG_PredictionMode
  
   
 
-#### FG_PresentMode
+### FG_PresentMode
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1114,6 +1188,7 @@ enum FG_PresentMode
  
 **起始版本：** 5.1.0(18)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | FG_PRESENT_BY_GAME | 游戏申请和管理预测帧，并负责预测帧的送显。 |
@@ -1122,7 +1197,8 @@ enum FG_PresentMode
  
   
 
-#### FG_FeatureType
+### FG_FeatureType
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1136,6 +1212,7 @@ enum FG_FeatureType
  
 **起始版本：** 26.0.0
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | INTERPOLATION_GPU_GLES | OpenGL ES平台上的GPU内插。 |
@@ -1147,7 +1224,8 @@ enum FG_FeatureType
  
   
 
-#### OpenGTX_EngineType
+### OpenGTX_EngineType
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1161,6 +1239,7 @@ enum OpenGTX_EngineType
  
 **起始版本：** 5.0.0(12)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | UNITY | 游戏引擎类型为UNITY。 |
@@ -1172,7 +1251,8 @@ enum OpenGTX_EngineType
  
   
 
-#### OpenGTX_ErrorCode
+### OpenGTX_ErrorCode
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1186,6 +1266,7 @@ enum OpenGTX_ErrorCode
  
 **起始版本：** 5.0.0(12)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | OPENGTX_SUCCESS | 接口执行成功。 |
@@ -1196,7 +1277,8 @@ enum OpenGTX_ErrorCode
  
   
 
-#### OpenGTX_GameType
+### OpenGTX_GameType
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1210,6 +1292,7 @@ enum OpenGTX_GameType
  
 **起始版本：** 5.0.0(12)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | MOBA | 游戏应用类型为MOBA。 |
@@ -1221,7 +1304,8 @@ enum OpenGTX_GameType
  
   
 
-#### OpenGTX_LTPO_Mode
+### OpenGTX_LTPO_Mode
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1235,6 +1319,7 @@ enum OpenGTX_LTPO_Mode
  
 **起始版本：** 5.0.0(12)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | SCENE_MODE | 场景模式。 |
@@ -1244,7 +1329,8 @@ enum OpenGTX_LTPO_Mode
  
   
 
-#### OpenGTX_PictureQualityMaxLevel
+### OpenGTX_PictureQualityMaxLevel
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1258,6 +1344,7 @@ enum OpenGTX_PictureQualityMaxLevel
  
 **起始版本：** 5.0.0(12)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | SD | 图像质量为SD，如480p。 |
@@ -1269,7 +1356,8 @@ enum OpenGTX_PictureQualityMaxLevel
  
   
 
-#### OpenGTX_SceneID
+### OpenGTX_SceneID
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1283,6 +1371,7 @@ enum OpenGTX_SceneID
  
 **起始版本：** 5.0.0(12)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | LOGIN | 游戏场景类型为登录。 |
@@ -1297,7 +1386,8 @@ enum OpenGTX_SceneID
  
   
 
-#### OpenGTX_TempLevel
+### OpenGTX_TempLevel
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1311,6 +1401,7 @@ enum OpenGTX_TempLevel
  
 **起始版本：** 5.0.0(12)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | TEMP_LEVEL1 | 温度等级1。游戏可以保持当前配置。 |
@@ -1323,15 +1414,17 @@ enum OpenGTX_TempLevel
  
   
 
-#### 函数说明
+## 函数说明
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### HMS_ABR_Activate()
+### HMS_ABR_Activate()
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 ```text
 ABR_ErrorCode HMS_ABR_Activate(ABR_Context* context)
@@ -1345,6 +1438,7 @@ ABR_ErrorCode HMS_ABR_Activate(ABR_Context* context)
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的ABR上下文实例，即指向ABR_Context实例的指针，非空，否则返回失败。 |
@@ -1356,9 +1450,10 @@ ABR_ErrorCode HMS_ABR_Activate(ABR_Context* context)
  
   
 
-#### HMS_ABR_CreateContext()
+### HMS_ABR_CreateContext()
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 ```text
 ABR_Context* HMS_ABR_CreateContext(ABR_RenderAPI_Type type)
@@ -1372,6 +1467,7 @@ ABR_Context* HMS_ABR_CreateContext(ABR_RenderAPI_Type type)
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | type | 图形API类型ABR_RenderAPI_Type。 |
@@ -1383,9 +1479,10 @@ ABR_Context* HMS_ABR_CreateContext(ABR_RenderAPI_Type type)
  
   
 
-#### HMS_ABR_Deactivate()
+### HMS_ABR_Deactivate()
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 ```text
 ABR_ErrorCode HMS_ABR_Deactivate(ABR_Context* context)
@@ -1399,6 +1496,7 @@ ABR_ErrorCode HMS_ABR_Deactivate(ABR_Context* context)
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的ABR上下文实例，即指向ABR_Context实例的指针，非空，否则返回失败。 |
@@ -1410,9 +1508,10 @@ ABR_ErrorCode HMS_ABR_Deactivate(ABR_Context* context)
  
   
 
-#### HMS_ABR_DestroyContext()
+### HMS_ABR_DestroyContext()
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 ```text
 ABR_ErrorCode HMS_ABR_DestroyContext(ABR_Context** context)
@@ -1426,6 +1525,7 @@ ABR_ErrorCode HMS_ABR_DestroyContext(ABR_Context** context)
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的指向ABR上下文实例ABR_Context的二级指针，非空，否则返回失败。 |
@@ -1437,9 +1537,10 @@ ABR_ErrorCode HMS_ABR_DestroyContext(ABR_Context** context)
  
   
 
-#### HMS_ABR_GetScale()
+### HMS_ABR_GetScale()
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 ```text
 ABR_ErrorCode HMS_ABR_GetScale(ABR_Context* context, float* scale )
@@ -1453,6 +1554,7 @@ ABR_ErrorCode HMS_ABR_GetScale(ABR_Context* context, float* scale )
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的ABR上下文实例，即指向ABR_Context实例的指针，非空，否则返回失败。 |
@@ -1465,9 +1567,10 @@ ABR_ErrorCode HMS_ABR_GetScale(ABR_Context* context, float* scale )
  
   
 
-#### HMS_ABR_GetNextScale()
+### HMS_ABR_GetNextScale()
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 ```text
 ABR_ErrorCode HMS_ABR_GetNextScale(ABR_Context* context, float* scale)
@@ -1481,6 +1584,7 @@ ABR_ErrorCode HMS_ABR_GetNextScale(ABR_Context* context, float* scale)
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的ABR上下文实例，即指向ABR_Context实例的指针，非空，否则返回失败。 |
@@ -1493,9 +1597,10 @@ ABR_ErrorCode HMS_ABR_GetNextScale(ABR_Context* context, float* scale)
  
   
 
-#### HMS_ABR_IsActive()
+### HMS_ABR_IsActive()
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 ```text
 ABR_ErrorCode HMS_ABR_IsActive(ABR_Context* context, bool* isActive )
@@ -1509,6 +1614,7 @@ ABR_ErrorCode HMS_ABR_IsActive(ABR_Context* context, bool* isActive )
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的ABR上下文实例，即指向ABR_Context实例的指针，非空，否则返回失败。 |
@@ -1521,9 +1627,10 @@ ABR_ErrorCode HMS_ABR_IsActive(ABR_Context* context, bool* isActive )
  
   
 
-#### HMS_ABR_MarkFrameBuffer_GLES()
+### HMS_ABR_MarkFrameBuffer_GLES()
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 ```text
 ABR_ErrorCode HMS_ABR_MarkFrameBuffer_GLES(ABR_Context* context)
@@ -1537,6 +1644,7 @@ ABR_ErrorCode HMS_ABR_MarkFrameBuffer_GLES(ABR_Context* context)
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的ABR上下文实例，即指向ABR_Context实例的指针，非空，否则返回失败。 |
@@ -1548,9 +1656,10 @@ ABR_ErrorCode HMS_ABR_MarkFrameBuffer_GLES(ABR_Context* context)
  
   
 
-#### HMS_ABR_GetScaledTexture_GLES()
+### HMS_ABR_GetScaledTexture_GLES()
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 ```text
 ABR_ErrorCode HMS_ABR_GetScaledTexture_GLES(ABR_Context* context, uint32_t originTexture, uint32_t* scaledTexture)
@@ -1564,6 +1673,7 @@ ABR_ErrorCode HMS_ABR_GetScaledTexture_GLES(ABR_Context* context, uint32_t origi
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的ABR上下文实例，即指向ABR_Context实例的指针，非空，否则返回失败。 |
@@ -1577,9 +1687,10 @@ ABR_ErrorCode HMS_ABR_GetScaledTexture_GLES(ABR_Context* context, uint32_t origi
  
   
 
-#### HMS_ABR_SetScaleRange()
+### HMS_ABR_SetScaleRange()
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 ```text
 ABR_ErrorCode HMS_ABR_SetScaleRange(ABR_Context* context, const float minValue, const float maxValue )
@@ -1593,6 +1704,7 @@ ABR_ErrorCode HMS_ABR_SetScaleRange(ABR_Context* context, const float minValue, 
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的ABR上下文实例，即指向ABR_Context实例的指针，非空，否则返回失败。 |
@@ -1606,9 +1718,10 @@ ABR_ErrorCode HMS_ABR_SetScaleRange(ABR_Context* context, const float minValue, 
  
   
 
-#### HMS_ABR_SetTargetFps()
+### HMS_ABR_SetTargetFps()
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 ```text
 ABR_ErrorCode HMS_ABR_SetTargetFps(ABR_Context* context, const uint32_t targetFps )
@@ -1622,6 +1735,7 @@ ABR_ErrorCode HMS_ABR_SetTargetFps(ABR_Context* context, const uint32_t targetFp
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的ABR上下文实例，即指向ABR_Context实例的指针，非空，否则返回失败。 |
@@ -1634,9 +1748,10 @@ ABR_ErrorCode HMS_ABR_SetTargetFps(ABR_Context* context, const uint32_t targetFp
  
   
 
-#### HMS_ABR_UpdateCameraData()
+### HMS_ABR_UpdateCameraData()
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 ```text
 ABR_ErrorCode HMS_ABR_UpdateCameraData(ABR_Context* context, ABR_CameraData* data )
@@ -1650,6 +1765,7 @@ ABR_ErrorCode HMS_ABR_UpdateCameraData(ABR_Context* context, ABR_CameraData* dat
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的ABR上下文实例，即指向ABR_Context实例的指针，非空，否则返回失败。 |
@@ -1662,7 +1778,8 @@ ABR_ErrorCode HMS_ABR_UpdateCameraData(ABR_Context* context, ABR_CameraData* dat
  
   
 
-#### HMS_FG_IsFrameGenerationSupported()
+### HMS_FG_IsFrameGenerationSupported()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1678,6 +1795,7 @@ bool HMS_FG_IsFrameGenerationSupported(FG_FeatureType featureType)
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | featureType | 超帧的特性类型FG_FeatureType。 |
@@ -1689,7 +1807,8 @@ bool HMS_FG_IsFrameGenerationSupported(FG_FeatureType featureType)
  
   
 
-#### HMS_FG_Activate_GLES()
+### HMS_FG_Activate_GLES()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1705,6 +1824,7 @@ FG_ErrorCode HMS_FG_Activate_GLES(FG_Context_GLES* context)
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的超帧上下文实例，即指向FG_Context_GLES对象的指针，不允许为空。 |
@@ -1716,7 +1836,8 @@ FG_ErrorCode HMS_FG_Activate_GLES(FG_Context_GLES* context)
  
   
 
-#### HMS_FG_Activate_VK()
+### HMS_FG_Activate_VK()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1732,6 +1853,7 @@ FG_ErrorCode HMS_FG_Activate_VK(FG_Context_VK* context)
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的超帧上下文实例，即指向FG_Context_VK对象的指针，不允许为空。 |
@@ -1743,7 +1865,8 @@ FG_ErrorCode HMS_FG_Activate_VK(FG_Context_VK* context)
  
   
 
-#### HMS_FG_CreateContext_GLES()
+### HMS_FG_CreateContext_GLES()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1763,7 +1886,8 @@ FG_Context_GLES* HMS_FG_CreateContext_GLES(void )
  
   
 
-#### HMS_FG_CreateContext_VK()
+### HMS_FG_CreateContext_VK()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1779,6 +1903,7 @@ FG_Context_VK* HMS_FG_CreateContext_VK(const FG_ContextDescription_VK* contextDe
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | contextDescription | 指向创建超帧上下文实例所需属性信息结构体FG_ContextDescription_VK对象的指针，不允许为空。 |
@@ -1790,7 +1915,8 @@ FG_Context_VK* HMS_FG_CreateContext_VK(const FG_ContextDescription_VK* contextDe
  
   
 
-#### HMS_FG_CreateImage_VK()
+### HMS_FG_CreateImage_VK()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1806,6 +1932,7 @@ FG_Image_VK* HMS_FG_CreateImage_VK(FG_Context_VK* context, VkImage image, VkImag
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的超帧上下文实例，即指向FG_Context_VK对象的指针，不允许为空。 |
@@ -1819,7 +1946,8 @@ FG_Image_VK* HMS_FG_CreateImage_VK(FG_Context_VK* context, VkImage image, VkImag
  
   
 
-#### HMS_FG_Deactivate_GLES()
+### HMS_FG_Deactivate_GLES()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1835,6 +1963,7 @@ FG_ErrorCode HMS_FG_Deactivate_GLES(FG_Context_GLES* context)
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的超帧上下文实例，即指向FG_Context_GLES对象的指针，不允许为空。 |
@@ -1846,7 +1975,8 @@ FG_ErrorCode HMS_FG_Deactivate_GLES(FG_Context_GLES* context)
  
   
 
-#### HMS_FG_Deactivate_VK()
+### HMS_FG_Deactivate_VK()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1862,6 +1992,7 @@ FG_ErrorCode HMS_FG_Deactivate_VK(FG_Context_VK* context)
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的超帧上下文实例，即指向FG_Context_VK对象的指针，不允许为空。 |
@@ -1873,7 +2004,8 @@ FG_ErrorCode HMS_FG_Deactivate_VK(FG_Context_VK* context)
  
   
 
-#### HMS_FG_DestroyContext_GLES()
+### HMS_FG_DestroyContext_GLES()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1889,6 +2021,7 @@ FG_ErrorCode HMS_FG_DestroyContext_GLES(FG_Context_GLES** context)
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的指向超帧上下文结构体FG_Context_GLES对象的二级指针，不允许为空。 |
@@ -1900,7 +2033,8 @@ FG_ErrorCode HMS_FG_DestroyContext_GLES(FG_Context_GLES** context)
  
   
 
-#### HMS_FG_DestroyContext_VK()
+### HMS_FG_DestroyContext_VK()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1916,6 +2050,7 @@ FG_ErrorCode HMS_FG_DestroyContext_VK(FG_Context_VK** context)
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的指向超帧上下文结构体FG_Context_VK对象的二级指针，不允许为空。 |
@@ -1927,7 +2062,8 @@ FG_ErrorCode HMS_FG_DestroyContext_VK(FG_Context_VK** context)
  
   
 
-#### HMS_FG_DestroyImage_VK()
+### HMS_FG_DestroyImage_VK()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1943,6 +2079,7 @@ FG_ErrorCode HMS_FG_DestroyImage_VK(FG_Context_VK* context, FG_Image_VK* image )
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的超帧上下文实例，即指向FG_Context_VK对象的指针，不允许为空。 |
@@ -1955,7 +2092,8 @@ FG_ErrorCode HMS_FG_DestroyImage_VK(FG_Context_VK* context, FG_Image_VK* image )
  
   
 
-#### HMS_FG_Dispatch_GLES()
+### HMS_FG_Dispatch_GLES()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1971,6 +2109,7 @@ FG_ErrorCode HMS_FG_Dispatch_GLES(FG_Context_GLES* context, const FG_DispatchDes
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的超帧上下文实例，即指向FG_Context_GLES对象的指针，不允许为空。 |
@@ -1983,7 +2122,8 @@ FG_ErrorCode HMS_FG_Dispatch_GLES(FG_Context_GLES* context, const FG_DispatchDes
  
   
 
-#### HMS_FG_SetExtendedCameraInfo_GLES()
+### HMS_FG_SetExtendedCameraInfo_GLES()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1999,6 +2139,7 @@ FG_ErrorCode HMS_FG_SetExtendedCameraInfo_GLES(FG_Context_GLES* context, const F
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的超帧上下文实例，即指向FG_Context_GLES对象的指针，不允许为空。 |
@@ -2011,7 +2152,8 @@ FG_ErrorCode HMS_FG_SetExtendedCameraInfo_GLES(FG_Context_GLES* context, const F
  
   
 
-#### HMS_FG_Dispatch_VK()
+### HMS_FG_Dispatch_VK()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2027,6 +2169,7 @@ FG_ErrorCode HMS_FG_Dispatch_VK(FG_Context_VK* context, const FG_DispatchDescrip
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的超帧上下文实例，即指向FG_Context_VK对象的指针，不允许为空。 |
@@ -2039,7 +2182,8 @@ FG_ErrorCode HMS_FG_Dispatch_VK(FG_Context_VK* context, const FG_DispatchDescrip
  
   
 
-#### HMS_FG_IsActive_GLES()
+### HMS_FG_IsActive_GLES()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2055,6 +2199,7 @@ FG_ErrorCode HMS_FG_IsActive_GLES(FG_Context_GLES* context, bool* isActive )
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的超帧上下文实例，即指向FG_Context_GLES对象的指针，不允许为空。 |
@@ -2067,7 +2212,8 @@ FG_ErrorCode HMS_FG_IsActive_GLES(FG_Context_GLES* context, bool* isActive )
  
   
 
-#### HMS_FG_IsActive_VK()
+### HMS_FG_IsActive_VK()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2083,6 +2229,7 @@ FG_ErrorCode HMS_FG_IsActive_VK(FG_Context_VK* context, bool* isActive )
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的超帧上下文实例，即指向FG_Context_VK对象的指针，不允许为空。 |
@@ -2095,7 +2242,8 @@ FG_ErrorCode HMS_FG_IsActive_VK(FG_Context_VK* context, bool* isActive )
  
   
 
-#### HMS_FG_SetAlgorithmMode_GLES()
+### HMS_FG_SetAlgorithmMode_GLES()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2111,6 +2259,7 @@ FG_ErrorCode HMS_FG_SetAlgorithmMode_GLES(FG_Context_GLES* context, const FG_Alg
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的超帧上下文实例，即指向FG_Context_GLES对象的指针，不允许为空。 |
@@ -2123,7 +2272,8 @@ FG_ErrorCode HMS_FG_SetAlgorithmMode_GLES(FG_Context_GLES* context, const FG_Alg
  
   
 
-#### HMS_FG_SetAlgorithmMode_VK()
+### HMS_FG_SetAlgorithmMode_VK()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2139,6 +2289,7 @@ FG_ErrorCode HMS_FG_SetAlgorithmMode_VK(FG_Context_VK* context, const FG_Algorit
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的超帧上下文实例，即指向FG_Context_VK对象的指针，不允许为空。 |
@@ -2151,7 +2302,8 @@ FG_ErrorCode HMS_FG_SetAlgorithmMode_VK(FG_Context_VK* context, const FG_Algorit
  
   
 
-#### HMS_FG_SetCvvZSemantic_GLES()
+### HMS_FG_SetCvvZSemantic_GLES()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2167,6 +2319,7 @@ FG_ErrorCode HMS_FG_SetCvvZSemantic_GLES(FG_Context_GLES* context, FG_CvvZSemant
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的超帧上下文实例，即指向FG_Context_GLES对象的指针，不允许为空。 |
@@ -2179,7 +2332,8 @@ FG_ErrorCode HMS_FG_SetCvvZSemantic_GLES(FG_Context_GLES* context, FG_CvvZSemant
  
   
 
-#### HMS_FG_SetCvvZSemantic_VK()
+### HMS_FG_SetCvvZSemantic_VK()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2195,6 +2349,7 @@ FG_ErrorCode HMS_FG_SetCvvZSemantic_VK(FG_Context_VK* context, FG_CvvZSemantic s
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的超帧上下文实例，即指向FG_Context_VK对象的指针，不允许为空。 |
@@ -2207,7 +2362,8 @@ FG_ErrorCode HMS_FG_SetCvvZSemantic_VK(FG_Context_VK* context, FG_CvvZSemantic s
  
   
 
-#### HMS_FG_SetDepthStencilYDirectionInverted_GLES()
+### HMS_FG_SetDepthStencilYDirectionInverted_GLES()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2223,6 +2379,7 @@ FG_ErrorCode HMS_FG_SetDepthStencilYDirectionInverted_GLES(FG_Context_GLES* cont
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的超帧上下文实例，即指向FG_Context_GLES对象的指针，不允许为空。 |
@@ -2235,7 +2392,8 @@ FG_ErrorCode HMS_FG_SetDepthStencilYDirectionInverted_GLES(FG_Context_GLES* cont
  
   
 
-#### HMS_FG_SetDepthStencilYDirectionInverted_VK()
+### HMS_FG_SetDepthStencilYDirectionInverted_VK()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2251,6 +2409,7 @@ FG_ErrorCode HMS_FG_SetDepthStencilYDirectionInverted_VK(FG_Context_VK* context,
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的超帧上下文实例，即指向FG_Context_VK对象的指针，不允许为空。 |
@@ -2263,7 +2422,8 @@ FG_ErrorCode HMS_FG_SetDepthStencilYDirectionInverted_VK(FG_Context_VK* context,
  
   
 
-#### HMS_FG_SetImageFormat_GLES()
+### HMS_FG_SetImageFormat_GLES()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2279,6 +2439,7 @@ FG_ErrorCode HMS_FG_SetImageFormat_GLES(FG_Context_GLES* context, FG_ImageFormat
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的超帧上下文实例，即指向FG_Context_GLES对象的指针，不允许为空。 |
@@ -2291,7 +2452,8 @@ FG_ErrorCode HMS_FG_SetImageFormat_GLES(FG_Context_GLES* context, FG_ImageFormat
  
   
 
-#### HMS_FG_SetImageFormat_VK()
+### HMS_FG_SetImageFormat_VK()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2307,6 +2469,7 @@ FG_ErrorCode HMS_FG_SetImageFormat_VK(FG_Context_VK* context, const FG_ImageForm
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的超帧上下文实例，即指向FG_Context_VK对象的指针，不允许为空。 |
@@ -2319,7 +2482,8 @@ FG_ErrorCode HMS_FG_SetImageFormat_VK(FG_Context_VK* context, const FG_ImageForm
  
   
 
-#### HMS_FG_SetResolution_GLES()
+### HMS_FG_SetResolution_GLES()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2335,6 +2499,7 @@ FG_ErrorCode HMS_FG_SetResolution_GLES(FG_Context_GLES* context, const FG_Resolu
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的超帧上下文实例，即指向FG_Context_GLES对象的指针，不允许为空。 |
@@ -2347,7 +2512,8 @@ FG_ErrorCode HMS_FG_SetResolution_GLES(FG_Context_GLES* context, const FG_Resolu
  
   
 
-#### HMS_FG_SetResolution_VK()
+### HMS_FG_SetResolution_VK()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2363,6 +2529,7 @@ FG_ErrorCode HMS_FG_SetResolution_VK(FG_Context_VK* context, const FG_Resolution
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的超帧上下文实例，即指向FG_Context_VK对象的指针，不允许为空。 |
@@ -2375,7 +2542,8 @@ FG_ErrorCode HMS_FG_SetResolution_VK(FG_Context_VK* context, const FG_Resolution
  
   
 
-#### HMS_FG_SetIntegrationMode_GLES()
+### HMS_FG_SetIntegrationMode_GLES()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2391,6 +2559,7 @@ FG_ErrorCode HMS_FG_SetIntegrationMode_GLES(FG_Context_GLES* context, const FG_I
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的超帧上下文实例，即指向FG_Context_GLES对象的指针，不允许为空。 |
@@ -2403,7 +2572,8 @@ FG_ErrorCode HMS_FG_SetIntegrationMode_GLES(FG_Context_GLES* context, const FG_I
  
   
 
-#### HMS_FG_SetIntegrationMode_VK()
+### HMS_FG_SetIntegrationMode_VK()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2419,6 +2589,7 @@ FG_ErrorCode HMS_FG_SetIntegrationMode_VK(FG_Context_VK* context, const FG_Integ
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的超帧上下文实例，即指向FG_Context_VK对象的指针，不允许为空。 |
@@ -2431,7 +2602,8 @@ FG_ErrorCode HMS_FG_SetIntegrationMode_VK(FG_Context_VK* context, const FG_Integ
  
   
 
-#### HMS_FG_SetUiPredictionEnabled_GLES()
+### HMS_FG_SetUiPredictionEnabled_GLES()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2447,6 +2619,7 @@ FG_ErrorCode HMS_FG_SetUiPredictionEnabled_GLES(FG_Context_GLES* context, bool i
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的超帧上下文实例，即指向FG_Context_GLES对象的指针，不允许为空。 |
@@ -2459,7 +2632,8 @@ FG_ErrorCode HMS_FG_SetUiPredictionEnabled_GLES(FG_Context_GLES* context, bool i
  
   
 
-#### HMS_FG_SetUiPredictionEnabled_VK()
+### HMS_FG_SetUiPredictionEnabled_VK()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2475,6 +2649,7 @@ FG_ErrorCode HMS_FG_SetUiPredictionEnabled_VK(FG_Context_VK* context, bool isEna
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的超帧上下文实例，即指向FG_Context_VK对象的指针，不允许为空。 |
@@ -2487,7 +2662,8 @@ FG_ErrorCode HMS_FG_SetUiPredictionEnabled_VK(FG_Context_VK* context, bool isEna
  
   
 
-#### HMS_FG_SetTargetFps_GLES()
+### HMS_FG_SetTargetFps_GLES()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2503,6 +2679,7 @@ FG_ErrorCode HMS_FG_SetTargetFps_GLES(FG_Context_GLES* context, int targetFps)
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的超帧上下文实例，即指向FG_Context_GLES对象的指针，不允许为空。 |
@@ -2515,7 +2692,8 @@ FG_ErrorCode HMS_FG_SetTargetFps_GLES(FG_Context_GLES* context, int targetFps)
  
   
 
-#### HMS_FG_SetTargetFps_VK()
+### HMS_FG_SetTargetFps_VK()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2531,6 +2709,7 @@ FG_ErrorCode HMS_FG_SetTargetFps_VK(FG_Context_VK* context, int targetFps)
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的超帧上下文实例，即指向FG_Context_VK对象的指针，不允许为空。 |
@@ -2543,7 +2722,8 @@ FG_ErrorCode HMS_FG_SetTargetFps_VK(FG_Context_VK* context, int targetFps)
  
   
 
-#### HMS_OpenGTX_Activate()
+### HMS_OpenGTX_Activate()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2559,6 +2739,7 @@ OpenGTX_ErrorCode HMS_OpenGTX_Activate(OpenGTX_Context* context)
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的OpenGTX上下文实例，即指向OpenGTX_Context实例的指针；非空，否则返回失败。 |
@@ -2570,7 +2751,8 @@ OpenGTX_ErrorCode HMS_OpenGTX_Activate(OpenGTX_Context* context)
  
   
 
-#### HMS_OpenGTX_CreateContext()
+### HMS_OpenGTX_CreateContext()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2586,6 +2768,7 @@ OpenGTX_Context* HMS_OpenGTX_CreateContext(OpenGTX_DeviceInfoCallback deviceInfo
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | deviceInfoCallback | 设备的温度信息回调OpenGTX_DeviceInfoCallback。 |
@@ -2597,7 +2780,8 @@ OpenGTX_Context* HMS_OpenGTX_CreateContext(OpenGTX_DeviceInfoCallback deviceInfo
  
   
 
-#### HMS_OpenGTX_Deactivate()
+### HMS_OpenGTX_Deactivate()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2613,6 +2797,7 @@ OpenGTX_ErrorCode HMS_OpenGTX_Deactivate(OpenGTX_Context* context)
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的OpenGTX上下文实例，即指向OpenGTX_Context实例的指针；非空，否则返回失败。 |
@@ -2624,7 +2809,8 @@ OpenGTX_ErrorCode HMS_OpenGTX_Deactivate(OpenGTX_Context* context)
  
   
 
-#### HMS_OpenGTX_DestroyContext()
+### HMS_OpenGTX_DestroyContext()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2640,6 +2826,7 @@ OpenGTX_ErrorCode HMS_OpenGTX_DestroyContext(OpenGTX_Context** context)
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的OpenGTX上下文实例，即指向OpenGTX_Context实例的指针；非空，否则返回失败。 |
@@ -2651,7 +2838,8 @@ OpenGTX_ErrorCode HMS_OpenGTX_DestroyContext(OpenGTX_Context** context)
  
   
 
-#### HMS_OpenGTX_DispatchFrameRenderInfo()
+### HMS_OpenGTX_DispatchFrameRenderInfo()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2667,6 +2855,7 @@ OpenGTX_ErrorCode HMS_OpenGTX_DispatchFrameRenderInfo(OpenGTX_Context* context, 
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的OpenGTX上下文实例，即指向OpenGTX_Context实例的指针；非空，否则返回失败。 |
@@ -2679,7 +2868,8 @@ OpenGTX_ErrorCode HMS_OpenGTX_DispatchFrameRenderInfo(OpenGTX_Context* context, 
  
   
 
-#### HMS_OpenGTX_DispatchGameSceneInfo()
+### HMS_OpenGTX_DispatchGameSceneInfo()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2695,6 +2885,7 @@ OpenGTX_ErrorCode HMS_OpenGTX_DispatchGameSceneInfo(OpenGTX_Context* context, co
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的OpenGTX上下文实例，即指向OpenGTX_Context实例的指针；非空，否则返回失败。 |
@@ -2707,7 +2898,8 @@ OpenGTX_ErrorCode HMS_OpenGTX_DispatchGameSceneInfo(OpenGTX_Context* context, co
  
   
 
-#### HMS_OpenGTX_DispatchNetworkInfo()
+### HMS_OpenGTX_DispatchNetworkInfo()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2723,6 +2915,7 @@ OpenGTX_ErrorCode HMS_OpenGTX_DispatchNetworkInfo(OpenGTX_Context* context, cons
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的OpenGTX上下文实例，即指向OpenGTX_Context实例的指针；非空，否则返回失败。 |
@@ -2735,7 +2928,8 @@ OpenGTX_ErrorCode HMS_OpenGTX_DispatchNetworkInfo(OpenGTX_Context* context, cons
  
   
 
-#### HMS_OpenGTX_SetConfiguration()
+### HMS_OpenGTX_SetConfiguration()
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2751,6 +2945,7 @@ OpenGTX_ErrorCode HMS_OpenGTX_SetConfiguration (OpenGTX_Context* context, const 
  
 **参数:**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | context | 已创建的OpenGTX上下文实例，即指向OpenGTX_Context实例的指针；非空，否则返回失败。 |

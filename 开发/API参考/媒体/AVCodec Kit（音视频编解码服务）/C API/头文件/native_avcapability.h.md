@@ -1,13 +1,14 @@
 # native_avcapability.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avcapability-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明用于编解码能力查询到的Native API。
 
@@ -23,15 +24,18 @@
 
 
 
-#### 汇总
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 汇总
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 结构体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -41,9 +45,11 @@
 
 
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -54,9 +60,11 @@
 
 
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -97,15 +105,17 @@
 
 
 
-#### 枚举类型说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 枚举类型说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### OH_AVCodecCategory
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### OH_AVCodecCategory
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AVCodecCategory
@@ -119,6 +129,7 @@ enum OH_AVCodecCategory
 
 **起始版本：** 10
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | HARDWARE = 0 | 硬件编解码。 |
@@ -127,9 +138,10 @@ enum OH_AVCodecCategory
 
 
 
-#### OH_AVCodecType
+### OH_AVCodecType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AVCodecType
@@ -141,6 +153,7 @@ enum OH_AVCodecType
 
 **起始版本：** 24
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_AVCODEC_TYPE_VIDEO_ENCODER = 0 | 表示视频编码器。 起始版本： 24 |
@@ -151,9 +164,10 @@ enum OH_AVCodecType
 
 
 
-#### OH_AVCapabilityFeature
+### OH_AVCapabilityFeature
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AVCapabilityFeature
@@ -166,6 +180,7 @@ enum OH_AVCapabilityFeature
 **系统能力：** SystemCapability.Multimedia.Media.CodecBase
 
 **起始版本：** 12
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -180,15 +195,17 @@ enum OH_AVCapabilityFeature
 
 
 
-#### 函数说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 函数说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### OH_AVCodec_GetCapability()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### OH_AVCodec_GetCapability()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVCapability *OH_AVCodec_GetCapability(const char *mime, bool isEncoder)
@@ -204,6 +221,7 @@ OH_AVCapability *OH_AVCodec_GetCapability(const char *mime, bool isEncoder)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *mime | MIME类型描述字符串，请参阅AVCODEC_MIME_TYPE类型变量。 |
@@ -212,6 +230,7 @@ OH_AVCapability *OH_AVCodec_GetCapability(const char *mime, bool isEncoder)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVCapability * | 如果现有编解码器匹配，则返回能力实例，如果指定的MIME类型与任何现有编解码器不匹配，则返回NULL。 |
@@ -219,9 +238,10 @@ OH_AVCapability *OH_AVCodec_GetCapability(const char *mime, bool isEncoder)
 
 
 
-#### OH_AVCodec_GetCapabilityByCategory()
+### OH_AVCodec_GetCapabilityByCategory()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVCapability *OH_AVCodec_GetCapabilityByCategory(const char *mime, bool isEncoder, OH_AVCodecCategory category)
@@ -237,6 +257,7 @@ OH_AVCapability *OH_AVCodec_GetCapabilityByCategory(const char *mime, bool isEnc
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *mime | MIME类型描述字符串，请参阅AVCODEC_MIME_TYPE类型变量。 |
@@ -246,6 +267,7 @@ OH_AVCapability *OH_AVCodec_GetCapabilityByCategory(const char *mime, bool isEnc
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVCapability * | 如果现有编解码器匹配，则返回能力实例，如果指定的MIME类型与任何现有编解码器不匹配，则返回NULL。 |
@@ -253,9 +275,10 @@ OH_AVCapability *OH_AVCodec_GetCapabilityByCategory(const char *mime, bool isEnc
 
 
 
-#### OH_AVCodec_GetCapabilityList()
+### OH_AVCodec_GetCapabilityList()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVCapability **OH_AVCodec_GetCapabilityList(OH_AVCodecType codecType, uint32_t *count)
@@ -273,6 +296,7 @@ OH_AVCapability **OH_AVCodec_GetCapabilityList(OH_AVCodecType codecType, uint32_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodecType codecType | 指定要查询的编解码器类型。 |
@@ -281,6 +305,7 @@ OH_AVCapability **OH_AVCodec_GetCapabilityList(OH_AVCodecType codecType, uint32_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVCapability ** | 如果找到匹配项，则返回指向OH_AVCapability实例数组的指针。 如果未找到匹配的编解码器或发生错误，则返回NULL。 |
@@ -288,9 +313,10 @@ OH_AVCapability **OH_AVCodec_GetCapabilityList(OH_AVCodecType codecType, uint32_
 
 
 
-#### OH_AVCapability_IsHardware()
+### OH_AVCapability_IsHardware()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AVCapability_IsHardware(OH_AVCapability *capability)
@@ -306,12 +332,14 @@ bool OH_AVCapability_IsHardware(OH_AVCapability *capability)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCapability *capability | 编解码能力指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -320,9 +348,10 @@ bool OH_AVCapability_IsHardware(OH_AVCapability *capability)
 
 
 
-#### OH_AVCapability_IsSecure()
+### OH_AVCapability_IsSecure()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AVCapability_IsSecure(OH_AVCapability *capability)
@@ -336,12 +365,14 @@ bool OH_AVCapability_IsSecure(OH_AVCapability *capability)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCapability *capability | 编解码能力指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -350,9 +381,10 @@ bool OH_AVCapability_IsSecure(OH_AVCapability *capability)
 
 
 
-#### OH_AVCapability_GetName()
+### OH_AVCapability_GetName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 const char *OH_AVCapability_GetName(OH_AVCapability *capability)
@@ -368,12 +400,14 @@ const char *OH_AVCapability_GetName(OH_AVCapability *capability)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCapability *capability | 编解码能力指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -382,9 +416,10 @@ const char *OH_AVCapability_GetName(OH_AVCapability *capability)
 
 
 
-#### OH_AVCapability_GetMimeType()
+### OH_AVCapability_GetMimeType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 const char *OH_AVCapability_GetMimeType(OH_AVCapability *capability)
@@ -398,12 +433,14 @@ const char *OH_AVCapability_GetMimeType(OH_AVCapability *capability)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCapability *capability | 编解码能力指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -412,9 +449,10 @@ const char *OH_AVCapability_GetMimeType(OH_AVCapability *capability)
 
 
 
-#### OH_AVCapability_CheckMimeType()
+### OH_AVCapability_CheckMimeType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AVCapability_CheckMimeType(OH_AVCapability *capability, const char *mimeType)
@@ -428,6 +466,7 @@ bool OH_AVCapability_CheckMimeType(OH_AVCapability *capability, const char *mime
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCapability *capability | 编解码能力指针。 |
@@ -436,6 +475,7 @@ bool OH_AVCapability_CheckMimeType(OH_AVCapability *capability, const char *mime
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 如果MIME类型匹配则返回true，否则返回false。 |
@@ -443,9 +483,10 @@ bool OH_AVCapability_CheckMimeType(OH_AVCapability *capability, const char *mime
 
 
 
-#### OH_AVCapability_GetMaxSupportedInstances()
+### OH_AVCapability_GetMaxSupportedInstances()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_AVCapability_GetMaxSupportedInstances(OH_AVCapability *capability)
@@ -461,12 +502,14 @@ int32_t OH_AVCapability_GetMaxSupportedInstances(OH_AVCapability *capability)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCapability *capability | 编解码能力指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -475,9 +518,10 @@ int32_t OH_AVCapability_GetMaxSupportedInstances(OH_AVCapability *capability)
 
 
 
-#### OH_AVCapability_GetEncoderBitrateRange()
+### OH_AVCapability_GetEncoderBitrateRange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVCapability_GetEncoderBitrateRange(OH_AVCapability *capability, OH_AVRange *bitrateRange)
@@ -493,6 +537,7 @@ OH_AVErrCode OH_AVCapability_GetEncoderBitrateRange(OH_AVCapability *capability,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCapability *capability | 编码器能力指针。如果给的是解码器能力指针，会导致未定义行为。 |
@@ -501,6 +546,7 @@ OH_AVErrCode OH_AVCapability_GetEncoderBitrateRange(OH_AVCapability *capability,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：能力实例无效，或者指向编码器码率范围的指针为空指针。 |
@@ -508,9 +554,10 @@ OH_AVErrCode OH_AVCapability_GetEncoderBitrateRange(OH_AVCapability *capability,
 
 
 
-#### OH_AVCapability_IsEncoderBitrateModeSupported()
+### OH_AVCapability_IsEncoderBitrateModeSupported()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AVCapability_IsEncoderBitrateModeSupported(OH_AVCapability *capability, OH_BitrateMode bitrateMode)
@@ -526,6 +573,7 @@ bool OH_AVCapability_IsEncoderBitrateModeSupported(OH_AVCapability *capability, 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCapability *capability | 编码器能力指针。如果给的是解码器能力指针，会导致未定义行为。 |
@@ -534,6 +582,7 @@ bool OH_AVCapability_IsEncoderBitrateModeSupported(OH_AVCapability *capability, 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 如果支持该比特率模式，则返回true；如果不支持该比特率模式，则返回false。 |
@@ -541,9 +590,10 @@ bool OH_AVCapability_IsEncoderBitrateModeSupported(OH_AVCapability *capability, 
 
 
 
-#### OH_AVCapability_GetEncoderQualityRange()
+### OH_AVCapability_GetEncoderQualityRange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVCapability_GetEncoderQualityRange(OH_AVCapability *capability, OH_AVRange *qualityRange)
@@ -559,6 +609,7 @@ OH_AVErrCode OH_AVCapability_GetEncoderQualityRange(OH_AVCapability *capability,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCapability *capability | 编码器能力指针。如果给的是解码器能力指针，会导致未定义行为。 |
@@ -567,6 +618,7 @@ OH_AVErrCode OH_AVCapability_GetEncoderQualityRange(OH_AVCapability *capability,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：能力实例无效，或者指向编码器质量范围的指针为空指针。 |
@@ -574,9 +626,10 @@ OH_AVErrCode OH_AVCapability_GetEncoderQualityRange(OH_AVCapability *capability,
 
 
 
-#### OH_AVCapability_GetEncoderComplexityRange()
+### OH_AVCapability_GetEncoderComplexityRange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVCapability_GetEncoderComplexityRange(OH_AVCapability *capability, OH_AVRange *complexityRange)
@@ -592,6 +645,7 @@ OH_AVErrCode OH_AVCapability_GetEncoderComplexityRange(OH_AVCapability *capabili
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCapability *capability | 编码器能力指针。如果给的是解码器能力指针，会导致未定义行为。 |
@@ -600,6 +654,7 @@ OH_AVErrCode OH_AVCapability_GetEncoderComplexityRange(OH_AVCapability *capabili
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：能力实例无效，或者指向编码器复杂度范围的指针为空指针。 |
@@ -607,9 +662,10 @@ OH_AVErrCode OH_AVCapability_GetEncoderComplexityRange(OH_AVCapability *capabili
 
 
 
-#### OH_AVCapability_GetAudioSupportedSampleRates()
+### OH_AVCapability_GetAudioSupportedSampleRates()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVCapability_GetAudioSupportedSampleRates(OH_AVCapability *capability, const int32_t **sampleRates, uint32_t *sampleRateNum)
@@ -625,6 +681,7 @@ OH_AVErrCode OH_AVCapability_GetAudioSupportedSampleRates(OH_AVCapability *capab
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCapability *capability | 音频编解码能力指针。如果给的是视频编解码器能力指针，会导致未定义行为。 |
@@ -634,6 +691,7 @@ OH_AVErrCode OH_AVCapability_GetAudioSupportedSampleRates(OH_AVCapability *capab
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：能力实例无效，或者指向采样率数组的指针为空指针，或者指向采样率数组的元素数目的指针为空指针。 AV_ERR_UNKNOWN：未知错误。 AV_ERR_NO_MEMORY：内部使用内存分配失败。 |
@@ -641,9 +699,10 @@ OH_AVErrCode OH_AVCapability_GetAudioSupportedSampleRates(OH_AVCapability *capab
 
 
 
-#### OH_AVCapability_GetAudioSupportedSampleRateRanges()
+### OH_AVCapability_GetAudioSupportedSampleRateRanges()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVCapability_GetAudioSupportedSampleRateRanges(OH_AVCapability *capability, OH_AVRange **sampleRateRanges, uint32_t *rangesNum)
@@ -659,6 +718,7 @@ OH_AVErrCode OH_AVCapability_GetAudioSupportedSampleRateRanges(OH_AVCapability *
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCapability *capability | 音频编解码能力指针。如果给的是视频编解码器能力指针，会导致未定义行为。 |
@@ -668,6 +728,7 @@ OH_AVErrCode OH_AVCapability_GetAudioSupportedSampleRateRanges(OH_AVCapability *
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：能力实例无效，或者指向采样率范围数组的指针为空指针，或者指向采样率范围数组的元素数目的指针为空指针。 AV_ERR_UNKNOWN：未知错误。 AV_ERR_NO_MEMORY：内部使用内存分配失败。 |
@@ -675,9 +736,10 @@ OH_AVErrCode OH_AVCapability_GetAudioSupportedSampleRateRanges(OH_AVCapability *
 
 
 
-#### OH_AVCapability_GetAudioChannelCountRange()
+### OH_AVCapability_GetAudioChannelCountRange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVCapability_GetAudioChannelCountRange(OH_AVCapability *capability, OH_AVRange *channelCountRange)
@@ -693,6 +755,7 @@ OH_AVErrCode OH_AVCapability_GetAudioChannelCountRange(OH_AVCapability *capabili
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCapability *capability | 音频编解码能力指针。如果给的是视频编解码器能力指针，会导致未定义行为。 |
@@ -701,6 +764,7 @@ OH_AVErrCode OH_AVCapability_GetAudioChannelCountRange(OH_AVCapability *capabili
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：能力实例无效，或者指向音频通道计数范围的指针为空指针。 |
@@ -708,9 +772,10 @@ OH_AVErrCode OH_AVCapability_GetAudioChannelCountRange(OH_AVCapability *capabili
 
 
 
-#### OH_AVCapability_GetVideoWidthAlignment()
+### OH_AVCapability_GetVideoWidthAlignment()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVCapability_GetVideoWidthAlignment(OH_AVCapability *capability, int32_t *widthAlignment)
@@ -726,6 +791,7 @@ OH_AVErrCode OH_AVCapability_GetVideoWidthAlignment(OH_AVCapability *capability,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCapability *capability | 视频编解码能力指针。如果给的是音频编解码器能力指针，会导致未定义行为。 |
@@ -734,6 +800,7 @@ OH_AVErrCode OH_AVCapability_GetVideoWidthAlignment(OH_AVCapability *capability,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：能力实例无效，或者指向视频宽度对齐的指针为空指针。 |
@@ -741,9 +808,10 @@ OH_AVErrCode OH_AVCapability_GetVideoWidthAlignment(OH_AVCapability *capability,
 
 
 
-#### OH_AVCapability_GetVideoHeightAlignment()
+### OH_AVCapability_GetVideoHeightAlignment()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVCapability_GetVideoHeightAlignment(OH_AVCapability *capability, int32_t *heightAlignment)
@@ -759,6 +827,7 @@ OH_AVErrCode OH_AVCapability_GetVideoHeightAlignment(OH_AVCapability *capability
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCapability *capability | 视频编解码能力指针。如果给的是音频编解码器能力指针，会导致未定义行为。 |
@@ -767,6 +836,7 @@ OH_AVErrCode OH_AVCapability_GetVideoHeightAlignment(OH_AVCapability *capability
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：能力实例无效，或者指向视频高度对齐的指针为空指针。 |
@@ -774,9 +844,10 @@ OH_AVErrCode OH_AVCapability_GetVideoHeightAlignment(OH_AVCapability *capability
 
 
 
-#### OH_AVCapability_GetVideoWidthRangeForHeight()
+### OH_AVCapability_GetVideoWidthRangeForHeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVCapability_GetVideoWidthRangeForHeight(OH_AVCapability *capability, int32_t height, OH_AVRange *widthRange)
@@ -792,6 +863,7 @@ OH_AVErrCode OH_AVCapability_GetVideoWidthRangeForHeight(OH_AVCapability *capabi
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCapability *capability | 视频编解码能力指针。如果给的是音频编解码器能力指针，会导致未定义行为。 |
@@ -801,6 +873,7 @@ OH_AVErrCode OH_AVCapability_GetVideoWidthRangeForHeight(OH_AVCapability *capabi
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：能力实例无效，或者高度不在通过OH_AVCapability_GetVideoHeightRange获取支持的高度范围中，或者指向宽度范围的指针为空指针。 |
@@ -808,9 +881,10 @@ OH_AVErrCode OH_AVCapability_GetVideoWidthRangeForHeight(OH_AVCapability *capabi
 
 
 
-#### OH_AVCapability_GetVideoHeightRangeForWidth()
+### OH_AVCapability_GetVideoHeightRangeForWidth()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVCapability_GetVideoHeightRangeForWidth(OH_AVCapability *capability, int32_t width, OH_AVRange *heightRange)
@@ -826,6 +900,7 @@ OH_AVErrCode OH_AVCapability_GetVideoHeightRangeForWidth(OH_AVCapability *capabi
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCapability *capability | 视频编解码能力指针。如果给的是音频编解码器能力指针，会导致未定义行为。 |
@@ -835,6 +910,7 @@ OH_AVErrCode OH_AVCapability_GetVideoHeightRangeForWidth(OH_AVCapability *capabi
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：能力实例无效，或者宽度不在通过OH_AVCapability_GetVideoWidthRange获取支持的宽度范围中，或者指向高度范围的指针为空指针。 |
@@ -842,9 +918,10 @@ OH_AVErrCode OH_AVCapability_GetVideoHeightRangeForWidth(OH_AVCapability *capabi
 
 
 
-#### OH_AVCapability_GetVideoWidthRange()
+### OH_AVCapability_GetVideoWidthRange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVCapability_GetVideoWidthRange(OH_AVCapability *capability, OH_AVRange *widthRange)
@@ -860,6 +937,7 @@ OH_AVErrCode OH_AVCapability_GetVideoWidthRange(OH_AVCapability *capability, OH_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCapability *capability | 视频编解码能力指针。如果给的是音频编解码器能力指针，会导致未定义行为。 |
@@ -868,6 +946,7 @@ OH_AVErrCode OH_AVCapability_GetVideoWidthRange(OH_AVCapability *capability, OH_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：能力实例无效，或者指向视频宽度范围的指针为空指针。 |
@@ -875,9 +954,10 @@ OH_AVErrCode OH_AVCapability_GetVideoWidthRange(OH_AVCapability *capability, OH_
 
 
 
-#### OH_AVCapability_GetVideoHeightRange()
+### OH_AVCapability_GetVideoHeightRange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVCapability_GetVideoHeightRange(OH_AVCapability *capability, OH_AVRange *heightRange)
@@ -893,6 +973,7 @@ OH_AVErrCode OH_AVCapability_GetVideoHeightRange(OH_AVCapability *capability, OH
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCapability *capability | 视频编解码能力指针。如果给的是音频编解码器能力指针，会导致未定义行为。 |
@@ -901,6 +982,7 @@ OH_AVErrCode OH_AVCapability_GetVideoHeightRange(OH_AVCapability *capability, OH
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：能力实例无效，或者指向视频高度范围的指针为空指针。 |
@@ -908,9 +990,10 @@ OH_AVErrCode OH_AVCapability_GetVideoHeightRange(OH_AVCapability *capability, OH
 
 
 
-#### OH_AVCapability_IsVideoSizeSupported()
+### OH_AVCapability_IsVideoSizeSupported()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AVCapability_IsVideoSizeSupported(OH_AVCapability *capability, int32_t width, int32_t height)
@@ -926,6 +1009,7 @@ bool OH_AVCapability_IsVideoSizeSupported(OH_AVCapability *capability, int32_t w
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCapability *capability | 视频编解码能力指针。如果给的是音频编解码器能力指针，会导致未定义行为。 |
@@ -935,6 +1019,7 @@ bool OH_AVCapability_IsVideoSizeSupported(OH_AVCapability *capability, int32_t w
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 如果支持该视频大小，则返回true，如果不支持该视频大小，则返回false。 |
@@ -942,9 +1027,10 @@ bool OH_AVCapability_IsVideoSizeSupported(OH_AVCapability *capability, int32_t w
 
 
 
-#### OH_AVCapability_GetVideoFrameRateRange()
+### OH_AVCapability_GetVideoFrameRateRange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVCapability_GetVideoFrameRateRange(OH_AVCapability *capability, OH_AVRange *frameRateRange)
@@ -960,6 +1046,7 @@ OH_AVErrCode OH_AVCapability_GetVideoFrameRateRange(OH_AVCapability *capability,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCapability *capability | 视频编解码能力指针。如果给的是音频编解码器能力指针，会导致未定义行为。 |
@@ -968,6 +1055,7 @@ OH_AVErrCode OH_AVCapability_GetVideoFrameRateRange(OH_AVCapability *capability,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：能力实例无效，或者指向视频帧率范围的指针为空指针。 |
@@ -975,9 +1063,10 @@ OH_AVErrCode OH_AVCapability_GetVideoFrameRateRange(OH_AVCapability *capability,
 
 
 
-#### OH_AVCapability_GetVideoFrameRateRangeForSize()
+### OH_AVCapability_GetVideoFrameRateRangeForSize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVCapability_GetVideoFrameRateRangeForSize(OH_AVCapability *capability, int32_t width, int32_t height, OH_AVRange *frameRateRange)
@@ -993,6 +1082,7 @@ OH_AVErrCode OH_AVCapability_GetVideoFrameRateRangeForSize(OH_AVCapability *capa
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCapability *capability | 视频编解码能力指针。如果给的是音频编解码器能力指针，会导致未定义行为。 |
@@ -1003,6 +1093,7 @@ OH_AVErrCode OH_AVCapability_GetVideoFrameRateRangeForSize(OH_AVCapability *capa
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：能力实例无效，或者宽度和高度组合不支持，或者指向帧率范围的指针为空指针。 |
@@ -1010,9 +1101,10 @@ OH_AVErrCode OH_AVCapability_GetVideoFrameRateRangeForSize(OH_AVCapability *capa
 
 
 
-#### OH_AVCapability_AreVideoSizeAndFrameRateSupported()
+### OH_AVCapability_AreVideoSizeAndFrameRateSupported()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AVCapability_AreVideoSizeAndFrameRateSupported(OH_AVCapability *capability, int32_t width, int32_t height, int32_t frameRate)
@@ -1028,6 +1120,7 @@ bool OH_AVCapability_AreVideoSizeAndFrameRateSupported(OH_AVCapability *capabili
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCapability *capability | 视频编解码能力指针。如果给的是音频编解码器能力指针，会导致未定义行为。 |
@@ -1038,6 +1131,7 @@ bool OH_AVCapability_AreVideoSizeAndFrameRateSupported(OH_AVCapability *capabili
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 如果支持视频大小和帧率的组合，则返回true。如果不支持，则为false。 |
@@ -1045,9 +1139,10 @@ bool OH_AVCapability_AreVideoSizeAndFrameRateSupported(OH_AVCapability *capabili
 
 
 
-#### OH_AVCapability_GetVideoSupportedPixelFormats()
+### OH_AVCapability_GetVideoSupportedPixelFormats()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVCapability_GetVideoSupportedPixelFormats(OH_AVCapability *capability, const int32_t **pixelFormats, uint32_t *pixelFormatNum)
@@ -1063,6 +1158,7 @@ OH_AVErrCode OH_AVCapability_GetVideoSupportedPixelFormats(OH_AVCapability *capa
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCapability *capability | 视频编解码能力指针。如果给的是音频编解码器能力指针，会导致未定义行为。 |
@@ -1072,6 +1168,7 @@ OH_AVErrCode OH_AVCapability_GetVideoSupportedPixelFormats(OH_AVCapability *capa
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：能力实例无效，或者指向视频像素格式数组的指针为空指针，或者指向像素格式数组的元素数目的指针为空指针。 AV_ERR_UNKNOWN：未知错误。 AV_ERR_NO_MEMORY：内部使用内存分配失败。 |
@@ -1079,9 +1176,10 @@ OH_AVErrCode OH_AVCapability_GetVideoSupportedPixelFormats(OH_AVCapability *capa
 
 
 
-#### OH_AVCapability_GetVideoSupportedNativeBufferFormats()
+### OH_AVCapability_GetVideoSupportedNativeBufferFormats()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVCapability_GetVideoSupportedNativeBufferFormats(OH_AVCapability *capability, const OH_NativeBuffer_Format **nativeBufferFormats, uint32_t *nativeBufferFormatNum)
@@ -1097,6 +1195,7 @@ OH_AVErrCode OH_AVCapability_GetVideoSupportedNativeBufferFormats(OH_AVCapabilit
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCapability *capability | 视频编解码能力指针。 |
@@ -1106,6 +1205,7 @@ OH_AVErrCode OH_AVCapability_GetVideoSupportedNativeBufferFormats(OH_AVCapabilit
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：能力实例无效、能力实例是音频编解码器能力、指向NativeBuffer格式数组的指针为空指针、 或指向NativeBuffer格式数组的元素数目的指针为空指针。 AV_ERR_UNKNOWN：未知错误。 AV_ERR_NO_MEMORY：内部使用内存分配失败。 |
@@ -1113,9 +1213,10 @@ OH_AVErrCode OH_AVCapability_GetVideoSupportedNativeBufferFormats(OH_AVCapabilit
 
 
 
-#### OH_AVCapability_GetSupportedProfiles()
+### OH_AVCapability_GetSupportedProfiles()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVCapability_GetSupportedProfiles(OH_AVCapability *capability, const int32_t **profiles, uint32_t *profileNum)
@@ -1131,6 +1232,7 @@ OH_AVErrCode OH_AVCapability_GetSupportedProfiles(OH_AVCapability *capability, c
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCapability *capability | 编解码能力指针。 |
@@ -1140,6 +1242,7 @@ OH_AVErrCode OH_AVCapability_GetSupportedProfiles(OH_AVCapability *capability, c
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：能力实例无效，或者指向档次数组的指针为空指针，或者指向档次数组的元素数目的指针为空指针。 AV_ERR_UNKNOWN：未知错误。 AV_ERR_NO_MEMORY：内部使用内存分配失败。 |
@@ -1147,9 +1250,10 @@ OH_AVErrCode OH_AVCapability_GetSupportedProfiles(OH_AVCapability *capability, c
 
 
 
-#### OH_AVCapability_GetSupportedLevelsForProfile()
+### OH_AVCapability_GetSupportedLevelsForProfile()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVCapability_GetSupportedLevelsForProfile(OH_AVCapability *capability, int32_t profile, const int32_t **levels, uint32_t *levelNum)
@@ -1165,6 +1269,7 @@ OH_AVErrCode OH_AVCapability_GetSupportedLevelsForProfile(OH_AVCapability *capab
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCapability *capability | 编解码能力指针。 |
@@ -1175,6 +1280,7 @@ OH_AVErrCode OH_AVCapability_GetSupportedLevelsForProfile(OH_AVCapability *capab
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：能力实例无效，或者档次不在通过OH_AVCapability_GetSupportedProfiles获取支持的档次数组中，或者指向级别数组的指针为空指针，或者指向级别数组的元素数目的指针为空指针。 AV_ERR_UNKNOWN：未知错误。 AV_ERR_NO_MEMORY：内部使用内存分配失败。 |
@@ -1182,9 +1288,10 @@ OH_AVErrCode OH_AVCapability_GetSupportedLevelsForProfile(OH_AVCapability *capab
 
 
 
-#### OH_AVCapability_AreProfileAndLevelSupported()
+### OH_AVCapability_AreProfileAndLevelSupported()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AVCapability_AreProfileAndLevelSupported(OH_AVCapability *capability, int32_t profile, int32_t level)
@@ -1200,6 +1307,7 @@ bool OH_AVCapability_AreProfileAndLevelSupported(OH_AVCapability *capability, in
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCapability *capability | 编解码能力指针。 |
@@ -1209,6 +1317,7 @@ bool OH_AVCapability_AreProfileAndLevelSupported(OH_AVCapability *capability, in
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 如果支持档次和级别的组合，则返回true。如果不支持，则为false。 |
@@ -1216,9 +1325,10 @@ bool OH_AVCapability_AreProfileAndLevelSupported(OH_AVCapability *capability, in
 
 
 
-#### OH_AVCapability_IsFeatureSupported()
+### OH_AVCapability_IsFeatureSupported()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AVCapability_IsFeatureSupported(OH_AVCapability *capability, OH_AVCapabilityFeature feature)
@@ -1234,6 +1344,7 @@ bool OH_AVCapability_IsFeatureSupported(OH_AVCapability *capability, OH_AVCapabi
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCapability *capability | 编解码能力指针。 |
@@ -1242,6 +1353,7 @@ bool OH_AVCapability_IsFeatureSupported(OH_AVCapability *capability, OH_AVCapabi
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 如果支持该特性，则返回true。如果不支持，则为false。 |
@@ -1249,9 +1361,10 @@ bool OH_AVCapability_IsFeatureSupported(OH_AVCapability *capability, OH_AVCapabi
 
 
 
-#### OH_AVCapability_GetFeatureProperties()
+### OH_AVCapability_GetFeatureProperties()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVFormat *OH_AVCapability_GetFeatureProperties(OH_AVCapability *capability, OH_AVCapabilityFeature feature)
@@ -1267,6 +1380,7 @@ OH_AVFormat *OH_AVCapability_GetFeatureProperties(OH_AVCapability *capability, O
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCapability *capability | 编解码能力指针。 |
@@ -1274,6 +1388,7 @@ OH_AVFormat *OH_AVCapability_GetFeatureProperties(OH_AVCapability *capability, O
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |

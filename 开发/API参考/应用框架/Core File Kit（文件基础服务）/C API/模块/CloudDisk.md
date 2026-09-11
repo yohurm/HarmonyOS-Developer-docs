@@ -1,11 +1,12 @@
 # CloudDisk
 
-更新时间：2026-03-09 02:50:43
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-clouddisk
 **支持设备：** PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
 
 **支持设备：** PC/2in1 | Tablet
 
@@ -17,10 +18,12 @@
  
   
 
-#### 文件汇总
+## 文件汇总
+
 
 **支持设备：** PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | cloud_disk_error_code.h | 提供云盘管理模块的错误码定义。 |

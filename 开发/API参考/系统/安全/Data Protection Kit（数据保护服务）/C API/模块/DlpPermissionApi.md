@@ -1,24 +1,27 @@
 # DlpPermissionApi
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-dlppermissionapi
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-数据防泄漏（DLP）是系统提供的系统级的数据防泄漏解决方案，提供跨设备的文件的权限管理、加密存储、授权访问等能力。
+数据防泄露（DLP）是系统级的数据防泄露解决方案，提供跨设备的文件的权限管理、加密存储、授权访问等能力。
  
 **起始版本：** 14
  
   
 
-#### 文件汇总
+## 文件汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | dlp_permission_api.h | 声明用于跨设备的文件的权限管理、加密存储、授权访问等能力的接口。 |

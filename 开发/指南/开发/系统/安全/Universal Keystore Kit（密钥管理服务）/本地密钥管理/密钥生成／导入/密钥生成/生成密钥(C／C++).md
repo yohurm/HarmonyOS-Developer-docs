@@ -1,13 +1,13 @@
 # 生成密钥(C/C++)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-key-generation-ndk
 
 以ECC算法为例，生成随机密钥。具体的场景介绍及支持的算法规格，请参考[密钥生成支持的算法](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-key-generation-overview#支持的算法)。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/pj3yExE-TP6sRkftjR_YRA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095801Z&HW-CC-Expire=86400&HW-CC-Sign=11124E40112C0209555533C3450C474881320B1E750CF7E873169BBEAD211D5E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/4XqtYKByTLOZFntbauf1Uw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072804Z&HW-CC-Expire=86400&HW-CC-Sign=D26DAA9EEAC1B05615C43300C8B1AE4318808BF247062935E819AEB564DD3CDD)
 
 
 密钥别名中禁止包含个人数据等敏感信息。
@@ -15,7 +15,7 @@
 
 
 
-#### 在CMake脚本中链接相关动态库
+## 在CMake脚本中链接相关动态库
 
 ```text
 target_link_libraries(entry PUBLIC libhuks_ndk.z.so)
@@ -23,7 +23,7 @@ target_link_libraries(entry PUBLIC libhuks_ndk.z.so)
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 指定密钥别名，密钥别名命名规范参考[密钥生成介绍及算法规格](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-key-generation-overview)。
 2. 初始化密钥属性集。通过[OH_Huks_InitParamSet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-huks-param-h#oh_huks_initparamset)、[OH_Huks_AddParams](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-huks-param-h#oh_huks_addparams)、[OH_Huks_BuildParamSet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-huks-param-h#oh_huks_buildparamset)构造密钥属性集paramSet。
 

@@ -45,7 +45,7 @@ RichEditor组件通过实时文本监听机制捕获用户输入的文本流，�
 
 2. Index.ets。
 ```ArkTS
-// Index.ets
+<em>// Index.ets</em>
 interface result {
   data: String;
 }
@@ -53,18 +53,18 @@ interface result {
 @Entry
 @Component
 struct RichEditorPage {
-  @State content: string = ''; // 存储输入内容
+  @State content: string = ''; <em>// 存储输入内容</em>
   controller: RichEditorController = new RichEditorController();
-  @Provide('navStack') pageInfo: NavPathStack = new NavPathStack(); // 导航栈实例
+  @Provide('navStack') pageInfo: NavPathStack = new NavPathStack(); <em>// 导航栈实例</em>
 
-  // 监听输入事件
+  <em>// 监听输入事件</em>
   handleInput(value: string) {
-    this.content = value; // 更新输入内容
+    this.content = value; <em>// 更新输入内容</em>
 
-    // 检测是否输入`@`或`#`
+    <em>// 检测是否输入`@`或`#`</em>
     if (value.endsWith('@') || value.endsWith('#')) {
       this.pageInfo.pushPath({
-        // 接收返回数据的回调
+        <em>// 接收返回数据的回调</em>
         name: 'pageOne', onPop: (popInfo: PopInfo) => {
           if (popInfo.result) {
             let res = popInfo.result as result;
@@ -80,17 +80,17 @@ struct RichEditorPage {
   build() {
     Navigation(this.pageInfo) {
       Column() {
-        // RichEditor组件
+        <em>// RichEditor组件</em>
         RichEditor({ controller: this.controller })
           .onIMEInputComplete((value: RichEditorTextSpanResult) => {
-            this.handleInput(value.value); // 监听输入完成事件
+            this.handleInput(value.value); <em>// 监听输入完成事件</em>
           })
           .width('100%')
           .height(200)
           .borderRadius(8)
           .backgroundColor('#0d000000');
 
-        // 显示输入内容
+        <em>// 显示输入内容</em>
         Text('输入内容：')
           .fontSize(16)
           .margin({ top: 10 });
@@ -113,15 +113,15 @@ export function PageOneBuilder() {
   TopicSelectionPage()
 }
 
-// 话题选择页面
+<em>// 话题选择页面</em>
 @Entry
 @Component
 struct TopicSelectionPage {
-  @State topics: string[] = ['话题1', '话题2', '话题3']; // 话题列表
+  @State topics: string[] = ['话题1', '话题2', '话题3']; <em>// 话题列表</em>
   @Consume('navStack') pageInfo: NavPathStack;
 
   onBack() {
-    // 返回上级页面
+    <em>// 返回上级页面</em>
     this.pageInfo.pop();
   }
 
@@ -131,7 +131,7 @@ struct TopicSelectionPage {
         Text('请选择一个话题：')
           .fontSize(16)
           .margin({ top: 10 });
-        // 显示话题列表
+        <em>// 显示话题列表</em>
         ForEach(this.topics, (topic: string) => {
           Button(topic)
             .width('80%')

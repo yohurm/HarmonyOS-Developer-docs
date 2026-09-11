@@ -1,6 +1,6 @@
 # readerCore（阅读核心能力）
 
-更新时间：2026-06-12 06:54:11
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/reader-read-core
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -10,7 +10,8 @@
 **起始版本：** 5.0.4(16)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -20,7 +21,8 @@ import { readerCore } from '@kit.ReaderKit';
  
   
 
-#### PageDatabaseBean
+## PageDatabaseBean
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -34,6 +36,7 @@ import { readerCore } from '@kit.ReaderKit';
  
 **起始版本：** 5.0.4(16)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | nodeType | string | 否 | 否 | 节点类型，固定值为“ReaderCoreIdentity”，表示阅读器节点。 |
@@ -42,7 +45,8 @@ import { readerCore } from '@kit.ReaderKit';
  
   
 
-#### constructor
+### constructor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -60,6 +64,7 @@ constructor(nodeType: string, nodeDataId: string)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | nodeType | string | 是 | 节点类型，固定值为“ReaderCoreIdentity”，表示阅读器节点。 |
@@ -68,7 +73,8 @@ constructor(nodeType: string, nodeDataId: string)
  
   
 
-#### PageState
+## PageState
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -82,17 +88,19 @@ constructor(nodeType: string, nodeDataId: string)
  
 **起始版本：** 5.0.4(16)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| PAGE_WAITING | 1 | 等待加载。 |
-| PAGE_LOADING | 2 | 加载中。 |
-| PAGE_ON_SHOW | 3 | 加载成功。 |
-| OPEN_BOOK_FAIL | 4 | 加载失败。 |
+| PAGE_WAITING | 1 | 初始化成功，正在等待排版引擎通知。 |
+| PAGE_LOADING | 2 | 初始化成功，等待排版结果。 |
+| PAGE_ON_SHOW | 3 | 排版成功并显示阅读页面。 |
+| OPEN_BOOK_FAIL | 4 | 排版失败，未成功加载页面。 |
  
  
   
 
-#### PageDataInfo
+## PageDataInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -106,6 +114,7 @@ constructor(nodeType: string, nodeDataId: string)
  
 **起始版本：** 5.0.4(16)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | nodeType | string | 否 | 否 | 节点类型，固定值为"ReaderCoreIdentity"，表示阅读器节点。 |
@@ -121,7 +130,8 @@ constructor(nodeType: string, nodeDataId: string)
  
   
 
-#### constructor
+### constructor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -137,6 +147,7 @@ constructor(nodeType: string, nodeId: string)
  
 **起始版本：** 5.0.4(16)
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | nodeType | string | 是 | 节点类型，固定值为“ReaderCoreIdentity”。 |
@@ -145,7 +156,8 @@ constructor(nodeType: string, nodeId: string)
  
   
 
-#### ReaderSetting
+## ReaderSetting
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -159,6 +171,7 @@ constructor(nodeType: string, nodeId: string)
  
 **起始版本：** 5.0.4(16)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | fontName | string | 否 | 否 | 字体名称。 |
@@ -178,7 +191,8 @@ constructor(nodeType: string, nodeId: string)
  
   
 
-#### ReaderComponentController
+## ReaderComponentController
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -194,7 +208,8 @@ constructor(nodeType: string, nodeId: string)
  
   
 
-#### init
+### init
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -216,6 +231,7 @@ init(context: common.UIAbilityContext): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | 当前应用上下文。 |
@@ -223,6 +239,7 @@ init(context: common.UIAbilityContext): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -230,6 +247,7 @@ init(context: common.UIAbilityContext): Promise&lt;void&gt;
  
 **错误码：**
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -253,7 +271,7 @@ struct Reader {
     this.init();
   }
 
-  private async init(){
+  private async init() {
     let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
     await this.readerComponentController.init(context);
     hilog.info(0x0000, 'testTag', `init succeeded`);
@@ -274,7 +292,8 @@ struct Reader {
  
   
 
-#### registerBookParser
+### registerBookParser
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -296,6 +315,7 @@ registerBookParser(bookParserHandler: bookParser.BookParserHandler): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bookParserHandler | bookParser.BookParserHandler | 是 | 书籍解析器。 |
@@ -303,6 +323,7 @@ registerBookParser(bookParserHandler: bookParser.BookParserHandler): void
  
 **错误码：**
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -328,7 +349,7 @@ struct Reader {
     this.registerBookParser();
   }
 
-  private async registerBookParser(){
+  private async registerBookParser() {
     // 通过提前导入到应用沙箱目录中的书籍文件，初始化书籍解析器
     let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
     let filePath: string = `${context.filesDir}/abc.epub`;
@@ -353,7 +374,8 @@ struct Reader {
  
   
 
-#### setPageConfig
+### setPageConfig
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -371,6 +393,7 @@ setPageConfig(pageConfig: ReaderSetting): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pageConfig | ReaderSetting | 是 | 页面排版属性。 |
@@ -378,6 +401,7 @@ setPageConfig(pageConfig: ReaderSetting): void
  
 **错误码：**
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -419,7 +443,7 @@ struct Reader {
       scaledDensity: display.getDefaultDisplaySync().scaledDensity > 0 ? display.getDefaultDisplaySync().scaledDensity :
         1,
       viewPortWidth: 1260, // 视口宽度，需要根据设备实际情况获取，否则会导致阅读界面异常
-      viewPortHeight: 2720, // 视口高度，需要根据设备实际情况获取，否则会导致阅读界面异常
+      viewPortHeight: 2720 // 视口高度，需要根据设备实际情况获取，否则会导致阅读界面异常
     };
 
     let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
@@ -443,7 +467,8 @@ struct Reader {
  
   
 
-#### startPlay
+### startPlay
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -465,6 +490,7 @@ startPlay(spineIndex: number, domPos: string): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | spineIndex | number | 是 | 内容资源索引SpineItem.index。 |
@@ -473,6 +499,7 @@ startPlay(spineIndex: number, domPos: string): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -480,6 +507,7 @@ startPlay(spineIndex: number, domPos: string): Promise&lt;void&gt;
  
 **错误码：**
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -520,7 +548,7 @@ struct Reader {
     await this.readerComponentController.init(context);
     this.readerComponentController.registerBookParser(bookParserHandler);
     // 调用startPlay接口初始化书籍内容显示
-    this.readerComponentController.startPlay(spineIndex || 0, domPos);
+    await this.readerComponentController.startPlay(spineIndex || 0, domPos);
     hilog.info(0x0000, 'testTag', `startPlay succeeded`);
   }
 
@@ -539,7 +567,8 @@ struct Reader {
  
   
 
-#### flipPage
+### flipPage
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -557,6 +586,7 @@ flipPage(isNext: boolean): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isNext | boolean | 是 | 是否翻到下一页。 - true：往下一页翻页。 - false：往上一页翻页。 |
@@ -564,6 +594,7 @@ flipPage(isNext: boolean): void
  
 **错误码：**
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -589,7 +620,7 @@ struct Reader {
     this.flipPage();
   }
 
-  private async flipPage(){
+  private async flipPage() {
     let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
     await this.readerComponentController.init(context);
     // 翻下一页
@@ -612,7 +643,8 @@ struct Reader {
  
   
 
-#### releaseBook
+### releaseBook
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -645,7 +677,7 @@ struct Reader {
     this.releaseBook();
   }
 
-  private async releaseBook(){
+  private async releaseBook() {
     let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
     await this.readerComponentController.init(context);
     // 释放加载书籍时的资源
@@ -668,7 +700,8 @@ struct Reader {
  
   
 
-#### on('pageShow')
+### on('pageShow')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -686,6 +719,7 @@ on(type: 'pageShow', callback: Callback&lt;PageDataInfo&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为“pageShow”。 |
@@ -709,7 +743,7 @@ struct Reader {
     this.registerListener();
   }
 
-  private async registerListener(){
+  private async registerListener() {
     let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
     await this.readerComponentController.init(context)
     // 此处只演示方法调用，实际触发回调，需要配合startPlay接口使用
@@ -734,7 +768,8 @@ struct Reader {
  
   
 
-#### off('pageShow')
+### off('pageShow')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -752,6 +787,7 @@ off(type: 'pageShow', callback?: Callback&lt;PageDataInfo&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为“pageShow”。 |
@@ -798,7 +834,8 @@ struct Reader {
  
   
 
-#### on('resourceRequest')
+### on('resourceRequest')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -820,6 +857,7 @@ on(type: 'resourceRequest', callback: bookParser.CallbackRes<string, ArrayBuffer
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为“resourceRequest”。 |
@@ -845,14 +883,14 @@ struct Reader {
     this.registerListener();
   }
 
-  private async registerListener(){
+  private async registerListener() {
     let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
     await this.readerComponentController.init(context);
     // 此处只演示方法调用，实际触发回调，需要配合startPlay接口使用
     this.readerComponentController.on('resourceRequest', this.resourceRequest);
   }
 
-  private resourceRequest: bookParser.CallbackRes<string,ArrayBuffer> = (fileName: string): ArrayBuffer => {
+  private resourceRequest: bookParser.CallbackRes<string, ArrayBuffer> = (fileName: string): ArrayBuffer => {
     if (this.isFont(fileName)) {
       let res = $rawfile(this.selectFontPath);
       let context = this.getUIContext().getHostContext();
@@ -867,7 +905,7 @@ struct Reader {
   }
 
   private isFont(filePath: string): boolean {
-    let options = [".ttf", ".woff2", ".otf"];
+    let options = ['.ttf', '.woff2', '.otf'];
     let path = filePath.toLowerCase();
     let result = path.indexOf(options[0]) != -1 || path.indexOf(options[1]) != -1 || path.indexOf(options[2]) != -1;
     hilog.info(0x0000, 'testTag', 'isFont = ' + result);
@@ -889,7 +927,8 @@ struct Reader {
  
   
 
-#### off('resourceRequest')
+### off('resourceRequest')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -907,6 +946,7 @@ off(type: 'resourceRequest', callback?: bookParser.CallbackRes<string, ArrayBuff
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为“resourceRequest”。 |
@@ -930,7 +970,7 @@ struct Reader {
     this.unregisterListener();
   }
 
-  private async unregisterListener(){
+  private async unregisterListener() {
     let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
     await this.readerComponentController.init(context);
     this.readerComponentController.off('resourceRequest');

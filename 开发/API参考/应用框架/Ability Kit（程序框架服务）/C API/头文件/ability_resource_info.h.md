@@ -1,13 +1,14 @@
 # ability_resource_info.h
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ability-resource-info-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供组件资源信息的接口，用于获取组件的以下信息：包名、模块名、组件名、图标、分身索引、是否为默认应用等。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_NativeBundle_AbilityResourceInfo | OH_NativeBundle_AbilityResourceInfo | 表示组件资源信息。 |
@@ -40,10 +44,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | BundleManager_ErrorCode OH_NativeBundle_GetBundleName(OH_NativeBundle_AbilityResourceInfo* abilityResourceInfo, char** bundleName) | 获取组件的包名。在使用该接口之后，为了防止内存泄漏，需要手动释放接口返回的指针。 |
@@ -59,15 +65,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_NativeBundle_GetBundleName()
+### OH_NativeBundle_GetBundleName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 BundleManager_ErrorCode OH_NativeBundle_GetBundleName(OH_NativeBundle_AbilityResourceInfo* abilityResourceInfo, char** bundleName)
@@ -81,6 +89,7 @@ BundleManager_ErrorCode OH_NativeBundle_GetBundleName(OH_NativeBundle_AbilityRes
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeBundle_AbilityResourceInfo* abilityResourceInfo | 指定组件资源信息。 |
@@ -89,6 +98,7 @@ BundleManager_ErrorCode OH_NativeBundle_GetBundleName(OH_NativeBundle_AbilityRes
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | BundleManager_ErrorCode | 执行结果。 如果获取成功，返回BUNDLE_MANAGER_ERROR_CODE_NO_ERROR。 如果获取失败，返回BUNDLE_MANAGER_ERROR_CODE_PARAM_INVALID，这是由于abilityResourceInfo为空指针所致。 |
@@ -96,9 +106,10 @@ BundleManager_ErrorCode OH_NativeBundle_GetBundleName(OH_NativeBundle_AbilityRes
  
   
 
-#### OH_NativeBundle_GetModuleName()
+### OH_NativeBundle_GetModuleName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 BundleManager_ErrorCode OH_NativeBundle_GetModuleName(OH_NativeBundle_AbilityResourceInfo* abilityResourceInfo, char** moduleName)
@@ -112,6 +123,7 @@ BundleManager_ErrorCode OH_NativeBundle_GetModuleName(OH_NativeBundle_AbilityRes
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeBundle_AbilityResourceInfo* abilityResourceInfo | 指定组件资源信息。 |
@@ -120,6 +132,7 @@ BundleManager_ErrorCode OH_NativeBundle_GetModuleName(OH_NativeBundle_AbilityRes
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | BundleManager_ErrorCode | 执行结果。 如果获取成功，返回BUNDLE_MANAGER_ERROR_CODE_NO_ERROR。 如果获取失败，返回BUNDLE_MANAGER_ERROR_CODE_PARAM_INVALID，这是由于abilityResourceInfo为空指针所致。 |
@@ -127,9 +140,10 @@ BundleManager_ErrorCode OH_NativeBundle_GetModuleName(OH_NativeBundle_AbilityRes
  
   
 
-#### OH_NativeBundle_GetAbilityName()
+### OH_NativeBundle_GetAbilityName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 BundleManager_ErrorCode OH_NativeBundle_GetAbilityName(OH_NativeBundle_AbilityResourceInfo* abilityResourceInfo, char** abilityName)
@@ -143,6 +157,7 @@ BundleManager_ErrorCode OH_NativeBundle_GetAbilityName(OH_NativeBundle_AbilityRe
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeBundle_AbilityResourceInfo* abilityResourceInfo | 指定组件资源信息。 |
@@ -151,6 +166,7 @@ BundleManager_ErrorCode OH_NativeBundle_GetAbilityName(OH_NativeBundle_AbilityRe
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | BundleManager_ErrorCode | 执行结果。 如果获取成功，返回BUNDLE_MANAGER_ERROR_CODE_NO_ERROR。 如果获取失败，返回BUNDLE_MANAGER_ERROR_CODE_PARAM_INVALID，这是由于abilityResourceInfo为空指针所致。 |
@@ -158,9 +174,10 @@ BundleManager_ErrorCode OH_NativeBundle_GetAbilityName(OH_NativeBundle_AbilityRe
  
   
 
-#### OH_NativeBundle_GetDrawableDescriptor()
+### OH_NativeBundle_GetDrawableDescriptor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 BundleManager_ErrorCode OH_NativeBundle_GetDrawableDescriptor(OH_NativeBundle_AbilityResourceInfo* abilityResourceInfo, ArkUI_DrawableDescriptor** drawableIcon)
@@ -174,6 +191,7 @@ BundleManager_ErrorCode OH_NativeBundle_GetDrawableDescriptor(OH_NativeBundle_Ab
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeBundle_AbilityResourceInfo* abilityResourceInfo | 指定组件资源信息。 |
@@ -182,6 +200,7 @@ BundleManager_ErrorCode OH_NativeBundle_GetDrawableDescriptor(OH_NativeBundle_Ab
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | BundleManager_ErrorCode | 执行结果。 如果获取成功，返回BUNDLE_MANAGER_ERROR_CODE_NO_ERROR。 如果获取失败，返回BUNDLE_MANAGER_ERROR_CODE_PARAM_INVALID，这是由于abilityResourceInfo为空指针所致。 |
@@ -189,9 +208,10 @@ BundleManager_ErrorCode OH_NativeBundle_GetDrawableDescriptor(OH_NativeBundle_Ab
  
   
 
-#### OH_NativeBundle_GetLabel()
+### OH_NativeBundle_GetLabel()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 BundleManager_ErrorCode OH_NativeBundle_GetLabel(OH_NativeBundle_AbilityResourceInfo* abilityResourceInfo, char** label)
@@ -205,6 +225,7 @@ BundleManager_ErrorCode OH_NativeBundle_GetLabel(OH_NativeBundle_AbilityResource
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeBundle_AbilityResourceInfo* abilityResourceInfo | 指定组件资源信息。 |
@@ -213,6 +234,7 @@ BundleManager_ErrorCode OH_NativeBundle_GetLabel(OH_NativeBundle_AbilityResource
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | BundleManager_ErrorCode | 执行结果。 如果获取成功，返回BUNDLE_MANAGER_ERROR_CODE_NO_ERROR。 如果获取失败，返回BUNDLE_MANAGER_ERROR_CODE_PARAM_INVALID，这是由于abilityResourceInfo为空指针所致。 |
@@ -220,9 +242,10 @@ BundleManager_ErrorCode OH_NativeBundle_GetLabel(OH_NativeBundle_AbilityResource
  
   
 
-#### OH_NativeBundle_GetAppIndex()
+### OH_NativeBundle_GetAppIndex()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 BundleManager_ErrorCode OH_NativeBundle_GetAppIndex(OH_NativeBundle_AbilityResourceInfo* abilityResourceInfo, int* appIndex)
@@ -236,6 +259,7 @@ BundleManager_ErrorCode OH_NativeBundle_GetAppIndex(OH_NativeBundle_AbilityResou
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeBundle_AbilityResourceInfo* abilityResourceInfo | 指定组件资源信息。 |
@@ -244,6 +268,7 @@ BundleManager_ErrorCode OH_NativeBundle_GetAppIndex(OH_NativeBundle_AbilityResou
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | BundleManager_ErrorCode | 执行结果。 如果获取成功，返回BUNDLE_MANAGER_ERROR_CODE_NO_ERROR。 如果获取失败，返回BUNDLE_MANAGER_ERROR_CODE_PARAM_INVALID，这是由于abilityResourceInfo为空指针所致。 |
@@ -251,9 +276,10 @@ BundleManager_ErrorCode OH_NativeBundle_GetAppIndex(OH_NativeBundle_AbilityResou
  
   
 
-#### OH_NativeBundle_CheckDefaultApp()
+### OH_NativeBundle_CheckDefaultApp()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 BundleManager_ErrorCode OH_NativeBundle_CheckDefaultApp(OH_NativeBundle_AbilityResourceInfo* abilityResourceInfo, bool* isDefault)
@@ -267,6 +293,7 @@ BundleManager_ErrorCode OH_NativeBundle_CheckDefaultApp(OH_NativeBundle_AbilityR
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeBundle_AbilityResourceInfo* abilityResourceInfo | 指定组件资源信息。 |
@@ -275,6 +302,7 @@ BundleManager_ErrorCode OH_NativeBundle_CheckDefaultApp(OH_NativeBundle_AbilityR
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | BundleManager_ErrorCode | 执行结果。 如果查询成功，返回BUNDLE_MANAGER_ERROR_CODE_NO_ERROR。 如果查询失败，返回BUNDLE_MANAGER_ERROR_CODE_PARAM_INVALID，这是由于abilityResourceInfo为空指针所致。 |
@@ -282,9 +310,10 @@ BundleManager_ErrorCode OH_NativeBundle_CheckDefaultApp(OH_NativeBundle_AbilityR
  
   
 
-#### OH_AbilityResourceInfo_Destroy()
+### OH_AbilityResourceInfo_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 BundleManager_ErrorCode OH_AbilityResourceInfo_Destroy(OH_NativeBundle_AbilityResourceInfo* abilityResourceInfo, size_t count)
@@ -298,6 +327,7 @@ BundleManager_ErrorCode OH_AbilityResourceInfo_Destroy(OH_NativeBundle_AbilityRe
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeBundle_AbilityResourceInfo* abilityResourceInfo | 要释放的组件资源信息。 |
@@ -306,6 +336,7 @@ BundleManager_ErrorCode OH_AbilityResourceInfo_Destroy(OH_NativeBundle_AbilityRe
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | BundleManager_ErrorCode | 执行结果。 如果释放成功，返回BUNDLE_MANAGER_ERROR_CODE_NO_ERROR。 如果释放失败，返回BUNDLE_MANAGER_ERROR_CODE_PARAM_INVALID，这是由于abilityResourceInfo为空指针所致。 |
@@ -313,9 +344,10 @@ BundleManager_ErrorCode OH_AbilityResourceInfo_Destroy(OH_NativeBundle_AbilityRe
  
   
 
-#### OH_NativeBundle_GetSize()
+### OH_NativeBundle_GetSize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_NativeBundle_GetSize()
@@ -329,6 +361,7 @@ int OH_NativeBundle_GetSize()
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回单个结构体OH_NativeBundle_AbilityResourceInfo的大小。 |

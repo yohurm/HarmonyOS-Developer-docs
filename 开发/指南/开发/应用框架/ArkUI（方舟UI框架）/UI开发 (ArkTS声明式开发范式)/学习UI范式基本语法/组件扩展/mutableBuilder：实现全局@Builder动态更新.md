@@ -1,6 +1,6 @@
 # mutableBuilder：实现全局@Builder动态更新
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-mutablebuilder
 
@@ -11,7 +11,7 @@
 
 
 
-#### wrapBuilder不支持动态全局@Builder
+## wrapBuilder不支持动态全局@Builder
 
 当前wrapBuilder不支持二次赋值， 更改@Builder，UI不会发生变化。
 
@@ -53,15 +53,15 @@ struct Index {
 
 
 
-#### 接口说明
+## 接口说明
 
-mutableBuilder是一个模板函数，返回一个[MutableBuilder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-mutablebuilder#mutablebuilder-2)对象。相比[WrappedBuilder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-wrapbuilder#wrappedbuilder)，MutableBuilder可以实现动态切换全局@Builder。
+mutableBuilder是一个模板函数，返回一个[MutableBuilder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-mutablebuilder#mutablebuilder-1)对象。相比[WrappedBuilder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-wrapbuilder#wrappedbuilder)，MutableBuilder可以实现动态切换全局@Builder。
 
 ```text
 declare function mutableBuilder<Args extends Object[]>(builder: BuilderCallback): MutableBuilder<Args>;
 ```
 
-同时MutableBuilder对象是一个模板类，继承自[WrappedBuilder](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-wrapbuilder#接口说明)。
+同时MutableBuilder是一个模板类，继承自[WrappedBuilder](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-wrapbuilder#接口说明)。
 
 ```text
 declare class MutableBuilder<Args extends Object[]> extends WrappedBuilder<Args> {
@@ -81,7 +81,7 @@ let builderArr: MutableBuilder<[string, number]>[] = [mutableBuilder(MyBuilder)]
 
 
 
-#### 限制条件
+## 限制条件
 1. mutableBuilder方法只能传入[全局@Builder](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-builder#全局自定义构建函数)方法，传入局部@Builder方法编译时报错。
 
   
@@ -176,7 +176,7 @@ Button(`MutableBuilder`).onClick(() => {
 
 
 
-#### 动态更改全局@Builder实例
+## 动态更改全局@Builder实例
 
 使用@Builder装饰器装饰的方法textBuilder作为mutableBuilder的参数，然后将mutableBuilder的返回值赋值给变量switchingBuilder，在Button的点击事件中，使用@Builder装饰器装饰的方法buttonBuilder作为mutableBuilder的参数，将mutableBuilder的返回值再次赋值给变量switchingBuilder，可实现textBuilder 更新为buttonBuilder，以解决wrapBuilder不支持二次赋值的问题。
 
@@ -228,7 +228,7 @@ struct MyApp {
 
 
 
-#### 使用mutableBuilder显示弹出菜单
+## 使用mutableBuilder显示弹出菜单
 
 由于MutableBuilder继承自WrappedBuilder，故mutableBuilder对应的@Builder具有跟WrappedBuilder同等能力，如下示例，mutableBuilder对应的@Builder方法可作为bindMenu入参，支持点击弹出菜单。
 
@@ -272,7 +272,7 @@ struct Index {
 
 
 
-#### 观察mutableBuilder中@Builder的变化
+## 观察mutableBuilder中@Builder的变化
 
 mutableBuilder对应的@Builder函数中可使用[MutableBinding](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-statemanagement#mutablebindingt20)进行包裹来观察状态变量的变化，同时可通过[@Monitor](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-monitor)或[addMonitor](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-addmonitor-clearmonitor)监听mutableBuilder中@Builder的变化。
 

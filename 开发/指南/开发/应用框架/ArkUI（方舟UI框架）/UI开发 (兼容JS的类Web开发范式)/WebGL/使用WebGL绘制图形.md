@@ -1,10 +1,10 @@
 # 使用WebGL绘制图形
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/webgl-2d-guidelines
 
-#### 场景介绍
+## 场景介绍
 
 WebGL的全称为Web Graphics Library（网页图形库），主要用于交互式渲染2D图形。目前HarmonyOS中使用的WebGL是基于OpenGL裁剪的OpenGL ES，可以在HTML5的Canvas元素对象中使用，无需使用插件，支持跨平台。WebGL程序是由JavaScript代码组成的，其中使用的API可以利用用户设备提供的GPU硬件完成图形渲染和加速。更多信息请参考[WebGL™标准](https://registry.khronos.org/webgl/specs/latest/1.0/)。
  
@@ -14,17 +14,17 @@ WebGL的全称为Web Graphics Library（网页图形库），主要用于交互�
  
   
 
-#### 基本概念
+## 基本概念
 
   
 
-#### 着色器程序
+### 着色器程序
 
 将缓冲区中的数据推送到着色器中还需涉及“着色器程序”，一个负责关联着色器和缓冲区的JavaScript对象。一个WebGLProgram对象由两个编译过后的WebGLShader组成，即顶点着色器和片元着色器（均由GLSL语言所写）。
  
   
 
-#### 着色器
+### 着色器
 
 着色器可以理解为运行在显卡中的指令和数据。在WebGL中，着色器是用OpenGL ES着色语言（GLSL）编写的。
  
@@ -36,30 +36,31 @@ WebGL的全称为Web Graphics Library（网页图形库），主要用于交互�
  
   
 
-#### 图片光栅化
+### 图片光栅化
 
 将顶点着色器输出的二维空间中的点坐标，转化为需要处理的像素并传递给片元着色器的过程。
  
   
 
-#### 帧缓冲区对象
+### 帧缓冲区对象
 
 帧缓冲区对象为绘图缓冲区提供替代呈现目标。它们是颜色、深度和模板缓冲区的集合，通常用于渲染图像。
  
   
 
-#### 纹理
+### 纹理
 
 纹理是一种图像，可以应用到3D模型的表面上。WebGL中的纹理有许多属性，包括宽度、高度、格式和类型。在使用纹理时，需要将其加载到WebGL中，并将其绑定到一个纹理单元上。
  
   
 
-#### 变量与接口说明
+## 变量与接口说明
 
   
 
-#### 变量类型
+### 变量类型
  
+
 | 类型 | 对应Web IDL类型 | 描述 |
 | --- | --- | --- |
 | GLenum | unsigned long | 用于枚举。 |
@@ -80,8 +81,9 @@ WebGL的全称为Web Graphics Library（网页图形库），主要用于交互�
  
   
 
-#### 接口说明
+### 接口说明
  
+
 | 接口名 | 描述 |
 | --- | --- |
 | canvas.getContext | 获取canvas对象上下文。 |
@@ -100,7 +102,7 @@ WebGL的全称为Web Graphics Library（网页图形库），主要用于交互�
  
   
 
-#### 开发步骤
+## 开发步骤
 
 如下以实现一个彩色正方形为例，来演示使用WebGL绘制2D图形的过程。
  1. 使用WebGL进行3D渲染前，首先需要一个Canvas元素。以下示例创建了一个Canvas元素并设置一个onclick事件处理程序来初始化WebGL上下文。
@@ -210,7 +212,7 @@ function loadShader(gl, type, source) {
   
 在画正方形前，需要创建一个缓冲器来存储它的顶点。
 11. 首先调用gl的成员函数createBuffer()得到缓冲对象并存储在顶点缓冲器。然后调用 bindBuffer() 函数绑定上下文。
-12. 创建一个Javascript数组去记录每一个正方形的每一个顶点。然后将其转化为WebGL浮点型类型的数组，并将其传到gl对象的bufferData()方法来建立对象的顶点。
+12. 创建一个JavaScript数组去记录每一个正方形的每一个顶点。然后将其转化为WebGL浮点型类型的数组，并将其传到gl对象的bufferData()方法来建立对象的顶点。
 13. 渲染场景。
 
   
@@ -220,4 +222,4 @@ function loadShader(gl, type, source) {
 最终实现效果示意如下：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/pRrKEGEKRveMPIsNfEiFww/zh-cn_image_0000002685926329.png?HW-CC-KV=V1&HW-CC-Date=20260730T071858Z&HW-CC-Expire=86400&HW-CC-Sign=4540CFB02EC3787897606F8AD0FD57DEE3846D09D64713E388610A20EE13C12D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/I5pUI5oZSPO6MtDj9pGLsw/zh-cn_image_0000002747210711.png?HW-CC-KV=V1&HW-CC-Date=20260911T073149Z&HW-CC-Expire=86400&HW-CC-Sign=A56FD8D2DFF53C75DDEBD71F5E7BA3DF3CF8FA5C9D04AC66C56B5461F6CDF497)

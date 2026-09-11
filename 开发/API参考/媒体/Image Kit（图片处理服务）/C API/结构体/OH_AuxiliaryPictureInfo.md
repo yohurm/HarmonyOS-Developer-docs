@@ -1,18 +1,19 @@
 # OH_AuxiliaryPictureInfo
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-nativemodule-oh-auxiliarypictureinfo
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct OH_AuxiliaryPictureInfo OH_AuxiliaryPictureInfo
 ```
 
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 AuxiliaryPictureInfo结构体类型，用于执行AuxiliaryPictureInfo相关操作。
 
@@ -27,6 +28,7 @@ AuxiliaryPictureInfo结构体类型，用于执行AuxiliaryPictureInfo相关操�
 资源管理：[OH_AuxiliaryPictureNative_GetInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-picture-native-h#oh_auxiliarypicturenative_getinfo)成功返回的OH_AuxiliaryPictureInfo对象由调用方管理。通过[OH_AuxiliaryPictureNative_SetInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-picture-native-h#oh_auxiliarypicturenative_setinfo)设置辅助图信息时，接口会读取并保存OH_AuxiliaryPictureInfo中的信息值，接口返回后调用方仍需自行管理该OH_AuxiliaryPictureInfo对象的生命周期。
 
 OH_AuxiliaryPictureInfo结构体内容和操作方式如下：
+
 
 | 字段类型 | 字段名称 | 字段描述 | 字段获取函数 | 字段设置函数 |
 | --- | --- | --- | --- | --- |

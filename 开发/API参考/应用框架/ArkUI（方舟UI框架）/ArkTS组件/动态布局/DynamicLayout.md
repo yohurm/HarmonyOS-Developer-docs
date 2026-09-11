@@ -1,9 +1,9 @@
 # DynamicLayout
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-dynamiclayout
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 动态布局容器组件，支持在运行时动态切换不同的布局算法，不改变子组件的状态。使用DynamicLayout可以提升布局灵活性，简化界面适配和多视图切换的开发流程。适用于响应式布局（适配不同屏幕尺寸）、多视图模式切换（如列表/网格/瀑布流切换）、用户自定义布局等场景。
 
@@ -12,17 +12,19 @@
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 可以包含子组件。
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 DynamicLayout(algorithm: LayoutAlgorithm)
 
@@ -38,6 +40,7 @@ DynamicLayout(algorithm: LayoutAlgorithm)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | algorithm | LayoutAlgorithm | 是 | 指定动态布局容器的布局算法。支持使用RowLayoutAlgorithm（水平线性布局，适用于水平排列场景）、ColumnLayoutAlgorithm（垂直线性布局，适用于垂直排列场景）、StackLayoutAlgorithm（堆叠布局，适用于层叠覆盖场景）、GridLayoutAlgorithm（网格布局，适用于规整网格场景）和CustomLayoutAlgorithm（自定义布局，适用于复杂特殊布局场景）等布局算法实例，详见LayoutAlgorithm。取非法值（如null、undefined或无效的布局算法对象）时，按照StackLayoutAlgorithm布局子组件，子组件堆叠排列。 |
@@ -45,9 +48,10 @@ DynamicLayout(algorithm: LayoutAlgorithm)
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)。
 
@@ -57,28 +61,33 @@ DynamicLayout(algorithm: LayoutAlgorithm)
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)。
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（自定义布局算法实现瀑布流布局）
+
+
+### 示例1（自定义布局算法实现瀑布流布局）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示如何重写[onMeasure](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-layoutalgorithm#onmeasure)、[onLayout](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-layoutalgorithm#onlayout)函数，实现瀑布流布局展示商品列表的功能。瀑布流布局通过测量阶段计算子组件高度并记录每列累计高度，在布局阶段将子组件分配到当前高度最小的列，实现自动填充效果。
 
 从API version 24开始，新增onMeasure、onLayout。
 
 ```text
-import { DynamicLayout, DynamicLayoutAttribute, CustomLayoutAlgorithm, LayoutAlgorithm, FrameNode, LayoutConstraint, Position } from '@kit.ArkUI';
+import { DynamicLayout,  CustomLayoutAlgorithm, LayoutAlgorithm, FrameNode, LayoutConstraint, Position } from '@kit.ArkUI';
 
 // 瀑布流布局算法
 class WaterfallLayout extends CustomLayoutAlgorithm {
@@ -249,7 +258,10 @@ interface Product {
 
 
 
-#### 示例2（切换布局算法）
+### 示例2（切换布局算法）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过改变[@Local](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-local)装饰的[LayoutAlgorithm](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-layoutalgorithm#layoutalgorithm-1)类型变量，实现动态切换DynamicLayout组件布局算法的功能。示例展示如何切换布局算法为[RowLayoutAlgorithm](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-layoutalgorithm#rowlayoutalgorithm)（水平线性布局）、[ColumnLayoutAlgorithm](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-layoutalgorithm#columnlayoutalgorithm)（垂直线性布局）、[StackLayoutAlgorithm](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-layoutalgorithm#stacklayoutalgorithm)（堆叠布局）和[GridLayoutAlgorithm](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-layoutalgorithm#gridlayoutalgorithm)（网格布局）。
 
@@ -260,7 +272,7 @@ interface Product {
 从API version 24开始，新增RowLayoutAlgorithm、ColumnLayoutAlgorithm、StackLayoutAlgorithm、GridLayoutAlgorithm。
 
 ```text
-import { DynamicLayout, DynamicLayoutAttribute, RowLayoutAlgorithm, ColumnLayoutAlgorithm, StackLayoutAlgorithm, GridLayoutAlgorithm, LayoutAlgorithm, LengthMetrics } from '@kit.ArkUI';
+import { DynamicLayout,  RowLayoutAlgorithm, ColumnLayoutAlgorithm, StackLayoutAlgorithm, GridLayoutAlgorithm, LayoutAlgorithm, LengthMetrics } from '@kit.ArkUI';
 
 @Entry
 @ComponentV2
@@ -369,19 +381,22 @@ struct LayoutSwitchExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/RByBlpNyQkm1mt503waTew/zh-cn_image_0000002686087897.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071459Z&HW-CC-Expire=86400&HW-CC-Sign=721AFE1A03129F52E396339C56DD586E1302C43CDA2C0F66283154B3393FD40D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/UtXikLu-QIC60I9GRvhl7g/zh-cn_image_0000002717772538.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073112Z&HW-CC-Expire=86400&HW-CC-Sign=2152B96CDAEEB427850AD86CA9D3C9CF8095063205A068139ECFABFFB918AB30)
 
 
 
 
-#### 示例3（修改布局算法属性）
+### 示例3（修改布局算法属性）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过修改[RowLayoutAlgorithm](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-layoutalgorithm#rowlayoutalgorithm)的space和justifyContent属性，实现DynamicLayout组件布局效果刷新的功能。
 
 从API version 24开始，新增space、justifyContent属性。
 
 ```text
-import { DynamicLayout, DynamicLayoutAttribute, RowLayoutAlgorithm, LengthMetrics } from '@kit.ArkUI';
+import { DynamicLayout,  RowLayoutAlgorithm, LengthMetrics } from '@kit.ArkUI';
 
 @Entry
 @ComponentV2
@@ -443,4 +458,4 @@ struct PropertyChangeExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/gAqIGD1YQi6ReBYCOIv47g/zh-cn_image_0000002685928069.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071459Z&HW-CC-Expire=86400&HW-CC-Sign=1B9D7034B8537FBCC94DC7FCFD6BCC03E48B725DB67958621B4D8342D74E3F49)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/ePSCfUrmQF-DWP2bTSc9Jw/zh-cn_image_0000002717612606.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073112Z&HW-CC-Expire=86400&HW-CC-Sign=BBB8BFC50AAB1E1AB5C33738542F62ADCFB9C4A5AED4C7A7E3226BC6431B792B)

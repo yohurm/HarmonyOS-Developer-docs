@@ -1,9 +1,9 @@
 # Grid
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 网格容器，由“行”和“列”分割的单元格所组成，通过指定“项目”所在的单元格做出各种各样的布局。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 仅支持[GridItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-griditem)子组件和自定义组件。自定义组件在Grid下使用时，建议使用GridItem作为自定义组件的顶层组件，不建议给自定义组件设置属性和事件方法。
 
@@ -26,9 +27,10 @@
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Grid(scroller?: Scroller, layoutOptions?: GridLayoutOptions)
 
@@ -40,6 +42,7 @@ Grid(scroller?: Scroller, layoutOptions?: GridLayoutOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scroller | Scroller | 否 | 可滚动组件的控制器。用于与可滚动组件进行绑定。不设置时不绑定外部控制器，组件自行管理滚动行为。 说明： 不允许和其他滚动类组件，如：ArcList、List、Grid、Scroll和WaterFlow绑定同一个滚动控制对象。 |
@@ -48,9 +51,10 @@ Grid(scroller?: Scroller, layoutOptions?: GridLayoutOptions)
 
 
 
-#### GridLayoutOptions10+对象说明
+## GridLayoutOptions10+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Grid布局选项。其中，irregularIndexes和onGetIrregularSizeByIndex可对仅设置rowsTemplate或columnsTemplate的Grid使用，可以指定一个index数组，并为其中的index对应的GridItem设置其占据的行数与列数，使用方法参见[示例3](#示例3可滚动grid设置跨行跨列节点)；onGetRectByIndex可对同时设置rowsTemplate和columnsTemplate的Grid使用，为指定的index对应的GridItem设置位置和大小，使用方法参见[示例1](#示例1固定行列grid)。
 
@@ -59,6 +63,7 @@ Grid布局选项。其中，irregularIndexes和onGetIrregularSizeByIndex可对�
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -70,9 +75,10 @@ Grid布局选项。其中，irregularIndexes和onGetIrregularSizeByIndex可对�
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)和[滚动组件通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scrollable-common#属性)外，还支持以下属性：
 
@@ -82,9 +88,10 @@ Grid布局选项。其中，irregularIndexes和onGetIrregularSizeByIndex可对�
 
 
 
-#### columnsTemplate
+### columnsTemplate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 columnsTemplate(value: string)
 
@@ -112,6 +119,7 @@ auto-fit模式和auto-stretch模式只支持track-size为一个有效列宽值�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string | 是 | 当前网格布局列的数量或最小列宽值。 |
@@ -119,9 +127,10 @@ auto-fit模式和auto-stretch模式只支持track-size为一个有效列宽值�
 
 
 
-#### columnsTemplate22+
+### columnsTemplate22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 columnsTemplate(value: string | ItemFillPolicy)
 
@@ -141,6 +150,7 @@ columnsTemplate(value: string | ItemFillPolicy)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string \| ItemFillPolicy | 是 | 当前网格组件布局列的数量。value为string类型时，表示固定列数或repeat函数形式；value为ItemFillPolicy类型时，根据断点自动确定列数。 |
@@ -148,9 +158,10 @@ columnsTemplate(value: string | ItemFillPolicy)
 
 
 
-#### rowsTemplate
+### rowsTemplate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 rowsTemplate(value: string)
 
@@ -176,6 +187,7 @@ auto-fit模式和auto-stretch模式只支持track-size为一个有效行高值�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string | 是 | 当前网格布局行的数量或最小行高值。 |
@@ -187,9 +199,10 @@ auto-fit模式和auto-stretch模式只支持track-size为一个有效行高值�
 
 
 
-#### columnsGap
+### columnsGap
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 columnsGap(value: Length)
 
@@ -201,6 +214,7 @@ columnsGap(value: Length)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Length | 是 | 列与列的间距。 默认值：0 取值范围：[0, +∞)，设置为小于0的值时，按默认值0显示。 |
@@ -208,9 +222,10 @@ columnsGap(value: Length)
 
 
 
-#### rowsGap
+### rowsGap
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 rowsGap(value: Length)
 
@@ -222,6 +237,7 @@ rowsGap(value: Length)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Length | 是 | 行与行的间距。 默认值：0 取值范围：[0, +∞)，设置为小于0的值时，按默认值0显示。 |
@@ -229,9 +245,10 @@ rowsGap(value: Length)
 
 
 
-#### scrollBar
+### scrollBar
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scrollBar(value: BarState)
 
@@ -243,6 +260,7 @@ scrollBar(value: BarState)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | BarState | 是 | 滚动条状态。 默认值：BarState.Auto 说明： API version 9及以下版本默认值为BarState.Off，API version 10及以上版本的默认值为BarState.Auto。 |
@@ -250,9 +268,10 @@ scrollBar(value: BarState)
 
 
 
-#### scrollBarColor
+### scrollBarColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scrollBarColor(value: Color | number | string)
 
@@ -264,6 +283,7 @@ scrollBarColor(value: Color | number | string)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Color \| number \| string | 是 | 滚动条的颜色。 默认值：'#182431'（40%不透明度） number为HEX格式颜色，支持rgb或者argb，示例：0xffffff。 string为rgb或者argb格式颜色，示例：'#ffffff'。 |
@@ -271,9 +291,10 @@ scrollBarColor(value: Color | number | string)
 
 
 
-#### scrollBarColor22+
+### scrollBarColor22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scrollBarColor(color: Color | number | string | Resource)
 
@@ -287,6 +308,7 @@ scrollBarColor(color: Color | number | string | Resource)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | Color \| number \| string \| Resource | 是 | 滚动条的颜色。 默认值：'#182431'（40%不透明度） number为HEX格式颜色，支持rgb或者argb，示例：0xffffff。string为rgb或者argb格式颜色，示例：'#ffffff'。 |
@@ -294,9 +316,10 @@ scrollBarColor(color: Color | number | string | Resource)
 
 
 
-#### scrollBarWidth
+### scrollBarWidth
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scrollBarWidth(value: number | string)
 
@@ -308,6 +331,7 @@ scrollBarWidth(value: number | string)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| string | 是 | 滚动条的宽度。 默认值：4 单位：vp 取值范围：[0, +∞)，设置为小于0的值时，按默认值处理。设置为0时，不显示滚动条。 |
@@ -315,9 +339,10 @@ scrollBarWidth(value: number | string)
 
 
 
-#### scrollBarWidth
+### scrollBarWidth
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scrollBarWidth(value: number | string | Resource)
 
@@ -335,6 +360,7 @@ scrollBarWidth(value: number | string | Resource)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| string \| Resource | 是 | 滚动条的宽度。 单位：vp 取值范围：[0, +∞)。设置为小于0的值时，按4vp处理。设置为0时，不显示滚动条。 |
@@ -342,9 +368,10 @@ scrollBarWidth(value: number | string | Resource)
 
 
 
-#### cachedCount
+### cachedCount
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cachedCount(value: number)
 
@@ -360,6 +387,7 @@ cachedCount(value: number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 预加载的GridItem的数量。 默认值：垂直滚动时为一个屏幕内可显示的行数，水平滚动时为一个屏幕内可显示的列数，最大值为16。 取值范围：[0, +∞)，设置为小于0的值时，按1处理。 通过状态变量单独更新value值时，Grid组件不会触发布局更新，缓存节点数量仅会在下次布局时更新。 |
@@ -367,9 +395,10 @@ cachedCount(value: number)
 
 
 
-#### cachedCount14+
+### cachedCount14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cachedCount(count: number, show: boolean)
 
@@ -385,6 +414,7 @@ cachedCount(count: number, show: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | count | number | 是 | 预加载的GridItem的数量。 默认值：垂直滚动时为一个屏幕内可显示的行数，水平滚动时为一个屏幕内可显示的列数，最大值为16。 取值范围：[0, +∞)，设置为小于0的值时，按1处理。 通过状态变量单独更新count值时，Grid组件不会触发布局更新，缓存节点数量仅会在下次布局时更新。 |
@@ -393,9 +423,10 @@ cachedCount(count: number, show: boolean)
 
 
 
-#### editMode8+
+### editMode8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 editMode(value: boolean)
 
@@ -411,6 +442,7 @@ editMode(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | Grid是否进入编辑模式。设置为true时当前Grid组件处于可编辑模式，设置为false时当前Grid组件处于不可编辑模式。 默认值：false |
@@ -418,9 +450,10 @@ editMode(value: boolean)
 
 
 
-#### layoutDirection8+
+### layoutDirection8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 layoutDirection(value: GridDirection)
 
@@ -436,6 +469,7 @@ layoutDirection(value: GridDirection)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | GridDirection | 是 | 布局的主轴方向。 默认值：GridDirection.Row |
@@ -443,9 +477,10 @@ layoutDirection(value: GridDirection)
 
 
 
-#### maxCount8+
+### maxCount8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 maxCount(value: number)
 
@@ -467,6 +502,7 @@ maxCount(value: number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 可显示的最大行数或列数。 默认值：Infinity 取值范围：[1, +∞)，设置为小于1的值时，按默认值Infinity处理。 |
@@ -474,9 +510,10 @@ maxCount(value: number)
 
 
 
-#### minCount8+
+### minCount8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 minCount(value: number)
 
@@ -498,6 +535,7 @@ minCount(value: number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 可显示的最小行数或列数。 默认值：1 取值范围：[1, +∞)，设置为小于1的值时，按默认值1处理。 |
@@ -505,9 +543,10 @@ minCount(value: number)
 
 
 
-#### cellLength8+
+### cellLength8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cellLength(value: number)
 
@@ -527,6 +566,7 @@ cellLength(value: number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 一行的高度或者一列的宽度。 默认值：当layoutDirection是Row/RowReverse时，为首个GridItem的高度；当layoutDirection是Column/ColumnReverse时，为首个GridItem的宽度。 单位：vp 取值范围：(0, +∞)，设置为小于等于0的值时，按默认值显示。 |
@@ -534,9 +574,10 @@ cellLength(value: number)
 
 
 
-#### multiSelectable8+
+### multiSelectable8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 multiSelectable(value: boolean)
 
@@ -548,6 +589,7 @@ multiSelectable(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否开启鼠标框选。 默认值：false false：关闭框选。true：开启框选。 |
@@ -555,9 +597,10 @@ multiSelectable(value: boolean)
 
 
 
-#### supportAnimation8+
+### supportAnimation8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 supportAnimation(value: boolean)
 
@@ -573,6 +616,7 @@ supportAnimation动画效果参考[示例5（Grid拖拽场景）](#示例5grid�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否支持动画。设置为true时支持GridItem拖拽动画，设置为false时不支持GridItem拖拽动画。 默认值：false |
@@ -580,9 +624,10 @@ supportAnimation动画效果参考[示例5（Grid拖拽场景）](#示例5grid�
 
 
 
-#### edgeEffect10+
+### edgeEffect10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 edgeEffect(value: EdgeEffect, options?: EdgeEffectOptions)
 
@@ -596,6 +641,7 @@ edgeEffect(value: EdgeEffect, options?: EdgeEffectOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | EdgeEffect | 是 | Grid组件的边缘滑动效果，支持弹簧效果和阴影效果。 默认值：EdgeEffect.None |
@@ -604,9 +650,10 @@ edgeEffect(value: EdgeEffect, options?: EdgeEffectOptions)
 
 
 
-#### enableScrollInteraction10+
+### enableScrollInteraction10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableScrollInteraction(value: boolean)
 
@@ -620,6 +667,7 @@ enableScrollInteraction(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否支持滚动手势。设置为true时可以通过手指或者鼠标滚动，设置为false时无法通过手指或者鼠标滚动，但不影响控制器Scroller的滚动接口。 默认值：true |
@@ -631,9 +679,10 @@ enableScrollInteraction(value: boolean)
 
 
 
-#### nestedScroll10+
+### nestedScroll10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 nestedScroll(value: NestedScrollOptions)
 
@@ -647,6 +696,7 @@ nestedScroll(value: NestedScrollOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | NestedScrollOptions | 是 | 嵌套滚动选项，用于设置Grid组件与父组件的嵌套滚动联动行为。 |
@@ -654,9 +704,10 @@ nestedScroll(value: NestedScrollOptions)
 
 
 
-#### friction10+
+### friction10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 friction(value: number | Resource)
 
@@ -670,6 +721,7 @@ friction(value: number | Resource)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| Resource | 是 | 摩擦系数。 默认值：非可穿戴设备为0.6，可穿戴设备为0.9。 从API version 11开始，非可穿戴设备默认值为0.7。 从API version 12开始，非可穿戴设备默认值为0.75。 取值范围：(0, +∞)，设置为小于等于0的值时，按默认值处理。 |
@@ -677,9 +729,10 @@ friction(value: number | Resource)
 
 
 
-#### alignItems12+
+### alignItems12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 alignItems(alignment: Optional&lt;GridItemAlignment&gt;)
 
@@ -693,6 +746,7 @@ alignItems(alignment: Optional&lt;GridItemAlignment&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | alignment | Optional&lt;GridItemAlignment&gt; | 是 | 设置Grid中GridItem的对齐方式。 默认值：GridItemAlignment.DEFAULT |
@@ -700,9 +754,10 @@ alignItems(alignment: Optional&lt;GridItemAlignment&gt;)
 
 
 
-#### focusWrapMode20+
+### focusWrapMode20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 focusWrapMode(mode: Optional&lt;FocusWrapMode&gt;)
 
@@ -716,6 +771,7 @@ focusWrapMode(mode: Optional&lt;FocusWrapMode&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | Optional&lt;FocusWrapMode&gt; | 是 | 交叉轴方向键走焦模式。 默认值：FocusWrapMode.DEFAULT 说明： 异常值按默认值处理，即交叉轴方向键不能换行。 |
@@ -723,9 +779,10 @@ focusWrapMode(mode: Optional&lt;FocusWrapMode&gt;)
 
 
 
-#### syncLoad20+
+### syncLoad20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 syncLoad(enable: boolean)
 
@@ -739,6 +796,7 @@ syncLoad(enable: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | boolean | 是 | 是否同步加载Grid区域内所有子组件。 true表示同步加载，false表示异步加载。默认值：true。 说明： 设置为false时，在首次显示、不带动画scrollToIndex跳转场景，若当帧布局耗时超过50ms，会将Grid区域内尚未布局的子组件延后到下一帧进行布局。 |
@@ -746,9 +804,10 @@ syncLoad(enable: boolean)
 
 
 
-#### supportEmptyBranchInLazyLoading23+
+### supportEmptyBranchInLazyLoading23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 supportEmptyBranchInLazyLoading(supported: boolean | undefined)
 
@@ -762,6 +821,7 @@ supportEmptyBranchInLazyLoading(supported: boolean | undefined)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | supported | boolean \| undefined | 是 | 当前Grid组件是否支持在LazyForEach或Repeat中使用if/else渲染控制语法生成一个不含任何子节点的空分支节点。 true表示支持空分支节点；false表示不支持空分支节点。 值为undefined时，按false处理。 |
@@ -769,9 +829,10 @@ supportEmptyBranchInLazyLoading(supported: boolean | undefined)
 
 
 
-#### editModeOptions23+
+### editModeOptions23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 editModeOptions(options?: EditModeOptions)
 
@@ -785,6 +846,7 @@ editModeOptions(options?: EditModeOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | EditModeOptions | 否 | 编辑模式选项，用于配置Grid编辑模式下的多选聚拢动画、预览角标、多选样式、双指滑动多选等行为。需要调整上述行为时传入；不传入时，各选项使用EditModeOptions对象说明中的默认值。 |
@@ -792,9 +854,10 @@ editModeOptions(options?: EditModeOptions)
 
 
 
-#### enableEditMode
+### enableEditMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableEditMode(enabled: boolean | undefined)
 
@@ -810,6 +873,7 @@ enableEditMode(enabled: boolean | undefined)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean \| undefined | 是 | 是否启用编辑模式，该参数支持!!双向绑定变量。设置为true时启用编辑模式，可以滑动多选，设置为false或undefined时关闭编辑模式，不可滑动多选。 |
@@ -817,9 +881,10 @@ enableEditMode(enabled: boolean | undefined)
 
 
 
-#### GridItemAlignment12+枚举说明
+## GridItemAlignment12+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 GridItem的对齐方式枚举。
 
@@ -828,6 +893,7 @@ GridItem的对齐方式枚举。
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -841,15 +907,17 @@ GridItem的对齐方式枚举。
 
 
 
-#### GridDirection8+枚举说明
+## GridDirection8+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 主轴布局方向枚举。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -861,17 +929,19 @@ GridItem的对齐方式枚举。
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)和[滚动组件通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scrollable-common#事件)外，还支持以下事件：
 
 
 
-#### onScrollIndex
+### onScrollIndex
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onScrollIndex(event: (first: number, last: number) => void)
 
@@ -883,6 +953,7 @@ onScrollIndex(event: (first: number, last: number) => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | first | number | 是 | 当前显示的网格起始位置的索引值。 |
@@ -891,9 +962,10 @@ onScrollIndex(event: (first: number, last: number) => void)
 
 
 
-#### onItemDragStart8+
+### onItemDragStart8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onItemDragStart(event: OnItemDragStartCallback)
 
@@ -913,6 +985,7 @@ onItemDragStart(event: OnItemDragStartCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | OnItemDragStartCallback | 是 | GridItem拖拽开始时触发的回调。 API version 22及之前版本，该参数类型为(event: ItemDragInfo, itemIndex: number) => (() => any) \| void，其中event和itemIndex参数含义参考OnItemDragStartCallback。 |
@@ -920,9 +993,10 @@ onItemDragStart(event: OnItemDragStartCallback)
 
 
 
-#### onItemDragEnter8+
+### onItemDragEnter8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onItemDragEnter(event: (event: ItemDragInfo) => void)
 
@@ -934,6 +1008,7 @@ onItemDragEnter(event: (event: ItemDragInfo) => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | ItemDragInfo | 是 | 拖拽点的信息。 |
@@ -941,9 +1016,10 @@ onItemDragEnter(event: (event: ItemDragInfo) => void)
 
 
 
-#### onItemDragMove8+
+### onItemDragMove8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onItemDragMove(event: (event: ItemDragInfo, itemIndex: number, insertIndex: number) => void)
 
@@ -955,6 +1031,7 @@ onItemDragMove(event: (event: ItemDragInfo, itemIndex: number, insertIndex: numb
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | ItemDragInfo | 是 | 拖拽点的信息。 |
@@ -964,9 +1041,10 @@ onItemDragMove(event: (event: ItemDragInfo, itemIndex: number, insertIndex: numb
 
 
 
-#### onItemDragLeave8+
+### onItemDragLeave8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onItemDragLeave(event: (event: ItemDragInfo, itemIndex: number) => void)
 
@@ -978,6 +1056,7 @@ onItemDragLeave(event: (event: ItemDragInfo, itemIndex: number) => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | ItemDragInfo | 是 | 拖拽点的信息。 |
@@ -986,9 +1065,10 @@ onItemDragLeave(event: (event: ItemDragInfo, itemIndex: number) => void)
 
 
 
-#### onItemDrop8+
+### onItemDrop8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onItemDrop(event: (event: ItemDragInfo, itemIndex: number, insertIndex: number, isSuccess: boolean) => void)
 
@@ -1002,6 +1082,7 @@ onItemDrop(event: (event: ItemDragInfo, itemIndex: number, insertIndex: number, 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | ItemDragInfo | 是 | 拖拽点的信息。 |
@@ -1012,9 +1093,10 @@ onItemDrop(event: (event: ItemDragInfo, itemIndex: number, insertIndex: number, 
 
 
 
-#### onScrollBarUpdate10+
+### onScrollBarUpdate10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onScrollBarUpdate(event: (index: number, offset: number) => ComputedBarAttribute)
 
@@ -1030,6 +1112,7 @@ onScrollBarUpdate(event: (index: number, offset: number) => ComputedBarAttribute
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 当前显示的网格起始位置的索引值。 |
@@ -1038,6 +1121,7 @@ onScrollBarUpdate(event: (index: number, offset: number) => ComputedBarAttribute
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ComputedBarAttribute | 滚动条的位置及长度。 |
@@ -1045,9 +1129,10 @@ onScrollBarUpdate(event: (index: number, offset: number) => ComputedBarAttribute
 
 
 
-#### onReachStart10+
+### onReachStart10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onReachStart(event: () => void)
 
@@ -1063,6 +1148,7 @@ Grid初始化时会触发一次，Grid滚动到起始位置时触发一次。Gri
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | () => void | 是 | 网格到达起始位置时触发的回调。 |
@@ -1070,9 +1156,10 @@ Grid初始化时会触发一次，Grid滚动到起始位置时触发一次。Gri
 
 
 
-#### onReachEnd10+
+### onReachEnd10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onReachEnd(event: () => void)
 
@@ -1088,6 +1175,7 @@ Grid边缘效果为弹簧效果时，滑动经过末尾位置时触发一次，�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | () => void | 是 | 网格到达末尾位置时触发的回调。 |
@@ -1095,9 +1183,10 @@ Grid边缘效果为弹簧效果时，滑动经过末尾位置时触发一次，�
 
 
 
-#### onScrollFrameBegin10+
+### onScrollFrameBegin10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onScrollFrameBegin(event: OnScrollFrameBeginCallback)
 
@@ -1121,6 +1210,7 @@ onScrollFrameBegin(event: OnScrollFrameBeginCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | OnScrollFrameBeginCallback | 是 | 每帧滚动开始回调函数。 |
@@ -1128,9 +1218,10 @@ onScrollFrameBegin(event: OnScrollFrameBeginCallback)
 
 
 
-#### onScrollStart10+
+### onScrollStart10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onScrollStart(event: () => void)
 
@@ -1144,6 +1235,7 @@ onScrollStart(event: () => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | () => void | 是 | 网格滑动开始时触发的回调。 |
@@ -1151,9 +1243,10 @@ onScrollStart(event: () => void)
 
 
 
-#### onScrollStop10+
+### onScrollStop10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onScrollStop(event: () => void)
 
@@ -1167,6 +1260,7 @@ onScrollStop(event: () => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | () => void | 是 | 网格滑动停止时触发的回调。 |
@@ -1174,9 +1268,10 @@ onScrollStop(event: () => void)
 
 
 
-#### onScroll(deprecated)
+### onScroll(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onScroll(event: (scrollOffset: number, scrollState: [ScrollState](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list#scrollstate枚举说明)) => void)
 
@@ -1194,6 +1289,7 @@ onScroll(event: (scrollOffset: number, scrollState: [ScrollState](https://develo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scrollOffset | number | 是 | 相对于上一帧的偏移量，Grid的内容向上滚动时偏移量为正，向下滚动时偏移量为负。 单位vp。 |
@@ -1202,9 +1298,10 @@ onScroll(event: (scrollOffset: number, scrollState: [ScrollState](https://develo
 
 
 
-#### onEditModeChange
+### onEditModeChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onEditModeChange(callback: Callback&lt;boolean&gt; | undefined)
 
@@ -1220,6 +1317,7 @@ onEditModeChange(callback: Callback&lt;boolean&gt; | undefined)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;boolean&gt; \| undefined | 是 | 编辑模式状态变化时触发的回调。回调参数类型为boolean，true表示进入编辑模式，false表示退出编辑模式。 传入undefined时取消回调。 |
@@ -1227,9 +1325,10 @@ onEditModeChange(callback: Callback&lt;boolean&gt; | undefined)
 
 
 
-#### ComputedBarAttribute10+对象说明
+## ComputedBarAttribute10+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 滚动条位置和长度对象。
 
@@ -1239,17 +1338,19 @@ onEditModeChange(callback: Callback&lt;boolean&gt; | undefined)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| totalOffset | number | 否 | 否 | Grid内容相对显示区域的总偏移，单位px。 |
-| totalLength | number | 否 | 否 | Grid内容总长度，单位px。 |
+| totalOffset | number | 否 | 否 | Grid内容相对显示区域的总偏移，单位vp。 |
+| totalLength | number | 否 | 否 | Grid内容总长度，单位vp。 |
 
 
 
 
-#### UIGridEvent19+
+## UIGridEvent19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 frameNode中[getEvent('Grid')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#geteventgrid19)方法的返回值，可用于给Grid节点设置滚动事件。
 
@@ -1257,9 +1358,10 @@ UIGridEvent继承于[UIScrollableCommonEvent](https://developer.huawei.com/consu
 
 
 
-#### setOnWillScroll19+
+### setOnWillScroll19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setOnWillScroll(callback: OnWillScrollCallback | undefined): void
 
@@ -1275,6 +1377,7 @@ setOnWillScroll(callback: OnWillScrollCallback | undefined): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | OnWillScrollCallback \| undefined | 是 | onWillScroll事件的回调函数。传入undefined时，会重置事件回调。 |
@@ -1282,9 +1385,10 @@ setOnWillScroll(callback: OnWillScrollCallback | undefined): void
 
 
 
-#### setOnDidScroll19+
+### setOnDidScroll19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setOnDidScroll(callback: OnScrollCallback | undefined): void
 
@@ -1300,6 +1404,7 @@ setOnDidScroll(callback: OnScrollCallback | undefined): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | OnScrollCallback \| undefined | 是 | onDidScroll事件的回调函数。传入undefined时，会重置事件回调。 |
@@ -1307,9 +1412,10 @@ setOnDidScroll(callback: OnScrollCallback | undefined): void
 
 
 
-#### setOnScrollIndex19+
+### setOnScrollIndex19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setOnScrollIndex(callback: OnGridScrollIndexCallback | undefined): void
 
@@ -1325,6 +1431,7 @@ setOnScrollIndex(callback: OnGridScrollIndexCallback | undefined): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | OnGridScrollIndexCallback \| undefined | 是 | onScrollIndex事件的回调函数。传入undefined时，会重置事件回调。 |
@@ -1332,9 +1439,10 @@ setOnScrollIndex(callback: OnGridScrollIndexCallback | undefined): void
 
 
 
-#### OnGridScrollIndexCallback19+
+## OnGridScrollIndexCallback19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnGridScrollIndexCallback = (first: number, last: number) => void
 
@@ -1348,6 +1456,7 @@ Grid组件可见区域item变化事件的回调类型。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | first | number | 是 | 当前显示的Grid起始位置的索引值。 |
@@ -1356,13 +1465,17 @@ Grid组件可见区域item变化事件的回调类型。
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（固定行列Grid）
+
+
+### 示例1（固定行列Grid）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 可以使用[GridLayoutOptions](#gridlayoutoptions10对象说明)中的onGetRectByIndex指定GridItem的位置和大小。
 
@@ -1450,7 +1563,10 @@ struct GridExample {
 
 
 
-#### 示例2（可滚动Grid和滚动事件）
+### 示例2（可滚动Grid和滚动事件）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 可滚动Grid，包括所有滚动属性和事件。
 
@@ -1603,7 +1719,10 @@ struct GridExample {
 
 
 
-#### 示例3（可滚动Grid设置跨行跨列节点）
+### 示例3（可滚动Grid设置跨行跨列节点）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [GridLayoutOptions](#gridlayoutoptions10对象说明)的使用：irregularIndexes与onGetIrregularSizeByIndex。
 
@@ -1700,7 +1819,10 @@ struct GridExample {
 
 
 
-#### 示例4（Grid嵌套滚动）
+### 示例4（Grid嵌套滚动）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [nestedScroll](#nestedscroll10)和[onScrollFrameBegin](#onscrollframebegin10)的使用。
 
@@ -1886,7 +2008,10 @@ struct GridExample {
 
 
 
-#### 示例5（Grid拖拽场景）
+### 示例5（Grid拖拽场景）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 1. 通过属性[editMode](#editmode8)设置Grid是否进入编辑模式，进入编辑模式可以拖拽Grid组件内部GridItem。
 2. 在[onItemDragStart](#onitemdragstart8)回调中设置拖拽过程中显示的图片。
 3. 在[onItemDrop](#onitemdrop8)中获取拖拽起始位置，和拖拽插入位置，并在[onItemDrop](#onitemdrop8)中完成交换数组位置逻辑。
@@ -1998,7 +2123,10 @@ struct GridExample {
 
 
 
-#### 示例6（自适应Grid）
+### 示例6（自适应Grid）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [layoutDirection](#layoutdirection8)、[maxCount](#maxcount8)、[minCount](#mincount8)、[cellLength](#celllength8)的使用。
 
@@ -2055,7 +2183,10 @@ struct GridExample {
 
 
 
-#### 示例7（双指缩放修改Grid列数）
+### 示例7（双指缩放修改Grid列数）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 双指缩放修改Grid列数。
 
@@ -2145,7 +2276,10 @@ struct GridExample {
 
 
 
-#### 示例8（设置自适应列数）
+### 示例8（设置自适应列数）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 属性[columnsTemplate](#columnstemplate)中auto-fill、auto-fit和auto-stretch的使用示例。
 
@@ -2219,7 +2353,10 @@ struct GridColumnsTemplate {
 
 
 
-#### 示例9（以当前行最高的GridItem的高度为其他GridItem的高度）
+### 示例9（以当前行最高的GridItem的高度为其他GridItem的高度）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 下面的Grid中包含两列，每列中的GridItem包括高度确定的两个Column和一个高度不确定的Text共三个子组件。
 
@@ -2292,7 +2429,10 @@ struct Index {
 
 
 
-#### 示例10（设置边缘渐隐）
+### 示例10（设置边缘渐隐）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过[fadingEdge](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scrollable-common#fadingedge14)属性来设置边缘渐隐效果。
 
@@ -2352,7 +2492,10 @@ struct GridExample {
 
 
 
-#### 示例11（单边边缘效果）
+### 示例11（单边边缘效果）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[edgeEffect](#edgeeffect10)接口，实现了Grid组件设置单边边缘效果。
 
@@ -2411,7 +2554,10 @@ struct GridExample {
 
 
 
-#### 示例12（方向键走焦换行模式）
+### 示例12（方向键走焦换行模式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 20开始，该示例通过[focusWrapMode](#focuswrapmode20)接口，实现了Grid组件方向键走焦换行效果。
 
@@ -2501,7 +2647,10 @@ struct GridExample {
 
 
 
-#### 示例13（设置滚动事件）
+### 示例13（设置滚动事件）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过FrameNode中的[getEvent('Grid')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#geteventgrid19)获取[UIGridEvent](#uigridevent19)，并为Grid设置滚动事件回调，用于事件监听方因无法直接修改页面代码而无法使用声明式接口设置回调的场景。
 
@@ -2597,7 +2746,10 @@ struct Index {
 
 
 
-#### 示例14（滚动到指定位置）
+### 示例14（滚动到指定位置）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[scrollToIndex](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll#scrolltoindex)接口，实现了Grid组件滚动到指定位置。
 
@@ -2663,7 +2815,10 @@ struct GridScrollToIndexSample {
 
 
 
-#### 示例15（实现Grid滑动选择）
+### 示例15（实现Grid滑动选择）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[PanGesture](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-gestures-pangesture#pangesture-1)接口，实现了Grid组件一边滑动一边选择的效果。
 
@@ -2970,7 +3125,10 @@ struct GridExample {
 
 
 
-#### 示例16（实现GridItem自定义拖拽）
+### 示例16（实现GridItem自定义拖拽）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[gesture](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-gesture-settings#gesture)接口，实现了GridItem组件自定义拖拽效果。
 
@@ -3244,7 +3402,10 @@ struct GridItemExample {
 
 
 
-#### 示例17（通过拖拽事件实现GridItem拖拽）
+### 示例17（通过拖拽事件实现GridItem拖拽）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[拖拽事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-events-drag-drop)实现拖拽GridItem到Grid边缘时Grid自动滚动的功能。
 
@@ -3320,7 +3481,10 @@ struct Example {
 
 
 
-#### 示例18（Grid组件基于断点配置列数）
+### 示例18（Grid组件基于断点配置列数）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 22开始，该示例展示了Grid组件支持基于断点配置列数效果。
 
@@ -3390,7 +3554,10 @@ Grid宽度属于lg及更大的断点区间时显示5列。
 
 
 
-#### 示例19（获取内容总大小）
+### 示例19（获取内容总大小）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 22 开始，该示例实现了获取内容总大小的功能。
 
@@ -3480,7 +3647,10 @@ struct GridExample {
 
 
 
-#### 示例20（设置多选聚拢动画）
+### 示例20（设置多选聚拢动画）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过打开Grid多选聚拢动画开关，实现了在GridItem上长按弹出菜单时，通过[bindContextMenu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-menu#bindcontextmenu8)聚拢显示范围内被选中的GridItem的效果。
 
@@ -3588,7 +3758,10 @@ struct GridExample {
 
 
 
-#### 示例21（设置滑动多选）
+### 示例21（设置滑动多选）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过使用enableEditMode双向绑定和onEditModeChange事件监听在Grid上双指滑动进入多选模式的通知，实现了在Grid上边滑动边选择的效果。
 
@@ -3689,7 +3862,10 @@ struct GridExample {
 
 
 
-#### 示例22（使用OnMove进行拖拽）
+### 示例22（使用OnMove进行拖拽）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API版本26.0.0开始，该示例展示了Grid使用LazyForEach的[onMove](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-drag-sorting#onmove)接口进行拖拽排序的效果，支持拖动到Grid边缘时触发Grid的自动滚动，同时Grid存在跨行跨列节点。
 

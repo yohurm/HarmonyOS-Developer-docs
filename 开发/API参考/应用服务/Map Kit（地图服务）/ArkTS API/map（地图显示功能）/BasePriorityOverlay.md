@@ -1,11 +1,12 @@
 # Interface (BasePriorityOverlay)
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-basepriorityoverlay
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -15,7 +16,8 @@ import { map, mapCommon } from '@kit.MapKit';
  
   
 
-#### BasePriorityOverlay
+## BasePriorityOverlay
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -31,7 +33,8 @@ import { map, mapCommon } from '@kit.MapKit';
  
   
 
-#### getMaxZoom
+### getMaxZoom
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -49,6 +52,7 @@ getMaxZoom(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 覆盖物的最大展示层级。 |
@@ -75,7 +79,8 @@ let maxZoom: number = pointAnnotation.getMaxZoom();
  
   
 
-#### getMinZoom
+### getMinZoom
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -93,6 +98,7 @@ getMinZoom(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 覆盖物的最小展示层级。 |
@@ -107,7 +113,8 @@ let minZoom: number = pointAnnotation.getMinZoom();
  
   
 
-#### setPriority
+### setPriority
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -125,6 +132,7 @@ setPriority(priority: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | priority | number | 是 | 覆盖物的碰撞优先级，值越大优先级越低。 |
@@ -139,7 +147,8 @@ pointAnnotation.setPriority(100);
  
   
 
-#### setZoom
+### setZoom
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -157,6 +166,7 @@ setZoom(minZoom: number, maxZoom: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | minZoom | number | 是 | 覆盖物的最小显示层级，取值范围：[2, 20]。 传入的值高于20，最小缩放级别会取20。 传入的值小于2，最小缩放级别会取2。 说明： minZoom大于maxZoom，方法不生效。 |
@@ -172,7 +182,8 @@ pointAnnotation.setZoom(3, 10);
  
   
 
-#### setAnimation
+### setAnimation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -190,6 +201,7 @@ setAnimation(animation: Animation): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | animation | Animation | 是 | 动画。 |
@@ -226,7 +238,8 @@ pointAnnotation.setAnimation(animation);
  
   
 
-#### startAnimation
+### startAnimation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -275,7 +288,8 @@ pointAnnotation.startAnimation();
  
   
 
-#### clearAnimation
+### clearAnimation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 

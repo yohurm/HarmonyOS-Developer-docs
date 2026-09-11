@@ -1,6 +1,6 @@
 # ArkWeb进程
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web_component_process
 
@@ -13,7 +13,7 @@ ArkWeb是多进程模型，分为应用进程、Web渲染进程、Web GPU进程�
 **图1** ArkWeb进程模型图
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/Y-DIDLrjQvae37qiTtFZGA/zh-cn_image_0000002674632710.png?HW-CC-KV=V1&HW-CC-Date=20260813T095733Z&HW-CC-Expire=86400&HW-CC-Sign=F87B95676F23A649A7DBF538999DD6736F9D21D7A964F02994B14CD9DEE1EF09)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/ZcpaD6BzRvGSnPzpzsOC3A/zh-cn_image_0000002747290859.png?HW-CC-KV=V1&HW-CC-Date=20260911T073149Z&HW-CC-Expire=86400&HW-CC-Sign=3A83591E162BEDE41362E8CE60D1F9990DCD148485255D843B05258100A21F5E)
 
 
  - 应用进程中Web相关线程（应用唯一）
@@ -22,7 +22,7 @@ ArkWeb是多进程模型，分为应用进程、Web渲染进程、Web GPU进程�
 应用进程为主进程。包含网络线程、Video线程、Audio线程和IO线程等。
  - 负责Web组件的对外接口与回调处理，网络请求、媒体服务等需要与其他系统服务交互的功能。
 
-     - Foundation进程（系统唯一）
+          - Foundation进程（系统唯一）
 
   负责接收应用进程进行孵化进程的请求，管理应用进程和Web渲染进程的绑定关系。
  - Web孵化进程（系统唯一）
@@ -31,7 +31,7 @@ ArkWeb是多进程模型，分为应用进程、Web渲染进程、Web GPU进程�
 负责接收Foundation进程的请求，执行孵化Web渲染进程与Web GPU进程。
  - 执行孵化后处理安全沙箱降权、预加载动态链接库，以提升性能。
 
-     - Web渲染进程（应用可指定多Web实例间共享或独立进程）
+          - Web渲染进程（应用可指定多Web实例间共享或独立进程）
 
   
 负责运行Web渲染进程引擎（HTML解析、排版、绘制、渲染）。
@@ -39,7 +39,7 @@ ArkWeb是多进程模型，分为应用进程、Web渲染进程、Web GPU进程�
  - 提供接口供应用选择多Web实例间是否共享渲染进程，满足不同场景对安全性、稳定性、内存占用的诉求。
  - 默认策略：移动设备上共享渲染进程以节省内存，2in1设备上独立渲染进程提升安全与稳定性。
 
-     - Web GPU进程（应用唯一）
+          - Web GPU进程（应用唯一）
 
   负责光栅化、合成送显等与GPU、RenderService交互功能。提升应用进程稳定性、安全性。
 

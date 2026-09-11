@@ -1,12 +1,12 @@
 # AppStorageV2: 应用全局UI状态存储
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-appstoragev2
 
 为了增强状态管理框架对应用全局UI状态变量的共享能力，开发者可以使用AppStorageV2存储应用全局UI的状态变量数据。
 
-AppStorageV2提供应用级全局共享状态变量的能力，开发者可以通过connect绑定同一个key，进行跨ability的数据共享。
+AppStorageV2提供应用级全局共享状态变量的能力，开发者可以通过connect绑定同一个key，进行跨UIAbility的数据共享。
 
 在阅读本文档前，建议提前阅读：[@ComponentV2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-custom-components#componentv2)，[@ObservedV2和@Trace](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-observedv2-and-trace)，配合阅读：[AppStorageV2-API文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-statemanagement#appstoragev2)。
 
@@ -15,17 +15,17 @@ AppStorageV2提供应用级全局共享状态变量的能力，开发者可以�
 
 
 
-#### 概述
+## 概述
 
 AppStorageV2是在应用UI启动时会被创建的单例。它用于提供应用状态数据的中心存储，这些状态数据在应用级别都是可访问的。AppStorageV2将在应用运行过程保留其数据。数据通过唯一的键字符串值访问。需要注意的是，AppStorage与AppStorageV2之间的数据互不共享。
 
-AppStorageV2可以修改connect的返回值，实现与UI组件的同步。
+通过修改AppStorageV2的connect接口返回值，可以实现数据与UI组件的同步。
 
 AppStorageV2支持应用的[主线程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/thread-model-stage)内多个UIAbility实例间的状态共享。
 
 
 
-#### 使用说明
+## 使用说明
 
  - connect：创建或获取存储的数据。
 
@@ -48,7 +48,7 @@ AppStorageV2支持应用的[主线程](https://developer.huawei.com/consumer/cn/
 
 
 
-#### 使用限制
+## 使用限制
 
 1、只支持class类型，否则会抛出运行时报错，从API version 23开始，将返回错误码[140103](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-statemanagement#section140103-appstoragev2和persistencev2使用不支持的数据类型)。
 
@@ -62,11 +62,11 @@ AppStorageV2支持应用的[主线程](https://developer.huawei.com/consumer/cn/
 
 
 
-#### 使用场景
+## 使用场景
 
 
 
-#### 使用AppStorageV2
+### 使用AppStorageV2
 
 AppStorageV2使用connect接口即可实现对AppStorageV2中数据的修改和同步，如果修改的数据被@Trace装饰，该数据的修改会同步更新UI。需要注意的是，使用remove接口只会将数据从AppStorageV2中删除，不影响组件中已创建的数据，详见以下示例代码：
 
@@ -108,7 +108,7 @@ struct Index {
           this.message.userName += 'suf';
         })
       // remove key Message, 会从AppStorageV2中删除key为Message的对象
-      // remove之后，修改父组件的userId，子组件能同步变化，因为remove只是从AppStorageV2删除，不会影响组件中已存在的数据
+      // remove之后，修改父组件的userID，子组件能同步变化，因为remove只是从AppStorageV2删除，不会影响组件中已存在的数据
       Button('remove key: Message')
         .width(300)
         .margin(10)
@@ -177,12 +177,12 @@ struct Child {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/-31ygyDnS1Ojc0uHHkVZCg/zh-cn_image_0000002704392051.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095706Z&HW-CC-Expire=86400&HW-CC-Sign=F77A823120BB37ADDDB3BCCE556D0B9ACC7FC7CF3C1A56C5CAB40FC059D7ABFC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/e42ivAgNRzSHQJGWo3l7eA/zh-cn_image_0000002747210013.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072315Z&HW-CC-Expire=86400&HW-CC-Sign=42920482D7BAB50BBDC2FC6F3A31F964156B8CE448776CCD5B759E73697842FC)
 
 
 
 
-#### 在两个页面之间存储数据
+### 在两个页面之间存储数据
 
 数据页面
 
@@ -334,4 +334,4 @@ struct PageTwo {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/t0xLxvwiQ2mODdyOps74mw/zh-cn_image_0000002674631928.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095706Z&HW-CC-Expire=86400&HW-CC-Sign=0D988D66085940B57B088B0C8457C97FFF98EE2247AF0739E9A56ABA7FE91D17)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/v80rc0-pR-mfjD9dneRDpA/zh-cn_image_0000002717770080.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072315Z&HW-CC-Expire=86400&HW-CC-Sign=7D4DF32B2B404FB1A77B30686274E6430C7C8C0CE750A189155B488A4EBDF087)

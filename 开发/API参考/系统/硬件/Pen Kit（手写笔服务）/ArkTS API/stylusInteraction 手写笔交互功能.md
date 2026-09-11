@@ -1,6 +1,6 @@
 # stylusInteraction (手写笔交互功能)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/pen-stylusinteraction
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -10,7 +10,8 @@
 **起始版本：** 5.1.1(19)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -20,7 +21,8 @@ import { stylusInteraction } from '@kit.Penkit';
  
   
 
-#### stylusInteraction.on('squeeze')
+## stylusInteraction.on('squeeze')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -36,6 +38,7 @@ on(type: 'squeeze', receiver: Callback&lt;SqueezeEvent&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定填写"squeeze"字符串，表示手写笔笔身轻捏事件。 |
@@ -56,7 +59,8 @@ try {
  
   
 
-#### stylusInteraction.off('squeeze')
+## stylusInteraction.off('squeeze')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -72,6 +76,7 @@ off(type: 'squeeze', receiver?: Callback&lt;SqueezeEvent&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定填写"squeeze"字符串，表示手写笔笔身轻捏事件。 |
@@ -92,7 +97,8 @@ try {
  
   
 
-#### stylusInteraction.on('doubleTap')
+## stylusInteraction.on('doubleTap')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -108,6 +114,7 @@ on(type: 'doubleTap', receiver: Callback&lt;DoubleTapEvent&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定填写"doubleTap"字符串，表示手写笔笔身双击事件。 |
@@ -128,7 +135,8 @@ try {
  
   
 
-#### stylusInteraction.off('doubleTap')
+## stylusInteraction.off('doubleTap')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -144,6 +152,7 @@ off(type: 'doubleTap', receiver?: Callback&lt;DoubleTapEvent&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定填写"doubleTap"字符串，表示手写笔笔身双击事件。 |
@@ -164,7 +173,8 @@ try {
  
   
 
-#### SqueezeEvent
+## SqueezeEvent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -176,6 +186,7 @@ try {
  
 **起始版本：** 5.1.1(19)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | timestamp | number | 否 | 否 | 时间戳，自系统启动以来经过的时间，单位：ms。 |
@@ -183,7 +194,8 @@ try {
  
   
 
-#### DoubleTapEvent
+## DoubleTapEvent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -195,6 +207,7 @@ try {
  
 **起始版本：** 5.1.1(19)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | timestamp | number | 否 | 否 | 时间戳，自系统启动以来经过的时间，单位：ms。 |
@@ -202,7 +215,8 @@ try {
  
   
 
-#### stylusInteraction.isSensorSupported
+## stylusInteraction.isSensorSupported
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -218,6 +232,7 @@ isSensorSupported(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回查询结果。 - true：支持手写笔传感器数据功能。 - false：不支持手写笔传感器数据功能。 |
@@ -236,7 +251,8 @@ try {
  
   
 
-#### stylusInteraction.onAccelerometer
+## stylusInteraction.onAccelerometer
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -252,6 +268,7 @@ onAccelerometer(receiver: Callback&lt;AccelerometerEvent&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | receiver | Callback&lt;AccelerometerEvent&gt; | 是 | 回调函数，返回手写笔加速度传感器数据。 |
@@ -275,7 +292,8 @@ try {
  
   
 
-#### stylusInteraction.offAccelerometer
+## stylusInteraction.offAccelerometer
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -291,6 +309,7 @@ offAccelerometer(receiver?: Callback&lt;AccelerometerEvent&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | receiver | Callback&lt;AccelerometerEvent&gt; | 否 | 回调函数，需要取消订阅的加速度数据回调对象，需与订阅时传入的回调函数是同一个。若不设置此参数，则取消订阅所有的加速度数据回调。 |
@@ -310,7 +329,8 @@ try {
  
   
 
-#### AccelerometerData
+## AccelerometerData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -322,6 +342,7 @@ try {
  
 **起始版本：** 26.0.0
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | x | number | 否 | 否 | 加速度x轴分量，单位：m/s²，4096为1个重力加速度g，取值范围[-32768, 32767]。 |
@@ -331,7 +352,8 @@ try {
  
   
 
-#### AccelerometerEvent
+## AccelerometerEvent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -343,6 +365,7 @@ try {
  
 **起始版本：** 26.0.0
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | accelerometerData | AccelerometerData[] | 否 | 否 | 手写笔加速度数组数据。 |
@@ -351,7 +374,8 @@ try {
  
   
 
-#### stylusInteraction.onGyroscope
+## stylusInteraction.onGyroscope
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -367,6 +391,7 @@ onGyroscope(receiver: Callback&lt;GyroscopeEvent&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | receiver | Callback&lt;GyroscopeEvent&gt; | 是 | 回调函数，返回手写笔陀螺仪传感器数据。 |
@@ -390,7 +415,8 @@ try {
  
   
 
-#### stylusInteraction.offGyroscope
+## stylusInteraction.offGyroscope
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -406,6 +432,7 @@ offGyroscope(receiver?: Callback&lt;GyroscopeEvent&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | receiver | Callback&lt;GyroscopeEvent&gt; | 否 | 回调函数，需要取消订阅的陀螺仪数据回调对象，需与订阅时传入的回调函数是同一个。若不设置此参数，则取消订阅所有的陀螺仪数据回调。 |
@@ -425,7 +452,8 @@ try {
  
   
 
-#### GyroscopeData
+## GyroscopeData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -437,6 +465,7 @@ try {
  
 **起始版本：** 26.0.0
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | x | number | 否 | 否 | 陀螺仪x轴分量，单位：61mdps/LSB，取值范围[-32768, 32767]。 |
@@ -446,7 +475,8 @@ try {
  
   
 
-#### GyroscopeEvent
+## GyroscopeEvent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -458,6 +488,7 @@ try {
  
 **起始版本：** 26.0.0
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | gyroscopeData | GyroscopeData[] | 否 | 否 | 手写笔陀螺仪数组数据。 |
@@ -466,7 +497,8 @@ try {
  
   
 
-#### stylusInteraction.onSensor
+## stylusInteraction.onSensor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -482,6 +514,7 @@ onSensor(receiver: Callback&lt;SensorEvent&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | receiver | Callback&lt;SensorEvent&gt; | 是 | 回调函数，返回手写笔加速度和陀螺仪传感器数据。 |
@@ -507,7 +540,8 @@ try {
  
   
 
-#### stylusInteraction.offSensor
+## stylusInteraction.offSensor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -523,6 +557,7 @@ offSensor(receiver?: Callback&lt;SensorEvent&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | receiver | Callback&lt;SensorEvent&gt; | 否 | 回调函数，需要取消订阅的传感器数据回调对象，需与订阅时传入的回调函数是同一个。若不设置此参数，则取消订阅所有的传感器数据回调。 |
@@ -542,7 +577,8 @@ try {
  
   
 
-#### SensorData
+## SensorData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -554,6 +590,7 @@ try {
  
 **起始版本：** 26.0.0
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | accelerometerData | AccelerometerData | 否 | 否 | 加速度传感器数据。 |
@@ -562,7 +599,8 @@ try {
  
   
 
-#### SensorEvent
+## SensorEvent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -574,6 +612,7 @@ try {
  
 **起始版本：** 26.0.0
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | sensorData | SensorData[] | 否 | 否 | 手写笔加速度和陀螺仪数组数据。 |

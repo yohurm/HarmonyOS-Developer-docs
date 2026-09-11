@@ -1,6 +1,6 @@
 # HSP转HAR指导
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hsp-to-har
 
@@ -11,7 +11,7 @@ HSP对bundleName和签名有一致性要求，在调试阶段需要先安装HSP�
 
 
 
-#### HSP转HAR的操作步骤
+## HSP转HAR的操作步骤
 1. 修改HSP模块下的module.json5文件，将type字段值改为har，删除deliveryWithInstall和pages字段。
 
   

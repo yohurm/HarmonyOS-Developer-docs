@@ -42,7 +42,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 @Entry
 @ComponentV2
 struct Index {
-  // 通过window实例提供的setWindowBrightness()方法，即可设置屏幕亮度。
+<em>  // 通过window实例提供的setWindowBrightness()方法，即可设置屏幕亮度。</em>
   changeBrightness(brightness: number) {
     try {
       let windowClass: window.Window | undefined = undefined;
@@ -62,17 +62,17 @@ struct Index {
     }
   }
 
-  // ArcSliderValueOptions的构造信息，设置当前进度值、最小值和最大值
+ <em> // ArcSliderValueOptions的构造信息，设置当前进度值、最小值和最大值</em>
   valueOptionsConstructorOptions: ArcSliderValueOptionsConstructorOptions = {
     progress: 1,
     min: 0,
     max: 1
   };
-  // ArcSliderLayoutValueOptions的构造信息，设置弧形Slider从下往上滑动
+ <em> // ArcSliderLayoutValueOptions的构造信息，设置弧形Slider从下往上滑动</em>
   layoutOptionsConstructorOptions: ArcSliderLayoutOptionsConstructorOptions = {
     reverse: true
   };
-  // ArcSliderStyleOptions的构造信息，设置弧形Slider的描边粗细、描边背景色、描边高亮色、描边背景模糊值
+ <em> // ArcSliderStyleOptions的构造信息，设置弧形Slider的描边粗细、描边背景色、描边高亮色、描边背景模糊值</em>
   styleOptionsConstructorOptions: ArcSliderStyleOptionsConstructorOptions = {
     trackThickness: 16,
     activeTrackThickness: 24,
@@ -88,7 +88,7 @@ struct Index {
     layoutOptions: this.layoutOptions,
     styleOptions: this.styleOptions,
     digitalCrownSensitivity: CrownSensitivity.HIGH,
-    // 弧形Slider的进度值发生变化时触发
+<em>    // 弧形Slider的进度值发生变化时触发</em>
     onChange: (progress: number) => {
       this.changeBrightness(progress);
 

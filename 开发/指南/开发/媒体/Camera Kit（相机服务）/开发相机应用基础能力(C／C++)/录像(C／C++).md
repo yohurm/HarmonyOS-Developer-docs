@@ -1,13 +1,13 @@
 # 录像(C/C++)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera-recording
 
 录像是循环帧的捕获，同时也是相机应用的最重要功能之一。对于录像的流畅度，开发者可以参考拍照(C/C++)中的[开发步骤](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera-shooting#开发步骤)7，设置分辨率、闪光灯、焦距、照片质量及旋转角度等信息。
 
 
-#### 开发步骤
+## 开发步骤
 
 详细的API说明请参考[OH_Camera](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-camera)。
 1. 导入NDK接口，接口中提供了相机相关的属性和方法，导入方法如下。
@@ -141,7 +141,7 @@ Camera_ErrorCode NDKCamera::VideoOutputStop(void)
 
 
 
-#### 状态监听
+## 状态监听
 
 在相机应用开发过程中，可以随时监听录像输出流状态，包括录像开始、录像结束、录像流输出的错误。
 

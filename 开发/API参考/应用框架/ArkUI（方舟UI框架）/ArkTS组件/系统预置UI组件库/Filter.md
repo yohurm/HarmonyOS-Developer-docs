@@ -1,9 +1,9 @@
 # Filter
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-filter
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 多条件筛选，帮助用户在大量信息中找到所需内容，应结合具体场景选择合适筛选方式。多条件筛选控件由筛选器与悬浮条构成，悬浮条可下拉展示悬浮筛选器。筛选器样式可分为多行可折叠类型与多行列表类型，并可以在筛选器最后一行附加快捷筛选器。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 import { Filter } from '@kit.ArkUI';
@@ -22,17 +23,19 @@ import { Filter } from '@kit.ArkUI';
  
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 无
  
   
 
-#### Filter
+## Filter
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 Filter({ multiFilters: Array&lt;FilterParams&gt;, additionFilters?: FilterParams, filterType?: FilterType, onFilterChanged: (filterResults: Array&lt;FilterResult&gt;) => void, container: ()=> void })
  
@@ -46,6 +49,7 @@ Filter({ multiFilters: Array&lt;FilterParams&gt;, additionFilters?: FilterParams
  
 **参数：**
   
+
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | multiFilters | Array&lt;FilterParams&gt; | 是 | @Prop | 多条件筛选列表。 |
@@ -57,9 +61,10 @@ Filter({ multiFilters: Array&lt;FilterParams&gt;, additionFilters?: FilterParams
  
   
 
-#### FilterParams
+## FilterParams
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
  
@@ -67,6 +72,7 @@ Filter({ multiFilters: Array&lt;FilterParams&gt;, additionFilters?: FilterParams
  
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | name | ResourceStr | 否 | 否 | 筛选项维度名称。 默认值：空字符串。 说明：如果文本大于列宽时，文本被截断。 |
@@ -75,9 +81,10 @@ Filter({ multiFilters: Array&lt;FilterParams&gt;, additionFilters?: FilterParams
  
   
 
-#### FilterType
+## FilterType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
  
@@ -85,6 +92,7 @@ Filter({ multiFilters: Array&lt;FilterParams&gt;, additionFilters?: FilterParams
  
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | MULTI_LINE_FILTER | 0 | 多行可折叠类型筛选器。 |
@@ -93,9 +101,10 @@ Filter({ multiFilters: Array&lt;FilterParams&gt;, additionFilters?: FilterParams
  
   
 
-#### FilterResult
+## FilterResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
  
@@ -103,6 +112,7 @@ Filter({ multiFilters: Array&lt;FilterParams&gt;, additionFilters?: FilterParams
  
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | name | ResourceStr | 否 | 否 | 筛选项维度名称。 默认值：空字符串。 说明：如果文本大于列宽时，文本被截断。 |
@@ -112,17 +122,19 @@ Filter({ multiFilters: Array&lt;FilterParams&gt;, additionFilters?: FilterParams
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 不支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)。
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例设置FilterType属性为MULTI_LINE_FILTER，实现多行可折叠类型筛选器。
  
@@ -188,4 +200,4 @@ struct Index {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/-HWNeHK7T7yg-ggLRUxYfQ/zh-cn_image_0000002685928607.png?HW-CC-KV=V1&HW-CC-Date=20260730T071519Z&HW-CC-Expire=86400&HW-CC-Sign=15F7B027F409EE6EFACBB1028DD2715C97453FC4ACE7B8774CB767309F316E1B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/a4eZPx7xRvSEEcvlrQs_qA/zh-cn_image_0000002717773082.png?HW-CC-KV=V1&HW-CC-Date=20260911T073028Z&HW-CC-Expire=86400&HW-CC-Sign=74069736314E30DA68C0FE870BD5CFF73034B8ACD1628DB5E6ECFA78D8BAE407)

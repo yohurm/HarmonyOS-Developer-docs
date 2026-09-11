@@ -1,6 +1,6 @@
 # @ohos.nfc.tag (标准NFC-Tag)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-nfctag
 **支持设备：** Phone | Wearable
@@ -12,11 +12,12 @@
 前台读卡是指提前打开应用程序，并进入对应的NFC读卡页面后读卡，只会把读到的标签卡片信息分发给前台应用程序。
 
 > [!NOTE]
-> 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 从API版本26.0.0开始请使用 canIUse("SystemCapability.Communication.NFC.Tag") && nfcController.isNfcSupported 共同判断设备是否支持NFC能力更加准确，否则可能导致应用运行稳定性问题，参考 nfc-tag开发指南 。 导入tag模块编辑器报错，在某个具体设备型号上能力可能超出工程默认设备定义的能力集范围，如需要使用此部分能力需额外配置自定义syscap，参考 syscap开发指南 。
+> 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 API版本26.0.0前请使用 canIUse("SystemCapability.Communication.NFC.Tag") && nfcController.isNfcAvailable 判断设备是否支持NFC能力。从API版本26.0.0开始请使用 canIUse("SystemCapability.Communication.NFC.Tag") && nfcController.isNfcSupported 共同判断设备是否支持NFC能力更加准确，否则可能导致应用运行稳定性问题，参考 nfc-tag开发指南 。 导入tag模块编辑器报错，在某个具体设备型号上能力可能超出工程默认设备定义的能力集范围，如需要使用此部分能力需额外配置自定义syscap，参考 syscap开发指南 。
 
 
 
-#### **导入模块**
+## **导入模块**
+
 
 **支持设备：** Phone | Wearable
 
@@ -26,7 +27,8 @@ import { tag } from '@kit.ConnectivityKit';
 
 
 
-#### **tag.TagInfo**
+## **tag.TagInfo示例**
+
 
 **支持设备：** Phone | Wearable
 
@@ -62,7 +64,7 @@ export default class EntryAbility extends UIAbility {
             if (tagInfo.technology[i] == tag.ISO_DEP) {
                 isIsoDepTag = true;
             }
-        // 检查其他技术类型: tag.NFC_B/NFC_F/NFC_V/NDEF/MIFARE_CLASSIC/MIFARE_ULTRALIGHT/NDEF_FORMATABLE
+        // 检查其他技术类型：tag.NFC_B/NFC_F/NFC_V/NDEF/MIFARE_CLASSIC/MIFARE_ULTRALIGHT/NDEF_FORMATABLE
         }
 
         // 使用 NfcA APIs 去访问发现的标签
@@ -86,14 +88,15 @@ export default class EntryAbility extends UIAbility {
             }
             // 其他代码：对发现的标签执行读取或写入
         }
-        // 使用相同的代码来处理 "NfcA/NfcB/NfcF/NfcV/Ndef/MifareClassic/MifareUL/NdefFormatable".
+        // 使用相同的代码来处理 "NfcA/NfcB/NfcF/NfcV/Ndef/MifareClassic/MifareUL/NdefFormatable"。
     }
 }
 ```
 
 
 
-#### tag.getNfcATag(deprecated)
+## tag.getNfcATag(deprecated)
+
 
 **支持设备：** Phone | Wearable
 
@@ -109,12 +112,14 @@ getNfcATag(tagInfo: [TagInfo](#taginfo)): [NfcATag](https://developer.huawei.com
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | tagInfo | TagInfo | 是 | 包含Tag技术类型和相关参数，从tag.getTagInfo(want: Want)获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -123,7 +128,8 @@ getNfcATag(tagInfo: [TagInfo](#taginfo)): [NfcATag](https://developer.huawei.com
 
 
 
-#### tag.getNfcA9+
+## tag.getNfcA9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -137,12 +143,14 @@ getNfcA(tagInfo: [TagInfo](#taginfo)): [NfcATag](https://developer.huawei.com/co
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | tagInfo | TagInfo | 是 | 包含Tag技术类型和相关参数，从tag.getTagInfo(want: Want)获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -153,6 +161,7 @@ getNfcA(tagInfo: [TagInfo](#taginfo)): [NfcATag](https://developer.huawei.com/co
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameters types. 3. Parameter verification failed. |
@@ -162,7 +171,8 @@ getNfcA(tagInfo: [TagInfo](#taginfo)): [NfcATag](https://developer.huawei.com/co
 
 
 
-#### tag.getNfcBTag(deprecated)
+## tag.getNfcBTag(deprecated)
+
 
 **支持设备：** Phone | Wearable
 
@@ -178,12 +188,14 @@ getNfcBTag(tagInfo: [TagInfo](#taginfo)): [NfcBTag](https://developer.huawei.com
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | tagInfo | TagInfo | 是 | 包含Tag技术类型和相关参数，从tag.getTagInfo(want: Want)获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -192,7 +204,8 @@ getNfcBTag(tagInfo: [TagInfo](#taginfo)): [NfcBTag](https://developer.huawei.com
 
 
 
-#### tag.getNfcB9+
+## tag.getNfcB9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -206,12 +219,14 @@ getNfcB(tagInfo: [TagInfo](#taginfo)): [NfcBTag](https://developer.huawei.com/co
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | tagInfo | TagInfo | 是 | 包含Tag技术类型和相关参数，从tag.getTagInfo(want: Want)获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -222,6 +237,7 @@ getNfcB(tagInfo: [TagInfo](#taginfo)): [NfcBTag](https://developer.huawei.com/co
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameters types. 3. Parameter verification failed. |
@@ -231,7 +247,8 @@ getNfcB(tagInfo: [TagInfo](#taginfo)): [NfcBTag](https://developer.huawei.com/co
 
 
 
-#### tag.getNfcFTag(deprecated)
+## tag.getNfcFTag(deprecated)
+
 
 **支持设备：** Phone | Wearable
 
@@ -247,12 +264,14 @@ getNfcFTag(tagInfo: [TagInfo](#taginfo)): [NfcFTag](https://developer.huawei.com
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | tagInfo | TagInfo | 是 | 包含Tag技术类型和相关参数，从tag.getTagInfo(want: Want)获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -261,7 +280,8 @@ getNfcFTag(tagInfo: [TagInfo](#taginfo)): [NfcFTag](https://developer.huawei.com
 
 
 
-#### tag.getNfcF9+
+## tag.getNfcF9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -275,12 +295,14 @@ getNfcF(tagInfo: [TagInfo](#taginfo)): [NfcFTag](https://developer.huawei.com/co
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | tagInfo | TagInfo | 是 | 包含Tag技术类型和相关参数，从tag.getTagInfo(want: Want)获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -291,6 +313,7 @@ getNfcF(tagInfo: [TagInfo](#taginfo)): [NfcFTag](https://developer.huawei.com/co
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameters types. 3. Parameter verification failed. |
@@ -300,7 +323,8 @@ getNfcF(tagInfo: [TagInfo](#taginfo)): [NfcFTag](https://developer.huawei.com/co
 
 
 
-#### tag.getNfcVTag(deprecated)
+## tag.getNfcVTag(deprecated)
+
 
 **支持设备：** Phone | Wearable
 
@@ -316,12 +340,14 @@ getNfcVTag(tagInfo: [TagInfo](#taginfo)): [NfcVTag](https://developer.huawei.com
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | tagInfo | TagInfo | 是 | 包含Tag技术类型和相关参数，从tag.getTagInfo(want: Want)获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -330,7 +356,8 @@ getNfcVTag(tagInfo: [TagInfo](#taginfo)): [NfcVTag](https://developer.huawei.com
 
 
 
-#### tag.getNfcV9+
+## tag.getNfcV9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -344,12 +371,14 @@ getNfcV(tagInfo: [TagInfo](#taginfo)): [NfcVTag](https://developer.huawei.com/co
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | tagInfo | TagInfo | 是 | 包含Tag技术类型和相关参数，从tag.getTagInfo(want: Want)获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -360,6 +389,7 @@ getNfcV(tagInfo: [TagInfo](#taginfo)): [NfcVTag](https://developer.huawei.com/co
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameters types. 3. Parameter verification failed. |
@@ -369,7 +399,8 @@ getNfcV(tagInfo: [TagInfo](#taginfo)): [NfcVTag](https://developer.huawei.com/co
 
 
 
-#### tag.getIsoDep9+
+## tag.getIsoDep9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -383,12 +414,14 @@ getIsoDep(tagInfo: [TagInfo](#taginfo)): [IsoDepTag](https://developer.huawei.co
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | tagInfo | TagInfo | 是 | 包含Tag技术类型和相关参数，从tag.getTagInfo(want: Want)获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -399,6 +432,7 @@ getIsoDep(tagInfo: [TagInfo](#taginfo)): [IsoDepTag](https://developer.huawei.co
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameters types. 3. Parameter verification failed. |
@@ -408,7 +442,8 @@ getIsoDep(tagInfo: [TagInfo](#taginfo)): [IsoDepTag](https://developer.huawei.co
 
 
 
-#### tag.getNdef9+
+## tag.getNdef9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -422,12 +457,14 @@ getNdef(tagInfo: [TagInfo](#taginfo)): [NdefTag](https://developer.huawei.com/co
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | tagInfo | TagInfo | 是 | 包含Tag技术类型和相关参数，从tag.getTagInfo(want: Want)获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -438,6 +475,7 @@ getNdef(tagInfo: [TagInfo](#taginfo)): [NdefTag](https://developer.huawei.com/co
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameters types. 3. Parameter verification failed. |
@@ -447,7 +485,8 @@ getNdef(tagInfo: [TagInfo](#taginfo)): [NdefTag](https://developer.huawei.com/co
 
 
 
-#### tag.getMifareClassic9+
+## tag.getMifareClassic9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -461,12 +500,14 @@ getMifareClassic(tagInfo: [TagInfo](#taginfo)): [MifareClassicTag](https://devel
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | tagInfo | TagInfo | 是 | 包含Tag技术类型和相关参数，从tag.getTagInfo(want: Want)获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -477,6 +518,7 @@ getMifareClassic(tagInfo: [TagInfo](#taginfo)): [MifareClassicTag](https://devel
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameters types. 3. Parameter verification failed. |
@@ -486,7 +528,8 @@ getMifareClassic(tagInfo: [TagInfo](#taginfo)): [MifareClassicTag](https://devel
 
 
 
-#### tag.getMifareUltralight9+
+## tag.getMifareUltralight9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -500,12 +543,14 @@ getMifareUltralight(tagInfo: [TagInfo](#taginfo)): [MifareUltralightTag](https:/
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | tagInfo | TagInfo | 是 | 包含Tag技术类型和相关参数，从tag.getTagInfo(want: Want)获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -516,6 +561,7 @@ getMifareUltralight(tagInfo: [TagInfo](#taginfo)): [MifareUltralightTag](https:/
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameters types. 3. Parameter verification failed. |
@@ -525,7 +571,8 @@ getMifareUltralight(tagInfo: [TagInfo](#taginfo)): [MifareUltralightTag](https:/
 
 
 
-#### tag.getNdefFormatable9+
+## tag.getNdefFormatable9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -539,12 +586,14 @@ getNdefFormatable(tagInfo: [TagInfo](#taginfo)): [NdefFormatableTag](https://dev
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | tagInfo | TagInfo | 是 | 包含Tag技术类型和相关参数，从tag.getTagInfo(want: Want)获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -555,6 +604,7 @@ getNdefFormatable(tagInfo: [TagInfo](#taginfo)): [NdefFormatableTag](https://dev
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameters types. 3. Parameter verification failed. |
@@ -564,7 +614,8 @@ getNdefFormatable(tagInfo: [TagInfo](#taginfo)): [NdefFormatableTag](https://dev
 
 
 
-#### tag.getBarcodeTag18+
+## tag.getBarcodeTag18+
+
 
 **支持设备：** Phone | Wearable
 
@@ -578,12 +629,14 @@ getBarcodeTag(tagInfo: [TagInfo](#taginfo)): [BarcodeTag](https://developer.huaw
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | tagInfo | TagInfo | 是 | 包含Tag技术类型和相关参数，从tag.getTagInfo(want: Want)获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -594,6 +647,7 @@ getBarcodeTag(tagInfo: [TagInfo](#taginfo)): [BarcodeTag](https://developer.huaw
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameters types. 3. Parameter verification failed. |
@@ -603,7 +657,8 @@ getBarcodeTag(tagInfo: [TagInfo](#taginfo)): [BarcodeTag](https://developer.huaw
 
 
 
-#### tag.getTagInfo9+
+## tag.getTagInfo9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -617,12 +672,14 @@ getTagInfo(want: [Want](https://developer.huawei.com/consumer/cn/doc/harmonyos-r
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | 分发Ability时，在系统onCreate入口函数的参数中获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -633,6 +690,7 @@ getTagInfo(want: [Want](https://developer.huawei.com/consumer/cn/doc/harmonyos-r
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameters types. 3. Parameter verification failed. |
@@ -641,7 +699,8 @@ getTagInfo(want: [Want](https://developer.huawei.com/consumer/cn/doc/harmonyos-r
 
 
 
-#### tag.registerForegroundDispatch10+
+## tag.registerForegroundDispatch10+
+
 
 **支持设备：** Phone | Wearable
 
@@ -657,16 +716,18 @@ registerForegroundDispatch(elementName: [ElementName](https://developer.huawei.c
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | elementName | ElementName | 是 | 所属应用读卡的页面信息（至少包含bundleName、abilityName这两项的赋值），不可以为空。 |
-| discTech | number[] | 是 | 前台应用指定的NFC读卡技术类型，不可以为空，至少指定一种读卡技术类型。每个number值表示所支持技术类型的常量值型，根据number值设置NFC读卡轮询的Tag技术类型（仅包含NFC_A, NFC_B, NFC_F, NFC_V中的一种或多种）。 |
+| discTech | number[] | 是 | 前台应用指定的NFC读卡技术类型，不可以为空，至少指定一种读卡技术类型。每个number值表示所支持技术类型的常量值类型，根据number值设置NFC读卡轮询的Tag技术类型（仅包含NFC_A, NFC_B, NFC_F, NFC_V中的一种或多种）。 |
 | callback | AsyncCallback&lt;TagInfo&gt; | 是 | 前台读卡监听回调函数，返回读到的Tag信息，不可以为空。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -683,7 +744,8 @@ registerForegroundDispatch(elementName: [ElementName](https://developer.huawei.c
 
 
 
-#### tag.unregisterForegroundDispatch10+
+## tag.unregisterForegroundDispatch10+
+
 
 **支持设备：** Phone | Wearable
 
@@ -699,6 +761,7 @@ unregisterForegroundDispatch(elementName: [ElementName](https://developer.huawei
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | elementName | ElementName | 是 | 所属应用读卡的页面信息（至少包含bundleName、abilityName这两项的赋值），不可以为空。 |
@@ -707,6 +770,7 @@ unregisterForegroundDispatch(elementName: [ElementName](https://developer.huawei
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -778,7 +842,8 @@ export default class MainAbility extends UIAbility {
 
 
 
-#### tag.on('readerMode')11+
+## tag.on('readerMode')11+
+
 
 **支持设备：** Phone | Wearable
 
@@ -794,17 +859,19 @@ on(type: 'readerMode', elementName: [ElementName](https://developer.huawei.com/c
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 要注册的回调类型，固定填"readerMode"字符串。 |
 | elementName | ElementName | 是 | 所属应用读卡的页面信息（至少包含bundleName、abilityName这两项的赋值），不可以为空。 |
-| discTech | number[] | 是 | 前台应用指定的NFC读卡技术类型，不可以为空，至少指定一种读卡技术类型。每个number值表示所支持技术类型的常量值型，根据number值设置NFC读卡轮询的Tag技术类型（仅包含NFC_A, NFC_B, NFC_F, NFC_V, SKIP_NDEF中的一种或多种）。 |
+| discTech | number[] | 是 | 前台应用指定的NFC读卡技术类型，不可以为空，至少指定一种读卡技术类型。每个number值表示所支持技术类型的常量值类型，根据number值设置NFC读卡轮询的Tag技术类型（仅包含NFC_A, NFC_B, NFC_F, NFC_V, SKIP_NDEF中的一种或多种）。 |
 | callback | AsyncCallback&lt;TagInfo&gt; | 是 | 读卡器模式监听回调函数，返回读到的Tag信息，不可以为空。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -821,7 +888,8 @@ on(type: 'readerMode', elementName: [ElementName](https://developer.huawei.com/c
 
 
 
-#### tag.off('readerMode')11+
+## tag.off('readerMode')11+
+
 
 **支持设备：** Phone | Wearable
 
@@ -837,6 +905,7 @@ off(type: 'readerMode', elementName: [ElementName](https://developer.huawei.com/
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 要注销的回调类型，固定填"readerMode"字符串。 |
@@ -847,6 +916,7 @@ off(type: 'readerMode', elementName: [ElementName](https://developer.huawei.com/
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -920,7 +990,8 @@ export default class MainAbility extends UIAbility {
 
 
 
-#### tag.on('readerModeWithInterval')23+
+## tag.on('readerModeWithInterval')23+
+
 
 **支持设备：** Phone | Wearable
 
@@ -942,11 +1013,12 @@ on(type: 'readerModeWithInterval', elementName: ElementName, discTech: number[],
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 要注册的回调类型，固定填"readerModeWithInterval"字符串。 |
 | elementName | ElementName | 是 | 所属应用读卡的页面信息（至少包含bundleName、abilityName这两项的赋值）。 |
-| discTech | number[] | 是 | 前台应用指定的NFC读卡技术类型，至少指定一种读卡技术类型。每个number值表示所支持技术类型的常量值型，根据number值设置NFC读卡轮询的Tag技术类型（仅包含NFC_A, NFC_B, NFC_F, NFC_V, SKIP_NDEF中的一种或多种）。 |
+| discTech | number[] | 是 | 前台应用指定的NFC读卡技术类型，至少指定一种读卡技术类型。每个number值表示所支持技术类型的常量值类型，根据number值设置NFC读卡轮询的Tag技术类型（仅包含NFC_A, NFC_B, NFC_F, NFC_V, SKIP_NDEF中的一种或多种）。 |
 | callback | Callback&lt;TagInfo&gt; | 是 | 读卡器模式监听回调函数，返回读到的Tag信息。 |
 | interval | number | 是 | 设置卡在位检测间隔，单位为ms。推荐范围100-2000，若传入负值则不生效，系统会使用默认卡在位间隔（150ms）。 |
 
@@ -954,6 +1026,7 @@ on(type: 'readerModeWithInterval', elementName: ElementName, discTech: number[],
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -969,7 +1042,8 @@ on(type: 'readerModeWithInterval', elementName: ElementName, discTech: number[],
 
 
 
-#### tag.off('readerModeWithInterval')23+
+## tag.off('readerModeWithInterval')23+
+
 
 **支持设备：** Phone | Wearable
 
@@ -985,6 +1059,7 @@ off(type: 'readerModeWithInterval', elementName: ElementName, callback?: Callbac
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 要注销的回调类型，固定填"readerModeWithInterval"字符串。 |
@@ -995,6 +1070,7 @@ off(type: 'readerModeWithInterval', elementName: ElementName, callback?: Callbac
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1067,7 +1143,8 @@ export default class MainAbility extends UIAbility {
 
 
 
-#### tag.ndef.makeUriRecord9+
+## tag.ndef.makeUriRecord9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -1081,12 +1158,14 @@ makeUriRecord(uri: string): NdefRecord
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uri | string | 是 | 写入到NDEF Record里面的数据内容。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1096,6 +1175,7 @@ makeUriRecord(uri: string): NdefRecord
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1123,7 +1203,8 @@ try {
 
 
 
-#### tag.ndef.makeTextRecord9+
+## tag.ndef.makeTextRecord9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -1137,6 +1218,7 @@ makeTextRecord(text: string, locale: string): NdefRecord
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | text | string | 是 | 写入到NDEF Record里面的文本数据内容。长度小于待写入的NFC标签容量。 |
@@ -1144,6 +1226,7 @@ makeTextRecord(text: string, locale: string): NdefRecord
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1153,6 +1236,7 @@ makeTextRecord(text: string, locale: string): NdefRecord
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1181,7 +1265,8 @@ try {
 
 
 
-#### tag.ndef.makeApplicationRecord18+
+## tag.ndef.makeApplicationRecord18+
+
 
 **支持设备：** Phone | Wearable
 
@@ -1195,12 +1280,14 @@ makeApplicationRecord(bundleName: string): NdefRecord
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 要创建标签的应用包名。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1210,6 +1297,7 @@ makeApplicationRecord(bundleName: string): NdefRecord
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1237,7 +1325,8 @@ try {
 
 
 
-#### tag.ndef.makeMimeRecord9+
+## tag.ndef.makeMimeRecord9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -1251,6 +1340,7 @@ makeMimeRecord(mimeType: string, mimeData: number[]): NdefRecord
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mimeType | string | 是 | 符合RFC规则的MIME类型，比如"text/plain"或"image/jpeg"。 |
@@ -1258,6 +1348,7 @@ makeMimeRecord(mimeType: string, mimeData: number[]): NdefRecord
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1267,6 +1358,7 @@ makeMimeRecord(mimeType: string, mimeData: number[]): NdefRecord
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1295,7 +1387,8 @@ try {
 
 
 
-#### tag.ndef.makeExternalRecord9+
+## tag.ndef.makeExternalRecord9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -1309,6 +1402,7 @@ makeExternalRecord(domainName: string, type: string, externalData: number[]): Nd
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | domainName | string | 是 | 外部数据发布组织的域名，一般是应用程序的包名。 |
@@ -1318,6 +1412,7 @@ makeExternalRecord(domainName: string, type: string, externalData: number[]): Nd
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | NdefRecord | NDEF标签的Record，详见NDEF技术规范《NFCForum-TS-NDEF_1.0》。 |
@@ -1326,6 +1421,7 @@ makeExternalRecord(domainName: string, type: string, externalData: number[]): Nd
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1355,7 +1451,8 @@ try {
 
 
 
-#### tag.ndef.messageToBytes9+
+## tag.ndef.messageToBytes9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -1369,12 +1466,14 @@ messageToBytes(ndefMessage: [NdefMessage](https://developer.huawei.com/consumer/
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ndefMessage | NdefMessage | 是 | NDEF消息数据对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1384,6 +1483,7 @@ messageToBytes(ndefMessage: [NdefMessage](https://developer.huawei.com/consumer/
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1408,7 +1508,8 @@ try {
 
 
 
-#### tag.ndef.createNdefMessage9+
+## tag.ndef.createNdefMessage9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -1422,12 +1523,14 @@ createNdefMessage(data: number[]): [NdefMessage](https://developer.huawei.com/co
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | number[] | 是 | 原始字节，每个number十六进制表示，范围是0x00~0xFF。要求必须满足NDEF Record的格式。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1437,6 +1540,7 @@ createNdefMessage(data: number[]): [NdefMessage](https://developer.huawei.com/co
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1448,7 +1552,7 @@ createNdefMessage(data: number[]): [NdefMessage](https://developer.huawei.com/co
 ```text
 import { tag } from '@kit.ConnectivityKit';
 
-let rawData = [0xD1, 0x01, 0x03, 0x54, 0x4E, 0x46, 0x43];  //必须是可以被解析的NDEF记录
+let rawData = [0xD1, 0x01, 0x03, 0x54, 0x4E, 0x46, 0x43];  // 必须是可以被解析的NDEF记录
 try {
     let ndefMessage : tag.NdefMessage = tag.ndef.createNdefMessage(rawData);
     console.info("ndef createNdefMessage, ndefMessage: " + ndefMessage);
@@ -1459,7 +1563,8 @@ try {
 
 
 
-#### tag.ndef.createNdefMessage9+
+## tag.ndef.createNdefMessage9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -1473,12 +1578,14 @@ createNdefMessage(ndefRecords: NdefRecord[]): [NdefMessage](https://developer.hu
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ndefRecords | NdefRecord[] | 是 | NDEF标签的Record列表，详见NDEF技术规范《NFCForum-TS-NDEF_1.0》。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1488,6 +1595,7 @@ createNdefMessage(ndefRecords: NdefRecord[]): [NdefMessage](https://developer.hu
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1512,7 +1620,8 @@ try {
 
 
 
-#### TagInfo
+## TagInfo
+
 
 **支持设备：** Phone | Wearable
 
@@ -1521,6 +1630,7 @@ NFC服务在读取到标签时给出的对象，通过该对象属性，应用�
 **系统能力：** SystemCapability.Communication.NFC.Tag
 
 **需要权限：** ohos.permission.NFC_TAG
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1531,7 +1641,8 @@ NFC服务在读取到标签时给出的对象，通过该对象属性，应用�
 
 
 
-#### NdefRecord9+
+## NdefRecord9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -1540,6 +1651,7 @@ NDEF标签Record属性的定义，参考NDEF标签技术规范《NFCForum-TS-NDE
 **系统能力：** SystemCapability.Communication.NFC.Tag
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1551,13 +1663,15 @@ NDEF标签Record属性的定义，参考NDEF标签技术规范《NFCForum-TS-NDE
 
 
 
-#### 常量
+## 常量
+
 
 **支持设备：** Phone | Wearable
 
 NFC Tag有多种不同的技术类型，定义常量描述不同的技术类型。
 
 **系统能力：** SystemCapability.Communication.NFC.Tag
+
 
 | 名称 | 类型 | 值 | 说明 |
 | --- | --- | --- | --- |
@@ -1571,14 +1685,15 @@ NFC Tag有多种不同的技术类型，定义常量描述不同的技术类型�
 | MIFARE_CLASSIC | number | 8 | MIFARE Classic技术。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | MIFARE_ULTRALIGHT | number | 9 | MIFARE Ultralight技术。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | NFC_BARCODE18+ | number | 10 | BARCODE技术。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
-| SKIP_NDEF | number | 11 | 跳过NDEF检查的技术。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| SKIP_NDEF | number | 11 | 跳过NDEF检查的技术。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | RTD_TEXT9+ | number[] | [0x54] | 文本类型的NDEF Record，参考NDEF标签技术规范《NFCForum-TS-NDEF_1.0》的定义细节。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | RTD_URI9+ | number[] | [0x55] | URI类型的NDEF Record，参考NDEF标签技术规范《NFCForum-TS-NDEF_1.0》的定义细节。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 
 
 
 
-#### TnfType9+
+## TnfType9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -1587,6 +1702,7 @@ NDEF Record的TNF(Type Name Field)类型值，参考NDEF标签技术规范《NFC
 **系统能力：** SystemCapability.Communication.NFC.Tag
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1601,7 +1717,8 @@ NDEF Record的TNF(Type Name Field)类型值，参考NDEF标签技术规范《NFC
 
 
 
-#### NfcForumType9+
+## NfcForumType9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -1610,6 +1727,7 @@ NFC Forum标准里面Tag类型的定义。
 **系统能力：** SystemCapability.Communication.NFC.Tag
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1622,7 +1740,8 @@ NFC Forum标准里面Tag类型的定义。
 
 
 
-#### MifareClassicType9+
+## MifareClassicType9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -1631,6 +1750,7 @@ MIFARE Classic标签类型的定义。
 **系统能力：** SystemCapability.Communication.NFC.Tag
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1642,7 +1762,8 @@ MIFARE Classic标签类型的定义。
 
 
 
-#### MifareClassicSize9+
+## MifareClassicSize9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -1651,6 +1772,7 @@ MIFARE Classic标签存储大小的定义。
 **系统能力：** SystemCapability.Communication.NFC.Tag
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1662,7 +1784,8 @@ MIFARE Classic标签存储大小的定义。
 
 
 
-#### MifareUltralightType9+
+## MifareUltralightType9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -1671,6 +1794,7 @@ MIFARE Ultralight标签类型的定义。
 **系统能力：** SystemCapability.Communication.NFC.Tag
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1681,7 +1805,8 @@ MIFARE Ultralight标签类型的定义。
 
 
 
-#### NfcATag
+## NfcATag
+
 
 **支持设备：** Phone | Wearable
 
@@ -1693,6 +1818,7 @@ type NfcATag = _NfcATag
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _NfcATag | NfcATag 提供 NFC-A(ISO 14443-3A)技术的属性和I/O操作的访问。 |
@@ -1700,7 +1826,8 @@ type NfcATag = _NfcATag
 
 
 
-#### NfcBTag
+## NfcBTag
+
 
 **支持设备：** Phone | Wearable
 
@@ -1712,6 +1839,7 @@ type NfcBTag = _NfcBTag
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _NfcBTag | NfcBTag 提供 NFC-B(ISO 14443-3B)技术的属性和I/O操作的访问。 |
@@ -1719,7 +1847,8 @@ type NfcBTag = _NfcBTag
 
 
 
-#### NfcFTag
+## NfcFTag
+
 
 **支持设备：** Phone | Wearable
 
@@ -1731,6 +1860,7 @@ type NfcFTag = _NfcFTag
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _NfcFTag | NfcFTag 提供对 NFC-F(JIS 6319-4)技术的属性和I/O操作的访问。 |
@@ -1738,7 +1868,8 @@ type NfcFTag = _NfcFTag
 
 
 
-#### NfcVTag
+## NfcVTag
+
 
 **支持设备：** Phone | Wearable
 
@@ -1750,6 +1881,7 @@ type NfcVTag = _NfcVTag
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _NfcVTag | NfcVTag 提供对 NFC-V(ISO 15693)技术的属性和I/O操作的访问。 |
@@ -1757,7 +1889,8 @@ type NfcVTag = _NfcVTag
 
 
 
-#### IsoDepTag9+
+## IsoDepTag9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -1769,6 +1902,7 @@ type IsoDepTag = _IsoDepTag
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _IsoDepTag | IsoDepTag 提供 ISO-DEP(ISO 14443-4)技术的属性和I/O操作的访问。 |
@@ -1776,7 +1910,8 @@ type IsoDepTag = _IsoDepTag
 
 
 
-#### NdefTag9+
+## NdefTag9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -1788,6 +1923,7 @@ type NdefTag = _NdefTag
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _NdefTag | 提供对已格式化为NDEF的NFC标签的数据和操作的访问。 |
@@ -1795,7 +1931,8 @@ type NdefTag = _NdefTag
 
 
 
-#### MifareClassicTag9+
+## MifareClassicTag9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -1807,6 +1944,7 @@ type MifareClassicTag = _MifareClassicTag
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _MifareClassicTag | MifareClassicTag提供对MIFARE Classic属性和I/O操作的访问。 |
@@ -1814,7 +1952,8 @@ type MifareClassicTag = _MifareClassicTag
 
 
 
-#### MifareUltralightTag9+
+## MifareUltralightTag9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -1826,6 +1965,7 @@ type MifareUltralightTag = _MifareUltralightTag;
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _MifareUltralightTag | MifareUltralightTag 提供对MIFARE Ultralight属性和I/O操作的访问。 |
@@ -1833,7 +1973,8 @@ type MifareUltralightTag = _MifareUltralightTag;
 
 
 
-#### NdefFormatableTag9+
+## NdefFormatableTag9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -1845,6 +1986,7 @@ type NdefFormatableTag = _NdefFormatableTag
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _NdefFormatableTag | NdefFormatableTag为NDEF Formattable的标签提供格式化操作。 |
@@ -1852,7 +1994,8 @@ type NdefFormatableTag = _NdefFormatableTag
 
 
 
-#### BarcodeTag18+
+## BarcodeTag18+
+
 
 **支持设备：** Phone | Wearable
 
@@ -1864,6 +2007,7 @@ type BarcodeTag = _BarcodeTag
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _BarcodeTag | 提供对条形码标签的属性和I/O操作的访问。 |
@@ -1871,7 +2015,8 @@ type BarcodeTag = _BarcodeTag
 
 
 
-#### NdefMessage9+
+## NdefMessage9+
+
 
 **支持设备：** Phone | Wearable
 
@@ -1883,6 +2028,7 @@ type NdefMessage = _NdefMessage
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _NdefMessage | 获取NDEF消息中的所有记录。 |
@@ -1890,7 +2036,8 @@ type NdefMessage = _NdefMessage
 
 
 
-#### TagSession
+## TagSession
+
 
 **支持设备：** Phone | Wearable
 
@@ -1901,6 +2048,7 @@ type TagSession = _TagSession
 **系统能力**：SystemCapability.Communication.NFC.Tag
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
 
 | 类型 | 说明 |
 | --- | --- |

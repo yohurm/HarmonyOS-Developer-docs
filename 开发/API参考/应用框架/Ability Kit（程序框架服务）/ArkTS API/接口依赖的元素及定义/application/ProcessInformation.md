@@ -1,9 +1,9 @@
 # ProcessInformation
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-processinformation
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 运行进程信息，可以通过appManager的[getRunningProcessInformation](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-appmanager#appmanagergetrunningprocessinformation)来获取运行进程信息。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { appManager } from '@kit.AbilityKit';
@@ -22,12 +23,14 @@ import { appManager } from '@kit.AbilityKit';
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | pid | number | 否 | 否 | 进程ID。 元服务API：从API version 11开始，该接口支持在元服务中使用。 |
@@ -35,9 +38,9 @@ import { appManager } from '@kit.AbilityKit';
 | processName | string | 否 | 否 | 进程名称。 元服务API：从API version 11开始，该接口支持在元服务中使用。 |
 | bundleNames | Array&lt;string&gt; | 否 | 否 | 进程中所有运行的Bundle名称。 元服务API：从API version 11开始，该接口支持在元服务中使用。 |
 | state10+ | appManager.ProcessState | 否 | 否 | 当前进程运行状态。 元服务API：从API version 11开始，该接口支持在元服务中使用。 |
-| bundleType12+ | bundleManager.BundleType | 否 | 否 | 当前进程运行的包类型。 元服务API：从API version 12开始，该接口支持在元服务中使用。 |
-| appCloneIndex12+ | number | 否 | 是 | 分身应用索引。 元服务API：从API version 12开始，该接口支持在元服务中使用。 |
-| isPreload | boolean | 否 | 是 | 进程是否为预加载。当进程是预加载且还未被某个组件启动请求所使用时为true；反之为false。 模型约束： 此接口仅可在Stage模型下使用。 元服务API：从API版本26.0.0开始，该接口支持在元服务中使用。 起始版本：26.0.0 |
+| bundleType12+ | bundleManager.BundleType | 否 | 否 | 当前进程运行的Bundle类型。 元服务API：从API version 12开始，该接口支持在元服务中使用。 |
+| appCloneIndex12+ | number | 否 | 是 | 应用分身索引，用于标识不同的分身应用实例。0表示主应用，正整数表示对应的分身实例索引。 元服务API：从API version 12开始，该接口支持在元服务中使用。 |
+| isPreload | boolean | 否 | 是 | 进程是否为预加载。当进程是预加载且还未被某个组件启动请求所使用时为true；反之为false。 模型约束： 此接口仅可在Stage模型下使用。 元服务API：从API version 26.0.0开始，该接口支持在元服务中使用。 起始版本：26.0.0 |
  
  
 **示例：**

@@ -1,10 +1,10 @@
 # Sensor Service Kit开发简介
 
-更新时间：2026-05-12 09:31:20
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/sensorservice-kit-intro
 
-#### 使用场景
+## 使用场景
 
 Sensor Service Kit（传感器服务）使应用程序能够从传感器获取原始数据，并提供振感控制能力。
  
@@ -18,17 +18,17 @@ Sensor Service Kit（传感器服务）使应用程序能够从传感器获取�
 
   
 本地马达: 设备内置的马达，常用的包括转子马达、线性马达等。
-- 动态马达: 设备外置的多个马达支持独立控制，且可以根据设备的连接、马达的状态等信息进行灵活的管理。动态马达广泛应用于外接设备，包括手柄、遥控器、外接振动器等, 为了管理这些动态接入的设备，应使用 vibrator.on('vibratorStateChange', callback) 来监听设备上下线事件。
+- 动态马达：设备外置的多个马达支持独立控制，且可以根据设备的连接、马达的状态等信息进行灵活的管理。动态马达广泛应用于外接设备，包括手柄、遥控器、外接振动器等，为了管理这些动态接入的设备，应使用 vibrator.on('vibratorStateChange', callback) 来监听设备上下线事件。
 
   
  
   
 
-#### 约束限制
+## 约束限制
 
   
 
-#### Sensor
+### Sensor
 
 - 要使用传感器的功能，设备必须具有对应的传感器器件。
 - 针对某些传感器，开发者需要请求相应的权限，才能获取到相应传感器的数据。
@@ -38,7 +38,7 @@ Sensor Service Kit（传感器服务）使应用程序能够从传感器获取�
  
   
 
-#### Vibrator
+### Vibrator
 
 - 要使用振动的功能，设备必须具有对应的器件。
 - 针对马达，开发者需要请求相应的权限才能使用。
@@ -47,7 +47,7 @@ Sensor Service Kit（传感器服务）使应用程序能够从传感器获取�
  
   
 
-#### 模拟器支持情况
+## 模拟器支持情况
 
 Sensor（传感器）模块支持模拟器，但与真机存在差异，详情请参见“[模拟器与真机的差异](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-specification)”。
  

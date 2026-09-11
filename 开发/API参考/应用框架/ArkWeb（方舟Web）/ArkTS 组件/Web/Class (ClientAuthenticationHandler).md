@@ -1,20 +1,21 @@
 # Class (ClientAuthenticationHandler)
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-clientauthenticationhandler
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ClientAuthenticationHandler是Web组件中处理SSL客户端证书认证请求的类。当服务器请求客户端证书进行TLS双向认证时，该处理器通过onClientAuthenticationRequest事件回调提供给应用，允许应用选择合适的证书凭据进行响应。示例代码参考[onClientAuthenticationRequest](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-events#onclientauthenticationrequest9)事件。
 
 > [!NOTE]
-> 该组件从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 本Class首批接口从API version 9开始支持。 示例效果请以真机运行为准。
+> 该组件从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 本Class从API version 9开始支持。 示例效果请以真机运行为准。
 
 
 
-#### constructor9+
+## constructor9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -24,9 +25,10 @@ ClientAuthenticationHandler的构造函数。
 
 
 
-#### confirm9+
+## confirm9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 confirm(priKeyFile : string, certChainFile : string): void
 
@@ -36,6 +38,7 @@ confirm(priKeyFile : string, certChainFile : string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | priKeyFile | string | 是 | 存放私钥文件的完整路径。 |
@@ -44,21 +47,23 @@ confirm(priKeyFile : string, certChainFile : string): void
 
 
 
-#### confirm10+
+## confirm10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 confirm(authUri : string): void
 
-通知Web组件使用指定的凭据(从证书管理模块获得)。
+通知Web组件使用指定的凭据（从证书管理模块获得）。
 
 > [!NOTE]
-> 需要配置权限：ohos.permission.ACCESS_CERT_MANAGER。
+> authUri参数需通过系统证书管理器获取，需配置ohos.permission.ACCESS_CERT_MANAGER权限。
 
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -66,6 +71,7 @@ confirm(authUri : string): void
 
 
 支持的证书签名算法以及密钥长度详见下表。
+
 
 | 签名算法 | 密钥长度 |
 | --- | --- |
@@ -82,17 +88,23 @@ confirm(authUri : string): void
 
 
 
-#### confirm22+
+## confirm22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 confirm(identity: string, credentialTypeOrCertChainFile: CredentialType | string): void
 
 通知Web组件使用从证书管理模块获取的指定凭据和凭据类型。
 
+> [!NOTE]
+> identity参数需通过系统证书管理器获取，需配置ohos.permission.ACCESS_CERT_MANAGER权限。
+
+
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -104,6 +116,7 @@ confirm(identity: string, credentialTypeOrCertChainFile: CredentialType | string
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. |
@@ -111,21 +124,23 @@ confirm(identity: string, credentialTypeOrCertChainFile: CredentialType | string
 
 
 
-#### cancel9+
+## cancel9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancel(): void
 
-通知Web组件取消服务器发送的客户端证书请求事件。同时，相同host和port服务器的请求，不重复上报该事件。
+通知Web组件取消客户端证书请求事件。对来自相同host和port服务器的后续请求，不再重复上报该事件。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 
 
-#### ignore9+
+## ignore9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ignore(): void
 

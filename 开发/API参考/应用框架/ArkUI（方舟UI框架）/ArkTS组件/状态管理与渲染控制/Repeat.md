@@ -1,9 +1,9 @@
 # Repeat
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-rendering-control-repeat
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Repeat基于数组类型数据来进行循环渲染，一般与滚动容器组件配合使用。
 
@@ -14,21 +14,24 @@ Repeat基于数组类型数据来进行循环渲染，一般与滚动容器组�
 
 
 
-#### 接口
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 接口
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### Repeat: &lt;T&gt;(arr: Array&lt;T&gt;)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### Repeat: &lt;T&gt;(arr: Array&lt;T&gt;)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -44,9 +47,10 @@ Repeat<string>(this.arr)
 
 
 
-#### Repeat: &lt;T&gt;(arr: RepeatArray&lt;T&gt;)18+
+### Repeat: &lt;T&gt;(arr: RepeatArray&lt;T&gt;)18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 18开始，Repeat数据源支持RepeatArray类型。
@@ -58,6 +62,7 @@ Repeat<string>(this.arr)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | arr | RepeatArray&lt;T&gt; | 是 | 数据源，为RepeatArray&lt;T&gt;类型的数组，由开发者决定数据类型。 |
@@ -65,17 +70,19 @@ Repeat<string>(this.arr)
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[拖拽排序](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-drag-sorting)属性外，还支持以下属性。
 
 
 
-#### each
+### each
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 each(itemGenerator: (repeatItem: RepeatItem&lt;T&gt;) => void)
 
@@ -93,6 +100,7 @@ each(itemGenerator: (repeatItem: RepeatItem&lt;T&gt;) => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | itemGenerator | (repeatItem: RepeatItem&lt;T&gt;) => void | 是 | 组件生成函数。repeatItem：将item（arr数组中的数据项）和index（数据项索引）组合到一起的状态变量。 |
@@ -108,9 +116,10 @@ Repeat<string>(this.arr)
 
 
 
-#### key
+### key
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 key(keyGenerator: (item: T, index: number) => string)
 
@@ -127,6 +136,7 @@ key(keyGenerator: (item: T, index: number) => string)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -145,9 +155,10 @@ Repeat<string>(this.arr)
 
 
 
-#### virtualScroll
+### virtualScroll
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 virtualScroll(virtualScrollOptions?: VirtualScrollOptions)
 
@@ -162,6 +173,7 @@ Repeat开启虚拟滚动。适用于数据项数量超出屏幕可见区域的�
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -182,9 +194,10 @@ List() {
 
 
 
-#### template
+### template
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 template(type: string, itemBuilder: RepeatItemBuilder&lt;T&gt;, templateOptions?: TemplateOptions)
 
@@ -201,6 +214,7 @@ template(type: string, itemBuilder: RepeatItemBuilder&lt;T&gt;, templateOptions?
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -227,9 +241,10 @@ List() {
 
 
 
-#### templateId
+### templateId
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 templateId(typedFunc: TemplateTypedFunc&lt;T&gt;)
 
@@ -244,6 +259,7 @@ templateId(typedFunc: TemplateTypedFunc&lt;T&gt;)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -268,9 +284,10 @@ List() {
 
 
 
-#### RepeatArray&lt;T&gt;18+
+## RepeatArray&lt;T&gt;18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type RepeatArray&lt;T&gt; = Array&lt;T&gt; | ReadonlyArray&lt;T&gt; | Readonly<Array&lt;T&gt;>
 
@@ -282,6 +299,7 @@ Repeat数据源参数联合类型。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;T&gt; | 常规数组类型。 |
@@ -291,15 +309,17 @@ Repeat数据源参数联合类型。
 
 
 
-#### RepeatItem&lt;T&gt;
+## RepeatItem&lt;T&gt;
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -309,21 +329,24 @@ Repeat数据源参数联合类型。
 
 
 
-#### VirtualScrollOptions
+## VirtualScrollOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 配置懒加载模式下期望加载的数据项总数、复用能力、数据精准懒加载能力。从API版本26.0.0开始，支持配置内存优化策略。
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -346,9 +369,10 @@ List() {
 
 
 
-#### onTotalCount19+
+### onTotalCount19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onTotalCount?(): number
 
@@ -370,6 +394,7 @@ onTotalCount()不同返回值的数据加载处理规则与totalCount一致，�
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 期望加载的数据项总数。 取值范围：自然数。 |
@@ -377,9 +402,10 @@ onTotalCount()不同返回值的数据加载处理规则与totalCount一致，�
 
 
 
-#### onLazyLoading19+
+### onLazyLoading19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onLazyLoading?(index: number): void
 
@@ -400,6 +426,7 @@ onLazyLoading方法需在懒加载场景下使用。开发者可设置自定义�
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -423,9 +450,10 @@ List() {
 
 
 
-#### RepeatItemBuilder&lt;T&gt;
+## RepeatItemBuilder&lt;T&gt;
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type RepeatItemBuilder&lt;T&gt; = (repeatItem: RepeatItem&lt;T&gt;) => void
 
@@ -435,6 +463,7 @@ type RepeatItemBuilder&lt;T&gt; = (repeatItem: RepeatItem&lt;T&gt;) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | repeatItem | RepeatItem&lt;T&gt; | 否 | 将item和index组合到一起的状态变量。 缺省时默认忽略该参数，请勿在闭包函数的实现中使用该参数，否则会编译报错。 |
@@ -442,13 +471,15 @@ type RepeatItemBuilder&lt;T&gt; = (repeatItem: RepeatItem&lt;T&gt;) => void
 
 
 
-#### TemplateOptions对象说明
+## TemplateOptions对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -478,9 +509,10 @@ List() {
 
 
 
-#### TemplateTypedFunc&lt;T&gt;
+## TemplateTypedFunc&lt;T&gt;
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type TemplateTypedFunc&lt;T&gt; = (item: T, index: number) => string
 
@@ -492,6 +524,7 @@ type TemplateTypedFunc&lt;T&gt; = (item: T, index: number) => string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | item | T | 否 | arr中每一个数据项。T为开发者传入的数据类型。 缺省时默认忽略该参数，请勿在闭包函数的实现中使用该参数，否则会编译报错。 |
@@ -500,6 +533,7 @@ type TemplateTypedFunc&lt;T&gt; = (item: T, index: number) => string
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 当前数据项生成的template type。 |
@@ -507,9 +541,10 @@ type TemplateTypedFunc&lt;T&gt; = (item: T, index: number) => string
 
 
 
-#### RepeatMemOptStrategy
+## RepeatMemOptStrategy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Repeat内存优化策略枚举。
 
@@ -521,6 +556,7 @@ Repeat内存优化策略枚举。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DEFAULT | 0 | 无内存优化策略。 |
@@ -529,13 +565,17 @@ Repeat内存优化策略枚举。
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（使用自动内存优化策略）
+
+
+### 示例1（使用自动内存优化策略）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 以下示例中，通过[VirtualScrollOptions](#virtualscrolloptions)的memoryOptimizationStrategy属性使用了自动内存优化策略。点击Scroll按钮，使列表跳转，旧节点进入缓存池。应用退后台时，清理缓存。应用恢复前台时，恢复缓存。
 

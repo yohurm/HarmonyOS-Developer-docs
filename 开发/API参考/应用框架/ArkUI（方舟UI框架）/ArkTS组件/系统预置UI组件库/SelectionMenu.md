@@ -1,9 +1,9 @@
 # SelectionMenu
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-selectionmenu
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 文本选择菜单，适用于[RichEditor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor)组件通过[bindSelectionMenu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor#bindselectionmenu)或[Text](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text)组件通过[bindSelectionMenu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#bindselectionmenu11)绑定自定义文本选择菜单，支持编辑菜单和扩展下拉菜单两种类型，可通过配置实现复制、粘贴、剪切、全选等内置功能，也可通过自定义菜单项和事件回调实现扩展功能。建议绑定鼠标右键或鼠标选中方式弹出，不支持作为普通组件单独使用。适用于富文本编辑场景，可为用户提供便捷的文本操作入口，提升文本编辑效率。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 import { SelectionMenu, EditorMenuOptions, ExpandedMenuOptions, EditorEventInfo, SelectionMenuOptions } from '@kit.ArkUI';
@@ -22,17 +23,19 @@ import { SelectionMenu, EditorMenuOptions, ExpandedMenuOptions, EditorEventInfo,
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 无。
 
 
 
-#### SelectionMenu
+## SelectionMenu
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 SelectionMenu(options: SelectionMenuOptions): void
 
@@ -48,6 +51,7 @@ SelectionMenu(options: SelectionMenuOptions): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | SelectionMenuOptions | 是 | 文本选择菜单配置选项，用于配置编辑菜单、扩展下拉菜单、富文本控制器以及复制粘贴剪切等回调事件。 |
@@ -55,9 +59,10 @@ SelectionMenu(options: SelectionMenuOptions): void
 
 
 
-#### SelectionMenuOptions
+## SelectionMenuOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 SelectionMenuOptions定义SelectionMenu的可选菜单类型项及其配置参数。
 
@@ -65,23 +70,25 @@ SelectionMenuOptions定义SelectionMenu的可选菜单类型项及其配置参�
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | editorMenuOptions | Array&lt;EditorMenuOptions&gt; | 否 | 是 | 编辑菜单。 editorMenuOptions未配置时，不显示编辑菜单。 同时配置EditorMenuOptions中action和builder时，点击图标会同时响应。 点击编辑菜单图标默认不关闭整个菜单，应用可以通过action接口配置RichEditorController的closeSelectionMenu主动关闭菜单。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | expandedMenuOptions | Array&lt;ExpandedMenuOptions&gt; | 否 | 是 | 扩展下拉菜单。 expandedMenuOptions参数为空时无更多按钮，不显示扩展下拉菜单。 expandedMenuOptions参数不为空时显示更多按钮，配置菜单项收起在更多按钮中，点击更多按钮展示。 controller为空时不显示更多按钮，expandedMenuOptions参数不为空则在下拉菜单中显示。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| controller | RichEditorController | 否 | 是 | 富文本控制器不为空时显示默认系统菜单（包含剪切复制粘贴等部分）且默认菜单功能内置。 controller为空时不显示更多按钮，expandedMenuOptions参数不为空则在下拉菜单中显示。 系统默认只支持复制粘贴富文本内容，图文混排需要应用自定义onCopy、onPaste接口。应用自行配置onCopy \| onPaste接口时，系统菜单默认复制粘贴失效，调用应用自定义函数。 说明： 点击自定义文本选择菜单内置复制功能选项后，自定义菜单消失选中文本高亮保留。 点击自定义文本选择菜单内置全选功能选项后，自定义菜单消失文本全选高亮。 点击自定义文本选择菜单内置粘贴功能选项后，空白处粘贴或者选中文本替换粘贴均是保留被复制文本的样式。 当富文本组件RichEditor的copyOptions属性设置为CopyOptions.None时，内置的复制剪切功能不会被限制。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| controller | RichEditorController | 否 | 是 | 富文本控制器不为空时显示默认系统菜单（包含剪切复制粘贴等部分）且默认菜单功能内置。 controller为空时不显示更多按钮，expandedMenuOptions参数不为空则在下拉菜单中显示。 系统默认只支持复制粘贴富文本内容，图文混排需要应用自定义onCopy、onPaste接口。应用自行配置onCopy \| onPaste接口时，系统菜单默认复制粘贴失效，调用应用自定义函数。 说明： 点击自定义文本选择菜单内置复制功能选项后，自定义菜单消失选中文本高亮保留。 点击自定义文本选择菜单内置全选功能选项后，自定义菜单消失文本全选高亮。 点击自定义文本选择菜单内置粘贴功能选项后，空白处粘贴或者选中文本替换粘贴均是保留被复制文本的样式。 当富文本组件RichEditor的copyOptions属性设置为CopyOptions.None时，内置的复制剪切功能会被限制。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | onCopy | (event?: EditorEventInfo) => void | 否 | 是 | 替代内置系统菜单复制项的事件回调。 生效前提是一定要有controller参数，有系统默认菜单才能替换内置复制功能。 说明： event为返回信息。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | onPaste | (event?: EditorEventInfo) => void | 否 | 是 | 替代内置系统菜单粘贴项的事件回调。 生效前提是一定要有controller参数，有系统默认菜单才能替换内置粘贴功能。 说明： event为返回信息。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | onCut | (event?: EditorEventInfo) => void | 否 | 是 | 替代内置系统菜单剪切项的事件回调。 生效前提是一定要有controller参数，有系统默认菜单才能替换内置剪切功能。 说明： event为返回信息。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | onSelectAll | (event?: EditorEventInfo) => void | 否 | 是 | 替代内置系统菜单全选项的事件回调。 生效前提是一定要有controller参数，有系统默认菜单才能替换内置全选功能。 说明： event为返回信息。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| backgroundSystemMaterial | uiMaterial.Material | 否 | 是 | 菜单背景板使用的系统材质，用于实现菜单背景的视觉效果（如模糊、透明度等）。不同系统材质包含不同的属性，影响最终的显示效果。具体材质类型及属性请参考uiMaterial.Material。默认值：undefined，无材质效果。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
+| backgroundSystemMaterial | uiMaterial.Material | 否 | 是 | 菜单背景板使用的系统材质，用于bindSelectMenu，或放置在Navigation或NavDestination的标题栏子树、或横向Tabs的底部TabBar子树中，菜单背景板的沉浸光感效果才会生效。用于实现菜单背景的视觉效果（如模糊、透明度等）。不同系统材质包含不同的属性，影响最终的显示效果。具体材质类型及属性请参考uiMaterial.Material。默认值：undefined，无材质效果。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 
 
 
 
-#### EditorMenuOptions
+## EditorMenuOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 编辑菜单选项。
 
@@ -89,19 +96,21 @@ SelectionMenuOptions定义SelectionMenu的可选菜单类型项及其配置参�
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | icon | ResourceStr | 否 | 否 | 编辑菜单项的图标资源。若同时设置symbolStyle，则本属性不生效。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | builder | () => void | 否 | 是 | 点击时显示用户自定义组件，自定义组件在构造时结合@Builder使用。不设置时不显示自定义组件。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | action | () => void | 否 | 是 | 点击菜单项的事件回调。同时配置builder和action时，点击图标会同时响应。不设置时点击无响应。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| symbolStyle18+ | SymbolGlyphModifier | 否 | 是 | Symbol图标资源。当需要使用系统Symbol图标（支持动态颜色、多色等高级特性）时传入此参数，不传入时使用icon属性指定的图标资源。优先级大于icon，同时设置时优先使用symbolStyle。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
+| symbolStyle18+ | SymbolGlyphModifier | 否 | 是 | Symbol图标资源。当需要使用系统Symbol图标（支持动态颜色、多色等高级特性）时传入此参数，不传入时使用icon属性指定的图标资源。优先级高于icon，同时设置时优先使用symbolStyle。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 
 
 
 
-#### ExpandedMenuOptions
+## ExpandedMenuOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 扩展下拉菜单。
 
@@ -113,6 +122,7 @@ SelectionMenuOptions定义SelectionMenu的可选菜单类型项及其配置参�
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | action | () => void | 否 | 是 | 点击菜单项的事件回调。不设置时点击无响应。 |
@@ -120,9 +130,10 @@ SelectionMenuOptions定义SelectionMenu的可选菜单类型项及其配置参�
 
 
 
-#### EditorEventInfo
+## EditorEventInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 选中内容信息。
 
@@ -132,6 +143,7 @@ SelectionMenuOptions定义SelectionMenu的可选菜单类型项及其配置参�
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | content | RichEditorSelection | 否 | 是 | 选中的内容信息，包含选中的文本或图片片段（spans）及选择范围（selection）。 |
@@ -139,29 +151,35 @@ SelectionMenuOptions定义SelectionMenu的可选菜单类型项及其配置参�
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 不支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)，宽度默认224vp， 高度自适应内容。
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 不支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)。
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 示例1（绑定不同触发方式的自定义文本选择菜单）
+
+
+### 示例1（RichEditor绑定不同触发方式的自定义文本选择菜单）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例展示了文本绑定不同触发方式的自定义文本选择菜单的效果。
 
@@ -497,14 +515,17 @@ struct Index {
 
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/U-OyKn3wTDiGoNXwft_heQ/zh-cn_image_0000002685928631.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071520Z&HW-CC-Expire=86400&HW-CC-Sign=7DA6D85E24F08E004F133C730FC4A8CC6DD42223C5021AFC99D6B4FA61403A85)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/wO8045wgTx-n3a4BS-qevw/zh-cn_image_0000002717773106.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=CE87E4F00EB6739936F8830B5A58A301706A46AE28A30F4B6C87BA316BA2598F)
 
 
 
 
-#### 示例2（设置Symbol类型图标）
+### 示例2（设置Symbol类型图标）
 
-从API version 18开始，该示例通过设置[EditorMenuOptions](#editormenuoptions)的属性symbolStyle，展示了自定义Symbol类型图标。
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+从API version 18开始，该示例通过设置[EditorMenuOptions](#editormenuoptions)的属性symbolStyle，展示了使用系统Symbol图标的方法。
 
 ```text
 import {
@@ -529,6 +550,7 @@ struct Index {
   private editorMenuOptions: Array<EditorMenuOptions> =
     [
       {
+        // $r('sys.media.wifi_router_fill')需要替换为开发者所需的图像资源文件。
         icon: $r('sys.media.wifi_router_fill'),
         symbolStyle: new SymbolGlyphModifier($r('sys.symbol.save')),
         action: () => {
@@ -559,6 +581,7 @@ struct Index {
         }
       },
       {
+        // $r('sys.media.save_button_picture')需要替换为开发者所需的图像资源文件。
         icon: $r('sys.media.save_button_picture'),
         symbolStyle: new SymbolGlyphModifier($r('sys.symbol.camera')),
         action: () => {
@@ -589,6 +612,7 @@ struct Index {
         }
       },
       {
+        // $r('sys.media.waveform_folder_fill')需要替换为开发者所需的图像资源文件。
         icon: $r('sys.media.waveform_folder_fill'),
         symbolStyle: new SymbolGlyphModifier($r('sys.symbol.car')),
         action: () => {
@@ -628,6 +652,7 @@ struct Index {
       }, builder: (): void => this.sliderPanel()
       },
       {
+        // $r('sys.media.thermometer_fill')需要替换为开发者所需的图像资源文件。
         icon: $r('sys.media.thermometer_fill'), action: () => {
         if (this.controller) {
           let selection = this.controller.getSelection();
@@ -834,12 +859,15 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/YEPmgyEoRAORFsLfTbJvFA/zh-cn_image_0000002656008952.jpg?HW-CC-KV=V1&HW-CC-Date=20260730T071520Z&HW-CC-Expire=86400&HW-CC-Sign=F5ABE54DCD1C5A833A121F4850319328AA22936805606810F65E3C444989A68F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/cp0Ma2_JR6-MVVOS6eFC9g/zh-cn_image_0000002717613174.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=5372488D075EEEF722CEB6DA6D78FD10FFA1148251D64F793EE06BD999DAD7EA)
 
 
 
 
-#### 示例3（设置背景板材质）
+### 示例3（设置背景板材质）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例通过设置[SelectionMenuOptions](#selectionmenuoptions)的属性backgroundSystemMaterial，展示了超薄样式的背景板材质。
 
@@ -952,4 +980,4 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/g72NyevMScqJxP_iG5hy1A/zh-cn_image_0000002655849032.jpg?HW-CC-KV=V1&HW-CC-Date=20260730T071520Z&HW-CC-Expire=86400&HW-CC-Sign=1F6518A5CD0C717362F6951398A6ED087CC357FBB2CED754754DBAF3BDEEDEB0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/CaPnSKe2RHKmBZZRAtPvTQ/zh-cn_image_0000002747293127.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=6F333BC77C5288AF3A89EBD32CFDB160400924E4AE4CC6F3A10C305B372A0E5E)

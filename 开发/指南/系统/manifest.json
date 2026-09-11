@@ -1,38 +1,228 @@
 [
   {
-    "slug": "bluetooth-hci-log-capture",
-    "name": "如何抓取蓝牙HCI日志",
     "file": "网络/Connectivity Kit（短距通信服务）/蓝牙/蓝牙常见问题/如何抓取蓝牙HCI日志/如何抓取蓝牙HCI日志.md",
+    "name": "如何抓取蓝牙HCI日志",
+    "slug": "bluetooth-hci-log-capture",
     "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bluetooth-hci-log-capture"
   },
   {
-    "slug": "faqs-useriam-fingerprint-change",
-    "name": "指纹登录怎么检测设备指纹是否发生变化",
     "file": "安全/User Authentication Kit（用户认证服务）/User Authentication Kit常见问题/指纹登录怎么检测设备指纹是否发生变化/指纹登录怎么检测设备指纹是否发生变化.md",
+    "name": "指纹登录怎么检测设备指纹是否发生变化",
+    "slug": "faqs-useriam-fingerprint-change",
     "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/faqs-useriam-fingerprint-change"
   },
   {
-    "slug": "faqs-useriam-get-auth-result",
-    "name": "如何感知指纹登录中间认证失败结果",
     "file": "安全/User Authentication Kit（用户认证服务）/User Authentication Kit常见问题/如何感知指纹登录中间认证失败结果/如何感知指纹登录中间认证失败结果.md",
+    "name": "如何感知指纹登录中间认证失败结果",
+    "slug": "faqs-useriam-get-auth-result",
     "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/faqs-useriam-get-auth-result"
   },
   {
-    "slug": "mechanic-glossary",
-    "name": "术语",
     "file": "硬件/Mechanic Kit（机械设备管理服务）/术语/术语.md",
+    "name": "术语",
+    "slug": "mechanic-glossary",
     "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mechanic-glossary"
   },
   {
-    "slug": "sensor-glossary",
-    "name": "Sensor Service Kit术语",
     "file": "硬件/Sensor Service Kit（传感器服务）/Sensor Service Kit术语/Sensor Service Kit术语.md",
+    "name": "Sensor Service Kit术语",
+    "slug": "sensor-glossary",
     "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/sensor-glossary"
   },
   {
-    "slug": "stationary-glossary",
+    "file": "网络/Accessory Kit术语.md",
+    "name": "Accessory Kit术语",
+    "slug": "accessory-kit-glossary",
+    "title": "Accessory Kit术语",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/accessory-kit-glossary"
+  },
+  {
+    "file": "网络/Connectivity Kit（短距通信服务）/蓝牙/蓝牙常见问题/可选属性显式设置为undefined报401无效参数.md",
+    "name": "可选属性显式设置为undefined报401无效参数",
+    "slug": "bluetooth-faq-401-invalid-parameter",
+    "title": "可选属性显式设置为undefined报401无效参数",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bluetooth-faq-401-invalid-parameter"
+  },
+  {
+    "file": "硬件/Car Kit术语.md",
+    "name": "Car Kit术语",
+    "slug": "car-kit-glossary",
+    "title": "Car Kit术语",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/car-kit-glossary"
+  },
+  {
+    "file": "Common Event Service术语.md",
+    "name": "Common Event Service术语",
+    "slug": "common-event-glossary",
+    "title": "Common Event Service术语",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/common-event-glossary"
+  },
+  {
+    "file": "安全/Crypto Architecture Kit术语.md",
+    "name": "Crypto Architecture Kit术语",
+    "slug": "crypto-architecture-glossary",
+    "title": "Crypto Architecture Kit术语",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-architecture-glossary"
+  },
+  {
+    "file": "安全/使用AES对称密钥加解密(C-C++).md",
+    "name": "使用AES对称密钥加解密(C/C++)",
+    "slug": "crypto-aes-sym-encrypt-decrypt-ndk",
+    "title": "使用AES对称密钥加解密(C/C++)",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-aes-sym-encrypt-decrypt-ndk"
+  },
+  {
+    "file": "安全/User Authentication Kit（用户认证服务）/伴随设备认证.md",
+    "name": "伴随设备认证",
+    "slug": "compaion-device-authentication",
+    "title": "伴随设备认证",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/compaion-device-authentication"
+  },
+  {
+    "file": "安全/使用AES对称密钥加解密(ArkTS).md",
+    "name": "使用AES对称密钥加解密(ArkTS)",
+    "slug": "crypto-aes-sym-encrypt-decrypt",
+    "title": "使用AES对称密钥加解密(ArkTS)",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-aes-sym-encrypt-decrypt"
+  },
+  {
+    "file": "安全/使用RSA非对称密钥加解密(ArkTS).md",
+    "name": "使用RSA非对称密钥加解密(ArkTS)",
+    "slug": "crypto-rsa-asym-encrypt-decrypt",
+    "title": "使用RSA非对称密钥加解密(ArkTS)",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-asym-encrypt-decrypt"
+  },
+  {
+    "file": "安全/使用RSA非对称密钥加解密(C-C++).md",
+    "name": "使用RSA非对称密钥加解密(C/C++)",
+    "slug": "crypto-rsa-asym-encrypt-decrypt-ndk",
+    "title": "使用RSA非对称密钥加解密(C/C++)",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-asym-encrypt-decrypt-ndk"
+  },
+  {
+    "file": "安全/数字盾服务术语.md",
+    "name": "数字盾服务术语",
+    "slug": "devicesecurity-trusted-auth-glossary",
+    "title": "数字盾服务术语",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurity-trusted-auth-glossary"
+  },
+  {
+    "file": "安全/使用RSA密钥对签名验签(C-C++).md",
+    "name": "使用RSA密钥对签名验签(C/C++)",
+    "slug": "crypto-rsa-sign-sig-verify-ndk",
+    "title": "使用RSA密钥对签名验签(C/C++)",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-sign-sig-verify-ndk"
+  },
+  {
+    "file": "安全/使用RSA密钥对签名验签(ArkTS).md",
+    "name": "使用RSA密钥对签名验签(ArkTS)",
+    "slug": "crypto-rsa-sign-sig-verify",
+    "title": "使用RSA密钥对签名验签(ArkTS)",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-sign-sig-verify"
+  },
+  {
+    "file": "安全/使用SM4对称密钥加解密(ArkTS).md",
+    "name": "使用SM4对称密钥加解密(ArkTS)",
+    "slug": "crypto-sm4-sym-encrypt-decrypt",
+    "title": "使用SM4对称密钥加解密(ArkTS)",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-sm4-sym-encrypt-decrypt"
+  },
+  {
+    "file": "安全/可信应用服务术语.md",
+    "name": "可信应用服务术语",
+    "slug": "devicesecurity-taas-glossary",
+    "title": "可信应用服务术语",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurity-taas-glossary"
+  },
+  {
+    "file": "安全/使用SM4对称密钥加解密(C-C++).md",
+    "name": "使用SM4对称密钥加解密(C/C++)",
+    "slug": "crypto-sm4-sym-encrypt-decrypt-ndk",
+    "title": "使用SM4对称密钥加解密(C/C++)",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-sm4-sym-encrypt-decrypt-ndk"
+  },
+  {
+    "file": "安全/网页场景接入数字盾（FIDO2）.md",
+    "name": "网页场景接入数字盾（FIDO2）",
+    "slug": "devicesecurity-trustedauth-fido2-webauth",
+    "title": "网页场景接入数字盾（FIDO2）",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurity-trustedauth-fido2-webauth"
+  },
+  {
+    "file": "网络/Connectivity Kit（短距通信服务）/融合短距术语.md",
+    "name": "融合短距术语",
+    "slug": "fusion-connectivity-terminology",
+    "title": "融合短距术语",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fusion-connectivity-terminology"
+  },
+  {
+    "file": "Input Kit术语.md",
+    "name": "Input Kit术语",
+    "slug": "input-kit-glossary",
+    "title": "Input Kit术语",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/input-kit-glossary"
+  },
+  {
+    "file": "Linx Kit术语.md",
+    "name": "Linx Kit术语",
+    "slug": "linx-kit-glossary",
+    "title": "Linx Kit术语",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/linx-kit-glossary"
+  },
+  {
+    "file": "网络/Network Boost Kit术语.md",
+    "name": "Network Boost Kit术语",
+    "slug": "networkboost-glossary",
+    "title": "Network Boost Kit术语",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/networkboost-glossary"
+  },
+  {
+    "file": "安全/IFAA常见问题.md",
+    "name": "IFAA常见问题",
+    "slug": "onlineauthentication-faq-1",
+    "title": "IFAA常见问题",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/onlineauthentication-faq-1"
+  },
+  {
+    "file": "安全/开发准备.md",
+    "name": "开发准备",
+    "slug": "onlineauthentication-passwordless-auth-preparation",
+    "title": "开发准备",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/onlineauthentication-passwordless-auth-preparation"
+  },
+  {
+    "file": "系统账号介绍.md",
+    "name": "系统账号介绍",
+    "slug": "os-account-introduction",
+    "title": "系统账号介绍",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/os-account-introduction"
+  },
+  {
+    "file": "硬件/Multimodal Awareness Kit术语.md",
     "name": "Multimodal Awareness Kit术语",
-    "file": "硬件/Multimodal Awareness Kit（多模态融合感知服务）/Multimodal Awareness Kit术语/Multimodal Awareness Kit术语.md",
+    "slug": "stationary-glossary",
+    "title": "Multimodal Awareness Kit术语",
     "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/stationary-glossary"
+  },
+  {
+    "file": "网络/Telephony Kit术语.md",
+    "name": "Telephony Kit术语",
+    "slug": "telephony-glossary",
+    "title": "Telephony Kit术语",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/telephony-glossary"
+  },
+  {
+    "file": "硬件/Wear Engine Kit术语.md",
+    "name": "Wear Engine Kit术语",
+    "slug": "wearengine-kit-glossary",
+    "title": "Wear Engine Kit术语",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wearengine-kit-glossary"
+  },
+  {
+    "file": "安全/Universal Keystore Kit术语.md",
+    "name": "Universal Keystore Kit术语",
+    "slug": "universal-keystore-glossary",
+    "title": "Universal Keystore Kit术语",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/universal-keystore-glossary"
   }
 ]

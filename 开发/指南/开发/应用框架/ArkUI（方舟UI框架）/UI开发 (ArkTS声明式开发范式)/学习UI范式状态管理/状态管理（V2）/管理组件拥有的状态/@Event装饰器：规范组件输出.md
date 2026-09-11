@@ -1,6 +1,6 @@
 # @Event装饰器：规范组件输出
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-event
 
@@ -13,7 +13,7 @@
 
 
 
-#### 概述
+## 概述
 
 由于@Param装饰的变量在本地无法更改，使用@Event装饰器装饰回调方法并调用，可以实现更新数据源的变量，再通过[@Local](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-local)的同步机制，将修改同步回@Param装饰的变量，以此达到主动更新@Param装饰变量的效果。
 
@@ -28,7 +28,8 @@
 
 
 
-#### 装饰器说明
+## 装饰器说明
+
 
 | @Event属性装饰器 | 说明 |
 | --- | --- |
@@ -39,7 +40,7 @@
 
 
 
-#### 限制条件
+## 限制条件
 
  - @Event只能用在[@ComponentV2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-custom-components#componentv2)装饰的自定义组件中。当装饰非方法类型的变量时，不会有任何作用。
 
@@ -60,11 +61,11 @@ struct Index {
 
 
 
-#### 使用场景
+## 使用场景
 
 
 
-#### 更改父组件中变量
+### 更改父组件中变量
 
 使用@Event可以更改父组件中变量，当该变量作为子组件@Param变量的数据源时，该变化会同步回子组件的@Param变量。
 
@@ -127,7 +128,7 @@ struct Child {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/sJoFyOl6TMSVTEiDIxUC0w/zh-cn_image_0000002704271849.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095706Z&HW-CC-Expire=86400&HW-CC-Sign=8D875252A6DA6E3DDEC60F74252DC91712660C90F3D90525A31EE7CA6AA06E6C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/YiA4ea4YRy2FC_EMDslt-Q/zh-cn_image_0000002717770046.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072139Z&HW-CC-Expire=86400&HW-CC-Sign=250364EABF6C6140ACB0C62EE165A6AB6BA3427F0A025F840DC0C3F3545A9ED0)
 
 
 值得注意的是，使用@Event修改父组件的值是立刻生效的，但从父组件将变化同步回子组件的过程是异步的，即在调用完@Event的方法后，子组件内的值不会立刻变化。这是因为@Event将子组件值实际的变化能力交由父组件处理，在父组件实际决定如何处理后，将最终值在渲染之前同步回子组件。
@@ -177,7 +178,7 @@ struct Index2 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/yVhmNrbNQMe0pDPu7jpDjA/zh-cn_image_0000002674472050.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095706Z&HW-CC-Expire=86400&HW-CC-Sign=6A8480F0108AE3CB591A5AF7EDFD95052DFE0C2860CD4A0B023AEEE6698ED9FE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/boBnDl-MQ3KbjFGdDHL5Mw/zh-cn_image_0000002717610112.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072139Z&HW-CC-Expire=86400&HW-CC-Sign=E260B0E6DCBF8252B31943DDB4662E85272C1B46BCABA9239EC80127E2489AD1)
 
 
 在上面的示例中，点击文字触发@Event函数事件改变子组件的值，打印出的日志为：

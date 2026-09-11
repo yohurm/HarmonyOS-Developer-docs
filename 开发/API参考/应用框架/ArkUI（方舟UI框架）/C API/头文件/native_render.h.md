@@ -1,13 +1,14 @@
 # native_render.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-render-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供NativeRender接口的类型定义，支持创建和管理渲染节点、设置渲染属性、自定义绘制内容，以及配置遮罩、裁剪和模糊效果，适用于在Native侧构建和管理自定义渲染节点树、扩展自定义绘制效果的场景。更多详细介绍请参考[构建渲染节点](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-embed-render-components)。
 
@@ -25,15 +26,18 @@
 
 
 
-#### 汇总
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 汇总
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 结构体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -48,7 +52,7 @@
 | ArkUI_RectShape | ArkUI_RectShapeOption | 定义矩形形状配置项，用于在ArkUI渲染节点中描述矩形或椭圆形的形状范围，可作为创建遮罩或裁剪配置项的输入。 |
 | ArkUI_NodeBorderStyle | ArkUI_NodeBorderStyleOption | 定义边框样式配置项，用于设置节点边框的样式类型，支持实线、虚线、点线等多种样式。 |
 | ArkUI_NodeBorderWidth | ArkUI_NodeBorderWidthOption | 定义边框宽度配置项，用于配置渲染节点各边的边框宽度。 |
-| ArkUI_NodeBorderColor | ArkUI_NodeBorderColorOption | 边框颜色配置项。 |
+| ArkUI_NodeBorderColor | ArkUI_NodeBorderColorOption | 定义节点边框颜色配置项，用于按边方向设置渲染节点的边框颜色。 |
 | ArkUI_NodeBorderRadius | ArkUI_NodeBorderRadiusOption | 边框半径配置项。 |
 | ArkUI_CircleShape | ArkUI_CircleShapeOption | 定义圆形形状配置项，用于在ArkUI_RenderNodeUtils中创建圆形形状，并配置圆心坐标和半径，作为RenderNode的遮罩或裁剪形状。 |
 | ArkUI_RoundRectShape | ArkUI_RoundRectShapeOption | 定义圆角矩形形状配置项，用于配置圆角矩形形状，并可用于创建渲染节点遮罩或裁剪。 |
@@ -60,9 +64,11 @@
 
 
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -160,7 +166,7 @@
 | int32_t OH_ArkUI_RenderNodeUtils_SetColorAnimatablePropertyValue(ArkUI_ColorAnimatablePropertyHandle property, uint32_t value) | - | 设置可动画的颜色属性的值。 |
 | int32_t OH_ArkUI_RenderNodeUtils_GetColorAnimatablePropertyValue(ArkUI_ColorAnimatablePropertyHandle property, uint32_t* value) | - | 获取可动画的颜色属性的值。 |
 | void OH_ArkUI_RenderNodeUtils_DisposeColorAnimatableProperty(ArkUI_ColorAnimatablePropertyHandle property) | - | 释放可动画的颜色属性。 |
-| int32_t OH_ArkUI_RenderNodeUtils_SetContentModifierOnDraw(ArkUI_RenderContentModifierHandle modifier, void* userData, void (callback)(ArkUI_DrawContext* context, void userData)) | - | 设置内容修改器的onDraw回调。 |
+| int32_t OH_ArkUI_RenderNodeUtils_SetContentModifierOnDraw(ArkUI_RenderContentModifierHandle modifier, void* userData, void (*callback)(ArkUI_DrawContext* context, void* userData)) | - | 设置内容修改器的onDraw回调。 |
 | ArkUI_RectShapeOption* OH_ArkUI_RenderNodeUtils_CreateRectShapeOption() | - | 创建矩形形状。 |
 | void OH_ArkUI_RenderNodeUtils_DisposeRectShapeOption(ArkUI_RectShapeOption* option) | - | 释放矩形形状。 |
 | void OH_ArkUI_RenderNodeUtils_SetRectShapeOptionEdgeValue(ArkUI_RectShapeOption* option, float edgeValue, ArkUI_EdgeDirection direction) | - | 设置矩形形状的边缘值。 |
@@ -221,15 +227,17 @@
 
 
 
-#### 函数说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 函数说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### OH_ArkUI_RenderNodeUtils_AddRenderNode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### OH_ArkUI_RenderNodeUtils_AddRenderNode()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_AddRenderNode(ArkUI_NodeHandle node, ArkUI_RenderNodeHandle child)
@@ -245,6 +253,7 @@ int32_t OH_ArkUI_RenderNodeUtils_AddRenderNode(ArkUI_NodeHandle node, ArkUI_Rend
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 目标父节点。 |
@@ -253,6 +262,7 @@ int32_t OH_ArkUI_RenderNodeUtils_AddRenderNode(ArkUI_NodeHandle node, ArkUI_Rend
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_NOT_CUSTOM_NODE 目标节点非自定义节点。 ARKUI_ERROR_CODE_CHILD_EXISTED 使用非OH_ARKUI_NODE_MOUNT_POLICY_MIXED挂载策略时，父节点已有子节点。 ARKUI_ERROR_CODE_RENDER_PARENT_EXISTED 目标渲染节点存在父节点。 ARKUI_ERROR_CODE_RENDER_HAS_INVALID_FRAME_NODE 当前渲染节点从FrameNode中获取且该FrameNode已被取消接纳为附属节点或销毁。从API version 22开始支持。 |
@@ -260,9 +270,10 @@ int32_t OH_ArkUI_RenderNodeUtils_AddRenderNode(ArkUI_NodeHandle node, ArkUI_Rend
 
 
 
-#### OH_ArkUI_RenderNodeUtils_RemoveRenderNode()
+### OH_ArkUI_RenderNodeUtils_RemoveRenderNode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_RemoveRenderNode(ArkUI_NodeHandle node, ArkUI_RenderNodeHandle child)
@@ -278,6 +289,7 @@ int32_t OH_ArkUI_RenderNodeUtils_RemoveRenderNode(ArkUI_NodeHandle node, ArkUI_R
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 目标父节点。 |
@@ -286,6 +298,7 @@ int32_t OH_ArkUI_RenderNodeUtils_RemoveRenderNode(ArkUI_NodeHandle node, ArkUI_R
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_NOT_CUSTOM_NODE 目标节点非自定义节点。 |
@@ -293,9 +306,10 @@ int32_t OH_ArkUI_RenderNodeUtils_RemoveRenderNode(ArkUI_NodeHandle node, ArkUI_R
 
 
 
-#### OH_ArkUI_RenderNodeUtils_ClearRenderNodeChildren()
+### OH_ArkUI_RenderNodeUtils_ClearRenderNodeChildren()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_ClearRenderNodeChildren(ArkUI_NodeHandle node)
@@ -311,12 +325,14 @@ int32_t OH_ArkUI_RenderNodeUtils_ClearRenderNodeChildren(ArkUI_NodeHandle node)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 目标父节点。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -325,9 +341,10 @@ int32_t OH_ArkUI_RenderNodeUtils_ClearRenderNodeChildren(ArkUI_NodeHandle node)
 
 
 
-#### OH_ArkUI_RenderNodeUtils_Invalidate()
+### OH_ArkUI_RenderNodeUtils_Invalidate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_Invalidate(ArkUI_NodeHandle node)
@@ -341,12 +358,14 @@ int32_t OH_ArkUI_RenderNodeUtils_Invalidate(ArkUI_NodeHandle node)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 目标节点。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -355,9 +374,10 @@ int32_t OH_ArkUI_RenderNodeUtils_Invalidate(ArkUI_NodeHandle node)
 
 
 
-#### OH_ArkUI_RenderNodeUtils_CreateNode()
+### OH_ArkUI_RenderNodeUtils_CreateNode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_RenderNodeHandle OH_ArkUI_RenderNodeUtils_CreateNode()
@@ -373,6 +393,7 @@ ArkUI_RenderNodeHandle OH_ArkUI_RenderNodeUtils_CreateNode()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_RenderNodeHandle | 目标渲染节点。 |
@@ -380,9 +401,10 @@ ArkUI_RenderNodeHandle OH_ArkUI_RenderNodeUtils_CreateNode()
 
 
 
-#### OH_ArkUI_RenderNodeUtils_DisposeNode()
+### OH_ArkUI_RenderNodeUtils_DisposeNode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_DisposeNode(ArkUI_RenderNodeHandle node)
@@ -396,12 +418,14 @@ int32_t OH_ArkUI_RenderNodeUtils_DisposeNode(ArkUI_RenderNodeHandle node)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -410,9 +434,10 @@ int32_t OH_ArkUI_RenderNodeUtils_DisposeNode(ArkUI_RenderNodeHandle node)
 
 
 
-#### OH_ArkUI_RenderNodeUtils_AddChild()
+### OH_ArkUI_RenderNodeUtils_AddChild()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_AddChild(ArkUI_RenderNodeHandle node, ArkUI_RenderNodeHandle child)
@@ -426,6 +451,7 @@ int32_t OH_ArkUI_RenderNodeUtils_AddChild(ArkUI_RenderNodeHandle node, ArkUI_Ren
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标父渲染节点。 |
@@ -434,6 +460,7 @@ int32_t OH_ArkUI_RenderNodeUtils_AddChild(ArkUI_RenderNodeHandle node, ArkUI_Ren
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 ARKUI_ERROR_CODE_RENDER_HAS_INVALID_FRAME_NODE 当前渲染节点从FrameNode中获取且该FrameNode已被取消接纳为附属节点或销毁。从API version 22开始支持。 |
@@ -441,9 +468,10 @@ int32_t OH_ArkUI_RenderNodeUtils_AddChild(ArkUI_RenderNodeHandle node, ArkUI_Ren
 
 
 
-#### OH_ArkUI_RenderNodeUtils_InsertChildAfter()
+### OH_ArkUI_RenderNodeUtils_InsertChildAfter()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_InsertChildAfter(ArkUI_RenderNodeHandle node, ArkUI_RenderNodeHandle child, ArkUI_RenderNodeHandle sibling)
@@ -457,12 +485,15 @@ int32_t OH_ArkUI_RenderNodeUtils_InsertChildAfter(ArkUI_RenderNodeHandle node, A
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标父渲染节点。 |
 | ArkUI_RenderNodeHandle child | 待添加的子渲染节点。 |
 | ArkUI_RenderNodeHandle sibling | 目标子节点，用于确定插入位置的参考兄弟渲染节点。若该节点不在node的当前子节点列表中，则将child追加到末尾。 |
-| 返回： |  |
+
+
+**返回：**
 
 
 | 类型 | 说明 |
@@ -472,9 +503,10 @@ int32_t OH_ArkUI_RenderNodeUtils_InsertChildAfter(ArkUI_RenderNodeHandle node, A
 
 
 
-#### OH_ArkUI_RenderNodeUtils_RemoveChild()
+### OH_ArkUI_RenderNodeUtils_RemoveChild()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_RemoveChild(ArkUI_RenderNodeHandle node, ArkUI_RenderNodeHandle child)
@@ -488,6 +520,7 @@ int32_t OH_ArkUI_RenderNodeUtils_RemoveChild(ArkUI_RenderNodeHandle node, ArkUI_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标父渲染节点。 |
@@ -496,6 +529,7 @@ int32_t OH_ArkUI_RenderNodeUtils_RemoveChild(ArkUI_RenderNodeHandle node, ArkUI_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -503,9 +537,10 @@ int32_t OH_ArkUI_RenderNodeUtils_RemoveChild(ArkUI_RenderNodeHandle node, ArkUI_
 
 
 
-#### OH_ArkUI_RenderNodeUtils_ClearChildren()
+### OH_ArkUI_RenderNodeUtils_ClearChildren()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_ClearChildren(ArkUI_RenderNodeHandle node)
@@ -519,12 +554,14 @@ int32_t OH_ArkUI_RenderNodeUtils_ClearChildren(ArkUI_RenderNodeHandle node)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -533,9 +570,10 @@ int32_t OH_ArkUI_RenderNodeUtils_ClearChildren(ArkUI_RenderNodeHandle node)
 
 
 
-#### OH_ArkUI_RenderNodeUtils_GetChild()
+### OH_ArkUI_RenderNodeUtils_GetChild()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_GetChild(ArkUI_RenderNodeHandle node, int32_t index, ArkUI_RenderNodeHandle* child)
@@ -549,6 +587,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetChild(ArkUI_RenderNodeHandle node, int32_t i
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标父渲染节点。 |
@@ -558,6 +597,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetChild(ArkUI_RenderNodeHandle node, int32_t i
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_CHILD_NOT_EXIST 未找到对应的渲染子节点。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -565,9 +605,10 @@ int32_t OH_ArkUI_RenderNodeUtils_GetChild(ArkUI_RenderNodeHandle node, int32_t i
 
 
 
-#### OH_ArkUI_RenderNodeUtils_GetFirstChild()
+### OH_ArkUI_RenderNodeUtils_GetFirstChild()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_GetFirstChild(ArkUI_RenderNodeHandle node, ArkUI_RenderNodeHandle* child)
@@ -581,6 +622,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetFirstChild(ArkUI_RenderNodeHandle node, ArkU
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -589,6 +631,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetFirstChild(ArkUI_RenderNodeHandle node, ArkU
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_CHILD_NOT_EXIST 未找到对应的渲染子节点。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -596,9 +639,10 @@ int32_t OH_ArkUI_RenderNodeUtils_GetFirstChild(ArkUI_RenderNodeHandle node, ArkU
 
 
 
-#### OH_ArkUI_RenderNodeUtils_GetNextSibling()
+### OH_ArkUI_RenderNodeUtils_GetNextSibling()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_GetNextSibling(ArkUI_RenderNodeHandle node, ArkUI_RenderNodeHandle* sibling)
@@ -612,6 +656,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetNextSibling(ArkUI_RenderNodeHandle node, Ark
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 参考节点。 |
@@ -620,6 +665,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetNextSibling(ArkUI_RenderNodeHandle node, Ark
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_CHILD_NOT_EXIST 未找到对应的渲染子节点。 |
@@ -627,9 +673,10 @@ int32_t OH_ArkUI_RenderNodeUtils_GetNextSibling(ArkUI_RenderNodeHandle node, Ark
 
 
 
-#### OH_ArkUI_RenderNodeUtils_GetPreviousSibling()
+### OH_ArkUI_RenderNodeUtils_GetPreviousSibling()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_GetPreviousSibling(ArkUI_RenderNodeHandle node, ArkUI_RenderNodeHandle* sibling)
@@ -643,6 +690,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetPreviousSibling(ArkUI_RenderNodeHandle node,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 参考节点。 |
@@ -651,6 +699,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetPreviousSibling(ArkUI_RenderNodeHandle node,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_CHILD_NOT_EXIST 未找到对应的渲染子节点。 |
@@ -658,9 +707,10 @@ int32_t OH_ArkUI_RenderNodeUtils_GetPreviousSibling(ArkUI_RenderNodeHandle node,
 
 
 
-#### OH_ArkUI_RenderNodeUtils_GetChildren()
+### OH_ArkUI_RenderNodeUtils_GetChildren()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_GetChildren(ArkUI_RenderNodeHandle node, ArkUI_RenderNodeHandle** children, int32_t* count)
@@ -676,6 +726,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetChildren(ArkUI_RenderNodeHandle node, ArkUI_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标父渲染节点。 |
@@ -685,6 +736,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetChildren(ArkUI_RenderNodeHandle node, ArkUI_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -692,9 +744,10 @@ int32_t OH_ArkUI_RenderNodeUtils_GetChildren(ArkUI_RenderNodeHandle node, ArkUI_
 
 
 
-#### OH_ArkUI_RenderNodeUtils_GetChildrenCount()
+### OH_ArkUI_RenderNodeUtils_GetChildrenCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_GetChildrenCount(ArkUI_RenderNodeHandle node, int32_t* count)
@@ -708,6 +761,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetChildrenCount(ArkUI_RenderNodeHandle node, i
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标父渲染节点。 |
@@ -716,6 +770,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetChildrenCount(ArkUI_RenderNodeHandle node, i
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -723,9 +778,10 @@ int32_t OH_ArkUI_RenderNodeUtils_GetChildrenCount(ArkUI_RenderNodeHandle node, i
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetBackgroundColor()
+### OH_ArkUI_RenderNodeUtils_SetBackgroundColor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_SetBackgroundColor(ArkUI_RenderNodeHandle node, uint32_t color)
@@ -739,6 +795,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetBackgroundColor(ArkUI_RenderNodeHandle node,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -747,6 +804,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetBackgroundColor(ArkUI_RenderNodeHandle node,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -754,9 +812,10 @@ int32_t OH_ArkUI_RenderNodeUtils_SetBackgroundColor(ArkUI_RenderNodeHandle node,
 
 
 
-#### OH_ArkUI_RenderNodeUtils_GetBackgroundColor()
+### OH_ArkUI_RenderNodeUtils_GetBackgroundColor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_GetBackgroundColor(ArkUI_RenderNodeHandle node, uint32_t* color)
@@ -770,6 +829,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetBackgroundColor(ArkUI_RenderNodeHandle node,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -778,6 +838,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetBackgroundColor(ArkUI_RenderNodeHandle node,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -785,9 +846,10 @@ int32_t OH_ArkUI_RenderNodeUtils_GetBackgroundColor(ArkUI_RenderNodeHandle node,
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetClipToFrame()
+### OH_ArkUI_RenderNodeUtils_SetClipToFrame()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_SetClipToFrame(ArkUI_RenderNodeHandle node, int32_t clipToFrame)
@@ -803,6 +865,7 @@ frame区域由节点大小和位置确定。与[OH_ArkUI_RenderNodeUtils_SetClip
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -811,6 +874,7 @@ frame区域由节点大小和位置确定。与[OH_ArkUI_RenderNodeUtils_SetClip
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_PARAM_OUT_OF_RANGE 参数值超出范围。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -818,9 +882,10 @@ frame区域由节点大小和位置确定。与[OH_ArkUI_RenderNodeUtils_SetClip
 
 
 
-#### OH_ArkUI_RenderNodeUtils_GetClipToFrame()
+### OH_ArkUI_RenderNodeUtils_GetClipToFrame()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_GetClipToFrame(ArkUI_RenderNodeHandle node, int32_t* clipToFrame)
@@ -834,6 +899,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetClipToFrame(ArkUI_RenderNodeHandle node, int
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -842,6 +908,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetClipToFrame(ArkUI_RenderNodeHandle node, int
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -849,9 +916,10 @@ int32_t OH_ArkUI_RenderNodeUtils_GetClipToFrame(ArkUI_RenderNodeHandle node, int
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetClipToBounds()
+### OH_ArkUI_RenderNodeUtils_SetClipToBounds()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_SetClipToBounds(ArkUI_RenderNodeHandle node, int32_t clipToBounds)
@@ -867,6 +935,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetClipToBounds(ArkUI_RenderNodeHandle node, in
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -875,6 +944,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetClipToBounds(ArkUI_RenderNodeHandle node, in
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_PARAM_OUT_OF_RANGE 参数值超出范围。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -882,9 +952,10 @@ int32_t OH_ArkUI_RenderNodeUtils_SetClipToBounds(ArkUI_RenderNodeHandle node, in
 
 
 
-#### OH_ArkUI_RenderNodeUtils_GetClipToBounds()
+### OH_ArkUI_RenderNodeUtils_GetClipToBounds()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_GetClipToBounds(ArkUI_RenderNodeHandle node, int32_t* clipToBounds)
@@ -900,6 +971,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetClipToBounds(ArkUI_RenderNodeHandle node, in
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -908,6 +980,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetClipToBounds(ArkUI_RenderNodeHandle node, in
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -915,9 +988,10 @@ int32_t OH_ArkUI_RenderNodeUtils_GetClipToBounds(ArkUI_RenderNodeHandle node, in
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetOpacity()
+### OH_ArkUI_RenderNodeUtils_SetOpacity()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_SetOpacity(ArkUI_RenderNodeHandle node, float opacity)
@@ -931,6 +1005,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetOpacity(ArkUI_RenderNodeHandle node, float o
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -939,6 +1014,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetOpacity(ArkUI_RenderNodeHandle node, float o
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_PARAM_OUT_OF_RANGE 参数值超出范围。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -946,9 +1022,10 @@ int32_t OH_ArkUI_RenderNodeUtils_SetOpacity(ArkUI_RenderNodeHandle node, float o
 
 
 
-#### OH_ArkUI_RenderNodeUtils_GetOpacity()
+### OH_ArkUI_RenderNodeUtils_GetOpacity()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_GetOpacity(ArkUI_RenderNodeHandle node, float* opacity)
@@ -962,6 +1039,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetOpacity(ArkUI_RenderNodeHandle node, float* 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -970,6 +1048,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetOpacity(ArkUI_RenderNodeHandle node, float* 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -977,9 +1056,10 @@ int32_t OH_ArkUI_RenderNodeUtils_GetOpacity(ArkUI_RenderNodeHandle node, float* 
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetSize()
+### OH_ArkUI_RenderNodeUtils_SetSize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_SetSize(ArkUI_RenderNodeHandle node, int32_t width, int32_t height)
@@ -993,6 +1073,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetSize(ArkUI_RenderNodeHandle node, int32_t wi
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -1002,6 +1083,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetSize(ArkUI_RenderNodeHandle node, int32_t wi
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_PARAM_OUT_OF_RANGE 参数值超出范围。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -1009,9 +1091,10 @@ int32_t OH_ArkUI_RenderNodeUtils_SetSize(ArkUI_RenderNodeHandle node, int32_t wi
 
 
 
-#### OH_ArkUI_RenderNodeUtils_GetSize()
+### OH_ArkUI_RenderNodeUtils_GetSize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_GetSize(ArkUI_RenderNodeHandle node, int32_t* width, int32_t* height)
@@ -1025,6 +1108,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetSize(ArkUI_RenderNodeHandle node, int32_t* w
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -1034,6 +1118,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetSize(ArkUI_RenderNodeHandle node, int32_t* w
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -1041,9 +1126,10 @@ int32_t OH_ArkUI_RenderNodeUtils_GetSize(ArkUI_RenderNodeHandle node, int32_t* w
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetPosition()
+### OH_ArkUI_RenderNodeUtils_SetPosition()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_SetPosition(ArkUI_RenderNodeHandle node, int32_t x, int32_t y)
@@ -1057,6 +1143,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetPosition(ArkUI_RenderNodeHandle node, int32_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -1066,6 +1153,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetPosition(ArkUI_RenderNodeHandle node, int32_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -1073,9 +1161,10 @@ int32_t OH_ArkUI_RenderNodeUtils_SetPosition(ArkUI_RenderNodeHandle node, int32_
 
 
 
-#### OH_ArkUI_RenderNodeUtils_GetPosition()
+### OH_ArkUI_RenderNodeUtils_GetPosition()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_GetPosition(ArkUI_RenderNodeHandle node, int32_t* x, int32_t* y)
@@ -1089,6 +1178,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetPosition(ArkUI_RenderNodeHandle node, int32_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -1098,6 +1188,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetPosition(ArkUI_RenderNodeHandle node, int32_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -1105,9 +1196,10 @@ int32_t OH_ArkUI_RenderNodeUtils_GetPosition(ArkUI_RenderNodeHandle node, int32_
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetPivot()
+### OH_ArkUI_RenderNodeUtils_SetPivot()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_SetPivot(ArkUI_RenderNodeHandle node, float x, float y)
@@ -1121,6 +1213,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetPivot(ArkUI_RenderNodeHandle node, float x, 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -1130,6 +1223,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetPivot(ArkUI_RenderNodeHandle node, float x, 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -1137,9 +1231,10 @@ int32_t OH_ArkUI_RenderNodeUtils_SetPivot(ArkUI_RenderNodeHandle node, float x, 
 
 
 
-#### OH_ArkUI_RenderNodeUtils_GetPivot()
+### OH_ArkUI_RenderNodeUtils_GetPivot()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_GetPivot(ArkUI_RenderNodeHandle node, float* x, float* y)
@@ -1153,6 +1248,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetPivot(ArkUI_RenderNodeHandle node, float* x,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -1162,6 +1258,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetPivot(ArkUI_RenderNodeHandle node, float* x,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -1169,9 +1266,10 @@ int32_t OH_ArkUI_RenderNodeUtils_GetPivot(ArkUI_RenderNodeHandle node, float* x,
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetScale()
+### OH_ArkUI_RenderNodeUtils_SetScale()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_SetScale(ArkUI_RenderNodeHandle node, float x, float y)
@@ -1185,6 +1283,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetScale(ArkUI_RenderNodeHandle node, float x, 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -1194,6 +1293,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetScale(ArkUI_RenderNodeHandle node, float x, 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -1201,9 +1301,10 @@ int32_t OH_ArkUI_RenderNodeUtils_SetScale(ArkUI_RenderNodeHandle node, float x, 
 
 
 
-#### OH_ArkUI_RenderNodeUtils_GetScale()
+### OH_ArkUI_RenderNodeUtils_GetScale()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_GetScale(ArkUI_RenderNodeHandle node, float* x, float* y)
@@ -1217,6 +1318,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetScale(ArkUI_RenderNodeHandle node, float* x,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -1226,6 +1328,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetScale(ArkUI_RenderNodeHandle node, float* x,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -1233,9 +1336,10 @@ int32_t OH_ArkUI_RenderNodeUtils_GetScale(ArkUI_RenderNodeHandle node, float* x,
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetTranslation()
+### OH_ArkUI_RenderNodeUtils_SetTranslation()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_SetTranslation(ArkUI_RenderNodeHandle node, float x, float y)
@@ -1249,6 +1353,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetTranslation(ArkUI_RenderNodeHandle node, flo
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -1258,6 +1363,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetTranslation(ArkUI_RenderNodeHandle node, flo
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -1265,9 +1371,10 @@ int32_t OH_ArkUI_RenderNodeUtils_SetTranslation(ArkUI_RenderNodeHandle node, flo
 
 
 
-#### OH_ArkUI_RenderNodeUtils_GetTranslation()
+### OH_ArkUI_RenderNodeUtils_GetTranslation()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_GetTranslation(ArkUI_RenderNodeHandle node, float* x, float* y)
@@ -1281,6 +1388,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetTranslation(ArkUI_RenderNodeHandle node, flo
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -1290,6 +1398,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetTranslation(ArkUI_RenderNodeHandle node, flo
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -1297,9 +1406,10 @@ int32_t OH_ArkUI_RenderNodeUtils_GetTranslation(ArkUI_RenderNodeHandle node, flo
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetRotation()
+### OH_ArkUI_RenderNodeUtils_SetRotation()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_SetRotation(ArkUI_RenderNodeHandle node, float x, float y, float z)
@@ -1313,6 +1423,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetRotation(ArkUI_RenderNodeHandle node, float 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -1323,6 +1434,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetRotation(ArkUI_RenderNodeHandle node, float 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -1330,9 +1442,10 @@ int32_t OH_ArkUI_RenderNodeUtils_SetRotation(ArkUI_RenderNodeHandle node, float 
 
 
 
-#### OH_ArkUI_RenderNodeUtils_GetRotation()
+### OH_ArkUI_RenderNodeUtils_GetRotation()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_GetRotation(ArkUI_RenderNodeHandle node, float* x, float* y, float* z)
@@ -1346,6 +1459,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetRotation(ArkUI_RenderNodeHandle node, float*
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -1356,6 +1470,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetRotation(ArkUI_RenderNodeHandle node, float*
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -1363,9 +1478,10 @@ int32_t OH_ArkUI_RenderNodeUtils_GetRotation(ArkUI_RenderNodeHandle node, float*
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetTransform()
+### OH_ArkUI_RenderNodeUtils_SetTransform()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_SetTransform(ArkUI_RenderNodeHandle node, float* matrix)
@@ -1380,6 +1496,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetTransform(ArkUI_RenderNodeHandle node, float
 **起始版本：** 20
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -1400,11 +1517,15 @@ m30, m31, m32, m33]
 其中矩阵表示为：
 
 | m00 m01 m02 m03 |
+
 | m10 m11 m12 m13 |
+
 | m20 m21 m22 m23 |
+
 | m30 m31 m32 m33 |
 
 矩阵组件：
+
 
 | 矩阵单元 | 描述 |
 | --- | --- |
@@ -1428,6 +1549,7 @@ m30, m31, m32, m33]
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_PARAM_OUT_OF_RANGE 参数超出范围。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -1435,9 +1557,10 @@ m30, m31, m32, m33]
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetShadowColor()
+### OH_ArkUI_RenderNodeUtils_SetShadowColor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_SetShadowColor(ArkUI_RenderNodeHandle node, uint32_t color)
@@ -1451,6 +1574,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetShadowColor(ArkUI_RenderNodeHandle node, uin
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -1459,6 +1583,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetShadowColor(ArkUI_RenderNodeHandle node, uin
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -1466,9 +1591,10 @@ int32_t OH_ArkUI_RenderNodeUtils_SetShadowColor(ArkUI_RenderNodeHandle node, uin
 
 
 
-#### OH_ArkUI_RenderNodeUtils_GetShadowColor()
+### OH_ArkUI_RenderNodeUtils_GetShadowColor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_GetShadowColor(ArkUI_RenderNodeHandle node, uint32_t* color)
@@ -1482,6 +1608,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetShadowColor(ArkUI_RenderNodeHandle node, uin
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -1490,6 +1617,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetShadowColor(ArkUI_RenderNodeHandle node, uin
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -1497,9 +1625,10 @@ int32_t OH_ArkUI_RenderNodeUtils_GetShadowColor(ArkUI_RenderNodeHandle node, uin
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetShadowOffset()
+### OH_ArkUI_RenderNodeUtils_SetShadowOffset()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_SetShadowOffset(ArkUI_RenderNodeHandle node, int32_t x, int32_t y)
@@ -1513,6 +1642,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetShadowOffset(ArkUI_RenderNodeHandle node, in
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -1522,6 +1652,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetShadowOffset(ArkUI_RenderNodeHandle node, in
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -1529,9 +1660,10 @@ int32_t OH_ArkUI_RenderNodeUtils_SetShadowOffset(ArkUI_RenderNodeHandle node, in
 
 
 
-#### OH_ArkUI_RenderNodeUtils_GetShadowOffset()
+### OH_ArkUI_RenderNodeUtils_GetShadowOffset()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_GetShadowOffset(ArkUI_RenderNodeHandle node, int32_t* x, int32_t* y)
@@ -1545,6 +1677,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetShadowOffset(ArkUI_RenderNodeHandle node, in
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -1554,6 +1687,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetShadowOffset(ArkUI_RenderNodeHandle node, in
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -1561,9 +1695,10 @@ int32_t OH_ArkUI_RenderNodeUtils_GetShadowOffset(ArkUI_RenderNodeHandle node, in
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetShadowAlpha()
+### OH_ArkUI_RenderNodeUtils_SetShadowAlpha()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_SetShadowAlpha(ArkUI_RenderNodeHandle node, float alpha)
@@ -1577,6 +1712,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetShadowAlpha(ArkUI_RenderNodeHandle node, flo
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -1585,6 +1721,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetShadowAlpha(ArkUI_RenderNodeHandle node, flo
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_PARAM_OUT_OF_RANGE 参数超出范围。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -1592,9 +1729,10 @@ int32_t OH_ArkUI_RenderNodeUtils_SetShadowAlpha(ArkUI_RenderNodeHandle node, flo
 
 
 
-#### OH_ArkUI_RenderNodeUtils_GetShadowAlpha()
+### OH_ArkUI_RenderNodeUtils_GetShadowAlpha()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_GetShadowAlpha(ArkUI_RenderNodeHandle node, float* alpha)
@@ -1608,6 +1746,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetShadowAlpha(ArkUI_RenderNodeHandle node, flo
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -1616,6 +1755,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetShadowAlpha(ArkUI_RenderNodeHandle node, flo
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -1623,9 +1763,10 @@ int32_t OH_ArkUI_RenderNodeUtils_GetShadowAlpha(ArkUI_RenderNodeHandle node, flo
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetShadowElevation()
+### OH_ArkUI_RenderNodeUtils_SetShadowElevation()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_SetShadowElevation(ArkUI_RenderNodeHandle node, float elevation)
@@ -1639,6 +1780,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetShadowElevation(ArkUI_RenderNodeHandle node,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -1647,6 +1789,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetShadowElevation(ArkUI_RenderNodeHandle node,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_PARAM_OUT_OF_RANGE 参数超出范围。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -1654,9 +1797,10 @@ int32_t OH_ArkUI_RenderNodeUtils_SetShadowElevation(ArkUI_RenderNodeHandle node,
 
 
 
-#### OH_ArkUI_RenderNodeUtils_GetShadowElevation()
+### OH_ArkUI_RenderNodeUtils_GetShadowElevation()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_GetShadowElevation(ArkUI_RenderNodeHandle node, float* elevation)
@@ -1670,6 +1814,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetShadowElevation(ArkUI_RenderNodeHandle node,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -1678,6 +1823,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetShadowElevation(ArkUI_RenderNodeHandle node,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -1685,9 +1831,10 @@ int32_t OH_ArkUI_RenderNodeUtils_GetShadowElevation(ArkUI_RenderNodeHandle node,
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetShadowRadius()
+### OH_ArkUI_RenderNodeUtils_SetShadowRadius()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_SetShadowRadius(ArkUI_RenderNodeHandle node, float radius)
@@ -1701,6 +1848,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetShadowRadius(ArkUI_RenderNodeHandle node, fl
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -1709,6 +1857,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetShadowRadius(ArkUI_RenderNodeHandle node, fl
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_PARAM_OUT_OF_RANGE 参数超出范围。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -1716,9 +1865,10 @@ int32_t OH_ArkUI_RenderNodeUtils_SetShadowRadius(ArkUI_RenderNodeHandle node, fl
 
 
 
-#### OH_ArkUI_RenderNodeUtils_GetShadowRadius()
+### OH_ArkUI_RenderNodeUtils_GetShadowRadius()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_GetShadowRadius(ArkUI_RenderNodeHandle node, float* radius)
@@ -1732,6 +1882,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetShadowRadius(ArkUI_RenderNodeHandle node, fl
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -1740,6 +1891,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetShadowRadius(ArkUI_RenderNodeHandle node, fl
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -1747,9 +1899,10 @@ int32_t OH_ArkUI_RenderNodeUtils_GetShadowRadius(ArkUI_RenderNodeHandle node, fl
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetBorderStyle()
+### OH_ArkUI_RenderNodeUtils_SetBorderStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_SetBorderStyle(ArkUI_RenderNodeHandle node, ArkUI_NodeBorderStyleOption* borderStyle)
@@ -1763,6 +1916,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetBorderStyle(ArkUI_RenderNodeHandle node, Ark
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -1771,6 +1925,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetBorderStyle(ArkUI_RenderNodeHandle node, Ark
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -1778,9 +1933,10 @@ int32_t OH_ArkUI_RenderNodeUtils_SetBorderStyle(ArkUI_RenderNodeHandle node, Ark
 
 
 
-#### OH_ArkUI_RenderNodeUtils_GetBorderStyle()
+### OH_ArkUI_RenderNodeUtils_GetBorderStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_GetBorderStyle(ArkUI_RenderNodeHandle node, ArkUI_NodeBorderStyleOption** borderStyle)
@@ -1794,6 +1950,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetBorderStyle(ArkUI_RenderNodeHandle node, Ark
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -1802,6 +1959,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetBorderStyle(ArkUI_RenderNodeHandle node, Ark
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -1809,9 +1967,10 @@ int32_t OH_ArkUI_RenderNodeUtils_GetBorderStyle(ArkUI_RenderNodeHandle node, Ark
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetBorderWidth()
+### OH_ArkUI_RenderNodeUtils_SetBorderWidth()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_SetBorderWidth(ArkUI_RenderNodeHandle node, ArkUI_NodeBorderWidthOption* borderWidth)
@@ -1827,6 +1986,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetBorderWidth(ArkUI_RenderNodeHandle node, Ark
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -1835,6 +1995,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetBorderWidth(ArkUI_RenderNodeHandle node, Ark
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -1842,9 +2003,10 @@ int32_t OH_ArkUI_RenderNodeUtils_SetBorderWidth(ArkUI_RenderNodeHandle node, Ark
 
 
 
-#### OH_ArkUI_RenderNodeUtils_GetBorderWidth()
+### OH_ArkUI_RenderNodeUtils_GetBorderWidth()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_GetBorderWidth(ArkUI_RenderNodeHandle node, ArkUI_NodeBorderWidthOption** borderWidth)
@@ -1858,6 +2020,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetBorderWidth(ArkUI_RenderNodeHandle node, Ark
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -1866,6 +2029,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetBorderWidth(ArkUI_RenderNodeHandle node, Ark
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -1873,9 +2037,10 @@ int32_t OH_ArkUI_RenderNodeUtils_GetBorderWidth(ArkUI_RenderNodeHandle node, Ark
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetBorderColor()
+### OH_ArkUI_RenderNodeUtils_SetBorderColor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_SetBorderColor(ArkUI_RenderNodeHandle node, ArkUI_NodeBorderColorOption* borderColor)
@@ -1889,6 +2054,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetBorderColor(ArkUI_RenderNodeHandle node, Ark
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -1897,6 +2063,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetBorderColor(ArkUI_RenderNodeHandle node, Ark
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -1904,9 +2071,10 @@ int32_t OH_ArkUI_RenderNodeUtils_SetBorderColor(ArkUI_RenderNodeHandle node, Ark
 
 
 
-#### OH_ArkUI_RenderNodeUtils_GetBorderColor()
+### OH_ArkUI_RenderNodeUtils_GetBorderColor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_GetBorderColor(ArkUI_RenderNodeHandle node, ArkUI_NodeBorderColorOption** borderColor)
@@ -1920,6 +2088,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetBorderColor(ArkUI_RenderNodeHandle node, Ark
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -1928,6 +2097,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetBorderColor(ArkUI_RenderNodeHandle node, Ark
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -1935,9 +2105,10 @@ int32_t OH_ArkUI_RenderNodeUtils_GetBorderColor(ArkUI_RenderNodeHandle node, Ark
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetBorderRadius()
+### OH_ArkUI_RenderNodeUtils_SetBorderRadius()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_SetBorderRadius(ArkUI_RenderNodeHandle node, ArkUI_NodeBorderRadiusOption* borderRadius)
@@ -1951,6 +2122,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetBorderRadius(ArkUI_RenderNodeHandle node, Ar
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -1959,6 +2131,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetBorderRadius(ArkUI_RenderNodeHandle node, Ar
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -1966,9 +2139,10 @@ int32_t OH_ArkUI_RenderNodeUtils_SetBorderRadius(ArkUI_RenderNodeHandle node, Ar
 
 
 
-#### OH_ArkUI_RenderNodeUtils_GetBorderRadius()
+### OH_ArkUI_RenderNodeUtils_GetBorderRadius()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_GetBorderRadius(ArkUI_RenderNodeHandle node, ArkUI_NodeBorderRadiusOption** borderRadius)
@@ -1982,6 +2156,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetBorderRadius(ArkUI_RenderNodeHandle node, Ar
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -1990,6 +2165,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetBorderRadius(ArkUI_RenderNodeHandle node, Ar
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -1997,9 +2173,10 @@ int32_t OH_ArkUI_RenderNodeUtils_GetBorderRadius(ArkUI_RenderNodeHandle node, Ar
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetMask()
+### OH_ArkUI_RenderNodeUtils_SetMask()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_SetMask(ArkUI_RenderNodeHandle node, ArkUI_RenderNodeMaskOption* mask)
@@ -2020,6 +2197,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetMask(ArkUI_RenderNodeHandle node, ArkUI_Rend
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -2028,6 +2206,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetMask(ArkUI_RenderNodeHandle node, ArkUI_Rend
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -2035,9 +2214,10 @@ int32_t OH_ArkUI_RenderNodeUtils_SetMask(ArkUI_RenderNodeHandle node, ArkUI_Rend
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetClip()
+### OH_ArkUI_RenderNodeUtils_SetClip()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_SetClip(ArkUI_RenderNodeHandle node, ArkUI_RenderNodeClipOption* clip)
@@ -2053,6 +2233,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetClip(ArkUI_RenderNodeHandle node, ArkUI_Rend
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -2061,6 +2242,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetClip(ArkUI_RenderNodeHandle node, ArkUI_Rend
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -2068,9 +2250,10 @@ int32_t OH_ArkUI_RenderNodeUtils_SetClip(ArkUI_RenderNodeHandle node, ArkUI_Rend
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetMarkNodeGroup()
+### OH_ArkUI_RenderNodeUtils_SetMarkNodeGroup()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_SetMarkNodeGroup(ArkUI_RenderNodeHandle node, bool markNodeGroup)
@@ -2086,6 +2269,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetMarkNodeGroup(ArkUI_RenderNodeHandle node, b
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -2094,6 +2278,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetMarkNodeGroup(ArkUI_RenderNodeHandle node, b
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -2101,9 +2286,10 @@ int32_t OH_ArkUI_RenderNodeUtils_SetMarkNodeGroup(ArkUI_RenderNodeHandle node, b
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetBounds()
+### OH_ArkUI_RenderNodeUtils_SetBounds()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_SetBounds(ArkUI_RenderNodeHandle node, int32_t x, int32_t y, int32_t width, int32_t height)
@@ -2117,6 +2303,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetBounds(ArkUI_RenderNodeHandle node, int32_t 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -2128,6 +2315,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetBounds(ArkUI_RenderNodeHandle node, int32_t 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_PARAM_OUT_OF_RANGE 参数超出范围。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -2135,9 +2323,10 @@ int32_t OH_ArkUI_RenderNodeUtils_SetBounds(ArkUI_RenderNodeHandle node, int32_t 
 
 
 
-#### OH_ArkUI_RenderNodeUtils_GetBounds()
+### OH_ArkUI_RenderNodeUtils_GetBounds()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_GetBounds(ArkUI_RenderNodeHandle node, int32_t* x, int32_t* y, int32_t* width, int32_t* height)
@@ -2151,6 +2340,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetBounds(ArkUI_RenderNodeHandle node, int32_t*
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -2162,6 +2352,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetBounds(ArkUI_RenderNodeHandle node, int32_t*
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -2169,9 +2360,10 @@ int32_t OH_ArkUI_RenderNodeUtils_GetBounds(ArkUI_RenderNodeHandle node, int32_t*
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetDrawRegion()
+### OH_ArkUI_RenderNodeUtils_SetDrawRegion()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_SetDrawRegion(ArkUI_RenderNodeHandle node, float x, float y, float w, float h)
@@ -2187,6 +2379,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetDrawRegion(ArkUI_RenderNodeHandle node, floa
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -2198,6 +2391,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetDrawRegion(ArkUI_RenderNodeHandle node, floa
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -2205,9 +2399,10 @@ int32_t OH_ArkUI_RenderNodeUtils_SetDrawRegion(ArkUI_RenderNodeHandle node, floa
 
 
 
-#### OH_ArkUI_RenderNodeUtils_AttachContentModifier()
+### OH_ArkUI_RenderNodeUtils_AttachContentModifier()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_AttachContentModifier(ArkUI_RenderNodeHandle node, ArkUI_RenderContentModifierHandle modifier)
@@ -2223,6 +2418,7 @@ int32_t OH_ArkUI_RenderNodeUtils_AttachContentModifier(ArkUI_RenderNodeHandle no
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | 目标渲染节点。 |
@@ -2231,6 +2427,7 @@ int32_t OH_ArkUI_RenderNodeUtils_AttachContentModifier(ArkUI_RenderNodeHandle no
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。从API version 22开始支持。 |
@@ -2238,9 +2435,10 @@ int32_t OH_ArkUI_RenderNodeUtils_AttachContentModifier(ArkUI_RenderNodeHandle no
 
 
 
-#### OH_ArkUI_RenderNodeUtils_CreateContentModifier()
+### OH_ArkUI_RenderNodeUtils_CreateContentModifier()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_RenderContentModifierHandle OH_ArkUI_RenderNodeUtils_CreateContentModifier()
@@ -2256,6 +2454,7 @@ ArkUI_RenderContentModifierHandle OH_ArkUI_RenderNodeUtils_CreateContentModifier
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_RenderContentModifierHandle | 内容修改器。 |
@@ -2263,9 +2462,10 @@ ArkUI_RenderContentModifierHandle OH_ArkUI_RenderNodeUtils_CreateContentModifier
 
 
 
-#### OH_ArkUI_RenderNodeUtils_DisposeContentModifier()
+### OH_ArkUI_RenderNodeUtils_DisposeContentModifier()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_RenderNodeUtils_DisposeContentModifier(ArkUI_RenderContentModifierHandle modifier)
@@ -2279,6 +2479,7 @@ void OH_ArkUI_RenderNodeUtils_DisposeContentModifier(ArkUI_RenderContentModifier
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderContentModifierHandle modifier | 内容修改器。 |
@@ -2286,9 +2487,10 @@ void OH_ArkUI_RenderNodeUtils_DisposeContentModifier(ArkUI_RenderContentModifier
 
 
 
-#### OH_ArkUI_RenderNodeUtils_AttachFloatProperty()
+### OH_ArkUI_RenderNodeUtils_AttachFloatProperty()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_AttachFloatProperty(ArkUI_RenderContentModifierHandle modifier, ArkUI_FloatPropertyHandle property)
@@ -2304,6 +2506,7 @@ int32_t OH_ArkUI_RenderNodeUtils_AttachFloatProperty(ArkUI_RenderContentModifier
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderContentModifierHandle modifier | 待附加属性的目标内容修改器。 |
@@ -2312,6 +2515,7 @@ int32_t OH_ArkUI_RenderNodeUtils_AttachFloatProperty(ArkUI_RenderContentModifier
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 |
@@ -2319,9 +2523,10 @@ int32_t OH_ArkUI_RenderNodeUtils_AttachFloatProperty(ArkUI_RenderContentModifier
 
 
 
-#### OH_ArkUI_RenderNodeUtils_AttachVector2Property()
+### OH_ArkUI_RenderNodeUtils_AttachVector2Property()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_AttachVector2Property(ArkUI_RenderContentModifierHandle modifier, ArkUI_Vector2PropertyHandle property)
@@ -2337,6 +2542,7 @@ int32_t OH_ArkUI_RenderNodeUtils_AttachVector2Property(ArkUI_RenderContentModifi
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderContentModifierHandle modifier | 待附加属性的目标内容修改器。 |
@@ -2345,6 +2551,7 @@ int32_t OH_ArkUI_RenderNodeUtils_AttachVector2Property(ArkUI_RenderContentModifi
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 |
@@ -2352,9 +2559,10 @@ int32_t OH_ArkUI_RenderNodeUtils_AttachVector2Property(ArkUI_RenderContentModifi
 
 
 
-#### OH_ArkUI_RenderNodeUtils_AttachColorProperty()
+### OH_ArkUI_RenderNodeUtils_AttachColorProperty()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_AttachColorProperty(ArkUI_RenderContentModifierHandle modifier, ArkUI_ColorPropertyHandle property)
@@ -2370,6 +2578,7 @@ int32_t OH_ArkUI_RenderNodeUtils_AttachColorProperty(ArkUI_RenderContentModifier
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderContentModifierHandle modifier | 待附加属性的目标内容修改器。 |
@@ -2378,6 +2587,7 @@ int32_t OH_ArkUI_RenderNodeUtils_AttachColorProperty(ArkUI_RenderContentModifier
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 |
@@ -2385,9 +2595,10 @@ int32_t OH_ArkUI_RenderNodeUtils_AttachColorProperty(ArkUI_RenderContentModifier
 
 
 
-#### OH_ArkUI_RenderNodeUtils_AttachFloatAnimatableProperty()
+### OH_ArkUI_RenderNodeUtils_AttachFloatAnimatableProperty()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_AttachFloatAnimatableProperty(ArkUI_RenderContentModifierHandle modifier, ArkUI_FloatAnimatablePropertyHandle property)
@@ -2403,6 +2614,7 @@ int32_t OH_ArkUI_RenderNodeUtils_AttachFloatAnimatableProperty(ArkUI_RenderConte
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderContentModifierHandle modifier | 待附加属性的目标内容修改器。 |
@@ -2411,6 +2623,7 @@ int32_t OH_ArkUI_RenderNodeUtils_AttachFloatAnimatableProperty(ArkUI_RenderConte
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 |
@@ -2418,9 +2631,10 @@ int32_t OH_ArkUI_RenderNodeUtils_AttachFloatAnimatableProperty(ArkUI_RenderConte
 
 
 
-#### OH_ArkUI_RenderNodeUtils_AttachVector2AnimatableProperty()
+### OH_ArkUI_RenderNodeUtils_AttachVector2AnimatableProperty()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_AttachVector2AnimatableProperty(ArkUI_RenderContentModifierHandle modifier, ArkUI_Vector2AnimatablePropertyHandle property)
@@ -2436,6 +2650,7 @@ int32_t OH_ArkUI_RenderNodeUtils_AttachVector2AnimatableProperty(ArkUI_RenderCon
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderContentModifierHandle modifier | 待附加属性的目标内容修改器。 |
@@ -2444,6 +2659,7 @@ int32_t OH_ArkUI_RenderNodeUtils_AttachVector2AnimatableProperty(ArkUI_RenderCon
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 |
@@ -2451,9 +2667,10 @@ int32_t OH_ArkUI_RenderNodeUtils_AttachVector2AnimatableProperty(ArkUI_RenderCon
 
 
 
-#### OH_ArkUI_RenderNodeUtils_AttachColorAnimatableProperty()
+### OH_ArkUI_RenderNodeUtils_AttachColorAnimatableProperty()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_AttachColorAnimatableProperty(ArkUI_RenderContentModifierHandle modifier, ArkUI_ColorAnimatablePropertyHandle property)
@@ -2469,6 +2686,7 @@ int32_t OH_ArkUI_RenderNodeUtils_AttachColorAnimatableProperty(ArkUI_RenderConte
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderContentModifierHandle modifier | 待附加属性的目标内容修改器。 |
@@ -2477,6 +2695,7 @@ int32_t OH_ArkUI_RenderNodeUtils_AttachColorAnimatableProperty(ArkUI_RenderConte
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 |
@@ -2484,9 +2703,10 @@ int32_t OH_ArkUI_RenderNodeUtils_AttachColorAnimatableProperty(ArkUI_RenderConte
 
 
 
-#### OH_ArkUI_RenderNodeUtils_CreateFloatProperty()
+### OH_ArkUI_RenderNodeUtils_CreateFloatProperty()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_FloatPropertyHandle OH_ArkUI_RenderNodeUtils_CreateFloatProperty(float value)
@@ -2502,12 +2722,14 @@ ArkUI_FloatPropertyHandle OH_ArkUI_RenderNodeUtils_CreateFloatProperty(float val
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | float value | 属性值。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2516,9 +2738,10 @@ ArkUI_FloatPropertyHandle OH_ArkUI_RenderNodeUtils_CreateFloatProperty(float val
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetFloatPropertyValue()
+### OH_ArkUI_RenderNodeUtils_SetFloatPropertyValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_SetFloatPropertyValue(ArkUI_FloatPropertyHandle property, float value)
@@ -2532,6 +2755,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetFloatPropertyValue(ArkUI_FloatPropertyHandle
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_FloatPropertyHandle property | 浮点属性。 |
@@ -2540,6 +2764,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetFloatPropertyValue(ArkUI_FloatPropertyHandle
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 |
@@ -2547,9 +2772,10 @@ int32_t OH_ArkUI_RenderNodeUtils_SetFloatPropertyValue(ArkUI_FloatPropertyHandle
 
 
 
-#### OH_ArkUI_RenderNodeUtils_GetFloatPropertyValue()
+### OH_ArkUI_RenderNodeUtils_GetFloatPropertyValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_GetFloatPropertyValue(ArkUI_FloatPropertyHandle property, float* value)
@@ -2563,6 +2789,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetFloatPropertyValue(ArkUI_FloatPropertyHandle
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_FloatPropertyHandle property | 浮点属性。 |
@@ -2571,6 +2798,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetFloatPropertyValue(ArkUI_FloatPropertyHandle
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 |
@@ -2578,9 +2806,10 @@ int32_t OH_ArkUI_RenderNodeUtils_GetFloatPropertyValue(ArkUI_FloatPropertyHandle
 
 
 
-#### OH_ArkUI_RenderNodeUtils_DisposeFloatProperty()
+### OH_ArkUI_RenderNodeUtils_DisposeFloatProperty()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_RenderNodeUtils_DisposeFloatProperty(ArkUI_FloatPropertyHandle property)
@@ -2594,6 +2823,7 @@ void OH_ArkUI_RenderNodeUtils_DisposeFloatProperty(ArkUI_FloatPropertyHandle pro
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_FloatPropertyHandle property | 浮点属性。 |
@@ -2601,9 +2831,10 @@ void OH_ArkUI_RenderNodeUtils_DisposeFloatProperty(ArkUI_FloatPropertyHandle pro
 
 
 
-#### OH_ArkUI_RenderNodeUtils_CreateVector2Property()
+### OH_ArkUI_RenderNodeUtils_CreateVector2Property()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_Vector2PropertyHandle OH_ArkUI_RenderNodeUtils_CreateVector2Property(float x, float y)
@@ -2619,6 +2850,7 @@ ArkUI_Vector2PropertyHandle OH_ArkUI_RenderNodeUtils_CreateVector2Property(float
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | float x | 属性的X坐标值。 |
@@ -2627,6 +2859,7 @@ ArkUI_Vector2PropertyHandle OH_ArkUI_RenderNodeUtils_CreateVector2Property(float
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_Vector2PropertyHandle | 二维向量属性。 |
@@ -2634,9 +2867,10 @@ ArkUI_Vector2PropertyHandle OH_ArkUI_RenderNodeUtils_CreateVector2Property(float
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetVector2PropertyValue()
+### OH_ArkUI_RenderNodeUtils_SetVector2PropertyValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_SetVector2PropertyValue(ArkUI_Vector2PropertyHandle property, float x, float y)
@@ -2650,6 +2884,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetVector2PropertyValue(ArkUI_Vector2PropertyHa
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_Vector2PropertyHandle property | 二维向量属性。 |
@@ -2659,6 +2894,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetVector2PropertyValue(ArkUI_Vector2PropertyHa
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 |
@@ -2666,9 +2902,10 @@ int32_t OH_ArkUI_RenderNodeUtils_SetVector2PropertyValue(ArkUI_Vector2PropertyHa
 
 
 
-#### OH_ArkUI_RenderNodeUtils_GetVector2PropertyValue()
+### OH_ArkUI_RenderNodeUtils_GetVector2PropertyValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_GetVector2PropertyValue(ArkUI_Vector2PropertyHandle property, float* x, float* y)
@@ -2682,6 +2919,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetVector2PropertyValue(ArkUI_Vector2PropertyHa
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_Vector2PropertyHandle property | 二维向量属性。 |
@@ -2691,6 +2929,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetVector2PropertyValue(ArkUI_Vector2PropertyHa
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 |
@@ -2698,9 +2937,10 @@ int32_t OH_ArkUI_RenderNodeUtils_GetVector2PropertyValue(ArkUI_Vector2PropertyHa
 
 
 
-#### OH_ArkUI_RenderNodeUtils_DisposeVector2Property()
+### OH_ArkUI_RenderNodeUtils_DisposeVector2Property()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_RenderNodeUtils_DisposeVector2Property(ArkUI_Vector2PropertyHandle property)
@@ -2714,6 +2954,7 @@ void OH_ArkUI_RenderNodeUtils_DisposeVector2Property(ArkUI_Vector2PropertyHandle
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_Vector2PropertyHandle property | 二维向量属性。 |
@@ -2721,9 +2962,10 @@ void OH_ArkUI_RenderNodeUtils_DisposeVector2Property(ArkUI_Vector2PropertyHandle
 
 
 
-#### OH_ArkUI_RenderNodeUtils_CreateColorProperty()
+### OH_ArkUI_RenderNodeUtils_CreateColorProperty()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ColorPropertyHandle OH_ArkUI_RenderNodeUtils_CreateColorProperty(uint32_t value)
@@ -2739,12 +2981,14 @@ ArkUI_ColorPropertyHandle OH_ArkUI_RenderNodeUtils_CreateColorProperty(uint32_t 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t value | 用于初始化颜色属性的ARGB颜色值，格式为0xAARRGGBB，其中A、R、G、B分别表示Alpha、红、绿、蓝通道。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2753,9 +2997,10 @@ ArkUI_ColorPropertyHandle OH_ArkUI_RenderNodeUtils_CreateColorProperty(uint32_t 
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetColorPropertyValue()
+### OH_ArkUI_RenderNodeUtils_SetColorPropertyValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_SetColorPropertyValue(ArkUI_ColorPropertyHandle property, uint32_t value)
@@ -2769,6 +3014,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetColorPropertyValue(ArkUI_ColorPropertyHandle
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_ColorPropertyHandle property | 颜色属性。 |
@@ -2777,6 +3023,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetColorPropertyValue(ArkUI_ColorPropertyHandle
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 |
@@ -2784,9 +3031,10 @@ int32_t OH_ArkUI_RenderNodeUtils_SetColorPropertyValue(ArkUI_ColorPropertyHandle
 
 
 
-#### OH_ArkUI_RenderNodeUtils_GetColorPropertyValue()
+### OH_ArkUI_RenderNodeUtils_GetColorPropertyValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_GetColorPropertyValue(ArkUI_ColorPropertyHandle property, uint32_t* value)
@@ -2800,6 +3048,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetColorPropertyValue(ArkUI_ColorPropertyHandle
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_ColorPropertyHandle property | 颜色属性。 |
@@ -2808,6 +3057,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetColorPropertyValue(ArkUI_ColorPropertyHandle
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 |
@@ -2815,9 +3065,10 @@ int32_t OH_ArkUI_RenderNodeUtils_GetColorPropertyValue(ArkUI_ColorPropertyHandle
 
 
 
-#### OH_ArkUI_RenderNodeUtils_DisposeColorProperty()
+### OH_ArkUI_RenderNodeUtils_DisposeColorProperty()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_RenderNodeUtils_DisposeColorProperty(ArkUI_ColorPropertyHandle property)
@@ -2831,6 +3082,7 @@ void OH_ArkUI_RenderNodeUtils_DisposeColorProperty(ArkUI_ColorPropertyHandle pro
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_ColorPropertyHandle property | 颜色属性。 |
@@ -2838,9 +3090,10 @@ void OH_ArkUI_RenderNodeUtils_DisposeColorProperty(ArkUI_ColorPropertyHandle pro
 
 
 
-#### OH_ArkUI_RenderNodeUtils_CreateFloatAnimatableProperty()
+### OH_ArkUI_RenderNodeUtils_CreateFloatAnimatableProperty()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_FloatAnimatablePropertyHandle OH_ArkUI_RenderNodeUtils_CreateFloatAnimatableProperty(float value)
@@ -2856,12 +3109,14 @@ ArkUI_FloatAnimatablePropertyHandle OH_ArkUI_RenderNodeUtils_CreateFloatAnimatab
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | float value | 属性值。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2870,9 +3125,10 @@ ArkUI_FloatAnimatablePropertyHandle OH_ArkUI_RenderNodeUtils_CreateFloatAnimatab
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetFloatAnimatablePropertyValue()
+### OH_ArkUI_RenderNodeUtils_SetFloatAnimatablePropertyValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_SetFloatAnimatablePropertyValue(ArkUI_FloatAnimatablePropertyHandle property, float value)
@@ -2886,6 +3142,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetFloatAnimatablePropertyValue(ArkUI_FloatAnim
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_FloatAnimatablePropertyHandle property | 可动画的浮点属性。 |
@@ -2894,6 +3151,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetFloatAnimatablePropertyValue(ArkUI_FloatAnim
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 |
@@ -2901,9 +3159,10 @@ int32_t OH_ArkUI_RenderNodeUtils_SetFloatAnimatablePropertyValue(ArkUI_FloatAnim
 
 
 
-#### OH_ArkUI_RenderNodeUtils_GetFloatAnimatablePropertyValue()
+### OH_ArkUI_RenderNodeUtils_GetFloatAnimatablePropertyValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_GetFloatAnimatablePropertyValue(ArkUI_FloatAnimatablePropertyHandle property, float* value)
@@ -2917,6 +3176,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetFloatAnimatablePropertyValue(ArkUI_FloatAnim
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_FloatAnimatablePropertyHandle property | 可动画的浮点属性。 |
@@ -2925,6 +3185,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetFloatAnimatablePropertyValue(ArkUI_FloatAnim
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 |
@@ -2932,9 +3193,10 @@ int32_t OH_ArkUI_RenderNodeUtils_GetFloatAnimatablePropertyValue(ArkUI_FloatAnim
 
 
 
-#### OH_ArkUI_RenderNodeUtils_DisposeFloatAnimatableProperty()
+### OH_ArkUI_RenderNodeUtils_DisposeFloatAnimatableProperty()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_RenderNodeUtils_DisposeFloatAnimatableProperty(ArkUI_FloatAnimatablePropertyHandle property)
@@ -2948,6 +3210,7 @@ void OH_ArkUI_RenderNodeUtils_DisposeFloatAnimatableProperty(ArkUI_FloatAnimatab
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_FloatAnimatablePropertyHandle property | 可动画的浮点属性。 |
@@ -2955,9 +3218,10 @@ void OH_ArkUI_RenderNodeUtils_DisposeFloatAnimatableProperty(ArkUI_FloatAnimatab
 
 
 
-#### OH_ArkUI_RenderNodeUtils_CreateVector2AnimatableProperty()
+### OH_ArkUI_RenderNodeUtils_CreateVector2AnimatableProperty()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_Vector2AnimatablePropertyHandle OH_ArkUI_RenderNodeUtils_CreateVector2AnimatableProperty(float x, float y)
@@ -2973,6 +3237,7 @@ ArkUI_Vector2AnimatablePropertyHandle OH_ArkUI_RenderNodeUtils_CreateVector2Anim
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | float x | 属性的X坐标值。 |
@@ -2981,6 +3246,7 @@ ArkUI_Vector2AnimatablePropertyHandle OH_ArkUI_RenderNodeUtils_CreateVector2Anim
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_Vector2AnimatablePropertyHandle | 可动画的二维向量属性。 |
@@ -2988,9 +3254,10 @@ ArkUI_Vector2AnimatablePropertyHandle OH_ArkUI_RenderNodeUtils_CreateVector2Anim
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetVector2AnimatablePropertyValue()
+### OH_ArkUI_RenderNodeUtils_SetVector2AnimatablePropertyValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_SetVector2AnimatablePropertyValue(ArkUI_Vector2AnimatablePropertyHandle property, float x, float y)
@@ -3004,6 +3271,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetVector2AnimatablePropertyValue(ArkUI_Vector2
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_Vector2AnimatablePropertyHandle property | 可动画的二维向量属性。 |
@@ -3013,6 +3281,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetVector2AnimatablePropertyValue(ArkUI_Vector2
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 |
@@ -3020,9 +3289,10 @@ int32_t OH_ArkUI_RenderNodeUtils_SetVector2AnimatablePropertyValue(ArkUI_Vector2
 
 
 
-#### OH_ArkUI_RenderNodeUtils_GetVector2AnimatablePropertyValue()
+### OH_ArkUI_RenderNodeUtils_GetVector2AnimatablePropertyValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_GetVector2AnimatablePropertyValue(ArkUI_Vector2AnimatablePropertyHandle property, float* x, float* y)
@@ -3036,6 +3306,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetVector2AnimatablePropertyValue(ArkUI_Vector2
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_Vector2AnimatablePropertyHandle property | 可动画的二维向量属性。 |
@@ -3045,6 +3316,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetVector2AnimatablePropertyValue(ArkUI_Vector2
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 |
@@ -3052,9 +3324,10 @@ int32_t OH_ArkUI_RenderNodeUtils_GetVector2AnimatablePropertyValue(ArkUI_Vector2
 
 
 
-#### OH_ArkUI_RenderNodeUtils_DisposeVector2AnimatableProperty()
+### OH_ArkUI_RenderNodeUtils_DisposeVector2AnimatableProperty()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_RenderNodeUtils_DisposeVector2AnimatableProperty(ArkUI_Vector2AnimatablePropertyHandle property)
@@ -3068,6 +3341,7 @@ void OH_ArkUI_RenderNodeUtils_DisposeVector2AnimatableProperty(ArkUI_Vector2Anim
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_Vector2AnimatablePropertyHandle property | 可动画的二维向量属性。 |
@@ -3075,9 +3349,10 @@ void OH_ArkUI_RenderNodeUtils_DisposeVector2AnimatableProperty(ArkUI_Vector2Anim
 
 
 
-#### OH_ArkUI_RenderNodeUtils_CreateColorAnimatableProperty()
+### OH_ArkUI_RenderNodeUtils_CreateColorAnimatableProperty()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ColorAnimatablePropertyHandle OH_ArkUI_RenderNodeUtils_CreateColorAnimatableProperty(uint32_t value)
@@ -3093,12 +3368,14 @@ ArkUI_ColorAnimatablePropertyHandle OH_ArkUI_RenderNodeUtils_CreateColorAnimatab
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t value | 用于初始化可动画颜色属性的ARGB颜色值，格式为0xAARRGGBB，其中A、R、G、B分别表示Alpha、红、绿、蓝通道。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3107,9 +3384,10 @@ ArkUI_ColorAnimatablePropertyHandle OH_ArkUI_RenderNodeUtils_CreateColorAnimatab
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetColorAnimatablePropertyValue()
+### OH_ArkUI_RenderNodeUtils_SetColorAnimatablePropertyValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_SetColorAnimatablePropertyValue(ArkUI_ColorAnimatablePropertyHandle property, uint32_t value)
@@ -3123,6 +3401,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetColorAnimatablePropertyValue(ArkUI_ColorAnim
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_ColorAnimatablePropertyHandle property | 可动画的颜色属性。 |
@@ -3131,6 +3410,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetColorAnimatablePropertyValue(ArkUI_ColorAnim
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 |
@@ -3138,9 +3418,10 @@ int32_t OH_ArkUI_RenderNodeUtils_SetColorAnimatablePropertyValue(ArkUI_ColorAnim
 
 
 
-#### OH_ArkUI_RenderNodeUtils_GetColorAnimatablePropertyValue()
+### OH_ArkUI_RenderNodeUtils_GetColorAnimatablePropertyValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_GetColorAnimatablePropertyValue(ArkUI_ColorAnimatablePropertyHandle property, uint32_t* value)
@@ -3154,6 +3435,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetColorAnimatablePropertyValue(ArkUI_ColorAnim
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_ColorAnimatablePropertyHandle property | 可动画的颜色属性。 |
@@ -3162,6 +3444,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetColorAnimatablePropertyValue(ArkUI_ColorAnim
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 |
@@ -3169,9 +3452,10 @@ int32_t OH_ArkUI_RenderNodeUtils_GetColorAnimatablePropertyValue(ArkUI_ColorAnim
 
 
 
-#### OH_ArkUI_RenderNodeUtils_DisposeColorAnimatableProperty()
+### OH_ArkUI_RenderNodeUtils_DisposeColorAnimatableProperty()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_RenderNodeUtils_DisposeColorAnimatableProperty(ArkUI_ColorAnimatablePropertyHandle property)
@@ -3185,6 +3469,7 @@ void OH_ArkUI_RenderNodeUtils_DisposeColorAnimatableProperty(ArkUI_ColorAnimatab
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_ColorAnimatablePropertyHandle property | 可动画的颜色属性。 |
@@ -3192,12 +3477,13 @@ void OH_ArkUI_RenderNodeUtils_DisposeColorAnimatableProperty(ArkUI_ColorAnimatab
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetContentModifierOnDraw()
+### OH_ArkUI_RenderNodeUtils_SetContentModifierOnDraw()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-int32_t OH_ArkUI_RenderNodeUtils_SetContentModifierOnDraw(ArkUI_RenderContentModifierHandle modifier, void* userData, void (*callback)(ArkUI_DrawContext* context, void* userData))
+int32_t OH_ArkUI_RenderNodeUtils_SetContentModifierOnDraw(ArkUI_RenderContentModifierHandle modifier, void\* userData, void (\*callback)(ArkUI_DrawContext\* context, void\* userData))
 ```
 
 **描述：**
@@ -3210,6 +3496,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetContentModifierOnDraw(ArkUI_RenderContentMod
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderContentModifierHandle modifier | 目标内容修改器。 |
@@ -3219,6 +3506,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetContentModifierOnDraw(ArkUI_RenderContentMod
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 |
@@ -3226,9 +3514,10 @@ int32_t OH_ArkUI_RenderNodeUtils_SetContentModifierOnDraw(ArkUI_RenderContentMod
 
 
 
-#### OH_ArkUI_RenderNodeUtils_CreateRectShapeOption()
+### OH_ArkUI_RenderNodeUtils_CreateRectShapeOption()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_RectShapeOption* OH_ArkUI_RenderNodeUtils_CreateRectShapeOption()
@@ -3244,6 +3533,7 @@ ArkUI_RectShapeOption* OH_ArkUI_RenderNodeUtils_CreateRectShapeOption()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_RectShapeOption* | 指向矩形形状的指针。 |
@@ -3251,9 +3541,10 @@ ArkUI_RectShapeOption* OH_ArkUI_RenderNodeUtils_CreateRectShapeOption()
 
 
 
-#### OH_ArkUI_RenderNodeUtils_DisposeRectShapeOption()
+### OH_ArkUI_RenderNodeUtils_DisposeRectShapeOption()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_RenderNodeUtils_DisposeRectShapeOption(ArkUI_RectShapeOption* option)
@@ -3267,6 +3558,7 @@ void OH_ArkUI_RenderNodeUtils_DisposeRectShapeOption(ArkUI_RectShapeOption* opti
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RectShapeOption* option | 指向矩形形状的指针。 |
@@ -3274,9 +3566,10 @@ void OH_ArkUI_RenderNodeUtils_DisposeRectShapeOption(ArkUI_RectShapeOption* opti
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetRectShapeOptionEdgeValue()
+### OH_ArkUI_RenderNodeUtils_SetRectShapeOptionEdgeValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_RenderNodeUtils_SetRectShapeOptionEdgeValue(ArkUI_RectShapeOption* option, float edgeValue, ArkUI_EdgeDirection direction)
@@ -3292,6 +3585,7 @@ void OH_ArkUI_RenderNodeUtils_SetRectShapeOptionEdgeValue(ArkUI_RectShapeOption*
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RectShapeOption* option | 指向矩形形状的指针。 |
@@ -3301,9 +3595,10 @@ void OH_ArkUI_RenderNodeUtils_SetRectShapeOptionEdgeValue(ArkUI_RectShapeOption*
 
 
 
-#### OH_ArkUI_RenderNodeUtils_CreateNodeBorderStyleOption()
+### OH_ArkUI_RenderNodeUtils_CreateNodeBorderStyleOption()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_NodeBorderStyleOption* OH_ArkUI_RenderNodeUtils_CreateNodeBorderStyleOption()
@@ -3319,6 +3614,7 @@ ArkUI_NodeBorderStyleOption* OH_ArkUI_RenderNodeUtils_CreateNodeBorderStyleOptio
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_NodeBorderStyleOption* | 指向节点边框样式的指针。 |
@@ -3326,9 +3622,10 @@ ArkUI_NodeBorderStyleOption* OH_ArkUI_RenderNodeUtils_CreateNodeBorderStyleOptio
 
 
 
-#### OH_ArkUI_RenderNodeUtils_DisposeNodeBorderStyleOption()
+### OH_ArkUI_RenderNodeUtils_DisposeNodeBorderStyleOption()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_RenderNodeUtils_DisposeNodeBorderStyleOption(ArkUI_NodeBorderStyleOption* option)
@@ -3342,6 +3639,7 @@ void OH_ArkUI_RenderNodeUtils_DisposeNodeBorderStyleOption(ArkUI_NodeBorderStyle
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeBorderStyleOption* option | 指向节点边框样式的指针。 |
@@ -3349,9 +3647,10 @@ void OH_ArkUI_RenderNodeUtils_DisposeNodeBorderStyleOption(ArkUI_NodeBorderStyle
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetNodeBorderStyleOptionEdgeStyle()
+### OH_ArkUI_RenderNodeUtils_SetNodeBorderStyleOptionEdgeStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_RenderNodeUtils_SetNodeBorderStyleOptionEdgeStyle(ArkUI_NodeBorderStyleOption* option, ArkUI_BorderStyle edgeStyle, ArkUI_EdgeDirection direction)
@@ -3365,6 +3664,7 @@ void OH_ArkUI_RenderNodeUtils_SetNodeBorderStyleOptionEdgeStyle(ArkUI_NodeBorder
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeBorderStyleOption* option | 指向节点边框样式的指针。 |
@@ -3374,9 +3674,10 @@ void OH_ArkUI_RenderNodeUtils_SetNodeBorderStyleOptionEdgeStyle(ArkUI_NodeBorder
 
 
 
-#### OH_ArkUI_RenderNodeUtils_CreateNodeBorderWidthOption()
+### OH_ArkUI_RenderNodeUtils_CreateNodeBorderWidthOption()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_NodeBorderWidthOption* OH_ArkUI_RenderNodeUtils_CreateNodeBorderWidthOption()
@@ -3392,6 +3693,7 @@ ArkUI_NodeBorderWidthOption* OH_ArkUI_RenderNodeUtils_CreateNodeBorderWidthOptio
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_NodeBorderWidthOption* | 指向节点边框宽度的指针。 |
@@ -3399,9 +3701,10 @@ ArkUI_NodeBorderWidthOption* OH_ArkUI_RenderNodeUtils_CreateNodeBorderWidthOptio
 
 
 
-#### OH_ArkUI_RenderNodeUtils_DisposeNodeBorderWidthOption()
+### OH_ArkUI_RenderNodeUtils_DisposeNodeBorderWidthOption()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_RenderNodeUtils_DisposeNodeBorderWidthOption(ArkUI_NodeBorderWidthOption* option)
@@ -3415,6 +3718,7 @@ void OH_ArkUI_RenderNodeUtils_DisposeNodeBorderWidthOption(ArkUI_NodeBorderWidth
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeBorderWidthOption* option | 指向节点边框宽度的指针。 |
@@ -3422,9 +3726,10 @@ void OH_ArkUI_RenderNodeUtils_DisposeNodeBorderWidthOption(ArkUI_NodeBorderWidth
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetNodeBorderWidthOptionEdgeWidth()
+### OH_ArkUI_RenderNodeUtils_SetNodeBorderWidthOptionEdgeWidth()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_RenderNodeUtils_SetNodeBorderWidthOptionEdgeWidth(ArkUI_NodeBorderWidthOption* option, float edgeWidth, ArkUI_EdgeDirection direction)
@@ -3438,6 +3743,7 @@ void OH_ArkUI_RenderNodeUtils_SetNodeBorderWidthOptionEdgeWidth(ArkUI_NodeBorder
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeBorderWidthOption* option | 指向节点边框宽度的指针。 |
@@ -3447,9 +3753,10 @@ void OH_ArkUI_RenderNodeUtils_SetNodeBorderWidthOptionEdgeWidth(ArkUI_NodeBorder
 
 
 
-#### OH_ArkUI_RenderNodeUtils_CreateNodeBorderColorOption()
+### OH_ArkUI_RenderNodeUtils_CreateNodeBorderColorOption()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_NodeBorderColorOption* OH_ArkUI_RenderNodeUtils_CreateNodeBorderColorOption()
@@ -3465,6 +3772,7 @@ ArkUI_NodeBorderColorOption* OH_ArkUI_RenderNodeUtils_CreateNodeBorderColorOptio
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_NodeBorderColorOption* | 指向节点边框颜色的指针。 |
@@ -3472,9 +3780,10 @@ ArkUI_NodeBorderColorOption* OH_ArkUI_RenderNodeUtils_CreateNodeBorderColorOptio
 
 
 
-#### OH_ArkUI_RenderNodeUtils_DisposeNodeBorderColorOption()
+### OH_ArkUI_RenderNodeUtils_DisposeNodeBorderColorOption()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_RenderNodeUtils_DisposeNodeBorderColorOption(ArkUI_NodeBorderColorOption* option)
@@ -3488,6 +3797,7 @@ void OH_ArkUI_RenderNodeUtils_DisposeNodeBorderColorOption(ArkUI_NodeBorderColor
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeBorderColorOption* option | 指向节点边框颜色的指针。 |
@@ -3495,9 +3805,10 @@ void OH_ArkUI_RenderNodeUtils_DisposeNodeBorderColorOption(ArkUI_NodeBorderColor
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetNodeBorderColorOptionEdgeColor()
+### OH_ArkUI_RenderNodeUtils_SetNodeBorderColorOptionEdgeColor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_RenderNodeUtils_SetNodeBorderColorOptionEdgeColor(ArkUI_NodeBorderColorOption* option, uint32_t edgeColor, ArkUI_EdgeDirection direction)
@@ -3511,6 +3822,7 @@ void OH_ArkUI_RenderNodeUtils_SetNodeBorderColorOptionEdgeColor(ArkUI_NodeBorder
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeBorderColorOption* option | 指向节点边框颜色的指针。 |
@@ -3520,9 +3832,10 @@ void OH_ArkUI_RenderNodeUtils_SetNodeBorderColorOptionEdgeColor(ArkUI_NodeBorder
 
 
 
-#### OH_ArkUI_RenderNodeUtils_CreateNodeBorderRadiusOption()
+### OH_ArkUI_RenderNodeUtils_CreateNodeBorderRadiusOption()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_NodeBorderRadiusOption* OH_ArkUI_RenderNodeUtils_CreateNodeBorderRadiusOption()
@@ -3538,6 +3851,7 @@ ArkUI_NodeBorderRadiusOption* OH_ArkUI_RenderNodeUtils_CreateNodeBorderRadiusOpt
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_NodeBorderRadiusOption* | 指向节点边框半径的指针。 |
@@ -3545,9 +3859,10 @@ ArkUI_NodeBorderRadiusOption* OH_ArkUI_RenderNodeUtils_CreateNodeBorderRadiusOpt
 
 
 
-#### OH_ArkUI_RenderNodeUtils_DisposeNodeBorderRadiusOption()
+### OH_ArkUI_RenderNodeUtils_DisposeNodeBorderRadiusOption()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_RenderNodeUtils_DisposeNodeBorderRadiusOption(ArkUI_NodeBorderRadiusOption* option)
@@ -3561,6 +3876,7 @@ void OH_ArkUI_RenderNodeUtils_DisposeNodeBorderRadiusOption(ArkUI_NodeBorderRadi
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeBorderRadiusOption* option | 指向节点边框半径的指针。 |
@@ -3568,9 +3884,10 @@ void OH_ArkUI_RenderNodeUtils_DisposeNodeBorderRadiusOption(ArkUI_NodeBorderRadi
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetNodeBorderRadiusOptionCornerRadius()
+### OH_ArkUI_RenderNodeUtils_SetNodeBorderRadiusOptionCornerRadius()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_RenderNodeUtils_SetNodeBorderRadiusOptionCornerRadius(ArkUI_NodeBorderRadiusOption* option, uint32_t cornerRadius, ArkUI_CornerDirection direction)
@@ -3584,6 +3901,7 @@ void OH_ArkUI_RenderNodeUtils_SetNodeBorderRadiusOptionCornerRadius(ArkUI_NodeBo
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeBorderRadiusOption* option | 指向节点边框半径的指针。 |
@@ -3593,9 +3911,10 @@ void OH_ArkUI_RenderNodeUtils_SetNodeBorderRadiusOptionCornerRadius(ArkUI_NodeBo
 
 
 
-#### OH_ArkUI_RenderNodeUtils_CreateCircleShapeOption()
+### OH_ArkUI_RenderNodeUtils_CreateCircleShapeOption()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_CircleShapeOption* OH_ArkUI_RenderNodeUtils_CreateCircleShapeOption()
@@ -3611,6 +3930,7 @@ ArkUI_CircleShapeOption* OH_ArkUI_RenderNodeUtils_CreateCircleShapeOption()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_CircleShapeOption* | 指向圆形形状的指针。 |
@@ -3618,9 +3938,10 @@ ArkUI_CircleShapeOption* OH_ArkUI_RenderNodeUtils_CreateCircleShapeOption()
 
 
 
-#### OH_ArkUI_RenderNodeUtils_DisposeCircleShapeOption()
+### OH_ArkUI_RenderNodeUtils_DisposeCircleShapeOption()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_RenderNodeUtils_DisposeCircleShapeOption(ArkUI_CircleShapeOption* option)
@@ -3634,6 +3955,7 @@ void OH_ArkUI_RenderNodeUtils_DisposeCircleShapeOption(ArkUI_CircleShapeOption* 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CircleShapeOption* option | 指向圆形形状的指针。 |
@@ -3641,9 +3963,10 @@ void OH_ArkUI_RenderNodeUtils_DisposeCircleShapeOption(ArkUI_CircleShapeOption* 
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetCircleShapeOptionCenterX()
+### OH_ArkUI_RenderNodeUtils_SetCircleShapeOptionCenterX()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_RenderNodeUtils_SetCircleShapeOptionCenterX(ArkUI_CircleShapeOption* option, float centerX)
@@ -3657,6 +3980,7 @@ void OH_ArkUI_RenderNodeUtils_SetCircleShapeOptionCenterX(ArkUI_CircleShapeOptio
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CircleShapeOption* option | 指向圆形形状的指针。 |
@@ -3665,9 +3989,10 @@ void OH_ArkUI_RenderNodeUtils_SetCircleShapeOptionCenterX(ArkUI_CircleShapeOptio
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetCircleShapeOptionCenterY()
+### OH_ArkUI_RenderNodeUtils_SetCircleShapeOptionCenterY()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_RenderNodeUtils_SetCircleShapeOptionCenterY(ArkUI_CircleShapeOption* option, float centerY)
@@ -3681,6 +4006,7 @@ void OH_ArkUI_RenderNodeUtils_SetCircleShapeOptionCenterY(ArkUI_CircleShapeOptio
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CircleShapeOption* option | 指向圆形形状的指针。 |
@@ -3689,9 +4015,10 @@ void OH_ArkUI_RenderNodeUtils_SetCircleShapeOptionCenterY(ArkUI_CircleShapeOptio
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetCircleShapeOptionRadius()
+### OH_ArkUI_RenderNodeUtils_SetCircleShapeOptionRadius()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_RenderNodeUtils_SetCircleShapeOptionRadius(ArkUI_CircleShapeOption* option, float radius)
@@ -3705,6 +4032,7 @@ void OH_ArkUI_RenderNodeUtils_SetCircleShapeOptionRadius(ArkUI_CircleShapeOption
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CircleShapeOption* option | 指向圆形形状的指针。 |
@@ -3713,9 +4041,10 @@ void OH_ArkUI_RenderNodeUtils_SetCircleShapeOptionRadius(ArkUI_CircleShapeOption
 
 
 
-#### OH_ArkUI_RenderNodeUtils_CreateRoundRectShapeOption()
+### OH_ArkUI_RenderNodeUtils_CreateRoundRectShapeOption()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_RoundRectShapeOption* OH_ArkUI_RenderNodeUtils_CreateRoundRectShapeOption()
@@ -3731,6 +4060,7 @@ ArkUI_RoundRectShapeOption* OH_ArkUI_RenderNodeUtils_CreateRoundRectShapeOption(
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_RoundRectShapeOption* | 指向圆角矩形形状的指针。 |
@@ -3738,9 +4068,10 @@ ArkUI_RoundRectShapeOption* OH_ArkUI_RenderNodeUtils_CreateRoundRectShapeOption(
 
 
 
-#### OH_ArkUI_RenderNodeUtils_DisposeRoundRectShapeOption()
+### OH_ArkUI_RenderNodeUtils_DisposeRoundRectShapeOption()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_RenderNodeUtils_DisposeRoundRectShapeOption(ArkUI_RoundRectShapeOption* option)
@@ -3754,6 +4085,7 @@ void OH_ArkUI_RenderNodeUtils_DisposeRoundRectShapeOption(ArkUI_RoundRectShapeOp
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RoundRectShapeOption* option | 指向圆角矩形形状的指针。 |
@@ -3761,9 +4093,10 @@ void OH_ArkUI_RenderNodeUtils_DisposeRoundRectShapeOption(ArkUI_RoundRectShapeOp
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetRoundRectShapeOptionEdgeValue()
+### OH_ArkUI_RenderNodeUtils_SetRoundRectShapeOptionEdgeValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_RenderNodeUtils_SetRoundRectShapeOptionEdgeValue(ArkUI_RoundRectShapeOption* option, float edgeValue, ArkUI_EdgeDirection direction)
@@ -3779,6 +4112,7 @@ void OH_ArkUI_RenderNodeUtils_SetRoundRectShapeOptionEdgeValue(ArkUI_RoundRectSh
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RoundRectShapeOption* option | 指向圆角矩形形状的指针。 |
@@ -3788,9 +4122,10 @@ void OH_ArkUI_RenderNodeUtils_SetRoundRectShapeOptionEdgeValue(ArkUI_RoundRectSh
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetRoundRectShapeOptionCornerXY()
+### OH_ArkUI_RenderNodeUtils_SetRoundRectShapeOptionCornerXY()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_RenderNodeUtils_SetRoundRectShapeOptionCornerXY(ArkUI_RoundRectShapeOption* option, float x, float y, ArkUI_CornerDirection direction)
@@ -3804,6 +4139,7 @@ void OH_ArkUI_RenderNodeUtils_SetRoundRectShapeOptionCornerXY(ArkUI_RoundRectSha
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RoundRectShapeOption* option | 指向圆角矩形形状的指针。 |
@@ -3814,9 +4150,10 @@ void OH_ArkUI_RenderNodeUtils_SetRoundRectShapeOptionCornerXY(ArkUI_RoundRectSha
 
 
 
-#### OH_ArkUI_RenderNodeUtils_CreateCommandPathOption()
+### OH_ArkUI_RenderNodeUtils_CreateCommandPathOption()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_CommandPathOption* OH_ArkUI_RenderNodeUtils_CreateCommandPathOption()
@@ -3832,6 +4169,7 @@ ArkUI_CommandPathOption* OH_ArkUI_RenderNodeUtils_CreateCommandPathOption()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_CommandPathOption* | 指向自定义绘制路径的指针。 |
@@ -3839,9 +4177,10 @@ ArkUI_CommandPathOption* OH_ArkUI_RenderNodeUtils_CreateCommandPathOption()
 
 
 
-#### OH_ArkUI_RenderNodeUtils_DisposeCommandPathOption()
+### OH_ArkUI_RenderNodeUtils_DisposeCommandPathOption()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_RenderNodeUtils_DisposeCommandPathOption(ArkUI_CommandPathOption* option)
@@ -3855,6 +4194,7 @@ void OH_ArkUI_RenderNodeUtils_DisposeCommandPathOption(ArkUI_CommandPathOption* 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CommandPathOption* option | 指向自定义绘制路径的指针。 |
@@ -3862,9 +4202,10 @@ void OH_ArkUI_RenderNodeUtils_DisposeCommandPathOption(ArkUI_CommandPathOption* 
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetCommandPathOptionCommands()
+### OH_ArkUI_RenderNodeUtils_SetCommandPathOptionCommands()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_RenderNodeUtils_SetCommandPathOptionCommands(ArkUI_CommandPathOption* option, char* commands)
@@ -3878,6 +4219,7 @@ void OH_ArkUI_RenderNodeUtils_SetCommandPathOptionCommands(ArkUI_CommandPathOpti
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CommandPathOption* option | 指向自定义绘制路径的指针。 |
@@ -3886,9 +4228,10 @@ void OH_ArkUI_RenderNodeUtils_SetCommandPathOptionCommands(ArkUI_CommandPathOpti
 
 
 
-#### OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionFromRectShape()
+### OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionFromRectShape()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_RenderNodeMaskOption* OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionFromRectShape(ArkUI_RectShapeOption* shape)
@@ -3904,12 +4247,14 @@ ArkUI_RenderNodeMaskOption* OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionF
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RectShapeOption* shape | 指向矩形形状的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3918,9 +4263,10 @@ ArkUI_RenderNodeMaskOption* OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionF
 
 
 
-#### OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionFromRoundRectShape()
+### OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionFromRoundRectShape()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_RenderNodeMaskOption* OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionFromRoundRectShape(ArkUI_RoundRectShapeOption* shape)
@@ -3936,12 +4282,14 @@ ArkUI_RenderNodeMaskOption* OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionF
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RoundRectShapeOption* shape | 指向圆角矩形形状的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3950,9 +4298,10 @@ ArkUI_RenderNodeMaskOption* OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionF
 
 
 
-#### OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionFromCircleShape()
+### OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionFromCircleShape()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_RenderNodeMaskOption* OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionFromCircleShape(ArkUI_CircleShapeOption* shape)
@@ -3968,12 +4317,14 @@ ArkUI_RenderNodeMaskOption* OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionF
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CircleShapeOption* shape | 指向圆形形状的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3982,9 +4333,10 @@ ArkUI_RenderNodeMaskOption* OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionF
 
 
 
-#### OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionFromOvalShape()
+### OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionFromOvalShape()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_RenderNodeMaskOption* OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionFromOvalShape(ArkUI_RectShapeOption* shape)
@@ -4000,12 +4352,14 @@ ArkUI_RenderNodeMaskOption* OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionF
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RectShapeOption* shape | 指向椭圆形形状的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4014,9 +4368,10 @@ ArkUI_RenderNodeMaskOption* OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionF
 
 
 
-#### OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionFromCommandPath()
+### OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionFromCommandPath()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_RenderNodeMaskOption* OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionFromCommandPath(ArkUI_CommandPathOption* path)
@@ -4032,12 +4387,14 @@ ArkUI_RenderNodeMaskOption* OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionF
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CommandPathOption* path | 指向自定义绘制路径的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4046,9 +4403,10 @@ ArkUI_RenderNodeMaskOption* OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionF
 
 
 
-#### OH_ArkUI_RenderNodeUtils_DisposeRenderNodeMaskOption()
+### OH_ArkUI_RenderNodeUtils_DisposeRenderNodeMaskOption()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_RenderNodeUtils_DisposeRenderNodeMaskOption(ArkUI_RenderNodeMaskOption* option)
@@ -4062,6 +4420,7 @@ void OH_ArkUI_RenderNodeUtils_DisposeRenderNodeMaskOption(ArkUI_RenderNodeMaskOp
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeMaskOption* option | 指向渲染节点遮罩的指针。 |
@@ -4069,9 +4428,10 @@ void OH_ArkUI_RenderNodeUtils_DisposeRenderNodeMaskOption(ArkUI_RenderNodeMaskOp
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetRenderNodeMaskOptionFillColor()
+### OH_ArkUI_RenderNodeUtils_SetRenderNodeMaskOptionFillColor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_RenderNodeUtils_SetRenderNodeMaskOptionFillColor(ArkUI_RenderNodeMaskOption* mask, uint32_t fillColor)
@@ -4085,6 +4445,7 @@ void OH_ArkUI_RenderNodeUtils_SetRenderNodeMaskOptionFillColor(ArkUI_RenderNodeM
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeMaskOption* mask | 指向渲染节点遮罩的指针。 |
@@ -4093,9 +4454,10 @@ void OH_ArkUI_RenderNodeUtils_SetRenderNodeMaskOptionFillColor(ArkUI_RenderNodeM
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetRenderNodeMaskOptionStrokeColor()
+### OH_ArkUI_RenderNodeUtils_SetRenderNodeMaskOptionStrokeColor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_RenderNodeUtils_SetRenderNodeMaskOptionStrokeColor(ArkUI_RenderNodeMaskOption* mask, uint32_t strokeColor)
@@ -4109,6 +4471,7 @@ void OH_ArkUI_RenderNodeUtils_SetRenderNodeMaskOptionStrokeColor(ArkUI_RenderNod
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeMaskOption* mask | 指向渲染节点遮罩的指针。 |
@@ -4117,9 +4480,10 @@ void OH_ArkUI_RenderNodeUtils_SetRenderNodeMaskOptionStrokeColor(ArkUI_RenderNod
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetRenderNodeMaskOptionStrokeWidth()
+### OH_ArkUI_RenderNodeUtils_SetRenderNodeMaskOptionStrokeWidth()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_RenderNodeUtils_SetRenderNodeMaskOptionStrokeWidth(ArkUI_RenderNodeMaskOption* mask, float strokeWidth)
@@ -4135,6 +4499,7 @@ void OH_ArkUI_RenderNodeUtils_SetRenderNodeMaskOptionStrokeWidth(ArkUI_RenderNod
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeMaskOption* mask | 指向渲染节点遮罩的指针。 |
@@ -4143,9 +4508,10 @@ void OH_ArkUI_RenderNodeUtils_SetRenderNodeMaskOptionStrokeWidth(ArkUI_RenderNod
 
 
 
-#### OH_ArkUI_RenderNodeUtils_CreateRenderNodeClipOptionFromRectShape()
+### OH_ArkUI_RenderNodeUtils_CreateRenderNodeClipOptionFromRectShape()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_RenderNodeClipOption* OH_ArkUI_RenderNodeUtils_CreateRenderNodeClipOptionFromRectShape(ArkUI_RectShapeOption* shape)
@@ -4161,12 +4527,14 @@ ArkUI_RenderNodeClipOption* OH_ArkUI_RenderNodeUtils_CreateRenderNodeClipOptionF
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RectShapeOption* shape | 指向矩形形状的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4175,9 +4543,10 @@ ArkUI_RenderNodeClipOption* OH_ArkUI_RenderNodeUtils_CreateRenderNodeClipOptionF
 
 
 
-#### OH_ArkUI_RenderNodeUtils_CreateRenderNodeClipOptionFromRoundRectShape()
+### OH_ArkUI_RenderNodeUtils_CreateRenderNodeClipOptionFromRoundRectShape()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_RenderNodeClipOption* OH_ArkUI_RenderNodeUtils_CreateRenderNodeClipOptionFromRoundRectShape(ArkUI_RoundRectShapeOption* shape)
@@ -4193,12 +4562,14 @@ ArkUI_RenderNodeClipOption* OH_ArkUI_RenderNodeUtils_CreateRenderNodeClipOptionF
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RoundRectShapeOption* shape | 指向圆角矩形形状的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4207,9 +4578,10 @@ ArkUI_RenderNodeClipOption* OH_ArkUI_RenderNodeUtils_CreateRenderNodeClipOptionF
 
 
 
-#### OH_ArkUI_RenderNodeUtils_CreateRenderNodeClipOptionFromCircleShape()
+### OH_ArkUI_RenderNodeUtils_CreateRenderNodeClipOptionFromCircleShape()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_RenderNodeClipOption* OH_ArkUI_RenderNodeUtils_CreateRenderNodeClipOptionFromCircleShape(ArkUI_CircleShapeOption* shape)
@@ -4225,12 +4597,14 @@ ArkUI_RenderNodeClipOption* OH_ArkUI_RenderNodeUtils_CreateRenderNodeClipOptionF
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CircleShapeOption* shape | 指向圆形形状的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4239,9 +4613,10 @@ ArkUI_RenderNodeClipOption* OH_ArkUI_RenderNodeUtils_CreateRenderNodeClipOptionF
 
 
 
-#### OH_ArkUI_RenderNodeUtils_CreateRenderNodeClipOptionFromOvalShape()
+### OH_ArkUI_RenderNodeUtils_CreateRenderNodeClipOptionFromOvalShape()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_RenderNodeClipOption* OH_ArkUI_RenderNodeUtils_CreateRenderNodeClipOptionFromOvalShape(ArkUI_RectShapeOption* shape)
@@ -4257,12 +4632,14 @@ ArkUI_RenderNodeClipOption* OH_ArkUI_RenderNodeUtils_CreateRenderNodeClipOptionF
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RectShapeOption* shape | 指向椭圆形形状的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4271,9 +4648,10 @@ ArkUI_RenderNodeClipOption* OH_ArkUI_RenderNodeUtils_CreateRenderNodeClipOptionF
 
 
 
-#### OH_ArkUI_RenderNodeUtils_CreateRenderNodeClipOptionFromCommandPath()
+### OH_ArkUI_RenderNodeUtils_CreateRenderNodeClipOptionFromCommandPath()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_RenderNodeClipOption* OH_ArkUI_RenderNodeUtils_CreateRenderNodeClipOptionFromCommandPath(ArkUI_CommandPathOption* path)
@@ -4289,12 +4667,14 @@ ArkUI_RenderNodeClipOption* OH_ArkUI_RenderNodeUtils_CreateRenderNodeClipOptionF
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CommandPathOption* path | 指向自定义绘制路径的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4303,9 +4683,10 @@ ArkUI_RenderNodeClipOption* OH_ArkUI_RenderNodeUtils_CreateRenderNodeClipOptionF
 
 
 
-#### OH_ArkUI_RenderNodeUtils_DisposeRenderNodeClipOption()
+### OH_ArkUI_RenderNodeUtils_DisposeRenderNodeClipOption()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_RenderNodeUtils_DisposeRenderNodeClipOption(ArkUI_RenderNodeClipOption* option)
@@ -4319,6 +4700,7 @@ void OH_ArkUI_RenderNodeUtils_DisposeRenderNodeClipOption(ArkUI_RenderNodeClipOp
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeClipOption* option | 指向渲染节点裁剪的指针。 |
@@ -4326,9 +4708,10 @@ void OH_ArkUI_RenderNodeUtils_DisposeRenderNodeClipOption(ArkUI_RenderNodeClipOp
 
 
 
-#### OH_ArkUI_RenderNodeUtils_GetRenderNode()
+### OH_ArkUI_RenderNodeUtils_GetRenderNode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_GetRenderNode(ArkUI_NodeHandle node, ArkUI_RenderNodeHandle* renderNode)
@@ -4342,6 +4725,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetRenderNode(ArkUI_NodeHandle node, ArkUI_Rend
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | ArkUI_NodeHandle指针，指定目标节点。 |
@@ -4350,6 +4734,7 @@ int32_t OH_ArkUI_RenderNodeUtils_GetRenderNode(ArkUI_NodeHandle node, ArkUI_Rend
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_RENDER_NOT_ADOPTED_NODE 该节点未被接纳为附属节点。 |
@@ -4357,9 +4742,10 @@ int32_t OH_ArkUI_RenderNodeUtils_GetRenderNode(ArkUI_NodeHandle node, ArkUI_Rend
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetRectShapeOptionValue()
+### OH_ArkUI_RenderNodeUtils_SetRectShapeOptionValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_RenderNodeUtils_SetRectShapeOptionValue(ArkUI_RectShapeOption* option, float x, float y, float width, float height)
@@ -4373,6 +4759,7 @@ void OH_ArkUI_RenderNodeUtils_SetRectShapeOptionValue(ArkUI_RectShapeOption* opt
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RectShapeOption* option | 指向待配置矩形形状选项的指针。 |
@@ -4384,9 +4771,10 @@ void OH_ArkUI_RenderNodeUtils_SetRectShapeOptionValue(ArkUI_RectShapeOption* opt
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetRoundRectShapeOptionValue()
+### OH_ArkUI_RenderNodeUtils_SetRoundRectShapeOptionValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_RenderNodeUtils_SetRoundRectShapeOptionValue(ArkUI_RoundRectShapeOption* option, float x, float y, float width, float height)
@@ -4400,6 +4788,7 @@ void OH_ArkUI_RenderNodeUtils_SetRoundRectShapeOptionValue(ArkUI_RoundRectShapeO
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RoundRectShapeOption* option | 指向待配置圆角矩形形状选项的指针。 |
@@ -4411,9 +4800,10 @@ void OH_ArkUI_RenderNodeUtils_SetRoundRectShapeOptionValue(ArkUI_RoundRectShapeO
 
 
 
-#### OH_ArkUI_RenderNodeUtils_CreateBlurStyleOption()
+### OH_ArkUI_RenderNodeUtils_CreateBlurStyleOption()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_RenderBlurStyleOption* OH_ArkUI_RenderNodeUtils_CreateBlurStyleOption()
@@ -4429,6 +4819,7 @@ ArkUI_RenderBlurStyleOption* OH_ArkUI_RenderNodeUtils_CreateBlurStyleOption()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_RenderBlurStyleOption* | 模糊样式对象的指针。模糊半径默认值是0.0。 |
@@ -4436,9 +4827,10 @@ ArkUI_RenderBlurStyleOption* OH_ArkUI_RenderNodeUtils_CreateBlurStyleOption()
 
 
 
-#### OH_ArkUI_RenderNodeUtils_DisposeBlurStyleOption()
+### OH_ArkUI_RenderNodeUtils_DisposeBlurStyleOption()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_RenderNodeUtils_DisposeBlurStyleOption(ArkUI_RenderBlurStyleOption* option)
@@ -4452,6 +4844,7 @@ void OH_ArkUI_RenderNodeUtils_DisposeBlurStyleOption(ArkUI_RenderBlurStyleOption
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderBlurStyleOption* option | ArkUI_RenderBlurStyleOption指针，待销毁的目标模糊样式对象的指针。 |
@@ -4459,9 +4852,10 @@ void OH_ArkUI_RenderNodeUtils_DisposeBlurStyleOption(ArkUI_RenderBlurStyleOption
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetBlurStyleOptionRadius()
+### OH_ArkUI_RenderNodeUtils_SetBlurStyleOptionRadius()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_SetBlurStyleOptionRadius(ArkUI_RenderBlurStyleOption* option, float radius)
@@ -4477,6 +4871,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetBlurStyleOptionRadius(ArkUI_RenderBlurStyleO
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderBlurStyleOption* option | ArkUI_RenderBlurStyleOption指针，要设置模糊半径的目标模糊样式的指针。 |
@@ -4485,6 +4880,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetBlurStyleOptionRadius(ArkUI_RenderBlurStyleO
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -4492,9 +4888,10 @@ int32_t OH_ArkUI_RenderNodeUtils_SetBlurStyleOptionRadius(ArkUI_RenderBlurStyleO
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetBackgroundBlurOption()
+### OH_ArkUI_RenderNodeUtils_SetBackgroundBlurOption()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_SetBackgroundBlurOption(ArkUI_RenderNodeHandle node, ArkUI_RenderBlurStyleOption* option)
@@ -4508,6 +4905,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetBackgroundBlurOption(ArkUI_RenderNodeHandle 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | ArkUI_RenderNodeHandle指针，要设置背景模糊样式的目标渲染节点。 |
@@ -4516,6 +4914,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetBackgroundBlurOption(ArkUI_RenderNodeHandle 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 |
@@ -4523,9 +4922,10 @@ int32_t OH_ArkUI_RenderNodeUtils_SetBackgroundBlurOption(ArkUI_RenderNodeHandle 
 
 
 
-#### OH_ArkUI_RenderNodeUtils_ResetBackgroundBlurOption()
+### OH_ArkUI_RenderNodeUtils_ResetBackgroundBlurOption()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_ResetBackgroundBlurOption(ArkUI_RenderNodeHandle node)
@@ -4541,12 +4941,14 @@ int32_t OH_ArkUI_RenderNodeUtils_ResetBackgroundBlurOption(ArkUI_RenderNodeHandl
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | ArkUI_RenderNodeHandle指针，要重置背景模糊样式的目标渲染节点。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4555,9 +4957,10 @@ int32_t OH_ArkUI_RenderNodeUtils_ResetBackgroundBlurOption(ArkUI_RenderNodeHandl
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetForegroundBlurOption()
+### OH_ArkUI_RenderNodeUtils_SetForegroundBlurOption()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_SetForegroundBlurOption(ArkUI_RenderNodeHandle node, ArkUI_RenderBlurStyleOption* option)
@@ -4571,6 +4974,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetForegroundBlurOption(ArkUI_RenderNodeHandle 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | ArkUI_RenderNodeHandle指针，要设置前景模糊样式的目标渲染节点。 |
@@ -4579,6 +4983,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetForegroundBlurOption(ArkUI_RenderNodeHandle 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 |
@@ -4586,9 +4991,10 @@ int32_t OH_ArkUI_RenderNodeUtils_SetForegroundBlurOption(ArkUI_RenderNodeHandle 
 
 
 
-#### OH_ArkUI_RenderNodeUtils_ResetForegroundBlurOption()
+### OH_ArkUI_RenderNodeUtils_ResetForegroundBlurOption()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_ResetForegroundBlurOption(ArkUI_RenderNodeHandle node)
@@ -4604,12 +5010,14 @@ int32_t OH_ArkUI_RenderNodeUtils_ResetForegroundBlurOption(ArkUI_RenderNodeHandl
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | ArkUI_RenderNodeHandle指针，要重置前景模糊样式的目标渲染节点。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4618,9 +5026,10 @@ int32_t OH_ArkUI_RenderNodeUtils_ResetForegroundBlurOption(ArkUI_RenderNodeHandl
 
 
 
-#### OH_ArkUI_RenderNodeUtils_SetContentBlurOption()
+### OH_ArkUI_RenderNodeUtils_SetContentBlurOption()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_SetContentBlurOption(ArkUI_RenderNodeHandle node, ArkUI_RenderBlurStyleOption* option)
@@ -4634,6 +5043,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetContentBlurOption(ArkUI_RenderNodeHandle nod
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | ArkUI_RenderNodeHandle指针，要设置内容模糊样式的目标渲染节点。 |
@@ -4642,6 +5052,7 @@ int32_t OH_ArkUI_RenderNodeUtils_SetContentBlurOption(ArkUI_RenderNodeHandle nod
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE 目标节点是从一个FrameNode获取的。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 |
@@ -4649,9 +5060,10 @@ int32_t OH_ArkUI_RenderNodeUtils_SetContentBlurOption(ArkUI_RenderNodeHandle nod
 
 
 
-#### OH_ArkUI_RenderNodeUtils_ResetContentBlurOption()
+### OH_ArkUI_RenderNodeUtils_ResetContentBlurOption()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_RenderNodeUtils_ResetContentBlurOption(ArkUI_RenderNodeHandle node)
@@ -4667,12 +5079,14 @@ int32_t OH_ArkUI_RenderNodeUtils_ResetContentBlurOption(ArkUI_RenderNodeHandle n
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_RenderNodeHandle node | ArkUI_RenderNodeHandle指针，要重置内容模糊样式的目标渲染节点。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4681,9 +5095,10 @@ int32_t OH_ArkUI_RenderNodeUtils_ResetContentBlurOption(ArkUI_RenderNodeHandle n
 
 
 
-#### OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt()
+### OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(ArkUI_NodeHandle node, ArkUI_RenderNodeHandle child, int32_t position)
@@ -4699,6 +5114,7 @@ ArkUI_ErrorCode OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(ArkUI_NodeHandle nod
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 目标父节点，仅支持ArkUI_NodeType中的ARKUI_NODE_CUSTOM类型。 |
@@ -4708,6 +5124,7 @@ ArkUI_ErrorCode OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(ArkUI_NodeHandle nod
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 ARKUI_ERROR_CODE_NOT_CUSTOM_NODE 目标节点非自定义节点。 ARKUI_ERROR_CODE_CHILD_EXISTED 使用非OH_ARKUI_NODE_MOUNT_POLICY_MIXED挂载策略时，父节点已有子节点。 ARKUI_ERROR_CODE_RENDER_PARENT_EXISTED 目标渲染节点存在父节点。 ARKUI_ERROR_CODE_RENDER_HAS_INVALID_FRAME_NODE 当前渲染节点从FrameNode中获取且该FrameNode已被取消接纳为附属节点或销毁。 |
@@ -4715,9 +5132,10 @@ ArkUI_ErrorCode OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(ArkUI_NodeHandle nod
 
 
 
-#### OH_ArkUI_RenderNodeUtils_GetRenderNodeChildrenCount()
+### OH_ArkUI_RenderNodeUtils_GetRenderNodeChildrenCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_RenderNodeUtils_GetRenderNodeChildrenCount(ArkUI_NodeHandle node, int32_t* count)
@@ -4733,6 +5151,7 @@ ArkUI_ErrorCode OH_ArkUI_RenderNodeUtils_GetRenderNodeChildrenCount(ArkUI_NodeHa
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 待查询的父节点。 |
@@ -4741,6 +5160,7 @@ ArkUI_ErrorCode OH_ArkUI_RenderNodeUtils_GetRenderNodeChildrenCount(ArkUI_NodeHa
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 ARKUI_ERROR_CODE_CAPI_INIT_ERROR CAPI初始化失败。 |
@@ -4748,9 +5168,10 @@ ArkUI_ErrorCode OH_ArkUI_RenderNodeUtils_GetRenderNodeChildrenCount(ArkUI_NodeHa
 
 
 
-#### OH_ArkUI_RenderNodeUtils_GetRenderNodeAt()
+### OH_ArkUI_RenderNodeUtils_GetRenderNodeAt()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_RenderNodeUtils_GetRenderNodeAt(ArkUI_NodeHandle node, int32_t position, ArkUI_RenderNodeHandle* child)
@@ -4766,6 +5187,7 @@ ArkUI_ErrorCode OH_ArkUI_RenderNodeUtils_GetRenderNodeAt(ArkUI_NodeHandle node, 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 目标父节点。 |
@@ -4774,6 +5196,7 @@ ArkUI_ErrorCode OH_ArkUI_RenderNodeUtils_GetRenderNodeAt(ArkUI_NodeHandle node, 
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |

@@ -1,6 +1,6 @@
 # insightIntent
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/intents-arkts-api-insightintent
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -12,7 +12,8 @@ insightIntent是Intents Kit的子模块，提供意图开放能力，包括共�
 **起始版本：** 4.0.0(10)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -22,7 +23,8 @@ import { insightIntent } from '@kit.IntentsKit';
  
   
 
-#### InsightIntent
+## InsightIntent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -36,6 +38,7 @@ InsightIntent，包括意图名称、意图版本号、标识、Action信息、E
  
 **起始版本：** 4.0.0(10)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | intentName | string | 否 | 否 | 表示意图名称，例如：'PlayMusic'。 |
@@ -47,7 +50,8 @@ InsightIntent，包括意图名称、意图版本号、标识、Action信息、E
  
   
 
-#### IntentActionInfo
+## IntentActionInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -61,6 +65,7 @@ IntentActionInfo，表示意图的执行信息。
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | [key: string] | Object | 否 | 否 | 表示值的类型为包含一个或多个键值对的对象。其中键的类型为字符，值的类型为Object，键和值的取值范围因意图名称而异，具体请参考各垂域意图Schema。 |
@@ -68,7 +73,8 @@ IntentActionInfo，表示意图的执行信息。
  
   
 
-#### IntentEntityInfo
+## IntentEntityInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -82,6 +88,7 @@ IntentEntityInfo，表示意图的实体信息。
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | entityId | string | 否 | 否 | 表示意图实体的标识符，开发者按照自身业务需要生成，作为单条实体的唯一标识符。该字段的生成方式可参考UUID生成方式，或基于时间戳生成随机字符串。例如：'C10194368'。 |
@@ -91,7 +98,8 @@ IntentEntityInfo，表示意图的实体信息。
  
   
 
-#### shareIntent
+## shareIntent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -111,6 +119,7 @@ shareIntent(context: common.BaseContext, intents: InsightIntent[], callback: Asy
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.BaseContext | 是 | 表示应用上下文。 |
@@ -122,6 +131,7 @@ shareIntent(context: common.BaseContext, intents: InsightIntent[], callback: Asy
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/intents-arkts-api-errorcodes-insightintent)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. |
@@ -206,7 +216,8 @@ struct Index {
  
   
 
-#### shareIntent
+## shareIntent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -226,6 +237,7 @@ shareIntent(context: common.BaseContext, intents: InsightIntent[]): Promise&lt;v
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.BaseContext | 是 | 表示应用上下文。 |
@@ -234,6 +246,7 @@ shareIntent(context: common.BaseContext, intents: InsightIntent[]): Promise&lt;v
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果的Promise对象。 |
@@ -243,6 +256,7 @@ shareIntent(context: common.BaseContext, intents: InsightIntent[]): Promise&lt;v
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/intents-arkts-api-errorcodes-insightintent)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. |
@@ -289,8 +303,8 @@ struct Index {
                 logoURL: 'https://www-file.abc.com/-/media/corporate/images/home/logo/abc_logo.png',
                 keywords: ['华为音乐', '化妆'],
                 rankingHint: 99,
-                expirationDate: 1637393212000,
-                metadataModificationDate: 1637393212000,
+                expirationTime: 1637393212000,
+                metadataModificationTime: 1637393212000,
                 activityType: ['1', '2', '3'],
                 artist: ['张三', '李四'],
                 lyricist: ['李四', '张三'],
@@ -322,7 +336,8 @@ struct Index {
  
   
 
-#### deleteIntent
+## deleteIntent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -340,6 +355,7 @@ deleteIntent(context: common.BaseContext, intentName: string, identifiers: strin
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.BaseContext | 是 | 表示应用上下文。 |
@@ -352,6 +368,7 @@ deleteIntent(context: common.BaseContext, intentName: string, identifiers: strin
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/intents-arkts-api-errorcodes-insightintent)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. |
@@ -397,7 +414,8 @@ struct Index {
  
   
 
-#### deleteIntent
+## deleteIntent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -415,6 +433,7 @@ deleteIntent(context: common.BaseContext, intentName: string, callback: AsyncCal
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.BaseContext | 是 | 表示应用上下文。 |
@@ -426,6 +445,7 @@ deleteIntent(context: common.BaseContext, intentName: string, callback: AsyncCal
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/intents-arkts-api-errorcodes-insightintent)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. |
@@ -471,7 +491,8 @@ struct Index {
  
   
 
-#### deleteIntent
+## deleteIntent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -489,6 +510,7 @@ deleteIntent(context: common.BaseContext, intentName: string, identifiers?: stri
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.BaseContext | 是 | 表示应用上下文。 |
@@ -498,6 +520,7 @@ deleteIntent(context: common.BaseContext, intentName: string, identifiers?: stri
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果的Promise对象。 |
@@ -507,6 +530,7 @@ deleteIntent(context: common.BaseContext, intentName: string, identifiers?: stri
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/intents-arkts-api-errorcodes-insightintent)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. |
@@ -546,7 +570,8 @@ struct Index {
  
   
 
-#### deleteEntity
+## deleteEntity
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -564,6 +589,7 @@ deleteEntity(context: common.BaseContext, entityName: string, entityIds: string[
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.BaseContext | 是 | 表示应用上下文。 |
@@ -576,6 +602,7 @@ deleteEntity(context: common.BaseContext, entityName: string, entityIds: string[
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/intents-arkts-api-errorcodes-insightintent)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. |
@@ -621,7 +648,8 @@ struct Index {
  
   
 
-#### deleteEntity
+## deleteEntity
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -639,6 +667,7 @@ deleteEntity(context: common.BaseContext, entityName: string, entityIds: string[
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.BaseContext | 是 | 表示应用上下文。 |
@@ -648,6 +677,7 @@ deleteEntity(context: common.BaseContext, entityName: string, entityIds: string[
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果的Promise对象。 |
@@ -657,6 +687,7 @@ deleteEntity(context: common.BaseContext, entityName: string, entityIds: string[
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/intents-arkts-api-errorcodes-insightintent)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. |
@@ -696,7 +727,8 @@ struct Index {
  
   
 
-#### getSid
+## getSid
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -714,6 +746,7 @@ getSid(context: common.BaseContext, renew: boolean): Promise&lt;string&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.BaseContext | 是 | 表示应用上下文。 |
@@ -722,6 +755,7 @@ getSid(context: common.BaseContext, renew: boolean): Promise&lt;string&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回获取到的Service Open ID。 |
@@ -731,6 +765,7 @@ getSid(context: common.BaseContext, renew: boolean): Promise&lt;string&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/intents-arkts-api-errorcodes-insightintent)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. |

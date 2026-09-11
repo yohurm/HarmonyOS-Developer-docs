@@ -1,18 +1,19 @@
 # Http_Response
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-netstack-http-response
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct Http_Response {...} Http_Response
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义HTTP响应的结构体。
  
@@ -24,16 +25,19 @@ typedef struct Http_Response {...} Http_Response
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 成员变量
+### 成员变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | Http_Buffer body | HTTP请求响应的数据，参考Http_Buffer。 |
@@ -45,10 +49,12 @@ typedef struct Http_Response {...} Http_Response
  
   
 
-#### 成员函数
+### 成员函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | void (*destroyResponse)(struct Http_Response **response) | 销毁HTTP响应的回调函数 |
@@ -56,15 +62,17 @@ typedef struct Http_Response {...} Http_Response
  
   
 
-#### 成员函数说明
+## 成员函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### destroyResponse()
+### destroyResponse()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void (*destroyResponse)(struct Http_Response **response)
@@ -78,6 +86,7 @@ void (*destroyResponse)(struct Http_Response **response)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Http_Response **response | 要销毁的HTTP响应，指向Http_Response的指针，参考Http_Response。 |

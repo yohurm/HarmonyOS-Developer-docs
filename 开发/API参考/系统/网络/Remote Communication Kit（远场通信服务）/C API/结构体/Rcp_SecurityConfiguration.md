@@ -1,13 +1,14 @@
 # Rcp_SecurityConfiguration
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_rcp___security_configuration
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 请求的安全配置。
  
@@ -19,16 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 成员变量
+### 成员变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | Rcp_RemoteValidationType remoteValidationType | 远端认证方法类型。 |
@@ -39,15 +43,17 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### certificate
+### certificate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Rcp_ClientCertificate Rcp_SecurityConfiguration::certificate
@@ -59,9 +65,10 @@ Rcp_ClientCertificate Rcp_SecurityConfiguration::certificate
  
   
 
-#### certificateAuthority
+### certificateAuthority
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Rcp_CertificateAuthority Rcp_SecurityConfiguration::certificateAuthority
@@ -73,9 +80,10 @@ Rcp_CertificateAuthority Rcp_SecurityConfiguration::certificateAuthority
  
   
 
-#### remoteValidationType
+### remoteValidationType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Rcp_RemoteValidationType Rcp_SecurityConfiguration::remoteValidationType
@@ -87,9 +95,10 @@ Rcp_RemoteValidationType Rcp_SecurityConfiguration::remoteValidationType
  
   
 
-#### serverAuthentication
+### serverAuthentication
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Rcp_ServerAuthentication Rcp_SecurityConfiguration::serverAuthentication

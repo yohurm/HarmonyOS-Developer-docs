@@ -1,9 +1,9 @@
 # @system.mediaquery (媒体查询)
 
-更新时间：2026-06-16 09:03:21
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-system-mediaquery
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供根据不同媒体类型定义不同的样式。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import mediaquery from '@system.mediaquery';
@@ -22,9 +23,10 @@ import mediaquery from '@system.mediaquery';
  
   
 
-#### MediaQuery
+## MediaQuery
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义MediaQuery接口。
  
@@ -34,9 +36,10 @@ import mediaquery from '@system.mediaquery';
  
   
 
-#### matchMedia
+### matchMedia
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 matchMedia(condition: string): MediaQueryList
  
@@ -48,6 +51,7 @@ matchMedia(condition: string): MediaQueryList
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | condition | string | 是 | 用于查询的条件。 |
@@ -55,6 +59,7 @@ matchMedia(condition: string): MediaQueryList
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | MediaQueryList | 创建MediaQueryList对象，详情见下表说明。 |
@@ -68,9 +73,10 @@ let mMediaQueryList = mediaquery.matchMedia('(max-width: 466)');
  
   
 
-#### MediaQueryEvent
+## MediaQueryEvent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义MediaQuery事件。
  
@@ -78,6 +84,7 @@ let mMediaQueryList = mediaquery.matchMedia('(max-width: 466)');
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 可选 | 说明 |
 | --- | --- | --- | --- |
 | matches | boolean | 否 | 匹配结果。true表示满足查询条件，false表示不满足查询条件。 |
@@ -85,22 +92,25 @@ let mMediaQueryList = mediaquery.matchMedia('(max-width: 466)');
  
   
 
-#### MediaQueryList
+## MediaQueryList
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义MediaQuery列表信息。
  
   
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | media | string | 是 | 是 | 序列化媒体查询条件。 |
@@ -110,9 +120,10 @@ let mMediaQueryList = mediaquery.matchMedia('(max-width: 466)');
  
   
 
-#### MediaQueryList.addListener
+### MediaQueryList.addListener
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addListener(callback: (event: MediaQueryEvent) => void): void
  
@@ -124,6 +135,7 @@ addListener(callback: (event: MediaQueryEvent) => void): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | (event: MediaQueryEvent) => void | 是 | 匹配条件发生变化的响应函数。 |
@@ -145,9 +157,10 @@ mMediaQueryList.addListener(maxWidthMatch);
  
   
 
-#### MediaQueryList.removeListener
+### MediaQueryList.removeListener
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeListener(callback: (event: MediaQueryEvent) => void): void
  
@@ -159,6 +172,7 @@ removeListener(callback: (event: MediaQueryEvent) => void): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | (event: MediaQueryEvent) => void | 是 | 匹配条件发生变化的响应函数。 |

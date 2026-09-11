@@ -1,27 +1,28 @@
 # 标准化数据结构 (C/C++)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uniform-data-structure-c
 
-#### 场景介绍
+## 场景介绍
 
-针对[UTD标准化数据类型](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-utd-h)中的部分常见类型，为了方便业务使用，提供了标准化数据结构。例如，系统定义的桌面图标类型（标准化数据类型标识为'OH_UdsAppItem'）明确定义了相关描述信息。
+针对[utd.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-utd-h)中定义的部分常见UTD标准化数据类型，为了方便业务使用，提供了标准化数据结构。例如，系统定义的桌面图标类型（标准化数据类型标识为'OH_UdsAppItem'）明确定义了相关描述信息。
 
 某些业务场景下应用可以直接使用我们具体定义的UTD标准化数据结构，例如跨应用拖拽场景。拖出方应用可以按照标准化数据结构将拖拽数据写入[绑定拖拽事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-drag-event)，拖入方应用从拖拽事件中读取拖拽数据并按照标准化数据结构进行数据的解析。这使得不同应用间的数据交互遵从相同的标准定义，有效减少了跨应用数据交互的开发工作量。
 
 
 
-#### 基本概念
+## 基本概念
 
  - **标准化数据结构**：Unified Data Structure，简称UDS。主要针对部分标准化数据类型定义了统一的数据内容结构，并明确了对应的描述信息。应用间使用标准化数据结构进行数据交互后，将遵从统一的解析标准，可有效减少适配相关的工作量。一般用于跨应用跨设备间的数据交互，比如拖拽。
 
 
 
 
-#### 接口说明
+## 接口说明
 
-详细的接口说明请参考[标准化数据结构相关接口](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-uds-h)。
+详细的接口说明请参考[uds.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-uds-h)中定义的标准化数据结构相关接口。
+
 
 | 接口名称 | 描述 |
 | --- | --- |
@@ -36,7 +37,7 @@
 | int OH_UdsFileUri_SetFileUri(OH_UdsFileUri* pThis, const char* fileUri) | 设置文件Uri类型对象的Uri信息 |
 | int OH_UdsFileUri_SetFileType(OH_UdsFileUri* pThis, const char* fileType) | 设置文件Uri类型对象的文件类型 |
 | int OH_UdmfRecord_AddFileUri(OH_UdmfRecord* pThis, OH_UdsFileUri* fileUri) | 增加文件Uri类型数据至统一数据记录中 |
-| int OH_Udmf_SetUnifiedData(Udmf_Intention intention, OH_UdmfData* unifiedData,char* key, unsigned int keyLen) | 从统一数据管理框架数据库中写入统一数据对象数据 |
+| int OH_Udmf_SetUnifiedData(Udmf_Intention intention, OH_UdmfData* unifiedData,char* key, unsigned int keyLen) | 向统一数据管理框架数据库中写入统一数据对象数据 |
 | void OH_UdsPlainText_Destroy(OH_UdsPlainText* pThis) | 销毁纯文本类型数据指针指向的实例对象 |
 | void OH_UdmfData_Destroy(OH_UdmfData* pThis) | 销毁统一数据对象指针指向的实例对象 |
 | void OH_UdsFileUri_Destroy(OH_UdsFileUri* pThis) | 销毁文件Uri类型的实例对象 |
@@ -44,7 +45,7 @@
 
 
 
-#### 添加动态链接库
+## 添加动态链接库
 
 CMakeLists.txt中添加以下库。
 
@@ -54,7 +55,7 @@ libudmf.so, libhilog_ndk.z.so
 
 
 
-#### 引用头文件
+## 引用头文件
 
 ```cpp
 #include <database/udmf/uds.h>
@@ -69,7 +70,7 @@ libudmf.so, libhilog_ndk.z.so
 
 
 
-#### 纯文本类型数据结构的使用
+## 纯文本类型数据结构的使用
 1. 创建PlainText对象指针。
 2. 添加PlainText内容。
 3. 获取数据。
@@ -126,7 +127,7 @@ OH_UdsPlainText_Destroy(plainText2);
 
 
 
-#### fileUri类型的数据结构的使用
+## fileUri类型的数据结构的使用
 1. 创建fileUri类型的数据结构。
 2. 设置fileUri中的URL和描述信息。
 3. 创建OH_UdmfRecord对象，并向OH_UdmfRecord中添加fileUri类型数据。
@@ -140,7 +141,7 @@ OH_UdsFileUri *fileUri = OH_UdsFileUri_Create();
 if (fileUri == nullptr) {
     return Udmf_ErrCode::UDMF_ERR;
 }
-// 2. 设置fileUri中的URL和描述信息。
+// 2. 设置fileUri中的URL和文件类型信息。
 int32_t ret = OH_UdsFileUri_SetFileUri(fileUri, uri);
 if (ret != Udmf_ErrCode::UDMF_E_OK) {
     OH_UdsFileUri_Destroy(fileUri);

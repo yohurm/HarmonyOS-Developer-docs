@@ -1,9 +1,9 @@
 # Interface (VideoOutput)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-videooutput
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 录像会话中使用的输出信息，继承[CameraOutput](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-cameraoutput)。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { camera } from '@kit.CameraKit';
@@ -22,9 +23,10 @@ import { camera } from '@kit.CameraKit';
 
 
 
-#### start
+## start
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 start(callback: AsyncCallback&lt;void&gt;): void
 
@@ -36,6 +38,7 @@ start(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当启动录制成功，err为undefined，否则为错误对象。错误码类型CameraErrorCode。 |
@@ -44,6 +47,7 @@ start(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -69,9 +73,10 @@ function startVideoOutput(videoOutput: camera.VideoOutput): void {
 
 
 
-#### start
+## start
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 start(): Promise&lt;void&gt;
 
@@ -83,6 +88,7 @@ start(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -91,6 +97,7 @@ start(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -114,9 +121,10 @@ function startVideoOutput(videoOutput: camera.VideoOutput): void {
 
 
 
-#### stop
+## stop
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stop(callback: AsyncCallback&lt;void&gt;): void
 
@@ -127,6 +135,7 @@ stop(callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -145,9 +154,10 @@ function stopVideoOutput(videoOutput: camera.VideoOutput): void {
 
 
 
-#### stop
+## stop
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stop(): Promise&lt;void&gt;
 
@@ -158,6 +168,7 @@ stop(): Promise&lt;void&gt;
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -180,9 +191,10 @@ function stopVideoOutput(videoOutput: camera.VideoOutput): void {
 
 
 
-#### on('frameStart')
+## on('frameStart')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'frameStart', callback: AsyncCallback&lt;void&gt;): void
 
@@ -197,6 +209,7 @@ on(type: 'frameStart', callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -224,9 +237,10 @@ function registerVideoOutputFrameStart(videoOutput: camera.VideoOutput): void {
 
 
 
-#### off('frameStart')
+## off('frameStart')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'frameStart', callback?: AsyncCallback&lt;void&gt;): void
 
@@ -241,6 +255,7 @@ off(type: 'frameStart', callback?: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -258,9 +273,10 @@ function unregisterVideoOutputFrameStart(videoOutput: camera.VideoOutput): void 
 
 
 
-#### on('frameEnd')
+## on('frameEnd')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'frameEnd', callback: AsyncCallback&lt;void&gt;): void
 
@@ -271,6 +287,7 @@ on(type: 'frameEnd', callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -298,9 +315,10 @@ function registerVideoOutputFrameEnd(videoOutput: camera.VideoOutput): void {
 
 
 
-#### off('frameEnd')
+## off('frameEnd')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'frameEnd', callback?: AsyncCallback&lt;void&gt;): void
 
@@ -311,6 +329,7 @@ off(type: 'frameEnd', callback?: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -328,9 +347,10 @@ function unregisterVideoOutputFrameEnd(videoOutput: camera.VideoOutput): void {
 
 
 
-#### on('error')
+## on('error')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'error', callback: ErrorCallback): void
 
@@ -345,6 +365,7 @@ on(type: 'error', callback: ErrorCallback): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -368,9 +389,10 @@ function registerVideoOutputError(videoOutput: camera.VideoOutput): void {
 
 
 
-#### off('error')
+## off('error')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'error', callback?: ErrorCallback): void
 
@@ -381,6 +403,7 @@ off(type: 'error', callback?: ErrorCallback): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -398,9 +421,10 @@ function unregisterVideoOutputError(videoOutput: camera.VideoOutput): void {
 
 
 
-#### getSupportedFrameRates12+
+## getSupportedFrameRates12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSupportedFrameRates(): Array&lt;FrameRateRange&gt;
 
@@ -411,6 +435,7 @@ getSupportedFrameRates(): Array&lt;FrameRateRange&gt;
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -428,9 +453,10 @@ function getSupportedFrameRates(videoOutput: camera.VideoOutput): Array<camera.F
 
 
 
-#### setFrameRate12+
+## setFrameRate12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setFrameRate(minFps: number, maxFps: number): void
 
@@ -448,6 +474,7 @@ setFrameRate(minFps: number, maxFps: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | minFps | number | 是 | 最小帧率，单位：fps。当传入的最大值小于最小值时，传参异常，接口不生效。 |
@@ -457,6 +484,7 @@ setFrameRate(minFps: number, maxFps: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -474,9 +502,10 @@ function setFrameRateRange(videoOutput: camera.VideoOutput, frameRateRange: Arra
 
 
 
-#### getActiveFrameRate12+
+## getActiveFrameRate12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getActiveFrameRate(): FrameRateRange
 
@@ -489,6 +518,7 @@ getActiveFrameRate(): FrameRateRange
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -506,9 +536,10 @@ function getActiveFrameRate(videoOutput: camera.VideoOutput): camera.FrameRateRa
 
 
 
-#### getActiveProfile12+
+## getActiveProfile12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getActiveProfile(): VideoProfile
 
@@ -520,6 +551,7 @@ getActiveProfile(): VideoProfile
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | VideoProfile | 当前生效的配置信息 |
@@ -528,6 +560,7 @@ getActiveProfile(): VideoProfile
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -554,9 +587,10 @@ function testGetActiveProfile(videoOutput: camera.VideoOutput): camera.Profile |
 
 
 
-#### isMirrorSupported15+
+## isMirrorSupported15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isMirrorSupported(): boolean
 
@@ -567,6 +601,7 @@ isMirrorSupported(): boolean
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -584,9 +619,10 @@ function testIsMirrorSupported(videoOutput: camera.VideoOutput): boolean {
 
 
 
-#### enableMirror15+
+## enableMirror15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableMirror(enabled: boolean): void
 
@@ -602,6 +638,7 @@ enableMirror(enabled: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 启用/关闭镜像录像。true为开启镜像录像，false为关闭镜像录像。 |
@@ -610,6 +647,7 @@ enableMirror(enabled: boolean): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -636,9 +674,10 @@ function enableMirror(videoOutput: camera.VideoOutput, mirrorMode: boolean, aVRe
 
 
 
-#### getVideoRotation12+
+## getVideoRotation12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getVideoRotation(deviceDegree?: number): ImageRotation
 
@@ -656,12 +695,14 @@ getVideoRotation(deviceDegree?: number): ImageRotation
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceDegree | number | 否 | 设备旋转角度，单位度，取值范围[0, 360]。 从API version 23开始，入参deviceDegree为可选参数，当不传入参数时，由系统获取deviceDegree进行录像旋转角度计算。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -671,6 +712,7 @@ getVideoRotation(deviceDegree?: number): ImageRotation
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

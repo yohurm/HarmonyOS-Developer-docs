@@ -1,10 +1,10 @@
 # MindSpore Lite Kit简介
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-lite-kit-introduction
 
-#### 使用场景
+## 使用场景
 
 MindSpore Lite是HarmonyOS内置的轻量化AI引擎，面向全场景构建支持多处理器架构的开放AI架构，使能全场景智能应用，为开发者提供端到端的解决方案，为算法工程师和数据科学家提供开发友好、运行高效、部署灵活的体验，帮助人工智能软硬件应用生态繁荣发展。
  
@@ -17,18 +17,18 @@ MindSpore Lite是HarmonyOS内置的轻量化AI引擎，面向全场景构建支�
  
   
 
-#### 约束与限制
+## 约束与限制
 
 - 本Kit适用于Phone、Tablet、PC/2in1、TV和Wearable设备。其中，在Wearable设备上，仅支持CPU推理。
 
  
   
 
-#### 亮点/优势
+## 亮点/优势
 
 MindSpore Lite提供面向不同硬件设备的AI模型推理能力，使用MindSpore Lite的优势如下：
  
-- 更优性能：高效的内核算法和汇编级优化，支持CPU、NNRt专用芯片高性能推理，最大化发挥硬件算力，最小化推理时延和功耗。
+- 更优性能：高效的内核算法和汇编级优化，支持CPU、[NNRt](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-lite-term#nnrt神经网络运行时)专用芯片高性能推理，最大化发挥硬件算力，最小化推理时延和功耗。
 - 轻量化：提供超轻量的解决方案，支持模型量化压缩，模型更小跑得更快，使能AI模型极限环境下的部署执行。
 - 全场景支持：支持多种操作系统以及嵌入式系统，适配多种软硬件智能设备上的AI应用。
 - 高效部署：支持MindSpore/TensorFlow Lite/Caffe/ONNX模型，提供模型压缩、数据处理等能力，统一训练和推理IR，方便用户快速部署。
@@ -36,7 +36,7 @@ MindSpore Lite提供面向不同硬件设备的AI模型推理能力，使用Mind
  
   
 
-#### 开发流程
+## 开发流程
 
 **图 1** 使用MindSpore Lite进行模型推理的开发流程
  
@@ -46,14 +46,14 @@ MindSpore Lite提供面向不同硬件设备的AI模型推理能力，使用Mind
  
 MindSpore Lite开发流程分为两个阶段：
  
-- 模型转换
+- [模型转换](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-lite-term#model-conversion模型转换)
 
   MindSpore Lite使用.ms格式模型进行推理。对于第三方框架模型，比如 TensorFlow、TensorFlow Lite、Caffe、ONNX等，可以使用MindSpore Lite提供的模型转换工具转换为.ms模型，使用方法可参考[推理模型转换](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-lite-converter-guidelines)。
 - 模型部署
 
   调用MindSpore Lite运行时接口，实现模型推理/训练，大致步骤如下：
 
-1. 创建推理/训练上下文，包括指定推理/训练硬件、设置线程数等。
+1. 创建推理/训练[上下文](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-lite-term#context上下文)，包括指定推理/训练硬件、设置线程数等。
 
 2. 加载.ms模型文件。
 
@@ -64,7 +64,7 @@ MindSpore Lite开发流程分为两个阶段：
  
   
 
-#### 开发方式
+## 开发方式
 
 MindSpore Lite已作为系统部件在HarmonyOS标准系统内置，基于MindSpore Lite开发AI应用的开发方式有：
  
@@ -74,7 +74,7 @@ MindSpore Lite已作为系统部件在HarmonyOS标准系统内置，基于MindSp
  
   
 
-#### 模拟器支持情况
+## 模拟器支持情况
 
 本Kit支持模拟器，但与与真机存在部分能力差异，具体差异如下。
  
@@ -84,7 +84,7 @@ MindSpore Lite已作为系统部件在HarmonyOS标准系统内置，基于MindSp
  
   
 
-#### 与其他Kit的关系
+## 与其他Kit的关系
 
 HarmonyOS AI开放层次由上层到底层分别为：
  

@@ -1,13 +1,13 @@
 # Image Kit常见崩溃报错问题
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-common-mistakes
 
 本文档展示了Image Kit接口的典型错误用法案例，帮助开发者避免常见的开发问题，提高应用的稳定性和性能。
 
 
-#### 编码过程中PixelMap被释放/修改导致崩溃
+## 编码过程中PixelMap被释放/修改导致崩溃
 
 **典型崩溃堆栈示例：**
 
@@ -54,7 +54,7 @@ import { image } from '@kit.ImageKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 async function wrongPackingExample(pixelMap: image.PixelMap, fd: number): Promise<void> {
-  let imagePacker = image.ImagePacker | null = null;
+  let imagePacker: image.ImagePacker | null = null;
 
   try {
     imagePacker = image.createImagePacker();
@@ -85,7 +85,7 @@ async function wrongPackingExample(pixelMap: image.PixelMap, fd: number): Promis
 import { image } from '@kit.ImageKit';
 
 async function correctPackingExample(pixelMap: image.PixelMap, fd: number): Promise<void> {
-  let imagePacker = image.ImagePacker | null = null;
+  let imagePacker: image.ImagePacker | null = null;
 
   try {
     imagePacker = image.createImagePacker();
@@ -109,7 +109,7 @@ async function correctPackingExample(pixelMap: image.PixelMap, fd: number): Prom
 
 
 
-#### 多个异步操作共享同一个ImageSource对象
+## 多个异步操作共享同一个ImageSource对象
 
 **典型崩溃堆栈示例：**
 
@@ -200,7 +200,7 @@ async function correctSharedImageSourceExample(filePath: string): Promise<void> 
 
 
 
-#### 异步调用getComponent接口后尚未执行完成即被释放
+## 异步调用getComponent接口后尚未执行完成即被释放
 
 **典型崩溃堆栈示例：**
 

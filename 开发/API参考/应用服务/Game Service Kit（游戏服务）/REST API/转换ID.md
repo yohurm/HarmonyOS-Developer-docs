@@ -1,22 +1,32 @@
 # 通过gamePlayerId获取playerId/openId/unionId
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservice-convertid
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 功能介绍
+## 功能介绍
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 调用该接口，传入Access Token、APP ID、gamePlayerId到华为服务器上获取HarmonyOS 4及以下游戏的玩家playerId、openId、unionId信息。
  
   
 
-#### 场景描述
+## 场景描述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 通过Access Token、APP ID、gamePlayerId信息到华为服务器上查询HarmonyOS 4及以下游戏的玩家playerId、openId、unionId信息。
  
   
 
-#### 接口原型
+## 接口原型
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 - **承载协议**：HTTPS POST
 - **接口方向**：开发者服务器->华为游戏服务器
@@ -36,8 +46,12 @@
  
   
 
-#### 请求参数
+## 请求参数
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 参数 | 是否必选 | 类型 | 描述 |
 | --- | --- | --- | --- |
 | method | 是 | String | 固定传入“external.hms.gs.player.transfer.convertId”。 |
@@ -48,7 +62,10 @@
  
   
 
-#### 请求示例
+## 请求示例
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 POST /gameservice/api/gbClientApi HTTP/1.1
@@ -64,8 +81,12 @@ method=external.hms.gs.player.transfer.convertId&accessToken=******&appId=xxxxxx
  
   
 
-#### 响应参数
+## 响应参数
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 参数 | 是否必选 | 类型 | 描述 |
 | --- | --- | --- | --- |
 | rtnCode | 是 | int | 服务端结果说明。 0：获取成功。 -1：获取失败。 2：accessToken无效。 3001：参数错误。表示缺失请求参数或格式错误。 3101：应用ID与鉴权应用不一致。 |
@@ -77,7 +98,10 @@ method=external.hms.gs.player.transfer.convertId&accessToken=******&appId=xxxxxx
  
   
 
-#### 响应示例
+## 响应示例
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```json
 HTTP/1.1 200 OK
@@ -97,7 +121,10 @@ Server: elb
  
   
 
-#### 调用示例
+## 调用示例
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```json
 Java

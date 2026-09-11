@@ -1,14 +1,10 @@
 # UI预览
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-ide-previewer
 
-DevEco Studio为开发者提供了UI预览功能，方便查看UI效果并随时调整页面布局。预览支持页面预览和组件预览。图1中左侧图标
-![](assets/UI预览/file-20260514130808233-0.png)
-表示页面预览，右侧图标
-![](assets/UI预览/file-20260514130808233-1.png)
-表示组件预览。
+DevEco Studio为开发者提供了UI预览功能，方便查看UI效果并随时调整页面布局。预览支持页面预览和组件预览。图1中左侧图标![icon](assets/UI预览/file-20260514130808233-0.png)表示页面预览，右侧图标![icon](assets/UI预览/file-20260514130808233-1.png)表示组件预览。
 
 > [!NOTE]
 > 操作系统和真机设备的差异可能导致预览效果与真机效果不同。预览效果仅作参考，实际效果以真机为准。
@@ -21,7 +17,7 @@ DevEco Studio为开发者提供了UI预览功能，方便查看UI效果并随时
 
 
 
-#### 页面预览
+## 页面预览
 
 ArkTS应用/元服务均支持页面预览。页面预览通过在工程的ets文件中，给自定义组件添加[@Entry](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-custom-components#entry)装饰器，即可以查看当前UI页面效果。
 
@@ -34,11 +30,9 @@ ArkTS应用/元服务均支持页面预览。页面预览通过在工程的ets�
 
 
 
-#### 极速预览
+### 极速预览
 
-支持在修改组件的属性时，无需使用Ctrl+S进行保存，可以直接观察到修改后的预览效果。极速预览默认开启，若需关闭，点击预览器右上角按钮
-![](assets/UI预览/file-20260514130808233-2.png)
-即可。
+支持在修改组件的属性时，无需使用Ctrl+S进行保存，可以直接观察到修改后的预览效果。极速预览默认开启，若需关闭，点击预览器右上角按钮![icon](assets/UI预览/file-20260514130808233-2.png)即可。
 
 
 ![](assets/UI预览/file-20260514130808233-3.png)
@@ -66,11 +60,9 @@ ArkTS应用/元服务均支持页面预览。页面预览通过在工程的ets�
 
 
 
-#### inspector双向预览
+### Inspector双向预览
 
-支持ets文件与预览器的双向预览。使用时，点击预览器界面图标
-![](assets/UI预览/file-20260514130808233-5.gif)
-开启双向预览功能。
+支持ets文件与预览器的双向预览。使用时，点击预览器界面图标![icon](assets/UI预览/file-20260514130808233-5.gif)开启双向预览功能。
 
 开启双向预览功能后，支持代码编辑器、UI界面和组件树之间的联动：
 1. 选中预览器界面中的组件，组件树上对应的组件将被选中，同时代码编辑器中的布局文件中对应的代码块高亮显示。
@@ -80,7 +72,7 @@ ArkTS应用/元服务均支持页面预览。页面预览通过在工程的ets�
 
 效果如图3所示：
 
-**图3** inspector双向预览演示图
+**图3** Inspector双向预览演示图
 
 
 ![](assets/UI预览/file-20260514130808233-6.png)
@@ -88,13 +80,11 @@ ArkTS应用/元服务均支持页面预览。页面预览通过在工程的ets�
 
 
 
-#### 组件预览
+## 组件预览
 
 ArkTS应用/元服务支持组件预览功能。组件预览通过在自定义组件前添加[@Preview装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-component-previewer#preview装饰器)装饰器实现。在单个源文件中，最多可以使用10个@Preview装饰自定义组件。启动方式：
 
- - 当组件被@Entry和@Preview装饰时，点击右侧侧边栏的Previewer按钮，启动页面预览，页面加载成功后，点击
-![](assets/UI预览/file-20260514130808233-7.gif)
-，切换到组件预览。
+ - 当组件被@Entry和@Preview装饰时，点击右侧侧边栏的Previewer按钮，启动页面预览，页面加载成功后，点击![icon](assets/UI预览/file-20260514130808233-7.gif)，切换到组件预览。
  - 当组件仅被@Preview装饰时，点击右侧侧边栏的Previewer按钮，则默认为组件预览。
 
 
@@ -148,15 +138,13 @@ struct ComponentPreviewTwo {
 
 
 
-#### 动态修改分辨率
+## 动态修改分辨率
 
-同一个应用/元服务可以运行在多个设备上，因不同设备的屏幕分辨率、形状、大小等不同，开发者需要在不同的设备上查看应用/元服务的UI布局和交互效果。预览支持动态修改分辨率，方便开发者随时查看不同设备上的页面显示效果。启动方式：启动页面预览后，点击右上角
-![](assets/UI预览/file-20260514130808233-9.png)
-，即可拖动页面选中框动态修改当前设备的屏幕大小。
+同一个应用/元服务可以运行在多个设备上，因不同设备的屏幕分辨率、形状、大小等不同，开发者需要在不同的设备上查看应用/元服务的UI布局和交互效果。预览支持动态修改分辨率，方便开发者随时查看不同设备上的页面显示效果。启动方式：启动页面预览后，点击右上角![icon](assets/UI预览/file-20260514130808233-9.png)，即可拖动页面选中框动态修改当前设备的屏幕大小。
 
 效果如图5所示：
 
 **图5** 动态修改分辨率效果图
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/Z9VzeO7zSPm8RMPzM0b6IA/zh-cn_image_0000002655846738.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071858Z&HW-CC-Expire=86400&HW-CC-Sign=41250AB416F0F2F231E1AD099FFD2E30D975EACBC058454EC462A40056A011CA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/y4Jvj3lBSkC9jjxKHZg2uA/zh-cn_image_0000002717610850.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073133Z&HW-CC-Expire=86400&HW-CC-Sign=17CE985442503CE51D44B9FC1056690DDB633A7F0E447EBE239E5AD2FB8B14B0)

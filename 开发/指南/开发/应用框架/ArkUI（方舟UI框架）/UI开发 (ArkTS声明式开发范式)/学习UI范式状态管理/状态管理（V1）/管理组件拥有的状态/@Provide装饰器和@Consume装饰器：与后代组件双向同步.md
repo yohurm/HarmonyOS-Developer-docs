@@ -1,6 +1,6 @@
 # @Provide装饰器和@Consume装饰器：与后代组件双向同步
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-provide-and-consume
 
@@ -15,12 +15,12 @@
 
 
 
-#### 概述
+## 概述
 
 @Provide/@Consume装饰的状态变量有以下特性：
 
  - @Provide装饰的状态变量自动对其所有后代组件可用，开发者不需要多次在组件之间传递变量。
- - 后代通过使用@Consume获取@Provide提供的变量，建立在@Provide和@Consume之间的双向数据同步，与[@State](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state)/[@Link](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-link)不同的是，前者可以更便捷的在多层级父子组件之间传递。
+ - 后代通过使用@Consume获取@Provide提供的变量，建立在@Provide和@Consume之间的双向数据同步，与[@State](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state)/[@Link](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-link)不同的是，前者可以更便捷地在多层级父子组件之间传递。
  - @Provide和@Consume通过变量名或者变量别名绑定，需要类型相同，否则会发生类型隐式转换，从而导致应用行为异常。
 
 
@@ -46,21 +46,23 @@
 
 
 
-#### 装饰器说明
+## 装饰器说明
+
 
 | @Provide变量装饰器 | 说明 |
 | --- | --- |
 | 装饰器参数 | 别名：常量字符串，可选。 如果指定了别名，则通过别名来绑定变量；如果未指定别名，则通过变量名绑定变量。 allowOverride：允许重写，string类型，可选。 如果使用allowOverride指定别名，则别名可以被重写，即可以存在同名的@Provide变量。 未使用allowOverride时则不允许重名。示例见@Provide支持allowOverride参数。 |
-| 允许装饰的变量类型 | Object、class、string、number、boolean、enum类型，以及这些类型的数组。 API version 10开始支持Date类型。 API version 11及以上支持Map、Set类型、undefined和null类型、ArkUI框架定义的联合类型Length、ResourceStr、ResourceColor类型以及这些类型的联合类型，示例见@Provide和Consume支持联合类型实例。 |
+| 允许装饰的变量类型 | Object、class、string、number、boolean、enum类型，以及这些类型的数组。 API version 10开始支持Date类型。 API version 11及以上支持Map、Set类型、undefined和null类型、ArkUI框架定义的联合类型Length、ResourceStr、ResourceColor类型以及这些类型的联合类型，示例见@Provide和@Consume支持联合类型实例。 |
 | 不允许装饰的变量类型 | 不支持装饰Function类型。 |
 | 初始化规则 | 必须定义本地默认值。 可以从父组件传入非undefined类型变量，此时使用该传入变量进行初始化。 父组件未传入或传入undefined类型变量时，使用本地默认值进行初始化。 |
-| 同步规则 | 在子组件使用时： 不与父组件中的任何类型变量同步。 父组件传入的外部变量对@Provide初始化时，仅作为初始值，后续变量的变化不会同步至@Provide。 在父组件使用时： 可以初始化子组件的常规变量、@State、@Link、@Prop、@Provide。 @Provide变量的变化会同步给子组件的@Link、@Prop变量。 与后代子组件中别名匹配的@Consume变量双同步。 |
+| 同步规则 | 在子组件使用时： 不与父组件中的任何类型变量同步。 父组件传入的外部变量对@Provide初始化时，仅作为初始值，后续变量的变化不会同步至@Provide。 在父组件使用时： 可以初始化子组件的常规变量、@State、@Link、@Prop、@Provide。 @Provide变量的变化会同步给子组件的@Link、@Prop变量。 与后代子组件中别名匹配的@Consume变量双向同步。 |
 
 
 **图1** @Provide初始化规则图示
 
 
 ![](assets/@Provide装饰器和@Consume装饰器：与后代组件双向同步/file-20260514130518387-1.png)
+
 
 
 | @Consume变量装饰器 | 说明 |
@@ -80,11 +82,11 @@
 
 
 
-#### 观察变化和行为表现
+## 观察变化和行为表现
 
 
 
-#### 观察变化
+### 观察变化
 
  - 当装饰的数据类型为boolean、string、number类型时，可以观察到数值的变化。
  - 当装饰的数据类型为class或者Object的时候，可以观察到赋值和属性赋值的变化（属性为Object.keys(observedObject)返回的所有属性）。
@@ -96,7 +98,7 @@
 
 
 
-#### 框架行为
+### 框架行为
 1. 初始渲染：
 
   
@@ -109,7 +111,7 @@
 4. 从API version 20开始，在初始化@Consume变量时，如果在Map中没有该变量名/alias（别名）对应的@Provide的变量，而@Consume的变量设置了默认值时，@Consume变量会利用默认值创建一个临时的数据源，保证通知链路的连续性。
  - 当@Provide装饰的数据变化时：
 
-1. 通过初始渲染的步骤可知，子组件@Consume已把自己注册给父组件。父组件@Provide变量变更后，会遍历更新所有依赖它的系统组件（elementid）和状态变量（@Consume）。
+1. 通过初始渲染的步骤可知，子组件@Consume已把自己注册给父组件。父组件@Provide变量变更后，会遍历更新所有依赖它的系统组件（elementId）和状态变量（@Consume）。
 
 2. 通知@Consume更新后，子组件所有依赖@Consume的系统组件（elementId）都会被通知更新。以此实现@Provide对@Consume状态数据同步。
  - 当@Consume装饰的数据变化时：
@@ -123,7 +125,7 @@
 
 
 
-#### 限制条件
+## 限制条件
 1. @Provide/@Consume的参数key必须为string类型，否则编译时会报错。
 
   
@@ -358,7 +360,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/NLL5A_9QTHmb6CqjWUQWTA/zh-cn_image_0000002704271801.png?HW-CC-KV=V1&HW-CC-Date=20260813T095704Z&HW-CC-Expire=86400&HW-CC-Sign=CC5889960A1579094E62EDF6CFB2FE8A5A3EDB95B047B49486ED27E48E0CC11E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/TqKJp9s5TB6k_-x0q4_-1Q/zh-cn_image_0000002717769998.png?HW-CC-KV=V1&HW-CC-Date=20260911T072511Z&HW-CC-Expire=86400&HW-CC-Sign=F0204733CC1F0B0AD15005A085A49ACF93A85A40602E78FA732257B3DCB4D3C6)
 
 7. 父组件传入undefined时，@Provide装饰的变量仍使用本地默认值进行初始化。
 
@@ -394,16 +396,16 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/FVHUmmdwRwK4NobXG7RMDQ/zh-cn_image_0000002674472002.png?HW-CC-KV=V1&HW-CC-Date=20260813T095704Z&HW-CC-Expire=86400&HW-CC-Sign=0646D90657B158AEA7959858F7BB1CE509EFA3385B665134FA7940340AAEADF0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/b2M8aPmMTY69kSTnslgwKQ/zh-cn_image_0000002717610064.png?HW-CC-KV=V1&HW-CC-Date=20260911T072511Z&HW-CC-Expire=86400&HW-CC-Sign=70C8EF6FA22BA1EF939090EBA9D63F3C5394BF39C75D61A1ED3069D1DBA51249)
 
 
 
 
-#### 使用场景
+## 使用场景
 
 
 
-#### @Provide变量与@Consume变量建立双向绑定
+### @Provide变量与@Consume变量建立双向绑定
 
 以下示例是@Provide变量与后代组件中@Consume变量进行双向同步的场景。当分别点击ToDo和ToDoItem组件内的Button时，count的更改会双向同步在ToDo和ToDoItem中。
 
@@ -464,12 +466,12 @@ struct ToDo {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/euqC9xvcSDGWbR6OH67LGA/zh-cn_image_0000002704391971.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095704Z&HW-CC-Expire=86400&HW-CC-Sign=20D1C53A22F5ECA6F2D5F967EC5F2B3F72D8338FB228199D36CF795B976DEF18)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/8253qXmWSKy2l7UTIp60eQ/zh-cn_image_0000002747290015.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072511Z&HW-CC-Expire=86400&HW-CC-Sign=89E8538AA3747B093F89C540D89ECBDB2A49B33B11447F5F01984224E841E5CD)
 
 
 
 
-#### 装饰Array类型变量
+### 装饰Array类型变量
 
 以下示例中，message类型为number[]，点击Button改变message的值，视图会随之刷新。
 
@@ -540,12 +542,12 @@ struct Child {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/MNEnBdSOSyi1-bXRksTFWg/zh-cn_image_0000002674631848.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095704Z&HW-CC-Expire=86400&HW-CC-Sign=2AD8B763E71610EB6AE4A14E5A9108A993E601F9F5109795829AF5A2717F7835)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/HYza3GyaSHK1XV4JfvyTlQ/zh-cn_image_0000002747209933.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072511Z&HW-CC-Expire=86400&HW-CC-Sign=E71FEE1040EFA92961759140CD4C77F11CC7679636E431EE8A5F28B32D0E5795)
 
 
 
 
-#### 装饰Map类型变量
+### 装饰Map类型变量
 
 > [!NOTE]
 > 从API version 11开始，@Provide，@Consume支持Map类型。
@@ -630,12 +632,12 @@ struct MapSample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/lSWxO3hgQhOdD2GE4GWzuw/zh-cn_image_0000002704271803.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095704Z&HW-CC-Expire=86400&HW-CC-Sign=8E79BDC196EAAA28C8B2C7076E1D69AC7651CD518B34BE7CD393B05883A6ABDB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/OWJkNGssSiSWRfRvdcFpmA/zh-cn_image_0000002717770000.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072511Z&HW-CC-Expire=86400&HW-CC-Sign=C0669DE64C15D00842C658885C124281C4C8EDF3F8D5D0F8C92185B2DEC63F73)
 
 
 
 
-#### 装饰Set类型变量
+### 装饰Set类型变量
 
 > [!NOTE]
 > 从API version 11开始，@Provide，@Consume支持Set类型。
@@ -711,12 +713,12 @@ struct SetSample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/JYicIbeYTg6obb8rRrhDWw/zh-cn_image_0000002674472004.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095704Z&HW-CC-Expire=86400&HW-CC-Sign=C9977D5C0974EB7B33E4A4A0711DD42CD104B0FA2265A268A18053370DC09FD1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/FkvD9Bu7Q8mB2WV2Kgkg2A/zh-cn_image_0000002717610066.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072511Z&HW-CC-Expire=86400&HW-CC-Sign=6BB79D3E3D0A39F8ED65F8436E71E5670E58EEE120FFB8ED82E70ED9314ADB79)
 
 
 
 
-#### 装饰Date类型变量
+### 装饰Date类型变量
 
 以下示例中，selectedDate类型为Date，点击Button改变selectedDate的值，视图会随之刷新。
 
@@ -783,14 +785,14 @@ struct Parent {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/8uArR9f3STGp5-i71SM6Jg/zh-cn_image_0000002704391973.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095704Z&HW-CC-Expire=86400&HW-CC-Sign=D1C692878B137984B701F73933C9FE8590767927D14570B3FAFF03968199F8C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/6CuCrsXxSgS4YVmsygc7eA/zh-cn_image_0000002747290017.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072511Z&HW-CC-Expire=86400&HW-CC-Sign=E615535AE8EEF81AEE8D757A23251DAD3AD895908D1CFFDD0F19A91F8E42CEA2)
 
 
 
 
-#### @Provide和@Consume支持联合类型实例
+### @Provide和@Consume支持联合类型实例
 
-@Provide和@Consume支持联合类型和undefined和null。以下示例中，count类型为string | undefined，当点击祖先组件Ancestors中的Button改变count的属性或者类型时，Child中也会对应刷新。
+@Provide和@Consume支持联合类型和undefined和null。以下示例中，count类型为string | undefined，当点击祖先组件Ancestors中的Button改变count的值或者类型时，Child中也会对应刷新。
 
 ```ArkTS
 @Component
@@ -841,17 +843,18 @@ struct Ancestors {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/xK-eNofuTQiwJWJYar8UEA/zh-cn_image_0000002674631850.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095704Z&HW-CC-Expire=86400&HW-CC-Sign=FECBCEB07F18F10B29A3FA313DF8AD0D0D806DDC219263F1FAE124E95BAC7676)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/g5nejFPJQ_aiRNgMiL2HNg/zh-cn_image_0000002747209935.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072511Z&HW-CC-Expire=86400&HW-CC-Sign=1315B329B44B65E3302D7065A11D0BB9CF6DC1CC57AAF727568BF59887AF6CD7)
 
 
 
 
-#### @Provide支持allowOverride参数
+### @Provide支持allowOverride参数
 
 allowOverride：@Provide重写选项。
 
 > [!NOTE]
 > 从API version 11开始使用。
+
 
 
 | 名称 | 类型 | 必填 | 说明 |
@@ -932,7 +935,7 @@ struct GrandParent {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/dMhLQ7AOToucmGkKrEnJEw/zh-cn_image_0000002704271805.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095704Z&HW-CC-Expire=86400&HW-CC-Sign=430E9E230B89E1904500FFC5E6065C78BC7DB506019C8665608E19053FB795AB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/wLLsn230QQ-HKV8lljFeLg/zh-cn_image_0000002717770002.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072511Z&HW-CC-Expire=86400&HW-CC-Sign=8FAAE6A8BEEFF723CE65C70021CA24D26E43C7495FD039801489395D22CA4290)
 
 
 在上面的示例中：
@@ -946,7 +949,7 @@ struct GrandParent {
 
 
 
-#### @Consume装饰的变量支持设置默认值
+### @Consume装饰的变量支持设置默认值
 
 > [!NOTE]
 > 从API version 20开始，@Consume装饰的变量支持设置默认值。
@@ -1057,7 +1060,7 @@ struct Child {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/ETvC5NauSuGk3C9Yno8jmg/zh-cn_image_0000002674472006.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095704Z&HW-CC-Expire=86400&HW-CC-Sign=33C9C00516C26765AE8C988775A2155FDAC51DCB2D9B94EC11E83393A06F99BC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/Frm3Bf8YSGelEpZYNICaSg/zh-cn_image_0000002717610068.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072511Z&HW-CC-Expire=86400&HW-CC-Sign=ED82E692E2A81B58312F5958040212363E4B5CFE413683AA5CCB141F7553A7C3)
 
 
 在上面的示例中：
@@ -1070,7 +1073,7 @@ struct Child {
 
 
 
-#### @Consume在跨BuilderNode场景下和@Provide建立双向同步
+### @Consume在跨BuilderNode场景下和@Provide建立双向同步
 
 > [!NOTE]
 > 从API version 20开始，支持跨BuilderNode配对@Provide/@Consume。
@@ -1238,16 +1241,16 @@ struct Child {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/gnP_FEfESo-srdvzkRuDxw/zh-cn_image_0000002704391975.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095704Z&HW-CC-Expire=86400&HW-CC-Sign=BC18C33F62CA13DB058A0439616A2501ACF3CAC70B50640E81B12CCF744B1634)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/Nc-JRXCzQRGU1sPYo7ptvA/zh-cn_image_0000002747290019.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072511Z&HW-CC-Expire=86400&HW-CC-Sign=16BE575D5A55638A0373695043AC2BEB70590D0C280B19F3857E715029C9AE17)
 
 
 
 
-#### 常见问题
+## 常见问题
 
 
 
-#### @BuilderParam尾随闭包情况下@Provide未定义错误
+### @BuilderParam尾随闭包情况下@Provide未定义错误
 
 在此[尾随闭包](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-builderparam#尾随闭包初始化组件)场景下，CustomWidget执行this.builder()创建子组件CustomWidgetChild时，this指向的是HomePage。因此找不到CustomWidget的@Provide变量，所以下面示例会报找不到@Provide错误，和@BuilderParam连用的时候要谨慎this的指向。
 
@@ -1383,4 +1386,4 @@ struct CustomWidgetChild {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/fgh9E7i6Tde75vG9NpHrKA/zh-cn_image_0000002674631852.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095704Z&HW-CC-Expire=86400&HW-CC-Sign=C53916255374F92AFA515AFA9CE9D72929FBCD2F20EF07C14C059DB09B0A1704)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/gfbhbDJKRP-3eR4q6i4p6A/zh-cn_image_0000002747209937.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072511Z&HW-CC-Expire=86400&HW-CC-Sign=16C273D651089B3C306864BECD58C6EC0F549C830A3A051FE0AA2E58AB0778BF)

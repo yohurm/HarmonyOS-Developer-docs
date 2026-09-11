@@ -1,6 +1,6 @@
 # productViewManager (应用市场推荐)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/store-productviewmanager
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -14,7 +14,8 @@
 **起始版本：** 4.1.0(11)
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -24,7 +25,8 @@ import { productViewManager } from '@kit.AppGalleryKit';
 
 
 
-#### ProductViewCallback
+## ProductViewCallback
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -36,6 +38,7 @@ import { productViewManager } from '@kit.AppGalleryKit';
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | onError | ErrorCallback | 否 | 是 | 回调函数，接收应用详情页加载失败的错误码。 1011表示拉起/切前台失败。 1012表示切后台失败。 1013表示销毁失败。 |
@@ -45,7 +48,8 @@ import { productViewManager } from '@kit.AppGalleryKit';
 
 
 
-#### ServiceViewCallback
+## ServiceViewCallback
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -57,6 +61,7 @@ import { productViewManager } from '@kit.AppGalleryKit';
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | onReceive | Callback&lt;ServiceViewReceiveData&gt; | 否 | 是 | 回调函数，当元服务卡片加载成功并添加至桌面时调用，获取元服务卡片加载成功并添加至桌面后的相关信息和结果。 |
@@ -67,7 +72,8 @@ import { productViewManager } from '@kit.AppGalleryKit';
 
 
 
-#### ServiceViewReceiveData
+## ServiceViewReceiveData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -79,6 +85,7 @@ import { productViewManager } from '@kit.AppGalleryKit';
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | result | ReceiveDataResult | 是 | 否 | 元服务卡片添加至桌面结果。 |
@@ -88,7 +95,8 @@ import { productViewManager } from '@kit.AppGalleryKit';
 
 
 
-#### ReceiveDataResult
+## ReceiveDataResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -100,6 +108,7 @@ import { productViewManager } from '@kit.AppGalleryKit';
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SUCCESS | 1000 | 成功。 |
@@ -109,7 +118,8 @@ import { productViewManager } from '@kit.AppGalleryKit';
 
 
 
-#### CheckShortcutResult
+## CheckShortcutResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -121,6 +131,7 @@ import { productViewManager } from '@kit.AppGalleryKit';
 
 **起始版本：** 5.0.2(14)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | tid | string | 否 | 是 | 基于应用的快捷方式信息生成的Transaction ID。若快捷方式信息发生变化，则每次覆盖生成新的tid，否则返回历史tid以及剩余过期时间expired。 |
@@ -131,7 +142,8 @@ import { productViewManager } from '@kit.AppGalleryKit';
 
 
 
-#### SKExposure
+## SKExposure
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -142,6 +154,7 @@ import { productViewManager } from '@kit.AppGalleryKit';
 **系统能力：** SystemCapability.AppGalleryService.Distribution.Recommendations
 
 **起始版本：** 5.0.2(14)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -220,7 +233,8 @@ struct LoadProduct {
 
 
 
-#### PinShortcutInfo
+## PinShortcutInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -231,6 +245,7 @@ struct LoadProduct {
 **系统能力：** SystemCapability.AppGalleryService.Distribution.Recommendations
 
 **起始版本：** 6.1.1(24)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -244,7 +259,8 @@ struct LoadProduct {
 
 
 
-#### productViewManager.loadProduct
+## productViewManager.loadProduct
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -262,6 +278,7 @@ loadProduct(context: common.UIAbilityContext, want: Want, callback?: ProductView
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | 调用方应用的上下文。 |
@@ -272,6 +289,7 @@ loadProduct(context: common.UIAbilityContext, want: Want, callback?: ProductView
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -328,9 +346,10 @@ struct LoadProduct {
 
 
 
-#### productViewManager.loadService
+## productViewManager.loadService
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 loadService(context: common.UIAbilityContext, want: Want, callback?: ServiceViewCallback): void
 
@@ -346,6 +365,7 @@ loadService(context: common.UIAbilityContext, want: Want, callback?: ServiceView
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | 调用方应用的上下文。 |
@@ -356,6 +376,7 @@ loadService(context: common.UIAbilityContext, want: Want, callback?: ServiceView
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -414,9 +435,10 @@ struct LoadService {
 
 
 
-#### productViewManager.checkPinShortcutPermitted
+## productViewManager.checkPinShortcutPermitted
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 checkPinShortcutPermitted(context: common.UIAbilityContext, shortcutId: string, want: Want, labelResName: string, iconResName: string): Promise&lt;CheckShortcutResult&gt;
 
@@ -432,6 +454,7 @@ checkPinShortcutPermitted(context: common.UIAbilityContext, shortcutId: string, 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | 调用方应用的上下文。 |
@@ -443,6 +466,7 @@ checkPinShortcutPermitted(context: common.UIAbilityContext, shortcutId: string, 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;CheckShortcutResult&gt; | Promise对象，返回快捷方式校验结果。 |
@@ -451,6 +475,7 @@ checkPinShortcutPermitted(context: common.UIAbilityContext, shortcutId: string, 
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-appgallery)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -515,9 +540,10 @@ struct CheckPinShortcutPermitted {
 
 
 
-#### productViewManager.checkPinShortcutPermitted
+## productViewManager.checkPinShortcutPermitted
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 checkPinShortcutPermitted(context: common.UIAbilityContext, shortcutId: string, want: Want, label: string, foregroundIcon: string, backgroundIcon: string): Promise&lt;CheckShortcutResult&gt;
 
@@ -533,6 +559,7 @@ checkPinShortcutPermitted(context: common.UIAbilityContext, shortcutId: string, 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | 上下文。 |
@@ -545,6 +572,7 @@ checkPinShortcutPermitted(context: common.UIAbilityContext, shortcutId: string, 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;CheckShortcutResult&gt; | Promise对象，返回快捷方式校验结果。 |
@@ -553,6 +581,7 @@ checkPinShortcutPermitted(context: common.UIAbilityContext, shortcutId: string, 
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-appgallery)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -618,9 +647,10 @@ struct CheckPinShortcutPermitted {
 
 
 
-#### productViewManager.requestNewPinShortcut
+## productViewManager.requestNewPinShortcut
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 requestNewPinShortcut(context: common.UIAbilityContext, tid: string): Promise&lt;void&gt;
 
@@ -636,6 +666,7 @@ requestNewPinShortcut(context: common.UIAbilityContext, tid: string): Promise&lt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | 上下文。 |
@@ -643,6 +674,7 @@ requestNewPinShortcut(context: common.UIAbilityContext, tid: string): Promise&lt
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -652,6 +684,7 @@ requestNewPinShortcut(context: common.UIAbilityContext, tid: string): Promise&lt
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-appgallery)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -706,9 +739,10 @@ struct RequestNewPinShortcut {
 
 
 
-#### productViewManager.getPinShortcutInfos
+## productViewManager.getPinShortcutInfos
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 getPinShortcutInfos(): Promise<PinShortcutInfo[]>
 
@@ -722,6 +756,7 @@ getPinShortcutInfos(): Promise<PinShortcutInfo[]>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<PinShortcutInfo[]> | Promise对象。返回查询桌面快捷方式信息列表的结果。 |
@@ -730,6 +765,7 @@ getPinShortcutInfos(): Promise<PinShortcutInfo[]>
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-appgallery)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -778,9 +814,10 @@ struct GetPinShortcutInfos {
 
 
 
-#### productViewManager.removePinShortcut
+## productViewManager.removePinShortcut
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 removePinShortcut(context: common.UIAbilityContext, shortcutId: string): Promise&lt;void&gt;
 
@@ -794,6 +831,7 @@ removePinShortcut(context: common.UIAbilityContext, shortcutId: string): Promise
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | 上下文。 |
@@ -801,6 +839,7 @@ removePinShortcut(context: common.UIAbilityContext, shortcutId: string): Promise
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -810,6 +849,7 @@ removePinShortcut(context: common.UIAbilityContext, shortcutId: string): Promise
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-appgallery)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

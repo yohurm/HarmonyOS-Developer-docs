@@ -1,16 +1,16 @@
 # Init
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-18 12:49:55
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-tpipe-init
 
-#### 功能说明
+## 功能说明
 
 初始化内存和用于同步流水事件的EventID的初始化。
  
   
 
-#### 函数原型
+## 函数原型
 
 ```text
 __aicore__ inline void TPipe::Init()
@@ -18,27 +18,29 @@ __aicore__ inline void TPipe::Init()
  
   
 
-#### 支持的型号
+## 支持的型号
 
 Kirin9020系列处理器
+ 
+Kirin9030系列处理器
  
 KirinX90系列处理器
  
   
 
-#### 注意事项
+## 注意事项
 
 重复申请释放TPipe，要与[Destroy](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-destroy)接口成对使用，TPipe如果要重复申请需要先Destroy释放后再Init。
  
   
 
-#### 返回值
+## 返回值
 
 无
  
   
 
-#### 调用示例
+## 调用示例
 
 ```text
 template <typename srcType> 

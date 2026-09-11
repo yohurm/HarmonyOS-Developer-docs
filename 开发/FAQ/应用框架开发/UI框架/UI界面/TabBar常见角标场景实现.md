@@ -53,47 +53,47 @@ TabBar角标的各种样式、消失功能、更新数据功能实现方案如�
 
 1. Badge组件实现红点类型角标。
 ```text
-// 定义单个Tab的数据结构
+<em>// </em><em>定义单个Tab的数据结构</em>
 interface DotsBadgeItem {
-  id: string; // 唯一标识符
-  targetIndex: number; // 每个页签所属的index
-  title: string; // tabBar标题
-  img: Resource; // icon图片仅供示例，开发者可以根据实际需求替换
-  content: string; // tabBar对应的内容（可根据实际需求扩展）
+  id: string; <em>// 唯一标识符</em>
+  targetIndex: number; <em>// 每个页签所属的index</em>
+  title: string; <em>// tabBar标题</em>
+  img: Resource;<em> </em><em>// icon图片仅供示例，开发者可以根据实际需求替换</em>
+  content: string;<em> </em><em>// tabBar对应的内容（可根据实际需求扩展）</em>
 }
 
 @Entry
 @Component
 struct DotsBadge {
   controller: TabsController = new TabsController();
-  // 模拟后端返回的数据
+<em>  // 模拟后端返回的数据</em>
   private tabList: DotsBadgeItem[] = [
     {
       id: '0',
       targetIndex: 0,
       title: '首页',
       content: '首页内容',
-      img: $r('app.media.house_fill') // 图片资源$r('app.media.house_fill')仅供示例，开发者可根据需求替换
+      img: $r('app.media.house_fill')<em> </em><em>// 图片资源$r('app.media.house_fill')仅供示例，开发者可根据需求替换</em>
     },
     {
       id: '1',
       targetIndex: 1,
       title: '消息',
       content: '消息内容',
-      img: $r('app.media.ellipsis_message') // 图片资源$r('app.media.ellipsis_message')仅供示例，开发者可根据需求替换
+      img: $r('app.media.ellipsis_message') <em>// 图片资源$r('app.media.ellipsis_message')仅供示例，开发者可根据需求替换</em>
     },
     {
       id: '2',
       targetIndex: 2,
       title: '相册',
       content: '相册内容',
-      img: $r('app.media.rectangle_on_rectangle') // 图片资源$r('app.media.rectangle_on_rectangle')仅供示例，开发者可根据需求替换
+      img: $r('app.media.rectangle_on_rectangle') <em>// 图片资源$r('app.media.rectangle_on_rectangle')仅供示例，开发者可根据需求替换</em>
     }
   ];
-  // 控制TabContent页签
+ <em> // 控制TabContent页签</em>
   @State currentIndex: number = 0;
 
-  // 红点型
+  <em>// 红点型</em>
   @Builder
   dotsBadge(params: DotsBadgeItem) {
     Column() {
@@ -122,10 +122,10 @@ struct DotsBadge {
   build() {
     Column() {
       Tabs({ barPosition: BarPosition.End, controller: this.controller }) {
-        // 循环生成TabContent,标题由每个item的title决定
+      <em>  // 循环生成TabContent,标题由每个item的title决定</em>
         ForEach(this.tabList, (item: DotsBadgeItem) => {
           TabContent() {
-            // 每个Tab的内容,可以根据需求替换
+         <em>   // 每个Tab的内容,可以根据需求替换</em>
             Text(item.content)
               .layoutWeight(1)
               .padding(16)
@@ -154,47 +154,47 @@ struct DotsBadge {
 
 2. Badge组件实现字符类型角标。
 ```text
-// 定义单个Tab的数据结构
+<em>// </em><em>定义单个Tab的数据结构</em>
 interface StringBadgeItem {
-  id: string; // 唯一标识符
-  targetIndex: number; // 每个页签所属的index
-  title: string; // tabBar标题
-  img: Resource; // icon图片仅供示例，开发者可以根据实际需求替换
-  content: string;<strong style="color: rgb(181,106,1);"> </strong>// tabBar对应的内容（可根据实际需求扩展）
+  id: string;<em> </em><em>// 唯一标识符</em>
+  targetIndex: number; <em>// 每个页签所属的index</em>
+  title: string; <em>// tabBar标题</em>
+  img: Resource; <em>// icon</em><em>图片仅供示例，开发者可以根据实际需求替换</em>
+  content: string;<strong style="color: rgb(181,106,1);"> </strong><em>// tabBar对应的内容（可根据实际需求扩展）</em>
 }
 
 @Entry
 @Component
 struct StringBadge {
   controller: TabsController = new TabsController();
-  // 模拟后端返回的数据
+ <em> // 模拟后端返回的数据</em>
   private tabList: StringBadgeItem[] = [
     {
       id: '0',
       targetIndex: 0,
       title: '首页',
       content: '首页内容',
-      img: $r('app.media.house_fill') // 图片资源$r('app.media.house_fill')仅供示例，开发者可根据需求替换
+      img: $r('app.media.house_fill') <em>// 图片资源$r('app.media.house_fill')仅供示例，开发者可根据需求替换</em>
     },
     {
       id: '1',
       targetIndex: 1,
       title: '消息',
       content: '消息内容',
-      img: $r('app.media.ellipsis_message') // 图片资源$r('app.media.ellipsis_message')仅供示例，开发者可根据需求替换
+      img: $r('app.media.ellipsis_message') <em>// 图片资源$r('app.media.ellipsis_message')仅供示例，开发者可根据需求替换</em>
     },
     {
       id: '2',
       targetIndex: 2,
       title: '相册',
       content: '相册内容',
-      img: $r('app.media.rectangle_on_rectangle') // 图片资源$r('app.media.rectangle_on_rectangle')仅供示例，开发者可根据需求替换
+      img: $r('app.media.rectangle_on_rectangle')<em> </em><em>// 图片资源$r('app.media.rectangle_on_rectangle')仅供示例，开发者可根据需求替换</em>
     }
   ];
-  // 控制TabContent页签
+ <em> // 控制TabContent页签</em>
   @State currentIndex: number = 0;
 
-  // 红点型
+  <em>// 红点型</em>
   @Builder
   dotsBadge(params: StringBadgeItem) {
     Column() {
@@ -223,10 +223,10 @@ struct StringBadge {
   build() {
     Column() {
       Tabs({ barPosition: BarPosition.End, controller: this.controller }) {
-        // 循环生成TabContent,标题由每个item的title决定
+      <em>  // 循环生成TabContent,标题由每个item的title决定</em>
         ForEach(this.tabList, (item: StringBadgeItem) => {
           TabContent() {
-            // 每个Tab的内容,可以根据需求替换
+         <em>   // 每个Tab的内容,可以根据需求替换</em>
             Text(item.content)
               .layoutWeight(1)
               .padding(16)
@@ -255,47 +255,47 @@ struct StringBadge {
 
 3. Badge组件实现数字类型角标。
 ```text
-// 定义单个Tab的数据结构
+<em>// </em><em>定义单个Tab的数据结构</em>
 interface NumberBadgeItem {
-  id: string; // 唯一标识符
-  targetIndex: number; // 每个页签所属的index
-  title: string; // tabBar标题
-  img: Resource; // icon图片仅供示例，开发者可以根据实际需求替换
-  content: string; // tabBar对应的内容（可根据实际需求扩展）
+  id: string;<em> </em><em>// 唯一标识符</em>
+  targetIndex: number; <em>// 每个页签所属的index</em>
+  title: string;<em> </em><em>// tabBar标题</em>
+  img: Resource;<em> </em><em>// icon图片仅供示例，开发者可以根据实际需求替换</em>
+  content: string;<em> </em><em>// tabBar对应的内容（可根据实际需求扩展）</em>
 }
 
 @Entry
 @Component
 struct NumberBadge {
   controller: TabsController = new TabsController();
-  // 模拟后端返回的数据
+ <em> // 模拟后端返回的数据</em>
   private tabList: NumberBadgeItem[] = [
     {
       id: '0',
       targetIndex: 0,
       title: '首页',
       content: '首页内容',
-      img: $r('app.media.house_fill') // 图片资源$r('app.media.house_fill')仅供示例，开发者可根据需求替换
+      img: $r('app.media.house_fill')<em> </em><em>// 图片资源$r('app.media.house_fill')仅供示例，开发者可根据需求替换</em>
     },
     {
       id: '1',
       targetIndex: 1,
       title: '消息',
       content: '消息内容',
-      img: $r('app.media.ellipsis_message') // 图片资源$r('app.media.ellipsis_message')仅供示例，开发者可根据需求替换
+      img: $r('app.media.ellipsis_message') <em>// 图片资源$r('app.media.ellipsis_message')仅供示例，开发者可根据需求替换</em>
     },
     {
       id: '2',
       targetIndex: 2,
       title: '相册',
       content: '相册内容',
-      img: $r('app.media.rectangle_on_rectangle') // 图片资源$r('app.media.rectangle_on_rectangle')仅供示例，开发者可根据需求替换
+      img: $r('app.media.rectangle_on_rectangle')<em> </em><em>// 图片资源$r('app.media.rectangle_on_rectangle')仅供示例，开发者可根据需求替换</em>
     }
   ];
-  // 控制TabContent页签
+<em>  // 控制TabContent页签</em>
   @State currentIndex: number = 0;
 
-  // 红点型
+ <em> // 红点型</em>
   @Builder
   dotsBadge(params: NumberBadgeItem) {
     Column() {
@@ -324,10 +324,10 @@ struct NumberBadge {
   build() {
     Column() {
       Tabs({ barPosition: BarPosition.End, controller: this.controller }) {
-        // 循环生成TabContent,标题由每个item的title决定
+     <em>   // 循环生成TabContent,标题由每个item的title决定</em>
         ForEach(this.tabList, (item: NumberBadgeItem) => {
           TabContent() {
-            // 每个Tab的内容,可以根据需求替换
+          <em>  // 每个Tab的内容,可以根据需求替换</em>
             Text(item.content)
               .layoutWeight(1)
               .padding(16)
@@ -364,14 +364,14 @@ struct NumberBadge {
 
   
 ```text
-// 定义单个Tab的数据结构
+<em>// </em><em>定义单个Tab的数据结构</em>
 class DotsBadgeDisappearItem {
-  id: string; // 唯一标识符
-  targetIndex: number; // 每个页签所属的index
-  title: string; // tabBar标题
-  content: string; // tabBar对应的内容（可根据实际需求扩展）
-  img: Resource; // icon图片仅供示例，开发者可以根据实际需求替换
-  badgeVisible: boolean; // 控制渲染角标
+  id: string; <em>// 唯一标识符</em>
+  targetIndex: number; <em>// 每个页签所属的index</em>
+  title: string; <em>// tabBar</em><em>标题</em>
+  content: string;<em> </em><em>// tabBar对应的内容（可根据实际需求扩展）</em>
+  img: Resource;<em> </em><em>// icon图片仅供示例，开发者可以根据实际需求替换</em>
+  badgeVisible: boolean;<em> </em><em>// 控制渲染角标</em>
 
   constructor(id: string, targetIndex: number, title: string, content: string, img: Resource, badgeVisible: boolean) {
     this.id = id;
@@ -387,19 +387,19 @@ class DotsBadgeDisappearItem {
 @Component
 struct DotsBadgeDisappear {
   controller: TabsController = new TabsController();
-  // 控制TabContent页签
+ <em> // 控制TabContent页签</em>
   @State currentIndex: number = 0;
-  // 模拟后端返回的数据
+<em>  // 模拟后端返回的数据</em>
   @State tabList: DotsBadgeDisappearItem[] = [
-  // 图片资源$r('app.media.house_fill')仅供示例，开发者可根据需求替换
+ <em> // 图片资源$r('app.media.house_fill')仅供示例，开发者可根据需求替换</em>
     new DotsBadgeDisappearItem('0', 0, '首页', '首页的内容', $r('app.media.house_fill'), true),
-    // 图片资源$r('app.media.rectangle_on_rectangle')仅供示例，开发者可根据需求替换
+  <em>  // 图片资源$r('app.media.rectangle_on_rectangle')仅供示例，开发者可根据需求替换</em>
     new DotsBadgeDisappearItem('1', 1, '相册', '相册的内容', $r('app.media.rectangle_on_rectangle'), true),
-    // 图片资源$r('app.media.ellipsis_message')仅供示例，开发者可根据需求替换
+   <em> // 图片资源$r('app.media.ellipsis_message')仅供示例，开发者可根据需求替换</em>
     new DotsBadgeDisappearItem('2', 2, '消息', '消息的内容', $r('app.media.ellipsis_message'), true)
   ];
 
-  // 红点型
+ <em> // 红点型</em>
   @Builder
   dotsBadge(params: DotsBadgeDisappearItem, index: number) {
     Column() {
@@ -429,9 +429,9 @@ struct DotsBadgeDisappear {
     .justifyContent(FlexAlign.Center);
   }
 
-  // 清除角标方法
+ <em> // 清除角标方法</em>
   clearTips(index: number) {
-    // 创建新数组
+ <em>   // 创建新数组</em>
     const newList = this.tabList.map((item, i) =>
     new DotsBadgeDisappearItem(
       item.id,
@@ -441,17 +441,17 @@ struct DotsBadgeDisappear {
       item.img,
       i === index ? false : item.badgeVisible
     ));
-    // 强制更新数组
+  <em>  // 强制更新数组</em>
     this.tabList = newList;
   }
 
   build() {
     Column() {
       Tabs({ barPosition: BarPosition.End, controller: this.controller }) {
-        // 循环生成TabContent,标题由每个item的title决定
+      <em>  // 循环生成TabContent,标题由每个item的title决定</em>
         ForEach(this.tabList, (item: DotsBadgeDisappearItem, index: number) => {
           TabContent() {
-            // 每个Tab的内容,可以根据需求替换
+         <em>   // 每个Tab的内容,可以根据需求替换</em>
             Text(item.content)
               .layoutWeight(1)
               .padding(16)
@@ -465,7 +465,7 @@ struct DotsBadgeDisappear {
       .barMode(BarMode.Fixed)
       .onChange((index: number) => {
         this.currentIndex = index;
-        // 立即执行清除操作
+      <em>  // 立即执行清除操作</em>
         this.clearTips(index);
       });
     }
@@ -479,14 +479,14 @@ struct DotsBadgeDisappear {
 
   
 ```text
-// 定义单个Tab的数据结构
+<em>// </em><em>定义单个Tab的数据结构</em>
 class DotsBadgeDisappearItem2 {
-  id: string; // 唯一标识符
-  targetIndex: number; // 每个页签所属的index
-  title: string; // tabBar标题
-  content: string; // tabBar对应的内容（可根据实际需求扩展）
-  img: Resource; // icon图片仅供示例，开发者可以根据实际需求替换
-  badgeVisible: boolean; // 控制渲染角标
+  id: string; <em>// 唯一标识符</em>
+  targetIndex: number;<em> </em><em>// 每个页签所属的index</em>
+  title: string; <em>// tabBar标题</em>
+  content: string; <em>// tabBar对应的内容（可根据实际需求扩展）</em>
+  img: Resource;<em> </em><em>// icon图片仅供示例，开发者可以根据实际需求替换</em>
+  badgeVisible: boolean;<em> </em><em>// 控制渲染角标</em>
 
   constructor(id: string, targetIndex: number, title: string, content: string, img: Resource, badgeVisible: boolean) {
     this.id = id;
@@ -502,19 +502,19 @@ class DotsBadgeDisappearItem2 {
 @Component
 struct DotsBadgeDisappear2 {
   controller: TabsController = new TabsController();
-  // 控制TabContent页签
+ <em> // 控制TabContent页签</em>
   @State currentIndex: number = 0;
-  // 模拟后端返回的数据
+ <em> // 模拟后端返回的数据</em>
   @State tabList: DotsBadgeDisappearItem2[] = [
-  // 图片资源$r('app.media.house_fill')仅供示例，开发者可根据需求替换
+ <em> // 图片资源$r('app.media.house_fill')仅供示例，开发者可根据需求替换</em>
     new DotsBadgeDisappearItem2('0', 0, '首页', '首页的内容', $r('app.media.house_fill'), true),
-    // 图片资源$r('app.media.rectangle_on_rectangle')仅供示例，开发者可根据需求替换
+   <em> // 图片资源$r('app.media.rectangle_on_rectangle')仅供示例，开发者可根据需求替换</em>
     new DotsBadgeDisappearItem2('1', 1, '相册', '相册的内容', $r('app.media.rectangle_on_rectangle'), true),
-    // 图片资源$r('app.media.ellipsis_message')仅供示例，开发者可根据需求替换
+  <em>  // 图片资源$r('app.media.ellipsis_message')仅供示例，开发者可根据需求替换</em>
     new DotsBadgeDisappearItem2('2', 2, '消息', '消息的内容', $r('app.media.ellipsis_message'), true)
   ];
 
-  // 红点型
+<em>  // 红点型</em>
   @Builder
   dotsBadge(params: DotsBadgeDisappearItem2, index: number) {
     Column() {
@@ -543,9 +543,9 @@ struct DotsBadgeDisappear2 {
     .justifyContent(FlexAlign.Center);
   }
 
-  // 清除角标方法
+ <em> // 清除角标方法</em>
   clearTips(index: number) {
-    // 创建新数组
+   <em> // 创建新数组</em>
     const newList = this.tabList.map((item, i) =>
     new DotsBadgeDisappearItem2(
       item.id,
@@ -555,17 +555,17 @@ struct DotsBadgeDisappear2 {
       item.img,
       i === index ? false : item.badgeVisible
     ));
-    // 强制更新数组
+   <em> // 强制更新数组</em>
     this.tabList = newList;
   }
 
   build() {
     Column() {
       Tabs({ barPosition: BarPosition.End, controller: this.controller }) {
-        // 循环生成TabContent,标题由每个item的title决定
+      <em>  // 循环生成TabContent,标题由每个item的title决定</em>
         ForEach(this.tabList, (item: DotsBadgeDisappearItem2, index: number) => {
           TabContent() {
-            // 每个Tab的内容,可以根据需求替换
+          <em>  // 每个Tab的内容,可以根据需求替换</em>
             Text(item.content)
               .layoutWeight(1)
               .padding(16)
@@ -579,7 +579,7 @@ struct DotsBadgeDisappear2 {
       .barMode(BarMode.Fixed)
       .onChange((index: number) => {
         this.currentIndex = index;
-        // 立即执行清除操作
+      <em>  // 立即执行清除操作</em>
         this.clearTips(index);
       });
     }
@@ -593,15 +593,15 @@ struct DotsBadgeDisappear2 {
 
   
 ```text
-// 定义单个Tab的数据结构
+<em>// </em><em>定义单个Tab的数据结构</em>
 @ObservedV2
 class DotsBadgeDisappearItem3 {
-  id: string; // 唯一标识符
-  targetIndex: number; // 每个页签所属的index
-  title: string; // tabBar标题
-  content: string; // tabBar对应的内容（可根据实际需求扩展）
-  img: Resource; // icon图片仅供示例，开发者可以根据实际需求替换
-  @Trace badgeVisible: boolean; // 控制渲染角标
+  id: string;<em> </em><em>// 唯一标识符</em>
+  targetIndex: number;<em> </em><em>// 每个页签所属的index</em>
+  title: string;<em> </em><em>// tabBar标题</em>
+  content: string; <em>// tabBar对应的内容（可根据实际需求扩展）</em>
+  img: Resource; <em>// icon</em><em>图片仅供示例，开发者可以根据实际需求替换</em>
+  @Trace badgeVisible: boolean;<em> </em><em>// 控制渲染角标</em>
 
   constructor(id: string, targetIndex: number, title: string, content: string, img: Resource, badgeVisible: boolean) {
     this.id = id;
@@ -617,19 +617,19 @@ class DotsBadgeDisappearItem3 {
 @ComponentV2
 struct DotsBadgeDisappear3 {
   controller: TabsController = new TabsController();
-  // 控制TabContent页签
+ <em> // 控制TabContent页签</em>
   @Local currentIndex: number = 0;
-  // 模拟后端返回的数据
+ <em> // 模拟后端返回的数据</em>
   @Local tabList: DotsBadgeDisappearItem3[] = [
-  // 图片资源$r('app.media.house_fill')仅供示例，开发者可根据需求替换
+<em>  // 图片资源$r('app.media.house_fill')仅供示例，开发者可根据需求替换</em>
     new DotsBadgeDisappearItem3('0', 0, '首页', '首页的内容', $r('app.media.house_fill'), true),
-    // 图片资源$r('app.media.rectangle_on_rectangle')仅供示例，开发者可根据需求替换
+   <em> // 图片资源$r('app.media.rectangle_on_rectangle')仅供示例，开发者可根据需求替换</em>
     new DotsBadgeDisappearItem3('1', 1, '相册', '相册的内容', $r('app.media.rectangle_on_rectangle'), true),
-    // 图片资源$r('app.media.ellipsis_message')仅供示例，开发者可根据需求替换
+  <em>  // 图片资源$r('app.media.ellipsis_message')仅供示例，开发者可根据需求替换</em>
     new DotsBadgeDisappearItem3('2', 2, '消息', '消息的内容', $r('app.media.ellipsis_message'), true)
   ];
 
-  // 红点型
+ <em> // 红点型</em>
   @Builder
   dotsBadge(params: DotsBadgeDisappearItem3) {
     Column() {
@@ -658,9 +658,9 @@ struct DotsBadgeDisappear3 {
     .justifyContent(FlexAlign.Center);
   }
 
-  // 清除角标方法
+ <em> // 清除角标方法</em>
   clearTips(index: number) {
-    // 直接修改原对象属性
+ <em>   // 直接修改原对象属性</em>
     this.tabList.forEach((item, i) =>
     new DotsBadgeDisappearItem3(
       item.id,
@@ -675,10 +675,10 @@ struct DotsBadgeDisappear3 {
   build() {
     Column() {
       Tabs({ barPosition: BarPosition.End, controller: this.controller }) {
-        // 循环生成TabContent,标题由每个item的title决定
+      <em>  // 循环生成TabContent,标题由每个item的title决定</em>
         ForEach(this.tabList, (item: DotsBadgeDisappearItem3) => {
           TabContent() {
-            // 每个Tab的内容,可以根据需求替换
+         <em>   // 每个Tab的内容,可以根据需求替换</em>
             Text(item.content)
               .layoutWeight(1)
               .padding(16)
@@ -692,7 +692,7 @@ struct DotsBadgeDisappear3 {
       .barMode(BarMode.Fixed)
       .onChange((index: number) => {
         this.currentIndex = index;
-        // 立即执行清除操作
+    <em>    // 立即执行清除操作</em>
         this.clearTips(index);
       });
     }
@@ -715,11 +715,11 @@ struct DotsBadgeDisappear3 {
 import { ComponentContent } from '@kit.ArkUI';
 
 class UpdateNumberBadgeItem {
-  id: string; // 唯一标识符
-  targetIndex: number; // 每个页签所属的index
-  title: string; // tabBar标题
-  img: Resource; // icon图片仅供示例，开发者可以根据实际需求替换
-  badgeValue: number; // 角标值
+  id: string;<em> </em><em>// 唯一标识符</em>
+  targetIndex: number;<em> </em><em>// 每个页签所属的index</em>
+  title: string; <em>// tabBar标题</em>
+  img: Resource; <em>// icon图片仅供示例，开发者可以根据实际需求替换</em>
+  badgeValue: number; <em>// 角标值</em>
 
   constructor(id: string, targetIndex: number, title: string, img: Resource, badgeValue: number) {
     this.id = id;
@@ -730,7 +730,7 @@ class UpdateNumberBadgeItem {
   }
 }
 
-// 数字型
+<em>// </em><em>数字型</em>
 @Builder
 function numberBadge(params: UpdateNumberBadgeItem) {
   Column() {
@@ -763,16 +763,16 @@ function numberBadge(params: UpdateNumberBadgeItem) {
 struct UpdateNumberBadge1 {
   context: UIContext = this.getUIContext();
   controller: TabsController = new TabsController();
-  // 模拟后端返回的数据
+ <em> // 模拟后端返回的数据</em>
   private tabList: UpdateNumberBadgeItem[] = [
-  // 图片资源$r('app.media.house_fill')仅供示例，开发者可根据需求替换
+ <em> // 图片资源$r('app.media.house_fill')仅供示例，开发者可根据需求替换</em>
     new UpdateNumberBadgeItem('0', 0, '首页', $r('app.media.house_fill'), 0),
-    // 图片资源$r('app.media.rectangle_on_rectangle')仅供示例，开发者可根据需求替换
+  <em>  // 图片资源$r('app.media.rectangle_on_rectangle')仅供示例，开发者可根据需求替换</em>
     new UpdateNumberBadgeItem('1', 1, '相册', $r('app.media.rectangle_on_rectangle'), 0),
-    // 图片资源$r('app.media.ellipsis_message')仅供示例，开发者可根据需求替换
+  <em>  // 图片资源$r('app.media.ellipsis_message')仅供示例，开发者可根据需求替换</em>
     new UpdateNumberBadgeItem('2', 2, '消息', $r('app.media.ellipsis_message'), 1)
   ];
-  // 红点型
+ <em> // 红点型</em>
   numberTabBar1: ComponentContent<UpdateNumberBadgeItem> =
     new ComponentContent<UpdateNumberBadgeItem>(this.context, wrapBuilder<[UpdateNumberBadgeItem]>(numberBadge),
       this.tabList[0]);
@@ -782,10 +782,10 @@ struct UpdateNumberBadge1 {
   numberTabBar3: ComponentContent<UpdateNumberBadgeItem> =
     new ComponentContent<UpdateNumberBadgeItem>(this.context, wrapBuilder<[UpdateNumberBadgeItem]>(numberBadge),
       this.tabList[2]);
-  // 控制TabContent页签
+<em>  // 控制TabContent页签</em>
   @State currentIndex: number = 0;
 
-  // 模拟后端数据更新
+ <em> // 模拟后端数据更新</em>
   updateBadgeValue(action: string, item: UpdateNumberBadgeItem) {
     switch (action) {
       case 'reset':
@@ -807,7 +807,7 @@ struct UpdateNumberBadge1 {
       default:
         console.info('Succeeded in changing badgeValue.');
     }
-    // 更新WrappedBuilder对象封装的builder函数参数
+  <em>  // 更新WrappedBuilder对象封装的builder函数参数</em>
     this.numberTabBar3.update(this.tabList[2]);
   }
 
@@ -898,47 +898,47 @@ struct UpdateNumberBadge1 {
 
   
 ```text
-// 定义单个Tab的数据结构
+<em>// </em><em>定义单个Tab的数据结构</em>
 interface DotsCustomItem {
-  id: string; // 唯一标识符
-  targetIndex: number; // 每个页签所属的index
-  title: string; // tabBar标题
-  img: Resource; // icon图片仅供示例，开发者可以根据实际需求替换
-  content: string; // tabBar对应的内容（可根据实际需求扩展）
+  id: string;<em> </em><em>// 唯一标识符</em>
+  targetIndex: number;<em> </em><em>// 每个页签所属的index</em>
+  title: string; <em>// tabBar标题</em>
+  img: Resource; <em>// icon图片仅供示例，开发者可以根据实际需求替换</em>
+  content: string;<em> </em><em>// tabBar对应的内容（可根据实际需求扩展）</em>
 }
 
 @Entry
 @Component
 struct DotsCustom {
   controller: TabsController = new TabsController();
-  // 控制TabContent页签
+ <em> // 控制TabContent页签</em>
   @State currentIndex: number = 0;
-  // 模拟后端返回的数据
+ <em> // 模拟后端返回的数据</em>
   private tabList: DotsCustomItem[] = [
     {
       id: '0',
       targetIndex: 0,
       title: '首页',
       content: '首页内容',
-      img: $r('app.media.house_fill') // 图片资源$r('app.media.house_fill')仅供示例，开发者可根据需求替换
+      img: $r('app.media.house_fill') <em>// 图片资源$r('app.media.house_fill')仅供示例，开发者可根据需求替换</em>
     },
     {
       id: '1',
       targetIndex: 1,
       title: '消息',
       content: '消息内容',
-      img: $r('app.media.ellipsis_message') // 图片资源$r('app.media.ellipsis_message')仅供示例，开发者可根据需求替换
+      img: $r('app.media.ellipsis_message') <em>// 图片资源$r('app.media.ellipsis_message')仅供示例，开发者可根据需求替换</em>
     },
     {
       id: '2',
       targetIndex: 2,
       title: '相册',
       content: '相册内容',
-      img: $r('app.media.rectangle_on_rectangle') // 图片资源$r('app.media.rectangle_on_rectangle')仅供示例，开发者可根据需求替换
+      img: $r('app.media.rectangle_on_rectangle')<em> </em><em>// 图片资源$r('app.media.rectangle_on_rectangle')仅供示例，开发者可根据需求替换</em>
     }
   ];
 
-  // 红点型
+ <em> // 红点型</em>
   @Builder
   dotsBadge(item: DotsCustomItem) {
     Stack() {
@@ -954,7 +954,7 @@ struct DotsCustom {
       .height('100%')
       .justifyContent(FlexAlign.Center);
 
-      // 小红点
+    <em>  // 小红点</em>
       Text('')
         .textAlign(TextAlign.Center)
         .fontSize(12)
@@ -970,10 +970,10 @@ struct DotsCustom {
   build() {
     Column() {
       Tabs({ barPosition: BarPosition.End, controller: this.controller }) {
-        // 循环生成TabContent,标题由每个item的title决定
+      <em>  // 循环生成TabContent,标题由每个item的title决定</em>
         ForEach(this.tabList, (item: DotsCustomItem) => {
           TabContent() {
-            // 每个Tab的内容,可以根据需求替换
+         <em>   // 每个Tab的内容,可以根据需求替换</em>
             Text(item.content)
               .layoutWeight(1)
               .padding(16)

@@ -1,20 +1,21 @@
 # Class (Region)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-graphics-drawing-region
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-区域对象，用于描述所绘制图形的区域信息。
+区域对象，用于描述所绘制图形的区域信息。Region支持设置矩形区域和路径区域，提供区域间的合并运算、相交判断、平移、边界获取等操作。
 
 > [!NOTE]
 > 本模块首批接口从API version 11开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 本Class首批接口从API version 12开始支持。 本模块使用屏幕物理像素单位px。 本模块为单线程模型策略，需要调用方自行管理线程安全和上下文状态的切换。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { drawing } from '@kit.ArkGraphics2D';
@@ -22,9 +23,10 @@ import { drawing } from '@kit.ArkGraphics2D';
 
 
 
-#### constructor20+
+## constructor20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -58,9 +60,10 @@ class DrawingRenderNode extends RenderNode {
 
 
 
-#### constructor20+
+## constructor20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(region: Region)
 
@@ -69,6 +72,7 @@ constructor(region: Region)
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -104,9 +108,10 @@ class DrawingRenderNode extends RenderNode {
 
 
 
-#### constructor20+
+## constructor20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(left: number, top: number, right: number, bottom: number)
 
@@ -115,6 +120,7 @@ constructor(left: number, top: number, right: number, bottom: number)
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -151,24 +157,27 @@ class DrawingRenderNode extends RenderNode {
 
 
 
-#### isEqual20+
+## isEqual20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isEqual(other: Region): boolean
 
-用于判断其他区域是否与当前区域相等。
+判断指定区域是否与当前区域相等。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| other | Region | 是 | 区域对象。 |
+| other | Region | 是 | 用于与当前区域进行比较的其他区域对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -209,9 +218,10 @@ class DrawingRenderNode extends RenderNode {
 
 
 
-#### isComplex20+
+## isComplex20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isComplex(): boolean
 
@@ -220,6 +230,7 @@ isComplex(): boolean
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -245,14 +256,12 @@ class DrawingRenderNode extends RenderNode {
     pen.setStrokeWidth(10);
     canvas.attachPen(pen);
     let region = new drawing.Region();
-    let other = new drawing.Region();
     region.setRect(100, 100, 200, 200);
     region.op(new drawing.Region(220, 200, 280, 280), drawing.RegionOp.UNION);
     let flag: boolean = false;
     flag = region.isComplex();
     console.info('flag :', flag);
     canvas.drawRegion(region);
-    canvas.drawRegion(other);
     canvas.detachPen();
   }
 }
@@ -260,9 +269,10 @@ class DrawingRenderNode extends RenderNode {
 
 
 
-#### isEmpty20+
+## isEmpty20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isEmpty(): boolean
 
@@ -272,9 +282,10 @@ isEmpty(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 返回当前区域是否为空。true表示当前区域为空，false表示当前区域不为空。 |
+| boolean | 返回当前区域是否为空的结果。true表示当前区域为空，false表示当前区域不为空。 |
 
 
 **示例：**
@@ -309,9 +320,10 @@ class DrawingRenderNode extends RenderNode {
 
 
 
-#### getBounds20+
+## getBounds20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBounds(): common2D.Rect
 
@@ -320,6 +332,7 @@ getBounds(): common2D.Rect
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -337,9 +350,10 @@ let rect = region.getBounds();
 
 
 
-#### getBoundaryPath20+
+## getBoundaryPath20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBoundaryPath(): Path
 
@@ -348,6 +362,7 @@ getBoundaryPath(): Path
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -365,11 +380,12 @@ let path = region.getBoundaryPath();
 
 
 
-#### isPointContained12+
+## isPointContained12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-isPointContained(x: number, y: number) : boolean
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+isPointContained(x: number, y: number): boolean
 
 判断测试点是否在区域内。
 
@@ -377,13 +393,15 @@ isPointContained(x: number, y: number) : boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| x | number | 是 | 测试点的x轴坐标。该参数必须为整数。如果输入的数字包含小数部分，小数部分将被舍去。单位为物理像素px。 |
-| y | number | 是 | 测试点的y轴坐标。该参数必须为整数。如果输入的数字包含小数部分，小数部分将被舍去。单位为物理像素px。 |
+| x | number | 是 | 测试点的x轴坐标。该参数必须为整数。当输入的数字带小数时，小数部分会被舍去。单位为物理像素px。 |
+| y | number | 是 | 测试点的y轴坐标。该参数必须为整数。当输入的数字带小数时，小数部分会被舍去。单位为物理像素px。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -394,9 +412,10 @@ isPointContained(x: number, y: number) : boolean
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 
 **示例：**
@@ -431,9 +450,10 @@ class DrawingRenderNode extends RenderNode {
 
 
 
-#### offset20+
+## offset20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offset(dx: number, dy: number): void
 
@@ -443,10 +463,11 @@ offset(dx: number, dy: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| dx | number | 是 | x轴方向平移量，正数往x轴正方向平移，负数往x轴负方向平移，该参数为整数。单位为物理像素px。 |
-| dy | number | 是 | y轴方向平移量，正数往y轴正方向平移，负数往y轴负方向平移，该参数为整数。单位为物理像素px。 |
+| dx | number | 是 | x轴方向平移量，正数往x轴正方向平移，负数往x轴负方向平移，该参数必须为整数。当输入的数字带小数时，小数部分会被舍去。单位为物理像素px。 |
+| dy | number | 是 | y轴方向平移量，正数往y轴正方向平移，负数往y轴负方向平移，该参数必须为整数。当输入的数字带小数时，小数部分会被舍去。单位为物理像素px。 |
 
 
 **示例：**
@@ -479,11 +500,12 @@ class DrawingRenderNode extends RenderNode {
 
 
 
-#### isRegionContained12+
+## isRegionContained12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-isRegionContained(other: Region) : boolean
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+isRegionContained(other: Region): boolean
 
 判断其他区域是否在当前区域内。
 
@@ -491,12 +513,14 @@ isRegionContained(other: Region) : boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| other | Region | 是 | 区域对象。 |
+| other | Region | 是 | 用于判断是否在当前区域内的其他区域对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -507,9 +531,10 @@ isRegionContained(other: Region) : boolean
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 
 **示例：**
@@ -546,11 +571,12 @@ class DrawingRenderNode extends RenderNode {
 
 
 
-#### op12+
+## op12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-op(region: Region, regionOp: RegionOp) : boolean
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+op(region: Region, regionOp: RegionOp): boolean
 
 将当前区域与指定区域进行运算，并替换为运算结果。
 
@@ -558,26 +584,29 @@ op(region: Region, regionOp: RegionOp) : boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| region | Region | 是 | 区域对象。 |
-| regionOp | RegionOp | 是 | 区域合并操作类型。 |
+| region | Region | 是 | 用于与当前区域进行运算的指定区域对象。 |
+| regionOp | RegionOp | 是 | 区域运算操作类型。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 返回区域运算结果是否成功替换当前区域。true表示区域运算结果替换当前区域成功，false表示区域运算结果替换当前区域失败。 |
+| boolean | 返回区域运算结果是否成功替换当前区域的结果。true表示区域运算结果替换当前区域成功，false表示区域运算结果替换当前区域失败。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 
 **示例：**
@@ -613,40 +642,44 @@ class DrawingRenderNode extends RenderNode {
 
 
 
-#### quickReject12+
+## quickReject12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 quickReject(left: number, top: number, right: number, bottom: number) : boolean
 
-快速判断矩形和区域是否不相交，实际上比较的是矩形和区域的外接矩形是否不相交，因此会有误差。
+快速判断矩形和区域是否不相交。实际上比较的是矩形和区域的外接矩形是否不相交，因此当外接矩形相交但实际区域不相交时，会返回false（即误判为相交）。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| left | number | 是 | 矩形区域的左侧位置。该参数必须为整数。当输入的数字带小数时，小数部分会被舍去。单位为物理像素px。 |
-| top | number | 是 | 矩形区域的顶部位置。该参数必须为整数。当输入的数字带小数时，小数部分会被舍去。单位为物理像素px。 |
-| right | number | 是 | 矩形区域的右侧位置。该参数必须为整数。当输入的数字带小数时，小数部分会被舍去。单位为物理像素px。 |
-| bottom | number | 是 | 矩形区域的底部位置。该参数必须为整数。当输入的数字带小数时，小数部分会被舍去。单位为物理像素px。 |
+| left | number | 是 | 矩形区域的左侧位置（矩形左上角横坐标）。该参数必须为整数。当输入的数字带小数时，小数部分会被舍去。单位为物理像素px。 |
+| top | number | 是 | 矩形区域的顶部位置（矩形左上角纵坐标）。该参数必须为整数。当输入的数字带小数时，小数部分会被舍去。单位为物理像素px。 |
+| right | number | 是 | 矩形区域的右侧位置（矩形右下角横坐标）。该参数必须为整数。当输入的数字带小数时，小数部分会被舍去。单位为物理像素px。 |
+| bottom | number | 是 | 矩形区域的底部位置（矩形右下角纵坐标）。该参数必须为整数。当输入的数字带小数时，小数部分会被舍去。单位为物理像素px。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 返回矩形是否与区域不相交的结果。true表示矩形与区域不相交，false表示矩形与区域相交。 |
+| boolean | 返回矩形是否与区域不相交的结果。true表示矩形与区域不相交，false表示矩形与区域相交。当矩形与区域仅点或边相交时，也返回true。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 
 **示例：**
@@ -680,28 +713,31 @@ class DrawingRenderNode extends RenderNode {
 
 
 
-#### quickRejectRegion20+
+## quickRejectRegion20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 quickRejectRegion(region: Region): boolean
 
-判断当前区域是否与另一个区域不相交。实际上比较的是两个区域的外接矩形是否不相交，因此会有误差。
+判断当前区域是否与指定区域不相交。实际上比较的是两个区域的外接矩形是否不相交，因此当外接矩形相交但实际区域不相交时，会返回false（即误判为相交）。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| region | Region | 是 | 指定的区域对象。 |
+| region | Region | 是 | 用于判断是否与当前区域不相交的指定区域对象。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 返回是否当前区域与另外的区域不相交的结果。true表示不相交，false表示相交。仅点和边相交返回true。 |
+| boolean | 返回当前区域与另一个区域是否不相交的结果。true表示不相交，false表示相交。当两个区域仅点或边相交时，也返回true。 |
 
 
 **示例：**
@@ -736,11 +772,12 @@ class DrawingRenderNode extends RenderNode {
 
 
 
-#### setPath12+
+## setPath12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-setPath(path: Path, clip: Region) : boolean
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+setPath(path: Path, clip: Region): boolean
 
 设置一个与裁剪区域内路径轮廓相匹配的区域。
 
@@ -748,26 +785,29 @@ setPath(path: Path, clip: Region) : boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | Path | 是 | 路径对象。 |
-| clip | Region | 是 | 区域对象。 |
+| path | Path | 是 | 用于设置区域轮廓的路径对象。 |
+| clip | Region | 是 | 裁剪区域对象，用于限定路径轮廓的有效范围，仅路径在裁剪区域内的部分会被用于设置区域。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 返回设置一个与裁剪区域内路径轮廓相匹配的区域是否成功。true表示设置成功，false表示设置失败。 |
+| boolean | 返回设置区域是否成功的结果。true表示设置成功，false表示设置失败。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 
 **示例：**
@@ -803,21 +843,23 @@ class DrawingRenderNode extends RenderNode {
 
 
 
-#### setRegion20+
+## setRegion20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setRegion(region: Region): void
 
-设置当前区域为另一块区域。
+设置当前区域为指定区域。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| region | Region | 是 | 用于赋值的区域。 |
+| region | Region | 是 | 用于设置当前区域内容的源区域对象。 |
 
 
 **示例：**
@@ -850,9 +892,10 @@ class DrawingRenderNode extends RenderNode {
 
 
 
-#### setEmpty20+
+## setEmpty20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setEmpty(): void
 
@@ -881,11 +924,12 @@ class DrawingRenderNode extends RenderNode {
 
 
 
-#### setRect12+
+## setRect12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-setRect(left: number, top: number, right: number, bottom: number) : boolean
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+setRect(left: number, top: number, right: number, bottom: number): boolean
 
 设置一个矩形区域。
 
@@ -893,15 +937,17 @@ setRect(left: number, top: number, right: number, bottom: number) : boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| left | number | 是 | 矩形区域的左侧位置。该参数必须为整数。当输入的数字带小数时，小数部分会被舍去。单位为物理像素px。 |
-| top | number | 是 | 矩形区域的顶部位置。该参数必须为整数。当输入的数字带小数时，小数部分会被舍去。单位为物理像素px。 |
-| right | number | 是 | 矩形区域的右侧位置。该参数必须为整数。当输入的数字带小数时，小数部分会被舍去。单位为物理像素px。 |
-| bottom | number | 是 | 矩形区域的底部位置。该参数必须为整数。当输入的数字带小数时，小数部分会被舍去。单位为物理像素px。 |
+| left | number | 是 | 矩形区域的左侧位置（矩形左上角横坐标）。该参数必须为整数。当输入的数字带小数时，小数部分会被舍去。单位为物理像素px。 |
+| top | number | 是 | 矩形区域的顶部位置（矩形左上角纵坐标）。该参数必须为整数。当输入的数字带小数时，小数部分会被舍去。单位为物理像素px。 |
+| right | number | 是 | 矩形区域的右侧位置（矩形右下角横坐标）。该参数必须为整数。当输入的数字带小数时，小数部分会被舍去。单位为物理像素px。 |
+| bottom | number | 是 | 矩形区域的底部位置（矩形右下角纵坐标）。该参数必须为整数。当输入的数字带小数时，小数部分会被舍去。单位为物理像素px。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -912,9 +958,10 @@ setRect(left: number, top: number, right: number, bottom: number) : boolean
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 
 **示例：**
@@ -947,9 +994,10 @@ class DrawingRenderNode extends RenderNode {
 
 
 
-#### isRect23+
+## isRect23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isRect(): boolean
 
@@ -960,6 +1008,7 @@ isRect(): boolean
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1003,9 +1052,10 @@ class DrawingRenderNode extends RenderNode {
 
 
 
-#### quickContains23+
+## quickContains23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 quickContains(left: number, top: number, right: number, bottom: number): boolean
 
@@ -1017,6 +1067,7 @@ quickContains(left: number, top: number, right: number, bottom: number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | left | number | 是 | 矩形区域的左侧位置。该参数必须为整数。当输入的数字带小数时，小数部分会被舍去。单位为物理像素px。 |
@@ -1027,9 +1078,10 @@ quickContains(left: number, top: number, right: number, bottom: number): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 返回当前区域是否等同于单个矩形并且包含指定矩形的结果。true表示当前区域等同于单个矩形并且包含指定矩形，false表示当前区域不等同于单个矩形或不包含指定矩形。 |
+| boolean | 返回判断结果。true表示当前区域等同于单个矩形且包含指定矩形，false表示当前区域不等同于单个矩形或不包含指定矩形。 |
 
 
 **示例：**

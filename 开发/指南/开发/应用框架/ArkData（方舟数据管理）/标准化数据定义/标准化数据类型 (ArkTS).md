@@ -1,10 +1,10 @@
 # 标准化数据类型 (ArkTS)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uniform-data-type-descriptors
 
-#### 场景介绍
+## 场景介绍
 
 标准化数据类型（Uniform Type Descriptor，简称UTD）旨在解决数据类型描述的歧义问题。例如，JPEG图片可能被描述为image/jpeg、.jpg、.jpeg或image/picture等不同形式，导致跨系统传输时，接收方需依赖复杂的兼容逻辑（如扩展名匹配、MIME类型检测）才能识别数据类型，甚至可能因描述不一致而失败。UTD通过统一类型标识，确保数据能被准确、高效地解析和处理。
 
@@ -14,11 +14,11 @@
 
 
 
-#### 标准化数据类型的设计和分类原则
+## 标准化数据类型的设计和分类原则
 
 
 
-#### 标准化数据类型按层级结构构建
+### 标准化数据类型按层级结构构建
 
 基于MIME Type或文件后缀名进行类型区分，存在另一个不足：即扁平化的数据类型定义。
 
@@ -28,7 +28,7 @@
 
 
 
-#### 标准化数据类型的分类原则
+### 标准化数据类型的分类原则
 
 UTD中定义的标准化数据类型在设计原则上按物理和逻辑分为两类。HarmonyOS中预置了常用的标准化数据类型，详见[UTD预置列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uniform-data-type-list)。
 
@@ -54,7 +54,7 @@ UTD中定义的标准化数据类型在设计原则上按物理和逻辑分为�
 
 
 
-#### 标准化数据类型的定义
+## 标准化数据类型的定义
 
 标准化数据类型包含了标准化数据类型的标识ID、归属类型关系、简要描述等信息，具体可见[TypeDescriptor属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-data-uniformtypedescriptor#属性)，每个类型定义具体包含以下内容：
 
@@ -69,13 +69,13 @@ UTD中定义的标准化数据类型在设计原则上按物理和逻辑分为�
 
 
 
-#### 预置数据类型
+## 预置数据类型
 
 基于常用的数据类型，预先定义了一部分标准数据类型描述符，即预置数据类型。如用于描述音频文件的“general.audio”，描述视频文件的“general.video”，更多预置数据类型参考[UTD预置列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uniform-data-type-list)。
 
 
 
-#### 应用自定义数据类型
+## 应用自定义数据类型
 
 由于预置标准数据类型无法穷举所有数据类型，在业务跨应用、跨设备交互过程中，会涉及到一些应用独有的数据类型，因此支持应用声明自定义数据类型。
 
@@ -85,7 +85,7 @@ UTD中定义的标准化数据类型在设计原则上按物理和逻辑分为�
 
 
 
-#### 工作原理
+### 工作原理
 
 基于标准类型的层级结构，业务声明自己支持的数据类型标识符时，需要声明该类型标识符的层级逻辑，例如业务自定义图片类型UTD标识符“com.company.x-image”，并归属到general.image类中。UTD会检验自定义类型标识符，确保归属关系中不出现环状结构。
 
@@ -93,7 +93,7 @@ UTD中定义的标准化数据类型在设计原则上按物理和逻辑分为�
 
 
 
-#### 约束限制
+### 约束限制
 
 utd.json5文件需要在类型为entry的HAP中配置。
 
@@ -102,14 +102,14 @@ utd.json5文件需要在类型为entry的HAP中配置。
  - **TypeId：** 定义标准化数据类型的ID，该ID具有唯一性，由应用bundleName + 具体类型名组成，不可缺省，允许包含数字、大小写字母、-和.。
  - **BelongingToTypes：** 定义标准化数据类型的归属关系，即该标准化数据类型归属于哪个更高层级的类型，所属类型可以为多个，但是必须为已存在的数据类型（标准化数据类型预置类型或其他新增自定义数据类型），不能为应用自定义类型本身，不能为空，且与现有标准化数据类型、其他新增自定义数据类型不能形成环形依赖结构。
  - **FilenameExtensions：** 应用自定义标准化数据类型所关联的文件后缀。可以缺省；可以为多个，每个后缀为以.开头且长度不超过127的字符串。
- - **MIMETypes：** 应用自定义标准化数据类型所关联的web消息数据类型。可以缺省；可以为多个，每个类型为长度不超过127的字符串。
+ - **MIMETypes：** 应用自定义标准化数据类型所关联的多用途互联网邮件扩展类型。可以缺省；可以为多个，每个类型为长度不超过127的字符串。
  - **Description：** 应用自定义标准化数据类型的简要说明。可以缺省；填写时，长度为不超过255的字符串。
  - **ReferenceURL：** 应用自定义标准化数据类型的参考链接URL，用于描述类型的详细信息。可以缺省；填写时，长度为不超过255的字符串。
 
 
 
 
-#### 开发步骤
+### 开发步骤
 
 下面以新增媒体类文件类型场景为例，说明如何自定义UTD标准化数据类型。
 1. 当前应用在entry\src\main\resources\rawfile\arkdata\utd\目录下新增utd.json5文件。
@@ -188,9 +188,10 @@ utd.json5文件需要在类型为entry的HAP中配置。
 
 
 
-#### 接口说明
+## 接口说明
 
 以下是UTD常用接口说明，对于预置数据类型和应用自定义数据类型同样适用，更多接口和详细说明，请见[ @ohos.data.uniformTypeDescriptor (标准化数据定义与描述)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-data-uniformtypedescriptor)。
+
 
 | 接口名称 | 描述 |
 | --- | --- |
@@ -204,7 +205,7 @@ utd.json5文件需要在类型为entry的HAP中配置。
 
 
 
-#### 如何查询媒体类文件归属类型
+## 如何查询媒体类文件归属类型
 
 下面以媒体类文件的归属类型查询场景为例，说明如何使用UTD。
 1. 导入uniformTypeDescriptor模块。
@@ -260,11 +261,11 @@ function uniformTypeDescriptorTest() {
     // 5.将查询到的标准数据类型“general.mp3”与表示音频数据的已知标准数据类型“general.audio”做比较查询，确认是否存在归属关系。
     if (typeObj1 != null) {
       let ret = typeObj1.belongsTo('general.audio');
-      hilog.info(0xFF00, '[Sample_Udmf]', `belongsTo, ret: + ${ret}`);
+      hilog.info(0xFF00, '[Sample_Udmf]', `belongsTo, ret: ${ret}`);
       let mediaTypeObj = uniformTypeDescriptor.getTypeDescriptor('general.media');
       // 确认是否存在归属关系
       ret = mediaTypeObj.isHigherLevelType('general.audio');
-      hilog.info(0xFF00, '[Sample_Udmf]', `isHigherLevelType, ret: + ${ret}`);
+      hilog.info(0xFF00, '[Sample_Udmf]', `isHigherLevelType, ret: ${ret}`);
     }
   } catch (err) {
     hilog.error(0xFF00, '[Sample_Udmf]', `err message: ${err.message}, err code: ${err.code}`);
@@ -275,7 +276,7 @@ function uniformTypeDescriptorTest() {
 
 
 
-#### 如何通过文件后缀获取对应的MIMEType列表
+## 如何通过文件后缀获取对应的MIMEType列表
 
 下面以通过“.ts”文件后缀获取对应的MIMEType列表为例，说明如何通过文件后缀获取对应的MIMEType列表。
 1. 导入uniformTypeDescriptor模块。
@@ -310,7 +311,7 @@ try {
 
 
 
-#### 如何通过MIMEType获取对应的后缀列表
+## 如何通过MIMEType获取对应的后缀列表
 
 下面以通过“text/plain”MIMEType获取对应文件后缀列表为例，说明如何通过MIMEType获取对应的后缀列表。
 1. 导入uniformTypeDescriptor模块。
@@ -323,7 +324,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 ```
 
 2. 针对“text/plain”MIMEType，使用getUniformDataTypesByMIMEType()方法获取对应UTD数据类型。
-3. 针对UTD数据类型，使用getTypeDescriptor()方法查询对应的MIMEType列表。
+3. 根据UTD数据类型，使用getTypeDescriptor()方法查询对应的文件后缀列表。
 
   
 ```ArkTS

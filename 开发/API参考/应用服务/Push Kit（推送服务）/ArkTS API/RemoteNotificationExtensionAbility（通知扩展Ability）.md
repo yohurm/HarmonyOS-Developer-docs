@@ -1,9 +1,9 @@
 # RemoteNotificationExtensionAbility（通知扩展Ability）
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-remote-notification-extension-ability
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用户收到应用发送的语音播报消息（如订单、物流类语音提醒）时，若应用进程不在前台，Push Kit将拉起应用子进程并将消息内容传递到该进程。开发者可在该进程中完成业务处理（如语音播报），并返回自定义消息内容，Push Kit将根据该内容展示通知。开发者需在10秒内返回自定义消息内容，否则将默认展示发送消息时携带的原始内容。
  
@@ -25,17 +25,19 @@ RemoteNotificationExtensionAbility为通知扩展Ability，提供获取消息数
 **起始版本：** 4.1.0(11)
   
 
-#### 约束限制
+## 约束限制
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 为保障系统安全性和稳定性，防止RemoteNotificationExtensionAbility滥用系统资源，系统对其能力进行管控， 不支持部分模块的引用，详情请参考[附录](#附录)。
  
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { RemoteNotificationExtensionAbility } from '@kit.PushKit';
@@ -43,9 +45,10 @@ import { RemoteNotificationExtensionAbility } from '@kit.PushKit';
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 **模型约束：** 属性仅可在Stage模型下使用。
  
@@ -55,6 +58,7 @@ import { RemoteNotificationExtensionAbility } from '@kit.PushKit';
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | context | RemoteNotificationExtensionContext | 否 | 否 | RemoteNotificationExtensionAbility的上下文环境，继承自ExtensionContext。 |
@@ -62,9 +66,10 @@ import { RemoteNotificationExtensionAbility } from '@kit.PushKit';
  
   
 
-#### onReceiveMessage
+## onReceiveMessage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onReceiveMessage(remoteNotificationInfo: pushCommon.RemoteNotificationInfo): Promise<pushCommon.RemoteNotificationContent>
  
@@ -80,6 +85,7 @@ onReceiveMessage(remoteNotificationInfo: pushCommon.RemoteNotificationInfo): Pro
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | remoteNotificationInfo | pushCommon.RemoteNotificationInfo | 是 | 语音播报消息数据。 |
@@ -87,6 +93,7 @@ onReceiveMessage(remoteNotificationInfo: pushCommon.RemoteNotificationInfo): Pro
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<pushCommon.RemoteNotificationContent> | Promise对象，返回替换后的通知内容。 |
@@ -143,9 +150,10 @@ export default class RemoteNotificationExtAbility extends RemoteNotificationExte
  
   
 
-#### onDestroy
+## onDestroy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDestroy(): void
  
@@ -193,12 +201,14 @@ export default class RemoteNotificationExtAbility extends RemoteNotificationExte
  
   
 
-#### 附录
+## 附录
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 RemoteNotificationExtensionAbility不支持以下模块的引用。
   
+
 | Kit | 模块 |
 | --- | --- |
 | Notification Kit | @ohos.notification (Notification模块) @ohos.notificationManager (NotificationManager模块) |

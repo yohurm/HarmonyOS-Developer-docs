@@ -1,9 +1,9 @@
 # @ohos.data.commonType (数据通用类型)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-data-commontype
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 数据通用类型（commonType）是数据管理中通用的数据类型，提供了资产状态枚举、资产信息和键值对存储等基础数据类型，用于支持分布式数据管理场景下的数据统一表示和传递。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { commonType } from '@kit.ArkData';
@@ -22,13 +23,15 @@ import { commonType } from '@kit.ArkData';
 
 
 
-#### AssetStatus
+## AssetStatus
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述资产附件的状态枚举。请使用枚举名称而非枚举值。
 
 **系统能力：** SystemCapability.DistributedDataManager.CommonType
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -42,13 +45,15 @@ import { commonType } from '@kit.ArkData';
 
 
 
-#### Asset
+## Asset
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 记录资产附件（文件、图片、视频等类型文件）的相关信息，相关示例见[在跨端迁移中使用分布式数据对象迁移数据](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-sync-of-distributed-data-object#在跨端迁移中使用分布式数据对象迁移数据)的示例代码。
 
 **系统能力：** SystemCapability.DistributedDataManager.CommonType
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -63,15 +68,17 @@ import { commonType } from '@kit.ArkData';
 
 
 
-#### Assets
+## Assets
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Assets = Array&lt;Asset&gt;
 
 表示[Asset](#asset)类型的数组。
 
 **系统能力：** SystemCapability.DistributedDataManager.CommonType
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -80,15 +87,17 @@ type Assets = Array&lt;Asset&gt;
 
 
 
-#### ValueType
+## ValueType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ValueType = null | number | string | boolean | Uint8Array | Asset | Assets
 
 表示允许的数据字段类型，接口参数具体类型根据其功能而定。
 
 **系统能力：** SystemCapability.DistributedDataManager.CommonType
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -103,15 +112,17 @@ type ValueType = null | number | string | boolean | Uint8Array | Asset | Assets
 
 
 
-#### ValuesBucket
+## ValuesBucket
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ValuesBucket = Record<string, ValueType>
 
 用于存储键值对的类型。该类型不是并发安全的，如果应用中存在多线程同时操作该类派生出的实例，注意加锁保护。
 
 **系统能力：** SystemCapability.DistributedDataManager.CommonType
+
 
 | 类型 | 说明 |
 | --- | --- |

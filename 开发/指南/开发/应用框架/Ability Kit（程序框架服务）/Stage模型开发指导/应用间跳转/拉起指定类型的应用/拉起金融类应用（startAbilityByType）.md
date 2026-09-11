@@ -1,15 +1,16 @@
 # 拉起金融类应用（startAbilityByType）
 
-更新时间：2026-03-09 02:50:43
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/start-finance-apps
 
 本章节介绍如何拉起金融类应用扩展面板。
 
 
-#### 金融类应用扩展面板参数说明
+## 金融类应用扩展面板参数说明
 
 startAbilityByType接口中type字段为finance，对应的wantParam参数：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -19,7 +20,7 @@ startAbilityByType接口中type字段为finance，对应的wantParam参数：
 
 
 
-#### 拉起方开发步骤
+## 拉起方开发步骤
 1. 导入相关模块。
 
   
@@ -81,15 +82,18 @@ struct Index {
 
 
 
-#### 目标方开发步骤
+## 目标方开发步骤
 1. 在module.json5中配置[uris](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#skills标签)，步骤如下：
 
   
  - 设置linkFeature属性以声明当前应用支持的特性功能，从而系统可以从设备已安装应用中找到当前支持该特性的应用，取值范围如下：
 
 | 取值 | 含义 |
+
 | --- | --- |
+
 | Transfer | 声明应用支持转账汇款功能 |
+
 | CreditCardRepayment | 声明应用支持信用卡还款功能 |
 
 2. 设置scheme、host、port、path/pathStartWith属性，与Want中URI相匹配，以便区分不同功能。
@@ -133,7 +137,9 @@ UIAbility.onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void
   在参数**want.parameters**中会携带Caller方传入的参数，如下表所示：
 
 | 参数名 | 类型 | 必填 | 说明 |
+
 | --- | --- | --- | --- |
+
 | bankCardNo | string | 否 | 银行卡卡号 |
 
   应用可根据[linkFeature](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#skills标签)中定义的特性功能，比如转账汇款和信用卡还款，结合接收到的uri开发不同的样式页面。

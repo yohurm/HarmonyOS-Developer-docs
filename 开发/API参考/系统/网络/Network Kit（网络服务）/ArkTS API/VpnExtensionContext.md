@@ -1,9 +1,9 @@
 # VpnExtensionContext
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-vpnextensioncontext
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 VpnExtensionContext是VpnExtensionAbility的上下文环境，继承自[ExtensionContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-extensioncontext)。
 
@@ -11,93 +11,3 @@ VpnExtensionContext可直接作为VpnExtension的上下文环境，提供允许�
 
 > [!NOTE]
 > 本模块首批接口从API version 11开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 本模块接口仅可在Stage模型下使用。
-
-
-
-#### 导入模块
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-```text
-import { VpnExtensionAbility } from '@kit.NetworkKit';
-```
-
-
-
-#### 使用说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-通过VpnExtensionAbility子类实例来获取。
-
-```json
-import { VpnExtensionAbility, vpnExtension } from '@kit.NetworkKit';
-import { Want } from '@kit.AbilityKit';
-
-export default class MyVpnExtAbility extends VpnExtensionAbility {
-  private vpnServerIp: string = 'xxx.xxx.x.x';
-  private tunIp: string = 'x.x.x.x';
-  private blockedAppName: string = 'xxxx';
-
-  onCreate(want: Want) {
-    let VpnConnection: vpnExtension.VpnConnection = vpnExtension.createVpnConnection(this.context);
-    console.info("vpn createVpnConnection: " + JSON.stringify(VpnConnection));
-  }
-}
-```
-
-
-
-#### VpnExtensionAbility
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-三方VPN拓展能力。
-
-**系统能力**：SystemCapability.Ability.AbilityRuntime.Core
-
-**模型约束**：此接口仅可在Stage模型下使用。
-
-| 名称 | 类型 | 只读 | 可选 | 说明 |
-| --- | --- | --- | --- | --- |
-| context | VpnExtensionContext | 否 | 否 | 指定context。 |
-
-
-
-
-#### onCreate
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-onCreate(want: Want): void
-
-拓展VPN启动初始化的时候进行回调。
-
-> [!NOTE]
-> 建议配对调用 onDestroy 监听拓展VPN的销毁，及时执行资源清理等操作。
-
-
-**系统能力**：SystemCapability.Ability.AbilityRuntime.Core
-
-**模型约束**：此接口仅可在Stage模型下使用。
-
-**参数：**
-
-| 参数名 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
-| want | Want | 是 | 指示要启动的信息。 |
-
-
-
-
-#### onDestroy
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-onDestroy(): void
-
-拓展VPN销毁之前进行回调。
-
-**系统能力**：SystemCapability.Ability.AbilityRuntime.Core
-
-**模型约束**：此接口仅可在Stage模型下使用。

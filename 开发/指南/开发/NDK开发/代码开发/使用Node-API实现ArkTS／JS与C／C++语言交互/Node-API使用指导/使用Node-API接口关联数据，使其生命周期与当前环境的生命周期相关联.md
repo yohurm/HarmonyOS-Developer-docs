@@ -1,25 +1,26 @@
 # 使用Node-API接口关联数据，使其生命周期与当前环境的生命周期相关联
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-about-environmental-life-cycle
 
-#### 简介
+## 简介
 
 在Node-API模块中，可以使用Node-API接口将特定数据与当前环境相关联，并在需要时检索该数据。
  
   
 
-#### 基本概念
+## 基本概念
 
 在Node-API中，关联数据指的是将自定义的C++数据结构与当前环境的生命周期绑定，这意味着只要当前运行环境存在，关联数据就会保持有效。
  
   
 
-#### 场景和功能介绍
+## 场景和功能介绍
 
 以下接口可在Node-API模块中更方便地管理对象实例所需的状态信息、引用计数或其他自定义数据，它们的使用场景如下：
   
+
 | 接口 | 描述 |
 | --- | --- |
 | napi_set_instance_data | 绑定与当前运行的环境相关联的数据项。 |
@@ -28,13 +29,13 @@
  
   
 
-#### 使用示例
+## 使用示例
 
 Node-API接口开发流程参考[使用Node-API实现跨语言交互开发流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-process)，本文仅对接口对应C++及ArkTS相关代码进行展示。
  
   
 
-#### napi_set_instance_data
+### napi_set_instance_data
 
 将需要绑定的数据与当前运行的环境相关联。
  
@@ -99,7 +100,7 @@ hilog.info(0x0000, 'testTag', 'Test Node-API napi_set_instance_data:%{public}s',
  
   
 
-#### napi_get_instance_data
+### napi_get_instance_data
 
 检索与当前运行的环境相关联的数据项。
  
@@ -139,7 +140,7 @@ ArkTS侧示例代码
 let data = 5;
 testNapi.setInstanceData(data);
 let value = testNapi.getInstanceData();
-hilog.info(0x0000, 'testTag', 'Test Node-API napi_set_instance_data:%{public}d', value);
+hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_instance_data:%{public}d', value);
 ```
  
 以上代码如果要在native cpp中打印日志，需在CMakeLists.txt文件中添加以下配置信息（并添加头文件：#include "hilog/log.h"）：
@@ -153,6 +154,6 @@ target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so)
  
   
 
-#### 注意事项
+## 注意事项
 1. 当在同一个运行时环境调用第二次napi_set_instance_data时，第一次调用时注册的FinalizeCallback回调将会被执行，原先的instance_data数据已经释放并失效。
 2. 运行时环境销毁过程中会执行通过napi_set_instance_data接口注册的FinalizeCallback回调，此时运行时环境已不再有效，应避免在该回调中访问ArkTS对象，如napi_ref、napi_value等。

@@ -1,27 +1,27 @@
 # YUV拍照(ArkTS)
 
-更新时间：2026-06-03 01:38:22
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-yuv-shooting
 
 从API version 23开始，相机框架提供YUV格式图片拍照能力。与普通拍照相比，YUV拍照获取到的是未经过编码的图像数据，完整保留了传感器捕获的原始亮度和色度信息，适用于视频编码或专业处理。同时，拍摄过程会产生更高的能耗开销，保存会占用更多的存储空间。
 
 
-#### 开发步骤
+## 开发步骤
 
-详细的相机功能API说明请参考Camera模块描述[OH_Camera](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera)。
+详细的相机功能API说明请参考Camera模块描述[Camera](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera)。
 1. 导入依赖模块。
 
   获取拍照输出的数据需要用到系统提供的image、dataSharePredicates、photoAccessHelper接口能力，方法如下。
 
   
 ```text
-import { BusinessError } from '@kit.BasicServicesKit';
 import { camera } from '@kit.CameraKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { photoAccessHelper } from '@kit.MediaLibraryKit';
 import { dataSharePredicates } from '@kit.ArkData';
-import { fileIo } from '@kit.CoreFileKit';
 import { image } from '@kit.ImageKit';
-import { photoAccessHelper} from '@kit.MediaLibraryKit';
+import { fileIo } from '@kit.CoreFileKit';
 ```
 
 2. 获取相机设备完整输出能力。
@@ -30,13 +30,15 @@ import { photoAccessHelper} from '@kit.MediaLibraryKit';
 
   
 ```text
-function getFullOutputCapability(cameraManager: camera.CameraManager, cameraDevice: camera.CameraDevice, sceneMode: camera.SceneMode): camera.CameraOutputCapability | undefined {
-  let cameraOutputCapability = cameraManager.getSupportedFullOutputCapability(cameraDevice, sceneMode);
-  if (!cameraOutputCapability) {
-    console.error("cameraManager.getSupportedFullOutputCapability error");
-    return undefined;
-  }
-  return cameraOutputCapability;
+getFullOutputCapability(cameraManager: camera.CameraManager, cameraDevice: camera.CameraDevice,
+    sceneMode: camera.SceneMode): camera.CameraOutputCapability | undefined {
+    let cameraOutputCapability = cameraManager.getSupportedFullOutputCapability(cameraDevice, sceneMode);
+    if (!cameraOutputCapability) {
+      console.error('cameraManager.getSupportedFullOutputCapability error');
+      return undefined;
+    }
+    // ...
+    return cameraOutputCapability;
 }
 ```
 
@@ -65,7 +67,7 @@ function getPhotoOutput(cameraManager: camera.CameraManager, photoProfile: camer
 
 4. 设置拍照输出流的回调。
 
-  设置单段式拍照[onCapturePhotoAvailable](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-photooutput#oncapturephotoavailable23)或分段式拍照[on('photoAssetAvailable')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-photooutput#onphotoassetavailable12)的回调，并将拍照的pixelMap数据保存为图片。如果应用需要快速得到回图，推荐使用分段式拍照回调。
+  设置单段式拍照[onCapturePhotoAvailable](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-photooutput#oncapturephotoavailable23)或分段式拍照[on('photoAssetAvailable')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-photooutput#onphotoassetavailable12)的回调，并将拍照的pixelMap数据保存为图片。如果应用需要快速得到返回的图像，推荐使用分段式拍照回调。
 
   Context获取方式请参考：[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
 
@@ -107,32 +109,32 @@ function getPhotoOutput(cameraManager: camera.CameraManager, photoProfile: camer
   通过geoLocationManager中的[geoLocationManager.getCurrentLocation](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-geolocationmanager#geolocationmanagergetcurrentlocation)方法，可以获取图片地理位置信息。使用方法可参考[capture](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-photooutput#capture-3)示例。
 
   
-```text
-function capture(captureLocation: camera.Location, photoOutput: camera.PhotoOutput): void {
+```json
+public async capture(isFront: boolean) {
+  Logger.info(TAG_LOG, 'capture start.');
+  const degree = await this.getPhotoDegree();
+  let rotation = this.getPhotoRotation(this.output!, degree);
+  rotation = camera.ImageRotation.ROTATION_0;
+  Logger.info(TAG_LOG, `rotation: ${rotation}.`);
   let settings: camera.PhotoCaptureSetting = {
-    quality: camera.QualityLevel.QUALITY_LEVEL_HIGH,  // 设置图片质量为高质量。
-    rotation: camera.ImageRotation.ROTATION_0,  // 设置图片旋转角度0度。
-    location: captureLocation,  // 设置图片地理位置。
-    mirror: false  // 设置镜像使能开关（默认关）。
+    quality: camera.QualityLevel.QUALITY_LEVEL_HIGH,  // 设置图片质量。
+    rotation,  // 设置图片旋转角度。
+    mirror: isFront  // 设置镜像使能开关。
   };
-  try {
-    photoOutput.capture(settings, (err: BusinessError) => {
-      if (err) {
-        console.error("Failed to capture the photo. error: ${err}");
-        return;
-      }
-      console.info("Callback invoked to indicate the photo capture request success.");
-    });
-  } catch (error) {
-    console.error("capture call failed. error: ${error}");
-  }
+  this.output?.capture(settings, (err: BusinessError) => {
+    if (err) {
+      Logger.error(TAG_LOG, `Failed to capture the photo. error: ${JSON.stringify(err)}`);
+      return;
+    }
+    Logger.info(TAG_LOG, 'Callback invoked to indicate the photo capture request success.');
+  });
 }
 ```
 
 
   
 
-  #### 状态监听
+  ## 状态监听
 
   在相机应用开发过程中，可以随时监听拍照输出流状态，包括拍照流开始、拍照帧的开始与结束、拍摄下一张图片是否就绪、拍照输出流的错误等。
 
@@ -141,12 +143,12 @@ function capture(captureLocation: camera.Location, photoOutput: camera.PhotoOutp
 
   
 ```text
-function onPhotoOutputCaptureStart(photoOutput: camera.PhotoOutput): void {
+onPhotoOutputCaptureStart(photoOutput: camera.PhotoOutput): void {
   photoOutput.on('captureStartWithInfo', (err: BusinessError, captureStartInfo: camera.CaptureStartInfo) => {
     if (err !== undefined && err.code !== 0) {
       return;
     }
-    console.info("photo capture started, captureId : ${captureStartInfo.captureId}");
+    console.info(`photo capture started, captureId : ${captureStartInfo.captureId}`);
   });
 }
 ```
@@ -155,13 +157,13 @@ function onPhotoOutputCaptureStart(photoOutput: camera.PhotoOutput): void {
 
   
 ```text
-function onPhotoOutputCaptureEnd(photoOutput: camera.PhotoOutput): void {
+onPhotoOutputCaptureEnd(photoOutput: camera.PhotoOutput): void {
   photoOutput.on('captureEnd', (err: BusinessError, captureEndInfo: camera.CaptureEndInfo) => {
     if (err !== undefined && err.code !== 0) {
       return;
     }
-    console.info("photo capture end, captureId : ${captureEndInfo.captureId}");
-    console.info("frameCount : ${captureEndInfo.frameCount}");
+    console.info(`photo capture end, captureId : ${captureEndInfo.captureId}`);
+    console.info(`frameCount : ${captureEndInfo.frameCount}`);
   });
 }
 ```
@@ -170,13 +172,22 @@ function onPhotoOutputCaptureEnd(photoOutput: camera.PhotoOutput): void {
 
   
 ```text
-function onPhotoOutputCaptureReady(photoOutput: camera.PhotoOutput): void {
-  photoOutput.on('captureReady', (err: BusinessError) => {
-    if (err !== undefined && err.code !== 0) {
-      return;
-    }
-    console.info("photo capture ready");
-  });
+captureReadyCallback(err: BusinessError): void {
+  if (err !== undefined && err.code !== 0) {
+    Logger.error(TAG_LOG, `Callback Error, errorCode: ${err.code}`);
+    return;
+  }
+  Logger.info(TAG_LOG, `photo capture ready`);
+}
+
+registerPhotoOutputCaptureReady(photoOutput: camera.PhotoOutput): void {
+  Logger.info(TAG_LOG, `register PhotoOutput Capture Ready...`);
+  photoOutput.on('captureReady', this.captureReadyCallback);
+}
+
+unregisterPhotoOutputCaptureReady(photoOutput: camera.PhotoOutput): void {
+  Logger.info(TAG_LOG, `unregister PhotoOutput Capture Ready...`);
+  photoOutput.off('captureReady');
 }
 ```
 
@@ -184,9 +195,9 @@ function onPhotoOutputCaptureReady(photoOutput: camera.PhotoOutput): void {
 
   
 ```text
-function onPhotoOutputError(photoOutput: camera.PhotoOutput): void {
+onPhotoOutputError(photoOutput: camera.PhotoOutput): void {
   photoOutput.on('error', (error: BusinessError) => {
-    console.error("Photo output error code: ${error.code}");
+    console.error(`Photo output error code: ${error.code}`);
   });
 }
 ```

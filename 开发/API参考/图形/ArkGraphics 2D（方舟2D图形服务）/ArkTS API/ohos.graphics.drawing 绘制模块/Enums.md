@@ -1,24 +1,25 @@
 # Enums
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-graphics-drawing-e
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 本模块首批接口从API version 11开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 本模块使用屏幕物理像素单位px。 本模块为单线程模型策略，需要调用方自行管理线程安全和上下文状态的切换。
 
   
 
-#### BlendMode
+## BlendMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 混合模式枚举。混合模式会将两种颜色（源色、目标色）以特定的方式混合生成一种新的颜色，通常用于叠加、滤镜和遮罩等图形操作场景。混合操作会分别作用于红、绿、蓝三个颜色通道，采用相同的混合逻辑，而透明度（Alpha通道）则根据各模式的定义另行处理。
  
 为简洁起见，我们使用以下缩写：
  
-s : source 源的缩写。 d : destination 目标的缩写。 sa : source alpha 源透明度的缩写。 da : destination alpha 目标透明度的缩写。
+s : source 源的缩写；d : destination 目标的缩写；sa : source alpha 源透明度的缩写；da : destination alpha 目标透明度的缩写。
  
 计算结果用如下缩写表示：
  
@@ -28,11 +29,12 @@ r : 如果4个通道（透明度、红、绿、蓝）的计算方式相同，用
  
 **系统能力：** SystemCapability.Graphics.Drawing
   
+
 | 名称 | 值 | 说明 | 示意图 |
 | --- | --- | --- | --- |
 | CLEAR | 0 | 清除模式，r = 0，设置为全透明。 |  |
-| SRC | 1 | r = s（result的4个通道，都等于source的4个通道，即结果等于源。），使用源像素替换目标像素。 |  |
-| DST | 2 | r = d（result的4个通道，都等于destination的4个通道，即结果等于目标。），保持目标像素不变。 |  |
+| SRC | 1 | r = s，result的4个通道都等于source的4个通道，即结果等于源。使用源像素替换目标像素。 |  |
+| DST | 2 | r = d，result的4个通道都等于destination的4个通道，即结果等于目标。保持目标像素不变。 |  |
 | SRC_OVER | 3 | r = s + (1 - sa) * d，在目标像素上方绘制源像素，考虑源像素的透明度。 |  |
 | DST_OVER | 4 | r = d + (1 - da) * s，在源像素上方绘制目标像素，考虑目标像素的透明度。 |  |
 | SRC_IN | 5 | r = s * da，仅保留源像素与目标不透明部分的交集。 |  |
@@ -63,14 +65,16 @@ r : 如果4个通道（透明度、红、绿、蓝）的计算方式相同，用
  
   
 
-#### PathMeasureMatrixFlags12+
+## PathMeasureMatrixFlags12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-路径测量中的矩阵信息维度枚举，常用于控制物体沿路径移动的动画场景。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+路径测量中的矩阵信息维度枚举，常用于控制物体沿路径移动的动画场景。位置矩阵包含路径上某点的坐标平移信息；切线矩阵包含路径上某点切线方向的旋转变换信息；位置和切线矩阵同时包含位置和切线信息，提供完整的路径几何信息。
  
 **系统能力：** SystemCapability.Graphics.Drawing
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | GET_POSITION_MATRIX | 0 | 获取位置信息对应的矩阵。 |
@@ -80,14 +84,16 @@ r : 如果4个通道（透明度、红、绿、蓝）的计算方式相同，用
  
   
 
-#### SrcRectConstraint12+
+## SrcRectConstraint12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-源矩形区域约束类型枚举，用于在画布绘制图像时指定是否将采样范围限制在源矩形区域内。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+源矩形区域约束类型枚举，用于在画布绘制图像时指定是否将采样范围（图像像素读取范围）限制在源矩形区域内。
  
 **系统能力：** SystemCapability.Graphics.Drawing
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | STRICT | 0 | 严格限制采样范围在源矩形区域内，速度较慢。 |
@@ -96,14 +102,16 @@ r : 如果4个通道（透明度、红、绿、蓝）的计算方式相同，用
  
   
 
-#### ShadowFlag12+
+## ShadowFlag12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 控制阴影绘制行为的枚举。
  
 **系统能力：** SystemCapability.Graphics.Drawing
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NONE | 0 | 不使用任何阴影处理选项。 |
@@ -114,33 +122,37 @@ r : 如果4个通道（透明度、红、绿、蓝）的计算方式相同，用
  
   
 
-#### PathOp12+
+## PathOp12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 路径操作类型枚举，可用于合并或裁剪路径等功能。
  
 **系统能力：** SystemCapability.Graphics.Drawing
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| DIFFERENCE | 0 | 差集操作。 |
-| INTERSECT | 1 | 交集操作。 |
-| UNION | 2 | 并集操作。 |
-| XOR | 3 | 异或操作。 |
-| REVERSE_DIFFERENCE | 4 | 反向差集操作。 |
+| DIFFERENCE | 0 | 差集操作，保留第一条路径中不与第二条路径重叠的区域。适用于需要从路径中减去某些区域的场景。 |
+| INTERSECT | 1 | 交集操作，保留两条路径重叠的区域。适用于需要获取路径交集部分的场景。 |
+| UNION | 2 | 并集操作，合并两条路径的所有区域。适用于需要合并多个路径的场景。 |
+| XOR | 3 | 异或操作，保留两条路径不重叠的区域。适用于需要获取路径非重叠部分的场景。 |
+| REVERSE_DIFFERENCE | 4 | 反向差集操作，保留第二条路径中不与第一条路径重叠的区域。适用于需要反向减去路径的场景。 |
  
  
   
 
-#### PathIteratorVerb18+
+## PathIteratorVerb18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-迭代器包含的路径操作类型枚举，可用于读取path的操作指令。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+迭代器包含的路径操作类型枚举，可用于读取path的操作指令。常用于路径分析、路径转换、路径动画等需要解析路径构成的场景。
  
 **系统能力：** SystemCapability.Graphics.Drawing
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | MOVE | 0 | 设置起始点。 |
@@ -154,9 +166,10 @@ r : 如果4个通道（透明度、红、绿、蓝）的计算方式相同，用
  
   
 
-#### TextEncoding
+## TextEncoding
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文本的编码类型枚举。
  
@@ -164,24 +177,27 @@ r : 如果4个通道（透明度、红、绿、蓝）的计算方式相同，用
  
 **系统能力：** SystemCapability.Graphics.Drawing
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| TEXT_ENCODING_UTF8 | 0 | 使用1个字节表示UTF-8或ASCII。 |
-| TEXT_ENCODING_UTF16 | 1 | 使用2个字节表示大部分unicode。 |
-| TEXT_ENCODING_UTF32 | 2 | 使用4个字节表示全部unicode。 |
+| TEXT_ENCODING_UTF8 | 0 | UTF-8或ASCII编码，UTF-8使用1-4个字节表示字符，ASCII使用1个字节表示字符。 |
+| TEXT_ENCODING_UTF16 | 1 | 使用2个字节表示大部分Unicode。 |
+| TEXT_ENCODING_UTF32 | 2 | 使用4个字节表示全部Unicode。 |
 | TEXT_ENCODING_GLYPH_ID | 3 | 使用2个字节表示glyph index。 |
  
  
   
 
-#### ClipOp12+
+## ClipOp12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 画布裁剪方式的枚举。
  
 **系统能力：** SystemCapability.Graphics.Drawing
   
+
 | 名称 | 值 | 说明 | 示意图 |
 | --- | --- | --- | --- |
 | DIFFERENCE | 0 | 将指定区域裁剪（取差集）。 |  |
@@ -194,30 +210,34 @@ r : 如果4个通道（透明度、红、绿、蓝）的计算方式相同，用
  
   
 
-#### FilterMode12+
+## FilterMode12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 过滤模式枚举。
  
 **系统能力：** SystemCapability.Graphics.Drawing
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| FILTER_MODE_NEAREST | 0 | 邻近过滤模式。 |
-| FILTER_MODE_LINEAR | 1 | 线性过滤模式。 |
+| FILTER_MODE_NEAREST | 0 | 邻近过滤模式，使用最近的像素点进行采样。 |
+| FILTER_MODE_LINEAR | 1 | 线性过滤模式，使用周围像素点的加权平均值进行采样。 |
  
  
   
 
-#### PathDirection12+
+## PathDirection12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 添加闭合轮廓方向的枚举。
  
 **系统能力：** SystemCapability.Graphics.Drawing
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CLOCKWISE | 0 | 顺时针方向添加闭合轮廓。 |
@@ -226,20 +246,22 @@ r : 如果4个通道（透明度、红、绿、蓝）的计算方式相同，用
  
   
 
-#### PathFillType12+
+## PathFillType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义路径的填充类型枚举。
  
 **系统能力：** SystemCapability.Graphics.Drawing
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | WINDING | 0 | 绘制区域中的任意一点，向任意方向射出一条射线，对于射线和路径的所有交点，初始计数为0，遇到每个顺时针的交点（路径从射线的左边向右穿过），计数加1，遇到每个逆时针的交点（路径从射线的右边向左穿过），计数减1，若最终的计数结果不为0，则认为这个点在路径内部，需要被涂色；若计数为0则不被涂色。 |
 | EVEN_ODD | 1 | 绘制区域中的任意一点，向任意方向射出一条射线，若这条射线和路径相交的次数是奇数，则这个点被认为在路径内部，需要被涂色；若是偶数则不被涂色。 |
-| INVERSE_WINDING | 2 | WINDING涂色规则取反。 |
-| INVERSE_EVEN_ODD | 3 | EVEN_ODD涂色规则取反。 |
+| INVERSE_WINDING | 2 | WINDING涂色规则取反。若最终的计数结果不为0，则认为这个点在路径内部，不涂色；若计数为0则涂色。 |
+| INVERSE_EVEN_ODD | 3 | EVEN_ODD涂色规则取反。若这条射线和路径相交的次数是奇数，则这个点被认为在路径内部，不涂色；若是偶数则需要被涂色。 |
  
  
 > [!NOTE]
@@ -248,14 +270,16 @@ r : 如果4个通道（透明度、红、绿、蓝）的计算方式相同，用
  
   
 
-#### PointMode12+
+## PointMode12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-绘制数组点的方式的枚举。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+绘制点数组的方式的枚举。
  
 **系统能力：** SystemCapability.Graphics.Drawing
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | POINTS | 0 | 分别绘制每个点。 |
@@ -265,9 +289,10 @@ r : 如果4个通道（透明度、红、绿、蓝）的计算方式相同，用
  
   
 
-#### FontEdging12+
+## FontEdging12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 字型边缘效果类型枚举。
  
@@ -279,6 +304,7 @@ r : 如果4个通道（透明度、红、绿、蓝）的计算方式相同，用
  
 **系统能力：** SystemCapability.Graphics.Drawing
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ALIAS | 0 | 无抗锯齿处理。 |
@@ -288,9 +314,10 @@ r : 如果4个通道（透明度、红、绿、蓝）的计算方式相同，用
  
   
 
-#### FontHinting12+
+## FontHinting12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 字型轮廓效果类型枚举。
  
@@ -298,6 +325,7 @@ r : 如果4个通道（透明度、红、绿、蓝）的计算方式相同，用
  
 **系统能力：** SystemCapability.Graphics.Drawing
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NONE | 0 | 不修改字型轮廓。 |
@@ -308,35 +336,39 @@ r : 如果4个通道（透明度、红、绿、蓝）的计算方式相同，用
  
   
 
-#### FontMetricsFlags12+
+## FontMetricsFlags12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-字体度量标志枚举，指示字体度量中的各字段数据是否有效。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+字体度量标志枚举，指示字体度量中的各字段数据是否有效。常用于精确文本布局、自定义文本渲染等需要获取字体详细度量信息的场景。
  
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
  
 **系统能力：** SystemCapability.Graphics.Drawing
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | UNDERLINE_THICKNESS_VALID | 1 << 0 | 表示FontMetrics结构中的underlineThickness（下划线厚度）字段有效。 |
 | UNDERLINE_POSITION_VALID | 1 << 1 | 表示FontMetrics结构中的underlinePosition（下划线位置）字段有效。 |
-| STRIKETHROUGH_THICKNESS_VALID | 1 << 2 | 表示FontMetrics结构中strikethroughThickness（删除线厚度）是有效的。 |
-| STRIKETHROUGH_POSITION_VALID | 1 << 3 | 表示FontMetrics结构中strikethroughPosition（删除线位置）字段有效。 |
+| STRIKETHROUGH_THICKNESS_VALID | 1 << 2 | 表示FontMetrics结构中的strikethroughThickness（删除线厚度）字段有效。 |
+| STRIKETHROUGH_POSITION_VALID | 1 << 3 | 表示FontMetrics结构中的strikethroughPosition（删除线位置）字段有效。 |
 | BOUNDS_INVALID | 1 << 4 | 表示FontMetrics结构中的边界度量值（如top、bottom、xMin、xMax）无效。 |
  
  
   
 
-#### RectType12+
+## RectType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-定义填充网格的矩形类型的枚举。仅在[Lattice](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-graphics-drawing-lattice)中使用。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+定义填充网格的矩形类型的枚举，用于在图像分割绘制时指定各个矩形区域的填充方式。仅在[Lattice](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-graphics-drawing-lattice)中使用。
  
 **系统能力：** SystemCapability.Graphics.Drawing
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DEFAULT | 0 | 将图像绘制到矩形网格中。 |
@@ -346,14 +378,16 @@ r : 如果4个通道（透明度、红、绿、蓝）的计算方式相同，用
  
   
 
-#### PathDashStyle18+
+## PathDashStyle18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 路径效果的绘制样式枚举。
  
 **系统能力：** SystemCapability.Graphics.Drawing
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | TRANSLATE | 0 | 不会随着路径旋转，只会平移。 |
@@ -363,14 +397,16 @@ r : 如果4个通道（透明度、红、绿、蓝）的计算方式相同，用
  
   
 
-#### TileMode12+
+## TileMode12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 着色器效果平铺模式的枚举。
  
 **系统能力：** SystemCapability.Graphics.Drawing
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CLAMP | 0 | 如果着色器效果超出其原始边界，剩余区域使用着色器的边缘颜色填充。 |
@@ -381,14 +417,16 @@ r : 如果4个通道（透明度、红、绿、蓝）的计算方式相同，用
  
   
 
-#### JoinStyle12+
+## JoinStyle12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义线条转角样式的枚举，即画笔在绘制折线段时，在折线转角处的样式。
  
 **系统能力：** SystemCapability.Graphics.Drawing
   
+
 | 名称 | 值 | 说明 | 示意图 |
 | --- | --- | --- | --- |
 | MITER_JOIN | 0 | 转角类型为尖角，如果折线角度比较小，则尖角会很长，需要使用限制值（miter limit）进行限制。 |  |
@@ -398,14 +436,16 @@ r : 如果4个通道（透明度、红、绿、蓝）的计算方式相同，用
  
   
 
-#### CapStyle12+
+## CapStyle12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义线帽样式的枚举，即画笔在绘制线段时，在线段头尾端点的样式。
  
 **系统能力：** SystemCapability.Graphics.Drawing
   
+
 | 名称 | 值 | 说明 | 示意图 |
 | --- | --- | --- | --- |
 | FLAT_CAP | 0 | 没有线帽样式，线条头尾端点处横切。 |  |
@@ -415,14 +455,16 @@ r : 如果4个通道（透明度、红、绿、蓝）的计算方式相同，用
  
   
 
-#### BlurType12+
+## BlurType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-定义蒙版滤镜模糊中操作类型的枚举。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+定义蒙版滤镜模糊中操作类型的枚举。蒙版用于定义图像的可绘制区域，滤镜用于应用模糊等视觉效果。该枚举控制模糊效果如何应用到蒙版定义的区域内。
  
 **系统能力：** SystemCapability.Graphics.Drawing
   
+
 | 名称 | 值 | 说明 | 示意图 |
 | --- | --- | --- | --- |
 | NORMAL | 0 | 全面模糊，外圈边缘和内部实体一起模糊。 |  |
@@ -433,14 +475,16 @@ r : 如果4个通道（透明度、红、绿、蓝）的计算方式相同，用
  
   
 
-#### ScaleToFit12+
+## ScaleToFit12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 源矩形到目标矩形的缩放方式枚举。
  
 **系统能力：** SystemCapability.Graphics.Drawing
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | FILL_SCALE_TO_FIT | 0 | 将源矩形缩放以填充满整个目标矩形，可能会改变源矩形的长宽比。 |
@@ -451,22 +495,24 @@ r : 如果4个通道（透明度、红、绿、蓝）的计算方式相同，用
  
   
 
-#### RegionOp12+
+## RegionOp12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-两个区域合并时的操作的枚举。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+两个区域合并时的操作的枚举。常用于图形编辑、裁剪区域计算等需要组合多个区域的场景。
  
 **系统能力：** SystemCapability.Graphics.Drawing
   
+
 | 名称 | 值 | 说明 | 示意图 |
 | --- | --- | --- | --- |
-| DIFFERENCE | 0 | 两个区域的相减操作。 |  |
-| INTERSECT | 1 | 两个区域的相交操作。 |  |
-| UNION | 2 | 两个区域的联合操作。 |  |
-| XOR | 3 | 两个区域的异或操作。 |  |
-| REVERSE_DIFFERENCE | 4 | 两个区域的反向相减操作。 |  |
-| REPLACE | 5 | 两个区域替换操作。 |  |
+| DIFFERENCE | 0 | 两个区域的相减操作，从第一个区域中减去第二个区域。适用于需要裁剪掉特定区域的场景。 |  |
+| INTERSECT | 1 | 两个区域的相交操作，保留两个区域重叠的部分。适用于需要获取公共区域的场景。 |  |
+| UNION | 2 | 两个区域的联合操作，合并两个区域的所有部分。适用于需要合并区域的场景。 |  |
+| XOR | 3 | 两个区域的异或操作，保留两个区域不重叠的部分。适用于需要获取非重叠区域的场景。 |  |
+| REVERSE_DIFFERENCE | 4 | 两个区域的反向相减操作，从第二个区域中减去第一个区域。适用于需要反向裁剪的场景。 |  |
+| REPLACE | 5 | 两个区域替换操作，用第二个区域完全替换第一个区域。适用于需要完全覆盖的场景。 |  |
  
  
 > [!NOTE]
@@ -475,14 +521,16 @@ r : 如果4个通道（透明度、红、绿、蓝）的计算方式相同，用
  
   
 
-#### CornerPos12+
+## CornerPos12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 圆角位置枚举。
  
 **系统能力：** SystemCapability.Graphics.Drawing
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | TOP_LEFT_POS | 0 | 左上角圆角位置。 |
@@ -493,16 +541,18 @@ r : 如果4个通道（透明度、红、绿、蓝）的计算方式相同，用
  
   
 
-#### VertexMode23+
+## VertexMode23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 顶点绘制的连接方式枚举。
  
 **系统能力：** SystemCapability.Graphics.Drawing
   
+
 | 名称 | 值 | 说明 | 示意图 |
 | --- | --- | --- | --- |
-| TRIANGLES_VERTEXMODE | 0 | 每三个顶点来自不同的三角形。 |  |
-| TRIANGLESSTRIP_VERTEXMODE | 1 | 连续的三角形共享一条边。对于连续表面效率高。 |  |
-| TRIANGLESFAN_VERTEXMODE | 2 | 所有三角形共享一个顶点。非常适合圆形/扇形。 |  |
+| TRIANGLES_VERTEXMODE | 0 | 顶点按顺序每三个一组，分别构成独立的三角形。 |  |
+| TRIANGLESSTRIP_VERTEXMODE | 1 | 连续的三角形共享一条边，对于连续表面效率高。 |  |
+| TRIANGLESFAN_VERTEXMODE | 2 | 所有三角形共享一个顶点。适用于绘制圆形/扇形的场景。 |  |

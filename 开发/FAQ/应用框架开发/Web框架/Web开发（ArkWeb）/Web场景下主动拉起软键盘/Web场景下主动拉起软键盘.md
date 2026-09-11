@@ -98,7 +98,7 @@ HTML示例代码如下：
     function test() {
        document.getElementById("myInput").focus();
     }
-    // 加载时立即执行此函数
+   <em> // 加载时立即执行此函数</em>
     document.addEventListener('DOMContentLoaded', test);
 </script>
 </html>

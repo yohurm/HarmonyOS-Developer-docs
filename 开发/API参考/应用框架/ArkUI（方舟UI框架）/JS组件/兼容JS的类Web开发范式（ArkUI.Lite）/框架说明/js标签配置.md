@@ -1,12 +1,13 @@
 # js标签配置
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-framework-js-tag
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 js标签中包含了实例名称、页面路由信息。
   
+
 | 标签 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | name | string | default | 是 | 标识JS实例的名字。 |
@@ -18,9 +19,10 @@ js标签中包含了实例名称、页面路由信息。
 
   
 
-#### pages
+## pages
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 定义每个页面的路由信息，每个页面由页面路径和页面名组成，页面的文件名即为页面名，例如：
  
@@ -41,9 +43,10 @@ js标签中包含了实例名称、页面路由信息。
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```json
 {

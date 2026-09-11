@@ -1,6 +1,6 @@
 # 使用AVPlayer播放视频(C/C++)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ndk-avplayer-for-video-playback
 
@@ -19,7 +19,7 @@
 状态的详细说明请参考[AVPlayerState](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avplayer-base-h#avplayerstate)。当播放处于AV_PREPARED/AV_PLAYING/AV_PAUSED/AV_COMPLETED状态时，播放引擎处于工作状态，这需要占用系统较多的运行内存。当客户端暂时不使用播放器时，调用reset()或release()回收内存资源，做好资源利用。
 
 
-#### 开发建议
+## 开发建议
 
 当前指导仅介绍如何实现媒体资源播放，在应用开发过程中可能会涉及后台播放、播放冲突等情况，请根据实际需要参考以下说明。
 
@@ -32,7 +32,7 @@
 
 
 
-#### 开发步骤及注意事项
+## 开发步骤及注意事项
 
 在CMake脚本中链接动态库：
 
@@ -65,8 +65,11 @@ target_link_libraries(sample PUBLIC libhilog_ndk.z.so)
 2. 设置回调监听函数：使用[OH_AVPlayer_SetOnInfoCallback()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avplayer-h#oh_avplayer_setoninfocallback)、[OH_AVPlayer_SetOnErrorCallback()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avplayer-h#oh_avplayer_setonerrorcallback)接口设置信息监听回调函数和错误监听回调函数，搭配全流程场景使用。支持的监听回调函数包括：
 
 | 回调函数类型 | 说明 |
+
 | --- | --- |
+
 | OH_AVPlayerOnInfoCallback | 必要回调函数，监听播放器的过程信息。 需要播放器在AV_IDLE状态下、未调用设置资源接口前完成设置监听，若在调用设置资源接口后再设置监听，可能导致无法收到资源设置过程中上报的信息事件。 |
+
 | OH_AVPlayerOnErrorCallback | 必要回调函数，监听播放器的错误信息。 需要播放器在AV_IDLE状态下、未调用设置资源接口前完成设置监听，若在调用设置资源接口后再设置监听，可能导致无法收到资源设置过程中上报的信息事件。 |
 
   应用使用[OH_AVPlayer_SetOnInfoCallback()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avplayer-h#oh_avplayer_setoninfocallback)、[OH_AVPlayer_SetOnErrorCallback()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avplayer-h#oh_avplayer_setonerrorcallback)接口设置信息监听回调函数和错误监听回调函数，可以获取更多信息，还可以通过设置 userData 区分不同播放实例。
@@ -82,7 +85,7 @@ target_link_libraries(sample PUBLIC libhilog_ndk.z.so)
 
 
 
-#### 运行完整示例
+## 运行完整示例
 1. 新建工程，下载[示例工程](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/Media/AVPlayer/AVPlayerNDKVideo)，并将示例工程的以下资源复制到对应目录。       
 ```ArkTS
 AVPlayerNDKVideo

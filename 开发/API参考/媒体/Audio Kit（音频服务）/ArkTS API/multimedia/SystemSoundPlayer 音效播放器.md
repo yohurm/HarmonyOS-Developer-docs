@@ -1,11 +1,11 @@
 # SystemSoundPlayer (音效播放器)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-multimedia-systemsoundplayer
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-音效播放器提供了加载、卸载和播放系统音效的功能。
+本模块提供系统音效播放能力，包括系统声音的加载、卸载和播放等，支持拍照、录制视频等系统音效的播放。当需要在应用中集成标准的系统提示音以提升用户体验一致性时，使用本模块接口完成相关操作。
  
 SystemSoundPlayer需要和[@ohos.multimedia.systemSoundManager](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-systemsoundmanager)配合使用，才能完成管理系统音效的功能。
  
@@ -14,9 +14,10 @@ SystemSoundPlayer需要和[@ohos.multimedia.systemSoundManager](https://develope
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { systemSoundManager } from '@kit.AudioKit';
@@ -24,17 +25,19 @@ import { systemSoundManager } from '@kit.AudioKit';
  
   
 
-#### SystemSoundPlayer
+## SystemSoundPlayer
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 系统音效播放器提供了拍照和录制视频音效的播放功能。在调用SystemSoundPlayer的接口前，需要先通过[createSystemSoundPlayer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-systemsoundmanager#systemsoundmanagercreatesystemsoundplayer)创建系统音效播放器对象。
  
   
 
-#### load
+### load
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 load(soundType: systemSoundManager.SystemSoundType): Promise&lt;void&gt;
  
@@ -46,13 +49,15 @@ load(soundType: systemSoundManager.SystemSoundType): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| soundType | systemSoundManager.SystemSoundType | 是 | 系统音效类型。 |
+| soundType | systemSoundManager.SystemSoundType | 是 | 要加载的系统音效类型。 |
  
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -62,6 +67,7 @@ load(soundType: systemSoundManager.SystemSoundType): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 5400103 | I/O error. |
@@ -75,17 +81,18 @@ load(soundType: systemSoundManager.SystemSoundType): Promise&lt;void&gt;
 import { BusinessError } from '@kit.BasicServicesKit';
 
 systemSoundPlayer?.load(systemSoundManager.SystemSoundType.PHOTO_SHUTTER).then(() => {
-  console.info('Succeeded in calling the load method.');
+  console.info('Succeeded in loading the system sound.');
 }).catch((err: BusinessError) => {
-  console.error(`Failed to call the load method. Code: ${err.code}, message: ${err.message}`);
+  console.error(`Failed to load the system sound. Code: ${err.code}, message: ${err.message}`);
 });
 ```
  
   
 
-#### play
+### play
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 play(soundType: systemSoundManager.SystemSoundType): Promise&lt;void&gt;
  
@@ -97,13 +104,15 @@ play(soundType: systemSoundManager.SystemSoundType): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| soundType | systemSoundManager.SystemSoundType | 是 | 系统音效类型。 |
+| soundType | systemSoundManager.SystemSoundType | 是 | 要播放的系统音效类型。 |
  
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -113,6 +122,7 @@ play(soundType: systemSoundManager.SystemSoundType): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 5400103 | I/O error. |
@@ -126,17 +136,18 @@ play(soundType: systemSoundManager.SystemSoundType): Promise&lt;void&gt;
 import { BusinessError } from '@kit.BasicServicesKit';
 
 systemSoundPlayer?.play(systemSoundManager.SystemSoundType.PHOTO_SHUTTER).then(() => {
-  console.info('Succeeded in calling the play method.');
+  console.info('Succeeded in playing the system sound.');
 }).catch((err: BusinessError) => {
-  console.error(`Failed to call the play method. Code: ${err.code}, message: ${err.message}`);
+  console.error(`Failed to play the system sound. Code: ${err.code}, message: ${err.message}`);
 });
 ```
  
   
 
-#### unload
+### unload
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unload(soundType: systemSoundManager.SystemSoundType): Promise&lt;void&gt;
  
@@ -148,13 +159,15 @@ unload(soundType: systemSoundManager.SystemSoundType): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| soundType | systemSoundManager.SystemSoundType | 是 | 系统音效类型。 |
+| soundType | systemSoundManager.SystemSoundType | 是 | 要卸载的系统音效类型。 |
  
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -164,6 +177,7 @@ unload(soundType: systemSoundManager.SystemSoundType): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 5400105 | Crash or blocking occurs in system process. |
@@ -176,17 +190,18 @@ unload(soundType: systemSoundManager.SystemSoundType): Promise&lt;void&gt;
 import { BusinessError } from '@kit.BasicServicesKit';
 
 systemSoundPlayer?.unload(systemSoundManager.SystemSoundType.PHOTO_SHUTTER).then(() => {
-  console.info('Succeeded in calling the unload method.');
+  console.info('Succeeded in unloading the system sound.');
 }).catch((err: BusinessError) => {
-  console.error(`Failed to call the unload method. Code: ${err.code}, message: ${err.message}`);
+  console.error(`Failed to unload the system sound. Code: ${err.code}, message: ${err.message}`);
 });
 ```
  
   
 
-#### release
+### release
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(): Promise&lt;void&gt;
  
@@ -198,6 +213,7 @@ release(): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -207,6 +223,7 @@ release(): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 5400105 | Crash or blocking occurs in system process. |
@@ -218,8 +235,8 @@ release(): Promise&lt;void&gt;
 import { BusinessError } from '@kit.BasicServicesKit';
 
 systemSoundPlayer?.release().then(() => {
-  console.info('Succeeded in calling the release method.');
+  console.info('Succeeded in releasing the system sound player.');
 }).catch((err: BusinessError) => {
-  console.error(`Failed to call the release method. Code: ${err.code}, message: ${err.message}`);
+  console.error(`Failed to release the system sound player. Code: ${err.code}, message: ${err.message}`);
 });
 ```

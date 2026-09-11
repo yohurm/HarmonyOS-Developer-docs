@@ -1,23 +1,25 @@
 # Interfaces (其他)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-i
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
   
 
-#### AudioStreamInfo8+
+## AudioStreamInfo8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 音频流信息。
  
 **系统能力：** SystemCapability.Multimedia.Audio.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | samplingRate | AudioSamplingRate \| number | 否 | 否 | 音频文件的采样率，单位为赫兹（Hz）。支持传入AudioSamplingRate。 从API版本26.0.0开始： - 参数samplingRate支持number类型。 - 音频渲染扩展支持8000Hz到384000Hz范围内以10Hz为步长的采样率值。具体设备支持的采样率规格会存在差异。 |
@@ -29,12 +31,14 @@
  
   
 
-#### AudioRendererInfo8+
+## AudioRendererInfo8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 音频渲染器信息。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | content(deprecated) | ContentType | 否 | 是 | 音频内容类型。 系统能力： SystemCapability.Multimedia.Audio.Core API version 8、9为必填参数，从API version 10开始为可选参数，默认值为CONTENT_TYPE_UNKNOWN。 从API version 8开始支持，从API version 10开始废弃，建议使用usage替代。 |
@@ -45,12 +49,14 @@
  
   
 
-#### AudioRendererOptions8+
+## AudioRendererOptions8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 音频渲染器选项信息。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | streamInfo | AudioStreamInfo | 否 | 否 | 音频流信息。 系统能力： SystemCapability.Multimedia.Audio.Renderer |
@@ -60,9 +66,10 @@
  
   
 
-#### InterruptEvent9+
+## InterruptEvent9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 音频中断时，应用接收的中断事件。
  
@@ -70,6 +77,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | eventType | InterruptType | 否 | 否 | 音频中断事件类型，开始或是结束。 |
@@ -79,14 +87,16 @@
  
   
 
-#### DeviceBlockStatusInfo13+
+## DeviceBlockStatusInfo13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述音频设备被堵塞状态和设备信息。
  
 **系统能力：** SystemCapability.Multimedia.Audio.Device
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | blockStatus | DeviceBlockStatus | 否 | 否 | 音频设备堵塞状态。 |
@@ -95,9 +105,10 @@
  
   
 
-#### AudioSessionStrategy12+
+## AudioSessionStrategy12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 音频会话策略。
  
@@ -105,6 +116,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Audio.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | concurrencyMode | AudioConcurrencyMode | 否 | 否 | 音频并发模式。 |
@@ -112,14 +124,16 @@
  
   
 
-#### AudioSessionDeactivatedEvent12+
+## AudioSessionDeactivatedEvent12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 音频会话停用事件。
  
 **系统能力：** SystemCapability.Multimedia.Audio.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | reason | AudioSessionDeactivatedReason | 否 | 否 | 音频会话停用原因。 |
@@ -127,14 +141,16 @@
  
   
 
-#### AudioSessionStateChangedEvent20+
+## AudioSessionStateChangedEvent20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 音频会话状态变更事件。
  
 **系统能力：** SystemCapability.Multimedia.Audio.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | stateChangeHint | AudioSessionStateChangeHint | 否 | 否 | 音频会话状态变更提示。 |
@@ -142,14 +158,16 @@
  
   
 
-#### AudioRendererChangeInfo9+
+## AudioRendererChangeInfo9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述音频渲染器更改信息。
  
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | streamId | number | 是 | 否 | 音频流唯一ID。 |
@@ -159,14 +177,16 @@
  
   
 
-#### AudioCapturerChangeInfo9+
+## AudioCapturerChangeInfo9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述音频采集器更改信息。
  
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | streamId | number | 是 | 否 | 音频流唯一ID。 |
@@ -177,12 +197,14 @@
  
   
 
-#### AudioDeviceDescriptor
+## AudioDeviceDescriptor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述音频设备。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | deviceRole | DeviceRole | 是 | 否 | 设备角色。 系统能力： SystemCapability.Multimedia.Audio.Device 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
@@ -202,9 +224,10 @@
  
   
 
-#### AudioDevicePair
+## AudioDevicePair
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述返听使用的音频设备对，包含输入设备和输出设备。
  
@@ -214,6 +237,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Audio.Device
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | inputDevice | AudioDeviceDescriptor | 否 | 否 | 输入音频设备描述。 |
@@ -222,14 +246,16 @@
  
   
 
-#### VolumeEvent9+
+## VolumeEvent9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 音量改变时，应用接收到的事件。
  
 **系统能力：** SystemCapability.Multimedia.Audio.Volume
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | volumeType | AudioVolumeType | 否 | 否 | 音频音量类型。 |
@@ -240,14 +266,16 @@
  
   
 
-#### MicStateChangeEvent9+
+## MicStateChangeEvent9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 麦克风状态变化时，应用接收到的事件。
  
 **系统能力：** SystemCapability.Multimedia.Audio.Device
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | mute | boolean | 否 | 否 | 系统麦克风是否为静音状态。true表示静音，false表示非静音。 |
@@ -255,14 +283,16 @@
  
   
 
-#### StreamVolumeEvent20+
+## StreamVolumeEvent20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 音频流音量变化时，应用接收到的事件。
  
 **系统能力：** SystemCapability.Multimedia.Audio.Volume
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | streamUsage | StreamUsage | 否 | 否 | 音量发生变化的音频流。 |
@@ -273,14 +303,16 @@
  
   
 
-#### DeviceChangeAction
+## DeviceChangeAction
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述设备连接状态变化和设备信息。
  
 **系统能力：** SystemCapability.Multimedia.Audio.Device
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | DeviceChangeType | 否 | 否 | 设备连接状态变化。 |
@@ -289,14 +321,16 @@
  
   
 
-#### AudioStreamDeviceChangeInfo11+
+## AudioStreamDeviceChangeInfo11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 流设备变更时，应用接收到的事件。
  
 **系统能力：** SystemCapability.Multimedia.Audio.Device
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | devices | AudioDeviceDescriptors | 否 | 否 | 设备信息。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
@@ -306,14 +340,16 @@
  
   
 
-#### CurrentOutputDeviceChangedEvent20+
+## CurrentOutputDeviceChangedEvent20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 应用接收到输出设备的变更事件。
  
 **系统能力：** SystemCapability.Multimedia.Audio.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | devices | AudioDeviceDescriptors | 否 | 否 | 设备信息。 |
@@ -324,14 +360,16 @@
  
   
 
-#### CurrentInputDeviceChangedEvent21+
+## CurrentInputDeviceChangedEvent21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 应用接收到输入设备的变更事件。
  
 **系统能力：** SystemCapability.Multimedia.Audio.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | devices | AudioDeviceDescriptors | 否 | 否 | 设备信息。 |
@@ -340,14 +378,16 @@
  
   
 
-#### AudioTimestampInfo19+
+## AudioTimestampInfo19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 音频流时间戳和当前数据帧位置信息。
  
 **系统能力：** SystemCapability.Multimedia.Audio.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | framePos | number | 是 | 否 | 当前播放或者录制的数据帧位置。 |
@@ -356,14 +396,16 @@
  
   
 
-#### AudioCapturerInfo8+
+## AudioCapturerInfo8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述音频采集器信息。
  
 **系统能力：** SystemCapability.Multimedia.Audio.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | source | SourceType | 否 | 否 | 音源类型。 |
@@ -372,12 +414,14 @@
  
   
 
-#### AudioCapturerOptions8+
+## AudioCapturerOptions8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 音频采集器选项信息。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | streamInfo | AudioStreamInfo | 否 | 否 | 音频流信息。 系统能力： SystemCapability.Multimedia.Audio.Capturer |
@@ -388,9 +432,10 @@
  
   
 
-#### AudioInterrupt(deprecated)
+## AudioInterrupt(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 音频监听事件传入的参数。
  
@@ -400,6 +445,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | streamUsage | StreamUsage | 否 | 否 | 音频流使用类型。 |
@@ -409,7 +455,8 @@
  
   
 
-#### CaptureFilterOptions(deprecated)
+## CaptureFilterOptions(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -421,6 +468,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Audio.PlaybackCapture
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | usages | Array&lt;StreamUsage&gt; | 否 | 否 | 指定需要录制的音频播放流的StreamUsage类型。可同时指定0个或多个StreamUsage。Array为空时，默认录制StreamUsage为STREAM_USAGE_MUSIC、STREAM_USAGE_MOVIE、STREAM_USAGE_GAME和STREAM_USAGE_AUDIOBOOK的音频播放流。 在API version 10时，CaptureFilterOptions支持使用StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION，使用时需要申请权限ohos.permission.CAPTURE_VOICE_DOWNLINK_AUDIO，该权限仅系统应用可申请。 从API version 11开始，CaptureFilterOptions不再支持使用StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION，所以当前接口不再涉及此权限。 |
@@ -428,7 +476,8 @@
  
   
 
-#### AudioPlaybackCaptureConfig(deprecated)
+## AudioPlaybackCaptureConfig(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -440,6 +489,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Audio.PlaybackCapture
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | filterOptions | CaptureFilterOptions | 否 | 否 | 需要录制的播放音频流的筛选信息。 |
@@ -447,9 +497,10 @@
  
   
 
-#### InterruptAction(deprecated)
+## InterruptAction(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 音频打断/获取焦点事件的回调方法。
  
@@ -459,6 +510,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | actionType | InterruptActionType | 否 | 否 | 事件返回类型。TYPE_ACTIVATED为焦点触发事件，TYPE_INTERRUPT为音频打断事件。 |
@@ -469,9 +521,10 @@
  
   
 
-#### SystemRecordControllerConfig
+## SystemRecordControllerConfig
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 系统录音控制面板的配置信息。
  
@@ -481,6 +534,7 @@
  
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | sourceType | SourceType | 否 | 否 | 应用期望使用的音频源类型。系统会根据该参数确定应用的录音场景，并为用户提供匹配的降噪模式选择能力。支持的音频源类型包括SOURCE_TYPE_MIC、SOURCE_TYPE_CAMCORDER和SOURCE_TYPE_LIVE。 |

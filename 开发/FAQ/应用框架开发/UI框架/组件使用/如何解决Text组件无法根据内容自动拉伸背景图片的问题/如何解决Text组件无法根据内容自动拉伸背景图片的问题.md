@@ -25,7 +25,7 @@
 ```text
 @Builder
 function bubbleBackground() {
-  // .9图地址
+  <em>// .9图地址</em>
   Image($r('app.media.imageresizable_border'))
     .objectFit(ImageFit.Fill)
     .resizable({
@@ -85,7 +85,7 @@ Text('满5000减4000')
 ```text
 @Builder
 function bubbleBackground() {
-  // .9图地址
+  <em>// .9图地址</em>
   Image($r('app.media.imageresizable_border'))
     .objectFit(ImageFit.Fill)
     .resizable({

@@ -1,13 +1,13 @@
 # ohpm dependency-check
 
-更新时间：2026-07-28 12:07:32
+更新时间：2026-08-29 09:41:34
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-dependency-check
 
 从ohpm 6.1.1.830版本开始，ohpm命令支持查询三方库的版本更新信息。
  
 
-#### 命令格式
+## 命令格式
 
 ```text
 ohpm dependency-check [options] [<@group>/<pkg>]
@@ -19,17 +19,17 @@ ohpm dependency-check [options] [<@group>/<pkg>]
  
  
 
-#### 功能描述
+## 功能描述
 
 用于检查当前引入的三方库版本的更新信息。
  
  
 
-#### Options
+## Options
 
  
 
-#### registry
+### registry
 
 - 默认值：""
 - 类型：URL
@@ -39,7 +39,7 @@ ohpm dependency-check [options] [<@group>/<pkg>]
  
  
 
-#### fetch_timeout
+### fetch_timeout
 
 - 默认值：60000
 - 类型：Number
@@ -50,17 +50,19 @@ ohpm dependency-check [options] [<@group>/<pkg>]
  
  
 
-#### strict_ssl
+### strict_ssl
 
 - 默认值：true
 - 类型：Boolean
 
  
-可以在 dependency-check 命令后面配置--strict_ssl true参数，校验 https 证书。配置为--strict_ssl false，不校验https证书。
+可以在dependency-check命令后面不配置参数、配置--strict_ssl或--strict_ssl true参数时，开启校验HTTPS证书。
+ 
+从ohpm 26.0.0.630版本开始，如需关闭校验，可配置--no-strict_ssl或--strict_ssl false参数，推荐使用--no-strict_ssl参数。
  
  
 
-#### retry_times
+### retry_times
 
 - 默认值：1
 - 类型：Number
@@ -71,7 +73,7 @@ ohpm dependency-check [options] [<@group>/<pkg>]
  
  
 
-#### retry_interval
+### retry_interval
 
 - 默认值：1000
 - 类型：Number
@@ -82,7 +84,7 @@ ohpm dependency-check [options] [<@group>/<pkg>]
  
  
 
-#### all-modules
+### all-modules
 
 - 默认值：false
 - 类型：Boolean
@@ -93,7 +95,7 @@ ohpm dependency-check [options] [<@group>/<pkg>]
  
  
 
-#### modules
+### modules
 
 - 默认值：""
 - 类型：String
@@ -104,7 +106,7 @@ ohpm dependency-check [options] [<@group>/<pkg>]
  
  
 
-#### project
+### project
 
 - 默认值：false
 - 类型：Boolean
@@ -115,7 +117,7 @@ ohpm dependency-check [options] [<@group>/<pkg>]
  
  
 
-#### dev
+### dev
 
 - 默认值：false
 - 类型：Boolean
@@ -126,7 +128,7 @@ ohpm dependency-check [options] [<@group>/<pkg>]
  
  
 
-#### json
+### json
 
 - 默认值：false
 - 类型：Boolean
@@ -137,7 +139,7 @@ ohpm dependency-check [options] [<@group>/<pkg>]
  
  
 
-#### long
+### long
 
 - 默认值：false
 - 类型：Boolean
@@ -148,7 +150,7 @@ ohpm dependency-check [options] [<@group>/<pkg>]
  
  
 
-#### console
+### console
 
 - 默认值：false
 - 类型：Boolean
@@ -163,11 +165,11 @@ ohpm dependency-check [options] [<@group>/<pkg>]
  
  
 
-#### 示例
+## 示例
 
  
 
-#### 示例1
+### 示例1
 
 查询三方库的版本详细更新信息，执行以下命令。
  
@@ -201,7 +203,7 @@ test-check-update@3.8.9-beta, virusxxx
  
  
 
-#### 示例2
+### 示例2
 
 查询三方库的版本简要更新信息，执行以下命令。
  

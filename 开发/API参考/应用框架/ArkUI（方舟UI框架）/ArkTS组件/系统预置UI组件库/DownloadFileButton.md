@@ -1,9 +1,9 @@
 # DownloadFileButton
 
-更新时间：2026-07-24 10:38:53
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-downloadfilebutton
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 下载文件按钮，在下载文件场景中提供统一样式的下载按钮。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { DownloadFileButton } from '@kit.ArkUI';
@@ -22,29 +23,32 @@ import { DownloadFileButton } from '@kit.ArkUI';
  
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)。
  
   
 
-#### DownloadFileButton
+## DownloadFileButton
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 DownloadFileButton({ contentOptions: DownloadContentOptions, styleOptions: DownloadStyleOptions })
  
-下载文件按钮组件，默认显示图标和文字。
+下载文件按钮，在下载文件场景中提供统一样式的下载按钮。
  
 **装饰器类型：**@Component
  
@@ -52,17 +56,19 @@ DownloadFileButton({ contentOptions: DownloadContentOptions, styleOptions: Downl
  
 **系统能力**： SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
-| contentOptions | DownloadContentOptions | 是 | @State | 创建包含指定元素内容的下载按钮。 |
+| contentOptions | DownloadContentOptions | 是 | @State | 设置下载按钮显示的内容。 |
 | styleOptions | DownloadStyleOptions | 是 | @State | 创建包含指定元素样式的下载按钮。 |
  
  
   
 
-#### DownloadContentOptions
+## DownloadContentOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 下载文件按钮中显示的内容。
  
@@ -70,17 +76,19 @@ DownloadFileButton({ contentOptions: DownloadContentOptions, styleOptions: Downl
  
 **系统能力**： SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| icon | DownloadIconStyle | 否 | 是 | 设置下载按钮的图标风格。 不传入该参数表示没有图标，icon和text至少存在一个。 |
-| text | DownloadDescription | 否 | 是 | 设置下载按钮的文本描述。 不传入该参数表示没有文字描述，icon和text至少存在一个。 |
+| icon | DownloadIconStyle | 否 | 是 | 设置下载按钮的图标风格。 默认值：不设置。不传入该参数表示没有图标，icon和text至少存在一个，若两者均未设置则组件无法正常显示。 |
+| text | DownloadDescription | 否 | 是 | 设置下载按钮的文本描述。 默认值：不设置。不传入该参数表示没有文字描述，icon和text至少存在一个，若两者均未设置则组件无法正常显示。 |
  
  
   
 
-#### DownloadStyleOptions
+## DownloadStyleOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 下载文件按钮中图标和文字的样式。
  
@@ -88,24 +96,26 @@ DownloadFileButton({ contentOptions: DownloadContentOptions, styleOptions: Downl
  
 **系统能力**： SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| iconSize | Dimension | 否 | 是 | 下载控件上图标的尺寸，不支持百分比。 默认值：16vp |
-| layoutDirection | DownloadLayoutDirection | 否 | 是 | 下载控件上图标和文字分布的方向。 默认值：DownloadLayoutDirection.HORIZONTAL |
-| fontSize | Dimension | 否 | 是 | 下载控件上文字的尺寸，不支持百分比。 默认值：16fp |
-| fontStyle | FontStyle | 否 | 是 | 下载控件上文字的样式。 默认值：FontStyle.Normal |
-| fontWeight | number\|FontWeight\|string | 否 | 是 | 下载控件上文字粗细，number类型取值[100, 900]，取值间隔为100，默认为400，取值越大，字体越粗。string类型仅支持number类型取值的字符串形式，例如"400"，以及"bold"、"bolder"、"lighter"、"regular"、"medium"，分别对应FontWeight中相应的枚举值。 默认值：FontWeight.Medium |
-| fontFamily | string\|Resource | 否 | 是 | 下载控件上文字的字体。 默认字体：'HarmonyOS Sans' |
-| fontColor | ResourceColor | 否 | 是 | 下载控件上文字的颜色。 默认值：#ffffffff |
-| iconColor | ResourceColor | 否 | 是 | 下载控件上图标的颜色。 默认值：#ffffffff |
-| textIconSpace | Dimension | 否 | 是 | 下载控件中图标和文字的间距。 默认值：4vp |
+| iconSize | Dimension | 否 | 是 | 下载文件控件上图标的尺寸，不支持百分比。仅当contentOptions.icon设置时生效。 默认值：16vp 单位：vp |
+| layoutDirection | DownloadLayoutDirection | 否 | 是 | 下载文件按钮上图标和文字分布的方向。仅当contentOptions.icon和contentOptions.text都设置时生效。 默认值：DownloadLayoutDirection.HORIZONTAL |
+| fontSize | Dimension | 否 | 是 | 下载文件控件上文字的尺寸，不支持百分比。仅当contentOptions.text设置时生效。 默认值：16fp 单位：fp |
+| fontStyle | FontStyle | 否 | 是 | 下载文件按钮上文字的样式。仅当contentOptions.text设置时生效。 默认值：FontStyle.Normal |
+| fontWeight | number\|FontWeight\|string | 否 | 是 | 下载文件按钮上文字粗细，仅当contentOptions.text设置时生效。number类型取值[100, 900]，取值间隔为100，默认为400，取值越大，字体越粗。string类型仅支持number类型取值的字符串形式，例如"400"，以及"bold"、"bolder"、"lighter"、"regular"、"medium"，分别对应FontWeight中相应的枚举值。 默认值：FontWeight.Medium |
+| fontFamily | string\|Resource | 否 | 是 | 下载文件按钮上文字的字体。仅当contentOptions.text设置时生效。 默认字体：'HarmonyOS Sans' |
+| fontColor | ResourceColor | 否 | 是 | 下载文件按钮上文字的颜色。仅当contentOptions.text设置时生效。 默认值：#ffffffff |
+| iconColor | ResourceColor | 否 | 是 | 下载文件按钮上图标的颜色。仅当contentOptions.icon设置时生效。 默认值：#ffffffff |
+| textIconSpace | Dimension | 否 | 是 | 下载文件按钮中图标和文字的间距。仅当contentOptions.icon和contentOptions.text都设置时生效。 默认值：4vp 单位：vp |
  
  
   
 
-#### DownloadIconStyle
+## DownloadIconStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 下载文件按钮中图标的风格。
  
@@ -113,6 +123,7 @@ DownloadFileButton({ contentOptions: DownloadContentOptions, styleOptions: Downl
  
 **系统能力**： SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | FULL_FILLED | 1 | 下载按钮展示填充样式图标。 |
@@ -121,16 +132,18 @@ DownloadFileButton({ contentOptions: DownloadContentOptions, styleOptions: Downl
  
   
 
-#### DownloadDescription
+## DownloadDescription
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-下载按钮中文字的内容。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+下载按钮中文字的内容。不同文本描述适用于不同场景：DOWNLOAD用于一般文件下载场景，DOWNLOAD_FILE用于需要强调文件对象的下载场景，SAVE系列用于保存场景（如保存图片、保存文件），DOWNLOAD_AND_SHARE用于下载后需要分享的场景，RECEIVE系列用于接收文件场景。
  
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
  
 **系统能力**： SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DOWNLOAD | 1 | 下载按钮的文字描述为“下载”。 |
@@ -145,9 +158,10 @@ DownloadFileButton({ contentOptions: DownloadContentOptions, styleOptions: Downl
  
   
 
-#### DownloadLayoutDirection
+## DownloadLayoutDirection
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 下载文件按钮中图标和文字的排列方式。
  
@@ -155,25 +169,28 @@ DownloadFileButton({ contentOptions: DownloadContentOptions, styleOptions: Downl
  
 **系统能力**： SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| HORIZONTAL | 0 | 下载控件上图标和文字分布的方向为水平排列。 |
-| VERTICAL | 1 | 下载控件上图标和文字分布的方向为垂直排列。 |
+| HORIZONTAL | 0 | 下载文件按钮上图标和文字分布的方向为水平排列。 |
+| VERTICAL | 1 | 下载文件按钮上图标和文字分布的方向为垂直排列。 |
  
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)。
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```ArkTS
 // xxx.ets
@@ -202,7 +219,7 @@ struct Index {
           fontColor: '#ffffffff',
           iconColor: '#ffffffff',
           textIconSpace: '4vp'
-        }
+       }
       })
         .backgroundColor('#007dff')
         .borderStyle(BorderStyle.Dotted)
@@ -234,11 +251,13 @@ struct Index {
         }
         console.info(`downloadAction result:  ${JSON.stringify(result)}`);
       });
-    } catch (e) {
+    } catch (error) {
+      const err: BusinessError = error as BusinessError;
+      console.error(`downloadAction failed. Code: ${err.code}, message: ${err.message}`);
     }
   }
 }
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/gHsaDt8RTk-hS6MsCIBoiw/zh-cn_image_0000002656008916.png?HW-CC-KV=V1&HW-CC-Date=20260730T071518Z&HW-CC-Expire=86400&HW-CC-Sign=80C3319589FAE2B0DC943E5562FE869EFF043D4A10B6F0964B82805B5F890617)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/MoEsrVSmSa-YFJy8LErTFg/zh-cn_image_0000002717613138.png?HW-CC-KV=V1&HW-CC-Date=20260911T073028Z&HW-CC-Expire=86400&HW-CC-Sign=59D7EA768DD9782235D43B5016D40C67A571D49FA951246F42483A78ECEC823E)

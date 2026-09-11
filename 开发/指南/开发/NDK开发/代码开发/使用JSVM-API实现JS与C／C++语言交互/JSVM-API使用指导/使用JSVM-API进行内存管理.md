@@ -1,23 +1,24 @@
 # 使用JSVM-API进行内存管理
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-memory-management
 
-#### 简介
+## 简介
 
 JSVM-API提供了一组用于管理JavaScript虚拟机内存的API，可以更好地控制JavaScript代码使用的内存，并优化内存管理和垃圾回收机制。
  
   
 
-#### 基本概念
+## 基本概念
 
 在JavaScript中，内存管理和垃圾回收是自动进行的。JavaScript虚拟机负责跟踪对象的分配和释放，并在必要时回收不再使用的内存。但是，在某些情况下，JSVM可能会消耗大量的内存，这可能会导致内存不足的错误。为了避免这种情况，JSVM-API提供了一些接口，以便更好地控制内存管理和垃圾回收机制。
  
   
 
-#### 接口说明
+## 接口说明
  
+
 | 接口 | 功能说明 |
 | --- | --- |
 | OH_JSVM_AdjustExternalMemory | 用于管理由JavaScript对象持有的外部分配内存 |
@@ -26,13 +27,13 @@ JSVM-API提供了一组用于管理JavaScript虚拟机内存的API，可以更�
  
   
 
-#### 使用示例
+## 使用示例
 
 JSVM-API接口开发流程请参考[使用JSVM-API实现JS与C/C++语言交互开发流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-process)。本文仅展示接口对应C++及ArkTS相关代码。
  
   
 
-#### OH_JSVM_AdjustExternalMemory
+### OH_JSVM_AdjustExternalMemory
 
 设置JavaScript对象保持活动状态的外部分配内存的数量
  
@@ -91,7 +92,7 @@ JSVM Allocate memory size: 1048576
  
   
 
-#### OH_JSVM_MemoryPressureNotification
+### OH_JSVM_MemoryPressureNotification
 
 使用OH_JSVM_MemoryPressureNotification通知虚拟机系统内存不足并有选择地触发垃圾回收。
  

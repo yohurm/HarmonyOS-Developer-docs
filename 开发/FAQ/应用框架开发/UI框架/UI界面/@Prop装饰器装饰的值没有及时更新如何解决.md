@@ -202,7 +202,7 @@ struct Parent {
 完整示例代码如下：
  
 ```text
-// 定义controller类
+<em>// </em><em>定义controller类</em>
 class ChildController {
   message: string = '';
 }

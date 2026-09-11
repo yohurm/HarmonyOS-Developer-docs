@@ -7,7 +7,7 @@
 ArkTS Uint8Array的传递方式与其他类型相同。
  
 ```text
-// ArkTS passes Uint8Array parameter
+<em>// ArkTS passes Uint8Array parameter</em>
 import testNapi from 'libentry.so';
 
 @Entry
@@ -40,7 +40,7 @@ struct Index {
 Native侧使用napi_get_typedarray_info方法获取Uint8Array的详细信息。
  
 ```text
-// Native side obtains Uint8Array parameter and returns it to ArkTS side 
+<em>// Native side obtains Uint8Array parameter and returns it to ArkTS side </em>
 #include "UintArr.h" 
 napi_value Demo1::UintArr(napi_env env, napi_callback_info info) { 
     size_t requireArgc = 1; 
@@ -51,7 +51,7 @@ napi_value Demo1::UintArr(napi_env env, napi_callback_info info) {
  
     napi_value inputArray = args[0]; 
  
-    // Get the ArrayBuffer type 
+   <em> // Get the ArrayBuffer type </em>
     napi_typedarray_type type; 
     napi_value inArrayBuffer; 
     size_t byteOffset; 
@@ -61,12 +61,12 @@ napi_value Demo1::UintArr(napi_env env, napi_callback_info info) {
         return nullptr; 
     } 
      
-    // Retrieve information from the ArrayBuffer 
+  <em>  // Retrieve information from the ArrayBuffer </em>
     void *data = nullptr; 
     size_t byte_length; 
     napi_get_arraybuffer_info(env, inArrayBuffer, &data, &byte_length); 
  
-    // Construct an ArrayBuffer and assign a value 
+  <em>  // Construct an ArrayBuffer and assign a value </em>
     napi_value output_buffer; 
     void *output_ptr = nullptr; 
     napi_create_arraybuffer(env, byte_length, &output_ptr, &output_buffer); 

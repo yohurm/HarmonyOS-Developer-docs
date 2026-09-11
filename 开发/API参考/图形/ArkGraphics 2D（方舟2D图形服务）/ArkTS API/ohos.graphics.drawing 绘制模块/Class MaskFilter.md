@@ -1,9 +1,9 @@
 # Class (MaskFilter)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-graphics-drawing-maskfilter
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 蒙版滤镜对象。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { drawing } from '@kit.ArkGraphics2D';
@@ -22,9 +23,10 @@ import { drawing } from '@kit.ArkGraphics2D';
 
 
 
-#### createBlurMaskFilter12+
+## createBlurMaskFilter12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static createBlurMaskFilter(blurType: BlurType, sigma: number): MaskFilter
 
@@ -34,6 +36,7 @@ static createBlurMaskFilter(blurType: BlurType, sigma: number): MaskFilter
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | blurType | BlurType | 是 | 模糊类型。 |
@@ -41,6 +44,7 @@ static createBlurMaskFilter(blurType: BlurType, sigma: number): MaskFilter
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -50,6 +54,7 @@ static createBlurMaskFilter(blurType: BlurType, sigma: number): MaskFilter
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

@@ -1,9 +1,9 @@
 # @ohos.app.ability.InsightIntentExecutor (意图执行基类)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-insightintentexecutor
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供意图执行基类，开发者通过本模块对接端侧[意图框架](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/insight-intent-overview)，[通过配置文件开发意图](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/insight-intent-config-development)实现意图的业务逻辑。
 
@@ -14,9 +14,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { InsightIntentExecutor } from '@kit.AbilityKit';
@@ -24,21 +25,24 @@ import { InsightIntentExecutor } from '@kit.AbilityKit';
 
 
 
-#### InsightIntentExecutor
+## InsightIntentExecutor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示意图执行基类。
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -47,9 +51,10 @@ import { InsightIntentExecutor } from '@kit.AbilityKit';
 
 
 
-#### onExecuteInUIAbilityForegroundMode
+### onExecuteInUIAbilityForegroundMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onExecuteInUIAbilityForegroundMode(name: string, param: Record<string, Object>, pageLoader: window.WindowStage): insightIntent.ExecuteResult | Promise<insightIntent.ExecuteResult>
 
@@ -66,6 +71,7 @@ onExecuteInUIAbilityForegroundMode(name: string, param: Record<string, Object>, 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 意图名称。 |
@@ -74,6 +80,7 @@ onExecuteInUIAbilityForegroundMode(name: string, param: Record<string, Object>, 
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -169,9 +176,10 @@ export default class IntentExecutorImpl extends InsightIntentExecutor {
 
 
 
-#### onExecuteInUIAbilityBackgroundMode
+### onExecuteInUIAbilityBackgroundMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onExecuteInUIAbilityBackgroundMode(name: string, param: Record<string, Object>): insightIntent.ExecuteResult | Promise<insightIntent.ExecuteResult>
 
@@ -187,6 +195,7 @@ onExecuteInUIAbilityBackgroundMode(name: string, param: Record<string, Object>):
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 意图名称。 |
@@ -194,6 +203,7 @@ onExecuteInUIAbilityBackgroundMode(name: string, param: Record<string, Object>):
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -224,6 +234,7 @@ export default class IntentExecutorImpl extends InsightIntentExecutor {
 
 ```text
 import { InsightIntentExecutor, insightIntent } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
 async function executeInsightIntent(param: Record<string, Object>): Promise<insightIntent.ExecuteResult> {
   return new Promise((resolve, reject) => {
@@ -260,9 +271,10 @@ export default class IntentExecutorImpl extends InsightIntentExecutor {
 
 
 
-#### onExecuteInUIExtensionAbility
+### onExecuteInUIExtensionAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onExecuteInUIExtensionAbility(name: string, param: Record<string, Object>, pageLoader: UIExtensionContentSession): insightIntent.ExecuteResult | Promise<insightIntent.ExecuteResult>
 
@@ -275,6 +287,7 @@ onExecuteInUIExtensionAbility(name: string, param: Record<string, Object>, pageL
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 意图名称。 |
@@ -283,6 +296,7 @@ onExecuteInUIExtensionAbility(name: string, param: Record<string, Object>, pageL
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -370,9 +384,10 @@ export default class IntentExecutorImpl extends InsightIntentExecutor {
 
 
 
-#### onExecuteInServiceExtensionAbility
+### onExecuteInServiceExtensionAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onExecuteInServiceExtensionAbility(name: string, param: Record<string, Object>): insightIntent.ExecuteResult | Promise<insightIntent.ExecuteResult>
 
@@ -385,6 +400,7 @@ onExecuteInServiceExtensionAbility(name: string, param: Record<string, Object>):
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 意图名称。 |
@@ -392,6 +408,7 @@ onExecuteInServiceExtensionAbility(name: string, param: Record<string, Object>):
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |

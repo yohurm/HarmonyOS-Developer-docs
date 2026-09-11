@@ -1,9 +1,9 @@
 # XComponentNode
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-xcomponentnode
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供XComponent节点XComponentNode，表示组件树中的[XComponent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-xcomponent)组件，用于[EGL](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/egl)/[OpenGL ES](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/opengles)渲染和媒体数据写入，并支持动态修改节点渲染类型，适用于需要在ArkUI组件树中嵌入Native自渲染内容的场景。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { XComponentNode } from '@kit.ArkUI';
@@ -22,15 +23,17 @@ import { XComponentNode } from '@kit.ArkUI';
 
 
 
-#### XComponentNode(deprecated)
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## XComponentNode(deprecated)
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### constructor(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### constructor(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(uiContext: UIContext, options: RenderOptions, id: string, type: XComponentType, libraryName?: string)
 
@@ -43,6 +46,7 @@ XComponentNode的构造函数。
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -59,9 +63,10 @@ XComponentNode的构造函数。
 
 
 
-#### onCreate(deprecated)
+### onCreate(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onCreate(event?: Object): void
 
@@ -75,6 +80,7 @@ XComponentNode加载完成时触发该回调。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | Object | 否 | XComponent实例对象的事件参数，用于获取XComponent实例的context。context上挂载的方法由开发者在C++层定义，开发者可通过该context调用Native层注册的方法。 |
@@ -82,9 +88,10 @@ XComponentNode加载完成时触发该回调。
 
 
 
-#### onDestroy(deprecated)
+### onDestroy(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDestroy(): void
 
@@ -98,13 +105,14 @@ XComponentNode销毁时触发该回调。
 
 
 
-#### changeRenderType(deprecated)
+### changeRenderType(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 changeRenderType(type: NodeRenderType): boolean
 
-动态修改XComponentNode的渲染类型。例如，当需要在组件上进行EGL/OpenGL ES直接绘制时可使用DISPLAY类型；当需要将渲染内容作为纹理参与合成（如实现半透明叠加效果或离屏渲染）时可切换为TEXTURE类型。
+动态修改XComponentNode的渲染类型。可在运行时动态切换渲染策略，适用于根据内容渲染需求选择不同渲染类型的场景。例如，当需要在组件上进行EGL/OpenGL ES直接绘制时可使用DISPLAY类型；当需要将渲染内容作为纹理参与合成（如实现半透明叠加效果或离屏渲染）时可切换为TEXTURE类型。
 
 > [!NOTE]
 > 从API version 11开始支持，从API version 12开始废弃，建议使用 appendChild 替代。
@@ -114,12 +122,14 @@ changeRenderType(type: NodeRenderType): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | NodeRenderType | 是 | 需要修改的目标渲染类型，取值为NodeRenderType枚举定义的值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -128,9 +138,10 @@ changeRenderType(type: NodeRenderType): boolean
 
 
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { NodeController, FrameNode, XComponentNode, NodeRenderType, XComponentType, UIContext } from '@kit.ArkUI';
@@ -184,4 +195,4 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/QRJzuIBiSxafs6NV_ZZlkA/zh-cn_image_0000002656008238.jpg?HW-CC-KV=V1&HW-CC-Date=20260730T071451Z&HW-CC-Expire=86400&HW-CC-Sign=7626305AA6899F6E234E83C86BC6FD9587536A37D47F84DC6EC513355622895C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/WmfGlpAoTJGvhRu4gu8gnw/zh-cn_image_0000002717772384.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T072837Z&HW-CC-Expire=86400&HW-CC-Sign=84019793DB4EB15B0F6DC295E4B7C050FEE756493FEA753AF1B58F4371756870)

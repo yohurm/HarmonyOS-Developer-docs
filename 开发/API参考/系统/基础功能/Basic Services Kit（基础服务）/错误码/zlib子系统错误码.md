@@ -1,18 +1,19 @@
 # zlib子系统错误码
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-zlib
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 > [!TIP]
 > 以下仅介绍本模块特有错误码，通用错误码请参考 通用错误码说明文档 。
 
 
 
-#### 900001 传入的源文件错误
+## 900001 传入的源文件错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -23,19 +24,23 @@ The input source file is invalid.
 当调用compressFile或decompressFile接口时，传入源文件无效。
 
 **可能原因**
-
-当调用compressFile接口时，传入的待压缩的文件不存在；当调用decompressFile接口时，传入的待解压缩的文件不存在。
+1. 传入的源文件路径为空、包含相对路径或不是有效的应用沙箱路径。
+2. 传入的源文件不存在，或应用没有源文件的访问权限。
+3. 调用decompressFile接口时，源文件无法打开。
 
 **处理步骤**
-1. 检查源文件是否存在。
-2. 检查源文件的后缀是否为.zip。
-3. 检查待压缩的文件路径是否存在，并且路径是否在正确的沙箱路径下。
+1. 检查源文件路径。
+
+  确保路径不为空、不包含“../”等相对路径，并且位于正确的应用沙箱路径下。
+2. 检查源文件是否存在，以及应用是否具有源文件的读取权限。
+3. 调用decompressFile接口时，检查源文件是否可正常打开，并确保文件后缀为.zip。
 
 
 
-#### 900002 传入的目标文件错误
+## 900002 传入的目标文件错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -46,18 +51,25 @@ The input destination file is invalid.
 当调用compressFile或decompressFile接口时，传入目标文件无效。
 
 **可能原因**
-1. 当调用compressFile接口时，传入的目标文件路径无效，如不存在的沙箱路径。
-2. 当调用decompressFile接口时，传入的目标目录不存在。
+1. 传入的目标路径为空、包含相对路径或不是有效的应用沙箱路径。
+2. 调用decompressFile接口时，传入的目标路径不存在或不是目录。
+3. 应用没有目标目录的写入权限。
+4. 解压过程中无法创建输出目录，或无法创建、打开目标文件。
 
 **处理步骤**
-1. 检查目标文件路径是否正确，如果不正确，填写正确的沙箱路径。
-2. 检查目标文件目录是否存在，如果不存在，新建这个路径。
+1. 检查目标路径。
+
+  确保路径不为空、不包含“../”等相对路径，并且位于正确的应用沙箱路径下。
+2. 调用decompressFile接口前，检查目标路径是否为已存在的目录。如果目录不存在，请先创建该目录。
+3. 检查应用是否具有目标目录的写入权限。
+4. 检查目标目录下是否存在阻止创建同名目录或文件的异常条目，并确保目标目录具有足够的可用存储空间。
 
 
 
-#### 900003 传入的源文件格式错误或者已损坏
+## 900003 传入的源文件格式错误或者已损坏
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -68,18 +80,23 @@ The input source file is not in ZIP format or is damaged.
 当调用decompressFile接口时，传入源文件的压缩格式有误或者已损坏。
 
 **可能原因**
-1. 当调用decompressFile接口时，传入的源文件压缩格式有误。
-2. 当调用decompressFile接口时，传入的源文件不完整或已损坏。
+1. 传入的源文件不是ZIP格式，或者文件不完整、已损坏。
+2. ZIP文件中的条目路径包含“../”等相对路径。
+3. ZIP文件的条目信息或条目数据已损坏，导致条目读取或解压失败。
 
 **处理步骤**
-1. 检查源文件压缩格式是否为ZIP格式。
-2. 检查源文件是否完整，如果是网络下载的，需要确保文件下载完成后再调用decompress接口。
+1. 检查源文件是否为有效且完整的ZIP文件。
+
+  如果源文件通过网络下载，请确保文件下载完成后再调用decompressFile接口。文件已损坏时，请重新生成或获取ZIP文件。
+2. 检查ZIP文件中的条目路径，确保路径不包含“../”等相对路径。如果存在此类条目，请移除相关条目后重新生成ZIP文件。
+3. 检查ZIP文件中各条目是否可以正常读取和解压。如果条目已损坏，请重新生成或获取ZIP文件。
 
 
 
-#### 17800002 传入的文件或访问模式错误
+## 17800002 传入的文件或访问模式错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -99,9 +116,10 @@ No such file or access mode error.
 
 
 
-#### 17800004 压缩流或解压流错误
+## 17800004 压缩流或解压流错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -123,9 +141,10 @@ Compression or decompression stream error, which may be caused by an initializat
 
 
 
-#### 17800005 传入的数据错误
+## 17800005 传入的数据错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -145,9 +164,10 @@ The input data is incorrect. For example, the data does not conform to the zlib 
 
 
 
-#### 17800006 内存分配失败错误
+## 17800006 内存分配失败错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -167,9 +187,10 @@ Memory allocation failed.
 
 
 
-#### 17800007 传入的缓冲区错误
+## 17800007 传入的缓冲区错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -190,9 +211,10 @@ The input buffer is incorrect, and the output buffer is too small to accommodate
 
 
 
-#### 17800009 内部结构错误
+## 17800009 内部结构错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 

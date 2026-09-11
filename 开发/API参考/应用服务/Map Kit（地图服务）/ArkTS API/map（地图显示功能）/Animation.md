@@ -1,11 +1,12 @@
 # Class (Animation)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-animation
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -15,7 +16,8 @@ import { map } from '@kit.MapKit';
  
   
 
-#### Animation
+## Animation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -62,7 +64,8 @@ animation.on("animationEnd", callbackEnd);
  
   
 
-#### setDuration
+### setDuration
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -80,6 +83,7 @@ setDuration(duration: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | duration | number | 是 | 动画持续时间，单位：ms，取值范围：大于等于0，异常值不处理。 |
@@ -93,7 +97,8 @@ animation.setDuration(3000);
  
   
 
-#### setFillMode
+### setFillMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -111,6 +116,7 @@ setFillMode(fillMode: AnimationFillMode): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fillMode | AnimationFillMode | 是 | 动画执行完成后的状态。 |
@@ -124,7 +130,8 @@ animation.setFillMode(map.AnimationFillMode.BACKWARDS);
  
   
 
-#### setInterpolator
+### setInterpolator
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -142,6 +149,7 @@ setInterpolator(curve: Curves.Curve): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | curve | Curves.Curve | 是 | 动画插值器。 |
@@ -155,7 +163,8 @@ animation.setInterpolator(Curve.Linear);
  
   
 
-#### setRepeatCount
+### setRepeatCount
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -173,6 +182,7 @@ setRepeatCount(repeatCount: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | repeatCount | number | 是 | 动画重复执行的次数。 正数：根据值重复执行 0：动画不重复执行 -1：执行次数是无限 小于-1或其他异常值，取值默认为0 |
@@ -186,7 +196,8 @@ animation.setRepeatCount(100);
  
   
 
-#### setRepeatMode
+### setRepeatMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -204,6 +215,7 @@ setRepeatMode(repeatMode: AnimationRepeatMode): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | repeatMode | AnimationRepeatMode | 是 | 重复执行的模式。 |
@@ -217,7 +229,8 @@ animation.setRepeatMode(map.AnimationRepeatMode.RESTART);
  
   
 
-#### on('start')
+### on('start')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -237,6 +250,7 @@ on(type: 'start', callback: Callback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'start'：动画开始事件。 |
@@ -253,7 +267,8 @@ animation.on("start", () => {
  
   
 
-#### off('start')
+### off('start')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -273,6 +288,7 @@ off(type: 'start', callback: Callback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'start'：动画开始事件。 |
@@ -289,7 +305,8 @@ animation.off("start", () => {
  
   
 
-#### on('end')
+### on('end')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -309,6 +326,7 @@ on(type: 'end', callback: Callback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'end'：动画结束事件。 |
@@ -325,7 +343,8 @@ animation.on("end", () => {
  
   
 
-#### off('end')
+### off('end')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -345,6 +364,7 @@ off(type: 'end', callback: Callback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'end'：动画结束事件。 |
@@ -361,7 +381,8 @@ animation.off("end", () => {
  
   
 
-#### on('animationStart')
+### on('animationStart')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -379,6 +400,7 @@ on(type: 'animationStart', callback: Callback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'animationStart'：监听动画开始事件。 |
@@ -404,7 +426,8 @@ animation.on("animationStart", callback3);
  
   
 
-#### off('animationStart')
+### off('animationStart')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -422,6 +445,7 @@ off(type: 'animationStart', callback?: Callback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'animationStart'：监听动画开始事件。 |
@@ -452,7 +476,8 @@ animation.off('animationStart');
  
   
 
-#### on('animationEnd')
+### on('animationEnd')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -470,6 +495,7 @@ on(type: 'animationEnd', callback: Callback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'animationEnd'：动画结束事件。 |
@@ -495,7 +521,8 @@ animation.on("animationEnd", callback3);
  
   
 
-#### off('animationEnd')
+### off('animationEnd')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -513,6 +540,7 @@ off(type: 'animationEnd', callback?: Callback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 'animationEnd'：监听动画结束事件。 |

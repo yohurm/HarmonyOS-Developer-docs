@@ -1,18 +1,19 @@
 # MDNS错误码
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-mdns
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!TIP]
 > 以下仅介绍本模块特有错误码，通用错误码请参考 通用错误码 说明文档。
 
 
 
-#### 2100002 连接服务失败
+## 2100002 连接服务失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -32,9 +33,10 @@ Failed to connect to the service.
 
 
 
-#### 2100003 系统内部错误
+## 2100003 系统内部错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -58,9 +60,10 @@ System internal error.
 
 
 
-#### 2204002 未找到目标服务
+## 2204002 未找到目标服务
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -80,9 +83,10 @@ Callback not found.
 
 
 
-#### 2204003 重复注册
+## 2204003 重复注册
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -102,7 +106,10 @@ callback 已经存在。
 
 
 
-#### 2204007 服务已存在
+## 2204007 服务已存在
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -122,9 +129,10 @@ Service instance duplicated.
 
 
 
-#### 2204008 删除服务失败
+## 2204008 删除服务失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -144,7 +152,10 @@ Failed to delete the service instance.
 
 
 
-#### 2204009 发送数据报文失败
+## 2204009 发送数据报文失败
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -164,9 +175,10 @@ Failed to send packet.
 
 
 
-#### 2204010 发送消息失败
+## 2204010 发送消息失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -174,7 +186,7 @@ Failed to send the message.
 
 **错误描述**
 
-发送信息失败。
+发送消息失败。
 
 **可能原因**
 
@@ -186,9 +198,10 @@ Failed to send the message.
 
 
 
-#### 2204006 解析服务超时
+## 2204006 解析服务超时
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 

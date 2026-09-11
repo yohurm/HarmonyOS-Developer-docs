@@ -1,6 +1,6 @@
 # healthSequenceHelper (健康记录类型常量)
 
-更新时间：2026-06-12 06:54:11
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/health-api-healthsequencehelper
 **支持设备：** Phone | Tablet | Wearable
@@ -10,7 +10,8 @@
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -24,7 +25,8 @@ import { healthStore } from '@kit.HealthServiceKit';
  
   
 
-#### sleepRecord
+## sleepRecord
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -38,7 +40,8 @@ import { healthStore } from '@kit.HealthServiceKit';
  
   
 
-#### 常量
+### 常量
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -48,6 +51,7 @@ import { healthStore } from '@kit.HealthServiceKit';
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 说明 |
 | --- | --- | --- |
 | DATA_TYPE | healthStore.DataType | 夜间睡眠数据类型。 |
@@ -55,7 +59,8 @@ import { healthStore } from '@kit.HealthServiceKit';
  
   
 
-#### Model
+### Model
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -69,6 +74,7 @@ type Model = healthModels.SleepRecord
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 类型 | 说明 |
 | --- | --- |
 | healthModels.SleepRecord | 夜间睡眠健康记录数据模型。 |
@@ -76,7 +82,8 @@ type Model = healthModels.SleepRecord
  
   
 
-#### Fields
+### Fields
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -90,6 +97,7 @@ type Fields = healthFields.Sleep
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 类型 | 说明 |
 | --- | --- |
 | healthFields.Sleep | 夜间睡眠健康记录数据字段列表。 |
@@ -97,7 +105,8 @@ type Fields = healthFields.Sleep
  
   
 
-#### DetailFields
+### DetailFields
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -111,6 +120,7 @@ type DetailFields = healthFields.SleepDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 类型 | 说明 |
 | --- | --- |
 | healthFields.SleepDetail | 睡眠详情数据字段列表。 |
@@ -118,7 +128,8 @@ type DetailFields = healthFields.SleepDetail
  
   
 
-#### sleepNapRecord
+## sleepNapRecord
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -132,7 +143,8 @@ type DetailFields = healthFields.SleepDetail
  
   
 
-#### 常量
+### 常量
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -142,6 +154,7 @@ type DetailFields = healthFields.SleepDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 说明 |
 | --- | --- | --- |
 | DATA_TYPE | healthStore.DataType | 零星小睡数据类型。 |
@@ -149,7 +162,8 @@ type DetailFields = healthFields.SleepDetail
  
   
 
-#### Model
+### Model
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -163,6 +177,7 @@ type Model = healthModels.SleepNapRecord
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 类型 | 说明 |
 | --- | --- |
 | healthModels.SleepNapRecord | 零星小睡健康记录数据模型。 |
@@ -170,7 +185,8 @@ type Model = healthModels.SleepNapRecord
  
   
 
-#### Fields
+### Fields
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -184,6 +200,7 @@ type Fields = healthFields.SleepNap
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 类型 | 说明 |
 | --- | --- |
 | healthFields.SleepNap | 零星小睡健康记录数据字段列表。 |
@@ -191,7 +208,8 @@ type Fields = healthFields.SleepNap
  
   
 
-#### DetailFields
+### DetailFields
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -205,6 +223,7 @@ type DetailFields = healthFields.SleepDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 类型 | 说明 |
 | --- | --- |
 | healthFields.SleepDetail | 睡眠详情数据字段列表。 |
@@ -212,9 +231,10 @@ type DetailFields = healthFields.SleepDetail
  
   
 
-#### menstrualCycle
+## menstrualCycle
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 生理周期数据类型常量及数据模型。
  
@@ -226,7 +246,8 @@ type DetailFields = healthFields.SleepDetail
  
   
 
-#### 常量
+### 常量
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -236,6 +257,7 @@ type DetailFields = healthFields.SleepDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 说明 |
 | --- | --- | --- |
 | DATA_TYPE | healthStore.DataType | 生理周期数据类型。 |
@@ -243,9 +265,10 @@ type DetailFields = healthFields.SleepDetail
  
   
 
-#### Model
+### Model
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 type Model = healthModels.MenstrualCycle
  
@@ -257,6 +280,7 @@ type Model = healthModels.MenstrualCycle
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 类型 | 说明 |
 | --- | --- |
 | healthModels.MenstrualCycle | 生理周期健康记录数据模型。 |
@@ -264,9 +288,10 @@ type Model = healthModels.MenstrualCycle
  
   
 
-#### Fields
+### Fields
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 type Fields = healthFields.MenstrualCycle
  
@@ -278,6 +303,7 @@ type Fields = healthFields.MenstrualCycle
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 类型 | 说明 |
 | --- | --- |
 | healthFields.MenstrualCycle | 生理周期健康记录数据字段列表。 |
@@ -285,9 +311,10 @@ type Fields = healthFields.MenstrualCycle
  
   
 
-#### DetailFields
+### DetailFields
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 type DetailFields = healthFields.MenstrualCycleDetail
  
@@ -299,6 +326,7 @@ type DetailFields = healthFields.MenstrualCycleDetail
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 类型 | 说明 |
 | --- | --- |
 | healthFields.MenstrualCycleDetail | 生理周期详情数据字段列表。 |

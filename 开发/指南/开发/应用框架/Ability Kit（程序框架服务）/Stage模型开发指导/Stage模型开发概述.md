@@ -1,12 +1,12 @@
 # 应用模型概述
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/stage-model-development-overview
 
-#### 应用模型简介
+## 应用模型简介
 
-应用模型是系统为开发者提供的应用程序所需能力的抽象提炼，它提供了应用程序必备的组件和运行机制。有了应用模型，开发者可以基于一套统一的模型进行应用开发，使应用开发更简单、高效。
+应用模型是系统为开发者提供的应用程序所需能力的抽象提炼，它提供了应用程序必备的组件和运行机制。应用模型为开发者提供了一套统一的开发模型，使应用开发更简单、高效。
 
 目前主推且会长期演进的应用模型是从API 9开始支持的Stage模型。该模型提供了AbilityStage组件管理器和WindowStage窗口管理器，分别作为应用组件与窗口的“舞台”，故得名"Stage模型"。
 
@@ -18,7 +18,7 @@ Stage模型支持多个应用组件共享同一个ArkTS引擎实例，以及应�
 
 
 
-#### 基本概念
+## 基本概念
 
 下图展示了[Stage模型](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ability-terminology#stage模型)中的基本概念。
 
@@ -41,7 +41,7 @@ UIAbility组件是一种包含UI的应用组件，主要用于和用户交互。
 
 
 一个HAP包中可以包含一个或多个UIAbility/ExtensionAbility组件，这些组件在运行时共用同一个AbilityStage实例。当[HAP](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hap-package)中的代码（无论是UIAbility组件还是ExtensionAbility组件）首次被加载到进程中的时候，系统会先创建对应的AbilityStage实例。
-      - [WindowStage](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window-windowstage)
+            - [WindowStage](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window-windowstage)
 
   每个UIAbility实例都会与一个WindowStage类实例绑定，该类起到了应用进程内窗口管理器的作用。它包含一个主窗口。也就是说UIAbility实例通过WindowStage持有了一个主窗口，该主窗口为ArkUI提供了绘制区域，可以加载不同的ArkUI页面。
  - [Context](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-context-stage)
@@ -60,13 +60,13 @@ UIAbility组件是一种包含UI的应用组件，主要用于和用户交互。
 
 
 
-#### 构成要素
+## 构成要素
 
 应用模型的构成要素主要包含应用组件、进程模型、线程模型、任务管理模型以及应用配置文件。
 
 
 
-#### 应用组件
+### 应用组件
 
 应用组件是应用的基本组成单位和运行入口。
 
@@ -78,19 +78,19 @@ UIAbility组件是一种包含UI的应用组件，主要用于和用户交互。
 
 
 
-#### 应用进程模型
+### 应用进程模型
 
 应用进程模型定义应用进程的创建和销毁方式，以及进程间的通信方式。
 
 
 
-#### 应用线程模型
+### 应用线程模型
 
 应用线程模型定义应用进程内线程的创建和销毁方式、主线程和UI线程的创建方式、线程间的通信方式。
 
 
 
-#### 应用任务管理模型（仅对系统应用开放）
+### 应用任务管理模型（仅对系统应用开放）
 
 应用任务管理模型定义任务（Mission）的创建和销毁方式，以及任务与组件间的关系。
 
@@ -100,13 +100,13 @@ UIAbility组件是一种包含UI的应用组件，主要用于和用户交互。
 
 
 
-#### 应用配置文件
+### 应用配置文件
 
 应用配置文件中包含应用配置信息、应用组件信息、权限信息、开发者自定义信息等，这些信息在编译构建、分发和运行阶段分别提供给编译工具、应用市场和操作系统使用。
 
 
 
-#### 应用构成要素示例
+### 应用构成要素示例
 
 下面我们以Demo.app这个应用为例，从应用的开发阶段和运行阶段分别展开介绍，帮助开发者更好地理解Stage模型的构成要素。
 
@@ -119,7 +119,7 @@ UIAbility组件是一种包含UI的应用组件，主要用于和用户交互。
 **图2** Stage模型构成要素
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/o68ZN6IKTiiNwNMf9mtnOA/zh-cn_image_0000002685925355.png?HW-CC-KV=V1&HW-CC-Date=20260730T071824Z&HW-CC-Expire=86400&HW-CC-Sign=81FB29D5720A97994D3199701D9B5A6C87E434CF79333E5CBF428EE05D4F6F00)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/2nQPADtuQ9WxpWVWb56Ohg/zh-cn_image_0000002717769812.png?HW-CC-KV=V1&HW-CC-Date=20260911T073057Z&HW-CC-Expire=86400&HW-CC-Sign=31097D63C1D795439D344DB91AF58F37BEDA03239842E998630FEDB9046A1CDB)
 
 
 **开发阶段** ：需要通过Stage模型提供的应用组件（UIAbility组件和ExtensionAbility组件）开发应用功能，并在应用的配置文件（app.json5和module.json5）中注册应用的相关信息。
@@ -130,5 +130,5 @@ UIAbility组件是一种包含UI的应用组件，主要用于和用户交互。
 
 **运行阶段**：当应用安装到设备运行时，系统通过一套应用进程和线程的管理机制，确保功能的有序运行。
 
- - 进程模型：在本例中，UIAbility组件默认运行在主进程中，FormExtensionAbility组件运行在独立进程中，UIAbility和FormExtensionAbility组件之间是进程隔离的。更多详情可参考[进程模型](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/process-model-stage)。
+ - 进程模型：在本例中，UIAbility组件默认运行在主进程中，FormExtensionAbility组件运行在独立进程中，UIAbility和FormExtensionAbility组件之间是进程隔离的。更多详情可参考[进程模型概述](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/process-model-overview)。
  - 线程模型：Stage模型提供了worker、taskpool等机制支撑应用多线程开发场景。应用如果有复杂的耗时逻辑需要处理，可以通过创建worker的方式开启worker线程，交由worker线程处理。

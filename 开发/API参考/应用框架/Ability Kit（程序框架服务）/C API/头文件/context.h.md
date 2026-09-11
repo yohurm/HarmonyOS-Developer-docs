@@ -1,13 +1,14 @@
 # context.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-abilityruntime-context-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供上下文数据结构[AbilityRuntime_Context](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-abilityruntime-abilityruntime-context)和相关接口用于获取当前上下文的应用文件路径、数据加密等级和进程名等信息。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | AbilityRuntime_Context | - | 定义AbilityRuntime_Context结构体类型。 |
@@ -41,10 +45,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_GetCacheDir(AbilityRuntime_ContextHandle context, char* buffer, int32_t bufferSize, int32_t* writeLength) | 获取上下文的缓存目录。 |
@@ -64,15 +70,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AbilityRuntime_Context_GetCacheDir()
+### OH_AbilityRuntime_Context_GetCacheDir()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_GetCacheDir(
@@ -87,6 +95,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_GetCacheDir(
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_ContextHandle context | 要获取缓存目录的上下文。 |
@@ -97,6 +106,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_GetCacheDir(
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityRuntime_ErrorCode | 返回执行结果。 ABILITY_RUNTIME_ERROR_CODE_NO_ERROR - 操作成功。 ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID - 入参buffer或writeLength为空或context为空，或缓冲区大小小于需要写入的大小。 ABILITY_RUNTIME_ERROR_CODE_CONTEXT_NOT_EXIST - 上下文不存在。 |
@@ -123,9 +133,10 @@ void testGetCacheDir(AbilityRuntime_ContextHandle context)
  
   
 
-#### OH_AbilityRuntime_Context_GetTempDir()
+### OH_AbilityRuntime_Context_GetTempDir()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_GetTempDir(
@@ -140,6 +151,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_GetTempDir(
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_ContextHandle context | 要获取临时文件目录的上下文。 |
@@ -150,6 +162,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_GetTempDir(
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityRuntime_ErrorCode | 返回执行结果。 ABILITY_RUNTIME_ERROR_CODE_NO_ERROR - 操作成功。 ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID - 入参buffer或writeLength为空或context为空，或缓冲区大小小于需要写入的大小。 ABILITY_RUNTIME_ERROR_CODE_CONTEXT_NOT_EXIST - 上下文不存在。 |
@@ -176,9 +189,10 @@ void testGetTempDir(AbilityRuntime_ContextHandle context)
  
   
 
-#### OH_AbilityRuntime_Context_GetFilesDir()
+### OH_AbilityRuntime_Context_GetFilesDir()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_GetFilesDir(
@@ -193,6 +207,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_GetFilesDir(
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_ContextHandle context | 要获取通用文件目录的上下文。 |
@@ -203,6 +218,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_GetFilesDir(
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityRuntime_ErrorCode | 返回执行结果。 ABILITY_RUNTIME_ERROR_CODE_NO_ERROR - 操作成功。 ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID - 入参buffer或writeLength为空或context为空，或缓冲区大小小于需要写入的大小。 ABILITY_RUNTIME_ERROR_CODE_CONTEXT_NOT_EXIST - 上下文不存在。 |
@@ -229,9 +245,10 @@ void testGetFilesDir(AbilityRuntime_ContextHandle context)
  
   
 
-#### OH_AbilityRuntime_Context_GetDatabaseDir()
+### OH_AbilityRuntime_Context_GetDatabaseDir()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_GetDatabaseDir(
@@ -246,6 +263,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_GetDatabaseDir(
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_ContextHandle context | 要获取数据库文件目录的上下文。 |
@@ -256,6 +274,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_GetDatabaseDir(
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityRuntime_ErrorCode | 返回执行结果。 ABILITY_RUNTIME_ERROR_CODE_NO_ERROR - 操作成功。 ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID - 入参buffer或writeLength为空或context为空，或缓冲区大小小于需要写入的大小。 ABILITY_RUNTIME_ERROR_CODE_CONTEXT_NOT_EXIST - 上下文不存在。 |
@@ -282,9 +301,10 @@ void testGetDatabaseDir(AbilityRuntime_ContextHandle context)
  
   
 
-#### OH_AbilityRuntime_Context_GetPreferencesDir()
+### OH_AbilityRuntime_Context_GetPreferencesDir()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_GetPreferencesDir(
@@ -299,6 +319,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_GetPreferencesDir(
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_ContextHandle context | 要获取首选项文件目录的上下文。 |
@@ -309,6 +330,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_GetPreferencesDir(
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityRuntime_ErrorCode | 返回执行结果。 ABILITY_RUNTIME_ERROR_CODE_NO_ERROR - 操作成功。 ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID - 入参buffer或writeLength为空或context为空，或缓冲区大小小于需要写入的大小。 ABILITY_RUNTIME_ERROR_CODE_CONTEXT_NOT_EXIST - 上下文不存在。 |
@@ -335,9 +357,10 @@ void testGetPreferencesDir(AbilityRuntime_ContextHandle context)
  
   
 
-#### OH_AbilityRuntime_Context_GetBundleCodeDir()
+### OH_AbilityRuntime_Context_GetBundleCodeDir()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_GetBundleCodeDir(
@@ -352,6 +375,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_GetBundleCodeDir(
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_ContextHandle context | 要获取安装文件目录的上下文。 |
@@ -362,6 +386,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_GetBundleCodeDir(
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityRuntime_ErrorCode | 返回执行结果。 ABILITY_RUNTIME_ERROR_CODE_NO_ERROR - 操作成功。 ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID - 入参buffer或writeLength为空或context为空，或缓冲区大小小于需要写入的大小。 ABILITY_RUNTIME_ERROR_CODE_CONTEXT_NOT_EXIST - 上下文不存在。 |
@@ -388,9 +413,10 @@ void testGetBundleCodeDir(AbilityRuntime_ContextHandle context)
  
   
 
-#### OH_AbilityRuntime_Context_GetDistributedFilesDir()
+### OH_AbilityRuntime_Context_GetDistributedFilesDir()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_GetDistributedFilesDir(
@@ -405,6 +431,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_GetDistributedFilesDir(
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_ContextHandle context | 要获取分布式文件目录的上下文。 |
@@ -415,6 +442,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_GetDistributedFilesDir(
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityRuntime_ErrorCode | 返回执行结果。 ABILITY_RUNTIME_ERROR_CODE_NO_ERROR - 操作成功。 ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID - 入参buffer或writeLength为空或context为空，或缓冲区大小小于需要写入的大小。 ABILITY_RUNTIME_ERROR_CODE_CONTEXT_NOT_EXIST - 上下文不存在。 |
@@ -441,9 +469,10 @@ void testGetDistributedFilesDir(AbilityRuntime_ContextHandle context)
  
   
 
-#### OH_AbilityRuntime_Context_GetResourceDir()
+### OH_AbilityRuntime_Context_GetResourceDir()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_GetResourceDir(
@@ -458,6 +487,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_GetResourceDir(
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_ContextHandle context | 要获取资源目录的上下文。 |
@@ -468,6 +498,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_GetResourceDir(
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityRuntime_ErrorCode | 返回执行结果。 ABILITY_RUNTIME_ERROR_CODE_NO_ERROR - 操作成功。 ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID - 入参buffer或writeLength为空或context为空，或缓冲区大小小于需要写入的大小。 ABILITY_RUNTIME_ERROR_CODE_CONTEXT_NOT_EXIST - 上下文不存在。 |
@@ -494,9 +525,10 @@ void testGetResourceDir(AbilityRuntime_ContextHandle context)
  
   
 
-#### OH_AbilityRuntime_Context_GetCloudFileDir()
+### OH_AbilityRuntime_Context_GetCloudFileDir()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_GetCloudFileDir(
@@ -511,6 +543,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_GetCloudFileDir(
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_ContextHandle context | 要获取云文件目录的上下文。 |
@@ -521,6 +554,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_GetCloudFileDir(
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityRuntime_ErrorCode | 返回执行结果。 ABILITY_RUNTIME_ERROR_CODE_NO_ERROR - 操作成功。 ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID - 入参buffer或writeLength为空或context为空，或缓冲区大小小于需要写入的大小。 ABILITY_RUNTIME_ERROR_CODE_CONTEXT_NOT_EXIST - 上下文不存在。 |
@@ -547,9 +581,10 @@ void testGetCloudFileDir(AbilityRuntime_ContextHandle context)
  
   
 
-#### OH_AbilityRuntime_Context_GetAreaMode()
+### OH_AbilityRuntime_Context_GetAreaMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_GetAreaMode(
@@ -564,6 +599,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_GetAreaMode(
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_ContextHandle context | 要获取数据加密等级的上下文。 |
@@ -572,6 +608,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_GetAreaMode(
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityRuntime_ErrorCode | 返回执行结果。 ABILITY_RUNTIME_ERROR_CODE_NO_ERROR - 操作成功。 ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID - 入参areaMode为空。 ABILITY_RUNTIME_ERROR_CODE_CONTEXT_NOT_EXIST - 上下文不存在。 |
@@ -597,9 +634,10 @@ void testGetAreaMode(AbilityRuntime_ContextHandle context)
  
   
 
-#### OH_AbilityRuntime_Context_SetAreaMode()
+### OH_AbilityRuntime_Context_SetAreaMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_SetAreaMode(
@@ -614,6 +652,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_SetAreaMode(
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_ContextHandle context | 要设置数据加密等级的上下文。 |
@@ -622,6 +661,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_SetAreaMode(
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityRuntime_ErrorCode | 返回执行结果。 ABILITY_RUNTIME_ERROR_CODE_NO_ERROR - 操作成功。 ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID - 入参context为空。 ABILITY_RUNTIME_ERROR_CODE_CONTEXT_NOT_EXIST - 上下文不存在。 |
@@ -647,9 +687,10 @@ void testSetAreaMode(AbilityRuntime_ContextHandle context)
  
   
 
-#### OH_AbilityRuntime_Context_GetLogFileDir()
+### OH_AbilityRuntime_Context_GetLogFileDir()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_GetLogFileDir(
@@ -664,6 +705,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_GetLogFileDir(
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_ContextHandle context | 要获取日志文件目录的上下文。 |
@@ -674,6 +716,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_GetLogFileDir(
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityRuntime_ErrorCode | 返回执行结果。 ABILITY_RUNTIME_ERROR_CODE_NO_ERROR - 操作成功。 ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID - 入参buffer或writeLength为空或context为空，或缓冲区大小小于需要写入的大小。 ABILITY_RUNTIME_ERROR_CODE_CONTEXT_NOT_EXIST - 上下文不存在。 |
@@ -700,9 +743,10 @@ void testGetLogFileDir(AbilityRuntime_ContextHandle context)
  
   
 
-#### OH_AbilityRuntime_Context_GetProcessName()
+### OH_AbilityRuntime_Context_GetProcessName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_GetProcessName(
@@ -717,6 +761,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_GetProcessName(
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | AbilityRuntime_ContextHandle context | 要获取进程名称的上下文。 |
@@ -727,6 +772,7 @@ AbilityRuntime_ErrorCode OH_AbilityRuntime_Context_GetProcessName(
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AbilityRuntime_ErrorCode | 返回执行结果。 ABILITY_RUNTIME_ERROR_CODE_NO_ERROR - 操作成功。 ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID - 入参buffer或writeLength为空或context为空，或缓冲区大小小于需要写入的大小。 ABILITY_RUNTIME_ERROR_CODE_CONTEXT_NOT_EXIST - 上下文不存在。 |

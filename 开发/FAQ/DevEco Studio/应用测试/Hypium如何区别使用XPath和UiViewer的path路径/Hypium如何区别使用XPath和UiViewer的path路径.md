@@ -28,7 +28,7 @@ XPath是W3C标准，节点是从[1]开始。UiViewer提供的path下标是从[0]
 
   
 ```text
-# -*- coding: utf-8 -*-
+<em># -*- coding: utf-8 -*-</em>
 from devicetest.core.test_case import TestCase, Step, CheckPoint
 from hypium import BY, UiDriver
 
@@ -47,7 +47,7 @@ class TC_001(TestCase):
     def process(self):
         Step('2.启动设置应用')
         self.driver.start_app("com.huawei.hmos.settings")
-        # 点击设置页面WLAN
+       <em> # 点击设置页面WLAN</em>
         self.driver.touch(BY.text("WLAN"))
         comp = self.driver.find_component(
             BY.xpath("//*[@text='可用 WLAN']/ancestor::List/ListItemGroup/ListItem[1]//Text/following::Image"))
@@ -66,7 +66,7 @@ class TC_001(TestCase):
 
   
 ```text
-# -*- coding: utf-8 -*-
+<em># -*- coding: utf-8 -*-</em>
 from devicetest.core.test_case import TestCase, Step, CheckPoint
 from hypium import BY, UiDriver
 
@@ -85,7 +85,7 @@ class TC_002(TestCase):
     def process(self):
         Step('2.启动设置应用')
         self.driver.start_app("com.huawei.hmos.settings")
-        # 点击设置页面WLAN
+       <em> # 点击设置页面WLAN</em>
         self.driver.touch(BY.text("WLAN"))
         comp = self.driver.UiTree.find_component_by_path(
             "/root/Navigation/NavigationContent/NavDestination/NavDestinationContent\

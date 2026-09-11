@@ -1,9 +1,9 @@
 # @ohos.hidebug (Debug调试)
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hidebug
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 为应用提供多种调试、调优的方法，帮助开发者定位性能瓶颈、优化应用性能。主要功能包括：内存数据分析、CPU使用率监控、trace采集、profiler采集、VM堆快照转储。由于该模块的接口大多比较耗费性能，接口调用较为耗时，且基于HiDebug模块定义，该模块内的接口仅建议在应用调试、调优阶段使用。若需要在其他场景使用时，请认真评估所需调用的接口对应用性能的影响。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { hidebug } from '@kit.PerformanceAnalysisKit';
@@ -22,9 +23,10 @@ import { hidebug } from '@kit.PerformanceAnalysisKit';
 
 
 
-#### hidebug.getNativeHeapSize
+## hidebug.getNativeHeapSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getNativeHeapSize(): bigint
 
@@ -33,6 +35,7 @@ getNativeHeapSize(): bigint
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -50,9 +53,10 @@ console.info(`nativeHeapSize = ${nativeHeapSize}`);
 
 
 
-#### hidebug.getNativeHeapAllocatedSize
+## hidebug.getNativeHeapAllocatedSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getNativeHeapAllocatedSize(): bigint
 
@@ -61,6 +65,7 @@ getNativeHeapAllocatedSize(): bigint
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -78,9 +83,10 @@ console.info(`nativeHeapAllocatedSize = ${nativeHeapAllocatedSize}`);
 
 
 
-#### hidebug.getNativeHeapFreeSize
+## hidebug.getNativeHeapFreeSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getNativeHeapFreeSize(): bigint
 
@@ -89,6 +95,7 @@ getNativeHeapFreeSize(): bigint
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -106,9 +113,10 @@ console.info(`nativeHeapFreeSize = ${nativeHeapFreeSize}`);
 
 
 
-#### hidebug.getPss
+## hidebug.getPss
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPss(): bigint
 
@@ -126,6 +134,7 @@ getPss(): bigint
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | bigint | 返回应用进程实际使用的物理内存大小，单位为KB。 |
@@ -142,9 +151,10 @@ console.info(`pss = ${pss}`);
 
 
 
-#### hidebug.getVss11+
+## hidebug.getVss11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getVss(): bigint
 
@@ -153,6 +163,7 @@ getVss(): bigint
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -170,9 +181,10 @@ console.info(`vss = ${vss}`);
 
 
 
-#### hidebug.getSharedDirty
+## hidebug.getSharedDirty
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSharedDirty(): bigint
 
@@ -190,6 +202,7 @@ getSharedDirty(): bigint
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | bigint | 返回进程的共享脏内存大小，单位为KB。 |
@@ -206,9 +219,10 @@ console.info(`sharedDirty = ${sharedDirty}`);
 
 
 
-#### hidebug.getPrivateDirty9+
+## hidebug.getPrivateDirty9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPrivateDirty(): bigint
 
@@ -226,6 +240,7 @@ getPrivateDirty(): bigint
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | bigint | 返回进程的私有脏内存大小，单位为KB。 |
@@ -242,9 +257,10 @@ console.info(`privateDirty = ${privateDirty}`);
 
 
 
-#### hidebug.getCpuUsage9+
+## hidebug.getCpuUsage9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCpuUsage(): number
 
@@ -262,6 +278,7 @@ getCpuUsage(): number
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 获取进程的CPU使用率。如占用率为50%，则返回0.5。 |
@@ -278,9 +295,10 @@ console.info(`cpuUsage = ${cpuUsage}`);
 
 
 
-#### hidebug.getServiceDump9+
+## hidebug.getServiceDump9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getServiceDump(serviceid: number, fd: number, args: Array&lt;string&gt;): void
 
@@ -292,6 +310,7 @@ getServiceDump(serviceid: number, fd: number, args: Array&lt;string&gt;): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | serviceid | number | 是 | 系统服务ID，用于标识要获取信息的系统服务。取值由系统定义，取值范围[0, 255]。传入无效值时返回错误码401。 |
@@ -302,6 +321,7 @@ getServiceDump(serviceid: number, fd: number, args: Array&lt;string&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)与[HiDebug错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-hiviewdfx-hidebug)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -336,9 +356,10 @@ if (fileFd >= 0) {
 
 
 
-#### hidebug.startJsCpuProfiling9+
+## hidebug.startJsCpuProfiling9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startJsCpuProfiling(filename: string): void
 
@@ -348,6 +369,7 @@ startJsCpuProfiling(filename: string): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | filename | string | 是 | 用户自定义的采样结果输出的文件名，将在应用的files目录下生成以该参数命名的json文件。string长度的最大值为128。 |
@@ -356,6 +378,7 @@ startJsCpuProfiling(filename: string): void
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -379,9 +402,10 @@ try {
 
 
 
-#### hidebug.stopJsCpuProfiling9+
+## hidebug.stopJsCpuProfiling9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopJsCpuProfiling(): void
 
@@ -406,9 +430,10 @@ try {
 
 
 
-#### hidebug.dumpJsHeapData9+
+## hidebug.dumpJsHeapData9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 dumpJsHeapData(filename: string): void
 
@@ -426,6 +451,7 @@ dumpJsHeapData(filename: string): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | filename | string | 是 | 用户自定义的虚拟机堆数据转储输出的文件名，将在应用的files目录下生成以该参数命名的heapsnapshot文件。string长度的最大值为128字节。 |
@@ -434,6 +460,7 @@ dumpJsHeapData(filename: string): void
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -455,9 +482,10 @@ try {
 
 
 
-#### hidebug.dumpJsHeapData24+
+## hidebug.dumpJsHeapData24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 dumpJsHeapData(filename: string, needClean: boolean): void
 
@@ -478,6 +506,7 @@ dumpJsHeapData(filename: string, needClean: boolean): void
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -500,9 +529,10 @@ try {
 
 
 
-#### hidebug.startProfiling(deprecated)
+## hidebug.startProfiling(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startProfiling(filename: string): void
 
@@ -515,6 +545,7 @@ startProfiling(filename: string): void
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -535,9 +566,10 @@ hidebug.stopProfiling();
 
 
 
-#### hidebug.stopProfiling(deprecated)
+## hidebug.stopProfiling(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopProfiling(): void
 
@@ -563,9 +595,10 @@ hidebug.stopProfiling();
 
 
 
-#### hidebug.dumpHeapData(deprecated)
+## hidebug.dumpHeapData(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 dumpHeapData(filename: string): void
 
@@ -578,6 +611,7 @@ dumpHeapData(filename: string): void
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -594,9 +628,10 @@ hidebug.dumpHeapData("heap-20220216");
 
 
 
-#### hidebug.getAppVMMemoryInfo12+
+## hidebug.getAppVMMemoryInfo12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAppVMMemoryInfo(): VMMemoryInfo
 
@@ -605,6 +640,7 @@ getAppVMMemoryInfo(): VMMemoryInfo
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -623,9 +659,10 @@ console.info(`totalHeap = ${vmMemory.totalHeap}, heapUsed = ${vmMemory.heapUsed}
 
 
 
-#### hidebug.getAppVMObjectUsedSize21+
+## hidebug.getAppVMObjectUsedSize21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAppVMObjectUsedSize(): bigint
 
@@ -634,6 +671,7 @@ getAppVMObjectUsedSize(): bigint
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -650,9 +688,10 @@ console.info(`getAppVMObjectUsedSize = ${hidebug.getAppVMObjectUsedSize()}`);
 
 
 
-#### hidebug.getAppThreadCpuUsage12+
+## hidebug.getAppThreadCpuUsage12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAppThreadCpuUsage(): ThreadCpuUsage[]
 
@@ -669,6 +708,7 @@ getAppThreadCpuUsage(): ThreadCpuUsage[]
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -688,9 +728,10 @@ for (let i = 0; i < appThreadCpuUsage.length; i++) {
 
 
 
-#### hidebug.startAppTraceCapture12+
+## hidebug.startAppTraceCapture12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startAppTraceCapture(tags: number[], flag: TraceFlag, limitSize: number): string
 
@@ -712,6 +753,7 @@ trace单位流量实测方法：limitSize设置为最大值500M，调用startApp
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | tags | number[] | 是 | trace范围，详情请见tags。 |
@@ -721,6 +763,7 @@ trace单位流量实测方法：limitSize设置为最大值500M，调用startApp
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 返回trace文件名路径（接口返回真实物理路径，若应用内需要访问，请参考应用沙箱路径和真实物理路径的对应关系进行路径转换）。 |
@@ -729,6 +772,7 @@ trace单位流量实测方法：limitSize设置为最大值500M，调用startApp
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)与[HiDebug Trace错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-hiviewdfx-hidebug-trace)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -762,9 +806,10 @@ try {
 
 
 
-#### hidebug.stopAppTraceCapture12+
+## hidebug.stopAppTraceCapture12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopAppTraceCapture(): void
 
@@ -777,6 +822,7 @@ stopAppTraceCapture(): void
 **错误码**：
 
 以下错误码的详细介绍请参见[HiDebug Trace错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-hiviewdfx-hidebug-trace)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -807,9 +853,10 @@ try {
 
 
 
-#### hidebug.requestTrace24+
+## hidebug.requestTrace24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestTrace(config: RequestTraceConfig): Promise&lt;string&gt;
 
@@ -827,12 +874,14 @@ requestTrace(config: RequestTraceConfig): Promise&lt;string&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | config | RequestTraceConfig | 是 | trace采集配置信息。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -842,6 +891,7 @@ requestTrace(config: RequestTraceConfig): Promise&lt;string&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[HiDebug Trace错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-hiviewdfx-hidebug-trace)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -874,9 +924,10 @@ try {
 
 
 
-#### hidebug.getAppMemoryLimit12+
+## hidebug.getAppMemoryLimit12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAppMemoryLimit(): MemoryLimit
 
@@ -885,6 +936,7 @@ getAppMemoryLimit(): MemoryLimit
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -903,9 +955,10 @@ console.info(`rssLimit: ${appMemoryLimit.rssLimit}, vssLimit: ${appMemoryLimit.v
 
 
 
-#### hidebug.getSystemCpuUsage12+
+## hidebug.getSystemCpuUsage12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSystemCpuUsage(): number
 
@@ -923,6 +976,7 @@ getSystemCpuUsage(): number
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 系统CPU资源占用情况。如占用率为50%，则返回0.5。 |
@@ -931,6 +985,7 @@ getSystemCpuUsage(): number
 **错误码**：
 
 以下错误码的详细介绍请参见[HiDebug CpuUsage错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-hiviewdfx-hidebug-cpuusage)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -952,9 +1007,10 @@ try {
 
 
 
-#### hidebug.setAppResourceLimit12+
+## hidebug.setAppResourceLimit12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAppResourceLimit(type: string, value: number, enableDebugLog: boolean): void
 
@@ -976,6 +1032,7 @@ setAppResourceLimit(type: string, value: number, enableDebugLog: boolean): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 泄漏资源类型，共四种： - pss_memory（native内存） - js_heap（js堆内存） - fd（文件描述符） - thread（线程） |
@@ -986,6 +1043,7 @@ setAppResourceLimit(type: string, value: number, enableDebugLog: boolean): void
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)与[HiDebug错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-hiviewdfx-hidebug)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1011,9 +1069,10 @@ try {
 
 
 
-#### hidebug.getAppNativeMemInfo12+
+## hidebug.getAppNativeMemInfo12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAppNativeMemInfo(): NativeMemInfo
 
@@ -1033,6 +1092,7 @@ getAppNativeMemInfo(): NativeMemInfo
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | NativeMemInfo | 应用进程内存信息。 |
@@ -1051,9 +1111,10 @@ console.info(`pss: ${nativeMemInfo.pss}, vss: ${nativeMemInfo.vss}, rss: ${nativ
 
 
 
-#### hidebug.getAppNativeMemInfoAsync20+
+## hidebug.getAppNativeMemInfoAsync20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAppNativeMemInfoAsync(): Promise&lt;NativeMemInfo&gt;
 
@@ -1062,6 +1123,7 @@ getAppNativeMemInfoAsync(): Promise&lt;NativeMemInfo&gt;
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1080,9 +1142,10 @@ hidebug.getAppNativeMemInfoAsync().then((nativeMemInfo: hidebug.NativeMemInfo)=>
 
 
 
-#### hidebug.getAppNativeMemInfoWithCache20+
+## hidebug.getAppNativeMemInfoWithCache20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAppNativeMemInfoWithCache(forceRefresh?: boolean): NativeMemInfo
 
@@ -1100,12 +1163,14 @@ getAppNativeMemInfoWithCache(forceRefresh?: boolean): NativeMemInfo
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | forceRefresh | boolean | 否 | 是否需要无视缓存有效性，强制更新缓存值。默认值：false。 true：直接获取当前内存数据并更新缓存值。 false：缓存有效时，直接返回缓存值，缓存失效时获取当前内存数据并更新缓存值。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1123,9 +1188,10 @@ console.info(`pss: ${nativeMemInfo.pss}, vss: ${nativeMemInfo.vss}, rss: ${nativ
 
 
 
-#### hidebug.getSystemMemInfo12+
+## hidebug.getSystemMemInfo12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSystemMemInfo(): SystemMemInfo
 
@@ -1134,6 +1200,7 @@ getSystemMemInfo(): SystemMemInfo
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1153,9 +1220,10 @@ console.info(`totalMem: ${systemMemInfo.totalMem}, freeMem: ${systemMemInfo.free
 
 
 
-#### hidebug.getVMRuntimeStats12+
+## hidebug.getVMRuntimeStats12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getVMRuntimeStats(): GcStats
 
@@ -1164,6 +1232,7 @@ getVMRuntimeStats(): GcStats
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1185,9 +1254,10 @@ console.info(`fullgc-longtime-count: ${vMRuntimeStats['ark.gc.fullgc-longtime-co
 
 
 
-#### hidebug.getVMRuntimeStat12+
+## hidebug.getVMRuntimeStat12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getVMRuntimeStat(item: string): number
 
@@ -1197,12 +1267,14 @@ getVMRuntimeStat(item: string): number
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | item | string | 是 | 所需统计信息的类型。可获取的统计信息类型如下： "ark.gc.gc-count"：当前线程的GC次数。 "ark.gc.gc-time"：当前线程触发的GC总耗时，以ms为单位。 "ark.gc.gc-bytes-allocated"：当前线程Ark虚拟机已分配的内存大小，以B为单位。 "ark.gc.gc-bytes-freed"：当前线程GC成功回收的内存，以B为单位。 "ark.gc.fullgc-longtime-count "：当前线程超长fullGC次数。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1212,6 +1284,7 @@ getVMRuntimeStat(item: string): number
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1237,13 +1310,15 @@ try {
 
 
 
-#### MemoryLimit12+
+## MemoryLimit12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 应用进程内存限制。
 
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1255,13 +1330,15 @@ try {
 
 
 
-#### VMMemoryInfo12+
+## VMMemoryInfo12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 VM内存信息。
 
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1272,13 +1349,15 @@ VM内存信息。
 
 
 
-#### ThreadCpuUsage12+
+## ThreadCpuUsage12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 线程的CPU使用情况。
 
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1288,15 +1367,17 @@ VM内存信息。
 
 
 
-#### tags12+
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## tags12+
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 常量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 常量
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持trace使用场景的标签，用户可通过[hitrace](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hitrace)抓取指定标签的trace内容。
 
@@ -1309,6 +1390,7 @@ VM内存信息。
 
 
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
+
 
 | 名称 | 类型 | 只读 | 说明 |
 | --- | --- | --- | --- |
@@ -1348,13 +1430,15 @@ VM内存信息。
 
 
 
-#### NativeMemInfo12+
+## NativeMemInfo12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述应用进程的内存信息。
 
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1369,13 +1453,15 @@ VM内存信息。
 
 
 
-#### SystemMemInfo12+
+## SystemMemInfo12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述系统内存信息，包括总内存、空闲内存和可用内存。
 
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1386,13 +1472,15 @@ VM内存信息。
 
 
 
-#### TraceFlag12+
+## TraceFlag12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述采集trace线程的类型，包括主线程和所有线程。
 
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1402,15 +1490,17 @@ VM内存信息。
 
 
 
-#### GcStats12+
+## GcStats12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type GcStats = Record<string, number>
 
 描述用于存储GC统计信息的键值对。该类型不支持多线程操作，如果应用中存在多线程同时访问，需加锁保护。
 
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1419,9 +1509,10 @@ type GcStats = Record<string, number>
 
 
 
-#### JsRawHeapTrimLevel20+
+## JsRawHeapTrimLevel20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 转储堆快照的裁剪级别的枚举。
 
@@ -1431,6 +1522,7 @@ TRIM_LEVEL_2相比TRIM_LEVEL_1，裁剪时间更长。冻屏的阈值为6秒。�
 
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | TRIM_LEVEL_1 | 0 | LEVEL 1级别裁剪，主要裁剪字符串。 |
@@ -1439,15 +1531,17 @@ TRIM_LEVEL_2相比TRIM_LEVEL_1，裁剪时间更长。冻屏的阈值为6秒。�
 
 
 
-#### RssInfo24+
+## RssInfo24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述应用进程的物理内存信息。
 
 **元服务API**：从API version 24开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1457,9 +1551,10 @@ TRIM_LEVEL_2相比TRIM_LEVEL_1，裁剪时间更长。冻屏的阈值为6秒。�
 
 
 
-#### RequestTraceConfig24+
+## RequestTraceConfig24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供trace采集的参数选项。
 
@@ -1468,6 +1563,7 @@ TRIM_LEVEL_2相比TRIM_LEVEL_1，裁剪时间更长。冻屏的阈值为6秒。�
 **元服务API**：从API version 24开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1479,9 +1575,10 @@ TRIM_LEVEL_2相比TRIM_LEVEL_1，裁剪时间更长。冻屏的阈值为6秒。�
 
 
 
-#### hidebug.isDebugState12+
+## hidebug.isDebugState12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isDebugState(): boolean
 
@@ -1490,6 +1587,7 @@ isDebugState(): boolean
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1506,9 +1604,10 @@ console.info(`isDebugState = ${hidebug.isDebugState()}`)
 
 
 
-#### hidebug.getGraphicsMemory14+
+## hidebug.getGraphicsMemory14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getGraphicsMemory(): Promise&lt;number&gt;
 
@@ -1520,6 +1619,7 @@ getGraphicsMemory(): Promise&lt;number&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | promise对象，返回应用显存总大小，单位为KB。 |
@@ -1528,6 +1628,7 @@ getGraphicsMemory(): Promise&lt;number&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[HiDebug错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-hiviewdfx-hidebug)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1549,9 +1650,10 @@ hidebug.getGraphicsMemory().then((ret: number) => {
 
 
 
-#### hidebug.getGraphicsMemorySync14+
+## hidebug.getGraphicsMemorySync14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getGraphicsMemorySync(): number
 
@@ -1571,6 +1673,7 @@ getGraphicsMemorySync(): number
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 应用显存总大小，单位为KB。 |
@@ -1579,6 +1682,7 @@ getGraphicsMemorySync(): number
 **错误码**：
 
 以下错误码的详细介绍请参见[HiDebug错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-hiviewdfx-hidebug)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1600,9 +1704,10 @@ try {
 
 
 
-#### hidebug.getGraphicsMemorySummary21+
+## hidebug.getGraphicsMemorySummary21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getGraphicsMemorySummary(interval?: number): Promise&lt;GraphicsMemorySummary&gt;
 
@@ -1614,12 +1719,14 @@ getGraphicsMemorySummary(interval?: number): Promise&lt;GraphicsMemorySummary&gt
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | interval | number | 否 | 显存数据缓存值有效时间，单位为秒。默认值：300。取值范围为[2-3600]。若传入值超出取值范围时，将使用默认值。 当显存数据缓存值存在时间超过该值时，获取最新显存数据并更新缓存值；否则，直接获取缓存值。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1629,6 +1736,7 @@ getGraphicsMemorySummary(interval?: number): Promise&lt;GraphicsMemorySummary&gt
 **错误码**：
 
 以下错误码的详细介绍请参见[HiDebug错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-hiviewdfx-hidebug)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1650,9 +1758,10 @@ hidebug.getGraphicsMemorySummary().then((ret: hidebug.GraphicsMemorySummary) => 
 
 
 
-#### hidebug.dumpJsRawHeapData18+
+## hidebug.dumpJsRawHeapData18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 dumpJsRawHeapData(needGC?: boolean): Promise&lt;string&gt;
 
@@ -1674,12 +1783,14 @@ dumpJsRawHeapData(needGC?: boolean): Promise&lt;string&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | needGC | boolean | 否 | 转储堆快照前是否需要GC。true：需要GC。false：不需GC。默认值：true。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1689,6 +1800,7 @@ dumpJsRawHeapData(needGC?: boolean): Promise&lt;string&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[HiDebug错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-hiviewdfx-hidebug)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1716,9 +1828,10 @@ hidebug.dumpJsRawHeapData().then((filePath: string) => {
 
 
 
-#### hidebug.dumpJsRawHeapData24+
+## hidebug.dumpJsRawHeapData24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 dumpJsRawHeapData(needGC: boolean, needClean: boolean): Promise&lt;string&gt;
 
@@ -1742,6 +1855,7 @@ dumpJsRawHeapData(needGC: boolean, needClean: boolean): Promise&lt;string&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | needGC | boolean | 是 | 转储堆快照前是否需要GC。true：需要GC；false：不需要GC。 |
@@ -1749,6 +1863,7 @@ dumpJsRawHeapData(needGC: boolean, needClean: boolean): Promise&lt;string&gt;
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1758,6 +1873,7 @@ dumpJsRawHeapData(needGC: boolean, needClean: boolean): Promise&lt;string&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[HiDebug错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-hiviewdfx-hidebug)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1786,16 +1902,17 @@ hidebug.dumpJsRawHeapData(true, true).then((filePath: string) => {
 
 
 
-#### hidebug.dumpJsRawHeapData
+## hidebug.dumpJsRawHeapData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 dumpJsRawHeapData(needGC: boolean, needClean: boolean, processDump: boolean): Promise<Array&lt;string&gt;>
 
 为当前线程或其所属进程生成虚拟机的原始堆快照，并支持清除nodeId缓存，生成的文件为rawheap格式。使用Promise异步回调。文件可通过[rawheap-translator工具](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/rawheap-translator)转换为heapsnapshot格式文件进行解析。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/rmI0Ls9SQmO8Wxtbmq9AUA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095516Z&HW-CC-Expire=86400&HW-CC-Sign=FFED69CFC8C607FF83DF2DD59B347C3FB0060624CAAE46E83F51C1F804DA1065)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/eVjuARU1SaCtZiSJeYKGdA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072908Z&HW-CC-Expire=86400&HW-CC-Sign=9CDF71076B4D5A35582B7F423E85B2CEA8581DAC74815B7772DBB697739286F8)
 
 
 系统通过该接口转储快照会消耗大量资源，因此严格限制了调用频率和次数。处理完生成的文件后，请立即删除。
@@ -1814,6 +1931,7 @@ dumpJsRawHeapData(needGC: boolean, needClean: boolean, processDump: boolean): Pr
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | needGC | boolean | 是 | 转储堆快照前是否需要GC。true：需要GC；false：不需要GC。 |
@@ -1823,6 +1941,7 @@ dumpJsRawHeapData(needGC: boolean, needClean: boolean, processDump: boolean): Pr
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;string&gt;> | Promise对象，返回生成的快照文件路径数组（应用沙箱内路径）。 |
@@ -1831,6 +1950,7 @@ dumpJsRawHeapData(needGC: boolean, needClean: boolean, processDump: boolean): Pr
 **错误码**：
 
 以下错误码的详细介绍请参见[HiDebug错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-hiviewdfx-hidebug)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1859,9 +1979,10 @@ hidebug.dumpJsRawHeapData(true, true, true).then((filePathArray: Array<string>) 
 
 
 
-#### hidebug.enableGwpAsanGrayscale20+
+## hidebug.enableGwpAsanGrayscale20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableGwpAsanGrayscale(options?: GwpAsanOptions, duration?: number): void
 
@@ -1879,6 +2000,7 @@ enableGwpAsanGrayscale(options?: GwpAsanOptions, duration?: number): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | GwpAsanOptions | 否 | GWP-ASan配置项。未设置时，使用默认参数。 |
@@ -1888,6 +2010,7 @@ enableGwpAsanGrayscale(options?: GwpAsanOptions, duration?: number): void
 **错误码**：
 
 以下错误码的详细介绍请参见[HiDebug错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-hiviewdfx-hidebug)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1922,13 +2045,15 @@ taskpool.execute(enableGwpAsanTask).then(() => {
 
 
 
-#### GwpAsanOptions20+
+## GwpAsanOptions20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 GWP-ASan配置项。可用于配置是否使能、采样频率，以及最大分配的插槽数。
 
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1940,9 +2065,10 @@ GWP-ASan配置项。可用于配置是否使能、采样频率，以及最大分
 
 
 
-#### hidebug.disableGwpAsanGrayscale20+
+## hidebug.disableGwpAsanGrayscale20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 disableGwpAsanGrayscale(): void
 
@@ -1971,9 +2097,10 @@ taskpool.execute(disableGwpAsanTask).then(() => {
 
 
 
-#### hidebug.getGwpAsanGrayscaleState20+
+## hidebug.getGwpAsanGrayscaleState20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getGwpAsanGrayscaleState(): number
 
@@ -1986,6 +2113,7 @@ getGwpAsanGrayscaleState(): number
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2009,16 +2137,17 @@ taskpool.execute(getGwpAsanStateTask).then((remainDays: Object) => {
 
 
 
-#### hidebug.setJsRawHeapTrimLevel20+
+## hidebug.setJsRawHeapTrimLevel20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setJsRawHeapTrimLevel(level: JsRawHeapTrimLevel): void
 
 设置当前进程转储虚拟机原始堆快照的裁剪级别。使用该接口并传入参数TRIM_LEVEL_2，可以有效减少堆快照的文件大小。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/RcIfYqGEREujeWBeKFAV0Q/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095516Z&HW-CC-Expire=86400&HW-CC-Sign=CF0CFF9C4A1CE8A5FCB12FFAF7A0DA9BC5A4614B67B7F7D505345310B52392AC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/-ogPRnmARye70QHxiw3UaQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072908Z&HW-CC-Expire=86400&HW-CC-Sign=417AC983952A9F292E484D0480F40B39E3C875C3996C54C52004D54BB8D1DF87)
 
 
 默认裁剪级别是TRIM_LEVEL_1。如果设置了TRIM_LEVEL_2裁剪，需使用API version 20之后的[rawheap-translator](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/rawheap-translator)工具才能将.rawheap文件转换为.heapsnapshot文件，否则可能导致转换失败。
@@ -2030,6 +2159,7 @@ setJsRawHeapTrimLevel(level: JsRawHeapTrimLevel): void
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2046,15 +2176,17 @@ hidebug.setJsRawHeapTrimLevel(hidebug.JsRawHeapTrimLevel.TRIM_LEVEL_2);
 
 
 
-#### GraphicsMemorySummary21+
+## GraphicsMemorySummary21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述应用显存数据，包括gl和graph部分。
 
 **元服务API**：从API version 21开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2064,16 +2196,17 @@ hidebug.setJsRawHeapTrimLevel(hidebug.JsRawHeapTrimLevel.TRIM_LEVEL_2);
 
 
 
-#### hidebug.setProcDumpInSharedOOM24+
+## hidebug.setProcDumpInSharedOOM24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setProcDumpInSharedOOM(enable: boolean): void
 
 将转储的堆快照由线程级改为进程级。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/YtkhuX3kQgO_da2SVOMYtA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095516Z&HW-CC-Expire=86400&HW-CC-Sign=670D43553B42E8FB2FF23378F2D5C6BCF73D32A95666FEC6C35794D1296EAFF2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/8otDcM0tTI2M0UW3F0XZIw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072908Z&HW-CC-Expire=86400&HW-CC-Sign=DAFB29792C4F063CBEBBA57ADAD43FDAD74C38E916B0D5AA1D64FD3B25EFD391)
 
 
 要想转储进程级的堆快照，调用该接口并传参true、进程OOM时发生的是SharedHeap OOM，两个条件缺一不可。
@@ -2092,6 +2225,7 @@ setProcDumpInSharedOOM(enable: boolean): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | boolean | 是 | 当进程发生SharedHeap OOM时，系统将依据该进程在其生命周期中最后一次调用该接口所记录的信息，转储相应级别的堆快照。 true：进程级。 false：线程级。 默认值：false。 |
@@ -2107,9 +2241,10 @@ hidebug.setProcDumpInSharedOOM(true);
 
 
 
-#### hidebug.getRssInfo24+
+## hidebug.getRssInfo24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRssInfo(): RssInfo
 
@@ -2120,7 +2255,7 @@ getRssInfo(): RssInfo
 **系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/eEl2wGYTSoGBRKPt6qi1hA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095516Z&HW-CC-Expire=86400&HW-CC-Sign=F1DF1DD7BA590081BD8F9F1B35FC701AF86F3CE0AEFFD52CDF8F3CF8AAD49A7F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/KD3DQ3h8SCyDIePiCLNF7g/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072908Z&HW-CC-Expire=86400&HW-CC-Sign=AB89C6D1A2AE9340F5A6A4ED90C829F106FA4CBBE1E36292467D2B1618F2E3A5)
 
 
 读取/proc/{pid}/status耗时很短，与[hidebug.getAppNativeMemInfo](#hidebuggetappnativememinfo12)接口中获取的rss值相比存在一点误差，但该接口更加轻量，为避免应用丢帧或卡顿推荐使用该接口。
@@ -2128,6 +2263,7 @@ getRssInfo(): RssInfo
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |

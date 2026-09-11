@@ -1,9 +1,9 @@
 # GridItem
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-griditem
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 网格容器中单项内容容器。
 
@@ -12,17 +12,19 @@
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 可以包含单个子组件。
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 GridItem(value?: GridItemOptions)
 
@@ -34,6 +36,7 @@ GridItem(value?: GridItemOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value11+ | GridItemOptions | 否 | 为GridItem提供可选参数，该对象内包含GridItemStyle枚举类型的style参数。不传入时使用默认样式，即GridItemStyle.NONE。 模型约束： 此接口仅可在Stage模型下使用。 |
@@ -41,15 +44,17 @@ GridItem(value?: GridItemOptions)
 
 
 
-#### 属性
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 属性
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### rowStart
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### rowStart
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 rowStart(value: number)
 
@@ -61,6 +66,7 @@ rowStart(value: number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 当前元素起始行号。 需要指定GridItem起始行列号和所占行列数的场景推荐使用Grid的GridLayoutOptions参数，详细可参考Grid的示例1（固定行列Grid）和示例3（可滚动Grid设置跨行跨列节点）。 取值范围：[0, 总行数-1] |
@@ -68,9 +74,10 @@ rowStart(value: number)
 
 
 
-#### rowEnd
+### rowEnd
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 rowEnd(value: number)
 
@@ -82,6 +89,7 @@ rowEnd(value: number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 当前元素终点行号。 需要指定GridItem起始行列号和所占行列数的场景推荐使用Grid的GridLayoutOptions参数，详细可参考Grid的示例1（固定行列Grid）和示例3（可滚动Grid设置跨行跨列节点）。 取值范围：[0, 总行数-1] |
@@ -89,9 +97,10 @@ rowEnd(value: number)
 
 
 
-#### columnStart
+### columnStart
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 columnStart(value: number)
 
@@ -103,6 +112,7 @@ columnStart(value: number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 当前元素起始列号。 需要指定GridItem起始行列号和所占行列数的场景推荐使用Grid的GridLayoutOptions参数，详细可参考Grid的示例1（固定行列Grid）和示例3（可滚动Grid设置跨行跨列节点）。 取值范围：[0, 总列数-1] |
@@ -110,9 +120,10 @@ columnStart(value: number)
 
 
 
-#### columnEnd
+### columnEnd
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 columnEnd(value: number)
 
@@ -123,6 +134,7 @@ columnEnd(value: number)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -144,6 +156,7 @@ columnEnd(value: number)
 
 以下是GridItem行列号异常值的处理规则：
 
+
 | 属性设置情况 | 异常类型 | 修正后布局规则 |
 | --- | --- | --- |
 | 仅设置columnsTemplate | 任意行列异常 | 按一行一列布局。 |
@@ -156,9 +169,10 @@ columnEnd(value: number)
 
 
 
-#### forceRebuild(deprecated)
+### forceRebuild(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 forceRebuild(value: boolean)
 
@@ -172,6 +186,7 @@ forceRebuild(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 设置为true时，在触发组件build时重新创建此节点；设置为false时，不强制重新创建此节点。 默认值：false |
@@ -179,9 +194,10 @@ forceRebuild(value: boolean)
 
 
 
-#### selectable8+
+### selectable8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectable(value: boolean)
 
@@ -195,6 +211,7 @@ selectable(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 当前GridItem元素是否可以被鼠标框选。设置为true时可以被鼠标框选，设置为false时无法被鼠标框选。 默认值：true |
@@ -202,9 +219,10 @@ selectable(value: boolean)
 
 
 
-#### selected10+
+### selected10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selected(value: boolean)
 
@@ -220,6 +238,7 @@ selected(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 当前GridItem选中状态。设置为true时为选中状态，设置为false时为非选中状态。 默认值：false |
@@ -227,9 +246,10 @@ selected(value: boolean)
 
 
 
-#### GridItemOptions11+对象说明
+## GridItemOptions11+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 GridItem样式对象，用于配置GridItem的样式选项。
 
@@ -239,6 +259,7 @@ GridItem样式对象，用于配置GridItem的样式选项。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | style | GridItemStyle | 否 | 是 | 设置GridItem样式。 默认值：GridItemStyle.NONE 设置为GridItemStyle.NONE时无样式。 设置为GridItemStyle.PLAIN时，显示Hover、Press态样式。Hover态为鼠标悬停时的样式，Press态为按下时的样式。 |
@@ -246,9 +267,10 @@ GridItem样式对象，用于配置GridItem的样式选项。
 
 
 
-#### GridItemStyle11+枚举说明
+## GridItemStyle11+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 GridItem样式枚举，用于定义GridItem的交互态样式。
 
@@ -257,6 +279,7 @@ GridItem样式枚举，用于定义GridItem的交互态样式。
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -270,15 +293,17 @@ GridItem样式枚举，用于定义GridItem的交互态样式。
 
 
 
-#### 事件
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 事件
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### onSelect8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### onSelect8+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onSelect(event: (isSelected: boolean) => void)
 
@@ -290,6 +315,7 @@ GridItem元素被鼠标框选的状态改变时触发回调。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isSelected | boolean | 是 | 进入鼠标框选范围即被选中返回true，移出鼠标框选范围即未被选中返回false。 |
@@ -297,13 +323,17 @@ GridItem元素被鼠标框选的状态改变时触发回调。
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（GridItem设置自身位置）
+
+
+### 示例1（GridItem设置自身位置）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 GridItem通过设置合理的rowStart、rowEnd、columnStart、columnEnd属性来设置自身位置。需要指定GridItem起始行列号和所占行列数的场景推荐使用Grid的[GridLayoutOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid#gridlayoutoptions10对象说明)参数，详细可参考Grid的[示例1（固定行列Grid）](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid#示例1固定行列grid)和[示例3（可滚动Grid设置跨行跨列节点）](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid#示例3可滚动grid设置跨行跨列节点)。
 
@@ -360,7 +390,10 @@ struct GridItemExample {
 
 
 
-#### 示例2（设置GridItem样式）
+### 示例2（设置GridItem样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 使用GridItemOptions设置GridItem样式。
 
@@ -395,7 +428,7 @@ struct GridItemExample {
       .width('60%')
       .backgroundColor(0xFAEEE0)
       .height(150)
-      .padding('4vp')
+      .padding(4)
 
       Grid() {
         ForEach(this.numbers, (rowItem: string) => {
@@ -419,11 +452,11 @@ struct GridItemExample {
       .width('60%')
       .backgroundColor(0xFAEEE0)
       .height(150)
-      .padding('4vp')
+      .padding(4)
     }.width('100%').margin({ top: 5 })
   }
 }
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/raBYpzfOS6SYXIQntvZi0w/zh-cn_image_0000002655848504.png?HW-CC-KV=V1&HW-CC-Date=20260730T071500Z&HW-CC-Expire=86400&HW-CC-Sign=5843076D9A882E64D4D53D343F6F741F4D379449AD01534D1A550B455EAB1201)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/I1CW1lB7SqebDM6lYi1gbg/zh-cn_image_0000002717772574.png?HW-CC-KV=V1&HW-CC-Date=20260911T073112Z&HW-CC-Expire=86400&HW-CC-Sign=5B7F46C38D18733A95205D0217F72F878AC2BD95CD24219C0452F7AA0A5DDD3D)

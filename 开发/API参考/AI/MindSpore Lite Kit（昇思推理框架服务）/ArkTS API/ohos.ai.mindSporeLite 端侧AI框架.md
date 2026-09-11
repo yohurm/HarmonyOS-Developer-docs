@@ -1,9 +1,9 @@
 # @ohos.ai.mindSporeLite (端侧AI框架)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-mindsporelite
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 MindSpore Lite是一个轻量化、高性能的端侧AI引擎，提供了标准的模型推理和训练接口，内置通用硬件高性能算子库，支持Neural Network Runtime Kit使能AI专用芯片加速推理，助力打造全场景智能应用。
  
@@ -14,9 +14,10 @@ MindSpore Lite是一个轻量化、高性能的端侧AI引擎，提供了标准�
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { mindSporeLite } from '@kit.MindSporeLiteKit';
@@ -24,9 +25,10 @@ import { mindSporeLite } from '@kit.MindSporeLiteKit';
  
   
 
-#### mindSporeLite.loadModelFromFile
+## mindSporeLite.loadModelFromFile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 loadModelFromFile(model: string, callback: Callback&lt;Model&gt;): void
  
@@ -36,6 +38,7 @@ loadModelFromFile(model: string, callback: Callback&lt;Model&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | model | string | 是 | 模型的完整输入路径。字符串长度限制跟随文件系统。 |
@@ -60,9 +63,10 @@ mindSporeLite.loadModelFromFile(modelFile, (mindSporeLiteModel: mindSporeLite.Mo
  
   
 
-#### mindSporeLite.loadModelFromFile
+## mindSporeLite.loadModelFromFile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 loadModelFromFile(model: string, context: Context, callback: Callback&lt;Model&gt;): void
  
@@ -72,6 +76,7 @@ loadModelFromFile(model: string, context: Context, callback: Callback&lt;Model&g
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | model | string | 是 | 模型的完整输入路径。字符串长度限制跟随文件系统。 |
@@ -99,9 +104,10 @@ mindSporeLite.loadModelFromFile(modelFile, context, (mindSporeLiteModel: mindSpo
  
   
 
-#### mindSporeLite.loadModelFromFile
+## mindSporeLite.loadModelFromFile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 loadModelFromFile(model: string, context?: Context): Promise&lt;Model&gt;
  
@@ -111,6 +117,7 @@ loadModelFromFile(model: string, context?: Context): Promise&lt;Model&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | model | string | 是 | 模型的完整输入路径。字符串长度限制跟随文件系统。 |
@@ -119,6 +126,7 @@ loadModelFromFile(model: string, context?: Context): Promise&lt;Model&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Model&gt; | Promise对象。返回Model对象。 |
@@ -144,9 +152,10 @@ mindSporeLite.loadModelFromFile(modelFile).then((mindSporeLiteModel: mindSporeLi
  
   
 
-#### mindSporeLite.loadModelFromBuffer
+## mindSporeLite.loadModelFromBuffer
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 loadModelFromBuffer(model: ArrayBuffer, callback: Callback&lt;Model&gt;): void
  
@@ -156,6 +165,7 @@ loadModelFromBuffer(model: ArrayBuffer, callback: Callback&lt;Model&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | model | ArrayBuffer | 是 | 包含模型的内存。 |
@@ -192,9 +202,10 @@ globalContext.getApplicationContext()
  
   
 
-#### mindSporeLite.loadModelFromBuffer
+## mindSporeLite.loadModelFromBuffer
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 loadModelFromBuffer(model: ArrayBuffer, context: Context, callback: Callback&lt;Model&gt;): void
  
@@ -204,6 +215,7 @@ loadModelFromBuffer(model: ArrayBuffer, context: Context, callback: Callback&lt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | model | ArrayBuffer | 是 | 包含模型的内存。 |
@@ -244,9 +256,10 @@ globalContext.getApplicationContext()
  
   
 
-#### mindSporeLite.loadModelFromBuffer
+## mindSporeLite.loadModelFromBuffer
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 loadModelFromBuffer(model: ArrayBuffer, context?: Context): Promise&lt;Model&gt;
  
@@ -256,6 +269,7 @@ loadModelFromBuffer(model: ArrayBuffer, context?: Context): Promise&lt;Model&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | model | ArrayBuffer | 是 | 包含模型的内存。 |
@@ -264,6 +278,7 @@ loadModelFromBuffer(model: ArrayBuffer, context?: Context): Promise&lt;Model&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Model&gt; | Promise对象。返回Model对象。 |
@@ -301,9 +316,10 @@ globalContext.getApplicationContext()
  
   
 
-#### mindSporeLite.loadModelFromFd
+## mindSporeLite.loadModelFromFd
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 loadModelFromFd(model: number, callback: Callback&lt;Model&gt;): void
  
@@ -313,6 +329,7 @@ loadModelFromFd(model: number, callback: Callback&lt;Model&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | model | number | 是 | 模型的文件描述符。跟随文件系统返回fd值传入。 |
@@ -340,9 +357,10 @@ mindSporeLite.loadModelFromFd(file.fd, (mindSporeLiteModel: mindSporeLite.Model)
  
   
 
-#### mindSporeLite.loadModelFromFd
+## mindSporeLite.loadModelFromFd
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 loadModelFromFd(model: number, context: Context, callback: Callback&lt;Model&gt;): void
  
@@ -352,6 +370,7 @@ loadModelFromFd(model: number, context: Context, callback: Callback&lt;Model&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | model | number | 是 | 模型的文件描述符。跟随文件系统返回fd值传入。 |
@@ -382,9 +401,10 @@ mindSporeLite.loadModelFromFd(file.fd, context, (mindSporeLiteModel: mindSporeLi
  
   
 
-#### mindSporeLite.loadModelFromFd
+## mindSporeLite.loadModelFromFd
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 loadModelFromFd(model: number, context?: Context): Promise&lt;Model&gt;
  
@@ -394,6 +414,7 @@ loadModelFromFd(model: number, context?: Context): Promise&lt;Model&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | model | number | 是 | 模型的文件描述符。跟随文件系统返回fd值传入。 |
@@ -402,6 +423,7 @@ loadModelFromFd(model: number, context?: Context): Promise&lt;Model&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Model&gt; | Promise对象。返回Model对象。 |
@@ -430,9 +452,10 @@ mindSporeLite.loadModelFromFd(file.fd).then((mindSporeLiteModel: mindSporeLite.M
  
   
 
-#### mindSporeLite.loadTrainModelFromFile12+
+## mindSporeLite.loadTrainModelFromFile12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 loadTrainModelFromFile(model: string, trainCfg?: TrainCfg, context?: Context): Promise&lt;Model&gt;
  
@@ -442,6 +465,7 @@ loadTrainModelFromFile(model: string, trainCfg?: TrainCfg, context?: Context): P
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | model | string | 是 | 模型的完整输入路径。字符串长度限制跟随文件系统。 |
@@ -451,6 +475,7 @@ loadTrainModelFromFile(model: string, trainCfg?: TrainCfg, context?: Context): P
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Model&gt; | Promise对象。返回Model对象。 |
@@ -476,9 +501,10 @@ mindSporeLite.loadTrainModelFromFile(modelFile).then((mindSporeLiteModel: mindSp
  
   
 
-#### mindSporeLite.loadTrainModelFromBuffer12+
+## mindSporeLite.loadTrainModelFromBuffer12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 loadTrainModelFromBuffer(model: ArrayBuffer, trainCfg?: TrainCfg, context?: Context): Promise&lt;Model&gt;
  
@@ -488,6 +514,7 @@ loadTrainModelFromBuffer(model: ArrayBuffer, trainCfg?: TrainCfg, context?: Cont
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | model | ArrayBuffer | 是 | 包含训练模型的内存。 |
@@ -497,6 +524,7 @@ loadTrainModelFromBuffer(model: ArrayBuffer, trainCfg?: TrainCfg, context?: Cont
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Model&gt; | Promise对象。返回Model对象。 |
@@ -529,9 +557,10 @@ globalContext.getApplicationContext()
  
   
 
-#### mindSporeLite.loadTrainModelFromFd12+
+## mindSporeLite.loadTrainModelFromFd12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 loadTrainModelFromFd(model: number, trainCfg?: TrainCfg, context?: Context): Promise&lt;Model&gt;
  
@@ -541,6 +570,7 @@ loadTrainModelFromFd(model: number, trainCfg?: TrainCfg, context?: Context): Pro
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | model | number | 是 | 训练模型的文件描述符。跟随文件系统返回fd值传入。 |
@@ -550,6 +580,7 @@ loadTrainModelFromFd(model: number, trainCfg?: TrainCfg, context?: Context): Pro
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Model&gt; | Promise对象。返回Model对象。 |
@@ -571,9 +602,10 @@ mindSporeLite.loadTrainModelFromFd(file.fd).then((mindSporeLiteModel: mindSporeL
  
   
 
-#### mindSporeLite.getAllNNRTDeviceDescriptions12+
+## mindSporeLite.getAllNNRTDeviceDescriptions12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllNNRTDeviceDescriptions() : NNRTDeviceDescription[]
  
@@ -583,6 +615,7 @@ getAllNNRTDeviceDescriptions() : NNRTDeviceDescription[]
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NNRTDeviceDescription[] | NNRt设备描述信息数组。 |
@@ -605,14 +638,16 @@ try {
  
   
 
-#### Context
+## Context
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义运行环境的配置信息。
  
 **系统能力：** SystemCapability.AI.MindSporeLite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | target | string[] | 否 | 是 | 配置目标后端。可选'cpu'，'nnrt'，默认'cpu'。 |
@@ -629,14 +664,16 @@ context.target = ['cpu','nnrt'];
  
   
 
-#### CpuDevice
+## CpuDevice
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 CPU后端设备选项。
  
 **系统能力：** SystemCapability.AI.MindSporeLite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | threadNum | number | 否 | 是 | 设置运行时的线程数，默认值：2。 |
@@ -661,14 +698,16 @@ context.cpu.threadAffinityCoreList = [0, 1, 2];
  
   
 
-#### ThreadAffinityMode
+## ThreadAffinityMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置运行时的CPU绑核策略模式，有效值为0-2，0为默认不绑核，1为绑大核，2为绑中核。
  
 **系统能力：** SystemCapability.AI.MindSporeLite
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NO_AFFINITIES | 0 | 不绑核。 |
@@ -678,14 +717,16 @@ context.cpu.threadAffinityCoreList = [0, 1, 2];
  
   
 
-#### NNRTDevice
+## NNRTDevice
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Neural Network Runtime表示神经网络运行时，简称NNRt。作为中间桥梁，连通上层 AI 推理框架和底层加速芯片，实现 AI 模型的跨芯片推理计算。MindSpore Lite 可配置NNRt后端。
  
 **系统能力：** SystemCapability.AI.MindSporeLite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | deviceID12+ | bigint | 否 | 是 | NNRt设备ID。默认值为0。 |
@@ -696,14 +737,16 @@ Neural Network Runtime表示神经网络运行时，简称NNRt。作为中间桥
  
   
 
-#### PerformanceMode12+
+## PerformanceMode12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 NNRt设备的工作性能模式枚举。
  
 **系统能力：** SystemCapability.AI.MindSporeLite
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | PERFORMANCE_NONE | 0 | 无特殊设置。 |
@@ -715,14 +758,16 @@ NNRt设备的工作性能模式枚举。
  
   
 
-#### Priority12+
+## Priority12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 NNRt推理任务优先级枚举。
  
 **系统能力：** SystemCapability.AI.MindSporeLite
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | PRIORITY_NONE | 0 | 无优先级偏好。 |
@@ -733,14 +778,16 @@ NNRt推理任务优先级枚举。
  
   
 
-#### Extension12+
+## Extension12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义NNRt设备的扩展信息。
  
 **系统能力：** SystemCapability.AI.MindSporeLite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | name | string | 否 | 否 | 扩展名称。 |
@@ -749,9 +796,10 @@ NNRt推理任务优先级枚举。
  
   
 
-#### NNRTDeviceDescription12+
+## NNRTDeviceDescription12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 NNRt设备信息描述，包含设备ID、设备名称等信息。
  
@@ -759,9 +807,10 @@ NNRt设备信息描述，包含设备ID、设备名称等信息。
  
   
 
-#### deviceID12+
+### deviceID12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deviceID() : bigint
  
@@ -771,6 +820,7 @@ deviceID() : bigint
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bigint | NNRt设备ID。 |
@@ -795,9 +845,10 @@ if (allDevices == null || allDevices.length === 0) {
  
   
 
-#### deviceType12+
+### deviceType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deviceType() : NNRTDeviceType
  
@@ -807,6 +858,7 @@ deviceType() : NNRTDeviceType
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NNRTDeviceType | NNRt设备类型。 |
@@ -831,9 +883,10 @@ if (allDevices == null || allDevices.length === 0) {
  
   
 
-#### deviceName12+
+### deviceName12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deviceName() : string
  
@@ -843,6 +896,7 @@ deviceName() : string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | NNRt设备名称。 |
@@ -867,14 +921,16 @@ if (allDevices == null || allDevices.length === 0) {
  
   
 
-#### NNRTDeviceType12+
+## NNRTDeviceType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 NNRt设备类型枚举。
  
 **系统能力：** SystemCapability.AI.MindSporeLite
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NNRTDEVICE_OTHERS | 0 | 设备类型不属于以下3种，则属于其它。 |
@@ -885,14 +941,16 @@ NNRt设备类型枚举。
  
   
 
-#### TrainCfg12+
+## TrainCfg12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 端侧训练相关参数的配置文件。
  
 **系统能力：** SystemCapability.AI.MindSporeLite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | lossName | string[] | 否 | 是 | 损失函数的名称列表，用于端侧训练时标识模型中的损失函数节点。默认值为["loss_fct", "_loss_fn", "SigmoidCrossEntropy"]。 |
@@ -909,32 +967,36 @@ cfg.optimizationLevel = mindSporeLite.OptimizationLevel.O0;
  
   
 
-#### OptimizationLevel12+
+## OptimizationLevel12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 端侧训练的网络优化等级枚举。
  
 **系统能力：** SystemCapability.AI.MindSporeLite
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | O0 | 0 | 无优化等级。 |
 | O2 | 2 | 将网络转换为Float16，保持批量归一化层和损失函数为Float32。 |
-| O3 | 3 | 将网络转换为float16，包括批量归一化层。 |
+| O3 | 3 | 将网络转换为Float16，包括批量归一化层。 |
 | AUTO | 4 | 根据设备选择优化等级。 |
  
  
   
 
-#### QuantizationType12+
+## QuantizationType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 量化类型信息，有效值为0-2。
  
 **系统能力：** SystemCapability.AI.MindSporeLite
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NO_QUANT | 0 | 不做量化。 |
@@ -944,9 +1006,10 @@ cfg.optimizationLevel = mindSporeLite.OptimizationLevel.O0;
  
   
 
-#### Model
+## Model
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 模型实例。描述Model对象的属性和方法。
  
@@ -954,12 +1017,14 @@ cfg.optimizationLevel = mindSporeLite.OptimizationLevel.O0;
  
   
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.AI.MindSporeLite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | learningRate12+ | number | 否 | 是 | 训练模型的学习率。默认值从加载的模型中读取。 |
@@ -968,9 +1033,10 @@ cfg.optimizationLevel = mindSporeLite.OptimizationLevel.O0;
  
   
 
-#### getInputs
+### getInputs
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getInputs(): MSTensor[]
  
@@ -980,6 +1046,7 @@ getInputs(): MSTensor[]
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | MSTensor[] | 返回MSTensor对象列表。 |
@@ -1005,9 +1072,10 @@ mindSporeLite.loadModelFromFile(modelFile).then((mindSporeLiteModel: mindSporeLi
  
   
 
-#### predict
+### predict
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 predict(inputs: MSTensor[], callback: Callback<MSTensor[]>): void
  
@@ -1017,6 +1085,7 @@ predict(inputs: MSTensor[], callback: Callback<MSTensor[]>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | inputs | MSTensor[] | 是 | 模型的输入列表。MSTensor对象。 |
@@ -1072,9 +1141,10 @@ globalContext.getApplicationContext()
  
   
 
-#### predict
+### predict
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 predict(inputs: MSTensor[]): Promise<MSTensor[]>
  
@@ -1084,6 +1154,7 @@ predict(inputs: MSTensor[]): Promise<MSTensor[]>
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | inputs | MSTensor[] | 是 | 模型的输入列表。MSTensor对象。 |
@@ -1091,6 +1162,7 @@ predict(inputs: MSTensor[]): Promise<MSTensor[]>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<MSTensor[]> | Promise对象。返回MSTensor对象列表。 |
@@ -1147,9 +1219,10 @@ globalContext.getApplicationContext()
  
   
 
-#### resize
+### resize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 resize(inputs: MSTensor[], dims: Array<Array&lt;number&gt;>): boolean
  
@@ -1159,6 +1232,7 @@ resize(inputs: MSTensor[], dims: Array<Array&lt;number&gt;>): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | inputs | MSTensor[] | 是 | 模型的输入列表。 |
@@ -1167,6 +1241,7 @@ resize(inputs: MSTensor[], dims: Array<Array&lt;number&gt;>): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回是否设置成功的结果。true表示重新设置张量大小成功；false表示重新设置张量大小失败。 |
@@ -1196,9 +1271,10 @@ mindSporeLite.loadModelFromFile(modelFile).then((mindSporeLiteModel: mindSporeLi
  
   
 
-#### runStep12+
+### runStep12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 runStep(inputs: MSTensor[]): boolean
  
@@ -1208,6 +1284,7 @@ runStep(inputs: MSTensor[]): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | inputs | MSTensor[] | 是 | 模型的输入列表。 |
@@ -1215,6 +1292,7 @@ runStep(inputs: MSTensor[]): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回单步训练模型是否成功的结果。true表示单步训练模型成功，false表示单步训练模型失败。 |
@@ -1247,9 +1325,10 @@ mindSporeLite.loadTrainModelFromFile(modelFile).then((mindSporeLiteModel: mindSp
  
   
 
-#### getWeights12+
+### getWeights12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getWeights(): MSTensor[]
  
@@ -1259,6 +1338,7 @@ getWeights(): MSTensor[]
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | MSTensor[] | 返回模型的权重张量列表。 |
@@ -1303,9 +1383,10 @@ globalContext.getApplicationContext()
  
   
 
-#### updateWeights12+
+### updateWeights12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateWeights(weights: MSTensor[]): boolean
  
@@ -1315,6 +1396,7 @@ updateWeights(weights: MSTensor[]): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | weights | MSTensor[] | 是 | 权重张量列表。 |
@@ -1322,6 +1404,7 @@ updateWeights(weights: MSTensor[]): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回是否更新权重成功的结果。true表示更新权重成功，false表示更新权重失败。 |
@@ -1369,9 +1452,10 @@ globalContext.getApplicationContext()
  
   
 
-#### setupVirtualBatch12+
+### setupVirtualBatch12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setupVirtualBatch(virtualBatchMultiplier: number, lr: number, momentum: number): boolean
  
@@ -1381,6 +1465,7 @@ setupVirtualBatch(virtualBatchMultiplier: number, lr: number, momentum: number):
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | virtualBatchMultiplier | number | 是 | 虚拟批次乘法器，只能为整数。取值小于1时：表示禁用虚拟batch；取值为1时：等同于禁用虚拟batch；取值大于1时：表示将一个大batch分割成N个小batch。 |
@@ -1390,6 +1475,7 @@ setupVirtualBatch(virtualBatchMultiplier: number, lr: number, momentum: number):
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回是否设置虚拟批次成功的结果。true表示设置虚拟批次成功，false表示设置虚拟批次失败。 |
@@ -1435,9 +1521,10 @@ globalContext.getApplicationContext()
  
   
 
-#### exportModel12+
+### exportModel12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 exportModel(modelFile: string, quantizationType?: QuantizationType, exportInferenceOnly?: boolean, outputTensorName?: string[]): boolean
  
@@ -1447,6 +1534,7 @@ exportModel(modelFile: string, quantizationType?: QuantizationType, exportInfere
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | modelFile | string | 是 | 导出模型的文件路径。字符串长度限制跟随文件系统。 |
@@ -1457,6 +1545,7 @@ exportModel(modelFile: string, quantizationType?: QuantizationType, exportInfere
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回是否导出训练模型成功的结果。true表示导出训练模型成功，false表示导出训练模型失败。 |
@@ -1485,9 +1574,10 @@ mindSporeLite.loadTrainModelFromFile(modelFile).then((mindSporeLiteModel: mindSp
  
   
 
-#### exportWeightsCollaborateWithMicro12+
+### exportWeightsCollaborateWithMicro12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 exportWeightsCollaborateWithMicro(weightFile: string, isInference?: boolean, enableFp16?: boolean, changeableWeightsName?: string[]): boolean
  
@@ -1499,6 +1589,7 @@ exportWeightsCollaborateWithMicro(weightFile: string, isInference?: boolean, ena
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | weightFile | string | 是 | 权重文件路径。字符串长度限制跟随文件系统。 |
@@ -1509,6 +1600,7 @@ exportWeightsCollaborateWithMicro(weightFile: string, isInference?: boolean, ena
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回是否导出供micro推理使用的模型权重成功的结果。true表示导出供micro推理使用的模型权重成功，false表示导出供micro推理使用的模型权重失败。 |
@@ -1533,9 +1625,10 @@ mindSporeLite.loadTrainModelFromFile(modelFile).then((mindSporeLiteModel: mindSp
  
   
 
-#### MSTensor
+## MSTensor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 模型张量实例。描述MSTensor对象的属性和方法。它与数组和矩阵非常相似，是MindSpore Lite网络运算中的基本数据结构。
  
@@ -1543,12 +1636,14 @@ mindSporeLite.loadTrainModelFromFile(modelFile).then((mindSporeLiteModel: mindSp
  
   
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.AI.MindSporeLite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | name | string | 否 | 否 | 张量的名称。 |
@@ -1579,9 +1674,10 @@ mindSporeLite.loadModelFromFile(modelFile).then((mindSporeLiteModel: mindSporeLi
  
   
 
-#### getData
+### getData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getData(): ArrayBuffer
  
@@ -1591,6 +1687,7 @@ getData(): ArrayBuffer
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ArrayBuffer | 返回张量的数据指针。 |
@@ -1647,9 +1744,10 @@ globalContext.getApplicationContext()
  
   
 
-#### setData
+### setData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setData(inputArray: ArrayBuffer): void
  
@@ -1659,6 +1757,7 @@ setData(inputArray: ArrayBuffer): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | inputArray | ArrayBuffer | 是 | 张量的输入数据缓冲区。 |
@@ -1701,14 +1800,16 @@ globalContext.getApplicationContext()
  
   
 
-#### DataType
+## DataType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 张量的数据类型。
  
 **系统能力：** SystemCapability.AI.MindSporeLite
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | TYPE_UNKNOWN | 0 | 未知类型。 |
@@ -1727,14 +1828,16 @@ globalContext.getApplicationContext()
  
   
 
-#### Format
+## Format
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 张量的数据排布方式。
  
 **系统能力：** SystemCapability.AI.MindSporeLite
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DEFAULT_FORMAT | -1 | 未知数据排布方式。 |

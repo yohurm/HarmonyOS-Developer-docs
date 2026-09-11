@@ -1,6 +1,6 @@
 # numberIdentify (号码识别查询基本能力)
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/callservicekit-numberldentify
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
@@ -10,7 +10,8 @@ numberIdentify模块提供企业来电相关能力查询，包括查询是否有
 **起始版本：** 6.1.0(23)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -20,7 +21,8 @@ import { numberIdentify } from '@kit.CallServiceKit';
  
   
 
-#### isSupportEnterpriseNumberIdentify
+## isSupportEnterpriseNumberIdentify
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -36,6 +38,7 @@ isSupportEnterpriseNumberIdentify(context: Context): Promise&lt;boolean&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用内上下文信息 |
@@ -43,6 +46,7 @@ isSupportEnterpriseNumberIdentify(context: Context): Promise&lt;boolean&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象，返回是否已开通企业来电显示权限，true:已开通。false:未开通。 |
@@ -50,8 +54,9 @@ isSupportEnterpriseNumberIdentify(context: Context): Promise&lt;boolean&gt;
  
 **错误码：**
  
-以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/call-error-code)。
+以下错误码的详细介绍请参见[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 8300001 | Invalid parameter value. |
@@ -74,7 +79,8 @@ hilog.info(0, 'TAG', `isSupport:${isSupport}`);
  
   
 
-#### queryNumberIdentifySwitchState
+## queryNumberIdentifySwitchState
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -90,6 +96,7 @@ queryNumberIdentifySwitchState(context: Context):SwitchState
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用内上下文信息 |
@@ -97,6 +104,7 @@ queryNumberIdentifySwitchState(context: Context):SwitchState
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | SwitchState | 查询陌生号码与信息识别总开关状态以及调用该接口的应用号码识别开关状态。 |
@@ -104,8 +112,9 @@ queryNumberIdentifySwitchState(context: Context):SwitchState
  
 **错误码：**
  
-以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/call-error-code)。
+以下错误码的详细介绍请参见[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 8300001 | Invalid parameter value. |
@@ -127,7 +136,8 @@ hilog.info(0, 'TAG', `switchState is:${JSON.stringify(switchState)}`);
  
   
 
-#### SwitchState
+## SwitchState
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -139,6 +149,7 @@ hilog.info(0, 'TAG', `switchState is:${JSON.stringify(switchState)}`);
  
 **起始版本：** 6.1.0(23)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | isNumberIdentifyEnabled | boolean | 否 | 否 | 是否开启号码识别能力。true:是。false:否。 |
@@ -148,7 +159,8 @@ hilog.info(0, 'TAG', `switchState is:${JSON.stringify(switchState)}`);
  
   
 
-#### BusinessServiceData
+## BusinessServiceData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -160,6 +172,7 @@ hilog.info(0, 'TAG', `switchState is:${JSON.stringify(switchState)}`);
  
 **起始版本：** 6.1.1(24)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | BusinessServiceType | 否 | 否 | 企业服务类型。 |
@@ -168,7 +181,8 @@ hilog.info(0, 'TAG', `switchState is:${JSON.stringify(switchState)}`);
  
   
 
-#### BusinessServiceType
+## BusinessServiceType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -180,6 +194,7 @@ hilog.info(0, 'TAG', `switchState is:${JSON.stringify(switchState)}`);
  
 **起始版本：** 6.1.1(24)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DELIVERY | 0 | 企业服务类型为快递。 |
@@ -187,7 +202,8 @@ hilog.info(0, 'TAG', `switchState is:${JSON.stringify(switchState)}`);
  
   
 
-#### DeliveryData
+## DeliveryData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -199,6 +215,7 @@ hilog.info(0, 'TAG', `switchState is:${JSON.stringify(switchState)}`);
  
 **起始版本：** 6.1.1(24)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | customerName | string | 否 | 否 | 客户姓名。长度小于20个字符，如果超出将会截取前20个字符。 |
@@ -211,7 +228,8 @@ hilog.info(0, 'TAG', `switchState is:${JSON.stringify(switchState)}`);
  
   
 
-#### DeliveryStatusColor
+## DeliveryStatusColor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -223,6 +241,7 @@ hilog.info(0, 'TAG', `switchState is:${JSON.stringify(switchState)}`);
  
 **起始版本：** 6.1.1(24)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | BLUE | 0 | 订单状态颜色为蓝色。 |

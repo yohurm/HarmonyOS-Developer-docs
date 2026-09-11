@@ -1,6 +1,6 @@
 # 形状裁剪（clipShape）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-clip-shape
 
@@ -11,7 +11,7 @@
 
 
 
-#### 裁剪圆形
+## 裁剪圆形
 
 通过设置CircleShape，将图片裁剪为圆形。
 
@@ -48,7 +48,7 @@ struct ClipShapeExample {
 
 
 
-#### 裁剪椭圆形
+## 裁剪椭圆形
 
 通过设置EllipseShape，将图片裁剪为椭圆形。
 
@@ -83,7 +83,7 @@ struct ClipShapeExample {
 
 
 
-#### 裁剪矩形
+## 裁剪矩形
 
 通过设置RectShape，将图片裁剪为矩形。
 
@@ -118,7 +118,7 @@ struct ClipShapeExample {
 
 
 
-#### 裁剪不规则形状
+## 裁剪不规则形状
 
 通过设置PathShape，将图片裁剪为不规则形状。
 
@@ -147,4 +147,4 @@ struct ClipShapeExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/D3x4nCzaQIyU88sxmFyF4w/zh-cn_image_0000002704272341.png?HW-CC-KV=V1&HW-CC-Date=20260813T095715Z&HW-CC-Expire=86400&HW-CC-Sign=8E658D788AD90E6B2B6A1BCB4F7ABF7689835C5198809E0F5607F66D6845BFFF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/mI8IDy6tRtaVvdBhwAMoDw/zh-cn_image_0000002717610586.png?HW-CC-KV=V1&HW-CC-Date=20260911T072458Z&HW-CC-Expire=86400&HW-CC-Sign=1E952BEF346D0437613655DC23F9AE17B2ACA71B943ACBBB5598FEAD551CAB70)

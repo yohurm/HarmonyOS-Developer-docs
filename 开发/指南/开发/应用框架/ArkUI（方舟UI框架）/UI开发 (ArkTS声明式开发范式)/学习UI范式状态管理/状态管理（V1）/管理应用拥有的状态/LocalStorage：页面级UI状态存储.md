@@ -1,6 +1,6 @@
 # LocalStorage：页面级UI状态存储
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-localstorage
 
@@ -17,7 +17,7 @@ LocalStorage还提供了API接口，可以让开发者通过接口在自定义�
 
 
 
-#### 概述
+## 概述
 
 LocalStorage是ArkTS为构建页面级别状态变量提供存储的内存内的“数据库”。
 
@@ -37,7 +37,7 @@ LocalStorage根据与@Component装饰的组件的同步类型不同，提供了�
 
 
 
-#### @LocalStorageProp
+## @LocalStorageProp
 
 在上文中已经提到，如果要建立LocalStorage和自定义组件的联系，需要使用@LocalStorageProp和@LocalStorageLink装饰器。使用@LocalStorageProp(key)/@LocalStorageLink(key)装饰组件内的变量，key标识了LocalStorage的属性。
 
@@ -51,7 +51,8 @@ LocalStorage根据与@Component装饰的组件的同步类型不同，提供了�
 
 
 
-#### 装饰器使用规则
+### 装饰器使用规则
+
 
 | @LocalStorageProp变量装饰器 | 说明 |
 | --- | --- |
@@ -63,7 +64,8 @@ LocalStorage根据与@Component装饰的组件的同步类型不同，提供了�
 
 
 
-#### 变量的传递/访问规则
+### 变量的传递/访问规则
+
 
 | 传递/访问规则 | 说明 |
 | --- | --- |
@@ -80,7 +82,7 @@ LocalStorage根据与@Component装饰的组件的同步类型不同，提供了�
 
 
 
-#### 观察变化和行为表现
+### 观察变化和行为表现
 
 **观察变化**
 
@@ -106,7 +108,7 @@ LocalStorage根据与@Component装饰的组件的同步类型不同，提供了�
 
 
 
-#### @LocalStorageLink
+## @LocalStorageLink
 
 > [!NOTE]
 > 从API version 11开始，该装饰器支持在元服务中使用。
@@ -120,7 +122,8 @@ LocalStorage根据与@Component装饰的组件的同步类型不同，提供了�
 
 
 
-#### 装饰器使用规则
+### 装饰器使用规则
+
 
 | @LocalStorageLink变量装饰器 | 说明 |
 | --- | --- |
@@ -132,7 +135,8 @@ LocalStorage根据与@Component装饰的组件的同步类型不同，提供了�
 
 
 
-#### 变量的传递/访问规则
+### 变量的传递/访问规则
+
 
 | 传递/访问规则 | 说明 |
 | --- | --- |
@@ -149,7 +153,7 @@ LocalStorage根据与@Component装饰的组件的同步类型不同，提供了�
 
 
 
-#### 观察变化和行为表现
+### 观察变化和行为表现
 
 **观察变化**
 
@@ -175,7 +179,7 @@ LocalStorage根据与@Component装饰的组件的同步类型不同，提供了�
 
 
 
-#### 限制条件
+## 限制条件
 1. @LocalStorageProp/@LocalStorageLink的参数必须为string类型，否则编译期会报错。
 
   
@@ -200,11 +204,11 @@ storage.setOrCreate('PropA', 48);
 
 
 
-#### 使用场景
+## 使用场景
 
 
 
-#### 应用逻辑使用LocalStorage
+### 应用逻辑使用LocalStorage
 
 ```text
 let para: Record<string,number> = { 'PropA': 47 };
@@ -220,7 +224,7 @@ link1.set(49); // 双向同步: link1.get() == link2.get() == prop.get() == 49
 
 
 
-#### 从UI内部使用LocalStorage
+### 从UI内部使用LocalStorage
 
 除了应用程序逻辑使用LocalStorage，还可以借助LocalStorage相关的两个装饰器@LocalStorageProp和@LocalStorageLink，在UI组件内部获取到LocalStorage实例中存储的状态变量。
 
@@ -312,7 +316,7 @@ struct Parent {
 
 
 
-#### @LocalStorageProp和LocalStorage单向同步的简单场景
+### @LocalStorageProp和LocalStorage单向同步的简单场景
 
 本示例展示了ParentOne和ChildOne组件各自在本地创建与paraOneLocal中'PropA'属性的单向数据同步：
 
@@ -365,12 +369,12 @@ struct ChildOne {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/bupbmuCCRjW0JZi7WdZIhg/zh-cn_image_0000002704271823.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=FC397185447CC0905EB5537EB2FDA447C4F1E1C04CFE9DCF7927659E5415E856)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/FktYr4ZaRqqV2V3xYfssew/zh-cn_image_0000002717770020.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072334Z&HW-CC-Expire=86400&HW-CC-Sign=47828EE033D90E8F5D2823B16EB0DFB579CA7F78FCC7317AEC333258E4EA5A89)
 
 
 
 
-#### @LocalStorageLink和LocalStorage双向同步的简单场景
+### @LocalStorageLink和LocalStorage双向同步的简单场景
 
 下面的示例展示了@LocalStorageLink装饰的数据和LocalStorage双向同步的场景：
 
@@ -408,12 +412,12 @@ struct ParentTwo {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/F8zh9-XlT22uLagXgE98PQ/zh-cn_image_0000002674472024.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=25E5CAC7D790A2FA9C789403FA38C116312F52822F73B829E44AF0E3DAA7804D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/1znkX_SKQqe3zCWvWiar4A/zh-cn_image_0000002717610086.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072334Z&HW-CC-Expire=86400&HW-CC-Sign=07EB2749AE8C767E0535A13DA674910BA75552A34A086C54C89FE4A62E68B934)
 
 
 
 
-#### 兄弟组件之间同步状态变量
+### 兄弟组件之间同步状态变量
 
 下面的示例展示了通过@LocalStorageLink双向同步兄弟组件之间的状态。
 
@@ -519,12 +523,12 @@ struct ParentFour {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/6BrlJSauTOeHeGsRbmxCoA/zh-cn_image_0000002704391993.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=B13D9468CB07F5AB8D5F985AF5236D0C5EC31241DA0859C77A02C79574F5485C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/9NqjEd7LT02XsFHuIf4AJA/zh-cn_image_0000002747290037.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072334Z&HW-CC-Expire=86400&HW-CC-Sign=F6E96AA2CF194406781DD53F593E1E32095AEEB9945919F6423DC5FE0D654361)
 
 
 
 
-#### 将LocalStorage实例从UIAbility共享到一个或多个页面
+### 将LocalStorage实例从UIAbility共享到一个或多个页面
 
 上面的实例中，LocalStorage的实例仅仅在一个@Entry装饰的组件和其所属的子组件（一个页面）中共享，如果希望其在多个页面中共享，可以在所属UIAbility中创建LocalStorage实例，并调用windowStage.[loadContent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window-window#loadcontent9)。
 
@@ -653,7 +657,7 @@ struct PageFiveShareChange {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/2EMtCIDqTMytVYsgBvl_4g/zh-cn_image_0000002674631870.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=A99FF0AA24DB9D56A8661CC94763C8F749DC2569FBA037D7390C18A01A108952)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/X3r8_72XRzuM6A1e7G6zxw/zh-cn_image_0000002747209955.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072334Z&HW-CC-Expire=86400&HW-CC-Sign=A1177F3034BB74677E866E08B2F021795635346ABF9F44ECEBAB874AF44AAFD9)
 
 
 > [!NOTE]
@@ -662,7 +666,7 @@ struct PageFiveShareChange {
 
 
 
-#### 自定义组件接收LocalStorage实例
+### 自定义组件接收LocalStorage实例
 
 除了根节点可通过@Entry来接收LocalStorage实例，自定义组件（子节点）也可以通过构造参数来传递LocalStorage实例。
 
@@ -723,7 +727,7 @@ struct ChildSix {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/sxLFrAl4T5iB54dojMhUbw/zh-cn_image_0000002704271825.png?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=EAC46FC4C4C15CA007975E93EA7CCA41054ECBC185732D8FB35514F7C2D2672C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/RV0IZ6DVSNGiIx0Qw1Bq6A/zh-cn_image_0000002717770022.png?HW-CC-KV=V1&HW-CC-Date=20260911T072334Z&HW-CC-Expire=86400&HW-CC-Sign=0C68DFDF736ABC4D1930ADF1CCEA290940BE89309762DAD1F9DABFF92A44666B)
 
 1. 当自定义组件没有定义属性时，可以只传入一个LocalStorage实例作为入参。
 
@@ -767,7 +771,7 @@ struct ChildOne {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/4ezC1YwoT6GmdVFypdcyDQ/zh-cn_image_0000002674472026.png?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=C8599FB164C6807501CBB011E57CA4D20BC9786311E13FD3B42DFD0E1A97CD86)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/5wyHT6S3T1qt5dl4X9ATHg/zh-cn_image_0000002717610088.png?HW-CC-KV=V1&HW-CC-Date=20260911T072334Z&HW-CC-Expire=86400&HW-CC-Sign=941518F1E2CDF6160839AFE700FEA4E354A7C0DA265E45B297B100BCEF5E7B0D)
 
 2. 当定义的属性不需要从父组件初始化变量时，第一个参数需要传{}。
 
@@ -815,12 +819,12 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/bvqA7DHjS7Wj1sZNfF0-uw/zh-cn_image_0000002704391995.png?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=7F33E5A70D4CC45C04B292D912C8A84FC3478D972E59A92385BBF2DBF64C3103)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/yC2unigBTVCzoGT-YKUimA/zh-cn_image_0000002747290039.png?HW-CC-KV=V1&HW-CC-Date=20260911T072334Z&HW-CC-Expire=86400&HW-CC-Sign=3331F8D6348CFFBFAC2AB7F6A5F845BD3E8FBF30E18C91DA7D2054529A0242D8)
 
 
 
 
-#### Navigation组件和LocalStorage联合使用
+### Navigation组件和LocalStorage联合使用
 
 可以通过传递不同的LocalStorage实例给自定义组件，从而实现在[Navigation](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation)跳转到不同的页面时，绑定不同的LocalStorage实例，显示对应绑定的值。
 
@@ -987,12 +991,12 @@ struct NavigationContentMsgStack {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/Y-SfXmKQTiaUob3qEVRLNw/zh-cn_image_0000002674631872.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=C55BBB9B6BE6E636F241C96F4EE26FFDFBE9EDE2C9BA50C5650DC231F510FF99)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/B6nVrl7LRCS__ZRCBuSfFQ/zh-cn_image_0000002747209957.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072334Z&HW-CC-Expire=86400&HW-CC-Sign=5E2F78EF07036030D1652ADA8D6E9A621F6B590EFE6FE3A959888B062324A0D4)
 
 
 
 
-#### LocalStorage支持联合类型
+### LocalStorage支持联合类型
 
 在下面的示例中，变量linkA的类型为number | null，变量linkB的类型为number | undefined。Text组件初始化分别显示为null和undefined，点击切换为数字，再次点击切换回null和undefined。
 
@@ -1074,12 +1078,12 @@ struct LinkIndex {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/doueZuPHQueta52rLdoTow/zh-cn_image_0000002704271827.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=6AAA2F11DBC236E36C5F641F6A2EFCB7CF1367A8DF4F4315640F5C50295260A3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/Xov-oIy7Syaru6IqWXljUA/zh-cn_image_0000002717770024.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072334Z&HW-CC-Expire=86400&HW-CC-Sign=27F6E8904C4E614F6011A3C60613B49C10F08A534ADDC9B6A7BF81455941AE2B)
 
 
 
 
-#### 装饰Array类型变量
+### 装饰Array类型变量
 
 在下面的示例中，@LocalStorageLink装饰的message类型为number[]，点击Button改变message的值，UI会随之刷新。
 
@@ -1131,12 +1135,12 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/XHOwuE5TQ6KTiyXOfgXDog/zh-cn_image_0000002674472028.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=8C58594BABDFC5C5E9CE21D82A6D7AEF7D7FA25AE5B63A7ADDA9831C25A114DC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/CnDRRHxGQeeSYpEd6-Sa9A/zh-cn_image_0000002717610090.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072334Z&HW-CC-Expire=86400&HW-CC-Sign=878262039D40FB58F0F5F11063431E7D9FEFD78A56C06154ACBC0C744704132B)
 
 
 
 
-#### 装饰Date类型变量
+### 装饰Date类型变量
 
 > [!NOTE]
 > 从API version 12开始，LocalStorage支持Date类型。
@@ -1188,12 +1192,12 @@ struct LocalDateSample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/X4OnRYzKSfStA1zJQjAV9g/zh-cn_image_0000002704391997.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=EEEAF5656B90ADDA1CE16A279DFCC23F96AAB5CC3598C2A66EF363AD2107F10B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/9brD4X9pSYazPhOWqnSC_A/zh-cn_image_0000002747290041.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072334Z&HW-CC-Expire=86400&HW-CC-Sign=024852000826B4EB6835AAFB50663F199C7DDFE88AD4AEE24C9A45AF2426A6EB)
 
 
 
 
-#### 装饰Map类型变量
+### 装饰Map类型变量
 
 > [!NOTE]
 > 从API version 12开始，LocalStorage支持Map类型。
@@ -1259,12 +1263,12 @@ struct LocalMapSample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/MowMdac6Ryu4rG-NiyR7Gw/zh-cn_image_0000002674631874.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=F26A8E300C08247506CFE873457F97169B237F99110B0350EA6254B403024674)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/JmIzJ_5DT5ydNQpIVfRzVw/zh-cn_image_0000002747209959.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072334Z&HW-CC-Expire=86400&HW-CC-Sign=9D139618AE9BB37A6AE271EB822439B72171FBD08D4763EBEDC37F7F6ADC62A0)
 
 
 
 
-#### 装饰Set类型变量
+### 装饰Set类型变量
 
 > [!NOTE]
 > 从API version 12开始，LocalStorage支持Set类型。
@@ -1321,12 +1325,12 @@ struct LocalSetSample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/27OkAA7sR_KN2XANutBxCQ/zh-cn_image_0000002704271829.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=CC643D2B393BDC706138948D9CBEDCC977BDEB763A8D057CCDD63D80A2E4486D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/hPlrXhCcTEWnY__aYQINpQ/zh-cn_image_0000002717770026.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072334Z&HW-CC-Expire=86400&HW-CC-Sign=BA09C326360A229B2204C4430C7201B8928F77ED88384B2F73F8AB0125098DB3)
 
 
 
 
-#### 自定义组件外改变状态变量
+### 自定义组件外改变状态变量
 
 ```ArkTS
 let storageChange = new LocalStorage();
@@ -1366,4 +1370,4 @@ struct Test {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/hWSR8qmhQUKzzGMKP83naw/zh-cn_image_0000002674472030.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095705Z&HW-CC-Expire=86400&HW-CC-Sign=ECE2295561C2055BE5892EADF6E89E2325B19132D1F2C50D2D12CBD6A7CAE243)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/0LAbuXu1QCSE_7TPeU79OQ/zh-cn_image_0000002717610092.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072334Z&HW-CC-Expire=86400&HW-CC-Sign=887EB4E3461D49441D49686885688771752BA5283BFB0124EF4FD486E24B5106)

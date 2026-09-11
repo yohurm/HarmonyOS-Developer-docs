@@ -1,9 +1,9 @@
 # Video
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-media-components-video
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Video组件用于播放视频文件并控制其播放状态，支持播放、暂停、进度控制、倍速播放、全屏切换等功能。
 
@@ -12,31 +12,35 @@ Video组件用于播放视频文件并控制其播放状态，支持播放、暂
 
 
 
-#### 权限列表
+## 权限列表
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 使用网络视频时，需要申请权限ohos.permission.INTERNET。具体申请方式请参考[声明权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions)。
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 不支持子组件。
 
 
 
-#### 接口
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 接口
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### Video
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### Video
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Video(value: VideoOptions)
 
@@ -46,6 +50,7 @@ Video(value: VideoOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | VideoOptions | 是 | 视频信息。 |
@@ -53,13 +58,15 @@ Video(value: VideoOptions)
 
 
 
-#### VideoOptions对象说明
+## VideoOptions对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义Video的具体配置参数。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -74,13 +81,15 @@ Video(value: VideoOptions)
 
 
 
-#### PlaybackSpeed8+枚举说明
+## PlaybackSpeed8+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 视频播放倍速选项。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -98,17 +107,19 @@ Video(value: VideoOptions)
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
 
 
 
-#### muted
+### muted
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 muted(value: boolean)
 
@@ -119,6 +130,7 @@ muted(value: boolean)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -131,9 +143,10 @@ muted(value: boolean)
 
 
 
-#### autoPlay
+### autoPlay
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 autoPlay(value: boolean)
 
@@ -145,6 +158,7 @@ autoPlay(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否自动播放。 true：开启自动播放；false：关闭自动播放。 默认值：false |
@@ -152,9 +166,10 @@ autoPlay(value: boolean)
 
 
 
-#### controls
+### controls
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 controls(value: boolean)
 
@@ -165,6 +180,7 @@ controls(value: boolean)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -177,9 +193,10 @@ controls(value: boolean)
 
 
 
-#### objectFit
+### objectFit
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 objectFit(value: ImageFit)
 
@@ -191,6 +208,7 @@ objectFit(value: ImageFit)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ImageFit | 是 | 视频填充模式。 默认值：ImageFit.Cover 约束：不支持ImageFit类型中的枚举值MATRIX，若设置，则作用效果与ImageFit.Cover一致。 异常值：若设置异常值undefined、null，或不在ImageFit枚举范围内的值，作用效果均与ImageFit.Cover一致。 |
@@ -198,9 +216,10 @@ objectFit(value: ImageFit)
 
 
 
-#### loop
+### loop
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 loop(value: boolean)
 
@@ -212,6 +231,7 @@ loop(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否单个视频循环播放。 true：开启循环播放；false：关闭循环播放。 默认值：false |
@@ -219,9 +239,10 @@ loop(value: boolean)
 
 
 
-#### enableAnalyzer12+
+### enableAnalyzer12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableAnalyzer(enable: boolean)
 
@@ -243,6 +264,7 @@ enableAnalyzer(enable: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | boolean | 是 | 是否启用AI分析功能。 true：开启AI分析功能；false：关闭AI分析功能。 默认值：false 说明： 不支持与overlay属性同时使用，两者同时设置时overlay中CustomBuilder属性会失效。 |
@@ -254,9 +276,10 @@ enableAnalyzer(enable: boolean)
 
 
 
-#### analyzerConfig12+
+### analyzerConfig12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 analyzerConfig(config: ImageAnalyzerConfig)
 
@@ -274,6 +297,7 @@ analyzerConfig(config: ImageAnalyzerConfig)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | config | ImageAnalyzerConfig | 是 | 设置AI分析识别类型。 |
@@ -281,9 +305,10 @@ analyzerConfig(config: ImageAnalyzerConfig)
 
 
 
-#### enableShortcutKey15+
+### enableShortcutKey15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableShortcutKey(enabled: boolean)
 
@@ -299,6 +324,7 @@ enableShortcutKey(enabled: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 是否启用快捷键响应。 true：开启快捷键响应；false：关闭快捷键响应。 默认值：false 说明： enabled设置为false且controls属性设置为true时，仍然可以通过左右方向键控制进度条快进或快退。 |
@@ -306,17 +332,19 @@ enableShortcutKey(enabled: boolean)
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)外，还支持以下事件：
 
 
 
-#### onStart
+### onStart
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onStart(event: VoidCallback)
 
@@ -328,6 +356,7 @@ onStart(event: VoidCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | VoidCallback | 是 | 视频开始播放的回调函数。 |
@@ -335,9 +364,10 @@ onStart(event: VoidCallback)
 
 
 
-#### onPause
+### onPause
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onPause(event: VoidCallback)
 
@@ -349,6 +379,7 @@ onPause(event: VoidCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | VoidCallback | 是 | 视频暂停的回调函数。 |
@@ -356,9 +387,10 @@ onPause(event: VoidCallback)
 
 
 
-#### onFinish
+### onFinish
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onFinish(event: VoidCallback)
 
@@ -370,6 +402,7 @@ onFinish(event: VoidCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | VoidCallback | 是 | 视频播放结束的回调函数。 |
@@ -377,9 +410,10 @@ onFinish(event: VoidCallback)
 
 
 
-#### onError
+### onError
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onError(event: VoidCallback | import('../api/@ohos.base').ErrorCallback)
 
@@ -395,6 +429,7 @@ onError(event: VoidCallback | import('../api/@ohos.base').ErrorCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | VoidCallback \| import('../api/@ohos.base').ErrorCallback20+ | 是 | 视频播放失败时的回调函数。其中ErrorCallback类型入参的回调函数用于接收异常信息，回调返回的错误码详细介绍请参见Video组件错误码和Media错误码。 |
@@ -402,9 +437,10 @@ onError(event: VoidCallback | import('../api/@ohos.base').ErrorCallback)
 
 
 
-#### onStop12+
+### onStop12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onStop(event: Callback&lt;void&gt;)
 
@@ -418,6 +454,7 @@ onStop(event: Callback&lt;void&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | Callback&lt;void&gt; | 是 | 视频播放停止时的回调函数。 |
@@ -425,9 +462,10 @@ onStop(event: Callback&lt;void&gt;)
 
 
 
-#### onPrepared
+### onPrepared
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onPrepared(callback: Callback&lt;PreparedInfo&gt;)
 
@@ -439,6 +477,7 @@ onPrepared(callback: Callback&lt;PreparedInfo&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;PreparedInfo&gt; | 是 | 视频准备完成时的回调函数。 |
@@ -446,9 +485,10 @@ onPrepared(callback: Callback&lt;PreparedInfo&gt;)
 
 
 
-#### onSeeking
+### onSeeking
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onSeeking(callback: Callback&lt;PlaybackInfo&gt;)
 
@@ -460,6 +500,7 @@ onSeeking(callback: Callback&lt;PlaybackInfo&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;PlaybackInfo&gt; | 是 | 操作进度条过程时的回调函数。 |
@@ -467,9 +508,10 @@ onSeeking(callback: Callback&lt;PlaybackInfo&gt;)
 
 
 
-#### onSeeked
+### onSeeked
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onSeeked(callback: Callback&lt;PlaybackInfo&gt;)
 
@@ -481,6 +523,7 @@ onSeeked(callback: Callback&lt;PlaybackInfo&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;PlaybackInfo&gt; | 是 | 操作进度条完成后的回调函数。 |
@@ -488,9 +531,10 @@ onSeeked(callback: Callback&lt;PlaybackInfo&gt;)
 
 
 
-#### onUpdate
+### onUpdate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onUpdate(callback: Callback&lt;PlaybackInfo&gt;)
 
@@ -502,6 +546,7 @@ onUpdate(callback: Callback&lt;PlaybackInfo&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;PlaybackInfo&gt; | 是 | 播放进度变化时的回调函数。 |
@@ -509,9 +554,10 @@ onUpdate(callback: Callback&lt;PlaybackInfo&gt;)
 
 
 
-#### onFullscreenChange
+### onFullscreenChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onFullscreenChange(callback: Callback&lt;FullscreenInfo&gt;)
 
@@ -523,6 +569,7 @@ onFullscreenChange(callback: Callback&lt;FullscreenInfo&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;FullscreenInfo&gt; | 是 | 在全屏播放与非全屏播放状态之间切换时的回调函数。 |
@@ -530,9 +577,10 @@ onFullscreenChange(callback: Callback&lt;FullscreenInfo&gt;)
 
 
 
-#### FullscreenInfo18+对象说明
+## FullscreenInfo18+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于描述当前视频是否进入全屏播放状态。
 
@@ -546,6 +594,7 @@ onFullscreenChange(callback: Callback&lt;FullscreenInfo&gt;)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | fullscreen10+ | boolean | 否 | 否 | 当前视频是否进入全屏播放状态。 true：进入全屏播放状态；false：未进入全屏播放状态。 默认值：false 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -553,9 +602,10 @@ onFullscreenChange(callback: Callback&lt;FullscreenInfo&gt;)
 
 
 
-#### PreparedInfo18+对象说明
+## PreparedInfo18+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于描述当前视频的时长。
 
@@ -569,6 +619,7 @@ onFullscreenChange(callback: Callback&lt;FullscreenInfo&gt;)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | duration10+ | number | 否 | 否 | 当前视频的时长。 单位：s 取值范围：[0,+∞) 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -576,9 +627,10 @@ onFullscreenChange(callback: Callback&lt;FullscreenInfo&gt;)
 
 
 
-#### PlaybackInfo18+对象说明
+## PlaybackInfo18+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于描述当前视频播放的进度。
 
@@ -592,6 +644,7 @@ onFullscreenChange(callback: Callback&lt;FullscreenInfo&gt;)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | time10+ | number | 否 | 否 | 当前视频播放的进度。 单位：s 取值范围：[0,+∞) 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -599,15 +652,17 @@ onFullscreenChange(callback: Callback&lt;FullscreenInfo&gt;)
 
 
 
-#### PosterOptions18+对象说明
+## PosterOptions18+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于描述当前视频是否配置首帧送显。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -617,9 +672,10 @@ onFullscreenChange(callback: Callback&lt;FullscreenInfo&gt;)
 
 
 
-#### VideoController
+## VideoController
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 一个VideoController对象可以控制一个或多个Video。
 
@@ -629,7 +685,10 @@ onFullscreenChange(callback: Callback&lt;FullscreenInfo&gt;)
 
 
 
-#### 导入对象
+### 导入对象
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 let controller: VideoController = new VideoController();
@@ -637,9 +696,10 @@ let controller: VideoController = new VideoController();
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -651,9 +711,10 @@ VideoController的构造函数。
 
 
 
-#### start
+### start
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 start()
 
@@ -665,9 +726,10 @@ start()
 
 
 
-#### pause
+### pause
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pause()
 
@@ -679,9 +741,10 @@ pause()
 
 
 
-#### stop
+### stop
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stop()
 
@@ -693,9 +756,10 @@ stop()
 
 
 
-#### reset12+
+### reset12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reset(): void
 
@@ -709,9 +773,10 @@ reset(): void
 
 
 
-#### setCurrentTime
+### setCurrentTime
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCurrentTime(value: number)
 
@@ -727,6 +792,7 @@ setCurrentTime(value: number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 视频播放进度位置。 取值范围：[0, duration] 当设置value大于duration时，进度跳转至最后；当设置value小于0时，不会进行进度跳转。 单位：s 从API version 8开始，支持设置视频的跳转模式，详见setCurrentTime8+。 |
@@ -734,9 +800,10 @@ setCurrentTime(value: number)
 
 
 
-#### requestFullscreen
+### requestFullscreen
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestFullscreen(value: boolean)
 
@@ -747,6 +814,7 @@ requestFullscreen(value: boolean)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -759,9 +827,10 @@ requestFullscreen(value: boolean)
 
 
 
-#### exitFullscreen
+### exitFullscreen
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 exitFullscreen()
 
@@ -773,9 +842,10 @@ exitFullscreen()
 
 
 
-#### setCurrentTime8+
+### setCurrentTime8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCurrentTime(value: number, seekMode: SeekMode)
 
@@ -791,6 +861,7 @@ setCurrentTime(value: number, seekMode: SeekMode)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 视频播放进度位置。 取值范围：[0, duration] 当设置value大于duration时，进度跳转至最后；当设置value小于0时，不会进行进度跳转。 单位：s |
@@ -799,9 +870,10 @@ setCurrentTime(value: number, seekMode: SeekMode)
 
 
 
-#### VideoControllerAsync
+## VideoControllerAsync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 VideoControllerAsync是VideoController的异步版本，可以通过Promise获取部分播控命令的结果。不支持同时控制多个Video。
 
@@ -819,7 +891,10 @@ VideoControllerAsync是VideoController的异步版本，可以通过Promise获�
 
 
 
-#### 导入对象
+### 导入对象
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 let controllerAsync: VideoControllerAsync = new VideoControllerAsync();
@@ -827,9 +902,10 @@ let controllerAsync: VideoControllerAsync = new VideoControllerAsync();
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -845,9 +921,10 @@ VideoControllerAsync的构造函数。
 
 
 
-#### start
+### start
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 start(): Promise&lt;void&gt;
 
@@ -865,6 +942,7 @@ start(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -872,9 +950,10 @@ start(): Promise&lt;void&gt;
 
 
 
-#### pause
+### pause
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pause(): Promise&lt;void&gt;
 
@@ -892,6 +971,7 @@ pause(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -899,9 +979,10 @@ pause(): Promise&lt;void&gt;
 
 
 
-#### stop
+### stop
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stop(): Promise&lt;void&gt;
 
@@ -917,6 +998,7 @@ stop(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -924,9 +1006,10 @@ stop(): Promise&lt;void&gt;
 
 
 
-#### reset
+### reset
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reset(): Promise&lt;void&gt;
 
@@ -942,6 +1025,7 @@ reset(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -949,9 +1033,10 @@ reset(): Promise&lt;void&gt;
 
 
 
-#### requestFullscreen
+### requestFullscreen
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestFullscreen(value: boolean)
 
@@ -971,6 +1056,7 @@ requestFullscreen(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否全屏（填充满应用窗口）播放。 true：请求全屏播放；false：不请求全屏播放。 |
@@ -978,9 +1064,10 @@ requestFullscreen(value: boolean)
 
 
 
-#### exitFullscreen
+### exitFullscreen
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 exitFullscreen()
 
@@ -996,9 +1083,10 @@ exitFullscreen()
 
 
 
-#### setCurrentTime
+### setCurrentTime
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCurrentTime(value: number, seekMode?: SeekMode)
 
@@ -1018,6 +1106,7 @@ setCurrentTime(value: number, seekMode?: SeekMode)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 视频播放进度位置。 取值范围：[0, duration] 当设置value大于duration时，进度跳转至最后；当设置value小于0时，不会进行进度跳转。 单位：s |
@@ -1026,15 +1115,17 @@ setCurrentTime(value: number, seekMode?: SeekMode)
 
 
 
-#### SeekMode8+枚举说明
+## SeekMode8+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 视频跳转模式选项。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1046,13 +1137,17 @@ setCurrentTime(value: number, seekMode?: SeekMode)
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（视频播放基础用法）
+
+
+### 示例1（视频播放基础用法）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 基础用法包括：控制栏、预览图、自动播放、播放速度、响应快捷键（从API version 15开始，支持通过[enableShortcutKey](#enableshortcutkey15)设置组件开启快捷键响应）、控制器（开始播放、暂停播放、停止播放、重置视频播放器、跳转等）、首帧送显（从API version 18开始，支持通过[posterOptions](#posteroptions18对象说明)设置视频播放的首帧送显选项。从API version 21开始，posterOptions支持通过[PosterOptions](#posteroptions18对象说明)的contentTransitionEffect参数来设置当前视频的预览图内容变化时的转场动效。）以及一些状态回调方法。
 
@@ -1189,12 +1284,15 @@ interface FullscreenObject {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/zhzK9vTKRR-fhdiYQfbG0w/zh-cn_image_0000002655848746.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071507Z&HW-CC-Expire=86400&HW-CC-Sign=83C0F781DCFD2F352C906395FBBEDA6252FFDDA69D4D032062D60367DE55E5D3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/jvnw8d9HRYSTwBYbMVZ7yQ/zh-cn_image_0000002747292837.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=91212E7AF588026B89AC8629570DD6FD3FD077872CE6E830F87B60AF55E4546B)
 
 
 
 
-#### 示例2（图像分析功能）
+### 示例2（图像分析功能）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过enableAnalyzer属性开启图像AI分析。
 
@@ -1254,7 +1352,10 @@ struct ImageAnalyzerExample {
 
 
 
-#### 示例3（播放拖入的视频）
+### 示例3（播放拖入的视频）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 以下示例展示了如何使Video组件能够播放拖入的视频。
 
@@ -1297,7 +1398,10 @@ struct Index {
 
 
 
-#### 示例4（视频填充模式）
+### 示例4（视频填充模式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过objectFit属性设置视频填充模式。
 
@@ -1355,12 +1459,15 @@ struct VideoObject {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/_nOF3zDrSm2wT9IFmNcXhQ/zh-cn_image_0000002686088177.png?HW-CC-KV=V1&HW-CC-Date=20260730T071507Z&HW-CC-Expire=86400&HW-CC-Sign=90EBF2702D2FD5197DCC51054AAF0269A998527CB1527EB1895B1D05EB425BD3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/bwVUEkmOS5aV_dPx3QB_Xw/zh-cn_image_0000002747212753.png?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=A51C62B0383C6AE8FA784271F4AC3869B5E60134B7974E063894D4F5E1AEF7E6)
 
 
 
 
-#### 示例5（onError事件上报错误码）
+### 示例5（onError事件上报错误码）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 20开始，支持通过[onError](#onerror)获取错误信息，该示例以传入不存在的视频资源路径为例。
 
@@ -1402,12 +1509,15 @@ struct VideoErrorComponent {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/w43krCalQEmXcUq-kdJItA/zh-cn_image_0000002685928347.png?HW-CC-KV=V1&HW-CC-Date=20260730T071507Z&HW-CC-Expire=86400&HW-CC-Sign=5E5F6984473826D1D20864E909156B4F54446DF4D8C4F11D1920F31EF7DD526D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/iBSnzQSLTPWB3v2Smfv78w/zh-cn_image_0000002717772818.png?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=0856B742BDB741FA009F7019806A19F4F552269D447242754C53CEAD34AE29F8)
 
 
 
 
-#### 示例6（使用attributeModifier动态设置Video组件的属性及方法）
+### 示例6（使用attributeModifier动态设置Video组件的属性及方法）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 以下示例展示了如何使用attributeModifier动态设置Video组件的enableAnalyzer、analyzerConfig属性和onStart、onPause、onFinish、onError、onStop、onPrepared、onSeeking、onSeeked、onUpdate、onFullscreenChange方法。
 
@@ -1528,16 +1638,19 @@ interface FullscreenObject {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/zOsviSpFSG2_wJR82U0pIw/zh-cn_image_0000002656008668.png?HW-CC-KV=V1&HW-CC-Date=20260730T071507Z&HW-CC-Expire=86400&HW-CC-Sign=8BF93C0AE02ED824B73AF1401D3C9B900127132FF9F9BAD3E406293C9A0C1B3C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/viu2UmJpSK2UXVP_MV8jJg/zh-cn_image_0000002717612886.png?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=2B8A2CD6CBF5375F6B834079AC23D47C1C11283DBFA342ABEB15C76A6ABE428D)
 
 
 
 
-#### 示例7（VideoControllerAsync用法）
+### 示例7（VideoControllerAsync用法）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例展示VideoControllerAsync的[start](#start-1)、[pause](#pause-1)、[stop](#stop-1)、[reset](#reset)接口用法，通过Promise异步回调获取命令执行状态。
 
-从API version 26.0.0开始，新增VideoControllerAsync控制器及[start](#start-1)、[pause](#pause-1)、[stop](#stop-1)、[reset](#reset)接口。
+从API版本26.0.0开始，新增VideoControllerAsync控制器及[start](#start-1)、[pause](#pause-1)、[stop](#stop-1)、[reset](#reset)接口。
 
 ```text
 import { BusinessError } from '@kit.BasicServicesKit';

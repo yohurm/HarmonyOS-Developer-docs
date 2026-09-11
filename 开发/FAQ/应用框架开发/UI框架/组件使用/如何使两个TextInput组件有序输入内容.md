@@ -54,7 +54,7 @@ struct OrderIndex {
           }
         });
       TextInput({ placeholder: 'B', })
-        .focusable(this.isShow) // 是否可以获焦
+        .focusable(this.isShow) <em>// </em><em>是否可以获焦</em>
         .onClick(() => {
           if (!this.isShow) {
             this.uiContext.getPromptAction().showToast({

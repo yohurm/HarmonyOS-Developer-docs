@@ -1,9 +1,9 @@
 # Interface (QuickImageDataHandler)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-photoaccesshelper-quickimagedatahandler
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 媒体资源处理器，应用在onDataPrepared方法中可自定义媒体资源处理逻辑。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
@@ -22,9 +23,10 @@ import { photoAccessHelper } from '@kit.MediaLibraryKit';
  
   
 
-#### onDataPrepared13+
+## onDataPrepared13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDataPrepared(data: T, imageSource: image.ImageSource, map: Map<string, string>): void
  
@@ -32,6 +34,7 @@ onDataPrepared(data: T, imageSource: image.ImageSource, map: Map<string, string>
  
 map支持返回的信息：
   
+
 | map键名 | 值说明 |
 | --- | --- |
 | 'quality' | 图片质量。高质量为'high'，低质量为'low'。 |
@@ -41,6 +44,7 @@ map支持返回的信息：
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | T | 是 | 已就绪的图片资源数据。泛型，支持Picture数据类型。 |

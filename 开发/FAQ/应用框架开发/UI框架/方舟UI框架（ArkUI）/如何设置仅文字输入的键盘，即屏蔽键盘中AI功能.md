@@ -8,7 +8,7 @@
  
 ```json
 onWindowStageCreate(windowStage: window.WindowStage): void {
-  // Main window is created, set main page for this ability
+ <em> // Main window is created, set main page for this ability</em>
   hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
   AppStorage.setOrCreate('windowStage',windowStage);
 
@@ -18,7 +18,7 @@ onWindowStageCreate(windowStage: window.WindowStage): void {
       return;
     }
     hilog.info(DOMAIN, 'testTag', 'Succeeded in loading the content.');
-    // Settings Simple Keyboard
+    <em>// Settings Simple Keyboard</em>
     let enable: boolean = true;
     inputMethod.setSimpleKeyboardEnabled(enable);
   });

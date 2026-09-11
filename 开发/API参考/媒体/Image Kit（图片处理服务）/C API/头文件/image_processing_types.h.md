@@ -1,11 +1,12 @@
 # image_processing_types.h
 
-更新时间：2026-06-03 01:38:22
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-processing-types-h
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 结构体
+### 结构体
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | ImageProcessing_ColorSpaceInfo | ImageProcessing_ColorSpaceInfo | 色彩空间信息，用于色彩空间转换能力查询。 |
@@ -43,10 +47,12 @@
  
   
 
-#### 枚举
+### 枚举
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | ImageDetailEnhancer_QualityLevel | ImageDetailEnhancer_QualityLevel | 质量级别，用于细节增强能力。 键参数的值IMAGE_DETAIL_ENHANCER_PARAMETER_KEY_QUALITY_LEVEL。 |
@@ -55,10 +61,12 @@
  
   
 
-#### 变量
+### 变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | const int32_t IMAGE_PROCESSING_TYPE_COLOR_SPACE_CONVERSION | 用于创建色彩空间转换的图片处理实例。 色彩空间转换包括单层HDR图片转换SDR图片，SDR图片之间的转换，以及SDR图片转换单层HDR图片，部分能力由厂商支持。使用OH_ImageProcessing_IsColorSpaceConversionSupported查询某种转换是否支持在单层图片之间进行。 起始版本： 13 参考：OH_ImageProcessing_Create |
@@ -71,13 +79,15 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### ImageDetailEnhancer_QualityLevel
+### ImageDetailEnhancer_QualityLevel
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -93,6 +103,7 @@ enum ImageDetailEnhancer_QualityLevel
  
 **起始版本：** 13
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | IMAGE_DETAIL_ENHANCER_QUALITY_LEVEL_NONE | 无细节增强。 支持输入分辨率（px）：宽：[32, 3000]，高：[32, 3000]。 支持输出分辨率（px）：宽：[32, 3000]，高：[32, 3000]。 |
@@ -107,7 +118,8 @@ enum ImageDetailEnhancer_QualityLevel
  
   
 
-#### ImageProcessing_ErrorCode
+### ImageProcessing_ErrorCode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -121,6 +133,7 @@ enum ImageProcessing_ErrorCode
  
 **起始版本：** 13
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | IMAGE_PROCESSING_SUCCESS | 成功。 |

@@ -1,9 +1,9 @@
 # @ohos.request (上传下载)
 
-更新时间：2026-08-04 06:06:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-request
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 request模块给应用提供上传下载文件、后台代理传输的基础功能，支持HTTP/HTTPS协议，提供任务进度监控、断点续传、后台任务管理、网络类型选择等能力，适用于应用内文件上传下载、后台持续传输等场景。
 
@@ -15,9 +15,10 @@ request模块给应用提供上传下载文件、后台代理传输的基础功�
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { request } from '@kit.BasicServicesKit';
@@ -25,14 +26,16 @@ import { request } from '@kit.BasicServicesKit';
 
 
 
-#### 常量
+## 常量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.MiscServices.Download
 
 > [!NOTE]
 > 网络类型 ：下载支持自定义网络类型，可以在 DownloadConfig 中通过networkType配置成以下网络类型。 下载任务错误码 ：下载 on('fail') 事件callback的错误参数、 getTaskInfo 返回值的failedReason字段取值。 下载任务暂停原因 ：下载相关 getTaskInfo 返回值的pausedReason字段取值。 下载任务状态码 ：下载相关 getTaskInfo 返回值的status字段取值。
+
 
 
 | 名称 | 类型 | 值 | 说明 |
@@ -71,9 +74,10 @@ import { request } from '@kit.BasicServicesKit';
 
 
 
-#### request.uploadFile9+
+## request.uploadFile9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 uploadFile(context: BaseContext, config: UploadConfig): Promise&lt;UploadTask&gt;
 
@@ -89,6 +93,7 @@ uploadFile(context: BaseContext, config: UploadConfig): Promise&lt;UploadTask&gt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | BaseContext | 是 | 基于应用程序的上下文。 |
@@ -96,6 +101,7 @@ uploadFile(context: BaseContext, config: UploadConfig): Promise&lt;UploadTask&gt
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -105,6 +111,7 @@ uploadFile(context: BaseContext, config: UploadConfig): Promise&lt;UploadTask&gt
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -144,9 +151,10 @@ try {
 
 
 
-#### request.uploadFile9+
+## request.uploadFile9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 uploadFile(context: BaseContext, config: UploadConfig, callback: AsyncCallback&lt;UploadTask&gt;): void
 
@@ -162,6 +170,7 @@ uploadFile(context: BaseContext, config: UploadConfig, callback: AsyncCallback&l
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | BaseContext | 是 | 基于应用程序的上下文。 |
@@ -172,6 +181,7 @@ uploadFile(context: BaseContext, config: UploadConfig, callback: AsyncCallback&l
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -213,9 +223,10 @@ try {
 
 
 
-#### request.upload(deprecated)
+## request.upload(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 upload(config: UploadConfig): Promise&lt;UploadTask&gt;
 
@@ -233,12 +244,14 @@ upload(config: UploadConfig): Promise&lt;UploadTask&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | config | UploadConfig | 是 | 上传的配置信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -248,6 +261,7 @@ upload(config: UploadConfig): Promise&lt;UploadTask&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -274,9 +288,10 @@ request.upload(uploadConfig).then((data: request.UploadTask) => {
 
 
 
-#### request.upload(deprecated)
+## request.upload(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 upload(config: UploadConfig, callback: AsyncCallback&lt;UploadTask&gt;): void
 
@@ -294,6 +309,7 @@ upload(config: UploadConfig, callback: AsyncCallback&lt;UploadTask&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | config | UploadConfig | 是 | 上传的配置信息。 |
@@ -303,6 +319,7 @@ upload(config: UploadConfig, callback: AsyncCallback&lt;UploadTask&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -331,17 +348,19 @@ request.upload(uploadConfig, (err: BusinessError, data: request.UploadTask) => {
 
 
 
-#### UploadTask
+## UploadTask
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 上传任务，使用下列方法前，需要先获取UploadTask对象，Promise形式通过[request.uploadFile](#requestuploadfile9)获取，callback形式通过[request.uploadFile](#requestuploadfile9-1)获取。
 
 
 
-#### on('progress')
+### on('progress')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'progress', callback: (uploadedSize: number, totalSize: number) => void): void
 
@@ -355,6 +374,7 @@ on(type: 'progress', callback: (uploadedSize: number, totalSize: number) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅的事件类型。取值为'progress'，表示上传的进度信息，任务进度有进展时触发该事件。 |
@@ -364,6 +384,7 @@ on(type: 'progress', callback: (uploadedSize: number, totalSize: number) => void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -381,9 +402,10 @@ uploadTask.on('progress', upProgressCallback);
 
 
 
-#### on('headerReceive')7+
+### on('headerReceive')7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'headerReceive', callback: (header: object) => void): void
 
@@ -392,6 +414,7 @@ on(type: 'headerReceive', callback: (header: object) => void): void
 **系统能力**：SystemCapability.MiscServices.Upload
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -402,6 +425,7 @@ on(type: 'headerReceive', callback: (header: object) => void): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -419,9 +443,10 @@ uploadTask.on('headerReceive', headerCallback);
 
 
 
-#### on('complete' | 'fail')9+
+### on('complete' | 'fail')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'complete' | 'fail', callback: Callback<Array&lt;TaskState&gt;>): void
 
@@ -430,6 +455,7 @@ on(type: 'complete' | 'fail', callback: Callback<Array&lt;TaskState&gt;>): void
 **系统能力**：SystemCapability.MiscServices.Upload
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -440,6 +466,7 @@ on(type: 'complete' | 'fail', callback: Callback<Array&lt;TaskState&gt;>): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -466,9 +493,10 @@ uploadTask.on('fail', upFailCallback);
 
 
 
-#### off('progress')
+### off('progress')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'progress', callback?: (uploadedSize: number, totalSize: number) => void): void
 
@@ -477,6 +505,7 @@ off(type: 'progress', callback?: (uploadedSize: number, totalSize: number) => vo
 **系统能力**：SystemCapability.MiscServices.Upload
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -487,6 +516,7 @@ off(type: 'progress', callback?: (uploadedSize: number, totalSize: number) => vo
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -512,9 +542,10 @@ uploadTask.off('progress');
 
 
 
-#### off('headerReceive')7+
+### off('headerReceive')7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'headerReceive', callback?: (header: object) => void): void
 
@@ -523,6 +554,7 @@ off(type: 'headerReceive', callback?: (header: object) => void): void
 **系统能力**：SystemCapability.MiscServices.Upload
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -533,6 +565,7 @@ off(type: 'headerReceive', callback?: (header: object) => void): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -558,9 +591,10 @@ uploadTask.off('headerReceive');
 
 
 
-#### off('complete' | 'fail')9+
+### off('complete' | 'fail')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'complete' | 'fail', callback?: Callback<Array&lt;TaskState&gt;>): void
 
@@ -569,6 +603,7 @@ off(type: 'complete' | 'fail', callback?: Callback<Array&lt;TaskState&gt;>): voi
 **系统能力**：SystemCapability.MiscServices.Upload
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -580,9 +615,10 @@ off(type: 'complete' | 'fail', callback?: Callback<Array&lt;TaskState&gt;>): voi
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | the parameters check fails. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. 3. Parameter verification failed. 适用版本：12+ |
+| 401 | The parameters check fails. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. 3. Parameter verification failed. 适用版本：12+ |
 
 
 **示例：**
@@ -629,9 +665,10 @@ uploadTask.off('fail');
 
 
 
-#### delete9+
+### delete9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 delete(): Promise&lt;boolean&gt;
 
@@ -647,6 +684,7 @@ delete(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示移除上传任务成功；返回false表示移除上传任务失败。 |
@@ -655,6 +693,7 @@ delete(): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -673,9 +712,10 @@ uploadTask.delete().then((result: boolean) => {
 
 
 
-#### delete9+
+### delete9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 delete(callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -691,6 +731,7 @@ delete(callback: AsyncCallback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;boolean&gt; | 是 | 回调函数。返回true表示移除上传任务成功；返回false表示移除上传任务失败。 |
@@ -699,6 +740,7 @@ delete(callback: AsyncCallback&lt;boolean&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -719,9 +761,10 @@ uploadTask.delete((err: BusinessError, result: boolean) => {
 
 
 
-#### remove(deprecated)
+### remove(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 remove(): Promise&lt;boolean&gt;
 
@@ -737,6 +780,7 @@ remove(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | 使用Promise方式异步回调，返回true表示移除上传任务成功；返回false表示移除上传任务失败。 |
@@ -745,6 +789,7 @@ remove(): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -763,9 +808,10 @@ uploadTask.remove().then((result: boolean) => {
 
 
 
-#### remove(deprecated)
+### remove(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 remove(callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -781,6 +827,7 @@ remove(callback: AsyncCallback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;boolean&gt; | 是 | 回调函数。返回true表示移除上传任务成功；返回false表示移除上传任务失败。 |
@@ -789,6 +836,7 @@ remove(callback: AsyncCallback&lt;boolean&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -811,13 +859,15 @@ uploadTask.remove((err: BusinessError, result: boolean) => {
 
 
 
-#### UploadConfig
+## UploadConfig
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 上传任务的配置信息。
 
 **系统能力**：SystemCapability.MiscServices.Upload
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -833,13 +883,15 @@ uploadTask.remove((err: BusinessError, result: boolean) => {
 
 
 
-#### TaskState9+
+## TaskState9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 上传任务的任务信息，是[on('complete' | 'fail')](#oncomplete--fail9)和[off('complete' | 'fail')](#offcomplete--fail9)接口的回调参数。
 
 **系统能力**：SystemCapability.MiscServices.Upload
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -851,6 +903,7 @@ uploadTask.remove((err: BusinessError, result: boolean) => {
 **错误码：**
 
 其中，responseCode包含的返回码值如下。
+
 
 | 返回码 | 具体信息 |
 | --- | --- |
@@ -871,13 +924,15 @@ uploadTask.remove((err: BusinessError, result: boolean) => {
 
 
 
-#### File
+## File
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [UploadConfig](#uploadconfig)中的文件列表。
 
 **系统能力**：SystemCapability.MiscServices.Download
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -889,13 +944,15 @@ uploadTask.remove((err: BusinessError, result: boolean) => {
 
 
 
-#### RequestData
+## RequestData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [UploadConfig](#uploadconfig)中的表单数据。
 
 **系统能力**：SystemCapability.MiscServices.Download
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -905,9 +962,10 @@ uploadTask.remove((err: BusinessError, result: boolean) => {
 
 
 
-#### request.downloadFile9+
+## request.downloadFile9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 downloadFile(context: BaseContext, config: DownloadConfig): Promise&lt;DownloadTask&gt;
 
@@ -923,6 +981,7 @@ downloadFile(context: BaseContext, config: DownloadConfig): Promise&lt;DownloadT
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | BaseContext | 是 | 基于应用程序的上下文。 |
@@ -930,6 +989,7 @@ downloadFile(context: BaseContext, config: DownloadConfig): Promise&lt;DownloadT
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -939,6 +999,7 @@ downloadFile(context: BaseContext, config: DownloadConfig): Promise&lt;DownloadT
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -973,9 +1034,10 @@ try {
 
 
 
-#### request.downloadFile9+
+## request.downloadFile9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 downloadFile(context: BaseContext, config: DownloadConfig, callback: AsyncCallback&lt;DownloadTask&gt;): void
 
@@ -991,6 +1053,7 @@ downloadFile(context: BaseContext, config: DownloadConfig, callback: AsyncCallba
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | BaseContext | 是 | 基于应用程序的上下文。 |
@@ -1001,6 +1064,7 @@ downloadFile(context: BaseContext, config: DownloadConfig, callback: AsyncCallba
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1039,9 +1103,10 @@ try {
 
 
 
-#### request.download(deprecated)
+## request.download(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 download(config: DownloadConfig): Promise&lt;DownloadTask&gt;
 
@@ -1059,12 +1124,14 @@ download(config: DownloadConfig): Promise&lt;DownloadTask&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | config | DownloadConfig | 是 | 下载的配置信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1074,6 +1141,7 @@ download(config: DownloadConfig): Promise&lt;DownloadTask&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1094,9 +1162,10 @@ request.download({ url: 'https://xxxx/xxxx.hap' }).then((data: request.DownloadT
 
 
 
-#### request.download(deprecated)
+## request.download(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 download(config: DownloadConfig, callback: AsyncCallback&lt;DownloadTask&gt;): void
 
@@ -1114,6 +1183,7 @@ download(config: DownloadConfig, callback: AsyncCallback&lt;DownloadTask&gt;): v
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | config | DownloadConfig | 是 | 下载的配置信息。 |
@@ -1123,6 +1193,7 @@ download(config: DownloadConfig, callback: AsyncCallback&lt;DownloadTask&gt;): v
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1146,17 +1217,19 @@ filePath: 'xxx/xxxxx.hap'}, (err: BusinessError, data: request.DownloadTask) => 
 
 
 
-#### DownloadTask
+## DownloadTask
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 下载任务，使用下列方法前，需要先获取DownloadTask对象，Promise形式通过[request.downloadFile](#requestdownloadfile9)获取，callback形式通过[request.downloadFile](#requestdownloadfile9-1)获取。
 
 
 
-#### on('progress')
+### on('progress')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'progress', callback: (receivedSize: number, totalSize: number) => void): void
 
@@ -1170,6 +1243,7 @@ on(type: 'progress', callback: (receivedSize: number, totalSize: number) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅的事件类型。 - 取值为'progress'，表示下载的进度信息，当任务进度有进展时触发该事件。 |
@@ -1179,6 +1253,7 @@ on(type: 'progress', callback: (receivedSize: number, totalSize: number) => void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1213,9 +1288,10 @@ try {
 
 
 
-#### off('progress')
+### off('progress')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'progress', callback?: (receivedSize: number, totalSize: number) => void): void
 
@@ -1224,6 +1300,7 @@ off(type: 'progress', callback?: (receivedSize: number, totalSize: number) => vo
 **系统能力**：SystemCapability.MiscServices.Download
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1234,6 +1311,7 @@ off(type: 'progress', callback?: (receivedSize: number, totalSize: number) => vo
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1276,9 +1354,10 @@ try {
 
 
 
-#### on('complete' | 'pause' | 'remove')7+
+### on('complete' | 'pause' | 'remove')7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'complete' | 'pause' | 'remove', callback: () => void): void
 
@@ -1287,6 +1366,7 @@ on(type: 'complete' | 'pause' | 'remove', callback: () => void): void
 **系统能力**：SystemCapability.MiscServices.Download
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1297,6 +1377,7 @@ on(type: 'complete' | 'pause' | 'remove', callback: () => void): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1341,9 +1422,10 @@ try {
 
 
 
-#### off('complete' | 'pause' | 'remove')7+
+### off('complete' | 'pause' | 'remove')7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'complete' | 'pause' | 'remove', callback?: () => void): void
 
@@ -1352,6 +1434,7 @@ off(type: 'complete' | 'pause' | 'remove', callback?: () => void): void
 **系统能力**：SystemCapability.MiscServices.Download
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1362,6 +1445,7 @@ off(type: 'complete' | 'pause' | 'remove', callback?: () => void): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1430,9 +1514,10 @@ try {
 
 
 
-#### on('fail')7+
+### on('fail')7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'fail', callback: (err: number) => void): void
 
@@ -1441,6 +1526,7 @@ on(type: 'fail', callback: (err: number) => void): void
 **系统能力**：SystemCapability.MiscServices.Download
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1451,6 +1537,7 @@ on(type: 'fail', callback: (err: number) => void): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1485,9 +1572,10 @@ try {
 
 
 
-#### off('fail')7+
+### off('fail')7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'fail', callback?: (err: number) => void): void
 
@@ -1496,6 +1584,7 @@ off(type: 'fail', callback?: (err: number) => void): void
 **系统能力**：SystemCapability.MiscServices.Download
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1506,6 +1595,7 @@ off(type: 'fail', callback?: (err: number) => void): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1548,9 +1638,10 @@ try {
 
 
 
-#### delete9+
+### delete9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 delete(): Promise&lt;boolean&gt;
 
@@ -1566,6 +1657,7 @@ delete(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示移除下载任务成功；返回false表示移除下载任务失败。 |
@@ -1574,6 +1666,7 @@ delete(): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1608,9 +1701,10 @@ try {
 
 
 
-#### delete9+
+### delete9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 delete(callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -1626,6 +1720,7 @@ delete(callback: AsyncCallback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;boolean&gt; | 是 | 回调函数。返回true表示移除下载任务成功；返回false表示移除下载任务失败。 |
@@ -1634,6 +1729,7 @@ delete(callback: AsyncCallback&lt;boolean&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1671,9 +1767,10 @@ try {
 
 
 
-#### getTaskInfo9+
+### getTaskInfo9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTaskInfo(): Promise&lt;DownloadInfo&gt;
 
@@ -1689,6 +1786,7 @@ getTaskInfo(): Promise&lt;DownloadInfo&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;DownloadInfo&gt; | Promise对象，返回包含下载任务信息的DownloadInfo对象。 |
@@ -1697,6 +1795,7 @@ getTaskInfo(): Promise&lt;DownloadInfo&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1732,9 +1831,10 @@ try {
 
 
 
-#### getTaskInfo9+
+### getTaskInfo9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTaskInfo(callback: AsyncCallback&lt;DownloadInfo&gt;): void
 
@@ -1750,6 +1850,7 @@ getTaskInfo(callback: AsyncCallback&lt;DownloadInfo&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;DownloadInfo&gt; | 是 | 回调函数。当查询下载任务操作成功，err为undefined，data为获取到的DownloadInfo对象；否则为错误对象。 |
@@ -1758,6 +1859,7 @@ getTaskInfo(callback: AsyncCallback&lt;DownloadInfo&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1795,9 +1897,10 @@ try {
 
 
 
-#### getTaskMimeType9+
+### getTaskMimeType9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTaskMimeType(): Promise&lt;string&gt;
 
@@ -1813,6 +1916,7 @@ getTaskMimeType(): Promise&lt;string&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象。返回下载任务的MimeType。 |
@@ -1821,6 +1925,7 @@ getTaskMimeType(): Promise&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1856,9 +1961,10 @@ try {
 
 
 
-#### getTaskMimeType9+
+### getTaskMimeType9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTaskMimeType(callback: AsyncCallback&lt;string&gt;): void
 
@@ -1874,6 +1980,7 @@ getTaskMimeType(callback: AsyncCallback&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;string&gt; | 是 | 回调函数。当查询下载任务MimeType成功，err为undefined，data为获取到的下载任务的MimeType的对象；否则为错误对象。 |
@@ -1882,6 +1989,7 @@ getTaskMimeType(callback: AsyncCallback&lt;string&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1919,9 +2027,10 @@ try {
 
 
 
-#### suspend9+
+### suspend9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 suspend(): Promise&lt;boolean&gt;
 
@@ -1937,6 +2046,7 @@ suspend(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示暂停下载正在运行中的任务成功；返回false表示暂停下载正在运行中的任务失败。 |
@@ -1945,6 +2055,7 @@ suspend(): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1980,9 +2091,10 @@ try {
 
 
 
-#### suspend9+
+### suspend9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 suspend(callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -1998,6 +2110,7 @@ suspend(callback: AsyncCallback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;boolean&gt; | 是 | 回调函数。返回true表示暂停下载任务成功；返回false表示暂停下载任务失败。 |
@@ -2006,6 +2119,7 @@ suspend(callback: AsyncCallback&lt;boolean&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2043,9 +2157,10 @@ try {
 
 
 
-#### restore9+
+### restore9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 restore(): Promise&lt;boolean&gt;
 
@@ -2061,6 +2176,7 @@ restore(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示重新启动被暂停的下载任务成功；返回false表示重新启动被暂停的下载任务失败。 |
@@ -2069,6 +2185,7 @@ restore(): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2104,9 +2221,10 @@ try {
 
 
 
-#### restore9+
+### restore9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 restore(callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -2122,6 +2240,7 @@ restore(callback: AsyncCallback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;boolean&gt; | 是 | 回调函数。返回true表示重新启动已暂停的下载任务成功；返回false表示重新启动下载任务失败。 |
@@ -2130,6 +2249,7 @@ restore(callback: AsyncCallback&lt;boolean&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2167,9 +2287,10 @@ try {
 
 
 
-#### remove(deprecated)
+### remove(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 remove(): Promise&lt;boolean&gt;
 
@@ -2185,6 +2306,7 @@ remove(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示移除下载任务成功；返回false表示移除下载任务失败。 |
@@ -2193,6 +2315,7 @@ remove(): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2211,9 +2334,10 @@ downloadTask.remove().then((result) => {
 
 
 
-#### remove(deprecated)
+### remove(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 remove(callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -2229,6 +2353,7 @@ remove(callback: AsyncCallback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;boolean&gt; | 是 | 回调函数。返回true表示移除下载任务成功；返回false表示移除下载任务失败。 |
@@ -2237,6 +2362,7 @@ remove(callback: AsyncCallback&lt;boolean&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2257,9 +2383,10 @@ downloadTask.remove((err, result) => {
 
 
 
-#### query(deprecated)
+### query(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 query(): Promise&lt;DownloadInfo&gt;
 
@@ -2275,6 +2402,7 @@ query(): Promise&lt;DownloadInfo&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;DownloadInfo&gt; | Promise对象。返回包含下载任务信息的DownloadInfo。 |
@@ -2283,6 +2411,7 @@ query(): Promise&lt;DownloadInfo&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2301,9 +2430,10 @@ downloadTask.query().then((downloadInfo) => {
 
 
 
-#### query(deprecated)
+### query(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 query(callback: AsyncCallback&lt;DownloadInfo&gt;): void
 
@@ -2319,6 +2449,7 @@ query(callback: AsyncCallback&lt;DownloadInfo&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;DownloadInfo&gt; | 是 | 回调函数。当查询下载任务成功，err为undefined，data为获取到的DownloadInfo对象；否则为错误对象。 |
@@ -2327,6 +2458,7 @@ query(callback: AsyncCallback&lt;DownloadInfo&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2347,9 +2479,10 @@ downloadTask.query((err: BusinessError, downloadInfo: request.DownloadInfo) => {
 
 
 
-#### queryMimeType(deprecated)
+### queryMimeType(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 queryMimeType(): Promise&lt;string&gt;
 
@@ -2365,6 +2498,7 @@ queryMimeType(): Promise&lt;string&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象。返回下载任务的MimeType。 |
@@ -2373,6 +2507,7 @@ queryMimeType(): Promise&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2391,9 +2526,10 @@ downloadTask.queryMimeType().then((data: string) => {
 
 
 
-#### queryMimeType(deprecated)
+### queryMimeType(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 queryMimeType(callback: AsyncCallback&lt;string&gt;): void
 
@@ -2409,6 +2545,7 @@ queryMimeType(callback: AsyncCallback&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;string&gt; | 是 | 回调函数。当查询下载任务的MimeType成功，err为undefined，data为获取到的任务的MimeType对象；否则为错误对象。 |
@@ -2417,6 +2554,7 @@ queryMimeType(callback: AsyncCallback&lt;string&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2437,9 +2575,10 @@ downloadTask.queryMimeType((err: BusinessError, data: string) => {
 
 
 
-#### pause(deprecated)
+### pause(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pause(): Promise&lt;void&gt;
 
@@ -2455,6 +2594,7 @@ pause(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -2463,6 +2603,7 @@ pause(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2481,9 +2622,10 @@ downloadTask.pause().then(() => {
 
 
 
-#### pause(deprecated)
+### pause(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pause(callback: AsyncCallback&lt;void&gt;): void
 
@@ -2499,6 +2641,7 @@ pause(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当暂停下载任务成功，err为undefined，否则为错误对象。 |
@@ -2507,6 +2650,7 @@ pause(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2527,9 +2671,10 @@ downloadTask.pause((err: BusinessError) => {
 
 
 
-#### resume(deprecated)
+### resume(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 resume(): Promise&lt;void&gt;
 
@@ -2545,6 +2690,7 @@ resume(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -2553,6 +2699,7 @@ resume(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2571,9 +2718,10 @@ downloadTask.resume().then(() => {
 
 
 
-#### resume(deprecated)
+### resume(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 resume(callback: AsyncCallback&lt;void&gt;): void
 
@@ -2589,6 +2737,7 @@ resume(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当重新启动已暂停的下载任务成功，err为undefined，否则为错误对象。 |
@@ -2597,6 +2746,7 @@ resume(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2617,13 +2767,15 @@ downloadTask.resume((err: BusinessError) => {
 
 
 
-#### DownloadConfig
+## DownloadConfig
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 下载任务的配置信息。
 
 **系统能力**：SystemCapability.MiscServices.Download
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2640,13 +2792,15 @@ downloadTask.resume((err: BusinessError) => {
 
 
 
-#### DownloadInfo7+
+## DownloadInfo7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 下载任务信息，[getTaskInfo](#gettaskinfo9)接口的回调参数。
 
 **系统能力**：SystemCapability.MiscServices.Download
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2665,19 +2819,22 @@ downloadTask.resume((err: BusinessError) => {
 
 
 
-#### agent10+
+## agent10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 request.agent提供基于任务的后台上传下载代理能力。开发者通过[request.agent.create](#requestagentcreate10)创建任务并排入队列，通过[Task](#requestagenttask10)对象管理任务生命周期（启动、暂停、恢复、停止、移除）。支持前台和后台两种任务模式：前台任务在应用切到后台一段时间后会显示失败或暂停，后台任务不受影响。支持断点续传、网络条件控制、自动重试、超时控制等特性。与基础的[request.uploadFile](#requestuploadfile9)/[request.downloadFile](#requestdownloadfile9)相比，request.agent提供更完善的任务管理和状态查询能力。
 
 
 
-#### 常量
+### 常量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
+
 
 | 名称 | 类型 | 值 | 说明 |
 | --- | --- | --- | --- |
@@ -2687,15 +2844,17 @@ request.agent提供基于任务的后台上传下载代理能力。开发者通�
 
 
 
-#### request.agent.Action10+
+## request.agent.Action10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义操作选项。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2705,9 +2864,10 @@ request.agent提供基于任务的后台上传下载代理能力。开发者通�
 
 
 
-#### request.agent.Mode10+
+## request.agent.Mode10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义模式选项。
 
@@ -2717,6 +2877,7 @@ request.agent提供基于任务的后台上传下载代理能力。开发者通�
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | BACKGROUND | 0 | 表示后台任务。 |
@@ -2725,9 +2886,10 @@ request.agent提供基于任务的后台上传下载代理能力。开发者通�
 
 
 
-#### request.agent.Network10+
+## request.agent.Network10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义网络选项。
 
@@ -2736,6 +2898,7 @@ request.agent提供基于任务的后台上传下载代理能力。开发者通�
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2746,9 +2909,10 @@ request.agent提供基于任务的后台上传下载代理能力。开发者通�
 
 
 
-#### request.agent.BroadcastEvent11+
+## request.agent.BroadcastEvent11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义自定义系统事件。用户可以使用公共事件接口获取该事件。
 
@@ -2758,6 +2922,7 @@ request.agent提供基于任务的后台上传下载代理能力。开发者通�
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | COMPLETE | ohos.request.event.COMPLETE | 表示自定义系统事件完成。在任务结束后会触发该事件，根据任务的成功或失败，事件的code返回0x40或者0x41。 |
@@ -2765,13 +2930,15 @@ request.agent提供基于任务的后台上传下载代理能力。开发者通�
 
 
 
-#### request.agent.FileSpec10+
+## request.agent.FileSpec10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表单项的文件信息。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2784,15 +2951,17 @@ request.agent提供基于任务的后台上传下载代理能力。开发者通�
 
 
 
-#### request.agent.FormItem10+
+## request.agent.FormItem10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 任务的表单项信息。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2802,13 +2971,15 @@ request.agent提供基于任务的后台上传下载代理能力。开发者通�
 
 
 
-#### request.agent.Config10+
+## request.agent.Config10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 上传/下载任务的配置信息。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2844,15 +3015,17 @@ request.agent提供基于任务的后台上传下载代理能力。开发者通�
 
 
 
-#### request.agent.State10+
+## request.agent.State10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义任务当前的状态。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2869,15 +3042,17 @@ request.agent提供基于任务的后台上传下载代理能力。开发者通�
 
 
 
-#### request.agent.Progress10+
+## request.agent.Progress10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 任务进度的数据结构。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2890,9 +3065,10 @@ request.agent提供基于任务的后台上传下载代理能力。开发者通�
 
 
 
-#### request.agent.Faults10+
+## request.agent.Faults10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义任务失败的原因。
 
@@ -2900,6 +3076,7 @@ request.agent提供基于任务的后台上传下载代理能力。开发者通�
 
 > [!NOTE]
 > API version 12及以下版本，只支持串行地尝试连接域名相关IP，且不支持单个IP的连接时间控制，如果DNS返回的首个IP是阻塞的，可能会导致握手超时，进而引发TIMEOUT错误。 元服务API： 从API version 11开始，该接口支持在元服务中使用。
+
 
 
 | 名称 | 值 | 说明 |
@@ -2919,13 +3096,15 @@ request.agent提供基于任务的后台上传下载代理能力。开发者通�
 
 
 
-#### request.agent.Filter10+
+## request.agent.Filter10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 过滤条件。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2938,13 +3117,15 @@ request.agent提供基于任务的后台上传下载代理能力。开发者通�
 
 
 
-#### request.agent.TaskInfo10+
+## request.agent.TaskInfo10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 查询结果的任务信息数据结构，提供普通查询（通过request.agent.show、request.agent.touch等接口查询）和系统查询（系统应用级别的查询），两种查询方式下字段的可见范围不同。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2971,15 +3152,17 @@ request.agent提供基于任务的后台上传下载代理能力。开发者通�
 
 
 
-#### request.agent.HttpResponse12+
+## request.agent.HttpResponse12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 任务响应头的数据结构。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2991,13 +3174,15 @@ request.agent提供基于任务的后台上传下载代理能力。开发者通�
 
 
 
-#### request.agent.Notification15+
+## request.agent.Notification15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通知栏自定义信息。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -3063,13 +3248,15 @@ request.agent.create(context, config).then((task: request.agent.Task) => {
 
 
 
-#### request.agent.GroupConfig15+
+## request.agent.GroupConfig15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 下载任务分组配置选项。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -3079,13 +3266,15 @@ request.agent.create(context, config).then((task: request.agent.Task) => {
 
 
 
-#### request.agent.WaitingReason20+
+## request.agent.WaitingReason20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，定义任务等待的原因。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -3097,13 +3286,15 @@ request.agent.create(context, config).then((task: request.agent.Task) => {
 
 
 
-#### request.agent.MinSpeed20+
+## request.agent.MinSpeed20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 任务的最低限速配置。若任务速度持续低于设定值并达到指定时长，则任务失败，失败原因为[LOW_SPEED](#requestagentfaults10)。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -3113,13 +3304,15 @@ request.agent.create(context, config).then((task: request.agent.Task) => {
 
 
 
-#### request.agent.Timeout20+
+## request.agent.Timeout20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 任务的超时配置。任务处于等待状态的时间不参与计算，上传下载任务会存在以下任务等待的原因：[WaitingReason20+](#requestagentwaitingreason20)。
 
 **系统能力**：SystemCapability.Request.FileTransferAgent
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -3129,17 +3322,19 @@ request.agent.create(context, config).then((task: request.agent.Task) => {
 
 
 
-#### request.agent.Task10+
+## request.agent.Task10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 上传或下载任务。使用下列方法前，需要先获取Task对象，Promise形式通过[request.agent.create](#requestagentcreate10-1)获取，callback形式通过[request.agent.create](#requestagentcreate10)获取。
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 包括任务id和任务的配置信息。
 
@@ -3151,6 +3346,7 @@ request.agent.create(context, config).then((task: request.agent.Task) => {
 > Task对象及其挂载回调函数会在调用remove方法后释放并被系统自动回收。
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | tid | string | 是 | 否 | 任务id，由系统自动生成且唯一。 |
@@ -3159,11 +3355,12 @@ request.agent.create(context, config).then((task: request.agent.Task) => {
 
 
 
-#### on('progress')10+
+### on('progress')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-on(event: 'progress', callback: (progress: [Progress](#requestagentprogress10)) => void): void
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+on(event: 'progress', callback: (progress: Progress) => void): void
 
 订阅任务进度的事件，使用callback异步回调。
 
@@ -3177,6 +3374,7 @@ on(event: 'progress', callback: (progress: [Progress](#requestagentprogress10)) 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 订阅的事件类型。 - 取值为'progress'，表示任务进度，任务进度有进展时触发该事件。 |
@@ -3186,6 +3384,7 @@ on(event: 'progress', callback: (progress: [Progress](#requestagentprogress10)) 
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3246,11 +3445,12 @@ request.agent.create(context, config).then((task: request.agent.Task) => {
 
 
 
-#### on('completed')10+
+### on('completed')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-on(event: 'completed', callback: (progress: [Progress](#requestagentprogress10)) => void): void
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+on(event: 'completed', callback: (progress: Progress) => void): void
 
 订阅任务完成事件，使用callback异步回调。
 
@@ -3264,6 +3464,7 @@ on(event: 'completed', callback: (progress: [Progress](#requestagentprogress10))
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 订阅的事件类型。 - 取值为'completed'，表示任务完成，任务完成时触发该事件。 |
@@ -3273,6 +3474,7 @@ on(event: 'completed', callback: (progress: [Progress](#requestagentprogress10))
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3333,11 +3535,12 @@ request.agent.create(context, config).then((task: request.agent.Task) => {
 
 
 
-#### on('failed')10+
+### on('failed')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-on(event: 'failed', callback: (progress: [Progress](#requestagentprogress10)) => void): void
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+on(event: 'failed', callback: (progress: Progress) => void): void
 
 订阅任务失败事件，使用callback异步回调。可通过调用[request.agent.show](#requestagentshow10-1)查看错误原因。
 
@@ -3351,6 +3554,7 @@ on(event: 'failed', callback: (progress: [Progress](#requestagentprogress10)) =>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 订阅的事件类型。 - 取值为'failed'，表示任务失败，任务失败时触发该事件。 |
@@ -3360,6 +3564,7 @@ on(event: 'failed', callback: (progress: [Progress](#requestagentprogress10)) =>
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3420,11 +3625,12 @@ request.agent.create(context, config).then((task: request.agent.Task) => {
 
 
 
-#### on('pause')11+
+### on('pause')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-on(event: 'pause', callback: (progress: [Progress](#requestagentprogress10)) => void): void
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+on(event: 'pause', callback: (progress: Progress) => void): void
 
 订阅任务暂停事件，使用callback异步回调。
 
@@ -3436,6 +3642,7 @@ on(event: 'pause', callback: (progress: [Progress](#requestagentprogress10)) => 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 订阅的事件类型。 - 取值为'pause'，表示任务已暂停，任务暂停时触发该事件。 |
@@ -3445,6 +3652,7 @@ on(event: 'pause', callback: (progress: [Progress](#requestagentprogress10)) => 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3509,11 +3717,12 @@ request.agent.create(context, config).then(async (task: request.agent.Task) => {
 
 
 
-#### on('resume')11+
+### on('resume')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-on(event: 'resume', callback: (progress: [Progress](#requestagentprogress10)) => void): void
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+on(event: 'resume', callback: (progress: Progress) => void): void
 
 订阅任务恢复事件，使用callback异步回调。
 
@@ -3525,6 +3734,7 @@ on(event: 'resume', callback: (progress: [Progress](#requestagentprogress10)) =>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 订阅的事件类型。 - 取值为'resume'，表示任务恢复，任务恢复时触发该事件。 |
@@ -3534,6 +3744,7 @@ on(event: 'resume', callback: (progress: [Progress](#requestagentprogress10)) =>
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3603,11 +3814,12 @@ request.agent.create(context, config).then(async (task: request.agent.Task) => {
 
 
 
-#### on('remove')11+
+### on('remove')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-on(event: 'remove', callback: (progress: [Progress](#requestagentprogress10)) => void): void
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+on(event: 'remove', callback: (progress: Progress) => void): void
 
 订阅任务移除事件，使用callback异步回调。
 
@@ -3619,6 +3831,7 @@ on(event: 'remove', callback: (progress: [Progress](#requestagentprogress10)) =>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 订阅的事件类型。 - 取值为'remove'，表示任务被移除，任务移除时触发该事件。 |
@@ -3628,6 +3841,7 @@ on(event: 'remove', callback: (progress: [Progress](#requestagentprogress10)) =>
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3692,9 +3906,10 @@ request.agent.create(context, config).then(async (task: request.agent.Task) => {
 
 
 
-#### on('response')12+
+### on('response')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(event: 'response', callback: Callback&lt;HttpResponse&gt;): void
 
@@ -3710,6 +3925,7 @@ on(event: 'response', callback: Callback&lt;HttpResponse&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 订阅的事件类型。 - 取值为'response'，表示任务响应，请求接收到响应时触发该事件。 |
@@ -3719,6 +3935,7 @@ on(event: 'response', callback: Callback&lt;HttpResponse&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3778,9 +3995,10 @@ request.agent.create(context, config).then((task: request.agent.Task) => {
 
 
 
-#### on('faultOccur')20+
+### on('faultOccur')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(event: 'faultOccur', callback: Callback&lt;Faults&gt;): void
 
@@ -3794,6 +4012,7 @@ on(event: 'faultOccur', callback: Callback&lt;Faults&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 订阅的事件类型。 - 取值为'faultOccur'，表示任务失败。 |
@@ -3803,6 +4022,7 @@ on(event: 'faultOccur', callback: Callback&lt;Faults&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3862,9 +4082,10 @@ request.agent.create(context, config).then((task: request.agent.Task) => {
 
 
 
-#### on('wait')20+
+### on('wait')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(event: 'wait', callback: Callback&lt;WaitingReason&gt;): void
 
@@ -3878,6 +4099,7 @@ on(event: 'wait', callback: Callback&lt;WaitingReason&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 订阅的事件类型。 - 取值为'wait'，表示任务等待。 |
@@ -3887,6 +4109,7 @@ on(event: 'wait', callback: Callback&lt;WaitingReason&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3946,11 +4169,12 @@ request.agent.create(context, config).then((task: request.agent.Task) => {
 
 
 
-#### off('progress')10+
+### off('progress')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-off(event: 'progress', callback?: (progress: [Progress](#requestagentprogress10)) => void): void
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+off(event: 'progress', callback?: (progress: Progress) => void): void
 
 取消订阅任务进度事件。
 
@@ -3964,6 +4188,7 @@ off(event: 'progress', callback?: (progress: [Progress](#requestagentprogress10)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 取消订阅的事件类型。 - 取值为'progress'，表示任务进度。 |
@@ -3973,6 +4198,7 @@ off(event: 'progress', callback?: (progress: [Progress](#requestagentprogress10)
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4041,11 +4267,12 @@ request.agent.create(context, config).then((task: request.agent.Task) => {
 
 
 
-#### off('completed')10+
+### off('completed')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-off(event: 'completed', callback?: (progress: [Progress](#requestagentprogress10)) => void): void
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+off(event: 'completed', callback?: (progress: Progress) => void): void
 
 取消订阅任务完成事件。
 
@@ -4059,6 +4286,7 @@ off(event: 'completed', callback?: (progress: [Progress](#requestagentprogress10
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 取消订阅的事件类型。 - 取值为'completed'，表示任务完成。 |
@@ -4068,6 +4296,7 @@ off(event: 'completed', callback?: (progress: [Progress](#requestagentprogress10
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4136,11 +4365,12 @@ request.agent.create(context, config).then((task: request.agent.Task) => {
 
 
 
-#### off('failed')10+
+### off('failed')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-off(event: 'failed', callback?: (progress: [Progress](#requestagentprogress10)) => void): void
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+off(event: 'failed', callback?: (progress: Progress) => void): void
 
 取消订阅任务失败事件。
 
@@ -4154,6 +4384,7 @@ off(event: 'failed', callback?: (progress: [Progress](#requestagentprogress10)) 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 取消订阅的事件类型。 - 取值为'failed'，表示任务失败。 |
@@ -4163,6 +4394,7 @@ off(event: 'failed', callback?: (progress: [Progress](#requestagentprogress10)) 
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4231,11 +4463,12 @@ request.agent.create(context, config).then((task: request.agent.Task) => {
 
 
 
-#### off('pause')11+
+### off('pause')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-off(event: 'pause', callback?: (progress: [Progress](#requestagentprogress10)) => void): void
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+off(event: 'pause', callback?: (progress: Progress) => void): void
 
 取消订阅任务暂停事件。
 
@@ -4247,6 +4480,7 @@ off(event: 'pause', callback?: (progress: [Progress](#requestagentprogress10)) =
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 取消订阅的事件类型。 - 取值为'pause'，表示任务暂停。 |
@@ -4256,6 +4490,7 @@ off(event: 'pause', callback?: (progress: [Progress](#requestagentprogress10)) =
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4323,11 +4558,12 @@ request.agent.create(context, config).then((task: request.agent.Task) => {
 
 
 
-#### off('resume')11+
+### off('resume')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-off(event: 'resume', callback?: (progress: [Progress](#requestagentprogress10)) => void): void
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+off(event: 'resume', callback?: (progress: Progress) => void): void
 
 取消订阅任务恢复事件。
 
@@ -4339,6 +4575,7 @@ off(event: 'resume', callback?: (progress: [Progress](#requestagentprogress10)) 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 取消订阅的事件类型。 - 取值为'resume'，表示任务恢复。 |
@@ -4348,6 +4585,7 @@ off(event: 'resume', callback?: (progress: [Progress](#requestagentprogress10)) 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4415,11 +4653,12 @@ request.agent.create(context, config).then((task: request.agent.Task) => {
 
 
 
-#### off('remove')11+
+### off('remove')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-off(event: 'remove', callback?: (progress: [Progress](#requestagentprogress10)) => void): void
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+off(event: 'remove', callback?: (progress: Progress) => void): void
 
 取消订阅任务移除事件。
 
@@ -4431,6 +4670,7 @@ off(event: 'remove', callback?: (progress: [Progress](#requestagentprogress10)) 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 取消订阅的事件类型。 - 取值为'remove'，表示任务被移除。 |
@@ -4440,6 +4680,7 @@ off(event: 'remove', callback?: (progress: [Progress](#requestagentprogress10)) 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4507,9 +4748,10 @@ request.agent.create(context, config).then((task: request.agent.Task) => {
 
 
 
-#### off('response')12+
+### off('response')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(event: 'response', callback?: Callback&lt;HttpResponse&gt;): void
 
@@ -4525,6 +4767,7 @@ off(event: 'response', callback?: Callback&lt;HttpResponse&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 取消订阅的事件类型。 - 取值为'response'，表示任务响应。 |
@@ -4534,6 +4777,7 @@ off(event: 'response', callback?: Callback&lt;HttpResponse&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4601,9 +4845,10 @@ request.agent.create(context, config).then((task: request.agent.Task) => {
 
 
 
-#### off('faultOccur')20+
+### off('faultOccur')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(event: 'faultOccur', callback?: Callback&lt;Faults&gt;): void
 
@@ -4617,6 +4862,7 @@ off(event: 'faultOccur', callback?: Callback&lt;Faults&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 订阅的事件类型。 - 取值为'faultOccur'，表示任务失败。 |
@@ -4626,6 +4872,7 @@ off(event: 'faultOccur', callback?: Callback&lt;Faults&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4693,9 +4940,10 @@ request.agent.create(context, config).then((task: request.agent.Task) => {
 
 
 
-#### off('wait')20+
+### off('wait')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(event: 'wait', callback?: Callback&lt;WaitingReason&gt;): void
 
@@ -4709,6 +4957,7 @@ off(event: 'wait', callback?: Callback&lt;WaitingReason&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 订阅的事件类型。 - 取值为'wait'，表示任务等待。 |
@@ -4718,6 +4967,7 @@ off(event: 'wait', callback?: Callback&lt;WaitingReason&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4785,9 +5035,10 @@ request.agent.create(context, config).then((task: request.agent.Task) => {
 
 
 
-#### start10+
+### start10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 start(callback: AsyncCallback&lt;void&gt;): void
 
@@ -4809,6 +5060,7 @@ start(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当开启任务成功，err为undefined，否则为错误对象。 |
@@ -4817,6 +5069,7 @@ start(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4873,9 +5126,10 @@ request.agent.create(context, config).then((task: request.agent.Task) => {
 
 
 
-#### start10+
+### start10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 start(): Promise&lt;void&gt;
 
@@ -4897,6 +5151,7 @@ start(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -4905,6 +5160,7 @@ start(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4959,9 +5215,10 @@ request.agent.create(context, config).then((task: request.agent.Task) => {
 
 
 
-#### pause10+
+### pause10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pause(callback: AsyncCallback&lt;void&gt;): void
 
@@ -4971,6 +5228,7 @@ pause(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当暂停任务成功，err为undefined，否则为错误对象。 |
@@ -4979,6 +5237,7 @@ pause(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5040,9 +5299,10 @@ request.agent.create(context, config).then(async (task: request.agent.Task) => {
 
 
 
-#### pause10+
+### pause10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pause(): Promise&lt;void&gt;
 
@@ -5052,6 +5312,7 @@ pause(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -5060,6 +5321,7 @@ pause(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5119,9 +5381,10 @@ request.agent.create(context, config).then(async (task: request.agent.Task) => {
 
 
 
-#### resume10+
+### resume10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 resume(callback: AsyncCallback&lt;void&gt;): void
 
@@ -5133,6 +5396,7 @@ resume(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当重新启动任务成功，err为undefined，否则为错误对象。 |
@@ -5141,6 +5405,7 @@ resume(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5208,9 +5473,10 @@ request.agent.create(context, config).then(async (task: request.agent.Task) => {
 
 
 
-#### resume10+
+### resume10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 resume(): Promise&lt;void&gt;
 
@@ -5222,6 +5488,7 @@ resume(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -5230,6 +5497,7 @@ resume(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5295,9 +5563,10 @@ request.agent.create(context, config).then(async (task: request.agent.Task) => {
 
 
 
-#### stop10+
+### stop10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stop(callback: AsyncCallback&lt;void&gt;): void
 
@@ -5309,6 +5578,7 @@ stop(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当停止任务成功，err为undefined，否则为错误对象。 |
@@ -5317,6 +5587,7 @@ stop(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5377,9 +5648,10 @@ request.agent.create(context, config).then(async (task: request.agent.Task) => {
 
 
 
-#### stop10+
+### stop10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stop(): Promise&lt;void&gt;
 
@@ -5391,6 +5663,7 @@ stop(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -5399,6 +5672,7 @@ stop(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5457,9 +5731,10 @@ request.agent.create(context, config).then(async (task: request.agent.Task) => {
 
 
 
-#### setMaxSpeed18+
+### setMaxSpeed18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMaxSpeed(speed: number): Promise&lt;void&gt;
 
@@ -5469,12 +5744,14 @@ setMaxSpeed(speed: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | speed | number | 是 | 设置任务每秒能传输的字节数上限，单位为字节每秒（B/s），最小值为16384字节每秒，取值范围为[16384, +∞)，同时该值不得低于MinSpeed设置的最低速度。传入小于最小值的参数时返回错误码。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5484,6 +5761,7 @@ setMaxSpeed(speed: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5520,9 +5798,10 @@ request.agent.create(context, config).then((task: request.agent.Task) => {
 
 
 
-#### request.agent.create10+
+## request.agent.create10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 create(context: BaseContext, config: Config, callback: AsyncCallback&lt;Task&gt;): void
 
@@ -5540,6 +5819,7 @@ create(context: BaseContext, config: Config, callback: AsyncCallback&lt;Task&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | BaseContext | 是 | 基于应用程序的上下文。 |
@@ -5550,6 +5830,7 @@ create(context: BaseContext, config: Config, callback: AsyncCallback&lt;Task&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5614,9 +5895,10 @@ request.agent.create(context, config, async (err: BusinessError, task: request.a
 
 
 
-#### request.agent.create10+
+## request.agent.create10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 create(context: BaseContext, config: Config): Promise&lt;Task&gt;
 
@@ -5634,6 +5916,7 @@ create(context: BaseContext, config: Config): Promise&lt;Task&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | BaseContext | 是 | 基于应用程序的上下文。 |
@@ -5641,6 +5924,7 @@ create(context: BaseContext, config: Config): Promise&lt;Task&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5650,6 +5934,7 @@ create(context: BaseContext, config: Config): Promise&lt;Task&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5712,9 +5997,10 @@ request.agent.create(context, config).then(async (task: request.agent.Task) => {
 
 
 
-#### request.agent.getTask11+
+## request.agent.getTask11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTask(context: BaseContext, id: string, token?: string): Promise&lt;Task&gt;
 
@@ -5723,6 +6009,7 @@ getTask(context: BaseContext, id: string, token?: string): Promise&lt;Task&gt;
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5733,6 +6020,7 @@ getTask(context: BaseContext, id: string, token?: string): Promise&lt;Task&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Task&gt; | Promise对象。返回任务配置信息的Promise对象。 |
@@ -5741,6 +6029,7 @@ getTask(context: BaseContext, id: string, token?: string): Promise&lt;Task&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5768,9 +6057,10 @@ request.agent.getTask(context, '123456').then((task: request.agent.Task) => {
 
 
 
-#### request.agent.remove10+
+## request.agent.remove10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 remove(id: string, callback: AsyncCallback&lt;void&gt;): void
 
@@ -5782,6 +6072,7 @@ remove(id: string, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | string | 是 | 任务id。 |
@@ -5791,6 +6082,7 @@ remove(id: string, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5815,9 +6107,10 @@ request.agent.remove('123456', (err: BusinessError) => {
 
 
 
-#### request.agent.remove10+
+## request.agent.remove10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 remove(id: string): Promise&lt;void&gt;
 
@@ -5829,12 +6122,14 @@ remove(id: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | string | 是 | 任务id。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5844,6 +6139,7 @@ remove(id: string): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5866,9 +6162,10 @@ request.agent.remove('123456').then(() => {
 
 
 
-#### request.agent.show10+
+## request.agent.show10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 show(id: string, callback: AsyncCallback&lt;TaskInfo&gt;): void
 
@@ -5877,6 +6174,7 @@ show(id: string, callback: AsyncCallback&lt;TaskInfo&gt;): void
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5887,6 +6185,7 @@ show(id: string, callback: AsyncCallback&lt;TaskInfo&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5911,9 +6210,10 @@ request.agent.show('123456', (err: BusinessError, taskInfo: request.agent.TaskIn
 
 
 
-#### request.agent.show10+
+## request.agent.show10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 show(id: string): Promise&lt;TaskInfo&gt;
 
@@ -5923,12 +6223,14 @@ show(id: string): Promise&lt;TaskInfo&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | string | 是 | 任务id。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5938,6 +6240,7 @@ show(id: string): Promise&lt;TaskInfo&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5960,9 +6263,10 @@ request.agent.show('123456').then((taskInfo: request.agent.TaskInfo) => {
 
 
 
-#### request.agent.touch10+
+## request.agent.touch10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 touch(id: string, token: string, callback: AsyncCallback&lt;TaskInfo&gt;): void
 
@@ -5971,6 +6275,7 @@ touch(id: string, token: string, callback: AsyncCallback&lt;TaskInfo&gt;): void
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5982,6 +6287,7 @@ touch(id: string, token: string, callback: AsyncCallback&lt;TaskInfo&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6006,9 +6312,10 @@ request.agent.touch('123456', "token", (err: BusinessError, taskInfo: request.ag
 
 
 
-#### request.agent.touch10+
+## request.agent.touch10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 touch(id: string, token: string): Promise&lt;TaskInfo&gt;
 
@@ -6018,6 +6325,7 @@ touch(id: string, token: string): Promise&lt;TaskInfo&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | string | 是 | 任务id。 |
@@ -6025,6 +6333,7 @@ touch(id: string, token: string): Promise&lt;TaskInfo&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6034,6 +6343,7 @@ touch(id: string, token: string): Promise&lt;TaskInfo&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6056,9 +6366,10 @@ request.agent.touch('123456', "token").then((taskInfo: request.agent.TaskInfo) =
 
 
 
-#### request.agent.search10+
+## request.agent.search10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 search(callback: AsyncCallback<Array&lt;string&gt;>): void
 
@@ -6068,6 +6379,7 @@ search(callback: AsyncCallback<Array&lt;string&gt;>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<Array&lt;string&gt;> | 是 | 回调函数。当根据过滤条件查找任务成功，err为undefined，data为满足条件的任务id；否则为错误对象。 |
@@ -6076,6 +6388,7 @@ search(callback: AsyncCallback<Array&lt;string&gt;>): void
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6099,9 +6412,10 @@ request.agent.search((err: BusinessError, data: Array<string>) => {
 
 
 
-#### request.agent.search10+
+## request.agent.search10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 search(filter: Filter, callback: AsyncCallback<Array&lt;string&gt;>): void
 
@@ -6110,6 +6424,7 @@ search(filter: Filter, callback: AsyncCallback<Array&lt;string&gt;>): void
 **系统能力**：SystemCapability.Request.FileTransferAgent
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6120,6 +6435,7 @@ search(filter: Filter, callback: AsyncCallback<Array&lt;string&gt;>): void
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6147,9 +6463,10 @@ request.agent.search(filter, (err: BusinessError, data: Array<string>) => {
 
 
 
-#### request.agent.search10+
+## request.agent.search10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 search(filter?: Filter): Promise<Array&lt;string&gt;>
 
@@ -6159,12 +6476,14 @@ search(filter?: Filter): Promise<Array&lt;string&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | filter | Filter | 否 | 过滤条件。默认值为空。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6174,6 +6493,7 @@ search(filter?: Filter): Promise<Array&lt;string&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6199,9 +6519,10 @@ request.agent.search(filter).then((data: Array<string>) => {
 
 
 
-#### request.agent.createGroup15+
+## request.agent.createGroup15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createGroup(config: GroupConfig): Promise&lt;string&gt;
 
@@ -6211,12 +6532,14 @@ createGroup(config: GroupConfig): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | config | GroupConfig15+ | 是 | 下载任务分组选项。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6226,6 +6549,7 @@ createGroup(config: GroupConfig): Promise&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6252,9 +6576,10 @@ request.agent.createGroup(config).then((gid: string) => {
 
 
 
-#### request.agent.attachGroup15+
+## request.agent.attachGroup15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 attachGroup(gid: string, tids: string[]): Promise&lt;void&gt;
 
@@ -6266,6 +6591,7 @@ attachGroup(gid: string, tids: string[]): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | gid | string | 是 | 目标分组id。 |
@@ -6273,6 +6599,7 @@ attachGroup(gid: string, tids: string[]): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6282,6 +6609,7 @@ attachGroup(gid: string, tids: string[]): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6311,9 +6639,10 @@ request.agent.attachGroup(groupId, taskIds).then(() => {
 
 
 
-#### request.agent.deleteGroup15+
+## request.agent.deleteGroup15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteGroup(gid: string): Promise&lt;void&gt;
 
@@ -6325,12 +6654,14 @@ deleteGroup(gid: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | gid | string | 是 | 目标分组id。与创建的任务分组ID保持一致，即使用request.agent.createGroup接口成功创建任务分组时的返回值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6340,6 +6671,7 @@ deleteGroup(gid: string): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[上传下载错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-request)与[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

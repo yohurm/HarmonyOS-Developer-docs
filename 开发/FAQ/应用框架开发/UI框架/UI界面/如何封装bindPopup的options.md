@@ -36,7 +36,7 @@ function csPopupBuilder(title: string | Resource, color: string) {
   Column() {
     Text(title)
       .onDisAppear(() => {
-        // Pop消失时发送emitter事件。
+      <em>  // Pop消失时发送emitter事件。</em>
         emitter.emit({
           eventId: 1,
           priority: emitter.EventPriority.HIGH
@@ -54,7 +54,7 @@ function csPopupBuilder(title: string | Resource, color: string) {
 }
 
 export function buildOptionsParams(that: Object, content: string, customPopup: boolean): CustomPopupOptions {
-  // 想在此处解析皮肤配置title，字体颜色、背景颜色、气泡描边色offset等
+ <em> // 想在此处解析皮肤配置title，字体颜色、背景颜色、气泡描边色offset等</em>
   return {
     builder: csPopupBuilder.bind(that,
       content, '#FFFFFF'),
@@ -87,7 +87,7 @@ struct Index {
   @State isShowSchedulePopupGuide: boolean = false;
 
   aboutToAppear(): void {
-    // 收到eventId为1的事件后执行回调函数修改Pop的状态变量
+   <em> // 收到eventId为1的事件后执行回调函数修改Pop的状态变量</em>
     emitter.on({
       eventId: 1
     }, (eventData: emitter.EventData) => {
@@ -109,7 +109,7 @@ struct Index {
         .onClick(() => {
           this.isShowSchedulePopupGuide = !this.isShowSchedulePopupGuide;
         })
-        //Pop封装后只需一行代码即可实现调用。
+       <em> //Pop封装后只需一行代码即可实现调用。</em>
         .bindPopup(this.isShowSchedulePopupGuide, buildOptionsParams(this,
           '国庆中秋假期10月1日至8日放假调休，共8天。所有收费公路（含机场高速、收费桥梁和隧道）免征小型客车通行费',
           this.isShowSchedulePopupGuide));

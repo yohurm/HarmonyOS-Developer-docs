@@ -1,6 +1,6 @@
 # interactiveLiveness（人脸活体检测）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/vision-interactive-liveness
 **支持设备：** Phone | Tablet
@@ -12,7 +12,8 @@
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | Tablet
 
@@ -22,7 +23,8 @@ import { interactiveLiveness } from '@kit.VisionKit';
  
   
 
-#### DetectionMode(deprecated)
+## DetectionMode(deprecated)
+
 
 **支持设备：** Phone | Tablet
 
@@ -38,6 +40,7 @@ import { interactiveLiveness } from '@kit.VisionKit';
  
 **废弃版本：** 26.0.0
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SILENT_MODE(deprecated) | 'SILENT_MODE' | 表示静默活体检测模式，暂未支持。 说明： 从版本26.0.0开始废弃。 |
@@ -46,7 +49,8 @@ import { interactiveLiveness } from '@kit.VisionKit';
  
   
 
-#### ActionsNumber
+## ActionsNumber
+
 
 **支持设备：** Phone | Tablet
 
@@ -60,6 +64,7 @@ import { interactiveLiveness } from '@kit.VisionKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ONE_ACTION | 1 | 随机选择一个动作，暂未支持。 |
@@ -70,7 +75,8 @@ import { interactiveLiveness } from '@kit.VisionKit';
  
   
 
-#### RouteRedirectionMode
+## RouteRedirectionMode
+
 
 **支持设备：** Phone | Tablet
 
@@ -84,6 +90,7 @@ import { interactiveLiveness } from '@kit.VisionKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | BACK_MODE | 'back' | 表示人脸活体检测完成后返回到上一页。 |
@@ -92,7 +99,8 @@ import { interactiveLiveness } from '@kit.VisionKit';
  
   
 
-#### InteractiveLivenessConfig
+## InteractiveLivenessConfig
+
 
 **支持设备：** Phone | Tablet
 
@@ -106,6 +114,7 @@ import { interactiveLiveness } from '@kit.VisionKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | isSilentMode(deprecated) | DetectionMode | 否 | 否 | 表示的是人脸活体检测模式，默认动作活体检测模式。 INTERACTIVE_MODE表示动作活体检测模式。 说明： 从版本26.0.0开始废弃。 |
@@ -137,7 +146,8 @@ let routerOptions: interactiveLiveness.InteractiveLivenessConfig = {
  
   
 
-#### startLivenessDetection
+## startLivenessDetection
+
 
 **支持设备：** Phone | Tablet
 
@@ -157,6 +167,7 @@ startLivenessDetection(config: InteractiveLivenessConfig): Promise&lt;boolean&gt
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | config | InteractiveLivenessConfig | 是 | 跳转到人脸活体检测页面的配置项 |
@@ -164,6 +175,7 @@ startLivenessDetection(config: InteractiveLivenessConfig): Promise&lt;boolean&gt
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示跳转人脸活体检测页面成功；返回false表示跳转人脸活体检测页面失败。 |
@@ -173,6 +185,7 @@ startLivenessDetection(config: InteractiveLivenessConfig): Promise&lt;boolean&gt
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-vision)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -194,7 +207,7 @@ let routerOptions: interactiveLiveness.InteractiveLivenessConfig = {
 };
 
 // 调用此接口会跳转到人脸活体检测页面，当前页面会隐藏
-// 检测完成后会根据routeMode配置决定是返回当前页面还是跳转到成功/，同时异步返回检测是否成功，可根据返回结果进行相关操作
+// 检测完成后会根据routeMode配置决定是返回当前页面还是跳转到成功/失败页面，同时异步返回检测是否成功，开发者可根据返回结果进行相关操作
 interactiveLiveness.startLivenessDetection(routerOptions).then((isSuccess) => {
   if (isSuccess) {
     hilog.info(0x0001, `LivenessCollectionIndex`, `Succeeded in jumping.`);
@@ -206,7 +219,8 @@ interactiveLiveness.startLivenessDetection(routerOptions).then((isSuccess) => {
  
   
 
-#### startLivenessDetection
+## startLivenessDetection
+
 
 **支持设备：** Phone | Tablet
 
@@ -226,6 +240,7 @@ startLivenessDetection(config: InteractiveLivenessConfig, callback: AsyncCallbac
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | config | InteractiveLivenessConfig | 是 | 跳转到人脸活体检测页面的配置项。 |
@@ -234,6 +249,7 @@ startLivenessDetection(config: InteractiveLivenessConfig, callback: AsyncCallbac
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示跳转人脸活体检测页面成功；返回false表示跳转人脸活体检测页面失败。 |
@@ -243,6 +259,7 @@ startLivenessDetection(config: InteractiveLivenessConfig, callback: AsyncCallbac
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-vision)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -282,7 +299,8 @@ void interactiveLiveness.startLivenessDetection(routerOptions, (err: BusinessErr
  
   
 
-#### LivenessType
+## LivenessType
+
 
 **支持设备：** Phone | Tablet
 
@@ -296,6 +314,7 @@ void interactiveLiveness.startLivenessDetection(routerOptions, (err: BusinessErr
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | INTERACTIVE_LIVENESS | 0 | 表示当前检测的结果是动作活体检测。 |
@@ -305,7 +324,8 @@ void interactiveLiveness.startLivenessDetection(routerOptions, (err: BusinessErr
  
   
 
-#### InteractiveLivenessResult
+## InteractiveLivenessResult
+
 
 **支持设备：** Phone | Tablet
 
@@ -319,6 +339,7 @@ void interactiveLiveness.startLivenessDetection(routerOptions, (err: BusinessErr
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | livenessType | LivenessType | 否 | 否 | 活体检测模式。 |
@@ -329,7 +350,8 @@ void interactiveLiveness.startLivenessDetection(routerOptions, (err: BusinessErr
  
   
 
-#### getInteractiveLivenessResult
+## getInteractiveLivenessResult
+
 
 **支持设备：** Phone | Tablet
 
@@ -347,6 +369,7 @@ getInteractiveLivenessResult(): Promise&lt;InteractiveLivenessResult&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;InteractiveLivenessResult&gt; | Promise对象，返回人脸活体检测的结果。 |
@@ -356,6 +379,7 @@ getInteractiveLivenessResult(): Promise&lt;InteractiveLivenessResult&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-vision)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1008302000 | Detection algorithm initialization. |
@@ -379,10 +403,12 @@ interactiveLiveness.getInteractiveLivenessResult().then(data => {
  
   
 
-#### 动作说明
+## 动作说明
+
 
 **支持设备：** Phone | Tablet
  
+
 | 动作 | 描述 |
 | --- | --- |
 | 1 | 点头 |

@@ -1,18 +1,19 @@
 # Input_CustomCursor
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-input-input-customcursor
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct Input_CustomCursor Input_CustomCursor
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 自定义鼠标光标像素图资源。
  
@@ -24,6 +25,7 @@ typedef struct Input_CustomCursor Input_CustomCursor
  
 **相关接口：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_Input_CustomCursor_Create | 创建自定义鼠标光标资源对象。通过调用OH_Input_CustomCursor_Destroy销毁自定义鼠标光标资源对象。 |

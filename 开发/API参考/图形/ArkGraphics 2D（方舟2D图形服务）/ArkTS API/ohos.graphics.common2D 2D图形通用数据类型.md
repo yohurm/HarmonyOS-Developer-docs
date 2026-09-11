@@ -1,20 +1,21 @@
 # @ohos.graphics.common2D (2D图形通用数据类型)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-graphics-common2d
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-本模块定义了一些2D图形领域的通用数据类型。
+本模块定义了一些2D图形领域的通用数据类型，包括颜色、矩形区域、坐标点等，适用于2D图形绘制等场景，为开发者提供了通用的图形数据结构，便于进行图形计算和渲染操作。
  
 > [!NOTE]
 > 本模块首批接口从API version 11开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 本模块使用屏幕物理像素单位px。
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { common2D } from '@kit.ArkGraphics2D';
@@ -22,9 +23,10 @@ import { common2D } from '@kit.ArkGraphics2D';
  
   
 
-#### Color
+## Color
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ARGB格式的颜色描述。
  
@@ -32,6 +34,7 @@ ARGB格式的颜色描述。
  
 **系统能力：** SystemCapability.Graphics.Drawing
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | alpha | number | 否 | 否 | 颜色的A分量（透明度），值是0~255的整数。 |
@@ -42,16 +45,18 @@ ARGB格式的颜色描述。
  
   
 
-#### Rect
+## Rect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-矩形区域，通过2个坐标点可以描述出一个矩形区域，这2个点分别认为是矩形区域的左上角点与右下角点。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+矩形区域，通过左上角点和右下角点两个坐标点定义。
  
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
  
 **系统能力：** SystemCapability.Graphics.Drawing
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | left | number | 否 | 否 | 矩形区域的左上角横坐标，浮点数。单位为物理像素px。 |
@@ -62,9 +67,10 @@ ARGB格式的颜色描述。
  
   
 
-#### Point12+
+## Point12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 坐标点。
  
@@ -72,6 +78,7 @@ ARGB格式的颜色描述。
  
 **系统能力：** SystemCapability.Graphics.Drawing
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | x | number | 否 | 否 | 横坐标，浮点数。单位为物理像素px。 |
@@ -80,14 +87,16 @@ ARGB格式的颜色描述。
  
   
 
-#### Color4f20+
+## Color4f20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-ARGB格式的颜色描述。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+ARGB格式的颜色描述，颜色分量值为0.0~1.0的浮点数。
  
 **系统能力：** SystemCapability.Graphics.Drawing
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | alpha | number | 否 | 否 | 颜色的A分量（透明度），值是0.0~1.0的浮点数。 |
@@ -98,14 +107,16 @@ ARGB格式的颜色描述。
  
   
 
-#### Point3d12+
+## Point3d12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 三维的坐标点。继承自[Point](#point12)。
  
 **系统能力：** SystemCapability.Graphics.Drawing
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | z | number | 否 | 否 | z轴坐标，浮点数。单位为物理像素px。 |

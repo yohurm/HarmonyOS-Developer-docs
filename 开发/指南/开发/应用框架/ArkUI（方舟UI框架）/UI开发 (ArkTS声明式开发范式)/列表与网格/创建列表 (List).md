@@ -1,10 +1,10 @@
 # 创建列表 (List)
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-create-list
 
-#### 概述
+## 概述
 
 列表是一种复杂的容器，当列表项达到一定数量，内容超过屏幕大小时，可以自动提供滚动功能。它适合用于呈现同类数据类型或数据类型集，例如图片和文本。在列表中显示数据集合是许多应用程序中的常见要求（如通讯录、音乐列表、购物清单等）。
 
@@ -16,7 +16,7 @@
 
 
 
-#### 布局与约束
+## 布局与约束
 
 列表作为一种容器，会自动按其滚动方向排列子组件，向列表中添加组件或从列表中移除组件会重新排列子组件。
 
@@ -36,7 +36,7 @@ ListItemGroup用于列表数据的分组展示，其子组件也是ListItem。Li
 
 
 
-#### 布局
+### 布局
 
 List除了提供垂直和水平布局能力、超出屏幕时可以滚动的自适应延伸能力之外，还提供了自适应交叉轴方向上排列个数的布局能力。
 
@@ -60,7 +60,7 @@ Grid和WaterFlow也可以实现单列、多列布局，如果布局每列等宽�
 
 
 
-#### 约束
+### 约束
 
 列表的主轴方向是指子组件列的排列方向，也是列表的滚动方向。垂直于主轴的轴称为交叉轴，其方向与主轴方向相互垂直。
 
@@ -98,11 +98,11 @@ List组件交叉轴方向在没有设置尺寸时，其尺寸默认自适应父�
 
 
 
-#### 开发布局
+## 开发布局
 
 
 
-#### 设置主轴方向
+### 设置主轴方向
 
 List组件主轴默认是垂直方向，即默认情况下不需要手动设置List方向，就可以构建一个垂直滚动列表。
 
@@ -119,7 +119,7 @@ List(
 
 
 
-#### 设置交叉轴布局
+### 设置交叉轴布局
 
 List组件的交叉轴布局可以通过[lanes](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list#lanes9)和[alignListItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list#alignlistitem9)属性进行设置，lanes属性用于确定交叉轴排列的列表项数量，alignListItem用于设置子组件在交叉轴方向的对齐方式。
 
@@ -174,11 +174,11 @@ List(
 
 
 
-#### ListItem生命周期
+## ListItem生命周期
 
 
 
-#### 使用ForEach创建ListItem
+### 使用ForEach创建ListItem
 
 List组件创建时，所有ListItem将会被创建。显示区域内的ListItem在首帧进行布局，预加载范围内的ListItem在空闲时完成布局。预加载范围之外的ListItem仅创建ListItem自身，ListItem其内部的子组件不会被创建。
 
@@ -192,7 +192,7 @@ List组件创建时，所有ListItem将会被创建。显示区域内的ListItem
 
 
 
-#### 使用LazyForEach创建ListItem
+### 使用LazyForEach创建ListItem
 
 List组件创建时，显示区域中的ListItem会被创建与布局。预加载范围内的ListItem在空闲时创建与布局，但是不会被挂载到组件树上。预加载范围外的ListItem则不会被创建。
 
@@ -206,7 +206,7 @@ List组件创建时，显示区域中的ListItem会被创建与布局。预加�
 
 
 
-#### 使用Repeat创建ListItem
+### 使用Repeat创建ListItem
 
 **使用virtualScroll**
 
@@ -234,7 +234,7 @@ List组件创建时，所有ListItem均被创建。显示区域内的ListItem在
 
 
 
-#### 在列表中显示数据
+## 在列表中显示数据
 
 列表视图垂直或水平显示项目集合，在行或列超出屏幕时提供滚动功能，使其适合显示大型数据集合。在最简单的列表形式中，List静态地创建其列表项ListItem的内容。
 
@@ -320,7 +320,7 @@ List() {
 
 
 
-#### 迭代列表内容
+## 迭代列表内容
 
 通常，应用通过数据集合动态地创建列表。使用[循环渲染](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-foreach)可从数据源中迭代获取数据，并在每次迭代过程中创建相应的组件，降低代码复杂度。
 
@@ -378,11 +378,11 @@ export struct ListIteration {
 
 
 
-#### 自定义列表样式
+## 自定义列表样式
 
 
 
-#### 设置内容间距
+### 设置内容间距
 
 在初始化列表时，如需在列表项之间添加间距，可以使用[ListOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list#listoptions18对象说明)的space参数。例如，在每个列表项之间沿主轴方向添加10vp的间距。
 
@@ -394,7 +394,7 @@ List({ space: 10 }) {
 
 
 
-#### 添加分隔线
+### 添加分隔线
 
 分隔线用来将界面元素隔开，使单个元素更加容易识别。以系统设置场景为例（如下图所示），列表项左侧为图标（如蓝牙图标），右侧为文字描述且分隔线在文字下方。
 
@@ -451,7 +451,7 @@ export struct CustomListStyle {
 
 
 
-#### 添加滚动条
+### 添加滚动条
 
 当列表项高度（宽度）超出屏幕高度（宽度）时，列表可以沿垂直（水平）方向滚动。在页面内容很多时，若用户需快速定位，可拖拽滚动条，如下图所示。
 
@@ -477,7 +477,7 @@ List(
 
 
 
-#### 添加外置滚动条
+## 添加外置滚动条
 
 列表[List](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)可与[ScrollBar](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-scrollbar)组件配合使用，为列表添加外置滚动条。两者通过绑定同一个[Scroller](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll#scroller)滚动控制器对象实现联动。
 1. 首先，需要创建一个[Scroller](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll#scroller)类型的对象listScroller。
@@ -518,7 +518,7 @@ ScrollBar({ scroller: this.listScroller})
 
 
 
-#### 支持分组列表
+## 支持分组列表
 
 在列表中支持数据的分组展示，可以使列表显示结构清晰，查找方便，从而提高使用效率。分组列表在实际应用中十分常见，如下图所示联系人列表。
 
@@ -570,7 +570,7 @@ export struct GroupedList {
 
 
 
-#### 添加粘性标题
+## 添加粘性标题
 
 粘性标题是一种常见的标题模式，常用于定位字母列表的头部元素。如下图所示，在联系人列表中滚动A部分时，B部分开始的头部元素始终处于A的下方。而在开始滚动B部分时，B的头部会固定在屏幕顶部，直到所有B的项均完成滚动后，才被后面的头部替代。
 
@@ -696,7 +696,7 @@ export struct StickyHeaderList {
 
 
 
-#### 控制滚动位置
+## 控制滚动位置
 
 控制滚动位置在实际应用中十分常见，例如当新闻页列表项数量庞大，用户滚动列表到一定位置时，希望快速滚动到列表底部或返回列表顶部。此时，可以通过控制滚动位置来实现列表的快速定位，如下图所示。
 
@@ -736,7 +736,7 @@ Stack({ alignContent: Alignment.Bottom }) {
 
 
 
-#### 响应滚动位置
+## 响应滚动位置
 
 许多应用需要监听列表的滚动位置变化并作出响应。例如，在联系人列表滚动时，如果跨越了不同字母开头的分组，则侧边字母索引栏也需要更新到对应的字母位置。
 
@@ -796,7 +796,7 @@ export struct ResponsiveScrollPositionList {
 
 
 
-#### 响应列表项侧滑
+## 响应列表项侧滑
 
 侧滑菜单在许多应用中都很常见。例如，通讯类应用通常会给消息列表提供侧滑删除功能，即用户可以通过向左侧滑列表的某一项，再点击删除按钮删除消息，如下图所示。其中，列表项头像右上角标记设置参考[给列表项添加标记](#给列表项添加标记)。
 
@@ -850,7 +850,7 @@ ListItem() {
 
 
 
-#### 给列表项添加标记
+## 给列表项添加标记
 
 添加标记是一种无干扰性且直观的方法，用于显示通知或将注意力集中到应用内的某个区域。例如，当消息列表接收到新消息时，通常对应消息列表的右上方会出现标记，提示有若干条未读消息，如下图所示。
 
@@ -881,7 +881,7 @@ ListItem() {
 
 
 
-#### 下拉刷新与上拉加载
+## 下拉刷新与上拉加载
 
 页面的下拉刷新与上拉加载功能在移动应用中十分常见，例如，新闻页面的内容刷新和加载。这两种操作的原理都是通过响应用户的[触摸事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-events-touch)，在顶部或者底部显示一个刷新或加载视图，完成后再将此视图隐藏。
 
@@ -898,7 +898,7 @@ ListItem() {
 
 
 
-#### 编辑列表
+## 编辑列表
 
 列表的编辑模式用途十分广泛，常见于待办事项管理、文件管理、备忘录的记录管理等应用场景。在列表的编辑模式下，新增和删除列表项是最基础的功能，其核心是对列表项对应的数据集合进行数据添加和删除。
 
@@ -906,7 +906,7 @@ ListItem() {
 
 
 
-#### 新增列表项
+### 新增列表项
 
 如下图所示，当用户点击添加按钮时，提供用户新增列表项内容选择或填写的交互界面，用户点击确定后，列表中新增对应的项目。
 
@@ -1086,7 +1086,7 @@ export struct AddListItem {
 
 
 
-#### 删除列表项
+### 删除列表项
 
 如下图所示，当用户长按列表项进入删除模式时，提供用户删除列表项选择的交互界面，用户勾选完成后点击删除按钮，列表中删除对应的项目。
 
@@ -1209,7 +1209,7 @@ Button($r('app.string.delete'))
 
 
 
-#### 长列表的处理
+## 长列表的处理
 
 [循环渲染](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-foreach)适用于短列表，当构建具有大量列表项的长列表时，如果直接采用循环渲染方式，会一次性加载所有的列表元素，会导致页面启动时间过长，影响用户体验。因此，推荐使用[数据懒加载](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-lazyforeach)（LazyForEach）方式实现按需迭代加载数据，从而提升列表性能。
 
@@ -1237,7 +1237,7 @@ List(
 
 
 
-#### 折叠与展开
+## 折叠与展开
 
 列表项的折叠与展开用途广泛，常用于信息清单的展示、填写等应用场景。
 
@@ -1434,7 +1434,7 @@ ListItemGroupHeader(itemGroup: ItemGroupInfo) {
 
 
 
-#### 切换布局方向
+## 切换布局方向
 
 部分业务场景需要列表底部插入数据时，自动向上滚动，把新插入的节点展示出来。例如，直播评论、即时聊天等应用场景。而List组件正常布局时，在内容下方增加节点，内容是保持不变的。此时，可以通过切换布局方向来实现所需效果。
 
@@ -1518,7 +1518,7 @@ build() {
 
 
 
-#### 支持滑动离手事件
+## 支持滑动离手事件
 
 从API version 20开始，滚动类组件（[Grid](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid)、[List](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)、[Scroll](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll)、[WaterFlow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow)）支持滑动离手事件回调功能，当用户手指离开屏幕时，会触发该事件并上报离手瞬间的滑动速度。开发者可利用此接口实现类似新闻浏览页面的自定义限位滚动效果，短新闻限位滚动，长新闻自由滚动。
 
@@ -1633,7 +1633,7 @@ if (velocity < -30) {
 
   
 
-  #### 设置边缘滑动效果
+  ## 设置边缘滑动效果
 
   边缘滑动效果是指当用户滑动滚动组件至边缘后，继续滑动时触发的交互效果。当前List支持通过[edgeEffect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list#edgeeffect)属性设置三种边缘滑动效果，分别为弹簧效果（即回弹效果）、阴影效果、无效果。具体效果说明请参见[EdgeEffect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#edgeeffect)的枚举说明。
 
@@ -1665,7 +1665,7 @@ if (velocity < -30) {
 
   
 
-  #### 手指滑动多选
+  ## 手指滑动多选
 
   从API版本26.0.0开始，[List](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)支持在编辑模式下实现手指滑动多选能力。进入编辑模式后，用户可以滑动经过多个[ListItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-listitem)，批量选择或取消选择列表项。应用可以在ListItem上设置是否允许被选择，并根据回调记录已选择的列表项。该能力适用于文件管理、消息列表、待办列表等需要连续批量选择列表项的场景。
 
@@ -1677,7 +1677,7 @@ if (velocity < -30) {
 
   
 
-  #### 设置编辑模式
+  ### 设置编辑模式
 
   通过[enableEditMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list#enableeditmode)设置是否进入编辑模式。设置为true时，List进入编辑模式，用户可以单指滑动经过多个ListItem进行批量选择或取消选择；设置为false时，List退出编辑模式。通过[onEditModeChange](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list#oneditmodechange)监听编辑模式变化，将系统返回、侧滑返回或双指滑动触发的编辑模式变化同步到业务状态。
 
@@ -1698,7 +1698,7 @@ List({ space: 10 }) {
 
   
 
-  #### 自定义多选样式
+  ### 自定义多选样式
 
   如果默认多选样式不满足业务视觉要求，可关闭默认样式，并在ListItem内容中自行绘制复选框、图标、背景色等编辑态样式。
 
@@ -1726,7 +1726,7 @@ List({ space: 10 }) {
 
   
 
-  #### 记录列表项选择结果
+  ### 记录列表项选择结果
 
   在ListItem上配置[selectable](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-listitem#selectable8)、[selected](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-listitem#selected10)和[onSelect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-listitem#onselect8)。selectable用于设置列表项是否允许被选择，selected用于设置列表项当前是否被选中。滑动多选过程中，组件会触发onSelect回调，应用可以在回调中记录每个列表项的最新选择结果。
 
@@ -1748,7 +1748,7 @@ ListItem() {
 
   
 
-  #### 示例代码
+  ## 示例代码
 
   
 [二维列表](https://gitcode.com/HarmonyOS_Samples/two-dimension-list)

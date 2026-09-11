@@ -1,13 +1,13 @@
 # JS卡片概述
 
-更新时间：2026-06-12 06:54:11
+更新时间：2026-08-24 10:13:54
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-ui-widget-overview
 
-JS卡片是使用类Web范式（HML+CSS+JSON）开发页面的卡片，现在已经支持FA模型和Stage模型两种[应用模型](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/stage-model-development-overview)。开发指导请参见[JS卡片开发指导（Stage模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-ui-widget-development)和[JS卡片开发指导（FA模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/widget-development-fa)。在开发新卡片时，推荐采用ArkTS声明式来构建UI，声明式和类web范式差异点可参考[ArkUI简介](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkui-overview)。
+JS卡片是使用类Web范式（HML+CSS+JSON）开发页面的卡片，现在已经支持FA模型和Stage模型两种[应用模型](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/stage-model-development-overview)。开发指导请参见[JS卡片开发指导（Stage模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-ui-widget-development)和[JS卡片开发指导（FA模型）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/widget-development-fa)。在开发新卡片时，推荐采用ArkTS声明式来构建UI，声明式和类Web范式差异点可参考[ArkUI简介](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkui-overview)。
   
 
-#### 实现原理
+## 实现原理
 
 JS卡片实现原理如图1所示。
  

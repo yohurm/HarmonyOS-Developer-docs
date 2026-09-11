@@ -49,7 +49,7 @@ struct Page {
   build() {
     Column({ space: 20 }) {
       Stack() {
-        // 加载原始图片资源（不改变大小，不进行任何拉伸处理）
+      <em>  // 加载原始图片资源（不改变大小，不进行任何拉伸处理）</em>
         Image($r('app.media.bubble'))
           .objectFit(ImageFit.None);
         Column() {
@@ -62,9 +62,9 @@ struct Page {
       }
       .height(100);
 
-      // 第二个Stack：显示应用九宫格拉伸的图片
+    <em>  // 第二个Stack：显示应用九宫格拉伸的图片</em>
       Stack() {
-        // 加载相同图片资源，应用九宫格拉伸规则
+    <em>    // 加载相同图片资源，应用九宫格拉伸规则</em>
         Image($r('app.media.bubble'))
           .resizable({
             slice: {
@@ -121,19 +121,19 @@ import { drawing } from '@kit.ArkGraphics2D';
 @Entry
 @Component
 struct Index {
-  // X轴分割线：定义图片在水平方向的4条切割线（单位：像素）,将图片分为5个区域
+ <em> // X轴分割线：定义图片在水平方向的4条切割线（单位：像素）,将图片分为5个区域</em>
   xDivs: Array<number> = [79, 162, 198, 279];
-  // Y轴分割线：定义垂直方向的2条切割线（单位：像素）,将图片分为2个区域
+ <em> // Y轴分割线：定义垂直方向的2条切割线（单位：像素）,将图片分为2个区域</em>
   yDivs: Array<number> = [78, 81];
-  // 创建九宫格拉伸规则对象,水平分割线数组，垂直分割线数组，水平分区数(5区域)，垂直分区数(3区域)
+ <em> // 创建九宫格拉伸规则对象,水平分割线数组，垂直分割线数组，水平分区数(5区域)，垂直分区数(3区域)</em>
   lattice: DrawingLattice =
     drawing.Lattice.createImageLattice(this.xDivs, this.yDivs, this.xDivs.length, this.yDivs.length);
 
   build() {
     Column({ space: 20 }) {
-      // 第一个Stack：显示原始图片
+  <em>    // 第一个Stack：显示原始图片</em>
       Stack() {
-        // 加载原始图片资源（不进行任何拉伸处理）
+     <em>   // 加载原始图片资源（不进行任何拉伸处理）</em>
         Image($r('app.media.9patch'))
           .objectFit(ImageFit.None);
         Column() {
@@ -146,11 +146,11 @@ struct Index {
       }
       .height(65);
 
-      // 第二个Stack：显示应用九宫格拉伸的图片
+  <em>    // 第二个Stack：显示应用九宫格拉伸的图片</em>
       Stack() {
-        // 加载相同图片资源，应用九宫格拉伸规则
+     <em>   // 加载相同图片资源，应用九宫格拉伸规则</em>
         Image($r('app.media.9patch'))
-        // 应用自定义拉伸规则
+     <em>   // 应用自定义拉伸规则</em>
           .resizable({ lattice: this.lattice })
           .width('100%')
           .height('100%');

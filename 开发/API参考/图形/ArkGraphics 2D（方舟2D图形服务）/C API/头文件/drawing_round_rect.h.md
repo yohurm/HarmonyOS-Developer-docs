@@ -1,13 +1,14 @@
 # drawing_round_rect.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-round-rect-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文件中定义了与圆角矩形相关的功能函数。
  
@@ -25,16 +26,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_Drawing_CornerPos | OH_Drawing_CornerPos | 用于描述圆角位置的枚举。 |
@@ -42,10 +46,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_Drawing_RoundRect* OH_Drawing_RoundRectCreate(const OH_Drawing_Rect* rect, float xRad, float yRad) | 用于创建一个圆角矩形对象。本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 rect为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
@@ -58,15 +64,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Drawing_CornerPos
+### OH_Drawing_CornerPos
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Drawing_CornerPos
@@ -78,6 +86,7 @@ enum OH_Drawing_CornerPos
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | CORNER_POS_TOP_LEFT | 左上角圆角位置。 |
@@ -88,15 +97,17 @@ enum OH_Drawing_CornerPos
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Drawing_RoundRectCreate()
+### OH_Drawing_RoundRectCreate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_RoundRect* OH_Drawing_RoundRectCreate(const OH_Drawing_Rect* rect, float xRad, float yRad)
@@ -114,15 +125,17 @@ rect为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_Drawing_Rect* rect | 指向矩形对象的指针。 |
-| float xRad | X轴上的圆角半径，小于或等于0时无效。 |
-| float yRad | Y轴上的圆角半径，小于或等于0时无效。 |
+| float xRad | X轴上的圆角半径，小于或等于0时无效。单位为物理像素px。 |
+| float yRad | Y轴上的圆角半径，小于或等于0时无效。单位为物理像素px。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_RoundRect* | 函数会返回一个指针，指针指向创建的圆角矩形对象。 |
@@ -130,9 +143,10 @@ rect为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
   
 
-#### OH_Drawing_RoundRectCopy()
+### OH_Drawing_RoundRectCopy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_RoundRect* OH_Drawing_RoundRectCopy(const OH_Drawing_RoundRect* roundRect)
@@ -148,13 +162,15 @@ OH_Drawing_RoundRect* OH_Drawing_RoundRectCopy(const OH_Drawing_RoundRect* round
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| const OH_Drawing_RoundRect* roundRect | 指向用于拷贝的圆角矩形对象OH_Drawing_RoundRect的指针。 |
+| const OH_Drawing_RoundRect* roundRect | 指向圆角矩形对象OH_Drawing_RoundRect的指针 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_RoundRect* | 函数会返回一个指针，指针指向创建的新圆角矩形对象。 |
@@ -162,12 +178,13 @@ OH_Drawing_RoundRect* OH_Drawing_RoundRectCopy(const OH_Drawing_RoundRect* round
  
   
 
-#### OH_Drawing_RoundRectSetCorner()
+### OH_Drawing_RoundRectSetCorner()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-void OH_Drawing_RoundRectSetCorner(OH_Drawing_RoundRect* roundRect,OH_Drawing_CornerPos pos, OH_Drawing_Corner_Radii radii)
+void OH_Drawing_RoundRectSetCorner(OH_Drawing_RoundRect* roundRect, OH_Drawing_CornerPos pos, OH_Drawing_Corner_Radii radii)
 ```
  
 **描述**
@@ -184,18 +201,20 @@ roundRect为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| OH_Drawing_RoundRect* roundRect | 指向圆角矩形对象的指针。 |
+| OH_Drawing_RoundRect* roundRect | 指向圆角矩形对象的指针 |
 | OH_Drawing_CornerPos pos | 圆角位置的枚举，支持类型可见OH_Drawing_CornerPos。 |
-| OH_Drawing_Corner_Radii radii | 圆角半径结构体OH_Drawing_Corner_Radii，其中包含x轴方向和y轴方向上的半径，半径小于等于0时无效。 |
+| OH_Drawing_Corner_Radii radii | 圆角半径结构体OH_Drawing_Corner_Radii，其中包含x轴方向和y轴方向上的半径，单位为物理像素px，半径小于等于0时无效。 |
  
  
   
 
-#### OH_Drawing_RoundRectGetCorner()
+### OH_Drawing_RoundRectGetCorner()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_Corner_Radii OH_Drawing_RoundRectGetCorner(OH_Drawing_RoundRect* roundRect, OH_Drawing_CornerPos pos)
@@ -215,14 +234,16 @@ roundRect为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| OH_Drawing_RoundRect* roundRect | 指向圆角矩形对象的指针。 |
+| OH_Drawing_RoundRect* roundRect | 指向圆角矩形对象的指针 |
 | OH_Drawing_CornerPos pos | 圆角位置的枚举，支持类型可见OH_Drawing_CornerPos。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_Corner_Radii | 返回指定圆角位置的圆角半径结构体OH_Drawing_Corner_Radii，其中包含x轴方向和y轴方向上的半径。 |
@@ -230,9 +251,10 @@ roundRect为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
   
 
-#### OH_Drawing_RoundRectDestroy()
+### OH_Drawing_RoundRectDestroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_RoundRectDestroy(OH_Drawing_RoundRect* roundRect)
@@ -248,6 +270,7 @@ void OH_Drawing_RoundRectDestroy(OH_Drawing_RoundRect* roundRect)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_RoundRect* roundRect | 指向圆角矩形对象的指针。 |
@@ -255,9 +278,10 @@ void OH_Drawing_RoundRectDestroy(OH_Drawing_RoundRect* roundRect)
  
   
 
-#### OH_Drawing_RoundRectOffset()
+### OH_Drawing_RoundRectOffset()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ErrorCode OH_Drawing_RoundRectOffset(OH_Drawing_RoundRect* roundRect, float dx, float dy)
@@ -273,15 +297,17 @@ OH_Drawing_ErrorCode OH_Drawing_RoundRectOffset(OH_Drawing_RoundRect* roundRect,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| OH_Drawing_RoundRect* roundRect | 指向圆角矩形对象OH_Drawing_Point2D的指针。 |
-| float dx | x轴方向偏移量。 |
-| float dy | y轴方向偏移量。 |
+| OH_Drawing_RoundRect* roundRect | 指向圆角矩形对象的指针。 |
+| float dx | x轴方向偏移量，单位为物理像素px。正值表示向x轴正方向偏移，负值表示向x轴负方向偏移，0表示不偏移。 |
+| float dy | y轴方向偏移量，单位为物理像素px。正值表示向y轴正方向偏移，负值表示向y轴负方向偏移，0表示不偏移。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| OH_Drawing_ErrorCode | 函数返回执行错误码。 返回OH_DRAWING_SUCCESS，表示执行成功。 返回OH_DRAWING_ERROR_INVALID_PARAMETER，表示参数roundRect为空。 |
+| OH_Drawing_ErrorCode | 函数返回执行错误码。 返回OH_DRAWING_SUCCESS，表示执行成功。 返回OH_DRAWING_ERROR_INVALID_PARAMETER，表示参数roundRect为NULL。 |

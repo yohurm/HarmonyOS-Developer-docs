@@ -66,15 +66,15 @@ Stage模型下加载HAR中Worker线程文件存在以下两种情况：
 import { worker } from '@kit.ArkTS';
 
 export class WorkerUtil {
-  // 在worker文件同一包内创建实例
+ <em> // 在worker文件同一包内创建实例</em>
   private testWorker: worker.ThreadWorker = new worker.ThreadWorker('../workers/WorkerTest.ets');
 
   postMsg(args: Object) {
     try {
-      // 使用实例发送消息
+    <em>  // 使用实例发送消息</em>
       this.testWorker.postMessage(args);
     } catch (error) {
-      // Implement error handling.
+    <em>  // Implement error handling.</em>
     }
   }
 }
@@ -113,7 +113,7 @@ export struct MainPage {
           .fontSize($r('app.float.page_text_font_size'))
           .fontWeight(FontWeight.Bold)
           .onClick(() => {
-            // 创建harB的工具类WorkerUtil实例
+          <em>  // 创建harB的工具类WorkerUtil实例</em>
             let workerUtil: WorkerUtil = new WorkerUtil();
             workerUtil.postMsg(1);
           })

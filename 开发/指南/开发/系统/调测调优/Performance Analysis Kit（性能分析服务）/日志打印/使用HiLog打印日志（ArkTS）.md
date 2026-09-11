@@ -1,6 +1,6 @@
 # 使用HiLog打印日志（ArkTS）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hilog-guidelines-arkts
 
@@ -9,9 +9,10 @@
 系统提供不同的API供开发者调用并输出日志信息，即HiLog与Console。两个API在使用时略有差异，本文重点介绍HiLog的用法，Console的具体用法可查看API参考[Console](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-logs)。
 
 
-#### 接口说明
+## 接口说明
 
 HiLog中定义了DEBUG、INFO、WARN、ERROR、FATAL五种日志级别，并提供了对应的方法输出不同级别的日志，接口如下表所示，具体说明可查阅[@ohos.hilog](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hilog)。
+
 
 | 接口名 | 功能描述 |
 | --- | --- |
@@ -44,7 +45,7 @@ debug版本应用下，setMinLogLevel()和setLogLevel()函数均不生效。
 
 
 
-#### 参数解析
+### 参数解析
 
  - **domain**：用于指定输出日志所对应的业务领域，取值范围为0x0000~0xFFFF，开发者可以根据需要进行自定义。
  - **tag**：用于指定日志标识，可以为任意字符串，建议标识调用所在的类或者业务行为。tag最多为31字节，超出后会截断。不建议使用中文字符，可能出现乱码或者对齐问题。
@@ -57,15 +58,23 @@ debug版本应用下，setMinLogLevel()和setLogLevel()函数均不生效。
  - **latestSeconds**：距离现在的时间段，单位是秒，取值范围大于0。
 
 | 隐私标识符（private flag） | 说明 |
+
 | --- | --- |
+
 | private | 表示日志打印结果不可见，输出结果为&lt;private&gt;。 |
+
 | public | 表示日志打印结果可见，明文显示参数。 |
+
 | 无 | 缺省值默认为private，日志打印结果不可见。 |
 
 | 格式说明符（specifier） | 说明 | 示例 |
+
 | --- | --- | --- |
+
 | d/i | 支持打印number和bigint类型。 | 123 |
+
 | s | 支持打印string、undefined、boolean和null类型。 | "123" |
+
 | o/O | 支持打印object、undefined和null类型。 从API version 20开始，支持该能力。 | { 'name': "Jack", 'age': 22 } |
 
   格式字符串中可以设置多个参数，例如格式字符串为“%{public}s World”，“%{public}s”表示参数类型为string的变参标识，具体取值在args中定义。
@@ -80,13 +89,13 @@ debug版本应用下，setMinLogLevel()和setLogLevel()函数均不生效。
 
 
 
-#### 约束与限制
+## 约束与限制
 
 日志最多打印4096字节，超出限制文本将被截断。
 
 
 
-#### 开发步骤
+## 开发步骤
 
 在按钮中增加一个单击事件，单击按钮时打印日志。
 1. 新建一个工程，选择“Empty Ability”。

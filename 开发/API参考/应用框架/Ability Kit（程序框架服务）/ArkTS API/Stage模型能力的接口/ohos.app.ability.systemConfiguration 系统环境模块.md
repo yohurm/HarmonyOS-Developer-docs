@@ -1,9 +1,9 @@
 # @ohos.app.ability.systemConfiguration (系统环境模块)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-systemconfiguration
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 systemConfiguration模块提供系统环境变化监听回调能力，包括系统深浅色模式、系统语言、系统字体大小缩放比例等变化的回调。
  
@@ -20,9 +20,10 @@ systemConfiguration模块提供系统环境变化监听回调能力，包括系�
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { systemConfiguration } from '@kit.AbilityKit';
@@ -30,9 +31,10 @@ import { systemConfiguration } from '@kit.AbilityKit';
  
   
 
-#### UpdatedCallback
+## UpdatedCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 UpdatedCallback是监听系统环境变化的回调函数，开发者可通过[ApplicationContext.onSystemConfigurationUpdated](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-applicationcontext#applicationcontextonsystemconfigurationupdated24)方法注册自定义的UpdatedCallback，来监听系统环境变化。
  
@@ -42,6 +44,7 @@ UpdatedCallback是监听系统环境变化的回调函数，开发者可通过[A
  
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | onColorModeUpdated | OnColorModeUpdatedFn | 否 | 是 | 在注册系统环境变化的监听后，当系统深浅色模式变化时会触发回调。 |
@@ -107,9 +110,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### OnColorModeUpdatedFn
+## OnColorModeUpdatedFn
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnColorModeUpdatedFn = (colorMode: ConfigurationConstant.ColorMode) => void
  
@@ -123,6 +127,7 @@ type OnColorModeUpdatedFn = (colorMode: ConfigurationConstant.ColorMode) => void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | colorMode | ConfigurationConstant.ColorMode | 是 | 变化后的系统深浅色模式。 |
@@ -130,9 +135,10 @@ type OnColorModeUpdatedFn = (colorMode: ConfigurationConstant.ColorMode) => void
  
   
 
-#### OnFontSizeScaleUpdatedFn
+## OnFontSizeScaleUpdatedFn
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnFontSizeScaleUpdatedFn = (fontSizeScale: number) => void
  
@@ -146,6 +152,7 @@ type OnFontSizeScaleUpdatedFn = (fontSizeScale: number) => void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fontSizeScale | number | 是 | 变化后的系统字体大小缩放比例。 |
@@ -153,9 +160,10 @@ type OnFontSizeScaleUpdatedFn = (fontSizeScale: number) => void
  
   
 
-#### OnFontWeightScaleUpdatedFn
+## OnFontWeightScaleUpdatedFn
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnFontWeightScaleUpdatedFn = (fontWeightScale: number) => void
  
@@ -169,6 +177,7 @@ type OnFontWeightScaleUpdatedFn = (fontWeightScale: number) => void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fontWeightScale | number | 是 | 变化后的系统字体粗细缩放比例。 |
@@ -176,9 +185,10 @@ type OnFontWeightScaleUpdatedFn = (fontWeightScale: number) => void
  
   
 
-#### OnLanguageUpdatedFn
+## OnLanguageUpdatedFn
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnLanguageUpdatedFn = (language: string) => void
  
@@ -192,6 +202,7 @@ type OnLanguageUpdatedFn = (language: string) => void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | language | string | 是 | 变化后的系统语言。 |
@@ -199,9 +210,10 @@ type OnLanguageUpdatedFn = (language: string) => void
  
   
 
-#### OnFontIdUpdatedFn
+## OnFontIdUpdatedFn
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnFontIdUpdatedFn = (fontId: string) => void
  
@@ -215,6 +227,7 @@ type OnFontIdUpdatedFn = (fontId: string) => void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fontId | string | 是 | 变化后的系统字体ID。 |
@@ -222,9 +235,10 @@ type OnFontIdUpdatedFn = (fontId: string) => void
  
   
 
-#### OnMCCUpdatedFn
+## OnMCCUpdatedFn
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnMCCUpdatedFn = (mcc: string) => void
  
@@ -238,6 +252,7 @@ type OnMCCUpdatedFn = (mcc: string) => void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mcc | string | 是 | 变化后的移动设备国家代码。 |
@@ -245,9 +260,10 @@ type OnMCCUpdatedFn = (mcc: string) => void
  
   
 
-#### OnMNCUpdatedFn
+## OnMNCUpdatedFn
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnMNCUpdatedFn = (mnc: string) => void
  
@@ -261,6 +277,7 @@ type OnMNCUpdatedFn = (mnc: string) => void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mnc | string | 是 | 变化后的移动设备网络代码。 |
@@ -268,9 +285,10 @@ type OnMNCUpdatedFn = (mnc: string) => void
  
   
 
-#### OnHasPointerDeviceUpdatedFn
+## OnHasPointerDeviceUpdatedFn
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnHasPointerDeviceUpdatedFn = (hasPointerDevice: boolean) => void
  
@@ -284,16 +302,18 @@ type OnHasPointerDeviceUpdatedFn = (hasPointerDevice: boolean) => void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| hasPointerDevice | boolean | 是 | 指针设备是否已连接，如键鼠、触控板等。true表示设备已连接，false表示设备未连接。 |
+| hasPointerDevice | boolean | 是 | 指针设备是否已连接，如键盘、鼠标、触控板等。true表示设备已连接，false表示设备未连接。 |
  
  
   
 
-#### OnLocaleUpdatedFn
+## OnLocaleUpdatedFn
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnLocaleUpdatedFn = (locale: string) => void
  
@@ -307,6 +327,7 @@ type OnLocaleUpdatedFn = (locale: string) => void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | locale | string | 是 | 变化后的系统区域设置，该字段具体解释可以参考Configuration。 |

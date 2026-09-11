@@ -1,9 +1,9 @@
 # @ohos.app.ability.dialogRequest (dialogRequest模块)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-dialogrequest
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 dialogRequest模块用于处理模态弹框的能力，包括获取RequestInfo（用于绑定模态弹框）、获取RequestCallback（用于设置结果）。
 
@@ -14,9 +14,10 @@ dialogRequest模块用于处理模态弹框的能力，包括获取RequestInfo�
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { dialogRequest } from '@kit.AbilityKit';
@@ -24,9 +25,10 @@ import { dialogRequest } from '@kit.AbilityKit';
 
 
 
-#### dialogRequest.getRequestInfo
+## dialogRequest.getRequestInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRequestInfo(want: Want): RequestInfo
 
@@ -40,6 +42,7 @@ getRequestInfo(want: Want): RequestInfo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | 表示发起方请求弹框时传入的want信息。 |
@@ -47,14 +50,16 @@ getRequestInfo(want: Want): RequestInfo
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| RequestInfo | 请求方RequestInfo，用于绑定模态窗口。 |
+| RequestInfo | 请求方RequestInfo，用于绑定模态弹框。 |
 
 
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -79,9 +84,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### dialogRequest.getRequestCallback
+## dialogRequest.getRequestCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRequestCallback(want: Want): RequestCallback
 
@@ -95,12 +101,14 @@ getRequestCallback(want: Want): RequestCallback
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | 表示发起方请求弹框时传入的want信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -110,6 +118,7 @@ getRequestCallback(want: Want): RequestCallback
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -134,15 +143,17 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### WindowRect10+
+## WindowRect10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示模态弹框的属性。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -154,9 +165,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### RequestInfo
+## RequestInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示发起方请求信息，作为窗口绑定模态弹框的入参。
 
@@ -164,9 +176,10 @@ export default class EntryAbility extends UIAbility {
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| windowRect10+ | WindowRect | 否 | 是 | 表示模态弹框的位置属性。 |
+| windowRect10+ | WindowRect | 否 | 是 | 表示模态弹框的属性。当需要自定义模态弹框的位置和尺寸时传入此参数；不传入时使用系统默认的弹窗位置和尺寸。 |
 
 
 **示例：**
@@ -188,13 +201,15 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### ResultCode
+## ResultCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 模态弹框请求结果码。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -204,21 +219,24 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### RequestResult
+## RequestResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 模态弹框请求结果，包含结果码ResultCode和请求结果ResultWant。
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -228,9 +246,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### RequestCallback
+## RequestCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于设置模态弹框请求结果的callback接口。
 
@@ -238,9 +257,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### RequestCallback.setRequestResult
+### RequestCallback.setRequestResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setRequestResult(result: RequestResult): void
 
@@ -252,6 +272,7 @@ setRequestResult(result: RequestResult): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | result | RequestResult | 是 | 模态弹框请求结果信息。 |
@@ -260,6 +281,7 @@ setRequestResult(result: RequestResult): void
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

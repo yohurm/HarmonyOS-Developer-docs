@@ -1,13 +1,14 @@
 # 订阅音频卡顿事件（ArkTS）
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-09-04 10:41:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-watcher-audio-jank-event-arkts
 
-#### 接口说明
+## 接口说明
 
 API接口的具体使用说明（参数使用限制、具体取值范围等）请参考[@ohos.hiviewdfx.hiAppEvent (应用事件打点)ArkTS API文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hiviewdfx-hiappevent)。
   
+
 | 接口名 | 描述 |
 | --- | --- |
 | addWatcher(watcher: Watcher): AppEventPackageHolder | 添加应用事件观察者，以添加对应用事件的订阅。 |
@@ -16,7 +17,7 @@ API接口的具体使用说明（参数使用限制、具体取值范围等）�
  
   
 
-#### 开发步骤
+## 开发步骤
 
 以实现对应用音频播放触发丢帧生成的音频卡顿事件订阅为例，说明开发步骤。
  1. 编辑工程中的“entry > src > main > ets > entryability > EntryAbility.ets”文件，添加系统事件的订阅。
@@ -61,7 +62,7 @@ function normalCallback(buffer: ArrayBuffer) {
     g_invalidCount--;
     return audio.AudioDataCallbackResult.INVALID;
   }
-  //在此添加写数据逻辑
+  // 在此添加写数据逻辑
   return audio.AudioDataCallbackResult.VALID;
 }
 ```
@@ -103,3 +104,10 @@ HiAppEvent onReceive: domain=OS
 HiAppEvent eventName=AUDIO_JANK_FRAME
 HiAppEvent eventInfo={"domain":"OS","name":"AUDIO_JANK_FRAME","eventType":1,"params":{"bundle_name":"com.samples.audio","bundle_version":"1.0.0","fault_type":"application","happen_time":3240511783,"max_frame_time":260,"process_name":"","time":1755587168818}}
 ```
+
+ 
+  
+
+## 示例代码
+
+- [订阅音频卡顿事件](https://gitcode.com/HarmonyOS_Samples/guide-snippets/tree/master/xperf/audio_jank)

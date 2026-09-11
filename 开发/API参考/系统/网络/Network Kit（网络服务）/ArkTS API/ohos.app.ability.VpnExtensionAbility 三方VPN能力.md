@@ -1,9 +1,9 @@
 # @ohos.app.ability.VpnExtensionAbility (三方VPN能力)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-vpnextensionability
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 VpnExtensionAbility模块提供三方VPN相关能力，提供三方VPN创建、销毁等生命周期回调。
 
@@ -12,9 +12,10 @@ VpnExtensionAbility模块提供三方VPN相关能力，提供三方VPN创建、�
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { VpnExtensionAbility } from '@kit.NetworkKit';
@@ -22,11 +23,13 @@ import { VpnExtensionAbility } from '@kit.NetworkKit';
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -35,9 +38,10 @@ import { VpnExtensionAbility } from '@kit.NetworkKit';
 
 
 
-#### VpnExtensionAbility.onCreate
+## VpnExtensionAbility.onCreate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onCreate(want: Want): void
 
@@ -50,6 +54,7 @@ onCreate(want: Want): void
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -71,9 +76,10 @@ class MyVpnExtAbility extends VpnExtensionAbility {
 
 
 
-#### VpnExtensionAbility.onDestroy
+## VpnExtensionAbility.onDestroy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDestroy(): void
 

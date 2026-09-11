@@ -1,13 +1,14 @@
 # 判断PDF文档是否加密及删除加密
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pdf-isencrypt-removesecurity
 
 PDF Kit支持判断PDF文档是否加密及删除PDF加密锁。
 
 
-#### 接口说明
+## 接口说明
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -17,7 +18,7 @@ PDF Kit支持判断PDF文档是否加密及删除PDF加密锁。
 
 
 
-#### 示例代码
+## 示例代码
 1. 调用isEncrypted方法，判断PDF文档是否加密。
 2. 如果是加密PDF文档，调用removeSecurity方法移除PDF文档的加密锁。
 

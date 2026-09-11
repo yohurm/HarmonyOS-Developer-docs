@@ -1,9 +1,9 @@
 # @ohos.taskpool (启动任务池)
 
-更新时间：2026-08-04 06:06:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-taskpool
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 任务池（taskpool）为应用程序提供多线程运行环境，降低资源消耗并提升系统性能，开发者无需关心线程的生命周期。使用任务池API可创建后台任务（Task），执行或取消任务等操作。理论上，任务池API允许创建的任务数量不受限制，但由于内存限制，不建议无限制地创建大量任务。此外，不建议在任务中执行阻塞操作，尤其是无限期阻塞操作，因为阻塞操作会占用工作线程，影响其他任务的调度和应用性能。
 
@@ -28,9 +28,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { taskpool } from '@kit.ArkTS';
@@ -38,9 +39,10 @@ import { taskpool } from '@kit.ArkTS';
 
 
 
-#### taskpool.execute
+## taskpool.execute
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 execute(func: Function, ...args: Object[]): Promise&lt;Object&gt;
 
@@ -52,6 +54,7 @@ execute(func: Function, ...args: Object[]): Promise&lt;Object&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | func | Function | 是 | 待执行的函数，必须使用@Concurrent装饰器装饰。支持的函数返回值类型请参考序列化支持类型。 |
@@ -59,6 +62,7 @@ execute(func: Function, ...args: Object[]): Promise&lt;Object&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -68,6 +72,7 @@ execute(func: Function, ...args: Object[]): Promise&lt;Object&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -92,9 +97,10 @@ taskpool.execute(printArgs, 100).then((value: Object) => { // 100: test number
 
 
 
-#### taskpool.execute13+
+## taskpool.execute13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 execute<A extends Array&lt;Object&gt;, R>(func: (...args: A) => R | Promise&lt;R&gt;, ...args: A): Promise&lt;R&gt;
 
@@ -106,6 +112,7 @@ execute<A extends Array&lt;Object&gt;, R>(func: (...args: A) => R | Promise&lt;R
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | func | (...args: A) => R \| Promise&lt;R&gt; | 是 | 待执行的函数，必须使用@Concurrent装饰器装饰，支持的函数返回值类型请参考序列化支持类型。 |
@@ -113,6 +120,7 @@ execute<A extends Array&lt;Object&gt;, R>(func: (...args: A) => R | Promise&lt;R
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -122,6 +130,7 @@ execute<A extends Array&lt;Object&gt;, R>(func: (...args: A) => R | Promise&lt;R
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -163,9 +172,10 @@ taskpool.execute<[[number, string]], string>(testWithArray, [100, "test"]).then(
 
 
 
-#### taskpool.execute
+## taskpool.execute
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 execute(task: Task, priority?: Priority): Promise&lt;Object&gt;
 
@@ -181,6 +191,7 @@ execute(task: Task, priority?: Priority): Promise&lt;Object&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | task | Task | 是 | 需要在任务池中执行的任务。 |
@@ -188,6 +199,7 @@ execute(task: Task, priority?: Priority): Promise&lt;Object&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -197,6 +209,7 @@ execute(task: Task, priority?: Priority): Promise&lt;Object&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -232,9 +245,10 @@ taskpool.execute(task3, taskpool.Priority.HIGH).then((value: Object) => {
 
 
 
-#### taskpool.execute24+
+## taskpool.execute24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 execute(task: Task, configs: Configs): Promise&lt;Object&gt;
 
@@ -250,6 +264,7 @@ execute(task: Task, configs: Configs): Promise&lt;Object&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | task | Task | 是 | 需要在任务池中执行的任务。 |
@@ -257,6 +272,7 @@ execute(task: Task, configs: Configs): Promise&lt;Object&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -266,6 +282,7 @@ execute(task: Task, configs: Configs): Promise&lt;Object&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -304,9 +321,10 @@ try {
 
 
 
-#### taskpool.execute13+
+## taskpool.execute13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 execute<A extends Array&lt;Object&gt;, R>(task: GenericsTask<A, R>, priority?: Priority): Promise&lt;R&gt;
 
@@ -320,6 +338,7 @@ execute任务的类型校验与GenericsTask的构造类型相关联，参数类�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | task | GenericsTask<A, R> | 是 | 需要在任务池中执行的泛型任务。 |
@@ -327,6 +346,7 @@ execute任务的类型校验与GenericsTask的构造类型相关联，参数类�
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -336,6 +356,7 @@ execute任务的类型校验与GenericsTask的构造类型相关联，参数类�
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -370,9 +391,10 @@ taskpool.execute<[number], number>(task3, taskpool.Priority.HIGH).then((value: n
 
 
 
-#### taskpool.execute24+
+## taskpool.execute24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 execute<A extends Array&lt;Object&gt;, R>(task: GenericsTask<A, R>, configs: Configs): Promise&lt;R&gt;
 
@@ -390,6 +412,7 @@ execute任务的类型校验与GenericsTask的构造类型相关联，参数类�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | task | GenericsTask<A, R> | 是 | 需要在任务池中执行的泛型任务。 |
@@ -397,6 +420,7 @@ execute任务的类型校验与GenericsTask的构造类型相关联，参数类�
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -406,6 +430,7 @@ execute任务的类型校验与GenericsTask的构造类型相关联，参数类�
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -444,9 +469,10 @@ try {
 
 
 
-#### taskpool.execute10+
+## taskpool.execute10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 execute(group: TaskGroup, priority?: Priority): Promise<Object[]>
 
@@ -458,6 +484,7 @@ execute(group: TaskGroup, priority?: Priority): Promise<Object[]>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | group | TaskGroup | 是 | 需要在任务池中执行的任务组。 |
@@ -465,6 +492,7 @@ execute(group: TaskGroup, priority?: Priority): Promise<Object[]>
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -474,6 +502,7 @@ execute(group: TaskGroup, priority?: Priority): Promise<Object[]>
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -512,9 +541,10 @@ taskpool.execute(taskGroup2).then((res: Array<Object>) => {
 
 
 
-#### taskpool.execute24+
+## taskpool.execute24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 execute(group: TaskGroup, configs: Configs): Promise<Object[]>
 
@@ -532,6 +562,7 @@ configs配置里可以指定任务组执行的超时时间和优先级。指定�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | group | TaskGroup | 是 | 需要在任务池中执行的任务组。 |
@@ -539,6 +570,7 @@ configs配置里可以指定任务组执行的超时时间和优先级。指定�
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -548,6 +580,7 @@ configs配置里可以指定任务组执行的超时时间和优先级。指定�
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -585,9 +618,10 @@ try {
 
 
 
-#### taskpool.executeDelayed11+
+## taskpool.executeDelayed11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 executeDelayed(delayTime: number, task: Task, priority?: Priority): Promise&lt;Object&gt;
 
@@ -603,6 +637,7 @@ executeDelayed(delayTime: number, task: Task, priority?: Priority): Promise&lt;O
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | delayTime | number | 是 | 延时时间。单位：ms。delayTime值必须要大于等于0。 |
@@ -612,6 +647,7 @@ executeDelayed(delayTime: number, task: Task, priority?: Priority): Promise&lt;O
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Object&gt; | Promise对象，返回任务函数的执行结果。 |
@@ -620,6 +656,7 @@ executeDelayed(delayTime: number, task: Task, priority?: Priority): Promise&lt;O
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -653,9 +690,10 @@ taskpool.executeDelayed(1000, task).then(() => { // 1000: delayTime is 1000ms
 
 
 
-#### taskpool.executeDelayed13+
+## taskpool.executeDelayed13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 executeDelayed<A extends Array&lt;Object&gt;, R>(delayTime: number, task: GenericsTask<A, R>, priority?: Priority): Promise&lt;R&gt;
 
@@ -669,6 +707,7 @@ executeDelayed任务的类型校验与GenericsTask的构造类型相关联，参
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | delayTime | number | 是 | 延时时间。单位：ms。delayTime值必须要大于等于0。 |
@@ -678,6 +717,7 @@ executeDelayed任务的类型校验与GenericsTask的构造类型相关联，参
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;R&gt; | Promise对象，返回任务函数的执行结果。 |
@@ -686,6 +726,7 @@ executeDelayed任务的类型校验与GenericsTask的构造类型相关联，参
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -716,9 +757,10 @@ taskpool.executeDelayed<[number], string>(1000, task).then((res: string) => { //
 
 
 
-#### taskpool.executePeriodically12+
+## taskpool.executePeriodically12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 executePeriodically(period: number, task: Task, priority?: Priority): void
 
@@ -734,6 +776,7 @@ executePeriodically(period: number, task: Task, priority?: Priority): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | period | number | 是 | 周期时长。单位：ms。period值必须要大于等于0。 |
@@ -744,6 +787,7 @@ executePeriodically(period: number, task: Task, priority?: Priority): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -797,9 +841,10 @@ taskpoolTest();
 
 
 
-#### taskpool.executePeriodically13+
+## taskpool.executePeriodically13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 executePeriodically<A extends Array&lt;Object&gt;, R>(period: number, task: GenericsTask<A, R>, priority?: Priority): void
 
@@ -813,6 +858,7 @@ executePeriodically任务的类型校验与GenericsTask的构造类型相关联�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | period | number | 是 | 周期时长。单位：ms。period值必须要大于等于0。 |
@@ -823,6 +869,7 @@ executePeriodically任务的类型校验与GenericsTask的构造类型相关联�
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -876,9 +923,10 @@ taskpoolTest();
 
 
 
-#### taskpool.cancel
+## taskpool.cancel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancel(task: Task): void
 
@@ -897,6 +945,7 @@ cancel(task: Task): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | task | Task | 是 | 需要取消执行的任务。 |
@@ -905,6 +954,7 @@ cancel(task: Task): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -970,9 +1020,10 @@ concurrentFunc();
 
 
 
-#### taskpool.cancel10+
+## taskpool.cancel10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancel(group: TaskGroup): void
 
@@ -986,6 +1037,7 @@ cancel(group: TaskGroup): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | group | TaskGroup | 是 | 需要取消执行的任务组。 |
@@ -994,6 +1046,7 @@ cancel(group: TaskGroup): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1042,9 +1095,10 @@ concurrentFunc();
 
 
 
-#### taskpool.cancel18+
+## taskpool.cancel18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancel(taskId: number): void
 
@@ -1064,6 +1118,7 @@ cancel(taskId: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | taskId | number | 是 | 需要取消执行的任务的ID。 |
@@ -1072,6 +1127,7 @@ cancel(taskId: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1123,9 +1179,10 @@ concurrentFunc();
 
 
 
-#### taskpool.terminateTask12+
+## taskpool.terminateTask12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 terminateTask(longTask: LongTask): void
 
@@ -1136,6 +1193,7 @@ terminateTask(longTask: LongTask): void
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1168,9 +1226,10 @@ concurrentFunc();
 
 
 
-#### taskpool.isConcurrent12+
+## taskpool.isConcurrent12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isConcurrent(func: Function): boolean
 
@@ -1182,12 +1241,14 @@ isConcurrent(func: Function): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | func | Function | 是 | 需要检查的函数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1206,9 +1267,10 @@ console.info("result is: " + result);
 
 
 
-#### taskpool.getTaskPoolInfo10+
+## taskpool.getTaskPoolInfo10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTaskPoolInfo(): TaskPoolInfo
 
@@ -1219,6 +1281,7 @@ getTaskPoolInfo(): TaskPoolInfo
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1233,9 +1296,10 @@ let taskpoolInfo: taskpool.TaskPoolInfo = taskpool.getTaskPoolInfo();
 
 
 
-#### taskpool.getTask22+
+## taskpool.getTask22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTask(taskId: number, taskName?: string): Task | undefined
 
@@ -1251,6 +1315,7 @@ getTask(taskId: number, taskName?: string): Task | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | taskId | number | 是 | 任务ID。 |
@@ -1258,6 +1323,7 @@ getTask(taskId: number, taskName?: string): Task | undefined
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1303,13 +1369,15 @@ function dealTask() {
 
 
 
-#### Priority
+## Priority
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示所创建任务（Task）执行时的优先级。工作线程优先级跟随任务优先级更新，对应关系参考[QoS等级定义](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/qos-guidelines#qos等级定义)。
 
 **系统能力：** SystemCapability.Utils.Lang
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1357,19 +1425,22 @@ for (let i: number = 0; i < taskArray.length; i+=4) { // 4: 每次执行4个任�
 
 
 
-#### Task
+## Task
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 调用Task中的任何接口前必须先使用构造函数创建Task对象。任务可以多次执行，也可以放入任务组、串行队列或异步队列执行，还支持添加依赖关系。
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Utils.Lang
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1384,9 +1455,10 @@ for (let i: number = 0; i < taskArray.length; i+=4) { // 4: 每次执行4个任�
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(func: Function, ...args: Object[])
 
@@ -1398,6 +1470,7 @@ Task的构造函数。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | func | Function | 是 | 待执行的函数，必须使用@Concurrent装饰器装饰，支持的函数返回值类型请参考序列化支持类型。 |
@@ -1407,6 +1480,7 @@ Task的构造函数。
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1427,9 +1501,10 @@ let task: taskpool.Task = new taskpool.Task(printArgs, "this is my first Task");
 
 
 
-#### constructor11+
+### constructor11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(name: string, func: Function, ...args: Object[])
 
@@ -1441,6 +1516,7 @@ Task的构造函数用于创建任务，并可指定任务名称。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 任务名称。 |
@@ -1451,6 +1527,7 @@ Task的构造函数用于创建任务，并可指定任务名称。
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1473,9 +1550,10 @@ let name: string = task.name;
 
 
 
-#### isCanceled10+
+### isCanceled10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static isCanceled(): boolean
 
@@ -1486,6 +1564,7 @@ static isCanceled(): boolean
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1548,9 +1627,10 @@ taskpool.execute(task).then((res: Object) => {
 
 
 
-#### setTransferList10+
+### setTransferList10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setTransferList(transfer?: ArrayBuffer[]): void
 
@@ -1566,6 +1646,7 @@ setTransferList(transfer?: ArrayBuffer[]): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | transfer | ArrayBuffer[] | 否 | 可传输对象是ArrayBuffer的实例对象，默认为空数组。 |
@@ -1574,6 +1655,7 @@ setTransferList(transfer?: ArrayBuffer[]): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1617,9 +1699,10 @@ console.info("testTransfer view3 byteLength: " + view1.byteLength);
 
 
 
-#### setCloneList11+
+### setCloneList11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCloneList(cloneList: Object[] | ArrayBuffer[]): void
 
@@ -1635,6 +1718,7 @@ setCloneList(cloneList: Object[] | ArrayBuffer[]): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cloneList | Object[] \| ArrayBuffer[] | 是 | - 传入数组的类型必须为Sendable支持的数据类型或ArrayBuffer。 - 所有传入cloneList的对象持有的Sendable class实例或ArrayBuffer类型对象，在线程间传输的行为都会变成拷贝传递，即修改传输后的对象不会对原有对象产生任何影响。 |
@@ -1643,6 +1727,7 @@ setCloneList(cloneList: Object[] | ArrayBuffer[]): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1780,9 +1865,10 @@ struct Index {
 
 
 
-#### sendData11+
+### sendData11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static sendData(...args: Object[]): void
 
@@ -1798,6 +1884,7 @@ static sendData(...args: Object[]): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | args | Object[] | 否 | 可传输对象默认转移，作为回调函数的参数。支持的参数类型请参见序列化支持类型，默认值为undefined。 |
@@ -1806,6 +1893,7 @@ static sendData(...args: Object[]): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1874,9 +1962,10 @@ taskpoolTest();
 
 
 
-#### onReceiveData11+
+### onReceiveData11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onReceiveData(callback?: Function): void
 
@@ -1891,6 +1980,7 @@ onReceiveData(callback?: Function): void
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1926,9 +2016,10 @@ testFunc();
 
 
 
-#### addDependency11+
+### addDependency11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addDependency(...tasks: Task[]): void
 
@@ -1940,6 +2031,7 @@ addDependency(...tasks: Task[]): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | tasks | Task[] | 否 | 被依赖的任务数组。默认值为undefined。 |
@@ -1948,6 +2040,7 @@ addDependency(...tasks: Task[]): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1991,9 +2084,10 @@ taskpool.execute(task3).then(() => {
 
 
 
-#### removeDependency11+
+### removeDependency11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeDependency(...tasks: Task[]): void
 
@@ -2005,6 +2099,7 @@ removeDependency(...tasks: Task[]): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | tasks | Task[] | 否 | 被依赖的任务数组。默认值为undefined。 |
@@ -2013,6 +2108,7 @@ removeDependency(...tasks: Task[]): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2060,9 +2156,10 @@ taskpool.execute(task3).then(() => {
 
 
 
-#### onEnqueued12+
+### onEnqueued12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onEnqueued(callback: CallbackFunction): void
 
@@ -2074,6 +2171,7 @@ onEnqueued(callback: CallbackFunction): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | CallbackFunction | 是 | 需注册的回调函数。 |
@@ -2082,6 +2180,7 @@ onEnqueued(callback: CallbackFunction): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2113,9 +2212,10 @@ taskpool.execute(task).then(() => {
 
 
 
-#### onStartExecution12+
+### onStartExecution12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onStartExecution(callback: CallbackFunction): void
 
@@ -2127,6 +2227,7 @@ onStartExecution(callback: CallbackFunction): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | CallbackFunction | 是 | 需注册的回调函数。 |
@@ -2135,6 +2236,7 @@ onStartExecution(callback: CallbackFunction): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2166,9 +2268,10 @@ taskpool.execute(task).then(() => {
 
 
 
-#### onExecutionFailed12+
+### onExecutionFailed12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onExecutionFailed(callback: CallbackFunctionWithError): void
 
@@ -2180,6 +2283,7 @@ onExecutionFailed(callback: CallbackFunctionWithError): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | CallbackFunctionWithError | 是 | 需注册的回调函数。 |
@@ -2188,6 +2292,7 @@ onExecutionFailed(callback: CallbackFunctionWithError): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2223,9 +2328,10 @@ taskpool.execute(task2).then(() => {
 
 
 
-#### onExecutionSucceeded12+
+### onExecutionSucceeded12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onExecutionSucceeded(callback: CallbackFunction): void
 
@@ -2237,6 +2343,7 @@ onExecutionSucceeded(callback: CallbackFunction): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | CallbackFunction | 是 | 需注册的回调函数。 |
@@ -2245,6 +2352,7 @@ onExecutionSucceeded(callback: CallbackFunction): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2276,9 +2384,10 @@ taskpool.execute(task).then(() => {
 
 
 
-#### isDone12+
+### isDone12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isDone(): boolean
 
@@ -2289,6 +2398,7 @@ isDone(): boolean
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2330,9 +2440,10 @@ taskpoolCancel();
 
 
 
-#### CallbackFunction12+
+## CallbackFunction12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type CallbackFunction = () => void
 
@@ -2344,9 +2455,10 @@ type CallbackFunction = () => void
 
 
 
-#### CallbackFunctionWithError12+
+## CallbackFunctionWithError12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type CallbackFunctionWithError = (e: Error) => void
 
@@ -2358,6 +2470,7 @@ type CallbackFunctionWithError = (e: Error) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | e | Error | 是 | 错误信息对象。 |
@@ -2365,9 +2478,10 @@ type CallbackFunctionWithError = (e: Error) => void
 
 
 
-#### LongTask12+
+## LongTask12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示长时任务。LongTask继承自[Task](#task)。
 
@@ -2393,9 +2507,10 @@ let task: taskpool.LongTask = new taskpool.LongTask(printArgs, "this is my first
 
 
 
-#### GenericsTask13+
+## GenericsTask13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示泛型任务。GenericsTask继承自[Task](#task)。
 
@@ -2405,9 +2520,10 @@ let task: taskpool.LongTask = new taskpool.LongTask(printArgs, "this is my first
 
 
 
-#### constructor13+
+### constructor13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(func: (...args: A) => R | Promise&lt;R&gt;, ...args: A)
 
@@ -2419,6 +2535,7 @@ GenericsTask的构造函数。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | func | (...args: A) => R \| Promise&lt;R&gt; | 是 | 待执行的函数，必须使用@Concurrent装饰器装饰，支持的函数返回值类型请参考序列化支持类型。 |
@@ -2428,6 +2545,7 @@ GenericsTask的构造函数。
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2462,9 +2580,10 @@ let task3: taskpool.Task = new taskpool.GenericsTask<[[number, string]], string>
 
 
 
-#### constructor13+
+### constructor13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(name: string, func: (...args: A) => R | Promise&lt;R&gt;, ...args: A)
 
@@ -2476,6 +2595,7 @@ GenericsTask的构造函数，可以指定任务名称。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 泛型任务名称。 |
@@ -2486,6 +2606,7 @@ GenericsTask的构造函数，可以指定任务名称。
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2508,9 +2629,10 @@ let name: string = task.name;
 
 
 
-#### TaskGroup10+
+## TaskGroup10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示任务组，一次执行一组任务，适用于执行一组有关联的任务。
 
@@ -2522,9 +2644,10 @@ let name: string = task.name;
 
 
 
-#### constructor10+
+### constructor10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -2542,9 +2665,10 @@ let taskGroup = new taskpool.TaskGroup();
 
 
 
-#### constructor11+
+### constructor11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(name: string)
 
@@ -2555,6 +2679,7 @@ TaskGroup的构造函数，支持指定任务组名称。
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2571,9 +2696,10 @@ let name: string = taskGroup.name;
 
 
 
-#### addTask10+
+### addTask10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addTask(func: Function, ...args: Object[]): void
 
@@ -2585,6 +2711,7 @@ addTask(func: Function, ...args: Object[]): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | func | Function | 是 | 待执行的函数，必须使用@Concurrent装饰器装饰，支持的函数返回值类型请参考序列化支持类型。 |
@@ -2594,6 +2721,7 @@ addTask(func: Function, ...args: Object[]): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2615,9 +2743,10 @@ taskGroup.addTask(printArgs, 100); // 100: test number
 
 
 
-#### addTask10+
+### addTask10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addTask(task: Task): void
 
@@ -2629,6 +2758,7 @@ addTask(task: Task): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | task | Task | 是 | 需要添加到任务组中的任务。 |
@@ -2637,6 +2767,7 @@ addTask(task: Task): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2661,13 +2792,15 @@ taskGroup.addTask(task);
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Utils.Lang
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2676,17 +2809,19 @@ taskGroup.addTask(task);
 
 
 
-#### SequenceRunner11+
+## SequenceRunner11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示串行队列的任务，用于执行一组需要串行执行的任务。
 
 
 
-#### constructor11+
+### constructor11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(priority?: Priority)
 
@@ -2697,6 +2832,7 @@ SequenceRunner的构造函数。
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2711,9 +2847,10 @@ let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
 
 
 
-#### constructor12+
+### constructor12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(name: string, priority?: Priority)
 
@@ -2729,6 +2866,7 @@ SequenceRunner的构造函数。构造一个全局串行队列，如果名字相
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 串行队列的名字。 |
@@ -2743,9 +2881,10 @@ let runner:taskpool.SequenceRunner = new taskpool.SequenceRunner("runner1", task
 
 
 
-#### execute11+
+### execute11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 execute(task: Task): Promise&lt;Object&gt;
 
@@ -2761,12 +2900,14 @@ execute(task: Task): Promise&lt;Object&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | task | Task | 是 | 需要添加到串行任务队列中的任务。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2776,6 +2917,7 @@ execute(task: Task): Promise&lt;Object&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2827,17 +2969,19 @@ async function seqRunner() {
 
 
 
-#### AsyncRunner18+
+## AsyncRunner18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示异步队列。可以指定任务执行的并发度和排队策略。
 
 
 
-#### constructor18+
+### constructor18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(runningCapacity: number, waitingCapacity?: number)
 
@@ -2848,6 +2992,7 @@ AsyncRunner的构造函数。构造一个非全局的异步队列，即使参数
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2863,9 +3008,10 @@ let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(5);
 
 
 
-#### constructor18+
+### constructor18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(name: string, runningCapacity: number, waitingCapacity?: number)
 
@@ -2880,6 +3026,7 @@ AsyncRunner的构造函数用于构造一个全局异步队列。如果队列名
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2896,9 +3043,10 @@ let runner:taskpool.AsyncRunner = new taskpool.AsyncRunner("runner1", 5, 5);
 
 
 
-#### execute18+
+### execute18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 execute(task: Task, priority?: Priority): Promise&lt;Object&gt;
 
@@ -2914,6 +3062,7 @@ execute(task: Task, priority?: Priority): Promise&lt;Object&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | task | Task | 是 | 需要添加到异步队列中的任务。 |
@@ -2921,6 +3070,7 @@ execute(task: Task, priority?: Priority): Promise&lt;Object&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2930,6 +3080,7 @@ execute(task: Task, priority?: Priority): Promise&lt;Object&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2978,9 +3129,10 @@ async function asyncRunner2() {
 
 
 
-#### State10+
+## State10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示任务（Task）状态的枚举。
 
@@ -2996,6 +3148,7 @@ async function asyncRunner2() {
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | WAITING | 1 | 任务正在等待。 |
@@ -3005,9 +3158,10 @@ async function asyncRunner2() {
 
 
 
-#### TaskInfo10+
+## TaskInfo10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 任务的内部信息。
 
@@ -3015,11 +3169,13 @@ async function asyncRunner2() {
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Utils.Lang
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -3031,9 +3187,10 @@ async function asyncRunner2() {
 
 
 
-#### ThreadInfo10+
+## ThreadInfo10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 工作线程的内部信息。
 
@@ -3041,13 +3198,15 @@ async function asyncRunner2() {
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Utils.Lang
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -3058,9 +3217,10 @@ async function asyncRunner2() {
 
 
 
-#### TaskPoolInfo10+
+## TaskPoolInfo10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 任务池的内部信息。
 
@@ -3068,13 +3228,15 @@ async function asyncRunner2() {
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Utils.Lang
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -3084,9 +3246,10 @@ async function asyncRunner2() {
 
 
 
-#### TaskResult20+
+## TaskResult20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 对处于等待或执行过程中的任务执行取消操作后，在catch分支里捕获到BusinessError里的补充信息。其他场景下该信息为undefined。
 
@@ -3094,13 +3257,15 @@ async function asyncRunner2() {
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Utils.Lang
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -3185,15 +3350,17 @@ function runningCancelError() {
 
 
 
-#### Configs24+
+## Configs24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 任务或任务组的配置项。
 
 **系统能力：** SystemCapability.Utils.Lang
 
 **元服务API：** 从API version 24开始，该接口支持在元服务中使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -3203,19 +3370,26 @@ function runningCancelError() {
 
 
 
-#### 其他说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 其他说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 序列化支持类型
+
+
+### 序列化支持类型
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 序列化支持类型参考[线程间通信对象概述](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/serializable-overview)里的介绍。
 
 
 
-#### 简单使用
+### 简单使用
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **示例一**
 

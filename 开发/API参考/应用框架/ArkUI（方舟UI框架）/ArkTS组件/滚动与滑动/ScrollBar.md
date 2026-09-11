@@ -1,9 +1,9 @@
 # ScrollBar
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-scrollbar
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 滚动条组件ScrollBar，用于配合可滚动组件使用，如[ArcList](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arclist)、[List](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)、[Grid](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid)、[Scroll](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll)、[WaterFlow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow)，提供可视化的滚动指示和控制能力，支持自定义滚动条样式。
  
@@ -12,17 +12,19 @@
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 可以包含单个子组件。
  
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ScrollBar(value: ScrollBarOptions)
  
@@ -34,6 +36,7 @@ ScrollBar(value: ScrollBarOptions)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ScrollBarOptions | 是 | 滚动条组件参数。 |
@@ -41,17 +44,19 @@ ScrollBar(value: ScrollBarOptions)
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
  
   
 
-#### enableNestedScroll14+
+### enableNestedScroll14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableNestedScroll(enabled: Optional&lt;boolean&gt;)
  
@@ -65,6 +70,7 @@ enableNestedScroll(enabled: Optional&lt;boolean&gt;)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | Optional&lt;boolean&gt; | 是 | 是否执行嵌套滚动。当需要在多层滚动容器之间传递滚动事件时设置为true；不需要嵌套滚动时设置为false。 默认值：false |
@@ -76,9 +82,10 @@ enableNestedScroll(enabled: Optional&lt;boolean&gt;)
  
   
 
-#### scrollBarColor20+
+### scrollBarColor20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scrollBarColor(color: Optional&lt;ColorMetrics&gt;)
  
@@ -92,6 +99,7 @@ scrollBarColor(color: Optional&lt;ColorMetrics&gt;)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | Optional&lt;ColorMetrics&gt; | 是 | 滚动条的颜色，仅滚动条不放置子组件时生效。 默认值：ColorMetrics.numeric(0x66182431) |
@@ -99,9 +107,10 @@ scrollBarColor(color: Optional&lt;ColorMetrics&gt;)
  
   
 
-#### ScrollBarOptions对象说明
+## ScrollBarOptions对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 滚动条组件参数。
  
@@ -113,6 +122,7 @@ scrollBarColor(color: Optional&lt;ColorMetrics&gt;)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | scroller | Scroller | 否 | 否 | 可滚动组件的控制器。用于与可滚动组件进行绑定，且仅当ScrollBar与可滚动组件方向相同时才能联动。一个可滚动组件可以绑定多个ScrollBar组件，一个ScrollBar组件只能绑定一个可滚动组件。 |
@@ -122,9 +132,10 @@ scrollBarColor(color: Optional&lt;ColorMetrics&gt;)
  
   
 
-#### ScrollBarDirection枚举说明
+## ScrollBarDirection枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 滚动条方向枚举。
  
@@ -132,6 +143,7 @@ scrollBarColor(color: Optional&lt;ColorMetrics&gt;)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | Vertical | 0 | 纵向滚动条。 |
@@ -140,9 +152,10 @@ scrollBarColor(color: Optional&lt;ColorMetrics&gt;)
  
   
 
-#### 示例1（设置子节点）
+## 示例1（设置子节点）
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例为ScrollBar组件有子节点时的滚动条样式。
  
@@ -191,14 +204,15 @@ struct ScrollBarExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/m0DRGdG9QyCJx1nXhu5ubw/zh-cn_image_0000002655848528.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071501Z&HW-CC-Expire=86400&HW-CC-Sign=4CA270003A8C806E241F9BADC545C7B3F1E8E94F3971F5A17F9B050FF1CB4CDA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/AqBnqGumSI6eQ8LQw9tIBQ/zh-cn_image_0000002717772598.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073106Z&HW-CC-Expire=86400&HW-CC-Sign=58A2E72CC4E8D22904DD4DAACEC7FA3218932267511755C35C0A1AE9EEAEDD8B)
 
  
   
 
-#### 示例2（不设置子节点）
+## 示例2（不设置子节点）
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例为ScrollBar组件没有子节点时的滚动条样式。从API version 20开始，可通过[scrollBarColor](#scrollbarcolor20)设置滚动条颜色。
  
@@ -244,19 +258,20 @@ struct ScrollBarExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/dzaA4erZSTSKoRC8nOsf-g/zh-cn_image_0000002686087957.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071501Z&HW-CC-Expire=86400&HW-CC-Sign=62FEC2BC4DBEA0AB1935344F70E196F5B415CD72C786CF38D7FD31E36FF5B8F9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/Ix3VQmeYQFucNGm65HL_7w/zh-cn_image_0000002717612666.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073106Z&HW-CC-Expire=86400&HW-CC-Sign=A17660AB78F3DA88B9E476BAB21AAB86FC09CAA50542E26613B518D420291B5C)
 
  
   
 
-#### 示例3（支持嵌套滚动）
+## 示例3（支持嵌套滚动）
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 14开始，可通过[enableNestedScroll](#enablenestedscroll14)属性使ScrollBar组件支持嵌套滚动。本示例同时使用从API version 20开始支持的[scrollBarColor](#scrollbarcolor20)属性设置滚动条颜色。
  
 ```text
-import { ColorMetrics, EdgeEffect, NestedScrollMode } from '@kit.ArkUI'
+import { ColorMetrics } from '@kit.ArkUI'
 
 @Entry
 @Component
@@ -322,4 +337,4 @@ struct StickyNestedScroll {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/IcE68CRcTjqJCDn-SUAzTA/zh-cn_image_0000002685928129.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071501Z&HW-CC-Expire=86400&HW-CC-Sign=56EF20CAC6B33CA994A4BDD736B50D9F984AADCB63BBE2C42EE0E58BC67FF92D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/rSvs4KzsT0SoSesQH9sKLw/zh-cn_image_0000002747292619.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073106Z&HW-CC-Expire=86400&HW-CC-Sign=FABF174D8B58995A2AFBD14C54090CC8BBBF237E89E196E68279F235CB9B8A1E)

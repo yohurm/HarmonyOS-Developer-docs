@@ -1,9 +1,9 @@
 # @ohos.account.distributedAccount (分布式账号管理)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-distributed-account
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供管理分布式账号的一些基础功能，主要包括查询和更新账号登录状态。适用于多设备协同场景，提升跨设备账号管理的一致性和用户体验。典型使用场景包括多设备协同、分布式数据同步、跨设备能力调用等。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { distributedAccount } from '@kit.BasicServicesKit';
@@ -22,9 +23,10 @@ import { distributedAccount } from '@kit.BasicServicesKit';
 
 
 
-#### distributedAccount.getDistributedAccountAbility
+## distributedAccount.getDistributedAccountAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDistributedAccountAbility(): DistributedAccountAbility
 
@@ -33,6 +35,7 @@ getDistributedAccountAbility(): DistributedAccountAbility
 **系统能力：** SystemCapability.Account.OsAccount
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -48,17 +51,19 @@ const accountAbility: distributedAccount.DistributedAccountAbility = distributed
 
 
 
-#### DistributedAccountAbility
+## DistributedAccountAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供查询和更新分布式账号登录状态方法（使用前需要先获取分布式账号的单实例对象）。
 
 
 
-#### getOsAccountDistributedInfo9+
+### getOsAccountDistributedInfo9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOsAccountDistributedInfo(callback: AsyncCallback&lt;DistributedInfo&gt;): void
 
@@ -70,6 +75,7 @@ getOsAccountDistributedInfo(callback: AsyncCallback&lt;DistributedInfo&gt;): voi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;DistributedInfo&gt; | 是 | 回调函数。当获取分布式账号信息成功时，err为undefined，data为获取到的分布式账号信息对象；否则err为错误对象。 |
@@ -78,6 +84,7 @@ getOsAccountDistributedInfo(callback: AsyncCallback&lt;DistributedInfo&gt;): voi
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -110,9 +117,10 @@ try {
 
 
 
-#### getOsAccountDistributedInfo9+
+### getOsAccountDistributedInfo9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOsAccountDistributedInfo(): Promise&lt;DistributedInfo&gt;
 
@@ -124,6 +132,7 @@ getOsAccountDistributedInfo(): Promise&lt;DistributedInfo&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;DistributedInfo&gt; | Promise对象，返回分布式账号信息对象。 |
@@ -132,6 +141,7 @@ getOsAccountDistributedInfo(): Promise&lt;DistributedInfo&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -160,9 +170,10 @@ try {
 
 
 
-#### queryOsAccountDistributedInfo(deprecated)
+### queryOsAccountDistributedInfo(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 queryOsAccountDistributedInfo(callback: AsyncCallback&lt;DistributedInfo&gt;): void
 
@@ -177,6 +188,7 @@ queryOsAccountDistributedInfo(callback: AsyncCallback&lt;DistributedInfo&gt;): v
 **需要权限：** ohos.permission.MANAGE_LOCAL_ACCOUNTS（仅系统应用可申请）或ohos.permission.DISTRIBUTED_DATASYNC
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -202,9 +214,10 @@ accountAbility.queryOsAccountDistributedInfo(
 
 
 
-#### queryOsAccountDistributedInfo(deprecated)
+### queryOsAccountDistributedInfo(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 queryOsAccountDistributedInfo(): Promise&lt;DistributedInfo&gt;
 
@@ -219,6 +232,7 @@ queryOsAccountDistributedInfo(): Promise&lt;DistributedInfo&gt;
 **需要权限：** ohos.permission.MANAGE_LOCAL_ACCOUNTS（仅系统应用可申请）或ohos.permission.DISTRIBUTED_DATASYNC
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -241,9 +255,10 @@ accountAbility.queryOsAccountDistributedInfo().then((data: distributedAccount.Di
 
 
 
-#### setOsAccountDistributedInfo9+
+### setOsAccountDistributedInfo9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setOsAccountDistributedInfo(accountInfo: DistributedInfo, callback: AsyncCallback&lt;void&gt;): void
 
@@ -255,6 +270,7 @@ setOsAccountDistributedInfo(accountInfo: DistributedInfo, callback: AsyncCallbac
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | accountInfo | DistributedInfo | 是 | 分布式账号信息。 |
@@ -265,6 +281,7 @@ setOsAccountDistributedInfo(accountInfo: DistributedInfo, callback: AsyncCallbac
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -272,6 +289,7 @@ setOsAccountDistributedInfo(accountInfo: DistributedInfo, callback: AsyncCallbac
 | 12300001 | System service exception. |
 | 12300002 | Invalid accountInfo. |
 | 12300003 | Account not found. |
+| 12300406 | The distributed account information has already been bound to a sub-profile of the same OS account. 适用版本：26.0.0+ |
 
 
 **示例：**
@@ -300,9 +318,10 @@ try {
 
 
 
-#### setOsAccountDistributedInfo9+
+### setOsAccountDistributedInfo9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setOsAccountDistributedInfo(accountInfo: DistributedInfo): Promise&lt;void&gt;
 
@@ -314,12 +333,14 @@ setOsAccountDistributedInfo(accountInfo: DistributedInfo): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | accountInfo | DistributedInfo | 是 | 分布式账号信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -330,6 +351,7 @@ setOsAccountDistributedInfo(accountInfo: DistributedInfo): Promise&lt;void&gt;
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -337,6 +359,7 @@ setOsAccountDistributedInfo(accountInfo: DistributedInfo): Promise&lt;void&gt;
 | 12300001 | System service exception. |
 | 12300002 | Invalid accountInfo. |
 | 12300003 | Account not found. |
+| 12300406 | The distributed account information has already been bound to a sub-profile of the same OS account. 适用版本：26.0.0+ |
 
 
 **示例：**
@@ -363,9 +386,10 @@ try {
 
 
 
-#### updateOsAccountDistributedInfo(deprecated)
+### updateOsAccountDistributedInfo(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateOsAccountDistributedInfo(accountInfo: DistributedInfo, callback: AsyncCallback&lt;void&gt;): void
 
@@ -380,6 +404,7 @@ updateOsAccountDistributedInfo(accountInfo: DistributedInfo, callback: AsyncCall
 **需要权限：** ohos.permission.MANAGE_LOCAL_ACCOUNTS，该权限仅系统应用可申请。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -408,9 +433,10 @@ accountAbility.updateOsAccountDistributedInfo(accountInfo, (err: BusinessError) 
 
 
 
-#### updateOsAccountDistributedInfo(deprecated)
+### updateOsAccountDistributedInfo(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateOsAccountDistributedInfo(accountInfo: DistributedInfo): Promise&lt;void&gt;
 
@@ -426,12 +452,14 @@ updateOsAccountDistributedInfo(accountInfo: DistributedInfo): Promise&lt;void&gt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | accountInfo | DistributedInfo | 是 | 分布式账号信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -457,34 +485,38 @@ accountAbility.updateOsAccountDistributedInfo(accountInfo).then(() => {
 
 
 
-#### DistributedInfo
+## DistributedInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供操作系统账号的分布式账号信息。
 
 **系统能力：** SystemCapability.Account.OsAccount
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| name | string | 否 | 否 | 分布式账号名称，非空字符串。 |
-| id | string | 否 | 否 | 分布式账号UID，非空字符串。 |
+| name | string | 否 | 否 | 分布式账号名称，非空字符串。最大长度为256个字节。 |
+| id | string | 否 | 否 | 分布式账号UID，非空字符串。最大长度为512个字节。 |
 | event | string | 否 | 否 | 分布式账号登录状态，包括登录、登出、Token失效和注销，分别对应以下字符串： - Ohos.account.event.LOGIN - Ohos.account.event.LOGOUT - Ohos.account.event.TOKEN_INVALID - Ohos.account.event.LOGOFF |
-| nickname9+ | string | 否 | 是 | 分布式账号的昵称，当需要显示用户昵称时设置。不设置时默认为空，不影响账号功能使用。 |
-| avatar9+ | string | 否 | 是 | 分布式账号的头像，当需要显示用户头像时设置。不设置时默认为空，不影响账号功能使用。 |
+| nickname9+ | string | 否 | 是 | 分布式账号的昵称，当需要显示用户昵称时设置。不设置时默认为空，不影响账号功能使用。最大长度为1024个字节。 |
+| avatar9+ | string | 否 | 是 | 分布式账号的头像，当需要显示用户头像时设置。不设置时默认为空，不影响账号功能使用。 最大长度为10M（10485760个字节）。 |
 | status10+ | DistributedAccountStatus | 是 | 是 | 分布式账号的状态，枚举类型。当需要查询或设置账号登录状态时使用。不设置时默认为NOT_LOGGED_IN（未登录状态）。 |
 | scalableData8+ | object | 否 | 是 | 分布式账号扩展信息，当需要传递定制化业务信息时设置，以k-v形式传递。不设置时默认为空，不影响账号基本功能。 |
 
 
 
 
-#### DistributedAccountStatus10+
+## DistributedAccountStatus10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示分布式账号状态枚举。
 
 **系统能力：** SystemCapability.Account.OsAccount
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

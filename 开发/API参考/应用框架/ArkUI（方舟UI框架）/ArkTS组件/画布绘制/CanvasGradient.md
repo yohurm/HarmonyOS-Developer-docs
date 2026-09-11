@@ -1,9 +1,9 @@
 # CanvasGradient
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-canvasgradient
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 渐变对象，可通过addColorStop方法设置多个颜色断点，实现平滑的颜色过渡，适用于Canvas填充和描边等场景。
  
@@ -12,9 +12,10 @@
 
   
 
-#### addColorStop
+## addColorStop
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addColorStop(offset: number, color: string): void
  
@@ -28,9 +29,10 @@ addColorStop(offset: number, color: string): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| offset | number | 是 | 设置渐变点距离起点的位置占总体长度的比例，范围为[0, 1]。 设置offset&lt;0或offset&gt;1无渐变效果。 异常值undefined和null按无效值处理，不添加该断点。NaN会导致CanvasGradient对象异常，无法正常生成渐变效果；Infinity会导致整个CanvasGradient不生效。 |
+| offset | number | 是 | 设置渐变断点距离起点的位置占总体长度的比例，范围为[0, 1]。 设置offset&lt;0或offset&gt;1无渐变效果。 异常值undefined和null按无效值处理，不添加该断点。NaN会导致CanvasGradient对象异常，无法正常生成渐变效果；Infinity会导致整个CanvasGradient不生效。 |
 | color | string | 是 | 设置渐变的颜色。string类型支持'rgb(255, 255, 255)'、'rgba(255, 255, 255, 1.0)'、'#RGB'、'#ARGB'、'#RRGGBB'、'#AARRGGBB'格式，参考ResourceColor中string类型说明。 未按格式设置颜色无渐变效果。设置null和undefined时按无效值处理，不添加该断点。 |
  
  
@@ -73,9 +75,10 @@ struct AddColorStop {
  
   
 
-#### addColorStop20+
+## addColorStop20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addColorStop(offset: number, color: string | ColorMetrics): void
  
@@ -91,9 +94,10 @@ addColorStop(offset: number, color: string | ColorMetrics): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| offset | number | 是 | 设置渐变点距离起点的位置占总体长度的比例，范围为[0, 1]。 设置offset&lt;0或offset&gt;1无渐变效果。 异常值undefined和null按无效值处理，不添加该断点。NaN会导致CanvasGradient对象异常，无法正常生成渐变效果；Infinity会导致整个CanvasGradient不生效。 |
+| offset | number | 是 | 设置渐变断点距离起点的位置占总体长度的比例，范围为[0, 1]。 设置offset&lt;0或offset&gt;1无渐变效果。 异常值undefined和null按无效值处理，不添加该断点。NaN会导致CanvasGradient对象异常，无法正常生成渐变效果；Infinity会导致整个CanvasGradient不生效。 |
 | color | string \| ColorMetrics | 是 | 设置渐变的颜色。string类型支持'rgb(255, 255, 255)'、'rgba(255, 255, 255, 1.0)'、'#RGB'、'#ARGB'、'#RRGGBB'、'#AARRGGBB'格式。 可以使用colorWithSpace方法构造指定色域属性的颜色。ColorMetrics类型可以构造指定色域属性ColorSpace为sRGB或DISPLAY_P3的颜色。从API版本26.0.0开始，新增支持构造BT2020色域的颜色，并支持HDR提亮。同一CanvasGradient对象中的所有渐变断点必须使用相同的色域属性，设置不同色域时将抛出异常，错误码：103701，此时不会添加该断点，CanvasGradient对象保持之前的状态。 未按格式设置颜色无渐变效果。设置null和undefined时按无效值处理，不添加该断点。 |
  
  
@@ -101,6 +105,7 @@ addColorStop(offset: number, color: string | ColorMetrics): void
  
 以下错误码的详细介绍请参见[Canvas组件错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-canvas)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 103701 | The color's ColorSpace is not the same as the last color's. |
@@ -243,4 +248,4 @@ struct CanvasGradientDemo {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/aarvXXoJTSG0baWU5OJhsA/zh-cn_image_0000002655848832.png?HW-CC-KV=V1&HW-CC-Date=20260730T071509Z&HW-CC-Expire=86400&HW-CC-Sign=3F6539FD98B287769181F36D99B78810D7F58B3F06FC06433C6BBB89F766685D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/_sGHZbZYS0yen3dbwUxPmA/zh-cn_image_0000002747292921.png?HW-CC-KV=V1&HW-CC-Date=20260911T073111Z&HW-CC-Expire=86400&HW-CC-Sign=EABF5E4DFACB75EE408DF8B2F97992F9C46DF73294B813165AED529150FE3352)

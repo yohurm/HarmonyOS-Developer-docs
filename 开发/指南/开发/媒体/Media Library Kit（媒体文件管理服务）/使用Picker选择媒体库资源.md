@@ -1,6 +1,6 @@
 # 使用Picker选择媒体库资源
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-photoviewpicker
 
@@ -67,7 +67,7 @@ select返回的uri权限是只读权限，可以根据结果集中uri进行读�
   如有获取元数据需求，可以通过[@ohos.file.fs (文件管理)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-file-fs)和[文件URI](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-file-fileuri)根据URI获取部分文件属性信息，比如文件大小、访问时间、修改时间、文件名、文件路径等。
 
 
-#### 指定URI读取文件数据
+## 指定URI读取文件数据
 1. 待界面从图库返回后，再通过一个类似按钮的组件去调用其他函数，使用[fileIo.openSync](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-file-fs#fileioopensync)接口，通过[媒体文件uri](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/user-file-uri-intro#媒体文件uri)打开这个文件得到fd。这里需要注意接口权限参数是fileIo.OpenMode.READ_ONLY。
 
   
@@ -100,7 +100,7 @@ try {
 
 
 
-#### 指定URI获取图片或视频资源
+## 指定URI获取图片或视频资源
 
 媒体库支持Picker选择[媒体文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/user-file-uri-intro#媒体文件uri)URI后，根据指定URI获取图片或视频资源，下面以查询指定URI为'file://media/Photo/1/IMG_datetime_0001/displayName.jpg'为例。
 1. 定义媒体资源处理器[MediaAssetDataHandler](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-photoaccesshelper-mediaassetdatahandler)，系统在资源准备就绪时向应用回调onDataPrepared。
@@ -132,7 +132,7 @@ export class MediaAssetDataHandler implements photoAccessHelper.MediaAssetDataHa
 2. 使用[getAssets](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-photoaccesshelper-photoaccesshelper#getassets-1)接口获取要访问的资产，并通过[requestImageData](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-photoaccesshelper-mediaassetmanager#requestimagedata11)获取对应资源。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/F01vbUlTRQuym7RC1tV8Jw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095832Z&HW-CC-Expire=86400&HW-CC-Sign=AC0C26ADFBF73679D8B3922F1C50F65C7D79E23110C7BE759B0303D1956EB713)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/Xy8ju83sQ6asqlQSAHLpxA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T073043Z&HW-CC-Expire=86400&HW-CC-Sign=55B62DD996816DDE082D2E244ABF76E2E28EE74B92CC56660D610513FDFCB2BC)
  
 
   出于对用户隐私安全的保护，对媒体资源EXIF中的地理位置和拍摄参数信息做了去隐私化处理。如果需要获取被去隐私化的EXIF信息，需要[申请相册管理模块权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-preparation#申请相册管理模块功能相关权限)'ohos.permission.MEDIA_LOCATION'。

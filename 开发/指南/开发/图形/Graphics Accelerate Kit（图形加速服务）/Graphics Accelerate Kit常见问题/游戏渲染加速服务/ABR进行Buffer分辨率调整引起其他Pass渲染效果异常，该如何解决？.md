@@ -1,6 +1,6 @@
 # ABR进行Buffer分辨率调整引起其他Pass渲染效果异常，该如何解决
 
-更新时间：2026-05-18 03:44:20
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-accelerate-faq-4
 
@@ -49,7 +49,7 @@ void SetPerCameraShaderVariables(CommandBuffer cmd, ref CameraData cameraData, b
 ```
 
 
-     - 支持渲染线程、RHI线程的游戏引擎处理步骤
+          - 支持渲染线程、RHI线程的游戏引擎处理步骤
 
   对于同时支持渲染线程、RHI线程的游戏引擎，而且RHI线程延迟于渲染线程的场景，渲染线程通过[HMS_ABR_GetScale](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_graphics_accelerate#hms_abr_getscale)接口获取的ABR Buffer分辨率因子无法解决上述问题。
 

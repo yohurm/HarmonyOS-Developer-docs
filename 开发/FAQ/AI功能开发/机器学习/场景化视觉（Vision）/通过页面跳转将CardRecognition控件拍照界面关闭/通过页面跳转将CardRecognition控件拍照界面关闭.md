@@ -27,7 +27,7 @@
 struct Index {
   pathStack: NavPathStack = new NavPathStack();
 
-  // 卡证识别入口按钮
+  <em>// </em><em>卡证识别入口按钮</em>
   build() {
     Navigation(this.pathStack) {
       Button('CardRecognition', { stateEffect: true, type: ButtonType.Capsule })
@@ -56,14 +56,14 @@ export function CardDemoPageBuilder() {
   CardDemoPage();
 }
 
-// 卡证识别页，用于加载uiExtensionAbility
+<em>// </em><em>卡证识别页，用于加载uiExtensionAbility</em>
 @Component
 export struct CardDemoPage {
   pathStack: NavPathStack = new NavPathStack();
   timerId: number = -1;
 
   aboutToDisappear(): void {
-    // 子页面销毁时清除定时器
+  <em>  // 子页面销毁时清除定时器</em>
     if (this.timerId !== -1) {
       clearTimeout(this.timerId);
     }
@@ -72,7 +72,7 @@ export struct CardDemoPage {
   build() {
     NavDestination() {
       CardRecognition({
-        // 此处选择身份证类型作为示例
+      <em>  // 此处选择身份证类型作为示例</em>
         supportType: CardType.CARD_ID,
         cardSide: CardSide.DEFAULT,
         cardRecognitionConfig: {
@@ -83,7 +83,7 @@ export struct CardDemoPage {
           hilog.info(0x0001, TAG, `params code: ${params.code}`);
           hilog.info(0x0001, TAG, `params cardInfo front: ${JSON.stringify(params.cardInfo?.front)}`);
           hilog.info(0x0001, TAG, `params cardInfo back: ${JSON.stringify(params.cardInfo?.back)}`);
-          // 手动返回或扫描到结果返回上个页面
+         <em> // 手动返回或扫描到结果返回上个页面</em>
           this.goBack();
         })
       });
@@ -96,17 +96,17 @@ export struct CardDemoPage {
       hilog.info(0x0001, TAG, `current page config info is ${JSON.stringify(context.getConfigInRouteMap())}`);
     })
     .onShown(() => {
-      // 当该NavDestination页面显示时设置定时器，定时触发路由返回
+    <em>  // 当该NavDestination页面显示时设置定时器，定时触发路由返回</em>
       this.timerId = setTimeout(() => {
         this.goBack();
       }, 5000);
     });
   }
 
-  /**
-   * 1.如果返回的是Navigation根页面需要使用getRouter()返回
-   * 2.如果返回的是NavDestination子页面可使用NavPathStack返回
-   */
+ <em> /**</em>
+<em>   * 1.如果返回的是Navigation根页面需要使用getRouter()返回</em>
+<em>   * 2.如果返回的是NavDestination子页面可使用NavPathStack返回</em>
+<em>   */</em>
   goBack() {
     this.getUIContext().getRouter().replaceUrl({ url: 'pages/Index' });
   }

@@ -1,6 +1,6 @@
 # textToSpeech（文本转语音）
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/hms-ai-texttospeech
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -12,7 +12,8 @@
 **起始版本：** 4.1.0(11)
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -22,7 +23,8 @@ import { textToSpeech } from '@kit.CoreSpeechKit';
 
 
 
-#### textToSpeech.createEngine
+## textToSpeech.createEngine
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -40,6 +42,7 @@ createEngine(createEngineParams: CreateEngineParams, callback: AsyncCallback&lt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | createEngineParams | CreateEngineParams | 是 | 创建引擎实例的配置项。 |
@@ -49,6 +52,7 @@ createEngine(createEngineParams: CreateEngineParams, callback: AsyncCallback&lt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Core Speech Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-corespeech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -96,7 +100,8 @@ struct Page {
 
 
 
-#### textToSpeech.createEngine
+## textToSpeech.createEngine
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -114,12 +119,14 @@ createEngine(createEngineParams: CreateEngineParams): Promise&lt;TextToSpeechEng
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | createEngineParams | CreateEngineParams | 是 | 创建引擎实例的配置项。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -129,6 +136,7 @@ createEngine(createEngineParams: CreateEngineParams): Promise&lt;TextToSpeechEng
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Core Speech Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-corespeech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -175,7 +183,8 @@ struct Page {
 
 
 
-#### textToSpeech.listVoices
+## textToSpeech.listVoices
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -193,12 +202,14 @@ listVoices(queryParams: VoiceQuery): Promise<VoiceInfo[]>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | queryParams | VoiceQuery | 是 | 查询语种音色信息请求参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -208,6 +219,7 @@ listVoices(queryParams: VoiceQuery): Promise<VoiceInfo[]>
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -247,7 +259,8 @@ struct Page {
 
 
 
-#### textToSpeech.downloadVoice
+## textToSpeech.downloadVoice
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -267,6 +280,7 @@ downloadVoice(downloadParams: VoiceDownload, callback: AsyncCallback&lt;Download
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | downloadParams | VoiceDownload | 是 | 下载语种音色请求参数。 |
@@ -276,6 +290,7 @@ downloadVoice(downloadParams: VoiceDownload, callback: AsyncCallback&lt;Download
 **错误码：**
 
 以下错误码的详细介绍请参见[Core Speech Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-corespeech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -376,7 +391,8 @@ struct Page {
 
 
 
-#### TextToSpeechEngine
+## TextToSpeechEngine
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -392,7 +408,8 @@ struct Page {
 
 
 
-#### listVoices
+### listVoices
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -410,6 +427,7 @@ listVoices(params: VoiceQuery, callback: AsyncCallback<Array&lt;VoiceInfo&gt;>):
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | VoiceQuery | 是 | 查询语种音色信息请求参数。 |
@@ -419,6 +437,7 @@ listVoices(params: VoiceQuery, callback: AsyncCallback<Array&lt;VoiceInfo&gt;>):
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -461,7 +480,8 @@ struct Page {
 
 
 
-#### listVoices
+### listVoices
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -479,12 +499,14 @@ listVoices(params: VoiceQuery): Promise<Array&lt;VoiceInfo&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | VoiceQuery | 是 | 查询语种音色信息请求参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -494,6 +516,7 @@ listVoices(params: VoiceQuery): Promise<Array&lt;VoiceInfo&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -534,7 +557,8 @@ struct Page {
 
 
 
-#### setListener
+### setListener
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -551,6 +575,7 @@ setListener(listener: SpeakListener): void
 **起始版本：** 4.1.0(11)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -603,7 +628,8 @@ struct Page {
 
 
 
-#### speak
+### speak
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -621,6 +647,7 @@ speak(text: string, speakParams: SpeakParams): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | text | string | 是 | 待播报的文本。根据不同场景的实际需求，可主动设置单词发音方式、数字播报策略、指定汉字发音以及在播报时插入静音停顿。具体方式请参考设置播报策略。 文本长度不得超过10000字符数（不包括文本开头与结尾的空格）。否则会返回1002300001错误码 |
@@ -630,6 +657,7 @@ speak(text: string, speakParams: SpeakParams): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Core Speech Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-corespeech)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -676,7 +704,8 @@ struct Page {
 
 
 
-#### stop
+### stop
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -739,7 +768,8 @@ struct Page {
 
 
 
-#### isBusy
+### isBusy
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -756,6 +786,7 @@ isBusy(): boolean
 **起始版本：** 4.1.0(11)
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -810,7 +841,8 @@ struct Page {
 
 
 
-#### shutdown
+### shutdown
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -873,7 +905,8 @@ struct Page {
 
 
 
-#### SpeakListener
+## SpeakListener
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -889,7 +922,8 @@ struct Page {
 
 
 
-#### onStart
+### onStart
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -906,6 +940,7 @@ onStart(requestId: string, response: StartResponse): void
 **起始版本：** 4.1.0(11)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -959,7 +994,8 @@ struct Page {
 
 
 
-#### onStop
+### onStop
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -976,6 +1012,7 @@ onStop(requestId: string, response: StopResponse): void
 **起始版本：** 4.1.0(11)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1029,7 +1066,8 @@ struct Page {
 
 
 
-#### onComplete
+### onComplete
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1046,6 +1084,7 @@ onComplete(requestId: string, response: CompleteResponse): void
 **起始版本：** 4.1.0(11)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1103,7 +1142,8 @@ struct Page {
 
 
 
-#### onData
+### onData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1124,6 +1164,7 @@ onData?: OnDataCallback
 **起始版本：** 4.1.0(11)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1176,7 +1217,8 @@ struct Page {
 
 
 
-#### onError
+### onError
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1193,6 +1235,7 @@ onError(requestId: string, errorCode: number, errorMessage: string): void
 **起始版本：** 4.1.0(11)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1247,7 +1290,8 @@ struct Page {
 
 
 
-#### OnDataCallback
+## OnDataCallback
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1265,6 +1309,7 @@ type OnDataCallback = (requestId: string, audio: ArrayBuffer, response: Synthesi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | requestId | string | 是 | 请求ID。唯一标识一条请求。 支持英文字符，数字和中文，长度不限制。 |
@@ -1274,7 +1319,8 @@ type OnDataCallback = (requestId: string, audio: ArrayBuffer, response: Synthesi
 
 
 
-#### CreateEngineParams
+## CreateEngineParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1287,6 +1333,7 @@ type OnDataCallback = (requestId: string, audio: ArrayBuffer, response: Synthesi
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1322,7 +1369,8 @@ struct Page {
 
 
 
-#### VoiceQuery
+## VoiceQuery
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1335,6 +1383,7 @@ struct Page {
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1368,7 +1417,8 @@ struct Page {
 
 
 
-#### VoiceDownload
+## VoiceDownload
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1381,6 +1431,7 @@ struct Page {
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.1.1(19)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1406,7 +1457,8 @@ let voicesDownload: textToSpeech.VoiceDownload = {
 
 
 
-#### DownloadResponse
+## DownloadResponse
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1422,6 +1474,7 @@ let voicesDownload: textToSpeech.VoiceDownload = {
 
 **参数：**
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | requestId | string | 否 | 否 | 请求ID。唯一标识一条请求。 支持英文字符，数字和中文，长度不限制。 |
@@ -1429,7 +1482,8 @@ let voicesDownload: textToSpeech.VoiceDownload = {
 
 
 
-#### on('start')
+### on('start')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1446,6 +1500,7 @@ on(type: 'start', callback: Callback&lt;string&gt;): void
 **起始版本：** 5.1.1(19)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1470,7 +1525,8 @@ downloadResponse.off('start', startCallback);
 
 
 
-#### on('progress')
+### on('progress')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1487,6 +1543,7 @@ on(type: 'progress', callback: Callback&lt;string&gt;): void
 **起始版本：** 5.1.1(19)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1511,7 +1568,8 @@ downloadResponse.off('progress', progressCallback);
 
 
 
-#### on('complete')
+### on('complete')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1528,6 +1586,7 @@ on(type: 'complete', callback: Callback&lt;VoiceInfo&gt;): void
 **起始版本：** 5.1.1(19)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1553,7 +1612,8 @@ downloadResponse.off('complete', completeCallback);
 
 
 
-#### on('cancel')
+### on('cancel')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1570,6 +1630,7 @@ on(type: 'cancel', callback: Callback&lt;string&gt;): void
 **起始版本：** 5.1.1(19)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1598,7 +1659,8 @@ downloadResponse.off('cancel', cancelCallback);
 
 
 
-#### on('error')
+### on('error')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1615,6 +1677,7 @@ on(type: 'error', callback: ErrorCallback&lt;BusinessError&gt;): void
 **起始版本：** 5.1.1(19)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1640,7 +1703,8 @@ downloadResponse.off('error', errorCallback);
 
 
 
-#### off('start')
+### off('start')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1657,6 +1721,7 @@ off(type: 'start', callback?: Callback&lt;string&gt;): void
 **起始版本：** 5.1.1(19)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1681,7 +1746,8 @@ downloadResponse.off('start', startCallback);
 
 
 
-#### off('progress')
+### off('progress')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1698,6 +1764,7 @@ off(type: 'progress', callback?: Callback&lt;string&gt;): void
 **起始版本：** 5.1.1(19)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1722,7 +1789,8 @@ downloadResponse.off('progress', progressCallback);
 
 
 
-#### off('complete')
+### off('complete')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1739,6 +1807,7 @@ off(type: 'complete', callback?: Callback&lt;VoiceInfo&gt;): void
 **起始版本：** 5.1.1(19)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1764,7 +1833,8 @@ downloadResponse.off('complete', completeCallback);
 
 
 
-#### off('cancel')
+### off('cancel')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1781,6 +1851,7 @@ off(type: 'cancel', callback?: Callback&lt;string&gt;): void
 **起始版本：** 5.1.1(19)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1805,7 +1876,8 @@ downloadResponse.off('cancel', cancelCallback);
 
 
 
-#### off('error')
+### off('error')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1822,6 +1894,7 @@ off(type: 'error', callback?: ErrorCallback&lt;BusinessError&gt;): void
 **起始版本：** 5.1.1(19)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1847,7 +1920,8 @@ downloadResponse.off('error', errorCallback);
 
 
 
-#### SpeakParams
+## SpeakParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1860,6 +1934,7 @@ downloadResponse.off('error', errorCallback);
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1900,7 +1975,8 @@ struct Page {
 
 
 
-#### VoiceInfo
+## VoiceInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1914,6 +1990,7 @@ struct Page {
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | language | string | 否 | 否 | 支持的语种信息。当前支持中文、英文。 中文推荐使用“zh-CN”格式，兼容“zh_CN”格式。 英文推荐使用“en-US”格式，兼容“en_US”格式。 |
@@ -1926,7 +2003,8 @@ struct Page {
 
 
 
-#### StartResponse
+## StartResponse
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1940,6 +2018,7 @@ struct Page {
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | audioType | string | 否 | 否 | 音频类型，当前仅支持“pcm”（PCM 即脉冲编码调制（Pulse Code Modulation））。 |
@@ -1951,7 +2030,8 @@ struct Page {
 
 
 
-#### StopResponse
+## StopResponse
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1965,6 +2045,7 @@ struct Page {
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | number | 否 | 否 | 代表结束的类型。 0：同时结束合成和播报。 1：只结束播报。 |
@@ -1973,7 +2054,8 @@ struct Page {
 
 
 
-#### CompleteResponse
+## CompleteResponse
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1987,6 +2069,7 @@ struct Page {
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | number | 否 | 否 | 代表合成或播报结束。 0：合成结束。 1：播报结束。 |
@@ -1995,7 +2078,8 @@ struct Page {
 
 
 
-#### SynthesisResponse
+## SynthesisResponse
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2008,6 +2092,7 @@ struct Page {
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

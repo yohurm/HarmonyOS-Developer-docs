@@ -1,6 +1,6 @@
 # fileManagerService
 
-更新时间：2026-06-12 06:54:11
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/filemanagerservice-arkts-filemanagerservice
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -10,7 +10,8 @@ fileManagerService模块提供删除文件到回收站、获取文件图标及�
 **起始版本：** 5.0.5(17)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -20,7 +21,8 @@ import { fileManagerService } from '@kit.FileManagerServiceKit';
  
   
 
-#### fileManagerService.deleteToTrash
+## fileManagerService.deleteToTrash
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -44,6 +46,7 @@ deleteToTrash(uri: string): Promise&lt;string&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uri | string | 是 | 待删除文件的uri |
@@ -51,6 +54,7 @@ deleteToTrash(uri: string): Promise&lt;string&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回文件删除到回收站后的uri。 |
@@ -60,6 +64,7 @@ deleteToTrash(uri: string): Promise&lt;string&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/filemanagerservice-arkts-errorcode)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -92,7 +97,8 @@ async function deleteFile() {
  
   
 
-#### fileManagerService.getFileIconSync
+## fileManagerService.getFileIconSync
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -110,6 +116,7 @@ getFileIconSync(fileType: string): string | Resource
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fileType | string | 是 | 文件类型对应的UTD-ID，详见图标格式说明 |
@@ -117,6 +124,7 @@ getFileIconSync(fileType: string): string | Resource
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string \| Resource | 文件图标的Base64编码或资源对象 |
@@ -126,6 +134,7 @@ getFileIconSync(fileType: string): string | Resource
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/filemanagerservice-arkts-errorcode)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -178,7 +187,8 @@ struct Index {
  
   
 
-#### fileManagerService.getFileIcon
+## fileManagerService.getFileIcon
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -196,6 +206,7 @@ getFileIcon(fileType: string): Promise<string | Resource>
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fileType | string | 是 | 文件类型对应的UTD-ID，详见图标格式说明 |
@@ -203,6 +214,7 @@ getFileIcon(fileType: string): Promise<string | Resource>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<string \| Resource> | Promise对象，返回文件图标的Base64编码或资源对象。 |
@@ -212,6 +224,7 @@ getFileIcon(fileType: string): Promise<string | Resource>
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/filemanagerservice-arkts-errorcode)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -267,7 +280,8 @@ struct Index {
  
   
 
-#### fileManagerService.parseShortcut
+## fileManagerService.parseShortcut
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -283,6 +297,7 @@ parseShortcut(linkUri: string): Promise&lt;string&gt;
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | linkUri | string | 是 | 快捷方式文件的URI，调用方对该文件需要有读权限。具体使用方式参见用户文件URI介绍中的文档类URI的使用方式，快捷方式文件URI的后缀必须为“.hlink”。 |
@@ -290,6 +305,7 @@ parseShortcut(linkUri: string): Promise&lt;string&gt;
  
 **返回值**：
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回对应原文件的URI。 |
@@ -299,6 +315,7 @@ parseShortcut(linkUri: string): Promise&lt;string&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/filemanagerservice-arkts-errorcode)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1014000002 | No such file or directory. |

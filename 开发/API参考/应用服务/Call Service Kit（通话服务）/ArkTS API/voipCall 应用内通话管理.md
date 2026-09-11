@@ -1,6 +1,6 @@
 # voipCall (应用内通话管理)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/call-voipcall
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
@@ -12,7 +12,8 @@
 **起始版本：** 4.1.0(11)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -22,7 +23,8 @@ import { voipCall } from '@kit.CallServiceKit';
  
   
 
-#### VoipCallType
+## VoipCallType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -34,6 +36,7 @@ import { voipCall } from '@kit.CallServiceKit';
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | VOIP_CALL_VOICE | 0 | 语音通话。 |
@@ -42,7 +45,8 @@ import { voipCall } from '@kit.CallServiceKit';
  
   
 
-#### VoipCallState
+## VoipCallState
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -54,6 +58,7 @@ import { voipCall } from '@kit.CallServiceKit';
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | VOIP_CALL_STATE_IDLE | 0 | 呼叫状态空闲。 |
@@ -68,7 +73,8 @@ import { voipCall } from '@kit.CallServiceKit';
  
   
 
-#### VoipCallUiEvent
+## VoipCallUiEvent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -80,6 +86,7 @@ import { voipCall } from '@kit.CallServiceKit';
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | VOIP_CALL_EVENT_NONE | 0 | 无任何事件。 |
@@ -96,7 +103,8 @@ import { voipCall } from '@kit.CallServiceKit';
  
   
 
-#### ErrorReason
+## ErrorReason
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -108,6 +116,7 @@ import { voipCall } from '@kit.CallServiceKit';
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ERROR_NONE | 0 | 无错误出现。 |
@@ -119,7 +128,8 @@ import { voipCall } from '@kit.CallServiceKit';
  
   
 
-#### VoipCallUiEventInfo
+## VoipCallUiEventInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -131,6 +141,7 @@ import { voipCall } from '@kit.CallServiceKit';
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | callId | string | 否 | 否 | 应用内通话唯一ID。 |
@@ -140,7 +151,8 @@ import { voipCall } from '@kit.CallServiceKit';
  
   
 
-#### VoipCallFailureCause
+## VoipCallFailureCause
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -152,6 +164,7 @@ import { voipCall } from '@kit.CallServiceKit';
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | OTHER | 0 | 其他失败原因。 |
@@ -161,7 +174,8 @@ import { voipCall } from '@kit.CallServiceKit';
  
   
 
-#### VoipCallAttribute
+## VoipCallAttribute
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -173,6 +187,7 @@ import { voipCall } from '@kit.CallServiceKit';
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | callId | string | 否 | 否 | 应用内通话唯一ID。 |
@@ -190,7 +205,8 @@ import { voipCall } from '@kit.CallServiceKit';
  
   
 
-#### CallAudioEvent
+## CallAudioEvent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -202,6 +218,7 @@ import { voipCall } from '@kit.CallServiceKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | AUDIO_EVENT_MUTED | 0 | 静音。 |
@@ -213,7 +230,8 @@ import { voipCall } from '@kit.CallServiceKit';
  
   
 
-#### voipCall.on('voipCallUiEvent')
+## voipCall.on('voipCallUiEvent')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -229,6 +247,7 @@ on(type: 'voipCallUiEvent', callback: Callback&lt;VoipCallUiEventInfo&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 通话事件类型，参数固定为“voipCallUiEvent”。 |
@@ -239,6 +258,7 @@ on(type: 'voipCallUiEvent', callback: Callback&lt;VoipCallUiEventInfo&gt;): void
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/call-error-code)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. The type of parameter should match or the number of parameters must match. |
@@ -261,7 +281,8 @@ voipCall.on('voipCallUiEvent', (data: voipCall.VoipCallUiEventInfo) => {
  
   
 
-#### voipCall.off('voipCallUiEvent')
+## voipCall.off('voipCallUiEvent')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -277,6 +298,7 @@ off(type: 'voipCallUiEvent', callback?: Callback&lt;VoipCallUiEventInfo&gt;): vo
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 通话事件类型，参数固定为“voipCallUiEvent”。 |
@@ -287,6 +309,7 @@ off(type: 'voipCallUiEvent', callback?: Callback&lt;VoipCallUiEventInfo&gt;): vo
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/call-error-code)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. The type of parameter should match or the number of parameters must match. |
@@ -309,7 +332,8 @@ voipCall.off('voipCallUiEvent', (data: voipCall.VoipCallUiEventInfo) => {
  
   
 
-#### voipCall.reportIncomingCall
+## voipCall.reportIncomingCall
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -325,6 +349,7 @@ reportIncomingCall(voipCallAttribute: VoipCallAttribute): Promise&lt;ErrorReason
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | voipCallAttribute | VoipCallAttribute | 是 | 应用内通话详细信息如用户头像、用户昵称、通话唯一标识等，详情请参见VoipCallAttribute。（应用上报去电时，VoipCallAttribute中的voipCallState属性必须为VOIP_CALL_STATE_DIALING。） |
@@ -332,6 +357,7 @@ reportIncomingCall(voipCallAttribute: VoipCallAttribute): Promise&lt;ErrorReason
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;ErrorReason&gt; | Promise对象，返回错误码类型。 |
@@ -341,6 +367,7 @@ reportIncomingCall(voipCallAttribute: VoipCallAttribute): Promise&lt;ErrorReason
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/call-error-code)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. The type of parameter should match or the number of parameters must match. |
@@ -420,7 +447,8 @@ export default class VoipAbility extends UIAbility {
  
   
 
-#### voipCall.reportOutgoingCall
+## voipCall.reportOutgoingCall
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -436,6 +464,7 @@ reportOutgoingCall(voipCallAttribute: VoipCallAttribute): Promise&lt;ErrorReason
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | voipCallAttribute | VoipCallAttribute | 是 | 应用内通话详细信息如用户头像、用户昵称、通话唯一标识等，详情请参见VoipCallAttribute。 |
@@ -443,6 +472,7 @@ reportOutgoingCall(voipCallAttribute: VoipCallAttribute): Promise&lt;ErrorReason
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;ErrorReason&gt; | Promise对象，返回错误码类型。 |
@@ -452,6 +482,7 @@ reportOutgoingCall(voipCallAttribute: VoipCallAttribute): Promise&lt;ErrorReason
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/call-error-code)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. The type of parameter should match or the number of parameters must match. |
@@ -530,7 +561,8 @@ export default class VoipExtAbility extends UIAbility {
  
   
 
-#### voipCall.reportCallAudioEventChange
+## voipCall.reportCallAudioEventChange
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -546,6 +578,7 @@ reportCallAudioEventChange(callId: string, callAudioEvent: CallAudioEvent): Prom
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callId | string | 是 | 应用内通话唯一ID。 |
@@ -554,6 +587,7 @@ reportCallAudioEventChange(callId: string, callAudioEvent: CallAudioEvent): Prom
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -563,6 +597,7 @@ reportCallAudioEventChange(callId: string, callAudioEvent: CallAudioEvent): Prom
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/call-error-code)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. The type of parameter should match or the number of parameters must match. |
@@ -593,12 +628,11 @@ export default class VoipExtAbility extends UIAbility {
         let content: Content = JSON.parse(data.data);
         let callId: string = content.callId;
 
-        let callAudioEvent : voipCall.CallAudioEvent = voipCall.CallAudioEvent.AUDIO_EVENT_MUTED;
+        let callAudioEvent: voipCall.CallAudioEvent = voipCall.CallAudioEvent.AUDIO_EVENT_MUTED;
 
         // 上报通话中静音、扬声器事件
-        voipCall.reportCallAudioEventChange(callId, callAudioEvent).then(() => {
-          hilog.info(0x0000, 'testTag', `Succeeded in reporting call audio event change.`);
-        });
+        await voipCall.reportCallAudioEventChange(callId, callAudioEvent);
+        hilog.info(0x0000, 'testTag', `Succeeded in reporting call audio event change.`);
       });
     } catch (err) {
       let e: BusinessError = err as BusinessError;
@@ -612,7 +646,8 @@ export default class VoipExtAbility extends UIAbility {
  
   
 
-#### voipCall.reportCallStateChange
+## voipCall.reportCallStateChange
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -630,6 +665,7 @@ reportCallStateChange(callId: string, callState: VoipCallState): Promise&lt;void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callId | string | 是 | 呼叫ID。 |
@@ -638,6 +674,7 @@ reportCallStateChange(callId: string, callState: VoipCallState): Promise&lt;void
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -647,6 +684,7 @@ reportCallStateChange(callId: string, callState: VoipCallState): Promise&lt;void
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/call-error-code)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. The type of parameter should match or the number of parameters must match. |
@@ -662,14 +700,14 @@ reportCallStateChange(callId: string, callState: VoipCallState): Promise&lt;void
 import { voipCall } from '@kit.CallServiceKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 
-voipCall.reportCallStateChange("callId123", voipCall.VoipCallState.VOIP_CALL_STATE_ACTIVE).then(() => {
-  hilog.info(0x0000, 'testTag', `Succeeded in reporting call state change.`);
-});
+await voipCall.reportCallStateChange("callId123", voipCall.VoipCallState.VOIP_CALL_STATE_ACTIVE);
+hilog.info(0x0000, 'testTag', `Succeeded in reporting call state change.`);
 ```
  
   
 
-#### voipCall.reportCallStateChange
+## voipCall.reportCallStateChange
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -687,6 +725,7 @@ reportCallStateChange(callId: string, callState: VoipCallState, callType: VoipCa
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callId | string | 是 | 呼叫ID。 |
@@ -696,6 +735,7 @@ reportCallStateChange(callId: string, callState: VoipCallState, callType: VoipCa
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -705,6 +745,7 @@ reportCallStateChange(callId: string, callState: VoipCallState, callType: VoipCa
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/call-error-code)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. The type of parameter should match or the number of parameters must match. |
@@ -720,14 +761,14 @@ reportCallStateChange(callId: string, callState: VoipCallState, callType: VoipCa
 import { voipCall } from '@kit.CallServiceKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 
-voipCall.reportCallStateChange("callId123", voipCall.VoipCallState.VOIP_CALL_STATE_ACTIVE, voipCall.VoipCallType.VOIP_CALL_VOICE).then(() => {
-  hilog.info(0x0000, 'testTag', `Succeeded in reporting call state change.`);
-});
+await voipCall.reportCallStateChange("callId123", voipCall.VoipCallState.VOIP_CALL_STATE_ACTIVE, voipCall.VoipCallType.VOIP_CALL_VOICE);
+hilog.info(0x0000, 'testTag', `Succeeded in reporting call state change.`);
 ```
  
   
 
-#### voipCall.reportIncomingCallError
+## voipCall.reportIncomingCallError
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -743,6 +784,7 @@ reportIncomingCallError(callId: string, voipCallFailureCause: VoipCallFailureCau
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callId | string | 是 | 应用内通话唯一ID。 |
@@ -751,6 +793,7 @@ reportIncomingCallError(callId: string, voipCallFailureCause: VoipCallFailureCau
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -760,6 +803,7 @@ reportIncomingCallError(callId: string, voipCallFailureCause: VoipCallFailureCau
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/call-error-code)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. The type of parameter should match or the number of parameters must match. |
@@ -775,14 +819,14 @@ reportIncomingCallError(callId: string, voipCallFailureCause: VoipCallFailureCau
 import { voipCall } from '@kit.CallServiceKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 
-voipCall.reportIncomingCallError("callId123", voipCall.VoipCallFailureCause.OTHER).then(() => {
-  hilog.info(0x0000, 'testTag', `Succeeded in reporting incoming call error.`);
-});
+await voipCall.reportIncomingCallError("callId123", voipCall.VoipCallFailureCause.OTHER);
+hilog.info(0x0000, 'testTag', `Succeeded in reporting incoming call error.`);
 ```
  
   
 
-#### voipCall.reportCallAttributeChange
+## voipCall.reportCallAttributeChange
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -798,6 +842,7 @@ reportCallAttributeChange(voipCallAttribute: VoipCallAttribute): Promise&lt;Erro
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | voipCallAttribute | VoipCallAttribute | 是 | 应用内通话详细信息，包含需要更新的通话属性，详情请参见VoipCallAttribute。 |
@@ -805,6 +850,7 @@ reportCallAttributeChange(voipCallAttribute: VoipCallAttribute): Promise&lt;Erro
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;ErrorReason&gt; | Promise对象，返回错误码。 |
@@ -814,6 +860,7 @@ reportCallAttributeChange(voipCallAttribute: VoipCallAttribute): Promise&lt;Erro
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/call-error-code)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1007200001 | Invalid parameter value. |
@@ -838,11 +885,10 @@ let updatedAttribute: voipCall.VoipCallAttribute = {
   voipCallState: voipCall.VoipCallState.VOIP_CALL_STATE_ACTIVE
 };
 
-voipCall.reportCallAttributeChange(updatedAttribute).then(errorReason => {
-  if (errorReason == voipCall.ErrorReason.ERROR_NONE) {
+let error = await voipCall.reportCallAttributeChange(updatedAttribute);
+if (error == voipCall.ErrorReason.ERROR_NONE) {
     hilog.info(0x0000, 'testTag', `Succeeded in reporting call attribute change.`);
-  } else {
-    hilog.error(0x0000, 'testTag', 'Failed to report call attribute change: %{public}d', errorReason);
-  }
-});
+} else {
+    hilog.error(0x0000, 'testTag', 'Failed to report call attribute change: %{public}d', error);
+}
 ```

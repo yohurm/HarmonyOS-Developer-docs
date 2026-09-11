@@ -1,16 +1,16 @@
 # 使用JSVM-API接口进行任务队列相关开发
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-execute_tasks
 
-#### 简介
+## 简介
 
 在虚拟机内启动任务队列，检查队列中是否有待处理的微任务。任务队列可由外部事件循环执行。
  
   
 
-#### 基本概念
+## 基本概念
 
 - **任务队列**：用于管理异步任务的调度和执行，确保任务按顺序处理。
 - **微任务**：微任务是一种任务调度机制，主要用于处理那些需要尽快执行的较小任务，它们通常具有较高的优先级。
@@ -18,8 +18,9 @@
  
   
 
-#### 接口说明
+## 接口说明
  
+
 | 接口 | 功能说明 |
 | --- | --- |
 | OH_JSVM_PumpMessageLoop | 启动任务队列的运行 |
@@ -29,7 +30,7 @@
  
   
 
-#### 使用示例
+## 使用示例
 
 JSVM-API接口开发流程参考[使用JSVM-API实现JS与C/C++语言交互开发流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-process)，本文仅展示接口对应的C++相关代码。
  
@@ -39,7 +40,7 @@ JSVM-API接口开发流程参考[使用JSVM-API实现JS与C/C++语言交互开�
  
   
 
-#### OH_JSVM_PumpMessageLoop & OH_JSVM_PerformMicrotaskCheckpoint
+### OH_JSVM_PumpMessageLoop & OH_JSVM_PerformMicrotaskCheckpoint
 
 启动任务队列，执行任务。
  
@@ -162,7 +163,7 @@ JSVM API TEST: Called Finally
  
   
 
-#### OH_JSVM_SetMicrotaskPolicy
+### OH_JSVM_SetMicrotaskPolicy
 
 修改微任务执行策略，通过该接口，用户可以将策略设置为 JSVM_MicrotaskPolicy::JSVM_MICROTASK_EXPLICIT 或 JSVM_MicrotaskPolicy::JSVM_MICROTASK_AUTO。默认模式下，微任务的执行策略为 JSVM_MicrotaskPolicy::JSVM_MICROTASK_AUTO。
  

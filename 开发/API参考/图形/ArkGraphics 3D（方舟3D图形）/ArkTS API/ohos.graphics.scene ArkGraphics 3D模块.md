@@ -1,9 +1,9 @@
 # @ohos.graphics.scene (ArkGraphics 3D模块)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-scene
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 @ohos.graphics.scene将3D开发相关模块的API组织在一起，方便开发者使用。
  
@@ -12,9 +12,10 @@
 
   
 
-#### Scene
+## Scene
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [Scene](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-scene)：ArkGraphics 3D基础模块，提供[SceneResourceParameters](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-scene#sceneresourceparameters)、[SceneNodeParameters](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-scene#scenenodeparameters)等通用数据类型。同时提供glTF模型加载，场景元素、资源创建等基础方法。
  
@@ -22,9 +23,10 @@
  
   
 
-#### SceneNode
+## SceneNode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [SceneNode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-scene-nodes)：3D场景是以树状结构进行组织的，通过操作节点属性以及节点树结构可以改变3D场景。本模块提供ArkGraphics 3D中场景资源节点的类型及操作方法。
  
@@ -32,9 +34,10 @@
  
   
 
-#### SceneType
+## SceneType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [SceneType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-scene-types)：本模块提供ArkGraphics 3D中的数据类型，包括向量、四元数等。
  
@@ -42,9 +45,10 @@
  
   
 
-#### SceneResources
+## SceneResources
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [SceneResources](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-scene-resources)：本模块提供ArkGraphics 3D中常用的基本资源类型，包括材质、图片、着色器等。
  
@@ -52,9 +56,10 @@
  
   
 
-#### ScenePostProcessSettings
+## ScenePostProcessSettings
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [ScenePostProcessSettings](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-scene-post-process-settings)：本模块提供ArkGraphics 3D中的色调映射等图像后处理方法。
  

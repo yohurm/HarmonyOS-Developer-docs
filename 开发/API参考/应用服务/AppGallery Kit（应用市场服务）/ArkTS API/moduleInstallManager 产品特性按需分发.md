@@ -1,6 +1,6 @@
 # moduleInstallManager (产品特性按需分发)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/store-moduleinstallmanager
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -14,7 +14,8 @@
 **起始版本：** 4.1.0(11)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -24,7 +25,8 @@ import { moduleInstallManager } from '@kit.AppGalleryKit';
  
   
 
-#### InstalledModule
+## InstalledModule
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -36,6 +38,7 @@ import { moduleInstallManager } from '@kit.AppGalleryKit';
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | moduleName | string | 是 | 否 | 模块名称。 |
@@ -45,7 +48,8 @@ import { moduleInstallManager } from '@kit.AppGalleryKit';
  
   
 
-#### ModuleInstallSessionState
+## ModuleInstallSessionState
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -57,6 +61,7 @@ import { moduleInstallManager } from '@kit.AppGalleryKit';
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | code | RequestErrorCode | 是 | 否 | 接口调用结果码。 |
@@ -70,7 +75,8 @@ import { moduleInstallManager } from '@kit.AppGalleryKit';
  
   
 
-#### InstallStatus
+## InstallStatus
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -82,6 +88,7 @@ import { moduleInstallManager } from '@kit.AppGalleryKit';
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | INSTALLED | 0 | 模块已安装。 |
@@ -90,7 +97,8 @@ import { moduleInstallManager } from '@kit.AppGalleryKit';
  
   
 
-#### ReturnCode
+## ReturnCode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -102,6 +110,7 @@ import { moduleInstallManager } from '@kit.AppGalleryKit';
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SUCCESS | 0 | 成功。 |
@@ -110,7 +119,8 @@ import { moduleInstallManager } from '@kit.AppGalleryKit';
  
   
 
-#### RequestErrorCode
+## RequestErrorCode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -122,6 +132,7 @@ import { moduleInstallManager } from '@kit.AppGalleryKit';
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | MODULE_DEBUG_FILES_SIZE_OVER_LIMIT | -10 | 单次请求所有模块调试文件大小总和超过8G。 起始版本： 5.0.2(14) |
@@ -140,7 +151,8 @@ import { moduleInstallManager } from '@kit.AppGalleryKit';
  
   
 
-#### TaskStatus
+## TaskStatus
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -152,6 +164,7 @@ import { moduleInstallManager } from '@kit.AppGalleryKit';
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CREATE_TASK_FAILED | -4 | 创建下载任务失败。 |
@@ -173,7 +186,8 @@ import { moduleInstallManager } from '@kit.AppGalleryKit';
  
   
 
-#### moduleInstallManager.getInstalledModule
+## moduleInstallManager.getInstalledModule
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -189,6 +203,7 @@ getInstalledModule(moduleName: string): InstalledModule
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | moduleName | string | 是 | 需要获取的模块名。 |
@@ -196,6 +211,7 @@ getInstalledModule(moduleName: string): InstalledModule
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | InstalledModule | 当前模块的安装信息。 |
@@ -205,6 +221,7 @@ getInstalledModule(moduleName: string): InstalledModule
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-appgallery)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -246,7 +263,8 @@ struct LoadInstallService {
  
   
 
-#### InstallProvider
+## InstallProvider
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -260,7 +278,8 @@ struct LoadInstallService {
  
   
 
-#### InstallRequest
+## InstallRequest
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -274,7 +293,8 @@ struct LoadInstallService {
  
   
 
-#### ModuleInstallProvider
+## ModuleInstallProvider
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -288,7 +308,8 @@ struct LoadInstallService {
  
   
 
-#### ModuleInstallProvider.createModuleInstallRequest
+### ModuleInstallProvider.createModuleInstallRequest
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -304,6 +325,7 @@ createModuleInstallRequest(context: common.UIAbilityContext | common.ExtensionCo
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext \| common.ExtensionContext | 是 | 调用方应用的上下文。 |
@@ -311,6 +333,7 @@ createModuleInstallRequest(context: common.UIAbilityContext | common.ExtensionCo
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ModuleInstallRequest | 按需下载请求对象。 |
@@ -320,6 +343,7 @@ createModuleInstallRequest(context: common.UIAbilityContext | common.ExtensionCo
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal#section401-参数检查失败)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -365,7 +389,8 @@ struct CreateModuleInstallRequest {
  
   
 
-#### ModuleInstallRequest
+## ModuleInstallRequest
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -379,7 +404,8 @@ struct CreateModuleInstallRequest {
  
   
 
-#### ModuleInstallRequest.addModule
+### ModuleInstallRequest.addModule
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -395,6 +421,7 @@ addModule(moduleName: string): ReturnCode
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | moduleName | string | 是 | 模块名。 |
@@ -402,6 +429,7 @@ addModule(moduleName: string): ReturnCode
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ReturnCode | 接口调用结果码。 |
@@ -411,6 +439,7 @@ addModule(moduleName: string): ReturnCode
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal#section401-参数检查失败)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -459,7 +488,8 @@ struct AddModule {
  
   
 
-#### moduleInstallManager.fetchModules
+## moduleInstallManager.fetchModules
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -475,6 +505,7 @@ fetchModules(moduleInstallRequest: ModuleInstallRequest): Promise&lt;ModuleInsta
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | moduleInstallRequest | ModuleInstallRequest | 是 | 按需加载请求对象实例。 |
@@ -482,6 +513,7 @@ fetchModules(moduleInstallRequest: ModuleInstallRequest): Promise&lt;ModuleInsta
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;ModuleInstallSessionState&gt; | Promise对象，返回请求、监听/注销监听调用结果。 |
@@ -491,6 +523,7 @@ fetchModules(moduleInstallRequest: ModuleInstallRequest): Promise&lt;ModuleInsta
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-appgallery)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -551,7 +584,8 @@ struct FetchModules {
  
   
 
-#### moduleInstallManager.cancelTask
+## moduleInstallManager.cancelTask
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -567,6 +601,7 @@ cancelTask(taskId: string): ReturnCode
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | taskId | string | 是 | 下载任务的taskId。 |
@@ -574,6 +609,7 @@ cancelTask(taskId: string): ReturnCode
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ReturnCode | 接口调用结果码。 |
@@ -583,6 +619,7 @@ cancelTask(taskId: string): ReturnCode
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-appgallery)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -610,7 +647,8 @@ try {
  
   
 
-#### moduleInstallManager.showCellularDataConfirmation
+## moduleInstallManager.showCellularDataConfirmation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -626,6 +664,7 @@ showCellularDataConfirmation(context: common.UIAbilityContext | common.Extension
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext \| common.ExtensionContext | 是 | Context上下文，目前只支持UIAbilityContext和ExtensionContext，其中UIAbilityContext用于校验当前应用是否在前台。 |
@@ -634,6 +673,7 @@ showCellularDataConfirmation(context: common.UIAbilityContext | common.Extension
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ReturnCode | 接口调用结果码。 |
@@ -643,6 +683,7 @@ showCellularDataConfirmation(context: common.UIAbilityContext | common.Extension
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-appgallery)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -691,7 +732,8 @@ struct ShowCellularDataConfirmation {
  
   
 
-#### moduleInstallManager.on('moduleInstallStatus')
+## moduleInstallManager.on('moduleInstallStatus')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -707,6 +749,7 @@ on(type: 'moduleInstallStatus', callback: Callback&lt;ModuleInstallSessionState&
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定值"moduleInstallStatus"。 |
@@ -718,6 +761,7 @@ on(type: 'moduleInstallStatus', callback: Callback&lt;ModuleInstallSessionState&
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-appgallery)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -744,7 +788,8 @@ try {
  
   
 
-#### moduleInstallManager.off('moduleInstallStatus')
+## moduleInstallManager.off('moduleInstallStatus')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -760,6 +805,7 @@ off(type: 'moduleInstallStatus', callback?: Callback&lt;ModuleInstallSessionStat
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定值"moduleInstallStatus"。 |
@@ -770,6 +816,7 @@ off(type: 'moduleInstallStatus', callback?: Callback&lt;ModuleInstallSessionStat
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-appgallery)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -795,7 +842,8 @@ try {
  
   
 
-#### moduleInstallManager.pauseTask
+## moduleInstallManager.pauseTask
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -811,6 +859,7 @@ pauseTask(taskId: string): ReturnCode
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | taskId | string | 是 | 下载任务的taskId。 |
@@ -818,6 +867,7 @@ pauseTask(taskId: string): ReturnCode
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ReturnCode | 接口调用结果码。 |
@@ -827,6 +877,7 @@ pauseTask(taskId: string): ReturnCode
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-appgallery)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1006500012 | Internal communication error. |

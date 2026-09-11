@@ -1,9 +1,9 @@
 # Interface (AutoExposure)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-autoexposure
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 AutoExposure继承自[AutoExposureQuery](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-autoexposurequery)。
  
@@ -14,9 +14,10 @@ AutoExposure继承自[AutoExposureQuery](https://developer.huawei.com/consumer/c
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { camera } from '@kit.CameraKit';
@@ -24,9 +25,10 @@ import { camera } from '@kit.CameraKit';
  
   
 
-#### getExposureMode11+
+## getExposureMode11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getExposureMode(): ExposureMode
  
@@ -42,6 +44,7 @@ getExposureMode(): ExposureMode
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ExposureMode | 获取当前曝光模式。接口调用失败会抛出相应错误码并返回undefined，错误码类型CameraErrorCode。 |
@@ -51,6 +54,7 @@ getExposureMode(): ExposureMode
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400103 | Session not config. |
@@ -76,9 +80,10 @@ function getExposureMode(photoSession: camera.PhotoSession): camera.ExposureMode
  
   
 
-#### setExposureMode11+
+## setExposureMode11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setExposureMode(aeMode: ExposureMode): void
  
@@ -90,6 +95,7 @@ setExposureMode(aeMode: ExposureMode): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | aeMode | ExposureMode | 是 | 曝光模式。传参为null或者undefined，作为0处理，曝光锁定。 |
@@ -99,6 +105,7 @@ setExposureMode(aeMode: ExposureMode): void
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400102 | Operation not allowed. 适用版本：19+ |
@@ -123,9 +130,10 @@ function setExposureMode(photoSession: camera.PhotoSession): void {
  
   
 
-#### getMeteringPoint11+
+## getMeteringPoint11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMeteringPoint(): Point
  
@@ -137,6 +145,7 @@ getMeteringPoint(): Point
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Point | 获取当前曝光点。接口调用失败会返回相应错误码，错误码类型CameraErrorCode。 |
@@ -146,6 +155,7 @@ getMeteringPoint(): Point
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400103 | Session not config. |
@@ -171,9 +181,10 @@ function getMeteringPoint(photoSession: camera.PhotoSession): camera.Point | und
  
   
 
-#### setMeteringPoint11+
+## setMeteringPoint11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMeteringPoint(point: Point): void
  
@@ -187,6 +198,7 @@ setMeteringPoint(point: Point): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | point | Point | 是 | 曝光点，x、y设置范围应在[0,1]之内，超过范围，如果小于0设置0，大于1设置1。 |
@@ -196,6 +208,7 @@ setMeteringPoint(point: Point): void
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400103 | Session not config. |
@@ -220,9 +233,10 @@ function setMeteringPoint(photoSession: camera.PhotoSession): void {
  
   
 
-#### setExposureBias11+
+## setExposureBias11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setExposureBias(exposureBias: number): void
  
@@ -236,6 +250,7 @@ setExposureBias(exposureBias: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | exposureBias | number | 是 | 曝光补偿，getExposureBiasRange查询支持的范围，如果设置超过支持范围的值，自动匹配到就近临界点。 曝光补偿存在步长，由于设备差异，步长也存在差异。例如步长为0.5，则设置1.2时，获取到实际生效曝光补偿为1.0。 接口调用失败会返回相应错误码，错误码类型CameraErrorCode。 |
@@ -245,6 +260,7 @@ setExposureBias(exposureBias: number): void
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400102 | Operation not allowed. 适用版本：12+ |
@@ -272,9 +288,10 @@ function setExposureBias(photoSession: camera.PhotoSession, biasRangeArray: Arra
  
   
 
-#### getExposureValue11+
+## getExposureValue11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getExposureValue(): number
  
@@ -286,6 +303,7 @@ getExposureValue(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 获取曝光值。曝光补偿存在步长，如步长为0.5。则设置1.2时，获取到实际生效曝光补偿为1.0。 接口调用失败会返回相应错误码，错误码类型CameraErrorCode。 |
@@ -295,6 +313,7 @@ getExposureValue(): number
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400103 | Session not config. |
@@ -321,9 +340,10 @@ function getExposureValue(photoSession: camera.PhotoSession): number {
  
   
 
-#### getExposureMeteringMode24+
+## getExposureMeteringMode24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getExposureMeteringMode(): ExposureMeteringMode
  
@@ -335,6 +355,7 @@ getExposureMeteringMode(): ExposureMeteringMode
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ExposureMeteringMode | 当前曝光测光模式。 |
@@ -344,6 +365,7 @@ getExposureMeteringMode(): ExposureMeteringMode
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400102 | Operation not allowed, the inputDevice or the session is abnormal. |
@@ -370,9 +392,10 @@ function getExposureMeteringMode(photoSession: camera.PhotoSession): camera.Expo
  
   
 
-#### setExposureMeteringMode24+
+## setExposureMeteringMode24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setExposureMeteringMode(aeMeteringMode: ExposureMeteringMode): void
  
@@ -384,6 +407,7 @@ setExposureMeteringMode(aeMeteringMode: ExposureMeteringMode): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | aeMeteringMode | ExposureMeteringMode | 是 | 曝光测光模式。 |
@@ -393,6 +417,7 @@ setExposureMeteringMode(aeMeteringMode: ExposureMeteringMode): void
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400102 | Operation not allowed, the inputDevice or the session is abnormal. |
@@ -417,9 +442,10 @@ function setExposureMeteringMode(photoSession: camera.PhotoSession, aeMeteringMo
  
   
 
-#### onExposureStateChange
+## onExposureStateChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onExposureStateChange(callback: Callback&lt;ExposureState&gt;): void
  
@@ -435,6 +461,7 @@ onExposureStateChange(callback: Callback&lt;ExposureState&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;ExposureState&gt; | 是 | 回调函数，返回当前曝光状态。 |
@@ -456,9 +483,10 @@ function registerPhotoOutputCaptureStart(captureSession: camera.PhotoSession): v
  
   
 
-#### offExposureStateChange
+## offExposureStateChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offExposureStateChange(callback?: Callback&lt;ExposureState&gt;): void
  
@@ -474,6 +502,7 @@ offExposureStateChange(callback?: Callback&lt;ExposureState&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;ExposureState&gt; | 否 | 回调函数，如果指定参数则取消对应callback，callback对象如果为空或为匿名函数，则取消所有callback。 |

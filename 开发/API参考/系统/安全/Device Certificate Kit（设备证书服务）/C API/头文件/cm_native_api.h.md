@@ -1,13 +1,14 @@
 # cm_native_api.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-cm-native-api-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明用于获取特定类型证书详情的接口。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | int32_t OH_CertManager_GetUkeyCertificate(const OH_CM_Blob *keyUri, const OH_CM_UkeyInfo *ukeyInfo, OH_CM_CredentialDetailList *certificateList) | 获取USB证书凭据的详情信息列表。 |
@@ -44,15 +48,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_CertManager_GetUkeyCertificate()
+### OH_CertManager_GetUkeyCertificate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 int32_t OH_CertManager_GetUkeyCertificate(const OH_CM_Blob *keyUri, const OH_CM_UkeyInfo *ukeyInfo, OH_CM_CredentialDetailList *certificateList)
@@ -68,6 +74,7 @@ int32_t OH_CertManager_GetUkeyCertificate(const OH_CM_Blob *keyUri, const OH_CM_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_CM_Blob *keyUri | 存放USB证书凭据的唯一标识符（字符串格式）。 |
@@ -77,16 +84,18 @@ int32_t OH_CertManager_GetUkeyCertificate(const OH_CM_Blob *keyUri, const OH_CM_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| int32_t | OH_CM_ErrorCode： OH_CM_SUCCESS = 0 ：操作成功。 OH_CM_HAS_NO_PERMISSION = 201 ：权限校验失败。 OH_CM_CAPABILITY_NOT_SUPPORTED = 801 ：设备不支持。 OH_CM_PARAMETER_VALIDATION_FAILED = 17500011 ：入参校验失败。可能原因： 1.参数格式错误。 2.参数范围无效。 OH_CM_INNER_FAILURE = 17500001 ：内部错误。可能原因： 1.IPC通讯失败。 2.内存操作错误。 3.文件操作错误。 OH_CM_NOT_FOUND = 17500002 ：证书不存在。 OH_CM_ACCESS_UKEY_SERVICE_FAILED = 17500010 ：USB证书凭据访问失败。 |
+| int32_t | OH_CM_ErrorCode： OH_CM_SUCCESS = 0 ：操作成功。 OH_CM_HAS_NO_PERMISSION = 201 ：权限校验失败。 OH_CM_CAPABILITY_NOT_SUPPORTED = 801 ：设备不支持。 OH_CM_PARAMETER_VALIDATION_FAILED = 17500011 ：入参校验失败。可能原因： 1.参数格式错误。 2.参数范围无效。 OH_CM_INNER_FAILURE = 17500001 ：内部错误。可能原因： 1.IPC通信失败。 2.内存操作错误。 3.文件操作错误。 OH_CM_NOT_FOUND = 17500002 ：证书不存在。 OH_CM_ACCESS_UKEY_SERVICE_FAILED = 17500010 ：USB证书凭据访问失败。 |
  
  
   
 
-#### OH_CertManager_GetPrivateCertificate()
+### OH_CertManager_GetPrivateCertificate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_CertManager_GetPrivateCertificate(const OH_CM_Blob *keyUri, OH_CM_Credential *certificate)
@@ -102,6 +111,7 @@ int32_t OH_CertManager_GetPrivateCertificate(const OH_CM_Blob *keyUri, OH_CM_Cre
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_CM_Blob *keyUri | 存放应用私有证书凭据的唯一标识符（字符串格式）。 |
@@ -110,16 +120,18 @@ int32_t OH_CertManager_GetPrivateCertificate(const OH_CM_Blob *keyUri, OH_CM_Cre
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| int32_t | OH_CM_ErrorCode： OH_CM_SUCCESS = 0 ：操作成功。 OH_CM_HAS_NO_PERMISSION = 201 ：权限校验失败。 OH_CM_PARAMETER_VALIDATION_FAILED = 17500011 ：入参校验失败。可能原因： 1.参数格式错误。 2.参数范围无效。 OH_CM_INNER_FAILURE = 17500001 ：内部错误。可能原因： 1.IPC通讯失败。 2.内存操作错误。 3.文件操作错误。 OH_CM_NOT_FOUND = 17500002 ：证书不存在。 |
+| int32_t | OH_CM_ErrorCode： OH_CM_SUCCESS = 0 ：操作成功。 OH_CM_HAS_NO_PERMISSION = 201 ：权限校验失败。 OH_CM_PARAMETER_VALIDATION_FAILED = 17500011 ：入参校验失败。可能原因： 1.参数格式错误。 2.参数范围无效。 OH_CM_INNER_FAILURE = 17500001 ：内部错误。可能原因： 1.IPC通信失败。 2.内存操作错误。 3.文件操作错误。 OH_CM_NOT_FOUND = 17500002 ：证书不存在。 |
  
  
   
 
-#### OH_CertManager_GetPublicCertificate()
+### OH_CertManager_GetPublicCertificate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_CertManager_GetPublicCertificate(const OH_CM_Blob *keyUri, OH_CM_Credential *certificate)
@@ -135,6 +147,7 @@ int32_t OH_CertManager_GetPublicCertificate(const OH_CM_Blob *keyUri, OH_CM_Cred
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_CM_Blob *keyUri | 存放用户公共证书凭据的唯一标识符（字符串格式）。 |
@@ -143,16 +156,18 @@ int32_t OH_CertManager_GetPublicCertificate(const OH_CM_Blob *keyUri, OH_CM_Cred
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| int32_t | OH_CM_ErrorCode： OH_CM_SUCCESS = 0 ：操作成功。 OH_CM_HAS_NO_PERMISSION = 201 ：权限校验失败。 OH_CM_PARAMETER_VALIDATION_FAILED = 17500011 ：入参校验失败。可能原因： 1.参数格式错误。 2.参数范围无效。 OH_CM_INNER_FAILURE = 17500001 ：内部错误。可能原因： 1.IPC通讯失败。 2.内存操作错误。 3.文件操作错误。 OH_CM_NOT_FOUND = 17500002 ：证书不存在。 OH_CM_NO_AUTHORIZATION = 17500005 ：应用未经用户授权。 |
+| int32_t | OH_CM_ErrorCode： OH_CM_SUCCESS = 0 ：操作成功。 OH_CM_HAS_NO_PERMISSION = 201 ：权限校验失败。 OH_CM_PARAMETER_VALIDATION_FAILED = 17500011 ：入参校验失败。可能原因： 1.参数格式错误。 2.参数范围无效。 OH_CM_INNER_FAILURE = 17500001 ：内部错误。可能原因： 1.IPC通信失败。 2.内存操作错误。 3.文件操作错误。 OH_CM_NOT_FOUND = 17500002 ：证书不存在。 OH_CM_NO_AUTHORIZATION = 17500005 ：应用未经用户授权。 |
  
  
   
 
-#### OH_CertManager_FreeUkeyCertificate()
+### OH_CertManager_FreeUkeyCertificate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_CertManager_FreeUkeyCertificate(OH_CM_CredentialDetailList *certificateList)
@@ -160,22 +175,24 @@ void OH_CertManager_FreeUkeyCertificate(OH_CM_CredentialDetailList *certificateL
  
 **描述**
  
-销毁证书详情信息列表。
+销毁证书凭据详细信息列表。
  
 **起始版本：** 22
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| OH_CM_CredentialDetailList *certificateList | 待销毁的证书凭据详细列表。 |
+| OH_CM_CredentialDetailList *certificateList | 待销毁的证书凭据详细信息列表。 |
  
  
   
 
-#### OH_CertManager_FreeCredential()
+### OH_CertManager_FreeCredential()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_CertManager_FreeCredential(OH_CM_Credential *certificate)
@@ -183,12 +200,13 @@ void OH_CertManager_FreeCredential(OH_CM_Credential *certificate)
  
 **描述**
  
-销毁证书详情。
+销毁证书凭据详情。
  
 **起始版本：** 22
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_CM_Credential *certificate | 待销毁的证书凭据详情。 |

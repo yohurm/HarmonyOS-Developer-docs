@@ -1,13 +1,14 @@
 # qos.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-qos-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明QoS（Quality of Service）提供的C接口，用于设置、获取和取消线程QoS等级，帮助系统根据任务重要程度进行差异化调度。本文件同时提供格物服务（Gewu service，端侧AI推理加速服务）相关C接口，用于创建会话、提交推理请求、接收回复、中止请求和销毁会话等操作，适用于需要在本地执行AI模型推理并精细控制资源调度的场景。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_QoS_GewuCreateSessionResult | 格物服务创建会话的返回结果。 |
@@ -41,10 +45,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | QoS_Level | QoS_Level | 描述QoS等级。 |
@@ -53,10 +59,12 @@
  
   
 
-#### 宏定义
+### 宏定义
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_QOS_GEWU_INVALID_SESSION_ID ((OH_QoS_GewuSession)(0xffffffffU)) | 无效会话句柄，用于错误返回。 起始版本： 20 |
@@ -65,10 +73,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | int OH_QoS_SetThreadQoS(QoS_Level level) | - | 为当前线程设置QoS等级。 |
@@ -83,10 +93,12 @@
  
   
 
-#### 变量
+### 变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_QoS_GewuSession | 会话句柄。 起始版本： 20 |
@@ -95,18 +107,20 @@
  
   
 
-#### 变量说明
+## 变量说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_QoS_GewuSession
+### OH_QoS_GewuSession
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-typedef unsigned int OH_QoS_GewuSession;
+typedef unsigned int OH_QoS_GewuSession
 ```
  
 **描述**
@@ -117,12 +131,13 @@ typedef unsigned int OH_QoS_GewuSession;
  
   
 
-#### OH_QoS_GewuRequest
+### OH_QoS_GewuRequest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-typedef unsigned int OH_QoS_GewuRequest;
+typedef unsigned int OH_QoS_GewuRequest
 ```
  
 **描述**
@@ -133,15 +148,17 @@ typedef unsigned int OH_QoS_GewuRequest;
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### QoS_Level
+### QoS_Level
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum QoS_Level
@@ -153,6 +170,7 @@ enum QoS_Level
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | QOS_BACKGROUND = 0 | 表示QoS等级为用户不可见任务。 |
@@ -165,9 +183,10 @@ enum QoS_Level
  
   
 
-#### OH_QoS_GewuErrorCode
+### OH_QoS_GewuErrorCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_QoS_GewuErrorCode
@@ -179,6 +198,7 @@ enum OH_QoS_GewuErrorCode
  
 **起始版本：** 20
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_QOS_GEWU_OK = 0 | 成功。 |
@@ -193,15 +213,17 @@ enum OH_QoS_GewuErrorCode
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_QoS_SetThreadQoS()
+### OH_QoS_SetThreadQoS()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_QoS_SetThreadQoS(QoS_Level level)
@@ -215,6 +237,7 @@ int OH_QoS_SetThreadQoS(QoS_Level level)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | QoS_Level level | 表示设置的QoS等级。设置为不同等级会影响线程的调度优先级和资源分配：QOS_BACKGROUND适用于降低后台任务资源占用，QOS_USER_INTERACTIVE适用于提升交互任务响应速度，QOS_DEFAULT表示默认调度策略。详见QoS_Level。 |
@@ -222,6 +245,7 @@ int OH_QoS_SetThreadQoS(QoS_Level level)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 成功返回0，如果级别超出范围或内部错误失败则返回-1。 |
@@ -233,9 +257,10 @@ int OH_QoS_SetThreadQoS(QoS_Level level)
  
   
 
-#### OH_QoS_ResetThreadQoS()
+### OH_QoS_ResetThreadQoS()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_QoS_ResetThreadQoS()
@@ -249,6 +274,7 @@ int OH_QoS_ResetThreadQoS()
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 成功返回0，如果内部错误失败则返回-1。 |
@@ -260,9 +286,10 @@ int OH_QoS_ResetThreadQoS()
  
   
 
-#### OH_QoS_GetThreadQoS()
+### OH_QoS_GetThreadQoS()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_QoS_GetThreadQoS(QoS_Level *level)
@@ -276,6 +303,7 @@ int OH_QoS_GetThreadQoS(QoS_Level *level)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | QoS_Level *level | 输出参数，线程的QoS等级会以QoS_Level形式写入该变量。此参数不允许为NULL，传入NULL将导致函数返回-1。 |
@@ -283,6 +311,7 @@ int OH_QoS_GetThreadQoS(QoS_Level *level)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 成功返回0，如果当前线程未设置QoS等级或内部错误失败则返回-1。 |
@@ -294,9 +323,10 @@ int OH_QoS_GetThreadQoS(QoS_Level *level)
  
   
 
-#### OH_QoS_GewuOnResponse()
+### OH_QoS_GewuOnResponse()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_QoS_GewuOnResponse)(void* context, const char* response)
@@ -310,6 +340,7 @@ typedef void (*OH_QoS_GewuOnResponse)(void* context, const char* response)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | void* context | 提交请求时指定的用户上下文指针。该指针会在收到回复时原样传递给OH_QoS_GewuOnResponse回调函数，用于关联请求和响应数据。 |
@@ -318,9 +349,10 @@ typedef void (*OH_QoS_GewuOnResponse)(void* context, const char* response)
  
   
 
-#### OH_QoS_GewuCreateSession()
+### OH_QoS_GewuCreateSession()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_QoS_GewuCreateSessionResult OH_QoS_GewuCreateSession(const char* attributes)
@@ -344,6 +376,7 @@ attributes JSON字符串例子：
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char* attributes | 输入参数，会话属性的JSON字符串，用于指定会话使用的模型路径。支持的字段包括：model（string，必选，表示会话使用的模型路径，支持应用沙箱可访问的路径）。详见函数说明中的JSON示例。 |
@@ -351,6 +384,7 @@ attributes JSON字符串例子：
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_QoS_GewuCreateSessionResult | 格物创建会话结果。 - 表示创建会话成功，返回值OH_QoS_GewuCreateSessionResult里的error为OH_QOS_GEWU_OK，session为会话句柄。 - 表示创建会话失败，返回值OH_QoS_GewuCreateSessionResult里的error为错误原因，其中OH_QOS_GEWU_NOMEM表示没有足够的内存创建会话，OH_QOS_GEWU_INVAL表示参数错误，OH_QOS_GEWU_NOPERM表示权限不足，OH_QOS_GEWU_EXIST表示会话已存在，OH_QOS_GEWU_NOSYS表示找不到子系统。 |
@@ -358,9 +392,10 @@ attributes JSON字符串例子：
  
   
 
-#### OH_QoS_GewuDestroySession()
+### OH_QoS_GewuDestroySession()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_QoS_GewuErrorCode OH_QoS_GewuDestroySession(OH_QoS_GewuSession session)
@@ -374,6 +409,7 @@ OH_QoS_GewuErrorCode OH_QoS_GewuDestroySession(OH_QoS_GewuSession session)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_QoS_GewuSession session | 要销毁的会话句柄。 |
@@ -381,6 +417,7 @@ OH_QoS_GewuErrorCode OH_QoS_GewuDestroySession(OH_QoS_GewuSession session)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_QoS_GewuErrorCode | 错误码。 - 表示会话销毁成功，返回值为OH_QOS_GEWU_OK。 - 表示找不到会话，返回OH_QOS_GEWU_NOENT。 - 表示参数无效，返回OH_QOS_GEWU_INVAL。 - 表示找不到子系统，返回OH_QOS_GEWU_NOSYS。 - 表示其他内部错误，返回OH_QOS_GEWU_FAULT。 |
@@ -388,9 +425,10 @@ OH_QoS_GewuErrorCode OH_QoS_GewuDestroySession(OH_QoS_GewuSession session)
  
   
 
-#### OH_QoS_GewuAbortRequest()
+### OH_QoS_GewuAbortRequest()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_QoS_GewuErrorCode OH_QoS_GewuAbortRequest(OH_QoS_GewuSession session, OH_QoS_GewuRequest request)
@@ -404,6 +442,7 @@ OH_QoS_GewuErrorCode OH_QoS_GewuAbortRequest(OH_QoS_GewuSession session, OH_QoS_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_QoS_GewuSession session | 请求提交到的会话句柄。 |
@@ -412,6 +451,7 @@ OH_QoS_GewuErrorCode OH_QoS_GewuAbortRequest(OH_QoS_GewuSession session, OH_QoS_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_QoS_GewuErrorCode | 错误码。 - 表示成功停止请求，返回OH_QOS_GEWU_OK。 - 表示找不到请求，返回OH_QOS_GEWU_NOENT。 - 表示参数无效，返回OH_QOS_GEWU_INVAL。 - 表示找不到子系统，返回OH_QOS_GEWU_NOSYS。 |
@@ -419,9 +459,10 @@ OH_QoS_GewuErrorCode OH_QoS_GewuAbortRequest(OH_QoS_GewuSession session, OH_QoS_
  
   
 
-#### OH_QoS_GewuSubmitRequest()
+### OH_QoS_GewuSubmitRequest()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_QoS_GewuSubmitRequestResult OH_QoS_GewuSubmitRequest(OH_QoS_GewuSession session, const char* request, OH_QoS_GewuOnResponse callback, void* context)
@@ -475,6 +516,7 @@ OH_QoS_GewuSubmitRequestResult OH_QoS_GewuSubmitRequest(OH_QoS_GewuSession sessi
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_QoS_GewuSession session | 会话句柄，请求要提交的会话。 |
@@ -485,6 +527,7 @@ OH_QoS_GewuSubmitRequestResult OH_QoS_GewuSubmitRequest(OH_QoS_GewuSession sessi
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_QoS_GewuSubmitRequestResult | 格物提交请求结果。error字段为枚举OH_QoS_GewuErrorCode，枚举值与数字对应关系详见OH_QoS_GewuErrorCode枚举说明。 - 表示提交请求成功，返回值OH_QoS_GewuSubmitRequestResult里的error为OH_QOS_GEWU_OK（数值0），request为请求句柄。 - 表示提交请求失败，返回值OH_QoS_GewuSubmitRequestResult里的error为错误原因，其中OH_QOS_GEWU_NOMEM（数值203）表示没有足够的内存处理该请求，OH_QOS_GEWU_INVAL（数值401）表示参数错误，OH_QOS_GEWU_NOENT（数值502）表示找不到会话，OH_QOS_GEWU_NOPERM（数值201）表示权限不足，OH_QOS_GEWU_NOSYS（数值801）表示找不到子系统。 |

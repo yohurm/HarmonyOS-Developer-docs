@@ -1,13 +1,14 @@
 # context_constant.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-context-constant-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供AbilityRuntime模块上下文常量的定义。
 
@@ -23,35 +24,40 @@
 
 
 
-#### 汇总
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 汇总
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 枚举
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | AbilityRuntime_AreaMode | AbilityRuntime_AreaMode | 文件数据加密等级。 |
 | AbilityRuntime_StartVisibility | AbilityRuntime_StartVisibility | 启动Ability时的窗口和dock栏图标的显示模式。例如：需要在后台静默启动服务而不显示UI时使用隐藏模式；需要正常显示UI并与用户交互时使用显示模式。 |
 | AbilityRuntime_WindowMode | AbilityRuntime_WindowMode | 窗口模式。 |
-| AbilityRuntime_SupportedWindowMode | AbilityRuntime_SupportedWindowMode | 组件所支持的窗口模式。在应用内启动UIAbility时，指定窗口是否显示最大化/窗口化/分屏按键。 |
+| AbilityRuntime_SupportedWindowMode | AbilityRuntime_SupportedWindowMode | 组件所支持的窗口模式。在应用内启动UIAbility时，指定窗口是否显示最大化、窗口化、分屏按键。 |
 
 
 
 
-#### 枚举类型说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 枚举类型说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### AbilityRuntime_AreaMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### AbilityRuntime_AreaMode
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum AbilityRuntime_AreaMode
@@ -62,6 +68,7 @@ enum AbilityRuntime_AreaMode
 文件数据加密等级。
 
 **起始版本：** 13
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -74,9 +81,10 @@ enum AbilityRuntime_AreaMode
 
 
 
-#### AbilityRuntime_StartVisibility
+### AbilityRuntime_StartVisibility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 ```text
 enum AbilityRuntime_StartVisibility
@@ -88,6 +96,7 @@ enum AbilityRuntime_StartVisibility
 
 **起始版本：** 17
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ABILITY_RUNTIME_HIDE_UPON_START = 0 | 隐藏窗口及dock栏图标。仅在PC/2in1设备上生效。 |
@@ -96,9 +105,10 @@ enum AbilityRuntime_StartVisibility
 
 
 
-#### AbilityRuntime_WindowMode
+### AbilityRuntime_WindowMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum AbilityRuntime_WindowMode
@@ -110,6 +120,7 @@ enum AbilityRuntime_WindowMode
 
 **起始版本：** 17
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ABILITY_RUNTIME_WINDOW_MODE_UNDEFINED = 0 | 窗口模式未定义。 |
@@ -118,9 +129,10 @@ enum AbilityRuntime_WindowMode
 
 
 
-#### AbilityRuntime_SupportedWindowMode
+### AbilityRuntime_SupportedWindowMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum AbilityRuntime_SupportedWindowMode
@@ -131,6 +143,7 @@ enum AbilityRuntime_SupportedWindowMode
 在应用内启动UIAbility时，指定窗口支持的显示模式。如果未配置该字段，则默认采用该UIAbility对应的[module.json5配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)中[abilities标签](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#abilities标签)的supportWindowMode字段取值。
 
 **起始版本：** 17
+
 
 | 枚举项 | 描述 |
 | --- | --- |

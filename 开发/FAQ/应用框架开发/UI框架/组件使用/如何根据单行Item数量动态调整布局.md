@@ -43,16 +43,16 @@ struct HorizontalIndex {
   @State arr: Array<number> = [0, 1, 2, 3, 4, 5, 6, 7];
 
   aboutToAppear(): void {
-    // 使用display.getDefaultDisplaySync()方法获取当前屏幕宽度
+   <em> // 使用display.getDefaultDisplaySync()方法获取当前屏幕宽度</em>
     this.screenWidth = this.getUIContext().px2vp(display.getDefaultDisplaySync().width);
   }
 
   getItemWidth(): number {
-    // 当Item数量大于5时，宽度指定为100
+  <em>  // 当Item数量大于5时，宽度指定为100</em>
     if (this.arr.length > 5) {
       return 100;
     } else {
-      // 当Item数量小于5时，Item宽度按照数量均分
+    <em>  // 当Item数量小于5时，Item宽度按照数量均分</em>
       return (this.screenWidth - (this.arr.length - 1) * 10) / this.arr.length;
     }
   }
@@ -74,10 +74,10 @@ struct HorizontalIndex {
           };
         });
       }
-      // 设置当前网格布局行的数量为1
+     <em> // 设置当前网格布局行的数量为1</em>
       .rowsTemplate('1fr')
       .height(100)
-      // 设置列与列的间距为10
+    <em>  // 设置列与列的间距为10</em>
       .columnsGap(10)
       .width('100%')
       .backgroundColor('#fafafa');

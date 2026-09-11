@@ -1,6 +1,6 @@
 # faceComparator（人脸比对）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/core-vision-facecomparator-api
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -10,7 +10,8 @@
 **起始版本：** 5.0.0(12)
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -20,7 +21,8 @@ import { faceComparator } from '@kit.CoreVisionKit';
 
 
 
-#### VisionInfo
+## VisionInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -32,14 +34,16 @@ import { faceComparator } from '@kit.CoreVisionKit';
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| pixelMap | image.PixelMap | 是 | 否 | 待识别的图片，必须为颜色数据格式RGBA_8888的PixelMap类型。对于图片的要求请参见约束与限制。 |
+| pixelMap | image.PixelMap | 是 | 否 | 待识别的图片，颜色数据格式必须为RGBA_8888。对于图片的详细要求请参见约束与限制。 |
 
 
 
 
-#### FaceCompareResult
+## FaceCompareResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -51,6 +55,7 @@ import { faceComparator } from '@kit.CoreVisionKit';
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | isSamePerson | boolean | 是 | 否 | 是否是同一个人，true代表为同一个人，false不是同一个人。 |
@@ -59,7 +64,8 @@ import { faceComparator } from '@kit.CoreVisionKit';
 
 
 
-#### faceComparator.init
+## faceComparator.init
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -74,6 +80,7 @@ init(): Promise&lt;boolean&gt;
 **起始版本：** 5.0.0(12)
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -121,7 +128,8 @@ struct Page {
 
 
 
-#### faceComparator.release
+## faceComparator.release
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -136,6 +144,7 @@ release(): Promise&lt;void&gt;
 **起始版本：** 5.0.0(12)
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -183,7 +192,8 @@ struct Page {
 
 
 
-#### faceComparator.compareFaces
+## faceComparator.compareFaces
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -199,6 +209,7 @@ compareFaces(visionInfo1: VisionInfo, visionInfo2: VisionInfo): Promise&lt;FaceC
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | visionInfo1 | VisionInfo | 是 | 第一张包含人脸的图片。 |
@@ -206,6 +217,7 @@ compareFaces(visionInfo1: VisionInfo, visionInfo2: VisionInfo): Promise&lt;FaceC
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -215,6 +227,7 @@ compareFaces(visionInfo1: VisionInfo, visionInfo2: VisionInfo): Promise&lt;FaceC
 **错误码：**
 
 以下错误码的详细介绍请参见[Core Vision Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-core-vision)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

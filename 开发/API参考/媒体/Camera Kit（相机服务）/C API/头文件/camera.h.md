@@ -1,13 +1,14 @@
 # camera.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-camera-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义相机的基本接口和功能。
 
@@ -23,15 +24,18 @@
 
 
 
-#### 汇总
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 汇总
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 结构体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -68,9 +72,11 @@
 
 
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -108,13 +114,16 @@
 | OH_Camera_OISAxes | OH_Camera_OISAxes | 光学防抖（OIS）轴枚举。 |
 | OH_Camera_ExposureState | OH_Camera_ExposureState | 枚举相机曝光状态。 |
 | OH_Camera_MetadataObjectEmotion | OH_Camera_MetadataObjectEmotion | 元数据对象情绪类型枚举。 |
+| OH_Camera_AutomotiveCameraPosition | OH_Camera_AutomotiveCameraPosition | Car设备摄像头位置的枚举。 |
 
 
 
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -124,15 +133,17 @@
 
 
 
-#### 枚举类型说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 枚举类型说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### Camera_ErrorCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### Camera_ErrorCode
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Camera_ErrorCode
@@ -143,6 +154,7 @@ enum Camera_ErrorCode
 相机错误代码的枚举。
 
 **起始版本：** 11
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -164,9 +176,10 @@ enum Camera_ErrorCode
 
 
 
-#### Camera_Status
+### Camera_Status
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Camera_Status
@@ -178,6 +191,7 @@ enum Camera_Status
 
 **起始版本：** 11
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | CAMERA_STATUS_APPEAR = 0 | 显示状态。 |
@@ -188,9 +202,10 @@ enum Camera_Status
 
 
 
-#### Camera_SceneMode
+### Camera_SceneMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Camera_SceneMode
@@ -202,6 +217,7 @@ enum Camera_SceneMode
 
 **起始版本：** 12
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | NORMAL_PHOTO = 1 | 普通相机模式。 |
@@ -211,9 +227,10 @@ enum Camera_SceneMode
 
 
 
-#### Camera_Position
+### Camera_Position
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Camera_Position
@@ -225,6 +242,7 @@ enum Camera_Position
 
 **起始版本：** 11
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | CAMERA_POSITION_UNSPECIFIED = 0 | 相对于设备屏幕没有固定的朝向的相机。 |
@@ -234,9 +252,10 @@ enum Camera_Position
 
 
 
-#### Camera_Type
+### Camera_Type
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Camera_Type
@@ -247,6 +266,7 @@ enum Camera_Type
 相机类型的枚举。
 
 **起始版本：** 11
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -259,9 +279,10 @@ enum Camera_Type
 
 
 
-#### Camera_Connection
+### Camera_Connection
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Camera_Connection
@@ -273,6 +294,7 @@ enum Camera_Connection
 
 **起始版本：** 11
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | CAMERA_CONNECTION_BUILT_IN = 0 | 内置相机。 |
@@ -282,9 +304,10 @@ enum Camera_Connection
 
 
 
-#### OH_Camera_SensorColorFilterArrangement
+### OH_Camera_SensorColorFilterArrangement
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Camera_SensorColorFilterArrangement
@@ -296,6 +319,7 @@ enum OH_Camera_SensorColorFilterArrangement
 
 **起始版本：** 24
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_CAMERA_SENSOR_CFA_BGGR = 0 | BGGR（Blue-Green-Green-Red）滤色阵列排列。 起始版本： 24 |
@@ -306,9 +330,10 @@ enum OH_Camera_SensorColorFilterArrangement
 
 
 
-#### Camera_Format
+### Camera_Format
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Camera_Format
@@ -319,6 +344,7 @@ enum Camera_Format
 相机格式类型的枚举。
 
 **起始版本：** 11
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -334,9 +360,10 @@ enum Camera_Format
 
 
 
-#### Camera_FlashMode
+### Camera_FlashMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Camera_FlashMode
@@ -348,6 +375,7 @@ enum Camera_FlashMode
 
 **起始版本：** 11
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | FLASH_MODE_CLOSE = 0 | 关闭模式。 |
@@ -358,9 +386,10 @@ enum Camera_FlashMode
 
 
 
-#### OH_Camera_FlashState
+### OH_Camera_FlashState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Camera_FlashState
@@ -372,6 +401,7 @@ enum OH_Camera_FlashState
 
 **起始版本：** 24
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_CAMERA_FLASH_STATE_UNAVAILABLE = 0 | 闪光灯为不可用状态，为默认值。 起始版本： 24 |
@@ -381,9 +411,10 @@ enum OH_Camera_FlashState
 
 
 
-#### Camera_ExposureMode
+### Camera_ExposureMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Camera_ExposureMode
@@ -394,6 +425,7 @@ enum Camera_ExposureMode
 曝光模式的枚举。
 
 **起始版本：** 11
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -406,9 +438,10 @@ enum Camera_ExposureMode
 
 
 
-#### OH_Camera_ExposureMeteringMode
+### OH_Camera_ExposureMeteringMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Camera_ExposureMeteringMode
@@ -420,6 +453,7 @@ enum OH_Camera_ExposureMeteringMode
 
 **起始版本：** 24
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_CAMERA_EXPOSURE_METERING_MODE_MATRIX = 0 | 矩阵测光模式。对整个画面测光，适用于自然风景拍摄。 起始版本： 24 |
@@ -429,9 +463,10 @@ enum OH_Camera_ExposureMeteringMode
 
 
 
-#### Camera_FocusMode
+### Camera_FocusMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Camera_FocusMode
@@ -443,6 +478,7 @@ enum Camera_FocusMode
 
 **起始版本：** 11
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | FOCUS_MODE_MANUAL = 0 | 手动模式。 |
@@ -453,9 +489,10 @@ enum Camera_FocusMode
 
 
 
-#### Camera_FocusState
+### Camera_FocusState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Camera_FocusState
@@ -467,6 +504,7 @@ enum Camera_FocusState
 
 **起始版本：** 11
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | FOCUS_STATE_SCAN = 0 | 扫描状态。 |
@@ -476,9 +514,10 @@ enum Camera_FocusState
 
 
 
-#### Camera_VideoStabilizationMode
+### Camera_VideoStabilizationMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Camera_VideoStabilizationMode
@@ -489,6 +528,7 @@ enum Camera_VideoStabilizationMode
 录像防抖模式的枚举。
 
 **起始版本：** 11
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -501,9 +541,10 @@ enum Camera_VideoStabilizationMode
 
 
 
-#### Camera_ImageRotation
+### Camera_ImageRotation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Camera_ImageRotation
@@ -514,6 +555,7 @@ enum Camera_ImageRotation
 图像旋转角度的枚举。
 
 **起始版本：** 11
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -529,9 +571,10 @@ enum Camera_ImageRotation
 
 
 
-#### Camera_QualityLevel
+### Camera_QualityLevel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Camera_QualityLevel
@@ -543,6 +586,7 @@ enum Camera_QualityLevel
 
 **起始版本：** 11
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | QUALITY_LEVEL_HIGH = 0 | 高图像质量。 |
@@ -552,9 +596,10 @@ enum Camera_QualityLevel
 
 
 
-#### Camera_MetadataObjectType
+### Camera_MetadataObjectType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Camera_MetadataObjectType
@@ -565,6 +610,7 @@ enum Camera_MetadataObjectType
 元数据对象类型的枚举。
 
 **起始版本：** 11
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -582,9 +628,10 @@ enum Camera_MetadataObjectType
 
 
 
-#### Camera_TorchMode
+### Camera_TorchMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Camera_TorchMode
@@ -595,6 +642,7 @@ enum Camera_TorchMode
 手电筒模式的枚举。
 
 **起始版本：** 12
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -608,9 +656,10 @@ enum Camera_TorchMode
 
 
 
-#### Camera_SmoothZoomMode
+### Camera_SmoothZoomMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Camera_SmoothZoomMode
@@ -622,6 +671,7 @@ enum Camera_SmoothZoomMode
 
 **起始版本：** 12
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | NORMAL = 0 | 贝塞尔曲线模式。 从API version 23开始，推荐使用新枚举值CAMERA_SMOOTH_ZOOM_MODE_NORMAL。 |
@@ -630,9 +680,10 @@ enum Camera_SmoothZoomMode
 
 
 
-#### Camera_SystemPressureLevel
+### Camera_SystemPressureLevel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Camera_SystemPressureLevel
@@ -643,6 +694,7 @@ enum Camera_SystemPressureLevel
 系统压力等级的枚举。
 
 **起始版本：** 20
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -655,9 +707,10 @@ enum Camera_SystemPressureLevel
 
 
 
-#### Camera_PreconfigType
+### Camera_PreconfigType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Camera_PreconfigType
@@ -668,6 +721,7 @@ enum Camera_PreconfigType
 预配置照片分辨率的枚举。
 
 **起始版本：** 12
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -680,9 +734,10 @@ enum Camera_PreconfigType
 
 
 
-#### Camera_PreconfigRatio
+### Camera_PreconfigRatio
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Camera_PreconfigRatio
@@ -694,6 +749,7 @@ enum Camera_PreconfigRatio
 
 **起始版本：** 12
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | PRECONFIG_RATIO_1_1 = 0 | 预配置照片比例为1:1。 |
@@ -703,9 +759,10 @@ enum Camera_PreconfigRatio
 
 
 
-#### Camera_HostDeviceType
+### Camera_HostDeviceType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Camera_HostDeviceType
@@ -717,6 +774,7 @@ enum Camera_HostDeviceType
 
 **起始版本：** 15
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | HOST_DEVICE_TYPE_UNKNOWN_TYPE = 0 | 未知设备类型。 |
@@ -726,9 +784,10 @@ enum Camera_HostDeviceType
 
 
 
-#### Camera_FoldStatus
+### Camera_FoldStatus
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Camera_FoldStatus
@@ -739,6 +798,7 @@ enum Camera_FoldStatus
 折叠状态枚举。
 
 **起始版本：** 13
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -752,9 +812,10 @@ enum Camera_FoldStatus
 
 
 
-#### Camera_QualityPrioritization
+### Camera_QualityPrioritization
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Camera_QualityPrioritization
@@ -766,6 +827,7 @@ enum Camera_QualityPrioritization
 
 **起始版本：** 14
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | HIGH_QUALITY = 0 | 高录像质量。 |
@@ -774,9 +836,10 @@ enum Camera_QualityPrioritization
 
 
 
-#### Camera_ConcurrentType
+### Camera_ConcurrentType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Camera_ConcurrentType
@@ -788,6 +851,7 @@ enum Camera_ConcurrentType
 
 **起始版本：** 18
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | CAMERA_CONCURRENT_TYPE_LIMITED_CAPABILITY = 0 | 相机限制并发。 |
@@ -796,9 +860,10 @@ enum Camera_ConcurrentType
 
 
 
-#### Camera_WhiteBalanceMode
+### Camera_WhiteBalanceMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Camera_WhiteBalanceMode
@@ -809,6 +874,7 @@ enum Camera_WhiteBalanceMode
 白平衡模式枚举。
 
 **起始版本：** 20
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -823,9 +889,10 @@ enum Camera_WhiteBalanceMode
 
 
 
-#### Camera_ControlCenterEffectType
+### Camera_ControlCenterEffectType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Camera_ControlCenterEffectType
@@ -837,6 +904,7 @@ enum Camera_ControlCenterEffectType
 
 **起始版本：** 20
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | CONTROL_CENTER_EFFECT_TYPE_BEAUTY = 0 | 控制器效果类型：美颜。 |
@@ -847,9 +915,10 @@ enum Camera_ControlCenterEffectType
 
 
 
-#### Camera_PhotoQualityPrioritization
+### Camera_PhotoQualityPrioritization
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Camera_PhotoQualityPrioritization
@@ -861,6 +930,7 @@ enum Camera_PhotoQualityPrioritization
 
 **起始版本：** 21
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | CAMERA_PHOTO_QUALITY_PRIORITIZATION_HIGH_QUALITY = 0 | 画质优先，拍照需要较长的时间，以输出高画质的图片。 |
@@ -869,9 +939,10 @@ enum Camera_PhotoQualityPrioritization
 
 
 
-#### OH_Camera_OISMode
+### OH_Camera_OISMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Camera_OISMode
@@ -883,6 +954,7 @@ enum OH_Camera_OISMode
 
 **起始版本：** 24
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_CAMERA_OIS_MODE_OFF = 0 | 关闭光学防抖模式。 |
@@ -892,9 +964,10 @@ enum OH_Camera_OISMode
 
 
 
-#### OH_Camera_OISAxes
+### OH_Camera_OISAxes
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Camera_OISAxes
@@ -906,6 +979,7 @@ enum OH_Camera_OISAxes
 
 **起始版本：** 24
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_CAMERA_OIS_AXES_PITCH = 0 | 俯仰轴：控制相机机身上下旋转，即机身围绕与镜头水平方向的轴旋转。 |
@@ -914,9 +988,10 @@ enum OH_Camera_OISAxes
 
 
 
-#### OH_Camera_ExposureState
+### OH_Camera_ExposureState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Camera_ExposureState
@@ -928,6 +1003,7 @@ enum OH_Camera_ExposureState
 
 **起始版本：** 26.0.0
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_CAMERA_EXPOSURE_STATE_SCAN = 0 | 表示曝光处于扫描状态。 起始版本： 26.0.0 |
@@ -936,9 +1012,10 @@ enum OH_Camera_ExposureState
 
 
 
-#### OH_Camera_MetadataObjectEmotion
+### OH_Camera_MetadataObjectEmotion
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Camera_MetadataObjectEmotion
@@ -950,6 +1027,7 @@ enum OH_Camera_MetadataObjectEmotion
 
 **起始版本：** 26.0.0
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_CAMERA_METADATA_OBJECT_EMOTION_NEUTRAL = 0 | 平静。 起始版本： 26.0.0 |
@@ -960,9 +1038,10 @@ enum OH_Camera_MetadataObjectEmotion
 
 
 
-#### OH_Camera_AutomotiveCameraPosition
+### OH_Camera_AutomotiveCameraPosition
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Camera_AutomotiveCameraPosition
@@ -973,6 +1052,7 @@ enum OH_Camera_AutomotiveCameraPosition
 Car设备摄像头位置的枚举。
 
 **起始版本：** 26.0.0
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -995,15 +1075,17 @@ Car设备摄像头位置的枚举。
 
 
 
-#### 函数说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 函数说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### OH_Camera_GetCameraManager()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### OH_Camera_GetCameraManager()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_Camera_GetCameraManager(Camera_Manager** cameraManager)
@@ -1017,12 +1099,14 @@ Camera_ErrorCode OH_Camera_GetCameraManager(Camera_Manager** cameraManager)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_Manager** cameraManager | 如果方法调用成功，将创建Camera_Manager实例。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1031,9 +1115,10 @@ Camera_ErrorCode OH_Camera_GetCameraManager(Camera_Manager** cameraManager)
 
 
 
-#### OH_Camera_DeleteCameraManager()
+### OH_Camera_DeleteCameraManager()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_Camera_DeleteCameraManager(Camera_Manager* cameraManager)
@@ -1047,12 +1132,14 @@ Camera_ErrorCode OH_Camera_DeleteCameraManager(Camera_Manager* cameraManager)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_Manager* cameraManager | 要删除的Camera_Manager实例。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |

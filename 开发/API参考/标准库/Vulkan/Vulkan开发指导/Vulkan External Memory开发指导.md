@@ -1,10 +1,14 @@
 # Vulkan External Memory开发指导
 
-更新时间：2026-07-21 07:44:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/vulkan-oh-external-memory-guidelines
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 场景介绍
+## 场景介绍
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 VK_OHOS_external_memory 扩展用于在GPU Vulkan环境下与HarmonyOS的本机缓冲区（OHNativeBuffer）之间做零拷贝的内存共享。
  
@@ -16,12 +20,19 @@ VK_OHOS_external_memory 扩展用于在GPU Vulkan环境下与HarmonyOS的本机�
  
   
 
-#### 接口说明
+## 接口说明
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | VkNativeBufferPropertiesOHOS | 包含了NativeBuffer的属性。 |
@@ -33,8 +44,12 @@ VK_OHOS_external_memory 扩展用于在GPU Vulkan环境下与HarmonyOS的本机�
  
   
 
-#### 函数
+### 函数
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | VKAPI_ATTR VkResult VKAPI_CALL vkGetNativeBufferPropertiesOHOS (VkDevice device, const struct OH_NativeBuffer *buffer, VkNativeBufferPropertiesOHOS *pProperties) | 获取OH_NativeBuffer属性。 |
@@ -42,7 +57,10 @@ VK_OHOS_external_memory 扩展用于在GPU Vulkan环境下与HarmonyOS的本机�
  
   
 
-#### 开发步骤
+## 开发步骤
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 以下步骤说明了如何将视频解码器输出的本机缓冲区（OHNativeBuffer）导入为Vulkan内存，并绑定到VkImage/VkBuffer。
  1. 启动渲染子线程，初始化Vulkan环境，动态加载libvulkan.so，并加载Vulkan基础函数的指针。

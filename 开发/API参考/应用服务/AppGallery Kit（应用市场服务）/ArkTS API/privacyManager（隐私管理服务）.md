@@ -1,6 +1,6 @@
 # privacyManager（隐私管理服务）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/store-privacymanager
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -14,7 +14,8 @@
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -24,7 +25,8 @@ import { privacyManager } from '@kit.AppGalleryKit';
  
   
 
-#### AppPrivacyMgmtType
+## AppPrivacyMgmtType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -38,6 +40,7 @@ import { privacyManager } from '@kit.AppGalleryKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | UNSUPPORTED | 0 | 不支持。 |
@@ -46,7 +49,8 @@ import { privacyManager } from '@kit.AppGalleryKit';
  
   
 
-#### AppPrivacyResultType
+## AppPrivacyResultType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -60,6 +64,7 @@ import { privacyManager } from '@kit.AppGalleryKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DISAGREED | 0 | 不同意隐私协议。 |
@@ -69,7 +74,8 @@ import { privacyManager } from '@kit.AppGalleryKit';
  
   
 
-#### AppPrivacyLinkType
+## AppPrivacyLinkType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -83,6 +89,7 @@ import { privacyManager } from '@kit.AppGalleryKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | PRIVACY_STATEMENT_LINK | 1 | 隐私声明链接。 |
@@ -91,7 +98,8 @@ import { privacyManager } from '@kit.AppGalleryKit';
  
   
 
-#### AppPrivacyType
+## AppPrivacyType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -105,6 +113,7 @@ import { privacyManager } from '@kit.AppGalleryKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | PRIVACY_AGREEMENT | 1 | 隐私协议。 |
@@ -113,7 +122,8 @@ import { privacyManager } from '@kit.AppGalleryKit';
  
   
 
-#### AppPrivacyMgmtInfo
+## AppPrivacyMgmtInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -127,6 +137,7 @@ import { privacyManager } from '@kit.AppGalleryKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | AppPrivacyMgmtType | 是 | 否 | 隐私管理类型。 |
@@ -135,7 +146,8 @@ import { privacyManager } from '@kit.AppGalleryKit';
  
   
 
-#### AppPrivacyLink
+## AppPrivacyLink
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -149,6 +161,7 @@ import { privacyManager } from '@kit.AppGalleryKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | AppPrivacyLinkType | 是 | 否 | 隐私链接类型。 |
@@ -160,7 +173,8 @@ import { privacyManager } from '@kit.AppGalleryKit';
  
   
 
-#### AppPrivacyResult
+## AppPrivacyResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -172,6 +186,7 @@ import { privacyManager } from '@kit.AppGalleryKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | AppPrivacyType | 是 | 否 | 隐私类型。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
@@ -183,7 +198,8 @@ import { privacyManager } from '@kit.AppGalleryKit';
  
   
 
-#### ConsentResult
+## ConsentResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -197,6 +213,7 @@ import { privacyManager } from '@kit.AppGalleryKit';
  
 **起始版本：** 5.0.2(14)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | results | AppPrivacyResult[] | 是 | 否 | 隐私签署结果。 |
@@ -204,7 +221,8 @@ import { privacyManager } from '@kit.AppGalleryKit';
  
   
 
-#### privacyManager.getAppPrivacyMgmtInfo
+## privacyManager.getAppPrivacyMgmtInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -222,6 +240,7 @@ getAppPrivacyMgmtInfo(): AppPrivacyMgmtInfo
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AppPrivacyMgmtInfo | 隐私链接信息。 |
@@ -231,6 +250,7 @@ getAppPrivacyMgmtInfo(): AppPrivacyMgmtInfo
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-appgallery)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1006700001 | System internal error. |
@@ -290,7 +310,8 @@ struct GetAppPrivacyMgmtInfo {
  
   
 
-#### privacyManager.getAppPrivacyResult
+## privacyManager.getAppPrivacyResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -308,6 +329,7 @@ getAppPrivacyResult(): AppPrivacyResult[]
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AppPrivacyResult[] | 隐私签署结果。 |
@@ -317,6 +339,7 @@ getAppPrivacyResult(): AppPrivacyResult[]
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-appgallery)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1006700001 | System internal error. |
@@ -377,7 +400,8 @@ struct GetAppPrivacyResult {
  
   
 
-#### privacyManager.disableService
+## privacyManager.disableService
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -397,6 +421,7 @@ disableService(): void
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-appgallery)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1006700001 | System internal error. |
@@ -420,7 +445,8 @@ try {
  
   
 
-#### privacyManager.requestAppPrivacyConsent
+## privacyManager.requestAppPrivacyConsent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -438,6 +464,7 @@ requestAppPrivacyConsent(context:common.UIAbilityContext):Promise&lt;ConsentResu
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | 调用方应用的上下文。 |
@@ -445,6 +472,7 @@ requestAppPrivacyConsent(context:common.UIAbilityContext):Promise&lt;ConsentResu
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;ConsentResult&gt; | Promise对象，返回弹框结果。 |
@@ -454,6 +482,7 @@ requestAppPrivacyConsent(context:common.UIAbilityContext):Promise&lt;ConsentResu
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-appgallery)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |

@@ -1,9 +1,9 @@
 # @Entry：页面入口
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-entry
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 @Entry装饰的自定义组件将作为UI页面的入口，被框架识别为页面的根组件，适用于构建独立UI页面的场景。
 
@@ -12,9 +12,10 @@
 
 
 
-#### @Entry
+## @Entry
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 在单个UI页面中，仅允许存在一个由@Entry装饰的自定义组件作为页面的入口。
 
@@ -39,15 +40,17 @@ struct Index {
 
 
 
-#### EntryOptions10+
+## EntryOptions10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 页面入口配置选项，用于在@Entry装饰页面时配置路由名称、状态存储和共享存储等参数。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

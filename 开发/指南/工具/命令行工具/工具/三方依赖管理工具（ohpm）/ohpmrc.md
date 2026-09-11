@@ -1,19 +1,19 @@
 # ohpmrc
 
-更新时间：2026-07-28 12:07:32
+更新时间：2026-09-08 02:53:31
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpmrc
 
 ohpm配置文件。
 
 
-#### 描述
+## 描述
 
 ohpm从命令行和.ohpmrc文件中获取其配置内容。ohpm config命令可用于修改用户级.ohpmrc文件的内容。
 
 
 
-#### 文件
+## 文件
 
  - 项目级配置文件：/path/to/my/project/.ohpmrc
  - 用户级配置文件：~/.ohpm/.ohpmrc
@@ -32,13 +32,13 @@ ohpm从命令行和.ohpmrc文件中获取其配置内容。ohpm config命令可�
 
 
 
-#### 注释
+## 注释
 
 .ohpmrc 文件中以"#"或";"字符为注释符。
 
 
 
-#### 更新配置
+## 更新配置
 
 执行如下命令可设置用户级配置：
 
@@ -48,12 +48,13 @@ ohpm config set key value
 
 
 
-#### 默认配置项
+## 默认配置项
 
 
 
 > [!NOTE] 说明
 > 标准版本通常不会变更，故该参数在~/.ohpm/cache/metadata 目录下的标准版本元数据文件和工程目录下.ohpm/lock/oh-install-meta.json5中的标准版本元数据中不生效。
+
 
 | 配置项 | 字段名称 | 字段说明 | 字段类型 | 默认值 | 备注 |
 | --- | --- | --- | --- | --- | --- |
@@ -95,11 +96,12 @@ ohpm config set key value
 | 其他设置 | auto_skip_install | 依赖未发生变化时，自动跳过本次安装 | 布尔 | false | 默认为false。若设置为true，首次执行ohpm install安装命令后，如果用户未修改依赖再次执行ohpm install命令，则会跳过本次安装。详细跳过规则请见auto_skip_install。 |
 | 其他设置 | metadata_cache_effective | 设置元数据缓存的过期时间 | 数值 | 10080 | 默认缓存过期时间为7天，取值范围为 [1, 525600]，单位：分钟。 该配置适用于 ~/.ohpm/cache/metadata 目录下所有先行版本元数据文件和全部版本元数据文件，以及工程目录下 .ohpm/lock/oh-install-meta.json5 中的先行版本元数据。 |
 | 其他设置 | metadata_cache | 开启读取缓存的元数据文件 | 布尔 | false | 默认为false。若设置为true，在执行ohpm install命令时，会读取缓存的元数据文件（ .ohpm/lock/oh-install-meta.json5文件、~/.ohpm/cache/metadata 目录下文件），减少网络请求，缩短安装时间。详情请见metadata_cache。 |
+| 其他设置 | symlink_for_local_dep | 对本地HAR依赖解压后的路径，创建软链接 | 布尔 | false | 默认为false。若设置为true，在执行ohpm install过程中，对本地HAR依赖解压后的路径，创建软链接。详情见symlink_for_local_dep。 |
 
 
 
 
-#### CA证书获取及配置
+## CA证书获取及配置
 
 > [!NOTE]
 > CA证书的获取需要区分系统：当从Windows系统浏览器下载的证书仅适用于Windows系统，当从Mac系统浏览器中获取的证书适用于Mac系统和Linux系统。
@@ -107,7 +109,7 @@ ohpm config set key value
 
 
 
-#### Windows系统获取CA证书
+### Windows系统获取CA证书
 
 
 依次访问以下证书下载地址，并根据下图操作下载CA证书到本地：
@@ -130,7 +132,7 @@ ca_files=D:\_.openharmony.cn.crt,D:\update.hicloud.crt
 ```
 
 
-#### Mac系统获取CA证书
+### Mac系统获取CA证书
 
 
 依次访问以下证书下载地址，并根据下图操作下载CA证书到本地：
@@ -155,7 +157,7 @@ ca_file=/Users/用户名/_.openharmony.cn.pem,/Users/用户名/_.update.hicloud.
 
 
 
-#### log_level
+## log_level
 
 可设置ohpm日志输出级别，对应级别类型有debug、info、warn、error，默认为：info。开发者在执行ohpm命令时，不同日志级别的区别和效果如下所示。
 
@@ -175,7 +177,7 @@ ca_file=/Users/用户名/_.openharmony.cn.pem,/Users/用户名/_.update.hicloud.
 
 
 
-#### install_all
+## install_all
 
 在ohpm客户端1.8.0版本的.ohpmrc中支持install_all配置，用于控制ohpm install，ohpm update，ohpm uninstall的行为，install_all在.ohpmrc文件中设置为true或缺省时：
 
@@ -186,7 +188,7 @@ ca_file=/Users/用户名/_.openharmony.cn.pem,/Users/用户名/_.update.hicloud.
 
 
 
-#### resolve_conflict
+## resolve_conflict
 
 在ohpm客户端1.5.0版本开始支持依赖版本冲突自动解决功能。只需要在.ohpmrc文件中，将resolve_conflict配置为true或缺省，即可开启该功能。依赖冲突的处理策略为：当您的项目同时依赖了某个三方库的不同版本时，ohpm将选择其中的最高版本进行安装。
 
@@ -200,7 +202,7 @@ ca_file=/Users/用户名/_.openharmony.cn.pem,/Users/用户名/_.update.hicloud.
 
 
 
-#### 模块内依赖版本冲突
+### 模块内依赖版本冲突
 
 
 ![](assets/ohpmrc/file-20260514134417014-17.png)
@@ -214,7 +216,7 @@ ca_file=/Users/用户名/_.openharmony.cn.pem,/Users/用户名/_.update.hicloud.
 
 
 
-#### 模块间依赖版本冲突
+### 模块间依赖版本冲突
 
 
 ![](assets/ohpmrc/file-20260514134417014-19.png)
@@ -228,7 +230,7 @@ ca_file=/Users/用户名/_.openharmony.cn.pem,/Users/用户名/_.update.hicloud.
 
 
 
-#### 更新依赖版本的场景
+### 更新依赖版本的场景
 
 当您希望将您某个模块的直接依赖更新成另一个版本，如下图所示，您手动将 C@1.1 更新为 C@1.2：
 
@@ -246,7 +248,7 @@ ca_file=/Users/用户名/_.openharmony.cn.pem,/Users/用户名/_.update.hicloud.
 
 
 
-#### ohpm install命令带--target_path选项时依赖冲突处理
+### ohpm install命令带--target_path选项时依赖冲突处理
 
 target_path下是hvigor在构建时根据目标产物target为各模块自动生成定制的依赖配置文件（oh-package.json5），详见[target_path](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-install#section79331822125611)。在生成的oh-package.json5中，依赖的版本部分可能包含targetName，示例："version": "1.0.0+targetName"。
 
@@ -272,7 +274,7 @@ target_path下是hvigor在构建时根据目标产物target为各模块自动生
 
 
 
-#### 限制条件说明
+### 限制条件说明
 1. 若希望解决当前项目所有模块下的依赖版本冲突，请使用ohpm install --all完成依赖安装。
 2. 若在执行ohpm update或ohpm uninstall命令后，可能会破坏项目原有的依赖版本冲突处理结果。请额外执行一次ohpm install --all命令，重新处理当前项目所有模块下的依赖版本冲突。
 3. 当本地文件（.har或.tgz后缀）依赖之间、本地源码模块依赖之间、本地文件（.har或.tgz后缀）依赖与本地源码模块依赖之间出现冲突时，ohpm自动冲突处理机制会比较该依赖内部oh-package.json5文件中version字段配置的版本号大小，版本号大的将会被安装。
@@ -285,7 +287,7 @@ target_path下是hvigor在构建时根据目标产物target为各模块自动生
 
 
 
-#### resolve_conflict_strict
+## resolve_conflict_strict
 
 ohpm客户端从5.0.9版本，开始支持严格的依赖版本冲突处理机制。在.ohpmrc文件中，将resolve_conflict_strict配置为true开启该功能。
 
@@ -293,7 +295,7 @@ ohpm客户端从5.0.9版本，开始支持严格的依赖版本冲突处理机�
 
 
 
-#### 严格模式冲突决策算法
+### 严格模式冲突决策算法
 
  - 同一依赖，存在一个固定版本（如：1.0.1）、多个范围版本（如：^1.0.0、~1.1.0、>1.0.0等）时，如果该固定版本在所有范围版本交集区间内，则最终安装该固定版本，否则冲突决策失败；
  - 同一依赖，仅存在多个范围版本时，如果所有范围版本存在交集，则最终安装仓库中存在且在交集区间内的最高版本；若所有范围版本不存在交集区间，则冲突决策失败；
@@ -314,7 +316,7 @@ ohpm客户端从5.0.9版本，开始支持严格的依赖版本冲突处理机�
 
 
 
-#### 示例
+### 示例
 
 1. 将resolve_conflict_strict开关设置为true：
 
@@ -360,11 +362,12 @@ ohpm config set resolve_conflict_strict true
 
 
 
-#### crypto_path
+## crypto_path
 
 ohpm客户端从5.2.0版本开始，支持对敏感配置项进行加密存储和读取。
 
 **支持加密的敏感配置项**：
+
 
 | 配置项 | 说明 | 示例格式 |
 | --- | --- | --- |
@@ -393,7 +396,7 @@ https_proxy=https://security:xxx@proxy:port
 
 
 
-#### key_passphrase
+## key_passphrase
 
 ohpm 客户端从5.2.0版本开始，支持在 .ohpmrc 文件中配置 key_passphrase 私钥密码，用于自动解密 key_path 对应的私钥文件。
 
@@ -417,7 +420,7 @@ key_passphrase=security:xxx
 
 
 
-#### AccessToken
+## AccessToken
 
 AccessToken是 ohpm-repo 2.1.0版本新引入的认证机制，用户通过ohpm-repo界面生成Token，并将其配置至ohpm客户端配置文件中。
 
@@ -429,7 +432,7 @@ AccessToken是 ohpm-repo 2.1.0版本新引入的认证机制，用户通过ohpm-
 
 
 
-#### 如何获取AccessToken
+### 如何获取AccessToken
 
 当前AccessToken仅 ohpm-repo 支持，登录成功后，在ohpm-repo首页的右上角 > 认证管理 > AccessToken页面进行生成。
 ![](assets/ohpmrc/file-20260514134417014-3.png)
@@ -437,7 +440,7 @@ AccessToken是 ohpm-repo 2.1.0版本新引入的认证机制，用户通过ohpm-
 
 
 
-#### 如何配置AccessToken
+### 如何配置AccessToken
 
 在".ohpmrc"文件配置示例如下：
 
@@ -454,7 +457,7 @@ AccessToken是 ohpm-repo 2.1.0版本新引入的认证机制，用户通过ohpm-
 
 
 
-#### enforce_dependency_key
+## enforce_dependency_key
 
 ohpm从1.7.0版本开始，支持在.ohpmrc文件中配置enforce_dependency_key，该配置项值为布尔类型，默认为false。将配置设置为true后，ohpm会校验各模块的oh-package.json5中配置的直接依赖中的本地依赖名称与其对应的包名（模块名）是否一致，若不一致会导致依赖安装失败并在错误日志中打印出不一致的依赖名称与其对应的包名（模块名）。
 
@@ -464,9 +467,9 @@ ohpm从1.7.0版本开始，支持在.ohpmrc文件中配置enforce_dependency_key
 
 ```text
 {
-  "name": "foo",
-  "version": "2.0.0",
-  "description": "Please describe the basic information.",
+<span>  "name": "foo",</span>
+<span>  "version": "2.0.0",</span>
+<span>  "description": "Please describe the basic information.",</span>
  }
 ```
 
@@ -475,12 +478,12 @@ ohpm从1.7.0版本开始，支持在.ohpmrc文件中配置enforce_dependency_key
 
 ```text
 {
-  "name": "bar",
-  "version": "1.0.0",
-  "description": "Please describe the basic information.",
-  "dependencies": {
-    "fee": "file:../foo"  
-  },
+<span>  "name": "bar",</span>
+<span>  "version": "1.0.0",</span>
+<span>  "description": "Please describe the basic information.",</span>
+<span>  "dependencies": {</span>
+<span>    "fee": "file:../foo"  </span>
+<span>  },</span>
  }
 ```
 
@@ -509,9 +512,9 @@ ohpm WARN: local dependency "fee" found in "D:\DevecostudioProjects\MyApplicatio
 
 ```text
 {
-  "name": "fee",
-  "version": "1.0.0",  // 小于foo的版本号2.0.0
-  "description": "Please describe the basic information.",
+<span>  "name": "fee",</span>
+<span>  "version": "1.0.0",</span>  // 小于foo的版本号2.0.0
+<span>  "description": "Please describe the basic information.",</span>
  }
 ```
 
@@ -519,12 +522,12 @@ ohpm WARN: local dependency "fee" found in "D:\DevecostudioProjects\MyApplicatio
 
 ```text
 {
-  "name": "entry",
-  "version": "1.0.0",
-  "dependencies": {
-    "fee": "file:../fee",
-    "bar": "file:../bar"  
-  },
+<span>  "name": "entry",</span>
+<span>  "version": "1.0.0",</span>
+<span>  "dependencies": {</span>
+<span>    "fee": "file:../fee",</span>
+<span>    "bar": "file:../bar"  </span>
+<span>  },</span>
  }
 ```
 
@@ -553,7 +556,7 @@ ohpm WARN: local dependency "fee" found in "D:\DevecostudioProjects\MyApplicatio
 
 
 
-#### ensure_dependency_include
+## ensure_dependency_include
 
 ohpm从1.7.0版本开始，支持在.ohpmrc文件中配置ensure_dependency_include，该配置项值为布尔类型，默认为false。
 
@@ -565,7 +568,7 @@ ohpm从1.7.0版本开始，支持在.ohpmrc文件中配置ensure_dependency_incl
 
 
 
-#### 示例1
+### 示例1
 1. 将ensure_dependency_include开关置为false：
 
   
@@ -588,7 +591,7 @@ ohpm publish test.har
 
 
 
-#### 示例2
+### 示例2
 1. 将ensure_dependency_include开关置为true：
 
   
@@ -609,13 +612,13 @@ ohpm publish test.har
 
 
 
-#### disallow_nested_package
+## disallow_nested_package
 
 ohpm从1.8.0版本开始，支持在.ohpmrc文件中配置disallow_nested_package，该配置项值为布尔类型，默认为false。在ohpm prepublish/publish时，ohpm会扫描待发布包的dependencies和dynamicDependencies依赖配置，如果依赖配置中存在相对路径或绝对路径配置的.har、.tgz依赖且disallow_nested_package开关为true，则ohpm会报错提示。
 
 
 
-#### 示例
+### 示例
 1. lib_nested.har包的dependencies中配置了如下依赖：
 
   
@@ -649,7 +652,7 @@ ohpm publish lib_nested.har
 
 
 
-#### odm_r2_project_root
+## odm_r2_project_root
 
 odm_r2_project_root是ohpm客户端1.8.0新增的开关配置，默认为false，可以通过config命令或直接在.ohpmrc文件中修改其值。
 
@@ -687,7 +690,7 @@ odm_r2_project_root=true
 
 
 
-#### compability_log_level
+## compability_log_level
 
 ohpm客户端从5.0.1开始新增开关配置'compability_log_level'字段，用于控制在缺少兼容性检测需要的字段时ohpm的处理逻辑。
 
@@ -697,7 +700,7 @@ compability_log_level字段默认赋值为'warn'，可配置的日志等级请�
 
 
 
-#### 开关配置项说明
+### 开关配置项说明
 
  - close：关闭功能，不主动检测兼容性字段。
  - info：检测到未配置的兼容性字段时，打印info日志。
@@ -707,14 +710,14 @@ compability_log_level字段默认赋值为'warn'，可配置的日志等级请�
 
 
 
-#### enable_unified_lockfile
+## enable_unified_lockfile
 
 ohpm客户端从5.1.1开始新增开关配置enable_unified_lockfile字段。启用此特性后，ohpm将自动整合项目中所有子模块的oh-package-lock.json5文件，统一生成至项目根目录的oh-package-lock.json5文件中。
 
 启用enable_unified_lockfile=true后，项目级统一管理lockfile锁文件，针对模块间存在重复依赖的场景，显著减少ohpm install耗时，优化构建流程。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/l_X1xJRVRv-TOB9QkYpy_A/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071813Z&HW-CC-Expire=86400&HW-CC-Sign=B54D822636DAFBC6C10B01969CE64A184AF3AAFD3AFD940F46FB3363CD9BA31B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/E57AsYwUTtK4am-yZ4JTzA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072818Z&HW-CC-Expire=86400&HW-CC-Sign=8411D2D96D06DE9E1D1951E5EA6960DBB0682FC09705AE8F190056A695BFC549)
 
 
 启用enable_unified_lockfile=true后，原分散在各模块下的.hsp依赖安装目录将统一迁移至项目根目录。在流水线上开启此特性时，需搭配配套的hvigor使用。
@@ -723,20 +726,20 @@ ohpm客户端从5.1.1开始新增开关配置enable_unified_lockfile字段。启
 
 
 
-#### enable_boost_extraction_speed
+## enable_boost_extraction_speed
 
 ohpm客户端从5.3.0开始新增开关配置enable_boost_extraction_speed字段。ohpm安装时涉及对.har/.tgz三方包文件的解压和遍历，启用此特性后，将使用高性能方法进行解压和遍历，当工程中存在大文件依赖时，可以显著减少ohpm install耗时。该功能当前处于实验阶段，暂不支持解压包含软链接的三方包文件。
 
 
 
-#### enable_lock_inner_pkg_version
+## enable_lock_inner_pkg_version
 
 ohpm客户端从5.3.1开始新增开关配置enable_lock_inner_pkg_version字段。默认为true，若设置为false，在ohpm安装时，不会将依赖内部的.har或.tgz子依赖的版本保存至oh-package-lock.json5，以防oh-package-lock.json5中保存不存在的路径导致二次安装报错。
 
 如下图所示，蓝色箭头标识最终要安装的依赖，安装的依赖D@1.0.0来自依赖B@1.0.0（依赖名称和依赖版本相同的依赖会被定性为相同依赖，最终安装哪个由依赖构建先后顺序决定）, 因B@1.0.0并没有安装，但oh-package-lock.json5中锁定了依赖D的版本，在二次安装时会爆出D的依赖路径不存在错误，此时需要将该开关设置为false。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/y7ry0lbBQb66e2CcitHZLA/zh-cn_image_0000002677996945.png?HW-CC-KV=V1&HW-CC-Date=20260730T071813Z&HW-CC-Expire=86400&HW-CC-Sign=28D62827D1C1494D6F2B4E6D9C4016C0698819E984D29A5DC4B06E59D3AF1012)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/eMstQGh4S_CD8DA8xMTUUQ/zh-cn_image_0000002731382617.png?HW-CC-KV=V1&HW-CC-Date=20260911T072818Z&HW-CC-Expire=86400&HW-CC-Sign=D0CBA445B197645F9809E0AC6D85EEE1AC6B24E395AD4CECA542E220FA1EB662)
 
 
 **oh-package-lock.json5示例**
@@ -789,10 +792,10 @@ ohpm客户端从5.3.1开始新增开关配置enable_lock_inner_pkg_version字段
   },
   "packages": {
     "library@library.har": {
-      "name": "library",
+      "name": "<span style="color: rgb(80,160,79);">library</span>",
       "version": "1.0.0",
      
-      "resolved": "library.har",
+      "resolved": "<span style="color: rgb(80,160,79);">library.har",</span>
       "registryType": "local",
       "dependencies": {
         "inner": "./libs/inner.har"
@@ -809,16 +812,16 @@ enable_lock_inner_pkg_version=true时，entry/oh-package-lock.json5结果如下�
   ......
   "specifiers": {
     "inner@../oh_modules/.ohpm/library@85ursk4cfzbgycewlyxweed+cyyeeixxig5mlazoo+g=/oh_modules/library/libs/inner.har": "
-inner@../oh_modules/.ohpm/library@c0jkxsxl3amvdd7rr1enrkrejzharxwucdoyc29br+u=/oh_modules/library/libs/inner.har",
+<span style="color: rgb(80,160,79);">inner@../oh_modules/.ohpm/library@c0jkxsxl3amvdd7rr1enrkrejzharxwucdoyc29br+u=/oh_modules/library/libs/inner.har</span>",
     "library@library.har": "library@library.har"
   },
   "packages": {
     "
-inner@../oh_modules/.ohpm/library@c0jkxsxl3amvdd7rr1enrkrejzharxwucdoyc29br+u=/oh_modules/library/libs/inner.har
+<span style="color: rgb(132,63,161);">inner@../oh_modules/.ohpm/library@c0jkxsxl3amvdd7rr1enrkrejzharxwucdoyc29br+u=/oh_modules/library/libs/inner.har</span>
 ": {
       "name": "inner",
       "version": "1.0.0",
-      "resolved": "../oh_modules/.ohpm/library@c0jkxsxl3amvdd7rr1enrkrejzharxwucdoyc29br+u=/oh_modules/library/libs/inner.har" 
+      "resolved": "<span style="color: rgb(132,63,161);">../oh_modules/.ohpm/library@c0jkxsxl3amvdd7rr1enrkrejzharxwucdoyc29br+u=/oh_modules/library/libs/inner.har</span>" 
       "registryType": "local"
     },
     "library@library.har": {
@@ -837,7 +840,7 @@ inner@../oh_modules/.ohpm/library@c0jkxsxl3amvdd7rr1enrkrejzharxwucdoyc29br+u=/o
 
 
 
-#### case_sensitive_check
+## case_sensitive_check
 
 ohpm客户端从6.21.0新增开关配置"case_sensitive_check"字段。若设置为true，在执行ohpm相关命令时，如果ohpm检测到工程中文件的配置路径和文件的实际路径存在大小写不一致问题时，则会报错提示开发者修改。该配置项仅在Windows环境下生效。
 
@@ -868,7 +871,7 @@ ohpm客户端从6.21.0新增开关配置"case_sensitive_check"字段。若设置
 
 
 
-#### auto_skip_install
+## auto_skip_install
 
 ohpm客户端从26.0.0.410新增开关配置auto_skip_install字段，该配置项值为布尔类型，默认为false。设置为true时，首次执行ohpm install安装命令后，再次执行ohpm install命令时会检测依赖是否发生变化，若依赖未发生变化则跳过本次安装。
 
@@ -959,7 +962,7 @@ install completed in 1s 217ms
 
 
 
-#### metadata_cache
+## metadata_cache
 
 ohpm客户端从26.0.0.410版本新增开关配置metadata_cache字段，该配置项值为布尔类型，默认为false。若设置metadata_cache为false，执行ohpm install时，仅加载oh-package-lock.json5文件中缓存的元数据。若设置 metadata_cache为true，执行ohpm install时，将按照如下优先级加载缓存的元数据：oh-package-lock.json5文件 > oh-install-meta.json5文件 > ~/.ohpm/cache/metadata/。
 
@@ -994,3 +997,27 @@ metadata/
 
 > [!NOTE]
 > 启用metadata_cache设置为true，当oh-package.json5中配置范围版本，且范围版本中有新版本发布时，ohpm可能从本地缓存的元数据中读取结果，而非发起网络请求。这可能导致无法获取新的包版本。这时需要执行 ohpm cache clean @group/package 命令清除对应包的元数据缓存文件，或执行 ohpm cache clean 命令清除所有元数据缓存文件。清除命令请参考 ohpm cache clean 。
+
+
+
+
+## symlink_for_local_dep
+
+ohpm客户端从26.0.0.630版本新增开关配置symlink_for_local_dep字段，该配置项值为布尔类型，默认为false。若设置symlink_for_local_dep为true，执行ohpm install过程中，对本地HAR依赖解压后的路径创建软链接，放置在工程目录/oh_modules/.ohpm/oh_modules中。
+
+本地HAR依赖配置示例：      
+```text
+{
+  "modelVersion": "6.1.0",
+  "description": "Please describe the basic information.",
+  "dependencies": {
+    "library5": "file:./library5.har"
+  }
+}
+```
+
+
+创建的软链接如下：
+
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/A5vf5rxLTmmRZmKv3dsqvw/zh-cn_image_0000002701823302.png?HW-CC-KV=V1&HW-CC-Date=20260911T072818Z&HW-CC-Expire=86400&HW-CC-Sign=DE2F5C81BDADB4FE0A3834480DE5036F4BDED9D25ECD535E726658B753E42763)

@@ -1,9 +1,9 @@
 # @ohos.file.hash (文件哈希处理)
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-file-hash
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该模块提供文件哈希处理能力，对文件内容进行哈希处理，适用于数据完整性校验、版本比对与内容去重等场景，可确保计算结果的不可变性与一致性，并支持流式处理大文件。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { hash } from '@kit.CoreFileKit';
@@ -22,9 +23,10 @@ import { hash } from '@kit.CoreFileKit';
 
 
 
-#### 使用说明
+## 使用说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 使用该功能模块对文件/目录进行操作前，需要先获取其应用沙箱路径，获取方式及其接口用法请参考：
 
@@ -44,9 +46,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### hash.hash
+## hash.hash
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hash(path: string, algorithm: string): Promise&lt;string&gt;
 
@@ -62,6 +65,7 @@ hash(path: string, algorithm: string): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 待计算哈希值文件的应用沙箱路径。 |
@@ -69,6 +73,7 @@ hash(path: string, algorithm: string): Promise&lt;string&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -78,6 +83,7 @@ hash(path: string, algorithm: string): Promise&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[基础文件IO错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement#基础文件io错误码)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -100,9 +106,10 @@ hash.hash(filePath, "sha256").then((str: string) => {
 
 
 
-#### hash.hash
+## hash.hash
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hash(path: string, algorithm: string, callback: AsyncCallback&lt;string&gt;): void
 
@@ -118,6 +125,7 @@ hash(path: string, algorithm: string, callback: AsyncCallback&lt;string&gt;): vo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 待计算哈希值文件的应用沙箱路径。 |
@@ -128,6 +136,7 @@ hash(path: string, algorithm: string, callback: AsyncCallback&lt;string&gt;): vo
 **错误码：**
 
 以下错误码的详细介绍请参见[基础文件IO错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement#基础文件io错误码)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -151,9 +160,10 @@ hash.hash(filePath, "sha256", (err: BusinessError, str: string) => {
 
 
 
-#### hash.createHash12+
+## hash.createHash12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createHash(algorithm: string): HashStream
 
@@ -167,12 +177,14 @@ createHash(algorithm: string): HashStream
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | algorithm | string | 是 | 哈希计算采用的算法。可选 "md5"、"sha1" 或 "sha256"。建议采用安全强度更高的 "sha256"。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -182,6 +194,7 @@ createHash(algorithm: string): HashStream
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[基础文件IO错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement#基础文件io错误码)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -216,17 +229,19 @@ function hashFileWithStream() {
 
 
 
-#### HashStream12+
+## HashStream12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 HashStream类是用于创建数据的哈希摘要的实用工具。由[createHash](#hashcreatehash12)接口获得。该类采用增量式哈希计算设计，通过update方法多次添加数据块，最后通过digest方法计算最终哈希值，适用于处理大文件或持续产生的数据流。
 
 
 
-#### update12+
+### update12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 update(data: ArrayBuffer): void
 
@@ -236,6 +251,7 @@ update(data: ArrayBuffer): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | ArrayBuffer | 是 | 待计算哈希值的数据。 |
@@ -244,6 +260,7 @@ update(data: ArrayBuffer): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[基础文件IO错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement#基础文件io错误码)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -265,9 +282,10 @@ console.info(`Succeeded in calculating file hash. hashResult: ${hashResult}`);
 
 
 
-#### digest12+
+### digest12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 digest(): string
 
@@ -277,6 +295,7 @@ digest(): string
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 返回数据的哈希值。该哈希值表示为十六进制数字串，所有字母均大写。 |
@@ -285,6 +304,7 @@ digest(): string
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[基础文件IO错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement#基础文件io错误码)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

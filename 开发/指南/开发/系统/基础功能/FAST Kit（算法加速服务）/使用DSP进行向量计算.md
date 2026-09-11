@@ -1,6 +1,6 @@
 # 使用DSP进行向量计算
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fast-dsp-vector-calculation
 
@@ -9,17 +9,18 @@
 向量计算支持单精度（float）和双精度（double）两种数据类型，并针对ARM NEON指令集进行了优化，在步长为1的连续存储场景下可获得显著性能提升。需要注意的是，为了提升性能，部分接口对浮点数的计算顺序进行了调整，可能影响结果精度。
 
 
-#### 接口说明
+## 接口说明
 
 具体API说明详见[接口文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/fast-kit-fast)。
 
 
 
-#### 向量基本算术运算
+### 向量基本算术运算
 
 涵盖所有逐元素的基础数值运算，包括标量与向量的组合运算、向量之间的四则运算、绝对值、平方、阈值以及幂运算等。
 
 **标量与向量的运算**
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -34,6 +35,7 @@
 
 
 **向量之间的运算**
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -53,6 +55,7 @@
 
 **向量变换**
 
+
 | 名称 | 描述 |
 | --- | --- |
 | void HMS_FAST_DSP_Vsq (const float* input, size_t strideInput, float* output, size_t strideOutput, size_t length) | 计算向量每个元素的平方（单精度）。 |
@@ -65,6 +68,7 @@
 
 **幂运算**
 
+
 | 名称 | 描述 |
 | --- | --- |
 | void HMS_FAST_DSP_Vvpow (const float* inputA, const float* inputB, float* outputC, size_t length) | 执行向量逐元素幂运算：C[i]等于A[i]的B[i]次方（单精度）。 |
@@ -73,11 +77,12 @@
 
 
 
-#### 初始化、归约与统计
+### 初始化、归约与统计
 
 包含将向量数据归纳为标量的操作、数据生成与填充、类型转换以及元素顺序调整。
 
 **初始化/填充**
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -89,6 +94,7 @@
 
 **类型转换**
 
+
 | 名称 | 描述 |
 | --- | --- |
 | void HMS_FAST_DSP_Vspdp (const float* input, size_t strideInput, double* output, size_t strideOutput, size_t length) | 将单精度向量转换为双精度向量。 |
@@ -96,6 +102,7 @@
 
 
 **归约运算**
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -119,6 +126,7 @@
 
 **向量元素操作**
 
+
 | 名称 | 描述 |
 | --- | --- |
 | void HMS_FAST_DSP_Vrvrs (float* vector, size_t stride, size_t length) | 原地反转向量中元素的顺序（单精度）。 |
@@ -129,11 +137,12 @@
 
 
 
-#### 复数运算
+### 复数运算
 
 包含复数向量的幅度、相位计算以及复数格式转换。
 
 **复数基础运算**
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -147,6 +156,7 @@
 
 **复数格式转换**
 
+
 | 名称 | 描述 |
 | --- | --- |
 | void HMS_FAST_DSP_Ctoz (const float* input, size_t strideInput, FAST_SplitComplex* output, size_t strideOutput, size_t length) | 将交错复数数组转换为分离格式（单精度）。 |
@@ -157,11 +167,12 @@
 
 
 
-#### 信号处理与线性代数
+### 信号处理与线性代数
 
 包含卷积、窗口生成和矩阵运算。
 
 **卷积**
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -171,6 +182,7 @@
 
 **窗口生成**
 
+
 | 名称 | 描述 |
 | --- | --- |
 | void HMS_FAST_DSP_HannWindow (float* output, size_t length, HMS_FAST_HannWindowType type) | 生成汉宁窗序列（单精度）。 |
@@ -178,6 +190,7 @@
 
 
 **矩阵运算**
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -187,7 +200,7 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 在CMake脚本中链接相关动态库。
 
   
@@ -212,11 +225,11 @@ target_link_libraries(entry PRIVATE ${lib_fast_dsp})
 
 
 
-#### 代码示例
+## 代码示例
 
 
 
-#### 最大值查找示例
+### 最大值查找示例
 
 ```text
 #include <cstdio>
@@ -245,7 +258,7 @@ FAST_ErrorCode max_value_demo() {
 
 
 
-#### 统计计算示例
+### 统计计算示例
 
 ```text
 #include <cstdio>
@@ -276,7 +289,7 @@ FAST_ErrorCode statistics_demo() {
 
 
 
-#### 向量运算示例
+### 向量运算示例
 
 ```text
 #include <cstdio>
@@ -311,7 +324,7 @@ FAST_ErrorCode vector_operations_demo() {
 
 
 
-#### 复数格式转换示例
+### 复数格式转换示例
 
 ```text
 #include <cstdio>
@@ -362,7 +375,7 @@ FAST_ErrorCode complex_conversion_demo() {
 
 
 
-#### 非连续存储示例
+### 非连续存储示例
 
 ```text
 #include <cstdio>

@@ -34,29 +34,29 @@
 3. 用户离开滑动条时将离开时的值赋值给lastValue。
  
 ```text
-// 完整代码示例
+<em>// </em><em>完整代码示例</em>
 @Entry
 @Component
 struct SliderClickDetector {
-  @State value: number = 30; // 初始值
-  lastValue: number = 30; // 记录上一次滑动条的值
-  @State sliderState: string = ''; // 滑块状态
+  @State value: number = 30; <em>// 初始值</em>
+  lastValue: number = 30; <em>// </em><em>记录上一次滑动条的值</em>
+  @State sliderState: string = ''; <em>// </em><em>滑块状态</em>
 
   build() {
     Column() {
-      // 显示当前进度条值
+    <em>  // 显示当前进度条值</em>
       Text(`点击位置: ${this.value.toFixed(0)}%`)
         .fontSize(20)
         .margin(20)
-      // 核心Slider组件
+    <em>  // 核心Slider组件</em>
       Slider({
         value: $$this.value,
         min: 0,
         max: 100,
         step: 1,
-        style: SliderStyle.OutSet // 使用凸起样式
+        style: SliderStyle.OutSet <em>// </em><em>使用凸起样式</em>
       })
-        .width('90%') // 设置Slider宽度
+        .width('90%')<em> </em><em>// 设置Slider宽度</em>
         .onChange((value, mode) => {
           if (mode === SliderChangeMode.Begin) {
             if (value === this.lastValue) {

@@ -1,13 +1,14 @@
 # cm_native_type.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-cm-native-type-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供CertManager中的枚举变量、结构体定义、宏定义和错误码。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_CM_Blob | OH_CM_Blob | 定义存放数据的结构体类型。 |
@@ -43,10 +47,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_CM_ErrorCode | OH_CM_ErrorCode | 错误码。 |
@@ -55,29 +61,33 @@
  
   
 
-#### 宏定义
+### 宏定义
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
-| OH_CM_MAX_LEN_CERTIFICATE_CHAIN 24588 | 证书链最大长度，单位：字节。 起始版本： 22 |
-| OH_CM_MAX_LEN_URI 256 | URI最大长度，单位：字节。 起始版本： 22 |
-| OH_CM_MAX_LEN_CERT_ALIAS 129 | 证书别名的最大长度，单位：字节。 起始版本： 22 |
-| OH_CM_MAX_LEN_TYPE_NAME 1025 | 证书类型最大长度，单位：字节。 起始版本： 22 |
+| OH_CM_MAX_LEN_CERTIFICATE_CHAIN 24588 | 证书链最大长度，单位：Byte。 起始版本： 22 |
+| OH_CM_MAX_LEN_URI 256 | URI最大长度，单位：Byte。 起始版本： 22 |
+| OH_CM_MAX_LEN_CERT_ALIAS 129 | 证书别名的最大长度，单位：Byte。 起始版本： 22 |
+| OH_CM_MAX_LEN_TYPE_NAME 1025 | 证书类型最大长度，单位：Byte。 起始版本： 22 |
  
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_CM_ErrorCode
+### OH_CM_ErrorCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_CM_ErrorCode
@@ -89,12 +99,13 @@ enum OH_CM_ErrorCode
  
 **起始版本：** 22
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_CM_SUCCESS = 0 | 成功。 |
 | OH_CM_HAS_NO_PERMISSION = 201 | 权限校验失败。 |
 | OH_CM_CAPABILITY_NOT_SUPPORTED = 801 | 设备不支持。 |
-| OH_CM_INNER_FAILURE = 17500001 | 内部错误。可能原因：1.IPC通讯失败；2.内存操作错误；3.文件操作错误。 |
+| OH_CM_INNER_FAILURE = 17500001 | 内部错误。可能原因：1.IPC通信失败；2.内存操作错误；3.文件操作错误。 |
 | OH_CM_NOT_FOUND = 17500002 | 证书不存在。 |
 | OH_CM_INVALID_CERT_FORMAT = 17500003 | 密钥库格式无效或密钥库密码不正确。 |
 | OH_CM_MAX_CERT_COUNT_REACHED = 17500004 | 证书或凭据数量达到上限。 |
@@ -107,9 +118,10 @@ enum OH_CM_ErrorCode
  
   
 
-#### OH_CM_CertificatePurpose
+### OH_CM_CertificatePurpose
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_CM_CertificatePurpose
@@ -121,9 +133,10 @@ enum OH_CM_CertificatePurpose
  
 **起始版本：** 22
   
+
 | 枚举项 | 描述 |
 | --- | --- |
-| OH_CM_CERT_PURPOSE_DEFAULT = 0 | 默认用途，用于凭据签名用途。 |
+| OH_CM_CERT_PURPOSE_DEFAULT = 0 | 默认用途，用于凭据签名。 |
 | OH_CM_CERT_PURPOSE_ALL = 1 | 所有用途，用于查询凭据功能。 |
 | OH_CM_CERT_PURPOSE_SIGN = 2 | 签名用途。 |
 | OH_CM_CERT_PURPOSE_ENCRYPT = 3 | 加密用途。 |

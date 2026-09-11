@@ -1,18 +1,19 @@
 # functionalInputComponentManager(场景化融合Input组件管理)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/scenario-fusion-functionalinputcomponentmanager
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+**支持设备：** Phone | PC/2in1 | Tablet
 
 本模块提供FunctionalInput组件的逻辑管理，辅助HarmonyOS应用和元服务通过FunctionalInput组件完成快速拉起选择地区页面，供用户选择地区信息的功能。
  
 **起始版本：** 5.1.0(18)
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 import { functionalInputComponentManager } from '@kit.ScenarioFusionKit';
@@ -20,9 +21,10 @@ import { functionalInputComponentManager } from '@kit.ScenarioFusionKit';
  
   
 
-#### InputType
+## InputType
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 该枚举定义省市区选择器的功能类型。
  
@@ -34,6 +36,7 @@ import { functionalInputComponentManager } from '@kit.ScenarioFusionKit';
  
 **起始版本：** 5.1.0(18)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SELECT_DISTRICT | 0 | 默认值为0，省市区选择器类型。 |
@@ -41,9 +44,10 @@ import { functionalInputComponentManager } from '@kit.ScenarioFusionKit';
  
   
 
-#### FunctionalInputParams
+## FunctionalInputParams
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 该接口定义了FunctionalInput组件的参数，包括省市区选择器的类型，样式，图标等。
  
@@ -55,6 +59,7 @@ import { functionalInputComponentManager } from '@kit.ScenarioFusionKit';
  
 **起始版本：** 5.1.0(18)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | inputType | InputType | 否 | 否 | Input组件功能场景类型。默认值：SELECT_DISTRICT。 |
@@ -67,9 +72,10 @@ import { functionalInputComponentManager } from '@kit.ScenarioFusionKit';
  
   
 
-#### DistrictSelectResult
+## DistrictSelectResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 该接口定义了选择地区的返回体。
  
@@ -83,6 +89,7 @@ import { functionalInputComponentManager } from '@kit.ScenarioFusionKit';
  
 **起始版本：** 5.1.0(18)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | inputContent | string | 否 | 否 | 返回选择的区域信息。格式为：省、市、区、街道。 |
@@ -91,17 +98,19 @@ import { functionalInputComponentManager } from '@kit.ScenarioFusionKit';
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 不支持通用事件，仅支持以下事件：
  
   
 
-#### FunctionalInputController
+## FunctionalInputController
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 FunctionalInput组件控制器，用来回调组件内部的点击事件。
  
@@ -115,9 +124,10 @@ FunctionalInput组件控制器，用来回调组件内部的点击事件。
  
   
 
-#### onSelectDistrict
+### onSelectDistrict
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 onSelectDistrict(callback: AsyncCallback&lt;DistrictSelectResult&gt;): FunctionalInputController
  
@@ -137,6 +147,7 @@ onSelectDistrict(callback: AsyncCallback&lt;DistrictSelectResult&gt;): Functiona
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;DistrictSelectResult&gt; | 是 | 回调函数。当区域选择操作成功，err为undefined，data为获取到的区域选择请求的结果；否则为错误对象。 |
@@ -144,6 +155,7 @@ onSelectDistrict(callback: AsyncCallback&lt;DistrictSelectResult&gt;): Functiona
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FunctionalInputController | FunctionalInput组件控制器。 |

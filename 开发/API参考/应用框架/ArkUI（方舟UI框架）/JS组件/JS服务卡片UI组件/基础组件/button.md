@@ -1,9 +1,9 @@
 # button
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-service-widget-basic-button
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 按钮组件，包括胶囊按钮、圆形按钮和文本按钮。
  
@@ -12,20 +12,23 @@
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 不支持。
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-service-widget-common-attributes)外，还支持如下属性。
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | type | string | capsule | 否 | 不支持动态修改。如果该属性缺省，展示为胶囊型按钮，不同于胶囊类型，四边圆角可以通过border-radius分别指定，如果需要设置该属性，可选值如下： - "capsule"：胶囊型按钮，带圆角按钮，有背景色和文本。 - "circle"：圆形按钮，支持放置图标。 - "text"：文本按钮，仅包含文本显示。 |
@@ -37,20 +40,23 @@
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-service-widget-common-events)。
  
   
 
-#### 样式
+## 样式
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用样式](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-service-widget-common-styles)外，还支持如下样式：
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | text-color | &lt;color&gt; | - | 否 | 按钮的文本颜色。 |
@@ -69,9 +75,10 @@
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 <!-- xxx.hml -->
@@ -109,4 +116,4 @@
 **4*4卡片**
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/HMa33GEhSWqakhasl9JyPA/zh-cn_image_0000002686088767.jpg?HW-CC-KV=V1&HW-CC-Date=20260730T071527Z&HW-CC-Expire=86400&HW-CC-Sign=A3196BA4CABEC1E5B88828F7DE4F15130AA92EAB636D3A8E8F412CC7AFD52E26)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/UKU01itwQWik7T_RbkSQLA/zh-cn_image_0000002747213345.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T073001Z&HW-CC-Expire=86400&HW-CC-Sign=A9CDF3EC977281C608BC02C72F3DAE3C9191A07C367A1CD2D0B7AFE5346B3072)

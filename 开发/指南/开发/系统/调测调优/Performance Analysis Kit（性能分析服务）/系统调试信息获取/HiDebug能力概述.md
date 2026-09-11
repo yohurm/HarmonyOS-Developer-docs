@@ -1,6 +1,6 @@
 # HiDebug能力概述
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hidebug-guidelines
 
@@ -11,19 +11,20 @@ HiDebug可用于获取系统或应用进程的内存、CPU和GPU等数据，以�
 接口详情可查看[@ohos.hidebug](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hidebug)及[hidebug.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hidebug-h)。
 
 
-#### 约束限制
+## 约束限制
 
 该模块的接口调用较为耗时，部分接口调用时长可达秒级，导致调用线程卡顿。且基于HiDebug模块定义，该模块内的接口建议仅在应用调试、调优阶段使用。若需在其他场景使用，请评估接口调用对应用性能的影响。
 
 
 
-#### 获取内存信息
+## 获取内存信息
 
 HiDebug可用于获取整机内存、应用进程内存占用、应用线程内存占用及内存分配器统计的native内存分配数据。在程序开发过程中，查看设备和应用进程的内存数据是发现和解决各种问题、优化程序性能及确保程序稳定性的关键手段。
 
 
 
-#### 接口说明（ArkTS）
+### 接口说明（ArkTS）
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -44,7 +45,8 @@ HiDebug可用于获取整机内存、应用进程内存占用、应用线程内�
 
 
 
-#### 接口说明（C/C++）
+### 接口说明（C/C++）
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -56,7 +58,7 @@ HiDebug可用于获取整机内存、应用进程内存占用、应用线程内�
 
 
 
-#### 获取显存信息
+## 获取显存信息
 
 HiDebug可获取应用占用的显存资源数据。在图形密集型应用中，显存管理至关重要，滥用显存资源将导致应用严重卡顿，影响用户体验。显存资源包括两部分：
 1. graph：进程统计的DMA内存占用，包括直接通过接口申请的DMA buffer和通过allocator_host申请的DMA buffer。
@@ -64,7 +66,8 @@ HiDebug可获取应用占用的显存资源数据。在图形密集型应用中�
 
 
 
-#### 接口说明（ArkTS）
+### 接口说明（ArkTS）
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -75,7 +78,8 @@ HiDebug可获取应用占用的显存资源数据。在图形密集型应用中�
 
 
 
-#### 接口说明（C/C++）
+### 接口说明（C/C++）
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -85,13 +89,13 @@ HiDebug可获取应用占用的显存资源数据。在图形密集型应用中�
 
 
 
-#### 获取CPU使用率
+## 获取CPU使用率
 
 应用开发中，监控CPU使用率是性能分析的关键。为便于开发者优化应用性能，确保应用流畅运行，HiDebug模块提供了多个接口以获取CPU使用率。
 
 
 
-#### 实现原理
+### 实现原理
 
 hiview进程每10秒获取一次当前CPU的运行数据并缓存，作为CPU使用率计算的基准，主要包括以下数据：
 
@@ -160,7 +164,8 @@ struct ucollection_thread_cpu_item {
 
 
 
-#### 接口说明（ArkTS）
+### 接口说明（ArkTS）
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -171,7 +176,8 @@ struct ucollection_thread_cpu_item {
 
 
 
-#### 接口说明（C/C++）
+### 接口说明（C/C++）
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -183,13 +189,14 @@ struct ucollection_thread_cpu_item {
 
 
 
-#### 获取VM信息
+## 获取VM信息
 
 HiDebug可用于获取VM内存数据、GC统计数据及VM堆转储。
 
 
 
-#### 接口说明（ArkTS）
+### 接口说明（ArkTS）
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -205,7 +212,7 @@ HiDebug可用于获取VM内存数据、GC统计数据及VM堆转储。
 
 
 
-#### 获取应用Trace记录信息
+## 获取应用Trace记录信息
 
 HiTrace提供业务流程调用链跟踪的维测接口，帮助开发者获取指定业务流程调用链的运行日志，定位跨设备、跨进程、跨线程的故障问题。详情请参考[Trace性能跟踪](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hitracemeter-intro)。为了便于实现HiTrace的自动化采集，HiDebug模块提供了启动和停止HiTrace采集的接口。
 
@@ -213,7 +220,8 @@ HiTrace提供业务流程调用链跟踪的维测接口，帮助开发者获取�
 
 
 
-#### 接口说明（ArkTS）
+### 接口说明（ArkTS）
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -224,7 +232,8 @@ HiTrace提供业务流程调用链跟踪的维测接口，帮助开发者获取�
 
 
 
-#### 接口说明（C/C++）
+### 接口说明（C/C++）
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -235,13 +244,14 @@ HiTrace提供业务流程调用链跟踪的维测接口，帮助开发者获取�
 
 
 
-#### 启动虚拟机CpuProfiler采集
+## 启动虚拟机CpuProfiler采集
 
 HiDebug提供了开启和停止VM虚拟机CpuProfiler采集的接口，帮助开发者实现CpuProfiler的自动采集。
 
 
 
-#### 接口说明（ArkTS）
+### 接口说明（ArkTS）
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -251,13 +261,13 @@ HiDebug提供了开启和停止VM虚拟机CpuProfiler采集的接口，帮助开
 
 
 
-#### 获取调用栈
+## 获取调用栈
 
 获取方法的调用栈信息对于调试和错误处理非常有用。调用栈信息帮助开发者了解方法的调用顺序和调用者的信息。HiDebug开放了获取调用栈信息的接口，便于开发者获取调用栈信息。
 
 
 
-#### 栈回溯原理
+### 栈回溯原理
 
 ARM64架构函数栈帧的结构如下图所示：
 
@@ -277,7 +287,8 @@ LR：保存函数返回的地址。
 
 
 
-#### 接口说明（C/C++）
+### 接口说明（C/C++）
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -289,13 +300,13 @@ LR：保存函数返回的地址。
 
 
 
-#### 线程栈Perf采集
+## 线程栈Perf采集
 
 HiDebug提供了线程栈Perf采样功能。该接口通过周期性地采集线程的运行状态，以较低的性能开销，精准捕捉性能热点，与热点函数，并分析热点函数的调用链关系。
 
 
 
-#### 采样栈规格
+### 采样栈规格
 
 Perf采样结果部分示例如下：
 
@@ -362,7 +373,8 @@ JS帧格式如下：
 
 
 
-#### 接口说明（C/C++）
+### 接口说明（C/C++）
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -371,13 +383,14 @@ JS帧格式如下：
 
 
 
-#### 设置资源泄漏检测阈值
+## 设置资源泄漏检测阈值
 
 HiDebug提供设置系统资源泄漏检测阈值的接口，开发者可根据业务需求自定义资源泄漏事件触发的阈值。此接口主要用于辅助内存泄漏检测和功能开发，详情请参考[资源泄漏检测](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/resource-leak-guidelines)。
 
 
 
-#### 接口说明（ArkTS）
+### 接口说明（ArkTS）
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -386,13 +399,14 @@ HiDebug提供设置系统资源泄漏检测阈值的接口，开发者可根据�
 
 
 
-#### 管理GWP-ASan
+## 管理GWP-ASan
 
 HiDebug提供了启停[GWP-ASan](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-gwpasan-detection)使能和查询使能天数的能力。
 
 
 
-#### 接口说明（ArkTS）
+### 接口说明（ArkTS）
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -403,13 +417,14 @@ HiDebug提供了启停[GWP-ASan](https://developer.huawei.com/consumer/cn/doc/be
 
 
 
-#### 添加维测信息到崩溃日志中
+## 添加维测信息到崩溃日志中
 
 HiDebug提供添加维测信息的接口，开发者可根据业务需要将维测信息添加到崩溃日志中，若程序发生崩溃，可在崩溃日志中找到该维测信息。
 
 
 
-#### 接口说明（C/C++）
+### 接口说明（C/C++）
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -419,13 +434,14 @@ HiDebug提供添加维测信息的接口，开发者可根据业务需要将维�
 
 
 
-#### 将堆快照由线程级改成进程级
+## 将堆快照由线程级改成进程级
 
 HiDebug提供修改转储堆快照级别的接口。
 
 
 
-#### 接口说明（ArkTS）
+### 接口说明（ArkTS）
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -434,13 +450,14 @@ HiDebug提供修改转储堆快照级别的接口。
 
 
 
-#### 采集进程资源调用栈
+## 采集进程资源调用栈
 
 从API version 24开始，HiDebug新增资源采集功能，支持按需采集应用进程资源分配栈至沙箱，覆盖文件描述符、线程、Native/GPU内存及全局句柄等类别，辅助定位资源泄漏。
 
 
 
-#### 接口说明（C/C++）
+### 接口说明（C/C++）
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -450,13 +467,14 @@ HiDebug提供修改转储堆快照级别的接口。
 
 
 
-#### 导出内存快照
+## 导出内存快照
 
 从API版本26.0.0开始，HiDebug支持注册内存导出监听器，用于在内存占用较高或通过[hidumper命令](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hidumper#查询虚拟机堆内存)手动触发时导出应用内存快照，便于本地导出或上报。
 
 
 
-#### 接口说明（C/C++）
+### 接口说明（C/C++）
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -466,12 +484,12 @@ HiDebug提供修改转储堆快照级别的接口。
 
 
 
-#### 管理异步上下文
+## 管理异步上下文
 
 从API版本26.0.0开始，HiDebug提供异步上下文管理接口，用于在自定义异步任务场景中建立和解除异步调用链关系。通过这些接口，开发者可以在异步任务提交和完成时分别压入和弹出异步上下文，使[hiperf命令行工具](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiperf)、[OH_HiDebug_RequestThreadLiteSampling接口](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hidebug-h#oh_hidebug_requestthreadlitesampling)等性能分析工具能够追踪到完整的异步调用栈。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/SCpIz0-QTPq3TZd0QQAWXA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071932Z&HW-CC-Expire=86400&HW-CC-Sign=553FAF7EE35280E1781FB7D367A3BC96AE9E6A8D26CF0276802974774EF34B4B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/BNuU5SILRKSqfnP2XKqEGA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072800Z&HW-CC-Expire=86400&HW-CC-Sign=253F86D0C85771C2021AE933F8ABD88130F703CAA4F7A64AE605D114E95B5646)
 
 
 该功能仅支持ARM64架构，且仅可在[debug版本应用](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/performance-analysis-kit-terminology#debug版本应用)中使用。
@@ -480,7 +498,7 @@ HiDebug提供修改转储堆快照级别的接口。
 
 
 
-#### 使用流程
+### 使用流程
 1. 在异步任务提交前，调用[OH_HiDebug_AcquireAsyncContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hidebug-h#oh_hidebug_acquireasynccontext)获取一个异步上下文。
 2. 在异步任务提交时，调用[OH_HiDebug_PushAsyncContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hidebug-h#oh_hidebug_pushasynccontext)将异步上下文压入当前线程的运行上下文，建立异步调用链。
 3. 在异步任务完成时，调用[OH_HiDebug_PopAsyncContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hidebug-h#oh_hidebug_popasynccontext)将异步上下文弹出，解除异步调用链。
@@ -488,7 +506,8 @@ HiDebug提供修改转储堆快照级别的接口。
 
 
 
-#### 接口说明（C/C++）
+### 接口说明（C/C++）
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -500,13 +519,14 @@ HiDebug提供修改转储堆快照级别的接口。
 
 
 
-#### 其他
+## 其他
 
 HiDebug提供了获取应用调试状态和启动系统进程DUMP信息采集等功能。
 
 
 
-#### 接口说明（ArkTS）
+### 接口说明（ArkTS）
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -516,7 +536,7 @@ HiDebug提供了获取应用调试状态和启动系统进程DUMP信息采集等
 
 
 
-#### 常见问题
+## 常见问题
 
 **在使用OH_HiDebug_StartAppTraceCapture和startAppTraceCapture接口抓取HiTrace日志时，接口返回路径为设备内物理路径**
 

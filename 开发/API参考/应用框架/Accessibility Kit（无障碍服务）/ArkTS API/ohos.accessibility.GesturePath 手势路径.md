@@ -1,6 +1,6 @@
 # @ohos.accessibility.GesturePath (手势路径)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-accessibility-gesturepath
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
@@ -14,7 +14,8 @@ GesturePath表示手势路径信息。
 
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -24,7 +25,8 @@ import { GesturePath } from '@kit.AccessibilityKit';
  
   
 
-#### GesturePath
+## GesturePath
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -34,8 +36,12 @@ import { GesturePath } from '@kit.AccessibilityKit';
  
   
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
  
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | points | Array&lt;GesturePoint&gt; | 否 | 否 | 手势路径上的触摸点序列，用于构成手势的移动轨迹。每个触摸点表示路径中的一个坐标位置。数组长度需大于0。 |
@@ -44,7 +50,8 @@ import { GesturePath } from '@kit.AccessibilityKit';
  
   
 
-#### constructor(deprecated)
+### constructor(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -60,6 +67,7 @@ constructor(durationTime: number)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | durationTime | number | 是 | 手势总耗时，单位：ms。取值需大于0。 |

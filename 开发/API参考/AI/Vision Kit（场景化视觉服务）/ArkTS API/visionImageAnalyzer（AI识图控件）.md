@@ -1,6 +1,6 @@
 # visionImageAnalyzer（AI识图控件）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/vision-image-analyzer
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -12,7 +12,8 @@ AI识图是通过聚合OCR（Optical Character Recognition，光学字符识别�
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -22,7 +23,8 @@ import { visionImageAnalyzer } from '@kit.VisionKit';
  
   
 
-#### Menu
+## Menu
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -34,6 +36,7 @@ AI识图菜单。
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | value | ResourceStr | 否 | 否 | 菜单内容。 |
@@ -42,7 +45,8 @@ AI识图菜单。
  
   
 
-#### Rect
+## Rect
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -54,6 +58,7 @@ AI识图菜单。
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | left | number | 否 | 是 | 矩形的左方位置。取值范围在图片的左边界到右边界之间。单位：vp。默认值 0 |
@@ -64,7 +69,8 @@ AI识图菜单。
  
   
 
-#### Subject
+## Subject
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -76,6 +82,7 @@ AI识图菜单。
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | id | number | 否 | 否 | 主体id。取值范围：[0，6]。 |
@@ -86,7 +93,8 @@ AI识图菜单。
  
   
 
-#### SelectedStatus
+## SelectedStatus
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -98,6 +106,7 @@ AI识图菜单。
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SELECTED | 0 | 选中状态。 |
@@ -106,7 +115,8 @@ AI识图菜单。
  
   
 
-#### ImageAnalyzerVisibility
+## ImageAnalyzerVisibility
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -118,6 +128,7 @@ AI识图控件可见状态的枚举值。
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SHOWN | 0 | AI识图控件的可见状态。 |
@@ -126,7 +137,8 @@ AI识图控件可见状态的枚举值。
  
   
 
-#### AIButtonStatus
+## AIButtonStatus
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -138,6 +150,7 @@ AIButton状态的枚举值。
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SELECTED | 0 | AIButton选中状态。 |
@@ -147,7 +160,8 @@ AIButton状态的枚举值。
  
   
 
-#### ObjectSearchPanelVisibility
+## ObjectSearchPanelVisibility
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -159,6 +173,7 @@ AIButton状态的枚举值。
  
 **起始版本：** 5.0.1(13)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SHOW | 0 | 图片搜索界面的可见状态。 |
@@ -167,7 +182,8 @@ AIButton状态的枚举值。
  
   
 
-#### ImageAnalyzerUIStatus
+## ImageAnalyzerUIStatus
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -179,6 +195,7 @@ AIButton状态的枚举值。
  
 **起始版本：** 5.0.2(14)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | INITIAL | 0 | 初始化状态。 |
@@ -190,7 +207,8 @@ AIButton状态的枚举值。
  
   
 
-#### VisionImageAnalyzerController
+## VisionImageAnalyzerController
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -204,7 +222,8 @@ AIButton状态的枚举值。
  
   
 
-#### setImageAnalyzerVisibility
+### setImageAnalyzerVisibility
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -220,6 +239,7 @@ setImageAnalyzerVisibility(visibility: ImageAnalyzerVisibility): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | visibility | ImageAnalyzerVisibility | 是 | AI识图控件的可见性。 |
@@ -256,7 +276,8 @@ struct ImageDemo {
  
   
 
-#### setAIButtonPosition
+### setAIButtonPosition
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -272,6 +293,7 @@ setAIButtonPosition(position: Rect): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | position | Rect | 是 | AIButton区域距离AI识图控件四边的位置（vp）。默认展示在右下角 。 当传入部分参数时，优先按照传入的参数匹配，如果位置参数异常，使用默认位置展示。 同时设置top及bottom参数，调setAIButtonPosition接口仅top参数生效。 |
@@ -313,12 +335,13 @@ struct ImageDemo {
 示例图如下，AIButton离底部300vp
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/dh4sXkldTAqk4rPWmLp9Lg/zh-cn_image_0000002685929433.png?HW-CC-KV=V1&HW-CC-Date=20260730T071747Z&HW-CC-Expire=86400&HW-CC-Sign=3ED165BAEDF0BAC83B213EEBAFE14E6B865D256541E57ECC8917F19FBD3032B7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/g2Wfmnk6Smi5KwPbeziZvQ/zh-cn_image_0000002747293933.png?HW-CC-KV=V1&HW-CC-Date=20260911T073143Z&HW-CC-Expire=86400&HW-CC-Sign=38042C7F2CF36569421AC4BA4FDBE690603D127309104E8A4395027AEFBFDD1D)
 
  
   
 
-#### setAIButtonVisibility
+### setAIButtonVisibility
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -334,6 +357,7 @@ setAIButtonVisibility(visible: boolean): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | visible | boolean | 是 | AIButton的可见性。true表示可见，false表示不可见。 默认为false，隐藏AIButton。 |
@@ -371,12 +395,13 @@ struct ImageDemo {
 AIButton可见时如下图所示
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/vTTG4ihFQXK4bKH61g5Lpg/zh-cn_image_0000002656009758.jpg?HW-CC-KV=V1&HW-CC-Date=20260730T071747Z&HW-CC-Expire=86400&HW-CC-Sign=E51E366BD694B48D45C25622E097E53C0633E901C85D1BCA6505D4C619C4EB75)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/ium9SH4oQYi5TZQpmGZddQ/zh-cn_image_0000002747213849.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T073143Z&HW-CC-Expire=86400&HW-CC-Sign=443DE2A40EF1E22039CF22E7E1B489213A1F6A6140EB5AB219ACF31FF6D375B2)
 
  
   
 
-#### setCustomTextMenuItems
+### setCustomTextMenuItems
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -392,6 +417,7 @@ setCustomTextMenuItems(menus: Menu[]): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | menus | Menu[] | 是 | 选中文字时，支持在文字菜单上增加自定义菜单项，回调中包含当前选中的文字结果。 最多只展示三个，超过三个时取前三个。 |
@@ -437,12 +463,13 @@ struct ImageDemo {
 示例如下图所示，菜单右侧增加自定义菜单项。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/3Y-Bu2DSR7GhEoQ_9f8HYA/zh-cn_image_0000002655849836.jpg?HW-CC-KV=V1&HW-CC-Date=20260730T071747Z&HW-CC-Expire=86400&HW-CC-Sign=26CDD5BA9C3E20C921B37171A258489B272276F70A64F9E84E3686B649B6FF27)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/PSqm753_RQ6D5jBSI9ku6g/zh-cn_image_0000002717773914.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T073143Z&HW-CC-Expire=86400&HW-CC-Sign=70A74F9239C6A2E65C06A083CB232B8F408EED4601EF96DA730CC51A72158F98)
 
  
   
 
-#### startSubjectAnalyzer
+### startSubjectAnalyzer
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -490,7 +517,8 @@ struct ImageDemo {
  
   
 
-#### setCustomSubjectMenuItems
+### setCustomSubjectMenuItems
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -506,6 +534,7 @@ setCustomSubjectMenuItems(menus: Menu[]): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | menus | Menu[] | 是 | 选中主体时，支持在主体菜单上增加自定义菜单项，回调中包含当前选中的主体结果。 最多只展示三个，超过部分取前三个。 |
@@ -549,7 +578,8 @@ struct ImageDemo {
  
   
 
-#### setSelectedSubjects
+### setSelectedSubjects
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -565,6 +595,7 @@ setSelectedSubjects(subjectIds: number[]): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | subjectIds | number[] | 是 | 要选中的主体id列表。通过getSubject获取，只有图片识别结果中包含的主体id才有效。 |
@@ -606,7 +637,8 @@ struct SingleImageTest2 {
  
   
 
-#### getSelectedSubjects
+### getSelectedSubjects
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -622,6 +654,7 @@ getSelectedSubjects(): Promise<Subject[] | null>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Subject[] \| null> | Promise对象，返回当前选中的主体。 |
@@ -660,7 +693,8 @@ struct ImageDemo {
  
   
 
-#### getSubject
+### getSubject
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -676,6 +710,7 @@ getSubject(point: visionBase.Point): Promise<Subject | null>
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | point | visionBase.Point | 是 | 相对于图片左上角位置点位（px）。 |
@@ -683,6 +718,7 @@ getSubject(point: visionBase.Point): Promise<Subject | null>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Subject \| null> | Promise对象，point点位所在的主体。 |
@@ -722,7 +758,8 @@ struct ImageDemo {
  
   
 
-#### getSubjectsImage
+### getSubjectsImage
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -738,6 +775,7 @@ getSubjectsImage(subjectIds: number[]): Promise<PixelMap | null>
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | subjectIds | number[] | 是 | 主体id列表。通过getSubject获取。 |
@@ -745,6 +783,7 @@ getSubjectsImage(subjectIds: number[]): Promise<PixelMap | null>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<PixelMap \| null> | Promise对象，对应id列表组装成的图片。 |
@@ -792,7 +831,8 @@ struct ImageDemo {
  
   
 
-#### getImageAnalyzerUIStatus
+### getImageAnalyzerUIStatus
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -808,6 +848,7 @@ getImageAnalyzerUIStatus(): Promise&lt;ImageAnalyzerUIStatus&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;ImageAnalyzerUIStatus&gt; | Promise对象，当前图片分析UI状态。 |
@@ -866,9 +907,10 @@ struct ImageDemo {
  
   
 
-#### startObjectSearch
+### startObjectSearch
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | Tablet
 
 startObjectSearch(): Promise&lt;boolean&gt;
  
@@ -884,6 +926,7 @@ startObjectSearch(): Promise&lt;boolean&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象，返回是否开启视觉搜索。true表示开启视觉搜索，false表示关闭视觉搜索。在文字选择或主体识别状态时拉起会返回false。 说明： 视觉搜索若在Swiper容器切换图场景下无法生效，则需要在图片切换的onAnimationStart中置空一下当前选中图片的index，再由onAnimationEnd时将当前选中index置成当前index，以此实现overlay跟随图片变动而变动。 |
@@ -922,9 +965,10 @@ struct ImageDemo {
  
   
 
-#### stopObjectSearch
+### stopObjectSearch
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | Tablet
 
 stopObjectSearch(): void
  
@@ -969,7 +1013,8 @@ struct ImageDemo {
  
   
 
-#### setSubjectMenuVisibility
+### setSubjectMenuVisibility
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -985,6 +1030,7 @@ setSubjectMenuVisibility(visible: boolean): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | visible | boolean | 是 | 设置图像分割菜单状态。 true：显示图像分割菜单；false：隐藏图像分割菜单。 默认是true。 |
@@ -1019,7 +1065,8 @@ struct ImageDemo {
  
   
 
-#### on(type: 'aiButtonStatusChange')
+### on(type: 'aiButtonStatusChange')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1035,6 +1082,7 @@ on(type: 'aiButtonStatusChange', callback: Callback&lt;AIButtonStatus&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"aiButtonStatusChange"。监听AIButton展示状态。 |
@@ -1075,7 +1123,8 @@ struct ImageDemo {
  
   
 
-#### off(type: 'aiButtonStatusChange')
+### off(type: 'aiButtonStatusChange')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1091,6 +1140,7 @@ off(type: 'aiButtonStatusChange', callback?: Callback&lt;AIButtonStatus&gt;): vo
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"aiButtonStatusChange"。取消监听AIButton展示状态。 |
@@ -1134,7 +1184,8 @@ struct ImageDemo {
  
   
 
-#### on(type: 'imageAnalyzerVisibilityChange')
+### on(type: 'imageAnalyzerVisibilityChange')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1150,6 +1201,7 @@ on(type: 'imageAnalyzerVisibilityChange', callback: Callback&lt;ImageAnalyzerVis
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"imageAnalyzerVisibilityChange"。监听AI识图控件可见状态。 |
@@ -1193,7 +1245,8 @@ struct ImageDemo {
  
   
 
-#### off(type: 'imageAnalyzerVisibilityChange')
+### off(type: 'imageAnalyzerVisibilityChange')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1209,6 +1262,7 @@ off(type: 'imageAnalyzerVisibilityChange', callback?: Callback&lt;ImageAnalyzerV
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"imageAnalyzerVisibilityChange"。取消AI识图控件可见状态的监听。 |
@@ -1252,7 +1306,8 @@ struct ImageDemo {
  
   
 
-#### on(type: 'textAnalysis')
+### on(type: 'textAnalysis')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1268,6 +1323,7 @@ on(type: 'textAnalysis', callback: Callback&lt;string&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"textAnalysis"。监听文字分析结果。 |
@@ -1310,7 +1366,8 @@ struct ImageDemo {
  
   
 
-#### off(type: 'textAnalysis')
+### off(type: 'textAnalysis')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1326,6 +1383,7 @@ off(type: 'textAnalysis', callback?: Callback&lt;string&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"textAnalysis"。取消文字分析结果的监听。 |
@@ -1368,7 +1426,8 @@ struct ImageDemo {
  
   
 
-#### on(type: 'selectedTextChange')
+### on(type: 'selectedTextChange')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1384,6 +1443,7 @@ on(type: 'selectedTextChange', callback: Callback&lt;string&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"selectedTextChange"。监听文字选中结果。 |
@@ -1426,7 +1486,8 @@ struct ImageDemo {
  
   
 
-#### off(type: 'selectedTextChange')
+### off(type: 'selectedTextChange')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1442,6 +1503,7 @@ off(type: 'selectedTextChange', callback?: Callback&lt;string&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"selectedTextChange"。取消文字选中结果的监听。 |
@@ -1484,7 +1546,8 @@ struct ImageDemo {
  
   
 
-#### on(type: 'subjectAnalysis')
+### on(type: 'subjectAnalysis')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1500,6 +1563,7 @@ on(type: 'subjectAnalysis', callback: Callback<Subject[]>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"subjectAnalysis"。监听主体分析结果， 返回所有主体信息。 |
@@ -1542,7 +1606,8 @@ struct ImageDemo {
  
   
 
-#### off(type: 'subjectAnalysis')
+### off(type: 'subjectAnalysis')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1558,6 +1623,7 @@ off(type: 'subjectAnalysis', callback?: Callback<Subject[]>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"subjectAnalysis"。取消主体分析结果的监听。 |
@@ -1600,7 +1666,8 @@ struct ImageDemo {
  
   
 
-#### on(type: 'selectedSubjectsChange')
+### on(type: 'selectedSubjectsChange')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1616,6 +1683,7 @@ on(type: 'selectedSubjectsChange', callback: Callback<Subject[]>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"selectedSubjectsChange"。监听选中的主体。 |
@@ -1658,7 +1726,8 @@ struct ImageDemo {
  
   
 
-#### off(type: 'selectedSubjectsChange')
+### off(type: 'selectedSubjectsChange')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1674,6 +1743,7 @@ off(type: 'selectedSubjectsChange', callback?: Callback<Subject[]>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"selectedSubjectsChange"。取消对选中主体的监听。 |
@@ -1716,7 +1786,8 @@ struct ImageDemo {
  
   
 
-#### on(type: 'objectSearchPanelVisibilityChange')
+### on(type: 'objectSearchPanelVisibilityChange')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1732,6 +1803,7 @@ on(type: 'objectSearchPanelVisibilityChange', callback: Callback&lt;ObjectSearch
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"objectSearchPanelVisibilityChange"。监听图片搜索事件。 |
@@ -1772,7 +1844,8 @@ struct ImageDemo {
  
   
 
-#### off(type: 'objectSearchPanelVisibilityChange')
+### off(type: 'objectSearchPanelVisibilityChange')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1788,6 +1861,7 @@ off(type: 'objectSearchPanelVisibilityChange', callback?: Callback&lt;ObjectSear
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"objectSearchPanelVisibilityChange"。取消监听图片搜索事件。 |
@@ -1828,7 +1902,8 @@ struct ImageDemo {
  
   
 
-#### on(type: 'cursorMoveInText')
+### on(type: 'cursorMoveInText')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1844,6 +1919,7 @@ on(type: 'cursorMoveInText', callback: Callback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"cursorMoveInText"。监听光标移入图片内文字区域事件。 |
@@ -1884,7 +1960,8 @@ struct ImageDemo {
  
   
 
-#### off(type: 'cursorMoveInText')
+### off(type: 'cursorMoveInText')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1900,6 +1977,7 @@ off(type: 'cursorMoveInText', callback?: Callback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"cursorMoveInText"。取消监听光标移入图片内文字区域事件。 |
@@ -1940,7 +2018,8 @@ struct ImageDemo {
  
   
 
-#### on(type: 'cursorMoveOutText')
+### on(type: 'cursorMoveOutText')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1956,6 +2035,7 @@ on(type: 'cursorMoveOutText', callback: Callback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"cursorMoveOutText"。监听光标移出图片内文字区域事件。 |
@@ -1996,7 +2076,8 @@ struct ImageDemo {
  
   
 
-#### off(type: 'cursorMoveOutText')
+### off(type: 'cursorMoveOutText')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2012,6 +2093,7 @@ off(type: 'cursorMoveOutText', callback?: Callback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"cursorMoveOutText"。取消监听光标移出图片内文字区域事件。 |
@@ -2052,7 +2134,8 @@ struct ImageDemo {
  
   
 
-#### on(type: 'analyzerFailed')
+### on(type: 'analyzerFailed')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2068,6 +2151,7 @@ on(type: 'analyzerFailed', callback: ErrorCallback): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"analyzerFailed"。监听AI识图异常场景。 |
@@ -2078,6 +2162,7 @@ on(type: 'analyzerFailed', callback: ErrorCallback): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-vision)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
@@ -2121,7 +2206,8 @@ struct ImageDemo {
  
   
 
-#### off(type: 'analyzerFailed')
+### off(type: 'analyzerFailed')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2137,6 +2223,7 @@ off(type: 'analyzerFailed', callback?: ErrorCallback): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为"analyzerFailed"。取消AI识图异常场景的监听。 |
@@ -2147,6 +2234,7 @@ off(type: 'analyzerFailed', callback?: ErrorCallback): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-vision)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |

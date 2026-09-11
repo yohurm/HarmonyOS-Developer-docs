@@ -1,10 +1,10 @@
 # 状态管理V1和V2混用指导（API version 19前）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-mixusage-before-api-version
 
-#### 概述
+## 概述
 
 > [!NOTE]
 > 本文档中使用“->”表示变量的传递，比如“V1->V2”，表示V1状态变量向V2状态变量传递。
@@ -43,7 +43,7 @@ V2普通变量（未使用状态变量装饰器）传递给V1自定义组件：
  
   
 
-#### 限制条件
+## 限制条件
 
 - V1和V2的装饰器不允许混用。
 
@@ -69,11 +69,11 @@ V2普通变量（未使用状态变量装饰器）传递给V1自定义组件：
  
   
 
-#### V1中使用V2的自定义组件
+## V1中使用V2的自定义组件
 
   
 
-#### 不传递变量
+### 不传递变量
 
 在V1中使用V2的自定义组件时，如果不存在变量传递，则不会产生影响。以下示例代码中，ChildSix是不接受参数的V2自定义组件，IndexSix可直接使用ChildSix。
  
@@ -120,7 +120,7 @@ struct IndexSix {
  
   
 
-#### 传递未被装饰的变量
+### 传递未被装饰的变量
 
 当变量未被装饰器装饰时，不具备被观测的能力。将该变量传递给V2时，需注意V2组件对数据输入有严格的管理，必须通过[@Param](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-param)装饰器接收。V2中接收数据的观测能力为@Param能力，对于接收的Class，需要通过@ObservedV2和@Trace才能观察变化。
  
@@ -214,9 +214,9 @@ struct IndexTwo {
  
   
 
-#### 传递简单类型状态变量
+### 传递简单类型状态变量
 
-在V1中使用V2组件时，V1组件中的装饰器仅支持修饰简单类型数据，包括：boolean、number、string、null、undefined。V2组件使用@Param接收参数。
+在V1中使用V2组件时，V1组件中的装饰器仅支持修饰简单类型数据，包括：boolean、number、enum、string、null、undefined。V2组件使用@Param接收参数。
  
 若在V1中使用V2组件时，传递了使用@State装饰的Class类型或内置类型（Array、Map、Set、Date），会造成编译报错。以下示例代码中，info和set变量需删除@State装饰器。@Prop、@Link、@ObjectLink、@Provide、@Consume、@StorageProp、@StorageLink、@LocalStorageProp、@LocalStorageLink的行为和@State保持一致。
  
@@ -307,7 +307,7 @@ struct IndexFour {
  
   
 
-#### 传递class类型状态变量
+### 传递class类型状态变量
 
 由于在V1中使用V2组件传递参数，V1的装饰器仅支持修饰简单类型数据，不支持class类型。以下给出class类型数据传递的场景的迁移方案。
  
@@ -476,7 +476,7 @@ struct IndexTen {
  
   
 
-#### 传递嵌套对象
+### 传递嵌套对象
 
 V1装饰器的观测能力是对数据本身做代理，因此当数据存在嵌套时，V1只能通过@Observed+@ObjectLink的方式拆分子组件，观测深层次数据。但V2无法接收@Observed装饰的对象，@ObjectLink也无法在V2中使用。@Observed并没有@ObservedV2+@Trace那样强大的深层次观测能力，这里不再对@Observed的深层次嵌套进行讨论，只讨论@ObservedV2在V1的使用场景。
  
@@ -679,7 +679,7 @@ struct Index {
  
   
 
-#### V2组件使用V1组件
+## V2组件使用V1组件
 
 V2的状态变量传递给V1的自定义组件，存在以下限制：
  
@@ -690,7 +690,7 @@ V2的状态变量传递给V1的自定义组件，存在以下限制：
  
   
 
-#### 传递简单类型状态变量
+### 传递简单类型状态变量
 
 V2向V1自定义组件传递简单类型状态变量时，V1仅能通过@State、@Prop、@Provide装饰器接收数据。以下示例代码中，ThirdPartyComp组件模拟第三方库，接收来自V2组件的布尔值。
  
@@ -726,7 +726,7 @@ struct V2Comp2 {
  
   
 
-#### 传递class类型
+### 传递class类型
 
 **定义普通class**
  
@@ -828,7 +828,7 @@ struct IndexNine {
  
   
 
-#### 传递普通内置类型
+### 传递普通内置类型
 
 V2->V1传递内置类型，V2定义内置类型的装饰器和V1接收内置类型的装饰器是互斥的。
  
@@ -874,7 +874,7 @@ struct IndexEight {
  
   
 
-#### 混用场景总结
+## 混用场景总结
 
 对V1和V2混用场景进行梳理后，可以总结出：
  

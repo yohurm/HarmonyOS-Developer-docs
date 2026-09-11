@@ -1,13 +1,17 @@
 # SVG标签说明
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-svg
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 SVG（Scalable Vector Graphics）是可缩放矢量图形，它是一种基于XML（可扩展标记语言）的图形格式，用于描述二维图形和图像。[Image](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image)组件支持的SVG范围，为SVG1.1规范的部分功能。支持的标签以及属性如下：
   
 
-#### 基础形状
+## 基础形状
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 基础形状标签包括：&lt;rect&gt;、&lt;circle&gt;、&lt;ellipse&gt;、&lt;line&gt;、&lt;polyline&gt;、&lt;polygon&gt;和&lt;path&gt;。
  
@@ -15,6 +19,7 @@ SVG（Scalable Vector Graphics）是可缩放矢量图形，它是一种基于XM
 > 基础标签支持 通用属性 ：id、fill、fill-rule、fill-opacity、stroke、stroke-dasharray、stroke-dashoffset、stroke-opacity、stroke-width、stroke-linecap、stroke-linejoin、stroke-miterlimit、opacity、transform、clip-path、clip-rule，其中transform属性只支持平移。 从API version 21开始，当 Image 组件的 supportSvg2 属性设置为true时，transform属性支持平移、旋转、缩放、倾斜、矩阵变换，详细请参考 SVG标签解析能力增强 。
 
   
+
 | 元素 | 说明 | 特有属性 |
 | --- | --- | --- |
 | &lt;rect&gt; | 矩形 | x：矩形左上角的x轴坐标； y：矩形左上角的y轴坐标； width：宽度； height：高度； rx：圆角x轴半径； ry：圆角y轴半径。 |
@@ -120,19 +125,26 @@ struct Index {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/uyRoFr7BQJioRjvibJunxA/zh-cn_image_0000002655848748.png?HW-CC-KV=V1&HW-CC-Date=20260730T071507Z&HW-CC-Expire=86400&HW-CC-Sign=C27679DB92C075BB9A469BA822DFF68916B667E0B93454EC266CDBEF1F4F443A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/VDrFCQCVS5q03Vh3Tf6i6A/zh-cn_image_0000002747292839.png?HW-CC-KV=V1&HW-CC-Date=20260911T073110Z&HW-CC-Expire=86400&HW-CC-Sign=31EC92EB1AC369B4D7591E089CEE8987CA27DD85DF886369836859BD0EB34B92)
 
  
   
 
-#### 图形效果
+## 图形效果
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
   
 
-#### 滤镜
+### 滤镜
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 滤镜标签包括：&lt;filter&gt;、&lt;feOffset&gt;、&lt;feGaussianBlur&gt;、&lt;feBlend&gt;、&lt;feComposite&gt;、&lt;feColorMatrix&gt;、&lt;feFlood&gt;。其中，&lt;filter&gt;定义滤镜范围，其它标签定义滤镜效果。
   
+
 | 元素 | 说明 | 特有属性 |
 | --- | --- | --- |
 | &lt;filter&gt; | 定义滤镜 | x：滤镜区域x轴偏移分量，默认值为0； y：滤镜区域y轴偏移分量，默认值为0； width：滤镜区域宽； height：滤镜区域高。 说明：从API version 21开始，当Image组件的supportSvg2属性设置为true时，默认值参考filter参数异常时默认效果变更。 |
@@ -146,10 +158,14 @@ struct Index {
  
   
 
-#### 遮罩
+### 遮罩
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 遮罩标签：&lt;mask&gt;
   
+
 | 元素 | 说明 | 特有属性 |
 | --- | --- | --- |
 | &lt;mask&gt; | 定义遮罩 | x：遮罩区域x轴偏移分量； y：遮罩区域y轴偏移分量； width：遮罩区域宽； height：遮罩区域高。 说明：从API version 21开始，当Image组件的supportSvg2属性设置为true时，默认值参考mask参数异常时默认效果变更。 |
@@ -157,10 +173,14 @@ struct Index {
  
   
 
-#### 裁剪
+### 裁剪
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 裁剪标签：&lt;clippath&gt;
   
+
 | 元素 | 说明 | 特有属性 |
 | --- | --- | --- |
 | &lt;clippath&gt; | 定义一条剪切路径 | x：裁剪区域x轴偏移分量； y：裁剪区域y轴偏移分量； width：裁剪区域宽； height：裁剪区域高。 |
@@ -168,10 +188,14 @@ struct Index {
  
   
 
-#### 图案
+### 图案
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 图案标签：&lt;pattern&gt;
   
+
 | 元素 | 说明 | 特有属性 |
 | --- | --- | --- |
 | &lt;pattern&gt; | 定义填充图案 | x：填充区域x轴偏移分量，默认值为0； y：填充区域y轴偏移分量，默认值为0； width：填充区域宽，默认值为0； height：填充区域高，默认值为0。 |
@@ -179,10 +203,14 @@ struct Index {
  
   
 
-#### 渐变色
+### 渐变色
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 渐变色相关的标签包括：&lt;linearGradient&gt;、&lt;radialGradient&gt;、&lt;stop&gt;
   
+
 | 元素 | 说明 | 特有属性 |
 | --- | --- | --- |
 | &lt;linearGradient&gt; | 线性渐变 | x1、y1、x2、y2 |
@@ -192,10 +220,14 @@ struct Index {
  
   
 
-#### 静态图片
+## 静态图片
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 图片标签：&lt;image&gt;
   
+
 | 元素 | 说明 | 特有属性 |
 | --- | --- | --- |
 | &lt;image&gt; | 用于图像显示 | x：图像x轴偏移； y：图像y轴偏移； width：图像宽； height：图像高； href：目标图片（支持：jpg、jpeg、png、bmp、webp、heic、base64，不支持svg）。 |
@@ -203,7 +235,10 @@ struct Index {
  
   
 
-#### 动画
+## 动画
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 动画标签：&lt;animate&gt;、&lt;animateTransform&gt;
  
@@ -211,6 +246,7 @@ struct Index {
 > 当前仅支持单个元素的属性动画或者变形动画，不支持元素间动画嵌套。
 
   
+
 | 元素 | 说明 | 特有属性 |
 | --- | --- | --- |
 | &lt;animate&gt; | 定义元素属性动画 | attributeName：定义动画属性，当前已验证支持的属性包括（不限于）：cx、cy、r、fill、stroke、fill-opacity、stroke-opacity、stroke-miterlimit，具体可动画属性取决于目标元素（如rect支持width/height/x/y/rx/ry，line支持x1/y1/x2/y2等）； begin：定义动画起始时间； dur：定义动画持续时间； from：定义起始值； to：定义结束值； fill：定义动画结尾状态，默认值为remove（取值：freeze \| remove）； calcMode：定义插值，默认值为linear； keyTimes：设置关键帧动画的开始时间，值为0~1之间的数值用分号隔开，比如0;0.3;0.8;1。keyTimes、keySplines、values组合设置关键帧动画。keyTimes和values的个数保持一致。keySplines个数为keyTimes个数减一。 values：设置一组动画的变化值。格式为value1;value2;value3。 keySplines：与keyTimes相关联的一组贝塞尔控制点。定义每个关键帧的贝塞尔曲线，曲线之间用分号隔开。每条贝塞尔曲线的两个控制点格式为x1 y1 x2 y2（坐标之间用空格分隔）。比如0.5 0 0.5 1;0.5 0 0.5 1;0.5 0 0.5 1。 |
@@ -219,7 +255,10 @@ struct Index {
  
   
 
-#### 其它
+## 其它
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 除了标识图形图像效果的标签，还支持分组等标签，分别有&lt;svg&gt;、&lt;g&gt;、&lt;use&gt;和&lt;defs&gt;。
  
@@ -227,6 +266,7 @@ struct Index {
 > 当前支持的颜色值格式包括#rgb、#rrggbb、rgb()、rgba()，以及常用颜色关键字（如red、black、blue等）。
 
   
+
 | 元素 | 说明 | 特有属性 | 通用属性 |
 | --- | --- | --- | --- |
 | &lt;svg&gt; | 容器，定义一个svg片段 | x：x轴偏移分量； y：y轴偏移分量； width：宽度； height：高度； viewBox：视口 | fill、fill-rule、fill-opacity、stroke、stroke-dasharray、stroke-dashoffset、stroke-opacity、stroke-width、stroke-linecap、stroke-linejoin、stroke-miterlimit、transform |

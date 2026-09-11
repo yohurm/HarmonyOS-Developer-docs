@@ -1,18 +1,19 @@
 # 取消订阅公共事件（C/C++）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-common-event-unsubscription
 
-#### 场景介绍
+## 场景介绍
 
 订阅者在完成业务需求之后，需要取消订阅公共事件。
 
 
 
-#### 接口说明
+## 接口说明
 
 详细的API说明请参考[oh_commonevent.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-commonevent-h)。
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -21,7 +22,7 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 引用头文件。
 
   

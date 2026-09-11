@@ -1,6 +1,6 @@
 # paymentService (鸿蒙支付服务)
 
-更新时间：2026-08-04 06:06:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-paymentservice
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -16,7 +16,8 @@
 **起始版本：** 4.1.0(11)
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -26,7 +27,8 @@ import { paymentService } from '@kit.PaymentKit';
 
 
 
-#### PayResult
+## PayResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -40,6 +42,7 @@ import { paymentService } from '@kit.PaymentKit';
 
 **起始版本：** 5.0.2(14)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | selectedPaymentType | string | 否 | 是 | 用户选择的支付方式。 基于URL跳转三方支付收银台： - wechat_pay：微信支付 - ali_pay：支付宝支付 - 其他（其他为商户申请配置三方支付方式时所申请的相关配置） 基于接口拉起三方支付收银台： - wechat_pay_sdk：微信支付 - ali_pay_sdk：支付宝支付 - 其他（其他为商户申请配置三方支付方式时所申请的相关配置） |
@@ -51,7 +54,8 @@ import { paymentService } from '@kit.PaymentKit';
 
 
 
-#### PaymentInfo
+## PaymentInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -65,6 +69,7 @@ import { paymentService } from '@kit.PaymentKit';
 
 **起始版本：** 5.0.2(14)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | tradeSummary | string | 否 | 是 | 订单的摘要信息。若未填写，默认为空。 |
@@ -75,7 +80,8 @@ import { paymentService } from '@kit.PaymentKit';
 
 
 
-#### PickerResult
+## PickerResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -89,6 +95,7 @@ import { paymentService } from '@kit.PaymentKit';
 
 **起始版本：** 5.0.2(14)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | selectedPaymentType | string | 否 | 是 | 用户选择的支付方式。 基于URL跳转三方支付收银台： - wechat_pay：微信支付 - ali_pay：支付宝支付 - 其他（其他为商户申请配置三方支付方式时所申请的相关配置） 基于接口拉起三方支付收银台： - wechat_pay_sdk：微信支付 - ali_pay_sdk：支付宝支付 - 其他（其他为商户申请配置三方支付方式时所申请的相关配置） |
@@ -97,7 +104,8 @@ import { paymentService } from '@kit.PaymentKit';
 
 
 
-#### BindCardResult
+## BindCardResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -111,6 +119,7 @@ import { paymentService } from '@kit.PaymentKit';
 
 **起始版本：** 5.0.5(17)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | hasBankCard | boolean | 否 | 否 | 用户当前是否有已绑定的银行卡。 - true：是 - false：否 |
@@ -119,7 +128,8 @@ import { paymentService } from '@kit.PaymentKit';
 
 
 
-#### requestPayment
+## requestPayment
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -137,6 +147,7 @@ requestPayment(context: common.UIAbilityContext, orderStr: string): Promise&lt;v
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | UIAbility上下文，不传会报401参数错误。 |
@@ -144,6 +155,7 @@ requestPayment(context: common.UIAbilityContext, orderStr: string): Promise&lt;v
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -153,6 +165,7 @@ requestPayment(context: common.UIAbilityContext, orderStr: string): Promise&lt;v
 **错误码**：
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-payment)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -205,7 +218,8 @@ struct Index {
 
 
 
-#### requestPayment
+## requestPayment
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -223,6 +237,7 @@ requestPayment(context: common.UIAbilityContext, orderStr: string, callback: Asy
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | UIAbility上下文，不传会报401参数错误。 |
@@ -233,6 +248,7 @@ requestPayment(context: common.UIAbilityContext, orderStr: string, callback: Asy
 **错误码**：
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-payment)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -290,7 +306,8 @@ struct Index {
 
 
 
-#### requestContract
+## requestContract
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -310,6 +327,7 @@ requestContract(context: common.UIAbilityContext, contractStr: string): Promise&
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | UIAbility上下文，不传会报401参数错误。 |
@@ -317,6 +335,7 @@ requestContract(context: common.UIAbilityContext, contractStr: string): Promise&
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -326,6 +345,7 @@ requestContract(context: common.UIAbilityContext, contractStr: string): Promise&
 **错误码**：
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-payment)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -378,7 +398,8 @@ struct Index {
 
 
 
-#### requestContract
+## requestContract
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -398,6 +419,7 @@ requestContract(context: common.UIAbilityContext, contractStr: string, callback:
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | UIAbility上下文，不传会报401参数错误。 |
@@ -408,6 +430,7 @@ requestContract(context: common.UIAbilityContext, contractStr: string, callback:
 **错误码**：
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-payment)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -465,7 +488,8 @@ struct Index {
 
 
 
-#### requestPayment
+## requestPayment
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -485,6 +509,7 @@ requestPayment(context: common.UIAbilityContext, orderStr: string, payload: stri
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | UIAbility上下文，不传会报401参数错误。 |
@@ -494,6 +519,7 @@ requestPayment(context: common.UIAbilityContext, orderStr: string, payload: stri
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;PayResult&gt; | Promise对象。带PayResult返回结果的Promise对象。 说明： 华为支付场景下，PayResult可能返回为空，支付结果以回调通知或查询结果为准。 |
@@ -502,6 +528,7 @@ requestPayment(context: common.UIAbilityContext, orderStr: string, payload: stri
 **错误码**：
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-payment)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -556,7 +583,8 @@ struct Index {
 
 
 
-#### cashierPicker
+## cashierPicker
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -576,6 +604,7 @@ cashierPicker(context: common.UIAbilityContext, paymentInfo: PaymentInfo): Promi
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | UIAbility上下文，不传会报401参数错误。 |
@@ -583,6 +612,7 @@ cashierPicker(context: common.UIAbilityContext, paymentInfo: PaymentInfo): Promi
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -592,6 +622,7 @@ cashierPicker(context: common.UIAbilityContext, paymentInfo: PaymentInfo): Promi
 **错误码**：
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-payment)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -649,7 +680,8 @@ struct Index {
 
 
 
-#### requestBindCard
+## requestBindCard
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -669,12 +701,14 @@ requestBindCard(context: common.UIAbilityContext | common.UIExtensionContext): P
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext \| common.UIExtensionContext | 是 | UIAbility上下文，不传会报401参数错误。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -684,6 +718,7 @@ requestBindCard(context: common.UIAbilityContext | common.UIExtensionContext): P
 **错误码**：
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-payment)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

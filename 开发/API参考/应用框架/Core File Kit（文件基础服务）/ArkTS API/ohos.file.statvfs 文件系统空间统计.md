@@ -1,9 +1,9 @@
 # @ohos.file.statvfs (文件系统空间统计)
 
-更新时间：2026-07-17 09:35:24
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-file-statvfs
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该模块向应用程序提供获取文件系统总字节数、空闲字节数的ArkTS接口。通过该模块，开发者可以实时掌握文件系统存储状况，避免因存储空间不足导致的应用崩溃，提升用户体验和系统稳定性。
  
@@ -14,9 +14,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { statfs } from '@kit.CoreFileKit';
@@ -24,9 +25,10 @@ import { statfs } from '@kit.CoreFileKit';
  
   
 
-#### statfs.getFreeSize
+## statfs.getFreeSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFreeSize(path: string): Promise&lt;number&gt;
  
@@ -36,6 +38,7 @@ getFreeSize(path: string): Promise&lt;number&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 文件或目录的应用沙箱路径。 |
@@ -43,6 +46,7 @@ getFreeSize(path: string): Promise&lt;number&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象，返回空闲字节数，单位为Byte。 |
@@ -52,6 +56,7 @@ getFreeSize(path: string): Promise&lt;number&gt;
  
 接口抛出错误码的详细介绍请参见[基础文件IO错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement#基础文件io错误码)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 13900002 | No such file or directory. |
@@ -87,9 +92,10 @@ statfs.getFreeSize(path).then((freeSize: number) => {
  
   
 
-#### statfs.getFreeSize
+## statfs.getFreeSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFreeSize(path: string, callback:AsyncCallback&lt;number&gt;): void
  
@@ -99,6 +105,7 @@ getFreeSize(path: string, callback:AsyncCallback&lt;number&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 文件或目录的应用沙箱路径。 |
@@ -109,6 +116,7 @@ getFreeSize(path: string, callback:AsyncCallback&lt;number&gt;): void
  
 接口抛出错误码的详细介绍请参见[基础文件IO错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement#基础文件io错误码)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 13900002 | No such file or directory. |
@@ -146,9 +154,10 @@ statfs.getFreeSize(path, (err: BusinessError, freeSize: number) => {
  
   
 
-#### statfs.getFreeSizeSync10+
+## statfs.getFreeSizeSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFreeSizeSync(path: string): number
  
@@ -158,6 +167,7 @@ getFreeSizeSync(path: string): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 文件或目录的应用沙箱路径。 |
@@ -165,6 +175,7 @@ getFreeSizeSync(path: string): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回空闲字节数，单位为Byte。 |
@@ -174,6 +185,7 @@ getFreeSizeSync(path: string): number
  
 接口抛出错误码的详细介绍请参见[基础文件IO错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement#基础文件io错误码)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 13900002 | No such file or directory. |
@@ -205,9 +217,10 @@ console.info("Succeeded in getting free size: " + freeSize);
  
   
 
-#### statfs.getTotalSize
+## statfs.getTotalSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTotalSize(path: string): Promise&lt;number&gt;
  
@@ -217,6 +230,7 @@ getTotalSize(path: string): Promise&lt;number&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 文件或目录的应用沙箱路径。 |
@@ -224,6 +238,7 @@ getTotalSize(path: string): Promise&lt;number&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象，返回总字节数，单位为Byte。 |
@@ -233,6 +248,7 @@ getTotalSize(path: string): Promise&lt;number&gt;
  
 接口抛出错误码的详细介绍请参见[基础文件IO错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement#基础文件io错误码)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 13900002 | No such file or directory. |
@@ -268,9 +284,10 @@ statfs.getTotalSize(path).then((totalSize: number) => {
  
   
 
-#### statfs.getTotalSize
+## statfs.getTotalSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTotalSize(path: string, callback: AsyncCallback&lt;number&gt;): void
  
@@ -280,6 +297,7 @@ getTotalSize(path: string, callback: AsyncCallback&lt;number&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 文件或目录的应用沙箱路径。 |
@@ -290,6 +308,7 @@ getTotalSize(path: string, callback: AsyncCallback&lt;number&gt;): void
  
 接口抛出错误码的详细介绍请参见[基础文件IO错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement#基础文件io错误码)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 13900002 | No such file or directory. |
@@ -327,9 +346,10 @@ statfs.getTotalSize(path, (err: BusinessError, totalSize: number) => {
  
   
 
-#### statfs.getTotalSizeSync10+
+## statfs.getTotalSizeSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTotalSizeSync(path: string): number
  
@@ -339,6 +359,7 @@ getTotalSizeSync(path: string): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 文件或目录的应用沙箱路径。 |
@@ -346,6 +367,7 @@ getTotalSizeSync(path: string): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回总字节数，单位为Byte。 |
@@ -355,6 +377,7 @@ getTotalSizeSync(path: string): number
  
 接口抛出错误码的详细介绍请参见[基础文件IO错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement#基础文件io错误码)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 13900002 | No such file or directory. |

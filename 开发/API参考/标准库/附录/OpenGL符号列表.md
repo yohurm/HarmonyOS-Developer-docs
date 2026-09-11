@@ -1,11 +1,16 @@
 # OpenGL符号列表
 
-更新时间：2026-06-12 06:54:11
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/opengl-symbol
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### Native API中导出的OpenGL 3.0符号列表
+## Native API中导出的OpenGL 3.0符号列表
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 符号类型 | 符号名 |
 | --- | --- |
 | FUNC | glActiveTexture |
@@ -236,10 +241,14 @@
  
   
 
-#### Native API中导出的OpenGL 4.2符号列表
+## Native API中导出的OpenGL 4.2符号列表
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 22开始，支持使用OpenGL 4.2中的以下接口。
   
+
 | 符号类型 | 符号名 |
 | --- | --- |
 | FUNC | glDrawRangeElements |
@@ -533,10 +542,14 @@
  
   
 
-#### Native API中导出的OpenGL 固定管线符号列表
+## Native API中导出的OpenGL 固定管线符号列表
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 26.0.0开始，支持使用OpenGL中的以下固定管线接口。
   
+
 | 符号类型 | 符号名 |
 | --- | --- |
 | FUNC | glAlphaFunc |

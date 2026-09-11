@@ -1,9 +1,9 @@
 # AgentHostProxy
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-agenthostproxy
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 AgentHostProxy用于从[AgentExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-agent-agentextensionability)服务端向客户端发送数据或安全认证请求。
 
@@ -12,9 +12,10 @@ AgentHostProxy用于从[AgentExtensionAbility](https://developer.huawei.com/cons
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { common } from '@kit.AbilityKit';
@@ -22,15 +23,17 @@ import { common } from '@kit.AbilityKit';
 
 
 
-#### AgentHostProxy
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## AgentHostProxy
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### sendData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### sendData
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sendData(data: string): void
 
@@ -42,6 +45,7 @@ sendData(data: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | string | 是 | 待发送到AgentExtensionAbility客户端的数据。 |
@@ -50,6 +54,7 @@ sendData(data: string): void
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -82,9 +87,10 @@ export default class MyAgentExtensionAbility extends AgentExtensionAbility {
 
 
 
-#### authorize
+### authorize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 authorize(handshakeData: string): void
 
@@ -96,6 +102,7 @@ authorize(handshakeData: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handshakeData | string | 是 | 待发送到客户端的安全认证数据。 |
@@ -104,6 +111,7 @@ authorize(handshakeData: string): void
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -119,7 +127,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 const TAG: string = '[AgentExtensionAbility] ';
 
 export default class MyAgentExtensionAbility extends AgentExtensionAbility {
-  // 数据发送处理
+  // 安全认证处理
   onAuth(proxy: common.AgentHostProxy, handshakeData: string) {
     console.info(TAG + `onAuth ${handshakeData}`);
     try {

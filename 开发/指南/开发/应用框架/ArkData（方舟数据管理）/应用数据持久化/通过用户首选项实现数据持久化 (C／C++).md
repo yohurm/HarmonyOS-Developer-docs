@@ -1,16 +1,16 @@
 # 通过用户首选项实现数据持久化 (C/C++)
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/preferences-guidelines
 
-#### 场景介绍
+## 场景介绍
 
 用户首选项（Preferences）模块主要提供轻量级Key-Value操作，支持本地存储少量数据，数据存储在文件和内存中，访问速度快。如果存在大量数据场景，请考虑使用键值型数据库或关系型数据库。
 
 
 
-#### 约束限制
+## 约束限制
 
  - API version 18之前：ArkTS API仅支持[XML存储模式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persistence-by-preferences#xml存储)；C API仅支持[GSKV存储模式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persistence-by-preferences#gskv存储)；存储模式互不兼容，不支持ArkTS和C API操作同一个Preferences实例。
  - API version 18及之后：ArkTS和C API均支持XML和GSKV双模式；ArkTS和C API使用相同的存储模式时，可以正常操作同一Preferences实例；禁止ArkTS和C API选择不同的存储模式，来操作同一个Preferences实例。
@@ -19,9 +19,10 @@
 
 
 
-#### 接口说明
+## 接口说明
 
 详细的接口说明请参考[Preferences接口文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-preferences)。
+
 
 | 接口名称 | 描述 |
 | --- | --- |
@@ -54,7 +55,7 @@
 
 
 
-#### 添加动态链接库
+## 添加动态链接库
 
 CMakeLists.txt中添加以下lib。
 
@@ -64,9 +65,9 @@ libohpreferences.so
 
 
 
-#### 引用头文件
+## 引用头文件
 
-```text
+```cpp
 #include <database/preferences/oh_preferences.h>
 #include <database/preferences/oh_preferences_err_code.h>
 #include <database/preferences/oh_preferences_option.h>
@@ -75,14 +76,14 @@ libohpreferences.so
 
 
 
-#### 开发步骤
+## 开发步骤
 
 下列实例展示如何通过Preferences实现对键值数据的修改与持久化。
 1. 创建Preferences配置选项（PreferencesOption）对象并设置配置选项成员（名称、应用组ID、包名、存储模式）。使用完毕后，调用OH_PreferencesOption_Destroy销毁配置选项实例。
 2. 调用OH_Preferences_Open打开一个Preferences实例，该实例使用完后需要调用OH_Preferences_Close关闭。
 
   
-```xml
+```cpp
 // 1. 创建Preferences配置选项。
 OH_PreferencesOption *option = OH_PreferencesOption_Create();
 if (option == nullptr) {
@@ -145,7 +146,7 @@ if (errCode != PREFERENCES_OK) {
 3. 订阅回调函数为DataChangeObserverCallback。
 
   
-```text
+```cpp
 // 数据变更回调函数
 void DataChangeObserverCallback(void *context, const OH_PreferencesPair *pairs, uint32_t count)
 {
@@ -184,7 +185,7 @@ void DataChangeObserverCallback(void *context, const OH_PreferencesPair *pairs, 
 调用OH_Preferences_RegisterDataObserver注册3个Key的数据变更订阅。
 
   
-```text
+```cpp
 // 3. 对key_int、key_bool和key_string注册数据变更订阅。
 const char *keys[] = {"key_int", "key_bool", "key_string"};
 int ret = OH_Preferences_RegisterDataObserver(preference, nullptr, DataChangeObserverCallback, keys, 3);
@@ -208,7 +209,7 @@ if (ret != PREFERENCES_OK) {
 4. 设置Preferences实例中的键值数据。
 
   
-```text
+```cpp
 // 4. 设置Preferences实例中的KV数据。
 ret = OH_Preferences_SetInt(preference, keys[0], 0);
 if (ret != PREFERENCES_OK) {
@@ -251,7 +252,7 @@ if (ret != PREFERENCES_OK) {
 5. 获取Preferences实例中的键值数据。
 
   
-```text
+```cpp
 // 5. 获取Preferences实例中的KV数据。
 int intValue = 0;
 int ret = PREFERENCES_OK;
@@ -311,7 +312,7 @@ ret = OH_Preferences_ClearCache(preference);
 6. 调用OH_Preferences_Close关闭Preferences实例，关闭后需要将实例指针置空。
 
   
-```text
+```cpp
 // 6. 使用完Preferences实例后需要关闭实例，关闭后需要将指针置空。
 (void)OH_Preferences_Close(preference);
 preference = nullptr;
@@ -320,7 +321,7 @@ preference = nullptr;
 7. 设置和获取OH_PreferencesValue数据。
 
   
-```text
+```cpp
 const int arg5 = 5;
 const int arg4 = 4;
 const int arg3 = 3;

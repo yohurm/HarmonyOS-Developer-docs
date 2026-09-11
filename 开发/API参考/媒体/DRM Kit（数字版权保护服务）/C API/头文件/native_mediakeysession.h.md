@@ -1,13 +1,14 @@
 # native_mediakeysession.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-mediakeysession-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义DRM MediaKeySession API。提供以下功能：
  
@@ -25,16 +26,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | MediaKeySession_Callback | MediaKeySession_Callback | MediaKeySession_Callback结构体，用于监听密钥过期、密钥更改等事件，不返回媒体密钥会话实例，适用于单媒体密钥会话解密场景。 |
@@ -43,10 +47,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | typedef Drm_ErrCode (*MediaKeySession_EventCallback)(DRM_EventType eventType, uint8_t *info, int32_t infoLen, char *extra) | MediaKeySession_EventCallback | MediaKeySession事件触发时将调用的回调函数，如密钥过期事件。 |
@@ -69,15 +75,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### MediaKeySession_EventCallback()
+### MediaKeySession_EventCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef Drm_ErrCode (*MediaKeySession_EventCallback)(DRM_EventType eventType, uint8_t *info, int32_t infoLen, char *extra)
@@ -91,6 +99,7 @@ MediaKeySession事件触发时将调用的回调函数，如密钥过期事件�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | DRM_EventType eventType | 输入参数，事件类型。 |
@@ -101,6 +110,7 @@ MediaKeySession事件触发时将调用的回调函数，如密钥过期事件�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Drm_ErrCode | 错误码。 |
@@ -108,9 +118,10 @@ MediaKeySession事件触发时将调用的回调函数，如密钥过期事件�
  
   
 
-#### MediaKeySession_KeyChangeCallback()
+### MediaKeySession_KeyChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef  Drm_ErrCode (*MediaKeySession_KeyChangeCallback)(DRM_KeysInfo *keysInfo, bool newKeysAvailable)
@@ -124,6 +135,7 @@ typedef  Drm_ErrCode (*MediaKeySession_KeyChangeCallback)(DRM_KeysInfo *keysInfo
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | DRM_KeysInfo *keysInfo | 密钥信息。 |
@@ -132,6 +144,7 @@ typedef  Drm_ErrCode (*MediaKeySession_KeyChangeCallback)(DRM_KeysInfo *keysInfo
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Drm_ErrCode | DRM_ERR_OK：执行成功。 DRM_ERR_INVALID_VAL：参数检查失败。 |
@@ -139,9 +152,10 @@ typedef  Drm_ErrCode (*MediaKeySession_KeyChangeCallback)(DRM_KeysInfo *keysInfo
  
   
 
-#### OH_MediaKeySession_EventCallback()
+### OH_MediaKeySession_EventCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef Drm_ErrCode (*OH_MediaKeySession_EventCallback)(MediaKeySession *mediaKeySession, DRM_EventType eventType,uint8_t *info, int32_t infoLen, char *extra)
@@ -155,6 +169,7 @@ typedef Drm_ErrCode (*OH_MediaKeySession_EventCallback)(MediaKeySession *mediaKe
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | MediaKeySession *mediaKeySession | 输入参数，会话实例，用于标识事件来源。 |
@@ -166,6 +181,7 @@ typedef Drm_ErrCode (*OH_MediaKeySession_EventCallback)(MediaKeySession *mediaKe
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Drm_ErrCode | 错误码。 |
@@ -173,9 +189,10 @@ typedef Drm_ErrCode (*OH_MediaKeySession_EventCallback)(MediaKeySession *mediaKe
  
   
 
-#### OH_MediaKeySession_KeyChangeCallback()
+### OH_MediaKeySession_KeyChangeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef Drm_ErrCode (*OH_MediaKeySession_KeyChangeCallback)(MediaKeySession *mediaKeySession, DRM_KeysInfo *keysInfo,bool newKeysAvailable)
@@ -189,15 +206,17 @@ typedef Drm_ErrCode (*OH_MediaKeySession_KeyChangeCallback)(MediaKeySession *med
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| MediaKeySession *mediaKeySession | 媒体密钥会话实例。 |
+| MediaKeySession *mediaKeySession | 输入参数，媒体密钥会话实例。 |
 | DRM_KeysInfo *keysInfo | 密钥信息。 |
 | bool newKeysAvailable | 新密钥是否可用，true表示可用，false表示不可用。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Drm_ErrCode | DRM_ERR_OK：执行成功。 DRM_ERR_INVALID_VAL：参数检查失败。 |
@@ -205,9 +224,10 @@ typedef Drm_ErrCode (*OH_MediaKeySession_KeyChangeCallback)(MediaKeySession *med
  
   
 
-#### OH_MediaKeySession_GenerateMediaKeyRequest()
+### OH_MediaKeySession_GenerateMediaKeyRequest()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Drm_ErrCode OH_MediaKeySession_GenerateMediaKeyRequest(MediaKeySession *mediaKeySession,DRM_MediaKeyRequestInfo *info, DRM_MediaKeyRequest *mediaKeyRequest)
@@ -221,15 +241,17 @@ Drm_ErrCode OH_MediaKeySession_GenerateMediaKeyRequest(MediaKeySession *mediaKey
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| MediaKeySession *mediaKeySession | MediaKeySession实例。 |
+| MediaKeySession *mediaKeySession | 输入参数，MediaKeySession实例。 |
 | DRM_MediaKeyRequestInfo *info | 媒体密钥请求信息。 |
 | DRM_MediaKeyRequest *mediaKeyRequest | 媒体密钥请求。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Drm_ErrCode | DRM_ERR_OK：执行成功。 DRM_ERR_NO_MEMORY：内存不足，内存分配失败。 DRM_ERR_INVALID_VAL：输入参数mediaKeySession为空指针或无效，或输入参数info为空指针，或输入参数mediaKeyRequest为空指针。 DRM_ERR_UNKNOWN：发生内部错误，请查看日志详细信息。 |
@@ -237,9 +259,10 @@ Drm_ErrCode OH_MediaKeySession_GenerateMediaKeyRequest(MediaKeySession *mediaKey
  
   
 
-#### OH_MediaKeySession_ProcessMediaKeyResponse()
+### OH_MediaKeySession_ProcessMediaKeyResponse()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Drm_ErrCode OH_MediaKeySession_ProcessMediaKeyResponse(MediaKeySession *mediaKeySession,uint8_t *response, int32_t responseLen, uint8_t *offlineMediaKeyId, int32_t *offlineMediaKeyIdLen)
@@ -253,6 +276,7 @@ Drm_ErrCode OH_MediaKeySession_ProcessMediaKeyResponse(MediaKeySession *mediaKey
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | MediaKeySession *mediaKeySession | MediaKeySession实例。 |
@@ -264,16 +288,18 @@ Drm_ErrCode OH_MediaKeySession_ProcessMediaKeyResponse(MediaKeySession *mediaKey
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| Drm_ErrCode | DRM_ERR_OK：执行成功。 DRM_ERR_NO_MEMORY：内存不足，内存分配失败。 DRM_ERR_INVALID_VAL：输入参数mediaKeySession为空指针或无效，或其它指针类型输入参数为空指针。 DRM_ERR_UNKNOWN：发生内部错误，请查看日志详细信息。 |
+| Drm_ErrCode | DRM_ERR_OK：执行成功。 DRM_ERR_NO_MEMORY：内存不足，内存分配失败。 DRM_ERR_INVALID_VAL：输入参数mediaKeySession为空指针或无效，或其他指针类型输入参数为空指针。 DRM_ERR_UNKNOWN：发生内部错误，请查看日志详细信息。 |
  
  
   
 
-#### OH_MediaKeySession_CheckMediaKeyStatus()
+### OH_MediaKeySession_CheckMediaKeyStatus()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Drm_ErrCode OH_MediaKeySession_CheckMediaKeyStatus(MediaKeySession *mediaKeySession,DRM_MediaKeyStatus *mediaKeyStatus)
@@ -287,6 +313,7 @@ Drm_ErrCode OH_MediaKeySession_CheckMediaKeyStatus(MediaKeySession *mediaKeySess
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | MediaKeySession *mediaKeySession | 输入参数，必填，MediaKeySession实例。 |
@@ -295,6 +322,7 @@ Drm_ErrCode OH_MediaKeySession_CheckMediaKeyStatus(MediaKeySession *mediaKeySess
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Drm_ErrCode | DRM_ERR_OK：执行成功。 DRM_ERR_NO_MEMORY：内存不足，内存分配失败。 DRM_ERR_INVALID_VAL：输入参数mediaKeySession为空指针或无效，或输入参数mediaKeyStatus为空指针。 DRM_ERR_UNKNOWN：发生内部错误，请查看日志详细信息。 |
@@ -302,9 +330,10 @@ Drm_ErrCode OH_MediaKeySession_CheckMediaKeyStatus(MediaKeySession *mediaKeySess
  
   
 
-#### OH_MediaKeySession_ClearMediaKeys()
+### OH_MediaKeySession_ClearMediaKeys()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Drm_ErrCode OH_MediaKeySession_ClearMediaKeys(MediaKeySession *mediaKeySession)
@@ -318,6 +347,7 @@ Drm_ErrCode OH_MediaKeySession_ClearMediaKeys(MediaKeySession *mediaKeySession)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | MediaKeySession *mediaKeySession | MediaKeySession实例。 |
@@ -325,6 +355,7 @@ Drm_ErrCode OH_MediaKeySession_ClearMediaKeys(MediaKeySession *mediaKeySession)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Drm_ErrCode | DRM_ERR_OK：执行成功。 DRM_ERR_INVALID_VAL：输入参数mediaKeySession为空指针或无效。 DRM_ERR_UNKNOWN：发生内部错误，请查看日志详细信息。 |
@@ -332,9 +363,10 @@ Drm_ErrCode OH_MediaKeySession_ClearMediaKeys(MediaKeySession *mediaKeySession)
  
   
 
-#### OH_MediaKeySession_GenerateOfflineReleaseRequest()
+### OH_MediaKeySession_GenerateOfflineReleaseRequest()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Drm_ErrCode OH_MediaKeySession_GenerateOfflineReleaseRequest(MediaKeySession *mediaKeySession,uint8_t *offlineMediaKeyId, int32_t offlineMediaKeyIdLen, uint8_t *releaseRequest,int32_t *releaseRequestLen)
@@ -348,6 +380,7 @@ Drm_ErrCode OH_MediaKeySession_GenerateOfflineReleaseRequest(MediaKeySession *me
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | MediaKeySession *mediaKeySession | 输入参数，MediaKeySession实例。 |
@@ -359,16 +392,18 @@ Drm_ErrCode OH_MediaKeySession_GenerateOfflineReleaseRequest(MediaKeySession *me
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| Drm_ErrCode | DRM_ERR_OK：执行成功。 DRM_ERR_NO_MEMORY：内存不足，内存分配失败。 DRM_ERR_INVALID_VAL：输入参数mediaKeySession为空指针或无效，或其它指针类型输入参数为空指针。 DRM_ERR_UNKNOWN：发生内部错误或设备上的DRM解决方案不支持离线媒体密钥释放，请查看日志详细信息。 |
+| Drm_ErrCode | DRM_ERR_OK：执行成功。 DRM_ERR_NO_MEMORY：内存不足，内存分配失败。 DRM_ERR_INVALID_VAL：输入参数mediaKeySession为空指针或无效，或其他指针类型输入参数为空指针。 DRM_ERR_UNKNOWN：发生内部错误或设备上的DRM解决方案不支持离线媒体密钥释放，请查看日志详细信息。 |
  
  
   
 
-#### OH_MediaKeySession_ProcessOfflineReleaseResponse()
+### OH_MediaKeySession_ProcessOfflineReleaseResponse()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Drm_ErrCode OH_MediaKeySession_ProcessOfflineReleaseResponse(MediaKeySession *mediaKeySession,uint8_t *offlineMediaKeyId, int32_t offlineMediaKeyIdLen, uint8_t *releaseResponse,int32_t releaseResponseLen)
@@ -382,6 +417,7 @@ Drm_ErrCode OH_MediaKeySession_ProcessOfflineReleaseResponse(MediaKeySession *me
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | MediaKeySession *mediaKeySession | MediaKeySession实例。 |
@@ -393,16 +429,18 @@ Drm_ErrCode OH_MediaKeySession_ProcessOfflineReleaseResponse(MediaKeySession *me
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| Drm_ErrCode | DRM_ERR_OK：执行成功。 DRM_ERR_INVALID_VAL：输入参数mediaKeySession为空指针或无效，或其它指针类型输入参数为空指针。 DRM_ERR_UNKNOWN：发生内部错误或设备上的DRM解决方案不支持离线媒体密钥释放，请查看日志详细信息。 |
+| Drm_ErrCode | DRM_ERR_OK：执行成功。 DRM_ERR_INVALID_VAL：输入参数mediaKeySession为空指针或无效，或其他指针类型输入参数为空指针。 DRM_ERR_UNKNOWN：发生内部错误或设备上的DRM解决方案不支持离线媒体密钥释放，请查看日志详细信息。 |
  
  
   
 
-#### OH_MediaKeySession_RestoreOfflineMediaKeys()
+### OH_MediaKeySession_RestoreOfflineMediaKeys()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Drm_ErrCode OH_MediaKeySession_RestoreOfflineMediaKeys(MediaKeySession *mediaKeySession,uint8_t *offlineMediaKeyId, int32_t offlineMediaKeyIdLen)
@@ -416,6 +454,7 @@ Drm_ErrCode OH_MediaKeySession_RestoreOfflineMediaKeys(MediaKeySession *mediaKey
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | MediaKeySession *mediaKeySession | MediaKeySession实例。 |
@@ -425,16 +464,18 @@ Drm_ErrCode OH_MediaKeySession_RestoreOfflineMediaKeys(MediaKeySession *mediaKey
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| Drm_ErrCode | DRM_ERR_OK：执行成功。 DRM_ERR_INVALID_VAL：输入参数mediaKeySession为空指针或无效，或其它指针类型输入参数为空指针。 DRM_ERR_UNKNOWN：发生内部错误，请查看日志详细信息。 |
+| Drm_ErrCode | DRM_ERR_OK：执行成功。 DRM_ERR_INVALID_VAL：输入参数mediaKeySession为空指针或无效，或其他指针类型输入参数为空指针。 DRM_ERR_UNKNOWN：发生内部错误，请查看日志详细信息。 |
  
  
   
 
-#### OH_MediaKeySession_GetContentProtectionLevel()
+### OH_MediaKeySession_GetContentProtectionLevel()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Drm_ErrCode OH_MediaKeySession_GetContentProtectionLevel(MediaKeySession *mediaKeySession,DRM_ContentProtectionLevel *contentProtectionLevel)
@@ -448,6 +489,7 @@ Drm_ErrCode OH_MediaKeySession_GetContentProtectionLevel(MediaKeySession *mediaK
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | MediaKeySession *mediaKeySession | MediaKeySession实例。 |
@@ -456,6 +498,7 @@ Drm_ErrCode OH_MediaKeySession_GetContentProtectionLevel(MediaKeySession *mediaK
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Drm_ErrCode | DRM_ERR_OK：执行成功。 DRM_ERR_INVALID_VAL：输入参数mediaKeySession为空指针或无效，或输入参数contentProtectionLevel为空指针。 DRM_ERR_UNKNOWN：发生内部错误，请查看日志详细信息。 |
@@ -463,9 +506,10 @@ Drm_ErrCode OH_MediaKeySession_GetContentProtectionLevel(MediaKeySession *mediaK
  
   
 
-#### OH_MediaKeySession_RequireSecureDecoderModule()
+### OH_MediaKeySession_RequireSecureDecoderModule()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Drm_ErrCode OH_MediaKeySession_RequireSecureDecoderModule(MediaKeySession *mediaKeySession,const char *mimeType, bool *status)
@@ -479,25 +523,28 @@ Drm_ErrCode OH_MediaKeySession_RequireSecureDecoderModule(MediaKeySession *media
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | MediaKeySession *mediaKeySession | MediaKeySession实例。 |
-| const char *mimeType | 媒体类型，支持的媒体类型取决于DRM解决方案，如：video/avc、video/hev。 |
+| const char *mimeType | 媒体类型，支持的媒体类型取决于DRM解决方案，如：video/avc、video/hevc。 |
 | bool *status | 安全解码模块状态。true表示需要安全解码模块，false表示不需要安全解码模块。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| Drm_ErrCode | DRM_ERR_OK：执行成功。 DRM_ERR_INVALID_VAL：输入参数mediaKeySession为空指针或无效，或其它指针类型输入参数为空指针。 DRM_ERR_UNKNOWN：发生内部错误，请查看日志详细信息。 |
+| Drm_ErrCode | DRM_ERR_OK：执行成功。 DRM_ERR_INVALID_VAL：输入参数mediaKeySession为空指针或无效，或其他指针类型输入参数为空指针。 DRM_ERR_UNKNOWN：发生内部错误，请查看日志详细信息。 |
  
  
   
 
-#### OH_MediaKeySession_SetMediaKeySessionCallback()
+### OH_MediaKeySession_SetMediaKeySessionCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Drm_ErrCode OH_MediaKeySession_SetMediaKeySessionCallback(MediaKeySession *mediaKeySession,MediaKeySession_Callback *callback)
@@ -511,14 +558,16 @@ Drm_ErrCode OH_MediaKeySession_SetMediaKeySessionCallback(MediaKeySession *media
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| MediaKeySession *mediaKeySession | 输入参数，MediaKeySession实例。 |
+| MediaKeySession *mediaKeySession | MediaKeySession实例。 |
 | MediaKeySession_Callback *callback | 输入参数，MediaKeySession的回调结构体。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Drm_ErrCode | DRM_ERR_OK：执行成功。 DRM_ERR_INVALID_VAL：输入参数mediaKeySession为空指针或无效，或输入参数callback为空指针。 |
@@ -526,9 +575,10 @@ Drm_ErrCode OH_MediaKeySession_SetMediaKeySessionCallback(MediaKeySession *media
  
   
 
-#### OH_MediaKeySession_SetCallback()
+### OH_MediaKeySession_SetCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Drm_ErrCode OH_MediaKeySession_SetCallback(MediaKeySession *mediaKeySession,OH_MediaKeySession_Callback *callback)
@@ -542,14 +592,16 @@ Drm_ErrCode OH_MediaKeySession_SetCallback(MediaKeySession *mediaKeySession,OH_M
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| MediaKeySession *mediaKeySession | 输入参数，MediaKeySession实例。 |
+| MediaKeySession *mediaKeySession | MediaKeySession实例。 |
 | OH_MediaKeySession_Callback *callback | 输入参数，MediaKeySession的回调结构体。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Drm_ErrCode | DRM_ERR_OK：执行成功。 DRM_ERR_INVALID_VAL：输入参数mediaKeySession为空指针或无效，或输入参数callback为空指针。 |
@@ -557,9 +609,10 @@ Drm_ErrCode OH_MediaKeySession_SetCallback(MediaKeySession *mediaKeySession,OH_M
  
   
 
-#### OH_MediaKeySession_Destroy()
+### OH_MediaKeySession_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Drm_ErrCode OH_MediaKeySession_Destroy(MediaKeySession *mediaKeySession)
@@ -573,6 +626,7 @@ Drm_ErrCode OH_MediaKeySession_Destroy(MediaKeySession *mediaKeySession)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | MediaKeySession *mediaKeySession | MediaKeySession实例。 |
@@ -580,6 +634,7 @@ Drm_ErrCode OH_MediaKeySession_Destroy(MediaKeySession *mediaKeySession)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Drm_ErrCode | DRM_ERR_OK：执行成功。 DRM_ERR_INVALID_VAL：输入参数mediaKeySession为空指针或无效。 DRM_ERR_UNKNOWN：发生内部错误，请查看日志详细信息。 |

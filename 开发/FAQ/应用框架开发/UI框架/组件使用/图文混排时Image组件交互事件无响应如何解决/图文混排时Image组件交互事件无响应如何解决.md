@@ -58,14 +58,14 @@ struct StyledStringExample {
   mutableStyledString: MutableStyledString = new MutableStyledString(this.image);
 
   onPageShow(): void {
-    // 通过setStyle方法，给图片添加样式
+   <em> // 通过setStyle方法，给图片添加样式</em>
     this.mutableStyledString.setStyle(this.spanStyle);
     this.controller.setStyledString(this.mutableStyledString);
   }
 
   build() {
     Column() {
-      // 点击图片出现弹窗
+     <em> // 点击图片出现弹窗</em>
       Text(undefined, { controller: this.controller })
         .borderWidth(1)
     }.padding(50)

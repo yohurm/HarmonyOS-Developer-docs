@@ -1,23 +1,23 @@
 # 注册/注销Provider(ArkTS)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-extension-registration-and-unregistration-arkts
 
 从API 22开始，huksExternalCrypto提供Provider注册和注销功能接口。
 
 
-#### 注册Provider
+## 注册Provider
 
 
 
-#### 开发步骤
+### 开发步骤
 1. 构造注册参数，需要传入[HUKS_EXT_CRYPTO_TAG_ABILITY_NAME](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-huksexternalcrypto#huksexternalcryptotag)。
 2. 调用注册接口[registerProvider](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-huksexternalcrypto#huksexternalcryptoregisterprovider)。
 
 
 
-#### 开发案例
+### 开发案例
 
 ```text
 import { huksExternalCrypto } from '@kit.UniversalKeystoreKit';
@@ -61,18 +61,18 @@ async function TestRegisterProvider() {
 
 
 
-#### 注册Provider并注册UIExtensionAbility
+## 注册Provider并注册UIExtensionAbility
 
 
 
-#### 开发步骤
+### 开发步骤
 1. 构造注册参数，需要传入[HUKS_EXT_CRYPTO_TAG_ABILITY_NAME](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-huksexternalcrypto#huksexternalcryptotag)。
 2. 构造UI注册参数，需要传入[HUKS_EXT_CRYPTO_TAG_ABILITY_INFO](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-huksexternalcrypto#huksexternalcryptotag)，该值为JSON字符串，包含abilityName和index两个字段，其中abilityName为该UIExtensionAbility中module.json5中的name字段，其长度不得大于128字节，index值的长度不得大于512字节，其值应是resourceId，1个CryptoExtension最多注册10个UIExtensionAbility。
 3. 调用注册接口[registerProvider](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-huksexternalcrypto#huksexternalcryptoregisterprovider)。
 
 
 
-#### 开发案例
+### 开发案例
 
 ```text
 import { huksExternalCrypto } from '@kit.UniversalKeystoreKit';
@@ -123,11 +123,11 @@ async function TestRegisterProvider() {
 
 
 
-#### 注销Provider
+## 注销Provider
 
 
 
-#### 开发步骤
+### 开发步骤
 1. 构造注销参数，注销单个ability需要传入[HUKS_EXT_CRYPTO_TAG_ABILITY_NAME](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-huksexternalcrypto#huksexternalcryptotag)参数。批量注销不需要传入[HUKS_EXT_CRYPTO_TAG_ABILITY_NAME](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-huksexternalcrypto#huksexternalcryptotag)参数。
 2. 调用注销接口[unregisterProvider](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-huksexternalcrypto#huksexternalcryptounregisterprovider)。
 

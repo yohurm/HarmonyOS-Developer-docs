@@ -1,6 +1,6 @@
 # 图片解码内存优化(C/C++)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-allocator-type-c
 
@@ -11,7 +11,7 @@
 当PixelMap较大且使用共享内存时，RS主线程将经历较长的纹理上传时间，导致卡顿现象。图形侧提供了DMA内存零拷贝功能，可在绘制图片时避免纹理上传时间消耗。此外，通过设置合适的像素格式（如YUV格式），可进一步降低内存占用。
 
 
-#### 内存类型介绍
+## 内存类型介绍
 
 当前PixelMap的内存类型包括以下两种。
 
@@ -23,7 +23,8 @@
 
 
 
-#### SHARE_MEMORY和DMA_ALLOC的区别
+### SHARE_MEMORY和DMA_ALLOC的区别
+
 
 | 名称 | SHARE_MEMORY | DMA_ALLOC |
 | --- | --- | --- |
@@ -39,7 +40,7 @@
 
 
 
-#### 使用DMA_ALLOC的优势
+### 使用DMA_ALLOC的优势
 
  - **减少纹理上传时间**
 
@@ -49,7 +50,7 @@
 SHARE_MEMORY耗时：4K图片单帧渲染耗时约为20ms。
  - DMA_ALLOC耗时：4K图片单帧渲染时间可降至约4ms。此项优化在大尺寸图片显示和高频动态图片加载场景中效果尤为显著。
 
-      - **减轻CPU负载**
+            - **减轻CPU负载**
 
   DMA_ALLOC允许GPU直接访问解码后数据，减少了内存复制带来的负载。
 
@@ -60,7 +61,7 @@ SHARE_MEMORY耗时：4K图片单帧渲染耗时约为20ms。
 
 
 
-#### 使用限制
+### 使用限制
 
 当前图片解码功能针对内存分配模式有如下限制。
 
@@ -77,7 +78,7 @@ SHARE_MEMORY耗时：4K图片单帧渲染耗时约为20ms。
 
 
 
-#### 获取stride
+### 获取stride
 
 stride（步幅）描述了图片在内存中每一行像素数据的存储宽度。它是图片绘制过程中的重要参数，用于正确定位图片数据在内存中的布局。
 
@@ -290,13 +291,14 @@ napi_value TestStrideWithAllocatorType(napi_env env, napi_callback_info info)
 
 
 
-#### 像素格式介绍
+## 像素格式介绍
 
 图片解码后的像素格式直接影响内存占用大小。当前支持的主要像素格式如下。
 
 
 
-#### RGBA_8888和YUV格式的区别
+### RGBA_8888和YUV格式的区别
+
 
 | 名称 | RGBA_8888 | NV21/NV12（YUV 4:2:0） |
 | --- | --- | --- |
@@ -309,7 +311,7 @@ napi_value TestStrideWithAllocatorType(napi_env env, napi_callback_info info)
 
 
 
-#### 使用YUV格式的优势
+### 使用YUV格式的优势
 
  - **显著降低内存占用**
 
@@ -320,7 +322,7 @@ RGBA_8888内存占用：3840 × 2160 × 4 ≈ 33.2MB
  - NV21内存占用：3840 × 2160 × 1.5 ≈ 12.4MB
  - 内存节省约62.5%，可有效降低应用内存压力。
 
-      - **减少格式转换开销**
+            - **减少格式转换开销**
 
   JPEG等格式的图片在硬件解码时，解码器可直接输出YUV格式数据，减少格式转换开销。
 
@@ -331,7 +333,7 @@ RGBA_8888内存占用：3840 × 2160 × 4 ≈ 33.2MB
 
 
 
-#### 设置YUV像素格式
+### 设置YUV像素格式
 
 使用YUV格式解码时，需通过OH_DecodingOptions_SetPixelFormat设置像素格式，并推荐配合DMA内存分配使用。
 
@@ -394,7 +396,7 @@ napi_value CreatePixelmapWithYUV(napi_env env, napi_callback_info info)
 
 
 
-#### 系统默认的内存分配方式
+## 系统默认的内存分配方式
 
 在使用[OH_ImageSourceNative_CreatePixelmap](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-source-native-h#oh_imagesourcenative_createpixelmap)接口进行解码时，不同场景下会采取不同的内存分配类型。
 
@@ -410,7 +412,7 @@ napi_value CreatePixelmapWithYUV(napi_env env, napi_callback_info info)
 
 
 
-#### 解码单张图片的内存限制
+## 解码单张图片的内存限制
 
 为了防止内存溢出导致系统崩溃，系统对进程内存做了限制，详细说明请参考[应用被查杀问题检测方法](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-runtime-appkilled-detection)。
 
@@ -429,6 +431,7 @@ pixels_size(像素内存大小) = stride(图片像素存储宽度) * height(图�
 从API version 21开始，对于支持下采样解码的图片，设置desiredSize（期望输出大小）后，解码器将以基准梯度为1/8的最优下采样率计算PixelMap的像素内存，即按照7/8、6/8、...、1/8的采样率，逐次递减取一个清晰度最高的采样数。
 
 图片框架内，不同图片格式的下采样解码支持情况如下所示。
+
 
 | 是否支持下采样 | 图片格式 |
 | --- | --- |

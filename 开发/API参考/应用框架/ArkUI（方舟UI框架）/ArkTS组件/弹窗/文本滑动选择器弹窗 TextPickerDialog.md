@@ -1,9 +1,9 @@
 # 文本滑动选择器弹窗 (TextPickerDialog)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-textpicker-dialog
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 根据指定的选择范围创建文本滑动选择器，展示在弹窗上。该组件适用于设置页面、表单录入、数据筛选等需要用户从预设选项中选择文本的场景。
 
@@ -12,15 +12,17 @@
 
 
 
-#### TextPickerDialog
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## TextPickerDialog
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### show(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### show(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 static show(options?: TextPickerDialogOptions)
 
@@ -38,16 +40,18 @@ static show(options?: TextPickerDialogOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| options | TextPickerDialogOptions | 否 | 配置文本选择器弹窗的参数，缺省时无法弹出弹窗。至少需要提供range参数才能正常弹出弹窗，其他参数均为可选配置。 |
+| options | TextPickerDialogOptions | 否 | 配置文本选择器弹窗的参数。至少需要提供range参数才能正常弹出弹窗，其他参数均为可选配置。 |
 
 
 
 
-#### TextPickerDialogOptions对象说明
+## TextPickerDialogOptions对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 文本选择器弹窗的参数继承自[TextPickerOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textpicker#textpickeroptions对象说明)。
 
@@ -55,9 +59,10 @@ static show(options?: TextPickerDialogOptions)
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| defaultPickerItemHeight | number \| string | 否 | 是 | 设置选择器中选项的高度。number类型取值范围：[0, +∞)，默认值：选中项56vp，非选中项36vp。设置该参数后，选中项与非选中项的高度均为所设置的值。string类型仅支持number类型取值的字符串形式，例如"56"。 说明： 当defaultPickerItemHeight的值为负数时，使用默认值。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| defaultPickerItemHeight | number \| string | 否 | 是 | 设置选择器中选项的高度。number类型取值范围：[0, +∞)，默认单位vp，默认值：选中项56vp，非选中项36vp。设置该参数后，选中项与非选中项的高度均为所设置的值。string类型仅支持number类型取值的字符串形式，例如"56"。 说明： 当defaultPickerItemHeight的值为负数时，使用默认值。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | disappearTextStyle10+ | PickerTextStyle | 否 | 是 | 设置边缘项（以选中项为基准向上或向下的第二项）的文本颜色、字号、字体粗细等。 默认值： { color: '#ff182431', font: { size: '14fp', weight: FontWeight.Regular } } 元服务API： 从API version 11开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | textStyle10+ | PickerTextStyle | 否 | 是 | 设置待选项（以选中项为基准向上或向下的第一项）的文本颜色、字号、字体粗细等。 默认值： { color: '#ff182431', font: { size: '16fp', weight: FontWeight.Regular } } 元服务API： 从API version 11开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | selectedTextStyle10+ | PickerTextStyle | 否 | 是 | 设置选中项的文本颜色、字号、字体粗细等。 默认值： { color: '#ff007dff', font: { size: '20fp', weight: FontWeight.Medium } } 元服务API： 从API version 11开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
@@ -70,7 +75,7 @@ static show(options?: TextPickerDialogOptions)
 | onAccept | (value: TextPickerResult) => void | 否 | 是 | 点击弹窗中的“确定”按钮时触发该回调。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | onCancel | () => void | 否 | 是 | 点击弹窗中的“取消”按钮时触发该回调。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | onChange | (value: TextPickerResult) => void | 否 | 是 | 滑动弹窗中的选择器后，选项归位至选中项位置时，触发该回调，用于获取最终选择结果。 回调会在滑动动画结束后触发，如果需要快速获取索引值变化，建议使用onEnterSelectedArea接口。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
-| onScrollStop14+ | Callback&lt;TextPickerResult&gt; | 否 | 是 | 滑动弹窗中的选择器的选择列停止时，触发该回调，用于监听物理滑动停止事件。两者触发时机略有不同，onChange侧重于选项选中状态，onScrollStop侧重于滑动动作结束。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
+| onScrollStop14+ | Callback&lt;TextPickerResult&gt; | 否 | 是 | 选择器滑动停止时触发该回调，用于监听物理滑动停止事件。与onChange事件的差别在于，onChange侧重于选项选中状态，onScrollStop侧重于滑动动作结束。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | backgroundColor11+ | ResourceColor | 否 | 是 | 弹窗背板颜色。 默认值：Color.Transparent 说明： 1.当设置了backgroundColor为非透明色时，backgroundBlurStyle需要设置为BlurStyle.NONE，不要设置backgroundBlurStyle为非NONE值，否则显示的颜色将不符合预期效果。 2.从API版本26.0.0开始，设置systemMaterial后该属性不生效。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | backgroundBlurStyle11+ | BlurStyle | 否 | 是 | 弹窗背板模糊材质。 默认值：BlurStyle.COMPONENT_ULTRA_THICK 说明： 1.设置为BlurStyle.NONE即可关闭背景虚化。当设置了backgroundBlurStyle为非NONE值时，则不要设置backgroundColor，否则显示的颜色将不符合预期效果。 2.从API版本26.0.0开始，设置systemMaterial后该属性不生效。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | backgroundBlurStyleOptions19+ | BackgroundBlurStyleOptions | 否 | 是 | 背景模糊效果参数，用于自定义弹窗背景模糊的显示样式，支持配置颜色模式、自适应颜色、缩放比例等属性，实现不同的背景模糊视觉效果。 说明： 未设置时沿用backgroundBlurStyle的默认效果（BlurStyle.COMPONENT_ULTRA_THICK）；设置后将覆盖backgroundBlurStyle的效果。 元服务API： 从API version 19开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
@@ -91,9 +96,10 @@ static show(options?: TextPickerDialogOptions)
 
 
 
-#### TextPickerDialogOptionsExt20+对象说明
+## TextPickerDialogOptionsExt20+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 文本选择器弹窗的参数继承自[TextPickerOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textpicker#textpickeroptions对象说明)。
 
@@ -102,6 +108,7 @@ static show(options?: TextPickerDialogOptions)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -115,7 +122,7 @@ static show(options?: TextPickerDialogOptions)
 | onAccept | Callback&lt;TextPickerResult&gt; | 否 | 是 | 点击弹窗中的“确定”按钮时触发该回调。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
 | onCancel | VoidCallback | 否 | 是 | 点击弹窗中的“取消”按钮时触发该回调。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
 | onChange | Callback&lt;TextPickerResult&gt; | 否 | 是 | 滑动弹窗中的选择器后，选项归位至选中项位置时，触发该回调，用于获取最终选择结果。 回调会在滑动动画结束后触发，如果需要快速获取索引值变化，建议使用onEnterSelectedArea接口。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
-| onScrollStop | Callback&lt;TextPickerResult&gt; | 否 | 是 | 滑动弹窗中的选择器的选择列停止时，触发该回调，用于监听物理滑动停止事件。两者触发时机略有不同，onChange侧重于选项选中状态，onScrollStop侧重于滑动动作结束。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
+| onScrollStop | Callback&lt;TextPickerResult&gt; | 否 | 是 | 选择器滑动停止时触发该回调，用于监听物理滑动停止事件。与onChange事件的差别在于，onChange侧重于选项选中状态，onScrollStop侧重于滑动动作结束。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
 | backgroundColor | ResourceColor | 否 | 是 | 弹窗背板颜色。 默认值：Color.Transparent 说明： 当设置了backgroundColor为非透明色时，backgroundBlurStyle需要设置为BlurStyle.NONE，否则显示的颜色将不符合预期效果。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
 | backgroundBlurStyle | BlurStyle | 否 | 是 | 弹窗背板模糊材质。 默认值：BlurStyle.COMPONENT_ULTRA_THICK 说明： 设置为BlurStyle.NONE即可关闭背景虚化。当设置了backgroundBlurStyle为非NONE值时，则不要设置backgroundColor，否则显示的颜色将不符合预期效果。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
 | backgroundBlurStyleOptions | BackgroundBlurStyleOptions | 否 | 是 | 背景模糊效果参数，用于自定义弹窗背景模糊的显示样式，支持配置颜色模式、自适应颜色、缩放比例等属性，实现不同的背景模糊视觉效果。 说明： 未设置时沿用backgroundBlurStyle的默认效果（BlurStyle.COMPONENT_ULTRA_THICK）；设置后将覆盖backgroundBlurStyle的效果。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
@@ -140,9 +147,10 @@ static show(options?: TextPickerDialogOptions)
 
 
 
-#### TextPickerResult对象说明
+## TextPickerResult对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 文本选择器结果。
 
@@ -152,6 +160,7 @@ static show(options?: TextPickerDialogOptions)
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | value | string \| string[]10+ | 否 | 否 | 选中项的文本内容。 说明：当显示文本或图片加文本列表时，value值为选中项中的文本值。（文本选择器显示多列时，value为数组类型。） 当显示图片列表时，value值为空。 value值必须在range参数定义的选项范围内，不支持包含转义字符''。 |
@@ -160,9 +169,10 @@ static show(options?: TextPickerDialogOptions)
 
 
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 > [!NOTE]
 > 推荐通过使用 UIContext 中的 showTextPickerDialog 来明确UI的执行上下文。
@@ -170,7 +180,10 @@ static show(options?: TextPickerDialogOptions)
 
 
 
-#### 示例1（弹出文本选择弹窗）
+### 示例1（弹出文本选择弹窗）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例通过点击按钮弹出文本选择弹窗。
 
@@ -237,7 +250,10 @@ struct TextPickerDialogExample {
 
 
 
-#### 示例2（自定义样式）
+### 示例2（自定义样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例通过配置disappearTextStyle、textStyle、selectedTextStyle、acceptButtonStyle、cancelButtonStyle实现了自定义文本和按钮样式。
 
@@ -329,7 +345,10 @@ struct TextPickerDialogExample {
 
 
 
-#### 示例3（悬停态弹窗）
+### 示例3（悬停态弹窗）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例展示了在折叠屏悬停态下设置dialog布局区域的效果。
 
@@ -398,7 +417,10 @@ struct TextPickerDialogExample {
 
 
 
-#### 示例4（设置弹窗位置）
+### 示例4（设置弹窗位置）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例通过alignment、offset设置弹窗的位置。
 
@@ -444,7 +466,10 @@ struct TextPickerDialogExample {
 
 
 
-#### 示例5（设置遮蔽区）
+### 示例5（设置遮蔽区）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例通过maskRect设置遮蔽区。
 
@@ -494,7 +519,10 @@ struct TextPickerDialogExample {
 
 
 
-#### 示例6（设置弹窗背板）
+### 示例6（设置弹窗背板）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例通过backgroundColor、backgroundBlurStyle和shadow设置弹窗背板。
 
@@ -541,7 +569,10 @@ struct TextPickerDialogExample {
 
 
 
-#### 示例7（设置循环滚动）
+### 示例7（设置循环滚动）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例通过配置canLoop设置是否循环滚动。
 
@@ -587,7 +618,10 @@ struct TextPickerDialogExample {
 
 
 
-#### 示例8（设置选中项的背景样式）
+### 示例8（设置选中项的背景样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例通过selectedBackgroundStyle属性设置文本选择器选中项的背景样式。
 
@@ -625,12 +659,15 @@ struct TextPickerDialogExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/_Po8zQm-Ta6IWzlALBfI-g/zh-cn_image_0000002655848952.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071515Z&HW-CC-Expire=86400&HW-CC-Sign=B4CCAB12E773914150A096E807AE06182A213AB180CB229C12963808A5988B53)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/2mlixIaORVe0s7j1ATLFdQ/zh-cn_image_0000002717773024.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073119Z&HW-CC-Expire=86400&HW-CC-Sign=AE6FCECCB287D03BB90B5B0CD5322569A560F410CCA3127BD9BF17E84FF6B35F)
 
 
 
 
-#### 示例9（自定义背景模糊效果参数）
+### 示例9（自定义背景模糊效果参数）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 从API version 19开始，该示例通过配置[backgroundBlurStyleOptions](#textpickerdialogoptions对象说明)，实现自定义背景模糊效果。
 
@@ -667,12 +704,15 @@ struct TextPickerDialogExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/MP51DLhURqyfVhdFVLoRRQ/zh-cn_image_0000002686088383.png?HW-CC-KV=V1&HW-CC-Date=20260730T071515Z&HW-CC-Expire=86400&HW-CC-Sign=0FD5E4126E7D181E54497483B8A3D37434D8A07937F980DEFB8849C1E1802017)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/7Ea2nTIXTFWO5DacFRdYHw/zh-cn_image_0000002717613094.png?HW-CC-KV=V1&HW-CC-Date=20260911T073119Z&HW-CC-Expire=86400&HW-CC-Sign=79AFD4558F0E5EA666AB73B9A7C46071B50A7C1E9C72A5E71F4A1F0977A8220B)
 
 
 
 
-#### 示例10（自定义背景效果参数）
+### 示例10（自定义背景效果参数）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 从API version 19开始，该示例通过配置[backgroundEffect](#textpickerdialogoptions对象说明)，实现自定义背景效果。
 
@@ -710,4 +750,45 @@ struct TextPickerDialogExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/GCNNMHxwRjiC8rarQIFEeQ/zh-cn_image_0000002685928551.png?HW-CC-KV=V1&HW-CC-Date=20260730T071515Z&HW-CC-Expire=86400&HW-CC-Sign=8BB1CDBAD00965B528B39D74C052FC75B38DD478F04F8741852663BB6E4100F9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/SaCk1TqhQouBjVAYwxLr4g/zh-cn_image_0000002747293045.png?HW-CC-KV=V1&HW-CC-Date=20260911T073119Z&HW-CC-Expire=86400&HW-CC-Sign=92FF84E648AC0A8E7E9A89DEE143217C8DDEDD045EB897C8DFF891A289FB55CB)
+
+
+
+
+### 示例11（设置系统材质）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+该示例通过配置[systemMaterial](#textpickerdialogoptionsext20对象说明)，实现系统材质效果。
+
+从API版本26.0.0开始，在TextPickerDialogOptionsExt中新增了systemMaterial属性。
+
+```text
+import { uiMaterial } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct TextPickerDialogExample {
+  private showText: string [] = ['Text1', 'Text2', 'Text3', 'Text4', 'Text5', 'Text6']
+
+  build() {
+    Stack({ alignContent: Alignment.Top }) {
+
+      Column() {
+        Button('TextPickerDialog')
+          .margin(20)
+          .onClick(() => {
+            this.getUIContext().showTextPickerDialog({
+              range: this.showText,
+              systemMaterial: new uiMaterial.ImmersiveMaterial({ style: uiMaterial.ImmersiveStyle.ULTRA_THICK })
+            })
+          })
+      }.width('100%')
+    }
+  }
+}
+```
+
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/outUUYCfQxWzMuqUTW8xjg/zh-cn_image_0000002747212961.png?HW-CC-KV=V1&HW-CC-Date=20260911T073119Z&HW-CC-Expire=86400&HW-CC-Sign=8686EBE62CE8E775445795721719BFABC10E5256E63E1987C213F3DB810BD03F)

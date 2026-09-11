@@ -1,10 +1,10 @@
 # 基础绘制效果（ArkTS）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/basic-drawing-effect-arkts
 
-#### 场景介绍
+## 场景介绍
 
 在进行绘制时，可以进行一些基础效果的设置，比如设置填充颜色、设置抗锯齿、设置图形描边、设置图形线条连接样式等。
 
@@ -12,15 +12,16 @@
 
 
 
-#### 填充效果
+## 填充效果
 
 可以通过画刷设置基础的填充颜色，还可以通过画刷使用混合模式、着色器效果、滤波器效果等实现更多复杂绘制效果，具体可见[复杂绘制效果](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/complex-drawing-effect-arkts)。
 
 
 
-#### 接口说明
+### 接口说明
 
-使用画刷（Brush）设置绘制效果的常用接口如下表所示，详细的使用和参数请见[drawing.Brush](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-graphics-drawing-brush)。
+使用画刷（Brush）设置绘制效果的常用接口如下表所示，详细的使用和参数请见[drawing.Brush](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-graphics-drawing-brush)和[drawing.Canvas](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-graphics-drawing-canvas)。
+
 
 | 接口 | 描述 |
 | --- | --- |
@@ -32,12 +33,12 @@
 
 
 
-#### 开发步骤
+### 开发步骤
 1. 创建画刷Brush对象。
 
   
 ```ArkTS
-// 设置画刷
+// 创建画刷
 const brush = new drawing.Brush();
 ```
 
@@ -78,15 +79,16 @@ canvas.detachBrush();
 
 
 
-#### 描边效果
+## 描边效果
 
 可以通过画笔设置基础的描边颜色，还可以通过画笔使用混合模式、路径效果、着色器效果、滤波器效果等实现更多复杂绘制效果，具体可见[复杂绘制效果](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/complex-drawing-effect-arkts)。
 
 
 
-#### 接口说明
+### 接口说明
 
-使用画笔（Pen）设置绘制效果的常用接口如下表所示，详细的使用和参数请见[drawing.Pen](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-graphics-drawing-pen)。
+使用画笔（Pen）设置绘制效果的常用接口如下表所示，详细的使用和参数请见[drawing.Pen](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-graphics-drawing-pen)和[drawing.Canvas](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-graphics-drawing-canvas)。
+
 
 | 接口 | 描述 |
 | --- | --- |
@@ -96,12 +98,12 @@ canvas.detachBrush();
 | setAntiAlias(aa: boolean) : void | 用于设置画笔的抗锯齿属性，设置为true则画笔在绘制图形时会对图形的边缘像素进行半透明的模糊处理。 |
 | setCapStyle(style: CapStyle): void | 用于设置画笔线帽样式。 |
 | setJoinStyle(style: JoinStyle): void | 用于设置画笔绘制转角的样式。 |
-| detachPen(): void | 用于去除画布中的画笔，执行后画布将不去绘制图形形状的轮廓，恢复到默认的填充效果。 |
+| detachPen(): void | 用于去除画布中的画笔，执行后画布将不去绘制图形形状的轮廓，恢复到默认的描边效果。 |
 
 
 
 
-#### 开发步骤
+### 开发步骤
 1. 创建画笔Pen对象。
 
   
@@ -150,9 +152,13 @@ pen.setCapStyle(drawing.CapStyle.SQUARE_CAP);
 CapStyle线帽样式可选分类对应如下：
 
 | 线帽样式 | 说明 | 示意图 |
+
 | --- | --- | --- |
+
 | FLAT_CAP | 没有线帽样式，线条头尾端点处横切。 |  |
+
 | SQUARE_CAP | 线帽的样式为方框，线条的头尾端点处多出一个方框，方框宽度和线段一样宽，高度是线段宽度的一半。 |  |
+
 | ROUND_CAP | 线帽的样式为圆弧，线条的头尾端点处多出一个半圆弧，半圆的直径与线段宽度一致。 |  |
 
 6. 可使用setJoinStyle()接口设置画笔转角样式。
@@ -165,10 +171,14 @@ pen.setJoinStyle(drawing.JoinStyle.ROUND_JOIN);
 JoinStyle转角样式可选分类对应如下：
 
 | 转角样式 | 说明 | 示意图 |
+
 | --- | --- | --- |
+
 | MITER_JOIN | 转角类型为尖角 |  |
-| ROUND_JOIN | 转角类型为圆头 |  |
-| BEVEL_JOIN | 转角类型为平头 |  |
+
+| ROUND_JOIN | 转角类型为圆角 |  |
+
+| BEVEL_JOIN | 转角类型为平角 |  |
 
 7. 使用attachPen()接口给Canvas画布设置画笔。画布将会使用设置的画笔样式和颜色等绘制图形轮廓。
 
@@ -192,7 +202,7 @@ canvas.detachPen();
 
   
 
-  #### 示例代码
+  ## 示例代码
 
   
 [图形绘制（ArkTS）](https://gitcode.com/HarmonyOS_Samples/guide-snippets/tree/master/ArkGraphics2D/Drawing/ArkTSGraphicsDraw)

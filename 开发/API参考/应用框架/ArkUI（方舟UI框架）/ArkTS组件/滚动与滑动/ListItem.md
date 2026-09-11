@@ -1,9 +1,9 @@
 # ListItem
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-listitem
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ListItem用于展示列表中的具体列表项，支持设置划出菜单、选中状态、鼠标框选和卡片样式等能力，必须配合List组件使用，适用于需要在列表中展示内容并对单个列表项进行交互操作（如滑动删除、选中标记）的场景。
 
@@ -12,23 +12,26 @@ ListItem用于展示列表中的具体列表项，支持设置划出菜单、选
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 可以包含单个子组件。
 
 
 
-#### 接口
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 接口
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### ListItem10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### ListItem10+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ListItem(value?: ListItemOptions)
 
@@ -44,6 +47,7 @@ ListItem(value?: ListItemOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ListItemOptions | 否 | 为ListItem提供可选参数，该对象内含有ListItemStyle枚举类型的style参数。当需要设置卡片样式（ListItemStyle.CARD）时传入此参数，不传入时使用默认配置（无样式）。 默认值：{ style: ListItemStyle.NONE } |
@@ -51,9 +55,10 @@ ListItem(value?: ListItemOptions)
 
 
 
-#### ListItem(deprecated)
+### ListItem(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ListItem(value?: string)
 
@@ -69,6 +74,7 @@ ListItem(value?: string)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string | 否 | 该参数已废弃，当前版本不生效，建议使用ListItem10+替代。 |
@@ -76,17 +82,19 @@ ListItem(value?: string)
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
 
 
 
-#### sticky(deprecated)
+### sticky(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sticky(value: Sticky)
 
@@ -100,6 +108,7 @@ sticky(value: Sticky)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Sticky | 是 | ListItem吸顶效果。 默认值：Sticky.None |
@@ -107,9 +116,10 @@ sticky(value: Sticky)
 
 
 
-#### editable(deprecated)
+### editable(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 editable(value: boolean | EditMode)
 
@@ -123,6 +133,7 @@ editable(value: boolean | EditMode)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean \| EditMode | 是 | ListItem元素是否可编辑。设置为true时进入编辑模式，可删除或移动列表项；设置为false时不可编辑。设置为EditMode枚举值时，None表示编辑操作不限制，Deletable表示可删除，Movable表示可移动。 默认值：false |
@@ -130,9 +141,10 @@ editable(value: boolean | EditMode)
 
 
 
-#### selectable8+
+### selectable8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectable(value: boolean)
 
@@ -146,6 +158,7 @@ selectable(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | ListItem元素是否可以被鼠标框选。设置为true时可以被鼠标框选，设置为false时无法被鼠标框选。 默认值：true 说明： 外层List组件设置multiSelectable为true开启鼠标框选时，ListItem的框选才生效。 |
@@ -153,9 +166,10 @@ selectable(value: boolean)
 
 
 
-#### selected10+
+### selected10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selected(value: boolean)
 
@@ -171,6 +185,7 @@ selected(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 当前ListItem选中状态。设置为true时为选中状态，设置为false时为默认状态。 默认值：false 说明： 需要在设置多态样式前使用才能生效选中态样式。 |
@@ -178,9 +193,10 @@ selected(value: boolean)
 
 
 
-#### swipeAction9+
+### swipeAction9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 swipeAction(value: SwipeActionOptions)
 
@@ -192,6 +208,7 @@ swipeAction(value: SwipeActionOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | SwipeActionOptions | 是 | ListItem的划出组件配置，用于设置划出时显示的组件、滑动效果和滑动状态回调等。 |
@@ -199,9 +216,10 @@ swipeAction(value: SwipeActionOptions)
 
 
 
-#### Sticky(deprecated)枚举说明
+## Sticky(deprecated)枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ListItem吸顶效果枚举。
 
@@ -210,6 +228,7 @@ ListItem吸顶效果枚举。
 
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -220,9 +239,10 @@ ListItem吸顶效果枚举。
 
 
 
-#### EditMode(deprecated)枚举说明
+## EditMode(deprecated)枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ListItem元素编辑模式枚举。
 
@@ -231,6 +251,7 @@ ListItem元素编辑模式枚举。
 
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -241,15 +262,17 @@ ListItem元素编辑模式枚举。
 
 
 
-#### SwipeEdgeEffect9+枚举说明
+## SwipeEdgeEffect9+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 滑动效果枚举。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -259,15 +282,17 @@ ListItem元素编辑模式枚举。
 
 
 
-#### SwipeActionOptions9+对象说明
+## SwipeActionOptions9+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 start和end对应的@builder函数中顶层必须是单个组件（如果顶层是if/else、ForEach等渲染控制语句，则必须保证其仅能生成单个组件），否则会引发未定义行为。
 
 滑动手势只在ListItem区域上生效，如果子组件滑出ListItem区域外，在ListItem以外部分不会响应滑动手势。所以在多列模式下，建议不要将划出组件设置太宽。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -279,9 +304,10 @@ start和end对应的@builder函数中顶层必须是单个组件（如果顶层�
 
 
 
-#### SwipeActionItem10+对象说明
+## SwipeActionItem10+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 SwipeActionItem用于配置[SwipeActionOptions](#swipeactionoptions9对象说明)中的start或end划出项，包括划出时显示的操作项、长距离操作区域的距离阈值，以及进入、退出长距离操作区域、抬手触发操作和状态变化时的回调。
 
@@ -290,6 +316,7 @@ SwipeActionItem用于配置[SwipeActionOptions](#swipeactionoptions9对象说明
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -304,9 +331,10 @@ SwipeActionItem用于配置[SwipeActionOptions](#swipeactionoptions9对象说明
 
 
 
-#### ListItemOptions10+对象说明
+## ListItemOptions10+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ListItem组件参数。
 
@@ -316,6 +344,7 @@ ListItem组件参数。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | style | ListItemStyle | 否 | 是 | 设置ListItem组件卡片样式。 默认值：ListItemStyle.NONE 设置为ListItemStyle.NONE时无样式。 设置为ListItemStyle.CARD时，建议配合ListItemGroup的ListItemGroupStyle.CARD同时使用，显示默认卡片样式。 卡片样式下，ListItem默认规格：高度48vp，宽度100%，左右内边距8vp。如果需要实现ListItem高度自适应，可以把height设置为undefined。 卡片样式下，为卡片内的列表选项提供了默认的focus、hover、press、selected和disable样式。 说明： 当设置为ListItemStyle.CARD时，List的listDirection属性值须为Axis.Vertical，如果设置为Axis.Horizontal，会导致显示混乱；List属性alignListItem默认为ListItemAlign.Center，居中对齐显示。 |
@@ -323,9 +352,10 @@ ListItem组件参数。
 
 
 
-#### ListItemStyle10+枚举说明
+## ListItemStyle10+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ListItem组件卡片样式枚举。
 
@@ -335,6 +365,7 @@ ListItem组件卡片样式枚举。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NONE | 0 | 无样式。 |
@@ -343,9 +374,10 @@ ListItem组件卡片样式枚举。
 
 
 
-#### SwipeActionState11+枚举说明
+## SwipeActionState11+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 列表项滑动状态枚举。
 
@@ -354,6 +386,7 @@ ListItem组件卡片样式枚举。
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -364,15 +397,17 @@ ListItem组件卡片样式枚举。
 
 
 
-#### 事件
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 事件
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### onSelect8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### onSelect8+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onSelect(event: (isSelected: boolean) => void)
 
@@ -388,6 +423,7 @@ ListItem元素被鼠标框选的状态改变时触发回调。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isSelected | boolean | 是 | 进入鼠标框选范围即被选中返回true， 移出鼠标框选范围即未被选中返回false。 |
@@ -395,17 +431,19 @@ ListItem元素被鼠标框选的状态改变时触发回调。
 
 
 
-#### ListItemSwipeActionManager21+
+## ListItemSwipeActionManager21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ListItem划出菜单的管理器。
 
 
 
-#### expand21+
+### expand21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 expand(node: FrameNode, direction: ListItemSwipeActionDirection): void
 
@@ -423,6 +461,7 @@ expand(node: FrameNode, direction: ListItemSwipeActionDirection): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | ListItem节点对象。 |
@@ -433,6 +472,7 @@ expand(node: FrameNode, direction: ListItemSwipeActionDirection): void
 
 以下错误码的详细介绍请参见[自定义节点错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-node)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 100023 | The component type of the node is incorrect. |
@@ -441,9 +481,10 @@ expand(node: FrameNode, direction: ListItemSwipeActionDirection): void
 
 
 
-#### collapse21+
+### collapse21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 collapse(node: FrameNode): void
 
@@ -457,6 +498,7 @@ collapse(node: FrameNode): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | ListItem节点对象。 |
@@ -466,6 +508,7 @@ collapse(node: FrameNode): void
 
 以下错误码的详细介绍请参见[自定义节点错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-node)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 100023 | The component type of the node is incorrect. |
@@ -474,9 +517,10 @@ collapse(node: FrameNode): void
 
 
 
-#### ListItemSwipeActionDirection21+枚举说明
+## ListItemSwipeActionDirection21+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ListItem划出菜单的展开方向。
 
@@ -486,6 +530,7 @@ ListItem划出菜单的展开方向。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | START | 0 | 当列表方向是垂直方向时，LTR模式下表示ListItem的左边，RTL模式下表示ListItem的右边。当列表是水平方向时，表示ListItem的上边。 |
@@ -494,13 +539,17 @@ ListItem划出菜单的展开方向。
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（创建ListItem）
+
+
+### 示例1（创建ListItem）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例实现了创建ListItem的基本用法。
 
@@ -560,7 +609,10 @@ struct ListItemExample {
 
 
 
-#### 示例2（设置划出组件）
+### 示例2（设置划出组件）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示了ListItem设置了swipeAction的横滑效果。
 
@@ -579,15 +631,15 @@ struct ListItemExample2 {
   @Builder
   itemEnd() {
     Row() {
-      Button('Delete').margin('4vp')
-      Button('Set').margin('4vp').onClick(() => {
+      Button('Delete').margin(4)
+      Button('Set').margin(4).onClick(() => {
         try {
           this.scroller.closeAllSwipeActions();
         } catch (error) {
           console.error(`Failed to close all swipe actions. Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
         }
       })
-    }.padding('4vp').justifyContent(FlexAlign.SpaceEvenly)
+    }.padding(4).justifyContent(FlexAlign.SpaceEvenly)
   }
 
   build() {
@@ -646,7 +698,10 @@ struct ListItemExample2 {
 
 
 
-#### 示例3（设置卡片样式）
+### 示例3（设置卡片样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示了ListItem的卡片样式效果。
 
@@ -657,7 +712,7 @@ struct ListItemExample2 {
 struct ListItemExample3 {
   build() {
     Column() {
-      List({ space: '4vp', initialIndex: 0 }) {
+      List({ space: 4, initialIndex: 0 }) {
         ListItemGroup({ style: ListItemGroupStyle.CARD }) {
           ForEach([ListItemStyle.CARD, ListItemStyle.CARD, ListItemStyle.NONE], (itemStyle: ListItemStyle, index?: number) => {
             ListItem({ style: itemStyle }) {
@@ -692,7 +747,10 @@ struct ListItemExample3 {
 
 
 
-#### 示例4（通过ComponentContent设置划出组件）
+### 示例4（通过ComponentContent设置划出组件）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[ComponentContent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-componentcontent#componentcontent-1)设置ListItem中的划出组件操作时显示的操作项。
 
@@ -713,11 +771,11 @@ class BuilderParams {
 @Builder
 function itemBuilder(params: BuilderParams) {
   Row() {
-    Button(params.text).margin('4vp')
-    Button('Set').margin('4vp').onClick(() => {
+    Button(params.text).margin(4)
+    Button('Set').margin(4).onClick(() => {
       params.scroller.closeAllSwipeActions();
     })
-  }.padding('4vp').justifyContent(FlexAlign.SpaceEvenly)
+  }.padding(4).justifyContent(FlexAlign.SpaceEvenly)
 }
 
 @Component
@@ -806,12 +864,15 @@ struct ListItemExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/DjA7KjmdQnOHeov7-pTMRA/zh-cn_image_0000002655848486.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071500Z&HW-CC-Expire=86400&HW-CC-Sign=310EA1CE848B6C24C9A04E2FF4FD33A26FC25B61FF24D422072FE15711934D88)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/cEzC-nghSzy729XxohzrGQ/zh-cn_image_0000002747212491.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073113Z&HW-CC-Expire=86400&HW-CC-Sign=E2AA9C6F363864447EAC792F26687146847EABD6E570DFE646ECFDB97A5FA78F)
 
 
 
 
-#### 示例5（通过ListItemSwipeActionManager管理划出菜单）
+### 示例5（通过ListItemSwipeActionManager管理划出菜单）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 21开始，该示例通过[ListItemSwipeActionManager](#listitemswipeactionmanager21)管理ListItem的划出菜单。
 
@@ -825,8 +886,8 @@ struct ListItemExample5 {
   @Builder
   itemAction(str: string) {
     Row() {
-      Button(str).margin('4vp')
-    }.padding('4vp').justifyContent(FlexAlign.SpaceEvenly)
+      Button(str).margin(4)
+    }.padding(4).justifyContent(FlexAlign.SpaceEvenly)
   }
 
   build() {
@@ -908,4 +969,4 @@ struct ListItemExample5 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/ygcvb3OpSMGnfFwEG4-CRA/zh-cn_image_0000002686087915.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071500Z&HW-CC-Expire=86400&HW-CC-Sign=0ED72F7578D6DFAAF2BBFAE643F8C7B2098089A6AF1905223B21B0B68EF17968)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/Ys06nO59RPmbA_hHi6-jsw/zh-cn_image_0000002717772556.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073113Z&HW-CC-Expire=86400&HW-CC-Sign=90EB612D5E5BA583C476D70C66944D2645E5328FDB029C1897EC40BD461CE2CE)

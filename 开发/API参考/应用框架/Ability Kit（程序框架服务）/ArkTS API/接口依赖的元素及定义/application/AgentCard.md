@@ -1,9 +1,9 @@
 # AgentCard
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-agentcard
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 AgentCard相当于Agent(智能体)的"名片"，用于描述Agent的能力和技能，由开发者在Agent的配置文件agent_config.json中配置。
 
@@ -14,9 +14,10 @@ AgentCard相当于Agent(智能体)的"名片"，用于描述Agent的能力和技
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { common } from '@kit.AbilityKit';
@@ -24,9 +25,10 @@ import { common } from '@kit.AbilityKit';
 
 
 
-#### AgentCard
+## AgentCard
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述Agent的基本信息和能力。
 
@@ -35,6 +37,7 @@ import { common } from '@kit.AbilityKit';
 **元服务API：** 从API version 24开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Ability.AgentRuntime.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -57,9 +60,10 @@ import { common } from '@kit.AbilityKit';
 
 
 
-#### AgentProvider
+## AgentProvider
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示Agent的服务提供商。
 
@@ -69,6 +73,7 @@ import { common } from '@kit.AbilityKit';
 
 **系统能力：** SystemCapability.Ability.AgentRuntime.Core
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | organization | string | 否 | 否 | Agent提供商的组织名称。标识开发或提供该Agent的公司、组织或个人名称。 |
@@ -77,9 +82,10 @@ import { common } from '@kit.AbilityKit';
 
 
 
-#### AgentCapabilities
+## AgentCapabilities
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义Agent支持的可选能力。
 
@@ -88,6 +94,7 @@ import { common } from '@kit.AbilityKit';
 **元服务API：** 从API version 24开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Ability.AgentRuntime.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -100,9 +107,10 @@ import { common } from '@kit.AbilityKit';
 
 
 
-#### AgentSkill
+## AgentSkill
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示Agent可以执行的不同能力或功能。
 
@@ -111,6 +119,7 @@ import { common } from '@kit.AbilityKit';
 **元服务API：** 从API version 24开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Ability.AgentRuntime.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -126,9 +135,10 @@ import { common } from '@kit.AbilityKit';
 
 
 
-#### AgentAppInfo
+## AgentAppInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Agent的应用信息。
 
@@ -137,6 +147,7 @@ Agent的应用信息。
 **元服务API：** 从API version 24开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Ability.AgentRuntime.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

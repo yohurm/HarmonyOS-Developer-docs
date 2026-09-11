@@ -1,20 +1,21 @@
 # SplitLayout
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-04 10:41:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-splitlayout
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 SplitLayout组件提供了常用的页面布局样式，主要用于展示图片、标题和内容容器的组合布局，适用于需要自适应不同屏幕尺寸的分栏展示场景（如详情页、设置页等）。支持自适应不同屏幕宽度（小于等于600vp、大于600vp且小于等于840vp、大于840vp三种布局），解决了在不同尺寸设备上需要展示不同布局样式的需求，提升页面适配性和用户体验。
  
 > [!NOTE]
-> 该组件从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 该组件仅可在Stage模型下使用。 SplitLayout不支持设置 通用属性 和 通用事件 。如果设置，编译工具链会额外生成__Common__节点，并将通用属性或通用事件挂载在__Common__上，而不是直接应用到SplitLayout本身，导致设置的属性或事件不生效。
+> 该组件从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 本模块接口仅可在Stage模型下使用。 如果SplitLayout设置 通用属性 或 通用事件 ，编译工具链会额外生成节点__Common__，并将通用属性或通用事件挂载在__Common__上，而不是直接应用到SplitLayout本身。这可能导致开发者设置的通用属性或通用事件不生效或不符合预期，因此，不建议SplitLayout设置通用属性和通用事件。
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 import { SplitLayout } from '@kit.ArkUI';
@@ -22,17 +23,19 @@ import { SplitLayout } from '@kit.ArkUI';
  
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 无
  
   
 
-#### SplitLayout
+## SplitLayout
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 SplitLayout({mainImage: ResourceStr, primaryText: ResourceStr, secondaryText?: ResourceStr, tertiaryText?: ResourceStr, container: () => void })
  
@@ -46,6 +49,7 @@ SplitLayout是分栏布局组件，支持自适应布局能力，在不同宽度
  
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
   
+
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | mainImage | ResourceStr | 是 | @State | 主图片资源，显示在布局上方区域，支持png、jpg、svg等常见图片格式。 |
@@ -57,25 +61,10 @@ SplitLayout是分栏布局组件，支持自适应布局能力，在不同宽度
  
   
 
-#### 事件
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-不支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)。
- 
-  
-
-#### 属性
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-不支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)。
- 
-  
-
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例通过SplitLayout实现了页面布局，并具备自适应能力。
  
@@ -121,4 +110,4 @@ struct Index {
 大于840vp布局：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/IOJnF1CcQcSPMzJYwe3-zg/zh-cn_image_0000002656008954.png?HW-CC-KV=V1&HW-CC-Date=20260730T071520Z&HW-CC-Expire=86400&HW-CC-Sign=4FE29103BA980D58E27366D160F5A63FE9185FEE527B44A62F8DD6F321638F01)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/OXN85eGOTzSboa2eDLn-mg/zh-cn_image_0000002717613176.png?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=E738158D90358E4441D8E6C9E0F9D1478782D7F6BCBF077A1F2FC0DEDB3F9AF7)

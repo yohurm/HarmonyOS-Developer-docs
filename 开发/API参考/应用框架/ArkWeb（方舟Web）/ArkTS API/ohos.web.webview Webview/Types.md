@@ -1,9 +1,9 @@
 # Types
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-t
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ArkWeb Types模块是ArkWeb框架中的类型别名和回调函数类型定义集合，为WebView组件的消息通信、代理配置和媒体播放控制等能力提供统一的数据类型约束和回调签名规范，是WebView组件相关核心类接口声明中的类型支撑层。
  
@@ -14,9 +14,10 @@ ArkWeb Types模块是ArkWeb框架中的类型别名和回调函数类型定义�
 
   
 
-#### WebMessage
+## WebMessage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type WebMessage = ArrayBuffer | string
  
@@ -24,6 +25,7 @@ type WebMessage = ArrayBuffer | string
  
 **系统能力：** SystemCapability.Web.Webview.Core
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 字符串类型数据。 |
@@ -32,13 +34,14 @@ type WebMessage = ArrayBuffer | string
  
   
 
-#### OnProxyConfigChangeCallback15+
+## OnProxyConfigChangeCallback15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnProxyConfigChangeCallback = () => void
  
-回调函数，回调成功表示代理设置成功。
+回调函数，在代理配置发生改变时被调用，回调成功表示代理设置成功。
  
 **系统能力：** SystemCapability.Web.Webview.Core
  
@@ -48,29 +51,32 @@ type OnProxyConfigChangeCallback = () => void
  
   
 
-#### CreateNativeMediaPlayerCallback12+
+## CreateNativeMediaPlayerCallback12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type CreateNativeMediaPlayerCallback = (handler: NativeMediaPlayerHandler, mediaInfo: MediaInfo) => NativeMediaPlayerBridge
  
-[onCreateNativeMediaPlayer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller#oncreatenativemediaplayer12)方法的参数。一个回调函数，创建一个播放器，用于接管网页中的媒体播放。
+[onCreateNativeMediaPlayer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller#oncreatenativemediaplayer12)方法的参数。一个回调函数，在网页需要播放媒体时被调用，用于创建一个播放器接管网页中的媒体播放。通过接管机制，应用可以使用自定义播放器实现特殊功能或优化性能。
  
 **系统能力：** SystemCapability.Web.Webview.Core
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| handler | NativeMediaPlayerHandler | 是 | 通过该对象，将播放器的状态报告给 ArkWeb 内核。 |
+| handler | NativeMediaPlayerHandler | 是 | 通过该对象，将播放器的状态报告给ArkWeb内核。应用通过该对象上报播放、暂停、错误等状态事件，使ArkWeb内核能够同步网页中的媒体播放状态。 |
 | mediaInfo | MediaInfo | 是 | 网页媒体的信息。 |
  
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| NativeMediaPlayerBridge | 接管网页媒体的播放器和 ArkWeb 内核之间的一个接口类。 应用需要实现该接口类。 ArkWeb 内核通过该接口类的对象来控制应用创建的用来接管网页媒体的播放器。 如果应用返回了 null，则表示应用不接管这个媒体的播放，由 ArkWeb 内核来播放该媒体。 |
+| NativeMediaPlayerBridge | 接管网页媒体播放器和ArkWeb内核之间的一个接口类。 应用需要实现该接口类。 ArkWeb内核通过该接口对象控制应用创建的媒体播放器。 如果应用返回了null，则表示应用不接管这个媒体的播放，由ArkWeb内核来播放该媒体。 |
  
  
 **示例：**

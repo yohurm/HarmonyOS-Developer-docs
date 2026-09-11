@@ -1,13 +1,14 @@
 # oh_pasteboard.h
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-pasteboard-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供访问系统剪贴板的接口、数据结构、枚举类型。支持剪贴板数据的读写、监听剪贴板内容变化、获取粘贴进度等功能。
 
@@ -23,15 +24,18 @@
 
 
 
-#### 汇总
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 汇总
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 结构体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -43,24 +47,28 @@
 
 
 
-#### 宏定义
+### 宏定义
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 描述 |
 | --- | --- |
 | PASTEBOARD_MIMETYPE_TEXT_PLAIN "text/plain" | 纯文本类型。 |
 | PASTEBOARD_MIMETYPE_TEXT_URI "text/uri" | URI类型。 |
 | PASTEBOARD_MIMETYPE_TEXT_HTML "text/html" | HTML类型。 |
-| PASTEBOARD_MIMETYPE_PIXELMAP "pixelMap" | pixelMap类型。 |
-| PASTEBOARD_MIMETYPE_TEXT_WANT "text/want" | want类型。 |
+| PASTEBOARD_MIMETYPE_PIXELMAP "pixelMap" | PixelMap类型。 |
+| PASTEBOARD_MIMETYPE_TEXT_WANT "text/want" | Want类型。 |
 
 
 
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -71,9 +79,11 @@
 
 
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -111,15 +121,17 @@
 
 
 
-#### 宏定义说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 宏定义说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### PASTEBOARD_MIMETYPE_TEXT_PLAIN
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### PASTEBOARD_MIMETYPE_TEXT_PLAIN
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 #define PASTEBOARD_MIMETYPE_TEXT_PLAIN "text/plain"
@@ -133,9 +145,10 @@
 
 
 
-#### PASTEBOARD_MIMETYPE_TEXT_URI
+### PASTEBOARD_MIMETYPE_TEXT_URI
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 #define PASTEBOARD_MIMETYPE_TEXT_URI "text/uri"
@@ -149,9 +162,10 @@ URI类型。
 
 
 
-#### PASTEBOARD_MIMETYPE_TEXT_HTML
+### PASTEBOARD_MIMETYPE_TEXT_HTML
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 #define PASTEBOARD_MIMETYPE_TEXT_HTML "text/html"
@@ -165,9 +179,10 @@ HTML类型。
 
 
 
-#### PASTEBOARD_MIMETYPE_PIXELMAP
+### PASTEBOARD_MIMETYPE_PIXELMAP
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 #define PASTEBOARD_MIMETYPE_PIXELMAP "pixelMap"
@@ -175,15 +190,16 @@ HTML类型。
 
 **描述**
 
-pixelMap类型。
+PixelMap类型。
 
 **起始版本：** 22
 
 
 
-#### PASTEBOARD_MIMETYPE_TEXT_WANT
+### PASTEBOARD_MIMETYPE_TEXT_WANT
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 #define PASTEBOARD_MIMETYPE_TEXT_WANT "text/want"
@@ -191,21 +207,23 @@ pixelMap类型。
 
 **描述**
 
-want类型。
+Want类型。
 
 **起始版本：** 22
 
 
 
-#### 枚举类型说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 枚举类型说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### Pasteboard_NotifyType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### Pasteboard_NotifyType
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Pasteboard_NotifyType
@@ -219,6 +237,7 @@ enum Pasteboard_NotifyType
 
 **起始版本：** 13
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | NOTIFY_LOCAL_DATA_CHANGE = 1 | 本地设备剪贴板数据变更。 |
@@ -227,9 +246,10 @@ enum Pasteboard_NotifyType
 
 
 
-#### Pasteboard_FileConflictOptions
+### Pasteboard_FileConflictOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Pasteboard_FileConflictOptions
@@ -243,6 +263,7 @@ enum Pasteboard_FileConflictOptions
 
 **起始版本：** 15
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | PASTEBOARD_OVERWRITE = 0 | 目标路径存在同文件名时覆盖。 |
@@ -251,9 +272,10 @@ enum Pasteboard_FileConflictOptions
 
 
 
-#### Pasteboard_ProgressIndicator
+### Pasteboard_ProgressIndicator
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Pasteboard_ProgressIndicator
@@ -267,6 +289,7 @@ enum Pasteboard_ProgressIndicator
 
 **起始版本：** 15
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | PASTEBOARD_NONE = 0 | 不采用系统默认进度显示。 |
@@ -275,15 +298,17 @@ enum Pasteboard_ProgressIndicator
 
 
 
-#### 函数说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 函数说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### OH_Pasteboard_ProgressListener()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### OH_Pasteboard_ProgressListener()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_Pasteboard_ProgressListener)(Pasteboard_ProgressInfo* progressInfo)
@@ -299,6 +324,7 @@ typedef void (*OH_Pasteboard_ProgressListener)(Pasteboard_ProgressInfo* progress
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Pasteboard_ProgressInfo* progressInfo | 定义进度上报的数据结构，且仅当进度指示选项Pasteboard_ProgressIndicator设置为PASTEBOARD_NONE时才会上报此信息。 |
@@ -306,9 +332,10 @@ typedef void (*OH_Pasteboard_ProgressListener)(Pasteboard_ProgressInfo* progress
 
 
 
-#### Pasteboard_Notify()
+### Pasteboard_Notify()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*Pasteboard_Notify)(void* context, Pasteboard_NotifyType type)
@@ -324,6 +351,7 @@ typedef void (*Pasteboard_Notify)(void* context, Pasteboard_NotifyType type)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | void* context | 上下文信息，由函数OH_PasteboardObserver_SetData传入。 |
@@ -332,9 +360,10 @@ typedef void (*Pasteboard_Notify)(void* context, Pasteboard_NotifyType type)
 
 
 
-#### Pasteboard_Finalize()
+### Pasteboard_Finalize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*Pasteboard_Finalize)(void* context)
@@ -350,6 +379,7 @@ typedef void (*Pasteboard_Finalize)(void* context)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | void* context | 要释放的上下文指针。当context指向需要手动释放的动态内存或资源时，应在回调函数中释放；当context指向静态内存或无需管理的资源时，回调函数可以不做处理。 |
@@ -357,9 +387,10 @@ typedef void (*Pasteboard_Finalize)(void* context)
 
 
 
-#### OH_PasteboardObserver_Create()
+### OH_PasteboardObserver_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_PasteboardObserver* OH_PasteboardObserver_Create()
@@ -379,6 +410,7 @@ OH_PasteboardObserver* OH_PasteboardObserver_Create()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_PasteboardObserver* | 执行成功时返回一个指向剪贴板数据变更观察者OH_PasteboardObserver实例对象的指针，否则返回空指针。 当不再需要使用指针时，请使用OH_PasteboardObserver_Destroy销毁实例对象，否则会导致内存泄漏。 |
@@ -386,9 +418,10 @@ OH_PasteboardObserver* OH_PasteboardObserver_Create()
 
 
 
-#### OH_PasteboardObserver_Destroy()
+### OH_PasteboardObserver_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_PasteboardObserver_Destroy(OH_PasteboardObserver* observer)
@@ -406,12 +439,14 @@ int OH_PasteboardObserver_Destroy(OH_PasteboardObserver* observer)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PasteboardObserver* observer | 表示指向剪贴板数据变更观察者OH_PasteboardObserver实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -426,9 +461,10 @@ int OH_PasteboardObserver_Destroy(OH_PasteboardObserver* observer)
 
 
 
-#### OH_PasteboardObserver_SetData()
+### OH_PasteboardObserver_SetData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_PasteboardObserver_SetData(OH_PasteboardObserver* observer, void* context, const Pasteboard_Notify callback, const Pasteboard_Finalize finalize)
@@ -442,6 +478,7 @@ int OH_PasteboardObserver_SetData(OH_PasteboardObserver* observer, void* context
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PasteboardObserver* observer | 表示指向剪贴板数据变更观察者OH_PasteboardObserver实例的指针。 |
@@ -452,6 +489,7 @@ int OH_PasteboardObserver_SetData(OH_PasteboardObserver* observer, void* context
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的错误码。错误码定义详见PASTEBOARD_ErrCode。 若返回ERR_OK，表示执行成功。 若返回ERR_INVALID_PARAMETER，表示传入了无效参数。 |
@@ -459,9 +497,10 @@ int OH_PasteboardObserver_SetData(OH_PasteboardObserver* observer, void* context
 
 
 
-#### OH_Pasteboard_Create()
+### OH_Pasteboard_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Pasteboard* OH_Pasteboard_Create()
@@ -479,6 +518,7 @@ OH_Pasteboard* OH_Pasteboard_Create()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Pasteboard* | 执行成功则返回一个指向剪贴板OH_Pasteboard实例对象的指针，否则返回nullptr。 当不再需要使用指针时，请使用OH_Pasteboard_Destroy销毁实例对象，否则会导致内存泄漏。 |
@@ -486,9 +526,10 @@ OH_Pasteboard* OH_Pasteboard_Create()
 
 
 
-#### OH_Pasteboard_Destroy()
+### OH_Pasteboard_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Pasteboard_Destroy(OH_Pasteboard* pasteboard)
@@ -506,6 +547,7 @@ void OH_Pasteboard_Destroy(OH_Pasteboard* pasteboard)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pasteboard* pasteboard | 表示指向剪贴板OH_Pasteboard实例的指针。 |
@@ -513,9 +555,10 @@ void OH_Pasteboard_Destroy(OH_Pasteboard* pasteboard)
 
 
 
-#### OH_Pasteboard_Subscribe()
+### OH_Pasteboard_Subscribe()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Pasteboard_Subscribe(OH_Pasteboard* pasteboard, int type, const OH_PasteboardObserver* observer)
@@ -543,6 +586,7 @@ int OH_Pasteboard_Subscribe(OH_Pasteboard* pasteboard, int type, const OH_Pasteb
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pasteboard* pasteboard | 表示指向剪贴板OH_Pasteboard实例的指针。 |
@@ -552,6 +596,7 @@ int OH_Pasteboard_Subscribe(OH_Pasteboard* pasteboard, int type, const OH_Pasteb
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的错误码。错误码定义详见PASTEBOARD_ErrCode。 若返回ERR_OK，表示执行成功。 若返回ERR_INVALID_PARAMETER，表示传入了无效参数。 |
@@ -559,9 +604,10 @@ int OH_Pasteboard_Subscribe(OH_Pasteboard* pasteboard, int type, const OH_Pasteb
 
 
 
-#### OH_Pasteboard_Unsubscribe()
+### OH_Pasteboard_Unsubscribe()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Pasteboard_Unsubscribe(OH_Pasteboard* pasteboard, int type, const OH_PasteboardObserver* observer)
@@ -577,6 +623,7 @@ int OH_Pasteboard_Unsubscribe(OH_Pasteboard* pasteboard, int type, const OH_Past
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pasteboard* pasteboard | 表示指向剪贴板OH_Pasteboard实例的指针。 |
@@ -586,6 +633,7 @@ int OH_Pasteboard_Unsubscribe(OH_Pasteboard* pasteboard, int type, const OH_Past
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的错误码。错误码定义详见PASTEBOARD_ErrCode。 若返回ERR_OK，表示执行成功。 若返回ERR_INVALID_PARAMETER，表示传入了无效参数。 |
@@ -593,9 +641,10 @@ int OH_Pasteboard_Unsubscribe(OH_Pasteboard* pasteboard, int type, const OH_Past
 
 
 
-#### OH_Pasteboard_IsRemoteData()
+### OH_Pasteboard_IsRemoteData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_Pasteboard_IsRemoteData(OH_Pasteboard* pasteboard)
@@ -609,12 +658,14 @@ bool OH_Pasteboard_IsRemoteData(OH_Pasteboard* pasteboard)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pasteboard* pasteboard | 表示指向剪贴板OH_Pasteboard实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -623,9 +674,10 @@ bool OH_Pasteboard_IsRemoteData(OH_Pasteboard* pasteboard)
 
 
 
-#### OH_Pasteboard_GetDataSource()
+### OH_Pasteboard_GetDataSource()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Pasteboard_GetDataSource(OH_Pasteboard* pasteboard, char* source, unsigned int len)
@@ -641,6 +693,7 @@ int OH_Pasteboard_GetDataSource(OH_Pasteboard* pasteboard, char* source, unsigne
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pasteboard* pasteboard | 表示指向剪贴板OH_Pasteboard实例的指针。 |
@@ -650,6 +703,7 @@ int OH_Pasteboard_GetDataSource(OH_Pasteboard* pasteboard, char* source, unsigne
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的错误码。错误码定义详见PASTEBOARD_ErrCode。 若返回ERR_OK，表示执行成功。 若返回ERR_INVALID_PARAMETER，表示传入了无效参数。 |
@@ -657,9 +711,10 @@ int OH_Pasteboard_GetDataSource(OH_Pasteboard* pasteboard, char* source, unsigne
 
 
 
-#### OH_Pasteboard_HasType()
+### OH_Pasteboard_HasType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_Pasteboard_HasType(OH_Pasteboard* pasteboard, const char* type)
@@ -673,6 +728,7 @@ bool OH_Pasteboard_HasType(OH_Pasteboard* pasteboard, const char* type)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pasteboard* pasteboard | 表示指向剪贴板OH_Pasteboard实例的指针。 |
@@ -681,6 +737,7 @@ bool OH_Pasteboard_HasType(OH_Pasteboard* pasteboard, const char* type)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回剪贴板中是否有指定类型的数据。返回true表示剪贴板中包含指定类型的数据，返回false表示剪贴板中没有指定类型的数据。 |
@@ -688,9 +745,10 @@ bool OH_Pasteboard_HasType(OH_Pasteboard* pasteboard, const char* type)
 
 
 
-#### OH_Pasteboard_HasData()
+### OH_Pasteboard_HasData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_Pasteboard_HasData(OH_Pasteboard* pasteboard)
@@ -706,12 +764,14 @@ bool OH_Pasteboard_HasData(OH_Pasteboard* pasteboard)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pasteboard* pasteboard | 表示指向剪贴板OH_Pasteboard实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -720,9 +780,10 @@ bool OH_Pasteboard_HasData(OH_Pasteboard* pasteboard)
 
 
 
-#### OH_Pasteboard_HasRemoteData()
+### OH_Pasteboard_HasRemoteData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_Pasteboard_HasRemoteData(OH_Pasteboard* pasteboard)
@@ -736,12 +797,14 @@ bool OH_Pasteboard_HasRemoteData(OH_Pasteboard* pasteboard)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pasteboard* pasteboard | 表示指向剪贴板OH_Pasteboard实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -750,9 +813,10 @@ bool OH_Pasteboard_HasRemoteData(OH_Pasteboard* pasteboard)
 
 
 
-#### OH_Pasteboard_GetData()
+### OH_Pasteboard_GetData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_UdmfData* OH_Pasteboard_GetData(OH_Pasteboard* pasteboard, int* status)
@@ -771,9 +835,12 @@ OH_UdmfData* OH_Pasteboard_GetData(OH_Pasteboard* pasteboard, int* status)
 
 **起始版本：** 13
 
-**需要权限**：ohos.permission.READ_PASTEBOARD，应用访问剪贴板内容需[申请访问剪贴板权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/get-pastedata-permission-guidelines)。[使用粘贴控件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pastebutton)访问剪贴板内容的应用，可以无需申请权限。
+应用使用自定义控件访问剪贴板内容需[申请访问剪贴板权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/get-pastedata-permission-guidelines)。应用[使用粘贴控件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pastebutton)访问剪贴板内容，无需申请权限。
+
+**需要权限：** ohos.permission.READ_PASTEBOARD
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -783,6 +850,7 @@ OH_UdmfData* OH_Pasteboard_GetData(OH_Pasteboard* pasteboard, int* status)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_UdmfData* | 执行成功时返回统一数据对象OH_UdmfData实例的指针。否则返回空指针。 |
@@ -790,9 +858,10 @@ OH_UdmfData* OH_Pasteboard_GetData(OH_Pasteboard* pasteboard, int* status)
 
 
 
-#### OH_Pasteboard_SetData()
+### OH_Pasteboard_SetData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Pasteboard_SetData(OH_Pasteboard* pasteboard, OH_UdmfData* data)
@@ -813,6 +882,7 @@ int OH_Pasteboard_SetData(OH_Pasteboard* pasteboard, OH_UdmfData* data)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pasteboard* pasteboard | 表示指向剪贴板OH_Pasteboard实例的指针。 |
@@ -821,6 +891,7 @@ int OH_Pasteboard_SetData(OH_Pasteboard* pasteboard, OH_UdmfData* data)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的错误码。错误码定义详见PASTEBOARD_ErrCode。 若返回ERR_OK，表示执行成功。 若返回ERR_INVALID_PARAMETER，表示传入了无效参数。 |
@@ -828,9 +899,10 @@ int OH_Pasteboard_SetData(OH_Pasteboard* pasteboard, OH_UdmfData* data)
 
 
 
-#### OH_Pasteboard_ClearData()
+### OH_Pasteboard_ClearData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Pasteboard_ClearData(OH_Pasteboard* pasteboard)
@@ -846,12 +918,14 @@ int OH_Pasteboard_ClearData(OH_Pasteboard* pasteboard)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pasteboard* pasteboard | 表示指向剪贴板OH_Pasteboard实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -860,9 +934,10 @@ int OH_Pasteboard_ClearData(OH_Pasteboard* pasteboard)
 
 
 
-#### OH_Pasteboard_GetMimeTypes()
+### OH_Pasteboard_GetMimeTypes()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 char **OH_Pasteboard_GetMimeTypes(OH_Pasteboard *pasteboard, unsigned int *count)
@@ -876,6 +951,7 @@ char **OH_Pasteboard_GetMimeTypes(OH_Pasteboard *pasteboard, unsigned int *count
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pasteboard *pasteboard | 表示指向剪贴板OH_Pasteboard实例的指针。 |
@@ -884,6 +960,7 @@ char **OH_Pasteboard_GetMimeTypes(OH_Pasteboard *pasteboard, unsigned int *count
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | char ** | 执行成功时返回剪贴板所有内容的MIME类型，否则返回nullptr。 |
@@ -891,9 +968,10 @@ char **OH_Pasteboard_GetMimeTypes(OH_Pasteboard *pasteboard, unsigned int *count
 
 
 
-#### OH_Pasteboard_GetDataParams_Create()
+### OH_Pasteboard_GetDataParams_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Pasteboard_GetDataParams *OH_Pasteboard_GetDataParams_Create(void)
@@ -909,6 +987,7 @@ Pasteboard_GetDataParams *OH_Pasteboard_GetDataParams_Create(void)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Pasteboard_GetDataParams * | 执行成功时返回一个指向剪贴板Pasteboard_GetDataParams实例对象的指针，否则返回空指针。 当不再需要使用指针时，请使用OH_Pasteboard_GetDataParams_Destroy销毁实例对象，否则会导致内存泄漏。 |
@@ -916,9 +995,10 @@ Pasteboard_GetDataParams *OH_Pasteboard_GetDataParams_Create(void)
 
 
 
-#### OH_Pasteboard_GetDataParams_Destroy()
+### OH_Pasteboard_GetDataParams_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Pasteboard_GetDataParams_Destroy(Pasteboard_GetDataParams* params)
@@ -941,6 +1021,7 @@ void OH_Pasteboard_GetDataParams_Destroy(Pasteboard_GetDataParams* params)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Pasteboard_GetDataParams* params | 表示指向剪贴板Pasteboard_GetDataParams的指针。 |
@@ -948,9 +1029,10 @@ void OH_Pasteboard_GetDataParams_Destroy(Pasteboard_GetDataParams* params)
 
 
 
-#### OH_Pasteboard_GetDataParams_SetProgressIndicator()
+### OH_Pasteboard_GetDataParams_SetProgressIndicator()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Pasteboard_GetDataParams_SetProgressIndicator(Pasteboard_GetDataParams* params,Pasteboard_ProgressIndicator progressIndicator)
@@ -964,6 +1046,7 @@ void OH_Pasteboard_GetDataParams_SetProgressIndicator(Pasteboard_GetDataParams* 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Pasteboard_GetDataParams* params | 表示指向剪贴板Pasteboard_GetDataParams的指针。 |
@@ -972,9 +1055,10 @@ void OH_Pasteboard_GetDataParams_SetProgressIndicator(Pasteboard_GetDataParams* 
 
 
 
-#### OH_Pasteboard_GetDataParams_SetDestUri()
+### OH_Pasteboard_GetDataParams_SetDestUri()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Pasteboard_GetDataParams_SetDestUri(Pasteboard_GetDataParams* params, const char* destUri, uint32_t destUriLen)
@@ -990,6 +1074,7 @@ void OH_Pasteboard_GetDataParams_SetDestUri(Pasteboard_GetDataParams* params, co
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Pasteboard_GetDataParams* params | 表示指向剪贴板Pasteboard_GetDataParams的指针。 |
@@ -999,9 +1084,10 @@ void OH_Pasteboard_GetDataParams_SetDestUri(Pasteboard_GetDataParams* params, co
 
 
 
-#### OH_Pasteboard_GetDataParams_SetFileConflictOptions()
+### OH_Pasteboard_GetDataParams_SetFileConflictOptions()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Pasteboard_GetDataParams_SetFileConflictOptions(Pasteboard_GetDataParams* params,Pasteboard_FileConflictOptions option)
@@ -1023,6 +1109,7 @@ void OH_Pasteboard_GetDataParams_SetFileConflictOptions(Pasteboard_GetDataParams
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Pasteboard_GetDataParams* params | 表示指向剪贴板Pasteboard_GetDataParams的指针。 |
@@ -1031,9 +1118,10 @@ void OH_Pasteboard_GetDataParams_SetFileConflictOptions(Pasteboard_GetDataParams
 
 
 
-#### OH_Pasteboard_GetDataParams_SetProgressListener()
+### OH_Pasteboard_GetDataParams_SetProgressListener()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Pasteboard_GetDataParams_SetProgressListener(Pasteboard_GetDataParams* params,const OH_Pasteboard_ProgressListener listener)
@@ -1049,6 +1137,7 @@ void OH_Pasteboard_GetDataParams_SetProgressListener(Pasteboard_GetDataParams* p
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Pasteboard_GetDataParams* params | 表示指向剪贴板Pasteboard_GetDataParams的指针。 |
@@ -1057,9 +1146,10 @@ void OH_Pasteboard_GetDataParams_SetProgressListener(Pasteboard_GetDataParams* p
 
 
 
-#### OH_Pasteboard_ProgressInfo_GetProgress()
+### OH_Pasteboard_ProgressInfo_GetProgress()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Pasteboard_ProgressInfo_GetProgress(Pasteboard_ProgressInfo* progressInfo)
@@ -1073,12 +1163,14 @@ int OH_Pasteboard_ProgressInfo_GetProgress(Pasteboard_ProgressInfo* progressInfo
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Pasteboard_ProgressInfo* progressInfo | 表示指向剪贴板Pasteboard_ProgressInfo的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1087,9 +1179,10 @@ int OH_Pasteboard_ProgressInfo_GetProgress(Pasteboard_ProgressInfo* progressInfo
 
 
 
-#### OH_Pasteboard_ProgressCancel()
+### OH_Pasteboard_ProgressCancel()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Pasteboard_ProgressCancel(Pasteboard_GetDataParams* params)
@@ -1112,6 +1205,7 @@ void OH_Pasteboard_ProgressCancel(Pasteboard_GetDataParams* params)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | Pasteboard_GetDataParams* params | 表示指向剪贴板Pasteboard_GetDataParams的指针。 |
@@ -1119,9 +1213,10 @@ void OH_Pasteboard_ProgressCancel(Pasteboard_GetDataParams* params)
 
 
 
-#### OH_Pasteboard_GetDataWithProgress()
+### OH_Pasteboard_GetDataWithProgress()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_UdmfData* OH_Pasteboard_GetDataWithProgress(OH_Pasteboard* pasteboard, Pasteboard_GetDataParams* params,int* status)
@@ -1133,9 +1228,12 @@ OH_UdmfData* OH_Pasteboard_GetDataWithProgress(OH_Pasteboard* pasteboard, Pasteb
 
 **起始版本：** 15
 
-**需要权限**：ohos.permission.READ_PASTEBOARD，应用访问剪贴板内容需[申请访问剪贴板权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/get-pastedata-permission-guidelines)。[使用粘贴控件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pastebutton)访问剪贴板内容的应用，可以无需申请权限。
+应用使用自定义控件访问剪贴板内容需[申请访问剪贴板权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/get-pastedata-permission-guidelines)。应用[使用粘贴控件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pastebutton)访问剪贴板内容，无需申请权限。
+
+**需要权限：** ohos.permission.READ_PASTEBOARD
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -1146,6 +1244,7 @@ OH_UdmfData* OH_Pasteboard_GetDataWithProgress(OH_Pasteboard* pasteboard, Pasteb
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_UdmfData* | 执行成功时返回统一数据对象OH_UdmfData实例的指针。否则返回空指针。 |
@@ -1153,9 +1252,10 @@ OH_UdmfData* OH_Pasteboard_GetDataWithProgress(OH_Pasteboard* pasteboard, Pasteb
 
 
 
-#### OH_Pasteboard_GetChangeCount()
+### OH_Pasteboard_GetChangeCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 uint32_t OH_Pasteboard_GetChangeCount(OH_Pasteboard *pasteboard)
@@ -1169,12 +1269,14 @@ uint32_t OH_Pasteboard_GetChangeCount(OH_Pasteboard *pasteboard)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pasteboard *pasteboard | 表示指向剪贴板OH_Pasteboard实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1190,9 +1292,10 @@ uint32_t OH_Pasteboard_GetChangeCount(OH_Pasteboard *pasteboard)
 
 
 
-#### OH_Pasteboard_SyncDelayedDataAsync()
+### OH_Pasteboard_SyncDelayedDataAsync()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Pasteboard_SyncDelayedDataAsync(OH_Pasteboard* pasteboard, void (*callback)(int errorCode))
@@ -1203,7 +1306,7 @@ void OH_Pasteboard_SyncDelayedDataAsync(OH_Pasteboard* pasteboard, void (*callba
 通知剪贴板从应用同步所有延迟数据（延迟数据指在延迟复制模式下，先写入数据类型到剪贴板，实际数据内容按需延迟加载的数据传输机制），与延迟复制接口[OH_UdmfRecordProvider_SetData](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-udmf-h#oh_udmfrecordprovider_setdata)搭配使用。当所有延迟数据同步完成时，使用callback异步通知应用。当应用使用延迟复制功能复制时，仅将应用支持的数据类型写入剪贴板。应用应在退出时，重新调用[OH_Pasteboard_SetData](#oh_pasteboard_setdata)接口主动提交所有复制数据或调用此接口通知剪贴板获取全量数据，等待数据同步完成再继续退出，否则可能导致其他应用粘贴获取不到数据。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/MFe-FHtRRaKH798pfjm1Jw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095513Z&HW-CC-Expire=86400&HW-CC-Sign=635390A1F0E2AD4D3ABAF9A43F02ACDAFFCBEB4E9EB90AC484A8300D2B8CCDA7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/GqpF0cVsTImhOnhevqGXaQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072648Z&HW-CC-Expire=86400&HW-CC-Sign=17A18BE5E0FDD5AF79AF779B7FD54C3985DBE8C74609A8B6E850380DCACFC4BE)
 
 
  - 调用此接口会延长退出过程，建议应用直接设置数据到剪贴板，而不是调用延迟复制接口[OH_UdmfRecordProvider_SetData](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-udmf-h#oh_udmfrecordprovider_setdata)和此接口。
@@ -1214,6 +1317,7 @@ void OH_Pasteboard_SyncDelayedDataAsync(OH_Pasteboard* pasteboard, void (*callba
 **起始版本：** 21
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |

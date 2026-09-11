@@ -1,16 +1,16 @@
 # TabBar如何自定义下划线
 
-更新时间：2026-08-05 03:30:07
+更新时间：2026-08-20 00:48:37
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1004
 
-#### 问题现象
+## 问题现象
 
 TabBar页签下划线的样式如何自定义，如设置下划线的宽、高、颜色、圆角、间距等。
  
  
 
-#### 背景知识
+## 背景知识
 
 [Tabs](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs)：通过页签进行内容视图切换的容器组件，每个页签对应一个内容视图。仅支持子组件[TabContent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent)，以及渲染控制类型[if/else](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)和[ForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-foreach)，不建议自定义组件作为子组件。TabContent设置页签的接口有以下三个：
  
@@ -21,10 +21,11 @@ TabBar页签下划线的样式如何自定义，如设置下划线的宽、高�
  
  
 
-#### 解决方案
+## 解决方案
 
 TabBar的下划线不仅是视觉焦点，更是用户感知当前页面的关键信号，下面将提供TabBar下划线的三种制作方案，开发者可以按需参考使用：
   
+
 | 方案 | 使用场景 |
 | --- | --- |
 | 基于tabBar(SubTabBarStyle)接口实现下划线效果。 | 基于SubTabBarStyle实现下划线，实现简单，但是对于复杂的页签栏样式无法满足。 |
@@ -97,7 +98,7 @@ struct TabBarUnderLine {
       .barHeight(56)
       .animationDuration(400)
       .onChange((index: number) => {
-        // currentIndex控制TabContent显示页签
+    <em>    // currentIndex控制TabContent显示页签</em>
         this.currentIndex = index;
         this.selectedIndex = index;
       })
@@ -106,7 +107,7 @@ struct TabBarUnderLine {
         if (index === targetIndex) {
           return;
         }
-        // selectedIndex控制自定义TabBar内Image和Text颜色切换
+    <em>    // selectedIndex控制自定义TabBar内Image和Text颜色切换</em>
         this.selectedIndex = targetIndex;
       })
       .width(360)
@@ -123,13 +124,13 @@ struct TabBarUnderLine {
 
  
 方案三：不使用官方提供的tabBar接口，使用其它组件（如[List](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)、[Column](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-column)等）组合实现TabBar页签。
-- 可以参考[自定义Tabs样式，TabBar底部指示器如何对齐](https://developer.huawei.com/consumer/cn/doc/architecture-guides/common-v1_26-ts_97-0000002358873457)的实现，其使用List实现TabBar页签栏，通过设置Column宽高和背景色实现页签下划线。在此示例中要实现更多下划线样式，需修改Column的color、margin等属性。
+- 可以参考[自定义Tabs样式，TabBar底部指示器如何对齐](https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-891)的实现，其使用List实现TabBar页签栏，通过设置Column宽高和背景色实现页签下划线。在此示例中要实现更多下划线样式，需修改Column的color、margin等属性。
 
  
  
  
 
-#### 常见FAQ
+## 常见FAQ
 
 Q：TabBar怎么取消文字下划线？
  

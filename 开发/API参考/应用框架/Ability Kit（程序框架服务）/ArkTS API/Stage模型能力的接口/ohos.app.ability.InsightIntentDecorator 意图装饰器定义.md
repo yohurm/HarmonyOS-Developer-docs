@@ -1,9 +1,9 @@
 # @ohos.app.ability.InsightIntentDecorator (意图装饰器定义)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-insightintentdecorator
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 InsightIntentDecorator模块提供了几类意图装饰器，用于装饰类或方法。开发者可以[使用装饰器开发意图](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/insight-intent-decorator-development)，将应用的功能定义为意图，并集成到智能问答、智能搜索、智能推荐等AI入口。
 
@@ -20,9 +20,10 @@ InsightIntentDecorator模块提供了几类意图装饰器，用于装饰类或�
 
 
 
-#### 基本概念
+## 基本概念
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 意图可以分为标准意图和自定义意图。
 
@@ -34,9 +35,10 @@ InsightIntentDecorator模块提供了几类意图装饰器，用于装饰类或�
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { InsightIntentLink, InsightIntentPage, InsightIntentFunctionMethod, InsightIntentFunction, InsightIntentEntry } from '@kit.AbilityKit';
@@ -44,11 +46,12 @@ import { InsightIntentLink, InsightIntentPage, InsightIntentFunctionMethod, Insi
 
 
 
-#### @InsightIntentLink
+## @InsightIntentLink
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-使用该装饰器装饰当前应用的uri链接，可以将该uri链接定义为意图，便于AI入口通过定义的意图快速跳转到当前应用。该装饰器支持的参数参见[LinkIntentDecoratorInfo](#linkintentdecoratorinfo)。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+使用该装饰器装饰当前应用的URI链接，可以将该URI链接定义为意图，便于AI入口通过定义的意图快速跳转到当前应用。该装饰器支持的参数参见[LinkIntentDecoratorInfo](#linkintentdecoratorinfo)。
 
 > [!TIP]
 > URI格式需要符合 应用链接说明 中的要求。
@@ -81,7 +84,7 @@ import { InsightIntentLink, LinkParamCategory } from '@kit.AbilityKit';
     paramCategory: LinkParamCategory.LINK
   }],
   parameters: {
-    'schema': 'http://json-schema.org/draft-07/schema#',
+    '$schema': 'http://json-schema.org/draft-07/schema#',
     'type': 'object',
     'title': 'Song Schema',
     'description': 'A schema for describing songs and their artists',
@@ -139,9 +142,10 @@ export class ClassForLink {
 
 
 
-#### IntentDecoratorInfo
+## IntentDecoratorInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 意图装饰器的通用属性，用于定义意图的基本信息（包括意图名称、意图版本号）。适用于本模块的所有装饰器。
 
@@ -155,6 +159,7 @@ export class ClassForLink {
 > 如果根据schema与intentVersion字段，在标准意图列表存在匹配的标准意图，系统会将intentName、domain、llmDescription、keywords、parameters、result字段均设置为标准意图的相应字段值。
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | intentName | string | 否 | 否 | 表示意图名称，是意图的唯一标识。 |
@@ -166,43 +171,47 @@ export class ClassForLink {
 | icon | ResourceStr | 否 | 是 | 表示意图图标，用于在AI入口显示。 - 当取值为字符串类型时，表示图标读取网络资源。 - 当取值为Resource时，表示图标读取本地资源。 |
 | llmDescription | string | 否 | 是 | 表示意图的功能描述，用于大型语言模型理解该意图。 |
 | keywords | string[] | 否 | 是 | 表示意图的搜索关键字。 |
-| parameters | Record<string, Object> | 否 | 是 | 表示意图参数的数据格式声明，用于意图调用时定义入参的数据格式。取值参见各垂域意图Schema |
+| parameters | Record<string, Object> | 否 | 是 | 表示意图参数的数据格式声明，用于意图调用时定义入参的数据格式。取值参见各垂域意图Schema。 |
 | result | Record<string, Object> | 否 | 是 | 表示意图调用返回结果的数据格式声明，用于定义意图调用返回结果的数据格式。 |
 
 
 
 
-#### LinkIntentDecoratorInfo
+## LinkIntentDecoratorInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-LinkIntentDecoratorInfo继承自[IntentDecoratorInfo](#intentdecoratorinfo)，用于描述[@InsightIntentLink](#insightintentlink)装饰器支持的参数，例如应用间跳转需要的uri信息。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+LinkIntentDecoratorInfo继承自[IntentDecoratorInfo](#intentdecoratorinfo)，用于描述[@InsightIntentLink](#insightintentlink)装饰器支持的参数，例如应用间跳转需要的URI信息。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **元服务API**：从API version 20开始，该接口支持在元服务中使用。
 
 **属性：**
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | uri | string | 否 | 否 | 表示意图的URI地址。 |
-| paramMappings | LinkIntentParamMapping[] | 否 | 是 | 意图参数和uri信息的映射。 |
+| paramMappings | LinkIntentParamMapping[] | 否 | 是 | 意图参数和URI信息的映射。 |
 
 
 
 
-#### LinkIntentParamMapping
+## LinkIntentParamMapping
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-LinkIntentParamMapping是[@InsightIntentLink](#insightintentlink)装饰器的意图参数和uri信息的映射。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+LinkIntentParamMapping是[@InsightIntentLink](#insightintentlink)装饰器的意图参数和URI信息的映射。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **元服务API**：从API version 20开始，该接口支持在元服务中使用。
 
 **属性：**
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -213,15 +222,17 @@ LinkIntentParamMapping是[@InsightIntentLink](#insightintentlink)装饰器的意
 
 
 
-#### LinkParamCategory
+## LinkParamCategory
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [@InsightIntentLink](#insightintentlink)装饰器的意图参数类别，用于定义意图参数的传递形式。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **元服务API**：从API version 20开始，该接口支持在元服务中使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -231,9 +242,10 @@ LinkIntentParamMapping是[@InsightIntentLink](#insightintentlink)装饰器的意
 
 
 
-#### @InsightIntentPage
+## @InsightIntentPage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 使用该装饰器装饰当前应用的页面，可以将页面定义为意图，便于AI入口通过意图快速跳转到指定页面。该装饰器支持的参数参见[PageIntentDecoratorInfo](#pageintentdecoratorinfo)。
 
@@ -286,9 +298,10 @@ struct Index {
 
 
 
-#### PageIntentDecoratorInfo
+## PageIntentDecoratorInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 PageIntentDecoratorInfo继承自[IntentDecoratorInfo](#intentdecoratorinfo)，用于描述[@InsightIntentPage](#insightintentpage)装饰器支持的参数，例如目标页面的[navDestination](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation#navdestination10)名称。
 
@@ -297,6 +310,7 @@ PageIntentDecoratorInfo继承自[IntentDecoratorInfo](#intentdecoratorinfo)，�
 **元服务API**：从API version 20开始，该接口支持在元服务中使用。
 
 **属性：**
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -308,9 +322,10 @@ PageIntentDecoratorInfo继承自[IntentDecoratorInfo](#intentdecoratorinfo)，�
 
 
 
-#### @InsightIntentFunction
+## @InsightIntentFunction
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该装饰器与[@InsightIntentFunctionMethod](#insightintentfunctionmethod)装饰器必须组合使用。
 
@@ -322,9 +337,10 @@ PageIntentDecoratorInfo继承自[IntentDecoratorInfo](#intentdecoratorinfo)，�
 
 
 
-#### @InsightIntentFunctionMethod
+## @InsightIntentFunctionMethod
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该装饰器与[@InsightIntentFunction](#insightintentfunction)装饰器必须组合使用。
 
@@ -354,7 +370,7 @@ export class ClassForFuncDemo {
   icon: $r('app.media.app_icon'), // $r表示本地图标，需要在资源目录中定义
   llmDescription: 'Get weather of a location',
   parameters: {
-    'schema': 'http://json-schema.org/draft-07/schema#',
+    '$schema': 'http://json-schema.org/draft-07/schema#',
     'type': 'object',
     'title': 'Weather Schema',
     'description': 'A schema for getting weather of a location',
@@ -378,9 +394,10 @@ export class ClassForFuncDemo {
 
 
 
-#### FunctionIntentDecoratorInfo
+## FunctionIntentDecoratorInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [@InsightIntentFunctionMethod](#insightintentfunctionmethod)装饰器的参数类型，当前全部属性均继承自[IntentDecoratorInfo](#intentdecoratorinfo)。
 
@@ -390,14 +407,15 @@ export class ClassForFuncDemo {
 
 
 
-#### @InsightIntentEntry
+## @InsightIntentEntry
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 使用该装饰器装饰一个继承自[InsightIntentEntryExecutor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-insightintententryexecutor)的类，实现意图操作并配置意图依赖的Ability组件，便于AI入口拉起依赖的Ability组件时，执行对应的意图操作。该装饰器支持的参数参见[EntryIntentDecoratorInfo](#entryintentdecoratorinfo)。
 
 > [!NOTE]
-> 如果使用该装饰器接入标准意图，必须实现标准意图Json Schema中定义的所有必选参数且类型匹配。 如果创建自定义意图，必须实现parameters字段中定义的所有必选参数且类型匹配。 被装饰的类需要使用export default导出。类的属性仅支持基础类型或意图实体，返回值仅支持意图实体。
+> 如果使用该装饰器接入标准意图，必须实现标准意图JSON Schema中定义的所有必选参数且类型匹配。 如果创建自定义意图，必须实现parameters字段中定义的所有必选参数且类型匹配。 被装饰的类需要使用export default导出。类的属性仅支持基础类型或意图实体，返回值仅支持意图实体。
 
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
@@ -425,7 +443,7 @@ const LOG_TAG: string = 'testTag-EntryIntent';
   abilityName: 'EntryAbility',
   executeMode: [insightIntent.ExecuteMode.UI_ABILITY_FOREGROUND],
   parameters: {
-    'schema': 'http://json-schema.org/draft-07/schema#',
+    '$schema': 'http://json-schema.org/draft-07/schema#',
     'type': 'object',
     'title': 'Song Schema',
     'description': 'A schema for describing songs and their artists',
@@ -467,9 +485,10 @@ export default class PlayMusicDemo extends InsightIntentEntryExecutor<string> {
 
 
 
-#### EntryIntentDecoratorInfo
+## EntryIntentDecoratorInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 EntryIntentDecoratorInfo继承自[IntentDecoratorInfo](#intentdecoratorinfo)，用于描述[@InsightIntentEntry](#insightintententry)装饰器支持的参数。
 
@@ -479,6 +498,7 @@ EntryIntentDecoratorInfo继承自[IntentDecoratorInfo](#intentdecoratorinfo)，�
 
 **属性：**
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | abilityName | string | 否 | 否 | 表示与意图绑定的Ability名称。 |
@@ -487,9 +507,10 @@ EntryIntentDecoratorInfo继承自[IntentDecoratorInfo](#intentdecoratorinfo)，�
 
 
 
-#### @InsightIntentForm
+## @InsightIntentForm
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 使用该装饰器装饰[FormExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-form-formextensionability)并配置FormExtensionAbility绑定的卡片名称，便于AI入口通过意图添加卡片。该装饰器支持的参数参见[FormIntentDecoratorInfo](#formintentdecoratorinfo)。
 
@@ -539,7 +560,7 @@ import { insightIntent, Want, InsightIntentForm } from '@kit.AbilityKit';
           },
           'city': {
             'type': 'object',
-            'description': 'The artist\' city of origin'
+            'description': 'The artist\'s city of origin'
           },
           'name': {
             'type': 'string',
@@ -567,9 +588,10 @@ export default class EntryFormAbility extends FormExtensionAbility {
 
 
 
-#### FormIntentDecoratorInfo
+## FormIntentDecoratorInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 FormIntentDecoratorInfo继承自[IntentDecoratorInfo](#intentdecoratorinfo)，用于描述[@InsightIntentForm](#insightintentform)装饰器支持的参数。
 
@@ -579,6 +601,7 @@ FormIntentDecoratorInfo继承自[IntentDecoratorInfo](#intentdecoratorinfo)，�
 
 **属性：**
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | formName | string | 否 | 否 | 表示FormExtensionAbility绑定的卡片名称。 |
@@ -586,9 +609,10 @@ FormIntentDecoratorInfo继承自[IntentDecoratorInfo](#intentdecoratorinfo)，�
 
 
 
-#### @InsightIntentEntity
+## @InsightIntentEntity
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 使用该装饰器装饰一个继承自[IntentEntity](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-insightintent#intententity20)的类，可将该类定义为意图实体，用于传递意图调用时所需的参数。该装饰器支持的参数参见[IntentEntityDecoratorInfo](#intententitydecoratorinfo)。
 
@@ -634,9 +658,10 @@ export class ArtistClassDef implements insightIntent.IntentEntity {
 
 
 
-#### IntentEntityDecoratorInfo
+## IntentEntityDecoratorInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于描述[@InsightIntentEntity](#insightintententity)装饰器支持的参数。
 
@@ -645,6 +670,7 @@ export class ArtistClassDef implements insightIntent.IntentEntity {
 **元服务API**：从API version 20开始，该接口支持在元服务中使用。
 
 **属性：**
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

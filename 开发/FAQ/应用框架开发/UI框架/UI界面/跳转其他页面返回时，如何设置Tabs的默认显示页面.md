@@ -46,9 +46,9 @@ class TabBar {
 @Component
 struct TabsTestPage {
   uiContext = this.getUIContext();
-  // 当前选中Tabs的索引
+ <em> // 当前选中Tabs的索引</em>
   @State currentIndex: number = 1;
-  // 判断Tabs是否选中（用于自定义Tabs列表的选中状态）
+<em>  // 判断Tabs是否选中（用于自定义Tabs列表的选中状态）</em>
 
   @State selectedIndex: number = 0;
   private tabsController: TabsController = new TabsController();
@@ -58,19 +58,19 @@ struct TabsTestPage {
     new TabBar('推荐', 2),
   ];
 
-  // 页面显示时初始化状态
+<em>  // 页面显示时初始化状态</em>
   onPageShow(): void {
     this.currentIndex = 1;
   }
 
-  // 自定义Tabs组件构建函数
+ <em> // 自定义Tabs组件构建函数</em>
   @Builder
   TabBuilder() {
     List() {
       ForEach(this.tabBars, (item: TabBar, index: number) => {
         ListItem() {
           Column() {
-            Text(item.title) // 根据选中状态改变文字颜色
+            Text(item.title) <em>// </em><em>根据选中状态改变文字颜色</em>
               .fontColor(this.currentIndex === item.index ? '#0A59F7' : Color.Black)
               .fontSize(20)
               .align(Alignment.Center);
@@ -79,7 +79,7 @@ struct TabsTestPage {
           .alignItems(HorizontalAlign.Start)
           .margin({ left: 10 })
           .onClick(() => {
-            // 更新Tabs组件的选中状态
+          <em>  // 更新Tabs组件的选中状态</em>
             this.currentIndex = index;
           });
         }.height(100);
@@ -104,7 +104,7 @@ struct TabsTestPage {
               promptShow.showToast({
                 message: '翻译机跳转'
               });
-              // 需要自行创建一个PageA的@Entry页面
+           <em>   // 需要自行创建一个PageA的@Entry页面</em>
               this.uiContext.getRouter().pushUrl({ url: 'pages/PageA' });
             });
         };
@@ -123,7 +123,7 @@ struct TabsTestPage {
         this.currentIndex = targetIndex;
       })
       .onChange((index: number) => {
-        // currentIndex控制TabContent显示页签
+    <em>    // currentIndex控制TabContent显示页签</em>
         this.currentIndex = index;
         this.selectedIndex = index;
       });

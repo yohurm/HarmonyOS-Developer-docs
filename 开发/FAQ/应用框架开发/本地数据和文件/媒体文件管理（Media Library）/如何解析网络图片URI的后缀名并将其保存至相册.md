@@ -51,7 +51,7 @@ struct Index {
     let OutData: http.HttpResponse;
     let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
     let filesDir = context.filesDir;
-    // 确保网络正常
+   <em> // 确保网络正常</em>
     http.createHttp().request(url, {
       method: http.RequestMethod.GET,
       connectTimeout: 60000,
@@ -73,31 +73,31 @@ struct Index {
           if (responseCode.OK === code) {
             let imageData: ArrayBuffer = OutData.result as ArrayBuffer;
             let file = fs.openSync(filesDir + '/test.' + type, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
-            // 写入文件
+          <em>  // 写入文件</em>
             await fs.write(file.fd, imageData);
-            // 关闭文件
+           <em> // 关闭文件</em>
             await fs.close(file.fd);
 
             try {
-              // 指定待保存到媒体库的位于应用沙箱的图片url
+            <em>  // 指定待保存到媒体库的位于应用沙箱的图片url</em>
               let srcFileUri = 'file://com.example.myapplication/data/storage/el2/base/haps/entry/files/test.' + type;
 
               let srcFileUris: Array<string> = [
                 srcFileUri
               ];
-              // 指定待保存照片的创建选项，包括文件后缀和照片类型，标题和照片子类型可选
+          <em>    // 指定待保存照片的创建选项，包括文件后缀和照片类型，标题和照片子类型可选</em>
               let photoCreationConfigs: Array<photoAccessHelper.PhotoCreationConfig> = [
                 {
-                  title: 'test', // 可选
+                  title: 'test', <em>// 可选</em>
                   fileNameExtension: type,
                   photoType: photoAccessHelper.PhotoType.IMAGE,
-                  subtype: photoAccessHelper.PhotoSubtype.DEFAULT, // 可选
+                  subtype: photoAccessHelper.PhotoSubtype.DEFAULT, <em>// </em><em>可选</em>
                 }
               ];
-              // 基于弹窗授权的方式获取媒体库的目标uri
+             <em> // 基于弹窗授权的方式获取媒体库的目标uri</em>
               let desFileUris: Array<string> =
                 await this.phAccessHelper.showAssetsCreationDialog(srcFileUris, photoCreationConfigs);
-              // 将来源于应用沙箱的照片内容写入媒体库的目标uri
+             <em> // 将来源于应用沙箱的照片内容写入媒体库的目标uri</em>
               let desFile: fileIo.File = await fileIo.open(desFileUris[0], fileIo.OpenMode.WRITE_ONLY);
               let srcFile: fileIo.File = await fileIo.open(srcFileUri, fileIo.OpenMode.READ_ONLY);
               await fileIo.copyFile(srcFile.fd, desFile.fd);
@@ -126,12 +126,12 @@ struct Index {
           this.filePath = fileUri.getUriFromPath(srcFileUri);
         })
 
-        // 开发者需手动替换成网络图片url
+      <em>  // 开发者需手动替换成网络图片url</em>
         Image('example.png')
           .width('80%')
           .height(200)
 
-        // 开发者需手动替换成网络图片url
+     <em>   // 开发者需手动替换成网络图片url</em>
         Button('加载图片url').onClick(async () => {
           this.loadImageWithUrl('example.png');
         })

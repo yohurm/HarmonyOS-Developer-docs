@@ -1,11 +1,12 @@
 # FAST_BiquadCoefficients
 
-更新时间：2026-04-30 02:41:24
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/fast-kit--fast-biquadcoefficients
 **支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -14,7 +15,7 @@
 传递函数：H(z) = (b0 + b1z⁻¹ + b2z⁻²) / (1 + a1z⁻¹ + a2z⁻²)
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/yb2Y6NOuRRC6Bzo9EBl9Sw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260528T025200Z&HW-CC-Expire=86400&HW-CC-Sign=CFF8E22B3E3398CC7E01B9E9E63A14F24ED78F36B2024D00E2FCDAB8544C3155)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/DY9bgEYpRqW-YuKA8iV1Hw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072746Z&HW-CC-Expire=86400&HW-CC-Sign=EF0402E3E9389E6E10F7D09B114AD221BD52ED99024A3D030EDC8E4ED619E731)
  
  
 分母中的1实际上为系数a0归一化后的结果。
@@ -31,16 +32,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | float a1 | z⁻¹ 分母系数。 |
@@ -52,13 +56,15 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### a1
+### a1
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -72,7 +78,8 @@ z⁻¹ 分母系数。
  
   
 
-#### a2
+### a2
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -86,7 +93,8 @@ z⁻² 分母系数。
  
   
 
-#### b0
+### b0
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -100,7 +108,8 @@ z⁰ 分子系数。
  
   
 
-#### b1
+### b1
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -114,7 +123,8 @@ z⁻¹ 分子系数。
  
   
 
-#### b2
+### b2
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 

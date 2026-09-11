@@ -1,9 +1,9 @@
 # chart
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-service-widget-basic-chart
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 图表组件，用于呈现线形图、柱状图、量规图、进度类圆形图表、加载类圆形图表、占比类圆形图表界面。
  
@@ -12,24 +12,27 @@
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 不支持。
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-service-widget-common-attributes)外，还支持如下属性：
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | type | string | line | 否 | 设置图表类型（不支持动态修改），可选项有： - bar：柱状图。 - line：线形图。 - gauge：量规图。 - progress：进度类圆形图表。 - loading：加载类圆形图表。 - rainbow：占比类圆形图表。 |
-| options | ChartOptions | - | 否 | 图表参数设置，用于设置x轴、y轴的最小值、最大值、刻度数、是否显示，线条宽度、是否平滑等。（不支持动态修改），量规图不生效。 |
+| options | ChartOptions | - | 否 | 图表参数设置，用于设置x轴、y轴的最小值、最大值、刻度数、是否显示，线条宽度、是否平滑等。（不支持动态修改）,量规图不生效。 |
 | datasets | Array&lt;ChartDataset&gt; | - | 否 | 数据集合，用于设置多条数据集及其背景色，量规图不生效。 |
 | segments | DataSegment \| Array&lt;DataSegment&gt; | - | 否 | 进度类、加载类和占比类圆形图表使用的数据结构。 DataSegment针对进度类和加载类圆形图表使用，Array&lt;DataSegment&gt;针对占比类图表使用，DataSegment最多9个。 |
 | effects | boolean | true | 否 | 是否开启占比类、进度类圆形图表特效。 默认值：true，表示开启占比类、进度类圆形图表特效。 |
@@ -38,6 +41,7 @@
  
  **表1** ChartOptions
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | xAxis | ChartAxis | - | 是 | x轴参数设置。可以设置x轴最小值、最大值、刻度数以及是否显示。 |
@@ -47,6 +51,7 @@
  
  **表2** ChartDataset
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | strokeColor | &lt;color&gt; | #ff6384 | 否 | 线条颜色，仅线形图支持。 |
@@ -57,6 +62,7 @@
  
  **表3** ChartAxis
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | min | number | 0 | 否 | 轴的最小值，不支持负数，仅线形图支持。 |
@@ -68,6 +74,7 @@
  
  **表4** ChartSeries
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | lineStyle | ChartLineStyle | - | 否 | 线样式设置，如线宽、是否平滑。 |
@@ -79,6 +86,7 @@
  
  **表5** ChartLineStyle
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | width | &lt;length&gt; | 1px | 否 | 线宽设置。 |
@@ -87,6 +95,7 @@
  
  **表6** PointStyle
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | shape | string | circle | 否 | 高亮点的形状。可选值为： - circle：圆形。 - square：方形。 - triangle：三角形。 |
@@ -98,6 +107,7 @@
  
  **表7** ChartLoop
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | margin | &lt;length&gt; | 1 | 否 | 擦除点的横向距离（最新绘制的点与最老的点之间的横向距离）。 margin和topPoint/bottomPoint/headPoint同时使用时，有概率出现point正好位于擦除区域的情况，导致point不可见，因此不建议同时使用。 |
@@ -106,6 +116,7 @@
  
  **表8** Point
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | value | number | 0 | 是 | 表示绘制点的Y轴坐标。 |
@@ -119,14 +130,16 @@
  
  **表9** DataSegment
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
-| startColor | Color | - | 否 | 起始位置的颜色，设置startColor必须设置endColor。不设置startColor时，会使用系统默认预置的颜色数组，具体颜色值见下表。 |
+| startColor | Color | - | 否 | 起始位置的颜色，必须与endColor同时设置。不设置startColor时，会使用系统默认预置的颜色数组，具体颜色值见下表。 |
 | endColor | Color | - | 否 | 终止位置的颜色，设置endColor必须设置startColor。 不设置startColor时，会使用系统默认预置的颜色数组。 |
 | value | number | 0 | 是 | 占比数据的所占份额，最大100。 |
 | name | string | - | 否 | 此类数据的名称。 |
  
   
+
 | 数据组 | 主题 | 深色主题 |
 | --- | --- | --- |
 | 0 | 起始颜色：#f7ce00，结束颜色：#f99b11 | 起始颜色：#d1a738，结束颜色：#eb933d |
@@ -142,6 +155,7 @@
  
 当类型为量规图时，还支持如下属性：
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | percent | number | 0 | 否 | 当前值占整体的百分比，取值范围为0-100。 |
@@ -149,12 +163,14 @@
  
   
 
-#### 样式
+## 样式
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 除支持[通用样式](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-service-widget-common-styles)外，还支持如下样式：
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | stroke-width | &lt;length&gt; | 32px（量规） 24px（占比类圆形图表） | 否 | 量规、占比类圆形图表组件刻度条的宽度。 |
@@ -171,17 +187,19 @@
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-service-widget-common-events)。
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 1. 线形图
 
   
@@ -382,4 +400,4 @@
 }
 ```
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/BPwhG7nmQRubR6pQQP-RdQ/zh-cn_image_0000002686088769.png?HW-CC-KV=V1&HW-CC-Date=20260730T071528Z&HW-CC-Expire=86400&HW-CC-Sign=44C1564307CFEC05F59C366D390ACA94414DD04AC96A005129DC1807B261F53B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/MoyXEKv1T1KgouqOTW8GEg/zh-cn_image_0000002747213347.png?HW-CC-KV=V1&HW-CC-Date=20260911T073001Z&HW-CC-Expire=86400&HW-CC-Sign=3891AEB2B13D0E8BD3E64FEDCE83810D999E6EC2E30E6DB3DD42CB99D7C762C9)

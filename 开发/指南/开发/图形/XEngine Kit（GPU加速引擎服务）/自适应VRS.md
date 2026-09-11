@@ -1,13 +1,13 @@
 # 自适应VRS
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xengine-kit-adaptive-vrs
 
 XEngine Kit提供自适应VRS特性，其通过合理分配画面的计算资源，视觉无损降低渲染频次，使不同的渲染图像使用不同的渲染速率，能够有效提高渲染性能。
 
 
-#### 约束与限制
+## 约束与限制
 
  - 支持的设备类型：Phone，从5.0.2(14)版本开始，新增支持Tablet、PC/2in1设备，从5.1.1(19)版本开始新增支持TV设备。
  - 可通过以下方式查询相关扩展特性是否支持：
@@ -17,9 +17,10 @@ XEngine Kit提供自适应VRS特性，其通过合理分配画面的计算资源
 
 
 
-#### 接口说明
+## 接口说明
 
 以下接口为自适应VRS设置接口，如需使用更丰富的设置和查询接口，具体API说明详见[接口文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-kit-xengine)。
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -35,7 +36,7 @@ XEngine Kit提供自适应VRS特性，其通过合理分配画面的计算资源
 
 
 
-#### 业务流程
+## 业务流程
 
  - 下面是基于OpenGL ES图形API平台集成自适应VRS的主要业务流程
 
@@ -68,13 +69,13 @@ XEngine Kit提供自适应VRS特性，其通过合理分配画面的计算资源
 
 
 
-#### 开发步骤
+## 开发步骤
 
 本章以OpenGL ES和Vulkan图形API集成为例，说明XEngine Kit集成操作过程。
 
 
 
-#### 配置项目
+### 配置项目
 
 编译HAP包时，Native层so编译需要依赖NDK中的libxengine.so。
 
@@ -83,7 +84,7 @@ XEngine Kit提供自适应VRS特性，其通过合理分配画面的计算资源
   若需使用OpenGL ES自适应VRS特性，请引入以下头文件。
 
   
-```text
+```cpp
 #include "xengine/xeg_gles_extension.h"
 // ...
 #include "xengine/xeg_gles_adaptive_vrs.h"
@@ -91,7 +92,7 @@ XEngine Kit提供自适应VRS特性，其通过合理分配画面的计算资源
 若需使用Vulkan自适应VRS特性，请引入以下头文件。
 
   
-```text
+```cpp
 #include "xengine/xeg_vulkan_extension.h"
 // ...
 #include "xengine/xeg_vulkan_adaptive_vrs.h"
@@ -150,7 +151,7 @@ target_link_libraries(nativerender PUBLIC
 
 
 
-#### 集成自适应VRS特性（OpenGL ES）
+### 集成自适应VRS特性（OpenGL ES）
 
 自适应VRS特性OpenGL ES版本的着色率纹理创建和绑定由特性提供的接口实现。
 
@@ -158,7 +159,7 @@ target_link_libraries(nativerender PUBLIC
 1. 调用[HMS_XEG_GetString](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-kit-xengine#hms_xeg_getstring)接口，获取XEngine支持的扩展信息，只有在支持[XEG_ADAPTIVE_VRS_EXTENSION_NAME](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-kit-xengine#xeg_adaptive_vrs_extension_name)扩展时才可以使用自适应VRS的相关接口。
 
   
-```text
+```cpp
 // 查询XEngine支持的GLES扩展信息
 std::string extensionStr = (const char*)HMS_XEG_GetString(XEG_EXTENSIONS);
 std::vector<std::string> extensions;
@@ -182,7 +183,7 @@ if (std::find(extensions.begin(), extensions.end(), XEG_ADAPTIVE_VRS_EXTENSION_N
 2. 调用[HMS_XEG_AdaptiveVRSParameter](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-kit-xengine#hms_xeg_adaptivevrsparameter)接口，对自适应VRS的参数赋值。
 
   
-```text
+```cpp
 // inputWidth与inputHeight分别为用户自定义的渲染宽度与渲染高度
 // inputSize为上一帧渲染管线最终渲染的图像尺寸，用户可自定义
 GLsizei inputSize[2] = {inputWidth, inputHeight};
@@ -204,7 +205,7 @@ HMS_XEG_AdaptiveVRSParameter(XEG_ADAPTIVE_VRS_ERROR_SENSITIVITY, &sensitivity);
 3. 调用[HMS_XEG_DispatchAdaptiveVRS](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-kit-xengine#hms_xeg_dispatchadaptivevrs)接口计算着色率图像。
 
   
-```text
+```cpp
 // reprojectionM为用户根据投影矩阵和观察矩阵计算得来的重投影矩阵
 // light为用户自定义上一帧渲染管线最终渲染结果颜色附件纹理
 // depth为用户自定义当前帧渲染管线最终渲染结果深度附件纹理
@@ -215,20 +216,20 @@ HMS_XEG_DispatchAdaptiveVRS(reprojectionM, light, depth, sri);
 4. 调用[HMS_XEG_ApplyAdaptiveVRS](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-kit-xengine#hms_xeg_applyadaptivevrs)接口，将着色率图像应用到渲染目标中。
 
   
-```text
+```cpp
 HMS_XEG_ApplyAdaptiveVRS(sri);
 ```
 
 
 
 
-#### 集成自适应VRS特性（Vulkan）
+### 集成自适应VRS特性（Vulkan）
 
 在调用XEngine Kit能力前，需要先通过[Syscap](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/syscap#什么是systemcapabilitysyscap)查询您的目标设备是否支持SystemCapability.Graphic.XEngine系统能力。
 1. 调用[HMS_XEG_EnumerateDeviceExtensionProperties](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-kit-xengine#hms_xeg_enumeratedeviceextensionproperties)接口，获取XEngine支持的扩展信息，只有在支持[XEG_ADAPTIVE_VRS_EXTENSION_NAME](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-kit-xengine#xeg_adaptive_vrs_extension_name)扩展时才可以使用自适应VRS的相关接口。
 
   
-```text
+```cpp
 // 查询XEngine支持的Vulkan扩展列表
 std::vector<std::string> supportedExtensions;
 uint32_t pPropertyCount;
@@ -255,14 +256,14 @@ if (std::find(supportedExtensions.begin(), supportedExtensions.end(), XEG_ADAPTI
 2. 声明实例句柄。
 
   
-```text
+```cpp
 XEG_AdaptiveVRS xegAdaptiveVRS = nullptr;
 ```
 
 3. 调用[HMS_XEG_CreateAdaptiveVRS](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-kit-xengine#hms_xeg_createadaptivevrs)接口，定义并创建实例。
 
   
-```text
+```cpp
 // VkExtent2D inputSize为上一帧渲染管线最终渲染的图像尺寸
 // VkRect2D为Vulkan指定的二维区域结构
 // inputRegion为自适应VRS输入纹理区域，用户可自定义
@@ -298,7 +299,7 @@ VkResult res = HMS_XEG_CreateAdaptiveVRS(device, &xegCreateInfo, &xegAdaptiveVRS
 4. 调用[HMS_XEG_CmdDispatchAdaptiveVRS](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-kit-xengine#hms_xeg_cmddispatchadaptivevrs)接口，下发自适应VRS命令，生成perImage着色率纹理。
 
   
-```text
+```cpp
 XEG_AdaptiveVRSDescription adaptiveVRSDescription;
 // inputColorImageView为用户自定义的上一帧渲染管线最终渲染结果颜色附件纹理
 adaptiveVRSDescription.inputColorImage = inputColorImageView;
@@ -318,6 +319,6 @@ if (xegAdaptiveVRS) {
 5. 调用[HMS_XEG_DestroyAdaptiveVRS](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-kit-xengine#hms_xeg_destroyadaptivevrs)接口，卸载VRS实例，清理VRS相关资源。
 
   
-```text
+```cpp
 HMS_XEG_DestroyAdaptiveVRS(xegAdaptiveVRS);
 ```

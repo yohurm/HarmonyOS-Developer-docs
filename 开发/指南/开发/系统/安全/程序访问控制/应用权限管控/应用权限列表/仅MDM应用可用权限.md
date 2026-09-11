@@ -1,6 +1,6 @@
 # 仅MDM应用可用权限
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-for-mdm-apps
 
@@ -36,9 +36,9 @@
 
   
 
-#### ohos.permission.ENTERPRISE_GET_DEVICE_INFO
+## ohos.permission.ENTERPRISE_GET_DEVICE_INFO
 
-允许应用激活设备管理应用。
+允许设备管理应用获取设备信息。
  
 包括读取设备ID、读取设备硬盘序列号，读取OS版本、读取机器名。
  
@@ -52,7 +52,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_GET_NETWORK_INFO
+## ohos.permission.ENTERPRISE_GET_NETWORK_INFO
 
 允许设备管理应用查询网络信息。
  
@@ -68,7 +68,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_INSTALL_BUNDLE
+## ohos.permission.ENTERPRISE_INSTALL_BUNDLE
 
 允许设备管理应用安装和卸载包。
  
@@ -82,7 +82,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_MANAGE_SET_APP_RUNNING_POLICY
+## ohos.permission.ENTERPRISE_MANAGE_SET_APP_RUNNING_POLICY
 
 允许设备管理应用设置应用运行管理策略。
  
@@ -96,7 +96,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_RESET_DEVICE
+## ohos.permission.ENTERPRISE_RESET_DEVICE
 
 允许设备管理应用恢复设备出厂设置。
  
@@ -110,7 +110,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_SET_ACCOUNT_POLICY
+## ohos.permission.ENTERPRISE_SET_ACCOUNT_POLICY
 
 允许设备管理应用设置账户管理策略。
  
@@ -126,7 +126,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_SET_BUNDLE_INSTALL_POLICY
+## ohos.permission.ENTERPRISE_SET_BUNDLE_INSTALL_POLICY
 
 允许设备管理应用设置包安装管理策略。
  
@@ -142,7 +142,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_SET_DATETIME
+## ohos.permission.ENTERPRISE_SET_DATETIME
 
 允许设备管理应用设置系统时间。
  
@@ -158,7 +158,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_SET_NETWORK
+## ohos.permission.ENTERPRISE_SET_NETWORK
 
 允许设备管理应用设置网络信息。
  
@@ -174,7 +174,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_SET_WIFI
+## ohos.permission.ENTERPRISE_SET_WIFI
 
 允许设备管理应用设置和查询WiFi信息。
  
@@ -190,7 +190,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_SUBSCRIBE_MANAGED_EVENT
+## ohos.permission.ENTERPRISE_SUBSCRIBE_MANAGED_EVENT
 
 允许设备管理应用订阅管理事件。
  
@@ -206,7 +206,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_RESTRICT_POLICY
+## ohos.permission.ENTERPRISE_RESTRICT_POLICY
 
 允许设备管理员下发和获取限制类策略。
  
@@ -222,7 +222,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_SET_SCREENOFF_TIME
+## ohos.permission.ENTERPRISE_SET_SCREENOFF_TIME
 
 允许设备管理员设置系统休眠时间。
  
@@ -236,7 +236,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_MANAGE_USB
+## ohos.permission.ENTERPRISE_MANAGE_USB
 
 允许设备管理员管理USB。
  
@@ -250,7 +250,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_MANAGE_NETWORK
+## ohos.permission.ENTERPRISE_MANAGE_NETWORK
 
 允许设备管理员管理网络。
  
@@ -264,7 +264,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_MANAGE_CERTIFICATE
+## ohos.permission.ENTERPRISE_MANAGE_CERTIFICATE
 
 允许设备管理员管理证书。
  
@@ -278,7 +278,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_GET_SETTINGS
+## ohos.permission.ENTERPRISE_GET_SETTINGS
 
 允许设备管理员查询“设置”应用数据。
  
@@ -292,7 +292,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_SET_BROWSER_POLICY
+## ohos.permission.ENTERPRISE_SET_BROWSER_POLICY
 
 允许设备设置/取消浏览器策略。
  
@@ -306,7 +306,7 @@
  
   
 
-#### ohos.permission.SET_ENTERPRISE_INFO
+## ohos.permission.SET_ENTERPRISE_INFO
 
 允许设备管理应用设置企业信息。
  
@@ -322,7 +322,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_MANAGE_SECURITY
+## ohos.permission.ENTERPRISE_MANAGE_SECURITY
 
 允许设备设置安全管理策略。
  
@@ -336,7 +336,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_MANAGE_BLUETOOTH
+## ohos.permission.ENTERPRISE_MANAGE_BLUETOOTH
 
 允许设备管理应用设置和查询蓝牙信息。
  
@@ -350,7 +350,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_MANAGE_SYSTEM
+## ohos.permission.ENTERPRISE_MANAGE_SYSTEM
 
 允许设备管理系统设置参数策略。
  
@@ -364,7 +364,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_MANAGE_WIFI
+## ohos.permission.ENTERPRISE_MANAGE_WIFI
 
 允许设备管理应用设置和查询WIFI信息。
  
@@ -378,7 +378,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_MANAGE_RESTRICTIONS
+## ohos.permission.ENTERPRISE_MANAGE_RESTRICTIONS
 
 允许设备管理应用管理限制策略。
  
@@ -392,7 +392,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_MANAGE_APPLICATION
+## ohos.permission.ENTERPRISE_MANAGE_APPLICATION
 
 允许设备管理应用管理应用策略。
  
@@ -406,7 +406,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_MANAGE_LOCATION
+## ohos.permission.ENTERPRISE_MANAGE_LOCATION
 
 允许设备管理应用设置和查询位置信息。
  
@@ -420,7 +420,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_REBOOT
+## ohos.permission.ENTERPRISE_REBOOT
 
 允许设备管理应用进行关机重启操作。
  
@@ -434,7 +434,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_LOCK_DEVICE
+## ohos.permission.ENTERPRISE_LOCK_DEVICE
 
 允许设备管理应用锁定设备。
  
@@ -448,7 +448,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_MANAGE_SETTINGS
+## ohos.permission.ENTERPRISE_MANAGE_SETTINGS
 
 允许设备管理应用管理设置。
  
@@ -462,7 +462,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_OPERATE_DEVICE
+## ohos.permission.ENTERPRISE_OPERATE_DEVICE
 
 允许设备管理应用操作设备。
  
@@ -476,7 +476,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_ADMIN_MANAGE
+## ohos.permission.ENTERPRISE_ADMIN_MANAGE
 
 允许应用管理设备管理应用。
  
@@ -492,7 +492,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_RECOVERY_KEY
+## ohos.permission.ENTERPRISE_RECOVERY_KEY
 
 允许设备管理应用管理企业级恢复密钥。
  
@@ -506,7 +506,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_MANAGE_DELEGATED_POLICY
+## ohos.permission.ENTERPRISE_MANAGE_DELEGATED_POLICY
 
 允许设备管理应用委托其他应用设置设备管控策略。
  
@@ -522,7 +522,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_GET_ALL_BUNDLE_INFO
+## ohos.permission.ENTERPRISE_GET_ALL_BUNDLE_INFO
 
 允许设备管理应用获取设备所有应用信息。
  
@@ -538,7 +538,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_SET_USER_RESTRICTION
+## ohos.permission.ENTERPRISE_SET_USER_RESTRICTION
 
 允许设备管理应用限制用户修改系统设置。
  
@@ -554,7 +554,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_MANAGE_APN
+## ohos.permission.ENTERPRISE_MANAGE_APN
 
 允许设备管理应用管理设备APN策略。
  
@@ -570,7 +570,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_MANAGE_TELEPHONY
+## ohos.permission.ENTERPRISE_MANAGE_TELEPHONY
 
 允许设备管理应用管理设备通话策略。
  
@@ -586,7 +586,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_SET_KIOSK
+## ohos.permission.ENTERPRISE_SET_KIOSK
 
 允许设备管理应用设置Kiosk模式。
  
@@ -602,7 +602,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_MANAGE_LOCAL_PUBLICSPACES
+## ohos.permission.ENTERPRISE_MANAGE_LOCAL_PUBLICSPACES
 
 允许企业应用启用、创建、删除工作空间。
  
@@ -620,7 +620,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_FILE_TRANSFER_AUDIT_POLICY_MANAGEMENT
+## ohos.permission.ENTERPRISE_FILE_TRANSFER_AUDIT_POLICY_MANAGEMENT
 
 允许设备管理应用管理文件传输的策略和审计信息。
  
@@ -636,7 +636,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_SET_WALLPAPER
+## ohos.permission.ENTERPRISE_SET_WALLPAPER
 
 允许设备管理应用设置壁纸。
  
@@ -652,7 +652,7 @@
  
   
 
-#### ohos.permission.MANAGE_PREINSTALLED_ANTIVIRUS
+## ohos.permission.MANAGE_PREINSTALLED_ANTIVIRUS
 
 允许设备管理应用管理系统预装的防病毒软件。
  
@@ -668,7 +668,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_MANAGE_USER_GRANT_PERMISSION
+## ohos.permission.ENTERPRISE_MANAGE_USER_GRANT_PERMISSION
 
 允许设备管理应用设置user_grant类权限策略。
  
@@ -686,7 +686,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_DATA_IDENTIFY_FILE
+## ohos.permission.ENTERPRISE_DATA_IDENTIFY_FILE
 
 允许设备管理应用识别文件敏感内容。
  
@@ -702,7 +702,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_ACCESS_DLP_FILE
+## ohos.permission.ENTERPRISE_ACCESS_DLP_FILE
 
 允许设备管理应用生成、解密DLP文件，查询DLP文件策略。
  
@@ -720,7 +720,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_MANAGE_DEVICE_ADMIN
+## ohos.permission.ENTERPRISE_MANAGE_DEVICE_ADMIN
 
 允许应用管理其他设备管理应用。
  
@@ -738,7 +738,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_START_ABILITIES
+## ohos.permission.ENTERPRISE_START_ABILITIES
 
 允许设备管理应用访问其他组件。
  
@@ -754,7 +754,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_READ_LOG
+## ohos.permission.ENTERPRISE_READ_LOG
 
 允许设备管理应用收集系统日志。
  
@@ -770,7 +770,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_DEACTIVATE_DEVICE_ADMIN
+## ohos.permission.ENTERPRISE_DEACTIVATE_DEVICE_ADMIN
 
 允许已激活的设备管理应用解除自身的激活状态。
  
@@ -786,7 +786,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_ACTIVATE_DEVICE_ADMIN
+## ohos.permission.ENTERPRISE_ACTIVATE_DEVICE_ADMIN
 
 允许企业设备管理应用自行完成激活操作。
  
@@ -802,7 +802,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_MANAGE_LOCAL_ACCOUNTS
+## ohos.permission.ENTERPRISE_MANAGE_LOCAL_ACCOUNTS
 
 允许企业设备管理应用管理本地账号。
  
@@ -818,7 +818,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_INTERACT_ACROSS_LOCAL_ACCOUNTS
+## ohos.permission.ENTERPRISE_INTERACT_ACROSS_LOCAL_ACCOUNTS
 
 允许企业设备管理应用进行多用户操作。
  
@@ -834,7 +834,7 @@
  
   
 
-#### ohos.permission.ENTERPRISE_VPN
+## ohos.permission.ENTERPRISE_VPN
 
 允许设备管理应用默认拥有VPN接入权限。
  

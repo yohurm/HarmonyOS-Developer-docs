@@ -1,18 +1,19 @@
 # HiAppEvent_Config
 
-更新时间：2026-06-17 08:22:21
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hiappevent-hiappevent-config
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct HiAppEvent_Config HiAppEvent_Config
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置系统事件自定义规格的配置对象。可以用来自定义系统事件规格参数，参数列表设置可参考应用事件的[宏定义](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hiappevent-param-h#宏定义)。
  

@@ -1,9 +1,9 @@
 # @ohos.rpc (RPC通信)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-rpc
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供进程间通信能力，包括设备内的进程间通信（IPC）和设备间的进程间通信（RPC），前者基于Binder驱动，后者基于软总线驱动。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { rpc } from '@kit.IPCKit';
@@ -22,13 +23,15 @@ import { rpc } from '@kit.IPCKit';
 
 
 
-#### ErrorCode9+
+## ErrorCode9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 9起，IPC支持异常返回功能。错误码对应数值及含义如下，详细说明请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)。
 
 **系统能力：** SystemCapability.Communication.IPC.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -50,13 +53,15 @@ import { rpc } from '@kit.IPCKit';
 
 
 
-#### TypeCode12+
+## TypeCode12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 12起，IPC新增[writeArrayBuffer](#writearraybuffer12)和[readArrayBuffer](#readarraybuffer12)方法传递ArrayBuffer数据，传递数据时通过具体类型值来分辨业务是以哪一种TypedArray去进行数据的读写。类型码对应数值及含义如下。
 
 **系统能力：** SystemCapability.Communication.IPC.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -74,34 +79,35 @@ import { rpc } from '@kit.IPCKit';
 
 
 
-#### MessageSequence9+
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-在RPC或IPC过程中，发送方可以使用MessageSequence提供的写方法，将待发送的数据以特定格式写入该对象。接收方可以使用MessageSequence提供的读方法从该对象中读取特定格式的数据。数据格式包括：基础类型及数组、IPC对象、接口描述符和自定义序列化对象。
+## MessageSequence9+
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### create9+
+在RPC或IPC过程中，发送方可以使用MessageSequence提供的写方法，将待发送的数据以特定格式写入该对象。接收方可以使用MessageSequence提供的读方法从该对象中读取特定格式的数据。数据格式包括：基础类型及数组、IPC对象、接口描述符和自定义序列化对象。读取顺序必须与写入顺序一致，否则会导致数据解析错误。
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**系统能力：** SystemCapability.Communication.IPC.Core
+
+
+
+### create9+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static create(): MessageSequence
 
 静态方法，创建MessageSequence对象。调用此方法后，系统会在内存中分配一块连续的缓冲区空间，用于存储待传输的序列化数据。该对象在IPC/RPC通信中用于封装请求和响应数据。
-
-**约束和限制**
 
  - 创建的MessageSequence对象必须在使用完毕后调用reclaim()释放资源，否则会导致内存泄漏。
  - MessageSequence对象不能跨线程使用。
  - 建议在需要IPC/RPC通信时按需创建，避免频繁创建和释放。
 
 
-**配对调用：** 调用create()创建MessageSequence对象后，必须在使用完毕后调用reclaim()释放资源，未调用reclaim()会导致内存资源泄漏。
-
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -116,7 +122,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 try {
-  // 创建MessageSequence对象
+  // 创建MessageSequence对象，用于在IPC/RPC通信中封装请求和响应数据。
   let data = rpc.MessageSequence.create();
   hilog.info(0x0000, 'testTag', 'data is ' + data);
 
@@ -131,21 +137,16 @@ try {
 
 
 
-#### reclaim9+
+### reclaim9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reclaim(): void
 
 释放不再使用的MessageSequence对象。
 
-**配对关系：**
-
-必须与create()方法配对使用，调用create()创建MessageSequence对象后，必须在使用完毕后调用reclaim()释放资源。未及时调用reclaim()会导致内存资源泄漏。
-
-**约束和限制**
-
- - 必须在MessageSequence对象使用完毕后调用。
+ - 必须与create()方法配对使用，调用create()创建MessageSequence对象后，必须在使用完毕后调用reclaim()释放资源。未及时调用reclaim()会导致内存资源泄漏。
  - 调用后对象不能再被使用。
  - 建议在finally块或任务结束时调用，确保资源释放。
  - 不要在异步操作中跨线程释放。
@@ -172,25 +173,24 @@ try {
 
 
 
-#### writeRemoteObject9+
+### writeRemoteObject9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeRemoteObject(obj: IRemoteObject): void
 
 序列化远程对象并将其写入[MessageSequence](#messagesequence9)对象。调用此方法后，IRemoteObject对象会被序列化为特定格式并存入MessageSequence的缓冲区中，同时会更新内部写指针位置。该序列化对象可在接收端通过readRemoteObject方法反序列化读取。
 
-**约束和限制**
-
  - 只能写入有效的IRemoteObject对象，传入无效对象会抛出异常。
  - 序列化后的对象占用固定大小的缓冲区空间。
  - 写入的对象必须与对应的readRemoteObject方法配对使用。
- - 建议在写入前先调用getWritableBytes检查剩余空间。
 
 
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -200,6 +200,7 @@ writeRemoteObject(obj: IRemoteObject): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -240,18 +241,16 @@ try {
 
 
 
-#### readRemoteObject9+
+### readRemoteObject9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readRemoteObject(): IRemoteObject
 
 从MessageSequence读取远程对象。此方法用于反序列化MessageSequence对象以生成IRemoteObject。远程对象按写入MessageSequence的顺序读取。调用此方法后，会从MessageSequence缓冲区中读取已序列化的远程对象数据，并反序列化为IRemoteObject实例。读取操作会更新内部读指针位置。
 
-**约束和限制**
-
- - 读取顺序必须与写入顺序一致，否则会导致数据解析错误。
- - 读取前应确保缓冲区中有可读数据，可通过getReadableBytes检查。
+ - 读取前应确保缓冲区中有可读数据。
  - 如果写入的是RemoteObject，读取得到的是RemoteProxy。
  - 读取失败时会抛出异常，建议使用try-catch捕获。
 
@@ -260,14 +259,16 @@ readRemoteObject(): IRemoteObject
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| IRemoteObject | 读取到的远程对象。 |
+| IRemoteObject | 读取到的远程对象，用于IPC/RPC通信。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -308,32 +309,23 @@ try {
 
 
 
-#### writeInterfaceToken9+
+### writeInterfaceToken9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeInterfaceToken(token: string): void
 
-将接口描述符写入MessageSequence对象，远端对象可使用该信息校验本次通信。适用于需要验证通信双方接口一致性的场景，如跨进程服务调用、安全通信验证等。建议使用唯一且有意义的描述符字符串（如"com.example.service"），避免使用敏感信息，长度应小于40960。调用此方法后，接口描述符字符串会被序列化并存入MessageSequence缓冲区。远端在接收到通信请求后，可读取该描述符来验证请求来源的合法性。
+将接口描述符写入MessageSequence对象，远端对象可使用该信息校验本次通信。适用于需要验证通信双方接口一致性的场景，如跨进程服务调用、安全通信验证以及标识服务端提供的接口类型。建议使用唯一且有意义的描述符字符串（如"com.example.service"），避免使用敏感信息，长度应小于40960。调用此方法后，接口描述符字符串会被序列化并存入MessageSequence缓冲区。远端在接收到通信请求后，可读取该描述符来验证请求来源的合法性。
 
-接口描述符的作用:
-
- - 用于标识服务端提供的接口类型。
- - 远端可通过描述符判断客户端调用的接口是否匹配。
- - 实现通信双方的接口身份校验。
-
-
-**约束和限制**
-
- - 接口描述符长度必须小于40960。
- - 建议使用有意义的接口名称作为描述符。
- - 必须与readInterfaceToken配对使用。
+ - 必须与[readInterfaceToken](#readinterfacetoken9)配对使用。
  - 长度超过限制会抛出参数错误异常。
 
 
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -343,6 +335,7 @@ writeInterfaceToken(token: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -370,18 +363,16 @@ try {
 
 
 
-#### readInterfaceToken9+
+### readInterfaceToken9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readInterfaceToken(): string
 
 从MessageSequence对象中读取接口描述符，接口描述符按写入MessageSequence的顺序读取，本地对象可使用该信息检验本次通信。
 
-**配对调用**
-
- - 必须与writeInterfaceToken配对使用。
- - 读取顺序必须与写入顺序一致。
+ - 必须与[writeInterfaceToken](#writeinterfacetoken9)配对使用。
  - 读取前应确保缓冲区中有可读数据。
  - 建议在收到IPC请求后立即读取校验。
 
@@ -389,6 +380,7 @@ readInterfaceToken(): string
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -398,6 +390,7 @@ readInterfaceToken(): string
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -425,15 +418,14 @@ try {
 
 
 
-#### getSize9+
+### getSize9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSize(): number
 
 获取当前创建的MessageSequence对象的数据大小。
-
-**使用场景**
 
  - 查看已写入数据的总大小。
  - 判断缓冲区使用情况。
@@ -444,9 +436,10 @@ getSize(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| number | 获取的MessageSequence实例的数据大小。以字节为单位。 |
+| number | 获取的MessageSequence实例的数据大小。以字节为单位。用于调整数据读取范围，建议设置为实际写入数据的大小。 |
 
 
 **示例：**
@@ -469,9 +462,10 @@ try {
 
 
 
-#### getCapacity9+
+### getCapacity9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCapacity(): number
 
@@ -480,6 +474,7 @@ getCapacity(): number
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -506,9 +501,10 @@ try {
 
 
 
-#### setSize9+
+### setSize9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setSize(size: number): void
 
@@ -518,6 +514,7 @@ setSize(size: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | size | number | 是 | MessageSequence实例的数据大小。以字节为单位。 |
@@ -526,6 +523,7 @@ setSize(size: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -553,9 +551,10 @@ try {
 
 
 
-#### setCapacity9+
+### setCapacity9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCapacity(size: number): void
 
@@ -565,14 +564,16 @@ setCapacity(size: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| size | number | 是 | MessageSequence实例的存储容量。以字节为单位。 |
+| size | number | 是 | MessageSequence实例的存储容量。以字节为单位。用于限制可写入数据的最大字节数，建议根据实际数据量合理设置。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -600,9 +601,10 @@ try {
 
 
 
-#### getWritableBytes9+
+### getWritableBytes9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getWritableBytes(): number
 
@@ -611,6 +613,7 @@ getWritableBytes(): number
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -638,9 +641,10 @@ try {
 
 
 
-#### getReadableBytes9+
+### getReadableBytes9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getReadableBytes(): number
 
@@ -649,6 +653,7 @@ getReadableBytes(): number
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -676,9 +681,10 @@ try {
 
 
 
-#### getReadPosition9+
+### getReadPosition9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getReadPosition(): number
 
@@ -687,6 +693,7 @@ getReadPosition(): number
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -714,9 +721,10 @@ try {
 
 
 
-#### getWritePosition9+
+### getWritePosition9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getWritePosition(): number
 
@@ -725,6 +733,7 @@ getWritePosition(): number
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -752,9 +761,10 @@ try {
 
 
 
-#### rewindRead9+
+### rewindRead9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 rewindRead(pos: number): void
 
@@ -764,14 +774,16 @@ rewindRead(pos: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| pos | number | 是 | 开始读取数据的目标位置。 |
+| pos | number | 是 | 开始读取数据的目标位置，以字节为单位。用于重新定位MessageSequence的读指针，值应在[0, getSize]范围内。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -804,9 +816,10 @@ try {
 
 
 
-#### rewindWrite9+
+### rewindWrite9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 rewindWrite(pos: number): void
 
@@ -816,14 +829,16 @@ rewindWrite(pos: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| pos | number | 是 | 开始写入数据的目标位置。 |
+| pos | number | 是 | 开始写入数据的目标位置，以字节为单位。用于重新定位MessageSequence的写指针，值应在[0, getSize]范围内。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -854,32 +869,26 @@ try {
 
 
 
-#### writeByte9+
+### writeByte9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeByte(val: number): void
 
 将字节值写入MessageSequence实例。调用此方法后，字节值会被以8位无符号整数形式存入缓冲区当前写指针位置，并自动更新写指针。该方法适用于传输小范围整数或标志位数据。
 
-字节存储格式:
-
- - 占用1字节(8位)存储空间。
- - 存储范围:0-255(无符号)或-128-127(有符号)。
+ - 存储范围：[0, 255]（无符号）或[-128, 127]（有符号）。
  - 数据对齐方式为字节对齐。
-
-
-**约束和限制**
-
  - 数值必须在字节范围内，超出范围可能导致数据截断。
- - 写入前建议检查getWritableBytes确保有足够空间。
- - 读取时必须使用readByte方法配对读取。
- - 不适合传输大范围数值，大范围数值建议使用writeInt/writeLong等。
+ - 读取时必须使用[readByte](#readbyte9)方法配对读取。
+ - 不适合传输大范围数值，大范围数值建议使用[writeInt](#writeint9)/[writeLong](#writelong9)等。
 
 
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -889,6 +898,7 @@ writeByte(val: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -915,24 +925,23 @@ try {
 
 
 
-#### readByte9+
+### readByte9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readByte(): number
 
 从MessageSequence实例中读取字节值。
 
-**配对调用**
-
- - 必须与writeByte配对使用。
- - 读取顺序必须与写入顺序一致。
+ - 必须与[writeByte](#writebyte9)配对使用。
  - 一次写入对应一次读取。
 
 
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -942,6 +951,7 @@ readByte(): number
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -969,24 +979,24 @@ try {
 
 
 
-#### writeShort9+
+### writeShort9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeShort(val: number): void
 
 将短整数值写入MessageSequence实例。
 
-**约束和限制**
-
  - 超出范围会导致数据截断。
- - 建议先检查getWritableBytes确保有2字节空间。
- - 必须与readShort配对使用。
+ - 必须与[readShort](#readshort9)配对使用。
+ - 一次写入对应一次读取。
 
 
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -996,6 +1006,7 @@ writeShort(val: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1022,17 +1033,23 @@ try {
 
 
 
-#### readShort9+
+### readShort9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readShort(): number
 
 从MessageSequence实例中读取短整数值。
 
+ - 必须与[writeShort](#writeshort9)配对使用。
+ - 注意写入时的取值范围[-2^15, 2^15-1]，超出此范围会导致数据截断。
+
+
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1042,6 +1059,7 @@ readShort(): number
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1069,34 +1087,28 @@ try {
 
 
 
-#### writeInt9+
+### writeInt9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeInt(val: number): void
 
-将整数值写入MessageSequence实例。 调用此方法后，整数值会被以32位有符号整数形式存入缓冲区当前写指针位置，并自动更新写指针。该方法适用于传输标准整数数据。
+将整数值写入MessageSequence实例。 调用此方法后，整数值会被以32位有符号整数形式存入缓冲区当前写指针位置，并自动更新写指针。该方法适用于传输标准整数数据。对于小范围数值建议使用[writeByte](#writebyte9)/[writeShort](#writeshort9)提高效率；对于大范围数值建议使用[writeLong](#writelong9)。
 
-整数存储格式:
-
+ - 必须与[readInt](#readint9)配对使用。
+ - 一次写入对应一次读取
  - 占用4字节(32位)存储空间。
- - 存储范围:-2^31到2^31-1。
  - 采用系统默认字节序存储。
- - 数据按4字节对齐。
-
-
-**约束和限制**
-
- - 取值范围：[-2^31, 2^31-1]。
  - 超出范围会导致数据截断或写入失败。
- - 写入前建议检查getWritableBytes确保至少有4字节空间。
- - 对于小范围数值建议使用writeByte/writeShort提高效率。
- - 对于大范围数值建议使用writeLong。
 
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1107,6 +1119,7 @@ writeInt(val: number): void
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match. |
@@ -1116,6 +1129,7 @@ writeInt(val: number): void
 **示例：**
 
 ```text
+// 在元服务中，本示例仅用于说明writeInt()接口的使用方法，示例中rpc.MessageSequence.create()暂不支持在元服务中调用。
 import { rpc } from '@kit.IPCKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -1132,17 +1146,25 @@ try {
 
 
 
-#### readInt9+
+### readInt9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readInt(): number
 
 从MessageSequence实例中读取整数值。
 
+ - 整数值占用4字节存储空间。
+ - 存储范围：[-2^31, 2^31-1]。
+
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1153,6 +1175,7 @@ readInt(): number
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1900010 | Failed to read data from the message sequence. |
@@ -1161,6 +1184,7 @@ readInt(): number
 **示例：**
 
 ```text
+// 在元服务中，本示例仅用于说明readInt()接口的使用方法，示例中rpc.MessageSequence.create()暂不支持在元服务中调用。
 import { rpc } from '@kit.IPCKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -1179,17 +1203,23 @@ try {
 
 
 
-#### writeLong9+
+### writeLong9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeLong(val: number): void
 
 将长整数值写入MessageSequence实例。
 
+ - 必须与[readLong](#readlong9)配对使用。
+ - 一次写入对应一次读取。
+
+
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1199,6 +1229,7 @@ writeLong(val: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1225,17 +1256,23 @@ try {
 
 
 
-#### readLong9+
+### readLong9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readLong(): number
 
 从MessageSequence实例中读取长整数值。
 
+ - 取值范围：[-2^63, 2^63-1]。
+ - 长整数占用8字节存储空间。
+
+
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1245,6 +1282,7 @@ readLong(): number
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1272,26 +1310,29 @@ try {
 
 
 
-#### writeFloat9+
+### writeFloat9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeFloat(val: number): void
 
-将双精度浮点值写入MessageSequence实例。
+将双精度浮点值写入MessageSequence实例。由于系统内部对float类型的数据是按照double处理的，实际写入的数据按双精度格式存储。
 
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| val | number | 是 | 要写入的双精度浮点值。 |
+| val | number | 是 | 要写入的双精度浮点值。适用于传输浮点数据(如坐标、比例、测量值等)。必须与readFloat配对使用。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1318,9 +1359,10 @@ try {
 
 
 
-#### readFloat9+
+### readFloat9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readFloat(): number
 
@@ -1330,6 +1372,7 @@ readFloat(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回双精度浮点值。由于系统内部对float类型的数据是按照double处理的，读取的数据按double精度返回。 |
@@ -1338,6 +1381,7 @@ readFloat(): number
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1365,17 +1409,23 @@ try {
 
 
 
-#### writeDouble9+
+### writeDouble9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeDouble(val: number): void
 
 将双精度浮点值写入MessageSequence实例。
 
+ - 必须与[readDouble](#readdouble9)配对使用。
+ - 一次写入对应一次读取。
+
+
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1385,6 +1435,7 @@ writeDouble(val: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1411,17 +1462,23 @@ try {
 
 
 
-#### readDouble9+
+### readDouble9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readDouble(): number
 
 从MessageSequence实例中读取双精度浮点值。
 
+ - 返回新创建的数组，无需预先创建。
+ - 数组元素为双精度浮点数。
+
+
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1431,6 +1488,7 @@ readDouble(): number
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1458,17 +1516,23 @@ try {
 
 
 
-#### writeBoolean9+
+### writeBoolean9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeBoolean(val: boolean): void
 
 将布尔值写入MessageSequence实例。
 
+ - 必须与[readBoolean](#readboolean9)配对使用。
+ - 一次写入对应一次读取。
+
+
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1478,6 +1542,7 @@ writeBoolean(val: boolean): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1504,9 +1569,10 @@ try {
 
 
 
-#### readBoolean9+
+### readBoolean9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readBoolean(): boolean
 
@@ -1516,6 +1582,7 @@ readBoolean(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回读取到的布尔值。 |
@@ -1524,6 +1591,7 @@ readBoolean(): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1551,17 +1619,23 @@ try {
 
 
 
-#### writeChar9+
+### writeChar9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeChar(val: number): void
 
 将单个字符值写入MessageSequence实例。
 
+ - 必须与[readChar](#readchar9)配对使用。
+ - 一次写入对应一次读取。
+
+
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1571,6 +1645,7 @@ writeChar(val: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1597,9 +1672,10 @@ try {
 
 
 
-#### readChar9+
+### readChar9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readChar(): number
 
@@ -1609,6 +1685,7 @@ readChar(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回单个字符值。 |
@@ -1617,6 +1694,7 @@ readChar(): number
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1644,34 +1722,30 @@ try {
 
 
 
-#### writeString9+
+### writeString9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeString(val: string): void
 
-将字符串值写入MessageSequence实例。调用此方法后，字符串会被转换为UTF-8编码并序列化存入缓冲区。写入时会先存储字符串长度，再存储实际的UTF-8字节数据。
+将字符串值写入MessageSequence实例。调用此方法后，字符串会被序列化存入缓冲区。写入时会先存储字符串长度，再存储字节数据。
 
-字符串存储格式:
-
- - 采用UTF-8编码存储。
- - 先写入长度(4字节)，再写入内容。
+ - 此方法与[readString](#readstring9)方法配对使用。
+ - 先写入长度，再写入内容。
  - 支持多语言字符集。
- - 长度信息便于readString确定读取边界。
-
-
-**约束和限制**
-
- - 字符串UTF-8编码后长度必须小于40960。
+ - 长度信息便于[readString](#readstring9)确定读取边界。
  - 注意区分字符数和字节数，中文字符占用更多字节。
  - 长字符串会占用较多缓冲区空间。
- - 写入前建议检查getWritableBytes。
  - 空字符串也可以正常写入。
 
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1682,6 +1756,7 @@ writeString(val: string): void
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match; 3.The string length is greater than or equal to 40960; 4.The number of bytes copied to the buffer is different from the length of the obtained string. |
@@ -1691,6 +1766,7 @@ writeString(val: string): void
 **示例：**
 
 ```text
+// 在元服务中，本示例仅用于说明writeString()接口的使用方法，示例中rpc.MessageSequence.create()暂不支持在元服务中调用。
 import { rpc } from '@kit.IPCKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -1707,17 +1783,24 @@ try {
 
 
 
-#### readString9+
+### readString9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readString(): string
 
 从MessageSequence实例中读取字符串值。
 
+ - 先读取长度，再读取内容。
+
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1728,6 +1811,7 @@ readString(): string
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1900010 | Failed to read data from the message sequence. |
@@ -1736,6 +1820,7 @@ readString(): string
 **示例：**
 
 ```text
+// 在元服务中，本示例仅用于说明readString()接口的使用方法，示例中rpc.MessageSequence.create()暂不支持在元服务中调用。
 import { rpc } from '@kit.IPCKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -1754,24 +1839,19 @@ try {
 
 
 
-#### writeParcelable9+
+### writeParcelable9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeParcelable(val: Parcelable): void
 
 将自定义序列化对象写入MessageSequence实例。调用此方法后，会调用Parcelable对象的marshalling方法，将对象的成员变量逐个序列化写入MessageSequence。该方法支持传输自定义数据结构对象适用于传输复杂数据结构、业务对象、配置信息等场景。
 
-Parcelable工作机制:
-
  - Parcelable接口定义了序列化和反序列化的标准方法。
  - marshalling负责将对象状态写入MessageSequence。
  - unmarshalling负责从MessageSequence恢复对象状态。
  - 业务需自行实现具体的序列化逻辑。
-
-
-**约束和限制**
-
  - 必须传入实现了Parcelable接口的对象。
  - marshalling方法必须正确实现所有成员变量的写入。
  - 序列化顺序必须与反序列化顺序一致。
@@ -1779,14 +1859,10 @@ Parcelable工作机制:
  - 复杂对象可能占用较多缓冲区空间。
 
 
-实现Parcelable接口的建议：
-1. marshalling方法中按固定顺序写入所有必要字段。
-2. unmarshalling方法中按相同顺序读取。
-3. 确保marshalling和unmarshalling逻辑对称，避免传输缺失或多余数据。
-
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1796,6 +1872,7 @@ Parcelable工作机制:
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1813,7 +1890,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 class MyParcelable implements rpc.Parcelable {
   num: number = 0;
   str: string = '';
-  constructor( num: number, str: string) {
+  constructor(num: number, str: string) {
     this.num = num;
     this.str = str;
   }
@@ -1842,15 +1919,14 @@ try {
 
 
 
-#### readParcelable9+
+### readParcelable9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readParcelable(dataIn: Parcelable): void
 
 从MessageSequence实例中读取成员变量到指定的对象（dataIn）。
-
-**约束和限制**
 
  - dataIn参数必须为已实例化的Parcelable对象。
  - unmarshalling方法必须按与marshalling相同的顺序读取。
@@ -1862,6 +1938,7 @@ readParcelable(dataIn: Parcelable): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dataIn | Parcelable | 是 | 需要从MessageSequence读取成员变量的对象，使用前请先实例化可序列化对象。 |
@@ -1870,6 +1947,7 @@ readParcelable(dataIn: Parcelable): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1919,26 +1997,33 @@ try {
 
 
 
-#### writeByteArray9+
+### writeByteArray9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeByteArray(byteArray: number[]): void
 
 将字节数组写入MessageSequence实例。
 
+ - 必须与[readByteArray](#readbytearray9)配对使用。
+ - 读取数组长度必须与写入数组长度一致。
+
+
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| byteArray | number[] | 是 | 要写入的字节数组。 |
+| byteArray | number[] | 是 | 要写入的字节数组，用于批量传输字节序列数据。数组不能为空，每个元素取值范围[0, 255]。超出范围可能导致数据截断。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1955,7 +2040,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 try {
   let data = rpc.MessageSequence.create();
-  let ByteArrayVar = [1, 2, 3, 4, 5];
+  let byteArrayVar = [1, 2, 3, 4, 5];
   // 将字节数组写入MessageSequence对象
   data.writeByteArray(ByteArrayVar);
 } catch (error) {
@@ -1967,9 +2052,10 @@ try {
 
 
 
-#### readByteArray9+
+### readByteArray9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readByteArray(dataIn: number[]): void
 
@@ -1979,6 +2065,7 @@ readByteArray(dataIn: number[]): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dataIn | number[] | 是 | 用于存储从MessageSequence读取的字节数组，需预先创建空数组且长度应与写入时的数组长度一致。 |
@@ -1987,6 +2074,7 @@ readByteArray(dataIn: number[]): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2018,9 +2106,10 @@ try {
 
 
 
-#### readByteArray9+
+### readByteArray9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readByteArray(): number[]
 
@@ -2030,6 +2119,7 @@ readByteArray(): number[]
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number[] | 返回字节数组。 |
@@ -2038,6 +2128,7 @@ readByteArray(): number[]
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2067,26 +2158,33 @@ try {
 
 
 
-#### writeShortArray9+
+### writeShortArray9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeShortArray(shortArray: number[]): void
 
 将短整数数组写入MessageSequence实例。
 
+ - 必须与[readShortArray](#readshortarray9)配对使用。
+ - 读取数组长度必须与写入数组长度一致。
+
+
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| shortArray | number[] | 是 | 要写入的短整数数组。 |
+| shortArray | number[] | 是 | 要写入的短整数数组。数组元素取值范围[-2^15, 2^15-1]。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2113,9 +2211,10 @@ try {
 
 
 
-#### readShortArray9+
+### readShortArray9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readShortArray(dataIn: number[]): void
 
@@ -2125,6 +2224,7 @@ readShortArray(dataIn: number[]): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dataIn | number[] | 是 | 用于存储从MessageSequence读取的短整数数组，需预先创建空数组且长度应与写入时的数组长度一致。 |
@@ -2133,6 +2233,7 @@ readShortArray(dataIn: number[]): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2162,9 +2263,10 @@ try {
 
 
 
-#### readShortArray9+
+### readShortArray9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readShortArray(): number[]
 
@@ -2174,6 +2276,7 @@ readShortArray(): number[]
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number[] | 返回短整数数组。 |
@@ -2182,6 +2285,7 @@ readShortArray(): number[]
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2209,17 +2313,23 @@ try {
 
 
 
-#### writeIntArray9+
+### writeIntArray9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeIntArray(intArray: number[]): void
 
 将整数数组写入MessageSequence实例。
 
+ - 必须与[readIntArray](#readintarray9)配对使用。
+ - 读取数组长度必须与写入数组长度一致。
+
+
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2229,6 +2339,7 @@ writeIntArray(intArray: number[]): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2255,17 +2366,23 @@ try {
 
 
 
-#### readIntArray9+
+### readIntArray9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readIntArray(dataIn: number[]): void
 
 从MessageSequence实例中读取整数数组，并将其写入到创建的空数组中。
 
+ - 需预先创建空数组且长度应与写入时的数组长度一致。
+ - 数组元素取值范围:[-2^31, 2^31-1]。
+
+
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2275,6 +2392,7 @@ readIntArray(dataIn: number[]): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2304,9 +2422,10 @@ try {
 
 
 
-#### readIntArray9+
+### readIntArray9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readIntArray(): number[]
 
@@ -2316,6 +2435,7 @@ readIntArray(): number[]
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number[] | 返回整数数组。 |
@@ -2324,6 +2444,7 @@ readIntArray(): number[]
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2351,17 +2472,23 @@ try {
 
 
 
-#### writeLongArray9+
+### writeLongArray9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeLongArray(longArray: number[]): void
 
 将长整数数组写入MessageSequence实例。
 
+ - 必须与[readLongArray](#readlongarray9)配对使用。
+ - 读取数组长度必须与写入数组长度一致。
+
+
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2371,6 +2498,7 @@ writeLongArray(longArray: number[]): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2397,9 +2525,10 @@ try {
 
 
 
-#### readLongArray9+
+### readLongArray9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readLongArray(dataIn: number[]): void
 
@@ -2409,6 +2538,7 @@ readLongArray(dataIn: number[]): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dataIn | number[] | 是 | 用于存储从MessageSequence读取的长整数数组，需预先创建空数组且长度应与写入时的数组长度一致。 |
@@ -2417,6 +2547,7 @@ readLongArray(dataIn: number[]): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2446,9 +2577,10 @@ try {
 
 
 
-#### readLongArray9+
+### readLongArray9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readLongArray(): number[]
 
@@ -2458,6 +2590,7 @@ readLongArray(): number[]
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number[] | 返回长整数数组。 |
@@ -2466,6 +2599,7 @@ readLongArray(): number[]
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2493,17 +2627,23 @@ try {
 
 
 
-#### writeFloatArray9+
+### writeFloatArray9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeFloatArray(floatArray: number[]): void
 
 将双精度浮点数组写入MessageSequence实例。
 
+ - 必须与[readFloatArray](#readfloatarray9)配对使用。
+ - 读取数组长度必须与写入数组长度一致。
+
+
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2513,6 +2653,7 @@ writeFloatArray(floatArray: number[]): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2539,9 +2680,10 @@ try {
 
 
 
-#### readFloatArray9+
+### readFloatArray9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readFloatArray(dataIn: number[]): void
 
@@ -2551,14 +2693,16 @@ readFloatArray(dataIn: number[]): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| dataIn | number[] | 是 | 要读取的双精度浮点数组。由于系统内部对float类型的数据是按照double处理的，使用时对于数组所占的总字节数应按照double类型来计算。 |
+| dataIn | number[] | 是 | 用于存储从MessageSequence读取的双精度浮点数组，需预先创建空数组且长度应与写入时的数组长度一致。由于系统内部对float类型的数据是按照double处理的，使用时对于数组所占的总字节数应按照double类型来计算。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2588,9 +2732,10 @@ try {
 
 
 
-#### readFloatArray9+
+### readFloatArray9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readFloatArray(): number[]
 
@@ -2600,6 +2745,7 @@ readFloatArray(): number[]
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number[] | 返回双精度浮点数组。 |
@@ -2608,6 +2754,7 @@ readFloatArray(): number[]
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2635,17 +2782,23 @@ try {
 
 
 
-#### writeDoubleArray9+
+### writeDoubleArray9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeDoubleArray(doubleArray: number[]): void
 
 将双精度浮点数组写入MessageSequence实例。
 
+ - 必须与[readDoubleArray](#readdoublearray9)配对使用。
+ - 读取数组长度必须与写入数组长度一致。
+
+
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2655,6 +2808,7 @@ writeDoubleArray(doubleArray: number[]): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2681,9 +2835,10 @@ try {
 
 
 
-#### readDoubleArray9+
+### readDoubleArray9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readDoubleArray(dataIn: number[]): void
 
@@ -2693,6 +2848,7 @@ readDoubleArray(dataIn: number[]): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dataIn | number[] | 是 | 用于存储从MessageSequence读取的双精度浮点数组，需预先创建空数组且长度应与写入时的数组长度一致。 |
@@ -2701,6 +2857,7 @@ readDoubleArray(dataIn: number[]): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2730,9 +2887,10 @@ try {
 
 
 
-#### readDoubleArray9+
+### readDoubleArray9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readDoubleArray(): number[]
 
@@ -2742,6 +2900,7 @@ readDoubleArray(): number[]
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number[] | 返回双精度浮点数组。 |
@@ -2750,6 +2909,7 @@ readDoubleArray(): number[]
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2777,17 +2937,23 @@ try {
 
 
 
-#### writeBooleanArray9+
+### writeBooleanArray9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeBooleanArray(booleanArray: boolean[]): void
 
 将布尔数组写入MessageSequence实例。
 
+ - 必须与[readBooleanArray](#readbooleanarray9)配对使用。
+ - 读取数组长度必须与写入数组长度一致。
+
+
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2797,6 +2963,7 @@ writeBooleanArray(booleanArray: boolean[]): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2823,9 +2990,10 @@ try {
 
 
 
-#### readBooleanArray9+
+### readBooleanArray9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readBooleanArray(dataIn: boolean[]): void
 
@@ -2835,6 +3003,7 @@ readBooleanArray(dataIn: boolean[]): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dataIn | boolean[] | 是 | 用于存储从MessageSequence读取的布尔数组，需预先创建空数组且长度应与写入时的数组长度一致。 |
@@ -2843,6 +3012,7 @@ readBooleanArray(dataIn: boolean[]): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2872,17 +3042,23 @@ try {
 
 
 
-#### readBooleanArray9+
+### readBooleanArray9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readBooleanArray(): boolean[]
 
 从MessageSequence实例中读取布尔数组。
 
+ - 返回新创建的数组，无需预先创建。
+ - 数组元素为布尔值。
+
+
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2892,6 +3068,7 @@ readBooleanArray(): boolean[]
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2919,17 +3096,23 @@ try {
 
 
 
-#### writeCharArray9+
+### writeCharArray9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeCharArray(charArray: number[]): void
 
 将单个字符数组写入MessageSequence实例。
 
+ - 必须与[readCharArray](#readchararray9)配对使用。
+ - 读取数组长度必须与写入数组长度一致。
+
+
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2939,6 +3122,7 @@ writeCharArray(charArray: number[]): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2965,9 +3149,10 @@ try {
 
 
 
-#### readCharArray9+
+### readCharArray9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readCharArray(dataIn: number[]): void
 
@@ -2977,6 +3162,7 @@ readCharArray(dataIn: number[]): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dataIn | number[] | 是 | 用于存储从MessageSequence读取的单个字符数组，需预先创建空数组且长度应与写入时的数组长度一致。 |
@@ -2985,6 +3171,7 @@ readCharArray(dataIn: number[]): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3014,17 +3201,23 @@ try {
 
 
 
-#### readCharArray9+
+### readCharArray9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readCharArray(): number[]
 
 从MessageSequence实例中读取单个字符数组。
 
+ - 返回新创建的数组，无需预先创建。
+ - 数组元素为字符编码，取值范围[0, 65535]。
+
+
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3034,6 +3227,7 @@ readCharArray(): number[]
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3061,17 +3255,23 @@ try {
 
 
 
-#### writeStringArray9+
+### writeStringArray9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeStringArray(stringArray: string[]): void
 
 将字符串数组写入MessageSequence实例。
 
+ - 必须与[readStringArray](#readstringarray9)配对使用。
+ - 读取数组长度必须与写入数组长度一致。
+
+
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3081,6 +3281,7 @@ writeStringArray(stringArray: string[]): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3107,17 +3308,24 @@ try {
 
 
 
-#### readStringArray9+
+### readStringArray9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readStringArray(dataIn: string[]): void
 
 从MessageSequence实例中读取字符串数组，并将其写入到创建的空数组中。
 
+ - 需预先创建空数组且长度应与写入时的数组长度一致。
+ - 读取后dataIn数组会被填充读取的字节数据。
+ - 读指针向后移动相应字节数。
+
+
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3127,6 +3335,7 @@ readStringArray(dataIn: string[]): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3156,17 +3365,23 @@ try {
 
 
 
-#### readStringArray9+
+### readStringArray9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readStringArray(): string[]
 
 从MessageSequence实例中读取字符串数组。
 
+ - 返回新创建的数组，无需预先创建。
+ - 数组单个元素的长度范围[0, 40960)。
+
+
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3176,6 +3391,7 @@ readStringArray(): string[]
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3203,15 +3419,14 @@ try {
 
 
 
-#### writeNoException9+
+### writeNoException9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeNoException(): void
 
-向MessageSequence写入“指示未发生异常”的信息。
-
-**配对调用：**
+向MessageSequence写入“指示未发生异常”的信息。通常在IPC/RPC通信的服务端实现以及onRemoteMessageRequest回调中调用。
 
  - 此方法与[readException](#readexception9)方法配对使用。
  - 服务端在处理请求完成后，应调用writeNoException()写入未发生异常的信息。
@@ -3219,17 +3434,12 @@ writeNoException(): void
  - 如果服务端未调用writeNoException()，客户端调用[readException](#readexception9)会读取失败。
 
 
-**使用场景：**
-
- - 在IPC/RPC通信的服务端实现中使用。
- - 通常在onRemoteMessageRequest回调中调用。
-
-
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3269,29 +3479,21 @@ class TestRemoteObject extends rpc.RemoteObject {
 
 
 
-#### readException9+
+### readException9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readException(): void
 
 从MessageSequence中读取异常。适用于接收远端服务响应后检查异常状态的场景。
-1. 在每次IPC/RPC调用后优先调用此方法。
-2. 如有异常立即处理并终止后续数据读取。
-3. 异常处理后建议调用reclaim()释放MessageSequence对象。
-
-**配对调用：**
-
- - 此方法与[writeNoException()](#writenoexception9)方法配对使用。
- - 必须在服务端调用[writeNoException()](#writenoexception9)之后才能调用。
- - 调用顺序：服务端处理请求 → [writeNoException()](#writenoexception9) → 客户端收到响应 → [readException](#readexception9) - 如果服务端未调用[writeNoException()](#writenoexception9)，调用此方法会失败。
-
-
-**使用场景：**
 
  - 在IPC/RPC通信的客户端使用。
  - 在调用sendMessageRequest收到响应后调用。
- - 用于检查服务端是否发生异常。
+ - 在每次IPC/RPC调用后优先调用此方法。
+ - 如有异常立即处理并终止后续数据读取，异常处理后建议调用reclaim()释放MessageSequence对象。
+ - 此方法与[writeNoException](#writenoexception9)方法配对使用。
+ - 调用顺序：服务端处理请求 → [writeNoException](#writenoexception9) → 客户端收到响应 → [readException](#readexception9) - 如果服务端未调用[writeNoException](#writenoexception9)，调用此方法会失败。
 
 
 **系统能力：** SystemCapability.Communication.IPC.Core
@@ -3299,6 +3501,7 @@ readException(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3372,7 +3575,7 @@ try {
         }
       }).catch((e: Error) => {
         hilog.error(0x0000, 'testTag', 'sendMessageRequest got exception: ' + JSON.stringify(e));
-      }).finally (() => {
+      }).finally(() => {
         hilog.info(0x0000, 'testTag', 'sendMessageRequest ends, reclaim parcel');
         data.reclaim();
         reply.reclaim();
@@ -3387,17 +3590,23 @@ try {
 
 
 
-#### writeParcelableArray9+
+### writeParcelableArray9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeParcelableArray(parcelableArray: Parcelable[]): void
 
-将可序列化对象数组写入MessageSequence实例。
+将可序列化对象数组写入MessageSequence实例。适用于批量传输多个自定义数据结构对象的场景，如传输多条业务记录、批量配置信息、多个实体对象等。
+
+ - 必须与[readParcelableArray](#readparcelablearray9)配对使用。
+ - 读取数组长度必须与写入数组长度一致。
+
 
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3407,6 +3616,7 @@ writeParcelableArray(parcelableArray: Parcelable[]): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3456,17 +3666,19 @@ try {
 
 
 
-#### readParcelableArray9+
+### readParcelableArray9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readParcelableArray(parcelableArray: Parcelable[]): void
 
-从MessageSequence实例中读取可序列化对象数组。
+从MessageSequence实例中读取可序列化对象数组。适用于接收批量传输的多个自定义数据结构对象的场景，如读取多条业务记录、批量配置信息、多个实体对象等。
 
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3476,6 +3688,7 @@ readParcelableArray(parcelableArray: Parcelable[]): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3528,17 +3741,23 @@ try {
 
 
 
-#### writeRemoteObjectArray9+
+### writeRemoteObjectArray9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeRemoteObjectArray(objectArray: IRemoteObject[]): void
 
-将IRemoteObject对象数组写入MessageSequence。
+将IRemoteObject对象数组写入MessageSequence。适用于需要传递多个远程对象的场景，如批量注册多个服务代理、传递多个回调接口、多服务端点管理等。
+
+ - 必须与[readRemoteObjectArray](#readremoteobjectarray9)配对使用。
+ - 读取数组长度必须与写入数组长度一致。
+
 
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3548,6 +3767,7 @@ writeRemoteObjectArray(objectArray: IRemoteObject[]): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3586,26 +3806,33 @@ try {
 
 
 
-#### readRemoteObjectArray9+
+### readRemoteObjectArray9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readRemoteObjectArray(objects: IRemoteObject[]): void
 
-从MessageSequence读取IRemoteObject对象数组，并将其写入到创建的空数组中。
+从MessageSequence读取IRemoteObject对象数组，并将其写入到创建的空数组中。适用于接收批量传递的多个远程对象的场景，如批量获取服务代理、接收多个回调接口、多服务端点管理等。
+
+ - 需预先创建空数组且长度应与写入时的数组长度一致。
+ - 读取失败时会抛出异常，建议使用try-catch捕获。
+
 
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| objects | IRemoteObject[] | 是 | 从MessageSequence读取的IRemoteObject对象数组。 |
+| objects | IRemoteObject[] | 是 | 从MessageSequence读取的IRemoteObject对象数组，用于IPC/RPC通信，存储多个远程对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3647,9 +3874,10 @@ try {
 
 
 
-#### readRemoteObjectArray9+
+### readRemoteObjectArray9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readRemoteObjectArray(): IRemoteObject[]
 
@@ -3659,14 +3887,16 @@ readRemoteObjectArray(): IRemoteObject[]
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| IRemoteObject[] | 返回IRemoteObject对象数组；当写入的是空数组时，返回的是null。 |
+| IRemoteObject[] | 返回IRemoteObject对象数组；当写入的是空数组时，返回的是nullptr。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3705,23 +3935,16 @@ try {
 
 
 
-#### closeFileDescriptor9+
+### closeFileDescriptor9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static closeFileDescriptor(fd: number): void
 
 静态方法，关闭给定的文件描述符。
 
-**使用场景**
-
- - 文件使用完毕后及时关闭。
- - 在文件传输完成后关闭。
- - 避免资源泄漏。
-
-
-**约束和限制**
-
+ - 文件使用完毕后及时关闭，避免资源泄漏。
  - 关闭前确保文件操作已完成。
  - 不要关闭已关闭的文件描述符。
  - 关闭后不能再读写文件。
@@ -3731,6 +3954,7 @@ static closeFileDescriptor(fd: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fd | number | 是 | 要关闭的文件描述符。 |
@@ -3739,6 +3963,7 @@ static closeFileDescriptor(fd: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3766,23 +3991,18 @@ try {
 
 
 
-#### dupFileDescriptor9+
+### dupFileDescriptor9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static dupFileDescriptor(fd: number): number
 
 静态方法，复制给定的文件描述符。
 
-**使用场景**
-
  - IPC传输前复制，避免原描述符被关闭。
  - 多进程共享同一文件。
  - 需要独立管理文件偏移量。
-
-
-**约束和限制**
-
  - 复制后两个描述符需要分别关闭。
  - 不要复制无效的文件描述符。
  - 复制后独立管理生命周期。
@@ -3792,12 +4012,14 @@ static dupFileDescriptor(fd: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fd | number | 是 | 表示已存在的文件描述符。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3807,6 +4029,7 @@ static dupFileDescriptor(fd: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3835,17 +4058,19 @@ try {
 
 
 
-#### containFileDescriptors9+
+### containFileDescriptors9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 containFileDescriptors(): boolean
 
-检查此MessageSequence对象是否包含文件描述符。
+检查此MessageSequence对象是否包含文件描述符。适用于文件传输场景中判断是否需要处理文件描述符，或在接收数据前检查数据类型以决定处理方式的场景。
 
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3875,24 +4100,19 @@ try {
 
 
 
-#### writeFileDescriptor9+
+### writeFileDescriptor9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeFileDescriptor(fd: number): void
 
 写入文件描述符到MessageSequence。 调用此方法后，文件描述符会被封装并通过Binder机制跨进程传递。接收端可通过readFileDescriptor获取文件描述符并进行文件操作。
 
-文件描述符传递机制:
-
  - 文件描述符通过Binder的FD传递机制跨进程传输。
  - 接收端获得的是映射后的新文件描述符。
  - 实际指向同一个文件资源。
  - 支持普通文件、管道、socket等多种描述符。
-
-
-**约束和限制**
-
  - 文件描述符必须是有效的、已打开的描述符。
  - 写入后原描述符仍然有效，需要业务自行管理。
  - 建议使用dupFileDescriptor复制后再传递。
@@ -3904,6 +4124,7 @@ writeFileDescriptor(fd: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fd | number | 是 | 文件描述符，通常通过文件操作接口（如fileIo.open）获取。 |
@@ -3912,6 +4133,7 @@ writeFileDescriptor(fd: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3941,23 +4163,17 @@ try {
 
 
 
-#### readFileDescriptor9+
+### readFileDescriptor9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readFileDescriptor(): number
 
 从MessageSequence中读取文件描述符。接收端读取到的是映射后的新文件描述符编号，与发送端写入的描述符编号不同，但指向同一个文件资源。读取后建议及时使用并关闭，防止资源泄漏。如需长期使用，可调用dupFileDescriptor复制描述符。
 
-**配对调用**
-
- - 必须与writeFileDescriptor配对使用。
- - 读取后需要及时使用或关闭。
+ - 必须与[writeFileDescriptor](#writefiledescriptor9)配对使用。
  - 不要依赖源端的fd编号。
-
-
-**约束和限制**
-
  - 读取后需要管理生命周期。
  - 建议及时使用避免资源浪费。
  - 使用完毕后及时关闭。
@@ -3967,6 +4183,7 @@ readFileDescriptor(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回文件描述符。 |
@@ -3975,6 +4192,7 @@ readFileDescriptor(): number
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4005,38 +4223,29 @@ try {
 
 
 
-#### writeAshmem9+
+### writeAshmem9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeAshmem(ashmem: Ashmem): void
 
 将指定的匿名共享对象写入此MessageSequence。
 
-**配对调用：**
-
+ - 创建Ashmem对象：Ashmem.create()。
+ - 映射内存并写入数据：[mapReadWriteAshmem](#mapreadwriteashmem9) + [writeDataToAshmem](#writedatatoashmem11)。
+ - 将Ashmem写入MessageSequence：writeAshmem()。
+ - 接收端读取Ashmem：[readAshmem](#readashmem9)。
+ - 接收端映射内存并读取数据：mapReadWriteAshmem() + readDataFromAshmem()。
  - 此方法与readAshmem()方法配对使用。
- - 调用顺序：writeAshmem() → 传输MessageSequence → readAshmem() → mapReadWriteAshmem() → readDataFromAshmem()。
+ - 调用顺序：writeAshmem() → 传输MessageSequence → [readAshmem](#readashmem9) → [mapReadWriteAshmem](#mapreadwriteashmem9) → [readDataFromAshmem](#readdatafromashmem11)。
  - 使用前需先创建Ashmem对象并写入数据。
-
-
-**使用流程：**
-1. 创建Ashmem对象:Ashmem.create()。
-2. 映射内存并写入数据:mapReadWriteAshmem() + writeDataToAshmem()。
-3. 将Ashmem写入MessageSequence:writeAshmem()。
-4. 接收端读取Ashmem:readAshmem()。
-5. 接收端映射内存并读取数据:mapReadWriteAshmem() + readDataFromAshmem()。
-
-**相关方法：**
-
- - readAshmem()：读取匿名共享对象。
- - Ashmem.create()：创建匿名共享对象。
- - mapReadWriteAshmem()：映射读写内存。
 
 
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4046,6 +4255,7 @@ writeAshmem(ashmem: Ashmem): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4085,23 +4295,20 @@ try {
 
 
 
-#### readAshmem9+
+### readAshmem9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readAshmem(): Ashmem
 
-从MessageSequence读取匿名共享对象。使用前需先调用mapReadWriteAshmem方法进行内存映射。
+从MessageSequence读取匿名共享对象。使用前需先调用[mapReadWriteAshmem](#mapreadwriteashmem9)方法进行内存映射。
 
-**使用流程：**
-1. readAshmem()获取对象。
-2. mapReadWriteAshmem()映射内存。
-3. readDataFromAshmem()读取数据。
-4. unmapAshmem()取消映射。
-5. closeAshmem()关闭对象。
-
-**约束和限制：**
-
+ - readAshmem()获取对象。
+ - [mapReadWriteAshmem](#mapreadwriteashmem9)映射内存。
+ - [readDataFromAshmem](#readdatafromashmem11)读取数据。
+ - unmapAshmem()取消映射。
+ - closeAshmem()关闭对象。
  - 必须先映射才能读取数据。
  - 数据读取后需要取消映射。
  - 及时关闭避免内存泄漏。
@@ -4111,14 +4318,16 @@ readAshmem(): Ashmem
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Ashmem | 返回匿名共享对象。读取数据前需先调用mapReadWriteAshmem方法进行内存映射。 |
+| Ashmem | 返回匿名共享对象，用于跨进程共享内存数据。读取数据前需先调用mapReadWriteAshmem方法进行内存映射。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4167,17 +4376,19 @@ try {
 
 
 
-#### getRawDataCapacity9+
+### getRawDataCapacity9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRawDataCapacity(): number
 
-获取MessageSequence可以容纳的最大原始数据量。
+获取MessageSequence可以容纳的最大原始数据量。适用于大数据传输前检查容量是否满足需求，或在处理大批量数据时预先判断数据大小的场景。
 
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4204,9 +4415,10 @@ try {
 
 
 
-#### writeRawData(deprecated)
+### writeRawData(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeRawData(rawData: number[], size: number): void
 
@@ -4220,6 +4432,7 @@ writeRawData(rawData: number[], size: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rawData | number[] | 是 | 要写入的原始数据，大小不能超过128MB。 |
@@ -4229,6 +4442,7 @@ writeRawData(rawData: number[], size: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4256,9 +4470,10 @@ try {
 
 
 
-#### writeRawDataBuffer11+
+### writeRawDataBuffer11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeRawDataBuffer(rawData: ArrayBuffer, size: number): void
 
@@ -4272,6 +4487,7 @@ writeRawDataBuffer(rawData: ArrayBuffer, size: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rawData | ArrayBuffer | 是 | 要写入的原始数据，大小不能超过128MB。 |
@@ -4281,6 +4497,7 @@ writeRawDataBuffer(rawData: ArrayBuffer, size: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4313,9 +4530,10 @@ try {
 
 
 
-#### readRawData(deprecated)
+### readRawData(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readRawData(size: number): number[]
 
@@ -4329,12 +4547,14 @@ readRawData(size: number): number[]
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | size | number | 是 | 要读取的原始数据的大小，以字节为单位。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4344,6 +4564,7 @@ readRawData(size: number): number[]
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4374,17 +4595,25 @@ try {
 
 
 
-#### readRawDataBuffer11+
+### readRawDataBuffer11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readRawDataBuffer(size: number): ArrayBuffer
 
 从MessageSequence读取原始数据。
 
+ - 需与写入时的数据大小匹配。
+ - 该接口是一次性接口，不允许在一次parcel通信中多次调用。
+ - 大数据量传输时注意系统资源占用。
+ - 必须与[writeRawDataBuffer](#writerawdatabuffer11)配对使用。
+
+
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4392,6 +4621,7 @@ readRawDataBuffer(size: number): ArrayBuffer
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4401,6 +4631,7 @@ readRawDataBuffer(size: number): ArrayBuffer
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4436,47 +4667,38 @@ try {
 
 
 
-#### writeArrayBuffer12+
+### writeArrayBuffer12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeArrayBuffer(buf: ArrayBuffer, typeCode: TypeCode): void
 
 将ArrayBuffer类型数据写入MessageSequence对象。
 
-**配对调用：**
-
- - 此方法与readArrayBuffer()方法配对使用。
+ - 此方法与[readArrayBuffer](#readarraybuffer12)方法配对使用。
  - 写入的typeCode必须与读取的typeCode一致，否则会导致数据异常。
- - 调用顺序：先调用writeArrayBuffer()写入数据 → 再调用readArrayBuffer()读取数据。
-
-
-**制约关系：**
-
+ - 调用顺序：先调用writeArrayBuffer()写入数据 → 再调用[readArrayBuffer](#readarraybuffer12)读取数据。
  - typeCode参数决定了数据的写入和读取方式。
  - 读写typeCode不匹配会导致数据解析错误。
- - 必须根据实际数据类型选择正确的TypeCode枚举值。
-
-
-**相关方法：**
-
- - readArrayBuffer()：读取ArrayBuffer数据。
- - TypeCode：TypedArray类型枚举。
+ - 必须根据实际数据类型选择正确的[TypeCode](#typecode12)枚举值。
 
 
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | buf | ArrayBuffer | 是 | 要写入的ArrayBuffer数据，数据将根据typeCode指定的TypedArray类型进行格式化写入。 |
-| typeCode | TypeCode | 是 | ArrayBuffer数据具体是以哪一种TypedArray来访问和操作(会根据业务传递的类型枚举值去决定底层的写入方式，需要业务正确传递枚举值。) |
+| typeCode | TypeCode | 是 | ArrayBuffer数据具体是以哪一种TypedArray来访问和操作（会根据业务传递的类型枚举值去决定底层的写入方式，需要业务正确传递枚举值。） |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4509,47 +4731,42 @@ try {
 
 
 
-#### readArrayBuffer12+
+### readArrayBuffer12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readArrayBuffer(typeCode: TypeCode): ArrayBuffer
 
 从MessageSequence读取ArrayBuffer类型数据。
 
-**配对调用：**
-
- - 必须与writeArrayBuffer配对使用。
- - 读取typeCode必须与写入typeCode一致。
- - 顺序必须匹配。
-
-
-**约束和限制：**
-
- - typeCode必须正确匹配。
- - 不匹配会导致数据异常或错误。
- - 建议根据业务类型选择合适的TypeCode。
+ - 必须与[writeArrayBuffer](#writearraybuffer12)配对使用。
+ - 读取typeCode必须与写入typeCode一致，顺序必须匹配。
+ - typeCode必须正确匹配，不匹配会导致数据异常或错误，建议根据业务类型选择合适的[TypeCode](#typecode12)。
 
 
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| typeCode | TypeCode | 是 | ArrayBuffer数据具体是以哪一种TypedArray来访问和操作(会根据业务传递的类型枚举值去决定底层的读取方式，需要业务正确传递枚举值，读写枚举值不匹配会导致数据异常。) |
+| typeCode | TypeCode | 是 | ArrayBuffer数据具体是以哪一种TypedArray来访问和操作（会根据业务传递的类型枚举值去决定底层的读取方式，需要业务正确传递枚举值，读写枚举值不匹配会导致数据异常。） |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| ArrayBuffer | 返回ArrayBuffer类型数据（以字节为单位）。 |
+| ArrayBuffer | 返回ArrayBuffer类型数据，用于存储从MessageSequence读取的二进制数据，可通过TypedArray进行访问和操作。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4585,9 +4802,10 @@ try {
 
 
 
-#### MessageParcel(deprecated)
+## MessageParcel(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 在RPC过程中，发送方可以使用MessageParcel提供的写方法，将待发送的数据以特定格式写入该对象。接收方可以使用MessageParcel提供的读方法从该对象中读取特定格式的数据。数据格式包括：基础类型及数组、IPC对象、接口描述符和自定义序列化对象。
 
@@ -4599,9 +4817,10 @@ try {
 
 
 
-#### create(deprecated)
+### create(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static create(): MessageParcel
 
@@ -4615,9 +4834,10 @@ static create(): MessageParcel
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| MessageParcel | 返回创建的MessageParcel对象。 |
+| MessageParcel | 返回创建的MessageParcel对象，用于在IPC过程中封装请求和响应数据。 |
 
 
 **示例：**
@@ -4639,9 +4859,10 @@ try {
 
 
 
-#### reclaim(deprecated)
+### reclaim(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reclaim(): void
 
@@ -4669,9 +4890,10 @@ try {
 
 
 
-#### writeRemoteObject(deprecated)
+### writeRemoteObject(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeRemoteObject(object: IRemoteObject): boolean
 
@@ -4685,12 +4907,14 @@ writeRemoteObject(object: IRemoteObject): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | object | IRemoteObject | 是 | 要序列化并写入MessageParcel的远程对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4724,9 +4948,10 @@ try {
 
 
 
-#### readRemoteObject(deprecated)
+### readRemoteObject(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readRemoteObject(): IRemoteObject
 
@@ -4740,9 +4965,10 @@ readRemoteObject(): IRemoteObject
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| IRemoteObject | 读取到的远程对象。 |
+| IRemoteObject | 读取到的远程对象，用于IPC/RPC通信。 |
 
 
 **示例：**
@@ -4775,9 +5001,10 @@ try {
 
 
 
-#### writeInterfaceToken(deprecated)
+### writeInterfaceToken(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeInterfaceToken(token: string): boolean
 
@@ -4791,12 +5018,14 @@ writeInterfaceToken(token: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | token | string | 是 | 字符串类型描述符，其长度应小于40960。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4820,9 +5049,10 @@ try {
 
 
 
-#### readInterfaceToken(deprecated)
+### readInterfaceToken(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readInterfaceToken(): string
 
@@ -4835,6 +5065,7 @@ readInterfaceToken(): string
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4859,9 +5090,10 @@ try {
 
 
 
-#### getSize(deprecated)
+### getSize(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSize(): number
 
@@ -4874,6 +5106,7 @@ getSize(): number
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4898,9 +5131,10 @@ try {
 
 
 
-#### getCapacity(deprecated)
+### getCapacity(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCapacity(): number
 
@@ -4913,6 +5147,7 @@ getCapacity(): number
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4936,9 +5171,10 @@ try {
 
 
 
-#### setSize(deprecated)
+### setSize(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setSize(size: number): boolean
 
@@ -4952,12 +5188,14 @@ setSize(size: number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | size | number | 是 | MessageParcel实例的数据大小。以字节为单位。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4981,9 +5219,10 @@ try {
 
 
 
-#### setCapacity(deprecated)
+### setCapacity(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCapacity(size: number): boolean
 
@@ -4997,12 +5236,14 @@ setCapacity(size: number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | size | number | 是 | MessageParcel实例的存储容量。以字节为单位。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5026,9 +5267,10 @@ try {
 
 
 
-#### getWritableBytes(deprecated)
+### getWritableBytes(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getWritableBytes(): number
 
@@ -5041,6 +5283,7 @@ getWritableBytes(): number
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5065,9 +5308,10 @@ try {
 
 
 
-#### getReadableBytes(deprecated)
+### getReadableBytes(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getReadableBytes(): number
 
@@ -5080,6 +5324,7 @@ getReadableBytes(): number
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5104,9 +5349,10 @@ try {
 
 
 
-#### getReadPosition(deprecated)
+### getReadPosition(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getReadPosition(): number
 
@@ -5119,6 +5365,7 @@ getReadPosition(): number
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5142,9 +5389,10 @@ try {
 
 
 
-#### getWritePosition(deprecated)
+### getWritePosition(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getWritePosition(): number
 
@@ -5157,6 +5405,7 @@ getWritePosition(): number
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5181,9 +5430,10 @@ try {
 
 
 
-#### rewindRead(deprecated)
+### rewindRead(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 rewindRead(pos: number): boolean
 
@@ -5197,12 +5447,14 @@ rewindRead(pos: number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pos | number | 是 | 开始读取数据的目标位置。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5231,9 +5483,10 @@ try {
 
 
 
-#### rewindWrite(deprecated)
+### rewindWrite(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 rewindWrite(pos: number): boolean
 
@@ -5247,12 +5500,14 @@ rewindWrite(pos: number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pos | number | 是 | 开始写入数据的目标位置。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5279,9 +5534,10 @@ try {
 
 
 
-#### writeByte(deprecated)
+### writeByte(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeByte(val: number): boolean
 
@@ -5295,12 +5551,14 @@ writeByte(val: number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | val | number | 是 | 要写入的字节值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5324,9 +5582,10 @@ try {
 
 
 
-#### readByte(deprecated)
+### readByte(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readByte(): number
 
@@ -5339,6 +5598,7 @@ readByte(): number
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5364,9 +5624,10 @@ try {
 
 
 
-#### writeShort(deprecated)
+### writeShort(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeShort(val: number): boolean
 
@@ -5380,12 +5641,14 @@ writeShort(val: number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | val | number | 是 | 要写入的短整数值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5409,9 +5672,10 @@ try {
 
 
 
-#### readShort(deprecated)
+### readShort(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readShort(): number
 
@@ -5424,6 +5688,7 @@ readShort(): number
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5449,9 +5714,10 @@ try {
 
 
 
-#### writeInt(deprecated)
+### writeInt(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeInt(val: number): boolean
 
@@ -5465,12 +5731,14 @@ writeInt(val: number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | val | number | 是 | 要写入的整数值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5494,9 +5762,10 @@ try {
 
 
 
-#### readInt(deprecated)
+### readInt(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readInt(): number
 
@@ -5509,6 +5778,7 @@ readInt(): number
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5534,9 +5804,10 @@ try {
 
 
 
-#### writeLong(deprecated)
+### writeLong(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeLong(val: number): boolean
 
@@ -5550,12 +5821,14 @@ writeLong(val: number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | val | number | 是 | 要写入的长整数值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5579,9 +5852,10 @@ try {
 
 
 
-#### readLong(deprecated)
+### readLong(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readLong(): number
 
@@ -5594,6 +5868,7 @@ readLong(): number
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5619,9 +5894,10 @@ try {
 
 
 
-#### writeFloat(deprecated)
+### writeFloat(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeFloat(val: number): boolean
 
@@ -5635,12 +5911,14 @@ writeFloat(val: number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | val | number | 是 | 要写入的双精度浮点值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5664,9 +5942,10 @@ try {
 
 
 
-#### readFloat(deprecated)
+### readFloat(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readFloat(): number
 
@@ -5679,6 +5958,7 @@ readFloat(): number
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5704,9 +5984,10 @@ try {
 
 
 
-#### writeDouble(deprecated)
+### writeDouble(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeDouble(val: number): boolean
 
@@ -5720,12 +6001,14 @@ writeDouble(val: number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | val | number | 是 | 要写入的双精度浮点值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5749,9 +6032,10 @@ try {
 
 
 
-#### readDouble(deprecated)
+### readDouble(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readDouble(): number
 
@@ -5764,6 +6048,7 @@ readDouble(): number
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5789,9 +6074,10 @@ try {
 
 
 
-#### writeBoolean(deprecated)
+### writeBoolean(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeBoolean(val: boolean): boolean
 
@@ -5805,12 +6091,14 @@ writeBoolean(val: boolean): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | val | boolean | 是 | 要写入的布尔值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5834,9 +6122,10 @@ try {
 
 
 
-#### readBoolean(deprecated)
+### readBoolean(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readBoolean(): boolean
 
@@ -5849,6 +6138,7 @@ readBoolean(): boolean
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5874,9 +6164,10 @@ try {
 
 
 
-#### writeChar(deprecated)
+### writeChar(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeChar(val: number): boolean
 
@@ -5890,12 +6181,14 @@ writeChar(val: number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | val | number | 是 | 要写入的单个字符值。取值范围：[0, 65535]，对应Unicode字符编码范围。超出此范围可能导致字符编码异常。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5919,9 +6212,10 @@ try {
 
 
 
-#### readChar(deprecated)
+### readChar(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readChar(): number
 
@@ -5934,6 +6228,7 @@ readChar(): number
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5959,9 +6254,10 @@ try {
 
 
 
-#### writeString(deprecated)
+### writeString(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeString(val: string): boolean
 
@@ -5975,12 +6271,14 @@ writeString(val: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | val | string | 是 | 要写入的字符串值，其长度应小于40960。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6004,9 +6302,10 @@ try {
 
 
 
-#### readString(deprecated)
+### readString(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readString(): string
 
@@ -6019,6 +6318,7 @@ readString(): string
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6044,9 +6344,10 @@ try {
 
 
 
-#### writeSequenceable(deprecated)
+### writeSequenceable(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeSequenceable(val: Sequenceable): boolean
 
@@ -6060,12 +6361,14 @@ writeSequenceable(val: Sequenceable): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | val | Sequenceable | 是 | 要写入的可序列对象。建议实现marshalling和unmarshalling方法时确保数据完整性，序列化与反序列化的数据结构应保持一致。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6109,9 +6412,10 @@ try {
 
 
 
-#### readSequenceable(deprecated)
+### readSequenceable(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readSequenceable(dataIn: Sequenceable): boolean
 
@@ -6125,12 +6429,14 @@ readSequenceable(dataIn: Sequenceable): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dataIn | Sequenceable | 是 | 需要从MessageParcel读取成员变量的对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6177,9 +6483,10 @@ try {
 
 
 
-#### writeByteArray(deprecated)
+### writeByteArray(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeByteArray(byteArray: number[]): boolean
 
@@ -6193,12 +6500,14 @@ writeByteArray(byteArray: number[]): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | byteArray | number[] | 是 | 要写入的字节数组。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6223,9 +6532,10 @@ try {
 
 
 
-#### readByteArray(deprecated)
+### readByteArray(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readByteArray(dataIn: number[]): void
 
@@ -6238,6 +6548,7 @@ readByteArray(dataIn: number[]): void
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6264,9 +6575,10 @@ try {
 
 
 
-#### readByteArray(deprecated)
+### readByteArray(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readByteArray(): number[]
 
@@ -6279,6 +6591,7 @@ readByteArray(): number[]
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6305,9 +6618,10 @@ try {
 
 
 
-#### writeShortArray(deprecated)
+### writeShortArray(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeShortArray(shortArray: number[]): boolean
 
@@ -6321,12 +6635,14 @@ writeShortArray(shortArray: number[]): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | shortArray | number[] | 是 | 要写入的短整数数组。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6350,9 +6666,10 @@ try {
 
 
 
-#### readShortArray(deprecated)
+### readShortArray(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readShortArray(dataIn: number[]): void
 
@@ -6365,6 +6682,7 @@ readShortArray(dataIn: number[]): void
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6391,9 +6709,10 @@ try {
 
 
 
-#### readShortArray(deprecated)
+### readShortArray(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readShortArray(): number[]
 
@@ -6406,6 +6725,7 @@ readShortArray(): number[]
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6431,9 +6751,10 @@ try {
 
 
 
-#### writeIntArray(deprecated)
+### writeIntArray(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeIntArray(intArray: number[]): boolean
 
@@ -6447,12 +6768,14 @@ writeIntArray(intArray: number[]): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | intArray | number[] | 是 | 要写入的整数数组。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6476,9 +6799,10 @@ try {
 
 
 
-#### readIntArray(deprecated)
+### readIntArray(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readIntArray(dataIn: number[]): void
 
@@ -6491,6 +6815,7 @@ readIntArray(dataIn: number[]): void
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6517,9 +6842,10 @@ try {
 
 
 
-#### readIntArray(deprecated)
+### readIntArray(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readIntArray(): number[]
 
@@ -6532,6 +6858,7 @@ readIntArray(): number[]
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6557,9 +6884,10 @@ try {
 
 
 
-#### writeLongArray(deprecated)
+### writeLongArray(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeLongArray(longArray: number[]): boolean
 
@@ -6573,12 +6901,14 @@ writeLongArray(longArray: number[]): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | longArray | number[] | 是 | 要写入的长整数数组。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6602,9 +6932,10 @@ try {
 
 
 
-#### readLongArray(deprecated)
+### readLongArray(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readLongArray(dataIn: number[]): void
 
@@ -6617,6 +6948,7 @@ readLongArray(dataIn: number[]): void
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6643,9 +6975,10 @@ try {
 
 
 
-#### readLongArray(deprecated)
+### readLongArray(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readLongArray(): number[]
 
@@ -6658,6 +6991,7 @@ readLongArray(): number[]
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6683,9 +7017,10 @@ try {
 
 
 
-#### writeFloatArray(deprecated)
+### writeFloatArray(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeFloatArray(floatArray: number[]): boolean
 
@@ -6699,12 +7034,14 @@ writeFloatArray(floatArray: number[]): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | floatArray | number[] | 是 | 要写入的双精度浮点数组。由于系统内部对float类型的数据是按照double处理的，使用时对于数组所占的总字节数应按照double类型来计算。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6728,9 +7065,10 @@ try {
 
 
 
-#### readFloatArray(deprecated)
+### readFloatArray(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readFloatArray(dataIn: number[]): void
 
@@ -6743,6 +7081,7 @@ readFloatArray(dataIn: number[]): void
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6769,9 +7108,10 @@ try {
 
 
 
-#### readFloatArray(deprecated)
+### readFloatArray(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readFloatArray(): number[]
 
@@ -6784,6 +7124,7 @@ readFloatArray(): number[]
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6809,9 +7150,10 @@ try {
 
 
 
-#### writeDoubleArray(deprecated)
+### writeDoubleArray(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeDoubleArray(doubleArray: number[]): boolean
 
@@ -6825,12 +7167,14 @@ writeDoubleArray(doubleArray: number[]): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | doubleArray | number[] | 是 | 要写入的双精度浮点数组。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6854,9 +7198,10 @@ try {
 
 
 
-#### readDoubleArray(deprecated)
+### readDoubleArray(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readDoubleArray(dataIn: number[]): void
 
@@ -6869,6 +7214,7 @@ readDoubleArray(dataIn: number[]): void
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6895,9 +7241,10 @@ try {
 
 
 
-#### readDoubleArray(deprecated)
+### readDoubleArray(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readDoubleArray(): number[]
 
@@ -6910,6 +7257,7 @@ readDoubleArray(): number[]
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6935,9 +7283,10 @@ try {
 
 
 
-#### writeBooleanArray(deprecated)
+### writeBooleanArray(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeBooleanArray(booleanArray: boolean[]): boolean
 
@@ -6951,12 +7300,14 @@ writeBooleanArray(booleanArray: boolean[]): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | booleanArray | boolean[] | 是 | 要写入的布尔数组。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6980,9 +7331,10 @@ try {
 
 
 
-#### readBooleanArray(deprecated)
+### readBooleanArray(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readBooleanArray(dataIn: boolean[]): void
 
@@ -6995,6 +7347,7 @@ readBooleanArray(dataIn: boolean[]): void
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -7021,9 +7374,10 @@ try {
 
 
 
-#### readBooleanArray(deprecated)
+### readBooleanArray(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readBooleanArray(): boolean[]
 
@@ -7036,6 +7390,7 @@ readBooleanArray(): boolean[]
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7061,9 +7416,10 @@ try {
 
 
 
-#### writeCharArray(deprecated)
+### writeCharArray(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeCharArray(charArray: number[]): boolean
 
@@ -7077,12 +7433,14 @@ writeCharArray(charArray: number[]): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | charArray | number[] | 是 | 要写入的单个字符数组。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7106,9 +7464,10 @@ try {
 
 
 
-#### readCharArray(deprecated)
+### readCharArray(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readCharArray(dataIn: number[]): void
 
@@ -7121,6 +7480,7 @@ readCharArray(dataIn: number[]): void
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -7147,9 +7507,10 @@ try {
 
 
 
-#### readCharArray(deprecated)
+### readCharArray(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readCharArray(): number[]
 
@@ -7162,6 +7523,7 @@ readCharArray(): number[]
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7187,9 +7549,10 @@ try {
 
 
 
-#### writeStringArray(deprecated)
+### writeStringArray(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeStringArray(stringArray: string[]): boolean
 
@@ -7203,12 +7566,14 @@ writeStringArray(stringArray: string[]): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | stringArray | string[] | 是 | 要写入的字符串数组，数组单个元素的长度应小于40960。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7232,9 +7597,10 @@ try {
 
 
 
-#### readStringArray(deprecated)
+### readStringArray(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readStringArray(dataIn: string[]): void
 
@@ -7247,6 +7613,7 @@ readStringArray(dataIn: string[]): void
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -7273,9 +7640,10 @@ try {
 
 
 
-#### readStringArray(deprecated)
+### readStringArray(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readStringArray(): string[]
 
@@ -7288,6 +7656,7 @@ readStringArray(): string[]
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7313,9 +7682,10 @@ try {
 
 
 
-#### writeNoException(deprecated)
+### writeNoException(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeNoException(): void
 
@@ -7358,9 +7728,10 @@ onRemoteRequest(code: number, data: rpc.MessageParcel, reply: rpc.MessageParcel,
 
 
 
-#### readException(deprecated)
+### readException(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readException(): void
 
@@ -7452,9 +7823,10 @@ try {
 
 
 
-#### writeSequenceableArray(deprecated)
+### writeSequenceableArray(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeSequenceableArray(sequenceableArray: Sequenceable[]): boolean
 
@@ -7468,12 +7840,14 @@ writeSequenceableArray(sequenceableArray: Sequenceable[]): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sequenceableArray | Sequenceable[] | 是 | 要写入的可序列化对象数组。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7520,9 +7894,10 @@ try {
 
 
 
-#### readSequenceableArray(deprecated)
+### readSequenceableArray(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readSequenceableArray(sequenceableArray: Sequenceable[]): void
 
@@ -7535,6 +7910,7 @@ readSequenceableArray(sequenceableArray: Sequenceable[]): void
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -7583,9 +7959,10 @@ try {
 
 
 
-#### writeRemoteObjectArray(deprecated)
+### writeRemoteObjectArray(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeRemoteObjectArray(objectArray: IRemoteObject[]): boolean
 
@@ -7599,12 +7976,14 @@ writeRemoteObjectArray(objectArray: IRemoteObject[]): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | objectArray | IRemoteObject[] | 是 | 要写入MessageParcel的IRemoteObject对象数组。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7640,9 +8019,10 @@ try {
 
 
 
-#### readRemoteObjectArray(deprecated)
+### readRemoteObjectArray(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readRemoteObjectArray(objects: IRemoteObject[]): void
 
@@ -7655,6 +8035,7 @@ readRemoteObjectArray(objects: IRemoteObject[]): void
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -7693,9 +8074,10 @@ try {
 
 
 
-#### readRemoteObjectArray(deprecated)
+### readRemoteObjectArray(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readRemoteObjectArray(): IRemoteObject[]
 
@@ -7708,6 +8090,7 @@ readRemoteObjectArray(): IRemoteObject[]
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7746,9 +8129,10 @@ try {
 
 
 
-#### closeFileDescriptor(deprecated)
+### closeFileDescriptor(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static closeFileDescriptor(fd: number): void
 
@@ -7761,6 +8145,7 @@ static closeFileDescriptor(fd: number): void
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -7785,9 +8170,10 @@ try {
 
 
 
-#### dupFileDescriptor(deprecated)
+### dupFileDescriptor(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static dupFileDescriptor(fd: number) :number
 
@@ -7801,12 +8187,14 @@ static dupFileDescriptor(fd: number) :number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fd | number | 是 | 表示已存在的文件描述符。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7831,9 +8219,10 @@ try {
 
 
 
-#### containFileDescriptors(deprecated)
+### containFileDescriptors(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 containFileDescriptors(): boolean
 
@@ -7846,6 +8235,7 @@ containFileDescriptors(): boolean
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7874,9 +8264,10 @@ try {
 
 
 
-#### writeFileDescriptor(deprecated)
+### writeFileDescriptor(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeFileDescriptor(fd: number): boolean
 
@@ -7890,12 +8281,14 @@ writeFileDescriptor(fd: number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fd | number | 是 | 文件描述符。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7922,9 +8315,10 @@ try {
 
 
 
-#### readFileDescriptor(deprecated)
+### readFileDescriptor(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readFileDescriptor(): number
 
@@ -7937,6 +8331,7 @@ readFileDescriptor(): number
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7964,9 +8359,10 @@ try {
 
 
 
-#### writeAshmem(deprecated)
+### writeAshmem(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeAshmem(ashmem: Ashmem): boolean
 
@@ -7980,12 +8376,14 @@ writeAshmem(ashmem: Ashmem): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ashmem | Ashmem | 是 | 要写入MessageParcel的匿名共享对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8010,9 +8408,10 @@ try {
 
 
 
-#### readAshmem(deprecated)
+### readAshmem(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readAshmem(): Ashmem
 
@@ -8025,6 +8424,7 @@ readAshmem(): Ashmem
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8051,9 +8451,10 @@ try {
 
 
 
-#### getRawDataCapacity(deprecated)
+### getRawDataCapacity(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRawDataCapacity(): number
 
@@ -8066,6 +8467,7 @@ getRawDataCapacity(): number
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8089,9 +8491,10 @@ try {
 
 
 
-#### writeRawData(deprecated)
+### writeRawData(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeRawData(rawData: number[], size: number): boolean
 
@@ -8105,6 +8508,7 @@ writeRawData(rawData: number[], size: number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rawData | number[] | 是 | 要写入的原始数据，大小不能超过128MB。 |
@@ -8112,6 +8516,7 @@ writeRawData(rawData: number[], size: number): boolean
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8136,9 +8541,10 @@ try {
 
 
 
-#### readRawData(deprecated)
+### readRawData(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readRawData(size: number): number[]
 
@@ -8152,12 +8558,14 @@ readRawData(size: number): number[]
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | size | number | 是 | 要读取的原始数据的大小，以字节为单位。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8184,9 +8592,10 @@ try {
 
 
 
-#### Parcelable9+
+## Parcelable9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 在进程间通信（IPC）期间，将类的对象写入MessageSequence并从MessageSequence中恢复它们。
 
@@ -8194,9 +8603,10 @@ try {
 
 
 
-#### marshalling9+
+### marshalling9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 marshalling(dataOut: MessageSequence): boolean
 
@@ -8206,12 +8616,14 @@ marshalling(dataOut: MessageSequence): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dataOut | MessageSequence | 是 | 可序列对象将被封送到的MessageSequence对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8257,9 +8669,10 @@ try {
 
 
 
-#### unmarshalling9+
+### unmarshalling9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unmarshalling(dataIn: MessageSequence): boolean
 
@@ -8269,12 +8682,14 @@ unmarshalling(dataIn: MessageSequence): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dataIn | MessageSequence | 是 | 已将可序列对象封送到其中的MessageSequence对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8320,9 +8735,10 @@ try {
 
 
 
-#### Sequenceable(deprecated)
+## Sequenceable(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 在进程间通信（IPC）期间，将类的对象写入MessageParcel并从MessageParcel中恢复它们。
 
@@ -8334,9 +8750,10 @@ try {
 
 
 
-#### marshalling(deprecated)
+### marshalling(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 marshalling(dataOut: MessageParcel): boolean
 
@@ -8350,12 +8767,14 @@ marshalling(dataOut: MessageParcel): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dataOut | MessageParcel | 是 | 可序列对象将被封送到的MessageParcel对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8402,9 +8821,10 @@ try {
 
 
 
-#### unmarshalling(deprecated)
+### unmarshalling(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unmarshalling(dataIn: MessageParcel): boolean
 
@@ -8418,12 +8838,14 @@ unmarshalling(dataIn: MessageParcel): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dataIn | MessageParcel | 是 | 已将可序列对象封送到其中的MessageParcel对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8470,9 +8892,10 @@ try {
 
 
 
-#### IRemoteBroker
+## IRemoteBroker
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 远端对象的代理持有者。用于获取代理对象。
 
@@ -8480,9 +8903,10 @@ try {
 
 
 
-#### asObject
+### asObject
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 asObject(): IRemoteObject
 
@@ -8491,6 +8915,7 @@ asObject(): IRemoteObject
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8572,9 +8997,10 @@ if (proxy != undefined) {
 
 
 
-#### DeathRecipient
+## DeathRecipient
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于订阅远端对象的死亡通知。当被订阅该通知的远端对象死亡时，本端可收到消息，调用[onRemoteDied](#onremotedied)接口。远端对象死亡可以为远端对象所在进程死亡，远端对象所在设备关机或重启，当远端对象与本端对象属于不同设备时，也可为远端对象离开组网时。
 
@@ -8582,9 +9008,10 @@ if (proxy != undefined) {
 
 
 
-#### onRemoteDied
+### onRemoteDied
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onRemoteDied(): void
 
@@ -8607,13 +9034,15 @@ class MyDeathRecipient implements rpc.DeathRecipient {
 
 
 
-#### RequestResult9+
+## RequestResult9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 发送请求的响应结果。
 
 **系统能力：** SystemCapability.Communication.IPC.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -8625,9 +9054,10 @@ class MyDeathRecipient implements rpc.DeathRecipient {
 
 
 
-#### SendRequestResult(deprecated)
+## SendRequestResult(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 发送请求的响应结果。
 
@@ -8636,6 +9066,7 @@ class MyDeathRecipient implements rpc.DeathRecipient {
 
 
 **系统能力：** SystemCapability.Communication.IPC.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -8647,13 +9078,15 @@ class MyDeathRecipient implements rpc.DeathRecipient {
 
 
 
-#### CallingInfo23+
+## CallingInfo23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 IPC上下文信息，包括PID和UID、本端和对端设备ID、检查接口调用是否在同一设备上。
 
 **系统能力：** SystemCapability.Communication.IPC.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -8667,9 +9100,10 @@ IPC上下文信息，包括PID和UID、本端和对端设备ID、检查接口调
 
 
 
-#### IRemoteObject
+## IRemoteObject
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该接口可用于查询或获取接口描述符、添加或删除死亡通知、转储对象状态到特定文件、发送消息。
 
@@ -8677,9 +9111,10 @@ IPC上下文信息，包括PID和UID、本端和对端设备ID、检查接口调
 
 
 
-#### getLocalInterface9+
+### getLocalInterface9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLocalInterface(descriptor: string): IRemoteBroker
 
@@ -8689,12 +9124,14 @@ getLocalInterface(descriptor: string): IRemoteBroker
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | descriptor | string | 是 | 接口描述符的字符串，其长度应小于40960。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8705,6 +9142,7 @@ getLocalInterface(descriptor: string): IRemoteBroker
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match; 3.The string length is greater than or equal to 40960; 4.The number of bytes copied to the buffer is different from the length of the obtained string. |
@@ -8712,9 +9150,10 @@ getLocalInterface(descriptor: string): IRemoteBroker
 
 
 
-#### queryLocalInterface(deprecated)
+### queryLocalInterface(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 queryLocalInterface(descriptor: string): IRemoteBroker
 
@@ -8728,12 +9167,14 @@ queryLocalInterface(descriptor: string): IRemoteBroker
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | descriptor | string | 是 | 接口描述符的字符串。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8742,9 +9183,10 @@ queryLocalInterface(descriptor: string): IRemoteBroker
 
 
 
-#### sendRequest(deprecated)
+### sendRequest(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sendRequest(code: number, data: MessageParcel, reply: MessageParcel, options: MessageOption): boolean
 
@@ -8758,6 +9200,7 @@ sendRequest(code: number, data: MessageParcel, reply: MessageParcel, options: Me
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | code | number | 是 | 本次请求调用的消息码[1-16777215]，由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。 |
@@ -8768,6 +9211,7 @@ sendRequest(code: number, data: MessageParcel, reply: MessageParcel, options: Me
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | true：发送成功，false：发送失败。 |
@@ -8775,9 +9219,10 @@ sendRequest(code: number, data: MessageParcel, reply: MessageParcel, options: Me
 
 
 
-#### sendMessageRequest9+
+### sendMessageRequest9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, options: MessageOption): Promise&lt;RequestResult&gt;
 
@@ -8787,15 +9232,17 @@ sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | code | number | 是 | 本次请求调用的消息码[1-16777215]，由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。 |
-| data | MessageSequence | 是 | 保存待发送数据的MessageSequence对象。 |
-| reply | MessageSequence | 是 | 接收应答数据的MessageSequence对象。 |
+| data | MessageSequence | 是 | 保存待发送数据的MessageSequence对象，需先通过create()方法创建并写入数据后方可使用。 |
+| reply | MessageSequence | 是 | 接收应答数据的MessageSequence对象。异步模式下reply报文里没有内容，具体回复需在业务侧回调中获取；同步模式下回复内容在reply报文里。 |
 | options | MessageOption | 是 | 本次请求的同异步模式，默认同步调用。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -8806,6 +9253,7 @@ sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, 
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match; 3.Failed to obtain the passed object instance. |
@@ -8813,9 +9261,10 @@ sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, 
 
 
 
-#### sendRequest(deprecated)
+### sendRequest(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sendRequest(code: number, data: MessageParcel, reply: MessageParcel, options: MessageOption): Promise&lt;SendRequestResult&gt;
 
@@ -8829,6 +9278,7 @@ sendRequest(code: number, data: MessageParcel, reply: MessageParcel, options: Me
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | code | number | 是 | 本次请求调用的消息码[1-16777215]，由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。 |
@@ -8839,6 +9289,7 @@ sendRequest(code: number, data: MessageParcel, reply: MessageParcel, options: Me
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;SendRequestResult&gt; | Promise对象，返回发送请求的响应结果。 |
@@ -8846,17 +9297,19 @@ sendRequest(code: number, data: MessageParcel, reply: MessageParcel, options: Me
 
 
 
-#### sendMessageRequest9+
+### sendMessageRequest9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, options: MessageOption, callback: AsyncCallback&lt;RequestResult&gt;): void
 
-以同步或异步方式向对端进程发送MessageSequence消息。如果为选项设置了异步模式，则立即收到回调，reply报文里没有内容，具体回复需要在业务侧的回调中获取。如果为选项设置了同步模式，则将在sendRequest返回时收到回调，回复内容在reply报文里。
+以同步或异步方式向对端进程发送MessageSequence消息。如果为选项设置了异步模式，则立即收到回调，reply报文里没有内容，具体回复需要在业务侧的回调中获取。如果为选项设置了同步模式，则将在sendMessageRequest返回时收到回调，回复内容在reply报文里。
 
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -8871,6 +9324,7 @@ sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, 
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match; 3.Failed to obtain the passed object instance. |
@@ -8878,9 +9332,10 @@ sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, 
 
 
 
-#### sendRequest(deprecated)
+### sendRequest(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sendRequest(code: number, data: MessageParcel, reply: MessageParcel, options: MessageOption, callback: AsyncCallback&lt;SendRequestResult&gt;): void
 
@@ -8894,6 +9349,7 @@ sendRequest(code: number, data: MessageParcel, reply: MessageParcel, options: Me
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | code | number | 是 | 本次请求调用的消息码[1-16777215]，由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。 |
@@ -8905,9 +9361,10 @@ sendRequest(code: number, data: MessageParcel, reply: MessageParcel, options: Me
 
 
 
-#### registerDeathRecipient9+
+### registerDeathRecipient9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 registerDeathRecipient(recipient: DeathRecipient, flags: number): void
 
@@ -8916,6 +9373,7 @@ registerDeathRecipient(recipient: DeathRecipient, flags: number): void
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -8927,6 +9385,7 @@ registerDeathRecipient(recipient: DeathRecipient, flags: number): void
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match; 3.The callback used to receive remote object death notifications is empty. |
@@ -8936,9 +9395,10 @@ registerDeathRecipient(recipient: DeathRecipient, flags: number): void
 
 
 
-#### addDeathRecipient(deprecated)
+### addDeathRecipient(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addDeathRecipient(recipient: DeathRecipient, flags: number): boolean
 
@@ -8952,6 +9412,7 @@ addDeathRecipient(recipient: DeathRecipient, flags: number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | recipient | DeathRecipient | 是 | 要注册的回调。 |
@@ -8960,6 +9421,7 @@ addDeathRecipient(recipient: DeathRecipient, flags: number): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | true：回调注册成功，false：回调注册失败。 |
@@ -8967,9 +9429,10 @@ addDeathRecipient(recipient: DeathRecipient, flags: number): boolean
 
 
 
-#### unregisterDeathRecipient9+
+### unregisterDeathRecipient9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unregisterDeathRecipient(recipient: DeathRecipient, flags: number): void
 
@@ -8978,6 +9441,7 @@ unregisterDeathRecipient(recipient: DeathRecipient, flags: number): void
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -8989,6 +9453,7 @@ unregisterDeathRecipient(recipient: DeathRecipient, flags: number): void
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match; 3.The callback used to receive remote object death notifications is empty. |
@@ -8998,9 +9463,10 @@ unregisterDeathRecipient(recipient: DeathRecipient, flags: number): void
 
 
 
-#### removeDeathRecipient(deprecated)
+### removeDeathRecipient(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeDeathRecipient(recipient: DeathRecipient, flags: number): boolean
 
@@ -9014,6 +9480,7 @@ removeDeathRecipient(recipient: DeathRecipient, flags: number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | recipient | DeathRecipient | 是 | 要注销的回调。 |
@@ -9022,6 +9489,7 @@ removeDeathRecipient(recipient: DeathRecipient, flags: number): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | true：回调注销成功，false：回调注销失败。 |
@@ -9029,9 +9497,10 @@ removeDeathRecipient(recipient: DeathRecipient, flags: number): boolean
 
 
 
-#### getDescriptor9+
+### getDescriptor9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDescriptor(): string
 
@@ -9040,6 +9509,7 @@ getDescriptor(): string
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -9050,6 +9520,7 @@ getDescriptor(): string
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1900008 | The proxy or remote object is invalid. |
@@ -9057,9 +9528,10 @@ getDescriptor(): string
 
 
 
-#### getInterfaceDescriptor(deprecated)
+### getInterfaceDescriptor(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getInterfaceDescriptor(): string
 
@@ -9073,6 +9545,7 @@ getInterfaceDescriptor(): string
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 返回接口描述符。 |
@@ -9080,9 +9553,10 @@ getInterfaceDescriptor(): string
 
 
 
-#### isObjectDead
+### isObjectDead
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isObjectDead(): boolean
 
@@ -9092,6 +9566,7 @@ isObjectDead(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | true：对象死亡，false：对象未死亡。 |
@@ -9099,9 +9574,10 @@ isObjectDead(): boolean
 
 
 
-#### RemoteProxy
+## RemoteProxy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 实现IRemoteObject代理对象。
 
@@ -9109,11 +9585,13 @@ isObjectDead(): boolean
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Communication.IPC.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -9126,9 +9604,10 @@ isObjectDead(): boolean
 
 
 
-#### sendRequest(deprecated)
+### sendRequest(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sendRequest(code: number, data: MessageParcel, reply: MessageParcel, options: MessageOption): boolean
 
@@ -9142,6 +9621,7 @@ sendRequest(code: number, data: MessageParcel, reply: MessageParcel, options: Me
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | code | number | 是 | 本次请求调用的消息码[1-16777215]，由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。 |
@@ -9151,6 +9631,7 @@ sendRequest(code: number, data: MessageParcel, reply: MessageParcel, options: Me
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -9230,9 +9711,10 @@ try {
 
 
 
-#### sendMessageRequest9+
+### sendMessageRequest9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, options: MessageOption): Promise&lt;RequestResult&gt;
 
@@ -9241,6 +9723,7 @@ sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, 
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -9252,6 +9735,7 @@ sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;RequestResult&gt; | Promise对象，返回发送请求的响应结果。 |
@@ -9260,6 +9744,7 @@ sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, 
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9346,9 +9831,10 @@ try {
 
 
 
-#### sendRequest(deprecated)
+### sendRequest(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sendRequest(code: number, data: MessageParcel, reply: MessageParcel, options: MessageOption): Promise&lt;SendRequestResult&gt;
 
@@ -9362,6 +9848,7 @@ sendRequest(code: number, data: MessageParcel, reply: MessageParcel, options: Me
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | code | number | 是 | 本次请求调用的消息码[1-16777215]，由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。 |
@@ -9371,6 +9858,7 @@ sendRequest(code: number, data: MessageParcel, reply: MessageParcel, options: Me
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -9458,17 +9946,19 @@ try {
 
 
 
-#### sendMessageRequest9+
+### sendMessageRequest9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, options: MessageOption, callback: AsyncCallback&lt;RequestResult&gt;): void
 
-以同步或异步方式向对端进程发送MessageSequence消息。使用callback异步回调。如果为选项设置了异步模式，则立即收到回调，reply报文里没有内容，具体回复需要在业务侧的回调中获取。如果为选项设置了同步模式，则将在sendMessageRequest返回后的某个时机执行回调，回复内容在RequestResult的reply报文里。
+以同步或异步方式向对端进程发送MessageSequence消息。使用callback异步回调。如果为选项设置了异步模式，则立即收到回调，reply报文里没有内容，具体回复需要在业务侧的回调中获取。如果为选项设置了同步模式，将在[sendMessageRequest](#sendmessagerequest9)返回后、服务端处理请求完成时执行回调，回调中可读取[RequestResult](#requestresult9)获取服务端返回的数据。
 
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -9483,6 +9973,7 @@ sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, 
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match; 3.Failed to obtain the passed object instance. |
@@ -9490,9 +9981,10 @@ sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, 
 
 
 
-#### sendRequest(deprecated)
+### sendRequest(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sendRequest(code: number, data: MessageParcel, reply: MessageParcel, options: MessageOption, callback: AsyncCallback&lt;SendRequestResult&gt;): void
 
@@ -9506,6 +9998,7 @@ sendRequest(code: number, data: MessageParcel, reply: MessageParcel, options: Me
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | code | number | 是 | 本次请求调用的消息码[1-16777215]，由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。 |
@@ -9517,9 +10010,10 @@ sendRequest(code: number, data: MessageParcel, reply: MessageParcel, options: Me
 
 
 
-#### getLocalInterface9+
+### getLocalInterface9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLocalInterface(interfaceDes: string): IRemoteBroker
 
@@ -9529,12 +10023,14 @@ getLocalInterface(interfaceDes: string): IRemoteBroker
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | interfaceDes | string | 是 | 需要查询的接口描述符，其长度应小于40960。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -9544,6 +10040,7 @@ getLocalInterface(interfaceDes: string): IRemoteBroker
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9613,9 +10110,10 @@ if (proxy != undefined) {
 
 
 
-#### queryLocalInterface(deprecated)
+### queryLocalInterface(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 queryLocalInterface(interface: string): IRemoteBroker
 
@@ -9629,12 +10127,14 @@ queryLocalInterface(interface: string): IRemoteBroker
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | interface | string | 是 | 需要查询的接口描述符。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -9696,9 +10196,10 @@ if (proxy != undefined) {
 
 
 
-#### registerDeathRecipient9+
+### registerDeathRecipient9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 registerDeathRecipient(recipient: DeathRecipient, flags: number): void
 
@@ -9707,6 +10208,7 @@ registerDeathRecipient(recipient: DeathRecipient, flags: number): void
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -9717,6 +10219,7 @@ registerDeathRecipient(recipient: DeathRecipient, flags: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9791,9 +10294,10 @@ if (proxy != undefined) {
 
 
 
-#### addDeathRecipient(deprecated)
+### addDeathRecipient(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addDeathRecipient(recipient: DeathRecipient, flags: number): boolean
 
@@ -9807,6 +10311,7 @@ addDeathRecipient(recipient: DeathRecipient, flags: number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | recipient | DeathRecipient | 是 | 收件人表示要注册的回调。 |
@@ -9814,6 +10319,7 @@ addDeathRecipient(recipient: DeathRecipient, flags: number): boolean
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -9880,9 +10386,10 @@ if (proxy != undefined) {
 
 
 
-#### unregisterDeathRecipient9+
+### unregisterDeathRecipient9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unregisterDeathRecipient(recipient: DeathRecipient, flags: number): void
 
@@ -9891,6 +10398,7 @@ unregisterDeathRecipient(recipient: DeathRecipient, flags: number): void
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -9901,6 +10409,7 @@ unregisterDeathRecipient(recipient: DeathRecipient, flags: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9976,9 +10485,10 @@ if (proxy != undefined) {
 
 
 
-#### removeDeathRecipient(deprecated)
+### removeDeathRecipient(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeDeathRecipient(recipient: DeathRecipient, flags: number): boolean
 
@@ -9992,6 +10502,7 @@ removeDeathRecipient(recipient: DeathRecipient, flags: number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | recipient | DeathRecipient | 是 | 要注销的死亡回调。 |
@@ -9999,6 +10510,7 @@ removeDeathRecipient(recipient: DeathRecipient, flags: number): boolean
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -10066,9 +10578,10 @@ if (proxy != undefined) {
 
 
 
-#### getDescriptor9+
+### getDescriptor9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDescriptor(): string
 
@@ -10078,6 +10591,7 @@ getDescriptor(): string
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 返回接口描述符。 |
@@ -10086,6 +10600,7 @@ getDescriptor(): string
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -10155,9 +10670,10 @@ if (proxy != undefined) {
 
 
 
-#### getInterfaceDescriptor(deprecated)
+### getInterfaceDescriptor(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getInterfaceDescriptor(): string
 
@@ -10170,6 +10686,7 @@ getInterfaceDescriptor(): string
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -10231,9 +10748,10 @@ if (proxy != undefined) {
 
 
 
-#### isObjectDead
+### isObjectDead
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isObjectDead(): boolean
 
@@ -10242,6 +10760,7 @@ isObjectDead(): boolean
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -10303,9 +10822,10 @@ if (proxy != undefined) {
 
 
 
-#### MessageOption
+## MessageOption
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 公共消息选项，使用指定的标志类型，构造指定的MessageOption对象。
 
@@ -10313,33 +10833,39 @@ if (proxy != undefined) {
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Communication.IPC.Core
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| TF_SYNC | number | 是 | 否 | 同步调用标识。 |
-| TF_ASYNC | number | 是 | 否 | 异步调用标识。 |
-| TF_ACCEPT_FDS | number | 是 | 否 | 指示sendMessageRequest接口可以传递文件描述符。 |
-| TF_WAIT_TIME | number | 是 | 否 | RPC等待时间（单位：秒），IPC场景下无效。默认等待为8秒（不建议修改等待时间）。 |
+| TF_SYNC | number | 是 | 否 | 同步调用标识。 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| TF_ASYNC | number | 是 | 否 | 异步调用标识。 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| TF_ACCEPT_FDS | number | 是 | 否 | 指示sendMessageRequest接口可以传递文件描述符。 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| TF_WAIT_TIME | number | 是 | 否 | RPC等待时间（单位：秒），IPC场景下无效。默认等待为8秒（不建议修改等待时间）。 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
 
 
 
 
-#### constructor9+
+### constructor9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(async?: boolean)
 
 MessageOption构造函数。
 
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -10360,17 +10886,21 @@ class TestRemoteObject extends rpc.MessageOption {
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(syncFlags?: number, waitTime?: number)
 
 MessageOption构造函数。
 
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -10392,17 +10922,21 @@ class TestRemoteObject extends rpc.MessageOption {
 
 
 
-#### isAsync9+
+### isAsync9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isAsync(): boolean
 
 获取[sendMessageRequest](#sendmessagerequest9-2)调用中确定同步或是异步的标志。
 
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -10425,17 +10959,21 @@ try {
 
 
 
-#### setAsync9+
+### setAsync9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAsync(isAsync: boolean): void
 
 设置[sendMessageRequest](#sendmessagerequest9-2)调用中确定同步或是异步的标志。
 
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -10458,17 +10996,21 @@ try {
 
 
 
-#### getFlags
+### getFlags
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFlags(): number
 
 获取同步调用或异步调用标志。
 
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -10497,17 +11039,21 @@ try {
 
 
 
-#### setFlags
+### setFlags
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setFlags(flags: number): void
 
 设置同步调用或异步调用标志。
 
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -10533,17 +11079,21 @@ try {
 
 
 
-#### getWaitTime
+### getWaitTime
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getWaitTime(): number
 
 获取rpc调用的最长等待时间。
 
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -10570,17 +11120,21 @@ try {
 
 
 
-#### setWaitTime
+### setWaitTime
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setWaitTime(waitTime: number): void
 
 设置rpc调用最长等待时间。
 
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -10605,9 +11159,10 @@ try {
 
 
 
-#### IPCSkeleton
+## IPCSkeleton
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于获取IPC上下文信息，包括获取UID和PID、获取本端和对端设备ID、检查接口调用是否在同一设备上。
 
@@ -10615,9 +11170,10 @@ try {
 
 
 
-#### getContextObject
+### getContextObject
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getContextObject(): IRemoteObject
 
@@ -10626,6 +11182,7 @@ static getContextObject(): IRemoteObject
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -10648,9 +11205,10 @@ try {
 
 
 
-#### getCallingPid
+### getCallingPid
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getCallingPid(): number
 
@@ -10659,6 +11217,7 @@ static getCallingPid(): number
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -10687,9 +11246,10 @@ class Stub extends rpc.RemoteObject {
 
 
 
-#### getCallingUid
+### getCallingUid
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getCallingUid(): number
 
@@ -10698,6 +11258,7 @@ static getCallingUid(): number
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -10726,9 +11287,10 @@ class Stub extends rpc.RemoteObject {
 
 
 
-#### getCallingTokenId8+
+### getCallingTokenId8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getCallingTokenId(): number
 
@@ -10737,6 +11299,7 @@ static getCallingTokenId(): number
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -10765,9 +11328,10 @@ class Stub extends rpc.RemoteObject {
 
 
 
-#### getCallingDeviceID
+### getCallingDeviceID
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getCallingDeviceID(): string
 
@@ -10776,6 +11340,7 @@ static getCallingDeviceID(): string
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -10804,9 +11369,10 @@ class Stub extends rpc.RemoteObject {
 
 
 
-#### getLocalDeviceID
+### getLocalDeviceID
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getLocalDeviceID(): string
 
@@ -10815,6 +11381,7 @@ static getLocalDeviceID(): string
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -10843,9 +11410,10 @@ class Stub extends rpc.RemoteObject {
 
 
 
-#### isLocalCalling
+### isLocalCalling
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static isLocalCalling(): boolean
 
@@ -10854,6 +11422,7 @@ static isLocalCalling(): boolean
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -10882,9 +11451,10 @@ class Stub extends rpc.RemoteObject {
 
 
 
-#### flushCmdBuffer9+
+### flushCmdBuffer9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static flushCmdBuffer(object: IRemoteObject): void
 
@@ -10894,6 +11464,7 @@ static flushCmdBuffer(object: IRemoteObject): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | object | IRemoteObject | 是 | 指定的RemoteProxy。 |
@@ -10902,6 +11473,7 @@ static flushCmdBuffer(object: IRemoteObject): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -10937,9 +11509,10 @@ try {
 
 
 
-#### flushCommands(deprecated)
+### flushCommands(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static flushCommands(object: IRemoteObject): number
 
@@ -10953,12 +11526,14 @@ static flushCommands(object: IRemoteObject): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | object | IRemoteObject | 是 | 指定的RemoteProxy。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -10994,9 +11569,10 @@ try {
 
 
 
-#### resetCallingIdentity
+### resetCallingIdentity
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static resetCallingIdentity(): string
 
@@ -11005,6 +11581,7 @@ static resetCallingIdentity(): string
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -11033,9 +11610,10 @@ class Stub extends rpc.RemoteObject {
 
 
 
-#### restoreCallingIdentity9+
+### restoreCallingIdentity9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static restoreCallingIdentity(identity: string): void
 
@@ -11045,6 +11623,7 @@ static restoreCallingIdentity(identity: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | identity | string | 是 | 标识表示包含远程用户UID和PID的字符串，其长度应小于40960。由resetCallingIdentity返回。 |
@@ -11053,6 +11632,7 @@ static restoreCallingIdentity(identity: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -11082,9 +11662,10 @@ class Stub extends rpc.RemoteObject {
 
 
 
-#### setCallingIdentity(deprecated)
+### setCallingIdentity(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static setCallingIdentity(identity: string): boolean
 
@@ -11098,12 +11679,14 @@ static setCallingIdentity(identity: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | identity | string | 是 | 标识表示包含远程用户UID和PID的字符串。由resetCallingIdentity返回。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -11134,9 +11717,10 @@ class Stub extends rpc.RemoteObject {
 
 
 
-#### RemoteObject
+## RemoteObject
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 实现远程对象。服务提供者必须继承此类。
 
@@ -11144,9 +11728,10 @@ class Stub extends rpc.RemoteObject {
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(descriptor: string)
 
@@ -11155,6 +11740,7 @@ RemoteObject构造函数。
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -11175,9 +11761,10 @@ class TestRemoteObject extends rpc.RemoteObject {
 
 
 
-#### sendRequest(deprecated)
+### sendRequest(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sendRequest(code: number, data: MessageParcel, reply: MessageParcel, options: MessageOption): boolean
 
@@ -11191,6 +11778,7 @@ sendRequest(code: number, data: MessageParcel, reply: MessageParcel, options: Me
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | code | number | 是 | 本次请求调用的消息码[1-16777215]，由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。 |
@@ -11200,6 +11788,7 @@ sendRequest(code: number, data: MessageParcel, reply: MessageParcel, options: Me
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -11244,9 +11833,10 @@ try {
 
 
 
-#### sendMessageRequest9+
+### sendMessageRequest9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, options: MessageOption): Promise&lt;RequestResult&gt;
 
@@ -11255,6 +11845,7 @@ sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, 
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -11266,6 +11857,7 @@ sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;RequestResult&gt; | Promise对象，返回发送请求的响应结果。 |
@@ -11274,6 +11866,7 @@ sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, 
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -11328,9 +11921,10 @@ try {
 
 
 
-#### sendRequest(deprecated)
+### sendRequest(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sendRequest(code: number, data: MessageParcel, reply: MessageParcel, options: MessageOption): Promise&lt;SendRequestResult&gt;
 
@@ -11344,6 +11938,7 @@ sendRequest(code: number, data: MessageParcel, reply: MessageParcel, options: Me
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | code | number | 是 | 本次请求调用的消息码[1-16777215]，由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。 |
@@ -11353,6 +11948,7 @@ sendRequest(code: number, data: MessageParcel, reply: MessageParcel, options: Me
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -11407,9 +12003,10 @@ try {
 
 
 
-#### sendMessageRequest9+
+### sendMessageRequest9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, options: MessageOption, callback: AsyncCallback&lt;RequestResult&gt;): void
 
@@ -11418,6 +12015,7 @@ sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, 
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -11432,6 +12030,7 @@ sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, 
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1.The number of parameters is incorrect; 2.The parameter type does not match; 3.Failed to obtain the passed object instance. |
@@ -11439,9 +12038,10 @@ sendMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, 
 
 
 
-#### sendRequest(deprecated)
+### sendRequest(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sendRequest(code: number, data: MessageParcel, reply: MessageParcel, options: MessageOption, callback: AsyncCallback&lt;SendRequestResult&gt;): void
 
@@ -11455,6 +12055,7 @@ sendRequest(code: number, data: MessageParcel, reply: MessageParcel, options: Me
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | code | number | 是 | 本次请求调用的消息码[1-16777215]，由通信双方确定。如果接口由IDL工具生成，则消息代码由IDL自动生成。 |
@@ -11466,9 +12067,10 @@ sendRequest(code: number, data: MessageParcel, reply: MessageParcel, options: Me
 
 
 
-#### onRemoteMessageRequest23+
+### onRemoteMessageRequest23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onRemoteMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, options: MessageOption, callingInfo?: CallingInfo): boolean | Promise&lt;boolean&gt;
 
@@ -11482,6 +12084,7 @@ sendMessageRequest请求的响应处理函数，服务端在该函数里同步�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | code | number | 是 | 对端发送的服务请求码。 |
@@ -11492,6 +12095,7 @@ sendMessageRequest请求的响应处理函数，服务端在该函数里同步�
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -11591,13 +12195,16 @@ class TestRemoteObject extends rpc.RemoteObject {
 
 
 
-#### onRemoteMessageRequest9+
+### onRemoteMessageRequest9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onRemoteMessageRequest(code: number, data: MessageSequence, reply: MessageSequence, options: MessageOption): boolean | Promise&lt;boolean&gt;
 
 sendMessageRequest请求的响应处理函数，服务端在该函数里同步或异步地处理请求，回复结果。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 > [!NOTE]
 > 开发者应优先选择重写onRemoteMessageRequest方法，其中可以自由实现同步和异步的消息处理。 开发者同时重写onRemoteRequest和onRemoteMessageRequest方法时，仅onRemoteMessageRequest方法生效。
@@ -11606,6 +12213,7 @@ sendMessageRequest请求的响应处理函数，服务端在该函数里同步�
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -11616,6 +12224,7 @@ sendMessageRequest请求的响应处理函数，服务端在该函数里同步�
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -11712,9 +12321,10 @@ class TestRemoteObject extends rpc.RemoteObject {
 
 
 
-#### onRemoteRequest(deprecated)
+### onRemoteRequest(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onRemoteRequest(code: number, data: MessageParcel, reply: MessageParcel, options: MessageOption): boolean
 
@@ -11728,6 +12338,7 @@ sendRequest请求的响应处理函数，服务端在该函数里处理请求，
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | code | number | 是 | 对端发送的服务请求码。 |
@@ -11737,6 +12348,7 @@ sendRequest请求的响应处理函数，服务端在该函数里处理请求，
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -11767,9 +12379,10 @@ class TestRemoteObject extends rpc.RemoteObject {
 
 
 
-#### getCallingUid
+### getCallingUid
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCallingUid(): number
 
@@ -11778,6 +12391,7 @@ getCallingUid(): number
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -11810,9 +12424,10 @@ try {
 
 
 
-#### getCallingPid
+### getCallingPid
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCallingPid(): number
 
@@ -11821,6 +12436,7 @@ getCallingPid(): number
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -11853,9 +12469,10 @@ try {
 
 
 
-#### getLocalInterface9+
+### getLocalInterface9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLocalInterface(descriptor: string): IRemoteBroker
 
@@ -11865,12 +12482,14 @@ getLocalInterface(descriptor: string): IRemoteBroker
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | descriptor | string | 是 | 接口描述符的字符串，其长度应小于40960。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -11880,6 +12499,7 @@ getLocalInterface(descriptor: string): IRemoteBroker
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -11915,9 +12535,10 @@ try {
 
 
 
-#### queryLocalInterface(deprecated)
+### queryLocalInterface(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 queryLocalInterface(descriptor: string): IRemoteBroker
 
@@ -11931,12 +12552,14 @@ queryLocalInterface(descriptor: string): IRemoteBroker
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | descriptor | string | 是 | 需要查询的接口描述符。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -11969,9 +12592,10 @@ try {
 
 
 
-#### getDescriptor9+
+### getDescriptor9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDescriptor(): string
 
@@ -11981,6 +12605,7 @@ getDescriptor(): string
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 返回接口描述符。 |
@@ -11989,6 +12614,7 @@ getDescriptor(): string
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -12025,9 +12651,10 @@ try {
 
 
 
-#### getInterfaceDescriptor(deprecated)
+### getInterfaceDescriptor(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getInterfaceDescriptor(): string
 
@@ -12040,6 +12667,7 @@ getInterfaceDescriptor(): string
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -12074,9 +12702,10 @@ try {
 
 
 
-#### modifyLocalInterface9+
+### modifyLocalInterface9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 modifyLocalInterface(localInterface: IRemoteBroker, descriptor: string): void
 
@@ -12085,6 +12714,7 @@ modifyLocalInterface(localInterface: IRemoteBroker, descriptor: string): void
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -12095,6 +12725,7 @@ modifyLocalInterface(localInterface: IRemoteBroker, descriptor: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -12136,9 +12767,10 @@ let testRemoteObject = new TestRemoteObject("testObject");
 
 
 
-#### attachLocalInterface(deprecated)
+### attachLocalInterface(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 attachLocalInterface(localInterface: IRemoteBroker, descriptor: string): void
 
@@ -12151,6 +12783,7 @@ attachLocalInterface(localInterface: IRemoteBroker, descriptor: string): void
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -12188,28 +12821,19 @@ let testRemoteObject = new TestRemoteObject("testObject");
 
 
 
-#### Ashmem8+
+## Ashmem8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供与匿名共享内存对象相关的方法，包括创建、关闭、映射和取消映射Ashmem、从Ashmem读取数据和写入数据、获取Ashmem大小、设置Ashmem保护。
 
-共享内存只适用与本设备内跨进程通信。
-
-**使用场景：**
+共享内存只适用于本设备内跨进程通信。
 
  - 大数据传输：传输大量数据(如图片、文件)时使用共享内存提升效率。
  - 跨进程数据共享：多个进程需要共享访问同一块内存数据。
-
-
-**解决的问题：**
-
  - 传输效率问题：大数据通过共享内存传输避免序列化开销，提升传输效率。
  - 内存复用问题：多进程可共享访问同一内存，避免数据拷贝。
-
-
-**带来的收益：**
-
  - 提升传输性能：共享内存机制大幅提升大数据传输效率。
  - 减少内存占用：避免数据多次拷贝，节省内存资源。
 
@@ -12218,11 +12842,13 @@ let testRemoteObject = new TestRemoteObject("testObject");
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Communication.IPC.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -12234,9 +12860,10 @@ let testRemoteObject = new TestRemoteObject("testObject");
 
 
 
-#### create9+
+### create9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static create(name: string, size: number): Ashmem
 
@@ -12246,6 +12873,7 @@ static create(name: string, size: number): Ashmem
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | Ashmem名称，用于查询Ashmem信息，其长度不能为0。 |
@@ -12253,6 +12881,7 @@ static create(name: string, size: number): Ashmem
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -12262,6 +12891,7 @@ static create(name: string, size: number): Ashmem
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -12289,9 +12919,10 @@ try {
 
 
 
-#### createAshmem(deprecated)
+### createAshmem(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static createAshmem(name: string, size: number): Ashmem
 
@@ -12305,6 +12936,7 @@ static createAshmem(name: string, size: number): Ashmem
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 名称，用于查询Ashmem信息。 |
@@ -12312,6 +12944,7 @@ static createAshmem(name: string, size: number): Ashmem
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -12336,9 +12969,10 @@ try {
 
 
 
-#### create9+
+### create9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static create(ashmem: Ashmem): Ashmem
 
@@ -12348,12 +12982,14 @@ static create(ashmem: Ashmem): Ashmem
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ashmem | Ashmem | 是 | 已存在的Ashmem对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -12363,6 +12999,7 @@ static create(ashmem: Ashmem): Ashmem
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -12390,9 +13027,10 @@ try {
 
 
 
-#### createAshmemFromExisting(deprecated)
+### createAshmemFromExisting(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static createAshmemFromExisting(ashmem: Ashmem): Ashmem
 
@@ -12406,12 +13044,14 @@ static createAshmemFromExisting(ashmem: Ashmem): Ashmem
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ashmem | Ashmem | 是 | 已存在的Ashmem对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -12436,9 +13076,10 @@ try {
 
 
 
-#### closeAshmem8+
+### closeAshmem8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 closeAshmem(): void
 
@@ -12466,9 +13107,10 @@ try {
 
 
 
-#### unmapAshmem8+
+### unmapAshmem8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unmapAshmem(): void
 
@@ -12492,9 +13134,10 @@ try {
 
 
 
-#### getAshmemSize8+
+### getAshmemSize8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAshmemSize(): number
 
@@ -12503,6 +13146,7 @@ getAshmemSize(): number
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -12526,9 +13170,10 @@ try {
 
 
 
-#### mapTypedAshmem9+
+### mapTypedAshmem9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 mapTypedAshmem(mapType: number): void
 
@@ -12538,6 +13183,7 @@ mapTypedAshmem(mapType: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mapType | number | 是 | 指定映射的内存区域的保护等级。 |
@@ -12546,6 +13192,7 @@ mapTypedAshmem(mapType: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -12572,9 +13219,10 @@ try {
 
 
 
-#### mapAshmem(deprecated)
+### mapAshmem(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 mapAshmem(mapType: number): boolean
 
@@ -12588,12 +13236,14 @@ mapAshmem(mapType: number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mapType | number | 是 | 指定映射的内存区域的保护等级。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -12617,9 +13267,10 @@ try {
 
 
 
-#### mapReadWriteAshmem9+
+### mapReadWriteAshmem9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 mapReadWriteAshmem(): void
 
@@ -12630,6 +13281,7 @@ mapReadWriteAshmem(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -12655,9 +13307,10 @@ try {
 
 
 
-#### mapReadAndWriteAshmem(deprecated)
+### mapReadAndWriteAshmem(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 mapReadAndWriteAshmem(): boolean
 
@@ -12670,6 +13323,7 @@ mapReadAndWriteAshmem(): boolean
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -12693,9 +13347,10 @@ try {
 
 
 
-#### mapReadonlyAshmem9+
+### mapReadonlyAshmem9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 mapReadonlyAshmem(): void
 
@@ -12706,6 +13361,7 @@ mapReadonlyAshmem(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -12731,9 +13387,10 @@ try {
 
 
 
-#### mapReadOnlyAshmem(deprecated)
+### mapReadOnlyAshmem(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 mapReadOnlyAshmem(): boolean
 
@@ -12746,6 +13403,7 @@ mapReadOnlyAshmem(): boolean
 **系统能力：** SystemCapability.Communication.IPC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -12769,9 +13427,10 @@ try {
 
 
 
-#### setProtectionType9+
+### setProtectionType9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setProtectionType(protectionType: number): void
 
@@ -12781,6 +13440,7 @@ setProtectionType(protectionType: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | protectionType | number | 是 | 要设置的保护类型。 |
@@ -12789,6 +13449,7 @@ setProtectionType(protectionType: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -12815,9 +13476,10 @@ try {
 
 
 
-#### setProtection(deprecated)
+### setProtection(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setProtection(protectionType: number): boolean
 
@@ -12831,12 +13493,14 @@ setProtection(protectionType: number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | protectionType | number | 是 | 要设置的保护类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -12861,9 +13525,10 @@ try {
 
 
 
-#### writeDataToAshmem11+
+### writeDataToAshmem11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeDataToAshmem(buf: ArrayBuffer, size: number, offset: number): void
 
@@ -12877,6 +13542,7 @@ writeDataToAshmem(buf: ArrayBuffer, size: number, offset: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | buf | ArrayBuffer | 是 | 写入Ashmem对象的数据。 |
@@ -12887,6 +13553,7 @@ writeDataToAshmem(buf: ArrayBuffer, size: number, offset: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -12920,9 +13587,10 @@ try {
 
 
 
-#### writeAshmem(deprecated)
+### writeAshmem(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeAshmem(buf: number[], size: number, offset: number): void
 
@@ -12936,6 +13604,7 @@ writeAshmem(buf: number[], size: number, offset: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | buf | number[] | 是 | 写入Ashmem对象的数据。 |
@@ -12946,6 +13615,7 @@ writeAshmem(buf: number[], size: number, offset: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -12974,9 +13644,10 @@ try {
 
 
 
-#### writeToAshmem(deprecated)
+### writeToAshmem(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeToAshmem(buf: number[], size: number, offset: number): boolean
 
@@ -12990,6 +13661,7 @@ writeToAshmem(buf: number[], size: number, offset: number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | buf | number[] | 是 | 写入Ashmem对象的数据。 |
@@ -12998,6 +13670,7 @@ writeToAshmem(buf: number[], size: number, offset: number): boolean
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -13024,9 +13697,10 @@ try {
 
 
 
-#### readDataFromAshmem11+
+### readDataFromAshmem11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readDataFromAshmem(size: number, offset: number): ArrayBuffer
 
@@ -13040,6 +13714,7 @@ readDataFromAshmem(size: number, offset: number): ArrayBuffer
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | size | number | 是 | 要读取的数据的大小，以字节为单位。 |
@@ -13047,6 +13722,7 @@ readDataFromAshmem(size: number, offset: number): ArrayBuffer
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -13056,6 +13732,7 @@ readDataFromAshmem(size: number, offset: number): ArrayBuffer
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -13092,9 +13769,10 @@ try {
 
 
 
-#### readAshmem(deprecated)
+### readAshmem(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readAshmem(size: number, offset: number): number[]
 
@@ -13108,6 +13786,7 @@ readAshmem(size: number, offset: number): number[]
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | size | number | 是 | 要读取的数据的大小，以字节为单位。 |
@@ -13115,6 +13794,7 @@ readAshmem(size: number, offset: number): number[]
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -13124,6 +13804,7 @@ readAshmem(size: number, offset: number): number[]
 **错误码：**
 
 以下错误码的详细介绍请参见[ohos.rpc错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-rpc)
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -13154,9 +13835,10 @@ try {
 
 
 
-#### readFromAshmem(deprecated)
+### readFromAshmem(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readFromAshmem(size: number, offset: number): number[]
 
@@ -13170,6 +13852,7 @@ readFromAshmem(size: number, offset: number): number[]
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | size | number | 是 | 要读取的数据的大小，以字节为单位。 |
@@ -13177,6 +13860,7 @@ readFromAshmem(size: number, offset: number): number[]
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |

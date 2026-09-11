@@ -1,10 +1,10 @@
 # Frame分析
 
-更新时间：2026-07-15 09:00:31
+更新时间：2026-08-29 09:41:34
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-insight-session-frame
 
-#### 功能介绍
+## 功能介绍
 
 开发应用或元服务过程中，如果发现有表单滑动不顺畅、页面交互延迟、动效不流畅等卡顿现象时，可以使用DevEco Profiler提供的Frame场景分析能力，录制卡顿过程中的关键数据并进行分析，从而识别出导致卡顿丢帧的原因。
 
@@ -23,7 +23,7 @@ Frame模板支持的泳道包括：Anomaly、User Events、Frame、ArkUI Compone
 
 
 
-#### 查看GPU使用情况
+## 查看GPU使用情况
 
 **Frame**泳道显示当前设备的GPU的使用率，将其展开，子泳道显示渲染服务（Render Service）侧帧数据和App侧帧数据。
 
@@ -39,7 +39,7 @@ Frame模板支持的泳道包括：Anomaly、User Events、Frame、ArkUI Compone
 
 
 
-#### 查看指定时间段内所有进程的Frame数据统计信息
+## 查看指定时间段内所有进程的Frame数据统计信息
 1. 在时间轴上拖拽鼠标选定要查看的时间段。
 2. 框选**Frame**主泳道。窗口下方的**Statistics**区域以进程维度展示了选定时间段内的Frame相关信息，包括卡顿率、卡顿次数、最大连续卡顿次数、最大卡顿耗时、平均卡顿耗时以及平均正常耗时等。
 
@@ -51,13 +51,11 @@ Frame模板支持的泳道包括：Anomaly、User Events、Frame、ArkUI Compone
   
 ![](assets/Frame分析/file-20260514133135535-12.png)
 
-4. 点击Frame List中任意一帧，在右侧的**More**区域会中显示该帧更多关键信息。在获取该帧的预期起始时间、预期持续时间之外，您可以单击
-![](assets/Frame分析/file-20260514133135535-13.png)
-跳转至关联的切片。
+4. 点击Frame List中任意一帧，在右侧的**More**区域会中显示该帧更多关键信息。在获取该帧的预期起始时间、预期持续时间之外，您可以单击![icon](assets/Frame分析/file-20260514133135535-13.png)跳转至关联的切片。
 
 
 
-#### 查看指定时间段内指定进程的Frame数据统计信息
+## 查看指定时间段内指定进程的Frame数据统计信息
 1. 在时间轴上拖拽鼠标选定要查看的时间段。
 2. 展开**Frame**主泳道，选择要观察的带**App Frame**或带**RS Frame**标签的子泳道。
 
@@ -66,15 +64,13 @@ Frame模板支持的泳道包括：Anomaly、User Events、Frame、ArkUI Compone
   
 ![](assets/Frame分析/file-20260514133135535-14.png)
 
-3. 单击列表中任意一帧，右侧的**More**区域中会显示该帧更多关键信息。在获取该帧的预期起始时间、预期持续时间之外，您可以单击
-![](assets/Frame分析/file-20260514133135535-15.png)
-跳转至关联的切片。
+3. 单击列表中任意一帧，右侧的**More**区域中会显示该帧更多关键信息。在获取该帧的预期起始时间、预期持续时间之外，您可以单击![icon](assets/Frame分析/file-20260514133135535-15.png)跳转至关联的切片。
 
 
 
-#### 查看指定Frame信息
+## 查看指定Frame信息
 
-展开**Frame**主泳道，选择带**App Frame**或带**RS Fram****e**标签的子泳道，该[泳道图区域](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-profiler-data)上方是耗时最长的非UI函数，下方是UI主线程泳道。将鼠标悬浮在任意帧上，会冒泡显示该帧的Jank信息。
+展开**Frame**主泳道，选择带**App Frame**或带**RS Frame**标签的子泳道，该[泳道图区域](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-profiler-data)上方是耗时最长的非UI函数，下方是UI主线程泳道。将鼠标悬浮在任意帧上，会冒泡显示该帧的Jank信息。
 
 
 ![](assets/Frame分析/file-20260514133135535-16.png)
@@ -92,13 +88,11 @@ Frame模板支持的泳道包括：Anomaly、User Events、Frame、ArkUI Compone
 
 
 
-#### 查看指定Frame页面布局信息
+## 查看指定Frame页面布局信息
 
 从DevEco Studio 5.1.0 Release版本开始，支持查看最新录制的Session中指定的Frame页面布局信息。
 
-从DevEco Studio 6.1.0 Beta1版本开始，
-![](assets/Frame分析/file-20260514133135535-19.png)
-按钮中新增Frame Layout开关，开发者可自行设置开关状态。开关关闭时，不支持查看最新录制的Session中指定的Frame页面布局信息，默认关闭。
+从DevEco Studio 6.1.0 Beta1版本开始，![icon](assets/Frame分析/file-20260514133135535-19.png)按钮中新增Frame Layout开关，开发者可自行设置开关状态。开关关闭时，不支持查看最新录制的Session中指定的Frame页面布局信息，默认关闭。
 
 暂不支持在Wearable设备上查看指定Frame页面布局信息。
 
@@ -123,7 +117,7 @@ Frame模板支持的泳道包括：Anomaly、User Events、Frame、ArkUI Compone
 
   
 
-  #### 查看帧率统计信息
+  ## 查看帧率统计信息
 
 1. 展开**Frame**泳道，框选一段数据。
 
@@ -141,7 +135,7 @@ Frame模板支持的泳道包括：Anomaly、User Events、Frame、ArkUI Compone
 
   
 
-  #### 查看动效详细信息
+  ## 查看动效详细信息
 
   开发者在开发应用时，会使用到动效，动效的卡顿影响到用户的使用体验。DevEco Profiler提供动效场景的调优，能帮助开发者优化动效场景。
 
@@ -164,7 +158,7 @@ Frame模板支持的泳道包括：Anomaly、User Events、Frame、ArkUI Compone
 
 
 
-#### 查看组件动画信息
+## 查看组件动画信息
 
 从DevEco Studio 6.0.0.828版本开始，Frame泳道下新增Component Animation子泳道，用于从组件的角度展示应用中包含的各种动画类型，包括属性动画 (animation)、显式动画 (animateTo)、关键帧动画 (keyframeAnimateTo)以及页面间转场 (pageTransition)。
 
@@ -176,7 +170,7 @@ Frame模板支持的泳道包括：Anomaly、User Events、Frame、ArkUI Compone
 
 
 
-#### 查看屏幕帧率动态变化场景下丢帧和卡顿信息
+## 查看屏幕帧率动态变化场景下丢帧和卡顿信息
 
 Frame泳道下新增Lost Frames和Hitch Time两个子泳道，用于识别和优化卡顿和丢帧问题。
 
@@ -196,7 +190,7 @@ Frame泳道下新增Lost Frames和Hitch Time两个子泳道，用于识别和优
 
 
 
-#### 查看组件帧率信息
+## 查看组件帧率信息
 
 Frame泳道下新增两个子泳道，分别为Display Vsync与DisplaySync_cb(tid)，用于对可变帧率的检测调优。      
  - Display Vsync子泳道：该泳道显示对应时间段的屏幕刷新率，支持对框选的时间段内的vsync进行分布统计。区分“<=30HZ”、“30~60HZ”、“60~90HZ”、“>90HZ”。统计值包括框选时间段内各区间的分布比率、最小/最大/平均时长以及平均HZ。如果某场景满足了帧率改变的要求，当底层系统根据机制进行变帧，相应的情况会展现在对应的泳道，帮助开发者了解vsync的变化情况是否符合预期。该泳道仅支持在配备硬件屏幕的设备上进行数据采集。
@@ -226,12 +220,12 @@ Frame泳道下新增两个子泳道，分别为Display Vsync与DisplaySync_cb(ti
 5. 同时如果组件有可能的掉帧情况，**DisplaySync_cb**子泳道显示对应的掉帧情况并标红展示。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/Ns1wySRNT5aQ5d7ZjWNeJg/zh-cn_image_0000002624993891.png?HW-CC-KV=V1&HW-CC-Date=20260723T012124Z&HW-CC-Expire=86400&HW-CC-Sign=FDD1B09EF8064935271A95B73CDF1CC9756700E845AF7AB5D0904706F223AE99)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/xn2Lkx7xTo2zgbiNEKijzA/zh-cn_image_0000002701822968.png?HW-CC-KV=V1&HW-CC-Date=20260911T072815Z&HW-CC-Expire=86400&HW-CC-Sign=A74B7A8C0A3B42255EF847CB21DFADB830FAF1AF6949C0583926D91B0E7C140C)
 
 
 
 
-#### 查看解码过度耗时和超过阈值的序列化、反序列化操作
+## 查看解码过度耗时和超过阈值的序列化、反序列化操作
 
 如果工程中存在图片资源，并感知到解码绘制/渲染过程存在卡顿，可以通过Anomaly泳道查看主线程解码过程中是否存在解码过度耗时告警，并确认发生告警的时段。
 
@@ -240,35 +234,35 @@ Frame泳道下新增两个子泳道，分别为Display Vsync与DisplaySync_cb(ti
 2. 详情区给出录制时段内解码过度耗时的统计情况，包括类型，图片名，计数，总耗时，最小耗时、平均耗时、最大耗时，耗时标准差、 图源尺寸大小，目标尺寸大小等。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/DVGu3Nj3QHS9uIELDBptPw/zh-cn_image_0000002625074043.png?HW-CC-KV=V1&HW-CC-Date=20260723T012124Z&HW-CC-Expire=86400&HW-CC-Sign=F2C7D2417CECCB41A40FC46DCB665C14842056FB0F5A6CD58F4D9EBBDD824360)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/8vVFInekRP69aLy7TBwCZg/zh-cn_image_0000002701822980.png?HW-CC-KV=V1&HW-CC-Date=20260911T072815Z&HW-CC-Expire=86400&HW-CC-Sign=39CA4CFAC32B5FB52F211DCA33913EF4A274E43AA3BE7281D2A1154093391704)
 
 3. 对于耗时超过阈值的序列化、反序列化操作，**Anomaly**泳道也会给出对应的耗时告警。其中可以通过泳道启动配置按钮配置检测阈值，默认配置阈值为8ms。
 4. 详情区给出录制时段内序列化、反序列化耗时情况统计信息，包括类型、计数、总耗时、最小耗时、平均耗时、最大耗时、耗时标准差等。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/9qoZKOXuTrun-FLU34O5mA/zh-cn_image_0000002594474520.png?HW-CC-KV=V1&HW-CC-Date=20260723T012124Z&HW-CC-Expire=86400&HW-CC-Sign=1201ECD890874B35B05F2C6FF063DE4920D35674D7CE60B9C620BA5A1493D067)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/wkXgTSRZS6CVvi0wWbU6hg/zh-cn_image_0000002701663040.png?HW-CC-KV=V1&HW-CC-Date=20260911T072815Z&HW-CC-Expire=86400&HW-CC-Sign=670908D5BB62E467175FF3746D4CB0D96F932A031AB71AF390EF2AD3A1250563)
 
 
   
 > [!NOTE]
-> 已上架应用市场的应用不支持录制Anomaly泳道。
+> 由于隐私安全政策，已上架应用市场的应用不支持录制Anomaly泳道。
 
 
 
 
-#### 查看用户事件耗时
+## 查看用户事件耗时
 
-开发者在卡顿丢帧场景可通过User Event泳道查看用户事件，可查看用户事件开始时间、应用开始处理时间以及应用处理耗时等情况。
-1. 选择**User Event**泳道，在时间轴上拖拽鼠标选定要查看的时间段。
+开发者在卡顿丢帧场景可通过User Events泳道查看用户事件，可查看用户事件开始时间、应用开始处理时间以及应用处理耗时等情况。
+1. 选择**User Events**泳道，在时间轴上拖拽鼠标选定要查看的时间段。
 2. 详情区列表给出录制时间段内用户事件详情，包括用户事件ID、事件开始时间Input Time、应用开始处理时间Processing Start、应用处理耗时Duration和事件类型User Event Type。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/f4kguEdPS7eWYqhPy7YvmA/zh-cn_image_0000002594634450.png?HW-CC-KV=V1&HW-CC-Date=20260723T012124Z&HW-CC-Expire=86400&HW-CC-Sign=DEA4EA541148E4B78ED32B017A3A95BDD49794FE7B169460E9FDB6D15F7A6283)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/o-HNgijeQTyfdpf-EvJicA/zh-cn_image_0000002701663048.png?HW-CC-KV=V1&HW-CC-Date=20260911T072815Z&HW-CC-Expire=86400&HW-CC-Sign=026D0B1CEE6A5F0ED9F48DEA3927E67CE94EE82C40D61E2CC63DE3A4E0D7BBC6)
 
-3. 点选User Event泳道中的条块，**Slice Detail**区域展示该事件的详情信息。
+3. 点选User Events泳道中的条块，**Slice Detail**区域展示该事件的详情信息。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/kvxs5s-DQeWtEVd0FdWUsg/zh-cn_image_0000002594634470.png?HW-CC-KV=V1&HW-CC-Date=20260723T012124Z&HW-CC-Expire=86400&HW-CC-Sign=4E16EF7B6E72B7730DD41E783C4CBDD45B844B1A511365F5CAEEB8A198473951)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/fnI7XHuvQtiTM6EDYfy8dQ/zh-cn_image_0000002701663068.png?HW-CC-KV=V1&HW-CC-Date=20260911T072815Z&HW-CC-Expire=86400&HW-CC-Sign=26DC8750C835555A9E3F3E2DF514C04D8950745101CEE692BD3E87C7E3A6C4C4)
 
 
 更多性能调优最佳实践，请参考[点击响应时延分析](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-click-to-click-response-optimization)、[点击完成时延分析](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-click-to-complete-delay-analysis)、[帧率问题分析](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-zhenlv)、[Web点击响应时延分析](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-web-click-response-delay-analysis)、[Web加载完成时延分析](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-web-completion-delay-analysis)。

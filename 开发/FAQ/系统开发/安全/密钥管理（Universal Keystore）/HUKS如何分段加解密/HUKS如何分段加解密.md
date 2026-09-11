@@ -78,7 +78,7 @@ function generatorData() {
   console.info('造数据成功');
 }
 
-// 生成密钥
+<em>// 生成密钥</em>
 async function GenerateAesKey() {
   let genProperties = GetAesGenerateProperties();
   let options: huks.HuksOptions = {
@@ -154,7 +154,7 @@ function GetAesDecryptProperties() {
   return properties;
 }
 
-// 分段加密
+<em>// 分段加密</em>
 async function EncryptData() {
   let encryptProperties = GetAesEncryptProperties();
   let options: huks.HuksOptions = {
@@ -172,9 +172,9 @@ async function EncryptData() {
   let resultTemp = new Uint8Array(0);
   let contentTemp = plainText;
   while (contentTemp.length > 0) {
-    // 超过长度会取最长
+    <em>// 超过长度会取最长</em>
     const contentCurr = contentTemp.substring(0, MAX_UPDATE_SESSION_LENGTH);
-    // 起始点大于长度会返回""
+    <em>// 起始点大于长度会返回""</em>
     contentTemp = contentTemp.substring(MAX_UPDATE_SESSION_LENGTH, contentTemp.length);
     options.inData = StringToUint8Array(contentCurr);
     await huks.updateSession(handle, options).then((data) => {
@@ -187,7 +187,7 @@ async function EncryptData() {
     });
   }
 
-  // 分段加解密时，传入finishSession的inData要设置为空的
+  <em>// 分段加解密时，传入finishSession的inData要设置为空的</em>
   options.inData = new Uint8Array(0);
   await huks.finishSession(handle, options).then((data) => {
     cipherData = new Uint8Array(resultTemp.length + data.outData!.length);
@@ -198,7 +198,7 @@ async function EncryptData() {
   });
 }
 
-// 分段解密
+<em>// 分段解密</em>
 async function DecryptData() {
   let decryptOptions = GetAesDecryptProperties();
   let options: huks.HuksOptions = {
@@ -216,7 +216,7 @@ async function DecryptData() {
   let resultTemp = new Uint8Array(0);
   let contentTemp = cipherData;
   while (contentTemp.length > 0) {
-    const contentCurr = contentTemp.slice(0, MAX_UPDATE_SESSION_LENGTH); // 超过长度会取最长
+    const contentCurr = contentTemp.slice(0, MAX_UPDATE_SESSION_LENGTH); <em>// 超过长度会取最长</em>
     contentTemp = contentTemp.slice(MAX_UPDATE_SESSION_LENGTH, contentTemp.length);
     options.inData = contentCurr;
     await huks.updateSession(handle, options).then((data) => {
@@ -237,7 +237,7 @@ async function DecryptData() {
   });
 }
 
-// 验证
+<em>// 验证</em>
 function check() {
   console.info('批量加解密结果：', result === plainText);
 }

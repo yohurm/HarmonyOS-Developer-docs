@@ -1,13 +1,14 @@
 # oh_display_capture.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-display-capture-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 提供屏幕截屏的能力。
 
@@ -23,15 +24,18 @@
 
 
 
-#### 汇总
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 汇总
 
 
+**支持设备：** Phone | PC/2in1 | Tablet
 
-#### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 函数
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -40,15 +44,17 @@
 
 
 
-#### 函数说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 函数说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet
 
-#### OH_NativeDisplayManager_CaptureScreenPixelmap()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### OH_NativeDisplayManager_CaptureScreenPixelmap()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 NativeDisplayManager_ErrorCode OH_NativeDisplayManager_CaptureScreenPixelmap(uint32_t displayId, OH_PixelmapNative **pixelMap)
@@ -70,6 +76,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_CaptureScreenPixelmap(uin
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t displayId | 需要截屏的屏幕ID，该值为非负整数。 |
@@ -77,6 +84,7 @@ NativeDisplayManager_ErrorCode OH_NativeDisplayManager_CaptureScreenPixelmap(uin
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |

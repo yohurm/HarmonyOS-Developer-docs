@@ -1,18 +1,19 @@
 # weatherService（天气数据服务）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/weather-service-weatherservice
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供天气数据服务。
  
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { weatherService } from '@kit.WeatherServiceKit';
@@ -20,9 +21,10 @@ import { weatherService } from '@kit.WeatherServiceKit';
  
   
 
-#### weatherService.getWeather
+## weatherService.getWeather
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getWeather(request: WeatherRequest): Promise&lt;Weather&gt;
  
@@ -40,6 +42,7 @@ getWeather(request: WeatherRequest): Promise&lt;Weather&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | WeatherRequest | 是 | 天气数据请求体。 |
@@ -47,6 +50,7 @@ getWeather(request: WeatherRequest): Promise&lt;Weather&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Weather&gt; | Promise对象，返回天气数据对象。 |
@@ -56,6 +60,7 @@ getWeather(request: WeatherRequest): Promise&lt;Weather&gt;
  
 以下错误码的详细介绍请参见天气服务[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/weather-service-error-code)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -101,9 +106,10 @@ async function getWeatherData() {
  
   
 
-#### weatherService.getWeatherWithContext
+## weatherService.getWeatherWithContext
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getWeatherWithContext(context: common.Context, request: WeatherRequest): Promise&lt;Weather&gt;
  
@@ -121,6 +127,7 @@ getWeatherWithContext(context: common.Context, request: WeatherRequest): Promise
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文，目前只支持UIAbility或UIExtensionAbility的上下文环境。 |
@@ -129,6 +136,7 @@ getWeatherWithContext(context: common.Context, request: WeatherRequest): Promise
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Weather&gt; | Promise对象，返回天气数据对象。 |
@@ -138,6 +146,7 @@ getWeatherWithContext(context: common.Context, request: WeatherRequest): Promise
  
 以下错误码的详细介绍请参见天气服务[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/weather-service-error-code)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -201,9 +210,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### WeatherRequest
+## WeatherRequest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 天气数据请求类。
  
@@ -217,6 +227,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | location | Location | 否 | 否 | 位置信息。 |
@@ -225,9 +236,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### Location
+## Location
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 位置信息。
  
@@ -241,6 +253,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | latitude | number | 否 | 否 | 纬度。 取值范围：[-90, 90]。 在6.1.0(23)之前，精度支持小数点后两位，从6.1.0(23)开始，中国境内(香港特别行政区、澳门特别行政区、中国台湾除外)精度支持小数点后五位，其他地区仍为两位。 |
@@ -249,78 +262,79 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### Weather
+## Weather
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 天气数据类。
  
 **模型约束：** 此接口仅可在Stage模型下使用。
  
-**元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
- 
 **系统能力：** SystemCapability.Weather.Core
  
 **设备行为差异：** 对于5.0.5(17)及之前版本，该接口在Phone、Tablet、PC/2in1中可正常使用，在其他设备类型中无法使用。对于5.1.0(18)及之后版本，该接口在Phone、Tablet、PC/2in1、Wearable中可正常使用。对于6.1.0(23)及之后版本，该接口在Phone、Tablet、PC/2in1、Wearable、TV中可正常使用。
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| current | CurrentWeather | 否 | 是 | 实况天气，若设置了limitedDatasets且数组中不包含Dataset.CURRENT，该字段不返回。 |
-| daily | Forecast&lt;DailyWeather&gt; | 否 | 是 | 多日预报，若设置了limitedDatasets且数组中不包含Dataset.DAILY，该字段不返回。 |
-| hourly | Forecast&lt;HourlyWeather&gt; | 否 | 是 | 逐小时预报，若设置了limitedDatasets且数组中不包含Dataset.HOURLY，该字段不返回。 |
-| minute | Forecast&lt;MinuteWeather&gt; | 否 | 是 | 分钟级降水预报，若设置了limitedDatasets且数组中不包含Dataset.MINUTE，或者该区域短期无降水，该字段不返回。 |
-| alerts | WeatherAlert[] | 否 | 是 | 天气预警，若设置了limitedDatasets且数组中不包含Dataset.ALERTS，或者该区域当前无预警，该字段不返回。 |
-| indices | WeatherIndex[] | 否 | 是 | 天气指数，若设置了limitedDatasets且数组中不包含Dataset.INDICES，该字段不返回。 |
-| tides | Tide[] | 否 | 是 | 潮汐，若设置了limitedDatasets且数组中不包含Dataset.TIDES，或者该区域无潮汐站点，该字段不返回。 |
+| current | CurrentWeather | 否 | 是 | 实况天气，若设置了limitedDatasets且数组中不包含Dataset.CURRENT，该字段不返回。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| daily | Forecast&lt;DailyWeather&gt; | 否 | 是 | 多日预报，若设置了limitedDatasets且数组中不包含Dataset.DAILY，该字段不返回。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| hourly | Forecast&lt;HourlyWeather&gt; | 否 | 是 | 逐小时预报，若设置了limitedDatasets且数组中不包含Dataset.HOURLY，该字段不返回。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| minute | Forecast&lt;MinuteWeather&gt; | 否 | 是 | 分钟级降水预报，若设置了limitedDatasets且数组中不包含Dataset.MINUTE，或者该区域短期无降水，该字段不返回。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| alerts | WeatherAlert[] | 否 | 是 | 天气预警，若设置了limitedDatasets且数组中不包含Dataset.ALERTS，或者该区域当前无预警，该字段不返回。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| indices | WeatherIndex[] | 否 | 是 | 天气指数，若设置了limitedDatasets且数组中不包含Dataset.INDICES，该字段不返回。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| tides | Tide[] | 否 | 是 | 潮汐，若设置了limitedDatasets且数组中不包含Dataset.TIDES，或者该区域无潮汐站点，该字段不返回。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
 | city | City | 否 | 是 | 请求经纬度对应的城市信息，若设置了limitedDatasets且数组中不包含Dataset.CITY，该字段不返回。 元服务API： 从版本6.1.0(23)开始，该接口支持在元服务中使用。 起始版本： 6.1.0(23) |
-| metadata | WeatherMetadata | 否 | 否 | 天气数据元数据。 |
-| attributions | WeatherAttribution[] | 否 | 否 | 天气数据的归因。 |
+| metadata | WeatherMetadata | 否 | 否 | 天气数据元数据。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| attributions | WeatherAttribution[] | 否 | 否 | 天气数据的归因。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
  
  
   
 
-#### CurrentWeather
+## CurrentWeather
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 实况天气数据类。
  
 **模型约束：** 此接口仅可在Stage模型下使用。
  
-**元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
- 
 **系统能力：** SystemCapability.Weather.Core
  
 **设备行为差异：** 对于5.0.5(17)及之前版本，该接口在Phone、Tablet、PC/2in1中可正常使用，在其他设备类型中无法使用。对于5.1.0(18)及之后版本，该接口在Phone、Tablet、PC/2in1、Wearable中可正常使用。对于6.1.0(23)及之后版本，该接口在Phone、Tablet、PC/2in1、Wearable、TV中可正常使用。
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| temperature | number | 否 | 否 | 温度。 单位：℃。 |
-| apparentTemperature | number | 否 | 否 | 体感温度。 单位：℃。 |
-| humidity | number | 否 | 否 | 相对湿度。 例如湿度为30%，本字段返回30。 |
-| pressure | number | 否 | 否 | 地面气压。 单位：hPa。 |
-| pressureTrend | PressureTrend | 否 | 否 | 气压趋势。 |
-| wind | Wind | 否 | 否 | 风力风向。 |
-| cloudCover | number | 否 | 否 | 云量。 例如云量为30%，本字段返回30。 |
-| condition | WeatherCondition | 否 | 否 | 天气现象。 |
-| uvIndex | UVIndex | 否 | 否 | 紫外线指数。 |
-| aqi | WeatherAqi | 否 | 是 | 空气质量。 |
-| visibility | number | 否 | 否 | 能见度。 单位：km。 |
-| updateTime | Date | 否 | 否 | 数据更新时间，UTC时间格式。 |
-| expirationTime | Date | 否 | 否 | 数据失效时间，UTC时间格式。 |
-| summary | string | 否 | 是 | 实况天气一句话描述。 |
+| temperature | number | 否 | 否 | 温度。 单位：℃。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| apparentTemperature | number | 否 | 否 | 体感温度。 单位：℃。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| humidity | number | 否 | 否 | 相对湿度。 例如湿度为30%，本字段返回30。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| pressure | number | 否 | 否 | 地面气压。 单位：hPa。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| pressureTrend | PressureTrend | 否 | 否 | 气压趋势。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| wind | Wind | 否 | 否 | 风力风向。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| cloudCover | number | 否 | 否 | 云量。 例如云量为30%，本字段返回30。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| condition | WeatherCondition | 否 | 否 | 天气现象。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| uvIndex | UVIndex | 否 | 否 | 紫外线指数。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| aqi | WeatherAqi | 否 | 是 | 空气质量。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| visibility | number | 否 | 否 | 能见度。 单位：km。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| updateTime | Date | 否 | 否 | 数据更新时间，UTC时间格式。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| expirationTime | Date | 否 | 否 | 数据失效时间，UTC时间格式。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| summary | string | 否 | 是 | 实况天气一句话描述。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
 | alertTitle | string | 否 | 是 | 预警标题。 元服务API： 从版本6.1.0(23)开始，该接口支持在元服务中使用。 起始版本： 6.1.0(23) |
  
  
   
 
-#### Forecast&lt;T&gt;
+## Forecast&lt;T&gt;
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 预报类天气集合。
  
@@ -334,6 +348,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | forecast | T[] | 否 | 否 | 预报数据集合。 |
@@ -344,9 +359,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### DailyWeather
+## DailyWeather
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 多日天气数据类。
  
@@ -360,6 +376,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | date | Date | 否 | 否 | 日期，精确到天，UTC时间格式。 |
@@ -379,9 +396,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### HourlyWeather
+## HourlyWeather
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 小时天气数据类。
  
@@ -395,6 +413,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | date | Date | 否 | 否 | 日期， 精确到小时，UTC时间格式。 |
@@ -404,7 +423,7 @@ export default class EntryAbility extends UIAbility {
 | wind | Wind | 否 | 否 | 风力风向。 |
 | cloudCover | number | 否 | 否 | 云量。 例如云量为30%，本字段返回30。 |
 | condition | WeatherCondition | 否 | 否 | 天气现象。 |
-| uvIndex | UVIndex | 否 | 否 | 紫外线等级。 |
+| uvIndex | UVIndex | 否 | 否 | 紫外线指数。 |
 | aqi | WeatherAqi | 否 | 是 | 空气质量。 |
 | visibility | number | 否 | 否 | 能见度。 单位：km。 |
 | precipitationProbability | number | 否 | 否 | 降水概率。 |
@@ -413,9 +432,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### MinuteWeather
+## MinuteWeather
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 分钟级降水数据类。
  
@@ -429,6 +449,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | date | Date | 否 | 否 | 日期， 精确到分钟，UTC时间格式。 |
@@ -438,9 +459,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### WeatherAlert
+## WeatherAlert
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 天气预警信息类。
  
@@ -454,6 +476,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | updateTime | Date | 否 | 否 | 数据更新时间，UTC时间格式。 |
@@ -474,9 +497,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### WeatherIndex
+## WeatherIndex
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 天气指数数据类。
  
@@ -490,6 +514,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | updateTime | Date | 否 | 否 | 数据更新时间，UTC时间格式。 |
@@ -501,9 +526,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### Tide
+## Tide
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 潮汐数据类。
  
@@ -517,6 +543,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | updateTime | Date | 否 | 否 | 数据更新时间，UTC时间格式。 |
@@ -528,9 +555,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### City
+## City
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 城市信息类。
  
@@ -542,6 +570,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 6.1.0(23)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | countryCode | string | 否 | 否 | 国家编码，ISO 3166-1 标准中的两位国家编码。 |
@@ -555,9 +584,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### WeatherMetadata
+## WeatherMetadata
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 天气元数据类。
  
@@ -571,6 +601,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | requestTime | Date | 否 | 否 | 接口请求时间，UTC时间格式。 |
@@ -580,9 +611,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### WeatherAttribution
+## WeatherAttribution
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 天气数据归因类。
  
@@ -596,6 +628,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | serviceName | string | 否 | 否 | 数据供应商名称。 |
@@ -604,9 +637,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### Wind
+## Wind
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 风力风向数据类。
  
@@ -620,6 +654,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | direction | CompassDirection | 否 | 否 | 风向。 |
@@ -632,9 +667,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### WeatherCondition
+## WeatherCondition
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 天气现象数据类。
  
@@ -648,6 +684,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | ConditionType | 否 | 否 | 天气现象类型。 |
@@ -657,9 +694,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### UVIndex
+## UVIndex
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 紫外线指数数据类。
  
@@ -673,6 +711,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | category | ExposureCategory | 否 | 否 | 紫外线暴露类别。 |
@@ -682,9 +721,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### WeatherAqi
+## WeatherAqi
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 空气质量数据类。
  
@@ -698,6 +738,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | no2 | number | 否 | 是 | 二氧化氮浓度。 单位：μg/m3。 |
@@ -713,9 +754,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### MoonEvents
+## MoonEvents
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 月出/月落时间，月相等信息类。
  
@@ -729,6 +771,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | moonrise | Date | 否 | 否 | 月出时间，UTC时间格式。 |
@@ -740,9 +783,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### MoonPhase
+## MoonPhase
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 月相信息类。
  
@@ -756,6 +800,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | MoonPhaseType | 否 | 否 | 月相类型。 |
@@ -765,9 +810,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### SunEvents
+## SunEvents
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 日出/日落信息类。
  
@@ -781,6 +827,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | sunrise | Date | 否 | 否 | 日出时间，UTC时间格式。 |
@@ -789,9 +836,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### DayPartForecast
+## DayPartForecast
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 全天部分时段天气信息类。
  
@@ -805,6 +853,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | wind | Wind | 否 | 否 | 风力风向。 |
@@ -821,9 +870,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### DailyIndex
+## DailyIndex
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 每天天气指数数据类。
  
@@ -837,6 +887,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | date | Date | 否 | 否 | 日期，精确到天，UTC时间格式。 |
@@ -847,9 +898,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### HourlyTide
+## HourlyTide
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 小时潮汐数据类。
  
@@ -863,6 +915,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | date | Date | 否 | 否 | 日期，精确到小时，UTC时间格式。 |
@@ -872,9 +925,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### AdministrativeArea
+## AdministrativeArea
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 行政区域信息类。
  
@@ -886,6 +940,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 6.1.0(23)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | level | number | 否 | 否 | 行政区划等级。 0：国家 1：省份 2：地级市 3：县区 |
@@ -896,15 +951,14 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### Dataset
+## Dataset
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 数据集枚举。
  
 **模型约束：** 此接口仅可在Stage模型下使用。
- 
-**元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
  
 **系统能力：** SystemCapability.Weather.Core
  
@@ -912,23 +966,25 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| CURRENT | 0 | 实况天气。 |
-| DAILY | 1 | 多日预报。 |
-| HOURLY | 2 | 逐小时预报。 |
-| MINUTE | 3 | 分钟级降水预报。 |
-| ALERTS | 4 | 天气预警。 |
-| INDICES | 5 | 天气指数。 |
-| TIDES | 6 | 潮汐。 |
+| CURRENT | 0 | 实况天气。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| DAILY | 1 | 多日预报。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| HOURLY | 2 | 逐小时预报。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| MINUTE | 3 | 分钟级降水预报。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| ALERTS | 4 | 天气预警。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| INDICES | 5 | 天气指数。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| TIDES | 6 | 潮汐。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
 | CITY | 7 | 城市信息。 元服务API： 从版本6.1.0(23)开始，该接口支持在元服务中使用。 起始版本： 6.1.0(23) |
  
  
   
 
-#### PressureTrend
+## PressureTrend
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 气压趋势枚举。
  
@@ -942,6 +998,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | UNDEFINED | 0 | 未定义。 |
@@ -952,9 +1009,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### ConditionType
+## ConditionType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 天气现象类型枚举。
  
@@ -968,6 +1026,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | UNDEFINED | 0 | 未定义 |
@@ -1047,9 +1106,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### CompassDirection
+## CompassDirection
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 指针方向枚举。
  
@@ -1063,6 +1123,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | UNDEFINED | 0 | 未定义。 |
@@ -1078,9 +1139,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### ExposureCategory
+## ExposureCategory
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 紫外线暴露程度枚举。
  
@@ -1094,6 +1156,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | UNDEFINED | 0 | 未定义。 |
@@ -1106,9 +1169,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### MoonPhaseType
+## MoonPhaseType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 月相类别枚举。
  
@@ -1122,6 +1186,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | UNDEFINED | 0 | 未定义。 |
@@ -1137,9 +1202,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### Precipitation
+## Precipitation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 降水类型枚举。
  
@@ -1153,6 +1219,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NONE | 0 | 无降水。 |
@@ -1164,9 +1231,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### AlertLevel
+## AlertLevel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 预警级别枚举。
  
@@ -1180,6 +1248,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | BLUE | 1 | 蓝色预警。 |
@@ -1193,9 +1262,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### AlertType
+## AlertType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 预警类型枚举。
  
@@ -1209,6 +1279,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | TYPHOON | 1 | 台风。 |
@@ -1266,9 +1337,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### AqiCategory
+## AqiCategory
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 空气质量类别枚举。
  
@@ -1282,6 +1354,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | UNDEFINED | 0 | 未定义。 |
@@ -1295,9 +1368,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### WeatherIndexType
+## WeatherIndexType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 天气指数类型枚举。
  
@@ -1311,6 +1385,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | UNDEFINED | 0 | 未定义。 |
@@ -1329,9 +1404,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### TideCategory
+## TideCategory
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 潮汐类别枚举。
  
@@ -1345,6 +1421,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | UNDEFINED | 0 | 未定义。 |

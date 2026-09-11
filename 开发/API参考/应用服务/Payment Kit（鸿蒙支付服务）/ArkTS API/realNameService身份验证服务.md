@@ -1,6 +1,6 @@
 # realNameService(身份验证服务)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-realnameservice
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -16,7 +16,8 @@
 **起始版本：** 5.1.1(19)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -26,7 +27,8 @@ import { realNameService } from '@kit.PaymentKit';
  
   
 
-#### startRealNameVerification
+## startRealNameVerification
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -44,6 +46,7 @@ startRealNameVerification(context: common.UIAbilityContext | common.UIExtensionC
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext \| common.UIExtensionContext | 是 | UIAbility上下文。 |
@@ -52,6 +55,7 @@ startRealNameVerification(context: common.UIAbilityContext | common.UIExtensionC
  
 **返回值**：
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象。返回实名信息验证ID，用于实名信息验证结果查询。 |
@@ -61,6 +65,7 @@ startRealNameVerification(context: common.UIAbilityContext | common.UIExtensionC
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-payment)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
@@ -114,7 +119,8 @@ struct Index {
  
   
 
-#### startRealNameAuth
+## startRealNameAuth
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -132,6 +138,7 @@ startRealNameAuth(context: common.UIAbilityContext | common.UIExtensionContext):
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext \| common.UIExtensionContext | 是 | UIAbility上下文。 |
@@ -139,6 +146,7 @@ startRealNameAuth(context: common.UIAbilityContext | common.UIExtensionContext):
  
 **返回值**：
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象。返回实名信息授权ID，用于实名信息授权结果查询。 |
@@ -148,6 +156,7 @@ startRealNameAuth(context: common.UIAbilityContext | common.UIExtensionContext):
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-payment)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
@@ -196,7 +205,8 @@ struct Index {
  
   
 
-#### startFaceVerification
+## startFaceVerification
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -214,6 +224,7 @@ startFaceVerification(context: common.UIAbilityContext | common.UIExtensionConte
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext \| common.UIExtensionContext | 是 | UIAbility上下文。 |
@@ -222,6 +233,7 @@ startFaceVerification(context: common.UIAbilityContext | common.UIExtensionConte
  
 **返回值**：
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象。返回验证结果ID，用于人脸核身实人验证结果查询。 |
@@ -231,6 +243,7 @@ startFaceVerification(context: common.UIAbilityContext | common.UIExtensionConte
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-payment)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. Failed to call the API due to limited device capabilities. |

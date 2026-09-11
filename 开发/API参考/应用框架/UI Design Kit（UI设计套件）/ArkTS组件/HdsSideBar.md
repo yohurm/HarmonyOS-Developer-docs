@@ -1,6 +1,6 @@
-# HdsSideBar
+# HdsSideBar (侧边栏)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdssidebar
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -10,7 +10,8 @@
 **起始版本：** 6.0.0(20)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -20,7 +21,8 @@ import { HdsSideBar } from '@kit.UIDesignKit';
  
   
 
-#### HdsSideBar
+## HdsSideBar
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -36,6 +38,7 @@ HdsSideBar({contentAreaMask?: boolean, isShowSideBar?: boolean, $isShowSideBar?:
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | contentAreaMask | boolean | 否 | @Param | 设置HdsSideBar组件侧边栏悬浮显示的场景下内容区是否有蒙层。 true：内容区有蒙层。false：内容区没有蒙层。 默认值：true。 |
@@ -54,13 +57,14 @@ HdsSideBar({contentAreaMask?: boolean, isShowSideBar?: boolean, $isShowSideBar?:
 | sideBarPanelBuilder | CustomBuilder | 是 | @Require @BuilderParam | 设置HdsSideBar组件侧边栏的子组件。 |
 | contentPanelBuilder | CustomBuilder | 是 | @Require @BuilderParam | 设置HdsSideBar组件内容区的子组件。 |
 | sideBarContainerType | SideBarContainerType | 否 | @Param | 设置HdsSideBar组件侧边栏的显示类型。 默认值：SideBarContainerType.AUTO，侧边栏嵌入到组件内，和内容区并列显示。 |
-| scaleContentEnabled | boolean | 否 | @Param | 设置侧边栏展开内容区是否为缩放样式。 true：侧边栏展开内容区为缩放样式。 false：侧边栏展开内容区为平移样式。 默认值：true。 起始版本：6.1.0(23) |
-| swipeEnabled | boolean | 否 | @Param | 设置侧边栏抽屉是否可跟随滑动手势展开关闭。 true：侧边栏抽屉跟随滑动手势展开关闭。 false：侧边栏抽屉不跟随滑动手势展开关闭。 默认值：false。 起始版本：6.1.0(23) 说明： swipeEnabled仅在平移场景下（scaleContentEnabled为false）生效，其他场景下不支持侧滑手势。 |
+| scaleContentEnabled | boolean | 否 | @Param | 设置侧边栏展开内容区是否为缩放样式。 true：侧边栏展开内容区为缩放样式。 false：侧边栏展开内容区为平移样式。 默认值：true。 起始版本： 6.1.0(23) |
+| swipeEnabled | boolean | 否 | @Param | 设置侧边栏抽屉是否可跟随滑动手势展开关闭。 true：侧边栏抽屉跟随滑动手势展开关闭。 false：侧边栏抽屉不跟随滑动手势展开关闭。 默认值：false。 起始版本： 6.1.0(23) 说明： swipeEnabled仅在平移场景下（scaleContentEnabled为false）生效，其他场景下不支持侧滑手势。 |
  
  
   
 
-#### build
+### build
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -76,7 +80,8 @@ struct的默认构造函数，无法直接调用此方法。
  
   
 
-#### 示例
+## 示例
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 

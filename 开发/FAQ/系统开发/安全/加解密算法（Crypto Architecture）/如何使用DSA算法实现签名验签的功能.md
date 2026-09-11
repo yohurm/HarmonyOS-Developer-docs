@@ -42,7 +42,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 
 let input: cryptoFramework.DataBlob = { data: new Uint8Array(buffer.from('This is Sign test plan', 'utf-8').buffer) };
 
-// 配置DSA1024公钥和私钥中包含的公共参数
+<em>// </em><em>配置DSA1024公钥和私钥中包含的公共参数</em>
 function genDsa1024CommonSpecBigE() {
   let dsaCommonSpec: cryptoFramework.DSACommonParamsSpec = {
     algName: 'DSA',
@@ -54,7 +54,7 @@ function genDsa1024CommonSpecBigE() {
   return dsaCommonSpec;
 }
 
-// 设置DSA1024密钥对中包含的全参数
+<em>// </em><em>设置DSA1024密钥对中包含的全参数</em>
 function genDsa1024KeyPairSpecBigE() {
   let dsaCommonSpec = genDsa1024CommonSpecBigE();
   let dsaKeyPairSpec: cryptoFramework.DSAKeyPairSpec = {
@@ -87,16 +87,16 @@ async function verifyMessagePromise(signMessageBlob: cryptoFramework.DataBlob, p
 function main() {
   let asyKeyPairSpec = genDsa1024KeyPairSpecBigE();
   let asyKeyGeneratorBySpec = cryptoFramework.createAsyKeyGeneratorBySpec(asyKeyPairSpec);
-  // 异步获取非对称密钥生成器生成的密钥
+ <em> // 异步获取非对称密钥生成器生成的密钥</em>
   asyKeyGeneratorBySpec.generateKeyPair(async (err, keyPair) => {
     if (err) {
       hilog.error(0x0000, 'test', 'generateKeyPair: error.');
       return;
     }
     hilog.info(0x0000, 'test', 'generateKeyPair: success.');
-    // 签名
+   <em> // 签名</em>
     let signData = await signMessagePromise(keyPair.priKey);
-    // 验签
+  <em>  // 验签</em>
     let verifyResult = await verifyMessagePromise(signData, keyPair.pubKey);
     if (verifyResult === true) {
       hilog.info(0x0000, 'test', 'verify success');

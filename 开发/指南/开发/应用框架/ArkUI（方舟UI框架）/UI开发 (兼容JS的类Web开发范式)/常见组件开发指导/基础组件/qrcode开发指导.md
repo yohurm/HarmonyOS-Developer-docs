@@ -1,13 +1,13 @@
 # qrcode开发指导
 
-更新时间：2026-07-09 02:26:55
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-components-qrcode
 
 生成并显示二维码，具体用法请参考[qrcode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-basic-qrcode)。
 
 
-#### 创建qrcode组件
+## 创建qrcode组件
 
 在pages/index目录下的hml文件中创建一个qrcode组件。
 
@@ -40,7 +40,7 @@
 
 
 
-#### 设置组件类型
+## 设置组件类型
 
 通过设置qrcode的type属性来选择二维码类型，如定义qrcode为矩形二维码、圆形二维码。
 
@@ -89,7 +89,7 @@ export default {
 
 
 
-#### 设置样式
+## 设置样式
 
 通过color和background-color样式为二维码设置显示颜色和背景颜色。
 
@@ -127,7 +127,7 @@ qrcode{
 
 
 
-#### 场景示例
+## 场景示例
 
 在本场景中将二维码与输入框绑定，通过改变输入框的内容改变二维码。
 
@@ -168,4 +168,4 @@ export default {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/5kpcqZQqQoasRDFWqhxnjA/zh-cn_image_0000002677825855.gif?HW-CC-KV=V1&HW-CC-Date=20260723T012138Z&HW-CC-Expire=86400&HW-CC-Sign=05576CF4D8A7440E65F9D9FA76DBAF06B64B90BCA9BD180A500332CE4E671A3F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/-Y2OAhX8SHGgWDuyX_D9kw/zh-cn_image_0000002747210687.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073134Z&HW-CC-Expire=86400&HW-CC-Sign=F3411DBEA5DA86C02248251A6DCCC1EA1114B7604A6C3C0FA7367AFEFD615A95)

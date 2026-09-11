@@ -1,20 +1,21 @@
 # Class (Path)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-graphics-drawing-path
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-由直线、圆弧、二阶贝塞尔、三阶贝塞尔组成的复合几何路径。
+Path是Drawing模块提供的复合几何路径类，由直线、圆弧、圆锥曲线、二阶贝塞尔、三阶贝塞尔等基本图元组成，支持路径的构造、变换、布尔运算、SVG路径解析与转换、测量与片段截取等能力。未设置填充类型时，默认填充类型为WINDING，可通过[setFillType](#setfilltype12)修改。
 
 > [!NOTE]
 > 本模块首批接口从API version 11开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 本模块使用屏幕物理像素单位px。 本模块为单线程模型策略，需要调用方自行管理线程安全和上下文状态的切换。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { drawing } from '@kit.ArkGraphics2D';
@@ -22,9 +23,10 @@ import { drawing } from '@kit.ArkGraphics2D';
 
 
 
-#### constructor12+
+## constructor12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -44,9 +46,10 @@ let path: drawing.Path = new drawing.Path();
 
 
 
-#### constructor12+
+## constructor12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(path: Path)
 
@@ -57,6 +60,7 @@ constructor(path: Path)
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -73,18 +77,19 @@ path.moveTo(0, 0);
 path.lineTo(0, 700);
 path.lineTo(700, 0);
 path.close();
-let path1: drawing.Path =  new drawing.Path(path);
+let path1: drawing.Path = new drawing.Path(path);
 ```
 
 
 
-#### set20+
+## set20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set(src: Path): void
 
-使用另一个路径对当前路径进行更新。
+使用指定路径替换当前路径的内容，使当前路径与指定路径完全一致。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
@@ -92,9 +97,10 @@ set(src: Path): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| src | Path | 是 | 用于更新的路径。 |
+| src | Path | 是 | 用于替换当前路径内容的源路径对象。 |
 
 
 **示例：**
@@ -112,19 +118,21 @@ path1.set(path);
 
 
 
-#### moveTo
+## moveTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 moveTo(x: number, y: number) : void
 
-设置自定义路径的起始点位置。
+设置自定义路径的起始点位置。与[rMoveTo](#rmoveto12)使用相对坐标不同，moveTo使用绝对坐标设置起始点。当路径起点固定时，推荐使用moveTo；当路径需要基于当前位置动态构建时，推荐使用[rMoveTo](#rmoveto12)。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -136,6 +144,7 @@ moveTo(x: number, y: number) : void
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
@@ -147,24 +156,26 @@ moveTo(x: number, y: number) : void
 import { drawing } from '@kit.ArkGraphics2D';
 
 let path = new drawing.Path();
-path.moveTo(10,10);
+path.moveTo(10, 10);
 ```
 
 
 
-#### lineTo
+## lineTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 lineTo(x: number, y: number) : void
 
-添加一条从路径的最后点位置（若路径没有内容则默认为 (0, 0)）到目标点位置的线段。
+添加一条从路径最后点位置（若路径没有内容则默认为 (0, 0)）到目标点位置的线段。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -176,6 +187,7 @@ lineTo(x: number, y: number) : void
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
@@ -187,25 +199,27 @@ lineTo(x: number, y: number) : void
 import { drawing } from '@kit.ArkGraphics2D';
 
 let path = new drawing.Path();
-path.moveTo(10,10);
+path.moveTo(10, 10);
 path.lineTo(10, 15);
 ```
 
 
 
-#### arcTo
+## arcTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 arcTo(x1: number, y1: number, x2: number, y2: number, startDeg: number, sweepDeg: number): void
 
-给路径添加一段弧线，绘制弧线的方式为角度弧，该方式首先会指定一个矩形边框，取其内切椭圆，然后会指定一个起始角度和扫描度数，从起始角度扫描截取的椭圆周长一部分即为绘制的弧线。另外会默认添加一条从路径的最后点位置到弧线起始点位置的线段。
+给路径添加一段弧线。绘制弧线的方式为角度弧：首先指定一个矩形边界，取其内切椭圆；然后指定起始角度和扫描度数；最后从起始角度扫描截取椭圆周长的一部分，即为绘制的弧线。另外会默认添加一条从路径最后点位置（若路径没有内容则默认值为 (0, 0)）到弧线起始点位置的线段。若不需要自动添加连接线段，请使用[addArc](#addarc12)。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -221,6 +235,7 @@ arcTo(x1: number, y1: number, x2: number, y2: number, startDeg: number, sweepDeg
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
@@ -232,25 +247,27 @@ arcTo(x1: number, y1: number, x2: number, y2: number, startDeg: number, sweepDeg
 import { drawing } from '@kit.ArkGraphics2D';
 
 let path = new drawing.Path();
-path.moveTo(10,10);
+path.moveTo(10, 10);
 path.arcTo(10, 15, 10, 10, 10, 10);
 ```
 
 
 
-#### quadTo
+## quadTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 quadTo(ctrlX: number, ctrlY: number, endX: number, endY: number): void
 
-添加从路径最后点位置（若路径没有内容则为 (0, 0)）到目标点位置的二阶贝塞尔曲线。
+添加从路径最后点位置（若路径没有内容则默认值为 (0, 0)）到目标点位置的二阶贝塞尔曲线。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -264,6 +281,7 @@ quadTo(ctrlX: number, ctrlY: number, endX: number, endY: number): void
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
@@ -275,25 +293,27 @@ quadTo(ctrlX: number, ctrlY: number, endX: number, endY: number): void
 import { drawing } from '@kit.ArkGraphics2D';
 
 let path = new drawing.Path();
-path.moveTo(10,10);
+path.moveTo(10, 10);
 path.quadTo(10, 15, 10, 10);
 ```
 
 
 
-#### conicTo12+
+## conicTo12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 conicTo(ctrlX: number, ctrlY: number, endX: number, endY: number, weight: number): void
 
-在当前路径上添加一条路径最后点位置（若路径没有内容则默认为 (0, 0)）到目标点位置的圆锥曲线，其控制点为 (ctrlX, ctrlY)，结束点为 (endX, endY)。
+在当前路径上添加一条路径最后点位置（若路径没有内容则默认为 (0, 0)）到目标点位置的圆锥曲线，其控制点为 (ctrlX, ctrlY)，目标点为 (endX, endY)。与[quadTo](#quadto)相比，conicTo通过权重参数可更灵活地控制曲线形状：权重为1时效果与quadTo相同，权重不为1时可精确表示圆弧、椭圆弧等圆锥曲线段。仅需标准二次贝塞尔曲线时推荐使用quadTo，需要精确表示圆弧或灵活控制曲线形状时推荐使用conicTo。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -307,6 +327,7 @@ conicTo(ctrlX: number, ctrlY: number, endX: number, endY: number, weight: number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -324,19 +345,21 @@ path.conicTo(200, 400, 100, 200, 0);
 
 
 
-#### cubicTo
+## cubicTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cubicTo(ctrlX1: number, ctrlY1: number, ctrlX2: number, ctrlY2: number, endX: number, endY: number): void
 
-添加一条从路径最后点位置（若路径没有内容则默认为 (0, 0)）到目标点位置的三阶贝塞尔圆滑曲线。
+添加一条从路径最后点位置（若路径没有内容则默认为 (0, 0)）到目标点位置的三阶贝塞尔曲线。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -352,6 +375,7 @@ cubicTo(ctrlX1: number, ctrlY1: number, ctrlX2: number, ctrlY2: number, endX: nu
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
@@ -363,19 +387,20 @@ cubicTo(ctrlX1: number, ctrlY1: number, ctrlX2: number, ctrlY2: number, endX: nu
 import { drawing } from '@kit.ArkGraphics2D';
 
 let path = new drawing.Path();
-path.moveTo(10,10);
+path.moveTo(10, 10);
 path.cubicTo(100, 100, 80, 150, 300, 150);
 ```
 
 
 
-#### rMoveTo12+
+## rMoveTo12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 rMoveTo(dx: number, dy: number): void
 
-设置一个相对于当前路径终点（若路径没有内容则默认为 (0, 0)）的路径起始点位置。
+设置一个相对于当前路径最后点位置（若路径没有内容则默认为 (0, 0)）的路径起始点位置。与[moveTo](#moveto)使用绝对坐标不同，rMoveTo使用相对于当前路径最后点位置的偏移量。当路径需要基于当前位置动态构建时，推荐使用相对坐标方法（如rMoveTo、rLineTo等）；当路径起点固定时，推荐使用绝对坐标方法。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
@@ -383,15 +408,17 @@ rMoveTo(dx: number, dy: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| dx | number | 是 | 路径新起始点相对于当前路径终点的x轴偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移，该参数为浮点数。单位为物理像素px。 |
-| dy | number | 是 | 路径新起始点相对于当前路径终点的y轴偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移，该参数为浮点数。单位为物理像素px。 |
+| dx | number | 是 | 路径新起始点相对于当前路径最后点位置的x轴偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移，该参数为浮点数。单位为物理像素px。 |
+| dy | number | 是 | 路径新起始点相对于当前路径最后点位置的y轴偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移，该参数为浮点数。单位为物理像素px。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -409,13 +436,14 @@ path.rMoveTo(10, 10);
 
 
 
-#### rLineTo12+
+## rLineTo12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 rLineTo(dx: number, dy: number): void
 
-使用相对位置在当前路径上添加一条当前路径终点（若路径没有内容则默认为 (0, 0)）到目标点位置的线段。
+使用相对位置添加一条从路径最后点位置（若路径没有内容则默认为 (0, 0)）到目标点位置的线段。与[lineTo](#lineto)使用绝对坐标不同，rLineTo使用相对于当前路径最后点位置的偏移量来指定目标点。当路径需要基于当前位置动态构建时，推荐使用相对坐标方法；当目标点位置固定时，推荐使用绝对坐标方法。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
@@ -423,15 +451,17 @@ rLineTo(dx: number, dy: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| dx | number | 是 | 目标点相对于当前路径终点的x轴偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移，该参数为浮点数。单位为物理像素px。 |
-| dy | number | 是 | 目标点相对于当前路径终点的y轴偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移，该参数为浮点数。单位为物理像素px。 |
+| dx | number | 是 | 目标点相对于当前路径最后点位置的x轴偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移，该参数为浮点数。单位为物理像素px。 |
+| dy | number | 是 | 目标点相对于当前路径最后点位置的y轴偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移，该参数为浮点数。单位为物理像素px。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -449,13 +479,14 @@ path.rLineTo(400, 200);
 
 
 
-#### rQuadTo12+
+## rQuadTo12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 rQuadTo(dx1: number, dy1: number, dx2: number, dy2: number): void
 
-使用相对位置在当前路径上添加一条当前路径终点（若路径没有内容则默认为 (0, 0)）到目标点位置的二阶贝塞尔曲线。
+使用相对位置添加一条从路径最后点位置（若路径没有内容则默认为 (0, 0)）到目标点位置的二阶贝塞尔曲线。与[quadTo](#quadto)使用绝对坐标不同，rQuadTo使用相对于当前路径最后点位置的偏移量在当前路径上添加二阶贝塞尔曲线。当路径需要基于当前位置动态构建时，推荐使用相对坐标方法；当路径目标点固定时，推荐使用绝对坐标方法。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
@@ -463,17 +494,19 @@ rQuadTo(dx1: number, dy1: number, dx2: number, dy2: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| dx1 | number | 是 | 控制点相对于路径终点的x轴偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移，该参数为浮点数。单位为物理像素px。 |
-| dy1 | number | 是 | 控制点相对于路径终点的y轴偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移，该参数为浮点数。单位为物理像素px。 |
-| dx2 | number | 是 | 目标点相对于路径终点的x轴偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移，该参数为浮点数。单位为物理像素px。 |
-| dy2 | number | 是 | 目标点相对于路径终点的y轴偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移，该参数为浮点数。单位为物理像素px。 |
+| dx1 | number | 是 | 控制点相对于路径最后点位置的x轴偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移，该参数为浮点数。单位为物理像素px。 |
+| dy1 | number | 是 | 控制点相对于路径最后点位置的y轴偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移，该参数为浮点数。单位为物理像素px。 |
+| dx2 | number | 是 | 目标点相对于路径最后点位置的x轴偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移，该参数为浮点数。单位为物理像素px。 |
+| dy2 | number | 是 | 目标点相对于路径最后点位置的y轴偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移，该参数为浮点数。单位为物理像素px。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -491,13 +524,14 @@ path.rQuadTo(100, 0, 0, 200);
 
 
 
-#### rConicTo12+
+## rConicTo12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 rConicTo(ctrlX: number, ctrlY: number, endX: number, endY: number, weight: number): void
 
-使用相对位置在当前路径上添加一条路径终点（若路径没有内容则默认为 (0, 0)）到目标点位置的圆锥曲线。
+使用相对位置添加一条从路径最后点位置（若路径没有内容则默认为 (0, 0)）到目标点位置的圆锥曲线。与[conicTo](#conicto12)使用绝对坐标不同，rConicTo使用相对于当前路径最后点位置的偏移量在当前路径上添加圆锥曲线。当路径需要基于当前位置动态构建时，推荐使用相对坐标方法；当路径目标点固定时，推荐使用绝对坐标方法。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
@@ -505,18 +539,20 @@ rConicTo(ctrlX: number, ctrlY: number, endX: number, endY: number, weight: numbe
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| ctrlX | number | 是 | 控制点相对于路径终点的x轴偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移，该参数为浮点数。单位为物理像素px。 |
-| ctrlY | number | 是 | 控制点相对于路径终点的y轴偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移，该参数为浮点数。单位为物理像素px。 |
-| endX | number | 是 | 目标点相对于路径终点的x轴偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移，该参数为浮点数。单位为物理像素px。 |
-| endY | number | 是 | 目标点相对于路径终点的y轴偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移，该参数为浮点数。单位为物理像素px。 |
-| weight | number | 是 | 表示曲线的权重，决定了曲线的形状，越大越接近控制点。若小于等于0则等同于使用rLineTo添加一条到结束点的线段，若为1则等同于rQuadTo，该参数为浮点数。 |
+| ctrlX | number | 是 | 控制点相对于路径最后点位置的x轴偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移，该参数为浮点数。单位为物理像素px。 |
+| ctrlY | number | 是 | 控制点相对于路径最后点位置的y轴偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移，该参数为浮点数。单位为物理像素px。 |
+| endX | number | 是 | 目标点相对于路径最后点位置的x轴偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移，该参数为浮点数。单位为物理像素px。 |
+| endY | number | 是 | 目标点相对于路径最后点位置的y轴偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移，该参数为浮点数。单位为物理像素px。 |
+| weight | number | 是 | 表示曲线权重，决定了曲线的形状，越大越接近控制点。若小于等于0则等同于使用rLineTo添加一条到结束点的线段，若为1则等同于rQuadTo，该参数为浮点数。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -534,13 +570,14 @@ path.rConicTo(200, 400, 100, 200, 0);
 
 
 
-#### rCubicTo12+
+## rCubicTo12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 rCubicTo(ctrlX1: number, ctrlY1: number, ctrlX2: number, ctrlY2: number, endX: number, endY: number): void
 
-使用相对位置在当前路径上添加一条当前路径终点（若路径没有内容则默认为 (0, 0)）到目标点位置的三阶贝塞尔曲线。
+使用相对位置添加一条从路径最后点位置（若路径没有内容则默认为 (0, 0)）到目标点位置的三阶贝塞尔曲线。与[cubicTo](#cubicto)使用绝对坐标不同，rCubicTo使用相对于当前路径最后点位置的偏移量在当前路径上添加三阶贝塞尔曲线。当路径需要基于当前位置动态构建时，推荐使用相对坐标方法；当路径目标点固定时，推荐使用绝对坐标方法。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
@@ -548,19 +585,21 @@ rCubicTo(ctrlX1: number, ctrlY1: number, ctrlX2: number, ctrlY2: number, endX: n
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| ctrlX1 | number | 是 | 第一个控制点相对于路径终点的x轴偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移，该参数为浮点数。单位为物理像素px。 |
-| ctrlY1 | number | 是 | 第一个控制点相对于路径终点的y轴偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移，该参数为浮点数。单位为物理像素px。 |
-| ctrlX2 | number | 是 | 第二个控制点相对于路径终点的x轴偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移，该参数为浮点数。单位为物理像素px。 |
-| ctrlY2 | number | 是 | 第二个控制点相对于路径终点的y轴偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移，该参数为浮点数。单位为物理像素px。 |
-| endX | number | 是 | 目标点相对于路径终点的x轴偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移，该参数为浮点数。单位为物理像素px。 |
-| endY | number | 是 | 目标点相对于路径终点的y轴偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移，该参数为浮点数。单位为物理像素px。 |
+| ctrlX1 | number | 是 | 第一个控制点相对于路径最后点位置的x轴偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移，该参数为浮点数。单位为物理像素px。 |
+| ctrlY1 | number | 是 | 第一个控制点相对于路径最后点位置的y轴偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移，该参数为浮点数。单位为物理像素px。 |
+| ctrlX2 | number | 是 | 第二个控制点相对于路径最后点位置的x轴偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移，该参数为浮点数。单位为物理像素px。 |
+| ctrlY2 | number | 是 | 第二个控制点相对于路径最后点位置的y轴偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移，该参数为浮点数。单位为物理像素px。 |
+| endX | number | 是 | 目标点相对于路径最后点位置的x轴偏移量，正数往x轴正方向偏移，负数往x轴负方向偏移，该参数为浮点数。单位为物理像素px。 |
+| endY | number | 是 | 目标点相对于路径最后点位置的y轴偏移量，正数往y轴正方向偏移，负数往y轴负方向偏移，该参数为浮点数。单位为物理像素px。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -578,36 +617,31 @@ path.rCubicTo(200, 0, 0, 200, -20, 0);
 
 
 
-#### addArc12+
+## addArc12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addArc(rect: common2D.Rect, startAngle: number, sweepAngle: number): void
 
-向路径添加一段圆弧。
-
-当startAngle和sweepAngle同时满足以下两种情况时，添加整个椭圆而不是圆弧：
-
-1.startAngle对90取余接近于0；
-
-2.sweepAngle不在(-360, 360)区间内。
-
-其余情况sweepAngle会对360取余后添加圆弧。
+向路径添加一段圆弧。与[arcTo](#arcto)相比，addArc不会自动添加从路径最后点到弧线起点的连接线段，且通过common2D.Rect对象指定矩形边界。若需要自动连接弧线起点，请使用arcTo；若仅需添加独立弧线，可使用addArc。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rect | common2D.Rect | 是 | 包含弧的椭圆的矩形边界。 |
-| startAngle | number | 是 | 弧的起始角度，单位为度，0度为x轴正方向，该参数为浮点数。 |
-| sweepAngle | number | 是 | 扫描角度，单位为度。正数表示顺时针方向，负数表示逆时针方向，该参数为浮点数。 |
+| startAngle | number | 是 | 弧的起始角度，单位为度，0°为x轴正方向，该参数为浮点数。当对90取余接近于0且sweepAngle不在(-360, 360)区间内时，将添加整个椭圆而非圆弧。 |
+| sweepAngle | number | 是 | 扫描角度，单位为度。正数表示顺时针方向，负数表示逆时针方向。当参数不在(-360, 360)区间内且startAngle对90取余接近于0时，将添加整个椭圆而非圆弧；其余情况下实际扫描角度为该入参对360取余的结果。该参数为浮点数。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -626,9 +660,10 @@ path.addArc(rect, 90, 180);
 
 
 
-#### addCircle12+
+## addCircle12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addCircle(x: number, y: number, radius: number, pathDirection?: PathDirection): void
 
@@ -638,17 +673,19 @@ addCircle(x: number, y: number, radius: number, pathDirection?: PathDirection): 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | x | number | 是 | 表示圆心的x轴坐标，该参数为浮点数。单位为物理像素px。 |
 | y | number | 是 | 表示圆心的y轴坐标，该参数为浮点数。单位为物理像素px。 |
-| radius | number | 是 | 表示圆形的半径，该参数为浮点数，小于等于0时不会有任何效果。单位为物理像素px。 |
-| pathDirection | PathDirection | 否 | 表示路径方向，默认为顺时针方向。 |
+| radius | number | 是 | 表示圆形的半径，取值范围>0，该参数为浮点数，小于等于0时不会有任何效果。单位为物理像素px。 |
+| pathDirection | PathDirection | 否 | 表示路径方向。不传入时默认为顺时针方向。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -666,9 +703,10 @@ path.addCircle(100, 200, 50, drawing.PathDirection.CLOCKWISE);
 
 
 
-#### addOval12+
+## addOval12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addOval(rect: common2D.Rect, start: number, pathDirection?: PathDirection): void
 
@@ -678,16 +716,18 @@ addOval(rect: common2D.Rect, start: number, pathDirection?: PathDirection): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rect | common2D.Rect | 是 | 椭圆的矩形边界。 |
-| start | number | 是 | 表示椭圆初始点的索引，0，1，2，3分别对应椭圆的上端点，右端点，下端点，左端点，该参数为不小于0的整数，大于等于4时会对4取余。 |
-| pathDirection | PathDirection | 否 | 表示路径方向，默认为顺时针方向。 |
+| start | number | 是 | 表示椭圆初始点的索引，取值范围为不小于0的整数，0、1、2、3分别对应椭圆的上端点、右端点、下端点、左端点，大于等于4时会对4取余。 |
+| pathDirection | PathDirection | 否 | 表示路径方向。不传入时默认为顺时针方向。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -706,9 +746,10 @@ path.addOval(rect, 5, drawing.PathDirection.CLOCKWISE);
 
 
 
-#### addRect12+
+## addRect12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addRect(rect: common2D.Rect, pathDirection?: PathDirection): void
 
@@ -718,15 +759,17 @@ addRect(rect: common2D.Rect, pathDirection?: PathDirection): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| rect | common2D.Rect | 是 | 向路径中添加的矩形轮廓。 |
-| pathDirection | PathDirection | 否 | 表示路径方向，默认为顺时针方向。 |
+| rect | common2D.Rect | 是 | 向路径中添加的矩形轮廓，rect参数需为有效的common2D.Rect对象，left需小于right、top需小于bottom。 |
+| pathDirection | PathDirection | 否 | 表示路径方向。不传入时默认为顺时针方向。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -745,9 +788,10 @@ path.addRect(rect, drawing.PathDirection.CLOCKWISE);
 
 
 
-#### addRoundRect12+
+## addRoundRect12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addRoundRect(roundRect: RoundRect, pathDirection?: PathDirection): void
 
@@ -757,15 +801,17 @@ addRoundRect(roundRect: RoundRect, pathDirection?: PathDirection): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| roundRect | RoundRect | 是 | 圆角矩形对象。 |
-| pathDirection | PathDirection | 否 | 表示路径方向，默认为顺时针方向。 |
+| roundRect | RoundRect | 是 | 向路径中添加的圆角矩形对象，需为有效的RoundRect对象。 |
+| pathDirection | PathDirection | 否 | 表示路径方向。不传入时默认为顺时针方向。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -785,9 +831,10 @@ path.addRoundRect(roundRect, drawing.PathDirection.CLOCKWISE);
 
 
 
-#### addPath12+
+## addPath12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addPath(path: Path, matrix?: Matrix | null): void
 
@@ -797,15 +844,17 @@ addPath(path: Path, matrix?: Matrix | null): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | Path | 是 | 表示源路径对象。 |
-| matrix | Matrix\|null | 否 | 表示矩阵对象，默认为单位矩阵。 |
+| path | Path | 是 | 要添加到当前路径的源路径对象，经过矩阵变换后将被追加到当前路径中。 |
+| matrix | Matrix \| null | 否 | 表示矩阵对象，用于对源路径进行变换（如旋转、缩放、平移等）。当需要对源路径进行几何变换后再添加到当前路径时传入此参数；当仅需原样添加源路径时可不传入，不传入时默认为单位矩阵（即不进行任何变换）。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -828,9 +877,10 @@ dstPath.addPath(path, matrix);
 
 
 
-#### transform12+
+## transform12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 transform(matrix: Matrix): void
 
@@ -840,14 +890,16 @@ transform(matrix: Matrix): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| matrix | Matrix | 是 | 表示矩阵对象。 |
+| matrix | Matrix | 是 | 表示对路径进行矩阵变换所使用的矩阵对象，该矩阵定义了变换的具体参数（如缩放比例、旋转角度、平移距离等），路径中的所有点将按照该矩阵进行变换。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -870,25 +922,28 @@ path.transform(matrix);
 
 
 
-#### contains12+
+## contains12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contains(x: number, y: number): boolean
 
-判断指定坐标点是否被路径包含，判定是否被路径包含的规则参考[PathFillType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-graphics-drawing-e#pathfilltype12)。
+判断指定坐标点是否被路径包含，判定规则参考[PathFillType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-graphics-drawing-e#pathfilltype12)。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| x | number | 是 | x轴上坐标点，该参数必须为浮点数。单位为物理像素px。 |
-| y | number | 是 | y轴上坐标点，该参数必须为浮点数。单位为物理像素px。 |
+| x | number | 是 | x轴上坐标点，该参数为浮点数。单位为物理像素px。 |
+| y | number | 是 | y轴上坐标点，该参数为浮点数。单位为物理像素px。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -898,6 +953,7 @@ contains(x: number, y: number): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -912,23 +968,25 @@ import { common2D, drawing } from '@kit.ArkGraphics2D';
 const path = new drawing.Path();
 let rect : common2D.Rect = {left: 50, top: 50, right: 250, bottom: 250};
 path.addRect(rect, drawing.PathDirection.CLOCKWISE);
-console.info("test contains: " + path.contains(0, 0));
-console.info("test contains: " + path.contains(60, 60));
+console.info('test contains: ' + path.contains(0, 0));
+console.info('test contains: ' + path.contains(60, 60));
 ```
 
 
 
-#### setLastPoint20+
+## setLastPoint20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setLastPoint(x: number, y: number): void
 
-修改路径的最后一个点。
+修改路径最后点位置。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -955,25 +1013,27 @@ console.info('isEmpty:', isEmpty);
 
 
 
-#### getLastPoint
+## getLastPoint
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLastPoint(): common2D.Point
 
-获取路径的最后一个点的坐标。
+获取路径最后点位置的坐标。
 
 **起始版本：** 26.0.0
 
-**模型约束：** 此接口仅在Stage模型下使用。
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| common2D.Point | 路径的最后一个点坐标。如果路径为空，则返回undefined。 |
+| common2D.Point | 路径最后点位置坐标。如果路径为空，则返回undefined。 |
 
 
 **示例：**
@@ -990,26 +1050,29 @@ console.info('lastPoint.y:', lastPoint?.y);
 
 
 
-#### setFillType12+
+## setFillType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setFillType(pathFillType: PathFillType): void
 
-设置路径的填充类型，决定路径内部区域的定义方式。例如，使用Winding填充类型时，路径内部区域由路径环绕的次数决定，而使用EvenOdd填充类型时，路径内部区域由路径环绕的次数是否为奇数决定。
+设置路径的填充类型，决定路径内部区域的定义方式。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| pathFillType | PathFillType | 是 | 表示路径填充规则。 |
+| pathFillType | PathFillType | 是 | 表示路径填充类型，决定路径内部区域的定义方式。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1027,9 +1090,10 @@ path.setFillType(drawing.PathFillType.WINDING);
 
 
 
-#### getFillType20+
+## getFillType20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFillType(): PathFillType
 
@@ -1039,9 +1103,10 @@ getFillType(): PathFillType
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| PathFillType | 路径填充类型。 |
+| PathFillType | 路径的填充类型，决定路径内部区域的定义方式。 |
 
 
 **示例：**
@@ -1051,14 +1116,15 @@ import { drawing } from '@kit.ArkGraphics2D';
 const path = new drawing.Path();
 path.setFillType(drawing.PathFillType.WINDING);
 let type = path.getFillType();
-console.info("type :" + type);
+console.info('type :' + type);
 ```
 
 
 
-#### getBounds12+
+## getBounds12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBounds(): common2D.Rect
 
@@ -1067,6 +1133,7 @@ getBounds(): common2D.Rect
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1079,20 +1146,21 @@ getBounds(): common2D.Rect
 import { common2D, drawing } from '@kit.ArkGraphics2D';
 
 const path = new drawing.Path();
-path.lineTo(50, 40)
+path.lineTo(50, 40);
 let rect : common2D.Rect = {left: 0, top: 0, right: 0, bottom: 0};
 rect = path.getBounds();
-console.info("test rect.left: " + rect.left);
-console.info("test rect.top: " + rect.top);
-console.info("test rect.right: " + rect.right);
-console.info("test rect.bottom: " + rect.bottom);
+console.info('test rect.left: ' + rect.left);
+console.info('test rect.top: ' + rect.top);
+console.info('test rect.right: ' + rect.right);
+console.info('test rect.bottom: ' + rect.bottom);
 ```
 
 
 
-#### addPolygon12+
+## addPolygon12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addPolygon(points: Array<common2D.Point>, close: boolean): void
 
@@ -1102,15 +1170,17 @@ addPolygon(points: Array<common2D.Point>, close: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| points | Array<common2D.Point> | 是 | 坐标点数组。 |
+| points | Array<common2D.Point> | 是 | 多边形各顶点的坐标点数组，按数组顺序依次连接各点形成连续线段。 |
 | close | boolean | 是 | 表示是否将路径闭合，即是否添加路径起始点到终点的连线。true表示将路径闭合，false表示不将路径闭合。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1137,17 +1207,19 @@ path.addPolygon(pointsArray, false);
 
 
 
-#### offset12+
+## offset12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offset(dx: number, dy: number): Path
 
-将路径沿着x轴和y轴方向偏移一定距离并保存在返回的路径对象中。
+将路径沿x轴方向偏移dx距离、沿y轴方向偏移dy距离，并保存在返回的路径对象中。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1157,6 +1229,7 @@ offset(dx: number, dy: number): Path
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Path | 返回当前路径偏移(dx,dy)后生成的新路径对象。 |
@@ -1165,6 +1238,7 @@ offset(dx: number, dy: number): Path
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1179,30 +1253,33 @@ import { drawing } from '@kit.ArkGraphics2D';
 const path = new drawing.Path();
 path.moveTo(200, 200);
 path.lineTo(300, 300);
-const dst = path.offset(200, 200);
+const dstPath = path.offset(200, 200);
 ```
 
 
 
-#### op12+
+## op12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 op(path: Path, pathOp: PathOp): boolean
 
-将当前路径置为和path按照指定的路径操作类型合并后的结果。
+将当前路径与path按照指定的路径操作类型进行合并，并将合并结果保存在当前路径中。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | Path | 是 | 路径对象，用于与当前路径合并。 |
-| pathOp | PathOp | 是 | 路径操作类型枚举。 |
+| pathOp | PathOp | 是 | 路径操作类型枚举，用于指定两条路径的布尔运算方式。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1212,6 +1289,7 @@ op(path: Path, pathOp: PathOp): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1226,18 +1304,19 @@ import { drawing } from '@kit.ArkGraphics2D';
 const path = new drawing.Path();
 const path2 = new drawing.Path();
 path.addCircle(100, 200, 100, drawing.PathDirection.CLOCKWISE);
-console.info("get pathOp: ", path2.op(path, drawing.PathOp.DIFFERENCE));
+console.info('get pathOp: ', path2.op(path, drawing.PathOp.DIFFERENCE));
 ```
 
 
 
-#### close
+## close
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(): void
 
-闭合路径，会添加一条从路径起点位置到最后点位置的线段。
+闭合路径，会添加一条从路径最后点位置到起始点位置的线段。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
@@ -1247,16 +1326,17 @@ close(): void
 import { drawing } from '@kit.ArkGraphics2D';
 
 let path = new drawing.Path();
-path.moveTo(10,10);
+path.moveTo(10, 10);
 path.cubicTo(10, 10, 10, 10, 15, 15);
 path.close();
 ```
 
 
 
-#### reset
+## reset
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reset(): void
 
@@ -1270,16 +1350,17 @@ reset(): void
 import { drawing } from '@kit.ArkGraphics2D';
 
 let path = new drawing.Path();
-path.moveTo(10,10);
+path.moveTo(10, 10);
 path.cubicTo(10, 10, 10, 10, 15, 15);
 path.reset();
 ```
 
 
 
-#### rewind20+
+## rewind20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 rewind(): void
 
@@ -1292,8 +1373,8 @@ rewind(): void
 ```text
 import { drawing } from '@kit.ArkGraphics2D';
 let path = new drawing.Path();
-path.moveTo(10,10);
-path.lineTo(20,20);
+path.moveTo(10, 10);
+path.lineTo(20, 20);
 path.rewind();
 let empty = path.isEmpty();
 console.info('empty : ', empty);
@@ -1301,9 +1382,10 @@ console.info('empty : ', empty);
 
 
 
-#### isEmpty20+
+## isEmpty20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isEmpty(): boolean
 
@@ -1312,6 +1394,7 @@ isEmpty(): boolean
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1323,17 +1406,18 @@ isEmpty(): boolean
 ```text
 import { drawing } from '@kit.ArkGraphics2D';
 let path = new drawing.Path();
-path.moveTo(10,10);
-path.lineTo(20,20);
+path.moveTo(10, 10);
+path.lineTo(20, 20);
 let isEmpty = path.isEmpty();
 console.info('isEmpty:', isEmpty);
 ```
 
 
 
-#### isRect20+
+## isRect20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isRect(rect: common2D.Rect | null): boolean
 
@@ -1343,12 +1427,14 @@ isRect(rect: common2D.Rect | null): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| rect | common2D.Rect\| null | 是 | 矩形对象，作为出参使用，路径构成矩形时，会被改写为路径表示的矩形，否则不会改变。可以为null，表示无需获取路径表示的矩形。 |
+| rect | common2D.Rect \| null | 是 | 矩形对象，作为出参使用，路径构成矩形时，会被改写为路径表示的矩形，否则不会改变。可以为null，表示无需获取路径表示的矩形。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1361,10 +1447,10 @@ isRect(rect: common2D.Rect | null): boolean
 import { common2D, drawing } from '@kit.ArkGraphics2D';
 
 let path = new drawing.Path();
-path.moveTo(10,10);
-path.lineTo(20,10);
+path.moveTo(10, 10);
+path.lineTo(20, 10);
 let isRect = path.isRect(null);
-console.info("isRect: ", isRect);
+console.info('isRect: ', isRect);
 let rect: common2D.Rect = { left : 100, top : 100, right : 400, bottom : 500 };
 path.lineTo(20, 20);
 path.lineTo(10, 20);
@@ -1375,9 +1461,10 @@ console.info('isRect: ', isRect);
 
 
 
-#### getLength12+
+## getLength12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLength(forceClosed: boolean): number
 
@@ -1387,12 +1474,14 @@ getLength(forceClosed: boolean): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | forceClosed | boolean | 是 | 表示是否按照闭合路径测量，true表示测量时路径会被强制视为已闭合，false表示会根据路径的实际闭合状态测量。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1407,14 +1496,15 @@ import { drawing } from '@kit.ArkGraphics2D';
 let path = new drawing.Path();
 path.arcTo(20, 20, 180, 180, 180, 90);
 let len = path.getLength(false);
-console.info("path length = " + len);
+console.info('path length = ' + len);
 ```
 
 
 
-#### getPositionAndTangent12+
+## getPositionAndTangent12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPositionAndTangent(forceClosed: boolean, distance: number, position: common2D.Point, tangent: common2D.Point): boolean
 
@@ -1423,6 +1513,7 @@ getPositionAndTangent(forceClosed: boolean, distance: number, position: common2D
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1434,14 +1525,16 @@ getPositionAndTangent(forceClosed: boolean, distance: number, position: common2D
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 表示是否成功获取距离路径起始点distance处的点的坐标和正切值的结果。true表示获取成功，false表示获取失败，position和tangent不会被改变。 |
+| boolean | 表示是否成功获取距离路径起始点distance处的点的坐标和切线值的结果。true表示获取成功，false表示获取失败，position和tangent不会被改变。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1460,18 +1553,19 @@ path.lineTo(700, 0);
 let position: common2D.Point = { x: 0.0, y: 0.0 };
 let tangent: common2D.Point = { x: 0.0, y: 0.0 };
 if (path.getPositionAndTangent(false, 0.1, position, tangent)) {
-  console.info("getPositionAndTangent-----position:  "+ position.x);
-  console.info("getPositionAndTangent-----position:  "+ position.y);
-  console.info("getPositionAndTangent-----tangent:  "+ tangent.x);
-  console.info("getPositionAndTangent-----tangent:  "+ tangent.y);
+  console.info('getPositionAndTangent-----position:  ' + position.x);
+  console.info('getPositionAndTangent-----position:  ' + position.y);
+  console.info('getPositionAndTangent-----tangent:  ' + tangent.x);
+  console.info('getPositionAndTangent-----tangent:  ' + tangent.y);
 }
 ```
 
 
 
-#### getSegment18+
+## getSegment18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSegment(forceClosed: boolean, start: number, stop: number, startWithMoveTo: boolean, dst: Path): boolean
 
@@ -1481,16 +1575,18 @@ getSegment(forceClosed: boolean, start: number, stop: number, startWithMoveTo: b
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | forceClosed | boolean | 是 | 表示是否按照闭合路径测量，true表示测量时路径会被强制视为已闭合，false表示会根据路径的实际闭合状态测量。 |
 | start | number | 是 | 表示与路径起始点的距离，距离路径起始点start距离的位置即为截取路径片段的起始点，小于0时会被视作0，大于等于stop时会截取失败。该参数为浮点数。单位为物理像素px。 |
 | stop | number | 是 | 表示与路径起始点的距离，距离路径起始点stop距离的位置即为截取路径片段的终点，小于等于start时会截取失败，大于路径长度时会被视作路径长度。该参数为浮点数。单位为物理像素px。 |
-| startWithMoveTo | boolean | 是 | 表示是否在目标路径执行moveTo移动到截取路径片段的起始点位置。true表示执行，false表示不执行。 |
+| startWithMoveTo | boolean | 是 | 表示是否在目标路径执行moveTo移动到截取路径片段的起始点位置。true表示执行moveTo；false表示不执行moveTo。 |
 | dst | Path | 是 | 目标路径，截取成功时会将得到的路径片段追加到目标路径上，截取失败时不做改变。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1507,14 +1603,15 @@ path.moveTo(0, 0);
 path.lineTo(0, 700);
 path.lineTo(700, 0);
 let dstPath: drawing.Path = new drawing.Path();
-console.info("getSegment-----result:  "+ path.getSegment(true, 10.0, 20.0, true, dstPath));
+console.info('getSegment-----result:  ' + path.getSegment(true, 10.0, 20.0, true, dstPath));
 ```
 
 
 
-#### isClosed12+
+## isClosed12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isClosed(): boolean
 
@@ -1523,6 +1620,7 @@ isClosed(): boolean
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1538,35 +1636,38 @@ let path: drawing.Path = new drawing.Path();
 path.moveTo(0, 0);
 path.lineTo(0, 700);
 if (path.isClosed()) {
-  console.info("path is closed.");
+  console.info('path is closed.');
 } else {
-  console.info("path is not closed.");
+  console.info('path is not closed.');
 }
 ```
 
 
 
-#### getMatrix12+
+## getMatrix12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMatrix(forceClosed: boolean, distance: number, matrix: Matrix, flags: PathMeasureMatrixFlags): boolean
 
-在路径上的某个位置，获取一个变换矩阵，用于表示该点的坐标和朝向。
+在路径上距离起始点distance处，获取一个变换矩阵，用于表示该点的坐标和朝向。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | forceClosed | boolean | 是 | 表示是否按照闭合路径测量，true表示测量时路径会被强制视为已闭合，false表示会根据路径的实际闭合状态测量。 |
 | distance | number | 是 | 表示与路径起始点的距离，小于0时会被视作0，大于路径长度时会被视作路径长度。该参数为浮点数。单位为物理像素px。 |
-| matrix | Matrix | 是 | 矩阵对象，用于存储得到的矩阵。 |
-| flags | PathMeasureMatrixFlags | 是 | 矩阵信息维度枚举。 |
+| matrix | Matrix | 是 | 用于存储获取到的变换矩阵的矩阵对象，该矩阵表示路径上指定距离处的坐标位置和朝向信息。 |
+| flags | PathMeasureMatrixFlags | 是 | 矩阵信息维度枚举，用于指定获取的矩阵包含哪些维度信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1577,6 +1678,7 @@ getMatrix(forceClosed: boolean, distance: number, matrix: Matrix, flags: PathMea
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: Mandatory parameters are left unspecified. |
@@ -1588,34 +1690,39 @@ getMatrix(forceClosed: boolean, distance: number, matrix: Matrix, flags: PathMea
 import { drawing } from '@kit.ArkGraphics2D';
 
 let path: drawing.Path = new drawing.Path();
+path.moveTo(0, 0);
+path.lineTo(0, 700);
 let matrix = new drawing.Matrix();
-if(path.getMatrix(false, 10, matrix, drawing.PathMeasureMatrixFlags.GET_TANGENT_MATRIX)) {
-  console.info("path.getMatrix return true");
+if (path.getMatrix(false, 10, matrix, drawing.PathMeasureMatrixFlags.GET_TANGENT_MATRIX)) {
+  console.info('path.getMatrix return true');
 } else {
-  console.info("path.getMatrix return false");
+  console.info('path.getMatrix return false');
 }
 ```
 
 
 
-#### buildFromSvgString12+
+## buildFromSvgString12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 buildFromSvgString(str: string): boolean
 
-解析SVG字符串表示的路径。
+解析SVG字符串表示的路径。支持标准SVG路径数据命令（如M、L、C、Q、A、Z及其相对坐标形式等），解析失败时返回false。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| str | string | 是 | SVG格式的字符串，用于描述绘制路径。 |
+| str | string | 是 | SVG路径数据格式的字符串，用于描述绘制路径。支持M/m、L/l、H/h、V/v、C/c、S/s、Q/q、T/t、A/a、Z/z等SVG路径命令，具体语法请参考SVG路径数据规范。传入不符合SVG路径格式的字符串时，解析失败，接口返回false。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1626,6 +1733,7 @@ buildFromSvgString(str: string): boolean
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: Mandatory parameters are left unspecified. |
@@ -1637,23 +1745,24 @@ buildFromSvgString(str: string): boolean
 import { drawing } from '@kit.ArkGraphics2D';
 
 let path: drawing.Path = new drawing.Path();
-let svgStr: string =  "M150 100 L75 300 L225 300 Z";
-if(path.buildFromSvgString(svgStr)) {
-  console.info("buildFromSvgString return true");
+let svgString: string = "M150 100 L75 300 L225 300 Z";
+if (path.buildFromSvgString(svgString)) {
+  console.info('buildFromSvgString return true');
 } else {
-  console.info("buildFromSvgString return false");
+  console.info('buildFromSvgString return false');
 }
 ```
 
 
 
-#### convertToSvgString
+## convertToSvgString
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 convertToSvgString(): string
 
-将路径转换为SVG字符串。
+将路径转换为SVG字符串。输出的字符串遵循SVG路径数据规范映射。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
@@ -1663,9 +1772,10 @@ convertToSvgString(): string
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| string | 转换后的SVG字符串结果。 |
+| string | 转换后的SVG字符串，以SVG路径格式描述当前路径的几何形状。 |
 
 
 **示例：**
@@ -1678,20 +1788,21 @@ path.moveTo(0, 0);
 path.lineTo(0, 700);
 path.close();
 let svgString = path.convertToSvgString();
-console.info("svgString: ", svgString);
+console.info('svgString: ', svgString);
 ```
 
 
 
-#### getPointData
+## getPointData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPointData(): Array<common2D.Point>
 
 获取路径的点数据。
 
-在路径（path）图元中，点数据以数值序列的形式存在，与动词verb指令一一对应，用来精确指定绘图操作的几何坐标位置。
+在路径（path）图元中，点数据以数值序列的形式存在，与verb指令一一对应，用来精确指定绘图操作的几何坐标位置。
 
 点数据的主要类型包括：
 
@@ -1709,9 +1820,10 @@ getPointData(): Array<common2D.Point>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Array<common2D.Point> | 类型为浮点数。理论取值范围为全体实数，但实际受限于渲染坐标系的有效范围（如-2^31到2^31-1或屏幕可见区域）；超出范围可能导致图形不可见或裁剪。 |
+| Array<common2D.Point> | 返回路径的点数据数组，每个元素为common2D.Point对象，其x、y坐标为浮点数。理论取值范围为全体实数，但实际受限于渲染坐标系的有效范围（如-2^31到2^31-1或屏幕可见区域）；超出范围可能导致图形不可见或裁剪。 |
 
 
 **示例：**
@@ -1723,16 +1835,17 @@ path.moveTo(0, 0);
 path.lineTo(100, 100);
 path.quadTo(150, 150, 200, 100);
 let pointData: Array<common2D.Point> = path.getPointData();
-console.info("pointData size: ", pointData.length);
-console.info("pointData[0].x: ", pointData[0].x);
-console.info("pointData[0].y: ", pointData[0].y);
+console.info('pointData size: ', pointData.length);
+console.info('pointData[0].x: ', pointData[0].x);
+console.info('pointData[0].y: ', pointData[0].y);
 ```
 
 
 
-#### getVerbData
+## getVerbData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getVerbData(): Array&lt;PathIteratorVerb&gt;
 
@@ -1756,9 +1869,10 @@ getVerbData(): Array&lt;PathIteratorVerb&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Array&lt;PathIteratorVerb&gt; | 类型为浮点数。理论上取值范围为全体实数，但实际受限于渲染坐标系的有效范围（如-2^31到2^31-1或屏幕可见区域）；超出范围可能导致图形不可见或裁剪。 |
+| Array&lt;PathIteratorVerb&gt; | 返回路径的指令数据数组，每个数组元素对应为路径中的基本绘图动作类型，与点数据一一对应。 |
 
 
 **示例：**
@@ -1771,16 +1885,17 @@ path.moveTo(0, 0);
 path.lineTo(100, 100);
 path.close();
 let verbData: Array<drawing.PathIteratorVerb> = path.getVerbData();
-console.info("verbData size: ", verbData.length);
-console.info("verbData[0]: ", verbData[0]);
-console.info("verbData[1]: ", verbData[1]);
+console.info('verbData size: ', verbData.length);
+console.info('verbData[0]: ', verbData[0]);
+console.info('verbData[1]: ', verbData[1]);
 ```
 
 
 
-#### getConicWeightData
+## getConicWeightData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getConicWeightData(): Array&lt;number&gt;
 
@@ -1804,9 +1919,10 @@ getConicWeightData(): Array&lt;number&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Array&lt;number&gt; | 类型为浮点数（取值范围为非负数）。取值为0.0时，该控制点完全无效，曲线不经过此点，曲线实际由其余控制点定义。取值为1.0时，该控制点对应的曲线变为标准贝塞尔曲线，此时权重不产生额外形变效果。取值大于1时，权重值越大，曲线越靠近该控制点；小于1.0但大于0.0时，曲线则相对远离该控制点。 |
+| Array&lt;number&gt; | 类型为浮点数，取值范围≥0。取值为0.0时，该控制点完全无效，曲线不经过此点，曲线实际由其余控制点定义。取值为1.0时，该控制点对应的曲线变为标准贝塞尔曲线，此时权重不产生额外形变效果。取值大于1时，权重值越大，曲线越靠近该控制点；小于1.0但大于0.0时，曲线则相对远离该控制点。 |
 
 
 **示例：**
@@ -1817,15 +1933,16 @@ let path: drawing.Path = new drawing.Path();
 path.moveTo(0, 0);
 path.conicTo(100, 100, 200, 0, 0.5);
 let conicWeightData: Array<number> = path.getConicWeightData();
-console.info("conicWeightData size: ", conicWeightData.length);
-console.info("conicWeightData[0]: ", conicWeightData[0]);
+console.info('conicWeightData size: ', conicWeightData.length);
+console.info('conicWeightData[0]: ', conicWeightData[0]);
 ```
 
 
 
-#### getPathIterator18+
+## getPathIterator18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPathIterator(): PathIterator
 
@@ -1835,9 +1952,10 @@ getPathIterator(): PathIterator
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| PathIterator | 该路径的迭代器对象。 |
+| PathIterator | 路径的迭代器对象，用于遍历路径中的绘图指令和点数据，可通过迭代器逐条获取路径的verb指令及对应的坐标点。 |
 
 
 **示例：**
@@ -1851,28 +1969,31 @@ let iter = path.getPathIterator();
 
 
 
-#### approximate20+
+## approximate20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 approximate(acceptableError: number): Array&lt;number&gt;
 
 将当前路径转化为由连续直线段构成的近似路径。
 
 > [!NOTE]
-> 当acceptableError为0时，曲线路径被极度细分，会严重影响性能和内存消耗，不建议设置误差值为0。 当acceptableError特别大时，路径会极度简化，保留少量关键点，可能会丢失原有形状。 对于椭圆等曲线，当acceptableError过大时，拟合结果通常只包含椭圆的分段贝塞尔曲线的起止点，椭圆形会被极度简化为多边形。
+> 当acceptableError为0时，曲线路径被极度细分，会严重影响性能和内存消耗，不建议设置误差值为0。 当acceptableError远大于路径尺寸时，路径会极度简化，仅保留路径的起止点等少量关键点，可能会丢失原有形状。 对于椭圆等曲线，当acceptableError过大时，拟合结果通常只包含椭圆的分段贝塞尔曲线的起止点，椭圆形会被极度简化为多边形。
 
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| acceptableError | number | 是 | 表示路径上每条线段的可接受误差。该参数为浮点数，不应小于0，当参数小于0时报错。单位为物理像素px。 |
+| acceptableError | number | 是 | 表示路径上每条线段的可接受误差，取值范围≥0，该参数为浮点数，小于0时报错。单位为物理像素px。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1882,6 +2003,7 @@ approximate(acceptableError: number): Array&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[图形绘制与显示错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-drawing)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1898,32 +2020,35 @@ path.moveTo(100, 100);
 path.lineTo(500, 500);
 let points: number[] = path.approximate(0.5);
 for (let i = 0; i < points.length; i += 3) {
-  console.info("PathApproximate Fraction =" + points[i] + ", X =" + points[i + 1] + ", Y =" + points[i + 2] + "\n");
+  console.info('PathApproximate Fraction =' + points[i] + ', X =' + points[i + 1] + ', Y =' + points[i + 2] + '\n');
 }
 ```
 
 
 
-#### interpolate20+
+## interpolate20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 interpolate(other: Path, weight: number, interpolatedPath: Path): boolean
 
-根据给定的权重，在当前路径和另一条路径之间进行插值，并将结果存储在目标路径对象中。两条路径点数相同即可插值成功，目标路径按照当前路径的结构进行创建。
+根据给定的权重，在当前路径和另一条路径之间进行插值，并将结果存储在目标路径对象中。两条路径点数相同即可插值成功，目标路径按照当前路径的指令结构进行创建。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | other | Path | 是 | 表示另一条路径对象。 |
-| weight | number | 是 | 表示插值权重，必须在[0.0, 1.0]范围内。该参数为浮点数。 |
+| weight | number | 是 | 表示插值权重，取值范围为[0.0, 1.0]。该参数为浮点数。 |
 | interpolatedPath | Path | 是 | 表示用于存储插值结果的目标路径对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1933,6 +2058,7 @@ interpolate(other: Path, weight: number, interpolatedPath: Path): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[图形绘制与显示错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-drawing)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1961,9 +2087,10 @@ if (path.interpolate(other, 0.0, interpolatedPath)) {
 
 
 
-#### isInterpolate20+
+## isInterpolate20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isInterpolate(other: Path): boolean
 
@@ -1973,12 +2100,14 @@ isInterpolate(other: Path): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | other | Path | 是 | 表示另一条路径对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2005,9 +2134,10 @@ if (path.isInterpolate(other)) {
 
 
 
-#### isEqual
+## isEqual
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isEqual(path: Path): boolean
 
@@ -2015,11 +2145,12 @@ isEqual(path: Path): boolean
 
 **起始版本：** 26.0.0
 
-**模型约束：** 此接口仅在Stage模型下使用。
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2027,6 +2158,7 @@ isEqual(path: Path): boolean
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2053,17 +2185,19 @@ if (path.isEqual(other)) {
 
 
 
-#### isInverseFillType23+
+## isInverseFillType23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isInverseFillType(): boolean
 
-检查当前路径填充类型是否是反向填充类型。例如填充类型Winding、EvenOdd不是反向类型，InverseWinding、InverseEvenOdd是反向类型。
+检查当前路径填充类型是否是反向填充类型。例如填充类型WINDING、EVEN_ODD不是反向类型，INVERSE_WINDING、INVERSE_EVEN_ODD是反向类型。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2078,21 +2212,22 @@ import { drawing } from '@kit.ArkGraphics2D';
 let path: drawing.Path = new drawing.Path();
 path.setFillType(drawing.PathFillType.WINDING);
 if (path.isInverseFillType()) {
-  console.info("path is inverse FillType.");
+  console.info('path is inverse FillType.');
 } else {
-  console.info("path is not inverse FillType.");
+  console.info('path is not inverse FillType.');
 }
 ```
 
 
 
-#### toggleInverseFillType23+
+## toggleInverseFillType23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toggleInverseFillType(): void
 
-切换路径的填充类型为反向类型。例如，使用Winding填充类型时，经过取反后填充类型为InverseWinding，而使用EvenOdd填充类型时，经过取反后填充类型为InverseEvenOdd，反之亦然。
+切换路径的填充类型为反向类型。例如，使用WINDING填充类型时，经过取反后填充类型为INVERSE_WINDING，而使用EVEN_ODD填充类型时，经过取反后填充类型为INVERSE_EVEN_ODD，反之亦然。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
@@ -2104,5 +2239,5 @@ import { drawing } from '@kit.ArkGraphics2D';
 let path: drawing.Path = new drawing.Path();
 path.setFillType(drawing.PathFillType.WINDING);
 path.toggleInverseFillType();
-console.info("path fillType = ", path.getFillType());
+console.info('path fillType = ', path.getFillType());
 ```

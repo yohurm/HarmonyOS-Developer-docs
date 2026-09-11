@@ -1,13 +1,13 @@
 # 消息认证码计算HMAC(C/C++)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-compute-hmac-ndk
 
 HMAC通过指定摘要算法，以通信双方共享密钥与消息作为输入，生成消息认证码用于检验传递报文的完整性。HMAC在消息摘要算法的基础上增加了密钥的输入，确保了信息的正确性。生成的消息认证码为固定长度。
 
 
-#### 开发步骤
+## 开发步骤
 
 在调用update接口传入数据时，可以[一次性传入](#hmac一次性传入)，也可以把数据人工[分段传入](#hmac分段传入)。对于同一段数据而言，是否分段，计算结果没有差异。对于数据量较大的数据，开发者可以根据实际需求选择是否分段传入。
 
@@ -15,7 +15,7 @@ HMAC通过指定摘要算法，以通信双方共享密钥与消息作为输入�
 
 
 
-#### HMAC（一次性传入）
+### HMAC（一次性传入）
 1. 调用[OH_CryptoSymKeyGenerator_Create](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-crypto-sym-key-h#oh_cryptosymkeygenerator_create)、[OH_CryptoSymKeyGenerator_Generate](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-crypto-sym-key-h#oh_cryptosymkeygenerator_generate)生成密钥算法为HMAC的对称密钥（symKey）。
 2. 调用[OH_CryptoMac_Create](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-crypto-mac-h#oh_cryptomac_create)，指定字符串参数'HMAC'，创建MAC算法为HMAC的MAC生成器。
 3. 调用[OH_CryptoMac_SetParam](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-crypto-mac-h#oh_cryptomac_setparam)，指定参数CRYPTO_MAC_DIGEST_NAME_STR，设置摘要算法名称。
@@ -154,7 +154,7 @@ cleanup:
 
 
 
-#### HMAC（分段传入）
+### HMAC（分段传入）
 
 与一次性传入的步骤基本相同，区别在于多次调用[OH_CryptoMac_Update](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-crypto-mac-h#oh_cryptomac_update)来处理分段数据。
 

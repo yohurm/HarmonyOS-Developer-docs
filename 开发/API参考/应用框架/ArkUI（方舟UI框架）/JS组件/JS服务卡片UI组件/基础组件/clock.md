@@ -1,9 +1,9 @@
 # clock
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-service-widget-basic-clock
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 时钟组件，用于提供时钟表盘界面。
  
@@ -12,20 +12,23 @@
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 不支持。
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-service-widget-common-attributes)外，还支持如下属性：
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | clockconfig | ClockConfig | - | 是 | Clock的图片资源和样式设置，包括日间时段（6:00-18:00）和夜间时段（18:00-次日6:00）两套资源和样式设置。 其中每套资源和样式包括表盘资源、时针指针资源、分针指针资源、秒针指针资源四张图和相应时间段的表盘数字颜色。 日间资源为必填项。夜间资源可不填，不填时默认会复用日间资源用作夜间时段的显示。 仅支持动态更新整个Object，不支持动态更新Object里的内容。 建议使用PNG资源作为Clock组件的图片资源。 不支持使用SVG资源作为Clock组件的图片资源。 |
@@ -35,6 +38,7 @@
  
  **表1** ClockConfig
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | face | &lt;string&gt; | - | 是 | 日间时段的表盘资源路径。 表盘资源须为包含时钟刻度的正方形图片，表盘区域（圆形）为该图片的内切圆或内切圆的同心圆。如果表盘区域为表盘资源内切圆的同心圆的话，请相应调整digitRadiusRatio和digitSizeRatio参数。 |
@@ -57,12 +61,14 @@
  
   
 
-#### 样式
+## 样式
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 除支持[通用样式](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-service-widget-common-styles)之外，还支持如下样式：
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | font-family | &lt;string&gt; | sans-serif | 否 | 表盘数字的字体列表，用逗号分隔，每个字体用字体名或者字体族名设置。列表中第一个系统中存在的或者通过2.1.6 自定义字体样式指定的字体，会被选中作为文本的字体。 |
@@ -74,10 +80,12 @@
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
  
+
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | hour | {hour: number} | 每个整点触发该事件 |
@@ -85,9 +93,10 @@
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 <!-- xxx.hml -->
@@ -145,4 +154,4 @@
 **2*4卡片**
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/94ba8pGWT1GWjvWD1c8FcA/zh-cn_image_0000002656470495.png?HW-CC-KV=V1&HW-CC-Date=20260624T015950Z&HW-CC-Expire=86400&HW-CC-Sign=D20CB008919D15E736AC375ABCA344567AB1D5C0D48426F52CC907AB2CA5BEBC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/C0LIwfnnTWKTwavRnzy6FA/zh-cn_image_0000002717613482.png?HW-CC-KV=V1&HW-CC-Date=20260911T073001Z&HW-CC-Expire=86400&HW-CC-Sign=162786462639D755F361326D5DBB63DD73039E3E217A8969A8515CEF8E85AE04)

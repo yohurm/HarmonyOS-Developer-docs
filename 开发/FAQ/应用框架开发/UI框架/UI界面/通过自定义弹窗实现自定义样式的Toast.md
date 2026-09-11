@@ -72,13 +72,13 @@ struct ToastContent {
   }
 }
 
-// 封装Toast的@Builder方法
+<em>// </em><em>封装Toast的@Builder方法</em>
 @Builder
 function buildText(params: Params) {
   ToastContent({ text: params.text, clickText: params.clickText, clickListener: params.clickListener });
 }
 
-// 封装公共样式
+<em>// </em><em>封装公共样式</em>
 @Extend(Text)
 function toastText() {
   .fontSize(20)
@@ -88,9 +88,9 @@ function toastText() {
 
 2. 创建Toast类，并创建构造方法与Toast实例方法。
 ```text
-/**
- * 封装全局蓝色浮动提示，支持点击
- */
+<em>/**</em>
+<em> * 封装全局蓝色浮动提示，支持点击</em>
+<em> */</em>
 export class Toast {
   private toastParams: Params;
 
@@ -196,9 +196,9 @@ struct Index {
 2. ToastContent.ets。
 ```text
 import { ComponentContent } from '@kit.ArkUI';
-/**
- * 封装全局蓝色浮动提示，支持点击
- */
+<em>/**</em>
+<em> * 封装全局蓝色浮动提示，支持点击</em>
+<em> */</em>
 export class Toast {
   private toastParams: Params;
 
@@ -230,7 +230,7 @@ export class Toast {
     };
   };
 }
-// 参数
+<em>// </em><em>参数</em>
 class Params {
   text: string = '';
   time: number = 2000;
@@ -285,13 +285,13 @@ struct ToastContent {
   }
 }
 
-// 封装Toast的@Builder方法
+<em>// </em><em>封装Toast的@Builder方法</em>
 @Builder
 function buildText(params: Params) {
   ToastContent({ text: params.text, clickText: params.clickText, clickListener: params.clickListener });
 }
 
-// 封装公共样式
+<em>// </em><em>封装公共样式</em>
 @Extend(Text)
 function toastText() {
   .fontSize(20)

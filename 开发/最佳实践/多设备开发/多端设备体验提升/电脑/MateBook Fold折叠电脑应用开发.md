@@ -1,10 +1,10 @@
 # 折叠电脑应用开发
 
-更新时间：2026-06-12 07:22:00
+更新时间：2026-09-09 06:06:31
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-mate-book-fold
 
-#### 概述
+## 概述
 
 HarmonyOS折叠电脑凭借其独特的折叠设计、全屏触控和[虚拟键盘](https://developer.huawei.com/consumer/cn/doc/design-guides/foldable-pc-0000002322600098#虚拟键盘)的交互方式，融合了一体机、笔记本和平板三种设备的使用体验，在形态创新与交互体验方面有所提升。
  
@@ -20,6 +20,7 @@ HarmonyOS折叠电脑凭借其独特的折叠设计、全屏触控和[虚拟键�
  
 当前折叠电脑产品主要为MateBook Fold系列。
   
+
 | 产品名称 | 示意图 |
 | --- | --- |
 | MateBook Fold系列 |  |
@@ -30,13 +31,13 @@ HarmonyOS折叠电脑凭借其独特的折叠设计、全屏触控和[虚拟键�
 
  
 
-#### 产品硬件参数
+## 产品硬件参数
 
 本章将以MateBook Fold产品为例，介绍折叠电脑的屏幕尺寸、相机、折叠能力等硬件参数信息。
  
  
 
-#### 屏幕规格信息
+### 屏幕规格信息
 
 折叠电脑在不同折叠状态下，分辨率、屏幕宽度等属性存在差异，具体说明如下：
  
@@ -47,6 +48,7 @@ HarmonyOS折叠电脑凭借其独特的折叠设计、全屏触控和[虚拟键�
  
 **半折叠态屏幕规格信息**
   
+
 | 屏幕旋转角度（rotation） | 0(0度) | 1(90度) | 2(180度) | 3(270度) |
 | --- | --- | --- | --- | --- |
 | 设备形态 | 半折叠态（唤起全尺寸键盘） | 半折叠态（关闭全尺寸键盘） | NA | NA | NA |
@@ -71,6 +73,7 @@ HarmonyOS折叠电脑凭借其独特的折叠设计、全屏触控和[虚拟键�
  
 **展开态屏幕规格信息**
   
+
 | 屏幕旋转角度（rotation） | 0(0度) | 1(90度) | 2(180度) | 3(270度) |
 | --- | --- | --- | --- | --- |
 | 设备形态 | 竖向展开态 | 横向展开态 | NA | 横向展开态 | 外接显示器 |
@@ -98,29 +101,36 @@ HarmonyOS折叠电脑凭借其独特的折叠设计、全屏触控和[虚拟键�
 - 获取屏幕对象相关接口[Display](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-display#display)对象中包含屏幕宽高，屏幕可用区域宽高等重要信息，对应的Display区域如下图所示。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/5bioM8i-TxWIoYq5Q4doYg/zh-cn_image_0000002585466890.png?HW-CC-KV=V1&HW-CC-Date=20260624T020957Z&HW-CC-Expire=86400&HW-CC-Sign=D6F3F9DC761853ADC502B3D8C57F59845D0AB79DB50B2891C0A9A5FF659D9510)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/z5HBB7TNQJuwXmuHvsi92g/zh-cn_image_0000002585466890.png?HW-CC-KV=V1&HW-CC-Date=20260911T072152Z&HW-CC-Expire=86400&HW-CC-Sign=4469FBFF5D673DEBA65B75BF8FF0DEAFC73C631840C0E015CE148126D1626881)
 
 
 | API | 说明 |
+
 | --- | --- |
+
 | display.getAllDisplays() | 获取所有的Display对象。不同设备形态下对应的Display区域如上图所示。 |
+
 | display.getDisplayByIdSync() | 根据displayId获取对应的Display对象。具体的displayId可参考屏幕规格信息表格中屏幕ID行。 除半折叠态（关闭全尺寸键盘）分为上下两屏，上屏displayId为0，下屏displayId为999，其余状态折叠电脑屏幕的displayId均为0。 |
+
 | display.getDefaultDisplaySync() | 获取当前默认的Display对象。除半折叠态（关闭全尺寸键盘）获取的Display对象为displayId为0的上屏，其余设备形态下获取的Display区域如上图所示。 |
+
 | display.getPrimaryDisplaySync() | 获取主屏信息。对于折叠电脑，当外接屏幕时，获取的是当前主屏幕的Display对象；当没有外接屏幕时，获取的是设备自带屏幕中displayId为0的Display对象。 |
-| display.on('add'\|'remove'\|'change') | 开启显示设备新增、移除、变化的监听。 |
+
+| display.on('add' \| 'remove' \| 'change') | 开启显示设备新增、移除、变化的监听。 |
 
   
 > [!NOTE]
-> display.on('add'|'remove'|'change')触发场景如下： display.on('add')：半折叠态（唤起全尺寸键盘）->半折叠态（关闭全尺寸键盘），展开态->半折叠态，外接显示器。 display.on('change')：涉及Display变化，包括折叠状态、屏幕方向、可用区域变化等。 display.on('remove')：半折叠态（关闭全尺寸键盘）->半折叠态（唤起全尺寸键盘），半折叠态->展开态，取消外接显示器。
+> display.on('add' | 'remove' | 'change')触发场景如下： display.on('add')：半折叠态（唤起全尺寸键盘）->半折叠态（关闭全尺寸键盘），展开态->半折叠态，外接显示器。 display.on('change')：涉及Display变化，包括折叠状态、屏幕方向、可用区域变化等。 display.on('remove')：半折叠态（关闭全尺寸键盘）->半折叠态（唤起全尺寸键盘），半折叠态->展开态，取消外接显示器。
 
 
  
  
 
-#### 相机硬件信息
+### 相机硬件信息
 
 折叠电脑相机已预设默认的[镜头安装角度](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-rotation-term#相机镜头安装角度)，使用时需结合镜头角度与设备旋转角度进行适配，具体定义可参考[预览旋转角度](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-rotation-term#预览旋转角度)。当屏幕方向一致时，前置镜头角度与需设置的预览流旋转角度如下，不同设备状态下的相机参数保持一致。
   
+
 | 屏幕旋转角度（rotation） | 0(0度) | 1(90度) | 3(270度) |
 | --- | --- | --- | --- |
 | 示意图 |  |  |  |
@@ -135,12 +145,13 @@ HarmonyOS折叠电脑凭借其独特的折叠设计、全屏触控和[虚拟键�
  
  
 
-#### 设备折叠能力
+### 设备折叠能力
 
 折叠电脑具备独特的折叠功能，在不同折叠状态下展现出不同的特性。
  
 通过[display.isFoldable()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-display#displayisfoldable10)接口可判断设备是否支持折叠，若支持则返回true，否则返回false。通过[display.getFoldStatus()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-display#displaygetfoldstatus10)接口可获取折叠设备当前的折叠状态，返回结果可参考[FoldStatus](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-display#foldstatus10)。下表以Matebook Fold产品为例，展示了折叠电脑的折叠状态和属性。
   
+
 | 设备形态 | 半折叠态（唤起全尺寸键盘） | 半折叠态（关闭全尺寸键盘） | 横向展开态 | 竖向展开态 |
 | --- | --- | --- | --- | --- |
 | 效果图 |  |  |  |  |
@@ -158,52 +169,61 @@ HarmonyOS折叠电脑凭借其独特的折叠设计、全屏触控和[虚拟键�
 - 获取设备折叠状态相关接口
 
 | API | 说明 |
+
 | --- | --- |
+
 | display.getFoldStatus() | 主动获取可折叠设备的当前折叠状态。具体折叠状态可参考上表中的FoldStatus行。 |
+
 | display.on('foldStatusChange') | 开启折叠设备折叠状态变化的监听。当前设备物理折叠状态FoldStatus变化时，触发回调函数，返回折叠设备当前折叠状态。 |
 - 获取可用区域相关接口
 
 | API | 说明 |
+
 | --- | --- |
+
 | display.getAvailableArea() | 获取当前设备屏幕的可用区域，使用Promise异步回调，仅支持电脑设备。 |
+
 | display.on('availableAreaChange') | 开启当前设备屏幕的可用区域监听。当前设备屏幕有可用区域变化时，触发回调函数，返回可用区域，仅支持电脑设备。 |
+
 | display.getDisplayByIdSync() | 返回displayId对应的display对象。其中包含电脑设备上屏幕的可用区域宽度availableWidth和高度availableHeight。display对应的区域可参考屏幕规格信息中的常用接口部分。 |
 - 获取折痕区域相关接口
 
 | API | 说明 |
+
 | --- | --- |
-| display.getCurrentFoldCreaseRegion() | 在当前显示模式下获取折叠折痕区域。返回FoldCreaseRegion对象，即设备在当前显示模式下的折叠折痕区域。具体返回数据可参考设备特有能力表中的FoldCreaseRegion行。 |
+
+| display.getCurrentFoldCreaseRegion() | 在当前显示模式下获取折叠折痕区域。返回FoldCreaseRegion对象，即设备在当前显示模式下的折叠折痕区域。具体返回数据可参考设备折叠能力表中的FoldCreaseRegion行。 |
 
  
  
 
-#### 创新与体验提升
+## 创新与体验提升
 
  
 
-#### 悬停态适配
+### 悬停态适配
 
 悬停态支持设备平稳放置于桌面，实现免手持体验，常用于视频通话、视频播放、拍照、听歌等不需要频繁交互的场景。这种状态下，应用需要对中间折痕区域进行避让，并对上下两个界面进行悬停态布局适配。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/VBVq7kfoSNCwCKieX768-g/zh-cn_image_0000002585626830.png?HW-CC-KV=V1&HW-CC-Date=20260624T020957Z&HW-CC-Expire=86400&HW-CC-Sign=40D4EC3EC10C02B5FD9287F92998B9E31F69271531EF5A9EE212964165B4E16B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/KdaHEz7SQTSksXBxAgCCoA/zh-cn_image_0000002585626830.png?HW-CC-KV=V1&HW-CC-Date=20260911T072152Z&HW-CC-Expire=86400&HW-CC-Sign=931165787BC0AB362D28739AA540EEDB84296F0F0BA51C6D066084BE40575700)
 
  
  
 
-#### 开合适配
+### 开合适配
 
 开合连续指应用在屏幕形态与窗口状态切换时，保持页面内容连贯，延续任务进度与运行状态。支持用户快速接续切换前的操作，打造流畅的切换体验。例如折叠电脑在半折叠态和展开态之间切换时，应用页面内容保持不变、状态无缝接续，保障使用体验不受影响。具体实现方案，可参考[开合连续](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-device-screen-diff#section16541144511135)章节。
  
  
 
-#### 焦点导航
+### 焦点导航
 
 折叠电脑支持唤起全尺寸键盘，也可外接磁吸键盘，应用应支持通过键盘实现焦点导航，并配置获焦视觉效果，清晰指示当前焦点位置，以保证交互体验。开发方案请参考[焦点事件](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-interaction#section168661941154220)。
  
  
 
-#### 音频焦点适配
+### 音频焦点适配
 
 折叠电脑上前后台应用需从以下四个方面处理音频焦点问题：[音频焦点抢占流程](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-focus-management#section1747213761316)，[音频流类型正确配置](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-focus-management#section2888185819153)，[自定义焦点策略设置](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-focus-management#section048671914296)，[焦点中断事件正确处理](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-focus-management#section1664171514332)。
  
@@ -211,11 +231,11 @@ HarmonyOS折叠电脑凭借其独特的折叠设计、全屏触控和[虚拟键�
  
  
 
-#### 设备常见适配问题
+## 设备常见适配问题
 
  
 
-#### 设备类型区分
+### 设备类型区分
 
 **如何区分MateBook Pro和MateBook Fold**
  
@@ -225,7 +245,7 @@ HarmonyOS折叠电脑凭借其独特的折叠设计、全屏触控和[虚拟键�
  
  
 
-#### 页面异常
+### 页面异常
 
 **折叠状态变化导致页面异常**
  
@@ -240,13 +260,13 @@ HarmonyOS折叠电脑凭借其独特的折叠设计、全屏触控和[虚拟键�
  
  
 
-#### 窗口适配
+### 窗口适配
 
 **如何实现跨屏幕移动窗口**
  
 问题描述：折叠电脑在半折叠状态（关闭全尺寸键盘）下，上下两块屏幕均可独立操作。如果想将位于下屏的应用跨屏移动到上屏，应该如何操作？
  
-解决措施：使用[moveWindowToGlobal()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window-window#movewindowtoglobal15)接口实现跨屏幕移动窗口，将窗口从下屏移动至上屏。详情可参考[窗口模式](#section8155133712178)章节。
+解决措施：使用[moveWindowToGlobal()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window-window#movewindowtoglobal15)接口实现跨屏幕移动窗口，将窗口从下屏移动至上屏。
  
 **窗口变化时，应用对可用区域变化感知不及时**
  
@@ -261,7 +281,7 @@ HarmonyOS折叠电脑凭借其独特的折叠设计、全屏触控和[虚拟键�
  
  
 
-#### 相机开发
+### 相机开发
 
 **相机预览画面旋转异常**
  

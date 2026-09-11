@@ -1,6 +1,6 @@
 # pdfViewManager（PDF预览）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/pdf-arkts-pdfviewmanage
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -12,7 +12,8 @@
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -22,7 +23,8 @@ import { pdfViewManager } from '@kit.PDFKit';
  
   
 
-#### PdfController
+## PdfController
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -36,7 +38,8 @@ PDF文档控制器类。
  
   
 
-#### constructor
+### constructor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -58,7 +61,8 @@ let pdfController = new pdfViewManager.PdfController();
  
   
 
-#### setViewOffset
+### setViewOffset
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -74,6 +78,7 @@ setViewOffset(offsetX: number, offsetY: number, refreshView: boolean): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offsetX | number | 是 | X坐标偏移，范围0 ~ 1，含义是0% ~ 100%的偏移如果总宽度是1000px，要偏移X轴500px，值是0.5。 |
@@ -98,7 +103,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### getPagePixelMap
+### getPagePixelMap
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -114,6 +120,7 @@ getPagePixelMap(pageIndex: number, isSync?: boolean): Promise<image.PixelMap>
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pageIndex | number | 是 | 页面索引，0为起始页。 |
@@ -122,6 +129,7 @@ getPagePixelMap(pageIndex: number, isSync?: boolean): Promise<image.PixelMap>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<image.PixelMap> | Promise对象，返回image.PixelMap类型。 |
@@ -144,7 +152,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### registerScrollListener
+### registerScrollListener
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -160,6 +169,7 @@ registerScrollListener(listener: Callback&lt;ScrollParam&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | listener | Callback&lt;ScrollParam&gt; | 是 | 页面滚动回调函数监听，返回ScrollParam类型数据。 |
@@ -176,7 +186,8 @@ pdfController.registerScrollListener((scrollParam: pdfViewManager.ScrollParam) =
  
   
 
-#### enablePageDrag
+### enablePageDrag
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -192,6 +203,7 @@ enablePageDrag(verticalEnabled: boolean, horizontalEnabled: boolean): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | verticalEnabled | boolean | 是 | 是否Y轴垂直拖动，true: 是，false: 否。 |
@@ -215,7 +227,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### loadDocument
+### loadDocument
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -231,6 +244,7 @@ loadDocument(path: string, password?: string, initPageIndex?: number, onProgress
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 文档路径。 |
@@ -241,6 +255,7 @@ loadDocument(path: string, password?: string, initPageIndex?: number, onProgress
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<pdfService.ParseResult> | Promise对象，返回ParseResult类型数据。 |
@@ -260,7 +275,8 @@ let loadResult: pdfService.ParseResult = await pdfController.loadDocument(tempFi
  
   
 
-#### releaseDocument
+### releaseDocument
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -291,7 +307,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### setHighlightRects
+### setHighlightRects
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -307,6 +324,7 @@ setHighlightRects(rectArray: Array&lt;PageRects&gt;, color?: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rectArray | Array&lt;PageRects&gt; | 是 | 高亮块在页面的矩形区域。rect的left、right最小值为0，最大值为PDF的宽度，top、bottom最小值为0，最大值为PDF的高度。 |
@@ -335,7 +353,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### setHighlightText
+### setHighlightText
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -351,6 +370,7 @@ setHighlightText(pageIndex: number, textArray: string[], color: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pageIndex | number | 是 | 页面索引，0为起始页。 |
@@ -375,7 +395,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### setPageZoom
+### setPageZoom
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -391,6 +412,7 @@ setPageZoom(zoom: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | zoom | number | 是 | 缩放比例 [0.1 ~ 10]。(大于10的时候取10，小于0.1的时候取0.1) |
@@ -413,7 +435,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### getPageZoom
+### getPageZoom
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -429,6 +452,7 @@ getPageZoom(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 获取视图的缩放比例 [0.1 ~ 10]。 |
@@ -451,7 +475,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### setMaxZoom
+### setMaxZoom
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -471,6 +496,7 @@ setMaxZoom(maxZoom: number): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | maxZoom | number | 是 | 最大缩放比例[0.1 ~ 10](精度支持到小数点后第2位)。 |
@@ -478,6 +504,7 @@ setMaxZoom(maxZoom: number): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 是否设置成功，true：是，false：否。 当传入的maxZoom小于当前的最小缩放比例、超出[0.1 ~ 10]的范围、输入值为空时，均会返回false。 |
@@ -511,7 +538,8 @@ struct PdfPage {
  
   
 
-#### getMaxZoom
+### getMaxZoom
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -527,6 +555,7 @@ getMaxZoom(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 获取的视图最大缩放比例[0.1 ~ 10](精度支持到小数点后第2位)。 |
@@ -560,7 +589,8 @@ struct PdfPage {
  
   
 
-#### setMinZoom
+### setMinZoom
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -580,6 +610,7 @@ setMinZoom(minZoom: number): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | minZoom | number | 是 | 最小缩放比例[0.1 ~ 10]（精度支持到小数点后第2位）。 |
@@ -587,6 +618,7 @@ setMinZoom(minZoom: number): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 是否设置成功，true：是，false：否。 当传入的minZoom大于当前的最大缩放比例、超出[0.1 ~ 10]的范围、输入值为空时，均会返回false。 |
@@ -620,7 +652,8 @@ struct PdfPage {
  
   
 
-#### getMinZoom
+### getMinZoom
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -636,6 +669,7 @@ getMinZoom(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 获取的视图最小缩放比例[0.1 ~ 10](精度支持到小数点后第2位)。 |
@@ -669,7 +703,8 @@ struct PdfPage {
  
   
 
-#### setPageLayout
+### setPageLayout
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -685,6 +720,7 @@ setPageLayout(columnCount: pdfService.PageLayout): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | columnCount | pdfService.PageLayout | 是 | 页面布局模式：单页面：1，双页面：2。 |
@@ -707,7 +743,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### getPageLayout
+### getPageLayout
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -723,6 +760,7 @@ getPageLayout(): pdfService.PageLayout
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | pdfService.PageLayout | 页面布局模式：单页面：1，双页面：2。 |
@@ -745,7 +783,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### setPageContinuous
+### setPageContinuous
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -761,6 +800,7 @@ setPageContinuous(isContinuous: boolean): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isContinuous | boolean | 是 | 滚动是否连续排列，true: 是，false: 否。 |
@@ -783,7 +823,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### isPageContinuous
+### isPageContinuous
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -799,6 +840,7 @@ isPageContinuous(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 是否连续排列，true: 是，false: 否。 |
@@ -821,7 +863,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### setPageFit
+### setPageFit
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -837,6 +880,7 @@ setPageFit(pageFit: pdfService.PageFit): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pageFit | pdfService.PageFit | 是 | 页面的适配模式。 |
@@ -859,7 +903,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### getPageFit
+### getPageFit
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -875,6 +920,7 @@ getPageFit(): pdfService.PageFit
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | pdfService.PageFit | 页面的适配模式。 |
@@ -897,7 +943,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### setPageSpacing
+### setPageSpacing
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -913,6 +960,7 @@ setPageSpacing(horizontal: number, vertical?: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | horizontal | number | 是 | 双页模式下左右页面之间的间距，大于等于0，单位为px。 |
@@ -936,7 +984,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### getPageHorizontalSpacing
+### getPageHorizontalSpacing
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -952,6 +1001,7 @@ getPageHorizontalSpacing(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 左右页面之间的间距，单位为px。 |
@@ -974,7 +1024,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### getPageVerticalSpacing
+### getPageVerticalSpacing
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -990,6 +1041,7 @@ getPageVerticalSpacing(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 上下页之间的间距，单位为px。 |
@@ -1012,7 +1064,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### getPageCount
+### getPageCount
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1028,6 +1081,7 @@ getPageCount(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 总页数，大于等于0。 |
@@ -1050,7 +1104,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### getPageIndex
+### getPageIndex
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1066,6 +1121,7 @@ getPageIndex(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 页面索引。 |
@@ -1088,7 +1144,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### goToPage
+### goToPage
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1104,6 +1161,7 @@ goToPage(pageIndex: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pageIndex | number | 是 | 指定页索引，0为起始页，小于总页数。 |
@@ -1126,7 +1184,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### setPageRotation
+### setPageRotation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1142,6 +1201,7 @@ setPageRotation(pageIndex: number, angle: pdfService.RotationAngle): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pageIndex | number | 是 | 指定页索引，0为起始页，小于总页数。 |
@@ -1165,7 +1225,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### getPageRotation
+### getPageRotation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1181,6 +1242,7 @@ getPageRotation(pageIndex: number): pdfService.RotationAngle
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pageIndex | number | 是 | 指定页索引，0为起始页，小于总页数。 |
@@ -1188,6 +1250,7 @@ getPageRotation(pageIndex: number): pdfService.RotationAngle
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | pdfService.RotationAngle | 指定页面的旋转角度。 |
@@ -1210,7 +1273,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### enableAnnotation
+### enableAnnotation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1226,6 +1290,7 @@ enableAnnotation(annotationType: SupportedAnnotationType, color?: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | annotationType | SupportedAnnotationType | 是 | 支持的批注类型。 |
@@ -1249,7 +1314,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### addMarkupAnnotation
+### addMarkupAnnotation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1265,6 +1331,7 @@ addMarkupAnnotation(annotationType: SupportedAnnotationType, selectedRects: Arra
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | annotationType | SupportedAnnotationType | 是 | 批注类型。 |
@@ -1291,7 +1358,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### disableAnnotation
+### disableAnnotation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1322,7 +1390,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### deleteSelectedAnnotation
+### deleteSelectedAnnotation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1338,6 +1407,7 @@ deleteSelectedAnnotation(annotationIndex: number, pageIndex: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | annotationIndex | number | 是 | 批注索引，从0开始。 |
@@ -1362,7 +1432,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### updateMarkupAnnotation
+### updateMarkupAnnotation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1378,6 +1449,7 @@ updateMarkupAnnotation(annotationIndex: number, pageIndex: number, color: number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | annotationIndex | number | 是 | 批注索引。 |
@@ -1403,7 +1475,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### saveDocument
+### saveDocument
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1423,6 +1496,7 @@ saveDocument(path: string, onProgress?: Callback&lt;number&gt;): Promise&lt;numb
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 文档的沙箱路径。 |
@@ -1431,6 +1505,7 @@ saveDocument(path: string, onProgress?: Callback&lt;number&gt;): Promise&lt;numb
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象，返回number类型，1：成功， 0：失败。 |
@@ -1462,7 +1537,8 @@ pdfController.releaseDocument();
  
   
 
-#### registerSelectedRectsChangedListener
+### registerSelectedRectsChangedListener
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1478,6 +1554,7 @@ registerSelectedRectsChangedListener(listener: Callback<Array&lt;SelectedRects&g
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | listener | Callback<Array&lt;SelectedRects&gt;> | 是 | 选中文本拖拽窗口变化回调函数监听，返回SelectedRects类型数据。 |
@@ -1494,7 +1571,8 @@ pdfController.registerSelectedRectsChangedListener((pageRects: Array<pdfViewMana
  
   
 
-#### registerPageFitChangedListener
+### registerPageFitChangedListener
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1510,6 +1588,7 @@ registerPageFitChangedListener(listener: Callback<pdfService.PageFit>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | listener | Callback<pdfService.PageFit> | 是 | 页面适配变化回调函数监听，返回PageFit类型数据。 |
@@ -1526,7 +1605,8 @@ pdfController.registerPageFitChangedListener((pageFit: pdfService.PageFit) => {}
  
   
 
-#### registerPageChangedListener
+### registerPageChangedListener
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1542,6 +1622,7 @@ registerPageChangedListener(listener: Callback&lt;number&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | listener | Callback&lt;number&gt; | 是 | 页面索引变化回调函数监听，返回页面索引number类型数据。 |
@@ -1558,7 +1639,8 @@ pdfController.registerPageChangedListener((pageIndex: number) => {});
  
   
 
-#### registerScaleChangedListener
+### registerScaleChangedListener
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1574,6 +1656,7 @@ registerScaleChangedListener(listener: Callback&lt;number&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | listener | Callback&lt;number&gt; | 是 | 页面缩放回调函数监听，返回缩放值number类型数据。 |
@@ -1590,7 +1673,8 @@ pdfController.registerScaleChangedListener((scale: number) => {});
  
   
 
-#### registerTextSelectedListener
+### registerTextSelectedListener
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1606,6 +1690,7 @@ registerTextSelectedListener(listener: Callback&lt;TextSelectedParam&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | listener | Callback&lt;TextSelectedParam&gt; | 是 | 页面文本被选中回调函数监听，返回选中文本TextSelectedParam类型数据。 |
@@ -1622,7 +1707,8 @@ pdfController.registerTextSelectedListener((pageText: pdfViewManager.TextSelecte
  
   
 
-#### registerAnnotationSelectedListener
+### registerAnnotationSelectedListener
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1638,6 +1724,7 @@ registerAnnotationSelectedListener(listener: Callback&lt;SelectedAnnotation&gt;)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | listener | Callback&lt;SelectedAnnotation&gt; | 是 | 页面批注被选中回调函数监听，返回选中批注SelectedAnnotation类型数据。 |
@@ -1654,7 +1741,8 @@ pdfController.registerAnnotationSelectedListener((pdfAnnotation: pdfViewManager.
  
   
 
-#### registerImageSelectedListener
+### registerImageSelectedListener
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1670,6 +1758,7 @@ registerImageSelectedListener(listener: Callback&lt;ImageSelectedParam&gt;): voi
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | listener | Callback&lt;ImageSelectedParam&gt; | 是 | 页面图片被选中回调函数监听，返回选中图片ImageSelectedParam类型数据。 |
@@ -1686,7 +1775,8 @@ pdfController.registerImageSelectedListener((image: pdfViewManager.ImageSelected
  
   
 
-#### registerActionClickListener
+### registerActionClickListener
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1702,6 +1792,7 @@ registerActionClickListener(listener: Callback&lt;RedirectInfo&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | listener | Callback&lt;RedirectInfo&gt; | 是 | Click动作回调函数监听，返回RedirectInfo类型数据。 |
@@ -1718,7 +1809,8 @@ pdfController.registerActionClickListener((redirectInfo: pdfViewManager.Redirect
  
   
 
-#### registerAnnotationChangedListener
+### registerAnnotationChangedListener
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1734,6 +1826,7 @@ registerAnnotationChangedListener(listener: Callback&lt;AnnotationChangedParam&g
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | listener | Callback&lt;AnnotationChangedParam&gt; | 是 | 批注变化时回调函数监听，返回AnnotationChangedParam类型数据。 |
@@ -1750,7 +1843,8 @@ pdfController.registerAnnotationChangedListener((annotationChange: pdfViewManage
  
   
 
-#### registerPageCountChangedListener
+### registerPageCountChangedListener
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1766,6 +1860,7 @@ registerPageCountChangedListener(listener: Callback&lt;number&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | listener | Callback&lt;number&gt; | 是 | 总页数变化回调函数监听，返回number类型总页数。 |
@@ -1782,7 +1877,8 @@ pdfController.registerPageCountChangedListener((pageCount: number) => {});
  
   
 
-#### searchKey
+### searchKey
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1798,6 +1894,7 @@ searchKey(text: string, listener: Callback&lt;number&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | text | string | 是 | 搜索的文本。 |
@@ -1821,7 +1918,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### clearSearch
+### clearSearch
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1852,7 +1950,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### getSearchIndex
+### getSearchIndex
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1868,6 +1967,7 @@ getSearchIndex(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 匹配结果索引，大于等于0。 |
@@ -1890,7 +1990,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### setSearchIndex
+### setSearchIndex
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1906,6 +2007,7 @@ setSearchIndex(index: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 搜索结果索引，从0开始。 |
@@ -1928,7 +2030,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### setDisplayDirection
+### setDisplayDirection
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1944,6 +2047,7 @@ setDisplayDirection(displayDirection: DisplayDirection): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | displayDirection | DisplayDirection | 是 | 翻页的方向（默认竖直方向）。 |
@@ -1966,7 +2070,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### setNestedScroll
+### setNestedScroll
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1986,6 +2091,7 @@ setNestedScroll(value: PdfNestedScrollOptions): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | PdfNestedScrollOptions | 是 | 可滚动组件滚动时的嵌套滑动选项，包括scrollUp、scrollDown、scrollLeft、scrollRight，默认值为PdfNestedScrollMode.SELF_ONLY。 |
@@ -2029,7 +2135,8 @@ struct PdfPage {
  
   
 
-#### setRenderMode
+### setRenderMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2043,6 +2150,7 @@ setRenderMode(renderMode: PresetRenderMode): void
  
 **起始版本：** 26.0.0
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | renderMode | PresetRenderMode | 是 | 渲染风格。默认值：DEFAULT。 |
@@ -2052,6 +2160,7 @@ setRenderMode(renderMode: PresetRenderMode): void
  
 以下错误码的详细介绍请参见[ArkTS API 错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pdf)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1011302004 | The rendering thread is busy. |
@@ -2114,7 +2223,8 @@ struct Index {
  
   
 
-#### loadDocumentFromMemory
+### loadDocumentFromMemory
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2134,6 +2244,7 @@ loadDocumentFromMemory(data: ArrayBuffer, password?: string, initPageIndex?: num
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | ArrayBuffer | 是 | PDF文件的二进制数据，仅支持大小1GB以内的二进制数据。data参数建议使用private变量存储，不可使用@State或@Link等装饰器，否则将导致接口无法获取到传入的二进制数据。 |
@@ -2144,6 +2255,7 @@ loadDocumentFromMemory(data: ArrayBuffer, password?: string, initPageIndex?: num
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<pdfService.ParseResult> | Promise对象，返回解析二进制数据流结果。 |
@@ -2153,6 +2265,7 @@ loadDocumentFromMemory(data: ArrayBuffer, password?: string, initPageIndex?: num
  
 以下错误码的详细介绍请参见[ArkTS API 错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pdf)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1011302001 | Invalid page number. |
@@ -2205,7 +2318,8 @@ private pdfBuffer: ArrayBuffer | null | undefined = null;
  
   
 
-#### getPageIndexFromViewPoint
+### getPageIndexFromViewPoint
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2221,6 +2335,7 @@ getPageIndexFromViewPoint(viewPoint: Point): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | viewPoint | Point | 是 | 视图坐标系中的位置点，需传入单位为px的像素值。默认值：{ x: 0, y: 0 } |
@@ -2228,6 +2343,7 @@ getPageIndexFromViewPoint(viewPoint: Point): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回对应的页面索引。大于等于0：有效的页面索引。-1：该点未落在任何有效页面上。 |
@@ -2292,7 +2408,8 @@ private filePath = this.context.resourceDir + '/input.pdf';
  
   
 
-#### viewRectToPDFRect
+### viewRectToPDFRect
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2308,6 +2425,7 @@ viewRectToPDFRect(pageIndex: number, viewRect: ViewRect): pdfService.PdfRect
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pageIndex | number | 是 | 目标PDF页面的索引（从0开始）。默认值：0。 |
@@ -2316,6 +2434,7 @@ viewRectToPDFRect(pageIndex: number, viewRect: ViewRect): pdfService.PdfRect
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | pdfService.PdfRect | 返回转换后的PDF页面坐标系矩形。 |
@@ -2325,6 +2444,7 @@ viewRectToPDFRect(pageIndex: number, viewRect: ViewRect): pdfService.PdfRect
  
 以下错误码的详细介绍请参见[ArkTS API 错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pdf)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1011302001 | Invalid page number. |
@@ -2391,7 +2511,8 @@ private filePath = this.context.resourceDir + '/input.pdf';
  
   
 
-#### pdfPointToViewPoint
+### pdfPointToViewPoint
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2407,6 +2528,7 @@ pdfPointToViewPoint(pageIndex: number, pdfPoint: pdfService.PdfPoint): Point
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pageIndex | number | 是 | 源PDF页面的索引（从0开始）。默认值：0。 |
@@ -2415,6 +2537,7 @@ pdfPointToViewPoint(pageIndex: number, pdfPoint: pdfService.PdfPoint): Point
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Point | 返回转换后的视图坐标系点，包含x和y属性，单位为px。 |
@@ -2424,6 +2547,7 @@ pdfPointToViewPoint(pageIndex: number, pdfPoint: pdfService.PdfPoint): Point
  
 以下错误码的详细介绍请参见[ArkTS API 错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pdf)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1011302001 | Invalid page number. |
@@ -2488,7 +2612,8 @@ struct Index {
  
   
 
-#### viewPointToPDFPoint
+### viewPointToPDFPoint
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2504,6 +2629,7 @@ viewPointToPDFPoint(pageIndex: number, viewPoint: Point): pdfService.PdfPoint
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pageIndex | number | 是 | 目标 PDF 页面的索引值（从 0 开始）。默认值：0。 |
@@ -2512,6 +2638,7 @@ viewPointToPDFPoint(pageIndex: number, viewPoint: Point): pdfService.PdfPoint
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | pdfService.PdfPoint | 返回转换后的PDF坐标系点，包含x和y属性，单位为点（Points）。 |
@@ -2521,6 +2648,7 @@ viewPointToPDFPoint(pageIndex: number, viewPoint: Point): pdfService.PdfPoint
  
 以下错误码的详细介绍请参见[ArkTS API 错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pdf)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1011302001 | Invalid page number. |
@@ -2585,7 +2713,8 @@ struct Index {
  
   
 
-#### pdfRectToViewRect
+### pdfRectToViewRect
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2601,6 +2730,7 @@ pdfRectToViewRect(pageIndex: number, pdfRect: pdfService.PdfRect): ViewRect
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pageIndex | number | 是 | 源PDF页面的索引值（从0开始）。默认值：0。 |
@@ -2609,6 +2739,7 @@ pdfRectToViewRect(pageIndex: number, pdfRect: pdfService.PdfRect): ViewRect
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ViewRect | 返回转换后的视图坐标系矩形，单位为px。 |
@@ -2618,6 +2749,7 @@ pdfRectToViewRect(pageIndex: number, pdfRect: pdfService.PdfRect): ViewRect
  
 以下错误码的详细介绍请参见[ArkTS API 错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pdf)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1011302001 | Invalid page number. |
@@ -2683,7 +2815,8 @@ struct Index {
  
   
 
-#### RedirectInfo
+## RedirectInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2697,8 +2830,12 @@ PDF页面重定向信息类。
  
   
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | content | string | 否 | 否 | 重定向信息内容。 |
@@ -2707,7 +2844,8 @@ PDF页面重定向信息类。
  
   
 
-#### constructor
+### constructor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2721,6 +2859,7 @@ constructor(content: string, actionType: RedirectType)
  
 **起始版本：** 5.0.0(12)
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | content | string | 是 | 重定向信息内容。 |
@@ -2737,7 +2876,8 @@ let redirectInfo = new pdfViewManager.RedirectInfo('https://www.test.com', pdfVi
  
   
 
-#### SelectedAnnotation
+## SelectedAnnotation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2749,6 +2889,7 @@ PDF选择的批注信息。
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | annotationIndex | number | 是 | 否 | 批注索引。 |
@@ -2761,7 +2902,8 @@ PDF选择的批注信息。
  
   
 
-#### PageRects
+## PageRects
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2775,8 +2917,12 @@ PDF选择的批注信息。
  
   
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | pageIndex | number | 否 | 否 | 页面索引。 |
@@ -2785,7 +2931,8 @@ PDF选择的批注信息。
  
   
 
-#### constructor
+### constructor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2801,6 +2948,7 @@ constructor(pageIndex: number, rectArray: Array<pdfService.PdfRect>)
  
 **参数**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pageIndex | number | 是 | 页面索引。 |
@@ -2809,7 +2957,8 @@ constructor(pageIndex: number, rectArray: Array<pdfService.PdfRect>)
  
   
 
-#### SelectedRects
+## SelectedRects
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2823,8 +2972,12 @@ PDF页面中选定文本的矩形区域类，继承[PageRects](#pagerects)。
  
   
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | isRotated | number | 否 | 否 | 是否支持旋转，0：否，1：是。 |
@@ -2832,7 +2985,8 @@ PDF页面中选定文本的矩形区域类，继承[PageRects](#pagerects)。
  
   
 
-#### constructor
+### constructor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2848,6 +3002,7 @@ constructor(pageIndex: number, rectArray: Array<pdfService.PdfRect>, isRotated: 
  
 **参数**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pageIndex | number | 是 | 页面索引。 |
@@ -2868,7 +3023,8 @@ let selectedRects: pdfViewManager.SelectedRects = new pdfViewManager.SelectedRec
  
   
 
-#### ScrollParam
+## ScrollParam
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2880,6 +3036,7 @@ PDF页面[registerScrollListener](#registerscrolllistener)监听函数回调参�
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | offsetX | number | 否 | 否 | 滚动X坐标偏移量，值：0~1，表示0%~100%。 |
@@ -2892,7 +3049,8 @@ PDF页面[registerScrollListener](#registerscrolllistener)监听函数回调参�
  
   
 
-#### TextSelectedParam
+## TextSelectedParam
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2904,6 +3062,7 @@ PDF页面[registerTextSelectedListener](#registertextselectedlistener)监听函�
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | text | string | 否 | 否 | 选中的文本内容。 |
@@ -2912,7 +3071,8 @@ PDF页面[registerTextSelectedListener](#registertextselectedlistener)监听函�
  
   
 
-#### ImageSelectedParam
+## ImageSelectedParam
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2924,6 +3084,7 @@ PDF页面[registerImageSelectedListener](#registerimageselectedlistener)监听�
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | imageType | pdfService.ImageFormat | 否 | 否 | 选中的图片类型。 |
@@ -2934,7 +3095,8 @@ PDF页面[registerImageSelectedListener](#registerimageselectedlistener)监听�
  
   
 
-#### AnnotationChangedParam
+## AnnotationChangedParam
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2946,6 +3108,7 @@ PDF页面[registerAnnotationChangedListener](#registerannotationchangedlistener)
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | color | number | 否 | 否 | 颜色(ARGB)，范围0x00000000 ~ 0xFFFFFFFF。 |
@@ -2956,7 +3119,8 @@ PDF页面[registerAnnotationChangedListener](#registerannotationchangedlistener)
  
   
 
-#### SupportedAnnotationType
+## SupportedAnnotationType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2968,6 +3132,7 @@ PDF页面支持的批注类型。
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | UNKNOWN | 0 | 未知类型。 |
@@ -2983,7 +3148,8 @@ PDF页面支持的批注类型。
  
   
 
-#### AnnotationEditType
+## AnnotationEditType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2995,6 +3161,7 @@ PDF页面上支持的批注更改类型。
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ADD | 0 | 添加。 |
@@ -3004,7 +3171,8 @@ PDF页面上支持的批注更改类型。
  
   
 
-#### RedirectType
+## RedirectType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3016,6 +3184,7 @@ PDF页面上支持的批注更改类型。
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | URI | 6 | uri地址。 |
@@ -3024,7 +3193,8 @@ PDF页面上支持的批注更改类型。
  
   
 
-#### DisplayDirection
+## DisplayDirection
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3036,6 +3206,7 @@ PDF页面上支持的批注更改类型。
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | VERTICAL | 0 | 竖直方向翻页。 |
@@ -3044,7 +3215,8 @@ PDF页面上支持的批注更改类型。
  
   
 
-#### PdfNestedScrollOptions
+## PdfNestedScrollOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3056,6 +3228,7 @@ PDF页面上支持的批注更改类型。
  
 **起始版本：** 6.0.2(22)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | scrollUp | PdfNestedScrollMode | 否 | 是 | 可滑动组件往上滑动时的嵌套滑动选项。 默认值：PdfNestedScrollMode.SELF_ONLY。 |
@@ -3066,7 +3239,8 @@ PDF页面上支持的批注更改类型。
  
   
 
-#### PdfNestedScrollMode
+## PdfNestedScrollMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3078,6 +3252,7 @@ PDF页面上支持的批注更改类型。
  
 **起始版本：** 6.0.2(22)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SELF_ONLY | 0 | 只自身滑动，不与父组件联动。 |
@@ -3086,7 +3261,8 @@ PDF页面上支持的批注更改类型。
  
   
 
-#### PresetRenderMode
+## PresetRenderMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3098,6 +3274,7 @@ PDF页面上支持的批注更改类型。
  
 **起始版本：** 26.0.0
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DEFAULT | 0 | 标准渲染模式，保持原始像素，不做任何处理。适合正常光线环境。 |
@@ -3106,7 +3283,8 @@ PDF页面上支持的批注更改类型。
  
   
 
-#### Point
+## Point
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3118,6 +3296,7 @@ PDF页面上支持的批注更改类型。
  
 **起始版本：** 26.0.0
   
+
 | 名称 | 类型 | 说明 |
 | --- | --- | --- |
 | x | number | x坐标值，表示与Y轴的垂直距离。默认值：0。 |
@@ -3126,7 +3305,8 @@ PDF页面上支持的批注更改类型。
  
   
 
-#### ViewRect
+## ViewRect
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3138,6 +3318,7 @@ PDF页面上支持的批注更改类型。
  
 **起始版本：** 26.0.0
   
+
 | 名称 | 类型 | 说明 |
 | --- | --- | --- |
 | left | number | 矩形左边缘的X坐标。默认值：0。 |

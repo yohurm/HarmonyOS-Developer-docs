@@ -1,13 +1,10 @@
 # 基于ScrollComponents实现瀑布流
 
-更新时间：2026-07-22 06:05:01
+更新时间：2026-09-09 06:06:31
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-waterflow-based-on-scrollcomponents
 
-**   
-
-
-#### 概述
+## 概述
 
 瀑布流是应用开发中常见的开发场景。通过容器的布局规则，将元素自上而下排列，形成多列不齐的界面，内容像瀑布一样从上而下倾泻。
  
@@ -27,23 +24,24 @@ ScrollComponents三方库基于系统[NodeAdapter](https://developer.huawei.com/
  
  
 
-#### 实现原理
+## 实现原理
 
  
 
-#### 关键技术
+### 关键技术
 
  
 ScrollComponents三方库底层封装NodeContainer+FrameNode，结合NodeAdapter+BuilderNode+自定义复用池实现懒加载、组件复用、组件预创建等能力，同时为开发者提供WaterFlowManager视图管理组件，为开发者提供系统滑动组件的其他各种能力，在满足开发者正常开发的前提下提供高性能的滑动能力，只需传入数据源和viewManager即可快速实现懒加载和组件复用的开发，可以更加聚焦业务实现。
  
 如图1是RecyclerView整体流程图，当节点从可视区移除时，NodeAdapter会通知视图管理器将组件回收，经NodeFactory回收处理之后，组件最终被存入到组件复用池。当节点需要创建时，NodeAdapter通知视图管理器开始创建，NodeFactory会向复用池请求复用节点，获取到节点之后经过一系列更新组件、组件拼接之后返回，最后由NodeAdapter将节点添加到可视区。
  
-图1 **RecyclerView整体流程图**
+**图1 **RecyclerView整体流程图
+
 ![](assets/基于ScrollComponents实现瀑布流/file-20260515114447122-0.png)
 
  
 
-#### 开发流程
+### 开发流程
 1. 创建瀑布流视图管理器。WaterFlowManager仅具备基础的视图能力，开发者需自定义一个继承自WaterFlowManager的类，可以实现onWillCreateItem()方法，从复用池获取组件，开启复用能力，具体参考[复用子节点模板](#li18448145318540)。
 
   创建视图管理器的实例对象中，defaultNodeItem属性表示默认节点模板名称，context属性表示UI上下文。
@@ -183,13 +181,15 @@ function StandardGridImageContainer($$: Params) {
 
   当组件将要被销毁时，会移出视图容器并进入到item复用池。当组件将要被创建时，会向item复用池获取item节点，当item节点和目标节点类型存在差异时，会先将差异部分即PartReuse中的组件回收到对应的组件复用池，然后将目标组件所需要的差异组件从对应组件复用池中取出，并和item节点拼接，成为目标组件，并进入到视图容器中。
 
-  图2 **可拆分组件复用创建流程图**
+  **图2 **可拆分组件复用创建流程图
+
 ![](assets/基于ScrollComponents实现瀑布流/file-20260515114447122-11.png)
 
 
   开发者可参考图3日志打印"generateItem reuse "表示复用，检验是否复用成功。
 
-  图3 **日志效果图**
+  **图3 **日志效果图
+
 ![](assets/基于ScrollComponents实现瀑布流/file-20260515114447122-12.gif)
 
 
@@ -322,21 +322,22 @@ function TextContainer($$: Params) {
  
  
 
-#### 瀑布流跨页面复用场景
+## 瀑布流跨页面复用场景
 
  
 
-#### 场景描述
+### 场景描述
 
 开发者可能存在多个页面间复用WaterFlow，比如Tab栏切换。ScrollComponents提供了全局复用能力。
  
-图4 **效果图**
+**图4 **效果图
+
 ![](assets/基于ScrollComponents实现瀑布流/file-20260515114447122-3.gif)
 
  
  
 
-#### 开发步骤
+### 开发步骤
 1. 定义复用池单例。ScrollComponents默认会生成一个RecycledPool对象，通过定义复用池单例存储该pool对象，提供跨页面使用。以下单例仅做参考，开发者可自行封装。
 
   
@@ -393,21 +394,22 @@ export struct SharedPoolSecondPage {
  
  
 
-#### 瀑布流加速首屏渲染场景
+## 瀑布流加速首屏渲染场景
 
  
 
-#### 场景描述
+### 场景描述
 
 冷启动后首次打开瀑布流页面，由于页面的图片或者视频等媒体资源过多，出现白屏或者白块，等好几秒才慢慢刷出内容。ScrollComponents库支持组件预创建，能打开页面后瞬间看到文字、图片骨架，减少卡顿。
  
-图5 **效果图**
+**图5 **效果图
+
 ![](assets/基于ScrollComponents实现瀑布流/file-20260515114447122-4.gif)
 
  
  
 
-#### 开发步骤
+### 开发步骤
 
 通过preCreate()方法对复用模板进行预创建，核心代码参考如下：
  
@@ -428,23 +430,26 @@ aboutToAppear(): void {
  
  
 
-#### 性能测试
+### 性能测试
 
  
 加载相同数据冷启动场景完成时延情况，通过延迟1s模拟冷启动后网络请求场景。
  
 @Reusable：网络请求期间主线程大段空闲，请求结束后首屏组件绘帧耗时较长。
  
-图6 **@Reusable测试结果**
+**图6 **@Reusable测试结果
+
 ![](assets/基于ScrollComponents实现瀑布流/file-20260515114447122-5.png)
 
  
 ScrollComponents：网络请求期间主线程空闲较少，请求结束后首屏组件绘帧耗时较短
  
-图7 **ScrollComponents测试结果**
+**图7 **ScrollComponents测试结果
+
 ![](assets/基于ScrollComponents实现瀑布流/file-20260515114447122-6.png)
 
   
+
 |    | 冷启动完成时延 | 主线程空闲时间 | 首屏组件创建时间 |
 | --- | --- | --- | --- |
 | ScrollComponents | 2.5s | 281ms | 223ms |
@@ -454,23 +459,24 @@ ScrollComponents：网络请求期间主线程空闲较少，请求结束后首�
 可以看出，ScrollComponents在冷启动场景下，完成时延优于原生@Reusable。整体完成时延优化300ms。
  
 
-#### 瀑布流无限滑动场景
+## 瀑布流无限滑动场景
 
  
 
-#### 场景描述
+### 场景描述
 
 当瀑布流页面存在大量图片或视频时，下滑到列表最底端，再快速下滑可能会引起“滑动白块”的现象。尤其用户使用大量在线数据，在弱网和快速滑动的情况下，滑动过程中白块现象更明显。
  
 为了减少快速滑动过程中网络不好产生的白块，ScrollComponents内置了内容预取能力Prefetcher，支持动态自适应网络状态。通过提前下载图片或资源，确保资源在需要时立即显示，减少白块出现。动态预加载适用于数据请求耗时较长的场景，如滑动列表中包含大量图片资源。
  
-图8 **效果图**
+**图8 **效果图
+
 ![](assets/基于ScrollComponents实现瀑布流/file-20260515114447122-7.gif)
 
  
  
 
-#### 开发步骤
+### 开发步骤
 1. 创建组件实例时，注册fetch和cancel回调到视图管理器，并设置数据源。
 ```ArkTS
 // Registers the callback that prefetcher invokes when a data referenced by a data source item needs to be fetched.
@@ -567,7 +573,7 @@ Image(this.fetchUrl)
  
  
 
-#### 性能测试
+### 性能测试
 
 中网和弱网下，瀑布流页面使用相同数据上拉加载滑动，ScrollComponents提供的prefetch能力和不使用prefetch能力，时长超过100ms和超过40ms的白块结果如表2：
  
@@ -575,6 +581,7 @@ Image(this.fetchUrl)
 - 弱网:  使用ScrollComponents提供prefetch能力的白块率降低17%；
 
   
+
 |    | 白块加载时长 | 白块率 | 降低值 |
 |    | 原生 | 白块加载时长 | prefetch | 降低值 |
 | 中网 | 超100ms | 18.89% | 8.27% | 10.62% |
@@ -585,21 +592,22 @@ Image(this.fetchUrl)
  
  
 
-#### 瀑布流下拉刷新场景
+## 瀑布流下拉刷新场景
 
  
 
-#### 场景描述
+### 场景描述
 
 下拉刷新是提升用户体验的关键功能，既要保证数据无缝加载，又要维持流畅的交互效果。推荐使用懒加载刷新数据避免媒体资源加载造成UI渲染阻塞。实现逻辑可参考[实现下拉刷新上拉加载更多](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-refresh#示例6实现下拉刷新上拉加载更多)。
  
-图9 **效果图**
+**图9 **效果图
+
 ![](assets/基于ScrollComponents实现瀑布流/file-20260515114447122-8.gif)
 
  
  
 
-#### 开发步骤
+### 开发步骤
 
 可通过Refresh组件包裹瀑布流页面，实现下拉加载效果。使用onRefresh()方法新增数据。核心代码参考如下：
  1. 定义刷新监听函数，模拟数据更新。
@@ -611,8 +619,6 @@ generateRandomBlogData().then((data: ESObject) => {
 ```
 
 2. 将瀑布流页面绑定到Refresh刷新组件上。
-
-  
 ```ArkTS
 Refresh({ refreshing: $$this.isRefreshing }) {
   Column() {
@@ -652,11 +658,12 @@ Refresh({ refreshing: $$this.isRefreshing }) {
  
  
 
-#### 瀑布流上拉加载场景
+## 瀑布流上拉加载场景
 
 当开发瀑布流页面涉及大量数据，需要进行分页请求时，结合ScrollComponents提供的懒加载能力实现上拉分页加载的效果。
  
-图10 **效果图**
+**图10 **效果图
+
 ![](assets/基于ScrollComponents实现瀑布流/file-20260515114447122-9.gif)
 
  
@@ -694,11 +701,12 @@ this.waterFlowView.setViewStyle({ scroller: this.scroller })
  
  
 
-#### 瀑布流长按删除场景
+## 瀑布流长按删除场景
 
 长按时显示删除按钮，点击按钮可以删除对应item。
  
-图11 **效果图**
+**图11 **效果图
+
 ![](assets/基于ScrollComponents实现瀑布流/file-20260525085747623-002.gif)
 
 1. 绑定长按手势。
@@ -748,21 +756,22 @@ popUpBuilder() {
  
  
 
-#### 瀑布流分组混合布局场景
+## 瀑布流分组混合布局场景
 
  
 
-#### 场景描述
+### 场景描述
 
 分组混排瀑布流中，不同区域展示不同的item效果，例如前三个每行一个item，中间每行两个item，每个item保持高度一致，后面的每行两个item，每个item高度不一致。瀑布流分组功能参考：[《创建瀑布流：分组混合布局》](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-create-waterflow#分组混合布局)。
  
-图12 **效果图**
+**图12 **效果图
+
 ![](assets/基于ScrollComponents实现瀑布流/file-20260525085747623-003.gif)
 
  
  
 
-#### 开发步骤
+### 开发步骤
 
 需要创建一个瀑布流分组类型WaterFlowSections对象；然后为该对象绑定不同的FlowItem配置信息，可以指定不同的数量、行列数、间距等参数，具体根据 SectionOptions需要自定义。相关代码如下：
  1. 设置多个SectionOptions。
@@ -852,22 +861,22 @@ this.waterFlowView.setViewStyle({ scroller: this.scroller, sections: this.sectio
  
  
 
-#### 瀑布流滑动吸顶场景
+## 瀑布流滑动吸顶场景
 
  
 
-#### 场景描述
+### 场景描述
 
 向上滑动瀑布流，当横向列表组件滑动到顶部，达到吸顶效果时，其下方的瀑布流列表可以继续滑动。
  
-图13 **效果图
+**图13 **效果图
 
 ![](assets/基于ScrollComponents实现瀑布流/file-20260525085747623-004.png)
 
  
  
 
-#### 开发步骤
+### 开发步骤
 
 在瀑布流分组中为吸顶的部分预留出位置，监听瀑布流滚动事件，吸顶部分基于瀑布流滚动后的偏移量设置位置，让吸顶部分跟随瀑布流一起滚动，吸顶部分到顶后固定不动。
  1. 设置SectionOptions信息。
@@ -954,7 +963,7 @@ build() {
  
  
 
-#### 瀑布流动态切换列数场景
+## 瀑布流动态切换列数场景
 
  
 通过动态调整瀑布流的列数，应用能够实现在列表模式与瀑布流模式间的切换，或适应屏幕宽度的变化。WaterFlow视图是继承FrameNode，需要使用节点的[attribute](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#typedframenode12)属性修改WaterFlow的属性，具体代码参考如下：
@@ -999,11 +1008,11 @@ initView() {
 ```
  
 
-#### 瀑布流动效场景
+## 瀑布流动效场景
 
  
 
-#### 边缘渐隐效果
+### 边缘渐隐效果
 
 通过[fadingEdge](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scrollable-common#fadingedge14)实现了WaterFlow组件开启边缘渐隐效果，并通过fadingEdgeLength参数设置边缘渐隐长度。效果参考：[WaterFlow设置边缘渐隐效果](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow#示例5设置边缘渐隐效果)。
  
@@ -1023,7 +1032,7 @@ this.waterFlowView.setViewStyle({ scroller: this.scroller })
  
  
 
-#### 删除滑动错位效果
+### 删除滑动错位效果
 
 在组件删除时添加动画效果[animateTo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#animateto)即可实现删除过渡效果。
  
@@ -1043,6 +1052,6 @@ this.context.eventHub.on(CommonConstants.EVENT_REMOVE_ITEM, (blogItem: BlogData)
  
  
 
-#### 示例代码
+## 示例代码
 
 - [基于ScrollComponents实现瀑布流](https://gitcode.com/harmonyos_samples/WaterFlowScrollComponent)

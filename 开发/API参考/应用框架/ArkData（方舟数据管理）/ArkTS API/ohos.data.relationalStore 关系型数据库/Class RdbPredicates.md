@@ -1,9 +1,9 @@
 # Class (RdbPredicates)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-data-relationalstore-rdbpredicates
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示关系型数据库（RDB）的谓词。该类确定RDB中条件表达式的值是true还是false。谓词间支持多语句拼接，拼接时默认使用and()连接。不支持Sendable跨线程传递。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { relationalStore } from '@kit.ArkData';
@@ -22,9 +23,10 @@ import { relationalStore } from '@kit.ArkData';
 
 
 
-#### constructor
+## constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(name: string)
 
@@ -34,6 +36,7 @@ constructor(name: string)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 数据库表名，不能为空字符串。 |
@@ -42,6 +45,7 @@ constructor(name: string)
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -56,9 +60,10 @@ let predicates = new relationalStore.RdbPredicates("EMPLOYEE");
 
 
 
-#### inDevices
+## inDevices
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 inDevices(devices: Array&lt;string&gt;): RdbPredicates
 
@@ -72,12 +77,14 @@ inDevices(devices: Array&lt;string&gt;): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | devices | Array&lt;string&gt; | 是 | 指定的组网内的远程设备ID。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -87,6 +94,7 @@ inDevices(devices: Array&lt;string&gt;): RdbPredicates
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -120,9 +128,10 @@ predicates.inDevices(deviceIds);
 
 
 
-#### inAllDevices
+## inAllDevices
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 inAllDevices(): RdbPredicates
 
@@ -131,6 +140,7 @@ inAllDevices(): RdbPredicates
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -146,9 +156,10 @@ predicates.inAllDevices();
 
 
 
-#### equalTo
+## equalTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 equalTo(field: string, value: ValueType): RdbPredicates
 
@@ -158,6 +169,7 @@ equalTo(field: string, value: ValueType): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -165,6 +177,7 @@ equalTo(field: string, value: ValueType): RdbPredicates
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -174,6 +187,7 @@ equalTo(field: string, value: ValueType): RdbPredicates
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -190,9 +204,10 @@ predicates.equalTo("NAME", "Lisa");
 
 
 
-#### notEqualTo
+## notEqualTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 notEqualTo(field: string, value: ValueType): RdbPredicates
 
@@ -202,6 +217,7 @@ notEqualTo(field: string, value: ValueType): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -209,6 +225,7 @@ notEqualTo(field: string, value: ValueType): RdbPredicates
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -218,6 +235,7 @@ notEqualTo(field: string, value: ValueType): RdbPredicates
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -234,9 +252,10 @@ predicates.notEqualTo("NAME", "Lisa");
 
 
 
-#### beginWrap
+## beginWrap
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 beginWrap(): RdbPredicates
 
@@ -245,6 +264,7 @@ beginWrap(): RdbPredicates
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -265,9 +285,10 @@ predicates.equalTo("NAME", "Lisa")
 
 
 
-#### endWrap
+## endWrap
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 endWrap(): RdbPredicates
 
@@ -276,6 +297,7 @@ endWrap(): RdbPredicates
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -296,21 +318,23 @@ predicates.equalTo("NAME", "Lisa")
 
 
 
-#### or
+## or
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 or(): RdbPredicates
 
-将或条件添加到谓词中。
+将OR条件添加到谓词中。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| RdbPredicates | 返回带有或条件的Rdb谓词。 |
+| RdbPredicates | 返回带有OR条件的Rdb谓词。 |
 
 
 **示例：**
@@ -325,21 +349,23 @@ predicates.equalTo("NAME", "Lisa")
 
 
 
-#### and
+## and
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 and(): RdbPredicates
 
-向谓词添加和条件。
+向谓词添加AND条件。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
-| RdbPredicates | 返回带有和条件的Rdb谓词。 |
+| RdbPredicates | 返回带有AND条件的Rdb谓词。 |
 
 
 **示例：**
@@ -354,9 +380,10 @@ predicates.equalTo("NAME", "Lisa")
 
 
 
-#### contains
+## contains
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contains(field: string, value: string): RdbPredicates
 
@@ -366,6 +393,7 @@ contains(field: string, value: string): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -373,6 +401,7 @@ contains(field: string, value: string): RdbPredicates
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -382,6 +411,7 @@ contains(field: string, value: string): RdbPredicates
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -398,9 +428,10 @@ predicates.contains("NAME", "os");
 
 
 
-#### beginsWith
+## beginsWith
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 beginsWith(field: string, value: string): RdbPredicates
 
@@ -410,6 +441,7 @@ beginsWith(field: string, value: string): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -417,6 +449,7 @@ beginsWith(field: string, value: string): RdbPredicates
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -426,6 +459,7 @@ beginsWith(field: string, value: string): RdbPredicates
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -442,9 +476,10 @@ predicates.beginsWith("NAME", "Li");
 
 
 
-#### endsWith
+## endsWith
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 endsWith(field: string, value: string): RdbPredicates
 
@@ -454,6 +489,7 @@ endsWith(field: string, value: string): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -461,6 +497,7 @@ endsWith(field: string, value: string): RdbPredicates
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -470,6 +507,7 @@ endsWith(field: string, value: string): RdbPredicates
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -486,9 +524,10 @@ predicates.endsWith("NAME", "se");
 
 
 
-#### isNull
+## isNull
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isNull(field: string): RdbPredicates
 
@@ -498,12 +537,14 @@ isNull(field: string): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -513,6 +554,7 @@ isNull(field: string): RdbPredicates
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -528,9 +570,10 @@ predicates.isNull("NAME");
 
 
 
-#### isNotNull
+## isNotNull
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isNotNull(field: string): RdbPredicates
 
@@ -540,12 +583,14 @@ isNotNull(field: string): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -555,6 +600,7 @@ isNotNull(field: string): RdbPredicates
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -570,9 +616,10 @@ predicates.isNotNull("NAME");
 
 
 
-#### like
+## like
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 like(field: string, value: string): RdbPredicates
 
@@ -582,6 +629,7 @@ like(field: string, value: string): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -589,6 +637,7 @@ like(field: string, value: string): RdbPredicates
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -598,6 +647,7 @@ like(field: string, value: string): RdbPredicates
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -614,9 +664,10 @@ predicates.like("NAME", "%os%");
 
 
 
-#### glob
+## glob
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 glob(field: string, value: string): RdbPredicates
 
@@ -626,6 +677,7 @@ glob(field: string, value: string): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -633,6 +685,7 @@ glob(field: string, value: string): RdbPredicates
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -642,6 +695,7 @@ glob(field: string, value: string): RdbPredicates
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -658,9 +712,10 @@ predicates.glob("NAME", "?h*g");
 
 
 
-#### between
+## between
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 between(field: string, low: ValueType, high: ValueType): RdbPredicates
 
@@ -669,6 +724,7 @@ between(field: string, low: ValueType, high: ValueType): RdbPredicates
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -679,6 +735,7 @@ between(field: string, low: ValueType, high: ValueType): RdbPredicates
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | RdbPredicates | 返回与指定字段匹配的谓词。 |
@@ -687,6 +744,7 @@ between(field: string, low: ValueType, high: ValueType): RdbPredicates
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -703,9 +761,10 @@ predicates.between("AGE", 10, 50);
 
 
 
-#### notBetween
+## notBetween
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 notBetween(field: string, low: ValueType, high: ValueType): RdbPredicates
 
@@ -714,6 +773,7 @@ notBetween(field: string, low: ValueType, high: ValueType): RdbPredicates
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -724,6 +784,7 @@ notBetween(field: string, low: ValueType, high: ValueType): RdbPredicates
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | RdbPredicates | 返回与指定字段匹配的谓词。 |
@@ -732,6 +793,7 @@ notBetween(field: string, low: ValueType, high: ValueType): RdbPredicates
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -748,9 +810,10 @@ predicates.notBetween("AGE", 10, 50);
 
 
 
-#### greaterThan
+## greaterThan
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 greaterThan(field: string, value: ValueType): RdbPredicates
 
@@ -760,6 +823,7 @@ greaterThan(field: string, value: ValueType): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -767,6 +831,7 @@ greaterThan(field: string, value: ValueType): RdbPredicates
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -776,6 +841,7 @@ greaterThan(field: string, value: ValueType): RdbPredicates
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -792,9 +858,10 @@ predicates.greaterThan("AGE", 18);
 
 
 
-#### lessThan
+## lessThan
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 lessThan(field: string, value: ValueType): RdbPredicates
 
@@ -804,6 +871,7 @@ lessThan(field: string, value: ValueType): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -811,6 +879,7 @@ lessThan(field: string, value: ValueType): RdbPredicates
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -820,6 +889,7 @@ lessThan(field: string, value: ValueType): RdbPredicates
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -836,9 +906,10 @@ predicates.lessThan("AGE", 20);
 
 
 
-#### greaterThanOrEqualTo
+## greaterThanOrEqualTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 greaterThanOrEqualTo(field: string, value: ValueType): RdbPredicates
 
@@ -848,6 +919,7 @@ greaterThanOrEqualTo(field: string, value: ValueType): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -855,6 +927,7 @@ greaterThanOrEqualTo(field: string, value: ValueType): RdbPredicates
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -864,6 +937,7 @@ greaterThanOrEqualTo(field: string, value: ValueType): RdbPredicates
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -880,9 +954,10 @@ predicates.greaterThanOrEqualTo("AGE", 18);
 
 
 
-#### lessThanOrEqualTo
+## lessThanOrEqualTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 lessThanOrEqualTo(field: string, value: ValueType): RdbPredicates
 
@@ -892,6 +967,7 @@ lessThanOrEqualTo(field: string, value: ValueType): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -899,6 +975,7 @@ lessThanOrEqualTo(field: string, value: ValueType): RdbPredicates
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -908,6 +985,7 @@ lessThanOrEqualTo(field: string, value: ValueType): RdbPredicates
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -924,9 +1002,10 @@ predicates.lessThanOrEqualTo("AGE", 20);
 
 
 
-#### orderByAsc
+## orderByAsc
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 orderByAsc(field: string): RdbPredicates
 
@@ -936,12 +1015,14 @@ orderByAsc(field: string): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -951,6 +1032,7 @@ orderByAsc(field: string): RdbPredicates
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -966,9 +1048,10 @@ predicates.orderByAsc("NAME");
 
 
 
-#### orderByDesc
+## orderByDesc
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 orderByDesc(field: string): RdbPredicates
 
@@ -978,12 +1061,14 @@ orderByDesc(field: string): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -993,6 +1078,7 @@ orderByDesc(field: string): RdbPredicates
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1008,9 +1094,10 @@ predicates.orderByDesc("AGE");
 
 
 
-#### distinct
+## distinct
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 distinct(): RdbPredicates
 
@@ -1019,6 +1106,7 @@ distinct(): RdbPredicates
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1034,9 +1122,10 @@ predicates.equalTo("NAME", "Rose").distinct(); // 对NAME列值为Rose的结果�
 
 
 
-#### limitAs
+## limitAs
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 limitAs(value: number): RdbPredicates
 
@@ -1046,12 +1135,14 @@ limitAs(value: number): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 最大数据记录数，取值应为正整数，传入值小于等于0时，不会限制记录数量。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1061,6 +1152,7 @@ limitAs(value: number): RdbPredicates
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1076,9 +1168,10 @@ predicates.equalTo("NAME", "Rose").limitAs(3);
 
 
 
-#### offsetAs
+## offsetAs
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offsetAs(rowOffset: number): RdbPredicates
 
@@ -1088,12 +1181,14 @@ offsetAs(rowOffset: number): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rowOffset | number | 是 | 指定查询结果的起始位置，默认初始位置为结果集的最前端。当rowOffset为负数时，起始位置为结果集的最前端。当rowOffset超出结果集最后位置时，查询结果为空。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1103,6 +1198,7 @@ offsetAs(rowOffset: number): RdbPredicates
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1118,9 +1214,10 @@ predicates.equalTo("NAME", "Rose").limitAs(-1).offsetAs(3);
 
 
 
-#### groupBy
+## groupBy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 groupBy(fields: Array&lt;string&gt;): RdbPredicates
 
@@ -1130,12 +1227,14 @@ groupBy(fields: Array&lt;string&gt;): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fields | Array&lt;string&gt; | 是 | 指定分组依赖的列名。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1145,6 +1244,7 @@ groupBy(fields: Array&lt;string&gt;): RdbPredicates
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1160,9 +1260,10 @@ predicates.groupBy(["AGE", "NAME"]);
 
 
 
-#### indexedBy
+## indexedBy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 indexedBy(field: string): RdbPredicates
 
@@ -1172,12 +1273,14 @@ indexedBy(field: string): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 索引列的名称，不能为空字符串。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1187,6 +1290,7 @@ indexedBy(field: string): RdbPredicates
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1202,9 +1306,10 @@ predicates.indexedBy("SALARY");
 
 
 
-#### in
+## in
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 in(field: string, value: Array&lt;ValueType&gt;): RdbPredicates
 
@@ -1218,6 +1323,7 @@ in(field: string, value: Array&lt;ValueType&gt;): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -1225,6 +1331,7 @@ in(field: string, value: Array&lt;ValueType&gt;): RdbPredicates
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1234,6 +1341,7 @@ in(field: string, value: Array&lt;ValueType&gt;): RdbPredicates
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1250,9 +1358,10 @@ predicates.in("AGE", [18, 20]);
 
 
 
-#### notIn
+## notIn
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 notIn(field: string, value: Array&lt;ValueType&gt;): RdbPredicates
 
@@ -1262,6 +1371,7 @@ notIn(field: string, value: Array&lt;ValueType&gt;): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -1269,6 +1379,7 @@ notIn(field: string, value: Array&lt;ValueType&gt;): RdbPredicates
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1278,6 +1389,7 @@ notIn(field: string, value: Array&lt;ValueType&gt;): RdbPredicates
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1294,9 +1406,10 @@ predicates.notIn("NAME", ["Lisa", "Rose"]);
 
 
 
-#### notContains12+
+## notContains12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 notContains(field: string, value: string): RdbPredicates
 
@@ -1306,6 +1419,7 @@ notContains(field: string, value: string): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -1313,6 +1427,7 @@ notContains(field: string, value: string): RdbPredicates
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1322,6 +1437,7 @@ notContains(field: string, value: string): RdbPredicates
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1338,9 +1454,10 @@ predicates.notContains("NAME", "os");
 
 
 
-#### notLike12+
+## notLike12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 notLike(field: string, value: string): RdbPredicates
 
@@ -1350,6 +1467,7 @@ notLike(field: string, value: string): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -1357,6 +1475,7 @@ notLike(field: string, value: string): RdbPredicates
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1366,6 +1485,7 @@ notLike(field: string, value: string): RdbPredicates
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1382,9 +1502,10 @@ predicates.notLike("NAME", "%os%");
 
 
 
-#### having20+
+## having20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 having(conditions: string, args?: Array&lt;ValueType&gt;): RdbPredicates
 
@@ -1394,6 +1515,7 @@ having(conditions: string, args?: Array&lt;ValueType&gt;): RdbPredicates
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | conditions | string | 是 | 用于过滤使用groupBy获得的数据，conditions参数不能为空字符串且必须与groupBy配合使用。 |
@@ -1401,6 +1523,7 @@ having(conditions: string, args?: Array&lt;ValueType&gt;): RdbPredicates
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1410,6 +1533,7 @@ having(conditions: string, args?: Array&lt;ValueType&gt;): RdbPredicates
 **错误码：**
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

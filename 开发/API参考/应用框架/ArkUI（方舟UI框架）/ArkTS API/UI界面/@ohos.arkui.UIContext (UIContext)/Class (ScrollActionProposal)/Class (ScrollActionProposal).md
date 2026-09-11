@@ -1,18 +1,19 @@
 # Class (ScrollActionProposal)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-scrollactionproposal
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 智慧手势滚动动作处理，默认方向为向前滚动，包括向右和向下。当通过[registerMonitor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-smartgesturecontroller#registermonitor)接口动态自定义智慧手势行为时，设置返回值[Class (GestureHandlingResolution)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-gesturehandlingresolution)的selectedProposal为该类型对象，会触发目标组件的滚动操作。
  
 **起始版本：** 26.0.0
   
 
-#### constructor
+## constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(node: FrameNode, distance: number)
  
@@ -28,6 +29,7 @@ constructor(node: FrameNode, distance: number)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 响应滚动动作的目标节点。 |
@@ -36,9 +38,10 @@ constructor(node: FrameNode, distance: number)
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **起始版本：** 26.0.0
  
@@ -48,6 +51,7 @@ constructor(node: FrameNode, distance: number)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | distance | number | 否 | 是 | 智慧手势滚动距离。 取值范围：[0, +∞)，小于0时按0处理。 单位为vp。 |
@@ -128,4 +132,4 @@ struct SmartGestureControllerExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/1xPiUi6IQiyy2esO2nM-9Q/zh-cn_image_0000002668462486.png?HW-CC-KV=V1&HW-CC-Date=20260811T010217Z&HW-CC-Expire=86400&HW-CC-Sign=36063B3C8132D13BB9315A5CF34074F824F94B02151B9293026D5DD0E9070989)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/bLR0ZmD9TYuwjDj7_UXVcw/zh-cn_image_0000002717612384.png?HW-CC-KV=V1&HW-CC-Date=20260911T072146Z&HW-CC-Expire=86400&HW-CC-Sign=B9EDC7C1E7E48C1D7418DF46FB63CCB7AA61686747227B2AEA70D5200F359663)

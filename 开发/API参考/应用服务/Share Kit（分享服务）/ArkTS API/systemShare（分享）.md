@@ -1,6 +1,6 @@
 # systemShare（分享）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/share-system-share
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -16,7 +16,8 @@
 **起始版本：** 4.1.0(11)
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -26,7 +27,8 @@ import { systemShare } from '@kit.ShareKit';
 
 
 
-#### SharedRecord
+## SharedRecord
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -37,6 +39,7 @@ import { systemShare } from '@kit.ShareKit';
 **系统能力：** SystemCapability.Collaboration.SystemShare
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -54,7 +57,8 @@ import { systemShare } from '@kit.ShareKit';
 
 
 
-#### ShareControllerOptions
+## ShareControllerOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -68,6 +72,7 @@ import { systemShare } from '@kit.ShareKit';
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | anchor | ShareControllerAnchor \| string | 否 | 是 | 类型为string时，表示分享面板关联的控件ID（ArkUI组件常规属性的id值）。 类型为ShareControllerAnchor时，表示锚点位置。 不传此参数时，面板会显示在默认位置（居中）。 |
@@ -79,7 +84,8 @@ import { systemShare } from '@kit.ShareKit';
 
 
 
-#### ShareControllerAnchor
+## ShareControllerAnchor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -95,6 +101,7 @@ import { systemShare } from '@kit.ShareKit';
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | windowOffset | Offset | 否 | 否 | 表示共享控制器的窗口偏移量，推荐设置组件左上角顶点的坐标。 |
@@ -103,7 +110,8 @@ import { systemShare } from '@kit.ShareKit';
 
 
 
-#### Offset
+## Offset
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -115,6 +123,7 @@ import { systemShare } from '@kit.ShareKit';
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | x | number | 否 | 否 | x点的坐标。单位：像素。 |
@@ -123,7 +132,8 @@ import { systemShare } from '@kit.ShareKit';
 
 
 
-#### Size
+## Size
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -135,6 +145,7 @@ import { systemShare } from '@kit.ShareKit';
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | width | number | 否 | 否 | 组件宽度，单位：像素。负数按0处理。 |
@@ -143,7 +154,8 @@ import { systemShare } from '@kit.ShareKit';
 
 
 
-#### ShareOperationResult
+## ShareOperationResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -155,6 +167,7 @@ shareCompleted事件的返回值，用于获知用户分享渠道信息。
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | targetAbilityInfo | ShareAbilityInfo | 否 | 否 | 用户分享渠道的信息。 |
@@ -162,7 +175,8 @@ shareCompleted事件的返回值，用于获知用户分享渠道信息。
 
 
 
-#### ShareAbilityInfo
+## ShareAbilityInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -174,6 +188,7 @@ shareCompleted事件的返回值，用于获知用户分享渠道信息。
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | name | string | 否 | 否 | 分享渠道的名称。 - 系统操作有固定名称。请参见：ShareAbilityName枚举值。 - 非系统操作采用'[bundleName]#[moduleName]#[abilityName]'格式拼接。 |
@@ -181,7 +196,8 @@ shareCompleted事件的返回值，用于获知用户分享渠道信息。
 
 
 
-#### ContactInfo
+## ContactInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -195,6 +211,7 @@ shareCompleted事件的返回值，用于获知用户分享渠道信息。
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | contactType | string | 否 | 否 | 联系人类型：取值来源应用向意图捐赠数据中的entityName字段，例如"Contact"、"ChatGroup"。 |
@@ -203,7 +220,8 @@ shareCompleted事件的返回值，用于获知用户分享渠道信息。
 
 
 
-#### RevisitShareRecordData
+## RevisitShareRecordData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -217,6 +235,7 @@ shareCompleted事件的返回值，用于获知用户分享渠道信息。
 
 **参数：**
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | revisitShareRecordType | RevisitShareRecordType | 否 | 否 | 复访分享数据类型。 |
@@ -225,7 +244,8 @@ shareCompleted事件的返回值，用于获知用户分享渠道信息。
 
 
 
-#### ReadingExtendedShareRecordData
+## ReadingExtendedShareRecordData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -240,6 +260,7 @@ shareCompleted事件的返回值，用于获知用户分享渠道信息。
 **起始版本：** 6.1.0(23)
 
 **参数：**
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -259,7 +280,8 @@ shareCompleted事件的返回值，用于获知用户分享渠道信息。
 
 
 
-#### SharePreviewMode
+## SharePreviewMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -271,6 +293,7 @@ shareCompleted事件的返回值，用于获知用户分享渠道信息。
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DEFAULT | 0 | 默认模式（缩略图卡片）。推荐文本、链接等数据使用此模式。 |
@@ -279,7 +302,8 @@ shareCompleted事件的返回值，用于获知用户分享渠道信息。
 
 
 
-#### SelectionMode
+## SelectionMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -291,6 +315,7 @@ shareCompleted事件的返回值，用于获知用户分享渠道信息。
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SINGLE | 0 | 单选模式，当传入多条分享数据记录（SharedRecord）时，需要用户多选一进行分享。 |
@@ -299,7 +324,8 @@ shareCompleted事件的返回值，用于获知用户分享渠道信息。
 
 
 
-#### ShareAbilityType
+## ShareAbilityType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -310,6 +336,7 @@ shareCompleted事件的返回值，用于获知用户分享渠道信息。
 **系统能力：** SystemCapability.Collaboration.SystemShare
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -322,7 +349,8 @@ shareCompleted事件的返回值，用于获知用户分享渠道信息。
 
 
 
-#### ShareAbilityResultCode
+## ShareAbilityResultCode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -334,6 +362,7 @@ shareCompleted事件的返回值，用于获知用户分享渠道信息。
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ERROR | -1 | 发生错误。如果同时传递message参数，将弹出toast提示。 |
@@ -343,7 +372,8 @@ shareCompleted事件的返回值，用于获知用户分享渠道信息。
 
 
 
-#### ShareAbilityName
+## ShareAbilityName
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -354,6 +384,7 @@ shareCompleted事件的返回值，用于获知用户分享渠道信息。
 **系统能力：** SystemCapability.Collaboration.SystemShare
 
 **起始版本：** 5.1.0(18)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -369,7 +400,8 @@ shareCompleted事件的返回值，用于获知用户分享渠道信息。
 
 
 
-#### RevisitShareRecordType
+## RevisitShareRecordType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -381,6 +413,7 @@ shareCompleted事件的返回值，用于获知用户分享渠道信息。
 
 **起始版本：** 6.1.0(23)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | READING_SHARE | 1 | 阅读分享数据类型。 |
@@ -388,7 +421,8 @@ shareCompleted事件的返回值，用于获知用户分享渠道信息。
 
 
 
-#### ReadingShareRecordStyle
+## ReadingShareRecordStyle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -400,6 +434,7 @@ shareCompleted事件的返回值，用于获知用户分享渠道信息。
 
 **起始版本：** 6.1.0(23)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | STYLE_HIGHLIGHT_CONTENT | 0 | 选定文本高亮显示，默认。 |
@@ -408,7 +443,8 @@ shareCompleted事件的返回值，用于获知用户分享渠道信息。
 
 
 
-#### SharedData
+## SharedData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -428,7 +464,8 @@ shareCompleted事件的返回值，用于获知用户分享渠道信息。
 
 
 
-#### constructor
+### constructor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -444,6 +481,7 @@ constructor(record: SharedRecord)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | record | SharedRecord | 是 | 分享数据记录对象。 |
@@ -452,6 +490,7 @@ constructor(record: SharedRecord)
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -469,7 +508,8 @@ let data: systemShare.SharedData = new systemShare.SharedData({
 
 
 
-#### addRecord
+### addRecord
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -485,6 +525,7 @@ addRecord(record: SharedRecord): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | record | SharedRecord | 是 | 要添加到分享数据对象中的数据记录，该记录为SharedRecord对象。 |
@@ -493,6 +534,7 @@ addRecord(record: SharedRecord): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[分享服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/share-error-code)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -527,7 +569,8 @@ try {
 
 
 
-#### getRecords
+### getRecords
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -542,6 +585,7 @@ getRecords(): Array&lt;SharedRecord&gt;
 **起始版本：** 4.1.0(11)
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -565,7 +609,8 @@ aboutToAppear(): void {
 
 
 
-#### ShareController
+## ShareController
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -583,7 +628,8 @@ aboutToAppear(): void {
 
 
 
-#### constructor
+### constructor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -599,6 +645,7 @@ constructor(data: SharedData)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | SharedData | 是 | 分享数据。 |
@@ -607,6 +654,7 @@ constructor(data: SharedData)
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -628,7 +676,8 @@ let controller: systemShare.ShareController = new systemShare.ShareController(sh
 
 
 
-#### show
+### show
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -644,6 +693,7 @@ show(context: common.UIAbilityContext, options: ShareControllerOptions): Promise
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | 拉起分享面板的上下文对象。 |
@@ -651,6 +701,7 @@ show(context: common.UIAbilityContext, options: ShareControllerOptions): Promise
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -660,6 +711,7 @@ show(context: common.UIAbilityContext, options: ShareControllerOptions): Promise
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[分享服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/share-error-code)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -700,7 +752,8 @@ export default struct LinkScenario {
 
 
 
-#### on('dismiss')
+### on('dismiss')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -716,6 +769,7 @@ on(event: 'dismiss', callback: () => void): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 事件回调类型，支持的事件为'dismiss'，当分享面板关闭时，触发该事件。 |
@@ -725,6 +779,7 @@ on(event: 'dismiss', callback: () => void): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -765,7 +820,8 @@ private async handelShareDismiss(): Promise<void> {
 
 
 
-#### off('dismiss')
+### off('dismiss')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -781,6 +837,7 @@ off(event: 'dismiss', callback: () => void): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 事件回调类型，支持的事件为'dismiss'，取消触发该事件。 |
@@ -790,6 +847,7 @@ off(event: 'dismiss', callback: () => void): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -822,7 +880,8 @@ private async handelShareDisableDismiss(): Promise<void> {
 
 
 
-#### on('shareCompleted')
+### on('shareCompleted')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -838,6 +897,7 @@ on(type: 'shareCompleted', callback: Callback&lt;ShareOperationResult&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'shareCompleted'，当用户完成分享时，触发该事件。 |
@@ -847,6 +907,7 @@ on(type: 'shareCompleted', callback: Callback&lt;ShareOperationResult&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -886,7 +947,8 @@ private async handelShareCompleted(): Promise<void> {
 
 
 
-#### off('shareCompleted')
+### off('shareCompleted')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -902,6 +964,7 @@ off(type: 'shareCompleted', callback?: Callback&lt;ShareOperationResult&gt;): vo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'shareCompleted'，取消触发该事件。 |
@@ -911,6 +974,7 @@ off(type: 'shareCompleted', callback?: Callback&lt;ShareOperationResult&gt;): vo
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -943,7 +1007,8 @@ private async handelShareDisableCompleted(): Promise<void> {
 
 
 
-#### getSharedData
+## getSharedData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -959,12 +1024,14 @@ getSharedData(want: Want): Promise&lt;SharedData&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | 目标应用获取的want信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -974,6 +1041,7 @@ getSharedData(want: Want): Promise&lt;SharedData&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[分享服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/share-error-code)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1004,7 +1072,8 @@ aboutToAppear(): void {
 
 
 
-#### getContactInfo
+## getContactInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1020,12 +1089,14 @@ getContactInfo(want: Want): Promise&lt;ContactInfo&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | 目标应用获取的want信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1035,6 +1106,7 @@ getContactInfo(want: Want): Promise&lt;ContactInfo&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[分享服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/share-error-code)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1056,7 +1128,8 @@ aboutToAppear(): void {
 
 
 
-#### getWant
+## getWant
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1076,6 +1149,7 @@ getWant(data: SharedData, options?: ShareControllerOptions): Promise&lt;Want&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | SharedData | 是 | 分享目标应用的分享数据信息。 |
@@ -1083,6 +1157,7 @@ getWant(data: SharedData, options?: ShareControllerOptions): Promise&lt;Want&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1092,6 +1167,7 @@ getWant(data: SharedData, options?: ShareControllerOptions): Promise&lt;Want&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[分享服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/share-error-code)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

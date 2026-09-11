@@ -1,9 +1,9 @@
 # @ohos.app.ability.OpenLinkOptions (openLink的可选参数)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-openlinkoptions
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 OpenLinkOptions可以作为[openLink()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext#openlink12)的入参，用于标识是否仅打开AppLinking和传递键值对可选参数。
 
@@ -12,9 +12,10 @@ OpenLinkOptions可以作为[openLink()](https://developer.huawei.com/consumer/cn
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { OpenLinkOptions } from '@kit.AbilityKit';
@@ -22,13 +23,15 @@ import { OpenLinkOptions } from '@kit.AbilityKit';
 
 
 
-#### OpenLinkOptions
+## OpenLinkOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

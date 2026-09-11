@@ -1,13 +1,14 @@
 # 订阅滑动丢帧事件（ArkTS）
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-09-04 10:41:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-watcher-scroll-jank-arkts
 
-#### 接口说明
+## 接口说明
 
 API接口的具体使用说明（参数使用限制、具体取值范围等）请参考[@ohos.hiviewdfx.hiAppEvent (应用事件打点)ArkTS API文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hiviewdfx-hiappevent)。
   
+
 | 接口名 | 描述 |
 | --- | --- |
 | addWatcher(watcher: Watcher): AppEventPackageHolder | 添加应用事件观察者，以添加对应用事件的订阅。 |
@@ -16,7 +17,7 @@ API接口的具体使用说明（参数使用限制、具体取值范围等）�
  
   
 
-#### 开发步骤
+## 开发步骤
 
 以实现对用户滑动列表触发丢帧生成的滑动丢帧事件订阅为例，说明开发步骤。
  1. 编辑工程中的“entry > src > main > ets  > entryability > EntryAbility.ets”文件，添加系统事件的订阅，示例代码如下：
@@ -74,7 +75,7 @@ struct Index {
     .onScrollIndex((firstIndex: number) => {
       let i = 1;
       while (i<20000) { // 在列表滑动事件中做一些耗时操作
-        console.log("do something");
+        hilog.info(0x0000, 'testTag', `do something...`);
         i++;
       }
     })
@@ -91,3 +92,10 @@ HiAppEvent onReceive: domain=OS
 HiAppEvent eventName=SCROLL_JANK
 HiAppEvent eventInfo={"domain":"OS","name":"SCROLL_JANK","eventType":1,"params":{"ability_name":"EntryAbility","begin_time":1710322495739,"bundle_name":"com.example.myapplication1","bundle_version":"1.0.0","duration":801,"external_log":["/data/storage/el2/log/watchdog/SCROLL_JANK_20250402192812_6033.txt"],"log_over_limit":false,"max_app_frametime":3,"max_app_seq_frames":0,"max_render_frametime":8,"max_render_seq_frames":0,"process_name":"com.example.myapplication1","time":1710322497495,"total_app_frames":98,"total_app_missed_frames":0,"total_render_frames":80,"total_render_missed_frames":0}}
 ```
+
+ 
+  
+
+## 示例代码
+
+- [订阅滑动丢帧事件](https://gitcode.com/HarmonyOS_Samples/guide-snippets/tree/master/xperf/scroll_jank)

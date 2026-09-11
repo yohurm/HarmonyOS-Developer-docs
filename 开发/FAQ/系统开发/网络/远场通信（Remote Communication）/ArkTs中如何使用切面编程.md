@@ -31,7 +31,7 @@ export function injectRcpAspect(): void {
     createSessionProxy,
     'createSession',
     false,
-    // 下面函数是在createSession方法前执行。
+    <em>// 下面函数是在createSession方法前执行。</em>
     (target: object, config: rcp.SessionConfiguration) => {
       console.info(`[切面] 创建 Session，目标为：${target}，配置为:${config}`);
     }

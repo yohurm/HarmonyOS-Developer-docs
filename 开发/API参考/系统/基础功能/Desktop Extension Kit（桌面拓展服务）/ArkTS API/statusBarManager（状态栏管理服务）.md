@@ -1,6 +1,6 @@
 # statusBarManager（状态栏管理服务）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/statusbar-extension-manager
 **支持设备：** PC/2in1
@@ -10,7 +10,8 @@
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** PC/2in1
 
@@ -20,7 +21,8 @@ import { statusBarManager } from '@kit.DeskTopExtensionKit';
  
   
 
-#### StatusBarItem
+## StatusBarItem
+
 
 **支持设备：** PC/2in1
 
@@ -32,6 +34,7 @@ import { statusBarManager } from '@kit.DeskTopExtensionKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | icons | StatusBarIcon | 否 | 否 | 状态栏应用图标的图片信息。 |
@@ -42,7 +45,8 @@ import { statusBarManager } from '@kit.DeskTopExtensionKit';
  
   
 
-#### StatusBarIcon
+## StatusBarIcon
+
 
 **支持设备：** PC/2in1
 
@@ -54,6 +58,7 @@ import { statusBarManager } from '@kit.DeskTopExtensionKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | white | image.PixelMap | 否 | 否 | 深色壁纸下展示的图标，建议采用纯白色图标，支持JPEG、PNG、GIF、WebP、BMP、SVG、ICO、DNG等图片类型。 说明： 建议使用24vp * 24vp的图片。 |
@@ -62,7 +67,8 @@ import { statusBarManager } from '@kit.DeskTopExtensionKit';
  
   
 
-#### QuickOperation
+## QuickOperation
+
 
 **支持设备：** PC/2in1
 
@@ -74,6 +80,7 @@ import { statusBarManager } from '@kit.DeskTopExtensionKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | title | string | 否 | 否 | 状态栏图标的左键业务弹窗的标题。 取值范围：无限制，超长显示省略号。 |
@@ -85,7 +92,8 @@ import { statusBarManager } from '@kit.DeskTopExtensionKit';
  
   
 
-#### StatusBarGroupMenu
+## StatusBarGroupMenu
+
 
 **支持设备：** PC/2in1
 
@@ -99,6 +107,7 @@ type StatusBarGroupMenu = StatusBarMenuItem[]
  
 **起始版本：** 5.0.0(12)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | StatusBarMenuItem[] | 菜单组的信息，可以包含多个一级菜单项。 |
@@ -106,7 +115,8 @@ type StatusBarGroupMenu = StatusBarMenuItem[]
  
   
 
-#### StatusBarMenuItem
+## StatusBarMenuItem
+
 
 **支持设备：** PC/2in1
 
@@ -118,6 +128,7 @@ type StatusBarGroupMenu = StatusBarMenuItem[]
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | title | string | 否 | 否 | 菜单项标题。 取值范围：无限制，超长显示省略号。 |
@@ -129,7 +140,8 @@ type StatusBarGroupMenu = StatusBarMenuItem[]
  
   
 
-#### StatusBarMenuAction
+## StatusBarMenuAction
+
 
 **支持设备：** PC/2in1
 
@@ -141,6 +153,7 @@ type StatusBarGroupMenu = StatusBarMenuItem[]
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | abilityName | string | 否 | 否 | 点击菜单项拉起的应用的Ability名称。 说明： 当前仅支持拉起UIAbility。 |
@@ -151,7 +164,8 @@ type StatusBarGroupMenu = StatusBarMenuItem[]
  
   
 
-#### StatusBarSubMenuItem
+## StatusBarSubMenuItem
+
 
 **支持设备：** PC/2in1
 
@@ -163,6 +177,7 @@ type StatusBarGroupMenu = StatusBarMenuItem[]
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | subTitle | string | 否 | 否 | 二级菜单项标题。 取值范围：无限制，超长显示省略号。 |
@@ -173,7 +188,8 @@ type StatusBarGroupMenu = StatusBarMenuItem[]
  
   
 
-#### StatusBarItemIcon
+## StatusBarItemIcon
+
 
 **支持设备：** PC/2in1
 
@@ -185,6 +201,7 @@ type StatusBarGroupMenu = StatusBarMenuItem[]
  
 **起始版本：** 6.1.1(24)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | white | image.PixelMap | 否 | 否 | 系统深色模式下展示的图标，建议采用纯白色图标，支持JPEG、PNG、GIF、WebP、BMP、SVG、ICO、DNG等图片类型。 说明： 建议使用24vp * 24vp的图片。 |
@@ -193,7 +210,8 @@ type StatusBarGroupMenu = StatusBarMenuItem[]
  
   
 
-#### StatusBarMenuItemOptions
+## StatusBarMenuItemOptions
+
 
 **支持设备：** PC/2in1
 
@@ -205,6 +223,7 @@ type StatusBarGroupMenu = StatusBarMenuItem[]
  
 **起始版本：** 6.1.1(24)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | icon | StatusBarItemIcon | 否 | 是 | 菜单项默认显示的图标。 默认值：undefined |
@@ -214,7 +233,8 @@ type StatusBarGroupMenu = StatusBarMenuItem[]
  
   
 
-#### statusBarManager.addToStatusBar
+## statusBarManager.addToStatusBar
+
 
 **支持设备：** PC/2in1
 
@@ -230,6 +250,7 @@ addToStatusBar(context: common.Context, statusBarItem: StatusBarItem): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文信息。 说明： 当前context仅支持传入Context的子类UIAbilityContext、ServiceExtensionContext、FormExtensionContext。 |
@@ -240,6 +261,7 @@ addToStatusBar(context: common.Context, statusBarItem: StatusBarItem): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-statusbar-extension)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. |
@@ -336,7 +358,8 @@ async function addToStatusBar(context: Context) {
  
   
 
-#### statusBarManager.addToStatusBar
+## statusBarManager.addToStatusBar
+
 
 **支持设备：** PC/2in1
 
@@ -352,6 +375,7 @@ addToStatusBar(context: common.Context, statusBarItem: StatusBarItem, callback: 
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文信息。 说明： 当前context仅支持传入Context的子类UIAbilityContext、ServiceExtensionContext、FormExtensionContext。 |
@@ -363,6 +387,7 @@ addToStatusBar(context: common.Context, statusBarItem: StatusBarItem, callback: 
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-statusbar-extension)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. |
@@ -466,7 +491,8 @@ async function addToStatusBar(context: Context) {
  
   
 
-#### statusBarManager.removeFromStatusBar
+## statusBarManager.removeFromStatusBar
+
 
 **支持设备：** PC/2in1
 
@@ -482,6 +508,7 @@ removeFromStatusBar(context: common.Context): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文信息。 说明： 当前context仅支持传入Context的子类UIAbilityContext、ServiceExtensionContext、FormExtensionContext。 |
@@ -491,6 +518,7 @@ removeFromStatusBar(context: common.Context): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-statusbar-extension)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. |
@@ -522,7 +550,8 @@ function removeFromStatusBar(context: Context) {
  
   
 
-#### statusBarManager.removeFromStatusBar
+## statusBarManager.removeFromStatusBar
+
 
 **支持设备：** PC/2in1
 
@@ -538,6 +567,7 @@ removeFromStatusBar(context: common.Context, callback: AsyncCallback&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文信息。 说明： 当前context仅支持传入Context的子类UIAbilityContext、ServiceExtensionContext、FormExtensionContext。 |
@@ -548,6 +578,7 @@ removeFromStatusBar(context: common.Context, callback: AsyncCallback&lt;void&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-statusbar-extension)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. |
@@ -586,7 +617,8 @@ function removeFromStatusBar(context: Context) {
  
   
 
-#### statusBarManager.updateQuickOperationHeight
+## statusBarManager.updateQuickOperationHeight
+
 
 **支持设备：** PC/2in1
 
@@ -602,6 +634,7 @@ updateQuickOperationHeight(context: common.Context, height: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文信息。 说明： 当前context仅支持传入Context的子类UIAbilityContext、ServiceExtensionContext、FormExtensionContext。 |
@@ -612,6 +645,7 @@ updateQuickOperationHeight(context: common.Context, height: number): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-statusbar-extension)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. |
@@ -643,7 +677,8 @@ function updateQuickOperationHeight(context: Context) {
  
   
 
-#### statusBarManager.updateQuickOperationHeight
+## statusBarManager.updateQuickOperationHeight
+
 
 **支持设备：** PC/2in1
 
@@ -659,6 +694,7 @@ updateQuickOperationHeight(context: common.Context, height: number, callback: As
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文信息。 说明： 当前context仅支持传入Context的子类UIAbilityContext、ServiceExtensionContext、FormExtensionContext。 |
@@ -670,6 +706,7 @@ updateQuickOperationHeight(context: common.Context, height: number, callback: As
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-statusbar-extension)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. |
@@ -707,7 +744,8 @@ function updateQuickOperationHeight(context: Context) {
  
   
 
-#### statusBarManager.updateStatusBarMenu
+## statusBarManager.updateStatusBarMenu
+
 
 **支持设备：** PC/2in1
 
@@ -723,6 +761,7 @@ updateStatusBarMenu(context: common.Context, statusBarGroupMenus: StatusBarGroup
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文信息。 说明： 当前context仅支持传入Context的子类UIAbilityContext、ServiceExtensionContext、FormExtensionContext。 |
@@ -733,6 +772,7 @@ updateStatusBarMenu(context: common.Context, statusBarGroupMenus: StatusBarGroup
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-statusbar-extension)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. |
@@ -785,7 +825,8 @@ function updateStatusBarMenu(context: Context) {
  
   
 
-#### statusBarManager.updateStatusBarMenu
+## statusBarManager.updateStatusBarMenu
+
 
 **支持设备：** PC/2in1
 
@@ -801,6 +842,7 @@ updateStatusBarMenu(context: common.Context, statusBarGroupMenus: StatusBarGroup
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文信息。 说明： 当前context仅支持传入Context的子类UIAbilityContext、ServiceExtensionContext、FormExtensionContext。 |
@@ -812,6 +854,7 @@ updateStatusBarMenu(context: common.Context, statusBarGroupMenus: StatusBarGroup
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-statusbar-extension)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. |
@@ -871,7 +914,8 @@ function updateStatusBarMenu(context: Context) {
  
   
 
-#### statusBarManager.updateStatusBarIcon
+## statusBarManager.updateStatusBarIcon
+
 
 **支持设备：** PC/2in1
 
@@ -887,6 +931,7 @@ updateStatusBarIcon(context: common.Context, statusBarIcon: StatusBarIcon): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文信息。 说明： 当前context仅支持传入Context的子类UIAbilityContext、ServiceExtensionContext、FormExtensionContext。 |
@@ -897,6 +942,7 @@ updateStatusBarIcon(context: common.Context, statusBarIcon: StatusBarIcon): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-statusbar-extension)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. |
@@ -951,7 +997,8 @@ async function updateStatusBarIcon(context: Context) {
  
   
 
-#### statusBarManager.updateStatusBarIcon
+## statusBarManager.updateStatusBarIcon
+
 
 **支持设备：** PC/2in1
 
@@ -967,6 +1014,7 @@ updateStatusBarIcon(context: common.Context, statusBarIcon: StatusBarIcon, callb
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文信息。 说明： 当前context仅支持传入Context的子类UIAbilityContext、ServiceExtensionContext、FormExtensionContext。 |
@@ -978,6 +1026,7 @@ updateStatusBarIcon(context: common.Context, statusBarIcon: StatusBarIcon, callb
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-statusbar-extension)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. |
@@ -1039,7 +1088,8 @@ async function updateStatusBarIcon(context: Context) {
  
   
 
-#### statusBarManager.on('statusBarIconClick')
+## statusBarManager.on('statusBarIconClick')
+
 
 **支持设备：** PC/2in1
 
@@ -1055,6 +1105,7 @@ on(type: 'statusBarIconClick', callback: Callback<emitter.EventData>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'statusBarIconClick'，当点击应用图标时，触发该事件。 说明： 当调用addToStatusBar，入参quickOperation未指定abilityName时，支持通过监听statusBarIconClick事件处理点击业务。 |
@@ -1089,7 +1140,8 @@ function statusBarIconClickOnTest() {
  
   
 
-#### statusBarManager.off('statusBarIconClick')
+## statusBarManager.off('statusBarIconClick')
+
 
 **支持设备：** PC/2in1
 
@@ -1105,6 +1157,7 @@ off(type: 'statusBarIconClick', callback?: Callback<emitter.EventData>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 取消事件回调类型，支持的事件为'statusBarIconClick' |
@@ -1141,7 +1194,8 @@ function statusBarIconClickOffTest() {
  
   
 
-#### statusBarManager.on('rightMenuClick')
+## statusBarManager.on('rightMenuClick')
+
 
 **支持设备：** PC/2in1
 
@@ -1157,6 +1211,7 @@ on(type: 'rightMenuClick', callback: Callback<emitter.EventData>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'rightMenuClick'，当点击应用图标右键菜单时，触发该事件。 说明： 当调用updateStatusBarMenu，添加菜单项时，指定menuAction的notifyOnly使能和菜单项menuCode时生效。 |
@@ -1186,7 +1241,8 @@ function rightMenuClickOnTest() {
  
   
 
-#### statusBarManager.off('rightMenuClick')
+## statusBarManager.off('rightMenuClick')
+
 
 **支持设备：** PC/2in1
 
@@ -1202,6 +1258,7 @@ off(type: 'rightMenuClick', callback?: Callback<emitter.EventData>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 取消事件回调类型，支持的事件为'rightMenuClick'。 |
@@ -1234,7 +1291,8 @@ function rightMenuClickOffTest() {
  
   
 
-#### statusBarManager.updateStatusBarHoverTips
+## statusBarManager.updateStatusBarHoverTips
+
 
 **支持设备：** PC/2in1
 
@@ -1250,6 +1308,7 @@ updateStatusBarHoverTips(context: common.Context, hoverTips: string): Promise&lt
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文信息。 说明： 当前context仅支持传入Context的子类UIAbilityContext、ServiceExtensionContext、FormExtensionContext。 |
@@ -1258,6 +1317,7 @@ updateStatusBarHoverTips(context: common.Context, hoverTips: string): Promise&lt
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1267,6 +1327,7 @@ updateStatusBarHoverTips(context: common.Context, hoverTips: string): Promise&lt
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-statusbar-extension)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1010710003 | The API is being called too frequently. |
@@ -1298,7 +1359,8 @@ async function updateStatusBarHoverTips(context: Context) {
  
   
 
-#### statusBarManager.updateStatusBarMenuItem
+## statusBarManager.updateStatusBarMenuItem
+
 
 **支持设备：** PC/2in1
 
@@ -1314,6 +1376,7 @@ updateStatusBarMenuItem(context: common.Context, item: StatusBarMenuItem): Promi
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文信息。 说明： 当前context仅支持传入Context的子类UIAbilityContext、ServiceExtensionContext、FormExtensionContext。 |
@@ -1322,6 +1385,7 @@ updateStatusBarMenuItem(context: common.Context, item: StatusBarMenuItem): Promi
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1331,6 +1395,7 @@ updateStatusBarMenuItem(context: common.Context, item: StatusBarMenuItem): Promi
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-statusbar-extension)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1010710002 | The number of menu items or submenu items exceeds the limit. |
@@ -1401,7 +1466,8 @@ async function updateStatusBarMenuItemTest(context: Context) {
  
   
 
-#### statusBarManager.updateStatusBarSubMenuItem
+## statusBarManager.updateStatusBarSubMenuItem
+
 
 **支持设备：** PC/2in1
 
@@ -1417,6 +1483,7 @@ updateStatusBarSubMenuItem(context: common.Context, item: StatusBarSubMenuItem):
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文信息。 说明： 当前context仅支持传入Context的子类UIAbilityContext、ServiceExtensionContext、FormExtensionContext。 |
@@ -1425,6 +1492,7 @@ updateStatusBarSubMenuItem(context: common.Context, item: StatusBarSubMenuItem):
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1434,6 +1502,7 @@ updateStatusBarSubMenuItem(context: common.Context, item: StatusBarSubMenuItem):
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-statusbar-extension)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1010710003 | The API is being called too frequently. |
@@ -1501,7 +1570,8 @@ async function updateStatusBarSubMenuItemTest(context: Context) {
  
   
 
-#### statusBarManager.isStatusBarCapabilitySupported
+## statusBarManager.isStatusBarCapabilitySupported
+
 
 **支持设备：** PC/2in1
 
@@ -1517,6 +1587,7 @@ isStatusBarCapabilitySupported(context: common.Context): Promise&lt;boolean&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文信息。 说明： 当前context仅支持传入Context的子类UIAbilityContext、ServiceExtensionContext、FormExtensionContext。 |
@@ -1524,6 +1595,7 @@ isStatusBarCapabilitySupported(context: common.Context): Promise&lt;boolean&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示支持状态栏能力；返回false表示不支持。 |
@@ -1533,6 +1605,7 @@ isStatusBarCapabilitySupported(context: common.Context): Promise&lt;boolean&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-statusbar-extension)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1010710003 | The API is being called too frequently. |
@@ -1567,7 +1640,8 @@ async function isStatusBarCapabilitySupportedTest(context: Context) {
  
   
 
-#### statusBarManager.onIconHover
+## statusBarManager.onIconHover
+
 
 **支持设备：** PC/2in1
 
@@ -1583,6 +1657,7 @@ onIconHover(callback: Callback<emitter.EventData>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback<emitter.EventData> | 是 | 需要注册的回调函数，返回图标悬浮状态信息。 |
@@ -1609,7 +1684,8 @@ function onIconHoverTest() {
  
   
 
-#### statusBarManager.offIconHover
+## statusBarManager.offIconHover
+
 
 **支持设备：** PC/2in1
 
@@ -1625,6 +1701,7 @@ offIconHover(callback?: Callback<emitter.EventData>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback<emitter.EventData> | 否 | 取消该事件的回调处理函数。 默认值：undefined。 说明： 若不传入callback，会取消该事件的所有回调函数。 若传入callback，需要传入对应onIconHover方法相同的对象，否则会导致回调函数未成功注销，导致内存泄露。 |

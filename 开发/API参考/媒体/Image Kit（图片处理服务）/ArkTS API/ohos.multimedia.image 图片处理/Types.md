@@ -1,9 +1,9 @@
 # Types
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-t
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块定义了图像处理相关的类型别名，主要包括PixelMap HDR元数据相关的值类型，与HdrMetadataKey关键字配合使用，用于规范HDR图像处理中元数据的表达与传递。
  
@@ -12,9 +12,10 @@
 
   
 
-#### HdrMetadataValue12+
+## HdrMetadataValue12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type HdrMetadataValue = HdrMetadataType | HdrStaticMetadata | ArrayBuffer | HdrGainmapMetadata
  
@@ -22,6 +23,7 @@ PixelMap使用的HDR元数据值类型，与[HdrMetadataKey](https://developer.h
  
 **系统能力：** SystemCapability.Multimedia.Image.Core
   
+
 | 类型 | 说明 |
 | --- | --- |
 | HdrMetadataType | HdrMetadataKey中HDR_METADATA_TYPE关键字对应的元数据值类型，用于表示HDR元数据的类型。不同取值对应不同类型的HDR元数据，需根据HDR图像的实际元数据类型选择合适的值，并填充对应类型的元数据成员字段。 |

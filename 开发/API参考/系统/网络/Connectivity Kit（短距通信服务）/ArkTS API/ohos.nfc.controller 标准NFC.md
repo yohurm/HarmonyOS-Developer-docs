@@ -1,6 +1,6 @@
 # @ohos.nfc.controller (标准NFC)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-nfccontroller
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
@@ -12,7 +12,8 @@
 
 
 
-#### **导入模块**
+## **导入模块**
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -22,7 +23,8 @@ import { nfcController } from '@kit.ConnectivityKit';
 
 
 
-#### NfcState
+## NfcState
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -31,6 +33,7 @@ import { nfcController } from '@kit.ConnectivityKit';
 **系统能力：** SystemCapability.Communication.NFC.Core
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -42,7 +45,8 @@ import { nfcController } from '@kit.ConnectivityKit';
 
 
 
-#### nfcController.isNfcAvailable(deprecated)
+## nfcController.isNfcAvailable(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -51,12 +55,13 @@ isNfcAvailable(): boolean
 查询设备是否有NFC能力。
 
 > [!NOTE]
-> 从 API version 7 开始支持，从 API version 9 开始废弃，建议使用 canIUse("SystemCapability.Communication.NFC.Core") 替代。
+> 从API version 7开始支持，从API version 9开始废弃，API version 26前建议使用 canIUse("SystemCapability.Communication.NFC.Core") && nfcController.isNfcAvailable共同判断设备是否支持NFC，从API version 26开始，建议使用 canIUse("SystemCapability.Communication.NFC.Core") && nfcController.isNfcSupported 替代。
 
 
 **系统能力：** SystemCapability.Communication.NFC.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -65,7 +70,8 @@ isNfcAvailable(): boolean
 
 
 
-#### nfcController.isNfcSupported
+## nfcController.isNfcSupported
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -81,6 +87,7 @@ isNfcSupported(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | true: 设备具备NFC能力， false: 设备不具备NFC能力。 |
@@ -88,7 +95,8 @@ isNfcSupported(): boolean
 
 
 
-#### nfcController.openNfc(deprecated)
+## nfcController.openNfc(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -106,6 +114,7 @@ openNfc(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | true: 打开NFC成功， false: 打开NFC失败。 |
@@ -113,7 +122,8 @@ openNfc(): boolean
 
 
 
-#### nfcController.enableNfc9+
+## nfcController.enableNfc9+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -129,6 +139,7 @@ enableNfc(): void
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -142,7 +153,8 @@ enableNfc(): void
 
 
 
-#### nfcController.closeNfc(deprecated)
+## nfcController.closeNfc(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -160,6 +172,7 @@ closeNfc(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | true: 关闭NFC成功， false: 关闭NFC失败。 |
@@ -167,7 +180,8 @@ closeNfc(): boolean
 
 
 
-#### nfcController.disableNfc9+
+## nfcController.disableNfc9+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -183,6 +197,7 @@ disableNfc(): void
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -196,7 +211,8 @@ disableNfc(): void
 
 
 
-#### nfcController.isNfcOpen
+## nfcController.isNfcOpen
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -210,6 +226,7 @@ isNfcOpen(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | true: NFC是打开的， false: NFC是关闭的。 |
@@ -221,7 +238,8 @@ isNfcOpen(): boolean
 
 
 
-#### nfcController.getNfcState
+## nfcController.getNfcState
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -234,6 +252,7 @@ getNfcState(): [NfcState](#nfcstate)
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -252,7 +271,8 @@ console.info("nfcController on callback nfcstate: " + nfcState);
 
 
 
-#### nfcController.on('nfcStateChange')
+## nfcController.on('nfcStateChange')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -264,7 +284,8 @@ on(type: 'nfcStateChange', callback: Callback<[NfcState](#nfcstate)>): void
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
-**参数**
+**参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -278,7 +299,8 @@ on(type: 'nfcStateChange', callback: Callback<[NfcState](#nfcstate)>): void
 
 
 
-#### nfcController.off('nfcStateChange')
+## nfcController.off('nfcStateChange')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -290,7 +312,8 @@ off(type: 'nfcStateChange', callback?: Callback<[NfcState](#nfcstate)>): void
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
-**参数**
+**参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -298,19 +321,19 @@ off(type: 'nfcStateChange', callback?: Callback<[NfcState](#nfcstate)>): void
 | callback | Callback&lt;NfcState&gt; | 否 | NFC状态改变回调函数，可以空缺不填。如果callback不填，将取消注册该事件关联的所有回调函数。 |
 
 
-**示例**
+**示例：**
 
 ```text
 import { nfcController } from '@kit.ConnectivityKit';
 
 // 注册回调以接收nfc状态更改通知
-nfcController.on("nfcStateChange", (nfcState : number)=> {
+nfcController.on("nfcStateChange", (nfcState : number) => {
   console.info("nfcController on callback nfcState: " + nfcState);
 });
 
-// 打开nfc需要权限: ohos.permission.MANAGE_SECURE_SETTINGS（此权限仅系统应用可申请）
+// 打开nfc需要权限：ohos.permission.MANAGE_SECURE_SETTINGS（此权限仅系统应用可申请）
 if (!nfcController.isNfcOpen()) {
-  // 从api9开始,使用'enableNfc'打开nfc
+  // 从api9开始，使用'enableNfc'打开nfc
   try {
     nfcController.enableNfc();
     console.info("nfcController enableNfc success");
@@ -321,9 +344,9 @@ if (!nfcController.isNfcOpen()) {
   console.info("nfcController NFC has been opened");
 }
 
-// 关闭nfc需要权限: ohos.permission.MANAGE_SECURE_SETTINGS（此权限仅系统应用可申请）
+// 关闭nfc需要权限：ohos.permission.MANAGE_SECURE_SETTINGS（此权限仅系统应用可申请）
 if (nfcController.isNfcOpen()) {
-  // 从api9开始,使用'disableNfc'关闭nfc
+  // 从api9开始，使用'disableNfc'关闭nfc
   try {
     nfcController.disableNfc();
     console.info("nfcController disableNfc success");

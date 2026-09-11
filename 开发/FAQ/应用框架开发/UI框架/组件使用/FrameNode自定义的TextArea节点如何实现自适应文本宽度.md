@@ -41,11 +41,11 @@ class MyNodeController extends NodeController {
       .justifyContent(FlexAlign.Center)
       .backgroundColor('rgba(241, 243, 245, 1)');
     node.appendChild(col);
-    // 创建textArea
+    <em>// 创建textArea</em>
     let textArea = typeNode.createNode(uiContext, 'TextArea');
     textArea.initialize({ text: 'TextArea的内容是随文本宽度变化的' })
       .width('auto');
-    // 设置安全区域（沉浸式适配）
+    <em>// 设置安全区域（沉浸式适配）</em>
     col.commonAttribute.expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.TOP, SafeAreaEdge.BOTTOM]);
     col.appendChild(textArea);
     return node;

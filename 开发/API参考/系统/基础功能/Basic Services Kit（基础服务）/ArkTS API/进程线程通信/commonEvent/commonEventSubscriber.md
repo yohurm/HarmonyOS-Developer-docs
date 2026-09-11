@@ -1,20 +1,21 @@
 # CommonEventSubscriber
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-commonevent-commoneventsubscriber
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 
 
-#### CommonEventSubscriber
+## CommonEventSubscriber
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-表示公共事件的订阅者。CommonEventSubscriber提供了对有序公共事件的处理能力，包括获取和设置事件传递的Code和Data数据、查询当前公共事件是否为有序或粘性公共事件、中止或清理有序公共事件的中止状态、结束对当前有序公共事件的处理，以及获取订阅者的订阅信息等，适用于订阅者需要对接收到的公共事件进行数据处理和流程控制的场景。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+表示公共事件的订阅者。CommonEventSubscriber提供了对[有序公共事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/common-event-glossary#ordered-common-event有序公共事件)的处理能力，包括获取和设置事件传递的Code和Data数据、查询当前公共事件是否为有序或[粘性公共事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/common-event-glossary#sticky-common-event粘性公共事件)、中止或清理有序公共事件的中止状态、结束对当前有序公共事件的处理，以及获取订阅者的订阅信息等，适用于订阅者需要对接收到的公共事件进行数据处理和流程控制的场景。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -22,7 +23,10 @@
 
 
 
-#### 使用说明
+### 使用说明
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 在使用CommonEventSubscriber的功能前，需要通过[commonEventManager.createSubscriberSync](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-commoneventmanager#commoneventmanagercreatesubscribersync10)获取subscriber对象。
 
@@ -42,9 +46,10 @@ subscriber = commonEventManager.createSubscriberSync(subscribeInfo);
 
 
 
-#### getCode
+### getCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCode(callback: AsyncCallback&lt;number&gt;): void
 
@@ -56,6 +61,7 @@ getCode(callback: AsyncCallback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;number&gt; | 是 | 回调函数。当获取有序公共事件传递的数据成功时，err为undefined，data为获取到的数据；否则err为错误对象。 |
@@ -64,6 +70,7 @@ getCode(callback: AsyncCallback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -84,9 +91,10 @@ subscriber.getCode((err: BusinessError, code: number) => {
 
 
 
-#### getCode
+### getCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCode(): Promise&lt;number&gt;
 
@@ -97,6 +105,7 @@ getCode(): Promise&lt;number&gt;
 **系统能力：** SystemCapability.Notification.CommonEvent
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -115,9 +124,10 @@ subscriber.getCode().then((code: number) => {
 
 
 
-#### getCodeSync10+
+### getCodeSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCodeSync(): number
 
@@ -128,6 +138,7 @@ getCodeSync(): number
 **系统能力：** SystemCapability.Notification.CommonEvent
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -143,9 +154,10 @@ console.info(`Succeeded in getting code, code is ${JSON.stringify(code)}`);
 
 
 
-#### setCode
+### setCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCode(code: number, callback: AsyncCallback&lt;void&gt;): void
 
@@ -157,6 +169,7 @@ setCode(code: number, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | code | number | 是 | 有序公共事件传递的数据。 |
@@ -166,6 +179,7 @@ setCode(code: number, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -186,9 +200,10 @@ subscriber.setCode(1, (err: BusinessError) => {
 
 
 
-#### setCode
+### setCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCode(code: number): Promise&lt;void&gt;
 
@@ -200,12 +215,14 @@ setCode(code: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | code | number | 是 | 有序公共事件传递的数据。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -215,6 +232,7 @@ setCode(code: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -233,9 +251,10 @@ subscriber.setCode(1).then(() => {
 
 
 
-#### setCodeSync10+
+### setCodeSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCodeSync(code: number): void
 
@@ -247,6 +266,7 @@ setCodeSync(code: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | code | number | 是 | 有序公共事件传递的数据。 |
@@ -255,6 +275,7 @@ setCodeSync(code: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -274,9 +295,10 @@ try {
 
 
 
-#### getData
+### getData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getData(callback: AsyncCallback&lt;string&gt;): void
 
@@ -288,6 +310,7 @@ getData(callback: AsyncCallback&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;string&gt; | 是 | 回调函数。当获取有序公共事件传递的数据成功时，err为undefined，data为获取到的数据；否则err为错误对象。 |
@@ -296,6 +319,7 @@ getData(callback: AsyncCallback&lt;string&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -317,9 +341,10 @@ subscriber.getData((err: BusinessError, data: string) => {
 
 
 
-#### getData
+### getData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getData(): Promise&lt;string&gt;
 
@@ -330,6 +355,7 @@ getData(): Promise&lt;string&gt;
 **系统能力：** SystemCapability.Notification.CommonEvent
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -348,9 +374,10 @@ subscriber.getData().then((data: string) => {
 
 
 
-#### getDataSync10+
+### getDataSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDataSync(): string
 
@@ -361,6 +388,7 @@ getDataSync(): string
 **系统能力：** SystemCapability.Notification.CommonEvent
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -376,9 +404,10 @@ console.info(`Succeeded in getting data, data is ${data}`);
 
 
 
-#### setData
+### setData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setData(data: string, callback: AsyncCallback&lt;void&gt;): void
 
@@ -390,6 +419,7 @@ setData(data: string, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | string | 是 | 有序公共事件传递的数据，长度不超过65536字符，若超过限制，接口设置失效。 |
@@ -399,6 +429,7 @@ setData(data: string, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -419,9 +450,10 @@ subscriber.setData('publish_data_changed', (err: BusinessError) => {
 
 
 
-#### setData
+### setData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setData(data: string): Promise&lt;void&gt;
 
@@ -433,12 +465,14 @@ setData(data: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | string | 是 | 有序公共事件传递的数据，长度不超过65536字符，若超过限制，接口设置失效。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -448,6 +482,7 @@ setData(data: string): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -466,9 +501,10 @@ subscriber.setData('publish_data_changed').then(() => {
 
 
 
-#### setDataSync10+
+### setDataSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setDataSync(data: string): void
 
@@ -480,6 +516,7 @@ setDataSync(data: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | string | 是 | 有序公共事件传递的数据，长度不超过65536字符，若超过限制，接口设置失效。 |
@@ -488,6 +525,7 @@ setDataSync(data: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -507,9 +545,10 @@ try {
 
 
 
-#### setCodeAndData
+### setCodeAndData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCodeAndData(code: number, data: string, callback: AsyncCallback&lt;void&gt;): void
 
@@ -521,6 +560,7 @@ setCodeAndData(code: number, data: string, callback: AsyncCallback&lt;void&gt;):
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | code | number | 是 | 有序公共事件传递的数据。 |
@@ -531,6 +571,7 @@ setCodeAndData(code: number, data: string, callback: AsyncCallback&lt;void&gt;):
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -551,9 +592,10 @@ subscriber.setCodeAndData(1, 'publish_data_changed', (err: BusinessError) => {
 
 
 
-#### setCodeAndData
+### setCodeAndData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCodeAndData(code: number, data: string): Promise&lt;void&gt;
 
@@ -565,6 +607,7 @@ setCodeAndData(code: number, data: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | code | number | 是 | 有序公共事件传递的数据。 |
@@ -572,6 +615,7 @@ setCodeAndData(code: number, data: string): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -581,6 +625,7 @@ setCodeAndData(code: number, data: string): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -599,9 +644,10 @@ subscriber.setCodeAndData(1, 'publish_data_changed').then(() => {
 
 
 
-#### setCodeAndDataSync10+
+### setCodeAndDataSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCodeAndDataSync(code: number, data: string): void
 
@@ -613,6 +659,7 @@ setCodeAndDataSync(code: number, data: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | code | number | 是 | 有序公共事件传递的数据。 |
@@ -622,6 +669,7 @@ setCodeAndDataSync(code: number, data: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -641,9 +689,10 @@ try {
 
 
 
-#### isOrderedCommonEvent
+### isOrderedCommonEvent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isOrderedCommonEvent(callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -653,6 +702,7 @@ isOrderedCommonEvent(callback: AsyncCallback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;boolean&gt; | 是 | 回调函数。当查询成功时，err为undefined，data为true表示有序公共事件，data为false表示不是有序公共事件；否则err为错误对象。 |
@@ -661,6 +711,7 @@ isOrderedCommonEvent(callback: AsyncCallback&lt;boolean&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -681,9 +732,10 @@ subscriber.isOrderedCommonEvent((err: BusinessError, isOrdered: boolean) => {
 
 
 
-#### isOrderedCommonEvent
+### isOrderedCommonEvent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isOrderedCommonEvent(): Promise&lt;boolean&gt;
 
@@ -692,6 +744,7 @@ isOrderedCommonEvent(): Promise&lt;boolean&gt;
 **系统能力：** SystemCapability.Notification.CommonEvent
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -710,9 +763,10 @@ subscriber.isOrderedCommonEvent().then((isOrdered: boolean) => {
 
 
 
-#### isOrderedCommonEventSync10+
+### isOrderedCommonEventSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isOrderedCommonEventSync(): boolean
 
@@ -721,6 +775,7 @@ isOrderedCommonEventSync(): boolean
 **系统能力：** SystemCapability.Notification.CommonEvent
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -736,9 +791,10 @@ console.info(`isOrderedCommonEventSync ${JSON.stringify(isOrdered)}`);
 
 
 
-#### isStickyCommonEvent
+### isStickyCommonEvent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isStickyCommonEvent(callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -748,6 +804,7 @@ isStickyCommonEvent(callback: AsyncCallback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;boolean&gt; | 是 | 回调函数。当查询成功时，err为undefined，data为true表示是粘性公共事件，data为false表示不是粘性公共事件；否则err为错误对象。 |
@@ -756,6 +813,7 @@ isStickyCommonEvent(callback: AsyncCallback&lt;boolean&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -776,9 +834,10 @@ subscriber.isStickyCommonEvent((err: BusinessError, isSticky: boolean) => {
 
 
 
-#### isStickyCommonEvent
+### isStickyCommonEvent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isStickyCommonEvent(): Promise&lt;boolean&gt;
 
@@ -787,6 +846,7 @@ isStickyCommonEvent(): Promise&lt;boolean&gt;
 **系统能力：** SystemCapability.Notification.CommonEvent
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -805,9 +865,10 @@ subscriber.isStickyCommonEvent().then((isSticky: boolean) => {
 
 
 
-#### isStickyCommonEventSync10+
+### isStickyCommonEventSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isStickyCommonEventSync(): boolean
 
@@ -816,6 +877,7 @@ isStickyCommonEventSync(): boolean
 **系统能力：** SystemCapability.Notification.CommonEvent
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -831,9 +893,10 @@ console.info(`isStickyCommonEventSync ${JSON.stringify(isSticky)}`);
 
 
 
-#### abortCommonEvent
+### abortCommonEvent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 abortCommonEvent(callback: AsyncCallback&lt;void&gt;): void
 
@@ -843,6 +906,7 @@ abortCommonEvent(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当添加有序公共事件中止状态成功时，err为undefined，否则为错误对象。 |
@@ -851,6 +915,7 @@ abortCommonEvent(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -878,9 +943,10 @@ subscriber.finishCommonEvent((err: BusinessError) => {
 
 
 
-#### abortCommonEvent
+### abortCommonEvent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 abortCommonEvent(): Promise&lt;void&gt;
 
@@ -889,6 +955,7 @@ abortCommonEvent(): Promise&lt;void&gt;
 **系统能力：** SystemCapability.Notification.CommonEvent
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -912,9 +979,10 @@ subscriber.finishCommonEvent().then(() => {
 
 
 
-#### abortCommonEventSync10+
+### abortCommonEventSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 abortCommonEventSync(): void
 
@@ -935,9 +1003,10 @@ subscriber.finishCommonEvent().then(() => {
 
 
 
-#### clearAbortCommonEvent
+### clearAbortCommonEvent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clearAbortCommonEvent(callback: AsyncCallback&lt;void&gt;): void
 
@@ -947,6 +1016,7 @@ clearAbortCommonEvent(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当清理有序公共事件中止状态成功时，err为undefined，否则为错误对象。 |
@@ -955,6 +1025,7 @@ clearAbortCommonEvent(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -982,9 +1053,10 @@ subscriber.finishCommonEvent((err: BusinessError) => {
 
 
 
-#### clearAbortCommonEvent
+### clearAbortCommonEvent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clearAbortCommonEvent(): Promise&lt;void&gt;
 
@@ -993,6 +1065,7 @@ clearAbortCommonEvent(): Promise&lt;void&gt;
 **系统能力：** SystemCapability.Notification.CommonEvent
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1016,9 +1089,10 @@ subscriber.finishCommonEvent().then(() => {
 
 
 
-#### clearAbortCommonEventSync10+
+### clearAbortCommonEventSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clearAbortCommonEventSync(): void
 
@@ -1039,9 +1113,10 @@ subscriber.finishCommonEvent().then(() => {
 
 
 
-#### getAbortCommonEvent
+### getAbortCommonEvent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAbortCommonEvent(callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -1051,6 +1126,7 @@ getAbortCommonEvent(callback: AsyncCallback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;boolean&gt; | 是 | 当查询成功时，err为undefined，data为true表示当前有序公共事件处于中止状态，data为false表示当前有序公共事件未处于中止状态；否则err为错误对象。 |
@@ -1059,6 +1135,7 @@ getAbortCommonEvent(callback: AsyncCallback&lt;boolean&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1079,9 +1156,10 @@ subscriber.getAbortCommonEvent((err: BusinessError, abortEvent: boolean) => {
 
 
 
-#### getAbortCommonEvent
+### getAbortCommonEvent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAbortCommonEvent(): Promise&lt;boolean&gt;
 
@@ -1090,6 +1168,7 @@ getAbortCommonEvent(): Promise&lt;boolean&gt;
 **系统能力：** SystemCapability.Notification.CommonEvent
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1108,9 +1187,10 @@ subscriber.getAbortCommonEvent().then((abortEvent: boolean) => {
 
 
 
-#### getAbortCommonEventSync10+
+### getAbortCommonEventSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAbortCommonEventSync(): boolean
 
@@ -1119,6 +1199,7 @@ getAbortCommonEventSync(): boolean
 **系统能力：** SystemCapability.Notification.CommonEvent
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1134,9 +1215,10 @@ console.info(`Succeeded in getting abort common event, abortEvent is ${JSON.stri
 
 
 
-#### getSubscribeInfo
+### getSubscribeInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSubscribeInfo(callback: AsyncCallback&lt;CommonEventSubscribeInfo&gt;): void
 
@@ -1148,6 +1230,7 @@ getSubscribeInfo(callback: AsyncCallback&lt;CommonEventSubscribeInfo&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;CommonEventSubscribeInfo&gt; | 是 | 回调函数。当获取成功时，err为undefined，data为订阅者的订阅信息；否则err为错误对象 |
@@ -1156,6 +1239,7 @@ getSubscribeInfo(callback: AsyncCallback&lt;CommonEventSubscribeInfo&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1176,9 +1260,10 @@ subscriber.getSubscribeInfo((err: BusinessError, subscribeInfo: commonEventManag
 
 
 
-#### getSubscribeInfo
+### getSubscribeInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSubscribeInfo(): Promise&lt;CommonEventSubscribeInfo&gt;
 
@@ -1189,6 +1274,7 @@ getSubscribeInfo(): Promise&lt;CommonEventSubscribeInfo&gt;
 **系统能力：** SystemCapability.Notification.CommonEvent
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1207,9 +1293,10 @@ subscriber.getSubscribeInfo().then((subscribeInfo: commonEventManager.CommonEven
 
 
 
-#### getSubscribeInfoSync10+
+### getSubscribeInfoSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSubscribeInfoSync(): CommonEventSubscribeInfo
 
@@ -1220,6 +1307,7 @@ getSubscribeInfoSync(): CommonEventSubscribeInfo
 **系统能力：** SystemCapability.Notification.CommonEvent
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1235,9 +1323,10 @@ console.info(`Succeeded in getting subscribe info, subscribe info is ${JSON.stri
 
 
 
-#### finishCommonEvent9+
+### finishCommonEvent9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 finishCommonEvent(callback: AsyncCallback&lt;void&gt;): void
 
@@ -1247,6 +1336,7 @@ finishCommonEvent(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当订阅者结束当前有序公共事件成功时，err为undefined，否则为错误对象。 |
@@ -1255,6 +1345,7 @@ finishCommonEvent(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1275,9 +1366,10 @@ subscriber.finishCommonEvent((err: BusinessError) => {
 
 
 
-#### finishCommonEvent9+
+### finishCommonEvent9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 finishCommonEvent(): Promise&lt;void&gt;
 
@@ -1286,6 +1378,7 @@ finishCommonEvent(): Promise&lt;void&gt;
 **系统能力：** SystemCapability.Notification.CommonEvent
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |

@@ -1,9 +1,9 @@
 # CanvasRenderingContext2D对象
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-canvas-canvasrenderingcontext2d
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 > [!NOTE]
 > 从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
@@ -55,9 +55,11 @@ export default {
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
+
 
 | 名称 | 类型 | 描述 |
 | --- | --- | --- |
@@ -82,9 +84,10 @@ export default {
 
 
 
-#### fillStyle
+### fillStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 <!-- xxx.hml -->
@@ -111,9 +114,10 @@ export default {
 
 
 
-#### lineWidth
+### lineWidth
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 <!-- xxx.hml -->
@@ -140,9 +144,10 @@ export default {
 
 
 
-#### strokeStyle
+### strokeStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 <!-- xxx.hml -->
@@ -170,9 +175,10 @@ export default {
 
 
 
-#### lineCap
+### lineCap
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 <!-- xxx.hml -->
@@ -203,9 +209,10 @@ export default {
 
 
 
-#### lineJoin
+### lineJoin
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 <!-- xxx.hml -->
@@ -237,9 +244,10 @@ export default {
 
 
 
-#### miterLimit
+### miterLimit
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 <!-- xxx.hml -->
@@ -271,9 +279,10 @@ export default {
 
 
 
-#### font
+### font
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 <!-- xxx.hml -->
@@ -300,9 +309,10 @@ export default {
 
 
 
-#### textAlign
+### textAlign
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 <!-- xxx.hml -->
@@ -343,9 +353,10 @@ export default {
 
 
 
-#### textBaseline
+### textBaseline
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 <!-- xxx.hml -->
@@ -385,9 +396,10 @@ export default {
 
 
 
-#### globalAlpha
+### globalAlpha
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 <!-- xxx.hml -->
@@ -418,9 +430,10 @@ export default {
 
 
 
-#### lineDashOffset
+### lineDashOffset
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 <!-- xxx.hml -->
@@ -449,11 +462,13 @@ export default {
 
 
 
-#### globalCompositeOperation
+### globalCompositeOperation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 类型字段说明。
+
 
 | 值 | 描述 |
 | --- | --- |
@@ -508,9 +523,10 @@ export default {
 
 
 
-#### shadowBlur
+### shadowBlur
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 <!-- xxx.hml -->
@@ -539,9 +555,10 @@ export default {
 
 
 
-#### shadowColor
+### shadowColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 <!-- xxx.hml -->
@@ -570,9 +587,10 @@ export default {
 
 
 
-#### shadowOffsetX
+### shadowOffsetX
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 <!-- xxx.hml -->
@@ -602,9 +620,10 @@ export default {
 
 
 
-#### shadowOffsetY
+### shadowOffsetY
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 <!-- xxx.hml -->
@@ -634,9 +653,10 @@ export default {
 
 
 
-#### imageSmoothingEnabled
+### imageSmoothingEnabled
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 <!-- xxx.hml -->
@@ -668,15 +688,17 @@ export default {
 
 
 
-#### 方法
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 方法
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
-#### fillRect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### fillRect
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 fillRect(x: number, y: number, width:number, height: number): void
 
@@ -685,6 +707,7 @@ fillRect(x: number, y: number, width:number, height: number): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -720,9 +743,10 @@ export default {
 
 
 
-#### clearRect
+### clearRect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 clearRect(x: number, y: number, width:number, height: number): void
 
@@ -731,6 +755,7 @@ clearRect(x: number, y: number, width:number, height: number): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -768,9 +793,10 @@ export default {
 
 
 
-#### strokeRect
+### strokeRect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 strokeRect(x: number, y: number, width:number, height: number): void
 
@@ -779,6 +805,7 @@ strokeRect(x: number, y: number, width:number, height: number): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -814,9 +841,10 @@ export default {
 
 
 
-#### fillText
+### fillText
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 fillText(text: string, x: number, y: number): void
 
@@ -825,6 +853,7 @@ fillText(text: string, x: number, y: number): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -860,9 +889,10 @@ export default {
 
 
 
-#### strokeText
+### strokeText
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 strokeText(text: string, x: number, y: number): void
 
@@ -871,6 +901,7 @@ strokeText(text: string, x: number, y: number): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -906,9 +937,10 @@ export default {
 
 
 
-#### measureText
+### measureText
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 measureText(text: string): TextMetrics
 
@@ -918,12 +950,14 @@ measureText(text: string): TextMetrics
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | text | string | 是 | 需要进行测量的文本。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -959,9 +993,10 @@ export default {
 
 
 
-#### stroke
+### stroke
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 stroke(): void
 
@@ -999,9 +1034,10 @@ export default {
 
 
 
-#### beginPath
+### beginPath
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 beginPath(): void
 
@@ -1040,9 +1076,10 @@ export default {
 
 
 
-#### moveTo
+### moveTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 moveTo(x: number, y: number): void
 
@@ -1051,6 +1088,7 @@ moveTo(x: number, y: number): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1087,9 +1125,10 @@ export default {
 
 
 
-#### lineTo
+### lineTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 lineTo(x: number, y: number): void
 
@@ -1098,6 +1137,7 @@ lineTo(x: number, y: number): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1134,9 +1174,10 @@ export default {
 
 
 
-#### closePath
+### closePath
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 closePath(): void
 
@@ -1175,9 +1216,10 @@ export default {
 
 
 
-#### createPattern
+### createPattern
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 createPattern(image: Image, repetition: string): Object
 
@@ -1187,6 +1229,7 @@ createPattern(image: Image, repetition: string): Object
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | image | Image | 是 | 图源对象，具体参考Image对象。 |
@@ -1194,6 +1237,7 @@ createPattern(image: Image, repetition: string): Object
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1231,9 +1275,10 @@ export default {
 
 
 
-#### bezierCurveTo
+### bezierCurveTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 bezierCurveTo(cp1x: number, cp1y: number, cp2x: number, cp2y: number, x: number, y: number): void
 
@@ -1242,6 +1287,7 @@ bezierCurveTo(cp1x: number, cp1y: number, cp2x: number, cp2y: number, x: number,
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1282,9 +1328,10 @@ export default {
 
 
 
-#### quadraticCurveTo
+### quadraticCurveTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 quadraticCurveTo(cpx: number, cpy: number, x: number, y: number): void
 
@@ -1293,6 +1340,7 @@ quadraticCurveTo(cpx: number, cpy: number, x: number, y: number): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1331,9 +1379,10 @@ export default {
 
 
 
-#### arc
+### arc
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 arc(x: number, y: number, radius: number, startAngle: number, endAngle: number, counterclockwise?: boolean): void
 
@@ -1342,6 +1391,7 @@ arc(x: number, y: number, radius: number, startAngle: number, endAngle: number, 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1381,9 +1431,10 @@ export default {
 
 
 
-#### arcTo
+### arcTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 arcTo(x1: number, y1: number, x2: number, y2: number, radius: number): void
 
@@ -1392,6 +1443,7 @@ arcTo(x1: number, y1: number, x2: number, y2: number, radius: number): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1430,9 +1482,10 @@ export default {
 
 
 
-#### ellipse
+### ellipse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ellipse(x: number, y: number, radiusX: number, radiusY: number, rotation: number, startAngle: number, endAngle: number, counterclockwise?: number): void
 
@@ -1441,6 +1494,7 @@ ellipse(x: number, y: number, radiusX: number, radiusY: number, rotation: number
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1482,9 +1536,10 @@ export default {
 
 
 
-#### rect
+### rect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 rect(x: number, y: number, width: number, height: number): void
 
@@ -1493,6 +1548,7 @@ rect(x: number, y: number, width: number, height: number): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1529,9 +1585,10 @@ export default {
 
 
 
-#### fill
+### fill
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 fill(): void
 
@@ -1566,9 +1623,10 @@ export default {
 
 
 
-#### clip
+### clip
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 clip(): void
 
@@ -1607,9 +1665,10 @@ export default {
 
 
 
-#### rotate
+### rotate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 rotate(rotate: number): void
 
@@ -1618,6 +1677,7 @@ rotate(rotate: number): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1651,9 +1711,10 @@ export default {
 
 
 
-#### scale
+### scale
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 scale(x: number, y: number): void
 
@@ -1662,6 +1723,7 @@ scale(x: number, y: number): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1697,13 +1759,14 @@ export default {
 
 
 
-#### transform
+### transform
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 transform(scaleX: number, skewX: number, skewY: number, scaleY: number, translateX: number, translateY: number): void
 
-transform方法对应一个变换矩阵，想对一个图形进行变化的时候，只要设置此变换矩阵相应的参数，对图形的各个顶点的坐标分别乘以这个矩阵，就能得到新的顶点的坐标。矩阵变换效果可叠加。
+transform方法对应一个变换矩阵，当需要对一个图形进行变换的时候，只要设置此变换矩阵相应的参数，对图形的各个顶点的坐标分别乘以这个矩阵，就能得到新的顶点的坐标。矩阵变换效果可叠加。
 
 > [!NOTE]
 > 变换后的坐标计算方式（x和y为变换前坐标，x'和y'为变换后坐标）： x' = scaleX * x + skewY * y + translateX y' = skewX * x + scaleY * y + translateY
@@ -1712,6 +1775,7 @@ transform方法对应一个变换矩阵，想对一个图形进行变化的时�
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1756,9 +1820,10 @@ export default {
 
 
 
-#### setTransform
+### setTransform
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 setTransform(scaleX: number, skewX: number, skewY: number, scaleY: number, translateX: number, translateY: number): void
 
@@ -1767,6 +1832,7 @@ setTransform方法使用的参数和transform()方法相同，但setTransform()�
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1808,9 +1874,10 @@ export default {
 
 
 
-#### translate
+### translate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 translate(x: number, y: number): void
 
@@ -1819,6 +1886,7 @@ translate(x: number, y: number): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1854,11 +1922,12 @@ export default {
 
 
 
-#### createPath2D6+
+### createPath2D
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-createPath2D(path: Path2D, cmds: string): Path2D
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
+
+createPath2D(path?: Path2D): Path2D
 
 创建一个Path2D对象。
 
@@ -1866,15 +1935,48 @@ createPath2D(path: Path2D, cmds: string): Path2D
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | Path2D | 是 | Path2D对象。 |
-| cmds | string | 是 | SVG的Path描述字符串。 |
+| path | Path2D | 否 | Path2D对象。 默认值：空的Path2D对象。 |
 
 
 **返回值：**
 
-[Path2D对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-canvas-path2d)
+
+| 类型 | 说明 |
+| --- | --- |
+| Path2D | 返回创建的Path2D对象。 |
+
+
+
+
+### createPath2D
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
+
+createPath2D(cmds?: string): Path2D
+
+创建一个Path2D对象。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| cmds | string | 否 | SVG的Path描述字符串。 默认值：""。 |
+
+
+**返回值：**
+
+
+| 类型 | 说明 |
+| --- | --- |
+| Path2D | 返回创建的Path2D对象。 |
+
 
 **示例：**
 
@@ -1911,9 +2013,10 @@ export default {
 
 
 
-#### drawImage
+### drawImage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 drawImage(image: Image | PixelMap, sx: number, sy: number, sWidth: number, sHeight: number, dx: number, dy: number, dWidth: number, dHeight: number):void
 
@@ -1922,6 +2025,7 @@ drawImage(image: Image | PixelMap, sx: number, sy: number, sWidth: number, sHeig
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1965,9 +2069,10 @@ export default {
 
 
 
-#### restore
+### restore
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 restore(): void
 
@@ -1997,9 +2102,10 @@ export default {
 
 
 
-#### save
+### save
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 save(): void
 
@@ -2029,17 +2135,19 @@ export default {
 
 
 
-#### createLinearGradient6+
+### createLinearGradient6+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-createLinearGradient(x0: number, y0: number, x1: number, y1: number): Object
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
-创建一个线性渐变色，返回CanvasGradient对象，请参考[CanvasGradient对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-canvas-canvasgradient)。
+createLinearGradient(x0: number, y0: number, x1: number, y1: number): CanvasGradient
+
+创建一个线性渐变色，返回[CanvasGradient对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-canvas-canvasgradient)。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2051,9 +2159,10 @@ createLinearGradient(x0: number, y0: number, x1: number, y1: number): Object
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Object | 返回创建的CanvasGradient对象。 |
+| CanvasGradient | 返回创建的CanvasGradient对象。 |
 
 
 **示例：**
@@ -2091,17 +2200,19 @@ export default {
 
 
 
-#### createRadialGradient6+
+### createRadialGradient6+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-createRadialGradient(x0: number, y0: number, r0: number, x1: number, y1: number, r1: number): Object
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
-创建一个径向渐变色，返回CanvasGradient对象，请参考CanvasGradient。
+createRadialGradient(x0: number, y0: number, r0: number, x1: number, y1: number, r1: number): CanvasGradient
+
+创建一个径向渐变色，返回[CanvasGradient对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-canvas-canvasgradient)。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2115,9 +2226,10 @@ createRadialGradient(x0: number, y0: number, r0: number, x1: number, y1: number,
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Object | 返回创建的CanvasGradient对象。 |
+| CanvasGradient | 返回创建的CanvasGradient对象。 |
 
 
 **示例：**
@@ -2155,9 +2267,10 @@ export default {
 
 
 
-#### createImageData
+### createImageData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 createImageData(width: number, height: number): ImageData
 
@@ -2167,6 +2280,7 @@ createImageData(width: number, height: number): ImageData
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | width | number | 是 | ImageData的宽度。 单位：vp |
@@ -2174,6 +2288,7 @@ createImageData(width: number, height: number): ImageData
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2202,9 +2317,10 @@ export default {
 
 
 
-#### createImageData
+### createImageData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 createImageData(imageData: ImageData): ImageData
 
@@ -2214,12 +2330,14 @@ createImageData(imageData: ImageData): ImageData
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | imageData | ImageData | 是 | 复制现有的ImageData对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2249,9 +2367,10 @@ export default {
 
 
 
-#### getImageData
+### getImageData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 getImageData(sx: number, sy: number, sw: number, sh: number): ImageData
 
@@ -2260,6 +2379,7 @@ getImageData(sx: number, sy: number, sw: number, sh: number): ImageData
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2270,6 +2390,7 @@ getImageData(sx: number, sy: number, sw: number, sh: number): ImageData
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2298,9 +2419,10 @@ export default {
 
 
 
-#### putImageData
+### putImageData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 putImageData(imageData: ImageData, dx: number, dy: number, dirtyX: number, dirtyY: number, dirtyWidth: number, dirtyHeight: number): void
 
@@ -2309,6 +2431,7 @@ putImageData(imageData: ImageData, dx: number, dy: number, dirtyX: number, dirty
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2354,9 +2477,10 @@ export default {
 
 
 
-#### putImageData
+### putImageData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 putImageData(imageData: ImageData, dx: number, dy: number): void
 
@@ -2365,6 +2489,7 @@ putImageData(imageData: ImageData, dx: number, dy: number): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2406,9 +2531,10 @@ export default {
 
 
 
-#### getPixelMap9+
+### getPixelMap9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 getPixelMap(sx: number, sy: number, sw: number, sh: number): PixelMap
 
@@ -2417,6 +2543,7 @@ getPixelMap(sx: number, sy: number, sw: number, sh: number): PixelMap
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2427,6 +2554,7 @@ getPixelMap(sx: number, sy: number, sw: number, sh: number): PixelMap
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2455,11 +2583,12 @@ export default {
 
 
 
-#### setLineDash
+### setLineDash
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-setLineDash(segments: Array): void
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
+
+setLineDash(segments: Array&lt;number&gt;): void
 
 设置画布的虚线样式。
 
@@ -2467,9 +2596,10 @@ setLineDash(segments: Array): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| segments | Array | 是 | 作为数组用来描述线段如何交替和间距长度。 |
+| segments | Array&lt;number&gt; | 是 | 作为数组用来描述线段如何交替和间距长度。 |
 
 
 **示例：**
@@ -2500,11 +2630,12 @@ export default {
 
 
 
-#### getLineDash
+### getLineDash
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-getLineDash(): Array
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
+
+getLineDash(): Array&lt;number&gt;
 
 获得当前画布的虚线样式。
 
@@ -2512,9 +2643,10 @@ getLineDash(): Array
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Array | 返回数组，该数组用来描述线段如何交替和间距长度。 |
+| Array&lt;number&gt; | 返回数组，该数组用来描述线段如何交替和间距长度。 |
 
 
 **示例：**
@@ -2539,9 +2671,10 @@ export default {
 
 
 
-#### transferFromImageBitmap7+
+### transferFromImageBitmap7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 transferFromImageBitmap(bitmap: ImageBitmap): void
 
@@ -2550,6 +2683,7 @@ transferFromImageBitmap(bitmap: ImageBitmap): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |

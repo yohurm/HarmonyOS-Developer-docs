@@ -1,10 +1,10 @@
 # ArkTS API兼容性保护
 
-更新时间：2026-07-06 03:23:00
+更新时间：2026-09-09 06:41:01
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/arkts-api-compatibility-warning-elim
 
-#### 简介
+## 简介
 
 随着HarmonyOS 持续迭代，为确保持续兼容老版本用户，开发者常需设置较低的compatibleSdkVersion。但这可能导致应用在低版本系统上因调用未受保护的新 API 而崩溃（如低版本设备误调高版本接口）。为了解决这一痛点，帮助开发者在调用新 API 时做好版本隔离，我们提供了以下几种兼容性保护的最佳实践。
  
@@ -12,11 +12,11 @@
  
  
 
-#### 通过apiAvailable接口兼容性保护
+## 通过apiAvailable接口兼容性保护
 
  
 
-#### 接口定义和用途
+### 接口定义和用途
 
 **接口定义**：
  
@@ -24,7 +24,9 @@
 apiAvailable(version: string | number): boolean;
 ```
  
-**检查指定的API版本在当前设备上是否可用，会根据输入格式和API版本范围自动选择合适的版本检查方法。**
+检查指定的API版本在当前设备上是否可用，会根据输入格式和API版本范围自动选择合适的版本检查方法。
+ 
+apiAvailable 接口运行结果仅包含两种返回状态：返回 true 时，代表传入的版本号适配当前设备运行环境、接口能力可用；返回 false 时，代表传入的版本号不适配当前设备运行环境，或接口传入参数格式不符合规范。
  
 **请参考：**[apiavailable API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-device-info#deviceinfoapiavailable)。
  
@@ -34,7 +36,7 @@ apiAvailable(version: string | number): boolean;
 ```text
 import { deviceInfo } from '@kit.BasicServicesKit';
 
-getTestData(): void {
+function getTestData(): void {
   if (deviceInfo.apiAvailable('26.0.0')) {
   // 调用26.0.0的API新接口
   } else {
@@ -50,16 +52,10 @@ getTestData(): void {
 import { deviceInfo } from '@kit.BasicServicesKit';
 
 //针对HarmonyOS专有接口，即接口标记为since M.S.F(N)的接口
-getTestData(): void {
-  // 方法1: 传入参数时不带括号中的版本
+function getTestData(): void {
+  // 传入参数时不带括号中的版本
   if (deviceInfo.apiAvailable('5.0.1')) {
   // 调用API版本5.0.1(13)的API新接口 
-  } else {
-  // 降级方案
-  }
-  // 方法2: 传入参数时带括号中的版本
-  if (deviceInfo.apiAvailable('5.0.1(13)')) {
-  // 调用API版本5.0.1(13)的API新接口
   } else {
   // 降级方案
   }
@@ -71,7 +67,7 @@ getTestData(): void {
 import { deviceInfo } from '@kit.BasicServicesKit';
 
 //针对OpenHarmony底座公共接口，即接口标记为since N
-getTestData(): void {
+function getTestData(): void {
   if (deviceInfo.apiAvailable(22)) {
   // 调用22的API新接口
   } else {
@@ -84,7 +80,7 @@ getTestData(): void {
  
  
 
-#### 接口使用规格限制说明
+### 接口使用规格限制说明
 
 1. **apiAvailable入参版本规格校验**。
 - **OpenHarmony工程**传入版本号为整数，0 < X < 26。
@@ -95,7 +91,34 @@ getTestData(): void {
 
   传入版本号为X.Y.Z语义化版本格式，X > 0，0 <= Y <= 99，0 <= Z <= 99（X < 26时，需确认HarmonyOS闭源版本号是否支持，否则编译报错）。
 
-3. **告警消除功能仅支持在if语句中****，不支持自定义封装，不支持以变量赋值形式传入版本参数****，必须传入规范版本号(纯字面量)写法**。使用反例：
+3. **请严格遵循该接口的推荐调用方式，在接口参数中以字面量形式直接写入版本号，可在编译阶段及时校验并发现版本号书写错误。若采用变量传参等其他调用方式传入版本号参数，将无法在编译期识别版本号书写异常问题。使用正例**
+```text
+import { deviceInfo } from '@kit.BasicServicesKit';
+function getTestData(): void {
+  if(deviceInfo.apiAvailable('6.1.1')) { // 使用字面量版本号，编译阶段会校验版本号是否正确
+    // 调用6.1.1的接口。
+  }
+}
+```
+
+
+  **使用反例：**
+```text
+import { deviceInfo } from '@kit.BasicServicesKit';
+function getTestData(): void {
+  let format_error_version: string = '6.1.01'; // 使用错误的版本号格式传入参数，编译无提示。版本号不允许出现前导0，应该改成6.1.1。
+  if(deviceInfo.apiAvailable(format_error_version)) { // 运行时返回false，格式错误
+    // 调用6.1.1的接口。
+  }
+  let not_exist_version: string = '6.1.3'; // 使用不存在的版本号传入参数，编译无提示。
+  if(deviceInfo.apiAvailable(not_exist_version)) { // 运行时根据设备实际版本号返回结果，不校验闭源HarmonyOS版本号是否存在
+    // 调用6.1.3的接口。
+  }
+}
+```
+
+
+4. **告警消除功能仅支持在if语句中，不支持自定义封装，不支持以变量赋值形式传入版本参数，必须传入规范版本号(纯字面量)写法**。使用反例：
 
   
 ```text
@@ -104,10 +127,10 @@ import { deviceInfo } from '@kit.BasicServicesKit';
 class BbClass {
   version: string = '27.0.0';
 }
-getTestData(): void {
+function getTestData(): void {
   // 告警消除不支持类赋值
   const Bb: BbClass = new BbClass();
-  if (deviceInfo.apiAvailable(Bb.version)) {   // 编译报错
+  if (deviceInfo.apiAvailable(Bb.version)) {
   // 调用27.0.0的API新接口  
   }
   //告警消除不支持自定义封装
@@ -119,13 +142,13 @@ getTestData(): void {
 ```
 
 
-4. **告警消除功能仅支持在if语句中，if 判断不支持三元表达式写法，不支持逻辑符号复合判断，例如：'&&'、 '||'、 '!'等**。使用反例：
+5. **告警消除功能仅支持在if语句中，if 判断不支持三元表达式写法，不支持逻辑符号复合判断，例如：'&&'、 '||'、 '!'等**。使用反例：
 
   
 ```text
 import { deviceInfo } from '@kit.BasicServicesKit';
 
-getTestData(): void {
+function getTestData(): void {
   // 告警消除不支持逻辑非。
   if(!deviceInfo.apiAvailable('26.0.0')) {
     // 调用26.0.0的API新接口   
@@ -152,7 +175,7 @@ getTestData(): void {
 
   
 
-  #### 重要说明
+  ### 重要说明
 
   
 对于应用能力的兼容性判断，建议使用面向开发者相关的API版本接口（例如：apiAvailable接口）。
@@ -163,11 +186,11 @@ getTestData(): void {
  
  
 
-#### 示例一：HdsActionBar组件适配
+### 示例一：HdsActionBar组件适配
 
 **场景描述**：应用操作栏（ActionBar）在不同系统版本下的兼容性适配方案。场景中，支持点击操作栏中间的按钮，进行切换图标及展开和收起操作栏。
  
-代码通过判断设备的distributionOSApiVersion是否达到6.0.0(20)（对应的值为60000）来实现适配：在高版本系统（6.0.0(20)及以上）中，直接使用UIDesignKit提供的HdsActionBar组件，利用其原生支持的startButtons、endButtons配置项快速构建操作栏，而在低版本系统中，采用Row容器与基础Button组件组合的降级方案，通过条件渲染模拟按钮的展开和收起状态，并用基本点击事件实现图标切换逻辑，确保核心交互功能在低版本设备上仍可正常使用。
+代码通过调用 apiAvailable 判断设备能力是否达到6.0.0(20)（对应的值为60000）来实现适配：在高版本系统（6.0.0(20)及以上）中，直接使用UIDesignKit提供的HdsActionBar组件，利用其原生支持的startButtons、endButtons配置项快速构建操作栏，而在低版本系统中，采用Row容器与基础Button组件组合的降级方案，通过条件渲染模拟按钮的展开和收起状态，并用基本点击事件实现图标切换逻辑，确保核心交互功能在低版本设备上仍可正常使用。
  
 ```text
 import { HdsActionBar, ActionBarButton, ActionBarStyle } from '@kit.UIDesignKit';
@@ -251,7 +274,7 @@ export struct ActionBarAdapter {
  
  
 
-#### 示例二：Scroll组件缩放功能适配
+### 示例二：Scroll组件缩放功能适配
 
 **场景描述**：在图片浏览类应用（如相册或电商商品详情页）的开发中，通常需要实现图片的缩放查看功能。Scroll组件的缩放功能（如设置最大/最小缩放比例以及弹性缩放效果）需要较高的系统API Level支持（API 20及以上版本）。
  
@@ -290,7 +313,7 @@ export struct ScrollComponentAdapter {
  
  
 
-#### 示例三：Text组件跑马灯效果适配
+### 示例三：Text组件跑马灯效果适配
 
 **场景描述**：在新闻资讯或实时信息展示类应用中，经常需要实现文字跑马灯（Marquee）效果，以便在有限空间内展示较长的文本内容（如新闻标题或重要通知）。Text组件的跑马灯功能需要API 18及以上版本才能支持。
  
@@ -327,13 +350,13 @@ export struct TextComponentAdapter {
  
  
 
-#### 通过@Available注解标注最低适用版本
+## 通过@Available注解标注最低适用版本
 
 在API 22之前版本，开发者仅能通过手动编写注释文本的方式标注方法的最低适用版本，这种方式存在版本约束传递不精准的问题。为此，系统提供**@Available**注解，助力开发者更规范、高效地管控API的调用过程的版本依赖场景。当然**@Available**本身提供的特性不只是为了提供消除兼容性告警，而是让开发者通过@Available标注相关接口，然后根据自己的业务需求再去对需要标注的接口本身的行为进行判断。
  
  
 
-#### 使用说明
+### 使用说明
 
 **@Available注解参数**：
  
@@ -359,7 +382,7 @@ export struct TextComponentAdapter {
  
  
 
-#### 校验逻辑
+### 校验逻辑
 
 编译器依据项目配置的compatibleSdkVersion进行校验，若该版本低于被注解API的引入版本，编译器将触发兼容性告警，提示低版本系统运行时可能因调用未存在的 API 导致崩溃。
  
@@ -372,7 +395,7 @@ It is recommended to use apiAvailable to safeguard API compatibility.
  
  
 
-#### 正反示例
+### 正反示例
 
 **HarmonyOS工程正例**：
  
@@ -449,7 +472,7 @@ class testClassC {}
  
  
 
-#### 场景示例
+### 场景示例
 
 应用开发者在使用其他开发者提供的API时，可以通过查看其@Available注解来判断该API是否能在自己应用所支持的最低系统版本上运行。
  

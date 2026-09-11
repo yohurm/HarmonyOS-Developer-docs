@@ -1,9 +1,9 @@
 # Canvas
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-canvas
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供画布组件，用于自定义绘制图形。
  
@@ -12,23 +12,26 @@
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 不支持。
  
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### Canvas23+
+### Canvas23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Canvas(params: CanvasParams)
  
@@ -46,6 +49,7 @@ Canvas(params: CanvasParams)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | CanvasParams | 是 | Canvas组件的构造参数，用于创建不缓存指令的Canvas组件。配置参数详见CanvasParams。 |
@@ -53,9 +57,10 @@ Canvas(params: CanvasParams)
  
   
 
-#### Canvas
+### Canvas
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Canvas(context?: CanvasRenderingContext2D | DrawingRenderingContext)
  
@@ -71,6 +76,7 @@ Canvas(context?: CanvasRenderingContext2D | DrawingRenderingContext)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | CanvasRenderingContext2D \| DrawingRenderingContext12+ | 否 | CanvasRenderingContext2D: 不支持多个Canvas共用一个CanvasRenderingContext2D对象，具体描述见CanvasRenderingContext2D对象。DrawingRenderingContext: 不支持多个Canvas共用一个DrawingRenderingContext对象，具体描述见DrawingRenderingContext对象。 异常值null和undefined按未设置context处理。 |
@@ -78,9 +84,10 @@ Canvas(context?: CanvasRenderingContext2D | DrawingRenderingContext)
  
   
 
-#### Canvas12+
+### Canvas12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Canvas(context: CanvasRenderingContext2D | DrawingRenderingContext, imageAIOptions: ImageAIOptions)
  
@@ -96,6 +103,7 @@ Canvas(context: CanvasRenderingContext2D | DrawingRenderingContext, imageAIOptio
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | CanvasRenderingContext2D \| DrawingRenderingContext12+ | 是 | CanvasRenderingContext2D: 不支持多个Canvas共用一个CanvasRenderingContext2D对象，具体描述见CanvasRenderingContext2D对象。DrawingRenderingContext: 不支持多个Canvas共用一个DrawingRenderingContext对象，具体描述见DrawingRenderingContext对象。 异常值null和undefined按未设置context处理。 |
@@ -104,9 +112,10 @@ Canvas(context: CanvasRenderingContext2D | DrawingRenderingContext, imageAIOptio
  
   
 
-#### CanvasParams23+
+## CanvasParams23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义Canvas的具体配置参数。
  
@@ -116,6 +125,7 @@ Canvas(context: CanvasRenderingContext2D | DrawingRenderingContext, imageAIOptio
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | unit | LengthMetricsUnit | 否 | 是 | 用于描述Canvas绘制时所采用的单位模式，不同单位模式会影响绘制时的坐标和尺寸计算方式，具体说明见LengthMetricsUnit。 仅可在创建Canvas时设置，后续不可修改。 默认值：LengthMetricsUnit.DEFAULT |
@@ -124,17 +134,19 @@ Canvas(context: CanvasRenderingContext2D | DrawingRenderingContext, imageAIOptio
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
  
   
 
-#### enableAnalyzer12+
+### enableAnalyzer12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableAnalyzer(enable: boolean)
  
@@ -156,6 +168,7 @@ enableAnalyzer(enable: boolean)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | boolean | 是 | 设置组件是否开启AI分析功能，开启时需要组件内容支持主体识别、文字识别或对象查找。 设置为true时，组件可进行AI分析，设置为false时，组件不可进行AI分析。 异常值null和undefined按false处理。 默认值：false |
@@ -163,17 +176,19 @@ enableAnalyzer(enable: boolean)
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)外，还支持如下事件：
  
   
 
-#### onReady
+### onReady
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onReady(event: VoidCallback)
  
@@ -189,6 +204,7 @@ Canvas组件初始化完成或者发生大小变化时的事件回调，支持[a
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | VoidCallback | 是 | Canvas组件初始化完成或者发生大小变化时的回调事件。 |
@@ -196,9 +212,10 @@ Canvas组件初始化完成或者发生大小变化时的事件回调，支持[a
  
   
 
-#### onReady23+
+### onReady23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onReady(event: Callback<DrawingRenderingContext | undefined> | undefined)
  
@@ -216,6 +233,7 @@ Canvas组件初始化完成或者发生大小变化时的事件回调，支持[a
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | Callback<DrawingRenderingContext \| undefined> \| undefined | 是 | Canvas组件初始化完成或者发生大小变化时的回调事件。 关于Callback<DrawingRenderingContext \|undefined>类型的入参： 1. 只有使用CanvasParams创建的Canvas组件在该回调中返回DrawingRenderingContext对象，否则返回undefined。 2. 该回调返回的DrawingRenderingContext对象不允许作为参数创建Canvas组件，否则会导致应用崩溃。 |
@@ -223,13 +241,17 @@ Canvas组件初始化完成或者发生大小变化时的事件回调，支持[a
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 示例1（使用CanvasRenderingContext2D中的方法）
+### 示例1（使用CanvasRenderingContext2D中的方法）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例实现了如何在Canvas组件使用[CanvasRenderingContext2D](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-canvasrenderingcontext2d)中的方法进行绘制。
  
@@ -263,7 +285,10 @@ struct CanvasExample {
  
   
 
-#### 示例2（使用DrawingRenderingContext中的方法）
+### 示例2（使用DrawingRenderingContext中的方法）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例实现了如何在Canvas组件使用[DrawingRenderingContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawingrenderingcontext)中的方法进行绘制。
  
@@ -297,7 +322,10 @@ struct CanvasExample {
  
   
 
-#### 示例3（使用attributeModifier动态设置Canvas组件的属性及方法）
+### 示例3（使用attributeModifier动态设置Canvas组件的属性及方法）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示了如何使用[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)动态设置Canvas组件的[enableAnalyzer](#enableanalyzer12)属性和[onReady](#onready)方法。
  
@@ -389,7 +417,10 @@ struct attributeDemo {
  
   
 
-#### 示例4（创建不缓存指令Canvas并进行绘制）
+### 示例4（创建不缓存指令Canvas并进行绘制）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例介绍了如何使用[CanvasParams](#canvasparams23)创建不缓存指令的Canvas组件并进行绘制。
  
@@ -436,4 +467,4 @@ struct CanvasExample {
 ```
  
  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/2GEFjH_YR_mU9LF0CupnoA/zh-cn_image_0000002686088259.png?HW-CC-KV=V1&HW-CC-Date=20260730T071509Z&HW-CC-Expire=86400&HW-CC-Sign=E9A0DE2648084018B89591CEDC43CB2492BE141B1FD9CC7C74D8D49978887541)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/UbTadyeZQum2dQl9i-i-AA/zh-cn_image_0000002747212835.png?HW-CC-KV=V1&HW-CC-Date=20260911T073110Z&HW-CC-Expire=86400&HW-CC-Sign=723F718B9AFF92E31AE02BF4569C0F9A968753A749471B07E58A3C898FD51E45)

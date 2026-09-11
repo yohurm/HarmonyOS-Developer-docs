@@ -1,9 +1,9 @@
 # @ohos.multimedia.sendableImage (基于Sendable对象的图片处理)
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-sendableimage
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块基于[Sendable](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable)对象，提供图片处理效果，包括通过属性创建PixelMap、读取图像像素数据、读取区域内的图片数据等。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { sendableImage } from '@kit.ImageKit';
@@ -22,126 +23,213 @@ import { sendableImage } from '@kit.ImageKit';
 
 
 
-#### sendableImage.createPixelMap
+## sendableImage.createPixelMap
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPixelMap(colors: ArrayBuffer, options: image.InitializationOptions): Promise&lt;PixelMap&gt;
 
-通过属性创建PixelMap，默认采用BGRA_8888格式处理数据。使用Promise异步回调。
+通过像素数据和图像属性创建PixelMap。传入的像素数据会进行拷贝并转换为[InitializationOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-i#initializationoptions8).pixelFormat指定的像素格式，用于初始化PixelMap的像素。使用Promise异步回调。
 
-由于图片占用内存较大，所以当PixelMap对象使用完成后，应主动调用[release](#release)方法及时释放内存。释放时应确保该对象的所有异步方法均执行完成，且后续不再使用该对象。
+> [!NOTE]
+> 此接口不支持创建以下像素格式的PixelMap：RGBA_1010102、YCBCR_P010、YCRCB_P010和ASTC_4x4。 由于图片占用内存较大，所以当PixelMap对象使用完成后，应主动调用 release 方法及时释放内存。释放时应确保该对象的所有异步方法均执行完成，且后续不再使用该对象。
+
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| colors | ArrayBuffer | 是 | 默认按照BGRA_8888格式处理的颜色数组。 |
-| options | image.InitializationOptions | 是 | 创建像素的属性，包括透明度，尺寸，缩放值，像素格式和是否可编辑。 |
+| colors | ArrayBuffer | 是 | 图像像素数据的缓冲区，用于初始化PixelMap的像素。缓冲区内的像素数据必须紧密排列，不可以包含内存对齐填充字节。 缓冲区的像素格式需要由InitializationOptions.srcPixelFormat指定，否则默认缓冲区的像素格式为BGRA_8888。 说明： 缓冲区长度为：图像宽度 * 图像高度 * 每像素字节数。 |
+| options | image.InitializationOptions | 是 | 创建图像的初始化属性，包括尺寸、像素格式、透明度类型、缩放模式和是否可编辑。 说明： 如果像素格式被指定为ASTC_4x4，则会使用默认的RGBA_8888格式。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;PixelMap&gt; | 返回PixelMap。 当创建的PixelMap大小超过原图大小时，返回原图PixelMap大小。 |
+| Promise&lt;PixelMap&gt; | Promise对象，返回创建的PixelMap。 当创建的PixelMap大小超过源像素数据所能表示的图像大小时，返回按源像素数据所能表示的图像大小创建的PixelMap。 |
 
 
 **示例：**
 
 ```text
-import { sendableImage } from '@kit.ImageKit';
 import { image } from '@kit.ImageKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
-async function CreatePixelMap() {
-    const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4。
-    let opts: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 4, width: 6 } }
-    sendableImage.createPixelMap(color, opts).then((pixelMap: sendableImage.PixelMap) => {
-        console.info('Succeeded in creating pixelmap.');
-    }).catch((error: BusinessError) => {
-        console.error(`Failed to create pixelmap. code is ${error.code}, message is ${error.message}`);
-    })
+function createPixelMap() {
+  const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素缓冲区大小，取值为：width * height * 4。
+  let opts: image.InitializationOptions = {
+    size: { height: 4, width: 6 },
+    srcPixelFormat: image.PixelMapFormat.RGBA_8888, // 缓冲区中的源像素数据的像素格式。
+    pixelFormat: image.PixelMapFormat.BGRA_8888, // 新创建的PixelMap的像素格式。
+    editable: true
+  };
+  sendableImage.createPixelMap(color, opts).then((pixelMap: sendableImage.PixelMap) => {
+    console.info('Succeeded in creating the PixelMap.');
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to create the PixelMap. Code: ${err.code}, message: ${err.message}`);
+  });
 }
 ```
 
 
 
-#### sendableImage.createPixelMapFromParcel
+## sendableImage.createPixelMapSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-createPixelMapFromParcel(sequence: rpc.MessageSequence): PixelMap
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-从MessageSequence中获取PixelMap。
+createPixelMapSync(colors: ArrayBuffer, options: image.InitializationOptions): PixelMap
 
-由于图片占用内存较大，所以当PixelMap对象使用完成后，应主动调用[release](#release)方法及时释放内存。释放时应确保该对象的所有异步方法均执行完成，且后续不再使用该对象。
+通过像素数据和图像属性创建PixelMap。传入的像素数据会进行拷贝并转换为[InitializationOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-i#initializationoptions8).pixelFormat指定的像素格式，用于初始化PixelMap的像素。同步返回结果。
+
+> [!NOTE]
+> 此接口不支持创建以下像素格式的PixelMap：RGBA_1010102、YCBCR_P010、YCRCB_P010和ASTC_4x4。 由于图片占用内存较大，所以当PixelMap对象使用完成后，应主动调用 release 方法及时释放内存。释放时应确保该对象的所有异步方法均执行完成，且后续不再使用该对象。
+
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| sequence | rpc.MessageSequence | 是 | 保存有PixelMap信息的MessageSequence。 |
+| colors | ArrayBuffer | 是 | 图像像素数据的缓冲区，用于初始化PixelMap的像素。缓冲区内的像素数据必须紧密排列，不可以包含内存对齐填充字节。 缓冲区的像素格式需要由InitializationOptions.srcPixelFormat指定，否则默认缓冲区的像素格式为BGRA_8888。 说明： 缓冲区长度为：图像宽度 * 图像高度 * 每像素字节数。 |
+| options | image.InitializationOptions | 是 | 创建图像的初始化属性，包括尺寸、像素格式、透明度类型、缩放模式和是否可编辑。 说明： 如果像素格式被指定为ASTC_4x4，则会使用默认的RGBA_8888格式。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| PixelMap | 成功同步返回PixelMap对象，失败抛出异常。 |
+| PixelMap | 返回创建的PixelMap对象，接口调用失败时会抛出异常。 |
+
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
+
+
+**示例：**
+
+```text
+import { image } from '@kit.ImageKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function createPixelMapSync() {
+  const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素缓冲区大小，取值为：width * height * 4。
+  let opts: image.InitializationOptions = {
+    size: { height: 4, width: 6 },
+    srcPixelFormat: image.PixelMapFormat.RGBA_8888, // 缓冲区中的源像素数据的像素格式。
+    pixelFormat: image.PixelMapFormat.BGRA_8888, // 新创建的PixelMap的像素格式。
+    editable: true
+  };
+  try {
+    let pixelMap: sendableImage.PixelMap = sendableImage.createPixelMapSync(color, opts);
+    if (pixelMap == undefined) {
+      console.error(`Failed to create the PixelMap.`);
+      return;
+    }
+    console.info('Succeeded in creating the PixelMap.');
+  } catch (e) {
+    const err = e as BusinessError;
+    console.error(`Failed to create the PixelMap. Code: ${err.code}, message: ${err.message}`);
+  }
+}
+```
+
+
+
+## sendableImage.createPixelMapFromParcel
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+createPixelMapFromParcel(sequence: rpc.MessageSequence): PixelMap
+
+从MessageSequence中反序列化并获取PixelMap。
+
+> [!NOTE]
+> 由于图片占用内存较大，所以当PixelMap对象使用完成后，应主动调用 release 方法及时释放内存。释放时应确保该对象的所有异步方法均执行完成，且后续不再使用该对象。
+
+
+**系统能力：** SystemCapability.Multimedia.Image.Core
+
+**参数：**
+
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| sequence | rpc.MessageSequence | 是 | 保存了PixelMap序列化数据的MessageSequence。 |
+
+
+**返回值：**
+
+
+| 类型 | 说明 |
+| --- | --- |
+| PixelMap | 返回创建的PixelMap对象，接口调用失败时会抛出异常。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 62980096 | Operation failed |
-| 62980097 | IPC error |
-| 62980115 | Invalid input parameter |
-| 62980105 | Failed to get the data |
-| 62980177 | Abnormal API environment |
-| 62980178 | Failed to create the PixelMap |
-| 62980179 | Abnormal buffer size |
-| 62980180 | FD mapping failed |
-| 62980246 | Failed to read the PixelMap |
+| 62980096 | Operation failed. |
+| 62980097 | IPC error. |
+| 62980115 | Invalid input parameter. |
+| 62980105 | Failed to get the data. |
+| 62980177 | Abnormal API environment. |
+| 62980178 | Failed to create the PixelMap. |
+| 62980179 | Abnormal buffer size. |
+| 62980180 | FD mapping failed. |
+| 62980246 | Failed to read the PixelMap. |
 
 
 **示例：**
 
 ```ArkTS
 // EntryAbility.ets
-import { sendableImage } from '@kit.ImageKit';
 import { image } from '@kit.ImageKit';
 import { rpc } from '@kit.IPCKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 class MySequence implements rpc.Parcelable {
-  pixel_map: sendableImage.PixelMap;
-  constructor(conPixelmap: sendableImage.PixelMap) {
-    this.pixel_map = conPixelmap;
+  pixelMap: sendableImage.PixelMap;
+  constructor(pixelMap: sendableImage.PixelMap) {
+    this.pixelMap = pixelMap;
   }
   marshalling(messageSequence: rpc.MessageSequence) {
-    this.pixel_map.marshalling(messageSequence);
+    this.pixelMap.marshalling(messageSequence);
     return true;
   }
   unmarshalling(messageSequence: rpc.MessageSequence) {
     try {
-      this.pixel_map = sendableImage.createPixelMapFromParcel(messageSequence);
-    } catch(e) {
-      let error = e as BusinessError;
-      console.error(`Failed to create a PixelMap from a parcel. Code: ${error.code}, message: ${error.message}.`);
+      this.pixelMap = sendableImage.createPixelMapFromParcel(messageSequence);
+    } catch (e) {
+      const err = e as BusinessError;
+      console.error(`Failed to create the PixelMap from parcel. Code: ${err.code}, message: ${err.message}`);
       return false;
     }
     return true;
   }
 }
-async function CreatePixelMapFromParcel() {
+
+async function createPixelMapFromParcel() {
   const color: ArrayBuffer = new ArrayBuffer(96);
   let bufferArr: Uint8Array = new Uint8Array(color);
   for (let i = 0; i < bufferArr.length; i++) {
@@ -149,14 +237,11 @@ async function CreatePixelMapFromParcel() {
   }
   let opts: image.InitializationOptions = {
     editable: true,
-    pixelFormat: 4,
+    pixelFormat: image.PixelMapFormat.BGRA_8888,
     size: { height: 4, width: 6 },
-    alphaType: 3
-  }
-  let pixelMap: sendableImage.PixelMap | undefined = undefined;
-  await sendableImage.createPixelMap(color, opts).then((srcPixelMap: sendableImage.PixelMap) => {
-    pixelMap = srcPixelMap;
-  })
+    alphaType: image.AlphaType.UNPREMUL
+  };
+  const pixelMap: sendableImage.PixelMap | undefined = await sendableImage.createPixelMap(color, opts);
   if (pixelMap != undefined) {
     // 序列化。
     let parcelable: MySequence = new MySequence(pixelMap);
@@ -164,30 +249,37 @@ async function CreatePixelMapFromParcel() {
     data.writeParcelable(parcelable);
 
     // 反序列化rpc获取到data。
-    let ret: MySequence = new MySequence(pixelMap);
-    data.readParcelable(ret);
+    let seq: MySequence = new MySequence(pixelMap);
+    data.readParcelable(seq);
 
     // 获取到PixelMap。
-    let newPixelMap = ret.pixel_map;
+    let newPixelMap = seq.pixelMap;
+    if (newPixelMap != undefined) {
+      console.info('Succeeded in getting the PixelMap.');
+    }
   }
 }
 ```
 
 
 
-#### sendableImage.createPixelMapFromSurface
+## sendableImage.createPixelMapFromSurface
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPixelMapFromSurface(surfaceId: string, region: image.Region): Promise&lt;PixelMap&gt;
 
 根据Surface ID和区域信息创建一个PixelMap对象。该区域的大小由[Region](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-i#region8).size指定。使用Promise异步回调。
 
-由于图片占用内存较大，所以当PixelMap对象使用完成后，应主动调用[release](#release)方法及时释放内存。释放时应确保该对象的所有异步方法均执行完成，且后续不再使用该对象。
+> [!NOTE]
+> 当设备为折叠屏，切换折叠状态时，可能因Surface自带旋转角度导致接口创建失败。需根据Surface的旋转角度相应调整传入的宽高值，如旋转90°或270°时互换宽与高。 由于图片占用内存较大，所以当PixelMap对象使用完成后，应主动调用 release 方法及时释放内存。释放时应确保该对象的所有异步方法均执行完成，且后续不再使用该对象。
+
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -197,123 +289,77 @@ createPixelMapFromSurface(surfaceId: string, region: image.Region): Promise&lt;P
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;PixelMap&gt; | 成功同步返回PixelMap对象，失败抛出异常。 |
+| Promise&lt;PixelMap&gt; | Promise对象，返回创建的PixelMap对象，接口调用失败时会抛出异常。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 62980115 | If the image parameter invalid. |
-| 62980105 | Failed to get the data |
-| 62980178 | Failed to create the PixelMap |
+| 62980105 | Failed to get the data. |
+| 62980178 | Failed to create the PixelMap. |
 
 
 **示例：**
 
 ```text
-import { sendableImage } from '@kit.ImageKit';
 import { image } from '@kit.ImageKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
-async function CreatePixelMapFromSurface(surfaceId: string) {
+function createPixelMapFromSurface(surfaceId: string) {
   let region: image.Region = { x: 0, y: 0, size: { height: 100, width: 100 } };
-  sendableImage.createPixelMapFromSurface(surfaceId, region).then(() => {
-    console.info('Succeeded in creating pixelmap from Surface');
-  }).catch((error: BusinessError) => {
-    console.error(`Failed to create pixelmap. code is ${error.code}, message is ${error.message}`);
+  sendableImage.createPixelMapFromSurface(surfaceId, region).then((pixelMap: sendableImage.PixelMap) => {
+    console.info('Succeeded in creating the PixelMap from Surface.');
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to create the PixelMap from Surface. Code: ${err.code}, message: ${err.message}`);
   });
 }
 ```
 
 
 
-#### sendableImage.createPixelMapSync
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-createPixelMapSync(colors: ArrayBuffer, options: image.InitializationOptions): PixelMap
-
-通过属性创建PixelMap，同步返回PixelMap结果。
-
-由于图片占用内存较大，所以当PixelMap对象使用完成后，应主动调用[release](#release)方法及时释放内存。释放时应确保该对象的所有异步方法均执行完成，且后续不再使用该对象。
-
-**系统能力：** SystemCapability.Multimedia.Image.Core
-
-**参数：**
-
-| 参数名 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
-| colors | ArrayBuffer | 是 | BGRA_8888格式的颜色数组。 |
-| options | image.InitializationOptions | 是 | 创建像素的属性，包括透明度，尺寸，缩放值，像素格式和是否可编辑。 |
+## sendableImage.convertFromPixelMap
 
 
-**返回值：**
-
-| 类型 | 说明 |
-| --- | --- |
-| PixelMap | 成功同步返回PixelMap对象，失败抛出异常。 |
-
-
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
-
-
-**示例：**
-
-```text
-import { sendableImage } from '@kit.ImageKit';
-import { image } from '@kit.ImageKit';
-import { BusinessError } from '@kit.BasicServicesKit';
-
-async function CreatePixelMapSync() {
-    const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4。
-    let opts: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 4, width: 6 } }
-    let pixelMap : sendableImage.PixelMap = sendableImage.createPixelMapSync(color, opts);
-    return pixelMap;
-}
-```
-
-
-
-#### sendableImage.convertFromPixelMap
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 convertFromPixelMap(pixelmap: image.PixelMap): PixelMap
 
 通过image下的PixelMap创建出一个sendableImage下的PixelMap，同步返回PixelMap结果。原PixelMap的方法均不可再调用。
 
-由于图片占用内存较大，所以当PixelMap对象使用完成后，应主动调用[release](#release)方法及时释放内存。释放时应确保该对象的所有异步方法均执行完成，且后续不再使用该对象。
+> [!NOTE]
+> 由于图片占用内存较大，所以当PixelMap对象使用完成后，应主动调用 release 方法及时释放内存。释放时应确保该对象的所有异步方法均执行完成，且后续不再使用该对象。
+
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| pixelmap | image.PixelMap | 是 | image下的非sendable的PixelMap。 |
+| pixelmap | image.PixelMap | 是 | image下的非Sendable的PixelMap。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| PixelMap | 成功同步返回sendable的PixelMap对象，失败抛出异常。 |
+| PixelMap | 成功同步返回Sendable的PixelMap对象，失败抛出异常。 |
 
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -324,33 +370,42 @@ convertFromPixelMap(pixelmap: image.PixelMap): PixelMap
 **示例：**
 
 ```text
-import { sendableImage } from '@kit.ImageKit';
 import { image } from '@kit.ImageKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-async function ConvertFromPixelMap() {
-  const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4。
-  let opts: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 4, width: 6 } }
-  let pixelMap : image.PixelMap = image.createPixelMapSync(color, opts);
-  let sendablePixelMap : sendableImage.PixelMap = sendableImage.convertFromPixelMap(pixelMap);
-  return sendablePixelMap;
+function convertFromPixelMap() {
+  const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素缓冲区大小，取值为：width * height * 4。
+  const opts: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 4, width: 6 } };
+  let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
+  try {
+    let sendablePixelMap: sendableImage.PixelMap = sendableImage.convertFromPixelMap(pixelMap);
+    console.info('Succeeded in converting the PixelMap.');
+  } catch (e) {
+    const err = e as BusinessError;
+    console.error(`Failed to convert the PixelMap. Code: ${err.code}, message: ${err.message}`);
+  }
 }
 ```
 
 
 
-#### sendableImage.convertToPixelMap
+## sendableImage.convertToPixelMap
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 convertToPixelMap(pixelmap: PixelMap): image.PixelMap
 
 通过sendableImage下的PixelMap创建出一个image下的PixelMap，同步返回PixelMap结果。原PixelMap的方法均不可再调用。
 
-由于图片占用内存较大，所以当PixelMap对象使用完成后，应主动调用[release](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-pixelmap#release7)方法及时释放内存。释放时应确保该对象的所有异步方法均执行完成，且后续不再使用该对象。
+> [!NOTE]
+> 由于图片占用内存较大，所以当PixelMap对象使用完成后，应主动调用 release 方法及时释放内存。释放时应确保该对象的所有异步方法均执行完成，且后续不再使用该对象。
+
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -359,14 +414,16 @@ convertToPixelMap(pixelmap: PixelMap): image.PixelMap
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| image.PixelMap | 成功同步返回image下的非sendable的PixelMap对象，失败抛出异常。 |
+| image.PixelMap | 成功同步返回image下的非Sendable的PixelMap对象，失败抛出异常。 |
 
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -377,29 +434,36 @@ convertToPixelMap(pixelmap: PixelMap): image.PixelMap
 **示例：**
 
 ```text
-import { sendableImage } from '@kit.ImageKit';
 import { image } from '@kit.ImageKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-async function ConvertToPixelMap() {
-  const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4。
-  let opts: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 4, width: 6 } }
-  let sendablePixelMap : sendableImage.PixelMap = sendableImage.createPixelMapSync(color, opts);
-  let pixelMap : image.PixelMap = sendableImage.convertToPixelMap(sendablePixelMap);
-  return pixelMap;
+function convertToPixelMap() {
+  const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素缓冲区大小，取值为：width * height * 4。
+  const opts: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 4, width: 6 } };
+  let sendablePixelMap: sendableImage.PixelMap = sendableImage.createPixelMapSync(color, opts);
+  try {
+    let pixelMap: image.PixelMap = sendableImage.convertToPixelMap(sendablePixelMap);
+    console.info('Succeeded in converting the PixelMap.');
+  } catch (e) {
+    const err = e as BusinessError;
+    console.error(`Failed to convert the PixelMap. Code: ${err.code}, message: ${err.message}`);
+  }
 }
 ```
 
 
 
-#### ISendable
+## ISendable
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ISendable = lang.ISendable
 
 ISendable是所有Sendable类型（除null和undefined）的父类型。自身没有任何必须的方法和属性。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -408,43 +472,43 @@ ISendable是所有Sendable类型（除null和undefined）的父类型。自身�
 
 
 
-#### PixelMap
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-图像像素类，用于读取或写入图像数据以及获取图像信息。在调用PixelMap的方法前，需要先通过[createPixelMap](#sendableimagecreatepixelmap)创建一个PixelMap实例。目前PixelMap序列化大小最大128MB，超过会送显失败。大小计算方式为（宽*高*每像素占用字节数）。
-
-sendableImage下的PixelMap支持sendable属性，支持worker线程共享。sendableImage下的PixelMap，可以利用[Convert](#sendableimageconverttopixelmap)方法与image下的PixelMap进行互相转换。转换后，原对象的方法均不允许再调用，否则将报错501 无法调用接口。跨线程处理PixelMap时，需要考虑多线程问题。
-
-在调用PixelMap的方法前，需要先通过[sendableImage.createPixelMap](#sendableimagecreatepixelmap)构建一个PixelMap对象。
-
-由于图片占用内存较大，所以当PixelMap对象使用完成后，应主动调用[release](#release)方法及时释放内存。释放时应确保该对象的所有异步方法均执行完成，且后续不再使用该对象。
+## PixelMap
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 属性
+图像像素类，用于读取或写入图像数据以及获取图像信息，同时支持图像变换（缩放、平移、旋转、翻转、裁剪）、设置不透明度、提取Alpha通道、色彩空间设置等操作，适用于图像处理、图像编辑、图像显示等需要进行像素级数据操作的场景。在调用PixelMap的方法前，需要先通过[sendableImage.createPixelMap](#sendableimagecreatepixelmap)传入像素数据创建一个PixelMap对象。目前PixelMap序列化大小最大为128MiB，超过会渲染失败。PixelMap大小的计算方式为：宽 * 高 * 每像素占用字节数（详情请参考[PixelMapFormat](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-e#pixelmapformat7)）。
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+sendableImage下的PixelMap支持Sendable属性，支持Worker线程共享。sendableImage下的PixelMap可以利用[sendableImage.convertToPixelMap](#sendableimageconverttopixelmap)方法与image下的PixelMap进行互相转换。转换后，原对象的方法均不允许再调用，否则将报错501无法调用接口。跨线程处理PixelMap时，需要考虑多线程竞争问题。
+
+图像占用的内存往往较大，当PixelMap对象使用完成后，应主动调用[release](#release)方法及时释放内存。释放时应确保该对象的所有异步方法均执行完成，且后续不再使用该对象。
+
+
+
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| isEditable | boolean | 是 | 否 | true表示图像像素可被编辑，false表示不可被编辑。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| isStrideAlignment | boolean | 是 | 否 | true表示图像内存为DMA内存，false表示非DMA内存。DMA内存的PixelMap会做256字节内存对齐，行末会存在padding区域。 |
+| isEditable | boolean | 是 | 否 | 图像像素是否可被编辑。true表示可被编辑，false表示不可被编辑。为false时，图像的渲染和传输性能更好。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| isStrideAlignment | boolean | 是 | 否 | 图像的行数据是否已进行内存对齐。true表示已进行内存对齐，每行数据的末尾有空白填充字节以满足对齐要求（如果数据本身已满足对齐要求，则不会有填充字节）；false表示未进行内存对齐，每行数据紧密排列，末尾无空白填充字节。 |
 
 
 
 
-#### readPixelsToBuffer
+### readPixelsToBuffer
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readPixelsToBuffer(dst: ArrayBuffer): Promise&lt;void&gt;
 
-读取图像像素数据，结果写入ArrayBuffer里。使用Promise异步回调。
-
-该接口指定BGRA_8888格式创建pixelmap，读取的像素数据与原数据保持一致。
+读取整个PixelMap的像素数据，并按照PixelMap的像素格式存入缓冲区。使用Promise异步回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -452,45 +516,45 @@ readPixelsToBuffer(dst: ArrayBuffer): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| dst | ArrayBuffer | 是 | 缓冲区，函数执行结束后获取的图像像素数据写入到该内存区域内。缓冲区大小由getPixelBytesNumber接口获取。 |
+| dst | ArrayBuffer | 是 | 目标缓冲区，获取的像素数据会被拷贝至该缓冲区。缓冲区内像素的格式与PixelMap相同，不包含内存对齐填充字节。缓冲区的大小由getPixelBytesNumber接口获取。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | Promise实例，用于获取结果，失败时返回错误信息。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **示例：**
 
 ```text
 import { BusinessError } from '@kit.BasicServicesKit';
-import { sendableImage } from '@kit.ImageKit';
 
-async function ReadPixelsToBuffer(pixelMap : sendableImage.PixelMap) {
-  const readBuffer: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4。
-  if (pixelMap != undefined) {
-    pixelMap.readPixelsToBuffer(readBuffer).then(() => {
-      console.info('Succeeded in reading image pixel data.'); // 符合条件则进入。
-    }).catch((error: BusinessError) => {
-      console.error(`Failed to read image pixel data. code is ${error.code}, message is ${error.message}`);// 不符合条件则进入。
-    })
-  }
+function readPixelsToBuffer(pixelMap: sendableImage.PixelMap) {
+  const readBuffer: ArrayBuffer = new ArrayBuffer(pixelMap.getPixelBytesNumber());
+  pixelMap.readPixelsToBuffer(readBuffer).then(() => {
+    console.info('Succeeded in reading image pixel data.');
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to read image pixel data. Code: ${err.code}, message: ${err.message}`);
+  });
 }
 ```
 
 
 
-#### readPixelsToBufferSync
+### readPixelsToBufferSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readPixelsToBufferSync(dst: ArrayBuffer): void
 
-以同步方法读取PixelMap到Buffer里。
+读取整个PixelMap的像素数据，并按照PixelMap的像素格式存入缓冲区。同步返回结果。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -498,14 +562,16 @@ readPixelsToBufferSync(dst: ArrayBuffer): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| dst | ArrayBuffer | 是 | 缓冲区，函数执行结束后获取的图像像素数据写入到该内存区域内。缓冲区大小由getPixelBytesNumber接口获取。 |
+| dst | ArrayBuffer | 是 | 目标缓冲区，获取的像素数据会被拷贝至该缓冲区。缓冲区内像素的格式与PixelMap相同，不包含内存对齐填充字节。缓冲区的大小由getPixelBytesNumber接口获取。 |
 
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -516,26 +582,34 @@ readPixelsToBufferSync(dst: ArrayBuffer): void
 **示例：**
 
 ```text
-import { sendableImage } from '@kit.ImageKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-async function ReadPixelsToBufferSync(pixelMap: sendableImage.PixelMap) {
-  const bufferSize = pixelMap.getPixelBytesNumber();
-  const readBuffer: ArrayBuffer = new ArrayBuffer(bufferSize);
-  if (pixelMap != undefined) {
+function readPixelsToBufferSync(pixelMap: sendableImage.PixelMap) {
+  const readBuffer = new ArrayBuffer(pixelMap.getPixelBytesNumber());
+  try {
     pixelMap.readPixelsToBufferSync(readBuffer);
+    console.info('Succeeded in reading image pixel data.');
+  } catch (e) {
+    const err = e as BusinessError;
+    console.error(`Failed to read image pixel data. Code: ${err.code}, message: ${err.message}`);
   }
 }
 ```
 
 
 
-#### readPixels
+### readPixels
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readPixels(area: image.PositionArea): Promise&lt;void&gt;
 
-读取区域内的图片数据。使用Promise异步回调。
+读取PixelMap指定区域内的像素数据并存入缓冲区。如果PixelMap的像素格式为YUV类型，则按照PixelMap的像素格式存入缓冲区，否则按照BGRA_8888格式存入缓冲区。使用Promise异步回调。
+
+> [!NOTE]
+> 可使用公式计算PositionArea需要申请的缓冲区大小。 RGBA的区域计算公式：读取区域像素数量（Region.size {width * height}）* 4（1倍R分量 + 1倍G分量 + 1倍B分量 + 1倍A分量） YUV的区域计算公式：读取区域像素数量（Region.size {width * height}）* 1.5（1倍Y分量 + 0.25倍U分量 + 0.25倍V分量）
+
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -543,51 +617,71 @@ readPixels(area: image.PositionArea): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| area | image.PositionArea | 是 | 区域大小，根据区域读取。 |
+| area | image.PositionArea | 是 | 读取的区域数据。 该区域由PositionArea.region指定，获取的像素数据会被拷贝至PositionArea.pixels缓冲区。如果PixelMap的像素格式为YUV类型，则获取的像素数据格式与PixelMap相同，否则会被转换为BGRA_8888格式。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | Promise实例，用于获取读取结果，失败时返回错误信息。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **示例：**
 
 ```text
-import { sendableImage } from '@kit.ImageKit';
 import { image } from '@kit.ImageKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
-async function ReadPixels(pixelMap : sendableImage.PixelMap) {
+function readPixelsRGBA(pixelMap: sendableImage.PixelMap) {
   const area: image.PositionArea = {
-    pixels: new ArrayBuffer(8),
+    pixels: new ArrayBuffer(8), // 8为需要创建的像素缓冲区大小，取值为：width * height * 4。
     offset: 0,
     stride: 8,
     region: { size: { height: 1, width: 2 }, x: 0, y: 0 }
   };
-  if (pixelMap != undefined) {
-    pixelMap.readPixels(area).then(() => {
-      console.info('Succeeded in reading the image data in the area.'); // 符合条件则进入。
-    }).catch((error: BusinessError) => {
-      console.error(`Failed to read the image data in the area. code is ${error.code}, message is ${error.message}`);// 不符合条件则进入。
-    })
-  }
+  pixelMap.readPixels(area).then(() => {
+    console.info('Succeeded in reading the image data in the area from the specified area.');
+    console.info('BGRA data: ', new Uint8Array(area.pixels));
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to read the image data from the specified area. Code: ${err.code}, message: ${err.message}`);
+  });
+}
+
+function readPixelsYUV(pixelMap: sendableImage.PixelMap) {
+  const area: image.PositionArea = {
+    pixels: new ArrayBuffer(6),  // 6为需要创建的像素缓冲区大小，取值为：width * height * 1.5。
+    offset: 0,
+    stride: 8,
+    region: { size: { height: 2, width: 2 }, x: 0, y: 0 }
+  };
+  pixelMap.readPixels(area).then(() => {
+    console.info('Succeeded in reading the image data in the area from the specified area.');
+    console.info('YUV data: ', new Uint8Array(area.pixels));
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to read the image data from the specified area. Code: ${err.code}, message: ${err.message}`);
+  });
 }
 ```
 
 
 
-#### readPixelsSync
+### readPixelsSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readPixelsSync(area: image.PositionArea): void
 
-读取区域内的图片数据并同步返回结果。
+读取PixelMap指定区域内的像素数据并存入缓冲区。如果PixelMap的像素格式为YUV类型，则按照PixelMap的像素格式存入缓冲区，否则按照BGRA_8888格式存入缓冲区。同步返回结果。
+
+> [!NOTE]
+> 可使用公式计算PositionArea需要申请的缓冲区大小。 RGBA的区域计算公式：读取区域像素数量（Region.size {width * height}）* 4（1倍R分量 + 1倍G分量 + 1倍B分量 + 1倍A分量） YUV的区域计算公式：读取区域像素数量（Region.size {width * height}）* 1.5（1倍Y分量 + 0.25倍U分量 + 0.25倍V分量）
+
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -595,14 +689,16 @@ readPixelsSync(area: image.PositionArea): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| area | image.PositionArea | 是 | 区域大小，根据区域读取。 |
+| area | image.PositionArea | 是 | 读取的区域数据。 该区域由PositionArea.region指定，获取的像素数据会被拷贝至PositionArea.pixels缓冲区。如果PixelMap的像素格式为YUV类型，则获取的像素数据格式与PixelMap相同，否则会被转换为BGRA_8888格式。 |
 
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -613,60 +709,70 @@ readPixelsSync(area: image.PositionArea): void
 **示例：**
 
 ```text
-import { sendableImage } from '@kit.ImageKit';
-import { image } from '@kit.ImageKit';
-
-async function ReadPixelsSync(pixelMap : sendableImage.PixelMap) {
-  const area : image.PositionArea = {
-    pixels: new ArrayBuffer(8),
-    offset: 0,
-    stride: 8,
-    region: { size: { height: 1, width: 2 }, x: 0, y: 0 }
-  };
-  if (pixelMap != undefined) {
-    pixelMap.readPixelsSync(area);
-  }
-}
-```
-
-
-
-#### writePixels
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-writePixels(area: image.PositionArea): Promise&lt;void&gt;
-
-将PixelMap写入指定区域内。使用Promise异步回调。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.Multimedia.Image.Core
-
-**参数：**
-
-| 参数名 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
-| area | image.PositionArea | 是 | 区域，根据区域写入。 |
-
-
-**返回值：**
-
-| 类型 | 说明 |
-| --- | --- |
-| Promise&lt;void&gt; | Promise实例，用于获取写入结果，失败时返回错误信息。 |
-
-
-**示例：**
-
-```text
-import { sendableImage } from '@kit.ImageKit';
 import { image } from '@kit.ImageKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
-async function WritePixels(pixelMap : sendableImage.PixelMap) {
+function readPixelsSync(pixelMap: sendableImage.PixelMap) {
   const area: image.PositionArea = {
     pixels: new ArrayBuffer(8),
+    offset: 0,
+    stride: 8,
+    region: { size: { height: 1, width: 2 }, x: 0, y: 0 }
+  };
+  try {
+    pixelMap.readPixelsSync(area);
+    console.info('Succeeded in reading the image data from the specified area.');
+  } catch (e) {
+    const err = e as BusinessError;
+    console.error(`Failed to read the image data from the specified area. Code: ${err.code}, message: ${err.message}`);
+  }
+}
+```
+
+
+
+### writePixels
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+writePixels(area: image.PositionArea): Promise&lt;void&gt;
+
+将缓冲区内的像素数据写入PixelMap的指定区域。如果PixelMap的像素格式为YUV类型，则缓冲区内的数据会按照PixelMap的像素格式解析，否则按照BGRA_8888格式解析。使用Promise异步回调。
+
+> [!NOTE]
+> 可使用公式计算PositionArea需要申请的缓冲区大小。 RGBA的区域计算公式：写入区域像素数量（Region.size {width * height}）* 4（1倍R分量 + 1倍G分量 + 1倍B分量 + 1倍A分量） YUV的区域计算公式：写入区域像素数量（Region.size {width * height}）* 1.5（1倍Y分量 + 0.25倍U分量 + 0.25倍V分量）
+
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Image.Core
+
+**参数：**
+
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| area | image.PositionArea | 是 | 写入的区域数据。 该区域由PositionArea.region指定，PositionArea.pixels缓冲区内的像素数据会被写入PixelMap的该区域。如果PixelMap的像素格式为YUV类型，则缓冲区内的像素数据格式需与PixelMap相同，否则需要为BGRA_8888格式。 |
+
+
+**返回值：**
+
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
+
+
+**示例：**
+
+```text
+import { image } from '@kit.ImageKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function writePixelsRGBA(pixelMap: sendableImage.PixelMap) {
+  const area: image.PositionArea = {
+    pixels: new ArrayBuffer(8), // 8为需要创建的像素缓冲区大小，取值为：width * height * 4。
     offset: 0,
     stride: 8,
     region: { size: { height: 1, width: 2 }, x: 0, y: 0 }
@@ -675,25 +781,46 @@ async function WritePixels(pixelMap : sendableImage.PixelMap) {
   for (let i = 0; i < bufferArr.length; i++) {
     bufferArr[i] = i + 1;
   }
-  if (pixelMap != undefined) {
-    pixelMap.writePixels(area).then(() => {
-      console.info('Succeeded to write pixelmap into the specified area.');
-    }).catch((error: BusinessError) => {
-      console.error(`Failed to write pixelmap into the specified area. code is ${error.code}, message is ${error.message}`);
-    })
+  pixelMap.writePixels(area).then(() => {
+    console.info('Succeeded in writing pixels into the specified area.');
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to write pixels into the specified area. Code: ${err.code}, message: ${err.message}`);
+  });
+}
+
+function writePixelsYUV(pixelMap: sendableImage.PixelMap) {
+  const area: image.PositionArea = {
+    pixels: new ArrayBuffer(6), // 6为需要创建的像素缓冲区大小，取值为：width * height * 1.5。
+    offset: 0,
+    stride: 8, // PixelMap为YUV格式时，writePixels函数不使用该变量。
+    region: { size: { height: 2, width: 2 }, x: 0, y: 0 }
+  };
+  let bufferArr: Uint8Array = new Uint8Array(area.pixels);
+  for (let i = 0; i < bufferArr.length; i++) {
+    bufferArr[i] = i + 1;
   }
+  pixelMap.writePixels(area).then(() => {
+    console.info('Succeeded in writing pixels into the specified area.');
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to write pixels into the specified area. Code: ${err.code}, message: ${err.message}`);
+  });
 }
 ```
 
 
 
-#### writePixelsSync
+### writePixelsSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writePixelsSync(area: image.PositionArea): void
 
-以同步方法将PixelMap写入指定区域内。
+将缓冲区内的像素数据写入PixelMap的指定区域。如果PixelMap的像素格式为YUV类型，则缓冲区内的数据会按照PixelMap的像素格式解析，否则按照BGRA_8888格式解析。同步返回结果。
+
+> [!NOTE]
+> 可使用公式计算PositionArea需要申请的缓冲区大小。 RGBA的区域计算公式：写入区域像素数量（Region.size {width * height}）* 4（1倍R分量 + 1倍G分量 + 1倍B分量 + 1倍A分量） YUV的区域计算公式：写入区域像素数量（Region.size {width * height}）* 1.5（1倍Y分量 + 0.25倍U分量 + 0.25倍V分量）
+
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -701,14 +828,16 @@ writePixelsSync(area: image.PositionArea): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| area | image.PositionArea | 是 | 区域，根据区域写入。 |
+| area | image.PositionArea | 是 | 写入的区域数据。 该区域由PositionArea.region指定，PositionArea.pixels缓冲区内的像素数据会被写入PixelMap的该区域。如果PixelMap的像素格式为YUV类型，则缓冲区内的像素数据格式需与PixelMap相同，否则需要为BGRA_8888格式。 |
 
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -719,10 +848,10 @@ writePixelsSync(area: image.PositionArea): void
 **示例：**
 
 ```text
-import { sendableImage } from '@kit.ImageKit';
 import { image } from '@kit.ImageKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-async function WritePixelsSync(pixelMap : sendableImage.PixelMap) {
+function writePixelsSync(pixelMap: sendableImage.PixelMap) {
   const area: image.PositionArea = {
     pixels: new ArrayBuffer(8),
     offset: 0,
@@ -733,21 +862,26 @@ async function WritePixelsSync(pixelMap : sendableImage.PixelMap) {
   for (let i = 0; i < bufferArr.length; i++) {
     bufferArr[i] = i + 1;
   }
-  if (pixelMap != undefined) {
+  try {
     pixelMap.writePixelsSync(area);
+    console.info('Succeeded in writing pixels into the specified area.');
+  } catch (e) {
+    const err = e as BusinessError;
+    console.error(`Failed to write pixels into the specified area. Code: ${err.code}, message: ${err.message}`);
   }
 }
 ```
 
 
 
-#### writeBufferToPixels
+### writeBufferToPixels
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeBufferToPixels(src: ArrayBuffer): Promise&lt;void&gt;
 
-读取缓冲区中的图片数据，结果写入PixelMap中。使用Promise异步回调。
+将缓冲区内的像素数据写入整个PixelMap。使用Promise异步回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -755,12 +889,14 @@ writeBufferToPixels(src: ArrayBuffer): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| src | ArrayBuffer | 是 | 图像像素数据。 |
+| src | ArrayBuffer | 是 | 源数据缓冲区，该缓冲区内的图像像素数据会被写入PixelMap。缓冲区内的像素数据必须是整个PixelMap的像素数据，且像素格式需与PixelMap相同，不包含内存对齐填充字节。缓冲区的大小可通过getPixelBytesNumber接口获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -770,34 +906,32 @@ writeBufferToPixels(src: ArrayBuffer): Promise&lt;void&gt;
 **示例：**
 
 ```text
-import { sendableImage } from '@kit.ImageKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
-async function WriteBufferToPixels(pixelMap : sendableImage.PixelMap) {
-  const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4。
+function writeBufferToPixels(pixelMap: sendableImage.PixelMap) {
+  const color: ArrayBuffer = new ArrayBuffer(pixelMap.getPixelBytesNumber());
   let bufferArr: Uint8Array = new Uint8Array(color);
   for (let i = 0; i < bufferArr.length; i++) {
     bufferArr[i] = i + 1;
   }
-  if (pixelMap != undefined) {
-    pixelMap.writeBufferToPixels(color).then(() => {
-      console.info("Succeeded in writing data from a buffer to a PixelMap.");
-    }).catch((error: BusinessError) => {
-      console.error(`Failed to write data from a buffer to a PixelMap. code is ${error.code}, message is ${error.message}`);
-    })
-  }
+  pixelMap.writeBufferToPixels(color).then(() => {
+    console.info('Succeeded in writing data from the buffer to the PixelMap.');
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to write data from the buffer to the PixelMap. Code: ${err.code}, message: ${err.message}`);
+  });
 }
 ```
 
 
 
-#### writeBufferToPixelsSync
+### writeBufferToPixelsSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeBufferToPixelsSync(src: ArrayBuffer): void
 
-读取缓冲区中的图片数据，结果写入PixelMap并同步返回结果。
+将缓冲区内的像素数据写入整个PixelMap。同步返回结果。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -805,14 +939,16 @@ writeBufferToPixelsSync(src: ArrayBuffer): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| src | ArrayBuffer | 是 | 图像像素数据。 |
+| src | ArrayBuffer | 是 | 源数据缓冲区，该缓冲区内的图像像素数据会被写入PixelMap。缓冲区内的像素数据必须是整个PixelMap的像素数据，且像素格式需与PixelMap相同，不包含内存对齐填充字节。缓冲区的大小可通过getPixelBytesNumber接口获取。 |
 
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -823,26 +959,30 @@ writeBufferToPixelsSync(src: ArrayBuffer): void
 **示例：**
 
 ```text
-import { sendableImage } from '@kit.ImageKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-async function WriteBufferToPixelsSync(pixelMap: sendableImage.PixelMap) {
-  const bufferSize = pixelMap.getPixelBytesNumber();
-  const color : ArrayBuffer = new ArrayBuffer(bufferSize);
-  let bufferArr : Uint8Array = new Uint8Array(color);
+function writeBufferToPixelsSync(pixelMap: sendableImage.PixelMap) {
+  const color: ArrayBuffer = new ArrayBuffer(pixelMap.getPixelBytesNumber());
+  let bufferArr: Uint8Array = new Uint8Array(color);
   for (let i = 0; i < bufferArr.length; i++) {
     bufferArr[i] = i + 1;
   }
-  if (pixelMap != undefined) {
+  try {
     pixelMap.writeBufferToPixelsSync(color);
+    console.info('Succeeded in writing data from the buffer to the PixelMap.');
+  } catch (e) {
+    const err = e as BusinessError;
+    console.error(`Failed to write data from the buffer to the PixelMap. Code: ${err.code}, message: ${err.message}`);
   }
 }
 ```
 
 
 
-#### getImageInfo
+### getImageInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getImageInfo(): Promise<image.ImageInfo>
 
@@ -854,46 +994,44 @@ getImageInfo(): Promise<image.ImageInfo>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise<image.ImageInfo> | Promise实例，用于异步获取图像像素信息，失败时返回错误信息。 |
+| Promise<image.ImageInfo> | Promise对象，返回图像像素信息。 |
 
 
 **示例：**
 
 ```text
-import { sendableImage } from '@kit.ImageKit';
 import { image } from '@kit.ImageKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
-async function GetImageInfo(pixelMap : sendableImage.PixelMap) {
-  if (pixelMap != undefined) {
-    pixelMap.getImageInfo().then((imageInfo: image.ImageInfo) => {
-      if (imageInfo != undefined) {
-        console.info("Succeeded in obtaining the image pixel map information."+ imageInfo.size.height);
-      }
-    }).catch((error: BusinessError) => {
-      console.error(`Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
-    })
-  }
+function getImageInfo(pixelMap: sendableImage.PixelMap) {
+  pixelMap.getImageInfo().then((imageInfo: image.ImageInfo) => {
+    console.info(`Succeeded in obtaining information of the PixelMap with size ${imageInfo.size} and pixel format ${imageInfo.pixelFormat}.`);
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to obtain information of the PixelMap. Code: ${err.code}, message: ${err.message}`);
+  });
 }
 ```
 
 
 
-#### getImageInfoSync
+### getImageInfoSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getImageInfoSync(): image.ImageInfo
 
-以同步方法获取图像像素信息。
+获取图像像素信息。同步返回结果。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Image.ImageSource
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -904,6 +1042,7 @@ getImageInfoSync(): image.ImageInfo
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 501 | Resource Unavailable. |
@@ -913,24 +1052,29 @@ getImageInfoSync(): image.ImageInfo
 
 ```text
 import { image } from '@kit.ImageKit';
-import { sendableImage } from '@kit.ImageKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-async function GetImageInfoSync(pixelMap : sendableImage.PixelMap) {
-  if (pixelMap != undefined) {
-    let imageInfo : image.ImageInfo = pixelMap.getImageInfoSync();
+function getImageInfoSync(pixelMap: sendableImage.PixelMap) {
+  try {
+    let imageInfo: image.ImageInfo = pixelMap.getImageInfoSync();
+    console.info(`Succeeded in obtaining information of the PixelMap with size ${imageInfo.size} and pixel format ${imageInfo.pixelFormat}.`);
+  } catch (e) {
+    const err = e as BusinessError;
+    console.error(`Failed to obtain information of the PixelMap. Code: ${err.code}, message: ${err.message}`);
   }
 }
 ```
 
 
 
-#### getBytesNumberPerRow
+### getBytesNumberPerRow
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBytesNumberPerRow(): number
 
-获取图像像素每行字节数。单位：字节。
+获取图像每行像素的字节数。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -938,30 +1082,30 @@ getBytesNumberPerRow(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| number | 图像像素的行字节数。 |
+| number | 图像像素的行字节数。单位：字节（Byte）。 |
 
 
 **示例：**
 
 ```text
-import { sendableImage } from '@kit.ImageKit';
-
-async function GetBytesNumberPerRow(pixelMap : sendableImage.PixelMap) {
-  let rowCount: number = pixelMap.getBytesNumberPerRow();
+function getBytesNumberPerRow(pixelMap: sendableImage.PixelMap) {
+  let rowBytes: number = pixelMap.getBytesNumberPerRow();
 }
 ```
 
 
 
-#### getPixelBytesNumber
+### getPixelBytesNumber
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPixelBytesNumber(): number
 
-获取图像像素的总字节数。单位：字节。
+获取图像所有像素占用的总字节数，不包含内存对齐填充字节。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -969,30 +1113,30 @@ getPixelBytesNumber(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| number | 图像像素的总字节数。 |
+| number | 图像像素的总字节数。单位：字节（Byte）。 |
 
 
 **示例：**
 
 ```text
-import { sendableImage } from '@kit.ImageKit';
-
-async function GetPixelBytesNumber(pixelMap : sendableImage.PixelMap) {
+function getPixelBytesNumber(pixelMap: sendableImage.PixelMap) {
   let pixelBytesNumber: number = pixelMap.getPixelBytesNumber();
 }
 ```
 
 
 
-#### getDensity
+### getDensity
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-getDensity():number
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-获取当前图像像素的密度。
+getDensity(): number
+
+获取图像的像素密度。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1000,30 +1144,34 @@ getDensity():number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| number | 图像像素的密度，单位为ppi。 |
+| number | 图像的像素密度，单位：ppi（像素/英寸）。 |
 
 
 **示例：**
 
 ```text
-import { sendableImage } from '@kit.ImageKit';
-
-async function GetDensity(pixelMap : sendableImage.PixelMap) {
-  let getDensity: number = pixelMap.getDensity();
+function getDensity(pixelMap: sendableImage.PixelMap) {
+  let density: number = pixelMap.getDensity();
 }
 ```
 
 
 
-#### opacity
+### opacity
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 opacity(rate: number): Promise&lt;void&gt;
 
-通过设置透明比率来让PixelMap达到对应的透明效果。使用Promise异步回调。
+设置PixelMap的不透明度，指定的不透明度值将被应用于所有像素，不受原图不透明度的影响。使用Promise异步回调。
+
+> [!NOTE]
+> YUV格式的图像不支持设置不透明度。
+
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1031,45 +1179,49 @@ opacity(rate: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| rate | number | 是 | 透明比率的值，取值范围是(0,1]。 |
+| rate | number | 是 | 不透明度的值，取值范围是(0.0, 1.0]。1.0表示完全不透明，数值越接近0.0则透明度越高。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | Promise实例，用于获取结果，失败时返回错误信息。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **示例：**
 
 ```text
-import { sendableImage } from '@kit.ImageKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
-async function Opacity(pixelMap : sendableImage.PixelMap) {
-  let rate: number = 0.5;
-  if (pixelMap != undefined) {
-    pixelMap.opacity(rate).then(() => {
-      console.info('Succeeded in setting opacity.');
-    }).catch((err: BusinessError) => {
-      console.error(`Failed to set opacity. code is ${err.code}, message is ${err.message}`);
-    })
-  }
+function opacity(pixelMap: sendableImage.PixelMap) {
+  const rate: number = 0.5;
+  pixelMap.opacity(rate).then(() => {
+    console.info('Succeeded in setting opacity.');
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to set opacity. Code: ${err.code}, message: ${err.message}`);
+  });
 }
 ```
 
 
 
-#### opacitySync
+### opacitySync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 opacitySync(rate: number): void
 
-设置PixelMap的透明比率，初始化PixelMap。
+设置PixelMap的不透明度，指定的不透明度值将被应用于所有像素，不受原图不透明度的影响。同步返回结果。
+
+> [!NOTE]
+> YUV格式的图像不支持设置不透明度。
+
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1077,14 +1229,16 @@ opacitySync(rate: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| rate | number | 是 | 透明比率的值，取值范围是(0,1]。 |
+| rate | number | 是 | 不透明度的值，取值范围是(0.0, 1.0]。1.0表示完全不透明，数值越接近0.0则透明度越高。 |
 
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1095,27 +1249,34 @@ opacitySync(rate: number): void
 **示例：**
 
 ```text
-import { sendableImage } from '@kit.ImageKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-async function OpacitySync(pixelMap : sendableImage.PixelMap) {
-  let rate : number = 0.5;
-  if (pixelMap != undefined) {
+function opacitySync(pixelMap: sendableImage.PixelMap) {
+  const rate: number = 0.5;
+  try {
     pixelMap.opacitySync(rate);
+    console.info('Succeeded in setting opacity.');
+  } catch (e) {
+    const err = e as BusinessError;
+    console.error(`Failed to set opacity. Code: ${err.code}, message: ${err.message}`);
   }
 }
 ```
 
 
 
-#### createAlphaPixelmap
+### createAlphaPixelmap
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAlphaPixelmap(): Promise&lt;PixelMap&gt;
 
-根据Alpha通道的信息，来生成一个仅包含Alpha通道信息的PixelMap，可用于阴影效果。使用Promise异步回调。
+根据Alpha通道的信息，生成一个仅包含Alpha通道信息的ALPHA_8格式的PixelMap，生成的新PixelMap不可编辑，可用于阴影效果。使用Promise异步回调。
 
-由于图片占用内存较大，所以当PixelMap对象使用完成后，应主动调用[release](#release)方法及时释放内存。释放时应确保该对象的所有异步方法均执行完成，且后续不再使用该对象。
+> [!NOTE]
+> YUV格式不支持此接口。 如果原PixelMap的格式是ALPHA_F16，则新生成的PixelMap将维持ALPHA_F16格式。 由于图片占用内存较大，所以当PixelMap对象使用完成后，应主动调用 release 方法及时释放内存。释放时应确保该对象的所有异步方法均执行完成，且后续不再使用该对象。
+
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1123,39 +1284,40 @@ createAlphaPixelmap(): Promise&lt;PixelMap&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;PixelMap&gt; | Promise实例，返回PixelMap。 |
+| Promise&lt;PixelMap&gt; | Promise对象，返回仅包含Alpha通道信息的ALPHA_8格式的PixelMap。 |
 
 
 **示例：**
 
 ```text
-import { sendableImage } from '@kit.ImageKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
-async function CreateAlphaPixelmap(pixelMap : sendableImage.PixelMap) {
-  if (pixelMap != undefined) {
-    pixelMap.createAlphaPixelmap().then((alphaPixelMap: sendableImage.PixelMap) => {
-      console.info('Succeeded in creating alpha pixelmap.');
-    }).catch((error: BusinessError) => {
-      console.error(`Failed to create alpha pixelmap. code is ${error.code}, message is ${error.message}`);
-    })
-  }
+function createAlphaPixelmap(pixelMap: sendableImage.PixelMap) {
+  pixelMap.createAlphaPixelmap().then((alphaPixelMap: sendableImage.PixelMap) => {
+    console.info('Succeeded in creating alpha PixelMap.');
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to create alpha PixelMap. Code: ${err.code}, message: ${err.message}`);
+  });
 }
 ```
 
 
 
-#### createAlphaPixelmapSync
+### createAlphaPixelmapSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAlphaPixelmapSync(): PixelMap
 
-根据Alpha通道的信息，生成一个仅包含Alpha通道信息的PixelMap，可用于阴影效果，同步返回PixelMap类型的结果。
+根据Alpha通道的信息，生成一个仅包含Alpha通道信息的ALPHA_8格式的PixelMap，生成的新PixelMap不可编辑，可用于阴影效果。同步返回结果。
 
-由于图片占用内存较大，所以当PixelMap对象使用完成后，应主动调用[release](#release)方法及时释放内存。释放时应确保该对象的所有异步方法均执行完成，且后续不再使用该对象。
+> [!NOTE]
+> YUV格式不支持此接口。 如果原PixelMap的格式是ALPHA_F16，则新生成的PixelMap将维持ALPHA_F16格式。 由于图片占用内存较大，所以当PixelMap对象使用完成后，应主动调用 release 方法及时释放内存。释放时应确保该对象的所有异步方法均执行完成，且后续不再使用该对象。
+
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1163,14 +1325,16 @@ createAlphaPixelmapSync(): PixelMap
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| PixelMap | 成功同步返回PixelMap对象，失败抛出异常。 |
+| PixelMap | 成功同步返回仅包含Alpha通道信息的ALPHA_8格式的PixelMap对象，失败抛出异常。 |
 
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1181,72 +1345,37 @@ createAlphaPixelmapSync(): PixelMap
 **示例：**
 
 ```text
-import { sendableImage } from '@kit.ImageKit';
-
-async function CreateAlphaPixelmapSync(pixelMap : sendableImage.PixelMap) {
-  let resPixelMap : sendableImage.PixelMap = pixelMap.createAlphaPixelmapSync();
-  return resPixelMap;
-}
-```
-
-
-
-#### scale
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-scale(x: number, y: number): Promise&lt;void&gt;
-
-根据输入的宽高对图片进行缩放。使用Promise异步回调。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.Multimedia.Image.Core
-
-**参数：**
-
-| 参数名 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
-| x | number | 是 | 宽度的缩放倍数。 |
-| y | number | 是 | 高度的缩放倍数。 |
-
-
-**返回值：**
-
-| 类型 | 说明 |
-| --- | --- |
-| Promise&lt;void&gt; | Promise实例，异步返回结果。 |
-
-
-**示例：**
-
-```text
-import { sendableImage } from '@kit.ImageKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
-async function Scale(pixelMap : sendableImage.PixelMap) {
-  let scaleX: number = 2.0;
-  let scaleY: number = 1.0;
-  if (pixelMap != undefined) {
-    pixelMap.scale(scaleX, scaleY).then(() => {
-      console.info('Succeeded in scaling pixelmap.');
-    }).catch((err: BusinessError) => {
-      console.error(`Failed to scale pixelmap. code is ${err.code}, message is ${err.message}`);
-
-    })
+function createAlphaPixelmapSync(pixelMap: sendableImage.PixelMap) {
+  try {
+    let alphaPixelMap: sendableImage.PixelMap = pixelMap.createAlphaPixelmapSync();
+    if (alphaPixelMap == undefined) {
+      console.error(`Failed to create alpha PixelMap.`);
+      return;
+    }
+    console.info('Succeeded in creating alpha PixelMap.');
+  } catch (e) {
+    const err = e as BusinessError;
+    console.error(`Failed to create alpha PixelMap. Code: ${err.code}, message: ${err.message}`);
   }
 }
 ```
 
 
 
-#### scaleSync
+### scale
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-scaleSync(x: number, y: number): void
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-以同步方法根据输入的宽高对图片进行缩放。
+scale(x: number, y: number): Promise&lt;void&gt;
+
+根据输入的宽高缩放倍数对图片进行缩放。使用Promise异步回调。
+
+> [!NOTE]
+> 缩放倍数 = 缩放后的图像尺寸 / 缩放前的图像尺寸。
+
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1254,15 +1383,69 @@ scaleSync(x: number, y: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| x | number | 是 | 宽度的缩放倍数。 |
-| y | number | 是 | 高度的缩放倍数。 |
+| x | number | 是 | 宽度的缩放倍数。 取值不能为0，建议取正数，否则会产生翻转效果。 |
+| y | number | 是 | 高度的缩放倍数。 取值不能为0，建议取正数，否则会产生翻转效果。 |
+
+
+**返回值：**
+
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
+
+
+**示例：**
+
+```text
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function scale(pixelMap: sendableImage.PixelMap) {
+  const scaleX: number = 2.0;
+  const scaleY: number = 1.0;
+  pixelMap.scale(scaleX, scaleY).then(() => {
+    console.info('Succeeded in scaling the PixelMap.');
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to scale the PixelMap. Code: ${err.code}, message: ${err.message}`);
+  });
+}
+```
+
+
+
+### scaleSync
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+scaleSync(x: number, y: number): void
+
+根据输入的宽高缩放倍数对图片进行缩放。同步返回结果。
+
+> [!NOTE]
+> 缩放倍数 = 缩放后的图像尺寸 / 缩放前的图像尺寸。
+
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Image.Core
+
+**参数：**
+
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| x | number | 是 | 宽度的缩放倍数。 取值不能为0，建议取正数，否则会产生翻转效果。 |
+| y | number | 是 | 高度的缩放倍数。 取值不能为0，建议取正数，否则会产生翻转效果。 |
 
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1273,28 +1456,35 @@ scaleSync(x: number, y: number): void
 **示例：**
 
 ```text
-import { sendableImage } from '@kit.ImageKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-async function ScaleSync(pixelMap : sendableImage.PixelMap) {
-  let scaleX: number = 2.0;
-  let scaleY: number = 1.0;
-  if (pixelMap != undefined) {
+function scaleSync(pixelMap: sendableImage.PixelMap) {
+  const scaleX: number = 2.0;
+  const scaleY: number = 1.0;
+  try {
     pixelMap.scaleSync(scaleX, scaleY);
+    console.info('Succeeded in scaling the PixelMap.');
+  } catch (e) {
+    const err = e as BusinessError;
+    console.error(`Failed to scale the PixelMap. Code: ${err.code}, message: ${err.message}`);
   }
 }
 ```
 
 
 
-#### translate
+### translate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 translate(x: number, y: number): Promise&lt;void&gt;
 
 根据输入的坐标对图片进行位置变换。使用Promise异步回调。
 
-translate后的图片尺寸改变为：width+X，height+Y，建议translate后的图片尺寸宽高不超过屏幕的宽高。
+> [!NOTE]
+> 平移后的图像尺寸将变为：宽度 = 原宽度 + x，高度 = 原高度 + y。
+
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1302,49 +1492,51 @@ translate后的图片尺寸改变为：width+X，height+Y，建议translate后�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| x | number | 是 | 区域横坐标。单位：像素。 |
-| y | number | 是 | 区域纵坐标。单位：像素。 |
+| x | number | 是 | 横向平移的距离。方向为正数向右，负数向左。取值范围是(-图像宽度, +∞)。单位：像素（px）。 取值为负数时，平移的效果等同于裁剪掉自图像左侧起的x列像素。 |
+| y | number | 是 | 纵向平移的距离。方向为正数向下，负数向上。取值范围是(-图像高度, +∞)。单位：像素（px）。 取值为负数时，平移的效果等同于裁剪掉自图像上方起的y行像素。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | Promise实例，异步返回结果。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **示例：**
 
 ```text
-import { sendableImage } from '@kit.ImageKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
-async function Translate(pixelMap : sendableImage.PixelMap) {
-  let translateX: number = 50.0;
-  let translateY: number = 10.0;
-  if (pixelMap != undefined) {
-    pixelMap.translate(translateX, translateY).then(() => {
-      console.info('Succeeded in translating pixelmap.');
-    }).catch((err: BusinessError) => {
-      console.error(`Failed to translate pixelmap. code is ${err.code}, message is ${err.message}`);
-    })
-  }
+function translate(pixelMap: sendableImage.PixelMap) {
+  const translateX: number = 50.0;
+  const translateY: number = 10.0;
+  pixelMap.translate(translateX, translateY).then(() => {
+    console.info('Succeeded in translating the PixelMap.');
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to translate the PixelMap. Code: ${err.code}, message: ${err.message}`);
+  });
 }
 ```
 
 
 
-#### translateSync
+### translateSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 translateSync(x: number, y: number): void
 
-根据输入的坐标对图片进行位置变换并同步返回结果。
+根据输入的坐标对图片进行位置变换。同步返回结果。
 
-translate后的图片尺寸改变为：width+X，height+Y，建议translate后的图片尺寸宽高不超过屏幕的宽高。
+> [!NOTE]
+> 平移后的图像尺寸将变为：宽度 = 原宽度 + x，高度 = 原高度 + y。
+
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1352,15 +1544,17 @@ translate后的图片尺寸改变为：width+X，height+Y，建议translate后�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| x | number | 是 | 区域横坐标。单位：像素。 |
-| y | number | 是 | 区域纵坐标。单位：像素。 |
+| x | number | 是 | 横向平移的距离。方向为正数向右，负数向左。取值范围是(-图像宽度, +∞)。单位：像素（px）。 取值为负数时，平移的效果等同于裁剪掉自图像左侧起的x列像素。 |
+| y | number | 是 | 纵向平移的距离。方向为正数向下，负数向上。取值范围是(-图像高度, +∞)。单位：像素（px）。 取值为负数时，平移的效果等同于裁剪掉自图像上方起的y行像素。 |
 
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1371,29 +1565,34 @@ translate后的图片尺寸改变为：width+X，height+Y，建议translate后�
 **示例：**
 
 ```text
-import { sendableImage } from '@kit.ImageKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-async function TranslateSync(pixelMap : sendableImage.PixelMap) {
-  let translateX : number = 50.0;
-  let translateY : number = 10.0;
-  if (pixelMap != undefined) {
+function translateSync(pixelMap: sendableImage.PixelMap) {
+  const translateX: number = 50.0;
+  const translateY: number = 10.0;
+  try {
     pixelMap.translateSync(translateX, translateY);
+    console.info('Succeeded in translating the PixelMap.');
+  } catch (e) {
+    const err = e as BusinessError;
+    console.error(`Failed to translate the PixelMap. Code: ${err.code}, message: ${err.message}`);
   }
 }
 ```
 
 
 
-#### rotate
+### rotate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 rotate(angle: number): Promise&lt;void&gt;
 
 根据输入的角度对图片进行旋转。使用Promise异步回调。
 
 > [!NOTE]
-> 图片旋转的角度取值范围：[0, 360]。超出取值范围时，根据圆周360度自动校正。例如，-100度与260度效果相同。 如果图片旋转的角度不是90的整数倍，旋转后图片的尺寸会发生改变。
+> YUV格式仅支持90°倍数的旋转角。 图像旋转的角度取值范围：[0, 360]。超出取值范围时，根据圆周360°自动矫正。例如，-100°与260°效果相同。 如果图片旋转的角度不是90的整数倍，旋转后图片的尺寸会发生改变。
 
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -1402,48 +1601,48 @@ rotate(angle: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| angle | number | 是 | 图片旋转的角度。单位：角度。 |
+| angle | number | 是 | 图像旋转的角度。方向为正数顺时针，负数逆时针。单位：角度（°）。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | Promise实例，异步返回结果。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **示例：**
 
 ```text
-import { sendableImage } from '@kit.ImageKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
-async function Rotate(pixelMap : sendableImage.PixelMap) {
-  let angle: number = 90.0;
-  if (pixelMap != undefined) {
-    pixelMap.rotate(angle).then(() => {
-      console.info('Succeeded in rotating pixelmap.');
-    }).catch((err: BusinessError) => {
-      console.error(`Failed to rotate pixelmap. code is ${err.code}, message is ${err.message}`);
-    })
-  }
+function rotate(pixelMap: sendableImage.PixelMap) {
+  const angle: number = 90.0;
+  pixelMap.rotate(angle).then(() => {
+    console.info('Succeeded in rotating the PixelMap.');
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to rotate the PixelMap. Code: ${err.code}, message: ${err.message}`);
+  });
 }
 ```
 
 
 
-#### rotateSync
+### rotateSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 rotateSync(angle: number): void
 
-根据输入的角度对图片进行旋转并同步返回结果。
+根据输入的角度对图片进行旋转。同步返回结果。
 
 > [!NOTE]
-> 图片旋转的角度取值范围：[0, 360]。超出取值范围时，根据圆周360度自动校正。例如，-100度与260度效果相同。 如果图片旋转的角度不是90的整数倍，旋转后图片的尺寸会发生改变。
+> YUV格式仅支持90°倍数的旋转角。 图像旋转的角度取值范围：[0, 360]。超出取值范围时，根据圆周360°自动矫正。例如，-100°与260°效果相同。 如果图片旋转的角度不是90的整数倍，旋转后图片的尺寸会发生改变。
 
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -1452,14 +1651,16 @@ rotateSync(angle: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| angle | number | 是 | 图片旋转的角度。单位：角度。 |
+| angle | number | 是 | 图像旋转的角度。方向为正数顺时针，负数逆时针。单位：角度（°）。 |
 
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1470,31 +1671,37 @@ rotateSync(angle: number): void
 **示例：**
 
 ```text
-import { sendableImage } from '@kit.ImageKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-async function RotateSync(pixelMap : sendableImage.PixelMap) {
-  let angle : number = 90.0;
-  if (pixelMap != undefined) {
+function rotateSync(pixelMap: sendableImage.PixelMap) {
+  const angle: number = 90.0;
+  try {
     pixelMap.rotateSync(angle);
+    console.info('Succeeded in rotating the PixelMap.');
+  } catch (e) {
+    const err = e as BusinessError;
+    console.error(`Failed to rotate the PixelMap. Code: ${err.code}, message: ${err.message}`);
   }
 }
 ```
 
 
 
-#### flip
+### flip
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 flip(horizontal: boolean, vertical: boolean): Promise&lt;void&gt;
 
-根据输入的条件对图片进行翻转。使用Promise异步回调。
+根据输入的水平或垂直翻转条件对图片进行翻转。使用Promise异步回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1504,46 +1711,45 @@ flip(horizontal: boolean, vertical: boolean): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | Promise实例，异步返回结果。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **示例：**
 
 ```text
-import { sendableImage } from '@kit.ImageKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
-async function Flip(pixelMap : sendableImage.PixelMap) {
-  let horizontal: boolean = true;
-  let vertical: boolean = false;
-  if (pixelMap != undefined) {
-    pixelMap.flip(horizontal, vertical).then(() => {
-      console.info('Succeeded in flipping pixelmap.');
-    }).catch((err: BusinessError) => {
-      console.error(`Failed to flip pixelmap. code is ${err.code}, message is ${err.message}`);
-
-    })
-  }
+function flip(pixelMap: sendableImage.PixelMap) {
+  const horizontal: boolean = true;
+  const vertical: boolean = false;
+  pixelMap.flip(horizontal, vertical).then(() => {
+    console.info('Succeeded in flipping the PixelMap.');
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to flip the PixelMap. Code: ${err.code}, message: ${err.message}`);
+  });
 }
 ```
 
 
 
-#### flipSync
+### flipSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 flipSync(horizontal: boolean, vertical: boolean): void
 
-根据输入的条件对图片进行翻转并同步返回结果。
+根据输入的水平或垂直翻转条件对图片进行翻转。同步返回结果。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1553,7 +1759,8 @@ flipSync(horizontal: boolean, vertical: boolean): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1564,26 +1771,31 @@ flipSync(horizontal: boolean, vertical: boolean): void
 **示例：**
 
 ```text
-import { sendableImage } from '@kit.ImageKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-async function FlipSync(pixelMap : sendableImage.PixelMap) {
-  let horizontal : boolean = true;
-  let vertical : boolean = false;
-  if (pixelMap != undefined) {
+function flipSync(pixelMap: sendableImage.PixelMap) {
+  const horizontal: boolean = true;
+  const vertical: boolean = false;
+  try {
     pixelMap.flipSync(horizontal, vertical);
+    console.info('Succeeded in flipping the PixelMap.');
+  } catch (e) {
+    const err = e as BusinessError;
+    console.error(`Failed to flip the PixelMap. Code: ${err.code}, message: ${err.message}`);
   }
 }
 ```
 
 
 
-#### crop
+### crop
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 crop(region: image.Region): Promise&lt;void&gt;
 
-根据输入的尺寸对图片进行裁剪。使用Promise异步回调。
+根据输入的区域信息对图片进行裁剪。使用Promise异步回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1591,47 +1803,46 @@ crop(region: image.Region): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| region | image.Region | 是 | 裁剪的尺寸。 |
+| region | image.Region | 是 | 裁剪的区域，包含起始坐标和宽高。取值范围不能超过图片的宽高。单位：像素（px）。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | Promise实例，异步返回结果。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **示例：**
 
 ```text
-import { sendableImage } from '@kit.ImageKit';
 import { image } from '@kit.ImageKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
-async function Crop(pixelMap : sendableImage.PixelMap) {
-  let region: image.Region = { x: 0, y: 0, size: { height: 100, width: 100 } };
-  if (pixelMap != undefined) {
-    pixelMap.crop(region).then(() => {
-      console.info('Succeeded in cropping pixelmap.');
-    }).catch((err: BusinessError) => {
-      console.error(`Failed to crop pixelmap. code is ${err.code}, message is ${err.message}`);
-
-    });
-  }
+function crop(pixelMap: sendableImage.PixelMap) {
+  const region: image.Region = { x: 0, y: 0, size: { height: 100, width: 100 } };
+  pixelMap.crop(region).then(() => {
+    console.info('Succeeded in cropping the PixelMap.');
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to crop the PixelMap. Code: ${err.code}, message: ${err.message}`);
+  });
 }
 ```
 
 
 
-#### cropSync
+### cropSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cropSync(region: image.Region): void
 
-根据输入的尺寸裁剪图片。
+根据输入的区域信息对图片进行裁剪。同步返回结果。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1639,14 +1850,16 @@ cropSync(region: image.Region): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| region | image.Region | 是 | 裁剪的尺寸。 |
+| region | image.Region | 是 | 裁剪的区域，包含起始坐标和宽高。取值范围不能超过图片的宽高。单位：像素（px）。 |
 
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1657,39 +1870,46 @@ cropSync(region: image.Region): void
 **示例：**
 
 ```text
-import { sendableImage } from '@kit.ImageKit';
 import { image } from '@kit.ImageKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-async function CropSync(pixelMap : sendableImage.PixelMap) {
-  let region : image.Region = { x: 0, y: 0, size: { height: 100, width: 100 } };
-  if (pixelMap != undefined) {
+function cropSync(pixelMap: sendableImage.PixelMap) {
+  const region: image.Region = { x: 0, y: 0, size: { height: 100, width: 100 } };
+  try {
     pixelMap.cropSync(region);
+    console.info('Succeeded in cropping the PixelMap.');
+  } catch (e) {
+    const err = e as BusinessError;
+    console.error(`Failed to crop the PixelMap. Code: ${err.code}, message: ${err.message}`);
   }
 }
 ```
 
 
 
-#### getColorSpace
+### getColorSpace
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getColorSpace(): colorSpaceManager.ColorSpaceManager
 
-获取图像广色域信息。
+获取图像的色彩空间。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| colorSpaceManager.ColorSpaceManager | 图像广色域信息。 |
+| colorSpaceManager.ColorSpaceManager | 图像色彩空间信息。如果图像不含色彩空间信息，则会抛出异常。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1701,37 +1921,44 @@ getColorSpace(): colorSpaceManager.ColorSpaceManager
 **示例：**
 
 ```text
-import { sendableImage } from '@kit.ImageKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-async function GetColorSpace(pixelMap : sendableImage.PixelMap) {
-  if (pixelMap != undefined) {
-    let csm = pixelMap.getColorSpace();
+function getColorSpace(pixelMap: sendableImage.PixelMap) {
+  try {
+    const csm = pixelMap.getColorSpace();
+    console.info(`Succeeded in getting color space: ${csm.getColorSpaceName()}.`);
+  } catch (e) {
+    const err = e as BusinessError;
+    console.error(`Failed to get color space. Code: ${err.code}, message: ${err.message}`);
   }
 }
 ```
 
 
 
-#### setColorSpace
+### setColorSpace
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setColorSpace(colorSpace: colorSpaceManager.ColorSpaceManager): void
 
-设置图像广色域信息。
+设置图像的色彩空间。如需同时对图像的像素颜色进行色彩空间转换，请使用[applyColorSpace](#applycolorspace)。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| colorSpace | colorSpaceManager.ColorSpaceManager | 是 | 图像广色域信息。 |
+| colorSpace | colorSpaceManager.ColorSpaceManager | 是 | 图像色彩空间信息。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1742,31 +1969,41 @@ setColorSpace(colorSpace: colorSpaceManager.ColorSpaceManager): void
 **示例：**
 
 ```text
-import { sendableImage } from '@kit.ImageKit';
 import { colorSpaceManager } from '@kit.ArkGraphics2D';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-async function SetColorSpace(pixelMap : sendableImage.PixelMap) {
-  let colorSpaceName = colorSpaceManager.ColorSpace.SRGB; // colorSpaceManager.ColorSpace该对象当前仅支持2in1/PC设备使用。
-  let csm: colorSpaceManager.ColorSpaceManager = colorSpaceManager.create(colorSpaceName);
-  if (pixelMap != undefined) {
+function setColorSpace(pixelMap: sendableImage.PixelMap) {
+  const colorSpaceName = colorSpaceManager.ColorSpace.SRGB;
+  const csm: colorSpaceManager.ColorSpaceManager = colorSpaceManager.create(colorSpaceName);
+  try {
     pixelMap.setColorSpace(csm);
+    console.info('Succeeded in setting color space.');
+  } catch (e) {
+    const err = e as BusinessError;
+    console.error(`Failed to set color space. Code: ${err.code}, message: ${err.message}`);
   }
 }
 ```
 
 
 
-#### applyColorSpace
+### applyColorSpace
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 applyColorSpace(targetColorSpace: colorSpaceManager.ColorSpaceManager): Promise&lt;void&gt;
 
-根据输入的目标色彩空间对图像像素颜色进行色彩空间转换。使用Promise异步回调。
+根据输入的目标色彩空间对图像的像素颜色进行色彩空间转换。使用Promise异步回调。
+
+> [!NOTE]
+> 本接口仅执行色彩空间之间的数学转换，不包含HDR到SDR的色调映射。当源图像为HDR色彩空间（传输函数为HLG或PQ，例如BT2020_HLG、BT2020_PQ、P3_HLG、P3_PQ等）且目标为SDR色彩空间（传输函数为sRGB gamma，例如SRGB、DISPLAY_P3、DCI_P3、ADOBE_RGB_1998等）时，直接调用本接口会导致图像整体偏亮、泛白、高光细节丢失。
+
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1775,14 +2012,16 @@ applyColorSpace(targetColorSpace: colorSpaceManager.ColorSpaceManager): Promise&
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | Promise实例，异步返回结果。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1795,26 +2034,26 @@ applyColorSpace(targetColorSpace: colorSpaceManager.ColorSpaceManager): Promise&
 **示例：**
 
 ```text
-import { sendableImage } from '@kit.ImageKit';
 import { colorSpaceManager } from '@kit.ArkGraphics2D';
 import { BusinessError } from '@kit.BasicServicesKit';
 
-async function ApplyColorSpace(pixelMap : sendableImage.PixelMap) {
-    let colorSpaceName = colorSpaceManager.ColorSpace.SRGB; // colorSpaceManager.ColorSpace该对象当前仅支持2in1/PC设备使用。
-    let targetColorSpace: colorSpaceManager.ColorSpaceManager = colorSpaceManager.create(colorSpaceName);
-    pixelMap.applyColorSpace(targetColorSpace).then(() => {
-        console.info('Succeeded in applying color space for pixelmap object.');
-    }).catch((error: BusinessError) => {
-        console.error(`Failed to apply color space for pixelmap object. code is ${error.code}, message is ${error.message}`);
-    })
+function applyColorSpace(pixelMap: sendableImage.PixelMap) {
+  const colorSpaceName = colorSpaceManager.ColorSpace.SRGB;
+  const targetColorSpace: colorSpaceManager.ColorSpaceManager = colorSpaceManager.create(colorSpaceName);
+  pixelMap.applyColorSpace(targetColorSpace).then(() => {
+    console.info('Succeeded in applying color space.');
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to apply color space. Code: ${err.code}, message: ${err.message}`);
+  });
 }
 ```
 
 
 
-#### marshalling
+### marshalling
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 marshalling(sequence: rpc.MessageSequence): void
 
@@ -1824,6 +2063,7 @@ marshalling(sequence: rpc.MessageSequence): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sequence | rpc.MessageSequence | 是 | 新创建的MessageSequence。 |
@@ -1832,6 +2072,7 @@ marshalling(sequence: rpc.MessageSequence): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1843,34 +2084,33 @@ marshalling(sequence: rpc.MessageSequence): void
 
 ```ArkTS
 // EntryAbility.ets
-import { sendableImage } from '@kit.ImageKit';
 import { image } from '@kit.ImageKit';
 import { rpc } from '@kit.IPCKit';
 
 class MySequence implements rpc.Parcelable {
-  pixel_map: sendableImage.PixelMap;
-  constructor(conPixelMap : sendableImage.PixelMap) {
-    this.pixel_map = conPixelMap;
+  pixelMap: sendableImage.PixelMap;
+  constructor(pixelMap: sendableImage.PixelMap) {
+    this.pixelMap = pixelMap;
   }
-  marshalling(messageSequence : rpc.MessageSequence) {
-    this.pixel_map.marshalling(messageSequence);
-    console.info('Succeeded in marshalling a PixelMap.');
+  marshalling(messageSequence: rpc.MessageSequence) {
+    this.pixelMap.marshalling(messageSequence);
+    console.info('Marshalled the PixelMap.');
     return true;
   }
-  unmarshalling(messageSequence : rpc.MessageSequence) {
-    sendableImage.createPixelMap(new ArrayBuffer(96), {size: { height:4, width: 6}}).then((pixelParcel: sendableImage.PixelMap) => {
+  unmarshalling(messageSequence: rpc.MessageSequence) {
+    sendableImage.createPixelMap(new ArrayBuffer(96), {size: { height: 4, width: 6 }}).then((pixelParcel: sendableImage.PixelMap) => {
       pixelParcel.unmarshalling(messageSequence).then(async (pixelMap: sendableImage.PixelMap) => {
-        this.pixel_map = pixelMap;
+        this.pixelMap = pixelMap;
         pixelMap.getImageInfo().then((imageInfo: image.ImageInfo) => {
-          console.info(`Succeeded in unmarshalling a PixelMap. Height: ${imageInfo.size.height}, width: ${imageInfo.size.width}.`);
-        })
-      })
+          console.info(`Unmarshalled information: height = ${imageInfo.size.height}, width = ${imageInfo.size.width}.`);
+        });
+      });
     });
     return true;
   }
 }
 
-async function Marshalling() {
+async function marshal() {
   const color: ArrayBuffer = new ArrayBuffer(96);
   let bufferArr: Uint8Array = new Uint8Array(color);
   for (let i = 0; i < bufferArr.length; i++) {
@@ -1878,14 +2118,11 @@ async function Marshalling() {
   }
   let opts: image.InitializationOptions = {
     editable: true,
-    pixelFormat: 4,
+    pixelFormat: image.PixelMapFormat.BGRA_8888,
     size: { height: 4, width: 6 },
-    alphaType: 3
+    alphaType: image.AlphaType.UNPREMUL
   }
-  let pixelMap: sendableImage.PixelMap | undefined = undefined;
-  await sendableImage.createPixelMap(color, opts).then((srcPixelMap: sendableImage.PixelMap) => {
-    pixelMap = srcPixelMap;
-  })
+  let pixelMap: sendableImage.PixelMap | undefined = await sendableImage.createPixelMap(color, opts);
   if (pixelMap != undefined) {
     // 序列化。
     let parcelable: MySequence = new MySequence(pixelMap);
@@ -1893,27 +2130,31 @@ async function Marshalling() {
     data.writeParcelable(parcelable);
 
     // 反序列化rpc获取到data。
-    let ret: MySequence = new MySequence(pixelMap);
-    data.readParcelable(ret);
+    let seq: MySequence = new MySequence(pixelMap);
+    data.readParcelable(seq);
   }
 }
 ```
 
 
 
-#### unmarshalling
+### unmarshalling
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unmarshalling(sequence: rpc.MessageSequence): Promise&lt;PixelMap&gt;
 
-从MessageSequence中获取PixelMap。使用Promise异步回调。
+从MessageSequence中反序列化并获取PixelMap。使用Promise异步回调。
 
-如需使用同步方式创建PixelMap可使用：[createPixelMapFromParcel](#sendableimagecreatepixelmapfromparcel)。
+> [!NOTE]
+> 如需使用同步方式反序列化并创建PixelMap可使用 createPixelMapFromParcel 。
+
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1922,14 +2163,16 @@ unmarshalling(sequence: rpc.MessageSequence): Promise&lt;PixelMap&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;PixelMap&gt; | Promise实例，用于异步获取结果，失败时返回错误信息。 |
+| Promise&lt;PixelMap&gt; | Promise对象，返回反序列化后的PixelMap。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1942,34 +2185,33 @@ unmarshalling(sequence: rpc.MessageSequence): Promise&lt;PixelMap&gt;
 
 ```ArkTS
 // EntryAbility.ets
-import { sendableImage } from '@kit.ImageKit';
 import { image } from '@kit.ImageKit';
 import { rpc } from '@kit.IPCKit';
 
 class MySequence implements rpc.Parcelable {
-  pixel_map: sendableImage.PixelMap;
-  constructor(conPixelMap: sendableImage.PixelMap) {
-    this.pixel_map = conPixelMap;
+  pixelMap: sendableImage.PixelMap;
+  constructor(pixelMap: sendableImage.PixelMap) {
+    this.pixelMap = pixelMap;
   }
   marshalling(messageSequence: rpc.MessageSequence) {
-    this.pixel_map.marshalling(messageSequence);
-    console.info('Succeeded in marshalling a PixelMap.');
+    this.pixelMap.marshalling(messageSequence);
+    console.info('Marshalled the PixelMap.');
     return true;
   }
   unmarshalling(messageSequence: rpc.MessageSequence) {
-    sendableImage.createPixelMap(new ArrayBuffer(96), {size: { height:4, width: 6}}).then((pixelParcel : sendableImage.PixelMap) => {
-      pixelParcel.unmarshalling(messageSequence).then(async (pixelMap : sendableImage.PixelMap) => {
-        this.pixel_map = pixelMap;
-        pixelMap.getImageInfo().then((imageInfo : image.ImageInfo) => {
-          console.info(`Succeeded in unmarshalling a PixelMap. Height: ${imageInfo.size.height}, width: ${imageInfo.size.width}.`);
-        })
-      })
+    sendableImage.createPixelMap(new ArrayBuffer(96), {size: { height: 4, width: 6 }}).then((pixelParcel: sendableImage.PixelMap) => {
+      pixelParcel.unmarshalling(messageSequence).then(async (pixelMap: sendableImage.PixelMap) => {
+        this.pixelMap = pixelMap;
+        pixelMap.getImageInfo().then((imageInfo: image.ImageInfo) => {
+          console.info(`Unmarshalled information: height = ${imageInfo.size.height}, width = ${imageInfo.size.width}.`);
+        });
+      });
     });
     return true;
   }
 }
 
-async function Unmarshalling() {
+async function unmarshal() {
   const color: ArrayBuffer = new ArrayBuffer(96);
   let bufferArr: Uint8Array = new Uint8Array(color);
   for (let i = 0; i < bufferArr.length; i++) {
@@ -1977,40 +2219,46 @@ async function Unmarshalling() {
   }
   let opts: image.InitializationOptions = {
     editable: true,
-    pixelFormat: 4,
+    pixelFormat: image.PixelMapFormat.BGRA_8888,
     size: { height: 4, width: 6 },
-    alphaType: 3
+    alphaType: image.AlphaType.UNPREMUL
   }
-  let pixelMap: sendableImage.PixelMap | undefined = undefined;
-  await sendableImage.createPixelMap(color, opts).then((srcPixelMap : sendableImage.PixelMap) => {
-    pixelMap = srcPixelMap;
-  })
+  let pixelMap: sendableImage.PixelMap | undefined = await sendableImage.createPixelMap(color, opts);
   if (pixelMap != undefined) {
     // 序列化。
     let parcelable: MySequence = new MySequence(pixelMap);
-    let data : rpc.MessageSequence = rpc.MessageSequence.create();
+    let data: rpc.MessageSequence = rpc.MessageSequence.create();
     data.writeParcelable(parcelable);
 
     // 反序列化rpc获取到data。
-    let ret : MySequence = new MySequence(pixelMap);
-    data.readParcelable(ret);
+    let seq: MySequence = new MySequence(pixelMap);
+    data.readParcelable(seq);
   }
 }
 ```
 
 
 
-#### release
+### release
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release():Promise&lt;void&gt;
 
-释放PixelMap对象。使用Promise异步回调。
+释放PixelMap对象。释放后，任何访问该对象内部数据的方法调用都会失败。使用Promise异步回调。
 
-由于图片占用内存较大，所以当PixelMap对象使用完成后，应主动调用该方法，及时释放内存。
+图片使用的内存往往较大，在PixelMap对象使用完成后，应主动调用该方法及时释放内存。
 
 释放时应确保该对象的所有异步方法均执行完成，且后续不再使用该对象。
+
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/_cjuY3xLRyaNiSAo3ogr5Q/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072936Z&HW-CC-Expire=86400&HW-CC-Sign=9439A95C80FED1BA2922C5A3DA09FFE1C5037D122A12E9CD26B52B4B08BF3B1B)
+
+
+释放指的是ArkTS对象释放与之关联的native对象的管理权。仅当所有管理该native对象的ArkTS对象都被释放时，native对象占用的内存才会被回收。
+
+
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2018,33 +2266,32 @@ release():Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | Promise实例，异步返回释放结果。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **示例：**
 
 ```text
 import { BusinessError } from '@kit.BasicServicesKit';
-import { sendableImage } from '@kit.ImageKit';
 
-async function Release(pixelMap: sendableImage.PixelMap) {
-  if (pixelMap != undefined) {
-    await pixelMap.release().then(() => {
-      console.info('Succeeded in releasing pixelmap object.');
-    }).catch((error: BusinessError) => {
-      console.error(`Failed to release pixelmap object. code is ${error.code}, message is ${error.message}`);
-    })
-  }
+function release(pixelMap: sendableImage.PixelMap) {
+  pixelMap.release().then(() => {
+    console.info('Succeeded in releasing the PixelMap object.');
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to release the PixelMap object. Code: ${err.code}, message: ${err.message}`);
+  });
 }
 ```
 
 
 
-#### Size
+## Size
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示图片尺寸。
 
@@ -2056,6 +2303,7 @@ async function Release(pixelMap: sendableImage.PixelMap) {
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | height | number | 否 | 否 | 输出图片的高，单位：像素。 |
@@ -2064,9 +2312,10 @@ async function Release(pixelMap: sendableImage.PixelMap) {
 
 
 
-#### Region
+## Region
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示区域信息。
 
@@ -2078,6 +2327,7 @@ async function Release(pixelMap: sendableImage.PixelMap) {
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | size | Size | 否 | 否 | 区域大小。 |
@@ -2087,9 +2337,10 @@ async function Release(pixelMap: sendableImage.PixelMap) {
 
 
 
-#### sendableImage.createImageSource
+## sendableImage.createImageSource
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createImageSource(uri: string): ImageSource
 
@@ -2103,12 +2354,14 @@ createImageSource(uri: string): ImageSource
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uri | string | 是 | 图片路径，当前仅支持应用沙箱路径。 当前支持格式有：.jpg .png .gif .bmp .webp .dng SVG .ico。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2128,9 +2381,10 @@ async function CreateImageSource(context : Context) {
 
 
 
-#### sendableImage.createImageSource
+## sendableImage.createImageSource
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createImageSource(fd: number): ImageSource
 
@@ -2144,12 +2398,14 @@ createImageSource(fd: number): ImageSource
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fd | number | 是 | 文件描述符fd。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2171,9 +2427,10 @@ async function CreateImageSource(context : Context) {
 
 
 
-#### sendableImage.createImageSource
+## sendableImage.createImageSource
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createImageSource(buf: ArrayBuffer): ImageSource
 
@@ -2189,12 +2446,14 @@ createImageSource(buf: ArrayBuffer): ImageSource
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | buf | ArrayBuffer | 是 | 图像缓冲区数组。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2214,9 +2473,10 @@ async function CreateImageSource() {
 
 
 
-#### sendableImage.createImageReceiver
+## sendableImage.createImageReceiver
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createImageReceiver(size: image.Size, format: image.ImageFormat, capacity: number): ImageReceiver
 
@@ -2228,6 +2488,7 @@ createImageReceiver(size: image.Size, format: image.ImageFormat, capacity: numbe
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | size | image.Size | 是 | 图像的默认大小。 |
@@ -2237,6 +2498,7 @@ createImageReceiver(size: image.Size, format: image.ImageFormat, capacity: numbe
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageReceiver | 如果操作成功，则返回ImageReceiver实例。 |
@@ -2244,7 +2506,8 @@ createImageReceiver(size: image.Size, format: image.ImageFormat, capacity: numbe
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2268,9 +2531,10 @@ async function CreateImageReceiver() {
 
 
 
-#### ImageSource
+## ImageSource
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ImageSource类，用于获取图片相关信息。在调用ImageSource的方法前，需要先通过[sendableImage.createImageSource](#sendableimagecreateimagesource)构建一个ImageSource实例。
 
@@ -2278,9 +2542,10 @@ ImageSource类，用于获取图片相关信息。在调用ImageSource的方法�
 
 
 
-#### createPixelMap
+### createPixelMap
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPixelMap(options?: image.DecodingOptions): Promise&lt;PixelMap&gt;
 
@@ -2296,12 +2561,14 @@ createPixelMap(options?: image.DecodingOptions): Promise&lt;PixelMap&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | image.DecodingOptions | 否 | 解码参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2327,9 +2594,10 @@ async function CreatePixelMap(context : Context) {
 
 
 
-#### release
+### release
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(): Promise&lt;void&gt;
 
@@ -2342,6 +2610,7 @@ release(): Promise&lt;void&gt;
 **系统能力：** SystemCapability.Multimedia.Image.ImageSource
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2367,9 +2636,10 @@ async function Release(context : Context) {
 
 
 
-#### Image
+## Image
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供基本的图像操作，包括获取图像信息、读写图像数据。调用[readNextImage](#readnextimage)和[readLatestImage](#readlatestimage)接口时会返回Image。继承自[ISendable](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable#isendable)。
 
@@ -2377,11 +2647,13 @@ async function Release(context : Context) {
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2393,9 +2665,10 @@ async function Release(context : Context) {
 
 
 
-#### getComponent
+### getComponent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getComponent(componentType: image.ComponentType): Promise<image.Component>
 
@@ -2405,12 +2678,14 @@ getComponent(componentType: image.ComponentType): Promise<image.Component>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | componentType | image.ComponentType | 是 | 图像的组件类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2441,9 +2716,10 @@ async function GetComponent() {
 
 
 
-#### release
+### release
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(): Promise&lt;void&gt;
 
@@ -2458,6 +2734,7 @@ release(): Promise&lt;void&gt;
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2488,9 +2765,10 @@ async function Release() {
 
 
 
-#### ImageReceiver
+## ImageReceiver
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 图像接收类，用于获取组件Surface ID，接收最新的图片和读取下一张图片，以及释放ImageReceiver实例。
 
@@ -2498,11 +2776,13 @@ async function Release() {
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Multimedia.Image.ImageReceiver
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2513,9 +2793,10 @@ async function Release() {
 
 
 
-#### getReceivingSurfaceId
+### getReceivingSurfaceId
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getReceivingSurfaceId(): Promise&lt;string&gt;
 
@@ -2524,6 +2805,7 @@ getReceivingSurfaceId(): Promise&lt;string&gt;
 **系统能力：** SystemCapability.Multimedia.Image.ImageReceiver
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2553,16 +2835,17 @@ async function GetReceivingSurfaceId() {
 
 
 
-#### readLatestImage
+### readLatestImage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readLatestImage(): Promise&lt;Image&gt;
 
 从ImageReceiver读取最新的图片。使用promise异步回调。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/tLJuf_FTRJGwUwDLttMjBA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095523Z&HW-CC-Expire=86400&HW-CC-Sign=3B0A8EBD6675A842266E247349AE566C1552EBF24E89352F11A2A79B9C2EA330)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/VRvyxfayQyiYifBv0d6wPQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072936Z&HW-CC-Expire=86400&HW-CC-Sign=F245CF10F6E0D3F713B717501CC49FF01CE58CA6CAF8857F70354C9231C05B71)
 
 
 此接口需要在[on](#on)回调触发后调用，才能正常地接收到数据。且此接口返回的[Image](#image)对象使用完毕后需要调用[release](#release-2)方法释放，释放后才可以继续接收新的数据。
@@ -2572,6 +2855,7 @@ readLatestImage(): Promise&lt;Image&gt;
 **系统能力：** SystemCapability.Multimedia.Image.ImageReceiver
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2601,16 +2885,17 @@ async function ReadLatestImage() {
 
 
 
-#### readNextImage
+### readNextImage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readNextImage(): Promise&lt;Image&gt;
 
 从ImageReceiver读取下一张图片。使用promise异步回调。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/SMnbiaT-QAKN6_EyqrUPMg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095523Z&HW-CC-Expire=86400&HW-CC-Sign=E4DADD31F0CB8DE9780292D5AC4D62CE848B989A3E75319BF091651F3239CC7D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/QpAqAxl9Qo2ZfinGR-XBMg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072936Z&HW-CC-Expire=86400&HW-CC-Sign=E2D8625B7E02FB22F00AD3E4E48A9C26577030829F2AF98872D38C85A0866D99)
 
 
 此接口需要在[on](#on)回调触发后调用，才能正常地接收到数据。且此接口返回的[Image](#image)对象使用完毕后需要调用[release](#release-2)方法释放，释放后才可以继续接收新的数据。
@@ -2620,6 +2905,7 @@ readNextImage(): Promise&lt;Image&gt;
 **系统能力：** SystemCapability.Multimedia.Image.ImageReceiver
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2649,9 +2935,10 @@ async function ReadNextImage() {
 
 
 
-#### on
+### on
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'imageArrival', callback: AsyncCallback&lt;void&gt;): void
 
@@ -2660,6 +2947,7 @@ on(type: 'imageArrival', callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Image.ImageReceiver
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2687,9 +2975,10 @@ async function On() {
 
 
 
-#### release
+### release
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(): Promise&lt;void&gt;
 
@@ -2702,6 +2991,7 @@ release(): Promise&lt;void&gt;
 **系统能力：** SystemCapability.Multimedia.Image.ImageReceiver
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |

@@ -1,16 +1,17 @@
 # app.js
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-framework-js-file
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 app.js用于定义应用级生命周期函数和应用全局数据对象，可在应用创建、销毁等阶段执行初始化或资源释放逻辑，并支持在不同页面间共享全局数据，适用于需要统一管理应用状态和生命周期处理的场景。
   
 
-#### 应用生命周期4+
+## 应用生命周期4+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 每个应用可以在app.js中自定义应用级生命周期的实现逻辑，包括：
  
@@ -34,10 +35,12 @@ export default {
  
   
 
-#### 应用对象10+
+## 应用对象10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
  
+
 | 属性 | 类型 | 描述 |
 | --- | --- | --- |
 | getApp | Function | 提供getApp()全局方法，可以在页面JS文件中获取app.js中暴露的数据对象。为兼容不支持getApp的低版本，使用getApp前应先判断其是否可用。 |

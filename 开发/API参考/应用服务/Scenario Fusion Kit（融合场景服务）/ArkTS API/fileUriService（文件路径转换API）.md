@@ -1,18 +1,19 @@
 # fileUriService（文件路径转换API）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/scenario-fusion-fileuriresult
-**支持设备：** Phone | Tablet
+**支持设备：** Phone | Tablet | TV
 
 本模块为开发者在HarmonyOS 4及以下到HarmonyOS 5及以上的升级场景和克隆场景，调用该接口可以将源文件路径转换为目标文件路径。
  
 **起始版本：** 5.0.2(14)
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | Tablet
+
+**支持设备：** Phone | Tablet | TV
 
 ```text
 import { fileUriService } from '@kit.ScenarioFusionKit';
@@ -20,9 +21,10 @@ import { fileUriService } from '@kit.ScenarioFusionKit';
  
   
 
-#### FileUriResult
+## FileUriResult
 
-**支持设备：** Phone | Tablet
+
+**支持设备：** Phone | Tablet | TV
 
 该类提供融合场景文件路径转换的对象。
  
@@ -32,6 +34,7 @@ import { fileUriService } from '@kit.ScenarioFusionKit';
  
 **起始版本：** 5.0.2(14)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | sourceUri | string | 否 | 否 | 源文件路径。 |
@@ -41,9 +44,10 @@ import { fileUriService } from '@kit.ScenarioFusionKit';
  
   
 
-#### TargetType
+## TargetType
 
-**支持设备：** Phone | Tablet
+
+**支持设备：** Phone | Tablet | TV
 
 该枚举定义了对象URI的类型。
  
@@ -53,6 +57,7 @@ import { fileUriService } from '@kit.ScenarioFusionKit';
  
 **起始版本：** 5.0.2(14)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | UNKNOWN | 0 | 不确定文件类型。 |
@@ -62,9 +67,10 @@ import { fileUriService } from '@kit.ScenarioFusionKit';
  
   
 
-#### convertFileUris
+## convertFileUris
 
-**支持设备：** Phone | Tablet
+
+**支持设备：** Phone | Tablet | TV
 
 convertFileUris(sourceFileUris: Array&lt;string&gt;): Promise<Array&lt;FileUriResult&gt;>
  
@@ -74,12 +80,13 @@ convertFileUris(sourceFileUris: Array&lt;string&gt;): Promise<Array&lt;FileUriRe
  
 **系统能力：** SystemCapability.ScenarioFusionComponent.FileUriService
  
-**设备行为差异：** 该接口在Phone、Tablet中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet中可正常调用，从API版本26.0.0开始在Car、TV中可正常调用，在其他设备类型中返回801错误码。
  
 **起始版本：** 5.0.2(14)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sourceFileUris | Array&lt;string&gt; | 是 | 待转换文件uri信息列表。列表数量范围：[1,100]，范围越界错误码：401 parameter error。 |
@@ -87,6 +94,7 @@ convertFileUris(sourceFileUris: Array&lt;string&gt;): Promise<Array&lt;FileUriRe
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;FileUriResult&gt;> | Promise对象，返回FileUriResult对象数组。 |
@@ -96,6 +104,7 @@ convertFileUris(sourceFileUris: Array&lt;string&gt;): Promise<Array&lt;FileUriRe
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |

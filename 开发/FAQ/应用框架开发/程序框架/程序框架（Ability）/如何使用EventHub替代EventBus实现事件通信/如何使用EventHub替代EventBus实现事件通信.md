@@ -28,7 +28,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 export default class EntryAbility extends UIAbility {
   value: number = 12;
 
-  // 统一错误处理函数
+  <em>// 统一错误处理函数</em>
   handleEventError(e: BusinessError) {
     let code: number = e.code;
     let msg: string = e.message;
@@ -37,7 +37,7 @@ export default class EntryAbility extends UIAbility {
 
   onCreate() {
     try {
-      // 支持使用匿名函数订阅事件
+      <em>// 支持使用匿名函数订阅事件</em>
       this.context.eventHub.on('myEvent', () => {
         console.info(`anonymous eventFunc is called, value: ${this.value}`);
       });
@@ -48,8 +48,8 @@ export default class EntryAbility extends UIAbility {
 
   onForeground() {
     try {
-      // 结果：
-      // anonymouseventFunciscalled, value: 12
+      <em>// 结果：</em>
+      <em>// anonymouseventFunciscalled, value: 12</em>
       this.context.eventHub.emit('myEvent');
     } catch (e) {
       this.handleEventError(e as BusinessError);
@@ -57,7 +57,7 @@ export default class EntryAbility extends UIAbility {
   }
 
   onDestroy() {
-    // 销毁时取消事件订阅，避免内存泄漏
+    <em>// 销毁时取消事件订阅，避免内存泄漏</em>
     try {
       this.context.eventHub.off('myEvent');
     } catch (e) {
@@ -79,7 +79,7 @@ struct Index {
   value: number = 10;
 
   aboutToAppear() {
-    // 在组件中通过getContext(this)获取UIAbilityContext
+    <em>// 在组件中通过getContext(this)获取UIAbilityContext</em>
     let context = getContext(this) as common.UIAbilityContext;
     try {
       context.eventHub.on('componentEvent', () => {
@@ -93,7 +93,7 @@ struct Index {
   }
 
   aboutToDisappear() {
-    // 组件销毁时取消订阅，避免内存泄漏
+    <em>// 组件销毁时取消订阅，避免内存泄漏</em>
     let context = getContext(this) as common.UIAbilityContext;
     try {
       context.eventHub.off('componentEvent');

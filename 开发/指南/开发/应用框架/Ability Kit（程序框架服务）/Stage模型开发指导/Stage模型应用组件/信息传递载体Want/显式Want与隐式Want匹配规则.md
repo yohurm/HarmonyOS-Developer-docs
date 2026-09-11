@@ -1,15 +1,16 @@
 # 显式Want与隐式Want匹配规则
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/explicit-implicit-want-mappings
 
 在启动目标应用组件时，会通过显式[Want](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-want)或者隐式[Want](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-want)进行目标应用组件的匹配，这里说的匹配规则就是调用方传入的[want](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-want)参数中设置的参数如何与目标应用组件声明的配置文件进行匹配。
 
 
-#### 显式Want匹配原理
+## 显式Want匹配原理
 
 显式[Want](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-want)匹配原理如下表所示。
+
 
 | 名称 | 类型 | 匹配项 | 必选 | 规则 |
 | --- | --- | --- | --- | --- |
@@ -27,9 +28,10 @@
 
 
 
-#### 隐式Want匹配原理
+## 隐式Want匹配原理
 
 隐式[Want](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-want)匹配原理如下表所示。
+
 
 | 名称 | 类型 | 匹配项 | 必选 | 规则 |
 | --- | --- | --- | --- | --- |
@@ -62,7 +64,7 @@
 
 
 
-#### want参数的action匹配规则
+### want参数的action匹配规则
 
 将调用方传入的want参数的action与待匹配应用组件的skills配置中的actions进行匹配。
 
@@ -81,7 +83,7 @@
 
 
 
-#### want参数的entities匹配规则
+### want参数的entities匹配规则
 
 将调用方传入的want参数的entities与待匹配应用组件的skills配置中的entities进行匹配。
 
@@ -100,7 +102,7 @@
 
 
 
-#### want参数的uri和type匹配规则
+### want参数的uri和type匹配规则
 
 调用方传入的want参数中设置uri和type参数发起启动应用组件的请求，系统会遍历当前系统已安装的组件列表，并逐个匹配待匹配应用组件的skills配置中的uris数组，如果待匹配应用组件的skills配置中的uris数组中只要有一个可以匹配调用方传入的want参数中设置的uri和type即为匹配成功。
 
@@ -154,7 +156,7 @@
 
 
 
-#### uri匹配规则
+### uri匹配规则
 
 具体的匹配规则如下：
 
@@ -179,7 +181,7 @@
 
 
 
-#### type匹配规则
+### type匹配规则
 
 > [!NOTE]
 > 本章节所述的type匹配规则的适用性需建立在want参数内type不为空的基础上。当want参数内type为空时请参见 want参数的uri和type匹配规则 。
@@ -195,7 +197,7 @@
 
 
 
-#### linkFeature匹配规则
+### linkFeature匹配规则
 
 > [!NOTE]
 > 本章节所述的linkFeature匹配规则适用于want参数中的parameters包含linkFeature键，且对应取值不为空的场景。
@@ -210,8 +212,8 @@
 **图6** want参数中linkFeature具体匹配规则
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/asObCu5aQaiHt0J8ntVdwA/zh-cn_image_0000002674631674.png?HW-CC-KV=V1&HW-CC-Date=20260813T095621Z&HW-CC-Expire=86400&HW-CC-Sign=B16E7322D606D944A4882AE4455ED660E58B20DDFF8AAE4AB044755C5A199814)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/-miWf66JSkGKzSxhTBZKTQ/zh-cn_image_0000002747209755.png?HW-CC-KV=V1&HW-CC-Date=20260911T072740Z&HW-CC-Expire=86400&HW-CC-Sign=898AA300ED53C9F4ACBF682A8B5A8715B9DF8D8CD05C8A6908E76436C71693AB)
 
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/wYquKdrbQ1OR1AJPDZNKQg/zh-cn_image_0000002704271629.png?HW-CC-KV=V1&HW-CC-Date=20260813T095621Z&HW-CC-Expire=86400&HW-CC-Sign=C7576988B83384577C7C4BC96EB29F64F500880451A8EE5594316AFF6C6CBB9B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/BCZseAjcRma9a6YhB0AOrw/zh-cn_image_0000002717769822.png?HW-CC-KV=V1&HW-CC-Date=20260911T072740Z&HW-CC-Expire=86400&HW-CC-Sign=334C79887D4B8B4C100E3FE38EAA65DCC8BDEFF9F2022DAF31DABDE85219CD49)

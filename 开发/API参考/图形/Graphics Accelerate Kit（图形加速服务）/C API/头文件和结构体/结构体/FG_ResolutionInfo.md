@@ -1,11 +1,12 @@
 # FG_ResolutionInfo
 
-更新时间：2026-04-24 08:10:21
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_f_g___resolution_info
 **支持设备：** Phone | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -19,16 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | FG_Dimension2D inputColorResolution | 真实渲染帧颜色缓冲区分辨率。 |
@@ -38,13 +42,15 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### inputColorResolution
+### inputColorResolution
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -58,7 +64,8 @@ FG_Dimension2D FG_ResolutionInfo::inputColorResolution
  
   
 
-#### inputDepthStencilResolution
+### inputDepthStencilResolution
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -72,7 +79,8 @@ FG_Dimension2D FG_ResolutionInfo::inputDepthStencilResolution
  
   
 
-#### outputColorResolution
+### outputColorResolution
+
 
 **支持设备：** Phone | Tablet | TV
 

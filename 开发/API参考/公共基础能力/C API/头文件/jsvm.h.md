@@ -1,11 +1,12 @@
 # jsvm.h
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-jsvm-h
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -27,15 +28,18 @@
 
 
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 
 
-#### 宏定义
+### 宏定义
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -49,9 +53,11 @@
 
 
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -141,7 +147,7 @@
 | JSVM_EXTERN JSVM_Status OH_JSVM_GetValueStringLatin1(JSVM_Env env,JSVM_Value value,char* buf,size_t bufsize,size_t* result) | 返回与传入值对应的ISO-8859-1编码字符串。 |
 | JSVM_EXTERN JSVM_Status OH_JSVM_GetValueStringUtf8(JSVM_Env env,JSVM_Value value,char* buf,size_t bufsize,size_t* result) | 返回与传入值对应的UTF8编码字符串。 |
 | JSVM_EXTERN JSVM_Status OH_JSVM_GetValueStringUtf16(JSVM_Env env,JSVM_Value value,char16_t* buf,size_t bufsize,size_t* result) | 查询与传入值对应的UTF16编码字符串。 |
-| JSVM_EXTERN JSVM_Status OH_JSVM_GetValueUint32(JSVM_Env env,JSVM_Value value,uint32_t* result) | 返回与给定的JavaScript number等价的C uint_32基础类型值。 |
+| JSVM_EXTERN JSVM_Status OH_JSVM_GetValueUint32(JSVM_Env env,JSVM_Value value,uint32_t* result) | 返回与给定的JavaScript number等价的C uint32基础类型值。 |
 | JSVM_EXTERN JSVM_Status OH_JSVM_GetBoolean(JSVM_Env env,bool value,JSVM_Value* result) | 返回表示给定布尔值的JavaScript单例对象。 |
 | JSVM_EXTERN JSVM_Status OH_JSVM_GetGlobal(JSVM_Env env,JSVM_Value* result) | 返回global对象。 |
 | JSVM_EXTERN JSVM_Status OH_JSVM_GetNull(JSVM_Env env,JSVM_Value* result) | 返回null对象。 |
@@ -287,13 +293,15 @@
 
 
 
-#### 函数说明
+## 函数说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 
 
-#### OH_JSVM_Init()
+### OH_JSVM_Init()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -309,12 +317,14 @@ JSVM_EXTERN JSVM_Status OH_JSVM_Init(const JSVM_InitOptions* options)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const JSVM_InitOptions* options | 用于初始化JavaScript虚拟机的选项。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -323,7 +333,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_Init(const JSVM_InitOptions* options)
 
 
 
-#### OH_JSVM_CreateVM()
+### OH_JSVM_CreateVM()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -339,6 +350,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateVM(const JSVM_CreateVMOptions* options,JSV
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const JSVM_CreateVMOptions* options | 用于创建虚拟机实例的选项。 |
@@ -347,6 +359,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateVM(const JSVM_CreateVMOptions* options,JSV
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入的参数不合法。 |
@@ -354,7 +367,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateVM(const JSVM_CreateVMOptions* options,JSV
 
 
 
-#### OH_JSVM_SetMicrotaskPolicy()
+### OH_JSVM_SetMicrotaskPolicy()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -370,6 +384,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_SetMicrotaskPolicy(JSVM_VM vm,JSVM_MicrotaskPoli
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_VM vm | 用于设置微任务执行策略的虚拟机实例。 |
@@ -378,6 +393,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_SetMicrotaskPolicy(JSVM_VM vm,JSVM_MicrotaskPoli
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 如果接口调用成功，返回 JSVM_OK。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入参数不合法。 |
@@ -385,7 +401,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_SetMicrotaskPolicy(JSVM_VM vm,JSVM_MicrotaskPoli
 
 
 
-#### OH_JSVM_DestroyVM()
+### OH_JSVM_DestroyVM()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -401,12 +418,14 @@ JSVM_EXTERN JSVM_Status OH_JSVM_DestroyVM(JSVM_VM vm)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_VM vm | 待销毁的虚拟机实例。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -415,7 +434,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_DestroyVM(JSVM_VM vm)
 
 
 
-#### OH_JSVM_CreateProxy()
+### OH_JSVM_CreateProxy()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -431,6 +451,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateProxy(JSVM_Env env,JSVM_Value target,JSVM_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用 JSVM-API 的环境。 |
@@ -441,6 +462,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateProxy(JSVM_Env env,JSVM_Value target,JSVM_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码。 JSVM_OK 表示接口调用成功。 JSVM_OBJECT_EXPECTED 如果 target 或 handler 非 JS 对象。 JSVM_GENERIC_FAILURE 表示有未知的原因导致执行失败。 |
@@ -448,7 +470,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateProxy(JSVM_Env env,JSVM_Value target,JSVM_
 
 
 
-#### OH_JSVM_IsProxy()
+### OH_JSVM_IsProxy()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -464,6 +487,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsProxy(JSVM_Env env,JSVM_Value value,bool* isPr
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用 JSVM-API 的环境。 |
@@ -473,14 +497,16 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsProxy(JSVM_Env env,JSVM_Value value,bool* isPr
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| JSVM_Status JSVM_CDECL | 返回执行状态码。 JSVM_OK 表示接口调用成功。 JSVM_INVALID_ARG 表示传入参数不合法。 |
+| JSVM_EXTERN JSVM_Status | 返回执行状态码。 JSVM_OK 表示接口调用成功。 JSVM_INVALID_ARG 表示传入参数不合法。 |
 
 
 
 
-#### OH_JSVM_ProxyGetTarget()
+### OH_JSVM_ProxyGetTarget()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -496,6 +522,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ProxyGetTarget(JSVM_Env env,JSVM_Value value,JSV
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用 JSVM-API 的环境。 |
@@ -505,14 +532,16 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ProxyGetTarget(JSVM_Env env,JSVM_Value value,JSV
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| JSVM_Status JSVM_CDECL | 返回执行状态码。 JSVM_OK 表示接口调用成功。 JSVM_INVALID_ARG 表示传入参数不合法。 JSVM_INVALID_TYPE 如果 value 非 Javascript Proxy。 |
+| JSVM_EXTERN JSVM_Status | 返回执行状态码。 JSVM_OK 表示接口调用成功。 JSVM_INVALID_ARG 表示传入参数不合法。 JSVM_INVALID_TYPE 如果 value 非 JavaScript Proxy。 |
 
 
 
 
-#### OH_JSVM_OpenVMScope()
+### OH_JSVM_OpenVMScope()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -528,6 +557,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_OpenVMScope(JSVM_VM vm,JSVM_VMScope* result)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_VM vm | 目标虚拟机实例。 |
@@ -536,6 +566,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_OpenVMScope(JSVM_VM vm,JSVM_VMScope* result)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -543,7 +574,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_OpenVMScope(JSVM_VM vm,JSVM_VMScope* result)
 
 
 
-#### OH_JSVM_CloseVMScope()
+### OH_JSVM_CloseVMScope()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -559,6 +591,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CloseVMScope(JSVM_VM vm,JSVM_VMScope scope)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_VM vm | 目标虚拟机实例。 |
@@ -567,6 +600,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CloseVMScope(JSVM_VM vm,JSVM_VMScope scope)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -574,7 +608,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CloseVMScope(JSVM_VM vm,JSVM_VMScope scope)
 
 
 
-#### OH_JSVM_CreateEnv()
+### OH_JSVM_CreateEnv()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -590,6 +625,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateEnv(JSVM_VM vm,size_t propertyCount,const 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_VM vm | 虚拟机实例，新环境将在该实例中创建。 |
@@ -600,6 +636,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateEnv(JSVM_VM vm,size_t propertyCount,const 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -607,7 +644,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateEnv(JSVM_VM vm,size_t propertyCount,const 
 
 
 
-#### OH_JSVM_CreateEnvFromSnapshot()
+### OH_JSVM_CreateEnvFromSnapshot()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -623,6 +661,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateEnvFromSnapshot(JSVM_VM vm,size_t index,JS
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_VM vm | 虚拟机实例，新环境将在该实例中创建。 |
@@ -632,6 +671,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateEnvFromSnapshot(JSVM_VM vm,size_t index,JS
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_GENERIC_FAILURE 表示有未知的原因导致执行失败。 |
@@ -639,7 +679,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateEnvFromSnapshot(JSVM_VM vm,size_t index,JS
 
 
 
-#### OH_JSVM_DestroyEnv()
+### OH_JSVM_DestroyEnv()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -655,12 +696,14 @@ JSVM_EXTERN JSVM_Status OH_JSVM_DestroyEnv(JSVM_Env env)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 待销毁的环境。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -669,7 +712,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_DestroyEnv(JSVM_Env env)
 
 
 
-#### OH_JSVM_OpenEnvScope()
+### OH_JSVM_OpenEnvScope()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -685,6 +729,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_OpenEnvScope(JSVM_Env env,JSVM_EnvScope* result)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 目标环境，JSVM-API接口将在该环境下调用。 |
@@ -693,6 +738,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_OpenEnvScope(JSVM_Env env,JSVM_EnvScope* result)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -700,7 +746,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_OpenEnvScope(JSVM_Env env,JSVM_EnvScope* result)
 
 
 
-#### OH_JSVM_CloseEnvScope()
+### OH_JSVM_CloseEnvScope()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -716,6 +763,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CloseEnvScope(JSVM_Env env,JSVM_EnvScope scope)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 目标环境，JSVM-API接口将在该环境下调用。 |
@@ -724,6 +772,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CloseEnvScope(JSVM_Env env,JSVM_EnvScope scope)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -731,7 +780,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CloseEnvScope(JSVM_Env env,JSVM_EnvScope scope)
 
 
 
-#### OH_JSVM_GetVM()
+### OH_JSVM_GetVM()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -747,6 +797,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetVM(JSVM_Env env,JSVM_VM* result)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 目标环境，JSVM-API接口将在该环境下调用。 |
@@ -755,6 +806,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetVM(JSVM_Env env,JSVM_VM* result)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -762,7 +814,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetVM(JSVM_Env env,JSVM_VM* result)
 
 
 
-#### OH_JSVM_CompileScript()
+### OH_JSVM_CompileScript()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -778,6 +831,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CompileScript(JSVM_Env env,JSVM_Value script,con
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 目标环境，JSVM-API接口将在该环境下调用。 |
@@ -791,6 +845,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CompileScript(JSVM_Env env,JSVM_Value script,con
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入的 data 是空指针。 JSVM_STRING_EXPECTED 表示传入的参数不是string类型。 JSVM_GENERIC_FAILURE 表示有未知的原因导致执行失败。 JSVM_CANNOT_RUN_JS 不能执行JS。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 |
@@ -798,7 +853,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CompileScript(JSVM_Env env,JSVM_Value script,con
 
 
 
-#### OH_JSVM_CompileScriptWithOrigin()
+### OH_JSVM_CompileScriptWithOrigin()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -814,6 +870,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CompileScriptWithOrigin(JSVM_Env env,JSVM_Value 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 目标环境，JSVM-API接口将在该环境下调用。 |
@@ -828,6 +885,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CompileScriptWithOrigin(JSVM_Env env,JSVM_Value 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入的 data 是空指针。 JSVM_STRING_EXPECTED 表示传入的参数不是string类型。 JSVM_GENERIC_FAILURE 表示执行失败。 JSVM_CANNOT_RUN_JS 不能执行JS。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 |
@@ -835,7 +893,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CompileScriptWithOrigin(JSVM_Env env,JSVM_Value 
 
 
 
-#### OH_JSVM_CompileScriptWithOptions()
+### OH_JSVM_CompileScriptWithOptions()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -851,6 +910,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CompileScriptWithOptions(JSVM_Env env,JSVM_Value
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 目标环境，JSVM-API接口将在该环境下调用。 |
@@ -862,6 +922,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CompileScriptWithOptions(JSVM_Env env,JSVM_Value
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入参数无效。 JSVM_STRING_EXPECTED 表示传入的参数不是string类型。 JSVM_GENERIC_FAILURE 表示有未知的原因导致执行失败。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 |
@@ -869,7 +930,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CompileScriptWithOptions(JSVM_Env env,JSVM_Value
 
 
 
-#### OH_JSVM_CreateCodeCache()
+### OH_JSVM_CreateCodeCache()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -885,6 +947,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateCodeCache(JSVM_Env env,JSVM_Script script,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 目标环境，JSVM-API接口将在该环境下调用。 |
@@ -895,6 +958,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateCodeCache(JSVM_Env env,JSVM_Script script,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_GENERIC_FAILURE 表示执行失败。 |
@@ -902,7 +966,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateCodeCache(JSVM_Env env,JSVM_Script script,
 
 
 
-#### OH_JSVM_RunScript()
+### OH_JSVM_RunScript()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -918,6 +983,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_RunScript(JSVM_Env env,JSVM_Script script,JSVM_V
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -927,6 +993,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_RunScript(JSVM_Env env,JSVM_Script script,JSVM_V
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_GENERIC_FAILURE 表示执行失败。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 |
@@ -934,7 +1001,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_RunScript(JSVM_Env env,JSVM_Script script,JSVM_V
 
 
 
-#### OH_JSVM_SetInstanceData()
+### OH_JSVM_SetInstanceData()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -950,6 +1018,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_SetInstanceData(JSVM_Env env,void* data,JSVM_Fin
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -960,6 +1029,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_SetInstanceData(JSVM_Env env,void* data,JSVM_Fin
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -967,7 +1037,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_SetInstanceData(JSVM_Env env,void* data,JSVM_Fin
 
 
 
-#### OH_JSVM_GetInstanceData()
+### OH_JSVM_GetInstanceData()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -983,6 +1054,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetInstanceData(JSVM_Env env,void** data)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -991,6 +1063,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetInstanceData(JSVM_Env env,void** data)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -998,7 +1071,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetInstanceData(JSVM_Env env,void** data)
 
 
 
-#### OH_JSVM_GetLastErrorInfo()
+### OH_JSVM_GetLastErrorInfo()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1014,6 +1088,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetLastErrorInfo(JSVM_Env env,const JSVM_Extende
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -1022,6 +1097,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetLastErrorInfo(JSVM_Env env,const JSVM_Extende
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -1029,7 +1105,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetLastErrorInfo(JSVM_Env env,const JSVM_Extende
 
 
 
-#### OH_JSVM_Throw()
+### OH_JSVM_Throw()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1045,6 +1122,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_Throw(JSVM_Env env,JSVM_Value error)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -1053,6 +1131,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_Throw(JSVM_Env env,JSVM_Value error)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -1060,7 +1139,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_Throw(JSVM_Env env,JSVM_Value error)
 
 
 
-#### OH_JSVM_ThrowError()
+### OH_JSVM_ThrowError()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1076,6 +1156,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ThrowError(JSVM_Env env,const char* code,const c
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -1085,6 +1166,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ThrowError(JSVM_Env env,const char* code,const c
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -1092,7 +1174,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ThrowError(JSVM_Env env,const char* code,const c
 
 
 
-#### OH_JSVM_ThrowTypeError()
+### OH_JSVM_ThrowTypeError()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1108,6 +1191,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ThrowTypeError(JSVM_Env env,const char* code,con
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -1117,6 +1201,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ThrowTypeError(JSVM_Env env,const char* code,con
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -1124,7 +1209,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ThrowTypeError(JSVM_Env env,const char* code,con
 
 
 
-#### OH_JSVM_ThrowRangeError()
+### OH_JSVM_ThrowRangeError()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1140,6 +1226,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ThrowRangeError(JSVM_Env env,const char* code,co
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -1149,6 +1236,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ThrowRangeError(JSVM_Env env,const char* code,co
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -1156,7 +1244,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ThrowRangeError(JSVM_Env env,const char* code,co
 
 
 
-#### OH_JSVM_ThrowSyntaxError()
+### OH_JSVM_ThrowSyntaxError()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1172,6 +1261,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ThrowSyntaxError(JSVM_Env env,const char* code,c
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -1181,6 +1271,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ThrowSyntaxError(JSVM_Env env,const char* code,c
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -1188,7 +1279,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ThrowSyntaxError(JSVM_Env env,const char* code,c
 
 
 
-#### OH_JSVM_IsError()
+### OH_JSVM_IsError()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1204,6 +1296,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsError(JSVM_Env env,JSVM_Value value,bool* resu
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -1213,6 +1306,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsError(JSVM_Env env,JSVM_Value value,bool* resu
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -1220,7 +1314,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsError(JSVM_Env env,JSVM_Value value,bool* resu
 
 
 
-#### OH_JSVM_CreateError()
+### OH_JSVM_CreateError()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1236,6 +1331,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateError(JSVM_Env env,JSVM_Value code,JSVM_Va
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -1246,6 +1342,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateError(JSVM_Env env,JSVM_Value code,JSVM_Va
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_STRING_EXPECTED 表示传入的参数不是string类型。 |
@@ -1253,7 +1350,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateError(JSVM_Env env,JSVM_Value code,JSVM_Va
 
 
 
-#### OH_JSVM_CreateTypeError()
+### OH_JSVM_CreateTypeError()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1269,6 +1367,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateTypeError(JSVM_Env env,JSVM_Value code,JSV
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -1279,6 +1378,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateTypeError(JSVM_Env env,JSVM_Value code,JSV
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_STRING_EXPECTED 表示传入的参数不是string类型。 |
@@ -1286,7 +1386,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateTypeError(JSVM_Env env,JSVM_Value code,JSV
 
 
 
-#### OH_JSVM_CreateRangeError()
+### OH_JSVM_CreateRangeError()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1302,6 +1403,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateRangeError(JSVM_Env env,JSVM_Value code,JS
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -1312,6 +1414,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateRangeError(JSVM_Env env,JSVM_Value code,JS
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_STRING_EXPECTED 表示传入的参数不是string类型。 |
@@ -1319,7 +1422,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateRangeError(JSVM_Env env,JSVM_Value code,JS
 
 
 
-#### OH_JSVM_CreateSyntaxError()
+### OH_JSVM_CreateSyntaxError()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1335,6 +1439,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateSyntaxError(JSVM_Env env,JSVM_Value code,J
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -1345,6 +1450,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateSyntaxError(JSVM_Env env,JSVM_Value code,J
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_STRING_EXPECTED 表示传入的参数不是string类型。 |
@@ -1352,7 +1458,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateSyntaxError(JSVM_Env env,JSVM_Value code,J
 
 
 
-#### OH_JSVM_GetAndClearLastException()
+### OH_JSVM_GetAndClearLastException()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1368,6 +1475,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetAndClearLastException(JSVM_Env env,JSVM_Value
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -1376,6 +1484,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetAndClearLastException(JSVM_Env env,JSVM_Value
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -1383,7 +1492,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetAndClearLastException(JSVM_Env env,JSVM_Value
 
 
 
-#### OH_JSVM_IsExceptionPending()
+### OH_JSVM_IsExceptionPending()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1399,6 +1509,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsExceptionPending(JSVM_Env env,bool* result)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -1407,6 +1518,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsExceptionPending(JSVM_Env env,bool* result)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -1414,7 +1526,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsExceptionPending(JSVM_Env env,bool* result)
 
 
 
-#### OH_JSVM_OpenHandleScope()
+### OH_JSVM_OpenHandleScope()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1430,6 +1543,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_OpenHandleScope(JSVM_Env env,JSVM_HandleScope* r
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -1438,6 +1552,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_OpenHandleScope(JSVM_Env env,JSVM_HandleScope* r
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -1445,7 +1560,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_OpenHandleScope(JSVM_Env env,JSVM_HandleScope* r
 
 
 
-#### OH_JSVM_CloseHandleScope()
+### OH_JSVM_CloseHandleScope()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1461,6 +1577,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CloseHandleScope(JSVM_Env env,JSVM_HandleScope s
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -1469,6 +1586,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CloseHandleScope(JSVM_Env env,JSVM_HandleScope s
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_HANDLE_SCOPE_MISMATCH 表示执行失败。 |
@@ -1476,7 +1594,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CloseHandleScope(JSVM_Env env,JSVM_HandleScope s
 
 
 
-#### OH_JSVM_OpenEscapableHandleScope()
+### OH_JSVM_OpenEscapableHandleScope()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1492,6 +1611,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_OpenEscapableHandleScope(JSVM_Env env,JSVM_Escap
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -1500,6 +1620,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_OpenEscapableHandleScope(JSVM_Env env,JSVM_Escap
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -1507,7 +1628,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_OpenEscapableHandleScope(JSVM_Env env,JSVM_Escap
 
 
 
-#### OH_JSVM_CloseEscapableHandleScope()
+### OH_JSVM_CloseEscapableHandleScope()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1523,6 +1645,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CloseEscapableHandleScope(JSVM_Env env,JSVM_Esca
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -1531,6 +1654,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CloseEscapableHandleScope(JSVM_Env env,JSVM_Esca
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_HANDLE_SCOPE_MISMATCH 表示执行失败。 |
@@ -1538,7 +1662,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CloseEscapableHandleScope(JSVM_Env env,JSVM_Esca
 
 
 
-#### OH_JSVM_EscapeHandle()
+### OH_JSVM_EscapeHandle()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1554,6 +1679,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_EscapeHandle(JSVM_Env env,JSVM_EscapableHandleSc
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -1564,6 +1690,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_EscapeHandle(JSVM_Env env,JSVM_EscapableHandleSc
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_ESCAPE_CALLED_TWICE 表示scope对象已被关闭。 |
@@ -1571,7 +1698,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_EscapeHandle(JSVM_Env env,JSVM_EscapableHandleSc
 
 
 
-#### OH_JSVM_CreateReference()
+### OH_JSVM_CreateReference()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1587,6 +1715,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateReference(JSVM_Env env,JSVM_Value value,ui
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -1597,6 +1726,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateReference(JSVM_Env env,JSVM_Value value,ui
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -1604,7 +1734,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateReference(JSVM_Env env,JSVM_Value value,ui
 
 
 
-#### OH_JSVM_DeleteReference()
+### OH_JSVM_DeleteReference()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1620,6 +1751,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_DeleteReference(JSVM_Env env,JSVM_Ref ref)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -1628,6 +1760,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_DeleteReference(JSVM_Env env,JSVM_Ref ref)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -1635,7 +1768,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_DeleteReference(JSVM_Env env,JSVM_Ref ref)
 
 
 
-#### OH_JSVM_ReferenceRef()
+### OH_JSVM_ReferenceRef()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1651,6 +1785,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ReferenceRef(JSVM_Env env,JSVM_Ref ref,uint32_t*
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -1660,6 +1795,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ReferenceRef(JSVM_Env env,JSVM_Ref ref,uint32_t*
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -1667,7 +1803,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ReferenceRef(JSVM_Env env,JSVM_Ref ref,uint32_t*
 
 
 
-#### OH_JSVM_ReferenceUnref()
+### OH_JSVM_ReferenceUnref()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1683,6 +1820,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ReferenceUnref(JSVM_Env env,JSVM_Ref ref,uint32_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -1692,6 +1830,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ReferenceUnref(JSVM_Env env,JSVM_Ref ref,uint32_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_GENERIC_FAILURE 表示执行失败。 |
@@ -1699,7 +1838,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ReferenceUnref(JSVM_Env env,JSVM_Ref ref,uint32_
 
 
 
-#### OH_JSVM_GetReferenceValue()
+### OH_JSVM_GetReferenceValue()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1715,6 +1855,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetReferenceValue(JSVM_Env env,JSVM_Ref ref,JSVM
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -1724,6 +1865,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetReferenceValue(JSVM_Env env,JSVM_Ref ref,JSVM
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -1731,7 +1873,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetReferenceValue(JSVM_Env env,JSVM_Ref ref,JSVM
 
 
 
-#### OH_JSVM_CreateArray()
+### OH_JSVM_CreateArray()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1747,6 +1890,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateArray(JSVM_Env env,JSVM_Value* result)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -1755,6 +1899,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateArray(JSVM_Env env,JSVM_Value* result)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -1762,7 +1907,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateArray(JSVM_Env env,JSVM_Value* result)
 
 
 
-#### OH_JSVM_CreateArrayWithLength()
+### OH_JSVM_CreateArrayWithLength()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1778,6 +1924,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateArrayWithLength(JSVM_Env env,size_t length
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -1787,6 +1934,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateArrayWithLength(JSVM_Env env,size_t length
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -1794,7 +1942,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateArrayWithLength(JSVM_Env env,size_t length
 
 
 
-#### OH_JSVM_CreateArraybuffer()
+### OH_JSVM_CreateArraybuffer()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1810,6 +1959,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateArraybuffer(JSVM_Env env,size_t byteLength
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -1820,6 +1970,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateArraybuffer(JSVM_Env env,size_t byteLength
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 |
@@ -1827,7 +1978,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateArraybuffer(JSVM_Env env,size_t byteLength
 
 
 
-#### OH_JSVM_AllocateArrayBufferBackingStoreData()
+### OH_JSVM_AllocateArrayBufferBackingStoreData()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1843,6 +1995,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_AllocateArrayBufferBackingStoreData(size_t byteL
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | size_t byteLength | BackingStore 内存的大小。 |
@@ -1852,14 +2005,16 @@ JSVM_EXTERN JSVM_Status OH_JSVM_AllocateArrayBufferBackingStoreData(size_t byteL
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| JSVM_Status JSVM_CDECL | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入的 data 是空指针。 JSVM_GENERIC_FAILURE 表示内存申请失败。 |
+| JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入的 data 是空指针。 JSVM_GENERIC_FAILURE 表示内存申请失败。 |
 
 
 
 
-#### OH_JSVM_FreeArrayBufferBackingStoreData()
+### OH_JSVM_FreeArrayBufferBackingStoreData()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1875,6 +2030,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_FreeArrayBufferBackingStoreData(void *data)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | void *data | 申请得到的 BackingStore 内存。 |
@@ -1882,14 +2038,16 @@ JSVM_EXTERN JSVM_Status OH_JSVM_FreeArrayBufferBackingStoreData(void *data)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| JSVM_Status JSVM_CDECL | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入的 data 是空指针。 |
+| JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入的 data 是空指针。 |
 
 
 
 
-#### OH_JSVM_CreateArrayBufferFromBackingStoreData()
+### OH_JSVM_CreateArrayBufferFromBackingStoreData()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1905,6 +2063,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateArrayBufferFromBackingStoreData(JSVM_Env e
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -1917,14 +2076,16 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateArrayBufferFromBackingStoreData(JSVM_Env e
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| JSVM_Status JSVM_CDECL | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示触发了下面描述的异常情况之一： 1. offset + arrayBufferSize > backingStoreSize。 2. backingStoreSize 或者 arrayBufferSize 为 0。 3. data 或者 result 为空。 |
+| JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示触发了下面描述的异常情况之一： 1. offset + arrayBufferSize > backingStoreSize。 2. backingStoreSize 或者 arrayBufferSize 为 0。 3. data 或者 result 为空。 |
 
 
 
 
-#### OH_JSVM_CreateArrayBufferFromExternalMemory()
+### OH_JSVM_CreateArrayBufferFromExternalMemory()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1937,7 +2098,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateArrayBufferFromExternalMemory(JSVM_Env env
 **描述**
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/eI8bjGqISzSUP2aJrIQ4Qg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095543Z&HW-CC-Expire=86400&HW-CC-Sign=C5A3482854A68C0F51ABD3F237150C5D76F9F098990D4BB1F74BBF97E7D65A7C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/sbnqufD0T3yvOW2GscPnsg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072225Z&HW-CC-Expire=86400&HW-CC-Sign=E4AEB388D437FA5D82DE9C6D760607FC26595377864B442C75221F2DFDEA91D6)
 
 
 此接口是实验性接口，需定义JSVM_EXPERIMENTAL宏后方可使用。
@@ -1949,6 +2110,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateArrayBufferFromExternalMemory(JSVM_Env env
 **起始版本：** 26.0.0
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -1963,14 +2125,16 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateArrayBufferFromExternalMemory(JSVM_Env env
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| JSVM_Status JSVM_CDECL | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示触发了下面描述的异常情况之一： 1. 传入的result参数为NULL。 2. byteLength>0但externalData为NULL。 3. externalData未8字节对齐。 4. byteLength超过引擎最大限制。 5. byteLength==0但finalizeCb不为NULL。 |
+| JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示触发了下面描述的异常情况之一： 1. 传入的result参数为NULL。 2. byteLength>0但externalData为NULL。 3. externalData未8字节对齐。 4. byteLength超过引擎最大限制。 5. byteLength==0但finalizeCb不为NULL。 |
 
 
 
 
-#### OH_JSVM_CreateDate()
+### OH_JSVM_CreateDate()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1986,6 +2150,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateDate(JSVM_Env env,double time,JSVM_Value* 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -1995,6 +2160,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateDate(JSVM_Env env,double time,JSVM_Value* 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_GENERIC_FAILURE 表示执行失败。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 |
@@ -2002,7 +2168,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateDate(JSVM_Env env,double time,JSVM_Value* 
 
 
 
-#### OH_JSVM_CreateExternal()
+### OH_JSVM_CreateExternal()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2018,6 +2185,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateExternal(JSVM_Env env,void* data,JSVM_Fina
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -2029,6 +2197,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateExternal(JSVM_Env env,void* data,JSVM_Fina
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -2036,7 +2205,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateExternal(JSVM_Env env,void* data,JSVM_Fina
 
 
 
-#### OH_JSVM_CreateObject()
+### OH_JSVM_CreateObject()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2052,6 +2222,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateObject(JSVM_Env env,JSVM_Value* result)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -2060,6 +2231,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateObject(JSVM_Env env,JSVM_Value* result)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -2067,7 +2239,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateObject(JSVM_Env env,JSVM_Value* result)
 
 
 
-#### OH_JSVM_CreateSymbol()
+### OH_JSVM_CreateSymbol()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2083,6 +2256,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateSymbol(JSVM_Env env,JSVM_Value description
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -2092,6 +2266,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateSymbol(JSVM_Env env,JSVM_Value description
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_STRING_EXPECTED 表示传入的参数不是string类型。 |
@@ -2099,7 +2274,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateSymbol(JSVM_Env env,JSVM_Value description
 
 
 
-#### OH_JSVM_SymbolFor()
+### OH_JSVM_SymbolFor()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2115,6 +2291,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_SymbolFor(JSVM_Env env,const char* utf8descripti
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -2125,6 +2302,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_SymbolFor(JSVM_Env env,const char* utf8descripti
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -2132,7 +2310,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_SymbolFor(JSVM_Env env,const char* utf8descripti
 
 
 
-#### OH_JSVM_CreateTypedarray()
+### OH_JSVM_CreateTypedarray()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2148,6 +2327,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateTypedarray(JSVM_Env env,JSVM_TypedarrayTyp
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -2160,6 +2340,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateTypedarray(JSVM_Env env,JSVM_TypedarrayTyp
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入的参数不合法。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 |
@@ -2167,7 +2348,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateTypedarray(JSVM_Env env,JSVM_TypedarrayTyp
 
 
 
-#### OH_JSVM_CreateDataview()
+### OH_JSVM_CreateDataview()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2183,6 +2365,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateDataview(JSVM_Env env,size_t length,JSVM_V
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -2194,6 +2377,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateDataview(JSVM_Env env,size_t length,JSVM_V
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入的参数不合法。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 |
@@ -2201,7 +2385,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateDataview(JSVM_Env env,size_t length,JSVM_V
 
 
 
-#### OH_JSVM_CreateInt32()
+### OH_JSVM_CreateInt32()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2217,6 +2402,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateInt32(JSVM_Env env,int32_t value,JSVM_Valu
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -2226,6 +2412,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateInt32(JSVM_Env env,int32_t value,JSVM_Valu
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -2233,7 +2420,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateInt32(JSVM_Env env,int32_t value,JSVM_Valu
 
 
 
-#### OH_JSVM_CreateUint32()
+### OH_JSVM_CreateUint32()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2249,6 +2437,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateUint32(JSVM_Env env,uint32_t value,JSVM_Va
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -2258,6 +2447,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateUint32(JSVM_Env env,uint32_t value,JSVM_Va
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -2265,7 +2455,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateUint32(JSVM_Env env,uint32_t value,JSVM_Va
 
 
 
-#### OH_JSVM_CreateInt64()
+### OH_JSVM_CreateInt64()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2281,6 +2472,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateInt64(JSVM_Env env,int64_t value,JSVM_Valu
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -2290,6 +2482,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateInt64(JSVM_Env env,int64_t value,JSVM_Valu
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -2297,7 +2490,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateInt64(JSVM_Env env,int64_t value,JSVM_Valu
 
 
 
-#### OH_JSVM_CreateDouble()
+### OH_JSVM_CreateDouble()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2313,6 +2507,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateDouble(JSVM_Env env,double value,JSVM_Valu
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -2322,6 +2517,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateDouble(JSVM_Env env,double value,JSVM_Valu
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -2329,7 +2525,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateDouble(JSVM_Env env,double value,JSVM_Valu
 
 
 
-#### OH_JSVM_CreateBigintInt64()
+### OH_JSVM_CreateBigintInt64()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2345,6 +2542,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateBigintInt64(JSVM_Env env,int64_t value,JSV
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -2354,6 +2552,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateBigintInt64(JSVM_Env env,int64_t value,JSV
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -2361,7 +2560,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateBigintInt64(JSVM_Env env,int64_t value,JSV
 
 
 
-#### OH_JSVM_CreateBigintUint64()
+### OH_JSVM_CreateBigintUint64()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2377,6 +2577,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateBigintUint64(JSVM_Env env,uint64_t value,J
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -2386,6 +2587,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateBigintUint64(JSVM_Env env,uint64_t value,J
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -2393,7 +2595,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateBigintUint64(JSVM_Env env,uint64_t value,J
 
 
 
-#### OH_JSVM_CreateBigintWords()
+### OH_JSVM_CreateBigintWords()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2409,6 +2612,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateBigintWords(JSVM_Env env,int signBit,size_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -2420,6 +2624,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateBigintWords(JSVM_Env env,int signBit,size_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入的参数不合法。 JSVM_GENERIC_FAILURE 表示有未知的原因导致执行失败。 |
@@ -2427,7 +2632,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateBigintWords(JSVM_Env env,int signBit,size_
 
 
 
-#### OH_JSVM_CreateStringLatin1()
+### OH_JSVM_CreateStringLatin1()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2443,6 +2649,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateStringLatin1(JSVM_Env env,const char* str,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -2453,6 +2660,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateStringLatin1(JSVM_Env env,const char* str,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_GENERIC_FAILURE 表示有未知的原因导致执行失败。 |
@@ -2460,7 +2668,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateStringLatin1(JSVM_Env env,const char* str,
 
 
 
-#### OH_JSVM_CreateStringUtf16()
+### OH_JSVM_CreateStringUtf16()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2476,6 +2685,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateStringUtf16(JSVM_Env env,const char16_t* s
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -2486,6 +2696,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateStringUtf16(JSVM_Env env,const char16_t* s
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_GENERIC_FAILURE 表示有未知的原因导致执行失败。 |
@@ -2493,7 +2704,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateStringUtf16(JSVM_Env env,const char16_t* s
 
 
 
-#### OH_JSVM_CreateStringUtf8()
+### OH_JSVM_CreateStringUtf8()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2509,6 +2721,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateStringUtf8(JSVM_Env env,const char* str,si
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -2519,6 +2732,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateStringUtf8(JSVM_Env env,const char* str,si
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_GENERIC_FAILURE 表示有未知的原因导致执行失败。 |
@@ -2526,7 +2740,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateStringUtf8(JSVM_Env env,const char* str,si
 
 
 
-#### OH_JSVM_GetArrayLength()
+### OH_JSVM_GetArrayLength()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2542,6 +2757,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetArrayLength(JSVM_Env env,JSVM_Value value,uin
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -2551,6 +2767,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetArrayLength(JSVM_Env env,JSVM_Value value,uin
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_ARRAY_EXPECTED 表示传入的参数不是Array类型。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 |
@@ -2558,7 +2775,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetArrayLength(JSVM_Env env,JSVM_Value value,uin
 
 
 
-#### OH_JSVM_GetArraybufferInfo()
+### OH_JSVM_GetArraybufferInfo()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2574,6 +2792,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetArraybufferInfo(JSVM_Env env,JSVM_Value array
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -2584,6 +2803,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetArraybufferInfo(JSVM_Env env,JSVM_Value array
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入的参数不合法。 |
@@ -2591,7 +2811,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetArraybufferInfo(JSVM_Env env,JSVM_Value array
 
 
 
-#### OH_JSVM_GetPrototype()
+### OH_JSVM_GetPrototype()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2607,6 +2828,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetPrototype(JSVM_Env env,JSVM_Value object,JSVM
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -2616,6 +2838,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetPrototype(JSVM_Env env,JSVM_Value object,JSVM
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 |
@@ -2623,7 +2846,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetPrototype(JSVM_Env env,JSVM_Value object,JSVM
 
 
 
-#### OH_JSVM_GetTypedarrayInfo()
+### OH_JSVM_GetTypedarrayInfo()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2639,6 +2863,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetTypedarrayInfo(JSVM_Env env,JSVM_Value typeda
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -2652,6 +2877,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetTypedarrayInfo(JSVM_Env env,JSVM_Value typeda
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入的参数不合法。 |
@@ -2659,7 +2885,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetTypedarrayInfo(JSVM_Env env,JSVM_Value typeda
 
 
 
-#### OH_JSVM_GetDataviewInfo()
+### OH_JSVM_GetDataviewInfo()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2675,6 +2902,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetDataviewInfo(JSVM_Env env,JSVM_Value dataview
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -2687,6 +2915,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetDataviewInfo(JSVM_Env env,JSVM_Value dataview
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入参数非外部的JSVM_Value。 |
@@ -2694,7 +2923,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetDataviewInfo(JSVM_Env env,JSVM_Value dataview
 
 
 
-#### OH_JSVM_GetDateValue()
+### OH_JSVM_GetDateValue()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2710,6 +2940,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetDateValue(JSVM_Env env,JSVM_Value value,doubl
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -2719,6 +2950,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetDateValue(JSVM_Env env,JSVM_Value value,doubl
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_DATE_EXPECTED 表示传入参数不是Date类型。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 |
@@ -2726,7 +2958,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetDateValue(JSVM_Env env,JSVM_Value value,doubl
 
 
 
-#### OH_JSVM_GetValueBool()
+### OH_JSVM_GetValueBool()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2742,6 +2975,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetValueBool(JSVM_Env env,JSVM_Value value,bool*
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -2751,6 +2985,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetValueBool(JSVM_Env env,JSVM_Value value,bool*
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_BOOLEAN_EXPECTED 表示传入的参数不是boolean类型。 |
@@ -2758,7 +2993,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetValueBool(JSVM_Env env,JSVM_Value value,bool*
 
 
 
-#### OH_JSVM_GetValueDouble()
+### OH_JSVM_GetValueDouble()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2774,6 +3010,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetValueDouble(JSVM_Env env,JSVM_Value value,dou
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -2783,6 +3020,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetValueDouble(JSVM_Env env,JSVM_Value value,dou
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_NUMBER_EXPECTED 表示传入的参数不是number类型。 |
@@ -2790,7 +3028,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetValueDouble(JSVM_Env env,JSVM_Value value,dou
 
 
 
-#### OH_JSVM_GetValueBigintInt64()
+### OH_JSVM_GetValueBigintInt64()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2806,6 +3045,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetValueBigintInt64(JSVM_Env env,JSVM_Value valu
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -2816,6 +3056,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetValueBigintInt64(JSVM_Env env,JSVM_Value valu
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_BIGINT_EXPECTED 表示传入的参数不是BigInt类型。 |
@@ -2823,7 +3064,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetValueBigintInt64(JSVM_Env env,JSVM_Value valu
 
 
 
-#### OH_JSVM_GetValueBigintUint64()
+### OH_JSVM_GetValueBigintUint64()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2839,6 +3081,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetValueBigintUint64(JSVM_Env env,JSVM_Value val
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -2849,6 +3092,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetValueBigintUint64(JSVM_Env env,JSVM_Value val
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_BIGINT_EXPECTED 表示传入的参数不是BigInt类型。 |
@@ -2856,7 +3100,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetValueBigintUint64(JSVM_Env env,JSVM_Value val
 
 
 
-#### OH_JSVM_GetValueBigintWords()
+### OH_JSVM_GetValueBigintWords()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2872,6 +3117,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetValueBigintWords(JSVM_Env env,JSVM_Value valu
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -2883,6 +3129,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetValueBigintWords(JSVM_Env env,JSVM_Value valu
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_BIGINT_EXPECTED 表示传入的参数不是BigInt类型。 |
@@ -2890,7 +3137,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetValueBigintWords(JSVM_Env env,JSVM_Value valu
 
 
 
-#### OH_JSVM_GetValueExternal()
+### OH_JSVM_GetValueExternal()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2906,6 +3154,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetValueExternal(JSVM_Env env,JSVM_Value value,v
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -2915,6 +3164,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetValueExternal(JSVM_Env env,JSVM_Value value,v
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入参数非外部的JSVM_Value。 |
@@ -2922,7 +3172,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetValueExternal(JSVM_Env env,JSVM_Value value,v
 
 
 
-#### OH_JSVM_GetValueInt32()
+### OH_JSVM_GetValueInt32()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2938,6 +3189,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetValueInt32(JSVM_Env env,JSVM_Value value,int3
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -2947,6 +3199,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetValueInt32(JSVM_Env env,JSVM_Value value,int3
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_NUMBER_EXPECTED 表示传入的参数不是number类型。 |
@@ -2954,7 +3207,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetValueInt32(JSVM_Env env,JSVM_Value value,int3
 
 
 
-#### OH_JSVM_GetValueInt64()
+### OH_JSVM_GetValueInt64()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2970,6 +3224,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetValueInt64(JSVM_Env env,JSVM_Value value,int6
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -2979,6 +3234,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetValueInt64(JSVM_Env env,JSVM_Value value,int6
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_NUMBER_EXPECTED 表示传入的参数不是number类型。 |
@@ -2986,7 +3242,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetValueInt64(JSVM_Env env,JSVM_Value value,int6
 
 
 
-#### OH_JSVM_GetValueStringLatin1()
+### OH_JSVM_GetValueStringLatin1()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3002,6 +3259,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetValueStringLatin1(JSVM_Env env,JSVM_Value val
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -3013,6 +3271,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetValueStringLatin1(JSVM_Env env,JSVM_Value val
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_STRING_EXPECTED 表示传入的参数不是string类型。 |
@@ -3020,7 +3279,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetValueStringLatin1(JSVM_Env env,JSVM_Value val
 
 
 
-#### OH_JSVM_GetValueStringUtf8()
+### OH_JSVM_GetValueStringUtf8()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3036,6 +3296,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetValueStringUtf8(JSVM_Env env,JSVM_Value value
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -3047,6 +3308,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetValueStringUtf8(JSVM_Env env,JSVM_Value value
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_STRING_EXPECTED 表示传入的参数不是string类型。 |
@@ -3054,7 +3316,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetValueStringUtf8(JSVM_Env env,JSVM_Value value
 
 
 
-#### OH_JSVM_GetValueStringUtf16()
+### OH_JSVM_GetValueStringUtf16()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3070,6 +3333,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetValueStringUtf16(JSVM_Env env,JSVM_Value valu
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -3081,6 +3345,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetValueStringUtf16(JSVM_Env env,JSVM_Value valu
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_STRING_EXPECTED 表示传入的参数不是string类型。 |
@@ -3088,7 +3353,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetValueStringUtf16(JSVM_Env env,JSVM_Value valu
 
 
 
-#### OH_JSVM_GetValueUint32()
+### OH_JSVM_GetValueUint32()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3098,11 +3364,12 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetValueUint32(JSVM_Env env,JSVM_Value value,uin
 
 **描述**
 
-返回与给定的JavaScript number等价的C uint_32基础类型值。
+返回与给定的JavaScript number等价的C uint32基础类型值。
 
 **起始版本：** 11
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -3113,6 +3380,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetValueUint32(JSVM_Env env,JSVM_Value value,uin
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_NUMBER_EXPECTED 表示传入的参数不是number类型。 |
@@ -3120,7 +3388,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetValueUint32(JSVM_Env env,JSVM_Value value,uin
 
 
 
-#### OH_JSVM_GetBoolean()
+### OH_JSVM_GetBoolean()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3136,6 +3405,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetBoolean(JSVM_Env env,bool value,JSVM_Value* r
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -3145,6 +3415,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetBoolean(JSVM_Env env,bool value,JSVM_Value* r
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -3152,7 +3423,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetBoolean(JSVM_Env env,bool value,JSVM_Value* r
 
 
 
-#### OH_JSVM_GetGlobal()
+### OH_JSVM_GetGlobal()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3168,6 +3440,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetGlobal(JSVM_Env env,JSVM_Value* result)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -3176,6 +3449,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetGlobal(JSVM_Env env,JSVM_Value* result)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -3183,7 +3457,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetGlobal(JSVM_Env env,JSVM_Value* result)
 
 
 
-#### OH_JSVM_GetNull()
+### OH_JSVM_GetNull()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3199,6 +3474,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetNull(JSVM_Env env,JSVM_Value* result)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -3207,6 +3483,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetNull(JSVM_Env env,JSVM_Value* result)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -3214,7 +3491,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetNull(JSVM_Env env,JSVM_Value* result)
 
 
 
-#### OH_JSVM_GetUndefined()
+### OH_JSVM_GetUndefined()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3230,6 +3508,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetUndefined(JSVM_Env env,JSVM_Value* result)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -3238,6 +3517,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetUndefined(JSVM_Env env,JSVM_Value* result)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -3245,7 +3525,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetUndefined(JSVM_Env env,JSVM_Value* result)
 
 
 
-#### OH_JSVM_CoerceToBool()
+### OH_JSVM_CoerceToBool()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3261,6 +3542,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CoerceToBool(JSVM_Env env,JSVM_Value value,JSVM_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -3270,6 +3552,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CoerceToBool(JSVM_Env env,JSVM_Value value,JSVM_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 |
@@ -3277,7 +3560,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CoerceToBool(JSVM_Env env,JSVM_Value value,JSVM_
 
 
 
-#### OH_JSVM_CoerceToNumber()
+### OH_JSVM_CoerceToNumber()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3293,6 +3577,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CoerceToNumber(JSVM_Env env,JSVM_Value value,JSV
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -3302,6 +3587,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CoerceToNumber(JSVM_Env env,JSVM_Value value,JSV
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_NUMBER_EXPECTED 如果传入的JavaScript值无法转换成Number。 |
@@ -3309,7 +3595,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CoerceToNumber(JSVM_Env env,JSVM_Value value,JSV
 
 
 
-#### OH_JSVM_CoerceToObject()
+### OH_JSVM_CoerceToObject()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3325,6 +3612,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CoerceToObject(JSVM_Env env,JSVM_Value value,JSV
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -3334,6 +3622,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CoerceToObject(JSVM_Env env,JSVM_Value value,JSV
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_OBJECT_EXPECTED 如果传入的JavaScript值无法转换成Object。 |
@@ -3341,7 +3630,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CoerceToObject(JSVM_Env env,JSVM_Value value,JSV
 
 
 
-#### OH_JSVM_CoerceToString()
+### OH_JSVM_CoerceToString()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3357,6 +3647,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CoerceToString(JSVM_Env env,JSVM_Value value,JSV
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -3366,6 +3657,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CoerceToString(JSVM_Env env,JSVM_Value value,JSV
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_STRING_EXPECTED 如果传入的JavaScript值无法转换成String。 |
@@ -3373,7 +3665,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CoerceToString(JSVM_Env env,JSVM_Value value,JSV
 
 
 
-#### OH_JSVM_Typeof()
+### OH_JSVM_Typeof()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3389,6 +3682,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_Typeof(JSVM_Env env,JSVM_Value value,JSVM_ValueT
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -3398,6 +3692,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_Typeof(JSVM_Env env,JSVM_Value value,JSVM_ValueT
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入的参数不合法。 |
@@ -3405,7 +3700,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_Typeof(JSVM_Env env,JSVM_Value value,JSVM_ValueT
 
 
 
-#### OH_JSVM_Instanceof()
+### OH_JSVM_Instanceof()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3421,6 +3717,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_Instanceof(JSVM_Env env,JSVM_Value object,JSVM_V
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -3431,6 +3728,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_Instanceof(JSVM_Env env,JSVM_Value object,JSVM_V
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_FUNCTION_EXPECTED 表示传入的参数不是Function类型。 JSVM_GENERIC_FAILURE 表示有未知的原因导致执行失败。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 |
@@ -3438,7 +3736,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_Instanceof(JSVM_Env env,JSVM_Value object,JSVM_V
 
 
 
-#### OH_JSVM_IsArray()
+### OH_JSVM_IsArray()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3454,6 +3753,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsArray(JSVM_Env env,JSVM_Value value,bool* resu
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -3463,6 +3763,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsArray(JSVM_Env env,JSVM_Value value,bool* resu
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -3470,7 +3771,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsArray(JSVM_Env env,JSVM_Value value,bool* resu
 
 
 
-#### OH_JSVM_IsArraybuffer()
+### OH_JSVM_IsArraybuffer()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3486,6 +3788,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsArraybuffer(JSVM_Env env,JSVM_Value value,bool
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -3495,6 +3798,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsArraybuffer(JSVM_Env env,JSVM_Value value,bool
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -3502,7 +3806,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsArraybuffer(JSVM_Env env,JSVM_Value value,bool
 
 
 
-#### OH_JSVM_IsDate()
+### OH_JSVM_IsDate()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3518,6 +3823,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsDate(JSVM_Env env,JSVM_Value value,bool* isDat
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -3527,6 +3833,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsDate(JSVM_Env env,JSVM_Value value,bool* isDat
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -3534,7 +3841,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsDate(JSVM_Env env,JSVM_Value value,bool* isDat
 
 
 
-#### OH_JSVM_IsTypedarray()
+### OH_JSVM_IsTypedarray()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3550,6 +3858,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsTypedarray(JSVM_Env env,JSVM_Value value,bool*
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -3559,6 +3868,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsTypedarray(JSVM_Env env,JSVM_Value value,bool*
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -3566,7 +3876,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsTypedarray(JSVM_Env env,JSVM_Value value,bool*
 
 
 
-#### OH_JSVM_IsDataview()
+### OH_JSVM_IsDataview()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3582,6 +3893,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsDataview(JSVM_Env env,JSVM_Value value,bool* r
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -3591,6 +3903,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsDataview(JSVM_Env env,JSVM_Value value,bool* r
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -3598,7 +3911,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsDataview(JSVM_Env env,JSVM_Value value,bool* r
 
 
 
-#### OH_JSVM_StrictEquals()
+### OH_JSVM_StrictEquals()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3614,6 +3928,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_StrictEquals(JSVM_Env env,JSVM_Value lhs,JSVM_Va
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -3624,6 +3939,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_StrictEquals(JSVM_Env env,JSVM_Value lhs,JSVM_Va
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 |
@@ -3631,7 +3947,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_StrictEquals(JSVM_Env env,JSVM_Value lhs,JSVM_Va
 
 
 
-#### OH_JSVM_Equals()
+### OH_JSVM_Equals()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3647,6 +3964,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_Equals(JSVM_Env env,JSVM_Value lhs,JSVM_Value rh
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -3657,6 +3975,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_Equals(JSVM_Env env,JSVM_Value lhs,JSVM_Value rh
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 |
@@ -3664,7 +3983,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_Equals(JSVM_Env env,JSVM_Value lhs,JSVM_Value rh
 
 
 
-#### OH_JSVM_DetachArraybuffer()
+### OH_JSVM_DetachArraybuffer()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3680,6 +4000,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_DetachArraybuffer(JSVM_Env env,JSVM_Value arrayb
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -3688,6 +4009,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_DetachArraybuffer(JSVM_Env env,JSVM_Value arrayb
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 如果JSVM_OK 表示执行成功。 JSVM_DETACHABLE_ARRAYBUFFER_EXPECTED 表示传入的参数不是可分离的ArrayBuffer。 |
@@ -3695,7 +4017,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_DetachArraybuffer(JSVM_Env env,JSVM_Value arrayb
 
 
 
-#### OH_JSVM_IsDetachedArraybuffer()
+### OH_JSVM_IsDetachedArraybuffer()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3711,6 +4034,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsDetachedArraybuffer(JSVM_Env env,JSVM_Value va
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -3720,6 +4044,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsDetachedArraybuffer(JSVM_Env env,JSVM_Value va
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -3727,7 +4052,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsDetachedArraybuffer(JSVM_Env env,JSVM_Value va
 
 
 
-#### OH_JSVM_GetPropertyNames()
+### OH_JSVM_GetPropertyNames()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3743,6 +4069,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetPropertyNames(JSVM_Env env,JSVM_Value object,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -3752,6 +4079,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetPropertyNames(JSVM_Env env,JSVM_Value object,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入的参数不合法。 JSVM_GENERIC_FAILURE 表示有未知的原因导致执行失败。 |
@@ -3759,7 +4087,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetPropertyNames(JSVM_Env env,JSVM_Value object,
 
 
 
-#### OH_JSVM_GetAllPropertyNames()
+### OH_JSVM_GetAllPropertyNames()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3775,6 +4104,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetAllPropertyNames(JSVM_Env env,JSVM_Value obje
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -3787,6 +4117,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetAllPropertyNames(JSVM_Env env,JSVM_Value obje
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入的参数不合法。 JSVM_GENERIC_FAILURE 表示有未知的原因导致执行失败。 |
@@ -3794,7 +4125,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetAllPropertyNames(JSVM_Env env,JSVM_Value obje
 
 
 
-#### OH_JSVM_SetProperty()
+### OH_JSVM_SetProperty()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3810,6 +4142,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_SetProperty(JSVM_Env env,JSVM_Value object,JSVM_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -3820,6 +4153,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_SetProperty(JSVM_Env env,JSVM_Value object,JSVM_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_GENERIC_FAILURE 表示有未知的原因导致执行失败。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 |
@@ -3827,7 +4161,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_SetProperty(JSVM_Env env,JSVM_Value object,JSVM_
 
 
 
-#### OH_JSVM_GetProperty()
+### OH_JSVM_GetProperty()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3843,6 +4178,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetProperty(JSVM_Env env,JSVM_Value object,JSVM_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -3853,6 +4189,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetProperty(JSVM_Env env,JSVM_Value object,JSVM_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_GENERIC_FAILURE 表示有未知的原因导致执行失败。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 |
@@ -3860,7 +4197,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetProperty(JSVM_Env env,JSVM_Value object,JSVM_
 
 
 
-#### OH_JSVM_HasProperty()
+### OH_JSVM_HasProperty()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3876,6 +4214,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_HasProperty(JSVM_Env env,JSVM_Value object,JSVM_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -3886,6 +4225,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_HasProperty(JSVM_Env env,JSVM_Value object,JSVM_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_GENERIC_FAILURE 表示有未知的原因导致执行失败。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 |
@@ -3893,7 +4233,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_HasProperty(JSVM_Env env,JSVM_Value object,JSVM_
 
 
 
-#### OH_JSVM_DeleteProperty()
+### OH_JSVM_DeleteProperty()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3909,6 +4250,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_DeleteProperty(JSVM_Env env,JSVM_Value object,JS
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -3919,6 +4261,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_DeleteProperty(JSVM_Env env,JSVM_Value object,JS
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_GENERIC_FAILURE 表示有未知的原因导致执行失败。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 |
@@ -3926,7 +4269,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_DeleteProperty(JSVM_Env env,JSVM_Value object,JS
 
 
 
-#### OH_JSVM_HasOwnProperty()
+### OH_JSVM_HasOwnProperty()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3942,6 +4286,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_HasOwnProperty(JSVM_Env env,JSVM_Value object,JS
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -3952,6 +4297,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_HasOwnProperty(JSVM_Env env,JSVM_Value object,JS
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_GENERIC_FAILURE 表示有未知的原因导致执行失败。 JSVM_NAME_EXPECTED 表示期望传入名字不合法。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 |
@@ -3959,7 +4305,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_HasOwnProperty(JSVM_Env env,JSVM_Value object,JS
 
 
 
-#### OH_JSVM_SetNamedProperty()
+### OH_JSVM_SetNamedProperty()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3975,6 +4322,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_SetNamedProperty(JSVM_Env env,JSVM_Value object,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -3985,6 +4333,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_SetNamedProperty(JSVM_Env env,JSVM_Value object,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_GENERIC_FAILURE 表示有未知的原因导致执行失败。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 |
@@ -3992,7 +4341,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_SetNamedProperty(JSVM_Env env,JSVM_Value object,
 
 
 
-#### OH_JSVM_GetNamedProperty()
+### OH_JSVM_GetNamedProperty()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4008,6 +4358,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetNamedProperty(JSVM_Env env,JSVM_Value object,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -4018,6 +4369,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetNamedProperty(JSVM_Env env,JSVM_Value object,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_GENERIC_FAILURE 表示有未知的原因导致执行失败。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 |
@@ -4025,7 +4377,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetNamedProperty(JSVM_Env env,JSVM_Value object,
 
 
 
-#### OH_JSVM_HasNamedProperty()
+### OH_JSVM_HasNamedProperty()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4041,6 +4394,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_HasNamedProperty(JSVM_Env env,JSVM_Value object,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -4051,6 +4405,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_HasNamedProperty(JSVM_Env env,JSVM_Value object,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_GENERIC_FAILURE 表示有未知的原因导致执行失败。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 |
@@ -4058,7 +4413,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_HasNamedProperty(JSVM_Env env,JSVM_Value object,
 
 
 
-#### OH_JSVM_SetElement()
+### OH_JSVM_SetElement()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4074,6 +4430,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_SetElement(JSVM_Env env,JSVM_Value object,uint32
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -4084,6 +4441,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_SetElement(JSVM_Env env,JSVM_Value object,uint32
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_GENERIC_FAILURE 表示有未知的原因导致执行失败。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 |
@@ -4091,7 +4449,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_SetElement(JSVM_Env env,JSVM_Value object,uint32
 
 
 
-#### OH_JSVM_GetElement()
+### OH_JSVM_GetElement()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4107,6 +4466,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetElement(JSVM_Env env,JSVM_Value object,uint32
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -4117,6 +4477,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetElement(JSVM_Env env,JSVM_Value object,uint32
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_GENERIC_FAILURE 表示有未知的原因导致执行失败。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 |
@@ -4124,7 +4485,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetElement(JSVM_Env env,JSVM_Value object,uint32
 
 
 
-#### OH_JSVM_HasElement()
+### OH_JSVM_HasElement()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4140,6 +4502,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_HasElement(JSVM_Env env,JSVM_Value object,uint32
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -4150,6 +4513,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_HasElement(JSVM_Env env,JSVM_Value object,uint32
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_GENERIC_FAILURE 表示有未知的原因导致执行失败。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 |
@@ -4157,7 +4521,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_HasElement(JSVM_Env env,JSVM_Value object,uint32
 
 
 
-#### OH_JSVM_DeleteElement()
+### OH_JSVM_DeleteElement()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4173,6 +4538,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_DeleteElement(JSVM_Env env,JSVM_Value object,uin
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -4183,6 +4549,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_DeleteElement(JSVM_Env env,JSVM_Value object,uin
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_GENERIC_FAILURE 表示有未知的原因导致执行失败。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 |
@@ -4190,7 +4557,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_DeleteElement(JSVM_Env env,JSVM_Value object,uin
 
 
 
-#### OH_JSVM_DefineProperties()
+### OH_JSVM_DefineProperties()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4206,6 +4574,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_DefineProperties(JSVM_Env env,JSVM_Value object,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -4216,6 +4585,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_DefineProperties(JSVM_Env env,JSVM_Value object,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入的参数不合法。 JSVM_GENERIC_FAILURE 表示有未知的原因导致执行失败。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 |
@@ -4223,7 +4593,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_DefineProperties(JSVM_Env env,JSVM_Value object,
 
 
 
-#### OH_JSVM_ObjectFreeze()
+### OH_JSVM_ObjectFreeze()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4239,6 +4610,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ObjectFreeze(JSVM_Env env,JSVM_Value object)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -4247,6 +4619,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ObjectFreeze(JSVM_Env env,JSVM_Value object)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_GENERIC_FAILURE 表示有未知的原因导致执行失败。 |
@@ -4254,7 +4627,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ObjectFreeze(JSVM_Env env,JSVM_Value object)
 
 
 
-#### OH_JSVM_ObjectSeal()
+### OH_JSVM_ObjectSeal()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4270,6 +4644,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ObjectSeal(JSVM_Env env,JSVM_Value object)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -4278,6 +4653,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ObjectSeal(JSVM_Env env,JSVM_Value object)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_GENERIC_FAILURE 表示有未知的原因导致执行失败。 |
@@ -4285,7 +4661,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ObjectSeal(JSVM_Env env,JSVM_Value object)
 
 
 
-#### OH_JSVM_CallFunction()
+### OH_JSVM_CallFunction()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4301,6 +4678,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CallFunction(JSVM_Env env,JSVM_Value recv,JSVM_V
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -4313,6 +4691,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CallFunction(JSVM_Env env,JSVM_Value recv,JSVM_V
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 JSVM_GENERIC_FAILURE 表示有未知的原因导致执行失败。 |
@@ -4320,7 +4699,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CallFunction(JSVM_Env env,JSVM_Value recv,JSVM_V
 
 
 
-#### OH_JSVM_CreateFunction()
+### OH_JSVM_CreateFunction()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4336,6 +4716,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateFunction(JSVM_Env env,const char* utf8name
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -4347,6 +4728,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateFunction(JSVM_Env env,const char* utf8name
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 |
@@ -4354,7 +4736,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateFunction(JSVM_Env env,const char* utf8name
 
 
 
-#### OH_JSVM_GetCbInfo()
+### OH_JSVM_GetCbInfo()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4370,6 +4753,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetCbInfo(JSVM_Env env,JSVM_CallbackInfo cbinfo,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -4382,6 +4766,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetCbInfo(JSVM_Env env,JSVM_CallbackInfo cbinfo,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -4389,7 +4774,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetCbInfo(JSVM_Env env,JSVM_CallbackInfo cbinfo,
 
 
 
-#### OH_JSVM_GetNewTarget()
+### OH_JSVM_GetNewTarget()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4405,6 +4791,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetNewTarget(JSVM_Env env,JSVM_CallbackInfo cbin
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -4414,6 +4801,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetNewTarget(JSVM_Env env,JSVM_CallbackInfo cbin
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -4421,7 +4809,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetNewTarget(JSVM_Env env,JSVM_CallbackInfo cbin
 
 
 
-#### OH_JSVM_NewInstance()
+### OH_JSVM_NewInstance()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4437,6 +4826,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_NewInstance(JSVM_Env env,JSVM_Value constructor,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -4448,6 +4838,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_NewInstance(JSVM_Env env,JSVM_Value constructor,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 |
@@ -4455,7 +4846,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_NewInstance(JSVM_Env env,JSVM_Value constructor,
 
 
 
-#### OH_JSVM_DefineClass()
+### OH_JSVM_DefineClass()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4471,6 +4863,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_DefineClass(JSVM_Env env,const char* utf8name,si
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -4484,6 +4877,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_DefineClass(JSVM_Env env,const char* utf8name,si
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 |
@@ -4491,7 +4885,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_DefineClass(JSVM_Env env,const char* utf8name,si
 
 
 
-#### OH_JSVM_Wrap()
+### OH_JSVM_Wrap()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4507,6 +4902,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_Wrap(JSVM_Env env,JSVM_Value jsObject,void* nati
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -4519,6 +4915,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_Wrap(JSVM_Env env,JSVM_Value jsObject,void* nati
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入的参数不合法。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 |
@@ -4526,7 +4923,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_Wrap(JSVM_Env env,JSVM_Value jsObject,void* nati
 
 
 
-#### OH_JSVM_Unwrap()
+### OH_JSVM_Unwrap()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4542,6 +4940,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_Unwrap(JSVM_Env env,JSVM_Value jsObject,void** r
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -4551,6 +4950,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_Unwrap(JSVM_Env env,JSVM_Value jsObject,void** r
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入的参数不合法。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 |
@@ -4558,7 +4958,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_Unwrap(JSVM_Env env,JSVM_Value jsObject,void** r
 
 
 
-#### OH_JSVM_RemoveWrap()
+### OH_JSVM_RemoveWrap()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4574,6 +4975,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_RemoveWrap(JSVM_Env env,JSVM_Value jsObject,void
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -4583,6 +4985,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_RemoveWrap(JSVM_Env env,JSVM_Value jsObject,void
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入的参数不合法。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 |
@@ -4590,7 +4993,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_RemoveWrap(JSVM_Env env,JSVM_Value jsObject,void
 
 
 
-#### OH_JSVM_TypeTagObject()
+### OH_JSVM_TypeTagObject()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4606,6 +5010,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_TypeTagObject(JSVM_Env env,JSVM_Value value,cons
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -4615,6 +5020,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_TypeTagObject(JSVM_Env env,JSVM_Value value,cons
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入的参数不合法。 JSVM_GENERIC_FAILURE 表示有未知的原因导致执行失败。 |
@@ -4622,7 +5028,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_TypeTagObject(JSVM_Env env,JSVM_Value value,cons
 
 
 
-#### OH_JSVM_CheckObjectTypeTag()
+### OH_JSVM_CheckObjectTypeTag()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4638,6 +5045,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CheckObjectTypeTag(JSVM_Env env,JSVM_Value value
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -4648,6 +5056,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CheckObjectTypeTag(JSVM_Env env,JSVM_Value value
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_GENERIC_FAILURE 表示有未知的原因导致执行失败。 |
@@ -4655,7 +5064,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CheckObjectTypeTag(JSVM_Env env,JSVM_Value value
 
 
 
-#### OH_JSVM_AddFinalizer()
+### OH_JSVM_AddFinalizer()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4671,6 +5081,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_AddFinalizer(JSVM_Env env,JSVM_Value jsObject,vo
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -4683,6 +5094,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_AddFinalizer(JSVM_Env env,JSVM_Value jsObject,vo
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入的参数不合法。 |
@@ -4690,7 +5102,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_AddFinalizer(JSVM_Env env,JSVM_Value jsObject,vo
 
 
 
-#### OH_JSVM_GetVersion()
+### OH_JSVM_GetVersion()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4706,6 +5119,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetVersion(JSVM_Env env,uint32_t* result)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -4714,6 +5128,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetVersion(JSVM_Env env,uint32_t* result)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -4721,7 +5136,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetVersion(JSVM_Env env,uint32_t* result)
 
 
 
-#### OH_JSVM_GetVMInfo()
+### OH_JSVM_GetVMInfo()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4737,12 +5153,14 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetVMInfo(JSVM_VMInfo* result)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_VMInfo* result | 虚拟机的信息。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4751,7 +5169,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetVMInfo(JSVM_VMInfo* result)
 
 
 
-#### OH_JSVM_AdjustExternalMemory()
+### OH_JSVM_AdjustExternalMemory()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4767,6 +5186,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_AdjustExternalMemory(JSVM_Env env,int64_t change
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -4776,6 +5196,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_AdjustExternalMemory(JSVM_Env env,int64_t change
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -4783,7 +5204,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_AdjustExternalMemory(JSVM_Env env,int64_t change
 
 
 
-#### OH_JSVM_MemoryPressureNotification()
+### OH_JSVM_MemoryPressureNotification()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4799,6 +5221,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_MemoryPressureNotification(JSVM_Env env,JSVM_Mem
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -4807,6 +5230,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_MemoryPressureNotification(JSVM_Env env,JSVM_Mem
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -4814,7 +5238,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_MemoryPressureNotification(JSVM_Env env,JSVM_Mem
 
 
 
-#### OH_JSVM_CreatePromise()
+### OH_JSVM_CreatePromise()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4830,6 +5255,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreatePromise(JSVM_Env env,JSVM_Deferred* deferr
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -4839,6 +5265,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreatePromise(JSVM_Env env,JSVM_Deferred* deferr
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 JSVM_GENERIC_FAILURE 表示有未知的原因导致执行失败。 |
@@ -4846,7 +5273,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreatePromise(JSVM_Env env,JSVM_Deferred* deferr
 
 
 
-#### OH_JSVM_ResolveDeferred()
+### OH_JSVM_ResolveDeferred()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4862,6 +5290,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ResolveDeferred(JSVM_Env env,JSVM_Deferred defer
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -4871,6 +5300,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ResolveDeferred(JSVM_Env env,JSVM_Deferred defer
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_GENERIC_FAILURE 表示有未知的原因导致执行失败。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 |
@@ -4878,7 +5308,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ResolveDeferred(JSVM_Env env,JSVM_Deferred defer
 
 
 
-#### OH_JSVM_RejectDeferred()
+### OH_JSVM_RejectDeferred()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4894,6 +5325,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_RejectDeferred(JSVM_Env env,JSVM_Deferred deferr
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -4903,6 +5335,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_RejectDeferred(JSVM_Env env,JSVM_Deferred deferr
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_GENERIC_FAILURE 表示有未知的原因导致执行失败。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 |
@@ -4910,7 +5343,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_RejectDeferred(JSVM_Env env,JSVM_Deferred deferr
 
 
 
-#### OH_JSVM_IsPromise()
+### OH_JSVM_IsPromise()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4926,6 +5360,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsPromise(JSVM_Env env,JSVM_Value value,bool* is
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -4935,6 +5370,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsPromise(JSVM_Env env,JSVM_Value value,bool* is
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -4942,7 +5378,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsPromise(JSVM_Env env,JSVM_Value value,bool* is
 
 
 
-#### OH_JSVM_PromiseRegisterHandler()
+### OH_JSVM_PromiseRegisterHandler()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4958,6 +5395,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_PromiseRegisterHandler(JSVM_Env env,JSVM_Value p
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用 JSVM-API 的环境。 |
@@ -4969,6 +5407,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_PromiseRegisterHandler(JSVM_Env env,JSVM_Value p
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 如果 env 或 promise 为空，或 onFulfilled 和 onRejected 同时为空。 JSVM_INVALID_TYPE 如果 promise 非 JS 的 Promise 类型，或 onFulfilled、onRejected 非 JS 的 Function 类型。 JSVM_PENDING_EXCEPTION 如果存在 JS 异常待处理。 JSVM_GENERIC_FAILURE 如果 API 执行错误。 |
@@ -4976,7 +5415,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_PromiseRegisterHandler(JSVM_Env env,JSVM_Value p
 
 
 
-#### OH_JSVM_JsonParse()
+### OH_JSVM_JsonParse()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4992,6 +5432,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_JsonParse(JSVM_Env env,JSVM_Value jsonString,JSV
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -5001,6 +5442,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_JsonParse(JSVM_Env env,JSVM_Value jsonString,JSV
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_STRING_EXPECTED 表示传入的参数不是string类型。 JSVM_GENERIC_FAILURE 表示有未知的原因导致执行失败。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 |
@@ -5008,7 +5450,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_JsonParse(JSVM_Env env,JSVM_Value jsonString,JSV
 
 
 
-#### OH_JSVM_JsonStringify()
+### OH_JSVM_JsonStringify()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5024,6 +5467,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_JsonStringify(JSVM_Env env,JSVM_Value jsonObject
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -5033,6 +5477,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_JsonStringify(JSVM_Env env,JSVM_Value jsonObject
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_GENERIC_FAILURE 表示有未知的原因导致执行失败。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 |
@@ -5040,7 +5485,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_JsonStringify(JSVM_Env env,JSVM_Value jsonObject
 
 
 
-#### OH_JSVM_CreateSnapshot()
+### OH_JSVM_CreateSnapshot()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5056,6 +5502,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateSnapshot(JSVM_VM vm,size_t contextCount,co
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_VM vm | 目标环境，API接口将在该环境下调用。 |
@@ -5067,6 +5514,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateSnapshot(JSVM_VM vm,size_t contextCount,co
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_GENERIC_FAILURE 表示有未知的原因导致执行失败。 |
@@ -5074,7 +5522,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateSnapshot(JSVM_VM vm,size_t contextCount,co
 
 
 
-#### OH_JSVM_GetHeapStatistics()
+### OH_JSVM_GetHeapStatistics()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5090,6 +5539,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetHeapStatistics(JSVM_VM vm,JSVM_HeapStatistics
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_VM vm | 返回堆统计信息的虚拟机。 |
@@ -5098,6 +5548,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetHeapStatistics(JSVM_VM vm,JSVM_HeapStatistics
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -5105,7 +5556,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetHeapStatistics(JSVM_VM vm,JSVM_HeapStatistics
 
 
 
-#### OH_JSVM_StartCpuProfiler()
+### OH_JSVM_StartCpuProfiler()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5121,6 +5573,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_StartCpuProfiler(JSVM_VM vm,JSVM_CpuProfiler* re
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_VM vm | 启动CPU profiler的虚拟机。 |
@@ -5129,6 +5582,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_StartCpuProfiler(JSVM_VM vm,JSVM_CpuProfiler* re
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -5136,7 +5590,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_StartCpuProfiler(JSVM_VM vm,JSVM_CpuProfiler* re
 
 
 
-#### OH_JSVM_StopCpuProfiler()
+### OH_JSVM_StopCpuProfiler()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5152,6 +5607,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_StopCpuProfiler(JSVM_VM vm,JSVM_CpuProfiler prof
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_VM vm | 启动CPU profiler的虚拟机。 |
@@ -5162,6 +5618,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_StopCpuProfiler(JSVM_VM vm,JSVM_CpuProfiler prof
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -5169,7 +5626,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_StopCpuProfiler(JSVM_VM vm,JSVM_CpuProfiler prof
 
 
 
-#### OH_JSVM_TakeHeapSnapshot()
+### OH_JSVM_TakeHeapSnapshot()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5185,6 +5643,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_TakeHeapSnapshot(JSVM_VM vm,JSVM_OutputStream st
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_VM vm | 将被获取堆快照的虚拟机。 |
@@ -5194,6 +5653,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_TakeHeapSnapshot(JSVM_VM vm,JSVM_OutputStream st
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -5201,7 +5661,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_TakeHeapSnapshot(JSVM_VM vm,JSVM_OutputStream st
 
 
 
-#### OH_JSVM_TakeRawHeapSnapshot()
+### OH_JSVM_TakeRawHeapSnapshot()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5217,6 +5678,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_TakeRawHeapSnapshot(JSVM_VM vm, JSVM_OutputStrea
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_VM vm | 将被获取堆快照的虚拟机。 |
@@ -5226,6 +5688,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_TakeRawHeapSnapshot(JSVM_VM vm, JSVM_OutputStrea
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 如果vm或stream为NULL，返回JSVM_INVALID_ARG。 其他情况返回JSVM_OK。 |
@@ -5233,7 +5696,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_TakeRawHeapSnapshot(JSVM_VM vm, JSVM_OutputStrea
 
 
 
-#### OH_JSVM_SetHeapThresholdCallback()
+### OH_JSVM_SetHeapThresholdCallback()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5249,6 +5713,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_SetHeapThresholdCallback(JSVM_VM vm, uint64_t th
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_VM vm | 将被监控堆内存使用量的虚拟机。 |
@@ -5259,6 +5724,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_SetHeapThresholdCallback(JSVM_VM vm, uint64_t th
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 如果函数执行成功，返回JSVM_OK。 如果vm或callback为NULL，或threshold为零或超过heapSizeLimit， 或虚拟机已注册了堆内存阈值回调，返回JSVM_INVALID_ARG。 |
@@ -5266,7 +5732,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_SetHeapThresholdCallback(JSVM_VM vm, uint64_t th
 
 
 
-#### OH_JSVM_ClearHeapThresholdCallback()
+### OH_JSVM_ClearHeapThresholdCallback()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5282,6 +5749,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ClearHeapThresholdCallback(JSVM_VM vm, uint64_t 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_VM vm | 将被清除堆内存阈值回调的虚拟机。 |
@@ -5292,6 +5760,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ClearHeapThresholdCallback(JSVM_VM vm, uint64_t 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 如果函数执行成功，返回JSVM_OK。 如果vm或callback为NULL，或(threshold, callback, data) 与注册的回调不匹配，返回JSVM_INVALID_ARG。 |
@@ -5299,7 +5768,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ClearHeapThresholdCallback(JSVM_VM vm, uint64_t 
 
 
 
-#### OH_JSVM_OpenInspector()
+### OH_JSVM_OpenInspector()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5315,6 +5785,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_OpenInspector(JSVM_Env env,const char* host,uint
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -5324,6 +5795,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_OpenInspector(JSVM_Env env,const char* host,uint
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 JSVM_GENERIC_FAILURE 表示有未知的原因导致执行失败。 |
@@ -5331,7 +5803,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_OpenInspector(JSVM_Env env,const char* host,uint
 
 
 
-#### OH_JSVM_CloseInspector()
+### OH_JSVM_CloseInspector()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5347,12 +5820,14 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CloseInspector(JSVM_Env env)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5361,7 +5836,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CloseInspector(JSVM_Env env)
 
 
 
-#### OH_JSVM_WaitForDebugger()
+### OH_JSVM_WaitForDebugger()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5377,6 +5853,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_WaitForDebugger(JSVM_Env env,bool breakNextLine)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -5385,6 +5862,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_WaitForDebugger(JSVM_Env env,bool breakNextLine)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 JSVM_GENERIC_FAILURE 表示有未知的原因导致执行失败。 |
@@ -5392,7 +5870,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_WaitForDebugger(JSVM_Env env,bool breakNextLine)
 
 
 
-#### OH_JSVM_DefineClassWithPropertyHandler()
+### OH_JSVM_DefineClassWithPropertyHandler()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5407,6 +5886,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_DefineClassWithPropertyHandler(JSVM_Env env,cons
 **起始版本：** 12
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -5423,6 +5903,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_DefineClassWithPropertyHandler(JSVM_Env env,cons
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_PENDING_EXCEPTION 表示执行的过程中产生了JS异常。 JSVM_GENERIC_FAILURE 表示有未知的原因导致执行失败。 |
@@ -5430,7 +5911,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_DefineClassWithPropertyHandler(JSVM_Env env,cons
 
 
 
-#### OH_JSVM_IsLocked()
+### OH_JSVM_IsLocked()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5446,6 +5928,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsLocked(JSVM_Env env, bool* isLocked)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用该API的环境。 |
@@ -5454,6 +5937,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsLocked(JSVM_Env env, bool* isLocked)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码JSVM_Status。 JSVM_OK表示执行成功。 |
@@ -5461,7 +5945,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsLocked(JSVM_Env env, bool* isLocked)
 
 
 
-#### OH_JSVM_AcquireLock()
+### OH_JSVM_AcquireLock()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5477,12 +5962,14 @@ JSVM_EXTERN JSVM_Status OH_JSVM_AcquireLock(JSVM_Env env)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用该API的环境。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5491,7 +5978,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_AcquireLock(JSVM_Env env)
 
 
 
-#### OH_JSVM_ReleaseLock()
+### OH_JSVM_ReleaseLock()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5507,12 +5995,14 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ReleaseLock(JSVM_Env env)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用该API的环境。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5521,7 +6011,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ReleaseLock(JSVM_Env env)
 
 
 
-#### OH_JSVM_IsUndefined()
+### OH_JSVM_IsUndefined()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5537,6 +6028,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsUndefined(JSVM_Env env,JSVM_Value value,bool* 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -5546,6 +6038,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsUndefined(JSVM_Env env,JSVM_Value value,bool* 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功，这个API不会触发任何异常。 |
@@ -5553,7 +6046,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsUndefined(JSVM_Env env,JSVM_Value value,bool* 
 
 
 
-#### OH_JSVM_IsNull()
+### OH_JSVM_IsNull()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5569,6 +6063,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsNull(JSVM_Env env,JSVM_Value value,bool* isNul
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -5578,6 +6073,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsNull(JSVM_Env env,JSVM_Value value,bool* isNul
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功，这个API不会触发任何异常。 |
@@ -5585,7 +6081,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsNull(JSVM_Env env,JSVM_Value value,bool* isNul
 
 
 
-#### OH_JSVM_IsNullOrUndefined()
+### OH_JSVM_IsNullOrUndefined()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5601,6 +6098,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsNullOrUndefined(JSVM_Env env,JSVM_Value value,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -5610,6 +6108,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsNullOrUndefined(JSVM_Env env,JSVM_Value value,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功，这个API不会触发任何异常。 |
@@ -5617,7 +6116,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsNullOrUndefined(JSVM_Env env,JSVM_Value value,
 
 
 
-#### OH_JSVM_IsBoolean()
+### OH_JSVM_IsBoolean()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5633,6 +6133,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsBoolean(JSVM_Env env,JSVM_Value value,bool* is
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -5642,6 +6143,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsBoolean(JSVM_Env env,JSVM_Value value,bool* is
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功，这个API不会触发任何异常。 |
@@ -5649,7 +6151,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsBoolean(JSVM_Env env,JSVM_Value value,bool* is
 
 
 
-#### OH_JSVM_IsNumber()
+### OH_JSVM_IsNumber()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5665,6 +6168,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsNumber(JSVM_Env env,JSVM_Value value,bool* isN
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -5674,6 +6178,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsNumber(JSVM_Env env,JSVM_Value value,bool* isN
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功，这个API不会触发任何异常。 |
@@ -5681,7 +6186,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsNumber(JSVM_Env env,JSVM_Value value,bool* isN
 
 
 
-#### OH_JSVM_IsString()
+### OH_JSVM_IsString()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5697,6 +6203,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsString(JSVM_Env env,JSVM_Value value,bool* isS
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -5706,6 +6213,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsString(JSVM_Env env,JSVM_Value value,bool* isS
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功，这个API不会触发任何异常。 |
@@ -5713,7 +6221,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsString(JSVM_Env env,JSVM_Value value,bool* isS
 
 
 
-#### OH_JSVM_IsSymbol()
+### OH_JSVM_IsSymbol()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5729,6 +6238,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsSymbol(JSVM_Env env,JSVM_Value value,bool* isS
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -5738,6 +6248,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsSymbol(JSVM_Env env,JSVM_Value value,bool* isS
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功，这个API不会触发任何异常。 |
@@ -5745,7 +6256,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsSymbol(JSVM_Env env,JSVM_Value value,bool* isS
 
 
 
-#### OH_JSVM_IsFunction()
+### OH_JSVM_IsFunction()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5761,6 +6273,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsFunction(JSVM_Env env,JSVM_Value value,bool* i
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -5770,6 +6283,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsFunction(JSVM_Env env,JSVM_Value value,bool* i
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功，这个API不会触发任何异常。 |
@@ -5777,7 +6291,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsFunction(JSVM_Env env,JSVM_Value value,bool* i
 
 
 
-#### OH_JSVM_IsObject()
+### OH_JSVM_IsObject()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5793,6 +6308,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsObject(JSVM_Env env,JSVM_Value value,bool* isO
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -5802,6 +6318,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsObject(JSVM_Env env,JSVM_Value value,bool* isO
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功，这个API不会触发任何异常。 |
@@ -5809,7 +6326,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsObject(JSVM_Env env,JSVM_Value value,bool* isO
 
 
 
-#### OH_JSVM_IsBigInt()
+### OH_JSVM_IsBigInt()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5825,6 +6343,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsBigInt(JSVM_Env env,JSVM_Value value,bool* isB
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -5834,6 +6353,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsBigInt(JSVM_Env env,JSVM_Value value,bool* isB
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功，这个API不会触发任何异常。 |
@@ -5841,7 +6361,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsBigInt(JSVM_Env env,JSVM_Value value,bool* isB
 
 
 
-#### OH_JSVM_CreateMap()
+### OH_JSVM_CreateMap()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5857,6 +6378,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateMap(JSVM_Env env, JSVM_Value* result)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -5865,14 +6387,16 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateMap(JSVM_Env env, JSVM_Value* result)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| JSVM_Status JSVM_CDECL | 返回执行状态码JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示输入参数不合法。 |
+| JSVM_EXTERN JSVM_Status | 返回执行状态码JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示输入参数不合法。 |
 
 
 
 
-#### OH_JSVM_IsMap()
+### OH_JSVM_IsMap()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5888,6 +6412,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsMap(JSVM_Env env,JSVM_Value value,bool* isMap)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -5897,14 +6422,16 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsMap(JSVM_Env env,JSVM_Value value,bool* isMap)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| JSVM_Status JSVM_CDECL | 返回执行状态码JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示输入参数不合法。 |
+| JSVM_EXTERN JSVM_Status | 返回执行状态码JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示输入参数不合法。 |
 
 
 
 
-#### OH_JSVM_IsConstructor()
+### OH_JSVM_IsConstructor()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5920,6 +6447,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsConstructor(JSVM_Env env,JSVM_Value value,bool
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -5929,14 +6457,16 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsConstructor(JSVM_Env env,JSVM_Value value,bool
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| JSVM_Status JSVM_CDECL | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示输入参数不合法。 |
+| JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示输入参数不合法。 |
 
 
 
 
-#### OH_JSVM_CreateRegExp()
+### OH_JSVM_CreateRegExp()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5952,6 +6482,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateRegExp(JSVM_Env env,JSVM_Value value,JSVM_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -5962,14 +6493,16 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateRegExp(JSVM_Env env,JSVM_Value value,JSVM_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| JSVM_Status JSVM_CDECL | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示输入参数不合法。 JSVM_PENDING_EXCEPTION 表示API在运行时抛出异常。 |
+| JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示输入参数不合法。 JSVM_PENDING_EXCEPTION 表示API在运行时抛出异常。 |
 
 
 
 
-#### OH_JSVM_ObjectGetPrototypeOf()
+### OH_JSVM_ObjectGetPrototypeOf()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5985,6 +6518,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ObjectGetPrototypeOf(JSVM_Env env,JSVM_Value obj
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -5994,6 +6528,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ObjectGetPrototypeOf(JSVM_Env env,JSVM_Value obj
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示输入参数不合法。 JSVM_PENDING_EXCEPTION 表示API在运行时抛出异常。 |
@@ -6001,7 +6536,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ObjectGetPrototypeOf(JSVM_Env env,JSVM_Value obj
 
 
 
-#### OH_JSVM_ObjectSetPrototypeOf()
+### OH_JSVM_ObjectSetPrototypeOf()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6017,6 +6553,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ObjectSetPrototypeOf(JSVM_Env env,JSVM_Value obj
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -6026,6 +6563,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ObjectSetPrototypeOf(JSVM_Env env,JSVM_Value obj
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示输入参数不合法。 JSVM_GENERIC_FAILURE 表示设置原型失败。如循环设置原型时，会触发该失败。 JSVM_PENDING_EXCEPTION 表示API在运行时抛出异常。 |
@@ -6033,7 +6571,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ObjectSetPrototypeOf(JSVM_Env env,JSVM_Value obj
 
 
 
-#### OH_JSVM_CreateSet()
+### OH_JSVM_CreateSet()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6049,6 +6588,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateSet(JSVM_Env env,JSVM_Value* result)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -6057,6 +6597,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateSet(JSVM_Env env,JSVM_Value* result)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示输入参数不合法。 |
@@ -6064,7 +6605,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateSet(JSVM_Env env,JSVM_Value* result)
 
 
 
-#### OH_JSVM_IsSet()
+### OH_JSVM_IsSet()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6080,6 +6622,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsSet(JSVM_Env env,JSVM_Value value,bool* isSet)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -6089,6 +6632,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsSet(JSVM_Env env,JSVM_Value value,bool* isSet)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示输入参数不合法。 |
@@ -6096,7 +6640,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsSet(JSVM_Env env,JSVM_Value value,bool* isSet)
 
 
 
-#### OH_JSVM_CoerceToBigInt()
+### OH_JSVM_CoerceToBigInt()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6112,6 +6657,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CoerceToBigInt(JSVM_Env env,JSVM_Value value,JSV
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用该JSVM-API的环境。 |
@@ -6121,6 +6667,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CoerceToBigInt(JSVM_Env env,JSVM_Value value,JSV
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_BIGINT_EXPECTED 如果传入的JavaScript值无法转换成BigInt。 |
@@ -6128,7 +6675,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CoerceToBigInt(JSVM_Env env,JSVM_Value value,JSV
 
 
 
-#### OH_JSVM_IsRegExp()
+### OH_JSVM_IsRegExp()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6144,6 +6692,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsRegExp(JSVM_Env env,JSVM_Value value,bool* res
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -6153,6 +6702,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsRegExp(JSVM_Env env,JSVM_Value value,bool* res
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -6160,7 +6710,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsRegExp(JSVM_Env env,JSVM_Value value,bool* res
 
 
 
-#### OH_JSVM_CreateFunctionWithScript()
+### OH_JSVM_CreateFunctionWithScript()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6176,6 +6727,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateFunctionWithScript(JSVM_Env env,const char
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -6189,6 +6741,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateFunctionWithScript(JSVM_Env env,const char
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_GENERIC_FAILURE 表示输入的JavaScript无法编译成功。 |
@@ -6196,7 +6749,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateFunctionWithScript(JSVM_Env env,const char
 
 
 
-#### OH_JSVM_PumpMessageLoop()
+### OH_JSVM_PumpMessageLoop()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6212,6 +6766,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_PumpMessageLoop(JSVM_VM vm,bool* result)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_VM vm | 启动任务队列的虚拟机实例。 |
@@ -6220,6 +6775,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_PumpMessageLoop(JSVM_VM vm,bool* result)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回JSVM函数结果代码。 JSVM_OK 表示执行成功。 |
@@ -6227,7 +6783,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_PumpMessageLoop(JSVM_VM vm,bool* result)
 
 
 
-#### OH_JSVM_PerformMicrotaskCheckpoint()
+### OH_JSVM_PerformMicrotaskCheckpoint()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6243,12 +6800,14 @@ JSVM_EXTERN JSVM_Status OH_JSVM_PerformMicrotaskCheckpoint(JSVM_VM vm)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_VM vm | 要检查微任务的虚拟机实例。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6257,7 +6816,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_PerformMicrotaskCheckpoint(JSVM_VM vm)
 
 
 
-#### OH_JSVM_IsCallable()
+### OH_JSVM_IsCallable()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6273,6 +6833,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsCallable(JSVM_Env env, JSVM_Value value, bool*
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用该API的环境。 |
@@ -6282,6 +6843,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsCallable(JSVM_Env env, JSVM_Value value, bool*
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回JSVM函数结果代码。 JSVM_OK表示执行成功。 |
@@ -6289,7 +6851,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsCallable(JSVM_Env env, JSVM_Value value, bool*
 
 
 
-#### OH_JSVM_RetainScript()
+### OH_JSVM_RetainScript()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6305,6 +6868,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_RetainScript(JSVM_Env env, JSVM_Script script)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用该API的环境。 |
@@ -6313,6 +6877,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_RetainScript(JSVM_Env env, JSVM_Script script)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示脚本为空或已被保存过。 |
@@ -6320,7 +6885,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_RetainScript(JSVM_Env env, JSVM_Script script)
 
 
 
-#### OH_JSVM_ReleaseScript()
+### OH_JSVM_ReleaseScript()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6336,6 +6902,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ReleaseScript(JSVM_Env env, JSVM_Script script)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用该API的环境。 |
@@ -6344,6 +6911,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ReleaseScript(JSVM_Env env, JSVM_Script script)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示脚本为空或未被保存过。 |
@@ -6351,7 +6919,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ReleaseScript(JSVM_Env env, JSVM_Script script)
 
 
 
-#### OH_JSVM_OpenInspectorWithName()
+### OH_JSVM_OpenInspectorWithName()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6367,6 +6936,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_OpenInspectorWithName(JSVM_Env env,int pid,const
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用该API的环境。 |
@@ -6376,6 +6946,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_OpenInspectorWithName(JSVM_Env env,int pid,const
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_PENDING_EXCEPTION 表示发生了异常。 |
@@ -6383,7 +6954,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_OpenInspectorWithName(JSVM_Env env,int pid,const
 
 
 
-#### OH_JSVM_CompileWasmModule()
+### OH_JSVM_CompileWasmModule()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6399,6 +6971,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CompileWasmModule(JSVM_Env env,const uint8_t *wa
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用 JSVM-API 的环境。 |
@@ -6412,6 +6985,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CompileWasmModule(JSVM_Env env,const uint8_t *wa
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示 env 或 wasmBytecode 参数为空，或传入的数据长度参数无效。 JSVM_GENERIC_FAILURE 表示编译失败。 JSVM_PENDING_EXCEPTION 表示发生了异常。 |
@@ -6419,7 +6993,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CompileWasmModule(JSVM_Env env,const uint8_t *wa
 
 
 
-#### OH_JSVM_CompileWasmFunction()
+### OH_JSVM_CompileWasmFunction()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6435,6 +7010,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CompileWasmFunction(JSVM_Env env,JSVM_Value wasm
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用 JSVM-API 的环境。 |
@@ -6445,6 +7021,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CompileWasmFunction(JSVM_Env env,JSVM_Value wasm
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示 env 或 wasmModule 参数为空，或 wasmModule 不是一个真正的 WebAssembly 模块。 JSVM_GENERIC_FAILURE 表示函数索引越界，或编译失败。 JSVM_PENDING_EXCEPTION 表示发生了异常。 |
@@ -6452,7 +7029,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CompileWasmFunction(JSVM_Env env,JSVM_Value wasm
 
 
 
-#### OH_JSVM_IsWasmModuleObject()
+### OH_JSVM_IsWasmModuleObject()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6468,6 +7046,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsWasmModuleObject(JSVM_Env env,JSVM_Value value
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用 JSVM-API 的环境。 |
@@ -6477,6 +7056,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsWasmModuleObject(JSVM_Env env,JSVM_Value value
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入了空指针参数。 |
@@ -6484,7 +7064,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsWasmModuleObject(JSVM_Env env,JSVM_Value value
 
 
 
-#### OH_JSVM_CreateWasmCache()
+### OH_JSVM_CreateWasmCache()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6500,6 +7081,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateWasmCache(JSVM_Env env,JSVM_Value wasmModu
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用 JSVM-API 的环境。 |
@@ -6510,6 +7092,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateWasmCache(JSVM_Env env,JSVM_Value wasmModu
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入了空指针参数。 JSVM_GENERIC_FAILURE 表示缓存生成失败。 |
@@ -6517,7 +7100,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateWasmCache(JSVM_Env env,JSVM_Value wasmModu
 
 
 
-#### OH_JSVM_ReleaseCache()
+### OH_JSVM_ReleaseCache()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6533,6 +7117,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ReleaseCache(JSVM_Env env,const uint8_t* cacheDa
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用 JSVM-API 的环境。 |
@@ -6542,6 +7127,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ReleaseCache(JSVM_Env env,const uint8_t* cacheDa
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入了空指针参数，或 cacheType 参数不合法。 |
@@ -6549,7 +7135,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ReleaseCache(JSVM_Env env,const uint8_t* cacheDa
 
 
 
-#### OH_JSVM_IsBigIntObject()
+### OH_JSVM_IsBigIntObject()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6565,6 +7152,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsBigIntObject(JSVM_Env env,JSVM_Value value,boo
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用 JSVM-API 的环境。 |
@@ -6574,6 +7162,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsBigIntObject(JSVM_Env env,JSVM_Value value,boo
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入了空指针参数。 |
@@ -6581,7 +7170,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsBigIntObject(JSVM_Env env,JSVM_Value value,boo
 
 
 
-#### OH_JSVM_IsBooleanObject()
+### OH_JSVM_IsBooleanObject()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6597,6 +7187,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsBooleanObject(JSVM_Env env,JSVM_Value value,bo
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用 JSVM-API 的环境。 |
@@ -6606,6 +7197,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsBooleanObject(JSVM_Env env,JSVM_Value value,bo
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入了空指针参数。 |
@@ -6613,7 +7205,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsBooleanObject(JSVM_Env env,JSVM_Value value,bo
 
 
 
-#### OH_JSVM_IsStringObject()
+### OH_JSVM_IsStringObject()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6629,6 +7222,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsStringObject(JSVM_Env env,JSVM_Value value,boo
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用 JSVM-API 的环境。 |
@@ -6638,6 +7232,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsStringObject(JSVM_Env env,JSVM_Value value,boo
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入了空指针参数。 |
@@ -6645,7 +7240,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsStringObject(JSVM_Env env,JSVM_Value value,boo
 
 
 
-#### OH_JSVM_IsNumberObject()
+### OH_JSVM_IsNumberObject()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6661,6 +7257,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsNumberObject(JSVM_Env env,JSVM_Value value,boo
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用 JSVM-API 的环境。 |
@@ -6670,6 +7267,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsNumberObject(JSVM_Env env,JSVM_Value value,boo
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入了空指针参数。 |
@@ -6677,7 +7275,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsNumberObject(JSVM_Env env,JSVM_Value value,boo
 
 
 
-#### OH_JSVM_IsSymbolObject()
+### OH_JSVM_IsSymbolObject()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6693,6 +7292,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsSymbolObject(JSVM_Env env,JSVM_Value value,boo
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用 JSVM-API 的环境。 |
@@ -6702,6 +7302,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsSymbolObject(JSVM_Env env,JSVM_Value value,boo
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入了空指针参数。 |
@@ -6709,7 +7310,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_IsSymbolObject(JSVM_Env env,JSVM_Value value,boo
 
 
 
-#### OH_JSVM_GetSymbolAsyncIterator()
+### OH_JSVM_GetSymbolAsyncIterator()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6725,6 +7327,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolAsyncIterator(JSVM_Env env, JSVM_Value*
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用 JSVM-API 的环境。 |
@@ -6733,6 +7336,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolAsyncIterator(JSVM_Env env, JSVM_Value*
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入了空指针参数。 |
@@ -6740,7 +7344,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolAsyncIterator(JSVM_Env env, JSVM_Value*
 
 
 
-#### OH_JSVM_GetSymbolHasInstance()
+### OH_JSVM_GetSymbolHasInstance()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6756,6 +7361,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolHasInstance(JSVM_Env env, JSVM_Value* r
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用 JSVM-API 的环境。 |
@@ -6764,6 +7370,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolHasInstance(JSVM_Env env, JSVM_Value* r
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入了空指针参数。 |
@@ -6771,7 +7378,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolHasInstance(JSVM_Env env, JSVM_Value* r
 
 
 
-#### OH_JSVM_GetSymbolIsConcatSpreadable()
+### OH_JSVM_GetSymbolIsConcatSpreadable()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6787,6 +7395,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolIsConcatSpreadable(JSVM_Env env, JSVM_V
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用 JSVM-API 的环境。 |
@@ -6795,6 +7404,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolIsConcatSpreadable(JSVM_Env env, JSVM_V
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入了空指针参数。 |
@@ -6802,7 +7412,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolIsConcatSpreadable(JSVM_Env env, JSVM_V
 
 
 
-#### OH_JSVM_GetSymbolMatch()
+### OH_JSVM_GetSymbolMatch()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6818,6 +7429,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolMatch(JSVM_Env env, JSVM_Value* result)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用 JSVM-API 的环境。 |
@@ -6826,6 +7438,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolMatch(JSVM_Env env, JSVM_Value* result)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入了空指针参数。 |
@@ -6833,7 +7446,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolMatch(JSVM_Env env, JSVM_Value* result)
 
 
 
-#### OH_JSVM_GetSymbolReplace()
+### OH_JSVM_GetSymbolReplace()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6849,6 +7463,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolReplace(JSVM_Env env, JSVM_Value* resul
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用 JSVM-API 的环境。 |
@@ -6857,6 +7472,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolReplace(JSVM_Env env, JSVM_Value* resul
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入了空指针参数。 |
@@ -6864,7 +7480,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolReplace(JSVM_Env env, JSVM_Value* resul
 
 
 
-#### OH_JSVM_GetSymbolSearch()
+### OH_JSVM_GetSymbolSearch()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6880,6 +7497,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolSearch(JSVM_Env env, JSVM_Value* result
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用 JSVM-API 的环境。 |
@@ -6888,6 +7506,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolSearch(JSVM_Env env, JSVM_Value* result
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入了空指针参数。 |
@@ -6895,7 +7514,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolSearch(JSVM_Env env, JSVM_Value* result
 
 
 
-#### OH_JSVM_GetSymbolSplit()
+### OH_JSVM_GetSymbolSplit()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6911,6 +7531,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolSplit(JSVM_Env env, JSVM_Value* result)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用 JSVM-API 的环境。 |
@@ -6919,6 +7540,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolSplit(JSVM_Env env, JSVM_Value* result)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入了空指针参数。 |
@@ -6926,7 +7548,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolSplit(JSVM_Env env, JSVM_Value* result)
 
 
 
-#### OH_JSVM_GetSymbolToPrimitive()
+### OH_JSVM_GetSymbolToPrimitive()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6942,6 +7565,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolToPrimitive(JSVM_Env env, JSVM_Value* r
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用 JSVM-API 的环境。 |
@@ -6950,6 +7574,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolToPrimitive(JSVM_Env env, JSVM_Value* r
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入了空指针参数。 |
@@ -6957,7 +7582,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolToPrimitive(JSVM_Env env, JSVM_Value* r
 
 
 
-#### OH_JSVM_GetSymbolUnscopables()
+### OH_JSVM_GetSymbolUnscopables()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6973,6 +7599,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolUnscopables(JSVM_Env env, JSVM_Value* r
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用 JSVM-API 的环境。 |
@@ -6981,6 +7608,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolUnscopables(JSVM_Env env, JSVM_Value* r
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入了空指针参数。 |
@@ -6988,7 +7616,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolUnscopables(JSVM_Env env, JSVM_Value* r
 
 
 
-#### OH_JSVM_GetSymbolToStringTag()
+### OH_JSVM_GetSymbolToStringTag()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -7004,6 +7633,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolToStringTag(JSVM_Env env, JSVM_Value* r
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用 JSVM-API 的环境。 |
@@ -7012,6 +7642,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolToStringTag(JSVM_Env env, JSVM_Value* r
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入了空指针参数。 |
@@ -7019,7 +7650,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolToStringTag(JSVM_Env env, JSVM_Value* r
 
 
 
-#### OH_JSVM_GetSymbolIterator()
+### OH_JSVM_GetSymbolIterator()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -7035,6 +7667,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolIterator(JSVM_Env env, JSVM_Value* resu
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用 JSVM-API 的环境。 |
@@ -7043,6 +7676,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolIterator(JSVM_Env env, JSVM_Value* resu
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入了空指针参数。 |
@@ -7050,7 +7684,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetSymbolIterator(JSVM_Env env, JSVM_Value* resu
 
 
 
-#### OH_JSVM_TraceStart()
+### OH_JSVM_TraceStart()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -7066,6 +7701,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_TraceStart(size_t count,const JSVM_TraceCategory
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | size_t count | 进行 Trace 采集的分类数量。 |
@@ -7076,14 +7712,16 @@ JSVM_EXTERN JSVM_Status OH_JSVM_TraceStart(size_t count,const JSVM_TraceCategory
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG categories 或者 count 输入不合法。 |
+| JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG categories 或者 count 输入不合法。 |
 
 
 
 
-#### OH_JSVM_TraceStop()
+### OH_JSVM_TraceStop()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -7099,6 +7737,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_TraceStop(JSVM_OutputStream stream, void* stream
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_OutputStream stream | 输出流回调函数，实现接收 Trace 数据功能。 |
@@ -7107,6 +7746,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_TraceStop(JSVM_OutputStream stream, void* stream
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG stream 或者 streamData 为空。 |
@@ -7114,7 +7754,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_TraceStop(JSVM_OutputStream stream, void* stream
 
 
 
-#### OH_JSVM_AddHandlerForGC()
+### OH_JSVM_AddHandlerForGC()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -7130,6 +7771,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_AddHandlerForGC(JSVM_VM vm,JSVM_CBTriggerTimeFor
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_VM vm | 调用JSVM-API的环境。 |
@@ -7141,6 +7783,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_AddHandlerForGC(JSVM_VM vm,JSVM_CBTriggerTimeFor
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示函数执行成功。 JSVM_INVALID_ARG 表示传入的vm或者handler为空或者handler已经被添加过了。 |
@@ -7148,7 +7791,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_AddHandlerForGC(JSVM_VM vm,JSVM_CBTriggerTimeFor
 
 
 
-#### OH_JSVM_RemoveHandlerForGC()
+### OH_JSVM_RemoveHandlerForGC()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -7164,6 +7808,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_RemoveHandlerForGC(JSVM_VM vm,JSVM_CBTriggerTime
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_VM vm | 调用JSVM-API的环境。 |
@@ -7174,6 +7819,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_RemoveHandlerForGC(JSVM_VM vm,JSVM_CBTriggerTime
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示函数执行成功。 JSVM_INVALID_ARG 表示传入的vm或者handler为空或者handler已经被删除过了或者 这个handler从来没有被添加过。 |
@@ -7181,7 +7827,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_RemoveHandlerForGC(JSVM_VM vm,JSVM_CBTriggerTime
 
 
 
-#### OH_JSVM_SetHandlerForOOMError()
+### OH_JSVM_SetHandlerForOOMError()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -7197,6 +7844,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_SetHandlerForOOMError(JSVM_VM vm,JSVM_HandlerFor
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_VM vm | 调用JSVM-API的环境。 |
@@ -7205,6 +7853,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_SetHandlerForOOMError(JSVM_VM vm,JSVM_HandlerFor
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示函数执行成功。 JSVM_INVALID_ARG 表示vm为空。 |
@@ -7212,7 +7861,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_SetHandlerForOOMError(JSVM_VM vm,JSVM_HandlerFor
 
 
 
-#### OH_JSVM_SetDebugOption()
+### OH_JSVM_SetDebugOption()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -7228,6 +7878,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_SetDebugOption(JSVM_Env env, JSVM_DebugOption de
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -7237,6 +7888,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_SetDebugOption(JSVM_Env env, JSVM_DebugOption de
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示函数执行成功。 JSVM_INVALID_ARG 如果传入的env为空指针，返回此错误码。 |
@@ -7244,7 +7896,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_SetDebugOption(JSVM_Env env, JSVM_DebugOption de
 
 
 
-#### OH_JSVM_SetHandlerForFatalError()
+### OH_JSVM_SetHandlerForFatalError()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -7260,6 +7913,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_SetHandlerForFatalError(JSVM_VM vm,JSVM_HandlerF
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_VM vm | 调用JSVM-API的环境。 |
@@ -7268,6 +7922,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_SetHandlerForFatalError(JSVM_VM vm,JSVM_HandlerF
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示函数执行成功。 JSVM_INVALID_ARG 表示vm为空。 |
@@ -7275,7 +7930,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_SetHandlerForFatalError(JSVM_VM vm,JSVM_HandlerF
 
 
 
-#### OH_JSVM_SetHandlerForPromiseReject()
+### OH_JSVM_SetHandlerForPromiseReject()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -7291,6 +7947,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_SetHandlerForPromiseReject(JSVM_VM vm,JSVM_Handl
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_VM vm | 调用JSVM-API的环境。 |
@@ -7299,6 +7956,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_SetHandlerForPromiseReject(JSVM_VM vm,JSVM_Handl
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示函数执行成功。 JSVM_INVALID_ARG 表示vm为空。 |
@@ -7306,7 +7964,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_SetHandlerForPromiseReject(JSVM_VM vm,JSVM_Handl
 
 
 
-#### OH_JSVM_DefineClassWithOptions()
+### OH_JSVM_DefineClassWithOptions()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -7321,6 +7980,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_DefineClassWithOptions(JSVM_Env env,const char* 
 **起始版本：** 18
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -7338,6 +7998,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_DefineClassWithOptions(JSVM_Env env,const char* 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入的指针参数里面存在空指针。 JSVM_GENERIC_FAILURE 表示传入的utf8name \| constructor \| properties无效，导致执行失败。 |
@@ -7345,7 +8006,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_DefineClassWithOptions(JSVM_Env env,const char* 
 
 
 
-#### OH_JSVM_CreateExternalStringLatin1()
+### OH_JSVM_CreateExternalStringLatin1()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -7361,6 +8023,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateExternalStringLatin1(JSVM_Env env, char* s
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用 JSVM-API 的环境。 |
@@ -7374,6 +8037,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateExternalStringLatin1(JSVM_Env env, char* s
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入参数中 env, str 和 copied 中任一值为空。 |
@@ -7381,7 +8045,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateExternalStringLatin1(JSVM_Env env, char* s
 
 
 
-#### OH_JSVM_CreateExternalStringUtf16()
+### OH_JSVM_CreateExternalStringUtf16()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -7397,6 +8062,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateExternalStringUtf16(JSVM_Env env, char16_t
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用 JSVM-API 的环境。 |
@@ -7410,6 +8076,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateExternalStringUtf16(JSVM_Env env, char16_t
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入参数中 env, str 和 copied 中任一值为空。 |
@@ -7417,7 +8084,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateExternalStringUtf16(JSVM_Env env, char16_t
 
 
 
-#### OH_JSVM_CreatePrivate()
+### OH_JSVM_CreatePrivate()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -7433,6 +8101,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreatePrivate(JSVM_Env env,JSVM_Value descriptio
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用 JSVM-API 的环境。 |
@@ -7442,6 +8111,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreatePrivate(JSVM_Env env,JSVM_Value descriptio
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入参数中 env 和 result 中任一值为空。 JSVM_STRING_EXPECTED 表示传入的 description 不是字符串。 |
@@ -7449,7 +8119,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreatePrivate(JSVM_Env env,JSVM_Value descriptio
 
 
 
-#### OH_JSVM_SetPrivate()
+### OH_JSVM_SetPrivate()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -7465,6 +8136,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_SetPrivate(JSVM_Env env,JSVM_Value object,JSVM_D
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用 JSVM-API 的环境。 |
@@ -7475,6 +8147,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_SetPrivate(JSVM_Env env,JSVM_Value object,JSVM_D
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示任一传入参数为空或者 key 不是一个 private key 对象。 JSVM_OBJECT_EXPECTED 表示传入的 object 不是一个真正的 JavaScript object。 JSVM_GENERIC_FAILURE 表示设置 private 属性失败，同时没有异常产生。 JSVM_PENDING_EXCEPTION 表示发生了异常。 |
@@ -7482,7 +8155,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_SetPrivate(JSVM_Env env,JSVM_Value object,JSVM_D
 
 
 
-#### OH_JSVM_GetPrivate()
+### OH_JSVM_GetPrivate()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -7498,6 +8172,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetPrivate(JSVM_Env env,JSVM_Value object,JSVM_D
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用 JSVM-API 的环境。 |
@@ -7508,6 +8183,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetPrivate(JSVM_Env env,JSVM_Value object,JSVM_D
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示任一传入参数为空或者 key 不是一个 private key 对象。 JSVM_OBJECT_EXPECTED 表示传入的 object 不是一个真正的 JavaScript object。 JSVM_GENERIC_FAILURE 表示获取 private 属性失败，同时没有异常产生。 JSVM_PENDING_EXCEPTION 表示发生了异常。 |
@@ -7515,7 +8191,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetPrivate(JSVM_Env env,JSVM_Value object,JSVM_D
 
 
 
-#### OH_JSVM_DeletePrivate()
+### OH_JSVM_DeletePrivate()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -7531,6 +8208,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_DeletePrivate(JSVM_Env env,JSVM_Value object,JSV
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用 JSVM-API 的环境。 |
@@ -7540,6 +8218,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_DeletePrivate(JSVM_Env env,JSVM_Value object,JSV
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示任一传入参数为空或者 key 不是一个 private key 对象。 JSVM_OBJECT_EXPECTED 表示传入的 object 不是一个真正的 JavaScript object。 JSVM_GENERIC_FAILURE 表示删除 private 属性失败，同时没有异常产生。 JSVM_PENDING_EXCEPTION 表示发生了异常。 |
@@ -7547,7 +8226,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_DeletePrivate(JSVM_Env env,JSVM_Value object,JSV
 
 
 
-#### OH_JSVM_CreateDataReference()
+### OH_JSVM_CreateDataReference()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -7563,6 +8243,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateDataReference(JSVM_Env env,JSVM_Data data,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用 JSVM-API 的环境。 |
@@ -7573,6 +8254,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateDataReference(JSVM_Env env,JSVM_Data data,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 |
@@ -7580,7 +8262,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_CreateDataReference(JSVM_Env env,JSVM_Data data,
 
 
 
-#### OH_JSVM_GetReferenceData()
+### OH_JSVM_GetReferenceData()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -7596,6 +8279,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetReferenceData(JSVM_Env env,JSVM_Ref ref,JSVM_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_Env env | 调用JSVM-API的环境。 |
@@ -7605,6 +8289,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetReferenceData(JSVM_Env env,JSVM_Ref ref,JSVM_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK 表示执行成功。 JSVM_INVALID_ARG 表示传入参数不合法。 |
@@ -7612,7 +8297,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_GetReferenceData(JSVM_Env env,JSVM_Ref ref,JSVM_
 
 
 
-#### OH_JSVM_BackgroundDeserialize()
+### OH_JSVM_BackgroundDeserialize()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -7628,6 +8314,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_BackgroundDeserialize(JSVM_VM vm, JSVM_CodeCache
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_VM vm | 调用JSVM-API的环境。 |
@@ -7637,6 +8324,7 @@ JSVM_EXTERN JSVM_Status OH_JSVM_BackgroundDeserialize(JSVM_VM vm, JSVM_CodeCache
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | JSVM_EXTERN JSVM_Status | 返回执行状态码 JSVM_Status。 JSVM_OK: 表示执行成功。 JSVM_INVALID_ARG: 表示传入参数不合法。 |
@@ -7644,7 +8332,8 @@ JSVM_EXTERN JSVM_Status OH_JSVM_BackgroundDeserialize(JSVM_VM vm, JSVM_CodeCache
 
 
 
-#### OH_JSVM_ReleaseDeserializeResult()
+### OH_JSVM_ReleaseDeserializeResult()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -7660,12 +8349,14 @@ JSVM_EXTERN JSVM_Status OH_JSVM_ReleaseDeserializeResult(JSVM_DeserializeResult 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | JSVM_DeserializeResult result | 需要进行释放的后台反序列化结果。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |

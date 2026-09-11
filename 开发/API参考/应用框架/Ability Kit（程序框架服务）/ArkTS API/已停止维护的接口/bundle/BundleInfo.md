@@ -1,9 +1,9 @@
 # BundleInfo
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bundle-bundleinfo
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 应用包的信息，通过[bundle.getBundleInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bundle#bundlegetbundleinfodeprecated)获取。
  
@@ -12,9 +12,10 @@
 
   
 
-#### BundleInfo(deprecated)
+## BundleInfo(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 7开始支持，从API version 9开始废弃，建议使用 bundleManager-BundleInfo 替代。
@@ -22,6 +23,7 @@
  
 **系统能力：** SystemCapability.BundleManager.BundleFramework
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | name | string | 是 | 否 | 应用包的名称。 |
@@ -51,9 +53,10 @@
  
   
 
-#### ReqPermissionDetail(deprecated)
+## ReqPermissionDetail(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 7开始支持，从API version 9开始废弃，建议使用 ReqPermissionDetail 替代。
@@ -63,6 +66,7 @@
  
 **系统能力：** SystemCapability.BundleManager.BundleFramework
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | name | string | 否 | 否 | 需要使用的权限名称。 |
@@ -72,9 +76,10 @@
  
   
 
-#### UsedScene(deprecated)
+## UsedScene(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 7开始支持，从API version 9开始废弃，建议使用 UsedScene 替代。
@@ -84,6 +89,7 @@
  
 **系统能力：** SystemCapability.BundleManager.BundleFramework
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | abilities | Array&lt;string&gt; | 否 | 否 | 使用到该权限的Ability集合。 |

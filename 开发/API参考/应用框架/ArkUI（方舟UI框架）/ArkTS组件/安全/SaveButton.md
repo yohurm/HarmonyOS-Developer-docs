@@ -1,9 +1,9 @@
 # SaveButton
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-security-components-savebutton
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 安全控件的保存控件系统接口，适用于应用需要临时获取媒体库访问权限以保存图片或视频的场景，例如图片保存到相册、媒体内容导出等。
 
@@ -18,13 +18,17 @@
 
 
 
-#### 关键Class/Interface介绍
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 关键Class/Interface介绍
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 核心枚举类型
+
+
+### 核心枚举类型
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
  - **[SaveIconStyle](#saveiconstyle)：** 保存控件图标风格枚举，用于指定控件展示的图标风格。
  - **[SaveDescription](#savedescription)：** 保存控件文本描述枚举，用于指定控件展示的文本描述。
@@ -33,7 +37,10 @@
 
 
 
-#### 核心接口类型
+### 核心接口类型
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
  - **[SaveButtonOptions](#savebuttonoptions)：** 保存控件配置对象，用于指定图标、文字和按钮类型等元素属性。
  - **[SaveButtonCallback](#savebuttoncallback18)：** 保存控件点击回调类型，用于返回点击事件、授权结果和错误信息。
@@ -41,23 +48,26 @@
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 不支持。
 
 
 
-#### 接口
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 接口
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### SaveButton
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### SaveButton
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 SaveButton()
 
@@ -77,9 +87,10 @@ SaveButton()
 
 
 
-#### SaveButton
+### SaveButton
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 SaveButton(options: SaveButtonOptions)
 
@@ -99,6 +110,7 @@ SaveButton(options: SaveButtonOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | SaveButtonOptions | 是 | 保存控件的配置选项，用于指定图标、文本和按钮类型等元素属性。 建议至少显式设置 icon 或 text 中的一项，以确保用户能明确理解控件用途；若两者都不传，控件显示为默认样式。 |
@@ -106,9 +118,10 @@ SaveButton(options: SaveButtonOptions)
 
 
 
-#### SaveButtonOptions
+## SaveButtonOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于设置保存控件的图标、文本、按钮类型等属性。
 
@@ -122,6 +135,7 @@ SaveButton(options: SaveButtonOptions)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | icon | SaveIconStyle | 否 | 是 | 设置保存控件的图标风格。 不传入该参数表示不显示图标；若同时也不传text，整体配置将显示为默认样式。 |
@@ -131,9 +145,10 @@ SaveButton(options: SaveButtonOptions)
 
 
 
-#### SaveIconStyle
+## SaveIconStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 保存控件的图标风格。
 
@@ -143,6 +158,7 @@ SaveButton(options: SaveButtonOptions)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | FULL_FILLED | 0 | 保存控件展示填充样式图标。 |
@@ -151,15 +167,17 @@ SaveButton(options: SaveButtonOptions)
 
 
 
-#### SaveDescription
+## SaveDescription
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 保存控件的文本描述。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -180,15 +198,17 @@ SaveButton(options: SaveButtonOptions)
 
 
 
-#### SaveButtonOnClickResult
+## SaveButtonOnClickResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 保存控件点击后的授权结果。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -199,9 +219,10 @@ SaveButton(options: SaveButtonOptions)
 
 
 
-#### SaveButtonCallback18+
+## SaveButtonCallback18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type SaveButtonCallback = (event: ClickEvent, result: SaveButtonOnClickResult, error?: BusinessError&lt;void&gt;) => void
 
@@ -215,6 +236,7 @@ type SaveButtonCallback = (event: ClickEvent, result: SaveButtonOnClickResult, e
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | ClickEvent | 是 | 点击事件对象，包含点击的位置、时间戳、输入设备等信息。 |
@@ -224,17 +246,19 @@ type SaveButtonCallback = (event: ClickEvent, result: SaveButtonOnClickResult, e
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 不支持通用属性，除了继承[安全控件通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-securitycomponent-attributes)，还支持以下属性。
 
 
 
-#### setIcon20+
+### setIcon20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setIcon(icon: Resource)
 
@@ -250,6 +274,7 @@ setIcon(icon: Resource)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | icon | Resource | 是 | 自定义图标资源信息，仅支持Resource类型的数据源。 可支持的图片格式：png、jpg、jpeg、bmp、svg、webp、gif和heif等，支持的图片格式范围见Image。当资源为非图片资源或不支持的格式时，图标显示为空白。 从API版本26.0.0开始，支持Symbol格式的Resource类型的数据源。 若应用不具备ohos.permission.CUSTOMIZE_SAVE_BUTTON权限，则自定义图标设置不生效，保存控件保持默认样式。 |
@@ -257,9 +282,10 @@ setIcon(icon: Resource)
 
 
 
-#### setText20+
+### setText20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setText(text: string | Resource)
 
@@ -275,6 +301,7 @@ setText(text: string | Resource)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | text | string \| Resource | 是 | 自定义文本信息。适用于需要使用与业务强相关的文本替代系统预置描述的场景。传入字符串时直接使用文本内容；传入Resource时，可配合资源管理实现多语言文本。 若应用不具备ohos.permission.CUSTOMIZE_SAVE_BUTTON权限，则该设置不生效，保存控件保持默认样式。 |
@@ -282,9 +309,10 @@ setText(text: string | Resource)
 
 
 
-#### iconSize20+
+### iconSize20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 iconSize(size: Dimension | SizeOptions)
 
@@ -298,6 +326,7 @@ iconSize(size: Dimension | SizeOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | size | Dimension \| SizeOptions | 是 | 图标尺寸，支持像素单位（vp、px等）。默认值：宽高均为16vp。 不支持设置百分比字符串。若设置Dimension类型入参的百分比字符串，则图标尺寸显示为默认值；若设置SizeOptions类型入参的width或height属性为百分比字符串，则图标尺寸显示为0vp。 对于保存控件提供的系统图标： - 使用Dimension类型入参时，宽、高相等，均为设定值。 - 使用SizeOptions类型入参时，若宽、高设定值不一致，则宽、高相等取两者较小值；若仅设定其中一个值，则取该值作为宽、高值。系统提供图标采用此规则是为保证图标的正方形显示和视觉一致性。 对于自定义图标： - 使用Dimension类型入参时，宽、高相等，均为设定值。 - 使用SizeOptions类型入参时，建议同时设定宽和高，此时按照指定宽、高生效；若仅设定其中一个值，则宽高均显示为该设定值。自定义图标允许灵活设定尺寸以适应不同图片比例。 - 当设定的宽高与自定义图标的宽高比例不一致时，图片按ImageFit.Cover的方式填充显示区域。 |
@@ -305,9 +334,10 @@ iconSize(size: Dimension | SizeOptions)
 
 
 
-#### iconBorderRadius20+
+### iconBorderRadius20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 iconBorderRadius(radius: Dimension | BorderRadiuses)
 
@@ -323,6 +353,7 @@ iconBorderRadius(radius: Dimension | BorderRadiuses)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | radius | Dimension \| BorderRadiuses | 是 | 保存控件图标的圆角半径，支持设置四个圆角。 默认值：四个圆角均为0vp。支持像素单位（vp、px等），取值范围≥0。传入负值时自动修正为0。 若应用不具备ohos.permission.CUSTOMIZE_SAVE_BUTTON权限，则图标的圆角半径设置不生效。 |
@@ -330,9 +361,10 @@ iconBorderRadius(radius: Dimension | BorderRadiuses)
 
 
 
-#### stateEffect20+
+### stateEffect20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stateEffect(enabled: boolean)
 
@@ -348,6 +380,7 @@ stateEffect(enabled: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 表示是否开启按压效果，true表示保存控件按压时显示按压效果，false表示保存控件按压时不显示按压效果。 默认值：true。 若应用不具备ohos.permission.CUSTOMIZE_SAVE_BUTTON权限，按压效果设置不生效。 |
@@ -355,9 +388,10 @@ stateEffect(enabled: boolean)
 
 
 
-#### userCancelEvent21+
+### userCancelEvent21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 userCancelEvent(enabled: boolean)
 
@@ -371,6 +405,7 @@ userCancelEvent(enabled: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 表示是否接收保存控件的用户取消授权事件。true表示当用户在授权弹窗中主动取消时，会通过回调将结果区分为CANCELED_BY_USER；false表示不单独区分此类场景。 默认值：false。 当业务需要区分“用户取消”和“系统错误/授权失败”时，建议开启该参数。 |
@@ -378,9 +413,10 @@ userCancelEvent(enabled: boolean)
 
 
 
-#### symbolIconColor
+### symbolIconColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 symbolIconColor(color: Array&lt;ResourceColor&gt;)
 
@@ -403,6 +439,7 @@ symbolIconColor(color: Array&lt;ResourceColor&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | Array&lt;ResourceColor&gt; | 是 | 设置保存控件Symbol图标颜色。适用于Symbol图标需要与业务视觉风格保持一致的场景。 默认值：随symbolrenderingstrategy不同而变化。 若应用不具备ohos.permission.CUSTOMIZE_SAVE_BUTTON权限，则该设置不生效。 |
@@ -410,9 +447,10 @@ symbolIconColor(color: Array&lt;ResourceColor&gt;)
 
 
 
-#### symbolFontWeight
+### symbolFontWeight
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 symbolFontWeight(fontWeight: number | FontWeight | string | Resource)
 
@@ -434,6 +472,7 @@ symbolFontWeight(fontWeight: number | FontWeight | string | Resource)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fontWeight | number \| FontWeight \| string \| Resource | 是 | 设置保存控件Symbol图标粗细。 支持number类型：取值范围为[100, 900]，取值间隔为100，数值越大字体越粗。 支持string类型：可传入number类型的数字字符串（如"400"），或FontWeight的枚举值的小写字符串（如"normal"）。 默认值：FontWeight.Normal（对应数值400）。 若应用不具备ohos.permission.CUSTOMIZE_SAVE_BUTTON权限，则该设置不生效。 |
@@ -441,9 +480,10 @@ symbolFontWeight(fontWeight: number | FontWeight | string | Resource)
 
 
 
-#### symbolRenderingStrategy
+### symbolRenderingStrategy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 symbolRenderingStrategy(strategy: SymbolRenderingStrategy)
 
@@ -466,6 +506,7 @@ symbolRenderingStrategy(strategy: SymbolRenderingStrategy)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | strategy | SymbolRenderingStrategy | 是 | 保存控件Symbol图标渲染策略，用于控制Symbol图标的渲染方式。 默认值：SymbolRenderingStrategy.SINGLE。 若应用不具备ohos.permission.CUSTOMIZE_SAVE_BUTTON权限，则该设置不生效。 |
@@ -479,17 +520,19 @@ symbolRenderingStrategy(strategy: SymbolRenderingStrategy)
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 不支持通用事件，仅支持以下事件：
 
 
 
-#### onClick
+### onClick
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onClick(event: SaveButtonCallback)
 
@@ -503,6 +546,7 @@ onClick(event: SaveButtonCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | SaveButtonCallback | 是 | 点击事件的回调对象，包含点击事件信息、授权结果和错误信息。在API version 10-17时，参数类型为(event: ClickEvent, result: SaveButtonOnClickResult) => void；从API version 18开始，统一使用SaveButtonCallback，可额外获取error信息。 |
@@ -510,9 +554,10 @@ onClick(event: SaveButtonCallback)
 
 
 
-#### 示例1
+## 示例1
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```ArkTS
 // xxx.ets
@@ -595,9 +640,10 @@ struct Index {
 
 
 
-#### 示例2
+## 示例2
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 应用需要申请权限：ohos.permission.CUSTOMIZE_SAVE_BUTTON
 
@@ -671,14 +717,15 @@ struct SetIcon {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/mpsfo2vwRxO4b5pYuS2KOA/zh-cn_image_0000002655848962.png?HW-CC-KV=V1&HW-CC-Date=20260730T071515Z&HW-CC-Expire=86400&HW-CC-Sign=7AEDB800B9D34DF5D9D3A760D86DA460F65B2510952E1D7996793FA846B920E6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/iVM0MeFfRgGO5tKLb2lImQ/zh-cn_image_0000002717613104.png?HW-CC-KV=V1&HW-CC-Date=20260911T073120Z&HW-CC-Expire=86400&HW-CC-Sign=2AA912F33B87026DEBAB5A83493AF9F5B09B733BFCDFE156264DB4285948710D)
 
 
 
 
-#### 示例3
+## 示例3
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 应用需要申请权限：ohos.permission.CUSTOMIZE_SAVE_BUTTON
 
@@ -741,4 +788,4 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/WHTYg1fJQje10C8QNqlnnw/zh-cn_image_0000002686088393.jpeg?HW-CC-KV=V1&HW-CC-Date=20260730T071515Z&HW-CC-Expire=86400&HW-CC-Sign=EDF89617D2CC23D3607C46CCA70119A4F1D7E1FA2E6291A08F2A781DF5BBA7BE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/chaWXfSOR-KkOTBKcc1qng/zh-cn_image_0000002747293055.jpeg?HW-CC-KV=V1&HW-CC-Date=20260911T073120Z&HW-CC-Expire=86400&HW-CC-Sign=9AE10DC37A0A5D6FEEA3B0D8CB5D22BE9E91FBF734CB5EA4334BE7D37AF46EAB)

@@ -1,9 +1,9 @@
 # @ohos.animator (动画)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-animator
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供组件动画效果，包括定义动画、启动动画和以相反的顺序播放动画等。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { Animator as animator, AnimatorOptions, AnimatorResult, SimpleAnimatorOptions } from '@kit.ArkUI';
@@ -22,9 +23,10 @@ import { Animator as animator, AnimatorOptions, AnimatorResult, SimpleAnimatorOp
 
 
 
-#### Animator
+## Animator
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义Animator类。
 
@@ -34,9 +36,10 @@ import { Animator as animator, AnimatorOptions, AnimatorResult, SimpleAnimatorOp
 
 
 
-#### create(deprecated)
+### create(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 create(options: AnimatorOptions): AnimatorResult
 
@@ -52,12 +55,14 @@ create(options: AnimatorOptions): AnimatorResult
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | AnimatorOptions | 是 | 动画配置选项，包含播放时长、插值曲线、延时、填充模式、播放方向、播放次数及插值起止值等参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -67,6 +72,7 @@ create(options: AnimatorOptions): AnimatorResult
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -99,9 +105,10 @@ animator.create(options); // 建议使用 UIContext.createAnimator()接口
 
 
 
-#### create18+
+### create18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 create(options: AnimatorOptions | SimpleAnimatorOptions): AnimatorResult
 
@@ -115,12 +122,14 @@ create(options: AnimatorOptions | SimpleAnimatorOptions): AnimatorResult
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | AnimatorOptions \| SimpleAnimatorOptions | 是 | 定义动画选项。AnimatorOptions适用于需要完整自定义所有动画参数的场景；SimpleAnimatorOptions适用于仅需指定起点和终点的简易动画场景，其余参数使用默认值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -130,6 +139,7 @@ create(options: AnimatorOptions | SimpleAnimatorOptions): AnimatorResult
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -152,21 +162,23 @@ animator.create(options); // 建议使用 UIContext.createAnimator()接口
 
 
 
-#### createAnimator(deprecated)
+### createAnimator(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAnimator(options: AnimatorOptions): AnimatorResult
 
-创建动画。
+创建动画。本模块功能依赖UI的执行上下文，不可在UI上下文不明确的地方使用，推荐通过使用UIContext中的createAnimator接口明确UI上下文。
 
 > [!NOTE]
-> 从API version 6开始支持，从API version 9开始废弃，建议使用 create 替代。
+> 从API version 6开始支持，从API version 9开始废弃，建议使用 create 替代。 从API version 10开始，可以通过使用 UIContext 中的 createAnimator 来明确UI的执行上下文。
 
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -174,6 +186,7 @@ createAnimator(options: AnimatorOptions): AnimatorResult
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -185,10 +198,9 @@ createAnimator(options: AnimatorOptions): AnimatorResult
 完整示例请参考[基于ArkTS扩展的声明式开发范式](#基于arkts扩展的声明式开发范式)。
 
 ```text
-import { Animator as animator } from '@kit.ArkUI';
+import { Animator as animator, AnimatorOptions } from '@kit.ArkUI';
 
-let options: AnimatorOptions = {
-  // xxx.js文件中不需要强调显式类型AnimatorOptions
+let options: AnimatorOptions = { // xxx.js文件中不需要强调显式类型AnimatorOptions
   duration: 1500,
   easing: "friction",
   delay: 0,
@@ -203,23 +215,26 @@ this.animator = animator.createAnimator(options);
 
 
 
-#### AnimatorResult
+## AnimatorResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义AnimatorResult接口，提供动画播放状态回调及动画控制方法。
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| onFrame12+ | (progress: number) => void | 否 | 否 | 接收到帧时回调。 progress表示动画的当前值。取值范围为AnimatorOptions定义的[begin, end]，默认取值范围为[0, 1]。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
+| onFrame12+ | (progress: number) => void | 否 | 否 | 接收到帧时回调。 progress表示动画的当前值。取值范围为AnimatorOptions定义的[begin, end]，默认取值范围为[0, 1]。 说明： 调用cancel、finish方法时，会触发一次额外的onFrame回调，返回值为动画终点值。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | onFinish12+ | () => void | 否 | 否 | 动画完成时回调。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | onCancel12+ | () => void | 否 | 否 | 动画被取消时回调。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | onRepeat12+ | () => void | 否 | 否 | 动画重复时回调。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
@@ -231,19 +246,21 @@ this.animator = animator.createAnimator(options);
 
 
 
-#### reset9+
+### reset9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reset(options: AnimatorOptions): void
 
-重置当前animator动画参数。
+重置当前animator动画参数。建议在动画未开始播放或播放结束后（[onFinish](#属性)或[onCancel](#属性)回调触发后）调用此方法，重置后需调用[play](#play)方法重新启动动画。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -253,6 +270,7 @@ reset(options: AnimatorOptions): void
 **错误码：**
 
 以下错误码的详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -294,20 +312,21 @@ struct AnimatorTest {
   }
 
   build() {
-    // ......
+    // ...
   }
 }
 ```
 
 
 
-#### reset18+
+### reset18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reset(options: AnimatorOptions | SimpleAnimatorOptions): void
 
-重置当前animator动画参数。与[reset](#reset9)相比，新增对[SimpleAnimatorOptions](#simpleanimatoroptions18)类型入参的支持。
+重置当前animator动画参数。与[reset](#reset9)相比，新增对[SimpleAnimatorOptions](#simpleanimatoroptions18)类型入参的支持。建议在动画未开始播放或播放结束后（[onFinish](#属性)或[onCancel](#属性)回调触发后）调用此方法，重新设置动画参数后调用[play](#play)启动新动画。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -317,6 +336,7 @@ reset(options: AnimatorOptions | SimpleAnimatorOptions): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | AnimatorOptions \| SimpleAnimatorOptions | 是 | 定义动画选项。 |
@@ -325,6 +345,7 @@ reset(options: AnimatorOptions | SimpleAnimatorOptions): void
 **错误码：**
 
 以下错误码的详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -359,13 +380,14 @@ animatorResult.reset(optionsNew);
 
 
 
-#### play
+### play
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 play(): void
 
-启动动画。动画暂停后调用此方法可恢复播放。动画会保留上一次的播放状态，比如播放状态设置reverse后，再次播放会保留reverse的播放状态。
+启动动画。动画暂停后调用此方法可恢复播放。动画会保留上一次的播放状态，比如播放状态设置reverse后，再次播放会保留reverse的播放状态。动画结束后（[onFinish](#属性)或[onCancel](#属性)回调触发后）可再次调用此方法重新播放动画。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -376,18 +398,20 @@ play(): void
 完整示例请参考[基于ArkTS扩展的声明式开发范式](#基于arkts扩展的声明式开发范式)。
 
 ```text
+// animator需先通过this.getUIContext().createAnimator()获取AnimatorResult对象
 animator.play();
 ```
 
 
 
-#### finish
+### finish
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 finish(): void
 
-结束动画，会触发[onFinish](#属性)回调。
+结束动画，会触发[onFinish](#属性)回调。与[cancel](#cancel)方法功能相同，但cancel()触发[onCancel](#属性)回调，建议使用finish方法结束动画。调用此方法时会触发一次额外的[onFrame](#属性)回调，返回值是动画终点值，可能导致属性值在一帧内跳变至终点。若希望动画在中途暂停，可先将onFrame设置为空函数，再调用finish。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -398,18 +422,20 @@ finish(): void
 完整示例请参考[基于ArkTS扩展的声明式开发范式](#基于arkts扩展的声明式开发范式)。
 
 ```text
+// animator需先通过this.getUIContext().createAnimator()获取AnimatorResult对象
 animator.finish();
 ```
 
 
 
-#### pause
+### pause
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pause(): void
 
-暂停动画。
+暂停动画。暂停后可调用[play](#play)方法恢复播放，也可调用[finish](#finish)或[cancel](#cancel)方法结束动画。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -420,18 +446,20 @@ pause(): void
 完整示例请参考[基于ArkTS扩展的声明式开发范式](#基于arkts扩展的声明式开发范式)。
 
 ```text
+// animator需先通过this.getUIContext().createAnimator()获取AnimatorResult对象
 animator.pause();
 ```
 
 
 
-#### cancel
+### cancel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancel(): void
 
-取消动画，会触发[onCancel](#属性)回调。此接口和[finish](#finish)接口功能上没有区别，仅触发的回调不同，建议使用finish接口结束动画。
+取消动画，会触发[onCancel](#属性)回调。此接口和[finish](#finish)接口功能上没有区别，仅触发的回调不同，建议使用finish接口结束动画。调用此方法时会触发一次额外的[onFrame](#属性)回调，返回值是动画终点值，可能导致属性值在一帧内跳变至终点。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -442,18 +470,20 @@ cancel(): void
 完整示例请参考[基于ArkTS扩展的声明式开发范式](#基于arkts扩展的声明式开发范式)。
 
 ```text
+// animator需先通过this.getUIContext().createAnimator()获取AnimatorResult对象
 animator.cancel();
 ```
 
 
 
-#### reverse
+### reverse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reverse(): void
 
-以相反的顺序播放动画。使用interpolating-spring曲线时此接口无效。
+以相反的顺序播放动画。使用interpolating-spring曲线时此接口无效。调用reverse后动画将以相反方向继续播放，可通过[pause](#pause)暂停或[finish](#finish)结束动画。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -464,14 +494,16 @@ reverse(): void
 完整示例请参考[基于ArkTS扩展的声明式开发范式](#基于arkts扩展的声明式开发范式)。
 
 ```text
+// animator需先通过this.getUIContext().createAnimator()获取AnimatorResult对象
 animator.reverse();
 ```
 
 
 
-#### setExpectedFrameRateRange12+
+### setExpectedFrameRateRange12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setExpectedFrameRateRange(rateRange: ExpectedFrameRateRange): void
 
@@ -484,6 +516,7 @@ setExpectedFrameRateRange(rateRange: ExpectedFrameRateRange): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -525,16 +558,17 @@ struct AnimatorTest {
   }
 
   build() {
-    // ......
+    // ...
   }
 }
 ```
 
 
 
-#### update(deprecated)
+### update(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 update(options: AnimatorOptions): void
 
@@ -548,6 +582,7 @@ update(options: AnimatorOptions): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | AnimatorOptions | 是 | 动画配置选项，用于定义动画的播放时长、插值曲线、延时、填充模式、播放方向、播放次数及插值起止值等参数。 |
@@ -558,14 +593,16 @@ update(options: AnimatorOptions): void
 完整示例请参考[基于ArkTS扩展的声明式开发范式](#基于arkts扩展的声明式开发范式)。
 
 ```text
+// animator需先通过this.getUIContext().createAnimator()获取AnimatorResult对象
 animator.update(options);
 ```
 
 
 
-#### AnimatorOptions
+## AnimatorOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义动画选项。
 
@@ -575,21 +612,26 @@ animator.update(options);
 
 
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| duration | number | 否 | 否 | 动画播放的时长，单位毫秒。 取值范围：[0, +∞) 默认值：0 |
-| easing | string | 否 | 否 | 动画插值曲线，支持的曲线类型可参考表1。 非法字符串时取:"ease"。 |
-| delay | number | 否 | 否 | 动画延时播放时长，单位毫秒，设置为0时，表示不延时。设置为负数时动画提前播放，如果提前播放的时长大于动画总时长，动画直接过渡到终点。 默认值：0 |
-| fill | 'none' \| 'forwards' \| 'backwards' \| 'both' | 否 | 否 | 动画执行后是否恢复到初始状态，动画执行后，动画结束时的状态（在最后一个关键帧中定义）将保留。 'none'：在动画执行之前和之后都不会应用任何样式到目标上。 'forwards'：在动画结束后，目标将保留动画结束时的状态（在最后一个关键帧中定义）。 'backwards'：动画将在AnimatorOptions中的delay期间应用第一个关键帧中定义的值。当AnimatorOptions中的direction为'normal'或'alternate'时应用from关键帧中的值，当AnimatorOptions中的direction为'reverse'或'alternate-reverse'时应用to关键帧中的值。 'both'：动画将遵循forwards和backwards的规则，从而在两个方向上扩展动画属性。 |
-| direction | 'normal' \| 'reverse' \| 'alternate' \| 'alternate-reverse' | 否 | 否 | 动画播放方向。 'normal'： 动画正向循环播放。 'reverse'： 动画反向循环播放。 'alternate'：动画交替循环播放，奇数次正向播放，偶数次反向播放。 'alternate-reverse'：动画反向交替循环播放，奇数次反向播放，偶数次正向播放。 默认值：'normal' |
-| iterations | number | 否 | 否 | 动画播放次数。设置为0时不播放，设置为-1时无限次播放，设置大于0时为播放次数。 说明: 设置为除-1外其他负数视为无效取值，无效取值动画默认播放1次。 |
+| duration | number | 否 | 否 | 动画播放的时长，单位毫秒。 取值范围：[0, +∞) 默认值：0 说明： 使用interpolating-spring曲线时，duration不生效，由弹簧参数决定。 |
+| easing | string | 否 | 否 | 动画插值曲线，支持的曲线类型可参考表1。 非法字符串时取："ease"。 |
+| delay | number | 否 | 否 | 动画延时播放时长，单位毫秒，设置为0时，表示不延时。设置为负数时动画提前播放，如果提前播放的时长大于动画总时长（由duration和iterations参数共同决定），动画直接过渡到终点。 默认值：0 |
+| fill | 'none' \| 'forwards' \| 'backwards' \| 'both' | 否 | 否 | 动画填充模式，决定动画执行前（delay期间）和执行后是否将关键帧样式应用到目标上。 'none'：在动画执行之前和之后都不会应用任何样式到目标上。 'forwards'：在动画结束后，目标将保留动画结束时的状态（在最后一个关键帧中定义）。 'backwards'：动画将在AnimatorOptions中的delay期间应用第一个关键帧中定义的值。当AnimatorOptions中的direction为'normal'或'alternate'时应用from关键帧中的值，当AnimatorOptions中的direction为'reverse'或'alternate-reverse'时应用to关键帧中的值。 'both'：动画将遵循forwards和backwards的规则，从而在两个方向上扩展动画属性。 |
+| direction | 'normal' \| 'reverse' \| 'alternate' \| 'alternate-reverse' | 否 | 否 | 动画播放方向。 'normal'： 动画正向循环播放。 'reverse'： 动画反向循环播放。 'alternate'：动画交替循环播放，奇数次正向播放，偶数次反向播放。 'alternate-reverse'：动画反向交替循环播放，奇数次反向播放，偶数次正向播放。 默认值：'normal' 说明： 使用interpolating-spring曲线时，direction固定设置为'normal'，其他设置无效。 |
+| iterations | number | 否 | 否 | 动画播放次数。设置为0时不播放，设置为-1时无限次播放，设置大于0时为播放次数。 说明： 使用interpolating-spring曲线时，iterations固定设置为1，其他设置无效。 说明: 设置为除-1外其他负数视为无效取值，无效取值动画默认播放1次。 |
 | begin | number | 否 | 否 | 动画插值起点。 说明: 会影响onFrame回调的入参值。 默认值：0 |
 | end | number | 否 | 否 | 动画插值终点。 说明: 会影响onFrame回调的入参值。 默认值：1 |
 
 
 **表1 支持的曲线类型：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -602,32 +644,34 @@ animator.update(options);
 | "linear-out-slow-in" | 减速曲线，cubic-bezier(0.0, 0.0, 0.2, 1.0)。 |
 | "fast-out-linear-in" | 加速曲线，cubic-bezier(0.4, 0.0, 1.0, 1.0)。 |
 | "friction" | 阻尼曲线，cubic-bezier(0.2, 0.0, 0.2, 1.0)。 |
-| "extreme-deceleration" | 急缓曲线，cubic-bezier(0.0, 0.0, 0.0, 1.0)。 |
+| "extreme-deceleration" | 极缓曲线，cubic-bezier(0.0, 0.0, 0.0, 1.0)。 |
 | "rhythm" | 节奏曲线，cubic-bezier(0.7, 0.0, 0.2, 1.0)。 |
 | "sharp" | 锐利曲线，cubic-bezier(0.33, 0.0, 0.67, 1.0)。 |
 | "smooth" | 平滑曲线，cubic-bezier(0.4, 0.0, 0.4, 1.0)。 |
 | "cubic-bezier(x1, y1, x2, y2)" | 三次贝塞尔曲线，x1、x2的值必须处于0-1之间。例如"cubic-bezier(0.42, 0.0, 0.58, 1.0)"。 |
 | "steps(number, step-position)" | 阶梯曲线，number必须设置，为正整数，step-position参数可选，支持设置start或end，默认值为end。例如"steps(3, start)"。 |
-| interpolating-spring(velocity, mass, stiffness, damping) | 插值弹簧曲线。 velocity、mass、stiffness、damping都是数值类型，且mass、stiffness、damping参数均应该大于0，具体参数含义参考插值弹簧曲线curves.interpolatingSpring。 使用interpolating-spring时，duration不生效，由弹簧参数决定；fill、direction、iterations设置无效，fill固定设置为"forwards"，direction固定设置为"normal"，iterations固定设置为1，且对animator的reverse函数调用无效。即animator使用interpolating-spring时只能正向播放1次。 从API version 11开始支持且仅在ArkTS中支持使用。 |
+| interpolating-spring(velocity, mass, stiffness, damping) | 插值弹簧曲线。 velocity、mass、stiffness、damping都是数值类型，且mass、stiffness、damping参数均必须大于0，具体参数含义参考插值弹簧曲线curves.interpolatingSpring。 使用interpolating-spring时，duration不生效，由弹簧参数决定；fill、direction、iterations设置无效，fill固定设置为"forwards"，direction固定设置为"normal"，iterations固定设置为1，且对animator的reverse函数调用无效。即animator使用interpolating-spring时只能正向播放1次。 从API version 11开始支持且仅在ArkTS中支持使用。 |
 
 
 
 
-#### SimpleAnimatorOptions18+
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-animator简易动画参数对象。与AnimatorOptions相比，部分动画参数有默认值，可不设置。
+## SimpleAnimatorOptions18+
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### constructor18+
+animator简易动画参数对象。与AnimatorOptions相比，duration、easing、delay、fill、direction、iterations等动画参数有默认值，可不设置。
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+### constructor18+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(begin: number, end: number)
 
-SimpleAnimatorOptions的构造函数。
+创建SimpleAnimatorOptions实例，指定动画插值起点和终点。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -637,10 +681,11 @@ SimpleAnimatorOptions的构造函数。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| begin | number | 是 | 动画插值起点。 说明： 会影响onFrame回调的入参值。 |
-| end | number | 是 | 动画插值终点。 说明: 会影响onFrame回调的入参值。 |
+| begin | number | 是 | 动画插值起点。 说明： 会影响onFrame回调的入参值，与end参数共同决定onFrame回调值的范围。 |
+| end | number | 是 | 动画插值终点。 说明: 会影响onFrame回调的入参值，与begin参数共同决定onFrame回调值的范围。 |
 
 
 **示例：**
@@ -668,9 +713,10 @@ struct AnimatorTest {
 
 
 
-#### duration18+
+### duration18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 duration(duration: number): SimpleAnimatorOptions
 
@@ -684,12 +730,14 @@ duration(duration: number): SimpleAnimatorOptions
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| duration | number | 是 | 设置动画播放的时长，单位毫秒。 默认值：1000 说明: 使用interpolating-spring曲线时，duration不生效，由弹簧参数决定。 |
+| duration | number | 是 | 设置动画播放的时长，单位毫秒。 默认值：1000 说明： 使用interpolating-spring曲线时，duration不生效，由弹簧参数决定。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -721,9 +769,10 @@ struct AnimatorTest {
 
 
 
-#### easing18+
+### easing18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 easing(curve: string): SimpleAnimatorOptions
 
@@ -737,12 +786,14 @@ easing(curve: string): SimpleAnimatorOptions
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | curve | string | 是 | 设置animator动画插值曲线，具体说明参考AnimatorOptions。 默认值：“ease” |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -774,9 +825,10 @@ struct AnimatorTest {
 
 
 
-#### delay18+
+### delay18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 delay(delay: number): SimpleAnimatorOptions
 
@@ -790,12 +842,14 @@ delay(delay: number): SimpleAnimatorOptions
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | delay | number | 是 | 设置animator动画播放时延，单位毫秒，设置为0时，表示不延时。设置为负数时动画提前播放，如果提前播放的时长大于动画总时长，动画直接过渡到终点。 默认值：0 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -827,13 +881,14 @@ struct AnimatorTest {
 
 
 
-#### fill18+
+### fill18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-fill(fillMode: [FillMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#fillmode)): SimpleAnimatorOptions
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-设置animator动画填充方式。
+fill(fillMode: FillMode): SimpleAnimatorOptions
+
+设置animator动画填充方式。使用interpolating-spring曲线时，此设置无效，fill固定设置为FillMode.Forwards。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -843,12 +898,14 @@ fill(fillMode: [FillMode](https://developer.huawei.com/consumer/cn/doc/harmonyos
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| fillMode | FillMode | 是 | 设置animator动画填充方式，影响动画delay期间和结束时的表现。 默认值：FillMode.Forwards |
+| fillMode | FillMode | 是 | 设置animator动画填充方式，影响动画delay期间和结束时的表现。使用interpolating-spring曲线时，fill设置无效，固定设置为FillMode.Forwards。 默认值：FillMode.Forwards |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -880,13 +937,14 @@ struct AnimatorTest {
 
 
 
-#### direction18+
+### direction18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-direction(direction: [PlayMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#playmode)): SimpleAnimatorOptions
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-设置animator动画播放模式。
+direction(direction: PlayMode): SimpleAnimatorOptions
+
+设置animator动画播放模式。使用interpolating-spring曲线时，此设置无效，direction固定设置为PlayMode.Normal。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -896,12 +954,14 @@ direction(direction: [PlayMode](https://developer.huawei.com/consumer/cn/doc/har
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| direction | PlayMode | 是 | 设置animator动画播放方向。 默认值：PlayMode.Normal |
+| direction | PlayMode | 是 | 设置animator动画播放方向。 PlayMode.Normal：动画正向循环播放。 PlayMode.Reverse：动画反向循环播放。 PlayMode.Alternate：动画交替循环播放，奇数次正向播放，偶数次反向播放。 PlayMode.AlternateReverse：动画反向交替循环播放，奇数次反向播放，偶数次正向播放。 默认值：PlayMode.Normal |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -933,9 +993,10 @@ struct AnimatorTest {
 
 
 
-#### iterations18+
+### iterations18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 iterations(iterations: number): SimpleAnimatorOptions
 
@@ -949,12 +1010,14 @@ iterations(iterations: number): SimpleAnimatorOptions
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | iterations | number | 是 | 设置animator动画播放次数，设置为0时不播放，设置为-1时无限次播放，设置大于0时为播放次数。 说明： 设置为除-1外其他负数视为无效取值，无效取值动画默认播放1次。 默认值：1 使用interpolating-spring曲线时，iterations设置无效，固定设置为1。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -986,13 +1049,17 @@ struct AnimatorTest {
 
 
 
-#### 完整示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 完整示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 基于JS扩展的类Web开发范式
+
+
+### 基于JS扩展的类Web开发范式
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 <!-- hml -->
@@ -1003,7 +1070,7 @@ struct AnimatorTest {
 ```
 
 ```text
-import { Animator as animator, AnimatorResult } from '@kit.ArkUI';
+import { Animator as animator, AnimatorResult, AnimatorOptions } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 let DataTmp: Record<string, Animator> = {
@@ -1016,11 +1083,11 @@ class Tmp {
   data: animator = DataTmp
   onInit: Function = () => {
   }
-  Show: Function = () => {
+  show: Function = () => {
   }
 }
 
-class DateT {
+class AnimatorState {
   divWidth: number = 0
   divHeight: number = 0
   animator: AnimatorResult | null = null
@@ -1040,15 +1107,15 @@ class DateT {
         begin: 200.0,
         end: 400.0
       };
-      let DataTmp: DateT = {
+      let animatorState: AnimatorState = {
         divWidth: 200,
         divHeight: 200,
         animator: null
       }
-      DataTmp.animator = animator.create(options);
+      animatorState.animator = animator.create(options);
     },
-    Show() {
-      let options1: AnimatorOptions = {
+    show() {
+      let resetOptions: AnimatorOptions = {
         duration: 1500,
         easing: "friction",
         delay: 0,
@@ -1058,26 +1125,26 @@ class DateT {
         begin: 0,
         end: 400.0,
       };
-      let DataTmp: DateT = {
+      let animatorState: AnimatorState = {
         divWidth: 200,
         divHeight: 200,
         animator: null
       }
       try {
-        DataTmp.animator = animator.create(options1);
-        DataTmp.animator.reset(options1);
+        animatorState.animator = animator.create(resetOptions);
+        animatorState.animator.reset(resetOptions);
       } catch (error) {
         let message = (error as BusinessError).message
         let code = (error as BusinessError).code
-        console.error(`Animator reset failed, error code: ${code}, message: ${message}.`);
+        console.error(`Animator reset failed. Code: ${code}, message: ${message}`);
       }
-      let _this = DataTmp;
-      if (DataTmp.animator) {
-        DataTmp.animator.onFrame = (value: number) => {
+      let _this = animatorState;
+      if (animatorState.animator) {
+        animatorState.animator.onFrame = (value: number) => {
           _this.divWidth = value;
           _this.divHeight = value;
         };
-        DataTmp.animator.play();
+        animatorState.animator.play();
       }
     }
   })
@@ -1085,12 +1152,15 @@ class DateT {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/MWnkyfobQ22QGzGylAXpyw/zh-cn_image_0000002685927843.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071442Z&HW-CC-Expire=86400&HW-CC-Sign=1AB0F932CB7FD4673FA6A2CAACD434AFAD03483B050A37ACBF9D557F63952A86)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/K4Y9YHxbTtmqJevD9YOEtA/zh-cn_image_0000002717612364.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072827Z&HW-CC-Expire=86400&HW-CC-Sign=819EDE4770BE80113D5F4B9331D93E09ADEE3B2212ADD6DC2186992317E2DD99)
 
 
 
 
-#### 基于ArkTS扩展的声明式开发范式
+### 基于ArkTS扩展的声明式开发范式
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 推荐通过使用 UIContext 中的 createAnimator 接口明确UI上下文。
@@ -1110,7 +1180,7 @@ struct AnimatorTest {
 
   create() {
     this.backAnimator = this.getUIContext().createAnimator({
-      // 建议使用 this.getUIContext().createAnimator()接口
+    // 建议使用 this.getUIContext().createAnimator()接口
       duration: 2000,
       easing: "ease",
       delay: 0,
@@ -1261,12 +1331,15 @@ struct AnimatorTest {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/ydAaJGQ2TXC9nGlyh4mgeQ/zh-cn_image_0000002656008164.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071442Z&HW-CC-Expire=86400&HW-CC-Sign=C33D05AE13EB45B50F3DAF6355D9E2E7D868BE4F2E4B55855AC02C017ED5458D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/eS0ak6g5RVq1XOpZO3j7xA/zh-cn_image_0000002747292317.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072827Z&HW-CC-Expire=86400&HW-CC-Sign=4C307E9CCA9AE8A7D2B8E4BC6555F0D5896BD967E80B3B1615ECADD1A0A1F683)
 
 
 
 
-#### 位移动画示例（简易入参）
+### 位移动画示例（简易入参）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { AnimatorResult, SimpleAnimatorOptions } from '@kit.ArkUI';
@@ -1277,7 +1350,7 @@ struct AnimatorTest {
   private TAG: string = '[AnimatorTest]'
   private backAnimator: AnimatorResult | undefined = undefined
   private flag: boolean = false
-  @State translate_: number = 0
+  @State translateX: number = 0
 
   create() {
     this.backAnimator = this.getUIContext()?.createAnimator(
@@ -1288,7 +1361,7 @@ struct AnimatorTest {
       console.info(this.TAG, 'backAnimator onFinish')
     }
     this.backAnimator.onFrame = (value: number) => {
-      this.translate_ = value
+      this.translateX = value
     }
   }
 
@@ -1306,7 +1379,7 @@ struct AnimatorTest {
         Column()
           .width(100)
           .height(100)
-          .translate({x: this.translate_})
+          .translate({x: this.translateX})
           .backgroundColor(Color.Green)
       }
       .width('100%')
@@ -1366,4 +1439,4 @@ struct AnimatorTest {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/XFXmXpqHSQSbIg2bLujFgA/zh-cn_image_0000002655848244.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071442Z&HW-CC-Expire=86400&HW-CC-Sign=F44C6F0D463AA2982F369F351E61733EF84EB16E2D3E7CA6C8C474CEA4D0D5AA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/4jPEzCWBQgi5V4ctpkeqZA/zh-cn_image_0000002747212233.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072827Z&HW-CC-Expire=86400&HW-CC-Sign=86A817FC8A66DACE4D09C9C41326DF976BEFF4EDA91E9ACC0CFB539666DAF7B6)

@@ -1,10 +1,10 @@
 # NativeWindow开发指导 (C/C++)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-window-guidelines
 
-#### 场景介绍
+## 场景介绍
 
 NativeWindow是**本地平台化窗口**，表示图形队列的生产者端，主要用于需要高效图形数据处理的场景。当开发者开发视频播放、相机预览、游戏渲染等图形密集型应用时，需要在图形缓冲区中高效地写入和提交图形数据。此时，开发者可以通过NativeWindow接口进行申请和提交Buffer，配置Buffer属性信息。
 
@@ -16,7 +16,8 @@ NativeWindow是**本地平台化窗口**，表示图形队列的生产者端，�
 
 
 
-#### 接口说明
+## 接口说明
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -29,7 +30,7 @@ NativeWindow是**本地平台化窗口**，表示图形队列的生产者端，�
 
 
 
-#### 开发步骤
+## 开发步骤
 
 以下步骤描述了如何使用NativeWindow提供的Native API接口申请图形Buffer，写入图形内容，并提交Buffer到图形队列。
 
@@ -140,7 +141,7 @@ callback_.DispatchTouchEvent = DispatchTouchEventCB;
 OH_NativeXComponent_RegisterCallback(nativeXComponent, &callback_);
 ```
 
- - 设置OHNativeWindowBuffer的属性。使用OH_NativeWindow_NativeWindowHandleOpt设置OHNativeWindowBuffer的属性（默认携带NATIVEBUFFER_USAGE_CPU_READ usage参数，如果不使用CPU读写数据，建议去除NATIVEBUFFER_USAGE_CPU_READ usage参数，具体可见[关闭CPU访问窗口缓冲区数据](https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkgraphics-2d-14)）。
+ - 设置OHNativeWindow的属性。使用OH_NativeWindow_NativeWindowHandleOpt设置OHNativeWindowBuffer的属性（默认携带NATIVEBUFFER_USAGE_CPU_READ usage参数，如果不使用CPU读写数据，建议去除NATIVEBUFFER_USAGE_CPU_READ usage参数，具体可见[关闭CPU访问窗口缓冲区数据](https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkgraphics-2d-14)）。
 
   
 ```cpp
@@ -187,6 +188,7 @@ if (releaseFenceFd != -1) {
     close(releaseFenceFd);
 }
 uint32_t *pixel = static_cast<uint32_t *>(mappedAddr);
+uint32_t value = flag_ ? 0xfff0000f : 0xff00ffff;
 for (uint64_t x = 0; x < bufferHandle->width; x++) {
     for (uint64_t y = 0; y < bufferHandle->height; y++) {
         *pixel++ = value;
@@ -198,9 +200,9 @@ for (uint64_t x = 0; x < bufferHandle->width; x++) {
 
   
 ```cpp
-struct Region *region = new Region();
+struct Region region = {0};
 int acquireFenceFd = -1;
-ret = OH_NativeWindow_NativeWindowFlushBuffer(nativeWindow, nativeWindowBuffer, acquireFenceFd, *region);
+ret = OH_NativeWindow_NativeWindowFlushBuffer(nativeWindow, nativeWindowBuffer, acquireFenceFd, region);
 if (ret != NATIVE_ERROR_OK) {
     LOGE("flush failed");
     (void)OH_NativeWindow_NativeWindowAbortBuffer(nativeWindow, nativeWindowBuffer);

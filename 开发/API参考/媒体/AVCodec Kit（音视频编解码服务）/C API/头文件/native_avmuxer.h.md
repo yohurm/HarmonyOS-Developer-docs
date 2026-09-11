@@ -1,13 +1,14 @@
 # native_avmuxer.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avmuxer-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明用于音视频封装的Native API。
  
@@ -25,16 +26,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_AVMuxer | OH_AVMuxer | 定义封装接口native层对象类型。 |
@@ -42,10 +46,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_AVMuxer *OH_AVMuxer_Create(int32_t fd, OH_AVOutputFormat format) | 通过文件描述符fd和封装格式创建OH_AVMuxer实例。 |
@@ -61,15 +67,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AVMuxer_Create()
+### OH_AVMuxer_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVMuxer *OH_AVMuxer_Create(int32_t fd, OH_AVOutputFormat format)
@@ -85,6 +93,7 @@ OH_AVMuxer *OH_AVMuxer_Create(int32_t fd, OH_AVOutputFormat format)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | int32_t fd | 用读写方式打开（O_RDWR），由调用者关闭该fd。 |
@@ -93,6 +102,7 @@ OH_AVMuxer *OH_AVMuxer_Create(int32_t fd, OH_AVOutputFormat format)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVMuxer * | 返回一个指向OH_AVMuxer实例的指针，需要调用OH_AVMuxer_Destroy销毁。 |
@@ -100,9 +110,10 @@ OH_AVMuxer *OH_AVMuxer_Create(int32_t fd, OH_AVOutputFormat format)
  
   
 
-#### OH_AVMuxer_SetRotation()
+### OH_AVMuxer_SetRotation()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVMuxer_SetRotation(OH_AVMuxer *muxer, int32_t rotation)
@@ -118,6 +129,7 @@ OH_AVErrCode OH_AVMuxer_SetRotation(OH_AVMuxer *muxer, int32_t rotation)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMuxer *muxer | 指向OH_AVMuxer实例的指针。 |
@@ -126,6 +138,7 @@ OH_AVErrCode OH_AVMuxer_SetRotation(OH_AVMuxer *muxer, int32_t rotation)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：muxer为空指针，或rotation无效。 AV_ERR_OPERATE_NOT_PERMIT：不允许调用该接口，请检查接口调用顺序。 |
@@ -133,9 +146,10 @@ OH_AVErrCode OH_AVMuxer_SetRotation(OH_AVMuxer *muxer, int32_t rotation)
  
   
 
-#### OH_AVMuxer_SetFormat()
+### OH_AVMuxer_SetFormat()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVMuxer_SetFormat(OH_AVMuxer *muxer, OH_AVFormat *format)
@@ -159,6 +173,7 @@ OH_AVErrCode OH_AVMuxer_SetFormat(OH_AVMuxer *muxer, OH_AVFormat *format)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMuxer *muxer | 指向OH_AVMuxer实例的指针。 |
@@ -167,6 +182,7 @@ OH_AVErrCode OH_AVMuxer_SetFormat(OH_AVMuxer *muxer, OH_AVFormat *format)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：设置format参数正确。 AV_ERR_INVALID_VAL：muxer为空指针，或format无效。 AV_ERR_OPERATE_NOT_PERMIT：不允许调用该接口，请检查接口调用顺序。 |
@@ -174,9 +190,10 @@ OH_AVErrCode OH_AVMuxer_SetFormat(OH_AVMuxer *muxer, OH_AVFormat *format)
  
   
 
-#### OH_AVMuxer_AddTrack()
+### OH_AVMuxer_AddTrack()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVMuxer_AddTrack(OH_AVMuxer *muxer, int32_t *trackIndex, OH_AVFormat *trackFormat)
@@ -192,6 +209,7 @@ OH_AVErrCode OH_AVMuxer_AddTrack(OH_AVMuxer *muxer, int32_t *trackIndex, OH_AVFo
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMuxer *muxer | 指向OH_AVMuxer实例的指针。 |
@@ -201,6 +219,7 @@ OH_AVErrCode OH_AVMuxer_AddTrack(OH_AVMuxer *muxer, int32_t *trackIndex, OH_AVFo
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：muxer为空指针，或trackIndex无效，或trackFormat无效。 AV_ERR_OPERATE_NOT_PERMIT：不允许调用该接口，请检查接口调用顺序。 AV_ERR_UNSUPPORT：不支持的mime类型。 AV_ERR_NO_MEMORY：申请内存失败。 AV_ERR_UNKNOWN：未知错误。 |
@@ -208,9 +227,10 @@ OH_AVErrCode OH_AVMuxer_AddTrack(OH_AVMuxer *muxer, int32_t *trackIndex, OH_AVFo
  
   
 
-#### OH_AVMuxer_Start()
+### OH_AVMuxer_Start()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVMuxer_Start(OH_AVMuxer *muxer)
@@ -226,6 +246,7 @@ OH_AVErrCode OH_AVMuxer_Start(OH_AVMuxer *muxer)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMuxer *muxer | 指向OH_AVMuxer实例的指针。 |
@@ -233,6 +254,7 @@ OH_AVErrCode OH_AVMuxer_Start(OH_AVMuxer *muxer)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：muxer为空指针。 AV_ERR_OPERATE_NOT_PERMIT：不允许调用该接口，请检查接口调用顺序。 AV_ERR_UNKNOWN：未知错误。 |
@@ -240,9 +262,10 @@ OH_AVErrCode OH_AVMuxer_Start(OH_AVMuxer *muxer)
  
   
 
-#### OH_AVMuxer_WriteSample()
+### OH_AVMuxer_WriteSample()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVMuxer_WriteSample(OH_AVMuxer *muxer, uint32_t trackIndex, OH_AVMemory *sample, OH_AVCodecBufferAttr info)
@@ -262,6 +285,7 @@ OH_AVErrCode OH_AVMuxer_WriteSample(OH_AVMuxer *muxer, uint32_t trackIndex, OH_A
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMuxer *muxer | 指向OH_AVMuxer实例的指针。 |
@@ -272,6 +296,7 @@ OH_AVErrCode OH_AVMuxer_WriteSample(OH_AVMuxer *muxer, uint32_t trackIndex, OH_A
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：muxer为空指针，或trackIndex无效，或sample无效，或info无效。 AV_ERR_OPERATE_NOT_PERMIT：不允许调用该接口，请检查接口调用顺序。 AV_ERR_NO_MEMORY：申请内存失败。 AV_ERR_UNKNOWN：未知错误。 |
@@ -279,9 +304,10 @@ OH_AVErrCode OH_AVMuxer_WriteSample(OH_AVMuxer *muxer, uint32_t trackIndex, OH_A
  
   
 
-#### OH_AVMuxer_WriteSampleBuffer()
+### OH_AVMuxer_WriteSampleBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVMuxer_WriteSampleBuffer(OH_AVMuxer *muxer, uint32_t trackIndex, const OH_AVBuffer *sample)
@@ -297,6 +323,7 @@ OH_AVErrCode OH_AVMuxer_WriteSampleBuffer(OH_AVMuxer *muxer, uint32_t trackIndex
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMuxer *muxer | 指向OH_AVMuxer实例的指针。 |
@@ -306,6 +333,7 @@ OH_AVErrCode OH_AVMuxer_WriteSampleBuffer(OH_AVMuxer *muxer, uint32_t trackIndex
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：muxer为空指针，或trackIndex无效，或sample无效。 AV_ERR_OPERATE_NOT_PERMIT：不允许调用该接口，请检查接口调用顺序。 AV_ERR_NO_MEMORY：申请内存失败。 AV_ERR_UNKNOWN：未知错误。 |
@@ -313,9 +341,10 @@ OH_AVErrCode OH_AVMuxer_WriteSampleBuffer(OH_AVMuxer *muxer, uint32_t trackIndex
  
   
 
-#### OH_AVMuxer_Stop()
+### OH_AVMuxer_Stop()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVMuxer_Stop(OH_AVMuxer *muxer)
@@ -331,6 +360,7 @@ OH_AVErrCode OH_AVMuxer_Stop(OH_AVMuxer *muxer)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMuxer *muxer | 指向OH_AVMuxer实例的指针。 |
@@ -338,6 +368,7 @@ OH_AVErrCode OH_AVMuxer_Stop(OH_AVMuxer *muxer)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：muxer为空指针。 AV_ERR_OPERATE_NOT_PERMIT：不允许调用该接口，请检查接口调用顺序。 |
@@ -345,9 +376,10 @@ OH_AVErrCode OH_AVMuxer_Stop(OH_AVMuxer *muxer)
  
   
 
-#### OH_AVMuxer_Destroy()
+### OH_AVMuxer_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVMuxer_Destroy(OH_AVMuxer *muxer)
@@ -365,6 +397,7 @@ OH_AVErrCode OH_AVMuxer_Destroy(OH_AVMuxer *muxer)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMuxer *muxer | 指向OH_AVMuxer实例的指针。 |
@@ -372,6 +405,7 @@ OH_AVErrCode OH_AVMuxer_Destroy(OH_AVMuxer *muxer)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：muxer为空指针。 |

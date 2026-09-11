@@ -1,13 +1,13 @@
 # Router切换Navigation
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-router-to-navigation
 
 鉴于组件导航（[Navigation](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation)）支持更丰富的动效、一次开发多端部署能力和更灵活的栈操作。本文主要从页面跳转、动效和生命周期等方面介绍如何从Router切换到Navigation。
 
 
-#### 页面结构
+## 页面结构
 
 Router路由的页面是一个@Entry修饰的Component，每一个页面都需要在main_page.json中声明。
 
@@ -177,7 +177,7 @@ export struct PageOne {
 
 
 
-#### 路由操作
+## 路由操作
 
 Router通过@ohos.router模块提供的方法来操作页面，建议使用[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)中的[getRouter](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#getrouter)获取[Router](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-router)对象。
 
@@ -380,7 +380,7 @@ struct CustomNode {
 
 
 
-#### 生命周期
+## 生命周期
 
 > [!NOTE]
 > router页面的生命周期和Navigation页面的生命周期关系如下： 1.router页面的跳转会影响其内部Navigation页面的生命周期。 2.Navigation页面的跳转不会影响其所在router页面的生命周期。 3.应用前后台切换会同时触发router页面和Navigation页面的生命周期。
@@ -452,7 +452,7 @@ struct PageOne {
 
 
 
-#### 转场动画
+## 转场动画
 
 Router和Navigation都提供了系统的转场动画，也提供了自定义转场的能力。
 
@@ -462,7 +462,7 @@ Navigation作为路由容器组件，其内部的页面切换动画本质上属�
 
 
 
-#### 共享元素转场
+## 共享元素转场
 
 页面和页面之间跳转的时候需要进行共享元素过渡动画，Router可以通过通用属性sharedTransition来实现共享元素转场，具体可以参考如下链接：
 
@@ -472,7 +472,7 @@ Navigation也提供了共享元素一镜到底的转场能力，需要配合geom
 
 
 
-#### 跨包路由
+## 跨包路由
 
 Router可以通过命名路由的方式实现跨包跳转。
 1. 在想要跳转到的共享包[HAR](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/har-package)或者[HSP](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/in-app-hsp)页面里，给@Entry修饰的自定义组件[EntryOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-custom-components#entry)命名。
@@ -625,14 +625,14 @@ struct mainPage {
 
 
 
-#### 动态路由
+## 动态路由
 
 动态路由设计的目的是解决多个产品（Hap）之间可以复用相同的业务模块，各个业务模块之间解耦（模块之间跳转通过路由表跳转，不需要互相依赖）和路由功能扩展整合。
 
 业务特性模块对外暴露的就是模块内支持完成具体业务场景的多个页面的集合；路由管理就是将每个模块支持的页面都用统一的路由表结构管理起来。 当产品需要某个业务模块时，就会注册对应的模块的路由表。
 
 **动态路由的优势：**
-1. 路由定义除了跳转的URL以外，可以丰富的配置任意扩展信息，如横竖屏默认模式，是否需要鉴权等等，做路由跳转时的统一处理。
+1. 路由定义除了跳转的URL以外，可以丰富地配置任意扩展信息，如横竖屏默认模式，是否需要鉴权等等，做路由跳转时的统一处理。
 2. 给每个路由设置一个名字，按照名称进行跳转而不是ets文件路径。
 3. 页面的加载可以使用动态Import（按需加载），防止首个页面加载大量代码导致卡顿。
 
@@ -662,7 +662,7 @@ struct mainPage {
 
 
 
-#### 生命周期监听
+## 生命周期监听
 
 Router可以通过observer实现注册监听，接口定义请参考Router无感监听[uiObserver.on('routerPageUpdate')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-observer#uiobserveronrouterpageupdate)。
 
@@ -722,11 +722,12 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### 页面信息查询
+## 页面信息查询
 
 为了实现页面内自定义组件跟页面解耦，自定义组件中提供了全局查询页面信息的接口。
 
 Router可以通过[queryRouterPageInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-custom-component-api#queryrouterpageinfo12)接口查询当前自定义组件所在的Page页面的信息，其返回值包含如下几个属性，其中pageId是页面的唯一标识符：
+
 
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -755,6 +756,7 @@ struct MyComponent {
 ```
 
 Navigation也可以通过[queryNavDestinationInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-custom-component-api#querynavdestinationinfo)接口查询当前自定义组件所在的NavDestination的信息，其返回值包含如下几个属性，其中navDestinationId是页面的唯一标识符：
+
 
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -798,7 +800,7 @@ struct MyComponent {
 
 
 
-#### 路由拦截
+## 路由拦截
 
 Router没有提供路由拦截的能力，开发者需要自行封装路由跳转接口，并在自己封装的接口中做路由拦截的判断并重定向路由。
 

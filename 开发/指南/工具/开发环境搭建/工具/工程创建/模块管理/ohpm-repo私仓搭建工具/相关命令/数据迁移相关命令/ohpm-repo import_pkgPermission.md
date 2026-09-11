@@ -1,19 +1,19 @@
 # ohpm-repo import_pkgPermission
 
-更新时间：2026-06-12 06:54:33
+更新时间：2026-09-08 02:53:31
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo-import-pkgpermission
 
 ohpm-repo 5.4.0版本开始，支持导入包权限数据。
  
 
-#### 前提条件
+## 前提条件
 
 已成功执行 [export_userinfo 命令](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo-export-userinfo)、[import_userinfo 命令](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo-import-userinfo)、[batch_download 命令](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo-batch-download)、[batch_publish 命令](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo-batch-publish)、[export_pkgPermission 命令](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo-export-pkgpermission)，确保每个包指定的包文件、用户和组织都存在。
  
  
 
-#### 命令格式
+## 命令格式
 
 ```text
 ohpm-repo import_pkgPermission <pkg_permission_list> [options]
@@ -21,17 +21,17 @@ ohpm-repo import_pkgPermission <pkg_permission_list> [options]
  
  
 
-#### 功能描述
+## 功能描述
 
 根据提供的记录着包权限数据的.json文件，向ohpm-repo导入包权限数据。
  
  
 
-#### 参数
+## 参数
 
  
 
-#### &lt;pkg_permission_list&gt;
+### &lt;pkg_permission_list&gt;
 
 - 类型：String
 - 必填参数
@@ -41,11 +41,11 @@ ohpm-repo import_pkgPermission <pkg_permission_list> [options]
  
  
 
-#### 选项
+## 选项
 
  
 
-#### --mode
+### --mode
 
 - 类型：String
 - 必填参数
@@ -55,6 +55,7 @@ ohpm-repo import_pkgPermission <pkg_permission_list> [options]
  
 **merge-origin模式**：保留源数据的可见性配置，合并源数据与ohpm-repo的包权限（以ohpm-repo权限为主），取权限并集。
   
+
 | 源数据可见性 | ohpm-repo可见性 | 最终可见性 | 最终包权限 |
 | --- | --- | --- | --- |
 | 授权可读 | 授权可读 | 授权可读 | 源数据与ohpm-repo的所有者、维护者、查看者权限并集 |
@@ -63,8 +64,9 @@ ohpm-repo import_pkgPermission <pkg_permission_list> [options]
 | 公开可读 | 公开可读 | 公开可读 | 源数据与ohpm-repo的所有者、维护者权限并集 |
  
  
-**merge-target 模式：**处理规则：保留ohpm-repo的可见性配置，合并源数据与ohpm-repo的包权限（以ohpm-repo权限为主），取权限并集。
+**merge-target 模式：**保留ohpm-repo的可见性配置，合并源数据与ohpm-repo的包权限（以ohpm-repo权限为主），取权限并集。
   
+
 | 源数据可见性 | ohpm-repo可见性 | 最终可见性 | 最终包权限 |
 | --- | --- | --- | --- |
 | 授权可读 | 授权可读 | 授权可读 | 源数据与ohpm-repo的所有者、维护者、查看者权限并集 |
@@ -75,6 +77,7 @@ ohpm-repo import_pkgPermission <pkg_permission_list> [options]
  
 **override 模式：**删除ohpm-repo中对应包的所有包权限数据，完全使用源数据替代。
   
+
 | 源数据可见性 | ohpm-repo可见性 | 最终可见性 | 最终包权限 |
 | --- | --- | --- | --- |
 | 授权可读 | 授权可读 | 授权可读 | 源数据中的所有者、维护者、查看者权限 |
@@ -93,9 +96,9 @@ ohpm-repo import_pkgPermission <pkg_permission_list> [options]
  
  
 
-#### 示例
+## 示例
 
-**以****merge-origin****模式导入包权限**
+**以merge-origin模式导入包权限**
  
 ```text
 ohpm-repo import_pkgPermission <pkg_permission_list> --mode merge-origin

@@ -1,9 +1,9 @@
 # SceneNode
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-scene-nodes
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供ArkGraphics 3D中场景资源节点的类型及操作方法。SceneNode是3D场景的基础构建单元，它允许开发者通过层级结构管理场景中的对象，实现高效的场景组织与交互控制。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { LayerMask, NodeType, Container, Node, Geometry, LightType, Light, SpotLight, DirectionalLight,
@@ -23,17 +24,19 @@ import { LayerMask, NodeType, Container, Node, Geometry, LightType, Light, SpotL
  
   
 
-#### LayerMask
+## LayerMask
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于定义节点的图层掩码。
  
   
 
-#### getEnabled
+### getEnabled
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEnabled(index: number): boolean
  
@@ -43,6 +46,7 @@ getEnabled(index: number): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 要使能图层的下标，值域为大于等于0的整数。 |
@@ -50,6 +54,7 @@ getEnabled(index: number): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回特定下标的图层是否使能。true表示使用图层掩码，false表示不使用。 |
@@ -71,17 +76,18 @@ function layerMask(): void {
           let enabled: boolean = node.layerMask.getEnabled(1);
       }
     }
-  }).catch((error: Error) => {
-    console.error('Scene load failed:', error);
+  }).catch((err: Error) => {
+    console.error(`Failed to load scene. Message: ${err.message}`);
   });
 }
 ```
  
   
 
-#### setEnabled
+### setEnabled
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setEnabled(index: number, enabled: boolean): void
  
@@ -91,6 +97,7 @@ setEnabled(index: number, enabled: boolean): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 要使能图层的下标，值域为大于等于0的整数。 |
@@ -113,22 +120,24 @@ function layerMask(): void {
           node.layerMask.setEnabled(1, true);
       }
     }
-  }).catch((error: Error) => {
-    console.error('Scene load failed:', error);
+  }).catch((err: Error) => {
+    console.error(`Failed to load scene. Message: ${err.message}`);
   });
 }
 ```
  
   
 
-#### NodeType
+## NodeType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 节点类型枚举。
  
 **系统能力：** SystemCapability.ArkUi.Graphics3D
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NODE | 1 | 节点是空节点。 |
@@ -140,17 +149,19 @@ function layerMask(): void {
  
   
 
-#### Container&lt;T&gt;
+## Container&lt;T&gt;
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义场景对象的容器。容器提供了一种将场景对象分组到层次结构中的方法。
  
   
 
-#### append
+### append
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 append(item: T): void
  
@@ -160,6 +171,7 @@ append(item: T): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | item | T | 是 | T类型对象。 |
@@ -181,17 +193,18 @@ function append(): void {
         result.root?.children.get(0)?.children.append(node);
       }
     }
-  }).catch((error: Error) => {
-    console.error('Scene load failed:', error);
+  }).catch((err: Error) => {
+    console.error(`Failed to load scene. Message: ${err.message}`);
   });
 }
 ```
  
   
 
-#### insertAfter
+### insertAfter
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 insertAfter(item: T, sibling: T | null): void
  
@@ -201,6 +214,7 @@ insertAfter(item: T, sibling: T | null): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | item | T | 是 | 要插入节点。 |
@@ -223,17 +237,18 @@ function insertAfter(): void {
         result.root?.children.get(0)?.children.insertAfter(node, null);
       }
     }
-  }).catch((error: Error) => {
-    console.error('Scene load failed:', error);
+  }).catch((err: Error) => {
+    console.error(`Failed to load scene. Message: ${err.message}`);
   });
 }
 ```
  
   
 
-#### remove
+### remove
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 remove(item: T): void
  
@@ -243,6 +258,7 @@ remove(item: T): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | item | T | 是 | 要移除的对象。 |
@@ -264,17 +280,18 @@ function remove(): void {
         result.root?.children.remove(node);
       }
     }
-  }).catch((error: Error) => {
-    console.error('Scene load failed:', error);
+  }).catch((err: Error) => {
+    console.error(`Failed to load scene. Message: ${err.message}`);
   });
 }
 ```
  
   
 
-#### get
+### get
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get(index: number): T | null
  
@@ -284,6 +301,7 @@ get(index: number): T | null
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 要获取对象的下标，取值范围是大于等于0的整数。 |
@@ -291,6 +309,7 @@ get(index: number): T | null
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | T \| null | 返回获取到的对象，获取不到则返回空值。 |
@@ -312,17 +331,18 @@ function get(): void {
         result.root?.children.get(0)?.children.insertAfter(node, null);
       }
     }
-  }).catch((error: Error) => {
-    console.error('Scene load failed:', error);
+  }).catch((err: Error) => {
+    console.error(`Failed to load scene. Message: ${err.message}`);
   });
 }
 ```
  
   
 
-#### clear
+### clear
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clear(): void
  
@@ -346,17 +366,18 @@ function clear(): void {
         node.children.clear();
       }
     }
-  }).catch((error: Error) => {
-    console.error('Scene load failed:', error);
+  }).catch((err: Error) => {
+    console.error(`Failed to load scene. Message: ${err.message}`);
   });
 }
 ```
  
   
 
-#### count
+### count
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 count(): number
  
@@ -366,6 +387,7 @@ count(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回容器中对象个数，取值范围是非负整数。 |
@@ -394,20 +416,23 @@ function count(): void {
  
   
 
-#### Node
+## Node
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 3D场景由树状层次结构的节点组成，其中每个节点都实现了Node接口。继承自[SceneResource](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-scene-resources#sceneresource)。
  
   
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | position | Position3 | 否 | 否 | 节点位置，单位为世界坐标系下的场景单位（比如cm、m、km等）。 |
@@ -423,9 +448,10 @@ function count(): void {
  
   
 
-#### getNodeByPath
+### getNodeByPath
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getNodeByPath(path: string): Node | null
  
@@ -435,6 +461,7 @@ getNodeByPath(path: string): Node | null
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 场景节点层次中的路径。每层之间使用'/'符号进行分割。 |
@@ -442,6 +469,7 @@ getNodeByPath(path: string): Node | null
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Node \| null | 返回节点对象。 |
@@ -492,14 +520,16 @@ function printNodeTreeInRelativePath(node: Node | null): void {
  
   
 
-#### Geometry
+## Geometry
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 几何节点类型，用于承载可渲染的网格数据，并支持可选的形变功能，继承自[Node](#node)。
  
 **系统能力：** SystemCapability.ArkUi.Graphics3D
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | mesh | Mesh | 是 | 否 | 网格属性。 |
@@ -508,14 +538,16 @@ function printNodeTreeInRelativePath(node: Node | null): void {
  
   
 
-#### LightType
+## LightType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 光源类型枚举。
  
 **系统能力：** SystemCapability.ArkUi.Graphics3D
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DIRECTIONAL | 1 | 平行光类型。 |
@@ -524,14 +556,16 @@ function printNodeTreeInRelativePath(node: Node | null): void {
  
   
 
-#### Light
+## Light
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 光源，继承自[Node](#node)。
  
 **系统能力：** SystemCapability.ArkUi.Graphics3D
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | lightType | LightType | 是 | 否 | 光源类型。 |
@@ -543,9 +577,10 @@ function printNodeTreeInRelativePath(node: Node | null): void {
  
   
 
-#### SpotLight
+## SpotLight
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 聚光灯类型，继承自[Light](#light)。
  
@@ -553,6 +588,7 @@ function printNodeTreeInRelativePath(node: Node | null): void {
  
 **系统能力：** SystemCapability.ArkUi.Graphics3D
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | innerAngle23+ | number | 否 | 是 | 从聚光灯中心到开始衰减的角度，对应圆锥的半顶角，在这个圆锥体内光强不随角度衰减。单位为弧度（rad），默认值为0。设置的值必须大于等于0，小于等于outerAngle。 |
@@ -560,7 +596,7 @@ function printNodeTreeInRelativePath(node: Node | null): void {
  
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/WnC5VlRzTF6mBZ7WkYH0eg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071723Z&HW-CC-Expire=86400&HW-CC-Sign=E4993F6320ECFB6B9D9C85B4D068643CDFE8DB7FB8A4C717ED7A0ECB950FDB7D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/nJiAXjx4THOgnRm4VR5E5w/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072918Z&HW-CC-Expire=86400&HW-CC-Sign=8F841D55CA013B25C578F3AF599CE1E5BC5E422F47D77DD2FCAE6A9E0FBFB0B4)
  
  
 用户需要保证设置的innerAngle与outerAngle值是合理的。当outerAngle设置的值大于PI/2时，内部会强制其等于PI/2。当outerAngle设置的值小于innerAngle时，内部会强制其等于innerAngle。
@@ -569,9 +605,10 @@ function printNodeTreeInRelativePath(node: Node | null): void {
  
   
 
-#### DirectionalLight
+## DirectionalLight
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 平行光类型，继承自[Light](#light)。
  
@@ -579,20 +616,23 @@ function printNodeTreeInRelativePath(node: Node | null): void {
  
   
 
-#### Camera
+## Camera
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 相机类型，Camera继承自[Node](#node)。
  
   
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | fov | number | 否 | 否 | 视场，单位为弧度（rad），取值范围为(0, π)。 |
@@ -608,9 +648,10 @@ function printNodeTreeInRelativePath(node: Node | null): void {
  
   
 
-#### raycast20+
+### raycast20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 raycast(viewPosition: Vec2, params: RaycastParameters): Promise<RaycastResult[]>
  
@@ -620,6 +661,7 @@ raycast(viewPosition: Vec2, params: RaycastParameters): Promise<RaycastResult[]>
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | viewPosition | Vec2 | 是 | 使用屏幕归一化坐标，取值范围为[0, 1]。其中(0,0)表示Component3D控件的左上角，(1,1)表示Component3D控件的右下角。 |
@@ -628,9 +670,10 @@ raycast(viewPosition: Vec2, params: RaycastParameters): Promise<RaycastResult[]>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise<RaycastResult[]> | 返回命中的结果数组（按距离从近到远排序），若无命中则返回空数组。 |
+| Promise<RaycastResult[]> | Promise对象，返回命中的结果数组（按距离从近到远排序），若无命中则返回空数组。 |
  
  
 **示例：**
@@ -749,9 +792,10 @@ function lookAt(node: Node, eye: Vec3, center: Vec3, up: Vec3) {
  
   
 
-#### getViewMatrix23+
+### getViewMatrix23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getViewMatrix(): Mat4x4
  
@@ -761,6 +805,7 @@ getViewMatrix(): Mat4x4
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Mat4x4 | 返回相机的视图矩阵。 |
@@ -791,9 +836,10 @@ function GetViewMatrix(): void {
  
   
 
-#### getProjectionMatrix23+
+### getProjectionMatrix23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getProjectionMatrix(): Mat4x4
  
@@ -803,6 +849,7 @@ getProjectionMatrix(): Mat4x4
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Mat4x4 | 返回相机的投影矩阵。 |

@@ -1,6 +1,6 @@
 # @State装饰器：组件内状态
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state
 
@@ -15,7 +15,7 @@
 
 
 
-#### 概述
+## 概述
 
 @State装饰的变量与声明式范式中的其他被装饰变量一样，是私有的，只能从组件内部访问，在声明时必须指定其类型并完成本地初始化；若需从父组件初始化，也可选择使用命名参数机制完成赋值。
 
@@ -26,20 +26,22 @@
 
 
 
-#### 装饰器使用规则说明
+## 装饰器使用规则说明
+
 
 | @State变量装饰器 | 说明 |
 | --- | --- |
 | 装饰器参数 | 无 |
 | 同步类型 | 不与父组件中任何类型的变量同步。 |
 | 允许装饰的变量类型 | object、class、string、number、boolean、enum类型，以及这些类型的数组。 API version 10开始支持Date类型。 API version 11及以上支持Map、Set类型、undefined和null类型、ArkUI框架定义的联合类型Length、ResourceStr、ResourceColor类型以及这些类型的联合类型，示例见@State支持联合类型实例。 支持类型的场景见观察变化。 |
-| 不允许装饰的变量类型 | 不支持装饰Function类型。 |
+| 不允许装饰的变量类型 | 不允许装饰Function类型。 |
 | 被装饰变量的初始值 | 必须本地初始化。 |
 
 
 
 
-#### 变量的传递/访问规则说明
+## 变量的传递/访问规则说明
+
 
 | 传递/访问 | 说明 |
 | --- | --- |
@@ -56,13 +58,13 @@
 
 
 
-#### 观察变化和行为表现
+## 观察变化和行为表现
 
 并不是状态变量的所有更改都会引起UI的刷新，只有可以被框架观察到的修改才会引起UI刷新。本小节将介绍什么样的修改才能被观察到，以及观察到变化后，框架是怎么引起UI刷新的，即框架的行为表现是什么。
 
 
 
-#### 观察变化
+### 观察变化
 
  - 当装饰的数据类型为boolean、string、number类型时，可以观察到数值的变化。
 
@@ -137,7 +139,7 @@ this.title.name.value = 'ArkUI';
 
 
 
-#### 框架行为
+### 框架行为
 
  - 当状态变量改变时，查询依赖该状态变量的组件。
  - 执行依赖该状态变量的组件更新方法，实现组件更新渲染。
@@ -145,7 +147,7 @@ this.title.name.value = 'ArkUI';
 
 
 
-#### 限制条件
+## 限制条件
 1. @State装饰的变量必须初始化，否则编译期会报错。
 
   
@@ -160,7 +162,7 @@ this.title.name.value = 'ArkUI';
 2. @State不支持装饰Function类型的变量，API version 23之前，应用在运行时会出现错误。
 
   从API version 23开始，在应用编译时添加了相关校验，@State装饰Function类型变量会提示ERROR，应在代码中删除Function类型变量的@State装饰器。
-3. 父组件传入undefined时，@State装饰的变量仍使用本地默认值进行初始化。
+3. 父组件传入undefined时，@State装饰的变量仍使用本地初始值进行初始化。
 
   
 ```ArkTS
@@ -197,11 +199,11 @@ struct Child {
 
 
 
-#### 使用场景
+## 使用场景
 
 
 
-#### 装饰简单类型的变量
+### 装饰简单类型的变量
 
 以下示例为@State装饰的简单类型，count被@State装饰成为状态变量，count的改变引起[Button](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-button)组件的刷新：
 
@@ -239,7 +241,7 @@ struct MyComponent {
 
 
 
-#### 装饰class对象类型的变量
+### 装饰class对象类型的变量
 
  - 自定义组件MyComponent定义了被@State装饰的状态变量count和title，其中title的类型为自定义类Model。如果count或title的值发生变化，则查询MyComponent中使用该状态变量的UI组件，并进行重新渲染。
  - EntryComponent中有多个MyComponent组件实例，第一个MyComponent内部状态的更改不会影响第二个MyComponent。
@@ -306,7 +308,7 @@ struct MyComponent {
 
 
 
-#### 装饰Array类型变量
+### 装饰Array类型变量
 
 在下面的示例中，@State装饰的变量fruits的类型为Array&lt;Fruit&gt;，点击Button改变fruits的值，视图会随之刷新。
 
@@ -381,7 +383,7 @@ struct ArraySample {
 
 
 
-#### 装饰Map类型变量
+### 装饰Map类型变量
 
 > [!NOTE]
 > 从API version 11开始，@State支持Map类型。
@@ -452,7 +454,7 @@ struct MapSample {
 
 
 
-#### 装饰Set类型变量
+### 装饰Set类型变量
 
 > [!NOTE]
 > 从API version 11开始，@State支持Set类型。
@@ -516,7 +518,7 @@ struct SetSample {
 
 
 
-#### 装饰Date类型变量
+### 装饰Date类型变量
 
 在下面的示例中，@State装饰的变量selectedDate的类型为Date，点击Button改变selectedDate的值，视图会随之刷新。
 
@@ -576,7 +578,7 @@ struct DatePickerExample {
 
 
 
-#### @State支持联合类型实例
+### @State支持联合类型实例
 
 @State支持联合类型和undefined和null，在下面的示例中，count类型为number | undefined，点击Button改变count的值，视图会随之刷新。
 

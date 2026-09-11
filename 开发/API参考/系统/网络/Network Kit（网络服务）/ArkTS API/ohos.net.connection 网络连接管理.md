@@ -1,9 +1,9 @@
 # @ohos.net.connection (网络连接管理)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-net-connection
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 网络连接管理提供管理网络一些基础能力，包括获取默认激活的网络、获取所有激活网络列表、获取网络能力信息等功能。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { connection } from '@kit.NetworkKit';
@@ -22,9 +23,10 @@ import { connection } from '@kit.NetworkKit';
 
 
 
-#### connection.createNetConnection
+## connection.createNetConnection
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createNetConnection(netSpecifier?: NetSpecifier, timeout?: number): NetConnection
 
@@ -40,6 +42,7 @@ createNetConnection(netSpecifier?: NetSpecifier, timeout?: number): NetConnectio
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | netSpecifier | NetSpecifier | 否 | 需要监听网络的网络特征，缺省则表示监听默认网络。 |
@@ -47,6 +50,7 @@ createNetConnection(netSpecifier?: NetSpecifier, timeout?: number): NetConnectio
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -80,9 +84,10 @@ let netConnectionCellularAndWifi = connection.createNetConnection({
 
 
 
-#### connection.getDefaultNet
+## connection.getDefaultNet
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDefaultNet(callback: AsyncCallback&lt;NetHandle&gt;): void
 
@@ -100,6 +105,7 @@ getDefaultNet(callback: AsyncCallback&lt;NetHandle&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;NetHandle&gt; | 是 | 回调函数。当成功获取默认激活网络的网络句柄时，error为undefined，data为默认网络的网络句柄；否则为错误对象。 |
@@ -108,6 +114,7 @@ getDefaultNet(callback: AsyncCallback&lt;NetHandle&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -134,9 +141,10 @@ connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
 
 
 
-#### connection.getDefaultNet
+## connection.getDefaultNet
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDefaultNet(): Promise&lt;NetHandle&gt;
 
@@ -154,6 +162,7 @@ getDefaultNet(): Promise&lt;NetHandle&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;NetHandle&gt; | 以Promise形式返回默认网络的网络句柄。 |
@@ -162,6 +171,7 @@ getDefaultNet(): Promise&lt;NetHandle&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -182,9 +192,10 @@ connection.getDefaultNet().then((data: connection.NetHandle) => {
 
 
 
-#### connection.getDefaultNetSync9+
+## connection.getDefaultNetSync9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDefaultNetSync(): NetHandle
 
@@ -202,6 +213,7 @@ getDefaultNetSync(): NetHandle
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | NetHandle | 以同步方式返回默认网络的网络句柄。 |
@@ -210,6 +222,7 @@ getDefaultNetSync(): NetHandle
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -228,9 +241,10 @@ let netHandle = connection.getDefaultNetSync();
 
 
 
-#### connection.setAppHttpProxy11+
+## connection.setAppHttpProxy11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAppHttpProxy(httpProxy: HttpProxy): void
 
@@ -244,6 +258,7 @@ setAppHttpProxy(httpProxy: HttpProxy): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | httpProxy | HttpProxy | 是 | 网络应用级Http代理配置信息。 |
@@ -252,6 +267,7 @@ setAppHttpProxy(httpProxy: HttpProxy): void
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -266,7 +282,9 @@ import { connection } from '@kit.NetworkKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { http } from '@kit.NetworkKit';
 
-let exclusionStr = "192.168,baidu.com";
+// 将exclusionStr以逗号分隔为数组。
+let exclusionStr = "192.168,test.com";
+// exclusionArray将exclusionStr以逗号分隔为数组。
 let exclusionArray = exclusionStr.split(',');
 connection.setAppHttpProxy({
   host: "192.168.xx.xxx",
@@ -280,22 +298,23 @@ let options: http.HttpRequestOptions = {
 // 发起一个HTTP请求。
 httpRequest.request("EXAMPLE_URL", options, (err: BusinessError, data: http.HttpResponse) => {
   if (!err) {
-   console.info(`Result: ${data.result}`);
-   console.info(`code: ${data.responseCode}`);
-   console.info(`type: ${JSON.stringify(data.resultType)}`);
-   console.info(`header: ${JSON.stringify(data.header)}`);
-   console.info(`cookies: ${data.cookies}`); // 从API version 8开始支持cookie。
+   console.info('Succeeded to get result: ' + JSON.stringify(data.result));
+   console.info('Succeeded to get code: ' + JSON.stringify(data.responseCode));
+   console.info('Succeeded to get type: ' + JSON.stringify(data.resultType));
+   console.info('Succeeded to get header: ' + JSON.stringify(data.header));
+   console.info('Succeeded to get cookies: ' + JSON.stringify(data.cookies)); // 从API version 8开始支持cookie。
   } else {
-   console.error(`error: ${JSON.stringify(err)}`);
+   console.error(`Failed to get request. Code:${err.code}, message:${err.message}`);
   }
 });
 ```
 
 
 
-#### connection.getDefaultHttpProxy10+
+## connection.getDefaultHttpProxy10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDefaultHttpProxy(callback: AsyncCallback&lt;HttpProxy&gt;): void
 
@@ -309,6 +328,7 @@ getDefaultHttpProxy(callback: AsyncCallback&lt;HttpProxy&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;HttpProxy&gt; | 是 | 回调函数。当成功获取网络的默认代理配置信息时，error为undefined，data为网络的默认代理配置信息；否则为错误对象。 |
@@ -317,6 +337,7 @@ getDefaultHttpProxy(callback: AsyncCallback&lt;HttpProxy&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -341,9 +362,10 @@ connection.getDefaultHttpProxy((error: BusinessError, data: connection.HttpProxy
 
 
 
-#### connection.getDefaultHttpProxy10+
+## connection.getDefaultHttpProxy10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDefaultHttpProxy(): Promise&lt;HttpProxy&gt;
 
@@ -357,6 +379,7 @@ getDefaultHttpProxy(): Promise&lt;HttpProxy&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;HttpProxy&gt; | 以Promise形式返回网络默认的代理配置信息。 |
@@ -365,6 +388,7 @@ getDefaultHttpProxy(): Promise&lt;HttpProxy&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -379,17 +403,18 @@ import { connection } from '@kit.NetworkKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 connection.getDefaultHttpProxy().then((data: connection.HttpProxy) => {
-  console.info(JSON.stringify(data));
+  console.info("Succeeded to get data: " + JSON.stringify(data));
 }).catch((error: BusinessError) => {
-  console.info(JSON.stringify(error));
+  console.error(`Failed to get request. Code:${error.code}, message:${error.message} `);
 });
 ```
 
 
 
-#### connection.getAppNet9+
+## connection.getAppNet9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAppNet(callback: AsyncCallback&lt;NetHandle&gt;): void
 
@@ -399,6 +424,7 @@ getAppNet(callback: AsyncCallback&lt;NetHandle&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;NetHandle&gt; | 是 | 回调函数。当成功获取App绑定的网络信息时，error为undefined，data为获取到App绑定的网络信息；否则为错误对象。 |
@@ -407,6 +433,7 @@ getAppNet(callback: AsyncCallback&lt;NetHandle&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -432,9 +459,10 @@ connection.getAppNet((error: BusinessError, data: connection.NetHandle) => {
 
 
 
-#### connection.getAppNet9+
+## connection.getAppNet9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAppNet(): Promise&lt;NetHandle&gt;
 
@@ -444,6 +472,7 @@ getAppNet(): Promise&lt;NetHandle&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;NetHandle&gt; | 以Promise形式返回App绑定的网络信息。 |
@@ -452,6 +481,7 @@ getAppNet(): Promise&lt;NetHandle&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -466,17 +496,18 @@ import { connection } from '@kit.NetworkKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 connection.getAppNet().then((data: connection.NetHandle) => {
-  console.info(JSON.stringify(data));
+  console.info("Succeeded to get data: " + JSON.stringify(data));
 }).catch((error: BusinessError) => {
-  console.info(JSON.stringify(error));
+  console.error(`Failed to get request. Code:${error.code}, message:${error.message}`);
 });
 ```
 
 
 
-#### connection.getAppNetSync10+
+## connection.getAppNetSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAppNetSync(): NetHandle
 
@@ -486,6 +517,7 @@ getAppNetSync(): NetHandle
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | NetHandle | 返回App绑定的数据网络。 |
@@ -494,6 +526,7 @@ getAppNetSync(): NetHandle
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -511,9 +544,10 @@ let netHandle = connection.getAppNetSync();
 
 
 
-#### connection.setAppNet9+
+## connection.setAppNet9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAppNet(netHandle: NetHandle, callback: AsyncCallback&lt;void&gt;): void
 
@@ -524,6 +558,7 @@ setAppNet(netHandle: NetHandle, callback: AsyncCallback&lt;void&gt;): void
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -552,6 +587,7 @@ connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -607,16 +643,17 @@ netCon.on('netLost', (netHandle: connection.NetHandle) => {
 // 注册网络状态变化事件。此接口要在调用on后调用。
 netCon.register((error: BusinessError) => {
   if (error) {
-    console.error(JSON.stringify(error));
+    console.error(`Failed to get request.Code:${error.code}, message:${error.message}`);
   }
 });
 ```
 
 
 
-#### connection.setAppNet9+
+## connection.setAppNet9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAppNet(netHandle: NetHandle): Promise&lt;void&gt;
 
@@ -627,6 +664,7 @@ setAppNet(netHandle: NetHandle): Promise&lt;void&gt;
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -641,7 +679,7 @@ setAppNet(netHandle: NetHandle): Promise&lt;void&gt;
 connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
   netHandle.netId = 0;
   connection.setAppNet(netHandle).then(() => {
-    console.info("setAppNet success");
+    console.info("Succeeded to setAppNet");
   }).catch((error: BusinessError) => {
     console.error(`Failed to setAppNet. Code:${error.code}, message:${error.message}`);
   })
@@ -649,6 +687,7 @@ connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
 ```
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -658,6 +697,7 @@ connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -689,7 +729,7 @@ let netCon = connection.createNetConnection({
 netCon.on('netAvailable', (netHandle: connection.NetHandle) => {
   console.info("Succeeded to get data: " + JSON.stringify(netHandle));
   connection.setAppNet(netHandle).then(() => {
-    console.info("setAppNet success, netid: " + JSON.stringify(netHandle.netId));
+    console.info("Succeeded to setAppNet, netid: " + JSON.stringify(netHandle.netId));
   }).catch((error: BusinessError) => {
     console.error(`Failed to setAppNet. Code:${error.code}, message:${error.message}`);
   })
@@ -701,7 +741,7 @@ netCon.on('netLost', (netHandle: connection.NetHandle) => {
   // 网络丢失时，需要主动解除指定网络的绑定关系
   netHandle.netId = 0;
   connection.setAppNet(netHandle).then(() => {
-    console.info("setAppNet success, netid: " + JSON.stringify(netHandle.netId));
+    console.info("Succeeded to setAppNet, netid: " + JSON.stringify(netHandle.netId));
   }).catch((error: BusinessError) => {
     console.error(`Failed to setAppNet. Code:${error.code}, message:${error.message}`);
   })
@@ -710,16 +750,17 @@ netCon.on('netLost', (netHandle: connection.NetHandle) => {
 // 注册网络状态变化事件。此接口要在调用on后调用。
 netCon.register((error: BusinessError) => {
   if (error) {
-    console.error(JSON.stringify(error));
+    console.error(`Failed to get request.Code:${error.code}, message:${error.message}`);
   }
 });
 ```
 
 
 
-#### connection.getAllNets
+## connection.getAllNets
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllNets(callback: AsyncCallback<Array&lt;NetHandle&gt;>): void
 
@@ -731,6 +772,7 @@ getAllNets(callback: AsyncCallback<Array&lt;NetHandle&gt;>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<Array&lt;NetHandle&gt;> | 是 | 回调函数。当成功获取所有处于连接状态的网络列表时，error为undefined，data为处于激活状态的网络列表；否则为错误对象。 说明： 在Wi-Fi和蜂窝数据开关均开启的情况下，若无应用指定使用蜂窝网络，则仅激活Wi-Fi网络，因此仅返回Wi-Fi的NetHandle。除非有特定应用启动蜂窝网络，才能同时获取Wi-Fi和蜂窝数据的NetHandle。 |
@@ -739,6 +781,7 @@ getAllNets(callback: AsyncCallback<Array&lt;NetHandle&gt;>): void
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -765,9 +808,10 @@ connection.getAllNets((error: BusinessError, data: connection.NetHandle[]) => {
 
 
 
-#### connection.getAllNets
+## connection.getAllNets
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllNets(): Promise<Array&lt;NetHandle&gt;>
 
@@ -779,6 +823,7 @@ getAllNets(): Promise<Array&lt;NetHandle&gt;>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;NetHandle&gt;> | Promise对象，返回处于激活状态的网络列表。 |
@@ -787,6 +832,7 @@ getAllNets(): Promise<Array&lt;NetHandle&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -807,9 +853,10 @@ connection.getAllNets().then((data: connection.NetHandle[]) => {
 
 
 
-#### connection.getAllNetsSync10+
+## connection.getAllNetsSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllNetsSync(): Array&lt;NetHandle&gt;
 
@@ -821,6 +868,7 @@ getAllNetsSync(): Array&lt;NetHandle&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;NetHandle&gt; | 返回所有处于连接状态的网络列表。 |
@@ -829,6 +877,7 @@ getAllNetsSync(): Array&lt;NetHandle&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -847,9 +896,10 @@ let netHandle = connection.getAllNetsSync();
 
 
 
-#### connection.getConnectionProperties
+## connection.getConnectionProperties
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getConnectionProperties(netHandle: NetHandle, callback: AsyncCallback&lt;ConnectionProperties&gt;): void
 
@@ -861,6 +911,7 @@ getConnectionProperties(netHandle: NetHandle, callback: AsyncCallback&lt;Connect
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | netHandle | NetHandle | 是 | 网络句柄。 |
@@ -870,6 +921,7 @@ getConnectionProperties(netHandle: NetHandle, callback: AsyncCallback&lt;Connect
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -904,9 +956,10 @@ connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
 
 
 
-#### connection.getConnectionProperties
+## connection.getConnectionProperties
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getConnectionProperties(netHandle: NetHandle): Promise&lt;ConnectionProperties&gt;
 
@@ -918,12 +971,14 @@ getConnectionProperties(netHandle: NetHandle): Promise&lt;ConnectionProperties&g
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | netHandle | NetHandle | 是 | 数据网络的句柄。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -933,6 +988,7 @@ getConnectionProperties(netHandle: NetHandle): Promise&lt;ConnectionProperties&g
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -962,9 +1018,10 @@ connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
 
 
 
-#### connection.getConnectionPropertiesSync10+
+## connection.getConnectionPropertiesSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getConnectionPropertiesSync(netHandle: NetHandle): ConnectionProperties
 
@@ -976,12 +1033,14 @@ getConnectionPropertiesSync(netHandle: NetHandle): ConnectionProperties
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | netHandle | NetHandle | 是 | 网络句柄。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -991,6 +1050,7 @@ getConnectionPropertiesSync(netHandle: NetHandle): ConnectionProperties
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1007,25 +1067,22 @@ getConnectionPropertiesSync(netHandle: NetHandle): ConnectionProperties
 import { connection } from '@kit.NetworkKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
-let netHandle: connection.NetHandle;
-let connectionproperties: connection.ConnectionProperties;
-
 connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
   if (netHandle.netId == 0) {
     // 当前没有已连接的网络时，netHandle的netId为0，属于异常场景。可根据实际情况添加处理机制。
     return;
   }
-  netHandle = connection.getDefaultNetSync();
-  connectionproperties = connection.getConnectionPropertiesSync(netHandle);
+  let connectionproperties = connection.getConnectionPropertiesSync(netHandle);
   console.info("Succeeded to get connectionproperties: " + JSON.stringify(connectionproperties));
 });
 ```
 
 
 
-#### connection.getNetCapabilities
+## connection.getNetCapabilities
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getNetCapabilities(netHandle: NetHandle, callback: AsyncCallback&lt;NetCapabilities&gt;): void
 
@@ -1039,6 +1096,7 @@ getNetCapabilities(netHandle: NetHandle, callback: AsyncCallback&lt;NetCapabilit
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | netHandle | NetHandle | 是 | 网络的句柄。 |
@@ -1048,6 +1106,7 @@ getNetCapabilities(netHandle: NetHandle, callback: AsyncCallback&lt;NetCapabilit
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1077,15 +1136,16 @@ connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
     console.info("Succeeded to get data: " + JSON.stringify(data));
   })
 }).catch((error: BusinessError) => {
-    console.error(JSON.stringify(error));
+    console.error(`Failed to get request.Code:${error.code}, message:${error.message}`);
 });
 ```
 
 
 
-#### connection.getNetCapabilities
+## connection.getNetCapabilities
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getNetCapabilities(netHandle: NetHandle): Promise&lt;NetCapabilities&gt;
 
@@ -1099,12 +1159,14 @@ getNetCapabilities(netHandle: NetHandle): Promise&lt;NetCapabilities&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | netHandle | NetHandle | 是 | 网络句柄。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1114,6 +1176,7 @@ getNetCapabilities(netHandle: NetHandle): Promise&lt;NetCapabilities&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1139,15 +1202,16 @@ connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
       console.info("Succeeded to get data: " + JSON.stringify(data));
   })
 }).catch((error: BusinessError) => {
-    console.error(JSON.stringify(error));
+    console.error(`Failed to get request.Code:${error.code}, message:${error.message}`);
 });
 ```
 
 
 
-#### connection.getNetCapabilitiesSync10+
+## connection.getNetCapabilitiesSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getNetCapabilitiesSync(netHandle: NetHandle): NetCapabilities
 
@@ -1161,12 +1225,14 @@ getNetCapabilitiesSync(netHandle: NetHandle): NetCapabilities
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | netHandle | NetHandle | 是 | 网络句柄。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1176,6 +1242,7 @@ getNetCapabilitiesSync(netHandle: NetHandle): NetCapabilities
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1192,25 +1259,23 @@ getNetCapabilitiesSync(netHandle: NetHandle): NetCapabilities
 import { connection } from '@kit.NetworkKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
-let netHandle: connection.NetHandle;
-let getNetCapabilitiesSync: connection.NetCapabilities;
-
 connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
   if (netHandle.netId == 0) {
     // 当前没有已连接的网络时，netHandle的netId为0，属于异常场景。可根据实际情况添加处理机制。
     return;
   }
 
-  getNetCapabilitiesSync = connection.getNetCapabilitiesSync(netHandle);
+  let getNetCapabilitiesSync = connection.getNetCapabilitiesSync(netHandle);
   console.info("Succeeded to get net capabilities sync: " + JSON.stringify(getNetCapabilitiesSync));
 });
 ```
 
 
 
-#### connection.isDefaultNetMetered9+
+## connection.isDefaultNetMetered9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isDefaultNetMetered(callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -1222,6 +1287,7 @@ isDefaultNetMetered(callback: AsyncCallback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;boolean&gt; | 是 | 回调函数。返回当前网络上的数据流量是否被计费。true表示会被计费，false表示不会被计费。 |
@@ -1230,6 +1296,7 @@ isDefaultNetMetered(callback: AsyncCallback&lt;boolean&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1246,16 +1313,17 @@ import { connection } from '@kit.NetworkKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 connection.isDefaultNetMetered((error: BusinessError, data: boolean) => {
-  console.error(JSON.stringify(error));
-  console.info('data: ' + data);
+  console.error(`Failed to get request.Code:${error.code}, message:${error.message}`);
+  console.info("Succeeded to get data: " + JSON.stringify(data));
 });
 ```
 
 
 
-#### connection.isDefaultNetMetered9+
+## connection.isDefaultNetMetered9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isDefaultNetMetered(): Promise&lt;boolean&gt;
 
@@ -1267,6 +1335,7 @@ isDefaultNetMetered(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回当前网络上的数据流量是否被计费。true表示会被计费，false表示不会被计费。 |
@@ -1275,6 +1344,7 @@ isDefaultNetMetered(): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1285,19 +1355,20 @@ isDefaultNetMetered(): Promise&lt;boolean&gt;
 
 **示例：**
 
-```text
+```json
 import { connection } from '@kit.NetworkKit';
 
 connection.isDefaultNetMetered().then((data: boolean) => {
-  console.info('data: ' + data);
+console.info("Succeeded to get data: " + JSON.stringify(data));
 });
 ```
 
 
 
-#### connection.isDefaultNetMeteredSync10+
+## connection.isDefaultNetMeteredSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isDefaultNetMeteredSync(): boolean
 
@@ -1309,6 +1380,7 @@ isDefaultNetMeteredSync(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 表示当前网络上的数据流量是否被计费。true表示会被计费，false表示不会被计费。 |
@@ -1317,6 +1389,7 @@ isDefaultNetMeteredSync(): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1335,9 +1408,10 @@ let isMetered = connection.isDefaultNetMeteredSync();
 
 
 
-#### connection.hasDefaultNet
+## connection.hasDefaultNet
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hasDefaultNet(callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -1349,6 +1423,7 @@ hasDefaultNet(callback: AsyncCallback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;boolean&gt; | 是 | 回调函数。返回当前是否有可用网络。true表示当前有可用网络，false表示当前没有可用网络。 |
@@ -1357,6 +1432,7 @@ hasDefaultNet(callback: AsyncCallback&lt;boolean&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1373,16 +1449,17 @@ import { connection } from '@kit.NetworkKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 connection.hasDefaultNet((error: BusinessError, data: boolean) => {
-  console.error(JSON.stringify(error));
-  console.info('data: ' + data);
+  console.error(`Failed to get request.Code:${error.code}, message:${error.message}`);
+  console.info("Succeeded to get data: " + JSON.stringify(data));
 });
 ```
 
 
 
-#### connection.hasDefaultNet
+## connection.hasDefaultNet
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hasDefaultNet(): Promise&lt;boolean&gt;
 
@@ -1394,6 +1471,7 @@ hasDefaultNet(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回当前是否有可用网络。true表示当前有可用网络，false表示当前没有可用网络。 |
@@ -1402,6 +1480,7 @@ hasDefaultNet(): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1412,19 +1491,20 @@ hasDefaultNet(): Promise&lt;boolean&gt;
 
 **示例：**
 
-```text
+```json
 import { connection } from '@kit.NetworkKit';
 
 connection.hasDefaultNet().then((data: boolean) => {
-  console.info('data: ' + data);
+  console.info("Succeeded to get data: " + JSON.stringify(data));
 });
 ```
 
 
 
-#### connection.hasDefaultNetSync10+
+## connection.hasDefaultNetSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hasDefaultNetSync(): boolean
 
@@ -1436,6 +1516,7 @@ hasDefaultNetSync(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回当前是否有可用网络。true表示当前有可用网络，false表示当前没有可用网络。 |
@@ -1444,6 +1525,7 @@ hasDefaultNetSync(): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1462,9 +1544,10 @@ let hasDefaultNet = connection.hasDefaultNetSync();
 
 
 
-#### connection.reportNetConnected
+## connection.reportNetConnected
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reportNetConnected(netHandle: NetHandle, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1480,6 +1563,7 @@ reportNetConnected(netHandle: NetHandle, callback: AsyncCallback&lt;void&gt;): v
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | netHandle | NetHandle | 是 | 网络句柄，参考NetHandle。 |
@@ -1489,6 +1573,7 @@ reportNetConnected(netHandle: NetHandle, callback: AsyncCallback&lt;void&gt;): v
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1501,22 +1586,23 @@ reportNetConnected(netHandle: NetHandle, callback: AsyncCallback&lt;void&gt;): v
 
 **示例：**
 
-```json
+```text
 import { connection } from '@kit.NetworkKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
   connection.reportNetConnected(netHandle, (error: BusinessError) => {
-    console.error(JSON.stringify(error));
+    console.error(`Failed to get request.Code:${error.code}, message:${error.message}`);
   });
 });
 ```
 
 
 
-#### connection.reportNetConnected
+## connection.reportNetConnected
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reportNetConnected(netHandle: NetHandle): Promise&lt;void&gt;
 
@@ -1528,12 +1614,14 @@ reportNetConnected(netHandle: NetHandle): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | netHandle | NetHandle | 是 | 网络句柄，参考NetHandle。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1543,6 +1631,7 @@ reportNetConnected(netHandle: NetHandle): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1560,16 +1649,17 @@ import { connection } from '@kit.NetworkKit';
 
 connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
   connection.reportNetConnected(netHandle).then(() => {
-    console.info(`report success`);
+    console.info(`Succeeded to report`);
   });
 });
 ```
 
 
 
-#### connection.reportNetDisconnected
+## connection.reportNetDisconnected
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reportNetDisconnected(netHandle: NetHandle, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1581,6 +1671,7 @@ reportNetDisconnected(netHandle: NetHandle, callback: AsyncCallback&lt;void&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | netHandle | NetHandle | 是 | 网络句柄，参考NetHandle。 |
@@ -1590,6 +1681,7 @@ reportNetDisconnected(netHandle: NetHandle, callback: AsyncCallback&lt;void&gt;)
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1616,16 +1708,17 @@ connection.getDefaultNet((error: BusinessError, netHandle: connection.NetHandle)
       console.error(`Failed to get default net. Code:${error.code}, message:${error.message}`);
       return;
     }
-    console.info("report success");
+    console.info("Succeeded to report");
   });
 });
 ```
 
 
 
-#### connection.reportNetDisconnected
+## connection.reportNetDisconnected
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reportNetDisconnected(netHandle: NetHandle): Promise&lt;void&gt;
 
@@ -1637,12 +1730,14 @@ reportNetDisconnected(netHandle: NetHandle): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | netHandle | NetHandle | 是 | 网络句柄。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1652,6 +1747,7 @@ reportNetDisconnected(netHandle: NetHandle): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1669,16 +1765,17 @@ import { connection } from '@kit.NetworkKit';
 
 connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
   connection.reportNetDisconnected(netHandle).then( () => {
-    console.info(`report success`);
+    console.info(`Succeeded to report`);
   });
 });
 ```
 
 
 
-#### connection.getAddressesByName
+## connection.getAddressesByName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAddressesByName(host: string, callback: AsyncCallback<Array&lt;NetAddress&gt;>): void
 
@@ -1690,6 +1787,7 @@ getAddressesByName(host: string, callback: AsyncCallback<Array&lt;NetAddress&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | host | string | 是 | 需要解析的主机名。 |
@@ -1699,6 +1797,7 @@ getAddressesByName(host: string, callback: AsyncCallback<Array&lt;NetAddress&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1726,9 +1825,10 @@ connection.getAddressesByName("xxxx", (error: BusinessError, data: connection.Ne
 
 
 
-#### connection.getAddressesByName
+## connection.getAddressesByName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAddressesByName(host: string): Promise<Array&lt;NetAddress&gt;>
 
@@ -1740,12 +1840,14 @@ getAddressesByName(host: string): Promise<Array&lt;NetAddress&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | host | string | 是 | 需要解析的主机名。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1755,6 +1857,7 @@ getAddressesByName(host: string): Promise<Array&lt;NetAddress&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1777,9 +1880,10 @@ connection.getAddressesByName("xxxx").then((data: connection.NetAddress[]) => {
 
 
 
-#### connection.getAddressesByNameWithOptions23+
+## connection.getAddressesByNameWithOptions23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAddressesByNameWithOptions(host: string, option?: QueryOptions): Promise<Array&lt;NetAddress&gt;>
 
@@ -1793,6 +1897,7 @@ getAddressesByNameWithOptions(host: string, option?: QueryOptions): Promise<Arra
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | host | string | 是 | 需要解析的主机名。例如："www.example.com"。 |
@@ -1800,6 +1905,7 @@ getAddressesByNameWithOptions(host: string, option?: QueryOptions): Promise<Arra
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1809,6 +1915,7 @@ getAddressesByNameWithOptions(host: string, option?: QueryOptions): Promise<Arra
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1823,25 +1930,28 @@ getAddressesByNameWithOptions(host: string, option?: QueryOptions): Promise<Arra
 ```json
 import { connection } from '@kit.NetworkKit';
 import { BusinessError } from '@kit.BasicServicesKit';
+
 let option: connection.QueryOptions = {
   family: connection.FamilyType.FAMILY_TYPE_IPV4
 };
 connection.getAddressesByNameWithOptions("www.example.com", option).then((data: connection.NetAddress[]) => {
   console.info(`Succeeded to get data: ${JSON.stringify(data)}`);
 }).catch((err: BusinessError) => {
-  console.error(`get ERROR msg: ${JSON.stringify(err)}`)
+  console.error(`Failed to get msg. Code:${err.code}, message:${err.message}`)
 });
 ```
 
 
 
-#### QueryOptions23+
+## QueryOptions23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 需要查询的IP类型。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1850,13 +1960,15 @@ connection.getAddressesByNameWithOptions("www.example.com", option).then((data: 
 
 
 
-#### FamilyType23+
+## FamilyType23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 需要查询的具体IP地址类型。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1867,9 +1979,10 @@ connection.getAddressesByNameWithOptions("www.example.com", option).then((data: 
 
 
 
-#### connection.addCustomDnsRule11+
+## connection.addCustomDnsRule11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addCustomDnsRule(host: string, ip: Array&lt;string&gt;, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1887,6 +2000,7 @@ addCustomDnsRule(host: string, ip: Array&lt;string&gt;, callback: AsyncCallback&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | host | string | 是 | 需要自定义解析的主机名。 |
@@ -1897,6 +2011,7 @@ addCustomDnsRule(host: string, ip: Array&lt;string&gt;, callback: AsyncCallback&
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1924,9 +2039,10 @@ connection.addCustomDnsRule("xxxx", ["xx.xx.xx.xx","xx.xx.xx.xx"], (error: Busin
 
 
 
-#### connection.addCustomDnsRule11+
+## connection.addCustomDnsRule11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addCustomDnsRule(host: string, ip: Array&lt;string&gt;): Promise&lt;void&gt;
 
@@ -1944,6 +2060,7 @@ addCustomDnsRule(host: string, ip: Array&lt;string&gt;): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | host | string | 是 | 需要自定义解析的主机名。 |
@@ -1951,6 +2068,7 @@ addCustomDnsRule(host: string, ip: Array&lt;string&gt;): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1960,6 +2078,7 @@ addCustomDnsRule(host: string, ip: Array&lt;string&gt;): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1972,22 +2091,23 @@ addCustomDnsRule(host: string, ip: Array&lt;string&gt;): Promise&lt;void&gt;
 
 **示例：**
 
-```json
+```text
 import { connection } from '@kit.NetworkKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 connection.addCustomDnsRule("xxxx", ["xx.xx.xx.xx","xx.xx.xx.xx"]).then(() => {
     console.info("success");
 }).catch((error: BusinessError) => {
-    console.error(JSON.stringify(error));
+    console.error(`Failed to get request.Code:${error.code}, message:${error.message}`);
 })
 ```
 
 
 
-#### connection.removeCustomDnsRule11+
+## connection.removeCustomDnsRule11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeCustomDnsRule(host: string, callback: AsyncCallback&lt;void&gt;): void
 
@@ -2005,6 +2125,7 @@ removeCustomDnsRule(host: string, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | host | string | 是 | 需要删除自定义DNS规则的主机名。 |
@@ -2014,6 +2135,7 @@ removeCustomDnsRule(host: string, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2041,9 +2163,10 @@ connection.removeCustomDnsRule("xxxx", (error: BusinessError, data: void) => {
 
 
 
-#### connection.removeCustomDnsRule11+
+## connection.removeCustomDnsRule11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeCustomDnsRule(host: string): Promise&lt;void&gt;
 
@@ -2061,12 +2184,14 @@ removeCustomDnsRule(host: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | host | string | 是 | 需要删除自定义DNS规则的主机名。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2076,6 +2201,7 @@ removeCustomDnsRule(host: string): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2092,18 +2218,21 @@ removeCustomDnsRule(host: string): Promise&lt;void&gt;
 import { connection } from '@kit.NetworkKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
-connection.removeCustomDnsRule("xxxx").then(() => {
-    console.info("success");
-}).catch((error: BusinessError) => {
-    console.error(JSON.stringify(error));
+connection.removeCustomDnsRule("xxxx", (error: BusinessError, data: void) => {
+  if (error) {
+    console.error(`Failed to remove custom dns rule. Code:${error.code}, message:${error.message}`);
+    return;
+  }
+  console.info("Succeeded to get data: " + JSON.stringify(data));
 })
 ```
 
 
 
-#### connection.clearCustomDnsRules11+
+## connection.clearCustomDnsRules11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clearCustomDnsRules(callback: AsyncCallback&lt;void&gt;): void
 
@@ -2119,6 +2248,7 @@ clearCustomDnsRules(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当删除当前应用程序的所有的自定义DNS规则成功，error为undefined，否则为错误对象。 |
@@ -2127,6 +2257,7 @@ clearCustomDnsRules(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2154,9 +2285,10 @@ connection.clearCustomDnsRules((error: BusinessError, data: void) => {
 
 
 
-#### connection.clearCustomDnsRules11+
+## connection.clearCustomDnsRules11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clearCustomDnsRules(): Promise&lt;void&gt;
 
@@ -2172,6 +2304,7 @@ clearCustomDnsRules(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -2180,6 +2313,7 @@ clearCustomDnsRules(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2191,29 +2325,30 @@ clearCustomDnsRules(): Promise&lt;void&gt;
 
 **示例：**
 
-```json
+```text
 import { connection } from '@kit.NetworkKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 connection.clearCustomDnsRules().then(() => {
     console.info("success");
 }).catch((error: BusinessError) => {
-    console.error(JSON.stringify(error));
+    console.error(`Failed to get request.Code:${error.code}, message:${error.message}`);
 })
 ```
 
 
 
-#### connection.setPacFileUrl20+
+## connection.setPacFileUrl20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 setPacFileUrl(pacFileUrl: string): void
 
 设置PAC脚本（Proxy Auto-Configuration Script，代理自动配置脚本）的URL地址，并启动PAC代理能力，比如：[http://127.0.0.1:21998/PacProxyScript.pac](http://127.0.0.1:21998/PacProxyScript.pac) 。可通过调用[findProxyForUrl](#connectionfindproxyforurl20)解析URL地址来获取代理信息。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/hOEkPTccQVeShKtoSnowKA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071624Z&HW-CC-Expire=86400&HW-CC-Sign=A3C58873FA956C629AE2DE7852776582DCD520A046F71A84562E5440482CCACB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/76gYVccRRLCRmnRl3MO1Ew/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072923Z&HW-CC-Expire=86400&HW-CC-Sign=641FAC1387E14AEC90EE84855D88716F40B01AC5C9993EB95A7E97288F16056C)
 
 
 1、本接口当前在PC/2in120+、Phone23+、Tablet23+、TV23+设备上支持解析脚本并启用PAC代理能力，Wearable设备类型上只保存脚本地址，不会启用PAC代理能力。
@@ -2228,6 +2363,7 @@ setPacFileUrl(pacFileUrl: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pacFileUrl | string | 是 | 当前PAC脚本的URL地址。 |
@@ -2236,6 +2372,7 @@ setPacFileUrl(pacFileUrl: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2254,9 +2391,10 @@ connection.setPacFileUrl(pacFileUrl);
 
 
 
-#### connection.getPacFileUrl20+
+## connection.getPacFileUrl20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPacFileUrl(): string
 
@@ -2266,6 +2404,7 @@ getPacFileUrl(): string
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 当前PAC脚本的URL地址，如果没有PAC脚本则返回空字符串。 |
@@ -2274,6 +2413,7 @@ getPacFileUrl(): string
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2286,14 +2426,15 @@ getPacFileUrl(): string
 import { connection } from '@kit.NetworkKit';
 
 let pacFileUrl = connection.getPacFileUrl();
-console.info(pacFileUrl);
+console.info("Succeeded to get pacFileUrl");
 ```
 
 
 
-#### connection.findProxyForUrl20+
+## connection.findProxyForUrl20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 findProxyForUrl(url: string): string
 
@@ -2307,12 +2448,14 @@ findProxyForUrl(url: string): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | string | 是 | 要查找代理信息的URL。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2330,9 +2473,10 @@ console.info(proxyInfo);
 
 
 
-#### connection.setPacUrl15+
+## connection.setPacUrl15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setPacUrl(pacUrl: string): void
 
@@ -2348,6 +2492,7 @@ setPacUrl(pacUrl: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pacUrl | string | 是 | 需要设置的PAC脚本的地址，该接口不会对脚本地址进行校验。 |
@@ -2356,6 +2501,7 @@ setPacUrl(pacUrl: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2376,9 +2522,10 @@ connection.setPacUrl(pacUrl);
 
 
 
-#### connection.getPacUrl15+
+## connection.getPacUrl15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPacUrl(): string
 
@@ -2388,6 +2535,7 @@ getPacUrl(): string
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 返回PAC脚本地址。PAC脚本不存在时，抛出2100003错误码。 |
@@ -2396,6 +2544,7 @@ getPacUrl(): string
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2413,9 +2562,10 @@ let pacUrl = connection.getPacUrl();
 
 
 
-#### connection.setNetExtAttribute20+
+## connection.setNetExtAttribute20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setNetExtAttribute(netHandle: NetHandle, netExtAttribute: string): Promise&lt;void&gt;
 
@@ -2431,6 +2581,7 @@ setNetExtAttribute(netHandle: NetHandle, netExtAttribute: string): Promise&lt;vo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | netHandle | NetHandle | 是 | 网络句柄。 |
@@ -2438,6 +2589,7 @@ setNetExtAttribute(netHandle: NetHandle, netExtAttribute: string): Promise&lt;vo
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2447,6 +2599,7 @@ setNetExtAttribute(netHandle: NetHandle, netExtAttribute: string): Promise&lt;vo
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2469,7 +2622,7 @@ connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
   }
   let netExtAttribute: string = "xxx";
   connection.setNetExtAttribute(netHandle, netExtAttribute).then(() => {
-    console.info("setNetExtAttribute success");
+    console.info("Succeeded to setNetExtAttribute");
   }).catch((error: BusinessError) => {
     console.error("setNetExtAttribute failed, err: " + error.code);
   })
@@ -2478,9 +2631,10 @@ connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
 
 
 
-#### connection.setNetExtAttributeSync20+
+## connection.setNetExtAttributeSync20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setNetExtAttributeSync(netHandle: NetHandle, netExtAttribute: string): void
 
@@ -2496,6 +2650,7 @@ setNetExtAttributeSync(netHandle: NetHandle, netExtAttribute: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | netHandle | NetHandle | 是 | 网络句柄。 |
@@ -2505,6 +2660,7 @@ setNetExtAttributeSync(netHandle: NetHandle, netExtAttribute: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2529,9 +2685,10 @@ if (netHandle.netId != 0) {
 
 
 
-#### connection.getNetExtAttribute20+
+## connection.getNetExtAttribute20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getNetExtAttribute(netHandle: NetHandle): Promise&lt;string&gt;
 
@@ -2543,12 +2700,14 @@ getNetExtAttribute(netHandle: NetHandle): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | netHandle | NetHandle | 是 | 网络句柄。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2558,6 +2717,7 @@ getNetExtAttribute(netHandle: NetHandle): Promise&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2579,7 +2739,7 @@ connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
     return;
   }
   connection.getNetExtAttribute(netHandle).then((netExtAttribute: string) => {
-    console.info("getNetExtAttribute: " + netExtAttribute);
+    console.info("Succeeded to getNetExtAttribute: " + netExtAttribute);
   }).catch((error: BusinessError) => {
     console.error("getNetExtAttribute failed, err: " + error.code);
   })
@@ -2588,9 +2748,10 @@ connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
 
 
 
-#### connection.getNetExtAttributeSync20+
+## connection.getNetExtAttributeSync20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getNetExtAttributeSync(netHandle: NetHandle): string
 
@@ -2602,12 +2763,14 @@ getNetExtAttributeSync(netHandle: NetHandle): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | netHandle | NetHandle | 是 | 网络句柄。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2617,6 +2780,7 @@ getNetExtAttributeSync(netHandle: NetHandle): string
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2635,15 +2799,16 @@ import { BusinessError } from '@kit.BasicServicesKit';
 let netHandle = connection.getDefaultNetSync();
 if (netHandle.netId != 0) {
   let netExtAttribute: string = connection.getNetExtAttributeSync(netHandle);
-  console.info("getNetExtAttribute: " + netExtAttribute);
+  console.info("Succeeded to getNetExtAttribute: " + netExtAttribute);
 }
 ```
 
 
 
-#### connection.getIpNeighTable22+
+## connection.getIpNeighTable22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getIpNeighTable(): Promise<Array&lt;NetIpMacInfo&gt;>
 
@@ -2659,6 +2824,7 @@ getIpNeighTable(): Promise<Array&lt;NetIpMacInfo&gt;>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;NetIpMacInfo&gt;> | Promise对象，返回ip邻居表条目信息。 |
@@ -2667,6 +2833,7 @@ getIpNeighTable(): Promise<Array&lt;NetIpMacInfo&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2677,26 +2844,27 @@ getIpNeighTable(): Promise<Array&lt;NetIpMacInfo&gt;>
 
 **示例：**
 
-```text
+```json
 import { connection } from '@kit.NetworkKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 connection.getIpNeighTable().then((data: connection.NetIpMacInfo[]) => {
   if (data.length !== 0) {
-    console.info(`ipAddress:${data[0].ipAddress}`);
-    console.info(`ifaceName:${data[0].iface}`);
-    console.info(`macAddress:${data[0].macAddress}`);
+    console.info(`Succeeded to get ipAddress: ${JSON.stringify(data[0].ipAddress)}`);
+    console.info(`Succeeded to get iface: ${JSON.stringify(data[0].iface)}`);
+    console.info(`Succeeded to get macAddress: ${JSON.stringify(data[0].macAddress)}`);
   }
 }).catch((error: BusinessError) => {
-  console.error(`error fetching ip neigh table. Code:${error.code}, message:${error.message}`);
+  console.error(`Failed to get ip neigh table. Code:${error.code}, message:${error.message}`);
 });
 ```
 
 
 
-#### connection.getConnectOwnerUid23+
+## connection.getConnectOwnerUid23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getConnectOwnerUid(protocol: ProtocolType, local: NetAddress, remote: NetAddress): Promise&lt;number&gt;
 
@@ -2712,6 +2880,7 @@ getConnectOwnerUid(protocol: ProtocolType, local: NetAddress, remote: NetAddress
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | protocol | ProtocolType | 是 | 网络协议的类型。 |
@@ -2721,6 +2890,7 @@ getConnectOwnerUid(protocol: ProtocolType, local: NetAddress, remote: NetAddress
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象，返回应用程序的UID。如果不存在匹配的UID则返回-1。 |
@@ -2729,6 +2899,7 @@ getConnectOwnerUid(protocol: ProtocolType, local: NetAddress, remote: NetAddress
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2749,17 +2920,18 @@ let protocol = connection.ProtocolType.PROTO_TYPE_TCP;
 let local: connection.NetAddress = { address: '192.168.1.100', family: 1, port: 6666 };
 let remote: connection.NetAddress = { address: '192.168.1.200', family: 1, port: 8888 };
 connection.getConnectOwnerUid(protocol, local, remote).then((uid) => {
-  console.info(`uid: ${uid}`);
+  console.info(`Succeeded to get uid: ${uid}`);
 }).catch((error: BusinessError) => {
-  console.error(`getConnectOwnerUid failed. errorCode: ${error.code} message:${error.message}`);
+  console.error(`Failed to get ConnectOwnerUid. errorCode: ${error.code} message:${error.message}`);
 });
 ```
 
 
 
-#### connection.getConnectOwnerUidSync23+
+## connection.getConnectOwnerUidSync23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getConnectOwnerUidSync(protocol: ProtocolType, local: NetAddress, remote: NetAddress): number
 
@@ -2777,6 +2949,7 @@ getConnectOwnerUidSync(protocol: ProtocolType, local: NetAddress, remote: NetAdd
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | protocol | ProtocolType | 是 | 网络协议的类型。 |
@@ -2786,6 +2959,7 @@ getConnectOwnerUidSync(protocol: ProtocolType, local: NetAddress, remote: NetAdd
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回应用程序的UID。如果不存在匹配的UID则返回-1。 |
@@ -2794,6 +2968,7 @@ getConnectOwnerUidSync(protocol: ProtocolType, local: NetAddress, remote: NetAdd
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2815,18 +2990,19 @@ let local: connection.NetAddress = { address: '192.168.1.100', family: 1, port: 
 let remote: connection.NetAddress = { address: '192.168.1.200', family: 1, port: 8888 };
 try {
   let uid = connection.getConnectOwnerUidSync(protocol, local, remote);
-  console.info(`uid: ${uid}`);
+  console.info(`Succeeded to get uid: ${uid}`);
 } catch (e) {
   let err = e as BusinessError;
-  console.error(`getConnectOwnerUid failed. errorCode: ${err.code} message:${err.message}`);
+  console.error(`Failed to get ConnectOwnerUid. errorCode: ${err.code} message:${err.message}`);
 }
 ```
 
 
 
-#### connection.getDnsAscii23+
+## connection.getDnsAscii23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDnsAscii(host: string, flag?: ConversionProcess): string
 
@@ -2840,6 +3016,7 @@ getDnsAscii(host: string, flag?: ConversionProcess): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | host | string | 是 | 要转换的主机名（host）。每个标签（点分隔的部分）长度不超过63字节。 |
@@ -2847,6 +3024,7 @@ getDnsAscii(host: string, flag?: ConversionProcess): string
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2856,6 +3034,7 @@ getDnsAscii(host: string, flag?: ConversionProcess): string
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2870,16 +3049,17 @@ getDnsAscii(host: string, flag?: ConversionProcess): string
 import { connection } from '@kit.NetworkKit';
 
 let result = connection.getDnsAscii("www.示例.com", connection.ConversionProcess.NO_CONFIGURATION);
-console.info(result);  // 预期结果：www.xn--fsq092h.com
+console.info("Succeeded to getDnsAscii: " + result);  // 预期结果：www.xn--fsq092h.com
 let result = connection.getDnsAscii("www.example.com", connection.ConversionProcess.NO_CONFIGURATION);
-console.info(result);  // 预期结果：www.example.com
+console.info("Succeeded to getDnsAscii: " + result);  // 预期结果：www.example.com
 ```
 
 
 
-#### connection.getDnsUnicode23+
+## connection.getDnsUnicode23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDnsUnicode(host: string, flag?: ConversionProcess): string
 
@@ -2889,6 +3069,7 @@ getDnsUnicode(host: string, flag?: ConversionProcess): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | host | string | 是 | 要转换的主机名（host）。 |
@@ -2896,6 +3077,7 @@ getDnsUnicode(host: string, flag?: ConversionProcess): string
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2905,6 +3087,7 @@ getDnsUnicode(host: string, flag?: ConversionProcess): string
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2919,16 +3102,17 @@ getDnsUnicode(host: string, flag?: ConversionProcess): string
 import { connection } from '@kit.NetworkKit';
 
 let result = connection.getDnsUnicode("www.xn--fsq092h.com", connection.ConversionProcess.NO_CONFIGURATION);
-console.info(result);  // 预期结果：www.示例.com
+console.info("Succeeded to getDnsUnicode: " + result);  // 预期结果：www.示例.com
 let result = connection.getDnsUnicode("www.example.com", connection.ConversionProcess.NO_CONFIGURATION);
-console.info(result);  // 预期结果：www.example.com
+console.info("Succeeded to getDnsUnicode: " + result);  // 预期结果：www.example.com
 ```
 
 
 
-#### connection.getSystemNetPortStates24+
+## connection.getSystemNetPortStates24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSystemNetPortStates(): Promise&lt;NetPortStatesInfo&gt;
 
@@ -2946,6 +3130,7 @@ getSystemNetPortStates(): Promise&lt;NetPortStatesInfo&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;NetPortStatesInfo&gt; | Promise对象，返回系统当前监听的TCP、UDP端口信息。 |
@@ -2954,6 +3139,7 @@ getSystemNetPortStates(): Promise&lt;NetPortStatesInfo&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2991,9 +3177,10 @@ connection.getSystemNetPortStates().then((data: connection.NetPortStatesInfo) =>
 
 
 
-#### connection.queryTraceRoute
+## connection.queryTraceRoute
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 queryTraceRoute(destination: string, option?: TraceRouteOptions): Promise<TraceRouteInfo[]>
 
@@ -3013,6 +3200,7 @@ queryTraceRoute(destination: string, option?: TraceRouteOptions): Promise<TraceR
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | destination | string | 是 | 目标域名或IP地址，例如www.example.com、8.8.8.8。 |
@@ -3020,6 +3208,7 @@ queryTraceRoute(destination: string, option?: TraceRouteOptions): Promise<TraceR
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3029,6 +3218,7 @@ queryTraceRoute(destination: string, option?: TraceRouteOptions): Promise<TraceR
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3050,17 +3240,18 @@ let options: connection.TraceRouteOptions = {
 };
 
 connection.queryTraceRoute(dest, options).then((data: connection.TraceRouteInfo[]) => {
-    console.info(JSON.stringify(data));
+    console.info('Succeeded to getDefaultHttpProxy:' + JSON.stringify(data));
 }).catch((err: BusinessError) => {
-    console.error(JSON.stringify(err));
+    console.error(`Failed to get request. Code:${err.code}, message:${err.message}`);
 });
 ```
 
 
 
-#### connection.queryProbeResult
+## connection.queryProbeResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 queryProbeResult(destination: string, duration: number): Promise&lt;ProbeResultInfo&gt;
 
@@ -3080,6 +3271,7 @@ queryProbeResult(destination: string, duration: number): Promise&lt;ProbeResultI
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | destination | string | 是 | 目标域名或IP地址，例如www.example.com、8.8.8.8。 |
@@ -3087,6 +3279,7 @@ queryProbeResult(destination: string, duration: number): Promise&lt;ProbeResultI
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3097,6 +3290,7 @@ queryProbeResult(destination: string, duration: number): Promise&lt;ProbeResultI
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -3106,7 +3300,7 @@ queryProbeResult(destination: string, duration: number): Promise&lt;ProbeResultI
 
 **示例：**
 
-```json
+```text
 import { connection } from '@kit.NetworkKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
@@ -3114,17 +3308,18 @@ let dest: string = "www.example.com";
 let duration: number = 10;
 
 connection.queryProbeResult(dest, duration).then((data: connection.ProbeResultInfo) => {
-    console.info(`LossRate: ${data.lossRate}, RTT: ${data.rtt}`);
+    console.info(`Succeeded to get LossRate: ${data.lossRate}, Succeeded to getRTT: ${data.rtt}`);
 }).catch((err: BusinessError) => {
-    console.error(JSON.stringify(err));
+    console.error(`Failed to get request. Code:${err.code}, message:${err.message}`);
 });
 ```
 
 
 
-#### connection.refreshGlobalHttpProxy
+## connection.refreshGlobalHttpProxy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 refreshGlobalHttpProxy(): Promise&lt;HttpProxy&gt;
 
@@ -3144,6 +3339,7 @@ refreshGlobalHttpProxy(): Promise&lt;HttpProxy&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;HttpProxy&gt; | Promise对象，返回全局代理配置信息。其中username和password字段固定为空字符串，不返回有效信息。 |
@@ -3152,6 +3348,7 @@ refreshGlobalHttpProxy(): Promise&lt;HttpProxy&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3175,31 +3372,33 @@ connection.refreshGlobalHttpProxy().then((data: connection.HttpProxy) => {
 
 
 
-#### NetConnection
+## NetConnection
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 网络连接对象类型。
 
 > [!NOTE]
-> （1）设备从无网络状态转变为有网络状态时，将触发netAvailable事件、netCapabilitiesChange事件和netConnectionPropertiesChange事件； （2）接收到netAvailable事件后，若设备从有网络状态转变为无网络状态，将触发netLost事件； （3）若未接收到netAvailable事件，则将直接接收到netUnavailable事件； （4）设备从WiFi网络切换至蜂窝网络时，将先触发netLost事件（WiFi丢失），随后触发netAvailable事件（蜂窝可用）。
+> （1）设备从无网络状态转变为有网络状态时，将触发 on('netAvailable') 事件、 on('netCapabilitiesChange') 事件和 on('netConnectionPropertiesChange') 事件； （2）接收到 on('netAvailable') 事件后，若设备从有网络状态转变为无网络状态，将触发 on('netLost') 事件； （3）若未接收到 on('netAvailable') 事件，则将直接接收到 on('netUnavailable') 事件； （4）设备从WiFi网络切换至蜂窝网络时，将先触发 on('netLost') 事件（WiFi丢失），随后触发 on('netAvailable') 事件（蜂窝可用）。
 
 
 
 
-#### register
+### register
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 register(callback: AsyncCallback&lt;void&gt;): void
 
 订阅指定网络状态变化的通知。如需监听特定事件，确保调用on监听事件后再调用register进行注册。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/IysWtmymQ8W6IfSQCP_OOw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071624Z&HW-CC-Expire=86400&HW-CC-Sign=426E38B01EA7AD0BDE0B70D33742B379B02B1769027F1BE29840E90CD8DAB8F8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/TfS_7KIvTr2Jc792OzqGeg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072923Z&HW-CC-Expire=86400&HW-CC-Sign=F3A47D1E64BFC7B59C8145E892DD03A86FC20B6C8F6951A4384F9929F9281129)
 
 
-使用完register接口后需要及时调用unregister取消注册。
+使用完register接口后需要及时调用[unregister](#unregister)取消注册。
 
 
 
@@ -3211,6 +3410,7 @@ register(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当订阅指定网络状态变化的通知成功，error为undefined，否则为错误对象。 |
@@ -3219,6 +3419,7 @@ register(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3232,21 +3433,22 @@ register(callback: AsyncCallback&lt;void&gt;): void
 
 **示例：**
 
-```json
+```text
 import { connection } from '@kit.NetworkKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 let netCon: connection.NetConnection = connection.createNetConnection();
 netCon.register((error: BusinessError) => {
-  console.error(JSON.stringify(error));
+  console.error(`Failed to register.Code:${error.code}, message:${error.message}`);
 });
 ```
 
 
 
-#### unregister
+### unregister
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unregister(callback: AsyncCallback&lt;void&gt;): void
 
@@ -3258,6 +3460,7 @@ unregister(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当取消订阅指定网络状态变化的通知成功，error为undefined，否则为错误对象。 |
@@ -3266,6 +3469,7 @@ unregister(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3277,31 +3481,33 @@ unregister(callback: AsyncCallback&lt;void&gt;): void
 
 **示例：**
 
-```json
+```text
 import { connection } from '@kit.NetworkKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 let netCon: connection.NetConnection = connection.createNetConnection();
 netCon.unregister((error: BusinessError) => {
-  console.error(JSON.stringify(error));
+  console.error(`Failed to unregister.Code:${error.code}, message:${error.message}`);
 });
 ```
 
 
 
-#### on('netAvailable')
+### on('netAvailable')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'netAvailable', callback: Callback&lt;NetHandle&gt;): void
 
-订阅网络可用事件。此接口需在调用register接口之前调用。若无需接收网络状态变化的回调通知，应使用unregister取消订阅默认的网络状态变化通知。
+订阅网络可用事件。此接口需在调用[register](#register)接口之前调用。若无需接收网络状态变化的回调通知，应使用[unregister](#unregister)取消订阅默认的网络状态变化通知。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3325,28 +3531,30 @@ netCon.on('netAvailable', (data: connection.NetHandle) => {
 
 // 注册网络状态变化事件。此接口要在调用on后调用。
 netCon.register((error: BusinessError) => {
-  console.error(JSON.stringify(error));
+  console.error(`Failed to register.Code:${error.code}, message:${error.message}`);
 });
 
 // 使用unregister接口取消订阅网络可用事件。
 netCon.unregister((error: BusinessError) => {
-  console.error(JSON.stringify(error));
+  console.error(`Failed to unregister.Code:${error.code}, message:${error.message}`);
 });
 ```
 
 
 
-#### on('netBlockStatusChange')
+### on('netBlockStatusChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'netBlockStatusChange', callback: Callback&lt;NetBlockStatusInfo&gt;): void
 
-订阅网络阻塞状态事件。此接口需要在调用register接口之前调用。若无需接收网络状态变化的回调通知，应使用unregister取消订阅默认的网络状态变化通知。
+订阅网络阻塞状态事件。此接口需要在调用[register](#register)接口之前调用。若无需接收网络状态变化的回调通知，应使用[unregister](#unregister)取消订阅默认的网络状态变化通知。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3370,30 +3578,32 @@ netCon.on('netBlockStatusChange', (data: connection.NetBlockStatusInfo) => {
 
 // 注册网络状态变化事件。此接口要在调用on后调用。
 netCon.register((error: BusinessError) => {
-  console.error(JSON.stringify(error));
+  console.error(`Failed to get request.Code:${error.code}, message:${error.message}`);
 });
 
 // 使用unregister接口取消订阅网络阻塞状态事件。
 netCon.unregister((error: BusinessError) => {
-  console.error(JSON.stringify(error));
+  console.error(`Failed to get request.Code:${error.code}, message:${error.message}`);
 });
 ```
 
 
 
-#### on('netCapabilitiesChange')
+### on('netCapabilitiesChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'netCapabilitiesChange', callback: Callback&lt;NetCapabilityInfo&gt;): void
 
-订阅网络能力变化事件。此接口要在register接口调用前调用，不需要网络状态变化回调通知时，使用unregister取消订阅默认网络状态变化的通知。
+订阅网络能力变化事件。此接口要在[register](#register)接口调用前调用，不需要网络状态变化回调通知时，使用[unregister](#unregister)取消订阅默认网络状态变化的通知。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3417,28 +3627,30 @@ netCon.on('netCapabilitiesChange', (data: connection.NetCapabilityInfo) => {
 
 // 注册网络状态变化事件。此接口要在调用on后调用。
 netCon.register((error: BusinessError) => {
-  console.error(JSON.stringify(error));
+  console.error(`Failed to get request.Code:${error.code}, message:${error.message}`);
 });
 
 // 使用unregister接口取消订阅网络能力变化事件。
 netCon.unregister((error: BusinessError) => {
-  console.error(JSON.stringify(error));
+  console.error(`Failed to get request.Code:${error.code}, message:${error.message}`);
 });
 ```
 
 
 
-#### on('netConnectionPropertiesChange')
+### on('netConnectionPropertiesChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'netConnectionPropertiesChange', callback: Callback&lt;NetConnectionPropertyInfo&gt;): void
 
-订阅网络连接信息变化事件。此接口要在register接口调用前调用，不需要网络状态变化回调通知时，使用unregister取消订阅默认网络状态变化的通知。
+订阅网络连接信息变化事件。此接口要在[register](#register)接口调用前调用，不需要网络状态变化回调通知时，使用[unregister](#unregister)取消订阅默认网络状态变化的通知。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3462,30 +3674,32 @@ netCon.on('netConnectionPropertiesChange', (data: connection.NetConnectionProper
 
 // 注册网络状态变化事件。此接口要在调用on后调用。
 netCon.register((error: BusinessError) => {
-  console.error(JSON.stringify(error));
+  console.error(`Failed to get request.Code:${error.code}, message:${error.message}`);
 });
 
 // 使用unregister接口取消订阅网络连接信息变化事件。
 netCon.unregister((error: BusinessError) => {
-  console.error(JSON.stringify(error));
+  console.error(`Failed to get request.Code:${error.code}, message:${error.message}`);
 });
 ```
 
 
 
-#### on('netLost')
+### on('netLost')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'netLost', callback: Callback&lt;NetHandle&gt;): void
 
-订阅网络丢失事件。此接口要在register接口调用前调用，不需要网络状态变化回调通知时，使用unregister取消订阅默认网络状态变化的通知。
+订阅网络丢失事件。此接口要在[register](#register)接口调用前调用，不需要网络状态变化回调通知时，使用[unregister](#unregister)取消订阅默认网络状态变化的通知。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3509,30 +3723,32 @@ netCon.on('netLost', (data: connection.NetHandle) => {
 
 // 注册网络状态变化事件。此接口要在调用on后调用。
 netCon.register((error: BusinessError) => {
-  console.error(JSON.stringify(error));
+  console.error(`Failed to get request.Code:${error.code}, message:${error.message}`);
 });
 
 // 使用unregister接口取消订阅网络丢失事件。
 netCon.unregister((error: BusinessError) => {
-  console.error(JSON.stringify(error));
+  console.error(`Failed to get request.Code:${error.code}, message:${error.message}`);
 });
 ```
 
 
 
-#### on('netUnavailable')
+### on('netUnavailable')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'netUnavailable', callback: Callback&lt;void&gt;): void
 
-订阅网络不可用事件。此接口要在register接口调用前调用，不需要网络状态变化回调通知时，使用unregister取消订阅默认网络状态变化的通知。
+订阅网络不可用事件。此接口要在[register](#register)接口调用前调用，不需要网络状态变化回调通知时，使用[unregister](#unregister)取消订阅默认网络状态变化的通知。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3542,7 +3758,7 @@ on(type: 'netUnavailable', callback: Callback&lt;void&gt;): void
 
 **示例：**
 
-```json
+```text
 import { connection } from '@kit.NetworkKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
@@ -3556,20 +3772,21 @@ netCon.on('netUnavailable', () => {
 
 // 注册网络状态变化事件。此接口要在调用on后调用。
 netCon.register((error: BusinessError) => {
-  console.error(JSON.stringify(error));
+  console.error(`Failed to get register.Code:${error.code}, message:${error.message}`);
 });
 
 // 使用unregister接口取消订阅网络不可用事件。
 netCon.unregister((error: BusinessError) => {
-  console.error(JSON.stringify(error));
+  console.error(`Failed to get unregister.Code:${error.code}, message:${error.message}`);
 });
 ```
 
 
 
-#### NetHandle
+## NetHandle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 网络句柄。
 
@@ -3579,7 +3796,11 @@ netCon.unregister((error: BusinessError) => {
 
 
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -3588,9 +3809,10 @@ netCon.unregister((error: BusinessError) => {
 
 
 
-#### bindSocket9+
+### bindSocket9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 bindSocket(socketParam: TCPSocket | UDPSocket, callback: AsyncCallback&lt;void&gt;): void
 
@@ -3599,6 +3821,7 @@ bindSocket(socketParam: TCPSocket | UDPSocket, callback: AsyncCallback&lt;void&g
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3609,6 +3832,7 @@ bindSocket(socketParam: TCPSocket | UDPSocket, callback: AsyncCallback&lt;void&g
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3639,9 +3863,9 @@ interface Data {
   if (socketType == "TCPSocket") {
     tcp.bind({address:"192.168.xxx.xxx",
               port:8080,
-              family:1} as socket.NetAddress, (error: Error) => {
+              family:1} as socket.NetAddress, (error: BusinessError) => {
       if (error) {
-        console.error('bind fail');
+        console.error(`Failed to bind. Code:${error.code}, message:${error.message}`);
         return;
       }
       netHandle.bindSocket(tcp, (error: BusinessError, data: void) => {
@@ -3649,13 +3873,13 @@ interface Data {
           console.error(`Failed to bind socket. Code:${error.code}, message:${error.message}`);
           return;
         } else {
-          console.info(JSON.stringify(data));
+          console.info('Succeeded to getdefaultHttpProxy:' + JSON.stringify(data));
         }
       });
     });
   } else {
     let callback: (value: Data) => void = (value: Data) => {
-      console.info("on message, message:" + value.message + ", remoteInfo:" + value.remoteInfo);
+      console.info("Succeeded to get message, message:" + value.message + ", Succeeded to get remoteInfo:" + value.remoteInfo);
     };
     udp.bind({address:"192.168.xxx.xxx",
               port:8080,
@@ -3672,7 +3896,7 @@ interface Data {
           console.error(`Failed to bind socket. Code:${error.code}, message:${error.message}`);
           return;
         } else {
-          console.info(JSON.stringify(data));
+          console.info('Succeeded to get defaultHttpProxy: ' + JSON.stringify(data));
         }
       });
     });
@@ -3682,9 +3906,10 @@ interface Data {
 
 
 
-#### bindSocket9+
+### bindSocket9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 bindSocket(socketParam: TCPSocket | UDPSocket): Promise&lt;void&gt;
 
@@ -3694,12 +3919,14 @@ bindSocket(socketParam: TCPSocket | UDPSocket): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | socketParam | TCPSocket \| UDPSocket | 是 | 待绑定的TCPSocket或UDPSocket对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3709,6 +3936,7 @@ bindSocket(socketParam: TCPSocket | UDPSocket): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3740,13 +3968,13 @@ connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
   if (socketType == "TCPSocket") {
     tcp.bind({address:"192.168.xxx.xxx",
               port:8080,
-              family:1} as socket.NetAddress, (error: Error) => {
+              family:1} as socket.NetAddress, (error: BusinessError) => {
       if (error) {
-        console.error('bind fail');
+        console.error('Failed to bind');
         return;
       }
       netHandle.bindSocket(tcp).then(() => {
-        console.info("bind socket success");
+        console.info("Succeeded to bind socket");
       }).catch((error: BusinessError) => {
         console.error(`Failed to bind socket. Code:${error.code}, message:${error.message}`);
       });
@@ -3766,7 +3994,7 @@ connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
         console.info("Succeeded to get data: " + JSON.stringify(data));
       });
       netHandle.bindSocket(udp).then(() => {
-        console.info("bind socket success");
+        console.info("Succeeded to bind socket");
       }).catch((error: BusinessError) => {
         console.error(`Failed to bind socket. Code:${error.code}, message:${error.message}`);
       });
@@ -3777,9 +4005,10 @@ connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
 
 
 
-#### getAddressesByName
+### getAddressesByName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAddressesByName(host: string, callback: AsyncCallback<Array&lt;NetAddress&gt;>): void
 
@@ -3793,6 +4022,7 @@ getAddressesByName(host: string, callback: AsyncCallback<Array&lt;NetAddress&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | host | string | 是 | 需要解析的主机名。例如："www.example.com"。 |
@@ -3802,6 +4032,7 @@ getAddressesByName(host: string, callback: AsyncCallback<Array&lt;NetAddress&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3836,9 +4067,10 @@ connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
 
 
 
-#### getAddressesByName
+### getAddressesByName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAddressesByName(host: string): Promise<Array&lt;NetAddress&gt;>
 
@@ -3852,12 +4084,14 @@ getAddressesByName(host: string): Promise<Array&lt;NetAddress&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | host | string | 是 | 需要解析的主机名。例如："www.example.com"。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3867,6 +4101,7 @@ getAddressesByName(host: string): Promise<Array&lt;NetAddress&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3896,9 +4131,10 @@ connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
 
 
 
-#### getAddressesByNameWithOptions23+
+### getAddressesByNameWithOptions23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAddressesByNameWithOptions(host: string, option?: QueryOptions): Promise<Array&lt;NetAddress&gt;>
 
@@ -3912,6 +4148,7 @@ getAddressesByNameWithOptions(host: string, option?: QueryOptions): Promise<Arra
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | host | string | 是 | 需要解析的主机名。例如："www.example.com"。 |
@@ -3919,6 +4156,7 @@ getAddressesByNameWithOptions(host: string, option?: QueryOptions): Promise<Arra
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3928,6 +4166,7 @@ getAddressesByNameWithOptions(host: string, option?: QueryOptions): Promise<Arra
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3955,16 +4194,17 @@ connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
   netHandle.getAddressesByNameWithOptions(host, option).then((data: connection.NetAddress[]) => {
     console.info(`Succeeded to get data: ${JSON.stringify(data)}`);
   }).catch((err: BusinessError) => {
-    console.error(`get ERROR msg: ${JSON.stringify(err)}`)
+    console.error(`Failed to get addresses by name. Code:${err.code}, message:${err.message}`);
   });
 });
 ```
 
 
 
-#### getAddressByName
+### getAddressByName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAddressByName(host: string, callback: AsyncCallback&lt;NetAddress&gt;): void
 
@@ -3976,6 +4216,7 @@ getAddressByName(host: string, callback: AsyncCallback&lt;NetAddress&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | host | string | 是 | 需要解析的主机名。例如："www.example.com"。 |
@@ -3985,6 +4226,7 @@ getAddressByName(host: string, callback: AsyncCallback&lt;NetAddress&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4019,9 +4261,10 @@ connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
 
 
 
-#### getAddressByName
+### getAddressByName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAddressByName(host: string): Promise&lt;NetAddress&gt;
 
@@ -4033,12 +4276,14 @@ getAddressByName(host: string): Promise&lt;NetAddress&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | host | string | 是 | 需要解析的主机名。例如："www.example.com"。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4048,6 +4293,7 @@ getAddressByName(host: string): Promise&lt;NetAddress&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[网络连接管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-connection)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4077,13 +4323,15 @@ connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
 
 
 
-#### NetCap
+## NetCap
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 网络具体能力。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -4092,19 +4340,21 @@ connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
 | NET_CAPABILITY_INTERNET | 12 | 表示该网络应具有访问Internet的能力，此能力由网络提供者设置，但该网络访问Internet的连通性并未被网络管理成功验证。网络连通性可以通过NET_CAPABILITY_VALIDATED和NET_CAPABILITY_CHECKING_CONNECTIVITY判断。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | NET_CAPABILITY_NOT_VPN | 15 | 表示网络不使用VPN（Virtual Private Network，虚拟专用网络）。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | NET_CAPABILITY_VALIDATED | 16 | 表示网络管理通过该网络与华为云地址成功建立连接，此能力由网络管理模块设置。 注意： 网络管理可能会与华为云地址建立连接失败，导致网络能力不具备此标记位，但不完全代表该网络无法访问互联网。另外，对于新完成连接的网络，由于网络正在进行连通性验证，此值可能无法反映真实的验证结果。对此，应用可以通过NET_CAPABILITY_CHECKING_CONNECTIVITY12+检查网络是否正在检测连通性。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
-| NET_CAPABILITY_PORTAL12+ | 17 | 表示系统发现该网络存在强制网络门户，需要用户登陆认证，该能力由网络管理模块设置。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| NET_CAPABILITY_PORTAL12+ | 17 | 表示系统发现该网络存在强制网络门户，需要用户登录认证，该能力由网络管理模块设置。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | NET_CAPABILITY_CHECKING_CONNECTIVITY12+ | 31 | 表示网络管理正在检验当前网络的连通性，此值会在网络连接时设置。当此值存在时，NET_CAPABILITY_VALIDATED的值不准确，连通性检测结束后不再设置，此时可以通过判断NetCap是否包含NET_CAPABILITY_VALIDATED判断连通性。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 
 
 
 
-#### NetBearType
+## NetBearType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 网络类型。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -4117,13 +4367,15 @@ connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
 
 
 
-#### ConversionProcess23+
+## ConversionProcess23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ASCII/Unicode转码转换流程参数的枚举。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -4134,9 +4386,10 @@ ASCII/Unicode转码转换流程参数的枚举。
 
 
 
-#### TcpState24+
+## TcpState24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TCP状态。
 
@@ -4144,16 +4397,17 @@ TCP状态。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | TCP_ESTABLISHED | 1 | 连接已建立，可正常收发数据。 |
 | TCP_SYN_SENT | 2 | 客户端发送SYN，等待服务端ACK+SYN（三次握手的第一步）。 |
 | TCP_SYN_RECV | 3 | 服务端接收SYN并发送ACK+SYN，等待客户端ACK（三次握手的第二步）。 |
 | TCP_FIN_WAIT1 | 4 | 主动端发送FIN，等待对方ACK。 |
-| TCP_FIN_WAIT2 | 5 | 主动端接收FIN的ACK，等待对方ACK。 |
+| TCP_FIN_WAIT2 | 5 | 主动端接收自身FIN的ACK，等待对方发送FIN。 |
 | TCP_TIME_WAIT | 6 | 主动端接收对方FIN并回复ACK，等待2倍最大报文段生存时间后彻底释放。 |
 | TCP_CLOSE | 7 | 初始/关闭状态，无连接。 |
-| TCP_CLOSE_WAIT | 8 | 被动端接收FIN并发送ACK，等待对方FIN。 |
+| TCP_CLOSE_WAIT | 8 | 被动端接收对方FIN并发送ACK，等待本地应用程序关闭连接。 |
 | TCP_LAST_ACK | 9 | 被动端发送FIN后，等待对方ACK。 |
 | TCP_LISTEN | 10 | 服务端监听，等待客户端连接。 |
 | TCP_CLOSING | 11 | 双方同时发送FIN，互相等待ACK。 |
@@ -4161,9 +4415,10 @@ TCP状态。
 
 
 
-#### PacketsType
+## PacketsType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 网络探测数据包类型。
 
@@ -4173,6 +4428,7 @@ TCP状态。
 
 **系统能力：** SystemCapability.Communication.NetManager.Core
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NETCONN_PACKETS_ICMP | 0 | ICMP数据包类型。 |
@@ -4181,13 +4437,15 @@ TCP状态。
 
 
 
-#### HttpProxy10+
+## HttpProxy10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 网络代理配置信息
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -4200,9 +4458,10 @@ TCP状态。
 
 
 
-#### Socks5DnsStrategy
+## Socks5DnsStrategy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 SOCKS5代理的DNS查询策略配置信息。
 
@@ -4212,6 +4471,7 @@ SOCKS5代理的DNS查询策略配置信息。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SYSTEM_MODE | 0 | 使用SOCKS5代理时，DNS解析由系统执行。 |
@@ -4220,9 +4480,10 @@ SOCKS5代理的DNS查询策略配置信息。
 
 
 
-#### Socks5Proxy
+## Socks5Proxy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 SOCKS5代理配置信息。
 
@@ -4231,6 +4492,7 @@ SOCKS5代理配置信息。
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -4244,15 +4506,17 @@ SOCKS5代理配置信息。
 
 
 
-#### NetSpecifier
+## NetSpecifier
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供承载数据网络能力的实例。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -4262,7 +4526,7 @@ SOCKS5代理配置信息。
 
 **示例：**
 
-```json
+```text
 import { connection } from '@kit.NetworkKit';
 import { wifiManager } from '@kit.ConnectivityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -4281,22 +4545,24 @@ wifiManager.addCandidateConfig(config,(error,networkId) => {
    bearerPrivateIdentifier: `${networkId}`
  });
  netConnectionWlan.register((error: BusinessError) => {
-   console.error(JSON.stringify(error));
+   console.error(`Failed to get register.Code:${error.code}, message:${error.message}`);
  });
 });
 ```
 
 
 
-#### NetCapabilityInfo10+
+## NetCapabilityInfo10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供承载数据网络能力的实例。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -4306,13 +4572,15 @@ wifiManager.addCandidateConfig(config,(error,networkId) => {
 
 
 
-#### NetCapabilities
+## NetCapabilities
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 网络的能力集。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -4324,9 +4592,10 @@ wifiManager.addCandidateConfig(config,(error,networkId) => {
 
 
 
-#### NetConnectionPropertyInfo11+
+## NetConnectionPropertyInfo11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 网络连接信息。
 
@@ -4334,7 +4603,11 @@ wifiManager.addCandidateConfig(config,(error,networkId) => {
 
 
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -4344,9 +4617,10 @@ wifiManager.addCandidateConfig(config,(error,networkId) => {
 
 
 
-#### NetBlockStatusInfo11+
+## NetBlockStatusInfo11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 获取网络状态信息。
 
@@ -4354,7 +4628,11 @@ wifiManager.addCandidateConfig(config,(error,networkId) => {
 
 
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -4364,14 +4642,15 @@ wifiManager.addCandidateConfig(config,(error,networkId) => {
 
 
 
-#### ConnectionProperties
+## ConnectionProperties
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 网络连接信息。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/T1oIqGlfTzS9TrsL_nbw6A/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071624Z&HW-CC-Expire=86400&HW-CC-Sign=EE72E74DD5BC6CC08E916EF912CDEBFBC645B33084EC1826D2F5A70834C8E372)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/NfMzzAHxR7Cg5wP3XSlzXQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072923Z&HW-CC-Expire=86400&HW-CC-Sign=E44C8B20F2CC6783208DBBD57011F4745506926FCE593ADCA38996D8D23ED672)
 
 
 linkAddresses、routes和dnses可能为空，需要做好空值保护，建议使用前先判断对象是否存在。
@@ -4379,6 +4658,7 @@ linkAddresses、routes和dnses可能为空，需要做好空值保护，建议�
 
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -4394,13 +4674,15 @@ linkAddresses、routes和dnses可能为空，需要做好空值保护，建议�
 
 
 
-#### RouteInfo
+## RouteInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 网络路由信息。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -4414,13 +4696,15 @@ linkAddresses、routes和dnses可能为空，需要做好空值保护，建议�
 
 
 
-#### LinkAddress
+## LinkAddress
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 网络链路信息。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -4430,15 +4714,17 @@ linkAddresses、routes和dnses可能为空，需要做好空值保护，建议�
 
 
 
-#### NetAddress
+## NetAddress
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 网络地址。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -4449,9 +4735,10 @@ linkAddresses、routes和dnses可能为空，需要做好空值保护，建议�
 
 
 
-#### HttpRequest
+## HttpRequest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type HttpRequest = http.HttpRequest
 
@@ -4461,6 +4748,7 @@ type HttpRequest = http.HttpRequest
 
 **系统能力**：SystemCapability.Communication.NetStack
 
+
 | 类型 | 说明 |
 | --- | --- |
 | http.HttpRequest | 定义HTTP请求任务。在调用HttpRequest提供的API之前。 |
@@ -4468,15 +4756,17 @@ type HttpRequest = http.HttpRequest
 
 
 
-#### TCPSocket
+## TCPSocket
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type TCPSocket = socket.TCPSocket
 
 定义一个TCPSocket对象，可以通过[socket.constructTCPSocketInstance](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-socket#socketconstructtcpsocketinstance)创建。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4485,15 +4775,17 @@ type TCPSocket = socket.TCPSocket
 
 
 
-#### UDPSocket
+## UDPSocket
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type UDPSocket = socket.UDPSocket
 
 定义一个UDPSocket对象，可以通过[socket.constructUDPSocketInstance](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-socket#socketconstructudpsocketinstance)创建。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4502,13 +4794,15 @@ type UDPSocket = socket.UDPSocket
 
 
 
-#### NetIpMacInfo22+
+## NetIpMacInfo22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 IP邻居表条目信息。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -4519,13 +4813,15 @@ IP邻居表条目信息。
 
 
 
-#### ProtocolType23+
+## ProtocolType23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 网络协议类型的枚举。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -4535,15 +4831,17 @@ IP邻居表条目信息。
 
 
 
-#### TcpNetPortStatesInfo24+
+## TcpNetPortStatesInfo24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TCP端口状态信息。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -4558,15 +4856,17 @@ TCP端口状态信息。
 
 
 
-#### UdpNetPortStatesInfo24+
+## UdpNetPortStatesInfo24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 UDP端口状态信息。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -4578,15 +4878,17 @@ UDP端口状态信息。
 
 
 
-#### NetPortStatesInfo24+
+## NetPortStatesInfo24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 系统当前监听的TCP、UDP端口信息。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -4596,9 +4898,10 @@ UDP端口状态信息。
 
 
 
-#### TraceRouteOptions
+## TraceRouteOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 路由跟踪的选项。
 
@@ -4608,6 +4911,7 @@ UDP端口状态信息。
 
 **系统能力：** SystemCapability.Communication.NetManager.Core
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | maxJumpNumber | number | 否 | 是 | 最大跳数，取值范围[1, 30]，默认值为30。 |
@@ -4616,9 +4920,10 @@ UDP端口状态信息。
 
 
 
-#### TraceRouteInfo
+## TraceRouteInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 路由跟踪信息。
 
@@ -4627,6 +4932,7 @@ UDP端口状态信息。
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Communication.NetManager.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -4637,9 +4943,10 @@ UDP端口状态信息。
 
 
 
-#### ProbeResultInfo
+## ProbeResultInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 网络探测结果信息。
 
@@ -4648,6 +4955,7 @@ UDP端口状态信息。
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Communication.NetManager.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

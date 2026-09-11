@@ -1,18 +1,19 @@
 # @system.package (应用管理)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-system-package
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 9开始不再维护，推荐使用该模块 @ohos.bundle.bundleManager 。 本模块首批接口从API version 3开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import Package from '@system.package';
@@ -20,9 +21,10 @@ import Package from '@system.package';
  
   
 
-#### package.hasInstalled(deprecated)
+## package.hasInstalled(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hasInstalled(options: CheckPackageHasInstalledOptions): void
  
@@ -36,6 +38,7 @@ hasInstalled(options: CheckPackageHasInstalledOptions): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | CheckPackageHasInstalledOptions | 是 | 选项参数。 |
@@ -67,9 +70,10 @@ struct MainPage {
  
   
 
-#### CheckPackageHasInstalledResponse
+## CheckPackageHasInstalledResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 3开始支持，从API version 9开始废弃。
@@ -79,6 +83,7 @@ struct MainPage {
  
 **系统能力：** SystemCapability.BundleManager.BundleFramework
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | result | boolean | 是 | 指示应用是否已安装。 |
@@ -86,9 +91,10 @@ struct MainPage {
  
   
 
-#### CheckPackageHasInstalledOptions
+## CheckPackageHasInstalledOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 3开始支持，从API version 9开始废弃。
@@ -98,6 +104,7 @@ struct MainPage {
  
 **系统能力：** SystemCapability.BundleManager.BundleFramework
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 应用Bundle名称。 |

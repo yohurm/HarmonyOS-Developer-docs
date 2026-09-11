@@ -1,6 +1,6 @@
 # 从Swift到ArkTS的迁移指导
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/getting-started-with-arkts-for-swift-programmers
 
@@ -9,17 +9,17 @@
 本文档基于Swift语言对ArkTS语言进行对比和介绍。如需更详细的了解，可参考[ArkTS语言介绍](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/introduction-to-arkts)。
   
 
-#### 探索Swift与ArkTS的差异
+## 探索Swift与ArkTS的差异
 
 本文档将帮助Swift开发者梳理在转向ArkTS开发过程中会遇到的误解和陷阱。ArkTS的语法、类型系统以及应用开发模式与Swift存在差异，在学习过程中需特别注意这些关键区别。建议先掌握ArkTS的基础语法和运行时行为，再重点对比其与Swift的不同之处。
  
   
 
-#### 基础语法
+## 基础语法
 
   
 
-#### 变量声明
+### 变量声明
 
 **ArkTS示例：**
  
@@ -34,8 +34,9 @@ let version = 5.0;
  
   
 
-#### 基础数据类型
+### 基础数据类型
  
+
 | Swift类型 | ArkTS类型 | 示例代码 | 核心差异说明 |
 | --- | --- | --- | --- |
 | Bool | boolean | let isDone: boolean = false; | 定义方式相似，均用于逻辑判断。 |
@@ -51,8 +52,9 @@ let version = 5.0;
  
   
 
-#### 复杂数据类型
+### 复杂数据类型
  
+
 | Swift类型体系 | ArkTS类型体系 | ArkTS示例代码 | 核心差异说明 |
 | --- | --- | --- | --- |
 | 数组：var arr: [Int] = [1, 2, 3] | Array：let arr: number[] = [1, 2, 3]; | // 动态长度语法糖 let dynamicArr = [4, 5, 6]; | Swift数组长度可变。 ArkTS的Array是动态数组，支持push/pop等操作；可直接用[]简化初始化。数组不会越界，当数组下标超过数组长度时会得到undefined。 |
@@ -65,7 +67,7 @@ let version = 5.0;
  
   
 
-#### 函数与闭包
+### 函数与闭包
 
 Swift和ArkTS在函数方面语法趋同，细节上有差别。
  
@@ -112,13 +114,13 @@ function foo2(name?: string) {}  /* name为可选参数 */
  
   
 
-#### 基础类库
+### 基础类库
 
 ArkTS基础类库和容器类库增强了语言的基础功能，包括高精度浮点运算、二进制Buffer、XML生成解析转换和多种容器库等能力，协助开发者简化开发工作，提升开发效率。
  
   
 
-#### 语言结构
+## 语言结构
 
 Swift是一种融合面向对象、函数式和协议导向范式的现代语言，强调安全性、性能与简洁性，适用于跨平台开发。
  
@@ -126,7 +128,7 @@ ArkTS融合声明式UI、函数式和面向对象范式，通过响应式系统�
  
   
 
-#### 模块与包管理
+### 模块与包管理
 
 在Swift中，开发者使用模块（module）来组织代码，通过import语句引入其他模块中的类。
  
@@ -144,10 +146,11 @@ import { collections } from '@kit.ArkTS';
  
   
 
-#### 类与命名空间特性
+### 类与命名空间特性
 
 ArkTS的类系统在语法层面与Swift相似，但在高阶特性上展现出更现代的设计理念。
   
+
 | 特性 | Swift实现方式 | ArkTS实现方式 | 说明 |
 | --- | --- | --- | --- |
 | 命名空间组织 | 嵌套结构/内部类 | namespace关键字或模块文件结构。 | 支持显式命名空间与模块化组织的混合模式。 |
@@ -178,7 +181,7 @@ namespace Models {
  
   
 
-#### 异步编程模型
+### 异步编程模型
 
 **单线程vs多线程**
  
@@ -194,7 +197,7 @@ ArkTS中未捕获的Promise错误可能导致静默失败，需显式使用try/c
  
   
 
-#### this的绑定
+### this的绑定
 
 Swift的方法中，self始终指向类的实例对象，由代码结构在编译时确定。在方法中，self指向调用该方法的对象实例，无法通过调用方式改变self的指向。
  
@@ -243,13 +246,13 @@ function callFunction(fn: () => void) {
  
   
 
-#### 类型系统
+## 类型系统
 
 ArkTS与Swift的类型系统也存在差异。
  
   
 
-#### 类型推断与可选类型
+### 类型推断与可选类型
 
 相较于Swift需要显式类型声明和严格的nil检查，ArkTS的类型系统提供了更灵活的表达方式。
  
@@ -274,7 +277,7 @@ const person: Person = {
  
   
 
-#### 联合类型
+### 联合类型
 
 联合类型这种类型组合能力为复杂场景提供了更强的表达力，是ArkTS类型系统的重要创新点。
  

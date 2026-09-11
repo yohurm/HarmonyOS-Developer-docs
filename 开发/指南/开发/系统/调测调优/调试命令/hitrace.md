@@ -1,13 +1,13 @@
 # hitrace
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hitrace
 
 hitrace命令行工具提供trace信息采集能力，支持采集系统提供的打点和开发者使用[HiTraceMeter接口](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hitracemeter-intro)在应用中设置的打点。该工具支持多种方式采集文本格式或二进制格式的trace信息，帮助开发者观测程序运行情况和定位故障问题。
 
 
-#### 环境要求
+## 环境要求
 
  - 根据hdc命令行工具指导，完成[hdc环境准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hdc#环境准备)。
  - 确保设备已正常连接，并执行hdc shell。
@@ -15,7 +15,8 @@ hitrace命令行工具提供trace信息采集能力，支持采集系统提供�
 
 
 
-#### 命令行说明
+## 命令行说明
+
 
 | 命令 | 含义说明 |
 | --- | --- |
@@ -49,11 +50,11 @@ hitrace命令行工具提供trace信息采集能力，支持采集系统提供�
 
 
 
-#### 常用命令
+## 常用命令
 
 
 
-#### 查看帮助信息
+### 查看帮助信息
 
 ```bash
 hitrace -h
@@ -106,13 +107,14 @@ options include:
 
 
 
-#### 查看hitrace包含的tag
+### 查看hitrace包含的tag
 
 ```bash
 hitrace -l
 ```
 
 各tag具体含义参考下面的tag名称与描述对照表。
+
 
 | tag名称 | 描述 |
 | --- | --- |
@@ -211,7 +213,7 @@ $ hitrace -l
 
 
 
-#### 捕获指定时长文本格式trace
+### 捕获指定时长文本格式trace
 
 不指定-o参数时，默认将捕获到的trace内容显示在命令行窗口。下面参数是指定采集10秒的数据，缓冲区大小为204800KB，采集的tag为app。
 
@@ -259,7 +261,7 @@ $ hitrace -t 10 -b 204800 app -o /data/local/tmp/test.ftrace
 
 
 
-#### 捕获指定时长二进制格式trace
+### 捕获指定时长二进制格式trace
 
 命令带--raw参数时可捕获二进制格式trace，捕获二进制格式trace时不支持指定路径，固定保存在路径/data/log/hitrace下。采集结束后生成文件的绝对路径会显示在命令行窗口。
 
@@ -280,7 +282,7 @@ $ hitrace -t 10 -b 204800 app --raw
 
 
 
-#### 快照模式捕获文本格式trace
+### 快照模式捕获文本格式trace
 
 快照模式下，trace信息保存在内核缓冲区。当数据量超出缓冲区大小时，默认丢弃最早的数据。
 
@@ -408,7 +410,7 @@ $ hitrace --trace_finish_nodump
 
 
 
-#### 快照模式捕获二进制格式trace
+### 快照模式捕获二进制格式trace
 
 快照模式下捕获二进制格式trace时不支持指定tag，默认采集以下tag。
 
@@ -474,7 +476,7 @@ $ hitrace --stop_bgsrv
 
 
 
-#### 录制模式捕获trace
+### 录制模式捕获trace
 
 录制模式下，系统会持续保存运行时生成的二进制格式trace，文件大小超过设定的值时会生成新文件。支持指定保存路径（目前仅支持设定路径为/data/local/tmp）。
 
@@ -525,7 +527,7 @@ $ hitrace --trace_finish --record
 
 
 
-#### 捕获trace后进行压缩
+### 捕获trace后进行压缩
 
 ```bash
 hitrace -z -b 102400 -t 10 sched freq idle disk -o /data/local/tmp/test.ftrace
@@ -543,7 +545,7 @@ $ hitrace -z -b 102400 -t 10 sched freq idle disk -o /data/local/tmp/test.ftrace
 
 
 
-#### 设置和查询trace输出级别阈值
+### 设置和查询trace输出级别阈值
 
 打点级别优先级从高到低分别为 M（Commercial）、C（Critical）、I（Info）、D（Debug），低于trace输出级别阈值的打点将不会生效。
 
@@ -570,7 +572,7 @@ $ hitrace --get_level
 
 
 
-#### trace文件名说明
+## trace文件名说明
 
 使用hitrace命令行工具采集二进制格式trace信息时，可以指定文件路径（目前仅支持设定路径为/data/local/tmp）。默认保存在/data/log/hitrace路径下，hitrace自动生成文件名并将绝对路径显示在命令行窗口。
 
@@ -587,11 +589,11 @@ $ hitrace --dump_bgsrv
 
 
 
-#### 常见问题
+## 常见问题
 
 
 
-#### 执行hitrace命令后显示错误码1
+### 执行hitrace命令后显示错误码1
 
 **现象描述**
 
@@ -609,7 +611,7 @@ $ hitrace --dump_bgsrv
 
 
 
-#### 执行hitrace命令后报错“not support category on this device”
+### 执行hitrace命令后报错“not support category on this device”
 
 **现象描述**
 
@@ -627,7 +629,7 @@ $ hitrace -t 10 aaa
 
 
 
-#### 执行hitrace命令后显示错误码1004
+### 执行hitrace命令后显示错误码1004
 
 **现象描述**
 
@@ -647,7 +649,7 @@ $ hitrace --dump_bgsrv
 
 
 
-#### 执行hitrace命令后报错“illegal path”
+### 执行hitrace命令后报错“illegal path”
 
 **现象描述**
 

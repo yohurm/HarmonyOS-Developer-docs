@@ -1,13 +1,13 @@
 # HML语法参考
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-framework-syntax-hml
 
 HML是一套类HTML的标记语言，通过组件，事件构建出页面的内容。页面具备数据绑定、事件绑定、列表渲染、条件渲染和逻辑控制等高级能力。
 
 
-#### 页面结构
+## 页面结构
 
 ```text
 <!-- xxx.hml -->
@@ -21,7 +21,7 @@ HML是一套类HTML的标记语言，通过组件，事件构建出页面的内�
 
 
 
-#### 数据绑定
+## 数据绑定
 
 ```text
 <!-- xxx.hml -->
@@ -59,7 +59,7 @@ export default {
 
 
 
-#### 普通事件绑定
+## 普通事件绑定
 
 事件通过'on'或者'@'绑定在组件上，当组件触发事件时会执行JS文件中对应的事件处理函数。
 
@@ -144,7 +144,7 @@ export default {
 
 
 
-#### 冒泡事件绑定5+
+## 冒泡事件绑定5+
 
 冒泡事件绑定包括：
 
@@ -191,12 +191,12 @@ export default {
 
 
 > [!NOTE]
-> 采用旧写法(onclick)的事件绑定在最小API版本6以下时采用不冒泡处理，在最小API版本为6及6以上时采用冒泡处理。
+> 采用旧写法（onclick）的事件绑定在最小API版本6以下时采用不冒泡处理，在最小API版本为6及6以上时采用冒泡处理。
 
 
 
 
-#### 捕获事件绑定5+
+## 捕获事件绑定5+
 
 Touch触摸类事件支持捕获，捕获阶段位于冒泡阶段之前，捕获事件先到达父组件然后到达子组件。
 
@@ -230,7 +230,7 @@ export default {
 
 
 
-#### 列表渲染
+## 列表渲染
 
 ```text
 <!-- xxx.hml -->
@@ -282,12 +282,12 @@ tid属性主要用来加速for循环的重渲染，旨在列表中的数据有�
 
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/DAAlqWC2RF-6jFsOGpyj4Q/zh-cn_image_0000002686086083.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071856Z&HW-CC-Expire=86400&HW-CC-Sign=1E0D7DEF899CD22537105D21FF3796D2379E6A47CA8EB2F3BC85F3913451CAA4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/hxynJJN1Q2-WAKjcEw5arQ/zh-cn_image_0000002747290719.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072959Z&HW-CC-Expire=86400&HW-CC-Sign=31C548C315EEB40D0036D454A84FCA36D05867637AFF3E127617F3C7329104A2)
 
 
 
 
-#### 条件渲染
+## 条件渲染
 
 条件渲染分为2种：if/elif/else和show。两种写法的区别在于：第一种写法里if为false时，组件不会在vdom中构建，也不会渲染，而第二种写法里show为false时虽然也不渲染，但会在vdom中构建；另外，当使用if/elif/else写法时，节点必须是兄弟节点，否则编译无法通过。实例如下：
 
@@ -332,7 +332,7 @@ export default {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/wej15YePRHOuRisX_GX-nw/zh-cn_image_0000002685926255.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071856Z&HW-CC-Expire=86400&HW-CC-Sign=2B843C20E19D0E97057EBB4946839C17FD034C3AF9754EB54351840060F911F0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/kECQU7UKQ5muvV-EM_Ce_g/zh-cn_image_0000002747210637.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072959Z&HW-CC-Expire=86400&HW-CC-Sign=3E23B07CA67BAC650F185F19B45A1AD7F1C96563798AC1719F9B56938A5E76B3)
 
 
 优化渲染：show方法。当show为true时，节点正常渲染；当为false时，仅仅设置display样式为none。
@@ -375,12 +375,12 @@ export default {
 
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/NId4R23rS_a4DJo7nPMFWg/zh-cn_image_0000002656006576.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071856Z&HW-CC-Expire=86400&HW-CC-Sign=D8BFBCCA350842B29C57139EA7DC4B90FE69DEB29AF328F715ACFC6537CFEA58)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/vQfTRnsEQ7iHrpoHBIey4A/zh-cn_image_0000002717770702.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072959Z&HW-CC-Expire=86400&HW-CC-Sign=477ADBA9D0B73914A49917731855F2875F9CD1707AEA418CE81F42016D199C81)
 
 
 
 
-#### 逻辑控制块
+## 逻辑控制块
 
 &lt;block&gt;控制块使得循环渲染和条件渲染变得更加灵活；block在构建时不会被当作真实的节点编译。注意block标签只支持for和if属性。
 
@@ -413,12 +413,12 @@ export default {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/GkFp7PuDQxG-Eo1TG6HHdg/zh-cn_image_0000002655846656.png?HW-CC-KV=V1&HW-CC-Date=20260730T071856Z&HW-CC-Expire=86400&HW-CC-Sign=EEC1A5F6AF837B9902DBAFA5207363AE033836CF9AF11B6AC931A9799F9C2D2B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/UkWv5Mm_SnSrR9z_3_my9w/zh-cn_image_0000002717610768.png?HW-CC-KV=V1&HW-CC-Date=20260911T072959Z&HW-CC-Expire=86400&HW-CC-Sign=D7075E52D75DF77F9ABA4DD8A713A4EE4305BA7D86D381EF8B09FF67C50E8A8B)
 
 
 
 
-#### 模板引用
+## 模板引用
 
 HML可以通过element引用模板文件，详细介绍可参考[自定义组件的基本用法](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-custom-basic-usage)章节。
 

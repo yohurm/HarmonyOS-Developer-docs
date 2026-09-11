@@ -1,9 +1,9 @@
 # @ohos.net.webSocket (WebSocket连接)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-websocket
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 给第三方应用提供webSocket客户端和服务端服务器，实现客户端与服务端的双向连接。
 
@@ -16,9 +16,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { webSocket } from '@kit.NetworkKit';
@@ -26,9 +27,10 @@ import { webSocket } from '@kit.NetworkKit';
 
 
 
-#### webSocket.createWebSocket
+## webSocket.createWebSocket
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createWebSocket(): WebSocket
 
@@ -39,6 +41,7 @@ createWebSocket(): WebSocket
 **系统能力**：SystemCapability.Communication.NetStack
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -53,17 +56,19 @@ let ws: webSocket.WebSocket = webSocket.createWebSocket();
 
 
 
-#### WebSocket
+## WebSocket
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 在调用WebSocket的方法前，需要先通过[webSocket.createWebSocket](#websocketcreatewebsocket)创建一个WebSocket。
 
 
 
-#### connect
+### connect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 connect(url: string, callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -80,7 +85,7 @@ connect(url: string, callback: AsyncCallback&lt;boolean&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/bge92T_KR2eRPp3ppD121g/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071625Z&HW-CC-Expire=86400&HW-CC-Sign=50A910634E60DA37AA35961ED70429980BA85921230123FCD7EA616C1F640C9B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/-vB5cuWrS92Vg13A01UTjg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072949Z&HW-CC-Expire=86400&HW-CC-Sign=FD4666BE8F08A04B61AC91DC022F0B4E69726A0BB091430FE87FFB2507DE02EE)
 
 
 URL地址长度不能超过1024个字符，否则会连接失败。从API version 15开始，URL地址长度限制由1024修改为2048。从API version 26开始，URL地址长度限制由2048修改为8196。
@@ -88,6 +93,7 @@ URL地址长度不能超过1024个字符，否则会连接失败。从API versio
 
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -99,15 +105,16 @@ URL地址长度不能超过1024个字符，否则会连接失败。从API versio
 
 以下错误码的详细介绍参见[webSocket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-websocket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
 | 201 | Permission denied. |
-| 2302001 | Websocket url error. |
-| 2302002 | Websocket certificate file does not exist. |
-| 2302003 | Websocket connection already exists. |
-| 2302998 | It is not allowed to access this domain. |
-| 2302999 | Internal error. |
+| 2302001 | Websocket url error. 适用版本：12+ |
+| 2302002 | Websocket certificate file does not exist. 适用版本：12+ |
+| 2302003 | Websocket connection already exists. 适用版本：12+ |
+| 2302998 | It is not allowed to access this domain. 适用版本：12+ |
+| 2302999 | Websocket other unknown error. 适用版本：10+ |
 
 
 **示例：**
@@ -129,9 +136,10 @@ ws.connect(url, (err: BusinessError, value: boolean) => {
 
 
 
-#### connect
+### connect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 connect(url: string, options: WebSocketRequestOptions, callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -148,7 +156,7 @@ connect(url: string, options: WebSocketRequestOptions, callback: AsyncCallback&l
 **系统能力**：SystemCapability.Communication.NetStack
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/CofUZJKtTDC8YYzHK1adSw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071625Z&HW-CC-Expire=86400&HW-CC-Sign=6700619BEF309ADB1764DBB25F79AED9BBFAFFA88D824FF830E7C1771A48CEBE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/e0V-HVtTQuKg87HT7nyBEQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072949Z&HW-CC-Expire=86400&HW-CC-Sign=6ECAC04253A3E934912603EB452E3738C7CF955231CF23B65D21CAD4A432F05D)
 
 
 URL地址长度不能超过1024个字符，否则会连接失败。从API version 15开始，URL地址长度限制由1024修改为2048。从API version 26开始，URL地址长度限制由2048修改为8196。
@@ -156,6 +164,7 @@ URL地址长度不能超过1024个字符，否则会连接失败。从API versio
 
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -168,15 +177,16 @@ URL地址长度不能超过1024个字符，否则会连接失败。从API versio
 
 以下错误码的详细介绍参见[webSocket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-websocket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
 | 201 | Permission denied. |
-| 2302001 | Websocket url error. |
-| 2302002 | Websocket certificate file does not exist. |
-| 2302003 | Websocket connection already exists. |
-| 2302998 | It is not allowed to access this domain. |
-| 2302999 | Internal error. |
+| 2302001 | Websocket url error. 适用版本：12+ |
+| 2302002 | Websocket certificate file does not exist. 适用版本：12+ |
+| 2302003 | Websocket connection already exists. 适用版本：12+ |
+| 2302998 | It is not allowed to access this domain. 适用版本：12+ |
+| 2302999 | Websocket other unknown error. 适用版本：10+ |
 
 
 **示例：**
@@ -222,9 +232,10 @@ ws.connect(url, options, (err: BusinessError, value: Object) => {
 
 
 
-#### connect
+### connect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 connect(url: string, options?: WebSocketRequestOptions): Promise&lt;boolean&gt;
 
@@ -241,7 +252,7 @@ connect(url: string, options?: WebSocketRequestOptions): Promise&lt;boolean&gt;
 **系统能力**：SystemCapability.Communication.NetStack
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/c6mDIswPSZmzHiaj24pYIw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071625Z&HW-CC-Expire=86400&HW-CC-Sign=7F7B93175C6AB5EDB3924F5AFE0DC4CD3BB9E88D579C9360523A34A074AE0EA1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/k7gQ0PQkTau_SV_ydlMRag/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072949Z&HW-CC-Expire=86400&HW-CC-Sign=36E9C9B3654E55E85FE2D0C3E6B67F6F6BF681564B856B27EB0A81DE8F86A12B)
 
 
 URL地址长度不能超过1024个字符，否则会连接失败。从API version 15开始，URL地址长度限制由1024修改为2048。从API version 26开始，URL地址长度限制由2048修改为8196。
@@ -250,6 +261,7 @@ URL地址长度不能超过1024个字符，否则会连接失败。从API versio
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | string | 是 | 建立WebSocket连接的URL地址。 |
@@ -257,6 +269,7 @@ URL地址长度不能超过1024个字符，否则会连接失败。从API versio
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -267,15 +280,16 @@ URL地址长度不能超过1024个字符，否则会连接失败。从API versio
 
 以下错误码的详细介绍参见[webSocket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-websocket)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
 | 201 | Permission denied. |
-| 2302001 | Websocket url error. |
-| 2302002 | Websocket certificate file does not exist. |
-| 2302003 | Websocket connection already exists. |
-| 2302998 | It is not allowed to access this domain. |
-| 2302999 | Internal error. |
+| 2302001 | Websocket url error. 适用版本：12+ |
+| 2302002 | Websocket certificate file does not exist. 适用版本：12+ |
+| 2302003 | Websocket connection already exists. 适用版本：12+ |
+| 2302998 | It is not allowed to access this domain. 适用版本：12+ |
+| 2302999 | Websocket other unknown error. 适用版本：10+ |
 
 
 **示例：**
@@ -295,9 +309,10 @@ promise.then((value: boolean) => {
 
 
 
-#### send
+### send
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 send(data: string | ArrayBuffer, callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -311,6 +326,7 @@ send(data: string | ArrayBuffer, callback: AsyncCallback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | string \| ArrayBuffer | 是 | 发送的数据。 API 6及更早版本仅支持string类型。API 8起同时支持string和ArrayBuffer类型。最大支持发送5242864字节数据(即5 * 1024 * 1024 - 16)，超过该大小会返回401错误码。 |
@@ -320,6 +336,7 @@ send(data: string | ArrayBuffer, callback: AsyncCallback&lt;boolean&gt;): void
 **错误码：**
 
 以下错误码的详细介绍参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -364,9 +381,10 @@ ws.on('open', (err: BusinessError, value: Object) => {
 
 
 
-#### send
+### send
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 send(data: string | ArrayBuffer): Promise&lt;boolean&gt;
 
@@ -380,12 +398,14 @@ send(data: string | ArrayBuffer): Promise&lt;boolean&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | string \| ArrayBuffer | 是 | 发送的数据。 API 6及更早版本仅支持string类型。API 8起同时支持string和ArrayBuffer类型。最大支持发送5242864字节数据(即5 * 1024 * 1024 - 16)，超过该大小会返回401错误码。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -395,6 +415,7 @@ send(data: string | ArrayBuffer): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -439,9 +460,10 @@ ws.on('open', (err: BusinessError, value: Object) => {
 
 
 
-#### close
+### close
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -455,6 +477,7 @@ close(callback: AsyncCallback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;boolean&gt; | 是 | 回调函数。true:关闭请求创建成功；false:关闭请求创建失败。 |
@@ -463,6 +486,7 @@ close(callback: AsyncCallback&lt;boolean&gt;): void
 **错误码：**
 
 以下错误码的详细介绍参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -488,9 +512,10 @@ ws.close((err: BusinessError) => {
 
 
 
-#### close
+### close
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(options: WebSocketCloseOptions, callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -504,6 +529,7 @@ close(options: WebSocketCloseOptions, callback: AsyncCallback&lt;boolean&gt;): v
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | WebSocketCloseOptions | 是 | 参考WebSocketCloseOptions。 |
@@ -513,6 +539,7 @@ close(options: WebSocketCloseOptions, callback: AsyncCallback&lt;boolean&gt;): v
 **错误码：**
 
 以下错误码的详细介绍参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -544,9 +571,10 @@ ws.close(options, (err: BusinessError) => {
 
 
 
-#### close
+### close
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(options?: WebSocketCloseOptions): Promise&lt;boolean&gt;
 
@@ -560,12 +588,14 @@ close(options?: WebSocketCloseOptions): Promise&lt;boolean&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | WebSocketCloseOptions | 否 | 参考WebSocketCloseOptions。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -575,6 +605,7 @@ close(options?: WebSocketCloseOptions): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -603,9 +634,10 @@ promise.then((value: boolean) => {
 
 
 
-#### on('open')
+### on('open')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'open', callback: AsyncCallback&lt;Object&gt;): void
 
@@ -616,6 +648,7 @@ on(type: 'open', callback: AsyncCallback&lt;Object&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -641,9 +674,10 @@ ws.on('open', (err: BusinessError, value: Object) => {
 
 
 
-#### off('open')
+### off('open')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'open', callback?: AsyncCallback&lt;Object&gt;): void
 
@@ -658,6 +692,7 @@ off(type: 'open', callback?: AsyncCallback&lt;Object&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -686,9 +721,10 @@ ws.off('open', callback1);
 
 
 
-#### on('openInfo')
+### on('openInfo')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'openInfo', callback: AsyncCallback&lt;WebSocketOpenInfo&gt;): void
 
@@ -701,6 +737,7 @@ on(type: 'openInfo', callback: AsyncCallback&lt;WebSocketOpenInfo&gt;): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -726,9 +763,10 @@ ws.on('openInfo', (err: BusinessError, value: webSocket.WebSocketOpenInfo) => {
 
 
 
-#### off('openInfo')
+### off('openInfo')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'openInfo', callback?: AsyncCallback&lt;WebSocketOpenInfo&gt;): void
 
@@ -745,6 +783,7 @@ off(type: 'openInfo', callback?: AsyncCallback&lt;WebSocketOpenInfo&gt;): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -773,9 +812,10 @@ ws.off('openInfo', callback1);
 
 
 
-#### on('message')
+### on('message')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'message', callback: AsyncCallback<string | ArrayBuffer>): void
 
@@ -790,6 +830,7 @@ on(type: 'message', callback: AsyncCallback<string | ArrayBuffer>): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -811,9 +852,10 @@ ws.on('message', (err: BusinessError<void>, value: string | ArrayBuffer) => {
 
 
 
-#### off('message')
+### off('message')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'message', callback?: AsyncCallback<string | ArrayBuffer>): void
 
@@ -828,6 +870,7 @@ off(type: 'message', callback?: AsyncCallback<string | ArrayBuffer>): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -846,9 +889,10 @@ ws.off('message');
 
 
 
-#### on('close')
+### on('close')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'close', callback: AsyncCallback&lt;CloseResult&gt;): void
 
@@ -859,6 +903,7 @@ on(type: 'close', callback: AsyncCallback&lt;CloseResult&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -880,9 +925,10 @@ ws.on('close', (err: BusinessError, value: webSocket.CloseResult) => {
 
 
 
-#### off('close')
+### off('close')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'close', callback?: AsyncCallback&lt;CloseResult&gt;): void
 
@@ -897,6 +943,7 @@ off(type: 'close', callback?: AsyncCallback&lt;CloseResult&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -915,9 +962,10 @@ ws.off('close');
 
 
 
-#### on('error')
+### on('error')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'error', callback: ErrorCallback): void
 
@@ -930,6 +978,7 @@ on(type: 'error', callback: ErrorCallback): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -951,9 +1000,10 @@ ws.on('error', (err: BusinessError) => {
 
 
 
-#### off('error')
+### off('error')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'error', callback?: ErrorCallback): void
 
@@ -968,6 +1018,7 @@ off(type: 'error', callback?: ErrorCallback): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -986,9 +1037,10 @@ ws.off('error');
 
 
 
-#### on('dataEnd')11+
+### on('dataEnd')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'dataEnd', callback: Callback&lt;void&gt;): void
 
@@ -997,6 +1049,7 @@ on(type: 'dataEnd', callback: Callback&lt;void&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1017,9 +1070,10 @@ ws.on('dataEnd', () => {
 
 
 
-#### off('dataEnd')11+
+### off('dataEnd')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'dataEnd', callback?: Callback&lt;void&gt;): void
 
@@ -1032,6 +1086,7 @@ off(type: 'dataEnd', callback?: Callback&lt;void&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1050,9 +1105,10 @@ ws.off('dataEnd');
 
 
 
-#### on('headerReceive')12+
+### on('headerReceive')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'headerReceive', callback: Callback&lt;ResponseHeaders&gt;): void
 
@@ -1061,6 +1117,7 @@ on(type: 'headerReceive', callback: Callback&lt;ResponseHeaders&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1081,9 +1138,10 @@ ws.on('headerReceive', (data) => {
 
 
 
-#### off('headerReceive')12+
+### off('headerReceive')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'headerReceive', callback?: Callback&lt;ResponseHeaders&gt;): void
 
@@ -1096,6 +1154,7 @@ off(type: 'headerReceive', callback?: Callback&lt;ResponseHeaders&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1114,9 +1173,10 @@ ws.off('headerReceive');
 
 
 
-#### webSocket.createWebSocketServer19+
+## webSocket.createWebSocketServer19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createWebSocketServer(): WebSocketServer
 
@@ -1126,9 +1186,10 @@ createWebSocketServer(): WebSocketServer
 > 从API version 23开始支持全设备使用，之前仅支持TV设备使用。
 
 
-**系统能力**: SystemCapability.Communication.NetStack
+**系统能力**： SystemCapability.Communication.NetStack
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1143,17 +1204,19 @@ let ws: webSocket.WebSocketServer = webSocket.createWebSocketServer();
 
 
 
-#### WebSocketServer19+
+## WebSocketServer19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 在调用WebSocketServer方法前，需要先通过[webSocket.createWebSocketServer](#websocketcreatewebsocketserver19)创建一个WebSocketServer。
 
 
 
-#### start19+
+### start19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 start(config: WebSocketServerConfig): Promise&lt;boolean&gt;
 
@@ -1163,11 +1226,12 @@ start(config: WebSocketServerConfig): Promise&lt;boolean&gt;
 > 在多次调用该接口时，应避免监听同一端口。
 
 
-**需要权限**: ohos.permission.INTERNET
+**需要权限**： ohos.permission.INTERNET
 
-**系统能力**: SystemCapability.Communication.NetStack
+**系统能力**： SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1175,6 +1239,7 @@ start(config: WebSocketServerConfig): Promise&lt;boolean&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1185,13 +1250,14 @@ start(config: WebSocketServerConfig): Promise&lt;boolean&gt;
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[webSocket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-websocket)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
 | 2302002 | Websocket certificate file does not exist. |
 | 2302004 | Can't listen on the given NIC. |
 | 2302005 | Can't listen on the given Port. |
-| 2302007 | Websocket port already occupied. |
+| 2302007 | Websocket port already occupied. 适用版本：24+ |
 | 2302999 | Websocket other unknown error. |
 
 
@@ -1222,9 +1288,10 @@ localServer.start(config).then((success: boolean) => {
 
 
 
-#### send19+
+### send19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 send(data: string | ArrayBuffer, connection: WebSocketConnection): Promise&lt;boolean&gt;
 
@@ -1234,11 +1301,12 @@ send(data: string | ArrayBuffer, connection: WebSocketConnection): Promise&lt;bo
 > send接口必须在监听到connect事件后才可以调用。
 
 
-**需要权限**: ohos.permission.INTERNET
+**需要权限**： ohos.permission.INTERNET
 
-**系统能力**: SystemCapability.Communication.NetStack
+**系统能力**： SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1248,6 +1316,7 @@ send(data: string | ArrayBuffer, connection: WebSocketConnection): Promise&lt;bo
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | promise对象。返回true表示发送请求创建成功；返回false表示发送请求创建失败。 |
@@ -1256,6 +1325,7 @@ send(data: string | ArrayBuffer, connection: WebSocketConnection): Promise&lt;bo
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[webSocket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-websocket)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1304,15 +1374,16 @@ localServer.on('connect', async (connection: webSocket.WebSocketConnection) => {
 
 
 
-#### listAllConnections19+
+### listAllConnections19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 listAllConnections(): WebSocketConnection[]
 
 获取与服务端连接的所有客户端信息。
 
-**需要权限**: ohos.permission.INTERNET
+**需要权限**： ohos.permission.INTERNET
 
 **系统能力**：SystemCapability.Communication.NetStack
 
@@ -1322,6 +1393,7 @@ listAllConnections(): WebSocketConnection[]
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | WebSocketConnection[] | 以字符串数组形式返回所有客户端的信息。 |
@@ -1330,6 +1402,7 @@ listAllConnections(): WebSocketConnection[]
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1378,9 +1451,10 @@ localServer.on('connect', async (connection: webSocket.WebSocketConnection) => {
 
 
 
-#### close19+
+### close19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(connection: WebSocketConnection, options?: webSocket.WebSocketCloseOptions): Promise&lt;boolean&gt;
 
@@ -1392,6 +1466,7 @@ close(connection: WebSocketConnection, options?: webSocket.WebSocketCloseOptions
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | connection | WebSocketConnection | 是 | 客户端信息，包括客户端的ip地址和端口号port。 |
@@ -1399,6 +1474,7 @@ close(connection: WebSocketConnection, options?: webSocket.WebSocketCloseOptions
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1408,6 +1484,7 @@ close(connection: WebSocketConnection, options?: webSocket.WebSocketCloseOptions
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[webSocket错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-websocket)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1453,9 +1530,10 @@ localServer.on('connect', (connection: webSocket.WebSocketConnection) => {
 
 
 
-#### stop19+
+### stop19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stop(): Promise&lt;boolean&gt;
 
@@ -1467,6 +1545,7 @@ stop(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | promise对象。返回true表示停止服务端service请求创建成功；返回false表示停止服务端service请求创建失败。 |
@@ -1475,6 +1554,7 @@ stop(): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1516,9 +1596,10 @@ localServer.stop().then((success: boolean) => {
 
 
 
-#### on('connect')19+
+### on('connect')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'connect', callback: Callback&lt;WebSocketConnection&gt;): void
 
@@ -1527,6 +1608,7 @@ on(type: 'connect', callback: Callback&lt;WebSocketConnection&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1548,9 +1630,10 @@ localServer.on('connect', (connection: webSocket.WebSocketConnection) => {
 
 
 
-#### off('connect')19+
+### off('connect')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'connect', callback?: Callback&lt;WebSocketConnection&gt;): void
 
@@ -1563,6 +1646,7 @@ off(type: 'connect', callback?: Callback&lt;WebSocketConnection&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1582,9 +1666,10 @@ localServer.off('connect');
 
 
 
-#### on('messageReceive')19+
+### on('messageReceive')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'messageReceive', callback: Callback&lt;WebSocketMessage&gt;): void
 
@@ -1593,6 +1678,7 @@ on(type: 'messageReceive', callback: Callback&lt;WebSocketMessage&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1614,9 +1700,10 @@ localServer.on('messageReceive', (message: webSocket.WebSocketMessage) => {
 
 
 
-#### off('messageReceive')19+
+### off('messageReceive')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'messageReceive', callback?: Callback&lt;WebSocketMessage&gt;): void
 
@@ -1629,6 +1716,7 @@ off(type: 'messageReceive', callback?: Callback&lt;WebSocketMessage&gt;): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1648,9 +1736,10 @@ localServer.off('messageReceive');
 
 
 
-#### on('close')19+
+### on('close')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'close', callback: ClientConnectionCloseCallback): void
 
@@ -1659,6 +1748,7 @@ on(type: 'close', callback: ClientConnectionCloseCallback): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1680,9 +1770,10 @@ localServer.on('close', (clientConnection: webSocket.WebSocketConnection, closeR
 
 
 
-#### off('close')19+
+### off('close')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'close', callback?: ClientConnectionCloseCallback): void
 
@@ -1695,6 +1786,7 @@ off(type: 'close', callback?: ClientConnectionCloseCallback): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1714,9 +1806,10 @@ localServer.off('close');
 
 
 
-#### on('error')19+
+### on('error')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'error', callback: ErrorCallback): void
 
@@ -1725,6 +1818,7 @@ on(type: 'error', callback: ErrorCallback): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1746,9 +1840,10 @@ wsServer.on('error', (err: BusinessError) => {
 
 
 
-#### off('error')19+
+### off('error')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'error', callback?: ErrorCallback): void
 
@@ -1761,6 +1856,7 @@ off(type: 'error', callback?: ErrorCallback): void
 **系统能力**：SystemCapability.Communication.NetStack
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1780,13 +1876,15 @@ localServer.off('error');
 
 
 
-#### WebSocketRequestOptions
+## WebSocketRequestOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 建立WebSocket连接时，可选参数的类型和说明。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1804,13 +1902,15 @@ localServer.off('error');
 
 
 
-#### ClientCert11+
+## ClientCert11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 客户端证书类型。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1821,15 +1921,17 @@ localServer.off('error');
 
 
 
-#### ProxyConfiguration12+
+## ProxyConfiguration12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ProxyConfiguration = 'system' | 'no-proxy' | HttpProxy
 
 网络代理配置信息
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1840,15 +1942,17 @@ type ProxyConfiguration = 'system' | 'no-proxy' | HttpProxy
 
 
 
-#### WebSocketCloseOptions
+## WebSocketCloseOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 关闭WebSocket连接时，可选参数的类型和说明。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1858,15 +1962,17 @@ type ProxyConfiguration = 'system' | 'no-proxy' | HttpProxy
 
 
 
-#### CloseResult10+
+## CloseResult10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 关闭WebSocket连接时，订阅close事件得到的关闭结果。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1876,15 +1982,17 @@ type ProxyConfiguration = 'system' | 'no-proxy' | HttpProxy
 
 
 
-#### ResponseHeaders12+
+## ResponseHeaders12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ResponseHeaders = { [k: string]: string | string[] | undefined; }
 
 服务器发送的响应头。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1893,13 +2001,15 @@ type ResponseHeaders = { [k: string]: string | string[] | undefined; }
 
 
 
-#### close错误码说明
+## close错误码说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 发送给服务端的错误码必须为正整数，取值范围为[1000,1015],可以自行定义，如果未指定错误码或传入值不在上述范围内，错误码将会被设置为默认值1000。下面的列表仅供参考。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 值 | 说明 |
 | --- | --- |
@@ -1912,15 +2022,17 @@ type ResponseHeaders = { [k: string]: string | string[] | undefined; }
 
 
 
-#### HttpProxy12+
+## HttpProxy12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type HttpProxy = connection.HttpProxy
 
 网络全局代理配置信息。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1929,13 +2041,15 @@ type HttpProxy = connection.HttpProxy
 
 
 
-#### WebSocketServerConfig19+
+## WebSocketServerConfig19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 启动服务端的service时，需要输入的配置信息和说明。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1949,13 +2063,15 @@ type HttpProxy = connection.HttpProxy
 
 
 
-#### ServerCert19+
+## ServerCert19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 指定服务端证书的信息，包括服务端证书文件路径和服务端证书的私钥文件路径。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1965,13 +2081,15 @@ type HttpProxy = connection.HttpProxy
 
 
 
-#### WebSocketMessage19+
+## WebSocketMessage19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从指定客户端接收到的消息，包括客户端的信息和数据。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1981,13 +2099,15 @@ type HttpProxy = connection.HttpProxy
 
 
 
-#### WebSocketConnection19+
+## WebSocketConnection19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 客户端信息，包括客户端的ip地址和端口号port。
 
 **系统能力**：SystemCapability.Communication.NetStack
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1997,9 +2117,10 @@ type HttpProxy = connection.HttpProxy
 
 
 
-#### ClientConnectionCloseCallback19+
+## ClientConnectionCloseCallback19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ClientConnectionCloseCallback = (clientConnection: WebSocketConnection, closeReason: CloseResult) => void
 
@@ -2009,6 +2130,7 @@ type ClientConnectionCloseCallback = (clientConnection: WebSocketConnection, clo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | clientConnection | WebSocketConnection | 是 | 客户端信息，包括客户端的ip地址和端口号port。 |
@@ -2017,9 +2139,10 @@ type ClientConnectionCloseCallback = (clientConnection: WebSocketConnection, clo
 
 
 
-#### TlsProtocol
+## TlsProtocol
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TLS协议类型。
 
@@ -2028,6 +2151,7 @@ TLS协议类型。
 **系统能力：** SystemCapability.Communication.NetStack
 
 **模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2039,9 +2163,10 @@ TLS协议类型。
 
 
 
-#### WebSocketOpenInfo
+## WebSocketOpenInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 WebSocket连接成功后的详细信息。
 
@@ -2050,6 +2175,7 @@ WebSocket连接成功后的详细信息。
 **系统能力：** SystemCapability.Communication.NetStack
 
 **模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

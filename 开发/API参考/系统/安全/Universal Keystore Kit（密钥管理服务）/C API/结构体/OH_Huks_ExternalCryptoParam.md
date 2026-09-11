@@ -1,6 +1,6 @@
 # OH_Huks_ExternalCryptoParam
 
-更新时间：2026-06-12 06:54:11（官网已下线）
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-huksexternalcryptotypeapi-oh-huks-externalcryptoparam
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -10,7 +10,8 @@ typedef struct {...} OH_Huks_ExternalCryptoParam
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -24,16 +25,19 @@ typedef struct {...} OH_Huks_ExternalCryptoParam
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | uint32_t tag | 标签值。 |

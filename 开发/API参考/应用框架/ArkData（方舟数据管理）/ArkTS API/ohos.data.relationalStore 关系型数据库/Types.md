@@ -1,24 +1,26 @@
 # Types
 
-更新时间：2026-06-17 08:22:21
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-data-relationalstore-t
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 
 
-#### Assets10+
+## Assets10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Assets = Asset[]
 
 表示[Asset](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-data-relationalstore-i#asset10)类型的数组。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -27,15 +29,17 @@ type Assets = Asset[]
 
 
 
-#### ValueType
+## ValueType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ValueType = null | number | string | boolean | Uint8Array | Asset | Assets | Float32Array | bigint
 
 用于表示允许的数据字段类型，接口参数具体类型根据其功能而定。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -52,15 +56,17 @@ type ValueType = null | number | string | boolean | Uint8Array | Asset | Assets 
 
 
 
-#### ValuesBucket
+## ValuesBucket
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ValuesBucket = Record<string, ValueType>
 
 用于存储键值对的类型。不支持Sendable跨线程传递。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -69,15 +75,17 @@ type ValuesBucket = Record<string, ValueType>
 
 
 
-#### PRIKeyType10+
+## PRIKeyType10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type PRIKeyType = number | string
 
 用于表示数据库表某一行主键的数据类型。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -87,15 +95,17 @@ type PRIKeyType = number | string
 
 
 
-#### UTCTime10+
+## UTCTime10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type UTCTime = Date
 
 用于表示UTC时间的数据类型。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -104,15 +114,17 @@ type UTCTime = Date
 
 
 
-#### ModifyTime10+
+## ModifyTime10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ModifyTime = Map<PRIKeyType, UTCTime>
 
 用于存储数据库表的主键和修改时间的数据类型。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -121,9 +133,10 @@ type ModifyTime = Map<PRIKeyType, UTCTime>
 
 
 
-#### RowData23+
+## RowData23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type RowData = Array&lt;ValueType&gt;
 
@@ -133,6 +146,7 @@ type RowData = Array&lt;ValueType&gt;
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;ValueType&gt; | 表示ValueType类型的数组。 |
@@ -140,9 +154,10 @@ type RowData = Array&lt;ValueType&gt;
 
 
 
-#### RowsData23+
+## RowsData23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type RowsData = Array&lt;RowData&gt;
 
@@ -151,6 +166,7 @@ type RowsData = Array&lt;RowData&gt;
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 类型 | 说明 |
 | --- | --- |

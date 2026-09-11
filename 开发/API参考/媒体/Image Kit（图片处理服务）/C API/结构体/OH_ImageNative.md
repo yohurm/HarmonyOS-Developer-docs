@@ -1,23 +1,25 @@
 # OH_ImageNative
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-nativemodule-oh-imagenative
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct OH_ImageNative OH_ImageNative
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 为图像接口定义native层图像对象的别名。
  
 此结构体内容不可直接操作，采用函数调用方式操作具体字段，结构体内容和操作方式如下：
   
+
 | 字段类型 | 字段名称 | 字段描述 | 操作函数 | 函数描述 |
 | --- | --- | --- | --- | --- |
 | Image_Size | imageSize | 图像大小 | OH_ImageNative_GetImageSize | 获取 OH_ImageNative 对象的 Image_Size 信息。 |

@@ -1,9 +1,9 @@
 # @ohos.data.distributedDataObject (分布式数据对象)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-data-distributedobject
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供管理基本数据对象的相关能力，包括创建、查询、删除、修改、订阅等；同时支持相同应用多设备间的分布式数据对象协同能力。分布式数据对象处理数据时，不会解析用户数据的内容，存储路径安全性较低，不建议传输个人敏感数据和隐私数据。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { distributedDataObject } from '@kit.ArkData';
@@ -22,9 +23,10 @@ import { distributedDataObject } from '@kit.ArkData';
 
 
 
-#### distributedDataObject.create9+
+## distributedDataObject.create9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 create(context: Context, source: object): DataObject
 
@@ -34,6 +36,7 @@ create(context: Context, source: object): DataObject
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用的上下文。 FA模型的应用Context定义见Context。 Stage模型的应用Context定义见Context。 |
@@ -41,6 +44,7 @@ create(context: Context, source: object): DataObject
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -50,6 +54,7 @@ create(context: Context, source: object): DataObject
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -113,9 +118,10 @@ class EntryAbility extends UIAbility {
 
 
 
-#### distributedDataObject.genSessionId
+## distributedDataObject.genSessionId
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 genSessionId(): string
 
@@ -124,6 +130,7 @@ genSessionId(): string
 **系统能力：** SystemCapability.DistributedDataManager.DataObject.DistributedObject
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -138,13 +145,15 @@ let sessionId: string = distributedDataObject.genSessionId();
 
 
 
-#### SaveSuccessResponse9+
+## SaveSuccessResponse9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [save](#save9)接口回调信息。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataObject.DistributedObject
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -155,13 +164,15 @@ let sessionId: string = distributedDataObject.genSessionId();
 
 
 
-#### RevokeSaveSuccessResponse9+
+## RevokeSaveSuccessResponse9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [revokeSave](#revokesave9)接口回调信息。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataObject.DistributedObject
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -170,13 +181,15 @@ let sessionId: string = distributedDataObject.genSessionId();
 
 
 
-#### BindInfo11+
+## BindInfo11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 数据库的绑定信息。当前版本只支持关系型数据库的绑定。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataObject.DistributedObject
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -189,17 +202,19 @@ let sessionId: string = distributedDataObject.genSessionId();
 
 
 
-#### DataObserver20+
+## DataObserver20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type DataObserver = (sessionId: string, fields: Array&lt;string&gt;) => void
 
-定义获取分布式对象数据变更的监听回调函数。
+定义获取分布式数据对象数据变更的监听回调函数。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataObject.DistributedObject
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -209,30 +224,33 @@ type DataObserver = (sessionId: string, fields: Array&lt;string&gt;) => void
 
 
 
-#### StatusObserver20+
+## StatusObserver20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type StatusObserver = (sessionId: string, networkId: string, status: string) => void
 
-定义获取分布式对象状态变更的监听回调函数。
+定义获取分布式数据对象状态变更的监听回调函数。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataObject.DistributedObject
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sessionId | string | 是 | 标识变更对象的sessionId。长度不大于128字节，且只能包含字母、数字或下划线_。 |
 | networkId | string | 是 | 对端设备的网络标识。要求字符串非空且长度不超过255字节。 |
-| status | string | 是 | 标识分布式对象的状态，可能的取值有'online'（上线）、'offline'（下线）和'restore'（恢复）。 |
+| status | string | 是 | 标识分布式数据对象的状态，可能的取值有'online'（上线）、'offline'（下线）和'restore'（恢复）。 |
 
 
 
 
-#### ProgressObserver20+
+## ProgressObserver20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ProgressObserver = (sessionId: string, progress: number) => void
 
@@ -242,6 +260,7 @@ type ProgressObserver = (sessionId: string, progress: number) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sessionId | string | 是 | 标识变更对象的sessionId。长度不大于128字节，且只能包含字母、数字或下划线_。 |
@@ -250,21 +269,25 @@ type ProgressObserver = (sessionId: string, progress: number) => void
 
 
 
-#### DataObject
+## DataObject9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示一个分布式数据对象。在使用以下接口前，需调用[create()](#distributeddataobjectcreate9)获取DataObject对象。
 
+**系统能力：** SystemCapability.DistributedDataManager.DataObject.DistributedObject
 
 
-#### setSessionId9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+### setSessionId9+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setSessionId(sessionId: string, callback: AsyncCallback&lt;void&gt;): void
 
-设置sessionId，使用callback方式异步回调。当可信组网中有多个设备处于协同状态时，如果多个设备间的分布式对象设置为同一个sessionId，就能自动同步。
+设置sessionId，使用callback异步回调。当可信组网中有多个设备处于协同状态时，如果多个设备间的分布式数据对象设置为同一个sessionId，就能自动同步。
 
 **需要权限：** ohos.permission.DISTRIBUTED_DATASYNC
 
@@ -272,15 +295,17 @@ setSessionId(sessionId: string, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| sessionId | string | 是 | 分布式数据对象在可信组网中的标识ID，长度不大于128字节，且只能包含字母数字或下划线_。当传入""、null时表示退出分布式组网。 |
-| callback | AsyncCallback&lt;void&gt; | 是 | 加入session的异步回调。 |
+| sessionId | string | 是 | 分布式数据对象在可信组网中的标识ID，长度不大于128字节，且只能包含字母、数字或下划线_。当传入""、null时表示退出分布式组网。 |
+| callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当加入session成功，err为undefined，否则为错误对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[分布式数据对象错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributed-dataobject)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -304,13 +329,14 @@ g_object.setSessionId('', () => {
 
 
 
-#### setSessionId9+
+### setSessionId9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setSessionId(callback: AsyncCallback&lt;void&gt;): void
 
-退出所有已加入的session，使用callback方式异步回调。
+退出所有已加入的session，使用callback异步回调。
 
 **需要权限：**
 
@@ -322,14 +348,16 @@ setSessionId(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback&lt;void&gt; | 是 | 退出所有已加入session的异步回调。 |
+| callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当退出sessionid成功，err为undefined，否则为错误对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[分布式数据对象错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributed-dataobject)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -353,13 +381,14 @@ g_object.setSessionId(() => {
 
 
 
-#### setSessionId9+
+### setSessionId9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setSessionId(sessionId?: string): Promise&lt;void&gt;
 
-设置sessionId或退出分布式组网，使用Promise异步回调。当传入""、null或不传入参数时，表示退出分布式组网。当可信组网中有多个设备处于协同状态时，如果多个设备间的分布式对象设置为同一个sessionId，就能自动同步。
+设置sessionId或退出分布式组网，使用Promise异步回调。当传入""、null或不传入参数时，表示退出分布式组网。当可信组网中有多个设备处于协同状态时，如果多个设备间的分布式数据对象设置为同一个sessionId，就能自动同步。
 
 **需要权限：** ohos.permission.DISTRIBUTED_DATASYNC
 
@@ -367,12 +396,14 @@ setSessionId(sessionId?: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| sessionId | string | 否 | 分布式数据对象在可信组网中的标识ID，长度不大于128字节，且只能包含字母数字或下划线_。当传入""、null或不传入参数时表示退出分布式组网。 |
+| sessionId | string | 否 | 分布式数据对象在可信组网中的标识ID，长度不大于128字节，且只能包含字母、数字或下划线_。当传入""、null或不传入参数时表示退出分布式组网。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -382,6 +413,7 @@ setSessionId(sessionId?: string): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[分布式数据对象错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributed-dataobject)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -409,9 +441,10 @@ g_object.setSessionId().then(() => {
 
 
 
-#### on('change')9+
+### on('change')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'change', callback: (sessionId: string, fields: Array&lt;string&gt;) => void): void
 
@@ -420,6 +453,7 @@ on(type: 'change', callback: (sessionId: string, fields: Array&lt;string&gt;) =>
 **系统能力：** SystemCapability.DistributedDataManager.DataObject.DistributedObject
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -430,6 +464,7 @@ on(type: 'change', callback: (sessionId: string, fields: Array&lt;string&gt;) =>
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -451,9 +486,10 @@ g_object.on('change', (sessionId: string, fields: Array<string>) => {
 
 
 
-#### off('change')9+
+### off('change')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'change', callback?: (sessionId: string, fields: Array&lt;string&gt;) => void): void
 
@@ -462,6 +498,7 @@ off(type: 'change', callback?: (sessionId: string, fields: Array&lt;string&gt;) 
 **系统能力：** SystemCapability.DistributedDataManager.DataObject.DistributedObject
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -473,6 +510,7 @@ off(type: 'change', callback?: (sessionId: string, fields: Array&lt;string&gt;) 
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
@@ -481,7 +519,7 @@ off(type: 'change', callback?: (sessionId: string, fields: Array&lt;string&gt;) 
 **示例：**
 
 ```text
-// 删除数据变更回调changeCallback
+// 删除数据变更回调
 g_object.off('change', (sessionId: string, fields: Array<string>) => {
     console.info('change' + sessionId);
     if (g_object != null && fields != null && fields != undefined) {
@@ -496,9 +534,10 @@ g_object.off('change');
 
 
 
-#### on('status')9+
+### on('status')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'status', callback: (sessionId: string, networkId: string, status: 'online' | 'offline' ) => void): void
 
@@ -508,15 +547,17 @@ on(type: 'status', callback: (sessionId: string, networkId: string, status: 'onl
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件类型，固定为'status'，表示对象上下线。 |
-| callback | (sessionId: string, networkId: string, status: 'online' \| 'offline' ) => void | 是 | 监听上下线回调实例。 sessionId：标识变更对象的sessionId； networkId：标识对象设备； status：标识对象为'online'(上线)或'offline'(下线)的状态。 |
+| callback | (sessionId: string, networkId: string, status: 'online' \| 'offline' ) => void | 是 | 监听上下线回调实例。 sessionId：标识变更对象的sessionId； networkId：对端设备的网络标识； status：标识对象为'online'(上线)或'offline'(下线)的状态。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -533,9 +574,10 @@ g_object.on('status', (sessionId: string, networkId: string, status: 'online' | 
 
 
 
-#### off('status')9+
+### off('status')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'status', callback?:(sessionId: string, networkId: string, status: 'online' | 'offline') => void): void
 
@@ -545,15 +587,17 @@ off(type: 'status', callback?:(sessionId: string, networkId: string, status: 'on
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件类型，固定为'status'，表示对象上下线。 |
-| callback | (sessionId: string, networkId: string, status: 'online' \| 'offline' ) => void | 否 | 需要删除的上下线回调，若不设置则删除该对象所有的上下线回调。 sessionId：标识变更对象的sessionId； networkId：标识对象设备； status：标识对象为'online'(上线)或'offline'(下线)的状态。 |
+| callback | (sessionId: string, networkId: string, status: 'online' \| 'offline' ) => void | 否 | 需要删除的上下线回调，若不设置则删除该对象所有的上下线回调。 sessionId：标识变更对象的sessionId； networkId：对端设备的网络标识； status：标识对象为'online'(上线)或'offline'(下线)的状态。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -563,7 +607,7 @@ off(type: 'status', callback?:(sessionId: string, networkId: string, status: 'on
 **示例：**
 
 ```text
-// 删除上下线回调changeCallback
+// 删除上下线回调
 g_object.off('status', (sessionId: string, networkId: string, status: 'online' | 'offline') => {
     console.info('status changed ' + sessionId + ' ' + status + ' ' + networkId);
 });
@@ -573,13 +617,14 @@ g_object.off('status');
 
 
 
-#### save9+
+### save9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 save(deviceId: string, callback: AsyncCallback&lt;SaveSuccessResponse&gt;): void
 
-保存分布式数据对象。使用callback方式异步回调。
+保存分布式数据对象。使用callback异步回调。
 
 对象数据保存成功后，当应用存在时不会释放对象数据，当应用退出后，重新进入应用时，恢复保存在设备上的数据。
 
@@ -594,15 +639,17 @@ save(deviceId: string, callback: AsyncCallback&lt;SaveSuccessResponse&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 存储数据的设备号，标识需要保存对象的设备。"local"表示本地设备，否则表示其他设备的设备号。 |
-| callback | AsyncCallback&lt;SaveSuccessResponse&gt; | 是 | 回调函数。返回SaveSuccessResponse，包含sessionId、version、deviceId等信息。 |
+| callback | AsyncCallback&lt;SaveSuccessResponse&gt; | 是 | 回调函数。当保存成功，err为undefined，data为SaveSuccessResponse（包含sessionId、version、deviceId等信息）；否则为错误对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -628,13 +675,14 @@ g_object.save('local', (err: BusinessError, result:distributedDataObject.SaveSuc
 
 
 
-#### save9+
+### save9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 save(deviceId: string): Promise&lt;SaveSuccessResponse&gt;
 
-保存分布式数据对象。使用Promise方式作为异步回调。
+保存分布式数据对象。使用Promise异步回调。
 
 对象数据保存成功后，当应用存在时不会释放对象数据，当应用退出后，重新进入应用时，恢复保存在设备上的数据。
 
@@ -649,12 +697,14 @@ save(deviceId: string): Promise&lt;SaveSuccessResponse&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 存储数据的设备号，标识需要保存对象的设备。"local"表示本地设备，否则表示其他设备的设备号。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -664,6 +714,7 @@ save(deviceId: string): Promise&lt;SaveSuccessResponse&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -687,13 +738,14 @@ g_object.save('local').then((callbackInfo: distributedDataObject.SaveSuccessResp
 
 
 
-#### revokeSave9+
+### revokeSave9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 revokeSave(callback: AsyncCallback&lt;RevokeSaveSuccessResponse&gt;): void
 
-撤回保存的分布式数据对象。使用callback方式作为异步方法。
+撤回保存的分布式数据对象。使用callback异步回调。
 
 如果对象保存在本地设备，那么将删除所有受信任设备上所保存的数据。
 
@@ -703,14 +755,16 @@ revokeSave(callback: AsyncCallback&lt;RevokeSaveSuccessResponse&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback&lt;RevokeSaveSuccessResponse&gt; | 是 | 回调函数。返回RevokeSaveSuccessResponse，包含sessionId。 |
+| callback | AsyncCallback&lt;RevokeSaveSuccessResponse&gt; | 是 | 回调函数。当撤回保存成功，err为undefined，data为RevokeSaveSuccessResponse（包含sessionId信息）；否则为错误对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -726,6 +780,7 @@ g_object.setSessionId('123456');
 g_object.save('local', (err: BusinessError, result: distributedDataObject.SaveSuccessResponse) => {
     if (err) {
         console.error(`Failed to save. Code: ${err.code}, message: ${err.message}`);
+        return;
     }
     console.info('save callback');
     console.info('save sessionId: ' + result.sessionId);
@@ -745,13 +800,14 @@ g_object.revokeSave((err: BusinessError, result: distributedDataObject.RevokeSav
 
 
 
-#### revokeSave9+
+### revokeSave9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 revokeSave(): Promise&lt;RevokeSaveSuccessResponse&gt;
 
-撤回保存的分布式数据对象。使用Promise方式作为异步方法。
+撤回保存的分布式数据对象。使用Promise异步回调。
 
 如果对象保存在本地设备，那么将删除所有受信任设备上所保存的数据。
 
@@ -761,6 +817,7 @@ revokeSave(): Promise&lt;RevokeSaveSuccessResponse&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;RevokeSaveSuccessResponse&gt; | Promise对象。返回RevokeSaveSuccessResponse，包含sessionId。 |
@@ -769,6 +826,7 @@ revokeSave(): Promise&lt;RevokeSaveSuccessResponse&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -799,30 +857,33 @@ g_object.revokeSave().then((result: distributedDataObject.RevokeSaveSuccessRespo
 
 
 
-#### bindAssetStore11+
+### bindAssetStore11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 bindAssetStore(assetKey: string, bindInfo: BindInfo, callback: AsyncCallback&lt;void&gt;): void
 
-绑定分布式对象中的单个资产与其对应的数据库信息，当前版本只支持分布式对象中的资产与关系型数据库的绑定。使用callback方式异步回调。
+绑定分布式数据对象中的单个资产与其对应的数据库信息，当前版本只支持分布式数据对象中的资产与关系型数据库的绑定。使用callback异步回调。
 
-当分布式对象中包含的资产和关系型数据库中包含的资产指向同一个实体资产文件，即两个资产的Uri相同时，就会存在冲突，我们把这种资产称为融合资产。如果需要分布式数据管理进行融合资产的冲突解决，需要先进行资产的绑定。当应用退出session后，绑定关系随之消失。
+当分布式数据对象中包含的资产和关系型数据库中包含的资产指向同一个实体资产文件，即两个资产的Uri相同时，就会存在冲突，我们把这种资产称为融合资产。如果需要分布式数据管理进行融合资产的冲突解决，需要先进行资产的绑定。当应用退出session后，绑定关系随之消失。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataObject.DistributedObject
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| assetKey | string | 是 | 待绑定的融合资产在分布式对象中的键值。 |
+| assetKey | string | 是 | 待绑定的融合资产在分布式数据对象中的键值。 |
 | bindInfo | BindInfo | 是 | 待绑定的融合资产在数据库中的信息，包含库名、表名、主键、列名及在数据库中的资产名。 |
-| callback | AsyncCallback&lt;void&gt; | 是 | 绑定数据库的回调。 |
+| callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当绑定数据库成功，err为undefined，否则为错误对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -878,6 +939,7 @@ class EntryAbility extends UIAbility {
     g_object.bindAssetStore('attachment', bindInfo, (err: BusinessError) => {
       if (err) {
         console.error(`Failed to bind asset store. Code: ${err.code}, message: ${err.message}`);
+        return;
       }
       console.info('bindAssetStore success.');
     });
@@ -887,27 +949,30 @@ class EntryAbility extends UIAbility {
 
 
 
-#### bindAssetStore11+
+### bindAssetStore11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 bindAssetStore(assetKey: string, bindInfo: BindInfo): Promise&lt;void&gt;
 
-绑定分布式对象中的单个资产与其对应的数据库信息，当前版本只支持分布式对象中的资产与关系型数据库的绑定。使用Promise方式作为异步回调。
+绑定分布式数据对象中的单个资产与其对应的数据库信息，当前版本只支持分布式数据对象中的资产与关系型数据库的绑定。使用Promise异步回调。
 
-当分布式对象中包含的资产和关系型数据库中包含的资产指向同一个实体资产文件，即两个资产的Uri相同时，就会存在冲突，我们把这种资产称为融合资产。如果需要分布式数据管理进行融合资产的冲突解决，需要先进行资产的绑定。当应用退出session后，绑定关系随之消失。
+当分布式数据对象中包含的资产和关系型数据库中包含的资产指向同一个实体资产文件，即两个资产的Uri相同时，就会存在冲突，我们把这种资产称为融合资产。如果需要分布式数据管理进行融合资产的冲突解决，需要先进行资产的绑定。当应用退出session后，绑定关系随之消失。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataObject.DistributedObject
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| assetKey | string | 是 | 待绑定的融合资产在分布式对象中的键值。 |
+| assetKey | string | 是 | 待绑定的融合资产在分布式数据对象中的键值。 |
 | bindInfo | BindInfo | 是 | 待绑定的融合资产在数据库中的信息，包含库名、表名、主键、列名及在数据库中的资产名。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -917,6 +982,7 @@ bindAssetStore(assetKey: string, bindInfo: BindInfo): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -980,27 +1046,31 @@ class EntryAbility extends UIAbility {
 
 
 
-#### on('change')20+
+### on('change')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'change', callback: DataObserver): void
 
-监听分布式对象的数据变更。
+监听分布式数据对象的数据变更。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataObject.DistributedObject
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件类型，固定为'change'，表示数据变更。 |
-| callback | DataObserver | 是 | 表示分布式对象数据变更的回调实例。 |
+| callback | DataObserver | 是 | 表示分布式数据对象数据变更的回调实例。 |
 
 
 **示例：**
 
 ```text
+import { BusinessError } from '@kit.BasicServicesKit';
+
 const changeCallback1: distributedDataObject.DataObserver = (sessionId: string, fields: Array<string>) => {
   console.info('change callback1 ' + sessionId);
   if (fields != null && fields != undefined) {
@@ -1012,23 +1082,26 @@ const changeCallback1: distributedDataObject.DataObserver = (sessionId: string, 
 try {
   g_object.on('change', changeCallback1);
 } catch (error) {
-  console.error(`Failed to execute. Code: ${error.code}, message: ${error.message}`);
+  let err = error as BusinessError;
+  console.error(`Failed to execute. Code: ${err.code}, message: ${err.message}`);
 }
 ```
 
 
 
-#### off('change')20+
+### off('change')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'change', callback?: DataObserver): void
 
-当不再进行数据变更监听时，使用此接口删除分布式对象数据变更监听的回调实例。
+当不再进行数据变更监听时，使用此接口删除分布式数据对象数据变更监听的回调实例。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataObject.DistributedObject
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1039,6 +1112,8 @@ off(type: 'change', callback?: DataObserver): void
 **示例：**
 
 ```text
+import { BusinessError } from '@kit.BasicServicesKit';
+
 const changeCallback1: distributedDataObject.DataObserver = (sessionId: string, fields: Array<string>) => {
   console.info('change callback1 ' + sessionId);
   if (fields != null && fields != undefined) {
@@ -1067,66 +1142,76 @@ try {
   g_object.on('change', changeCallback2);
   g_object.off('change');
 } catch (error) {
-  console.error(`Failed to execute. Code: ${error.code}, message: ${error.message}`);
+  let err = error as BusinessError;
+  console.error(`Failed to execute. Code: ${err.code}, message: ${err.message}`);
 }
 ```
 
 
 
-#### on('status')20+
+### on('status')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'status', callback: StatusObserver): void
 
-监听分布式对象的状态变更。
+监听分布式数据对象的状态变更。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataObject.DistributedObject
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件类型，固定为'status'，表示分布式对象状态变更事件。 |
-| callback | StatusObserver | 是 | 表示分布式对象状态变更的回调实例。 |
+| type | string | 是 | 事件类型，固定为'status'，表示分布式数据对象状态变更事件。 |
+| callback | StatusObserver | 是 | 表示分布式数据对象状态变更的回调实例。 |
 
 
 **示例：**
 
 ```text
+import { BusinessError } from '@kit.BasicServicesKit';
+
 const statusCallback1: distributedDataObject.StatusObserver = (sessionId: string, networkId: string, status: string) => {
   console.info('status callback ' + sessionId);
 }
 try {
   g_object.on('status', statusCallback1);
 } catch (error) {
-  console.error(`Failed to execute. Code: ${error.code}, message: ${error.message}`);
+  let err = error as BusinessError;
+  console.error(`Failed to execute. Code: ${err.code}, message: ${err.message}`);
 }
 ```
 
 
 
-#### off('status')20+
+### off('status')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'status', callback?: StatusObserver): void
 
-当不再进行分布式对象状态变更监听时，使用此接口删除分布式对象状态变更的回调实例。
+当不再进行分布式数据对象状态变更监听时，使用此接口删除分布式数据对象状态变更的回调实例。
 
 **系统能力：** SystemCapability.DistributedDataManager.DataObject.DistributedObject
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件类型，固定为'status'，表示数据对象状态变更事件。 |
+| type | string | 是 | 事件类型，固定为'status'，表示分布式数据对象状态变更事件。 |
 | callback | StatusObserver | 否 | 需要删除状态变更的回调实例，若不设置则删除该对象所有的状态变更回调实例。 |
 
 
 **示例：**
 
 ```text
+import { BusinessError } from '@kit.BasicServicesKit';
+
 const statusCallback1: distributedDataObject.StatusObserver = (sessionId: string, networkId: string, status: string) => {
   console.info('status callback1' + sessionId);
 }
@@ -1144,15 +1229,17 @@ try {
   g_object.on('status', statusCallback2);
   g_object.off('status');
 } catch (error) {
-  console.error(`Failed to execute. Code: ${error.code}, message: ${error.message}`);
+  let err = error as BusinessError;
+  console.error(`Failed to execute. Code: ${err.code}, message: ${err.message}`);
 }
 ```
 
 
 
-#### on('progressChanged')20+
+### on('progressChanged')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'progressChanged', callback: ProgressObserver): void
 
@@ -1161,6 +1248,7 @@ on(type: 'progressChanged', callback: ProgressObserver): void
 **系统能力：** SystemCapability.DistributedDataManager.DataObject.DistributedObject
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1171,6 +1259,8 @@ on(type: 'progressChanged', callback: ProgressObserver): void
 **示例：**
 
 ```text
+import { BusinessError } from '@kit.BasicServicesKit';
+
 const progressChangedCallback: distributedDataObject.ProgressObserver = (sessionId: string, progress: number) => {
   console.info('progressChanged callback' + sessionId);
   console.info('progressChanged callback' + progress);
@@ -1178,15 +1268,17 @@ const progressChangedCallback: distributedDataObject.ProgressObserver = (session
 try {
   g_object.on('progressChanged', progressChangedCallback);
 } catch (error) {
-  console.error(`Failed to execute. Code: ${error.code}, message: ${error.message}`);
+  let err = error as BusinessError;
+  console.error(`Failed to execute. Code: ${err.code}, message: ${err.message}`);
 }
 ```
 
 
 
-#### off('progressChanged')20+
+### off('progressChanged')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'progressChanged', callback?: ProgressObserver): void
 
@@ -1195,6 +1287,7 @@ off(type: 'progressChanged', callback?: ProgressObserver): void
 **系统能力：** SystemCapability.DistributedDataManager.DataObject.DistributedObject
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1205,6 +1298,8 @@ off(type: 'progressChanged', callback?: ProgressObserver): void
 **示例：**
 
 ```text
+import { BusinessError } from '@kit.BasicServicesKit';
+
 const progressChangedCallback1: distributedDataObject.ProgressObserver = (sessionId: string, progress: number) => {
   console.info('progressChanged callback1' + sessionId);
   console.info('progressChanged callback1' + progress);
@@ -1224,22 +1319,24 @@ try {
   // 取消对资产传输进度的所有监听
   g_object.off('progressChanged');
 } catch (error) {
-  console.error(`Failed to execute. Code: ${error.code}, message: ${error.message}`);
+  let err = error as BusinessError;
+  console.error(`Failed to execute. Code: ${err.code}, message: ${err.message}`);
 }
 ```
 
 
 
-#### setAsset20+
+### setAsset20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAsset(assetKey: string, uri: string): Promise&lt;void&gt;
 
-设置分布式对象中的单个资产的属性信息，该接口必须在[setSessionId](#setsessionid9-2)接口调用前使用。使用Promise异步回调。
+设置分布式数据对象中的单个资产的属性信息，该接口必须在[setSessionId](#setsessionid9-2)接口调用前使用。使用Promise异步回调。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/4rynMWFUS5qUNX1XCbEH7Q/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071431Z&HW-CC-Expire=86400&HW-CC-Sign=8C42E161D35BAA7D44D31B1E9846FA60419EE4F7B19C9950A0AAF75264D83D14)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/VJvPoSixSzy61tgi0EmXhg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072850Z&HW-CC-Expire=86400&HW-CC-Sign=FA48255D366C46721FE316FB2110E8D51AAE9B635501F501EA396CD98944DE09)
 
 
 在设置资产时必须保证assetKey存在且对应文件为资产类型文件，否则无法保证对端能接收到此次设置的资产。
@@ -1249,6 +1346,7 @@ setAsset(assetKey: string, uri: string): Promise&lt;void&gt;
 
 
 有以下几种异常场景:
+
 
 | 触发条件 | 操作结果 |
 | --- | --- |
@@ -1262,13 +1360,15 @@ setAsset(assetKey: string, uri: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| assetKey | string | 是 | 分布式对象中资产类型数据对应的属性名。 使用约束： （1）提供的assetKey对应的文件必须已存在且类型为资产Asset，才可进行正确的设置资产。若assetKey对应文件不存在或文件存在但类型不是资产类型，可能会出现资产设置错误。 （2）在协同或接续场景下需要双端满足assetKey对应的文件存在且为资产类型，才可将设置的资产同步到对端设备。 |
+| assetKey | string | 是 | 分布式数据对象中资产类型数据对应的属性名。 使用约束： （1）提供的assetKey对应的文件必须已存在且类型为资产Asset，才可进行正确的设置资产。若assetKey对应文件不存在或文件存在但类型不是资产类型，可能会出现资产设置错误。 （2）在协同或接续场景下需要双端满足assetKey对应的文件存在且为资产类型，才可将设置的资产同步到对端设备。 |
 | uri | string | 是 | 待设置的新资产的uri，表示该资产的存放的分布式路径。必须为真实存在的资产对应的分布式路径。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1278,6 +1378,7 @@ setAsset(assetKey: string, uri: string): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式数据对象错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributed-dataobject)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1331,16 +1432,17 @@ class EntryAbility extends UIAbility {
 
 
 
-#### setAssets20+
+### setAssets20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAssets(assetsKey: string, uris: Array&lt;string&gt;): Promise&lt;void&gt;
 
-设置分布式对象中的多个资产的属性信息，该接口必须在[setSessionId](#setsessionid9-2)接口调用前使用。使用Promise异步回调。
+设置分布式数据对象中的多个资产的属性信息，该接口必须在[setSessionId](#setsessionid9-2)接口调用前使用。使用Promise异步回调。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/sYbqQpNISfOAeoj8p8YARQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071431Z&HW-CC-Expire=86400&HW-CC-Sign=19043EB1800F1C00F28C120D6252FFC5996406073FBE6FA9C0135665DC1DBF8D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/G1gI30UySxavkaG9ZomdYg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072850Z&HW-CC-Expire=86400&HW-CC-Sign=916347CC06AA80273758C3D9A90B278BD8E15944B572410013D1677994E72B9D)
 
 
 在设置资产时必须保证assetsKey存在且对应文件为资产类型文件，否则无法保证对端能接收到此次设置的资产。
@@ -1350,6 +1452,7 @@ setAssets(assetsKey: string, uris: Array&lt;string&gt;): Promise&lt;void&gt;
 
 
 有以下几种异常场景:
+
 
 | 触发条件 | 操作结果 |
 | --- | --- |
@@ -1365,13 +1468,15 @@ setAssets(assetsKey: string, uris: Array&lt;string&gt;): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| assetsKey | string | 是 | 分布式对象中资产数组类型数据对应的属性名。 使用约束： （1）提供的assetsKey对应的文件已存在且类型必须为资产Asset，才可进行正确的设置资产。若assetsKey对应文件不存在或文件存在但类型不是资产类型，可能会出现资产设置错误。 （2）在协同或接续场景下需要双端满足assetsKey对应的文件存在且为资产类型，才可将设置的资产数组同步到对端设备。 |
+| assetsKey | string | 是 | 分布式数据对象中资产数组类型数据对应的属性名。 使用约束： （1）提供的assetsKey对应的文件已存在且类型必须为资产Asset，才可进行正确的设置资产。若assetsKey对应文件不存在或文件存在但类型不是资产类型，可能会出现资产设置错误。 （2）在协同或接续场景下需要双端满足assetsKey对应的文件存在且为资产类型，才可将设置的资产数组同步到对端设备。 |
 | uris | Array&lt;string&gt; | 是 | 待设置的新资产数组的uri集合，表示资产数组内每个资产存放的分布式路径。数组中元素的数量为[1, 50]，元素uri必须为真实存在的资产对应的分布式路径。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1381,6 +1486,7 @@ setAssets(assetsKey: string, uris: Array&lt;string&gt;): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[分布式数据对象错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-distributed-dataobject)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1434,9 +1540,10 @@ class EntryAbility extends UIAbility {
 
 
 
-#### distributedDataObject.createDistributedObject(deprecated)
+## distributedDataObject.createDistributedObject(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createDistributedObject(source: object): DistributedObject
 
@@ -1450,12 +1557,14 @@ createDistributedObject(source: object): DistributedObject
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | source | object | 是 | 设置分布式数据对象的属性。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1483,9 +1592,10 @@ let g_object: distributedDataObject.DistributedObject = distributedDataObject.cr
 
 
 
-#### DistributedObject(deprecated)
+## DistributedObject(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示一个分布式数据对象。在使用以下接口前，需调用[createDistributedObject()](#distributeddataobjectcreatedistributedobjectdeprecated)获取DistributedObject对象。
 
@@ -1495,13 +1605,14 @@ let g_object: distributedDataObject.DistributedObject = distributedDataObject.cr
 
 
 
-#### setSessionId(deprecated)
+### setSessionId(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setSessionId(sessionId?: string): boolean
 
-设置sessionId。当可信组网中有多个设备处于协同状态时，如果多个设备间的分布式对象设置为同一个sessionId，就能自动同步。
+设置sessionId。当可信组网中有多个设备处于协同状态时，如果多个设备间的分布式数据对象设置为同一个sessionId，就能自动同步。
 
 > [!NOTE]
 > 从API version 8开始支持，从API version 9开始废弃，建议使用 setSessionId 替代。
@@ -1513,6 +1624,7 @@ setSessionId(sessionId?: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sessionId | string | 否 | 分布式数据对象在可信组网中的标识ID。如果要退出分布式组网，设置为""或不设置均可。 |
@@ -1520,9 +1632,10 @@ setSessionId(sessionId?: string): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| boolean | true：标识设置sessionId成功。 false：标识设置sessionId失败。 |
+| boolean | true：表示设置sessionId成功。 false：表示设置sessionId失败。 |
 
 
 **示例：**
@@ -1550,13 +1663,14 @@ g_object.setSessionId('');
 
 
 
-#### on('change')(deprecated)
+### on('change')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'change', callback: (sessionId: string, fields: Array&lt;string&gt;) => void): void
 
-监听分布式数据对象的变更。
+监听分布式数据对象的数据变更。
 
 > [!NOTE]
 > 从API version 8开始支持，从API version 9开始废弃，建议使用 on('change') 替代。
@@ -1565,6 +1679,7 @@ on(type: 'change', callback: (sessionId: string, fields: Array&lt;string&gt;) =>
 **系统能力：** SystemCapability.DistributedDataManager.DataObject.DistributedObject
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1601,9 +1716,10 @@ g_object.on('change', (sessionId: string, fields: Array<string>) => {
 
 
 
-#### off('change')(deprecated)
+### off('change')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'change', callback?: (sessionId: string, fields: Array&lt;string&gt;) => void): void
 
@@ -1616,6 +1732,7 @@ off(type: 'change', callback?: (sessionId: string, fields: Array&lt;string&gt;) 
 **系统能力：** SystemCapability.DistributedDataManager.DataObject.DistributedObject
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1640,7 +1757,7 @@ class SourceObject {
 
 let source: SourceObject = new SourceObject('jack', 18, false);
 let g_object: distributedDataObject.DistributedObject = distributedDataObject.createDistributedObject(source);
-// 删除数据变更回调changeCallback
+// 删除数据变更回调
 g_object.off('change', (sessionId: string, fields: Array<string>) => {
     console.info('change' + sessionId);
     if (fields != null && fields != undefined) {
@@ -1655,9 +1772,10 @@ g_object.off('change');
 
 
 
-#### on('status')(deprecated)
+### on('status')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'status', callback: (sessionId: string, networkId: string, status: 'online' | 'offline' ) => void): void
 
@@ -1671,10 +1789,11 @@ on(type: 'status', callback: (sessionId: string, networkId: string, status: 'onl
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件类型，固定为'status'，表示对象上下线。 |
-| callback | (sessionId: string, networkId: string, status: 'online' \| 'offline' ) => void | 是 | 监听上下线回调实例。 sessionId：标识变更对象的sessionId； networkId：标识对象设备； status：标识对象为'online'(上线)或'offline'(下线)的状态。 |
+| callback | (sessionId: string, networkId: string, status: 'online' \| 'offline' ) => void | 是 | 监听上下线回调实例。 sessionId：标识变更对象的sessionId； networkId：对端设备的网络标识； status：标识对象为'online'(上线)或'offline'(下线)的状态。 |
 
 
 **示例：**
@@ -1702,9 +1821,10 @@ g_object.on('status', (sessionId: string, networkId: string, status: 'online' | 
 
 
 
-#### off('status')(deprecated)
+### off('status')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'status', callback?: (sessionId: string, networkId: string, status: 'online' | 'offline' ) => void): void
 
@@ -1718,10 +1838,11 @@ off(type: 'status', callback?: (sessionId: string, networkId: string, status: 'o
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件类型，固定为'status'，表示对象上下线。 |
-| callback | (sessionId: string, networkId: string, status: 'online' \| 'offline' ) => void | 否 | 需要删除的上下线回调，若不设置则删除该对象所有的上下线回调。 sessionId：标识变更对象的sessionId； networkId：标识对象设备； status：标识对象为'online'(上线)或'offline'(下线)的状态。 |
+| callback | (sessionId: string, networkId: string, status: 'online' \| 'offline' ) => void | 否 | 需要删除的上下线回调，若不设置则删除该对象所有的上下线回调。 sessionId：标识变更对象的sessionId； networkId：对端设备的网络标识； status：标识对象为'online'(上线)或'offline'(下线)的状态。 |
 
 
 **示例：**
@@ -1741,7 +1862,7 @@ class SourceObject {
 
 let source: SourceObject = new SourceObject('jack', 18, false);
 let g_object: distributedDataObject.DistributedObject = distributedDataObject.createDistributedObject(source);
-// 删除上下线回调changeCallback
+// 删除上下线回调
 g_object.off('status', (sessionId: string, networkId: string, status: 'online' | 'offline') => {
     console.info('status changed ' + sessionId + ' ' + status + ' ' + networkId);
 });

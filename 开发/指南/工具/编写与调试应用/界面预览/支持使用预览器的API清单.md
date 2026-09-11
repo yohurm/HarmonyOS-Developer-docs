@@ -1,15 +1,16 @@
 # 支持使用预览器的API清单
 
-更新时间：2026-01-15 06:51:04
+更新时间：2026-09-08 02:53:31
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-previewer-api-list
 
-#### 组件
+## 组件
 
  
 
-#### ArkTS组件
+### ArkTS组件
  
+
 | 组件 | API |
 | --- | --- |
 | 基础组件 | AlphabetIndexer |
@@ -95,8 +96,9 @@
  
  
 
-#### JS组件
+### JS组件
  
+
 | 组件 | API |
 | --- | --- |
 | 基础组件 | button |
@@ -172,12 +174,13 @@
  
  
 
-#### 接口
+## 接口
 
  
 
-#### UI界面
+### UI界面
  
+
 | 模块 | API |
 | --- | --- |
 | @ohos.animator (动画) | Animator |
@@ -212,8 +215,9 @@
  
  
 
-#### 网络管理
+### 网络管理
  
+
 | 模块 | API |
 | --- | --- |
 | @ohos.net.http (数据请求) | http.createHttp 如果Http请求需要配置代理才能访问，API 12及以上的预览器支持使用系统的http_proxy/https_proxy/no_proxy环境变量。 |
@@ -221,8 +225,9 @@
  
  
 
-#### 数据管理
+### 数据管理
  
+
 | 模块 | API |
 | --- | --- |
 | @ohos.data.preferences (用户首选项) | data_preferences.getPreferences |
@@ -234,7 +239,7 @@
  
  
 
-#### 文件管理
+### 文件管理
 
 从DevEco Studio 6.0.0 Beta5版本开始，仅支持在预览/预览调试Stage模型的HAP/HSP时，使用文件管理的相关API，并且需要先打开**Enable file operation**开关。
  
@@ -242,6 +247,7 @@
 ![](assets/支持使用预览器的API清单/file-20260514132936785-0.png)
 
   
+
 | 模块 | API |
 | --- | --- |
 | @ohos.file.fs (文件管理) | fs.open |

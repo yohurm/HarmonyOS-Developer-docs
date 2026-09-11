@@ -47,7 +47,7 @@
 import { JSON } from '@kit.ArkTS';
 import { LazyDataSource } from './LazyDataSource';
 
-// 与会人
+<em>// </em><em>与会人</em>
 class ItemParam {
   name: string = '';
 
@@ -60,11 +60,11 @@ class ItemParam {
 @Component
 struct MeetingSwiper {
   private swiperController: SwiperController = new SwiperController();
-  @State private dataArr: LazyDataSource<ItemParam[]> = new LazyDataSource(); // 处理后的数据
-  list: ItemParam[] = []; // 初始数据
+  @State private dataArr: LazyDataSource<ItemParam[]> = new LazyDataSource(); <em>// </em><em>处理后的数据</em>
+  list: ItemParam[] = []; <em>// 初始数据</em>
 
   aboutToAppear(): void {
-    // 初始化数据
+   <em> // 初始化数据</em>
     for (let i = 1; i <= 6; i++) {
       let param = new ItemParam(`第${i}个`);
       this.list.push(param);
@@ -73,16 +73,16 @@ struct MeetingSwiper {
   }
 
   resetDataArr() {
-    // 将数据按四个拆分
+    <em>// 将数据按四个拆分</em>
     let listArr: ItemParam[][] = [];
     for (let i = 0; i < this.list.length; i += 4) {
       listArr.push(this.list.slice(i, i + 4));
     }
-    // 清空数据
+    <em>// 清空数据</em>
     this.dataArr.clear();
-    // 添加第一屏会议界面
+ <em>   // 添加第一屏会议界面</em>
     this.dataArr.pushData([]);
-    // 添加与会人
+   <em> // 添加与会人</em>
     this.dataArr.pushDataPositionArray(1, listArr);
   }
 
@@ -103,7 +103,7 @@ struct MeetingSwiper {
             .width('100%')
             .height('100%')
           } else {
-            Flex({ wrap: FlexWrap.Wrap, justifyContent: FlexAlign.SpaceBetween }) { // 子组件多行布局
+            Flex({ wrap: FlexWrap.Wrap, justifyContent: FlexAlign.SpaceBetween }) { <em>// </em><em>子组件多行布局</em>
               ForEach(item, (param: ItemParam,itemIndex:number) => {
                 Text(param.name)
                   .width('calc((100% - 40vp)/2)')
@@ -113,9 +113,9 @@ struct MeetingSwiper {
                   .backgroundColor('#f1f3f5')
                   .borderRadius(20)
                   .onClick(() => {
-                    // 点击按钮，删除对应与会人，更新数据
+                    <em>// 点击按钮，删除对应与会人，更新数据</em>
                     if(itemIndex === 0 && (((index-1)*4+ itemIndex) === this.list.length - 1)) {
-                      //当点击的是当前屏最后一个按钮时，先跳转前一页，然后删除并刷新数据
+                     <em> //当点击的是当前屏最后一个按钮时，先跳转前一页，然后删除并刷新数据</em>
                       this.swiperController.changeIndex(index-1);
                       setTimeout(()=>{
                         this.list.splice((index-1)*4+ itemIndex, 1);
@@ -131,7 +131,7 @@ struct MeetingSwiper {
           }
         }, (item: ItemParam[]) => JSON.stringify(item))
       }
-      .indicator(Indicator.digit()) // 设置数字导航点样式
+      .indicator(Indicator.digit()) <em>// </em><em>设置数字导航点样式</em>
       .loop(false)
       .width('100%')
       .height('100%')
@@ -158,14 +158,14 @@ class BasicDataSource<T> implements IDataSource {
     return undefined;
   }
 
-  // 该方法为框架侧调用，为LazyForEach组件向其数据源处添加listener监听
+  <em>// </em><em>该方法为框架侧调用，为LazyForEach组件向其数据源处添加listener监听</em>
   registerDataChangeListener(listener: DataChangeListener): void {
     if (this.listeners.indexOf(listener) < 0) {
       this.listeners.push(listener);
     }
   }
 
-  // 该方法为框架侧调用，为LazyForEach组件向其数据源处添加listener监听
+  <em>// </em><em>该方法为框架侧调用，为LazyForEach组件向其数据源处添加listener监听</em>
   unregisterDataChangeListener(listener: DataChangeListener): void {
     const pos = this.listeners.indexOf(listener);
     if (pos >= 0) {
@@ -173,35 +173,35 @@ class BasicDataSource<T> implements IDataSource {
     }
   }
 
-  // 通知LazyForEach组件需要重载所有子组件
+  <em>// </em><em>通知LazyForEach组件需要重载所有子组件</em>
   notifyDataReload(): void {
     this.listeners.forEach(listener => {
       listener.onDataReloaded();
     });
   }
 
-  // 通知LazyForEach组件需要在index对应索引处添加子组件
+  <em>// </em><em>通知LazyForEach组件需要在index对应索引处添加子组件</em>
   notifyDataAdd(index: number): void {
     this.listeners.forEach(listener => {
       listener.onDataAdd(index);
     });
   }
 
-  // 通知LazyForEach组件在index对应索引处数据有变化，需要重建该子组件
+ <em> // 通知LazyForEach组件在index对应索引处数据有变化，需要重建该子组件</em>
   notifyDataChange(index: number): void {
     this.listeners.forEach(listener => {
       listener.onDataChange(index);
     });
   }
 
-  // 通知LazyForEach组件需要在index对应索引处删除该子组件
+ <em> // 通知LazyForEach组件需要在index对应索引处删除该子组件</em>
   notifyDataDelete(index: number): void {
     this.listeners.forEach(listener => {
       listener.onDataDelete(index);
     });
   }
 
-  // 通知LazyForEach组件将from索引和to索引处的子组件进行交换
+<em>  // 通知LazyForEach组件将from索引和to索引处的子组件进行交换</em>
   notifyDataMove(from: number, to: number): void {
     this.listeners.forEach(listener => {
       listener.onDataMove(from, to);

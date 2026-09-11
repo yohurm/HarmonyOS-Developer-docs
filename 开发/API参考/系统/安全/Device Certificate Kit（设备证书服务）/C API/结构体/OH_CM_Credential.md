@@ -1,18 +1,19 @@
 # OH_CM_Credential
 
-更新时间：2026-07-17 09:35:24
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-certmanagertype-oh-cm-credential
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct {...} OH_CM_Credential
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义证书凭据详情的结构体类型。
  
@@ -24,19 +25,22 @@ typedef struct {...} OH_CM_Credential
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 成员变量
+### 成员变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
-| uint32_t isExist | 表示证书数据是否存在。 |
+| uint32_t isExist | 表示证书数据是否存在。取值原则：0表示不存在，1表示存在。 |
 | char type[OH_CM_MAX_LEN_TYPE_NAME] | 表示凭据的类型，最大长度为8字节，数据包含终止符'\0'字符。 |
 | char alias[OH_CM_MAX_LEN_CERT_ALIAS] | 表示凭据的别名，最大长度为128字节，数据包含终止符'\0'字符。 |
 | char keyUri[OH_CM_MAX_LEN_URI] | 表示凭据的唯一标识，最大长度为256字节，数据包含终止符'\0'字符。 |

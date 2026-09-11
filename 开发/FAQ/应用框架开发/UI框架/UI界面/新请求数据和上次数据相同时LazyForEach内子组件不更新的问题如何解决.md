@@ -74,7 +74,7 @@ struct RefreshComponentsWhenDataIdentical {
     .justifyContent(FlexAlign.Center);
   }
 
-  // 获取数据
+ <em> // 获取数据</em>
   getDetData() {
     if (this.bol) {
       this.bol = false;
@@ -114,7 +114,7 @@ export class CommonDataSource<T> implements IDataSource {
     this.dataArray = element;
   }
 
-  // 获取数据
+  <em>// 获取数据</em>
   public getData(index: number) {
     return this.dataArray[index];
   }
@@ -131,7 +131,7 @@ export class CommonDataSource<T> implements IDataSource {
     return this.dataArray.indexOf(data);
   }
 
-  // 添加数据
+<em>  // 添加数据</em>
   public addArrayData(data: T[]): void {
     this.dataArray = this.dataArray.concat(data);
     this.notifyDataReload();
@@ -152,12 +152,12 @@ export class CommonDataSource<T> implements IDataSource {
     this.notifyDataAdd(this.dataArray.length - 1);
   }
 
-  // 清除数据
+ <em> // 清除数据</em>
   public clearData(): void {
     this.dataArray = [];
   }
 
-  // 重新加载数据
+  <em>// 重新加载数据</em>
   public refresh(): void {
     this.notifyDataReload();
   }

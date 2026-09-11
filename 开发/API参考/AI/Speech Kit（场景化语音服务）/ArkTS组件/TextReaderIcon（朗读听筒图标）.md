@@ -1,6 +1,6 @@
 # TextReaderIcon（朗读听筒图标）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/speech-textreadericon
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -10,7 +10,8 @@
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -20,7 +21,8 @@ import { TextReaderIcon } from '@kit.SpeechKit';
  
   
 
-#### TextReaderIcon
+## TextReaderIcon
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -38,6 +40,7 @@ import { TextReaderIcon } from '@kit.SpeechKit';
  
 **参数：**
   
+
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | readState | ReadStateCode | 是 | @Link | 播报状态。 说明： readState使用@Link装饰器：父子双向同步。 |
@@ -45,7 +48,8 @@ import { TextReaderIcon } from '@kit.SpeechKit';
  
   
 
-#### build
+### build
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -82,7 +86,7 @@ struct Index {
   @State readState: ReadStateCode = ReadStateCode.WAITING;
 
   /**
-   * 用于显示当前页的按钮状态
+   * 初始化状态
    */
   @State isInit: boolean = false;
 
@@ -138,7 +142,9 @@ struct Index {
     TextReader.on('stateChange', (state: TextReader.ReadState) => {
       this.onStateChanged(state);
     });
-    TextReader.on('requestMore', () => this.onStateChanged);
+      TextReader.on('requestMore', () => {
+      TextReader.loadMore([], true);
+    });
   }
 
   onStateChanged = (state: TextReader.ReadState) => {
@@ -174,10 +180,10 @@ struct Index {
 静止状态
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/kGKApjezSV6OTpFSNVQT6A/zh-cn_image_0000002656009756.png?HW-CC-KV=V1&HW-CC-Date=20260730T071747Z&HW-CC-Expire=86400&HW-CC-Sign=7BC29366C180DAC06F81D8A3A22F66A2C2EB5E1A26D334918E371DDF6600F5FF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/Ll1FV_qQTf2LIjKxK53-Uw/zh-cn_image_0000002747213847.png?HW-CC-KV=V1&HW-CC-Date=20260911T073057Z&HW-CC-Expire=86400&HW-CC-Sign=22C268656ECD3312475D39D96988ADAFB95704FF432C3BBA985A3BCAEA1E244B)
 
  
 播放状态
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/F6iVHTgfSt2UyFpdF0KArA/zh-cn_image_0000002655849834.png?HW-CC-KV=V1&HW-CC-Date=20260730T071747Z&HW-CC-Expire=86400&HW-CC-Sign=2BCD037F6A0B28EF35D751B016862FE3BFF4AF9E31B56C05AD5CCED0E46AB6BF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/ud1eCDEKRd2xd-OAnnbcNw/zh-cn_image_0000002717773912.png?HW-CC-KV=V1&HW-CC-Date=20260911T073057Z&HW-CC-Expire=86400&HW-CC-Sign=E30DE3269823D46863B500E06FBA251FDF8D54352ADA51DD1C8827344C85ED88)

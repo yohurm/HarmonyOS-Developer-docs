@@ -1,9 +1,9 @@
 # Class (GeolocationPermissions)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-geolocationpermissions
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 GeolocationPermissions是Web组件的地理位置权限管理对象，提供对Web组件中已保存的地理位置权限状态的查询、授权、删除等管理能力。通过GeolocationPermissions，应用可以在网页发起地理位置请求之前预先授权特定源的访问权限，也可以主动查询或清除已保存的权限记录，而无需依赖网页请求时的弹窗授权流程。
 
@@ -14,9 +14,10 @@ GeolocationPermissions适用于需要主动管理Web组件地理位置权限的�
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { webview } from '@kit.ArkWeb';
@@ -24,9 +25,10 @@ import { webview } from '@kit.ArkWeb';
 
 
 
-#### allowGeolocation
+## allowGeolocation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static allowGeolocation(origin: string, incognito?: boolean): void
 
@@ -35,6 +37,7 @@ static allowGeolocation(origin: string, incognito?: boolean): void
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -45,6 +48,7 @@ static allowGeolocation(origin: string, incognito?: boolean): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -84,9 +88,10 @@ struct WebComponent {
 
 
 
-#### deleteGeolocation
+## deleteGeolocation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static deleteGeolocation(origin: string, incognito?: boolean): void
 
@@ -95,6 +100,7 @@ static deleteGeolocation(origin: string, incognito?: boolean): void
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -105,6 +111,7 @@ static deleteGeolocation(origin: string, incognito?: boolean): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -144,9 +151,10 @@ struct WebComponent {
 
 
 
-#### getAccessibleGeolocation
+## getAccessibleGeolocation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getAccessibleGeolocation(origin: string, callback: AsyncCallback&lt;boolean&gt;, incognito?: boolean): void
 
@@ -155,6 +163,7 @@ static getAccessibleGeolocation(origin: string, callback: AsyncCallback&lt;boole
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -166,6 +175,7 @@ static getAccessibleGeolocation(origin: string, callback: AsyncCallback&lt;boole
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -211,9 +221,10 @@ struct WebComponent {
 
 
 
-#### getAccessibleGeolocation
+## getAccessibleGeolocation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getAccessibleGeolocation(origin: string, incognito?: boolean): Promise&lt;boolean&gt;
 
@@ -223,6 +234,7 @@ static getAccessibleGeolocation(origin: string, incognito?: boolean): Promise&lt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | origin | string | 是 | 指定源的字符串。 origin格式必须遵循RFC 6454中定义的格式。传入不符合RFC 6454格式的字符串时抛出异常，错误码17100011。 |
@@ -230,6 +242,7 @@ static getAccessibleGeolocation(origin: string, incognito?: boolean): Promise&lt
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -239,6 +252,7 @@ static getAccessibleGeolocation(origin: string, incognito?: boolean): Promise&lt
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -283,9 +297,10 @@ struct WebComponent {
 
 
 
-#### getStoredGeolocation
+## getStoredGeolocation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getStoredGeolocation(callback: AsyncCallback<Array&lt;string&gt;>, incognito?: boolean): void
 
@@ -294,6 +309,7 @@ static getStoredGeolocation(callback: AsyncCallback<Array&lt;string&gt;>, incogn
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -304,6 +320,7 @@ static getStoredGeolocation(callback: AsyncCallback<Array&lt;string&gt;>, incogn
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -348,9 +365,10 @@ struct WebComponent {
 
 
 
-#### getStoredGeolocation
+## getStoredGeolocation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getStoredGeolocation(incognito?: boolean): Promise<Array&lt;string&gt;>
 
@@ -360,12 +378,14 @@ static getStoredGeolocation(incognito?: boolean): Promise<Array&lt;string&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | incognito11+ | boolean | 否 | true表示在隐私模式下获取已存储地理位置权限状态的所有源信息，false表示在正常模式下获取。 默认值：false。 传入null或undefined时会抛出异常错误码401。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -375,6 +395,7 @@ static getStoredGeolocation(incognito?: boolean): Promise<Array&lt;string&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -418,9 +439,10 @@ struct WebComponent {
 
 
 
-#### deleteAllGeolocation
+## deleteAllGeolocation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static deleteAllGeolocation(incognito?: boolean): void
 
@@ -429,6 +451,7 @@ static deleteAllGeolocation(incognito?: boolean): void
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |

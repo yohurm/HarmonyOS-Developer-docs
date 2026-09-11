@@ -1,16 +1,17 @@
 # JS语法参考
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-framework-syntax-js
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 JS文件用来定义HML页面的业务逻辑，支持ECMA规范的JavaScript语言。基于JavaScript语言的动态化能力，可以使应用更加富有表现力，具备更加灵活的设计。下面讲述JS文件的编译和运行的支持情况。
   
 
-#### 语法
+## 语法
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 支持ES6语法。轻量级智能穿戴支持的ES6语法有限，仅支持以下ES6 语法：
  1. let/const
@@ -46,23 +47,28 @@ import utils from '../../common/utils.js';
  
   
 
-#### 对象
+## 对象
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 - 页面对象
 
 | 属性 | 类型 | 描述 |
+
 | --- | --- | --- |
+
 | data | Object/Function | 页面的数据模型，类型是对象或者函数，如果类型是函数，返回值必须是对象。属性名不能以$或_开头，不要使用保留字for, if, show, tid。 |
+
 | $refs | Object | 持有注册过ref 属性的DOM元素或子组件实例的对象。示例见获取DOM元素。 |
 
  
   
 
-#### 获取DOM元素
+## 获取DOM元素
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 1. 通过$refs获取DOM元素
 
   

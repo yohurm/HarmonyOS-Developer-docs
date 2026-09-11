@@ -37,17 +37,17 @@ struct VisitDownloadDir {
     Column({ space: 5 }) {
       Button('DOWNLOAD模式访问')
         .onClick(() => {
-          // 获取bundleName
+         <em> // 获取bundleName</em>
           let bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION |
           bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_METADATA;
           let data = bundleManager.getBundleInfoForSelfSync(bundleFlags);
           console.info('getBundleInfoForSelfSync successfully: ', JSON.stringify(data));
           let bundleName = data.name;
-          // 获取Download目录下应用包名对应的path
+       <em>   // 获取Download目录下应用包名对应的path</em>
           let uri = 'file://docs/storage/Users/currentUser/Download/' + bundleName;
           let fileUriObject = new fileUri.FileUri(uri);
           let path = fileUriObject.path;
-          // 递归遍历出目录下的文件,进行业务操作(保证目录下有文件)
+       <em>   // 递归遍历出目录下的文件,进行业务操作(保证目录下有文件)</em>
           let listFileOption: ListFileOptions = {
             recursion: true,
           };

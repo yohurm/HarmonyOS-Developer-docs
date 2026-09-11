@@ -1,9 +1,9 @@
 # @ohos.account.appAccount (应用账号管理)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-appaccount
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供应用账号信息的添加、删除、修改和查询基础能力。应用账号管理采用应用级账号隔离机制，每个应用的账号信息独立管理。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { appAccount } from '@kit.BasicServicesKit';
@@ -22,9 +23,10 @@ import { appAccount } from '@kit.BasicServicesKit';
 
 
 
-#### appAccount.createAppAccountManager
+## appAccount.createAppAccountManager
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAppAccountManager(): AppAccountManager
 
@@ -33,6 +35,7 @@ createAppAccountManager(): AppAccountManager
 **系统能力：** SystemCapability.Account.AppAccount
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -47,17 +50,19 @@ let appAccountManager: appAccount.AppAccountManager = appAccount.createAppAccoun
 
 
 
-#### AppAccountManager
+## AppAccountManager
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 应用账号管理器，可用于管理应用自身的账号信息。
 
 
 
-#### createAccount9+
+### createAccount9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAccount(name: string, callback: AsyncCallback&lt;void&gt;): void
 
@@ -66,6 +71,7 @@ createAccount(name: string, callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -76,6 +82,7 @@ createAccount(name: string, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -107,9 +114,10 @@ try {
 
 
 
-#### createAccount9+
+### createAccount9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAccount(name: string, options: CreateAccountOptions, callback: AsyncCallback&lt;void&gt;): void
 
@@ -118,6 +126,7 @@ createAccount(name: string, options: CreateAccountOptions, callback: AsyncCallba
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -129,6 +138,7 @@ createAccount(name: string, options: CreateAccountOptions, callback: AsyncCallba
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -165,9 +175,10 @@ try {
 
 
 
-#### createAccount9+
+### createAccount9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAccount(name: string, options?: CreateAccountOptions): Promise&lt;void&gt;
 
@@ -177,6 +188,7 @@ createAccount(name: string, options?: CreateAccountOptions): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 应用账号的名称。最大长度为512个字符。 |
@@ -184,6 +196,7 @@ createAccount(name: string, options?: CreateAccountOptions): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -193,6 +206,7 @@ createAccount(name: string, options?: CreateAccountOptions): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -227,9 +241,10 @@ try {
 
 
 
-#### createAccountImplicitly9+
+### createAccountImplicitly9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAccountImplicitly(owner: string, callback: AuthCallback): void
 
@@ -238,6 +253,7 @@ createAccountImplicitly(owner: string, callback: AuthCallback): void
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -248,6 +264,7 @@ createAccountImplicitly(owner: string, callback: AuthCallback): void
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -307,9 +324,10 @@ struct Index {
 
 
 
-#### createAccountImplicitly9+
+### createAccountImplicitly9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAccountImplicitly(owner: string, options: CreateAccountImplicitlyOptions, callback: AuthCallback): void
 
@@ -318,6 +336,7 @@ createAccountImplicitly(owner: string, options: CreateAccountImplicitlyOptions, 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -329,6 +348,7 @@ createAccountImplicitly(owner: string, options: CreateAccountImplicitlyOptions, 
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -392,9 +412,10 @@ struct Index {
 
 
 
-#### removeAccount9+
+### removeAccount9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeAccount(name: string, callback: AsyncCallback&lt;void&gt;): void
 
@@ -403,6 +424,7 @@ removeAccount(name: string, callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -413,6 +435,7 @@ removeAccount(name: string, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -443,9 +466,10 @@ try {
 
 
 
-#### removeAccount9+
+### removeAccount9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeAccount(name: string): Promise&lt;void&gt;
 
@@ -455,12 +479,14 @@ removeAccount(name: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 应用账号的名称。最大长度为512个字符。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -470,6 +496,7 @@ removeAccount(name: string): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -498,9 +525,10 @@ try {
 
 
 
-#### setAppAccess9+
+### setAppAccess9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAppAccess(name: string, bundleName: string, isAccessible: boolean, callback: AsyncCallback&lt;void&gt;): void
 
@@ -509,6 +537,7 @@ setAppAccess(name: string, bundleName: string, isAccessible: boolean, callback: 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -521,6 +550,7 @@ setAppAccess(name: string, bundleName: string, isAccessible: boolean, callback: 
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -552,9 +582,10 @@ try {
 
 
 
-#### setAppAccess9+
+### setAppAccess9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAppAccess(name: string, bundleName: string, isAccessible: boolean): Promise&lt;void&gt;
 
@@ -563,6 +594,7 @@ setAppAccess(name: string, bundleName: string, isAccessible: boolean): Promise&l
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -573,6 +605,7 @@ setAppAccess(name: string, bundleName: string, isAccessible: boolean): Promise&l
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -581,6 +614,7 @@ setAppAccess(name: string, bundleName: string, isAccessible: boolean): Promise&l
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -610,9 +644,10 @@ try {
 
 
 
-#### checkAppAccess9+
+### checkAppAccess9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checkAppAccess(name: string, bundleName: string, callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -621,6 +656,7 @@ checkAppAccess(name: string, bundleName: string, callback: AsyncCallback&lt;bool
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -632,6 +668,7 @@ checkAppAccess(name: string, bundleName: string, callback: AsyncCallback&lt;bool
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -663,9 +700,10 @@ try {
 
 
 
-#### checkAppAccess9+
+### checkAppAccess9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checkAppAccess(name: string, bundleName: string): Promise&lt;boolean&gt;
 
@@ -675,6 +713,7 @@ checkAppAccess(name: string, bundleName: string): Promise&lt;boolean&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 应用账号的名称。最大长度为512个字符。 |
@@ -682,6 +721,7 @@ checkAppAccess(name: string, bundleName: string): Promise&lt;boolean&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -691,6 +731,7 @@ checkAppAccess(name: string, bundleName: string): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -719,9 +760,10 @@ try {
 
 
 
-#### setDataSyncEnabled9+
+### setDataSyncEnabled9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setDataSyncEnabled(name: string, isEnabled: boolean, callback: AsyncCallback&lt;void&gt;): void
 
@@ -733,6 +775,7 @@ setDataSyncEnabled(name: string, isEnabled: boolean, callback: AsyncCallback&lt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 应用账号的名称。最大长度为512个字符。 |
@@ -743,6 +786,7 @@ setDataSyncEnabled(name: string, isEnabled: boolean, callback: AsyncCallback&lt;
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -770,9 +814,10 @@ try {
 
 
 
-#### setDataSyncEnabled9+
+### setDataSyncEnabled9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setDataSyncEnabled(name: string, isEnabled: boolean): Promise&lt;void&gt;
 
@@ -784,6 +829,7 @@ setDataSyncEnabled(name: string, isEnabled: boolean): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 应用账号的名称。最大长度为512个字符。 |
@@ -791,6 +837,7 @@ setDataSyncEnabled(name: string, isEnabled: boolean): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -800,6 +847,7 @@ setDataSyncEnabled(name: string, isEnabled: boolean): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -829,9 +877,10 @@ try {
 
 
 
-#### checkDataSyncEnabled9+
+### checkDataSyncEnabled9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checkDataSyncEnabled(name: string, callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -843,6 +892,7 @@ checkDataSyncEnabled(name: string, callback: AsyncCallback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 应用账号的名称。最大长度为512个字符。 |
@@ -852,6 +902,7 @@ checkDataSyncEnabled(name: string, callback: AsyncCallback&lt;boolean&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -883,9 +934,10 @@ try {
 
 
 
-#### checkDataSyncEnabled9+
+### checkDataSyncEnabled9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checkDataSyncEnabled(name: string): Promise&lt;boolean&gt;
 
@@ -897,12 +949,14 @@ checkDataSyncEnabled(name: string): Promise&lt;boolean&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 应用账号的名称。最大长度为512个字符。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -912,6 +966,7 @@ checkDataSyncEnabled(name: string): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -941,9 +996,10 @@ try {
 
 
 
-#### setCredential9+
+### setCredential9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCredential(name: string, credentialType: string, credential: string,callback: AsyncCallback&lt;void&gt;): void
 
@@ -952,6 +1008,7 @@ setCredential(name: string, credentialType: string, credential: string,callback:
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -964,6 +1021,7 @@ setCredential(name: string, credentialType: string, credential: string,callback:
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -994,9 +1052,10 @@ try {
 
 
 
-#### setCredential9+
+### setCredential9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCredential(name: string, credentialType: string, credential: string): Promise&lt;void&gt;
 
@@ -1005,6 +1064,7 @@ setCredential(name: string, credentialType: string, credential: string): Promise
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1015,6 +1075,7 @@ setCredential(name: string, credentialType: string, credential: string): Promise
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1023,6 +1084,7 @@ setCredential(name: string, credentialType: string, credential: string): Promise
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1051,9 +1113,10 @@ try {
 
 
 
-#### getCredential9+
+### getCredential9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCredential(name: string, credentialType: string, callback: AsyncCallback&lt;string&gt;): void
 
@@ -1062,6 +1125,7 @@ getCredential(name: string, credentialType: string, callback: AsyncCallback&lt;s
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1073,6 +1137,7 @@ getCredential(name: string, credentialType: string, callback: AsyncCallback&lt;s
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1104,9 +1169,10 @@ try {
 
 
 
-#### getCredential9+
+### getCredential9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCredential(name: string, credentialType: string): Promise&lt;string&gt;
 
@@ -1116,6 +1182,7 @@ getCredential(name: string, credentialType: string): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 应用账号的名称。最大长度为512个字符。 |
@@ -1123,6 +1190,7 @@ getCredential(name: string, credentialType: string): Promise&lt;string&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1132,6 +1200,7 @@ getCredential(name: string, credentialType: string): Promise&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1161,9 +1230,10 @@ try {
 
 
 
-#### setCustomData9+
+### setCustomData9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCustomData(name: string, key: string, value: string, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1172,6 +1242,7 @@ setCustomData(name: string, key: string, value: string, callback: AsyncCallback&
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1184,6 +1255,7 @@ setCustomData(name: string, key: string, value: string, callback: AsyncCallback&
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1215,9 +1287,10 @@ try {
 
 
 
-#### setCustomData9+
+### setCustomData9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCustomData(name: string, key: string, value: string): Promise&lt;void&gt;
 
@@ -1226,6 +1299,7 @@ setCustomData(name: string, key: string, value: string): Promise&lt;void&gt;
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1236,6 +1310,7 @@ setCustomData(name: string, key: string, value: string): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1244,6 +1319,7 @@ setCustomData(name: string, key: string, value: string): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1273,9 +1349,10 @@ try {
 
 
 
-#### getCustomData9+
+### getCustomData9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCustomData(name: string, key: string, callback: AsyncCallback&lt;string&gt;): void
 
@@ -1284,6 +1361,7 @@ getCustomData(name: string, key: string, callback: AsyncCallback&lt;string&gt;):
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1295,6 +1373,7 @@ getCustomData(name: string, key: string, callback: AsyncCallback&lt;string&gt;):
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1326,9 +1405,10 @@ try {
 
 
 
-#### getCustomData9+
+### getCustomData9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCustomData(name: string, key: string): Promise&lt;string&gt;
 
@@ -1338,6 +1418,7 @@ getCustomData(name: string, key: string): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 应用账号的名称。最大长度为512个字符。 |
@@ -1345,6 +1426,7 @@ getCustomData(name: string, key: string): Promise&lt;string&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1354,6 +1436,7 @@ getCustomData(name: string, key: string): Promise&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1383,9 +1466,10 @@ try {
 
 
 
-#### getCustomDataSync9+
+### getCustomDataSync9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCustomDataSync(name: string, key: string): string
 
@@ -1395,6 +1479,7 @@ getCustomDataSync(name: string, key: string): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 应用账号的名称。最大长度为512个字符。 |
@@ -1402,6 +1487,7 @@ getCustomDataSync(name: string, key: string): string
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1411,6 +1497,7 @@ getCustomDataSync(name: string, key: string): string
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1437,9 +1524,10 @@ try {
 
 
 
-#### getAllAccounts9+
+### getAllAccounts9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllAccounts(callback: AsyncCallback<Array&lt;AppAccountInfo&gt;>): void
 
@@ -1449,6 +1537,7 @@ getAllAccounts(callback: AsyncCallback<Array&lt;AppAccountInfo&gt;>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<Array&lt;AppAccountInfo&gt;> | 是 | 回调函数。当查询成功时，err为null，data为获取到的应用账号信息列表；否则为错误对象。 |
@@ -1457,6 +1546,7 @@ getAllAccounts(callback: AsyncCallback<Array&lt;AppAccountInfo&gt;>): void
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1485,9 +1575,10 @@ try {
 
 
 
-#### getAllAccounts9+
+### getAllAccounts9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllAccounts(): Promise<Array&lt;AppAccountInfo&gt;>
 
@@ -1497,6 +1588,7 @@ getAllAccounts(): Promise<Array&lt;AppAccountInfo&gt;>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;AppAccountInfo&gt;> | Promise对象，返回全部应用已授权账号信息对象。 |
@@ -1505,6 +1597,7 @@ getAllAccounts(): Promise<Array&lt;AppAccountInfo&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1530,9 +1623,10 @@ try {
 
 
 
-#### getAccountsByOwner9+
+### getAccountsByOwner9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAccountsByOwner(owner: string, callback: AsyncCallback<Array&lt;AppAccountInfo&gt;>): void
 
@@ -1541,6 +1635,7 @@ getAccountsByOwner(owner: string, callback: AsyncCallback<Array&lt;AppAccountInf
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1551,6 +1646,7 @@ getAccountsByOwner(owner: string, callback: AsyncCallback<Array&lt;AppAccountInf
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1581,9 +1677,10 @@ try {
 
 
 
-#### getAccountsByOwner9+
+### getAccountsByOwner9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAccountsByOwner(owner: string): Promise<Array&lt;AppAccountInfo&gt;>
 
@@ -1593,12 +1690,14 @@ getAccountsByOwner(owner: string): Promise<Array&lt;AppAccountInfo&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | owner | string | 是 | 应用账号所有者的包名。最大长度为1024个字符。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1608,6 +1707,7 @@ getAccountsByOwner(owner: string): Promise<Array&lt;AppAccountInfo&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1636,9 +1736,10 @@ try {
 
 
 
-#### on('accountChange')9+
+### on('accountChange')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'accountChange', owners: Array&lt;string&gt;, callback: Callback<Array&lt;AppAccountInfo&gt;>): void
 
@@ -1647,6 +1748,7 @@ on(type: 'accountChange', owners: Array&lt;string&gt;, callback: Callback<Array&
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1658,6 +1760,7 @@ on(type: 'accountChange', owners: Array&lt;string&gt;, callback: Callback<Array&
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1685,9 +1788,10 @@ try {
 
 
 
-#### off('accountChange')9+
+### off('accountChange')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'accountChange', callback?: Callback<Array&lt;AppAccountInfo&gt;>): void
 
@@ -1696,6 +1800,7 @@ off(type: 'accountChange', callback?: Callback<Array&lt;AppAccountInfo&gt;>): vo
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1706,6 +1811,7 @@ off(type: 'accountChange', callback?: Callback<Array&lt;AppAccountInfo&gt;>): vo
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1739,9 +1845,10 @@ try {
 
 
 
-#### auth9+
+### auth9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 auth(name: string, owner: string, authType: string, callback: AuthCallback): void
 
@@ -1750,6 +1857,7 @@ auth(name: string, owner: string, authType: string, callback: AuthCallback): voi
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1762,6 +1870,7 @@ auth(name: string, owner: string, authType: string, callback: AuthCallback): voi
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1822,9 +1931,10 @@ struct Index {
 
 
 
-#### auth9+
+### auth9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 auth(name: string, owner: string, authType: string, options: Record<string, Object>, callback: AuthCallback): void
 
@@ -1833,6 +1943,7 @@ auth(name: string, owner: string, authType: string, options: Record<string, Obje
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1846,6 +1957,7 @@ auth(name: string, owner: string, authType: string, options: Record<string, Obje
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1909,9 +2021,10 @@ struct Index {
 
 
 
-#### getAuthToken9+
+### getAuthToken9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAuthToken(name: string, owner: string, authType: string, callback: AsyncCallback&lt;string&gt;): void
 
@@ -1920,6 +2033,7 @@ getAuthToken(name: string, owner: string, authType: string, callback: AsyncCallb
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1932,6 +2046,7 @@ getAuthToken(name: string, owner: string, authType: string, callback: AsyncCallb
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1964,9 +2079,10 @@ try {
 
 
 
-#### getAuthToken9+
+### getAuthToken9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAuthToken(name: string, owner: string, authType: string): Promise&lt;string&gt;
 
@@ -1975,6 +2091,7 @@ getAuthToken(name: string, owner: string, authType: string): Promise&lt;string&g
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1985,6 +2102,7 @@ getAuthToken(name: string, owner: string, authType: string): Promise&lt;string&g
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回授权令牌。 |
@@ -1993,6 +2111,7 @@ getAuthToken(name: string, owner: string, authType: string): Promise&lt;string&g
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2022,9 +2141,10 @@ try {
 
 
 
-#### setAuthToken9+
+### setAuthToken9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAuthToken(name: string, authType: string, token: string, callback: AsyncCallback&lt;void&gt;): void
 
@@ -2033,6 +2153,7 @@ setAuthToken(name: string, authType: string, token: string, callback: AsyncCallb
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2045,6 +2166,7 @@ setAuthToken(name: string, authType: string, token: string, callback: AsyncCallb
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2076,9 +2198,10 @@ try {
 
 
 
-#### setAuthToken9+
+### setAuthToken9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAuthToken(name: string, authType: string, token: string): Promise&lt;void&gt;
 
@@ -2087,6 +2210,7 @@ setAuthToken(name: string, authType: string, token: string): Promise&lt;void&gt;
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2097,6 +2221,7 @@ setAuthToken(name: string, authType: string, token: string): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -2105,6 +2230,7 @@ setAuthToken(name: string, authType: string, token: string): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2134,9 +2260,10 @@ try {
 
 
 
-#### deleteAuthToken9+
+### deleteAuthToken9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteAuthToken(name: string, owner: string, authType: string, token: string, callback: AsyncCallback&lt;void&gt;): void
 
@@ -2145,6 +2272,7 @@ deleteAuthToken(name: string, owner: string, authType: string, token: string, ca
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2158,6 +2286,7 @@ deleteAuthToken(name: string, owner: string, authType: string, token: string, ca
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2190,9 +2319,10 @@ try {
 
 
 
-#### deleteAuthToken9+
+### deleteAuthToken9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteAuthToken(name: string, owner: string, authType: string, token: string): Promise&lt;void&gt;
 
@@ -2201,6 +2331,7 @@ deleteAuthToken(name: string, owner: string, authType: string, token: string): P
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2212,6 +2343,7 @@ deleteAuthToken(name: string, owner: string, authType: string, token: string): P
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -2220,6 +2352,7 @@ deleteAuthToken(name: string, owner: string, authType: string, token: string): P
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2249,9 +2382,10 @@ try {
 
 
 
-#### setAuthTokenVisibility9+
+### setAuthTokenVisibility9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAuthTokenVisibility(name: string, authType: string, bundleName: string, isVisible: boolean, callback: AsyncCallback&lt;void&gt;): void
 
@@ -2260,6 +2394,7 @@ setAuthTokenVisibility(name: string, authType: string, bundleName: string, isVis
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2273,6 +2408,7 @@ setAuthTokenVisibility(name: string, authType: string, bundleName: string, isVis
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2306,9 +2442,10 @@ try {
 
 
 
-#### setAuthTokenVisibility9+
+### setAuthTokenVisibility9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAuthTokenVisibility(name: string, authType: string, bundleName: string, isVisible: boolean): Promise&lt;void&gt;
 
@@ -2317,6 +2454,7 @@ setAuthTokenVisibility(name: string, authType: string, bundleName: string, isVis
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2328,6 +2466,7 @@ setAuthTokenVisibility(name: string, authType: string, bundleName: string, isVis
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -2336,6 +2475,7 @@ setAuthTokenVisibility(name: string, authType: string, bundleName: string, isVis
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2366,9 +2506,10 @@ try {
 
 
 
-#### checkAuthTokenVisibility9+
+### checkAuthTokenVisibility9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checkAuthTokenVisibility(name: string, authType: string, bundleName: string, callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -2377,6 +2518,7 @@ checkAuthTokenVisibility(name: string, authType: string, bundleName: string, cal
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2389,6 +2531,7 @@ checkAuthTokenVisibility(name: string, authType: string, bundleName: string, cal
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2421,9 +2564,10 @@ try {
 
 
 
-#### checkAuthTokenVisibility9+
+### checkAuthTokenVisibility9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checkAuthTokenVisibility(name: string, authType: string, bundleName: string): Promise&lt;boolean&gt;
 
@@ -2432,6 +2576,7 @@ checkAuthTokenVisibility(name: string, authType: string, bundleName: string): Pr
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2442,6 +2587,7 @@ checkAuthTokenVisibility(name: string, authType: string, bundleName: string): Pr
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示授权令牌对指定应用的可见，返回false表示不可见。 |
@@ -2450,6 +2596,7 @@ checkAuthTokenVisibility(name: string, authType: string, bundleName: string): Pr
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2480,9 +2627,10 @@ try {
 
 
 
-#### getAllAuthTokens9+
+### getAllAuthTokens9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllAuthTokens(name: string, owner: string, callback: AsyncCallback<Array&lt;AuthTokenInfo&gt;>): void
 
@@ -2491,6 +2639,7 @@ getAllAuthTokens(name: string, owner: string, callback: AsyncCallback<Array&lt;A
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2502,6 +2651,7 @@ getAllAuthTokens(name: string, owner: string, callback: AsyncCallback<Array&lt;A
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2533,9 +2683,10 @@ try {
 
 
 
-#### getAllAuthTokens9+
+### getAllAuthTokens9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllAuthTokens(name: string, owner: string): Promise<Array&lt;AuthTokenInfo&gt;>
 
@@ -2545,6 +2696,7 @@ getAllAuthTokens(name: string, owner: string): Promise<Array&lt;AuthTokenInfo&gt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 应用账号的名称。最大长度为512个字符。 |
@@ -2552,6 +2704,7 @@ getAllAuthTokens(name: string, owner: string): Promise<Array&lt;AuthTokenInfo&gt
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2561,6 +2714,7 @@ getAllAuthTokens(name: string, owner: string): Promise<Array&lt;AuthTokenInfo&gt
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2590,9 +2744,10 @@ try {
 
 
 
-#### getAuthList9+
+### getAuthList9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAuthList(name: string, authType: string, callback: AsyncCallback<Array&lt;string&gt;>): void
 
@@ -2601,6 +2756,7 @@ getAuthList(name: string, authType: string, callback: AsyncCallback<Array&lt;str
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2612,6 +2768,7 @@ getAuthList(name: string, authType: string, callback: AsyncCallback<Array&lt;str
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2643,9 +2800,10 @@ try {
 
 
 
-#### getAuthList9+
+### getAuthList9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAuthList(name: string, authType: string): Promise<Array&lt;string&gt;>
 
@@ -2655,6 +2813,7 @@ getAuthList(name: string, authType: string): Promise<Array&lt;string&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 应用账号的名称。最大长度为512个字符。 |
@@ -2662,6 +2821,7 @@ getAuthList(name: string, authType: string): Promise<Array&lt;string&gt;>
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2671,6 +2831,7 @@ getAuthList(name: string, authType: string): Promise<Array&lt;string&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2700,9 +2861,10 @@ try {
 
 
 
-#### getAuthCallback9+
+### getAuthCallback9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAuthCallback(sessionId: string, callback: AsyncCallback&lt;AuthCallback&gt;): void
 
@@ -2711,6 +2873,7 @@ getAuthCallback(sessionId: string, callback: AsyncCallback&lt;AuthCallback&gt;):
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2721,6 +2884,7 @@ getAuthCallback(sessionId: string, callback: AsyncCallback&lt;AuthCallback&gt;):
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2767,9 +2931,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getAuthCallback9+
+### getAuthCallback9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAuthCallback(sessionId: string): Promise&lt;AuthCallback&gt;
 
@@ -2779,12 +2944,14 @@ getAuthCallback(sessionId: string): Promise&lt;AuthCallback&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sessionId | string | 是 | 鉴权会话的标识。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2794,6 +2961,7 @@ getAuthCallback(sessionId: string): Promise&lt;AuthCallback&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2838,9 +3006,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### queryAuthenticatorInfo9+
+### queryAuthenticatorInfo9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 queryAuthenticatorInfo(owner: string, callback: AsyncCallback&lt;AuthenticatorInfo&gt;): void
 
@@ -2849,6 +3018,7 @@ queryAuthenticatorInfo(owner: string, callback: AsyncCallback&lt;AuthenticatorIn
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2859,6 +3029,7 @@ queryAuthenticatorInfo(owner: string, callback: AsyncCallback&lt;AuthenticatorIn
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2890,9 +3061,10 @@ try {
 
 
 
-#### queryAuthenticatorInfo9+
+### queryAuthenticatorInfo9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 queryAuthenticatorInfo(owner: string): Promise&lt;AuthenticatorInfo&gt;
 
@@ -2902,12 +3074,14 @@ queryAuthenticatorInfo(owner: string): Promise&lt;AuthenticatorInfo&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | owner | string | 是 | 应用账号所有者的包名。最大长度为1024个字符。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2917,6 +3091,7 @@ queryAuthenticatorInfo(owner: string): Promise&lt;AuthenticatorInfo&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2946,9 +3121,10 @@ try {
 
 
 
-#### checkAccountLabels9+
+### checkAccountLabels9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checkAccountLabels(name: string, owner: string, labels: Array&lt;string&gt;, callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -2957,6 +3133,7 @@ checkAccountLabels(name: string, owner: string, labels: Array&lt;string&gt;, cal
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2969,6 +3146,7 @@ checkAccountLabels(name: string, owner: string, labels: Array&lt;string&gt;, cal
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3004,9 +3182,10 @@ try {
 
 
 
-#### checkAccountLabels9+
+### checkAccountLabels9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checkAccountLabels(name: string, owner: string, labels: Array&lt;string&gt;): Promise&lt;boolean&gt;
 
@@ -3015,6 +3194,7 @@ checkAccountLabels(name: string, owner: string, labels: Array&lt;string&gt;): Pr
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3025,6 +3205,7 @@ checkAccountLabels(name: string, owner: string, labels: Array&lt;string&gt;): Pr
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示指定账号满足特定的标签集合，返回false表示不满足。 |
@@ -3033,6 +3214,7 @@ checkAccountLabels(name: string, owner: string, labels: Array&lt;string&gt;): Pr
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3066,9 +3248,10 @@ try {
 
 
 
-#### deleteCredential9+
+### deleteCredential9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteCredential(name: string, credentialType: string, callback: AsyncCallback&lt;void&gt;): void
 
@@ -3077,6 +3260,7 @@ deleteCredential(name: string, credentialType: string, callback: AsyncCallback&l
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3088,6 +3272,7 @@ deleteCredential(name: string, credentialType: string, callback: AsyncCallback&l
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3119,9 +3304,10 @@ try {
 
 
 
-#### deleteCredential9+
+### deleteCredential9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteCredential(name: string, credentialType: string): Promise&lt;void&gt;
 
@@ -3131,6 +3317,7 @@ deleteCredential(name: string, credentialType: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 应用账号的名称。最大长度为512个字符。 |
@@ -3138,6 +3325,7 @@ deleteCredential(name: string, credentialType: string): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3147,6 +3335,7 @@ deleteCredential(name: string, credentialType: string): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3176,9 +3365,10 @@ try {
 
 
 
-#### selectAccountsByOptions9+
+### selectAccountsByOptions9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectAccountsByOptions(options: SelectAccountsOptions, callback: AsyncCallback<Array&lt;AppAccountInfo&gt;>): void
 
@@ -3187,6 +3377,7 @@ selectAccountsByOptions(options: SelectAccountsOptions, callback: AsyncCallback<
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3197,6 +3388,7 @@ selectAccountsByOptions(options: SelectAccountsOptions, callback: AsyncCallback<
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3233,9 +3425,10 @@ try {
 
 
 
-#### selectAccountsByOptions9+
+### selectAccountsByOptions9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectAccountsByOptions(options: SelectAccountsOptions): Promise<Array&lt;AppAccountInfo&gt;>
 
@@ -3245,12 +3438,14 @@ selectAccountsByOptions(options: SelectAccountsOptions): Promise<Array&lt;AppAcc
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | SelectAccountsOptions | 是 | 选择账号的选项。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3260,6 +3455,7 @@ selectAccountsByOptions(options: SelectAccountsOptions): Promise<Array&lt;AppAcc
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3292,9 +3488,10 @@ try {
 
 
 
-#### verifyCredential9+
+### verifyCredential9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 verifyCredential(name: string, owner: string, callback: AuthCallback): void
 
@@ -3303,6 +3500,7 @@ verifyCredential(name: string, owner: string, callback: AuthCallback): void
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3314,6 +3512,7 @@ verifyCredential(name: string, owner: string, callback: AuthCallback): void
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3350,9 +3549,10 @@ try {
 
 
 
-#### verifyCredential9+
+### verifyCredential9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 verifyCredential(name: string, owner: string, options: VerifyCredentialOptions, callback: AuthCallback): void
 
@@ -3361,6 +3561,7 @@ verifyCredential(name: string, owner: string, options: VerifyCredentialOptions, 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3373,6 +3574,7 @@ verifyCredential(name: string, owner: string, options: VerifyCredentialOptions, 
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3413,9 +3615,10 @@ try {
 
 
 
-#### setAuthenticatorProperties9+
+### setAuthenticatorProperties9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAuthenticatorProperties(owner: string, callback: AuthCallback): void
 
@@ -3424,6 +3627,7 @@ setAuthenticatorProperties(owner: string, callback: AuthCallback): void
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3434,6 +3638,7 @@ setAuthenticatorProperties(owner: string, callback: AuthCallback): void
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3469,9 +3674,10 @@ try {
 
 
 
-#### setAuthenticatorProperties9+
+### setAuthenticatorProperties9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAuthenticatorProperties(owner: string, options: SetPropertiesOptions, callback: AuthCallback): void
 
@@ -3480,6 +3686,7 @@ setAuthenticatorProperties(owner: string, options: SetPropertiesOptions, callbac
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3491,6 +3698,7 @@ setAuthenticatorProperties(owner: string, options: SetPropertiesOptions, callbac
 **错误码：**
 
 以下错误码的详细介绍请参见[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3529,9 +3737,10 @@ try {
 
 
 
-#### addAccount(deprecated)
+### addAccount(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addAccount(name: string, callback: AsyncCallback&lt;void&gt;): void
 
@@ -3544,6 +3753,7 @@ addAccount(name: string, callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3563,9 +3773,10 @@ appAccountManager.addAccount('WangWu', (err: BusinessError) => {
 
 
 
-#### addAccount(deprecated)
+### addAccount(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addAccount(name: string, extraInfo: string, callback: AsyncCallback&lt;void&gt;): void
 
@@ -3578,6 +3789,7 @@ addAccount(name: string, extraInfo: string, callback: AsyncCallback&lt;void&gt;)
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3598,9 +3810,10 @@ appAccountManager.addAccount('LiSi', 'token101', (err: BusinessError) => {
 
 
 
-#### addAccount(deprecated)
+### addAccount(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addAccount(name: string, extraInfo?: string): Promise&lt;void&gt;
 
@@ -3614,6 +3827,7 @@ addAccount(name: string, extraInfo?: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 应用账号的名称。最大长度为512个字符。 |
@@ -3621,6 +3835,7 @@ addAccount(name: string, extraInfo?: string): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3641,9 +3856,10 @@ appAccountManager.addAccount('LiSi', 'token101').then(()=> {
 
 
 
-#### addAccountImplicitly(deprecated)
+### addAccountImplicitly(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addAccountImplicitly(owner: string, authType: string, options: { [key: string]: any }, callback: AuthenticatorCallback): void
 
@@ -3656,6 +3872,7 @@ addAccountImplicitly(owner: string, authType: string, options: { [key: string]: 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3708,9 +3925,10 @@ struct Index {
 
 
 
-#### deleteAccount(deprecated)
+### deleteAccount(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteAccount(name: string, callback: AsyncCallback&lt;void&gt;): void
 
@@ -3723,6 +3941,7 @@ deleteAccount(name: string, callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3742,9 +3961,10 @@ appAccountManager.deleteAccount('ZhaoLiu', (err: BusinessError) => {
 
 
 
-#### deleteAccount(deprecated)
+### deleteAccount(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteAccount(name: string): Promise&lt;void&gt;
 
@@ -3758,12 +3978,14 @@ deleteAccount(name: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 应用账号的名称。最大长度为512个字符。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3784,9 +4006,10 @@ appAccountManager.deleteAccount('ZhaoLiu').then(() => {
 
 
 
-#### disableAppAccess(deprecated)
+### disableAppAccess(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 disableAppAccess(name: string, bundleName: string, callback: AsyncCallback&lt;void&gt;): void
 
@@ -3799,6 +4022,7 @@ disableAppAccess(name: string, bundleName: string, callback: AsyncCallback&lt;vo
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3819,9 +4043,10 @@ appAccountManager.disableAppAccess('ZhangSan', 'com.example.accountjsdemo', (err
 
 
 
-#### disableAppAccess(deprecated)
+### disableAppAccess(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 disableAppAccess(name: string, bundleName: string): Promise&lt;void&gt;
 
@@ -3835,6 +4060,7 @@ disableAppAccess(name: string, bundleName: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 要禁用访问的第三方应用账号的名称。最大长度为512个字符。 |
@@ -3842,6 +4068,7 @@ disableAppAccess(name: string, bundleName: string): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3862,9 +4089,10 @@ appAccountManager.disableAppAccess('ZhangSan', 'com.example.accountjsdemo').then
 
 
 
-#### enableAppAccess(deprecated)
+### enableAppAccess(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableAppAccess(name: string, bundleName: string, callback: AsyncCallback&lt;void&gt;): void
 
@@ -3877,6 +4105,7 @@ enableAppAccess(name: string, bundleName: string, callback: AsyncCallback&lt;voi
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3901,9 +4130,10 @@ appAccountManager.enableAppAccess('ZhangSan', 'com.example.accountjsdemo', (err:
 
 
 
-#### enableAppAccess(deprecated)
+### enableAppAccess(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableAppAccess(name: string, bundleName: string): Promise&lt;void&gt;
 
@@ -3917,6 +4147,7 @@ enableAppAccess(name: string, bundleName: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 应用账号的名称。最大长度为512个字符。 |
@@ -3924,6 +4155,7 @@ enableAppAccess(name: string, bundleName: string): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3944,9 +4176,10 @@ appAccountManager.enableAppAccess('ZhangSan', 'com.example.accountjsdemo').then(
 
 
 
-#### checkAppAccountSyncEnable(deprecated)
+### checkAppAccountSyncEnable(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checkAppAccountSyncEnable(name: string, callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -3961,6 +4194,7 @@ checkAppAccountSyncEnable(name: string, callback: AsyncCallback&lt;boolean&gt;):
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3984,9 +4218,10 @@ appAccountManager.checkAppAccountSyncEnable('ZhangSan', (err: BusinessError, res
 
 
 
-#### checkAppAccountSyncEnable(deprecated)
+### checkAppAccountSyncEnable(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checkAppAccountSyncEnable(name: string): Promise&lt;boolean&gt;
 
@@ -4002,12 +4237,14 @@ checkAppAccountSyncEnable(name: string): Promise&lt;boolean&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 应用账号的名称。最大长度为512个字符。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4028,9 +4265,10 @@ appAccountManager.checkAppAccountSyncEnable('ZhangSan').then((data: boolean) => 
 
 
 
-#### setAccountCredential(deprecated)
+### setAccountCredential(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAccountCredential(name: string, credentialType: string, credential: string,callback: AsyncCallback&lt;void&gt;): void
 
@@ -4043,6 +4281,7 @@ setAccountCredential(name: string, credentialType: string, credential: string,ca
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4068,9 +4307,10 @@ appAccountManager.setAccountCredential('ZhangSan', 'credentialType001', 'credent
 
 
 
-#### setAccountCredential(deprecated)
+### setAccountCredential(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAccountCredential(name: string, credentialType: string, credential: string): Promise&lt;void&gt;
 
@@ -4084,6 +4324,7 @@ setAccountCredential(name: string, credentialType: string, credential: string): 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 应用账号的名称。最大长度为512个字符。 |
@@ -4092,6 +4333,7 @@ setAccountCredential(name: string, credentialType: string, credential: string): 
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4112,9 +4354,10 @@ appAccountManager.setAccountCredential('ZhangSan', 'credentialType001', 'credent
 
 
 
-#### setAccountExtraInfo(deprecated)
+### setAccountExtraInfo(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAccountExtraInfo(name: string, extraInfo: string, callback: AsyncCallback&lt;void&gt;): void
 
@@ -4127,6 +4370,7 @@ setAccountExtraInfo(name: string, extraInfo: string, callback: AsyncCallback&lt;
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4151,9 +4395,10 @@ appAccountManager.setAccountExtraInfo('ZhangSan', 'Tk002', (err: BusinessError) 
 
 
 
-#### setAccountExtraInfo(deprecated)
+### setAccountExtraInfo(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAccountExtraInfo(name: string, extraInfo: string): Promise&lt;void&gt;
 
@@ -4167,6 +4412,7 @@ setAccountExtraInfo(name: string, extraInfo: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 应用账号的名称。最大长度为512个字符。 |
@@ -4174,6 +4420,7 @@ setAccountExtraInfo(name: string, extraInfo: string): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4194,9 +4441,10 @@ appAccountManager.setAccountExtraInfo('ZhangSan', 'Tk002').then(() => {
 
 
 
-#### setAppAccountSyncEnable(deprecated)
+### setAppAccountSyncEnable(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAppAccountSyncEnable(name: string, isEnable: boolean, callback: AsyncCallback&lt;void&gt;): void
 
@@ -4211,6 +4459,7 @@ setAppAccountSyncEnable(name: string, isEnable: boolean, callback: AsyncCallback
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4235,9 +4484,10 @@ appAccountManager.setAppAccountSyncEnable('ZhangSan', true, (err: BusinessError)
 
 
 
-#### setAppAccountSyncEnable(deprecated)
+### setAppAccountSyncEnable(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAppAccountSyncEnable(name: string, isEnable: boolean): Promise&lt;void&gt;
 
@@ -4253,6 +4503,7 @@ setAppAccountSyncEnable(name: string, isEnable: boolean): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 应用账号的名称。最大长度为512个字符。 |
@@ -4260,6 +4511,7 @@ setAppAccountSyncEnable(name: string, isEnable: boolean): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4280,9 +4532,10 @@ appAccountManager.setAppAccountSyncEnable('ZhangSan', true).then(() => {
 
 
 
-#### setAssociatedData(deprecated)
+### setAssociatedData(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAssociatedData(name: string, key: string, value: string, callback: AsyncCallback&lt;void&gt;): void
 
@@ -4295,6 +4548,7 @@ setAssociatedData(name: string, key: string, value: string, callback: AsyncCallb
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4320,9 +4574,10 @@ appAccountManager.setAssociatedData('ZhangSan', 'k001', 'v001', (err: BusinessEr
 
 
 
-#### setAssociatedData(deprecated)
+### setAssociatedData(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAssociatedData(name: string, key: string, value: string): Promise&lt;void&gt;
 
@@ -4336,6 +4591,7 @@ setAssociatedData(name: string, key: string, value: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 应用账号的名称。最大长度为512个字符。 |
@@ -4344,6 +4600,7 @@ setAssociatedData(name: string, key: string, value: string): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4364,9 +4621,10 @@ appAccountManager.setAssociatedData('ZhangSan', 'k001', 'v001').then(() => {
 
 
 
-#### getAllAccessibleAccounts(deprecated)
+### getAllAccessibleAccounts(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllAccessibleAccounts(callback: AsyncCallback<Array&lt;AppAccountInfo&gt;>): void
 
@@ -4381,6 +4639,7 @@ getAllAccessibleAccounts(callback: AsyncCallback<Array&lt;AppAccountInfo&gt;>): 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4403,9 +4662,10 @@ appAccountManager.getAllAccessibleAccounts((err: BusinessError, data: appAccount
 
 
 
-#### getAllAccessibleAccounts(deprecated)
+### getAllAccessibleAccounts(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllAccessibleAccounts(): Promise<Array&lt;AppAccountInfo&gt;>
 
@@ -4420,6 +4680,7 @@ getAllAccessibleAccounts(): Promise<Array&lt;AppAccountInfo&gt;>
 **系统能力：** SystemCapability.Account.AppAccount
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4440,9 +4701,10 @@ appAccountManager.getAllAccessibleAccounts().then((data: appAccount.AppAccountIn
 
 
 
-#### getAllAccounts(deprecated)
+### getAllAccounts(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllAccounts(owner: string, callback: AsyncCallback<Array&lt;AppAccountInfo&gt;>): void
 
@@ -4457,6 +4719,7 @@ getAllAccounts(owner: string, callback: AsyncCallback<Array&lt;AppAccountInfo&gt
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4481,9 +4744,10 @@ appAccountManager.getAllAccounts(selfBundle, (err: BusinessError, data: appAccou
 
 
 
-#### getAllAccounts(deprecated)
+### getAllAccounts(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllAccounts(owner: string): Promise<Array&lt;AppAccountInfo&gt;>
 
@@ -4499,12 +4763,14 @@ getAllAccounts(owner: string): Promise<Array&lt;AppAccountInfo&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | owner | string | 是 | 应用账号所有者的包名。最大长度为1024个字符。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4526,9 +4792,10 @@ appAccountManager.getAllAccounts(selfBundle).then((data: appAccount.AppAccountIn
 
 
 
-#### getAccountCredential(deprecated)
+### getAccountCredential(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAccountCredential(name: string, credentialType: string, callback: AsyncCallback&lt;string&gt;): void
 
@@ -4541,6 +4808,7 @@ getAccountCredential(name: string, credentialType: string, callback: AsyncCallba
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4565,9 +4833,10 @@ appAccountManager.getAccountCredential('ZhangSan', 'credentialType001', (err: Bu
 
 
 
-#### getAccountCredential(deprecated)
+### getAccountCredential(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAccountCredential(name: string, credentialType: string): Promise&lt;string&gt;
 
@@ -4581,6 +4850,7 @@ getAccountCredential(name: string, credentialType: string): Promise&lt;string&gt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 应用账号的名称。最大长度为512个字符。 |
@@ -4588,6 +4858,7 @@ getAccountCredential(name: string, credentialType: string): Promise&lt;string&gt
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4608,9 +4879,10 @@ appAccountManager.getAccountCredential('ZhangSan', 'credentialType001').then((da
 
 
 
-#### getAccountExtraInfo(deprecated)
+### getAccountExtraInfo(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAccountExtraInfo(name: string, callback: AsyncCallback&lt;string&gt;): void
 
@@ -4623,6 +4895,7 @@ getAccountExtraInfo(name: string, callback: AsyncCallback&lt;string&gt;): void
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4646,9 +4919,10 @@ appAccountManager.getAccountExtraInfo('ZhangSan', (err: BusinessError, result: s
 
 
 
-#### getAccountExtraInfo(deprecated)
+### getAccountExtraInfo(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAccountExtraInfo(name: string): Promise&lt;string&gt;
 
@@ -4662,12 +4936,14 @@ getAccountExtraInfo(name: string): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 应用账号的名称。最大长度为512个字符。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4688,9 +4964,10 @@ appAccountManager.getAccountExtraInfo('ZhangSan').then((data: string) => {
 
 
 
-#### getAssociatedData(deprecated)
+### getAssociatedData(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAssociatedData(name: string, key: string, callback: AsyncCallback&lt;string&gt;): void
 
@@ -4703,6 +4980,7 @@ getAssociatedData(name: string, key: string, callback: AsyncCallback&lt;string&g
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4727,9 +5005,10 @@ appAccountManager.getAssociatedData('ZhangSan', 'k001', (err: BusinessError, res
 
 
 
-#### getAssociatedData(deprecated)
+### getAssociatedData(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAssociatedData(name: string, key: string): Promise&lt;string&gt;
 
@@ -4743,6 +5022,7 @@ getAssociatedData(name: string, key: string): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 应用账号的名称。最大长度为512个字符。 |
@@ -4750,6 +5030,7 @@ getAssociatedData(name: string, key: string): Promise&lt;string&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4770,9 +5051,10 @@ appAccountManager.getAssociatedData('ZhangSan', 'k001').then((data: string) => {
 
 
 
-#### on('change')(deprecated)
+### on('change')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'change', owners: Array&lt;string&gt;, callback: Callback<Array&lt;AppAccountInfo&gt;>): void
 
@@ -4785,6 +5067,7 @@ on(type: 'change', owners: Array&lt;string&gt;, callback: Callback<Array&lt;AppA
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4812,9 +5095,10 @@ try {
 
 
 
-#### off('change')(deprecated)
+### off('change')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'change', callback?: Callback<Array&lt;AppAccountInfo&gt;>): void
 
@@ -4827,6 +5111,7 @@ off(type: 'change', callback?: Callback<Array&lt;AppAccountInfo&gt;>): void
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4856,9 +5141,10 @@ try {
 
 
 
-#### authenticate(deprecated)
+### authenticate(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 authenticate(name: string, owner: string, authType: string, options: { [key: string]: any }, callback: AuthenticatorCallback): void
 
@@ -4871,6 +5157,7 @@ authenticate(name: string, owner: string, authType: string, options: { [key: str
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4924,9 +5211,10 @@ struct Index {
 
 
 
-#### getOAuthToken(deprecated)
+### getOAuthToken(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOAuthToken(name: string, owner: string, authType: string, callback: AsyncCallback&lt;string&gt;): void
 
@@ -4939,6 +5227,7 @@ getOAuthToken(name: string, owner: string, authType: string, callback: AsyncCall
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4965,9 +5254,10 @@ appAccountManager.getOAuthToken('LiSi', 'com.example.accountjsdemo', 'getSocialD
 
 
 
-#### getOAuthToken(deprecated)
+### getOAuthToken(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOAuthToken(name: string, owner: string, authType: string): Promise&lt;string&gt;
 
@@ -4981,6 +5271,7 @@ getOAuthToken(name: string, owner: string, authType: string): Promise&lt;string&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 应用账号的名称。最大长度为512个字符。 |
@@ -4989,6 +5280,7 @@ getOAuthToken(name: string, owner: string, authType: string): Promise&lt;string&
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5009,9 +5301,10 @@ appAccountManager.getOAuthToken('LiSi', 'com.example.accountjsdemo', 'getSocialD
 
 
 
-#### setOAuthToken(deprecated)
+### setOAuthToken(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setOAuthToken(name: string, authType: string, token: string, callback: AsyncCallback&lt;void&gt;): void
 
@@ -5024,6 +5317,7 @@ setOAuthToken(name: string, authType: string, token: string, callback: AsyncCall
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5049,9 +5343,10 @@ appAccountManager.setOAuthToken('LiSi', 'getSocialData', 'xxxx', (err: BusinessE
 
 
 
-#### setOAuthToken(deprecated)
+### setOAuthToken(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setOAuthToken(name: string, authType: string, token: string): Promise&lt;void&gt;
 
@@ -5065,6 +5360,7 @@ setOAuthToken(name: string, authType: string, token: string): Promise&lt;void&gt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 应用账号的名称。最大长度为512个字符。 |
@@ -5073,6 +5369,7 @@ setOAuthToken(name: string, authType: string, token: string): Promise&lt;void&gt
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5093,9 +5390,10 @@ appAccountManager.setOAuthToken('LiSi', 'getSocialData', 'xxxx').then(() => {
 
 
 
-#### deleteOAuthToken(deprecated)
+### deleteOAuthToken(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteOAuthToken(name: string, owner: string, authType: string, token: string, callback: AsyncCallback&lt;void&gt;): void
 
@@ -5108,6 +5406,7 @@ deleteOAuthToken(name: string, owner: string, authType: string, token: string, c
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5135,9 +5434,10 @@ appAccountManager.deleteOAuthToken('LiSi', 'com.example.accountjsdemo', 'getSoci
 
 
 
-#### deleteOAuthToken(deprecated)
+### deleteOAuthToken(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteOAuthToken(name: string, owner: string, authType: string, token: string): Promise&lt;void&gt;
 
@@ -5151,6 +5451,7 @@ deleteOAuthToken(name: string, owner: string, authType: string, token: string): 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 应用账号的名称。最大长度为512个字符。 |
@@ -5160,6 +5461,7 @@ deleteOAuthToken(name: string, owner: string, authType: string, token: string): 
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5180,9 +5482,10 @@ appAccountManager.deleteOAuthToken('LiSi', 'com.example.accountjsdemo', 'getSoci
 
 
 
-#### setOAuthTokenVisibility(deprecated)
+### setOAuthTokenVisibility(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setOAuthTokenVisibility(name: string, authType: string, bundleName: string, isVisible: boolean, callback: AsyncCallback&lt;void&gt;): void
 
@@ -5195,6 +5498,7 @@ setOAuthTokenVisibility(name: string, authType: string, bundleName: string, isVi
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5222,9 +5526,10 @@ appAccountManager.setOAuthTokenVisibility('LiSi', 'getSocialData', 'com.example.
 
 
 
-#### setOAuthTokenVisibility(deprecated)
+### setOAuthTokenVisibility(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setOAuthTokenVisibility(name: string, authType: string, bundleName: string, isVisible: boolean): Promise&lt;void&gt;
 
@@ -5238,6 +5543,7 @@ setOAuthTokenVisibility(name: string, authType: string, bundleName: string, isVi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 应用账号的名称。最大长度为512个字符。 |
@@ -5247,6 +5553,7 @@ setOAuthTokenVisibility(name: string, authType: string, bundleName: string, isVi
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5267,9 +5574,10 @@ appAccountManager.setOAuthTokenVisibility('LiSi', 'getSocialData', 'com.example.
 
 
 
-#### checkOAuthTokenVisibility(deprecated)
+### checkOAuthTokenVisibility(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checkOAuthTokenVisibility(name: string, authType: string, bundleName: string, callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -5282,6 +5590,7 @@ checkOAuthTokenVisibility(name: string, authType: string, bundleName: string, ca
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5308,9 +5617,10 @@ appAccountManager.checkOAuthTokenVisibility('LiSi', 'getSocialData', 'com.exampl
 
 
 
-#### checkOAuthTokenVisibility(deprecated)
+### checkOAuthTokenVisibility(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checkOAuthTokenVisibility(name: string, authType: string, bundleName: string): Promise&lt;boolean&gt;
 
@@ -5324,6 +5634,7 @@ checkOAuthTokenVisibility(name: string, authType: string, bundleName: string): P
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 应用账号的名称。最大长度为512个字符。 |
@@ -5332,6 +5643,7 @@ checkOAuthTokenVisibility(name: string, authType: string, bundleName: string): P
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5353,9 +5665,10 @@ appAccountManager.checkOAuthTokenVisibility('LiSi', 'getSocialData', 'com.exampl
 
 
 
-#### getAllOAuthTokens(deprecated)
+### getAllOAuthTokens(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllOAuthTokens(name: string, owner: string, callback: AsyncCallback<Array&lt;OAuthTokenInfo&gt;>): void
 
@@ -5368,6 +5681,7 @@ getAllOAuthTokens(name: string, owner: string, callback: AsyncCallback<Array&lt;
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5393,9 +5707,10 @@ appAccountManager.getAllOAuthTokens('LiSi', 'com.example.accountjsdemo',
 
 
 
-#### getAllOAuthTokens(deprecated)
+### getAllOAuthTokens(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllOAuthTokens(name: string, owner: string): Promise<Array&lt;OAuthTokenInfo&gt;>
 
@@ -5409,6 +5724,7 @@ getAllOAuthTokens(name: string, owner: string): Promise<Array&lt;OAuthTokenInfo&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 应用账号的名称。最大长度为512个字符。 |
@@ -5416,6 +5732,7 @@ getAllOAuthTokens(name: string, owner: string): Promise<Array&lt;OAuthTokenInfo&
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5437,9 +5754,10 @@ appAccountManager.getAllOAuthTokens('LiSi', 'com.example.accountjsdemo').then((
 
 
 
-#### getOAuthList(deprecated)
+### getOAuthList(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOAuthList(name: string, authType: string, callback: AsyncCallback<Array&lt;string&gt;>): void
 
@@ -5452,6 +5770,7 @@ getOAuthList(name: string, authType: string, callback: AsyncCallback<Array&lt;st
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5476,9 +5795,10 @@ appAccountManager.getOAuthList('LiSi', 'getSocialData', (err: BusinessError, dat
 
 
 
-#### getOAuthList(deprecated)
+### getOAuthList(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOAuthList(name: string, authType: string): Promise<Array&lt;string&gt;>
 
@@ -5492,6 +5812,7 @@ getOAuthList(name: string, authType: string): Promise<Array&lt;string&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 应用账号的名称。最大长度为512个字符。 |
@@ -5499,6 +5820,7 @@ getOAuthList(name: string, authType: string): Promise<Array&lt;string&gt;>
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5519,9 +5841,10 @@ appAccountManager.getOAuthList('LiSi', 'getSocialData').then((data: string[]) =>
 
 
 
-#### getAuthenticatorCallback(deprecated)
+### getAuthenticatorCallback(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAuthenticatorCallback(sessionId: string, callback: AsyncCallback&lt;AuthenticatorCallback&gt;): void
 
@@ -5534,6 +5857,7 @@ getAuthenticatorCallback(sessionId: string, callback: AsyncCallback&lt;Authentic
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5569,9 +5893,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getAuthenticatorCallback(deprecated)
+### getAuthenticatorCallback(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAuthenticatorCallback(sessionId: string): Promise&lt;AuthenticatorCallback&gt;
 
@@ -5585,12 +5910,14 @@ getAuthenticatorCallback(sessionId: string): Promise&lt;AuthenticatorCallback&gt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sessionId | string | 是 | 鉴权会话的标识。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5623,9 +5950,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getAuthenticatorInfo(deprecated)
+### getAuthenticatorInfo(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAuthenticatorInfo(owner: string, callback: AsyncCallback&lt;AuthenticatorInfo&gt;): void
 
@@ -5638,6 +5966,7 @@ getAuthenticatorInfo(owner: string, callback: AsyncCallback&lt;AuthenticatorInfo
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5662,9 +5991,10 @@ appAccountManager.getAuthenticatorInfo('com.example.accountjsdemo',
 
 
 
-#### getAuthenticatorInfo(deprecated)
+### getAuthenticatorInfo(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAuthenticatorInfo(owner: string): Promise&lt;AuthenticatorInfo&gt;
 
@@ -5678,12 +6008,14 @@ getAuthenticatorInfo(owner: string): Promise&lt;AuthenticatorInfo&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | owner | string | 是 | 应用账号所有者的包名。最大长度为1024个字符。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5705,13 +6037,15 @@ appAccountManager.getAuthenticatorInfo('com.example.accountjsdemo').then((
 
 
 
-#### AppAccountInfo
+## AppAccountInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示应用账号信息。
 
 **系统能力：** SystemCapability.Account.AppAccount
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -5721,13 +6055,15 @@ appAccountManager.getAuthenticatorInfo('com.example.accountjsdemo').then((
 
 
 
-#### AuthTokenInfo9+
+## AuthTokenInfo9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示Auth令牌信息。
 
 **系统能力：** SystemCapability.Account.AppAccount
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -5738,9 +6074,10 @@ appAccountManager.getAuthenticatorInfo('com.example.accountjsdemo').then((
 
 
 
-#### OAuthTokenInfo(deprecated)
+## OAuthTokenInfo(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示OAuth令牌信息。
 
@@ -5750,6 +6087,7 @@ appAccountManager.getAuthenticatorInfo('com.example.accountjsdemo').then((
 
 **系统能力：** SystemCapability.Account.AppAccount
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | authType | string | 否 | 否 | 令牌的鉴权类型。 |
@@ -5758,13 +6096,15 @@ appAccountManager.getAuthenticatorInfo('com.example.accountjsdemo').then((
 
 
 
-#### AuthenticatorInfo8+
+## AuthenticatorInfo8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示OAuth认证器信息。
 
 **系统能力：** SystemCapability.Account.AppAccount
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -5775,13 +6115,15 @@ appAccountManager.getAuthenticatorInfo('com.example.accountjsdemo').then((
 
 
 
-#### AuthResult9+
+## AuthResult9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示认证结果信息。
 
 **系统能力：** SystemCapability.Account.AppAccount
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -5791,13 +6133,15 @@ appAccountManager.getAuthenticatorInfo('com.example.accountjsdemo').then((
 
 
 
-#### CreateAccountOptions9+
+## CreateAccountOptions9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示创建账号的选项。
 
 **系统能力：** SystemCapability.Account.AppAccount
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -5806,13 +6150,15 @@ appAccountManager.getAuthenticatorInfo('com.example.accountjsdemo').then((
 
 
 
-#### CreateAccountImplicitlyOptions9+
+## CreateAccountImplicitlyOptions9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示隐式创建账号的选项。
 
 **系统能力：** SystemCapability.Account.AppAccount
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -5823,13 +6169,15 @@ appAccountManager.getAuthenticatorInfo('com.example.accountjsdemo').then((
 
 
 
-#### SelectAccountsOptions9+
+## SelectAccountsOptions9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示用于选择账号的选项。
 
 **系统能力：** SystemCapability.Account.AppAccount
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -5840,13 +6188,15 @@ appAccountManager.getAuthenticatorInfo('com.example.accountjsdemo').then((
 
 
 
-#### VerifyCredentialOptions9+
+## VerifyCredentialOptions9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示用于验证凭据的选项。
 
 **系统能力：** SystemCapability.Account.AppAccount
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -5857,13 +6207,15 @@ appAccountManager.getAuthenticatorInfo('com.example.accountjsdemo').then((
 
 
 
-#### SetPropertiesOptions9+
+## SetPropertiesOptions9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示用于设置属性的选项。
 
 **系统能力：** SystemCapability.Account.AppAccount
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -5873,13 +6225,15 @@ appAccountManager.getAuthenticatorInfo('com.example.accountjsdemo').then((
 
 
 
-#### Constants8+
+## Constants8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示常量的枚举。
 
 **系统能力：** SystemCapability.Account.AppAccount
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -5904,9 +6258,10 @@ appAccountManager.getAuthenticatorInfo('com.example.accountjsdemo').then((
 
 
 
-#### ResultCode(deprecated)
+## ResultCode(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示返回码的枚举。
 
@@ -5915,6 +6270,7 @@ appAccountManager.getAuthenticatorInfo('com.example.accountjsdemo').then((
 
 
 **系统能力：** SystemCapability.Account.AppAccount
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -5941,17 +6297,19 @@ appAccountManager.getAuthenticatorInfo('com.example.accountjsdemo').then((
 
 
 
-#### AuthCallback9+
+## AuthCallback9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 认证器回调类。
 
 
 
-#### onResult9+
+### onResult9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onResult: (code: number, result?: AuthResult) => void
 
@@ -5960,6 +6318,7 @@ onResult: (code: number, result?: AuthResult) => void
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5993,9 +6352,10 @@ appAccountManager.getAuthCallback(sessionId).then((callback: appAccount.AuthCall
 
 
 
-#### onRequestRedirected9+
+### onRequestRedirected9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onRequestRedirected: (request: Want) => void
 
@@ -6004,6 +6364,7 @@ onRequestRedirected: (request: Want) => void
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6044,9 +6405,10 @@ class MyAuthenticator extends appAccount.Authenticator {
 
 
 
-#### onRequestContinued9+
+### onRequestContinued9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onRequestContinued?: () => void
 
@@ -6072,9 +6434,10 @@ appAccountManager.getAuthCallback(sessionId).then((callback: appAccount.AuthCall
 
 
 
-#### AuthenticatorCallback(deprecated)
+## AuthenticatorCallback(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 OAuth认证器回调接口。
 
@@ -6084,9 +6447,10 @@ OAuth认证器回调接口。
 
 
 
-#### onResult(deprecated)
+### onResult(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onResult: (code: number, result: { [key: string]: any }) => void
 
@@ -6099,6 +6463,7 @@ onResult: (code: number, result: { [key: string]: any }) => void
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6127,9 +6492,10 @@ appAccountManager.getAuthenticatorCallback(sessionId).then((callback: appAccount
 
 
 
-#### onRequestRedirected(deprecated)
+### onRequestRedirected(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onRequestRedirected: (request: Want) => void
 
@@ -6142,6 +6508,7 @@ onRequestRedirected: (request: Want) => void
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6176,17 +6543,19 @@ class MyAuthenticator extends appAccount.Authenticator {
 
 
 
-#### Authenticator8+
+## Authenticator8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 认证器基类。
 
 
 
-#### createAccountImplicitly9+
+### createAccountImplicitly9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAccountImplicitly(options: CreateAccountImplicitlyOptions, callback: AuthCallback): void
 
@@ -6196,6 +6565,7 @@ createAccountImplicitly(options: CreateAccountImplicitlyOptions, callback: AuthC
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | CreateAccountImplicitlyOptions | 是 | 隐式创建账号的选项。 |
@@ -6204,9 +6574,10 @@ createAccountImplicitly(options: CreateAccountImplicitlyOptions, callback: AuthC
 
 
 
-#### addAccountImplicitly(deprecated)
+### addAccountImplicitly(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addAccountImplicitly(authType: string, callerBundleName: string, options: { [key: string]: any }, callback: AuthenticatorCallback): void
 
@@ -6220,6 +6591,7 @@ addAccountImplicitly(authType: string, callerBundleName: string, options: { [key
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | authType | string | 是 | 应用账号的鉴权类型。自定义数据，最大长度为1024个字符。 |
@@ -6230,9 +6602,10 @@ addAccountImplicitly(authType: string, callerBundleName: string, options: { [key
 
 
 
-#### auth9+
+### auth9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 auth(name: string, authType: string, options: Record<string, Object>, callback: AuthCallback): void
 
@@ -6241,6 +6614,7 @@ auth(name: string, authType: string, options: Record<string, Object>, callback: 
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6252,9 +6626,10 @@ auth(name: string, authType: string, options: Record<string, Object>, callback: 
 
 
 
-#### authenticate(deprecated)
+### authenticate(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 authenticate(name: string, authType: string, callerBundleName: string, options: { [key: string]: any }, callback: AuthenticatorCallback): void
 
@@ -6268,6 +6643,7 @@ authenticate(name: string, authType: string, callerBundleName: string, options: 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 应用账号的名称。最大长度为512个字符。 |
@@ -6279,9 +6655,10 @@ authenticate(name: string, authType: string, callerBundleName: string, options: 
 
 
 
-#### verifyCredential9+
+### verifyCredential9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 verifyCredential(name: string, options: VerifyCredentialOptions, callback: AuthCallback): void
 
@@ -6290,6 +6667,7 @@ verifyCredential(name: string, options: VerifyCredentialOptions, callback: AuthC
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6304,9 +6682,10 @@ verifyCredential(name: string, options: VerifyCredentialOptions, callback: AuthC
 
 
 
-#### setProperties9+
+### setProperties9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setProperties(options: SetPropertiesOptions, callback: AuthCallback): void
 
@@ -6315,6 +6694,7 @@ setProperties(options: SetPropertiesOptions, callback: AuthCallback): void
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6328,9 +6708,10 @@ setProperties(options: SetPropertiesOptions, callback: AuthCallback): void
 
 
 
-#### checkAccountLabels9+
+### checkAccountLabels9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checkAccountLabels(name: string, labels: Array&lt;string&gt;, callback: AuthCallback): void
 
@@ -6339,6 +6720,7 @@ checkAccountLabels(name: string, labels: Array&lt;string&gt;, callback: AuthCall
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6353,9 +6735,10 @@ checkAccountLabels(name: string, labels: Array&lt;string&gt;, callback: AuthCall
 
 
 
-#### checkAccountRemovable9+
+### checkAccountRemovable9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checkAccountRemovable(name: string, callback: AuthCallback): void
 
@@ -6364,6 +6747,7 @@ checkAccountRemovable(name: string, callback: AuthCallback): void
 **系统能力：** SystemCapability.Account.AppAccount
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6377,9 +6761,10 @@ checkAccountRemovable(name: string, callback: AuthCallback): void
 
 
 
-#### getRemoteObject9+
+### getRemoteObject9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRemoteObject(): rpc.RemoteObject
 
@@ -6388,6 +6773,7 @@ getRemoteObject(): rpc.RemoteObject
 **系统能力：** SystemCapability.Account.AppAccount
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |

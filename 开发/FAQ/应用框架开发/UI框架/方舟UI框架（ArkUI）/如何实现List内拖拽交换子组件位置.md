@@ -33,7 +33,7 @@ struct Index {
     }
   }
 
-  // Swap the position of listItem in the listArr array
+<em>  // Swap the position of listItem in the listArr array</em>
   changeListItemIndex(index1: number, index2: number) {
     let tempItem = this.listArr[index1];
     this.listArr[index1] = this.listArr[index2];

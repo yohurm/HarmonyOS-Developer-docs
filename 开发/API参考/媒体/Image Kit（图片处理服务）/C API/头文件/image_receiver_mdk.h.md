@@ -1,13 +1,14 @@
 # image_receiver_mdk.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-receiver-mdk-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明从native层获取图片数据的方法。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OhosImageReceiverInfo | - | 定义ImageReceiver的相关信息。 |
@@ -41,10 +45,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | typedef void (*OH_Image_Receiver_On_Callback)() | OH_Image_Receiver_On_Callback | 定义native层图片的回调方法。 |
@@ -62,15 +68,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Image_Receiver_On_Callback()
+### OH_Image_Receiver_On_Callback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_Image_Receiver_On_Callback)(void)
@@ -84,9 +92,10 @@ typedef void (*OH_Image_Receiver_On_Callback)(void)
  
   
 
-#### OH_Image_Receiver_CreateImageReceiver()
+### OH_Image_Receiver_CreateImageReceiver()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Image_Receiver_CreateImageReceiver(napi_env env, struct OhosImageReceiverInfo info, napi_value* res)
@@ -100,6 +109,7 @@ int32_t OH_Image_Receiver_CreateImageReceiver(napi_env env, struct OhosImageRece
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | napi_env env | napi的环境指针。 |
@@ -109,6 +119,7 @@ int32_t OH_Image_Receiver_CreateImageReceiver(napi_env env, struct OhosImageRece
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | IRNdkErrCode： IMAGE_RESULT_SUCCESS：操作成功。 IMAGE_RESULT_BAD_PARAMETER：参数错误。 IMAGE_RESULT_JNI_ENV_ABNORMAL：JNI环境异常。 IMAGE_RESULT_INVALID_PARAMETER：参数无效。 IMAGE_RESULT_CREATE_SURFACE_FAILED：创建surface失败。 IMAGE_RESULT_SURFACE_GRALLOC_BUFFER_FAILED：surface分配内存失败。 IMAGE_RESULT_GET_SURFACE_FAILED：获取surface失败。 IMAGE_RESULT_MEDIA_RTSP_SURFACE_UNSUPPORT：媒体rtsp surface不支持。 IMAGE_RESULT_DATA_UNSUPPORT：图像类型不支持。 IMAGE_RESULT_MEDIA_DATA_UNSUPPORT：媒体类型不支持。 |
@@ -116,9 +127,10 @@ int32_t OH_Image_Receiver_CreateImageReceiver(napi_env env, struct OhosImageRece
  
   
 
-#### OH_Image_Receiver_InitImageReceiverNative()
+### OH_Image_Receiver_InitImageReceiverNative()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ImageReceiverNative* OH_Image_Receiver_InitImageReceiverNative(napi_env env, napi_value source)
@@ -132,6 +144,7 @@ ImageReceiverNative* OH_Image_Receiver_InitImageReceiverNative(napi_env env, nap
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | napi_env env | napi的环境指针。 |
@@ -140,6 +153,7 @@ ImageReceiverNative* OH_Image_Receiver_InitImageReceiverNative(napi_env env, nap
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageReceiverNative* | 操作成功则返回ImageReceiverNative指针；如果操作失败，则返回nullptr。 |
@@ -151,9 +165,10 @@ ImageReceiverNative* OH_Image_Receiver_InitImageReceiverNative(napi_env env, nap
  
   
 
-#### OH_Image_Receiver_GetReceivingSurfaceId()
+### OH_Image_Receiver_GetReceivingSurfaceId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Image_Receiver_GetReceivingSurfaceId(const ImageReceiverNative* native, char* id, size_t len)
@@ -167,6 +182,7 @@ int32_t OH_Image_Receiver_GetReceivingSurfaceId(const ImageReceiverNative* nativ
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ImageReceiverNative* native | native层的ImageReceiverNative指针。 |
@@ -176,6 +192,7 @@ int32_t OH_Image_Receiver_GetReceivingSurfaceId(const ImageReceiverNative* nativ
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | IRNdkErrCode： IMAGE_RESULT_SUCCESS：操作成功。 IMAGE_RESULT_BAD_PARAMETER：参数错误。 IMAGE_RESULT_JNI_ENV_ABNORMAL：JNI环境异常。 IMAGE_RESULT_INVALID_PARAMETER：参数无效。 IMAGE_RESULT_INVALID_PARAMETER：从surface获取参数失败。 IMAGE_RESULT_GET_SURFACE_FAILED：获取surface失败。 IMAGE_RESULT_DATA_UNSUPPORT：图像类型不支持。 IMAGE_RESULT_MEDIA_DATA_UNSUPPORT：媒体类型不支持。 |
@@ -183,9 +200,10 @@ int32_t OH_Image_Receiver_GetReceivingSurfaceId(const ImageReceiverNative* nativ
  
   
 
-#### OH_Image_Receiver_ReadLatestImage()
+### OH_Image_Receiver_ReadLatestImage()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Image_Receiver_ReadLatestImage(const ImageReceiverNative* native, napi_value* image)
@@ -201,6 +219,7 @@ int32_t OH_Image_Receiver_ReadLatestImage(const ImageReceiverNative* native, nap
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ImageReceiverNative* native | native层的ImageReceiverNative指针。 |
@@ -209,6 +228,7 @@ int32_t OH_Image_Receiver_ReadLatestImage(const ImageReceiverNative* native, nap
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | IRNdkErrCode： IMAGE_RESULT_SUCCESS：操作成功。 IMAGE_RESULT_BAD_PARAMETER：参数错误。 IMAGE_RESULT_JNI_ENV_ABNORMAL：JNI环境异常。 IMAGE_RESULT_INVALID_PARAMETER：参数无效。 IMAGE_RESULT_INVALID_PARAMETER：从surface获取参数失败。 IMAGE_RESULT_CREATE_SURFACE_FAILED：创建surface失败。 IMAGE_RESULT_SURFACE_GRALLOC_BUFFER_FAILED：surface分配内存失败。 IMAGE_RESULT_GET_SURFACE_FAILED：获取surface失败。 IMAGE_RESULT_MEDIA_RTSP_SURFACE_UNSUPPORT：媒体rtsp surface不支持。 IMAGE_RESULT_DATA_UNSUPPORT：图像类型不支持。 IMAGE_RESULT_MEDIA_DATA_UNSUPPORT：媒体类型不支持。 |
@@ -216,9 +236,10 @@ int32_t OH_Image_Receiver_ReadLatestImage(const ImageReceiverNative* native, nap
  
   
 
-#### OH_Image_Receiver_ReadNextImage()
+### OH_Image_Receiver_ReadNextImage()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Image_Receiver_ReadNextImage(const ImageReceiverNative* native, napi_value* image)
@@ -234,6 +255,7 @@ int32_t OH_Image_Receiver_ReadNextImage(const ImageReceiverNative* native, napi_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ImageReceiverNative* native | native层的ImageReceiverNative指针。 |
@@ -242,6 +264,7 @@ int32_t OH_Image_Receiver_ReadNextImage(const ImageReceiverNative* native, napi_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | IRNdkErrCode： IMAGE_RESULT_SUCCESS：操作成功。 IMAGE_RESULT_BAD_PARAMETER：参数错误。 IMAGE_RESULT_JNI_ENV_ABNORMAL：JNI环境异常。 IMAGE_RESULT_INVALID_PARAMETER：参数无效。 IMAGE_RESULT_INVALID_PARAMETER：从surface获取参数失败。 IMAGE_RESULT_CREATE_SURFACE_FAILED：创建surface失败。 IMAGE_RESULT_SURFACE_GRALLOC_BUFFER_FAILED：surface分配内存失败。 IMAGE_RESULT_GET_SURFACE_FAILED：获取surface失败。 IMAGE_RESULT_MEDIA_RTSP_SURFACE_UNSUPPORT：媒体rtsp surface不支持。 IMAGE_RESULT_DATA_UNSUPPORT：图像类型不支持。 IMAGE_RESULT_MEDIA_DATA_UNSUPPORT：媒体类型不支持。 |
@@ -249,9 +272,10 @@ int32_t OH_Image_Receiver_ReadNextImage(const ImageReceiverNative* native, napi_
  
   
 
-#### OH_Image_Receiver_On()
+### OH_Image_Receiver_On()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Image_Receiver_On(const ImageReceiverNative* native, OH_Image_Receiver_On_Callback callback)
@@ -265,6 +289,7 @@ int32_t OH_Image_Receiver_On(const ImageReceiverNative* native, OH_Image_Receive
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ImageReceiverNative* native | native层的ImageReceiverNative指针。 |
@@ -273,6 +298,7 @@ int32_t OH_Image_Receiver_On(const ImageReceiverNative* native, OH_Image_Receive
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | IRNdkErrCode： IMAGE_RESULT_SUCCESS：操作成功。 IMAGE_RESULT_BAD_PARAMETER：参数错误。 IMAGE_RESULT_JNI_ENV_ABNORMAL：JNI环境异常。 IMAGE_RESULT_INVALID_PARAMETER：参数无效。 IMAGE_RESULT_INVALID_PARAMETER：从surface获取参数失败。 IMAGE_RESULT_GET_SURFACE_FAILED：获取surface失败。 IMAGE_RESULT_DATA_UNSUPPORT：图像类型不支持。 IMAGE_RESULT_MEDIA_DATA_UNSUPPORT：媒体类型不支持。 |
@@ -280,9 +306,10 @@ int32_t OH_Image_Receiver_On(const ImageReceiverNative* native, OH_Image_Receive
  
   
 
-#### OH_Image_Receiver_GetSize()
+### OH_Image_Receiver_GetSize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Image_Receiver_GetSize(const ImageReceiverNative* native, struct OhosImageSize* size)
@@ -296,6 +323,7 @@ int32_t OH_Image_Receiver_GetSize(const ImageReceiverNative* native, struct Ohos
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ImageReceiverNative* native | native层的ImageReceiverNative指针。 |
@@ -304,6 +332,7 @@ int32_t OH_Image_Receiver_GetSize(const ImageReceiverNative* native, struct Ohos
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | IRNdkErrCode： IMAGE_RESULT_SUCCESS：操作成功。 IMAGE_RESULT_BAD_PARAMETER：参数错误。 IMAGE_RESULT_JNI_ENV_ABNORMAL：JNI环境异常。 IMAGE_RESULT_INVALID_PARAMETER：参数无效。 IMAGE_RESULT_DATA_UNSUPPORT：图像类型不支持。 |
@@ -311,9 +340,10 @@ int32_t OH_Image_Receiver_GetSize(const ImageReceiverNative* native, struct Ohos
  
   
 
-#### OH_Image_Receiver_GetCapacity()
+### OH_Image_Receiver_GetCapacity()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Image_Receiver_GetCapacity(const ImageReceiverNative* native, int32_t* capacity)
@@ -327,6 +357,7 @@ int32_t OH_Image_Receiver_GetCapacity(const ImageReceiverNative* native, int32_t
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ImageReceiverNative* native | native层的ImageReceiverNative指针。 |
@@ -335,6 +366,7 @@ int32_t OH_Image_Receiver_GetCapacity(const ImageReceiverNative* native, int32_t
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | IRNdkErrCode： IMAGE_RESULT_SUCCESS：操作成功。 IMAGE_RESULT_BAD_PARAMETER：参数错误。 IMAGE_RESULT_JNI_ENV_ABNORMAL：JNI环境异常。 IMAGE_RESULT_INVALID_PARAMETER：参数无效。 IMAGE_RESULT_DATA_UNSUPPORT：图像类型不支持。 |
@@ -342,9 +374,10 @@ int32_t OH_Image_Receiver_GetCapacity(const ImageReceiverNative* native, int32_t
  
   
 
-#### OH_Image_Receiver_GetFormat()
+### OH_Image_Receiver_GetFormat()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Image_Receiver_GetFormat(const ImageReceiverNative* native, int32_t* format)
@@ -358,6 +391,7 @@ int32_t OH_Image_Receiver_GetFormat(const ImageReceiverNative* native, int32_t* 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ImageReceiverNative* native | native层的ImageReceiverNative指针。 |
@@ -366,6 +400,7 @@ int32_t OH_Image_Receiver_GetFormat(const ImageReceiverNative* native, int32_t* 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | IRNdkErrCode： IMAGE_RESULT_SUCCESS：操作成功。 IMAGE_RESULT_BAD_PARAMETER：参数错误。 IMAGE_RESULT_JNI_ENV_ABNORMAL：JNI环境异常。 IMAGE_RESULT_INVALID_PARAMETER：参数无效。 IMAGE_RESULT_DATA_UNSUPPORT：图像类型不支持。 |
@@ -373,9 +408,10 @@ int32_t OH_Image_Receiver_GetFormat(const ImageReceiverNative* native, int32_t* 
  
   
 
-#### OH_Image_Receiver_Release()
+### OH_Image_Receiver_Release()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Image_Receiver_Release(ImageReceiverNative* native)
@@ -391,6 +427,7 @@ int32_t OH_Image_Receiver_Release(ImageReceiverNative* native)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ImageReceiverNative* native | native层的ImageReceiverNative指针。 |
@@ -398,6 +435,7 @@ int32_t OH_Image_Receiver_Release(ImageReceiverNative* native)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | IRNdkErrCode： IMAGE_RESULT_SUCCESS：操作成功。 IMAGE_RESULT_BAD_PARAMETER：参数错误。 IMAGE_RESULT_INVALID_PARAMETER：参数无效。 IMAGE_RESULT_DATA_UNSUPPORT：图像类型不支持。 |

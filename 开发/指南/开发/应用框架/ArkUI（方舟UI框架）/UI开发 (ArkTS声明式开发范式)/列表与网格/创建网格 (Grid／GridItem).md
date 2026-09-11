@@ -1,10 +1,10 @@
 # 创建网格 (Grid/GridItem)
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-create-grid
 
-#### 概述
+## 概述
 
 网格布局是由“行”和“列”分割的单元格所组成，通过指定“项目”所在的单元格做出各种各样的布局。网格布局具有较强的页面均分能力，子组件占比控制能力，是一种重要自适应布局，其使用场景有九宫格图片展示、日历、计算器等。
 
@@ -16,7 +16,7 @@ ArkUI提供了[Grid](https://developer.huawei.com/consumer/cn/doc/harmonyos-refe
 
 
 
-#### 布局与约束
+## 布局与约束
 
 Grid组件为网格容器，其中容器内各条目对应一个GridItem组件，如下图所示。
 
@@ -49,11 +49,11 @@ Grid组件根据行列数量与占比属性的设置，可以分为三种布局�
 
 
 
-#### 设置排列方式
+## 设置排列方式
 
 
 
-#### 设置行列数量与占比
+### 设置行列数量与占比
 
 通过设置行列数量与尺寸占比可以确定网格布局的整体排列方式。Grid组件提供了[rowsTemplate](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid#rowstemplate)和[columnsTemplate](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid#columnstemplate)属性用于设置网格布局行列数量与尺寸占比。
 
@@ -83,7 +83,7 @@ Grid() {
 
 
 
-#### 设置子组件所占行列数
+### 设置子组件所占行列数
 
 除了大小相同的等比例网格布局，由不同大小的网格组成不均匀分布的网格布局场景在实际应用中十分常见，如下图所示。在Grid组件中，可以通过创建Grid时传入合适的[GridLayoutOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid#gridlayoutoptions10对象说明)实现如图所示的单个网格横跨多行或多列的场景，其中，irregularIndexes和onGetIrregularSizeByIndex可对仅设置rowsTemplate或columnsTemplate的Grid使用；onGetRectByIndex可对同时设置rowsTemplate和columnsTemplate的Grid使用。
 
@@ -129,7 +129,7 @@ Grid(undefined, this.layoutOptions) {
 
 
 
-#### 设置主轴方向
+### 设置主轴方向
 
 使用Grid构建网格布局时，若没有设置行列数量与占比，可以通过[layoutDirection](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid#layoutdirection8)设置网格布局的主轴方向，决定子组件的排列方式。此时可以结合[minCount](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid#mincount8)和[maxCount](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid#maxcount8)属性来约束主轴方向上的网格数量。
 
@@ -155,7 +155,7 @@ Grid() {
 
 
 
-#### 在网格布局中显示数据
+## 在网格布局中显示数据
 
 网格布局采用二维布局的方式组织其内部元素，如下图所示。
 
@@ -241,14 +241,14 @@ export struct DataInGrid {
 
 
 
-#### 设置行列间距
+## 设置行列间距
 
 在两个网格单元之间的网格横向间距称为行间距，网格纵向间距称为列间距，如下图所示。
 
 **图8** 网格的行列间距
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/iF-1CWHNQ1GeBFei2JKVFg/zh-cn_image_0000002704392279.png?HW-CC-KV=V1&HW-CC-Date=20260813T095711Z&HW-CC-Expire=86400&HW-CC-Sign=BBDA30972F07409C89269428BD14323A132971CFC4B65AA8886C6BCE7B9D735C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/x30RZuvYQaOqGmg6iJJDZg/zh-cn_image_0000002717770308.png?HW-CC-KV=V1&HW-CC-Date=20260911T072505Z&HW-CC-Expire=86400&HW-CC-Sign=12C8BE8144C4B7F460CC0FAB7E86F3A347D74A6C3AC319BDB4D537D87E701DB9)
 
 
 通过Grid的[rowsGap](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid#rowsgap)和[columnsGap](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid#columnsgap)可以设置网格布局的行列间距。在图5所示的计算器中，行间距为15vp，列间距为10vp。
@@ -263,14 +263,14 @@ Grid() {
 
 
 
-#### 构建可滚动的网格布局
+## 构建可滚动的网格布局
 
 可滚动的网格布局常用在文件管理、购物或视频列表等页面中，如下图所示。在设置Grid的行列数量与占比时，如果仅设置行、列数量与占比中的一个，即仅设置rowsTemplate或仅设置columnsTemplate属性，网格单元按照设置的方向排列，超出Grid显示区域后，Grid拥有可滚动能力。
 
 **图9** 横向可滚动网格布局
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/SKbmOU7MTdGn8eJ3FVDU4Q/zh-cn_image_0000002674632158.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095711Z&HW-CC-Expire=86400&HW-CC-Sign=21A1A7875940FA125B610C9C78641B1664181319A222706DC57438C61780E242)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/mfKqaVM_QXqKIKtlqvs8oA/zh-cn_image_0000002717610374.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072505Z&HW-CC-Expire=86400&HW-CC-Sign=39CA610E0441BF6C3AB52321A5E59EC2875B65C62BF929A100195F47DD00AEE9)
 
 
 如果设置的是columnsTemplate，Grid的滚动方向为垂直方向；如果设置的是rowsTemplate，Grid的滚动方向为水平方向。
@@ -316,14 +316,14 @@ export struct ScrollableGrid {
 
 
 
-#### 控制滚动位置
+## 控制滚动位置
 
 与新闻列表的返回顶部场景类似，控制滚动位置功能在网格布局中也很常用，例如下图所示日历的翻页功能。
 
 **图10** 日历翻页
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/x9EPN2xlTgumkG0jDk9Ckw/zh-cn_image_0000002704272113.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095711Z&HW-CC-Expire=86400&HW-CC-Sign=F4E149246C2CD42AD63F88E3684EEC3A363C3E2D4890965C13CBAFE1256BFF4F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/0J11lgFPTX6JncVqqTM8SA/zh-cn_image_0000002747290325.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072505Z&HW-CC-Expire=86400&HW-CC-Sign=B468D35217DBC3E581342F99D2BCD821DBD7C686A5580D394E579F8BF705FD9D)
 
 
 Grid组件初始化时，可以绑定一个[Scroller](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll#scroller)对象，用于进行滚动控制，例如通过Scroller对象的[scrollPage](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll#scrollpage9)方法进行翻页。
@@ -362,7 +362,7 @@ Column({ space: 5 }){
 
 
 
-#### 添加外置滚动条
+## 添加外置滚动条
 
 网格组件[Grid](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid)可与[ScrollBar](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-scrollbar)组件配合使用，为网格添加外置滚动条。两者通过绑定同一个[Scroller](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll#scroller)滚动控制器对象实现联动。
 1. 首先，需要创建一个[Scroller](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll#scroller)类型的对象gridScroller。
@@ -394,7 +394,7 @@ ScrollBar({ scroller: this.gridScroller })
 **图11** 网格的外置滚动条
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/qxFdkG09RBK6TxSpu8RqkA/zh-cn_image_0000002674472314.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095711Z&HW-CC-Expire=86400&HW-CC-Sign=F1B56C4FA80E0F0FF80D211BEB6FFC1F9574E1DB696A072B612B265EA6637B5A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/s3BlAfZYRZGbwmiEu-2jfQ/zh-cn_image_0000002747210243.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072505Z&HW-CC-Expire=86400&HW-CC-Sign=CAD9624FF0D3C0BC36D33953156B33664CE6F3774668C24913A795E42C42A3DE)
 
 
 > [!NOTE]
@@ -403,19 +403,19 @@ ScrollBar({ scroller: this.gridScroller })
 
 
 
-#### 手指滑动多选
+## 手指滑动多选
 
 从API版本26.0.0开始，[Grid](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid)支持在编辑模式下实现手指滑动多选能力。进入编辑模式后，用户可以通过手指滑动经过多个[GridItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-griditem)，批量选择或取消选择网格项。应用可以在GridItem上设置是否允许被选择，并根据回调记录已选择的网格项。该能力适用于相册、文件管理、视频列表等需要连续批量选择网格项的场景。
 
 **Grid手指滑动多选示例效果图**
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/2OwvoNsYR2mTXYHec_5K0w/zh-cn_image_0000002704392281.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095711Z&HW-CC-Expire=86400&HW-CC-Sign=D7423E426B62F584910F1FCC454F99F609A40FF2711689CD4ADE0943124C057D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/tBd0wOcQQkKoJGc42CQh3Q/zh-cn_image_0000002717770310.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072505Z&HW-CC-Expire=86400&HW-CC-Sign=899CF4015BF9FA4EA493F36A82BD18DFA08100F18571CB79DED7D0AD3AB86486)
 
 
 
 
-#### 设置编辑模式
+### 设置编辑模式
 
 通过[enableEditMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid#enableeditmode)设置是否进入编辑模式。设置为true，Grid进入编辑模式，用户可以单指滑动经过多个GridItem进行批量选择或取消选择；设置为false，Grid退出编辑模式。通过[onEditModeChange](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid#oneditmodechange)监听编辑模式变化，将系统返回、侧滑返回或双指滑动触发的编辑模式变化同步到业务状态。
 
@@ -434,7 +434,7 @@ Grid() {
 
 
 
-#### 记录网格项选择结果
+### 记录网格项选择结果
 
 在GridItem上配置[selectable](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-griditem#selectable8)、[selected](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-griditem#selected10)和[onSelect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-griditem#onselect8)。selectable用于设置网格项是否允许被选择，selected用于设置网格项当前是否被选中。滑动多选过程中，组件会触发onSelect回调，应用可以在回调中记录每个网格项的最新选择结果。
 
@@ -455,7 +455,7 @@ GridItem() {
 
 
 
-#### 性能优化
+## 性能优化
 
 与[长列表的处理](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-create-list#长列表的处理)类似，[循环渲染](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-foreach)适用于数据量较小的布局场景，当构建具有大量网格项的可滚动网格布局时，推荐使用[数据懒加载](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-lazyforeach)方式实现按需迭代加载数据，从而提升网格性能。
 
@@ -481,6 +481,6 @@ Grid() {
 
 
 
-#### 示例代码
+## 示例代码
 
  - [基于Grid的嵌套混合布局](https://gitcode.com/HarmonyOS_Samples/grid-hybrid)

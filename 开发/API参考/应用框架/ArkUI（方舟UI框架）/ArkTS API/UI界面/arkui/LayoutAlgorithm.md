@@ -1,9 +1,9 @@
 # LayoutAlgorithm
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-layoutalgorithm
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [DynamicLayout](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-dynamiclayout)组件支持的布局算法详细信息。
 
@@ -14,9 +14,10 @@ LayoutAlgorithm是动态布局容器的布局算法基础类型，提供了多�
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { LayoutAlgorithm, CustomLayoutAlgorithm, RowLayoutAlgorithm, ColumnLayoutAlgorithm, StackLayoutAlgorithm, GridLayoutAlgorithm } from '@kit.ArkUI';
@@ -24,9 +25,10 @@ import { LayoutAlgorithm, CustomLayoutAlgorithm, RowLayoutAlgorithm, ColumnLayou
 
 
 
-#### LayoutAlgorithm
+## LayoutAlgorithm
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 动态布局容器[DynamicLayout](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-dynamiclayout)的布局算法基础类型。
 
@@ -44,9 +46,10 @@ import { LayoutAlgorithm, CustomLayoutAlgorithm, RowLayoutAlgorithm, ColumnLayou
 
 
 
-#### CustomLayoutAlgorithm
+## CustomLayoutAlgorithm
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 自定义布局算法类，允许开发者实现自定义的测量和布局逻辑。适用于需要精细控制子组件尺寸和位置的复杂布局场景，如瀑布流布局、不规则网格布局、动态流式布局等。通过重写onMeasure和onLayout方法，开发者可以实现内置布局算法无法覆盖的布局策略。
 
@@ -58,9 +61,10 @@ import { LayoutAlgorithm, CustomLayoutAlgorithm, RowLayoutAlgorithm, ColumnLayou
 
 
 
-#### onMeasure
+### onMeasure
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onMeasure(self: FrameNode, constraint: LayoutConstraint): void
 
@@ -80,6 +84,7 @@ onMeasure(self: FrameNode, constraint: LayoutConstraint): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | self | FrameNode | 是 | 动态布局组件在组件树上的实体节点，用于获取子组件FrameNode并测量子组件大小。 |
@@ -88,9 +93,10 @@ onMeasure(self: FrameNode, constraint: LayoutConstraint): void
 
 
 
-#### onLayout
+### onLayout
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onLayout(self: FrameNode, position: Position): void
 
@@ -110,6 +116,7 @@ onLayout(self: FrameNode, position: Position): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | self | FrameNode | 是 | 动态布局组件在组件树上的实体节点，用于获取子组件FrameNode并设置子组件位置。 |
@@ -122,9 +129,10 @@ onLayout(self: FrameNode, position: Position): void
 
 
 
-#### RowLayoutAlgorithm
+## RowLayoutAlgorithm
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 水平方向线性布局算法类，用于实现子组件的水平线性排列。适用于需要水平排列子组件的场景，如横向列表、工具栏、标签栏、操作按钮组等。支持设置子组件间距、垂直对齐方式、水平对齐方式和排列方向，提供类似Row组件的布局能力。
 
@@ -136,9 +144,10 @@ onLayout(self: FrameNode, position: Position): void
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -147,6 +156,7 @@ onLayout(self: FrameNode, position: Position): void
 **元服务API：** 从API version 24开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -158,9 +168,10 @@ onLayout(self: FrameNode, position: Position): void
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(option?: RowLayoutAlgorithmOptions)
 
@@ -176,6 +187,7 @@ constructor(option?: RowLayoutAlgorithmOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | option | RowLayoutAlgorithmOptions | 否 | 水平方向线性布局算法的构造入参，设置布局算法的间距、主轴对齐方式、交叉轴对齐方式及主轴排列方向。不传入时使用各属性的默认值。 |
@@ -187,9 +199,10 @@ constructor(option?: RowLayoutAlgorithmOptions)
 
 
 
-#### RowLayoutAlgorithmOptions
+## RowLayoutAlgorithmOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置水平方向线性布局算法的间距、主轴对齐方式、交叉轴对齐方式及主轴排列方向。
 
@@ -201,6 +214,7 @@ constructor(option?: RowLayoutAlgorithmOptions)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | space | LengthMetrics | 否 | 是 | 子组件水平方向间距。取值范围：非负数。 默认值：LengthMetrics.vp(0) 非法值：按默认值处理。 |
@@ -211,9 +225,10 @@ constructor(option?: RowLayoutAlgorithmOptions)
 
 
 
-#### ColumnLayoutAlgorithm
+## ColumnLayoutAlgorithm
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 垂直方向线性布局算法类，用于实现子组件的垂直线性排列。适用于需要垂直排列子组件的场景，如纵向列表、垂直堆叠的表单项、垂直菜单等。支持设置子组件间距、水平对齐方式、垂直对齐方式和排列方向，提供类似Column组件的布局能力。
 
@@ -225,9 +240,10 @@ constructor(option?: RowLayoutAlgorithmOptions)
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -236,6 +252,7 @@ constructor(option?: RowLayoutAlgorithmOptions)
 **元服务API：** 从API version 24开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -247,9 +264,10 @@ constructor(option?: RowLayoutAlgorithmOptions)
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(option?: ColumnLayoutAlgorithmOptions)
 
@@ -265,6 +283,7 @@ constructor(option?: ColumnLayoutAlgorithmOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | option | ColumnLayoutAlgorithmOptions | 否 | 垂直方向线性布局算法的构造入参，设置布局算法的间距、主轴对齐方式、交叉轴对齐方式及主轴排列方向。不传入时使用各属性的默认值。 |
@@ -276,9 +295,10 @@ constructor(option?: ColumnLayoutAlgorithmOptions)
 
 
 
-#### ColumnLayoutAlgorithmOptions
+## ColumnLayoutAlgorithmOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置垂直方向线性布局算法的间距、主轴对齐方式、交叉轴对齐方式及主轴排列方向。
 
@@ -290,6 +310,7 @@ constructor(option?: ColumnLayoutAlgorithmOptions)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | space | LengthMetrics | 否 | 是 | 子组件垂直方向间距。取值范围：非负数。 默认值：LengthMetrics.vp(0) 非法值：按默认值处理。 |
@@ -300,9 +321,10 @@ constructor(option?: ColumnLayoutAlgorithmOptions)
 
 
 
-#### StackLayoutAlgorithm
+## StackLayoutAlgorithm
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 堆叠布局算法类，用于实现子组件的堆叠排列。适用于需要子组件重叠显示的场景，如图层叠加、悬浮按钮、带背景的内容区域、卡片叠加效果等。支持设置子组件在堆叠容器中的对齐方式，提供类似Stack组件的布局能力。
 
@@ -314,9 +336,10 @@ constructor(option?: ColumnLayoutAlgorithmOptions)
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -326,6 +349,7 @@ constructor(option?: ColumnLayoutAlgorithmOptions)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | alignContent | LocalizedAlignment | 否 | 是 | 设置子组件在堆叠布局算法中对齐格式。 默认值：LocalizedAlignment.CENTER 非法值：按默认值处理。 装饰器类型：@Trace |
@@ -333,9 +357,10 @@ constructor(option?: ColumnLayoutAlgorithmOptions)
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(option?: StackLayoutAlgorithmOptions)
 
@@ -351,6 +376,7 @@ constructor(option?: StackLayoutAlgorithmOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | option | StackLayoutAlgorithmOptions | 否 | 堆叠布局算法的构造入参，设置九宫格对齐格式。不传入时使用各属性的默认值。 |
@@ -362,9 +388,10 @@ constructor(option?: StackLayoutAlgorithmOptions)
 
 
 
-#### StackLayoutAlgorithmOptions
+## StackLayoutAlgorithmOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置堆叠布局算法的对齐方式。
 
@@ -376,6 +403,7 @@ constructor(option?: StackLayoutAlgorithmOptions)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | alignContent | LocalizedAlignment | 否 | 是 | 设置子组件在堆叠布局算法中对齐格式。 默认值：LocalizedAlignment.CENTER 非法值：按默认值处理。 |
@@ -383,9 +411,10 @@ constructor(option?: StackLayoutAlgorithmOptions)
 
 
 
-#### GridLayoutAlgorithm
+## GridLayoutAlgorithm
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 网格布局算法类，用于实现子组件的网格排列。适用于需要将子组件按网格形式排列的场景，如宫格菜单、相册网格、应用列表、商品展示等。支持设置列数模板、列间距和行间距，提供类似Grid组件的布局能力。
 
@@ -397,15 +426,17 @@ constructor(option?: StackLayoutAlgorithmOptions)
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **元服务API：** 从API version 24开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -416,9 +447,10 @@ constructor(option?: StackLayoutAlgorithmOptions)
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(option?: GridLayoutAlgorithmOptions)
 
@@ -432,6 +464,7 @@ constructor(option?: GridLayoutAlgorithmOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | option | GridLayoutAlgorithmOptions | 否 | 网格布局算法的构造入参，设置网格布局的列数、列间距、行间距。不传入时使用各属性的默认值。 |
@@ -443,9 +476,10 @@ constructor(option?: GridLayoutAlgorithmOptions)
 
 
 
-#### GridLayoutAlgorithmOptions
+## GridLayoutAlgorithmOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置网格布局算法的列数模板、列间距、行间距。
 
@@ -454,6 +488,7 @@ constructor(option?: GridLayoutAlgorithmOptions)
 **元服务API：** 从API version 24开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

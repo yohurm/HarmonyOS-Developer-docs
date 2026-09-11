@@ -1,9 +1,9 @@
 # SceneType
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-scene-types
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供ArkGraphics 3D中常用的数据类型。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { Vec2, Vec3, Vec4, Quaternion, Aabb, Color, Rect, RenderingPipelineType, GeometryType, GeometryDefinition, PrimitiveTopology, ShadowAlgorithmType, CustomGeometry, CubeGeometry, PlaneGeometry, SphereGeometry, CylinderGeometry, Mat4x4, Position3, Rotation3, Scale3 } from '@kit.ArkGraphics3D';
@@ -22,14 +23,16 @@ import { Vec2, Vec3, Vec4, Quaternion, Aabb, Color, Rect, RenderingPipelineType,
  
   
 
-#### Vec2
+## Vec2
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 二维向量，通常用于表示2D空间中的点或方向，由x和y两个分量组成。
  
 **系统能力：** SystemCapability.ArkUi.Graphics3D
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | x | number | 否 | 否 | x轴分量，取值范围是实数。 |
@@ -38,14 +41,16 @@ import { Vec2, Vec3, Vec4, Quaternion, Aabb, Color, Rect, RenderingPipelineType,
  
   
 
-#### Vec3
+## Vec3
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 三维向量，通常用于表示3D空间中的点、方向或向量变换，由x、y和z三个分量组成。
  
 **系统能力：** SystemCapability.ArkUi.Graphics3D
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | x | number | 否 | 否 | x轴分量，取值范围是实数。 |
@@ -55,14 +60,16 @@ import { Vec2, Vec3, Vec4, Quaternion, Aabb, Color, Rect, RenderingPipelineType,
  
   
 
-#### Vec4
+## Vec4
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 四维向量，通常用于表示4D空间中的点、方向或向量变换，由x、y、z和w四个分量组成。
  
 **系统能力：** SystemCapability.ArkUi.Graphics3D
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | x | number | 否 | 否 | x轴分量，取值范围是实数。 |
@@ -73,14 +80,16 @@ import { Vec2, Vec3, Vec4, Quaternion, Aabb, Color, Rect, RenderingPipelineType,
  
   
 
-#### Quaternion
+## Quaternion
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于表示3D空间中旋转的数学结构。与传统的欧拉角相比，四元数在数值稳定性和避免万向节锁方面具有优势。
  
 **系统能力：** SystemCapability.ArkUi.Graphics3D
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | x | number | 否 | 否 | x轴分量，取值范围是实数。 |
@@ -91,14 +100,16 @@ import { Vec2, Vec3, Vec4, Quaternion, Aabb, Color, Rect, RenderingPipelineType,
  
   
 
-#### Aabb
+## Aabb
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 轴对齐边界盒，主要用于判断空间中的物体是否重叠。
  
 **系统能力：** SystemCapability.ArkUi.Graphics3D
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | aabbMin | Vec3 | 否 | 否 | 轴对齐边界盒的小值点，单位为世界坐标系下的场景单位（比如cm、m、km等）。 |
@@ -107,14 +118,16 @@ import { Vec2, Vec3, Vec4, Quaternion, Aabb, Color, Rect, RenderingPipelineType,
  
   
 
-#### Color
+## Color
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于表示RGBA格式的颜色，包含四个分量，依次为红色、绿色、蓝色和透明度。
  
 **系统能力：** SystemCapability.ArkUi.Graphics3D
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | r | number | 否 | 否 | 红色分量，取值范围是[0, 1]。 |
@@ -125,14 +138,16 @@ import { Vec2, Vec3, Vec4, Quaternion, Aabb, Color, Rect, RenderingPipelineType,
  
   
 
-#### Rect
+## Rect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于表示平面中的矩形。
  
 **系统能力：** SystemCapability.ArkUi.Graphics3D
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | x | number | 否 | 否 | 矩形左下角x轴分量，单位为世界坐标系下的场景单位（比如cm、m、km等），取值为任意实数，具体范围依赖场景坐标系设置。 |
@@ -143,14 +158,16 @@ import { Vec2, Vec3, Vec4, Quaternion, Aabb, Color, Rect, RenderingPipelineType,
  
   
 
-#### RenderingPipelineType21+
+## RenderingPipelineType21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 渲染管线类型枚举。
  
 **系统能力：** SystemCapability.ArkUi.Graphics3D
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | FORWARD_LIGHTWEIGHT | 0 | 轻量级前向渲染管线，直接渲染到后缓冲区。该管线只能在着色器中实现逐像素效果（例如色调映射），不支持复杂效果（例如光晕）。 |
@@ -159,14 +176,16 @@ import { Vec2, Vec3, Vec4, Quaternion, Aabb, Color, Rect, RenderingPipelineType,
  
   
 
-#### GeometryType18+
+## GeometryType18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 几何类型枚举，用于指定不同的几何类型。
  
 **系统能力：** SystemCapability.ArkUi.Graphics3D
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CUSTOM | 0 | 自定义几何体类型。 |
@@ -178,14 +197,16 @@ import { Vec2, Vec3, Vec4, Quaternion, Aabb, Color, Rect, RenderingPipelineType,
  
   
 
-#### GeometryDefinition18+
+## GeometryDefinition18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 几何类型定义抽象类，用于解释特定几何类型的属性。
  
 **系统能力：** SystemCapability.ArkUi.Graphics3D
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | geometryType | GeometryType | 是 | 否 | 定义不同的几何类型。 |
@@ -193,14 +214,16 @@ import { Vec2, Vec3, Vec4, Quaternion, Aabb, Color, Rect, RenderingPipelineType,
  
   
 
-#### PrimitiveTopology18+
+## PrimitiveTopology18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 图元拓扑枚举，在顶点处理过程中，指定顶点的不同处理方式。
  
 **系统能力：** SystemCapability.ArkUi.Graphics3D
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | TRIANGLE_LIST | 0 | 由不相交的顶点集合构成不同的三角形。 |
@@ -209,9 +232,10 @@ import { Vec2, Vec3, Vec4, Quaternion, Aabb, Color, Rect, RenderingPipelineType,
  
   
 
-#### ShadowAlgorithmType
+## ShadowAlgorithmType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 阴影算法的枚举类型。
  
@@ -221,6 +245,7 @@ import { Vec2, Vec3, Vec4, Quaternion, Aabb, Color, Rect, RenderingPipelineType,
  
 **系统能力：** SystemCapability.ArkUi.Graphics3D
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | PCF | 0 | 百分比邻近过滤算法。 |
@@ -228,14 +253,16 @@ import { Vec2, Vec3, Vec4, Quaternion, Aabb, Color, Rect, RenderingPipelineType,
  
   
 
-#### CustomGeometry18+
+## CustomGeometry18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 自定义几何类型，继承自[GeometryDefinition](#geometrydefinition18)。
  
 **系统能力：** SystemCapability.ArkUi.Graphics3D
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | topology | PrimitiveTopology | 否 | 是 | 三角形图元的解析方式，默认值为TRIANGLE_LIST。 |
@@ -248,14 +275,16 @@ import { Vec2, Vec3, Vec4, Quaternion, Aabb, Color, Rect, RenderingPipelineType,
  
   
 
-#### CubeGeometry18+
+## CubeGeometry18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 立方体几何类型，继承自[GeometryDefinition](#geometrydefinition18)。
  
 **系统能力：** SystemCapability.ArkUi.Graphics3D
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | size | Vec3 | 否 | 否 | 立方体的宽、高和深度，表示立方体的大小，单位为世界坐标系下的场景单位（比如cm、m、km等）。 |
@@ -263,14 +292,16 @@ import { Vec2, Vec3, Vec4, Quaternion, Aabb, Color, Rect, RenderingPipelineType,
  
   
 
-#### PlaneGeometry18+
+## PlaneGeometry18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 平面几何类型，继承自[GeometryDefinition](#geometrydefinition18)。
  
 **系统能力：** SystemCapability.ArkUi.Graphics3D
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | size | Vec2 | 否 | 否 | 平面的宽、高，表示平面的大小，单位为世界坐标系下的场景单位（比如cm、m、km等）。 |
@@ -278,14 +309,16 @@ import { Vec2, Vec3, Vec4, Quaternion, Aabb, Color, Rect, RenderingPipelineType,
  
   
 
-#### SphereGeometry18+
+## SphereGeometry18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 球体几何类型，继承自[GeometryDefinition](#geometrydefinition18)。
  
 **系统能力：** SystemCapability.ArkUi.Graphics3D
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | radius | number | 否 | 否 | 球体半径，单位为世界坐标系下的场景单位（比如cm、m、km等），取值范围大于0。 |
@@ -294,14 +327,16 @@ import { Vec2, Vec3, Vec4, Quaternion, Aabb, Color, Rect, RenderingPipelineType,
  
   
 
-#### CylinderGeometry23+
+## CylinderGeometry23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 圆柱体几何类型，继承自[GeometryDefinition](#geometrydefinition18)。
  
 **系统能力：** SystemCapability.ArkUi.Graphics3D
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | radius | number | 否 | 否 | 圆柱体的底面半径，单位为世界坐标系下的场景单位（比如cm、m、km等），取值范围大于0。 |
@@ -316,19 +351,21 @@ import { Vec2, Vec3, Vec4, Quaternion, Aabb, Color, Rect, RenderingPipelineType,
 以radius=0.5，height=1，segmentCount=20为例，生成圆柱体的网格以及UV布局如下：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/Y1I6KV0sQES_2BgXhpAH9A/zh-cn_image_0000002656009730.png?HW-CC-KV=V1&HW-CC-Date=20260730T071724Z&HW-CC-Expire=86400&HW-CC-Sign=E258D0FDECD7CACFB06DC297AC9A2C56FE1BD3773BA984D10F67260C06FE67F6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/N-ZLQfy6Qw29f3cRHHl5Cg/zh-cn_image_0000002747213821.png?HW-CC-KV=V1&HW-CC-Date=20260911T072918Z&HW-CC-Expire=86400&HW-CC-Sign=4F8C451EE121B93EA051766D63070DF405DB058B852E4B16898BABE6229EFE25)
 
  
   
 
-#### Mat4x423+
+## Mat4x423+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 4x4矩阵类型，可用于坐标变换。
  
 **系统能力：** SystemCapability.ArkUi.Graphics3D
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | x | Vec4 | 否 | 否 | 矩阵的第一列，其值是一个四维向量。 |
@@ -339,9 +376,10 @@ import { Vec2, Vec3, Vec4, Quaternion, Aabb, Color, Rect, RenderingPipelineType,
  
   
 
-#### Position3
+## Position3
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Position3 = Vec3
  
@@ -349,6 +387,7 @@ type Position3 = Vec3
  
 **系统能力：** SystemCapability.ArkUi.Graphics3D
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Vec3 | 类型为三维向量，单位为世界坐标系下的场景单位（比如cm、m、km等），可取任意值。 |
@@ -356,9 +395,10 @@ type Position3 = Vec3
  
   
 
-#### Rotation3
+## Rotation3
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Rotation3 = Vec3
  
@@ -366,6 +406,7 @@ type Rotation3 = Vec3
  
 **系统能力：** SystemCapability.ArkUi.Graphics3D
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Vec3 | 类型为三维向量，单位为弧度（rad），可取任意值。 |
@@ -373,9 +414,10 @@ type Rotation3 = Vec3
  
   
 
-#### Scale3
+## Scale3
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Scale3 = Vec3
  
@@ -383,6 +425,7 @@ type Scale3 = Vec3
  
 **系统能力：** SystemCapability.ArkUi.Graphics3D
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Vec3 | 类型为三维向量，可取任意值。 |

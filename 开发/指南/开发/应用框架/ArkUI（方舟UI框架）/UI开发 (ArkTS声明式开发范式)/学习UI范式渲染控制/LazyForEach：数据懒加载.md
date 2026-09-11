@@ -1,10 +1,10 @@
 # LazyForEach：数据懒加载
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-lazyforeach
 
-#### 概述
+## 概述
 
 从API version 7开始，LazyForEach为开发者提供了基于数据源渲染出一系列子组件的能力。具体而言，LazyForEach从数据源中按需迭代数据，并在每次迭代时创建相应组件。当LazyForEach用于滚动容器时，框架会根据滚动容器可视区域按需创建组件，当组件滑出可视区域外时，框架会销毁并回收组件以降低内存占用。
 
@@ -18,7 +18,7 @@
 
 
 
-#### 使用限制
+## 使用限制
 
  - LazyForEach必须在容器组件内使用，仅有[List](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)、[ListItemGroup](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-listitemgroup)、[Grid](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid)、[Swiper](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-swiper)以及[WaterFlow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow)组件支持数据懒加载（可配置cachedCount属性，即只加载可视部分以及其前后少量数据用于缓冲），其他组件仍然是一次性加载所有的数据。支持数据懒加载的父组件根据自身及子组件的高度或宽度计算可视区域内需布局的子节点数量，高度或宽度的缺失会导致部分场景[懒加载失效](#子组件尺寸缺失导致懒加载失效)。
  - LazyForEach依赖生成的键值判断是否刷新子组件，键值不变则不触发刷新。
@@ -36,11 +36,11 @@
 
 
 
-#### 基础特性
+## 基础特性
 
 
 
-#### 设置数据源
+### 设置数据源
 
 为了管理[DataChangeListener](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-rendering-control-lazyforeach#datachangelistener)监听器和通知LazyForEach更新数据，开发者需要使用如下方法：首先实现LazyForEach提供的[IDataSource](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-rendering-control-lazyforeach#idatasource)接口，将其作为LazyForEach的数据源，然后管理监听器和更新数据。
 
@@ -48,7 +48,7 @@
 
 
 
-#### 键值生成规则
+### 键值生成规则
 
 在LazyForEach循环渲染过程中，系统为每个item生成一个唯一且持久的键值，用于标识对应的组件。键值变化时，ArkUI框架将视为该数组元素已被替换或修改，并基于新的键值创建新的组件。
 
@@ -62,13 +62,13 @@ LazyForEach提供了参数keyGenerator，开发者可以使用该函数生成自
 
 
 
-#### 组件创建规则
+### 组件创建规则
 
 在确定键值生成规则后，LazyForEach的第二个参数itemGenerator函数会根据组件创建规则为数据源的每个数组项创建组件。组件的创建包括两种情况：LazyForEach[首次渲染](#首次渲染)和LazyForEach非首次渲染的[数据更新](#数据更新)。
 
 
 
-#### 首次渲染
+### 首次渲染
 
 使用LazyForEach时，开发者需要提供数据源、键值生成函数和组件创建函数。**开发者需保证键值生成函数为每项数据生成不同的键值。**
 
@@ -229,7 +229,7 @@ LazyForEach(this.data, (item: string) => {
 
 
 
-#### 数据更新
+### 数据更新
 
 当LazyForEach数据源发生变化，需要再次渲染时，开发者应根据数据源的变化情况调用listener对应的接口，通知LazyForEach做相应的更新。LazyForEach的更新操作包括：添加数据、删除数据、交换数据、改变单个数据、改变多个数据以及精准批量修改数据，各使用场景示例如下。
 
@@ -794,7 +794,7 @@ struct PreciselyModifyingDataTwo {
 
 使用该接口时请注意以下事项。
 1. 不要将onDatasetChange与其他操作数据的接口混用。
-2. 传入onDatasetChange的operations中，每一项operation的index均从修改前的原数组中查找。因此，operations中的index不总是与Datasource中的index一一对应，并且不能为负数。
+2. 传入onDatasetChange的operations中，每一项operation的index均从修改前的原数组中查找。因此，operations中的index不总是与DataSource中的index一一对应，并且不能为负数。
 
   第一个例子清楚地显示了这一点:
 
@@ -813,16 +813,16 @@ struct PreciselyModifyingDataTwo {
 
   "Hello k","Hello l" 被删除了，而 "Hello k" 在原数组中的 index=10，因此第四个 operation 为 { type: DataOperationType.DELETE, index: 10, count: 2 }。
 3. 在同一个onDatasetChange批量处理数据时，如果多个DataOperation操作同一个index，只有第一个DataOperation生效。
-4. 部分操作由开发者传入键值，LazyForEach不再重复调用keygenerator获取键值，开发者需保证传入键值的正确性。
+4. 部分操作由开发者传入键值，LazyForEach不再重复调用keyGenerator获取键值，开发者需保证传入键值的正确性。
 5. 若操作集合中包含RELOAD操作，则其他操作均不生效。
 
 
 
-#### 高级特性
+## 高级特性
 
 
 
-#### 使用状态管理V1修改数据子属性
+### 使用状态管理V1修改数据子属性
 
 若仅靠LazyForEach的刷新机制，当item变化时若想更新子组件，需要将原来的子组件全部销毁再重新构建，在子组件结构较为复杂的情况下，靠改变键值去刷新渲染性能较低。因此状态管理V1提供了[@Observed装饰器和@ObjectLink装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-observed-and-objectlink)机制进行深度观测，可以做到仅刷新使用了该属性的组件，提高渲染性能。开发者可根据其自身业务特点选择使用哪种刷新方式。
 
@@ -908,7 +908,7 @@ struct ChangingDataSubpropertiesChildComponent {
 
 
 
-#### 使用状态管理V2修改数据子属性
+### 使用状态管理V2修改数据子属性
 
 状态管理V2提供[@ObservedV2装饰器和@Trace装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-observedv2-and-trace)，用于实现属性的深度观测。使用[@Local装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-local)和[@Param装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-param)，可以管理子组件的刷新，仅刷新使用了对应属性的组件。
 
@@ -1157,7 +1157,7 @@ struct ReceivingExternalInputChildComponent {
 
 
 
-#### 拖拽排序
+### 拖拽排序
 
 当LazyForEach在List组件下使用，并且设置了[onMove](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-drag-sorting#onmove)事件，可以使能拖拽排序。拖拽排序释放后，如果数据位置发生变化，将触发onMove事件，上报原始索引号和目标索引号。在onMove事件中，根据上报的索引号修改数据源。修改数据源时，无需调用DataChangeListener接口通知数据源变化。
 
@@ -1233,11 +1233,11 @@ struct DragandDropSorting {
 
 
 
-#### 常见问题
+## 常见问题
 
 
 
-#### 删除节点后渲染结果非预期
+### 删除节点后渲染结果非预期
 
 BasicDataSource代码见文档末尾BasicDataSource示例代码: [string类型数组的BasicDataSource代码](#string类型数组的basicdatasource代码)。
 
@@ -1389,7 +1389,7 @@ struct UnexpectedRenderingResults {
 
 
 
-#### 重渲染时图片闪烁
+### 重渲染时图片闪烁
 
 GenericBasicDataSource代码见文档末尾BasicDataSource示例代码: [泛型数组的BasicDataSource代码](#泛型数组的basicdatasource代码)。
 
@@ -1567,7 +1567,7 @@ struct ImageFlickeringChildComponent {
 
 
 
-#### @ObjectLink属性变化UI未更新
+### @ObjectLink属性变化UI未更新
 
 GenericBasicDataSource代码见文档末尾BasicDataSource示例代码: [泛型数组的BasicDataSource代码](#泛型数组的basicdatasource代码)。
 
@@ -1750,7 +1750,7 @@ struct UINotRerenderedChildComponent {
 
 
 
-#### 在List内使用屏幕闪烁
+### 在List内使用屏幕闪烁
 
 在[List](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)的[onScrollIndex](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list#onscrollindex)方法中调用onDataReloaded可能会导致屏幕闪烁。
 
@@ -1914,7 +1914,7 @@ struct ScreenFlickeringInList {
 
 
 
-#### 组件复用渲染异常
+### 组件复用渲染异常
 
 [@Reusable装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-reusable)与[@ComponentV2装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-custom-components#componentv2)混用会导致组件渲染异常。
 
@@ -2008,7 +2008,7 @@ struct ChildComponent {
 
 
 
-#### 键值不合理导致组件不刷新
+### 键值不合理导致组件不刷新
 
 开发者需要定义合适的键值生成函数，返回与目标数据相关联的键值。目标数据发生改变时，LazyForEach识别到键值改变才会刷新对应组件。
 
@@ -2088,12 +2088,12 @@ LazyForEach(this.data, (item: string) => {
 **定义键值生成函数后，点击按钮更新数据，组件刷新**
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/6O8WHM9_R46lX-nU6W8o6A/zh-cn_image_0000002704392123.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095708Z&HW-CC-Expire=86400&HW-CC-Sign=C0827D9DD0F76533E5008F6CA3C570C0B7B669C9F5F4FB4A51B35728198436BD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/4MBzjTSQSJy_eTp7OuSjkg/zh-cn_image_0000002747210085.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072212Z&HW-CC-Expire=86400&HW-CC-Sign=0EBE3F9DFB5C8DD2E2CEA5DEDF7D14164423D2064BEF48AA1B46A857AE34AAF3)
 
 
 
 
-#### 子组件尺寸缺失导致懒加载失效
+### 子组件尺寸缺失导致懒加载失效
 
 支持数据懒加载的父组件基于自身和子组件的高度或宽度计算可视范围内应布局的子节点数量，高度或宽度的缺失会导致部分场景懒加载失效。如下示例，在纵向布局中，首次渲染时子组件的高度缺失，所有数据项对应组件都会被创建。
 
@@ -2172,11 +2172,11 @@ LazyForEach(this.data, (item: string, index: number) => {
 
 
 
-#### BasicDataSource示例代码
+## BasicDataSource示例代码
 
 
 
-#### string类型数组的BasicDataSource代码
+### string类型数组的BasicDataSource代码
 
 ```ArkTS
 // BasicDataSource实现了IDataSource接口，用于管理listener监听，以及通知LazyForEach数据更新
@@ -2257,7 +2257,7 @@ export class BasicDataSource implements IDataSource {
 
 
 
-#### 泛型数组的BasicDataSource代码
+### 泛型数组的BasicDataSource代码
 
 ```ArkTS
 // GenericBasicDataSource实现了IDataSource接口，用于管理listener监听，以及通知LazyForEach数据更新

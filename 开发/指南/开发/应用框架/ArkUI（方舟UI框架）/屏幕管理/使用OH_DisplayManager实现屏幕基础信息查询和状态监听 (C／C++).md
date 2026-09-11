@@ -1,10 +1,10 @@
 # 使用OH_DisplayManager实现屏幕基础信息查询和状态监听 (C/C++)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-display-manager
 
-#### 场景介绍
+## 场景介绍
 
 [OH_DisplayManager](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-displaymanager)屏幕管理模块用于提供屏幕的信息查询、屏幕状态变化监听、折叠设备的折叠状态变化监听等能力，应用可根据对应的屏幕信息、屏幕状态变化、屏幕折叠状态适配不同的UI界面显示。
 
@@ -15,7 +15,7 @@
 
 
 
-#### 基本概念
+## 基本概念
 
  - 屏幕的物理像素密度(densityDPI)：代表每英寸屏幕所拥有的物理像素点数。
  - 屏幕的逻辑像素的密度(densityPixels)：代表物理像素与逻辑像素的缩放系数比，计算方法为物理像素密度除以160。
@@ -23,9 +23,10 @@
 
 
 
-#### 接口说明
+## 接口说明
 
 常用接口如下表所示。更多API说明请参考[OH_DisplayManager](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-displaymanager)。
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -41,7 +42,7 @@
 
 
 
-#### 在CMake脚本中链接动态库
+## 在CMake脚本中链接动态库
 
 ```text
 target_link_libraries(nativedisplay PUBLIC libhilog_ndk.z.so)
@@ -50,7 +51,7 @@ target_link_libraries(nativedisplay PUBLIC libnative_display_manager.so)
 
 
 
-#### 添加头文件
+## 添加头文件
 
 ```cpp
 #include <window_manager/oh_display_info.h>
@@ -60,7 +61,7 @@ target_link_libraries(nativedisplay PUBLIC libnative_display_manager.so)
 
 
 
-#### 获取屏幕状态
+## 获取屏幕状态
 1. 可以通过OH_NativeDisplayManager_GetDefaultDisplayRotation获取默认屏幕的旋转角度。
 
   
@@ -137,7 +138,7 @@ static napi_value CreateDefaultDisplayCutoutInfo(napi_env env, napi_callback_inf
 
 
 
-#### 监听屏幕状态变化
+## 监听屏幕状态变化
 
 可以通过OH_NativeDisplayManager_RegisterDisplayChangeListener接口注册屏幕变化的监听，包括屏幕旋转、分辨率变化、刷新率变化、DPI变化等。 通过OH_NativeDisplayManager_UnregisterDisplayChangeListener接口取消屏幕状态变化的监听。
 
@@ -187,7 +188,7 @@ static napi_value UnregisterDisplayChangeListener(napi_env env, napi_callback_in
 
 
 
-#### 监听折叠设备状态变化
+## 监听折叠设备状态变化
 1. 可以通过OH_NativeDisplayManager_IsFoldable接口查询设备是不是折叠设备。
 
   
@@ -249,7 +250,7 @@ static napi_value UnregisterFoldDisplayModeChangeListener(napi_env env, napi_cal
 
 
 
-#### 注册函数
+## 注册函数
 
 ```cpp
 EXTERN_C_START
@@ -276,7 +277,7 @@ EXTERN_C_END
 
 
 
-#### 注册模块
+## 注册模块
 
 ```cpp
 static napi_module displayModule = {
@@ -297,7 +298,7 @@ extern "C" __attribute__((constructor)) void RegisterEntryModule(void)
 
 
 
-#### 在Index.ets文件中调用函数
+## 在Index.ets文件中调用函数
 
 ```ArkTS
 private callGetDisplayRotation(): void {

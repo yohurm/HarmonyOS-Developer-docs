@@ -1,6 +1,6 @@
 # 关闭会话（C++）
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-communication-netclose-c
 
@@ -15,15 +15,16 @@
 在请求结束后，及时关闭会话并释放相关资源是保持系统健康和高效运行的关键步骤。这不仅有助于优化资源利用，还能提高系统的稳定性和可靠性。
 
 
-#### 约束与限制
+## 约束与限制
 
 关闭会话能力支持Phone、2in1、Tablet、Wearable设备。并且从5.1.1(19)开始，新增支持TV设备。
 
 
 
-#### 接口说明
+## 接口说明
 
 具体API说明详见[接口文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-communication-overview#hms_rcp_closesession)。
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -32,7 +33,7 @@
 
 
 
-#### 使用示例
+## 使用示例
 1. CPP侧导入模块。
 
   

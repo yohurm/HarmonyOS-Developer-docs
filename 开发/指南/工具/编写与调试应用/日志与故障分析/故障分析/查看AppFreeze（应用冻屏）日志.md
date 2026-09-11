@@ -1,6 +1,6 @@
 # 查看AppFreeze（应用冻屏）日志
 
-更新时间：2026-07-08 00:45:01
+更新时间：2026-08-29 09:41:34
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-faultlog-appfreeze
 
@@ -9,7 +9,7 @@
 ![](assets/查看AppFreeze（应用冻屏）日志/file-20260514133026733-0.png)
 
 2. 点击**Fault Analysis**页签，会展示结构化的日志信息。
-页面上方的字段对应了FaultLog中的字段，具体对应关系请查看[字段说明](#section6678213185017)。
+页面上方的字段对应了FaultLog中的字段，具体对应关系请参考[字段说明](#section6678213185017)。
 3. 页面下方包含Stacks、Logs、Binder Communication、System等页签，具体如下。
 **Stacks**：展示线程的堆栈信息，具体请参考[查看堆栈信息](#section6334533115019)。
 4. **Logs**：展示FaultLog中的HiLog日志，具体请参考[查看HiLog日志](#section7265205715018)。
@@ -20,10 +20,11 @@
 9. **Main Thread Task Queue**：从DevEco Studio 6.1.1 Beta1版本开始，新增Main Thread Task Queue页签，对应AppFreeze日志中的[EventHandler信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appfreeze-guidelines#日志主干通用信息)，用于展示主线程的任务队列，包括历史任务和待调度任务，具体请参考[查看主线程任务队列信息](#section3149310135314)。
  
 
-#### 字段说明
+## 字段说明
 
 **Fault Analysis**页签中的字段和FaultLog的字段对应关系如下。
   
+
 | Fault Analysis的字段 | 说明 |
 | --- | --- |
 | Occurrence time | FaultLog发生的时间，对应FaultLog中的Timestamp字段。 |
@@ -41,7 +42,7 @@
  
  
 
-#### 查看堆栈信息
+## 查看堆栈信息
 
 Stacks页签用于查看AppFreeze中的堆栈信息，并以线程为单元进行折叠，点击展开按钮，可以展开对应线程。
  
@@ -51,6 +52,7 @@ Stacks页签用于查看AppFreeze中的堆栈信息，并以线程为单元进�
  
 图中标注1的勾选框是展开应用堆栈，标注2的勾选框是展开系统堆栈，两个勾选框一共组成了四种状态，具体如下表。
   
+
 | 勾选框勾选状态 | 说明 |
 | --- | --- |
 | 1、2都不勾选 | 展示所有线程，线程处于折叠状态。 |
@@ -61,7 +63,7 @@ Stacks页签用于查看AppFreeze中的堆栈信息，并以线程为单元进�
  
  
 
-#### 查看HiLog日志
+## 查看HiLog日志
 
 Logs页签用于查看AppFreeze中的HiLog日志，支持日志级别的过滤和搜索。
  
@@ -71,7 +73,7 @@ Logs页签用于查看AppFreeze中的HiLog日志，支持日志级别的过滤�
  
  
 
-#### 查看Binder通信信息
+## 查看Binder通信信息
 
 从DevEco Studio 6.1.1 Beta1版本开始，新增Binder Communication页签，对应AppFreeze日志中的[对端信息（与当前故障进程通信的进程信息）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appfreeze-guidelines#对端信息与当前故障进程通信的进程信息)。
  
@@ -87,7 +89,7 @@ Binder Communication页签包含以下内容：
  
  
 
-#### 查看高负载CPU/内存日志信息
+## 查看高负载CPU/内存日志信息
 
 从DevEco Studio 6.0.0 Beta3版本开始，新增System页签，用于在高负载场景下，展示设备CPU/内存的日志信息，有助于分析高负载和AppFreeze之间的关联关系。
  
@@ -117,7 +119,7 @@ Binder Communication页签包含以下内容：
  
  
 
-#### 查看采样栈数据信息
+## 查看采样栈数据信息
 
 从DevEco Studio 6.1.1 Beta1版本开始，新增Sampling Stack页签，对应[AppFreeze增强日志中的堆栈信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appfreeze-guidelines#appfreeze应用冻屏增强日志信息采样栈)，用于查看采样栈数据，标记可疑问题栈。
  
@@ -146,7 +148,7 @@ Sampling Stack页签默认展示堆栈水平条形图，按照堆栈的出现频
  
  
 
-#### 查看3s/6s堆栈日志
+## 查看3s/6s堆栈日志
 
 从DevEco Studio 6.0.2 Beta1版本开始，新增3s/6s Compare页签，用于对[THREAD_BLOCK_6S](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appfreeze-guidelines#thread_block_6s应用主线程卡死超时)类型的AppFreeze问题，展示3s和6s时间点的主线程堆栈日志，并标识栈帧中可能的故障处。
  
@@ -158,7 +160,7 @@ Sampling Stack页签默认展示堆栈水平条形图，按照堆栈的出现频
  
  
 
-#### 查看主线程任务队列信息
+## 查看主线程任务队列信息
 
 从DevEco Studio 6.1.1 Beta1版本开始，新增Main Thread Task Queue页签，对应AppFreeze日志中的[EventHandler信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appfreeze-guidelines#日志主干通用信息)，用于展示主线程的任务队列，包括历史任务和待调度任务。
  

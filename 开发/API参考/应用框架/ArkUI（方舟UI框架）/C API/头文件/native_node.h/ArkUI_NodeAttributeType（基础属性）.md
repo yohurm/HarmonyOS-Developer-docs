@@ -1,15 +1,19 @@
 # ArkUI_NodeAttributeType（基础属性）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-node-h-nodeattributetype-base
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_NodeAttributeType
 ```
 
 
-#### 概述
+## 概述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义ArkUI在Native侧可以设置的基础属性集合，包含背景、背景图片样式和组件标识等属性设置。
 
@@ -21,7 +25,10 @@ enum ArkUI_NodeAttributeType
 
 
 
-#### NODE_BACKGROUND_COLOR
+## NODE_BACKGROUND_COLOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_BACKGROUND_COLOR = 2
@@ -35,12 +42,14 @@ NODE_BACKGROUND_COLOR = 2
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].u32 | 背景色数值，0xargb格式，取值范围0x00000000~0xFFFFFFFF，形如 0xFFFF0000 表示红色。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -49,7 +58,10 @@ NODE_BACKGROUND_COLOR = 2
 
 
 
-#### NODE_BACKGROUND_IMAGE
+## NODE_BACKGROUND_IMAGE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_BACKGROUND_IMAGE = 3
@@ -63,14 +75,16 @@ NODE_BACKGROUND_IMAGE = 3
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 图片地址。API version 22及之前版本，支持网络图片资源地址、本地图片资源地址、Base64和PixelMap资源，不支持svg图片、gif和webp等类型的动图。从API version 23开始，新增支持webp和gif类型的动图，显示动图第一帧，不支持其他类型的动图。 |
-| .value[0]?.i32 | 可选值，repeat参数，参数类型ArkUI_ImageRepeat，默认值为ARKUI_IMAGE_REPEAT_NONE。 |
+| .value[0].?i32 | 可选值，repeat参数，参数类型ArkUI_ImageRepeat，默认值为ARKUI_IMAGE_REPEAT_NONE。 |
 | .object | PixelMap图片数据，参数类型为ArkUI_DrawableDescriptor。.object参数和.string参数二选一，不可同时设置。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -81,7 +95,10 @@ NODE_BACKGROUND_IMAGE = 3
 
 
 
-#### NODE_ID
+## NODE_ID
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_ID = 5
@@ -95,12 +112,14 @@ NODE_ID = 5
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | ID的内容。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -109,7 +128,10 @@ NODE_ID = 5
 
 
 
-#### NODE_BACKGROUND_IMAGE_SIZE
+## NODE_BACKGROUND_IMAGE_SIZE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_BACKGROUND_IMAGE_SIZE = 30
@@ -123,6 +145,7 @@ NODE_BACKGROUND_IMAGE_SIZE = 30
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 图片的宽度值，取值范围[0,+∞)，单位为vp。 |
@@ -130,6 +153,7 @@ NODE_BACKGROUND_IMAGE_SIZE = 30
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -139,7 +163,10 @@ NODE_BACKGROUND_IMAGE_SIZE = 30
 
 
 
-#### NODE_BACKGROUND_IMAGE_SIZE_WITH_STYLE
+## NODE_BACKGROUND_IMAGE_SIZE_WITH_STYLE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_BACKGROUND_IMAGE_SIZE_WITH_STYLE = 31
@@ -153,12 +180,14 @@ NODE_BACKGROUND_IMAGE_SIZE_WITH_STYLE = 31
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 背景图片的宽高样式，取ArkUI_ImageSize枚举值。不同枚举值决定了背景图片的缩放和裁剪方式，如按原图大小显示、保持宽高比覆盖组件区域、保持宽高比完整显示等。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -167,7 +196,10 @@ NODE_BACKGROUND_IMAGE_SIZE_WITH_STYLE = 31
 
 
 
-#### NODE_BACKGROUND_IMAGE_POSITION
+## NODE_BACKGROUND_IMAGE_POSITION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_BACKGROUND_IMAGE_POSITION = 56
@@ -181,15 +213,17 @@ NODE_BACKGROUND_IMAGE_POSITION = 56
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | x轴位置，单位为px。 |
 | .value[1].f32 | y轴位置，单位为px。 |
-| .value[2]?.i32 | 可选值，对齐方式，参数类型ArkUI_Alignment，默认值为ARKUI_ALIGNMENT_TOP_START。该参数从API version 21开始支持。 |
-| .value[3]?.i32 | 可选值，布局方向，参数类型ArkUI_Direction，默认值为ARKUI_DIRECTION_AUTO。多数场景下建议设置为AUTO，由系统自动处理布局方向；若需要固定方向，可设置为LTR或RTL。该参数从API version 21开始支持。 |
+| .value[2].?i32 | 可选值，对齐方式，参数类型ArkUI_Alignment，默认值为ARKUI_ALIGNMENT_TOP_START。该参数从API version 21开始支持。 |
+| .value[3].?i32 | 可选值，布局方向，参数类型ArkUI_Direction，默认值为ARKUI_DIRECTION_AUTO。多数场景下建议设置为AUTO，由系统自动处理布局方向；若需要固定方向，可设置为LTR或RTL。该参数从API version 21开始支持。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -201,7 +235,10 @@ NODE_BACKGROUND_IMAGE_POSITION = 56
 
 
 
-#### NODE_RENDER_GROUP
+## NODE_RENDER_GROUP
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_RENDER_GROUP = 80
@@ -215,12 +252,14 @@ NODE_RENDER_GROUP = 80
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 参数值为1表示当前组件与子组件需要先整体离屏渲染绘制后再与父控件融合绘制，参数值为0表示不需要整体离屏渲染绘制后再与父控件融合绘制。默认值为0。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -229,7 +268,10 @@ NODE_RENDER_GROUP = 80
 
 
 
-#### NODE_UNIQUE_ID
+## NODE_UNIQUE_ID
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_UNIQUE_ID = 95
@@ -243,9 +285,20 @@ NODE_UNIQUE_ID = 95
 
 **废弃版本：** 从API version 12开始支持，从API version 20开始废弃。建议使用[OH_ArkUI_NodeUtils_GetNodeUniqueId](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-node-h#oh_arkui_nodeutils_getnodeuniqueid)替代。
 
+**返回：**
 
 
-#### NODE_CLICK_DISTANCE
+| 类型 | 说明 |
+| --- | --- |
+| .value[0].i32 | 组件标识ID。 |
+
+
+
+
+## NODE_CLICK_DISTANCE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_CLICK_DISTANCE = 97
@@ -259,6 +312,7 @@ NODE_CLICK_DISTANCE = 97
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 表示识别点击手势时允许手指在该范围内移动，单位为vp。 |
@@ -266,7 +320,10 @@ NODE_CLICK_DISTANCE = 97
 
 
 
-#### NODE_INSPECTOR_LABEL
+## NODE_INSPECTOR_LABEL
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_INSPECTOR_LABEL = 126
@@ -280,12 +337,14 @@ NODE_INSPECTOR_LABEL = 126
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 表示调测标签的内容。当传入空指针时本地调用无效，支持传入空字符串。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |

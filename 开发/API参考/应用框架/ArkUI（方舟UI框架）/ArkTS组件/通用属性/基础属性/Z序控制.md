@@ -1,9 +1,9 @@
 # Z序控制
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-z-order
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 组件的Z序，设置同一容器中兄弟组件的堆叠顺序。
  
@@ -12,9 +12,10 @@
 
   
 
-#### zIndex
+## zIndex
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 zIndex(value: number): T
  
@@ -28,6 +29,7 @@ zIndex(value: number): T
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 同一容器中兄弟组件显示层级关系。zIndex值越大，显示层级越高，即zIndex值大的组件会覆盖在zIndex值小的组件上方；不同容器内的组件无法根据zIndex值改变跨容器显示层级。当不涉及新增或减少兄弟节点，动态改变zIndex时会在zIndex改变前层级顺序的基础上进行稳定排序；涉及新增或减少兄弟节点时，zIndex值越大，显示层级越高，zIndex值相等时将按声明顺序显示，即后声明的组件会覆盖在先声明的组件上方。 |
@@ -35,6 +37,7 @@ zIndex(value: number): T
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | T | 返回当前组件，用于链式调用。 |
@@ -42,13 +45,17 @@ zIndex(value: number): T
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 示例1（设置组件堆叠顺序）
+### 示例1（设置组件堆叠顺序）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过zIndex设置组件堆叠顺序。
  
@@ -93,7 +100,10 @@ Stack容器子组件设置zIndex后的效果。
  
   
 
-#### 示例2（动态修改zIndex属性）
+### 示例2（动态修改zIndex属性）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例使用Button组件动态修改zIndex属性。
  
@@ -102,14 +112,14 @@ Stack容器子组件设置zIndex后的效果。
 @Entry
 @Component
 struct ZIndexExample {
-  @State zIndexValue: number = 0;
+  @State zIndex_: number = 0;
 
   build() {
     Column() {
       // 点击Button改变zIndex后，在点击Button前的层级顺序上根据zIndex进行稳定排序。
       Button('change Text2 zIndex')
         .onClick(() => {
-          this.zIndexValue = (this.zIndexValue + 1) % 3;
+          this.zIndex_ = (this.zIndex_ + 1) % 3;
         })
       Stack() {
         // Text1设置zIndex值为1
@@ -117,9 +127,9 @@ struct ZIndexExample {
           .size({ width: '70%', height: '50%' }).backgroundColor(0xd2cab3).align(Alignment.TopStart)
           .zIndex(1)
         // Text2设置zIndex默认值为0
-        Text('2, default zIndex(0), now zIndex:' + this.zIndexValue)
+        Text('2, default zIndex(0), now zIndex:' + this.zIndex_)
           .size({ width: '90%', height: '80%' }).backgroundColor(0xc1cbac).align(Alignment.TopStart)
-          .zIndex(this.zIndexValue)
+          .zIndex(this.zIndex_)
       }.width('100%').height(200)
     }.width('100%').height(200)
   }
@@ -146,7 +156,10 @@ struct ZIndexExample {
  
   
 
-#### 示例3（设置不同容器内组件的zIndex属性）
+### 示例3（设置不同容器内组件的zIndex属性）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例在不同容器内设置zIndex属性。其中，Text1、Text2在同一个Stack容器内，Text3在另一个Stack容器内。虽然Text3的zIndex值最小，但Text1、Text2仍无法根据zIndex值显示在Text3的上方。
  
@@ -181,4 +194,4 @@ struct ZIndexExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/aaiyGUA9Tau82FvZpejLRg/zh-cn_image_0000002655848344.png?HW-CC-KV=V1&HW-CC-Date=20260730T071453Z&HW-CC-Expire=86400&HW-CC-Sign=7911C71E276AF0578B45EF945CECF3C8DC52EF2C0EFF768D536FC50246DAEDF0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/RQuY3BRJROq-vxbm5nkNsA/zh-cn_image_0000002747292431.png?HW-CC-KV=V1&HW-CC-Date=20260911T073128Z&HW-CC-Expire=86400&HW-CC-Sign=F0656E35FCCD1F37445E8AF22BD7DD0F0C425ED7A6B7B8658F08702C51D8E945)

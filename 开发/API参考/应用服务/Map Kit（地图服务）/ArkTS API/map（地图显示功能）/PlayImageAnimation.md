@@ -1,11 +1,12 @@
 # Class (PlayImageAnimation)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-playimageanimation
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -16,7 +17,8 @@ import { image } from '@kit.ImageKit';
  
   
 
-#### PlayImageAnimation
+## PlayImageAnimation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -50,7 +52,8 @@ await playImageAnimation.addImages(images);
  
   
 
-#### addImages
+### addImages
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -68,6 +71,7 @@ addImages(images: Array<ResourceStr | image.PixelMap>): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | images | Array<ResourceStr \| image.PixelMap> | 是 | 动画的图片资源。 说明： - 建议图片大小相同。 - 图片数量不超过200张。 - 持续时间需要大于33ms。如果不是，它将被更改为33ms。 - string类型入参，图片存放在resources/rawfile。 |
@@ -75,6 +79,7 @@ addImages(images: Array<ResourceStr | image.PixelMap>): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -84,6 +89,7 @@ addImages(images: Array<ResourceStr | image.PixelMap>): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid input parameter. |

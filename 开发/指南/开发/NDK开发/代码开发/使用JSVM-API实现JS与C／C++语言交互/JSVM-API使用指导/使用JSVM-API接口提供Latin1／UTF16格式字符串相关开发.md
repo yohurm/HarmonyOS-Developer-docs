@@ -1,23 +1,24 @@
 # 使用JSVM-API接口提供Latin1/UTF16格式字符串相关开发
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-about-external-string
 
-#### 简介
+## 简介
 
 JSVM-API中新增创建和使用外部字符串的接口。
  
   
 
-#### 基本概念
+## 基本概念
 
 在JSVM-API中，在用户提供的Latin1/UTF16格式字符串所在内存上直接创建对应的JavaScript字符串，和正常的JavaScript字符串能够进行同样的操作。
  
   
 
-#### 接口说明
+## 接口说明
  
+
 | 接口 | 功能说明 |
 | --- | --- |
 | OH_JSVM_CreateExternalStringLatin1 | 使用ISO-8859-1编码的C字符串，创建一个外部的JavaScript字符串。 |
@@ -26,15 +27,15 @@ JSVM-API中新增创建和使用外部字符串的接口。
  
   
 
-#### 使用示例
+## 使用示例
 
 JSVM-API接口开发流程参考[使用JSVM-API实现JS与C/C++语言交互开发流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-process)，本文仅对接口对应C++相关代码进行展示。
  
   
 
-#### 创建外部字符串
+### 创建外部字符串
 
-cpp部分代码
+cpp部分代码：
  
 ```text
 #include <cstring>
@@ -87,7 +88,7 @@ const char *srcCallNative = R"JS(testExternalString();)JS";
  
   
 
-#### 预期输出结果
+## 预期输出结果
 
 ```text
 created latin1 string is : hello

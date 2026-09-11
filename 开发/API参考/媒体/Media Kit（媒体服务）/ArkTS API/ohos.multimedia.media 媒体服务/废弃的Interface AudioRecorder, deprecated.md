@@ -1,9 +1,9 @@
 # 废弃的Interface (AudioRecorder, deprecated)
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-audiorecorder
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 6开始支持，从API version 9开始废弃，建议使用 AVRecorder 替代。
@@ -12,9 +12,10 @@
 音频录制管理接口，用于录制音频媒体，支持音频录制的准备、开始、暂停、恢复、停止、释放和重置等操作，适用于语音备忘录、通话录音、音乐录制等需要录制音频的场景。在调用AudioRecorder的方法前，需要先通过[createAudioRecorder()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-f#mediacreateaudiorecorderdeprecated) 构建一个AudioRecorder实例。
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { media } from '@kit.MediaKit';
@@ -22,9 +23,10 @@ import { media } from '@kit.MediaKit';
 
 
 
-#### prepare(deprecated)
+## prepare(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 prepare(config: AudioRecorderConfig): void
 
@@ -40,6 +42,7 @@ prepare(config: AudioRecorderConfig): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | config | AudioRecorderConfig | 是 | 配置录制的相关参数，包括音频输出URI、编码格式、采样率、声道数、输出格式等。 |
@@ -48,6 +51,7 @@ prepare(config: AudioRecorderConfig): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -74,9 +78,10 @@ audioRecorder.prepare(audioRecorderConfig);
 
 
 
-#### start(deprecated)
+## start(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 start(): void
 
@@ -99,9 +104,10 @@ audioRecorder.start();
 
 
 
-#### pause(deprecated)
+## pause(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pause():void
 
@@ -124,9 +130,10 @@ audioRecorder.pause();
 
 
 
-#### resume(deprecated)
+## resume(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 resume():void
 
@@ -149,9 +156,10 @@ audioRecorder.resume();
 
 
 
-#### stop(deprecated)
+## stop(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stop(): void
 
@@ -174,9 +182,10 @@ audioRecorder.stop();
 
 
 
-#### release(deprecated)
+## release(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(): void
 
@@ -200,9 +209,10 @@ audioRecorder = undefined;
 
 
 
-#### reset(deprecated)
+## reset(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reset(): void
 
@@ -227,9 +237,10 @@ audioRecorder.reset();
 
 
 
-#### on('prepare' | 'start' | 'pause' | 'resume' | 'stop' | 'release' | 'reset')(deprecated)
+## on('prepare' | 'start' | 'pause' | 'resume' | 'stop' | 'release' | 'reset')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'prepare' | 'start' | 'pause' | 'resume' | 'stop' | 'release' | 'reset', callback: () => void): void
 
@@ -242,6 +253,7 @@ on(type: 'prepare' | 'start' | 'pause' | 'resume' | 'stop' | 'release' | 'reset'
 **系统能力：** SystemCapability.Multimedia.Media.AudioRecorder
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -294,9 +306,10 @@ audioRecorder.prepare(audioRecorderConfig);  // 设置录制参数 ，并触发'
 
 
 
-#### on('error')(deprecated)
+## on('error')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'error', callback: ErrorCallback): void
 
@@ -309,6 +322,7 @@ on(type: 'error', callback: ErrorCallback): void
 **系统能力：** SystemCapability.Multimedia.Media.AudioRecorder
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |

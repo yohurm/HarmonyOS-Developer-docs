@@ -1,13 +1,14 @@
 # native_avcodec_audiocodec.h
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avcodec-audiocodec-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 音频编解码Native API的声明。
  
@@ -25,16 +26,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | MediaKeySession | MediaKeySession | MediaKeySession结构。 |
@@ -42,10 +46,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_AVCodec *OH_AudioCodec_CreateByMime(const char *mime, bool isEncoder) | 根据MIME类型创建音频编解码器实例，大多数场景下建议使用此方式。 |
@@ -72,15 +78,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AudioCodec_CreateByMime()
+### OH_AudioCodec_CreateByMime()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVCodec *OH_AudioCodec_CreateByMime(const char *mime, bool isEncoder)
@@ -96,6 +104,7 @@ OH_AVCodec *OH_AudioCodec_CreateByMime(const char *mime, bool isEncoder)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *mime | MIME类型描述字符串，请参阅AVCODEC_MIMETYPE。 |
@@ -104,6 +113,7 @@ OH_AVCodec *OH_AudioCodec_CreateByMime(const char *mime, bool isEncoder)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVCodec * | 返回OH_AVCodec实例的指针。 |
@@ -111,9 +121,10 @@ OH_AVCodec *OH_AudioCodec_CreateByMime(const char *mime, bool isEncoder)
  
   
 
-#### OH_AudioCodec_CreateByName()
+### OH_AudioCodec_CreateByName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVCodec *OH_AudioCodec_CreateByName(const char *name)
@@ -129,6 +140,7 @@ OH_AVCodec *OH_AudioCodec_CreateByName(const char *name)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *name | 音频编解码器名称。 |
@@ -136,6 +148,7 @@ OH_AVCodec *OH_AudioCodec_CreateByName(const char *name)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVCodec * | 返回OH_AVCodec实例的指针。 |
@@ -143,9 +156,10 @@ OH_AVCodec *OH_AudioCodec_CreateByName(const char *name)
  
   
 
-#### OH_AudioCodec_Destroy()
+### OH_AudioCodec_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AudioCodec_Destroy(OH_AVCodec *codec)
@@ -161,6 +175,7 @@ OH_AVErrCode OH_AudioCodec_Destroy(OH_AVCodec *codec)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向OH_AVCodec实例的指针。 |
@@ -168,6 +183,7 @@ OH_AVErrCode OH_AudioCodec_Destroy(OH_AVCodec *codec)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：OH_AVCodec实例为nullptr或无效。 AV_ERR_INVALID_STATE：编解码器服务不可用。 AV_ERR_NO_MEMORY：内部资源已经释放。 AV_ERR_UNKNOWN：发生内部错误，建议检查日志。 |
@@ -175,9 +191,10 @@ OH_AVErrCode OH_AudioCodec_Destroy(OH_AVCodec *codec)
  
   
 
-#### OH_AudioCodec_RegisterCallback()
+### OH_AudioCodec_RegisterCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AudioCodec_RegisterCallback(OH_AVCodec *codec, OH_AVCodecCallback callback, void *userData)
@@ -193,6 +210,7 @@ OH_AVErrCode OH_AudioCodec_RegisterCallback(OH_AVCodec *codec, OH_AVCodecCallbac
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向OH_AVCodec实例的指针。 |
@@ -202,6 +220,7 @@ OH_AVErrCode OH_AudioCodec_RegisterCallback(OH_AVCodec *codec, OH_AVCodecCallbac
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：输入参数为nullptr或无效。 AV_ERR_INVALID_STATE：编解码器服务不可用。 |
@@ -209,9 +228,10 @@ OH_AVErrCode OH_AudioCodec_RegisterCallback(OH_AVCodec *codec, OH_AVCodecCallbac
  
   
 
-#### OH_AudioCodec_Configure()
+### OH_AudioCodec_Configure()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AudioCodec_Configure(OH_AVCodec *codec, const OH_AVFormat *format)
@@ -227,6 +247,7 @@ OH_AVErrCode OH_AudioCodec_Configure(OH_AVCodec *codec, const OH_AVFormat *forma
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向OH_AVCodec实例的指针。 |
@@ -235,6 +256,7 @@ OH_AVErrCode OH_AudioCodec_Configure(OH_AVCodec *codec, const OH_AVFormat *forma
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：输入参数为nullptr或无效。 AV_ERR_INVALID_STATE：编解码器服务不可用。 AV_ERR_OPERATE_NOT_PERMIT：不允许操作，这可能是由于状态不正确或不支持的操作。 AV_ERR_UNKNOWN：发生内部错误，建议检查日志。 |
@@ -242,9 +264,10 @@ OH_AVErrCode OH_AudioCodec_Configure(OH_AVCodec *codec, const OH_AVFormat *forma
  
   
 
-#### OH_AudioCodec_Prepare()
+### OH_AudioCodec_Prepare()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AudioCodec_Prepare(OH_AVCodec *codec)
@@ -260,6 +283,7 @@ OH_AVErrCode OH_AudioCodec_Prepare(OH_AVCodec *codec)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向OH_AVCodec实例的指针。 |
@@ -267,6 +291,7 @@ OH_AVErrCode OH_AudioCodec_Prepare(OH_AVCodec *codec)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：OH_AVCodec实例为nullptr或无效。 AV_ERR_INVALID_STATE：编解码器服务不可用。 AV_ERR_OPERATE_NOT_PERMIT：不允许操作，这可能是由于状态不正确或不支持的操作。 AV_ERR_UNKNOWN：发生内部错误，建议检查日志。 |
@@ -274,9 +299,10 @@ OH_AVErrCode OH_AudioCodec_Prepare(OH_AVCodec *codec)
  
   
 
-#### OH_AudioCodec_Start()
+### OH_AudioCodec_Start()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AudioCodec_Start(OH_AVCodec *codec)
@@ -292,6 +318,7 @@ OH_AVErrCode OH_AudioCodec_Start(OH_AVCodec *codec)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向OH_AVCodec实例的指针。 |
@@ -299,6 +326,7 @@ OH_AVErrCode OH_AudioCodec_Start(OH_AVCodec *codec)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：OH_AVCodec实例为nullptr或无效。 AV_ERR_INVALID_STATE：编解码器服务不可用。 AV_ERR_OPERATE_NOT_PERMIT：不允许操作，这可能是由于状态不正确或不支持的操作。 AV_ERR_UNKNOWN：发生内部错误，建议检查日志。 |
@@ -306,9 +334,10 @@ OH_AVErrCode OH_AudioCodec_Start(OH_AVCodec *codec)
  
   
 
-#### OH_AudioCodec_Stop()
+### OH_AudioCodec_Stop()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AudioCodec_Stop(OH_AVCodec *codec)
@@ -324,6 +353,7 @@ OH_AVErrCode OH_AudioCodec_Stop(OH_AVCodec *codec)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向OH_AVCodec实例的指针。 |
@@ -331,6 +361,7 @@ OH_AVErrCode OH_AudioCodec_Stop(OH_AVCodec *codec)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：OH_AVCodec实例为nullptr或无效。 AV_ERR_INVALID_STATE：编解码器服务不可用。 AV_ERR_OPERATE_NOT_PERMIT：不允许操作，这可能是由于状态不正确或不支持的操作。 AV_ERR_UNKNOWN：发生内部错误，建议检查日志。 |
@@ -338,9 +369,10 @@ OH_AVErrCode OH_AudioCodec_Stop(OH_AVCodec *codec)
  
   
 
-#### OH_AudioCodec_Flush()
+### OH_AudioCodec_Flush()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AudioCodec_Flush(OH_AVCodec *codec)
@@ -356,6 +388,7 @@ OH_AVErrCode OH_AudioCodec_Flush(OH_AVCodec *codec)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向OH_AVCodec实例的指针。 |
@@ -363,6 +396,7 @@ OH_AVErrCode OH_AudioCodec_Flush(OH_AVCodec *codec)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：OH_AVCodec实例为nullptr或无效。 AV_ERR_INVALID_STATE：编解码器服务不可用。 AV_ERR_OPERATE_NOT_PERMIT：不允许操作，这可能是由于状态不正确或不支持的操作。 AV_ERR_UNKNOWN：发生内部错误，建议检查日志。 |
@@ -370,9 +404,10 @@ OH_AVErrCode OH_AudioCodec_Flush(OH_AVCodec *codec)
  
   
 
-#### OH_AudioCodec_Reset()
+### OH_AudioCodec_Reset()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AudioCodec_Reset(OH_AVCodec *codec)
@@ -390,6 +425,7 @@ OH_AVErrCode OH_AudioCodec_Reset(OH_AVCodec *codec)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向OH_AVCodec实例的指针。 |
@@ -397,6 +433,7 @@ OH_AVErrCode OH_AudioCodec_Reset(OH_AVCodec *codec)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：OH_AVCodec实例为nullptr或无效。 AV_ERR_INVALID_STATE：编解码器服务不可用。 |
@@ -404,9 +441,10 @@ OH_AVErrCode OH_AudioCodec_Reset(OH_AVCodec *codec)
  
   
 
-#### OH_AudioCodec_GetOutputDescription()
+### OH_AudioCodec_GetOutputDescription()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVFormat *OH_AudioCodec_GetOutputDescription(OH_AVCodec *codec)
@@ -424,6 +462,7 @@ OH_AVFormat *OH_AudioCodec_GetOutputDescription(OH_AVCodec *codec)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向OH_AVCodec实例的指针。 |
@@ -431,6 +470,7 @@ OH_AVFormat *OH_AudioCodec_GetOutputDescription(OH_AVCodec *codec)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVFormat * | 返回OH_AVFormat句柄指针。 |
@@ -438,9 +478,10 @@ OH_AVFormat *OH_AudioCodec_GetOutputDescription(OH_AVCodec *codec)
  
   
 
-#### OH_AudioCodec_SetParameter()
+### OH_AudioCodec_SetParameter()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AudioCodec_SetParameter(OH_AVCodec *codec, const OH_AVFormat *format)
@@ -458,6 +499,7 @@ OH_AVErrCode OH_AudioCodec_SetParameter(OH_AVCodec *codec, const OH_AVFormat *fo
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向OH_AVCodec实例的指针。 |
@@ -466,6 +508,7 @@ OH_AVErrCode OH_AudioCodec_SetParameter(OH_AVCodec *codec, const OH_AVFormat *fo
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：输入参数为nullptr或无效。 AV_ERR_INVALID_STATE：编解码器服务不可用。 AV_ERR_OPERATE_NOT_PERMIT：不允许操作，这可能是由于状态不正确或不支持的操作。 AV_ERR_UNKNOWN：发生内部错误，建议检查日志。 |
@@ -473,9 +516,10 @@ OH_AVErrCode OH_AudioCodec_SetParameter(OH_AVCodec *codec, const OH_AVFormat *fo
  
   
 
-#### OH_AudioCodec_PushInputBuffer()
+### OH_AudioCodec_PushInputBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AudioCodec_PushInputBuffer(OH_AVCodec *codec, uint32_t index)
@@ -497,6 +541,7 @@ OH_AVErrCode OH_AudioCodec_PushInputBuffer(OH_AVCodec *codec, uint32_t index)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向OH_AVCodec实例的指针。 |
@@ -505,6 +550,7 @@ OH_AVErrCode OH_AudioCodec_PushInputBuffer(OH_AVCodec *codec, uint32_t index)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：输入的index已使用或无效，需使用其他OH_AVCodecOnNeedInputBuffer回调返回的index。 AV_ERR_INVALID_STATE：编解码器状态错误，调用OH_AudioCodec_PushInputBuffer前需确保按顺序成功调用OH_AudioCodec_Configure、OH_AudioCodec_Prepare、OH_AudioCodec_Start。 AV_ERR_UNKNOWN：输入buffer size无效，需确保buffer设置了正确的buffer size和flags。 |
@@ -512,9 +558,10 @@ OH_AVErrCode OH_AudioCodec_PushInputBuffer(OH_AVCodec *codec, uint32_t index)
  
   
 
-#### OH_AudioCodec_FreeOutputBuffer()
+### OH_AudioCodec_FreeOutputBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AudioCodec_FreeOutputBuffer(OH_AVCodec *codec, uint32_t index)
@@ -530,6 +577,7 @@ OH_AVErrCode OH_AudioCodec_FreeOutputBuffer(OH_AVCodec *codec, uint32_t index)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向OH_AVCodec实例的指针。 |
@@ -538,6 +586,7 @@ OH_AVErrCode OH_AudioCodec_FreeOutputBuffer(OH_AVCodec *codec, uint32_t index)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：输入参数为nullptr或无效。缓冲区索引应该由OH_AVCodecOnNewOutputBuffer给出。 AV_ERR_INVALID_STATE：编解码器服务不可用。 AV_ERR_OPERATE_NOT_PERMIT：不允许操作，这可能是由于状态不正确或不支持的操作。 AV_ERR_UNKNOWN：发生内部错误，建议检查日志。 |
@@ -545,9 +594,10 @@ OH_AVErrCode OH_AudioCodec_FreeOutputBuffer(OH_AVCodec *codec, uint32_t index)
  
   
 
-#### OH_AudioCodec_IsValid()
+### OH_AudioCodec_IsValid()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AudioCodec_IsValid(OH_AVCodec *codec, bool *isValid)
@@ -565,6 +615,7 @@ OH_AVErrCode OH_AudioCodec_IsValid(OH_AVCodec *codec, bool *isValid)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向OH_AVCodec实例的指针。 |
@@ -573,6 +624,7 @@ OH_AVErrCode OH_AudioCodec_IsValid(OH_AVCodec *codec, bool *isValid)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：输入参数为nullptr或无效。 |
@@ -580,9 +632,10 @@ OH_AVErrCode OH_AudioCodec_IsValid(OH_AVCodec *codec, bool *isValid)
  
   
 
-#### OH_AudioCodec_SetDecryptionConfig()
+### OH_AudioCodec_SetDecryptionConfig()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AudioCodec_SetDecryptionConfig(OH_AVCodec *codec, MediaKeySession *mediaKeySession,bool secureAudio)
@@ -598,6 +651,7 @@ OH_AVErrCode OH_AudioCodec_SetDecryptionConfig(OH_AVCodec *codec, MediaKeySessio
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCodec *codec | 指向OH_AVCodec实例的指针。 |
@@ -607,6 +661,7 @@ OH_AVErrCode OH_AudioCodec_SetDecryptionConfig(OH_AVCodec *codec, MediaKeySessio
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：OH_AVCodec实例为nullptr或无效，mediaKeySystemInfo实例为nullptr或无效。 AV_ERR_INVALID_STATE：编解码器服务不可用。 AV_ERR_NO_MEMORY：请求内存失败。 |
@@ -614,9 +669,10 @@ OH_AVErrCode OH_AudioCodec_SetDecryptionConfig(OH_AVCodec *codec, MediaKeySessio
  
   
 
-#### OH_AudioCodec_QueryInputBuffer()
+### OH_AudioCodec_QueryInputBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AudioCodec_QueryInputBuffer(struct OH_AVCodec *codec, uint32_t *index, int64_t timeoutUs)
@@ -638,6 +694,7 @@ OH_AVErrCode OH_AudioCodec_QueryInputBuffer(struct OH_AVCodec *codec, uint32_t *
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVCodec *codec | 指向OH_AVCodec实例的指针。 |
@@ -647,6 +704,7 @@ OH_AVErrCode OH_AudioCodec_QueryInputBuffer(struct OH_AVCodec *codec, uint32_t *
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：执行失败，输入参数错误。 AV_ERR_INVALID_STATE：执行失败，状态非法，没有启动编解码器等。 AV_ERR_OPERATE_NOT_PERMIT：执行失败，不允许非同步模式下调用。 AV_ERR_TRY_AGAIN_LATER：执行失败，超时时间内获取不到可用的缓冲区。 |
@@ -654,9 +712,10 @@ OH_AVErrCode OH_AudioCodec_QueryInputBuffer(struct OH_AVCodec *codec, uint32_t *
  
   
 
-#### OH_AudioCodec_GetInputBuffer()
+### OH_AudioCodec_GetInputBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVBuffer *OH_AudioCodec_GetInputBuffer(struct OH_AVCodec *codec, uint32_t index)
@@ -672,6 +731,7 @@ OH_AVBuffer *OH_AudioCodec_GetInputBuffer(struct OH_AVCodec *codec, uint32_t ind
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVCodec *codec | 指向OH_AVCodec实例的指针。 |
@@ -680,6 +740,7 @@ OH_AVBuffer *OH_AudioCodec_GetInputBuffer(struct OH_AVCodec *codec, uint32_t ind
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVBuffer * | 如果执行成功，则返回一个指向OH_AVBuffer实例的指针，否则返回NULL。 |
@@ -687,9 +748,10 @@ OH_AVBuffer *OH_AudioCodec_GetInputBuffer(struct OH_AVCodec *codec, uint32_t ind
  
   
 
-#### OH_AudioCodec_QueryOutputBuffer()
+### OH_AudioCodec_QueryOutputBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AudioCodec_QueryOutputBuffer(struct OH_AVCodec *codec, uint32_t *index, int64_t timeoutUs)
@@ -707,6 +769,7 @@ OH_AVErrCode OH_AudioCodec_QueryOutputBuffer(struct OH_AVCodec *codec, uint32_t 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVCodec *codec | 指向OH_AVCodec实例的指针。 |
@@ -716,6 +779,7 @@ OH_AVErrCode OH_AudioCodec_QueryOutputBuffer(struct OH_AVCodec *codec, uint32_t 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：执行失败，输入参数错误。 AV_ERR_INVALID_STATE：执行失败，状态非法，没有启动编解码器等。 AV_ERR_OPERATE_NOT_PERMIT：执行失败，不允许非同步模式下调用。 AV_ERR_STREAM_CHANGED：解码输出流格式发生变化，可以通过调用OH_AudioCodec_GetOutputDescription接口获取新的流信息。 AV_ERR_TRY_AGAIN_LATER：执行失败，超时时间内获取不到可用的缓冲区。 |
@@ -723,9 +787,10 @@ OH_AVErrCode OH_AudioCodec_QueryOutputBuffer(struct OH_AVCodec *codec, uint32_t 
  
   
 
-#### OH_AudioCodec_GetOutputBuffer()
+### OH_AudioCodec_GetOutputBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVBuffer *OH_AudioCodec_GetOutputBuffer(struct OH_AVCodec *codec, uint32_t index)
@@ -741,6 +806,7 @@ OH_AVBuffer *OH_AudioCodec_GetOutputBuffer(struct OH_AVCodec *codec, uint32_t in
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVCodec *codec | 指向OH_AVCodec实例的指针。 |
@@ -749,6 +815,7 @@ OH_AVBuffer *OH_AudioCodec_GetOutputBuffer(struct OH_AVCodec *codec, uint32_t in
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVBuffer * | 如果执行成功，则返回一个指向OH_AVBuffer实例的指针，否则返回NULL。 |

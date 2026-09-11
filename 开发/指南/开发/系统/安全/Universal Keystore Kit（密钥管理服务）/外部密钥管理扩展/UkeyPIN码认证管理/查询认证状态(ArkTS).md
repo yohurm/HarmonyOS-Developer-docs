@@ -1,19 +1,19 @@
 # 查询认证状态(ArkTS)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-query-authentication-status-arkts
 
 从API 22开始，huksExternalCrypto提供PIN码认证状态查询功能接口。应用可以通过该接口查询PIN码是否认证通过。具体的场景介绍及规格，请参考[UKey PIN码认证介绍及规格](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-ukey-pin-authentication-management-overview)。
 
 
-#### 开发步骤
+## 开发步骤
 1. 通过证书管理系统能力提供的[openAuthorizeDialog](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-certmanagerdialog#certificatemanagerdialogopenauthorizedialog22)获取[keyUri](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-certmanagerdialog#certreference22)，并将其作为resourceId。
 2. 调用查询认证状态接口[getUkeyPinAuthState](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-huksexternalcrypto#huksexternalcryptogetukeypinauthstate)验证PIN码。
 
 
 
-#### 开发案例
+## 开发案例
 
 ```json
 import { huksExternalCrypto } from '@kit.UniversalKeystoreKit';

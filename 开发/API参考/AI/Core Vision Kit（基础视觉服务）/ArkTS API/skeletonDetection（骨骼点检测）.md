@@ -1,6 +1,6 @@
 # skeletonDetection（骨骼点检测）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/core-vision-skeleton-detection-api
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -10,7 +10,8 @@
 **起始版本：** 5.0.0(12)
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -20,7 +21,8 @@ import { visionBase, skeletonDetection } from '@kit.CoreVisionKit';
 
 
 
-#### SkeletonPointType
+## SkeletonPointType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -31,6 +33,7 @@ import { visionBase, skeletonDetection } from '@kit.CoreVisionKit';
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -55,7 +58,8 @@ import { visionBase, skeletonDetection } from '@kit.CoreVisionKit';
 
 
 
-#### SkeletonPoint
+## SkeletonPoint
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -67,6 +71,7 @@ import { visionBase, skeletonDetection } from '@kit.CoreVisionKit';
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | point | visionBase.Point | 否 | 否 | 骨骼点的图像坐标，即它在图像中的x和y位置。 |
@@ -76,7 +81,8 @@ import { visionBase, skeletonDetection } from '@kit.CoreVisionKit';
 
 
 
-#### Skeleton
+## Skeleton
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -88,6 +94,7 @@ import { visionBase, skeletonDetection } from '@kit.CoreVisionKit';
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | boundingBox | visionBase.BoundingBox | 否 | 否 | 骨骼的边界框，也就是所有骨骼点加一起的矩形框。 |
@@ -97,7 +104,8 @@ import { visionBase, skeletonDetection } from '@kit.CoreVisionKit';
 
 
 
-#### SkeletonDetectionResponse
+## SkeletonDetectionResponse
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -109,6 +117,7 @@ import { visionBase, skeletonDetection } from '@kit.CoreVisionKit';
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | skeletons | Array&lt;Skeleton&gt; | 否 | 否 | 包含图片内所有人的人体骨骼点结果集合。 |
@@ -116,7 +125,8 @@ import { visionBase, skeletonDetection } from '@kit.CoreVisionKit';
 
 
 
-#### SkeletonDetector
+## SkeletonDetector
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -136,7 +146,8 @@ import { visionBase, skeletonDetection } from '@kit.CoreVisionKit';
 
 
 
-#### create
+### create
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -152,6 +163,7 @@ static create(): Promise&lt;SkeletonDetector&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;SkeletonDetector&gt; | Promise对象，返回SkeletonDetector实例，用于执行骨骼点检测。 |
@@ -160,6 +172,7 @@ static create(): Promise&lt;SkeletonDetector&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Core Vision Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-core-vision)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -213,7 +226,8 @@ struct Page {
 
 
 
-#### destroy
+### destroy
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -228,6 +242,7 @@ destroy(): Promise&lt;void&gt;
 **起始版本：** 5.0.0(12)
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -280,7 +295,8 @@ struct Page {
 
 
 
-#### process
+### process
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -296,12 +312,14 @@ process(request: visionBase.Request): Promise&lt;SkeletonDetectionResponse&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | visionBase.Request | 是 | 图片实例。骨骼点检测接口仅支持传入一张图片，不支持传入多张图片。 详细内容请参考约束与限制。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -311,6 +329,7 @@ process(request: visionBase.Request): Promise&lt;SkeletonDetectionResponse&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Core Vision Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-core-vision)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

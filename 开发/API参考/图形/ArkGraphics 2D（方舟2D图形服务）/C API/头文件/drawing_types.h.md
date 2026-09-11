@@ -1,15 +1,16 @@
 # drawing_types.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-types-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-文件中定义了用于绘制2d图形的数据类型，包括画布、画笔、画刷、位图和路径。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+文件中定义了用于绘制2D图形的数据类型，包括画布、画笔、画刷、位图和路径。这些数据类型提供了2D图形绘制能力，适用于需要在画布上绑定画笔和画刷绘制各种形状、图片和文字的场景，可以灵活定义路径和位图，帮助开发者高效实现自定义图形绘制、图像处理等功能，满足复杂的2D图形绘制需求。
  
 本模块为单线程模型策略，需要调用方自行管理线程安全和上下文状态的切换。
  
@@ -25,16 +26,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_Drawing_Point2D | OH_Drawing_Point2D | 定义一个二维的坐标点。 |
@@ -59,7 +63,7 @@
 | OH_Drawing_RoundRect | OH_Drawing_RoundRect | 用于描述圆角矩形。 |
 | OH_Drawing_Matrix | OH_Drawing_Matrix | 定义一个矩阵，用于描述坐标变换。 |
 | OH_Drawing_ShaderEffect | OH_Drawing_ShaderEffect | 定义一个着色器，用于描述绘制内容的源颜色。 |
-| OH_Drawing_ShadowLayer | OH_Drawing_ShadowLayer | 定义一个阴影层，用于描述绘制内容的阴影层。 |
+| OH_Drawing_ShadowLayer | OH_Drawing_ShadowLayer | 定义一个阴影层，用于描述绘制内容的阴影效果。 |
 | OH_Drawing_Filter | OH_Drawing_Filter | 定义一个滤波器，用于存储颜色滤波器，蒙版滤波器和图像滤波器。 |
 | OH_Drawing_MaskFilter | OH_Drawing_MaskFilter | 定义蒙版滤波器。 |
 | OH_Drawing_ColorFilter | OH_Drawing_ColorFilter | 定义颜色滤波器，传入一个颜色并返回一个新的颜色。 |
@@ -67,9 +71,9 @@
 | OH_Drawing_FontFeatures | OH_Drawing_FontFeatures | 用于描述字体特征容器。字体特征是字体内置的排版规则，控制字形显示。例如：连字、替代字形、上下标等。 |
 | OH_Drawing_MemoryStream | OH_Drawing_MemoryStream | 用于描述内存流。 |
 | OH_Drawing_FontArguments | OH_Drawing_FontArguments | 用于描述字型参数。 |
-| OH_Drawing_Typeface | OH_Drawing_Typeface | 用于描述字形。 |
+| OH_Drawing_Typeface | OH_Drawing_Typeface | 用于描述字体。 |
 | OH_Drawing_TextBlob | OH_Drawing_TextBlob | 定义一个文本对象，表示将多个文本组合到一个不可变的容器中。每个文本行由字形和位置组成。 |
-| OH_Drawing_Image | OH_Drawing_Image | 定义一个用于描述绘制二维像素数组的图片。 |
+| OH_Drawing_Image | OH_Drawing_Image | 定义一个表示二维像素数组的图片，用于绘制操作。 |
 | OH_Drawing_ImageFilter | OH_Drawing_ImageFilter | 定义图像滤波器，用于对构成图像像素的所有颜色位进行操作。 |
 | OH_Drawing_SamplingOptions | OH_Drawing_SamplingOptions | 定义一个采样选项，用于描述图片、位图等图像的采样方法。 |
 | OH_Drawing_TextBlobBuilder | OH_Drawing_TextBlobBuilder | 定义文本构建器，用于构建文本。 |
@@ -84,10 +88,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_Drawing_ColorFormat | OH_Drawing_ColorFormat | 用于描述位图像素的存储格式。 |
@@ -98,15 +104,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Drawing_ColorFormat
+### OH_Drawing_ColorFormat
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Drawing_ColorFormat
@@ -118,6 +126,7 @@ enum OH_Drawing_ColorFormat
  
 **起始版本：** 8
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | COLOR_FORMAT_UNKNOWN | 未知格式。 |
@@ -130,9 +139,10 @@ enum OH_Drawing_ColorFormat
  
   
 
-#### OH_Drawing_AlphaFormat
+### OH_Drawing_AlphaFormat
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Drawing_AlphaFormat
@@ -144,19 +154,21 @@ enum OH_Drawing_AlphaFormat
  
 **起始版本：** 8
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ALPHA_FORMAT_UNKNOWN | 未知格式。 |
 | ALPHA_FORMAT_OPAQUE | 位图无透明度。 |
-| ALPHA_FORMAT_PREMUL | 每个像素的颜色组件由透明度分量预先乘以。 |
-| ALPHA_FORMAT_UNPREMUL | 每个像素的颜色组件未由透明度分量预先乘以。 |
+| ALPHA_FORMAT_PREMUL | 每个像素的颜色组件已预先乘以透明度分量。 |
+| ALPHA_FORMAT_UNPREMUL | 每个像素的颜色组件未预先乘以透明度分量。 |
  
  
   
 
-#### OH_Drawing_BlendMode
+### OH_Drawing_BlendMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Drawing_BlendMode
@@ -188,6 +200,7 @@ rc : 如果操作3个颜色通道，用rc表示。
  
 **起始版本：** 11
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | BLEND_MODE_CLEAR | 清除模式，r = 0。 |
@@ -205,27 +218,28 @@ rc : 如果操作3个颜色通道，用rc表示。
 | BLEND_MODE_PLUS | r = min(s + d, 1)。 |
 | BLEND_MODE_MODULATE | r = s * d。 |
 | BLEND_MODE_SCREEN | 滤色模式，r = s + d - s * d。 |
-| BLEND_MODE_OVERLAY | 叠加模式。 |
+| BLEND_MODE_OVERLAY | 叠加模式，根据目标像素的亮度，选择性地应用MULTIPLY或SCREEN模式，增强对比度。 |
 | BLEND_MODE_DARKEN | 变暗模式，rc = s + d - max(s * da, d * sa), ra = s + (1 - sa) * d。 |
 | BLEND_MODE_LIGHTEN | 变亮模式，rc = s + d - min(s * da, d * sa), ra = s + (1 - sa) * d。 |
-| BLEND_MODE_COLOR_DODGE | 颜色减淡模式。 |
-| BLEND_MODE_COLOR_BURN | 颜色加深模式。 |
-| BLEND_MODE_HARD_LIGHT | 强光模式。 |
-| BLEND_MODE_SOFT_LIGHT | 柔光模式。 |
+| BLEND_MODE_COLOR_DODGE | 颜色减淡模式，通过减小对比度使目标像素变亮以反映源像素。 |
+| BLEND_MODE_COLOR_BURN | 颜色加深模式，通过增加对比度使目标像素变暗以反映源像素。 |
+| BLEND_MODE_HARD_LIGHT | 强光模式，根据源像素的亮度，选择性地应用MULTIPLY或SCREEN模式。 |
+| BLEND_MODE_SOFT_LIGHT | 柔光模式，根据源像素的亮度，柔和地变亮或变暗目标像素。 |
 | BLEND_MODE_DIFFERENCE | 差值模式，rc = s + d - 2 * (min(s * da, d * sa)), ra = s + (1 - sa) * d。 |
 | BLEND_MODE_EXCLUSION | 排除模式，rc = s + d - two(s * d), ra = s + (1 - sa) * d。 |
 | BLEND_MODE_MULTIPLY | 正片叠底，r = s * (1 - da) + d * (1 - sa) + s * d。 |
-| BLEND_MODE_HUE | 色相模式。 |
-| BLEND_MODE_SATURATION | 饱和度模式。 |
-| BLEND_MODE_COLOR | 颜色模式。 |
-| BLEND_MODE_LUMINOSITY | 亮度模式。 |
+| BLEND_MODE_HUE | 色相模式，使用源像素的色相，目标像素的饱和度和亮度。 |
+| BLEND_MODE_SATURATION | 饱和度模式，使用源像素的饱和度，目标像素的色相和亮度。 |
+| BLEND_MODE_COLOR | 颜色模式，使用源像素的色相和饱和度，目标像素的亮度。 |
+| BLEND_MODE_LUMINOSITY | 亮度模式，使用源像素的亮度，目标像素的色相和饱和度。 |
  
  
   
 
-#### OH_Drawing_TextEncoding
+### OH_Drawing_TextEncoding
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Drawing_TextEncoding
@@ -237,6 +251,7 @@ enum OH_Drawing_TextEncoding
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | TEXT_ENCODING_UTF8 | 单字节，表示UTF-8或ASCII。 |

@@ -1,9 +1,9 @@
 # UIPickerComponent
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-ui-picker-component
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 UIPickerComponent容器是用于实现用户选择操作的组件。它支持从一组有限的选项中让用户进行单选，采用立体滚轮样式提供直观的视觉反馈和流畅的滑动体验。该组件支持选项按需定制，包括文本类型、图片类型和图文组合类型，可根据业务需求提供更丰富的信息展示，可广泛应用于时间选择、日期选择、地区选择、状态选择等多种场景。
 
@@ -12,9 +12,10 @@ UIPickerComponent容器是用于实现用户选择操作的组件。它支持从
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
  - 支持多个子组件。
  - 支持子组件类型：[Text](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text)、[Image](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image)、[Row](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-row)和[SymbolGlyph](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-symbolglyph)。
@@ -27,9 +28,10 @@ UIPickerComponent容器是用于实现用户选择操作的组件。它支持从
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 UIPickerComponent(options?: UIPickerComponentOptions)
 
@@ -43,6 +45,7 @@ UIPickerComponent(options?: UIPickerComponentOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | UIPickerComponentOptions | 否 | 配置UIPickerComponent容器的参数，用于自定义初始选中项等配置。参数缺省时组件占位，但内容显示为空。当需要设置初始选中项时传入此参数。 |
@@ -50,9 +53,10 @@ UIPickerComponent(options?: UIPickerComponentOptions)
 
 
 
-#### UIPickerComponentOptions对象说明
+## UIPickerComponentOptions对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 UIPickerComponent容器的参数说明。
 
@@ -62,6 +66,7 @@ UIPickerComponent容器的参数说明。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | selectedIndex | number | 否 | 是 | 选中项的索引值，用于指定初始选中的选项。 取值范围：[0, 子组件的个数-1]内的整数。不在取值范围内时，使用默认值；设置小数时，使用向下取整后的整数。 默认值：0。当需要组件初始显示特定选项时传入此参数。 说明： 统计子组件的个数时，不包含Row容器内的子组件，Row容器及其子组件共同视为1个子组件。 |
@@ -69,17 +74,19 @@ UIPickerComponent容器的参数说明。
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
 
 
 
-#### canLoop
+### canLoop
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 canLoop(isLoop: Optional&lt;boolean&gt;)
 
@@ -93,6 +100,7 @@ canLoop(isLoop: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isLoop | Optional&lt;boolean&gt; | 是 | 是否可循环滚动。 - true：可循环滚动。 - false：不可循环滚动。 默认值：true 当isLoop的值为undefined时，使用默认值。 当子组件个数小于或等于可见选项数量（由displayedItemCount设置，默认为7）时，无论isLoop设置为true还是false，都不会循环滚动。 |
@@ -100,9 +108,10 @@ canLoop(isLoop: Optional&lt;boolean&gt;)
 
 
 
-#### enableHapticFeedback
+### enableHapticFeedback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableHapticFeedback(enable: Optional&lt;boolean&gt;)
 
@@ -126,6 +135,7 @@ enableHapticFeedback(enable: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | Optional&lt;boolean&gt; | 是 | 设置是否开启触控反馈。 - true：开启触控反馈。 - false：不开启触控反馈。 默认值：true 当enable的值为undefined时，使用默认值。 开启后，是否存在触控反馈取决于系统硬件支持情况。 |
@@ -133,9 +143,10 @@ enableHapticFeedback(enable: Optional&lt;boolean&gt;)
 
 
 
-#### selectionIndicator
+### selectionIndicator
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectionIndicator(style: Optional&lt;PickerIndicatorStyle&gt;)
 
@@ -149,6 +160,7 @@ selectionIndicator(style: Optional&lt;PickerIndicatorStyle&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | Optional&lt;PickerIndicatorStyle&gt; | 是 | 选中项指示器的样式。 默认值： { type: PickerIndicatorType.BACKGROUND, borderRadius: { value:12, unit:LengthUnit.vp }, backgroundColor: 'sys.color.comp_background_tertiary' } 当style的值为undefined时，使用默认值。 |
@@ -156,9 +168,10 @@ selectionIndicator(style: Optional&lt;PickerIndicatorStyle&gt;)
 
 
 
-#### itemHeight
+### itemHeight
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 itemHeight(height: Optional&lt;LengthMetrics&gt;)
 
@@ -174,6 +187,7 @@ itemHeight(height: Optional&lt;LengthMetrics&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | height | Optional&lt;LengthMetrics&gt; | 是 | 选项高度。 单位：与LengthMetrics一致。 取值范围：[40vp, 64vp] 设置小于40vp或大于64vp时，使用默认值40vp。 当height的值为undefined时，使用默认值40vp。 不支持“百分比”类型。 |
@@ -181,9 +195,10 @@ itemHeight(height: Optional&lt;LengthMetrics&gt;)
 
 
 
-#### displayedItemCount
+### displayedItemCount
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 displayedItemCount(count: Optional&lt;number&gt;)
 
@@ -199,6 +214,7 @@ displayedItemCount(count: Optional&lt;number&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | count | Optional&lt;number&gt; | 是 | 可见选项数量。 取值范围：[2, 9]内的整数。 设置小数时，使用向下取整后的整数。 设置偶数时，自动转为大于该值的奇数（例如2变为3、8变为9）。 设置不在取值范围内时，使用默认值7行。 当count的值为undefined时，使用默认值7行。 |
@@ -206,17 +222,19 @@ displayedItemCount(count: Optional&lt;number&gt;)
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)外，还支持以下事件：
 
 
 
-#### onChange
+### onChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onChange(callback: Optional&lt;OnUIPickerComponentCallback&gt;)
 
@@ -234,6 +252,7 @@ onChange(callback: Optional&lt;OnUIPickerComponentCallback&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Optional&lt;OnUIPickerComponentCallback&gt; | 是 | 当选中项发生变化时触发的回调函数。 当callback的值为undefined时，不使用回调函数。 |
@@ -241,9 +260,10 @@ onChange(callback: Optional&lt;OnUIPickerComponentCallback&gt;)
 
 
 
-#### onScrollStop
+### onScrollStop
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onScrollStop(callback: Optional&lt;OnUIPickerComponentCallback&gt;)
 
@@ -261,6 +281,7 @@ onScrollStop(callback: Optional&lt;OnUIPickerComponentCallback&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Optional&lt;OnUIPickerComponentCallback&gt; | 是 | 当选择器滑动停止时触发的回调函数。当callback的值为undefined时，不使用回调函数。 |
@@ -268,9 +289,10 @@ onScrollStop(callback: Optional&lt;OnUIPickerComponentCallback&gt;)
 
 
 
-#### PickerIndicatorStyle对象说明
+## PickerIndicatorStyle对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 选中项指示器样式的参数说明。
 
@@ -279,6 +301,7 @@ onScrollStop(callback: Optional&lt;OnUIPickerComponentCallback&gt;)
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -293,9 +316,10 @@ onScrollStop(callback: Optional&lt;OnUIPickerComponentCallback&gt;)
 
 
 
-#### PickerIndicatorType枚举说明
+## PickerIndicatorType枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置选中项指示器的类型。
 
@@ -305,6 +329,7 @@ onScrollStop(callback: Optional&lt;OnUIPickerComponentCallback&gt;)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | BACKGROUND | 0 | 通过给选中项添加背景，标识选中项。 |
@@ -313,9 +338,10 @@ onScrollStop(callback: Optional&lt;OnUIPickerComponentCallback&gt;)
 
 
 
-#### OnUIPickerComponentCallback
+## OnUIPickerComponentCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnUIPickerComponentCallback = (selectedIndex: number) => void
 
@@ -329,6 +355,7 @@ type OnUIPickerComponentCallback = (selectedIndex: number) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | selectedIndex | number | 是 | 当前选中项的索引值。 取值范围：[0, 子组件的个数-1]内的整数。 |
@@ -336,13 +363,17 @@ type OnUIPickerComponentCallback = (selectedIndex: number) => void
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（切换循环滚动和开关触控反馈）
+
+
+### 示例1（切换循环滚动和开关触控反馈）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 22开始，该示例通过点击按钮的方式实现切换UIPickerComponent容器的循环滚动和开启/关闭触控反馈功能。
 
@@ -409,7 +440,10 @@ struct UIPickerComponentAttrsExample {
 
 
 
-#### 示例2（设置事件回调）
+### 示例2（设置事件回调）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 22开始，该示例基于状态选择实现UIPickerComponent容器的onChange和onScrollStop事件回调。
 
@@ -422,17 +456,21 @@ struct UIPickerComponentEventsExample {
   private dataArray: string[] = ['待办', '进行中', '已完成'];
   @State onChangeDesc: string = '';
   @State onScrollStopDesc: string = '';
+  @State index: number = 0;
 
   build() {
     Column() {
       Row() {
-        UIPickerComponent() {
+        UIPickerComponent({
+          selectedIndex: this.index
+        }) {
           ForEach(this.dataArray, (item: string) => {
             Text(item)
           })
         }
         // 配置onChange事件回调
         .onChange((selectedIndex: number) => {
+          this.index = selectedIndex;
           this.onChangeDesc = 'on change: ' + selectedIndex;
         })
         // 配置onScrollStop事件回调
@@ -459,7 +497,10 @@ struct UIPickerComponentEventsExample {
 
 
 
-#### 示例3（设置选中项索引值）
+### 示例3（设置选中项索引值）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 22开始，该示例实现了设置UIPickerComponent容器的选中项索引值。
 
@@ -514,7 +555,10 @@ struct UIPickerComponentSelectedIndexExample {
 
 
 
-#### 示例4（设置选中项指示器）
+### 示例4（设置选中项指示器）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 22开始，该示例实现了设置UIPickerComponent容器的选中项指示器。具体包括：在使用背景指示器时，设置[PickerIndicatorStyle](#pickerindicatorstyle对象说明)的backgroundColor、borderRadius；在使用分割线指示器时，设置[PickerIndicatorStyle](#pickerindicatorstyle对象说明)的strokeWidth、dividerColor、startMargin、endMargin。
 
@@ -817,7 +861,10 @@ struct UIPickerComponentIndicatorExample {
 
 
 
-#### 示例5（自定义月份选择器）
+### 示例5（自定义月份选择器）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 22开始，该示例使用UIPickerComponent容器嵌套文本子组件的方式实现月份选择器。
 
@@ -868,12 +915,15 @@ struct MonthUIPickerComponentExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/NdqYrTPhQpaCzHoxbyraMQ/zh-cn_image_0000002686088011.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071503Z&HW-CC-Expire=86400&HW-CC-Sign=AE720084D33300E5B059C55D30C04D8B71318E0ABCCC2D7DE4B42B60426BEBC7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/2JUahWgZQNWIR8E_c57ToA/zh-cn_image_0000002717772654.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073115Z&HW-CC-Expire=86400&HW-CC-Sign=7F7052EF22335D122EB3482D0910BC3934D1EECCCFD9F8779E887758A577565E)
 
 
 
 
-#### 示例6（自定义地区选择器）
+### 示例6（自定义地区选择器）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 22开始，该示例使用多列UIPickerComponent容器组合实现地区选择器。
 
@@ -990,12 +1040,15 @@ struct RegionUIPickerComponentExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/fnxQy5GgSaqUON9fHnBDyA/zh-cn_image_0000002685928183.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071503Z&HW-CC-Expire=86400&HW-CC-Sign=10A1C2FFA9FB60911384A1411D9E73F3946AA5A62A93038C094B18A8DF36AC4C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/SUQbAiFJT6uuX23HweL2dQ/zh-cn_image_0000002717612722.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073115Z&HW-CC-Expire=86400&HW-CC-Sign=0605C49A11A935D92EB29EAA513EE8D73543F5DD815C0C773CE9F02D9E41A8B5)
 
 
 
 
-#### 示例7（自定义选项类型）
+### 示例7（自定义选项类型）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 22开始，该示例使用UIPickerComponent容器实现不同选项类型的选择器，包含文本选择器、图片选择器、图文组合选择器。
 
@@ -1091,12 +1144,15 @@ struct UIPickerComponentExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/lQ4iDFHqRfuNnqOYM0ulWw/zh-cn_image_0000002656008506.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071503Z&HW-CC-Expire=86400&HW-CC-Sign=88C53DA66E22E467E4A4A932745472FBC0D2A5F9B9324A2E7AD7EC2777395DD5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/kO-S7OC7R6qVW1jqIPRGiA/zh-cn_image_0000002747292675.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073115Z&HW-CC-Expire=86400&HW-CC-Sign=91BA0528FCC22A219F8D2EB4C6BC4DD3EEE385F2DFCD5B8094B8B84DD7761440)
 
 
 
 
-#### 示例8（自定义时间选择器）
+### 示例8（自定义时间选择器）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 22开始，该示例实现了一个时间选择器，功能包含设置切换是否循环滚动、切换是否显示秒数、切换是否使用24小时制、切换是否显示前导0，还可按照当前系统语言显示对应语言的内容，并根据语言习惯调整各列的显示顺序。
 
@@ -1568,12 +1624,15 @@ struct TimeUIPickerComponentExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/MqSMpew_Sxuv5zmTDMCEGg/zh-cn_image_0000002655848586.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071503Z&HW-CC-Expire=86400&HW-CC-Sign=4ADE311EAFC0C7CA97B50456F89A2CDE1B1FEE9E7C43FEF82A6BF11566F39CBE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/fXMt62PwSWKPcOnvHVeyLA/zh-cn_image_0000002747212591.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073115Z&HW-CC-Expire=86400&HW-CC-Sign=8D78C04486B356470AD43873B653AA43AD1B629AFCA24EBF9272B81BF2BE2196)
 
 
 
 
-#### 示例9（设置选项高度）
+### 示例9（设置选项高度）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[itemHeight](#itemheight)设置UIPickerComponent容器的选项高度。
 
@@ -1601,7 +1660,9 @@ struct UIPickerComponentItemHeightExample {
       Text('当前itemHeight：' + (this.pickerItemHeight ? this.pickerItemHeight.value + 'vp' : '默认值(40vp)'))
         .fontSize(16)
 
-      UIPickerComponent() {
+      UIPickerComponent({
+        selectedIndex: this.selectedIndex
+      }) {
         ForEach(this.dataArray, (item: string) => {
           Text(item)
         })
@@ -1634,12 +1695,15 @@ struct UIPickerComponentItemHeightExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/GGi0pGQuR6epPqNv4tSQ1g/zh-cn_image_0000002686088013.jpg?HW-CC-KV=V1&HW-CC-Date=20260730T071503Z&HW-CC-Expire=86400&HW-CC-Sign=D5DE285CBDC803353B139C531BD301FA1214CBD0CE7E752FF809E0AAAF435E89)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/-Rzq0DFCSYuIpaAnWWSWHA/zh-cn_image_0000002717772656.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T073115Z&HW-CC-Expire=86400&HW-CC-Sign=0E3BFCAFC5B1E07C3287773063048865BD6AA61A670A266919D4D0C551AA39D1)
 
 
 
 
-#### 示例10（设置可见选项数量）
+### 示例10（设置可见选项数量）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[displayedItemCount](#displayeditemcount)设置UIPickerComponent容器的可见选项数量。
 
@@ -1652,6 +1716,7 @@ struct UIPickerComponentItemHeightExample {
 struct UIPickerComponentDisplayedCountExample {
   private dataArray: string[] = [];
   @State visibleCount: number = 7;
+  @State selectedIndex: number = 0;
 
   aboutToAppear(): void {
     for (let i = 1; i <= 12; i++) {
@@ -1664,11 +1729,16 @@ struct UIPickerComponentDisplayedCountExample {
       Text('displayedItemCount: ' + this.visibleCount)
         .fontSize(16)
 
-      UIPickerComponent() {
+      UIPickerComponent({
+        selectedIndex: this.selectedIndex
+      }) {
         ForEach(this.dataArray, (item: string) => {
           Text(item)
         })
       }
+      .onChange((selectedIndex: number) => {
+        this.selectedIndex = selectedIndex
+      })
       .width('70%')
       .displayedItemCount(this.visibleCount)
 
@@ -1700,4 +1770,4 @@ struct UIPickerComponentDisplayedCountExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/d0A-78u0Qnm9i6x_uT-UNQ/zh-cn_image_0000002685928185.jpg?HW-CC-KV=V1&HW-CC-Date=20260730T071503Z&HW-CC-Expire=86400&HW-CC-Sign=194D9BCBB41AC40638C2419234BFA9DF876E0B5E77FE9E189FCEB787F3399129)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/byK5pBUoQm--OiG3XjBtPA/zh-cn_image_0000002717612724.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T073115Z&HW-CC-Expire=86400&HW-CC-Sign=1CC9561CC0AADBFD35054651524C0B2747DFA0D69EBCA503668F8DCC7100342E)

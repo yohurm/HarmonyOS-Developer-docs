@@ -1,6 +1,6 @@
 # LiveViewLockScreenExtensionAbility
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/liveview-lock-screen-ability
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -10,7 +10,8 @@ LiveViewLockScreenExtensionAbility为[锁屏沉浸实况窗](https://developer.h
 **起始版本：** 5.0.0(12)
   
 
-#### 约束限制
+## 约束限制
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -20,7 +21,8 @@ LiveViewLockScreenExtensionAbility为[锁屏沉浸实况窗](https://developer.h
  
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -32,7 +34,8 @@ import { LiveViewLockScreenExtensionAbility } from '@kit.LiveViewKit';
  
   
 
-#### LiveViewLockScreenExtensionAbility
+## LiveViewLockScreenExtensionAbility
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -46,6 +49,7 @@ import { LiveViewLockScreenExtensionAbility } from '@kit.LiveViewKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | context | LiveViewLockScreenExtensionContext | 否 | 否 | LiveViewLockScreenExtensionAbility的上下文环境，继承自ExtensionContext。 |
@@ -53,7 +57,8 @@ import { LiveViewLockScreenExtensionAbility } from '@kit.LiveViewKit';
  
   
 
-#### 示例
+## 示例
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -87,12 +92,14 @@ export default class LiveViewLockScreenExtAbility extends LiveViewLockScreenExte
  
   
 
-#### 附录
+## 附录
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 LiveViewLockScreenExtensionAbility不允许调用的API名单如下。
   
+
 | Kit名称 | 模块名称 |
 | --- | --- |
 | Ability Kit | @ohos.ability.featureAbility (FeatureAbility模块) @ohos.ability.particleAbility (ParticleAbility模块) @ohos.bundle.launcherBundleManager (launcherBundleManager模块) @ohos.continuation.continuationManager (流转/协同管理) |

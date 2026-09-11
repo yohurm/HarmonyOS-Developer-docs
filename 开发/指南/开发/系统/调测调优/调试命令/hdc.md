@@ -1,6 +1,6 @@
 # hdc
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hdc
 
@@ -25,7 +25,7 @@ hdc包含三部分：
 
 
 
-#### 环境准备
+## 环境准备
 
 hdc可以选择以下任意一种方式获取：
 
@@ -37,7 +37,7 @@ hdc支持USB和无线两种连接调试方式。在设备的设置>系统>开发
 
 
 
-#### （可选）命令行直接执行hdc程序
+### （可选）命令行直接执行hdc程序
 
 **安装目录下的调试**
 1. 开发者可以在HarmonyOS SDK的toolchains子目录下执行hdc命令进行设备调试。
@@ -103,7 +103,7 @@ source ~/.zshrc
 
 
 
-#### （可选）服务器配置
+### （可选）服务器配置
 
 配置系统环境变量可修改服务器进程的监听端口、日志打印级别或特性开关等。详细介绍请查看[可选配置项](#可选配置项)章节。
 
@@ -113,17 +113,18 @@ source ~/.zshrc
 
 
 
-#### hdc命令列表
+## hdc命令列表
 
 
 
-#### 全局参数
+### 全局参数
 
 全局参数是指运行hdc命令时，可以添加在hdc和具体执行命令之间的参数。例如，使用-t参数可以选择指定的设备执行命令：
 
 ```bash
 hdc -t connect-key shell echo "Hello world"
 ```
+
 
 | 参数 | 说明 |
 | --- | --- |
@@ -132,18 +133,19 @@ hdc -t connect-key shell echo "Hello world"
 | -s | 可选参数，指定客户端连接服务器时，服务进程的网络监听参数，格式为IP:port。 |
 | -p | 可选参数，绕过对服务进程的查询步骤，用于快速执行客户端命令。 |
 | -m | 可选参数，使用前台启动模式启动服务进程。 |
-| -e | 可选参数，指定在TCP端口转发时，本地监听的IP地址，默认是127.0.0.1。该参数必须和-m一起使用。 使用-e参数指定监听地址时，如果监听地址不是本地回环地址（如127.0.0.1），需注意访问安全问题。 说明：从API version 20开始，支持该接口。 |
+| -e | 可选参数，指定在TCP端口转发时，本地监听的IP地址，默认是127.0.0.1。该参数必须和-m一起使用。 使用-e参数指定监听地址时，如果监听地址不是本地回环地址（如127.0.0.1），需注意访问安全问题。 说明：从API版本20开始，支持该接口。 |
 
 
 
 
-#### 命令列表
+### 命令列表
+
 
 | 命令 | 说明 |
 | --- | --- |
 | list targets | 查询已连接的所有目标设备。 |
 | wait | 等待设备正常连接。 |
-| tmode usb | 3.1.0e版本起已废弃，不会操作设备连接通道，需在设备设置界面通过USB调试开关设置。 |
+| tmode usb | API版本15起已废弃，不会操作设备连接通道，需在设备设置界面通过USB调试开关设置。 |
 | tmode port | 打开设备网络连接通道。 |
 | tmode port close | 关闭设备网络连接通道。 |
 | tconn | 指定连接设备：通过“IP:port”来指定连接的设备。 |
@@ -173,13 +175,13 @@ hdc -t connect-key shell echo "Hello world"
 
 
 
-#### 基本使用方法
+## 基本使用方法
 
 以USB调试方式为例，执行命令前请在设备上开启USB调试功能，用USB线连接设备和电脑。
 
 
 
-#### 查询连接的设备
+### 查询连接的设备
 
 ```bash
 hdc list targets
@@ -187,7 +189,7 @@ hdc list targets
 
 
 
-#### 执行shell命令
+### 执行shell命令
 
 ```bash
 hdc shell echo "Hello world"
@@ -195,9 +197,10 @@ hdc shell echo "Hello world"
 
 
 
-#### shell命令常用调试工具
+### shell命令常用调试工具
 
 hdc支持和其他调试工具配套使用，工具列表如下：
+
 
 | 命令 | 说明 |
 | --- | --- |
@@ -226,7 +229,7 @@ hdc支持和其他调试工具配套使用，工具列表如下：
 
 
 
-#### 获取帮助
+### 获取帮助
 
 显示hdc相关帮助信息，命令格式如下：
 
@@ -235,6 +238,7 @@ hdc -h [verbose]
 hdc help
 ```
 
+
 | 参数名 | 说明 |
 | --- | --- |
 | -h verbose | 显示hdc命令帮助信息。可选参数：verbose，显示详细的帮助信息。 |
@@ -242,6 +246,7 @@ hdc help
 
 
 **返回信息**：
+
 
 | 返回信息 | 说明 |
 | --- | --- |
@@ -260,11 +265,11 @@ hdc help
 
 
 
-#### 设备连接管理
+## 设备连接管理
 
 
 
-#### 查询设备列表
+### 查询设备列表
 
 ```bash
 hdc list targets [-v]
@@ -272,12 +277,14 @@ hdc list targets [-v]
 
 **参数**：
 
+
 | 参数名 | 说明 |
 | --- | --- |
 | -v | 显示设备更多详情。 |
 
 
 **返回信息**：
+
 
 | 返回信息 | 说明 |
 | --- | --- |
@@ -302,13 +309,14 @@ connect-key2            USB     Offline         localhost       hdc
 
 
 
-#### 连接指定的目标设备
+### 连接指定的目标设备
 
 ```bash
 hdc -t [connect-key] [command]
 ```
 
 **参数**：
+
 
 | 参数名 | 说明 |
 | --- | --- |
@@ -321,6 +329,7 @@ hdc -t [connect-key] [command]
 
 
 **返回信息**：
+
 
 | 返回信息 | 说明 |
 | --- | --- |
@@ -350,7 +359,7 @@ hello world!
 
 
 
-#### 等待设备正常连接
+### 等待设备正常连接
 
 ```bash
 hdc wait # 等待设备正常连接。
@@ -359,12 +368,14 @@ hdc -t [connect-key] wait # 等待指定的设备正常连接，connect-key需�
 
 **参数**：
 
+
 | 参数名 | 说明 |
 | --- | --- |
-| -t connect-key | 3.1.0a版本新增参数： 连接单台设备时，为可选参数。 连接多台设备时，为必填参数。 |
+| -t connect-key | API版本12新增参数： 连接单台设备时，为可选参数。 连接多台设备时，为必填参数。 |
 
 
 **返回信息**：
+
 
 | 返回信息 | 说明 |
 | --- | --- |
@@ -381,9 +392,10 @@ $ hdc -t connect-key1 wait # 多设备需使用-t指定连接设备。
 
 
 
-#### USB连接场景
+### USB连接场景
 
 **环境确认**
+
 
 | 确认项 | 正常 | 异常处理 |
 | --- | --- | --- |
@@ -413,7 +425,7 @@ hdc shell
 
 
 
-#### TCP连接场景
+### TCP连接场景
 
 
 ![](assets/hdc/file-20260514131422576-6.png)
@@ -424,6 +436,7 @@ TCP调试功能尚未稳定，建议仅在测试环境中使用。
 
 
 **环境确认**
+
 
 | 确认项 | 正常 | 异常处理 |
 | --- | --- | --- |
@@ -457,7 +470,7 @@ hdc list targets
 
 
 
-#### 远程连接场景
+### 远程连接场景
 
 远程连接场景指客户端（通常是开发者使用的本地电脑）通过网络与服务器（通常是连接了调试设备的服务器或开发机）建立连接，实现客户端对目标设备的远程调试，控制和管理。
 
@@ -471,12 +484,14 @@ hdc list targets
 hdc -s [IP:]port [command]
 ```
 
+
 | 命令 | 说明 |
 | --- | --- |
 | -s | 指定当前服务进程的网络监听参数。 |
 
 
 **参数**：
+
 
 | 参数 | 说明 |
 | --- | --- |
@@ -486,6 +501,7 @@ hdc -s [IP:]port [command]
 
 
 **返回信息**：
+
 
 | 返回信息 | 说明 |
 | --- | --- |
@@ -532,9 +548,10 @@ $ hdc -s IP:8710 [command] # 其中IP为服务器IP，8710为第一步服务器�
 
 
 
-#### USB调试和无线调试切换
+### USB调试和无线调试切换
 
 用于连接模式切换的命令如下表所示：
+
 
 | 命令 | 说明 |
 | --- | --- |
@@ -550,7 +567,7 @@ $ hdc -s IP:8710 [command] # 其中IP为服务器IP，8710为第一步服务器�
 
 
 
-#### 打开设备网络连接通道
+### 打开设备网络连接通道
 
 命令格式如下：
 
@@ -560,12 +577,14 @@ hdc tmode port [port-number]
 
 **参数**：
 
+
 | 参数 | 参数说明 |
 | --- | --- |
 | port-number | 监听连接的网络端口号，范围：1~65535。 |
 
 
 **返回信息**：
+
 
 | 返回信息 | 说明 |
 | --- | --- |
@@ -597,7 +616,7 @@ Set device run mode successful.
 
 
 
-#### 关闭网络连接通道
+### 关闭网络连接通道
 
 命令格式如下：
 
@@ -606,6 +625,7 @@ hdc tmode port close
 ```
 
 **返回信息**：
+
 
 | 返回信息 | 说明 |
 | --- | --- |
@@ -624,7 +644,7 @@ hdc tmode port close
 
 
 
-#### TCP连接设备
+### TCP连接设备
 
 通过TCP连接指定设备，命令格式如下：
 
@@ -634,6 +654,7 @@ hdc tconn IP:port [-remove]
 
 **参数**：
 
+
 | 参数 | 参数说明 |
 | --- | --- |
 | IP:port | 设备的IP地址和端口号。 |
@@ -641,6 +662,7 @@ hdc tconn IP:port [-remove]
 
 
 **返回信息**：
+
 
 | 返回信息 | 说明 |
 | --- | --- |
@@ -661,7 +683,7 @@ $ hdc tconn 192.168.0.1:8888 -remove
 
 
 
-#### 执行交互命令
+## 执行交互命令
 
 ```bash
 hdc shell [-b bundlename] [command]
@@ -669,17 +691,19 @@ hdc shell [-b bundlename] [command]
 
 **参数**：
 
+
 | 参数 | 说明 |
 | --- | --- |
-| -b bundlename | 3.1.0e版本新增参数。指定可调试应用包名。 - 指定command参数时：在该可调试应用数据目录内以非交互式模式执行命令。命令行方式访问应用沙箱。 自3.2.0e版本起，参数新增以下特性： - 缺省command参数时，支持进入可调试应用数据目录的交互式shell会话，默认工作目录即为可调试应用数据目录根路径。 - 缺省[-b bundlename]参数时，默认执行路径为系统根目录。 |
+| -b bundlename | API版本15新增参数。指定可调试应用包名。 - 指定command参数时：在该可调试应用数据目录内以非交互式模式执行命令。命令行方式访问应用沙箱。 自API版本26.0.0起，参数新增以下特性： - 缺省command参数时，支持进入可调试应用数据目录的交互式shell会话，默认工作目录即为可调试应用数据目录根路径。 - 缺省[-b bundlename]参数时，默认执行路径为系统根目录。 |
 | command | 需要在设备上执行的单次命令，不同类型或版本的系统支持的command命令有所差异，可以通过hdc shell ls /system/bin查阅支持的命令列表。当前大多数命令都是由toybox提供，可通过 hdc shell toybox --help 获取命令帮助。 缺省该参数，hdc将会启动一个交互式的shell会话，开发者可以在命令提示符下输入命令，比如 ls、cd、pwd 等。 |
 
 
 > [!NOTE]
-> 使用参数[-b bundlename]指定包名，该包名对应的已安装应用必须满足以下条件：使用调试证书签名，并且已在设备上启动。有关如何申请调试证书及签名可参考： 申请调试证书 。 当设备系统版本和hdc版本均低于3.2.0e时，缺省command参数进入的交互式shell会话默认工作目录仍为系统根目录。建议升级设备系统版本并参考 hdc版本配套表 确认版本兼容性，可通过hdc shell hdcd -v命令查询设备系统版本号。
+> 使用参数[-b bundlename]指定包名，该包名对应的已安装应用必须满足以下条件：使用调试证书签名，并且已在设备上启动。有关如何申请调试证书及签名可参考： 申请调试证书 。 当设备系统版本和hdc版本均低于API版本26.0.0时，缺省command参数进入的交互式shell会话默认工作目录仍为系统根目录。建议升级设备系统版本并参考 hdc版本配套表 确认版本兼容性，可通过hdc shell hdcd -v命令查询设备系统版本号。
 
 
 **返回信息**：
+
 
 | 返回信息 | 说明 |
 | --- | --- |
@@ -722,7 +746,8 @@ $ pwd
 
 
 
-#### 应用管理
+## 应用管理
+
 
 | 命令 | 说明 |
 | --- | --- |
@@ -732,7 +757,7 @@ $ pwd
 
 
 
-#### 安装应用文件
+### 安装应用文件
 
 应用安装功能在设备端集成bm模块[安装命令（install）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bm-tool#安装命令install)，简化了安装流程，开发者可以在电脑端直接执行命令完成应用安装。命令格式如下：
 
@@ -742,20 +767,22 @@ hdc install [-cwd path|-r|-s|-w waitingTime|-u userId|-p|-g|-h] src
 
 **参数**：
 
+
 | 参数名 | 说明 |
 | --- | --- |
-| src | 应用安装包的文件路径。支持安装HAP、应用内HSP。从API version 22开始，支持安装APP应用包。 |
+| src | 应用安装包的文件路径。支持安装HAP、应用内HSP。从API版本22开始，支持安装APP应用包。 |
 | -cwd | 修改工作目录。 用于在应用安装时，切换src到指定path。例如，初始安装应用为test.hap，所在目录为C:\，实际安装应用文件路径为C:\test.hap；如果使用-cwd "D:\"，实际安装应用文件路径为D:\test.hap。 |
 | -r | 可选参数，覆盖安装一个HAP/HSP。默认缺省，缺省时表示覆盖安装。 |
 | -s | 安装应用HSP时为必选参数，其他场景为可选参数。用于指定待安装应用间HSP的路径。指定目录的时候，每个路径目录下只能存在一个HSP。 |
 | -w | 可选参数，安装HAP时指定bm工具等待时间，最短的等待时长为180s，最长的等待时长为600s，默认缺省为180s。 |
 | -u | 可选参数，指定用户，默认在当前活跃用户下安装应用。 |
-| -p | 可选参数，指定待安装的HAP/HSP路径，多HAP/HSP应用可指定多HAP/HSP所在文件夹路径。从API version 22开始，支持指定待安装的APP路径，也可指定只存在一个APP的文件夹路径。 |
-| -g | 可选参数，安装调试包时支持用户授权和手动设置授权。 仅对debug版本应用生效，debug应用更新为release应用时取消授予的用户授权和手动设置授权。 说明：从API version 24开始，支持该参数。 |
+| -p | 可选参数，指定待安装的HAP/HSP路径，多HAP/HSP应用可指定多HAP/HSP所在文件夹路径。从API版本22开始，支持指定待安装的APP路径，也可指定只存在一个APP的文件夹路径。 |
+| -g | 可选参数，安装调试包时支持用户授权和手动设置授权。 仅对debug版本应用生效，debug应用更新为release应用时取消授予的用户授权和手动设置授权。 说明：从API版本24开始，支持该参数。 |
 | -h | 可选参数，显示bm模块安装命令（install）帮助信息。 |
 
 
 **返回信息**：
+
 
 | 返回信息 | 说明 |
 | --- | --- |
@@ -766,7 +793,7 @@ hdc install [-cwd path|-r|-s|-w waitingTime|-u userId|-p|-g|-h] src
 **使用方法**：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/nHX2Twj2Spe6NUIjiaRzng/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095817Z&HW-CC-Expire=86400&HW-CC-Sign=25E7380410247764F8EECA83B11B98B250A3C29D771D2DA28FEF2FED63BABFFA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/hXQ0omNSSwyWO7ibiKIj6Q/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072754Z&HW-CC-Expire=86400&HW-CC-Sign=33E2380F352A1723D8ED29A8B59EC9E35D59A2479B74558AF9E7019B6AE56B77)
 
 
 执行install命令使用bm模块命令参数，对-w和-u参数需参数值组合使用的情况，需将参数变量和参数值放在引号内使用，如"-w 180"，"-u 100"，防止参数解析异常导致命令执行失败。
@@ -817,7 +844,7 @@ AppMod finish
 
 
 
-#### 卸载应用
+### 卸载应用
 
 应用卸载功能在设备端集成bm模块[卸载命令（uninstall）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bm-tool#卸载命令uninstall)，简化了卸载流程，开发者可以在电脑端直接执行命令完成应用卸载。命令格式如下：
 
@@ -827,9 +854,10 @@ hdc uninstall [-n|-k|-s|-h] bundlename
 
 **参数**：
 
+
 | 参数名 | 说明 |
 | --- | --- |
-| bundlename | 应用安装包。 |
+| bundlename | 应用包名。 |
 | -n | 可选参数，指定Bundle名称卸载应用。 |
 | -k | 可选参数，卸载应用时保存应用数据。默认卸载应用时不保存应用数据。 |
 | -s | 根据场景判断，卸载应用间HSP时必选参数，其他场景为可选参数。卸载指定的共享库。 |
@@ -837,6 +865,7 @@ hdc uninstall [-n|-k|-s|-h] bundlename
 
 
 **返回信息**：
+
 
 | 返回信息 | 说明 |
 | --- | --- |
@@ -870,7 +899,8 @@ AppMod finish
 
 
 
-#### 文件传输
+## 文件传输
+
 
 | 命令 | 说明 |
 | --- | --- |
@@ -880,7 +910,7 @@ AppMod finish
 
 
 
-#### 本地发送文件至远端设备
+### 本地发送文件至远端设备
 
 命令格式如下：
 
@@ -890,20 +920,22 @@ hdc file send [-a|-sync|-z|-m|-cwd path|-b bundlename] SOURCE DEST
 
 **参数**：
 
+
 | 参数名 | 说明 |
 | --- | --- |
 | SOURCE | 本地待传输的文件路径。 |
-| DEST | 远程目标文件路径。 从API version 21开始，媒体库文件支持通过hdc进行部分操作（低版本使用会提示[Fail]Error opening file: ...）。 媒体库文件路径：/mnt/data/&lt;uid&gt;/media_fuse/Photo/目录及其子目录，&lt;uid&gt;为当前用户的id。 通过hdc对媒体库操作指导参见mediatool。 |
+| DEST | 远程目标文件路径。 从API版本21开始，媒体库文件支持通过hdc进行部分操作（低版本使用会提示[Fail]Error opening file: ...）。 媒体库文件路径：/mnt/data/&lt;uid&gt;/media_fuse/Photo/目录及其子目录，&lt;uid&gt;为当前用户的id。 通过hdc对媒体库操作指导参见mediatool。 |
 | -a | 保留文件修改时间戳。 |
 | -sync | 只传输文件mtime有更新的文件。 mtime（modified timestamp）：修改后的时间戳。 |
 | -z | 通过LZ4格式压缩传输，此功能未开放，请勿使用。 |
 | -m | 文件传输时同步文件DAC权限，uid，gid，MAC权限。 DAC（Discretionary Access Control）：自主访问控制， uid（User identifier）：用户标识符（或用户ID）， gid（Group identifier）：组标识符（或组ID）， MAC（Mandatory Access Control）：强制访问控制（或非自主访问控制）。 |
 | -cwd | 修改工作目录。 用于在文件传输时，切换SOURCE到指定path。例如，初始发送文件为test，所在目录为/data，实际发送文件路径为/data/test；如果使用-cwd "/user/"，实际发送文件路径为/user/test。 |
-| -b | 3.1.0e版本新增参数（低版本使用会提示[Fail]Unknown file option: -b），用于指定可调试应用包名。 使用方法可参考通过命令往应用沙箱目录中发送文件。 |
+| -b | API版本15新增参数（低版本使用会提示[Fail]Unknown file option: -b），用于指定可调试应用包名。 使用方法可参考通过命令往应用沙箱目录中发送文件。 |
 | bundlename | 指定可调试应用包名。 |
 
 
 **返回信息**：
+
 
 | 返回信息 | 说明 |
 | --- | --- |
@@ -929,7 +961,7 @@ $ hdc file send D:\dest\新建目录 /mnt/data/100/media_fuse/Photo/相机/ # �
 
 
 
-#### 接收远端设备文件至本地
+### 接收远端设备文件至本地
 
 命令格式如下：
 
@@ -939,20 +971,22 @@ hdc file recv [-a|-sync|-z|-m|-cwd path|-b bundlename] DEST SOURCE
 
 **参数**：
 
+
 | 参数名 | 说明 |
 | --- | --- |
 | SOURCE | 本地待接收的文件路径。 |
-| DEST | 远程待传输的文件路径。 从API version 21开始，媒体库文件支持通过hdc进行部分操作（低版本使用会提示[Fail]Error opening file: ...）。 媒体库文件路径：/mnt/data/&lt;uid&gt;/media_fuse/Photo/目录及其子目录，&lt;uid&gt;为当前用户的id。 媒体库操作更多信息参见mediatool。 |
+| DEST | 远程待传输的文件路径。 从API版本21开始，媒体库文件支持通过hdc进行部分操作（低版本使用会提示[Fail]Error opening file: ...）。 媒体库文件路径：/mnt/data/&lt;uid&gt;/media_fuse/Photo/目录及其子目录，&lt;uid&gt;为当前用户的id。 媒体库操作更多信息参见mediatool。 |
 | -a | 保留文件修改时间戳。 |
 | -sync | 只传输文件mtime有更新的文件。 mtime（modified timestamp）：修改后的时间戳。 |
 | -z | 通过LZ4格式压缩传输，此功能未开放，请勿使用。 |
 | -m | 文件传输时同步文件DAC权限，uid，gid，MAC权限。 DAC（Discretionary Access Control）：自主访问控制， uid（User identifier）：用户标识符（或用户ID）， gid（Group identifier）：组标识符（或组ID）， MAC（Mandatory Access Control）：强制访问控制（或非自主访问控制）。 |
 | -cwd | 修改工作目录。 用于在文件传输时，切换SOURCE到指定path。例如，初始接收文件目录为/data/，如果使用-cwd "/user/"，实际接收文件目录为/user/。 |
-| -b | 3.1.0e版本新增参数，用于传输指定的可调试应用进程应用数据目录下的文件。 使用方法可参考从沙箱目录中下载文件到本地计算机。 |
+| -b | API版本15新增参数，用于传输指定的可调试应用进程应用数据目录下的文件。 使用方法可参考从沙箱目录中下载文件到本地计算机。 |
 | bundlename | 可调试应用进程的包名。 |
 
 
 **返回信息**：
+
 
 | 返回信息 | 说明 |
 | --- | --- |
@@ -977,12 +1011,13 @@ FileTransfer finish, Size:xxx, File...
 ```
 
 > [!TIP]
-> 使用参数[-b bundlename]指定包名，应满足条件：指定包名的已安装应用为“使用调试证书签名的应用”且在设备上已启动，如何申请调试证书及签名可参考： 申请调试证书 。 版本更新说明 ：从3.1.0a版本开始，支持使用中文字符作为文件传输命令参数，便于多语言环境下使用。
+> 使用参数[-b bundlename]指定包名，应满足条件：指定包名的已安装应用为“使用调试证书签名的应用”且在设备上已启动，如何申请调试证书及签名可参考： 申请调试证书 。 版本更新说明 ：从API版本12开始，支持使用中文字符作为文件传输命令参数，便于多语言环境下使用。
 
 
 
 
-#### 端口转发
+## 端口转发
+
 
 | 命令 | 说明 |
 | --- | --- |
@@ -998,7 +1033,7 @@ FileTransfer finish, Size:xxx, File...
 
 
 
-#### 查询端口转发任务列表
+### 查询端口转发任务列表
 
 查询所有的正向端口转发任务和反向端口转发任务，命令格式如下：
 
@@ -1007,6 +1042,7 @@ hdc fport ls
 ```
 
 **返回信息**：
+
 
 | 返回信息 | 说明 |
 | --- | --- |
@@ -1025,7 +1061,7 @@ connect-key tcp:1234 tcp:1080 [Forward]
 
 
 
-#### 创建正向端口转发任务
+### 创建正向端口转发任务
 
 设置正向端口转发任务，将指定的“电脑端端口”转发到“设备端端口”，命令格式如下：
 
@@ -1034,6 +1070,7 @@ hdc fport localnode remotenode
 ```
 
 **返回信息**：
+
 
 | 返回信息 | 说明 |
 | --- | --- |
@@ -1057,7 +1094,7 @@ Forwardport result:OK
 
 
 
-#### 创建反向端口转发任务
+### 创建反向端口转发任务
 
 设置反向端口转发任务，系统将指定的“设备端口”转发到“主机端口”，命令格式如下：
 
@@ -1066,6 +1103,7 @@ hdc rport remotenode localnode
 ```
 
 **返回信息**：
+
 
 | 返回信息 | 说明 |
 | --- | --- |
@@ -1085,7 +1123,7 @@ Forwardport result:OK
 
 
 
-#### 删除端口转发任务
+### 删除端口转发任务
 
 删除指定的正向端口转发任务或反向端口转发任务，命令格式如下：
 
@@ -1099,12 +1137,14 @@ hdc fport rm taskstr
 
 **参数**：
 
+
 | 参数 | 说明 |
 | --- | --- |
 | taskstr | 端口转发任务，形如 tcp:XXXX tcp:XXXX。 |
 
 
 **返回信息**：
+
 
 | 返回信息 | 说明 |
 | --- | --- |
@@ -1121,7 +1161,8 @@ Remove forward ruler success, ruler:tcp:1234 tcp:1080
 
 
 
-#### 服务进程管理
+## 服务进程管理
+
 
 | 命令 | 说明 |
 | --- | --- |
@@ -1135,7 +1176,7 @@ Remove forward ruler success, ruler:tcp:1234 tcp:1080
 
 
 
-#### 启动服务
+### 启动服务
 
 启动hdc服务进程，命令格式如下：
 
@@ -1144,6 +1185,7 @@ hdc start [-r]
 ```
 
 **返回信息**：
+
 
 | 返回信息 | 说明 |
 | --- | --- |
@@ -1162,7 +1204,7 @@ hdc start -r # 服务进程启动状态下，触发服务进程重新启动。
 
 
 
-#### 终止服务
+### 终止服务
 
 命令格式如下：
 
@@ -1171,6 +1213,7 @@ hdc kill [-r]
 ```
 
 **返回信息**：
+
 
 | 返回信息 | 说明 |
 | --- | --- |
@@ -1190,7 +1233,7 @@ Kill server finish
 
 
 
-#### 重连USB设备
+### 重连USB设备
 
 对已连接且由本机hdc服务进程管理的USB目标设备，重置会话并触发USB重新枚举。
 
@@ -1202,12 +1245,14 @@ hdc reconnect connect-key
 
 **参数**：
 
+
 | 参数 | 说明 |
 | --- | --- |
 | connect-key | 目标设备的USB连接标识符，可通过hdc list targets查询。 |
 
 
 **返回信息**：
+
 
 | 返回信息 | 说明 |
 | --- | --- |
@@ -1229,7 +1274,7 @@ Reconnecting connect-key ...
 
 
 
-#### 快速执行命令
+### 快速执行命令
 
 绕过对服务进程的查询步骤，用于快速执行客户端命令。服务未启动时执行命令不会重新启动服务，使用参数前确保服务已正常启动。命令格式如下：
 
@@ -1239,12 +1284,14 @@ hdc -p [command]
 
 **参数**：
 
+
 | 参数 | 说明 |
 | --- | --- |
 | command | hdc支持的命令。 |
 
 
 **返回信息**：
+
 
 | 返回信息 | 说明 |
 | --- | --- |
@@ -1268,7 +1315,7 @@ connect-key2
 
 
 
-#### 前台启动服务
+### 前台启动服务
 
 使用前台启动模式启动服务进程，命令格式如下：
 
@@ -1277,6 +1324,7 @@ hdc -m
 ```
 
 **返回信息**：
+
 
 | 返回信息 | 说明 |
 | --- | --- |
@@ -1301,7 +1349,8 @@ $ hdc -e 0.0.0.0 -m # 指定端口转发本地监听IP地址为0.0.0.0并启动�
 
 
 
-#### 设备操作
+## 设备操作
+
 
 | 命令 | 说明 |
 | --- | --- |
@@ -1314,7 +1363,7 @@ $ hdc -e 0.0.0.0 -m # 指定端口转发本地监听IP地址为0.0.0.0并启动�
 
 
 
-#### 打印设备端日志
+### 打印设备端日志
 
 命令格式如下：
 
@@ -1324,12 +1373,14 @@ hdc hilog [-h]
 
 **参数**：
 
+
 | 参数 | 说明 |
 | --- | --- |
 | -h | hilog支持的参数，可通过hdc hilog -h查阅支持的参数列表。 |
 
 
 **返回信息**：
+
 
 | 返回信息 | 说明 |
 | --- | --- |
@@ -1349,7 +1400,7 @@ Usage:
 
 
 
-#### 显示设备已打开应用的进程pid
+### 显示设备已打开应用的进程pid
 
 命令格式如下：
 
@@ -1358,6 +1409,7 @@ hdc jpid
 ```
 
 **返回信息**：
+
 
 | 返回信息 | 说明 |
 | --- | --- |
@@ -1376,7 +1428,7 @@ $ hdc jpid
 
 
 
-#### 实时显示设备已打开应用的进程pid和应用名
+### 实时显示设备已打开应用的进程pid和应用名
 
 实时显示设备上已打开应用的进程pid和应用名称，命令格式如下：
 
@@ -1386,6 +1438,7 @@ hdc track-jpid [-a|-p]
 
 **参数**：
 
+
 | 参数 | 说明 |
 | --- | --- |
 | 不加参数 | 只显示已打开debug版本应用的进程pid和应用包名。 |
@@ -1394,6 +1447,7 @@ hdc track-jpid [-a|-p]
 
 
 **返回信息**：
+
 
 | 返回信息 | 说明 |
 | --- | --- |
@@ -1415,7 +1469,7 @@ $ hdc track-jpid -p
 
 
 
-#### 重启目标设备
+### 重启目标设备
 
 命令格式如下：
 
@@ -1425,6 +1479,7 @@ hdc target boot [MODE]
 ```
 
 **参数**：
+
 
 | 参数名 | 说明 |
 | --- | --- |
@@ -1444,7 +1499,8 @@ hdc target boot shutdown     # 关机。
 
 
 
-#### 安全相关命令
+## 安全相关命令
+
 
 | 命令 | 说明 |
 | --- | --- |
@@ -1458,6 +1514,7 @@ hdc keygen FILE
 ```
 
 **参数**：
+
 
 | 参数 | 说明 |
 | --- | --- |
@@ -1473,7 +1530,8 @@ $ hdc keygen key
 
 
 
-#### 查询hdc版本号
+## 查询hdc版本号
+
 
 | 命令 | 说明 |
 | --- | --- |
@@ -1484,15 +1542,16 @@ $ hdc keygen key
 
 
 
-#### 查询hdc客户端进程版本
+### 查询hdc客户端进程版本
 
-查询hdc客户端进程的版本信息，命令格式如下：
+查询hdc客户端进程的版本信息，详细说明参考[hdc版本配套表](#hdc版本配套表)，命令格式如下：
 
 ```bash
 hdc -v
 ```
 
 **返回信息**：
+
 
 | 返回信息 | 说明 |
 | --- | --- |
@@ -1508,15 +1567,16 @@ Ver: 3.1.0e
 
 
 
-#### 查询hdc服务进程版本
+### 查询hdc服务进程版本
 
-查询hdc服务进程的版本信息，命令格式如下：
+查询hdc服务进程的版本信息，详细说明参考[hdc版本配套表](#hdc版本配套表)，命令格式如下：
 
 ```bash
 hdc version
 ```
 
 **返回信息**：
+
 
 | 返回信息 | 说明 |
 | --- | --- |
@@ -1532,7 +1592,7 @@ Ver: 3.1.0e
 
 
 
-#### 查询客户端和服务器进程版本
+### 查询客户端和服务器进程版本
 
 命令格式如下：
 
@@ -1541,6 +1601,7 @@ hdc checkserver
 ```
 
 **返回信息**：
+
 
 | 返回信息 | 说明 |
 | --- | --- |
@@ -1556,7 +1617,7 @@ Client version: Ver: 3.1.0e, Server version: Ver: 3.1.0e
 
 
 
-#### 导出系统信息
+## 导出系统信息
 
 命令格式如下：
 
@@ -1566,12 +1627,14 @@ hdc bugreport [FILE]
 
 **参数**：
 
+
 | 参数 | 说明 |
 | --- | --- |
 | FILE | 可选参数，指定系统信息存储文件名。可指定存储目录，默认存储到当前工作目录。 |
 
 
 **返回信息**：
+
 
 | 返回信息 | 说明 |
 | --- | --- |
@@ -1594,11 +1657,11 @@ Manufacture: default
 
 
 
-#### hdc调试日志
+## hdc调试日志
 
 
 
-#### 服务器进程日志
+### 服务器进程日志
 
 **指定运行时日志等级**
 
@@ -1609,6 +1672,7 @@ hdc -l [level] [command]
 ```
 
 **参数**：
+
 
 | 参数 | 说明 |
 | --- | --- |
@@ -1621,6 +1685,7 @@ hdc -l [level] [command]
 
 
 **返回信息**：
+
 
 | 返回信息 | 说明 |
 | --- | --- |
@@ -1663,6 +1728,7 @@ hdc -l 5 start
 
 收集到的完整日志存放路径如下：
 
+
 | 平台 | 路径 | 备注 |
 | --- | --- | --- |
 | Windows | %temp%\ | 实际路径参考：C:\Users\用户名\AppData\Local\Temp （实际使用请替换用户名变量）。 |
@@ -1671,6 +1737,7 @@ hdc -l 5 start
 
 
 日志文件类型包括：
+
 
 | 日志类型 | 日志名称格式 | 日志用途 | 备注 |
 | --- | --- | --- | --- |
@@ -1682,7 +1749,7 @@ hdc -l 5 start
 
 
 
-#### 设备端日志
+### 设备端日志
 
 使用hilog日志工具获取对应日志，命令如下：
 
@@ -1695,7 +1762,8 @@ hdc file recv /data/log/hilog {local_path}            # 获取hilog已落盘日�
 
 
 
-#### 子服务器管理
+## 子服务器管理
+
 
 | 命令 | 说明 |
 | --- | --- |
@@ -1709,7 +1777,7 @@ hdc file recv /data/log/hilog {local_path}            # 获取hilog已落盘日�
 
 
 
-#### 启动子服务器
+### 启动子服务器
 
 将指定USB设备与当前电脑端服务器连接断开，然后启动一个新的子服务器进程，并将USB设备连接到子服务器进程。命令格式如下：
 
@@ -1721,6 +1789,7 @@ hdc spawn-sub -i connect-key -o [IP:]port
 
 **参数**：
 
+
 | 参数 | 说明 |
 | --- | --- |
 | connect-key | 指定子服务器连接的USB设备标识符。 |
@@ -1729,6 +1798,7 @@ hdc spawn-sub -i connect-key -o [IP:]port
 
 
 **返回信息**：
+
 
 | 返回信息 | 说明 |
 | --- | --- |
@@ -1752,7 +1822,7 @@ Subserver connected successfully
 
 
 
-#### 终止子服务器
+### 终止子服务器
 
 将拉起的所有子服务器进程终止，命令格式如下：
 
@@ -1761,6 +1831,7 @@ hdc killall-sub
 ```
 
 **返回信息**：
+
 
 | 返回信息 | 说明 |
 | --- | --- |
@@ -1776,11 +1847,11 @@ Kill subservers finish
 
 
 
-#### 可选配置项
+## 可选配置项
 
 
 
-#### OHOS_HDC_SERVER_PORT
+### OHOS_HDC_SERVER_PORT
 
 默认值：8710。
 
@@ -1792,7 +1863,7 @@ Kill subservers finish
 
 
 
-#### OHOS_HDC_LOG_LEVEL
+### OHOS_HDC_LOG_LEVEL
 
 默认值：3。
 
@@ -1800,7 +1871,7 @@ Kill subservers finish
 
 
 
-#### OHOS_HDC_HEARTBEAT
+### OHOS_HDC_HEARTBEAT
 
 默认：心跳功能开启。
 
@@ -1814,7 +1885,7 @@ Kill subservers finish
 
 
 
-#### OHOS_HDC_CMD_RECORD
+### OHOS_HDC_CMD_RECORD
 
 默认：hdc命令录制关闭。
 
@@ -1822,9 +1893,10 @@ Kill subservers finish
 
 设置为"1"表示开启命令录制功能；不设置或者设置为其它数字表示关闭命令录制功能。
 
-从API version 20开始，支持该参数。
+从API版本20开始，支持该参数。
 
 录制日志的存放路径如下：
+
 
 | 平台 | 路径 | 备注 |
 | --- | --- | --- |
@@ -1835,7 +1907,7 @@ Kill subservers finish
 
 
 
-#### OHOS_HDC_ENCRYPT_CHANNEL
+### OHOS_HDC_ENCRYPT_CHANNEL
 
 默认：通道加密功能关闭。
 
@@ -1843,7 +1915,7 @@ Kill subservers finish
 
 设置为"1"表示开启TCP连接的通道加密功能；不设置或者设置为其它数字表示关闭通道加密功能。
 
-从API version 20开始，支持该参数。
+从API版本20开始，支持该参数。
 
 > [!NOTE]
 > 服务器进程运行时默认监听电脑端的8710端口，可通过设置系统环境变量OHOS_HDC_SERVER_PORT自定义监听的端口号。
@@ -1851,7 +1923,7 @@ Kill subservers finish
 
 
 
-#### OHOS_HDC_SUBSERVER_LOG_FILE
+### OHOS_HDC_SUBSERVER_LOG_FILE
 
 默认：不开启电脑端子服务进程的日志落盘。
 
@@ -1867,9 +1939,10 @@ Kill subservers finish
 
 
 
-#### 环境变量配置方法
+### 环境变量配置方法
 
 以配置OHOS_HDC_LOG_LEVEL值为5举例，介绍环境变量配置方法，更详细的步骤可参考[环境准备](#环境准备)。
+
 
 | 操作系统 | 配置方法 |
 | --- | --- |
@@ -1880,7 +1953,8 @@ Kill subservers finish
 
 
 
-#### hdc版本配套表
+## hdc版本配套表
+
 
 | hdc版本 | API版本 | 新增特性 |
 | --- | --- | --- |
@@ -1891,7 +1965,7 @@ Kill subservers finish
 
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/oDOXL9n-QayzRSDBX5rcNw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095817Z&HW-CC-Expire=86400&HW-CC-Sign=0390987238E149B0EE9DCF3F7742850BBA23984762AE4E0A82BE860F65A6C1C1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/CNuiOQGdStayjOdC2-7aEg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072754Z&HW-CC-Expire=86400&HW-CC-Sign=ECDDCDD6875CA5F12697FDB8728FB10270784D66F175DFC9648B98FCCB7CA112)
 
 
 如果开发者当前运行的hdc版本较低，某些功能存在兼容性问题，需要根据功能特性提升版本时，可参考对应API版本说明下载最新版本。
@@ -1900,11 +1974,11 @@ Kill subservers finish
 
 
 
-#### 常见问题
+## 常见问题
 
 
 
-#### 设备无法识别
+### 设备无法识别
 
 **现象描述**
 
@@ -2022,7 +2096,7 @@ netstat -an |findstr 8710
 
 
 
-#### Linux和MacOS系统非管理员权限运行hdc提示无法找到设备
+### Linux和MacOS系统非管理员权限运行hdc提示无法找到设备
 
 **现象描述**
 
@@ -2074,7 +2148,7 @@ sudo udevadm control --reload
 
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/hB1kKDdpThO_k3WDOsxabg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095817Z&HW-CC-Expire=86400&HW-CC-Sign=447A9A108370066CA49EBD2727A149A92BC423C1BB589AA10060748EC220B8AE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/Hor8GF9yQ6qQkw61iymTjw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072754Z&HW-CC-Expire=86400&HW-CC-Sign=BE5AB002D82A1114F43A391AA51A4FE018D58A199E174C20BF38EC619C48FAA5)
 
 
 开启非管理员角色的USB设备操作权限可以解决在Linux环境在非管理员权限下使用hdc因权限不足无法找到设备的情况。但权限最大化可能存在潜在安全问题，请开发者根据使用场景自行评估是否开启此权限。
@@ -2083,7 +2157,7 @@ sudo udevadm control --reload
 
 
 
-#### hdc无法运行
+### hdc无法运行
 
 **现象描述**
 
@@ -2101,32 +2175,32 @@ sudo udevadm control --reload
 
 
 
-#### 使用hdc file send/recv传输中文文件出现乱码
+### 使用hdc file send/recv传输中文文件出现乱码
 
 **现象描述**
 
 hdc文件传输命令执行出现乱码，如使用file recv从设备端发送带有中文名称的文件到本地，报错提示[Fail]Error opening file: no such file or directory, path:XXXXX，其中path显示中文乱码。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/GfZRo40zQAOorOktkFThIA/zh-cn_image_0000002674633108.png?HW-CC-KV=V1&HW-CC-Date=20260813T095817Z&HW-CC-Expire=86400&HW-CC-Sign=762112E85E4301658E5B17A1948B68B2673ADC2A5CD3C4ABB1E65975A21FA626)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/TwTYDy0bS7CBpsE9uVu7Dw/zh-cn_image_0000002717771236.png?HW-CC-KV=V1&HW-CC-Date=20260911T072754Z&HW-CC-Expire=86400&HW-CC-Sign=3032E544B2D70EA8F347A0578E2489A4BDA8D35A021C1A0FCF34D5D88ACBF130)
 
 
 **可能原因&解决方法**
 
-3.1.0a版本开始，文件传输命令支持参数路径中包含中文，版本过低需要更新至最新版本。
+API版本12开始，文件传输命令支持参数路径中包含中文，版本过低需要更新至最新版本。
 
-执行hdc checkserver命令检查当前版本。如果低于3.1.0a版本，需将SDK升级到API12或更高版本。
+执行hdc checkserver命令检查当前版本。如果低于3.1.0a版本，需将SDK升级到API版本12或更高版本。
 
 
 
-#### 执行hdc list targets显示"Unauthorized"
+### 执行hdc list targets显示"Unauthorized"
 
 **现象描述**
 
 使用hdc list targets命令查询已连接设备，连接设备标识后显示Unauthorized。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/cYExkaNOT4K2PT2sj-O1mg/zh-cn_image_0000002704273061.png?HW-CC-KV=V1&HW-CC-Date=20260813T095817Z&HW-CC-Expire=86400&HW-CC-Sign=B50567366EAA426D77CE4EFB5D2A0CBB97A0DE6F2610177523136C7471FF3FDD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/7uKq483PRYKAoVozW_a-Qw/zh-cn_image_0000002717611302.png?HW-CC-KV=V1&HW-CC-Date=20260911T072754Z&HW-CC-Expire=86400&HW-CC-Sign=E0BA0808C29621531AF3C002F3B8A49B094A01D9DA3EDE060FAE188A2D481555)
 
 
 **可能原因&解决方法**
@@ -2135,7 +2209,7 @@ hdc文件传输命令执行出现乱码，如使用file recv从设备端发送�
 
 
 
-#### 执行任意hdc命令报错：CryptAcquireContext second failed
+### 执行任意hdc命令报错：CryptAcquireContext second failed
 
 **现象描述**
 
@@ -2153,7 +2227,7 @@ hdc文件传输命令执行出现乱码，如使用file recv从设备端发送�
 
 
 
-#### Windows设备管理器出现 未知USB设备（设备描述符请求失败）
+### Windows设备管理器出现 未知USB设备（设备描述符请求失败）
 
 **现象描述**
 
@@ -2168,7 +2242,7 @@ hdc文件传输命令执行出现乱码，如使用file recv从设备端发送�
 
 
 
-#### hdc命令执行异常
+### hdc命令执行异常
 
 **现象描述**
 
@@ -2204,7 +2278,7 @@ netstat -an |findstr 8710
 
 
 
-#### 其他问题排查常用步骤
+### 其他问题排查常用步骤
 1. 命令行执行hdc list targets查看返回信息。
 2. 检查设备管理是否有HDC Device。
 3. 执行hdc kill关闭服务器进程后，执行hdc -l5 start收集日志（hdc.log位于执行端TEMP目录下，不同平台目录位置存在差异，可参考[服务器进程日志](#服务器进程日志)）。
@@ -2216,11 +2290,11 @@ netstat -an |findstr 8710
 
 
 
-#### hdc错误码
+## hdc错误码
 
 
 
-#### E000001 hdc版本太低
+### E000001 hdc版本太低
 
 **错误信息**
 
@@ -2232,7 +2306,7 @@ hdc版本太低，需更新至最新版本。
 
 **可能原因**
 
-客户端版本低于3.0.0b时，不支持授权，无法接入系统。
+hdc版本低于3.0.0b时，不支持授权，无法接入系统。
 
 **处理步骤**
 
@@ -2240,7 +2314,7 @@ hdc版本太低，需更新至最新版本。
 
 
 
-#### E000002 设备未授权
+### E000002 设备未授权
 
 **错误信息**
 
@@ -2266,7 +2340,7 @@ Otherwise try 'hdc kill' if that seems wrong.
 
 
 
-#### E000003 设备端用户未授权
+### E000003 设备端用户未授权
 
 **错误信息**
 
@@ -2292,7 +2366,7 @@ then check for a confirmation dialog on your device.
 
 
 
-#### E000004 通信连接不稳定
+### E000004 通信连接不稳定
 
 **错误信息**
 
@@ -2314,7 +2388,7 @@ Please wait for several seconds and try again.
 
 
 
-#### E000006 设备禁止被当前计算机调试
+### E000006 设备禁止被当前计算机调试
 
 **错误信息**
 
@@ -2334,7 +2408,7 @@ The current computer has not obtained the permission to debug the control device
 
 
 
-#### E000010 设备侧鉴权失败
+### E000010 设备侧鉴权失败
 
 **错误信息**
 
@@ -2354,7 +2428,7 @@ Auth failed, cannt login the device.
 
 
 
-#### E001000 tmode不支持设置USB调试
+### E001000 tmode不支持设置USB调试
 
 **错误信息**
 
@@ -2374,7 +2448,7 @@ hdc tmode usb命令已废弃，参见[USB调试和无线调试切换](#usb调试
 
 
 
-#### E001001 命令未知
+### E001001 命令未知
 
 **错误信息**
 
@@ -2394,7 +2468,7 @@ hdc tmode命令缺少参数或参数有误。
 
 
 
-#### E001003 USB连接异常
+### E001003 USB连接异常
 
 **错误信息**
 
@@ -2415,7 +2489,7 @@ USB通信异常，请检查USB通信链路。
 
 
 
-#### E001104 tconn命令IP地址非法
+### E001104 tconn命令IP地址非法
 
 **错误信息**
 
@@ -2435,7 +2509,7 @@ IP地址格式不正确。
 
 
 
-#### E001005 设备未知或断连
+### E001005 设备未知或断连
 
 **错误信息**
 
@@ -2455,7 +2529,7 @@ Device not found or connected.
 
 
 
-#### E001300 模拟器不支持tmode命令
+### E001300 模拟器不支持tmode命令
 
 **错误信息**
 
@@ -2475,7 +2549,7 @@ DevEco Studio中模拟器调试不支持hdc tmode命令。
 
 
 
-#### E002101 服务器进程无法结束
+### E002101 服务器进程无法结束
 
 **错误信息**
 
@@ -2495,7 +2569,7 @@ Terminal hdc process failed, please terminal the hdc process in the task manager
 
 
 
-#### E002105 命令不支持
+### E002105 命令不支持
 
 **错误信息**
 
@@ -2515,7 +2589,7 @@ Unsupport command.
 
 
 
-#### E002106 设备通信异常
+### E002106 设备通信异常
 
 **错误信息**
 
@@ -2535,7 +2609,7 @@ Failed to communicate with daemon.
 
 
 
-#### E003001 （命令行）指定的包名非法
+### E003001 （命令行）指定的包名非法
 
 **错误信息**
 
@@ -2613,7 +2687,7 @@ hdc shell aa start -b com.example.myapplication -a EntryAbility
 
 
 
-#### E003002 命令行指定的参数不支持交互模式
+### E003002 命令行指定的参数不支持交互模式
 
 **错误信息**
 
@@ -2633,7 +2707,7 @@ Unsupport interactive shell command option.
 
 
 
-#### E003003 交互命令参数不支持
+### E003003 交互命令参数不支持
 
 **错误信息**
 
@@ -2653,7 +2727,7 @@ Unsupport shell option: XXX.
 
 
 
-#### E003004 设备端不支持当前使用的参数
+### E003004 设备端不支持当前使用的参数
 
 **错误信息**
 
@@ -2673,7 +2747,7 @@ Device does not support this shell option.
 
 
 
-#### E003005 命令行参数有误
+### E003005 命令行参数有误
 
 **错误信息**
 
@@ -2693,7 +2767,7 @@ hdc shell xxx，设备端命令不支持。
 
 
 
-#### E005003 （文件传输）缺少参数
+### E005003 （文件传输）缺少参数
 
 **错误信息**
 
@@ -2713,7 +2787,7 @@ The parameter is missing, correct your input by referring below: Usage...
 
 
 
-#### E005004 SDK或设备系统不支持-b参数
+### E005004 SDK或设备系统不支持-b参数
 
 **错误信息**
 
@@ -2733,7 +2807,7 @@ hdc file send/recv 命令带-b选项时，SDK中的hdc或设备系统版本不�
 
 
 
-#### E005005 创建目录失败
+### E005005 创建目录失败
 
 **错误信息**
 
@@ -2753,13 +2827,13 @@ Error create directory: xxx, path: xxx.
 
 
 
-#### E005101 （文件传输）指定的包名非法
+### E005101 （文件传输）指定的包名非法
 
 请参考错误码[E003001 （命令行）指定的包名非法](#e003001-命令行指定的包名非法)。
 
 
 
-#### E005102 非法的远端路径
+### E005102 非法的远端路径
 
 **错误信息**
 
@@ -2779,7 +2853,7 @@ Remote path: xxx is invalid, no such file/directory or it's out of the applicati
 
 
 
-#### E006001 安装包路径非法
+### E006001 安装包路径非法
 
 **错误信息**
 
@@ -2799,7 +2873,7 @@ Not any installation package was found.
 
 
 
-#### E007100 不支持的命令
+### E007100 不支持的命令
 
 **错误信息**
 
@@ -2819,7 +2893,7 @@ Operate need running under debug mode.
 
 
 
-#### E005008 不支持的文件传输操作
+### E005008 不支持的文件传输操作
 
 **错误信息**
 
@@ -2839,7 +2913,7 @@ Operation not allowed.
 
 
 
-#### E001106 -e指定的IP不正确
+### E001106 -e指定的IP不正确
 
 **错误信息**
 
@@ -2859,7 +2933,7 @@ Operation not allowed.
 
 
 
-#### E00C001 hdc client/server调试拦截
+### E00C001 hdc client/server调试拦截
 
 **错误信息**
 

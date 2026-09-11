@@ -1,9 +1,9 @@
 # NodeContent
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-nodecontent
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 NodeContent是ArkUI提供的[ContentSlot](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-contentslot)的管理器，用于管理挂载到ContentSlot上的FrameNode节点内容，支持动态添加、删除FrameNode节点。适用于需要通过ContentSlot动态管理FrameNode节点内容的场景，例如根据用户交互动态新增或移除文本、图片等自定义FrameNode节点。
  
@@ -12,9 +12,10 @@ NodeContent是ArkUI提供的[ContentSlot](https://developer.huawei.com/consumer/
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { NodeContent } from '@kit.ArkUI';
@@ -22,9 +23,10 @@ import { NodeContent } from '@kit.ArkUI';
  
   
 
-#### NodeContent
+## NodeContent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 NodeContent是节点内容的实体封装，提供对FrameNode节点的动态添加、删除等管理能力，适用于需要动态管理ContentSlot中显示内容节点的场景。
  
@@ -34,9 +36,10 @@ NodeContent是节点内容的实体封装，提供对FrameNode节点的动态添
  
   
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
  
@@ -74,9 +77,10 @@ struct Parent {
  
   
 
-#### addFrameNode12+
+### addFrameNode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addFrameNode(node: FrameNode): void
  
@@ -88,6 +92,7 @@ addFrameNode(node: FrameNode): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 需要添加的FrameNode，该节点需为可被添加的有效FrameNode。 |
@@ -97,6 +102,7 @@ addFrameNode(node: FrameNode): void
  
 以下错误码的详细介绍请参见[自定义节点错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-node)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 100025 | The parameter is invalid. Details about the invalid parameter and the reason are included in the error message. For example: "The parameter 'node' is invalid: it cannot be adopted." 适用版本：22+ |
@@ -104,9 +110,10 @@ addFrameNode(node: FrameNode): void
  
   
 
-#### removeFrameNode12+
+### removeFrameNode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeFrameNode(node: FrameNode): void
  
@@ -118,6 +125,7 @@ removeFrameNode(node: FrameNode): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | FrameNode | 是 | 需要删除的FrameNode，该节点需已添加到当前NodeContent中，若未添加则删除无效。 |

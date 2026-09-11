@@ -1,15 +1,19 @@
 # ArkUI_NodeAttributeType（图类组件相关属性）
 
-更新时间：2026-08-04 06:06:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-node-h-nodeattributetype-image
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_NodeAttributeType
 ```
 
 
-#### 概述
+## 概述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义ArkUI在Native侧可以设置的图类组件相关属性样式集合，包含Image和ImageAnimator组件属性设置。
 
@@ -21,7 +25,10 @@ enum ArkUI_NodeAttributeType
 
 
 
-#### NODE_IMAGE_SRC
+## NODE_IMAGE_SRC
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_SRC = MAX_NODE_SCOPE_NUM * ARKUI_NODE_IMAGE = 4000
@@ -35,6 +42,7 @@ NODE_IMAGE_SRC = MAX_NODE_SCOPE_NUM * ARKUI_NODE_IMAGE = 4000
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 表示image组件地址。 |
@@ -42,6 +50,7 @@ NODE_IMAGE_SRC = MAX_NODE_SCOPE_NUM * ARKUI_NODE_IMAGE = 4000
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -51,7 +60,10 @@ NODE_IMAGE_SRC = MAX_NODE_SCOPE_NUM * ARKUI_NODE_IMAGE = 4000
 
 
 
-#### NODE_IMAGE_OBJECT_FIT
+## NODE_IMAGE_OBJECT_FIT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_OBJECT_FIT = 4001
@@ -65,12 +77,14 @@ NODE_IMAGE_OBJECT_FIT = 4001
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 表示图片填充效果，取ArkUI_ObjectFit枚举值。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -79,7 +93,10 @@ NODE_IMAGE_OBJECT_FIT = 4001
 
 
 
-#### NODE_IMAGE_INTERPOLATION
+## NODE_IMAGE_INTERPOLATION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_INTERPOLATION = 4002
@@ -93,12 +110,14 @@ NODE_IMAGE_INTERPOLATION = 4002
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 表示插值效果，取ArkUI_ImageInterpolation枚举值。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -107,7 +126,10 @@ NODE_IMAGE_INTERPOLATION = 4002
 
 
 
-#### NODE_IMAGE_OBJECT_REPEAT
+## NODE_IMAGE_OBJECT_REPEAT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_OBJECT_REPEAT = 4003
@@ -121,12 +143,14 @@ NODE_IMAGE_OBJECT_REPEAT = 4003
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 表示图片重复样式，取ArkUI_ImageRepeat枚举值。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -135,7 +159,10 @@ NODE_IMAGE_OBJECT_REPEAT = 4003
 
 
 
-#### NODE_IMAGE_COLOR_FILTER
+## NODE_IMAGE_COLOR_FILTER
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_COLOR_FILTER = 4004
@@ -149,6 +176,7 @@ NODE_IMAGE_COLOR_FILTER = 4004
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 ~ .value[19].f32 | 表示滤镜矩阵数组。 |
@@ -157,6 +185,7 @@ NODE_IMAGE_COLOR_FILTER = 4004
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -167,7 +196,10 @@ NODE_IMAGE_COLOR_FILTER = 4004
 
 
 
-#### NODE_IMAGE_AUTO_RESIZE
+## NODE_IMAGE_AUTO_RESIZE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_AUTO_RESIZE = 4005
@@ -181,12 +213,14 @@ NODE_IMAGE_AUTO_RESIZE = 4005
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 表示是否缩放布尔值，默认值：false。false表示关闭图源自动缩放，true表示开启图源自动缩放。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -195,7 +229,10 @@ NODE_IMAGE_AUTO_RESIZE = 4005
 
 
 
-#### NODE_IMAGE_ALT
+## NODE_IMAGE_ALT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_ALT = 4006
@@ -209,6 +246,7 @@ NODE_IMAGE_ALT = 4006
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 表示image组件占位图地址。 |
@@ -216,6 +254,7 @@ NODE_IMAGE_ALT = 4006
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -225,7 +264,10 @@ NODE_IMAGE_ALT = 4006
 
 
 
-#### NODE_IMAGE_DRAGGABLE
+## NODE_IMAGE_DRAGGABLE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_DRAGGABLE = 4007
@@ -239,12 +281,14 @@ NODE_IMAGE_DRAGGABLE = 4007
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 表示是否支持拖拽，设置为true表示支持。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -253,7 +297,10 @@ NODE_IMAGE_DRAGGABLE = 4007
 
 
 
-#### NODE_IMAGE_RENDER_MODE
+## NODE_IMAGE_RENDER_MODE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_RENDER_MODE = 4008
@@ -267,12 +314,14 @@ NODE_IMAGE_RENDER_MODE = 4008
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 表示图片渲染模式，取ArkUI_ImageRenderMode枚举值。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -281,7 +330,10 @@ NODE_IMAGE_RENDER_MODE = 4008
 
 
 
-#### NODE_IMAGE_FIT_ORIGINAL_SIZE
+## NODE_IMAGE_FIT_ORIGINAL_SIZE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_FIT_ORIGINAL_SIZE = 4009
@@ -295,12 +347,14 @@ NODE_IMAGE_FIT_ORIGINAL_SIZE = 4009
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 设置图片的显示尺寸是否跟随图源尺寸，1表示跟随，0表示不跟随，默认值为0。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -309,7 +363,10 @@ NODE_IMAGE_FIT_ORIGINAL_SIZE = 4009
 
 
 
-#### NODE_IMAGE_FILL_COLOR
+## NODE_IMAGE_FILL_COLOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_FILL_COLOR = 4010
@@ -323,12 +380,14 @@ NODE_IMAGE_FILL_COLOR = 4010
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].u32 | 填充色数值，0xargb格式，形如 0xFFFF0000 表示红色。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -337,7 +396,10 @@ NODE_IMAGE_FILL_COLOR = 4010
 
 
 
-#### NODE_IMAGE_RESIZABLE
+## NODE_IMAGE_RESIZABLE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_RESIZABLE = 4011
@@ -351,6 +413,7 @@ NODE_IMAGE_RESIZABLE = 4011
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 图片左部拉伸时，保持不变距离。单位vp。 |
@@ -361,6 +424,7 @@ NODE_IMAGE_RESIZABLE = 4011
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -373,7 +437,10 @@ NODE_IMAGE_RESIZABLE = 4011
 
 
 
-#### NODE_IMAGE_SYNC_LOAD
+## NODE_IMAGE_SYNC_LOAD
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_SYNC_LOAD = 4012
@@ -389,12 +456,14 @@ NODE_IMAGE_SYNC_LOAD = 4012
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 表示是否同步，默认值：false。false表示异步加载图片，true表示同步加载图片。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -403,7 +472,10 @@ NODE_IMAGE_SYNC_LOAD = 4012
 
 
 
-#### NODE_IMAGE_SOURCE_SIZE
+## NODE_IMAGE_SOURCE_SIZE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_SOURCE_SIZE = 4013
@@ -417,6 +489,7 @@ NODE_IMAGE_SOURCE_SIZE = 4013
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 表示图片解码的宽，单位px。 |
@@ -424,6 +497,7 @@ NODE_IMAGE_SOURCE_SIZE = 4013
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -433,7 +507,10 @@ NODE_IMAGE_SOURCE_SIZE = 4013
 
 
 
-#### NODE_IMAGE_IMAGE_MATRIX
+## NODE_IMAGE_IMAGE_MATRIX
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_IMAGE_MATRIX = 4014
@@ -447,12 +524,14 @@ NODE_IMAGE_IMAGE_MATRIX = 4014
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0...15].f32 | 4x4矩阵通过长度为16的浮点数数组来表示。当参数个数小于16，属性设置失败并返回ARKUI_ERROR_CODE_PARAM_INVALID函数参数异常；当参数个数大于16，只取前16个数据。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -461,7 +540,10 @@ NODE_IMAGE_IMAGE_MATRIX = 4014
 
 
 
-#### NODE_IMAGE_MATCH_TEXT_DIRECTION
+## NODE_IMAGE_MATCH_TEXT_DIRECTION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_MATCH_TEXT_DIRECTION = 4015
@@ -475,12 +557,14 @@ NODE_IMAGE_MATCH_TEXT_DIRECTION = 4015
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 图片是否跟随系统语言方向，默认值为false。false表示图片不跟随系统语言方向，true表示图片跟随系统语言方向。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -489,7 +573,10 @@ NODE_IMAGE_MATCH_TEXT_DIRECTION = 4015
 
 
 
-#### NODE_IMAGE_COPY_OPTION
+## NODE_IMAGE_COPY_OPTION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_COPY_OPTION = 4016
@@ -503,12 +590,14 @@ NODE_IMAGE_COPY_OPTION = 4016
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 支持图片拷贝的方式ArkUI_CopyOptions，默认值为ARKUI_COPY_OPTIONS_NONE。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -517,7 +606,10 @@ NODE_IMAGE_COPY_OPTION = 4016
 
 
 
-#### NODE_IMAGE_ENABLE_ANALYZER
+## NODE_IMAGE_ENABLE_ANALYZER
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_ENABLE_ANALYZER = 4017
@@ -531,12 +623,14 @@ NODE_IMAGE_ENABLE_ANALYZER = 4017
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否为图片开启AI分析，默认值为false。false表示组件不支持AI分析，true表示组件支持AI分析。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -545,7 +639,10 @@ NODE_IMAGE_ENABLE_ANALYZER = 4017
 
 
 
-#### NODE_IMAGE_DYNAMIC_RANGE_MODE
+## NODE_IMAGE_DYNAMIC_RANGE_MODE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_DYNAMIC_RANGE_MODE = 4018
@@ -559,12 +656,14 @@ NODE_IMAGE_DYNAMIC_RANGE_MODE = 4018
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 动态范围类型ArkUI_DynamicRangeMode，默认值为ARKUI_DYNAMIC_RANGE_MODE_STANDARD。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -573,7 +672,10 @@ NODE_IMAGE_DYNAMIC_RANGE_MODE = 4018
 
 
 
-#### NODE_IMAGE_HDR_BRIGHTNESS
+## NODE_IMAGE_HDR_BRIGHTNESS
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_HDR_BRIGHTNESS = 4019
@@ -587,12 +689,14 @@ NODE_IMAGE_HDR_BRIGHTNESS = 4019
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 可设置的亮度值，取值范围[0, 1]。小于0和大于1.0时取1。0表示图片按照SDR亮度显示，1表示图片按照当前允许的最高HDR亮度显示。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -601,7 +705,10 @@ NODE_IMAGE_HDR_BRIGHTNESS = 4019
 
 
 
-#### NODE_IMAGE_ORIENTATION
+## NODE_IMAGE_ORIENTATION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_ORIENTATION = 4020
@@ -615,12 +722,14 @@ NODE_IMAGE_ORIENTATION = 4020
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 期望的图像内容显示方向ArkUI_ImageRotateOrientation，默认值为ARKUI_ORIENTATION_UP。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -629,7 +738,10 @@ NODE_IMAGE_ORIENTATION = 4020
 
 
 
-#### NODE_IMAGE_SUPPORT_SVG2
+## NODE_IMAGE_SUPPORT_SVG2
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_SUPPORT_SVG2 = 4021
@@ -643,12 +755,14 @@ NODE_IMAGE_SUPPORT_SVG2 = 4021
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否启用SVG新解析能力开关。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -657,7 +771,10 @@ NODE_IMAGE_SUPPORT_SVG2 = 4021
 
 
 
-#### NODE_IMAGE_CONTENT_TRANSITION
+## NODE_IMAGE_CONTENT_TRANSITION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_CONTENT_TRANSITION = 4022
@@ -671,12 +788,14 @@ NODE_IMAGE_CONTENT_TRANSITION = 4022
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 自定义转场动效，参数类型ArkUI_ContentTransitionEffect。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -685,7 +804,10 @@ NODE_IMAGE_CONTENT_TRANSITION = 4022
 
 
 
-#### NODE_IMAGE_ALT_PLACEHOLDER
+## NODE_IMAGE_ALT_PLACEHOLDER
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_ALT_PLACEHOLDER = 4023
@@ -699,6 +821,7 @@ NODE_IMAGE_ALT_PLACEHOLDER = 4023
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 表示image组件加载过程中的占位图地址。 |
@@ -706,6 +829,7 @@ NODE_IMAGE_ALT_PLACEHOLDER = 4023
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -715,7 +839,10 @@ NODE_IMAGE_ALT_PLACEHOLDER = 4023
 
 
 
-#### NODE_IMAGE_ALT_ERROR
+## NODE_IMAGE_ALT_ERROR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_ALT_ERROR = 4024
@@ -729,6 +856,7 @@ NODE_IMAGE_ALT_ERROR = 4024
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 表示image组件加载失败时的占位图地址。 |
@@ -736,6 +864,7 @@ NODE_IMAGE_ALT_ERROR = 4024
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -745,7 +874,10 @@ NODE_IMAGE_ALT_ERROR = 4024
 
 
 
-#### NODE_IMAGE_ANTIALIASED
+## NODE_IMAGE_ANTIALIASED
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_ANTIALIASED = 4025
@@ -759,12 +891,14 @@ NODE_IMAGE_ANTIALIASED = 4025
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 表示是否开启位图图片边缘抗锯齿，默认值：false。false表示不开启抗锯齿，true表示开启抗锯齿。与NODE_IMAGE_RESIZABLE一起使用时，该属性不生效。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -773,7 +907,10 @@ NODE_IMAGE_ANTIALIASED = 4025
 
 
 
-#### NODE_IMAGE_ANIMATOR_IMAGES
+## NODE_IMAGE_ANIMATOR_IMAGES
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_ANIMATOR_IMAGES = ARKUI_NODE_IMAGE_ANIMATOR * MAX_NODE_SCOPE_NUM = 19000
@@ -787,6 +924,7 @@ NODE_IMAGE_ANIMATOR_IMAGES = ARKUI_NODE_IMAGE_ANIMATOR * MAX_NODE_SCOPE_NUM = 19
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .size | 图片帧的数量。 |
@@ -794,6 +932,7 @@ NODE_IMAGE_ANIMATOR_IMAGES = ARKUI_NODE_IMAGE_ANIMATOR * MAX_NODE_SCOPE_NUM = 19
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -803,7 +942,10 @@ NODE_IMAGE_ANIMATOR_IMAGES = ARKUI_NODE_IMAGE_ANIMATOR * MAX_NODE_SCOPE_NUM = 19
 
 
 
-#### NODE_IMAGE_ANIMATOR_STATE
+## NODE_IMAGE_ANIMATOR_STATE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_ANIMATOR_STATE = 19001
@@ -817,12 +959,14 @@ NODE_IMAGE_ANIMATOR_STATE = 19001
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 控制动画的播放状态，参数类型为ArkUI_AnimationStatus，默认值为初始状态。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -831,7 +975,10 @@ NODE_IMAGE_ANIMATOR_STATE = 19001
 
 
 
-#### NODE_IMAGE_ANIMATOR_DURATION
+## NODE_IMAGE_ANIMATOR_DURATION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_ANIMATOR_DURATION = 19002
@@ -845,12 +992,14 @@ NODE_IMAGE_ANIMATOR_DURATION = 19002
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 播放时长，单位为毫秒，默认值1000。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -859,7 +1008,10 @@ NODE_IMAGE_ANIMATOR_DURATION = 19002
 
 
 
-#### NODE_IMAGE_ANIMATOR_REVERSE
+## NODE_IMAGE_ANIMATOR_REVERSE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_ANIMATOR_REVERSE = 19003
@@ -873,12 +1025,14 @@ NODE_IMAGE_ANIMATOR_REVERSE = 19003
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 播放方向，0表示从第一张图片播放到最后一张，1表示从最后一张图片播放到第一张，默认值为0。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -887,7 +1041,10 @@ NODE_IMAGE_ANIMATOR_REVERSE = 19003
 
 
 
-#### NODE_IMAGE_ANIMATOR_FIXED_SIZE
+## NODE_IMAGE_ANIMATOR_FIXED_SIZE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_ANIMATOR_FIXED_SIZE = 19004
@@ -901,12 +1058,14 @@ NODE_IMAGE_ANIMATOR_FIXED_SIZE = 19004
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 设置图片大小是否固定为组件大小，1表示图片大小与组件大小一致。0表示每一张图片的width、height、top和left都要单独设置，默认值为1。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -915,7 +1074,10 @@ NODE_IMAGE_ANIMATOR_FIXED_SIZE = 19004
 
 
 
-#### NODE_IMAGE_ANIMATOR_FILL_MODE
+## NODE_IMAGE_ANIMATOR_FILL_MODE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_ANIMATOR_FILL_MODE = 19005
@@ -929,12 +1091,14 @@ NODE_IMAGE_ANIMATOR_FILL_MODE = 19005
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 当前播放方向下，动画开始前和结束后的状态，参数类型为ArkUI_AnimationFillMode，默认值为ARKUI_ANIMATION_FILL_MODE_FORWARDS。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -943,7 +1107,10 @@ NODE_IMAGE_ANIMATOR_FILL_MODE = 19005
 
 
 
-#### NODE_IMAGE_ANIMATOR_ITERATION
+## NODE_IMAGE_ANIMATOR_ITERATION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_IMAGE_ANIMATOR_ITERATION = 19006
@@ -957,12 +1124,14 @@ NODE_IMAGE_ANIMATOR_ITERATION = 19006
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 播放次数。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |

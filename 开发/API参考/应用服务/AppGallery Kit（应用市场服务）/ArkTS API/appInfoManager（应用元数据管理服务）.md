@@ -1,9 +1,9 @@
 # appInfoManager（应用元数据管理服务）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/appgallery-appinfomanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供查询动态图标信息、选择动态图标、禁用动态图标功能。
  
@@ -14,9 +14,10 @@
 **起始版本：** 5.0.3(15)
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { appInfoManager } from '@kit.AppGalleryKit';
@@ -24,9 +25,10 @@ import { appInfoManager } from '@kit.AppGalleryKit';
  
   
 
-#### DynamicIconInfo
+## DynamicIconInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 动态图标信息。
  
@@ -36,6 +38,7 @@ import { appInfoManager } from '@kit.AppGalleryKit';
  
 **起始版本：** 5.0.3(15)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | iconUrl | string | 是 | 否 | 动态图标链接。 |
@@ -45,9 +48,10 @@ import { appInfoManager } from '@kit.AppGalleryKit';
  
   
 
-#### appInfoManager.queryDynamicIcons
+## appInfoManager.queryDynamicIcons
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 queryDynamicIcons(): Promise<DynamicIconInfo[]>
  
@@ -61,6 +65,7 @@ queryDynamicIcons(): Promise<DynamicIconInfo[]>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<DynamicIconInfo[]> | Promise对象，返回动态图标信息。 |
@@ -70,6 +75,7 @@ queryDynamicIcons(): Promise<DynamicIconInfo[]>
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-appgallery)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1006800001 | The specified service extension connect failed. |
@@ -131,9 +137,10 @@ struct DynamicIconPage {
  
   
 
-#### appInfoManager.selectDynamicIcon
+## appInfoManager.selectDynamicIcon
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 selectDynamicIcon(iconId: string): Promise&lt;void&gt;
  
@@ -147,6 +154,7 @@ selectDynamicIcon(iconId: string): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | iconId | string | 是 | 动态图标ID。 |
@@ -154,6 +162,7 @@ selectDynamicIcon(iconId: string): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -163,6 +172,7 @@ selectDynamicIcon(iconId: string): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-appgallery)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -192,9 +202,10 @@ try {
  
   
 
-#### appInfoManager.disableDynamicIcon
+## appInfoManager.disableDynamicIcon
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 disableDynamicIcon(): Promise&lt;void&gt;
  
@@ -208,6 +219,7 @@ disableDynamicIcon(): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -217,6 +229,7 @@ disableDynamicIcon(): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-appgallery)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1006800009 | System internal error. |

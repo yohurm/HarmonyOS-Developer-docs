@@ -1,10 +1,10 @@
 # NDK调用Native方法异常闪退
 
-更新时间：2026-07-07 09:43:07
+更新时间：2026-08-27 00:56:37
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-jsvm-8
 
-#### 问题现象
+## 问题现象
 
 NDK工程中，调用Native方法报异常。
  
@@ -33,7 +33,7 @@ xxx: Symbol not found
  
  
 
-#### 背景知识
+## 背景知识
 
 - [使用命令行CMake构建NDK工程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/build-with-ndk-cmake)：在Linux/MAC环境，使用命令行构建库。
 - [使用Node-API跨语言调用](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-napi-interaction-with-cpp)：ArkTS和Native C++跨语言调用的规范和指导。
@@ -42,7 +42,7 @@ xxx: Symbol not found
  
  
 
-#### 问题定位
+## 问题定位
 
 - 根据缺失的符号，查看对应的SO是否被打包到HAP中正确的路径下，并且该符号在SO中对外可见。
 - 查看对应的SO是否存在其他依赖库，依赖库是否正确引入。
@@ -54,7 +54,7 @@ xxx: Symbol not found
  
  
 
-#### 分析结论
+## 分析结论
 
 可能导致问题的原因为：
  
@@ -67,7 +67,7 @@ xxx: Symbol not found
  
  
 
-#### 修改建议
+## 修改建议
 
 - 修改代码，确保未使用被禁止的方法。
 - 使用HarmonyOS工具链编译库及其依赖的库，确认需要调用的接口对外可见。
@@ -77,7 +77,7 @@ xxx: Symbol not found
  
  
 
-#### 常见FAQ
+## 常见FAQ
 
 Q：Native引用libusb_ndk.z.so或者libusb_serial_ndk.z.so，运行后闪退，这是什么原因导致的？
  
@@ -91,12 +91,16 @@ Q：在C++侧对结构体属性进行赋值操作时发生崩溃，但在运行�
  
 A：代码中存在结构体重名导致，可以通过修改结构体名称解决。
  
-Q：使用dlopen动态加载沙箱路径下的SO文件报错是什么原因？
+Q：使用dlopen动态加载加载沙箱路径下的SO文件报错是什么原因？
  
 A：HarmonyOS的安全机制（基于MUSL-LDSO的命名空间隔离）限制了动态库的加载路径。默认的命名空间(moduleNs_default)仅允许加载安装包内（HAP包内）的库或系统库，禁止直接加载应用沙箱数据目录（如/files、/cache）下的二进制文件，以防止代码注入等安全风险。
  
-建议将.so文件直接打包在HAP包中。将SO文件放置在工程的libs/或src/main/cpp/libs目录下（取决于构建配置），随应用一起安装。此时系统会自动将其路径加入允许列表，使用dlopen("[libname.so](http://libname.so/)")即可加载。
+建议将.so文件直接打包在HAP包中。将SO文件放置在工程的libs/或src/main/cpp/libs目录下（取决于构建配置），随应用一起安装。此时系统会自动将其路径加入允许列表，使用dlopen("libname.so")即可加载。
  
 Q：多模块工中通过配置[nativeLib](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-cpp#section15889929155720)的[filter](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-cpp#section17675528161517)属性设置加载SO文件的优先级，实际运行没有生效时什么原因？
  
-A：实际使用时需要指明依赖的模块名，参考[Native侧跨HAR/HSP模块调用Native方法](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-cross-module-reference#section470062115417)。
+A：实际使用时需要指明依赖的模块名，参考[Native侧跨HAR/HSP模块调用Native方法](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-cross-har-hsp-interface-call#native侧跨harhsp模块调用native方法)。
+ 
+Q：HAR包中的SO库在高版本系统编译后，在低版本系统上运行报SO库加载失败是什么原因？
+ 
+A：SO库中使用了高版本系统才引入的Node-API接口（如[napi_throw_business_error](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/napi#napi_throw_business_error)），该接口在低版本系统上不存在对应的接口定义，导致SO库加载失败。建议在编译SO库时确认所使用的Node-API接口的最低支持版本，确保目标运行系统版本满足要求。

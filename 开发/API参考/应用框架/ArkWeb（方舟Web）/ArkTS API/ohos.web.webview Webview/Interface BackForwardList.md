@@ -1,9 +1,9 @@
 # Interface (BackForwardList)
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-backforwardlist
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 BackForwardList是ArkWeb框架中用于访问Web组件浏览历史列表的接口，通过[getBackForwardEntries](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller#getbackforwardentries)方法获取。该接口提供对页面导航历史记录的只读访问能力，开发者可以获取当前历史列表的基本信息（当前索引和历史条目总数），以及通过索引获取指定历史记录项的详细信息。
 
@@ -12,9 +12,10 @@ BackForwardList是ArkWeb框架中用于访问Web组件浏览历史列表的接�
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { webview } from '@kit.ArkWeb';
@@ -22,31 +23,35 @@ import { webview } from '@kit.ArkWeb';
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | currentIndex | number | 否 | 否 | 当前在页面历史列表中的索引。 |
-| size | number | 否 | 否 | 历史列表中索引的数量，最多保存50条，超过时起始记录会被覆盖。 |
+| size | number | 否 | 否 | 历史列表中历史记录的数量，最多保存50条，超过时起始记录会被覆盖。 |
 
 
 
 
-#### getItemAtIndex
+## getItemAtIndex
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getItemAtIndex(index: number): HistoryItem
 
-获取历史列表中指定索引的历史记录项信息。
+获取历史列表中指定索引的历史记录项信息。需先通过[getBackForwardEntries](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller#getbackforwardentries)方法获取BackForwardList实例。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -54,6 +59,7 @@ getItemAtIndex(index: number): HistoryItem
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -63,6 +69,7 @@ getItemAtIndex(index: number): HistoryItem
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

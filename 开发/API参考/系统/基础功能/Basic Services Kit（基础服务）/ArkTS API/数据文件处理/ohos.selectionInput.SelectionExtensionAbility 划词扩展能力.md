@@ -1,6 +1,6 @@
 # @ohos.selectionInput.SelectionExtensionAbility (划词扩展能力)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-selectioninput-selectionextensionability
 **支持设备：** PC/2in1
@@ -16,7 +16,8 @@
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** PC/2in1
 
@@ -26,13 +27,15 @@ import { SelectionExtensionAbility } from '@kit.BasicServicesKit';
 
 
 
-#### SelectionExtensionAbility
+## SelectionExtensionAbility
+
 
 **支持设备：** PC/2in1
 
 **系统能力：** SystemCapability.SelectionInput.Selection
 
 **模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -41,7 +44,8 @@ import { SelectionExtensionAbility } from '@kit.BasicServicesKit';
 
 
 
-#### onConnect
+### onConnect
+
 
 **支持设备：** PC/2in1
 
@@ -55,12 +59,14 @@ onConnect(want: Want): rpc.RemoteObject
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | 连接SelectionExtensionAbility时系统传入的Want对象，包含当前Ability的名称、Bundle名称等描述信息，用于在onConnect回调中获取Ability连接配置，以便据此执行相应的初始化逻辑。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -104,7 +110,8 @@ class ServiceExtAbility extends SelectionExtensionAbility {
 
 
 
-#### onDisconnect
+### onDisconnect
+
 
 **支持设备：** PC/2in1
 

@@ -1,9 +1,9 @@
 # @ohos.bundle.shortcutManager (shortcutManager模块)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-shortcutmanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供应用对于[快捷方式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/typical-scenario-configuration)的管理能力，包括设置快捷方式是否显示等。通过快捷方式，用户可以从桌面快速启动应用的特定功能，提升应用的使用便捷性和用户粘性。典型使用场景包括：应用向用户提供常用功能的快速入口、根据用户使用习惯动态调整快捷方式的显示等。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { shortcutManager } from '@kit.AbilityKit';
@@ -22,9 +23,10 @@ import { shortcutManager } from '@kit.AbilityKit';
 
 
 
-#### shortcutManager.setShortcutVisibleForSelf
+## shortcutManager.setShortcutVisibleForSelf
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setShortcutVisibleForSelf(id: string, visible: boolean) : Promise&lt;void&gt;
 
@@ -34,6 +36,7 @@ setShortcutVisibleForSelf(id: string, visible: boolean) : Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | string | 是 | 快捷方式的ID，通过module.json5配置文件中的shortcuts标签下的shortcutId字段获取，取值为长度不超过63字节的字符串。 |
@@ -41,6 +44,7 @@ setShortcutVisibleForSelf(id: string, visible: boolean) : Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -50,6 +54,7 @@ setShortcutVisibleForSelf(id: string, visible: boolean) : Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[包管理子系统通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bundle)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -73,9 +78,10 @@ shortcutManager.setShortcutVisibleForSelf("shortcut_id", false)
 
 
 
-#### shortcutManager.getAllShortcutInfoForSelf
+## shortcutManager.getAllShortcutInfoForSelf
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllShortcutInfoForSelf(): Promise<Array&lt;ShortcutInfo&gt;>
 
@@ -84,6 +90,7 @@ getAllShortcutInfoForSelf(): Promise<Array&lt;ShortcutInfo&gt;>
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Launcher
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -106,9 +113,10 @@ shortcutManager.getAllShortcutInfoForSelf()
 
 
 
-#### shortcutManager.isShortcutSupported
+## shortcutManager.isShortcutSupported
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isShortcutSupported(): boolean
 
@@ -121,6 +129,7 @@ isShortcutSupported(): boolean
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -144,15 +153,17 @@ try {
 
 
 
-#### ShortcutInfo
+## ShortcutInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ShortcutInfo = _ShortcutInfo
 
 应用[module.json5配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#shortcuts标签)中定义的快捷方式信息。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Launcher
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -161,15 +172,17 @@ type ShortcutInfo = _ShortcutInfo
 
 
 
-#### ShortcutWant
+## ShortcutWant
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ShortcutWant = _ShortcutWant
 
 快捷方式内定义的目标[wants](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#wants标签)信息集合。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Launcher
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -178,15 +191,17 @@ type ShortcutWant = _ShortcutWant
 
 
 
-#### ParameterItem
+## ParameterItem
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ParameterItem = _ParameterItem
 
 快捷方式配置信息中的自定义数据。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Launcher
+
 
 | 类型 | 说明 |
 | --- | --- |

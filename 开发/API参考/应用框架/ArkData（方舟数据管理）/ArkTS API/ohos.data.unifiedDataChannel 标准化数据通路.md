@@ -1,6 +1,6 @@
 # @ohos.data.unifiedDataChannel (标准化数据通路)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-data-unifieddatachannel
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -16,7 +16,8 @@ UDMF处理数据时，不会解析用户数据的内容，存储路径安全性�
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -26,7 +27,8 @@ import { unifiedDataChannel } from '@kit.ArkData';
 
 
 
-#### ShareOptions12+
+## ShareOptions12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -36,6 +38,7 @@ UDMF支持的设备内使用范围类型枚举。
 
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | IN_APP | 0 | 表示允许在本设备同应用内使用。 |
@@ -44,7 +47,8 @@ UDMF支持的设备内使用范围类型枚举。
 
 
 
-#### GetDelayData12+
+## GetDelayData12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -58,12 +62,14 @@ type GetDelayData = (type: string) => UnifiedData
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 作为延迟数据类型的标识，用于区分不同类型的数据。取值见UniformDataType，如'general.plain-text'表示纯文本类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -97,7 +103,8 @@ let getDelayData: unifiedDataChannel.GetDelayData = ((type: string) => {
 
 
 
-#### ValueType12+
+## ValueType12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -108,6 +115,7 @@ type ValueType = number | string | boolean | image.PixelMap | Want | ArrayBuffer
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -124,7 +132,8 @@ type ValueType = number | string | boolean | image.PixelMap | Want | ArrayBuffer
 
 
 
-#### UriPermission
+## UriPermission
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -165,6 +174,7 @@ FileUri类型数据（FileUri UDS或File、Image、Video、Audio、Folder五个U
 
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NONE | 0 | 表示未授予任何权限。 |
@@ -175,13 +185,15 @@ FileUri类型数据（FileUri UDS或File、Image、Video、Audio、Folder五个U
 
 
 
-#### UnifiedDataProperties12+
+## UnifiedDataProperties12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 定义统一数据对象中所有数据记录的属性，包含时间戳、标签、粘贴范围以及一些附加数据等。
 
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -233,7 +245,8 @@ properties.getDelayData = ((type: string) => {
 
 
 
-#### UnifiedData
+## UnifiedData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -243,7 +256,11 @@ properties.getDelayData = ((type: string) => {
 
 
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -252,7 +269,8 @@ properties.getDelayData = ((type: string) => {
 
 
 
-#### constructor12+
+### constructor12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -272,7 +290,8 @@ let unifiedData = new unifiedDataChannel.UnifiedData();
 
 
 
-#### constructor
+### constructor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -286,6 +305,7 @@ constructor(record: UnifiedRecord)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | record | UnifiedRecord | 是 | 要添加到统一数据对象中的数据记录，该记录为UnifiedRecord或其子类对象。 |
@@ -294,6 +314,7 @@ constructor(record: UnifiedRecord)
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -315,7 +336,8 @@ let unifiedData = new unifiedDataChannel.UnifiedData(text);
 
 
 
-#### addRecord
+### addRecord
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -329,6 +351,7 @@ addRecord(record: UnifiedRecord): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | record | UnifiedRecord | 是 | 要添加到统一数据对象中的数据记录，该记录为UnifiedRecord或其子类对象。 |
@@ -337,6 +360,7 @@ addRecord(record: UnifiedRecord): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -367,7 +391,8 @@ unifiedData.addRecord(link);
 
 
 
-#### getRecords
+### getRecords
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -380,6 +405,7 @@ getRecords(): Array&lt;UnifiedRecord&gt;
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -423,7 +449,8 @@ for (let i = 0; i < records.length; i++) {
 
 
 
-#### hasType12+
+### hasType12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -439,12 +466,14 @@ hasType(type: string): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 要查询的数据类型，见UniformDataType。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -454,6 +483,7 @@ hasType(type: string): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -487,7 +517,8 @@ let hasLink = unifiedData.hasType(uniformTypeDescriptor.UniformDataType.HYPERLIN
 
 
 
-#### getTypes12+
+### getTypes12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -500,6 +531,7 @@ getTypes(): Array&lt;string&gt;
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -532,13 +564,15 @@ let types = unifiedData.getTypes();
 
 
 
-#### Summary
+## Summary
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 描述统一数据对象的数据摘要，包括数据类型和大小。
 
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -573,7 +607,8 @@ function parseSummary(summary: unifiedDataChannel.Summary) {
 
 
 
-#### UnifiedRecord
+## UnifiedRecord
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -581,7 +616,8 @@ function parseSummary(summary: unifiedDataChannel.Summary) {
 
 
 
-#### constructor12+
+### constructor12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -601,7 +637,8 @@ let unifiedRecord = new unifiedDataChannel.UnifiedRecord();
 
 
 
-#### constructor12+
+### constructor12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -619,6 +656,7 @@ constructor(type: string, value: ValueType)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 要创建的数据记录的类型，用于标识数据记录的具体类型。取值见UniformDataType，如'general.plain-text'、'general.hyperlink'等。 |
@@ -628,6 +666,7 @@ constructor(type: string, value: ValueType)
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -671,7 +710,8 @@ let pixelMapRecord =
 
 
 
-#### getType
+### getType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -684,6 +724,7 @@ getType(): string
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -712,7 +753,8 @@ if (records[0].getType() == uniformTypeDescriptor.UniformDataType.PLAIN_TEXT) {
 
 
 
-#### getValue12+
+### getValue12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -725,6 +767,7 @@ getValue(): ValueType
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -756,7 +799,8 @@ let hyperlinkValue = hyperlinkRecord.getValue();
 
 
 
-#### addEntry15+
+### addEntry15+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -770,6 +814,7 @@ addEntry(type: string, value: ValueType): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 要创建的数据类型，见UniformDataType。 |
@@ -779,6 +824,7 @@ addEntry(type: string, value: ValueType): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -814,7 +860,8 @@ unifiedData.addRecord(record);
 
 
 
-#### getEntry15+
+### getEntry15+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -828,12 +875,14 @@ getEntry(type: string): ValueType
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 要获取数据的类型，见UniformDataType。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -843,6 +892,7 @@ getEntry(type: string): ValueType
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -901,7 +951,8 @@ for (let i = 0; i < records.length; i++) {
 
 
 
-#### getEntries15+
+### getEntries15+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -914,6 +965,7 @@ getEntries(): Record<string, ValueType>
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -971,7 +1023,8 @@ for (let i = 0; i < records.length; i++) {
 
 
 
-#### getTypes15+
+### getTypes15+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -984,6 +1037,7 @@ getTypes(): Array&lt;string&gt;
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1036,7 +1090,8 @@ for (let i = 0; i < records.length; i++) {
 
 
 
-#### Text
+## Text
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1045,6 +1100,7 @@ for (let i = 0; i < records.length; i++) {
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1064,7 +1120,8 @@ let unifiedData = new unifiedDataChannel.UnifiedData(text);
 
 
 
-#### PlainText
+## PlainText
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1073,6 +1130,7 @@ let unifiedData = new unifiedDataChannel.UnifiedData(text);
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1090,7 +1148,8 @@ text.abstract = 'This is abstract';
 
 
 
-#### Hyperlink
+## Hyperlink
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1099,6 +1158,7 @@ text.abstract = 'This is abstract';
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1116,13 +1176,15 @@ link.description = 'This is description';
 
 
 
-#### HTML
+## HTML
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 HTML类型数据，是[Text](#text)的子类，用于描述超文本标记语言数据。
 
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1145,13 +1207,15 @@ html.uriAuthorizationPolicies = [
 
 
 
-#### File
+## File
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 File类型数据，是[UnifiedRecord](#unifiedrecord)的子类，也是文件类型数据的基类，用于描述文件类型数据，推荐开发者优先使用File的子类描述数据，如[Image](#image)、[Video](#video)、[Folder](#folder)等具体子类。
 
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1164,7 +1228,7 @@ File类型数据，是[UnifiedRecord](#unifiedrecord)的子类，也是文件类
 
 ```text
 import { unifiedDataChannel } from '@kit.ArkData';
-import { fileUri } from '@kit.CoreFileKit'
+import { fileUri } from '@kit.CoreFileKit';
 import { UIAbility } from '@kit.AbilityKit';
 import { window } from '@kit.ArkUI';
 
@@ -1189,7 +1253,8 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### Image
+## Image
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1198,6 +1263,7 @@ export default class EntryAbility extends UIAbility {
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1208,7 +1274,7 @@ export default class EntryAbility extends UIAbility {
 
 ```text
 import { unifiedDataChannel } from '@kit.ArkData';
-import { fileUri } from '@kit.CoreFileKit'
+import { fileUri } from '@kit.CoreFileKit';
 import { UIAbility } from '@kit.AbilityKit';
 import { window } from '@kit.ArkUI';
 
@@ -1225,7 +1291,8 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### Video
+## Video
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1234,6 +1301,7 @@ export default class EntryAbility extends UIAbility {
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1244,7 +1312,7 @@ export default class EntryAbility extends UIAbility {
 
 ```text
 import { unifiedDataChannel } from '@kit.ArkData';
-import { fileUri } from '@kit.CoreFileKit'
+import { fileUri } from '@kit.CoreFileKit';
 import { UIAbility } from '@kit.AbilityKit';
 import { window } from '@kit.ArkUI';
 
@@ -1261,7 +1329,8 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### Audio
+## Audio
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1270,6 +1339,7 @@ export default class EntryAbility extends UIAbility {
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1280,7 +1350,7 @@ export default class EntryAbility extends UIAbility {
 
 ```text
 import { unifiedDataChannel } from '@kit.ArkData';
-import { fileUri } from '@kit.CoreFileKit'
+import { fileUri } from '@kit.CoreFileKit';
 import { UIAbility } from '@kit.AbilityKit';
 import { window } from '@kit.ArkUI';
 
@@ -1297,7 +1367,8 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### Folder
+## Folder
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1306,6 +1377,7 @@ export default class EntryAbility extends UIAbility {
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1316,7 +1388,7 @@ export default class EntryAbility extends UIAbility {
 
 ```text
 import { unifiedDataChannel } from '@kit.ArkData';
-import { fileUri } from '@kit.CoreFileKit'
+import { fileUri } from '@kit.CoreFileKit';
 import { UIAbility } from '@kit.AbilityKit';
 import { window } from '@kit.ArkUI';
 
@@ -1333,7 +1405,8 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### SystemDefinedRecord
+## SystemDefinedRecord
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1342,6 +1415,7 @@ SystemDefinedRecord是[UnifiedRecord](#unifiedrecord)的子类，也是HarmonyOS
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1363,7 +1437,8 @@ let unifiedData = new unifiedDataChannel.UnifiedData(sdr);
 
 
 
-#### SystemDefinedForm
+## SystemDefinedForm
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1372,6 +1447,7 @@ let unifiedData = new unifiedDataChannel.UnifiedData(sdr);
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1402,7 +1478,8 @@ let unifiedData = new unifiedDataChannel.UnifiedData(form);
 
 
 
-#### SystemDefinedAppItem
+## SystemDefinedAppItem
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1411,6 +1488,7 @@ let unifiedData = new unifiedDataChannel.UnifiedData(form);
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1443,7 +1521,8 @@ let unifiedData = new unifiedDataChannel.UnifiedData(appItem);
 
 
 
-#### SystemDefinedPixelMap
+## SystemDefinedPixelMap
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1452,6 +1531,7 @@ let unifiedData = new unifiedDataChannel.UnifiedData(appItem);
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1502,7 +1582,8 @@ image.createPixelMap(color, opts, (error, pixelMap) => {
 
 
 
-#### ApplicationDefinedRecord
+## ApplicationDefinedRecord
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1511,6 +1592,7 @@ ApplicationDefinedRecord是[UnifiedRecord](#unifiedrecord)的子类，也是应�
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1530,13 +1612,15 @@ let unifiedData = new unifiedDataChannel.UnifiedData(record);
 
 
 
-#### Intention
+## Intention
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 UDMF已经支持的数据通路枚举类型。其主要用途是标识各种UDMF数据通路所面向的不同业务场景。
 
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1549,13 +1633,15 @@ UDMF已经支持的数据通路枚举类型。其主要用途是标识各种UDMF
 
 
 
-#### Visibility20+
+## Visibility20+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 表示数据的可见性等级枚举。
 
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1565,13 +1651,15 @@ UDMF已经支持的数据通路枚举类型。其主要用途是标识各种UDMF
 
 
 
-#### Options
+## Options
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 UDMF提供的数据操作接口包含三个可选参数：intention、key和visibility。如果接口不需要这些参数，可以不填，具体要求请参阅该接口的参数说明。
 
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1582,7 +1670,8 @@ UDMF提供的数据操作接口包含三个可选参数：intention、key和visi
 
 
 
-#### FileConflictOptions15+
+## FileConflictOptions15+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1592,6 +1681,7 @@ UDMF提供的数据操作接口包含三个可选参数：intention、key和visi
 
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | OVERWRITE | 0 | 目标路径存在同文件名时覆盖。 |
@@ -1600,7 +1690,8 @@ UDMF提供的数据操作接口包含三个可选参数：intention、key和visi
 
 
 
-#### ProgressIndicator15+
+## ProgressIndicator15+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1610,6 +1701,7 @@ UDMF提供的数据操作接口包含三个可选参数：intention、key和visi
 
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NONE | 0 | 不采用系统默认进度显示。 |
@@ -1618,7 +1710,8 @@ UDMF提供的数据操作接口包含三个可选参数：intention、key和visi
 
 
 
-#### ListenerStatus15+
+## ListenerStatus15+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1627,6 +1720,7 @@ UDMF提供的数据操作接口包含三个可选参数：intention、key和visi
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1642,7 +1736,8 @@ UDMF提供的数据操作接口包含三个可选参数：intention、key和visi
 
 
 
-#### ProgressInfo15+
+## ProgressInfo15+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1652,6 +1747,7 @@ UDMF提供的数据操作接口包含三个可选参数：intention、key和visi
 
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | progress | number | 否 | 否 | 系统上报拖拽任务进度百分比。取值范围为[-1-100]的整数，其中-1时代表本次获取数据失败，100时表示本次获取数据完成。 |
@@ -1660,7 +1756,8 @@ UDMF提供的数据操作接口包含三个可选参数：intention、key和visi
 
 
 
-#### DataProgressListener15+
+## DataProgressListener15+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1674,6 +1771,7 @@ type DataProgressListener = (progressInfo: ProgressInfo, data: UnifiedData | nul
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | progressInfo | ProgressInfo | 是 | 定义进度上报的进度信息，用于接收拖拽任务的进度状态和进度百分比。包含progress（进度百分比，取值范围[-1-100]）和status（任务状态码）两个字段，其中progress为-1表示获取数据失败，100表示获取数据完成。 |
@@ -1682,7 +1780,8 @@ type DataProgressListener = (progressInfo: ProgressInfo, data: UnifiedData | nul
 
 
 
-#### GetDataParams15+
+## GetDataParams15+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1693,6 +1792,7 @@ type DataProgressListener = (progressInfo: ProgressInfo, data: UnifiedData | nul
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
 
 **参数：**
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1705,7 +1805,8 @@ type DataProgressListener = (progressInfo: ProgressInfo, data: UnifiedData | nul
 
 
 
-#### DataLoadInfo20+
+## DataLoadInfo20+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1721,6 +1822,7 @@ type DataProgressListener = (progressInfo: ProgressInfo, data: UnifiedData | nul
 
 **参数：**
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | types | Set&lt;string&gt; | 否 | 是 | 表示数据类型集合，默认为空集合。 |
@@ -1729,7 +1831,8 @@ type DataProgressListener = (progressInfo: ProgressInfo, data: UnifiedData | nul
 
 
 
-#### DataLoadHandler20+
+## DataLoadHandler20+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1745,12 +1848,14 @@ type DataLoadHandler = (acceptableInfo?: DataLoadInfo) => UnifiedData | null
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | acceptableInfo | DataLoadInfo | 否 | 表示数据接收方可以接收的数据类型和数量，默认为空。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1759,21 +1864,23 @@ type DataLoadHandler = (acceptableInfo?: DataLoadInfo) => UnifiedData | null
 
 
 
-#### DelayedDataLoadHandler22+
+## DelayedDataLoadHandler22+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 type DelayedDataLoadHandler = (acceptableInfo?: DataLoadInfo) => Promise<UnifiedData | null>
 
-用于延迟加载数据的处理函数。支持数据发送方根据接收方传入的信息，动态生成数据，实现更灵活、精准的数据交互策略。
+用于延迟加载数据的处理函数。支持数据发送方根据接收方传入的信息，动态生成数据，实现更灵活、精准的数据交互策略。使用Promise异步回调。
 
-该处理函数为异步函数，返回Promise对象，不阻塞主线程，可处理复杂业务逻辑、执行长耗时任务。
+该处理函数为异步函数，不阻塞主线程，可处理复杂业务逻辑、执行长耗时任务。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.DistributedDataManager.UDMF.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1782,6 +1889,7 @@ type DelayedDataLoadHandler = (acceptableInfo?: DataLoadInfo) => Promise<Unified
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<UnifiedData \| null> | Promise对象。resolve返回根据接收方信息生成的UnifiedData对象或null，reject返回错误信息。 |
@@ -1789,7 +1897,8 @@ type DelayedDataLoadHandler = (acceptableInfo?: DataLoadInfo) => Promise<Unified
 
 
 
-#### DataLoadParams20+
+## DataLoadParams20+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1801,6 +1910,7 @@ type DelayedDataLoadHandler = (acceptableInfo?: DataLoadInfo) => Promise<Unified
 
 **参数：**
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | loadHandler | DataLoadHandler | 否 | 否 | 表示用于延迟加载数据的处理函数。该处理函数为同步函数，适用于处理简单业务逻辑，若函数业务逻辑较复杂、执行时间较长（3s以上），推荐使用DelayedDataLoadHandler。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
@@ -1810,7 +1920,8 @@ type DelayedDataLoadHandler = (acceptableInfo?: DataLoadInfo) => Promise<Unified
 
 
 
-#### unifiedDataChannel.insertData
+## unifiedDataChannel.insertData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1826,6 +1937,7 @@ insertData(options: Options, data: UnifiedData, callback: AsyncCallback&lt;strin
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | Options | 是 | 配置项参数，参数中intention字段必填，且不支持DRAG，不填时会返回401错误码；其他字段是否填写均不影响接口的使用。 |
@@ -1836,6 +1948,7 @@ insertData(options: Options, data: UnifiedData, callback: AsyncCallback&lt;strin
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1875,7 +1988,8 @@ try {
 
 
 
-#### unifiedDataChannel.insertData
+## unifiedDataChannel.insertData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1889,6 +2003,7 @@ insertData(options: Options, data: UnifiedData): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | Options | 是 | 配置项参数，参数中intention字段必填，且不支持DRAG，不填时会返回401错误码；其他字段是否填写均不影响接口的使用。 |
@@ -1896,6 +2011,7 @@ insertData(options: Options, data: UnifiedData): Promise&lt;string&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1905,6 +2021,7 @@ insertData(options: Options, data: UnifiedData): Promise&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1942,7 +2059,8 @@ try {
 
 
 
-#### unifiedDataChannel.updateData
+## unifiedDataChannel.updateData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1956,6 +2074,7 @@ updateData(options: Options, data: UnifiedData, callback: AsyncCallback&lt;void&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | Options | 是 | 配置项参数，参数中key字段必填，不填时会返回401错误码；intention参数仅支持DATA_HUB；其他字段是否填写均不影响接口的使用。 |
@@ -1966,6 +2085,7 @@ updateData(options: Options, data: UnifiedData, callback: AsyncCallback&lt;void&
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2026,7 +2146,8 @@ try {
 
 
 
-#### unifiedDataChannel.updateData
+## unifiedDataChannel.updateData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2040,6 +2161,7 @@ updateData(options: Options, data: UnifiedData): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | Options | 是 | 配置项参数，参数中key字段必填，不填时会返回401错误码；intention参数仅支持DATA_HUB；其他字段是否填写均不影响接口的使用。 |
@@ -2047,6 +2169,7 @@ updateData(options: Options, data: UnifiedData): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2056,6 +2179,7 @@ updateData(options: Options, data: UnifiedData): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2115,7 +2239,8 @@ try {
 
 
 
-#### unifiedDataChannel.queryData
+## unifiedDataChannel.queryData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2129,6 +2254,7 @@ queryData(options: Options, callback: AsyncCallback<Array&lt;UnifiedData&gt;>): 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | Options | 是 | 配置项参数，key和intention均为可选，且intention参数不支持DRAG，根据传入的参数做相应的校验以返回不同的值。 |
@@ -2138,6 +2264,7 @@ queryData(options: Options, callback: AsyncCallback<Array&lt;UnifiedData&gt;>): 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2180,7 +2307,8 @@ try {
 
 
 
-#### unifiedDataChannel.queryData
+## unifiedDataChannel.queryData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2194,12 +2322,14 @@ queryData(options: Options): Promise<Array&lt;UnifiedData&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | Options | 是 | 配置项参数，key和intention均为可选，且intention参数不支持DRAG，根据传入的参数做相应的校验以返回不同的值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2209,6 +2339,7 @@ queryData(options: Options): Promise<Array&lt;UnifiedData&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2249,7 +2380,8 @@ try {
 
 
 
-#### unifiedDataChannel.deleteData
+## unifiedDataChannel.deleteData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2263,6 +2395,7 @@ deleteData(options: Options, callback: AsyncCallback<Array&lt;UnifiedData&gt;>):
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | Options | 是 | 配置项参数，key和intention均为可选，且intention参数仅支持DATA_HUB，根据传入的参数做相应的校验以返回不同的值。 |
@@ -2272,6 +2405,7 @@ deleteData(options: Options, callback: AsyncCallback<Array&lt;UnifiedData&gt;>):
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2314,7 +2448,8 @@ try {
 
 
 
-#### unifiedDataChannel.deleteData
+## unifiedDataChannel.deleteData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2328,12 +2463,14 @@ deleteData(options: Options): Promise<Array&lt;UnifiedData&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | Options | 是 | 配置项参数，key和intention均为可选，且intention参数仅支持DATA_HUB，根据传入的参数做相应的校验以返回不同的值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2343,6 +2480,7 @@ deleteData(options: Options): Promise<Array&lt;UnifiedData&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2383,7 +2521,8 @@ try {
 
 
 
-#### unifiedDataChannel.setAppShareOptions14+
+## unifiedDataChannel.setAppShareOptions14+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2397,6 +2536,7 @@ setAppShareOptions(intention: Intention, shareOptions: ShareOptions): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | intention | Intention | 是 | 表示数据操作相关的数据通路类型，目前仅支持DRAG类型数据通道。 |
@@ -2406,6 +2546,7 @@ setAppShareOptions(intention: Intention, shareOptions: ShareOptions): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[统一数据管理框架错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-udmf)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2430,7 +2571,8 @@ try {
 
 
 
-#### unifiedDataChannel.removeAppShareOptions14+
+## unifiedDataChannel.removeAppShareOptions14+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2444,6 +2586,7 @@ removeAppShareOptions(intention: Intention): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | intention | Intention | 是 | 表示数据操作相关的数据通路类型，目前仅支持DRAG类型数据通道。 |
@@ -2452,6 +2595,7 @@ removeAppShareOptions(intention: Intention): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2475,7 +2619,8 @@ try {
 
 
 
-#### unifiedDataChannel.convertRecordsToEntries17+
+## unifiedDataChannel.convertRecordsToEntries17+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2495,6 +2640,7 @@ convertRecordsToEntries(data: UnifiedData): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | UnifiedData | 是 | 需要转换为多样式数据结构的统一数据对象。 |
@@ -2503,6 +2649,7 @@ convertRecordsToEntries(data: UnifiedData): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

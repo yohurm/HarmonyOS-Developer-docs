@@ -1,22 +1,23 @@
 # TreeView
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-treeview
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
-树视图作为一种分层显示的列表，适合显示嵌套结构。树视图包含父节点和子节点，支持展开或折叠。
+树视图作为一种分层显示的列表，适合显示嵌套结构。拥有父列表项和子列表项，可展开或折叠。
  
-树视图适用于效率型应用的侧边导航栏中，如备忘录、电子邮件、图库等。
+用于效率型应用，如备忘录、电子邮件、图库中的侧边导航栏中。
  
 > [!NOTE]
 > 该组件从API version 10开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 该组件仅可在Stage模型下使用。 如果TreeView设置 通用属性 和 通用事件 ，编译工具链会额外生成节点__Common__，并将通用属性或通用事件挂载在__Common__上，而不是直接应用到TreeView本身。这可能导致开发者设置的通用属性或通用事件不生效或不符合预期，因此，不建议TreeView设置通用属性和通用事件。
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 import { TreeView } from "@kit.ArkUI";
@@ -24,17 +25,19 @@ import { TreeView } from "@kit.ArkUI";
  
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 无
  
   
 
-#### TreeView
+## TreeView
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 TreeView({ treeController: TreeController })
  
@@ -46,18 +49,20 @@ TreeView({ treeController: TreeController })
  
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| treeController | TreeController | 是 | 树视图组件的控制器，用于控制树的节点信息。 |
+| treeController | TreeController | 是 | 树视图节点信息。 |
  
  
   
 
-#### TreeController
+## TreeController
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-树视图组件的控制器，用于控制树的节点信息。同一控制器实例不能同时控制多个树视图组件。
+**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+树视图组件的控制器，可以将此对象绑定至树视图组件，然后通过它控制树的节点信息，同一个控制器不可以控制多个树视图组件。
  
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
  
@@ -67,13 +72,14 @@ TreeView({ treeController: TreeController })
  
   
 
-#### addNode
+### addNode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 addNode(nodeParam?: NodeParam): TreeController
  
-选中某个节点后，调用该方法新增子节点。
+点击某个节点后，调用该方法可以触发新增孩子节点。
  
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
  
@@ -83,6 +89,7 @@ addNode(nodeParam?: NodeParam): TreeController
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | nodeParam | NodeParam | 否 | 节点信息，用于指定新增节点的属性。如果不传该参数，在当前选中的节点下添加一个标题为“新建文件夹”节点。 |
@@ -90,20 +97,22 @@ addNode(nodeParam?: NodeParam): TreeController
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| TreeController | 返回树视图组件的控制器实例，支持链式调用。 |
+| TreeController | 树视图组件的控制器。 |
  
  
   
 
-#### removeNode
+### removeNode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 removeNode(): void
  
-选中某个节点后，调用该方法删除该节点。
+点击某个节点后，调用该方法可以触发删除该节点。
  
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
  
@@ -113,13 +122,14 @@ removeNode(): void
  
   
 
-#### modifyNode
+### modifyNode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 modifyNode(): void
  
-选中某个节点后，调用该方法修改该节点。
+点击某个节点后，调用该方法可以触发修改该节点。
  
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
  
@@ -129,13 +139,14 @@ modifyNode(): void
  
   
 
-#### buildDone
+### buildDone
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 buildDone(): void
  
-节点增加完毕后，必须调用该方法保存树信息。
+建立树视图。节点增加完毕后，必须调用该方法，触发树信息的保存。
  
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
  
@@ -145,13 +156,14 @@ buildDone(): void
  
   
 
-#### refreshNode
+### refreshNode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 refreshNode(parentId: number, parentSubTitle: ResourceStr, currentSubtitle: ResourceStr): void
  
-调用该方法，通过指定父节点Id、父节点副标题和当前节点副标题，更新当前节点的显示信息。
+更新树视图。调用该方法，更新当前节点的信息。
  
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
  
@@ -161,54 +173,59 @@ refreshNode(parentId: number, parentSubTitle: ResourceStr, currentSubtitle: Reso
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| parentId | number | 是 | 父节点Id。 取值范围：大于等于-1。根节点id值为-1。若设置数值小于-1，做不生效处理。 |
-| parentSubTitle | ResourceStr | 是 | 父节点副标题。设置后将更新父节点的副标题显示内容。 |
-| currentSubtitle | ResourceStr | 是 | 当前节点副标题。设置后将更新当前节点的副标题显示内容。 |
+| parentId | number | 是 | 父节点Id。 取值范围：大于等于-1。 |
+| parentSubTitle | ResourceStr | 是 | 父节点副文本。 |
+| currentSubtitle | ResourceStr | 是 | 当前节点副文本。 |
  
  
   
 
-#### NodeParam
+## NodeParam
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
  
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | parentNodeId | number | 否 | 是 | 父节点Id。 取值范围：大于等于-1。 默认值：-1，根节点id值为-1。若设置数值小于-1，做不生效处理。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
-| currentNodeId | number | 否 | 是 | 当前子节点Id。 取值范围：大于等于-1。 不能为根节点id（即不能为-1），不能为null，否则会抛出异常。且不能设置两个相同的currentNodeId。 默认值：-1 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
-| isFolder | boolean | 否 | 是 | 是否是目录。 默认值：false true：是目录，可以包含子节点，支持展开/折叠操作；false：不是目录，为叶子节点。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
-| icon | ResourceStr | 否 | 是 | 图标。若同时设置了symbolIconStyle，则以symbolIconStyle为准。 默认值：空字符串 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| currentNodeId | number | 否 | 是 | 当前子节点Id。 取值范围：大于等于-1。 不能为根节点id，不能为null，否则会抛出异常。且不能设置两个相同的currentNodeId。 默认值：-1 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| isFolder | boolean | 否 | 是 | 是否是目录。 默认值：false true：是目录，false：不是目录。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| icon | ResourceStr | 否 | 是 | 图标。 默认值：空字符串 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | symbolIconStyle18+ | SymbolGlyphModifier | 否 | 是 | Symbol图标，优先级大于icon。 默认值：undefined 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
-| selectedIcon | ResourceStr | 否 | 是 | 选中图标。若同时设置了symbolSelectedIconStyle，则以symbolSelectedIconStyle为准。 默认值：空字符串 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| selectedIcon | ResourceStr | 否 | 是 | 选中图标。 默认值：空字符串 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | symbolSelectedIconStyle18+ | SymbolGlyphModifier | 否 | 是 | Symbol选中图标，优先级大于selectedIcon。 默认值：undefined 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
-| editIcon | ResourceStr | 否 | 是 | 编辑图标。若同时设置了symbolEditIconStyle，则以symbolEditIconStyle为准。 默认值：空字符串 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| editIcon | ResourceStr | 否 | 是 | 编辑图标。 默认值：空字符串 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | symbolEditIconStyle18+ | SymbolGlyphModifier | 否 | 是 | Symbol编辑图标，优先级大于editIcon。 默认值：undefined 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 | primaryTitle | ResourceStr | 否 | 是 | 主标题。 默认值：空字符串 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | secondaryTitle | ResourceStr | 否 | 是 | 副标题。 默认值：空字符串 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
-| container | () => void | 否 | 是 | 绑定在节点上的右键菜单组件，用户右键点击节点时显示该菜单，需通过@Builder函数定义。 默认值：() => void 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| container | () => void | 否 | 是 | 绑定在节点上的右键子组件，子组件由@Builder修饰。 默认值：() => void 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
  
  
   
 
-#### TreeListenerManager
+## TreeListenerManager
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-树视图组件的监听管理器，可以获取监听器实例并绑定至树视图组件，用于管理树的节点监听，同一个监听器不可以控制多个树视图组件。
+**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+树视图组件的监听器，可以将此对象绑定至树视图组件，然后通过它监听树的节点的变化，同一个监听器不可以控制多个树视图组件。
  
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
  
   
 
-#### getInstance
+### getInstance
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 static getInstance(): TreeListenerManager
  
@@ -222,6 +239,7 @@ static getInstance(): TreeListenerManager
  
 **返回值**:
   
+
 | 类型 | 说明 |
 | --- | --- |
 | TreeListenerManager | 返回获取到的监听管理器单例对象。 |
@@ -229,9 +247,10 @@ static getInstance(): TreeListenerManager
  
   
 
-#### getTreeListener
+### getTreeListener
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 getTreeListener(): TreeListener
  
@@ -245,6 +264,7 @@ getTreeListener(): TreeListener
  
 **返回值**:
   
+
 | 类型 | 说明 |
 | --- | --- |
 | TreeListener | 返回获取到的监听器。 |
@@ -252,21 +272,23 @@ getTreeListener(): TreeListener
  
   
 
-#### TreeListener
+## TreeListener
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-树视图组件的监听器，可以将此对象绑定至树视图组件，然后通过它监听树的节点的变化，同一个监听器不可以控制多个树视图组件。监听器内部维护事件类型与回调函数的映射关系，当用户在TreeView上进行节点操作时，TreeView会通知监听器触发相应的回调函数，开发者可在回调中获取节点信息并进行业务处理。
+**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+树视图组件的监听器，可以将此对象绑定至树视图组件，然后通过它监听树的节点的变化，同一个监听器不可以控制多个树视图组件。
  
   
 
-#### on
+### on
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 on(type: TreeListenType, callback: (callbackParam: CallbackParam) => void): void;
  
-注册树视图节点事件的监听，监听成功后，当节点发生对应事件时会触发回调函数。同一监听器不可控制多个树视图组件。
+注册监听。
  
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
  
@@ -276,21 +298,23 @@ on(type: TreeListenType, callback: (callbackParam: CallbackParam) => void): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | TreeListenType | 是 | 监听事件类型，用于指定要注册的监听事件。 |
-| callback | (callbackParam: CallbackParam) => void | 是 | 回调函数，在对应监听事件触发时调用。回调参数callbackParam包含currentNodeId、parentNodeId和childIndex等信息。 |
+| type | TreeListenType | 是 | 监听类型。 |
+| callback | (callbackParam: CallbackParam) => void | 是 | 节点信息。 |
  
  
   
 
-#### once
+### once
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 once(type: TreeListenType, callback: (callbackParam: CallbackParam) => void): void;
  
-注册一次树视图节点事件的监听，监听成功后，当节点首次发生对应事件时会触发回调函数，触发后自动移除监听。同一监听器不可控制多个树视图组件。
+注册一次监听。
  
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
  
@@ -300,21 +324,23 @@ once(type: TreeListenType, callback: (callbackParam: CallbackParam) => void): vo
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | TreeListenType | 是 | 监听事件类型，用于指定要注册的监听事件。 |
-| callback | (callbackParam: CallbackParam) => void | 是 | 回调函数，在对应监听事件触发时调用。回调参数callbackParam包含currentNodeId、parentNodeId和childIndex等信息。 |
+| type | TreeListenType | 是 | 监听类型。 |
+| callback | (callbackParam: CallbackParam) => void | 是 | 节点信息。 |
  
  
   
 
-#### off
+### off
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 off(type: TreeListenType, callback?: (callbackParam: CallbackParam) => void): void;
  
-取消监听。需要先注册监听后才能取消。同一监听器不可控制多个树视图组件。
+取消监听。
  
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
  
@@ -324,17 +350,19 @@ off(type: TreeListenType, callback?: (callbackParam: CallbackParam) => void): vo
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | TreeListenType | 是 | 监听事件类型，用于指定要取消的监听事件。 |
-| callback | (callbackParam: CallbackParam) => void | 否 | 回调函数，在对应监听事件触发时调用。默认值：undefined。传入时取消对应的节点信息的监听，不传时取消该类型的所有节点信息的监听。 |
+| type | TreeListenType | 是 | 监听类型。 |
+| callback | (callbackParam: CallbackParam) => void | 否 | 节点信息。传入时取消对应的节点信息的监听，否则取消该类型的所有节点信息的监听。 |
  
  
   
 
-#### TreeListenType
+## TreeListenType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 定义树视图节点的监听事件类型。
  
@@ -344,20 +372,22 @@ off(type: TreeListenType, callback?: (callbackParam: CallbackParam) => void): vo
  
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NODE_CLICK | "NodeClick" | 监听节点点击事件。 |
-| NODE_ADD | "NodeAdd" | 监听节点增加事件。在调用addNode方法添加节点后触发。 |
-| NODE_DELETE | "NodeDelete" | 监听节点删除事件。在调用removeNode方法删除节点后触发。 |
-| NODE_MODIFY | "NodeModify" | 监听节点修改事件。在调用modifyNode方法修改节点后触发。 |
-| NODE_MOVE | "NodeMove" | 监听节点移动事件。在节点位置发生变化后触发。 |
+| NODE_ADD | "NodeAdd" | 监听节点增加事件。 |
+| NODE_DELETE | "NodeDelete" | 监听节点删除事件。 |
+| NODE_MODIFY | "NodeModify" | 监听节点修改事件。 |
+| NODE_MOVE | "NodeMove" | 监听节点移动事件。 |
  
  
   
 
-#### CallbackParam
+## CallbackParam
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
  
@@ -365,30 +395,36 @@ off(type: TreeListenType, callback?: (callbackParam: CallbackParam) => void): vo
  
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | currentNodeId | number | 否 | 否 | 返回当前子节点id。 取值范围：大于等于0。 |
 | parentNodeId | number | 否 | 是 | 返回当前父节点id。 取值范围：大于等于-1。 默认值：-1 |
-| childIndex | number | 否 | 是 | 返回子节点在父节点下的索引位置，用于标识子节点在父节点的子节点列表中的位置。 取值范围：大于等于-1，-1表示无效索引或无子节点。 默认值：-1 |
+| childIndex | number | 否 | 是 | 返回子索引。 取值范围：大于等于-1。 默认值：-1 |
  
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 不支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)。
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 示例1（设置简单树视图）
+### 示例1（设置简单树视图）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 通过树视图组件的控制器对树的节点进行新增、删除、重命名，展示新增不同参数节点的实现效果。
  
@@ -500,8 +536,7 @@ struct TreeViewDemo {
       .showControlButton(false)
       .showSideBar(true)
     }
-  }
-}
+  }}
 ```
  
 
@@ -510,7 +545,10 @@ struct TreeViewDemo {
  
   
 
-#### 示例2（设置Symbol类型图标）
+### 示例2（设置Symbol类型图标）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 从API version 18开始，该示例通过设置NodeParam的属性symbolIconStyle、symbolEditIconStyle、symbolSelectedIconStyle，展示了自定义Symbol类型图标。
  
@@ -631,9 +669,8 @@ struct TreeViewDemo {
       .showControlButton(false)
       .showSideBar(true)
     }
-  }
-}
+  }}
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/C34sZZiFSnixH7gpBgSISQ/zh-cn_image_0000002685928643.png?HW-CC-KV=V1&HW-CC-Date=20260730T071520Z&HW-CC-Expire=86400&HW-CC-Sign=20493BD2704B517C818EAF64D848A75D29997E1BA5F0FE003C4B7BA8AA955B5E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/4e_YW4yFQnWmFDkQOPQzBA/zh-cn_image_0000002717773118.png?HW-CC-KV=V1&HW-CC-Date=20260911T073030Z&HW-CC-Expire=86400&HW-CC-Sign=9885027AEF9ED6CE535807C851C888BDF1097211E61AEEA8789D798A2F8C98CC)

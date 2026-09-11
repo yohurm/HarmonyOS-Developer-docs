@@ -1,6 +1,6 @@
 # Scan Kit无法识别多个码图
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-faq-3
 

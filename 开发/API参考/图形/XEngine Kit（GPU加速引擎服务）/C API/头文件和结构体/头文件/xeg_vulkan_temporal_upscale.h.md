@@ -1,11 +1,12 @@
 # xeg_vulkan_temporal_upscale.h
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-kit-xeg-vulkan-temporal-upscale-8h
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -23,16 +24,19 @@ XEngine时域AI超分特性接口，推荐超分倍率为[1.25, 2.0]。使用此
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 结构体
+### 结构体
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | struct XEG_TemporalUpscaleCreateInfo | 此结构体描述创建XEG_TemporalUpscale对象的信息。当结构体中的信息变化时，需要创建新的XEG_TemporalUpscale对象。 |
@@ -41,10 +45,12 @@ XEngine时域AI超分特性接口，推荐超分倍率为[1.25, 2.0]。使用此
  
   
 
-#### 类型定义
+### 类型定义
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | VK_DEFINE_HANDLE(XEG_TemporalUpscale) | XEG_TemporalUpscale的句柄。 |
@@ -57,10 +63,12 @@ XEngine时域AI超分特性接口，推荐超分倍率为[1.25, 2.0]。使用此
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | VKAPI_ATTR VkResult VKAPI_CALL HMS_XEG_CreateTemporalUpscale (VkDevice device, XEG_TemporalUpscaleCreateInfo *pTemporalUpscaleInfo, XEG_TemporalUpscale *pTemporalUpscale) | 创建XEG_TemporalUpscale对象。 |

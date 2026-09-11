@@ -1,11 +1,12 @@
 # OpenGTX_FrameRenderInfo
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_open_g_t_x___frame_render_info
 **支持设备：** Phone | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -19,16 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OpenGTX_Vector3 mainCameraPosition | 主摄像头的位置。x、y、z的取值范围均为[-360, 360]，超出取值范围则该值不生效，并且返回401错误码。单位：deg。 |
@@ -37,13 +41,15 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### mainCameraPosition
+### mainCameraPosition
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -57,7 +63,8 @@ OpenGTX_Vector3 OpenGTX_FrameRenderInfo::mainCameraPosition
  
   
 
-#### mainCameraRotate
+### mainCameraRotate
+
 
 **支持设备：** Phone | Tablet | TV
 

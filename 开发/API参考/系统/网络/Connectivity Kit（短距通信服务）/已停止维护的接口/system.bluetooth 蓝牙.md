@@ -1,6 +1,6 @@
 # @system.bluetooth (蓝牙)
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-system-bluetooth
 **支持设备：** Wearable | lite_wearable
@@ -10,7 +10,8 @@
 
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -20,7 +21,8 @@ import bluetooth from '@system.bluetooth';
  
   
 
-#### bluetooth.startBLEScan(OBJECT)
+## bluetooth.startBLEScan(OBJECT)
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -32,6 +34,7 @@ import bluetooth from '@system.bluetooth';
  
 **表1** StartBLEScanOptions
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | interval | number | 否 | 上报设备的间隔，单位毫秒，默认值为0。0表示找到新设备立即上报，其他数值根据传入的间隔上报。 |
@@ -46,20 +49,21 @@ import bluetooth from '@system.bluetooth';
 bluetooth.startBLEScan({
   interval:0,
   success() {
-    console.log('call bluetooth.startBLEScan success.');
+    console.info('call bluetooth.startBLEScan success.');
   },
   fail(code, data) {
-    console.log('call bluetooth.startBLEScan failed, code:' + code + ', data:' + data);
+    console.info('call bluetooth.startBLEScan failed, code:' + code + ', data:' + data);
   },
   complete() {
-    console.log('call bluetooth.startBLEScan complete.');
+    console.info('call bluetooth.startBLEScan complete.');
   }
 });
 ```
  
   
 
-#### bluetooth.stopBLEScan(OBJECT)
+## bluetooth.stopBLEScan(OBJECT)
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -71,6 +75,7 @@ bluetooth.startBLEScan({
  
 **表2** StopBLEScanOptions
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | success | Function | 否 | 接口调用成功的回调函数。 |
@@ -83,20 +88,21 @@ bluetooth.startBLEScan({
 ```text
 bluetooth.stopBLEScan({
   success() {
-    console.log('call bluetooth.stopBLEScan success.');
+    console.info('call bluetooth.stopBLEScan success.');
   },
   fail(data, code) {
-    console.log('call bluetooth.stopBLEScan fail, code:' + code + ', data:' + data);
+    console.info('call bluetooth.stopBLEScan fail, code:' + code + ', data:' + data);
   },
   complete() {
-    console.log('call bluetooth.stopBLEScan complete.');
+    console.info('call bluetooth.stopBLEScan complete.');
   }
 });
 ```
  
   
 
-#### bluetooth.subscribeBLEFound(OBJECT)
+## bluetooth.subscribeBLEFound(OBJECT)
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -108,6 +114,7 @@ bluetooth.stopBLEScan({
  
 **表3** SubscribeBLEFoundOptions
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | success | Function | 是 | 寻找到新设备上报时调用的回调函数。 |
@@ -116,6 +123,7 @@ bluetooth.stopBLEScan({
  
 **表4** success返回值
   
+
 | 参数名 | 类型 | 说明 |
 | --- | --- | --- |
 | devices | Array&lt;BluetoothDevice&gt; | 新搜索到的设备列表。 |
@@ -123,6 +131,7 @@ bluetooth.stopBLEScan({
  
 **表5** BluetoothDevice
   
+
 | 参数名 | 类型 | 说明 |
 | --- | --- | --- |
 | addrType | string | 设备地址类型，可能值有： - public: 公共地址 - random: 随机地址 |
@@ -137,17 +146,18 @@ bluetooth.stopBLEScan({
 ```text
 bluetooth.subscribeBLEFound({
   success(data) {
-    console.log('call bluetooth.subscribeBLEFound success, data: ${data}.');
+    console.info('call bluetooth.subscribeBLEFound success, data: ${data}.');
   },
   fail(data, code) {
-    console.log('call bluetooth.startBLEScan failed, code:' + code + ', data:' + data);
+    console.info('call bluetooth.startBLEScan failed, code:' + code + ', data:' + data);
   }
 });
 ```
  
   
 
-#### bluetooth.unsubscribeBLEFound()
+## bluetooth.unsubscribeBLEFound()
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -163,10 +173,12 @@ bluetooth.unsubscribeBLEFound();
  
   
 
-#### 常见错误码
+## 常见错误码
+
 
 **支持设备：** Wearable | lite_wearable
  
+
 | 错误码 | 说明 |
 | --- | --- |
 | 1100 | 是否处于已连接状态。 |

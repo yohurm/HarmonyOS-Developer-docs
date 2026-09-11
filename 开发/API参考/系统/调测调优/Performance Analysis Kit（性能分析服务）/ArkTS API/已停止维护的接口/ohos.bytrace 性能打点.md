@@ -1,9 +1,9 @@
 # @ohos.bytrace (性能打点)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bytrace
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供了追踪进程轨迹的能力，用于应用性能分析场景。开发者可以通过性能打点来追踪关键代码段的执行时间，定位性能瓶颈，优化应用性能。适用于应用启动耗时分析、业务流程性能监控、帧率分析等场景。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { bytrace } from '@kit.PerformanceAnalysisKit';
@@ -22,9 +23,10 @@ import { bytrace } from '@kit.PerformanceAnalysisKit';
  
   
 
-#### bytrace.startTrace
+## bytrace.startTrace
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startTrace(name: string, taskId: number, expectedTime?: number): void
  
@@ -38,6 +40,7 @@ startTrace(name: string, taskId: number, expectedTime?: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 时间片跟踪任务名称。 |
@@ -54,9 +57,10 @@ bytrace.startTrace("myTestFunc", 1, 5); // 从startTrace到finishTrace流程的�
  
   
 
-#### bytrace.finishTrace
+## bytrace.finishTrace
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 finishTrace(name: string, taskId: number): void
  
@@ -70,6 +74,7 @@ finishTrace(name: string, taskId: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 时间片跟踪任务名称，必须与startTrace调用时的name参数值一致。 |
@@ -106,9 +111,10 @@ bytrace.finishTrace("myTestFunc", 1);
  
   
 
-#### bytrace.traceByValue
+## bytrace.traceByValue
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 traceByValue(name: string, count: number): void
  
@@ -122,6 +128,7 @@ traceByValue(name: string, count: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 数值变量的名称。 |

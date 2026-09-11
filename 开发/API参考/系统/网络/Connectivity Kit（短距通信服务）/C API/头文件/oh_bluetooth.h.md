@@ -1,15 +1,16 @@
 # oh_bluetooth.h
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-bluetooth-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-定义查询蓝牙开关状态的接口。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+提供查询蓝牙开关状态的接口。支持获取蓝牙的开关、打开中、关闭中、BLE only模式等多种状态，适用于需要感知蓝牙当前开关状态以进行相应业务处理的场景。
  
 **引用文件：** <ConnectivityKit/bluetooth/oh_bluetooth.h>
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | Bluetooth_SwitchState | Bluetooth_SwitchState | 定义蓝牙开关状态的枚举值。 |
@@ -41,10 +45,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | Bluetooth_ResultCode OH_Bluetooth_GetBluetoothSwitchState(Bluetooth_SwitchState *state) | 获取蓝牙开关状态。 |
@@ -52,15 +58,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### Bluetooth_SwitchState
+### Bluetooth_SwitchState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Bluetooth_SwitchState
@@ -72,6 +80,7 @@ enum Bluetooth_SwitchState
  
 **起始版本：** 13
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | BLUETOOTH_STATE_OFF = 0 | 表示蓝牙关闭。 |
@@ -85,9 +94,10 @@ enum Bluetooth_SwitchState
  
   
 
-#### Bluetooth_ResultCode
+### Bluetooth_ResultCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Bluetooth_ResultCode
@@ -99,6 +109,7 @@ enum Bluetooth_ResultCode
  
 **起始版本：** 13
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | BLUETOOTH_SUCCESS = 0 | 操作成功。 |
@@ -107,15 +118,17 @@ enum Bluetooth_ResultCode
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Bluetooth_GetBluetoothSwitchState()
+### OH_Bluetooth_GetBluetoothSwitchState()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Bluetooth_ResultCode OH_Bluetooth_GetBluetoothSwitchState(Bluetooth_SwitchState *state)
@@ -129,6 +142,7 @@ Bluetooth_ResultCode OH_Bluetooth_GetBluetoothSwitchState(Bluetooth_SwitchState 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Bluetooth_SwitchState *state | - 指向接收蓝牙开关状态的枚举值的指针。需要传入非空指针，否则将返回错误码。详细定义请参考Bluetooth_SwitchState。 |
@@ -136,6 +150,7 @@ Bluetooth_ResultCode OH_Bluetooth_GetBluetoothSwitchState(Bluetooth_SwitchState 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Bluetooth_ResultCode | 蓝牙开关状态函数返回值。 详细定义请参考Bluetooth_ResultCode。 BLUETOOTH_SUCCESS 成功获取蓝牙开关状态。 BLUETOOTH_INVALID_PARAM 输入参数为空指针。 |

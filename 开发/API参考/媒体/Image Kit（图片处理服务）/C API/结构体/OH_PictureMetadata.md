@@ -1,23 +1,25 @@
 # OH_PictureMetadata
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-nativemodule-oh-picturemetadata
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct OH_PictureMetadata OH_PictureMetadata
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 OH_PictureMetadata用于承载Picture元数据。
  
 有多种方式创建和获取OH_PictureMetadata：
   
+
 | 函数 | 描述 |
 | --- | --- |
 | OH_PictureMetadata_Create() | 创建OH_PictureMetadata指针。 |
@@ -32,6 +34,7 @@ OH_PictureMetadata用于承载Picture元数据。
  
 OH_PictureMetadata结构体内容和操作方式如下：
   
+
 | 字段类型 | 字段名称 | 字段描述 | 字段获取函数 | 字段设置函数 |
 | --- | --- | --- | --- | --- |
 | Image_String | property | 元数据属性。 | OH_PictureMetadata_GetProperty()、OH_PictureMetadata_GetPropertyWithNull() | OH_PictureMetadata_SetProperty() |

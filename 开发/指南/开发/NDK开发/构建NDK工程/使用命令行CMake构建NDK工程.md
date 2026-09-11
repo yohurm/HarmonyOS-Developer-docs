@@ -1,13 +1,13 @@
 # 使用命令行CMake构建NDK工程
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/build-with-ndk-cmake
 
 在很多复杂应用工程中，C++代码工程是通过CMake等构建系统以命令行方式来编译构建的，接下来介绍如何把已有的CMake工程切换到HarmonyOS工具链中，从而使用命令行CMake构建该工程。
   
 
-#### 获取NDK开发包
+## 获取NDK开发包
 1. 通过下载command line tools获取NDK开发包。
 
   先下载command line tools并解压完成，NDK开发相关工具位于$command line tools解压目录/sdk/default/openharmony/native路径下。
@@ -17,7 +17,7 @@
  
   
 
-#### 配置环境变量
+### 配置环境变量
 
 如果只是在DevEco Studio中使用，跳过以下步骤：
  1. 将NDK自带的CMake编译工具添加到环境变量中。
@@ -79,13 +79,13 @@ which cmake
  
   
 
-#### 使用NDK开发包编译Native程序
+## 使用NDK开发包编译Native程序
 
 应用开发者可以通过NDK开发包快速开发出Native动态库、静态库与可执行文件。NDK开发包提供CMake编译构建工具脚本，下面通过编写一个C/C++ demo工程来演示适配过程。
  
   
 
-#### demo工程内容
+### demo工程内容
 
 下面是一个CMake的demo工程内容，此工程包含两个目录，include目录包含此库的头文件，src目录包含全部源码；src目录包含两个文件，sum.cpp的算法文件，以及hello.cpp的调用算法的主入口文件，目标是编译成一个可执行程序，以及一个算法动态库。
  
@@ -175,11 +175,11 @@ int sum(int a, int b)
  
   
 
-#### 编译构建demo工程
+### 编译构建demo工程
 
 **linux 和 mac 系统环境下**
  
-在工程目录的模块目录下，创建build目录，用来放置CMake构建时产生的中间文件。注意: ohos-sdk是下载下来的SDK的根目录，开发者需要自行替换成实际的下载目录。
+在工程目录的模块目录下，创建build目录，用来放置CMake构建时产生的中间文件。注意：ohos-sdk是下载下来的SDK的根目录，开发者需要自行替换成实际的下载目录。
  1. 采用OHOS_STL=c++_shared动态链接c++库方式构建工程，如不指定，默认采用c++_shared；OHOS_ARCH参数可根据系统架构来决定具体值，例如当OHOS_ARCH=armeabi-v7a会编译32位动态库，而当OHOS_ARCH=arm64-v8a会编译64位动态库。
 
   
@@ -243,7 +243,7 @@ F:\windows\native\build-tools\cmake\bin\cmake.exe -G "Ninja" -D OHOS_STL=c++_sha
 ![](assets/使用命令行CMake构建NDK工程/file-20260514132659219-6.png)
 
  
-这里生成的build.ninja文件就是我们需要的 。
+这里生成的build.ninja文件就是我们需要的。
  
 Step 2. 让我们用ninja指令来编译生成目标文件，其位置如下图所示：
  

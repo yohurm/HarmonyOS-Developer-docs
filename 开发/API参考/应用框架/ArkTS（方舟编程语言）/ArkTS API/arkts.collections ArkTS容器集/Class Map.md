@@ -1,9 +1,9 @@
 # Class (Map)
 
-更新时间：2026-08-04 06:06:24
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-arkts-collections-map
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 一种基于键值对存储的非线性数据结构，能够高效地通过唯一键来存取对应的值。
 
@@ -22,9 +22,10 @@ K和V类型都需为[Sendable支持的数据类型](https://developer.huawei.com
 **装饰器类型：**@Sendable
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { collections } from '@kit.ArkTS';
@@ -32,13 +33,15 @@ import { collections } from '@kit.ArkTS';
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -47,9 +50,10 @@ import { collections } from '@kit.ArkTS';
 
 
 
-#### constructor
+## constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(entries?: readonly (readonly [K, V])[] | null)
 
@@ -61,6 +65,7 @@ constructor(entries?: readonly (readonly [K, V])[] | null)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | entries | readonly (readonly [K, V])[] \| null | 否 | 键值对数组或null。默认值为null，创建一个空Map对象。 |
@@ -69,6 +74,7 @@ constructor(entries?: readonly (readonly [K, V])[] | null)
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -109,9 +115,10 @@ const myMap2: collections.Map<number, Object> = new collections.Map<number, Obje
 
 
 
-#### constructor
+## constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(iterable: Iterable<readonly [K, V]>)
 
@@ -123,6 +130,7 @@ constructor(iterable: Iterable<readonly [K, V]>)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | iterable | Iterable<readonly [K, V]> | 是 | 用于构造ArkTS Map的可迭代对象。 |
@@ -131,6 +139,7 @@ constructor(iterable: Iterable<readonly [K, V]>)
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -153,9 +162,10 @@ console.info(newMap.get("2")); // Expected output: b
 
 
 
-#### entries
+## entries
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 entries(): IterableIterator<[K, V]>
 
@@ -167,6 +177,7 @@ entries(): IterableIterator<[K, V]>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator<[K, V]> | 返回一个Map迭代器对象。 |
@@ -175,6 +186,7 @@ entries(): IterableIterator<[K, V]>
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -222,9 +234,10 @@ console.info("size:" + myMap.size);
 
 
 
-#### keys
+## keys
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 keys(): IterableIterator&lt;K&gt;
 
@@ -236,6 +249,7 @@ keys(): IterableIterator&lt;K&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator&lt;K&gt; | 返回一个Map迭代器对象。 |
@@ -244,6 +258,7 @@ keys(): IterableIterator&lt;K&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -269,9 +284,10 @@ console.info(iterator.next().value);
 
 
 
-#### values
+## values
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 values(): IterableIterator&lt;V&gt;
 
@@ -283,6 +299,7 @@ values(): IterableIterator&lt;V&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator&lt;V&gt; | 返回一个Map迭代器对象。 |
@@ -291,6 +308,7 @@ values(): IterableIterator&lt;V&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -316,9 +334,10 @@ console.info(iterator.next().value);
 
 
 
-#### clear
+## clear
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clear(): void
 
@@ -331,6 +350,7 @@ clear(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -356,9 +376,10 @@ console.info("size:" + myMap.size);
 
 
 
-#### delete
+## delete
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 delete(key: K): boolean
 
@@ -370,12 +391,14 @@ delete(key: K): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | K | 是 | 待删除元素的键。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -385,6 +408,7 @@ delete(key: K): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -412,9 +436,10 @@ console.info("result:" + myMap.delete("hello"));
 
 
 
-#### forEach
+## forEach
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 forEach(callbackFn: (value: V, key: K, map: Map<K, V>) => void): void
 
@@ -426,12 +451,14 @@ forEach(callbackFn: (value: V, key: K, map: Map<K, V>) => void): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callbackFn | (value: V, key: K, map: Map<K, V>) => void | 是 | 回调函数。回调执行期间不能修改当前Map对象，否则会触发并发修改错误。 |
 
 
 callbackFn的参数说明：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -443,6 +470,7 @@ callbackFn的参数说明：
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -478,9 +506,10 @@ new collections.Map<string, number>([
 
 
 
-#### get
+## get
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get(key: K): V | undefined
 
@@ -492,12 +521,14 @@ get(key: K): V | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | K | 是 | 要获取值的键。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -507,6 +538,7 @@ get(key: K): V | undefined
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -528,9 +560,10 @@ console.info(myMap.get("hel"));
 
 
 
-#### has
+## has
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 has(key: K): boolean
 
@@ -542,12 +575,14 @@ has(key: K): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | K | 是 | 待查找元素的键。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -557,6 +592,7 @@ has(key: K): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -580,9 +616,10 @@ console.info("result:" + myMap.has("world"));
 
 
 
-#### set
+## set
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set(key: K, value: V): Map<K, V>
 
@@ -594,6 +631,7 @@ set(key: K, value: V): Map<K, V>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | K | 是 | 要添加或更新的键。 |
@@ -601,6 +639,7 @@ set(key: K, value: V): Map<K, V>
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -610,6 +649,7 @@ set(key: K, value: V): Map<K, V>
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -636,9 +676,10 @@ myMap.set("foo", obj);
 
 
 
-#### [Symbol.iterator]
+## [Symbol.iterator]
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [Symbol.iterator](): IterableIterator<[K, V]>
 
@@ -654,6 +695,7 @@ myMap.set("foo", obj);
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator<[K, V]> | 包含Map中每个元素键值对的迭代器。 |
@@ -662,6 +704,7 @@ myMap.set("foo", obj);
 **错误码：**
 
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

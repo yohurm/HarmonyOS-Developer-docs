@@ -1,18 +1,19 @@
 # HiTraceId
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hitrace-hitraceid
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct HiTraceId {...} HiTraceId
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于标识调用链的结构体。
  
@@ -32,18 +33,21 @@ typedef struct HiTraceId {...} HiTraceId
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 成员变量
+### 成员变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 如果字节序为小端模式，结构体顺序如下表所示：
   
+
 | 字段 | 字段bit数 | 描述 |
 | --- | --- | --- |
 | uint64_t valid | 1 | HiTraceId是否有效，1表示有效，0表示无效。用于判断HiTraceId结构体是否包含有效的跟踪信息。 |
@@ -56,6 +60,7 @@ typedef struct HiTraceId {...} HiTraceId
  
 如果字节序为大端模式，结构体顺序如下表所示：
   
+
 | 字段 | 字段bit数 | 描述 |
 | --- | --- | --- |
 | uint64_t chainId | 60 | HiTraceId的跟踪链标识，用于唯一标识跨进程/跨设备的调用链。在整个分布式跟踪过程中保持不变，用于关联同一业务流程的所有跟踪信息。 |

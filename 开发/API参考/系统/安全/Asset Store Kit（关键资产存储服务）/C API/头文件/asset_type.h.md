@@ -1,13 +1,14 @@
 # asset_type.h
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-asset-type-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义关键资产存储服务中通用的枚举值、数据结构和错误码。
 
@@ -23,15 +24,18 @@
 
 
 
-#### 汇总
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 汇总
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 结构体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -45,9 +49,11 @@
 
 
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -65,9 +71,11 @@
 
 
 
-#### 宏定义
+### 宏定义
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -76,15 +84,17 @@
 
 
 
-#### 枚举类型说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 枚举类型说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### Asset_TagType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### Asset_TagType
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Asset_TagType
@@ -96,6 +106,7 @@ enum Asset_TagType
 
 **起始版本：** 11
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ASSET_TYPE_BOOL = 0x1 << 28 | 表示关键资产属性的类型是bool。 |
@@ -105,9 +116,10 @@ enum Asset_TagType
 
 
 
-#### Asset_Tag
+### Asset_Tag
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Asset_Tag
@@ -118,6 +130,7 @@ enum Asset_Tag
 关键资产属性的标签。
 
 **起始版本：** 11
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -157,9 +170,10 @@ enum Asset_Tag
 
 
 
-#### Asset_ResultCode
+### Asset_ResultCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Asset_ResultCode
@@ -170,6 +184,7 @@ enum Asset_ResultCode
 ASSET API使用的结果码。
 
 **起始版本：** 11
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -198,9 +213,10 @@ ASSET API使用的结果码。
 
 
 
-#### Asset_Accessibility
+### Asset_Accessibility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Asset_Accessibility
@@ -212,6 +228,7 @@ enum Asset_Accessibility
 
 **起始版本：** 11
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ASSET_ACCESSIBILITY_DEVICE_POWERED_ON = 0 | 开机后可访问。 |
@@ -221,9 +238,10 @@ enum Asset_Accessibility
 
 
 
-#### Asset_AuthType
+### Asset_AuthType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Asset_AuthType
@@ -235,6 +253,7 @@ enum Asset_AuthType
 
 **起始版本：** 11
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ASSET_AUTH_TYPE_NONE = 0x00 | 访问关键资产前无需用户认证。 |
@@ -243,9 +262,10 @@ enum Asset_AuthType
 
 
 
-#### Asset_SyncType
+### Asset_SyncType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Asset_SyncType
@@ -257,6 +277,7 @@ enum Asset_SyncType
 
 **起始版本：** 11
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ASSET_SYNC_TYPE_NEVER = 0 | 不允许同步关键资产。 |
@@ -267,9 +288,10 @@ enum Asset_SyncType
 
 
 
-#### Asset_WrapType
+### Asset_WrapType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Asset_WrapType
@@ -281,6 +303,7 @@ enum Asset_WrapType
 
 **起始版本：** 18
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ASSET_WRAP_TYPE_NEVER = 0 | 不允许加密导入导出关键资产。 |
@@ -289,9 +312,10 @@ enum Asset_WrapType
 
 
 
-#### Asset_ConflictResolution
+### Asset_ConflictResolution
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Asset_ConflictResolution
@@ -303,6 +327,7 @@ enum Asset_ConflictResolution
 
 **起始版本：** 11
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ASSET_CONFLICT_OVERWRITE = 0 | 覆盖原本的关键资产。 |
@@ -311,9 +336,10 @@ enum Asset_ConflictResolution
 
 
 
-#### Asset_ReturnType
+### Asset_ReturnType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Asset_ReturnType
@@ -325,6 +351,7 @@ enum Asset_ReturnType
 
 **起始版本：** 11
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ASSET_RETURN_ALL = 0 | 返回关键资产明文及属性。 |
@@ -333,9 +360,10 @@ enum Asset_ReturnType
 
 
 
-#### Asset_OperationType
+### Asset_OperationType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Asset_OperationType
@@ -346,6 +374,7 @@ enum Asset_OperationType
 附属的操作类型。
 
 **起始版本：** 12
+
 
 | 枚举项 | 描述 |
 | --- | --- |

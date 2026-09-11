@@ -1,9 +1,9 @@
 # @ohos.app.ability.ChildProcess (子进程基类)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-childprocess
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 开发者自定义子进程的基类。通过[childProcessManager](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-childprocessmanager)启动子进程时，需要继承此类并重写入口方法。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { ChildProcess } from '@kit.AbilityKit';
@@ -22,9 +23,10 @@ import { ChildProcess } from '@kit.AbilityKit';
  
   
 
-#### ChildProcess.onStart
+## ChildProcess.onStart
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onStart(args?: ChildProcessArgs): void
  
@@ -34,9 +36,10 @@ onStart(args?: ChildProcessArgs): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| args12+ | ChildProcessArgs | 否 | 传递到子进程的参数。 |
+| args12+ | ChildProcessArgs | 否 | 传递到子进程的参数。参数为可选，不传或传null时使用默认配置启动。 |
  
  
 **示例：**
@@ -49,7 +52,7 @@ export default class DemoProcess extends ChildProcess {
   onStart(args?: ChildProcessArgs) {
     let entryParams = args?.entryParams;
     let fd = args?.fds?.key1;
-    // ..
+    // ...
   }
 }
 ```

@@ -50,23 +50,23 @@ struct BleAndSsapSetMtu {
   @State gattClient: ble.GattClientDevice | undefined = undefined;
   @State ssapClient: ssap.Client | undefined = undefined;
 
-  // 设置ble端mtu
+ <em> // 设置ble端mtu</em>
   setBleMtu() {
-    // 创建client端实例，bleMac为server端虚拟mac地址，需要提前获取
+   <em> // 创建client端实例，bleMac为server端虚拟mac地址，需要提前获取</em>
     this.gattClient = ble.createGattClientDevice('bleMac');
-    // 订阅ble蓝牙连接状态监听事件
+   <em> // 订阅ble蓝牙连接状态监听事件</em>
     this.onBLEConnectionStateChange();
-    // 订阅MTU协商结果监听事件
+  <em>  // 订阅MTU协商结果监听事件</em>
     this.BLEMtuChange();
-    // 连接server端ble蓝牙
+  <em>  // 连接server端ble蓝牙</em>
     this.gattClient.connect();
   }
 
   onBLEConnectionStateChange() {
     this.gattClient?.on('BLEConnectionStateChange', (state: ble.BLEConnectionChangeState) => {
-      // state.state返回结果为2时，表示client端同server端成功建立了连接。
+  <em>    // state.state返回结果为2时，表示client端同server端成功建立了连接。</em>
       if (state.state === constant.ProfileConnectionState.STATE_CONNECTED) {
-        // 调用setBLEMtuSize接口，同server端协商MTU，参数取值范围23~517。
+     <em>   // 调用setBLEMtuSize接口，同server端协商MTU，参数取值范围23~517。</em>
         this.gattClient?.setBLEMtuSize(128);
       }
     });
@@ -74,28 +74,28 @@ struct BleAndSsapSetMtu {
 
   BLEMtuChange() {
     this.gattClient?.on('BLEMtuChange', (mtu: number) => {
-      // MTU协商结果监听回调，回调触发，表示协商成功。
+    <em>  // MTU协商结果监听回调，回调触发，表示协商成功。</em>
       console.info(`BLEMtuChange, mtu: ${mtu}`);
     });
   }
 
-  // 设置星闪端mtu
+ <em> // 设置星闪端mtu</em>
   setSsapMtu() {
-    // 创建client端实例，ssapMac为server端虚拟mac地址，需要提前获取
+  <em>  // 创建client端实例，ssapMac为server端虚拟mac地址，需要提前获取</em>
     this.ssapClient = ssap.createClient('ssapMac');
-    // 订阅ble蓝牙连接状态监听事件
+  <em>  // 订阅ble蓝牙连接状态监听事件</em>
     this.onConnectionStateChange();
-    // 订阅MTU协商结果监听事件
+   <em> // 订阅MTU协商结果监听事件</em>
     this.ssapMtuChange();
-    // 连接server端ble蓝牙
+ <em>   // 连接server端ble蓝牙</em>
     this.ssapClient.connect();
   }
 
   onConnectionStateChange() {
     this.ssapClient?.on('connectionStateChange', (state: ssap.ConnectionChangeState) => {
-      // state.state返回结果为1时，表示client端同server端成功建立了连接。
+   <em>   // state.state返回结果为1时，表示client端同server端成功建立了连接。</em>
       if (state.state === 1) {
-        // 调用requestMtuSize接口，同server端协商MTU，参数取值范围22~512，默认值为256字节。
+     <em>   // 调用requestMtuSize接口，同server端协商MTU，参数取值范围22~512，默认值为256字节。</em>
         this.ssapClient?.requestMtuSize(128);
       }
     });
@@ -103,7 +103,7 @@ struct BleAndSsapSetMtu {
 
   ssapMtuChange() {
     this.ssapClient?.on('mtuChange', (mtu: number) => {
-      // MTU协商结果监听回调，回调触发，表示协商成功。
+  <em>    // MTU协商结果监听回调，回调触发，表示协商成功。</em>
       console.info(`mtuChange, mtu:  ${mtu}`);
     });
   }
@@ -111,12 +111,12 @@ struct BleAndSsapSetMtu {
   build() {
     Column() {
       Button('连接ble蓝牙，并协商MTU').onClick(() => {
-        // 连接ble蓝牙，并协商MTU
+   <em>     // 连接ble蓝牙，并协商MTU</em>
         this.setBleMtu();
       }).margin(15);
 
       Button('连接星闪，并协商MTU').onClick(() => {
-        // 连接星闪，并协商MTU
+     <em>   // 连接星闪，并协商MTU</em>
         this.setSsapMtu();
       });
     }

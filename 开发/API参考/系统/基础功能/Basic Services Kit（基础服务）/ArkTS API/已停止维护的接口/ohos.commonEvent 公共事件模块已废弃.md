@@ -1,61 +1,65 @@
 # @ohos.commonEvent (公共事件模块)
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-commonevent
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供了公共事件的能力，包括公共事件的权限列表，发布公共事件，订阅或取消订阅公共事件，获取或修改公共事件结果代码、结果数据等。
- 
+
 > [!NOTE]
 > 从API version 7 开始支持，从API version 9 开始废弃，建议使用 @ohos.commonEventManager 替代。
 
-  
 
-#### 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 导入模块
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import commonEvent from '@ohos.commonEvent';
 ```
- 
-  
 
-#### Support
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-系统公共事件是指由系统服务或系统应用发布的事件，订阅这些系统公共事件需要特定的权限。发布或订阅这些事件需要使用如下链接中的枚举定义。
- 
+## Support
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+[系统公共事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/common-event-glossary#system-common-event系统公共事件)是指由系统服务或系统应用发布的事件，订阅这些系统公共事件需要特定的权限。发布或订阅这些事件需要使用如下链接中的枚举定义。
+
 全部系统公共事件枚举定义请参见[系统公共事件定义](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/commonevent-definitions)。
- 
-  
 
-#### commonEvent.publish(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## commonEvent.publish(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 publish(event: string, callback: AsyncCallback&lt;void&gt;): void
- 
+
 以回调形式发布公共事件。
- 
+
 > [!NOTE]
 > 从API version 7 开始支持，从API version 9 开始废弃，建议使用 commonEventManager.publish 替代。
 
- 
+
 **系统能力：** SystemCapability.Notification.CommonEvent
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 表示要发布的公共事件。 |
 | callback | AsyncCallback&lt;void&gt; | 是 | 表示发布公共事件的回调方法。 |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import Base from '@ohos.base';
 
@@ -71,34 +75,36 @@ let publishCallBack = (err: Base.BusinessError) => {
 // 发布公共事件
 commonEvent.publish("event", publishCallBack);
 ```
- 
-  
 
-#### commonEvent.publish(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## commonEvent.publish(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 publish(event: string, options: CommonEventPublishData, callback: AsyncCallback&lt;void&gt;): void
- 
+
 以回调形式发布公共事件。
- 
+
 > [!NOTE]
 > 从API version 7 开始支持，从API version 9 开始废弃，建议使用 commonEventManager.publish 替代。
 
- 
+
 **系统能力：** SystemCapability.Notification.CommonEvent
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 表示要发布的公共事件。 |
 | options | CommonEventPublishData | 是 | 表示发布公共事件的属性。 |
 | callback | AsyncCallback&lt;void&gt; | 是 | 表示发布公共事件的回调方法。 |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import Base from '@ohos.base';
 import CommonEventManager from '@ohos.commonEventManager';
@@ -122,33 +128,35 @@ let publishCallBack = (err: Base.BusinessError) => {
 // 发布公共事件
 commonEvent.publish("event", options, publishCallBack);
 ```
- 
-  
 
-#### commonEvent.createSubscriber(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## commonEvent.createSubscriber(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createSubscriber(subscribeInfo: CommonEventSubscribeInfo, callback: AsyncCallback&lt;CommonEventSubscriber&gt;): void
- 
+
 以回调形式创建订阅者。
- 
+
 > [!NOTE]
 > 从API version 7 开始支持，从API version 9 开始废弃，建议使用 commonEventManager.createSubscriber 替代。
 
- 
+
 **系统能力：** SystemCapability.Notification.CommonEvent
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | subscribeInfo | CommonEventSubscribeInfo | 是 | 表示订阅信息。 |
 | callback | AsyncCallback&lt;CommonEventSubscriber&gt; | 是 | 表示创建订阅者的回调方法。 |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import Base from '@ohos.base';
 import CommonEventManager from '@ohos.commonEventManager';
@@ -173,39 +181,42 @@ let createCallBack = (err:Base.BusinessError, commonEventSubscriber:CommonEventM
 // 创建订阅者
 commonEvent.createSubscriber(subscribeInfo, createCallBack);
 ```
- 
-  
 
-#### commonEvent.createSubscriber(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## commonEvent.createSubscriber(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createSubscriber(subscribeInfo: CommonEventSubscribeInfo): Promise&lt;CommonEventSubscriber&gt;
- 
+
 以Promise形式创建订阅者。
- 
+
 > [!NOTE]
 > 从API version 7 开始支持，从API version 9 开始废弃，建议使用 commonEventManager.createSubscriber 替代。
 
- 
+
 **系统能力：** SystemCapability.Notification.CommonEvent
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | subscribeInfo | CommonEventSubscribeInfo | 是 | 表示订阅信息。 |
- 
- 
+
+
 **返回值：**
-  
+
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;CommonEventSubscriber&gt; | 返回订阅者对象。 |
- 
- 
+
+
 **示例：**
- 
+
 ```text
 import Base from '@ohos.base';
 import CommonEventManager from '@ohos.commonEventManager';
@@ -225,33 +236,35 @@ commonEvent.createSubscriber(subscribeInfo).then((commonEventSubscriber:CommonEv
     console.error(`createSubscriber failed, code is ${err.code}, message is ${err.message}`);
 });
 ```
- 
-  
 
-#### commonEvent.subscribe(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## commonEvent.subscribe(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 subscribe(subscriber: CommonEventSubscriber, callback: AsyncCallback&lt;CommonEventData&gt;): void
- 
+
 以回调形式订阅公共事件。
- 
+
 > [!NOTE]
 > 从API version 7 开始支持，从API version 9 开始废弃，建议使用 commonEventManager.subscribe 替代。
 
- 
+
 **系统能力：** SystemCapability.Notification.CommonEvent
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | subscriber | CommonEventSubscriber | 是 | 表示订阅者对象。 |
 | callback | AsyncCallback&lt;CommonEventData&gt; | 是 | 表示接收公共事件数据的回调方法。 |
- 
- 
+
+
 **示例：**
- 
+
 ```json
 import Base from '@ohos.base';
 import CommonEventManager from '@ohos.commonEventManager';
@@ -287,33 +300,35 @@ let createCallBack = (err:Base.BusinessError, commonEventSubscriber:CommonEventM
 // 创建订阅者
 commonEvent.createSubscriber(subscribeInfo, createCallBack);
 ```
- 
-  
 
-#### commonEvent.unsubscribe(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+## commonEvent.unsubscribe(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unsubscribe(subscriber: CommonEventSubscriber, callback?: AsyncCallback&lt;void&gt;): void
- 
+
 以回调形式取消订阅公共事件。
- 
+
 > [!NOTE]
 > 从API version 7 开始支持，从API version 9 开始废弃，建议使用 commonEventManager.unsubscribe 替代。
 
- 
+
 **系统能力：** SystemCapability.Notification.CommonEvent
- 
+
 **参数：**
-  
+
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | subscriber | CommonEventSubscriber | 是 | 表示订阅者对象。 |
 | callback | AsyncCallback&lt;void&gt; | 否 | 表示取消订阅的回调方法。 |
- 
- 
+
+
 **示例：**
- 
+
 ```json
 import Base from '@ohos.base';
 import CommonEventManager from '@ohos.commonEventManager';

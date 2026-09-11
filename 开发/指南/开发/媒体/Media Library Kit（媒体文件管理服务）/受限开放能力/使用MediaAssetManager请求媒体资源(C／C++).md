@@ -1,6 +1,6 @@
 # 使用MediaAssetManager请求媒体资源(C/C++)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ndk-mediaassetmanager-for-request-resource
 
@@ -9,7 +9,7 @@
 请求图片资源的全流程包含：创建MediaAssetManager，设置请求资源，请求图片资源，取消本次请求(可选)。
 
 
-#### 开发步骤及注意事项
+## 开发步骤及注意事项
 
 在CMake脚本中链接动态库
 
@@ -31,7 +31,7 @@ target_link_libraries(sample PUBLIC libmedia_asset_manager.so)
 
 
 
-#### 完整示例
+## 完整示例
 
 ```cpp
 #include "napi/native_api.h"

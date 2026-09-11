@@ -1,13 +1,14 @@
 # @hms.core.account.realName (华为账号实名认证服务)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-api-realname
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 模块概述
+## 模块概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 @hms.core.account.realName模块提供华为账号实名认证能力。该模块包含人脸核身能力，可通过人脸识别方式，验证华为账号用户身份。当开发者需要依据当前华为账号进行高风险操作时，可通过该能力拉起人脸核身页面，华为账号服务会比对当前设备使用人的人脸信息与华为账号用户人脸信息，用于验证当前使用人的身份。
  
@@ -19,9 +20,10 @@
  
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { realName } from '@kit.AccountKit';
@@ -29,9 +31,10 @@ import { realName } from '@kit.AccountKit';
  
   
 
-#### FacialRecognitionVerificationRequest
+## FacialRecognitionVerificationRequest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 人脸核身请求。[startFacialRecognitionVerification](#startfacialrecognitionverification)方法入参，需包含身份验证令牌，与华为账号用户人脸特征比对识别。
  
@@ -43,6 +46,7 @@ import { realName } from '@kit.AccountKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | verificationToken | string | 否 | 否 | 身份验证令牌，调用华为账号OpenRealName服务实名信息校验接口获取。长度限制1-2048。 |
@@ -63,9 +67,10 @@ const request: realName.FacialRecognitionVerificationRequest = {
  
   
 
-#### FacialRecognitionVerificationResult
+## FacialRecognitionVerificationResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 人脸核身请求响应。[startFacialRecognitionVerification](#startfacialrecognitionverification)方法返回值，如果成功返回该对象，说明人脸核身验证成功。
  
@@ -77,6 +82,7 @@ const request: realName.FacialRecognitionVerificationRequest = {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | facialRecognitionVerificationToken | string | 是 | 否 | 验证成功后返回的人脸核身验证令牌。长度限制1-2048。 |
@@ -85,9 +91,10 @@ const request: realName.FacialRecognitionVerificationRequest = {
  
   
 
-#### RealNameErrorCode
+## RealNameErrorCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 华为账号实名认证服务接口错误码枚举。
  
@@ -99,6 +106,7 @@ const request: realName.FacialRecognitionVerificationRequest = {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NETWORK_ERROR | 1002500001 | 网络不可用。 |
@@ -119,9 +127,10 @@ const request: realName.FacialRecognitionVerificationRequest = {
  
   
 
-#### startFacialRecognitionVerification
+## startFacialRecognitionVerification
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 startFacialRecognitionVerification(context: common.Context, request: FacialRecognitionVerificationRequest): Promise&lt;FacialRecognitionVerificationResult&gt;
  
@@ -143,6 +152,7 @@ startFacialRecognitionVerification(context: common.Context, request: FacialRecog
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | Context上下文。 应用可支持的Context有：UIAbilityContext和UIExtensionContext。不支持应用在半模态、弹出框、子窗口等非全页面组件中使用UIExtensionContext调用。 元服务可支持的Context有：UIAbilityContext。 |
@@ -151,6 +161,7 @@ startFacialRecognitionVerification(context: common.Context, request: FacialRecog
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;FacialRecognitionVerificationResult&gt; | Promise对象，返回FacialRecognitionVerificationResult对象。返回该对象，说明人脸核身验证成功。可使用该对象的state和入参对象的state比较，校验是否是当前请求，可防止跨站攻击。 |
@@ -160,6 +171,7 @@ startFacialRecognitionVerification(context: common.Context, request: FacialRecog
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account-kit)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |

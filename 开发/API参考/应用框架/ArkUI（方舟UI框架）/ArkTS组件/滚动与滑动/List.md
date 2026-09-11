@@ -1,9 +1,9 @@
 # List
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 List是ArkUI中的列表容器组件，用于呈现连续、多行或多列的同类数据，例如图片和文本，支持垂直或水平滚动。配合LazyForEach或Repeat可实现懒加载，提升长列表场景下的启动速度并减少内存消耗；支持预加载以减少滚动丢帧、提升流畅性；支持单列/多列布局、分组列表、吸顶吸底等能力，适用于消息列表、商品列表、设置页面等场景。
 
@@ -28,9 +28,10 @@ List的预加载是指除了加载显示区域内可见的子组件外，还支�
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 仅支持[ListItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-listitem)、[ListItemGroup](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-listitemgroup)子组件和自定义组件。自定义组件在List下使用时，请使用ListItem或ListItemGroup作为自定义组件的顶层组件，请勿直接给自定义组件设置属性和事件方法，因为List通过ListItem或ListItemGroup管理子组件的布局和事件处理，直接设置可能导致部分功能无法正常生效。
 
@@ -42,9 +43,10 @@ List的预加载是指除了加载显示区域内可见的子组件外，还支�
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 List(options?: [ListOptions](#listoptions18对象说明))
 
@@ -58,6 +60,7 @@ List(options?: [ListOptions](#listoptions18对象说明))
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ListOptions | 否 | 设置List组件参数。不传入时使用默认配置。 |
@@ -65,9 +68,10 @@ List(options?: [ListOptions](#listoptions18对象说明))
 
 
 
-#### ListOptions18+对象说明
+## ListOptions18+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于设置List组件参数。
 
@@ -83,6 +87,7 @@ List(options?: [ListOptions](#listoptions18对象说明))
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | initialIndex7+ | number | 否 | 是 | 设置当前List初次加载时显示区域起始位置的item索引值。 默认值：0。当stackFromEnd为true时，默认值为总item个数-1。 说明： 设置为负数或超过了当前List最后一个item的索引值时视为无效取值，无效取值按默认值显示。 从API version 14开始，如果在List组件创建完成后首次布局前（如List的onAttach事件中），调用Scroller滚动控制器中不带动画的scrollToIndex或scrollEdge方法，会覆盖initialIndex设置的值。 设置了initialIndex后，List从initialIndex对应的子组件开始布局，在这之前的子组件未参与布局，无法计算准确大小，因此通过currentOffset接口获取到的List的滚动总偏移量通过估算得出，可能会有误差。可通过设置childrenMainSize确保List的滚动总偏移量的准确性。 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -93,9 +98,10 @@ List(options?: [ListOptions](#listoptions18对象说明))
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)和[滚动组件通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scrollable-common#属性)外，还支持以下属性：
 
@@ -105,9 +111,10 @@ List(options?: [ListOptions](#listoptions18对象说明))
 
 
 
-#### listDirection
+### listDirection
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 listDirection(value: Axis)
 
@@ -121,6 +128,7 @@ listDirection(value: Axis)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Axis | 是 | 组件的排列方向。 默认值：Axis.Vertical |
@@ -128,9 +136,10 @@ listDirection(value: Axis)
 
 
 
-#### divider
+### divider
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 divider(value: [ListDividerOptions](#listdivideroptions18对象说明) | null)
 
@@ -150,6 +159,7 @@ ListItem设置[多态样式](https://developer.huawei.com/consumer/cn/doc/harmon
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ListDividerOptions \| null | 是 | ListItem分割线样式。 默认值：null |
@@ -157,9 +167,10 @@ ListItem设置[多态样式](https://developer.huawei.com/consumer/cn/doc/harmon
 
 
 
-#### scrollBar
+### scrollBar
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scrollBar(value: BarState)
 
@@ -173,6 +184,7 @@ scrollBar(value: BarState)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | BarState | 是 | 滚动条状态。 默认值：API version 9及以下版本默认值为BarState.Off，API version 10及以上版本的默认值为BarState.Auto。 |
@@ -180,9 +192,10 @@ scrollBar(value: BarState)
 
 
 
-#### cachedCount
+### cachedCount
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cachedCount(value: number)
 
@@ -200,6 +213,7 @@ List下嵌套使用LazyForEach，并且LazyForEach下嵌套使用ListItemGroup�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | ListItem/ListItemGroup的预加载数量。 默认值：根据屏幕内显示的节点个数设置，最大值为16。 取值范围：[0, +∞)，设置为小于0的值时，按1处理。 |
@@ -207,9 +221,10 @@ List下嵌套使用LazyForEach，并且LazyForEach下嵌套使用ListItemGroup�
 
 
 
-#### cachedCount14+
+### cachedCount14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cachedCount(count: number, show: boolean)
 
@@ -231,6 +246,7 @@ List设置cachedCount后，显示区域外上下各会预加载并布局cachedCo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | count | number | 是 | 列表的预加载行数。 默认值：根据屏幕内显示的节点个数设置，最大值为16。 取值范围：[0, +∞)，设置为小于0的值时，按1处理。 |
@@ -239,9 +255,10 @@ List设置cachedCount后，显示区域外上下各会预加载并布局cachedCo
 
 
 
-#### cachedCount22+
+### cachedCount22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cachedCount(count: number | CacheCountInfo, show: boolean)
 
@@ -269,6 +286,7 @@ cachedCount(count: number | CacheCountInfo, show: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | count | number \| CacheCountInfo | 是 | 当参数类型为number时，表示列表的预加载行数。 取值范围：[0, +∞)，设置为小于0的值时，按1处理。 当参数类型为CacheCountInfo时，表示预加载的最大最小范围。 |
@@ -277,9 +295,10 @@ cachedCount(count: number | CacheCountInfo, show: boolean)
 
 
 
-#### edgeEffect
+### edgeEffect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 edgeEffect(value: EdgeEffect, options?: EdgeEffectOptions)
 
@@ -297,6 +316,7 @@ edgeEffect(value: EdgeEffect, options?: EdgeEffectOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | EdgeEffect | 是 | List组件的边缘滑动效果，支持弹簧效果和阴影效果。 默认值：EdgeEffect.Spring |
@@ -305,9 +325,10 @@ edgeEffect(value: EdgeEffect, options?: EdgeEffectOptions)
 
 
 
-#### chainAnimation
+### chainAnimation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 chainAnimation(value: boolean)
 
@@ -325,6 +346,7 @@ chainAnimation(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否启用链式联动动效。 默认值：false，不启用链式联动。true，启用链式联动。 |
@@ -332,9 +354,10 @@ chainAnimation(value: boolean)
 
 
 
-#### multiSelectable8+
+### multiSelectable8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 multiSelectable(value: boolean)
 
@@ -348,6 +371,7 @@ multiSelectable(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否开启鼠标框选。 默认值：false，关闭框选。true，开启框选。 |
@@ -355,9 +379,10 @@ multiSelectable(value: boolean)
 
 
 
-#### lanes9+
+### lanes9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 lanes(value: number | LengthConstrain, gutter?: Dimension)
 
@@ -379,6 +404,7 @@ lanes(value: number | LengthConstrain, gutter?: Dimension)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| LengthConstrain | 是 | List组件的布局列数或行数。 默认值：1 取值范围：[1, +∞)，传入小于1的值时按默认值处理。 |
@@ -387,9 +413,10 @@ lanes(value: number | LengthConstrain, gutter?: Dimension)
 
 
 
-#### lanes22+
+### lanes22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 lanes(value: number | LengthConstrain | ItemFillPolicy, gutter?: Dimension)
 
@@ -405,6 +432,7 @@ lanes(value: number | LengthConstrain | ItemFillPolicy, gutter?: Dimension)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| LengthConstrain \| ItemFillPolicy | 是 | 当前List组件交叉轴方向的布局数量。List垂直滚动时表示列数，水平滚动时表示行数。 设置为number类型时，根据number类型的数值确定列数或行数，number类型取值范围：[1, +∞)，传入小于1的值时按默认值处理。 设置为LengthConstrain类型时，垂直滚动时根据列宽的最大值和最小值确定列数，水平滚动时根据行高的最大值和最小值确定行数。 设置为ItemFillPolicy类型时，根据List组件宽度对应断点类型确定列数，该类型只在List滚动方向为垂直方向时才生效。 |
@@ -413,9 +441,10 @@ lanes(value: number | LengthConstrain | ItemFillPolicy, gutter?: Dimension)
 
 
 
-#### alignListItem9+
+### alignListItem9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 alignListItem(value: ListItemAlign)
 
@@ -429,6 +458,7 @@ alignListItem(value: ListItemAlign)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ListItemAlign | 是 | 交叉轴方向的布局方式。 默认值：ListItemAlign.Start |
@@ -436,9 +466,10 @@ alignListItem(value: ListItemAlign)
 
 
 
-#### sticky9+
+### sticky9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sticky(value: StickyStyle)
 
@@ -456,6 +487,7 @@ sticky(value: StickyStyle)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | StickyStyle | 是 | ListItemGroup吸顶或吸底效果。 默认值：StickyStyle.None |
@@ -463,9 +495,10 @@ sticky(value: StickyStyle)
 
 
 
-#### scrollSnapAlign10+
+### scrollSnapAlign10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scrollSnapAlign(value: ScrollSnapAlign)
 
@@ -481,6 +514,7 @@ scrollSnapAlign(value: ScrollSnapAlign)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ScrollSnapAlign | 是 | 列表项滚动结束对齐效果。 默认值：ScrollSnapAlign.NONE |
@@ -488,9 +522,10 @@ scrollSnapAlign(value: ScrollSnapAlign)
 
 
 
-#### scrollSnapAnimationSpeed22+
+### scrollSnapAnimationSpeed22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scrollSnapAnimationSpeed(speed: ScrollSnapAnimationSpeed)
 
@@ -504,6 +539,7 @@ scrollSnapAnimationSpeed(speed: ScrollSnapAnimationSpeed)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | speed | ScrollSnapAnimationSpeed | 是 | 列表滚动限位动画速度。 默认值：ScrollSnapAnimationSpeed.NORMAL |
@@ -511,9 +547,10 @@ scrollSnapAnimationSpeed(speed: ScrollSnapAnimationSpeed)
 
 
 
-#### enableScrollInteraction10+
+### enableScrollInteraction10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableScrollInteraction(value: boolean)
 
@@ -527,6 +564,7 @@ enableScrollInteraction(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否支持滚动手势。设置为true时可以通过手指或者鼠标滚动，设置为false时无法通过手指或者鼠标滚动，但不影响控制器Scroller的滚动接口。 默认值：true |
@@ -538,9 +576,10 @@ enableScrollInteraction(value: boolean)
 
 
 
-#### nestedScroll10+
+### nestedScroll10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 nestedScroll(value: NestedScrollOptions)
 
@@ -554,6 +593,7 @@ nestedScroll(value: NestedScrollOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | NestedScrollOptions | 是 | 嵌套滚动选项。 默认值：{ scrollForward: NestedScrollMode.SELF_ONLY, scrollBackward: NestedScrollMode.SELF_ONLY } |
@@ -561,9 +601,10 @@ nestedScroll(value: NestedScrollOptions)
 
 
 
-#### friction10+
+### friction10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 friction(value: number | Resource)
 
@@ -577,6 +618,7 @@ friction(value: number | Resource)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| Resource | 是 | 摩擦系数。 默认值：非Wearable设备为0.6，Wearable设备为0.9。 从API version 11开始，非Wearable设备默认值为0.7。 从API version 12开始，非Wearable设备默认值为0.75。 取值范围：(0, +∞) |
@@ -584,9 +626,10 @@ friction(value: number | Resource)
 
 
 
-#### contentStartOffset11+
+### contentStartOffset11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contentStartOffset(value: number)
 
@@ -602,6 +645,7 @@ contentStartOffset + contentEndOffset超过List内容区长度后contentStartOff
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 内容区域起始偏移量。 默认值：0 单位：vp 说明： 设置为负数时，按默认值处理。 取值范围：[0, +∞) |
@@ -609,9 +653,10 @@ contentStartOffset + contentEndOffset超过List内容区长度后contentStartOff
 
 
 
-#### contentStartOffset22+
+### contentStartOffset22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contentStartOffset(offset: number | Resource)
 
@@ -627,6 +672,7 @@ contentStartOffset + contentEndOffset超过List内容区长度后contentStartOff
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number \| Resource | 是 | 内容区域起始偏移量。 默认值：0 参数类型为number时单位为vp。 设置异常值如负数、非数字Resource时，按默认值处理。 参数类型为number时取值范围：[0, +∞) |
@@ -634,9 +680,10 @@ contentStartOffset + contentEndOffset超过List内容区长度后contentStartOff
 
 
 
-#### contentEndOffset11+
+### contentEndOffset11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contentEndOffset(value: number)
 
@@ -652,6 +699,7 @@ contentStartOffset + contentEndOffset超过List内容区长度后contentStartOff
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 内容区末尾偏移量。 默认值：0 单位：vp 说明： 设置为负数时，按默认值处理。 取值范围：[0, +∞) |
@@ -659,9 +707,10 @@ contentStartOffset + contentEndOffset超过List内容区长度后contentStartOff
 
 
 
-#### contentEndOffset22+
+### contentEndOffset22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contentEndOffset(offset: number | Resource)
 
@@ -677,6 +726,7 @@ contentStartOffset + contentEndOffset超过List内容区长度后contentStartOff
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number \| Resource | 是 | 内容区末尾偏移量。 默认值：0 参数类型为number时单位为vp。 设置异常值如负数、非数字Resource时，按默认值处理。 参数类型为number时取值范围：[0, +∞) |
@@ -684,9 +734,10 @@ contentStartOffset + contentEndOffset超过List内容区长度后contentStartOff
 
 
 
-#### childrenMainSize12+
+### childrenMainSize12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 childrenMainSize(value: ChildrenMainSize)
 
@@ -704,6 +755,7 @@ childrenMainSize(value: ChildrenMainSize)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ChildrenMainSize | 是 | 该对象用来维护子组件在主轴方向的大小信息。 |
@@ -711,9 +763,10 @@ childrenMainSize(value: ChildrenMainSize)
 
 
 
-#### maintainVisibleContentPosition12+
+### maintainVisibleContentPosition12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 maintainVisibleContentPosition(enabled: boolean)
 
@@ -727,6 +780,7 @@ maintainVisibleContentPosition(enabled: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 设置显示区域上方插入或删除数据时是否要保持可见内容位置不变。 默认值：false，显示区域上方插入或删除数据时可见内容位置会跟随变化。 true：显示区域上方插入或删除数据时可见内容位置不变。 |
@@ -738,9 +792,10 @@ maintainVisibleContentPosition(enabled: boolean)
 
 
 
-#### stackFromEnd19+
+### stackFromEnd19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stackFromEnd(enabled: boolean)
 
@@ -754,6 +809,7 @@ stackFromEnd(enabled: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 设置List组件是否从末尾开始布局。 默认值：false，List从顶部开始布局。 true：List组件从末尾开始布局。 |
@@ -765,9 +821,10 @@ stackFromEnd(enabled: boolean)
 
 
 
-#### focusWrapMode20+
+### focusWrapMode20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 focusWrapMode(mode: Optional&lt;FocusWrapMode&gt;)
 
@@ -781,6 +838,7 @@ focusWrapMode(mode: Optional&lt;FocusWrapMode&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | Optional&lt;FocusWrapMode&gt; | 是 | 交叉轴方向键走焦模式。 默认值：FocusWrapMode.DEFAULT 说明： 异常值按默认值处理，即交叉轴方向键不能换行。 |
@@ -788,9 +846,10 @@ focusWrapMode(mode: Optional&lt;FocusWrapMode&gt;)
 
 
 
-#### syncLoad20+
+### syncLoad20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 syncLoad(enable: boolean)
 
@@ -804,6 +863,7 @@ syncLoad(enable: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | boolean | 是 | 是否同步加载List区域内所有子组件。 true表示同步加载，false表示异步加载。默认值：true。 说明： 设置为false时，在首次显示、不带动画scrollToIndex跳转场景，若当帧布局耗时超过50ms，会将List区域内尚未布局的子组件延后到下一帧进行布局。 |
@@ -811,9 +871,10 @@ syncLoad(enable: boolean)
 
 
 
-#### editModeOptions23+
+### editModeOptions23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 editModeOptions(options?: EditModeOptions)
 
@@ -827,6 +888,7 @@ editModeOptions(options?: EditModeOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | EditModeOptions | 否 | 编辑模式选项，用于自定义List编辑模式的特性行为。当需要自定义编辑模式行为时传入此参数，不传入时使用默认配置。 |
@@ -834,9 +896,10 @@ editModeOptions(options?: EditModeOptions)
 
 
 
-#### editMode(deprecated)
+### editMode(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 editMode(value: boolean)
 
@@ -850,6 +913,7 @@ editMode(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 当前List组件是否处于可编辑模式。true表示当前List组件处于可编辑模式，false表示当前List组件不处于可编辑模式。 默认值：false |
@@ -857,9 +921,10 @@ editMode(value: boolean)
 
 
 
-#### supportEmptyBranchInLazyLoading23+
+### supportEmptyBranchInLazyLoading23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 supportEmptyBranchInLazyLoading(supported: boolean | undefined)
 
@@ -873,6 +938,7 @@ supportEmptyBranchInLazyLoading(supported: boolean | undefined)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | supported | boolean \| undefined | 是 | 当前List组件是否支持在LazyForEach或Repeat中使用if/else渲染控制语法生成一个不含任何子组件的空分支节点。 true表示支持空分支节点；false表示不支持空分支节点。 值为undefined时，按false处理。 |
@@ -880,9 +946,10 @@ supportEmptyBranchInLazyLoading(supported: boolean | undefined)
 
 
 
-#### backPressBehavior
+### backPressBehavior
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 backPressBehavior(behavior: ListBackPressBehavior | undefined)
 
@@ -898,6 +965,7 @@ backPressBehavior(behavior: ListBackPressBehavior | undefined)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | behavior | ListBackPressBehavior \| undefined | 是 | List组件的系统返回键行为选项。当前支持通过ListBackPressBehavior参数，配置系统返回键生效时，是否收起已展开的ListItem的划出组件。 设置为undefined时，恢复默认行为，即系统返回键生效时，收起已展开的ListItem的划出组件。 |
@@ -905,9 +973,10 @@ backPressBehavior(behavior: ListBackPressBehavior | undefined)
 
 
 
-#### enableEditMode
+### enableEditMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableEditMode(enabled: boolean | undefined)
 
@@ -923,6 +992,7 @@ enableEditMode(enabled: boolean | undefined)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean \| undefined | 是 | 是否启用编辑模式，该参数支持!!双向绑定变量。 设置为true时启用编辑模式，可以滑动多选；设置为false或undefined时关闭编辑模式，不可滑动多选。 |
@@ -930,9 +1000,10 @@ enableEditMode(enabled: boolean | undefined)
 
 
 
-#### ListItemAlign9+枚举说明
+## ListItemAlign9+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置子组件在List交叉轴方向的对齐方式。
 
@@ -941,6 +1012,7 @@ enableEditMode(enabled: boolean | undefined)
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -951,13 +1023,15 @@ enableEditMode(enabled: boolean | undefined)
 
 
 
-#### StickyStyle9+枚举说明
+## StickyStyle9+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ListItemGroup吸顶或吸底效果枚举。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -969,9 +1043,10 @@ ListItemGroup吸顶或吸底效果枚举。
 
 
 
-#### ScrollSnapAlign10+枚举说明
+## ScrollSnapAlign10+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置列表项滚动结束对齐效果。
 
@@ -980,6 +1055,7 @@ ListItemGroup吸顶或吸底效果枚举。
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -991,9 +1067,10 @@ ListItemGroup吸顶或吸底效果枚举。
 
 
 
-#### ScrollSnapAnimationSpeed22+枚举说明
+## ScrollSnapAnimationSpeed22+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置列表项滚动限位动画速度。
 
@@ -1003,6 +1080,7 @@ ListItemGroup吸顶或吸底效果枚举。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NORMAL | 0 | 默认列表限位动画速度，适用于列表项主轴方向尺寸较大（如接近列表视口主轴尺寸），每次划动仅滚动一个列表项的场景。 |
@@ -1011,9 +1089,10 @@ ListItemGroup吸顶或吸底效果枚举。
 
 
 
-#### ListBackPressBehavior
+## ListBackPressBehavior
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义List组件的系统返回键行为。
 
@@ -1025,6 +1104,7 @@ ListItemGroup吸顶或吸底效果枚举。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | closeSwipeAction | boolean | 否 | 是 | 系统返回键生效时是否收起ListItem的划出组件。 true表示收起ListItem的划出组件；false表示不收起ListItem的划出组件。 默认值：true |
@@ -1032,9 +1112,10 @@ ListItemGroup吸顶或吸底效果枚举。
 
 
 
-#### CloseSwipeActionOptions11+对象说明
+## CloseSwipeActionOptions11+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 收起[EXPANDED](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-listitem#swipeactionstate11枚举说明)状态[ListItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-listitem)回调事件集合，用于设置收起动画完成后回调事件。
 
@@ -1044,6 +1125,7 @@ ListItemGroup吸顶或吸底效果枚举。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | onFinish | ()=>void | 否 | 是 | 在收起动画完成后触发。未设置此属性时不触发回调。 |
@@ -1051,9 +1133,10 @@ ListItemGroup吸顶或吸底效果枚举。
 
 
 
-#### ListDividerOptions18+对象说明
+## ListDividerOptions18+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于设置List或ListItemGroup组件的分割线样式。
 
@@ -1069,6 +1152,7 @@ ListItemGroup吸顶或吸底效果枚举。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | strokeWidth7+ | Length | 否 | 否 | 分割线的线宽。 单位：vp 说明： 设置为负数，百分比，或者大于等于List内容区长度时，按0处理。 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -1079,17 +1163,19 @@ ListItemGroup吸顶或吸底效果枚举。
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)和[滚动组件通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scrollable-common#事件)外，还支持以下事件：
 
 
 
-#### onScrollIndex
+### onScrollIndex
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onScrollIndex(event: (start: number, end: number, center: number) => void)
 
@@ -1113,6 +1199,7 @@ List的边缘效果为弹簧效果时，在List划动到边缘继续划动和松
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | start | number | 是 | List显示区域内第一个子组件的索引值 |
@@ -1122,9 +1209,10 @@ List的边缘效果为弹簧效果时，在List划动到边缘继续划动和松
 
 
 
-#### onReachStart
+### onReachStart
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onReachStart(event: () => void)
 
@@ -1140,6 +1228,7 @@ List初始化时如果initialIndex为0会触发一次，List滚动到起始位�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | () => void | 是 | 列表到达起始位置时触发的回调。 |
@@ -1147,9 +1236,10 @@ List初始化时如果initialIndex为0会触发一次，List滚动到起始位�
 
 
 
-#### onReachEnd
+### onReachEnd
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onReachEnd(event: () => void)
 
@@ -1167,6 +1257,7 @@ List边缘效果为弹簧效果时，划动经过末尾位置时触发一次，�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | () => void | 是 | 列表到达末尾位置时触发的回调。 |
@@ -1174,9 +1265,10 @@ List边缘效果为弹簧效果时，划动经过末尾位置时触发一次，�
 
 
 
-#### onScrollFrameBegin9+
+### onScrollFrameBegin9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onScrollFrameBegin(event: OnScrollFrameBeginCallback)
 
@@ -1202,6 +1294,7 @@ onScrollFrameBegin(event: OnScrollFrameBeginCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | OnScrollFrameBeginCallback | 是 | 每帧滚动开始回调函数。 |
@@ -1209,9 +1302,10 @@ onScrollFrameBegin(event: OnScrollFrameBeginCallback)
 
 
 
-#### onScrollStart9+
+### onScrollStart9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onScrollStart(event: () => void)
 
@@ -1225,6 +1319,7 @@ onScrollStart(event: () => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | () => void | 是 | 列表滑动开始时触发的回调。 |
@@ -1232,9 +1327,10 @@ onScrollStart(event: () => void)
 
 
 
-#### onScrollStop
+### onScrollStop
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onScrollStop(event: () => void)
 
@@ -1248,6 +1344,7 @@ onScrollStop(event: () => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | () => void | 是 | 列表滑动停止时触发的回调。 |
@@ -1255,9 +1352,10 @@ onScrollStop(event: () => void)
 
 
 
-#### onItemMove
+### onItemMove
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onItemMove(event: (from: number, to: number) => boolean)
 
@@ -1269,6 +1367,7 @@ List的子组件[ListItem](https://developer.huawei.com/consumer/cn/doc/harmonyo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | from | number | 是 | 移动前索引值。 |
@@ -1277,6 +1376,7 @@ List的子组件[ListItem](https://developer.huawei.com/consumer/cn/doc/harmonyo
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 是否已经移动。返回值为true时List子组件发生移动，返回值为false时List子组件没有移动。 |
@@ -1284,9 +1384,10 @@ List的子组件[ListItem](https://developer.huawei.com/consumer/cn/doc/harmonyo
 
 
 
-#### onItemDragStart8+
+### onItemDragStart8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onItemDragStart(event: OnItemDragStartCallback)
 
@@ -1304,6 +1405,7 @@ onItemDragStart(event: OnItemDragStartCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | OnItemDragStartCallback | 是 | List的子组件ListItem拖拽开始时触发的回调。 API version 22及之前版本，该参数类型为(event: ItemDragInfo, itemIndex: number) => (() => any) \| void，其中event和itemIndex参数含义参考OnItemDragStartCallback。 |
@@ -1311,9 +1413,10 @@ onItemDragStart(event: OnItemDragStartCallback)
 
 
 
-#### onItemDragEnter8+
+### onItemDragEnter8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onItemDragEnter(event: (event: ItemDragInfo) => void)
 
@@ -1325,6 +1428,7 @@ onItemDragEnter(event: (event: ItemDragInfo) => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | ItemDragInfo | 是 | 拖拽点的信息。 |
@@ -1332,9 +1436,10 @@ onItemDragEnter(event: (event: ItemDragInfo) => void)
 
 
 
-#### onItemDragMove8+
+### onItemDragMove8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onItemDragMove(event: (event: ItemDragInfo, itemIndex: number, insertIndex: number) => void)
 
@@ -1346,6 +1451,7 @@ onItemDragMove(event: (event: ItemDragInfo, itemIndex: number, insertIndex: numb
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | ItemDragInfo | 是 | 拖拽点的信息。 |
@@ -1355,9 +1461,10 @@ onItemDragMove(event: (event: ItemDragInfo, itemIndex: number, insertIndex: numb
 
 
 
-#### onItemDragLeave8+
+### onItemDragLeave8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onItemDragLeave(event: (event: ItemDragInfo, itemIndex: number) => void)
 
@@ -1369,6 +1476,7 @@ onItemDragLeave(event: (event: ItemDragInfo, itemIndex: number) => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | ItemDragInfo | 是 | 拖拽点的信息。 |
@@ -1377,9 +1485,10 @@ onItemDragLeave(event: (event: ItemDragInfo, itemIndex: number) => void)
 
 
 
-#### onItemDrop8+
+### onItemDrop8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onItemDrop(event: (event: ItemDragInfo, itemIndex: number, insertIndex: number, isSuccess: boolean) => void)
 
@@ -1393,6 +1502,7 @@ onItemDrop(event: (event: ItemDragInfo, itemIndex: number, insertIndex: number, 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | ItemDragInfo | 是 | 拖拽点的信息。 |
@@ -1403,9 +1513,10 @@ onItemDrop(event: (event: ItemDragInfo, itemIndex: number, insertIndex: number, 
 
 
 
-#### onScrollVisibleContentChange12+
+### onScrollVisibleContentChange12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onScrollVisibleContentChange(handler: OnScrollVisibleContentChangeCallback)
 
@@ -1423,6 +1534,7 @@ List的边缘效果为弹簧效果时，在List划动到边缘继续划动和松
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handler | OnScrollVisibleContentChangeCallback | 是 | 当前显示内容发生改变的时候触发回调。 |
@@ -1430,9 +1542,10 @@ List的边缘效果为弹簧效果时，在List划动到边缘继续划动和松
 
 
 
-#### onItemDelete(deprecated)
+### onItemDelete(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onItemDelete(event: (index: number) => boolean)
 
@@ -1446,12 +1559,14 @@ onItemDelete(event: (index: number) => boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 被删除的列表项的索引值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1460,9 +1575,10 @@ onItemDelete(event: (index: number) => boolean)
 
 
 
-#### onScroll(deprecated)
+### onScroll(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onScroll(event: (scrollOffset: number, scrollState: [ScrollState](#scrollstate枚举说明)) => void)
 
@@ -1480,6 +1596,7 @@ onScroll(event: (scrollOffset: number, scrollState: [ScrollState](#scrollstate�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scrollOffset | number | 是 | 相对于上一帧的偏移量，List的内容向上滚动时偏移量为正，向下滚动时偏移量为负。 单位vp。 |
@@ -1488,9 +1605,10 @@ onScroll(event: (scrollOffset: number, scrollState: [ScrollState](#scrollstate�
 
 
 
-#### onEditModeChange
+### onEditModeChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onEditModeChange(callback: Callback&lt;boolean&gt; | undefined)
 
@@ -1506,6 +1624,7 @@ onEditModeChange(callback: Callback&lt;boolean&gt; | undefined)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;boolean&gt; \| undefined | 是 | 编辑模式状态变化时触发的回调。 true表示进入编辑模式，false表示退出编辑模式。 传入undefined时取消回调。 |
@@ -1513,9 +1632,10 @@ onEditModeChange(callback: Callback&lt;boolean&gt; | undefined)
 
 
 
-#### ScrollState枚举说明
+## ScrollState枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 滑动状态枚举。
 
@@ -1524,6 +1644,7 @@ onEditModeChange(callback: Callback&lt;boolean&gt; | undefined)
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1534,9 +1655,10 @@ onEditModeChange(callback: Callback&lt;boolean&gt; | undefined)
 
 
 
-#### ListScroller11+
+## ListScroller11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 List组件的滚动控制器，通过它控制List组件的滚动，仅支持一对一绑定到List组件。
 
@@ -1552,7 +1674,10 @@ List组件的滚动控制器，通过它控制List组件的滚动，仅支持一
 
 
 
-#### 导入对象
+### 导入对象
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 listScroller: ListScroller = new ListScroller();
@@ -1560,9 +1685,10 @@ listScroller: ListScroller = new ListScroller();
 
 
 
-#### getItemRectInGroup11+
+### getItemRectInGroup11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getItemRectInGroup(index: number, indexInGroup: number): RectResult
 
@@ -1576,6 +1702,7 @@ getItemRectInGroup(index: number, indexInGroup: number): RectResult
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | ListItemGroup在List中的索引值。 |
@@ -1588,6 +1715,7 @@ getItemRectInGroup(index: number, indexInGroup: number): RectResult
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | RectResult | ListItemGroup中的ListItem的大小和相对于List的位置。 单位：vp。 |
@@ -1597,6 +1725,7 @@ getItemRectInGroup(index: number, indexInGroup: number): RectResult
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[滚动类组件错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-scroll)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
@@ -1605,9 +1734,10 @@ getItemRectInGroup(index: number, indexInGroup: number): RectResult
 
 
 
-#### getVisibleListContentInfo14+
+### getVisibleListContentInfo14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getVisibleListContentInfo(x: number, y: number): VisibleListContentInfo
 
@@ -1621,6 +1751,7 @@ getVisibleListContentInfo(x: number, y: number): VisibleListContentInfo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | x | number | 是 | x轴坐标，单位为vp。 |
@@ -1628,6 +1759,7 @@ getVisibleListContentInfo(x: number, y: number): VisibleListContentInfo
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1642,6 +1774,7 @@ getVisibleListContentInfo(x: number, y: number): VisibleListContentInfo
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[滚动类组件错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-scroll)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
@@ -1650,9 +1783,10 @@ getVisibleListContentInfo(x: number, y: number): VisibleListContentInfo
 
 
 
-#### scrollToItemInGroup11+
+### scrollToItemInGroup11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scrollToItemInGroup(index: number, indexInGroup: number, smooth?: boolean, align?: ScrollAlign): void
 
@@ -1666,6 +1800,7 @@ scrollToItemInGroup(index: number, indexInGroup: number, smooth?: boolean, align
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 要滑动到的目标元素所在的ListItemGroup在当前容器中的索引值。 说明： index值设置成负值或者大于当前容器子组件的最大索引值，视为异常值，本次跳转不生效。 |
@@ -1678,6 +1813,7 @@ scrollToItemInGroup(index: number, indexInGroup: number, smooth?: boolean, align
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[滚动类组件错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-scroll)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
@@ -1686,9 +1822,10 @@ scrollToItemInGroup(index: number, indexInGroup: number, smooth?: boolean, align
 
 
 
-#### closeAllSwipeActions11+
+### closeAllSwipeActions11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 closeAllSwipeActions(options?: CloseSwipeActionOptions): void
 
@@ -1702,6 +1839,7 @@ closeAllSwipeActions(options?: CloseSwipeActionOptions): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | CloseSwipeActionOptions | 否 | 收起EXPANDED状态的ListItem的回调事件集合。不传入时不设置回调事件。 |
@@ -1710,6 +1848,7 @@ closeAllSwipeActions(options?: CloseSwipeActionOptions): void
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[滚动类组件错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-scroll)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1723,9 +1862,10 @@ closeAllSwipeActions(options?: CloseSwipeActionOptions): void
 
 
 
-#### OnScrollVisibleContentChangeCallback12+
+## OnScrollVisibleContentChangeCallback12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnScrollVisibleContentChangeCallback = (start: VisibleListContentInfo, end: VisibleListContentInfo) => void
 
@@ -1747,6 +1887,7 @@ start和end的index同时返回0，代表List内只有一个子组件。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | start | VisibleListContentInfo | 是 | 1. 通过该参数获取List显示区域第一个子组件在List中的索引值。 2. 如果当前List显示区域第一个子组件是ListItemGroup，可以获取当前List显示区域第一个组件属于该ListItemGroup的哪一区域。 3. 如果当前List显示区域第一个组件是ListItemGroup内的ListItem，可以获取该ListItem在ListItemGroup内的索引值。 |
@@ -1755,9 +1896,10 @@ start和end的index同时返回0，代表List内只有一个子组件。
 
 
 
-#### VisibleListContentInfo12+对象说明
+## VisibleListContentInfo12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于表示List可见内容区子组件的详细信息。
 
@@ -1766,6 +1908,7 @@ start和end的index同时返回0，代表List内只有一个子组件。
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1776,9 +1919,10 @@ start和end的index同时返回0，代表List内只有一个子组件。
 
 
 
-#### ListItemGroupArea12+枚举说明
+## ListItemGroupArea12+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举了ListItemGroup各个区域。
 
@@ -1787,6 +1931,7 @@ start和end的index同时返回0，代表List内只有一个子组件。
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1798,9 +1943,10 @@ start和end的index同时返回0，代表List内只有一个子组件。
 
 
 
-#### UIListEvent19+
+## UIListEvent19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 frameNode中[getEvent('List')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#geteventlist19)方法的返回值，可用于给List节点设置滚动事件。
 
@@ -1808,9 +1954,10 @@ UIListEvent继承于[UIScrollableCommonEvent](https://developer.huawei.com/consu
 
 
 
-#### setOnWillScroll19+
+### setOnWillScroll19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setOnWillScroll(callback: OnWillScrollCallback | undefined): void
 
@@ -1826,6 +1973,7 @@ setOnWillScroll(callback: OnWillScrollCallback | undefined): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | OnWillScrollCallback \| undefined | 是 | onWillScroll事件的回调函数。 |
@@ -1833,9 +1981,10 @@ setOnWillScroll(callback: OnWillScrollCallback | undefined): void
 
 
 
-#### setOnDidScroll19+
+### setOnDidScroll19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setOnDidScroll(callback: OnScrollCallback | undefined): void
 
@@ -1851,6 +2000,7 @@ setOnDidScroll(callback: OnScrollCallback | undefined): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | OnScrollCallback \| undefined | 是 | onDidScroll事件的回调函数。 |
@@ -1858,9 +2008,10 @@ setOnDidScroll(callback: OnScrollCallback | undefined): void
 
 
 
-#### setOnScrollIndex19+
+### setOnScrollIndex19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setOnScrollIndex(callback: OnListScrollIndexCallback | undefined): void
 
@@ -1876,6 +2027,7 @@ setOnScrollIndex(callback: OnListScrollIndexCallback | undefined): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | OnListScrollIndexCallback \| undefined | 是 | onScrollIndex事件的回调函数。 |
@@ -1883,9 +2035,10 @@ setOnScrollIndex(callback: OnListScrollIndexCallback | undefined): void
 
 
 
-#### setOnScrollVisibleContentChange19+
+### setOnScrollVisibleContentChange19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setOnScrollVisibleContentChange(callback: OnScrollVisibleContentChangeCallback | undefined): void
 
@@ -1901,6 +2054,7 @@ setOnScrollVisibleContentChange(callback: OnScrollVisibleContentChangeCallback |
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | OnScrollVisibleContentChangeCallback \| undefined | 是 | onScrollVisibleContentChange事件的回调函数。 |
@@ -1908,9 +2062,10 @@ setOnScrollVisibleContentChange(callback: OnScrollVisibleContentChangeCallback |
 
 
 
-#### OnListScrollIndexCallback19+
+## OnListScrollIndexCallback19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnListScrollIndexCallback = (start: number, end: number, center: number) => void
 
@@ -1926,6 +2081,7 @@ List组件可见区域item变化事件的回调类型。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | start | number | 是 | List显示区域内第一个子组件的索引值。 |
@@ -1935,13 +2091,17 @@ List组件可见区域item变化事件的回调类型。
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（添加滚动事件）
+
+
+### 示例1（添加滚动事件）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例实现了设置纵向列表，并在当前显示界面发生改变时回调索引。
 
@@ -2074,7 +2234,10 @@ struct ListExample {
 
 
 
-#### 示例2（设置子元素对齐）
+### 示例2（设置子元素对齐）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示了不同ListItemAlign枚举值下，List组件交叉轴方向子元素对齐效果。
 
@@ -2134,7 +2297,10 @@ struct ListLanesExample {
 
 
 
-#### 示例3（自定义编辑和删除模式）
+### 示例3（自定义编辑和删除模式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示了如何通过自定义状态变量控制删除按钮的显示与隐藏，并在删除按钮的点击事件中更新数据源，实现列表项删除效果。
 
@@ -2202,7 +2368,10 @@ struct ListExample {
 
 
 
-#### 示例4（设置限位对齐）
+### 示例4（设置限位对齐）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示了List组件设置居中限位的实现效果。
 
@@ -2265,7 +2434,10 @@ struct ListExample {
 
 
 
-#### 示例5（跳转准确）
+### 示例5（跳转准确）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过设置[childrenMainSize](#childrenmainsize12)属性，实现了List在子组件高度不一致时调用scrollTo接口也可以跳转准确。
 
@@ -2348,7 +2520,10 @@ struct ListExample {
 
 
 
-#### 示例6（获得子组件索引信息）
+### 示例6（获得子组件索引信息）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示了含有group时，获得List组件的Item索引相关信息。
 
@@ -2514,7 +2689,10 @@ interface TimeTable {
 
 
 
-#### 示例7（设置边缘渐隐）
+### 示例7（设置边缘渐隐）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例实现了List组件开启边缘渐隐效果并设置边缘渐隐长度。
 
@@ -2557,7 +2735,10 @@ struct ListExample {
 
 
 
-#### 示例8（单边边缘效果）
+### 示例8（单边边缘效果）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过edgeEffect接口，实现了List组件设置单边边缘效果。
 
@@ -2600,7 +2781,10 @@ struct ListExample {
 
 
 
-#### 示例9（设置折行走焦）
+### 示例9（设置折行走焦）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 20开始，该示例通过[focusWrapMode](#focuswrapmode20)接口，实现了List组件方向键走焦换行效果。
 
@@ -2651,7 +2835,10 @@ struct ListExample {
 
 
 
-#### 示例10（设置显示区域外插入数据时，保持显示内容不变）
+### 示例10（设置显示区域外插入数据时，保持显示内容不变）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过maintainVisibleContentPosition接口，实现了上滑无限加载历史消息场景。
 
@@ -2701,7 +2888,10 @@ struct ListExample {
 
 
 
-#### 示例11（设置滚动条的边距）
+### 示例11（设置滚动条的边距）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 20开始，该示例展示了通过[scrollBarMargin](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scrollable-common#scrollbarmargin20)属性设置滚动条边距并避让[contentStartOffset](#contentstartoffset11)、[contentEndOffset](#contentendoffset11)区域的效果。
 
@@ -2749,7 +2939,10 @@ struct ListScrollBarMarginExample {
 
 
 
-#### 示例12（使用onMove进行拖拽）
+### 示例12（使用onMove进行拖拽）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 12开始，该示例展示了使用ForEach的[onMove](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-drag-sorting#onmove)接口进行拖拽排序的效果，支持拖动到List边缘时触发List的自动滚动。
 
@@ -2797,7 +2990,10 @@ struct ForEachSort {
 
 
 
-#### 示例13（基于断点配置lanes）
+### 示例13（基于断点配置lanes）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 22开始，该示例展示了List组件支持基于断点配置lanes效果。
 
@@ -2850,12 +3046,15 @@ List宽度属于md断点区间时显示3列。
 List宽度属于lg及更大的断点区间时显示5列。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/IWit-cTOQfmbO8f23c-8cg/zh-cn_image_0000002656008402.png?HW-CC-KV=V1&HW-CC-Date=20260730T071500Z&HW-CC-Expire=86400&HW-CC-Sign=10630F53B3BB29F329A9296632633B4795E812C0588140AC15191ADC12ED07B4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/ICI7qFz7TY6tfLMfOrX0XQ/zh-cn_image_0000002747292571.png?HW-CC-KV=V1&HW-CC-Date=20260911T073113Z&HW-CC-Expire=86400&HW-CC-Sign=24DF9FA07D3558C56D0123EC89FB885CFB19091FE85DA35F25923DEFB8A53279)
 
 
 
 
-#### 示例14（获取内容总大小）
+### 示例14（获取内容总大小）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 22 开始，该示例实现了List组件获取内容总大小的功能。
 
@@ -2916,12 +3115,15 @@ struct ListExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/Xgr-dvR-R4W0xOlg0TuDHw/zh-cn_image_0000002655848482.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071500Z&HW-CC-Expire=86400&HW-CC-Sign=83F33DB60BEF299738247288A0B6939F8F92075E7C36B5424573D4C7976D0AC3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/kG9_Js5LQGqaf3koRratCw/zh-cn_image_0000002747212487.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073113Z&HW-CC-Expire=86400&HW-CC-Sign=02F43694BBB994FB3427CE89A317F4BDC12993D871A25B9BC6BFCDDD228F48E2)
 
 
 
 
-#### 示例15（在两个列表之间实现拖拽功能）
+### 示例15（在两个列表之间实现拖拽功能）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过onItemDragStart等事件实现了ListItem在两个List组件间的拖拽效果。
 
@@ -3040,12 +3242,15 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/4T2LgJiZTYiYCzek0cKk3A/zh-cn_image_0000002686087911.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071500Z&HW-CC-Expire=86400&HW-CC-Sign=C8A0ABA2E10892D3D32FAF26F37118D891D881FC1672E0D4957C3D06070F95CF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/VymO7B08SLSgfJUdi9wHUA/zh-cn_image_0000002717772552.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073113Z&HW-CC-Expire=86400&HW-CC-Sign=E855F6655AFD7BE9415FBE13B95D30F81838D78313D181088DC0240F69071839)
 
 
 
 
-#### 示例16（实现ListItemGroup中点击项的居中效果）
+### 示例16（实现ListItemGroup中点击项的居中效果）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例使用[scrollToItemInGroup](#scrolltoitemingroup11)接口，实现了点击[ListItemGroup](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-listitemgroup)中的[ListItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-listitem)时将其居中的效果。
 
@@ -3148,12 +3353,15 @@ struct ContactsList {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/rJqSeLJgQlijJ9jeXQrzig/zh-cn_image_0000002685928083.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071500Z&HW-CC-Expire=86400&HW-CC-Sign=5E90C464C612DD4EDE5A88F13C5B1F93E48BE4135E5DEB54BDF5D77ED16E7B44)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/Gdv4xUJoRTCZVAGAypKWeQ/zh-cn_image_0000002717612620.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073113Z&HW-CC-Expire=86400&HW-CC-Sign=1A1B016AC1207FE53D64C7D7849E3D6ACA5174E9A0D2FBBE068C7F87FCE6B91B)
 
 
 
 
-#### 示例17（设置多选聚拢动画）
+### 示例17（设置多选聚拢动画）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过打开List多选聚拢动画开关，实现了通过[bindContextMenu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-menu#bindcontextmenu8)在ListItem上长按弹出菜单时聚拢显示范围内被选中的ListItem。
 
@@ -3251,12 +3459,15 @@ struct ListExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/8M-EQUOPSOyPemBBlR0tXg/zh-cn_image_0000002656008404.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071500Z&HW-CC-Expire=86400&HW-CC-Sign=AD9E992B17E154472C2AD0EC746F785FDE0FCC43CADD843F1B52DA0430DC72CF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/ncydr1SBQaCHfJ8ztzjsOQ/zh-cn_image_0000002747292573.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073113Z&HW-CC-Expire=86400&HW-CC-Sign=99EB4B644DCD9C67F585A9DF8DF4370AF26DD07E8EABE03CE53C652074C3CED1)
 
 
 
 
-#### 示例18（设置滑动多选）
+### 示例18（设置滑动多选）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过使用[enableEditMode](#enableeditmode)接口和[onEditModeChange](#oneditmodechange)事件，在List上实现了手指滑动多选的效果。
 
@@ -3331,4 +3542,4 @@ struct ListExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/thraXJWERqm2hA4vJXT-Iw/zh-cn_image_0000002655848484.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071500Z&HW-CC-Expire=86400&HW-CC-Sign=665F84C0EBAD6E581A934A196F3BCCF8E41E2A951BC2E1CC3B62F91927F4137D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/KCngg2eoQ16ouWjpEYJwsA/zh-cn_image_0000002747212489.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073113Z&HW-CC-Expire=86400&HW-CC-Sign=7E00F242D4C7917362D1E15D759BFC637639D4115BEF62F2F5398312ACBDB599)

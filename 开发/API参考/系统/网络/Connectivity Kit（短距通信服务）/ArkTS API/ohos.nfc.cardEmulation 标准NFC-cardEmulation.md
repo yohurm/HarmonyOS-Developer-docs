@@ -1,20 +1,21 @@
 # @ohos.nfc.cardEmulation (标准NFC-cardEmulation)
 
-更新时间：2026-06-12 06:54:11
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cardemulation
 **支持设备：** Phone | Wearable | lite_wearable
 
 本模块主要提供NFC卡模拟业务，包括判断支持哪种卡模拟类型，HCE卡模拟的业务实现等。
 
-HCE(Host Card Emulation)，称为基于主机的卡模拟，表示不依赖安全单元芯片，应用程序模拟NFC卡片，可以通过NFC服务和NFC读卡器通信。
+HCE(Host Card Emulation)，称为基于主机的卡模拟，表示不依赖安全单元芯片，应用程序模拟NFC卡片，可以通过NFC服务和NFC读卡设备通信。
 
 > [!NOTE]
 > 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 
 
-#### HCE卡模拟和AID列表的声明定义
+## HCE卡模拟和AID列表的声明定义
+
 
 **支持设备：** Phone | Wearable | lite_wearable
 
@@ -119,7 +120,7 @@ HCE(Host Card Emulation)，称为基于主机的卡模拟，表示不依赖安�
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/6d0dzLN7SCytwq-wqijnUQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260624T020110Z&HW-CC-Expire=86400&HW-CC-Sign=004A9EBA72173B7232A1E7D6148F93F5576E5298C94334021740920E64F3B3CC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/0soVUQI_RKebM1pNNg_WvA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072845Z&HW-CC-Expire=86400&HW-CC-Sign=B3F5B3B663771FFAFF50B31895BBFDC09919E273ECFAD1C9A912EBE4C9524E65)
 
 1. 声明"actions"字段的内容填写，必须包含"ohos.nfc.cardemulation.action.HOST_APDU_SERVICE"，不能更改。
 2. 声明aid（参考ISO/IEC 7816-4规范）时，name必须为payment-aid或者other-aid。填写错误会造成解析失败。
@@ -130,7 +131,8 @@ HCE(Host Card Emulation)，称为基于主机的卡模拟，表示不依赖安�
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | Wearable | lite_wearable
 
@@ -146,7 +148,8 @@ import cardEmulation from '@ohos.nfc.cardEmulation';
 
 
 
-#### FeatureType(deprecated)
+## FeatureType(deprecated)
+
 
 **支持设备：** Phone | Wearable | lite_wearable
 
@@ -156,7 +159,10 @@ import cardEmulation from '@ohos.nfc.cardEmulation';
 > 从 API version 6 开始支持，从 API version 9 开始废弃，建议使用 hasHceCapability 替代。
 
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.Communication.NFC.CardEmulation
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -167,15 +173,19 @@ import cardEmulation from '@ohos.nfc.cardEmulation';
 
 
 
-#### CardType9+
+## CardType9+
+
 
 **支持设备：** Phone | Wearable | lite_wearable
 
 定义卡模拟应用所使用的业务类型，是支付类型，还是其他类型。
 
+**模型约束：** 此接口可在Stage模型和FA模型下使用。
+
 **系统能力：** SystemCapability.Communication.NFC.CardEmulation
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -185,7 +195,8 @@ import cardEmulation from '@ohos.nfc.cardEmulation';
 
 
 
-#### cardEmulation.isSupported(deprecated)
+## cardEmulation.isSupported(deprecated)
+
 
 **支持设备：** Phone | Wearable | lite_wearable
 
@@ -197,9 +208,12 @@ isSupported(feature: number): boolean
 > 从 API version 6 开始支持，从 API version 9 开始废弃，建议使用 hasHceCapability 替代。
 
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.Communication.NFC.CardEmulation
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -207,6 +221,7 @@ isSupported(feature: number): boolean
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -237,7 +252,8 @@ if (!isHceSupported) {
 
 
 
-#### cardEmulation.hasHceCapability9+
+## cardEmulation.hasHceCapability9+
+
 
 **支持设备：** Phone | Wearable | lite_wearable
 
@@ -253,6 +269,7 @@ hasHceCapability(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | true: 支持HCE， false: 不支持HCE。 |
@@ -261,6 +278,7 @@ hasHceCapability(): boolean
 **错误码**：
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -292,13 +310,16 @@ if (!hasHceCap) {
 
 
 
-#### cardEmulation.isDefaultService9+
+## cardEmulation.isDefaultService9+
+
 
 **支持设备：** Phone | Wearable | lite_wearable
 
 isDefaultService(elementName: ElementName, type: CardType): boolean
 
 判断指定的应用是否为指定业务类型的默认应用。
+
+**模型约束：** 此接口可在Stage模型和FA模型下使用。
 
 **系统能力：** SystemCapability.Communication.NFC.CardEmulation
 
@@ -308,6 +329,7 @@ isDefaultService(elementName: ElementName, type: CardType): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | elementName | ElementName | 是 | 所属应用声明NFC卡模拟能力的页面信息（至少包含bundleName、abilityName这两项的赋值），不可以为空。 |
@@ -315,6 +337,7 @@ isDefaultService(elementName: ElementName, type: CardType): boolean
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -324,6 +347,7 @@ isDefaultService(elementName: ElementName, type: CardType): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -359,7 +383,8 @@ let isDefaultService = cardEmulation.isDefaultService(appName, cardEmulation.Car
 
 
 
-#### HceService8+
+## HceService8+
+
 
 **支持设备：** Phone | Wearable | lite_wearable
 
@@ -367,7 +392,8 @@ let isDefaultService = cardEmulation.isDefaultService(appName, cardEmulation.Car
 
 
 
-#### startHCE(deprecated)
+### startHCE(deprecated)
+
 
 **支持设备：** Phone | Wearable | lite_wearable
 
@@ -379,11 +405,14 @@ startHCE(aidList: string[]): boolean
 > 从 API version 8 开始支持，从 API version 9 开始废弃，建议使用 start 替代。
 
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **需要权限：** ohos.permission.NFC_CARD_EMULATION
 
 **系统能力：** SystemCapability.Communication.NFC.CardEmulation
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -392,16 +421,19 @@ startHCE(aidList: string[]): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | true: 启动HCE功能或HCE已启动， false: 启动失败。 |
 
 
-**ArkTS示例：**
+**示例：**
+
+ArkTS示例：
 
 示例请参见[on](#on8)接口的示例。
 
-**JS示例：**
+JS示例：
 
 ```xml
 <!-- 适用于轻量级智能穿戴设备 -->
@@ -454,20 +486,23 @@ export default  {
         var hceService = new cardEmulation.HceService();
         hceService.startHCE([
             "F0010203040506", "A0000000041010"
-        ])
+        ]);
     }
 }
 ```
 
 
 
-#### start9+
+### start9+
+
 
 **支持设备：** Phone | Wearable | lite_wearable
 
 start(elementName: [ElementName](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bundlemanager-elementname), aidList: string[]): void
 
 启动HCE业务功能。包括设置当前应用为前台优先，动态注册AID列表。
+
+**模型约束：** 此接口可在Stage模型和FA模型下使用。
 
 **需要权限：** ohos.permission.NFC_CARD_EMULATION
 
@@ -476,6 +511,7 @@ start(elementName: [ElementName](https://developer.huawei.com/consumer/cn/doc/ha
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -487,6 +523,7 @@ start(elementName: [ElementName](https://developer.huawei.com/consumer/cn/doc/ha
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -497,7 +534,8 @@ start(elementName: [ElementName](https://developer.huawei.com/consumer/cn/doc/ha
 
 
 
-#### stopHCE(deprecated)
+### stopHCE(deprecated)
+
 
 **支持设备：** Phone | Wearable | lite_wearable
 
@@ -509,22 +547,27 @@ stopHCE(): boolean
 > 从 API version 8 开始支持，从 API version 9 开始废弃，建议使用 stop 替代。
 
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **需要权限：** ohos.permission.NFC_CARD_EMULATION
 
 **系统能力：** SystemCapability.Communication.NFC.CardEmulation
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | true: 禁用HCE功能或HCE已禁用，false: 禁用失败。 |
 
 
-**ArkTS示例：**
+**示例：**
+
+ArkTS示例：
 
 示例请参见[on](#on8)接口的示例。
 
-**JS示例：**
+JS示例：
 
 ```xml
 <!-- 适用于轻量级智能穿戴设备 -->
@@ -582,13 +625,16 @@ export default  {
 
 
 
-#### stop9+
+### stop9+
+
 
 **支持设备：** Phone | Wearable | lite_wearable
 
 stop(elementName: [ElementName](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bundlemanager-elementname)): void
 
 停止HCE业务功能。包括取消APDU数据接收的订阅，退出当前应用前台优先，释放动态注册的AID列表。应用程序需要在HCE卡模拟页面的onDestroy函数里调用该接口。
+
+**模型约束：** 此接口可在Stage模型和FA模型下使用。
 
 **需要权限：** ohos.permission.NFC_CARD_EMULATION
 
@@ -598,6 +644,7 @@ stop(elementName: [ElementName](https://developer.huawei.com/consumer/cn/doc/har
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | elementName | ElementName | 是 | 所属应用声明NFC卡模拟能力的页面信息（至少包含bundleName、abilityName这两项的赋值），不可以为空。 |
@@ -606,6 +653,7 @@ stop(elementName: [ElementName](https://developer.huawei.com/consumer/cn/doc/har
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -617,13 +665,16 @@ stop(elementName: [ElementName](https://developer.huawei.com/consumer/cn/doc/har
 
 
 
-#### on8+
+### on8+
+
 
 **支持设备：** Phone | Wearable | lite_wearable
 
 on(type: 'hceCmd', callback: AsyncCallback<number[]>): void
 
 订阅回调，用于接收对端读卡设备发送的APDU数据，应用程序需要在HCE卡模拟页面的onCreate函数里面调用该订阅函数。使用callback异步回调。
+
+**模型约束：** 此接口可在Stage模型和FA模型下使用。
 
 **需要权限：** ohos.permission.NFC_CARD_EMULATION
 
@@ -632,6 +683,7 @@ on(type: 'hceCmd', callback: AsyncCallback<number[]>): void
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -643,6 +695,7 @@ on(type: 'hceCmd', callback: AsyncCallback<number[]>): void
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -650,7 +703,9 @@ on(type: 'hceCmd', callback: AsyncCallback<number[]>): void
 | 801 | Capability not supported. |
 
 
-**ArkTS示例：**
+**示例：**
+
+ArkTS示例：
 
 ```text
 // 适用于除轻量级智能穿戴产品之外其他设备
@@ -669,7 +724,7 @@ export default class EntryAbility extends UIAbility {
       bundleName: want.bundleName ?? '',
       abilityName: want.abilityName ?? '',
       moduleName: want.moduleName
-    }
+    };
     const apduCallback: AsyncCallback<number[]> = (err, data) => {
       // 处理数据和异常
       console.info("got apdu data");
@@ -684,7 +739,7 @@ export default class EntryAbility extends UIAbility {
 }
 ```
 
-**JS示例：**
+JS示例：
 
 ```text
 // 适用于轻量级智能穿戴设备
@@ -707,14 +762,14 @@ export default {
     cardEmulation.hasHceCapability();
     cardEmulation.isDefaultService(appName, cardEmulation.CardType.PAYMENT);
     cardEmulation.isDefaultService(appName, cardEmulation.CardType.OTHER);
-    let HceService = new cardEmulation.HceService();
+    let hceService = new cardEmulation.HceService();
 
-    HceService.start(appName, this.paymentAid);
-    HceService.on("hceCmd", (data) => {
+    hceService.start(appName, this.paymentAid);
+    hceService.on("hceCmd", (data) => {
       console.info('data:' + data);
       // 应用程序实际想要发送的数据， 此处仅作为示例
       let responseData = [0x1, 0x2];
-      HceService.transmit(responseData, () => {
+      hceService.transmit(responseData, () => {
         console.info('sendResponse start');
       });
       console.info('sendResponse end');
@@ -728,13 +783,16 @@ export default {
 
 
 
-#### off18+
+### off18+
+
 
 **支持设备：** Phone | Wearable | lite_wearable
 
 off(type: 'hceCmd', callback?: AsyncCallback<number[]>): void
 
 取消APDU数据接收的订阅。使用callback异步回调。
+
+**模型约束：** 此接口可在Stage模型和FA模型下使用。
 
 **需要权限：** ohos.permission.NFC_CARD_EMULATION
 
@@ -743,6 +801,7 @@ off(type: 'hceCmd', callback?: AsyncCallback<number[]>): void
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -753,6 +812,7 @@ off(type: 'hceCmd', callback?: AsyncCallback<number[]>): void
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -783,7 +843,7 @@ export default class EntryAbility extends UIAbility {
       bundleName: want.bundleName ?? '',
       abilityName: want.abilityName ?? '',
       moduleName: want.moduleName
-    }
+    };
     hceService.on('hceCmd', apduCallback);
   }
   onDestroy() {
@@ -797,7 +857,8 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### sendResponse(deprecated)
+### sendResponse(deprecated)
+
 
 **支持设备：** Phone | Wearable | lite_wearable
 
@@ -809,22 +870,27 @@ sendResponse(responseApdu: number[]): void
 > 从 API version 8 开始支持，从 API version 9 开始废弃，建议使用 transmit 替代。
 
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **需要权限：** ohos.permission.NFC_CARD_EMULATION
 
 **系统能力：** SystemCapability.Communication.NFC.CardEmulation
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | responseApdu | number[] | 是 | 发送到对端读卡设备的符合APDU协议的数据，每个number十六进制表示，范围是0x00~0xFF。 |
 
 
-**ArkTS示例：**
+**示例：**
+
+ArkTS示例：
 
 示例请参见[transmit](#transmit9)接口的示例。
 
-**JS示例：**
+JS示例：
 
 ```xml
 <!-- 适用于轻量级智能穿戴设备 -->
@@ -884,20 +950,23 @@ export default  {
             } else {
                 console.info('callback => Operation hceCmd failed. Cause: ${JSON.stringify(err.data)}');
             }
-        })
+        });
     }
 }
 ```
 
 
 
-#### transmit9+
+### transmit9+
+
 
 **支持设备：** Phone | Wearable | lite_wearable
 
 transmit(response: number[]): Promise&lt;void&gt;
 
 发送APDU数据到对端读卡设备，使用Promise异步回调。应用程序必须在[on](#on8)收到读卡设备发送的APDU数据后，才调用该接口响应数据。
+
+**模型约束：** 此接口可在Stage模型和FA模型下使用。
 
 **需要权限：** ohos.permission.NFC_CARD_EMULATION
 
@@ -907,12 +976,14 @@ transmit(response: number[]): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | response | number[] | 是 | 发送到对端读卡设备的符合APDU协议的数据，每个number十六进制表示，范围是0x00~0xFF。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -922,6 +993,7 @@ transmit(response: number[]): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -967,13 +1039,16 @@ console.info("transmit Promise end.");
 
 
 
-#### transmit9+
+### transmit9+
+
 
 **支持设备：** Phone | Wearable | lite_wearable
 
 transmit(response: number[], callback: AsyncCallback&lt;void&gt;): void
 
-发送APDU数据到对端读卡设备，应用程序必须在[on](#on8)收到读卡设备发送的APDU数据后，才调用该接口响应数据。使用Callback异步回调。
+发送APDU数据到对端读卡设备，应用程序必须在[on](#on8)收到读卡设备发送的APDU数据后，才调用该接口响应数据。使用callback异步回调。
+
+**模型约束：** 此接口可在Stage模型和FA模型下使用。
 
 **需要权限：** ohos.permission.NFC_CARD_EMULATION
 
@@ -982,6 +1057,7 @@ transmit(response: number[], callback: AsyncCallback&lt;void&gt;): void
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -992,6 +1068,7 @@ transmit(response: number[], callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[NFC错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nfc)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

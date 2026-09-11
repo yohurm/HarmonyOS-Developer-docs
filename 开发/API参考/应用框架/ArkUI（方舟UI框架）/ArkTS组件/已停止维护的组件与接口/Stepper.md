@@ -1,9 +1,9 @@
 # Stepper
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-stepper
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 步骤导航器组件，适用于引导用户按照步骤完成任务的导航场景。
 
@@ -12,17 +12,19 @@
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 仅能包含子组件[StepperItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-stepperitem)。
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Stepper(value?: { index?: number })
 
@@ -38,6 +40,7 @@ Stepper(value?: { index?: number })
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | { index?: number } | 否 | 设置步骤导航器当前显示StepperItem的索引值。 取值范围：[0, 子组件的数量-1] 默认值：0 从API version 10开始，该参数支持$$双向绑定变量。 |
@@ -45,23 +48,26 @@ Stepper(value?: { index?: number })
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
 
 
 
-#### 事件
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 事件
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### onFinish(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### onFinish(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onFinish(callback: () => void)
 
@@ -77,6 +83,7 @@ onFinish(callback: () => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | () => void | 是 | 步骤导航器最后一个StepperItem的nextLabel被点击时，并且ItemState属性为Normal时，触发该回调。 |
@@ -84,9 +91,10 @@ onFinish(callback: () => void)
 
 
 
-#### onSkip(deprecated)
+### onSkip(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onSkip(callback: () => void)
 
@@ -102,6 +110,7 @@ onSkip(callback: () => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | () => void | 是 | 当前显示的StepperItem状态为ItemState.Skip时，nextLabel被点击时触发该回调。 |
@@ -109,9 +118,10 @@ onSkip(callback: () => void)
 
 
 
-#### onChange(deprecated)
+### onChange(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onChange(callback: (prevIndex: number, index: number) => void)
 
@@ -127,6 +137,7 @@ onChange(callback: (prevIndex: number, index: number) => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | prevIndex | number | 是 | 切换前的步骤页索引值。 取值范围：[0, +∞) |
@@ -135,9 +146,10 @@ onChange(callback: (prevIndex: number, index: number) => void)
 
 
 
-#### onNext(deprecated)
+### onNext(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onNext(callback: (index: number, pendingIndex: number) => void)
 
@@ -153,6 +165,7 @@ onNext(callback: (index: number, pendingIndex: number) => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 当前步骤页索引值。 |
@@ -161,9 +174,10 @@ onNext(callback: (index: number, pendingIndex: number) => void)
 
 
 
-#### onPrevious(deprecated)
+### onPrevious(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onPrevious(callback: (index: number, pendingIndex: number) => void)
 
@@ -179,6 +193,7 @@ onPrevious(callback: (index: number, pendingIndex: number) => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 当前步骤页索引值。 |
@@ -187,13 +202,17 @@ onPrevious(callback: (index: number, pendingIndex: number) => void)
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（使用Stepper）
+
+
+### 示例1（使用Stepper）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例主要演示如何使用步骤导航器组件。
 
@@ -296,12 +315,15 @@ struct StepperExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/pb-_4IVtSC67cg5LxePujA/zh-cn_image_0000002628862924.gif?HW-CC-KV=V1&HW-CC-Date=20260701T014358Z&HW-CC-Expire=86400&HW-CC-Sign=AC8820242A03A5972A86199CD3900C284E900F1315FB9E1B62468492A0592EF6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/UecTnRILTK6HLQsjfrZk1g/zh-cn_image_0000002747213087.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073107Z&HW-CC-Expire=86400&HW-CC-Sign=3C2F650D700E5B6AC42C04E147F1B327B690BCB8746532EB7DA4ADB307623E15)
 
 
 
 
-#### 示例2（使用Swiper替代Stepper）
+### 示例2（使用Swiper替代Stepper）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例主要演示如何使用[Swiper](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-swiper)组件实现Stepper组件的功能，示例效果图同示例1。
 

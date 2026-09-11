@@ -1,19 +1,20 @@
 # atm工具
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/atm-tool
 
 Access Token Manager (程序访问控制管理工具，简称atm工具)，是用于查询或设置应用进程的权限、使用类型等信息的工具，为开发者提供了根据tokenId、包名、进程名等信息进行访问控制管理的能力。
 
 
-#### 环境说明
+## 环境说明
 
 在使用本工具前，开发者需要先获取[hdc工具](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hdc)，执行hdc shell。
 
 
 
-#### atm工具命令列表
+## atm工具命令列表
+
 
 | 命令 | 描述 |
 | --- | --- |
@@ -24,7 +25,7 @@ Access Token Manager (程序访问控制管理工具，简称atm工具)，是用
 
 
 
-#### 帮助命令
+## 帮助命令
 
 ```bash
 # 显示帮助信息
@@ -33,7 +34,7 @@ atm help
 
 
 
-#### 权限命令
+## 权限命令
 
 ```bash
 atm perm [-h] [-g -i <token-id> -p <permission-name>] [-c -i <token-id> -p <permission-name>] [-r -i <token-id>] [-r -b <bundle-name>]
@@ -42,6 +43,7 @@ atm perm [-h] [-g -i <token-id> -p <permission-name>] [-c -i <token-id> -p <perm
 下表所列命令中，-g、-c、-r为必选参数，且只能单独使用。对atm perm -g和atm perm -c命令，-i和-p为必选参数；对atm perm -r命令，-i和-b参数只能单独使用，且不支持-p参数；-b参数仅支持和-r参数组合使用。
 
 **权限命令参数列表**
+
 
 | 参数 | 参数说明 |
 | --- | --- |
@@ -73,13 +75,14 @@ atm perm -r -b com.ohos.bundlename
 
 
 
-#### 查询命令
+## 查询命令
 
 ```bash
 atm dump [-h] [-d [-p <permission-name>]] [-t [-i <token-id>] [-b <bundle-name>] [-n <process-name>] [-p <permission-name>]]
 ```
 
 下表所列命令中，-d、-t为必选参数，-i、-b、-n、-p为可选参数。对atm dump -t命令，-i、-b、-n、-p参数只能单独使用。
+
 
 | 参数 | 参数说明 |
 | --- | --- |

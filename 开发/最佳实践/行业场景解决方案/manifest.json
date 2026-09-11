@@ -1,32 +1,54 @@
 [
   {
-    "slug": "bpta-horizontal-vertical-scrolling-list",
-    "name": "基于List和Scroller实现双向滚动列表",
     "file": "新闻阅读/基于List和Scroller实现双向滚动列表/基于List和Scroller实现双向滚动列表.md",
+    "name": "基于List和Scroller实现双向滚动列表",
+    "slug": "bpta-horizontal-vertical-scrolling-list",
     "url": "https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-horizontal-vertical-scrolling-list"
   },
   {
-    "slug": "bpta-karaoke-singing",
-    "name": "K歌解决方案",
     "file": "影音娱乐/K歌解决方案/K歌解决方案.md",
+    "name": "K歌解决方案",
+    "slug": "bpta-karaoke-singing",
     "url": "https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-karaoke-singing"
   },
   {
-    "slug": "bpta-pixelmap-image-editing",
-    "name": "基于PixelMap实现图片编辑",
     "file": "拍摄美化/基于PixelMap实现图片编辑/基于PixelMap实现图片编辑.md",
+    "name": "基于PixelMap实现图片编辑",
+    "slug": "bpta-pixelmap-image-editing",
     "url": "https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-pixelmap-image-editing"
   },
   {
-    "slug": "bpta-pixelmap-canvas-image-editing",
-    "name": "基于PixelMap与Canvas实现图片编辑",
     "file": "拍摄美化/基于PixelMap与Canvas实现图片编辑/基于PixelMap与Canvas实现图片编辑.md",
+    "name": "基于PixelMap与Canvas实现图片编辑",
+    "slug": "bpta-pixelmap-canvas-image-editing",
     "url": "https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-pixelmap-canvas-image-editing"
   },
   {
-    "slug": "bpta-video-light-editing",
+    "file": "影音娱乐/音频播放无声问题定位指导.md",
+    "name": "音频播放无声问题定位指导",
+    "slug": "bpta-audio-playback-silent-positioning-guidance",
+    "title": "音频播放无声问题定位指导",
+    "url": "https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-playback-silent-positioning-guidance"
+  },
+  {
+    "file": "影音娱乐/听书解决方案.md",
+    "name": "听书解决方案",
+    "slug": "bpta-audiobook",
+    "title": "听书解决方案",
+    "url": "https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audiobook"
+  },
+  {
+    "file": "拍摄美化/XComponent图形渲染常见问题定位指导.md",
+    "name": "XComponent图形渲染常见问题定位指导",
+    "slug": "bpta-xcomponent-render-problem-guide",
+    "title": "XComponent图形渲染常见问题定位指导",
+    "url": "https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-xcomponent-render-problem-guide"
+  },
+  {
+    "file": "影音娱乐/视频轻编辑开发实践.md",
     "name": "视频轻编辑开发实践",
-    "file": "影音娱乐/视频轻编辑开发实践/视频轻编辑开发实践.md",
+    "slug": "bpta-video-light-editing",
+    "title": "视频轻编辑开发实践",
     "url": "https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-video-light-editing"
   }
 ]

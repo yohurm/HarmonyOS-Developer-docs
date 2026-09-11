@@ -1,10 +1,10 @@
 # ohpm update错误码
 
-更新时间：2026-07-21 01:13:31
+更新时间：2026-08-29 09:41:34
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-update-errorcode
 
-#### 00606001 执行命令时带版本号
+## 00606001 执行命令时带版本号
 
 **错误信息**
  
@@ -24,7 +24,7 @@ update时带版本号。
  
  
 
-#### 00606002  执行tag-filter命令时使用非标准的正则
+## 00606002 执行tag-filter命令时使用非标准的正则
 
 **错误信息**
  
@@ -32,11 +32,11 @@ Tag Filter Non Standard Regex.
  
 **错误描述**
  
-tag-filter命令使用非标准正则。
+执行tag-filter命令时使用非标准正则。
  
 **可能原因**
  
-执行ohpm update --tag-filter &lt;regex&gt;命令时，使用非标准正则。如ohpm update  library --tag-filter [a-z，其中 [a-z 表示非法正则表达式，正确正则参数为[a-z]。
+执行ohpm update --tag-filter &lt;regex&gt;命令时，使用非标准正则。如ohpm update  library --tag-filter [a-z，其中 [a-z表示非法正则表达式，正确正则参数为[a-z]。
  
 **处理步骤**
  

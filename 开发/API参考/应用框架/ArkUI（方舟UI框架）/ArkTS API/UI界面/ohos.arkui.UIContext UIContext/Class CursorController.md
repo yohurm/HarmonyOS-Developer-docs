@@ -1,9 +1,9 @@
 # Class (CursorController)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-cursorcontroller
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供鼠标光标样式设置的能力，支持恢复默认鼠标光标样式、设置系统鼠标光标样式以及设置自定义鼠标光标样式，适用于需要根据界面交互状态动态调整鼠标光标显示效果的场景，有助于提升界面交互提示的清晰度。
 
@@ -12,17 +12,14 @@
 
 
 
-#### restoreDefault12+
+## restoreDefault12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 restoreDefault(): void
 
 恢复默认的光标样式。
-
-> [!NOTE]
-> 该接口调用后不会立即生效，而是在下一帧改变鼠标光标样式。
-
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -46,8 +43,8 @@ struct CursorControlExample {
   build() {
     Column() {
       Row().height(200).width(200).backgroundColor(Color.Green).position({x: 150, y:70})
-        .onHover((isHover) => {
-          if (isHover) {
+        .onHover((flag) => {
+          if (flag) {
             this.cursorController.setCursor(pointer.PointerStyle.EAST);
           } else {
             console.info('restoreDefault');
@@ -60,14 +57,15 @@ struct CursorControlExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/bQW3J2iISm-qKCSnO9Db0A/zh-cn_image_0000002686087681.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071444Z&HW-CC-Expire=86400&HW-CC-Sign=F75B484A241C30877C65894A6D2DC50E6B675639918B4CAFB450CD39DF55FDB8)
+![](assets/Class%20CursorController/file-20260514163830948-1.gif)
 
 
 
 
-#### setCursor12+
+## setCursor12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCursor(value: PointerStyle): void
 
@@ -85,6 +83,7 @@ setCursor(value: PointerStyle): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | PointerStyle | 是 | 鼠标光标样式，指定要设置的系统预定义光标类型（如箭头、手型指针、十字准星等），各样式含义详见PointerStyle枚举说明。 |
@@ -101,13 +100,14 @@ import { CursorController } from '@kit.ArkUI';
 @Entry
 @Component
 struct CursorControlExample {
+  @State text: string = '';
   cursorCustom: CursorController = this.getUIContext().getCursorController();
 
   build() {
     Column() {
       Row().height(200).width(200).backgroundColor(Color.Blue).position({x: 100, y:70})
-        .onHover((isHover) => {
-          if (isHover) {
+        .onHover((flag) => {
+          if (flag) {
             this.cursorCustom.setCursor(pointer.PointerStyle.WEST);
           } else {
             this.cursorCustom.restoreDefault();
@@ -119,14 +119,15 @@ struct CursorControlExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/NLs_xG7VRdmoy6GQk6IyeA/zh-cn_image_0000002685927853.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071444Z&HW-CC-Expire=86400&HW-CC-Sign=4AC0637430B8639FBA77D6BB67B827CA55AF0C8A1F2D8B25927F01D7108EBEF6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/sYVxRYX8Q02RmXmOOUG1zQ/zh-cn_image_0000002717612374.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072151Z&HW-CC-Expire=86400&HW-CC-Sign=CEA56E1B2BDCD5C93900B5BEA5D2EA331C4A1BEA42CCD3DE791F5FF50E0B8926)
 
 
 
 
-#### setCustomCursor
+## setCustomCursor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCustomCursor(value: image.PixelMap, focusX?: number, focusY?: number): void
 
@@ -145,6 +146,7 @@ setCustomCursor(value: image.PixelMap, focusX?: number, focusY?: number): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -246,4 +248,4 @@ struct CustomCursorExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/5l-MdlQYRs-OBWldcIznaA/zh-cn_image_0000002656008174.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071444Z&HW-CC-Expire=86400&HW-CC-Sign=2E127E6B32FECFA770F3C3FF7C16068DA460FE879B10D45A13A35D2417073C61)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/RCUCWDkRQqazGkk8UFbURg/zh-cn_image_0000002747292327.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072151Z&HW-CC-Expire=86400&HW-CC-Sign=64AC67D94ED23F31F71D7A585C20502775D4E16AF460FFC67B6CC74D7A8E4860)

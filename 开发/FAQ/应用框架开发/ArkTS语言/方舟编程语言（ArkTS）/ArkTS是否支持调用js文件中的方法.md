@@ -23,7 +23,7 @@ struct Index {
       Text("Import Js Demo")
       Button("Call Js")
         .onClick(() => {
-          jsFunc(); // Call jsFunc from js file
+          jsFunc(); <em>// Call jsFunc from js file</em>
         })
     }
     .width("100%")

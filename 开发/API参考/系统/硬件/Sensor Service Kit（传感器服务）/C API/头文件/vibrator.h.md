@@ -1,13 +1,14 @@
 # vibrator.h
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-vibrator-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 为您提供标准的开放API，用于控制马达振动的启停。支持简单持续振动和自定义振动序列两种模式。其中，简单持续振动适用于固定时长的单一振动场景，如闹钟、计时提醒等，只需指定振动时长即可实现；自定义振动序列适用于需要复杂振动模式的场景，如通知提醒、游戏反馈等，通过定义振动序列文件可实现丰富的触觉效果。帮助开发者实现精准的振动控制，提升用户交互体验。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | int32_t OH_Vibrator_PlayVibration(int32_t duration, Vibrator_Attribute attribute) | 控制马达在指定时间内持续振动。适用于需要固定时长振动的场景，如闹钟、计时提醒、游戏反馈、消息提醒等。 |
@@ -42,15 +46,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Vibrator_PlayVibration()
+### OH_Vibrator_PlayVibration()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Vibrator_PlayVibration(int32_t duration, Vibrator_Attribute attribute)
@@ -72,6 +78,7 @@ int32_t OH_Vibrator_PlayVibration(int32_t duration, Vibrator_Attribute attribute
  
 **参数：**
   
+
 | 参数项 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | duration | int32_t | 是 | 振动时长，单位：ms（毫秒）。用于控制马达振动的持续时间。取值范围[1, 60000]。 |
@@ -80,6 +87,7 @@ int32_t OH_Vibrator_PlayVibration(int32_t duration, Vibrator_Attribute attribute
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 如果操作成功，则返回0；否则返回 Vibrator_ErrorCode 中的错误码。常见错误码：PERMISSION_DENIED（201，权限校验失败）、PARAMETER_ERROR（401，参数检查失败）、UNSUPPORTED（801，设备不支持）。 |
@@ -87,9 +95,10 @@ int32_t OH_Vibrator_PlayVibration(int32_t duration, Vibrator_Attribute attribute
  
   
 
-#### OH_Vibrator_PlayVibrationCustom()
+### OH_Vibrator_PlayVibrationCustom()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Vibrator_PlayVibrationCustom(Vibrator_FileDescription fileDescription, Vibrator_Attribute vibrateAttribute)
@@ -110,6 +119,7 @@ int32_t OH_Vibrator_PlayVibrationCustom(Vibrator_FileDescription fileDescription
  
 **参数：**
   
+
 | 参数项 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | fileDescription | Vibrator_FileDescription | 是 | 自定义振动效果文件描述符，用于指定包含振动序列数据的文件位置和范围。通过设置文件句柄、偏移地址和长度，可以播放自定义的振动效果。详细信息请参阅 Vibrator_FileDescription。 |
@@ -118,6 +128,7 @@ int32_t OH_Vibrator_PlayVibrationCustom(Vibrator_FileDescription fileDescription
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 如果操作成功，则返回0；否则返回 Vibrator_ErrorCode 中的错误码。常见错误码包括：参数错误时请检查fileDescription和vibrateAttribute参数是否合法；设备不支持振动功能时请检查设备能力。详细错误码说明请参考 Vibrator_ErrorCode。 |
@@ -125,9 +136,10 @@ int32_t OH_Vibrator_PlayVibrationCustom(Vibrator_FileDescription fileDescription
  
   
 
-#### OH_Vibrator_Cancel()
+### OH_Vibrator_Cancel()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Vibrator_Cancel()
@@ -143,11 +155,13 @@ int32_t OH_Vibrator_Cancel()
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 如果操作成功，则返回0；否则返回 Vibrator_ErrorCode 中的错误码。有关错误码的可能原因和解决措施，请参考下方错误码表。 |
  
   
+
 | 错误码ID | 错误信息 | 说明 |
 | --- | --- | --- |
 | 201 | 权限校验失败 | 请检查是否已申请ohos.permission.VIBRATE权限。 |

@@ -1,9 +1,9 @@
 # pushCommon（推送服务公共信息）
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-pushcommon
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块定义推送服务相关公共接口与枚举，为账号绑定、消息接收、通知内容替换等核心能力提供支撑。
  
@@ -14,9 +14,10 @@
 **起始版本：** 4.0.0(10)
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { pushCommon } from '@kit.PushKit';
@@ -24,9 +25,10 @@ import { pushCommon } from '@kit.PushKit';
  
   
 
-#### AppProfileType
+## AppProfileType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 绑定账号类型，为枚举值。
  
@@ -38,6 +40,7 @@ import { pushCommon } from '@kit.PushKit';
  
 **起始版本：** 4.0.0(10)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | PROFILE_TYPE_OS_DISTRIBUTED_ACCOUNT | 1 | 华为账号。 |
@@ -46,9 +49,10 @@ import { pushCommon } from '@kit.PushKit';
  
   
 
-#### PushPayload
+## PushPayload
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 PushPayload是推送服务向应用传递数据的核心接口，开发者可以通过[receiveMessage](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-pushservice#pushservicereceivemessage)()接收通知、语音播报等类型消息的数据。
  
@@ -60,6 +64,7 @@ PushPayload是推送服务向应用传递数据的核心接口，开发者可以
  
 **起始版本：** 4.0.0(10)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | string | 否 | 否 | 传递给Ability的消息类型，取值范围： 'IM'：语音播报消息 'VoIP'：应用内通话消息 'BACKGROUND'：后台消息 'EMERGENCY'：紧急事件消息（该类型的消息仅对系统应用开放，暂不对外开放申请，开发者无需处理） 'ALERT'：通知消息 |
@@ -68,7 +73,10 @@ PushPayload是推送服务向应用传递数据的核心接口，开发者可以
  
   
 
-#### data取值样例
+### data取值样例
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 - type为'IM'时，data取值样例（格式化后）：
 
@@ -141,9 +149,10 @@ PushPayload是推送服务向应用传递数据的核心接口，开发者可以
  
   
 
-#### RemoteNotificationInfo
+## RemoteNotificationInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 应用进程不在前台时，开发者可以通过[onReceiveMessage](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-remote-notification-extension-ability#onreceivemessage)()接收语音播报消息的数据，数据由该接口进行传递，继承自[PushPayload](#pushpayload)。
  
@@ -155,6 +164,7 @@ PushPayload是推送服务向应用传递数据的核心接口，开发者可以
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | id | number | 否 | 否 | 通知id。 |
@@ -164,9 +174,10 @@ PushPayload是推送服务向应用传递数据的核心接口，开发者可以
  
   
 
-#### RemoteNotificationContent
+## RemoteNotificationContent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 开发者接收并处理[RemoteNotificationInfo](#remotenotificationinfo)后，通过该接口返回替换后的通知标题、通知内容等属性。
  
@@ -178,6 +189,7 @@ PushPayload是推送服务向应用传递数据的核心接口，开发者可以
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | title | string | 否 | 是 | 扩展通知标题，将作为发布通知时NotificationRequest对象的title。 说明： title从5.0.0(12)起变更为非必填字段。 |
@@ -190,9 +202,10 @@ PushPayload是推送服务向应用传递数据的核心接口，开发者可以
  
   
 
-#### RemoteWantAgent
+## RemoteWantAgent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 点击事件时可以替换的数据。返回[RemoteNotificationContent](#remotenotificationcontent)时，开发者可以通过该接口实现替换后的通知点击行为，例如启动 Ability。
  
@@ -204,6 +217,7 @@ PushPayload是推送服务向应用传递数据的核心接口，开发者可以
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | abilityName | string | 否 | 否 | 自定义页面名称。 |
@@ -212,9 +226,10 @@ PushPayload是推送服务向应用传递数据的核心接口，开发者可以
  
   
 
-#### VoIPInfo
+## VoIPInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 应用内通话消息数据，继承自[PushPayload](#pushpayload)。
  
@@ -226,6 +241,7 @@ PushPayload是推送服务向应用传递数据的核心接口，开发者可以
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | callId | string | 否 | 否 | 当次呼叫的唯一标识。 |

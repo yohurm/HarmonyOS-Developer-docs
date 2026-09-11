@@ -1,13 +1,13 @@
 # anm工具
 
-更新时间：2026-03-17 02:21:50
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/anm-tool
 
 Advanced Notification Manager（通知管理工具，简称anm）是实现通知打印、设置通知参数等功能的工具，为开发者提供基本的通知调试和测试能力，例如打印已发布通知详细信息、设置通知缓存个数、使能通知等。
 
 
-#### 环境要求
+## 环境要求
 
 在使用本工具前，开发者需要先获取hdc工具，执行hdc shell。
 
@@ -15,7 +15,8 @@ Advanced Notification Manager（通知管理工具，简称anm）是实现通知
 
 
 
-#### anm工具命令列表
+## anm工具命令列表
+
 
 | 命令 | 描述 |
 | --- | --- |
@@ -26,7 +27,7 @@ Advanced Notification Manager（通知管理工具，简称anm）是实现通知
 
 
 
-#### 帮助命令（help）
+## 帮助命令（help）
 
 ```bash
 # 显示anm相关的帮助信息
@@ -35,7 +36,7 @@ anm help
 
 
 
-#### 打印命令（dump）
+## 打印命令（dump）
 
 ```bash
 # 打印通知相关信息
@@ -43,6 +44,7 @@ anm dump [<options>]
 ```
 
 **打印命令参数列表**
+
 
 | 参数 | 参数说明 |
 | --- | --- |
@@ -63,7 +65,7 @@ anm dump -A
 
 
 
-#### 设置命令（setting）
+## 设置命令（setting）
 
 ```bash
 # 设置通知参数
@@ -71,6 +73,7 @@ anm setting [<options>]
 ```
 
 **设置命令参数列表**
+
 
 | 参数 | 参数说明 |
 | --- | --- |

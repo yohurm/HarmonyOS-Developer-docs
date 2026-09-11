@@ -1,9 +1,9 @@
 # @ohos.graphics.displaySync (可变帧率)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-graphics-displaysync
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 可变帧率支持让开发者以指定帧率来运行UI业务，一般用于开发者自绘制UI，并且对于帧率有特定需求的场景，系统会根据设置的期望帧率、最小帧率和最大帧率来调整绘制频率，以满足不同场景的需求。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { displaySync } from '@kit.ArkGraphics2D';
@@ -22,9 +23,10 @@ import { displaySync } from '@kit.ArkGraphics2D';
 
 
 
-#### displaySync.create
+## displaySync.create
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 create(): DisplaySync
 
@@ -33,6 +35,7 @@ create(): DisplaySync
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -48,13 +51,15 @@ let backDisplaySync: displaySync.DisplaySync = displaySync.create();
 
 
 
-#### IntervalInfo
+## IntervalInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 开发者可以从回调函数中获取帧绘制的时间戳信息，包含当前帧到达的时间timestamp和下一帧预期到达的时间targetTimestamp。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -64,17 +69,19 @@ let backDisplaySync: displaySync.DisplaySync = displaySync.create();
 
 
 
-#### DisplaySync
+## DisplaySync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 期望帧率和回调函数设置实例。用于设置期望帧率范围、注册帧回调函数，以及启动和停止帧回调。下列API示例中都需先使用[displaySync.create()](#displaysynccreate)方法获取到DisplaySync实例，再通过此实例调用对应方法。
 
 
 
-#### setExpectedFrameRateRange
+### setExpectedFrameRateRange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setExpectedFrameRateRange(rateRange: ExpectedFrameRateRange): void
 
@@ -84,6 +91,7 @@ setExpectedFrameRateRange(rateRange: ExpectedFrameRateRange): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rateRange | ExpectedFrameRateRange | 是 | 设置DisplaySync期望的帧率范围，包含expected、min和max三个字段，单位为帧/秒（fps），字段需为非负整数，取值范围为[0, 设备最大帧率]，且满足min <= expected <= max。超出有效范围时会抛出401错误码。 |
@@ -92,6 +100,7 @@ setExpectedFrameRateRange(rateRange: ExpectedFrameRateRange): void
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -117,9 +126,10 @@ backDisplaySync?.start()
 
 
 
-#### on('frame')
+### on('frame')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'frame', callback: Callback&lt;IntervalInfo&gt;): void
 
@@ -128,6 +138,7 @@ on(type: 'frame', callback: Callback&lt;IntervalInfo&gt;): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -152,9 +163,10 @@ backDisplaySync?.start()
 
 
 
-#### off('frame')
+### off('frame')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'frame', callback?: Callback&lt;IntervalInfo&gt;): void
 
@@ -163,6 +175,7 @@ off(type: 'frame', callback?: Callback&lt;IntervalInfo&gt;): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -187,9 +200,10 @@ backDisplaySync?.off("frame", callback)
 
 
 
-#### start
+### start
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 start(): void
 
@@ -255,9 +269,10 @@ struct Index {
 
 
 
-#### stop
+### stop
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stop(): void
 

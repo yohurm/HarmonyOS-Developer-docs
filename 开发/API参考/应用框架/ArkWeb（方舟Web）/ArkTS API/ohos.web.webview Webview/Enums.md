@@ -1,9 +1,9 @@
 # Enums
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-e
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ArkWeb Enums模块是ArkWeb（Web子系统）的枚举类型定义集合，为WebView组件及其关联的API类提供统一的类型约束和状态描述能力。本模块定义了覆盖Web 页面交互、安全状态、DNS配置、下载任务、媒体播控、内核版本、进程模式、内存管理、离线资源、无白屏加载、站点隔离、软键盘行为、Cookie策略、滚动控制、设备形态等多领域的枚举类型，是整个WebView API体系的基础类型支撑层。
 
@@ -14,13 +14,15 @@ ArkWeb Enums模块是ArkWeb（Web子系统）的枚举类型定义集合，为We
 
 
 
-#### WebHitTestType
+## WebHitTestType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-[getLastHitTest](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller#getlasthittest18)接口用于指示光标节点。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+指示光标命中的节点类型。
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -36,30 +38,34 @@ ArkWeb Enums模块是ArkWeb（Web子系统）的枚举类型定义集合，为We
 
 
 
-#### SecureDnsMode10+
+## SecureDnsMode10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Web组件使用HTTPDNS的模式。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| OFF | 0 | 不使用HTTPDNS， 可以用于撤销之前使用的HTTPDNS配置。 |
+| OFF | 0 | 不使用HTTPDNS，可以用于撤销之前使用的HTTPDNS配置。 |
 | AUTO | 1 | 自动模式，用于解析的设定DNS服务器不可用时，可自动回落至系统DNS。 |
 | SECURE_ONLY | 2 | 强制使用设定的HTTPDNS服务器进行域名解析。 |
 
 
 
 
-#### SecurityLevel11+
+## SecurityLevel11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 当前网页的安全级别。
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -71,13 +77,15 @@ Web组件使用HTTPDNS的模式。
 
 
 
-#### MediaPlaybackState12+
+## MediaPlaybackState12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 当前网页的播放控制状态。
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -89,13 +97,15 @@ Web组件使用HTTPDNS的模式。
 
 
 
-#### PressureLevel14+
+## PressureLevel14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 内存压力等级。在应用主动清理Web组件占用的缓存时，Web内核会根据内存压力等级，进行缓存释放。
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -105,13 +115,15 @@ Web组件使用HTTPDNS的模式。
 
 
 
-#### WebMessageType10+
+## WebMessageType10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [WebMessagePort](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webmessageport)接口所支持的数据类型。
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -126,13 +138,15 @@ Web组件使用HTTPDNS的模式。
 
 
 
-#### JsMessageType10+
+## JsMessageType10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [runJavaScriptExt](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller#runjavascriptext10)接口脚本执行后返回的结果的类型。
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -146,13 +160,15 @@ Web组件使用HTTPDNS的模式。
 
 
 
-#### RenderProcessMode12+
+## RenderProcessMode12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-ArkWeb渲染子进程模式类型。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+ArkWeb渲染子进程模式类型，可根据应用对内存占用与渲染进程隔离的需求选择对应的模式。
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -162,13 +178,15 @@ ArkWeb渲染子进程模式类型。
 
 
 
-#### OfflineResourceType12+
+## OfflineResourceType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [OfflineResourceMap](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-i#offlineresourcemap12)对象对应的本地离线资源的接口类型。
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -180,13 +198,15 @@ ArkWeb渲染子进程模式类型。
 
 
 
-#### ScrollType12+
+## ScrollType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Scroll滚动类型，用于[setScrollable](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller#setscrollable12)。
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -195,13 +215,15 @@ Scroll滚动类型，用于[setScrollable](https://developer.huawei.com/consumer
 
 
 
-#### WebDownloadState11+
+## WebDownloadState11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 下载任务的状态。
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -216,13 +238,15 @@ Scroll滚动类型，用于[setScrollable](https://developer.huawei.com/consumer
 
 
 
-#### WebDownloadErrorCode11+
+## WebDownloadErrorCode11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 下载任务的错误码。
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -258,13 +282,15 @@ Scroll滚动类型，用于[setScrollable](https://developer.huawei.com/consumer
 
 
 
-#### WebResourceType12+
+## WebResourceType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 资源请求的资源类型。
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -282,7 +308,7 @@ Scroll滚动类型，用于[setScrollable](https://developer.huawei.com/consumer
 | PREFETCH | 11 | 明确的预取请求。 |
 | FAVICON | 12 | 网站图标。 |
 | XHR | 13 | XMLHttpRequest。 |
-| PING | 14 | &lt;a ping&gt;/sendBeacon的Ping请求。 |
+| PING | 14 | <a ping>/sendBeacon的Ping请求。 |
 | SERVICE_WORKER | 15 | service worker的主资源。 |
 | CSP_REPORT | 16 | 内容安全策略违规报告。 |
 | PLUGIN_RESOURCE | 17 | 插件请求的资源。 |
@@ -292,29 +318,33 @@ Scroll滚动类型，用于[setScrollable](https://developer.huawei.com/consumer
 
 
 
-#### PlaybackStatus12+
+## PlaybackStatus12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [handleStatusChanged](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-nativemediaplayerhandler#handlestatuschanged12) 接口参数， 用于表示播放器的播放状态。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| PAUSED | 0 | 播放状态为暂停状态，表示媒体已暂停。 |
-| PLAYING | 1 | 播放状态为播放状态，表示媒体正在播放。 |
+| PAUSED | 0 | 表示媒体已暂停。 |
+| PLAYING | 1 | 表示媒体正在播放。 |
 
 
 
 
-#### NetworkState12+
+## NetworkState12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 播放器的网络状态。
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -326,13 +356,15 @@ Scroll滚动类型，用于[setScrollable](https://developer.huawei.com/consumer
 
 
 
-#### ReadyState12+
+## ReadyState12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 播放器的缓存状态。
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -345,13 +377,15 @@ Scroll滚动类型，用于[setScrollable](https://developer.huawei.com/consumer
 
 
 
-#### MediaError12+
+## MediaError12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 播放器的错误类型。
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -362,13 +396,15 @@ Scroll滚动类型，用于[setScrollable](https://developer.huawei.com/consumer
 
 
 
-#### SuspendType12+
+## SuspendType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示播放器的挂起类型。
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -379,13 +415,15 @@ Scroll滚动类型，用于[setScrollable](https://developer.huawei.com/consumer
 
 
 
-#### MediaType12+
+## MediaType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示媒体类型。
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -395,13 +433,15 @@ Scroll滚动类型，用于[setScrollable](https://developer.huawei.com/consumer
 
 
 
-#### SourceType12+
+## SourceType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示媒体源的类型。
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -411,13 +451,15 @@ Scroll滚动类型，用于[setScrollable](https://developer.huawei.com/consumer
 
 
 
-#### Preload12+
+## Preload12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 播放器预加载媒体数据。
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -428,13 +470,15 @@ Scroll滚动类型，用于[setScrollable](https://developer.huawei.com/consumer
 
 
 
-#### ProxySchemeFilter15+
+## ProxySchemeFilter15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 使用代理的请求的scheme信息。
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -445,13 +489,15 @@ Scroll滚动类型，用于[setScrollable](https://developer.huawei.com/consumer
 
 
 
-#### WebDestroyMode20+
+## WebDestroyMode20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Web组件的销毁模式，当Web组件销毁时，销毁模式会影响Web内核的资源释放时机，例如JavaScript运行上下文、渲染上下文等等。
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -461,13 +507,15 @@ Web组件的销毁模式，当Web组件销毁时，销毁模式会影响Web内�
 
 
 
-#### ScrollbarMode23+
+## ScrollbarMode23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Web页面场景下，全局滚动条模式。
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -478,13 +526,15 @@ Web页面场景下，全局滚动条模式。
 
 
 
-#### WebBlanklessErrorCode20+
+## WebBlanklessErrorCode20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone
 
 无白屏加载的异常错误码。
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -500,15 +550,17 @@ Web页面场景下，全局滚动条模式。
 
 
 
-#### BlanklessFrameInterpolationState 23+
+## BlanklessFrameInterpolationState 23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone
 
 白屏插帧状态。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -519,13 +571,15 @@ Web页面场景下，全局滚动条模式。
 
 
 
-#### ArkWebEngineVersion20+
+## ArkWebEngineVersion20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ArkWeb内核版本，请参考[M114内核在HarmonyOS 6.0系统上的适配指导](https://gitcode.com/openharmony-tpc/chromium_src/blob/master/web/ReleaseNote/CompatibleWithLegacyWebEngine_6.0.md)，[M132内核在HarmonyOS 7.0系统上的适配指导](https://gitcode.com/openharmony-tpc/chromium_src/blob/master/web/ReleaseNote/CompatibleWithLegacyWebEngine_7.0.md)。
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -533,10 +587,11 @@ ArkWeb内核版本，请参考[M114内核在HarmonyOS 6.0系统上的适配指�
 | M114 | 1 | HarmonyOS 6.0版本的遗留内核。开发者可选择此遗留内核，若系统版本上不存在此内核则设置无效，使用系统默认内核。 |
 | M132 | 2 | HarmonyOS 6.0版本的常青内核（HarmonyOS 7.0版本的遗留内核），M132为HarmonyOS 6.0版本的默认内核。若系统版本上不存在此内核则设置无效，使用系统默认内核。 |
 | M144 | 3 | HarmonyOS 7.0版本的常青内核，M144为HarmonyOS 7.0版本的默认内核。若系统版本上不存在此内核则设置无效，使用系统默认内核。 起始版本： 26.0.0 模型约束： 此接口仅可在Stage模型下使用。 |
-| ARKWEB_EVERGREEN23+ | 99999 | 常青内核，系统的最新内核。开发者可选择在每个系统版本上都使用最新的内核，HarmonyOS开发套件（基于API 23）及之后所有系统版本都生效。 |
+| ARKWEB_EVERGREEN23+ | 99999 | 系统的最新内核（常青内核）。开发者可选择在每个系统版本上都使用最新的内核，HarmonyOS开发套件API version 23及之后所有系统版本都生效。 |
 
 
 **表1** 常青内核与遗留内核含义说明
+
 
 | 内核类型 | 英文 | 说明 |
 | --- | --- | --- |
@@ -546,29 +601,33 @@ ArkWeb内核版本，请参考[M114内核在HarmonyOS 6.0系统上的适配指�
 
 
 
-#### SiteIsolationMode21+
+## SiteIsolationMode21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-站点隔离机制将不同源的网站隔离在不同的渲染进程中，减少跨域攻击面。例如，PC上原有进程模型是每一个Tab对应一个Render进程，站点隔离打开后，让不同源的Iframe运行在独立的Render进程中。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+站点隔离机制将不同源的网站隔离在不同的渲染子进程中，减少跨域攻击面。例如，PC上原有进程模型是每一个Tab对应一个渲染子进程，站点隔离打开后，让不同源的Iframe运行在独立的渲染子进程中。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| PARTIAL | 0 | 部分站点隔离，即在同一个Render进程内加载新站点。 |
+| PARTIAL | 0 | 部分站点隔离，即在同一个渲染进程内加载新站点。 |
 | STRICT | 1 | 严格站点隔离，跨站点的Iframe将切换到新的渲染进程。 |
 
 
 
 
-#### WebSoftKeyboardBehaviorMode22+
+## WebSoftKeyboardBehaviorMode22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Web软键盘自动控制模式。
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -578,13 +637,15 @@ Web软键盘自动控制模式。
 
 
 
-#### WebHttpCookieSameSitePolicy23+
+## WebHttpCookieSameSitePolicy23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 控制cookie在跨站请求中的发送行为。
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -595,15 +656,17 @@ Web软键盘自动控制模式。
 
 
 
-#### UserAgentFormFactor24+
+## UserAgentFormFactor24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用户设备形态。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -614,3 +677,21 @@ Web软键盘自动控制模式。
 | TABLET | 'Tablet' | 平板，字符串类型。 |
 | WATCH | 'Watch' | 手表，字符串类型。 |
 | XR | 'XR' | VR+AR设备，字符串类型。 |
+
+
+
+
+## ControllerAttachState20+
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+WebviewController与Web组件的绑定状态。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| UNATTACHED | 0 | 未绑定状态。 |
+| ATTACHED | 1 | 已绑定状态。 |

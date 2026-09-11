@@ -1,15 +1,19 @@
 # Canvas组件错误码
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-canvas
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 > [!NOTE]
 > 以下仅介绍本模块特有错误码，通用错误码请参考 通用错误码 。
 
 
 
-#### 103701 参数错误
+## 103701 参数错误
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -29,7 +33,10 @@ Parameter error.
 
 
 
-#### 103702 绘制上下文未绑定Canvas组件
+## 103702 绘制上下文未绑定Canvas组件
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -49,7 +56,10 @@ The drawingContext is not bound to a canvas component.
 
 
 
-#### 103704 OffscreenCanvas已经下树
+## 103704 OffscreenCanvas已经下树
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 

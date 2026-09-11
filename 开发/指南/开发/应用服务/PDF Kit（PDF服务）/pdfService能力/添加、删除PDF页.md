@@ -1,6 +1,6 @@
 # 添加、删除PDF页
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pdf-add-delete-page
 
@@ -12,7 +12,8 @@
 
 
 
-#### 接口说明
+## 接口说明
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -24,7 +25,7 @@
 
 
 
-#### 示例代码
+## 示例代码
 1. 调用loadDocument方法，加载PDF文档。
 2. 调用getPage方法获取当前页，用于获取页面宽高。
 3. 调用insertBlankPage和insertPageFromDocument方法实现如下功能。

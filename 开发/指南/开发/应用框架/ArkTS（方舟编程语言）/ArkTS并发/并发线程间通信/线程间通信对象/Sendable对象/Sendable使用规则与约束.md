@@ -1,14 +1,14 @@
 # Sendable使用规则与约束
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/sendable-constraints
 
-#### 继承规则
+## 继承规则
 
 
 
-#### Sendable类必须继承自Sendable类
+### Sendable类必须继承自Sendable类
 
 Sendable对象的布局和原型链不可变，而非Sendable对象可以通过特殊方式修改布局。因此，不允许互相继承。此处的继承规则针对类定义本身，不涉及类的实例变量。Sendable类只能继承自Sendable类的定义。
 
@@ -49,7 +49,7 @@ class B extends A { // A不是sendable class，B不能继承它，编译报错
 
 
 
-#### 非Sendable类必须继承自非Sendable类
+### 非Sendable类必须继承自非Sendable类
 
 Sendable对象的布局和原型链不可变，而非Sendable对象可以通过特殊方式修改布局，因此不允许互相继承。
 
@@ -89,11 +89,11 @@ class B extends A { // A是sendable class，B不能继承它，编译报错
 
 
 
-#### 接口实现规则
+## 接口实现规则
 
 
 
-#### 非Sendable类禁止实现Sendable接口
+### 非Sendable类禁止实现Sendable接口
 
 非Sendable类实现Sendable接口时，可能被误认为是Sendable类，导致错误使用。
 
@@ -124,11 +124,11 @@ class B implements I {};  // I是sendable interface，B不能实现，编译报�
 
 
 
-#### Sendable类/接口成员变量规则
+## Sendable类/接口成员变量规则
 
 
 
-#### 必须是Sendable支持的数据类型
+### 必须是Sendable支持的数据类型
 
 Sendable数据不得持有非Sendable数据，因此Sendable类或接口的成员变量必须是[Sendable支持的数据类型](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable#sendable支持的数据类型)。
 
@@ -157,7 +157,7 @@ class A {
 
 
 
-#### 不支持使用!断言
+### 不支持使用!断言
 
 Sendable对象的成员属性必须赋初值，而“!”修饰的变量可以不赋初值，因此不支持使用“!”。
 
@@ -186,7 +186,7 @@ class A {
 
 
 
-#### 不支持使用计算属性名
+### 不支持使用计算属性名
 
 Sendable对象的布局不可更改，因为计算属性无法静态确定对象布局，所以不支持。
 
@@ -220,7 +220,7 @@ class A {
 
 
 
-#### 不支持使用类型别名
+### 不支持使用类型别名
 
 Sendable类的成员变量不能使用类型别名（即使用type关键字定义的别名）。
 
@@ -254,11 +254,11 @@ class B {
 
 
 
-#### 泛型规则
+## 泛型规则
 
 
 
-#### 泛型类中的Sendable类、SendableLruCache、collections.Array、collections.ConcatArray、collections.Map和collections.Set的模板类型必须是Sendable类型
+### 泛型类中的Sendable类、SendableLruCache、collections.Array、collections.ConcatArray、collections.Map和collections.Set的模板类型必须是Sendable类型
 
 Sendable数据不能持有非Sendable数据，因此泛型类中的Sendable数据的模板类型必须是Sendable类型。
 
@@ -293,11 +293,11 @@ try {
 
 
 
-#### 上下文访问规则
+## 上下文访问规则
 
 
 
-#### Sendable类的内部不允许使用当前模块内上下文环境中定义的变量
+### Sendable类的内部不允许使用当前模块内上下文环境中定义的变量
 
 由于Sendable对象在不同并发实例间的上下文环境不同，属于单个虚拟机实例，如果直接访问会有非预期行为。不支持Sendable对象使用当前模块内上下文环境中定义的变量，违反此规则会在编译阶段报错。
 
@@ -371,11 +371,11 @@ let b = new B();
 
 
 
-#### @Sendable装饰器使用规则
+## @Sendable装饰器使用规则
 
 
 
-#### @Sendable装饰器仅支持修饰类和函数
+### @Sendable装饰器仅支持修饰类和函数
 
 当前仅支持修饰类和函数。
 
@@ -402,7 +402,7 @@ type D = C; // 编译报错
 
 
 
-#### Sendable类和Sendable函数禁止使用除@Sendable外的装饰器
+### Sendable类和Sendable函数禁止使用除@Sendable外的装饰器
 
 在ts文件中定义类装饰器时，可能会改变类的结构，进而引发运行时错误。
 
@@ -428,7 +428,7 @@ class C {
 
 
 
-#### 支持在Sendable class上叠加自定义装饰器
+### 支持在Sendable class上叠加自定义装饰器
 
 从API version 22开始，支持在Sendable class上叠加使用除@Sendable装饰器之外的其他自定义装饰器。
 
@@ -452,11 +452,11 @@ class C {
 
 
 
-#### 初始化规则
+## 初始化规则
 
 
 
-#### 禁止使用对象字面量/数组字面量初始化Sendable对象
+### 禁止使用对象字面量/数组字面量初始化Sendable对象
 
 对象字面量和数组字面量不是Sendable类型。Sendable类型必须通过Sendable类型的new表达式创建。
 
@@ -481,11 +481,11 @@ let arr4: number[] = new collections.Array<number>(1, 2, 3); // 编译报错
 
 
 
-#### 类型转换规则
+## 类型转换规则
 
 
 
-#### 禁止非Sendable类型强制转换为Sendable
+### 禁止非Sendable类型强制转换为Sendable
 
 除了Object类型，非Sendable类型不能强转成Sendable类型。非Sendable类型通过as强转成Sendable类型后，实际数据仍为非Sendable类型，会导致错误使用。Sendable类型在不违反Sendable规则的前提下，需要和非Sendable类型行为兼容，因此Sendable类型可以通过as强转成非Sendable类型。
 
@@ -522,11 +522,11 @@ let a2: SendableA = new A() as SendableA; // 编译报错
 
 
 
-#### 函数规则
+## 函数规则
 
 
 
-#### 箭头函数不可标记为Sendable
+### 箭头函数不可标记为Sendable
 
 **反例：**
 
@@ -543,11 +543,12 @@ class SendableClass {
 
 
 
-#### 与TS/JS交互的规则
+## 与TS/JS交互的规则
 
 
 
-#### ArkTS通用规则（目前只针对Sendable对象）
+### ArkTS通用规则（目前只针对Sendable对象）
+
 
 | 规则 |
 | --- |
@@ -562,9 +563,10 @@ class SendableClass {
 
 
 
-#### NAPI规则（目前只针对Sendable对象）
+### NAPI规则（目前只针对Sendable对象）
 
 NAPI相关接口请参考[Sendable相关的NAPI接口](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-about-extension#sendable相关)，具体使用请参考[Native与Sendable ArkTS对象绑定](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-sendable-napi)。
+
 
 | 规则 |
 | --- |
@@ -576,13 +578,13 @@ NAPI相关接口请参考[Sendable相关的NAPI接口](https://developer.huawei.
 
 
 
-#### 与UI交互的规则
+## 与UI交互的规则
 
 Sendable数据需要与[makeObserved](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-makeobserved)配合使用，才可以观察Sendable对象的数据变化，具体使用请参考[makeObserved和@Sendable装饰的class配合文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-makeobserved#makeobserved和sendable装饰的class配合使用)。
 
 
 
-#### 在HAR包中的使用规则
+## 在HAR包中的使用规则
 
 Sendable可在[HAR](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/har-package)包中使用。当在字节码HAR中使用Sendable时，无需进行额外配置，可直接使用。当在TS HAR中使用Sendable时，需在HAR模块下的module.json5文件中将"metadata"字段下的"name"设置为“UseTsHar”，配置如下所示。
 

@@ -1,9 +1,9 @@
 # @ohos.app.ability.hyperSnapManager (应用快启管理)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-hypersnapmanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 应用启动过程中的初始化流程可以提前进行快启初始化，快启启动的应用不再重复执行初始化流程，从而起到加速启动的作用。hyperSnapManager模块提供应用快启管理的能力，包括启用或禁用应用的快启功能、请求重新初始化应用快启等。
 
@@ -12,23 +12,25 @@
 
 
 
-#### 实现原理
+## 实现原理
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 应用快启只会初始化一次，快启启动可以省去应用初始化和AbilityStage创建所需的时间。
 
 **图1** 快启启动流程
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/g4etms60ROG26qxxxd9uew/zh-cn_image_0000002659221429.png?HW-CC-KV=V1&HW-CC-Date=20260701T014237Z&HW-CC-Expire=86400&HW-CC-Sign=1F27B77F703B97DC97919AB24BE2DD0B611DC6857D667A56ABC28072B7CC77CE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/S1ff_pUtSAqZdxJh7Xs5cQ/zh-cn_image_0000002717772294.png?HW-CC-KV=V1&HW-CC-Date=20260911T072830Z&HW-CC-Expire=86400&HW-CC-Sign=DFC30508908DC2056C49007CE0EE39B35F3239ECA6A93D579CDF74D22FD98E4E)
 
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { hyperSnapManager } from '@kit.AbilityKit';
@@ -36,9 +38,10 @@ import { hyperSnapManager } from '@kit.AbilityKit';
 
 
 
-#### hyperSnapManager.setHyperSnapEnabled
+## hyperSnapManager.setHyperSnapEnabled
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setHyperSnapEnabled(enableFlag: boolean): void
 
@@ -54,14 +57,16 @@ setHyperSnapEnabled(enableFlag: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| enableFlag | boolean | 是 | 表示快启功能开关标志。 - true：表示启用快启功能（系统将最终决策是否创建快启）。 - false：禁用应用快启功能。 |
+| enableFlag | boolean | 是 | 表示快启功能开关标志。 - true：表示启用应用快启功能（系统将最终决策是否创建快启）。 - false：表示禁用应用快启功能。 |
 
 
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -87,9 +92,10 @@ try {
 
 
 
-#### hyperSnapManager.requestRebuildHyperSnap
+## hyperSnapManager.requestRebuildHyperSnap
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestRebuildHyperSnap(): void
 
@@ -104,6 +110,7 @@ requestRebuildHyperSnap(): void
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

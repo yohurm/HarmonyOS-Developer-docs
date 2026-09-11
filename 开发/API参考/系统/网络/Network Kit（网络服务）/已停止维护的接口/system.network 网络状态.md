@@ -1,18 +1,19 @@
 # @system.network (网络状态)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-system-network
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 本模块首批接口从API version 3开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 从API Version 8 开始，该接口不再维护，推荐使用新接口 '@ohos.net.connection' 。
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import network from '@system.network';
@@ -20,9 +21,10 @@ import network from '@system.network';
  
   
 
-#### 权限列表
+## 权限列表
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ohos.permission.GET_WIFI_INFO
  
@@ -30,9 +32,10 @@ ohos.permission.GET_NETWORK_INFO
  
   
 
-#### network.getType3+
+## network.getType3+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getType(options?: {
  
@@ -50,6 +53,7 @@ getType(options?: {
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | success | Function | 否 | 接口调用成功的回调函数，返回值为NetworkResponse。 |
@@ -59,6 +63,7 @@ getType(options?: {
  
 fail返回值：
   
+
 | 错误码 | 说明 |
 | --- | --- |
 | 602 | 当前权限未声明。 |
@@ -80,9 +85,10 @@ export default class Network {
  
   
 
-#### network.subscribe3+
+## network.subscribe3+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 subscribe(options?:{
  
@@ -98,6 +104,7 @@ subscribe(options?:{
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | success | Function | 否 | 网络发生变化的回调函数。返回值为NetworkResponse。 |
@@ -106,6 +113,7 @@ subscribe(options?:{
  
 fail返回值：
   
+
 | 错误码 | 说明 |
 | --- | --- |
 | 602 | 当前权限未声明。 |
@@ -128,9 +136,10 @@ export default class Network {
  
   
 
-#### network.unsubscribe3+
+## network.unsubscribe3+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unsubscribe(): void
  
@@ -148,12 +157,14 @@ network.unsubscribe();
  
   
 
-#### NetworkResponse3+
+## NetworkResponse3+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Communication.NetManager.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | metered | boolean | 否 | 是 | 是否按照流量计费。true：按照流量计费；false：不按照流量计费。 |

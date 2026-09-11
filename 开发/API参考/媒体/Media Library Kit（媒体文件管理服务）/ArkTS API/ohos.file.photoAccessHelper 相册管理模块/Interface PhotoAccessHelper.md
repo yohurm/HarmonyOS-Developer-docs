@@ -1,18 +1,21 @@
 # Interface (PhotoAccessHelper)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-photoaccesshelper-photoaccesshelper
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+PhotoAccessHelper提供图片和视频资源的访问管理能力，支持获取、创建、删除媒体资产，管理相册，监听资产变化等操作。
 
 > [!NOTE]
 > 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
@@ -20,9 +23,10 @@ import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
 
 
-#### getAssets
+## getAssets
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAssets(options: FetchOptions, callback: AsyncCallback<FetchResult&lt;PhotoAsset&gt;>): void
 
@@ -32,9 +36,10 @@ getAssets(options: FetchOptions, callback: AsyncCallback<FetchResult&lt;PhotoAss
 
 **需要权限**：ohos.permission.READ_IMAGEVIDEO
 
-通过picker的方式调用该接口来查询指定URI对应的图片或视频资源，不需要申请'ohos.permission.READ_IMAGEVIDEO'权限，详情请参考[指定URI获取图片或视频资源](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-photoviewpicker#指定uri获取图片或视频资源)。
+通过picker的方式调用该接口查询指定URI的图片或视频资源时，无需申请'ohos.permission.READ_IMAGEVIDEO'权限，详情请参考[指定URI获取图片或视频资源](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-photoviewpicker#指定uri获取图片或视频资源)。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -47,6 +52,7 @@ getAssets(options: FetchOptions, callback: AsyncCallback<FetchResult&lt;PhotoAss
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
 
 在API version 13及之前的版本，无相关权限返回错误码13900012；从API version 14开始，无相关权限返回错误码201。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -73,6 +79,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
   };
 
   phAccessHelper.getAssets(fetchOptions, async (err, fetchResult) => {
+    if (err) {
+      console.error(`fetchResult fail with error: ${err.code}, ${err.message}`);
+      return;
+    }
     if (fetchResult !== undefined) {
       console.info('fetchResult success');
       let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
@@ -88,9 +98,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### getAssets
+## getAssets
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAssets(options: FetchOptions): Promise<FetchResult&lt;PhotoAsset&gt;>
 
@@ -106,12 +117,14 @@ getAssets(options: FetchOptions): Promise<FetchResult&lt;PhotoAsset&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | FetchOptions | 是 | 图片和视频检索选项。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -123,6 +136,7 @@ getAssets(options: FetchOptions): Promise<FetchResult&lt;PhotoAsset&gt;>
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
 
 在API version 13及之前的版本，无相关权限返回错误码13900012；从API version 14开始，无相关权限返回错误码201。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -163,9 +177,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### getBurstAssets12+
+## getBurstAssets12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBurstAssets(burstKey: string, options: FetchOptions): Promise<FetchResult&lt;PhotoAsset&gt;>
 
@@ -179,6 +194,7 @@ getBurstAssets(burstKey: string, options: FetchOptions): Promise<FetchResult&lt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | burstKey | string | 是 | 一组连拍照片的唯一标识：uuid（可传入PhotoKeys的BURST_KEY）。字符串长度为36字节。 |
@@ -186,6 +202,7 @@ getBurstAssets(burstKey: string, options: FetchOptions): Promise<FetchResult&lt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -195,6 +212,7 @@ getBurstAssets(burstKey: string, options: FetchOptions): Promise<FetchResult&lt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -236,9 +254,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### createAsset
+## createAsset
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAsset(photoType: PhotoType, extension: string, options: CreateOptions, callback: AsyncCallback&lt;string&gt;): void
 
@@ -254,6 +273,7 @@ createAsset(photoType: PhotoType, extension: string, options: CreateOptions, cal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | photoType | PhotoType | 是 | 创建的文件类型，IMAGE或者VIDEO类型。 |
@@ -267,6 +287,7 @@ createAsset(photoType: PhotoType, extension: string, options: CreateOptions, cal
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
 
 在API version 13及之前的版本，无相关权限返回错误码13900012；从API version 14开始，无相关权限返回错误码201。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -302,9 +323,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### createAsset
+## createAsset
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAsset(photoType: PhotoType, extension: string, callback: AsyncCallback&lt;string&gt;): void
 
@@ -320,6 +342,7 @@ createAsset(photoType: PhotoType, extension: string, callback: AsyncCallback&lt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | photoType | PhotoType | 是 | 创建的文件类型，IMAGE或者VIDEO类型。 |
@@ -332,6 +355,7 @@ createAsset(photoType: PhotoType, extension: string, callback: AsyncCallback&lt;
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
 
 在API version 13及之前的版本，无相关权限返回错误码13900012；从API version 14开始，无相关权限返回错误码201。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -364,9 +388,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### createAsset
+## createAsset
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAsset(photoType: PhotoType, extension: string, options?: CreateOptions): Promise&lt;string&gt;
 
@@ -382,6 +407,7 @@ createAsset(photoType: PhotoType, extension: string, options?: CreateOptions): P
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | photoType | PhotoType | 是 | 创建的文件类型，IMAGE或者VIDEO类型。 |
@@ -390,6 +416,7 @@ createAsset(photoType: PhotoType, extension: string, options?: CreateOptions): P
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -401,6 +428,7 @@ createAsset(photoType: PhotoType, extension: string, options?: CreateOptions): P
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
 
 在API version 13及之前的版本，无相关权限返回错误码13900012；从API version 14开始，无相关权限返回错误码201。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -435,9 +463,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### createPhotoAsset23+
+## createPhotoAsset23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPhotoAsset(photoType: PhotoType, extension: string, title?: string): Promise&lt;string&gt;
 
@@ -455,14 +484,16 @@ createPhotoAsset(photoType: PhotoType, extension: string, title?: string): Promi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | photoType | PhotoType | 是 | 创建的文件类型。例如：IMAGE或者VIDEO类型。 |
-| extension | string | 是 | 文件名后缀参数。例如：'jpg'。 |
+| extension | string | 是 | 文件名后缀参数。例如：'jpg'、'png'、'mp4'等。 |
 | title | string | 否 | 图片或视频资产的标题。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -472,6 +503,7 @@ createPhotoAsset(photoType: PhotoType, extension: string, title?: string): Promi
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[媒体库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-medialibrary)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -502,9 +534,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### getAlbums
+## getAlbums
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAlbums(type: AlbumType, subtype: AlbumSubtype, options: FetchOptions, callback: AsyncCallback<FetchResult&lt;Album&gt;>): void
 
@@ -517,6 +550,7 @@ getAlbums(type: AlbumType, subtype: AlbumSubtype, options: FetchOptions, callbac
 **需要权限**：ohos.permission.READ_IMAGEVIDEO
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -531,6 +565,7 @@ getAlbums(type: AlbumType, subtype: AlbumSubtype, options: FetchOptions, callbac
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
 
 在API version 13及之前的版本，无相关权限返回错误码13900012；从API version 14开始，无相关权限返回错误码201。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -575,9 +610,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### getAlbums
+## getAlbums
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAlbums(type: AlbumType, subtype: AlbumSubtype, callback: AsyncCallback<FetchResult&lt;Album&gt;>): void
 
@@ -591,6 +627,7 @@ getAlbums(type: AlbumType, subtype: AlbumSubtype, callback: AsyncCallback<FetchR
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | AlbumType | 是 | 相册类型。 |
@@ -602,7 +639,6 @@ getAlbums(type: AlbumType, subtype: AlbumSubtype, callback: AsyncCallback<FetchR
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
 
-在API version 13及之前的版本，无相关权限返回错误码13900012；从API version 14开始，无相关权限返回错误码201。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -639,9 +675,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### getAlbums
+## getAlbums
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAlbums(type: AlbumType, subtype: AlbumSubtype, options?: FetchOptions): Promise<FetchResult&lt;Album&gt;>
 
@@ -655,6 +692,7 @@ getAlbums(type: AlbumType, subtype: AlbumSubtype, options?: FetchOptions): Promi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | AlbumType | 是 | 相册类型。 |
@@ -663,6 +701,7 @@ getAlbums(type: AlbumType, subtype: AlbumSubtype, options?: FetchOptions): Promi
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -674,6 +713,7 @@ getAlbums(type: AlbumType, subtype: AlbumSubtype, options?: FetchOptions): Promi
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
 
 错误码13900012，请参考[开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-preparation)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -717,9 +757,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### registerChange
+## registerChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 registerChange(uri: string, forChildUris: boolean, callback: Callback&lt;ChangeData&gt;) : void
 
@@ -728,6 +769,7 @@ registerChange(uri: string, forChildUris: boolean, callback: Callback&lt;ChangeD
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -742,6 +784,7 @@ registerChange(uri: string, forChildUris: boolean, callback: Callback&lt;ChangeD
 
 错误码13900012，请参考[开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-preparation)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
@@ -755,6 +798,7 @@ phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](https:/
 
 ```json
 import { dataSharePredicates } from '@kit.ArkData';
+import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
 async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context) {
   console.info('registerChangeDemo');
@@ -767,7 +811,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
   let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
   if (photoAsset !== undefined) {
     console.info('photoAsset.displayName : ' + photoAsset.displayName);
-  }
+    } else {
+      console.error('photoAsset is undefined');
+      return;
+    }
   let onCallback1 = (changeData: photoAccessHelper.ChangeData) => {
       console.info('onCallback1 success, changData: ' + JSON.stringify(changeData));
     // file had changed, do something.
@@ -787,17 +834,19 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
 
 
 
-#### unRegisterChange
+## unRegisterChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unRegisterChange(uri: string, callback?: Callback&lt;ChangeData&gt;): void
 
-取消指定uri的监听，一个uri可以注册多个监听，存在多个callback监听时，可以取消指定注册的callback的监听；不指定callback时取消该uri的所有监听。
+取消对指定URI的监听。一个URI可注册多个监听。存在多个callback监听时，可取消指定callback监听。不指定callback时取消该URI的所有监听。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -810,6 +859,7 @@ unRegisterChange(uri: string, callback?: Callback&lt;ChangeData&gt;): void
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
 
 错误码13900012，请参考[开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-preparation)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -836,7 +886,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
   let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
   if (photoAsset !== undefined) {
     console.info('photoAsset.displayName : ' + photoAsset.displayName);
-  }
+    } else {
+      console.error('photoAsset is undefined');
+      return;
+    }
   let onCallback1 = (changeData: photoAccessHelper.ChangeData) => {
     console.info('onCallback1 on');
   }
@@ -855,9 +908,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
 
 
 
-#### applyChanges11+
+## applyChanges11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 applyChanges(mediaChangeRequest: MediaChangeRequest): Promise&lt;void&gt;
 
@@ -873,12 +927,14 @@ applyChanges(mediaChangeRequest: MediaChangeRequest): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mediaChangeRequest | MediaChangeRequest | 是 | 媒体变更请求，支持资产变更请求和相册变更请求。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -888,6 +944,7 @@ applyChanges(mediaChangeRequest: MediaChangeRequest): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -902,9 +959,10 @@ applyChanges(mediaChangeRequest: MediaChangeRequest): Promise&lt;void&gt;
 
 
 
-#### release
+## release
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(callback: AsyncCallback&lt;void&gt;): void
 
@@ -916,6 +974,7 @@ release(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调表示成功还是失败。 |
@@ -924,6 +983,7 @@ release(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -951,9 +1011,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### release
+## release
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(): Promise&lt;void&gt;
 
@@ -965,6 +1026,7 @@ release(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，返回void。 |
@@ -973,6 +1035,7 @@ release(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -999,9 +1062,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### showAssetsCreationDialog12+
+## showAssetsCreationDialog12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showAssetsCreationDialog(srcFileUris: Array&lt;string&gt;, photoCreationConfigs: Array&lt;PhotoCreationConfig&gt;): Promise<Array&lt;string&gt;>
 
@@ -1019,6 +1083,7 @@ showAssetsCreationDialog(srcFileUris: Array&lt;string&gt;, photoCreationConfigs:
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | srcFileUris | Array&lt;string&gt; | 是 | 需保存到媒体库中的图片/视频文件对应的媒体文件URI。 注意： - 一次弹窗最多保存100张图片。 - 仅支持处理图片、视频URI。 - 不支持手动拼接的URI，需调用接口获取，获取方式参考媒体文件URI获取方式。 |
@@ -1026,6 +1091,7 @@ showAssetsCreationDialog(srcFileUris: Array&lt;string&gt;, photoCreationConfigs:
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1035,6 +1101,7 @@ showAssetsCreationDialog(srcFileUris: Array&lt;string&gt;, photoCreationConfigs:
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1075,9 +1142,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### showAssetsCreationDialogEx23+
+## showAssetsCreationDialogEx23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showAssetsCreationDialogEx(srcFileUris: Array&lt;string&gt;, creationSettings: Array&lt;CreationSetting&gt;): Promise<Array&lt;string&gt;>
 
@@ -1095,6 +1163,7 @@ showAssetsCreationDialogEx(srcFileUris: Array&lt;string&gt;, creationSettings: A
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | srcFileUris | Array&lt;string&gt; | 是 | 需保存到媒体库中的图片或视频文件对应的媒体文件URI。 注意： - 一次弹窗最多保存100张图片。 - 仅支持处理图片和视频URI。 - 不支持手动拼接URI，需调用接口获取，具体请参考媒体文件URI获取方式。 |
@@ -1102,6 +1171,7 @@ showAssetsCreationDialogEx(srcFileUris: Array&lt;string&gt;, creationSettings: A
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1111,6 +1181,7 @@ showAssetsCreationDialogEx(srcFileUris: Array&lt;string&gt;, creationSettings: A
 **错误码**：
 
 以下错误码的详细介绍请参见[媒体库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-medialibrary)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1149,9 +1220,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### showSingleAssetCreationDialogEx23+
+## showSingleAssetCreationDialogEx23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showSingleAssetCreationDialogEx(srcFileUri: string, creationSetting: CreationSetting, isImageFullyDisplayed: boolean): Promise&lt;string&gt;
 
@@ -1169,6 +1241,7 @@ showSingleAssetCreationDialogEx(srcFileUri: string, creationSetting: CreationSet
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | srcFileUri | string | 是 | 需要保存到媒体库中的图片/视频文件所对应的媒体文件URI。 注意： - 一次弹窗最多保存1张图片。 - 仅支持处理图片、视频URI。 - 不支持手动拼接的URI，需调用接口获取，具体请参考媒体文件URI获取方式。 |
@@ -1178,6 +1251,7 @@ showSingleAssetCreationDialogEx(srcFileUri: string, creationSetting: CreationSet
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回给应用的媒体库文件URI。URI已对应用授权，支持应用写入数据。如果生成URI异常，则返回批量创建错误码。 具体返回值情况如下： - 返回-3006表示不允许出现非法字符。 - 返回-2004表示图片类型和后缀不符。 - 返回-203表示文件操作异常。 |
@@ -1186,6 +1260,7 @@ showSingleAssetCreationDialogEx(srcFileUri: string, creationSetting: CreationSet
 **错误码：**
 
 以下错误码的详细介绍请参见[媒体库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-medialibrary)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1221,9 +1296,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### createAssetWithShortTermPermission12+
+## createAssetWithShortTermPermission12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAssetWithShortTermPermission(photoCreationConfig: PhotoCreationConfig): Promise&lt;string&gt;
 
@@ -1237,12 +1313,14 @@ createAssetWithShortTermPermission(photoCreationConfig: PhotoCreationConfig): Pr
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | photoCreationConfig | PhotoCreationConfig; | 是 | 保存图片/视频到媒体库的配置，包括保存的文件名等。 注意： 传入'subtype'选项，配置项不生效，仅支持保存DEFAULT类型图片。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1252,6 +1330,7 @@ createAssetWithShortTermPermission(photoCreationConfig: PhotoCreationConfig): Pr
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1304,9 +1383,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### createAssetWithShortTermPermissionEx23+
+## createAssetWithShortTermPermissionEx23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAssetWithShortTermPermissionEx(creationSetting: CreationSetting): Promise&lt;string&gt;
 
@@ -1324,12 +1404,14 @@ createAssetWithShortTermPermissionEx(creationSetting: CreationSetting): Promise&
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | creationSetting | CreationSetting | 是 | 保存图片或视频到媒体库时的配置项，包括保存的文件名等。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1340,6 +1422,7 @@ createAssetWithShortTermPermissionEx(creationSetting: CreationSetting): Promise&
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied |
@@ -1348,9 +1431,10 @@ createAssetWithShortTermPermissionEx(creationSetting: CreationSetting): Promise&
 
 
 
-#### requestPhotoUrisReadPermission14+
+## requestPhotoUrisReadPermission14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestPhotoUrisReadPermission(srcFileUris: Array&lt;string&gt;): Promise<Array&lt;string&gt;>
 
@@ -1362,12 +1446,14 @@ requestPhotoUrisReadPermission(srcFileUris: Array&lt;string&gt;): Promise<Array&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | srcFileUris | Array&lt;string&gt; | 是 | 需进行授权的图片/视频文件对应的媒体文件URI。 注意： 仅支持处理图片、视频URI，且最大数量限制为100个。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1377,6 +1463,7 @@ requestPhotoUrisReadPermission(srcFileUris: Array&lt;string&gt;): Promise<Array&
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1409,9 +1496,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
 
 
 
-#### requestPhotoUrisReadPermissionEx23+
+## requestPhotoUrisReadPermissionEx23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestPhotoUrisReadPermissionEx(srcFileUris: Array&lt;string&gt;): Promise&lt;RequestReadPermissionResult&gt;
 
@@ -1427,12 +1515,14 @@ requestPhotoUrisReadPermissionEx(srcFileUris: Array&lt;string&gt;): Promise&lt;R
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | srcFileUris | Array&lt;string&gt; | 是 | 需进行授权的图片/视频文件对应的媒体库uri。 注意： 仅支持处理图片、视频uri，且最大数量限制为100个。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1442,6 +1532,7 @@ requestPhotoUrisReadPermissionEx(srcFileUris: Array&lt;string&gt;): Promise&lt;R
 **错误码：**
 
 以下错误码的详细介绍请参见[媒体库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-medialibrary)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1474,9 +1565,10 @@ console.info('requestPhotoUrisReadPermissionExDemo.');
 
 
 
-#### getSupportedPhotoFormats18+
+## getSupportedPhotoFormats18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSupportedPhotoFormats(photoType: PhotoType): Promise<Array&lt;string&gt;>
 
@@ -1486,12 +1578,14 @@ getSupportedPhotoFormats(photoType: PhotoType): Promise<Array&lt;string&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | photoType | PhotoType | 是 | 媒体文件类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1501,6 +1595,7 @@ getSupportedPhotoFormats(photoType: PhotoType): Promise<Array&lt;string&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1541,9 +1636,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, phot
 
 
 
-#### on('photoChange')20+
+## on('photoChange')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'photoChange', callback: Callback&lt;PhotoAssetChangeInfos&gt;): void
 
@@ -1555,6 +1651,7 @@ on(type: 'photoChange', callback: Callback&lt;PhotoAssetChangeInfos&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 注册监听媒体资产，取值为'photoChange'。注册完成后，有资产发生变化时，通过callback返回变更信息。 |
@@ -1564,6 +1661,7 @@ on(type: 'photoChange', callback: Callback&lt;PhotoAssetChangeInfos&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[媒体库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-medialibrary)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1588,6 +1686,7 @@ let onCallback2 = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
   // file had changed, do something.
 }
 
+// 注册photoChange监听，用于监听媒体资产的变化，可以注册多个不同的callback。
 async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context){
   console.info('onPhotoChangeDemo.');
 
@@ -1604,9 +1703,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
 
 
 
-#### off('photoChange')20+
+## off('photoChange')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'photoChange', callback?: Callback&lt;PhotoAssetChangeInfos&gt;): void
 
@@ -1618,6 +1718,7 @@ off(type: 'photoChange', callback?: Callback&lt;PhotoAssetChangeInfos&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 取消监听媒体资产，取值为'photoChange'。取消监听后，有资产发生变化时，不再通过callback返回变更信息。 |
@@ -1627,6 +1728,7 @@ off(type: 'photoChange', callback?: Callback&lt;PhotoAssetChangeInfos&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[媒体库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-medialibrary)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1651,6 +1753,7 @@ let onCallback2 = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
   // file had changed, do something.
 }
 
+// 注册photoChange监听后，取消指定callback监听，演示取消监听的使用方法。
 async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context){
   console.info('offPhotoChangeDemo.');
 
@@ -1670,9 +1773,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
 
 
 
-#### on('photoAlbumChange')20+
+## on('photoAlbumChange')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'photoAlbumChange', callback: Callback&lt;AlbumChangeInfos&gt;): void
 
@@ -1684,6 +1788,7 @@ on(type: 'photoAlbumChange', callback: Callback&lt;AlbumChangeInfos&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 注册监听相册，取值为'photoAlbumChange'。注册完成后，有相册发生变化时，通过callback返回变更信息。 |
@@ -1693,6 +1798,7 @@ on(type: 'photoAlbumChange', callback: Callback&lt;AlbumChangeInfos&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[媒体库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-medialibrary)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1717,6 +1823,7 @@ let onCallback2 = (changeData: photoAccessHelper.AlbumChangeInfos) => {
   // file had changed, do something.
 }
 
+// 注册photoAlbumChange监听，用于监听相册的变化，可以注册多个不同的callback。
 async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context){
   console.info('onPhotoAlbumChangeDemo.');
 
@@ -1733,9 +1840,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
 
 
 
-#### off('photoAlbumChange')20+
+## off('photoAlbumChange')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'photoAlbumChange', callback?: Callback&lt;AlbumChangeInfos&gt;): void
 
@@ -1747,6 +1855,7 @@ off(type: 'photoAlbumChange', callback?: Callback&lt;AlbumChangeInfos&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 取消监听相册，取值为'photoAlbumChange'。取消监听后，有相册发生变化时，不再通过callback返回变更信息。 |
@@ -1756,6 +1865,7 @@ off(type: 'photoAlbumChange', callback?: Callback&lt;AlbumChangeInfos&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[媒体库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-medialibrary)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1780,6 +1890,7 @@ let onCallback2 = (changeData: photoAccessHelper.AlbumChangeInfos) => {
   // file had changed, do something.
 }
 
+// 注册photoAlbumChange监听后，取消指定callback监听，演示取消监听的使用方法。
 async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context){
   console.info('onPhotoAlbumChangeDemo.');
 
@@ -1799,9 +1910,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
 
 
 
-#### getPhotoPickerComponentDefaultAlbumName20+
+## getPhotoPickerComponentDefaultAlbumName20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPhotoPickerComponentDefaultAlbumName(): Promise&lt;string&gt;
 
@@ -1813,6 +1925,7 @@ getPhotoPickerComponentDefaultAlbumName(): Promise&lt;string&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回默认相册的相册名。 |
@@ -1820,7 +1933,8 @@ getPhotoPickerComponentDefaultAlbumName(): Promise&lt;string&gt;
 
 **错误码：**
 
-以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+以下错误码的详细介绍请参见[媒体库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-medialibrary)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1847,9 +1961,10 @@ async function example(context: Context) {
 
 
 
-#### createDeleteRequest(deprecated)
+## createDeleteRequest(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createDeleteRequest(uriList: Array&lt;string&gt;, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1865,6 +1980,7 @@ createDeleteRequest(uriList: Array&lt;string&gt;, callback: AsyncCallback&lt;voi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uriList | Array&lt;string&gt; | 是 | 待删除的媒体文件uri数组，最大删除数量300。 |
@@ -1876,6 +1992,7 @@ createDeleteRequest(uriList: Array&lt;string&gt;, callback: AsyncCallback&lt;voi
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
 
 错误码13900012，请参考[开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-preparation)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1921,9 +2038,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### createDeleteRequest(deprecated)
+## createDeleteRequest(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createDeleteRequest(uriList: Array&lt;string&gt;): Promise&lt;void&gt;
 
@@ -1939,12 +2057,14 @@ createDeleteRequest(uriList: Array&lt;string&gt;): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uriList | Array&lt;string&gt; | 是 | 待删除的媒体文件uri数组，最大删除数量300。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1956,6 +2076,7 @@ createDeleteRequest(uriList: Array&lt;string&gt;): Promise&lt;void&gt;
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
 
 错误码13900012，请参考[开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-preparation)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1996,9 +2117,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### getRecentPhotoInfo20+
+## getRecentPhotoInfo20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRecentPhotoInfo(options?: RecentPhotoOptions): Promise&lt;RecentPhotoInfo&gt;
 
@@ -2010,12 +2132,14 @@ getRecentPhotoInfo(options?: RecentPhotoOptions): Promise&lt;RecentPhotoInfo&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | RecentPhotoOptions | 否 | 最近图片配置选项参数。若无此参数，则取按照创建时间排序的最新一张图片。 该参数在配置的情况下，需与RecentPhotoComponent组件中的options配置相同才可以查到一样的图片，否则可能存在接口能查到最近图片，组件没查到最近图片的情况。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2047,9 +2171,10 @@ async function example(context: Context) {
 
 
 
-#### getAlbumIdByLpath22+
+## getAlbumIdByLpath22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAlbumIdByLpath(lpath: string): Promise&lt;number&gt;
 
@@ -2063,12 +2188,14 @@ getAlbumIdByLpath(lpath: string): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | lpath | string | 是 | 相册的虚拟路径，lpath长度不能超过255个字符。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2078,6 +2205,7 @@ getAlbumIdByLpath(lpath: string): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[媒体库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-medialibrary)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2094,7 +2222,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
   console.info('getAlbumIdByLpath');
 
   try {
-      let albumId: number = await phAccessHelper.getAlbumIdByLpath('testLpath');
+      let albumId: number = await phAccessHelper.getAlbumIdByLpath('/DCIM/Camera');
       console.info('requestFile:: albumId: ', albumId);
 
       console.info('getAlbumIdByLpath completed.');
@@ -2107,9 +2235,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### onSinglePhotoChange23+
+## onSinglePhotoChange23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onSinglePhotoChange(asset: PhotoAsset, callback: Callback&lt;PhotoAssetChangeInfos&gt;): void
 
@@ -2121,6 +2250,7 @@ onSinglePhotoChange(asset: PhotoAsset, callback: Callback&lt;PhotoAssetChangeInf
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | asset | PhotoAsset | 是 | 注册单个监听的媒体资产。注册完成后，有资产发生变化时，通过callback返回变更信息。 |
@@ -2130,6 +2260,7 @@ onSinglePhotoChange(asset: PhotoAsset, callback: Callback&lt;PhotoAssetChangeInf
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[媒体库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-medialibrary)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2154,6 +2285,7 @@ let onCallback2 = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
   // 触发回调时，具体的操作。
 }
 
+// 获取相册和资产后，注册单个资产变化监听，演示onSinglePhotoChange的使用方法。
 async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context){
   console.info('onSinglePhotoChangeDemo.');
   let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
@@ -2183,9 +2315,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
 
 
 
-#### offSinglePhotoChange23+
+## offSinglePhotoChange23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offSinglePhotoChange(asset?: PhotoAsset, callback?: Callback&lt;PhotoAssetChangeInfos&gt;): void
 
@@ -2200,6 +2333,7 @@ offSinglePhotoChange(asset?: PhotoAsset, callback?: Callback&lt;PhotoAssetChange
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | asset | PhotoAsset | 否 | 取消监听资产。取消asset资产监听后,当asset发生变化时,不再通过callback返回变更信息。不携带时，取消注册过的所有单个资产监听。 |
@@ -2209,6 +2343,7 @@ offSinglePhotoChange(asset?: PhotoAsset, callback?: Callback&lt;PhotoAssetChange
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[媒体库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-medialibrary)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2237,6 +2372,7 @@ let onCallback3 = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
   // 触发回调时，具体的操作。
 }
 
+// 获取相册和资产后，注册单个资产变化监听，然后演示不同方式取消监听的使用方法。
 async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context){
   console.info('onSinglePhotoChangeDemo.');
   let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
@@ -2275,9 +2411,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
 
 
 
-#### onSinglePhotoAlbumChange23+
+## onSinglePhotoAlbumChange23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onSinglePhotoAlbumChange(album: Album, callback: Callback&lt;AlbumChangeInfos&gt;): void
 
@@ -2289,6 +2426,7 @@ onSinglePhotoAlbumChange(album: Album, callback: Callback&lt;AlbumChangeInfos&gt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | album | Album | 是 | 注册单个监听的媒体相册。注册完成后，当该相册发生变化时，通过callback返回变更信息。 |
@@ -2298,6 +2436,7 @@ onSinglePhotoAlbumChange(album: Album, callback: Callback&lt;AlbumChangeInfos&gt
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[媒体库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-medialibrary)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2322,6 +2461,7 @@ let onCallback2 = (changeData: photoAccessHelper.AlbumChangeInfos) => {
   // 触发回调时，具体的操作。
 }
 
+// 获取相册后，注册单个相册变化监听，演示onSinglePhotoAlbumChange的使用方法。
 async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context){
   console.info('onSinglePhotoAlbumChangeDemo.');
   let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
@@ -2349,9 +2489,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
 
 
 
-#### offSinglePhotoAlbumChange23+
+## offSinglePhotoAlbumChange23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offSinglePhotoAlbumChange(album?: Album, callback?: Callback&lt;AlbumChangeInfos&gt;): void
 
@@ -2366,6 +2507,7 @@ offSinglePhotoAlbumChange(album?: Album, callback?: Callback&lt;AlbumChangeInfos
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | album | Album | 否 | 取消监听相册。取消监听后,有相册发生变化时,不再通过callback返回变更信息。 |
@@ -2376,10 +2518,11 @@ offSinglePhotoAlbumChange(album?: Album, callback?: Callback&lt;AlbumChangeInfos
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[媒体库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-medialibrary)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
-| 23800151 | The scenario parameter verification fails. Possible causes： 1. The same callback is unregistered repeatedly. 2. The uri of the album invalid. |
+| 23800151 | The scenario parameter verification fails. Possible causes: 1. The same callback is unregistered repeatedly. 2. The uri of the album invalid. |
 | 23800301 | Internal system error. You are advised to retry and check the logs. Possible causes: 1. The database is corrupted. 2. The file system is abnormal. 3. The IPC request timed out. |
 
 
@@ -2403,6 +2546,7 @@ let onCallback3 = (changeData: photoAccessHelper.AlbumChangeInfos) => {
   // 触发回调时，具体的操作。
 }
 
+// 获取相册后，注册单个相册变化监听，然后演示不同方式取消监听的使用方法。
 async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context){
   console.info('onSinglePhotoChangeDemo.');
   let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
@@ -2439,9 +2583,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, cont
 
 
 
-#### setAssetCompatibleCapability24+
+## setAssetCompatibleCapability24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAssetCompatibleCapability(capability: AssetCompatibleCapability): Promise&lt;void&gt;
 
@@ -2453,12 +2598,14 @@ setAssetCompatibleCapability(capability: AssetCompatibleCapability): Promise&lt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | capability | AssetCompatibleCapability | 是 | 资产兼容能力。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2468,6 +2615,7 @@ setAssetCompatibleCapability(capability: AssetCompatibleCapability): Promise&lt;
 **错误码：**
 
 以下错误码的详细介绍请参见[媒体库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-medialibrary)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2494,9 +2642,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### checkPhotoUrisReadPermission
+## checkPhotoUrisReadPermission
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checkPhotoUrisReadPermission(uris: string[]): Promise<Map<string, MediaAssetPermissionState>>
 
@@ -2510,12 +2659,14 @@ checkPhotoUrisReadPermission(uris: string[]): Promise<Map<string, MediaAssetPerm
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uris | string[] | 是 | 待查询的URI数组，单次最多查询500条。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2525,6 +2676,7 @@ checkPhotoUrisReadPermission(uris: string[]): Promise<Map<string, MediaAssetPerm
 **错误码：**
 
 以下错误码的详细介绍请参见[媒体库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-medialibrary)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2558,9 +2710,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### onMediaLibraryAvailability
+## onMediaLibraryAvailability
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onMediaLibraryAvailability(callback: Callback&lt;MediaLibraryAvailability&gt;): void
 
@@ -2576,6 +2729,7 @@ onMediaLibraryAvailability(callback: Callback&lt;MediaLibraryAvailability&gt;): 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;MediaLibraryAvailability&gt; | 是 | 回调函数，返回媒体库可用性信息。 |
@@ -2584,6 +2738,7 @@ onMediaLibraryAvailability(callback: Callback&lt;MediaLibraryAvailability&gt;): 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[媒体库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-medialibrary)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2607,13 +2762,16 @@ class MediaLibraryExample {
 
   onMediaLibraryAvailability = async () => {
     try {
+      // 定义媒体库可用性变化的回调处理函数。
       this.handleMediaLibraryChange = (
         changeData: photoAccessHelper.MediaLibraryAvailability
       ) => {
+        // 获取媒体库的可用状态和不可用原因。
         const availabilityStatus = changeData.availabilityStatus;
         const unavailabilityReason = changeData.unavailabilityReason;
-        console.info(`媒体库状态变化：状态=${availabilityStatus}，原因=${unavailabilityReason}`);
+        console.info(`媒体库状态变化: 状态=${availabilityStatus}, 原因=${unavailabilityReason}`);
       };
+      // 注册媒体库可用性监听。
       this.helper.onMediaLibraryAvailability(this.handleMediaLibraryChange);
       console.info('媒体库监听注册成功');
     } catch (err) {
@@ -2625,9 +2783,10 @@ class MediaLibraryExample {
 
 
 
-#### offMediaLibraryAvailability
+## offMediaLibraryAvailability
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offMediaLibraryAvailability(callback?: Callback&lt;MediaLibraryAvailability&gt;): void
 
@@ -2643,6 +2802,7 @@ offMediaLibraryAvailability(callback?: Callback&lt;MediaLibraryAvailability&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;MediaLibraryAvailability&gt; | 否 | 回调函数，返回取消onMediaLibraryAvailability注册时指定的callback监听。不填时，则取消对媒体库可用性变化的所有监听。 |
@@ -2651,6 +2811,7 @@ offMediaLibraryAvailability(callback?: Callback&lt;MediaLibraryAvailability&gt;)
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[媒体库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-medialibrary)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2673,6 +2834,7 @@ class MediaLibraryExample {
 
   offMediaLibraryAvailability = async () => {
     try {
+      // 先注册媒体库可用性监听，然后取消注册，演示取消监听的使用方法。
       this.helper.onMediaLibraryAvailability(this.handleMediaLibraryChange);
       this.helper.offMediaLibraryAvailability(this.handleMediaLibraryChange);
       console.info('媒体库监听解除成功');

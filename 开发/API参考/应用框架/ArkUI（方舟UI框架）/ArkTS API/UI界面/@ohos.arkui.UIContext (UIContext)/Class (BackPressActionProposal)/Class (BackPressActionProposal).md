@@ -1,18 +1,19 @@
 # Class (BackPressActionProposal)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-backpressactionproposal
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 智慧手势返回动作处理。当通过[registerMonitor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-smartgesturecontroller#registermonitor)接口动态自定义智慧手势行为时，设置返回值[Class (GestureHandlingResolution)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-gesturehandlingresolution)的selectedProposal为该类型对象，会返回上一页面。
  
 **起始版本：** 26.0.0
   
 
-#### constructor
+## constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
  
@@ -94,4 +95,4 @@ struct SmartGestureControllerExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/Tclw78SDSjmacDd6_i1C6g/zh-cn_image_0000002698142271.png?HW-CC-KV=V1&HW-CC-Date=20260811T010216Z&HW-CC-Expire=86400&HW-CC-Sign=43C85C0FC9C3D4DC843D387A2559479AE95211551ACE54685A601D437146262C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/Fq0HInepRaaMTk1jvoWhWA/zh-cn_image_0000002747212251.png?HW-CC-KV=V1&HW-CC-Date=20260911T072118Z&HW-CC-Expire=86400&HW-CC-Sign=20E01303AC60B87B009545F48BD59D04A8B27EEC249B0A332471E13E591287FD)

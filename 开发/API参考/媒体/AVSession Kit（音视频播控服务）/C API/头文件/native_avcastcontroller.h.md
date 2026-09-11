@@ -1,13 +1,14 @@
 # native_avcastcontroller.h
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avcastcontroller-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供播控控制器的定义。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_AVCastController | OH_AVCastController | 播控控制器对象。使用OH_AVSession_CreateAVCastController方法创建指针。 |
@@ -40,10 +44,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | typedef AVSessionCallback_Result(*OH_AVCastControllerCallback_PlaybackStateChanged)(OH_AVCastController* avcastcontroller, OH_AVSession_AVPlaybackState* playbackState, void* userData) | OH_AVCastControllerCallback_PlaybackStateChanged | 播放状态改变的回调函数。 |
@@ -75,21 +81,23 @@
 | AVSession_ErrCode OH_AVCastController_SendRewindCommand(OH_AVCastController* avcastcontroller, int32_t rewindTimeS) | - | 请求向远程端发送快退命令。 |
 | AVSession_ErrCode OH_AVCastController_SendSetSpeedCommand(OH_AVCastController* avcastcontroller, AVSession_PlaybackSpeed speed) | - | 请求向远程端发送设置倍速命令。 |
 | AVSession_ErrCode OH_AVCastController_SendVolumeCommand(OH_AVCastController* avcastcontroller, int32_t volume) | - | 请求向远程端发送音量控制命令。 |
-| AVSession_ErrCode OH_AVCastController_Prepare(OH_AVCastController* avcastcontroller, OH_AVSession_AVQueueItem* avqueueItem) | - | 请求准备当前播放队列项，该操作是实现输出媒体信息展示的前置步骤。 |
+| AVSession_ErrCode OH_AVCastController_Prepare(OH_AVCastController* avcastcontroller, OH_AVSession_AVQueueItem* avqueueItem) | - | 请求准备当前音视频播放队列项，该操作是实现输出媒体信息展示的前置步骤。 |
 | AVSession_ErrCode OH_AVCastController_Start(OH_AVCastController* avcastcontroller, OH_AVSession_AVQueueItem* avqueueItem) | - | 请求播放当前项，参数应包含媒体资源，否则播放失败。 |
  
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AVCastControllerCallback_PlaybackStateChanged()
+### OH_AVCastControllerCallback_PlaybackStateChanged()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef AVSessionCallback_Result(*OH_AVCastControllerCallback_PlaybackStateChanged)(OH_AVCastController* avcastcontroller, OH_AVSession_AVPlaybackState* playbackState, void* userData)
@@ -103,9 +111,10 @@ typedef AVSessionCallback_Result(*OH_AVCastControllerCallback_PlaybackStateChang
  
   
 
-#### OH_AVCastControllerCallback_MediaItemChange()
+### OH_AVCastControllerCallback_MediaItemChange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef AVSessionCallback_Result(*OH_AVCastControllerCallback_MediaItemChange)(OH_AVCastController* avcastcontroller, OH_AVSession_AVQueueItem* avQueueItem, void* userData)
@@ -119,9 +128,10 @@ typedef AVSessionCallback_Result(*OH_AVCastControllerCallback_MediaItemChange)(O
  
   
 
-#### OH_AVCastControllerCallback_PlayNext()
+### OH_AVCastControllerCallback_PlayNext()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef AVSessionCallback_Result(*OH_AVCastControllerCallback_PlayNext)(OH_AVCastController* avcastcontroller, void* userData)
@@ -135,9 +145,10 @@ typedef AVSessionCallback_Result(*OH_AVCastControllerCallback_PlayNext)(OH_AVCas
  
   
 
-#### OH_AVCastControllerCallback_PlayPrevious()
+### OH_AVCastControllerCallback_PlayPrevious()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef AVSessionCallback_Result(*OH_AVCastControllerCallback_PlayPrevious)(OH_AVCastController* avcastcontroller, void* userData)
@@ -151,9 +162,10 @@ typedef AVSessionCallback_Result(*OH_AVCastControllerCallback_PlayPrevious)(OH_A
  
   
 
-#### OH_AVCastControllerCallback_SeekDone()
+### OH_AVCastControllerCallback_SeekDone()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef AVSessionCallback_Result(*OH_AVCastControllerCallback_SeekDone)(OH_AVCastController* avcastcontroller, int32_t position, void* userData)
@@ -167,9 +179,10 @@ typedef AVSessionCallback_Result(*OH_AVCastControllerCallback_SeekDone)(OH_AVCas
  
   
 
-#### OH_AVCastControllerCallback_EndOfStream()
+### OH_AVCastControllerCallback_EndOfStream()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef AVSessionCallback_Result(*OH_AVCastControllerCallback_EndOfStream)(OH_AVCastController* avcastcontroller, void* userData)
@@ -183,9 +196,10 @@ typedef AVSessionCallback_Result(*OH_AVCastControllerCallback_EndOfStream)(OH_AV
  
   
 
-#### OH_AVCastControllerCallback_Error()
+### OH_AVCastControllerCallback_Error()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef AVSessionCallback_Result(*OH_AVCastControllerCallback_Error)(OH_AVCastController* avcastcontroller, void* userData, AVSession_ErrCode error)
@@ -199,9 +213,10 @@ typedef AVSessionCallback_Result(*OH_AVCastControllerCallback_Error)(OH_AVCastCo
  
   
 
-#### OH_AVCastController_Destroy()
+### OH_AVCastController_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVCastController_Destroy(OH_AVCastController* avcastcontroller)
@@ -215,6 +230,7 @@ AVSession_ErrCode OH_AVCastController_Destroy(OH_AVCastController* avcastcontrol
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCastController* avcastcontroller | 播控控制器的实例对象。 |
@@ -222,6 +238,7 @@ AVSession_ErrCode OH_AVCastController_Destroy(OH_AVCastController* avcastcontrol
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：服务器内部错误。 AV_SESSION_ERR_INVALID_PARAMETER：参数avcastcontroller为nullptr。 |
@@ -229,9 +246,10 @@ AVSession_ErrCode OH_AVCastController_Destroy(OH_AVCastController* avcastcontrol
  
   
 
-#### OH_AVCastController_GetPlaybackState()
+### OH_AVCastController_GetPlaybackState()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVCastController_GetPlaybackState(OH_AVCastController* avcastcontroller, OH_AVSession_AVPlaybackState** playbackState)
@@ -239,12 +257,13 @@ AVSession_ErrCode OH_AVCastController_GetPlaybackState(OH_AVCastController* avca
  
 **描述**
  
-获取当前播放器的播放状态。不要单独释放playbackState指针。当[OH_AVCastController_Destroy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avcastcontroller-h#oh_avcastcontroller_destroy)被调用时，该指针将随播控控制器一同销毁。
+获取当前播放器的播放状态。不要单独释放playbackState指针。当[OH_AVCastController_Destroy](#oh_avcastcontroller_destroy)被调用时，该指针将随播控控制器一同销毁。
  
 **起始版本：** 23
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCastController* avcastcontroller | 播控控制器的实例对象。 |
@@ -253,6 +272,7 @@ AVSession_ErrCode OH_AVCastController_GetPlaybackState(OH_AVCastController* avca
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：服务器内部错误。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avcastcontroller为nullptr。 2. 参数playbackState为nullptr。 |
@@ -260,9 +280,10 @@ AVSession_ErrCode OH_AVCastController_GetPlaybackState(OH_AVCastController* avca
  
   
 
-#### OH_AVCastController_RegisterPlaybackStateChangedCallback()
+### OH_AVCastController_RegisterPlaybackStateChangedCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVCastController_RegisterPlaybackStateChangedCallback(OH_AVCastController* avcastcontroller, int32_t filter, OH_AVCastControllerCallback_PlaybackStateChanged callback, void* userData)
@@ -276,6 +297,7 @@ AVSession_ErrCode OH_AVCastController_RegisterPlaybackStateChangedCallback(OH_AV
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCastController* avcastcontroller | 播控控制器的实例对象。 |
@@ -286,6 +308,7 @@ AVSession_ErrCode OH_AVCastController_RegisterPlaybackStateChangedCallback(OH_AV
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：服务器内部错误。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avcastcontroller为nullptr。 2. 参数callback为nullptr。 3. 参数filter是无效的。 |
@@ -293,9 +316,10 @@ AVSession_ErrCode OH_AVCastController_RegisterPlaybackStateChangedCallback(OH_AV
  
   
 
-#### OH_AVCastController_UnregisterPlaybackStateChangedCallback()
+### OH_AVCastController_UnregisterPlaybackStateChangedCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVCastController_UnregisterPlaybackStateChangedCallback(OH_AVCastController* avcastcontroller, OH_AVCastControllerCallback_PlaybackStateChanged callback)
@@ -309,6 +333,7 @@ AVSession_ErrCode OH_AVCastController_UnregisterPlaybackStateChangedCallback(OH_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCastController* avcastcontroller | 播控控制器的实例对象。 |
@@ -317,6 +342,7 @@ AVSession_ErrCode OH_AVCastController_UnregisterPlaybackStateChangedCallback(OH_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：服务器内部错误。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avcastcontroller为nullptr。 2. 参数callback为nullptr。 |
@@ -324,9 +350,10 @@ AVSession_ErrCode OH_AVCastController_UnregisterPlaybackStateChangedCallback(OH_
  
   
 
-#### OH_AVCastController_RegisterMediaItemChangedCallback()
+### OH_AVCastController_RegisterMediaItemChangedCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVCastController_RegisterMediaItemChangedCallback(OH_AVCastController* avcastcontroller, OH_AVCastControllerCallback_MediaItemChange callback, void* userData)
@@ -340,6 +367,7 @@ AVSession_ErrCode OH_AVCastController_RegisterMediaItemChangedCallback(OH_AVCast
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCastController* avcastcontroller | 播控控制器的实例对象。 |
@@ -349,6 +377,7 @@ AVSession_ErrCode OH_AVCastController_RegisterMediaItemChangedCallback(OH_AVCast
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：服务器内部错误。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avcastcontroller为nullptr。 2. 参数callback为nullptr。 |
@@ -356,9 +385,10 @@ AVSession_ErrCode OH_AVCastController_RegisterMediaItemChangedCallback(OH_AVCast
  
   
 
-#### OH_AVCastController_UnregisterMediaItemChangedCallback()
+### OH_AVCastController_UnregisterMediaItemChangedCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVCastController_UnregisterMediaItemChangedCallback(OH_AVCastController* avcastcontroller, OH_AVCastControllerCallback_MediaItemChange callback)
@@ -372,6 +402,7 @@ AVSession_ErrCode OH_AVCastController_UnregisterMediaItemChangedCallback(OH_AVCa
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCastController* avcastcontroller | 播控控制器的实例对象。 |
@@ -380,6 +411,7 @@ AVSession_ErrCode OH_AVCastController_UnregisterMediaItemChangedCallback(OH_AVCa
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：服务器内部错误。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avcastcontroller为nullptr。 2. 参数callback为nullptr。 |
@@ -387,9 +419,10 @@ AVSession_ErrCode OH_AVCastController_UnregisterMediaItemChangedCallback(OH_AVCa
  
   
 
-#### OH_AVCastController_RegisterPlayNextCallback()
+### OH_AVCastController_RegisterPlayNextCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVCastController_RegisterPlayNextCallback(OH_AVCastController* avcastcontroller, OH_AVCastControllerCallback_PlayNext callback, void* userData)
@@ -403,6 +436,7 @@ AVSession_ErrCode OH_AVCastController_RegisterPlayNextCallback(OH_AVCastControll
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCastController* avcastcontroller | 播控控制器的实例对象。 |
@@ -412,6 +446,7 @@ AVSession_ErrCode OH_AVCastController_RegisterPlayNextCallback(OH_AVCastControll
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：服务器内部错误。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avcastcontroller为nullptr。 2. 参数callback为nullptr。 |
@@ -419,9 +454,10 @@ AVSession_ErrCode OH_AVCastController_RegisterPlayNextCallback(OH_AVCastControll
  
   
 
-#### OH_AVCastController_UnregisterPlayNextCallback()
+### OH_AVCastController_UnregisterPlayNextCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVCastController_UnregisterPlayNextCallback(OH_AVCastController* avcastcontroller, OH_AVCastControllerCallback_PlayNext callback)
@@ -435,6 +471,7 @@ AVSession_ErrCode OH_AVCastController_UnregisterPlayNextCallback(OH_AVCastContro
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCastController* avcastcontroller | 播控控制器的实例对象。 |
@@ -443,6 +480,7 @@ AVSession_ErrCode OH_AVCastController_UnregisterPlayNextCallback(OH_AVCastContro
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：服务器内部错误。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avcastcontroller为nullptr。 2. 参数callback为nullptr。 |
@@ -450,9 +488,10 @@ AVSession_ErrCode OH_AVCastController_UnregisterPlayNextCallback(OH_AVCastContro
  
   
 
-#### OH_AVCastController_RegisterPlayPreviousCallback()
+### OH_AVCastController_RegisterPlayPreviousCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVCastController_RegisterPlayPreviousCallback(OH_AVCastController* avcastcontroller, OH_AVCastControllerCallback_PlayPrevious callback, void* userData)
@@ -466,6 +505,7 @@ AVSession_ErrCode OH_AVCastController_RegisterPlayPreviousCallback(OH_AVCastCont
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCastController* avcastcontroller | 播控控制器的实例对象。 |
@@ -475,6 +515,7 @@ AVSession_ErrCode OH_AVCastController_RegisterPlayPreviousCallback(OH_AVCastCont
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：服务器内部错误。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avcastcontroller为nullptr。 2. 参数callback为nullptr。 |
@@ -482,9 +523,10 @@ AVSession_ErrCode OH_AVCastController_RegisterPlayPreviousCallback(OH_AVCastCont
  
   
 
-#### OH_AVCastController_UnregisterPlayPreviousCallback()
+### OH_AVCastController_UnregisterPlayPreviousCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVCastController_UnregisterPlayPreviousCallback(OH_AVCastController* avcastcontroller, OH_AVCastControllerCallback_PlayPrevious callback)
@@ -498,6 +540,7 @@ AVSession_ErrCode OH_AVCastController_UnregisterPlayPreviousCallback(OH_AVCastCo
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCastController* avcastcontroller | 播控控制器的实例对象。 |
@@ -506,6 +549,7 @@ AVSession_ErrCode OH_AVCastController_UnregisterPlayPreviousCallback(OH_AVCastCo
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：服务器内部错误。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avcastcontroller为nullptr。 2. 参数callback为nullptr。 |
@@ -513,9 +557,10 @@ AVSession_ErrCode OH_AVCastController_UnregisterPlayPreviousCallback(OH_AVCastCo
  
   
 
-#### OH_AVCastController_RegisterSeekDoneCallback()
+### OH_AVCastController_RegisterSeekDoneCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVCastController_RegisterSeekDoneCallback(OH_AVCastController* avcastcontroller, OH_AVCastControllerCallback_SeekDone callback, void* userData)
@@ -529,6 +574,7 @@ AVSession_ErrCode OH_AVCastController_RegisterSeekDoneCallback(OH_AVCastControll
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCastController* avcastcontroller | 播控控制器的实例对象。 |
@@ -538,6 +584,7 @@ AVSession_ErrCode OH_AVCastController_RegisterSeekDoneCallback(OH_AVCastControll
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：服务器内部错误。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avcastcontroller为nullptr。 2. 参数callback为nullptr。 |
@@ -545,9 +592,10 @@ AVSession_ErrCode OH_AVCastController_RegisterSeekDoneCallback(OH_AVCastControll
  
   
 
-#### OH_AVCastController_UnregisterSeekDoneCallback()
+### OH_AVCastController_UnregisterSeekDoneCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVCastController_UnregisterSeekDoneCallback(OH_AVCastController* avcastcontroller, OH_AVCastControllerCallback_SeekDone callback)
@@ -561,6 +609,7 @@ AVSession_ErrCode OH_AVCastController_UnregisterSeekDoneCallback(OH_AVCastContro
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCastController* avcastcontroller | 播控控制器的实例对象。 |
@@ -569,6 +618,7 @@ AVSession_ErrCode OH_AVCastController_UnregisterSeekDoneCallback(OH_AVCastContro
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：服务器内部错误。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avcastcontroller为nullptr。 2. 参数callback为nullptr。 |
@@ -576,9 +626,10 @@ AVSession_ErrCode OH_AVCastController_UnregisterSeekDoneCallback(OH_AVCastContro
  
   
 
-#### OH_AVCastController_RegisterEndOfStreamCallback()
+### OH_AVCastController_RegisterEndOfStreamCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVCastController_RegisterEndOfStreamCallback(OH_AVCastController* avcastcontroller, OH_AVCastControllerCallback_EndOfStream callback, void* userData)
@@ -592,6 +643,7 @@ AVSession_ErrCode OH_AVCastController_RegisterEndOfStreamCallback(OH_AVCastContr
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCastController* avcastcontroller | 播控控制器的实例对象。 |
@@ -601,6 +653,7 @@ AVSession_ErrCode OH_AVCastController_RegisterEndOfStreamCallback(OH_AVCastContr
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：服务器内部错误。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avcastcontroller为nullptr。 2. 参数callback为nullptr。 |
@@ -608,9 +661,10 @@ AVSession_ErrCode OH_AVCastController_RegisterEndOfStreamCallback(OH_AVCastContr
  
   
 
-#### OH_AVCastController_UnregisterEndOfStreamCallback()
+### OH_AVCastController_UnregisterEndOfStreamCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVCastController_UnregisterEndOfStreamCallback(OH_AVCastController* avcastcontroller, OH_AVCastControllerCallback_EndOfStream callback)
@@ -624,6 +678,7 @@ AVSession_ErrCode OH_AVCastController_UnregisterEndOfStreamCallback(OH_AVCastCon
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCastController* avcastcontroller | 播控控制器的实例对象。 |
@@ -632,6 +687,7 @@ AVSession_ErrCode OH_AVCastController_UnregisterEndOfStreamCallback(OH_AVCastCon
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：服务器内部错误。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avcastcontroller为nullptr。 2. 参数callback为nullptr。 |
@@ -639,9 +695,10 @@ AVSession_ErrCode OH_AVCastController_UnregisterEndOfStreamCallback(OH_AVCastCon
  
   
 
-#### OH_AVCastController_RegisterErrorCallback()
+### OH_AVCastController_RegisterErrorCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVCastController_RegisterErrorCallback(OH_AVCastController* avcastcontroller, OH_AVCastControllerCallback_Error callback, void* userData)
@@ -655,6 +712,7 @@ AVSession_ErrCode OH_AVCastController_RegisterErrorCallback(OH_AVCastController*
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCastController* avcastcontroller | 播控控制器的实例对象。 |
@@ -664,6 +722,7 @@ AVSession_ErrCode OH_AVCastController_RegisterErrorCallback(OH_AVCastController*
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：服务器内部错误。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avcastcontroller为nullptr。 2. 参数callback为nullptr。 |
@@ -671,9 +730,10 @@ AVSession_ErrCode OH_AVCastController_RegisterErrorCallback(OH_AVCastController*
  
   
 
-#### OH_AVCastController_UnregisterErrorCallback()
+### OH_AVCastController_UnregisterErrorCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVCastController_UnregisterErrorCallback(OH_AVCastController* avcastcontroller, OH_AVCastControllerCallback_Error callback)
@@ -687,6 +747,7 @@ AVSession_ErrCode OH_AVCastController_UnregisterErrorCallback(OH_AVCastControlle
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCastController* avcastcontroller | 播控控制器的实例对象。 |
@@ -695,6 +756,7 @@ AVSession_ErrCode OH_AVCastController_UnregisterErrorCallback(OH_AVCastControlle
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：服务器内部错误。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avcastcontroller为nullptr。 2. 参数callback为nullptr。 |
@@ -702,9 +764,10 @@ AVSession_ErrCode OH_AVCastController_UnregisterErrorCallback(OH_AVCastControlle
  
   
 
-#### OH_AVCastController_SendCommonCommand()
+### OH_AVCastController_SendCommonCommand()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVCastController_SendCommonCommand(OH_AVCastController* avcastcontroller, AVSession_AVCastControlCommandType* avCastControlcommand)
@@ -718,6 +781,7 @@ AVSession_ErrCode OH_AVCastController_SendCommonCommand(OH_AVCastController* avc
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCastController* avcastcontroller | 播控控制器的实例对象。 |
@@ -726,6 +790,7 @@ AVSession_ErrCode OH_AVCastController_SendCommonCommand(OH_AVCastController* avc
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：服务器内部错误。 AV_SESSION_ERR_INVALID_PARAMETER：参数avcastcontroller为nullptr。 AV_SESSION_ERR_CODE_COMMAND_INVALID：参数avCastControlcommand是无效的。 AV_SESSION_ERR_CODE_REMOTE_CONNECTION_NOT_EXIST：远程连接未建立。 |
@@ -733,9 +798,10 @@ AVSession_ErrCode OH_AVCastController_SendCommonCommand(OH_AVCastController* avc
  
   
 
-#### OH_AVCastController_SendSeekCommand()
+### OH_AVCastController_SendSeekCommand()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVCastController_SendSeekCommand(OH_AVCastController* avcastcontroller, int32_t seekTimeMS)
@@ -749,6 +815,7 @@ AVSession_ErrCode OH_AVCastController_SendSeekCommand(OH_AVCastController* avcas
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCastController* avcastcontroller | 播控控制器的实例对象。 |
@@ -757,6 +824,7 @@ AVSession_ErrCode OH_AVCastController_SendSeekCommand(OH_AVCastController* avcas
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：服务器内部错误。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avcastcontroller为nullptr。 2. 参数seekTimeMS是无效的。 AV_SESSION_ERR_CODE_REMOTE_CONNECTION_NOT_EXIST：远程连接未建立。 |
@@ -764,9 +832,10 @@ AVSession_ErrCode OH_AVCastController_SendSeekCommand(OH_AVCastController* avcas
  
   
 
-#### OH_AVCastController_SendFastForwardCommand()
+### OH_AVCastController_SendFastForwardCommand()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVCastController_SendFastForwardCommand(OH_AVCastController* avcastcontroller, int32_t forwardTimeS)
@@ -780,6 +849,7 @@ AVSession_ErrCode OH_AVCastController_SendFastForwardCommand(OH_AVCastController
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCastController* avcastcontroller | 播控控制器的实例对象。 |
@@ -788,6 +858,7 @@ AVSession_ErrCode OH_AVCastController_SendFastForwardCommand(OH_AVCastController
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：服务器内部错误。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avcastcontroller为nullptr。 2. 参数forwardTimeS是无效的。 AV_SESSION_ERR_CODE_REMOTE_CONNECTION_NOT_EXIST：远程连接未建立。 |
@@ -795,9 +866,10 @@ AVSession_ErrCode OH_AVCastController_SendFastForwardCommand(OH_AVCastController
  
   
 
-#### OH_AVCastController_SendRewindCommand()
+### OH_AVCastController_SendRewindCommand()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVCastController_SendRewindCommand(OH_AVCastController* avcastcontroller, int32_t rewindTimeS)
@@ -811,6 +883,7 @@ AVSession_ErrCode OH_AVCastController_SendRewindCommand(OH_AVCastController* avc
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCastController* avcastcontroller | 播控控制器的实例对象。 |
@@ -819,6 +892,7 @@ AVSession_ErrCode OH_AVCastController_SendRewindCommand(OH_AVCastController* avc
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：服务器内部错误。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avcastcontroller为nullptr。 2. 参数rewindTimeS是无效的。 AV_SESSION_ERR_CODE_REMOTE_CONNECTION_NOT_EXIST：远程连接未建立。 |
@@ -826,9 +900,10 @@ AVSession_ErrCode OH_AVCastController_SendRewindCommand(OH_AVCastController* avc
  
   
 
-#### OH_AVCastController_SendSetSpeedCommand()
+### OH_AVCastController_SendSetSpeedCommand()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVCastController_SendSetSpeedCommand(OH_AVCastController* avcastcontroller, AVSession_PlaybackSpeed speed)
@@ -842,6 +917,7 @@ AVSession_ErrCode OH_AVCastController_SendSetSpeedCommand(OH_AVCastController* a
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCastController* avcastcontroller | 播控控制器的实例对象。 |
@@ -850,6 +926,7 @@ AVSession_ErrCode OH_AVCastController_SendSetSpeedCommand(OH_AVCastController* a
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：服务器内部错误。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avcastcontroller为nullptr。 2. 参数speed是无效的。 AV_SESSION_ERR_CODE_REMOTE_CONNECTION_NOT_EXIST：远程连接未建立。 |
@@ -857,9 +934,10 @@ AVSession_ErrCode OH_AVCastController_SendSetSpeedCommand(OH_AVCastController* a
  
   
 
-#### OH_AVCastController_SendVolumeCommand()
+### OH_AVCastController_SendVolumeCommand()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVCastController_SendVolumeCommand(OH_AVCastController* avcastcontroller, int32_t volume)
@@ -873,14 +951,16 @@ AVSession_ErrCode OH_AVCastController_SendVolumeCommand(OH_AVCastController* avc
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCastController* avcastcontroller | 播控控制器的实例对象。 |
-| int32_t volume | 音量控制。 |
+| int32_t volume | 音量值。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：服务器内部错误。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avcastcontroller为nullptr。 2. 参数volume是无效的。 AV_SESSION_ERR_CODE_REMOTE_CONNECTION_NOT_EXIST：远程连接未建立。 |
@@ -888,9 +968,10 @@ AVSession_ErrCode OH_AVCastController_SendVolumeCommand(OH_AVCastController* avc
  
   
 
-#### OH_AVCastController_Prepare()
+### OH_AVCastController_Prepare()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVCastController_Prepare(OH_AVCastController* avcastcontroller, OH_AVSession_AVQueueItem* avqueueItem)
@@ -898,12 +979,13 @@ AVSession_ErrCode OH_AVCastController_Prepare(OH_AVCastController* avcastcontrol
  
 **描述**
  
-请求准备当前播放队列项，该操作是实现输出媒体信息展示的前置步骤。
+请求准备当前音视频播放队列项，该操作是实现输出媒体信息展示的前置步骤。
  
 **起始版本：** 23
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCastController* avcastcontroller | 播控控制器的实例对象。 |
@@ -912,6 +994,7 @@ AVSession_ErrCode OH_AVCastController_Prepare(OH_AVCastController* avcastcontrol
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：服务器内部错误。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avcastcontroller为nullptr。 2. 参数avqueueItem为nullptr。 AV_SESSION_ERR_CODE_REMOTE_CONNECTION_NOT_EXIST：远程连接未建立。 |
@@ -919,9 +1002,10 @@ AVSession_ErrCode OH_AVCastController_Prepare(OH_AVCastController* avcastcontrol
  
   
 
-#### OH_AVCastController_Start()
+### OH_AVCastController_Start()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVSession_ErrCode OH_AVCastController_Start(OH_AVCastController* avcastcontroller, OH_AVSession_AVQueueItem* avqueueItem)
@@ -935,6 +1019,7 @@ AVSession_ErrCode OH_AVCastController_Start(OH_AVCastController* avcastcontrolle
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVCastController* avcastcontroller | 播控控制器的实例对象。 |
@@ -943,6 +1028,7 @@ AVSession_ErrCode OH_AVCastController_Start(OH_AVCastController* avcastcontrolle
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVSession_ErrCode | AV_SESSION_ERR_SUCCESS：函数执行成功。 AV_SESSION_ERR_SERVICE_EXCEPTION：服务器内部错误。 AV_SESSION_ERR_INVALID_PARAMETER： 1. 参数avcastcontroller为nullptr。 2. 参数avqueueItem为nullptr。 |

@@ -54,10 +54,10 @@ struct StackTextInput {
             .width('50%')
             .height(50)
             .onClick(() => {
-              // 可以通过配置focusControl.requestFocus使指定组件获取焦点
+           <em>   // 可以通过配置focusControl.requestFocus使指定组件获取焦点</em>
               focusControl.requestFocus('textInput');
               this.isEditing = true;
-              // 拉起键盘
+           <em>   // 拉起键盘</em>
               let inputMethodController = inputMethod.getController();
               inputMethodController.showTextInput();
             })
@@ -68,7 +68,7 @@ struct StackTextInput {
       .justifyContent(FlexAlign.Center)
       .onClick(() => {
         this.isEditing = false;
-        // 退出键盘
+      <em>  // 退出键盘</em>
         let inputMethodController = inputMethod.getController();
         inputMethodController.stopInputSession();
       })

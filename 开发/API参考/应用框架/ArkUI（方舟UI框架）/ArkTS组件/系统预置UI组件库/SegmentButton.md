@@ -1,9 +1,9 @@
 # SegmentButton
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-segmentbutton
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 分段按钮组件包含页签类分段按钮和胶囊类分段按钮。页签类分段按钮适用于页面或内容区域的切换场景；胶囊类分段按钮适用于单选或多选的选择场景，包含胶囊类单选分段按钮和胶囊类多选分段按钮。该组件支持自定义文本颜色、字体大小、字体粗细、背景色、图片尺寸、内边距、背景模糊材质等外观属性，支持仅文本、仅图标和图标+文本三种按钮样式，并提供无障碍朗读、布局方向镜像、自定义圆角、属性动画等能力，适用于需要快速构建符合设计规范的分段选择界面的场景。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 import { SegmentButton, SegmentButtonOptions, SegmentButtonItemOptionsArray } from '@kit.ArkUI';
@@ -22,33 +23,37 @@ import { SegmentButton, SegmentButtonOptions, SegmentButtonItemOptionsArray } fr
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 无
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 不支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)。
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 不支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)。
 
 
 
-#### SegmentButton
+## SegmentButton
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 SegmentButton({ options: SegmentButtonOptions, selectedIndexes: number[], onItemClicked?: Callback&lt;number&gt;, maxFontScale: number | Resource, enableStateAnimation: boolean })
 
@@ -62,6 +67,7 @@ SegmentButton({ options: SegmentButtonOptions, selectedIndexes: number[], onItem
 > 分段按钮不支持 通用属性 。分段按钮使用当前区域可使用的最大宽度作为组件宽度，并且根据按钮个数平均分配每个按钮宽度；分段按钮高度根据按钮内容（文本及图片）自动适应，其最小高度为28vp。 @Prop装饰的属性为可选参数，仅当与@Require装饰器联合使用时，才必须在构造时传入对应参数。
 
 
+
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | options | SegmentButtonOptions | 是 | @ObjectLink | 分段按钮的配置选项，用于设置按钮的类型（页签类或胶囊类）、外观样式（颜色、字体、尺寸等）、按钮内容和选中状态等属性。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
@@ -73,9 +79,10 @@ SegmentButton({ options: SegmentButtonOptions, selectedIndexes: number[], onItem
 
 
 
-#### SegmentButtonOptions
+## SegmentButtonOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 > [!NOTE]
 > 不支持设置字体类型。
@@ -87,13 +94,15 @@ SegmentButton({ options: SegmentButtonOptions, selectedIndexes: number[], onItem
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -118,7 +127,7 @@ SegmentButton({ options: SegmentButtonOptions, selectedIndexes: number[], onItem
 | borderRadiusMode20+ | BorderRadiusMode | 否 | 是 | 边框圆角模式，用于控制圆角计算方式。 默认值：BorderRadiusMode.DEFAULT 值为undefined时，按默认值处理。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
 | backgroundBorderRadius20+ | LengthMetrics | 否 | 是 | 分段按钮整体容器的边框圆角半径。 说明： 此属性仅在borderRadiusMode为BorderRadiusMode.CUSTOM时生效。 对于胶囊类多选分段按钮（type为"capsule"且multiply为true），此属性不生效，需要用itemBorderRadius配置圆角。 圆角大小受组件尺寸限制，最大值为组件宽或高的一半，不支持百分比设置。超出最大值时自动修正为最大值，使用百分比时按默认值处理。 默认值：\$r('sys.float.segmentbutton_container_shape') 值为undefined时，按默认值处理。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
 | itemBorderRadius20+ | LengthMetrics | 否 | 是 | 分段按钮中按钮项的边框圆角半径。 说明： 此属性仅在borderRadiusMode为BorderRadiusMode.CUSTOM时生效。 对于胶囊类多选分段按钮（type为"capsule"且multiply为true），只能控制两端的选项圆角。 圆角大小受组件尺寸限制，最大值为组件宽或高的一半，不支持百分比设置。超出最大值时自动修正为最大值，使用百分比时按默认值处理。 默认值：\$r('sys.float.segmentbutton_selected_background_shape') 值为undefined时，按默认值处理。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
-| backgroundSystemMaterial | uiMaterial.Material | 否 | 是 | 分段按钮组件的背景板的系统材质。不同系统材质具有不同的属性，产生不同的效果。传入材质后，SegmentButton的动效发生改变。 对于胶囊类多选分段按钮（即type为"capsule"且multiply为true），该属性不生效。 默认值：无材质效果。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
+| backgroundSystemMaterial | uiMaterial.Material | 否 | 是 | 分段按钮组件的背景板的系统材质。需要将组件放置在Navigation或NavDestination的标题栏子树，或横向Tabs的底部TabBar子树中，材质效果才会生效。不同系统材质具有不同的属性，产生不同的效果。传入材质后，SegmentButton的动效发生改变。 对于胶囊类多选分段按钮（即type为"capsule"且multiply为true），该属性不生效。 默认值：无材质效果。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 
 
 > [!TIP]
@@ -127,9 +136,10 @@ SegmentButton({ options: SegmentButtonOptions, selectedIndexes: number[], onItem
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 constructor(options: TabSegmentButtonOptions | CapsuleSegmentButtonOptions)
 
@@ -143,6 +153,7 @@ constructor(options: TabSegmentButtonOptions | CapsuleSegmentButtonOptions)
 
 **参数**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | TabSegmentButtonOptions \| CapsuleSegmentButtonOptions | 是 | 页签类或者胶囊类分段按钮信息。 |
@@ -150,9 +161,10 @@ constructor(options: TabSegmentButtonOptions | CapsuleSegmentButtonOptions)
 
 
 
-#### tab
+### tab
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 static tab(options: TabSegmentButtonConstructionOptions): SegmentButtonOptions
 
@@ -166,12 +178,14 @@ static tab(options: TabSegmentButtonConstructionOptions): SegmentButtonOptions
 
 **参数**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | TabSegmentButtonConstructionOptions | 是 | 页签类分段按钮信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -180,9 +194,10 @@ static tab(options: TabSegmentButtonConstructionOptions): SegmentButtonOptions
 
 
 
-#### capsule
+### capsule
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 static capsule(options: CapsuleSegmentButtonConstructionOptions): SegmentButtonOptions
 
@@ -196,12 +211,14 @@ static capsule(options: CapsuleSegmentButtonConstructionOptions): SegmentButtonO
 
 **参数**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | CapsuleSegmentButtonConstructionOptions | 是 | 胶囊类分段按钮信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -210,9 +227,10 @@ static capsule(options: CapsuleSegmentButtonConstructionOptions): SegmentButtonO
 
 
 
-#### DimensionNoPercentage
+## DimensionNoPercentage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 type DimensionNoPercentage = PX | VP | FP | LPX | Resource
 
@@ -223,6 +241,7 @@ type DimensionNoPercentage = PX | VP | FP | LPX | Resource
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -235,15 +254,17 @@ type DimensionNoPercentage = PX | VP | FP | LPX | Resource
 
 
 
-#### CommonSegmentButtonOptions
+## CommonSegmentButtonOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 定义分段按钮组件的可自定义的属性。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -265,14 +286,15 @@ type DimensionNoPercentage = PX | VP | FP | LPX | Resource
 | borderRadiusMode20+ | BorderRadiusMode | 否 | 是 | 边框圆角模式，用于控制圆角计算方式。 默认值：BorderRadiusMode.DEFAULT 值为undefined时，按默认值处理。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
 | backgroundBorderRadius20+ | LengthMetrics | 否 | 是 | 分段按钮整体容器的边框圆角半径。 说明： 此属性仅在borderRadiusMode为BorderRadiusMode.CUSTOM时生效。 对于胶囊类多选分段按钮（type为"capsule"且multiply为true），此属性不生效，需要用itemBorderRadius配置圆角。 圆角大小受组件尺寸限制，最大值为组件宽或高的一半，不支持百分比设置。超出最大值时自动修正为最大值，使用百分比时按默认值处理。 默认值：\$r('sys.float.segmentbutton_container_shape') 值为undefined时，按默认值处理。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
 | itemBorderRadius20+ | LengthMetrics | 否 | 是 | 分段按钮中按钮项的边框圆角半径。 说明： 此属性仅在borderRadiusMode为BorderRadiusMode.CUSTOM时生效。 对于胶囊类多选分段按钮（type为"capsule"且multiply为true），只能控制两端的选项圆角。 圆角大小受组件尺寸限制，最大值为组件宽或高的一半，不支持百分比设置。超出最大值时自动修正为最大值，使用百分比时按默认值处理。 默认值：\$r('sys.float.segmentbutton_selected_background_shape') 值为undefined时，按默认值处理。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
-| backgroundSystemMaterial | uiMaterial.Material | 否 | 是 | 分段按钮组件的背景板的系统材质。不同系统材质具有不同的属性，产生不同的效果。传入材质后，SegmentButton的动效发生改变。 对于胶囊类多选分段按钮（即type为"capsule"且multiply为true），该属性不生效。 默认值：无材质效果。 从API版本26.0.0开始，除胶囊类多选分段按钮（即type为"capsule"且multiply为true）外，backgroundSystemMaterial设置自动反色的系统材质时，fontColor和selectedFontColor使用支持反色的特殊系统资源，颜色自动适配到材质背景色的反色。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
+| backgroundSystemMaterial | uiMaterial.Material | 否 | 是 | 分段按钮组件的背景板的系统材质。需要将组件放置在Navigation或NavDestination的标题栏子树，或横向Tabs的底部TabBar子树中，材质效果才会生效。不同系统材质具有不同的属性，产生不同的效果。传入材质后，SegmentButton的动效发生改变。 对于胶囊类多选分段按钮（即type为"capsule"且multiply为true），该属性不生效。 默认值：无材质效果。 从API版本26.0.0开始，除胶囊类多选分段按钮（即type为"capsule"且multiply为true）外，backgroundSystemMaterial设置自动反色的系统材质时，fontColor和selectedFontColor使用支持反色的特殊系统资源，颜色自动适配到材质背景色的反色。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 
 
 
 
-#### BorderRadiusMode20+
+## BorderRadiusMode20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 边框圆角模式枚举，用于控制分段按钮的圆角计算方式。
 
@@ -282,6 +304,7 @@ type DimensionNoPercentage = PX | VP | FP | LPX | Resource
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DEFAULT | 0 | 默认模式，框架自动计算边框圆角。 |
@@ -290,9 +313,10 @@ type DimensionNoPercentage = PX | VP | FP | LPX | Resource
 
 
 
-#### TabSegmentButtonConstructionOptions
+## TabSegmentButtonConstructionOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 构建页签类的SegmentButtonOptions对象。
 
@@ -304,6 +328,7 @@ type DimensionNoPercentage = PX | VP | FP | LPX | Resource
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | buttons | ItemRestriction&lt;SegmentButtonTextItem&gt; | 否 | 否 | 按钮信息。 |
@@ -311,9 +336,10 @@ type DimensionNoPercentage = PX | VP | FP | LPX | Resource
 
 
 
-#### CapsuleSegmentButtonConstructionOptions
+## CapsuleSegmentButtonConstructionOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 用于构建胶囊类的SegmentButtonOptions对象。
 
@@ -325,6 +351,7 @@ type DimensionNoPercentage = PX | VP | FP | LPX | Resource
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | buttons | SegmentButtonItemTuple | 否 | 否 | 按钮信息。 |
@@ -333,9 +360,10 @@ type DimensionNoPercentage = PX | VP | FP | LPX | Resource
 
 
 
-#### ItemRestriction
+## ItemRestriction
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 type ItemRestriction&lt;T&gt; = [T, T, T?, T?, T?]
 
@@ -346,6 +374,7 @@ type ItemRestriction&lt;T&gt; = [T, T, T?, T?, T?]
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -358,9 +387,10 @@ type ItemRestriction&lt;T&gt; = [T, T, T?, T?, T?]
 
 
 
-#### SegmentButtonItemTuple
+## SegmentButtonItemTuple
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 type SegmentButtonItemTuple = ItemRestriction&lt;SegmentButtonTextItem&gt; | ItemRestriction&lt;SegmentButtonIconItem&gt; | ItemRestriction&lt;SegmentButtonIconTextItem&gt;
 
@@ -372,6 +402,7 @@ type SegmentButtonItemTuple = ItemRestriction&lt;SegmentButtonTextItem&gt; | Ite
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ItemRestriction&lt;SegmentButtonTextItem&gt; | 仅文本按钮信息的元组。 |
@@ -381,9 +412,10 @@ type SegmentButtonItemTuple = ItemRestriction&lt;SegmentButtonTextItem&gt; | Ite
 
 
 
-#### SegmentButtonItemArray
+## SegmentButtonItemArray
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 type SegmentButtonItemArray = Array&lt;SegmentButtonTextItem&gt; | Array&lt;SegmentButtonIconItem&gt; | Array&lt;SegmentButtonIconTextItem&gt;
 
@@ -395,6 +427,7 @@ type SegmentButtonItemArray = Array&lt;SegmentButtonTextItem&gt; | Array&lt;Segm
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;SegmentButtonTextItem&gt; | 仅文本按钮信息的数组。 |
@@ -404,9 +437,10 @@ type SegmentButtonItemArray = Array&lt;SegmentButtonTextItem&gt; | Array&lt;Segm
 
 
 
-#### SegmentButtonItemOptionsArray
+## SegmentButtonItemOptionsArray
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 用于保存按钮信息的数组。
 
@@ -418,9 +452,10 @@ type SegmentButtonItemArray = Array&lt;SegmentButtonTextItem&gt; | Array&lt;Segm
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 constructor(elements: SegmentButtonItemTuple)
 
@@ -434,6 +469,7 @@ constructor(elements: SegmentButtonItemTuple)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | elements | SegmentButtonItemTuple | 是 | 用于初始化数组的按钮信息元组，包含2到5个按钮选项元素，每个元素定义一个按钮的图标、文本等属性。 |
@@ -445,9 +481,10 @@ constructor(elements: SegmentButtonItemTuple)
 
 
 
-#### push
+### push
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 push(...items: SegmentButtonItemArray): number
 
@@ -461,12 +498,14 @@ push(...items: SegmentButtonItemArray): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | items | SegmentButtonItemArray | 否 | 被添加的按钮信息数组。 默认值：不传入任何按钮信息元素。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -479,9 +518,10 @@ push(...items: SegmentButtonItemArray): number
 
 
 
-#### pop
+### pop
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 pop(): SegmentButtonItemOptions | undefined
 
@@ -495,6 +535,7 @@ pop(): SegmentButtonItemOptions | undefined
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | SegmentButtonItemOptions \| undefined | 被移除的元素。 |
@@ -506,9 +547,10 @@ pop(): SegmentButtonItemOptions | undefined
 
 
 
-#### shift
+### shift
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 shift(): SegmentButtonItemOptions | undefined
 
@@ -522,6 +564,7 @@ shift(): SegmentButtonItemOptions | undefined
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | SegmentButtonItemOptions \| undefined | 被移除的元素。 |
@@ -533,9 +576,10 @@ shift(): SegmentButtonItemOptions | undefined
 
 
 
-#### unshift
+### unshift
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 unshift(...items: SegmentButtonItemArray): number
 
@@ -549,12 +593,14 @@ unshift(...items: SegmentButtonItemArray): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | items | SegmentButtonItemArray | 否 | 添加的按钮信息数组。 默认值：不传入任何按钮信息元素。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -567,9 +613,10 @@ unshift(...items: SegmentButtonItemArray): number
 
 
 
-#### splice
+### splice
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 splice(start: number, deleteCount: number, ...items: SegmentButtonItemOptions[]): SegmentButtonItemOptions[]
 
@@ -583,6 +630,7 @@ splice(start: number, deleteCount: number, ...items: SegmentButtonItemOptions[])
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | start | number | 是 | 删除元素的起始位置，从0开始计数。 |
@@ -591,6 +639,7 @@ splice(start: number, deleteCount: number, ...items: SegmentButtonItemOptions[])
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -603,9 +652,10 @@ splice(start: number, deleteCount: number, ...items: SegmentButtonItemOptions[])
 
 
 
-#### create
+### create
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 static create(elements: SegmentButtonItemTuple): SegmentButtonItemOptionsArray
 
@@ -619,12 +669,14 @@ static create(elements: SegmentButtonItemTuple): SegmentButtonItemOptionsArray
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | elements | SegmentButtonItemTuple | 是 | 用于初始化数组的按钮信息元组，包含2到5个按钮选项元素，每个元素定义一个按钮的图标、文本等属性。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -637,9 +689,10 @@ static create(elements: SegmentButtonItemTuple): SegmentButtonItemOptionsArray
 
 
 
-#### TabSegmentButtonOptions
+## TabSegmentButtonOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 页签类分段按钮选项。继承自[TabSegmentButtonConstructionOptions](#tabsegmentbuttonconstructionoptions)。
 
@@ -649,6 +702,7 @@ static create(elements: SegmentButtonItemTuple): SegmentButtonItemOptionsArray
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | "tab" | 否 | 否 | 类型为页签类分段按钮。 |
@@ -656,9 +710,10 @@ static create(elements: SegmentButtonItemTuple): SegmentButtonItemOptionsArray
 
 
 
-#### CapsuleSegmentButtonOptions
+## CapsuleSegmentButtonOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 胶囊类分段按钮选项。继承自[CapsuleSegmentButtonConstructionOptions](#capsulesegmentbuttonconstructionoptions)。
 
@@ -668,6 +723,7 @@ static create(elements: SegmentButtonItemTuple): SegmentButtonItemOptionsArray
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | "capsule" | 否 | 否 | 类型为胶囊类分段按钮。 |
@@ -675,15 +731,17 @@ static create(elements: SegmentButtonItemTuple): SegmentButtonItemOptionsArray
 
 
 
-#### SegmentButtonTextItem
+## SegmentButtonTextItem
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 文本按钮信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -694,15 +752,17 @@ static create(elements: SegmentButtonItemTuple): SegmentButtonItemOptionsArray
 
 
 
-#### SegmentButtonIconItem
+## SegmentButtonIconItem
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 图标按钮信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -720,15 +780,17 @@ static create(elements: SegmentButtonItemTuple): SegmentButtonItemOptionsArray
 
 
 
-#### SegmentButtonIconTextItem
+## SegmentButtonIconTextItem
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 图标与文本按钮信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -747,9 +809,10 @@ static create(elements: SegmentButtonItemTuple): SegmentButtonItemOptionsArray
 
 
 
-#### SegmentButtonItemOptions
+## SegmentButtonItemOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 分段按钮中的按钮选项。
 
@@ -757,13 +820,15 @@ static create(elements: SegmentButtonItemTuple): SegmentButtonItemOptionsArray
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -782,9 +847,10 @@ static create(elements: SegmentButtonItemTuple): SegmentButtonItemOptionsArray
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 constructor(options: SegmentButtonItemOptionsConstructorOptions)
 
@@ -798,6 +864,7 @@ constructor(options: SegmentButtonItemOptionsConstructorOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | SegmentButtonItemOptionsConstructorOptions | 是 | 单个分段按钮的配置选项，包含图标、文本、无障碍属性等配置信息。 |
@@ -805,15 +872,17 @@ constructor(options: SegmentButtonItemOptionsConstructorOptions)
 
 
 
-#### SegmentButtonItemOptionsConstructorOptions
+## SegmentButtonItemOptionsConstructorOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 构造参数用于SegmentButtonItemOptions。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -832,13 +901,17 @@ constructor(options: SegmentButtonItemOptionsConstructorOptions)
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 示例1（设置分段按钮的类型）
+
+
+### 示例1（设置分段按钮的类型）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 通过配置SegmentButtonOptions的tab和capsule，创建两种不同类型的分段按钮。
 
@@ -935,12 +1008,15 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/1M9OAGzZQZSNvgP5iHE3rA/zh-cn_image_0000002655849022.png?HW-CC-KV=V1&HW-CC-Date=20260730T071519Z&HW-CC-Expire=86400&HW-CC-Sign=85465728C39F465A619B481EF1441E8270885BDA9494142F0F1E07DEE4538B34)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/Ce0fV-mpR1K9SN9x_wi4Yg/zh-cn_image_0000002747293117.png?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=575833109569A450E86D4372B0F5BFBC3F11EAD57DF4AD91733E75EE60B48C63)
 
 
 
 
-#### 示例2（设置分段按钮样式）
+### 示例2（设置分段按钮样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 通过配置CommonSegmentButtonOptions，实现自定义分段按钮的文本以及背景板样式。
 
@@ -1047,12 +1123,15 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/l26c5jQ5SOejjs49AMJ_UQ/zh-cn_image_0000002686088453.png?HW-CC-KV=V1&HW-CC-Date=20260730T071519Z&HW-CC-Expire=86400&HW-CC-Sign=A896E88F4E6E7FEA2FCE60E9C552C8907720855552E446B8DC343002993F4EBC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/Pr1Tr_bvRu2hLHmbBW_LLw/zh-cn_image_0000002747213033.png?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=4342E7D88422768BDE0523D64B4A3F3FF9463D4B3951086A98360919E44FB264)
 
 
 
 
-#### 示例3（分段按钮数组处理）
+### 示例3（分段按钮数组处理）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例通过pop、shift、unshift等函数实现分段按钮数组的添加、移除等操作。
 
@@ -1128,12 +1207,15 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/DazDsOllQHikEhasuarv4Q/zh-cn_image_0000002685928623.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071519Z&HW-CC-Expire=86400&HW-CC-Sign=202FC3008EDC510B6175E5856DAB71EE82B1F39453BD35D87A6799037155F7AE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/xP-TUSX2SzG4tTfEi3qplg/zh-cn_image_0000002717773098.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=E0C9098F97309792C23B7EF4BBE066E80E56BA9494606EDE1A1A978F5CAED649)
 
 
 
 
-#### 示例4（设置镜像效果）
+### 示例4（设置镜像效果）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例通过配置direction属性设置分段按钮的布局方向，实现镜像效果。
 
@@ -1242,12 +1324,15 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/Y2nLrK7wQS6QEXAymW6a3g/zh-cn_image_0000002656008944.png?HW-CC-KV=V1&HW-CC-Date=20260730T071519Z&HW-CC-Expire=86400&HW-CC-Sign=C19428A35166E8AAB2408A6C2510C2CF0C8A628753277533430AE87792BBEDDB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/n5inZI19SByyObChJLTjmA/zh-cn_image_0000002717613166.png?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=A60255CA05A26DC43EBE9A7E973D76094342CC5D29251EDF528B7B508AE72428)
 
 
 
 
-#### 示例5（设置无障碍朗读）
+### 示例5（设置无障碍朗读）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 通过配置accessibilityLevel和selectedIconAccessibilityText等属性，实现了分段按钮的无障碍朗读功能。
 
@@ -1394,7 +1479,10 @@ struct Index {
 
 
 
-#### 示例6（设置自定义圆角）
+### 示例6（设置自定义圆角）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例演示了如何为分段按钮组件设置自定义的边框圆角半径。
 
@@ -1438,12 +1526,15 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/aEiiqMoxTCOOFh-cVC6JrQ/zh-cn_image_0000002655849024.png?HW-CC-KV=V1&HW-CC-Date=20260730T071519Z&HW-CC-Expire=86400&HW-CC-Sign=90FD4F902438023E07B71E58FEC5CE71A2D4E8168594661E52D14A1BECA9B1EF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/Xz9eWg8mR8qsW8d7W_3EzA/zh-cn_image_0000002747293119.png?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=C1B98D1B01D269301A315761739A61BD1EE383A358818A410F8D87B1C455A4AE)
 
 
 
 
-#### 示例7（开启SegmentButton的属性动画）
+### 示例7（开启SegmentButton的属性动画）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 本示例展示了SegmentButton开启属性动画，即enableStateAnimation设置为true后，修改选中项编号selectedIndexes值会触发按钮切换动画。并且选中项编号相同的两个SegmentButton组件，是否开启属性动画，也会呈现不同的切换动画。
 
@@ -1518,12 +1609,15 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/eJAzJ9_SQ_aRAj50bCB_Gg/zh-cn_image_0000002686088455.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071519Z&HW-CC-Expire=86400&HW-CC-Sign=F1B187A9B78C06A4E9E967D0B54582B7FAB6D2253535AA6F6072D0E2931FA926)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/kFgHvP5STPG-mcapgMn6Ew/zh-cn_image_0000002747213035.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=BD4F1E2EA53FE284AE1F278802FAEC574C20053384D791DFDC653C742D82D745)
 
 
 
 
-#### 示例8（设置背景板材质）
+### 示例8（设置背景板材质）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 以下示例通过backgroundSystemMaterial属性，为分段按钮设置了透明的背景板材质、开启自动反色和交互形变效果，并自定义反馈光感的颜色。
 
@@ -1559,7 +1653,8 @@ struct Index {
   });
   @State tabSelectedIndexes: number[] = [0];
 
-  build() {
+  @Builder
+  NavigationTitle() {
     Column({ space: 20 }) {
       SegmentButton({
         options: this.tabOptions,
@@ -1578,16 +1673,28 @@ struct Index {
       ]
     })
   }
+
+  build() {
+    Column() {
+      Navigation() {
+        // 页面内容
+      }
+      .title({ builder: this.NavigationTitle, height: '100%' })
+    }.width('100%').height('100%')
+  }
 }
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/rWdCIqOgTVCIsGC1wJOGoA/zh-cn_image_0000002685928625.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071519Z&HW-CC-Expire=86400&HW-CC-Sign=00FFAC6C7AA0BF704373FE1695C76D0554F475C37D0525EE1C920412C7715A10)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/YW701XsySpGwx98OTXAKLQ/zh-cn_image_0000002717773100.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=C7D6C491083615D48CC96CD92D7798EFD6E70671992939EA30C7CC269E83F95A)
 
 
 
 
-#### 示例9（监听SegmentButtonOptions内属性的变化）
+### 示例9（监听SegmentButtonOptions内属性的变化）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 [SegmentButtonOptions](#segmentbuttonoptions)使用了@Observed装饰器，SegmentButton组件通过@ObjectLink接收该对象。对于SegmentButtonOptions的一层基本类型属性（如fontColor、backgroundColor等），@Observed与@ObjectLink的联动机制已能观测到属性变化并触发UI刷新，无需额外处理。但对于SegmentButtonOptions中对象类型属性（如imageSize、buttonPadding等）的内部属性（如imageSize的width、height），属于更深层的嵌套属性，@State仅能观测到一层赋值变化，无法感知这类深层属性的修改，导致修改对象类型属性的内部属性时UI不会自动刷新。使用[makeObserved](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-statemanagement#makeobserved)接口对对象类型属性（如imageSize）进行包裹，可以为该对象的内部属性补充深度观察能力，使得修改内部属性（如width、height）时，框架能够监听到变化并触发UI刷新。makeObserved接口的详细说明请参考[makeObserved接口：将非观察数据变为可观察数据](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-makeobserved)。
 
@@ -1650,4 +1757,4 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/HXBYTZzxRs6_3Qbm3GxuAw/zh-cn_image_0000002656008946.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071519Z&HW-CC-Expire=86400&HW-CC-Sign=D60C1E83D03C822A47B133407DDA3C6A43F96B6A32B27DEC43D926B17CAEE64C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/lEuT5zd1QpqOPg2PpVGQLQ/zh-cn_image_0000002717613168.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=2B7D167C0193BAF50A14C88B79D24517BDC161C55394306A2545F3E1E3636500)

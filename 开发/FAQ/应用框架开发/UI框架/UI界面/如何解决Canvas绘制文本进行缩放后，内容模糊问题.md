@@ -30,11 +30,11 @@ struct Index {
           .height(400)
           .onReady(() => {
             this.context.font = '70px sans-serif';
-            // 描边宽度
+           <em> // 描边宽度</em>
             this.context.lineWidth = 4;
-            // 填充颜色
+           <em> // 填充颜色</em>
             this.context.fillStyle = 'black';
-            // 填充文本
+            <em>// </em><em>填充文本</em>
             this.context.fillText('hello', 180,200);
           })
       }
@@ -80,11 +80,11 @@ struct Solution {
   @State textScale: number = 1;
 
   onDrawText() {
-    // 文本字体大小
+   <em> // 文本字体大小</em>
     this.context.font = `${70 * this.textScale}px sans-serif`;
-    // 填充颜色
+    <em>// </em><em>填充颜色</em>
     this.context.fillStyle = 'black';
-    // 填充文本
+  <em>  // 填充文本</em>
     this.context.fillText('hello', 180, 200);
   }
 
@@ -92,7 +92,7 @@ struct Solution {
     Column() {
       Button('点击').onClick(() => {
         this.textScale = 4;
-        // 清除画布
+        <em>// </em><em>清除画布</em>
         this.context.clearRect(0, 0, 500, 200);
         this.onDrawText();
       })

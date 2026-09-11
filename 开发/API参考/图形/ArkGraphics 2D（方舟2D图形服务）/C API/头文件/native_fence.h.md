@@ -1,13 +1,14 @@
 # native_fence.h
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-fence-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义获取和使用NativeFence的相关函数。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | bool OH_NativeFence_IsValid(int fenceFd) | 检查fenceFd是否有效。 |
@@ -43,15 +47,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_NativeFence_IsValid()
+### OH_NativeFence_IsValid()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_NativeFence_IsValid(int fenceFd)
@@ -65,6 +71,7 @@ bool OH_NativeFence_IsValid(int fenceFd)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | int fenceFd | 表示一个文件描述符，用于定时同步。 |
@@ -72,6 +79,7 @@ bool OH_NativeFence_IsValid(int fenceFd)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回true表示fenceFd有效，返回false表示该值是一个负整数。 |
@@ -79,9 +87,10 @@ bool OH_NativeFence_IsValid(int fenceFd)
  
   
 
-#### OH_NativeFence_Wait()
+### OH_NativeFence_Wait()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_NativeFence_Wait(int fenceFd, uint32_t timeout)
@@ -95,6 +104,7 @@ bool OH_NativeFence_Wait(int fenceFd, uint32_t timeout)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | int fenceFd | 表示一个文件描述符，用于定时同步。 |
@@ -103,6 +113,7 @@ bool OH_NativeFence_Wait(int fenceFd, uint32_t timeout)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回true表示对应的fenceFd有信号触发； 在以下情况会返回false： 1.传入的fenceFd为负整数。 2.在指定的超时时间内无信号触发。 3.调用底层poll接口失败。 4.超时时间设置为0。 5.接口中复制文件描述符执行失败。 |
@@ -110,9 +121,10 @@ bool OH_NativeFence_Wait(int fenceFd, uint32_t timeout)
  
   
 
-#### OH_NativeFence_WaitForever()
+### OH_NativeFence_WaitForever()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_NativeFence_WaitForever(int fenceFd)
@@ -126,6 +138,7 @@ bool OH_NativeFence_WaitForever(int fenceFd)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | int fenceFd | 表示一个文件描述符，用于定时同步。 |
@@ -133,6 +146,7 @@ bool OH_NativeFence_WaitForever(int fenceFd)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回true表示对应的fenceFd有信号触发； 在以下情况会返回false： 1.传入的fenceFd为负整数。 2.在指定的超时时间内无信号触发，永久等待。 3.接口中复制文件描述符执行失败。 |
@@ -140,9 +154,10 @@ bool OH_NativeFence_WaitForever(int fenceFd)
  
   
 
-#### OH_NativeFence_Close()
+### OH_NativeFence_Close()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_NativeFence_Close(int fenceFd)
@@ -156,6 +171,7 @@ void OH_NativeFence_Close(int fenceFd)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | int fenceFd | 表示一个文件描述符，用于定时同步。该值是一个非负整数。 |

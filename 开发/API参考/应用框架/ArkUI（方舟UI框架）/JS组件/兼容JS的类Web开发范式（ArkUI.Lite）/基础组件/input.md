@@ -1,9 +1,9 @@
 # input
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-components-basic-input
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 交互式组件，包括单选框，多选框，按钮。
 
@@ -12,17 +12,20 @@
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 不支持。
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
+
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
@@ -38,32 +41,44 @@
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
  - 当input类型为checkbox、radio时，支持如下事件：
 
 | 名称 | 参数 | 描述 |
+
 | --- | --- | --- |
+
 | change | { checked:true \| false } | checkbox多选框或radio单选框的checked状态发生变化时触发该事件。 |
+
 | click | - | 点击动作触发该事件。 |
+
 | longpress | - | 长按动作触发该事件。 |
-| swipe5+ | SwipeEvent | 组件上快速滑动后触发。 |
+
+| swipe5+ | SwipeEvent | 组件上快速滑动后触发的事件对象。 |
  - 当input类型为button时，支持如下事件：
 
 | 名称 | 参数 | 描述 |
+
 | --- | --- | --- |
+
 | click | - | 点击动作触发该事件。 |
+
 | longpress | - | 长按动作触发该事件。 |
-| swipe5+ | SwipeEvent | 组件上快速滑动后触发。 |
+
+| swipe5+ | SwipeEvent | 组件上快速滑动后触发的事件对象。 |
 
 
 
 
-#### 样式
+## 样式
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
+
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
@@ -86,9 +101,10 @@
 
 
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 1. type为button
 
   
@@ -202,4 +218,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/beL61PeyTtiUTly6rBYxsw/zh-cn_image_0000002656009240.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071526Z&HW-CC-Expire=86400&HW-CC-Sign=75F95E5E0B6A4A2DF7C6A7E94A2D44EDB9C6990E96B18A9E6DD2E8AB118A9E71)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/j6zy1zw-RZKzjnqPouwHlQ/zh-cn_image_0000002717613462.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073000Z&HW-CC-Expire=86400&HW-CC-Sign=4846B4F73D262030F4084CF0CD687B8BEB87A8FE0CA692275645EE00B7C1A146)

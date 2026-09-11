@@ -1,18 +1,19 @@
 # OH_Pixelmap_ImageInfo
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-nativemodule-oh-pixelmap-imageinfo
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 struct OH_Pixelmap_ImageInfo
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 OH_Pixelmap_ImageInfo是Native层封装的图像像素信息结构体，保存图像像素的宽高、行跨距、像素格式、透明度类型、是否为HDR等信息，适用于在Native层查询Pixelmap属性的场景。
  
@@ -20,6 +21,7 @@ OH_Pixelmap_ImageInfo是Native层封装的图像像素信息结构体，保存�
  
 OH_Pixelmap_ImageInfo结构体内容和操作方式如下：
   
+
 | 字段类型 | 字段名称 | 字段描述 | 操作函数 | 函数描述 |
 | --- | --- | --- | --- | --- |
 | uint32_t | width | 图片宽，单位：像素（px）。 | OH_PixelmapImageInfo_GetWidth | 获取图片宽。 |

@@ -1,6 +1,6 @@
 # CallerInfoQueryExtensionAbility (来去电信息查询扩展Ability)
 
-更新时间：2026-06-12 06:54:11
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/callservicekit-callerinfoquery-extension-ability
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
@@ -15,7 +15,8 @@ CallerInfoQueryExtensionAbility是来去电信息查询扩展Ability，提供通
 **起始版本：** 5.0.2(14)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -25,7 +26,8 @@ import { CallerInfoQueryExtensionAbility, CallerInfo, numberIdentify } from '@ki
  
   
 
-#### CallerInfoQueryExtensionAbility
+## CallerInfoQueryExtensionAbility
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -39,6 +41,7 @@ import { CallerInfoQueryExtensionAbility, CallerInfo, numberIdentify } from '@ki
 > 由于调用onQueryCallerInfo方法时，系统先创建应用的AbilityStage实例，请勿在AbilityStage中添加过于复杂耗时的逻辑，避免调用超时。
 
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | context | CallerInfoQueryExtensionContext | 否 | 否 | CallerInfoQueryExtensionContext的上下文环境，继承自ExtensionContext。 |
@@ -46,7 +49,8 @@ import { CallerInfoQueryExtensionAbility, CallerInfo, numberIdentify } from '@ki
  
   
 
-#### onQueryCallerInfo
+### onQueryCallerInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -62,6 +66,7 @@ onQueryCallerInfo(phoneNumber: string):Promise&lt;CallerInfo&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | phoneNumber | string | 是 | 需要查询的号码 |
@@ -69,6 +74,7 @@ onQueryCallerInfo(phoneNumber: string):Promise&lt;CallerInfo&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;CallerInfo&gt; | Promise对象，返回查询的号码信息。 |
@@ -80,7 +86,7 @@ onQueryCallerInfo(phoneNumber: string):Promise&lt;CallerInfo&gt;
 import { CallerInfoQueryExtensionAbility, CallerInfo } from '@kit.CallServiceKit';
 
 export default class EntryCallerInfoQueryExtAbility extends CallerInfoQueryExtensionAbility {
-  onQueryCallerInfo(phoneNumber: string): Promise<CallerInfo> {
+  async onQueryCallerInfo(phoneNumber: string): Promise<CallerInfo> {
     return new Promise<CallerInfo>((resolve, reject) => {
       let isSuccess = true;
       // 在此处实现根据号码查询企业联系人的业务逻辑
@@ -135,7 +141,8 @@ export default class EntryCallerInfoQueryExtAbility extends CallerInfoQueryExten
  
   
 
-#### onQueryBusinessServiceData
+### onQueryBusinessServiceData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -153,6 +160,7 @@ onQueryBusinessServiceData(phoneNumber: string): Promise<Array&lt;BusinessServic
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | phoneNumber | string | 是 | 需要查询的号码 |
@@ -160,6 +168,7 @@ onQueryBusinessServiceData(phoneNumber: string): Promise<Array&lt;BusinessServic
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;BusinessServiceData&gt;> | Promise对象，返回查询的企业服务信息列表。 |
@@ -205,7 +214,8 @@ export default class EntryCallerInfoQueryExtAbility extends CallerInfoQueryExten
  
   
 
-#### CallerInfo
+## CallerInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -217,6 +227,7 @@ export default class EntryCallerInfoQueryExtAbility extends CallerInfoQueryExten
  
 **起始版本：** 5.0.2(14)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | contactName | string | 否 | 否 | 联系人姓名：为保证页面最佳显示效果，字数建议限制在20字以内。 |

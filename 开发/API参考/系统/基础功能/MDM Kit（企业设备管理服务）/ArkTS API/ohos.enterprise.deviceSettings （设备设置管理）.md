@@ -1,18 +1,19 @@
 # @ohos.enterprise.deviceSettings（设备设置管理）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-devicesettings
 **支持设备：** Phone | PC/2in1 | Tablet
 
-本模块提供企业设备设置能力，包括设置、获取设备息屏时间等。
+本模块提供企业设备设置能力，支持设置和获取设备息屏时间、系统时间、电源策略、护眼模式、默认输入法、壁纸、隐藏设置项等。
 
 > [!NOTE]
 > 本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 本模块接口仅可在Stage模型下使用。 本模块接口仅对设备管理应用开放，且调用接口前需激活设备管理应用，具体请参考 MDM Kit开发指南 。
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -22,7 +23,8 @@ import { deviceSettings } from '@kit.MDMKit';
 
 
 
-#### deviceSettings.setValue
+## deviceSettings.setValue
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -40,6 +42,7 @@ setValue(admin: Want, item: string, value: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -51,6 +54,7 @@ setValue(admin: Want, item: string, value: string): void
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 9200001 | The application is not an administrator application of the device. |
@@ -61,9 +65,10 @@ setValue(admin: Want, item: string, value: string): void
 
 **示例：**
 
-```text
+```json
 import { deviceSettings } from '@kit.MDMKit';
 import { Want } from '@kit.AbilityKit';
+import { inputMethod } from '@kit.IMEKit';
 
 let wantTemp: Want = {
   // 需根据实际情况进行替换
@@ -71,6 +76,7 @@ let wantTemp: Want = {
   abilityName: 'EnterpriseAdminAbility'
 };
 
+// 设置设备息屏时间为3秒
 try {
   // 需根据实际情况进行替换
   deviceSettings.setValue(wantTemp, 'screenOff', '3000');
@@ -78,11 +84,57 @@ try {
 } catch (err) {
   console.error(`Failed to set screen off time. Code: ${err.code}, message: ${err.message}`);
 }
+
+// 设置系统时间，value为要设置的系统时间（单位：毫秒）
+try {
+  // 需根据实际情况进行替换
+  deviceSettings.setValue(wantTemp, 'dateTime', '1698768000000');
+  console.info(`Succeeded in setting date time.`);
+} catch (err) {
+  console.error(`Failed to set date time. Code: ${err.code}, message: ${err.message}`);
+}
+
+// 设置设备电源策略，超时灭屏后自动进入睡眠，延迟时间为60000毫秒（该能力仅支持PC/2in1设备）
+try {
+  // 需根据实际情况进行替换
+  let powerPolicyString: string = JSON.stringify({
+    powerPolicyAction: 1,
+    delayTime: 60000
+  });
+  let value: string = JSON.stringify({
+    powerScene: 0,
+    powerPolicy: powerPolicyString
+  });
+  deviceSettings.setValue(wantTemp, 'powerPolicy', value);
+  console.info(`Succeeded in setting power policy.`);
+} catch (err) {
+  console.error(`Failed to set power policy. Code: ${err.code}, message: ${err.message}`);
+}
+
+// 设置护眼模式为全天开启，value可设置为on或off
+try {
+  // 需根据实际情况进行替换
+  deviceSettings.setValue(wantTemp, 'eyeComfort', 'on');
+  console.info(`Succeeded in setting eye comfort.`);
+} catch (err) {
+  console.error(`Failed to set eye comfort. Code: ${err.code}, message: ${err.message}`);
+}
+
+// 设置默认输入法，value为输入法应用包名
+try {
+  // 需根据实际情况进行替换
+  let currentInputMethod: inputMethod.InputMethodProperty = inputMethod.getCurrentInputMethod();
+  deviceSettings.setValue(wantTemp, 'defaultInputMethod', currentInputMethod.name);
+  console.info(`Succeeded in setting default input method.`);
+} catch (err) {
+  console.error(`Failed to set default input method. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 
 
-#### deviceSettings.getValue
+## deviceSettings.getValue
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -98,6 +150,7 @@ getValue(admin: Want, item: string): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -106,14 +159,16 @@ getValue(admin: Want, item: string): string
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| string | 策略类型值。 当item为screenOff时，返回设备息屏时间（单位：毫秒），对于PC/2in1设备，返回设备电池供电下的息屏时间（单位：毫秒）。 当item为powerPolicy时，返回电源策略，对于PC/2in1设备，返回设备电池供电下的电源策略，格式为JSON字符串:{"powerScene":xx,"powerPolicy":{"powerPolicyAction":xx,"delayTime":xx}}。powerScene为电源策略场景；delayTime为延迟时间（单位：毫秒）；powerPolicyAction为休眠策略。 电源策略场景： - 0：超时场景。 休眠策略： - 0：不执行动作。 - 1：自动进入睡眠。 - 2：强制进入睡眠。 - 3：进入休眠，该策略暂不生效。 - 4：关机。 当item为eyeComfort时，返回的value为护眼模式开关状态的字符串。 - on：全天开启护眼模式。 - off：关闭护眼模式。 - unknown：其他模式。 |
+| string | 策略类型值。 当item为screenOff时，返回设备息屏时间（单位：毫秒），对于PC/2in1设备，返回设备电池供电下的息屏时间（单位：毫秒）。 当item为powerPolicy时，返回电源策略，对于PC/2in1设备，返回设备电池供电下的电源策略，格式为JSON字符串：{"powerScene":xx,"powerPolicy":{"powerPolicyAction":xx,"delayTime":xx}}。powerScene为电源策略场景；delayTime为延迟时间（单位：毫秒）；powerPolicyAction为休眠策略。 电源策略场景： - 0：超时场景。 休眠策略： - 0：不执行动作。 - 1：自动进入睡眠。 - 2：强制进入睡眠。 - 3：进入休眠，该策略暂不生效。 - 4：关机。 当item为eyeComfort时，返回的value为护眼模式开关状态的字符串。 - on：全天开启护眼模式。 - off：关闭护眼模式。 - unknown：其他模式。 |
 
 
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -125,7 +180,7 @@ getValue(admin: Want, item: string): string
 
 **示例：**
 
-```text
+```json
 import { deviceSettings } from '@kit.MDMKit';
 import { Want } from '@kit.AbilityKit';
 
@@ -135,6 +190,7 @@ let wantTemp: Want = {
   abilityName: 'EnterpriseAdminAbility'
 };
 
+// 获取设备息屏时间，返回设备息屏时间（单位：毫秒）
 try {
   // 参数需根据实际情况进行替换
   let result: string = deviceSettings.getValue(wantTemp, 'screenOff');
@@ -142,11 +198,30 @@ try {
 } catch (err) {
   console.error(`Failed to get screen off time. Code: ${err.code}, message: ${err.message}`);
 }
+
+// 获取设备电源策略（仅支持PC/2in1设备），返回JSON字符串{"powerScene":xx,"powerPolicy":{"powerPolicyAction":xx,"delayTime":xx}}
+try {
+  // 参数需根据实际情况进行替换
+  let result: string = deviceSettings.getValue(wantTemp, 'powerPolicy');
+  console.info(`Succeeded in getting power policy, result : ${result}`);
+} catch (err) {
+  console.error(`Failed to get power policy. Code: ${err.code}, message: ${err.message}`);
+}
+
+// 获取护眼模式开关状态，返回值为on、off或unknown
+try {
+  // 参数需根据实际情况进行替换
+  let result: string = deviceSettings.getValue(wantTemp, 'eyeComfort');
+  console.info(`Succeeded in getting eye comfort, result : ${result}`);
+} catch (err) {
+  console.error(`Failed to get eye comfort. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 
 
-#### deviceSettings.setHomeWallpaper20+
+## deviceSettings.setHomeWallpaper20+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -158,9 +233,12 @@ setHomeWallpaper(admin: Want, fd: number): Promise&lt;void&gt;
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **冲突规则：** [配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则3配置)。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -170,6 +248,7 @@ setHomeWallpaper(admin: Want, fd: number): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。当设置桌面壁纸失败后会抛出错误对象。 |
@@ -178,6 +257,7 @@ setHomeWallpaper(admin: Want, fd: number): Promise&lt;void&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -193,7 +273,7 @@ setHomeWallpaper(admin: Want, fd: number): Promise&lt;void&gt;
 import { deviceSettings } from '@kit.MDMKit';
 import { common, Want } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
-import { fileIo as fs }  from '@kit.CoreFileKit';
+import { fileIo } from '@kit.CoreFileKit';
 
 let wantTemp: Want = {
   // 请根据实际情况修改
@@ -206,33 +286,37 @@ const context = this.getUIContext().getHostContext() as common.UIAbilityContext;
 // 参数根据实际情况进行替换
 let filename: string = "homewallpaper.jpg";
 let filePath: string = context.filesDir + '/' + filename;
-let fd: number = fs.openSync(filePath, fs.OpenMode.READ_WRITE).fd;
+let fd: number = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE).fd;
 deviceSettings.setHomeWallpaper(wantTemp, fd).then(() => {
   console.info('Succeeded in setting home wallpaper');
 }).catch((err: BusinessError) => {
   console.error(`Failed to set home wallpaper. Code: ${err.code}, message: ${err.message}`);
 }).finally(() => {
-  fs.closeSync(fd);
+  fileIo.closeSync(fd);
 });
 ```
 
 
 
-#### deviceSettings.setUnlockWallpaper20+
+## deviceSettings.setUnlockWallpaper20+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 setUnlockWallpaper(admin: Want, fd: number): Promise&lt;void&gt;
 
-设置锁屏壁纸，使用Promise异步回调。
+设置锁屏壁纸，使用Promise异步回调。企业设备管理应用可通过此接口统一设置企业设备的锁屏壁纸，用于企业形象展示或安全管控等场景。
 
 **需要权限：** ohos.permission.ENTERPRISE_SET_WALLPAPER
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **冲突规则：** [配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi-mdm#规则3配置)。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -242,6 +326,7 @@ setUnlockWallpaper(admin: Want, fd: number): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。当设置锁屏壁纸失败后会抛出错误对象。 |
@@ -250,6 +335,7 @@ setUnlockWallpaper(admin: Want, fd: number): Promise&lt;void&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -265,7 +351,7 @@ setUnlockWallpaper(admin: Want, fd: number): Promise&lt;void&gt;
 import { deviceSettings } from '@kit.MDMKit';
 import { common, Want } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
-import { fileIo as fs }  from '@kit.CoreFileKit';
+import { fileIo } from '@kit.CoreFileKit';
 
 let wantTemp: Want = {
   // 需根据实际情况进行替换
@@ -278,19 +364,20 @@ const context = this.getUIContext().getHostContext() as common.UIAbilityContext;
 // 参数根据实际情况进行替换
 let filename: string = "lockwallpaper.jpg";
 let filePath: string = context.filesDir + '/' + filename;
-let fd: number = fs.openSync(filePath, fs.OpenMode.READ_WRITE).fd;
+let fd: number = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE).fd;
 deviceSettings.setUnlockWallpaper(wantTemp, fd).then(() => {
   console.info('Succeeded in setting lock wallpaper');
 }).catch((err: BusinessError) => {
   console.error(`Failed to set lock wallpaper. Code: ${err.code}, message: ${err.message}`);
 }).finally(() => {
-  fs.closeSync(fd);
+  fileIo.closeSync(fd);
 });
 ```
 
 
 
-#### deviceSettings.setValueForAccount24+
+## deviceSettings.setValueForAccount24+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -306,6 +393,7 @@ setValueForAccount(admin: Want, item: SettingsItem, accountId: number, value: st
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -317,6 +405,7 @@ setValueForAccount(admin: Want, item: SettingsItem, accountId: number, value: st
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -342,7 +431,7 @@ let wantTemp: Want = {
 try {
   // 需根据实际情况进行替换
   let accountId = 100;
-  let deviceName: string = "deviceName"
+  let deviceName: string = "deviceName";
   deviceSettings.setValueForAccount(wantTemp, deviceSettings.SettingsItem.DEVICE_NAME, accountId, deviceName);
   console.info('Succeeded in setting device name.');
 } catch (err) {
@@ -352,7 +441,8 @@ try {
 
 
 
-#### deviceSettings.getValueForAccount24+
+## deviceSettings.getValueForAccount24+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -368,14 +458,16 @@ getValueForAccount(admin: Want, item: SettingsItem, accountId: number): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| item | SettingsItem | 是 | 设备设置策略类型。 |
+| item | SettingsItem | 是 | 设备设置策略类型。支持的策略类型包括：DEVICE_NAME（设备名称）、FLOATING_NAVIGATION（三键导航）。 |
 | accountId | number | 是 | 用户ID，取值范围：大于等于0。 accountId可以通过getOsAccountLocalId等接口来获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -385,6 +477,7 @@ getValueForAccount(admin: Want, item: SettingsItem, accountId: number): string
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -419,9 +512,10 @@ try {
 
 
 
-#### deviceSettings.addHiddenSettingsMenu24+
+## deviceSettings.addHiddenSettingsMenu24+
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | Tablet
 
 addHiddenSettingsMenu(admin: Want, menusToHidden: Array&lt;SettingsMenu&gt;): void
 
@@ -437,6 +531,7 @@ addHiddenSettingsMenu(admin: Want, menusToHidden: Array&lt;SettingsMenu&gt;): vo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -446,6 +541,7 @@ addHiddenSettingsMenu(admin: Want, menusToHidden: Array&lt;SettingsMenu&gt;): vo
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -472,8 +568,8 @@ let wantTemp: Want = {
 let menusToHidden: Array<deviceSettings.SettingsMenu> = [
   // 需根据实际情况进行替换或增加
   deviceSettings.SettingsMenu.ACCOUNT_ID,
-  deviceSettings.SettingsMenu.WIFI,
-]
+  deviceSettings.SettingsMenu.WIFI
+];
 
 try {
   deviceSettings.addHiddenSettingsMenu(wantTemp, menusToHidden);
@@ -485,9 +581,10 @@ try {
 
 
 
-#### deviceSettings.removeHiddenSettingsMenu24+
+## deviceSettings.removeHiddenSettingsMenu24+
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | Tablet
 
 removeHiddenSettingsMenu(admin: Want, menusToHidden: Array&lt;SettingsMenu&gt;): void
 
@@ -505,6 +602,7 @@ removeHiddenSettingsMenu(admin: Want, menusToHidden: Array&lt;SettingsMenu&gt;):
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -514,6 +612,7 @@ removeHiddenSettingsMenu(admin: Want, menusToHidden: Array&lt;SettingsMenu&gt;):
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -541,8 +640,8 @@ let wantTemp: Want = {
 let menusToHidden: Array<deviceSettings.SettingsMenu> = [
   // 需根据实际情况进行替换或增加
   deviceSettings.SettingsMenu.ACCOUNT_ID,
-  deviceSettings.SettingsMenu.WIFI,
-]
+  deviceSettings.SettingsMenu.WIFI
+];
 
 try {
   deviceSettings.removeHiddenSettingsMenu(wantTemp, menusToHidden);
@@ -554,9 +653,10 @@ try {
 
 
 
-#### deviceSettings.getHiddenSettingsMenu24+
+## deviceSettings.getHiddenSettingsMenu24+
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | Tablet
 
 getHiddenSettingsMenu(admin: Want): Array&lt;SettingsMenu&gt;
 
@@ -572,12 +672,14 @@ getHiddenSettingsMenu(admin: Want): Array&lt;SettingsMenu&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -587,6 +689,7 @@ getHiddenSettingsMenu(admin: Want): Array&lt;SettingsMenu&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -622,13 +725,14 @@ try {
 
 
 
-#### deviceSettings.setSwitchStatus
+## deviceSettings.setSwitchStatus
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 setSwitchStatus(admin: Want, key: SwitchKey, status: SwitchStatus): void
 
-设置开关的状态。支持设置星闪、蓝牙、Wi-Fi、NFC的状态为开启或关闭，设置完毕后，用户可以手动开关。支持设置蓝牙、NFC的状态为强制开启，设置完毕后，用户不可以手动开关。若已经通过[setDisallowedPolicy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-restrictions#restrictionssetdisallowedpolicydeprecated) 接口禁用了某个开关，则通过本接口设置这个开关的状态会抛出错误码203，需通过[setDisallowedPolicy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-restrictions#restrictionssetdisallowedpolicydeprecated) 接口解除该开关禁用策略。当设备有多个MDM应用时，各MDM应用设置开关状态不存在冲突，最后设置的策略生效。开启(用户可手动开启、关闭)、关闭(用户可手动开启、关闭)、强制开启(用户不可手动关闭)三个状态可以随意切换，也不存在冲突。
+设置开关的状态。支持设置星闪、蓝牙、Wi-Fi、NFC的状态为开启或关闭，设置完毕后，用户可以手动开关。支持设置蓝牙、NFC的状态为强制开启，设置完毕后，用户不可以手动开关。若已经通过[setDisallowedPolicy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-restrictions#restrictionssetdisallowedpolicydeprecated) 接口禁用了某个开关，则通过本接口设置这个开关的状态会抛出错误码203，需通过[setDisallowedPolicy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-restrictions#restrictionssetdisallowedpolicydeprecated) 接口解除该开关禁用策略。当设备有多个MDM应用时，各MDM应用设置开关状态不存在冲突，最后设置的策略生效。开启（用户可手动开启、关闭）、关闭（用户可手动开启、关闭）、强制开启（用户不可手动关闭）三个状态可以随意切换，也不存在冲突。
 
 **起始版本：** 26.0.0
 
@@ -642,6 +746,7 @@ setSwitchStatus(admin: Want, key: SwitchKey, status: SwitchStatus): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | Want | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
@@ -652,6 +757,7 @@ setSwitchStatus(admin: Want, key: SwitchKey, status: SwitchStatus): void
 **错误码**：
 
 以下错误码的详细介绍请参见[企业设备管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprisedevicemanager)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -689,13 +795,17 @@ try {
 
 
 
-#### SettingsItem24+
+## SettingsItem24+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 设置的策略类型。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -705,13 +815,17 @@ try {
 
 
 
-#### SettingsMenu24+
+## SettingsMenu24+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 设置项列表。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -762,7 +876,8 @@ try {
 
 
 
-#### SwitchKey
+## SwitchKey
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -774,6 +889,7 @@ try {
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
+
 | 名称 | 值 | 说明 | 需要权限 |
 | --- | --- | --- | --- |
 | NEARLINK | 0 | 星闪开关。 | ohos.permission.ENTERPRISE_MANAGE_SETTINGS 或 ohos.permission.PERSONAL_MANAGE_RESTRICTIONS |
@@ -784,7 +900,8 @@ try {
 
 
 
-#### SwitchStatus
+## SwitchStatus
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -795,6 +912,7 @@ try {
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
 
 | 名称 | 值 | 说明 | 需要权限 |
 | --- | --- | --- | --- |

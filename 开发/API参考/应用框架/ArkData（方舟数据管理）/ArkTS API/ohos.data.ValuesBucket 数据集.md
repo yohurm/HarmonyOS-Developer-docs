@@ -1,9 +1,9 @@
 # @ohos.data.ValuesBucket (数据集)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-data-valuesbucket
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **数据集（ValuesBucket）** 是开发者向数据库插入的数据集合，数据集以键值对的形式进行传输。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { ValueType, ValuesBucket } from '@kit.ArkData';
@@ -22,9 +23,10 @@ import { ValueType, ValuesBucket } from '@kit.ArkData';
  
   
 
-#### ValueType
+## ValueType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ValueType = number | string | boolean
  
@@ -34,6 +36,7 @@ type ValueType = number | string | boolean
  
 **系统能力：** SystemCapability.DistributedDataManager.DataShare.Core
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 表示字段类型为数字。 |
@@ -43,9 +46,10 @@ type ValueType = number | string | boolean
  
   
 
-#### ValuesBucket
+## ValuesBucket
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ValuesBucket = Record<string, ValueType | Uint8Array | null>
  
@@ -53,6 +57,7 @@ type ValuesBucket = Record<string, ValueType | Uint8Array | null>
  
 **系统能力：** SystemCapability.DistributedDataManager.DataShare.Core
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Record<string, ValueType \| Uint8Array \| null> | 表示键值对类型。键的类型为string，值的类型为ValueType \| Uint8Array \| null。 |

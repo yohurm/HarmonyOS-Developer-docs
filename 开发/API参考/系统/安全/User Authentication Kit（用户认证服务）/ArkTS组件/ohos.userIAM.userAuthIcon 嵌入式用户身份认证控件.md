@@ -1,6 +1,6 @@
 # @ohos.userIAM.userAuthIcon (嵌入式用户身份认证控件)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-useriam-userauthicon
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
@@ -19,13 +19,17 @@
 
 
 
-#### 关键Class/Interface介绍
+## 关键Class/Interface介绍
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 
 
-#### UserAuthIcon组件
+### UserAuthIcon组件
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 UserAuthIcon是一个ArkTS自定义组件（@Component struct），封装了认证图标展示和认证触发逻辑。开发者只需传入认证参数和结果回调，即可快速实现认证功能。
 
@@ -45,7 +49,8 @@ UserAuthIcon是一个ArkTS自定义组件（@Component struct），封装了认�
 
 
 
-#### API组合使用关系说明
+## API组合使用关系说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -83,7 +88,8 @@ UserAuthIcon({
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -93,7 +99,8 @@ import { userAuth, UserAuthIcon } from '@kit.UserAuthenticationKit';
 
 
 
-#### 子组件
+## 子组件
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -101,7 +108,8 @@ import { userAuth, UserAuthIcon } from '@kit.UserAuthenticationKit';
 
 
 
-#### 属性
+## 属性
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -109,7 +117,8 @@ import { userAuth, UserAuthIcon } from '@kit.UserAuthenticationKit';
 
 
 
-#### UserAuthIcon
+## UserAuthIcon
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -134,6 +143,7 @@ UserAuthIcon({
 
 **参数：**
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | authParam | userAuth.AuthParam | 否 | 否 | 用户认证相关参数。包含挑战值（challenge）、认证类型列表（authType）、认证可信等级（authTrustLevel）等配置。挑战值用于防重放攻击，认证类型指定可用的认证方式（如人脸、指纹、PIN），认证可信等级决定认证的安全强度。 |
@@ -146,7 +156,8 @@ UserAuthIcon({
 
 
 
-#### 事件
+## 事件
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -154,7 +165,8 @@ UserAuthIcon({
 
 
 
-#### 示例
+## 示例
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -203,10 +215,10 @@ struct Index {
 **人脸认证图例：**
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/ZFEEIktqSPi2ZHVv7fa_HQ/zh-cn_image_0000002674475538.png?HW-CC-KV=V1&HW-CC-Date=20260813T095508Z&HW-CC-Expire=86400&HW-CC-Sign=08288797ADFE191F81E498368A30EF42BB34141C44D1E0C44E838AC57BA2E604)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/THuKLD7QSoGbt0wb-9GeRQ/zh-cn_image_0000002747293541.png?HW-CC-KV=V1&HW-CC-Date=20260911T073031Z&HW-CC-Expire=86400&HW-CC-Sign=051D62C20D820E78CDF4F1DFCD3785A9EC7DBDE96F4D27B45B3F2E09212EFCE6)
 
 
 **指纹认证图例：**
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/Tg5BO4oEQg2xJjk1kM-T2Q/zh-cn_image_0000002704395505.png?HW-CC-KV=V1&HW-CC-Date=20260813T095508Z&HW-CC-Expire=86400&HW-CC-Sign=B5764A1BB44E8E58549B9A7BEFB28053C0439B223B39DE75EC12F70C51CC6768)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/KkWbtbARSiGxmYjCc24qxA/zh-cn_image_0000002747213455.png?HW-CC-KV=V1&HW-CC-Date=20260911T073031Z&HW-CC-Expire=86400&HW-CC-Sign=63131F44368E531C90F2D3F4B0CEA88782D986202B48946986E0F8A8C9D0F618)

@@ -1,18 +1,19 @@
 # NativeDisplayManager_CutoutInfo
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nativedisplaymanager-cutoutinfo
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct {...} NativeDisplayManager_CutoutInfo
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 挖孔屏、刘海屏、瀑布屏等不可用屏幕区域信息。
  
@@ -24,18 +25,21 @@ typedef struct {...} NativeDisplayManager_CutoutInfo
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 成员变量
+### 成员变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | int32_t boundingRectsLength | 挖孔屏、刘海屏等不可用屏幕区域的数量。 |
-| NativeDisplayManager_Rect* boundingRects | 挖孔屏、刘海屏等不可用区域的边界矩形。 |
+| NativeDisplayManager_Rect* boundingRects | 挖孔屏、刘海屏等不可用屏幕区域的边界矩形。 |
 | NativeDisplayManager_WaterfallDisplayAreaRects waterfallDisplayAreaRects | 瀑布屏曲面部分显示区域。 |

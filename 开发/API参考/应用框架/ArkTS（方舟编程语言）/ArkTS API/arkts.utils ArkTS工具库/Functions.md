@@ -1,18 +1,19 @@
 # Functions
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-04 10:41:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-arkts-utils-f
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 此模块仅支持在ArkTS文件（文件后缀为.ets）中导入使用。
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { ArkTSUtils } from '@kit.ArkTS';
@@ -20,9 +21,10 @@ import { ArkTSUtils } from '@kit.ArkTS';
  
   
 
-#### ArkTSUtils.isSendable
+## ArkTSUtils.isSendable
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isSendable(value: Object | null | undefined): boolean
  
@@ -30,10 +32,13 @@ isSendable(value: Object | null | undefined): boolean
  
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
  
+**模型约束：** 此接口仅可在Stage模型下使用。
+ 
 **系统能力：** SystemCapability.Utils.Lang
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object \| null \| undefined | 是 | 待判断是否为Sendable数据类型的对象。 |
@@ -41,6 +46,7 @@ isSendable(value: Object | null | undefined): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | value是否为Sendable数据类型，true表示value是Sendable数据类型，否则为false。 |

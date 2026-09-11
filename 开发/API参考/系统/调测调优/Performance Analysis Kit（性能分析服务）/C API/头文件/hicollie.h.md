@@ -1,13 +1,14 @@
 # hicollie.h
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hicollie-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 HiCollie模块提供检测业务线程卡死、卡顿，以及上报卡死事件的能力。
 
@@ -23,15 +24,18 @@ HiCollie模块提供检测业务线程卡死、卡顿，以及上报卡死事件
 
 
 
-#### 汇总
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 汇总
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 结构体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -41,9 +45,11 @@ HiCollie模块提供检测业务线程卡死、卡顿，以及上报卡死事件
 
 
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -54,9 +60,11 @@ HiCollie模块提供检测业务线程卡死、卡顿，以及上报卡死事件
 
 
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -78,15 +86,17 @@ HiCollie模块提供检测业务线程卡死、卡顿，以及上报卡死事件
 
 
 
-#### 枚举类型说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 枚举类型说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### HiCollie_ErrorCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### HiCollie_ErrorCode
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum HiCollie_ErrorCode
@@ -97,6 +107,7 @@ enum HiCollie_ErrorCode
 错误码定义。
 
 **起始版本：** 12
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -113,9 +124,10 @@ enum HiCollie_ErrorCode
 
 
 
-#### HiCollie_Flag
+### HiCollie_Flag
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum HiCollie_Flag
@@ -127,6 +139,7 @@ enum HiCollie_Flag
 
 **起始版本：** 18
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | HICOLLIE_FLAG_DEFAULT = (~0) | 默认动作，生成日志及执行恢复动作。 |
@@ -137,9 +150,10 @@ enum HiCollie_Flag
 
 
 
-#### OH_HiCollie_Freeze_Type
+### OH_HiCollie_Freeze_Type
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_HiCollie_Freeze_Type
@@ -150,6 +164,7 @@ enum OH_HiCollie_Freeze_Type
 定义FreezeCallback返回的冻屏类型。
 
 **起始版本：** 24
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -165,15 +180,17 @@ enum OH_HiCollie_Freeze_Type
 
 
 
-#### 函数说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 函数说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### OH_HiCollie_Task()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### OH_HiCollie_Task()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_HiCollie_Task)(void)
@@ -191,9 +208,10 @@ HiCollie将在业务线程中每3秒调用一次该函数。
 
 
 
-#### OH_HiCollie_BeginFunc()
+### OH_HiCollie_BeginFunc()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_HiCollie_BeginFunc)(const char* eventName)
@@ -211,6 +229,7 @@ typedef void (*OH_HiCollie_BeginFunc)(const char* eventName)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char* eventName | 业务线程处理事件的名称，字符串类型。用于标识事件的唯一名称，应与OH_HiCollie_EndFunc的名称保持一致。 |
@@ -218,9 +237,10 @@ typedef void (*OH_HiCollie_BeginFunc)(const char* eventName)
 
 
 
-#### OH_HiCollie_EndFunc()
+### OH_HiCollie_EndFunc()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_HiCollie_EndFunc)(const char* eventName)
@@ -238,6 +258,7 @@ typedef void (*OH_HiCollie_EndFunc)(const char* eventName)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char* eventName | 业务线程处理事件的名称，字符串类型。用于标识事件的唯一名称，应与OH_HiCollie_BeginFunc的名称保持一致。 |
@@ -245,9 +266,10 @@ typedef void (*OH_HiCollie_EndFunc)(const char* eventName)
 
 
 
-#### OH_HiCollie_Init_StuckDetection()
+### OH_HiCollie_Init_StuckDetection()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 HiCollie_ErrorCode OH_HiCollie_Init_StuckDetection(OH_HiCollie_Task task)
@@ -267,12 +289,14 @@ HiCollie_ErrorCode OH_HiCollie_Init_StuckDetection(OH_HiCollie_Task task)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_HiCollie_Task task | 每3秒执行一次的周期性检测任务，用于检测业务线程是否卡住。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -281,9 +305,10 @@ HiCollie_ErrorCode OH_HiCollie_Init_StuckDetection(OH_HiCollie_Task task)
 
 
 
-#### OH_HiCollie_Init_StuckDetectionWithTimeout()
+### OH_HiCollie_Init_StuckDetectionWithTimeout()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 HiCollie_ErrorCode OH_HiCollie_Init_StuckDetectionWithTimeout(OH_HiCollie_Task task, uint32_t stuckTimeout)
@@ -303,6 +328,7 @@ HiCollie_ErrorCode OH_HiCollie_Init_StuckDetectionWithTimeout(OH_HiCollie_Task t
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_HiCollie_Task task | 每stuckTimeout时间执行一次的周期性检测任务，用于检测业务线程是否卡住。 |
@@ -311,6 +337,7 @@ HiCollie_ErrorCode OH_HiCollie_Init_StuckDetectionWithTimeout(OH_HiCollie_Task t
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | HiCollie_ErrorCode | HICOLLIE_SUCCESS 0 - 成功。 HICOLLIE_INVALID_ARGUMENT 401 - 卡死检测时间设置错误。 HICOLLIE_WRONG_THREAD_CONTEXT 29800001 - 调用线程错误。仅能在非主线程中调用该函数。 |
@@ -318,9 +345,10 @@ HiCollie_ErrorCode OH_HiCollie_Init_StuckDetectionWithTimeout(OH_HiCollie_Task t
 
 
 
-#### OH_HiCollie_Init_JankDetection()
+### OH_HiCollie_Init_JankDetection()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 HiCollie_ErrorCode OH_HiCollie_Init_JankDetection(OH_HiCollie_BeginFunc* beginFunc, OH_HiCollie_EndFunc* endFunc, HiCollie_DetectionParam param)
@@ -340,6 +368,7 @@ HiCollie_ErrorCode OH_HiCollie_Init_JankDetection(OH_HiCollie_BeginFunc* beginFu
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_HiCollie_BeginFunc* beginFunc | 业务线程执行任务前的回调函数，函数指针类型。需要在业务线程处理每个事件之前调用，用于记录业务线程处理事件的开始时间。 |
@@ -349,6 +378,7 @@ HiCollie_ErrorCode OH_HiCollie_Init_JankDetection(OH_HiCollie_BeginFunc* beginFu
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | HiCollie_ErrorCode | HICOLLIE_SUCCESS 0 - 成功。 HICOLLIE_INVALID_ARGUMENT 401 - 开始函数和结束函数两者都必须有值或为空，否则将返回该错误值。 HICOLLIE_WRONG_THREAD_CONTEXT 29800001 - 调用线程错误。仅能在非主线程中调用该函数。 |
@@ -356,9 +386,10 @@ HiCollie_ErrorCode OH_HiCollie_Init_JankDetection(OH_HiCollie_BeginFunc* beginFu
 
 
 
-#### OH_HiCollie_Report()
+### OH_HiCollie_Report()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 HiCollie_ErrorCode OH_HiCollie_Report(bool* isSixSecond)
@@ -380,12 +411,14 @@ HiCollie_ErrorCode OH_HiCollie_Report(bool* isSixSecond)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | bool* isSixSecond | 布尔指针，指向的布尔值表示业务线程卡死时长。如果卡住6秒，则为true，如果卡住3秒，则为false。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -394,9 +427,10 @@ HiCollie_ErrorCode OH_HiCollie_Report(bool* isSixSecond)
 
 
 
-#### OH_HiCollie_ReportInputBlock()
+### OH_HiCollie_ReportInputBlock()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 HiCollie_ErrorCode OH_HiCollie_ReportInputBlock()
@@ -424,6 +458,7 @@ HiCollie_ErrorCode OH_HiCollie_ReportInputBlock()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | HiCollie_ErrorCode | HICOLLIE_SUCCESS 0 - 成功。 HICOLLIE_REMOTE_FAILED 29800002 - 远程调用错误。请求IPC远程服务失败。 |
@@ -431,9 +466,10 @@ HiCollie_ErrorCode OH_HiCollie_ReportInputBlock()
 
 
 
-#### OH_HiCollie_Callback()
+### OH_HiCollie_Callback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_HiCollie_Callback)(void*)
@@ -447,9 +483,10 @@ typedef void (*OH_HiCollie_Callback)(void*)
 
 
 
-#### OH_HiCollie_SetTimer()
+### OH_HiCollie_SetTimer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 HiCollie_ErrorCode OH_HiCollie_SetTimer(HiCollie_SetTimerParam param, int *id)
@@ -467,6 +504,7 @@ HiCollie_ErrorCode OH_HiCollie_SetTimer(HiCollie_SetTimerParam param, int *id)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | HiCollie_SetTimerParam param | 定时器配置参数，结构体类型。 该接口用于定义定时器的名称、超时时间、回调函数等配置信息。详细接口参考HiCollie_SetTimerParam。 |
@@ -475,6 +513,7 @@ HiCollie_ErrorCode OH_HiCollie_SetTimer(HiCollie_SetTimerParam param, int *id)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | HiCollie_ErrorCode | HICOLLIE_SUCCESS 0 - 成功。 HICOLLIE_INVALID_TIMER_NAME 29800003 - 无效的计时器名称，不应为NULL或空字符串。 HICOLLIE_INVALID_TIMEOUT_VALUE 29800004 - 无效的超时值。 HICOLLIE_WRONG_PROCESS_CONTEXT 29800005 - 无效的接入检测进程上下文，appspawn与nativespawn进程中不可调用。 HICOLLIE_WRONG_TIMER_ID_OUTPUT_PARAM 29800006 - 用于保存返回的计时器id的指针，不应该为NULL。 |
@@ -482,9 +521,10 @@ HiCollie_ErrorCode OH_HiCollie_SetTimer(HiCollie_SetTimerParam param, int *id)
 
 
 
-#### OH_HiCollie_CancelTimer()
+### OH_HiCollie_CancelTimer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_HiCollie_CancelTimer(int id)
@@ -502,6 +542,7 @@ void OH_HiCollie_CancelTimer(int id)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | int id | 执行OH_HiCollie_SetTimer函数后更新的计时器id。 |
@@ -509,9 +550,10 @@ void OH_HiCollie_CancelTimer(int id)
 
 
 
-#### OH_HiCollie_FreezeCallback()
+### OH_HiCollie_FreezeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef size_t (*OH_HiCollie_FreezeCallback)(OH_HiCollie_Freeze_Type type, void* buffer, size_t size)
@@ -525,6 +567,7 @@ typedef size_t (*OH_HiCollie_FreezeCallback)(OH_HiCollie_Freeze_Type type, void*
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_HiCollie_Freeze_Type type | 冻屏事件类型。具体类型详见：OH_HiCollie_Freeze_Type。 |
@@ -534,13 +577,14 @@ typedef size_t (*OH_HiCollie_FreezeCallback)(OH_HiCollie_Freeze_Type type, void*
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | size_t | 已使用的缓冲区大小，单位字节。 |
 
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/utPMJrDwRdSPa_wpur2cyg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095517Z&HW-CC-Expire=86400&HW-CC-Sign=B1606597D1118DF3BDD7A07F4DE6C5FEF9A96BBABBBE30A8AB2D971F343F0DA1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/Vm0w5kbwS8aYULmNl1dARQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072308Z&HW-CC-Expire=86400&HW-CC-Sign=1D131977EB0395FD8749E0214565A7EF00F0D72966B5458AB305186A51323BC0)
 
 
 返回值超过64KB时，日志内容可能为空。
@@ -549,9 +593,10 @@ typedef size_t (*OH_HiCollie_FreezeCallback)(OH_HiCollie_Freeze_Type type, void*
 
 
 
-#### OH_HiCollie_SetFreezeCallback()
+### OH_HiCollie_SetFreezeCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void* OH_HiCollie_SetFreezeCallback(OH_HiCollie_FreezeCallback callback)
@@ -565,12 +610,14 @@ void* OH_HiCollie_SetFreezeCallback(OH_HiCollie_FreezeCallback callback)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_HiCollie_FreezeCallback callback | 回调函数。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -579,9 +626,10 @@ void* OH_HiCollie_SetFreezeCallback(OH_HiCollie_FreezeCallback callback)
 
 
 
-#### OH_HiCollie_AssociateProcessReport()
+### OH_HiCollie_AssociateProcessReport()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 HiCollie_ErrorCode OH_HiCollie_AssociateProcessReport(bool isFreezeEvent)
@@ -595,6 +643,7 @@ HiCollie_ErrorCode OH_HiCollie_AssociateProcessReport(bool isFreezeEvent)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | bool isFreezeEvent | 上报事件类型。true：上报6S冻屏事件。false：上报3S冻屏事件。 |
@@ -605,6 +654,7 @@ HiCollie_ErrorCode OH_HiCollie_AssociateProcessReport(bool isFreezeEvent)
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |

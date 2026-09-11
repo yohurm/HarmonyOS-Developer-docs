@@ -1,13 +1,14 @@
 # native_avsession_errors.h
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avsession-errors-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供播控错误码的定义。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | AVSession_ErrCode | AVSession_ErrCode | 播控错误码。 |
@@ -43,15 +47,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### AVSession_ErrCode
+### AVSession_ErrCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum AVSession_ErrCode
@@ -63,6 +69,7 @@ enum AVSession_ErrCode
  
 **起始版本：** 13
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AV_SESSION_ERR_SUCCESS = 0 | 操作成功。 |
@@ -108,12 +115,12 @@ enum AVSession_ErrCode
 | AV_SESSION_ERR_CODE_CAST_CONTROL_PARSING_CONTAINER_MALFORMED = 6613001 | 媒体容器格式码流解析错误。 起始版本： 23 |
 | AV_SESSION_ERR_CODE_CAST_CONTROL_PARSING_MANIFEST_MALFORMED = 6613002 | 媒体清单解析错误。 起始版本： 23 |
 | AV_SESSION_ERR_CODE_CAST_CONTROL_PARSING_CONTAINER_UNSUPPORTED = 6613003 | 提取文件失败，不支持该媒体容器格式。 起始版本： 23 |
-| AV_SESSION_ERR_CODE_CAST_CONTROL_PARSING_MANIFEST_UNSUPPORTED = 6613004 | 媒体无法读取，如介质有灰尘、划痕。 起始版本： 23 |
+| AV_SESSION_ERR_CODE_CAST_CONTROL_PARSING_MANIFEST_UNSUPPORTED = 6613004 | 媒体清单中不支持此功能。 起始版本： 23 |
 | AV_SESSION_ERR_CODE_CAST_CONTROL_DECODING_UNSPECIFIED = 6614000 | 未知的解码错误。 起始版本： 23 |
 | AV_SESSION_ERR_CODE_CAST_CONTROL_DECODING_INIT_FAILED = 6614001 | 解码器初始化失败。 起始版本： 23 |
 | AV_SESSION_ERR_CODE_CAST_CONTROL_DECODING_QUERY_FAILED = 6614002 | 解码器查询失败。 起始版本： 23 |
 | AV_SESSION_ERR_CODE_CAST_CONTROL_DECODING_FAILED = 6614003 | 解码媒体样本时失败。 起始版本： 23 |
-| AV_SESSION_ERR_CODE_CAST_CONTROL_DECODING_FORMAT_EXCEEDS_CAPABILITIES = 6614004 | 内容请求使用次数达最大限制。 起始版本： 23 |
+| AV_SESSION_ERR_CODE_CAST_CONTROL_DECODING_FORMAT_EXCEEDS_CAPABILITIES = 6614004 | 所需解码的内容格式超出设备能力导致失败。 起始版本： 23 |
 | AV_SESSION_ERR_CODE_CAST_CONTROL_DECODING_FORMAT_UNSUPPORTED = 6614005 | 解码不支持的内容格式。 起始版本： 23 |
 | AV_SESSION_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_UNSPECIFIED = 6615000 | 音频渲染器出现未明确具体类型的异常错误。 起始版本： 23 |
 | AV_SESSION_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_INIT_FAILED = 6615001 | 音频渲染器初始化异常。 起始版本： 23 |
@@ -122,9 +129,10 @@ enum AVSession_ErrCode
  
   
 
-#### AVSessionCallback_Result
+### AVSessionCallback_Result
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum AVSessionCallback_Result
@@ -136,6 +144,7 @@ enum AVSessionCallback_Result
  
 **起始版本：** 13
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AVSESSION_CALLBACK_RESULT_SUCCESS = 0 | 会话的回调结果为执行成功。 |
@@ -144,9 +153,10 @@ enum AVSessionCallback_Result
  
   
 
-#### AVMetadata_Result
+### AVMetadata_Result
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum AVMetadata_Result
@@ -158,6 +168,7 @@ enum AVMetadata_Result
  
 **起始版本：** 13
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AVMETADATA_SUCCESS = 0 | 接口执行成功。 |
@@ -167,9 +178,10 @@ enum AVMetadata_Result
  
   
 
-#### AVQueueItem_Result
+### AVQueueItem_Result
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum AVQueueItem_Result
@@ -181,6 +193,7 @@ enum AVQueueItem_Result
  
 **起始版本：** 23
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AVQUEUEITEM_SUCCESS = 0 | 接口执行成功。 |

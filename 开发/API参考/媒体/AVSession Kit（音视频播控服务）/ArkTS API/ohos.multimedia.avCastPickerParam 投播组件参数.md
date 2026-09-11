@@ -1,6 +1,6 @@
 # @ohos.multimedia.avCastPickerParam (投播组件参数)
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-avcastpickerparam
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -12,7 +12,8 @@ avCastPickerParam提供了[@ohos.multimedia.avCastPicker](https://developer.huaw
 
   
 
-#### AVCastPickerState
+## AVCastPickerState
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -22,6 +23,7 @@ avCastPickerParam提供了[@ohos.multimedia.avCastPicker](https://developer.huaw
  
 **系统能力：** SystemCapability.Multimedia.AVSession.AVCast
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | STATE_APPEARING | 0 | 组件显示。 |
@@ -30,7 +32,8 @@ avCastPickerParam提供了[@ohos.multimedia.avCastPicker](https://developer.huaw
  
   
 
-#### AVCastPickerStyle12+
+## AVCastPickerStyle12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -40,6 +43,7 @@ avCastPickerParam提供了[@ohos.multimedia.avCastPicker](https://developer.huaw
  
 **系统能力：** SystemCapability.Multimedia.AVSession.AVCast
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | STYLE_PANEL | 0 | 面板样式。 |
@@ -48,7 +52,8 @@ avCastPickerParam提供了[@ohos.multimedia.avCastPicker](https://developer.huaw
  
   
 
-#### AVCastPickerColorMode12+
+## AVCastPickerColorMode12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -58,6 +63,7 @@ avCastPickerParam提供了[@ohos.multimedia.avCastPicker](https://developer.huaw
  
 **系统能力：** SystemCapability.Multimedia.AVSession.AVCast
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | AUTO | 0 | 跟随系统模式。 |

@@ -32,7 +32,7 @@ TabContent在切换过程中会触发[onSelected](https://developer.huawei.com/c
 @Entry
 @ComponentV2
 struct TabContentLoading {
-  // 记录页签是否显示过，true已显示，false未显示，默认显示第一个页签
+<em>  // 记录页签是否显示过，true已显示，false未显示，默认显示第一个页签</em>
   @Local tabContentArr: boolean[] = [true, false, false, false];
   tabContents: string[] = ['首页', '推荐', '发现', '我的'];
 
@@ -54,9 +54,9 @@ struct TabContentLoading {
           if (this.tabContentArr[index]) {
             return;
           }
-          // 模拟请求
+         <em> // 模拟请求</em>
           setTimeout(() => {
-            this.tabContentArr[index] = true; // 显示过设置为true
+            this.tabContentArr[index] = true; <em>// </em><em>显示过设置为true</em>
           }, 500);
         })
       }

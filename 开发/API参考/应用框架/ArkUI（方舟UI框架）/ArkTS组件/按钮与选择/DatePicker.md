@@ -1,9 +1,9 @@
 # DatePicker
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-datepicker
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 DatePicker是滑动选择日期的组件，支持公历和农历切换，可配置日期范围、选择模式和文本样式。用于需要用户选择日期的应用场景，提供统一的日期选择交互体验，能够提升用户体验，减少开发工作量。
 
@@ -12,17 +12,19 @@ DatePicker是滑动选择日期的组件，支持公历和农历切换，可配�
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该组件为基础组件，不建议包含子组件。
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 DatePicker(options?: DatePickerOptions)
 
@@ -34,6 +36,7 @@ DatePicker(options?: DatePickerOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | DatePickerOptions | 否 | 配置日期选择器组件的参数。不传该参数时使用默认配置（start默认为Date('1970-01-01')，end默认为Date('2100-12-31')，selected默认为当前系统日期）。 |
@@ -41,13 +44,15 @@ DatePicker(options?: DatePickerOptions)
 
 
 
-#### DatePickerOptions对象说明
+## DatePickerOptions对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 日期选择器组件的参数说明。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -62,6 +67,7 @@ DatePicker(options?: DatePickerOptions)
 
 
 **起始日期、结束日期和选中日期的异常情形说明：**
+
 
 | 异常情形 | 对应结果 |
 | --- | --- |
@@ -86,9 +92,10 @@ DatePicker(options?: DatePickerOptions)
 
 
 
-#### DatePickerMode18+枚举说明
+## DatePickerMode18+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置日期展示模式。
 
@@ -98,26 +105,29 @@ DatePicker(options?: DatePickerOptions)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DATE | 0 | 显示年、月、日三列。 |
-| YEAR_AND_MONTH | 1 | 显示年、月二列。 |
-| MONTH_AND_DAY | 2 | 显示月、日二列。 在此模式下，年份始终保持不变，取值为selected参数指定的年份。若selected未指定则取当前系统年份。当月份滚动导致日期超出有效范围时，日期会自动调整至该月最后一天。 |
+| YEAR_AND_MONTH | 1 | 显示年、月两列。 |
+| MONTH_AND_DAY | 2 | 显示月、日两列。 在此模式下，年份始终保持不变，取值为selected参数指定的年份。若selected未指定则取当前系统年份。当月份滚动导致日期超出有效范围时，日期会自动调整至该月最后一天。 |
 
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
 
 
 
-#### lunar
+### lunar
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 lunar(value: boolean)
 
@@ -133,6 +143,7 @@ lunar(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 日期是否显示为农历。 - true：显示为农历。 - false：不显示为农历。 默认值：false |
@@ -140,9 +151,10 @@ lunar(value: boolean)
 
 
 
-#### lunar18+
+### lunar18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 lunar(isLunar: Optional&lt;boolean&gt;)
 
@@ -160,6 +172,7 @@ lunar(isLunar: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isLunar | Optional&lt;boolean&gt; | 是 | 日期是否显示为农历。 - true：显示为农历。 - false：不显示为农历。 默认值：false 当isLunar的值为undefined时，使用默认值。 |
@@ -167,9 +180,10 @@ lunar(isLunar: Optional&lt;boolean&gt;)
 
 
 
-#### disappearTextStyle10+
+### disappearTextStyle10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 disappearTextStyle(value: PickerTextStyle)
 
@@ -183,6 +197,7 @@ disappearTextStyle(value: PickerTextStyle)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | PickerTextStyle | 是 | 边缘项的文本颜色、字号、字体粗细。 默认值： { color: '#ff182431', font: { size: '14fp', weight: FontWeight.Regular } } |
@@ -194,9 +209,10 @@ disappearTextStyle(value: PickerTextStyle)
 
 
 
-#### disappearTextStyle18+
+### disappearTextStyle18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 disappearTextStyle(style: Optional&lt;PickerTextStyle&gt;)
 
@@ -210,6 +226,7 @@ disappearTextStyle(style: Optional&lt;PickerTextStyle&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | Optional&lt;PickerTextStyle&gt; | 是 | 边缘项的文本颜色、字号、字体粗细。 默认值： { color: '#ff182431', font: { size: '14fp', weight: FontWeight.Regular } } 当style的值为undefined时，使用默认值。 |
@@ -221,9 +238,10 @@ disappearTextStyle(style: Optional&lt;PickerTextStyle&gt;)
 
 
 
-#### textStyle10+
+### textStyle10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 textStyle(value: PickerTextStyle)
 
@@ -237,6 +255,7 @@ textStyle(value: PickerTextStyle)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | PickerTextStyle | 是 | 待选项的文本颜色、字号、字体粗细。 默认值： { color: '#ff182431', font: { size: '16fp', weight: FontWeight.Regular } } |
@@ -248,9 +267,10 @@ textStyle(value: PickerTextStyle)
 
 
 
-#### textStyle18+
+### textStyle18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 textStyle(style: Optional&lt;PickerTextStyle&gt;)
 
@@ -264,6 +284,7 @@ textStyle(style: Optional&lt;PickerTextStyle&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | Optional&lt;PickerTextStyle&gt; | 是 | 待选项的文本颜色、字号、字体粗细。 默认值： { color: '#ff182431', font: { size: '16fp', weight: FontWeight.Regular } } 当style的值为undefined时，使用默认值。 |
@@ -275,9 +296,10 @@ textStyle(style: Optional&lt;PickerTextStyle&gt;)
 
 
 
-#### selectedTextStyle10+
+### selectedTextStyle10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectedTextStyle(value: PickerTextStyle)
 
@@ -291,6 +313,7 @@ selectedTextStyle(value: PickerTextStyle)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | PickerTextStyle | 是 | 选中项的文本颜色、字号、字体粗细。 默认值： { color: '#ff007dff', font: { size: '20fp', weight: FontWeight.Medium } } |
@@ -298,9 +321,10 @@ selectedTextStyle(value: PickerTextStyle)
 
 
 
-#### selectedTextStyle18+
+### selectedTextStyle18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectedTextStyle(style: Optional&lt;PickerTextStyle&gt;)
 
@@ -314,6 +338,7 @@ selectedTextStyle(style: Optional&lt;PickerTextStyle&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | Optional&lt;PickerTextStyle&gt; | 是 | 选中项的文本颜色、字号、字体粗细。 默认值： { color: '#ff007dff', font: { size: '20fp', weight: FontWeight.Medium } } 当style的值为undefined时，使用默认值。 |
@@ -321,9 +346,10 @@ selectedTextStyle(style: Optional&lt;PickerTextStyle&gt;)
 
 
 
-#### enableHapticFeedback18+
+### enableHapticFeedback18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableHapticFeedback(enable: Optional&lt;boolean&gt;)
 
@@ -336,6 +362,7 @@ enableHapticFeedback(enable: Optional&lt;boolean&gt;)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -354,9 +381,10 @@ enableHapticFeedback(enable: Optional&lt;boolean&gt;)
 
 
 
-#### digitalCrownSensitivity18+
+### digitalCrownSensitivity18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Wearable
 
 digitalCrownSensitivity(sensitivity: Optional&lt;CrownSensitivity&gt;)
 
@@ -370,6 +398,7 @@ digitalCrownSensitivity(sensitivity: Optional&lt;CrownSensitivity&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sensitivity | Optional&lt;CrownSensitivity&gt; | 是 | 表冠响应灵敏度。 默认值：CrownSensitivity.MEDIUM，响应速度适中。 |
@@ -381,9 +410,10 @@ digitalCrownSensitivity(sensitivity: Optional&lt;CrownSensitivity&gt;)
 
 
 
-#### canLoop20+
+### canLoop20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 canLoop(isLoop: Optional&lt;boolean&gt;)
 
@@ -397,6 +427,7 @@ canLoop(isLoop: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isLoop | Optional&lt;boolean&gt; | 是 | 是否可循环滚动。 - true：可循环滚动，年份随着月份的循环滚动进行联动加减，月份随着日的循环滚动进行联动加减。 - false：非循环滚动，年、月、日到达本列的顶部或底部时停止滚动，年、月、日之间保持独立，不进行联动加减。 默认值：true 当isLoop的值为undefined时，使用默认值。 说明： 设置了start或end且为非默认值的场景下，canLoop不生效。这是因为设置了日期范围限制后，循环滚动可能导致日期超出有效范围，为确保日期选择的准确性，强制使用非循环模式。 |
@@ -404,17 +435,19 @@ canLoop(isLoop: Optional&lt;boolean&gt;)
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)外，还支持以下事件：
 
 
 
-#### onChange(deprecated)
+### onChange(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onChange(callback: (value: DatePickerResult) => void)
 
@@ -426,6 +459,7 @@ onChange(callback: (value: DatePickerResult) => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | (value: DatePickerResult) => void | 是 | 返回选中的时间，包含年、月、日字段。 |
@@ -433,9 +467,10 @@ onChange(callback: (value: DatePickerResult) => void)
 
 
 
-#### onDateChange10+
+### onDateChange10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDateChange(callback: Callback&lt;Date&gt;)
 
@@ -449,6 +484,7 @@ onDateChange(callback: Callback&lt;Date&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;Date&gt; | 是 | 返回选中的时间，年、月、日为选中的日期，时、分取决于当前系统时间的时、分，秒恒为00。适用于需要在用户确认日期选择后获取选中日期、更新界面或执行业务逻辑的场景。 |
@@ -456,9 +492,10 @@ onDateChange(callback: Callback&lt;Date&gt;)
 
 
 
-#### onDateChange18+
+### onDateChange18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDateChange(callback: Optional<Callback&lt;Date&gt;>)
 
@@ -476,6 +513,7 @@ onDateChange(callback: Optional<Callback&lt;Date&gt;>)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Optional<Callback&lt;Date&gt;> | 是 | 返回选中的时间，年、月、日为选中的日期，时、分取决于当前系统时间的时、分，秒恒为00。适用于需要在用户确认日期选择后获取选中日期、更新界面或执行业务逻辑的场景。 当callback的值为undefined时，不使用回调函数。 |
@@ -483,15 +521,17 @@ onDateChange(callback: Optional<Callback&lt;Date&gt;>)
 
 
 
-#### DatePickerResult对象说明
+## DatePickerResult对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 日期选择器返回的时间格式。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -502,13 +542,17 @@ onDateChange(callback: Optional<Callback&lt;Date&gt;>)
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（切换公历农历）
+
+
+### 示例1（切换公历农历）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例实现了日期选择器组件，点击按钮可以切换公历农历。
 
@@ -544,12 +588,15 @@ struct DatePickerExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/wkqmdLqUTK-04n7DVWzMsw/zh-cn_image_0000002685928187.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071504Z&HW-CC-Expire=86400&HW-CC-Sign=CDEDDE444F114EC4994C26F2ACE1E2FA84DACC18E0482AFA842C54EBDF29631C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/rw63p2jSTq-seCeHTOBFdg/zh-cn_image_0000002717612726.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073103Z&HW-CC-Expire=86400&HW-CC-Sign=AC23AF151362ACC18B8291060947841DB3D6134529F020B79DC4500EEA9E73B7)
 
 
 
 
-#### 示例2（设置文本样式）
+### 示例2（设置文本样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置[disappearTextStyle](#disappeartextstyle10)、[textStyle](#textstyle10)、[selectedTextStyle](#selectedtextstyle10)设置文本样式。
 
@@ -581,12 +628,15 @@ struct DatePickerExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/rajKPogSQZGu4uES9CzYCA/zh-cn_image_0000002656008510.png?HW-CC-KV=V1&HW-CC-Date=20260730T071504Z&HW-CC-Expire=86400&HW-CC-Sign=54CF11612674E6C22C17A4DF9147DB239BE208455FCC0F938BCC598012592BB1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/Lu_bhMQ1SbiLrJMjJX8Q2Q/zh-cn_image_0000002747292679.png?HW-CC-KV=V1&HW-CC-Date=20260911T073103Z&HW-CC-Expire=86400&HW-CC-Sign=8ED2D5ADA74BC33CC85F3D9148D943ED8D438C234F0E25CD98E254997701A933)
 
 
 
 
-#### 示例3（设置显示年、月和月、日列）
+### 示例3（设置显示年、月和月、日列）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置mode参数实现显示年、月和月、日列。
 
@@ -638,12 +688,15 @@ struct DatePickerExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/vbr93HKcQd-Gfiiy2PWxHQ/zh-cn_image_0000002655848590.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071504Z&HW-CC-Expire=86400&HW-CC-Sign=3AF74B3AB540A3343F3A7DA810D83A8C089EE40C69411AECB87BF4E08CDB784A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/usTVpSuLTNOTZhtKcboBgA/zh-cn_image_0000002747212595.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073103Z&HW-CC-Expire=86400&HW-CC-Sign=EC169B9E939CC4FF5104848869011A25E2188FBAA9C85986314C0F2C1F0FBB46)
 
 
 
 
-#### 示例4（设置循环滚动）
+### 示例4（设置循环滚动）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 20开始，可以通过配置[canLoop](#canloop20)参数设置DatePicker是否循环滚动。
 
@@ -680,4 +733,4 @@ struct DatePickerExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/XyA5lkWuS5edTtncWqH-4w/zh-cn_image_0000002686088017.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071504Z&HW-CC-Expire=86400&HW-CC-Sign=88B55E2113C9B2744C267B5E060DBC0E8E5873D9F8B94368F89F2859BFF07D84)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/QRdtplQTSiqY4Ahcxfxfdg/zh-cn_image_0000002717772660.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073103Z&HW-CC-Expire=86400&HW-CC-Sign=B0E37B2EACE840E92774786A3829377210DCA73EBC12CD827885D8BBFD2E928E)

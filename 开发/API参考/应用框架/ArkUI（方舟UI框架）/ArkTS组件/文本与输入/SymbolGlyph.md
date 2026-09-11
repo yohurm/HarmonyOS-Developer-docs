@@ -1,9 +1,9 @@
 # SymbolGlyph
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-symbolglyph
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 SymbolGlyph组件用于显示系统预置的图标小符号，支持设置颜色、大小、粗细、渲染策略、动效策略等样式属性，适用于需要在应用中展示系统图标的场景，如导航栏图标、按钮图标、状态指示图标等。相比使用图片资源，SymbolGlyph具有体积小、可动态着色、支持动效等优势。相关资源可参考[系统图标](https://developer.huawei.com/consumer/cn/doc/design-guides/system-icons-0000001929854962)。
  
@@ -12,17 +12,19 @@ SymbolGlyph组件用于显示系统预置的图标小符号，支持设置颜色
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 不支持子组件。
  
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 SymbolGlyph(value?: Resource)
  
@@ -34,6 +36,7 @@ SymbolGlyph(value?: Resource)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Resource | 否 | SymbolGlyph组件的资源名，如 \$r('sys.symbol.ohos_wifi')。不传入时不显示图标。 |
@@ -45,17 +48,19 @@ SymbolGlyph(value?: Resource)
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)，不支持文本通用属性，仅支持以下特有属性：
  
   
 
-#### fontColor
+### fontColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontColor(value: Array&lt;ResourceColor&gt;)
  
@@ -73,6 +78,7 @@ fontColor(value: Array&lt;ResourceColor&gt;)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Array&lt;ResourceColor&gt; | 是 | SymbolGlyph组件字体颜色。 当value为undefined时，使用图标的默认颜色，默认颜色跟随主题。 不同渲染策略下颜色设置效果不同，详见SymbolRenderingStrategy枚举说明。 |
@@ -80,9 +86,10 @@ fontColor(value: Array&lt;ResourceColor&gt;)
  
   
 
-#### fontColor
+### fontColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontColor(value: Array<ResourceColor | ColorMetrics> | undefined)
  
@@ -102,6 +109,7 @@ fontColor(value: Array<ResourceColor | ColorMetrics> | undefined)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Array<ResourceColor \| ColorMetrics> \| undefined | 是 | SymbolGlyph组件字体颜色。支持传入ResourceColor或ColorMetrics类型的数组。 当value为undefined时，使用图标的默认颜色，默认颜色跟随主题。 |
@@ -109,9 +117,10 @@ fontColor(value: Array<ResourceColor | ColorMetrics> | undefined)
  
   
 
-#### fontSize
+### fontSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontSize(value: number | string | Resource)
  
@@ -131,6 +140,7 @@ fontSize(value: number | string | Resource)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| string \| Resource | 是 | SymbolGlyph组件字体大小。 取值范围：[0, +∞) 单位：fp 不支持设置百分比字符串。 |
@@ -138,9 +148,10 @@ fontSize(value: number | string | Resource)
  
   
 
-#### fontWeight
+### fontWeight
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontWeight(value: number | FontWeight | string)
  
@@ -160,16 +171,18 @@ sys.symbol.ohos_lungs图标不支持设置fontWeight。
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number \| FontWeight \| string | 是 | SymbolGlyph组件字体粗细。 number类型取值[100, 900]，取值间隔为100，默认为400，取值越大，字体越粗。string类型仅支持number类型取值的字符串形式，例如“400”，以及“bold”、“bolder”、“lighter”、“regular”、“medium”，分别对应FontWeight中相应的枚举值。设置过大可能会在不同字体下有截断。传入超出取值范围或不符合间隔要求的值时取默认值。 |
+| value | number \| FontWeight \| string | 是 | SymbolGlyph组件字体粗细。 number类型取值[100, 900]，取值间隔为100，默认为400，取值越大，字体越粗。string类型支持number类型取值的字符串形式，例如“400”，以及“bold”、“bolder”、“lighter”、“regular”、“medium”，分别对应FontWeight中相应的枚举值。设置过大可能会在不同字体下有截断。 说明： 传入超出取值范围的值时取默认值。传入不符合间隔要求的值时也取默认值（仅支持100整数倍的值）。 |
  
  
   
 
-#### fontWeight
+### fontWeight
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontWeight(value: number | FontWeight | ResourceStr, fontWeightConfigs?: FontWeightConfigs)
  
@@ -185,6 +198,7 @@ fontWeight(value: number | FontWeight | ResourceStr, fontWeightConfigs?: FontWei
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| FontWeight \| ResourceStr | 是 | SymbolGlyph组件图标小符号的粗细。 number类型取值[100, 900]，取值间隔为100，默认为400，取值越大，字体越粗。string类型仅支持number类型取值的字符串形式，例如“400”，以及“bold”、“bolder”、“lighter”、“regular”、“medium”，分别对应FontWeight中相应的枚举值。设置过大可能会在不同字体下有截断。 传入超出取值范围的值时取默认值。传入不符合间隔要求的值时，若设置fontWeightConfigs的enableVariableFontWeight为true，使用传入值；若设置为false，使用默认值。 |
@@ -193,9 +207,10 @@ fontWeight(value: number | FontWeight | ResourceStr, fontWeightConfigs?: FontWei
  
   
 
-#### renderingStrategy
+### renderingStrategy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 renderingStrategy(value: SymbolRenderingStrategy)
  
@@ -213,6 +228,7 @@ renderingStrategy(value: SymbolRenderingStrategy)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | SymbolRenderingStrategy | 是 | SymbolGlyph组件渲染策略。 |
@@ -226,9 +242,10 @@ renderingStrategy(value: SymbolRenderingStrategy)
  
   
 
-#### effectStrategy
+### effectStrategy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 effectStrategy(value: SymbolEffectStrategy)
  
@@ -246,6 +263,7 @@ effectStrategy(value: SymbolEffectStrategy)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | SymbolEffectStrategy | 是 | SymbolGlyph组件动效策略。 |
@@ -253,9 +271,10 @@ effectStrategy(value: SymbolEffectStrategy)
  
   
 
-#### symbolEffect12+
+### symbolEffect12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 symbolEffect(symbolEffect: SymbolEffect, isActive?: boolean)
  
@@ -273,6 +292,7 @@ symbolEffect(symbolEffect: SymbolEffect, isActive?: boolean)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | symbolEffect | SymbolEffect | 是 | SymbolGlyph组件动效策略。 |
@@ -281,9 +301,10 @@ symbolEffect(symbolEffect: SymbolEffect, isActive?: boolean)
  
   
 
-#### symbolEffect12+
+### symbolEffect12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 symbolEffect(symbolEffect: SymbolEffect, triggerValue?: number)
  
@@ -297,6 +318,7 @@ symbolEffect(symbolEffect: SymbolEffect, triggerValue?: number)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | symbolEffect | SymbolEffect | 是 | SymbolGlyph组件动效策略。 |
@@ -309,9 +331,10 @@ symbolEffect(symbolEffect: SymbolEffect, triggerValue?: number)
  
   
 
-#### minFontScale18+
+### minFontScale18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 minFontScale(scale: Optional<number | Resource>)
  
@@ -323,16 +346,18 @@ minFontScale(scale: Optional<number | Resource>)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| scale | Optional<number \| Resource> | 是 | SymbolGlyph组件最小的字体缩放倍数。 取值范围：[0, 1] 设置为0，缩放最小。 说明： 设置的值小于0时，按值为0处理。设置的值大于1时，按值为1处理。异常值默认不生效。 |
+| scale | Optional<number \| Resource> | 是 | SymbolGlyph组件最小的字体缩放倍数。 取值范围：[0, 1] 设置为0，缩放最小。 说明： 设置的值小于0时，按值为0处理。设置的值大于1时，按值为1处理。异常值默认不生效。未设置时，不限制最小缩放倍数。 |
  
  
   
 
-#### maxFontScale18+
+### maxFontScale18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 maxFontScale(scale: Optional<number | Resource>)
  
@@ -344,16 +369,18 @@ maxFontScale(scale: Optional<number | Resource>)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| scale | Optional<number \| Resource> | 是 | SymbolGlyph组件最大的字体缩放倍数。 取值范围：[1, +∞) 说明： 设置的值小于1时，按值为1处理。 |
+| scale | Optional<number \| Resource> | 是 | SymbolGlyph组件最大的字体缩放倍数。 取值范围：[1, +∞) 说明： 设置的值小于1时，按值为1处理。未设置时，不限制最大缩放倍数。 |
  
  
   
 
-#### shaderStyle20+
+### shaderStyle20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 shaderStyle(shader: Array<ShaderStyle | undefined> | ShaderStyle)
  
@@ -367,6 +394,7 @@ shaderStyle(shader: Array<ShaderStyle | undefined> | ShaderStyle)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | shader | Array<ShaderStyle \| undefined> \| ShaderStyle | 是 | 径向渐变或线性渐变或纯色。 传入ShaderStyle时，覆盖所有层；传入数组时，数据项是ShaderStyle，则应用该层；数组项是undefined，则该层使用SymbolGlyph默认颜色，未设置的层也应用默认颜色。根据传入的参数区分处理径向渐变RadialGradientStyle或线性渐变LinearGradientStyle或纯色ColorShaderStyle，最终设置到SymbolGlyph组件上显示为渐变色效果。 说明： 中心点请按百分比使用。如果使用的是非百分比（例如10PX），效果等同于设置1000%。 半径建议使用百分比。 百分比是基于图标大小的百分比，建议取值范围[0, 1)。 |
@@ -374,13 +402,14 @@ shaderStyle(shader: Array<ShaderStyle | undefined> | ShaderStyle)
  
   
 
-#### symbolShadow20+
+### symbolShadow20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 symbolShadow(shadow: Optional&lt;ShadowOptions&gt;)
  
-设置SymbolGlyph组件的阴影效果。未通过该接口设置时，默认阴影效果为{radius：0,color：Color.Black,offsetX：0,offsetY：0}。
+设置SymbolGlyph组件的阴影效果。未通过该接口设置时，默认阴影效果为{radius: 0,color: Color.Black,offsetX: 0,offsetY: 0}。
  
 **卡片能力：** 从API version 20开始，该接口支持在ArkTS卡片中使用。
  
@@ -390,16 +419,18 @@ symbolShadow(shadow: Optional&lt;ShadowOptions&gt;)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| shadow | Optional&lt;ShadowOptions&gt; | 是 | SymbolGlyph组件的阴影效果。 单位：vp 不支持fill、type属性和color中的ColoringStrategy枚举值。 |
+| shadow | Optional&lt;ShadowOptions&gt; | 是 | SymbolGlyph组件的阴影效果。 单位：vp 说明： 仅支持ShadowOptions中的radius、color、offsetX、offsetY属性，不支持fill、type属性和color中的ColoringStrategy枚举值。 |
  
  
   
 
-#### ScaleSymbolEffect12+
+## ScaleSymbolEffect12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ScaleSymbolEffect继承自父类SymbolEffect。
  
@@ -411,8 +442,12 @@ ScaleSymbolEffect继承自父类SymbolEffect。
  
   
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | scope | EffectScope | 否 | 是 | 动效范围。具体枚举值及说明请参考EffectScope枚举说明。 默认值：EffectScope.LAYER |
@@ -421,9 +456,10 @@ ScaleSymbolEffect继承自父类SymbolEffect。
  
   
 
-#### constructor12+
+### constructor12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(scope?: EffectScope, direction?: EffectDirection)
  
@@ -437,6 +473,7 @@ ScaleSymbolEffect的构造函数，缩放动效。
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scope | EffectScope | 否 | 动效范围。具体枚举值及说明请参考EffectScope枚举说明。 默认值：EffectScope.LAYER |
@@ -445,9 +482,10 @@ ScaleSymbolEffect的构造函数，缩放动效。
  
   
 
-#### HierarchicalSymbolEffect12+
+## HierarchicalSymbolEffect12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 HierarchicalSymbolEffect继承自父类SymbolEffect。
  
@@ -459,8 +497,12 @@ HierarchicalSymbolEffect继承自父类SymbolEffect。
  
   
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | fillStyle | EffectFillStyle | 否 | 是 | 动效模式。 默认值：EffectFillStyle.CUMULATIVE |
@@ -468,9 +510,10 @@ HierarchicalSymbolEffect继承自父类SymbolEffect。
  
   
 
-#### constructor12+
+### constructor12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(fillStyle?: EffectFillStyle)
  
@@ -484,6 +527,7 @@ HierarchicalSymbolEffect的构造函数，层级动效。
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fillStyle | EffectFillStyle | 否 | 动效模式。具体枚举值及说明请参考EffectFillStyle枚举说明。 默认值：EffectFillStyle.CUMULATIVE |
@@ -491,9 +535,10 @@ HierarchicalSymbolEffect的构造函数，层级动效。
  
   
 
-#### AppearSymbolEffect12+
+## AppearSymbolEffect12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 AppearSymbolEffect继承自父类SymbolEffect。
  
@@ -505,8 +550,12 @@ AppearSymbolEffect继承自父类SymbolEffect。
  
   
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | scope | EffectScope | 否 | 是 | 动效范围。具体枚举值及说明请参考EffectScope枚举说明。 默认值：EffectScope.LAYER |
@@ -514,9 +563,10 @@ AppearSymbolEffect继承自父类SymbolEffect。
  
   
 
-#### constructor12+
+### constructor12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(scope?: EffectScope)
  
@@ -530,6 +580,7 @@ AppearSymbolEffect的构造函数，出现动效。
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scope | EffectScope | 否 | 动效范围。具体枚举值及说明请参考EffectScope枚举说明。 默认值：EffectScope.LAYER |
@@ -537,9 +588,10 @@ AppearSymbolEffect的构造函数，出现动效。
  
   
 
-#### DisappearSymbolEffect12+
+## DisappearSymbolEffect12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 DisappearSymbolEffect继承自父类SymbolEffect。
  
@@ -551,8 +603,12 @@ DisappearSymbolEffect继承自父类SymbolEffect。
  
   
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | scope | EffectScope | 否 | 是 | 动效范围。具体枚举值及说明请参考EffectScope枚举说明。 默认值：EffectScope.LAYER |
@@ -560,9 +616,10 @@ DisappearSymbolEffect继承自父类SymbolEffect。
  
   
 
-#### constructor12+
+### constructor12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(scope?: EffectScope)
  
@@ -576,6 +633,7 @@ DisappearSymbolEffect的构造函数，消失动效。
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scope | EffectScope | 否 | 动效范围。具体枚举值及说明请参考EffectScope枚举说明。 默认值：EffectScope.LAYER |
@@ -583,9 +641,10 @@ DisappearSymbolEffect的构造函数，消失动效。
  
   
 
-#### BounceSymbolEffect12+
+## BounceSymbolEffect12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 BounceSymbolEffect继承自父类SymbolEffect。
  
@@ -597,8 +656,12 @@ BounceSymbolEffect继承自父类SymbolEffect。
  
   
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | scope | EffectScope | 否 | 是 | 动效范围。具体枚举值及说明请参考EffectScope枚举说明。 默认值：EffectScope.LAYER |
@@ -607,9 +670,10 @@ BounceSymbolEffect继承自父类SymbolEffect。
  
   
 
-#### constructor12+
+### constructor12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(scope?: EffectScope, direction?: EffectDirection)
  
@@ -623,6 +687,7 @@ BounceSymbolEffect的构造函数，弹跳动效。
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scope | EffectScope | 否 | 动效范围。具体枚举值及说明请参考EffectScope枚举说明。 默认值：EffectScope.LAYER |
@@ -631,9 +696,10 @@ BounceSymbolEffect的构造函数，弹跳动效。
  
   
 
-#### ReplaceSymbolEffect12+
+## ReplaceSymbolEffect12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ReplaceSymbolEffect继承自父类SymbolEffect。
  
@@ -645,8 +711,12 @@ ReplaceSymbolEffect继承自父类SymbolEffect。
  
   
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | scope | EffectScope | 否 | 是 | 动效范围。具体枚举值及说明请参考EffectScope枚举说明。 默认值：EffectScope.LAYER 卡片能力： 从API version 12开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
@@ -655,9 +725,10 @@ ReplaceSymbolEffect继承自父类SymbolEffect。
  
   
 
-#### constructor12+
+### constructor12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(scope?: EffectScope)
  
@@ -671,6 +742,7 @@ ReplaceSymbolEffect的构造函数，替换动效。
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scope | EffectScope | 否 | 动效范围。具体枚举值及说明请参考EffectScope枚举说明。 默认值：EffectScope.LAYER |
@@ -678,9 +750,10 @@ ReplaceSymbolEffect的构造函数，替换动效。
  
   
 
-#### constructor20+
+### constructor20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(scope?: EffectScope, replaceType?: ReplaceEffectType)
  
@@ -694,6 +767,7 @@ ReplaceSymbolEffect的构造函数，替换动效。支持指定具体的替换�
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scope | EffectScope | 否 | 动效范围。 默认值：EffectScope.LAYER |
@@ -702,9 +776,10 @@ ReplaceSymbolEffect的构造函数，替换动效。支持指定具体的替换�
  
   
 
-#### SymbolEffectStrategy11+枚举说明
+## SymbolEffectStrategy11+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 动效类型的枚举值。设置动效后，动效启动即生效，无需触发。
  
@@ -714,6 +789,7 @@ ReplaceSymbolEffect的构造函数，替换动效。支持指定具体的替换�
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NONE | 0 | 无动效（默认值）。 |
@@ -723,9 +799,10 @@ ReplaceSymbolEffect的构造函数，替换动效。支持指定具体的替换�
  
   
 
-#### SymbolRenderingStrategy11+枚举说明
+## SymbolRenderingStrategy11+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 渲染模式的枚举值。
  
@@ -735,6 +812,7 @@ ReplaceSymbolEffect的构造函数，替换动效。支持指定具体的替换�
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SINGLE | 0 | 单色模式（默认值）。 可以设置一个或者多个颜色，默认为黑色。 当设置多个颜色时，仅生效第一个颜色。 |
@@ -744,9 +822,10 @@ ReplaceSymbolEffect的构造函数，替换动效。支持指定具体的替换�
  
   
 
-#### SymbolEffect12+对象说明
+## SymbolEffect12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义SymbolEffect类。
  
@@ -758,9 +837,10 @@ ReplaceSymbolEffect的构造函数，替换动效。支持指定具体的替换�
  
   
 
-#### PulseSymbolEffect12+对象说明
+## PulseSymbolEffect12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 PulseSymbolEffect继承自父类SymbolEffect，脉冲动效。
  
@@ -772,9 +852,10 @@ PulseSymbolEffect继承自父类SymbolEffect，脉冲动效。
  
   
 
-#### EffectDirection12+枚举说明
+## EffectDirection12+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
  
@@ -782,6 +863,7 @@ PulseSymbolEffect继承自父类SymbolEffect，脉冲动效。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DOWN | 0 | 图标缩小再复原。 |
@@ -790,9 +872,10 @@ PulseSymbolEffect继承自父类SymbolEffect，脉冲动效。
  
   
 
-#### EffectScope12+枚举说明
+## EffectScope12+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
  
@@ -800,6 +883,7 @@ PulseSymbolEffect继承自父类SymbolEffect，脉冲动效。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | LAYER | 0 | 分层模式。 |
@@ -808,9 +892,10 @@ PulseSymbolEffect继承自父类SymbolEffect，脉冲动效。
  
   
 
-#### EffectFillStyle12+枚举说明
+## EffectFillStyle12+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
  
@@ -818,6 +903,7 @@ PulseSymbolEffect继承自父类SymbolEffect，脉冲动效。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CUMULATIVE | 0 | 累加模式。 |
@@ -826,9 +912,10 @@ PulseSymbolEffect继承自父类SymbolEffect，脉冲动效。
  
   
 
-#### ReplaceEffectType20+枚举说明
+## ReplaceEffectType20+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 替换动效类型的枚举值。
  
@@ -838,6 +925,7 @@ PulseSymbolEffect继承自父类SymbolEffect，脉冲动效。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SEQUENTIAL | 0 | 默认替换动效：当前symbol完全消失后，新symbol出现。 |
@@ -847,21 +935,26 @@ PulseSymbolEffect继承自父类SymbolEffect，脉冲动效。
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)。
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 示例1（设置渲染和动效策略）
+### 示例1（设置渲染和动效策略）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 11开始，该示例通过[renderingStrategy](#renderingstrategy)、[effectStrategy](#effectstrategy)属性展示了不同的渲染和动效策略。
  
@@ -881,14 +974,14 @@ struct Index {
         }
 
         Column() {
-          Text("Normal")
+          Text('Normal')
           SymbolGlyph($r('sys.symbol.ohos_trash'))
             .fontWeight(FontWeight.Normal)
             .fontSize(96)
         }
 
         Column() {
-          Text("Bold")
+          Text('Bold')
           SymbolGlyph($r('sys.symbol.ohos_trash'))
             .fontWeight(FontWeight.Bold)
             .fontSize(96)
@@ -897,7 +990,7 @@ struct Index {
 
       Row() {
         Column() {
-          Text("单色")
+          Text('单色')
           SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
             .fontSize(96)
             .renderingStrategy(SymbolRenderingStrategy.SINGLE)
@@ -905,7 +998,7 @@ struct Index {
         }
 
         Column() {
-          Text("多色")
+          Text('多色')
           SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
             .fontSize(96)
             .renderingStrategy(SymbolRenderingStrategy.MULTIPLE_COLOR)
@@ -913,7 +1006,7 @@ struct Index {
         }
 
         Column() {
-          Text("分层")
+          Text('分层')
           SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
             .fontSize(96)
             .renderingStrategy(SymbolRenderingStrategy.MULTIPLE_OPACITY)
@@ -923,21 +1016,21 @@ struct Index {
 
       Row() {
         Column() {
-          Text("无动效")
+          Text('无动效')
           SymbolGlyph($r('sys.symbol.ohos_wifi'))
             .fontSize(96)
             .effectStrategy(SymbolEffectStrategy.NONE)
         }
 
         Column() {
-          Text("整体缩放动效")
+          Text('整体缩放动效')
           SymbolGlyph($r('sys.symbol.ohos_wifi'))
             .fontSize(96)
             .effectStrategy(SymbolEffectStrategy.SCALE)
         }
 
         Column() {
-          Text("层级动效")
+          Text('层级动效')
           SymbolGlyph($r('sys.symbol.ohos_wifi'))
             .fontSize(96)
             .effectStrategy(SymbolEffectStrategy.HIERARCHICAL)
@@ -949,12 +1042,15 @@ struct Index {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/Eg_-yiaMQ-iya7R4MdqIJw/zh-cn_image_0000002655848714.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071506Z&HW-CC-Expire=86400&HW-CC-Sign=44373DFCEAA2E0CFD12199AA6A820C527990733EE09A04845D0461906BA0B2D9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/QedjC3MFT8qoEy5oLcCtjw/zh-cn_image_0000002747292805.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073108Z&HW-CC-Expire=86400&HW-CC-Sign=A580DB85B6BC1F8A6309D847DF8A3617C61A63D7D8265C78F8EB3517A11059B0)
 
  
   
 
-#### 示例2（设置动效和阴影）
+### 示例2（设置动效和阴影）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 12开始，该示例通过[symbolEffect](#symboleffect12)属性展示了各种动效的效果以及结合[symbolShadow](#symbolshadow20)（从API version 20开始）的阴影效果。其中禁用动效和快速替换动效需要API version 20及以上版本支持。
  
@@ -984,7 +1080,7 @@ struct Index {
     Column() {
       Row() {
         Column() {
-          Text("可变颜色动效")
+          Text('可变颜色动效')
           SymbolGlyph($r('sys.symbol.ohos_wifi'))
             .fontSize(96)
             .symbolEffect(new HierarchicalSymbolEffect(EffectFillStyle.ITERATIVE), this.isActive)
@@ -995,7 +1091,7 @@ struct Index {
         }
         .margin({ right: 20 })
         Column() {
-          Text("替换动效")
+          Text('替换动效')
           SymbolGlyph(this.replaceFlag ? $r('sys.symbol.checkmark_circle') : $r('sys.symbol.repeat_1'))
             .fontSize(96)
             .symbolEffect(new ReplaceSymbolEffect(EffectScope.WHOLE), this.triggerValueReplace)
@@ -1010,7 +1106,7 @@ struct Index {
 
       Row() {
         Column() {
-          Text("禁用动效")
+          Text('禁用动效')
           SymbolGlyph(this.replaceFlag1 ? $r('sys.symbol.eye_slash') : $r('sys.symbol.eye'))
             .fontSize(96)
             .renderingStrategy(this.renderMode)
@@ -1023,7 +1119,7 @@ struct Index {
         }
         .margin({ right: 20 })
         Column() {
-          Text("快速替换动效")
+          Text('快速替换动效')
           SymbolGlyph(this.replaceFlag2 ? $r('sys.symbol.checkmark_circle') : $r('sys.symbol.repeat_1'))
             .fontSize(96)
             .symbolEffect(new ReplaceSymbolEffect(EffectScope.WHOLE, ReplaceEffectType.CROSS_FADE), this.triggerValueReplace2)
@@ -1035,7 +1131,7 @@ struct Index {
         }
         .margin({ right: 20 })
         Column() {
-          Text("阴影能力")
+          Text('阴影能力')
           SymbolGlyph($r('sys.symbol.ohos_wifi'))
             .fontSize(96)
             .symbolEffect(new HierarchicalSymbolEffect(EffectFillStyle.ITERATIVE), this.isActive)
@@ -1057,12 +1153,15 @@ struct Index {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/NWKneJDgSKuacKbZbz57sQ/zh-cn_image_0000002686088145.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071506Z&HW-CC-Expire=86400&HW-CC-Sign=2D0B5179A7E718D4DB05ABEFEC5950C0282CEF172383A3094CAB88565B2B0DFD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/XMAeJFv2S1KyDaWKH2F7og/zh-cn_image_0000002747212721.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073108Z&HW-CC-Expire=86400&HW-CC-Sign=8A6F769E19ED36CA3F5E8DA983DA6A0688043AE14595B6B3F8B821DFBE1E45F1)
 
  
   
 
-#### 示例3（设置颜色渐变）
+### 示例3（设置颜色渐变）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 20开始，该示例通过[shaderStyle](#shaderstyle20)接口实现了SymbolGlyph组件显示为渐变色的功能。
  
@@ -1201,12 +1300,15 @@ struct Index {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/4HyjoXHrRHy7laAbqUBrTg/zh-cn_image_0000002685928315.jpeg?HW-CC-KV=V1&HW-CC-Date=20260730T071506Z&HW-CC-Expire=86400&HW-CC-Sign=C4034F908478C0C90610D143128B2A998D3E4B96758AA9770FD069F1AFC71205)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/loBvF-jtRPiKE6jCLF2dHQ/zh-cn_image_0000002717772786.jpeg?HW-CC-KV=V1&HW-CC-Date=20260911T073108Z&HW-CC-Expire=86400&HW-CC-Sign=CC17C71ED850E9A798B9E536342E67C7550DD22464906DC42B3F6169285720E6)
 
  
   
 
-#### 示例4（设置SymbolGlyph颜色）
+### 示例4（设置SymbolGlyph颜色）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[fontColor](#fontcolor-1)属性传入[ColorMetrics](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-graphics#colormetrics12)类型参数，设置SymbolGlyph组件的颜色。
  
@@ -1256,12 +1358,15 @@ struct Index {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/dBlYv2_ITtqDyxtH9CRAcg/zh-cn_image_0000002656008636.jpeg?HW-CC-KV=V1&HW-CC-Date=20260730T071506Z&HW-CC-Expire=86400&HW-CC-Sign=A74054F2D3420EBB191F0F5DF08B1A2AB2EB6205C39887751F69DA5BC8D84E5E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/-Fvsk4WdQMGxTFrtpfWvdg/zh-cn_image_0000002717612854.jpeg?HW-CC-KV=V1&HW-CC-Date=20260911T073108Z&HW-CC-Expire=86400&HW-CC-Sign=48B570F637AF9EF0D14FFC08212F04BD18D4C2323300C58C92F86606D3A093E0)
 
  
   
 
-#### 示例5（设置字体粗细）
+### 示例5（设置字体粗细）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[fontWeight](#fontweight-1)属性展示SymbolGlyph不同粗细配置下的效果：第一行图标小符号展示启用可变字重后，分别设置字重值为220和660的效果；第二行图标小符号展示在将设备的系统字体粗细设置为粗体后，分别设置跟随和不跟随设备的字体粗细级别自动更新的效果。
  
@@ -1324,4 +1429,4 @@ struct Index {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/CYAFKYoiQf-QuV9vxTntng/zh-cn_image_0000002655848716.png?HW-CC-KV=V1&HW-CC-Date=20260730T071506Z&HW-CC-Expire=86400&HW-CC-Sign=44C1701EE686C6C07B5C5D7B247DB9DD1030EAF56E2281356FD7122E02131912)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/e4E4hvp0SsiBd6H0pfXk3g/zh-cn_image_0000002747292807.png?HW-CC-KV=V1&HW-CC-Date=20260911T073108Z&HW-CC-Expire=86400&HW-CC-Sign=F1EFBDF77472447B296D281953F4C9987A8C9F1E12039F0F1C1BD914C16837CD)

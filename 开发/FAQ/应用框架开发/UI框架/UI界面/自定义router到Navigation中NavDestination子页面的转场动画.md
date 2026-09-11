@@ -34,21 +34,21 @@
 完整代码如下：
  
 ```text
-// 使用router跳转到NavigationPage页面
+<em>// 使用router跳转到NavigationPage页面</em>
 @Entry
 @Component
 struct RouterPage {
   @State visibilityState: Visibility = Visibility.Hidden;
   private duration: number = 1000;
 
-  // 关闭router转场动画
+  <em>// 关闭router转场动画</em>
   pageTransition() {
     PageTransitionEnter({ type: RouteType.None, duration: 0 });
     PageTransitionExit({ type: RouteType.None, duration: 0 });
   }
 
   onPageShow(): void {
-    this.visibilityState = Visibility.Visible; // 触发入场动画
+    this.visibilityState = Visibility.Visible; <em>// 触发入场动画</em>
   }
 
   build() {
@@ -57,10 +57,10 @@ struct RouterPage {
         .fontSize(30)
         .fontWeight(FontWeight.Bold)
         .onClick(() => {
-          this.visibilityState = Visibility.Hidden; // 触发出场动画
-          // 等待转场动画消失后跳转
+          this.visibilityState = Visibility.Hidden; <em>// 触发出场动画</em>
+          <em>// 等待转场动画消失后跳转</em>
           setTimeout(() => {
-            // 携带页面名称参数，用于Navigation跳转
+            <em>// 携带页面名称参数，用于Navigation跳转</em>
             this.getUIContext()
               .getRouter()
               .pushUrl({ url: 'pages/NavigationPage', params: { pageName: 'TargetInterfacePage' } });
@@ -77,7 +77,7 @@ struct RouterPage {
 ```
  
 ```text
-// 使用NavPathStack跳转到TargetInterfacePage页面
+<em>// 使用NavPathStack跳转到TargetInterfacePage页面</em>
 interface PageParams {
   pageName: string;
 }
@@ -87,17 +87,17 @@ interface PageParams {
 struct NavigationPage {
   @State pathStack: NavPathStack = new NavPathStack();
 
-  // 关闭router转场动画
+  <em>// 关闭router转场动画</em>
   pageTransition() {
     PageTransitionEnter({ type: RouteType.None, duration: 0 });
     PageTransitionExit({ type: RouteType.None, duration: 0 });
   }
 
   aboutToAppear(): void {
-    // 接收pageName参数并跳转
+   <em> // 接收pageName参数并跳转</em>
     const params = this.getUIContext().getRouter().getParams() as PageParams;
     if (params && params.pageName) {
-      this.pathStack.pushPath({ name: params.pageName }, false); // 关闭Navigation转场动画
+      this.pathStack.pushPath({ name: params.pageName }, false); <em>// 关闭Navigation转场动画</em>
     }
   }
 
@@ -109,7 +109,7 @@ struct NavigationPage {
 ```
  
 ```text
-// 使用Navigation管理的NavDestination子界面，是跳转的目标界面
+<em>// 使用Navigation管理的NavDestination子界面，是跳转的目标界面</em>
 const TAG = '目标界面';
 
 @Builder
@@ -133,11 +133,11 @@ struct TargetInterfacePage {
       this.pathStack = context.pathStack;
     })
     .onShown(() => {
-      this.visibilityState = Visibility.Visible; // 触发入场动画
+      this.visibilityState = Visibility.Visible; <em>// 触发入场动画</em>
     })
     .onBackPressed(() => {
-      this.visibilityState = Visibility.Hidden; // 触发出场动画
-      // 等待转场动画消失后跳转
+      this.visibilityState = Visibility.Hidden; <em>// 触发出场动画</em>
+     <em> // 等待转场动画消失后跳转</em>
       setTimeout(() => {
         this.pathStack?.pop(false);
       }, this.duration);

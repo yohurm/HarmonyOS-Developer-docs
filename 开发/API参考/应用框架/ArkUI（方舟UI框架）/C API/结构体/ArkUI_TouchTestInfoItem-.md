@@ -1,20 +1,21 @@
 # ArkUI_TouchTestInfoItem*
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-arkui-touchtestinfoitemhandle
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef ArkUI_TouchTestInfoItem* ArkUI_TouchTestInfoItemHandle
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-定义触摸测试信息项句柄，用于表示触摸测试过程中子组件的坐标、区域和组件ID等信息；触摸测试接口请参见[ui_input_event.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ui-input-event-h)。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+定义触摸测试信息项句柄，用于表示触摸测试流程中的触摸测试信息项；触摸测试接口请参见[ui_input_event.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ui-input-event-h)。
  
 **起始版本：** 22
  

@@ -1,9 +1,9 @@
 # @ohos.util.json (JSON解析与生成)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-json
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供了将JSON文本转换为JSON对象或值，以及将对象转换为JSON文本等功能。模块基于标准JSON规范实现解析与序列化，通过Transformer机制支持自定义转换，通过BigIntMode策略解决BigInt兼容问题，并提供has/remove操作便于对解析结果进行属性查询与删除。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```json
 import { JSON } from '@kit.ArkTS';
@@ -22,9 +23,10 @@ import { JSON } from '@kit.ArkTS';
  
   
 
-#### Transformer
+## Transformer
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Transformer = (this: Object, key: string, value: Object) => Object | undefined | null
  
@@ -40,6 +42,7 @@ type Transformer = (this: Object, key: string, value: Object) => Object | undefi
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | this | Object | 是 | 正在解析或序列化的键值对所属的对象。 |
@@ -49,6 +52,7 @@ type Transformer = (this: Object, key: string, value: Object) => Object | undefi
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Object \| undefined \| null | 返回转换处理后的属性值；返回undefined时，该属性在结果中被移除；返回null时，该属性值设为null。 |
@@ -56,9 +60,10 @@ type Transformer = (this: Object, key: string, value: Object) => Object | undefi
  
   
 
-#### BigIntMode
+## BigIntMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义处理BigInt的模式。由于JSON规范不支持BigInt类型，且Number精度范围为-(2^53-1)到(2^53-1)，本模块提供三种模式以适配不同场景的整数精度需求。
  
@@ -66,6 +71,7 @@ type Transformer = (this: Object, key: string, value: Object) => Object | undefi
  
 **系统能力：** SystemCapability.Utils.Lang
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DEFAULT | 0 | 不支持BigInt，超大整数可能丢失精度。适用于不需要处理超大整数的常规JSON解析场景。 |
@@ -75,9 +81,10 @@ type Transformer = (this: Object, key: string, value: Object) => Object | undefi
  
   
 
-#### ParseOptions
+## ParseOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 解析的选项，可定义处理BigInt的模式。
  
@@ -85,6 +92,7 @@ type Transformer = (this: Object, key: string, value: Object) => Object | undefi
  
 **系统能力：** SystemCapability.Utils.Lang
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | bigIntMode | BigIntMode | 否 | 否 | 定义处理BigInt的模式。 |
@@ -92,9 +100,10 @@ type Transformer = (this: Object, key: string, value: Object) => Object | undefi
  
   
 
-#### JSON.parse
+## JSON.parse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 parse(text: string, reviver?: Transformer, options?: ParseOptions): Object | null
  
@@ -106,6 +115,7 @@ parse(text: string, reviver?: Transformer, options?: ParseOptions): Object | nul
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | text | string | 是 | 有效的JSON字符串，需符合JSON语法规范。 |
@@ -115,6 +125,7 @@ parse(text: string, reviver?: Transformer, options?: ParseOptions): Object | nul
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Object \| null | 当传入的字符串为'null'时，返回null。 |
@@ -159,9 +170,10 @@ console.info((numberObj as object)?.["largeNumber"]);
  
   
 
-#### JSON.stringify
+## JSON.stringify
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stringify(value: Object, replacer?: (number | string)[] | null, space?: string | number): string
  
@@ -173,6 +185,7 @@ stringify(value: Object, replacer?: (number | string)[] | null, space?: string |
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | ArkTS对象或数组，支持线性容器的转换，不支持非线性容器。 |
@@ -182,6 +195,7 @@ stringify(value: Object, replacer?: (number | string)[] | null, space?: string |
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 表示对象或数组经序列化处理后生成的JSON格式文本字符串。 |
@@ -231,9 +245,10 @@ console.info(JSON.stringify(bigIntObj));
  
   
 
-#### JSON.stringify
+## JSON.stringify
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stringify(value: Object, replacer?: Transformer, space?: string | number): string
  
@@ -245,6 +260,7 @@ stringify(value: Object, replacer?: Transformer, space?: string | number): strin
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Object | 是 | ArkTS对象或数组，支持线性容器的转换，不支持非线性容器。 |
@@ -254,6 +270,7 @@ stringify(value: Object, replacer?: Transformer, space?: string | number): strin
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 表示对象或数组经序列化处理后生成的JSON格式文本字符串。 |
@@ -294,9 +311,10 @@ console.info(JSON.stringify(inputObj, replacer, '  '));
  
   
 
-#### JSON.has
+## JSON.has
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 has(obj: object, property: string): boolean
  
@@ -308,6 +326,7 @@ has(obj: object, property: string): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | obj | object | 是 | ArkTS对象，仅支持最外层为字典形式（即大括号而非中括号包围）的合法JSON串解析后的对象。 |
@@ -316,6 +335,7 @@ has(obj: object, property: string): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回ArkTS对象是否包含指定属性的结果。true表示对象包含指定属性；false表示对象不包含指定属性。 |
@@ -335,9 +355,10 @@ console.info("hasNameResult = " + hasNameResult);
  
   
 
-#### JSON.remove
+## JSON.remove
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 remove(obj: object, property: string): void
  
@@ -349,6 +370,7 @@ remove(obj: object, property: string): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | obj | object | 是 | ArkTS对象，仅支持最外层为字典形式（即大括号而非中括号包围）的合法JSON串解析后的对象。 |

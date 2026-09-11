@@ -1,9 +1,9 @@
 # @ohos.app.ability.contextConstant (Context相关常量)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-contextconstant
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ContextConstant提供Context相关的枚举，包含文件加密分区等级、进程模式等。其中，文件加密分区等级用于保护应用数据安全，开发者可根据应用需求选择合适的加密等级；进程模式用于控制UIAbility的启动方式和进程行为。这些枚举帮助开发者实现更灵活的应用架构和更安全的数据管理。
  
@@ -12,9 +12,10 @@ ContextConstant提供Context相关的枚举，包含文件加密分区等级、�
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { contextConstant } from '@kit.AbilityKit';
@@ -22,14 +23,16 @@ import { contextConstant } from '@kit.AbilityKit';
  
   
 
-#### AreaMode
+## AreaMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文件加密分区等级，保证应用在不同场景下的数据安全。开发者可根据应用需求选择合适的加密等级。
  
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | EL1 | 0 | 设备级加密区，设备开机后可访问的数据区。 元服务API：从API version 11开始，该接口支持在元服务中使用。 |
@@ -41,9 +44,10 @@ import { contextConstant } from '@kit.AbilityKit';
  
   
 
-#### ProcessMode12+
+## ProcessMode12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 UIAbility启动后的进程模式。
  
@@ -53,6 +57,7 @@ ProcessMode作为[StartOptions](https://developer.huawei.com/consumer/cn/doc/har
  
 **设备行为差异**：该功能仅在PC/2in1和Tablet设备上生效，在其他设备中返回801错误码。
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NEW_PROCESS_ATTACH_TO_PARENT | 1 | 创建一个新进程，并在该进程上启动UIAbility。该进程会跟随父进程（调用方进程）退出，即当父进程退出时，此进程也会自动退出。 约束： 使用此模式时，要求目标UIAbility跟调用方是在同一个应用。 |
@@ -102,9 +107,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### StartupVisibility12+
+## StartupVisibility12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 UIAbility启动后是否可见。
  
@@ -116,6 +122,7 @@ StartupVisibility作为[StartOptions](https://developer.huawei.com/consumer/cn/d
  
 **设备行为差异**：该功能仅在PC/2in1和Tablet设备上生效，在其他设备中返回801错误码。
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | STARTUP_HIDE | 0 | 目标UIAbility启动后，进入隐藏状态。不会调用UIAbility的onForeground生命周期。 |
@@ -128,9 +135,10 @@ StartupVisibility作为[StartOptions](https://developer.huawei.com/consumer/cn/d
  
   
 
-#### Scenarios20+
+## Scenarios20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示不触发[onNewWant](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability#onnewwant)生命周期回调场景的枚举，用于[setOnNewWantSkipScenarios](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext#setonnewwantskipscenarios20)接口。
  
@@ -138,6 +146,7 @@ StartupVisibility作为[StartOptions](https://developer.huawei.com/consumer/cn/d
  
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SCENARIO_MOVE_MISSION_TO_FRONT | 0x00000001 | 共享屏幕时系统将用户选择的UIAbility拉起到前台场景。 |
@@ -179,9 +188,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### ContextType
+## ContextType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示常见Context类型的枚举，用于[isContextOf](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-context#iscontextof)接口。
  
@@ -191,6 +201,7 @@ export default class EntryAbility extends UIAbility {
  
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | APPLICATION_CONTEXT | 0 | ApplicationContext类型。 |

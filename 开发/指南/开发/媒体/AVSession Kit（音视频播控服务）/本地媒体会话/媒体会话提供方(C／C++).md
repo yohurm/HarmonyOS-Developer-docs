@@ -1,19 +1,19 @@
 # 媒体会话提供方(C/C++)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ohavsession-developer
 
 使用OHAVSession系统提供的C API实现媒体会话提供方，从而在媒体会话控制方（例如播控中心）中展示媒体相关信息，及响应媒体会话控制方下发的播控命令。
 
 
-#### 使用入门
+## 使用入门
 
 开发者使用[native_avsession.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avsession-h)实现媒体会话，需要添加对应的头文件。
 
 
 
-#### 在 CMake 脚本中链接动态库
+### 在 CMake 脚本中链接动态库
 
 ```text
 target_link_libraries(entry PUBLIC libohavsession.so)
@@ -21,7 +21,7 @@ target_link_libraries(entry PUBLIC libohavsession.so)
 
 
 
-#### 添加头文件
+### 添加头文件
 
 ```cpp
 #include <multimedia/av_session/native_avmetadata.h>
@@ -31,10 +31,10 @@ target_link_libraries(entry PUBLIC libohavsession.so)
 
 
 
-#### 开发步骤及注意事项
+## 开发步骤及注意事项
 
 开发者可以通过以下几个步骤在NDK接入本地会话。
-1. 创建并激活会话，需要传入会话类型AVSession_Type，自定义的TAG，以及应用的包名、ability名字。
+1. 创建并激活会话，需要传入会话类型AVSession_Type，自定义的TAG，以及应用的包名、Ability名称。
 
   
 ```cpp
@@ -89,7 +89,7 @@ OH_AVMetadataBuilder_GenerateAVMetadata(builder, &ohMetadata);
  */
 OH_AVSession_SetAVMetadata(avsession, ohMetadata);
 ```
-如果不使用AVMetadata，开发者应该执行OH_AVMetadata_Destroy接口销毁元数据对象，同时执行OH_AVMetadataBuilder_Destroy接口销毁构造器，且不能继续使用。
+使用完AVMetadata后，开发者应该执行OH_AVMetadata_Destroy接口销毁元数据对象，同时执行OH_AVMetadataBuilder_Destroy接口销毁构造器，且不能继续使用。
 
   
 ```cpp

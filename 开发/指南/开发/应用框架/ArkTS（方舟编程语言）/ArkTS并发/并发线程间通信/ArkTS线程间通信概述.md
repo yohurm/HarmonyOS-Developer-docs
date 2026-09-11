@@ -1,6 +1,6 @@
 # ArkTS线程间通信概述
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/interthread-communication-overview
 

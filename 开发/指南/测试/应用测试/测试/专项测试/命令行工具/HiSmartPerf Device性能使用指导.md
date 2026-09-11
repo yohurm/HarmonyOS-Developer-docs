@@ -1,16 +1,16 @@
 # HiSmartPerf Device性能使用指导
 
-更新时间：2026-08-04 01:38:00
+更新时间：2026-08-29 09:41:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/smartperf-guidelines
 
-#### 工具简介
+## 工具简介
 
 HiSmartPerf Device是一款性能功耗测试工具，支持监测性能、功耗相关指标，包括FPS、CPU、GPU、RAM、Temp等，并提供Device hap端和Device daemon端。Device hap适用于有屏设备，支持可视化操作，测试过程中可通过悬浮窗的开始和暂停来实时展示性能指标数据，保存后可生成数据报告，在报告中可分析各指标数据详情。Device daemon端支持shell命令行方式，同时适用于有屏和无屏设备。
  
  
 
-#### 指标说明
+### 指标说明
 
 - CPU：每秒读取一次设备节点下CPU大中小核的频点和各核使用率，衡量应用占用CPU资源的情况，占用过多的CPU资源会导致芯片发烫。
 - GPU：每秒读取一次设备节点下GPU的频点和负载信息，衡量应用占用GPU资源的情况，当GPU占用过多时，会导致性能下降，应用程序的运行速度变慢。
@@ -22,7 +22,7 @@ HiSmartPerf Device是一款性能功耗测试工具，支持监测性能、功�
  
  
 
-#### 实现原理
+## 实现原理
 
 下图展示了HiSmartPerf Device工具的主要功能组成。Device hap端设置好采集项和采集参数后，启动应用，FPS、RAM、Trace等指标通过消息发送给Device daemon端，Device daemon端进行数据采集、数据持久化和数据分析，将生成的报告回传给Device hap端，Device hap端进行可视化显示。
  
@@ -32,7 +32,7 @@ HiSmartPerf Device是一款性能功耗测试工具，支持监测性能、功�
  
  
 
-#### 约束与限制
+## 约束与限制
 1. Device daemon端从API version 9开始预置使用。
 2. Device daemon端执行需连接硬件设备，Device hap端需在有屏幕设备使用。
 3. Device daemon端执行前需完成[hdc环境配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hdc)，并进入shell环境拉起daemon进程。
@@ -81,13 +81,13 @@ $
 
   
 
-  #### HiSmartPerf Device-hap端
+  ## HiSmartPerf Device-hap端
 
   工具使用说明请参见[操作指导](https://developer.huawei.com/consumer/cn/doc/AppGallery-connect-Guides/smartperf-tool-device-haromnyos-0000002086884884#section91681917183510)，请前往[工具下载中心](https://developer.huawei.com/consumer/cn/download/hismartperf)获取HiSmartPerf工具。
 
   
 
-  #### HiSmartPerf Device-daemon端
+  ## HiSmartPerf Device-daemon端
 
   
 执行和查看帮助命令。
@@ -158,12 +158,13 @@ $ SP_daemon --help
  
  
 
-#### 基础采集
+### 基础采集
 
 基础采集主要采集整机或者应用的gpu、fps、CPU、DDR、内存等，支持秒级采集和启停采集，并将采集的结果写入data.csv。
  
 **1. 秒级采集**
   
+
 | 命令参数 | 必选 | 说明 |
 | --- | --- | --- |
 | -N | 是 | 设置采集次数，一秒采集一次。 |
@@ -782,7 +783,7 @@ $
 ```bash
 $ SP_daemon -N 10 -PID 48875 -c -g -t -p -f -r -d -net -snapshot -threads
 
-oorder:0 Battery=37.000000
+order:0 Battery=37.000000
 order:1 ChildProcCpuLoad=NA
 order:2 ChildProcCpuUsage=NA
 order:3 ChildProcId=NA
@@ -882,6 +883,7 @@ $
  
 先执行start开始采集命令，然后操作设备或应用，最后执行stop结束采集命令。
   
+
 | 启停采集命令参数 | 必选 | 说明 |
 | --- | --- | --- |
 | -start | 是 | 开始采集，该命令参数后可添加基础采集命令，一秒采集一次。 |
@@ -1003,93 +1005,171 @@ C:\Users\issusser>
   在自定义导出路径里找到data.csv文件打开查看采集数据表，data.csv数据名描述如下：
 
 | 数据项 | 说明 | 备注 |
+
 | --- | --- | --- |
+
 | cpuFrequency | CPU大中小核频率。 | 单位：Hz |
+
 | cpuUasge | CPU各核使用率。 | % |
+
 | cpuidleUsage | CPU空闲态使用率。 | % |
+
 | cpuioWaitUsage | 等待I/O的使用率。 | % |
+
 | cpuirqUsage | 硬中断的使用率。 | % |
+
 | cpuniceUsage | 低优先级用户态使用率。 | % |
+
 | cpusoftIrqUsage | 软中断的使用率。 | % |
+
 | cpusystemUsage | 系统/内核态使用率。 | % |
+
 | cpuuserUsage | 用户态使用率。 | % |
+
 | ProcId | 进程id。 | - |
+
 | ProcAppName | app包名。 | - |
+
 | ProcCpuLoad | 进程CPU负载占比。 | % |
+
 | ProcCpuUsage | 进程CPU使用率。 | % |
+
 | ProcUCpuUsage | 进程用户态CPU使用率。 | % |
+
 | ProcSCpuUsage | 进程内核态CPU使用率。 | % |
+
 | TotalcpuUsage | CPU总使用率。 | % |
+
 | TotalcpuidleUsage | CPU总空闲态使用率。 | % |
+
 | TotalcpuioWaitUsage | CPU总等待I/O使用率。 | % |
+
 | TotalcpuirqUsage | CPU总硬中断使用率。 | % |
+
 | TotalcpuniceUsage | CPU总低优先级用户态使用率。 | % |
+
 | TotalcpusoftIrqUsage | CPU总软中断使用率。 | % |
+
 | TotalcpusystemUsage | CPU总系统/内核态使用率。 | % |
+
 | TotalcpuuserUsage | CPU总用户态使用率。 | % |
+
 | gpuFrequency | 整机GPU的频率。 | % |
+
 | gpuLoad | 整机GPU的负载占比。 | % |
+
 | currentNow | 当前读到的电流值。 | 单位：mA |
+
 | voltageNow | 当前读到的电压值。 | 单位：μV |
+
 | fps | 每秒帧数。 | 单位：fps |
+
 | fpsJitters | 每一帧绘制间隔。 | 单位：ns |
+
 | refreshrate | 屏幕刷新率。 | 单位：Hz |
+
 | networkDown | 下行速率。 | 单位：byte/s |
+
 | networkUp | 上行速率。 | 单位：byte/s |
+
 | ddrFrequency | DDR频率。 | 单位：Hz |
+
 | shell_front | 前壳温度。 | 单位：°C |
+
 | shell_frame | 边框温度。 | 单位：°C |
+
 | shell_back | 后壳温度。 | 单位：°C |
+
 | soc_thermal | 系统芯片温度。 | 单位：°C |
+
 | system_h | 系统温度。 | 单位：°C |
+
 | Battery | 电池温度。 | 单位：°C |
+
 | cluster0 | CPU温度。 | 单位：°C |
+
 | gpu | GPU温度。 | 单位：°C |
+
 | npu_thermal | NPU温度。 | 单位：°C |
+
 | memAvailable | 整机可用内存。 | 单位：KB |
+
 | memFree | 整机空闲内存。 | 单位：KB |
+
 | memTotal | 整机总内存。 | 单位：KB |
+
 | pss | 进程实际使用内存。 | 单位：KB |
+
 | Childpss | 子进程实际使用内存。 | 单位：KB |
+
 | sharedClean | 进程共享的未改写页面。 | 单位：KB |
+
 | ChildsharedClean | 子进程共享的未改写页面。 | 单位：KB |
+
 | sharedDirty | 进程共享的已改写页面。 | 单位：KB |
+
 | ChildsharedDirty | 子进程共享的已改写页面。 | 单位：KB |
+
 | privateClean | 进程私有的未改写页面。 | 单位：KB |
+
 | ChildprivateClean | 子进程私有的未改写页面。 | 单位：KB |
+
 | privateDirty | 进程私有的已改写页面。 | 单位：KB |
+
 | ChildprivateDirty | 子进程私有的已改写页面。 | 单位：KB |
+
 | swapTotal | 进程总的交换内存。 | 单位：KB |
+
 | ChildswapTotal | 子进程总的交换内存。 | 单位：KB |
+
 | swapPss | 进程交换的pss内存。 | 单位：KB |
+
 | ChildswapPss | 子进程交换的pss内存。 | 单位：KB |
+
 | HeapSize | 进程堆内存大小。 | 单位：KB |
+
 | ChildHeapSize | 子进程堆内存大小。 | 单位：KB |
+
 | HeapAlloc | 进程可分配的堆内存大小。 | 单位：KB |
+
 | ChildHeapAlloc | 子进程可分配的堆内存大小。 | 单位：KB |
+
 | HeapFree | 进程剩余的堆内存大小。 | 单位：KB |
+
 | ChildHeapFree | 子进程剩余的堆内存大小。 | 单位：KB |
+
 | gpuPss | 进程使用的gpu内存大小。 | 单位：KB |
+
 | ChildgpuPss | 子进程使用的gpu内存大小。 | 单位：KB |
+
 | graphicPss | 进程使用的图形内存大小。 | 单位：KB |
+
 | ChildgraphicPss | 子进程使用的图形内存大小。 | 单位：KB |
+
 | arktsHeapPss | 进程使用的arkts内存大小。 | 单位：KB |
+
 | ChildarktsHeapPss | 子进程使用的arkts内存大小。 | 单位：KB |
+
 | nativeHeapPss | 进程使用的native内存大小。 | 单位：KB |
+
 | ChildnativeHeapPss | 子进程使用的native内存大小。 | 单位：KB |
+
 | stackPss | 进程使用的栈内存大小。 | 单位：KB |
+
 | ChildstackPss | 子进程使用的栈内存大小。 | 单位：KB |
+
 | timeStamp | 当前时间戳。 | 对应采集时间 |
 
  
  
 
-#### 场景化采集
+### 场景化采集
 
 除基本采集外，还支持采集响应和完成时延等内容。场景化采集结果不写入data.csv，采集结果直接在命令框显示。
  
 场景化采集是对应用页面滑动、切换场景下的性能测试，针对不同操作场景执行相对应的采集命令，获取应用性能数据，包括页面的滑动帧率、页面切换或滑动的卡顿率、响应时延、完成时延以及最大连续丢帧，对采集数据进行输出打印，以便用户分析并优化应用性能。
   
+
 | 场景化采集命令参数 | 必选 | 说明 |
 | --- | --- | --- |
 | -editor | 是 | 采集类型为场景化。 |
@@ -1097,13 +1177,14 @@ C:\Users\issusser>
 | slideList | 否 | 页面滑动（支持ArKUI子系统的List、grid、scroll、waterflow等组件内的页面滑动）。 |
  
   
+
 | 场景化采集数据项 | 说明 | 备注 |
 | --- | --- | --- |
 | ResponseTime | 页面切换、页面滑动的响应时延。 | 单位：ms |
 | CompleteTime | 页面切换的完成时延。 | 单位：ms |
 | HitchTimeRate | 页面切换、页面滑动的卡顿率。 | 单位：ms/s |
 | MAX_RENDER_SEQ_MISSED_FRAMES | 页面切换、页面滑动的最大连续丢帧。 | NA |
-| FPS | 页面滑动帧率 | 单位：fps |
+| FPS | 页面滑动帧率。 | 单位：fps |
  
  
 **页面切换**
@@ -1154,10 +1235,11 @@ $
  
  
 
-#### 其他采集
+### 其他采集
 
 当前设备电量采集结果可写入csv文件，其它命令需单独采集，采集结果不写入data.csv，仅在命令框显示。
   
+
 | 命令参数 | 必选 | 说明 |
 | --- | --- | --- |
 | -screen | 否 | 采集屏幕分辨率和刷新率。 |

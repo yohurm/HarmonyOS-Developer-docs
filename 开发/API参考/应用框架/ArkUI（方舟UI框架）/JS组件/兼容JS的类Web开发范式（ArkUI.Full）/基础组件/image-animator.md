@@ -1,9 +1,9 @@
 # image-animator
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-basic-image-animator
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 > [!NOTE]
 > 从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
@@ -12,20 +12,23 @@
 图片帧动画播放器。
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 不支持。
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-attributes)外，还支持如下属性：
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | images | Array&lt;ImageFrame&gt; | - | 是 | 设置图片帧信息集合。每一帧的帧信息包含图片路径、图片大小和图片位置信息。目前支持以下图片格式：png、jpg、svg和heif。ImageFrame的详细说明请见表 ImageFrame说明。 使用时需要使用数据绑定的方式： - hml文件中引用图片资源：images = {{images}}， - js文件中声明相应变量： images: [{src: "/common/heart-rate01.png",duration:100}]。从API version 6开始，支持配置每一帧图片的时长，单位毫秒。 |
@@ -39,6 +42,7 @@
  
 **表1** ImageFrame说明
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | src | &lt;uri&gt; | - | 是 | 图片路径，图片格式支持svg、png、jpg和heif。 |
@@ -51,20 +55,23 @@
  
   
 
-#### 样式
+## 样式
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 支持[通用样式](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-styles)。
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-events)外，还支持如下事件：
   
+
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | start | - | 帧动画启动时触发。 |
@@ -75,12 +82,14 @@
  
   
 
-#### 方法
+## 方法
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 除支持[通用方法](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-methods)外，还支持如下方法：
   
+
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | start | - | 开始播放图片帧动画。再次调用，重新从第1帧开始播放。 |
@@ -92,9 +101,10 @@
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 <!-- xxx.hml -->
@@ -218,4 +228,4 @@ export default {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/7z0DLDluTiGTb9wEHRoZNA/zh-cn_image_0000002655849098.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071524Z&HW-CC-Expire=86400&HW-CC-Sign=13AA06504EEC3E42D421C3AB3BE51821C414288E7341A9020F1A2946CAA98657)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/kHfikZtZQeaeYrYKfnxyfQ/zh-cn_image_0000002747293193.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072954Z&HW-CC-Expire=86400&HW-CC-Sign=D35B0FCB4D56A6CAB5F65DF209B1A4D4AF9FC209B6427AFF8AC4DCA5BD5E1A56)

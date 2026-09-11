@@ -1,11 +1,12 @@
 # ModuleInstall
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/store-c-moduleinstall
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -15,16 +16,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 文件
+### 文件
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | module_install.h | 声明按需分发能力提供的API。 |
@@ -32,10 +36,12 @@
  
   
 
-#### 类型定义
+### 类型定义
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | typedef struct ModuleInstall_InstalledModule ModuleInstall_InstalledModule | 安装模块信息。 |
@@ -46,10 +52,12 @@
  
   
 
-#### 枚举
+### 枚举
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | ModuleInstall_ErrCode { E_NO_ERROR = 0, E_PARAMS = 401, E_QUERY_MODULE = 1006500001, E_REPEATED_CALL = 1006500002, E_CONNECT_SA = 1006500004, E_OFF_WITHOUT_ON = 1006500006, E_CONNECT_SERVICE_EXTENSION = 1006500007, E_WRITE_PARAM = 1006500008, E_REQUEST_SERVER = 1006500009, E_RESPONSE_INVALID = 1006500010, E_INNER_ERROR = 1006500011, E_INTERNAL_COMMUNICATION = 1006500012, E_INVALID_TASK_ID = 1006500013 } | 枚举错误码。 |
@@ -60,10 +68,12 @@
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | ModuleInstall_ErrCode HMS_ModuleInstall_GetInstalledModule(const char *moduleName, unsigned int length, ModuleInstall_InstalledModule **installedModule) | 查询模块是否安装。 |
@@ -89,13 +99,15 @@
  
   
 
-#### 类型定义说明
+## 类型定义说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### ModuleInstall_InstalledModule
+### ModuleInstall_InstalledModule
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -111,7 +123,8 @@ typedef struct ModuleInstall_InstalledModule ModuleInstall_InstalledModule
  
   
 
-#### ModuleInstall_FetchModulesResult
+### ModuleInstall_FetchModulesResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -127,7 +140,8 @@ typedef struct ModuleInstall_FetchModulesResult ModuleInstall_FetchModulesResult
  
   
 
-#### ModuleInstall_StatusCallback
+### ModuleInstall_StatusCallback
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -143,7 +157,8 @@ typedef struct ModuleInstall_StatusCallback ModuleInstall_StatusCallback
  
   
 
-#### ModuleInstall_OnStatusCallback
+### ModuleInstall_OnStatusCallback
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -159,13 +174,15 @@ typedef void (*ModuleInstall_OnStatusCallback)(char *bundleName, char *eventInfo
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### ModuleInstall_ErrCode
+### ModuleInstall_ErrCode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -179,6 +196,7 @@ enum ModuleInstall_ErrCode
  
 **起始版本：** 5.0.3(15)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | E_NO_ERROR = 0 | 成功。 |
@@ -198,7 +216,8 @@ enum ModuleInstall_ErrCode
  
   
 
-#### ModuleInstall_InstallStatus
+### ModuleInstall_InstallStatus
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -212,6 +231,7 @@ enum ModuleInstall_InstallStatus
  
 **起始版本：** 5.0.3(15)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | INSTALLED = 0 | 已安装。 |
@@ -220,7 +240,8 @@ enum ModuleInstall_InstallStatus
  
   
 
-#### ModuleInstall_RequestCode
+### ModuleInstall_RequestCode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -234,6 +255,7 @@ enum ModuleInstall_RequestCode
  
 **起始版本：** 5.0.3(15)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | MODULE_ALREADY_EXISTS = -8 | 模块已存在。 |
@@ -250,7 +272,8 @@ enum ModuleInstall_RequestCode
  
   
 
-#### ModuleInstall_TaskStatus
+### ModuleInstall_TaskStatus
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -264,6 +287,7 @@ enum ModuleInstall_TaskStatus
  
 **起始版本：** 5.0.3(15)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | CREATE_TASK_FAILED = -4 | 创建下载任务失败。 |
@@ -285,13 +309,15 @@ enum ModuleInstall_TaskStatus
  
   
 
-#### 函数说明
+## 函数说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### HMS_ModuleInstall_GetInstalledModule
+### HMS_ModuleInstall_GetInstalledModule
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -310,6 +336,7 @@ ModuleInstall_ErrCode HMS_ModuleInstall_GetInstalledModule(const char *moduleNam
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | char *moduleName | 模块名。 |
@@ -323,7 +350,8 @@ ModuleInstall_ErrCode HMS_ModuleInstall_GetInstalledModule(const char *moduleNam
  
   
 
-#### HMS_ModuleInstall_GetInstalledModuleName
+### HMS_ModuleInstall_GetInstalledModuleName
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -341,6 +369,7 @@ char *HMS_ModuleInstall_GetInstalledModuleName(const ModuleInstall_InstalledModu
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | ModuleInstall_InstalledModule *installedModule | 模块信息。 |
@@ -352,7 +381,8 @@ char *HMS_ModuleInstall_GetInstalledModuleName(const ModuleInstall_InstalledModu
  
   
 
-#### HMS_ModuleInstall_GetInstalledModuleType
+### HMS_ModuleInstall_GetInstalledModuleType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -370,6 +400,7 @@ int HMS_ModuleInstall_GetInstalledModuleType(const ModuleInstall_InstalledModule
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | ModuleInstall_InstalledModule *installedModule | 模块信息。 |
@@ -381,7 +412,8 @@ int HMS_ModuleInstall_GetInstalledModuleType(const ModuleInstall_InstalledModule
  
   
 
-#### HMS_ModuleInstall_GetModuleInstallStatus
+### HMS_ModuleInstall_GetModuleInstallStatus
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -399,6 +431,7 @@ ModuleInstall_InstallStatus HMS_ModuleInstall_GetModuleInstallStatus(const Modul
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | ModuleInstall_InstalledModule *installedModule | 模块信息。 |
@@ -410,7 +443,8 @@ ModuleInstall_InstallStatus HMS_ModuleInstall_GetModuleInstallStatus(const Modul
  
   
 
-#### HMS_ModuleInstall_FetchModules
+### HMS_ModuleInstall_FetchModules
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -428,6 +462,7 @@ ModuleInstall_ErrCode HMS_ModuleInstall_FetchModules(const char *bundleName, uns
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | char *bundleName | 包名。 |
@@ -443,7 +478,8 @@ ModuleInstall_ErrCode HMS_ModuleInstall_FetchModules(const char *bundleName, uns
  
   
 
-#### HMS_ModuleInstall_GetFetchModulesRequestCode
+### HMS_ModuleInstall_GetFetchModulesRequestCode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -461,6 +497,7 @@ ModuleInstall_RequestCode HMS_ModuleInstall_GetFetchModulesRequestCode(const Mod
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | ModuleInstall_FetchModulesResult *fetchModulesResult | 模块安装结果。 |
@@ -472,7 +509,8 @@ ModuleInstall_RequestCode HMS_ModuleInstall_GetFetchModulesRequestCode(const Mod
  
   
 
-#### HMS_ModuleInstall_GetFetchModulesTaskStatus
+### HMS_ModuleInstall_GetFetchModulesTaskStatus
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -490,6 +528,7 @@ ModuleInstall_TaskStatus HMS_ModuleInstall_GetFetchModulesTaskStatus(const Modul
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | ModuleInstall_FetchModulesResult *fetchModulesResult | 模块安装结果。 |
@@ -501,7 +540,8 @@ ModuleInstall_TaskStatus HMS_ModuleInstall_GetFetchModulesTaskStatus(const Modul
  
   
 
-#### HMS_ModuleInstall_GetFetchModulesTaskId
+### HMS_ModuleInstall_GetFetchModulesTaskId
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -519,6 +559,7 @@ char *HMS_ModuleInstall_GetFetchModulesTaskId(const ModuleInstall_FetchModulesRe
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | ModuleInstall_FetchModulesResult *fetchModulesResult | 模块安装结果。 |
@@ -530,7 +571,8 @@ char *HMS_ModuleInstall_GetFetchModulesTaskId(const ModuleInstall_FetchModulesRe
  
   
 
-#### HMS_ModuleInstall_GetFetchModulesDesc
+### HMS_ModuleInstall_GetFetchModulesDesc
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -548,6 +590,7 @@ char *HMS_ModuleInstall_GetFetchModulesDesc(const ModuleInstall_FetchModulesResu
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | ModuleInstall_FetchModulesResult *fetchModulesResult | 模块安装结果。 |
@@ -559,7 +602,8 @@ char *HMS_ModuleInstall_GetFetchModulesDesc(const ModuleInstall_FetchModulesResu
  
   
 
-#### HMS_ModuleInstall_GetFetchModules
+### HMS_ModuleInstall_GetFetchModules
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -577,6 +621,7 @@ char* HMS_ModuleInstall_GetFetchModules(const ModuleInstall_FetchModulesResult *
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | ModuleInstall_FetchModulesResult *fetchModulesResult | 模块安装结果。 |
@@ -588,7 +633,8 @@ char* HMS_ModuleInstall_GetFetchModules(const ModuleInstall_FetchModulesResult *
  
   
 
-#### HMS_ModuleInstall_GetFetchModulesTotalSize
+### HMS_ModuleInstall_GetFetchModulesTotalSize
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -606,6 +652,7 @@ int HMS_ModuleInstall_GetFetchModulesTotalSize(const ModuleInstall_FetchModulesR
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | ModuleInstall_FetchModulesResult *fetchModulesResult | 模块安装结果。 |
@@ -617,7 +664,8 @@ int HMS_ModuleInstall_GetFetchModulesTotalSize(const ModuleInstall_FetchModulesR
  
   
 
-#### HMS_ModuleInstall_GetFetchModulesDownloadedSize
+### HMS_ModuleInstall_GetFetchModulesDownloadedSize
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -635,6 +683,7 @@ int HMS_ModuleInstall_GetFetchModulesDownloadedSize(const ModuleInstall_FetchMod
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | ModuleInstall_FetchModulesResult *fetchModulesResult | 模块安装结果。 |
@@ -646,7 +695,8 @@ int HMS_ModuleInstall_GetFetchModulesDownloadedSize(const ModuleInstall_FetchMod
  
   
 
-#### HMS_ModuleInstall_CancelTask
+### HMS_ModuleInstall_CancelTask
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -664,6 +714,7 @@ ModuleInstall_ErrCode HMS_ModuleInstall_CancelTask(const char *taskId, unsigned 
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | char *taskId | 任务id。 |
@@ -677,7 +728,8 @@ ModuleInstall_ErrCode HMS_ModuleInstall_CancelTask(const char *taskId, unsigned 
  
   
 
-#### HMS_ModuleInstall_PauseTask
+### HMS_ModuleInstall_PauseTask
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -695,6 +747,7 @@ ModuleInstall_ErrCode HMS_ModuleInstall_PauseTask(const char *taskId)
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | char *taskId | 任务id。 |
@@ -706,7 +759,8 @@ ModuleInstall_ErrCode HMS_ModuleInstall_PauseTask(const char *taskId)
  
   
 
-#### HMS_ModuleInstall_ShowCellularDataConfirmation
+### HMS_ModuleInstall_ShowCellularDataConfirmation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -724,6 +778,7 @@ ModuleInstall_ErrCode HMS_ModuleInstall_ShowCellularDataConfirmation(const char 
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | char *taskId | 任务id。 |
@@ -737,7 +792,8 @@ ModuleInstall_ErrCode HMS_ModuleInstall_ShowCellularDataConfirmation(const char 
  
   
 
-#### HMS_ModuleInstall_CreateStatusCallback
+### HMS_ModuleInstall_CreateStatusCallback
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -755,6 +811,7 @@ ModuleInstall_StatusCallback *HMS_ModuleInstall_CreateStatusCallback(ModuleInsta
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | ModuleInstall_OnStatusCallback *onStatusCallback | 下载进度监听回调函数。 |
@@ -766,7 +823,8 @@ ModuleInstall_StatusCallback *HMS_ModuleInstall_CreateStatusCallback(ModuleInsta
  
   
 
-#### HMS_ModuleInstall_On
+### HMS_ModuleInstall_On
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -784,6 +842,7 @@ ModuleInstall_ErrCode HMS_ModuleInstall_On(const char *bundleName, unsigned int 
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | char *bundleName | 包名。 |
@@ -799,7 +858,8 @@ ModuleInstall_ErrCode HMS_ModuleInstall_On(const char *bundleName, unsigned int 
  
   
 
-#### HMS_ModuleInstall_ReleaseStatusCallback
+### HMS_ModuleInstall_ReleaseStatusCallback
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -817,6 +877,7 @@ void HMS_ModuleInstall_ReleaseStatusCallback(ModuleInstall_StatusCallback *statu
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | ModuleInstall_StatusCallback *statusCallback | 下载进度监听回调。 |
@@ -824,7 +885,8 @@ void HMS_ModuleInstall_ReleaseStatusCallback(ModuleInstall_StatusCallback *statu
  
   
 
-#### HMS_ModuleInstall_Off
+### HMS_ModuleInstall_Off
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -842,6 +904,7 @@ ModuleInstall_ErrCode HMS_ModuleInstall_Off(const char *bundleName, unsigned int
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | char *bundleName | 包名。 |

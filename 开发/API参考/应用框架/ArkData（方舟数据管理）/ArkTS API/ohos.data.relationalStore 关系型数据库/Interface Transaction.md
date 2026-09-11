@@ -1,9 +1,9 @@
 # Interface (Transaction)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-data-relationalstore-transaction
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供以事务方式管理数据库的方法。事务对象是通过[createTransaction](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-data-relationalstore-rdbstore#createtransaction14)接口创建的，不同事务对象之间的操作是隔离的，不同类型事务的区别见[TransactionType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-data-relationalstore-e#transactiontype14) 。
 
@@ -60,9 +60,10 @@ export default class EntryAbility extends UIAbility {
 ```
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { relationalStore } from '@kit.ArkData';
@@ -70,9 +71,10 @@ import { relationalStore } from '@kit.ArkData';
 
 
 
-#### commit14+
+## commit14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 commit(): Promise&lt;void&gt;
 
@@ -82,6 +84,7 @@ commit(): Promise&lt;void&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -90,6 +93,7 @@ commit(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -127,9 +131,10 @@ if (store != undefined) {
 
 
 
-#### rollback14+
+## rollback14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 rollback(): Promise&lt;void&gt;
 
@@ -139,6 +144,7 @@ rollback(): Promise&lt;void&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -147,6 +153,7 @@ rollback(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -184,9 +191,10 @@ if (store != undefined) {
 
 
 
-#### insert14+
+## insert14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 insert(table: string, values: ValuesBucket, conflict?: ConflictResolution): Promise&lt;number&gt;
 
@@ -204,6 +212,7 @@ insert(table: string, values: ValuesBucket, conflict?: ConflictResolution): Prom
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | table | string | 是 | 指定的目标表名，不能为空字符串，不应包含空格、逗号和星号，不能以点开头和结尾等，否则会抛出401错误码。 |
@@ -213,6 +222,7 @@ insert(table: string, values: ValuesBucket, conflict?: ConflictResolution): Prom
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象。返回插入数据的行ID。 |
@@ -221,6 +231,7 @@ insert(table: string, values: ValuesBucket, conflict?: ConflictResolution): Prom
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -272,9 +283,10 @@ if (store != undefined) {
 
 
 
-#### insertSync14+
+## insertSync14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 insertSync(table: string, values: ValuesBucket | sendableRelationalStore.ValuesBucket, conflict?: ConflictResolution): number
 
@@ -292,6 +304,7 @@ insertSync(table: string, values: ValuesBucket | sendableRelationalStore.ValuesB
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | table | string | 是 | 指定的目标表名，不能为空字符串。 |
@@ -301,6 +314,7 @@ insertSync(table: string, values: ValuesBucket | sendableRelationalStore.ValuesB
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回插入数据的行ID。 |
@@ -309,6 +323,7 @@ insertSync(table: string, values: ValuesBucket | sendableRelationalStore.ValuesB
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -367,9 +382,10 @@ if (store != undefined) {
 
 
 
-#### batchInsert14+
+## batchInsert14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 batchInsert(table: string, values: Array&lt;ValuesBucket&gt;): Promise&lt;number&gt;
 
@@ -389,6 +405,7 @@ batchInsert(table: string, values: Array&lt;ValuesBucket&gt;): Promise&lt;number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | table | string | 是 | 指定的目标表名，不能为空字符串。 |
@@ -396,6 +413,7 @@ batchInsert(table: string, values: Array&lt;ValuesBucket&gt;): Promise&lt;number
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -405,6 +423,7 @@ batchInsert(table: string, values: Array&lt;ValuesBucket&gt;): Promise&lt;number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -469,9 +488,10 @@ if (store != undefined) {
 
 
 
-#### batchInsertSync14+
+## batchInsertSync14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 batchInsertSync(table: string, values: Array&lt;ValuesBucket&gt;): number
 
@@ -491,6 +511,7 @@ batchInsertSync(table: string, values: Array&lt;ValuesBucket&gt;): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | table | string | 是 | 指定的目标表名，不能为空字符串。 |
@@ -498,6 +519,7 @@ batchInsertSync(table: string, values: Array&lt;ValuesBucket&gt;): number
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -507,6 +529,7 @@ batchInsertSync(table: string, values: Array&lt;ValuesBucket&gt;): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -571,9 +594,10 @@ if (store != undefined) {
 
 
 
-#### batchInsertWithConflictResolution18+
+## batchInsertWithConflictResolution18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 batchInsertWithConflictResolution(table: string, values: Array&lt;ValuesBucket&gt;, conflict: ConflictResolution): Promise&lt;number&gt;
 
@@ -597,6 +621,7 @@ batchInsertWithConflictResolution(table: string, values: Array&lt;ValuesBucket&g
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | table | string | 是 | 指定的目标表名，不能为空字符串。 |
@@ -606,6 +631,7 @@ batchInsertWithConflictResolution(table: string, values: Array&lt;ValuesBucket&g
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象。返回批量插入的数据个数。 |
@@ -614,6 +640,7 @@ batchInsertWithConflictResolution(table: string, values: Array&lt;ValuesBucket&g
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -686,9 +713,10 @@ if (store != undefined) {
 
 
 
-#### batchInsertWithConflictResolutionSync18+
+## batchInsertWithConflictResolutionSync18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 batchInsertWithConflictResolutionSync(table: string, values: Array&lt;ValuesBucket&gt;, conflict: ConflictResolution): number
 
@@ -712,6 +740,7 @@ batchInsertWithConflictResolutionSync(table: string, values: Array&lt;ValuesBuck
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | table | string | 是 | 指定的目标表名，不能为空字符串。 |
@@ -721,6 +750,7 @@ batchInsertWithConflictResolutionSync(table: string, values: Array&lt;ValuesBuck
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回批量插入的数据个数。 |
@@ -729,6 +759,7 @@ batchInsertWithConflictResolutionSync(table: string, values: Array&lt;ValuesBuck
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -800,9 +831,10 @@ if (store != undefined) {
 
 
 
-#### batchInsertWithReturning23+
+## batchInsertWithReturning23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 batchInsertWithReturning(table: string, values: Array&lt;ValuesBucket&gt;, config: ReturningConfig, conflict?: ConflictResolution): Promise&lt;Result&gt;
 
@@ -830,6 +862,7 @@ conflict参数不建议使用ON_CONFLICT_FAIL策略，可能无法返回正确�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | table | string | 是 | 要插入的目标表名。注意：正确的表名不应包含空格、逗号和星号，不能以点开头和结尾等，否则会抛出参数错误。 |
@@ -840,6 +873,7 @@ conflict参数不建议使用ON_CONFLICT_FAIL策略，可能无法返回正确�
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Result&gt; | Promise对象。返回受影响的数据集。 |
@@ -848,6 +882,7 @@ conflict参数不建议使用ON_CONFLICT_FAIL策略，可能无法返回正确�
 **错误码：**
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -888,9 +923,10 @@ async function transBatchInsertWithReturningExample(trans: relationalStore.Trans
 
 
 
-#### batchInsertWithReturningSync23+
+## batchInsertWithReturningSync23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 batchInsertWithReturningSync(table: string, values: Array&lt;ValuesBucket&gt;, config: ReturningConfig, conflict?: ConflictResolution): Result
 
@@ -918,6 +954,7 @@ conflict参数不建议使用ON_CONFLICT_FAIL策略，可能无法返回正确�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | table | string | 是 | 要插入的目标表名。注意：正确的表名不应包含空格、逗号和星号，不能以点开头和结尾等，否则会抛出参数错误。 |
@@ -928,6 +965,7 @@ conflict参数不建议使用ON_CONFLICT_FAIL策略，可能无法返回正确�
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Result | 返回受影响的数据集。 |
@@ -936,6 +974,7 @@ conflict参数不建议使用ON_CONFLICT_FAIL策略，可能无法返回正确�
 **错误码：**
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -976,9 +1015,10 @@ function transBatchInsertWithReturningSyncExample(trans: relationalStore.Transac
 
 
 
-#### update14+
+## update14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 update(values: ValuesBucket, predicates: RdbPredicates, conflict?: ConflictResolution): Promise&lt;number&gt;
 
@@ -996,6 +1036,7 @@ update(values: ValuesBucket, predicates: RdbPredicates, conflict?: ConflictResol
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | values | ValuesBucket | 是 | values指示数据库中要更新的数据行。键值对与数据库表的列名相关联。 |
@@ -1005,6 +1046,7 @@ update(values: ValuesBucket, predicates: RdbPredicates, conflict?: ConflictResol
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象。返回受影响的行数。 |
@@ -1013,6 +1055,7 @@ update(values: ValuesBucket, predicates: RdbPredicates, conflict?: ConflictResol
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1066,9 +1109,10 @@ if (store != undefined) {
 
 
 
-#### updateSync14+
+## updateSync14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateSync(values: ValuesBucket, predicates: RdbPredicates, conflict?: ConflictResolution): number
 
@@ -1086,6 +1130,7 @@ updateSync(values: ValuesBucket, predicates: RdbPredicates, conflict?: ConflictR
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | values | ValuesBucket | 是 | values指示数据库中要更新的数据行。键值对与数据库表的列名相关联。 |
@@ -1095,6 +1140,7 @@ updateSync(values: ValuesBucket, predicates: RdbPredicates, conflict?: ConflictR
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回受影响的行数。 |
@@ -1103,6 +1149,7 @@ updateSync(values: ValuesBucket, predicates: RdbPredicates, conflict?: ConflictR
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1156,9 +1203,10 @@ if (store != undefined) {
 
 
 
-#### updateWithReturning23+
+## updateWithReturning23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateWithReturning(values: ValuesBucket, predicates: RdbPredicates, config: ReturningConfig, conflict?: ConflictResolution): Promise&lt;Result&gt;
 
@@ -1180,6 +1228,7 @@ conflict参数不建议使用ON_CONFLICT_FAIL策略，可能无法返回正确�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | values | ValuesBucket | 是 | values指示数据库中要更新的数据行。键值对与数据库表的列名相关联。 |
@@ -1190,6 +1239,7 @@ conflict参数不建议使用ON_CONFLICT_FAIL策略，可能无法返回正确�
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Result&gt; | Promise对象。返回受影响的数据集。 |
@@ -1198,6 +1248,7 @@ conflict参数不建议使用ON_CONFLICT_FAIL策略，可能无法返回正确�
 **错误码：**
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1242,9 +1293,10 @@ async function transUpdateWithReturningExample(trans: relationalStore.Transactio
 
 
 
-#### updateWithReturningSync23+
+## updateWithReturningSync23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateWithReturningSync(values: ValuesBucket, predicates: RdbPredicates, config: ReturningConfig, conflict?: ConflictResolution): Result
 
@@ -1266,6 +1318,7 @@ conflict参数不建议使用ON_CONFLICT_FAIL策略，可能无法返回正确�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | values | ValuesBucket | 是 | values指示数据库中要更新的数据行。键值对与数据库表的列名相关联。 |
@@ -1276,6 +1329,7 @@ conflict参数不建议使用ON_CONFLICT_FAIL策略，可能无法返回正确�
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Result | 返回受影响的数据集。 |
@@ -1284,6 +1338,7 @@ conflict参数不建议使用ON_CONFLICT_FAIL策略，可能无法返回正确�
 **错误码：**
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1328,9 +1383,10 @@ function transUpdateWithReturningSyncExample(trans: relationalStore.Transaction)
 
 
 
-#### delete14+
+## delete14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 delete(predicates: RdbPredicates):Promise&lt;number&gt;
 
@@ -1340,12 +1396,14 @@ delete(predicates: RdbPredicates):Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | predicates | RdbPredicates | 是 | RdbPredicates的实例对象指定的删除条件。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1355,6 +1413,7 @@ delete(predicates: RdbPredicates):Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1402,9 +1461,10 @@ if (store != undefined) {
 
 
 
-#### deleteSync14+
+## deleteSync14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteSync(predicates: RdbPredicates): number
 
@@ -1414,12 +1474,14 @@ deleteSync(predicates: RdbPredicates): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | predicates | RdbPredicates | 是 | RdbPredicates的实例对象指定的删除条件。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1429,6 +1491,7 @@ deleteSync(predicates: RdbPredicates): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1475,9 +1538,10 @@ if (store != undefined) {
 
 
 
-#### deleteWithReturning23+
+## deleteWithReturning23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteWithReturning(predicates: RdbPredicates, config: ReturningConfig): Promise&lt;Result&gt;
 
@@ -1489,6 +1553,7 @@ deleteWithReturning(predicates: RdbPredicates, config: ReturningConfig): Promise
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | predicates | RdbPredicates | 是 | RdbPredicates的实例对象指定的删除条件。 |
@@ -1496,6 +1561,7 @@ deleteWithReturning(predicates: RdbPredicates, config: ReturningConfig): Promise
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1505,6 +1571,7 @@ deleteWithReturning(predicates: RdbPredicates, config: ReturningConfig): Promise
 **错误码：**
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1546,9 +1613,10 @@ async function transDeleteWithReturningExample(trans: relationalStore.Transactio
 
 
 
-#### deleteWithReturningSync23+
+## deleteWithReturningSync23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteWithReturningSync(predicates: RdbPredicates, config: ReturningConfig): Result
 
@@ -1560,6 +1628,7 @@ deleteWithReturningSync(predicates: RdbPredicates, config: ReturningConfig): Res
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | predicates | RdbPredicates | 是 | RdbPredicates的实例对象指定的删除条件。 |
@@ -1567,6 +1636,7 @@ deleteWithReturningSync(predicates: RdbPredicates, config: ReturningConfig): Res
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1576,6 +1646,7 @@ deleteWithReturningSync(predicates: RdbPredicates, config: ReturningConfig): Res
 **错误码：**
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1617,9 +1688,10 @@ function transDeleteWithReturningSyncExample(trans: relationalStore.Transaction)
 
 
 
-#### query14+
+## query14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 query(predicates: RdbPredicates, columns?: Array&lt;string&gt;): Promise&lt;ResultSet&gt;
 
@@ -1629,6 +1701,7 @@ query(predicates: RdbPredicates, columns?: Array&lt;string&gt;): Promise&lt;Resu
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | predicates | RdbPredicates | 是 | RdbPredicates的实例对象指定的查询条件。 |
@@ -1636,6 +1709,7 @@ query(predicates: RdbPredicates, columns?: Array&lt;string&gt;): Promise&lt;Resu
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1645,6 +1719,7 @@ query(predicates: RdbPredicates, columns?: Array&lt;string&gt;): Promise&lt;Resu
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1697,9 +1772,10 @@ if (store != undefined) {
 
 
 
-#### querySync14+
+## querySync14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 querySync(predicates: RdbPredicates, columns?: Array&lt;string&gt;): ResultSet
 
@@ -1709,6 +1785,7 @@ querySync(predicates: RdbPredicates, columns?: Array&lt;string&gt;): ResultSet
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | predicates | RdbPredicates | 是 | RdbPredicates的实例对象指定的查询条件。 |
@@ -1716,6 +1793,7 @@ querySync(predicates: RdbPredicates, columns?: Array&lt;string&gt;): ResultSet
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1725,6 +1803,7 @@ querySync(predicates: RdbPredicates, columns?: Array&lt;string&gt;): ResultSet
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1778,9 +1857,10 @@ if (store != undefined) {
 
 
 
-#### querySql14+
+## querySql14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 querySql(sql: string, args?: Array&lt;ValueType&gt;): Promise&lt;ResultSet&gt;
 
@@ -1790,6 +1870,7 @@ querySql(sql: string, args?: Array&lt;ValueType&gt;): Promise&lt;ResultSet&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sql | string | 是 | 指定要执行的SQL语句，不能为空字符串。 |
@@ -1797,6 +1878,7 @@ querySql(sql: string, args?: Array&lt;ValueType&gt;): Promise&lt;ResultSet&gt;
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1806,6 +1888,7 @@ querySql(sql: string, args?: Array&lt;ValueType&gt;): Promise&lt;ResultSet&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1856,9 +1939,10 @@ if (store != undefined) {
 
 
 
-#### querySqlSync14+
+## querySqlSync14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 querySqlSync(sql: string, args?: Array&lt;ValueType&gt;): ResultSet
 
@@ -1868,6 +1952,7 @@ querySqlSync(sql: string, args?: Array&lt;ValueType&gt;): ResultSet
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sql | string | 是 | 指定要执行的SQL语句，不能为空字符串。 |
@@ -1875,6 +1960,7 @@ querySqlSync(sql: string, args?: Array&lt;ValueType&gt;): ResultSet
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1884,6 +1970,7 @@ querySqlSync(sql: string, args?: Array&lt;ValueType&gt;): ResultSet
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1934,9 +2021,10 @@ if (store != undefined) {
 
 
 
-#### queryWithoutRowCount23+
+## queryWithoutRowCount23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 queryWithoutRowCount(predicates: RdbPredicates, columns?: Array&lt;string&gt;): Promise&lt;LiteResultSet&gt;
 
@@ -1948,6 +2036,7 @@ queryWithoutRowCount(predicates: RdbPredicates, columns?: Array&lt;string&gt;): 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | predicates | RdbPredicates | 是 | RdbPredicates的实例对象指定的查询条件。 |
@@ -1955,6 +2044,7 @@ queryWithoutRowCount(predicates: RdbPredicates, columns?: Array&lt;string&gt;): 
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1964,6 +2054,7 @@ queryWithoutRowCount(predicates: RdbPredicates, columns?: Array&lt;string&gt;): 
 **错误码：**
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2012,9 +2103,10 @@ async function queryWithoutRowCountExample(store : relationalStore.RdbStore) {
 
 
 
-#### queryWithoutRowCountSync23+
+## queryWithoutRowCountSync23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 queryWithoutRowCountSync(predicates: RdbPredicates, columns?: Array&lt;string&gt;): LiteResultSet
 
@@ -2026,6 +2118,7 @@ queryWithoutRowCountSync(predicates: RdbPredicates, columns?: Array&lt;string&gt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | predicates | RdbPredicates | 是 | RdbPredicates的实例对象指定的查询条件。 |
@@ -2033,6 +2126,7 @@ queryWithoutRowCountSync(predicates: RdbPredicates, columns?: Array&lt;string&gt
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2042,6 +2136,7 @@ queryWithoutRowCountSync(predicates: RdbPredicates, columns?: Array&lt;string&gt
 **错误码：**
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2090,9 +2185,10 @@ async function queryWithoutRowCountSyncExample(store : relationalStore.RdbStore)
 
 
 
-#### querySqlWithoutRowCount23+
+## querySqlWithoutRowCount23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 querySqlWithoutRowCount(sql: string, bindArgs?: Array&lt;ValueType&gt;): Promise&lt;LiteResultSet&gt;
 
@@ -2104,6 +2200,7 @@ querySqlWithoutRowCount(sql: string, bindArgs?: Array&lt;ValueType&gt;): Promise
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sql | string | 是 | 指定要执行的SQL语句，不能为空字符串。 |
@@ -2111,6 +2208,7 @@ querySqlWithoutRowCount(sql: string, bindArgs?: Array&lt;ValueType&gt;): Promise
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2120,6 +2218,7 @@ querySqlWithoutRowCount(sql: string, bindArgs?: Array&lt;ValueType&gt;): Promise
 **错误码：**
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2167,9 +2266,10 @@ async function querySqlWithoutRowCountExample(store : relationalStore.RdbStore) 
 
 
 
-#### querySqlWithoutRowCountSync23+
+## querySqlWithoutRowCountSync23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 querySqlWithoutRowCountSync(sql: string, bindArgs?: Array&lt;ValueType&gt;):LiteResultSet
 
@@ -2181,6 +2281,7 @@ querySqlWithoutRowCountSync(sql: string, bindArgs?: Array&lt;ValueType&gt;):Lite
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sql | string | 是 | 指定要执行的SQL语句，不能为空字符串。 |
@@ -2188,6 +2289,7 @@ querySqlWithoutRowCountSync(sql: string, bindArgs?: Array&lt;ValueType&gt;):Lite
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2197,6 +2299,7 @@ querySqlWithoutRowCountSync(sql: string, bindArgs?: Array&lt;ValueType&gt;):Lite
 **错误码：**
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2244,9 +2347,10 @@ async function querySqlWithoutRowCountSyncExample(store : relationalStore.RdbSto
 
 
 
-#### execute14+
+## execute14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 execute(sql: string, args?: Array&lt;ValueType&gt;): Promise&lt;ValueType&gt;
 
@@ -2264,6 +2368,7 @@ execute(sql: string, args?: Array&lt;ValueType&gt;): Promise&lt;ValueType&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sql | string | 是 | 指定要执行的SQL语句，不能为空字符串。 |
@@ -2271,6 +2376,7 @@ execute(sql: string, args?: Array&lt;ValueType&gt;): Promise&lt;ValueType&gt;
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2280,6 +2386,7 @@ execute(sql: string, args?: Array&lt;ValueType&gt;): Promise&lt;ValueType&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2327,9 +2434,10 @@ if (store != undefined) {
 
 
 
-#### executeSync14+
+## executeSync14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 executeSync(sql: string, args?: Array&lt;ValueType&gt;): ValueType
 
@@ -2347,6 +2455,7 @@ executeSync(sql: string, args?: Array&lt;ValueType&gt;): ValueType
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sql | string | 是 | 指定要执行的SQL语句，不能为空字符串。 |
@@ -2354,6 +2463,7 @@ executeSync(sql: string, args?: Array&lt;ValueType&gt;): ValueType
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2363,6 +2473,7 @@ executeSync(sql: string, args?: Array&lt;ValueType&gt;): ValueType
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

@@ -1,9 +1,9 @@
 # ArcButton
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-arcbutton
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 弧形按钮组件提供强调、常规、自定义等样式按钮，推荐用于圆形屏幕的设备。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import {
@@ -28,33 +29,37 @@ import {
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 不支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通用事件支持[点击事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-events-click)和[触摸事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-events-touch)。
 
 
 
-#### ArcButton
+## ArcButton
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ArcButton({ options: ArcButtonOptions })
 
@@ -68,6 +73,7 @@ ArcButton({ options: ArcButtonOptions })
 
 **参数**：
 
+
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | options | ArcButtonOptions | 是 | @Require | 定义ArcButton组件的文本、背景色、阴影等参数。 |
@@ -75,13 +81,15 @@ ArcButton({ options: ArcButtonOptions })
 
 
 
-#### ArcButtonOptions
+## ArcButtonOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义ArcButton的默认样式或自定义样式参数。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Circle
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -106,9 +114,10 @@ ArcButton({ options: ArcButtonOptions })
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(options: CommonArcButtonOptions)
 
@@ -120,6 +129,7 @@ constructor(options: CommonArcButtonOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | CommonArcButtonOptions | 是 | 定义ArcButton组件的文本、背景色、阴影等参数。 |
@@ -127,13 +137,15 @@ constructor(options: CommonArcButtonOptions)
 
 
 
-#### CommonArcButtonOptions
+## CommonArcButtonOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ArcButton的默认样式或自定义样式参数。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Circle
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -158,9 +170,10 @@ ArcButton的默认样式或自定义样式参数。
 
 
 
-#### ArcButtonProgressConfig23+
+## ArcButtonProgressConfig23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ArcButton内进度条的参数配置。
 
@@ -169,6 +182,7 @@ ArcButton内进度条的参数配置。
 **系统能力：** SystemCapability.ArkUI.ArkUI.Circle
 
 **模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -179,15 +193,17 @@ ArcButton内进度条的参数配置。
 
 
 
-#### ArcButtonPosition
+## ArcButtonPosition
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义ArcButton可设置的弧形按钮的位置。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Circle
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -197,15 +213,17 @@ ArcButton内进度条的参数配置。
 
 
 
-#### ArcButtonStyleMode
+## ArcButtonStyleMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义ArcButton可设置弧形按钮样式模式。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Circle
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -218,15 +236,17 @@ ArcButton内进度条的参数配置。
 
 
 
-#### ArcButtonStatus
+## ArcButtonStatus
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义ArcButton可设置的弧形按钮状态。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Circle
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -237,13 +257,17 @@ ArcButton内进度条的参数配置。
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1 (设置弧形按钮)
+
+
+### 示例1 (设置弧形按钮)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示了ArcButton的基本用法。从API version 18开始，新增ArcButton。示例配置如下：
 1. topOptions定义了上弧形按钮，按钮文本为ButtonTop，字体大小为15fp，按钮状态为正常状态，按钮样式为亮色强调，启用阴影。
@@ -334,7 +358,10 @@ struct Index {
 
 
 
-#### 示例2 (设置设备进度条按钮)
+### 示例2 (设置设备进度条按钮)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示了ArcButton组件进度条样式的基本用法。从API version 23开始，新增[ArcButtonOptions](#arcbuttonoptions)的progressConfig接口。示例配置如下：
 1. topOptions定义了上弧形按钮。按钮文本为Add，字体大小为15fp，按钮状态为正常状态，按钮样式为亮色强调，启用阴影。按钮设置了点击事件，点击按钮将增加进度条的进度。
@@ -423,4 +450,4 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/Qc1qsTDTSXmLntShBklZbw/zh-cn_image_0000002686088041.jpg?HW-CC-KV=V1&HW-CC-Date=20260730T071504Z&HW-CC-Expire=86400&HW-CC-Sign=130D3E596E743E887929B0EE1B29C73A7F0D3DB706FA05E211FA6C7DA8B5C8D8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/zP8L5eqgQ_GoB3duADg8rA/zh-cn_image_0000002717612752.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T073026Z&HW-CC-Expire=86400&HW-CC-Sign=78CEC93240CAF886B70FA1B5E31EDE6056961C69A54AAAA7DCECF709154A6B00)

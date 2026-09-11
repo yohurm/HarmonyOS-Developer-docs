@@ -1,13 +1,14 @@
 # native_display_soloist.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-display-soloist-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义获取和使用NativeDisplaySoloist的相关函数。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | DisplaySoloist_ExpectedRateRange | DisplaySoloist_ExpectedRateRange | 期望帧率范围结构体，用于设置DisplaySoloist（可变帧率独立线程绘制）的期望帧率范围。设置的期望帧率范围将作为系统调度的参考，系统会尽量在此范围内调整绘制帧率。 |
@@ -41,10 +45,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | typedef void (*OH_DisplaySoloist_FrameCallback)(long long timestamp, long long targetTimestamp, void* data) | OH_DisplaySoloist_FrameCallback | OH_DisplaySoloist回调函数类型。在每次VSync信号到来时被系统调用，用于执行每帧的自定义业务。 |
@@ -57,15 +63,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_DisplaySoloist_FrameCallback()
+### OH_DisplaySoloist_FrameCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_DisplaySoloist_FrameCallback)(long long timestamp, long long targetTimestamp, void* data)
@@ -79,6 +87,7 @@ OH_DisplaySoloist回调函数类型。在每次VSync信号到来时被系统调�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | long long timestamp | 当前帧VSync时间戳（单位：纳秒）。 |
@@ -88,9 +97,10 @@ OH_DisplaySoloist回调函数类型。在每次VSync信号到来时被系统调�
  
   
 
-#### OH_DisplaySoloist_Create()
+### OH_DisplaySoloist_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_DisplaySoloist* OH_DisplaySoloist_Create(bool useExclusiveThread)
@@ -104,6 +114,7 @@ OH_DisplaySoloist* OH_DisplaySoloist_Create(bool useExclusiveThread)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | bool useExclusiveThread | 表示此OH_DisplaySoloist实例是否独占线程。true表示独占线程，false表示共享线程（与其他实例共享线程）。 |
@@ -111,6 +122,7 @@ OH_DisplaySoloist* OH_DisplaySoloist_Create(bool useExclusiveThread)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_DisplaySoloist* | 返回一个指向OH_DisplaySoloist实例的指针，如果返回空表示执行失败，可能的原因是内存不足。 |
@@ -118,9 +130,10 @@ OH_DisplaySoloist* OH_DisplaySoloist_Create(bool useExclusiveThread)
  
   
 
-#### OH_DisplaySoloist_Destroy()
+### OH_DisplaySoloist_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_DisplaySoloist_Destroy(OH_DisplaySoloist* displaySoloist)
@@ -134,6 +147,7 @@ int32_t OH_DisplaySoloist_Destroy(OH_DisplaySoloist* displaySoloist)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_DisplaySoloist* displaySoloist | 一个指向OH_DisplaySoloist实例的指针，不能为空。 |
@@ -141,6 +155,7 @@ int32_t OH_DisplaySoloist_Destroy(OH_DisplaySoloist* displaySoloist)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回值为0表示执行成功；-1表示执行失败，可能原因是传入错误的displaySoloist。 |
@@ -148,9 +163,10 @@ int32_t OH_DisplaySoloist_Destroy(OH_DisplaySoloist* displaySoloist)
  
   
 
-#### OH_DisplaySoloist_Start()
+### OH_DisplaySoloist_Start()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_DisplaySoloist_Start(OH_DisplaySoloist* displaySoloist, OH_DisplaySoloist_FrameCallback callback, void* data)
@@ -164,6 +180,7 @@ int32_t OH_DisplaySoloist_Start(OH_DisplaySoloist* displaySoloist, OH_DisplaySol
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_DisplaySoloist* displaySoloist | 一个指向OH_DisplaySoloist实例的指针，不能为空。 |
@@ -173,6 +190,7 @@ int32_t OH_DisplaySoloist_Start(OH_DisplaySoloist* displaySoloist, OH_DisplaySol
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回值为0表示执行成功；-1表示执行失败，可能原因是传入错误的displaySoloist或callback。 |
@@ -180,9 +198,10 @@ int32_t OH_DisplaySoloist_Start(OH_DisplaySoloist* displaySoloist, OH_DisplaySol
  
   
 
-#### OH_DisplaySoloist_Stop()
+### OH_DisplaySoloist_Stop()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_DisplaySoloist_Stop(OH_DisplaySoloist* displaySoloist)
@@ -196,6 +215,7 @@ int32_t OH_DisplaySoloist_Stop(OH_DisplaySoloist* displaySoloist)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_DisplaySoloist* displaySoloist | 一个指向OH_DisplaySoloist实例的指针，不能为空。 |
@@ -203,6 +223,7 @@ int32_t OH_DisplaySoloist_Stop(OH_DisplaySoloist* displaySoloist)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回值为0表示执行成功；-1表示执行失败，可能原因是传入错误的displaySoloist。 |
@@ -210,9 +231,10 @@ int32_t OH_DisplaySoloist_Stop(OH_DisplaySoloist* displaySoloist)
  
   
 
-#### OH_DisplaySoloist_SetExpectedFrameRateRange()
+### OH_DisplaySoloist_SetExpectedFrameRateRange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_DisplaySoloist_SetExpectedFrameRateRange(OH_DisplaySoloist* displaySoloist, DisplaySoloist_ExpectedRateRange* range)
@@ -226,6 +248,7 @@ int32_t OH_DisplaySoloist_SetExpectedFrameRateRange(OH_DisplaySoloist* displaySo
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_DisplaySoloist* displaySoloist | 一个指向OH_DisplaySoloist实例的指针，不能为空。 |
@@ -234,6 +257,7 @@ int32_t OH_DisplaySoloist_SetExpectedFrameRateRange(OH_DisplaySoloist* displaySo
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回值为0表示执行成功；-1表示执行失败，可能的失败原因：1. 必填参数未指定；2. 参数类型错误；3. 参数校验失败或DisplaySoloist_ExpectedRateRange无效。 |

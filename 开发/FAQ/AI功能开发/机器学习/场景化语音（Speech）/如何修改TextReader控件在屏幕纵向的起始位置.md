@@ -29,26 +29,26 @@ import { TextReader, TextReaderIcon, ReadStateCode } from '@kit.SpeechKit';
 @Component
 struct Index {
 
-  /**
-   * 待加载的文章
-   */
+  <em>/**</em>
+<em>   * 待加载的文章</em>
+<em>   */</em>
   @State readInfoList: TextReader.ReadInfo[] = [];
   @State selectedReadInfo: TextReader.ReadInfo = this.readInfoList[0];
 
-  /**
-   * 播放状态
-   */
+<em>  /**</em>
+<em>   * 播放状态</em>
+<em>   */</em>
   @State readState: ReadStateCode = ReadStateCode.WAITING;
 
-  /**
-   * 用于显示当前页的按钮状态
-   */
+  <em>/**</em>
+<em>   * 用于显示当前页的按钮状态</em>
+<em>   */</em>
   private isInit: boolean = false;
 
   async aboutToAppear() {
-    /**
-     * 加载数据
-     */
+    <em>/**</em>
+<em>     * 加载数据</em>
+<em>     */</em>
     let readInfoList: TextReader.ReadInfo[] = [{
       id: '001',
       title: {
@@ -70,9 +70,9 @@ struct Index {
     this.init();
   }
 
-  /**
-   * 初始化
-   */
+  <em>/**</em>
+<em>   * 初始化</em>
+<em>   */</em>
 
 
   async init() {
@@ -99,7 +99,7 @@ struct Index {
     }
   }
 
-  // 设置操作监听
+<em>  // 设置操作监听</em>
   setActionListener() {
     TextReader.on('stateChange', (state: TextReader.ReadState) => {
       this.onStateChanged(state);

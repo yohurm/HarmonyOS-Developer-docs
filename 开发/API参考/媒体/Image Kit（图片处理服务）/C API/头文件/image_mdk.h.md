@@ -1,13 +1,14 @@
 # image_mdk.h
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-mdk-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明访问图像矩形、大小、格式和组件数据的函数。
 
@@ -23,15 +24,18 @@
 
 
 
-#### 汇总
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 汇总
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 结构体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -42,9 +46,11 @@
 
 
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -54,9 +60,11 @@
 
 
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -70,15 +78,17 @@
 
 
 
-#### 枚举类型说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 枚举类型说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 图像格式
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 图像格式
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum anonymous enum
@@ -90,6 +100,7 @@ enum anonymous enum
 
 **起始版本：** 10
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OHOS_IMAGE_FORMAT_YCBCR_422_SP = 1000 | YCBCR422 semi-planar格式。 |
@@ -98,9 +109,10 @@ enum anonymous enum
 
 
 
-#### 图像颜色通道类型
+### 图像颜色通道类型
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum anonymous enum
@@ -112,6 +124,7 @@ enum anonymous enum
 
 **起始版本：** 10
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OHOS_IMAGE_COMPONENT_FORMAT_YUV_Y = 1 | 亮度信息。 |
@@ -122,15 +135,17 @@ enum anonymous enum
 
 
 
-#### 函数说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 函数说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### OH_Image_InitImageNative()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### OH_Image_InitImageNative()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ImageNative* OH_Image_InitImageNative(napi_env env, napi_value source)
@@ -144,6 +159,7 @@ ImageNative* OH_Image_InitImageNative(napi_env env, napi_value source)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | napi_env env | 表示指向JNI环境的指针。 |
@@ -151,6 +167,7 @@ ImageNative* OH_Image_InitImageNative(napi_env env, napi_value source)
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -163,9 +180,10 @@ ImageNative* OH_Image_InitImageNative(napi_env env, napi_value source)
 
 
 
-#### OH_Image_ClipRect()
+### OH_Image_ClipRect()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Image_ClipRect(const ImageNative* native, struct OhosImageRect* rect)
@@ -179,6 +197,7 @@ int32_t OH_Image_ClipRect(const ImageNative* native, struct OhosImageRect* rect)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ImageNative* native | 表示指向ImageNative native层对象的指针。 |
@@ -187,6 +206,7 @@ int32_t OH_Image_ClipRect(const ImageNative* native, struct OhosImageRect* rect)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | IRNdkErrCode： IMAGE_RESULT_SUCCESS：操作成功。 IMAGE_RESULT_JNI_ENV_ABNORMAL：JNI环境异常。 IMAGE_RESULT_INVALID_PARAMETER：参数无效。 IMAGE_RESULT_SURFACE_GET_PARAMETER_FAILED：从surface获取参数失败。 IMAGE_RESULT_BAD_PARAMETER：参数错误。 |
@@ -194,9 +214,10 @@ int32_t OH_Image_ClipRect(const ImageNative* native, struct OhosImageRect* rect)
 
 
 
-#### OH_Image_Size()
+### OH_Image_Size()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Image_Size(const ImageNative* native, struct OhosImageSize* size)
@@ -214,6 +235,7 @@ ImageNative对象所存储的数据是预览流还是拍照流，取决于应用
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ImageNative* native | 表示ImageNative native对象的指针。 |
@@ -222,6 +244,7 @@ ImageNative对象所存储的数据是预览流还是拍照流，取决于应用
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | IRNdkErrCode： IMAGE_RESULT_SUCCESS：操作成功。 IMAGE_RESULT_JNI_ENV_ABNORMAL：JNI环境异常。 IMAGE_RESULT_INVALID_PARAMETER：参数无效。 IMAGE_RESULT_SURFACE_GET_PARAMETER_FAILED：从surface获取参数失败。 IMAGE_RESULT_BAD_PARAMETER：参数错误。 |
@@ -229,9 +252,10 @@ ImageNative对象所存储的数据是预览流还是拍照流，取决于应用
 
 
 
-#### OH_Image_Format()
+### OH_Image_Format()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Image_Format(const ImageNative* native, int32_t* format)
@@ -245,6 +269,7 @@ int32_t OH_Image_Format(const ImageNative* native, int32_t* format)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ImageNative* native | 表示ImageNative native对象的指针。 |
@@ -253,6 +278,7 @@ int32_t OH_Image_Format(const ImageNative* native, int32_t* format)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | IRNdkErrCode： IMAGE_RESULT_SUCCESS：操作成功。 IMAGE_RESULT_JNI_ENV_ABNORMAL：JNI环境异常。 IMAGE_RESULT_INVALID_PARAMETER：参数无效。 IMAGE_RESULT_SURFACE_GET_PARAMETER_FAILED：从surface获取参数失败。 IMAGE_RESULT_BAD_PARAMETER：参数错误。 |
@@ -260,9 +286,10 @@ int32_t OH_Image_Format(const ImageNative* native, int32_t* format)
 
 
 
-#### OH_Image_GetComponent()
+### OH_Image_GetComponent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Image_GetComponent(const ImageNative* native, int32_t componentType, struct OhosImageComponent* componentNative)
@@ -276,6 +303,7 @@ int32_t OH_Image_GetComponent(const ImageNative* native, int32_t componentType, 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ImageNative* native | 表示ImageNative native对象的指针。 |
@@ -285,6 +313,7 @@ int32_t OH_Image_GetComponent(const ImageNative* native, int32_t componentType, 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | IRNdkErrCode： IMAGE_RESULT_SUCCESS：操作成功。 IMAGE_RESULT_JNI_ENV_ABNORMAL：JNI环境异常。 IMAGE_RESULT_INVALID_PARAMETER：参数无效。 IMAGE_RESULT_SURFACE_GET_PARAMETER_FAILED：从surface获取参数失败。 IMAGE_RESULT_BAD_PARAMETER：参数错误。 |
@@ -292,9 +321,10 @@ int32_t OH_Image_GetComponent(const ImageNative* native, int32_t componentType, 
 
 
 
-#### OH_Image_Release()
+### OH_Image_Release()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_Image_Release(ImageNative* native)
@@ -310,12 +340,14 @@ int32_t OH_Image_Release(ImageNative* native)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ImageNative* native | 表示ImageNative native对象的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |

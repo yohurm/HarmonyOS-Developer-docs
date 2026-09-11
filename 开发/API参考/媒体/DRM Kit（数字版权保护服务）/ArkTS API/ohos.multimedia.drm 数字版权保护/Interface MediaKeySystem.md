@@ -1,9 +1,9 @@
 # Interface (MediaKeySystem)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-drm-mediakeysystem
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持MediaKeySystem实例管理、设备证书申请与处理、会话创建、离线媒体密钥管理、获取DRM度量记录、设备属性等。在调用MediaKeySystem方法之前，必须使用[createMediaKeySystem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-drm-f#drmcreatemediakeysystem)创建一个MediaKeySystem实例。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { drm } from '@kit.DrmKit';
@@ -22,19 +23,21 @@ import { drm } from '@kit.DrmKit';
 
 
 
-#### setConfigurationString
+## setConfigurationString
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setConfigurationString(configName: string, value: string): void
 
 设置字符串类型的配置信息。
 
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -46,11 +49,12 @@ setConfigurationString(configName: string, value: string): void
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[DRM错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-drm)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
-| 24700101 | All unknown errors |
-| 24700201 | Fatal service error, for example, service died |
+| 401 | The parameter check failed. Possibly because: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 24700101 | All unknown errors. |
+| 24700201 | Fatal service error, for example, service died. |
 
 
 **示例：**
@@ -64,19 +68,21 @@ mediaKeySystem.setConfigurationString('stringConfigName', 'stringConfigValue'); 
 
 
 
-#### getConfigurationString
+## getConfigurationString
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getConfigurationString(configName: string): string
 
 获取字符串类型的配置属性值。
 
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -84,6 +90,7 @@ getConfigurationString(configName: string): string
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -94,11 +101,12 @@ getConfigurationString(configName: string): string
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[DRM错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-drm)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified. 2.Parameter verification failed, the param's length is zero or too big(exceeds 4096 Bytes). |
-| 24700101 | All unknown errors |
-| 24700201 | Fatal service error, for example, service died |
+| 401 | The parameter check failed. Possibly because: 1. Mandatory parameters are left unspecified. 2. Parameter verification failed, the param's length is zero or too big (exceeds 4096 Bytes). |
+| 24700101 | All unknown errors. |
+| 24700201 | Fatal service error, for example, service died. |
 
 
 **示例：**
@@ -112,19 +120,21 @@ let configValue: string = mediaKeySystem.getConfigurationString('vendor');
 
 
 
-#### setConfigurationByteArray
+## setConfigurationByteArray
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setConfigurationByteArray(configName: string, value: Uint8Array): void
 
 设置数组类型的配置信息。
 
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -135,6 +145,7 @@ setConfigurationByteArray(configName: string, value: Uint8Array): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[DRM错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-drm)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -157,19 +168,21 @@ mediaKeySystem.setConfigurationByteArray('byteArrayConfigName', configValue);
 
 
 
-#### getConfigurationByteArray
+## getConfigurationByteArray
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getConfigurationByteArray(configName: string): Uint8Array
 
 获取数组类型的配置信息。
 
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -177,6 +190,7 @@ getConfigurationByteArray(configName: string): Uint8Array
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -187,11 +201,12 @@ getConfigurationByteArray(configName: string): Uint8Array
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[DRM错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-drm)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified. 2.Parameter verification failed. |
-| 24700101 | All unknown errors |
-| 24700201 | Fatal service error, for example, service died |
+| 24700101 | All unknown errors. |
+| 24700201 | Fatal service error, for example, service died. |
 
 
 **示例：**
@@ -205,19 +220,21 @@ let configValue: Uint8Array = mediaKeySystem.getConfigurationByteArray('deviceUn
 
 
 
-#### getStatistics
+## getStatistics
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStatistics(): StatisticKeyValue[]
 
 获取性能度量记录。其中包括当前会话数、插件版本信息、每个会话最大三次解密耗时、解密次数和解密失败次数。
 
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -228,10 +245,11 @@ getStatistics(): StatisticKeyValue[]
 
 以下错误码的详细介绍请参见[DRM错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-drm)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 24700101 | All unknown errors |
-| 24700201 | Fatal service error, for example, service died |
+| 24700101 | All unknown errors. |
+| 24700201 | Fatal service error, for example, service died. |
 
 
 **示例：**
@@ -245,19 +263,21 @@ let statisticKeyValue: drm.StatisticKeyValue[] = mediaKeySystem.getStatistics();
 
 
 
-#### getMaxContentProtectionLevel
+## getMaxContentProtectionLevel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMaxContentProtectionLevel(): ContentProtectionLevel
 
 获取当前DRM解决方案支持的最大内容保护级别。
 
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -268,10 +288,11 @@ getMaxContentProtectionLevel(): ContentProtectionLevel
 
 以下错误码的详细介绍请参见[DRM错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-drm)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 24700101 | All unknown errors |
-| 24700201 | Fatal service error, for example, service died |
+| 24700101 | All unknown errors. |
+| 24700201 | Fatal service error, for example, service died. |
 
 
 **示例：**
@@ -285,9 +306,10 @@ let maxLevel: drm.ContentProtectionLevel = mediaKeySystem.getMaxContentProtectio
 
 
 
-#### generateKeySystemRequest
+## generateKeySystemRequest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 generateKeySystemRequest(): Promise&lt;ProvisionRequest&gt;
 
@@ -295,11 +317,12 @@ generateKeySystemRequest(): Promise&lt;ProvisionRequest&gt;
 
 如果设备上已存在设备证书，调用此接口会返回失败。
 
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -310,10 +333,11 @@ generateKeySystemRequest(): Promise&lt;ProvisionRequest&gt;
 
 以下错误码的详细介绍请参见[DRM错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-drm)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 24700101 | All unknown errors |
-| 24700201 | Fatal service error, for example, service died |
+| 24700101 | All unknown errors. |
+| 24700201 | Fatal service error, for example, service died. |
 
 
 **示例：**
@@ -331,9 +355,10 @@ mediaKeySystem.generateKeySystemRequest().then((provisionRequest: drm.ProvisionR
 
 
 
-#### processKeySystemResponse
+## processKeySystemResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 processKeySystemResponse(response: Uint8Array): Promise&lt;void&gt;
 
@@ -341,11 +366,12 @@ processKeySystemResponse(response: Uint8Array): Promise&lt;void&gt;
 
 如果设备上已存在设备证书，调用此接口会返回失败。
 
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -353,6 +379,7 @@ processKeySystemResponse(response: Uint8Array): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -363,11 +390,12 @@ processKeySystemResponse(response: Uint8Array): Promise&lt;void&gt;
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[DRM错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-drm)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
-| 24700101 | All unknown errors |
-| 24700201 | Fatal service error, for example, service died |
+| 24700101 | All unknown errors. |
+| 24700201 | Fatal service error, for example, service died. |
 
 
 **示例：**
@@ -385,19 +413,21 @@ mediaKeySystem.processKeySystemResponse(keySystemResponse).then(() => {
 
 
 
-#### getCertificateStatus
+## getCertificateStatus
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCertificateStatus(): CertificateStatus
 
 获取设备证书状态值。
 
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -408,10 +438,11 @@ getCertificateStatus(): CertificateStatus
 
 以下错误码的详细介绍请参见[DRM错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-drm)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 24700101 | All unknown errors |
-| 24700201 | Fatal service error, for example, service died |
+| 24700101 | All unknown errors. |
+| 24700201 | Fatal service error, for example, service died. |
 
 
 **示例：**
@@ -425,19 +456,21 @@ let certificateStatus: drm.CertificateStatus = mediaKeySystem.getCertificateStat
 
 
 
-#### on('keySystemRequired')
+## on('keySystemRequired')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'keySystemRequired', callback: (eventInfo: EventInfo) => void): void
 
 监听设备证书请求事件，获取事件信息。使用callback异步回调。
 
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -449,10 +482,11 @@ on(type: 'keySystemRequired', callback: (eventInfo: EventInfo) => void): void
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[DRM错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-drm)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
-| 24700101 | All unknown errors |
+| 24700101 | All unknown errors. |
 
 
 **示例：**
@@ -468,19 +502,21 @@ mediaKeySystem.on('keySystemRequired', (eventInfo: drm.EventInfo) => {
 
 
 
-#### off('keySystemRequired')
+## off('keySystemRequired')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'keySystemRequired', callback?: (eventInfo: EventInfo) => void): void
 
 注销设备证书请求事件的监听。使用callback异步回调。
 
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -492,35 +528,39 @@ off(type: 'keySystemRequired', callback?: (eventInfo: EventInfo) => void): void
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[DRM错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-drm)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
-| 24700101 | All unknown errors |
+| 24700101 | All unknown errors. |
 
 
 **示例：**
 
 ```text
 import { drm } from '@kit.DrmKit';
+
 let mediaKeySystem: drm.MediaKeySystem = drm.createMediaKeySystem('com.wiseplay.drm');
 mediaKeySystem.off('keySystemRequired');
 ```
 
 
 
-#### createMediaKeySession
+## createMediaKeySession
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createMediaKeySession(level: ContentProtectionLevel): MediaKeySession
 
 创建指定内容保护级别的MediaKeySession实例。
 
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -528,6 +568,7 @@ createMediaKeySession(level: ContentProtectionLevel): MediaKeySession
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -538,12 +579,13 @@ createMediaKeySession(level: ContentProtectionLevel): MediaKeySession
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[DRM错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-drm)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified. 2.The param level exceeds reasonable range, please use value in ContentProtectionLevel. |
-| 24700101 | All unknown errors |
-| 24700104 | Meet max MediaKeySession num limit |
-| 24700201 | Fatal service error, for example, service died |
+| 401 | The parameter check failed. Possibly because: 1. Mandatory parameters are left unspecified. 2. The param level exceeds reasonable range, please use value in ContentProtectionLevel. |
+| 24700101 | All unknown errors. |
+| 24700104 | Meet max MediaKeySession num limit. |
+| 24700201 | Fatal service error, for example, service died. |
 
 
 **示例：**
@@ -557,19 +599,21 @@ let mediaKeySession: drm.MediaKeySession = mediaKeySystem.createMediaKeySession(
 
 
 
-#### createMediaKeySession
+## createMediaKeySession
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createMediaKeySession(): MediaKeySession
 
 创建DRM解决方案默认内容保护级别的MediaKeySession实例。
 
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -580,11 +624,12 @@ createMediaKeySession(): MediaKeySession
 
 以下错误码的详细介绍请参见[DRM错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-drm)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 24700101 | All unknown errors |
-| 24700104 | Meet max MediaKeySession num limit |
-| 24700201 | Fatal service error, for example, service died |
+| 24700101 | All unknown errors. |
+| 24700104 | Meet max MediaKeySession num limit. |
+| 24700201 | Fatal service error, for example, service died. |
 
 
 **示例：**
@@ -598,19 +643,21 @@ let mediaKeySession: drm.MediaKeySession = mediaKeySystem.createMediaKeySession(
 
 
 
-#### getOfflineMediaKeyIds
+## getOfflineMediaKeyIds
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOfflineMediaKeyIds(): Uint8Array[]
 
 获取离线媒体密钥标识列表。
 
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -621,10 +668,11 @@ getOfflineMediaKeyIds(): Uint8Array[]
 
 以下错误码的详细介绍请参见[DRM错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-drm)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 24700101 | All unknown errors |
-| 24700201 | Fatal service error, for example, service died |
+| 24700101 | All unknown errors. |
+| 24700201 | Fatal service error, for example, service died. |
 
 
 **示例：**
@@ -638,19 +686,21 @@ let offlineMediaKeyIds: Uint8Array[] = mediaKeySystem.getOfflineMediaKeyIds();
 
 
 
-#### getOfflineMediaKeyStatus
+## getOfflineMediaKeyStatus
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOfflineMediaKeyStatus(mediaKeyId: Uint8Array): OfflineMediaKeyStatus
 
 获取指定离线媒体密钥标识的媒体密钥的状态值。
 
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -658,6 +708,7 @@ getOfflineMediaKeyStatus(mediaKeyId: Uint8Array): OfflineMediaKeyStatus
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -668,11 +719,12 @@ getOfflineMediaKeyStatus(mediaKeyId: Uint8Array): OfflineMediaKeyStatus
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[DRM错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-drm)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. 3.Parameter verification failed. |
-| 24700101 | All unknown errors |
-| 24700201 | Fatal service error, for example, service died |
+| 24700101 | All unknown errors. |
+| 24700201 | Fatal service error, for example, service died. |
 
 
 **示例：**
@@ -688,19 +740,21 @@ let configValue: drm.OfflineMediaKeyStatus = mediaKeySystem.getOfflineMediaKeySt
 
 
 
-#### clearOfflineMediaKeys
+## clearOfflineMediaKeys
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clearOfflineMediaKeys(mediaKeyId: Uint8Array): void
 
 删除指定媒体密钥标识的离线媒体密钥。
 
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -711,11 +765,12 @@ clearOfflineMediaKeys(mediaKeyId: Uint8Array): void
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[DRM错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-drm)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | The parameter check failed. Possibly because: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
-| 24700101 | All unknown errors |
-| 24700201 | Fatal service error, for example, service died |
+| 401 | The parameter check failed.Possibly because: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
+| 24700101 | All unknown errors. |
+| 24700201 | Fatal service error, for example, service died. |
 
 
 **示例：**
@@ -731,15 +786,16 @@ mediaKeySystem.clearOfflineMediaKeys(mediaKeyId);
 
 
 
-#### destroy
+## destroy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 destroy(): void
 
 销毁MediaKeySystem实例。
 
-**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
@@ -747,10 +803,11 @@ destroy(): void
 
 以下错误码的详细介绍请参见[DRM错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-drm)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 24700101 | All unknown errors |
-| 24700201 | Fatal service error, for example, service died |
+| 24700101 | All unknown errors. |
+| 24700201 | Fatal service error, for example, service died. |
 
 
 **示例：**

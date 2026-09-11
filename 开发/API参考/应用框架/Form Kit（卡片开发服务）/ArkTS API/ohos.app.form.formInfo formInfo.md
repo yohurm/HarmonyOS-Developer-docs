@@ -1,20 +1,21 @@
 # @ohos.app.form.formInfo (formInfo)
 
-更新时间：2026-07-17 09:35:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-form-forminfo
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-formInfo模块提供了卡片信息和状态等相关类型和枚举。
+formInfo模块提供了卡片信息和状态等相关类型和枚举，用于获取卡片配置信息、状态信息、参数枚举等，适用于需要查询卡片属性、管理卡片状态、处理卡片参数的场景，帮助开发者快速访问和操作卡片相关信息。
 
 > [!NOTE]
 > 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { formInfo } from '@kit.FormKit';
@@ -22,13 +23,15 @@ import { formInfo } from '@kit.FormKit';
 
 
 
-#### FormInfo
+## FormInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 卡片配置信息。
 
 **系统能力：** SystemCapability.Ability.Form
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -39,18 +42,18 @@ import { formInfo } from '@kit.FormKit';
 | displayName11+ | string | 否 | 否 | 卡片展示名称。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | displayNameId11+ | number | 否 | 否 | 卡片预览时标识卡片名称的ID。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 说明： 数值为大于0小于2^32的整数。 |
 | description | string | 否 | 否 | 卡片描述。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
-| descriptionId10+ | number | 否 | 否 | 卡片描述id。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 说明： 数值为大于0小于2^32的整数。 |
-| type | FormType | 否 | 否 | 卡片类型。当前支持JS卡片、ArkTS卡片。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
-| jsComponentName | string | 否 | 否 | js卡片的组件名。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
-| colorMode(deprecated) | ColorMode | 否 | 否 | 卡片颜色模式。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 说明： 从API version 9开始支持，从API version 20开始废弃。应用卡片需要支持深浅色两种显示模式，无替代接口。 |
+| descriptionId10+ | number | 否 | 否 | 卡片描述ID。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 说明： 数值为大于0小于2^32的整数。 |
+| type | FormType | 否 | 否 | 卡片类型。当前支持JS卡片、ArkTS卡片。 说明： 当卡片类型为JS时，isDynamic强制为true，transparencyEnabled不生效，jsComponentName为必填项。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| jsComponentName | string | 否 | 否 | JS卡片的组件名，仅当卡片类型为JS时有效。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| colorMode(deprecated) | ColorMode | 否 | 否 | 卡片颜色模式。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 说明： 从API version 9开始支持，从API version 20开始废弃。无替代接口。 |
 | isDefault | boolean | 否 | 否 | 卡片是否是默认卡片。 - true：默认卡片。 - false：非默认卡片。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | updateEnabled | boolean | 否 | 否 | 卡片是否使能更新。 - true：表示支持周期性刷新。 - false：表示不支持周期性刷新。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | formVisibleNotify | boolean | 否 | 否 | 卡片是否使能可见通知。 - true：通知卡片提供方可见状态变化。 - false：不通知卡片提供方可见状态变化。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | scheduledUpdateTime | string | 否 | 否 | 卡片更新时间。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | formConfigAbility | string | 否 | 否 | 卡片配置Ability。指定长按卡片弹出的选择框内，编辑选项所对应的Ability。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
-| updateDuration | number | 否 | 否 | 卡片更新周期。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 说明： 数值为[0, 336]的整数。 |
-| defaultDimension | number | 否 | 否 | 卡片规格。具体可选规格参考FormDimension。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 说明： 数值为[1, 9]的整数，数值5从API version 9开始支持，从API version 20开始废弃。 |
-| supportDimensions | Array&lt;number&gt; | 否 | 否 | 卡片支持的规格。具体可选规格参考FormDimension。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 说明： 最大长度为9，数值取值范围[1, 9]的整数的数组，数值5从API version 9开始支持，从API version 20开始废弃。 |
+| updateDuration | number | 否 | 否 | 卡片更新周期。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 说明： 数值为[0, 336]的整数。超出范围时抛出异常。 |
+| defaultDimension | number | 否 | 否 | 卡片规格。具体可选规格参考FormDimension。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 说明： 数值为[1, 9]的整数，数值5从API version 9开始支持，从API version 20开始废弃。超出范围时抛出异常。 |
+| supportDimensions | Array&lt;number&gt; | 否 | 否 | 卡片支持的规格。具体可选规格参考FormDimension。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 说明： 最大长度为9，数值取值范围[1, 9]的整数的数组，数值5从API version 9开始支持，从API version 20开始废弃。超出范围时抛出异常。 |
 | customizeData | Record<string, string> | 否 | 否 | 卡片用户数据。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | isDynamic10+ | boolean | 否 | 否 | 卡片是否为动态卡片。 仅ArkTS卡片区分动静态卡片，JS卡片均为动态卡片。 - true：为动态卡片。 - false：为静态卡片。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | transparencyEnabled11+ | boolean | 否 | 否 | 卡片是否支持设置背景透明度。 ArkTS卡片由用户配置决定是否支持，JS卡片均不支持。 - true：表示是透明卡片。 - false：表示不是透明卡片。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -59,37 +62,41 @@ import { formInfo } from '@kit.FormKit';
 
 
 
-#### FormType
+## FormType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-支持的卡片类型枚举。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+支持的卡片类型枚举。JS卡片使用Web技术实现，适合简单的展示类卡片；ArkTS卡片使用ArkTS语言开发，支持更丰富的交互和动画效果。开发时应根据卡片复杂度和交互需求选择合适类型。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Ability.Form
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| JS | 1 | 卡片类型为JS。 |
-| eTS | 2 | 卡片类型为ArkTS。 |
+| JS | 1 | 卡片类型为JS。使用Web技术开发，功能相对基础，适合简单场景。 |
+| eTS | 2 | 卡片类型为ArkTS。使用ArkTS语言开发，支持丰富的交互和动画，适合复杂场景。 |
 
 
 
 
-#### ColorMode(deprecated)
+## ColorMode(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 卡片主题样式统一跟随系统的颜色模式，卡片支持的颜色模式枚举。
 
 > [!NOTE]
-> 从API version 9开始支持，从API version 20开始废弃。应用卡片需要支持深浅色两种显示模式，无替代接口。
+> 从API version 9开始支持，从API version 20开始废弃。无替代接口。
 
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Ability.Form
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -100,9 +107,10 @@ import { formInfo } from '@kit.FormKit';
 
 
 
-#### FormStateInfo
+## FormStateInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 卡片状态信息。
 
@@ -110,23 +118,26 @@ import { formInfo } from '@kit.FormKit';
 
 **系统能力：** SystemCapability.Ability.Form
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| formState | FormState | 否 | 否 | 卡片状态。 |
-| want | Want | 否 | 否 | Want文本内容。 |
+| formState | FormState | 否 | 否 | 卡片状态，用于标识卡片当前状态（如未知、默认、就绪）。 |
+| want | Want | 否 | 否 | Want对象，用于承载卡片状态切换时的意图信息。 |
 
 
 
 
-#### FormState
+## FormState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 卡片状态枚举。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Ability.Form
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -137,13 +148,15 @@ import { formInfo } from '@kit.FormKit';
 
 
 
-#### FormParam
+## FormParam
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 卡片参数枚举。
 
 **系统能力：** SystemCapability.Ability.Form
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -154,7 +167,7 @@ import { formInfo } from '@kit.FormKit';
 | WIDTH_KEY | 'ohos.extra.param.key.form_width' | 卡片宽度。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | HEIGHT_KEY | 'ohos.extra.param.key.form_height' | 卡片高度。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | TEMPORARY_KEY | 'ohos.extra.param.key.form_temporary' | 临时卡片。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
-| ABILITY_NAME_KEY | 'ohos.extra.param.key.ability_name' | ability名称。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| ABILITY_NAME_KEY | 'ohos.extra.param.key.ability_name' | Ability名称。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | BUNDLE_NAME_KEY | 'ohos.extra.param.key.bundle_name' | Bundle名称。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | LAUNCH_REASON_KEY10+ | 'ohos.extra.param.key.form_launch_reason' | 卡片创建原因。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | PARAM_FORM_CUSTOMIZE_KEY10+ | 'ohos.extra.param.key.form_customize' | 自定义数据。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -170,13 +183,15 @@ import { formInfo } from '@kit.FormKit';
 
 
 
-#### FormDimension
+## FormDimension
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义卡片尺寸枚举。
 
 **系统能力：** SystemCapability.Ability.Form
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -193,15 +208,17 @@ import { formInfo } from '@kit.FormKit';
 
 
 
-#### FormShape12+
+## FormShape12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义卡片形状枚举。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Ability.Form
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -211,9 +228,10 @@ import { formInfo } from '@kit.FormKit';
 
 
 
-#### FormInfoFilter
+## FormInfoFilter
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 卡片信息过滤器，仅将符合过滤器内要求的卡片信息返回。
 
@@ -221,54 +239,58 @@ import { formInfo } from '@kit.FormKit';
 
 **系统能力：** SystemCapability.Ability.Form
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| moduleName | string | 否 | 是 | 选填，仅保留含moduleName与提供值相符的卡片信息， 未填写时则不通过moduleName进行过滤。 |
+| moduleName | string | 否 | 是 | 卡片所属模块的名称，用于过滤卡片信息。仅保留含moduleName与提供值相符的卡片信息，未填写时则不通过moduleName进行过滤。 |
 
 
 
 
-#### VisibilityType
+## VisibilityType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-卡片当前可见类型枚举。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+卡片当前可见类型枚举。表示卡片在宿主界面上的可见状态，当卡片从桌面移入/移出屏幕或切换应用时状态会发生变化，开发者可据此优化卡片刷新策略。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Ability.Form
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | UNKNOWN10+ | 0 | 表示卡片为未知。 |
-| FORM_VISIBLE | 1 | 表示卡片为可见。 |
-| FORM_INVISIBLE | 2 | 表示卡片为不可见。 |
+| FORM_VISIBLE | 1 | 表示卡片为可见。卡片在前台显示，会正常接收更新和可见性通知。 |
+| FORM_INVISIBLE | 2 | 表示卡片为不可见。卡片不在前台显示，系统可能暂停更新以节省资源。 |
 
 
 
 
-#### LaunchReason10+
+## LaunchReason10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 卡片创建原因枚举。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
 **系统能力：** SystemCapability.Ability.Form
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| FORM_DEFAULT | 1 | 表示卡片创建原因为默认创建。 |
-| FORM_SHARE | 2 | 表示卡片创建原因为共享创建。 |
+| FORM_DEFAULT | 1 | 表示卡片创建原因为默认创建。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| FORM_SHARE | 2 | 表示卡片创建原因为共享创建。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | FORM_SIZE_CHANGE20+ | 3 | 表示卡片创建原因为尺寸变化。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
 
 
 
 
-#### FormUpdateReason24+
+## FormUpdateReason24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 卡片更新原因枚举。
 
@@ -278,6 +300,7 @@ import { formInfo } from '@kit.FormKit';
 
 **元服务API：** 从API version 24开始，该接口支持在元服务中使用。
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | UNKNOWN | -1 | 卡片更新的原因未知。 |
@@ -286,15 +309,17 @@ import { formInfo } from '@kit.FormKit';
 
 
 
-#### OverflowInfo20+
+## OverflowInfo20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 互动卡片动效信息。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Ability.Form
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -305,41 +330,43 @@ import { formInfo } from '@kit.FormKit';
 
 
 
-#### Rect20+
+## Rect20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-通用矩形区域信息。可用于描述卡片位置、互动卡片动效区域等信息。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+通用矩形区域信息。可用于描述卡片坐标区域、互动卡片动效区域等信息。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Ability.Form
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| left | number | 否 | 否 | 描述矩形的左上角顶点的 x 坐标，单位：vp，范围参考请求参数约束。 |
-| top | number | 否 | 否 | 描述矩形的左上角顶点的 y 坐标，单位：vp，范围参考请求参数约束。 |
-| width | number | 否 | 否 | 描述矩形的宽度，单位：vp，范围参考请求参数约束。 |
-| height | number | 否 | 否 | 描述矩形的高度，单位：vp，范围参考请求参数约束。 |
+| left | number | 否 | 否 | 描述矩形的左上角顶点的 x 坐标，单位：vp，用于定位卡片区域的位置。范围参考请求参数约束。 |
+| top | number | 否 | 否 | 描述矩形的左上角顶点的 y 坐标，单位：vp，用于定位卡片区域的位置。范围参考请求参数约束。 |
+| width | number | 否 | 否 | 描述矩形的宽度，单位：vp，用于定义卡片区域的尺寸。范围参考请求参数约束。 |
+| height | number | 否 | 否 | 描述矩形的高度，单位：vp，用于定义卡片区域的尺寸。范围参考请求参数约束。 |
 
 
 
 
-#### FormLocation20+
+## FormLocation20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 卡片当前位置枚举。
 
-**元服务API：** 从API version 20开始，该接口支持在元服务中使用。
-
 **系统能力：** SystemCapability.Ability.Form
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| DESKTOP | 0 | 表示卡片位于桌面。 |
-| FORM_CENTER | 1 | 表示卡片位于桌面的卡片中心。 |
-| FORM_MANAGER | 2 | 表示卡片位于桌面的卡片管理器。 |
+| DESKTOP | 0 | 表示卡片位于桌面。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
+| FORM_CENTER | 1 | 表示卡片位于桌面的卡片中心。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
+| FORM_MANAGER | 2 | 表示卡片位于桌面的卡片管理器。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
 | NEGATIVE_SCREEN | 3 | 表示卡片位于负一屏。 |
 | SCREEN_LOCK | 6 | 表示卡片位于锁屏页面。 |
 | AI_SUGGESTION | 7 | 表示卡片位于小艺建议的推荐区。 |
@@ -348,9 +375,10 @@ import { formInfo } from '@kit.FormKit';
 
 
 
-#### RunningFormInfo20+
+## RunningFormInfo20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 已经添加到桌面的卡片信息。
 
@@ -358,12 +386,13 @@ import { formInfo } from '@kit.FormKit';
 
 **系统能力：** SystemCapability.Ability.Form
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| formId | string | 是 | 否 | 卡片标识。 |
-| bundleName | string | 是 | 否 | 卡片提供方所属包的Bundle名称。 |
-| moduleName | string | 是 | 否 | 卡片所属模块的名称。 |
-| abilityName | string | 是 | 否 | 卡片所属的Ability名称。 |
-| formName | string | 是 | 否 | 卡片名称。 |
-| dimension | number | 是 | 否 | 卡片尺寸，取值及其对应含义请参考FormDimension。 说明： 取值范围[1, 9]的整数，数值5从API version 9开始支持，从API version 20开始废弃。 |
-| formLocation | FormLocation | 是 | 否 | 卡片位置信息。 |
+| formId | string | 是 | 否 | 卡片唯一标识，用于识别和管理已添加到桌面的卡片实例。 |
+| bundleName | string | 是 | 否 | 卡片提供方所属包的Bundle名称，用于定位卡片提供方应用。 |
+| moduleName | string | 是 | 否 | 卡片所属模块的名称，用于定位卡片提供方的具体模块。 |
+| abilityName | string | 是 | 否 | 卡片所属的Ability名称，用于定位卡片提供方的具体Ability组件。 |
+| formName | string | 是 | 否 | 卡片名称，用于标识和区分同一模块中的不同卡片。 |
+| dimension | number | 是 | 否 | 卡片尺寸，用于标识卡片的大小规格。取值及其对应含义请参考FormDimension。 说明： 取值范围[1, 9]的整数，数值5从API version 9开始支持，从API version 20开始废弃。 |
+| formLocation | FormLocation | 是 | 否 | 卡片位置信息，用于标识卡片当前所在的位置（如桌面、卡片中心等）。 |

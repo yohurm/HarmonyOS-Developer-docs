@@ -1,6 +1,6 @@
 # @ohos.multimedia.avInputCastPicker (录音设备选择组件)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-multimedia-avinputcastpicker
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -12,7 +12,8 @@
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -22,7 +23,8 @@ import { AVInputCastPicker } from '@kit.AVSessionKit';
 
 
 
-#### 属性
+## 属性
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -30,7 +32,8 @@ import { AVInputCastPicker } from '@kit.AVSessionKit';
 
 
 
-#### AVInputCastPicker
+## AVInputCastPicker
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -53,6 +56,7 @@ AVInputCastPicker({
 
 **参数：**
 
+
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | customPicker | CustomBuilder | 否 | @Prop | 自定义样式。建议开发者自定义组件样式，可有效提升组件渲染性能。 |
@@ -61,7 +65,8 @@ AVInputCastPicker({
 
 
 
-#### OnPickerStateCallback
+## OnPickerStateCallback
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -73,6 +78,7 @@ type OnPickerStateCallback = (state: AVCastPickerState) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | state | AVCastPickerState | 是 | 设备列表状态。 |
@@ -80,7 +86,8 @@ type OnPickerStateCallback = (state: AVCastPickerState) => void
 
 
 
-#### 事件
+## 事件
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -88,7 +95,8 @@ type OnPickerStateCallback = (state: AVCastPickerState) => void
 
 
 
-#### 示例
+## 示例
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 

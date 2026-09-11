@@ -1,9 +1,9 @@
 # Interface (ManualExposure)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-manualexposure
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ManualExposure继承自[ManualExposureQuery](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-manualexposurequery)。
  
@@ -14,9 +14,10 @@ ManualExposure继承自[ManualExposureQuery](https://developer.huawei.com/consum
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { camera } from '@kit.CameraKit';
@@ -24,9 +25,10 @@ import { camera } from '@kit.CameraKit';
  
   
 
-#### getExposureDuration24+
+## getExposureDuration24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getExposureDuration(): number
  
@@ -38,6 +40,7 @@ getExposureDuration(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 当前曝光时长值。单位：微秒。 |
@@ -47,6 +50,7 @@ getExposureDuration(): number
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400102 | Operation not allowed, session or inputdevice maybe abnormal. |
@@ -73,9 +77,10 @@ function getExposureDuration(photoSession: camera.PhotoSession): number {
  
   
 
-#### setExposureDuration24+
+## setExposureDuration24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setExposureDuration(exposureDuration: number): void
  
@@ -89,6 +94,7 @@ setExposureDuration(exposureDuration: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | exposureDuration | number | 是 | 曝光时长值。单位：微秒。 |
@@ -98,6 +104,7 @@ setExposureDuration(exposureDuration: number): void
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400103 | Session not config. |

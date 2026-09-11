@@ -1,18 +1,19 @@
 # ArkUI_NativeDialogAPI_3
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-arkui-nativedialogapi-3
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct {...} ArkUI_NativeDialogAPI_3
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ArkUI提供的Native侧自定义弹窗接口集合，支持设置边框样式、尺寸、背景效果、键盘避让模式、焦点管理等能力，用于在Native层精细控制自定义弹窗的外观样式和交互行为，适用于需要高度定制化弹窗UI的场景。
  
@@ -24,16 +25,19 @@ ArkUI提供的Native侧自定义弹窗接口集合，支持设置边框样式、
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 成员变量
+### 成员变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | ArkUI_NativeDialogAPI_1 nativeDialogAPI1 | ArkUI提供的Native侧自定义弹窗接口集合，范围是ArkUI_NativeDialogAPI_1。 起始版本： 19 |
@@ -42,10 +46,12 @@ ArkUI提供的Native侧自定义弹窗接口集合，支持设置边框样式、
  
   
 
-#### 成员函数
+### 成员函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | int32_t (*setLevelOrder)(ArkUI_NativeDialogHandle handle, double levelOrder) | 设置自定义弹窗显示的顺序。 |
@@ -71,15 +77,17 @@ ArkUI提供的Native侧自定义弹窗接口集合，支持设置边框样式、
  
   
 
-#### 成员函数说明
+## 成员函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### setLevelOrder()
+### setLevelOrder()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*setLevelOrder)(ArkUI_NativeDialogHandle handle, double levelOrder)
@@ -97,6 +105,7 @@ int32_t (*setLevelOrder)(ArkUI_NativeDialogHandle handle, double levelOrder)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NativeDialogHandle handle | 指向自定义弹窗控制器的指针。 |
@@ -105,6 +114,7 @@ int32_t (*setLevelOrder)(ArkUI_NativeDialogHandle handle, double levelOrder)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -112,9 +122,10 @@ int32_t (*setLevelOrder)(ArkUI_NativeDialogHandle handle, double levelOrder)
  
   
 
-#### registerOnWillAppear()
+### registerOnWillAppear()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*registerOnWillAppear)(ArkUI_NativeDialogHandle handle, void* userData, void (*callback)(void* userData))
@@ -132,15 +143,17 @@ int32_t (*registerOnWillAppear)(ArkUI_NativeDialogHandle handle, void* userData,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NativeDialogHandle handle | 指向自定义弹窗控制器的指针。 |
 | void* userData | 用户自定义数据。 |
-| callback | 自定义弹窗显示之前的回调函数。 |
+| void (callback)(void userData) | 自定义弹窗显示之前的回调函数。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -148,9 +161,10 @@ int32_t (*registerOnWillAppear)(ArkUI_NativeDialogHandle handle, void* userData,
  
   
 
-#### registerOnDidAppear()
+### registerOnDidAppear()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*registerOnDidAppear)(ArkUI_NativeDialogHandle handle, void* userData, void (*callback)(void* userData))
@@ -168,15 +182,17 @@ int32_t (*registerOnDidAppear)(ArkUI_NativeDialogHandle handle, void* userData, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NativeDialogHandle handle | 指向自定义弹窗控制器的指针。 |
 | void* userData | 用户自定义数据。 |
-| callback | 自定义弹窗显示之后的回调函数。 |
+| void (callback)(void userData) | 自定义弹窗显示之后的回调函数。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -184,9 +200,10 @@ int32_t (*registerOnDidAppear)(ArkUI_NativeDialogHandle handle, void* userData, 
  
   
 
-#### registerOnWillDisappear()
+### registerOnWillDisappear()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*registerOnWillDisappear)(ArkUI_NativeDialogHandle handle, void* userData, void (*callback)(void* userData))
@@ -204,15 +221,17 @@ int32_t (*registerOnWillDisappear)(ArkUI_NativeDialogHandle handle, void* userDa
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NativeDialogHandle handle | 指向自定义弹窗控制器的指针。 |
 | void* userData | 用户自定义数据。 |
-| callback | 自定义弹窗关闭之前的回调函数。 |
+| void (callback)(void userData) | 自定义弹窗关闭之前的回调函数。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -220,9 +239,10 @@ int32_t (*registerOnWillDisappear)(ArkUI_NativeDialogHandle handle, void* userDa
  
   
 
-#### registerOnDidDisappear()
+### registerOnDidDisappear()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*registerOnDidDisappear)(ArkUI_NativeDialogHandle handle, void* userData, void (*callback)(void* userData))
@@ -240,15 +260,17 @@ int32_t (*registerOnDidDisappear)(ArkUI_NativeDialogHandle handle, void* userDat
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NativeDialogHandle handle | 指向自定义弹窗控制器的指针。 |
 | void* userData | 用户自定义数据。 |
-| callback | 自定义弹窗关闭之后的回调函数。 |
+| void (callback)(void userData) | 自定义弹窗关闭之后的回调函数。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -256,9 +278,10 @@ int32_t (*registerOnDidDisappear)(ArkUI_NativeDialogHandle handle, void* userDat
  
   
 
-#### setBorderWidth()
+### setBorderWidth()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*setBorderWidth)(ArkUI_NativeDialogHandle handle, float top, float right, float bottom, float left, ArkUI_LengthMetricUnit unit)
@@ -276,6 +299,7 @@ int32_t (*setBorderWidth)(ArkUI_NativeDialogHandle handle, float top, float righ
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NativeDialogHandle handle | 指向自定义弹窗控制器的指针。 |
@@ -288,6 +312,7 @@ int32_t (*setBorderWidth)(ArkUI_NativeDialogHandle handle, float top, float righ
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -295,9 +320,10 @@ int32_t (*setBorderWidth)(ArkUI_NativeDialogHandle handle, float top, float righ
  
   
 
-#### setBorderColor()
+### setBorderColor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*setBorderColor)(ArkUI_NativeDialogHandle handle, uint32_t top, uint32_t right, uint32_t bottom, uint32_t left)
@@ -315,6 +341,7 @@ int32_t (*setBorderColor)(ArkUI_NativeDialogHandle handle, uint32_t top, uint32_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NativeDialogHandle handle | 指向自定义弹窗控制器的指针。 |
@@ -326,6 +353,7 @@ int32_t (*setBorderColor)(ArkUI_NativeDialogHandle handle, uint32_t top, uint32_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -333,9 +361,10 @@ int32_t (*setBorderColor)(ArkUI_NativeDialogHandle handle, uint32_t top, uint32_
  
   
 
-#### setBorderStyle()
+### setBorderStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*setBorderStyle)(ArkUI_NativeDialogHandle handle, int32_t top, int32_t right, int32_t bottom, int32_t left)
@@ -353,6 +382,7 @@ int32_t (*setBorderStyle)(ArkUI_NativeDialogHandle handle, int32_t top, int32_t 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NativeDialogHandle handle | 指向自定义弹窗控制器的指针。 |
@@ -364,6 +394,7 @@ int32_t (*setBorderStyle)(ArkUI_NativeDialogHandle handle, int32_t top, int32_t 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -371,9 +402,10 @@ int32_t (*setBorderStyle)(ArkUI_NativeDialogHandle handle, int32_t top, int32_t 
  
   
 
-#### setWidth()
+### setWidth()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*setWidth)(ArkUI_NativeDialogHandle handle, float width, ArkUI_LengthMetricUnit unit)
@@ -391,6 +423,7 @@ int32_t (*setWidth)(ArkUI_NativeDialogHandle handle, float width, ArkUI_LengthMe
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NativeDialogHandle handle | 指向自定义弹窗控制器的指针。 |
@@ -400,6 +433,7 @@ int32_t (*setWidth)(ArkUI_NativeDialogHandle handle, float width, ArkUI_LengthMe
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -407,9 +441,10 @@ int32_t (*setWidth)(ArkUI_NativeDialogHandle handle, float width, ArkUI_LengthMe
  
   
 
-#### setHeight()
+### setHeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*setHeight)(ArkUI_NativeDialogHandle handle, float height, ArkUI_LengthMetricUnit unit)
@@ -427,6 +462,7 @@ int32_t (*setHeight)(ArkUI_NativeDialogHandle handle, float height, ArkUI_Length
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NativeDialogHandle handle | 指向自定义弹窗控制器的指针。 |
@@ -436,6 +472,7 @@ int32_t (*setHeight)(ArkUI_NativeDialogHandle handle, float height, ArkUI_Length
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -443,9 +480,10 @@ int32_t (*setHeight)(ArkUI_NativeDialogHandle handle, float height, ArkUI_Length
  
   
 
-#### setShadow()
+### setShadow()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*setShadow)(ArkUI_NativeDialogHandle handle, ArkUI_ShadowStyle shadow)
@@ -463,6 +501,7 @@ int32_t (*setShadow)(ArkUI_NativeDialogHandle handle, ArkUI_ShadowStyle shadow)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NativeDialogHandle handle | 指向自定义弹窗控制器的指针。 |
@@ -471,6 +510,7 @@ int32_t (*setShadow)(ArkUI_NativeDialogHandle handle, ArkUI_ShadowStyle shadow)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -478,9 +518,10 @@ int32_t (*setShadow)(ArkUI_NativeDialogHandle handle, ArkUI_ShadowStyle shadow)
  
   
 
-#### setCustomShadow()
+### setCustomShadow()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*setCustomShadow)(ArkUI_NativeDialogHandle handle, const ArkUI_AttributeItem* customShadow)
@@ -498,6 +539,7 @@ int32_t (*setCustomShadow)(ArkUI_NativeDialogHandle handle, const ArkUI_Attribut
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NativeDialogHandle handle | 指向自定义弹窗控制器的指针。 |
@@ -506,6 +548,7 @@ int32_t (*setCustomShadow)(ArkUI_NativeDialogHandle handle, const ArkUI_Attribut
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -513,9 +556,10 @@ int32_t (*setCustomShadow)(ArkUI_NativeDialogHandle handle, const ArkUI_Attribut
  
   
 
-#### setBackgroundBlurStyle()
+### setBackgroundBlurStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*setBackgroundBlurStyle)(ArkUI_NativeDialogHandle handle, ArkUI_BlurStyle blurStyle)
@@ -533,6 +577,7 @@ int32_t (*setBackgroundBlurStyle)(ArkUI_NativeDialogHandle handle, ArkUI_BlurSty
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NativeDialogHandle handle | 指向自定义弹窗控制器的指针。 |
@@ -541,6 +586,7 @@ int32_t (*setBackgroundBlurStyle)(ArkUI_NativeDialogHandle handle, ArkUI_BlurSty
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -548,9 +594,10 @@ int32_t (*setBackgroundBlurStyle)(ArkUI_NativeDialogHandle handle, ArkUI_BlurSty
  
   
 
-#### setKeyboardAvoidMode()
+### setKeyboardAvoidMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*setKeyboardAvoidMode)(ArkUI_NativeDialogHandle handle, ArkUI_KeyboardAvoidMode keyboardAvoidMode)
@@ -568,6 +615,7 @@ int32_t (*setKeyboardAvoidMode)(ArkUI_NativeDialogHandle handle, ArkUI_KeyboardA
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NativeDialogHandle handle | 指向自定义弹窗控制器的指针。 |
@@ -576,6 +624,7 @@ int32_t (*setKeyboardAvoidMode)(ArkUI_NativeDialogHandle handle, ArkUI_KeyboardA
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -583,9 +632,10 @@ int32_t (*setKeyboardAvoidMode)(ArkUI_NativeDialogHandle handle, ArkUI_KeyboardA
  
   
 
-#### enableHoverMode()
+### enableHoverMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*enableHoverMode)(ArkUI_NativeDialogHandle handle, bool enableHoverMode)
@@ -603,6 +653,7 @@ int32_t (*enableHoverMode)(ArkUI_NativeDialogHandle handle, bool enableHoverMode
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NativeDialogHandle handle | 指向自定义弹窗控制器的指针。 |
@@ -611,6 +662,7 @@ int32_t (*enableHoverMode)(ArkUI_NativeDialogHandle handle, bool enableHoverMode
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -618,9 +670,10 @@ int32_t (*enableHoverMode)(ArkUI_NativeDialogHandle handle, bool enableHoverMode
  
   
 
-#### setHoverModeArea()
+### setHoverModeArea()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*setHoverModeArea)(ArkUI_NativeDialogHandle handle, ArkUI_HoverModeAreaType hoverModeAreaType)
@@ -638,6 +691,7 @@ int32_t (*setHoverModeArea)(ArkUI_NativeDialogHandle handle, ArkUI_HoverModeArea
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NativeDialogHandle handle | 指向自定义弹窗控制器的指针。 |
@@ -646,6 +700,7 @@ int32_t (*setHoverModeArea)(ArkUI_NativeDialogHandle handle, ArkUI_HoverModeArea
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -653,9 +708,10 @@ int32_t (*setHoverModeArea)(ArkUI_NativeDialogHandle handle, ArkUI_HoverModeArea
  
   
 
-#### setFocusable()
+### setFocusable()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*setFocusable)(ArkUI_NativeDialogHandle handle, bool focusable)
@@ -673,6 +729,7 @@ int32_t (*setFocusable)(ArkUI_NativeDialogHandle handle, bool focusable)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NativeDialogHandle handle | 指向自定义弹窗控制器的指针。 |
@@ -681,6 +738,7 @@ int32_t (*setFocusable)(ArkUI_NativeDialogHandle handle, bool focusable)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -688,9 +746,10 @@ int32_t (*setFocusable)(ArkUI_NativeDialogHandle handle, bool focusable)
  
   
 
-#### setBackgroundBlurStyleOptions()
+### setBackgroundBlurStyleOptions()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*setBackgroundBlurStyleOptions)(ArkUI_NativeDialogHandle handle, const ArkUI_AttributeItem* backgroundBlurStyleOptions)
@@ -708,6 +767,7 @@ int32_t (*setBackgroundBlurStyleOptions)(ArkUI_NativeDialogHandle handle, const 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NativeDialogHandle handle | 指向自定义弹窗控制器的指针。 |
@@ -716,6 +776,7 @@ int32_t (*setBackgroundBlurStyleOptions)(ArkUI_NativeDialogHandle handle, const 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -723,9 +784,10 @@ int32_t (*setBackgroundBlurStyleOptions)(ArkUI_NativeDialogHandle handle, const 
  
   
 
-#### setBackgroundEffect()
+### setBackgroundEffect()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t (*setBackgroundEffect)(ArkUI_NativeDialogHandle handle, const ArkUI_AttributeItem* backgroundEffect)
@@ -743,6 +805,7 @@ int32_t (*setBackgroundEffect)(ArkUI_NativeDialogHandle handle, const ArkUI_Attr
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NativeDialogHandle handle | 指向自定义弹窗控制器的指针。 |
@@ -751,6 +814,7 @@ int32_t (*setBackgroundEffect)(ArkUI_NativeDialogHandle handle, const ArkUI_Attr
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |

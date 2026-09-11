@@ -1,9 +1,9 @@
 # Context (FA模型的上下文基类)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-app-context
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Context模块提供了Ability或Application的上下文的基础能力，包括允许访问特定于应用程序的资源、请求和验证权限等。
  
@@ -12,9 +12,10 @@ Context模块提供了Ability或Application的上下文的基础能力，包括�
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import featureAbility from '@ohos.ability.featureAbility';
@@ -22,9 +23,10 @@ import featureAbility from '@ohos.ability.featureAbility';
  
   
 
-#### 使用说明
+## 使用说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Context对象是在featureAbility中创建实例，并通过featureAbility的[getContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-ability-featureability#featureabilitygetcontext)接口返回，因此在使用Context时，必须导入@ohos.ability.featureAbility库。示例如下：
  
@@ -39,9 +41,10 @@ context.getOrCreateLocalDir().then((data) => {
  
   
 
-#### Context.getOrCreateLocalDir7+
+## Context.getOrCreateLocalDir7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOrCreateLocalDir(callback: AsyncCallback&lt;string&gt;): void
  
@@ -53,6 +56,7 @@ getOrCreateLocalDir(callback: AsyncCallback&lt;string&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;string&gt; | 是 | 回调函数，返回应用程序的本地根目录。 |
@@ -75,9 +79,10 @@ context.getOrCreateLocalDir((error, data)=>{
  
   
 
-#### Context.getOrCreateLocalDir7+
+## Context.getOrCreateLocalDir7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOrCreateLocalDir(): Promise&lt;string&gt;
  
@@ -89,6 +94,7 @@ getOrCreateLocalDir(): Promise&lt;string&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回应用程序的本地根目录。 |
@@ -107,9 +113,10 @@ context.getOrCreateLocalDir().then((data) => {
  
   
 
-#### Context.verifyPermission7+
+## Context.verifyPermission7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 verifyPermission(permission: string, options: PermissionOptions, callback: AsyncCallback&lt;number&gt;): void
  
@@ -119,6 +126,7 @@ verifyPermission(permission: string, options: PermissionOptions, callback: Async
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | permission | string | 是 | 指定权限的名称。 |
@@ -149,9 +157,10 @@ bundle.getBundleInfo('com.context.test', 1, (err: BusinessError, datainfo: bundl
  
   
 
-#### Context.verifyPermission7+
+## Context.verifyPermission7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 verifyPermission(permission: string, callback: AsyncCallback&lt;number&gt;): void
  
@@ -161,6 +170,7 @@ verifyPermission(permission: string, callback: AsyncCallback&lt;number&gt;): voi
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | permission | string | 是 | 指定权限的名称。 |
@@ -184,9 +194,10 @@ context.verifyPermission('com.example.permission', (error, data) =>{
  
   
 
-#### Context.verifyPermission7+
+## Context.verifyPermission7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 verifyPermission(permission: string, options?: PermissionOptions): Promise&lt;number&gt;
  
@@ -196,6 +207,7 @@ verifyPermission(permission: string, options?: PermissionOptions): Promise&lt;nu
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | permission | string | 是 | 指定权限的名称。 |
@@ -204,6 +216,7 @@ verifyPermission(permission: string, options?: PermissionOptions): Promise&lt;nu
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象，如果pid和uid具有权限，则使用0进行异步回调；否则使用-1回调。 |
@@ -222,9 +235,10 @@ context.verifyPermission('com.context.permission', {pid:1}).then((data) => {
  
   
 
-#### Context.requestPermissionsFromUser7+
+## Context.requestPermissionsFromUser7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestPermissionsFromUser(permissions: Array&lt;string&gt;, requestCode: number, resultCallback: AsyncCallback&lt;PermissionRequestResult&gt;): void
  
@@ -234,6 +248,7 @@ requestPermissionsFromUser(permissions: Array&lt;string&gt;, requestCode: number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | permissions | Array&lt;string&gt; | 是 | 指示要请求的权限列表。此参数不能为null。 |
@@ -337,9 +352,10 @@ export default {
  
   
 
-#### Context.requestPermissionsFromUser7+
+## Context.requestPermissionsFromUser7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestPermissionsFromUser(permissions: Array&lt;string&gt;, requestCode: number): Promise&lt;PermissionRequestResult&gt;
  
@@ -349,6 +365,7 @@ requestPermissionsFromUser(permissions: Array&lt;string&gt;, requestCode: number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | permissions | Array&lt;string&gt; | 是 | 指示要请求的权限列表。此参数不能为null。 |
@@ -357,6 +374,7 @@ requestPermissionsFromUser(permissions: Array&lt;string&gt;, requestCode: number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;PermissionRequestResult&gt; | Promise对象，返回授权结果信息。 |
@@ -448,9 +466,10 @@ export default {
  
   
 
-#### Context.getApplicationInfo7+
+## Context.getApplicationInfo7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getApplicationInfo(callback: AsyncCallback&lt;ApplicationInfo&gt;): void
  
@@ -460,6 +479,7 @@ getApplicationInfo(callback: AsyncCallback&lt;ApplicationInfo&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;ApplicationInfo&gt; | 是 | 回调函数，返回当前应用程序的信息。 |
@@ -482,9 +502,10 @@ context.getApplicationInfo((error, data) => {
  
   
 
-#### Context.getApplicationInfo7+
+## Context.getApplicationInfo7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getApplicationInfo(): Promise&lt;ApplicationInfo&gt;
  
@@ -494,6 +515,7 @@ getApplicationInfo(): Promise&lt;ApplicationInfo&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;ApplicationInfo&gt; | Promise对象，返回当前应用程序的信息。 |
@@ -512,9 +534,10 @@ context.getApplicationInfo().then((data) => {
  
   
 
-#### Context.getBundleName7+
+## Context.getBundleName7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBundleName(callback: AsyncCallback&lt;string&gt;): void
  
@@ -524,6 +547,7 @@ getBundleName(callback: AsyncCallback&lt;string&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;string&gt; | 是 | 回调函数，返回当前ability的Bundle名称。 |
@@ -546,9 +570,10 @@ context.getBundleName((error, data) => {
  
   
 
-#### Context.getBundleName7+
+## Context.getBundleName7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBundleName(): Promise&lt;string&gt;
  
@@ -558,6 +583,7 @@ getBundleName(): Promise&lt;string&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回当前ability的Bundle名称。 |
@@ -576,9 +602,10 @@ context.getBundleName().then((data) => {
  
   
 
-#### Context.getDisplayOrientation7+
+## Context.getDisplayOrientation7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDisplayOrientation(callback: AsyncCallback<bundle.DisplayOrientation>): void
  
@@ -588,6 +615,7 @@ getDisplayOrientation(callback: AsyncCallback<bundle.DisplayOrientation>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<bundle.DisplayOrientation> | 是 | 回调函数，返回屏幕显示方向。 |
@@ -610,9 +638,10 @@ context.getDisplayOrientation((error, data) => {
  
   
 
-#### Context.getDisplayOrientation7+
+## Context.getDisplayOrientation7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDisplayOrientation(): Promise<bundle.DisplayOrientation>
  
@@ -622,6 +651,7 @@ getDisplayOrientation(): Promise<bundle.DisplayOrientation>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<bundle.DisplayOrientation> | Promise对象，返回屏幕显示方向。 |
@@ -640,9 +670,10 @@ context.getDisplayOrientation().then((data) => {
  
   
 
-#### Context.getExternalCacheDir(deprecated)
+## Context.getExternalCacheDir(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getExternalCacheDir(callback: AsyncCallback&lt;string&gt;): void
  
@@ -656,6 +687,7 @@ getExternalCacheDir(callback: AsyncCallback&lt;string&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;string&gt; | 是 | 回调函数，返回应用程序的缓存目录的绝对路径。 |
@@ -678,9 +710,10 @@ context.getExternalCacheDir((error, data) => {
  
   
 
-#### Context.getExternalCacheDir(deprecated)
+## Context.getExternalCacheDir(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getExternalCacheDir(): Promise&lt;string&gt;
  
@@ -694,6 +727,7 @@ getExternalCacheDir(): Promise&lt;string&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回应用程序的缓存目录的绝对路径。 |
@@ -712,9 +746,10 @@ context.getExternalCacheDir().then((data) => {
  
   
 
-#### Context.setDisplayOrientation7+
+## Context.setDisplayOrientation7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setDisplayOrientation(orientation: bundle.DisplayOrientation, callback: AsyncCallback&lt;void&gt;): void
  
@@ -724,6 +759,7 @@ setDisplayOrientation(orientation: bundle.DisplayOrientation, callback: AsyncCal
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | orientation | bundle.DisplayOrientation | 是 | 表示屏幕方向。 |
@@ -745,9 +781,10 @@ context.setDisplayOrientation(orientation, (error) => {
  
   
 
-#### Context.setDisplayOrientation7+
+## Context.setDisplayOrientation7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setDisplayOrientation(orientation: bundle.DisplayOrientation): Promise&lt;void&gt;
  
@@ -757,6 +794,7 @@ setDisplayOrientation(orientation: bundle.DisplayOrientation): Promise&lt;void&g
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | orientation | bundle.DisplayOrientation | 是 | 表示屏幕显示方向。 |
@@ -764,6 +802,7 @@ setDisplayOrientation(orientation: bundle.DisplayOrientation): Promise&lt;void&g
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -784,22 +823,24 @@ context.setDisplayOrientation(orientation).then((data) => {
  
   
 
-#### Context.setShowOnLockScreen(deprecated)
+## Context.setShowOnLockScreen(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setShowOnLockScreen(show: boolean, callback: AsyncCallback&lt;void&gt;): void
  
 设置每当显示锁屏时是否在锁屏顶部显示此功能，使该功能保持激活状态。使用callback异步回调。
  
 > [!NOTE]
-> 该接口功能仅对系统应用生效。 从API version 7开始支持，从API version 9开始废弃。建议使用window.setShowOnLockScreen替代，新接口为系统接口。
+> 该接口功能仅对系统应用生效。 从API version 7开始支持，从API version 9开始废弃，替代接口仅面向系统应用开放。
 
  
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | show | boolean | 是 | 指定是否在锁屏顶部显示此功能。值true表示在锁屏上显示，值false表示不显示。 |
@@ -820,22 +861,24 @@ context.setShowOnLockScreen(show, (error) => {
  
   
 
-#### Context.setShowOnLockScreen(deprecated)
+## Context.setShowOnLockScreen(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setShowOnLockScreen(show: boolean): Promise&lt;void&gt;
  
 设置每当显示锁屏时是否在锁屏顶部显示此功能，使该功能保持激活状态。使用Promise异步回调。
  
 > [!NOTE]
-> 该接口功能仅对系统应用生效。 从API version 7开始支持，从API version 9开始废弃。建议使用window.setShowOnLockScreen替代，新接口为系统接口。
+> 该接口功能仅对系统应用生效。 从API version 7开始支持，从API version 9开始废弃，替代接口仅面向系统应用开放。
 
  
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | show | boolean | 是 | 指定是否在锁屏顶部显示此功能。值true表示在锁屏上显示，值false表示不显示。 |
@@ -843,6 +886,7 @@ setShowOnLockScreen(show: boolean): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -862,9 +906,10 @@ context.setShowOnLockScreen(show).then((data) => {
  
   
 
-#### Context.setWakeUpScreen(deprecated)
+## Context.setWakeUpScreen(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setWakeUpScreen(wakeUp: boolean, callback: AsyncCallback&lt;void&gt;): void
  
@@ -878,6 +923,7 @@ setWakeUpScreen(wakeUp: boolean, callback: AsyncCallback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | wakeUp | boolean | 是 | 指定是否唤醒屏幕。值true表示唤醒它，值false表示不唤醒它。 |
@@ -898,9 +944,10 @@ context.setWakeUpScreen(wakeUp, (error) => {
  
   
 
-#### Context.setWakeUpScreen(deprecated)
+## Context.setWakeUpScreen(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setWakeUpScreen(wakeUp: boolean): Promise&lt;void&gt;
  
@@ -914,6 +961,7 @@ setWakeUpScreen(wakeUp: boolean): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | wakeUp | boolean | 是 | 指定是否唤醒屏幕。值true表示唤醒它，值false表示不唤醒它。 |
@@ -921,6 +969,7 @@ setWakeUpScreen(wakeUp: boolean): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -940,9 +989,10 @@ context.setWakeUpScreen(wakeUp).then((data) => {
  
   
 
-#### Context.getProcessInfo7+
+## Context.getProcessInfo7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getProcessInfo(callback: AsyncCallback&lt;ProcessInfo&gt;): void
  
@@ -952,6 +1002,7 @@ getProcessInfo(callback: AsyncCallback&lt;ProcessInfo&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;ProcessInfo&gt; | 是 | 回调函数，返回当前进程的信息。 |
@@ -974,9 +1025,10 @@ context.getProcessInfo((error, data) => {
  
   
 
-#### Context.getProcessInfo7+
+## Context.getProcessInfo7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getProcessInfo(): Promise&lt;ProcessInfo&gt;
  
@@ -986,6 +1038,7 @@ getProcessInfo(): Promise&lt;ProcessInfo&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;ProcessInfo&gt; | Promise对象，返回当前进程的信息。 |
@@ -1004,9 +1057,10 @@ context.getProcessInfo().then((data) => {
  
   
 
-#### Context.getElementName7+
+## Context.getElementName7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getElementName(callback: AsyncCallback&lt;ElementName&gt;): void
  
@@ -1018,6 +1072,7 @@ getElementName(callback: AsyncCallback&lt;ElementName&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;ElementName&gt; | 是 | 回调函数，返回当前ability的ohos.bundleManager.ElementName对象。 |
@@ -1040,9 +1095,10 @@ context.getElementName((error, data) => {
  
   
 
-#### Context.getElementName7+
+## Context.getElementName7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getElementName(): Promise&lt;ElementName&gt;
  
@@ -1054,6 +1110,7 @@ getElementName(): Promise&lt;ElementName&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;ElementName&gt; | Promise对象，返回当前ability的ohos.bundleManager.ElementName对象。 |
@@ -1072,9 +1129,10 @@ context.getElementName().then((data) => {
  
   
 
-#### Context.getProcessName7+
+## Context.getProcessName7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getProcessName(callback: AsyncCallback&lt;string&gt;): void
  
@@ -1084,6 +1142,7 @@ getProcessName(callback: AsyncCallback&lt;string&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;string&gt; | 是 | 回调函数，返回当前进程的名称。 |
@@ -1106,9 +1165,10 @@ context.getProcessName((error, data) => {
  
   
 
-#### Context.getProcessName7+
+## Context.getProcessName7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getProcessName(): Promise&lt;string&gt;
  
@@ -1118,6 +1178,7 @@ getProcessName(): Promise&lt;string&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回当前进程的名称。 |
@@ -1136,9 +1197,10 @@ context.getProcessName().then((data) => {
  
   
 
-#### Context.getCallingBundle7+
+## Context.getCallingBundle7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCallingBundle(callback: AsyncCallback&lt;string&gt;): void
  
@@ -1148,6 +1210,7 @@ getCallingBundle(callback: AsyncCallback&lt;string&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;string&gt; | 是 | 回调函数，返回ability调用方的Bundle名称。 |
@@ -1170,9 +1233,10 @@ context.getCallingBundle((error, data) => {
  
   
 
-#### Context.getCallingBundle7+
+## Context.getCallingBundle7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCallingBundle(): Promise&lt;string&gt;
  
@@ -1182,6 +1246,7 @@ getCallingBundle(): Promise&lt;string&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回ability调用方的Bundle名称。 |
@@ -1200,9 +1265,10 @@ context.getCallingBundle().then((data) => {
  
   
 
-#### Context.getCacheDir
+## Context.getCacheDir
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCacheDir(callback: AsyncCallback&lt;string&gt;): void
  
@@ -1212,6 +1278,7 @@ getCacheDir(callback: AsyncCallback&lt;string&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;string&gt; | 是 | 回调函数，返回该应用程序的缓存目录。 |
@@ -1234,9 +1301,10 @@ context.getCacheDir((error, data) => {
  
   
 
-#### Context.getCacheDir
+## Context.getCacheDir
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCacheDir(): Promise&lt;string&gt;
  
@@ -1246,6 +1314,7 @@ getCacheDir(): Promise&lt;string&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回该应用程序的缓存目录。 |
@@ -1264,9 +1333,10 @@ context.getCacheDir().then((data) => {
  
   
 
-#### Context.getFilesDir
+## Context.getFilesDir
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFilesDir(callback: AsyncCallback&lt;string&gt;): void
  
@@ -1276,6 +1346,7 @@ getFilesDir(callback: AsyncCallback&lt;string&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;string&gt; | 是 | 回调函数，返回内部存储器上此应用程序的文件目录。 |
@@ -1298,9 +1369,10 @@ context.getFilesDir((error, data) => {
  
   
 
-#### Context.getFilesDir
+## Context.getFilesDir
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFilesDir(): Promise&lt;string&gt;
  
@@ -1310,6 +1382,7 @@ getFilesDir(): Promise&lt;string&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回内部存储器上此应用程序的文件目录。 |
@@ -1328,9 +1401,10 @@ context.getFilesDir().then((data) => {
  
   
 
-#### Context.getOrCreateDistributedDir7+
+## Context.getOrCreateDistributedDir7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOrCreateDistributedDir(callback: AsyncCallback&lt;string&gt;): void
  
@@ -1342,6 +1416,7 @@ getOrCreateDistributedDir(callback: AsyncCallback&lt;string&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;string&gt; | 是 | 回调函数，返回Ability或应用的分布式文件路径。 若路径不存在，系统将创建一个路径并返回创建的路径。 |
@@ -1364,9 +1439,10 @@ context.getOrCreateDistributedDir((error, data) => {
  
   
 
-#### Context.getOrCreateDistributedDir7+
+## Context.getOrCreateDistributedDir7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOrCreateDistributedDir(): Promise&lt;string&gt;
  
@@ -1378,6 +1454,7 @@ getOrCreateDistributedDir(): Promise&lt;string&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回Ability或应用的分布式文件路径。若为首次调用，则将创建目录。 |
@@ -1396,9 +1473,10 @@ context.getOrCreateDistributedDir().then((data) => {
  
   
 
-#### Context.getAppType7+
+## Context.getAppType7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAppType(callback: AsyncCallback&lt;string&gt;): void
  
@@ -1408,6 +1486,7 @@ getAppType(callback: AsyncCallback&lt;string&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;string&gt; | 是 | 回调函数，返回此应用程序的类型。 |
@@ -1430,9 +1509,10 @@ context.getAppType((error, data) => {
  
   
 
-#### Context.getAppType7+
+## Context.getAppType7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAppType(): Promise&lt;string&gt;
  
@@ -1442,6 +1522,7 @@ getAppType(): Promise&lt;string&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回此应用的类型。 |
@@ -1460,9 +1541,10 @@ context.getAppType().then((data) => {
  
   
 
-#### Context.getHapModuleInfo7+
+## Context.getHapModuleInfo7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getHapModuleInfo(callback: AsyncCallback&lt;HapModuleInfo&gt;): void
  
@@ -1472,6 +1554,7 @@ getHapModuleInfo(callback: AsyncCallback&lt;HapModuleInfo&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;HapModuleInfo&gt; | 是 | 回调函数，返回应用的ModuleInfo对象。 |
@@ -1494,9 +1577,10 @@ context.getHapModuleInfo((error, data) => {
  
   
 
-#### Context.getHapModuleInfo7+
+## Context.getHapModuleInfo7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getHapModuleInfo(): Promise&lt;HapModuleInfo&gt;
  
@@ -1506,6 +1590,7 @@ getHapModuleInfo(): Promise&lt;HapModuleInfo&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;HapModuleInfo&gt; | Promise对象，返回应用的ModuleInfo对象。 |
@@ -1524,9 +1609,10 @@ context.getHapModuleInfo().then((data) => {
  
   
 
-#### Context.getAppVersionInfo7+
+## Context.getAppVersionInfo7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAppVersionInfo(callback: AsyncCallback&lt;AppVersionInfo&gt;): void
  
@@ -1536,6 +1622,7 @@ getAppVersionInfo(callback: AsyncCallback&lt;AppVersionInfo&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;AppVersionInfo&gt; | 是 | 回调函数，返回应用版本信息。 |
@@ -1558,9 +1645,10 @@ context.getAppVersionInfo((error, data) => {
  
   
 
-#### Context.getAppVersionInfo7+
+## Context.getAppVersionInfo7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAppVersionInfo(): Promise&lt;AppVersionInfo&gt;
  
@@ -1570,6 +1658,7 @@ getAppVersionInfo(): Promise&lt;AppVersionInfo&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;AppVersionInfo&gt; | Promise对象，返回应用版本信息。 |
@@ -1588,9 +1677,10 @@ context.getAppVersionInfo().then((data) => {
  
   
 
-#### Context.getAbilityInfo7+
+## Context.getAbilityInfo7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAbilityInfo(callback: AsyncCallback&lt;AbilityInfo&gt;): void
  
@@ -1600,6 +1690,7 @@ getAbilityInfo(callback: AsyncCallback&lt;AbilityInfo&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;AbilityInfo&gt; | 是 | 回调函数，返回当前归属Ability详细信息。 |
@@ -1622,9 +1713,10 @@ context.getAbilityInfo((error, data) => {
  
   
 
-#### Context.getAbilityInfo7+
+## Context.getAbilityInfo7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAbilityInfo(): Promise&lt;AbilityInfo&gt;
  
@@ -1634,6 +1726,7 @@ getAbilityInfo(): Promise&lt;AbilityInfo&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;AbilityInfo&gt; | Promise对象，返回当前归属Ability详细信息。 |
@@ -1652,9 +1745,10 @@ context.getAbilityInfo().then((data) => {
  
   
 
-#### Context.getApplicationContext7+
+## Context.getApplicationContext7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getApplicationContext(): Context
  
@@ -1664,6 +1758,7 @@ getApplicationContext(): Context
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Context | 返回应用上下文信息。 |
@@ -1679,9 +1774,10 @@ let context: featureAbility.Context = featureAbility.getContext().getApplication
  
   
 
-#### Context.isUpdatingConfigurations7+
+## Context.isUpdatingConfigurations7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isUpdatingConfigurations(callback: AsyncCallback&lt;boolean&gt;): void
  
@@ -1691,6 +1787,7 @@ isUpdatingConfigurations(callback: AsyncCallback&lt;boolean&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;boolean&gt; | 是 | 回调函数，返回true表示该Ability的配置正在更改，否则返回false。 |
@@ -1713,9 +1810,10 @@ context.isUpdatingConfigurations((error, data) => {
  
   
 
-#### Context.isUpdatingConfigurations7+
+## Context.isUpdatingConfigurations7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isUpdatingConfigurations(): Promise&lt;boolean&gt;
  
@@ -1725,6 +1823,7 @@ isUpdatingConfigurations(): Promise&lt;boolean&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象，返回true表示该Ability的配置正在更改，否则返回false。 |
@@ -1743,9 +1842,10 @@ context.isUpdatingConfigurations().then((data) => {
  
   
 
-#### Context.printDrawnCompleted7+
+## Context.printDrawnCompleted7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 printDrawnCompleted(callback: AsyncCallback&lt;void&gt;): void
  
@@ -1755,6 +1855,7 @@ printDrawnCompleted(callback: AsyncCallback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当通知系统绘制此页面功能所需的时间成功，err为undefined，否则为错误对象。 |
@@ -1773,9 +1874,10 @@ context.printDrawnCompleted((err) => {
  
   
 
-#### Context.printDrawnCompleted7+
+## Context.printDrawnCompleted7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 printDrawnCompleted(): Promise&lt;void&gt;
  
@@ -1785,6 +1887,7 @@ printDrawnCompleted(): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -1803,12 +1906,14 @@ context.printDrawnCompleted().then((data) => {
  
   
 
-#### PermissionOptions7+
+## PermissionOptions7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | pid | number | 否 | 是 | 进程id。 |
@@ -1817,12 +1922,14 @@ context.printDrawnCompleted().then((data) => {
  
   
 
-#### PermissionRequestResult7+
+## PermissionRequestResult7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | requestCode | number | 否 | 否 | 用户传入的请求代码。 |

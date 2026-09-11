@@ -1,9 +1,9 @@
 # @ohos.application.testRunner (TestRunner)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-application-testrunner
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TestRunner是自动化测试框架中的基础模板类，它提供了测试环境准备和测试用例运行的标准接口。开发者通过继承并实现onPrepare()和onRun()方法，可以构建自定义的测试执行逻辑，为测试框架提供了可扩展的基础。
  
@@ -14,9 +14,10 @@ TestRunner是自动化测试框架中的基础模板类，它提供了测试环�
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { TestRunner } from '@kit.TestKit';
@@ -24,14 +25,16 @@ import { TestRunner } from '@kit.TestKit';
  
   
 
-#### TestRunner
+## TestRunner
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TestRunner是单元测试框架的模板，开发者可通过继承这个类并覆盖它的所有方法，实现自定义的单元测试框架能力。
  
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | onStop | OnStopFn | 否 | 是 | 当测试完成时，系统会在测试环境退出前触发该回调。 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 起始版本： 26.0.0 模型约束： 此接口仅可在Stage模型下使用。 |
@@ -63,9 +66,10 @@ export default class UserTestRunner implements TestRunner {
  
   
 
-#### onPrepare
+### onPrepare
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onPrepare(): void
  
@@ -94,9 +98,10 @@ export default class UserTestRunner implements TestRunner {
  
   
 
-#### onRun
+### onRun
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onRun(): void
  
@@ -125,9 +130,10 @@ export default class UserTestRunner implements TestRunner {
  
   
 
-#### OnStopFn
+## OnStopFn
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnStopFn = () => void
  

@@ -1,17 +1,18 @@
 # 通用文件缓存加速（C/C++）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/preview-filecacheboost
 
 从6.1.0(23)版本开始，新增通用文件缓存加速功能。提供了缓存机制将文件的解码数据缓存到磁盘中，后续用户再次打开或浏览该文件，应用无需执行解码流程，可直接从磁盘中获取缓存的解码数据，省去耗时的解码时间。
 
 
-#### 接口说明
+## 接口说明
 
 具体API说明详见[API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/openfileboost_preview)。
 
 **表1** 文件缓存接口介绍
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -27,13 +28,13 @@
 
 
 
-#### 开发准备
+## 约束限制
 
-需要先通过[Syscap](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/syscap#使用caniuse判断syscap是否可调用)查询您的目标设备是否支持SystemCapability.PCService.OpenFileBoost系统能力，当前仅在PC/2in1和tablet设备上支持该能力。
+支持的设备类型：PC/2in1，从26.0.0版本开始，新增支持tablet设备。
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 添加对应的头文件。
 
   
@@ -61,7 +62,7 @@ target_link_libraries(entry PUBLIC ${FILE_CACHE_BOOST})
 ```text
 napi_value OH_Init(napi_env env, napi_callback_info info) {
     // 获取参数数量
-    size_t argc = 2; // 需要 2 个参数：path 和 cacheUpperLimitMb
+    size_t argc = 2; // 需要2个参数：path和cacheUpperLimitMb
     napi_value args[2];
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
 
@@ -71,7 +72,7 @@ napi_value OH_Init(napi_env env, napi_callback_info info) {
         return nullptr;
     }
 
-    // 获取 path
+    // 获取path
     size_t pathLen;
     char *path;
     napi_status status = napi_get_value_string_utf8(env, args[0], nullptr, 0, &pathLen);
@@ -80,26 +81,26 @@ napi_value OH_Init(napi_env env, napi_callback_info info) {
         return nullptr;
     }
 
-    // 分配内存并获取 path 的内容
+    // 分配内存并获取path的内容
     path = new char[pathLen + 1];
     napi_get_value_string_utf8(env, args[0], path, pathLen + 1, &pathLen);
 
-    // 获取 cacheUpperLimitMb
+    // 获取cacheUpperLimitMb
     uint32_t cacheUpperLimitMb;
     napi_get_value_uint32(env, args[1], &cacheUpperLimitMb);
 
-    // 设置固定的 dbName 参数
+    // 设置固定的dbName参数
     const char *dbName = "hwcache"; // 硬编码数据库名称
     int32_t dbNameLen = static_cast<int32_t>(strlen(dbName));
-    // path 开发者可传入一个相对路径，如"ohcache"，cacheUpperLimitMb以MB为单位，2GB = 2048MB
+    // path开发者可传入一个相对路径，如"ohcache"，cacheUpperLimitMb以MB为单位，2GB = 2048MB
     int result = HMS_FileCacheBoost_Init(path, pathLen, cacheUpperLimitMb, dbName, dbNameLen);
     if (result != FILE_CACHE_BOOST_SUCCESS) {
         // 初始化失败，开发者可自定义错误处理
     }
-    // 释放 path 的内存
+    // 释放path的内存
     delete[] path;
 
-    // 将 result 转换为 napi_value
+    // 将result转换为napi_value
     napi_value jsResult;
     napi_create_int32(env, result, &jsResult);
 
@@ -122,7 +123,7 @@ napi_value OH_AddObjectByKey(napi_env env, napi_callback_info info) {
         return nullptr;
     }
 
-    // 获取 key
+    // 获取key
     size_t keyLen;
     size_t fillStrLen;
     uint8_t *key = GetStringArg(env, args[0], keyLen);
@@ -181,7 +182,7 @@ napi_value OH_GetObjectByKey(napi_env env, napi_callback_info info) {
         return nullptr;
     }
 
-    // 获取 key 和 keyLen
+    // 获取key和keyLen
     size_t keyLen;
     char *key;
     napi_get_value_string_utf8(env, args[0], nullptr, 0, &keyLen);
@@ -193,7 +194,7 @@ napi_value OH_GetObjectByKey(napi_env env, napi_callback_info info) {
     uint8_t *data = new uint8_t[500];
     size_t dataLen = 0;
 
-    // 调用 OH_Cache_GetObjectByKey
+    // 调用HMS_FileCacheBoost_GetObjectByKey
     int result = HMS_FileCacheBoost_GetObjectByKey(reinterpret_cast<uint8_t *>(key), keyLen, &data, &dataLen);
 
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_DOMAIN, LOG_TAG, "Data length: %{public}zu", dataLen);
@@ -226,7 +227,7 @@ napi_value OH_GetObjectByKey(napi_env env, napi_callback_info info) {
 }
 ```
 
-6. 如果开发者需要删除不需要再使用的缓存，可以调用Previewkit_FileCacheBoost_RemoveObject。
+6. 如果开发者需要删除不需要再使用的缓存，可以调用HMS_FileCacheBoost_RemoveObjectByKey。
 
   
 ```text
@@ -242,18 +243,18 @@ napi_value OH_RemoveObjectByKey(napi_env env, napi_callback_info info) {
         return nullptr;
     }
 
-    // 获取 key
+    // 获取key
     napi_value keyArg = args[0];
 
-    // 获取 key 的字符串信息
+    // 获取key的字符串信息
     size_t keyLen;
-    napi_get_value_string_utf8(env, keyArg, nullptr, 0, &keyLen); // 获取 key 的长度
+    napi_get_value_string_utf8(env, keyArg, nullptr, 0, &keyLen); // 获取key的长度
 
-    // 分配缓冲区并获取 key 的内容
+    // 分配缓冲区并获取key的内容
     char *keyData = new char[keyLen + 1];
     napi_get_value_string_utf8(env, keyArg, keyData, keyLen + 1, &keyLen);
 
-    // 调用 OH_Cache_RemoveObjectByKey，删除缓存
+    // 调用HMS_FileCacheBoost_RemoveObjectByKey，删除缓存
     int result = HMS_FileCacheBoost_RemoveObjectByKey(reinterpret_cast<uint8_t *>(keyData), keyLen);
     // 新增key不存在的返回值
     if (result != FILE_CACHE_BOOST_SUCCESS) {
@@ -300,16 +301,16 @@ napi_value OH_CancelAllOperation(napi_env env, napi_callback_info info) {
         return nullptr;
     }
 
-    // 获取 key 的字符串信息
+    // 获取key的字符串信息
     size_t keyLen;
-    napi_get_value_string_utf8(env, args[0], nullptr, 0, &keyLen); // 获取 key 的长度
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &keyLen); // 获取key的长度
 
-    // 分配缓冲区并获取 key 的内容
+    // 分配缓冲区并获取key的内容
     uint8_t *keyData = new uint8_t[keyLen + 1];
     napi_get_value_string_utf8(env, args[0], reinterpret_cast<char *>(keyData), keyLen + 1, &keyLen);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_DOMAIN, LOG_TAG, "OH_CancelAllOperation keyArg: %{public}s",
                  reinterpret_cast<uint8_t *>(keyData));
-    // 调用 OH_Cache_CancelAllOperation
+    // 调用HMS_FileCacheBoost_CancelOngoingIOByKey
     int result =
         HMS_FileCacheBoost_CancelOngoingIOByKey(reinterpret_cast<uint8_t *>(keyData), static_cast<size_t>(keyLen));
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_DOMAIN, LOG_TAG, "OH_CancelAllOperation result: %{public}d", result);
@@ -454,7 +455,7 @@ napi_value OH_AddSerialObjectByKey(napi_env env, napi_callback_info info) {
     // 释放临时对象（数据已序列化到缓存）
     delete[] img->pixels;
     delete img;
-    // 将 result 转换为 napi_value
+    // 将result转换为napi_value
     napi_value jsResult;
     napi_create_int32(env, result, &jsResult);
     delete[] widthStr;
@@ -560,7 +561,7 @@ napi_value OH_GetSerialObjectByKey(napi_env env, napi_callback_info info) {
     key = new char[keyLen + 1];
     napi_get_value_string_utf8(env, args[0], key, keyLen + 1, &keyLen);
 
-    // 定义 object
+    // 定义object
     void *object = nullptr;
     // 调用HMS_FileCacheBoost_GetSerialObjectByKey获取复杂类数据缓存
     int result = HMS_FileCacheBoost_GetSerialObjectByKey(

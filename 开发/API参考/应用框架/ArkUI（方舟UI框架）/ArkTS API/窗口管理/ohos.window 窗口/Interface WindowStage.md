@@ -1,9 +1,9 @@
 # Interface (WindowStage)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window-windowstage
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 本Interface首批接口从API version 9开始支持。 针对系统能力SystemCapability.Window.SessionManager，请先使用 canIUse() 接口判断当前设备是否支持此syscap及对应接口。 本模块接口被调用时，若出现参数校验失败、权限校验失败、系统状态异常等情况，会抛出错误。建议调用本模块接口时在最外层通过try-catch捕获错误，避免调用失败导致应用崩溃。
@@ -14,9 +14,10 @@
 下列API示例中都需在[onWindowStageCreate()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability#onwindowstagecreate)函数中使用WindowStage的实例调用对应方法。
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { window } from '@kit.ArkUI';
@@ -24,9 +25,10 @@ import { window } from '@kit.ArkUI';
 
 
 
-#### getMainWindow9+
+## getMainWindow9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMainWindow(callback: AsyncCallback&lt;Window&gt;): void
 
@@ -42,6 +44,7 @@ getMainWindow(callback: AsyncCallback&lt;Window&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;Window&gt; | 是 | 回调函数。返回当前WindowStage下的主窗口对象。 |
@@ -50,6 +53,7 @@ getMainWindow(callback: AsyncCallback&lt;Window&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -72,7 +76,7 @@ export default class EntryAbility extends UIAbility {
     console.info('onWindowStageCreate');
     windowStage.loadContent('pages/Index', (err) => {
       if (err.code) {
-        console.error('Failed to load the content. Cause:' + JSON.stringify(err));
+        console.error(`Failed to load the content. Cause code: ${err.code}, message: ${err.message}`);
         return;
       }
       console.info('Succeeded in loading the content.');
@@ -93,9 +97,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getMainWindow9+
+## getMainWindow9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMainWindow(): Promise&lt;Window&gt;
 
@@ -111,6 +116,7 @@ getMainWindow(): Promise&lt;Window&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Window&gt; | Promise对象。返回当前WindowStage下的主窗口对象。 |
@@ -119,6 +125,7 @@ getMainWindow(): Promise&lt;Window&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -141,7 +148,7 @@ export default class EntryAbility extends UIAbility {
     console.info('onWindowStageCreate');
     windowStage.loadContent('pages/Index', (err) => {
       if (err.code) {
-        console.error('Failed to load the content. Cause:' + JSON.stringify(err));
+        console.error(`Failed to load the content. Cause code: ${err.code}, message: ${err.message}`);
         return;
       }
       console.info('Succeeded in loading the content.');
@@ -160,9 +167,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getMainWindowSync9+
+## getMainWindowSync9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMainWindowSync(): Window
 
@@ -178,6 +186,7 @@ getMainWindowSync(): Window
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Window | 返回当前WindowStage下的主窗口对象。 |
@@ -186,6 +195,7 @@ getMainWindowSync(): Window
 **错误码：**
 
 以下错误码的详细介绍请参见[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -207,7 +217,7 @@ export default class EntryAbility extends UIAbility {
     console.info('onWindowStageCreate');
     windowStage.loadContent('pages/Index', (err) => {
       if (err.code) {
-        console.error('Failed to load the content. Cause:' + JSON.stringify(err));
+        console.error(`Failed to load the content. Cause code: ${err.code}, message: ${err.message}`);
         return;
       }
       console.info('Succeeded in loading the content.');
@@ -223,9 +233,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### createSubWindow9+
+## createSubWindow9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createSubWindow(name: string, callback: AsyncCallback&lt;Window&gt;): void
 
@@ -241,20 +252,22 @@ createSubWindow(name: string, callback: AsyncCallback&lt;Window&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 子窗口的名字，用于唯一标识子窗口。建议使用有意义的窗口名称作为标识符。 |
-| callback | AsyncCallback&lt;Window&gt; | 是 | 回调函数。返回当前WindowStage对应主窗下的子窗口对象。 |
+| callback | AsyncCallback&lt;Window&gt; | 是 | 回调函数。返回当前WindowStage对应主窗口下的子窗口对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible cause: Incorrect parameter types. |
-| 1300002 | This window state is abnormal. Possible cause: The subWindow has been created and can not be created again. |
+| 1300002 | This window state is abnormal. Possible cause: The subWindow has been created and cannot be created again. |
 | 1300005 | This window stage is abnormal. 适用版本：9 |
 
 
@@ -282,7 +295,7 @@ export default class EntryAbility extends UIAbility {
         windowClass = data;
         console.info(`Succeeded in creating the subwindow. Data: ${JSON.stringify(data)}`);
         if (!windowClass) {
-          console.info('Failed to load the content. Cause: windowClass is null');
+          console.info('Failed to create the subwindow. Cause: windowClass is null');
         }
         else {
           windowClass.resize(500, 1000);
@@ -297,15 +310,16 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### createSubWindow9+
+## createSubWindow9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createSubWindow(name: string): Promise&lt;Window&gt;
 
 创建该WindowStage实例下的子窗口，使用Promise异步回调。
 
-子窗口创建后默认是[沉浸式布局](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/immersive-window-feature#沉浸式布局)。
+子窗口创建后无标题栏，默认是[沉浸式布局](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/immersive-window-feature#沉浸式布局)。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -315,6 +329,7 @@ createSubWindow(name: string): Promise&lt;Window&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 子窗口的名字。 |
@@ -322,19 +337,21 @@ createSubWindow(name: string): Promise&lt;Window&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;Window&gt; | Promise对象。返回当前WindowStage对应主窗下的子窗口对象。 |
+| Promise&lt;Window&gt; | Promise对象。返回当前WindowStage对应主窗口下的子窗口对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible cause: Incorrect parameter types. |
-| 1300002 | This window state is abnormal. Possible cause: The subWindow has been created and can not be created again. |
+| 1300002 | This window state is abnormal. Possible cause: The subWindow has been created and cannot be created again. |
 | 1300005 | This window stage is abnormal. 适用版本：9 |
 
 
@@ -369,15 +386,16 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### createSubWindowWithOptions11+
+## createSubWindowWithOptions11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createSubWindowWithOptions(name: string, options: SubWindowOptions): Promise&lt;Window&gt;
 
 创建该WindowStage实例下的子窗口，使用Promise异步回调。
 
-非[自由窗口](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-terminology#freeform-window自由窗口)状态下，子窗口创建后默认是[沉浸式布局](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/immersive-window-feature#沉浸式布局)。
+非[自由窗口](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-terminology#freeform-window自由窗口)状态下，子窗口创建后无标题栏，默认是[沉浸式布局](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/immersive-window-feature#沉浸式布局)。
 
 自由窗口状态下，子窗口参数[decorEnabled](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window-i#subwindowoptions11)为false时，子窗口创建后为沉浸式布局；子窗口参数decorEnabled为true，子窗口创建后为非沉浸式布局。
 
@@ -389,6 +407,7 @@ createSubWindowWithOptions(name: string, options: SubWindowOptions): Promise&lt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 子窗口的名字。 |
@@ -397,20 +416,22 @@ createSubWindowWithOptions(name: string, options: SubWindowOptions): Promise&lt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;Window&gt; | Promise对象。返回当前WindowStage对应主窗下的子窗口对象。 |
+| Promise&lt;Window&gt; | Promise对象。返回当前WindowStage对应主窗口下的子窗口对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible cause: Incorrect parameter types. |
 | 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
-| 1300002 | This window state is abnormal. Possible cause: 1. The window is not created or destroyed; 2. The subWindow has been created and can not be created again. |
+| 1300002 | This window state is abnormal. Possible cause: 1. The window is not created or destroyed; 2. The subWindow has been created and cannot be created again. |
 | 1300005 | This window stage is abnormal. |
 
 
@@ -449,9 +470,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getSubWindow9+
+## getSubWindow9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSubWindow(callback: AsyncCallback<Array&lt;Window&gt;>): void
 
@@ -465,18 +487,20 @@ getSubWindow(callback: AsyncCallback<Array&lt;Window&gt;>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback<Array&lt;Window&gt;> | 是 | 回调函数。返回当前WindowStage对应主窗下的所有子窗口，若无子窗口则返回空数组。 |
+| callback | AsyncCallback<Array&lt;Window&gt;> | 是 | 回调函数。返回当前WindowStage对应主窗口下的所有子窗口，若无子窗口则返回空数组。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 1300002 | This window state is abnormal. 适用版本：10+ |
+| 1300002 | This window state is abnormal. Possible cause: The window is not created or destroyed. 适用版本：10+ |
 | 1300005 | This window stage is abnormal. 适用版本：9 |
 
 
@@ -509,9 +533,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getSubWindow9+
+## getSubWindow9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSubWindow(): Promise<Array&lt;Window&gt;>
 
@@ -525,18 +550,20 @@ getSubWindow(): Promise<Array&lt;Window&gt;>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise<Array&lt;Window&gt;> | Promise对象。返回当前WindowStage对应主窗下的所有子窗口，若无子窗口则返回空数组。 |
+| Promise<Array&lt;Window&gt;> | Promise对象。返回当前WindowStage对应主窗口下的所有子窗口，若无子窗口则返回空数组。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 1300002 | This window state is abnormal. 适用版本：10+ |
+| 1300002 | This window state is abnormal. Possible cause: The window is not created or destroyed. 适用版本：10+ |
 | 1300005 | This window stage is abnormal. 适用版本：9 |
 
 
@@ -567,9 +594,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### loadContent9+
+## loadContent9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 loadContent(path: string, storage: LocalStorage, callback: AsyncCallback&lt;void&gt;): void
 
@@ -585,6 +613,7 @@ loadContent(path: string, storage: LocalStorage, callback: AsyncCallback&lt;void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 要加载到窗口中的页面内容的路径，该路径需添加到工程的main_pages.json文件中。不支持相对路径写法，需与main_pages.json中的src取值保持一致。 |
@@ -595,6 +624,7 @@ loadContent(path: string, storage: LocalStorage, callback: AsyncCallback&lt;void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -637,9 +667,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### loadContent9+
+## loadContent9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 loadContent(path: string, storage?: LocalStorage): Promise&lt;void&gt;
 
@@ -655,6 +686,7 @@ loadContent(path: string, storage?: LocalStorage): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 要加载到窗口中的页面内容的路径，该路径需添加到工程的main_pages.json文件中。不支持相对路径写法，需与main_pages.json中的src取值保持一致。 |
@@ -662,6 +694,7 @@ loadContent(path: string, storage?: LocalStorage): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -671,6 +704,7 @@ loadContent(path: string, storage?: LocalStorage): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -711,9 +745,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### loadContent9+
+## loadContent9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 loadContent(path: string, callback: AsyncCallback&lt;void&gt;): void
 
@@ -729,6 +764,7 @@ loadContent(path: string, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 要加载到窗口中的页面内容的路径，该路径需添加到工程的main_pages.json文件中。不支持相对路径写法，需与main_pages.json中的src取值保持一致。 |
@@ -738,6 +774,7 @@ loadContent(path: string, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -777,9 +814,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### loadContentByName11+
+## loadContentByName11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 loadContentByName(name: string, storage: LocalStorage, callback: AsyncCallback&lt;void&gt;): void
 
@@ -795,6 +833,7 @@ loadContentByName(name: string, storage: LocalStorage, callback: AsyncCallback&l
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 命名路由页面的名称。 |
@@ -805,6 +844,7 @@ loadContentByName(name: string, storage: LocalStorage, callback: AsyncCallback&l
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -869,9 +909,10 @@ export struct Index {
 
 
 
-#### loadContentByName11+
+## loadContentByName11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 loadContentByName(name: string, callback: AsyncCallback&lt;void&gt;): void
 
@@ -887,6 +928,7 @@ loadContentByName(name: string, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 命名路由页面的名称。 |
@@ -896,6 +938,7 @@ loadContentByName(name: string, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -956,9 +999,10 @@ export struct Index {
 
 
 
-#### loadContentByName11+
+## loadContentByName11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 loadContentByName(name: string, storage?: LocalStorage): Promise&lt;void&gt;
 
@@ -974,6 +1018,7 @@ loadContentByName(name: string, storage?: LocalStorage): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 命名路由页面的名称。 |
@@ -981,6 +1026,7 @@ loadContentByName(name: string, storage?: LocalStorage): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -990,6 +1036,7 @@ loadContentByName(name: string, storage?: LocalStorage): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1052,21 +1099,23 @@ export struct Index {
 
 
 
-#### releaseUIContent24+
+## releaseUIContent24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 releaseUIContent(): Promise&lt;void&gt;
 
 销毁WindowStage的主窗口页面内容，使用Promise异步回调。
 
-如果应用在前台时调用该接口，页面内容不会立即销毁，会等到应用退后台后再销毁。在主窗口没有加载页面内容时调用该接口不生效不报错。
+如果应用在前台时调用该接口，页面内容不会立即销毁，会等到应用退至后台后再销毁。在主窗口没有加载页面内容时调用该接口不生效不报错。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1076,6 +1125,7 @@ releaseUIContent(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1123,9 +1173,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### on('windowStageEvent')9+
+## on('windowStageEvent')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(eventType: 'windowStageEvent', callback: Callback&lt;WindowStageEventType&gt;): void
 
@@ -1139,6 +1190,7 @@ on(eventType: 'windowStageEvent', callback: Callback&lt;WindowStageEventType&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | eventType | string | 是 | 监听事件，固定为'windowStageEvent'，即WindowStage生命周期变化事件。 |
@@ -1149,10 +1201,11 @@ on(eventType: 'windowStageEvent', callback: Callback&lt;WindowStageEventType&gt;
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible cause: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 1300002 | This window state is abnormal. |
+| 1300002 | This window state is abnormal. Possible cause: The window is not created or destroyed. |
 | 1300005 | This window stage is abnormal. |
 
 
@@ -1181,9 +1234,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### off('windowStageEvent')9+
+## off('windowStageEvent')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(eventType: 'windowStageEvent', callback?: Callback&lt;WindowStageEventType&gt;): void
 
@@ -1201,6 +1255,7 @@ off(eventType: 'windowStageEvent', callback?: Callback&lt;WindowStageEventType&g
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | eventType | string | 是 | 监听事件，固定为'windowStageEvent'，即WindowStage生命周期变化事件。 |
@@ -1211,10 +1266,11 @@ off(eventType: 'windowStageEvent', callback?: Callback&lt;WindowStageEventType&g
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible cause: 1. Incorrect parameter types; 2. Parameter verification failed. |
-| 1300002 | This window state is abnormal. |
+| 1300002 | This window state is abnormal. Possible cause: The window is not created or destroyed. |
 | 1300005 | This window stage is abnormal. |
 
 
@@ -1230,9 +1286,9 @@ export default class EntryAbility extends UIAbility {
 
   onWindowStageCreate(windowStage: window.WindowStage) {
     console.info('onWindowStageCreate');
-    windowStage.loadContent('page/Index', (err) =>{
-      if(err.code) {
-        console.error('Failed to load the content. Cause:' + JSON.stringify(err));
+    windowStage.loadContent('page/Index', (err) => {
+      if (err.code) {
+        console.error(`Failed to load the content. Cause code: ${err.code}, message: ${err.message}`);
         return;
       }
       console.info('Succeeded in loading the content.');
@@ -1258,9 +1314,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### on('windowStageLifecycleEvent')20+
+## on('windowStageLifecycleEvent')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(eventType: 'windowStageLifecycleEvent', callback: Callback&lt;WindowStageLifecycleEventType&gt;): void
 
@@ -1276,6 +1333,7 @@ on(eventType: 'windowStageLifecycleEvent', callback: Callback&lt;WindowStageLife
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | eventType | string | 是 | 监听事件，固定为'windowStageLifecycleEvent'，即WindowStage生命周期变化事件。 |
@@ -1286,10 +1344,11 @@ on(eventType: 'windowStageLifecycleEvent', callback: Callback&lt;WindowStageLife
 
 以下错误码的详细介绍请参见[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
-| 1300002 | This window state is abnormal. |
+| 1300002 | This window state is abnormal. Possible cause: The window is not created or destroyed. |
 | 1300005 | This window stage is abnormal. |
 
 
@@ -1334,9 +1393,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### off('windowStageLifecycleEvent')20+
+## off('windowStageLifecycleEvent')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(eventType: 'windowStageLifecycleEvent', callback?: Callback&lt;WindowStageLifecycleEventType&gt;): void
 
@@ -1348,6 +1408,7 @@ off(eventType: 'windowStageLifecycleEvent', callback?: Callback&lt;WindowStageLi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | eventType | string | 是 | 监听事件，固定为'windowStageLifecycleEvent'，即WindowStage生命周期变化事件。 |
@@ -1358,10 +1419,11 @@ off(eventType: 'windowStageLifecycleEvent', callback?: Callback&lt;WindowStageLi
 
 以下错误码的详细介绍请参见[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
-| 1300002 | This window state is abnormal. |
+| 1300002 | This window state is abnormal. Possible cause: The window is not created or destroyed. |
 | 1300005 | This window stage is abnormal. |
 
 
@@ -1398,13 +1460,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### on('windowStageClose')14+
+## on('windowStageClose')14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 on(eventType: 'windowStageClose', callback: Callback&lt;void&gt;): void
 
-开启点击主窗三键区的关闭按钮监听事件。点击主窗口的三键区域的关闭键时触发该回调函数，将不执行注册的[UIAbility.onPrepareToTerminate](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability#onpreparetoterminate10)生命周期回调函数。
+开启主窗口标题栏关闭按钮的点击事件监听。点击主窗口标题栏关闭按钮时，触发该回调函数，将不执行注册的[UIAbility.onPrepareToTerminate](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability#onpreparetoterminate10)生命周期回调函数。
 
 当重复注册窗口关闭事件的监听时，最后一次注册成功的监听事件生效。
 
@@ -1426,21 +1489,23 @@ on(eventType: 'windowStageClose', callback: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| eventType | string | 是 | 监听事件，固定为'windowStageClose'，即开启主窗三键区的关闭按钮监听。 |
-| callback | Callback&lt;void&gt; | 是 | 回调函数。当点击主窗口右上角关闭按钮事件发生时的回调。该回调函数不返回任何参数。回调函数内部逻辑需要有boolean类型的返回值，该返回值决定当前主窗是否继续关闭，true表示不关闭，false表示关闭。 |
+| eventType | string | 是 | 监听事件，固定为'windowStageClose'，即主窗口标题栏关闭按钮的点击事件。 |
+| callback | Callback&lt;void&gt; | 是 | 回调函数。当点击主窗口右上角关闭按钮事件发生时的回调。回调函数内部逻辑需要有boolean类型的返回值，该返回值决定当前主窗口是否继续关闭，true表示不关闭，false表示关闭。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible cause: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
-| 1300002 | This window state is abnormal. |
+| 1300002 | This window state is abnormal. Possible cause: The window is not created or destroyed. |
 
 
 **示例：**
@@ -1458,7 +1523,8 @@ export default class EntryAbility extends UIAbility {
     try {
       windowStage.on('windowStageClose', () => {
         console.info('Succeeded in enabling the listener for window stage close event.');
-        return false;
+        // Return true, indicating that the current main window will not be closed.
+        return true;
       });
     } catch (exception) {
       console.error(`Failed to enable the listener for window stage close event. Cause code: ${exception.code}, message: ${exception.message}`);
@@ -1469,9 +1535,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### off('windowStageClose')14+
+## off('windowStageClose')14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 off(eventType: 'windowStageClose', callback?: Callback&lt;void&gt;): void
 
@@ -1491,6 +1558,7 @@ off(eventType: 'windowStageClose', callback?: Callback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | eventType | string | 是 | 监听事件，固定为'windowStageClose'，即关闭主窗口关闭事件的监听。 |
@@ -1501,11 +1569,12 @@ off(eventType: 'windowStageClose', callback?: Callback&lt;void&gt;): void
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible cause: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
-| 1300002 | This window state is abnormal. |
+| 1300002 | This window state is abnormal. Possible cause: The window is not created or destroyed. |
 
 
 **示例：**
@@ -1522,7 +1591,8 @@ export default class EntryAbility extends UIAbility {
     console.info('onWindowStageCreate');
     const callback = () => {
       // ...
-      return false;
+      // Return true, indicating that the current main window will not be closed.
+      return true;
     }
     try {
       windowStage.on('windowStageClose', callback);
@@ -1537,9 +1607,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### setDefaultDensityEnabled12+
+## setDefaultDensityEnabled12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setDefaultDensityEnabled(enabled: boolean): void
 
@@ -1557,6 +1628,7 @@ setDefaultDensityEnabled(enabled: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 是否设置应用使用系统默认Density。true表示使用系统默认Density，窗口不跟随系统显示大小变化重新布局；false表示不使用系统默认Density，窗口跟随系统显示大小变化重新布局。 |
@@ -1565,6 +1637,7 @@ setDefaultDensityEnabled(enabled: boolean): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1592,10 +1665,10 @@ export default class EntryAbility extends UIAbility {
           console.error(`Failed to load the content. Cause code: ${err.code}, message: ${err.message}`);
           return;
         }
-        console.info('onWindowStageCreate');
+        console.info('Succeeded in loading the content.');
       try {
         windowStage.setDefaultDensityEnabled(true);
-        console.info('Succeeded in loading the content.');
+        console.info('Succeeded in setting default density enabled.');
       } catch (exception) {
         console.error(`Failed to set default density enabled. Cause code: ${exception.code}, message: ${exception.message}`);
       }
@@ -1606,9 +1679,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### setCustomDensity15+
+## setCustomDensity15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCustomDensity(density: number): void
 
@@ -1626,6 +1700,7 @@ setCustomDensity(density: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | density | number | 是 | 自定义显示大小缩放系数。该参数为浮点数，取值范围为[0.5, 4.0]或-1.0。4.0表示窗口可显示的最大显示大小缩放系数，-1.0表示窗口使用系统显示大小缩放系数。 |
@@ -1635,11 +1710,12 @@ setCustomDensity(density: number): void
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible cause: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
-| 1300002 | This window state is abnormal. |
+| 1300002 | This window state is abnormal. Possible cause: The window is not created or destroyed. |
 | 1300005 | This window stage is abnormal. |
 
 
@@ -1666,9 +1742,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### setCustomDensity20+
+## setCustomDensity20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCustomDensity(density: number, applyToSubWindow?: boolean): void
 
@@ -1682,6 +1759,7 @@ setCustomDensity(density: number, applyToSubWindow?: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | density | number | 是 | 自定义显示大小缩放系数。该参数为浮点数，取值范围为[0.5, 4.0]或-1.0。4.0表示窗口可显示的最大显示大小缩放系数，-1.0表示窗口使用系统显示大小缩放系数。 |
@@ -1691,6 +1769,7 @@ setCustomDensity(density: number, applyToSubWindow?: boolean): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1724,15 +1803,16 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### setWindowModal14+
+## setWindowModal14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 setWindowModal(isModal: boolean): Promise&lt;void&gt;
 
-设置主窗的模态属性是否启用，使用Promise异步回调。
+设置主窗口的模态属性是否启用，使用Promise异步回调。
 
-主窗口调用该接口时，设置主窗口模态属性是否启用。启用主窗口模态属性后，其相同应用进程下的其他主窗口以及其他主窗口的子窗口不能响应用户操作，直到该主窗口关闭或者主窗口的模态属性被禁用。
+主窗口调用该接口时，设置主窗口模态属性是否启用。启用主窗口模态属性后，该主窗口所在应用进程下的其他主窗口以及其他主窗口的子窗口不能响应用户操作，直到该主窗口关闭或者该主窗口的模态属性被禁用。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -1744,12 +1824,14 @@ setWindowModal(isModal: boolean): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isModal | boolean | 是 | 设置主窗口模态属性是否启用，true为启用，false为不启用。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1759,6 +1841,7 @@ setWindowModal(isModal: boolean): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1797,9 +1880,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### removeStartingWindow14+
+## removeStartingWindow14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeStartingWindow(): Promise&lt;void&gt;
 
@@ -1819,6 +1903,7 @@ removeStartingWindow(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -1827,6 +1912,7 @@ removeStartingWindow(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1859,17 +1945,19 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### setWindowRectAutoSave14+
+## setWindowRectAutoSave14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 setWindowRectAutoSave(enabled: boolean): Promise&lt;void&gt;
 
-设置是否启用最后关闭的主窗尺寸的记忆功能，使用Promise异步回调。
+设置是否启用最后关闭的主窗口尺寸的记忆功能，使用Promise异步回调。
 
 启用记忆功能后，在同一个UIAbility下，记忆最后关闭的主窗口的尺寸；此主窗口再次启动时，以记忆的尺寸按照规则进行打开。
 
 记忆规则：
+
 
 | 上一次窗口状态 | 记忆规则 |
 | --- | --- |
@@ -1894,12 +1982,14 @@ setWindowRectAutoSave(enabled: boolean): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 设置是否启用主窗尺寸的记忆功能，true为启用，false为不启用。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1909,6 +1999,7 @@ setWindowRectAutoSave(enabled: boolean): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1946,19 +2037,21 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### setWindowRectAutoSave17+
+## setWindowRectAutoSave17+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 setWindowRectAutoSave(enabled: boolean, isSaveBySpecifiedFlag: boolean): Promise&lt;void&gt;
 
-设置是否启用主窗的尺寸记忆功能，使用Promise异步回调。
+设置是否启用主窗口的尺寸记忆功能，使用Promise异步回调。
 
 在同一个UIAbility下，可记忆最后关闭的主窗口尺寸，也可针对每个主窗口尺寸单独进行记忆。只有在UIAbility启动模式为specified，且isSaveBySpecifiedFlag设置为true时，才能针对每个主窗口尺寸进行单独记忆。
 
 启用记忆功能后，记忆主窗口关闭时的尺寸；对应主窗口再次启动时，以记忆的尺寸按照规则进行打开。
 
 记忆规则：
+
 
 | 上一次窗口状态 | 记忆规则 |
 | --- | --- |
@@ -1983,6 +2076,7 @@ setWindowRectAutoSave(enabled: boolean, isSaveBySpecifiedFlag: boolean): Promise
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 设置是否启用主窗的尺寸记忆功能，true为启用，false为不启用。 |
@@ -1990,6 +2084,7 @@ setWindowRectAutoSave(enabled: boolean, isSaveBySpecifiedFlag: boolean): Promise
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1999,6 +2094,7 @@ setWindowRectAutoSave(enabled: boolean, isSaveBySpecifiedFlag: boolean): Promise
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2036,9 +2132,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### isWindowRectAutoSave14+
+## isWindowRectAutoSave14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 isWindowRectAutoSave(): Promise&lt;boolean&gt;
 
@@ -2058,6 +2155,7 @@ isWindowRectAutoSave(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示当前窗口启用尺寸记忆，返回false表示当前窗口禁用尺寸记忆。 |
@@ -2066,6 +2164,7 @@ isWindowRectAutoSave(): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2102,9 +2201,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### setImageForRecent
+## setImageForRecent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setImageForRecent(imageResource: number | image.PixelMap, value: ImageFit): Promise&lt;void&gt;
 
@@ -2124,6 +2224,7 @@ setImageForRecent(imageResource: number | image.PixelMap, value: ImageFit): Prom
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | imageResource | number \| image.PixelMap | 是 | 应用自定义的图片资源，可传入资源id或PixelMap位图。传入资源id时，图片资源需放在resources/base/media目录下，通过$r资源访问方式获取对应图片的资源id，这里以获取startIcon图片的资源id为例给出示意：\$r("app.media.startIcon").id。 |
@@ -2131,6 +2232,7 @@ setImageForRecent(imageResource: number | image.PixelMap, value: ImageFit): Prom
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2140,6 +2242,7 @@ setImageForRecent(imageResource: number | image.PixelMap, value: ImageFit): Prom
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2173,9 +2276,9 @@ export default class EntryAbility extends UIAbility {
       let bufferArr = new Uint8Array(color);
       for (let i = 0; i < bufferArr.length; i += 4) {
         bufferArr[i] = 255;
-        bufferArr[i+1] = 0;
-        bufferArr[i+2] = 122;
-        bufferArr[i+3] = 255;
+        bufferArr[i + 1] = 0;
+        bufferArr[i + 2] = 122;
+        bufferArr[i + 3] = 255;
       }
       image.createPixelMap(color, {
         editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 512, width: 512 }
@@ -2190,20 +2293,20 @@ export default class EntryAbility extends UIAbility {
             console.error(`Failed to set image for recent. Cause code: ${err.code}, message: ${err.message}`);
           });
         } catch (exception) {
-          console.error(`Failed to set image for recent.`);
+          console.error(`Failed to set image for recent. Cause code: ${exception.code}, message: ${exception.message}`);
         }
       })
 
-      let imgResourceId = $r("app.media.startIcon").id
+      let imgResourceId = $r("app.media.startIcon").id;
       try {
-        let promise2 = windowStage.setImageForRecent(imgResourceId, ImageFit.Fill);
-        promise2.then(() => {
+        let imgResourcePromise = windowStage.setImageForRecent(imgResourceId, ImageFit.Fill);
+        imgResourcePromise.then(() => {
           console.info(`Succeeded in setting image for recent`);
         }).catch((err: BusinessError) => {
           console.error(`Failed to set image for recent. Cause code: ${err.code}, message: ${err.message}`);
         });
       } catch (exception) {
-        console.error(`Failed to set image for recent.`);
+        console.error(`Failed to set image for recent. Cause code: ${exception.code}, message: ${exception.message}`);
       }
     });
   }
@@ -2212,9 +2315,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### removeImageForRecent
+## removeImageForRecent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeImageForRecent(): Promise&lt;void&gt;
 
@@ -2230,6 +2334,7 @@ removeImageForRecent(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -2239,11 +2344,12 @@ removeImageForRecent(): Promise&lt;void&gt;
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. The application does not have the permission required or a non-system application calls the API. |
 | 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
-| 1300002 | This window state is abnormal. |
+| 1300002 | This window state is abnormal. Possible cause: 1. The window is not created or destroyed. 2. Internal task error. |
 | 1300003 | This window manager service works abnormally. |
 
 
@@ -2267,7 +2373,7 @@ export default class EntryAbility extends UIAbility {
         console.error(`Failed to remove image for recent. Cause code: ${err.code}, message: ${err.message}`);
       });
     } catch (exception) {
-      console.error(`Failed to remove image for recent.`);
+      console.error(`Failed to remove image for recent. Cause code: ${exception.code}, message: ${exception.message}`);
     }
   }
 };
@@ -2275,9 +2381,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### setSupportedWindowModes15+
+## setSupportedWindowModes15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 setSupportedWindowModes(supportedWindowModes: Array<bundleManager.SupportWindowMode>): Promise&lt;void&gt;
 
@@ -2297,12 +2404,14 @@ setSupportedWindowModes(supportedWindowModes: Array<bundleManager.SupportWindowM
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | supportedWindowModes | Array<bundleManager.SupportWindowMode> | 是 | 设置主窗的窗口支持模式。 - FULL_SCREEN：支持全屏模式。 - FLOATING：支持自由悬浮窗口模式。 - SPLIT：支持分屏模式。需要配合FULL_SCREEN或FLOATING一起使用，不支持仅配置SPLIT。 注：数组中SupportWindowMode字段取值不应该与该UIAbility对应的module.json5配置文件中abilities标签的supportWindowMode字段取值或者StartOptions的supportWindowModes属性取值冲突。当取值冲突时，最终以该参数设置的窗口支持模式为准。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2312,6 +2421,7 @@ setSupportedWindowModes(supportedWindowModes: Array<bundleManager.SupportWindowM
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2352,9 +2462,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### setSupportedWindowModes20+
+## setSupportedWindowModes20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 setSupportedWindowModes(supportedWindowModes: Array<bundleManager.SupportWindowMode>, grayOutMaximizeButton: boolean): Promise&lt;void&gt;
 
@@ -2372,6 +2483,7 @@ setSupportedWindowModes(supportedWindowModes: Array<bundleManager.SupportWindowM
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | supportedWindowModes | Array<bundleManager.SupportWindowMode> | 是 | 设置主窗的窗口支持模式。 - FULL_SCREEN：支持全屏模式。 - FLOATING：支持自由悬浮窗口模式。 - SPLIT：支持分屏模式。需要配合FULL_SCREEN或FLOATING一起使用，不支持仅配置SPLIT。 注：数组中SupportWindowMode字段取值不应该与该UIAbility对应的module.json5配置文件中abilities标签的supportWindowMode字段取值或者StartOptions中属性的supportWindowModes字段取值冲突。当取值冲突时，最终以该参数设置的窗口支持模式为准。 |
@@ -2379,6 +2491,7 @@ setSupportedWindowModes(supportedWindowModes: Array<bundleManager.SupportWindowM
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2388,6 +2501,7 @@ setSupportedWindowModes(supportedWindowModes: Array<bundleManager.SupportWindowM
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[窗口错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-window)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

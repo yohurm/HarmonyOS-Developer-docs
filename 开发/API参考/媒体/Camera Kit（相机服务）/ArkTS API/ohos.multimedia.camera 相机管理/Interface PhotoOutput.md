@@ -1,9 +1,9 @@
 # Interface (PhotoOutput)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-photooutput
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 拍照会话中使用的输出信息，继承[CameraOutput](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-cameraoutput)。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { camera } from '@kit.CameraKit';
@@ -22,9 +23,10 @@ import { camera } from '@kit.CameraKit';
 
 
 
-#### capture
+## capture
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 capture(callback: AsyncCallback&lt;void&gt;): void
 
@@ -36,6 +38,7 @@ capture(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当以默认设置触发拍照成功，err为undefined，否则为错误对象。错误码类型CameraErrorCode。 |
@@ -44,6 +47,7 @@ capture(callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -69,9 +73,10 @@ function capture(photoOutput: camera.PhotoOutput): void {
 
 
 
-#### capture
+## capture
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 capture(): Promise&lt;void&gt;
 
@@ -83,6 +88,7 @@ capture(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -91,6 +97,7 @@ capture(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -114,9 +121,10 @@ function capture(photoOutput: camera.PhotoOutput): void {
 
 
 
-#### capture
+## capture
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 capture(setting: PhotoCaptureSetting, callback: AsyncCallback&lt;void&gt;): void
 
@@ -128,6 +136,7 @@ capture(setting: PhotoCaptureSetting, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | setting | PhotoCaptureSetting | 是 | 拍照设置，传入undefined类型数据按默认设置触发一次拍照处理。 |
@@ -137,6 +146,7 @@ capture(setting: PhotoCaptureSetting, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -174,9 +184,10 @@ function capture(photoOutput: camera.PhotoOutput): void {
 
 
 
-#### capture
+## capture
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 capture(setting: PhotoCaptureSetting): Promise&lt;void&gt;
 
@@ -188,12 +199,14 @@ capture(setting: PhotoCaptureSetting): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | setting | PhotoCaptureSetting | 是 | 拍照设置，传入undefined类型数据按默认设置触发一次拍照处理。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -203,6 +216,7 @@ capture(setting: PhotoCaptureSetting): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -238,9 +252,10 @@ function capture(photoOutput: camera.PhotoOutput): void {
 
 
 
-#### on('photoAvailable')11+
+## on('photoAvailable')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'photoAvailable', callback: AsyncCallback&lt;Photo&gt;): void
 
@@ -255,6 +270,7 @@ on(type: 'photoAvailable', callback: AsyncCallback&lt;Photo&gt;): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -284,9 +300,10 @@ function registerPhotoOutputPhotoAvailable(photoOutput: camera.PhotoOutput): voi
 
 
 
-#### off('photoAvailable')11+
+## off('photoAvailable')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'photoAvailable', callback?: AsyncCallback&lt;Photo&gt;): void
 
@@ -297,6 +314,7 @@ off(type: 'photoAvailable', callback?: AsyncCallback&lt;Photo&gt;): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -325,9 +343,10 @@ function unRegisterPhotoOutputPhotoAvailable(photoOutput: camera.PhotoOutput): v
 
 
 
-#### onCapturePhotoAvailable23+
+## onCapturePhotoAvailable23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onCapturePhotoAvailable(callback: Callback&lt;CapturePhoto&gt;): void
 
@@ -344,6 +363,7 @@ onCapturePhotoAvailable(callback: Callback&lt;CapturePhoto&gt;): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -367,9 +387,10 @@ function registerCapturePhotoOutputPhotoAvailable(photoOutput: camera.PhotoOutpu
 
 
 
-#### offCapturePhotoAvailable23+
+## offCapturePhotoAvailable23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offCapturePhotoAvailable(callback?: Callback&lt;CapturePhoto&gt;): void
 
@@ -382,6 +403,7 @@ offCapturePhotoAvailable(callback?: Callback&lt;CapturePhoto&gt;): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -405,9 +427,10 @@ function unRegisterCapturePhotoOutputPhotoAvailable(photoOutput: camera.PhotoOut
 
 
 
-#### on('captureStartWithInfo')11+
+## on('captureStartWithInfo')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'captureStartWithInfo', callback: AsyncCallback&lt;CaptureStartInfo&gt;): void
 
@@ -422,6 +445,7 @@ on(type: 'captureStartWithInfo', callback: AsyncCallback&lt;CaptureStartInfo&gt;
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -449,9 +473,10 @@ function registerCaptureStartWithInfo(photoOutput: camera.PhotoOutput): void {
 
 
 
-#### off('captureStartWithInfo')11+
+## off('captureStartWithInfo')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'captureStartWithInfo', callback?: AsyncCallback&lt;CaptureStartInfo&gt;): void
 
@@ -462,6 +487,7 @@ off(type: 'captureStartWithInfo', callback?: AsyncCallback&lt;CaptureStartInfo&g
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -481,9 +507,10 @@ function unRegisterCaptureStartWithInfo(photoOutput: camera.PhotoOutput): void {
 
 
 
-#### isMovingPhotoSupported12+
+## isMovingPhotoSupported12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isMovingPhotoSupported(): boolean
 
@@ -495,6 +522,7 @@ isMovingPhotoSupported(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回是否支持动态照片拍照。true表示支持，false表示不支持。若接口调用失败，返回undefined。 |
@@ -503,6 +531,7 @@ isMovingPhotoSupported(): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -529,9 +558,10 @@ function isMovingPhotoSupported(photoOutput: camera.PhotoOutput): boolean {
 
 
 
-#### enableMovingPhoto12+
+## enableMovingPhoto12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableMovingPhoto(enabled: boolean): void
 
@@ -545,6 +575,7 @@ enableMovingPhoto(enabled: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 使能动态照片拍照。true为开启动态照片，false为关闭动态照片。 |
@@ -553,6 +584,7 @@ enableMovingPhoto(enabled: boolean): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -579,9 +611,10 @@ function enableMovingPhoto(photoOutput: camera.PhotoOutput): void {
 
 
 
-#### on('photoAssetAvailable')12+
+## on('photoAssetAvailable')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'photoAssetAvailable', callback: AsyncCallback<photoAccessHelper.PhotoAsset>): void
 
@@ -596,6 +629,7 @@ on(type: 'photoAssetAvailable', callback: AsyncCallback<photoAccessHelper.PhotoA
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -625,9 +659,10 @@ function onPhotoOutputPhotoAssetAvailable(photoOutput: camera.PhotoOutput): void
 
 
 
-#### off('photoAssetAvailable')12+
+## off('photoAssetAvailable')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'photoAssetAvailable', callback?: AsyncCallback<photoAccessHelper.PhotoAsset>): void
 
@@ -638,6 +673,7 @@ off(type: 'photoAssetAvailable', callback?: AsyncCallback<photoAccessHelper.Phot
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -655,9 +691,10 @@ function offPhotoOutputPhotoAssetAvailable(photoOutput: camera.PhotoOutput): voi
 
 
 
-#### isMirrorSupported
+## isMirrorSupported
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isMirrorSupported(): boolean
 
@@ -668,6 +705,7 @@ isMirrorSupported(): boolean
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -685,9 +723,10 @@ function isMirrorSupported(photoOutput: camera.PhotoOutput): boolean {
 
 
 
-#### enableMirror13+
+## enableMirror13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableMirror(enabled: boolean): void
 
@@ -701,6 +740,7 @@ enableMirror(enabled: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 是否启用动态照片镜像拍照。true为开启动态照片镜像拍照，false为关闭动态照片镜像拍照。 |
@@ -709,6 +749,7 @@ enableMirror(enabled: boolean): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -735,9 +776,10 @@ function enableMirror(photoOutput: camera.PhotoOutput): void {
 
 
 
-#### getSupportedMovingPhotoVideoCodecTypes13+
+## getSupportedMovingPhotoVideoCodecTypes13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSupportedMovingPhotoVideoCodecTypes(): Array&lt;VideoCodecType&gt;
 
@@ -749,6 +791,7 @@ getSupportedMovingPhotoVideoCodecTypes(): Array&lt;VideoCodecType&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;VideoCodecType&gt; | 支持的动态照片短视频编码类型列表。若接口调用失败，返回undefined。 |
@@ -757,6 +800,7 @@ getSupportedMovingPhotoVideoCodecTypes(): Array&lt;VideoCodecType&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -774,19 +818,23 @@ function getSupportedMovingPhotoVideoCodecType(photoOutput: camera.PhotoOutput):
 
 
 
-#### setMovingPhotoVideoCodecType13+
+## setMovingPhotoVideoCodecType13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMovingPhotoVideoCodecType(codecType: VideoCodecType): void
 
 设置动态照片短视频编码类型。
+
+设置之前，可先使用方法[getSupportedMovingPhotoVideoCodecTypes](#getsupportedmovingphotovideocodectypes13)查询设备支持的动态照片短视频编码类型。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -796,6 +844,7 @@ setMovingPhotoVideoCodecType(codecType: VideoCodecType): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -812,9 +861,10 @@ function setMovingPhotoVideoCodecTypes(photoOutput: camera.PhotoOutput, videoCod
 
 
 
-#### on('frameShutter')
+## on('frameShutter')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'frameShutter', callback: AsyncCallback&lt;FrameShutterInfo&gt;): void
 
@@ -825,6 +875,7 @@ on(type: 'frameShutter', callback: AsyncCallback&lt;FrameShutterInfo&gt;): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -853,9 +904,10 @@ function registerPhotoOutputFrameShutter(photoOutput: camera.PhotoOutput): void 
 
 
 
-#### off('frameShutter')
+## off('frameShutter')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'frameShutter', callback?: AsyncCallback&lt;FrameShutterInfo&gt;): void
 
@@ -866,6 +918,7 @@ off(type: 'frameShutter', callback?: AsyncCallback&lt;FrameShutterInfo&gt;): voi
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -883,9 +936,10 @@ function unregisterPhotoOutputFrameShutter(photoOutput: camera.PhotoOutput): voi
 
 
 
-#### on('captureEnd')
+## on('captureEnd')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'captureEnd', callback: AsyncCallback&lt;CaptureEndInfo&gt;): void
 
@@ -900,6 +954,7 @@ on(type: 'captureEnd', callback: AsyncCallback&lt;CaptureEndInfo&gt;): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -928,9 +983,10 @@ function registerPhotoOutputCaptureEnd(photoOutput: camera.PhotoOutput): void {
 
 
 
-#### off('captureEnd')
+## off('captureEnd')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'captureEnd', callback?: AsyncCallback&lt;CaptureEndInfo&gt;): void
 
@@ -941,6 +997,7 @@ off(type: 'captureEnd', callback?: AsyncCallback&lt;CaptureEndInfo&gt;): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -958,9 +1015,10 @@ function unregisterPhotoOutputCaptureEnd(photoOutput: camera.PhotoOutput): void 
 
 
 
-#### on('frameShutterEnd')12+
+## on('frameShutterEnd')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'frameShutterEnd', callback: AsyncCallback&lt;FrameShutterEndInfo&gt;): void
 
@@ -975,6 +1033,7 @@ on(type: 'frameShutterEnd', callback: AsyncCallback&lt;FrameShutterEndInfo&gt;):
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1002,9 +1061,10 @@ function registerPhotoOutputFrameShutterEnd(photoOutput: camera.PhotoOutput): vo
 
 
 
-#### off('frameShutterEnd')12+
+## off('frameShutterEnd')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'frameShutterEnd', callback?: AsyncCallback&lt;FrameShutterEndInfo&gt;): void
 
@@ -1015,6 +1075,7 @@ off(type: 'frameShutterEnd', callback?: AsyncCallback&lt;FrameShutterEndInfo&gt;
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1032,9 +1093,10 @@ function unregisterPhotoOutputFrameShutterEnd(photoOutput: camera.PhotoOutput): 
 
 
 
-#### on('captureReady')12+
+## on('captureReady')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'captureReady', callback: AsyncCallback&lt;void&gt;): void
 
@@ -1049,6 +1111,7 @@ on(type: 'captureReady', callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1076,9 +1139,10 @@ function registerPhotoOutputCaptureReady(photoOutput: camera.PhotoOutput): void 
 
 
 
-#### off('captureReady')12+
+## off('captureReady')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'captureReady', callback?: AsyncCallback&lt;void&gt;): void
 
@@ -1089,6 +1153,7 @@ off(type: 'captureReady', callback?: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1106,9 +1171,10 @@ function unregisterPhotoOutputCaptureReady(photoOutput: camera.PhotoOutput): voi
 
 
 
-#### on('estimatedCaptureDuration')12+
+## on('estimatedCaptureDuration')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'estimatedCaptureDuration', callback: AsyncCallback&lt;number&gt;): void
 
@@ -1123,6 +1189,7 @@ on(type: 'estimatedCaptureDuration', callback: AsyncCallback&lt;number&gt;): voi
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1150,9 +1217,10 @@ function registerPhotoOutputEstimatedCaptureDuration(photoOutput: camera.PhotoOu
 
 
 
-#### off('estimatedCaptureDuration')12+
+## off('estimatedCaptureDuration')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'estimatedCaptureDuration', callback?: AsyncCallback&lt;number&gt;): void
 
@@ -1163,6 +1231,7 @@ off(type: 'estimatedCaptureDuration', callback?: AsyncCallback&lt;number&gt;): v
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1180,9 +1249,10 @@ function unregisterPhotoOutputEstimatedCaptureDuration(photoOutput: camera.Photo
 
 
 
-#### on('error')
+## on('error')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'error', callback: ErrorCallback): void
 
@@ -1197,6 +1267,7 @@ on(type: 'error', callback: ErrorCallback): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1220,9 +1291,10 @@ function registerPhotoOutputError(photoOutput: camera.PhotoOutput): void {
 
 
 
-#### off('error')
+## off('error')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'error', callback?: ErrorCallback): void
 
@@ -1233,6 +1305,7 @@ off(type: 'error', callback?: ErrorCallback): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1250,9 +1323,10 @@ function unregisterPhotoOutputError(photoOutput: camera.PhotoOutput): void {
 
 
 
-#### getActiveProfile12+
+## getActiveProfile12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getActiveProfile(): Profile
 
@@ -1264,6 +1338,7 @@ getActiveProfile(): Profile
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Profile | 当前生效的配置信息 |
@@ -1272,6 +1347,7 @@ getActiveProfile(): Profile
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1298,9 +1374,10 @@ function testGetActiveProfile(photoOutput: camera.PhotoOutput): camera.Profile |
 
 
 
-#### getPhotoRotation12+
+## getPhotoRotation12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPhotoRotation(deviceDegree?: number): ImageRotation
 
@@ -1318,12 +1395,14 @@ getPhotoRotation(deviceDegree?: number): ImageRotation
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceDegree | number | 否 | 设备旋转角度，单位度，取值范围：[0, 360]。 若入参超过该范围，则取入参除以360的余数。 从API version 23开始，入参deviceDegree为可选参数，当不传入参数时，由系统获取deviceDegree进行拍照旋转角度计算。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1333,6 +1412,7 @@ getPhotoRotation(deviceDegree?: number): ImageRotation
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1374,9 +1454,10 @@ function testGetPhotoRotationWithOutParam(photoOutput: camera.PhotoOutput): came
 
 
 
-#### on('captureStart')(deprecated)
+## on('captureStart')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'captureStart', callback: AsyncCallback&lt;number&gt;): void
 
@@ -1389,6 +1470,7 @@ on(type: 'captureStart', callback: AsyncCallback&lt;number&gt;): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1416,9 +1498,10 @@ function registerPhotoOutputCaptureStart(photoOutput: camera.PhotoOutput): void 
 
 
 
-#### off('captureStart')(deprecated)
+## off('captureStart')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'captureStart', callback?: AsyncCallback&lt;number&gt;): void
 
@@ -1431,6 +1514,7 @@ off(type: 'captureStart', callback?: AsyncCallback&lt;number&gt;): void
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1448,9 +1532,10 @@ function unregisterPhotoOutputCaptureStart(photoOutput: camera.PhotoOutput): voi
 
 
 
-#### isPhotoQualityPrioritizationSupported21+
+## isPhotoQualityPrioritizationSupported21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isPhotoQualityPrioritizationSupported(qualityPrioritization: PhotoQualityPrioritization): boolean
 
@@ -1462,12 +1547,14 @@ isPhotoQualityPrioritizationSupported(qualityPrioritization: PhotoQualityPriorit
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | qualityPrioritization | PhotoQualityPrioritization | 是 | 要检查的拍照画质优先策略。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1477,6 +1564,7 @@ isPhotoQualityPrioritizationSupported(qualityPrioritization: PhotoQualityPriorit
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1505,9 +1593,10 @@ function isPhotoQualityPrioritizationSupported(qualityPrioritization: camera.Pho
 
 
 
-#### setPhotoQualityPrioritization21+
+## setPhotoQualityPrioritization21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setPhotoQualityPrioritization(qualityPrioritization: PhotoQualityPrioritization): void
 
@@ -1521,6 +1610,7 @@ setPhotoQualityPrioritization(qualityPrioritization: PhotoQualityPrioritization)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | qualityPrioritization | PhotoQualityPrioritization | 是 | 要设置的拍照画质优先策略。 |
@@ -1529,6 +1619,7 @@ setPhotoQualityPrioritization(qualityPrioritization: PhotoQualityPrioritization)
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1556,9 +1647,10 @@ function setPhotoQualityPrioritization(qualityPrioritization: camera.PhotoQualit
 
 
 
-#### isAutoExtendedGainmapDeliverySupported
+## isAutoExtendedGainmapDeliverySupported
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isAutoExtendedGainmapDeliverySupported(): boolean
 
@@ -1573,6 +1665,7 @@ isAutoExtendedGainmapDeliverySupported(): boolean
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1600,9 +1693,10 @@ function isAutoExtendedGainmapDeliverySupported(photoOutput: camera.PhotoOutput)
 
 
 
-#### enableAutoExtendedGainmapDelivery
+## enableAutoExtendedGainmapDelivery
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableAutoExtendedGainmapDelivery(enabled: boolean): void
 
@@ -1618,6 +1712,7 @@ enableAutoExtendedGainmapDelivery(enabled: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 是否启用自动扩展增益图（Gainmap）的输出。true表示启用，false表示不启用。 |
@@ -1626,6 +1721,7 @@ enableAutoExtendedGainmapDelivery(enabled: boolean): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

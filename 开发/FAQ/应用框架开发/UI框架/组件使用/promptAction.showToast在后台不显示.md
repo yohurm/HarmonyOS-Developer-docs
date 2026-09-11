@@ -36,19 +36,19 @@ import { notificationManager } from '@kit.NotificationKit';
 ```
  
 ```text
-// 通知方法
+<em>// </em><em>通知方法</em>
 publishNotification() {
   let notificationRequest:
-    // 描述通知的请求
+  <em>  // 描述通知的请求</em>
     notificationManager.NotificationRequest = {
-    // 通知ID
+   <em> // 通知ID</em>
     id: 1,
-    // 通知内容
+   <em> // 通知内容</em>
     content: {
       notificationContentType:
-      // 普通文本类型通知
+   <em>   // 普通文本类型通知</em>
       notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
-      // 基本类型通知内容
+     <em> // 基本类型通知内容</em>
       normal: {
         title: '应用名称',
         text: '应用在后台运行'
@@ -56,7 +56,7 @@ publishNotification() {
     },
     notificationSlotType: notificationManager.SlotType.SOCIAL_COMMUNICATION,
   };
-  // 发布通知
+  <em>// 发布通知</em>
   notificationManager.publish(notificationRequest).then(() => {
     console.info('publish success');
   }).catch((err: Error) => {
@@ -66,7 +66,7 @@ publishNotification() {
 
 onBackground(): void {
   this.publishNotification();
-  // Ability has back to background
+<em>  // Ability has back to background</em>
   hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onBackground');
 }
 ```

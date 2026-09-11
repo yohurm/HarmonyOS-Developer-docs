@@ -1,18 +1,19 @@
 # Vibrator_FileDescription
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-vibrator-vibrator-filedescription
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct Vibrator_FileDescription { ... } Vibrator_FileDescription
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 振动文件描述。用于描述自定义振动序列的文件信息，支持使用自定义振动文件实现精确振动控制。
  
@@ -24,16 +25,19 @@ typedef struct Vibrator_FileDescription { ... } Vibrator_FileDescription
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 成员变量
+### 成员变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | int32_t fd | 自定义振动序列的文件句柄，需指向包含振动序列数据的有效文件。使用前应通过文件操作API（如open）打开文件并获取句柄。fd必须为有效且可读的文件句柄，不能为负值或无效句柄。 |

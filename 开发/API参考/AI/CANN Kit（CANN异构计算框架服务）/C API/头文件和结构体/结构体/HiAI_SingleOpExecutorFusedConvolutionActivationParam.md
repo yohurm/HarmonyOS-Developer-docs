@@ -1,6 +1,6 @@
 # HiAI_SingleOpExecutorFusedConvolutionActivationParam
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/cannkit-sopexec-fusedconv-actparam
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -10,7 +10,8 @@ typedef struct HiAI_SingleOpExecutorFusedConvolutionActivationParam {...} HiAI_S
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -24,16 +25,19 @@ typedef struct HiAI_SingleOpExecutorFusedConvolutionActivationParam {...} HiAI_S
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | HiAI_SingleOpOptions * options | 指向HiAI_SingleOpOptions对象的指针。该值不能为空指针，否则接口调用失败。 |
@@ -47,13 +51,15 @@ typedef struct HiAI_SingleOpExecutorFusedConvolutionActivationParam {...} HiAI_S
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### actOpDesc
+### actOpDesc
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -67,7 +73,8 @@ HiAI_SingleOpDescriptor* HiAI_SingleOpExecutorFusedConvolutionActivationParam::a
  
   
 
-#### bias
+### bias
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -81,7 +88,8 @@ HiAI_SingleOpTensor* HiAI_SingleOpExecutorFusedConvolutionActivationParam::bias
  
   
 
-#### convOpDesc
+### convOpDesc
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -95,7 +103,8 @@ HiAI_SingleOpDescriptor* HiAI_SingleOpExecutorFusedConvolutionActivationParam::c
  
   
 
-#### filter
+### filter
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -109,7 +118,8 @@ HiAI_SingleOpTensor* HiAI_SingleOpExecutorFusedConvolutionActivationParam::filte
  
   
 
-#### input
+### input
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -123,7 +133,8 @@ HiAI_SingleOpTensorDesc* HiAI_SingleOpExecutorFusedConvolutionActivationParam::i
  
   
 
-#### options
+### options
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -137,7 +148,8 @@ HiAI_SingleOpOptions* HiAI_SingleOpExecutorFusedConvolutionActivationParam::opti
  
   
 
-#### output
+### output
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 

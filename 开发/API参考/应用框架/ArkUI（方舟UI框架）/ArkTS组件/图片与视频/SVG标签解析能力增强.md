@@ -1,8 +1,9 @@
 # SVG标签解析能力增强
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-image-svg2-capabilities
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 从API version 21开始，当Image组件的[supportSvg2](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image#supportsvg221)属性设置为true时，将启用SVG标签解析能力增强功能，该增强功能主要包含SVG1.1规范中的以下功能。
 
@@ -13,9 +14,13 @@
 
 
 
-#### SVG标签解析能力增强对SVG图源标签和属性的影响
+## SVG标签解析能力增强对SVG图源标签和属性的影响
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 启用增强的解析处理能力后，影响的SVG元素和属性说明如下：
+
 
 | 元素 | 属性 | 说明 |
 | --- | --- | --- |
@@ -32,13 +37,19 @@
 
 
 
-#### SVG易用性提升
+## SVG易用性提升
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 SVG图源颜色默认解析格式从#ARGB变更为符合SVG标准规范的#RGBA；引用国际化资源标识（IRI）类型严格校验；调整Image组件的[colorFilter](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image#colorfilter9)属性生效范围；调整Image组件的[fillColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image#fillcolor20)属性生效范围。
 
 
 
-#### 颜色解析格式变更
+### 颜色解析格式变更
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 当Image组件的SVG图源使用十六进制格式的颜色时，颜色默认解析格式从#ARGB变更为符合SVG标准规范的#RGBA，涉及的SVG属性包括fill、stroke、stopColor、stop-color。
 
@@ -54,6 +65,7 @@ SVG图源属性设置8位十六进制格式的颜色时，示例图源和效果�
 </svg>
 ```
 
+
 | 提升前 | 提升后 |
 | --- | --- |
 | 系统会把8位的十六进制颜色当#ARGB格式解析并显示。 例如fill="#ff000030"的矩形显示效果。 | 系统会把8位的十六进制颜色当#RGBA格式解析并显示。 例如fill="#ff000030"的矩形显示效果。 |
@@ -66,6 +78,7 @@ SVG图源属性设置7位十六进制格式的颜色时，示例图源和效果�
         <rect x="10" y="10" width="180" height="80" fill="#BB88990" />
 </svg>
 ```
+
 
 | 提升前 | 提升后 |
 | --- | --- |
@@ -80,6 +93,7 @@ SVG图源属性设置4位十六进制格式的颜色时，示例图源和效果�
 </svg>
 ```
 
+
 | 提升前 | 提升后 |
 | --- | --- |
 | 系统会把4位的十六进制颜色当#ARGB格式解析并显示。 例如fill="#0000"的矩形显示效果。 | 系统会把4位的十六进制颜色当#RGBA解析并显示。 例如fill="#0000"的矩形显示效果（全透明）。 |
@@ -87,12 +101,16 @@ SVG图源属性设置4位十六进制格式的颜色时，示例图源和效果�
 
 
 
-#### 引用国际化资源标识（IRI）类型严格校验
+### 引用国际化资源标识（IRI）类型严格校验
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 严格校验filter滤镜/clip-path裁剪路径/mask遮罩引用的URL类型，避免引用类型不匹配。
 
 > [!NOTE]
 > SVG图片最终显示效果受Image组件的objectFit参数值影响，为了确保SVG图形完整且正确的显示，文档中用例图片都配置了objectFit(ImageFit.Contain)，开发者需要根据实际显示效果正确配置objectFit参数。
+
 
 
 | 提升前 | 提升后 |
@@ -121,12 +139,16 @@ SVG图源属性设置4位十六进制格式的颜色时，示例图源和效果�
 
 
 
-#### 调整colorFilter生效范围
+### 调整colorFilter生效范围
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 Image组件的[colorFilter](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image#colorfilter9)属性从只对stroke边框生效调整为对整个SVG图源生效。
 
 > [!NOTE]
 > SVG图片最终显示效果受Image组件的objectFit参数值影响，为了确保SVG图形完整且正确的显示，文档中用例图片都配置了objectFit(ImageFit.Contain)，开发者需要根据实际显示效果正确配置objectFit参数。
+
 
 
 | 原始图源 | 提升前 | 提升后 |
@@ -171,12 +193,16 @@ struct Index {
 
 
 
-#### 调整fillColor生效范围
+### 调整fillColor生效范围
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 当SVG图源中元素的fill属性为none时，Image组件的[fillColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image#fillcolor20)属性从填充颜色变更为不填充颜色。
 
 > [!NOTE]
 > SVG图片最终显示效果受Image组件的objectFit参数值影响，为了确保SVG图形完整且正确的显示，文档中用例图片都配置了objectFit(ImageFit.Contain)，开发者需要根据实际显示效果正确配置objectFit参数。
+
 
 
 | 提升前 | 提升后 |
@@ -216,18 +242,25 @@ struct Index {
 
 
 
-#### 仿射变换能力扩展
+## 仿射变换能力扩展
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 对于[transform](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-transformation#transform)属性：支持变换全局中心点可配置；支持rotate旋转的局部中心点；支持矩阵(matrix)转换方式；支持非法值的校验；裁剪路径内支持仿射变换操作；组合场景支持仿射变换操作。
 
 
 
-#### 支持变换全局中心点配置
+### 支持变换全局中心点配置
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 SVG支持解析transform-origin属性来配置全局中心点的能力，前后效果对比如下表格说明：
 
 > [!NOTE]
 > SVG图片最终显示效果受Image组件的 objectFit 参数值影响，为了确保SVG图形完整且正确的显示，文档中用例图片都配置了objectFit(ImageFit.Contain)，开发者需要根据实际显示效果正确配置objectFit参数。
+
 
 
 | SVG场景 | 扩展前 | 扩展后 |
@@ -243,12 +276,16 @@ SVG支持解析transform-origin属性来配置全局中心点的能力，前后�
 
 
 
-#### 支持rotate旋转功能局部中心点配置
+### 支持rotate旋转功能局部中心点配置
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 SVG支持解析rotate旋转的局部中心点功能，例如'rotate(30, -10, -10)'的'30'是旋转角度，后2个参数'-10, -10'是旋转的局部中心点坐标。支持rotate局部中心点前后效果对比如下表格说明。
 
 > [!NOTE]
 > SVG图片最终显示效果受Image组件的objectFit参数值影响，为了确保SVG图形完整且正确的显示，文档中用例图片都配置了objectFit(ImageFit.Contain)，开发者需要根据实际显示效果正确配置objectFit参数。
+
 
 
 | SVG场景 | 扩展前 | 扩展后 |
@@ -258,12 +295,16 @@ SVG支持解析rotate旋转的局部中心点功能，例如'rotate(30, -10, -10
 
 
 
-#### 支持矩阵(matrix)转换
+### 支持矩阵(matrix)转换
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 SVG支持解析transform属性的matrix矩阵转换能力。matrix允许对元素进行复杂的线性变换，包括平移、旋转、缩放和倾斜等，例如matrix(a, b, c, d, e, f)。其中各个字段的元素作用如下：a‌控制元素在x方向上的缩放，b‌控制元素在y方向上的倾斜，c‌控制元素在x方向上的倾斜‌，d‌控制元素在y方向上的缩放‌，e控制元素在x方向上的平移‌，f控制元素在y方向上的平移。
 
 > [!NOTE]
 > SVG图片最终显示效果受Image组件的objectFit参数值影响，为了确保SVG图形完整且正确的显示，文档中用例图片都配置了objectFit(ImageFit.Contain)，开发者需要根据实际显示效果正确配置objectFit参数。
+
 
 
 | SVG场景 | 扩展前 | 扩展后 |
@@ -273,12 +314,16 @@ SVG支持解析transform属性的matrix矩阵转换能力。matrix允许对元�
 
 
 
-#### 支持非法值校验
+### 支持非法值校验
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 SVG支持校验transform属性非法值的能力。对于transform属性，当设置参数为非法值或者参数个数非法时，按如下表格说明处理：
 
 > [!NOTE]
 > SVG图片最终显示效果受Image组件的objectFit参数值影响，为了确保SVG图形完整且正确的显示，文档中用例图片都配置了objectFit(ImageFit.Contain)，开发者需要根据实际显示效果正确配置objectFit参数。
+
 
 
 | SVG场景 | 扩展前 | 扩展后 |
@@ -291,7 +336,10 @@ SVG支持校验transform属性非法值的能力。对于transform属性，当�
 
 
 
-#### 裁剪路径内支持仿射变换操作
+### 裁剪路径内支持仿射变换操作
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 支持clip-path裁剪路径内的transform仿射变换操作。
 
@@ -315,6 +363,7 @@ SVG支持校验transform属性非法值的能力。对于transform属性，当�
 </svg>
 ```
 
+
 | 扩展前 | 扩展后 |
 | --- | --- |
 |  |  |
@@ -322,7 +371,10 @@ SVG支持校验transform属性非法值的能力。对于transform属性，当�
 
 
 
-#### 组合场景支持仿射变换操作
+### 组合场景支持仿射变换操作
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 支持多种元素组合场景的仿射变换操作。
 
@@ -345,6 +397,7 @@ transform操作在use中，use对象也在相同的mask元素内。
 </svg>
 ```
 
+
 | 扩展前 | 扩展后 |
 | --- | --- |
 |  |  |
@@ -366,6 +419,7 @@ transform操作在g标签中，且不包含scale操作。
 </svg>
 ```
 
+
 | 扩展前 | 扩展后 |
 | --- | --- |
 |  |  |
@@ -373,13 +427,19 @@ transform操作在g标签中，且不包含scale操作。
 
 
 
-#### SVG解析能力扩展
+## SVG解析能力扩展
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 [viewBox](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-image-svg2-capabilities#viewbox属性支持对齐和缩放规则可配置)属性支持对齐和缩放规则的自定义配置；支持裁剪路径单元的解析；支持渐变单元的解析；支持遮罩单元和遮罩内容单元的解析；支持图案单元和图案内容单元的解析；支持滤镜单元和原语单元解析。
 
 
 
-#### viewBox属性支持对齐和缩放规则可配置
+### viewBox属性支持对齐和缩放规则可配置
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 viewBox主要用来控制在SVG动态拉伸效果，可以通过参数preserveAspectRatio来控制内容区显示的对齐和缩放规则。
 
@@ -397,6 +457,7 @@ SVG包含“preserveAspectRatio”属性且值为“none”，示例图源和行
 </svg>
 ```
 
+
 | 参数值 | 扩展前 | 扩展后 |
 | --- | --- | --- |
 | none | 按宽高比最小值进行统一缩放。 同时将SVG元素的viewBox属性的X的中点值与视图的X的中点值对齐， 将SVG元素的viewBox属性的Y的中点值与视图的Y的中点值对齐。 | 缩放元素的图形内容，使元素的边界完全匹配视图矩形。 |
@@ -411,6 +472,7 @@ SVG包含“preserveAspectRatio”属性且值为“&lt;align&gt; [&lt;meetOrSli
   <line x1="0" y1="0" x2="500" y2="0" stroke="black" stroke-width="2" /> <!-- x 轴 -->
 </svg>
 ```
+
 
 | 参数值 | 扩展前 | 扩展后 |
 | --- | --- | --- |
@@ -433,7 +495,10 @@ SVG包含“preserveAspectRatio”属性且值为“&lt;align&gt; [&lt;meetOrSli
 
 
 
-#### 支持裁剪路径单元的解析
+### 支持裁剪路径单元的解析
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 支持裁剪路径单元值clipPathUnits的解析，增加clipPathUnits为objectBoundingBox（被应用元素的边框作为基准的坐标系）场景的处理。
 
@@ -454,6 +519,7 @@ SVG包含“preserveAspectRatio”属性且值为“&lt;align&gt; [&lt;meetOrSli
 </svg>
 ```
 
+
 | 扩展前 | 扩展后 |
 | --- | --- |
 |  |  |
@@ -461,7 +527,10 @@ SVG包含“preserveAspectRatio”属性且值为“&lt;align&gt; [&lt;meetOrSli
 
 
 
-#### 支持渐变单元的解析
+### 支持渐变单元的解析
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 支持渐变单元值gradientUnits的解析，增加gradientUnits为objectBoundingBox（被应用元素的边框作为基准的坐标系）场景的处理。
 
@@ -483,6 +552,7 @@ SVG包含“preserveAspectRatio”属性且值为“&lt;align&gt; [&lt;meetOrSli
 </svg>
 ```
 
+
 | 扩展前 | 扩展后 |
 | --- | --- |
 |  |  |
@@ -502,6 +572,7 @@ SVG包含“preserveAspectRatio”属性且值为“&lt;align&gt; [&lt;meetOrSli
 </svg>
 ```
 
+
 | 扩展前 | 扩展后 |
 | --- | --- |
 |  |  |
@@ -509,7 +580,10 @@ SVG包含“preserveAspectRatio”属性且值为“&lt;align&gt; [&lt;meetOrSli
 
 
 
-#### 支持遮罩单元和遮罩内容单元的解析
+### 支持遮罩单元和遮罩内容单元的解析
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 支持遮罩单元maskUnits和遮罩内容单元maskContentUnits的解析，增加maskContentUnits和maskUnits为objectBoundingBox（被应用元素的边框作为基准的坐标系）场景的处理。
 
@@ -530,6 +604,7 @@ SVG包含“preserveAspectRatio”属性且值为“&lt;align&gt; [&lt;meetOrSli
 </svg>
 ```
 
+
 | 扩展前 | 扩展后 |
 | --- | --- |
 |  |  |
@@ -537,7 +612,10 @@ SVG包含“preserveAspectRatio”属性且值为“&lt;align&gt; [&lt;meetOrSli
 
 
 
-#### 支持图案单元和图案内容单元的解析
+### 支持图案单元和图案内容单元的解析
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 支持图案单元patternUnits和图案内容单元patternContentUnits的解析，增加patternUnits和patternContentUnits为objectBoundingBox（被应用元素的边框作为基准的坐标系）场景的处理。
 
@@ -559,6 +637,7 @@ SVG包含“preserveAspectRatio”属性且值为“&lt;align&gt; [&lt;meetOrSli
 </svg>
 ```
 
+
 | 扩展前 | 扩展后 |
 | --- | --- |
 |  |  |
@@ -566,7 +645,10 @@ SVG包含“preserveAspectRatio”属性且值为“&lt;align&gt; [&lt;meetOrSli
 
 
 
-#### 支持滤镜单元和原语单元解析
+### 支持滤镜单元和原语单元解析
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 支持滤镜单元filterUnits和原语单元primitiveUnits的解析，增加filterUnits和primitiveUnits为objectBoundingBox（被应用元素的边框作为基准的坐标系）场景的处理。目前支持到的原语有feFlood,feOffset,feGaussianBlur,feBlend,feColorMatrix,feComposite。
 
@@ -593,6 +675,7 @@ SVG包含“preserveAspectRatio”属性且值为“&lt;align&gt; [&lt;meetOrSli
  </svg>
 ```
 
+
 | 扩展前 | 扩展后 |
 | --- | --- |
 |  |  |
@@ -600,13 +683,19 @@ SVG包含“preserveAspectRatio”属性且值为“&lt;align&gt; [&lt;meetOrSli
 
 
 
-#### 显示效果扩展
+## 显示效果扩展
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 分组标签g元素中透明度opacity对整个分组下的多层子元素生效；增强g标签内clip-path裁剪路径规则的处理；pattern增强平铺效果和偏移值处理；线性渐变和径向渐变增强平移和缩放效果；mask和filter的参数异常时默认效果变更。
 
 
 
-#### 分组标签中透明度
+### 分组标签中透明度
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 分组标签g元素中透明度opacity从对整个分组下的一层子元素生效到对整个分组下的多层子元素生效。
 
@@ -631,6 +720,7 @@ SVG包含“preserveAspectRatio”属性且值为“&lt;align&gt; [&lt;meetOrSli
 </svg>
 ```
 
+
 | 扩展前 | 扩展后 |
 | --- | --- |
 |  |  |
@@ -638,7 +728,10 @@ SVG包含“preserveAspectRatio”属性且值为“&lt;align&gt; [&lt;meetOrSli
 
 
 
-#### 分组标签内引用裁剪路径规则
+### 分组标签内引用裁剪路径规则
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 增强g标签内clip-path裁剪路径规则的处理。
 
@@ -664,6 +757,7 @@ SVG包含“preserveAspectRatio”属性且值为“&lt;align&gt; [&lt;meetOrSli
 </svg>
 ```
 
+
 | 扩展前 | 扩展后 |
 | --- | --- |
 |  |  |
@@ -671,7 +765,10 @@ SVG包含“preserveAspectRatio”属性且值为“&lt;align&gt; [&lt;meetOrSli
 
 
 
-#### pattern支持平铺效果
+### pattern支持平铺效果
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 pattern图案支持重复平铺效果。
 
@@ -693,6 +790,7 @@ pattern图案支持重复平铺效果。
 </svg>
 ```
 
+
 | 扩展前 | 扩展后 |
 | --- | --- |
 | 图案不支持重复平铺。 | 图案支持重复平铺 |
@@ -700,7 +798,10 @@ pattern图案支持重复平铺效果。
 
 
 
-#### pattern偏移值处理
+### pattern偏移值处理
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 支持pattern图案在x，y参数非0时，扩展前仅显示按偏移量平移后的局部图案（部分被裁切）；扩展后完整显示平移后的图案（不再裁切），并支持重复平铺。
 
@@ -720,6 +821,7 @@ pattern图案支持重复平铺效果。
 </svg>
 ```
 
+
 | 扩展前 | 扩展后 |
 | --- | --- |
 |  |  |
@@ -727,7 +829,10 @@ pattern图案支持重复平铺效果。
 
 
 
-#### 线性渐变
+### 线性渐变
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 linearGradient线性渐变支持做平移和缩放。
 
@@ -748,6 +853,7 @@ linearGradient线性渐变支持做平移和缩放。
 </svg>
 ```
 
+
 | 扩展前 | 扩展后 |
 | --- | --- |
 |  |  |
@@ -755,7 +861,10 @@ linearGradient线性渐变支持做平移和缩放。
 
 
 
-#### 径向渐变
+### 径向渐变
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 radialGradient径向渐变支持做平移和缩放。
 
@@ -776,6 +885,7 @@ radialGradient径向渐变支持做平移和缩放。
 </svg>
 ```
 
+
 | 扩展前 | 扩展后 |
 | --- | --- |
 |  |  |
@@ -783,7 +893,10 @@ radialGradient径向渐变支持做平移和缩放。
 
 
 
-#### mask参数异常时默认效果变更
+### mask参数异常时默认效果变更
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 mask遮罩的x、y、width、height等参数允许是数字、百分数、小数，当参数赋予错误类型时，从取0值变更为取默认值{-10%，-10%，120%，120%}。
 
@@ -802,6 +915,7 @@ mask遮罩的x、y、width、height等参数允许是数字、百分数、小数
 </svg>
 ```
 
+
 | 扩展前 | 扩展后 |
 | --- | --- |
 |  |  |
@@ -809,7 +923,10 @@ mask遮罩的x、y、width、height等参数允许是数字、百分数、小数
 
 
 
-#### filter参数异常时默认效果变更
+### filter参数异常时默认效果变更
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 filter滤镜的x、y、width、height等参数允许是数字、百分数、小数，当参数赋予错误类型时，从取0值变更为取默认值{-10%，-10%，120%，120%}。
 
@@ -827,6 +944,7 @@ filter滤镜的x、y、width、height等参数允许是数字、百分数、小�
   <circle cx="60" cy="60" r="50" fill="blue" filter="url(#blurMe)"/>
 </svg>
 ```
+
 
 | 扩展前 | 扩展后 |
 | --- | --- |

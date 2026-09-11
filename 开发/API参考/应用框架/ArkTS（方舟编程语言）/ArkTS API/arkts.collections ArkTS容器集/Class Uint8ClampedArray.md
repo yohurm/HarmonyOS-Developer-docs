@@ -1,9 +1,9 @@
 # Class (Uint8ClampedArray)
 
-更新时间：2026-08-04 06:06:24
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-arkts-collections-uint8clampedarray
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 一种线性数据结构，底层基于[ArrayBuffer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-arkts-collections-arraybuffer)实现。且对元素数值有钳制，小于0的会被钳制为0，大于255的会被钳制为255，不同于Uint8Array的截断处理。
 
@@ -14,9 +14,10 @@
 **装饰器类型：**[@Sendable](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable#sendable装饰器)
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { collections } from '@kit.ArkTS';
@@ -24,13 +25,15 @@ import { collections } from '@kit.ArkTS';
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Utils.Lang
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -43,9 +46,10 @@ import { collections } from '@kit.ArkTS';
 
 
 
-#### constructor
+## constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -58,6 +62,7 @@ constructor()
 **错误码：**
 
 以下错误码详细介绍请参考[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -72,9 +77,10 @@ let uint8ClampedArray: collections.Uint8ClampedArray = new collections.Uint8Clam
 
 
 
-#### constructor
+## constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(length: number)
 
@@ -86,6 +92,7 @@ constructor(length: number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | length | number | 是 | 用于指定ArkTS Uint8ClampedArray的长度。取值范围为非负整数。 |
@@ -94,6 +101,7 @@ constructor(length: number)
 **错误码：**
 
 以下错误码详细介绍请参考[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -109,9 +117,10 @@ let uint8ClampedArray: collections.Uint8ClampedArray = new collections.Uint8Clam
 
 
 
-#### constructor
+## constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(elements: Iterable&lt;number&gt;)
 
@@ -123,6 +132,7 @@ constructor(elements: Iterable&lt;number&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | elements | Iterable&lt;number&gt; | 是 | 可迭代数字集合，用于构造ArkTS Uint8ClampedArray对象。 |
@@ -131,6 +141,7 @@ constructor(elements: Iterable&lt;number&gt;)
 **错误码：**
 
 以下错误码详细介绍请参考[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -148,9 +159,10 @@ let array: collections.Uint8ClampedArray = new collections.Uint8ClampedArray(set
 
 
 
-#### constructor
+## constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(array: ArrayLike&lt;number&gt; | ArrayBuffer)
 
@@ -162,6 +174,7 @@ constructor(array: ArrayLike&lt;number&gt; | ArrayBuffer)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | array | ArrayLike&lt;number&gt; \| ArrayBuffer | 是 | 用于构造ArkTS Uint8ClampedArray的对象。 |
@@ -170,6 +183,7 @@ constructor(array: ArrayLike&lt;number&gt; | ArrayBuffer)
 **错误码：**
 
 以下错误码详细介绍请参考[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -201,9 +215,10 @@ let uint8ClampedArray2: collections.Uint8ClampedArray = new collections.Uint8Cla
 
 
 
-#### constructor
+## constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(buffer: ArrayBuffer, byteOffset?: number, length?: number)
 
@@ -215,6 +230,7 @@ constructor(buffer: ArrayBuffer, byteOffset?: number, length?: number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | buffer | ArrayBuffer | 是 | 用于构造ArkTS Uint8ClampedArray的ArrayBuffer对象。 |
@@ -225,6 +241,7 @@ constructor(buffer: ArrayBuffer, byteOffset?: number, length?: number)
 **错误码：**
 
 以下错误码详细介绍请参考[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -243,9 +260,10 @@ console.info(`[${uint8ClampedArray1}]`); // [2, 3, 4, 5, 6]
 
 
 
-#### from
+## from
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static from(arrayLike: ArrayLike&lt;number&gt;): Uint8ClampedArray
 
@@ -257,12 +275,14 @@ static from(arrayLike: ArrayLike&lt;number&gt;): Uint8ClampedArray
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | arrayLike | ArrayLike&lt;number&gt; | 是 | 用于构造ArkTS Uint8ClampedArray的ArrayLike对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -278,9 +298,10 @@ let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from(ar
 
 
 
-#### from
+## from
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static from&lt;T&gt;(arrayLike: ArrayLike&lt;T&gt;, mapFn: TypedArrayFromMapFn<T, number>): Uint8ClampedArray
 
@@ -292,6 +313,7 @@ static from&lt;T&gt;(arrayLike: ArrayLike&lt;T&gt;, mapFn: TypedArrayFromMapFn<T
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | arrayLike | ArrayLike&lt;T&gt; | 是 | 用于构造ArkTS Uint8ClampedArray的ArrayLike对象。 |
@@ -299,6 +321,7 @@ static from&lt;T&gt;(arrayLike: ArrayLike&lt;T&gt;, mapFn: TypedArrayFromMapFn<T
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -330,9 +353,10 @@ let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from<st
 
 
 
-#### from
+## from
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static from(arrayLike: Iterable&lt;number&gt;, mapFn?: TypedArrayFromMapFn<number, number>): Uint8ClampedArray
 
@@ -344,6 +368,7 @@ static from(arrayLike: Iterable&lt;number&gt;, mapFn?: TypedArrayFromMapFn<numbe
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | arrayLike | Iterable&lt;number&gt; | 是 | 用于构造ArkTS Uint8ClampedArray的可迭代对象。 |
@@ -351,6 +376,7 @@ static from(arrayLike: Iterable&lt;number&gt;, mapFn?: TypedArrayFromMapFn<numbe
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -376,9 +402,10 @@ let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from(
 
 
 
-#### of18+
+## of18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static of(...items: number[]): Uint8ClampedArray
 
@@ -390,12 +417,14 @@ static of(...items: number[]): Uint8ClampedArray
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | items | number[] | 否 | 用于创建数组的元素，参数个数可以是0个、1个或者多个。默认值为空数组。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -411,9 +440,10 @@ console.info(arr.toString()); // 预期输出：1,2,3,4
 
 
 
-#### toString18+
+## toString18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toString(): string
 
@@ -425,6 +455,7 @@ toString(): string
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 一个包含数组所有元素的字符串。 |
@@ -433,6 +464,7 @@ toString(): string
 **错误码：**
 
 以下错误码详细介绍请参考[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -450,9 +482,10 @@ console.info(stringArray); // 预期输出：1,2,3,4,5
 
 
 
-#### toLocaleString18+
+## toLocaleString18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toLocaleString(): string
 
@@ -464,6 +497,7 @@ toLocaleString(): string
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 一个包含数组所有元素的字符串。 |
@@ -472,6 +506,7 @@ toLocaleString(): string
 **错误码：**
 
 以下错误码详细介绍请参考[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -490,9 +525,10 @@ console.info(stringArray); // 预期输出：100,110,120
 
 
 
-#### copyWithin
+## copyWithin
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 copyWithin(target: number, start: number, end?: number): Uint8ClampedArray
 
@@ -504,6 +540,7 @@ copyWithin(target: number, start: number, end?: number): Uint8ClampedArray
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | target | number | 是 | 目标起始位置的下标，如果target < 0，则会从target + Uint8ClampedArray.length位置开始。 |
@@ -513,6 +550,7 @@ copyWithin(target: number, start: number, end?: number): Uint8ClampedArray
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Uint8ClampedArray | 修改后的Uint8ClampedArray。 |
@@ -521,6 +559,7 @@ copyWithin(target: number, start: number, end?: number): Uint8ClampedArray
 **错误码：**
 
 以下错误码详细介绍请参考[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -538,9 +577,10 @@ let copied: collections.Uint8ClampedArray = array.copyWithin(3, 1, 3);
 
 
 
-#### some
+## some
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 some(predicate: TypedArrayPredicateFn<number, Uint8ClampedArray>): boolean
 
@@ -552,12 +592,14 @@ some(predicate: TypedArrayPredicateFn<number, Uint8ClampedArray>): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | predicate | TypedArrayPredicateFn<number, Uint8ClampedArray> | 是 | 用于测试的断言函数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -567,6 +609,7 @@ some(predicate: TypedArrayPredicateFn<number, Uint8ClampedArray>): boolean
 **错误码：**
 
 以下错误码详细介绍请参考[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -584,9 +627,10 @@ uint8ClampedArray.some((element: number) => element < 1); // false
 
 
 
-#### every
+## every
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 every(predicate: TypedArrayPredicateFn<number, Uint8ClampedArray>): boolean
 
@@ -598,12 +642,14 @@ every(predicate: TypedArrayPredicateFn<number, Uint8ClampedArray>): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | predicate | TypedArrayPredicateFn<number, Uint8ClampedArray> | 是 | 用于测试的断言函数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -613,6 +659,7 @@ every(predicate: TypedArrayPredicateFn<number, Uint8ClampedArray>): boolean
 **错误码：**
 
 以下错误码详细介绍请参考[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -630,9 +677,10 @@ uint8ClampedArray.every((element: number) => element > 10);  // false
 
 
 
-#### fill
+## fill
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fill(value: number, start?: number, end?: number): Uint8ClampedArray
 
@@ -644,6 +692,7 @@ fill(value: number, start?: number, end?: number): Uint8ClampedArray
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 待填充的值，取值范围为0~255，超出范围的值会被钳制到范围内（小于0的自动修正为0。大于255的自动修正为255）。 |
@@ -653,6 +702,7 @@ fill(value: number, start?: number, end?: number): Uint8ClampedArray
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Uint8ClampedArray | 填充后的Uint8ClampedArray。 |
@@ -661,6 +711,7 @@ fill(value: number, start?: number, end?: number): Uint8ClampedArray
 **错误码：**
 
 以下错误码详细介绍请参考[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -679,9 +730,10 @@ new collections.Uint8ClampedArray(arrayLike).fill(4, 1, 2); // Uint8ClampedArray
 
 
 
-#### filter
+## filter
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 filter(predicate: TypedArrayPredicateFn<number, Uint8ClampedArray>): Uint8ClampedArray
 
@@ -693,12 +745,14 @@ filter(predicate: TypedArrayPredicateFn<number, Uint8ClampedArray>): Uint8Clampe
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | predicate | TypedArrayPredicateFn<number, Uint8ClampedArray> | 是 | 用于元素过滤的断言函数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -708,6 +762,7 @@ filter(predicate: TypedArrayPredicateFn<number, Uint8ClampedArray>): Uint8Clampe
 **错误码：**
 
 以下错误码详细介绍请参考[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -725,9 +780,10 @@ let filtered: collections.Uint8ClampedArray = array.filter((element: number) => 
 
 
 
-#### find
+## find
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 find(predicate: TypedArrayPredicateFn<number, Uint8ClampedArray>): number | undefined
 
@@ -739,12 +795,14 @@ find(predicate: TypedArrayPredicateFn<number, Uint8ClampedArray>): number | unde
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | predicate | TypedArrayPredicateFn<number, Uint8ClampedArray> | 是 | 用于元素查找的断言函数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -754,6 +812,7 @@ find(predicate: TypedArrayPredicateFn<number, Uint8ClampedArray>): number | unde
 **错误码：**
 
 以下错误码详细介绍请参考[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -771,9 +830,10 @@ array.find((element: number) => element > 4); // undefined
 
 
 
-#### findIndex
+## findIndex
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 findIndex(predicate: TypedArrayPredicateFn<number, Uint8ClampedArray>): number
 
@@ -785,12 +845,14 @@ findIndex(predicate: TypedArrayPredicateFn<number, Uint8ClampedArray>): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | predicate | TypedArrayPredicateFn<number, Uint8ClampedArray> | 是 | 用于元素查找的断言函数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -800,6 +862,7 @@ findIndex(predicate: TypedArrayPredicateFn<number, Uint8ClampedArray>): number
 **错误码：**
 
 以下错误码详细介绍请参考[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -816,9 +879,10 @@ let foundIndex: number = array.findIndex((element: number) => element % 2 === 0)
 
 
 
-#### forEach
+## forEach
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 forEach(callbackFn: TypedArrayForEachCallback<number, Uint8ClampedArray>): void
 
@@ -830,6 +894,7 @@ forEach(callbackFn: TypedArrayForEachCallback<number, Uint8ClampedArray>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callbackFn | TypedArrayForEachCallback<number, Uint8ClampedArray> | 是 | 用于对每个元素执行的回调函数。 |
@@ -838,6 +903,7 @@ forEach(callbackFn: TypedArrayForEachCallback<number, Uint8ClampedArray>): void
 **错误码：**
 
 以下错误码详细介绍请参考[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -856,9 +922,10 @@ uint8ClampedArray.forEach((value: number, index: number, array: collections.Uint
 
 
 
-#### indexOf
+## indexOf
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 indexOf(searchElement: number, fromIndex?: number): number
 
@@ -870,6 +937,7 @@ indexOf(searchElement: number, fromIndex?: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | searchElement | number | 是 | 待索引的值。 |
@@ -877,6 +945,7 @@ indexOf(searchElement: number, fromIndex?: number): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -886,6 +955,7 @@ indexOf(searchElement: number, fromIndex?: number): number
 **错误码：**
 
 以下错误码详细介绍请参考[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -905,9 +975,10 @@ array.indexOf(9, -2); // 2
 
 
 
-#### lastIndexOf18+
+## lastIndexOf18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 lastIndexOf(searchElement: number, fromIndex?: number): number
 
@@ -919,6 +990,7 @@ lastIndexOf(searchElement: number, fromIndex?: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | searchElement | number | 是 | 待索引的值。 |
@@ -926,6 +998,7 @@ lastIndexOf(searchElement: number, fromIndex?: number): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -935,6 +1008,7 @@ lastIndexOf(searchElement: number, fromIndex?: number): number
 **错误码：**
 
 以下错误码详细介绍请参考[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -954,9 +1028,10 @@ console.info(`${array.lastIndexOf(9, -2)}`); // 预期输出：-1
 
 
 
-#### join
+## join
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 join(separator?: string): string
 
@@ -968,12 +1043,14 @@ join(separator?: string): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | separator | string | 否 | 分隔字符串。如果省略，则使用逗号分隔。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -983,6 +1060,7 @@ join(separator?: string): string
 **错误码：**
 
 以下错误码详细介绍请参考[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -999,9 +1077,10 @@ let joined: string = array.join('-'); // "1-2-3-4-5"
 
 
 
-#### map
+## map
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 map(callbackFn: TypedArrayMapCallback<number, Uint8ClampedArray>): Uint8ClampedArray
 
@@ -1013,12 +1092,14 @@ map(callbackFn: TypedArrayMapCallback<number, Uint8ClampedArray>): Uint8ClampedA
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callbackFn | TypedArrayMapCallback<number, Uint8ClampedArray> | 是 | 回调函数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1028,6 +1109,7 @@ map(callbackFn: TypedArrayMapCallback<number, Uint8ClampedArray>): Uint8ClampedA
 **错误码：**
 
 以下错误码详细介绍请参考[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1044,9 +1126,10 @@ const mapped: collections.Uint8ClampedArray = array.map(Math.sqrt); // Uint8Clam
 
 
 
-#### reduce
+## reduce
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reduce(callbackFn: TypedArrayReduceCallback<number, number, Uint8ClampedArray>): number
 
@@ -1058,12 +1141,14 @@ reduce(callbackFn: TypedArrayReduceCallback<number, number, Uint8ClampedArray>):
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callbackFn | TypedArrayReduceCallback<number, number, Uint8ClampedArray> | 是 | 归约函数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1073,6 +1158,7 @@ reduce(callbackFn: TypedArrayReduceCallback<number, number, Uint8ClampedArray>):
 **错误码：**
 
 以下错误码详细介绍请参考[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1090,9 +1176,10 @@ let reducedValue: number = array.reduce((accumulator: number, value: number) => 
 
 
 
-#### reduceRight18+
+## reduceRight18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reduceRight(callbackFn: TypedArrayReduceCallback<number, number, Uint8ClampedArray>): number
 
@@ -1104,12 +1191,14 @@ reduceRight(callbackFn: TypedArrayReduceCallback<number, number, Uint8ClampedArr
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callbackFn | TypedArrayReduceCallback<number, number, Uint8ClampedArray> | 是 | 归约函数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1119,6 +1208,7 @@ reduceRight(callbackFn: TypedArrayReduceCallback<number, number, Uint8ClampedArr
 **错误码：**
 
 以下错误码详细介绍请参考[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1136,9 +1226,10 @@ console.info(`${reducedValue}`); // 预期输出： 15
 
 
 
-#### reduce
+## reduce
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reduce<U = number>(callbackFn: TypedArrayReduceCallback<U, number, Uint8ClampedArray>, initialValue: U): U
 
@@ -1150,6 +1241,7 @@ reduce<U = number>(callbackFn: TypedArrayReduceCallback<U, number, Uint8ClampedA
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callbackFn | TypedArrayReduceCallback<U, number, Uint8ClampedArray> | 是 | 归约函数。 |
@@ -1157,6 +1249,7 @@ reduce<U = number>(callbackFn: TypedArrayReduceCallback<U, number, Uint8ClampedA
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1166,6 +1259,7 @@ reduce<U = number>(callbackFn: TypedArrayReduceCallback<U, number, Uint8ClampedA
 **错误码：**
 
 以下错误码详细介绍请参考[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1183,9 +1277,10 @@ let reducedValue: number = array.reduce((accumulator: number, value: number) => 
 
 
 
-#### reduceRight18+
+## reduceRight18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reduceRight<U = number>(callbackFn: TypedArrayReduceCallback<U, number, Uint8ClampedArray>, initialValue: U): U
 
@@ -1197,6 +1292,7 @@ reduceRight<U = number>(callbackFn: TypedArrayReduceCallback<U, number, Uint8Cla
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callbackFn | TypedArrayReduceCallback<U, number, Uint8ClampedArray> | 是 | 归约函数。 |
@@ -1204,6 +1300,7 @@ reduceRight<U = number>(callbackFn: TypedArrayReduceCallback<U, number, Uint8Cla
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1213,6 +1310,7 @@ reduceRight<U = number>(callbackFn: TypedArrayReduceCallback<U, number, Uint8Cla
 **错误码：**
 
 以下错误码详细介绍请参考[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1230,9 +1328,10 @@ console.info(`${reducedValue}`); // 预期输出： 16
 
 
 
-#### reverse
+## reverse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reverse(): Uint8ClampedArray
 
@@ -1244,6 +1343,7 @@ reverse(): Uint8ClampedArray
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Uint8ClampedArray | 反转后的ArkTS Uint8ClampedArray对象。 |
@@ -1252,6 +1352,7 @@ reverse(): Uint8ClampedArray
 **错误码：**
 
 以下错误码详细介绍请参考[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1268,9 +1369,10 @@ let reversed: collections.Uint8ClampedArray = array.reverse(); // Uint8ClampedAr
 
 
 
-#### set
+## set
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set(array: ArrayLike&lt;number&gt;, offset?: number): void
 
@@ -1282,6 +1384,7 @@ set(array: ArrayLike&lt;number&gt;, offset?: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | array | ArrayLike&lt;number&gt; | 是 | 用于设置的ArrayLike对象。 |
@@ -1291,6 +1394,7 @@ set(array: ArrayLike&lt;number&gt;, offset?: number): void
 **错误码：**
 
 以下错误码详细介绍请参考[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1308,9 +1412,10 @@ array.set([1, 2, 3], 3); // Uint8ClampedArray [0, 0, 0, 1, 2, 3, 0, 0]
 
 
 
-#### slice
+## slice
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 slice(start?: number, end?: number): Uint8ClampedArray
 
@@ -1322,6 +1427,7 @@ slice(start?: number, end?: number): Uint8ClampedArray
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | start | number | 否 | 开始索引，如果start < 0，则会从start + Uint8ClampedArray.length位置开始。默认为0。 |
@@ -1329,6 +1435,7 @@ slice(start?: number, end?: number): Uint8ClampedArray
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1338,6 +1445,7 @@ slice(start?: number, end?: number): Uint8ClampedArray
 **错误码：**
 
 以下错误码详细介绍请参考[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1356,9 +1464,10 @@ array.slice(-2); // Uint8ClampedArray [4, 5]
 
 
 
-#### sort
+## sort
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sort(compareFn?: TypedArrayCompareFn&lt;number&gt;): Uint8ClampedArray
 
@@ -1370,12 +1479,14 @@ sort(compareFn?: TypedArrayCompareFn&lt;number&gt;): Uint8ClampedArray
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | compareFn | TypedArrayCompareFn&lt;number&gt; | 否 | 用于确定元素顺序的函数。默认使用升序排序。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1385,6 +1496,7 @@ sort(compareFn?: TypedArrayCompareFn&lt;number&gt;): Uint8ClampedArray
 **错误码：**
 
 以下错误码详细介绍请参考[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1403,9 +1515,10 @@ array.sort((a: number, b: number) => b - a); // Uint8ClampedArray [5, 4, 3, 2, 1
 
 
 
-#### subarray
+## subarray
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 subarray(begin?: number, end?: number): Uint8ClampedArray
 
@@ -1417,6 +1530,7 @@ subarray(begin?: number, end?: number): Uint8ClampedArray
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | begin | number | 否 | 开始索引，如果begin < 0，则会从begin + Uint8ClampedArray.length位置开始。默认值为0。 |
@@ -1424,6 +1538,7 @@ subarray(begin?: number, end?: number): Uint8ClampedArray
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1433,6 +1548,7 @@ subarray(begin?: number, end?: number): Uint8ClampedArray
 **错误码：**
 
 以下错误码详细介绍请参考[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1450,9 +1566,10 @@ subArray.set([10, 20, 30]); // Uint8ClampedArray [10, 20, 30, 4, 5]
 
 
 
-#### at
+## at
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 at(index: number): number | undefined
 
@@ -1464,12 +1581,14 @@ at(index: number): number | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 要返回的ArkTS Uint8ClampedArray元素的索引（从零开始），取值为整数。如果index < 0，则会访问index + Uint8ClampedArray.length位置的元素。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1479,6 +1598,7 @@ at(index: number): number | undefined
 **错误码：**
 
 以下错误码详细介绍请参考[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1497,9 +1617,10 @@ console.info(`element: ${array.at(6)}`);  // element: undefined
 
 
 
-#### includes
+## includes
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 includes(searchElement: number, fromIndex?: number): boolean
 
@@ -1511,6 +1632,7 @@ includes(searchElement: number, fromIndex?: number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | searchElement | number | 是 | 待搜索的元素。 |
@@ -1518,6 +1640,7 @@ includes(searchElement: number, fromIndex?: number): boolean
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1527,6 +1650,7 @@ includes(searchElement: number, fromIndex?: number): boolean
 **错误码：**
 
 以下错误码详细介绍请参考[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1545,9 +1669,10 @@ console.info(`includes: ${array.includes(3, 3)}`); // includes: false
 
 
 
-#### entries
+## entries
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 entries(): IterableIterator<[number, number]>
 
@@ -1559,6 +1684,7 @@ entries(): IterableIterator<[number, number]>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator<[number, number]> | 新的迭代器对象。 |
@@ -1567,6 +1693,7 @@ entries(): IterableIterator<[number, number]>
 **错误码：**
 
 以下错误码详细介绍请参考[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1586,9 +1713,10 @@ console.info(`value: ${iterator.next().value}`); // value: 2,33
 
 
 
-#### keys
+## keys
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 keys(): IterableIterator&lt;number&gt;
 
@@ -1600,6 +1728,7 @@ keys(): IterableIterator&lt;number&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator&lt;number&gt; | 新的迭代器对象。 |
@@ -1608,6 +1737,7 @@ keys(): IterableIterator&lt;number&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1627,9 +1757,10 @@ for (const key of iterator) {
 
 
 
-#### values
+## values
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 values(): IterableIterator&lt;number&gt;
 
@@ -1641,6 +1772,7 @@ values(): IterableIterator&lt;number&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator&lt;number&gt; | 新的迭代器对象。 |
@@ -1649,6 +1781,7 @@ values(): IterableIterator&lt;number&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1668,9 +1801,10 @@ for (const value of iterator) {
 
 
 
-#### [Symbol.iterator]
+## [Symbol.iterator]
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [Symbol.iterator](): IterableIterator&lt;number&gt;
 
@@ -1686,6 +1820,7 @@ for (const value of iterator) {
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator&lt;number&gt; | 包含每个元素值的迭代器对象。 |
@@ -1694,6 +1829,7 @@ for (const value of iterator) {
 **错误码：**
 
 以下错误码详细介绍请参考[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1712,9 +1848,10 @@ for (let item of uint8ClampedArray) {
 
 
 
-#### [index: number]
+## [index: number]
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [index: number]: number
 
@@ -1726,12 +1863,14 @@ for (let item of uint8ClampedArray) {
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 所需元素的从零开始的索引。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |

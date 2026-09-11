@@ -1,9 +1,9 @@
 # @ohos.hiAppEvent (应用打点)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hiappevent
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供了应用事件打点能力，包括对打点数据的落盘，以及对打点功能的管理配置。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import hiAppEvent from '@ohos.hiAppEvent';
@@ -22,9 +23,10 @@ import hiAppEvent from '@ohos.hiAppEvent';
  
   
 
-#### 使用说明
+## 使用说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 开发者在使用应用事件打点功能前，需要首先了解应用事件相关的参数规格定义。
  
@@ -59,9 +61,10 @@ import hiAppEvent from '@ohos.hiAppEvent';
  
   
 
-#### hiAppEvent.write
+## hiAppEvent.write
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 write(eventName: string, eventType: EventType, keyValues: object, callback: AsyncCallback&lt;void&gt;): void
  
@@ -71,6 +74,7 @@ write(eventName: string, eventType: EventType, keyValues: object, callback: Asyn
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | eventName | string | 是 | 事件名称。 |
@@ -102,9 +106,10 @@ hiAppEvent.write("test_event", hiAppEvent.EventType.FAULT, eventParams, (err: Bu
  
   
 
-#### hiAppEvent.write
+## hiAppEvent.write
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 write(eventName: string, eventType: EventType, keyValues: object): Promise&lt;void&gt;
  
@@ -114,6 +119,7 @@ write(eventName: string, eventType: EventType, keyValues: object): Promise&lt;vo
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | eventName | string | 是 | 事件名称。 |
@@ -123,6 +129,7 @@ write(eventName: string, eventType: EventType, keyValues: object): Promise&lt;vo
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，可以在其then()、catch()方法中分别对事件写入成功、写入异常的情况进行异步处理。 |
@@ -149,9 +156,10 @@ hiAppEvent.write("test_event", hiAppEvent.EventType.FAULT, eventParams).then(() 
  
   
 
-#### hiAppEvent.configure
+## hiAppEvent.configure
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 configure(config: ConfigOption): boolean
  
@@ -161,6 +169,7 @@ configure(config: ConfigOption): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | config | ConfigOption | 是 | 应用事件打点配置项对象。 |
@@ -168,6 +177,7 @@ configure(config: ConfigOption): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 配置结果，true 表示配置成功，false 表示配置失败。 |
@@ -191,14 +201,16 @@ hiAppEvent.configure(config2);
  
   
 
-#### ConfigOption
+## ConfigOption
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 此接口提供了应用打点的配置选项。
  
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | disable | boolean | 否 | 是 | 应用打点功能开关，默认值为false。配置值为true表示关闭打点功能，false表示不关闭打点功能。 |
@@ -207,14 +219,16 @@ hiAppEvent.configure(config2);
  
   
 
-#### EventType
+## EventType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 事件类型枚举。
  
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | FAULT | 1 | 故障类型事件。 |
@@ -225,14 +239,16 @@ hiAppEvent.configure(config2);
  
   
 
-#### Event
+## Event
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 此接口提供了所有预定义事件的事件名称常量。
  
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
   
+
 | 名称 | 类型 | 可读 | 可写 | 说明 |
 | --- | --- | --- | --- | --- |
 | USER_LOGIN | string | 是 | 否 | 用户登录事件。 |
@@ -242,14 +258,16 @@ hiAppEvent.configure(config2);
  
   
 
-#### Param
+## Param
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 此接口提供了所有预定义参数的参数名称常量。
  
 **系统能力：** SystemCapability.HiviewDFX.HiAppEvent
   
+
 | 名称 | 类型 | 可读 | 可写 | 说明 |
 | --- | --- | --- | --- | --- |
 | USER_ID | string | 是 | 否 | 用户自定义ID。 |

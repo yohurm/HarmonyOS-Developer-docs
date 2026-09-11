@@ -1,9 +1,9 @@
 # serviceNotification（服务通知）
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-servicenotification
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 为了向用户提供更好的服务和更优的体验，Push Kit为开发者提供了消息订阅能力，支持通过Push Token订阅和通过账号订阅两种类型。通过Push Token订阅可通过申请开通订阅通知消息自分类权益，发送对应的订阅消息。HarmonyOS元服务支持[通过账号订阅](https://developer.huawei.com/consumer/cn/doc/atomic-guides/push-as-subscription)。
  
@@ -20,9 +20,10 @@
 **起始版本：** 4.1.0(11)
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { serviceNotification } from '@kit.PushKit';
@@ -30,9 +31,10 @@ import { serviceNotification } from '@kit.PushKit';
  
   
 
-#### serviceNotification.requestSubscribeNotification
+## serviceNotification.requestSubscribeNotification
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestSubscribeNotification(context: Context, entityIds: Array&lt;string&gt;, callback: AsyncCallback&lt;RequestResult&gt;): void
  
@@ -48,6 +50,7 @@ requestSubscribeNotification(context: Context, entityIds: Array&lt;string&gt;, c
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 请求订阅消息授权上下文，仅支持传入UIAbilityContext。 |
@@ -59,6 +62,7 @@ requestSubscribeNotification(context: Context, entityIds: Array&lt;string&gt;, c
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-error-code)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
@@ -119,9 +123,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### serviceNotification.requestSubscribeNotification
+## serviceNotification.requestSubscribeNotification
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestSubscribeNotification(context: Context, entityIds: Array&lt;string&gt;, type?: SubscribeNotificationType): Promise&lt;RequestResult&gt;
  
@@ -139,6 +144,7 @@ requestSubscribeNotification(context: Context, entityIds: Array&lt;string&gt;, t
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 请求订阅消息授权上下文，仅支持传入UIAbilityContext。 |
@@ -148,6 +154,7 @@ requestSubscribeNotification(context: Context, entityIds: Array&lt;string&gt;, t
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;RequestResult&gt; | Promise对象，返回订阅授权结果。 |
@@ -157,6 +164,7 @@ requestSubscribeNotification(context: Context, entityIds: Array&lt;string&gt;, t
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-error-code)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
@@ -221,9 +229,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### serviceNotification.querySubscribeNotificationSetting
+## serviceNotification.querySubscribeNotificationSetting
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 querySubscribeNotificationSetting(): Promise&lt;SubscribeNotificationSetting&gt;
  
@@ -241,6 +250,7 @@ querySubscribeNotificationSetting(): Promise&lt;SubscribeNotificationSetting&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;SubscribeNotificationSetting&gt; | Promise对象，返回元服务服务通知配置信息。 |
@@ -250,6 +260,7 @@ querySubscribeNotificationSetting(): Promise&lt;SubscribeNotificationSetting&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-error-code)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1000900001 | System internal error. |
@@ -303,9 +314,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### RequestResult
+## RequestResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示单次订阅的授权结果。
  
@@ -319,6 +331,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | entityResult | Array&lt;EntityResult&gt; | 是 | 否 | 授权订阅结果。 |
@@ -326,9 +339,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### EntityResult
+## EntityResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示单次订阅中每一个消息模板订阅的授权结果。
  
@@ -342,6 +356,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | entityId | string | 是 | 否 | 模板ID。 |
@@ -350,9 +365,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### ResultCode
+## ResultCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示授权订阅结果，为枚举值。
  
@@ -366,6 +382,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ACCEPTED | 0 | 表示用户同意订阅该模板对应的消息。 |
@@ -377,9 +394,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### SubscribeNotificationType
+## SubscribeNotificationType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示订阅类型，为枚举值。
  
@@ -393,6 +411,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SUBSCRIBE_WITH_TOKEN | 0 | 表示通过Push Token订阅，当应用使用通过Push Token订阅能力时，使用该值。 |
@@ -401,9 +420,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### SubscribeNotificationSetting
+## SubscribeNotificationSetting
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示元服务服务通知配置信息。
  
@@ -417,6 +437,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 26.0.0
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | bundleName | string | 否 | 否 | 元服务包名。 |
@@ -426,9 +447,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### EntitySetting
+## EntitySetting
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示服务通知模板信息。
  
@@ -442,6 +464,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 26.0.0
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | entityId | string | 否 | 否 | 模板ID。 |
@@ -452,9 +475,10 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### EntityType
+## EntityType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示订阅消息模板类型，为枚举值。
  
@@ -468,6 +492,7 @@ export default class EntryAbility extends UIAbility {
  
 **起始版本：** 26.0.0
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ONCE | 0 | 一次性订阅消息模板。 |

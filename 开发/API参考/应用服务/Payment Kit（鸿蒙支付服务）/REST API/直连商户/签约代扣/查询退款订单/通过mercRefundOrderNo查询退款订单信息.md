@@ -1,10 +1,14 @@
 # 通过mercRefundOrderNo查询退款订单信息
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-withhold-query-merc-refund-order
+**支持设备：** Phone | PC/2in1 | Tablet
 
-#### 功能介绍
+## 功能介绍
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 开发者可以调用该接口查询某笔退款订单详细信息。
  
@@ -14,13 +18,19 @@
  
   
 
-#### 场景描述
+## 场景描述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 该接口支持所有的华为支付退款订单查询，若开发者已有申请退款的订单，可以通过该接口查看具体退款订单的退款状态。
  
   
 
-#### 接口原型
+## 接口原型
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 - **承载协议：** HTTPS GET
 - **接口方向：** 开发者服务器 -> 华为支付服务器
@@ -34,10 +44,14 @@
  
   
 
-#### 请求参数
+## 请求参数
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 **Request Header**
   
+
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | Content-Type | 是 | String | 取值为：application/json; charset=UTF-8 |
@@ -46,6 +60,7 @@
  
 **Request Path**
   
+
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | mercRefundOrderNo | 是 | String | 商户退款订单号。最大长度64。 |
@@ -53,7 +68,10 @@
  
   
 
-#### 请求示例
+## 请求示例
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```json
 GET /api/v1/aggr/transactions/refunds/merc-orders/{mercRefundOrderNo} HTTP/1.1
@@ -63,10 +81,14 @@ PayMercAuth: {"callerId":"10132120***","traceId":"202305151501065647518","time":
  
   
 
-#### 响应参数
+## 响应参数
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 **Response Header**
   
+
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | Content-Type | 是 | String | 取值为：application/json; charset=UTF-8 |
@@ -74,6 +96,7 @@ PayMercAuth: {"callerId":"10132120***","traceId":"202305151501065647518","time":
  
 **Response Body**
   
+
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | resultCode | 是 | String | 结果码，“000000”表示成功，其他表示失败。 |
@@ -94,7 +117,10 @@ PayMercAuth: {"callerId":"10132120***","traceId":"202305151501065647518","time":
  
   
 
-#### 响应示例
+## 响应示例
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```json
 HTTP/1.1 200 OK
@@ -117,10 +143,14 @@ Content-Type: application/json; charset=UTF-8
  
   
 
-#### 错误码
+## 错误码
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 **resultCode**非400000的错误码请查看[公共错误码说明](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-error-code-rest#公共错误码说明)。
   
+
 | 返回码 | 错误码 | 错误描述 | 解决方案 |
 | --- | --- | --- | --- |
 | 400000 | UNKNOW_ERROR | 服务暂不可用，请稍后重试 | 稍后重试。 |

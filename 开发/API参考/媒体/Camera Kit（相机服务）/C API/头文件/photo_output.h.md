@@ -1,13 +1,14 @@
 # photo_output.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-photo-output-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明拍照输出概念。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | PhotoOutput_Callbacks | PhotoOutput_Callbacks | 拍照输出的回调。 |
@@ -42,10 +46,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | typedef void (*OH_PhotoOutput_OnFrameStart)(Camera_PhotoOutput* photoOutput) | OH_PhotoOutput_OnFrameStart | 在PhotoOutput_Callbacks中被调用的拍照输出帧启动回调。 |
@@ -101,15 +107,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_PhotoOutput_OnFrameStart()
+### OH_PhotoOutput_OnFrameStart()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_PhotoOutput_OnFrameStart)(Camera_PhotoOutput* photoOutput)
@@ -123,6 +131,7 @@ typedef void (*OH_PhotoOutput_OnFrameStart)(Camera_PhotoOutput* photoOutput)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 传递回调的拍照输出实例。 |
@@ -130,9 +139,10 @@ typedef void (*OH_PhotoOutput_OnFrameStart)(Camera_PhotoOutput* photoOutput)
  
   
 
-#### OH_PhotoOutput_OnFrameShutter()
+### OH_PhotoOutput_OnFrameShutter()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_PhotoOutput_OnFrameShutter)(Camera_PhotoOutput* photoOutput, Camera_FrameShutterInfo* info)
@@ -146,6 +156,7 @@ typedef void (*OH_PhotoOutput_OnFrameShutter)(Camera_PhotoOutput* photoOutput, C
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 传递回调的拍照输出实例。 |
@@ -154,9 +165,10 @@ typedef void (*OH_PhotoOutput_OnFrameShutter)(Camera_PhotoOutput* photoOutput, C
  
   
 
-#### OH_PhotoOutput_OnFrameEnd()
+### OH_PhotoOutput_OnFrameEnd()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_PhotoOutput_OnFrameEnd)(Camera_PhotoOutput* photoOutput, int32_t frameCount)
@@ -170,6 +182,7 @@ typedef void (*OH_PhotoOutput_OnFrameEnd)(Camera_PhotoOutput* photoOutput, int32
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 传递回调的拍照输出实例。 |
@@ -178,9 +191,10 @@ typedef void (*OH_PhotoOutput_OnFrameEnd)(Camera_PhotoOutput* photoOutput, int32
  
   
 
-#### OH_PhotoOutput_OnError()
+### OH_PhotoOutput_OnError()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_PhotoOutput_OnError)(Camera_PhotoOutput* photoOutput, Camera_ErrorCode errorCode)
@@ -194,6 +208,7 @@ typedef void (*OH_PhotoOutput_OnError)(Camera_PhotoOutput* photoOutput, Camera_E
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 传递回调的拍照输出实例。 |
@@ -206,9 +221,10 @@ typedef void (*OH_PhotoOutput_OnError)(Camera_PhotoOutput* photoOutput, Camera_E
  
   
 
-#### OH_PhotoOutput_CaptureEnd()
+### OH_PhotoOutput_CaptureEnd()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_PhotoOutput_CaptureEnd)(Camera_PhotoOutput* photoOutput, int32_t frameCount)
@@ -222,6 +238,7 @@ typedef void (*OH_PhotoOutput_CaptureEnd)(Camera_PhotoOutput* photoOutput, int32
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 传递回调的拍照输出实例。 |
@@ -230,9 +247,10 @@ typedef void (*OH_PhotoOutput_CaptureEnd)(Camera_PhotoOutput* photoOutput, int32
  
   
 
-#### OH_PhotoOutput_CaptureStartWithInfo()
+### OH_PhotoOutput_CaptureStartWithInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_PhotoOutput_CaptureStartWithInfo)(Camera_PhotoOutput* photoOutput, Camera_CaptureStartInfo* Info)
@@ -246,6 +264,7 @@ typedef void (*OH_PhotoOutput_CaptureStartWithInfo)(Camera_PhotoOutput* photoOut
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 传递回调的拍照输出实例。 |
@@ -254,9 +273,10 @@ typedef void (*OH_PhotoOutput_CaptureStartWithInfo)(Camera_PhotoOutput* photoOut
  
   
 
-#### OH_PhotoOutput_OnFrameShutterEnd()
+### OH_PhotoOutput_OnFrameShutterEnd()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_PhotoOutput_OnFrameShutterEnd)(Camera_PhotoOutput* photoOutput, Camera_FrameShutterInfo* Info)
@@ -270,6 +290,7 @@ typedef void (*OH_PhotoOutput_OnFrameShutterEnd)(Camera_PhotoOutput* photoOutput
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 传递回调的拍照输出实例。 |
@@ -278,9 +299,10 @@ typedef void (*OH_PhotoOutput_OnFrameShutterEnd)(Camera_PhotoOutput* photoOutput
  
   
 
-#### OH_PhotoOutput_CaptureReady()
+### OH_PhotoOutput_CaptureReady()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_PhotoOutput_CaptureReady)(Camera_PhotoOutput* photoOutput)
@@ -294,6 +316,7 @@ typedef void (*OH_PhotoOutput_CaptureReady)(Camera_PhotoOutput* photoOutput)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 传递回调的拍照输出实例。 |
@@ -301,9 +324,10 @@ typedef void (*OH_PhotoOutput_CaptureReady)(Camera_PhotoOutput* photoOutput)
  
   
 
-#### OH_PhotoOutput_EstimatedCaptureDuration()
+### OH_PhotoOutput_EstimatedCaptureDuration()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_PhotoOutput_EstimatedCaptureDuration)(Camera_PhotoOutput* photoOutput, int64_t duration)
@@ -317,6 +341,7 @@ typedef void (*OH_PhotoOutput_EstimatedCaptureDuration)(Camera_PhotoOutput* phot
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 传递回调的拍照输出实例。 |
@@ -325,9 +350,10 @@ typedef void (*OH_PhotoOutput_EstimatedCaptureDuration)(Camera_PhotoOutput* phot
  
   
 
-#### OH_PhotoOutput_PhotoAvailable()
+### OH_PhotoOutput_PhotoAvailable()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_PhotoOutput_PhotoAvailable)(Camera_PhotoOutput* photoOutput, OH_PhotoNative* photo)
@@ -341,6 +367,7 @@ typedef void (*OH_PhotoOutput_PhotoAvailable)(Camera_PhotoOutput* photoOutput, O
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 传递回调的拍照输出实例。 |
@@ -349,9 +376,10 @@ typedef void (*OH_PhotoOutput_PhotoAvailable)(Camera_PhotoOutput* photoOutput, O
  
   
 
-#### OH_PhotoOutput_PhotoAssetAvailable()
+### OH_PhotoOutput_PhotoAssetAvailable()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_PhotoOutput_PhotoAssetAvailable)(Camera_PhotoOutput* photoOutput, OH_MediaAsset* photoAsset)
@@ -365,6 +393,7 @@ typedef void (*OH_PhotoOutput_PhotoAssetAvailable)(Camera_PhotoOutput* photoOutp
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 传递回调的拍照输出实例。 |
@@ -373,9 +402,10 @@ typedef void (*OH_PhotoOutput_PhotoAssetAvailable)(Camera_PhotoOutput* photoOutp
  
   
 
-#### OH_PhotoOutput_RegisterCallback()
+### OH_PhotoOutput_RegisterCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_PhotoOutput_RegisterCallback(Camera_PhotoOutput* photoOutput, PhotoOutput_Callbacks* callback)
@@ -389,6 +419,7 @@ Camera_ErrorCode OH_PhotoOutput_RegisterCallback(Camera_PhotoOutput* photoOutput
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 拍照输出实例。 |
@@ -397,6 +428,7 @@ Camera_ErrorCode OH_PhotoOutput_RegisterCallback(Camera_PhotoOutput* photoOutput
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -404,9 +436,10 @@ Camera_ErrorCode OH_PhotoOutput_RegisterCallback(Camera_PhotoOutput* photoOutput
  
   
 
-#### OH_PhotoOutput_UnregisterCallback()
+### OH_PhotoOutput_UnregisterCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_PhotoOutput_UnregisterCallback(Camera_PhotoOutput* photoOutput, PhotoOutput_Callbacks* callback)
@@ -420,6 +453,7 @@ Camera_ErrorCode OH_PhotoOutput_UnregisterCallback(Camera_PhotoOutput* photoOutp
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 拍照输出实例。 |
@@ -428,6 +462,7 @@ Camera_ErrorCode OH_PhotoOutput_UnregisterCallback(Camera_PhotoOutput* photoOutp
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -435,9 +470,10 @@ Camera_ErrorCode OH_PhotoOutput_UnregisterCallback(Camera_PhotoOutput* photoOutp
  
   
 
-#### OH_PhotoOutput_RegisterCaptureStartWithInfoCallback()
+### OH_PhotoOutput_RegisterCaptureStartWithInfoCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_PhotoOutput_RegisterCaptureStartWithInfoCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_CaptureStartWithInfo callback)
@@ -451,6 +487,7 @@ Camera_ErrorCode OH_PhotoOutput_RegisterCaptureStartWithInfoCallback(Camera_Phot
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 拍照输出实例。 |
@@ -459,6 +496,7 @@ Camera_ErrorCode OH_PhotoOutput_RegisterCaptureStartWithInfoCallback(Camera_Phot
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -466,9 +504,10 @@ Camera_ErrorCode OH_PhotoOutput_RegisterCaptureStartWithInfoCallback(Camera_Phot
  
   
 
-#### OH_PhotoOutput_GetPhotoRotation()
+### OH_PhotoOutput_GetPhotoRotation()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_PhotoOutput_GetPhotoRotation(Camera_PhotoOutput* photoOutput, int deviceDegree, Camera_ImageRotation* imageRotation)
@@ -482,6 +521,7 @@ Camera_ErrorCode OH_PhotoOutput_GetPhotoRotation(Camera_PhotoOutput* photoOutput
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 用于获取照片旋转角度的拍照输出实例。 |
@@ -491,6 +531,7 @@ Camera_ErrorCode OH_PhotoOutput_GetPhotoRotation(Camera_PhotoOutput* photoOutput
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -498,9 +539,10 @@ Camera_ErrorCode OH_PhotoOutput_GetPhotoRotation(Camera_PhotoOutput* photoOutput
  
   
 
-#### OH_PhotoOutput_GetPhotoRotationWithoutDeviceDegree()
+### OH_PhotoOutput_GetPhotoRotationWithoutDeviceDegree()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 Camera_ErrorCode OH_PhotoOutput_GetPhotoRotationWithoutDeviceDegree(Camera_PhotoOutput* photoOutput, Camera_ImageRotation* imageRotation)
@@ -514,6 +556,7 @@ Camera_ErrorCode OH_PhotoOutput_GetPhotoRotationWithoutDeviceDegree(Camera_Photo
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 用于获取照片旋转角度的拍照输出实例。 |
@@ -522,6 +565,7 @@ Camera_ErrorCode OH_PhotoOutput_GetPhotoRotationWithoutDeviceDegree(Camera_Photo
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -529,9 +573,10 @@ Camera_ErrorCode OH_PhotoOutput_GetPhotoRotationWithoutDeviceDegree(Camera_Photo
  
   
 
-#### OH_PhotoOutput_UnregisterCaptureStartWithInfoCallback()
+### OH_PhotoOutput_UnregisterCaptureStartWithInfoCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_PhotoOutput_UnregisterCaptureStartWithInfoCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_CaptureStartWithInfo callback)
@@ -545,6 +590,7 @@ Camera_ErrorCode OH_PhotoOutput_UnregisterCaptureStartWithInfoCallback(Camera_Ph
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 拍照输出实例。 |
@@ -553,6 +599,7 @@ Camera_ErrorCode OH_PhotoOutput_UnregisterCaptureStartWithInfoCallback(Camera_Ph
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -560,9 +607,10 @@ Camera_ErrorCode OH_PhotoOutput_UnregisterCaptureStartWithInfoCallback(Camera_Ph
  
   
 
-#### OH_PhotoOutput_RegisterCaptureEndCallback()
+### OH_PhotoOutput_RegisterCaptureEndCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_PhotoOutput_RegisterCaptureEndCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_CaptureEnd callback)
@@ -576,6 +624,7 @@ Camera_ErrorCode OH_PhotoOutput_RegisterCaptureEndCallback(Camera_PhotoOutput* p
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 拍照输出实例。 |
@@ -584,6 +633,7 @@ Camera_ErrorCode OH_PhotoOutput_RegisterCaptureEndCallback(Camera_PhotoOutput* p
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -591,9 +641,10 @@ Camera_ErrorCode OH_PhotoOutput_RegisterCaptureEndCallback(Camera_PhotoOutput* p
  
   
 
-#### OH_PhotoOutput_UnregisterCaptureEndCallback()
+### OH_PhotoOutput_UnregisterCaptureEndCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_PhotoOutput_UnregisterCaptureEndCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_CaptureEnd callback)
@@ -607,6 +658,7 @@ Camera_ErrorCode OH_PhotoOutput_UnregisterCaptureEndCallback(Camera_PhotoOutput*
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 拍照输出实例。 |
@@ -615,6 +667,7 @@ Camera_ErrorCode OH_PhotoOutput_UnregisterCaptureEndCallback(Camera_PhotoOutput*
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -622,9 +675,10 @@ Camera_ErrorCode OH_PhotoOutput_UnregisterCaptureEndCallback(Camera_PhotoOutput*
  
   
 
-#### OH_PhotoOutput_RegisterFrameShutterEndCallback()
+### OH_PhotoOutput_RegisterFrameShutterEndCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_PhotoOutput_RegisterFrameShutterEndCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_OnFrameShutterEnd callback)
@@ -638,6 +692,7 @@ Camera_ErrorCode OH_PhotoOutput_RegisterFrameShutterEndCallback(Camera_PhotoOutp
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 拍照输出实例。 |
@@ -646,6 +701,7 @@ Camera_ErrorCode OH_PhotoOutput_RegisterFrameShutterEndCallback(Camera_PhotoOutp
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -653,9 +709,10 @@ Camera_ErrorCode OH_PhotoOutput_RegisterFrameShutterEndCallback(Camera_PhotoOutp
  
   
 
-#### OH_PhotoOutput_UnregisterFrameShutterEndCallback()
+### OH_PhotoOutput_UnregisterFrameShutterEndCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_PhotoOutput_UnregisterFrameShutterEndCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_OnFrameShutterEnd callback)
@@ -669,6 +726,7 @@ Camera_ErrorCode OH_PhotoOutput_UnregisterFrameShutterEndCallback(Camera_PhotoOu
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 拍照输出实例。 |
@@ -677,6 +735,7 @@ Camera_ErrorCode OH_PhotoOutput_UnregisterFrameShutterEndCallback(Camera_PhotoOu
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -684,9 +743,10 @@ Camera_ErrorCode OH_PhotoOutput_UnregisterFrameShutterEndCallback(Camera_PhotoOu
  
   
 
-#### OH_PhotoOutput_RegisterCaptureReadyCallback()
+### OH_PhotoOutput_RegisterCaptureReadyCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_PhotoOutput_RegisterCaptureReadyCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_CaptureReady callback)
@@ -700,6 +760,7 @@ Camera_ErrorCode OH_PhotoOutput_RegisterCaptureReadyCallback(Camera_PhotoOutput*
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 拍照输出实例。 |
@@ -708,6 +769,7 @@ Camera_ErrorCode OH_PhotoOutput_RegisterCaptureReadyCallback(Camera_PhotoOutput*
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -715,9 +777,10 @@ Camera_ErrorCode OH_PhotoOutput_RegisterCaptureReadyCallback(Camera_PhotoOutput*
  
   
 
-#### OH_PhotoOutput_UnregisterCaptureReadyCallback()
+### OH_PhotoOutput_UnregisterCaptureReadyCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_PhotoOutput_UnregisterCaptureReadyCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_CaptureReady callback)
@@ -731,6 +794,7 @@ Camera_ErrorCode OH_PhotoOutput_UnregisterCaptureReadyCallback(Camera_PhotoOutpu
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 拍照输出实例。 |
@@ -739,6 +803,7 @@ Camera_ErrorCode OH_PhotoOutput_UnregisterCaptureReadyCallback(Camera_PhotoOutpu
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -746,9 +811,10 @@ Camera_ErrorCode OH_PhotoOutput_UnregisterCaptureReadyCallback(Camera_PhotoOutpu
  
   
 
-#### OH_PhotoOutput_RegisterEstimatedCaptureDurationCallback()
+### OH_PhotoOutput_RegisterEstimatedCaptureDurationCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_PhotoOutput_RegisterEstimatedCaptureDurationCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_EstimatedCaptureDuration callback)
@@ -762,6 +828,7 @@ Camera_ErrorCode OH_PhotoOutput_RegisterEstimatedCaptureDurationCallback(Camera_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 拍照输出实例。 |
@@ -770,6 +837,7 @@ Camera_ErrorCode OH_PhotoOutput_RegisterEstimatedCaptureDurationCallback(Camera_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -777,9 +845,10 @@ Camera_ErrorCode OH_PhotoOutput_RegisterEstimatedCaptureDurationCallback(Camera_
  
   
 
-#### OH_PhotoOutput_UnregisterEstimatedCaptureDurationCallback()
+### OH_PhotoOutput_UnregisterEstimatedCaptureDurationCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_PhotoOutput_UnregisterEstimatedCaptureDurationCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_EstimatedCaptureDuration callback)
@@ -793,6 +862,7 @@ Camera_ErrorCode OH_PhotoOutput_UnregisterEstimatedCaptureDurationCallback(Camer
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 拍照输出实例。 |
@@ -801,6 +871,7 @@ Camera_ErrorCode OH_PhotoOutput_UnregisterEstimatedCaptureDurationCallback(Camer
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -808,9 +879,10 @@ Camera_ErrorCode OH_PhotoOutput_UnregisterEstimatedCaptureDurationCallback(Camer
  
   
 
-#### OH_PhotoOutput_RegisterPhotoAvailableCallback()
+### OH_PhotoOutput_RegisterPhotoAvailableCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_PhotoOutput_RegisterPhotoAvailableCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_PhotoAvailable callback)
@@ -824,6 +896,7 @@ Camera_ErrorCode OH_PhotoOutput_RegisterPhotoAvailableCallback(Camera_PhotoOutpu
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 拍照输出实例。 |
@@ -832,6 +905,7 @@ Camera_ErrorCode OH_PhotoOutput_RegisterPhotoAvailableCallback(Camera_PhotoOutpu
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -839,9 +913,10 @@ Camera_ErrorCode OH_PhotoOutput_RegisterPhotoAvailableCallback(Camera_PhotoOutpu
  
   
 
-#### OH_PhotoOutput_UnregisterPhotoAvailableCallback()
+### OH_PhotoOutput_UnregisterPhotoAvailableCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_PhotoOutput_UnregisterPhotoAvailableCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_PhotoAvailable callback)
@@ -855,6 +930,7 @@ Camera_ErrorCode OH_PhotoOutput_UnregisterPhotoAvailableCallback(Camera_PhotoOut
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 拍照输出实例。 |
@@ -863,6 +939,7 @@ Camera_ErrorCode OH_PhotoOutput_UnregisterPhotoAvailableCallback(Camera_PhotoOut
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -870,9 +947,10 @@ Camera_ErrorCode OH_PhotoOutput_UnregisterPhotoAvailableCallback(Camera_PhotoOut
  
   
 
-#### OH_PhotoOutput_RegisterPhotoAssetAvailableCallback()
+### OH_PhotoOutput_RegisterPhotoAssetAvailableCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_PhotoOutput_RegisterPhotoAssetAvailableCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_PhotoAssetAvailable callback)
@@ -886,6 +964,7 @@ Camera_ErrorCode OH_PhotoOutput_RegisterPhotoAssetAvailableCallback(Camera_Photo
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 拍照输出实例。 |
@@ -894,6 +973,7 @@ Camera_ErrorCode OH_PhotoOutput_RegisterPhotoAssetAvailableCallback(Camera_Photo
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -901,9 +981,10 @@ Camera_ErrorCode OH_PhotoOutput_RegisterPhotoAssetAvailableCallback(Camera_Photo
  
   
 
-#### OH_PhotoOutput_UnregisterPhotoAssetAvailableCallback()
+### OH_PhotoOutput_UnregisterPhotoAssetAvailableCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_PhotoOutput_UnregisterPhotoAssetAvailableCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_PhotoAssetAvailable callback)
@@ -917,6 +998,7 @@ Camera_ErrorCode OH_PhotoOutput_UnregisterPhotoAssetAvailableCallback(Camera_Pho
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 拍照输出实例。 |
@@ -925,6 +1007,7 @@ Camera_ErrorCode OH_PhotoOutput_UnregisterPhotoAssetAvailableCallback(Camera_Pho
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -932,9 +1015,10 @@ Camera_ErrorCode OH_PhotoOutput_UnregisterPhotoAssetAvailableCallback(Camera_Pho
  
   
 
-#### OH_PhotoOutput_Capture()
+### OH_PhotoOutput_Capture()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_PhotoOutput_Capture(Camera_PhotoOutput* photoOutput)
@@ -950,6 +1034,7 @@ Camera_ErrorCode OH_PhotoOutput_Capture(Camera_PhotoOutput* photoOutput)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 用于捕获拍照的拍照输出实例。 |
@@ -957,6 +1042,7 @@ Camera_ErrorCode OH_PhotoOutput_Capture(Camera_PhotoOutput* photoOutput)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_RUNNING：捕获会话未运行。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -964,9 +1050,10 @@ Camera_ErrorCode OH_PhotoOutput_Capture(Camera_PhotoOutput* photoOutput)
  
   
 
-#### OH_PhotoOutput_Capture_WithCaptureSetting()
+### OH_PhotoOutput_Capture_WithCaptureSetting()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_PhotoOutput_Capture_WithCaptureSetting(Camera_PhotoOutput* photoOutput, Camera_PhotoCaptureSetting setting)
@@ -980,6 +1067,7 @@ Camera_ErrorCode OH_PhotoOutput_Capture_WithCaptureSetting(Camera_PhotoOutput* p
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 用于捕获拍照的拍照输出实例。 |
@@ -988,6 +1076,7 @@ Camera_ErrorCode OH_PhotoOutput_Capture_WithCaptureSetting(Camera_PhotoOutput* p
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_RUNNING：捕获会话未运行。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -995,9 +1084,10 @@ Camera_ErrorCode OH_PhotoOutput_Capture_WithCaptureSetting(Camera_PhotoOutput* p
  
   
 
-#### OH_PhotoOutput_Release()
+### OH_PhotoOutput_Release()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_PhotoOutput_Release(Camera_PhotoOutput* photoOutput)
@@ -1011,6 +1101,7 @@ Camera_ErrorCode OH_PhotoOutput_Release(Camera_PhotoOutput* photoOutput)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 要释放的拍照输出实例。 |
@@ -1018,6 +1109,7 @@ Camera_ErrorCode OH_PhotoOutput_Release(Camera_PhotoOutput* photoOutput)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -1025,9 +1117,10 @@ Camera_ErrorCode OH_PhotoOutput_Release(Camera_PhotoOutput* photoOutput)
  
   
 
-#### OH_PhotoOutput_IsMirrorSupported()
+### OH_PhotoOutput_IsMirrorSupported()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_PhotoOutput_IsMirrorSupported(Camera_PhotoOutput* photoOutput, bool* isSupported)
@@ -1041,6 +1134,7 @@ Camera_ErrorCode OH_PhotoOutput_IsMirrorSupported(Camera_PhotoOutput* photoOutpu
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 拍照输出实例，用于检查是否支持镜像。 |
@@ -1049,6 +1143,7 @@ Camera_ErrorCode OH_PhotoOutput_IsMirrorSupported(Camera_PhotoOutput* photoOutpu
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -1056,9 +1151,10 @@ Camera_ErrorCode OH_PhotoOutput_IsMirrorSupported(Camera_PhotoOutput* photoOutpu
  
   
 
-#### OH_PhotoOutput_EnableMirror()
+### OH_PhotoOutput_EnableMirror()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_PhotoOutput_EnableMirror(Camera_PhotoOutput* photoOutput, bool enabled)
@@ -1072,6 +1168,7 @@ Camera_ErrorCode OH_PhotoOutput_EnableMirror(Camera_PhotoOutput* photoOutput, bo
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 拍照输出实例，用于确认是否启用镜像拍照。 |
@@ -1080,6 +1177,7 @@ Camera_ErrorCode OH_PhotoOutput_EnableMirror(Camera_PhotoOutput* photoOutput, bo
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -1087,9 +1185,10 @@ Camera_ErrorCode OH_PhotoOutput_EnableMirror(Camera_PhotoOutput* photoOutput, bo
  
   
 
-#### OH_PhotoOutput_GetActiveProfile()
+### OH_PhotoOutput_GetActiveProfile()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_PhotoOutput_GetActiveProfile(Camera_PhotoOutput* photoOutput, Camera_Profile** profile)
@@ -1103,6 +1202,7 @@ Camera_ErrorCode OH_PhotoOutput_GetActiveProfile(Camera_PhotoOutput* photoOutput
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 传递当前配置文件的拍照输出实例。 |
@@ -1111,6 +1211,7 @@ Camera_ErrorCode OH_PhotoOutput_GetActiveProfile(Camera_PhotoOutput* photoOutput
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -1118,9 +1219,10 @@ Camera_ErrorCode OH_PhotoOutput_GetActiveProfile(Camera_PhotoOutput* photoOutput
  
   
 
-#### OH_PhotoOutput_DeleteProfile()
+### OH_PhotoOutput_DeleteProfile()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_PhotoOutput_DeleteProfile(Camera_Profile* profile)
@@ -1134,6 +1236,7 @@ Camera_ErrorCode OH_PhotoOutput_DeleteProfile(Camera_Profile* profile)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_Profile* profile | 要被删除的照片配置文件实例。 |
@@ -1141,6 +1244,7 @@ Camera_ErrorCode OH_PhotoOutput_DeleteProfile(Camera_Profile* profile)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -1148,9 +1252,10 @@ Camera_ErrorCode OH_PhotoOutput_DeleteProfile(Camera_Profile* profile)
  
   
 
-#### OH_PhotoOutput_IsMovingPhotoSupported()
+### OH_PhotoOutput_IsMovingPhotoSupported()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_PhotoOutput_IsMovingPhotoSupported(Camera_PhotoOutput* photoOutput, bool* isSupported)
@@ -1164,6 +1269,7 @@ Camera_ErrorCode OH_PhotoOutput_IsMovingPhotoSupported(Camera_PhotoOutput* photo
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 用于检查是否支持动态照片的拍照输出实例。 |
@@ -1172,6 +1278,7 @@ Camera_ErrorCode OH_PhotoOutput_IsMovingPhotoSupported(Camera_PhotoOutput* photo
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -1179,9 +1286,10 @@ Camera_ErrorCode OH_PhotoOutput_IsMovingPhotoSupported(Camera_PhotoOutput* photo
  
   
 
-#### OH_PhotoOutput_EnableMovingPhoto()
+### OH_PhotoOutput_EnableMovingPhoto()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_PhotoOutput_EnableMovingPhoto(Camera_PhotoOutput* photoOutput, bool enabled)
@@ -1195,6 +1303,7 @@ Camera_ErrorCode OH_PhotoOutput_EnableMovingPhoto(Camera_PhotoOutput* photoOutpu
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 用于启用或禁用动态照片的拍照输出实例。 |
@@ -1203,6 +1312,7 @@ Camera_ErrorCode OH_PhotoOutput_EnableMovingPhoto(Camera_PhotoOutput* photoOutpu
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -1210,9 +1320,10 @@ Camera_ErrorCode OH_PhotoOutput_EnableMovingPhoto(Camera_PhotoOutput* photoOutpu
  
   
 
-#### OH_PhotoOutput_IsPhotoQualityPrioritizationSupported()
+### OH_PhotoOutput_IsPhotoQualityPrioritizationSupported()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_PhotoOutput_IsPhotoQualityPrioritizationSupported(Camera_PhotoOutput* photoOutput, Camera_PhotoQualityPrioritization qualityPrioritization, bool* isSupported)
@@ -1226,6 +1337,7 @@ Camera_ErrorCode OH_PhotoOutput_IsPhotoQualityPrioritizationSupported(Camera_Pho
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 用于获取是否支持拍照画质优先策略的拍照输出实例。 |
@@ -1235,6 +1347,7 @@ Camera_ErrorCode OH_PhotoOutput_IsPhotoQualityPrioritizationSupported(Camera_Pho
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -1242,9 +1355,10 @@ Camera_ErrorCode OH_PhotoOutput_IsPhotoQualityPrioritizationSupported(Camera_Pho
  
   
 
-#### OH_PhotoOutput_SetPhotoQualityPrioritization()
+### OH_PhotoOutput_SetPhotoQualityPrioritization()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_PhotoOutput_SetPhotoQualityPrioritization(Camera_PhotoOutput* photoOutput, Camera_PhotoQualityPrioritization qualityPrioritization)
@@ -1258,6 +1372,7 @@ Camera_ErrorCode OH_PhotoOutput_SetPhotoQualityPrioritization(Camera_PhotoOutput
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 用于设置拍照画质优先策略的拍照输出实例。 |
@@ -1266,6 +1381,7 @@ Camera_ErrorCode OH_PhotoOutput_SetPhotoQualityPrioritization(Camera_PhotoOutput
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -1273,9 +1389,10 @@ Camera_ErrorCode OH_PhotoOutput_SetPhotoQualityPrioritization(Camera_PhotoOutput
  
   
 
-#### OH_PhotoOutput_IsAutoExtendedGainmapDeliverySupported()
+### OH_PhotoOutput_IsAutoExtendedGainmapDeliverySupported()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_PhotoOutput_IsAutoExtendedGainmapDeliverySupported(const Camera_PhotoOutput* photoOutput)
@@ -1289,6 +1406,7 @@ bool OH_PhotoOutput_IsAutoExtendedGainmapDeliverySupported(const Camera_PhotoOut
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Camera_PhotoOutput* photoOutput | 用于检查是否支持自动扩展增益图（Gainmap）的输出的拍照输出实例。 |
@@ -1296,6 +1414,7 @@ bool OH_PhotoOutput_IsAutoExtendedGainmapDeliverySupported(const Camera_PhotoOut
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 是否支持自动扩展增益图（Gainmap）的输出的结果。true表示支持，false表示不支持。 |
@@ -1303,9 +1422,10 @@ bool OH_PhotoOutput_IsAutoExtendedGainmapDeliverySupported(const Camera_PhotoOut
  
   
 
-#### OH_PhotoOutput_EnableAutoExtendedGainmapDelivery()
+### OH_PhotoOutput_EnableAutoExtendedGainmapDelivery()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_PhotoOutput_EnableAutoExtendedGainmapDelivery(Camera_PhotoOutput* photoOutput, bool enabled)
@@ -1319,6 +1439,7 @@ Camera_ErrorCode OH_PhotoOutput_EnableAutoExtendedGainmapDelivery(Camera_PhotoOu
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 用于启用或禁用自动扩展增益图（Gainmap）的输出的拍照输出实例。 |
@@ -1327,6 +1448,7 @@ Camera_ErrorCode OH_PhotoOutput_EnableAutoExtendedGainmapDelivery(Camera_PhotoOu
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许。 CAMERA_SESSION_NOT_CONFIG：会话未配置。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -1334,9 +1456,10 @@ Camera_ErrorCode OH_PhotoOutput_EnableAutoExtendedGainmapDelivery(Camera_PhotoOu
  
   
 
-#### OH_PhotoOutput_CreatePhotoCaptureSettingExt()
+### OH_PhotoOutput_CreatePhotoCaptureSettingExt()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_PhotoOutput_CreatePhotoCaptureSettingExt(Camera_PhotoOutput* photoOutput, OH_Camera_PhotoCaptureSettingExt** setting)
@@ -1350,6 +1473,7 @@ Camera_ErrorCode OH_PhotoOutput_CreatePhotoCaptureSettingExt(Camera_PhotoOutput*
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | photoOutput 拍照输出实例。 |
@@ -1358,6 +1482,7 @@ Camera_ErrorCode OH_PhotoOutput_CreatePhotoCaptureSettingExt(Camera_PhotoOutput*
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |
@@ -1365,9 +1490,10 @@ Camera_ErrorCode OH_PhotoOutput_CreatePhotoCaptureSettingExt(Camera_PhotoOutput*
  
   
 
-#### OH_PhotoOutput_DestroyPhotoCaptureSettingExt()
+### OH_PhotoOutput_DestroyPhotoCaptureSettingExt()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_PhotoOutput_DestroyPhotoCaptureSettingExt(OH_Camera_PhotoCaptureSettingExt* setting)
@@ -1381,6 +1507,7 @@ Camera_ErrorCode OH_PhotoOutput_DestroyPhotoCaptureSettingExt(OH_Camera_PhotoCap
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Camera_PhotoCaptureSettingExt* setting | 指向扩展拍照设置实例的指针。 |
@@ -1388,6 +1515,7 @@ Camera_ErrorCode OH_PhotoOutput_DestroyPhotoCaptureSettingExt(OH_Camera_PhotoCap
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 |
@@ -1395,9 +1523,10 @@ Camera_ErrorCode OH_PhotoOutput_DestroyPhotoCaptureSettingExt(OH_Camera_PhotoCap
  
   
 
-#### OH_PhotoCaptureSettingExt_SetImageRotation()
+### OH_PhotoCaptureSettingExt_SetImageRotation()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_PhotoCaptureSettingExt_SetImageRotation(OH_Camera_PhotoCaptureSettingExt* photoCaptureSettingExt, Camera_ImageRotation rotation)
@@ -1411,6 +1540,7 @@ Camera_ErrorCode OH_PhotoCaptureSettingExt_SetImageRotation(OH_Camera_PhotoCaptu
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Camera_PhotoCaptureSettingExt* photoCaptureSettingExt | 指向扩展拍照设置实例的指针。 |
@@ -1419,6 +1549,7 @@ Camera_ErrorCode OH_PhotoCaptureSettingExt_SetImageRotation(OH_Camera_PhotoCaptu
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许。 |
@@ -1426,9 +1557,10 @@ Camera_ErrorCode OH_PhotoCaptureSettingExt_SetImageRotation(OH_Camera_PhotoCaptu
  
   
 
-#### OH_PhotoCaptureSettingExt_SetLocation()
+### OH_PhotoCaptureSettingExt_SetLocation()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_PhotoCaptureSettingExt_SetLocation(OH_Camera_PhotoCaptureSettingExt* photoCaptureSettingExt, Camera_Location location)
@@ -1442,6 +1574,7 @@ Camera_ErrorCode OH_PhotoCaptureSettingExt_SetLocation(OH_Camera_PhotoCaptureSet
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Camera_PhotoCaptureSettingExt* photoCaptureSettingExt | 指向扩展拍照设置实例的指针。 |
@@ -1450,6 +1583,7 @@ Camera_ErrorCode OH_PhotoCaptureSettingExt_SetLocation(OH_Camera_PhotoCaptureSet
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许。 |
@@ -1457,9 +1591,10 @@ Camera_ErrorCode OH_PhotoCaptureSettingExt_SetLocation(OH_Camera_PhotoCaptureSet
  
   
 
-#### OH_PhotoCaptureSettingExt_SetMirror()
+### OH_PhotoCaptureSettingExt_SetMirror()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_PhotoCaptureSettingExt_SetMirror(OH_Camera_PhotoCaptureSettingExt* photoCaptureSettingExt, bool mirror)
@@ -1473,6 +1608,7 @@ Camera_ErrorCode OH_PhotoCaptureSettingExt_SetMirror(OH_Camera_PhotoCaptureSetti
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Camera_PhotoCaptureSettingExt* photoCaptureSettingExt | 指向扩展拍照设置实例的指针。 |
@@ -1481,6 +1617,7 @@ Camera_ErrorCode OH_PhotoCaptureSettingExt_SetMirror(OH_Camera_PhotoCaptureSetti
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许。 |
@@ -1488,9 +1625,10 @@ Camera_ErrorCode OH_PhotoCaptureSettingExt_SetMirror(OH_Camera_PhotoCaptureSetti
  
   
 
-#### OH_PhotoCaptureSettingExt_SetCompressionQuality()
+### OH_PhotoCaptureSettingExt_SetCompressionQuality()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_PhotoCaptureSettingExt_SetCompressionQuality(OH_Camera_PhotoCaptureSettingExt* photoCaptureSettingExt, uint8_t compressionQuality)
@@ -1504,6 +1642,7 @@ Camera_ErrorCode OH_PhotoCaptureSettingExt_SetCompressionQuality(OH_Camera_Photo
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Camera_PhotoCaptureSettingExt* photoCaptureSettingExt | 指向扩展拍照设置实例的指针。 |
@@ -1512,6 +1651,7 @@ Camera_ErrorCode OH_PhotoCaptureSettingExt_SetCompressionQuality(OH_Camera_Photo
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_OPERATION_NOT_ALLOWED：操作不允许。 |
@@ -1519,9 +1659,10 @@ Camera_ErrorCode OH_PhotoCaptureSettingExt_SetCompressionQuality(OH_Camera_Photo
  
   
 
-#### OH_PhotoOutput_Capture_WithCaptureSettingExt()
+### OH_PhotoOutput_Capture_WithCaptureSettingExt()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Camera_ErrorCode OH_PhotoOutput_Capture_WithCaptureSettingExt(Camera_PhotoOutput* photoOutput, OH_Camera_PhotoCaptureSettingExt* setting)
@@ -1535,6 +1676,7 @@ Camera_ErrorCode OH_PhotoOutput_Capture_WithCaptureSettingExt(Camera_PhotoOutput
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Camera_PhotoOutput* photoOutput | 拍照输出实例。 |
@@ -1543,6 +1685,7 @@ Camera_ErrorCode OH_PhotoOutput_Capture_WithCaptureSettingExt(Camera_PhotoOutput
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Camera_ErrorCode | CAMERA_OK：方法调用成功。 CAMERA_INVALID_ARGUMENT：参数丢失或参数类型不正确。 CAMERA_SESSION_NOT_RUNNING：捕获会话未运行。 CAMERA_SERVICE_FATAL_ERROR：相机服务异常。 |

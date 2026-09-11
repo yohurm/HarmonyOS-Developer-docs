@@ -19,20 +19,20 @@ AppLinking配置与推送通知配置存在冲突问题，如果在skill中配�
     {
       "actions": [
         "action.system.home",
-        // 极光推送需要此字段
+       <em> // 极光推送需要此字段</em>
         "ohos.want.action.viewData"
-        // 微博跳转配置
+      <em>  // 微博跳转配置</em>
       ],
-      // 目前推送和AppLinking配置存在互斥，如果在skill中配置了uris会导致接入的第三方库【极光推送】无法正常接收到通知，如果不配置uris会导致AppLinking配置失效
+     <em> // 目前推送和AppLinking配置存在互斥，如果在skill中配置了uris会导致接入的第三方库【极光推送】无法正常接收到通知，如果不配置uris会导致AppLinking配置失效</em>
       "uris": [
-        // appLink的配置
+       <em> // appLink的配置</em>
         {
           "scheme": "https",
-          // scheme须配置为https
+        <em>  // scheme须配置为https</em>
           "host": "xxx.xxx.com",
-          // host须配置为关联的域名
+          <em>// host须配置为关联的域名</em>
           "path": "open"
-          // path可选，为了避免匹配到多个应用，建议配置该字段【可选字段】
+         <em> // path可选，为了避免匹配到多个应用，建议配置该字段【可选字段】</em>
         }
       ]
     }

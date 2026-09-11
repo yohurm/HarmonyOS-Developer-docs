@@ -1,6 +1,6 @@
 # CashierComponent (iap嵌入式收银台组件)
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-cashier-component
 **支持设备：** TV
@@ -17,7 +17,8 @@ CashierComponent是IAP Kit提供的ArkUI嵌入式收银台组件，需配合cash
 **起始版本：** 6.1.0(23)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** TV
 
@@ -27,7 +28,8 @@ import { CashierComponent, cashierComponentManager } from '@kit.IAPKit';
  
   
 
-#### CashierComponent
+## CashierComponent
+
 
 **支持设备：** TV
 
@@ -45,6 +47,7 @@ import { CashierComponent, cashierComponentManager } from '@kit.IAPKit';
  
 **参数：**
   
+
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | params | iap.PurchaseParameter | 是 | @Require @Prop | CashierComponent组件参数。 说明： 该参数必须是@State装饰的局部变量。 |
@@ -54,7 +57,8 @@ import { CashierComponent, cashierComponentManager } from '@kit.IAPKit';
  
   
 
-#### build
+### build
+
 
 **支持设备：** TV
 

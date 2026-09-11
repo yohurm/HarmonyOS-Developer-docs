@@ -38,7 +38,7 @@ struct ListCollapseExpand {
               .width('100%')
               .justifyContent(FlexAlign.SpaceBetween)
 
-              // Display the content area only when the current item is selected and is in an expanded state.
+          <em>    // Display the content area only when the current item is selected and is in an expanded state.</em>
               if (this.isContentShow && this.selectItem === item) {
                 Text('This is the content area')
                   .backgroundColor(Color.Gray)

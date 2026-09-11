@@ -1,17 +1,17 @@
 # 基于List和Scroller实现双向滚动列表
 
-更新时间：2026-07-28 03:34:01
+更新时间：2026-08-26 06:47:01
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-horizontal-vertical-scrolling-list
 
-#### 概述
+## 概述
 
 在移动端应用开发中，经常需要展示包含多行多列的表格数据，例如汽车参数表、股票信息表等。这类表格的数据量通常较大，行列数量远超屏幕显示范围，需要同时支持纵向和横向滚动以便用户查看完整信息。
  
 然而，当表格需要同时支持纵向和横向滚动（下文简称为双向滚动）时，单一列表组件无法满足需求。如下图所示：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/YiHxQFZwSg-l28O9AKM4kQ/zh-cn_image_0000002683157325.gif?HW-CC-KV=V1&HW-CC-Date=20260730T072735Z&HW-CC-Expire=86400&HW-CC-Sign=2721BC16158713CC3AD34066C405877DFC3F90E7D2C78127FDE3964D09093728)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/pnsXwVj4Tu2x_rcq0x80Gg/zh-cn_image_0000002683157325.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072301Z&HW-CC-Expire=86400&HW-CC-Sign=33732FEE48A3AFBED57EE74B8E6CC5FE44490962A02DC9F6CBE2868001B98507)
 
  
 本文基于List组件和Scroller控制器，封装核心组件[DualScrollTable](https://gitcode.com/HarmonyOS_Samples/DualScrollList/blob/master/tableview/src/main/ets/components/DualScrollTable.ets)（双向滚动列表组件）。提供满足基础功能的双向滚动列表解决方案，助力开发者快速实现表格双向滚动功能。
@@ -25,13 +25,13 @@
  
  
 
-#### 实现原理
+## 实现原理
 
 [DualScrollTable](https://gitcode.com/HarmonyOS_Samples/DualScrollList/blob/master/tableview/src/main/ets/components/DualScrollTable.ets)将表格拆分为"顶部横向列表+底部左右分区"三个独立的List区域，每个List/Scroll组件配备独立的[Scroller](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll#scroller)控制器。利用[onScrollFrameBegin()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list#onscrollframebegin9)回调方法在列表滚动开始前拦截偏移量，再通过[scrollTo()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll#scrollto)方法将偏移量同步到关联列表，实现横向和纵向双向联动。
  
  
 
-#### 布局结构
+### 布局结构
 
 双向滚动列表的布局架构采用"顶部横向列表+底部左右分区"的三区域设计：
  
@@ -43,12 +43,12 @@
 列表整体布局结构如下图所示：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/NFNYRKYCTQ2tVp2DasRCsw/zh-cn_image_0000002652957852.png?HW-CC-KV=V1&HW-CC-Date=20260730T072735Z&HW-CC-Expire=86400&HW-CC-Sign=08BDF64FE669D5C133709ED16177D6F8473D378549F6B7BAC46CD1E830A39B01)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/-UFX4U4ZSzK2xtdbhf4jWA/zh-cn_image_0000002652957852.png?HW-CC-KV=V1&HW-CC-Date=20260911T072301Z&HW-CC-Expire=86400&HW-CC-Sign=0BE54E83C4B70AB6D3B12BF9285CC782BAA87920B26BB378387DED179FCDDAE4)
 
  
  
 
-#### 关键API和模块介绍
+### 关键API和模块介绍
 
 - [List](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)组件：滚动列表容器，支持横向（[Axis](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#axis).Horizontal）和纵向（[Axis](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#axis).Vertical）滚动方向配置。
 - [Scroller](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll#scroller)控制器：List组件的滚动控制器，提供[scrollTo()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll#scrollto)、[currentOffset()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll#currentoffset)等方法用于精确控制滚动位置。
@@ -59,12 +59,12 @@
  
  
 
-#### 同步滚动时序图
+### 同步滚动时序图
 
 同步滚动时序图，如下图所示：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/5XYLfDeqQZigD7r8Om0lPQ/zh-cn_image_0000002653117762.png?HW-CC-KV=V1&HW-CC-Date=20260730T072735Z&HW-CC-Expire=86400&HW-CC-Sign=5655F9D110E36BC96F5A37FC524E76C3D9812755DDBAA3DE7E02C221A1ACB52B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/jBW78CwxRNSPFuUs4yli6g/zh-cn_image_0000002653117762.png?HW-CC-KV=V1&HW-CC-Date=20260911T072301Z&HW-CC-Expire=86400&HW-CC-Sign=E257F042AFED5FC00D9CDFA77BB6FCD19189569D59EC4AADA7797B4BF2F4D74A)
 
  
 - 横向滚动TopList时，通过[onScrollFrameBegin()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list#onscrollframebegin9)回调方法拦截滚动偏移量，调用RightList的[scrollTo()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll#scrollto)方法同步横向滚动。
@@ -75,7 +75,7 @@
  
  
 
-#### 自定义双向滚动列表实现
+## 自定义双向滚动列表实现
 
 本章将介绍双向滚动列表DualScrollTable的封装关键代码和步骤，具体代码实现开发者可以参考[示例代码](#section91421919195114)。为了让开发者理解本章节内容，首先简单介绍几个关键的自定义代码类：
  
@@ -86,7 +86,7 @@
  
  
 
-#### 定义数据类型与布局配置
+### 定义数据类型与布局配置
 
 在TableDataModel中定义TableGroup和TableRow类，用于封装分组数据与行数据，每行通过Scroller控制器关联横向滚动同步逻辑。
  
@@ -219,7 +219,7 @@ export interface TableLayoutConfig {
  
  
 
-#### 加载列表数据
+### 加载列表数据
 
 在TableDataModel中定义了loadTableData()方法，主要负责从本地rawfile目录读取JSON文件并进行解析。
  
@@ -267,7 +267,7 @@ export class TableDataModel {
  
  
 
-#### 构建布局列表
+### 构建布局列表
 
 在DualScrollTable中采用Column嵌套Row布局方式，顶部放置TopList横向列表，底部Row内放置LeftList与RightList横向排列。同时定义BaseTableViewModel对象参数，用于后续在列表组件中调用同步滚动方法；定义TableSceneConfig对象参数，用于后续自定义表格样式。
  
@@ -336,7 +336,7 @@ TopList() {
  
  
 
-#### 定义滚动控制器对象
+### 定义滚动控制器对象
 
 在BaseTableViewModel中给每个列表区域定义滚动控制器对象，便于控制列表横向和纵向联动。
  
@@ -368,7 +368,7 @@ export class BaseTableViewModel {
  
  
 
-#### 同步列表横向滚动
+### 同步列表横向滚动
 1. 横向滚动顶部列表TopList时，底部右边列表RightList同步滚动。在TopList的[onScrollFrameBegin()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list#onscrollframebegin9)回调方法中获取列表滚动预估偏移量，调用syncTopListScrollToSubList()方法同步RightList横向滚动位置。
 
   
@@ -448,7 +448,7 @@ private scrollToX(scroller: Scroller, xOffset: number): void {
  
  
 
-#### 同步列表纵向滚动
+### 同步列表纵向滚动
 1. 纵向滚动左侧列表LeftList时，右侧列表RightList同步纵向滚动。在LeftList的[onScrollFrameBegin()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list#onscrollframebegin9)回调方法中获取列表滚动预估偏移量，调用syncBottomLeftScroll()方法。
 
   
@@ -525,21 +525,21 @@ private scrollToY(scroller: Scroller, yOffset: number): void {
  
  
 
-#### 股票信息表格场景实现
+## 股票信息表格场景实现
 
  
 
-#### 场景描述
+### 场景描述
 
  
 在股票行情场景中，多只股票的最新价、涨跌额、涨跌幅等指标需要横向排列展示。该场景不启用分组标题和列分割线，表格布局尺寸更紧凑。股票信息表如下图所示：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/r5rMyhFiQ92DH2wmnMIbIw/zh-cn_image_0000002682997519.gif?HW-CC-KV=V1&HW-CC-Date=20260730T072735Z&HW-CC-Expire=86400&HW-CC-Sign=7F2CAB3B74926DFA47EEF27434E80FC5B65C590D2B7E17FF248723BF66215E3B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/E725DANtRXWq2253D_d8AQ/zh-cn_image_0000002682997519.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072301Z&HW-CC-Expire=86400&HW-CC-Sign=16F0069A3DA46BB70812F598DCD8FCE13D79A7EDDB22D781C6BC367E5677070B)
 
  
 
-#### 开发步骤
+### 开发步骤
 1. 创建StockInfoTableViewModel并加载股票数据。继承BaseTableViewModel，在loadTableData()方法中调用loadData()方法加载stock.json数据。
 
   
@@ -643,23 +643,23 @@ struct StockInfoTable {
 
   
 
-  #### 汽车参数表格场景实现
+  ## 汽车参数表格场景实现
 
   
 
-  #### 场景描述
+  ### 场景描述
 
   在车型配置对比场景中，开发者需要在同一页面展示多个车型的参数信息，参数项按分组（基本信息、车身、发动机等）排列，每个参数项对应多个车型的数值。
 
   左侧参数名称与右侧数据行纵向同步滚动，顶部车型名称与底部数据列横向同步滚动。汽车参数表如下图所示：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/iPsEi8SzSzeR5QRw6-FzSA/zh-cn_image_0000002683157331.gif?HW-CC-KV=V1&HW-CC-Date=20260730T072735Z&HW-CC-Expire=86400&HW-CC-Sign=ABE115C09641F2F80D948E7E1AE5C7E6953B6BB25958B91284E28A54F126ADDF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/Gh0EUpH7QlOGJR9f_Rh1kQ/zh-cn_image_0000002683157331.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072301Z&HW-CC-Expire=86400&HW-CC-Sign=ECE19E71BE7C2E91E1806FFD7FCB4443C43F1AAF29C58CAC42DAF9AB9FCC3CAA)
 
 
   
 
-  #### 开发步骤
+  ### 开发步骤
 
 1. 创建CarSpecTableViewModel并加载车型数据。继承BaseTableViewModel，在loadTableData()方法中调用loadData()方法加载car.json数据。
 
@@ -759,19 +759,19 @@ struct CarSpecTable {
 
   
 
-  #### 性能检测
+  ## 性能检测
 
   双向滚动列表在数据量较大的场景下，因加载组件较多，易导致滚动卡顿和掉帧。因此，开发完成后需进行性能检测。开发者可使用[应用与元服务体检](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-app-analyzer)工具AppAnalyzer，或通过性能调优工具DevEco Profile的[Frame分析](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-insight-session-frame)功能进行性能测试。
 
   本示例通过Frame分析结果显示，卡顿帧数为0，滚动过程流畅，无卡顿或掉帧现象。如下图所示：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/NzT_fXHaRe2quCjKT6ws5g/zh-cn_image_0000002652957856.png?HW-CC-KV=V1&HW-CC-Date=20260730T072735Z&HW-CC-Expire=86400&HW-CC-Sign=2DAAE50BB1F7DEF7106F18E80F203F4201D1288ACD7A92CEF964284B193EC0E5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/u1hKH28STyu0NVXMNMDYhg/zh-cn_image_0000002652957856.png?HW-CC-KV=V1&HW-CC-Date=20260911T072301Z&HW-CC-Expire=86400&HW-CC-Sign=78144AC264ECA76E17A05E65E025B86AB3BFB7FAE539C39D23CC212DC959AC7E)
 
 
   
 
-  #### 示例代码
+  ## 示例代码
 
   
 [基于List和Scroller实现双向滚动列表](https://gitcode.com/HarmonyOS_Samples/DualScrollList)

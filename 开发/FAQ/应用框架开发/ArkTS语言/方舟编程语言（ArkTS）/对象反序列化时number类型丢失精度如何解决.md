@@ -31,7 +31,7 @@ struct BigIntDemo {
       Column() {
         Button(this.str)
           .onClick(() => {
-            console.info((numberObj as object)?.["largeNumber"]); // 1122333444455556666677777888889
+            console.info((numberObj as object)?.["largeNumber"]);<em> // 1122333444455556666677777888889</em>
           })
       }
       .width('100%')

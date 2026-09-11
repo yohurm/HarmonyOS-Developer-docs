@@ -35,7 +35,7 @@
 ```text
 @Builder
 function bubbleBackgroundOne() {
-  Image($r('app.media.backgroundcolorgray')) // 此处'backgroundcolorgray'仅作示例，请开发者自行替换。
+  Image($r('app.media.backgroundcolorgray')) <em>// 此处'backgroundcolorgray'仅作示例，请开发者自行替换。</em>
     .objectFit(ImageFit.Fill)
     .width('100%')
     .height('100%');
@@ -57,7 +57,7 @@ struct StyledStringDemo {
   build() {
     Row() {
       Column() {
-        // 显示属性字符串
+    <em>    // 显示属性字符串</em>
         Text(undefined, { controller: this.controller1 });
         Text(undefined, { controller: this.controller2 });
         Text('测试')

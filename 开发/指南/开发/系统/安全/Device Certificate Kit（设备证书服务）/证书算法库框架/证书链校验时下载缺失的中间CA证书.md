@@ -1,6 +1,6 @@
 # 证书链校验时下载缺失的中间CA证书
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/allow-download-intermediate-cert
 
@@ -9,7 +9,7 @@
 以创建X.509证书链为例，完成证书链对象的创建，创建过程校验时允许下载缺失的中间证书。
 
 
-#### 开发步骤
+## 开发步骤
 1. 导入[证书模块](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cert)。
 
   

@@ -1,10 +1,14 @@
 # 批量转换teamPlayerId
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservice-teamplayerid
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 功能介绍
+## 功能介绍
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 华为开发者联盟上的游戏从一个账号转移到另一个账号进行维护，该游戏资产归属于转入方。
  
@@ -12,7 +16,10 @@
  
   
 
-#### 接口约束
+## 接口约束
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 - 调用此接口前，请确保转出方/转入方已完成[游戏转移](https://developer.huawei.com/consumer/cn/doc/app/game-center-transferring-0000001194325290)，否则均将无权转换teamPlayerId。
 - 单次接口请求最多可以获取1000条teamPlayerId数据。
@@ -21,7 +28,10 @@
  
   
 
-#### 接口原型
+## 接口原型
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 - **承载协议**：HTTPS POST
 - **接口方向**：开发者服务器->华为游戏服务器
@@ -43,12 +53,19 @@
  
   
 
-#### 请求参数
+## 请求参数
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### Header
+### Header
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 参数名称 | 是否必选 | 类型 | 参数说明 |
 | --- | --- | --- | --- |
 | client_id | 是 | String | 用于鉴权的客户端ID，获取方法参考创建API客户端。 |
@@ -58,10 +75,14 @@
  
   
 
-#### Body
+### Body
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 请求Body中使用JSON格式携带更相关信息，参数如下表所示。
   
+
 | 参数名称 | 是否必选 | 类型 | 参数说明 |
 | --- | --- | --- | --- |
 | srcCpId | 是 | Long | 游戏转出方的开发者Developer ID，获取方法参见查看应用信息。 |
@@ -71,7 +92,10 @@
  
   
 
-#### 请求示例
+## 请求示例
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```json
 POST /api/jas/open/players/player-accounts/team-player/convert HTTP/1.1
@@ -93,8 +117,12 @@ Authorization: Bearer ******
  
   
 
-#### 响应参数
+## 响应参数
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 参数名称 | 是否必选 | 类型 | 参数说明 |
 | --- | --- | --- | --- |
 | ret | 是 | JosRet | 包含返回码及描述信息的JSON字符串，格式为{"code":retcode, "msg": "description"}，retcode为返回码，description为返回码描述信息。 |
@@ -104,23 +132,35 @@ Authorization: Bearer ******
 - JosRet
 
 | 参数名称 | 是否必选 | 类型 | 参数说明 |
+
 | --- | --- | --- | --- |
+
 | code | 是 | int | 单次接口请求任务的结果返回码： 0：请求成功。 -1：请求失败。 3002：鉴权错误。 |
+
 | msg | 否 | String | 失败时的描述信息。 |
 - ConvertTeamPlayerIdItem
 
 | 参数名称 | 是否必选 | 类型 | 参数说明 |
+
 | --- | --- | --- | --- |
+
 | srcCpId | 是 | Long | 游戏转出方的开发者Developer ID。 |
+
 | srcTeamPlayerId | 是 | String | 转让前，游戏的玩家标识teamPlayerId。 |
+
 | dstCpId | 是 | Long | 游戏转入方的开发者Developer ID。 |
+
 | dstTeamPlayerId | 是 | String | 转让后，游戏的玩家标识teamPlayerId。 |
+
 | errCode | 是 | int | 查询单个teamPlayerId的结果返回码： 0：成功。 -1：失败。 |
 
  
   
 
-#### 响应示例
+## 响应示例
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```json
 Content-Type: application/json; charset=utf-8
@@ -143,7 +183,10 @@ Content-Type: application/json; charset=utf-8
  
   
 
-#### 调用示例
+## 调用示例
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```json
 Java
@@ -294,7 +337,7 @@ public function batch_convert_teamPlayerIds(string $domain, string $client_id, s
 ```json
 Python
 from getToken import *
-class BatchConvertTeamPlayerIdsSolution:
+class BatchGetOpenIdsSolution:
     @staticmethod
     def batch_convert_team_player_ids(domain, client_id, access_token, team_player_id, app_id, src_cp_id, dst_cp_id):
         url = domain + '/api/jas/open/players/player-accounts/team-player/convert'

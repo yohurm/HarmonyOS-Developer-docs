@@ -1,6 +1,6 @@
 # spatialRender
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/spatial-recon-spatialrender
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -10,7 +10,8 @@ spatialRender模块主要用于渲染3DGS数据，展示3DGS渲染场景。
 **起始版本：** 6.0.1(21)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -20,11 +21,14 @@ import { spatialRender } from '@kit.SpatialReconKit';
  
   
 
-#### GSNode
+## GSNode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 表示一个3DGS（3D Gaussian Splatting）渲染对象，帮助开发者操作3DGS模型。GSNode类继承自[Node](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-scene-nodes#node)，使用方法请参考Node。
+ 
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
  
 **系统能力**：SystemCapability.Graphics.SpatialRender
  
@@ -61,7 +65,8 @@ if (renderContext != null) {
  
   
 
-#### TiledGSNode
+## TiledGSNode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -69,7 +74,8 @@ if (renderContext != null) {
  
   
 
-#### setCamera
+### setCamera
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -77,14 +83,15 @@ setCamera(camera: Camera): void
  
 设置驱动分块选择的相机。
  
-**系统能力**：SystemCapability.Graphics.SpatialRender
- 
 **模型约束：** 此模块的接口仅可在Stage模型下使用。
+ 
+**系统能力**：SystemCapability.Graphics.SpatialRender
  
 **起始版本：** 26.0.0
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | camera | Camera | 是 | 驱动分块选择的相机。默认使用渲染当前场景的相机，可以设置其他的相机。 |
@@ -143,7 +150,8 @@ if (renderContext != null) {
  
   
 
-#### setTileRequestCallback
+### setTileRequestCallback
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -159,6 +167,7 @@ setTileRequestCallback(callback: GSTileRequestCallback | null): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | GSTileRequestCallback | 是 | 回调函数。当渲染器请求瓦片时触发成功，返回渲染器向应用请求的GSTile瓦片列表；否则为错误对象。 |
@@ -224,7 +233,8 @@ if (renderContext != null) {
  
   
 
-#### notifyTileReady
+### notifyTileReady
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -240,6 +250,7 @@ notifyTileReady(tile: GSTile): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | tile | GSTile | 是 | 数据可用的瓦片。 |
@@ -310,18 +321,21 @@ if (renderContext != null) {
  
   
 
-#### GSPlugin
+## GSPlugin
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 GSPlugin类封装了与3DGS相关的内容，包括3DGS插件ID和3DGS模型加载接口，帮助开发者实现对3DGS的自定义功能。
+ 
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
  
 **系统能力**：SystemCapability.Graphics.SpatialRender
  
 **起始版本：** 6.0.1(21)
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/IRtf2-MuQouCH1ewFA1z5g/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260813T095529Z&HW-CC-Expire=86400&HW-CC-Sign=414CE2AAD027C4882F34413AFD22E9F5378496921B43D586F806F0B38D77B963)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/cGSR4SZmReGNkAjssHFZsw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T073056Z&HW-CC-Expire=86400&HW-CC-Sign=A2BAD580A125018C5A5FDC61F0317BC6219F096246F0F21B7CC5CB182093DDA1)
  
  
 调用GSPlugin接口前，必须先加载对应的插件ID，否则会出现未定义的行为。
@@ -344,28 +358,33 @@ if (renderContext != null) {
  
   
 
-#### 常量
+### 常量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
+ 
 **系统能力**：SystemCapability.Graphics.SpatialRender
  
 **起始版本：** 6.0.1(21)
   
-| 名称 | 类型 | 值 | 说明 |
-| --- | --- | --- | --- |
-| PLUGIN_ID | string | 1450021d-c57f-d9ff-7770-c24fb3f3321c | 表示3DGS插件ID。使用前需调用renderContext.loadPlugin(GSPlugin.PLUGIN_ID)加载插件。 |
-| RETRO_EFFECT_ID | string | a30c8a84-fbdc-4dbc-9511-5918f2ccbe49 | 表示复古效果ID。需先加载PLUGIN_ID，然后作为EffectParameters.effectId传入createEffect()创建效果实例。 |
-| COMIC_EFFECT_ID | string | f298d3c7-6215-4e7b-9c34-bd87a8d4a276 | 表示漫画效果ID。需先加载PLUGIN_ID，然后作为EffectParameters.effectId传入createEffect()创建效果实例。 |
-| OBRA_DINN_EFFECT_ID | string | 7a9c3b62-1f45-4e89-b6d7-3cd2a2e1a568 | 表示黑白bit效果ID。需先加载PLUGIN_ID，然后作为EffectParameters.effectId传入createEffect()创建效果实例。 |
-| COLOR_EDITING_EFFECT_ID | string | e026c2b8-b4ee-4c07-ab19-d77b181105e0 | 表示颜色编辑效果ID。需先加载PLUGIN_ID，然后作为EffectParameters.effectId传入createEffect()创建效果实例。 |
+
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| PLUGIN_ID | string | 表示3DGS插件ID。使用前需调用renderContext.loadPlugin(GSPlugin.PLUGIN_ID)加载插件。 |
+| RETRO_EFFECT_ID | string | 表示复古效果ID。需先加载PLUGIN_ID，然后作为EffectParameters.effectId传入createEffect创建效果实例。 |
+| COMIC_EFFECT_ID | string | 表示漫画效果ID。需先加载PLUGIN_ID，然后作为EffectParameters.effectId传入createEffect创建效果实例。 |
+| OBRA_DINN_EFFECT_ID | string | 表示黑白bit效果ID。需先加载PLUGIN_ID，然后作为EffectParameters.effectId传入createEffect创建效果实例。 |
+| COLOR_EDITING_EFFECT_ID | string | 表示颜色编辑效果ID。需先加载PLUGIN_ID，然后作为EffectParameters.effectId传入createEffect创建效果实例。 |
  
  
 开发者不需要感知各ID的具体值，推荐直接使用字符串变量。
  
   
 
-#### loadGSNode
+### loadGSNode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -373,12 +392,15 @@ static loadGSNode(scene: Scene, params: GSImportSettings, parent?: Node): Promis
  
 加载3DGS模型，使用Promise异步回调。
  
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
+ 
 **系统能力**：SystemCapability.Graphics.SpatialRender
  
 **起始版本：** 6.0.1(21)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scene | Scene | 是 | 指定在应用界面想要显示的场景，是ArkGraphics 3D基础模块。建议通过调用Scene.load来获取。 |
@@ -388,6 +410,7 @@ static loadGSNode(scene: Scene, params: GSImportSettings, parent?: Node): Promis
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;GSNode&gt; | Promise对象，返回3DGS模型对应的GSNode。 |
@@ -419,7 +442,8 @@ if (renderContext != null) {
  
   
 
-#### loadTiledGSNode
+### loadTiledGSNode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -427,14 +451,15 @@ static loadTiledGSNode(scene: Scene, params: TiledGSImportSettings, parent?: Nod
  
 加载分块3DGS模型，使用Promise异步回调。
  
-**系统能力**：SystemCapability.Graphics.SpatialRender
- 
 **模型约束：** 此模块的接口仅可在Stage模型下使用。
+ 
+**系统能力**：SystemCapability.Graphics.SpatialRender
  
 **起始版本：** 26.0.0
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scene | Scene | 是 | 指定在应用界面想要显示的场景，是ArkGraphics 3D基础模块。建议通过调用Scene.load来获取。 |
@@ -444,6 +469,7 @@ static loadTiledGSNode(scene: Scene, params: TiledGSImportSettings, parent?: Nod
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;TiledGSNode&gt; | Promise对象，返回分块3DGS模型对应的TiledGSNode。 |
@@ -473,16 +499,20 @@ if (renderContext != null) {
  
   
 
-#### GSImportSettings
+## GSImportSettings
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 GSImportSettings类封装了加载3DGS模型的设置，包括模型路径和数据在文件中的偏移量。
  
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
+ 
 **系统能力**：SystemCapability.Graphics.SpatialRender
  
 **起始版本：** 6.0.1(21)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | uri | string | 否 | 否 | 3DGS模型的文件路径。传入空字符串将导致加载失败。 |
@@ -517,18 +547,20 @@ if (renderContext != null) {
  
   
 
-#### TiledGSImportSettings
+## TiledGSImportSettings
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 TiledGSImportSettings类封装了加载分块3DGS模型的设置，包含清单文件路径。
  
-**系统能力**：SystemCapability.Graphics.SpatialRender
- 
 **模型约束：** 此模块的接口仅可在Stage模型下使用。
+ 
+**系统能力**：SystemCapability.Graphics.SpatialRender
  
 **起始版本：** 26.0.0
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | uri | string | 否 | 否 | 分块3DGS模型清单文件（JSON）的路径，用于描述瓦片层级结构。传入空字符串将导致加载失败。 |
@@ -560,16 +592,20 @@ if (renderContext != null) {
  
   
 
-#### RetroEffectParams
+## RetroEffectParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 RetroEffect参数，该类型为字符串枚举，该枚举值可在[Effect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-scene-resources#effect21)的[getPropertyValue](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-scene-resources#getpropertyvalue23)和[setPropertyValue](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-scene-resources#setpropertyvalue23)方法中使用，用于声明属性的名称，以获取属性的当前值或更新属性的值。
  
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
+ 
 **系统能力：** SystemCapability.Graphics.SpatialRender
  
 **起始版本：** 6.1.0(23)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | COLOR_NUM | 'colorNum' | RetroEffect中colorNum属性的名称。 属性对应取值类型为number。该属性表示使用多少种颜色来作为颜色抖动。通常属性值越大图像质量越高、值越小复古风格越重。属性取值范围大于0，默认值8。 |
@@ -611,16 +647,20 @@ if (renderContext != null) {
  
   
 
-#### RetroEffect
+## RetroEffect
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 RetroEffect接口封装了复古风格的效果参数，可实现自定义的复古风格。该类继承自[Effect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-scene-resources#effect21)。
  
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
+ 
 **系统能力**：SystemCapability.Graphics.SpatialRender
  
 **起始版本：** 6.0.1(21)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | colorNum | number | 否 | 否 | 使用多少种颜色来作为颜色抖动。通常值越大图像质量越高、值越小复古风格越重。取值范围大于0。默认值8。 |
@@ -658,16 +698,20 @@ if (renderContext != null) {
  
   
 
-#### ComicEffectParams
+## ComicEffectParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ComicEffect参数，该类型为字符串枚举，该枚举值可在[Effect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-scene-resources#effect21)的[getPropertyValue](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-scene-resources#getpropertyvalue23)和[setPropertyValue](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-scene-resources#setpropertyvalue23)方法中使用，用于声明属性的名称，以获取属性的当前值或更新属性的值。
  
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
+ 
 **系统能力：** SystemCapability.Graphics.SpatialRender
  
 **起始版本：** 6.1.0(23)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | LINE_THRESHOLD | 'lineThreshold' | ComicEffect中lineThreshold属性的名称。 属性对应取值类型为number。该属性表示用来判定像素为轮廓线的阈值，图像梯度大于该阈值的像素会被判定为轮廓线。该属性取值范围[0, 1]，默认值为0.2。 |
@@ -707,16 +751,20 @@ if (renderContext != null) {
  
   
 
-#### ComicEffect
+## ComicEffect
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ComicEffect接口封装了漫画风格的效果的参数，可实现自定义的漫画风格。该类继承自[Effect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-scene-resources#effect21)。
  
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
+ 
 **系统能力**：SystemCapability.Graphics.SpatialRender
  
 **起始版本：** 6.0.1(21)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | lineThreshold | number | 否 | 否 | 判定像素为轮廓线的阈值。图像梯度（像素与相邻像素的明暗差异。差异越大，梯度值越大，该像素越可能是轮廓线）大于该阈值的像素会被判定为轮廓线。取值范围[0, 1] ，默认值0.2。 |
@@ -752,16 +800,20 @@ if (renderContext != null) {
  
   
 
-#### ObraDinnEffectParams
+## ObraDinnEffectParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ObraDinnEffect参数，该类型为字符串枚举，该枚举值可在[Effect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-scene-resources#effect21)的[getPropertyValue](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-scene-resources#getpropertyvalue23)和[setPropertyValue](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-scene-resources#setpropertyvalue23)方法中使用，用于声明属性的名称，以获取属性的当前值或更新属性的值。
  
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
+ 
 **系统能力：** SystemCapability.Graphics.SpatialRender
  
 **起始版本：** 6.1.0(23)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NOISE_STRENGTH | 'noiseStrength' | ObraDinnEffect中的noiseStrength属性的名称。 属性对应取值类型为number。该属性表示选择哪些像素用来颜色抖动。该属性可以起到平滑边缘的效果，加大噪声强度会导致边缘更模糊。属性取值范围[0, 1]，默认值0.3。 |
@@ -803,16 +855,20 @@ if (renderContext != null) {
  
   
 
-#### ObraDinnEffect
+## ObraDinnEffect
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ObraDinnEffect接口封装了bit（黑白点阵）风格的效果参数，可实现自定义的bit风格。该类继承自[Effect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-scene-resources#effect21)。
  
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
+ 
 **系统能力**：SystemCapability.Graphics.SpatialRender
  
 **起始版本：** 6.0.1(21)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | noiseStrength | number | 否 | 否 | 选择哪些像素用来颜色抖动。可以起到平滑边缘的效果。加大噪声强度会导致边缘更模糊。取值范围[0, 1]，默认值0.3。 |
@@ -850,16 +906,20 @@ if (renderContext != null) {
  
   
 
-#### ColorEditingEffectParams
+## ColorEditingEffectParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ColorEditingEffect参数，该类型为字符串枚举，该枚举值可在[Effect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-scene-resources#effect21)的[getPropertyValue](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-scene-resources#getpropertyvalue23)和[setPropertyValue](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-scene-resources#setpropertyvalue23)方法中使用，用于声明属性的名称，以获取属性的当前值或更新属性的值。
  
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
+ 
 **系统能力：** SystemCapability.Graphics.SpatialRender
  
 **起始版本：** 6.1.0(23)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | EXPOSURE | 'exposure' | ColorEditingEffect中的exposure属性的名称。 属性对应取值类型为number。该属性表示图像的曝光度。属性推荐取值范围[-5, 5]，默认值0.0。 |
@@ -903,16 +963,20 @@ if (renderContext != null) {
  
   
 
-#### ColorEditingEffect
+## ColorEditingEffect
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ColorEditingEffect接口封装了颜色编辑风格的参数，可帮助开发者实现自定义的图像风格。该类继承自[Effect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-scene-resources#effect21)。
  
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
+ 
 **系统能力**：SystemCapability.Graphics.SpatialRender
  
 **起始版本：** 6.0.1(21)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | exposure | number | 否 | 否 | 图像的曝光度，推荐取值范围[-5，5]，默认值0.0。 |
@@ -952,7 +1016,8 @@ if (renderContext != null) {
  
   
 
-#### GSTile
+## GSTile
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -964,6 +1029,7 @@ if (renderContext != null) {
  
 **起始版本：** 26.0.0
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | uri | string | 否 | 否 | 包含3D高斯瓦片数据的.sog文件的Uri。 |
@@ -1022,7 +1088,8 @@ if (renderContext != null) {
  
   
 
-#### GSTileRequestCallback
+## GSTileRequestCallback
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1038,6 +1105,7 @@ type GSTileRequestCallback = (tiles: GSTile[]) => void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | tiles | GSTile[] | 是 | 渲染器向应用请求的瓦片列表。 |

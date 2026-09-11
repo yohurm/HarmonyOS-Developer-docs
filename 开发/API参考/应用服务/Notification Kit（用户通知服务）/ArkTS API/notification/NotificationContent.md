@@ -1,24 +1,26 @@
 # NotificationContent
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-notification-notificationcontent
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-NotificationContent中定义通知的内容结构，提供多种通知类型的内容描述接口。当应用需要发布通知时，可根据通知的展示需求（如普通文本、长文本、多行文本、图片、实况窗），选择对应的内容类型接口构造通知内容。
+NotificationContent中定义通知的内容结构，提供多种通知类型的内容描述接口。当应用需要发布通知时，可根据通知的展示需求（如普通文本、长文本、多行文本、图片、实况窗），选择对应的内容类型接口构造[通知内容](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-content通知内容)。
 
 > [!NOTE]
 > 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 
 
-#### NotificationContent
+## NotificationContent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-通知内容。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+[通知内容](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-content通知内容)。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -33,13 +35,15 @@ NotificationContent中定义通知的内容结构，提供多种通知类型的�
 
 
 
-#### NotificationBasicContent
+## NotificationBasicContent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述普通文本通知，用于展示标题和正文内容，是其他通知类型的基础内容结构。其他通知类型（如长文本、多行文本、图片、实况窗）均继承本接口，在此基础上扩展各自特有字段。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -51,17 +55,19 @@ NotificationContent中定义通知的内容结构，提供多种通知类型的�
 
 
 
-#### NotificationLongTextContent
+## NotificationLongTextContent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述长文本通知。继承自[NotificationBasicContent](#notificationbasiccontent)。
 
 > [!NOTE]
-> 当该类型通知与其他通知形成组通知时，该通知类型的展示效果默认为折叠态，显示的标题与正文为该类型继承的 普通文本 中的title与text。 当该类型通知单独展示，没有与其他通知形成组通知时，该通知类型的展示效果默认为展开态，显示的标题为展开时的标题expandedTitle，显示的正文内容为长文本longText。 用户点击成组展示的通知，查看各个通知详情时，该通知的展示效果变化为展开态。 实际显示效果依赖于设备能力和通知中心UI样式。
+> 当该类型通知与其他通知形成 组通知 时，该通知类型的展示效果默认为折叠态，显示的标题与正文为该类型继承的 普通文本 中的title与text。 当该类型通知单独展示，没有与其他通知形成组通知时，该通知类型的展示效果默认为展开态，显示的标题为展开时的标题expandedTitle，显示的正文内容为长文本longText。 用户点击成组展示的通知，查看各个通知详情时，该通知的展示效果变化为展开态。 实际显示效果依赖于设备能力和 通知中心 UI样式。
 
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -72,17 +78,19 @@ NotificationContent中定义通知的内容结构，提供多种通知类型的�
 
 
 
-#### NotificationMultiLineContent
+## NotificationMultiLineContent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述多行文本通知。继承自[NotificationBasicContent](#notificationbasiccontent)。
 
 > [!NOTE]
-> 当该类型通知与其他通知形成组通知时，该通知类型的展示效果默认为折叠态，显示的标题与正文为该类型继承的 普通文本 中的title与text。 当该类型通知单独展示，没有与其他通知形成组通知时，该通知类型的展示效果默认为展开态，显示的标题为展开时的标题longTitle，多行文本内容lines作为正文多行显示。 用户点击成组展示的通知，查看各个通知详情时，该通知的展示效果变化为展开态。 实际显示效果依赖于设备能力和通知中心UI样式。
+> 当该类型通知与其他通知形成 组通知 时，该通知类型的展示效果默认为折叠态，显示的标题与正文为该类型继承的 普通文本 中的title与text。 当该类型通知单独展示，没有与其他通知形成组通知时，该通知类型的展示效果默认为展开态，显示的标题为展开时的标题longTitle，多行文本内容lines作为正文多行显示。 用户点击成组展示的通知，查看各个通知详情时，该通知的展示效果变化为展开态。 实际显示效果依赖于设备能力和 通知中心 UI样式。
 
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -93,38 +101,42 @@ NotificationContent中定义通知的内容结构，提供多种通知类型的�
 
 
 
-#### NotificationPictureContent
+## NotificationPictureContent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述附有图片的通知。继承自[NotificationBasicContent](#notificationbasiccontent)。
 
 > [!NOTE]
-> 当该类型通知与其他通知形成组通知时，该通知类型的展示效果默认为折叠态，显示的标题与正文为该类型继承的 普通文本 中的title与text。 当该类型通知单独展示，没有与其他通知形成组通知时，该通知类型的展示效果默认为展开态，显示的标题为展开时的标题expandedTitle，显示的正文为该类型继承的普通文本中的text+该类型的图片内容picture。 用户点击成组展示的通知，查看各个通知详情时，该通知的展示效果变化为展开态。 实际显示效果依赖于设备能力和通知中心UI样式。
+> 当该类型通知与其他通知形成 组通知 时，该通知类型的展示效果默认为折叠态，显示的标题与正文为该类型继承的 普通文本 中的title与text。 当该类型通知单独展示，没有与其他通知形成组通知时，该通知类型的展示效果默认为展开态，显示的标题为展开时的标题expandedTitle，显示的正文为该类型继承的普通文本中的text+该类型的图片内容picture。 用户点击成组展示的通知，查看各个通知详情时，该通知的展示效果变化为展开态。 实际显示效果依赖于设备能力和 通知中心 UI样式，详情请参考 图片预览通知 。
 
 
 **系统能力**：SystemCapability.Notification.Notification
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | expandedTitle | string | 否 | 否 | 通知展开时的标题。 不可为空字符串，大小不超过1024字节，超出部分会被截断。 |
-| picture | image.PixelMap | 否 | 否 | 通知展开后显示的图片内容。 图标像素的总字节数不能超过2MB（图标像素的总字节数通过getPixelBytesNumber获取）。 |
+| picture | image.PixelMap | 否 | 否 | 通知展开后显示的右侧图标。 图标像素的总字节数不能超过2MB（图标像素的总字节数通过getPixelBytesNumber获取）。 |
 | briefText | string | 否 | 否 | 通知概要内容，是对通知内容的总结，不在通知中心中显示。 不可为空字符串，大小不超过1024字节，超出部分会被截断。 |
 
 
 
 
-#### NotificationSystemLiveViewContent
+## NotificationSystemLiveViewContent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-描述系统实况窗通知内容，用于在实况窗中展示实时状态信息。不支持三方应用直接创建该类型通知，可以由系统代理创建系统实况窗类型通知后，三方应用发布同ID的通知来更新指定内容。继承自[NotificationBasicContent](#notificationbasiccontent)。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+描述[系统实况窗](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#system-live-view系统实况窗)[通知内容](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-content通知内容)，用于在实况窗中展示实时状态信息。不支持三方应用直接创建该类型通知，可以由系统代理创建系统实况窗类型通知后，三方应用发布同ID的通知来更新指定内容。继承自[NotificationBasicContent](#notificationbasiccontent)。
 
 > [!NOTE]
-> 实际显示效果依赖于设备能力和通知中心UI样式。
+> 实际显示效果依赖于设备能力和 通知中心 UI样式。
 
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -137,17 +149,19 @@ NotificationContent中定义通知的内容结构，提供多种通知类型的�
 
 
 
-#### NotificationCapsule11+
+## NotificationCapsule11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-描述通知胶囊，用于在实况窗中展示胶囊形态。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+描述[通知胶囊](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-capsule通知胶囊)，用于在实况窗中展示胶囊形态。
 
 > [!NOTE]
-> 实际显示效果依赖于设备能力和通知中心UI样式。
+> 实际显示效果依赖于设备能力和 通知中心 UI样式。
 
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -158,17 +172,19 @@ NotificationContent中定义通知的内容结构，提供多种通知类型的�
 
 
 
-#### NotificationButton11+
+## NotificationButton11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-描述通知按钮，用于在实况窗中展示可交互的按钮。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+描述[通知按钮](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-button通知按钮)，用于在实况窗中展示可交互的按钮。
 
 > [!NOTE]
-> 实际显示效果依赖于设备能力和通知中心UI样式。
+> 实际显示效果依赖于设备能力和 通知中心 UI样式。
 
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -179,17 +195,19 @@ NotificationContent中定义通知的内容结构，提供多种通知类型的�
 
 
 
-#### NotificationTime11+
+## NotificationTime11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述通知计时信息。
 
 > [!NOTE]
-> 实际显示效果依赖于设备能力和通知中心UI样式。
+> 实际显示效果依赖于设备能力和 通知中心 UI样式。
 
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -213,17 +231,19 @@ time: {
 
 
 
-#### NotificationProgress11+
+## NotificationProgress11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-描述通知进度，用于在实况窗中展示进度条信息。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+描述[通知进度](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-progress通知进度)，用于在实况窗中展示进度条信息。
 
 > [!NOTE]
-> 实际显示效果依赖于设备能力和通知中心UI样式。
+> 实际显示效果依赖于设备能力和 通知中心 UI样式。
 
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

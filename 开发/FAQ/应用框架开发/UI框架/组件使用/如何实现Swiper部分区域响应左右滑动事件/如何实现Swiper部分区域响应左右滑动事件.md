@@ -1,24 +1,16 @@
 # 如何实现Swiper部分区域响应左右滑动事件
 
-更新时间：2026-06-26 07:47:42
+更新时间：2026-08-19 01:11:38
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1581
 
-#### 问题现象
+## 问题现象
 
-Swiper设置居底高度自适应后，希望上方区域不再响应Swiper的左右滑动事件。
+Swiper设置子组件底部高度自适应后，希望上方区域不再响应Swiper的左右滑动事件。
  
  
 
-#### 效果预览
-
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/7qfQvzc3RYSnrjoH4KNbmg/zh-cn_image_0000002658849559.png?HW-CC-KV=V1&HW-CC-Date=20260811T005807Z&HW-CC-Expire=86400&HW-CC-Sign=F23A275F745B4F30AE4F26DD3B968B3DB7B8A005E7BFDA1ECF5FE1AB36D1B7C9)
-
- 
- 
-
-#### 背景知识
+## 背景知识
 
 - [Swiper：](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-swiper)滑块视图容器，提供子组件滑动轮播显示的能力。
 - [onAreaChange](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-component-area-change-event#onareachange)组件区域变化时触发该回调。仅会响应由布局变化所导致的组件大小、位置发生变化时的回调。返回值类型为[Area](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#area8)。
@@ -27,7 +19,7 @@ Swiper设置居底高度自适应后，希望上方区域不再响应Swiper的�
  
  
 
-#### 解决方案
+## 解决方案
 
 实现思路如下：
  1. Swiper组件实现了滑动页面切换功能，包含多个不同高度的页面项。
@@ -47,7 +39,7 @@ struct SwiperDemo {
       '我是第2个item，\n' + '占2行',
       '我是\n' + '第3个item，\n' + '占3行',
     ];
-  @State map: Map<ESObject, number> = new Map(); // 存储Swiper自适应内容区域距离屏幕顶部的距离，用于设置触摸热区
+  @State map: Map<ESObject, number> = new Map(); <em>// 存储Swiper自适应内容区域距离屏幕顶部的距离，用于设置触摸热区</em>
   @State currentIndex: number = 0;
   @State region: Rectangle = {
     x: 0,
@@ -85,13 +77,13 @@ struct SwiperDemo {
               console.info('item', item);
               console.info('oldValue', oldValue);
               if (!this.map.get(index.toString())) {
-                // onAreaChange回调监听页面自适应高度变化，存储Swiper自适应内容区域距离屏幕顶部的距离。
+            <em>    // onAreaChange回调监听页面自适应高度变化，存储Swiper自适应内容区域距离屏幕顶部的距离。</em>
                 this.map.set(index.toString(), newValue.position.y as number);
                 this.region = {
                   width: '100%',
                   height: '100%',
                   x: 0,
-                  y: this.map.get(this.currentIndex.toString()) as number // 触摸热区的范围
+                  y: this.map.get(this.currentIndex.toString()) as number <em>// 触摸热区的范围</em>
                 };
               }
             });
@@ -103,7 +95,7 @@ struct SwiperDemo {
       }
       .onChange((index: number) => {
         this.currentIndex = index;
-        // Swiper切换过程中动态设置触摸响应区域
+      <em>  // Swiper切换过程中动态设置触摸响应区域</em>
         this.region = {
           width: '100%',
           height: '100%',
@@ -129,3 +121,8 @@ struct SwiperDemo {
   }
 }
 ```
+ 
+效果图如下：
+ 
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/yXKCAYmDQK2XkFnqySfFaw/zh-cn_image_0000002712946877.png?HW-CC-KV=V1&HW-CC-Date=20260911T072743Z&HW-CC-Expire=86400&HW-CC-Sign=B5381DBFA0B2005A820A7977B10E503F46DF777E6979E40F8C7C169ECD782EB2)

@@ -54,7 +54,7 @@ struct Index {
 
   testClick() {
     try {
-      let i: number = this.doublePages[1]; // index out-of-bounds
+      let i: number = this.doublePages[1]; <em>// index out-of-bounds</em>
       console.info(`i is ${i}`);
     } catch (e) {
       console.error('error: ', e);
@@ -90,7 +90,7 @@ export default class EntryAbility extends UIAbility {
       }
     };
     try {
-      // 注册错误观测器。注册后可以捕获到应用产生的js crash，应用崩溃时进程不会退出。
+     <em> // 注册错误观测器。注册后可以捕获到应用产生的js crash，应用崩溃时进程不会退出。</em>
       observerId = errorManager.on('error', observer1);
     } catch (paramError) {
       let code = (paramError as BusinessError).code;
@@ -123,7 +123,7 @@ export default class EntryAbility extends UIAbility {
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
-    // Main window is created, set main page for this ability
+  <em>  // Main window is created, set main page for this ability</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
     windowStage.loadContent('pages/Index', (err) => {
@@ -136,17 +136,17 @@ export default class EntryAbility extends UIAbility {
   }
 
   onWindowStageDestroy(): void {
-    // Main window is destroyed, release UI related resources
+   <em> // Main window is destroyed, release UI related resources</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
   }
 
   onForeground(): void {
-    // Ability has brought to foreground
+  <em>  // Ability has brought to foreground</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onForeground');
   }
 
   onBackground(): void {
-    // Ability has back to background
+ <em>   // Ability has back to background</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onBackground');
   }
 };

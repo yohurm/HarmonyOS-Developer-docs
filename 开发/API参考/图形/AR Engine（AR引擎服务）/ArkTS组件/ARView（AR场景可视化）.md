@@ -1,6 +1,6 @@
 # ARView（AR场景可视化）
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-api-component-arview
 **支持设备：** Phone | Tablet | TV
@@ -16,7 +16,8 @@
 **起始版本：** 5.1.0(18)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -26,7 +27,8 @@ import { ARView, arViewController } from '@kit.AREngine';
  
   
 
-#### ARView
+## ARView
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -42,6 +44,7 @@ import { ARView, arViewController } from '@kit.AREngine';
  
 **参数：**
   
+
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | context | arViewController.ARViewContext | 是 | @Require @State | ARView上下文、AR会话和场景的状态管理。 |
@@ -49,7 +52,8 @@ import { ARView, arViewController } from '@kit.AREngine';
  
   
 
-#### build
+### build
+
 
 **支持设备：** Phone | Tablet | TV
 

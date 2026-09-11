@@ -56,9 +56,9 @@ message($ENV{CMAKE_BUILD_TYPE} "ENV_CMAKE_BUILD_TYPE")
 
 6. hvigor默认配置的-DCMAKE_BUILD_TYPE参数。
 ```text
-// "debuggable"缺省或为true，或者buildMode为debug
+<em>//</em><em> "debuggable"缺省或为true，或者buildMode为debug</em>
 -DCMAKE_BUILD_TYPE=debug
-// "debuggable"为false，或者buildMode为release
+<em>// </em><em>"debuggable"为false，或者buildMode为release</em>
 -DCMAKE_BUILD_TYPE=release
 ```
 

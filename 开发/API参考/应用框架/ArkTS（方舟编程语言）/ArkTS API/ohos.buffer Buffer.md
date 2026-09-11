@@ -1,9 +1,9 @@
 # @ohos.buffer (Buffer)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-buffer
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Buffer对象用于表示固定长度的字节序列，是专门存放二进制数据的缓冲区。
  
@@ -14,9 +14,10 @@ Buffer对象用于表示固定长度的字节序列，是专门存放二进制�
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { buffer } from '@kit.ArkTS';
@@ -24,9 +25,10 @@ import { buffer } from '@kit.ArkTS';
  
   
 
-#### BufferEncoding
+## BufferEncoding
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type BufferEncoding = | 'ascii' | 'utf8' | 'utf-8' | 'utf16le' | 'ucs2' | 'ucs-2' | 'base64' | 'base64url' | 'latin1' | 'binary' | 'hex'
  
@@ -36,6 +38,7 @@ type BufferEncoding = | 'ascii' | 'utf8' | 'utf-8' | 'utf16le' | 'ucs2' | 'ucs-2
  
 **系统能力：** SystemCapability.Utils.Lang
   
+
 | 类型 | 说明 |
 | --- | --- |
 | 'ascii' | 表示ascii格式。 |
@@ -53,9 +56,10 @@ type BufferEncoding = | 'ascii' | 'utf8' | 'utf-8' | 'utf16le' | 'ucs2' | 'ucs-2
  
   
 
-#### buffer.alloc
+## buffer.alloc
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 alloc(size: number, fill?: string | Buffer | number, encoding?: BufferEncoding): Buffer
  
@@ -67,6 +71,7 @@ alloc(size: number, fill?: string | Buffer | number, encoding?: BufferEncoding):
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | size | number | 是 | 指定的Buffer对象长度，单位：字节。取值为正整数，最大值为2^32-1，即4294967295。 |
@@ -76,6 +81,7 @@ alloc(size: number, fill?: string | Buffer | number, encoding?: BufferEncoding):
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Buffer | 返回一个Buffer对象。 |
@@ -98,9 +104,10 @@ console.info(JSON.stringify(buf3)); // {"type":"Buffer","data":[104,101,108,108,
  
   
 
-#### buffer.allocUninitializedFromPool
+## buffer.allocUninitializedFromPool
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 allocUninitializedFromPool(size: number): Buffer
  
@@ -114,6 +121,7 @@ allocUninitializedFromPool(size: number): Buffer
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | size | number | 是 | 指定的Buffer对象长度，单位：字节。 |
@@ -121,6 +129,7 @@ allocUninitializedFromPool(size: number): Buffer
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Buffer | 未初始化的Buffer实例。 |
@@ -138,9 +147,10 @@ console.info(JSON.stringify(buf)); // {"type":"Buffer","data":[0,0,0,0,0,0,0,0,0
  
   
 
-#### buffer.allocUninitialized
+## buffer.allocUninitialized
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 allocUninitialized(size: number): Buffer
  
@@ -154,6 +164,7 @@ allocUninitialized(size: number): Buffer
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | size | number | 是 | 指定的Buffer对象长度，单位：字节。 |
@@ -161,6 +172,7 @@ allocUninitialized(size: number): Buffer
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Buffer | 未初始化的Buffer实例。 |
@@ -178,9 +190,10 @@ console.info(JSON.stringify(buf)); // {"type":"Buffer","data":[0,0,0,0,0,0,0,0,0
  
   
 
-#### buffer.byteLength
+## buffer.byteLength
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 byteLength(string: string | Buffer | TypedArray | DataView | ArrayBuffer | SharedArrayBuffer, encoding?: BufferEncoding): number
  
@@ -192,6 +205,7 @@ byteLength(string: string | Buffer | TypedArray | DataView | ArrayBuffer | Share
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | string | string \| Buffer \| TypedArray \| DataView \| ArrayBuffer \| SharedArrayBuffer | 是 | 要计算字节长度的字符串或其他数据对象。 |
@@ -200,6 +214,7 @@ byteLength(string: string | Buffer | TypedArray | DataView | ArrayBuffer | Share
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回指定字符串的字节数。 |
@@ -217,9 +232,10 @@ console.info(`${str}: ${str.length} characters, ${buffer.byteLength(str, 'utf-8'
  
   
 
-#### buffer.compare
+## buffer.compare
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 compare(buf1: Buffer | Uint8Array, buf2: Buffer | Uint8Array): -1 | 0 | 1
  
@@ -231,6 +247,7 @@ compare(buf1: Buffer | Uint8Array, buf2: Buffer | Uint8Array): -1 | 0 | 1
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | buf1 | Buffer \| Uint8Array | 是 | 待比较的第一个Buffer或Uint8Array实例。 |
@@ -239,6 +256,7 @@ compare(buf1: Buffer | Uint8Array, buf2: Buffer | Uint8Array): -1 | 0 | 1
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | -1 \| 0 \| 1 | 如果buf1与buf2相同，则返回0。 如果排序时buf1位于buf2之后，则返回1。 如果排序时buf1位于buf2之前，则返回-1。 |
@@ -259,9 +277,10 @@ console.info(Number(res).toString());
  
   
 
-#### buffer.concat
+## buffer.concat
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 concat(list: Buffer[] | Uint8Array[], totalLength?: number): Buffer
  
@@ -273,6 +292,7 @@ concat(list: Buffer[] | Uint8Array[], totalLength?: number): Buffer
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | list | Buffer[] \| Uint8Array[] | 是 | Buffer或Uint8Array实例数组，用于拼接合并创建新的Buffer对象。 |
@@ -281,6 +301,7 @@ concat(list: Buffer[] | Uint8Array[], totalLength?: number): Buffer
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Buffer | 返回新的Buffer对象。 |
@@ -290,6 +311,7 @@ concat(list: Buffer[] | Uint8Array[], totalLength?: number): Buffer
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "length" is out of range. It must be >= 0 and <= uint32 max. Received value is: [length] |
@@ -309,9 +331,10 @@ console.info(buf.toString('hex'));
  
   
 
-#### buffer.from
+## buffer.from
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 from(array: number[]): Buffer
  
@@ -323,6 +346,7 @@ from(array: number[]): Buffer
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | array | number[] | 是 | 由0~255范围内的整数组成的数组，用于根据数组内容创建新的Buffer对象。 |
@@ -330,6 +354,7 @@ from(array: number[]): Buffer
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Buffer | 新的Buffer对象。 |
@@ -347,9 +372,10 @@ console.info(buf.toString('hex'));
  
   
 
-#### buffer.from
+## buffer.from
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 from(arrayBuffer: ArrayBuffer | SharedArrayBuffer, byteOffset?: number, length?: number): Buffer
  
@@ -361,6 +387,7 @@ from(arrayBuffer: ArrayBuffer | SharedArrayBuffer, byteOffset?: number, length?:
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | arrayBuffer | ArrayBuffer \| SharedArrayBuffer | 是 | 用于创建Buffer的ArrayBuffer或SharedArrayBuffer对象。 |
@@ -370,6 +397,7 @@ from(arrayBuffer: ArrayBuffer | SharedArrayBuffer, byteOffset?: number, length?:
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Buffer | 返回一个Buffer对象，该对象与入参对象arrayBuffer共享相同的内存区域。 |
@@ -379,6 +407,7 @@ from(arrayBuffer: ArrayBuffer | SharedArrayBuffer, byteOffset?: number, length?:
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "[byteOffset/length]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [byteOffset/length] |
@@ -396,9 +425,10 @@ console.info(JSON.stringify(buf)); // {"type":"Buffer","data":[0,0]}
  
   
 
-#### buffer.from
+## buffer.from
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 from(buffer: Buffer | Uint8Array): Buffer
  
@@ -412,6 +442,7 @@ from(buffer: Buffer | Uint8Array): Buffer
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | buffer | Buffer \| Uint8Array | 是 | 用于创建新Buffer的Buffer或Uint8Array对象。 |
@@ -419,6 +450,7 @@ from(buffer: Buffer | Uint8Array): Buffer
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Buffer | 新的Buffer对象。 |
@@ -443,9 +475,10 @@ console.info("uint8Array:", uint8Array);
  
   
 
-#### buffer.from
+## buffer.from
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 from(object: Object, offsetOrEncoding: number | string, length: number): Buffer
  
@@ -457,6 +490,7 @@ from(object: Object, offsetOrEncoding: number | string, length: number): Buffer
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | object | Object | 是 | 支持Symbol.toPrimitive或valueOf()的对象，valueOf()或Symbol.toPrimitive的返回值支持string和ArrayBuffer等类型。 |
@@ -466,6 +500,7 @@ from(object: Object, offsetOrEncoding: number | string, length: number): Buffer
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Buffer | 返回新的Buffer对象。 |
@@ -482,9 +517,10 @@ console.info(JSON.stringify(buf)); // {"type":"Buffer","data":[116,104,105,115,3
  
   
 
-#### buffer.from
+## buffer.from
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 from(string: String, encoding?: BufferEncoding): Buffer
  
@@ -496,6 +532,7 @@ from(string: String, encoding?: BufferEncoding): Buffer
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | string | String | 是 | 要编码创建Buffer对象的字符串内容。 |
@@ -504,6 +541,7 @@ from(string: String, encoding?: BufferEncoding): Buffer
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Buffer | 返回新的Buffer对象。 |
@@ -525,9 +563,10 @@ console.info(buf2.toString());
  
   
 
-#### buffer.isBuffer
+## buffer.isBuffer
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isBuffer(obj: Object): boolean
  
@@ -539,6 +578,7 @@ isBuffer(obj: Object): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | obj | Object | 是 | 要判断是否为Buffer的对象。 |
@@ -546,6 +586,7 @@ isBuffer(obj: Object): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 如果obj是Buffer，则返回true，否则返回false。 |
@@ -575,9 +616,10 @@ console.info("result4 = " + result4);
  
   
 
-#### buffer.isEncoding
+## buffer.isEncoding
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isEncoding(encoding: string): boolean
  
@@ -589,6 +631,7 @@ isEncoding(encoding: string): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | encoding | string | 是 | 编码格式，支持的格式范围为BufferEncoding。 |
@@ -596,6 +639,7 @@ isEncoding(encoding: string): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 是支持的编码格式返回true，反之则返回false。 |
@@ -618,9 +662,10 @@ console.info(buffer.isEncoding('').toString());
  
   
 
-#### buffer.transcode
+## buffer.transcode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 transcode(source: Buffer | Uint8Array, fromEnc: string, toEnc: string): Buffer
  
@@ -632,6 +677,7 @@ transcode(source: Buffer | Uint8Array, fromEnc: string, toEnc: string): Buffer
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | source | Buffer \| Uint8Array | 是 | 待转码的Buffer或Uint8Array实例，提供需要重新编码的源数据。 |
@@ -641,6 +687,7 @@ transcode(source: Buffer | Uint8Array, fromEnc: string, toEnc: string): Buffer
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Buffer | 将当前编码转换成目标编码，并返回一个新的Buffer对象。 |
@@ -658,20 +705,23 @@ console.info("newBuf = " + newBuf.toString('ascii'));
  
   
 
-#### Buffer
+## Buffer
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
  
 **系统能力：** SystemCapability.Utils.Lang
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | length | number | 是 | 否 | Buffer对象的字节长度。 |
@@ -683,6 +733,7 @@ console.info("newBuf = " + newBuf.toString('ascii'));
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200013 | ${propertyName} cannot be set for the buffer that has only a getter. |
@@ -708,9 +759,10 @@ console.info(JSON.stringify(buf1.byteOffset));
  
   
 
-#### compare
+### compare
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 compare(target: Buffer | Uint8Array, targetStart?: number, targetEnd?: number, sourceStart?: number, sourceEnd?: number): -1 | 0 | 1
  
@@ -722,6 +774,7 @@ compare(target: Buffer | Uint8Array, targetStart?: number, targetEnd?: number, s
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | target | Buffer \| Uint8Array | 是 | 要比较的实例对象。 |
@@ -733,6 +786,7 @@ compare(target: Buffer | Uint8Array, targetStart?: number, targetEnd?: number, s
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回比较结果。-1：当前排列在目标前，0：当前与目标相同，1：当前排列在目标后。 |
@@ -742,6 +796,7 @@ compare(target: Buffer | Uint8Array, targetStart?: number, targetEnd?: number, s
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "[targetStart/targetEnd/sourceStart/sourceEnd]" is out of range. It must be >= 0 and <= [right range]. Received value is: [targetStart/targetEnd/sourceStart/sourceEnd] |
@@ -765,9 +820,10 @@ console.info(buf1.compare(buf2, 5, 6, 5).toString());
  
   
 
-#### copy
+### copy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 copy(target: Buffer| Uint8Array, targetStart?: number, sourceStart?: number, sourceEnd?: number): number
  
@@ -779,6 +835,7 @@ copy(target: Buffer| Uint8Array, targetStart?: number, sourceStart?: number, sou
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | target | Buffer \| Uint8Array | 是 | 要复制到的Buffer或Uint8Array实例。 |
@@ -789,6 +846,7 @@ copy(target: Buffer| Uint8Array, targetStart?: number, sourceStart?: number, sou
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 复制的字节总长度。 |
@@ -798,6 +856,7 @@ copy(target: Buffer| Uint8Array, targetStart?: number, sourceStart?: number, sou
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "[targetStart/sourceStart/sourceEnd]" is out of range. It must be >= 0. Received value is: [targetStart/sourceStart/sourceEnd] |
@@ -822,9 +881,10 @@ console.info(buf2.toString('ascii', 0, 25));
  
   
 
-#### entries
+### entries
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 entries(): IterableIterator<[number, number]>
  
@@ -836,6 +896,7 @@ entries(): IterableIterator<[number, number]>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator<[number, number]> | 包含key和value的迭代器，同时两者皆为number类型。 |
@@ -865,9 +926,10 @@ while (!next.done) {
  
   
 
-#### equals
+### equals
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 equals(otherBuffer: Uint8Array | Buffer): boolean
  
@@ -879,6 +941,7 @@ equals(otherBuffer: Uint8Array | Buffer): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | otherBuffer | Uint8Array \| Buffer | 是 | 比较的目标对象。 |
@@ -886,6 +949,7 @@ equals(otherBuffer: Uint8Array | Buffer): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 相等则返回true，否则返回false。 |
@@ -908,9 +972,10 @@ console.info(buf1.equals(buf3).toString());
  
   
 
-#### fill
+### fill
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fill(value: string | Buffer | Uint8Array | number, offset?: number, end?: number, encoding?: BufferEncoding): Buffer
  
@@ -922,6 +987,7 @@ fill(value: string | Buffer | Uint8Array | number, offset?: number, end?: number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string \| Buffer \| Uint8Array \| number | 是 | 用于填充的值。 |
@@ -932,6 +998,7 @@ fill(value: string | Buffer | Uint8Array | number, offset?: number, end?: number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Buffer | 返回填充后的Buffer对象。 |
@@ -941,6 +1008,7 @@ fill(value: string | Buffer | Uint8Array | number, offset?: number, end?: number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "[offset/end]" is out of range. It must be >= 0 and <= [right range]. Received value is: [offset/end] |
@@ -958,9 +1026,10 @@ console.info(b.toString());
  
   
 
-#### includes
+### includes
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 includes(value: string | number | Buffer | Uint8Array, byteOffset?: number, encoding?: BufferEncoding): boolean
  
@@ -972,6 +1041,7 @@ includes(value: string | number | Buffer | Uint8Array, byteOffset?: number, enco
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string \| number \| Buffer \| Uint8Array | 是 | 要搜索的内容。 |
@@ -981,6 +1051,7 @@ includes(value: string | number | Buffer | Uint8Array, byteOffset?: number, enco
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 存在为true，否则为false。 |
@@ -1000,9 +1071,10 @@ console.info(buf.includes('be').toString());
  
   
 
-#### indexOf
+### indexOf
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 indexOf(value: string | number | Buffer | Uint8Array, byteOffset?: number, encoding?: BufferEncoding): number
  
@@ -1014,6 +1086,7 @@ indexOf(value: string | number | Buffer | Uint8Array, byteOffset?: number, encod
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string \| number \| Buffer \| Uint8Array | 是 | 要查找的内容。 |
@@ -1023,6 +1096,7 @@ indexOf(value: string | number | Buffer | Uint8Array, byteOffset?: number, encod
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 第一次出现位置。 |
@@ -1042,9 +1116,10 @@ console.info(buf.indexOf('is').toString());
  
   
 
-#### keys
+### keys
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 keys(): IterableIterator&lt;number&gt;
  
@@ -1056,6 +1131,7 @@ keys(): IterableIterator&lt;number&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator&lt;number&gt; | 返回一个包含key值的迭代器。 |
@@ -1083,9 +1159,10 @@ for (const key of keys) {
  
   
 
-#### lastIndexOf
+### lastIndexOf
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 lastIndexOf(value: string | number | Buffer | Uint8Array, byteOffset?: number, encoding?: BufferEncoding): number
  
@@ -1097,6 +1174,7 @@ lastIndexOf(value: string | number | Buffer | Uint8Array, byteOffset?: number, e
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string \| number \| Buffer \| Uint8Array | 是 | 要搜索的内容。 |
@@ -1106,6 +1184,7 @@ lastIndexOf(value: string | number | Buffer | Uint8Array, byteOffset?: number, e
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 最后一次出现value值的索引。 |
@@ -1125,9 +1204,10 @@ console.info(buf.lastIndexOf('buffer').toString());
  
   
 
-#### readBigInt64BE
+### readBigInt64BE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readBigInt64BE(offset?: number): bigint
  
@@ -1139,6 +1219,7 @@ readBigInt64BE(offset?: number): bigint
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 否 | 偏移量。默认值：0。取值范围：0 <= offset <= Buffer.length - 8。 |
@@ -1146,6 +1227,7 @@ readBigInt64BE(offset?: number): bigint
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bigint | 读取的有符号大端序64位整数值。 |
@@ -1155,6 +1237,7 @@ readBigInt64BE(offset?: number): bigint
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset]. |
@@ -1178,9 +1261,10 @@ console.info("result = " + result);
  
   
 
-#### readBigInt64LE
+### readBigInt64LE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readBigInt64LE(offset?: number): bigint
  
@@ -1192,6 +1276,7 @@ readBigInt64LE(offset?: number): bigint
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 否 | 偏移量。默认值：0。取值范围：0 <= offset <= Buffer.length - 8。当Buffer长度小于8时无法使用此方法。 |
@@ -1199,6 +1284,7 @@ readBigInt64LE(offset?: number): bigint
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bigint | 从Buffer中读取的有符号小端序64位整数值，可用于高精度整数运算的二进制数据处理。 |
@@ -1208,6 +1294,7 @@ readBigInt64LE(offset?: number): bigint
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset]. |
@@ -1231,9 +1318,10 @@ console.info("result = " + result);
  
   
 
-#### readBigUInt64BE
+### readBigUInt64BE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readBigUInt64BE(offset?: number): bigint
  
@@ -1245,6 +1333,7 @@ readBigUInt64BE(offset?: number): bigint
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 否 | 偏移量。取值范围：0 <= offset <= Buffer.length - 8，默认值：0。 |
@@ -1252,6 +1341,7 @@ readBigUInt64BE(offset?: number): bigint
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bigint | 从Buffer中读取的无符号大端序64位整数值。 |
@@ -1261,6 +1351,7 @@ readBigUInt64BE(offset?: number): bigint
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset]. |
@@ -1283,9 +1374,10 @@ console.info("result = " + result);
  
   
 
-#### readBigUInt64LE
+### readBigUInt64LE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readBigUInt64LE(offset?: number): bigint
  
@@ -1297,6 +1389,7 @@ readBigUInt64LE(offset?: number): bigint
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 否 | 偏移量。取值范围：0 <= offset <= Buffer.length - 8，默认值：0。 |
@@ -1304,6 +1397,7 @@ readBigUInt64LE(offset?: number): bigint
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bigint | 从Buffer中读取的无符号小端序64位整数值。 |
@@ -1313,6 +1407,7 @@ readBigUInt64LE(offset?: number): bigint
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset]. |
@@ -1336,9 +1431,10 @@ console.info("result = " + result);
  
   
 
-#### readDoubleBE
+### readDoubleBE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readDoubleBE(offset?: number): number
  
@@ -1350,6 +1446,7 @@ readDoubleBE(offset?: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 否 | 偏移量。取值范围：0 <= offset <= Buffer.length - 8，默认值：0。 |
@@ -1357,6 +1454,7 @@ readDoubleBE(offset?: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 读取出的内容。 |
@@ -1366,6 +1464,7 @@ readDoubleBE(offset?: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset]. |
@@ -1387,9 +1486,10 @@ console.info("result = " + result);
  
   
 
-#### readDoubleLE
+### readDoubleLE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readDoubleLE(offset?: number): number
  
@@ -1401,6 +1501,7 @@ readDoubleLE(offset?: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 否 | 偏移量。取值范围：0 <= offset <= Buffer.length - 8，默认值：0。 |
@@ -1408,6 +1509,7 @@ readDoubleLE(offset?: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 读取出的内容。 |
@@ -1417,6 +1519,7 @@ readDoubleLE(offset?: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset]. |
@@ -1438,9 +1541,10 @@ console.info("result = " + result);
  
   
 
-#### readFloatBE
+### readFloatBE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readFloatBE(offset?: number): number
  
@@ -1452,6 +1556,7 @@ readFloatBE(offset?: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 否 | 偏移量。取值范围：0 <= offset <= Buffer.length - 4，默认值：0。 |
@@ -1459,6 +1564,7 @@ readFloatBE(offset?: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 读取出的内容。 |
@@ -1468,6 +1574,7 @@ readFloatBE(offset?: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset]. |
@@ -1489,9 +1596,10 @@ console.info("result = " + result);
  
   
 
-#### readFloatLE
+### readFloatLE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readFloatLE(offset?: number): number
  
@@ -1503,6 +1611,7 @@ readFloatLE(offset?: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 否 | 偏移量。取值范围：0 <= offset <= Buffer.length - 4，默认值：0。 |
@@ -1510,6 +1619,7 @@ readFloatLE(offset?: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 读取出的内容。 |
@@ -1519,6 +1629,7 @@ readFloatLE(offset?: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset]. |
@@ -1540,9 +1651,10 @@ console.info("result = " + result);
  
   
 
-#### readInt8
+### readInt8
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readInt8(offset?: number): number
  
@@ -1554,6 +1666,7 @@ readInt8(offset?: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 否 | 偏移量。取值范围：0 <= offset <= Buffer.length - 1，默认值：0。 |
@@ -1561,6 +1674,7 @@ readInt8(offset?: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 读取出的内容。 |
@@ -1570,6 +1684,7 @@ readInt8(offset?: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 1. Received value is: [offset]. |
@@ -1593,9 +1708,10 @@ console.info("result = " + result);
  
   
 
-#### readInt16BE
+### readInt16BE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readInt16BE(offset?: number): number
  
@@ -1607,6 +1723,7 @@ readInt16BE(offset?: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 否 | 偏移量。取值范围：0 <= offset <= Buffer.length - 2，默认值：0。 |
@@ -1614,6 +1731,7 @@ readInt16BE(offset?: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 读取出的内容。 |
@@ -1623,6 +1741,7 @@ readInt16BE(offset?: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 2. Received value is: [offset]. |
@@ -1644,9 +1763,10 @@ console.info("result = " + result);
  
   
 
-#### readInt16LE
+### readInt16LE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readInt16LE(offset?: number): number
  
@@ -1658,6 +1778,7 @@ readInt16LE(offset?: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 否 | 偏移量。取值范围：0 <= offset <= Buffer.length - 2，默认值：0。 |
@@ -1665,6 +1786,7 @@ readInt16LE(offset?: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 读取出的内容。 |
@@ -1674,6 +1796,7 @@ readInt16LE(offset?: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 2. Received value is: [offset]. |
@@ -1695,9 +1818,10 @@ console.info("result = " + result);
  
   
 
-#### readInt32BE
+### readInt32BE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readInt32BE(offset?: number): number
  
@@ -1709,6 +1833,7 @@ readInt32BE(offset?: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 否 | 偏移量。取值范围：0 <= offset <= Buffer.length - 4，默认值：0。 |
@@ -1716,6 +1841,7 @@ readInt32BE(offset?: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 读取出的内容。 |
@@ -1725,6 +1851,7 @@ readInt32BE(offset?: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset]. |
@@ -1746,9 +1873,10 @@ console.info("result = " + result);
  
   
 
-#### readInt32LE
+### readInt32LE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readInt32LE(offset?: number): number
  
@@ -1760,6 +1888,7 @@ readInt32LE(offset?: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 否 | 偏移量。取值范围：0 <= offset <= Buffer.length - 4，默认值：0。 |
@@ -1767,6 +1896,7 @@ readInt32LE(offset?: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 读取出的内容。 |
@@ -1776,6 +1906,7 @@ readInt32LE(offset?: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset]. |
@@ -1797,9 +1928,10 @@ console.info("result = " + result);
  
   
 
-#### readIntBE
+### readIntBE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readIntBE(offset: number, byteLength: number): number
  
@@ -1811,6 +1943,7 @@ readIntBE(offset: number, byteLength: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 是 | 偏移量。取值范围：0 <= offset <= Buffer.length - byteLength。 |
@@ -1819,6 +1952,7 @@ readIntBE(offset: number, byteLength: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 读取的内容。当offset为小数时，返回undefined。 |
@@ -1828,6 +1962,7 @@ readIntBE(offset: number, byteLength: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
@@ -1850,9 +1985,10 @@ console.info("result = " + result);
  
   
 
-#### readIntLE
+### readIntLE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readIntLE(offset: number, byteLength: number): number
  
@@ -1864,6 +2000,7 @@ readIntLE(offset: number, byteLength: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 是 | 偏移量。取值范围：0 <= offset <= Buffer.length - byteLength，默认值：0。 |
@@ -1872,6 +2009,7 @@ readIntLE(offset: number, byteLength: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 读取出的内容。当offset为小数时，返回undefined。 |
@@ -1881,6 +2019,7 @@ readIntLE(offset: number, byteLength: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
@@ -1902,9 +2041,10 @@ console.info("result = " + result);
  
   
 
-#### readUInt8
+### readUInt8
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readUInt8(offset?: number): number
  
@@ -1916,6 +2056,7 @@ readUInt8(offset?: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 否 | 偏移量。取值范围：0 <= offset <= Buffer.length - 1，默认值：0。 |
@@ -1923,6 +2064,7 @@ readUInt8(offset?: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 读取出的内容。 |
@@ -1932,6 +2074,7 @@ readUInt8(offset?: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 1. Received value is: [offset]. |
@@ -1955,9 +2098,10 @@ console.info("result = " + result);
  
   
 
-#### readUInt16BE
+### readUInt16BE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readUInt16BE(offset?: number): number
  
@@ -1969,6 +2113,7 @@ readUInt16BE(offset?: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 否 | 偏移量。取值范围：0 <= offset <= Buffer.length - 2，默认值：0。 |
@@ -1976,6 +2121,7 @@ readUInt16BE(offset?: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 读取出的内容。 |
@@ -1985,6 +2131,7 @@ readUInt16BE(offset?: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 2. Received value is: [offset]. |
@@ -2008,9 +2155,10 @@ console.info("result = " + result);
  
   
 
-#### readUInt16LE
+### readUInt16LE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readUInt16LE(offset?: number): number
  
@@ -2022,6 +2170,7 @@ readUInt16LE(offset?: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 否 | 偏移量。取值范围：0 <= offset <= Buffer.length - 2，默认值：0。 |
@@ -2029,6 +2178,7 @@ readUInt16LE(offset?: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 读取出的内容。 |
@@ -2038,6 +2188,7 @@ readUInt16LE(offset?: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 2. Received value is: [offset]. |
@@ -2061,9 +2212,10 @@ console.info("result = " + result);
  
   
 
-#### readUInt32BE
+### readUInt32BE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readUInt32BE(offset?: number): number
  
@@ -2075,6 +2227,7 @@ readUInt32BE(offset?: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 否 | 偏移量。取值范围：0 <= offset <= Buffer.length - 4，默认值：0。 |
@@ -2082,6 +2235,7 @@ readUInt32BE(offset?: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 读取出的内容。 |
@@ -2091,6 +2245,7 @@ readUInt32BE(offset?: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset]. |
@@ -2112,9 +2267,10 @@ console.info("result = " + result);
  
   
 
-#### readUInt32LE
+### readUInt32LE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readUInt32LE(offset?: number): number
  
@@ -2126,6 +2282,7 @@ readUInt32LE(offset?: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 否 | 偏移量。取值范围：0 <= offset <= Buffer.length - 4，默认值：0。 |
@@ -2133,6 +2290,7 @@ readUInt32LE(offset?: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 读取出的内容。 |
@@ -2142,6 +2300,7 @@ readUInt32LE(offset?: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset]. |
@@ -2163,9 +2322,10 @@ console.info("result = " + result);
  
   
 
-#### readUIntBE
+### readUIntBE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readUIntBE(offset: number, byteLength: number): number
  
@@ -2177,6 +2337,7 @@ readUIntBE(offset: number, byteLength: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 是 | 偏移量。取值范围：0 <= offset <= Buffer.length - byteLength，默认值：0。 |
@@ -2185,6 +2346,7 @@ readUIntBE(offset: number, byteLength: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 读取出的内容。当offset为小数时，返回undefined。 |
@@ -2194,6 +2356,7 @@ readUIntBE(offset: number, byteLength: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
@@ -2215,9 +2378,10 @@ console.info("result = " + result);
  
   
 
-#### readUIntLE
+### readUIntLE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readUIntLE(offset: number, byteLength: number): number
  
@@ -2229,6 +2393,7 @@ readUIntLE(offset: number, byteLength: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 是 | 偏移量。取值范围：0 <= offset <= Buffer.length - byteLength，默认值：0。 |
@@ -2237,6 +2402,7 @@ readUIntLE(offset: number, byteLength: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 读取出的内容。当offset为小数时，返回undefined。 |
@@ -2246,6 +2412,7 @@ readUIntLE(offset: number, byteLength: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
@@ -2267,9 +2434,10 @@ console.info("result = " + result);
  
   
 
-#### subarray
+### subarray
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 subarray(start?: number, end?: number): Buffer
  
@@ -2281,6 +2449,7 @@ subarray(start?: number, end?: number): Buffer
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | start | number | 否 | 截取开始位置。默认值：0。 |
@@ -2289,6 +2458,7 @@ subarray(start?: number, end?: number): Buffer
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Buffer | 返回新的Buffer对象。当start < 0或end < 0时返回空Buffer。 |
@@ -2311,9 +2481,10 @@ console.info(buf2.toString('ascii', 0, buf2.length));
  
   
 
-#### swap16
+### swap16
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 swap16(): Buffer
  
@@ -2325,6 +2496,7 @@ swap16(): Buffer
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Buffer | 交换之后的Buffer对象。 |
@@ -2334,6 +2506,7 @@ swap16(): Buffer
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200009 | The buffer size must be a multiple of 16-bits. |
@@ -2354,9 +2527,10 @@ console.info(buf1.toString('hex'));
  
   
 
-#### swap32
+### swap32
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 swap32(): Buffer
  
@@ -2368,6 +2542,7 @@ swap32(): Buffer
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Buffer | 交换之后的Buffer对象。 |
@@ -2377,6 +2552,7 @@ swap32(): Buffer
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200009 | The buffer size must be a multiple of 32-bits. |
@@ -2397,9 +2573,10 @@ console.info(buf1.toString('hex'));
  
   
 
-#### swap64
+### swap64
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 swap64(): Buffer
  
@@ -2411,6 +2588,7 @@ swap64(): Buffer
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Buffer | 交换之后的Buffer对象。 |
@@ -2420,6 +2598,7 @@ swap64(): Buffer
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200009 | The buffer size must be a multiple of 64-bits. |
@@ -2440,9 +2619,10 @@ console.info(buf1.toString('hex'));
  
   
 
-#### toJSON
+### toJSON
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toJSON(): Object
  
@@ -2454,6 +2634,7 @@ toJSON(): Object
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Object | JSON对象。 |
@@ -2472,9 +2653,10 @@ console.info(JSON.stringify(obj));
  
   
 
-#### toString
+### toString
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toString(encoding?: string, start?: number, end?: number): string
  
@@ -2486,6 +2668,7 @@ toString(encoding?: string, start?: number, end?: number): string
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | encoding | string | 否 | 字符编码格式，支持的格式范围为BufferEncoding。默认值：'utf8'。 |
@@ -2495,6 +2678,7 @@ toString(encoding?: string, start?: number, end?: number): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 字符串。当start >= Buffer.length或start > end时返回空字符串。 |
@@ -2515,9 +2699,10 @@ console.info(buf1.toString('utf-8'));
  
   
 
-#### values
+### values
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 values(): IterableIterator&lt;number&gt;
  
@@ -2529,6 +2714,7 @@ values(): IterableIterator&lt;number&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator&lt;number&gt; | 返回包含Buffer中每个字节值的迭代器。 |
@@ -2558,9 +2744,10 @@ while (!next.done) {
  
   
 
-#### write
+### write
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 write(str: string, offset?: number, length?: number, encoding?: string): number
  
@@ -2572,6 +2759,7 @@ write(str: string, offset?: number, length?: number, encoding?: string): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | str | string | 是 | 要写入Buffer的字符串。 |
@@ -2582,6 +2770,7 @@ write(str: string, offset?: number, length?: number, encoding?: string): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 写入的字节数。 |
@@ -2591,6 +2780,7 @@ write(str: string, offset?: number, length?: number, encoding?: string): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "[offset/length]" is out of range. It must be >= 0 and <= buf.length. Received value is: [offset/length]. |
@@ -2614,9 +2804,10 @@ console.info("length = " + length);
  
   
 
-#### writeBigInt64BE
+### writeBigInt64BE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeBigInt64BE(value: bigint, offset?: number): number
  
@@ -2628,6 +2819,7 @@ writeBigInt64BE(value: bigint, offset?: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | bigint | 是 | 写入Buffer的数据。 |
@@ -2636,6 +2828,7 @@ writeBigInt64BE(value: bigint, offset?: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 偏移量offset加上写入的字节数。 |
@@ -2645,6 +2838,7 @@ writeBigInt64BE(value: bigint, offset?: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
@@ -2663,9 +2857,10 @@ console.info("result = " + result);
  
   
 
-#### writeBigInt64LE
+### writeBigInt64LE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeBigInt64LE(value: bigint, offset?: number): number
  
@@ -2677,6 +2872,7 @@ writeBigInt64LE(value: bigint, offset?: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | bigint | 是 | 写入Buffer的数据。 |
@@ -2685,6 +2881,7 @@ writeBigInt64LE(value: bigint, offset?: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 偏移量offset加上写入的字节数。 |
@@ -2694,6 +2891,7 @@ writeBigInt64LE(value: bigint, offset?: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
@@ -2712,9 +2910,10 @@ console.info("result = " + result);
  
   
 
-#### writeBigUInt64BE
+### writeBigUInt64BE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeBigUInt64BE(value: bigint, offset?: number): number
  
@@ -2726,6 +2925,7 @@ writeBigUInt64BE(value: bigint, offset?: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | bigint | 是 | 写入Buffer的数据。 |
@@ -2734,6 +2934,7 @@ writeBigUInt64BE(value: bigint, offset?: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 偏移量offset加上写入的字节数。 |
@@ -2743,6 +2944,7 @@ writeBigUInt64BE(value: bigint, offset?: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
@@ -2761,9 +2963,10 @@ console.info("result = " + result);
  
   
 
-#### writeBigUInt64LE
+### writeBigUInt64LE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeBigUInt64LE(value: bigint, offset?: number): number
  
@@ -2775,6 +2978,7 @@ writeBigUInt64LE(value: bigint, offset?: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | bigint | 是 | 写入Buffer的数据。 |
@@ -2783,6 +2987,7 @@ writeBigUInt64LE(value: bigint, offset?: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 偏移量offset加上写入的字节数。 |
@@ -2792,6 +2997,7 @@ writeBigUInt64LE(value: bigint, offset?: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
@@ -2810,9 +3016,10 @@ console.info("result = " + result);
  
   
 
-#### writeDoubleBE
+### writeDoubleBE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeDoubleBE(value: number, offset?: number): number
  
@@ -2824,6 +3031,7 @@ writeDoubleBE(value: number, offset?: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 写入Buffer的数据。 |
@@ -2832,6 +3040,7 @@ writeDoubleBE(value: number, offset?: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 偏移量offset加上写入的字节数。 |
@@ -2841,6 +3050,7 @@ writeDoubleBE(value: number, offset?: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset] |
@@ -2859,9 +3069,10 @@ console.info("result = " + result);
  
   
 
-#### writeDoubleLE
+### writeDoubleLE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeDoubleLE(value: number, offset?: number): number
  
@@ -2873,6 +3084,7 @@ writeDoubleLE(value: number, offset?: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 写入Buffer的数据。 |
@@ -2881,6 +3093,7 @@ writeDoubleLE(value: number, offset?: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 偏移量offset加上写入的字节数。 |
@@ -2890,6 +3103,7 @@ writeDoubleLE(value: number, offset?: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset] |
@@ -2908,9 +3122,10 @@ console.info("result = " + result);
  
   
 
-#### writeFloatBE
+### writeFloatBE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeFloatBE(value: number, offset?: number): number
  
@@ -2922,6 +3137,7 @@ writeFloatBE(value: number, offset?: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 写入Buffer的数据。 |
@@ -2930,6 +3146,7 @@ writeFloatBE(value: number, offset?: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 偏移量offset加上写入的字节数。 |
@@ -2939,6 +3156,7 @@ writeFloatBE(value: number, offset?: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset] |
@@ -2957,9 +3175,10 @@ console.info("result = " + result);
  
   
 
-#### writeFloatLE
+### writeFloatLE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeFloatLE(value: number, offset?: number): number
  
@@ -2971,6 +3190,7 @@ writeFloatLE(value: number, offset?: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 写入Buffer的数据。 |
@@ -2979,6 +3199,7 @@ writeFloatLE(value: number, offset?: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 偏移量offset加上写入的字节数。 |
@@ -2988,6 +3209,7 @@ writeFloatLE(value: number, offset?: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "offset" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset] |
@@ -3006,9 +3228,10 @@ console.info("result = " + result);
  
   
 
-#### writeInt8
+### writeInt8
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeInt8(value: number, offset?: number): number
  
@@ -3020,6 +3243,7 @@ writeInt8(value: number, offset?: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 写入Buffer的数据。取值范围：-128 <= value <= 127（8位有符号整数）。 |
@@ -3028,6 +3252,7 @@ writeInt8(value: number, offset?: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 偏移量offset加上写入的字节数。 |
@@ -3037,6 +3262,7 @@ writeInt8(value: number, offset?: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
@@ -3058,9 +3284,10 @@ console.info("result1 = " + result1);
  
   
 
-#### writeInt16BE
+### writeInt16BE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeInt16BE(value: number, offset?: number): number
  
@@ -3072,6 +3299,7 @@ writeInt16BE(value: number, offset?: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 写入Buffer的数据。 |
@@ -3080,6 +3308,7 @@ writeInt16BE(value: number, offset?: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 偏移量offset加上写入的字节数。 |
@@ -3089,6 +3318,7 @@ writeInt16BE(value: number, offset?: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
@@ -3107,9 +3337,10 @@ console.info("result = " + result);
  
   
 
-#### writeInt16LE
+### writeInt16LE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeInt16LE(value: number, offset?: number): number
  
@@ -3121,6 +3352,7 @@ writeInt16LE(value: number, offset?: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 写入Buffer的数据。 |
@@ -3129,6 +3361,7 @@ writeInt16LE(value: number, offset?: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 偏移量offset加上写入的字节数。 |
@@ -3138,6 +3371,7 @@ writeInt16LE(value: number, offset?: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
@@ -3156,9 +3390,10 @@ console.info("result = " + result);
  
   
 
-#### writeInt32BE
+### writeInt32BE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeInt32BE(value: number, offset?: number): number
  
@@ -3170,6 +3405,7 @@ writeInt32BE(value: number, offset?: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 写入Buffer的数据。 |
@@ -3178,6 +3414,7 @@ writeInt32BE(value: number, offset?: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 偏移量offset加上写入的字节数。 |
@@ -3187,6 +3424,7 @@ writeInt32BE(value: number, offset?: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
@@ -3205,9 +3443,10 @@ console.info("result = " + result);
  
   
 
-#### writeInt32LE
+### writeInt32LE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeInt32LE(value: number, offset?: number): number
  
@@ -3219,6 +3458,7 @@ writeInt32LE(value: number, offset?: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 写入Buffer的数据。 |
@@ -3227,6 +3467,7 @@ writeInt32LE(value: number, offset?: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 偏移量offset加上写入的字节数。 |
@@ -3236,6 +3477,7 @@ writeInt32LE(value: number, offset?: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
@@ -3254,9 +3496,10 @@ console.info("result = " + result);
  
   
 
-#### writeIntBE
+### writeIntBE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeIntBE(value: number, offset: number, byteLength: number): number
  
@@ -3268,6 +3511,7 @@ writeIntBE(value: number, offset: number, byteLength: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 写入Buffer的数据。 |
@@ -3277,6 +3521,7 @@ writeIntBE(value: number, offset: number, byteLength: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 偏移量offset加上写入的字节数。 |
@@ -3286,6 +3531,7 @@ writeIntBE(value: number, offset: number, byteLength: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
@@ -3304,9 +3550,10 @@ console.info("result = " + result);
  
   
 
-#### writeIntLE
+### writeIntLE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeIntLE(value: number, offset: number, byteLength: number): number
  
@@ -3318,6 +3565,7 @@ writeIntLE(value: number, offset: number, byteLength: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 写入Buffer的数据。 |
@@ -3327,6 +3575,7 @@ writeIntLE(value: number, offset: number, byteLength: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 偏移量offset加上写入的字节数。 |
@@ -3336,6 +3585,7 @@ writeIntLE(value: number, offset: number, byteLength: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
@@ -3354,9 +3604,10 @@ console.info("result = " + result);
  
   
 
-#### writeUInt8
+### writeUInt8
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeUInt8(value: number, offset?: number): number
  
@@ -3368,6 +3619,7 @@ writeUInt8(value: number, offset?: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 写入Buffer的数据。取值范围：0 <= value <= 255（8位无符号整数）。 |
@@ -3376,6 +3628,7 @@ writeUInt8(value: number, offset?: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 偏移量offset加上写入的字节数。 |
@@ -3385,6 +3638,7 @@ writeUInt8(value: number, offset?: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
@@ -3412,9 +3666,10 @@ console.info("result3 = " + result3);
  
   
 
-#### writeUInt16BE
+### writeUInt16BE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeUInt16BE(value: number, offset?: number): number
  
@@ -3426,6 +3681,7 @@ writeUInt16BE(value: number, offset?: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 写入Buffer的数据。 |
@@ -3434,6 +3690,7 @@ writeUInt16BE(value: number, offset?: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 偏移量offset加上写入的字节数。 |
@@ -3443,6 +3700,7 @@ writeUInt16BE(value: number, offset?: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
@@ -3464,9 +3722,10 @@ console.info("result1 = " + result1);
  
   
 
-#### writeUInt16LE
+### writeUInt16LE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeUInt16LE(value: number, offset?: number): number
  
@@ -3478,6 +3737,7 @@ writeUInt16LE(value: number, offset?: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 写入Buffer的数据。 |
@@ -3486,6 +3746,7 @@ writeUInt16LE(value: number, offset?: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 偏移量offset加上写入的字节数。 |
@@ -3495,6 +3756,7 @@ writeUInt16LE(value: number, offset?: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
@@ -3516,9 +3778,10 @@ console.info("result1 = " + result1);
  
   
 
-#### writeUInt32BE
+### writeUInt32BE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeUInt32BE(value: number, offset?: number): number
  
@@ -3530,6 +3793,7 @@ writeUInt32BE(value: number, offset?: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 写入Buffer的数据。 |
@@ -3538,6 +3802,7 @@ writeUInt32BE(value: number, offset?: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 偏移量offset加上写入的字节数。 |
@@ -3547,6 +3812,7 @@ writeUInt32BE(value: number, offset?: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
@@ -3565,9 +3831,10 @@ console.info("result = " + result);
  
   
 
-#### writeUInt32LE
+### writeUInt32LE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeUInt32LE(value: number, offset?: number): number
  
@@ -3579,6 +3846,7 @@ writeUInt32LE(value: number, offset?: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 写入Buffer对象的数据。 |
@@ -3587,6 +3855,7 @@ writeUInt32LE(value: number, offset?: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 偏移量offset加上写入的字节数。 |
@@ -3596,6 +3865,7 @@ writeUInt32LE(value: number, offset?: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
@@ -3614,9 +3884,10 @@ console.info("result = " + result);
  
   
 
-#### writeUIntBE
+### writeUIntBE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeUIntBE(value: number, offset: number, byteLength: number): number
  
@@ -3628,6 +3899,7 @@ writeUIntBE(value: number, offset: number, byteLength: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 写入Buffer的数据。 |
@@ -3637,6 +3909,7 @@ writeUIntBE(value: number, offset: number, byteLength: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 偏移量offset加上写入的字节数。 |
@@ -3646,6 +3919,7 @@ writeUIntBE(value: number, offset: number, byteLength: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
@@ -3664,9 +3938,10 @@ console.info("result = " + result);
  
   
 
-#### writeUIntLE
+### writeUIntLE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeUIntLE(value: number, offset: number, byteLength: number): number
  
@@ -3678,6 +3953,7 @@ writeUIntLE(value: number, offset: number, byteLength: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 写入Buffer的数据。 |
@@ -3687,6 +3963,7 @@ writeUIntLE(value: number, offset: number, byteLength: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 偏移量offset加上写入的字节数。 |
@@ -3696,6 +3973,7 @@ writeUIntLE(value: number, offset: number, byteLength: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of "[param]" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param] |
@@ -3714,22 +3992,25 @@ console.info("result = " + result);
  
   
 
-#### Blob
+## Blob
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Blob（Binary Large Object，二进制大对象）用于表示不可变的原始数据类文件对象，适合处理大量二进制数据的封装与操作。
  
   
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
  
 **系统能力：** SystemCapability.Utils.Lang
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | size | number | 是 | 否 | Blob实例的总字节大小。 |
@@ -3738,9 +4019,10 @@ Blob（Binary Large Object，二进制大对象）用于表示不可变的原始
  
   
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(sources: string[] | ArrayBuffer[] | TypedArray[] | DataView[] | Blob[] , options?: Object)
  
@@ -3752,6 +4034,7 @@ constructor(sources: string[] | ArrayBuffer[] | TypedArray[] | DataView[] | Blob
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sources | string[] \| ArrayBuffer[] \| TypedArray[] \| DataView[] \| Blob[] | 是 | Blob实例的数据源。 |
@@ -3775,9 +4058,10 @@ let blob1: buffer.Blob = new buffer.Blob(['a', 'b', 'c'], o1);
  
   
 
-#### arrayBuffer
+### arrayBuffer
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 arrayBuffer(): Promise&lt;ArrayBuffer&gt;
  
@@ -3789,6 +4073,7 @@ arrayBuffer(): Promise&lt;ArrayBuffer&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;ArrayBuffer&gt; | Promise对象，resolve返回包含Blob数据的ArrayBuffer，reject返回错误信息。 |
@@ -3810,9 +4095,10 @@ pro.then((val: ArrayBuffer) => {
  
   
 
-#### slice
+### slice
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 slice(start?: number, end?: number, type?: string): Blob
  
@@ -3824,6 +4110,7 @@ slice(start?: number, end?: number, type?: string): Blob
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | start | number | 否 | 起始位置。默认值为0。 |
@@ -3833,6 +4120,7 @@ slice(start?: number, end?: number, type?: string): Blob
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Blob | 新的Blob实例对象。 |
@@ -3851,9 +4139,10 @@ console.info("type:", blob3.type); // type: MIME
  
   
 
-#### text
+### text
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 text(): Promise&lt;string&gt;
  
@@ -3865,6 +4154,7 @@ text(): Promise&lt;string&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，resolve返回以utf8解码后的字符串，reject返回错误信息。 |

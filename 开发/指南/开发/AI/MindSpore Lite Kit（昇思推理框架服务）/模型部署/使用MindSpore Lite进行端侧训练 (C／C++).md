@@ -1,10 +1,10 @@
 # 使用MindSpore Lite进行端侧训练 (C/C++)
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-07 06:42:31
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-lite-train-guidelines
 
-#### 场景介绍
+## 场景介绍
 
 MindSpore Lite是一款AI引擎，它提供了面向不同硬件设备AI模型推理的功能，目前已经在图像分类、目标识别、人脸识别、文字识别等应用中广泛使用，同时支持在端侧设备上进行部署训练，让模型在实际业务场景中自适应用户的行为。
 
@@ -12,9 +12,10 @@ MindSpore Lite是一款AI引擎，它提供了面向不同硬件设备AI模型�
 
 
 
-#### 接口说明
+## 接口说明
 
 此处给出使用MindSpore Lite进行模型训练相关的部分接口，具体请见下方表格。更多接口及详细内容，请见[MindSpore](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-mindspore)。
+
 
 | 接口名称 | 描述 |
 | --- | --- |
@@ -34,7 +35,7 @@ MindSpore Lite是一款AI引擎，它提供了面向不同硬件设备AI模型�
 
 
 
-#### 开发步骤
+## 开发步骤
 
 使用MindSpore Lite进行模型训练的开发流程如下图所示。
 
@@ -132,7 +133,7 @@ if (ret != OH_AI_STATUS_SUCCESS) {
 
 5. 输入数据。
 
-  模型执行之前需要向输入的张量中填充数据。本例使用随机的数据对模型进行填充。
+  模型执行之前需要向输入的[张量](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-lite-term#tensor张量)中填充数据。本例使用随机的数据对模型进行填充。
 
   
 ```text
@@ -222,7 +223,7 @@ OH_AI_ContextDestroy(&context);
 
 
 
-#### 调测验证
+## 调测验证
 1. 编写CMakeLists.txt。
 
   
@@ -264,7 +265,7 @@ mkdir -p build
 
 
 
-#### 完整示例
+## 完整示例
 
 ```text
 #include <stdlib.h>

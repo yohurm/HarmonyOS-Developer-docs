@@ -1,13 +1,14 @@
 # native_xcomponent_key_event.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-xcomponent-key-event-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明用于访问Native XComponent按键事件所使用到的枚举类型。
  
@@ -25,16 +26,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_NativeXComponent_KeyCode | OH_NativeXComponent_KeyCode | 按键事件的键码。 |
@@ -43,15 +47,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_NativeXComponent_KeyCode
+### OH_NativeXComponent_KeyCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_NativeXComponent_KeyCode
@@ -63,6 +69,7 @@ enum OH_NativeXComponent_KeyCode
  
 **起始版本：** 10
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | KEY_UNKNOWN = -1 | 未知按键。 |
@@ -219,7 +226,7 @@ enum OH_NativeXComponent_KeyCode
 | KEY_LINEFEED = 2609 | 换行键。 |
 | KEY_MACRO = 2610 | 宏键。 |
 | KEY_NUMPAD_PLUSMINUS = 2611 | 小键盘加号/减号键。 |
-| KEY_SCALE = 2612 | 扩展键。 |
+| KEY_SCALE = 2612 | 缩放键。 |
 | KEY_HANGUEL = 2613 | 韩语键。 |
 | KEY_HANJA = 2614 | 韩语汉字键。 |
 | KEY_YEN = 2615 | 日元键。 |
@@ -333,11 +340,11 @@ enum OH_NativeXComponent_KeyCode
 | KEY_BRIGHTNESS_MIN = 2724 | 最小亮度键。 |
 | KEY_BRIGHTNESS_MAX = 2725 | 最大亮度键。 |
 | KEY_KBDINPUTASSIST_PREV = 2726 | 键盘输入辅助上一个候选。 |
-| KEY_KBDINPUTASSIST_NEXT = 2727 | 键盘输入Assist_Next。 |
+| KEY_KBDINPUTASSIST_NEXT = 2727 | 键盘输入辅助下一个候选。 |
 | KEY_KBDINPUTASSIST_PREVGROUP = 2728 | 键盘输入辅助上一个候选组。 |
 | KEY_KBDINPUTASSIST_NEXTGROUP = 2729 | 键盘输入辅助下一个候选组。 |
-| KEY_KBDINPUTASSIST_ACCEPT = 2730 | 键盘输入Assist_Accept。 |
-| KEY_KBDINPUTASSIST_CANCEL = 2731 | 键盘输入Assist_Cancel。 |
+| KEY_KBDINPUTASSIST_ACCEPT = 2730 | 键盘输入辅助接受。 |
+| KEY_KBDINPUTASSIST_CANCEL = 2731 | 键盘输入辅助取消。 |
 | KEY_FRONT = 2800 | 挡风玻璃除雾器开关。 |
 | KEY_SETUP = 2801 | 设置键。 |
 | KEY_WAKEUP = 2802 | 唤醒键。 |
@@ -352,7 +359,7 @@ enum OH_NativeXComponent_KeyCode
 | KEY_CYCLEWINDOWS = 2811 | Windows循环键。 |
 | KEY_COMPUTER = 2812 | 计算机键。 |
 | KEY_EJECTCLOSECD = 2813 | 弹出CD键。 |
-| KEY_ISO = 2814 | ISO键。 |
+| KEY_ISO = 2814 | ISO键盘布局标准定义的特殊功能键。 |
 | KEY_MOVE = 2815 | 移动键。 |
 | KEY_F13 = 2816 | 按键'F13'。 |
 | KEY_F14 = 2817 | 按键'F14'。 |
@@ -399,9 +406,10 @@ enum OH_NativeXComponent_KeyCode
  
   
 
-#### OH_NativeXComponent_KeyAction
+### OH_NativeXComponent_KeyAction
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_NativeXComponent_KeyAction
@@ -413,6 +421,7 @@ enum OH_NativeXComponent_KeyAction
  
 **起始版本：** 10
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_NATIVEXCOMPONENT_KEY_ACTION_UNKNOWN = -1 | 未知的按键动作。 |

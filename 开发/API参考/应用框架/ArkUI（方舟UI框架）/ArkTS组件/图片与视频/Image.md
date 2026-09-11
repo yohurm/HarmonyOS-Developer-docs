@@ -1,9 +1,9 @@
 # Image
 
-更新时间：2026-08-04 06:06:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Image为图片组件，常用于在应用中显示图片。Image支持加载[PixelMap](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-pixelmap)、[ResourceStr](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcestr)和[DrawableDescriptor](#drawabledescriptor10)类型的数据源，支持png、jpg、jpeg、bmp、svg、webp、gif、heif和tiff类型的图片格式，不支持apng和svga格式。
 
@@ -12,31 +12,35 @@ Image为图片组件，常用于在应用中显示图片。Image支持加载[Pix
 
 
 
-#### 需要权限
+## 需要权限
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 使用网络图片时，需要申请权限ohos.permission.INTERNET。具体申请方式请参考[声明权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions)。
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
 
 
 
-#### 接口
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 接口
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### Image
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### Image
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Image(src: PixelMap | ResourceStr | DrawableDescriptor)
 
@@ -60,6 +64,7 @@ Image加载成功且组件不设置宽高时，其显示大小自适应父组件
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | src | PixelMap \| ResourceStr\| DrawableDescriptor | 是 | 图片的数据源，支持本地图片和网络图片，引用方式请参考加载图片资源。 1. PixelMap格式为像素图，常用于图片编辑的场景。 2. ResourceStr包含Resource和string格式。 string格式可用于加载网络图片和本地图片。当使用相对路径显示图片时，不支持跨包/跨模块调用该Image组件，建议使用Resource格式来管理需全局使用的图片资源。 从DevEco Studio 6.0.0 Beta2版本开始，新建工程或模块时，默认创建的模块不会对非resource目录下的资源进行打包，需使能相关开关：模块的build-profile.json5中buildOption > resOptions > copyCodeResource > enable 设置为true，详见resOptions中相关介绍。 - 支持Base64字符串。 - 传入的字符串为https网络图片地址时，建议参考示例2（下载与显示静态网络图片）。 - 支持file://路径前缀的字符串，应用沙箱URI：file://&lt;bundleName&gt;/&lt;sandboxPath&gt;。应用沙箱路径URI构造可参考constructor。沙箱路径需要使用fileUri.getUriFromPath(path)方法将路径转换为应用沙箱URI，然后传入显示。同时需要保证目录包路径下的文件有可读权限。 Resource格式可以跨包/跨模块访问资源文件，是访问本地图片的推荐方式，具体示例参考访问跨HAP/HSP包资源。 3. 当传入资源id或name为普通图片时，生成DrawableDescriptor对象。传入AnimatedDrawableDescriptor类型可播放PixelMap数组动画。 说明： - ArkTS卡片上支持gif图片格式动效，但仅在显示时播放一次。 - ArkTS卡片上不支持http://等网络相关路径前缀和file://路径前缀的字符串。 |
@@ -67,9 +72,10 @@ Image加载成功且组件不设置宽高时，其显示大小自适应父组件
 
 
 
-#### Image12+
+### Image12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Image(src: PixelMap | ResourceStr | DrawableDescriptor | ImageContent)
 
@@ -85,6 +91,7 @@ src新增[ImageContent](#imagecontent12)类型，可指定对应的图形内容�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | src | PixelMap \| ResourceStr\| DrawableDescriptor\| ImageContent | 是 | 图片的数据源，支持本地图片和网络图片，引用方式请参考加载图片资源。 PixelMap、ResourceStr和DrawableDescriptor的使用请参考Image的src参数说明。 传入ImageContent类型，指定图像内容。 说明： - ArkTS卡片上支持gif图片格式动效，但仅在显示时播放一次。 - ArkTS卡片上不支持http://等网络相关路径前缀和file://路径前缀的字符串。 |
@@ -92,9 +99,10 @@ src新增[ImageContent](#imagecontent12)类型，可指定对应的图形内容�
 
 
 
-#### Image12+
+### Image12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Image(src: PixelMap | ResourceStr | DrawableDescriptor, imageAIOptions: ImageAIOptions)
 
@@ -108,6 +116,7 @@ Image新增[ImageAIOptions](https://developer.huawei.com/consumer/cn/doc/harmony
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | src | PixelMap \| ResourceStr\| DrawableDescriptor | 是 | 图片的数据源，支持本地图片和网络图片，引用方式请参考加载图片资源。 PixelMap、ResourceStr和DrawableDescriptor的使用请参考Image的src参数说明。 说明： - ArkTS卡片上支持gif图片格式动效，但仅在显示时播放一次。 - ArkTS卡片上不支持http://等网络相关路径前缀和file://路径前缀的字符串。 |
@@ -116,9 +125,10 @@ Image新增[ImageAIOptions](https://developer.huawei.com/consumer/cn/doc/harmony
 
 
 
-#### Image
+### Image
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Image(src: PixelMap | ResourceStr | DrawableDescriptor | ImageContent, reloadKey?: string)
 
@@ -136,6 +146,7 @@ Image(src: PixelMap | ResourceStr | DrawableDescriptor | ImageContent, reloadKey
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | src | PixelMap \| ResourceStr\| DrawableDescriptor\| ImageContent | 是 | 图片的数据源，支持本地图片和网络图片，引用方式请参考加载图片资源。 PixelMap、ResourceStr和DrawableDescriptor的使用请参考Image的src参数说明。 传入ImageContent类型，指定图像内容。 说明： - ArkTS卡片上支持gif图片格式动效，但仅在显示时播放一次。 - ArkTS卡片上不支持http://等网络相关路径前缀和file://路径前缀的字符串。 |
@@ -144,9 +155,10 @@ Image(src: PixelMap | ResourceStr | DrawableDescriptor | ImageContent, reloadKey
 
 
 
-#### Image
+### Image
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Image(src: PixelMap | ResourceStr | DrawableDescriptor, imageAIOptions?: ImageAIOptions, reloadKey?: string)
 
@@ -162,6 +174,7 @@ Image(src: PixelMap | ResourceStr | DrawableDescriptor, imageAIOptions?: ImageAI
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | src | PixelMap \| ResourceStr\| DrawableDescriptor | 是 | 图片的数据源，支持本地图片和网络图片，引用方式请参考加载图片资源。 PixelMap、ResourceStr和DrawableDescriptor的使用请参考Image的src参数说明。 说明： - ArkTS卡片上支持gif图片格式动效，但仅在显示时播放一次。 - ArkTS卡片上不支持http://等网络相关路径前缀和file://路径前缀的字符串。 |
@@ -171,9 +184,10 @@ Image(src: PixelMap | ResourceStr | DrawableDescriptor, imageAIOptions?: ImageAI
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 属性的详细使用指导请参考[添加属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-graphics-display#添加属性)。除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
 
@@ -183,9 +197,10 @@ Image(src: PixelMap | ResourceStr | DrawableDescriptor, imageAIOptions?: ImageAI
 
 
 
-#### alt
+### alt
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 alt(value: string | Resource | PixelMap)
 
@@ -203,6 +218,7 @@ alt(value: string | Resource | PixelMap)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string \| Resource \| PixelMap12+ | 是 | 设置图片加载过程中显示的占位图，支持本地图片（png、jpg、bmp、svg、gif和heif类型），支持PixelMap类型图片，不支持网络图片。 - 支持Base64字符串。 - 支持file://路径前缀的字符串，应用沙箱URI：file://&lt;bundleName&gt;/&lt;sandboxPath&gt;。应用沙箱路径URI构造可参考constructor。沙箱路径需要使用fileUri.getUriFromPath(path)方法将路径转换为应用沙箱URI，然后传入显示。同时需要保证目录包路径下的文件有可读权限。 默认值：null 由有效值（可正常解析并加载的图片资源）切换为无效值（无法解析或加载的图片路径）时，组件保持显示此前成功加载的图片内容，不进行清除或重置操作。 |
@@ -210,9 +226,10 @@ alt(value: string | Resource | PixelMap)
 
 
 
-#### alt22+
+### alt22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 alt(src: ResourceStr | PixelMap | ImageAlt)
 
@@ -236,6 +253,7 @@ alt(src: ResourceStr | PixelMap | ImageAlt)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | src | ResourceStr \| PixelMap\| ImageAlt | 是 | 设置图片加载过程中和加载失败时的占位图，支持本地图片（png、jpg、bmp、svg、gif和heif类型），支持PixelMap类型图片，不支持网络图片。 - 支持Base64字符串。 - 支持file://路径前缀的字符串，应用沙箱URI：file://&lt;bundleName&gt;/&lt;sandboxPath&gt;。应用沙箱路径URI构造可参考constructor。沙箱路径需要使用fileUri.getUriFromPath(path)方法将路径转换为应用沙箱URI，然后传入显示。同时需要保证目录包路径下的文件有可读权限。 |
@@ -243,9 +261,10 @@ alt(src: ResourceStr | PixelMap | ImageAlt)
 
 
 
-#### objectFit
+### objectFit
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 objectFit(value: ImageFit)
 
@@ -259,6 +278,7 @@ objectFit(value: ImageFit)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ImageFit | 是 | 图片的填充效果。 |
@@ -266,9 +286,10 @@ objectFit(value: ImageFit)
 
 
 
-#### imageMatrix15+
+### imageMatrix15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 imageMatrix(matrix: ImageMatrix)
 
@@ -286,6 +307,7 @@ imageMatrix(matrix: ImageMatrix)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | matrix | ImageMatrix | 是 | 图片的变换矩阵。 |
@@ -293,9 +315,10 @@ imageMatrix(matrix: ImageMatrix)
 
 
 
-#### objectRepeat
+### objectRepeat
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 objectRepeat(value: ImageRepeat)
 
@@ -311,6 +334,7 @@ objectRepeat(value: ImageRepeat)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ImageRepeat | 是 | 图片的重复样式。 默认值：ImageRepeat.NoRepeat |
@@ -318,9 +342,10 @@ objectRepeat(value: ImageRepeat)
 
 
 
-#### interpolation
+### interpolation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 interpolation(value: ImageInterpolation)
 
@@ -336,6 +361,7 @@ interpolation(value: ImageInterpolation)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ImageInterpolation | 是 | 图片的插值效果。 默认值：ImageInterpolation.Low 设置undefined时，取值为ImageInterpolation.None。 |
@@ -343,9 +369,10 @@ interpolation(value: ImageInterpolation)
 
 
 
-#### renderMode
+### renderMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 renderMode(value: ImageRenderMode)
 
@@ -363,6 +390,7 @@ renderMode(value: ImageRenderMode)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ImageRenderMode | 是 | 图片的渲染模式为原色或黑白。 默认值：ImageRenderMode.Original |
@@ -370,9 +398,10 @@ renderMode(value: ImageRenderMode)
 
 
 
-#### sourceSize
+### sourceSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sourceSize(value: ImageSourceSize)
 
@@ -388,6 +417,7 @@ sourceSize(value: ImageSourceSize)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ImageSourceSize | 是 | 图片解码尺寸参数，降低图片的分辨率，常用于需要让图片显示尺寸比组件尺寸更小的场景。和objectFit接口的ImageFit.None配合使用时可在组件内显示小图。 |
@@ -395,9 +425,10 @@ sourceSize(value: ImageSourceSize)
 
 
 
-#### matchTextDirection
+### matchTextDirection
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 matchTextDirection(value: boolean)
 
@@ -413,6 +444,7 @@ matchTextDirection(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 图片是否跟随系统语言方向。 默认值：false，false表示图片不跟随系统语言方向，true表示图片跟随系统语言方向，在RTL语言环境下显示镜像翻转显示效果。 |
@@ -420,9 +452,10 @@ matchTextDirection(value: boolean)
 
 
 
-#### fitOriginalSize
+### fitOriginalSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fitOriginalSize(value: boolean)
 
@@ -440,6 +473,7 @@ fitOriginalSize(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 图片的显示尺寸是否跟随图源尺寸。 默认值：false 说明： 当不设置fitOriginalSize或者设置fitOriginalSize为false时，组件显示大小不跟随图源大小。 当设置fitOriginalSize为true时，组件显示大小跟随图源大小。 |
@@ -447,9 +481,10 @@ fitOriginalSize(value: boolean)
 
 
 
-#### fillColor
+### fillColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fillColor(value: ResourceColor)
 
@@ -465,6 +500,7 @@ fillColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 设置填充颜色。 说明： 默认不对组件进行填充。当传入异常值时，系统将使用默认的主题色：浅色模式下为黑色，深色模式下为白色。 从API version 21开始，当supportSvg2设置为true时，fillColor依赖SVG图源中fill属性的参数配置。当SVG图源中fill属性为'none'时，fillColor不生效。当supportSvg2设置为false时，fillColor生效，替换SVG图片中所有可绘制元素的填充颜色。 |
@@ -472,9 +508,10 @@ fillColor(value: ResourceColor)
 
 
 
-#### fillColor15+
+### fillColor15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fillColor(color: ResourceColor|ColorContent)
 
@@ -490,6 +527,7 @@ fillColor(color: ResourceColor|ColorContent)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | ResourceColor\|ColorContent | 是 | 设置填充颜色。 说明： 默认不对组件进行填充。当传入异常值时，系统将使用默认的主题色：浅色模式下为黑色，深色模式下为白色。 从API version 21开始，当supportSvg2设置为true时，fillColor依赖SVG图源中fill属性的参数配置。当SVG图源中fill属性为'none'时，fillColor不生效。 |
@@ -497,9 +535,10 @@ fillColor(color: ResourceColor|ColorContent)
 
 
 
-#### fillColor20+
+### fillColor20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fillColor(color: ResourceColor|ColorContent|ColorMetrics)
 
@@ -515,6 +554,7 @@ fillColor(color: ResourceColor|ColorContent|ColorMetrics)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | ResourceColor\|ColorContent\|ColorMetrics | 是 | 设置填充颜色。 说明： 默认不对组件进行填充。当传入异常值时，系统将使用默认的主题色：浅色模式下为黑色，深色模式下为白色。 从API version 21开始，当supportSvg2设置为true时，fillColor依赖SVG图源中fill属性的参数配置。当SVG图源中fill属性为'none'时，fillColor不生效。 |
@@ -522,9 +562,10 @@ fillColor(color: ResourceColor|ColorContent|ColorMetrics)
 
 
 
-#### autoResize
+### autoResize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 autoResize(value: boolean)
 
@@ -546,6 +587,7 @@ autoResize(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 图片解码过程中是否对图源自动缩放。设置为true时，组件会根据显示区域的尺寸决定用于绘制的图源尺寸，有利于减少内存占用。如原图大小为800x1200，而显示区域大小为200x200，则图片会降采样解码到200x300的尺寸（实际计算过程中会依赖缩放和填充类型的配置，从而得到的计算结果会有差异），从而大幅度节省图片占用的内存。 默认值：false，false表示关闭图源自动缩放，true表示开启图源自动缩放。 |
@@ -553,9 +595,10 @@ autoResize(value: boolean)
 
 
 
-#### syncLoad8+
+### syncLoad8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 syncLoad(value: boolean)
 
@@ -575,6 +618,7 @@ syncLoad(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否同步加载图片，默认是异步加载。同步加载时阻塞UI线程，不会显示占位图。 默认值：false，false表示异步加载图片，true表示同步加载图片。 阻塞主线程超过6s将导致AppFreeze，具体参考AppFreeze（应用冻屏）检测。 |
@@ -582,9 +626,10 @@ syncLoad(value: boolean)
 
 
 
-#### copyOption9+
+### copyOption9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 copyOption(value: CopyOptions)
 
@@ -600,6 +645,7 @@ copyOption(value: CopyOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | CopyOptions | 是 | 图片是否可复制。 默认值：CopyOptions.None |
@@ -607,9 +653,10 @@ copyOption(value: CopyOptions)
 
 
 
-#### colorFilter9+
+### colorFilter9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 colorFilter(value: ColorFilter | DrawingColorFilter)
 
@@ -624,6 +671,7 @@ colorFilter(value: ColorFilter | DrawingColorFilter)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -654,9 +702,10 @@ colorFilter(value: ColorFilter | DrawingColorFilter)
 
 
 
-#### colorFilter
+### colorFilter
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 colorFilter(value: ColorFilter | DrawingColorFilter | ResourceColor)
 
@@ -678,6 +727,7 @@ colorFilter(value: ColorFilter | DrawingColorFilter | ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ColorFilter \| DrawingColorFilter \| ResourceColor | 是 | 图像颜色的滤镜值。 ColorFilter、DrawingColorFilter类型及SVG图源的相关说明，请参考colorFilter的接口说明。ResourceColor类型的输入颜色值，默认按照DrawingColorFilter.createBlendModeColorFilter的SRC_ATOP模式进行绘制（该模式表示滤镜颜色与目标图像叠加，滤镜覆盖在目标上方）。 |
@@ -685,9 +735,10 @@ colorFilter(value: ColorFilter | DrawingColorFilter | ResourceColor)
 
 
 
-#### draggable9+
+### draggable9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 draggable(value: boolean)
 
@@ -699,6 +750,7 @@ draggable(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 组件默认拖拽效果，设置为true时，组件可拖拽，绑定的长按手势不生效。 API version 9及之前，默认值为false。API version 10及之后，默认值为true。 若用户需要设置自定义手势，则需要将draggable设置为false。设置为false之后，拖拽类事件不再触发。 |
@@ -706,9 +758,10 @@ draggable(value: boolean)
 
 
 
-#### enableAnalyzer11+
+### enableAnalyzer11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableAnalyzer(enable: boolean)
 
@@ -736,6 +789,7 @@ enableAnalyzer(enable: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | boolean | 是 | Image组件是否支持AI分析。 设置为true时，Image组件支持AI分析。设置为false时，Image组件不支持AI分析。 默认值：false |
@@ -743,9 +797,10 @@ enableAnalyzer(enable: boolean)
 
 
 
-#### resizable11+
+### resizable11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 resizable(value: ResizableOptions)
 
@@ -769,6 +824,7 @@ resizable(value: ResizableOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResizableOptions | 是 | 图像拉伸时可调整大小的图像选项。 |
@@ -776,9 +832,10 @@ resizable(value: ResizableOptions)
 
 
 
-#### privacySensitive12+
+### privacySensitive12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 privacySensitive(supported: boolean)
 
@@ -794,6 +851,7 @@ privacySensitive(supported: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | supported | boolean | 是 | 是否支持卡片敏感隐私信息。 默认值为false，表示不支持卡片敏感隐私信息，当设置为true时，隐私模式下图片将显示为半透明底板样式。 说明： 设置null则不敏感。 进入隐私模式需要卡片框架支持。 |
@@ -801,9 +859,10 @@ privacySensitive(supported: boolean)
 
 
 
-#### dynamicRangeMode12+
+### dynamicRangeMode12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 dynamicRangeMode(value: DynamicRangeMode)
 
@@ -819,6 +878,7 @@ dynamicRangeMode(value: DynamicRangeMode)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | DynamicRangeMode | 是 | 图像显示的动态范围。 默认值：DynamicRangeMode.STANDARD |
@@ -826,9 +886,10 @@ dynamicRangeMode(value: DynamicRangeMode)
 
 
 
-#### orientation14+
+### orientation14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 orientation(orientation: ImageRotateOrientation)
 
@@ -846,6 +907,7 @@ orientation(orientation: ImageRotateOrientation)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | orientation | ImageRotateOrientation | 是 | 图像内容的显示方向。 仅支持静态位图的显示。 如果需要显示携带旋转角度信息或翻转信息的图片，建议使用ImageRotateOrientation.AUTO进行设置。 默认值：ImageRotateOrientation.UP 设置为undefined或null时，取值为ImageRotateOrientation.AUTO。 |
@@ -853,9 +915,10 @@ orientation(orientation: ImageRotateOrientation)
 
 
 
-#### hdrBrightness19+
+### hdrBrightness19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hdrBrightness(brightness: number)
 
@@ -873,6 +936,7 @@ SVG类型图源不支持该属性。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | brightness | number | 是 | 用于调整组件展示HDR图片的亮度，该接口仅对HDR图源生效。 默认值：1.0 取值范围：[0.0，1.0]，小于0和大于1.0时取1.0。0表示图片按照SDR亮度显示，1.0表示图片按照当前允许的最高HDR亮度显示。 |
@@ -880,9 +944,10 @@ SVG类型图源不支持该属性。
 
 
 
-#### supportSvg221+
+### supportSvg221+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 supportSvg2(enable: boolean)
 
@@ -900,6 +965,7 @@ Image组件创建后，不支持动态修改该属性的值。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | boolean | 是 | 控制是否开启SVG标签解析能力增强功能。 默认值：false true：支持SVG解析新能力；false：保持原有SVG解析能力。 |
@@ -907,9 +973,10 @@ Image组件创建后，不支持动态修改该属性的值。
 
 
 
-#### contentTransition21+
+### contentTransition21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contentTransition(transition: ContentTransitionEffect)
 
@@ -923,6 +990,7 @@ contentTransition(transition: ContentTransitionEffect)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | transition | ContentTransitionEffect | 是 | 过渡动效的类型。 其中取值为ContentTransitionEffect.OPACITY表示淡入淡出效果，取值为ContentTransitionEffect.IDENTITY表示无动画效果。 默认值：ContentTransitionEffect.IDENTITY 设置为undefined或null时，取默认值ContentTransitionEffect.IDENTITY。 说明：对动态图片资源不生效。 |
@@ -930,9 +998,10 @@ contentTransition(transition: ContentTransitionEffect)
 
 
 
-#### antialiased23+
+### antialiased23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 antialiased(isAntialiased: Optional&lt;boolean&gt;)
 
@@ -950,6 +1019,7 @@ antialiased(isAntialiased: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isAntialiased | Optional&lt;boolean&gt; | 是 | 设置位图图片边缘是否开启抗锯齿。 true表示开启边缘抗锯齿；false表示不开启边缘抗锯齿。 设置为undefined时，不开启边缘抗锯齿。 |
@@ -957,9 +1027,10 @@ antialiased(isAntialiased: Optional&lt;boolean&gt;)
 
 
 
-#### ImageContent12+
+## ImageContent12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 指定图像内容。
 
@@ -971,6 +1042,7 @@ antialiased(isAntialiased: Optional&lt;boolean&gt;)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | EMPTY | 0 | 空图像。 |
@@ -978,9 +1050,10 @@ antialiased(isAntialiased: Optional&lt;boolean&gt;)
 
 
 
-#### ImageInterpolation
+## ImageInterpolation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 图片的插值效果。
 
@@ -989,6 +1062,7 @@ antialiased(isAntialiased: Optional&lt;boolean&gt;)
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1000,9 +1074,10 @@ antialiased(isAntialiased: Optional&lt;boolean&gt;)
 
 
 
-#### ImageRenderMode
+## ImageRenderMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 图片的渲染模式。
 
@@ -1012,6 +1087,7 @@ antialiased(isAntialiased: Optional&lt;boolean&gt;)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | Original | 0 | 原色渲染模式。 |
@@ -1020,9 +1096,10 @@ antialiased(isAntialiased: Optional&lt;boolean&gt;)
 
 
 
-#### ResizableOptions11+
+## ResizableOptions11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 图像拉伸时可调整大小的图像选项。
 
@@ -1031,6 +1108,7 @@ antialiased(isAntialiased: Optional&lt;boolean&gt;)
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1046,9 +1124,10 @@ antialiased(isAntialiased: Optional&lt;boolean&gt;)
 
 
 
-#### ImageAlt22+
+## ImageAlt22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置图片占位图。
 
@@ -1060,6 +1139,7 @@ antialiased(isAntialiased: Optional&lt;boolean&gt;)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | placeholder | ResourceStr \| PixelMap | 否 | 是 | 加载过程中的占位图。 |
@@ -1068,9 +1148,10 @@ antialiased(isAntialiased: Optional&lt;boolean&gt;)
 
 
 
-#### DynamicRangeMode12+枚举说明
+## DynamicRangeMode12+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 期望展示的图像动态范围。
 
@@ -1079,6 +1160,7 @@ antialiased(isAntialiased: Optional&lt;boolean&gt;)
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1089,9 +1171,10 @@ antialiased(isAntialiased: Optional&lt;boolean&gt;)
 
 
 
-#### ImageRotateOrientation14+
+## ImageRotateOrientation14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 期望的图像内容显示方向。
 
@@ -1100,6 +1183,7 @@ antialiased(isAntialiased: Optional&lt;boolean&gt;)
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1116,9 +1200,10 @@ antialiased(isAntialiased: Optional&lt;boolean&gt;)
 
 
 
-#### ImageSourceSize18+对象说明
+## ImageSourceSize18+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 图片解码尺寸。
 
@@ -1134,6 +1219,7 @@ antialiased(isAntialiased: Optional&lt;boolean&gt;)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | width7+ | number | 否 | 否 | 图片解码尺寸宽度。 单位：vp 取值范围： (0, +∞)；当取值小于等于0时，该参数不生效，按图片原始尺寸解码。 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -1142,9 +1228,10 @@ antialiased(isAntialiased: Optional&lt;boolean&gt;)
 
 
 
-#### DrawableDescriptor10+
+## DrawableDescriptor10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type DrawableDescriptor = import ('../api/@ohos.arkui.drawableDescriptor').DrawableDescriptor
 
@@ -1156,6 +1243,7 @@ type DrawableDescriptor = import ('../api/@ohos.arkui.drawableDescriptor').Drawa
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | import ('../api/@ohos.arkui.drawableDescriptor').DrawableDescriptor | 返回一个DrawableDescriptor对象。 |
@@ -1163,9 +1251,10 @@ type DrawableDescriptor = import ('../api/@ohos.arkui.drawableDescriptor').Drawa
 
 
 
-#### DrawingColorFilter12+
+## DrawingColorFilter12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type DrawingColorFilter = import('../api/@ohos.graphics.drawing').default.ColorFilter
 
@@ -1177,6 +1266,7 @@ type DrawingColorFilter = import('../api/@ohos.graphics.drawing').default.ColorF
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | import('../api/@ohos.graphics.drawing').default.ColorFilter | 返回一个颜色滤波器。 |
@@ -1184,9 +1274,10 @@ type DrawingColorFilter = import('../api/@ohos.graphics.drawing').default.ColorF
 
 
 
-#### DrawingLattice12+
+## DrawingLattice12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type DrawingLattice = import('../api/@ohos.graphics.drawing').default.Lattice
 
@@ -1198,6 +1289,7 @@ type DrawingLattice = import('../api/@ohos.graphics.drawing').default.Lattice
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | import('../api/@ohos.graphics.drawing').default.Lattice | 返回一个矩阵网格对象。 |
@@ -1205,9 +1297,10 @@ type DrawingLattice = import('../api/@ohos.graphics.drawing').default.Lattice
 
 
 
-#### ImageMatrix15+对象说明
+## ImageMatrix15+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ImageMatrix = Matrix4Transit
 
@@ -1219,6 +1312,7 @@ type ImageMatrix = Matrix4Transit
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Matrix4Transit | 返回当前的矩阵对象。 |
@@ -1226,9 +1320,10 @@ type ImageMatrix = Matrix4Transit
 
 
 
-#### ColorContent15+
+## ColorContent15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 指定颜色填充内容。
 
@@ -1238,6 +1333,7 @@ type ImageMatrix = Matrix4Transit
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | ORIGIN | ColorContent | 是 | 否 | 重置fillColor接口，效果上与不设置fillColor一致。 |
@@ -1245,17 +1341,19 @@ type ImageMatrix = Matrix4Transit
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)外，还支持以下事件：
 
 
 
-#### onComplete
+### onComplete
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onComplete(callback: (event?: { width: number, height: number, componentWidth: number, componentHeight: number, loadingStatus: number,contentWidth: number, contentHeight: number, contentOffsetX: number, contentOffsetY: number }) => void)
 
@@ -1270,6 +1368,7 @@ onComplete(callback: (event?: { width: number, height: number, componentWidth: n
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1286,9 +1385,10 @@ onComplete(callback: (event?: { width: number, height: number, componentWidth: n
 
 
 
-#### onError9+
+### onError9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onError(callback: ImageErrorCallback)
 
@@ -1304,6 +1404,7 @@ onError(callback: ImageErrorCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | ImageErrorCallback | 是 | 图片加载异常时触发的回调。 说明： 建议开发者使用此回调，可快速确认图片加载失败时的具体原因，参见ImageError的错误信息详细介绍；网络相关的超时上报，重试次数等规格细节，参见CacheDownloadOptions。 |
@@ -1311,9 +1412,10 @@ onError(callback: ImageErrorCallback)
 
 
 
-#### onFinish
+### onFinish
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onFinish(event: () => void)
 
@@ -1329,6 +1431,7 @@ onFinish(event: () => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | () => void | 是 | 当加载的源文件为带动效的SVG格式图片时，SVG动效播放完成时会触发这个回调。如果动效为无限循环动效，则不会触发这个回调。 |
@@ -1336,9 +1439,10 @@ onFinish(event: () => void)
 
 
 
-#### ImageErrorCallback9+
+## ImageErrorCallback9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ImageErrorCallback = (error: ImageError) => void
 
@@ -1354,6 +1458,7 @@ type ImageErrorCallback = (error: ImageError) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | error | ImageError | 是 | 图片加载异常时触发回调的返回对象。 |
@@ -1361,15 +1466,17 @@ type ImageErrorCallback = (error: ImageError) => void
 
 
 
-#### ImageError9+
+## ImageError9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 图片加载异常时触发回调的返回对象。
 
 当组件的参数类型为[AnimatedDrawableDescriptor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-drawabledescriptor#animateddrawabledescriptor12)时该事件不触发。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1382,9 +1489,10 @@ type ImageErrorCallback = (error: ImageError) => void
 
 
 
-#### BusinessError20+
+## BusinessError20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type BusinessError<T = void> = import('../api/@ohos.base').BusinessError&lt;T&gt;
 
@@ -1398,12 +1506,14 @@ type BusinessError<T = void> = import('../api/@ohos.base').BusinessError&lt;T&gt
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | import('../api/@ohos.base').BusinessError&lt;T&gt; | 图片加载异常返回的错误信息。 |
 
 
 以下是错误信息的详细介绍：ImageError的error属性为错误信息对象，其中code为错误码，message为错误信息。
+
 
 | 错误码ID | 错误信息 | 错误信息发生阶段 | 图片加载类型 |
 | --- | --- | --- | --- |
@@ -1434,9 +1544,10 @@ type BusinessError<T = void> = import('../api/@ohos.base').BusinessError&lt;T&gt
 
 
 
-#### RequestDownloadInfo23+
+## RequestDownloadInfo23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type RequestDownloadInfo = import('../api/@ohos.request.cacheDownload').default.DownloadInfo
 
@@ -1450,6 +1561,7 @@ type RequestDownloadInfo = import('../api/@ohos.request.cacheDownload').default.
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | import('../api/@ohos.request.cacheDownload').default.DownloadInfo | 网络资源加载异常时返回的下载信息，包含资源信息、网络请求信息与性能统计信息。 |
@@ -1457,13 +1569,17 @@ type RequestDownloadInfo = import('../api/@ohos.request.cacheDownload').default.
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（加载基本类型图片）
+
+
+### 示例1（加载基本类型图片）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过传入[Resource](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resource)资源，加载png、gif、svg和jpg等基本类型的图片。
 
@@ -1510,7 +1626,10 @@ struct ImageExample1 {
 
 
 
-#### 示例2（下载与显示静态网络图片）
+### 示例2（下载与显示静态网络图片）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 加载网络图片时，默认网络超时是5分钟，建议使用alt配置加载时的占位图。使用[HTTP](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/http-request)工具包发送网络请求，接着将返回的数据解码为Image组件中的PixelMap，加载gif到PixelMap时，gif显示为静态图。图片开发可参考[Image Kit简介](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-overview)。
 
@@ -1579,7 +1698,10 @@ struct ImageExample2 {
 
 
 
-#### 示例3（下载与显示网络gif图片）
+### 示例3（下载与显示网络gif图片）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例使用[cacheDownload.download](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-request-cachedownload#cachedownloaddownload)接口下载网络gif图片。
 
@@ -1622,7 +1744,10 @@ struct Index {
 
 
 
-#### 示例4（为图片添加事件）
+### 示例4（为图片添加事件）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例为图片添加[onClick](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-events-click#onclick)和[onFinish](#onfinish)事件。
 
@@ -1667,7 +1792,10 @@ struct ImageExample3 {
 
 
 
-#### 示例5（开启图像AI分析）
+### 示例5（开启图像AI分析）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例使用[enableAnalyzer](#enableanalyzer11)接口开启图像AI分析。
 
@@ -1724,7 +1852,10 @@ struct ImageExample4 {
 
 
 
-#### 示例6（通过slice拉伸图片）
+### 示例6（通过slice拉伸图片）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[resizable](#resizable11)属性的slice选项，调整不同方向对图片进行拉伸。
 
@@ -1797,7 +1928,10 @@ struct Index {
 
 
 
-#### 示例7（通过lattice拉伸图片）
+### 示例7（通过lattice拉伸图片）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例使用[resizable](#resizable11)属性的lattice选项，使用矩形网格对象对图片进行拉伸。
 
@@ -1847,7 +1981,10 @@ struct drawingLatticeTest {
 
 
 
-#### 示例8（播放PixelMap数组动画）
+### 示例8（播放PixelMap数组动画）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[AnimatedDrawableDescriptor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-drawabledescriptor#animateddrawabledescriptor12)对象播放PixelMap数组动画。
 
@@ -1931,7 +2068,10 @@ struct ImageExample {
 
 
 
-#### 示例9（为图像设置颜色滤镜效果）
+### 示例9（为图像设置颜色滤镜效果）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[colorFilter](#colorfilter9)属性实现了给图像设置颜色滤镜效果。
 
@@ -2003,7 +2143,10 @@ struct ImageExample3 {
 
 
 
-#### 示例10（为图像设置填充效果）
+### 示例10（为图像设置填充效果）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[objectFit](#objectfit)属性为图像设置填充效果。
 
@@ -2058,7 +2201,10 @@ struct ImageExample{
 
 
 
-#### 示例11（切换显示不同类型图片）
+### 示例11（切换显示不同类型图片）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示了[ResourceStr](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcestr)类型与[ImageContent](#imagecontent12)类型作为数据源的显示图片效果。
 
@@ -2092,7 +2238,10 @@ struct ImageContentExample {
 
 
 
-#### 示例12（配置隐私隐藏）
+### 示例12（配置隐私隐藏）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[privacySensitive](#privacysensitive12)属性展示了如何配置隐私隐藏，效果展示需要卡片框架支持。
 
@@ -2121,7 +2270,10 @@ struct ImageExample {
 
 
 
-#### 示例13（为图片设置扫光效果）
+### 示例13（为图片设置扫光效果）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[linearGradient](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-datapanel#lineargradient10)接口和[animateTo()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#animateto)接口实现了给图片设置扫光效果。
 
@@ -2214,7 +2366,10 @@ struct ImageExample11 {
 
 
 
-#### 示例14（为图片添加变换效果）
+### 示例14（为图片添加变换效果）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[imageMatrix](#imagematrix15)和[objectFit](#objectfit)属性，为图片添加旋转和平移的效果。
 
@@ -2287,7 +2442,10 @@ struct Test {
 
 
 
-#### 示例15（通过sourceSize设置图片解码尺寸）
+### 示例15（通过sourceSize设置图片解码尺寸）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[sourceSize](#sourcesize)接口自定义图片的解码尺寸。
 
@@ -2324,7 +2482,10 @@ struct Index {
 
 
 
-#### 示例16（通过renderMode设置图片的渲染模式）
+### 示例16（通过renderMode设置图片的渲染模式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[renderMode](#rendermode)接口设置图片渲染模式为黑白模式。
 
@@ -2354,7 +2515,10 @@ struct Index {
 
 
 
-#### 示例17（通过objectRepeat设置图片的重复样式）
+### 示例17（通过objectRepeat设置图片的重复样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[objectRepeat](#objectrepeat)接口在竖直轴上重复绘制图片。
 
@@ -2384,7 +2548,10 @@ struct Index {
 
 
 
-#### 示例18（设置SVG图片的填充颜色）
+### 示例18（设置SVG图片的填充颜色）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[fillColor](#fillcolor15)属性为SVG图片设置不同颜色的填充效果。
 
@@ -2438,7 +2605,10 @@ struct Index {
 
 
 
-#### 示例19（设置HDR图源动态提亮）
+### 示例19（设置HDR图源动态提亮）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[hdrBrightness](#hdrbrightness19)属性调整HDR图源的亮度，将hdrBrightness从0调整到1。
 
@@ -2498,7 +2668,10 @@ struct Index {
 
 
 
-#### 示例20（设置图片是否跟随系统语言方向）
+### 示例20（设置图片是否跟随系统语言方向）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[matchTextDirection](#matchtextdirection)接口，设置手机语言为维语时图片是否显示镜像翻转显示效果。
 
@@ -2535,7 +2708,10 @@ struct Index {
 
 
 
-#### 示例21（设置图像内容的显示方向）
+### 示例21（设置图像内容的显示方向）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[orientation](#orientation14)属性，设置图像内容的显示方向。
 
@@ -2633,7 +2809,10 @@ struct OrientationExample {
 
 
 
-#### 示例22（获取图片的exif信息并设置图像内容的显示方向）
+### 示例22（获取图片的exif信息并设置图像内容的显示方向）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[getImageProperty](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-imagesource#getimageproperty11)接口，获取图片的exif信息，再根据获取到的exif信息，通过[orientation](#orientation14)属性设置图像内容显示为正确方向。
 
@@ -2757,7 +2936,10 @@ struct Example {
 
 
 
-#### 示例23（动态切换SVG图片的填充颜色）
+### 示例23（动态切换SVG图片的填充颜色）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过按钮切换不同色域下的颜色值，动态改变SVG图片的填充颜色效果，以展示[ColorMetrics](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-graphics#colormetrics12)类型的使用方式和显示差异。
 
@@ -2821,7 +3003,10 @@ struct fillColorMetricsDemo {
 
 
 
-#### 示例24（使用应用沙箱路径显示图片）
+### 示例24（使用应用沙箱路径显示图片）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 在当前应用的haps/entry/files目录下预置一张名为cloud.png的图片，随后使用应用沙箱路径显示该图片。
 
@@ -2860,7 +3045,10 @@ struct Index {
 
 
 
-#### 示例25（使用相对路径显示图片）
+### 示例25（使用相对路径显示图片）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 在工程pages目录同级位置创建common目录，在common目录下预置一张名为cloud1.png的图片，随后使用相对路径显示该图片。
 
@@ -2886,7 +3074,10 @@ struct Index {
 
 
 
-#### 示例26（使用supportSvg2属性时，SVG图片的显示效果）
+### 示例26（使用supportSvg2属性时，SVG图片的显示效果）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过设置[supportSvg2](#supportsvg221)属性，使SVG标签解析能力增强功能生效。
 
@@ -2927,7 +3118,10 @@ struct Index {
 
 
 
-#### 示例27（使用ContentTransition属性实现图片淡入淡出切换效果）
+### 示例27（使用ContentTransition属性实现图片淡入淡出切换效果）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 21开始，该示例演示了在点击图片切换图源时，通过[contentTransition](#contenttransition21)属性实现淡入淡出效果，完成图片的平滑过渡。
 
@@ -2964,7 +3158,10 @@ struct ImageExample {
 
 
 
-#### 示例28（使用alt属性设置加载过程中和加载失败时的占位图）
+### 示例28（使用alt属性设置加载过程中和加载失败时的占位图）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例演示了在图片加载过程中和加载失败时，通过设置[alt](#alt22)属性实现图片加载过程中和图片加载失败时显示指定图片
 
@@ -3007,7 +3204,10 @@ struct ImageExample {
 
 
 
-#### 示例29（使用onError回调监听网络图片加载异常信息）
+### 示例29（使用onError回调监听网络图片加载异常信息）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例演示如何通过[onError](#onerror9)回调获取网络图片加载异常时的详细下载信息[ImageError](#imageerror9)。当图片加载失败时，可通过ImageError中的downloadInfo属性获取网络图片下载的详细信息，包括下载的资源信息、网络请求信息以及性能统计信息，有助于快速定位网络异常或资源错误原因。
 
@@ -3034,7 +3234,10 @@ struct Index {
 
 
 
-#### 示例30（设置位图图片边缘抗锯齿）
+### 示例30（设置位图图片边缘抗锯齿）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例演示了如何通过设置[antialiased](#antialiased23)接口开启位图图片边缘的抗锯齿功能。
 

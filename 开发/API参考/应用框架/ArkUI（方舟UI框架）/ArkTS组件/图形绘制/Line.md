@@ -1,9 +1,9 @@
 # Line
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawing-components-line
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Line组件用于在应用界面中绘制直线，支持自定义直线的起点、终点、颜色、宽度、透明度、虚线样式、端点样式等属性。适用于绘制分隔线、装饰性线条、图表中的坐标轴或连接线、自定义图形边框等场景。
  
@@ -12,23 +12,26 @@ Line组件用于在应用界面中绘制直线，支持自定义直线的起点�
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
  
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### Line
+### Line
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 new Line(options?: LineOptions)
  
@@ -42,6 +45,7 @@ new Line(options?: LineOptions)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | LineOptions | 否 | Line组件绘制区域，包含width和height属性，用于设置Line组件的宽高。不传递此参数时，Line组件的width和height属性将按照各自属性的缺省逻辑处理（参见LineOptions对象说明）。 异常值undefined和null按照无效值处理，本次设置不生效。 |
@@ -49,9 +53,10 @@ new Line(options?: LineOptions)
  
   
 
-#### Line
+### Line
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Line(options?: LineOptions)
  
@@ -65,6 +70,7 @@ Line(options?: LineOptions)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | LineOptions | 否 | Line组件绘制区域，包含width和height属性，用于设置Line组件的宽高。不传递此参数时，Line组件的width和height属性将按照各自属性的缺省逻辑处理（参见LineOptions对象说明）。 异常值undefined和null按照无效值处理，本次设置不生效。 |
@@ -72,9 +78,10 @@ Line(options?: LineOptions)
  
   
 
-#### LineOptions18+对象说明
+## LineOptions18+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于描述Line组件绘制属性。
  
@@ -90,6 +97,7 @@ Line(options?: LineOptions)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | width7+ | Length | 否 | 是 | 宽度。 值为异常值或缺省时，根据startPoint和endPoint自动计算所需的绘制区域宽度。 默认单位：vp 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -98,17 +106,19 @@ Line(options?: LineOptions)
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)以及[图形绘制通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawing-components-common)外，还支持以下属性：
  
   
 
-#### startPoint
+### startPoint
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startPoint(value: Array&lt;any&gt;)
  
@@ -122,6 +132,7 @@ startPoint(value: Array&lt;any&gt;)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Array&lt;any&gt; | 是 | 直线起点坐标点（相对于Line组件绘制区域的左上角原点），单位vp。数组格式为[x坐标, y坐标]，数组长度必须为2，元素应为Length类型。 默认值：[0, 0] 异常值undefined和null按照默认值处理。 |
@@ -129,9 +140,10 @@ startPoint(value: Array&lt;any&gt;)
  
   
 
-#### endPoint
+### endPoint
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 endPoint(value: Array&lt;any&gt;)
  
@@ -145,6 +157,7 @@ endPoint(value: Array&lt;any&gt;)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Array&lt;any&gt; | 是 | 直线终点坐标点（相对于Line组件绘制区域的左上角原点），单位vp。数组格式为[x坐标, y坐标]，数组长度必须为2，元素应为Length类型。 默认值：[0, 0] 异常值undefined和null按照默认值处理。 |
@@ -152,13 +165,17 @@ endPoint(value: Array&lt;any&gt;)
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 示例1（组件属性绘制）
+### 示例1（组件属性绘制）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过startPoint、endPoint、strokeOpacity、stroke、strokeWidth、strokeDashArray、strokeDashOffset属性分别绘制直线的起始点、结束点、透明度、直线颜色、线条宽度、边框间隙、绘制起点。
  
@@ -219,7 +236,10 @@ struct LineExample {
  
   
 
-#### 示例2（线条端点绘制）
+### 示例2（线条端点绘制）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过strokeLineCap属性绘制直线的线条端点样式。
  
@@ -272,7 +292,10 @@ struct LineExample1 {
  
   
 
-#### 示例3（线条间隙绘制）
+### 示例3（线条间隙绘制）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过strokeDashArray属性绘制直线的线条间隙。
  
@@ -337,7 +360,10 @@ struct LineExample {
  
   
 
-#### 示例4（宽和高使用不同参数类型绘制直线）
+### 示例4（宽和高使用不同参数类型绘制直线）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 width、height属性分别使用不同的长度类型绘制直线。
  
@@ -378,12 +404,15 @@ struct LineTypeExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/yzkyn27ATiufn7yCE2c-8A/zh-cn_image_0000002655848892.png?HW-CC-KV=V1&HW-CC-Date=20260730T071511Z&HW-CC-Expire=86400&HW-CC-Sign=F8DCD4B7ED7AF2278F84CC293F472465F86B509D43B009408508D5FAEE55F061)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/EPGG5iDXRaiQqINeCkf3FA/zh-cn_image_0000002747292981.png?HW-CC-KV=V1&HW-CC-Date=20260911T073117Z&HW-CC-Expire=86400&HW-CC-Sign=F0279D8130CB3AE4F09C6DE43FB8EE6EEB53A82487459560360A1878A09779E6)
 
  
   
 
-#### 示例5（使用attributeModifier动态设置Line组件的属性）
+### 示例5（使用attributeModifier动态设置Line组件的属性）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 以下示例展示了如何使用attributeModifier动态设置Line组件的startPoint、endPoint、stroke、strokeDashArray、strokeDashOffset、strokeLineCap、strokeOpacity、strokeWidth和antiAlias属性。
  
@@ -420,4 +449,4 @@ struct LineModifierDemo {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/eFtAbbXlRMO4kq8p2EJsqw/zh-cn_image_0000002686088321.png?HW-CC-KV=V1&HW-CC-Date=20260730T071511Z&HW-CC-Expire=86400&HW-CC-Sign=D3F86A7865F6A0220E1E9C01C19AC8CCADE3046AC34A236F121DB48793061B18)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/G5_PAvbGQHSZAbX7pX8SVQ/zh-cn_image_0000002747212897.png?HW-CC-KV=V1&HW-CC-Date=20260911T073117Z&HW-CC-Expire=86400&HW-CC-Sign=3278DDD52CA27B351FCFA5C7A7EF65D5101B88943589596031B984F38319416D)

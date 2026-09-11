@@ -26,7 +26,7 @@ import { buffer, util } from '@kit.ArkTS';
 
 let base64 = new util.Base64Helper();
 
-// 生成header
+<em>// 生成header</em>
 function genHeader(keyId: string): string {
   const jwtHeader: object = new Object({
     'kid': keyId,
@@ -37,7 +37,7 @@ function genHeader(keyId: string): string {
   return base64.encodeToStringSync(strArray, util.Type.BASIC_URL_SAFE);
 }
 
-// 生成payload
+<em>// 生成payload</em>
 function genPayload(subAccount: string): string {
   const now: number = Date.now();
   const jwtPayload: object = new Object({
@@ -62,7 +62,7 @@ async function pss(priKey: string, str: string) {
 }
 
 export async function main() {
-  // 服务账号密钥，需要根据教程使用自己的密钥
+ <em> // 服务账号密钥，需要根据教程使用自己的密钥</em>
   const privateJson: object = new Object({
     'project_id': '*****',
     'key_id': '*****',

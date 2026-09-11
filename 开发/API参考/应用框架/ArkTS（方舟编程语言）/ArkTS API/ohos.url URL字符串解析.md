@@ -1,9 +1,9 @@
 # @ohos.url (URL字符串解析)
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-09-04 10:41:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-url
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 URL是统一资源定位符，本模块提供了常用的工具函数，实现了解析URL字符串、构造URL对象以及对URL查询参数的解析和操作等功能。
  
@@ -19,9 +19,10 @@ URL是统一资源定位符，本模块提供了常用的工具函数，实现�
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { url } from '@kit.ArkTS';
@@ -29,17 +30,19 @@ import { url } from '@kit.ArkTS';
  
   
 
-#### URLParams9+
+## URLParams9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 URLParams是一个用于解析、构造和操作URL参数的实用类。该类提供了统一的接口来处理URL查询参数。
  
   
 
-#### constructor9+
+### constructor9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(init?: string[][] | Record<string, string> | string | URLParams)
  
@@ -51,6 +54,7 @@ URLParams的构造函数，用于创建URL参数对象，适用于需要解析�
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | init | string[][] \| Record<string, string> \| string \| URLParams | 否 | 入参对象。 - string[][]：字符串二维数组。 - Record<string, string>：对象列表。 - string：URL查询参数字符串。 - URLParams：URLParams实例对象。 - 默认值：null。 |
@@ -75,9 +79,10 @@ let objectParams4 = secondUrlObj.params;
  
   
 
-#### append9+
+### append9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 append(name: string, value: string): void
  
@@ -89,6 +94,7 @@ append(name: string, value: string): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 需要插入搜索参数的键名。 |
@@ -108,9 +114,10 @@ paramsObject.append('fod', '3');
  
   
 
-#### delete9+
+### delete9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 delete(name: string): void
  
@@ -122,6 +129,7 @@ delete(name: string): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 需要删除的键名。 |
@@ -140,9 +148,10 @@ paramsObject.delete('fod');
  
   
 
-#### getAll9+
+### getAll9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAll(name: string): string[]
  
@@ -154,6 +163,7 @@ getAll(name: string): string[]
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 指定的键名。 |
@@ -161,6 +171,7 @@ getAll(name: string): string[]
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string[] | 返回指定名称的所有键对应值的集合。 |
@@ -179,9 +190,10 @@ console.info(params.getAll('fod').toString()); // Output ["1","3"]
  
   
 
-#### entries9+
+### entries9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 entries(): IterableIterator<[string, string]>
  
@@ -193,6 +205,7 @@ entries(): IterableIterator<[string, string]>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator<[string, string]> | 返回一个迭代器，迭代器的每一项为包含name和value的[string, string]数组。 |
@@ -215,9 +228,10 @@ for (let item of pair) {
  
   
 
-#### forEach9+
+### forEach9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 forEach(callbackFn: (value: string, key: string, searchParams: URLParams) => void, thisArg?: Object): void
  
@@ -229,6 +243,7 @@ forEach(callbackFn: (value: string, key: string, searchParams: URLParams) => voi
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callbackFn | function | 是 | 遍历键值对时执行的回调函数，对每个键值对调用一次。 |
@@ -237,6 +252,7 @@ forEach(callbackFn: (value: string, key: string, searchParams: URLParams) => voi
  
 **表1** callbackFn的参数说明
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string | 是 | 当前遍历到的值。 |
@@ -257,9 +273,10 @@ myURLObject.params.forEach((value, name, searchParams) => {
  
   
 
-#### get9+
+### get9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get(name: string): string | null
  
@@ -275,6 +292,7 @@ get(name: string): string | null
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 指定键名。 |
@@ -282,6 +300,7 @@ get(name: string): string | null
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string \| null | 返回第一个值，如果没找到，返回 null。 |
@@ -298,9 +317,10 @@ let absentValue = paramsObject.get('abc'); // undefined
  
   
 
-#### has9+
+### has9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 has(name: string): boolean
  
@@ -312,6 +332,7 @@ has(name: string): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 要查找的参数的键名。 |
@@ -319,6 +340,7 @@ has(name: string): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 是否存在相对应的key值，存在返回true，否则返回false。 |
@@ -337,9 +359,10 @@ let result = paramsObject.has('bard');
  
   
 
-#### set9+
+### set9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set(name: string, value: string): void
  
@@ -353,6 +376,7 @@ set(name: string, value: string): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 将要设置的参数的键名。 |
@@ -369,9 +393,10 @@ paramsObject.set('baz', '3'); // Add a third parameter.
  
   
 
-#### sort9+
+### sort9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sort(): void
  
@@ -391,9 +416,10 @@ console.info(paramsObject.toString()); // Display the sorted query string // Out
  
   
 
-#### keys9+
+### keys9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 keys(): IterableIterator&lt;string&gt;
  
@@ -405,6 +431,7 @@ keys(): IterableIterator&lt;string&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator&lt;string&gt; | 返回一个包含所有键值对的name的迭代器。 |
@@ -427,9 +454,10 @@ for (let key of keys) {
  
   
 
-#### values9+
+### values9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 values(): IterableIterator&lt;string&gt;
  
@@ -441,6 +469,7 @@ values(): IterableIterator&lt;string&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator&lt;string&gt; | 返回一个包含所有键值对的value的迭代器。 |
@@ -463,9 +492,10 @@ for (let value of values) {
  
   
 
-#### [Symbol.iterator]9+
+### [Symbol.iterator]9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [Symbol.iterator](): IterableIterator<[string, string]>
  
@@ -477,6 +507,7 @@ for (let value of values) {
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator<[string, string]> | 返回一个迭代器，迭代器的每一项为包含name和value的[string, string]数组。 |
@@ -499,9 +530,10 @@ for (let pair of iter) {
  
   
 
-#### toString9+
+### toString9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toString(): string
  
@@ -513,6 +545,7 @@ toString(): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 返回序列化为字符串的搜索参数，必要时对字符进行百分比编码。 |
@@ -533,20 +566,23 @@ console.info(params.toString()); // Output 'fod=1&bard=2&fod=3'
  
   
 
-#### URL
+## URL
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于解析、构造、规范化、编码对应的URL字符串。
  
   
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Utils.Lang
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | hash | string | 否 | 否 | 获取和设置URL的片段部分。元服务API：从API version 11开始，该接口支持在元服务中使用。 |
@@ -559,7 +595,7 @@ console.info(params.toString()); // Output 'fod=1&bard=2&fod=3'
 | port | string | 否 | 否 | 获取和设置URL的端口部分。当port为当前protocol的默认端口时，port将被解析为空字符串。元服务API：从API version 11开始，该接口支持在元服务中使用。 |
 | protocol | string | 否 | 否 | 获取和设置URL的协议部分。元服务API：从API version 11开始，该接口支持在元服务中使用。 |
 | search | string | 否 | 否 | 获取和设置URL的序列化查询部分。元服务API：从API version 11开始，该接口支持在元服务中使用。 |
-| searchParams(deprecated) | URLSearchParams | 是 | 否 | 获取URLSearchParams对象，用于访问URL查询参数。 - 说明： 此属性从API version 7开始支持，从API version 9开始废弃。建议使用URLParams替代。 |
+| searchParams(deprecated) | URLSearchParams | 是 | 否 | 获取URLSearchParams对象，用于访问URL查询参数。 - 说明： 此属性从API version 7开始支持，从API version 9开始废弃。建议使用params9+替代。 |
 | params9+ | URLParams | 是 | 否 | 获取URLParams对象，用于访问URL查询参数。元服务API：从API version 11开始，该接口支持在元服务中使用。 |
 | username | string | 否 | 否 | 获取和设置URL的用户名部分。元服务API：从API version 11开始，该接口支持在元服务中使用。 |
  
@@ -593,9 +629,10 @@ console.info("toString " + urlObj.toString()); // toString http://testhost/direc
  
   
 
-#### constructor(deprecated)
+### constructor(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(url: string, base?: string | URL)
  
@@ -609,6 +646,7 @@ URL的构造函数。与[parseURL](#parseurl9)方法功能相同，但parseURL�
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | string | 是 | 一个表示绝对URL或相对URL的字符串，必须是合法的URL格式。 如果url是相对URL，则需要指定base，用于解析最终的URL。 如果 url是绝对URL，则给定的base将不会生效。 |
@@ -634,9 +672,10 @@ new url.URL('https://www.example.com', absoluteUrl); // Output https://www.examp
  
   
 
-#### constructor9+
+### constructor9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
  
@@ -648,9 +687,10 @@ URL的无参构造函数，不建议直接调用。请使用[parseURL](#parseurl
  
   
 
-#### parseURL9+
+### parseURL9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static parseURL(url: string, base?: string | URL): URL
  
@@ -662,6 +702,7 @@ static parseURL(url: string, base?: string | URL): URL
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | string | 是 | 一个表示绝对URL或相对URL的字符串。 如果 url 是相对URL，则需要指定 base，用于解析最终的URL。 如果 url 是绝对URL，则给定的 base 将不会生效。 |
@@ -670,6 +711,7 @@ static parseURL(url: string, base?: string | URL): URL
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | URL | 返回解析后的URL对象，包含URL的各组成部分（如协议、主机和路径等属性）。 |
@@ -683,6 +725,7 @@ static parseURL(url: string, base?: string | URL): URL
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200002 | Invalid url string. |
@@ -707,9 +750,10 @@ url.URL.parseURL('https://www.example.com', urlObject); // Output 'https://www.e
  
   
 
-#### toString
+### toString
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toString(): string
  
@@ -721,6 +765,7 @@ toString(): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 解析后的URL序列化字符串。 |
@@ -735,9 +780,10 @@ let result = urlObject.toString(); // Output 'https://username:password@host:808
  
   
 
-#### toJSON
+### toJSON
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toJSON(): string
  
@@ -749,6 +795,7 @@ toJSON(): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | URL对象的JSON序列化字符串。 |
@@ -765,9 +812,10 @@ let result = urlObject.toJSON();
  
   
 
-#### URLSearchParams(deprecated)
+## URLSearchParams(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 URLSearchParams接口定义了一些处理URL查询字符串的实用方法。
  
@@ -777,9 +825,10 @@ URLSearchParams接口定义了一些处理URL查询字符串的实用方法。
  
   
 
-#### constructor(deprecated)
+### constructor(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(init?: string[][] | Record<string, string> | string | URLSearchParams)
  
@@ -793,6 +842,7 @@ URLSearchParams的构造函数。
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | init | string[][] \| Record<string, string> \| string \| URLSearchParams | 否 | 入参对象。 - string[][]：字符串二维数组，每个内部数组包含两个元素，分别为键名和键值。 - Record<string, string>：对象列表。 - string：字符串，需遵循URL查询参数格式，如'key=value&key2=value2'。 - URLSearchParams：对象。 - 默认值：undefined。 |
@@ -810,9 +860,10 @@ let params = new url.URLSearchParams(urlObject.search);
  
   
 
-#### append(deprecated)
+### append(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 append(name: string, value: string): void
  
@@ -826,6 +877,7 @@ append(name: string, value: string): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 需要插入搜索参数的键名。 |
@@ -842,9 +894,10 @@ paramsObject.append('fod', '3');
  
   
 
-#### delete(deprecated)
+### delete(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 delete(name: string): void
  
@@ -858,6 +911,7 @@ delete(name: string): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 需要删除的键值名称。 |
@@ -873,9 +927,10 @@ paramsObject.delete('fod');
  
   
 
-#### getAll(deprecated)
+### getAll(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAll(name: string): string[]
  
@@ -889,6 +944,7 @@ getAll(name: string): string[]
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 指定的键值名称。 |
@@ -896,6 +952,7 @@ getAll(name: string): string[]
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string[] | 返回指定名称的所有键对应值的集合。 |
@@ -912,9 +969,10 @@ console.info(params.getAll('fod').toString()) // Output ["1","3"].
  
   
 
-#### entries(deprecated)
+### entries(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 entries(): IterableIterator<[string, string]>
  
@@ -928,6 +986,7 @@ entries(): IterableIterator<[string, string]>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator<[string, string]> | 返回一个迭代器，迭代器的每一项为包含name和value的[string, string]数组。 |
@@ -947,9 +1006,10 @@ for (let pair of iter) {
  
   
 
-#### forEach(deprecated)
+### forEach(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 forEach(callbackFn: (value: string, key: string, searchParams: URLSearchParams) => void, thisArg?: Object): void
  
@@ -963,6 +1023,7 @@ forEach(callbackFn: (value: string, key: string, searchParams: URLSearchParams) 
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callbackFn | function | 是 | 回调函数。 |
@@ -971,6 +1032,7 @@ forEach(callbackFn: (value: string, key: string, searchParams: URLSearchParams) 
  
 **表1** callbackFn的参数说明
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string | 是 | 当前遍历到的键值。 |
@@ -989,9 +1051,10 @@ myURLObject.searchParams.forEach((value, name, searchParams) => {
  
   
 
-#### get(deprecated)
+### get(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get(name: string): string | null
  
@@ -1005,6 +1068,7 @@ get(name: string): string | null
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 指定键值对的名称。 |
@@ -1012,6 +1076,7 @@ get(name: string): string | null
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string \| null | 返回第一个值，如果没找到，返回 null。 |
@@ -1028,9 +1093,10 @@ let getObj = paramsObject.get("abc"); // undefined
  
   
 
-#### has(deprecated)
+### has(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 has(name: string): boolean
  
@@ -1044,6 +1110,7 @@ has(name: string): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 要查找的参数的键名。 |
@@ -1051,6 +1118,7 @@ has(name: string): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 是否存在相对应的key值，存在返回true，否则返回false。 |
@@ -1066,9 +1134,10 @@ paramsObject.has('bard') === true;
  
   
 
-#### set(deprecated)
+### set(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set(name: string, value: string): void
  
@@ -1082,6 +1151,7 @@ set(name: string, value: string): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 将要设置的参数的键值名。 |
@@ -1098,9 +1168,10 @@ paramsObject.set('baz', '3'); // Add a third parameter.
  
   
 
-#### sort(deprecated)
+### sort(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sort(): void
  
@@ -1122,9 +1193,10 @@ console.info(searchParamsObject.toString()); // Display the sorted query string 
  
   
 
-#### keys(deprecated)
+### keys(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 keys(): IterableIterator&lt;string&gt;
  
@@ -1138,6 +1210,7 @@ keys(): IterableIterator&lt;string&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator&lt;string&gt; | 返回一个所有键值对的name的迭代器。 |
@@ -1157,9 +1230,10 @@ for (let key of keys) {
  
   
 
-#### values(deprecated)
+### values(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 values(): IterableIterator&lt;string&gt;
  
@@ -1173,6 +1247,7 @@ values(): IterableIterator&lt;string&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator&lt;string&gt; | 返回一个所有键值对的value的迭代器。 |
@@ -1192,9 +1267,10 @@ for (let value of values) {
  
   
 
-#### [Symbol.iterator](deprecated)
+### [Symbol.iterator](deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [Symbol.iterator](): IterableIterator<[string, string]>
  
@@ -1208,6 +1284,7 @@ for (let value of values) {
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator<[string, string]> | 返回一个迭代器，迭代器的每一项为包含name和value的[string, string]数组。 |
@@ -1227,9 +1304,10 @@ for (let pair of pairs) {
  
   
 
-#### toString(deprecated)
+### toString(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toString(): string
  
@@ -1243,6 +1321,7 @@ toString(): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 返回序列化为字符串的搜索参数，必要时对字符进行百分比编码。 |

@@ -1,16 +1,16 @@
 # HarmonyOS 3.x/4.x已接入过华为推送，HarmonyOS Next/5.x及以上版本应用如何升级适配
 
-更新时间：2026-08-12 10:47:00
+更新时间：2026-08-19 01:20:00
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-push-11
 
-#### 问题现象
+## 问题现象
 
 HarmonyOS 3.x/4.x已接入过[推送服务（Push Kit）](https://developer.huawei.com/consumer/cn/doc/HMSCore-Guides/service-introduction-0000001050040060)，现在需要给HarmonyOS Next/5.x及之后的系统版本推送通知，应用需要如何升级适配。
  
  
 
-#### 背景知识
+## 背景知识
 
 HarmonyOS 3.x/4.x应用适配HarmonyOS Next/5.x需要在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)上创建不同APP ID的应用，创建流程可参考官网[创建HarmonyOS应用](https://developer.huawei.com/consumer/cn/doc/app/agc-help-create-app-0000002247955506)。
  
@@ -18,7 +18,7 @@ HarmonyOS Next/5.x接入[Push Kit](https://developer.huawei.com/consumer/cn/doc/
  
 - 客户端：1. [开通推送服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-config-setting)。
 
-2. [申请通知消息自分类权益](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-apply-right#section16708911111611)。
+2. [申请通知消息自分类权益](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-apply-right#申请通知消息自分类权益)。
 
 3. [Push Token获取](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-get-token)与[场景化消息推送](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-scenes)。
 - 服务端：1. [基于服务账号生成鉴权令牌](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-jwt-token)。
@@ -30,14 +30,14 @@ HarmonyOS Next/5.x接入[Push Kit](https://developer.huawei.com/consumer/cn/doc/
  
  
 
-#### 解决方案
+## 解决方案
 
 HarmonyOS Next/5.x应用升级适配Push Kit流程按客户端和服务端差异点主要在以下几个方面。
  
 **客户端：**
  
 - 开通推送服务：HarmonyOS 3.x/4.x与HarmonyOS Next/5.x应用在同一个项目中时，HarmonyOS 3.x/4.x应用接入Push Kit时已开通过推送服务，HarmonyOS Next/5.x应用无须再开通推送服务权益。但需要注意HarmonyOS Next/5.x应用除Wearable设备外，数据处理地固定为中国。
-- 自分类权益：自分类权益以应用为维度，适配HarmonyOS Next/5.x仍需要开通对应权益。HarmonyOS Next/5.x及以上系统版本的自分类权益请[了解详情](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-apply-right#section16708911111611)，HarmonyOS 3.x/4.x及以下系统版本的自分类权益请[了解详情](https://developer.huawei.com/consumer/cn/doc/HMSCore-Guides/message-classification-0000001149358835#section1076611477914)。
+- 自分类权益：自分类权益以应用为维度，适配HarmonyOS Next/5.x仍需要开通对应权益。HarmonyOS Next/5.x及以上系统版本的自分类权益请[了解详情](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-apply-right#申请通知消息自分类权益)，HarmonyOS 3.x/4.x及以下系统版本的自分类权益请[了解详情](https://developer.huawei.com/consumer/cn/doc/HMSCore-Guides/message-classification-0000001149358835#section1076611477914)。
 
  
 **服务端：**
@@ -50,13 +50,13 @@ HarmonyOS Next/5.x应用升级适配Push Kit流程按客户端和服务端差异
  
  
 
-#### 总结
+## 总结
 
-HarmonyOS 3.x/4.x与HarmonyOS Next/5.x客户端和服务端Push Kit接入均存在差异，如果您的项目之前已经基于HarmonyOS 3.x/4.x的系统接入过Push Kit，仍然需要按照HarmonyOS Next/5.x[开发流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-gettingstart#section65812095297)重新进行开发客户端和服务端。
+HarmonyOS 3.x/4.x与HarmonyOS Next/5.x客户端和服务端Push Kit接入均存在差异，如果您的项目之前已经基于HarmonyOS 3.x/4.x的系统接入过Push Kit，仍然需要按照HarmonyOS Next/5.x[开发流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-gettingstart#开发流程)重新进行开发客户端和服务端。
  
  
 
-#### 常见FAQ
+## 常见FAQ
 
 Q：HarmonyOS 3.x/4.x和HarmonyOS Next/5.x使用的AppGallery Connect账号是同一个吗，Push kit接入时使用的基于服务账号生成的鉴权令牌是账号级别的还是项目级别？
  

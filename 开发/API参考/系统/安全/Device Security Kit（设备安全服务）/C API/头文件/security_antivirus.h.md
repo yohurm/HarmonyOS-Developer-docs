@@ -1,11 +1,12 @@
 # security_antivirus.h
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesecurity-capi-security-antivirus-8h
 **支持设备：** PC/2in1
 
-#### 概述
+## 概述
+
 
 **支持设备：** PC/2in1
 
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** PC/2in1
 
   
 
-#### 结构体
+### 结构体
+
 
 **支持设备：** PC/2in1
  
+
 | 名称 | 描述 |
 | --- | --- |
 | struct SecurityAntivirus_Antivirus | 定义病毒防护服务应用信息，包含包名、当前版本号、上次更新时间、病毒防护开关状态、用户ID。 |
@@ -40,10 +44,12 @@
  
   
 
-#### 枚举
+### 枚举
+
 
 **支持设备：** PC/2in1
  
+
 | 名称 | 描述 |
 | --- | --- |
 | SecurityAntivirus_ErrCode{ SECURITY_ANTIVIRUS_SUCCESS = 0, SECURITY_ANTIVIRUS_PERMISSION_NOT_GRANTED = 201, SECURITY_ANTIVIRUS_PARAM_INVALID = 1019900001, SECURITY_ANTIVIRUS_NO_REGISTER = 1019900002, SECURITY_ANTIVIRUS_INNER_ERROR = 1019900003 } | 定义病毒防护服务管理错误码。 |
@@ -51,10 +57,12 @@
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** PC/2in1
  
+
 | 名称 | 描述 |
 | --- | --- |
 | SecurityAntivirus_ErrCode HMS_SecurityAntivirus_RegisterAntivirus(const char* bundleName) | 三方EDR应用向HarmonyOS安全防护服务注册。 |

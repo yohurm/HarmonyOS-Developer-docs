@@ -20,7 +20,7 @@ struct TabListDemo {
   listBuilder(tabName: ResourceStr, index: number) {
     TabContent() {
       Stack({ alignContent: Alignment.BottomEnd }) {
-        // 两个List使用同一个控制器
+      <em>  // 两个List使用同一个控制器</em>
         List({ space: 24, scroller: this.scroller }) {
           ForEach(this.listArr, (item: number, index: number) => {
             ListItem() {
@@ -46,7 +46,7 @@ struct TabListDemo {
   build() {
     Column() {
       Tabs() {
-        // 调用了两次listBuilder
+       <em> // 调用了两次listBuilder</em>
         this.listBuilder('促销活动', 0);
         this.listBuilder('行程服务', 1);
       }
@@ -103,13 +103,13 @@ listBuilder函数被调用两次，创建了2个List组件，只定义了一个S
 struct TabListDemo {
   @State currentIndex: number = 0;
   private listArr: number[] = new Array(30).fill(0);
-  private scrollerList: Scroller[] = [new Scroller(), new Scroller()]; // 根据Tab的数量创造Scroller
+  private scrollerList: Scroller[] = [new Scroller(), new Scroller()]; <em>// </em><em>根据Tab的数量创造Scroller</em>
 
   @Builder
   listBuilder(tabName: ResourceStr, index: number) {
     TabContent() {
       Stack({ alignContent: Alignment.BottomEnd }) {
-        // 每个List单独绑定Scroller
+       <em> // 每个List单独绑定Scroller</em>
         List({ space: 24, scroller: this.scrollerList[index] }) {
           ForEach(this.listArr, (item: number, index: number) => {
             ListItem() {
@@ -122,7 +122,7 @@ struct TabListDemo {
           Button('上去');
         }.margin({ right: 12, bottom: 12 })
         .onClick(() => {
-          // 控制List对应的Scroller
+         <em> // 控制List对应的Scroller</em>
           this.scrollerList[index].scrollToIndex(0);
           this.scrollerList[index].scrollTo({
             xOffset: 0,

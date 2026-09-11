@@ -1,10 +1,10 @@
 # 获取手机号和风险等级Button
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusion-button-get-risklevel
 
-#### 场景介绍
+## 场景介绍
 
 从6.0.2(22)开始，支持获取手机号和风险等级Button功能。
 
@@ -12,25 +12,25 @@
 
 
 
-#### 约束与限制
+## 约束与限制
 
 获取手机号和风险等级Button支持Phone、Tablet、PC/2in1和TV设备。
 
 
 
-#### 前提条件
+## 前提条件
 
-应用开发前提条件，需要完成手机号的scope权限申请和【获取风险等级】权限申请，请见[申请账号权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-config-permissions)和[开发前提](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-get-risklevel-on-demand-acquisition#开发前提)章节。
+应用开发需要完成“获取您的手机号”权限申请和获取风险等级权限申请，分别参见[申请账号权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-config-permissions)和[开发前提](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-get-risklevel-on-demand-acquisition#开发前提)章节。
 
-元服务应用开发前提条件，需要完成手机号的scope权限申请和【获取风险等级】权限申请，请见[申请账号权限](https://developer.huawei.com/consumer/cn/doc/atomic-guides/account-guide-atomic-permissions)和[开发前提](https://developer.huawei.com/consumer/cn/doc/atomic-guides/account-guide-atomic-get-risklevel#开发前提)章节。
+元服务应用开发需要完成“获取您的手机号”权限申请和获取风险等级权限申请，分别参见[申请账号权限](https://developer.huawei.com/consumer/cn/doc/atomic-guides/account-guide-atomic-permissions)和[开发前提](https://developer.huawei.com/consumer/cn/doc/atomic-guides/account-guide-atomic-get-risklevel#开发前提)章节。
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 导入Scenario Fusion Kit模块以及相关公共模块。
 
   
-```text
+```ArkTS
 import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 ```
@@ -38,7 +38,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 2. 在容器中声明FunctionalButton，指定Button的openType，并设置对应的回调函数，代码如下：
 
   
-```text
+```ArkTS
 @Entry
 @Component
 struct Index {

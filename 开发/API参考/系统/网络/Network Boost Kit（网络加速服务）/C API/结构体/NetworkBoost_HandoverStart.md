@@ -1,11 +1,12 @@
 # NetworkBoost_HandoverStart
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/network-boost-c-struct-handover_start
 **支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -19,16 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | uint32_t expires | 连接迁移全流程的超时时间，单位为s，取值为任意正整数或者0。 |
@@ -37,13 +41,15 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### dataSpeedAction
+### dataSpeedAction
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -57,7 +63,8 @@ NetworkBoost_DataSpeedAction NetworkBoost_HandoverStart::dataSpeedAction
  
   
 
-#### expires
+### expires
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 

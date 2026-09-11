@@ -30,7 +30,7 @@ Canvas画布平移操作通过translate(x, y)方法实现，将画布原点从�
 import { NodeController, FrameNode, RenderNode, DrawContext, UIContext } from '@kit.ArkUI';
 import { drawing } from '@kit.ArkGraphics2D';
 
-// 自定义RenderNode
+<em>// 自定义RenderNode</em>
 export class MyRenderNode extends RenderNode {
   private currentX: number = 0;
   private currentY: number = 0;
@@ -42,13 +42,13 @@ export class MyRenderNode extends RenderNode {
   }
 
   async draw(context: DrawContext) {
-    // 创建画布canvas对象
+  <em>  // 创建画布canvas对象</em>
     const canvas = context.canvas;
 
-    // 使用translate()接口实现画布平移
+  <em>  // 使用translate()接口实现画布平移</em>
     canvas.translate(this.currentX, this.currentY);
 
-    // 自定义绘制相关操作
+  <em>  // 自定义绘制相关操作</em>
     const brush = new drawing.Brush();
     const pen = new drawing.Pen();
     pen.setColor({
@@ -74,7 +74,7 @@ export class MyRenderNode extends RenderNode {
   }
 }
 
-// 自定义NodeController
+<em>// 自定义NodeController</em>
 export class MyNodeController extends NodeController {
   private rootNode: FrameNode | null = null;
   myRenderNode = new MyRenderNode();
@@ -120,7 +120,7 @@ struct RenderTest {
   build() {
     Column() {
       Column() {
-        // 将自定义NodeController进行显示
+       <em> // 将自定义NodeController进行显示</em>
         NodeContainer(this.controller)
           .width('100%')
           .height('95%');
@@ -155,9 +155,9 @@ struct RenderTest {
           });
       }
       .width('100%')
-      .justifyContent(FlexAlign.Center) // 设置当前Row容器内子元素在主轴上居中对齐
-      .alignItems(VerticalAlign.Center) // 设置当前Row容器内子元素在交叉轴（垂直方向）上的对齐方式为底部对齐
-      .layoutWeight(1); // 设置当前Row在父容器Column中的布局权重为1
+      .justifyContent(FlexAlign.Center) <em>// 设置当前Row容器内子元素在主轴上居中对齐</em>
+      .alignItems(VerticalAlign.Center) <em>// 设置当前Row容器内子元素在交叉轴（垂直方向）上的对齐方式为底部对齐</em>
+      .layoutWeight(1); <em>// 设置当前Row在父容器Column中的布局权重为1</em>
     };
   }
 }

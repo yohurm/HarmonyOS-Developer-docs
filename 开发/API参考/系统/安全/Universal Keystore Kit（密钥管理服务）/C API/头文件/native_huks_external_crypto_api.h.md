@@ -1,11 +1,12 @@
 # native_huks_external_crypto_api.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-huks-external-crypto-api-h
 **支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | struct OH_Huks_Result OH_Huks_RegisterProvider(const struct OH_Huks_Blob *providerName, const OH_Huks_ExternalCryptoParamSet *paramSet) | 注册外部密钥管理能力扩展提供者。 |
@@ -50,13 +54,15 @@
  
   
 
-#### 函数说明
+## 函数说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### OH_Huks_RegisterProvider()
+### OH_Huks_RegisterProvider()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -74,6 +80,7 @@ struct OH_Huks_Result OH_Huks_RegisterProvider(const struct OH_Huks_Blob *provid
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct OH_Huks_Blob *providerName | 指定提供者名称。 |
@@ -82,6 +89,7 @@ struct OH_Huks_Result OH_Huks_RegisterProvider(const struct OH_Huks_Blob *provid
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | struct OH_Huks_Result | 可能的返回码（errorCode）： OH_HUKS_SUCCESS 0：操作成功。 OH_HUKS_ERR_CODE_PERMISSION_FAIL 201：权限校验失败，请先申请所需权限。 OH_HUKS_ERR_CODE_NOT_SUPPORTED_API 801：不支持的API。 OH_HUKS_ERR_CODE_MISSING_CRYPTO_ALG_ARGUMENT 12000002：未能获取提供者参数。 OH_HUKS_ERR_CODE_COMMUNICATION_FAIL 12000005：IPC通信失败。 OH_HUKS_ERR_CODE_INSUFFICIENT_MEMORY 12000014：内存不足。 OH_HUKS_ERR_CODE_INVALID_ARGUMENT 12000018：providerName或paramSet无效。 OH_HUKS_ERR_CODE_ITEM_EXISTS 12000019：提供者已被注册。 OH_HUKS_ERR_CODE_EXTERNAL_ERROR 12000020：依赖模块发生错误。 OH_HUKS_ERR_CODE_EXCEED_LIMIT 12000025：提供者数量超过限制。 |
@@ -89,7 +97,8 @@ struct OH_Huks_Result OH_Huks_RegisterProvider(const struct OH_Huks_Blob *provid
  
   
 
-#### OH_Huks_UnregisterProvider()
+### OH_Huks_UnregisterProvider()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -107,6 +116,7 @@ struct OH_Huks_Result OH_Huks_UnregisterProvider(const struct OH_Huks_Blob *prov
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct OH_Huks_Blob *providerName | 指定提供者名称。 |
@@ -115,6 +125,7 @@ struct OH_Huks_Result OH_Huks_UnregisterProvider(const struct OH_Huks_Blob *prov
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | struct OH_Huks_Result | 可能的返回码（errorCode）： OH_HUKS_SUCCESS 0：操作成功。 OH_HUKS_ERR_CODE_PERMISSION_FAIL 201：权限校验失败，请先申请所需权限。 OH_HUKS_ERR_CODE_NOT_SUPPORTED_API 801：不支持的API。 OH_HUKS_ERR_CODE_COMMUNICATION_FAIL 12000005：IPC通信失败。 OH_HUKS_ERR_CODE_ITEM_NOT_EXIST 12000011：未找到指定的提供者。 OH_HUKS_ERR_CODE_INTERNAL_ERROR 12000012：发生系统内部错误，密钥管理扩展模块没有加载。 OH_HUKS_ERR_CODE_INSUFFICIENT_MEMORY 12000014：内存不足。 OH_HUKS_ERR_CODE_INVALID_ARGUMENT 12000018：providerName无效。 |
@@ -122,7 +133,8 @@ struct OH_Huks_Result OH_Huks_UnregisterProvider(const struct OH_Huks_Blob *prov
  
   
 
-#### OH_Huks_OpenResource()
+### OH_Huks_OpenResource()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -140,6 +152,7 @@ struct OH_Huks_Result OH_Huks_OpenResource(const struct OH_Huks_Blob *resourceId
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct OH_Huks_Blob *resourceId | 指定提供者的资源ID。 |
@@ -148,6 +161,7 @@ struct OH_Huks_Result OH_Huks_OpenResource(const struct OH_Huks_Blob *resourceId
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | struct OH_Huks_Result | 可能的返回码（errorCode）： OH_HUKS_SUCCESS 0：操作成功。 OH_HUKS_ERR_CODE_NOT_SUPPORTED_API 801：不支持的API。 OH_HUKS_ERR_CODE_COMMUNICATION_FAIL 12000005：IPC通信失败。 OH_HUKS_ERR_CODE_CRYPTO_FAIL 12000006：UKey驱动报错。 OH_HUKS_ERR_CODE_ITEM_NOT_EXIST 12000011：未找到缓存的资源句柄，需要先根据资源ID打开资源。 OH_HUKS_ERR_CODE_INTERNAL_ERROR 12000012：发生系统内部错误，处理函数未找到。 OH_HUKS_ERR_CODE_INSUFFICIENT_MEMORY 12000014：内存不足。 OH_HUKS_ERR_CODE_KEY_ALREADY_EXIST 12000017：资源已打开。 OH_HUKS_ERR_CODE_INVALID_ARGUMENT 12000018：resourceId或paramSet无效。 OH_HUKS_ERR_CODE_EXTERNAL_ERROR 12000020：提供者执行失败。 OH_HUKS_ERR_CODE_BUSY 12000024：提供者或UKey忙。 OH_HUKS_ERR_CODE_EXCEED_LIMIT 12000025：打开资源的数量超过限制。 |
@@ -155,7 +169,8 @@ struct OH_Huks_Result OH_Huks_OpenResource(const struct OH_Huks_Blob *resourceId
  
   
 
-#### OH_Huks_CloseResource()
+### OH_Huks_CloseResource()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -171,6 +186,7 @@ struct OH_Huks_Result OH_Huks_CloseResource(const struct OH_Huks_Blob *resourceI
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct OH_Huks_Blob *resourceId | 指定提供者的资源ID。 |
@@ -179,6 +195,7 @@ struct OH_Huks_Result OH_Huks_CloseResource(const struct OH_Huks_Blob *resourceI
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | struct OH_Huks_Result | 可能的返回码（errorCode）： OH_HUKS_SUCCESS 0：操作成功。 OH_HUKS_ERR_CODE_NOT_SUPPORTED_API 801：不支持的API。 OH_HUKS_ERR_CODE_COMMUNICATION_FAIL 12000005：IPC通信失败。 OH_HUKS_ERR_CODE_CRYPTO_FAIL 12000006：UKey驱动报错。 OH_HUKS_ERR_CODE_INTERNAL_ERROR 12000012：发生系统内部错误，处理函数未找到。 OH_HUKS_ERR_CODE_INSUFFICIENT_MEMORY 12000014：内存不足。 OH_HUKS_ERR_CODE_INVALID_ARGUMENT 12000018：resourceId或paramSet无效。 OH_HUKS_ERR_CODE_EXTERNAL_ERROR 12000020：提供者执行失败。 OH_HUKS_ERR_CODE_BUSY 12000024：提供者或UKey忙。 |
@@ -186,7 +203,8 @@ struct OH_Huks_Result OH_Huks_CloseResource(const struct OH_Huks_Blob *resourceI
  
   
 
-#### OH_Huks_GetUkeyPinAuthState()
+### OH_Huks_GetUkeyPinAuthState()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -202,6 +220,7 @@ struct OH_Huks_Result OH_Huks_GetUkeyPinAuthState(const struct OH_Huks_Blob *res
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct OH_Huks_Blob *resourceId | 指定提供者的资源ID。 |
@@ -211,6 +230,7 @@ struct OH_Huks_Result OH_Huks_GetUkeyPinAuthState(const struct OH_Huks_Blob *res
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | struct OH_Huks_Result | 可能的返回码（errorCode）： OH_HUKS_SUCCESS 0：操作成功。 OH_HUKS_ERR_CODE_NOT_SUPPORTED_API 801：不支持的API。 OH_HUKS_ERR_CODE_COMMUNICATION_FAIL 12000005：IPC通信失败。 OH_HUKS_ERR_CODE_CRYPTO_FAIL 12000006：UKey驱动报错。 OH_HUKS_ERR_CODE_ITEM_NOT_EXIST 12000011：指定的资源ID无效。 OH_HUKS_ERR_CODE_INTERNAL_ERROR 12000012：发生系统内部错误，处理函数未找到。 OH_HUKS_ERR_CODE_INSUFFICIENT_MEMORY 12000014：内存不足。 OH_HUKS_ERR_CODE_INVALID_ARGUMENT 12000018：resourceId或paramSet无效。 OH_HUKS_ERR_CODE_EXTERNAL_ERROR 12000020：提供者执行失败。 OH_HUKS_ERR_CODE_BUSY 12000024：提供者或UKey忙。 |
@@ -218,7 +238,8 @@ struct OH_Huks_Result OH_Huks_GetUkeyPinAuthState(const struct OH_Huks_Blob *res
  
   
 
-#### OH_Huks_GetProperty()
+### OH_Huks_GetProperty()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -234,6 +255,7 @@ struct OH_Huks_Result OH_Huks_GetProperty(const struct OH_Huks_Blob *resourceId,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const struct OH_Huks_Blob *resourceId | 指定提供者的资源ID。 |
@@ -244,6 +266,7 @@ struct OH_Huks_Result OH_Huks_GetProperty(const struct OH_Huks_Blob *resourceId,
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | struct OH_Huks_Result | 可能的返回码（errorCode）： OH_HUKS_SUCCESS 0：操作成功。 OH_HUKS_ERR_CODE_NOT_SUPPORTED_API 801：不支持的API。 OH_HUKS_ERR_CODE_COMMUNICATION_FAIL 12000005：IPC通信失败。 OH_HUKS_ERR_CODE_CRYPTO_FAIL 12000006：驱动错误。 OH_HUKS_ERR_CODE_ITEM_NOT_EXIST 12000011：未找到缓存的指定句柄。 OH_HUKS_ERR_CODE_INTERNAL_ERROR 12000012：发生系统内部错误，处理函数未找到。 OH_HUKS_ERR_CODE_INSUFFICIENT_MEMORY 12000014：内存不足。 OH_HUKS_ERR_CODE_INVALID_ARGUMENT 12000018：参数resourceId、propertyId、paramSetIn、paramSetOut存在无效参数。 OH_HUKS_ERR_CODE_EXTERNAL_ERROR 12000020：提供者或UKey内部执行失败。 OH_HUKS_ERR_CODE_PIN_LOCKED 12000021：PIN码被锁定。 OH_HUKS_ERR_CODE_PIN_NO_AUTH 12000023：PIN码未通过认证。 OH_HUKS_ERR_CODE_BUSY 12000024：提供者或UKey中的资源正在被使用。 |
@@ -251,7 +274,8 @@ struct OH_Huks_Result OH_Huks_GetProperty(const struct OH_Huks_Blob *resourceId,
  
   
 
-#### OH_Huks_InitExternalCryptoParamSet()
+### OH_Huks_InitExternalCryptoParamSet()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -267,6 +291,7 @@ struct OH_Huks_Result OH_Huks_InitExternalCryptoParamSet(OH_Huks_ExternalCryptoP
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Huks_ExternalCryptoParamSet **paramSet | 指向要初始化的参数集合的二级指针。 |
@@ -274,6 +299,7 @@ struct OH_Huks_Result OH_Huks_InitExternalCryptoParamSet(OH_Huks_ExternalCryptoP
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | struct OH_Huks_Result | 可能的返回码（errorCode）： OH_HUKS_SUCCESS 0：操作成功。 OH_HUKS_ERR_CODE_INSUFFICIENT_MEMORY 12000014：内存不足。 OH_HUKS_ERR_CODE_INVALID_ARGUMENT 12000018：paramSet无效。 |
@@ -281,7 +307,8 @@ struct OH_Huks_Result OH_Huks_InitExternalCryptoParamSet(OH_Huks_ExternalCryptoP
  
   
 
-#### OH_Huks_AddExternalCryptoParams()
+### OH_Huks_AddExternalCryptoParams()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -297,6 +324,7 @@ struct OH_Huks_Result OH_Huks_AddExternalCryptoParams(OH_Huks_ExternalCryptoPara
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Huks_ExternalCryptoParamSet *paramSet | 指向将要添加参数的参数集合。 |
@@ -306,6 +334,7 @@ struct OH_Huks_Result OH_Huks_AddExternalCryptoParams(OH_Huks_ExternalCryptoPara
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | struct OH_Huks_Result | 可能的返回码（errorCode）： OH_HUKS_SUCCESS 0：操作成功。 OH_HUKS_ERR_CODE_INVALID_ARGUMENT 12000018：params为NULL或paramSet无效。 |
@@ -313,7 +342,8 @@ struct OH_Huks_Result OH_Huks_AddExternalCryptoParams(OH_Huks_ExternalCryptoPara
  
   
 
-#### OH_Huks_BuildExternalCryptoParamSet()
+### OH_Huks_BuildExternalCryptoParamSet()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -329,6 +359,7 @@ struct OH_Huks_Result OH_Huks_BuildExternalCryptoParamSet(OH_Huks_ExternalCrypto
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Huks_ExternalCryptoParamSet **paramSet | 指向要构建的参数集合的二级指针。 |
@@ -336,6 +367,7 @@ struct OH_Huks_Result OH_Huks_BuildExternalCryptoParamSet(OH_Huks_ExternalCrypto
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | struct OH_Huks_Result | 可能的返回码（errorCode）： OH_HUKS_SUCCESS 0：操作成功。 OH_HUKS_ERR_CODE_INVALID_ARGUMENT 12000018：paramSet无效。 OH_HUKS_ERR_CODE_INSUFFICIENT_MEMORY 12000014：内存不足。 |
@@ -343,7 +375,8 @@ struct OH_Huks_Result OH_Huks_BuildExternalCryptoParamSet(OH_Huks_ExternalCrypto
  
   
 
-#### OH_Huks_FreeExternalCryptoParamSet()
+### OH_Huks_FreeExternalCryptoParamSet()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -359,6 +392,7 @@ void OH_Huks_FreeExternalCryptoParamSet(OH_Huks_ExternalCryptoParamSet **paramSe
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Huks_ExternalCryptoParamSet **paramSet | 指向要销毁的参数集合的二级指针。 |
@@ -366,7 +400,8 @@ void OH_Huks_FreeExternalCryptoParamSet(OH_Huks_ExternalCryptoParamSet **paramSe
  
   
 
-#### OH_Huks_GetExternalCryptoParam()
+### OH_Huks_GetExternalCryptoParam()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -382,6 +417,7 @@ struct OH_Huks_Result OH_Huks_GetExternalCryptoParam(OH_Huks_ExternalCryptoParam
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Huks_ExternalCryptoParamSet *paramSet | 指向目标参数集合的指针。 |
@@ -391,6 +427,7 @@ struct OH_Huks_Result OH_Huks_GetExternalCryptoParam(OH_Huks_ExternalCryptoParam
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | struct OH_Huks_Result | 可能的返回码（errorCode）： OH_HUKS_SUCCESS 0：操作成功。 OH_HUKS_ERR_CODE_INVALID_ARGUMENT 12000018：paramSet或param无效，或参数在集合中不存在。 |

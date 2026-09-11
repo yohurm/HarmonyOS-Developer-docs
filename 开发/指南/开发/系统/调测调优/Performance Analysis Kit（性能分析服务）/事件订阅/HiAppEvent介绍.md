@@ -1,16 +1,16 @@
 # HiAppEvent介绍
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-intro
 
-#### 简介
+## 简介
 
 HiAppEvent是系统为应用开发者提供的事件订阅和事件打点机制，支持记录应用运行过程中的故障、统计、安全和行为事件，帮助开发者定位问题、分析应用运行情况，统计访问量、用户活跃度、操作习惯以及其他影响用户使用产品的关键因素。
 
 
 
-#### 基本概念
+## 基本概念
 
 **打点**：记录用户操作引起的变化，提供业务数据信息，供开发、产品、运维分析。
 
@@ -24,18 +24,18 @@ HiAppEvent是系统为应用开发者提供的事件订阅和事件打点机制�
  - 统计事件：统计和度量应用关键行为的事件，例如对使用时长、访问数等的统计。
  - 安全事件：记录涉及应用安全行为的事件，例如用户授权等行为。
 
-      - 事件参数：指定事件的参数，每个事件可以包含一组参数，建议设置为事件属性或事件发生的上下文信息，以便于描述事件的详细信息。
+            - 事件参数：指定事件的参数，每个事件可以包含一组参数，建议设置为事件属性或事件发生的上下文信息，以便于描述事件的详细信息。
 
 
 **事件订阅**：通过HiAppEvent的接口[addWatcher](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hiviewdfx-hiappevent#hiappeventaddwatcher)，开发者可以注册监听自己关注的系统事件或应用事件。目的是当订阅的事件发生后，接收事件的回调信息并进行处理。
 
 
 
-#### 实现原理
+## 实现原理
 
 
 
-#### 系统事件订阅机制
+### 系统事件订阅机制
 
 在当前系统应用沙箱机制下，应用进程仅可以直接访问自己的应用沙箱目录，参考[应用沙箱目录](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-sandbox-directory)。而系统事件信息的存放路径不在应用沙箱目录中，因此无法直接获取。
 
@@ -47,7 +47,7 @@ HiAppEvent是系统为应用开发者提供的事件订阅和事件打点机制�
 
 
 
-#### 应用事件订阅机制
+### 应用事件订阅机制
 
 应用调用addWatcher接口订阅关注的应用事件后，还需在应用事件发生时，调用[write](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hiviewdfx-hiappevent#hiappeventwrite-1)接口进行打点，用来记录应用事件。
 
@@ -63,11 +63,12 @@ HiAppEvent通过事件领域和事件名称关联应用事件，并通过addWatc
 
 
 
-#### 约束与限制
+## 约束与限制
 
  - 订阅接口addWatcher是同步接口，涉及IO操作。对于性能有要求的模块，建议将接口的调用放到非主线程。
  - 订阅接口addWatcher传入的名称name是唯一的，相同的name，后一次调用会覆盖前一次的订阅。
  - 目前应用有普通应用、[应用分身](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-clone)、元服务、[输入法应用](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/inputmethod-application-guide)等多种类型，不同类型应用上，系统事件的订阅规格不同。从API version 22开始，HiAppEvent系统事件订阅能力支持输入法应用。具体规格可参见如下表格：
+
 
 
 | 系统事件名称 | 是否支持应用分身订阅 | 是否支持元服务订阅 | 是否支持输入法应用订阅 |
@@ -90,9 +91,10 @@ HiAppEvent通过事件领域和事件名称关联应用事件，并通过addWatc
 
 
 
-#### 系统事件故障日志目录规格
+## 系统事件故障日志目录规格
 
 HiAppEvent支持订阅系统事件，部分事件信息中存在external_log、page_switch_log字段包含有日志路径信息。当前故障日志所在目录规格如下，需注意目录规格可能会随版本演进更新。
+
 
 | 故障日志文件目录 | 目录包含内容 | 目录空间上限 |
 | --- | --- | --- |

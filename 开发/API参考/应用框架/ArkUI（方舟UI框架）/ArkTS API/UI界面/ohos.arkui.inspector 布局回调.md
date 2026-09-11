@@ -1,20 +1,21 @@
 # @ohos.arkui.inspector (布局回调)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-inspector
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-提供注册组件布局和组件绘制送显完成回调通知的能力。适用于需要在组件布局或绘制送显完成后执行自定义逻辑的场景，帮助开发者精准掌控组件渲染时机。
+提供注册组件布局和组件绘制送显完成回调通知的能力。开发者可通过注册回调，在组件布局完成或绘制送显完成后及时获取通知，适用于需要精确感知组件渲染时机并据此执行自定义逻辑的场景。适用于需要在组件布局或绘制送显完成后执行自定义逻辑的场景，帮助开发者精准掌控组件渲染时机。
  
 > [!NOTE]
 > 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 本模块接口仅可在Stage模型下使用。
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { inspector } from '@kit.ArkUI';
@@ -22,9 +23,10 @@ import { inspector } from '@kit.ArkUI';
  
   
 
-#### inspector.createComponentObserver(deprecated)
+## inspector.createComponentObserver(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createComponentObserver(id: string): ComponentObserver
  
@@ -42,6 +44,7 @@ createComponentObserver(id: string): ComponentObserver
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | string | 是 | 指定组件id，该id通过通用属性id或者key设置。 |
@@ -49,6 +52,7 @@ createComponentObserver(id: string): ComponentObserver
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ComponentObserver | 组件回调事件监听句柄，用于注册和取消注册监听回调。 |
@@ -62,21 +66,23 @@ let listener: inspector.ComponentObserver = inspector.createComponentObserver('C
  
   
 
-#### ComponentObserver
+## ComponentObserver
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 组件布局和组件绘制送显完成回调的句柄，通过该句柄可调用以下方法。
  
   
 
-#### on('layout')
+### on('layout')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'layout', callback: () => void): void
  
-通过句柄向对应的查询条件注册回调，当组件布局完成时会触发该回调。请注意，该接口无法监听窗口尺寸变化，相关需求请参考[on('windowSizeChange')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window-window#onwindowsizechange7)。此外，布局回调和窗口尺寸变化回调之间不存在确定的执行顺序依赖。
+通过句柄为指定组件注册回调，当组件布局完成时会触发该回调。请注意，该接口无法监听窗口尺寸变化，相关需求请参考[on('windowSizeChange')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window-window#onwindowsizechange7)。此外，布局回调和窗口尺寸变化回调之间不存在确定的执行顺序依赖。
  
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
  
@@ -86,6 +92,7 @@ on(type: 'layout', callback: () => void): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 必须填写字符串'layout'。 layout：组件布局完成。 |
@@ -94,9 +101,10 @@ on(type: 'layout', callback: () => void): void
  
   
 
-#### off('layout')
+### off('layout')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'layout', callback?: () => void): void
  
@@ -110,6 +118,7 @@ off(type: 'layout', callback?: () => void): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 必须填写字符串'layout'。 layout：组件布局完成。 |
@@ -118,9 +127,10 @@ off(type: 'layout', callback?: () => void): void
  
   
 
-#### on('draw')
+### on('draw')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'draw', callback: () => void): void
  
@@ -134,6 +144,7 @@ on(type: 'draw', callback: () => void): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 必须填写字符串'draw'。 draw：组件绘制送显完成。 |
@@ -142,9 +153,10 @@ on(type: 'draw', callback: () => void): void
  
   
 
-#### off('draw')
+### off('draw')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'draw', callback?: () => void): void
  
@@ -158,6 +170,7 @@ off(type: 'draw', callback?: () => void): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 必须填写字符串'draw'。 draw：组件绘制送显完成。 |
@@ -166,9 +179,10 @@ off(type: 'draw', callback?: () => void): void
  
   
 
-#### on('drawChildren')20+
+### on('drawChildren')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'drawChildren', callback: Callback&lt;void&gt;): void
  
@@ -182,6 +196,7 @@ on(type: 'drawChildren', callback: Callback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 必须填写字符串'drawChildren'。 drawChildren：子组件绘制送显完成。 |
@@ -190,9 +205,10 @@ on(type: 'drawChildren', callback: Callback&lt;void&gt;): void
  
   
 
-#### off('drawChildren')20+
+### off('drawChildren')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'drawChildren', callback?: Callback&lt;void&gt;): void
  
@@ -206,6 +222,7 @@ off(type: 'drawChildren', callback?: Callback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 必须填写字符串'drawChildren'。 drawChildren：子组件绘制送显完成。 |
@@ -214,9 +231,10 @@ off(type: 'drawChildren', callback?: Callback&lt;void&gt;): void
  
   
 
-#### onLayoutChildren23+
+### onLayoutChildren23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onLayoutChildren(callback: Callback&lt;void&gt;): void
  
@@ -232,6 +250,7 @@ onLayoutChildren(callback: Callback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;void&gt; | 是 | 监听layoutChildren的回调。 |
@@ -239,9 +258,10 @@ onLayoutChildren(callback: Callback&lt;void&gt;): void
  
   
 
-#### offLayoutChildren23+
+### offLayoutChildren23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offLayoutChildren(callback?: Callback&lt;void&gt;): void
  
@@ -257,6 +277,7 @@ offLayoutChildren(callback?: Callback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;void&gt; | 否 | 需要取消注册的回调，如果参数缺省则取消注册该句柄下所有的回调。callback需要和onLayoutChildren23+方法中的callback为相同对象时才能取消回调成功。 |
@@ -318,10 +339,10 @@ struct ImageExample {
     // this.listenerForRow.off('drawChildren', offFuncDrawChildren)
 
     let onLayoutChildrenComplete: () => void = (): void => {
-      // 监听到LayoutChildren事件后，用户可以自定义实现逻辑。
+      // 监听到layoutChildren事件后，用户可以自定义实现逻辑。
     };
 
-    let uniqueId: number = this.getUniqueId();
+    let uniqueId: number = 0; // 替换为实际组件的uniqueId
     let listenerForUniqueId: inspector.ComponentObserver = this.getUIContext().getUIInspector().createComponentObserver(uniqueId.toString());
     listenerForUniqueId.onLayoutChildren(onLayoutChildrenComplete);
   }
@@ -333,9 +354,10 @@ struct ImageExample {
  
   
 
-#### onDrawChildren24+
+### onDrawChildren24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDrawChildren(callback: Callback<number[]>): void
  
@@ -351,6 +373,7 @@ onDrawChildren(callback: Callback<number[]>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback<number[]> | 是 | 监听drawChildren的回调，回调参数为子组件uniqueId数组，表示绘制送显完成的子组件的唯一标识列表。 |
@@ -385,7 +408,7 @@ struct ImageExample {
 
   aboutToAppear() {
     let onDrawChildrenCompleteUniqueId: (childIds: number[]) => void = (childIds: number[]): void => {
-      // 从API version 24开始，新增onDrawChildren接口。监听到DrawChildren事件后，用户可以自定义实现逻辑。
+      // 从API version 24开始，新增onDrawChildren接口。监听到drawChildren事件后，用户可以自定义实现逻辑。
     };
 
     this.listenerForRow.onDrawChildren(onDrawChildrenCompleteUniqueId);
@@ -395,9 +418,10 @@ struct ImageExample {
  
   
 
-#### offDrawChildren24+
+### offDrawChildren24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offDrawChildren(callback?: Callback<number[]>): void
  
@@ -413,6 +437,7 @@ offDrawChildren(callback?: Callback<number[]>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback<number[]> | 否 | 需要取消注册的回调，如果参数缺省则取消注册该句柄下所有的回调。callback需要和onDrawChildren方法中的callback为相同对象时才能取消回调成功。 |

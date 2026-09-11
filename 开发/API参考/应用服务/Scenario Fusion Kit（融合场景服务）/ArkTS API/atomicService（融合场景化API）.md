@@ -1,18 +1,19 @@
 # atomicService（融合场景化API）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/scenario-fusion-atomicservice
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块为开发者提供获取系统信息、系统设置、关注组件等能力。
  
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { atomicService } from '@kit.ScenarioFusionKit';
@@ -20,9 +21,10 @@ import { atomicService } from '@kit.ScenarioFusionKit';
  
   
 
-#### SystemSettingInfo
+## SystemSettingInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该类提供获取系统设置属性的对象。
  
@@ -34,6 +36,7 @@ import { atomicService } from '@kit.ScenarioFusionKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | bluetoothEnabled | boolean | 否 | 是 | 蓝牙系统开关。true表示开关已打开，false表示开关已关闭。 |
@@ -44,9 +47,10 @@ import { atomicService } from '@kit.ScenarioFusionKit';
  
   
 
-#### SystemInfo
+## SystemInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该类提供获取系统信息属性的对象。
  
@@ -58,6 +62,7 @@ import { atomicService } from '@kit.ScenarioFusionKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | brand | string | 否 | 是 | 设备品牌名称。 |
@@ -81,9 +86,10 @@ import { atomicService } from '@kit.ScenarioFusionKit';
  
   
 
-#### FollowResult
+## FollowResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | Tablet
 
 该枚举定义了关注结果的类型。
  
@@ -97,6 +103,7 @@ import { atomicService } from '@kit.ScenarioFusionKit';
  
 **起始版本：** 6.0.1(21)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SUCCESS | 0 | 关注成功。 |
@@ -105,9 +112,10 @@ import { atomicService } from '@kit.ScenarioFusionKit';
  
   
 
-#### FollowComponentParams
+## FollowComponentParams
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | Tablet
 
 获取关注组件的参数。
  
@@ -121,6 +129,7 @@ import { atomicService } from '@kit.ScenarioFusionKit';
  
 **起始版本：** 6.0.1(21)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | pubId | string | 否 | 否 | 服务号ID。从华为开发者联盟服务号管理页面获取，长度限制1~64位字符。 |
@@ -130,9 +139,10 @@ import { atomicService } from '@kit.ScenarioFusionKit';
  
   
 
-#### FollowComponentCallback
+## FollowComponentCallback
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | Tablet
 
 关注组件的回调接口。使用callback异步回调。
  
@@ -146,6 +156,7 @@ import { atomicService } from '@kit.ScenarioFusionKit';
  
 **起始版本：** 6.0.1(21)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | onFollowComplete | AsyncCallback&lt;FollowCompleteResult&gt; | 否 | 否 | 回调函数。当关注操作成功，err为undefined，data为获取到的FollowCompleteResult；否则为错误对象。 |
@@ -153,9 +164,10 @@ import { atomicService } from '@kit.ScenarioFusionKit';
  
   
 
-#### FollowCompleteResult
+## FollowCompleteResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | Tablet
 
 该接口定义了关注组件关注结果的返回体。
  
@@ -167,6 +179,7 @@ import { atomicService } from '@kit.ScenarioFusionKit';
  
 **起始版本：** 6.0.1(21)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | code | FollowResult | 否 | 否 | 关注组件返回结果。关注成功：FollowResult.SUCCESS，关注失败：FollowResult.FAILED。 |
@@ -174,9 +187,10 @@ import { atomicService } from '@kit.ScenarioFusionKit';
  
   
 
-#### SystemInfoType
+## SystemInfoType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type SystemInfoType = 'brand' | 'deviceModel' | 'screenWidth' | 'screenHeight' | 'statusBarHeight' | 'screenSafeArea' | 'language' | 'osFullName' | 'fontSizeSetting' | 'sdkApiVersion' | 'bluetoothEnabled' | 'locationEnabled' | 'wifiEnabled' | 'deviceOrientation' | 'theme' | 'windowWidth' | 'windowHeight'
  
@@ -192,6 +206,7 @@ type SystemInfoType = 'brand' | 'deviceModel' | 'screenWidth' | 'screenHeight' |
  
 **起始版本：** 5.0.0(12)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | 'brand' | 设备品牌名称。 |
@@ -215,9 +230,10 @@ type SystemInfoType = 'brand' | 'deviceModel' | 'screenWidth' | 'screenHeight' |
  
   
 
-#### SystemSettingType
+## SystemSettingType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type SystemSettingType = 'bluetoothEnabled' | 'locationEnabled' | 'wifiEnabled' | 'deviceOrientation'
  
@@ -233,6 +249,7 @@ type SystemSettingType = 'bluetoothEnabled' | 'locationEnabled' | 'wifiEnabled' 
  
 **起始版本：** 5.0.0(12)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | 'bluetoothEnabled' | 蓝牙系统开关。 |
@@ -243,9 +260,10 @@ type SystemSettingType = 'bluetoothEnabled' | 'locationEnabled' | 'wifiEnabled' 
  
   
 
-#### getSystemInfoSync
+## getSystemInfoSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSystemInfoSync(properties?: Array&lt;SystemInfoType&gt;): SystemInfo
  
@@ -267,6 +285,7 @@ getSystemInfoSync(properties?: Array&lt;SystemInfoType&gt;): SystemInfo
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | properties | Array&lt;SystemInfoType&gt; | 否 | 获取设备、网络状态、屏幕、语言、主题等系统信息的请求对象。 说明： - 使用5.0.1(13)及以上版本时不需要配置Wi-Fi权限、蓝牙权限。 - 获取Wi-Fi信息需要配置权限ohos.permission.GET_WIFI_INFO。 - 获取蓝牙开启状态需要配置权限ohos.permission.ACCESS_BLUETOOTH。 - 获取用户程序访问控制权限可参考程序访问控制管理。 |
@@ -274,6 +293,7 @@ getSystemInfoSync(properties?: Array&lt;SystemInfoType&gt;): SystemInfo
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | SystemInfo | 返回SystemInfo对象。 说明： getSystemInfoSync接口不支持获取windowWidth、windowHeight、statusBarHeight和screenSafeArea属性，如需获取可使用getSystemInfo接口。 |
@@ -312,9 +332,10 @@ try {
  
   
 
-#### getSystemInfo
+## getSystemInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSystemInfo(properties?: Array&lt;SystemInfoType&gt;): Promise&lt;SystemInfo&gt;
  
@@ -336,6 +357,7 @@ getSystemInfo(properties?: Array&lt;SystemInfoType&gt;): Promise&lt;SystemInfo&g
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | properties | Array&lt;SystemInfoType&gt; | 否 | 获取设备、网络状态、屏幕、语言、主题等系统信息的请求对象。 说明： - 使用5.0.1(13)及以上版本时不需要配置Wi-Fi权限、蓝牙权限。 - 获取Wi-Fi信息需要配置权限ohos.permission.GET_WIFI_INFO。 - 获取蓝牙开启状态需要配置权限ohos.permission.ACCESS_BLUETOOTH。 - 获取用户程序访问控制权限可参考程序访问控制管理。 |
@@ -343,6 +365,7 @@ getSystemInfo(properties?: Array&lt;SystemInfoType&gt;): Promise&lt;SystemInfo&g
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;SystemInfo&gt; | Promise对象，返回SystemInfo对象。 |
@@ -391,9 +414,10 @@ try {
  
   
 
-#### getSystemSetting
+## getSystemSetting
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSystemSetting(properties?: Array&lt;SystemSettingType&gt;): SystemSettingInfo
  
@@ -411,6 +435,7 @@ getSystemSetting(properties?: Array&lt;SystemSettingType&gt;): SystemSettingInfo
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | properties | Array&lt;SystemSettingType&gt; | 否 | 获取蓝牙、定位、Wi-Fi开关，以及设备方向等系统信息的请求对象。 说明： - 使用5.0.1(13)及以上版本时不需要配置Wi-Fi权限、蓝牙权限。 - 获取Wi-Fi信息需要配置权限ohos.permission.GET_WIFI_INFO。 - 获取蓝牙开启状态需要配置权限ohos.permission.ACCESS_BLUETOOTH。 - 获取用户程序访问控制权限可参考程序访问控制管理。 |
@@ -418,6 +443,7 @@ getSystemSetting(properties?: Array&lt;SystemSettingType&gt;): SystemSettingInfo
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | SystemSettingInfo | 返回SystemSettingInfo对象。 |
@@ -446,9 +472,10 @@ try {
  
   
 
-#### showFollowComponent
+## showFollowComponent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | Tablet
 
 showFollowComponent(ctx: UIContext, params: FollowComponentParams, callback: FollowComponentCallback): Promise&lt;void&gt;
  
@@ -466,6 +493,7 @@ showFollowComponent(ctx: UIContext, params: FollowComponentParams, callback: Fol
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ctx | UIContext | 是 | UIContext实例对象。 |
@@ -475,6 +503,7 @@ showFollowComponent(ctx: UIContext, params: FollowComponentParams, callback: Fol
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -484,6 +513,7 @@ showFollowComponent(ctx: UIContext, params: FollowComponentParams, callback: Fol
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-scenario-fusion-arkts-api)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. |

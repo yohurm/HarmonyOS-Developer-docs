@@ -1,10 +1,10 @@
 # SoftmaxFlashV2
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-08-18 12:49:55
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-activation-softmaxflashv2
 
-#### 功能说明
+## 功能说明
 
 将输入tensor[m0, m1, ...mt, n]（t大于等于0）的非尾轴长度相乘的结果看作m，则输入tensor的shape看作[m, n]。对输入tensor[m,n]按行做如下计算，不同的update值对应不同的计算公式，其中x、inmax和insum为输入，M、S、E均为输出。
  
@@ -24,7 +24,7 @@
  
   
 
-#### 实现原理
+## 实现原理
 
 计算过程根据isUpdate是否使能分为两个分支处理，均在Vector上进行。
  
@@ -66,7 +66,7 @@
  
   
 
-#### 函数原型
+## 函数原型
 
 高阶API接口
  
@@ -82,10 +82,11 @@ __aicore__ inline constexpr SoftMaxTiling SoftMaxFlashV2TilingFunc(const SoftMax
  
   
 
-#### 参数说明
+## 参数说明
 
 **表1** 模板参数说明
   
+
 | 参数名 | 描述 |
 | --- | --- |
 | T | 操作数的数据类型。支持的数据类型为：half、float。 |
@@ -98,6 +99,7 @@ __aicore__ inline constexpr SoftMaxTiling SoftMaxFlashV2TilingFunc(const SoftMax
  
 **表2** 高阶API接口参数说明
   
+
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
 | dstTensor | 输出 | 目的操作数。 类型为LocalTensor，支持的TPosition为VECIN、VECCALC、VECOUT。 dstTensor的shape和源操作数srcTensor一致。 |
@@ -113,6 +115,7 @@ __aicore__ inline constexpr SoftMaxTiling SoftMaxFlashV2TilingFunc(const SoftMax
  
 **表3** SoftMaxFlashV2TilingFunc接口参数说明
   
+
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
 | srcShape | 输入 | 输入srcTensor的shape信息。 |
@@ -127,21 +130,23 @@ __aicore__ inline constexpr SoftMaxTiling SoftMaxFlashV2TilingFunc(const SoftMax
  
   
 
-#### 返回值
+## 返回值
 
 无
  
   
 
-#### 支持的型号
+## 支持的型号
 
 Kirin9020系列处理器
+ 
+Kirin9030系列处理器
  
 KirinX90系列处理器
  
   
 
-#### 约束说明
+## 约束说明
 
 - srcTensor和dstTensor的Tensor的空间可以复用，maxTensor和inMaxTensor的空间可以复用，expSumTensor和inExpSumTensor的空间可以复用。
 - 除模板参数config配置为非拓展模式（SoftmaxMode::SOFTMAX_OUTPUT_WITHOUT_BRC）的场景外，expSumTensor、maxTensor、expMaxTensor、inExpSumTensor、inMaxTensor的Tensor空间，last轴长度必须固定32Byte。
@@ -151,7 +156,7 @@ KirinX90系列处理器
  
   
 
-#### 调用示例
+## 调用示例
 
 ```text
 // 其它处理省略

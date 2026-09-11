@@ -1,6 +1,6 @@
 # CloudDisk_ChangesResult
 
-更新时间：2026-03-09 02:50:43
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-clouddisk-clouddisk-changesresult
 **支持设备：** PC/2in1 | Tablet
@@ -10,7 +10,8 @@ typedef struct CloudDisk_ChangesResult {...} CloudDisk_ChangesResult
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** PC/2in1 | Tablet
 
@@ -24,16 +25,19 @@ typedef struct CloudDisk_ChangesResult {...} CloudDisk_ChangesResult
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** PC/2in1 | Tablet
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | uint64_t nextUsn{0} | 下一次可查询的有效起始变更序列号。 |

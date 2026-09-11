@@ -1,6 +1,6 @@
 # InsightIntentUIExtensionAbility (意图调用UI扩展能力)
 
-更新时间：2026-04-29 07:35:50
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/intents-arkts-api-insightintent-uiextension
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -10,7 +10,8 @@ InsightIntentUIExtensionAbility用于小艺对话过程中的意图调用时的�
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -20,7 +21,8 @@ import { InsightIntentUIExtensionAbility } from '@kit.IntentsKit';
  
   
 
-#### InsightIntentUIExtensionAbility
+## InsightIntentUIExtensionAbility
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 

@@ -1,6 +1,6 @@
 # 使用AVRecorder录制视频(ArkTS)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-recording
 
@@ -19,7 +19,7 @@
 状态的详细说明请参考[AVRecorderState](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-t#avrecorderstate9)。
 
 
-#### 申请权限
+## 申请权限
 
 在开发此功能前，开发者应根据实际需求申请相关权限：
 
@@ -35,7 +35,7 @@
 
 
 
-#### 开发步骤及注意事项
+## 开发步骤及注意事项
 
 > [!NOTE]
 > AVRecorder只负责视频数据的处理，需要与视频数据采集模块配合才能完成视频录制。视频数据采集模块需要通过Surface将视频数据传递给AVRecorder进行数据处理。当前主流的数据采集模块为相机模块，详细实现请参考 相机-录像 。 关于文件的创建与存储操作，请参考 应用文件访问与管理 ，默认存储在应用的沙箱路径之下，如需存储至图库，请使用 安全控件保存媒体资源 对沙箱内文件进行存储。
@@ -45,19 +45,22 @@
 1. 创建AVRecorder实例，实例创建完成进入idle状态。
 
   
-```ArkTS
+```text
 this.avRecorder = await media.createAVRecorder();
 ```
 
 2. 设置业务需要的监听事件，监听状态变化及错误上报。
 
 | 事件类型 | 说明 |
+
 | --- | --- |
+
 | stateChange | 必要事件，监听录制器的state属性改变。 |
+
 | error | 必要事件，监听录制器的错误信息。 |
 
   
-```ArkTS
+```text
 this.avRecorder?.on('stateChange', (state: media.AVRecorderState, reason: media.StateChangeReason) => {
   console.info(`AVRecorder state is changed to ${state}, reason: ${reason}`);
   // 用户可以在此补充状态发生切换后想要进行的动作。
@@ -76,7 +79,7 @@ this.avRecorder?.on('error', (error: BusinessError) => {
 
 
   
-```ArkTS
+```text
 public async prepareVideoRecorder(context: common.Context): Promise<void> {
   let path: string = context.filesDir + '/video_example.mp4';
   let file: fileIo.File = await fileIo.open(path, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
@@ -117,7 +120,7 @@ public async prepareVideoRecorder(context: common.Context): Promise<void> {
   输入源模块通过SurfaceID可以获取到Surface，通过Surface可以将视频数据流传递给AVRecorder，由AVRecorder再进行视频数据的处理。
 
   
-```ArkTS
+```text
 let surfaceId: string | undefined = undefined;
 try {
   surfaceId = await this.avRecorder?.getInputSurface();
@@ -131,28 +134,28 @@ try {
 6. 开始录制，启动输入源输入视频数据，例如相机模块调用camera.VideoOutput.start接口启动相机录制。然后调用[start](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avrecorder#start9-1)接口，此时AVRecorder进入started状态。
 
   
-```ArkTS
+```text
 await this.avRecorder?.start();
 ```
 
 7. 暂停录制，调用[pause](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avrecorder#pause9-1)接口，此时AVRecorder进入paused状态，同时暂停输入源输入数据。例如相机模块调用camera.VideoOutput.stop停止相机视频数据输入。
 
   
-```ArkTS
+```text
 await this.avRecorder?.pause();
 ```
 
 8. 恢复录制，调用[resume](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avrecorder#resume9-1)接口，此时再次进入started状态。
 
   
-```ArkTS
+```text
 await this.avRecorder?.resume();
 ```
 
 9. 停止录制，调用[stop](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avrecorder#stop9-1)接口，此时进入stopped状态，同时停止相机录制。
 
   
-```ArkTS
+```text
 await this.avRecorder?.stop();
 await this.closeFd();
 ```
@@ -160,25 +163,25 @@ await this.closeFd();
 10. 重置资源，调用[reset](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avrecorder#reset9-1)接口，重新进入idle状态，允许重新配置录制参数。
 
   
-```ArkTS
+```text
 await this.avRecorder?.reset();
 ```
 
 11. 销毁实例，调用[release](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avrecorder#release9-1)接口，进入released状态，退出录制，释放视频数据输入源相关资源，例如相机资源。
 
   
-```ArkTS
+```text
 await this.avRecorder?.release();
 ```
 
 
 
 
-#### 完整示例
+## 完整示例
 
 参考以下示例，完成“开始录制-暂停录制-恢复录制-停止录制”的完整流程。
 
-```ArkTS
+```text
 import { BusinessError } from '@kit.BasicServicesKit';
 import { media } from '@kit.MediaKit';
 import { fileIo } from '@kit.CoreFileKit';

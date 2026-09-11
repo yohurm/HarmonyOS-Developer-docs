@@ -1,6 +1,6 @@
 # objectDetection（多目标识别）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/core-vision-object-detection-api
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -12,7 +12,8 @@
 **起始版本：** 5.0.0(12)
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -22,7 +23,8 @@ import { visionBase, objectDetection } from '@kit.CoreVisionKit';
 
 
 
-#### VisionObject
+## VisionObject
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -34,6 +36,7 @@ import { visionBase, objectDetection } from '@kit.CoreVisionKit';
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | boundingBox | visionBase.BoundingBox | 否 | 否 | visionObject的边界框。 |
@@ -44,7 +47,8 @@ import { visionBase, objectDetection } from '@kit.CoreVisionKit';
 
 
 
-#### ObjectDetectionResponse
+## ObjectDetectionResponse
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -56,6 +60,7 @@ import { visionBase, objectDetection } from '@kit.CoreVisionKit';
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | objects | Array&lt;VisionObject&gt; | 否 | 否 | 多目标检测结果。可以是单个对象或多个对象的数组。 |
@@ -63,7 +68,8 @@ import { visionBase, objectDetection } from '@kit.CoreVisionKit';
 
 
 
-#### ObjectDetector
+## ObjectDetector
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -83,7 +89,8 @@ import { visionBase, objectDetection } from '@kit.CoreVisionKit';
 
 
 
-#### create
+### create
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -99,6 +106,7 @@ static create(): Promise&lt;ObjectDetector&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;ObjectDetector&gt; | Promise对象，返回ObjectDetector实例，用于执行多目标识别。 |
@@ -107,6 +115,7 @@ static create(): Promise&lt;ObjectDetector&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Core Vision Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-core-vision)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -119,6 +128,7 @@ static create(): Promise&lt;ObjectDetector&gt;
 ```text
 import { objectDetection } from '@kit.CoreVisionKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 async function createAndDestroyDetector() {
   try {
@@ -140,7 +150,8 @@ async function createAndDestroyDetector() {
       hilog.error(0x0000, 'objectDetectionSample', 'Failed to destroy object detector');
     }
   } catch (err) {
-    hilog.error(0x0000, 'objectDetectionSample', `Object detector error: ${err}`);
+    const error = err as BusinessError;
+    hilog.error(0x0000, 'objectDetectionSample', `Object detector error. Code: ${error.code}, message: ${error.message}`);
   }
 }
 
@@ -160,7 +171,8 @@ struct Page {
 
 
 
-#### destroy
+### destroy
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -176,6 +188,7 @@ destroy(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -186,6 +199,7 @@ destroy(): Promise&lt;void&gt;
 ```text
 import { objectDetection } from '@kit.CoreVisionKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 async function createAndDestroyDetector() {
   try {
@@ -207,7 +221,8 @@ async function createAndDestroyDetector() {
       hilog.error(0x0000, 'objectDetectionSample', 'Failed to destroy object detector');
     }
   } catch (err) {
-    hilog.error(0x0000, 'objectDetectionSample', `Object detector error: ${err}`);
+    const error = err as BusinessError;
+    hilog.error(0x0000, 'objectDetectionSample', `Object detector error. Code: ${error.code}, message: ${error.message}`);
   }
 }
 
@@ -227,7 +242,8 @@ struct Page {
 
 
 
-#### process
+### process
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -243,12 +259,14 @@ process(request: visionBase.Request): Promise&lt;ObjectDetectionResponse&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | visionBase.Request | 是 | 图片实例。多目标识别接口仅支持传入一张图片，不支持传入多张图片。 详细内容请参考约束与限制。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -258,6 +276,7 @@ process(request: visionBase.Request): Promise&lt;ObjectDetectionResponse&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Core Vision Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-core-vision)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -273,6 +292,7 @@ process(request: visionBase.Request): Promise&lt;ObjectDetectionResponse&gt;
 import { objectDetection, visionBase } from '@kit.CoreVisionKit';
 import { image } from '@kit.ImageKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 import { fileIo } from '@kit.CoreFileKit';
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
@@ -333,7 +353,8 @@ async function objectDetectTest() {
       hilog.info(0x0000, 'objectDetectionSample', 'Object detector destroyed successfully');
     }
   } catch (err) {
-    hilog.error(0x0000, 'objectDetectionSample', `Object detection error: ${err}`);
+    const error = err as BusinessError;
+    hilog.error(0x0000, 'objectDetectionSample', `Object detection error. Code: ${error.code}, message: ${error.message}`);
   }
 }
 

@@ -1,20 +1,21 @@
 # ArkUI_KeyframeAnimateOption
 
-更新时间：2026-07-28 11:23:46（官网已下线）
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-nativemodule-arkui-keyframeanimateoption
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct ArkUI_KeyframeAnimateOption ArkUI_KeyframeAnimateOption
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-定义关键帧动画参数对象，作为关键帧动画相关接口的输入参数使用。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+定义关键帧动画参数对象，作为关键帧动画接口的输入参数使用。相关接口需要在主线程上调用。
  
 **起始版本：** 12
  

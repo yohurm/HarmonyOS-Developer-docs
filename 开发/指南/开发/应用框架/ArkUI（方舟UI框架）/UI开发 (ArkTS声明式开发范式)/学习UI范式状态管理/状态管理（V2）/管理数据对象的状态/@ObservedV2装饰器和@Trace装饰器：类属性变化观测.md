@@ -1,6 +1,6 @@
 # @ObservedV2装饰器和@Trace装饰器：类属性变化观测
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-observedv2-and-trace
 
@@ -13,7 +13,7 @@
 
 
 
-#### 概述
+## 概述
 
 @ObservedV2装饰器与@Trace装饰器用于装饰类以及类中的属性，使得被装饰的类和属性具有深度观测的能力：
 
@@ -27,7 +27,7 @@
 
 
 
-#### 状态管理V1版本对嵌套类对象属性变化直接观测的局限性
+## 状态管理V1版本对嵌套类对象属性变化直接观测的局限性
 
 现有状态管理V1版本无法实现对嵌套类对象属性变化的直接观测。
 
@@ -139,19 +139,21 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/lBQKq32eTtiUqkpybMYELg/zh-cn_image_0000002674631902.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095706Z&HW-CC-Expire=86400&HW-CC-Sign=B81E167EBF44578899E6F0626AA67223F792686D98368E6BCCCF49DD4DB8AECB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/GAFzwke9TEWqFwFZSqMg4g/zh-cn_image_0000002747209987.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072157Z&HW-CC-Expire=86400&HW-CC-Sign=C797C68DE27951525FD0A16CD7A6F867D94BFD25D48E9BA0E6E0638B3D7CB1D3)
 
 
 通过这种方式虽然能够实现对嵌套类中属性变化的观测，但是当嵌套层级较深时，代码将会变得十分复杂，易用性差。因此推出类装饰器@ObservedV2与成员变量装饰器@Trace，增强对嵌套类中属性变化的观测能力。
 
 
 
-#### 装饰器说明
+## 装饰器说明
+
 
 | @ObservedV2类装饰器 | 说明 |
 | --- | --- |
 | 装饰器参数 | 无。 |
 | 类装饰器 | 装饰class。需要放在class的定义前，使用new创建类对象。 |
+
 
 
 | @Trace成员变量装饰器 | 说明 |
@@ -162,7 +164,7 @@ struct Index {
 
 
 
-#### 观察变化
+## 观察变化
 
 使用@ObservedV2装饰的类中被@Trace装饰的属性具有被观测变化的能力，当该属性值变化时，会触发该属性绑定的UI组件刷新。
 
@@ -200,7 +202,7 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/-7nyAG7ATnKms3oojx4N7A/zh-cn_image_0000002704271857.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095706Z&HW-CC-Expire=86400&HW-CC-Sign=48A1679BF0FC60FF98CE549238051C2AA14A98CA8EC9E687A0C1DB4450780683)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/6SQ0mx1gQLCvpq0YieaUrw/zh-cn_image_0000002717770054.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072157Z&HW-CC-Expire=86400&HW-CC-Sign=10E715833B94411D90DBB8CE278F2BCA3A0E134B8309E9F19B82B354E0B630C5)
 
 
  - 在继承类中使用@Trace装饰的属性具有被观测变化的能力。
@@ -236,7 +238,7 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/EhJUU7ATSyCRNR5LA27Ojg/zh-cn_image_0000002674472058.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095706Z&HW-CC-Expire=86400&HW-CC-Sign=0ECDC3E3B4D7B7425FF9C8F5D5EA8A4F409AD50CE25D6442637B33D885524F2B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/SI79B62KS_yXRXAE8gixVQ/zh-cn_image_0000002717610120.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072157Z&HW-CC-Expire=86400&HW-CC-Sign=DECF9BC4A96EC69F82F1BDFED6005A82F239A08AEB04D41CCA22498AD5626126)
 
 
  - 类中使用@Trace装饰的静态属性具有被观测变化的能力。
@@ -267,22 +269,27 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/YEV0fADWTvG2WOSxasWrzQ/zh-cn_image_0000002704392027.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095706Z&HW-CC-Expire=86400&HW-CC-Sign=81E03E7590AB74C141EE30EE4FE2490926C3199766C065F0B3A56C12F4A7594C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/FNzvMavtQn6VTh4Ff8trNg/zh-cn_image_0000002747290071.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072157Z&HW-CC-Expire=86400&HW-CC-Sign=949FDC6FE21A0868E42F9A05178763E596E9C757D076C86E8D263789E1FE2BE4)
 
 
  - @Trace装饰内置类型时，可以观测各自API导致的变化：
 
 | 类型 | 可观测变化的API |
+
 | --- | --- |
+
 | Array | push、pop、shift、unshift、splice、copyWithin、fill、reverse、sort |
+
 | Date | setFullYear, setMonth, setDate, setHours, setMinutes, setSeconds, setMilliseconds, setTime, setUTCFullYear, setUTCMonth, setUTCDate, setUTCHours, setUTCMinutes, setUTCSeconds, setUTCMilliseconds |
+
 | Map | set, clear, delete |
+
 | Set | add, clear, delete |
 
 
 
 
-#### 使用限制
+## 使用限制
 
 @ObservedV2与@Trace装饰器存在以下使用限制：
 
@@ -324,7 +331,7 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/yn3uZYGASxu8yC1PLwuX8w/zh-cn_image_0000002674631904.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095706Z&HW-CC-Expire=86400&HW-CC-Sign=20390C1E0325A17251FBBE99609817662C6E1B182DE3F0EB04B4082FAB3F3A56)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/wtOEK-qvSQew3TtzQtrRug/zh-cn_image_0000002747209989.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072157Z&HW-CC-Expire=86400&HW-CC-Sign=7FD6D5D1C79A78B8C82C032628B12355F7EFE92E96CA3322FF082A486AFA061C)
 
 
  - @ObservedV2仅能装饰class，无法装饰自定义组件。
@@ -429,7 +436,7 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/iLI0AkRBToaJD__cbtw0uA/zh-cn_image_0000002704271859.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095706Z&HW-CC-Expire=86400&HW-CC-Sign=724683ECC514AC55D023C9A627C34C02481B9DBCB43723A39D9132A97DD6AA0B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/mVWw_I_JTSmnpjscbN1sbg/zh-cn_image_0000002717770056.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072157Z&HW-CC-Expire=86400&HW-CC-Sign=CC62B2D3F8095D3206D696F9184EA3B137EAF3845B937EE1A86A0A2341463F8D)
 
 
  - 继承自@ObservedV2的类无法和@State等V1的装饰器混用，运行时报错。
@@ -496,11 +503,11 @@ struct Index {
 
 
 
-#### 使用场景
+## 使用场景
 
 
 
-#### 嵌套类场景
+### 嵌套类场景
 
 在下面的嵌套类场景中，Pencil类是Son类中最里层的类，Pencil类被@ObservedV2装饰且属性length被@Trace装饰，此时length的变化能够被观测到。
 
@@ -572,19 +579,19 @@ struct Page {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/pQOQIKzZT5ak3KjL8G5NBA/zh-cn_image_0000002674472060.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095706Z&HW-CC-Expire=86400&HW-CC-Sign=DC2816C8C36443733478F0348EF39AA7733D272B10D66A4A00EFC33171B8930A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/qx725FhfSNWB-VVbLad0Yg/zh-cn_image_0000002717610122.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072157Z&HW-CC-Expire=86400&HW-CC-Sign=E9E89E2C8B90A08D27DE6F761091BE8F85171928BD20ED531D8F9C108E68AD92)
 
 
 
 
-#### 继承类场景
+### 继承类场景
 
 @Trace支持在类的继承场景中使用，无论是在基类还是继承类中，只有被@Trace装饰的属性才具有被观测变化的能力。
 
 以下例子中，声明class GrandFather、Father、Uncle、Son、Cousin，继承关系如下图。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/XvD6ZQP6SCK4fs6nCk0Bzw/zh-cn_image_0000002704392029.png?HW-CC-KV=V1&HW-CC-Date=20260813T095706Z&HW-CC-Expire=86400&HW-CC-Sign=8BF472FED1B665F0DE8F0B2FA388E95746E479E302338CBBD8E8D4DE0BBCC60E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/lAertEuZS16zdoMV1s3saA/zh-cn_image_0000002747290073.png?HW-CC-KV=V1&HW-CC-Date=20260911T072157Z&HW-CC-Expire=86400&HW-CC-Sign=68ACD9F263E0B2678B0A6D6503EF17B9FAC448148F6012191513C91AE6F2891A)
 
 
 创建类Son和类Cousin的实例，点击Button('change Son age')和Button('change Cousin age')可以触发UI的刷新。
@@ -674,12 +681,14 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/VZlhqI6yR92ktJ_2dC6-bQ/zh-cn_image_0000002674631906.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095706Z&HW-CC-Expire=86400&HW-CC-Sign=EBE3A94C347D50181DEB11A457D9278DB3A33436191A243640B45E7078216888)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/4w0I3qdySo-hbm6deFVCIw/zh-cn_image_0000002747209991.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072157Z&HW-CC-Expire=86400&HW-CC-Sign=BF412A995630DA16CC5D3E4B246BA0AC4CD215DAD557AC772203152B27970CF5)
+
+
+在继承场景中，不建议在子类中重复声明与父类同名的@Trace属性，否则可能导致非预期的依赖收集。详情请参考[延迟加载场景下父子类同名@Trace属性导致非预期的依赖收集](#延迟加载场景下父子类同名trace属性导致非预期的依赖收集)。
 
 
 
-
-#### @Trace装饰基础类型的数组
+### @Trace装饰基础类型的数组
 
 @Trace装饰数组时，使用支持的API能够观测到变化。支持的API见[观察变化](#观察变化)。
 
@@ -810,12 +819,12 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/RbgSBz2PSgSucNXPTTppCg/zh-cn_image_0000002704271861.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095706Z&HW-CC-Expire=86400&HW-CC-Sign=2CB02CF8F31B0DBB5F15DB19E443C8241C8F12845598855A35A024F88734DF75)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/NePlVz7ERNGbFJwo8nGBog/zh-cn_image_0000002717770058.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072157Z&HW-CC-Expire=86400&HW-CC-Sign=ACCD552EEB4D6D083DF8F3AC0F9B1C3B98988D3AB18C99F72868542F354FFB4F)
 
 
 
 
-#### @Trace装饰对象数组
+### @Trace装饰对象数组
 
  - @Trace装饰对象数组personList以及Person类中的age属性，因此当personList、age改变时均可以观测到变化。
  - 点击Text组件更改age时，Text组件会刷新。
@@ -893,12 +902,12 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/t3rUtHxHQemk0n53-pRO6A/zh-cn_image_0000002674472062.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095706Z&HW-CC-Expire=86400&HW-CC-Sign=9D746B0104CEAF65D1ED4750302B1608E23CB92FF111C587FBA864724AA1EC89)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/9RIEFOXgQVOeKGywPqfnMQ/zh-cn_image_0000002717610124.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072157Z&HW-CC-Expire=86400&HW-CC-Sign=35FAE00DA098EA22E05A3E8B2E53790D1583D73A7236139BCC18DC7EA2CEE8DE)
 
 
 
 
-#### @Trace装饰Map类型
+### @Trace装饰Map类型
 
  - 被@Trace装饰的Map类型属性可以观测到调用API带来的变化，包括 set、clear、delete。
  - 因为Info类被@ObservedV2装饰且属性memberMap被@Trace装饰，点击Button('init map')对memberMap赋值也可以观测到变化。
@@ -967,12 +976,12 @@ struct MapSample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/cc9r_5fgTIeoZK6SArLvhQ/zh-cn_image_0000002704392031.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095706Z&HW-CC-Expire=86400&HW-CC-Sign=7793F39334FF4D95D18FEB8F5DC8D5C2BB33B87324C8C11346B8E630C7AD945F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/OCUEU44MT-6-lbKwSuOilA/zh-cn_image_0000002747290075.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072157Z&HW-CC-Expire=86400&HW-CC-Sign=DB8FE54FBB447D033E935FCA358D5BD33D3350EE5C41C9FA64CED0A40A81A9EA)
 
 
 
 
-#### @Trace装饰Set类型
+### @Trace装饰Set类型
 
  - 被@Trace装饰的Set类型属性可以观测到调用API带来的变化，包括 add、clear和delete。
  - 因为Info类被@ObservedV2装饰且属性memberSet被@Trace装饰，点击Button('init set')对memberSet赋值也可以观测到变化。
@@ -1032,12 +1041,12 @@ struct SetSample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/YNYqqQuUTrWlBhKhLb0_3A/zh-cn_image_0000002674631908.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095706Z&HW-CC-Expire=86400&HW-CC-Sign=577D40235EFAAF3806AB565E2281A0CB2ED65A514D160BE17454A1AB9A354987)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/5Ve3KsUbTZ6ropdQ43WpGg/zh-cn_image_0000002747209993.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072157Z&HW-CC-Expire=86400&HW-CC-Sign=77BAD3D6074CD8100BBA4AC97C6DB54CB405873D769483AF88C38361286CE1AD)
 
 
 
 
-#### @Trace装饰Date类型
+### @Trace装饰Date类型
 
  - @Trace装饰的Date类型属性可以观测调用API带来的变化，包括 setFullYear、setMonth、setDate、setHours、setMinutes、setSeconds、setMilliseconds、setTime、setUTCFullYear、setUTCMonth、setUTCDate、setUTCHours、setUTCMinutes、setUTCSeconds、setUTCMilliseconds。
  - 因为Info类被@ObservedV2装饰且属性selectedDate被@Trace装饰，点击Button('set selectedDate to 2023-07-08')对selectedDate赋值也可以观测到变化。
@@ -1093,16 +1102,16 @@ struct DateSample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/zYnZKw0rRsWjLYDnM-j8Dw/zh-cn_image_0000002704271863.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095706Z&HW-CC-Expire=86400&HW-CC-Sign=F1A250BB02A0A8475A40A2FB13E3D4E86BBD9114A97E1DF22AF86BB60F5E2B75)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/kBQ-MRm7QLyftWfQAe21aw/zh-cn_image_0000002717770060.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072157Z&HW-CC-Expire=86400&HW-CC-Sign=48AFCB67ADDFF9B6E544114709FA6C7D1186FC1222B6AE525C0A3D0FED7FA248)
 
 
 
 
-#### 常见问题
+## 常见问题
 
 
 
-#### @ObservedV2装饰对象的序列化与反序列化
+### @ObservedV2装饰对象的序列化与反序列化
 
 @ObservedV2装饰的对象序列化后会为@Trace装饰的属性添加__ob_前缀。
 
@@ -1300,12 +1309,12 @@ struct SerializationAndDeserialization {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/s-l6MK0IQ5mY6lMdF6WI7A/zh-cn_image_0000002674472064.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095706Z&HW-CC-Expire=86400&HW-CC-Sign=18EDFC059610BA89BBAE22658375D20930048B549D59B98026E0019770A66AAD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/bNV30vD5QB-FaPdLz7WTBw/zh-cn_image_0000002717610126.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072157Z&HW-CC-Expire=86400&HW-CC-Sign=6E29E04F7015D2D939193236BD3F0F0F3010E4EB664BC65CA71695762C4AB036)
 
 
 
 
-#### router传递的@ObservedV2类型显示异常
+### router传递的@ObservedV2类型显示异常
 
 用router传递的@ObservedV2类，由于经过序列化生成的属性名称与类中的原始属性名称不一致，不能直接通过as类型转换成@ObservedV2的实例，需要反序列化重新生成@ObservedV2实例。反序列化相关内容请参考[@ObservedV2装饰对象的序列化与反序列化](#observedv2装饰对象的序列化与反序列化)。
 
@@ -1449,4 +1458,94 @@ struct Detail {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/XAorVRYKSqGhNnZQ6jZh2A/zh-cn_image_0000002704392033.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095706Z&HW-CC-Expire=86400&HW-CC-Sign=63E7BF1230B0A3FB70C789F176E2C45509801EEF3008885D077046FD1824DFDC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/GGkJPD-0S5OTD3vXTD0l8w/zh-cn_image_0000002747290077.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072157Z&HW-CC-Expire=86400&HW-CC-Sign=A59ED76D1D1323701AF0E5204572AAE58BBF5A88A2CD64D26BED20D2E07149E9)
+
+
+
+
+### 延迟加载场景下父子类同名@Trace属性导致非预期的依赖收集
+
+框架执行[@Computed](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-computed)计算、组件渲染或[PersistenceV2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-persistencev2)持久化时，会收集执行过程中访问到的状态变量依赖。如果父类和子类声明了同名的@Trace属性，子类又通过[延迟加载（lazy import）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-lazy-import)延迟加载，并恰好在上述依赖收集过程中首次加载，则该子类同名属性会触发到父类的同名属性的读取，从而收集到该同名属性的依赖。
+
+因此，在首次修改该同名属性时，会触发非预期的@Computed重新计算、组件刷新或PersistenceV2持久化写入；再次修改时不会继续触发这一非预期行为。建议仅在父类中声明该@Trace属性，由子类直接继承，不要在子类中重复声明。以下以@Computed场景为例进行说明。
+
+【反例】
+
+```ArkTS
+// LazyImportTraceBase.ets
+@ObservedV2
+export class Parent {
+  @Trace value: number = 0;
+}
+```
+
+```ArkTS
+// LazyImportTraceChild.ets
+import { Parent } from './LazyImportTraceBase';
+
+@ObservedV2
+export class Child extends Parent {
+  @Trace value: number = 0;
+  @Trace value2: number = 0;
+}
+```
+
+```text
+// 延迟加载Child类
+import lazy { Child } from './LazyImportTraceChild';
+
+@Entry
+@ComponentV2
+struct LazyImportTrace {
+  @Local count: number = 1;
+  child?: Child;
+
+  @Computed
+  get doubleCount(): number {
+    if (!this.child) {
+      // Child通过lazy import延迟加载，并在@Computed初始化过程中首次加载
+      // 父类和子类声明了同名的@Trace value，此时会收集到当前@Computed doubleCount的依赖
+      this.child = new Child();
+    }
+    console.info('execute @Computed doubleCount');
+    // 预期仅在count改变时，才会触发@Computed doubleCount重新计算
+    return this.count * 2;
+  }
+
+  build() {
+    Column({ space: 10 }) {
+      Text(`doubleCount ${this.doubleCount}`)
+        .fontSize(20)
+      Button(`Change child value ${this.child?.value}`)
+        .onClick(() => {
+          if (this.child) {
+            this.child.value++;
+          }
+        })
+      Button(`Change count ${this.count}`)
+        .onClick(() => {
+          this.count++;
+        })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
+```
+
+【正例】
+
+将value统一定义在父类中，子类直接继承该属性，不再重复声明同名的@Trace属性。仅需按以下方式修改LazyImportTraceChild.ets，其他代码保持不变。
+
+```text
+import { Parent } from './LazyImportTraceBase';
+
+@ObservedV2
+export class Child extends Parent {
+  // 不在子类重复定义value，直接继承父类中被@Trace装饰的value属性
+  @Trace value2: number = 0;
+}
+```
+
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/XY2uozYdTSK_F7MRsaUP1w/zh-cn_image_0000002747209995.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072157Z&HW-CC-Expire=86400&HW-CC-Sign=20DF17A70F32EA4053582D1706FFCDA98E80D1A13AC3554B23EF1E8A8EB8B84A)

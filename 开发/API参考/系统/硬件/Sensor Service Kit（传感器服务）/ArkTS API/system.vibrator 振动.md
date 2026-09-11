@@ -1,6 +1,6 @@
 # @system.vibrator (振动)
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-system-vibrate
 **支持设备：** Wearable | lite_wearable
@@ -16,7 +16,8 @@
 
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -26,7 +27,8 @@ import { Vibrator } from '@kit.SensorServiceKit';
  
   
 
-#### Vibrator
+## Vibrator
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -34,7 +36,8 @@ import { Vibrator } from '@kit.SensorServiceKit';
  
   
 
-#### Vibrator.vibrate
+### Vibrator.vibrate
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -54,6 +57,7 @@ static vibrate(options?: VibrateOptions): void
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | VibrateOptions | 否 | 振动配置参数，用于指定振动模式及回调函数。不传时使用默认配置（mode默认为'long'），此时仅触发success和complete回调（说明调用后不会触发fail回调）。 |
@@ -157,7 +161,8 @@ export default {
  
   
 
-#### VibrateOptions
+## VibrateOptions
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -171,6 +176,7 @@ export default {
  
 **系统能力**：SystemCapability.Sensors.MiscDevice.Lite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | mode | string | 否 | 是 | 振动模式，指定设备振动的持续时间类型。取值范围：'long'（长振动）或'short'（短振动）。默认值：'long'。使用场景：开发者可根据实际需求选择振动模式，例如来电提醒使用'long'以持续提醒用户，按键触觉反馈使用'short'以提供即时反馈。不填写此参数时，默认执行长振动。规格限制：仅适用于Lite Wearable设备。 |

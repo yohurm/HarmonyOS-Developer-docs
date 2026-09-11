@@ -1,6 +1,6 @@
 # Host侧Tiling实现
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-08-18 12:49:55
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-tiling-implementation-on-the-host
 
@@ -19,13 +19,13 @@ Tiling实现完成后，获取到的Tiling切分算法相关参数，会传递�
 如上图所示，Tiling实现即为根据算子shape等信息来确定切分算法相关参数的过程，这里的算子shape等信息可以理解为是**Tiling实现的输入**，切分算法相关参数可以理解为是**Tiling实现的输出**。输入和输出都通过Tiling函数的参数（TilingContext* context上下文结构）来承载。也就是说，开发者可以从上下文结构中获取算子的输入、输出以及属性信息，也就是**Tiling实现的输入**，经过Tiling计算后，获取到TilingData数据结构（切分算法相关参数）、BlockDim变量、用于选择不同的kernel实现分支的TilingKey、算子workspace的大小，也就是**Tiling实现的输出**，并将这些输出设置到上下文结构中。
   
 
-#### 基本概念
+## 基本概念
 
 TilingData、BlockDim、TilingKey、workspace这些概念的具体解释如下。
  
   
 
-#### TilingData
+### TilingData
 
 切分算法相关参数，比如每次搬运的块大小，以及总共循环多少次，通过结构体存储，由开发者自行设计。
  
@@ -85,7 +85,7 @@ myTiling.st2.set_field4(4);
  
   
 
-#### BlockDim
+### BlockDim
 
 规定了核函数将会在几个核上执行。例如，需要计算8M的数据，每个核上计算1M的数据，BlockDim设置为8，但是为了充分利用硬件资源，一般将BlockDim设置为硬件平台的核数，根据核数进行数据切分。
  
@@ -104,13 +104,13 @@ BlockDim是逻辑核的概念，取值范围为[1, 65535]。为了充分利用�
 > 该场景下，设置的BlockDim逻辑核的核数不能超过物理核（2个Vector核和1个Cube核组合为1个物理核）的核数。
 
 - AIC/AIV的核数分别通过[GetCoreNumAic](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getcorenumaic)和[GetCoreNumAiv](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getcorenumaiv)接口获取。
-- Kirin9020/KirinX90仅支持BlockDim设为1。
+- Kirin9020/Kirin9030/KirinX90仅支持BlockDim设为1。
 
   
  
   
 
-#### TilingKey（可选）
+### TilingKey（可选）
 
 TilingKey是一个算子内为了区分不同的实现而将kernel代码进行区分的方法，该方法类似于C++的Template模板机制，可减少不必要的icache miss以及scalar耗时，有助于优化单次调用kernel的性能。不同的kernel实现分支可以通过TilingKey来标识，host侧设置TilingKey后，可以选择对应的分支。例如，一个算子在不同的shape下，有不同的算法逻辑，kernel侧可以通过TilingKey来选择不同的算法逻辑，在host侧Tiling算法也有差异，host/kernel侧通过相同的TilingKey进行关联。
  
@@ -151,7 +151,7 @@ static ge::graphStatus TilingFunc(gert::TilingContext* context)
  
   
 
-#### WorkspaceSize（可选）
+### WorkspaceSize（可选）
 
 workspace是设备侧Global Memory上的一块内存。在Tiling函数中可以设置workspace的大小，框架侧会为其在申请对应大小的设备侧Global Memory，在对应的算子kernel侧实现时可以使用这块workspace内存。
  
@@ -174,14 +174,14 @@ workspaceSizes[0] = sysWorkspaceSize + usrWorkspaceSize;
  
   
 
-#### Tiling实现基本流程
+## Tiling实现基本流程
 
 Tiling实现开发的流程图如下。
  
 **图2** Tiling开发流程图
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/WIrHjfk-RtW6Z6mGl0GYew/zh-cn_image_0000002628702048.png?HW-CC-KV=V1&HW-CC-Date=20260701T015302Z&HW-CC-Expire=86400&HW-CC-Sign=EF6F6B955FF5B42BAD2A593CB429E5515C88AA85E7336DF5DC283A276A4C36EE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/NWs8mV1FTZC-VmMPxzjm7Q/zh-cn_image_0000002747212033.png?HW-CC-KV=V1&HW-CC-Date=20260911T072535Z&HW-CC-Expire=86400&HW-CC-Sign=8F3BBDD7BC794226041589B2D4115FCD64D27CAFE764F4AC9D23EBCB39F6B1E4)
 
  
 下面将从一个简单的Add算子为例介绍Tiling的实现流程。本样例中待处理数据的Shape大小可以平均分配到每个核上，并且可以对齐到一个datablock(32B)的大小。
@@ -317,7 +317,7 @@ currentWorkspace[0] = 0;
  
   
 
-#### Tiling参数设计更多样例-属性信息通过TilingData传递
+## Tiling参数设计更多样例-属性信息通过TilingData传递
 
 如果算子包含属性信息，该属性信息可以通过TilingData传递到kernel侧，参与kernel侧算子核函数的计算。以ReduceMaxCustom算子为例，该算子用于对输入数据按维度dim返回最大值，并且返回索引。ReduceMaxCustom算子有两个属性，reduceDim和isKeepDim，reduceDim表示按照哪一个维度进行reduce操作；isKeepDim表示是否需要保持输出的维度与输入一样。本样例仅支持对最后一维做reduce操作，输入数据类型为half。
  1. ReduceMaxCustom算子TilingData的定义如下。这里我们重点关注reduceAxisLen。参数reduceAxisLen表示获取reduceDim轴的长度，这里也就是最后一维的长度。该参数后续会通过TilingData传递到kernel侧参与计算。
@@ -369,7 +369,7 @@ static ge::graphStatus TilingFunc(gert::TilingContext *context)
  
   
 
-#### Tiling参数设计更多样例-使用高阶API时配套的Tiling
+## Tiling参数设计更多样例-使用高阶API时配套的Tiling
 1. 首先进行tiling结构定义：
 
   

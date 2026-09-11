@@ -28,7 +28,7 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 import { buffer, util } from '@kit.ArkTS';
 
 
-// 转换密钥对
+<em>// 转换密钥对</em>
 function genKeyPairByData() {
   let priKey = 'MC4CAQAwBQYDK2VwBCIEIPFypge0/4Q4Nj+g3rdkq1waRD/wmRetRJ4eUBT0D86S'
   let pubKey = 'MCowBQYDK2VwAyEADb/Cqqww74MVIcezIun9Mh1lbnx3cw9Qy9vYztWx2NA='
@@ -109,14 +109,14 @@ struct KeyPair {
   }
 
 
-  // Base64转Uint8Array
+ <em> // Base64转Uint8Array</em>
   base64ToUint8Array(str: string): Uint8Array {
     let base64Helper = new util.Base64Helper();
     return base64Helper.decodeSync(str);
   }
 
 
-  // 签名
+<em>  // 签名</em>
   signMessagePromise(message: string, priKey: cryptoFramework.PriKey) {
     let signer = cryptoFramework.createSign('Ed25519');
     let input: cryptoFramework.DataBlob = { data: new Uint8Array(buffer.from(message, 'utf-8').buffer) };
@@ -126,7 +126,7 @@ struct KeyPair {
   }
 
 
-  // 验签
+<em>  // 验签</em>
   verifyMessagePromise(message: string, signMessageBlob: cryptoFramework.DataBlob, pubKey: cryptoFramework.PubKey) {
     let verifier = cryptoFramework.createVerify('Ed25519');
     let input: cryptoFramework.DataBlob = { data: new Uint8Array(buffer.from(message, 'utf-8').buffer) };

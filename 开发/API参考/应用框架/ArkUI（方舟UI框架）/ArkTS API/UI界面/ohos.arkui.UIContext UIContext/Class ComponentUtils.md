@@ -1,9 +1,9 @@
 # Class (ComponentUtils)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-componentutils
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供获取组件绘制区域坐标、大小、平移、缩放、旋转及仿射矩阵等属性信息的能力，适用于需要查询组件绘制区域信息的场景，帮助开发者获取组件布局结果。
  
@@ -12,9 +12,10 @@
 
   
 
-#### getRectangleById
+## getRectangleById
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRectangleById(id: string): componentUtils.ComponentInfo
  
@@ -30,6 +31,7 @@ getRectangleById(id: string): componentUtils.ComponentInfo
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | string | 是 | 组件唯一标识id，需确保该id对应的组件已挂载到组件树且完成布局。 |
@@ -37,6 +39,7 @@ getRectangleById(id: string): componentUtils.ComponentInfo
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | componentUtils.ComponentInfo | 组件大小、位置、平移、缩放、旋转及仿射矩阵属性信息。 |
@@ -46,6 +49,7 @@ getRectangleById(id: string): componentUtils.ComponentInfo
  
 以下错误码的详细介绍请参见[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 100001 | UI execution context not found. |

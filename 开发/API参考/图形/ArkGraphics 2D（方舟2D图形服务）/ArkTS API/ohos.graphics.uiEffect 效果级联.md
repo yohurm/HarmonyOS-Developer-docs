@@ -1,9 +1,9 @@
 # @ohos.graphics.uiEffect (效果级联)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-uieffect
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供组件效果的一些基础能力，包括模糊、边缘像素扩展、提亮等。效果被分为Filter和VisualEffect大类，同类效果可以级联在一个效果大类的实例下。在实际开发中，模糊可用于背景虚化，提亮可用于亮屏显示等。
 
@@ -16,9 +16,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { uiEffect } from "@kit.ArkGraphics2D";
@@ -26,9 +27,10 @@ import { uiEffect } from "@kit.ArkGraphics2D";
 
 
 
-#### uiEffect.createFilter
+## uiEffect.createFilter
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createFilter(): Filter
 
@@ -37,6 +39,7 @@ createFilter(): Filter
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -51,9 +54,10 @@ let filter : uiEffect.Filter = uiEffect.createFilter()
 
 
 
-#### uiEffect.createEffect
+## uiEffect.createEffect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createEffect(): VisualEffect
 
@@ -64,6 +68,7 @@ createEffect(): VisualEffect
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -78,17 +83,19 @@ let visualEffect : uiEffect.VisualEffect = uiEffect.createEffect()
 
 
 
-#### Filter
+## Filter
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Filter效果类，用于将相应的效果添加到指定的组件上。在调用Filter的方法前，需要先通过[createFilter](#uieffectcreatefilter)创建一个Filter实例。
 
 
 
-#### blur
+### blur
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 blur(blurRadius: number): Filter
 
@@ -98,12 +105,14 @@ blur(blurRadius: number): Filter
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | blurRadius | number | 是 | 模糊半径，单位为px。 取值需大于等于0，模糊半径越大，模糊效果越强。 模糊半径为0时无模糊效果。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -140,14 +149,15 @@ struct UIEffectFilterExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/pm9QGVuARkah01zpFN17aw/zh-cn_image_0000002656470963.png?HW-CC-KV=V1&HW-CC-Date=20260624T020310Z&HW-CC-Expire=86400&HW-CC-Sign=5FEF6E3FB3FF841BCEC7115E6D5EE9C26E31E5612F10368D8584A3E732DCADF8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/NDTATeKoQgyI62ytXspeIg/zh-cn_image_0000002747293905.png?HW-CC-KV=V1&HW-CC-Date=20260911T072945Z&HW-CC-Expire=86400&HW-CC-Sign=5D8AB0B40992036412A0905605B4D3970187672371B5B12039341BCDDE9E77B2)
 
 
 
 
-#### hdrBrightnessRatio24+
+### hdrBrightnessRatio24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hdrBrightnessRatio(ratio: number): Filter
 
@@ -167,12 +177,14 @@ hdrBrightnessRatio(ratio: number): Filter
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ratio | number | 是 | 提亮倍数，取值范围为[1.0, 设备当前支持最大提亮倍数]。设置小于1.0的值时，按值为1.0处理；当值等于1.0时，不做任何处理；当值大于1.0时，会尝试触发HDR渲染管线，设置大于设备当前支持最大提亮倍数的值时，按值为设备当前支持最大提亮倍数处理。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -182,6 +194,7 @@ hdrBrightnessRatio(ratio: number): Filter
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -196,8 +209,9 @@ filter.hdrBrightnessRatio(2.0)
 
 
 
-#### VisualEffect
+## VisualEffect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 VisualEffect效果类，用于将相应的效果添加到指定的组件上。在调用VisualEffect的方法前，需要先通过[createEffect](#uieffectcreateeffect)创建一个VisualEffect实例。

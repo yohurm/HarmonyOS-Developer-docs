@@ -1,11 +1,12 @@
 # Interface (MapPolygon)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-mappolygon
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -15,7 +16,8 @@ import { map, mapCommon } from '@kit.MapKit';
  
   
 
-#### MapPolygon
+## MapPolygon
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -33,20 +35,24 @@ import { map, mapCommon } from '@kit.MapKit';
  
 ```text
 let polygonOptions: mapCommon.MapPolygonOptions = {
+  // 定义多边形的四个顶点坐标
   points: [
     { latitude: 31.9844102, longitude: 118.7662 },
     { latitude: 31.9844102, longitude: 123.7662 },
     { latitude: 36.9844102, longitude: 123.7662 },
     { latitude: 36.9844102, longitude: 118.7662 }
   ],
+  // 设置多边形填充颜色为红色
   fillColor: 0xffff4500
 };
+// 地图添加多边形
 let mapPolygon = await this.mapController.addPolygon(polygonOptions);
 ```
  
   
 
-#### getFillColor
+### getFillColor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -64,6 +70,7 @@ getFillColor(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | ARGB格式的颜色值。 |
@@ -77,7 +84,8 @@ let fillColor: number = mapPolygon.getFillColor();
  
   
 
-#### getHoles
+### getHoles
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -99,6 +107,7 @@ getHoles(): Array<Array<mapCommon.LatLng>>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Array<Array<mapCommon.LatLng>> | 多边形的空心洞数组，其中空心洞是LatLng数组。 |
@@ -112,7 +121,8 @@ let holes: Array<Array<mapCommon.LatLng>> = mapPolygon.getHoles();
  
   
 
-#### getPoints
+### getPoints
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -130,6 +140,7 @@ getPoints(): Array<mapCommon.LatLng>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Array<mapCommon.LatLng> | 多边形的顶点坐标。 |
@@ -143,7 +154,8 @@ let points: Array<mapCommon.LatLng> = mapPolygon.getPoints();
  
   
 
-#### getStrokeColor
+### getStrokeColor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -161,6 +173,7 @@ getStrokeColor(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | ARGB格式颜色值。 |
@@ -174,7 +187,8 @@ let strokeColor: number = mapPolygon.getStrokeColor();
  
   
 
-#### getJointType
+### getJointType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -192,6 +206,7 @@ getJointType(): mapCommon.JointType
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | mapCommon.JointType | 多边形的顶点样式。 |
@@ -205,7 +220,8 @@ let jointType: mapCommon.JointType = mapPolygon.getJointType();
  
   
 
-#### getPatterns
+### getPatterns
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -223,6 +239,7 @@ getPatterns(): Array<mapCommon.PatternItem>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Array<mapCommon.PatternItem> | 多边形的边框样式。 |
@@ -236,7 +253,8 @@ let patterns: Array<mapCommon.PatternItem> = mapPolygon.getPatterns();
  
   
 
-#### getStrokeWidth
+### getStrokeWidth
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -254,6 +272,7 @@ getStrokeWidth(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 多边形的边框宽度，单位：px。 |
@@ -267,7 +286,8 @@ let strokeWidth: number = mapPolygon.getStrokeWidth();
  
   
 
-#### isClickable
+### isClickable
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -285,6 +305,7 @@ isClickable(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 多边形的可点击性。 - true：可点击 - false：不可点击 |
@@ -298,7 +319,8 @@ let clickable: boolean = mapPolygon.isClickable();
  
   
 
-#### isGeodesic
+### isGeodesic
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -316,6 +338,7 @@ isGeodesic(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 多边形的每个线段是否为大地线。 - true：大地线 - false：非大地线 |
@@ -329,7 +352,8 @@ let geodesic: boolean = mapPolygon.isGeodesic();
  
   
 
-#### setClickable
+### setClickable
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -347,6 +371,7 @@ setClickable(clickable: boolean): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | clickable | boolean | 是 | 多边形的可点击性，异常值不处理。 - true：可点击 - false：不可点击 |
@@ -360,7 +385,8 @@ mapPolygon.setClickable(true);
  
   
 
-#### setFillColor
+### setFillColor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -378,6 +404,7 @@ setFillColor(color: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | number | 是 | 多边形的填充色，ARGB格式颜色值，异常值不处理。 |
@@ -391,7 +418,8 @@ mapPolygon.setFillColor(0xff000FFF);
  
   
 
-#### setGeodesic
+### setGeodesic
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -409,6 +437,7 @@ setGeodesic(geodesic: boolean): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | geodesic | boolean | 是 | 将多边形的每个线段绘制为大地线，异常值不处理。 - true：每段绘制为大地线 - false：不是大地线 |
@@ -422,7 +451,8 @@ mapPolygon.setGeodesic(true);
  
   
 
-#### setHoles
+### setHoles
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -444,6 +474,7 @@ setHoles(holes: Array<Array<mapCommon.LatLng>>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | holes | Array<Array<mapCommon.LatLng>> | 是 | 空心洞数组，其中空心洞是LatLng数组。异常值不处理。 |
@@ -481,7 +512,8 @@ mapPolygon.setHoles(holes);
  
   
 
-#### setPoints
+### setPoints
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -499,6 +531,7 @@ setPoints(points: Array<mapCommon.LatLng>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | points | Array<mapCommon.LatLng> | 是 | 顶点坐标数组。异常值不处理。 |
@@ -530,7 +563,8 @@ mapPolygon.setPoints(points);
  
   
 
-#### setStrokeColor
+### setStrokeColor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -548,6 +582,7 @@ setStrokeColor(color: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | number | 是 | 多边形的边框颜色，ARGB格式颜色值，异常值不处理。 |
@@ -561,7 +596,8 @@ mapPolygon.setStrokeColor(0xff00DB93);
  
   
 
-#### setJointType
+### setJointType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -579,6 +615,7 @@ setJointType(jointType: mapCommon.JointType): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | jointType | mapCommon.JointType | 是 | 顶点样式，异常值不处理。 |
@@ -592,7 +629,8 @@ mapPolygon.setJointType(mapCommon.JointType.ROUND);
  
   
 
-#### setPatterns
+### setPatterns
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -610,6 +648,7 @@ setPatterns(patterns: Array<mapCommon.PatternItem>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | patterns | Array<mapCommon.PatternItem> | 是 | PatternItem对象的数组，异常值不处理。 |
@@ -637,7 +676,8 @@ mapPolygon.setPatterns(linePatterns);
  
   
 
-#### setStrokeWidth
+### setStrokeWidth
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -655,6 +695,7 @@ setStrokeWidth(width: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | width | number | 是 | 边框的宽度，单位：px，取值范围：大于等于0，异常值不处理。 |

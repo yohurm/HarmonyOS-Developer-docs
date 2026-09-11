@@ -1,18 +1,19 @@
 # USB服务错误码
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-usb
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 > [!TIP]
 > 以下仅介绍本模块特有错误码，通用错误码请参考 通用错误码说明文档 。
 
 
 
-#### 14400001 USB设备访问权限被拒绝
+## 14400001 USB设备访问权限被拒绝
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -32,9 +33,10 @@ Access right denied. Call requestRight to get the USBDevicePipe access right fir
 
 
 
-#### 14400004 服务异常
+## 14400004 服务异常
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -54,9 +56,10 @@ Service exception. Possible causes: No accessory is plugged in.
 
 
 
-#### 14400005 数据库操作异常
+## 14400005 数据库操作异常
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -72,9 +75,10 @@ Database operation exception.
 
 
 
-#### 14401001 目标USB配件未匹配
+## 14401001 目标USB配件未匹配
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -90,9 +94,10 @@ The target USBAccessory not matched.
 
 
 
-#### 14401002 打开配件节点失败
+## 14401002 打开配件节点失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -108,9 +113,10 @@ Failed to open the native accessory node.
 
 
 
-#### 14401003 不能重复打开配件
+## 14401003 不能重复打开配件
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -126,9 +132,10 @@ Cannot reopen the accessory.
 
 
 
-#### 14400007 资源繁忙
+## 14400007 资源繁忙
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -147,9 +154,10 @@ Resource busy. Possible causes: 1. The transfer has already been submitted. 2. T
 
 
 
-#### 14400008 没有设备(连接已断开)
+## 14400008 没有设备(连接已断开)
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -165,9 +173,10 @@ No such device (it may have been disconnected).
 
 
 
-#### 14400009 内存不足
+## 14400009 内存不足
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -187,9 +196,10 @@ Insufficient memory. Possible causes: 1. Memory allocation failed.
 
 
 
-#### 14400010 无法识别的错误
+## 14400010 无法识别的错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -205,9 +215,10 @@ Other USB error. Possible causes: Unrecognized discard error code.
 
 
 
-#### 14400011 未找到正在进行的传输
+## 14400011 未找到正在进行的传输
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -223,9 +234,10 @@ The transfer is not in progress, or is already complete or cancelled.
 
 
 
-#### 14400012 I/O错误
+## 14400012 I/O错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -241,9 +253,10 @@ I/O通道异常，实际读/写操作失败。
 
 
 
-#### 14400013 参数合法性检查失败
+## 14400013 参数合法性检查失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -263,9 +276,10 @@ The USBDevicePipe validity check failed. Possible causes: 1. The input parameter
 
 
 
-#### 31400001 串口服务异常
+## 31400001 串口服务异常
 
-**支持设备：** PC/2in1
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -285,9 +299,10 @@ Serial port management exception.
 
 
 
-#### 31400002 没有串口设备访问权限
+## 31400002 没有串口设备访问权限
 
-**支持设备：** PC/2in1
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -307,9 +322,10 @@ Access denied. Call requestSerialRight to request user authorization first.
 
 
 
-#### 31400003 端口号不存在
+## 31400003 端口号不存在
 
-**支持设备：** PC/2in1
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -329,9 +345,10 @@ PortId does not exist.
 
 
 
-#### 31400004 串口设备被占用
+## 31400004 串口设备被占用
 
-**支持设备：** PC/2in1
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -351,9 +368,10 @@ The serial port device is occupied.
 
 
 
-#### 31400005 设备未打开
+## 31400005 设备未打开
 
-**支持设备：** PC/2in1
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -373,9 +391,10 @@ The serial port device is not opened. Call the open API first.
 
 
 
-#### 31400006 传输超时
+## 31400006 传输超时
 
-**支持设备：** PC/2in1
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -395,9 +414,10 @@ Data transfer timed out.
 
 
 
-#### 31400007 I/O异常
+## 31400007 I/O异常
 
-**支持设备：** PC/2in1
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 

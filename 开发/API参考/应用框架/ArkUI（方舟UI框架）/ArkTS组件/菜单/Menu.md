@@ -1,9 +1,9 @@
 # Menu
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-menu
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 以垂直列表形式显示的菜单。Menu组件支持配置菜单项、子菜单、图标、分隔线等内容，可用于展示操作选项、功能入口等场景。
  
@@ -12,17 +12,19 @@
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 包含[MenuItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-menuitem)、[MenuItemGroup](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-menuitemgroup)子组件。
  
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Menu()
  
@@ -38,17 +40,19 @@ Menu()
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
  
   
 
-#### font10+
+### font10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 font(value: Font)
  
@@ -62,16 +66,18 @@ font(value: Font)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | Font | 是 | Menu中所有文本的字体样式。 默认值： { size: 16, family: 'HarmonyOS Sans', weight: FontWeight.Medium, style: FontStyle.Normal } |
+| value | Font | 是 | Menu中所有文本的字体样式。 默认值： { size: '16.0fp', family: 'HarmonyOS Sans', weight: FontWeight.Medium, style: FontStyle.Normal } |
  
  
   
 
-#### fontColor10+
+### fontColor10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontColor(value: ResourceColor)
  
@@ -85,6 +91,7 @@ fontColor(value: ResourceColor)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | Menu中所有文本的颜色。 |
@@ -92,9 +99,10 @@ fontColor(value: ResourceColor)
  
   
 
-#### radius10+
+### radius10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 radius(value: Dimension | BorderRadiuses)
  
@@ -108,6 +116,7 @@ radius(value: Dimension | BorderRadiuses)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Dimension \| BorderRadiuses | 是 | Menu边框圆角半径。 默认值：2in1设备上默认值为8vp，其他设备上默认值为20vp。 从API version 12开始，当水平方向两个圆角半径之和的最大值大于菜单宽度，或垂直方向两个圆角半径之和的最大值大于菜单高度时，菜单四个圆角均采用菜单默认圆角半径值。 当设置Dimension类型且传参为异常值时，菜单圆角取默认值。 当设置BorderRadiuses类型且传参为异常值时，菜单默认没有圆角。 |
@@ -115,9 +124,10 @@ radius(value: Dimension | BorderRadiuses)
  
   
 
-#### menuItemDivider12+
+### menuItemDivider12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 menuItemDivider(options: DividerStyleOptions | undefined)
  
@@ -133,6 +143,7 @@ startMargin + endMargin超过组件宽度后startMargin和endMargin会被置0。
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | DividerStyleOptions \| undefined | 是 | 设置MenuItem分割线样式。 -strokeWidth：分割线的线宽，默认值是1px。 -color：分割线的颜色，默认值是#33000000。 -startMargin：分割线与MenuItem侧边起始端的距离，默认为16vp，单位为vp。 -endMargin：分割线与MenuItem侧边结束端的距离，默认为16vp，单位为vp。 -mode：分割线的模式，默认值为FLOATING_ABOVE_MENU。 startMargin + endMargin超过组件宽度后startMargin和endMargin会被置0。 |
@@ -140,9 +151,10 @@ startMargin + endMargin超过组件宽度后startMargin和endMargin会被置0。
  
   
 
-#### menuItemGroupDivider12+
+### menuItemGroupDivider12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 menuItemGroupDivider(options: DividerStyleOptions | undefined)
  
@@ -156,6 +168,7 @@ menuItemGroupDivider(options: DividerStyleOptions | undefined)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | DividerStyleOptions \| undefined | 是 | 设置MenuItemGroup顶部和底部分割线样式。 -strokeWidth：分割线的线宽，默认值是1px。 -color：分割线的颜色，默认值是#33000000。 -startMargin：分割线与MenuItemGroup侧边起始端的距离，默认为16vp，单位为vp。 -endMargin：分割线与MenuItemGroup侧边结束端的距离，默认为16vp，单位为vp。 -mode：分割线的模式，默认值为FLOATING_ABOVE_MENU。 startMargin + endMargin超过组件宽度后startMargin和endMargin会被置0。 |
@@ -163,9 +176,10 @@ menuItemGroupDivider(options: DividerStyleOptions | undefined)
  
   
 
-#### subMenuExpandingMode12+
+### subMenuExpandingMode12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 subMenuExpandingMode(mode: SubMenuExpandingMode)
  
@@ -179,6 +193,7 @@ subMenuExpandingMode(mode: SubMenuExpandingMode)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | SubMenuExpandingMode | 是 | Menu子菜单展开样式。 默认值：SubMenuExpandingMode.SIDE_EXPAND 设置为SIDE_EXPAND时，subMenuExpandSymbol属性不会显示；设置为EMBEDDED_EXPAND或STACK_EXPAND时，subMenuExpandSymbol属性才会生效。 |
@@ -186,9 +201,10 @@ subMenuExpandingMode(mode: SubMenuExpandingMode)
  
   
 
-#### subMenuExpandSymbol20+
+### subMenuExpandSymbol20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 subMenuExpandSymbol(symbol: SymbolGlyphModifier)
  
@@ -202,6 +218,7 @@ subMenuExpandSymbol(symbol: SymbolGlyphModifier)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | symbol | SymbolGlyphModifier | 是 | Menu子菜单展开符号。 1、子菜单的展开样式为SubMenuExpandingMode.SIDE_EXPAND时，不显示展开符号。 2、子菜单的展开样式为SubMenuExpandingMode.EMBEDDED_EXPAND时，展开时展开符号会顺时针旋转180°。展开符号默认使用new SymbolGlyphModifier(\$r('sys.symbol.chevron_down')).fontSize('24vp')。 3、子菜单的展开样式为SubMenuExpandingMode.STACK_EXPAND时，展开时展开符号会顺时针旋转90°。展开符号默认使用new SymbolGlyphModifier(\$r('sys.symbol.chevron_forward')).fontSize('20vp').padding('2vp')。 |
@@ -209,9 +226,10 @@ subMenuExpandSymbol(symbol: SymbolGlyphModifier)
  
   
 
-#### fontSize(deprecated)
+### fontSize(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontSize(value: Length)
  
@@ -225,6 +243,7 @@ fontSize(value: Length)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Length | 是 | Menu中所有文本的尺寸，Length为number类型时，使用fp单位。不支持设置百分比。 |
@@ -232,9 +251,10 @@ fontSize(value: Length)
  
   
 
-#### SubMenuExpandingMode12+枚举说明
+## SubMenuExpandingMode12+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Menu子菜单展开样式枚举。
  
@@ -244,6 +264,7 @@ Menu子菜单展开样式枚举。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SIDE_EXPAND | 0 | 默认展开样式，子菜单位于同一平面侧边展开。 |
@@ -253,13 +274,17 @@ Menu子菜单展开样式枚举。
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 示例1（设置多级菜单）
+### 示例1（设置多级菜单）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置MenuItem中的builder参数实现多级菜单。
  
@@ -333,7 +358,10 @@ struct Index {
  
   
 
-#### 示例2（设置symbol类型图标）
+### 示例2（设置symbol类型图标）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置symbolStartIcon、symbolEndIcon实现symbol类型图标的菜单。
  
@@ -406,17 +434,20 @@ struct Index {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/NTrMgb2LRXG1y0tbse3gxw/zh-cn_image_0000002656008824.png?HW-CC-KV=V1&HW-CC-Date=20260730T071512Z&HW-CC-Expire=86400&HW-CC-Sign=94753A4161DA81EB62184B9A29FCFF24ADE35AAECA930A043B0C36CA51472BA5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/O3A7vavYRUaaV7Pd14351w/zh-cn_image_0000002717613040.png?HW-CC-KV=V1&HW-CC-Date=20260911T073104Z&HW-CC-Expire=86400&HW-CC-Sign=33E4FE5FD0F045E48A016E68D391C21C39B8EF17D756D0E1B2B43EE2EDFD2004)
 
  
   
 
-#### 示例3（设置Menu子菜单展开符号）
+### 示例3（设置Menu子菜单展开符号）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置subMenuExpandSymbol实现对Menu子菜单展开符号配置颜色和大小。
  
 ```text
-import { SymbolGlyphModifier, SubMenuExpandingMode } from '@kit.ArkUI';
+import { SymbolGlyphModifier } from '@kit.ArkUI';
 
 @Entry
 @Component
@@ -476,17 +507,20 @@ struct Index {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/DoK0r6JGR42slVhXD7IHkg/zh-cn_image_0000002655848904.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071512Z&HW-CC-Expire=86400&HW-CC-Sign=9D11BFE8DEF0D235BA6C943D2DCD375B021D50807AD8ABDC179AE534964FB864)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/eeWGaBhyR3uqzA1LJIsMfw/zh-cn_image_0000002747292993.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073104Z&HW-CC-Expire=86400&HW-CC-Sign=FDE127C290471E4D4415B4DBFE059FDB5AA76B1034857A441281E4C230F8A55C)
 
  
   
 
-#### 示例4（设置分割线样式）
+### 示例4（设置分割线样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过设置menuItemDivider和menuItemGroupDivider属性实现分割线样式。
  
 ```text
-import { LengthMetrics, DividerMode } from '@kit.ArkUI'
+import { LengthMetrics } from '@kit.ArkUI'
 
 @Entry
 @Component
@@ -530,12 +564,15 @@ struct Index {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/sy45B9siRb209omnmW_Cmg/zh-cn_image_0000002686088335.png?HW-CC-KV=V1&HW-CC-Date=20260730T071512Z&HW-CC-Expire=86400&HW-CC-Sign=3605B1C116B7F6645E8E74AEB2140328CEF1E4834CA8C56DAF751DD22C96B9DF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/O2cCCkRsS3iphZSTnlu3nw/zh-cn_image_0000002747212909.png?HW-CC-KV=V1&HW-CC-Date=20260911T073104Z&HW-CC-Expire=86400&HW-CC-Sign=6CFF0A1A0487DA4FBC537B6CA8B7C4C1279837EC25EEFE791839E903CA41444D)
 
  
   
 
-#### 示例5（设置自定义菜单项的多级菜单）
+### 示例5（设置自定义菜单项的多级菜单）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过设置subMenuBuilder属性为自定义菜单项添加多级菜单。
  
@@ -591,4 +628,4 @@ struct Index {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/hPFqGw_sQuirCYm7RxD_Pg/zh-cn_image_0000002685928503.jpg?HW-CC-KV=V1&HW-CC-Date=20260730T071512Z&HW-CC-Expire=86400&HW-CC-Sign=3D708B478CACDA1AB1340463A85D328CB01F3F4543EB49F72157B750103CECC0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/PQc5_C6qSxWVCOvum3dBAQ/zh-cn_image_0000002717772974.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T073104Z&HW-CC-Expire=86400&HW-CC-Sign=A6C12892E52148D17E6301E70F75855D7FEA7E628B736191049B6B2826EF6D6F)

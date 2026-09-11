@@ -1,18 +1,19 @@
 # cloudCommon (公共模块)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/cloudfoundation-cloudcommon
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供初始化云开发服务的能力。
  
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { cloudCommon } from '@kit.CloudFoundationKit';
@@ -20,9 +21,10 @@ import { cloudCommon } from '@kit.CloudFoundationKit';
  
   
 
-#### init
+## init
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 init(options?: CloudOptions): void
  
@@ -38,6 +40,7 @@ init(options?: CloudOptions): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | CloudOptions | 否 | 设置初始化参数。 |
@@ -47,6 +50,7 @@ init(options?: CloudOptions): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -75,9 +79,10 @@ cloudCommon.init({
  
   
 
-#### CloudOptions
+## CloudOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 初始化选项。
  
@@ -89,6 +94,7 @@ cloudCommon.init({
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | region | CloudRegion | 否 | 是 | 存储地，默认为CHINA。 |
@@ -100,9 +106,10 @@ cloudCommon.init({
  
   
 
-#### CloudRegion
+## CloudRegion
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举， 存储地类型。
  
@@ -114,6 +121,7 @@ cloudCommon.init({
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CHINA | 0 | 数据存储到中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）。 |
@@ -124,9 +132,10 @@ cloudCommon.init({
  
   
 
-#### AuthProvider
+## AuthProvider
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 认证提供方。开发者可以使用[AGC认证服务SDK](https://developer.huawei.com/consumer/cn/doc/app/agc-help-auth-introduction-0000002271496181)获取AuthProvider，或者使用华为账号服务的[获取用户级凭证](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-api-obtain-user-token)接口自定义AuthProvider。
  
@@ -140,9 +149,10 @@ cloudCommon.init({
  
   
 
-#### getAccessToken
+### getAccessToken
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAccessToken(isForceRefresh: boolean): Promise&lt;string&gt;
  
@@ -158,6 +168,7 @@ getAccessToken(isForceRefresh: boolean): Promise&lt;string&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isForceRefresh | boolean | 是 | 是否需要强制刷新返回用户凭据。true表示需要，false表示不需要。 |
@@ -165,6 +176,7 @@ getAccessToken(isForceRefresh: boolean): Promise&lt;string&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回用户凭据（该用户凭据可使用AGC认证服务SDK或华为账号服务的获取用户级凭证接口生成）。 |
@@ -261,9 +273,10 @@ cloudCommon.init({
  
   
 
-#### FunctionOptions
+## FunctionOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 云函数初始化配置参数。
  
@@ -275,6 +288,7 @@ cloudCommon.init({
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | timeout | number | 否 | 是 | 函数请求超时时间，单位ms，默认为70*1000ms。 取值范围无限制，会转成unsigned long类型。 |
@@ -282,9 +296,10 @@ cloudCommon.init({
  
   
 
-#### StorageOptions
+## StorageOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 云存储初始化配置参数。
  
@@ -296,6 +311,7 @@ cloudCommon.init({
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | mode | request.agent.Mode | 否 | 是 | 任务的模式。前端任务在应用切换到后台一段时间后失败/暂停；后台任务不受影响。默认为request.agent.Mode.BACKGROUND。 - request.agent.Mode.BACKGROUND：后台任务。 - request.agent.Mode.FOREGROUND：前端任务。 |
@@ -304,9 +320,10 @@ cloudCommon.init({
  
   
 
-#### DatabaseOptions
+## DatabaseOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 云数据库初始化配置参数。
  
@@ -318,6 +335,7 @@ cloudCommon.init({
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | schema | string | 否 | 是 | 全量数据表结构及权限定义，使用从云端下载的schema.json配置文件，默认读取工程固定目录：rawfile。 |

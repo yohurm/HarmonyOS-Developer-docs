@@ -1,14 +1,15 @@
 # PanGesture
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-gestures-pangesture
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 当滑动距离达到设定的最小值时，触发滑动手势事件。
  
 以下场景可以触发滑动手势：
   
+
 | 触发方式 | 输入源类型 | 输入设备类型 | 备注 |
 | --- | --- | --- | --- |
 | 手指按下滑动。 | SourceTool.Finger | SourceType.TouchScreen | axisVertical和axisHorizontal均为0。 |
@@ -24,15 +25,17 @@
 
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### PanGesture
+### PanGesture
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 PanGesture(value?: { fingers?: number; direction?: PanDirection; distance?: number } | PanGestureOptions)
  
@@ -44,6 +47,7 @@ PanGesture(value?: { fingers?: number; direction?: PanDirection; distance?: numb
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | { fingers?: number; direction?: PanDirection; distance?: number } \| PanGestureOptions | 否 | 滑动手势参数。 - fingers：用于指定触发滑动的最少手指数，最小为1指，最大取值为10指。 默认值：1 取值范围：[1, 10] 说明： 当设置的值小于1或不设置时，会被转化为默认值。 - direction：用于指定触发滑动的手势方向，此枚举值支持逻辑与(&)和逻辑或（\|）运算。 默认值：PanDirection.All - distance：用于指定触发滑动手势事件的最小滑动距离，单位为vp。 取值范围：[0, +∞) 手写笔默认值：8，其余输入源默认值：5 说明： Tabs组件滑动与该滑动手势事件同时存在时，可将distance值设为1，使滑动更灵敏，避免滑动手势与Tabs组件滑动事件的响应结果不符合预期。 当设定的值小于0时，按默认值处理。 当组件应用了scale缩放变换时，distance的实际识别距离会按照scale比例进行缩放。 |
@@ -51,9 +55,10 @@ PanGesture(value?: { fingers?: number; direction?: PanDirection; distance?: numb
  
   
 
-#### PanGesture15+
+### PanGesture15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 PanGesture(options?: PanGestureHandlerOptions)
  
@@ -67,6 +72,7 @@ PanGesture(options?: PanGestureHandlerOptions)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | PanGestureHandlerOptions | 否 | 滑动手势处理器配置参数，用于配置触发滑动手势事件的条件，包括是否检查触摸屏幕的手指数量（isFingerCountLimited）以及为不同输入源指定触发滑动手势事件的最小滑动距离（distanceMap，API version 19开始支持，单位为vp）。当需要配置是否检查触摸屏幕的手指数量，或需要为不同输入源分别指定触发滑动手势事件的最小滑动距离时，传入该参数；不传入时，使用默认滑动手势处理器配置。 |
@@ -74,9 +80,10 @@ PanGesture(options?: PanGestureHandlerOptions)
  
   
 
-#### PanDirection枚举说明
+## PanDirection枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 与SwipeDirection不同，PanDirection没有角度限制。
  
@@ -84,6 +91,7 @@ PanGesture(options?: PanGestureHandlerOptions)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | None | 0 | 任何方向都不可触发滑动手势事件。 |
@@ -98,15 +106,17 @@ PanGesture(options?: PanGestureHandlerOptions)
  
   
 
-#### PanGestureOptions
+## PanGestureOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(value?: { fingers?: number; direction?: PanDirection; distance?: number })
  
@@ -118,6 +128,7 @@ constructor(value?: { fingers?: number; direction?: PanDirection; distance?: num
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | { fingers?: number; direction?: PanDirection; distance?: number } | 否 | 滑动手势配置参数对象。 fingers用于指定触发滑动的最少手指数，最小为1指， 最大取值为10指。 默认值：1 direction用于指定触发滑动的手势方向，此枚举值支持逻辑与(&)和逻辑或（\|）运算。 默认值：PanDirection.All distance用于指定触发滑动手势事件的最小滑动距离，单位为vp。 取值范围：[0, +∞) 手写笔默认值：8，其余输入源默认值：5 说明： Tabs组件滑动与该滑动手势事件同时存在时，可将distance值设为1，使滑动更灵敏，避免造成事件错乱。 当设定的值小于0时，按默认值处理。 建议设置合理的滑动距离，滑动距离设置过大时会导致滑动不跟手（响应时延增加）的问题。 当组件应用了scale缩放变换时，distance的实际识别距离会按照scale比例进行缩放。 |
@@ -125,9 +136,10 @@ constructor(value?: { fingers?: number; direction?: PanDirection; distance?: num
  
   
 
-#### setDirection
+### setDirection
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setDirection(value: PanDirection)
  
@@ -139,6 +151,7 @@ setDirection(value: PanDirection)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | PanDirection | 是 | 用于指定触发滑动的手势方向，此枚举值支持逻辑与(&)和逻辑或（\|）运算。 默认值：PanDirection.All |
@@ -146,9 +159,10 @@ setDirection(value: PanDirection)
  
   
 
-#### setDistance
+### setDistance
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setDistance(value: number)
  
@@ -160,6 +174,7 @@ setDistance(value: number)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 触发滑动手势事件的最小滑动距离，单位为vp。 取值范围：[0, +∞) 手写笔默认值：8，其余输入源默认值：5 说明： Tabs组件滑动与该滑动手势事件同时存在时，可将distance值设为1，使滑动更灵敏，避免滑动手势与Tabs组件滑动事件的响应结果不符合预期。 当设定的值小于0时，按默认值处理。 建议设置合理的滑动距离，滑动距离设置过大时会导致滑动不跟手（响应时延慢）的问题。 当组件应用了scale缩放变换时，distance的实际识别距离会按照scale比例进行缩放。 |
@@ -167,9 +182,10 @@ setDistance(value: number)
  
   
 
-#### setFingers
+### setFingers
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setFingers(value: number)
  
@@ -181,6 +197,7 @@ setFingers(value: number)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 触发滑动的最少手指数，最小为1指， 最大取值为10指。 默认值：1 |
@@ -188,9 +205,10 @@ setFingers(value: number)
  
   
 
-#### getDirection12+
+### getDirection12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDirection(): PanDirection
  
@@ -204,6 +222,7 @@ getDirection(): PanDirection
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | PanDirection | 当前PanGestureOptions对象中配置的滑动触发方向。 |
@@ -211,9 +230,10 @@ getDirection(): PanDirection
  
   
 
-#### getDistance18+
+### getDistance18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDistance(): number
  
@@ -227,6 +247,7 @@ getDistance(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 当前PanGestureOptions对象中配置的触发滑动手势事件的最小滑动距离，单位为vp。 |
@@ -234,9 +255,10 @@ getDistance(): number
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!TIP]
 > 在 GestureEvent 的fingerList元素中，手指索引编号与位置相对应，即fingerList[index]的id为index。对于先按下但未参与当前手势触发的手指，fingerList中对应的位置为空。建议优先使用fingerInfos。
@@ -244,9 +266,10 @@ getDistance(): number
  
   
 
-#### onActionStart
+### onActionStart
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onActionStart(event: (event: GestureEvent) => void)
  
@@ -258,6 +281,7 @@ onActionStart(event: (event: GestureEvent) => void)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | (event: GestureEvent) => void | 是 | 滑动手势识别成功时触发的回调函数，回调参数event为GestureEvent对象，用于获取本次滑动手势的事件信息。 |
@@ -265,9 +289,10 @@ onActionStart(event: (event: GestureEvent) => void)
  
   
 
-#### onActionUpdate
+### onActionUpdate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onActionUpdate(event: (event: GestureEvent) => void)
  
@@ -279,6 +304,7 @@ onActionUpdate(event: (event: GestureEvent) => void)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | (event: GestureEvent) => void | 是 | 滑动手势更新时触发的回调函数，回调参数event为GestureEvent对象，用于获取滑动过程中的手势事件信息。 |
@@ -286,9 +312,10 @@ onActionUpdate(event: (event: GestureEvent) => void)
  
   
 
-#### onActionEnd
+### onActionEnd
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onActionEnd(event: (event: GestureEvent) => void)
  
@@ -300,6 +327,7 @@ onActionEnd(event: (event: GestureEvent) => void)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | (event: GestureEvent) => void | 是 | 滑动手势结束时触发的回调函数，回调参数event为GestureEvent对象，用于获取滑动结束时的手势事件信息。 |
@@ -307,9 +335,10 @@ onActionEnd(event: (event: GestureEvent) => void)
  
   
 
-#### onActionCancel
+### onActionCancel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onActionCancel(event: () => void)
  
@@ -321,6 +350,7 @@ onActionCancel(event: () => void)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | () => void | 是 | 滑动手势取消回调。 |
@@ -328,9 +358,10 @@ onActionCancel(event: () => void)
  
   
 
-#### onActionCancel18+
+### onActionCancel18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onActionCancel(event: Callback&lt;GestureEvent&gt;)
  
@@ -344,6 +375,7 @@ onActionCancel(event: Callback&lt;GestureEvent&gt;)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | Callback&lt;GestureEvent&gt; | 是 | 滑动手势取消时触发的回调函数，回调参数为GestureEvent对象，用于获取滑动取消时的手势事件信息。 |
@@ -351,9 +383,10 @@ onActionCancel(event: Callback&lt;GestureEvent&gt;)
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过PanGesture实现了单指/双指滑动手势的识别。
  
@@ -418,10 +451,10 @@ struct PanGestureExample {
 向左滑动：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/h94VYlYwR-yizvgx_dAr-w/zh-cn_image_0000002686087877.png?HW-CC-KV=V1&HW-CC-Date=20260730T071458Z&HW-CC-Expire=86400&HW-CC-Sign=9DE6155484502AFAE2B88CAFA2DCDB4E924FB06D5D9C61AC71CA3975A3BC2F42)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/mVSw8ovZSpO_ls9ynZ8EhA/zh-cn_image_0000002717772518.png?HW-CC-KV=V1&HW-CC-Date=20260911T073109Z&HW-CC-Expire=86400&HW-CC-Sign=DC57B6B2411C716CA8FD34A32103FFC732FF2AA16AAFBF97E7C1ED05792F09FA)
 
  
 点击按钮时，修改PanGesture触发条件为双指向任意方向滑动：
  
  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/YcJKSD0DQm-KV15SOtQPbw/zh-cn_image_0000002685928049.png?HW-CC-KV=V1&HW-CC-Date=20260730T071458Z&HW-CC-Expire=86400&HW-CC-Sign=44B993DF57B336B1A528A3F6C88D4F6CF303D40CAFF12DADDD0C386F895D83CC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/2QPtJd_ASgizKXCptdfYYw/zh-cn_image_0000002717612586.png?HW-CC-KV=V1&HW-CC-Date=20260911T073109Z&HW-CC-Expire=86400&HW-CC-Sign=0BCC06B7E219EBB8982F863784CFAE641CFF206B41165A72F445DC571B666119)

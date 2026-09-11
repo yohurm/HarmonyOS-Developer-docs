@@ -1,10 +1,10 @@
 # Sigmoid
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-08-18 12:49:55
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-activation-sigmoid
 
-#### 功能说明
+## 功能说明
 
 按元素做逻辑回归Sigmoid，计算公式如下，其中PAR表示矢量计算单元一个迭代能够处理的元素个数 ：
  
@@ -18,7 +18,7 @@
  
   
 
-#### 函数原型
+## 函数原型
 
 - 通过sharedTmpBuffer入参传入临时空间
 
@@ -64,10 +64,11 @@ __aicore__ inline void Sigmoid(const LocalTensor<T>& dstTensor, const LocalTenso
  
   
 
-#### 参数说明
+## 参数说明
 
 **表1** 模板参数说明
   
+
 | 参数名 | 描述 |
 | --- | --- |
 | T | 操作数的数据类型。支持的数据类型为：half/float。 |
@@ -76,6 +77,7 @@ __aicore__ inline void Sigmoid(const LocalTensor<T>& dstTensor, const LocalTenso
  
 **表2** 接口参数说明
   
+
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
 | dstTensor | 输出 | 目的操作数。 类型为LocalTensor，支持的TPosition为VECIN、VECCALC、VECOUT。 |
@@ -86,21 +88,23 @@ __aicore__ inline void Sigmoid(const LocalTensor<T>& dstTensor, const LocalTenso
  
   
 
-#### 返回值
+## 返回值
 
 无
  
   
 
-#### 支持的型号
+## 支持的型号
 
 Kirin9020系列处理器
+ 
+Kirin9030系列处理器
  
 KirinX90系列处理器
  
   
 
-#### 约束说明
+## 约束说明
 
 - 操作数地址偏移对齐要求请参见[通用约束](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-general-constraints)。
 - 输入输出操作数参与计算的数据长度要求32B对齐。
@@ -108,7 +112,7 @@ KirinX90系列处理器
  
   
 
-#### 调用示例
+## 调用示例
 
 ```text
 AscendC::TPipe pipe;

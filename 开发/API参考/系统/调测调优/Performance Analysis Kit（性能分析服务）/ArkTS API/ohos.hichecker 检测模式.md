@@ -1,9 +1,9 @@
 # @ohos.hichecker (检测模式)
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hichecker
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 HiChecker可以作为应用开发阶段使用的检测工具，用于检测代码运行过程中部分易忽略的问题，如应用线程出现耗时调用、应用进程中Ability资源泄漏等问题。开发者可以通过日志记录或进程crash等形式查看具体问题并进行修改，提升应用的使用体验。
  
@@ -12,9 +12,10 @@ HiChecker可以作为应用开发阶段使用的检测工具，用于检测代�
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { hichecker } from '@kit.PerformanceAnalysisKit';
@@ -22,14 +23,16 @@ import { hichecker } from '@kit.PerformanceAnalysisKit';
  
   
 
-#### 常量
+## 常量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供了所有规则类型的常量。
  
 **系统能力**：SystemCapability.HiviewDFX.HiChecker
   
+
 | 名称 | 类型 | 值 | 说明 |
 | --- | --- | --- | --- |
 | RULE_CAUTION_PRINT_LOG | bigint | 1ULL << 63 | 告警规则，当有告警时记录日志。 |
@@ -42,9 +45,10 @@ import { hichecker } from '@kit.PerformanceAnalysisKit';
  
   
 
-#### hichecker.addCheckRule9+
+## hichecker.addCheckRule9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addCheckRule(rule: bigint): void
  
@@ -56,6 +60,7 @@ addCheckRule(rule: bigint): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rule | bigint | 是 | 需要添加的规则。支持使用或运算组合多个规则。可选值包括： RULE_CAUTION_PRINT_LOG（记录日志）、RULE_CAUTION_TRIGGER_CRASH（应用退出）、RULE_THREAD_CHECK_SLOW_PROCESS（检测耗时函数调用）等，详见常量定义。 |
@@ -63,6 +68,7 @@ addCheckRule(rule: bigint): void
  
 **错误码：**
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | the parameter check failed, only one bigint type parameter is needed |
@@ -86,9 +92,10 @@ try {
  
   
 
-#### hichecker.removeCheckRule9+
+## hichecker.removeCheckRule9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeCheckRule(rule: bigint): void
  
@@ -100,6 +107,7 @@ removeCheckRule(rule: bigint): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rule | bigint | 是 | 需要删除的规则。支持使用或运算组合多个规则。可选值包括： RULE_CAUTION_PRINT_LOG（记录日志）、RULE_CAUTION_TRIGGER_CRASH（应用退出）、RULE_THREAD_CHECK_SLOW_PROCESS（检测耗时函数调用）等，详见常量定义。 |
@@ -107,6 +115,7 @@ removeCheckRule(rule: bigint): void
  
 **错误码：**
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | the parameter check failed, only one bigint type parameter is needed |
@@ -130,9 +139,10 @@ try {
  
   
 
-#### hichecker.containsCheckRule9+
+## hichecker.containsCheckRule9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 containsCheckRule(rule: bigint): boolean
  
@@ -144,6 +154,7 @@ containsCheckRule(rule: bigint): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rule | bigint | 是 | 需要查询的规则。 |
@@ -151,6 +162,7 @@ containsCheckRule(rule: bigint): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 查询结果。true 表示规则已添加；false 表示规则未添加。 |
@@ -158,6 +170,7 @@ containsCheckRule(rule: bigint): boolean
  
 **错误码：**
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | the parameter check failed, only one bigint type parameter is needed |
@@ -182,9 +195,10 @@ try {
  
   
 
-#### hichecker.addRule(deprecated)
+## hichecker.addRule(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addRule(rule: bigint): void
  
@@ -198,6 +212,7 @@ addRule(rule: bigint): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rule | bigint | 是 | 需要添加的规则。 |
@@ -216,9 +231,10 @@ hichecker.addRule(
  
   
 
-#### hichecker.removeRule(deprecated)
+## hichecker.removeRule(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeRule(rule: bigint): void
  
@@ -232,6 +248,7 @@ removeRule(rule: bigint): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rule | bigint | 是 | 需要删除的规则。 |
@@ -250,9 +267,10 @@ hichecker.removeRule(
  
   
 
-#### hichecker.getRule
+## hichecker.getRule
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRule(): bigint
  
@@ -262,6 +280,7 @@ getRule(): bigint
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bigint | 当前系统中添加的规则。 |
@@ -279,9 +298,10 @@ hichecker.getRule();
  
   
 
-#### hichecker.contains(deprecated)
+## hichecker.contains(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contains(rule: bigint): boolean
  
@@ -295,6 +315,7 @@ contains(rule: bigint): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rule | bigint | 是 | 需要查询的规则。 |
@@ -302,6 +323,7 @@ contains(rule: bigint): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 查询结果。true 表示规则已添加；false 表示规则未添加。 |

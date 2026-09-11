@@ -16,7 +16,7 @@ buildPreviewContent() {
   RelativeContainer() {
     Swiper() {
       LazyForEach(this.timeRecordTextPreviewVM.lazyTextList, (item: string, index: number) => {
-        this.buildPreviewContentItem(item, index) // 需要截图的组件
+        this.buildPreviewContentItem(item, index)<em> </em><em>// 需要截图的组件</em>
       }, (item: TimeTextPictureTemplateModel) => JSON.stringify(item))
     }
 
@@ -26,12 +26,12 @@ buildPreviewContent() {
   .height(this.timeRecordTextPreviewVM.imageHeight + 22)
 }
 
-// 预览样式内容item
+<em>// </em><em>预览样式内容item</em>
 @Builder
 buildPreviewContentItem(item: string, index: number) {
   RelativeContainer() {
     Stack() {
-      // ...
+     <em> // ...</em>
     }
     .id('containerShot' + index)
   }
@@ -128,15 +128,15 @@ struct SwiperExample {
               .scale({
                 x: this.myScale,
                 y: this.myScale
-              }) // 设置x轴/y轴的缩放
+              }) <em>// </em><em>设置x轴/y轴的缩放</em>
               .opacity(this.myOpacity);
           }
           .width('90%')
           .height(160)
-          .id(item.toString()); // 设置Swiper页面标识
+          .id(item.toString()); <em>// </em><em>设置Swiper页面标识</em>
         }, (item: string) => item);
       }
-      .cachedCount(5, true) // 预加载5个页面,同时挂载运行
+      .cachedCount(5, true) <em>// 预加载5个页面,同时挂载运行</em>
       .curve(Curve.Linear);
 
       Button('开始动画')
@@ -144,7 +144,7 @@ struct SwiperExample {
           this.getUIContext().animateTo({
             duration: 3000,
             curve: Curve.EaseInOut,
-            iterations: -1, // 设置-1表示动画无限循环
+            iterations: -1, <em>// </em><em>设置-1表示动画无限循环</em>
             playMode: PlayMode.Normal
           },
             () => {
@@ -154,7 +154,7 @@ struct SwiperExample {
         });
       Button('获取第1个与第4个Swiper页面')
         .onClick(() => {
-          // 获取Swiper第四个页面截图
+        <em>  // 获取Swiper第四个页面截图</em>
           this.getUIContext().getComponentSnapshot().get('4', (error: Error, pixmap: image.PixelMap) => {
             if (error) {
               console.info(`error:${JSON.stringify(error)}`);
@@ -162,7 +162,7 @@ struct SwiperExample {
             }
             this.pixmap = pixmap;
           }, { scale: 2, waitUntilRenderFinished: true });
-          // 获取Swiper第一个页面截图
+          <em>// 获取Swiper第一个页面截图</em>
           this.getUIContext().getComponentSnapshot().get('1', (error: Error, pixmap: image.PixelMap) => {
             if (error) {
               console.info(`error:${JSON.stringify(error)}`);

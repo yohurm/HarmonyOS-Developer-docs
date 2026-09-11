@@ -1,12 +1,12 @@
-# 使用AVTranscoder实现音视频转码(C/C++)
+# 使用AVTranscoder实现视频转码(C/C++)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ndk-avtranscoder-for-transcodering
 
-从API version 20开始支持使用NDK接口（C/C++）实现音视频转码。
+从API version 20开始支持使用NDK接口（C/C++）实现视频转码。
 
-使用[AVTranscoder](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/media-kit-intro#avtranscoder)可以实现音视频转码功能，从API 12开始，转码功能可在手机、平板、2in1设备上作为系统提供的基础能力使用。可以通过调用[canIUse](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/init#caniuse)接口来判断当前设备是否支持AVTranscoder。当canIUse("SystemCapability.Multimedia.Media.AVTranscoder")返回值为true时，表示可以使用转码能力。
+使用[AVTranscoder](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/media-kit-intro#avtranscoder)可以实现视频转码功能，从API 12开始，转码功能可在手机、平板、2in1设备上作为系统提供的基础能力使用。可以通过调用[canIUse](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/syscap__ndk_8h#caniuse)接口来判断当前设备是否支持AVTranscoder。当canIUse("SystemCapability.Multimedia.Media.AVTranscoder")返回值为true时，表示可以使用转码能力。
 
 本开发指导将以“开始转码-暂停转码-恢复转码-完成转码”的一次完整流程为示例，向开发者讲解AVTranscoder视频转码相关功能。
 
@@ -19,7 +19,7 @@
 状态的详细说明请参考[OH_AVTranscoder_State](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avtranscoder-base-h#oh_avtranscoder_state)。
 
 
-#### 开发步骤及注意事项
+## 开发步骤及注意事项
 
 在CMake脚本中链接动态库。
 
@@ -52,9 +52,13 @@ OH_AVTranscoder *transcoder = OH_AVTranscoder_Create();
 2. 设置回调事件函数：使用OH_AVTranscoder_SetStateCallback()、OH_AVTranscoder_SetErrorCallback()和OH_AVTranscoder_SetProgressUpdateCallback()接口设置回调转码状态、转码错误事件和转码进度更新回调函数，搭配全流程场景使用。支持的回调事件包括：
 
 | 事件类型 | 说明 |
+
 | --- | --- |
+
 | OH_AVTranscoder_OnStateChange | 可选事件，回调转码过程中状态。 |
+
 | OH_AVTranscoder_OnError | 可选事件，回调转码错误事件。 |
+
 | OH_AVTranscoder_OnProgressUpdate | 可选事件，回调转码进度更新事件。 |
 
   应用使用OH_AVTranscoder_SetStateCallback()、OH_AVTranscoder_SetErrorCallback()和OH_AVTranscoder_SetProgressUpdateCallback()接口设置回调转码状态、转码错误事件和转码进度更新回调函数，可以获取更多信息，还可以通过设置userData自定义数据。
@@ -86,9 +90,9 @@ void NdkAVTransCoderUser::OnProgressUpdateCb(OH_AVTranscoder *transcoder, int  p
    this->avTranscoderProgress = progress;
 }
 
-void NdkAVTransCoderUser::OnErrorCb(OH_AVTranscoder *transcoder, int32_t errorCode, const char *errorMsg)
+void NdkAVTransCoderUser::OnErrorCb(OH_AVTranscoder *transcoder, int32_t  errorCode, const char *errorMsg)
 {
-   LOG("NdkAVTransCoderUser OnErrorCb errorCode: %{public}d ,errorMsg: %{public}s", errorCode,
+   LOG("NdkAVTransCoderUser OnErrorCb errorCode: %{public}d ,errorMsg: %{public} s", errorCode,
       errorMsg == nullptr ? "unknown" : errorMsg);
    this->errorCode = errorCode;
 }
@@ -146,7 +150,7 @@ static void AvTranscoderStateChangeCbImpl(OH_AVTranscoder *transcoder,  OH_AVTra
    LOG("AvTranscoderStateChangeCbImpl state: %{public}d", state);
    NdkAVTransCoderUser *ndkAVTransCoderUser =  reinterpret_cast<NdkAVTransCoderUser *>(userData);
    if (ndkAVTransCoderUser == nullptr || transcoder == nullptr) {
-      LOGE("AvTranscoderStateChangeCbImpl ndkAVTransCoderUser or transcoder is nullptr");
+      LOGE("AvTranscoderStateChangeCbImpl ndkAVTransCoderUser or transcoder is  nullptr");
       return;
    }
    ndkAVTransCoderUser->OnStateChangeCb(transcoder, state);
@@ -159,7 +163,7 @@ static void AvTranscoderErrorCbImpl(OH_AVTranscoder *transcoder, int32_t  errorC
       errorMsg == nullptr ? "unknown" : errorMsg);
    NdkAVTransCoderUser *ndkAVTransCoderUser =  reinterpret_cast<NdkAVTransCoderUser *>(userData);
    if (ndkAVTransCoderUser == nullptr || transcoder == nullptr) {
-      LOGE("AvTranscoderErrorCbImpl ndkAVTransCoderUser or transcoder is nullptr");
+      LOGE("AvTranscoderErrorCbImpl ndkAVTransCoderUser or transcoder is  nullptr");
       return;
    }
    ndkAVTransCoderUser->OnErrorCb(transcoder, errorCode, errorMsg);
@@ -177,8 +181,6 @@ static void AvTranscoderProgressUpdateCbImpl(OH_AVTranscoder *transcoder, int  p
 }
 static napi_value OHAvTranscoderNdkPlay(napi_env env, napi_callback_info info)
 {
-   OH_AVTranscoder *transcoder = OH_AVTranscoder_Create();
-   NdkAVTransCoderUser *transcoderUser = nullptr;
    OH_AVTranscoder_SetStateCallback(transcoder, AvTranscoderStateChangeCbImpl,  transcoderUser); // 设置状态回调
    OH_AVTranscoder_SetErrorCallback(transcoder, AvTranscoderErrorCbImpl,  transcoderUser); // 设置错误码回调
    OH_AVTranscoder_SetProgressUpdateCallback(transcoder,  AvTranscoderProgressUpdateCbImpl, transcoderUser); // 设置进度值回调
@@ -311,7 +313,7 @@ errCode = OH_AVTranscoder_Release(transcoder); // 释放转码实例
 
 
 
-#### 运行完整示例
+## 运行完整示例
 1. 新建工程，下载[示例工程](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/Media/AVTranscoder/AVTranscoderNDK)，并将示例工程的以下资源复制到对应目录。
 
   

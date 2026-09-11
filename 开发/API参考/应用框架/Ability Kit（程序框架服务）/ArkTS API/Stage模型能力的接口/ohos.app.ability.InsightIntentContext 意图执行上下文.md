@@ -1,9 +1,9 @@
 # @ohos.app.ability.InsightIntentContext (意图执行上下文)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-insightintentcontext
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供意图执行上下文，是[意图执行基类](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-insightintentexecutor)和[@InsightIntentEntry的意图执行基类](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-insightintententryexecutor)的属性，为意图执行提供基础能力，例如启动本应用内的[UIAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability#uiability)组件。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { InsightIntentContext } from '@kit.AbilityKit';
@@ -22,13 +23,15 @@ import { InsightIntentContext } from '@kit.AbilityKit';
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API**：从API version 23开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -75,9 +78,10 @@ export default class InsightIntentExecutorUI extends InsightIntentExecutor {
 
 
 
-#### InsightIntentContext.startAbility
+## InsightIntentContext.startAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startAbility(want: Want, callback: AsyncCallback&lt;void&gt;): void
 
@@ -91,6 +95,7 @@ startAbility(want: Want, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | 启动UIAbility组件的want信息。 |
@@ -100,6 +105,7 @@ startAbility(want: Want, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -162,9 +168,10 @@ export default class IntentExecutorImpl extends InsightIntentExecutor {
 
 
 
-#### InsightIntentContext.startAbility
+## InsightIntentContext.startAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startAbility(want: Want): Promise&lt;void&gt;
 
@@ -178,12 +185,14 @@ startAbility(want: Want): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | 启动UIAbility组件的want信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -193,6 +202,7 @@ startAbility(want: Want): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -250,9 +260,10 @@ export default class IntentExecutorImpl extends InsightIntentExecutor {
 
 
 
-#### InsightIntentContext.setReturnModeForUIAbilityForeground23+
+## InsightIntentContext.setReturnModeForUIAbilityForeground23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setReturnModeForUIAbilityForeground(returnMode: insightIntent.ReturnMode): void
 
@@ -266,6 +277,7 @@ setReturnModeForUIAbilityForeground(returnMode: insightIntent.ReturnMode): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | returnMode | insightIntent.ReturnMode | 是 | 意图执行结果的返回形式。 |
@@ -274,6 +286,7 @@ setReturnModeForUIAbilityForeground(returnMode: insightIntent.ReturnMode): void
 **错误码：**
 
 以下错误码详细介绍请参考[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -286,6 +299,7 @@ setReturnModeForUIAbilityForeground(returnMode: insightIntent.ReturnMode): void
 import { InsightIntentExecutor, insightIntent } from '@kit.AbilityKit';
 import { window } from '@kit.ArkUI';
 import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 export default class InsightIntentExecutorUI extends InsightIntentExecutor {
   onExecuteInUIAbilityForegroundMode(name: string, param: Record<string, Object>,
@@ -324,9 +338,10 @@ export default class InsightIntentExecutorUI extends InsightIntentExecutor {
 
 
 
-#### InsightIntentContext.setReturnModeForUIExtensionAbility23+
+## InsightIntentContext.setReturnModeForUIExtensionAbility23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setReturnModeForUIExtensionAbility(returnMode: insightIntent.ReturnMode): void
 
@@ -340,6 +355,7 @@ setReturnModeForUIExtensionAbility(returnMode: insightIntent.ReturnMode): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | returnMode | insightIntent.ReturnMode | 是 | 意图执行结果的返回形式。 |
@@ -348,6 +364,7 @@ setReturnModeForUIExtensionAbility(returnMode: insightIntent.ReturnMode): void
 **错误码：**
 
 以下错误码详细介绍请参考[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -359,6 +376,7 @@ setReturnModeForUIExtensionAbility(returnMode: insightIntent.ReturnMode): void
 ```text
 import { InsightIntentExecutor, insightIntent, UIExtensionContentSession } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 export default class InsightIntentExecutorUI extends InsightIntentExecutor {
   onExecuteInUIExtensionAbility(name: string, param: Record<string, Object>,
@@ -387,8 +405,8 @@ export default class InsightIntentExecutorUI extends InsightIntentExecutor {
       storage.setOrCreate('session', pageLoader);
       pageLoader.loadContent('pages/UIExtensionPage', storage);
     } catch (err) {
-      const err: BusinessError = err as BusinessError;
-      console.error(`Failed to loadContent. Code: ${err.code}, message: ${err.message}`);
+      const error: BusinessError = err as BusinessError;
+      console.error(`Failed to loadContent. Code: ${error.code}, message: ${error.message}`);
     }
     return result;
   }

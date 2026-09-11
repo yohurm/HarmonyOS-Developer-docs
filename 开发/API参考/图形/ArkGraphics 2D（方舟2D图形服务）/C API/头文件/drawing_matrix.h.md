@@ -1,15 +1,16 @@
 # drawing_matrix.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-matrix-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-文件中定义了与矩阵相关的功能函数。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+文件中定义了矩阵的创建、拷贝、变换（旋转、缩放、平移、倾斜）、查询（判断相等、判断单位矩阵、获取元素值）和映射等功能函数。
  
 本模块为单线程模型策略，需要调用方自行管理线程安全和上下文状态的切换。
  
@@ -27,16 +28,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_Drawing_ScaleToFit | OH_Drawing_ScaleToFit | 矩阵缩放方式枚举。 |
@@ -44,58 +48,61 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
-| OH_Drawing_Matrix* OH_Drawing_MatrixCreate(void) | 用于创建一个矩阵对象。 |
-| OH_Drawing_Matrix* OH_Drawing_MatrixCopy(const OH_Drawing_Matrix* matrix) | 用于创建一个矩阵对象的拷贝。 |
-| OH_Drawing_Matrix* OH_Drawing_MatrixCreateRotation(float deg, float x, float y) | 创建一个带旋转属性的矩阵对象。 该矩阵对象为：单位矩阵在(x, y)旋转点以度为单位进行旋转后得到的矩阵。 |
-| OH_Drawing_Matrix* OH_Drawing_MatrixCreateScale(float sx, float sy, float px, float py) | 创建一个带缩放属性的矩阵对象。 该矩阵对象为：单位矩阵在(px, py)旋转点以sx和sy为缩放因子进行缩放后得到的矩阵。 |
-| OH_Drawing_Matrix* OH_Drawing_MatrixCreateTranslation(float dx, float dy) | 创建一个带平移属性的矩阵对象。 该矩阵对象为：单位矩阵平移(dx, dy)后得到的矩阵。 |
-| void OH_Drawing_MatrixSetMatrix(OH_Drawing_Matrix* matrix, float scaleX, float skewX, float transX,float skewY, float scaleY, float transY, float persp0, float persp1, float persp2) | 用于给矩阵对象设置参数。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 OH_Drawing_Matrix为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
-| bool OH_Drawing_MatrixSetRectToRect(OH_Drawing_Matrix* matrix, const OH_Drawing_Rect* src,const OH_Drawing_Rect* dst, OH_Drawing_ScaleToFit stf) | 将矩阵以缩放方式适配目标矩阵。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 matrix、src、dst任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
-| void OH_Drawing_MatrixPreRotate(OH_Drawing_Matrix* matrix, float degree, float px, float py) | 将矩阵设置为矩阵左乘围绕轴心点旋转一定角度的单位矩阵后得到的矩阵。 |
-| void OH_Drawing_MatrixPreScale(OH_Drawing_Matrix* matrix, float sx, float sy, float px, float py) | 将矩阵设置为矩阵左乘围绕轴心点按一定缩放因子缩放后的单位矩阵后得到的矩阵。 |
-| void OH_Drawing_MatrixPreTranslate(OH_Drawing_Matrix* matrix, float dx, float dy) | 将矩阵设置为矩阵左乘平移一定距离后的单位矩阵后得到的矩阵。 |
-| void OH_Drawing_MatrixPostRotate(OH_Drawing_Matrix* matrix, float degree, float px, float py) | 将矩阵设置为矩阵右乘围绕轴心点旋转一定角度的单位矩阵后得到的矩阵。 |
-| void OH_Drawing_MatrixPostScale(OH_Drawing_Matrix* matrix, float sx, float sy, float px, float py) | 将矩阵设置为矩阵右乘围绕轴心点按一定缩放因子缩放后的单位矩阵后得到的矩阵。 |
-| void OH_Drawing_MatrixPostTranslate(OH_Drawing_Matrix* matrix, float dx, float dy) | 将矩阵设置为矩阵右乘平移一定距离后的单位矩阵后得到的矩阵。 |
-| void OH_Drawing_MatrixReset(OH_Drawing_Matrix* matrix) | 重置当前矩阵为单位矩阵。 |
-| void OH_Drawing_MatrixConcat(OH_Drawing_Matrix* total, const OH_Drawing_Matrix* a,const OH_Drawing_Matrix* b) | 将矩阵total设置为矩阵a乘以矩阵b。 |
-| OH_Drawing_ErrorCode OH_Drawing_MatrixGetAll(OH_Drawing_Matrix* matrix, float value[9]) | 获取矩阵所有元素值。 |
+| OH_Drawing_Matrix* OH_Drawing_MatrixCreate(void) | 用于创建一个矩阵对象。调用此函数创建的矩阵对象，在使用完毕后必须调用OH_Drawing_MatrixDestroy释放该对象占用的内存，否则会导致内存泄漏。 |
+| OH_Drawing_Matrix* OH_Drawing_MatrixCopy(const OH_Drawing_Matrix* matrix) | 用于创建一个矩阵对象的拷贝。调用此函数返回的是一个新的独立矩阵对象，在使用完毕后必须调用OH_Drawing_MatrixDestroy单独释放拷贝对象占用的内存，否则会导致内存泄漏。 |
+| OH_Drawing_Matrix* OH_Drawing_MatrixCreateRotation(float deg, float x, float y) | 创建一个带旋转属性的矩阵对象。 该矩阵对象为：单位矩阵在(x, y)旋转中心点以度为单位进行旋转后得到的矩阵。调用此函数创建的矩阵对象，在使用完毕后必须调用OH_Drawing_MatrixDestroy释放该对象占用的内存，否则会导致内存泄漏。 |
+| OH_Drawing_Matrix* OH_Drawing_MatrixCreateScale(float sx, float sy, float px, float py) | 创建一个带缩放属性的矩阵对象。 该矩阵对象为：单位矩阵在(px, py)缩放中心点以sx和sy为缩放因子进行缩放后得到的矩阵。调用此函数创建的矩阵对象，在使用完毕后必须调用OH_Drawing_MatrixDestroy释放该对象占用的内存。 |
+| OH_Drawing_Matrix* OH_Drawing_MatrixCreateTranslation(float dx, float dy) | 创建一个带平移属性的矩阵对象。 该矩阵对象为：单位矩阵平移(dx, dy)后得到的矩阵。调用此函数创建的矩阵对象，在使用完毕后必须调用OH_Drawing_MatrixDestroy释放该对象占用的内存，否则会导致内存泄漏。 |
+| void OH_Drawing_MatrixSetMatrix(OH_Drawing_Matrix* matrix, float scaleX, float skewX, float transX, float skewY, float scaleY, float transY, float persp0, float persp1, float persp2) | 用于给矩阵对象设置变换参数，包括缩放、倾斜、位移和透视系数。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 OH_Drawing_Matrix为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
+| bool OH_Drawing_MatrixSetRectToRect(OH_Drawing_Matrix* matrix, const OH_Drawing_Rect* src, const OH_Drawing_Rect* dst, OH_Drawing_ScaleToFit stf) | 将矩阵以缩放方式适配目标矩形。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 matrix、src或dst任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
+| void OH_Drawing_MatrixPreRotate(OH_Drawing_Matrix* matrix, float degree, float px, float py) | 将矩阵设置为矩阵左乘围绕旋转中心点旋转degree角度的单位矩阵后得到的矩阵。 matrix为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
+| void OH_Drawing_MatrixPreScale(OH_Drawing_Matrix* matrix, float sx, float sy, float px, float py) | 将矩阵设置为矩阵左乘围绕缩放中心点按sx和sy缩放因子缩放后的单位矩阵后得到的矩阵。 matrix为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
+| void OH_Drawing_MatrixPreTranslate(OH_Drawing_Matrix* matrix, float dx, float dy) | 将矩阵设置为矩阵左乘平移dx和dy距离后的单位矩阵后得到的矩阵。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 matrix为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
+| void OH_Drawing_MatrixPostRotate(OH_Drawing_Matrix* matrix, float degree, float px, float py) | 将矩阵设置为矩阵右乘围绕旋转中心点旋转degree角度的单位矩阵后得到的矩阵。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 matrix为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
+| void OH_Drawing_MatrixPostScale(OH_Drawing_Matrix* matrix, float sx, float sy, float px, float py) | 将矩阵设置为矩阵右乘围绕缩放中心点按sx和sy缩放因子缩放后的单位矩阵后得到的矩阵。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 matrix为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
+| void OH_Drawing_MatrixPostTranslate(OH_Drawing_Matrix* matrix, float dx, float dy) | 将矩阵设置为矩阵右乘平移dx和dy距离后的单位矩阵后得到的矩阵。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 matrix为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
+| void OH_Drawing_MatrixReset(OH_Drawing_Matrix* matrix) | 重置当前矩阵为单位矩阵。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 matrix为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
+| void OH_Drawing_MatrixConcat(OH_Drawing_Matrix* total, const OH_Drawing_Matrix* a, const OH_Drawing_Matrix* b) | 将矩阵total设置为矩阵a乘以矩阵b。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 total、a或b任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
+| OH_Drawing_ErrorCode OH_Drawing_MatrixGetAll(OH_Drawing_Matrix* matrix, float value[9]) | 获取矩阵所有元素值。9个元素按行主序存储，对应3×3矩阵结构，具体排列方式参见OH_Drawing_MatrixSetMatrix。 |
 | float OH_Drawing_MatrixGetValue(OH_Drawing_Matrix* matrix, int index) | 获取矩阵给定索引位的值。索引范围0-8。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 matrix为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER； index小于0或者大于8时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。 |
-| void OH_Drawing_MatrixRotate(OH_Drawing_Matrix* matrix, float degree, float px, float py) | 设置矩阵为单位矩阵，并围绕位于(px, py)的旋转轴点进行旋转。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 matrix为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
+| void OH_Drawing_MatrixRotate(OH_Drawing_Matrix* matrix, float degree, float px, float py) | 设置矩阵为单位矩阵，并围绕位于(px, py)的旋转中心点进行旋转。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 matrix为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
 | void OH_Drawing_MatrixTranslate(OH_Drawing_Matrix* matrix, float dx, float dy) | 设置矩阵为单位矩阵，并平移(dx, dy)。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 matrix为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
-| void OH_Drawing_MatrixScale(OH_Drawing_Matrix* matrix, float sx, float sy, float px, float py) | 设置矩阵为单位矩阵，并围绕位于(px, py)的旋转轴点，以sx和sy进行缩放。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 matrix为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
-| bool OH_Drawing_MatrixInvert(OH_Drawing_Matrix* matrix, OH_Drawing_Matrix* inverse) | 将矩阵inverse设置为矩阵的逆矩阵，并返回结果。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 matrix、inverse任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
-| bool OH_Drawing_MatrixSetPolyToPoly(OH_Drawing_Matrix* matrix, const OH_Drawing_Point2D* src,const OH_Drawing_Point2D* dst, uint32_t count) | 通过设置源点以及目标点，生成对应的变换矩阵。 源点以及目标点的个数要大于等于0，小于等于4。本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 matrix为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER； count小于0或者大于4时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。 |
-| void OH_Drawing_MatrixMapPoints(const OH_Drawing_Matrix* matrix, const OH_Drawing_Point2D* src,OH_Drawing_Point2D* dst, int count) | 通过矩阵变换将源点数组映射到目标点数组。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 matrix、src、dst任意一个为NULL或者count小于等于0时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
-| bool OH_Drawing_MatrixMapRect(const OH_Drawing_Matrix* matrix, const OH_Drawing_Rect* src, OH_Drawing_Rect* dst) | 将目标矩形设置为一个新的矩形，该矩形是能够包围源矩形的四个顶点通过矩阵变换映射后形成的新顶点的最小矩形。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 matrix、src、dst任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
-| bool OH_Drawing_MatrixIsEqual(OH_Drawing_Matrix* matrix, OH_Drawing_Matrix* other) | 判断两个矩阵是否相等。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 matrix、other任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
-| bool OH_Drawing_MatrixIsIdentity(OH_Drawing_Matrix* matrix) | 判断矩阵是否是单位矩阵。 |
-| void OH_Drawing_MatrixDestroy(OH_Drawing_Matrix* matrix) | 用于销毁矩阵对象并回收该对象占有的内存。 |
-| OH_Drawing_ErrorCode OH_Drawing_MatrixPreConcat(OH_Drawing_Matrix* a, OH_Drawing_Matrix* b) | 对矩阵a左乘矩阵b。 |
+| void OH_Drawing_MatrixScale(OH_Drawing_Matrix* matrix, float sx, float sy, float px, float py) | 设置矩阵为单位矩阵，并围绕位于(px, py)的缩放中心点，以sx和sy进行缩放。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 matrix为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
+| bool OH_Drawing_MatrixInvert(OH_Drawing_Matrix* matrix, OH_Drawing_Matrix* inverse) | 将矩阵inverse设置为矩阵的逆矩阵，并返回结果。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 matrix或inverse任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
+| bool OH_Drawing_MatrixSetPolyToPoly(OH_Drawing_Matrix* matrix, const OH_Drawing_Point2D* src, const OH_Drawing_Point2D* dst, uint32_t count) | 通过设置源点以及目标点，生成对应的变换矩阵。 源点以及目标点的个数要大于等于0，小于等于4。本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 matrix为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER； count小于0或者大于4时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。 |
+| void OH_Drawing_MatrixMapPoints(const OH_Drawing_Matrix* matrix, const OH_Drawing_Point2D* src, OH_Drawing_Point2D* dst, int count) | 通过矩阵变换将源点数组映射到目标点数组。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 matrix、src或dst任意一个为NULL或者count小于等于0时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
+| bool OH_Drawing_MatrixMapRect(const OH_Drawing_Matrix* matrix, const OH_Drawing_Rect* src, OH_Drawing_Rect* dst) | 将目标矩形设置为一个新的矩形，该矩形是能够包围源矩形的四个顶点通过矩阵变换映射后形成的新顶点的最小矩形。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 matrix、src或dst任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
+| bool OH_Drawing_MatrixIsEqual(OH_Drawing_Matrix* matrix, OH_Drawing_Matrix* other) | 判断两个矩阵是否相等。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 matrix或other任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
+| bool OH_Drawing_MatrixIsIdentity(OH_Drawing_Matrix* matrix) | 判断矩阵是否是单位矩阵。单位矩阵为：[1 0 0; 0 1 0; 0 0 1]。 如需判断两个矩阵是否相等，请使用OH_Drawing_MatrixIsEqual。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 matrix为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。 |
+| void OH_Drawing_MatrixDestroy(OH_Drawing_Matrix* matrix) | 用于销毁矩阵对象并回收该对象占用的内存。 |
+| OH_Drawing_ErrorCode OH_Drawing_MatrixPreConcat(OH_Drawing_Matrix* a, OH_Drawing_Matrix* b) | 对矩阵a左乘矩阵b。与OH_Drawing_MatrixConcat功能类似，区别在于OH_Drawing_MatrixConcat将结果存入单独的total矩阵，而本方法直接修改矩阵a。 |
 | OH_Drawing_ErrorCode OH_Drawing_MatrixIsAffine(const OH_Drawing_Matrix* matrix, bool* isAffine) | 判断当前矩阵是否为仿射矩阵。仿射矩阵是一种包括平移、旋转或缩放等变换的矩阵。 |
-| OH_Drawing_ErrorCode OH_Drawing_MatrixPreSkew(OH_Drawing_Matrix* matrix, float kx, float ky, float px, float py) | 将当前矩阵左乘一个以(px, py)为中心按(kx, ky)倾斜构造的矩阵。 |
-| OH_Drawing_ErrorCode OH_Drawing_MatrixRectStaysRect(const OH_Drawing_Matrix* matrix, bool* isRectStaysRect) | 判断矩形经过当前矩阵映射后是否仍保持矩形形状。当矩阵是单位矩阵或仅包含平移、缩放、旋转90度倍数等仿射变换时满足该条件。 |
-| OH_Drawing_ErrorCode OH_Drawing_MatrixSetSinCos(OH_Drawing_Matrix* matrix, float sinValue, float cosValue, float px, float py) | 设置矩阵，使其围绕旋转中心 (px, py) 以指定的正弦值和余弦值进行旋转。 |
-| void OH_Drawing_MatrixDestroy(OH_Drawing_Matrix* matrix) | 用于销毁矩阵对象并回收该对象占有的内存。 |
+| OH_Drawing_ErrorCode OH_Drawing_MatrixPreSkew(OH_Drawing_Matrix* matrix, float kx, float ky, float px, float py) | 将当前矩阵左乘一个以(px, py)为中心按(kx, ky)倾斜构造的矩阵。与OH_Drawing_MatrixPreRotate、OH_Drawing_MatrixPreScale、OH_Drawing_MatrixPreTranslate同属Pre系列方法。 |
+| OH_Drawing_ErrorCode OH_Drawing_MatrixRectStaysRect(const OH_Drawing_Matrix* matrix, bool* isRectStaysRect) | 判断矩形经过当前矩阵映射后是否仍保持矩形形状。当矩阵是单位矩阵或仅包含平移、缩放、旋转90度倍数这类仿射变换时满足该条件。 |
+| OH_Drawing_ErrorCode OH_Drawing_MatrixSetSinCos(OH_Drawing_Matrix* matrix, float sinValue, float cosValue, float px, float py) | 设置矩阵，使其围绕旋转中心 (px, py) 以指定的正弦值和余弦值进行旋转。与OH_Drawing_MatrixRotate功能类似，区别在于OH_Drawing_MatrixRotate直接传入角度值，而本方法传入正弦值和余弦值。 |
  
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Drawing_ScaleToFit
+### OH_Drawing_ScaleToFit
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Drawing_ScaleToFit
@@ -107,9 +114,10 @@ enum OH_Drawing_ScaleToFit
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
-| SCALE_TO_FIT_FILL | 按水平轴和垂直轴缩放以填充目标矩形。 |
+| SCALE_TO_FIT_FILL | 按水平轴和垂直轴缩放以填充目标矩形，不保留源矩形宽高比例。 |
 | SCALE_TO_FIT_START | 缩放并对齐到左侧和顶部。 |
 | SCALE_TO_FIT_CENTER | 缩放并居中对齐。 |
 | SCALE_TO_FIT_END | 缩放并向右和向下对齐。 |
@@ -117,15 +125,17 @@ enum OH_Drawing_ScaleToFit
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Drawing_MatrixCreate()
+### OH_Drawing_MatrixCreate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_Matrix* OH_Drawing_MatrixCreate(void)
@@ -133,7 +143,7 @@ OH_Drawing_Matrix* OH_Drawing_MatrixCreate(void)
  
 **描述**
  
-用于创建一个矩阵对象。
+用于创建一个矩阵对象。调用此函数创建的矩阵对象，在使用完毕后必须调用[OH_Drawing_MatrixDestroy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-matrix-h#oh_drawing_matrixdestroy)释放该对象占用的内存，否则会导致内存泄漏。
  
 **系统能力：** SystemCapability.Graphic.Graphic2D.NativeDrawing
  
@@ -141,16 +151,18 @@ OH_Drawing_Matrix* OH_Drawing_MatrixCreate(void)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| OH_Drawing_Matrix* | 函数会返回一个指针，指针指向创建的矩阵对象。 |
+| OH_Drawing_Matrix* | 函数返回一个指针，指针指向创建的矩阵对象OH_Drawing_Matrix。 |
  
  
   
 
-#### OH_Drawing_MatrixCopy()
+### OH_Drawing_MatrixCopy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_Matrix* OH_Drawing_MatrixCopy(const OH_Drawing_Matrix* matrix)
@@ -158,7 +170,7 @@ OH_Drawing_Matrix* OH_Drawing_MatrixCopy(const OH_Drawing_Matrix* matrix)
  
 **描述**
  
-用于创建一个矩阵对象的拷贝。
+用于创建一个矩阵对象的拷贝。调用此函数返回的是一个新的独立矩阵对象，在使用完毕后必须调用[OH_Drawing_MatrixDestroy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-matrix-h#oh_drawing_matrixdestroy)单独释放拷贝对象占用的内存，否则会导致内存泄漏。
  
 **系统能力：** SystemCapability.Graphic.Graphic2D.NativeDrawing
  
@@ -166,6 +178,7 @@ OH_Drawing_Matrix* OH_Drawing_MatrixCopy(const OH_Drawing_Matrix* matrix)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_Drawing_Matrix* matrix | 指向用于拷贝的矩阵对象OH_Drawing_Matrix的指针。 |
@@ -173,16 +186,18 @@ OH_Drawing_Matrix* OH_Drawing_MatrixCopy(const OH_Drawing_Matrix* matrix)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| OH_Drawing_Matrix* | 函数会返回一个指针，指针指向创建的新矩阵对象。 |
+| OH_Drawing_Matrix* | 函数返回一个指针，指针指向创建的新矩阵对象OH_Drawing_Matrix。 |
  
  
   
 
-#### OH_Drawing_MatrixCreateRotation()
+### OH_Drawing_MatrixCreateRotation()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_Matrix* OH_Drawing_MatrixCreateRotation(float deg, float x, float y)
@@ -192,7 +207,7 @@ OH_Drawing_Matrix* OH_Drawing_MatrixCreateRotation(float deg, float x, float y)
  
 创建一个带旋转属性的矩阵对象。
  
-该矩阵对象为：单位矩阵在(x, y)旋转点以度为单位进行旋转后得到的矩阵。
+该矩阵对象为：单位矩阵在(x, y)旋转中心点以度为单位进行旋转后得到的矩阵。调用此函数创建的矩阵对象，在使用完毕后必须调用[OH_Drawing_MatrixDestroy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-matrix-h#oh_drawing_matrixdestroy)释放该对象占用的内存，否则会导致内存泄漏。
  
 **系统能力：** SystemCapability.Graphic.Graphic2D.NativeDrawing
  
@@ -200,15 +215,17 @@ OH_Drawing_Matrix* OH_Drawing_MatrixCreateRotation(float deg, float x, float y)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| float deg | 旋转的角度，单位为度。正数表示按顺时针旋转，负数表示按逆时针旋转。 |
-| float x | x轴上坐标点。 |
-| float y | y轴上坐标点。 |
+| float deg | 旋转的角度，单位为度。正数表示顺时针旋转，负数表示逆时针旋转。 |
+| float x | 旋转中心点的x轴坐标，单位为物理像素px。 |
+| float y | 旋转中心点的y轴坐标，单位为物理像素px。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_Matrix* | 函数返回一个指针，指针指向创建的矩阵对象OH_Drawing_Matrix。 |
@@ -216,9 +233,10 @@ OH_Drawing_Matrix* OH_Drawing_MatrixCreateRotation(float deg, float x, float y)
  
   
 
-#### OH_Drawing_MatrixCreateScale()
+### OH_Drawing_MatrixCreateScale()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_Matrix* OH_Drawing_MatrixCreateScale(float sx, float sy, float px, float py)
@@ -228,7 +246,7 @@ OH_Drawing_Matrix* OH_Drawing_MatrixCreateScale(float sx, float sy, float px, fl
  
 创建一个带缩放属性的矩阵对象。
  
-该矩阵对象为：单位矩阵在(px, py)旋转点以sx和sy为缩放因子进行缩放后得到的矩阵。
+该矩阵对象为：单位矩阵在(px, py)缩放中心点以sx和sy为缩放因子进行缩放后得到的矩阵。调用此函数创建的矩阵对象，在使用完毕后必须调用[OH_Drawing_MatrixDestroy](#oh_drawing_matrixdestroy)释放该对象占用的内存。
  
 **系统能力：** SystemCapability.Graphic.Graphic2D.NativeDrawing
  
@@ -236,16 +254,18 @@ OH_Drawing_Matrix* OH_Drawing_MatrixCreateScale(float sx, float sy, float px, fl
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| float sx | 水平缩放因子，为负数时可看作是先关于y = px作镜像翻转后再进行缩放，该参数为浮点数。 |
-| float sy | 垂直缩放因子，为负数时可看作是先关于x = py作镜像翻转后再进行缩放，该参数为浮点数。 |
-| float px | x轴上坐标点。 |
-| float py | y轴上坐标点。 |
+| float sx | 水平缩放因子，为负数时可看作是先关于x = px作镜像翻转后再进行缩放。 |
+| float sy | 垂直缩放因子，为负数时可看作是先关于y = py作镜像翻转后再进行缩放。 |
+| float px | 缩放中心点的x轴坐标，单位为物理像素px。 |
+| float py | 缩放中心点的y轴坐标，单位为物理像素px。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_Matrix* | 函数返回一个指针，指针指向创建的矩阵对象OH_Drawing_Matrix。 |
@@ -253,9 +273,10 @@ OH_Drawing_Matrix* OH_Drawing_MatrixCreateScale(float sx, float sy, float px, fl
  
   
 
-#### OH_Drawing_MatrixCreateTranslation()
+### OH_Drawing_MatrixCreateTranslation()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_Matrix* OH_Drawing_MatrixCreateTranslation(float dx, float dy)
@@ -265,7 +286,7 @@ OH_Drawing_Matrix* OH_Drawing_MatrixCreateTranslation(float dx, float dy)
  
 创建一个带平移属性的矩阵对象。
  
-该矩阵对象为：单位矩阵平移(dx, dy)后得到的矩阵。
+该矩阵对象为：单位矩阵平移(dx, dy)后得到的矩阵。调用此函数创建的矩阵对象，在使用完毕后必须调用[OH_Drawing_MatrixDestroy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-matrix-h#oh_drawing_matrixdestroy)释放该对象占用的内存，否则会导致内存泄漏。
  
 **系统能力：** SystemCapability.Graphic.Graphic2D.NativeDrawing
  
@@ -273,14 +294,16 @@ OH_Drawing_Matrix* OH_Drawing_MatrixCreateTranslation(float dx, float dy)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| float dx | 水平方向平移距离，正数表示往x轴正方向平移，负数表示往x轴负方向平移，该参数为浮点数。 |
-| float dy | 垂直方向平移距离，正数表示往y轴正方向平移，负数表示往y轴负方向平移，该参数为浮点数。 |
+| float dx | 水平方向平移距离，单位为物理像素px。正数表示往x轴正方向平移，负数表示往x轴负方向平移。 |
+| float dy | 垂直方向平移距离，单位为物理像素px。正数表示往y轴正方向平移，负数表示往y轴负方向平移。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_Matrix* | 函数返回一个指针，指针指向创建的矩阵对象OH_Drawing_Matrix。 |
@@ -288,17 +311,18 @@ OH_Drawing_Matrix* OH_Drawing_MatrixCreateTranslation(float dx, float dy)
  
   
 
-#### OH_Drawing_MatrixSetMatrix()
+### OH_Drawing_MatrixSetMatrix()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-void OH_Drawing_MatrixSetMatrix(OH_Drawing_Matrix* matrix, float scaleX, float skewX, float transX,float skewY, float scaleY, float transY, float persp0, float persp1, float persp2)
+void OH_Drawing_MatrixSetMatrix(OH_Drawing_Matrix* matrix, float scaleX, float skewX, float transX, float skewY, float scaleY, float transY, float persp0, float persp1, float persp2)
 ```
  
 **描述**
  
-用于给矩阵对象设置参数。
+用于给矩阵对象设置变换参数，包括缩放、倾斜、位移和透视系数。
  
 本接口会产生错误码，可以通过[OH_Drawing_ErrorCodeGet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-error-code-h#oh_drawing_errorcodeget)查看错误码的取值。
  
@@ -309,38 +333,48 @@ OH_Drawing_Matrix为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
 **起始版本：** 11
  
 **参数：**
+ 
+9个参数按行排列对应3×3矩阵结构：
+ 
+```text
+scaleX  skewX   transX
+skewY   scaleY  transY
+persp0  persp1  persp2
+```
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Matrix* matrix | 指向矩阵对象的指针。 |
-| float scaleX | 水平缩放系数。 |
+| float scaleX | 水平缩放因子。 |
 | float skewX | 水平倾斜系数。 |
 | float transX | 水平位移系数。 |
 | float skewY | 垂直倾斜系数。 |
-| float scaleY | 垂直缩放系数。 |
+| float scaleY | 垂直缩放因子。 |
 | float transY | 垂直位移系数。 |
-| float persp0 | X轴透视系数。 |
-| float persp1 | Y轴透视系数。 |
+| float persp0 | x轴透视系数。 |
+| float persp1 | y轴透视系数。 |
 | float persp2 | 透视缩放系数。 |
  
  
   
 
-#### OH_Drawing_MatrixSetRectToRect()
+### OH_Drawing_MatrixSetRectToRect()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-bool OH_Drawing_MatrixSetRectToRect(OH_Drawing_Matrix* matrix, const OH_Drawing_Rect* src,const OH_Drawing_Rect* dst, OH_Drawing_ScaleToFit stf)
+bool OH_Drawing_MatrixSetRectToRect(OH_Drawing_Matrix* matrix, const OH_Drawing_Rect* src, const OH_Drawing_Rect* dst, OH_Drawing_ScaleToFit stf)
 ```
  
 **描述**
  
-将矩阵以缩放方式适配目标矩阵。
+将矩阵以缩放方式适配目标矩形。
  
 本接口会产生错误码，可以通过[OH_Drawing_ErrorCodeGet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-error-code-h#oh_drawing_errorcodeget)查看错误码的取值。
  
-matrix、src、dst任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
+matrix、src或dst任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **系统能力：** SystemCapability.Graphic.Graphic2D.NativeDrawing
  
@@ -348,26 +382,29 @@ matrix、src、dst任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Matrix* matrix | 指向矩阵对象OH_Drawing_Matrix的指针。 |
-| const OH_Drawing_Rect* src | 指向映射源的OH_Drawing_Rect对象Rect的指针。 |
-| const OH_Drawing_Rect* dst | 指向要映射到的OH_Drawing_Rect对象Rect的指针。 |
-| OH_Drawing_ScaleToFit stf | 缩放方式，支持方式OH_Drawing_ScaleToFit。 |
+| const OH_Drawing_Rect* src | 指向源矩形对象OH_Drawing_Rect的指针。 |
+| const OH_Drawing_Rect* dst | 指向目标矩形对象OH_Drawing_Rect的指针。 |
+| OH_Drawing_ScaleToFit stf | 缩放方式，详见OH_Drawing_ScaleToFit。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| bool | 如果设置失败，则返回false；如果设置成功，则返回true； 如果源矩形src的宽高任意一个小于等于0，则返回false，并将矩阵设置为单位矩阵； 如果目标矩形dst的宽高任意一个小于等于0，则返回true，并将矩阵设置为除透视缩放系数为1外其余值皆为0的矩阵; |
+| bool | 如果设置成功，则返回true；如果设置失败，则返回false。特殊情况： 如果源矩形src的宽高任意一个小于等于0，则返回false，并将矩阵设置为单位矩阵； 如果目标矩形dst的宽高任意一个小于等于0，则返回true，并将矩阵设置为除透视缩放系数为1外其余值皆为0的矩阵。 |
  
  
   
 
-#### OH_Drawing_MatrixPreRotate()
+### OH_Drawing_MatrixPreRotate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_MatrixPreRotate(OH_Drawing_Matrix* matrix, float degree, float px, float py)
@@ -375,7 +412,7 @@ void OH_Drawing_MatrixPreRotate(OH_Drawing_Matrix* matrix, float degree, float p
  
 **描述**
  
-将矩阵设置为矩阵左乘围绕轴心点旋转一定角度的单位矩阵后得到的矩阵。
+将矩阵设置为矩阵左乘围绕旋转中心点旋转degree指定角度的单位矩阵后得到的矩阵。
  
 本接口会产生错误码，可以通过[OH_Drawing_ErrorCodeGet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-error-code-h#oh_drawing_errorcodeget)查看错误码的取值。
  
@@ -387,19 +424,21 @@ matrix为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Matrix* matrix | 指向矩阵对象OH_Drawing_Matrix的指针。 |
 | float degree | 旋转角度，单位为度。正数表示顺时针旋转，负数表示逆时针旋转。 |
-| float px | 旋转中心点的横坐标。 |
-| float py | 旋转中心点的纵坐标。 |
+| float px | 旋转中心点的x轴坐标，单位为物理像素px。 |
+| float py | 旋转中心点的y轴坐标，单位为物理像素px。 |
  
  
   
 
-#### OH_Drawing_MatrixPreScale()
+### OH_Drawing_MatrixPreScale()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_MatrixPreScale(OH_Drawing_Matrix* matrix, float sx, float sy, float px, float py)
@@ -407,7 +446,7 @@ void OH_Drawing_MatrixPreScale(OH_Drawing_Matrix* matrix, float sx, float sy, fl
  
 **描述**
  
-将矩阵设置为矩阵左乘围绕轴心点按一定缩放因子缩放后的单位矩阵后得到的矩阵。
+将矩阵设置为矩阵左乘围绕缩放中心点按缩放因子sx和sy缩放后的单位矩阵后得到的矩阵。
  
 本接口会产生错误码，可以通过[OH_Drawing_ErrorCodeGet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-error-code-h#oh_drawing_errorcodeget)查看错误码的取值。
  
@@ -419,20 +458,22 @@ matrix为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Matrix* matrix | 指向矩阵对象OH_Drawing_Matrix的指针。 |
-| float sx | x轴方向的缩放比例因子，为负数时可看作是先关于y = px作镜像翻转后再进行缩放，该参数为浮点数。 |
-| float sy | y轴方向的缩放比例因子，为负数时可看作是先关于x = py作镜像翻转后再进行缩放，该参数为浮点数。 |
-| float px | 缩放中心点的横坐标。 |
-| float py | 缩放中心点的纵坐标。 |
+| float sx | 水平缩放因子，为负数时可看作是先关于x = px作镜像翻转后再进行缩放。 |
+| float sy | 垂直缩放因子，为负数时可看作是先关于y = py作镜像翻转后再进行缩放。 |
+| float px | 缩放中心点的x轴坐标，单位为物理像素px。 |
+| float py | 缩放中心点的y轴坐标，单位为物理像素px。 |
  
  
   
 
-#### OH_Drawing_MatrixPreTranslate()
+### OH_Drawing_MatrixPreTranslate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_MatrixPreTranslate(OH_Drawing_Matrix* matrix, float dx, float dy)
@@ -440,7 +481,7 @@ void OH_Drawing_MatrixPreTranslate(OH_Drawing_Matrix* matrix, float dx, float dy
  
 **描述**
  
-将矩阵设置为矩阵左乘平移一定距离后的单位矩阵后得到的矩阵。
+将矩阵设置为矩阵左乘平移dx和dy距离后的单位矩阵后得到的矩阵。
  
 本接口会产生错误码，可以通过[OH_Drawing_ErrorCodeGet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-error-code-h#oh_drawing_errorcodeget)查看错误码的取值。
  
@@ -452,18 +493,20 @@ matrix为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Matrix* matrix | 指向矩阵对象OH_Drawing_Matrix的指针。 |
-| float dx | 表示在x轴方向上的平移距离，正数表示往x轴正方向平移，负数表示往x轴负方向平移，该参数为浮点数。 |
-| float dy | 表示在y轴方向上的平移距离，正数表示往y轴正方向平移，负数表示往y轴负方向平移，该参数为浮点数。 |
+| float dx | 水平方向平移距离，单位为物理像素px。正数表示往x轴正方向平移，负数表示往x轴负方向平移。 |
+| float dy | 垂直方向平移距离，单位为物理像素px。正数表示往y轴正方向平移，负数表示往y轴负方向平移。 |
  
  
   
 
-#### OH_Drawing_MatrixPostRotate()
+### OH_Drawing_MatrixPostRotate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_MatrixPostRotate(OH_Drawing_Matrix* matrix, float degree, float px, float py)
@@ -471,7 +514,7 @@ void OH_Drawing_MatrixPostRotate(OH_Drawing_Matrix* matrix, float degree, float 
  
 **描述**
  
-将矩阵设置为矩阵右乘围绕轴心点旋转一定角度的单位矩阵后得到的矩阵。
+将矩阵设置为矩阵右乘围绕旋转中心点旋转degree角度的单位矩阵后得到的矩阵。
  
 本接口会产生错误码，可以通过[OH_Drawing_ErrorCodeGet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-error-code-h#oh_drawing_errorcodeget)查看错误码的取值。
  
@@ -483,19 +526,21 @@ matrix为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Matrix* matrix | 指向矩阵对象OH_Drawing_Matrix的指针。 |
 | float degree | 旋转角度，单位为度。正数表示顺时针旋转，负数表示逆时针旋转。 |
-| float px | 旋转中心点的横坐标。 |
-| float py | 旋转中心点的纵坐标。 |
+| float px | 旋转中心点的x轴坐标，单位为物理像素px。 |
+| float py | 旋转中心点的y轴坐标，单位为物理像素px。 |
  
  
   
 
-#### OH_Drawing_MatrixPostScale()
+### OH_Drawing_MatrixPostScale()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_MatrixPostScale(OH_Drawing_Matrix* matrix, float sx, float sy, float px, float py)
@@ -503,7 +548,7 @@ void OH_Drawing_MatrixPostScale(OH_Drawing_Matrix* matrix, float sx, float sy, f
  
 **描述**
  
-将矩阵设置为矩阵右乘围绕轴心点按一定缩放因子缩放后的单位矩阵后得到的矩阵。
+将矩阵设置为矩阵右乘围绕缩放中心点按sx和sy缩放因子缩放后的单位矩阵后得到的矩阵。
  
 本接口会产生错误码，可以通过[OH_Drawing_ErrorCodeGet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-error-code-h#oh_drawing_errorcodeget)查看错误码的取值。
  
@@ -515,20 +560,22 @@ matrix为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Matrix* matrix | 指向矩阵对象OH_Drawing_Matrix的指针。 |
-| float sx | x轴方向的缩放比例因子，为负数时可看作是先关于y = px作镜像翻转后再进行缩放，该参数为浮点数。 |
-| float sy | y轴方向的缩放比例因子，为负数时可看作是先关于x = py作镜像翻转后再进行缩放，该参数为浮点数。 |
-| float px | 缩放中心点的横坐标。 |
-| float py | 缩放中心点的纵坐标。 |
+| float sx | 水平缩放因子，为负数时可看作是先关于x = px作镜像翻转后再进行缩放。 |
+| float sy | 垂直缩放因子，为负数时可看作是先关于y = py作镜像翻转后再进行缩放。 |
+| float px | 缩放中心点的x轴坐标，单位为物理像素px。 |
+| float py | 缩放中心点的y轴坐标，单位为物理像素px。 |
  
  
   
 
-#### OH_Drawing_MatrixPostTranslate()
+### OH_Drawing_MatrixPostTranslate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_MatrixPostTranslate(OH_Drawing_Matrix* matrix, float dx, float dy)
@@ -536,7 +583,7 @@ void OH_Drawing_MatrixPostTranslate(OH_Drawing_Matrix* matrix, float dx, float d
  
 **描述**
  
-将矩阵设置为矩阵右乘平移一定距离后的单位矩阵后得到的矩阵。
+将矩阵设置为矩阵右乘平移dx和dy距离后的单位矩阵后得到的矩阵。
  
 本接口会产生错误码，可以通过[OH_Drawing_ErrorCodeGet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-error-code-h#oh_drawing_errorcodeget)查看错误码的取值。
  
@@ -548,18 +595,20 @@ matrix为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Matrix* matrix | 指向矩阵对象OH_Drawing_Matrix的指针。 |
-| float dx | 表示在x轴方向上的平移距离，正数表示往x轴正方向平移，负数表示往x轴负方向平移，该参数为浮点数。 |
-| float dy | 表示在y轴方向上的平移距离，正数表示往y轴正方向平移，负数表示往y轴负方向平移，该参数为浮点数。 |
+| float dx | 水平方向平移距离，单位为物理像素px。正数表示往x轴正方向平移，负数表示往x轴负方向平移。 |
+| float dy | 垂直方向平移距离，单位为物理像素px。正数表示往y轴正方向平移，负数表示往y轴负方向平移。 |
  
  
   
 
-#### OH_Drawing_MatrixReset()
+### OH_Drawing_MatrixReset()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_MatrixReset(OH_Drawing_Matrix* matrix)
@@ -579,6 +628,7 @@ matrix为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Matrix* matrix | 指向矩阵对象OH_Drawing_Matrix的指针。 |
@@ -586,12 +636,13 @@ matrix为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
   
 
-#### OH_Drawing_MatrixConcat()
+### OH_Drawing_MatrixConcat()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-void OH_Drawing_MatrixConcat(OH_Drawing_Matrix* total, const OH_Drawing_Matrix* a,const OH_Drawing_Matrix* b)
+void OH_Drawing_MatrixConcat(OH_Drawing_Matrix* total, const OH_Drawing_Matrix* a, const OH_Drawing_Matrix* b)
 ```
  
 **描述**
@@ -600,7 +651,7 @@ void OH_Drawing_MatrixConcat(OH_Drawing_Matrix* total, const OH_Drawing_Matrix* 
  
 本接口会产生错误码，可以通过[OH_Drawing_ErrorCodeGet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-error-code-h#oh_drawing_errorcodeget)查看错误码的取值。
  
-total、a、b任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
+total、a或b任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **系统能力：** SystemCapability.Graphic.Graphic2D.NativeDrawing
  
@@ -608,6 +659,7 @@ total、a、b任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Matrix* total | 指向最终的矩阵对象OH_Drawing_Matrix的指针。 |
@@ -617,9 +669,10 @@ total、a、b任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
   
 
-#### OH_Drawing_MatrixGetAll()
+### OH_Drawing_MatrixGetAll()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ErrorCode OH_Drawing_MatrixGetAll(OH_Drawing_Matrix* matrix, float value[9])
@@ -627,7 +680,7 @@ OH_Drawing_ErrorCode OH_Drawing_MatrixGetAll(OH_Drawing_Matrix* matrix, float va
  
 **描述**
  
-获取矩阵所有元素值。
+获取矩阵所有元素值。9个元素按行主序存储，对应3×3矩阵结构，具体排列方式参见[OH_Drawing_MatrixSetMatrix](#oh_drawing_matrixsetmatrix)。
  
 **系统能力：** SystemCapability.Graphic.Graphic2D.NativeDrawing
  
@@ -635,24 +688,27 @@ OH_Drawing_ErrorCode OH_Drawing_MatrixGetAll(OH_Drawing_Matrix* matrix, float va
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Matrix* matrix | 指向矩阵对象OH_Drawing_Matrix的指针。 |
-| value | 用于存储得到的矩阵元素值的数组。 |
+| float value[9] | 用于存储得到的矩阵元素值的数组，数组长度必须大于等于9，9个元素按行排列依次对应3×3矩阵的scaleX、skewX、transX、skewY、scaleY、transY、persp0、persp1、persp2。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| OH_Drawing_ErrorCode | 返回错误码。 返回OH_DRAWING_SUCCESS，表示成功获取矩阵的所有元素值。 返回OH_DRAWING_ERROR_INVALID_PARAMETER，表示获取矩阵元素值失败，原因是矩阵对象或者存储矩阵元素值数组为空。 |
+| OH_Drawing_ErrorCode | 返回错误码。 返回OH_DRAWING_SUCCESS，表示成功获取矩阵的所有元素值。 返回OH_DRAWING_ERROR_INVALID_PARAMETER，表示matrix或value为NULL。 |
  
  
   
 
-#### OH_Drawing_MatrixGetValue()
+### OH_Drawing_MatrixGetValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 float OH_Drawing_MatrixGetValue(OH_Drawing_Matrix* matrix, int index)
@@ -674,6 +730,7 @@ index小于0或者大于8时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Matrix* matrix | 指向矩阵对象OH_Drawing_Matrix的指针。 |
@@ -682,6 +739,7 @@ index小于0或者大于8时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | float | 函数返回矩阵给定索引位对应的值。 |
@@ -689,9 +747,10 @@ index小于0或者大于8时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。
  
   
 
-#### OH_Drawing_MatrixRotate()
+### OH_Drawing_MatrixRotate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_MatrixRotate(OH_Drawing_Matrix* matrix, float degree, float px, float py)
@@ -699,7 +758,7 @@ void OH_Drawing_MatrixRotate(OH_Drawing_Matrix* matrix, float degree, float px, 
  
 **描述**
  
-设置矩阵为单位矩阵，并围绕位于(px, py)的旋转轴点进行旋转。
+设置矩阵为单位矩阵，并围绕位于(px, py)的旋转中心点进行旋转。
  
 本接口会产生错误码，可以通过[OH_Drawing_ErrorCodeGet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-error-code-h#oh_drawing_errorcodeget)查看错误码的取值。
  
@@ -711,19 +770,21 @@ matrix为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Matrix* matrix | 指向矩阵对象OH_Drawing_Matrix的指针。 |
 | float degree | 角度，单位为度。正数表示顺时针旋转，负数表示逆时针旋转。 |
-| float px | x轴上坐标点。 |
-| float py | y轴上坐标点。 |
+| float px | 旋转中心点的x轴坐标，单位为物理像素px。 |
+| float py | 旋转中心点的y轴坐标，单位为物理像素px。 |
  
  
   
 
-#### OH_Drawing_MatrixTranslate()
+### OH_Drawing_MatrixTranslate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_MatrixTranslate(OH_Drawing_Matrix* matrix, float dx, float dy)
@@ -743,18 +804,20 @@ matrix为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Matrix* matrix | 指向矩阵对象OH_Drawing_Matrix的指针。 |
-| float dx | 水平方向平移距离，正数表示往x轴正方向平移，负数表示往x轴负方向平移，该参数为浮点数。 |
-| float dy | 垂直方向平移距离，正数表示往y轴正方向平移，负数表示往y轴负方向平移，该参数为浮点数。 |
+| float dx | 水平方向平移距离，单位为物理像素px。正数表示往x轴正方向平移，负数表示往x轴负方向平移。 |
+| float dy | 垂直方向平移距离，单位为物理像素px。正数表示往y轴正方向平移，负数表示往y轴负方向平移。 |
  
  
   
 
-#### OH_Drawing_MatrixScale()
+### OH_Drawing_MatrixScale()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_MatrixScale(OH_Drawing_Matrix* matrix, float sx, float sy, float px, float py)
@@ -762,7 +825,7 @@ void OH_Drawing_MatrixScale(OH_Drawing_Matrix* matrix, float sx, float sy, float
  
 **描述**
  
-设置矩阵为单位矩阵，并围绕位于(px, py)的旋转轴点，以sx和sy进行缩放。
+设置矩阵为单位矩阵，并围绕位于(px, py)的缩放中心点，以sx和sy进行缩放。
  
 本接口会产生错误码，可以通过[OH_Drawing_ErrorCodeGet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-error-code-h#oh_drawing_errorcodeget)查看错误码的取值。
  
@@ -774,20 +837,22 @@ matrix为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Matrix* matrix | 指向矩阵对象OH_Drawing_Matrix的指针。 |
-| float sx | 水平缩放因子，为负数时可看作是先关于y = px作镜像翻转后再进行缩放，该参数为浮点数。 |
-| float sy | 垂直缩放因子，为负数时可看作是先关于x = py作镜像翻转后再进行缩放，该参数为浮点数。 |
-| float px | x轴上坐标点。 |
-| float py | y轴上坐标点。 |
+| float sx | 水平缩放因子，为负数时可看作是先关于x = px作镜像翻转后再进行缩放。 |
+| float sy | 垂直缩放因子，为负数时可看作是先关于y = py作镜像翻转后再进行缩放。 |
+| float px | 缩放中心点的x轴坐标，单位为物理像素px。 |
+| float py | 缩放中心点的y轴坐标，单位为物理像素px。 |
  
  
   
 
-#### OH_Drawing_MatrixInvert()
+### OH_Drawing_MatrixInvert()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_Drawing_MatrixInvert(OH_Drawing_Matrix* matrix, OH_Drawing_Matrix* inverse)
@@ -799,7 +864,7 @@ bool OH_Drawing_MatrixInvert(OH_Drawing_Matrix* matrix, OH_Drawing_Matrix* inver
  
 本接口会产生错误码，可以通过[OH_Drawing_ErrorCodeGet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-error-code-h#oh_drawing_errorcodeget)查看错误码的取值。
  
-matrix、inverse任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
+matrix或inverse任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **系统能力：** SystemCapability.Graphic.Graphic2D.NativeDrawing
  
@@ -807,6 +872,7 @@ matrix、inverse任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Matrix* matrix | 指向矩阵对象OH_Drawing_Matrix的指针。 |
@@ -815,6 +881,7 @@ matrix、inverse任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 函数返回true表示矩阵可逆，inverse被填充为逆矩阵；函数返回false表示矩阵不可逆，inverse不被改变。 |
@@ -822,12 +889,13 @@ matrix、inverse任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER�
  
   
 
-#### OH_Drawing_MatrixSetPolyToPoly()
+### OH_Drawing_MatrixSetPolyToPoly()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-bool OH_Drawing_MatrixSetPolyToPoly(OH_Drawing_Matrix* matrix, const OH_Drawing_Point2D* src,const OH_Drawing_Point2D* dst, uint32_t count)
+bool OH_Drawing_MatrixSetPolyToPoly(OH_Drawing_Matrix* matrix, const OH_Drawing_Point2D* src, const OH_Drawing_Point2D* dst, uint32_t count)
 ```
  
 **描述**
@@ -846,29 +914,32 @@ count小于0或者大于4时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Matrix* matrix | 指向矩阵对象OH_Drawing_Matrix的指针。 |
 | const OH_Drawing_Point2D* src | 源点数组，为NULL时count应当为0。 |
 | const OH_Drawing_Point2D* dst | 目标点数组，个数要与源点相等，为NULL时count应当为0。 |
-| uint32_t count | 源点数组以及目标点数组的个数，为0时将矩阵对象设为单位矩阵。 |
+| uint32_t count | 源点数组以及目标点数组的个数，取值范围为[0, 4]，为0时将矩阵对象设为单位矩阵。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| bool | 函数返回是否可以生成对应矩阵以用来完成变换。true表示矩阵生成成功，false表示无法生成对应矩阵。 |
+| bool | 函数返回是否可以生成对应矩阵用来完成变换。true表示矩阵生成成功，false表示无法生成对应矩阵。 |
  
  
   
 
-#### OH_Drawing_MatrixMapPoints()
+### OH_Drawing_MatrixMapPoints()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-void OH_Drawing_MatrixMapPoints(const OH_Drawing_Matrix* matrix, const OH_Drawing_Point2D* src,OH_Drawing_Point2D* dst, int count)
+void OH_Drawing_MatrixMapPoints(const OH_Drawing_Matrix* matrix, const OH_Drawing_Point2D* src, OH_Drawing_Point2D* dst, int count)
 ```
  
 **描述**
@@ -877,7 +948,7 @@ void OH_Drawing_MatrixMapPoints(const OH_Drawing_Matrix* matrix, const OH_Drawin
  
 本接口会产生错误码，可以通过[OH_Drawing_ErrorCodeGet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-error-code-h#oh_drawing_errorcodeget)查看错误码的取值。
  
-matrix、src、dst任意一个为NULL或者count小于等于0时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
+matrix、src或dst任意一个为NULL或者count小于等于0时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **系统能力：** SystemCapability.Graphic.Graphic2D.NativeDrawing
  
@@ -885,19 +956,21 @@ matrix、src、dst任意一个为NULL或者count小于等于0时返回OH_DRAWING
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_Drawing_Matrix* matrix | 指向矩阵对象OH_Drawing_Matrix的指针。 |
-| const OH_Drawing_Point2D* src | 源点数组。 |
-| OH_Drawing_Point2D* dst | 目标点数组，个数要与源点相等。 |
-| int count | 源点数组以及目标点数组的个数。 |
+| const OH_Drawing_Point2D* src | 源点数组，数组长度应大于等于count，否则可能导致越界访问。 |
+| OH_Drawing_Point2D* dst | 目标点数组，数组长度应大于等于count，否则可能导致越界访问。 |
+| int count | 源点数组以及目标点数组的个数，必须大于0。 |
  
  
   
 
-#### OH_Drawing_MatrixMapRect()
+### OH_Drawing_MatrixMapRect()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_Drawing_MatrixMapRect(const OH_Drawing_Matrix* matrix, const OH_Drawing_Rect* src, OH_Drawing_Rect* dst)
@@ -909,7 +982,7 @@ bool OH_Drawing_MatrixMapRect(const OH_Drawing_Matrix* matrix, const OH_Drawing_
  
 本接口会产生错误码，可以通过[OH_Drawing_ErrorCodeGet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-error-code-h#oh_drawing_errorcodeget)查看错误码的取值。
  
-matrix、src、dst任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
+matrix、src或dst任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **系统能力：** SystemCapability.Graphic.Graphic2D.NativeDrawing
  
@@ -917,15 +990,17 @@ matrix、src、dst任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_Drawing_Matrix* matrix | 指向矩阵对象OH_Drawing_Matrix的指针。 |
-| const OH_Drawing_Rect* src | 源矩形。 |
-| OH_Drawing_Rect* dst | 目标矩形。 |
+| const OH_Drawing_Rect* src | 指向源矩形OH_Drawing_Rect的指针。 |
+| OH_Drawing_Rect* dst | 指向目标矩形OH_Drawing_Rect的指针，用于存储映射后的结果。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 函数返回源矩形与映射后的目标矩形是否相等。true表示相等，false表示不相等。 |
@@ -933,9 +1008,10 @@ matrix、src、dst任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER
  
   
 
-#### OH_Drawing_MatrixIsEqual()
+### OH_Drawing_MatrixIsEqual()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_Drawing_MatrixIsEqual(OH_Drawing_Matrix* matrix, OH_Drawing_Matrix* other)
@@ -947,7 +1023,7 @@ bool OH_Drawing_MatrixIsEqual(OH_Drawing_Matrix* matrix, OH_Drawing_Matrix* othe
  
 本接口会产生错误码，可以通过[OH_Drawing_ErrorCodeGet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-error-code-h#oh_drawing_errorcodeget)查看错误码的取值。
  
-matrix、other任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
+matrix或other任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **系统能力：** SystemCapability.Graphic.Graphic2D.NativeDrawing
  
@@ -955,6 +1031,7 @@ matrix、other任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Matrix* matrix | 指向用于判断的其中一个矩阵对象OH_Drawing_Matrix的指针。 |
@@ -963,6 +1040,7 @@ matrix、other任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 函数返回两个矩阵的比较结果，返回true表示两个矩阵相等，返回false表示两个矩阵不相等。 |
@@ -970,9 +1048,10 @@ matrix、other任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
   
 
-#### OH_Drawing_MatrixIsIdentity()
+### OH_Drawing_MatrixIsIdentity()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_Drawing_MatrixIsIdentity(OH_Drawing_Matrix* matrix)
@@ -980,9 +1059,11 @@ bool OH_Drawing_MatrixIsIdentity(OH_Drawing_Matrix* matrix)
  
 **描述**
  
-判断矩阵是否是单位矩阵。
+判断矩阵是否是单位矩阵。单位矩阵为：[1 0 0; 0 1 0; 0 0 1]。
  
-单位矩阵为 : | 1 0 0 || 0 1 0 || 0 0 1 |本接口会产生错误码，可以通过[OH_Drawing_ErrorCodeGet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-error-code-h#oh_drawing_errorcodeget)查看错误码的取值。
+如需判断两个矩阵是否相等，请使用[OH_Drawing_MatrixIsEqual](#oh_drawing_matrixisequal)。
+ 
+本接口会产生错误码，可以通过[OH_Drawing_ErrorCodeGet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-error-code-h#oh_drawing_errorcodeget)查看错误码的取值。
  
 matrix为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
@@ -992,6 +1073,7 @@ matrix为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Matrix* matrix | 指向矩阵对象OH_Drawing_Matrix的指针。 |
@@ -999,6 +1081,7 @@ matrix为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 函数返回true表示矩阵是单位矩阵，函数返回false表示矩阵不是单位矩阵。 |
@@ -1006,9 +1089,10 @@ matrix为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER。
  
   
 
-#### OH_Drawing_MatrixDestroy()
+### OH_Drawing_MatrixDestroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_MatrixDestroy(OH_Drawing_Matrix* matrix)
@@ -1016,7 +1100,7 @@ void OH_Drawing_MatrixDestroy(OH_Drawing_Matrix* matrix)
  
 **描述**
  
-用于销毁矩阵对象并回收该对象占有的内存。
+用于销毁矩阵对象并回收该对象占用的内存。
  
 **系统能力：** SystemCapability.Graphic.Graphic2D.NativeDrawing
  
@@ -1024,6 +1108,7 @@ void OH_Drawing_MatrixDestroy(OH_Drawing_Matrix* matrix)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Matrix* matrix | 指向矩阵对象的指针。 |
@@ -1031,9 +1116,10 @@ void OH_Drawing_MatrixDestroy(OH_Drawing_Matrix* matrix)
  
   
 
-#### OH_Drawing_MatrixPreConcat()
+### OH_Drawing_MatrixPreConcat()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ErrorCode OH_Drawing_MatrixPreConcat(OH_Drawing_Matrix* a, OH_Drawing_Matrix* b)
@@ -1041,30 +1127,35 @@ OH_Drawing_ErrorCode OH_Drawing_MatrixPreConcat(OH_Drawing_Matrix* a, OH_Drawing
  
 **描述**
  
-对矩阵a左乘矩阵b。
+对矩阵a左乘矩阵b。与[OH_Drawing_MatrixConcat](#oh_drawing_matrixconcat)功能类似，区别在于OH_Drawing_MatrixConcat将结果存入单独的total矩阵，而本方法直接修改矩阵a。
+ 
+**系统能力：** SystemCapability.Graphic.Graphic2D.NativeDrawing
  
 **起始版本：** 22
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| OH_Drawing_Matrix* a | 指向矩阵对象OH_Drawing_Matrix的指针。 |
-| OH_Drawing_Matrix* b | 指向矩阵对象OH_Drawing_Matrix的指针。 |
+| OH_Drawing_Matrix* a | 指向被左乘的矩阵对象OH_Drawing_Matrix的指针，左乘后该矩阵会被修改为a × b的结果。 |
+| OH_Drawing_Matrix* b | 指向作为乘数的矩阵对象OH_Drawing_Matrix的指针。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| OH_Drawing_ErrorCode | 返回错误码。 返回OH_DRAWING_SUCCESS，表示成功执行左乘方法。 返回OH_DRAWING_ERROR_INCORRECT_PARAMETER，表示入参异常，rect或other为空。 |
+| OH_Drawing_ErrorCode | 返回错误码。 返回OH_DRAWING_SUCCESS，表示成功执行左乘方法。 返回OH_DRAWING_ERROR_INCORRECT_PARAMETER，表示a或b为NULL。 |
  
  
   
 
-#### OH_Drawing_MatrixIsAffine()
+### OH_Drawing_MatrixIsAffine()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ErrorCode OH_Drawing_MatrixIsAffine(const OH_Drawing_Matrix* matrix, bool* isAffine)
@@ -1078,6 +1169,7 @@ OH_Drawing_ErrorCode OH_Drawing_MatrixIsAffine(const OH_Drawing_Matrix* matrix, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_Drawing_Matrix* matrix | 指向矩阵对象OH_Drawing_Matrix的指针。 |
@@ -1086,16 +1178,18 @@ OH_Drawing_ErrorCode OH_Drawing_MatrixIsAffine(const OH_Drawing_Matrix* matrix, 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| OH_Drawing_ErrorCode | 函数返回执行结果。 返回OH_DRAWING_SUCCESS，表示执行成功。 返回OH_DRAWING_ERROR_INCORRECT_PARAMETER，表示matrix或isAffine是空指针。 |
+| OH_Drawing_ErrorCode | 函数返回执行结果。 返回OH_DRAWING_SUCCESS，表示执行成功。 返回OH_DRAWING_ERROR_INCORRECT_PARAMETER，表示matrix或isAffine为NULL。 |
  
  
   
 
-#### OH_Drawing_MatrixPreSkew()
+### OH_Drawing_MatrixPreSkew()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ErrorCode OH_Drawing_MatrixPreSkew(OH_Drawing_Matrix* matrix, float kx, float ky, float px, float py)
@@ -1103,33 +1197,36 @@ OH_Drawing_ErrorCode OH_Drawing_MatrixPreSkew(OH_Drawing_Matrix* matrix, float k
  
 **描述**
  
-将当前矩阵左乘一个以(px, py)为中心按(kx, ky)倾斜构造的矩阵。
+将当前矩阵左乘一个以(px, py)为中心按(kx, ky)倾斜构造的矩阵。与[OH_Drawing_MatrixPreRotate](#oh_drawing_matrixprerotate)、[OH_Drawing_MatrixPreScale](#oh_drawing_matrixprescale)、[OH_Drawing_MatrixPreTranslate](#oh_drawing_matrixpretranslate)同属Pre系列方法。
  
 **起始版本：** 23
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Matrix* matrix | 指向矩阵对象OH_Drawing_Matrix的指针。 |
 | float kx | 表示x轴上的倾斜量。 |
 | float ky | 表示y轴上的倾斜量。 |
-| float px | 表示倾斜中心点的x轴坐标。 |
-| float py | 表示倾斜中心点的y轴坐标。 |
+| float px | 表示倾斜中心点的x轴坐标，单位为物理像素px。 |
+| float py | 表示倾斜中心点的y轴坐标，单位为物理像素px。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| OH_Drawing_ErrorCode | 函数返回执行结果。 返回OH_DRAWING_SUCCESS，表示执行成功。 返回OH_DRAWING_ERROR_INCORRECT_PARAMETER，表示matrix是空指针。 |
+| OH_Drawing_ErrorCode | 函数返回执行结果。 返回OH_DRAWING_SUCCESS，表示执行成功。 返回OH_DRAWING_ERROR_INCORRECT_PARAMETER，表示matrix为NULL。 |
  
  
   
 
-#### OH_Drawing_MatrixRectStaysRect()
+### OH_Drawing_MatrixRectStaysRect()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ErrorCode OH_Drawing_MatrixRectStaysRect(const OH_Drawing_Matrix* matrix, bool* isRectStaysRect)
@@ -1137,12 +1234,13 @@ OH_Drawing_ErrorCode OH_Drawing_MatrixRectStaysRect(const OH_Drawing_Matrix* mat
  
 **描述**
  
-判断矩形经过当前矩阵映射后是否仍保持矩形形状。当矩阵是单位矩阵或仅包含平移、缩放、旋转90度倍数等仿射变换时满足该条件。
+判断矩形经过当前矩阵映射后是否仍保持矩形形状。当矩阵是单位矩阵或仅包含平移、缩放、旋转90度倍数这类仿射变换时满足该条件。
  
 **起始版本：** 23
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_Drawing_Matrix* matrix | 指向矩阵对象OH_Drawing_Matrix的指针。 |
@@ -1151,16 +1249,18 @@ OH_Drawing_ErrorCode OH_Drawing_MatrixRectStaysRect(const OH_Drawing_Matrix* mat
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| OH_Drawing_ErrorCode | 函数返回执行结果。 返回OH_DRAWING_SUCCESS，表示执行成功。 返回OH_DRAWING_ERROR_INCORRECT_PARAMETER，表示matrix或isRectStaysRect是空指针。 |
+| OH_Drawing_ErrorCode | 函数返回执行结果。 返回OH_DRAWING_SUCCESS，表示执行成功。 返回OH_DRAWING_ERROR_INCORRECT_PARAMETER，表示matrix或isRectStaysRect为NULL。 |
  
  
   
 
-#### OH_Drawing_MatrixSetSinCos()
+### OH_Drawing_MatrixSetSinCos()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ErrorCode OH_Drawing_MatrixSetSinCos(OH_Drawing_Matrix* matrix, float sinValue, float cosValue, float px, float py)
@@ -1168,12 +1268,13 @@ OH_Drawing_ErrorCode OH_Drawing_MatrixSetSinCos(OH_Drawing_Matrix* matrix, float
  
 **描述**
  
-设置矩阵，使其围绕旋转中心 (px, py) 以指定的正弦值和余弦值进行旋转。
+设置矩阵，使其围绕旋转中心 (px, py) 以指定的正弦值和余弦值进行旋转。与[OH_Drawing_MatrixRotate](#oh_drawing_matrixrotate)功能类似，区别在于OH_Drawing_MatrixRotate直接传入角度值，而本方法传入正弦值和余弦值。
  
 **起始版本：** 23
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Matrix* matrix | 指向矩阵对象OH_Drawing_Matrix的指针。 |
@@ -1185,6 +1286,7 @@ OH_Drawing_ErrorCode OH_Drawing_MatrixSetSinCos(OH_Drawing_Matrix* matrix, float
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| OH_Drawing_ErrorCode | 函数返回执行结果。 返回OH_DRAWING_SUCCESS，表示执行成功。 返回OH_DRAWING_ERROR_INCORRECT_PARAMETER，表示matrix是空指针。 |
+| OH_Drawing_ErrorCode | 函数返回执行结果。 返回OH_DRAWING_SUCCESS，表示执行成功。 返回OH_DRAWING_ERROR_INCORRECT_PARAMETER，表示matrix为NULL。 |

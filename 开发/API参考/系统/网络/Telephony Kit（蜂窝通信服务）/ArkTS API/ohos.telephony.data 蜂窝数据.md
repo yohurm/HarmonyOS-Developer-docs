@@ -1,6 +1,6 @@
 # @ohos.telephony.data (蜂窝数据)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-telephony-data
 **支持设备：** Phone | Tablet | Wearable
@@ -12,7 +12,8 @@
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -22,7 +23,8 @@ import { data } from '@kit.TelephonyKit';
 
 
 
-#### data.getDefaultCellularDataSlotId
+## data.getDefaultCellularDataSlotId
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -33,6 +35,7 @@ getDefaultCellularDataSlotId(callback: AsyncCallback&lt;number&gt;): void
 **系统能力**：SystemCapability.Telephony.CellularData
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -56,7 +59,8 @@ data.getDefaultCellularDataSlotId((err: BusinessError, contextData: number) => {
 
 
 
-#### data.getDefaultCellularDataSlotId
+## data.getDefaultCellularDataSlotId
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -67,6 +71,7 @@ getDefaultCellularDataSlotId(): Promise&lt;number&gt;
 **系统能力**：SystemCapability.Telephony.CellularData
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -88,7 +93,8 @@ data.getDefaultCellularDataSlotId().then((contextData: number) => {
 
 
 
-#### data.getDefaultCellularDataSlotIdSync9+
+## data.getDefaultCellularDataSlotIdSync9+
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -99,6 +105,7 @@ getDefaultCellularDataSlotIdSync(): number
 **系统能力**：SystemCapability.Telephony.CellularData
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -115,7 +122,8 @@ console.info("Result: "+ data.getDefaultCellularDataSlotIdSync())
 
 
 
-#### data.getCellularDataFlowType
+## data.getCellularDataFlowType
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -129,6 +137,7 @@ getCellularDataFlowType(callback: AsyncCallback&lt;DataFlowType&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;DataFlowType&gt; | 是 | 以callback形式异步返回结果。 |
@@ -138,9 +147,10 @@ getCellularDataFlowType(callback: AsyncCallback&lt;DataFlowType&gt;): void
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)说明文档。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
+| 201 | Permission denied. 适用版本：22+ |
 
 
 **示例：**
@@ -160,7 +170,8 @@ data.getCellularDataFlowType((err: BusinessError, contextData: data.DataFlowType
 
 
 
-#### data.getCellularDataFlowType
+## data.getCellularDataFlowType
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -174,6 +185,7 @@ getCellularDataFlowType(): Promise&lt;DataFlowType&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;DataFlowType&gt; | 以Promise形式返回蜂窝网络的数据流类型（对应信号栏旁边的上下行箭头）。 |
@@ -183,9 +195,10 @@ getCellularDataFlowType(): Promise&lt;DataFlowType&gt;
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)说明文档。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
+| 201 | Permission denied. 适用版本：22+ |
 
 
 **示例：**
@@ -203,7 +216,8 @@ data.getCellularDataFlowType().then((contextData: data.DataFlowType) => {
 
 
 
-#### data.getCellularDataState
+## data.getCellularDataState
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -211,11 +225,16 @@ getCellularDataState(callback: AsyncCallback&lt;DataConnectState&gt;): void
 
 获取蜂窝数据业务的连接状态，使用callback方式作为异步方法。
 
-**需要权限**：ohos.permission.GET_NETWORK_INFO
+**需要权限**：
+
+ - API版本22之前：N/A
+ - API版本22+：ohos.permission.GET_NETWORK_INFO
+
 
 **系统能力**：SystemCapability.Telephony.CellularData
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -226,9 +245,10 @@ getCellularDataState(callback: AsyncCallback&lt;DataConnectState&gt;): void
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)说明文档。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
+| 201 | Permission denied. 适用版本：22+ |
 
 
 **示例：**
@@ -248,7 +268,8 @@ data.getCellularDataState((err: BusinessError, contextData: data.DataConnectStat
 
 
 
-#### data.getCellularDataState
+## data.getCellularDataState
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -256,11 +277,16 @@ getCellularDataState(): Promise&lt;DataConnectState&gt;
 
 获取蜂窝数据业务的连接状态，使用Promise方式作为异步方法。
 
-**需要权限**：ohos.permission.GET_NETWORK_INFO
+**需要权限**：
+
+ - API版本22之前：N/A
+ - API版本22+：ohos.permission.GET_NETWORK_INFO
+
 
 **系统能力**：SystemCapability.Telephony.CellularData
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -271,9 +297,10 @@ getCellularDataState(): Promise&lt;DataConnectState&gt;
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)说明文档。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
+| 201 | Permission denied. 适用版本：22+ |
 
 
 **示例：**
@@ -291,7 +318,8 @@ data.getCellularDataState().then((contextData: data.DataConnectState) => {
 
 
 
-#### data.isCellularDataEnabled
+## data.isCellularDataEnabled
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -305,6 +333,7 @@ isCellularDataEnabled(callback: AsyncCallback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;boolean&gt; | 是 | 以callback形式异步返回结果。 true：蜂窝数据业务已启用。 false：蜂窝数据业务已禁用。 |
@@ -314,6 +343,7 @@ isCellularDataEnabled(callback: AsyncCallback&lt;boolean&gt;): void
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)说明文档和[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -321,7 +351,7 @@ isCellularDataEnabled(callback: AsyncCallback&lt;boolean&gt;): void
 | 8300001 | Invalid parameter value. |
 | 8300002 | Service connection failed. |
 | 8300003 | System internal error. |
-| 8300999 | Internal error. |
+| 8300999 | Unknown error. |
 
 
 **示例：**
@@ -341,7 +371,8 @@ data.isCellularDataEnabled((err: BusinessError, contextData: boolean) => {
 
 
 
-#### data.isCellularDataEnabled
+## data.isCellularDataEnabled
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -355,6 +386,7 @@ isCellularDataEnabled(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | 以Promise形式返回检查蜂窝数据业务是否启用。 true：蜂窝数据业务已启用。 false：蜂窝数据业务已禁用。 |
@@ -364,12 +396,13 @@ isCellularDataEnabled(): Promise&lt;boolean&gt;
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)说明文档和[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
 | 8300002 | Service connection failed. |
 | 8300003 | System internal error. |
-| 8300999 | Internal error. |
+| 8300999 | Unknown error. |
 
 
 **示例：**
@@ -387,7 +420,8 @@ data.isCellularDataEnabled().then((contextData: boolean) => {
 
 
 
-#### data.isCellularDataEnabledSync12+
+## data.isCellularDataEnabledSync12+
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -401,6 +435,7 @@ isCellularDataEnabledSync(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 用来返回检查蜂窝数据业务是否启用。 true：蜂窝数据业务已启用。 false：蜂窝数据业务已禁用。 |
@@ -410,12 +445,13 @@ isCellularDataEnabledSync(): boolean
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)说明文档和[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
 | 8300002 | Operation failed. Cannot connect to service. |
 | 8300003 | System internal error. |
-| 8300999 | Internal error. |
+| 8300999 | Unknown error code. |
 
 
 **示例：**
@@ -433,7 +469,8 @@ try {
 
 
 
-#### data.isCellularDataRoamingEnabled
+## data.isCellularDataRoamingEnabled
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -447,6 +484,7 @@ isCellularDataRoamingEnabled(slotId: number, callback: AsyncCallback&lt;boolean&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
@@ -457,6 +495,7 @@ isCellularDataRoamingEnabled(slotId: number, callback: AsyncCallback&lt;boolean&
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)说明文档和[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -464,7 +503,7 @@ isCellularDataRoamingEnabled(slotId: number, callback: AsyncCallback&lt;boolean&
 | 8300001 | Invalid parameter value. |
 | 8300002 | Service connection failed. |
 | 8300003 | System internal error. |
-| 8300999 | Internal error. |
+| 8300999 | Unknown error. |
 
 
 **示例：**
@@ -484,7 +523,8 @@ data.isCellularDataRoamingEnabled(0, (err: BusinessError, contextData: boolean) 
 
 
 
-#### data.isCellularDataRoamingEnabled
+## data.isCellularDataRoamingEnabled
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -498,12 +538,14 @@ isCellularDataRoamingEnabled(slotId: number): Promise&lt;boolean&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -514,6 +556,7 @@ isCellularDataRoamingEnabled(slotId: number): Promise&lt;boolean&gt;
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)说明文档和[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -521,7 +564,7 @@ isCellularDataRoamingEnabled(slotId: number): Promise&lt;boolean&gt;
 | 8300001 | Invalid parameter value. |
 | 8300002 | Service connection failed. |
 | 8300003 | System internal error. |
-| 8300999 | Internal error. |
+| 8300999 | Unknown error. |
 
 
 **示例：**
@@ -539,7 +582,8 @@ data.isCellularDataRoamingEnabled(0).then((contextData: boolean) => {
 
 
 
-#### data.isCellularDataRoamingEnabledSync12+
+## data.isCellularDataRoamingEnabledSync12+
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -553,12 +597,14 @@ isCellularDataRoamingEnabledSync(slotId: number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | slotId | number | 是 | 卡槽ID。 - 0：卡槽1。 - 1：卡槽2。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -569,14 +615,15 @@ isCellularDataRoamingEnabledSync(slotId: number): boolean
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)说明文档和[电话子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-telephony)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameters types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
 | 8300001 | Invalid parameter value. |
 | 8300002 | Operation failed. Cannot connect to service. |
 | 8300003 | System internal error. |
-| 8300999 | Internal error. |
+| 8300999 | Unknown error code. |
 
 
 **示例：**
@@ -594,7 +641,8 @@ try {
 
 
 
-#### data.getDefaultCellularDataSimId10+
+## data.getDefaultCellularDataSimId10+
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -605,6 +653,7 @@ getDefaultCellularDataSimId(): number
 **系统能力**：SystemCapability.Telephony.CellularData
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -621,7 +670,8 @@ console.info("Result: "+ data.getDefaultCellularDataSimId());
 
 
 
-#### data.queryAllApns16+
+## data.queryAllApns16+
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -635,6 +685,7 @@ queryAllApns(): Promise<Array&lt;ApnInfo&gt;>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;ApnInfo&gt;> | Promise对象，返回默认移动数据的SIM卡的APN信息列表。 |
@@ -643,6 +694,7 @@ queryAllApns(): Promise<Array&lt;ApnInfo&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)说明文档。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -664,7 +716,8 @@ data.queryAllApns().then((apnInfos: Array<data.ApnInfo>) => {
 
 
 
-#### data.queryApnIds16+
+## data.queryApnIds16+
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -678,12 +731,14 @@ queryApnIds(apnInfo: ApnInfo): Promise<Array&lt;number&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | apnInfo | ApnInfo | 是 | 要查询的APN参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -693,6 +748,7 @@ queryApnIds(apnInfo: ApnInfo): Promise<Array&lt;number&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)说明文档。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -722,7 +778,8 @@ data.queryApnIds(apnInfo).then((apnIds: Array<number>) => {
 
 
 
-#### data.setPreferredApn16+
+## data.setPreferredApn16+
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -740,12 +797,14 @@ setPreferredApn(apnId: number): Promise&lt;boolean&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | apnId | number | 是 | 要设置的apnId，可以通过queryApnIds查询。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -755,6 +814,7 @@ setPreferredApn(apnId: number): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)说明文档。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -777,7 +837,8 @@ data.setPreferredApn(apnId).then((result: boolean) => {
 
 
 
-#### data.getActiveApnName20+
+## data.getActiveApnName20+
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -791,6 +852,7 @@ getActiveApnName(): Promise&lt;string&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象，返回默认移动数据SIM卡对应的处于激活状态的数据业务APN name信息。 |
@@ -799,6 +861,7 @@ getActiveApnName(): Promise&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)说明文档。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -820,9 +883,10 @@ data.getActiveApnName().then((apn: string) => {
 
 
 
-#### data.showSystemApnSettings
+## data.showSystemApnSettings
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 showSystemApnSettings(context: Context): Promise&lt;void&gt;
 
@@ -842,12 +906,14 @@ showSystemApnSettings(context: Context): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | Stage模型的应用上下文（仅支持UIAbilityContext和ExtensionContext）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -874,13 +940,15 @@ data.showSystemApnSettings(context).then(() => {
 
 
 
-#### DataFlowType
+## DataFlowType
+
 
 **支持设备：** Phone | Tablet | Wearable
 
 描述蜂窝数据流类型。
 
 **系统能力**：SystemCapability.Telephony.CellularData
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -893,13 +961,15 @@ data.showSystemApnSettings(context).then(() => {
 
 
 
-#### DataConnectState
+## DataConnectState
+
 
 **支持设备：** Phone | Tablet | Wearable
 
 描述蜂窝数据链路连接状态。
 
 **系统能力**：SystemCapability.Telephony.CellularData
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -912,7 +982,8 @@ data.showSystemApnSettings(context).then(() => {
 
 
 
-#### ApnInfo16+
+## ApnInfo16+
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -920,12 +991,13 @@ APN信息。
 
 **系统能力**：SystemCapability.Telephony.CellularData
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | apnName | string | 否 | 否 | APN名称。 |
 | apn | string | 否 | 否 | APN。 |
-| mcc | string | 否 | 否 | Sim卡的mcc。 |
-| mnc | string | 否 | 否 | Sim卡的mnc。 |
+| mcc | string | 否 | 否 | SIM卡的mcc。 |
+| mnc | string | 否 | 否 | SIM卡的mnc。 |
 | user | string | 否 | 是 | 用户名。 |
 | type | string | 否 | 是 | APN类型。 |
 | proxy | string | 否 | 是 | 代理地址。 |

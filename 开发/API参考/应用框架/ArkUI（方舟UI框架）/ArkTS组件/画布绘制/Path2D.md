@@ -1,9 +1,9 @@
 # Path2D
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-path2d
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 路径对象，支持通过对象的接口进行路径的描述和组合，并通过Canvas的stroke接口或者fill接口进行绘制。Path2D支持复用路径、组合多个路径、基于SVG路径字符串创建路径等功能，适用于需要多次绘制相同路径、动态组合复杂图形或基于SVG路径数据绘制图形的场景。
  
@@ -12,9 +12,10 @@
 
   
 
-#### constructor
+## constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
  
@@ -28,9 +29,10 @@ constructor()
  
   
 
-#### constructor12+
+## constructor12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(unit: LengthMetricsUnit)
  
@@ -46,6 +48,7 @@ constructor(unit: LengthMetricsUnit)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | unit | LengthMetricsUnit | 是 | 用来配置Path2D对象的单位模式，配置后无法动态更改，配置方法同CanvasRenderingContext2D。 异常值NaN和Infinity按默认值处理。 默认值：DEFAULT |
@@ -53,9 +56,10 @@ constructor(unit: LengthMetricsUnit)
  
   
 
-#### constructor
+## constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(path: Path2D)
  
@@ -69,6 +73,7 @@ constructor(path: Path2D)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | Path2D | 是 | 需要复制的路径对象，新创建的Path2D对象将包含与原路径相同的路径数据。异常值null和undefined时创建空路径对象。 |
@@ -76,9 +81,10 @@ constructor(path: Path2D)
  
   
 
-#### constructor12+
+## constructor12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(path: Path2D, unit: LengthMetricsUnit)
  
@@ -94,6 +100,7 @@ constructor(path: Path2D, unit: LengthMetricsUnit)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | Path2D | 是 | 需要复制的Path2D路径对象，用于基于现有路径创建新的Path2D对象。传入的路径对象不会被修改，新创建的对象将包含该路径的完整副本。 |
@@ -102,9 +109,10 @@ constructor(path: Path2D, unit: LengthMetricsUnit)
  
   
 
-#### constructor
+## constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(d: string)
  
@@ -118,6 +126,7 @@ constructor(d: string)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | d | string | 是 | 符合SVG路径描述规范的路径字符串，格式参考SVG路径描述规范，异常值按无效值处理。 |
@@ -125,9 +134,10 @@ constructor(d: string)
  
   
 
-#### constructor12+
+## constructor12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(description: string, unit: LengthMetricsUnit)
  
@@ -143,6 +153,7 @@ constructor(description: string, unit: LengthMetricsUnit)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | description | string | 是 | 符合SVG路径描述规范的路径字符串，格式参考SVG路径描述规范，异常值按无效值处理。 |
@@ -151,15 +162,17 @@ constructor(description: string, unit: LengthMetricsUnit)
  
   
 
-#### 方法
+## 方法
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### addPath
+### addPath
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addPath(path: Path2D, transform?: Matrix2D): void
  
@@ -173,6 +186,7 @@ addPath(path: Path2D, transform?: Matrix2D): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | Path2D | 是 | 需要添加到当前路径的路径对象。 异常值undefined和null按无效值处理。 |
@@ -214,9 +228,10 @@ struct AddPath {
  
   
 
-#### closePath
+### closePath
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 closePath(): void
  
@@ -265,9 +280,10 @@ struct ClosePath {
  
   
 
-#### moveTo
+### moveTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 moveTo(x: number, y: number): void
  
@@ -281,6 +297,7 @@ moveTo(x: number, y: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | x | number | 是 | 目标点X轴坐标。 API version 18之前，设置NaN或Infinity时，整条路径不显示；设置null或undefined时，当前接口不生效。API version 18及以后，设置NaN、Infinity、null或undefined时当前接口不生效，其他传入有效参数的路径方法正常绘制。 默认单位：vp |
@@ -328,9 +345,10 @@ struct MoveTo {
  
   
 
-#### lineTo
+### lineTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 lineTo(x: number, y: number): void
  
@@ -344,6 +362,7 @@ lineTo(x: number, y: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | x | number | 是 | 目标点X轴坐标。 API version 18之前，设置NaN或Infinity时，整条路径不显示；设置null或undefined时，当前接口不生效。API version 18及以后，设置NaN、Infinity、null或undefined时当前接口不生效，其他传入有效参数的路径方法正常绘制。 默认单位：vp |
@@ -388,9 +407,10 @@ struct LineTo {
  
   
 
-#### bezierCurveTo
+### bezierCurveTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 bezierCurveTo(cp1x: number, cp1y: number, cp2x: number, cp2y: number, x: number, y: number): void
  
@@ -404,6 +424,7 @@ bezierCurveTo(cp1x: number, cp1y: number, cp2x: number, cp2y: number, x: number,
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cp1x | number | 是 | 第一个贝塞尔控制点的x坐标值。 API version 18之前，设置NaN或Infinity时，整条路径不显示；设置null或undefined时，当前接口不生效。API version 18及以后，设置NaN、Infinity、null或undefined时当前接口不生效，其他传入有效参数的路径方法正常绘制。 默认单位：vp |
@@ -449,9 +470,10 @@ struct BezierCurveTo {
  
   
 
-#### quadraticCurveTo
+### quadraticCurveTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 quadraticCurveTo(cpx: number, cpy: number, x: number, y: number): void
  
@@ -465,6 +487,7 @@ quadraticCurveTo(cpx: number, cpy: number, x: number, y: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cpx | number | 是 | 贝塞尔控制点的x坐标值。 API version 18之前，设置NaN或Infinity时，整条路径不显示；设置null或undefined时，当前接口不生效。API version 18及以后，设置NaN、Infinity、null或undefined时当前接口不生效，其他传入有效参数的路径方法正常绘制。 默认单位：vp |
@@ -508,9 +531,10 @@ struct QuadraticCurveTo {
  
   
 
-#### arc
+### arc
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 arc(x: number, y: number, radius: number, startAngle: number, endAngle: number, counterclockwise?: boolean): void
  
@@ -524,6 +548,7 @@ arc(x: number, y: number, radius: number, startAngle: number, endAngle: number, 
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | x | number | 是 | 弧线圆心的x坐标值。 API version 18之前，设置NaN或Infinity时，整条路径不显示；设置null或undefined时，当前接口不生效。API version 18及以后，设置NaN、Infinity、null或undefined时当前接口不生效，其他传入有效参数的路径方法正常绘制。 默认单位：vp |
@@ -568,9 +593,10 @@ struct Arc {
  
   
 
-#### arcTo
+### arcTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 arcTo(x1: number, y1: number, x2: number, y2: number, radius: number): void
  
@@ -584,6 +610,7 @@ arcTo(x1: number, y1: number, x2: number, y2: number, radius: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | x1 | number | 是 | 圆弧第一个控制点的x坐标值。 API version 18之前，设置NaN或Infinity时，整条路径不显示；设置null或undefined时，当前接口不生效。API version 18及以后，设置NaN、Infinity、null或undefined时当前接口不生效，其他传入有效参数的路径方法正常绘制。 默认单位：vp |
@@ -628,9 +655,10 @@ struct ArcTo {
  
   
 
-#### ellipse
+### ellipse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ellipse(x: number, y: number, radiusX: number, radiusY: number, rotation: number, startAngle: number, endAngle: number, counterclockwise?: boolean): void
  
@@ -644,6 +672,7 @@ ellipse(x: number, y: number, radiusX: number, radiusY: number, rotation: number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | x | number | 是 | 椭圆圆心的x轴坐标。 API version 18之前，设置NaN或Infinity时，整条路径不显示；设置null或undefined时，当前接口不生效。API version 18及以后，设置NaN、Infinity、null或undefined时当前接口不生效，其他传入有效参数的路径方法正常绘制。 默认单位：vp |
@@ -690,9 +719,10 @@ struct CanvasExample {
  
   
 
-#### rect
+### rect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 rect(x: number, y: number, w: number, h: number): void
  
@@ -710,6 +740,7 @@ rect(x: number, y: number, w: number, h: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | x | number | 是 | 指定矩形的左上角x坐标值。 API version 18之前，设置NaN或Infinity时，整条路径不显示；设置null或undefined时，当前接口不生效。API version 18及以后，设置NaN、Infinity、null或undefined时当前接口不生效，其他传入有效参数的路径方法正常绘制。 默认单位：vp |
@@ -752,9 +783,10 @@ struct CanvasExample {
  
   
 
-#### roundRect20+
+### roundRect20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 roundRect(x: number, y: number, w: number, h: number, radii?: number | Array&lt;number&gt;): void
  
@@ -770,6 +802,7 @@ roundRect(x: number, y: number, w: number, h: number, radii?: number | Array&lt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | x | number | 是 | 指定矩形的左上角x坐标值。 null按0处理，undefined按无效值处理，不进行绘制。 设置NaN或Infinity时当前接口不生效，其他传入有效参数的路径方法正常绘制。 如需绘制完整矩形，取值范围：[0, Canvas宽度)。 默认单位：vp |
@@ -783,6 +816,7 @@ roundRect(x: number, y: number, w: number, h: number, radii?: number | Array&lt;
  
 以下错误码的详细介绍请参见[Canvas组件错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-canvas)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 103701 | Parameter error. Possible causes: 1. The param radii is a list that has zero or more than four elements. 2. The param radii contains negative value. |
@@ -846,4 +880,4 @@ struct CanvasExample {
 ```
  
  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/u6ra21eKQrWoyVu777pM-w/zh-cn_image_0000002686088281.jpeg?HW-CC-KV=V1&HW-CC-Date=20260730T071510Z&HW-CC-Expire=86400&HW-CC-Sign=9A50C9155D972C0C89637CEF3CF9A8865103A0A08F498B7958421F6188C3349C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/GMfsS-dTRxWuO6oI76w6Ew/zh-cn_image_0000002747212857.jpeg?HW-CC-KV=V1&HW-CC-Date=20260911T073111Z&HW-CC-Expire=86400&HW-CC-Sign=0F0420BA1F03A9AF89C1794764B21F979A242AFB7AFB52DCD0CF20E5E90C76F1)

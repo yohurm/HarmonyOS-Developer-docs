@@ -1,9 +1,9 @@
 # @ohos.app.ability.AgentUIExtensionAbility (带界面的智能体扩展组件)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-agent-agentuiextensionability
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 AgentUIExtensionAbility继承自[UIExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiextensionability)，为开发者提供接入端侧Agent UI界面显示能力。
 
@@ -16,9 +16,10 @@ AgentUIExtensionAbility继承自[UIExtensionAbility](https://developer.huawei.co
 
 
 
-#### 约束限制
+## 约束限制
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
  - 同一个拉起方在同一时间内最多只能拉起来自同一个提供方的5个AgentUIExtensionAbility实例。
  - AgentUIExtensionAbility内的窗口和ArkUI组件均不允许创建子窗口，也不支持在子窗口中显示。
@@ -26,9 +27,10 @@ AgentUIExtensionAbility继承自[UIExtensionAbility](https://developer.huawei.co
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { AgentUIExtensionAbility } from '@kit.AbilityKit';
@@ -36,10 +38,13 @@ import { AgentUIExtensionAbility } from '@kit.AbilityKit';
 
 
 
-#### AgentUIExtensionAbility
+## AgentUIExtensionAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-AgentUIExtensionAbility继承自[UIExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiextensionability)，为开发者提供接入端侧Agent UI界面显示能力。例如，如果Agent开发者希望能够在其他应用显示Agent返回的结果时，可以通过接入AgentUIExtensionAbility提供展示嵌入式弹窗的能力。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+AgentUIExtensionAbility继承自[UIExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiextensionability)，为开发者提供接入端侧Agent UI界面显示能力。例如，当Agent开发者希望在其他应用中显示Agent返回的结果时，可以通过接入AgentUIExtensionAbility提供展示嵌入式弹窗的能力。
 
 **系统能力**：SystemCapability.Ability.AgentRuntime.Core
+
+**元服务API**：从API版本26.0.0开始，该接口支持在元服务中使用。

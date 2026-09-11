@@ -1,9 +1,9 @@
 # Navigator
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-navigator
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 路由容器组件，提供路由跳转能力。
  
@@ -12,23 +12,26 @@
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 可以包含子组件。
  
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### Navigator(deprecated)
+### Navigator(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Navigator(value?: {target: string, type?: NavigationType})
  
@@ -42,6 +45,7 @@ Navigator(value?: {target: string, type?: NavigationType})
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | target | string | 是 | 指定跳转目标页面的路径。 |
@@ -50,9 +54,10 @@ Navigator(value?: {target: string, type?: NavigationType})
  
   
 
-#### Navigator(deprecated)
+### Navigator(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Navigator()
  
@@ -66,9 +71,10 @@ Navigator()
  
   
 
-#### NavigationType(deprecated)枚举说明
+## NavigationType(deprecated)枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 路由的跳转方式。
  
@@ -76,6 +82,7 @@ Navigator()
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | Push | 1 | 跳转到应用内的指定页面。 说明： 从API version 7开始支持，从API version 13开始废弃，建议使用pushPath替代。 |
@@ -85,15 +92,17 @@ Navigator()
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### active(deprecated)
+### active(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 active(value: boolean)
  
@@ -109,6 +118,7 @@ active(value: boolean)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 路由组件是否处于激活状态。设置为true时，组件处于激活态。设置为false时，组件不处于激活态。 |
@@ -116,9 +126,10 @@ active(value: boolean)
  
   
 
-#### params(deprecated)
+### params(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 params(value: object)
  
@@ -134,6 +145,7 @@ params(value: object)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | object | 是 | 跳转时要同时传递到目标页面的数据，可在目标页面使用router.getParams()获得。 |
@@ -141,9 +153,10 @@ params(value: object)
  
   
 
-#### target(deprecated)
+### target(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 target(value: string)
  
@@ -159,6 +172,7 @@ target(value: string)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string | 是 | 跳转目标页面的路径。 |
@@ -166,9 +180,10 @@ target(value: string)
  
   
 
-#### type(deprecated)
+### type(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type(value: NavigationType)
  
@@ -184,6 +199,7 @@ type(value: NavigationType)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | NavigationType | 是 | 路由跳转方式。 默认值：NavigationType.Push |
@@ -191,9 +207,10 @@ type(value: NavigationType)
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```ArkTS
 // code.ets
@@ -277,4 +294,4 @@ struct BackExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/npAI1ZnWR2me7oNVfjEFdQ/zh-cn_image_0000002656008994.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071522Z&HW-CC-Expire=86400&HW-CC-Sign=E46F19477D0C87E0254D0696E744E37B3714051DE11480052F3642BBA33776B9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/IchbMIENRE65uFJJHJKXEA/zh-cn_image_0000002717613216.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073114Z&HW-CC-Expire=86400&HW-CC-Sign=66CB66AA681B73D71C621629766DB0A314F087B7F79B9DC326FA2E61EA9EDD6D)

@@ -1,9 +1,9 @@
 # EmbeddedComponent
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-embedded-component
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 EmbeddedComponent用于支持在当前页面嵌入本应用内或满足跨应用权限条件的其他[EmbeddedUIExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-embeddeduiextensionability)提供的UI。EmbeddedUIExtensionAbility在独立进程中运行，完成页面布局和渲染。
 
@@ -14,9 +14,10 @@ EmbeddedComponent用于支持在当前页面嵌入本应用内或满足跨应用
 
 
 
-#### 使用约束
+## 使用约束
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 EmbeddedComponent仅支持在拥有多进程权限的设备上使用。开发者可通过canIUse相关接口或系统设置查询当前设备是否支持多进程权限。
 
@@ -28,23 +29,26 @@ EmbeddedComponent只能在UIAbility中使用，且默认情况下被拉起的Emb
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
 
 
 
-#### 接口
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 接口
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### EmbeddedComponent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### EmbeddedComponent
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 EmbeddedComponent(loader: import('../api/@ohos.app.ability.Want').default, type: EmbeddedType)
 
@@ -56,6 +60,7 @@ EmbeddedComponent(loader: import('../api/@ohos.app.ability.Want').default, type:
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | loader | import('../api/@ohos.app.ability.Want').default | 是 | 要加载的EmbeddedUIExtensionAbility。 |
@@ -64,9 +69,10 @@ EmbeddedComponent(loader: import('../api/@ohos.app.ability.Want').default, type:
 
 
 
-#### EmbeddedComponent
+### EmbeddedComponent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 EmbeddedComponent(loader: import('../api/@ohos.app.ability.Want').default, type: EmbeddedType, options?: EmbeddedOptions)
 
@@ -80,6 +86,7 @@ EmbeddedComponent(loader: import('../api/@ohos.app.ability.Want').default, type:
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | loader | import('../api/@ohos.app.ability.Want').default | 是 | 要加载的EmbeddedUIExtensionAbility。 |
@@ -89,9 +96,10 @@ EmbeddedComponent(loader: import('../api/@ohos.app.ability.Want').default, type:
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)。
 
@@ -101,9 +109,10 @@ EmbeddedComponent(loader: import('../api/@ohos.app.ability.Want').default, type:
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 与屏幕坐标相关的事件信息会基于EmbeddedComponent的位置宽高进行坐标转换后传递给被拉起的EmbeddedUIExtensionAbility处理。
 
@@ -111,9 +120,10 @@ EmbeddedComponent(loader: import('../api/@ohos.app.ability.Want').default, type:
 
 
 
-#### onTerminated
+### onTerminated
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onTerminated(callback: import('../api/@ohos.base').Callback&lt;TerminationInfo&gt;)
 
@@ -129,6 +139,7 @@ onTerminated(callback: import('../api/@ohos.base').Callback&lt;TerminationInfo&g
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | import('../api/@ohos.base').Callback&lt;TerminationInfo&gt; | 是 | 回调函数，入参用于接收EmbeddedUIExtensionAbility的返回结果，类型为TerminationInfo。 |
@@ -140,9 +151,10 @@ onTerminated(callback: import('../api/@ohos.base').Callback&lt;TerminationInfo&g
 
 
 
-#### onError
+### onError
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onError(callback: import('../api/@ohos.base').ErrorCallback)
 
@@ -158,6 +170,7 @@ onError(callback: import('../api/@ohos.base').ErrorCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | import('../api/@ohos.base').ErrorCallback | 是 | 回调函数，入参用于接收异常信息，类型为BusinessError，可通过参数中的code、name和message获取错误信息并做处理。 |
@@ -169,9 +182,10 @@ onError(callback: import('../api/@ohos.base').ErrorCallback)
 
 
 
-#### onDrawReady
+### onDrawReady
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDrawReady(callback: Callback&lt;void&gt;)
 
@@ -191,6 +205,7 @@ onDrawReady(callback: Callback&lt;void&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;void&gt; | 是 | 回调函数，在EmbeddedUIExtensionAbility绘制第一帧时触发。 |
@@ -198,9 +213,10 @@ onDrawReady(callback: Callback&lt;void&gt;)
 
 
 
-#### EmbeddedOptions
+## EmbeddedOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于在EmbeddedComponent创建时传递可选的构造参数。
 
@@ -212,6 +228,7 @@ onDrawReady(callback: Callback&lt;void&gt;)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | placeholder | ComponentContent | 否 | 是 | 设置占位符，在EmbeddedComponent与EmbeddedUIExtensionAbility建立连接前显示。 默认值：null，表示不显示占位符。 |
@@ -222,9 +239,10 @@ onDrawReady(callback: Callback&lt;void&gt;)
 
 
 
-#### EmbeddedDpiFollowStrategy
+## EmbeddedDpiFollowStrategy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 DPI跟随策略，用于设置DPI，使其能够跟随宿主或EmbeddedUIExtensionAbility。例如，当EmbeddedUIExtensionAbility需要与宿主应用保持视觉一致性时，可选择跟随宿主DPI；当EmbeddedUIExtensionAbility需要独立适配自身资源的DPI配置时，可选择跟随EmbeddedUIExtensionAbility DPI。
 
@@ -236,6 +254,7 @@ DPI跟随策略，用于设置DPI，使其能够跟随宿主或EmbeddedUIExtensi
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | FOLLOW_HOST_DPI | 0 | 表示DPI跟随宿主。 |
@@ -244,9 +263,10 @@ DPI跟随策略，用于设置DPI，使其能够跟随宿主或EmbeddedUIExtensi
 
 
 
-#### EmbeddedWindowModeFollowStrategy
+## EmbeddedWindowModeFollowStrategy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 窗口模式跟随策略，用于设置窗口模式跟随宿主或EmbeddedUIExtensionAbility。例如，当EmbeddedUIExtensionAbility需要与宿主应用保持一致的窗口模式（如全屏、分屏）时，可选择跟随宿主；当EmbeddedUIExtensionAbility需要独立控制窗口模式时，可选择跟随EmbeddedUIExtensionAbility。
 
@@ -258,6 +278,7 @@ DPI跟随策略，用于设置DPI，使其能够跟随宿主或EmbeddedUIExtensi
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | FOLLOW_HOST_WINDOW_MODE | 0 | 表示窗口模式跟随宿主。 |
@@ -266,15 +287,17 @@ DPI跟随策略，用于设置DPI，使其能够跟随宿主或EmbeddedUIExtensi
 
 
 
-#### TerminationInfo
+## TerminationInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于表示被拉起的EmbeddedUIExtensionAbility的返回结果。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -284,9 +307,10 @@ DPI跟随策略，用于设置DPI，使其能够跟随宿主或EmbeddedUIExtensi
 
 
 
-#### 示例（加载EmbeddedComponent）
+## 示例（加载EmbeddedComponent）
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例展示EmbeddedComponent组件和EmbeddedUIExtensionAbility的基础使用方式，示例应用的bundleName为“com.example.embeddedComponent”，同应用下被拉起的EmbeddedUIExtensionAbility为“ExampleEmbeddedAbility”。本示例仅支持在拥有多进程权限的设备上运行（如PC/2in1），开发者可通过设备类型判断接口或系统设置确认当前设备是否具备多进程权限。
 
@@ -474,4 +498,4 @@ struct Extension {
  - 示例图如下：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/Hbsluf2WQo2QjSgyGoVhZA/zh-cn_image_0000002679967244.png?HW-CC-KV=V1&HW-CC-Date=20260818T063504Z&HW-CC-Expire=86400&HW-CC-Sign=5FD83B476D0BCBB8181FD8DC866157D4F60B36672C3FFB809ED979D4D925A2BA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/DEx4vE1TTUe6O_WPiN36Yg/zh-cn_image_0000002747212907.png?HW-CC-KV=V1&HW-CC-Date=20260911T073112Z&HW-CC-Expire=86400&HW-CC-Sign=6297F4890A30710B12F23D8D93E2938F2A549F29CC7808298984474D79E3791E)

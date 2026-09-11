@@ -1,13 +1,14 @@
 # oh_location.h
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-location-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义查询位置开关状态、启动定位、停止定位的接口。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | Location_ResultCode OH_Location_IsLocatingEnabled(bool* enabled) | 查询位置开关是否开启。 |
@@ -42,15 +46,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Location_IsLocatingEnabled()
+### OH_Location_IsLocatingEnabled()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Location_ResultCode OH_Location_IsLocatingEnabled(bool* enabled)
@@ -64,6 +70,7 @@ Location_ResultCode OH_Location_IsLocatingEnabled(bool* enabled)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | bool* enabled | bool类型的指针，用于接收位置开关状态值。 等于true表示位置开关开启，false表示位置开关关闭。 需要传入非空指针，否则会返回错误。 |
@@ -71,6 +78,7 @@ Location_ResultCode OH_Location_IsLocatingEnabled(bool* enabled)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Location_ResultCode | 返回操作结果，详细定义参见Location_ResultCode。 LOCATION_SUCCESS 查询位置开关状态成功。 LOCATION_INVALID_PARAM 入参是空指针。 LOCATION_SERVICE_UNAVAILABLE 位置服务运行异常导致查询位置开关状态失败。 |
@@ -78,9 +86,10 @@ Location_ResultCode OH_Location_IsLocatingEnabled(bool* enabled)
  
   
 
-#### OH_Location_StartLocating()
+### OH_Location_StartLocating()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Location_ResultCode OH_Location_StartLocating(const Location_RequestConfig* requestConfig)
@@ -96,6 +105,7 @@ Location_ResultCode OH_Location_StartLocating(const Location_RequestConfig* requ
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Location_RequestConfig* requestConfig | 指向定位请求参数的指针，该参数用于指定发起定位的场景信息和位置上报间隔。 详细定义请参考Location_RequestConfig，可以使用OH_Location_CreateRequestConfig创建。 |
@@ -103,6 +113,7 @@ Location_ResultCode OH_Location_StartLocating(const Location_RequestConfig* requ
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Location_ResultCode | 返回操作结果，详细定义参见Location_ResultCode。 LOCATION_SUCCESS 启动定位成功。 LOCATION_INVALID_PARAM 入参requestConfig为空指针。 LOCATION_PERMISSION_DENIED 权限校验失败。 LOCATION_NOT_SUPPORTED 当前设备不支持该功能。 LOCATION_SERVICE_UNAVAILABLE 位置服务运行异常。 LOCATION_SWITCH_OFF 位置开关未打开导致无法启动定位。 |
@@ -110,9 +121,10 @@ Location_ResultCode OH_Location_StartLocating(const Location_RequestConfig* requ
  
   
 
-#### OH_Location_StopLocating()
+### OH_Location_StopLocating()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Location_ResultCode OH_Location_StopLocating(const Location_RequestConfig* requestConfig)
@@ -128,6 +140,7 @@ Location_ResultCode OH_Location_StopLocating(const Location_RequestConfig* reque
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const Location_RequestConfig* requestConfig | 指向定位请求参数的指针。 该参数需要与OH_Location_StartLocating中的requestConfig是同一个指针。 详细定义请参考Location_RequestConfig。 需要传入非空指针，否则会返回错误。 |
@@ -135,6 +148,7 @@ Location_ResultCode OH_Location_StopLocating(const Location_RequestConfig* reque
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Location_ResultCode | 返回操作结果，详细定义参见Location_ResultCode。 LOCATION_SUCCESS 停止定位成功。 LOCATION_INVALID_PARAM 1. 入参为空指针。 2. 入参与OH_Location_StartLocating的requestConfig指针不同。 LOCATION_PERMISSION_DENIED 权限校验失败。 LOCATION_NOT_SUPPORTED 当前设备不支持该功能。 LOCATION_SERVICE_UNAVAILABLE 位置服务运行异常。 LOCATION_SWITCH_OFF 位置开关未打开。 |

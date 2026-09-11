@@ -1,9 +1,9 @@
 # @ohos.arkui.node (自定义节点)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-node
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Node将自定义节点的二级模块API组织在一起，方便开发者导出使用。自定义节点支持开发者灵活地创建、挂载和管理组件树节点，适用于需要动态构建、复用和扩展UI组件的场景。
  
@@ -12,9 +12,10 @@ Node将自定义节点的二级模块API组织在一起，方便开发者导出�
 
   
 
-#### BuilderNode
+## BuilderNode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [BuilderNode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-buildernode)模块提供能够挂载系统组件的自定义节点BuilderNode，适用于需要在自定义节点中嵌入并复用系统组件的场景。不建议将BuilderNode作为子节点挂载到其他自定义节点上。
  
@@ -22,9 +23,10 @@ Node将自定义节点的二级模块API组织在一起，方便开发者导出�
  
   
 
-#### FrameNode
+## FrameNode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [FrameNode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode)模块提供自定义节点FrameNode，表示组件树的实体节点，适用于需要直接操作和管理组件树实体节点的场景。[NodeController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-nodecontroller)可通过[BuilderNode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-buildernode)持有的FrameNode挂载到[NodeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-nodecontainer)上，也可通过FrameNode获取[RenderNode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode)，并将RenderNode挂载到其他FrameNode上。
  
@@ -32,9 +34,10 @@ Node将自定义节点的二级模块API组织在一起，方便开发者导出�
  
   
 
-#### NodeController
+## NodeController
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [NodeController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-nodecontroller)模块提供NodeController，用于实现自定义节点的创建、显示、更新等操作，并负责将自定义节点挂载到[NodeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-nodecontainer)上，适用于需要动态管理自定义节点生命周期及显示状态的场景。
  
@@ -42,9 +45,10 @@ Node将自定义节点的二级模块API组织在一起，方便开发者导出�
  
   
 
-#### Graphics
+## Graphics
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [Graphics](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-graphics)模块提供自定义节点属性设置的定义，用于对自定义节点的图形外观和渲染属性进行配置，适用于需要精细控制节点绘制效果的场景。
  
@@ -52,9 +56,10 @@ Node将自定义节点的二级模块API组织在一起，方便开发者导出�
  
   
 
-#### RenderNode
+## RenderNode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [RenderNode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode)模块提供自绘制渲染节点RenderNode，支持开发者进行自定义绘制，适用于需要自绘制图形内容（如自定义图表、游戏画面、手绘动画等）的场景。
  
@@ -62,9 +67,10 @@ Node将自定义节点的二级模块API组织在一起，方便开发者导出�
  
   
 
-#### XComponentNode
+## XComponentNode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [XComponentNode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-xcomponentnode)模块提供XComponent节点XComponentNode，表示组件树中的XComponent组件，用于EGL/OpenGLES和媒体数据写入，并支持动态修改节点渲染类型，适用于需要在自定义节点中嵌入图形渲染或媒体数据处理的场景。
  
@@ -72,9 +78,10 @@ Node将自定义节点的二级模块API组织在一起，方便开发者导出�
  
   
 
-#### UIContext获取方法
+## UIContext获取方法
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 1. 使用ohos.window中的[getUIContext()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window-window#getuicontext10)方法获取UIContext实例。
 2. 通过自定义组件内置方法[getUIContext()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-custom-component-api#getuicontext)获取UIContext实例。
 3. 在[NodeController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-nodecontroller)的[makeNode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-nodecontroller#makenode)回调方法中通过回调入参获取UIContext实例。

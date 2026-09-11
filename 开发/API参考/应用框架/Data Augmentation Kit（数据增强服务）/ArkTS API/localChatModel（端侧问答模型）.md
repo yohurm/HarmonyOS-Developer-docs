@@ -1,11 +1,12 @@
 # localChatModel（端侧问答模型）
 
-更新时间：2026-06-12 06:54:11
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/dataaugmentation-localchatmodel-api
 **支持设备：** PC/2in1
 
-#### 模块概述
+## 模块概述
+
 
 **支持设备：** PC/2in1
 
@@ -17,7 +18,8 @@ localChatModel模块是Data Augmentation Kit中的端侧问答组件，提供接
  
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** PC/2in1
 
@@ -27,7 +29,8 @@ import { localChatModel } from '@kit.DataAugmentationKit';
  
   
 
-#### Config
+## Config
+
 
 **支持设备：** PC/2in1
 
@@ -39,6 +42,7 @@ import { localChatModel } from '@kit.DataAugmentationKit';
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | isStream | boolean | 否 | 否 | 表示是否支持流式问答。 设置为true时，支持流式返回结果，适用于需要实时响应的场景； 设置为false时，一次性返回完整结果，适用于对结果完整性要求较高且可接受延迟的场景。 |
@@ -56,7 +60,8 @@ let localConfig: localChatModel.Config = {
  
   
 
-#### QuestionInfo
+## QuestionInfo
+
 
 **支持设备：** PC/2in1
 
@@ -68,6 +73,7 @@ let localConfig: localChatModel.Config = {
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | questionId | number | 否 | 否 | 表示与端侧问答模型交互的问题ID，ID取值范围为[0,65535]，若超过范围，则上报某些参数不符合指定约束条件的错误码1021900005。在同一应用运行时，questionId应保持唯一性。建议使用递增序列生成唯一ID，以防止在并发请求中出现重复ID导致的问题。 |
@@ -87,7 +93,8 @@ let questionInfo: localChatModel.QuestionInfo = {
  
   
 
-#### Answer
+## Answer
+
 
 **支持设备：** PC/2in1
 
@@ -99,6 +106,7 @@ let questionInfo: localChatModel.QuestionInfo = {
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | questionId | number | 否 | 否 | 表示问答模型返回结果对应的问题ID，与请求中的questionId保持一致。 |
@@ -120,7 +128,8 @@ let answer: localChatModel.Answer = {
  
   
 
-#### init
+## init
+
 
 **支持设备：** PC/2in1
 
@@ -136,6 +145,7 @@ init(): Promise&lt;boolean&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象，返回模型初始化结果，true表示初始化成功，模型已就绪；false表示初始化失败，模型不可用。 |
@@ -158,7 +168,8 @@ async function init() {
  
   
 
-#### chat
+## chat
+
 
 **支持设备：** PC/2in1
 
@@ -178,6 +189,7 @@ chat方法用于向端侧问答模型发送问题并获取回答，适用于本�
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | info | QuestionInfo | 是 | 表示与端侧问答模型问答的问题信息。 |
@@ -187,6 +199,7 @@ chat方法用于向端侧问答模型发送问题并获取回答，适用于本�
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -196,6 +209,7 @@ chat方法用于向端侧问答模型发送问题并获取回答，适用于本�
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-dataaugmentation)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1021900001 | A timeout occurs when the local chat model is called. |

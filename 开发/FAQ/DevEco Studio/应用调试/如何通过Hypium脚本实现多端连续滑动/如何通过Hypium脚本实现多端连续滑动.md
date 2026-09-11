@@ -34,20 +34,20 @@ class TC_001(TestCase):
         super().__init__(self.TAG, controllers)
         self.driver = UiDriver(self.device1)
     def setup(self):
-        # 创建手势对象
+      <em>  # 创建手势对象</em>
         gesture = Gesture()
-        # 起始位置, 长按2秒
+       <em> # 起始位置, 长按2秒</em>
         gesture.start(Point(360, 500).to_tuple(), 2)
-        # 停留2秒
+      <em>  # 停留2秒</em>
         gesture.pause(2)
-        # 移动到(100, 500)的位置
+    <em>    # 移动到(100, 500)的位置</em>
         gesture.move_to(Point(100, 500).to_tuple())
-        # 停留2秒结束
+     <em>   # 停留2秒结束</em>
         gesture.pause(2)
-        # 移动到(300, 500)的位置
+     <em>   # 移动到(300, 500)的位置</em>
         gesture.move_to(Point(300, 500).to_tuple())
-        # 停留2秒结束
+     <em>   # 停留2秒结束</em>
         gesture.pause(2)
-        # 执行gesture对象描述的操作
+       <em> # 执行gesture对象描述的操作</em>
         self.driver.inject_gesture(gesture)
 ```

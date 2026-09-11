@@ -1,6 +1,6 @@
 # 拉起快递类应用（startAbilityByType）
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/start-express-apps
 
@@ -9,9 +9,10 @@
 例如，在消息类App中，用户收到快递单号，应用能够识别快递单号信息并提供快递查询的链接。用户点击链接后，应用将通过调用[UIAbilityContext.startAbilityByType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext#startabilitybytype11)或[UIExtensionContentSession.startAbilityByType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiextensioncontentsession#startabilitybytype11)接口，拉起快递类应用的扩展面板。面板上将展示设备上所有支持快递查询的应用，供用户选择并跳转至所需应用。
 
 
-#### 快递类应用扩展面板参数说明
+## 快递类应用扩展面板参数说明
 
 startAbilityByType接口中type字段为express，支持查询快递意图，对应的wantParam参数如下：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -21,7 +22,7 @@ startAbilityByType接口中type字段为express，支持查询快递意图，对
 
 
 
-#### 拉起方开发步骤
+## 拉起方开发步骤
 1. 导入相关模块。
 
   
@@ -83,14 +84,16 @@ struct Index {
 
 
 
-#### 目标方开发步骤
+## 目标方开发步骤
 1. 在module.json5中配置[uris](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#skills标签)：
 
   
  - 设置linkFeature属性以声明当前应用支持的特性功能，从而系统可以从设备已安装应用中找到当前支持该特性的应用，取值范围如下：
 
 | 取值 | 含义 |
+
 | --- | --- |
+
 | QueryExpress | 声明应用支持快递查询。 |
 
 2. 设置scheme、host、port、path/pathStartWith属性，与Want中URI相匹配，以便区分不同功能。         
@@ -126,7 +129,9 @@ UIAbility.onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void
   在参数**want.parameters**中会携带Caller方传入的参数，如下所示：
 
 | 参数名 | 类型 | 必填 | 说明 |
+
 | --- | --- | --- | --- |
+
 | expressNo | string | 是 | 快递单号。 |
 
 

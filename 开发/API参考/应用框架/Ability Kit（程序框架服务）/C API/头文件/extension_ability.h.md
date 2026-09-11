@@ -1,13 +1,14 @@
 # extension_ability.h
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-extension-ability-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供ExtensionAbility回调函数类型声明和入口函数名称声明。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | AbilityRuntime_ExtensionInstance | - | 定义AbilityRuntime_ExtensionInstance结构体类型。 |
@@ -41,21 +45,25 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
-| typedef void AbilityRuntime_Extension_CreateFunc(AbilityRuntime_ExtensionInstanceHandle handle, const char *abilityName); | AbilityRuntime_Extension_CreateFunc | ExtensionAbility创建回调函数类型。ExtensionAbility中必须实现的回调函数类型，用于实例化ExtensionAbility。 |
+| typedef void AbilityRuntime_Extension_CreateFunc(AbilityRuntime_ExtensionInstanceHandle handle, const char *abilityName); | AbilityRuntime_Extension_CreateFunc | ExtensionAbility中必须实现的回调函数类型，用于实例化ExtensionAbility。 |
  
  
   
 
-#### 变量
+### 变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 类型 | 描述 |
 | --- | --- | --- |
 | OH_AbilityRuntime_OnNativeExtensionCreate | AbilityRuntime_Extension_CreateFunc | ExtensionAbility入口函数名称声明。开发者需要实现一个类型为AbilityRuntime_Extension_CreateFunc的函数，并将其命名为OH_AbilityRuntime_OnNativeExtensionCreate。系统会自动查找并调用此函数来完成ExtensionAbility实例的初始化。 起始版本： 24 |
@@ -63,15 +71,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### AbilityRuntime_Extension_CreateFunc()
+### AbilityRuntime_Extension_CreateFunc()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void AbilityRuntime_Extension_CreateFunc(AbilityRuntime_ExtensionInstanceHandle handle, const char *abilityName)
@@ -85,23 +95,26 @@ ExtensionAbility创建回调函数类型。ExtensionAbility中必须实现的回
  
 **参数：**
   
+
 | 参数名 | 描述 |
 | --- | --- |
-| AbilityRuntime_ExtensionInstanceHandle handle | 回调函数传入AbilityRuntime_ExtensionInstanceHandle实例的指针。 |
+| AbilityRuntime_ExtensionInstanceHandle handle | 回调函数传入AbilityRuntime_ExtensionInstanceHandle实例。 |
 | const char *abilityName | 回调函数传入的ExtensionAbility的名称。 |
  
  
   
 
-#### 变量说明
+## 变量说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AbilityRuntime_OnNativeExtensionCreate
+### OH_AbilityRuntime_OnNativeExtensionCreate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AbilityRuntime_Extension_CreateFunc OH_AbilityRuntime_OnNativeExtensionCreate

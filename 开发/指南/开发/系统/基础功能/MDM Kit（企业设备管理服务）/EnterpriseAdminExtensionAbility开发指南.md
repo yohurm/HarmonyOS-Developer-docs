@@ -1,18 +1,19 @@
 # EnterpriseAdminExtensionAbility开发指南
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-admin
 
-#### 概述
+## 概述
 
 企业设备管理扩展能力组件，是设备管理应用必备组件。当开发者为企业开发设备管理应用时，需继承EnterpriseAdminExtensionAbility，在EnterpriseAdminExtensionAbility实例中实现MDM业务逻辑，EnterpriseAdminExtensionAbility实现了系统管理状态变化通知功能，并定义了管理应用激活、去激活、应用安装、卸载事件等回调接口。
 
 
 
-#### 接口说明
+## 接口说明
 
 以下为本次开发示例所使用的接口，更多接口及使用方式请见企业设备管理扩展能力接口文档[EnterpriseAdminExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterpriseadminextensionability)。
+
 
 | 接口名称 | 描述 |
 | --- | --- |
@@ -26,7 +27,7 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 
 新建一个工程后，结构如下：
 
@@ -68,7 +69,7 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
 
   // 应用卸载回调方法，应用可在此回调函数中进行事件上报，通知企业管理员。
   onBundleRemoved(bundleName: string) {
-    console.info('EnterpriseAdminAbility onBundleRemoved bundleName' + bundleName);
+    console.info('EnterpriseAdminAbility onBundleRemoved bundleName:' + bundleName);
   }
 
   // 普通设备管理应用激活回调方法，应用可在此回调函数中进行初始化策略设置。
@@ -78,7 +79,7 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
 
   // 普通设备管理应用解除激活回调方法，应用可在此回调函数中通知企业管理员设备已脱管。
   onDeviceAdminDisabled(bundleName: string) {
-    console.info('EnterpriseAdminAbility onDeviceAdminDisabled bundleName' + bundleName);
+    console.info('EnterpriseAdminAbility onDeviceAdminDisabled bundleName:' + bundleName);
   }
 };
 ```

@@ -1,9 +1,9 @@
 # @ohos.app.ability.sendableContextManager (sendable上下文管理)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-sendablecontextmanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sendableContextManager模块提供Context与[SendableContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-sendablecontext)相互转换的能力。
 
@@ -12,9 +12,10 @@ sendableContextManager模块提供Context与[SendableContext](https://developer.
 
 
 
-#### 使用场景
+## 使用场景
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块主要用于ArkTS并发实例间（包括主线程、TaskPool&Worker工作线程）的数据传递。
 
@@ -32,9 +33,10 @@ sendableContextManager模块提供Context与[SendableContext](https://developer.
 
 
 
-#### 约束限制
+## 约束限制
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 “Context转换为SendableContext”和“SendableContext转换为Context”两个环节中的Context类型必须保持一致。例如，主线程使用[convertFromContext](#sendablecontextmanagerconvertfromcontext)将[UIAbilityContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext)转换为SendableContext，子线程收到该SendableContext之后，需要通过[convertToUIAbilityContext](#sendablecontextmanagerconverttouiabilitycontext)将SendableContext转换为[UIAbilityContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext)。
 
@@ -42,9 +44,10 @@ sendableContextManager模块提供Context与[SendableContext](https://developer.
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { sendableContextManager } from '@kit.AbilityKit';
@@ -52,17 +55,19 @@ import { sendableContextManager } from '@kit.AbilityKit';
 
 
 
-#### SendableContext
+## SendableContext
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type SendableContext = _SendableContext
 
-Sendable上下文，符合[Sendable协议](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable#sendable协议)，继承自[lang.ISendable](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkts-lang#langisendable)。
+Sendable上下文，符合[Sendable协议](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable#sendable协议)，继承自[lang.ISendable](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkts-lang#isendable)。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -71,9 +76,10 @@ Sendable上下文，符合[Sendable协议](https://developer.huawei.com/consumer
 
 
 
-#### sendableContextManager.convertFromContext
+## sendableContextManager.convertFromContext
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 convertFromContext(context: common.Context): SendableContext
 
@@ -85,12 +91,14 @@ convertFromContext(context: common.Context): SendableContext
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | Context对象。支持Context基类，ApplicationContext、AbilityStageContext和UIAbilityContext子类。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -100,6 +108,7 @@ convertFromContext(context: common.Context): SendableContext
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -145,9 +154,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### sendableContextManager.convertToContext
+## sendableContextManager.convertToContext
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 convertToContext(sendableContext: SendableContext): common.Context
 
@@ -159,12 +169,14 @@ convertToContext(sendableContext: SendableContext): common.Context
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sendableContext | SendableContext | 是 | SendableContext对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -174,6 +186,7 @@ convertToContext(sendableContext: SendableContext): common.Context
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -268,9 +281,10 @@ workerPort.onerror = (e: ErrorEvent) => {
 
 
 
-#### sendableContextManager.convertToApplicationContext
+## sendableContextManager.convertToApplicationContext
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 convertToApplicationContext(sendableContext: SendableContext): common.ApplicationContext
 
@@ -282,12 +296,14 @@ convertToApplicationContext(sendableContext: SendableContext): common.Applicatio
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sendableContext | SendableContext | 是 | SendableContext对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -297,6 +313,7 @@ convertToApplicationContext(sendableContext: SendableContext): common.Applicatio
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -393,9 +410,10 @@ workerPort.onerror = (e: ErrorEvent) => {
 
 
 
-#### sendableContextManager.convertToAbilityStageContext
+## sendableContextManager.convertToAbilityStageContext
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 convertToAbilityStageContext(sendableContext: SendableContext): common.AbilityStageContext
 
@@ -407,12 +425,14 @@ convertToAbilityStageContext(sendableContext: SendableContext): common.AbilitySt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sendableContext | SendableContext | 是 | SendableContext对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -422,6 +442,7 @@ convertToAbilityStageContext(sendableContext: SendableContext): common.AbilitySt
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -506,19 +527,20 @@ workerPort.onmessage = (e: MessageEvents) => {
 }
 
 workerPort.onmessageerror = (e: MessageEvents) => {
-  hilog.info(0x0000, 'testTag', '%{public}s', 'onmessageerror');
+  hilog.error(0x0000, 'testTag', '%{public}s', 'onmessageerror');
 }
 
 workerPort.onerror = (e: ErrorEvent) => {
-  hilog.info(0x0000, 'testTag', '%{public}s', 'onerror');
+  hilog.error(0x0000, 'testTag', '%{public}s', 'onerror');
 }
 ```
 
 
 
-#### sendableContextManager.convertToUIAbilityContext
+## sendableContextManager.convertToUIAbilityContext
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 convertToUIAbilityContext(sendableContext: SendableContext): common.UIAbilityContext
 
@@ -530,12 +552,14 @@ convertToUIAbilityContext(sendableContext: SendableContext): common.UIAbilityCon
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sendableContext | SendableContext | 是 | SendableContext对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -545,6 +569,7 @@ convertToUIAbilityContext(sendableContext: SendableContext): common.UIAbilityCon
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -629,19 +654,20 @@ workerPort.onmessage = (e: MessageEvents) => {
 }
 
 workerPort.onmessageerror = (e: MessageEvents) => {
-  hilog.info(0x0000, 'testTag', '%{public}s', 'onmessageerror');
+  hilog.error(0x0000, 'testTag', '%{public}s', 'onmessageerror');
 }
 
 workerPort.onerror = (e: ErrorEvent) => {
-  hilog.info(0x0000, 'testTag', '%{public}s', 'onerror');
+  hilog.error(0x0000, 'testTag', '%{public}s', 'onerror');
 }
 ```
 
 
 
-#### sendableContextManager.setEventHubMultithreadingEnabled20+
+## sendableContextManager.setEventHubMultithreadingEnabled20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setEventHubMultithreadingEnabled(context: common.Context, enabled: boolean): void
 
@@ -656,6 +682,7 @@ setEventHubMultithreadingEnabled(context: common.Context, enabled: boolean): voi
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |

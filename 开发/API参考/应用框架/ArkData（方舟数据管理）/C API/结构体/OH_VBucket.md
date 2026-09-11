@@ -1,18 +1,19 @@
 # OH_VBucket
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-rdb-oh-vbucket
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct {...} OH_VBucket
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于存储键值对的类型。
  
@@ -24,22 +25,26 @@ typedef struct {...} OH_VBucket
  
   
 
-#### 成员变量
+### 成员变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | int64_t id | OH_VBucket结构体的唯一标识符。 |
-| uint16_t capability | 表示结构体的存储键值对的数量。 |
+| uint16_t capability | 表示结构体的存储键值对的容量。 |
  
  
   
 
-#### 成员函数
+### 成员函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | int (*putText)(OH_VBucket *bucket, const char *field, const char *value) | 将char*值放入给定列名的OH_VBucket对象中。 |
@@ -53,15 +58,17 @@ typedef struct {...} OH_VBucket
  
   
 
-#### 成员函数说明
+## 成员函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### putText()
+### putText()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int (*putText)(OH_VBucket *bucket, const char *field, const char *value)
@@ -75,6 +82,7 @@ int (*putText)(OH_VBucket *bucket, const char *field, const char *value)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_VBucket *bucket | 表示指向OH_VBucket实例的指针。 |
@@ -84,6 +92,7 @@ int (*putText)(OH_VBucket *bucket, const char *field, const char *value)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -91,9 +100,10 @@ int (*putText)(OH_VBucket *bucket, const char *field, const char *value)
  
   
 
-#### putInt64()
+### putInt64()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int (*putInt64)(OH_VBucket *bucket, const char *field, int64_t value)
@@ -107,15 +117,17 @@ int (*putInt64)(OH_VBucket *bucket, const char *field, int64_t value)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_VBucket *bucket | 表示指向OH_VBucket实例的指针。 |
-| const char *field | 数据库表中的列名，不能为空。 |
+| const char *field | 数据库表中的列名，不能为空指针。 |
 | int64_t value | 数据库表中指定列名对应的值。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -123,9 +135,10 @@ int (*putInt64)(OH_VBucket *bucket, const char *field, int64_t value)
  
   
 
-#### putReal()
+### putReal()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int (*putReal)(OH_VBucket *bucket, const char *field, double value)
@@ -139,15 +152,17 @@ int (*putReal)(OH_VBucket *bucket, const char *field, double value)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_VBucket *bucket | 表示指向OH_VBucket实例的指针。 |
-| const char *field | 数据库表中的列名，不能为空。 |
+| const char *field | 数据库表中的列名，不能为空指针。 |
 | double value | 数据库表中指定列名对应的值。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -155,9 +170,10 @@ int (*putReal)(OH_VBucket *bucket, const char *field, double value)
  
   
 
-#### putBlob()
+### putBlob()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int (*putBlob)(OH_VBucket *bucket, const char *field, const uint8_t *value, uint32_t size)
@@ -171,16 +187,18 @@ int (*putBlob)(OH_VBucket *bucket, const char *field, const uint8_t *value, uint
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_VBucket *bucket | 表示指向OH_VBucket实例的指针。 |
-| const char *field | 数据库表中的列名，不能为空。 |
+| const char *field | 数据库表中的列名，不能为空指针。 |
 | const uint8_t *value | 数据库表中指定列名对应的值。 |
-| uint32_t size | 表示value的长度。 |
+| uint32_t size | 表示value的字节长度。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -188,9 +206,10 @@ int (*putBlob)(OH_VBucket *bucket, const char *field, const uint8_t *value, uint
  
   
 
-#### putNull()
+### putNull()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int (*putNull)(OH_VBucket *bucket, const char *field)
@@ -204,14 +223,16 @@ int (*putNull)(OH_VBucket *bucket, const char *field)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_VBucket *bucket | 表示指向OH_VBucket实例的指针。 |
-| const char *field | 数据库表中的列名，不能为空。 |
+| const char *field | 数据库表中的列名，不能为空指针。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -219,9 +240,10 @@ int (*putNull)(OH_VBucket *bucket, const char *field)
  
   
 
-#### clear()
+### clear()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int (*clear)(OH_VBucket *bucket)
@@ -229,12 +251,13 @@ int (*clear)(OH_VBucket *bucket)
  
 **描述**
  
-清空[OH_VBucket](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-rdb-oh-vbucket)对象。
+清空OH_VBucket对象。
  
 **起始版本：** 10
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_VBucket *bucket | 表示指向OH_VBucket实例的指针。 |
@@ -242,6 +265,7 @@ int (*clear)(OH_VBucket *bucket)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |
@@ -249,9 +273,10 @@ int (*clear)(OH_VBucket *bucket)
  
   
 
-#### destroy()
+### destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int (*destroy)(OH_VBucket *bucket)
@@ -259,12 +284,13 @@ int (*destroy)(OH_VBucket *bucket)
  
 **描述**
  
-销毁[OH_VBucket](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-rdb-oh-vbucket)对象，并回收该对象占用的内存。
+销毁OH_VBucket对象，并回收该对象占用的内存。
  
 **起始版本：** 10
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_VBucket *bucket | 表示指向OH_VBucket实例的指针。 |
@@ -272,6 +298,7 @@ int (*destroy)(OH_VBucket *bucket)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 RDB_OK 表示成功。 RDB_E_INVALID_ARGS 表示无效参数。详细信息请参阅OH_Rdb_ErrCode。 |

@@ -1,6 +1,6 @@
 # 文本显示 (Text/Span)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-components-text-display
 
@@ -11,7 +11,7 @@ Text是文本组件，用于展示用户视图，如显示文章的文字内容�
 常见问题请参考[文本显示（Text/Span）常见问题](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-text-faq#文本显示textspan常见问题)。
 
 
-#### 创建文本
+## 创建文本
 
 Text可通过以下两种方式来创建：
 
@@ -60,7 +60,7 @@ Text($r('app.string.module_desc'))
 
 
 
-#### 添加子组件
+## 添加子组件
 
 [Span](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-span)只能作为[Text](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text)和[RichEditor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor)组件的子组件显示文本内容。可以在一个Text内添加多个Span来显示一段信息，例如产品说明书、承诺书等。
 
@@ -177,9 +177,10 @@ struct TextSpanOnHover {
 
 
 
-#### 创建自定义文本样式
+## 创建自定义文本样式
 
 Text组件支持创建自定义文本样式，以下为修改文本样式的主要属性。
+
 
 | 属性名称 | 功能描述 |
 | --- | --- |
@@ -551,7 +552,7 @@ struct ContentTransitionDemo {
           .borderWidth(1)
           .fontSize(40)
           .contentTransition(this.numberTransition)
-        Button('chang number')
+        Button('change number')
           .onClick(() => {
             this.number++
           })
@@ -721,7 +722,7 @@ struct ShaderStyleDemo {
 
 
 
-#### 添加事件
+## 添加事件
 
 Text组件可以添加通用事件，可以绑定[onClick](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-events-click#onclick)、[onTouch](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-events-touch#ontouch)等事件来响应操作。
 
@@ -767,7 +768,7 @@ struct GeneralEvents {
 
 
 
-#### 设置垂直居中
+## 设置垂直居中
 
 从API version 20开始，Text组件支持通过[textVerticalAlign](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#textverticalalign20)属性实现文本段落在垂直方向的对齐。
 
@@ -793,11 +794,11 @@ Text() {
 
 
 
-#### 设置选中菜单
+## 设置选中菜单
 
 
 
-#### 弹出选中菜单
+### 弹出选中菜单
 
  - 设置Text被选中时，会弹出包含复制、翻译、搜索的菜单。
 
@@ -931,7 +932,7 @@ onMenuItemClick = (menuItem: TextMenuItem, textRange: TextRange) => {
 
 
 
-#### 关闭选中菜单
+### 关闭选中菜单
 
 使用Text组件时，若需要实现点击空白处关闭选中的场景，分为以下两种情况：
 
@@ -987,7 +988,7 @@ struct SelectionChange {
 
 
 
-#### 屏蔽系统菜单回调和自定义扩展菜单
+### 屏蔽系统菜单回调和自定义扩展菜单
 
 从API version 12开始，支持通过[editMenuOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#editmenuoptions12)屏蔽系统菜单回调和自定义扩展菜单项。
 
@@ -1129,7 +1130,7 @@ struct CustomAndBlockMenus {
 
 
 
-#### 屏蔽系统服务类菜单
+### 屏蔽系统服务类菜单
 
  - 从API version 20开始，支持通过[disableSystemServiceMenuItems](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-textmenucontroller#disablesystemservicemenuitems20)屏蔽文本选择菜单内所有系统服务菜单项。更多详见[disableSystemServiceMenuItems](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-textmenucontroller#disablesystemservicemenuitems20)的API文档接口说明。以下示例只是完整示例工程中的一个示例，为了不影响工程其他页面示例效果，仅在页面的出现和消失生命周期中进行系统服务菜单的禁用和恢复，实际场景可自行选择其他时机，比如[UIAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability)的[onCreate](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability#oncreate)和[onDestroy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability#ondestroy)。
 
@@ -1235,7 +1236,7 @@ struct DisableMenuItems {
 
 
 
-#### 默认菜单支持自定义刷新能力
+### 默认菜单支持自定义刷新能力
 
 从API version 20开始，当文本选择区域变化后显示菜单之前触发[onPrepareMenu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#属性-1)回调，可在该回调中进行菜单数据设置。
 
@@ -1324,7 +1325,7 @@ struct PrepareMenu {
 
 
 
-#### 设置AI菜单
+## 设置AI菜单
 
 Text组件通过[enableDataDetector](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#enabledatadetector11)和[dataDetectorConfig](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#datadetectorconfig11)属性实现AI菜单的显示。AI菜单的表现形式包括：单击AI实体（指可被识别的内容，包括地址、邮箱等）弹出菜单的实体识别选项，选中文本后，文本选择菜单与鼠标右键菜单中显示的实体识别选项。
 
@@ -1361,7 +1362,7 @@ Text($r('app.string.AIMenu_Text_One'))
 
 
 
-#### 实现热搜榜
+## 实现热搜榜
 
 该示例通过[maxLines](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#maxlines)、[textOverflow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#textoverflow)、[textAlign](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#textalign)、[constraintSize](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size#constraintsize)属性展示了热搜榜的效果。
 
@@ -1475,6 +1476,6 @@ struct TextHotSearch {
 
 
 
-#### 示例代码
+## 示例代码
 
  - [文字特效合集](https://gitcode.com/HarmonyOS_Samples/text-effects)

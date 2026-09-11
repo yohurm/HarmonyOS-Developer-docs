@@ -1,16 +1,16 @@
 # DeQue
 
-更新时间：2026-05-12 09:31:20
+更新时间：2026-08-18 12:49:55
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-deque
 
-#### 功能说明
+## 功能说明
 
 将Tensor从队列中取出，用于后续处理。
  
   
 
-#### 函数原型
+## 函数原型
 
 ```text
 template <typename T> 
@@ -25,33 +25,35 @@ __aicore__ inline LocalTensor<T> DeQue()
  
   
 
-#### 参数说明
+## 参数说明
 
 无
  
   
 
-#### 支持的型号
+## 支持的型号
 
 Kirin9020系列处理器
+ 
+Kirin9030系列处理器
  
 KirinX90系列处理器
  
   
 
-#### 注意事项
+## 注意事项
 
 无
  
   
 
-#### 返回值
+## 返回值
 
 从队列中取出的[LocalTensor](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-localtensor)。
  
   
 
-#### 调用示例
+## 调用示例
 
 ```text
 // 接口：DeQue Tensor

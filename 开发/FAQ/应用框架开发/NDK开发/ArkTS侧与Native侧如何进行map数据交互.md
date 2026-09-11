@@ -24,8 +24,8 @@ for (let key of hashmap.keys()) {
 获取数据并重组为map。
  
 ```text
-#define LOG_DOMAIN 0x3200 // Global domain macro, identifying the business domain
-#define LOG_TAG "MY_TAG"  // Global tag macro, identifying module log tag 
+#define LOG_DOMAIN 0x3200<em> // Global domain macro, identifying the business domain</em>
+#define LOG_TAG "MY_TAG" <em> // Global tag macro, identifying module log tag </em>
 #include "NativeMap.h"
 #include "hilog/log.h"
 #include <map>

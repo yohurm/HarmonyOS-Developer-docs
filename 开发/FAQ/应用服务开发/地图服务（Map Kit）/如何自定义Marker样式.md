@@ -25,7 +25,7 @@
 
   
 ```text
-// 替换icon为图片类型
+<em>// 替换icon为图片类型</em>
 let markerOptions1: mapCommon.MarkerOptions = {
   position: {
     latitude: 31.984410259206815,
@@ -40,7 +40,7 @@ let markerOptions1: mapCommon.MarkerOptions = {
   clickable: true,
   draggable: true,
   flat: false,
-  // 图标存放在resources/rawfile，icon参数传入rawfile文件夹下的相对路径
+  <em>// 图标存放在resources/rawfile，icon参数传入rawfile文件夹下的相对路径</em>
   icon: 'test.png'
 };
 try {
@@ -55,7 +55,7 @@ try {
 
   
 ```text
-// 替换Marker为Builder样式
+<em>// 替换Marker为Builder样式</em>
 let markerOptions2: mapCommon.MarkerOptions = {
   position: {
     latitude: 31.994410259206815,
@@ -86,7 +86,7 @@ try {
 
   
 ```text
-// 替换Marker为Canvas样式
+<em>// 替换Marker为Canvas样式</em>
 let canvas: image.PixelMap = await this.CanvasIcon();
 let markerOptions3: mapCommon.MarkerOptions = {
   position: {
@@ -122,7 +122,7 @@ try {
 
   
 ```text
-// 替换Marker为网络图片样式
+<em>// 替换Marker为网络图片样式</em>
 try {
   this.imageMap = await this.getPicture();
 } catch (e) {
@@ -191,7 +191,7 @@ struct CustomMarker {
   async aboutToAppear() {
     let displayClass = display.getDefaultDisplaySync();
     this.mapHeight = this.getUIContext().px2vp(displayClass.height);
-    // 地图初始化参数
+    <em>// 地图初始化参数</em>
     this.mapOptions = {
       position: {
         target: {
@@ -204,7 +204,7 @@ struct CustomMarker {
     this.callback = async (err, mapController) => {
       if (!err) {
         this.mapController = mapController;
-        // 替换icon为图片类型
+        <em>// 替换icon为图片类型</em>
         let markerOptions1: mapCommon.MarkerOptions = {
           position: {
             latitude: 31.984410259206815,
@@ -219,7 +219,7 @@ struct CustomMarker {
           clickable: true,
           draggable: true,
           flat: false,
-          // 图标存放在resources/rawfile，icon参数传入rawfile文件夹下的相对路径
+          <em>// 图标存放在resources/rawfile，icon参数传入rawfile文件夹下的相对路径</em>
           icon: 'test.png'
         };
         try {
@@ -229,7 +229,7 @@ struct CustomMarker {
           console.error(`Failed to create the marker, code is：${e.code}, message is ${e.message}`);
         }
 
-        // 替换Marker为Builder样式
+        <em>// 替换Marker为Builder样式</em>
         let markerOptions2: mapCommon.MarkerOptions = {
           position: {
             latitude: 31.994410259206815,
@@ -255,7 +255,7 @@ struct CustomMarker {
           console.error(`Failed to create the marker, code is：${e.code}, message is ${e.message}`);
         }
 
-        // 替换Marker为Canvas样式
+        <em>// 替换Marker为Canvas样式</em>
         let canvas: image.PixelMap = await this.CanvasIcon();
         let markerOptions3: mapCommon.MarkerOptions = {
           position: {
@@ -280,7 +280,7 @@ struct CustomMarker {
           console.error(`Failed to create the marker, code is：${e.code}, message is ${e.message}`);
         }
 
-        // 替换Marker为网络图片样式
+        <em>// 替换Marker为网络图片样式</em>
         try {
           this.imageMap = await this.getPicture();
         } catch (e) {
@@ -315,9 +315,9 @@ struct CustomMarker {
     };
   }
 
-  // 获取网络图片
+  <em>// 获取网络图片</em>
   async getPicture(): Promise<image.PixelMap> {
-    // 请填写一个具体的网络图片地址
+    <em>// 请填写一个具体的网络图片地址</em>
     return new Promise(async (resolve, reject) => {
       http.createHttp().request('xxx.xxx.xxx',
         async (error: BusinessError, data: http.HttpResponse) => {
@@ -328,9 +328,9 @@ struct CustomMarker {
           if (200 === data.responseCode) {
             console.info('get network picture success:');
             const imageData: ArrayBuffer = data.result as ArrayBuffer;
-            // 通过ArrayBuffer创建图片源实例
+            <em>// 通过ArrayBuffer创建图片源实例</em>
             const imageSource: image.ImageSource = image.createImageSource(imageData);
-            // 通过属性创建PixelMap
+            <em>// 通过属性创建PixelMap</em>
             let imageMap = await imageSource.createPixelMap(this.decodingOptions);
             resolve(imageMap);
           } else {
@@ -340,12 +340,12 @@ struct CustomMarker {
     });
   }
 
-  // 绘制Canvas图形
+  <em>// 绘制Canvas图形</em>
   async CanvasIcon(): Promise<image.PixelMap> {
     let offCanvas: OffscreenCanvas = new OffscreenCanvas(60, 60);
     let settings: RenderingContextSettings = new RenderingContextSettings(true);
     let offContext = offCanvas.getContext('2d', settings);
-    // 绘制圆形
+    <em>// 绘制圆形</em>
     offContext.fillStyle = 0xff990000;
     offContext.beginPath();
     offContext.arc(30, 30, 30, 0, 6.28);
@@ -353,7 +353,7 @@ struct CustomMarker {
     offContext.fill();
     offContext.save();
 
-    // 在圆形内绘制文本，文本信息为clusterItems的第一个聚合点的经度
+    <em>// 在圆形内绘制文本，文本信息为clusterItems的第一个聚合点的经度</em>
     offContext.font = '16vp sans-serif';
     offContext.textAlign = 'center';
     offContext.textBaseline = 'middle';
@@ -364,7 +364,7 @@ struct CustomMarker {
     return iconPixelMap;
   }
 
-  // 创建自定义组件
+  <em>// 创建自定义组件</em>
   @Builder
   renderBuilder() {
     Stack({ alignContent: Alignment.Center }) {

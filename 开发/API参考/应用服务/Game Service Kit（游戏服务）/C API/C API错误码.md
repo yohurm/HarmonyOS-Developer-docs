@@ -1,16 +1,19 @@
 # C API错误码
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservice-c-error-code
-**支持设备：** Phone | PC/2in1 | Tablet
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 > [!NOTE]
 > 以下仅介绍Game Service Kit特有错误码，通用错误码请参考 通用错误码 。
 
   
 
-#### 1010300001 系统内部错误
+## 1010300001 系统内部错误
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 **错误信息**
  
@@ -30,9 +33,10 @@ Game Service Kit系统内部错误。
  
   
 
-#### 1010300002 鉴权失败
+## 1010300002 鉴权失败
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 **错误信息**
  
@@ -52,9 +56,10 @@ Auth failed.
  
   
 
-#### 1010300003 非法请求
+## 1010300003 非法请求
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 **错误信息**
  
@@ -74,7 +79,10 @@ Invalid request.
  
   
 
-#### 1010300004 参数错误
+## 1010300004 参数错误
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 **错误信息**
  

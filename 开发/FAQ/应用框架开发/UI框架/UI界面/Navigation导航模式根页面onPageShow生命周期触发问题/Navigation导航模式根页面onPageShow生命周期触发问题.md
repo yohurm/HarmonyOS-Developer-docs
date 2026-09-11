@@ -4,7 +4,7 @@
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-514
 
-#### 问题现象
+## 问题现象
 
 当采用Navigation导航时，软件切换后台再切换回前台或手机黑屏重新打开后，会触发子页面的aboutToAppear()事件。
  
@@ -84,22 +84,22 @@ export struct MainPage {
 问题效果预览：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/sKagxLDRRnSGmU1O9-z09Q/zh-cn_image_0000002628548522.gif?HW-CC-KV=V1&HW-CC-Date=20260818T063534Z&HW-CC-Expire=86400&HW-CC-Sign=D49D9719DB86E205E28F68C30C612BCBBCC4D9F1369BCC412BC2361326AAE26B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/sKagxLDRRnSGmU1O9-z09Q/zh-cn_image_0000002628548522.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072743Z&HW-CC-Expire=86400&HW-CC-Sign=AE68D533429681B2D76E23A14D4F9E3C18039B57221BAC79115CC9707CC29F19)
 
  
  
 
-#### 效果预览
+## 效果预览
 
 退出到后台，重新进入页面后不会重新创建子页面。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/crrTynT1SuuyVS-vC81iHQ/zh-cn_image_0000002658907837.gif?HW-CC-KV=V1&HW-CC-Date=20260818T063534Z&HW-CC-Expire=86400&HW-CC-Sign=678E8377C97AD9AB4591C4C8CAEFF18B243E8C203E110FC212B3529A0469916A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/crrTynT1SuuyVS-vC81iHQ/zh-cn_image_0000002658907837.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072743Z&HW-CC-Expire=86400&HW-CC-Sign=B1EE16317704581088AC43DD25BB0F58FE3338DFADB6E97FC4CFD6272F81093C)
 
  
  
 
-#### 背景知识
+## 背景知识
 
 [Navigation导航](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation)：官方推荐的路由导航方式，支持更丰富的动效、一次开发多端部署能力和更灵活的栈操作。在进行路由导航时需要与[NavDestination](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navdestination)搭配使用。其中Navigation作为page页面的根容器，NavDestination子页面为Navigation的内容展示区。
  
@@ -111,7 +111,7 @@ export struct MainPage {
  
  
 
-#### 问题定位
+## 问题定位
 1. 由问题描述中展示的现象可知：当页面隐藏后台，再显示的时候触发了NavDestination页面的[aboutToAppear()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-custom-component-lifecycle#abouttoappear)事件，重新创建了子页面。
 2. 问题代码中，能让子页面重新创建的代码是Navigation根页面的onPageShow()事件的将子页面推送入栈操作。将问题代码中根页面onPageShow()事件修改如下：
 
@@ -140,13 +140,13 @@ onPageShow(): void {
  
  
 
-#### 分析结论
+## 分析结论
 
 由于Navigation路由的底层逻辑为：NavDestination子页面实际是Navigation根页面的展示区域，是父子组件关系（本质是在一个页面内）。这种独特的导航方式导致，当NavDestination子页面显示在最上层时，前后台切换，看似只会触发该NavDestination子页面的显隐事件，实际也会触发Navigation所在的根页面的显隐事件。
  
  
 
-#### 修改建议
+## 修改建议
 
 由于应用的显隐操作并不会触发aboutToAppear()，所以将Navigation根页面的onPageShow()事件更换为aboutToAppear()事件，核心修改如下：
  
@@ -232,7 +232,7 @@ export struct MainPage {
  
  
 
-#### 常见FAQ
+## 常见FAQ
 
 Q：为什么每次页面切到后台，再切到前台，都会刷新页面？
  

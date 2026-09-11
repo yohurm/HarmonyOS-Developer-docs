@@ -61,7 +61,7 @@ export default class ExampleEmbeddedAbility extends EmbeddedUIExtensionAbility {
       'session': session
     };
     let storage: LocalStorage = new LocalStorage(param);
-    // 加载pages/extension.ets页面内容
+  <em>  // 加载pages/extension.ets页面内容</em>
     session.loadContent('pages/Extension', storage);
   }
 
@@ -153,7 +153,7 @@ import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
 let options: commonEventManager.CommonEventPublishData = {
   code: 0,
   data: 'Hello',
-  isOrdered: true // 有序公共事件
+  isOrdered: true <em>// 有序公共事件</em>
 };
 
 
@@ -168,22 +168,22 @@ struct Index {
 
 
   aboutToAppear(): void {
-    // 定义订阅者，用于保存创建成功的订阅者对象，后续使用其完成订阅及退订的动作
+  <em>  // 定义订阅者，用于保存创建成功的订阅者对象，后续使用其完成订阅及退订的动作</em>
     let subscriber: commonEventManager.CommonEventSubscriber;
-    // 订阅者信息
+    <em>// 订阅者信息</em>
     let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
       events: ['event']
     };
 
 
-    // 创建订阅者
+ <em>   // 创建订阅者</em>
     try {
       commonEventManager.createSubscriber(subscribeInfo,
         (err: BusinessError, commonEventSubscriber: commonEventManager.CommonEventSubscriber) => {
           if (!err) {
             console.info(`Succeeded in creating subscriber.`);
             subscriber = commonEventSubscriber;
-            // 订阅公共事件
+         <em>   // 订阅公共事件</em>
             try {
               commonEventManager.subscribe(subscriber,
                 (err: BusinessError, data: commonEventManager.CommonEventData) => {
@@ -244,7 +244,7 @@ struct Index {
           .width('100%')
           .height('100%')
           .onError((error) => {
-            // 失败或异常触发onError回调，文本框显示如下报错内容
+          <em>  // 失败或异常触发onError回调，文本框显示如下报错内容</em>
             this.message = 'Error: code = ' + error.code;
           });
       }
@@ -271,11 +271,11 @@ struct Index {
 import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
 
 
-// 公共事件相关信息，以发布有序公共事件为例
+<em>// 公共事件相关信息，以发布有序公共事件为例</em>
 let options: commonEventManager.CommonEventPublishData = {
   code: 0,
   data: 'Good',
-  isOrdered: true // 有序公共事件
+  isOrdered: true<em> // 有序公共事件</em>
 };
 
 
@@ -286,22 +286,22 @@ struct Extension {
 
 
   aboutToAppear(): void {
-    // 定义订阅者，用于保存创建成功的订阅者对象，后续使用其完成订阅及退订的动作
+   <em> // 定义订阅者，用于保存创建成功的订阅者对象，后续使用其完成订阅及退订的动作</em>
     let subscriber: commonEventManager.CommonEventSubscriber;
-    // 订阅者信息
+ <em>   // 订阅者信息</em>
     let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
       events: ['event2']
     };
 
 
-    // 创建订阅者
+  <em>  // 创建订阅者</em>
     try {
       commonEventManager.createSubscriber(subscribeInfo,
         (err: BusinessError, commonEventSubscriber: commonEventManager.CommonEventSubscriber) => {
           if (!err) {
             console.info(`Succeeded in creating subscriber.`);
             subscriber = commonEventSubscriber;
-            // 订阅公共事件
+            /<em>/ 订阅公共事件</em>
             try {
               commonEventManager.subscribe(subscriber,
                 (err: BusinessError, data: commonEventManager.CommonEventData) => {
@@ -334,7 +334,7 @@ struct Extension {
       Button('发送数据')
         .width('80%')
         .onClick(() => {
-          // 发布公共事件
+        <em>  // 发布公共事件</em>
           try {
             commonEventManager.publish('event', options, (err: BusinessError) => {
               if (err) {

@@ -1,6 +1,6 @@
 # arEngine（AR增强现实能力）
 
-更新时间：2026-07-09 02:26:55
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-api-arengine
 **支持设备：** Phone | Tablet | TV
@@ -12,7 +12,8 @@
 **起始版本：** 5.1.0(18)
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -22,7 +23,8 @@ import { arEngine } from '@kit.AREngine';
 
 
 
-#### ARFeatureType
+## ARFeatureType
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -33,6 +35,7 @@ import { arEngine } from '@kit.AREngine';
 **系统能力：** SystemCapability.AREngine.Core
 
 **起始版本：** 6.1.0(23)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -48,7 +51,8 @@ import { arEngine } from '@kit.AREngine';
 
 
 
-#### ARAddAugmentedImageMode
+## ARAddAugmentedImageMode
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -60,6 +64,7 @@ import { arEngine } from '@kit.AREngine';
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NORMAL | 0 | 正常模式。 当添加的图片数量超过默认的最多图片数量（50）时，AR Engine会报告错误，错误信息见1009200011。 |
@@ -68,7 +73,8 @@ import { arEngine } from '@kit.AREngine';
 
 
 
-#### ARAddAugmentedImageReason
+## ARAddAugmentedImageReason
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -79,6 +85,7 @@ import { arEngine } from '@kit.AREngine';
 **系统能力：** SystemCapability.AREngine.Core
 
 **起始版本：** 5.1.0(18)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -94,30 +101,45 @@ import { arEngine } from '@kit.AREngine';
   图像宽度与高度之比，如：640*480分辨率的图像，其宽高比为1.33，对应评价Excellent。
 
 | 图像宽高比 | 评价 |
+
 | --- | --- |
+
 | [6, ∞) | Invalid |
+
 | [4, 6) | Bad |
+
 | [2.5, 4) | Unfit |
+
 | [2, 2.5) | Fit |
+
 | [1.5, 2) | Good |
+
 | [1, 1.5) | Excellent |
  - 分辨率：
 
   以640*480为基准，按比例计算。如：选取图像分辨率为320*240，以基准分辨率计算其比值为0.5，对应评价Fit。
 
 | 图像分辨率比值 | 评价 |
+
 | --- | --- |
+
 | [0, 0.2] | Invalid |
+
 | (0.2, 0.3] | Bad |
+
 | (0.35, 0.45] | Unfit |
+
 | (0.45, 0.7] | Fit |
+
 | (0.7, 0.9] | Good |
+
 | (0.9, ∞) | Excellent |
 
 
 
 
-#### ARAnimojiTriangleLabel
+## ARAnimojiTriangleLabel
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -128,6 +150,7 @@ import { arEngine } from '@kit.AREngine';
 **系统能力：** SystemCapability.AREngine.Core
 
 **起始版本：** 6.1.0(23)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -145,7 +168,8 @@ import { arEngine } from '@kit.AREngine';
 
 
 
-#### ARBlendShapeType
+## ARBlendShapeType
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -156,6 +180,7 @@ import { arEngine } from '@kit.AREngine';
 **系统能力：** SystemCapability.AREngine.Core
 
 **起始版本：** 6.1.0(23)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -227,7 +252,8 @@ import { arEngine } from '@kit.AREngine';
 
 
 
-#### ARCameraLensFacing
+## ARCameraLensFacing
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -239,6 +265,7 @@ import { arEngine } from '@kit.AREngine';
 
 **起始版本：** 6.1.0(23)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | REAR | 0 | 后置摄像头。 |
@@ -247,7 +274,8 @@ import { arEngine } from '@kit.AREngine';
 
 
 
-#### ARDepthMode
+## ARDepthMode
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -259,6 +287,7 @@ import { arEngine } from '@kit.AREngine';
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DISABLED | 0 | 关闭深度模式。 |
@@ -267,7 +296,8 @@ import { arEngine } from '@kit.AREngine';
 
 
 
-#### ARFocusMode
+## ARFocusMode
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -279,6 +309,7 @@ import { arEngine } from '@kit.AREngine';
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | FIXED | 0 | 固定焦点模式。 |
@@ -287,7 +318,8 @@ import { arEngine } from '@kit.AREngine';
 
 
 
-#### ARImageFormat
+## ARImageFormat
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -299,6 +331,7 @@ import { arEngine } from '@kit.AREngine';
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | UNKNOWN | 0 | 无效的图像格式。 |
@@ -309,7 +342,8 @@ import { arEngine } from '@kit.AREngine';
 
 
 
-#### ARMeshMode
+## ARMeshMode
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -321,6 +355,7 @@ import { arEngine } from '@kit.AREngine';
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DISABLED | 0 | 网格模式关闭。 AR Engine不会处理或显示网格数据。 |
@@ -329,7 +364,8 @@ import { arEngine } from '@kit.AREngine';
 
 
 
-#### ARMultiFaceMode
+## ARMultiFaceMode
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -341,6 +377,7 @@ import { arEngine } from '@kit.AREngine';
 
 **起始版本：** 6.1.0(23)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | MULTIFACE_DISABLE | 0x300 | 多人脸模式关闭。 |
@@ -349,7 +386,8 @@ import { arEngine } from '@kit.AREngine';
 
 
 
-#### ARBodyLandmarkType
+## ARBodyLandmarkType
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -360,6 +398,7 @@ import { arEngine } from '@kit.AREngine';
 **系统能力：** SystemCapability.AREngine.Core
 
 **起始版本：** 6.1.0(23)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -387,7 +426,8 @@ import { arEngine } from '@kit.AREngine';
 
 
 
-#### ARPlaneFindingMode
+## ARPlaneFindingMode
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -399,6 +439,7 @@ import { arEngine } from '@kit.AREngine';
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DISABLED | 0 | 禁用平面检测。 |
@@ -409,7 +450,8 @@ import { arEngine } from '@kit.AREngine';
 
 
 
-#### ARPlaneType
+## ARPlaneType
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -421,6 +463,7 @@ import { arEngine } from '@kit.AREngine';
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | FACING_HORIZONTAL_UPWARD | 0 | 朝上的水平面，如地面和桌面平台。 |
@@ -431,7 +474,8 @@ import { arEngine } from '@kit.AREngine';
 
 
 
-#### ARPointOrientationMode
+## ARPointOrientationMode
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -443,6 +487,7 @@ import { arEngine } from '@kit.AREngine';
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | INITIALIZED_TO_IDENTITY | 0 | 与世界坐标系的朝向一致，但会稍作调整。 |
@@ -451,7 +496,8 @@ import { arEngine } from '@kit.AREngine';
 
 
 
-#### ARPoseMode
+## ARPoseMode
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -463,6 +509,7 @@ import { arEngine } from '@kit.AREngine';
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | GRAVITY | 0 | 由重力确定。 世界坐标系的Y轴与重力方向一致，原点为设备所在的原始位置。参见坐标系说明。 |
@@ -471,7 +518,8 @@ import { arEngine } from '@kit.AREngine';
 
 
 
-#### ARPoseType
+## ARPoseType
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -483,6 +531,7 @@ import { arEngine } from '@kit.AREngine';
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | IDENTITY | 0 | 默认状态，即没有任何旋转或平移。 |
@@ -493,7 +542,8 @@ import { arEngine } from '@kit.AREngine';
 
 
 
-#### ARPowerMode
+## ARPowerMode
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -504,6 +554,7 @@ import { arEngine } from '@kit.AREngine';
 **系统能力：** SystemCapability.AREngine.Core
 
 **起始版本：** 5.1.0(18)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -516,7 +567,8 @@ import { arEngine } from '@kit.AREngine';
 
 
 
-#### ARRemoteSensorMode
+## ARRemoteSensorMode
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -528,6 +580,7 @@ import { arEngine } from '@kit.AREngine';
 
 **起始版本：** 26.0.0
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | LOCAL_SENSOR | 0 | 使用本地相机和传感器。 |
@@ -536,7 +589,8 @@ import { arEngine } from '@kit.AREngine';
 
 
 
-#### ARSemanticDenseMode
+## ARSemanticDenseMode
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -548,6 +602,7 @@ import { arEngine } from '@kit.AREngine';
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DISABLED | 0 | 关闭高精几何重建识别模式。 |
@@ -558,7 +613,8 @@ import { arEngine } from '@kit.AREngine';
 
 
 
-#### ARSemanticMode
+## ARSemanticMode
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -570,6 +626,7 @@ import { arEngine } from '@kit.AREngine';
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NONE | 0 | 不使用语义。 |
@@ -578,7 +635,8 @@ import { arEngine } from '@kit.AREngine';
 
 
 
-#### ARSemanticPlaneLabel
+## ARSemanticPlaneLabel
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -589,6 +647,7 @@ import { arEngine } from '@kit.AREngine';
 **系统能力：** SystemCapability.AREngine.Core
 
 **起始版本：** 5.1.0(18)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -608,7 +667,8 @@ import { arEngine } from '@kit.AREngine';
 
 
 
-#### ARTrackingState
+## ARTrackingState
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -620,6 +680,7 @@ import { arEngine } from '@kit.AREngine';
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | TRACKING | 0 | 正在追踪。 |
@@ -629,7 +690,8 @@ import { arEngine } from '@kit.AREngine';
 
 
 
-#### ARTrackingStateReason
+## ARTrackingStateReason
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -641,6 +703,7 @@ import { arEngine } from '@kit.AREngine';
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NONE | 0 | 未知原因。 这可能是由于系统暂时无法识别可追踪对象，但仍在尝试追踪。 |
@@ -650,7 +713,8 @@ import { arEngine } from '@kit.AREngine';
 
 
 
-#### ARTrackableType
+## ARTrackableType
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -661,6 +725,7 @@ import { arEngine } from '@kit.AREngine';
 **系统能力：** SystemCapability.AREngine.Core
 
 **起始版本：** 5.1.0(18)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -674,7 +739,8 @@ import { arEngine } from '@kit.AREngine';
 
 
 
-#### ARType
+## ARType
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -686,6 +752,7 @@ import { arEngine } from '@kit.AREngine';
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | WORLD | 0x01 | 环境追踪能力。 |
@@ -696,7 +763,8 @@ import { arEngine } from '@kit.AREngine';
 
 
 
-#### Distortion
+## Distortion
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -712,6 +780,7 @@ type Distortion = [number, number, number, number, number]
 
 **起始版本：** 5.1.0(18)
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 表示值类型为数字，相机内参，取值范围无限制。 其中Distortion [0]~Distortion [2]表示k1，k2，k3（径向畸变系数），Distortion [3]~Distortion [4]是切向畸变系数。 |
@@ -719,7 +788,8 @@ type Distortion = [number, number, number, number, number]
 
 
 
-#### ARAugmentedImageDatabase
+## ARAugmentedImageDatabase
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -735,9 +805,10 @@ type Distortion = [number, number, number, number, number]
 
 
 
-#### ARAugmentedImageDatabase.deserialize
+### ARAugmentedImageDatabase.deserialize
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 deserialize(buffer: ArrayBuffer): Promise&lt;void&gt;
 
@@ -755,12 +826,14 @@ deserialize(buffer: ArrayBuffer): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | buffer | ArrayBuffer | 是 | 增强图像数据库的ArrayBuffer数据。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -770,6 +843,7 @@ deserialize(buffer: ArrayBuffer): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -790,9 +864,10 @@ await imageDatabase.deserialize(buffer);
 
 
 
-#### ARAugmentedImageDatabase.serialize
+### ARAugmentedImageDatabase.serialize
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 serialize(): Promise&lt;ArrayBuffer&gt;
 
@@ -806,6 +881,7 @@ serialize(): Promise&lt;ArrayBuffer&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;ArrayBuffer&gt; | Promise对象，返回ArrayBuffer对象。 ArrayBuffer是一个缓冲区，这个缓冲区包含了增强图像数据库的序列化数据。 |
@@ -814,6 +890,7 @@ serialize(): Promise&lt;ArrayBuffer&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -831,9 +908,10 @@ await imageDatabase.serialize();
 
 
 
-#### ARAugmentedImageDatabase.addImage
+### ARAugmentedImageDatabase.addImage
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 addImage(name: string, pixelMap: image.PixelMap, widthInMeters: number): Promise&lt;ARAddAugmentedImageResult&gt;
 
@@ -847,6 +925,7 @@ addImage(name: string, pixelMap: image.PixelMap, widthInMeters: number): Promise
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 图像名称。 不允许为空，255个字符以内，超过255个字符的部分将被自动截断。 |
@@ -856,6 +935,7 @@ addImage(name: string, pixelMap: image.PixelMap, widthInMeters: number): Promise
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;ARAddAugmentedImageResult&gt; | Promise对象，返回ARAddAugmentedImageResult对象。 ARAddAugmentedImageResult是一个表示添加增强图像结果的数据。 |
@@ -864,6 +944,7 @@ addImage(name: string, pixelMap: image.PixelMap, widthInMeters: number): Promise
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -893,9 +974,10 @@ await imageDatabase.addImage('xx', pixelMap, 0.3);
 
 
 
-#### ARAugmentedImageDatabase.getImageCount
+### ARAugmentedImageDatabase.getImageCount
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 getImageCount(): number
 
@@ -909,6 +991,7 @@ getImageCount(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回图像的数量。 |
@@ -917,6 +1000,7 @@ getImageCount(): number
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -934,9 +1018,10 @@ imageDatabase.getImageCount();
 
 
 
-#### ARAugmentedImageDatabase.getCapacity
+### ARAugmentedImageDatabase.getCapacity
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 getCapacity(): number
 
@@ -950,6 +1035,7 @@ getCapacity(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回可添加图像的最大数量。 |
@@ -958,6 +1044,7 @@ getCapacity(): number
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -975,9 +1062,10 @@ imageDatabase.getCapacity();
 
 
 
-#### ARAugmentedImageDatabase.getImageAddMode
+### ARAugmentedImageDatabase.getImageAddMode
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 getImageAddMode(): ARAddAugmentedImageMode
 
@@ -991,6 +1079,7 @@ getImageAddMode(): ARAddAugmentedImageMode
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ARAddAugmentedImageMode | 返回图片的添加模式。 |
@@ -999,6 +1088,7 @@ getImageAddMode(): ARAddAugmentedImageMode
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1016,9 +1106,10 @@ imageDatabase.getImageAddMode();
 
 
 
-#### ARAugmentedImageDatabase.setImageAddMode
+### ARAugmentedImageDatabase.setImageAddMode
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 setImageAddMode(mode: ARAddAugmentedImageMode): void
 
@@ -1032,6 +1123,7 @@ setImageAddMode(mode: ARAddAugmentedImageMode): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | ARAddAugmentedImageMode | 是 | 添加图片模式。 |
@@ -1040,6 +1132,7 @@ setImageAddMode(mode: ARAddAugmentedImageMode): void
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1057,9 +1150,10 @@ imageDatabase.setImageAddMode(arEngine.ARAddAugmentedImageMode.UPDATE);
 
 
 
-#### ARAugmentedImageDatabase.release
+### ARAugmentedImageDatabase.release
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 release(): Promise&lt;void&gt;
 
@@ -1073,6 +1167,7 @@ release(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -1081,6 +1176,7 @@ release(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1098,7 +1194,8 @@ await imageDatabase.release();
 
 
 
-#### ARCameraIntrinsics
+## ARCameraIntrinsics
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1114,6 +1211,7 @@ await imageDatabase.release();
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | fx | number | 是 | 否 | 相机在x轴上的焦距。 可取任意值。 |
@@ -1125,7 +1223,8 @@ await imageDatabase.release();
 
 
 
-#### ARConfig
+## ARConfig
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1138,6 +1237,7 @@ await imageDatabase.release();
 **设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-api-arviewcontroller#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1160,7 +1260,8 @@ await imageDatabase.release();
 
 
 
-#### ARPointCloud
+## ARPointCloud
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1174,6 +1275,7 @@ await imageDatabase.release();
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | timestamp | number | 是 | 否 | 当前特征点云检测时的时间戳。 以ns为单位。 |
@@ -1182,7 +1284,8 @@ await imageDatabase.release();
 
 
 
-#### ARSemanticDenseCubeData
+## ARSemanticDenseCubeData
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1196,6 +1299,7 @@ await imageDatabase.release();
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | id | number | 是 | 否 | 当前立方体的ID。 |
@@ -1207,7 +1311,8 @@ await imageDatabase.release();
 
 
 
-#### ARSemanticDensePointData
+## ARSemanticDensePointData
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1221,6 +1326,7 @@ await imageDatabase.release();
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | id | ArrayBuffer | 是 | 否 | 稠密点云数据所有点的id数组。 说明： 该类型在使用时，如需转换则为int32类型，转换方法参考数据类型转换说明。 |
@@ -1230,7 +1336,8 @@ await imageDatabase.release();
 
 
 
-#### ARSession
+## ARSession
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1246,7 +1353,8 @@ await imageDatabase.release();
 
 
 
-#### ARSession.getFrame
+### ARSession.getFrame
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1264,6 +1372,7 @@ getFrame(): ARFrame
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ARFrame | 返回AR Engine处理后的一帧数据。 |
@@ -1272,6 +1381,7 @@ getFrame(): ARFrame
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1308,7 +1418,8 @@ class ARViewCallbackImpl extends arViewController.ARViewCallback {
 
 
 
-#### ARSession.createAnchor
+### ARSession.createAnchor
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1326,12 +1437,14 @@ createAnchor(pose: ARPose): ARAnchor
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pose | ARPose | 是 | 用于创建锚点的位姿对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1341,6 +1454,7 @@ createAnchor(pose: ARPose): ARAnchor
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1368,7 +1482,8 @@ arSession.createAnchor(pose);
 
 
 
-#### ARSession.detachAnchor
+### ARSession.detachAnchor
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1390,6 +1505,7 @@ detachAnchor(anchor: ARAnchor): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | anchor | ARAnchor | 是 | 要解绑的锚点对象。 |
@@ -1398,6 +1514,7 @@ detachAnchor(anchor: ARAnchor): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1418,7 +1535,8 @@ arSession.detachAnchor(anchor);
 
 
 
-#### ARSession.getAllAnchors
+### ARSession.getAllAnchors
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1436,6 +1554,7 @@ getAllAnchors(): Array&lt;ARAnchor&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;ARAnchor&gt; | 返回一个锚点对象组成的数组。 |
@@ -1444,6 +1563,7 @@ getAllAnchors(): Array&lt;ARAnchor&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1460,7 +1580,8 @@ arSession.getAllAnchors();
 
 
 
-#### ARSession.getAllTrackables
+### ARSession.getAllTrackables
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1478,12 +1599,14 @@ getAllTrackables(type: ARTrackableType): Array&lt;ARTrackable&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | ARTrackableType | 是 | 可追踪对象的类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1493,6 +1616,7 @@ getAllTrackables(type: ARTrackableType): Array&lt;ARTrackable&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1510,7 +1634,8 @@ arSession.getAllTrackables(arEngine.ARTrackableType.BASE);
 
 
 
-#### ARSession.openFlash
+### ARSession.openFlash
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1528,6 +1653,7 @@ openFlash(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象，返回true表示设备的闪光灯已开启，返回false表示设备闪光灯未开启。 |
@@ -1536,6 +1662,7 @@ openFlash(): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1551,7 +1678,8 @@ await arSession.openFlash();
 
 
 
-#### ARSession.closeFlash
+### ARSession.closeFlash
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1569,6 +1697,7 @@ closeFlash(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象，返回true表示设备的闪光灯已关闭，返回false表示设备闪光灯未关闭。 |
@@ -1577,6 +1706,7 @@ closeFlash(): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1592,7 +1722,8 @@ await arSession.closeFlash();
 
 
 
-#### ARSession.release
+### ARSession.release
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1610,6 +1741,7 @@ release(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -1618,6 +1750,7 @@ release(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1633,7 +1766,8 @@ await arSession.release();
 
 
 
-#### ImageComponent
+## ImageComponent
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1647,6 +1781,7 @@ await arSession.release();
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | rowStride | number | 是 | 否 | 图像中两个连续像素行起始位置之间的字节数。行间距始终大于0。 |
@@ -1656,7 +1791,8 @@ await arSession.release();
 
 
 
-#### ARAddAugmentedImageResult
+## ARAddAugmentedImageResult
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1670,6 +1806,7 @@ await arSession.release();
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | index | number | 否 | 否 | 图像唯一索引，取值范围0~49。 |
@@ -1679,7 +1816,8 @@ await arSession.release();
 
 
 
-#### ARAnchor
+## ARAnchor
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1697,6 +1835,7 @@ await arSession.release();
 
 **参数：**
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | id | number | 是 | 否 | 锚点的索引，取值范围0~49。 |
@@ -1705,7 +1844,8 @@ await arSession.release();
 
 
 
-#### ARAnchor.getPose
+### ARAnchor.getPose
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1723,6 +1863,7 @@ getPose(): ARPose
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ARPose | 返回位姿对象。 |
@@ -1731,6 +1872,7 @@ getPose(): ARPose
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1749,7 +1891,8 @@ anchors[0].getPose();
 
 
 
-#### ARAnchor.detach
+### ARAnchor.detach
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1773,6 +1916,7 @@ detach(): void
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1009200001 | Failure. |
@@ -1790,7 +1934,8 @@ anchors[0].detach();
 
 
 
-#### ARAnchor.release
+### ARAnchor.release
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1808,6 +1953,7 @@ release(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -1816,6 +1962,7 @@ release(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1834,7 +1981,8 @@ await anchors[0].release();
 
 
 
-#### ARAugmentedImage
+## ARAugmentedImage
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1850,6 +1998,7 @@ await anchors[0].release();
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | extendX | number | 是 | 否 | 表示在X轴上估计的物理图像宽度，单位为m。如果图像的追踪状态为PAUSED或STOPPED，返回的宽度信息是最后一次追踪的宽度。如果图像从未被追踪，返回0。 |
@@ -1860,7 +2009,8 @@ await anchors[0].release();
 
 
 
-#### ARBlendShapes
+## ARBlendShapes
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1874,6 +2024,7 @@ await anchors[0].release();
 
 **参数：**
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | count | number | 是 | 否 | 表示微表情的个数，最小为0，最大为64。 |
@@ -1881,7 +2032,8 @@ await anchors[0].release();
 
 
 
-#### ARBlendShapes.getData
+### ARBlendShapes.getData
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1899,6 +2051,7 @@ getData(): ArrayBuffer
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArrayBuffer | 微表情参数数据。 |
@@ -1907,6 +2060,7 @@ getData(): ArrayBuffer
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1927,7 +2081,8 @@ faceBlendShapes.getData();
 
 
 
-#### ARBlendShapes.getTypes
+### ARBlendShapes.getTypes
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1945,6 +2100,7 @@ getTypes(): Array&lt;ARBlendShapeType&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;ARBlendShapeType&gt; | 微表情的类型。 |
@@ -1953,6 +2109,7 @@ getTypes(): Array&lt;ARBlendShapeType&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1973,7 +2130,8 @@ faceBlendShapes.getTypes();
 
 
 
-#### ARBlendShapes.release
+### ARBlendShapes.release
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1991,6 +2149,7 @@ release(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -1999,6 +2158,7 @@ release(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2019,7 +2179,8 @@ faceBlendShapes.release();
 
 
 
-#### ARLandmark
+## ARLandmark
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2033,6 +2194,7 @@ faceBlendShapes.release();
 
 **参数：**
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | count | number | 是 | 否 | 表示人脸关键点的个数，固定为84。 |
@@ -2040,7 +2202,8 @@ faceBlendShapes.release();
 
 
 
-#### ARLandmark.getVertices2D
+### ARLandmark.getVertices2D
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2058,6 +2221,7 @@ getVertices2D(): ArrayBuffer
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArrayBuffer | 2D位姿信息。 |
@@ -2066,6 +2230,7 @@ getVertices2D(): ArrayBuffer
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2086,7 +2251,8 @@ faceLandmark.getVertices2D();
 
 
 
-#### ARLandmark.getVertices3D
+### ARLandmark.getVertices3D
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2104,6 +2270,7 @@ getVertices3D(): ArrayBuffer
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArrayBuffer | 3D位姿信息。 |
@@ -2112,6 +2279,7 @@ getVertices3D(): ArrayBuffer
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2132,7 +2300,8 @@ faceLandmark.getVertices3D();
 
 
 
-#### ARLandmark.release
+### ARLandmark.release
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2150,6 +2319,7 @@ release(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -2158,6 +2328,7 @@ release(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2178,7 +2349,8 @@ await faceLandmark.release();
 
 
 
-#### ARCamera
+## ARCamera
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2194,6 +2366,7 @@ await faceLandmark.release();
 
 **参数：**
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | state | ARTrackingState | 是 | 否 | 可追踪对象的追踪状态。 |
@@ -2203,7 +2376,8 @@ await faceLandmark.release();
 
 
 
-#### ARCamera.getPose
+### ARCamera.getPose
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2225,6 +2399,7 @@ getPose(): ARPose
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ARPose | 返回一个位姿对象。 |
@@ -2233,6 +2408,7 @@ getPose(): ARPose
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2252,7 +2428,8 @@ camera.getPose();
 
 
 
-#### ARCamera.getDisplayOrientedPose
+### ARCamera.getDisplayOrientedPose
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2274,6 +2451,7 @@ getDisplayOrientedPose(): ARPose
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ARPose | 返回一个位姿对象。 |
@@ -2282,6 +2460,7 @@ getDisplayOrientedPose(): ARPose
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2301,7 +2480,8 @@ camera.getDisplayOrientedPose();
 
 
 
-#### ARCamera.getProjectionMatrix
+### ARCamera.getProjectionMatrix
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2319,6 +2499,7 @@ getProjectionMatrix(near: number, far: number): Matrix4
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | near | number | 是 | 相机坐标系统中的近裁剪平面的距离，单位为m，值必须大于0。 |
@@ -2326,6 +2507,7 @@ getProjectionMatrix(near: number, far: number): Matrix4
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2335,6 +2517,7 @@ getProjectionMatrix(near: number, far: number): Matrix4
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2355,7 +2538,8 @@ camera.getProjectionMatrix(0, 1);
 
 
 
-#### ARCamera.getImageIntrinsics
+### ARCamera.getImageIntrinsics
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2375,6 +2559,7 @@ getImageIntrinsics(): ARCameraIntrinsics
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ARCameraIntrinsics | 返回一个相机内参对象。 |
@@ -2383,6 +2568,7 @@ getImageIntrinsics(): ARCameraIntrinsics
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2402,7 +2588,8 @@ camera.getImageIntrinsics();
 
 
 
-#### ARFace
+## ARFace
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2418,7 +2605,8 @@ camera.getImageIntrinsics();
 
 
 
-#### ARFace.getGeometry
+### ARFace.getGeometry
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2436,6 +2624,7 @@ getGeometry(): ARGeometry
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ARGeometry | 人脸拓扑结构对象，即人脸Mesh对象。 |
@@ -2444,6 +2633,7 @@ getGeometry(): ARGeometry
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2463,7 +2653,8 @@ face.getGeometry();
 
 
 
-#### ARFace.getBlendShapes
+### ARFace.getBlendShapes
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2481,6 +2672,7 @@ getBlendShapes(): ARBlendShapes
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ARBlendShapes | 人脸微表情对象。 |
@@ -2489,6 +2681,7 @@ getBlendShapes(): ARBlendShapes
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2508,7 +2701,8 @@ face.getBlendShapes();
 
 
 
-#### ARFace.getLandmark
+### ARFace.getLandmark
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2526,6 +2720,7 @@ getLandmark(): ARLandmark
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ARLandmark | 人脸关键点对象。 |
@@ -2534,6 +2729,7 @@ getLandmark(): ARLandmark
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2553,7 +2749,8 @@ face.getLandmark();
 
 
 
-#### ARFaceAnchor
+## ARFaceAnchor
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2569,7 +2766,8 @@ face.getLandmark();
 
 
 
-#### ARFaceAnchor.getFace
+### ARFaceAnchor.getFace
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2587,6 +2785,7 @@ getFace(): ARFace
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ARFace | 人脸跟踪的结果。 |
@@ -2595,6 +2794,7 @@ getFace(): ARFace
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2617,7 +2817,8 @@ async onAnchorAdd(ctx: arViewController.ARViewContext, node: Node, anchor: arEng
 
 
 
-#### ARBodyLandmark2D
+## ARBodyLandmark2D
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2628,6 +2829,7 @@ async onAnchorAdd(ctx: arViewController.ARViewContext, node: Node, anchor: arEng
 **系统能力：** SystemCapability.AREngine.Core
 
 **起始版本：** 6.1.0(23)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2640,7 +2842,8 @@ async onAnchorAdd(ctx: arViewController.ARViewContext, node: Node, anchor: arEng
 
 
 
-#### ARBody
+## ARBody
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2652,6 +2855,7 @@ async onAnchorAdd(ctx: arViewController.ARViewContext, node: Node, anchor: arEng
 
 **起始版本：** 6.1.0(23)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | trackId | number | 是 | 否 | 表示当前人体骨骼关键点ID。 |
@@ -2660,7 +2864,8 @@ async onAnchorAdd(ctx: arViewController.ARViewContext, node: Node, anchor: arEng
 
 
 
-#### ARBody.getLandmarks2D
+### ARBody.getLandmarks2D
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2678,6 +2883,7 @@ getLandmarks2D(): Array&lt;ARBodyLandmark2D&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;ARBodyLandmark2D&gt; | 返回人体骨骼关键点信息数组。 |
@@ -2686,6 +2892,7 @@ getLandmarks2D(): Array&lt;ARBodyLandmark2D&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2707,7 +2914,8 @@ if (arbodys.length > 0) {
 
 
 
-#### ARFrame
+## ARFrame
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2721,6 +2929,7 @@ AR Engine处理的一帧数据。
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | timestamp | number | 是 | 否 | 表示当前帧的时间戳。 以ns为单位。 |
@@ -2729,7 +2938,8 @@ AR Engine处理的一帧数据。
 
 
 
-#### ARFrame.getCamera
+### ARFrame.getCamera
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2747,6 +2957,7 @@ getCamera(): ARCamera
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ARCamera | 返回当前帧的相机对象。 |
@@ -2755,6 +2966,7 @@ getCamera(): ARCamera
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2773,7 +2985,8 @@ frame.getCamera();
 
 
 
-#### ARFrame.getUpdatedTrackables
+### ARFrame.getUpdatedTrackables
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -2791,12 +3004,14 @@ getUpdatedTrackables(type: ARTrackableType): Array&lt;ARTrackable&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | ARTrackableType | 是 | 可追踪对象类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2806,6 +3021,7 @@ getUpdatedTrackables(type: ARTrackableType): Array&lt;ARTrackable&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2825,9 +3041,10 @@ frame.getUpdatedTrackables(arEngine.ARTrackableType.BASE);
 
 
 
-#### ARFrame.hitTest
+### ARFrame.hitTest
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 hitTest(x: number, y: number): Array&lt;ARHitResult&gt;
 
@@ -2843,6 +3060,7 @@ hitTest(x: number, y: number): Array&lt;ARHitResult&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | x | number | 是 | 表示预览区域中的像素的X坐标。 该值由设备显示分辨率大小确定。 |
@@ -2850,6 +3068,7 @@ hitTest(x: number, y: number): Array&lt;ARHitResult&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2859,6 +3078,7 @@ hitTest(x: number, y: number): Array&lt;ARHitResult&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2879,9 +3099,10 @@ frame.hitTest(0, 0);
 
 
 
-#### ARFrame.acquireSceneMesh
+### ARFrame.acquireSceneMesh
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 acquireSceneMesh(): ARSceneMesh
 
@@ -2897,6 +3118,7 @@ acquireSceneMesh(): ARSceneMesh
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ARSceneMesh | 返回环境网格数据的集合。 |
@@ -2905,6 +3127,7 @@ acquireSceneMesh(): ARSceneMesh
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2924,9 +3147,10 @@ frame.acquireSceneMesh();
 
 
 
-#### ARFrame.acquireDepthImage16Bits
+### ARFrame.acquireDepthImage16Bits
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 acquireDepthImage16Bits(): ARImage
 
@@ -2944,6 +3168,7 @@ acquireDepthImage16Bits(): ARImage
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ARImage | 返回相机视频流帧对象。 |
@@ -2952,6 +3177,7 @@ acquireDepthImage16Bits(): ARImage
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2970,9 +3196,10 @@ frame.acquireDepthImage16Bits();
 
 
 
-#### ARFrame.acquireDepthConfidenceImage
+### ARFrame.acquireDepthConfidenceImage
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 acquireDepthConfidenceImage(): ARImage
 
@@ -2990,6 +3217,7 @@ acquireDepthConfidenceImage(): ARImage
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ARImage | 返回相机视频流帧对象。 |
@@ -2998,6 +3226,7 @@ acquireDepthConfidenceImage(): ARImage
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3016,9 +3245,10 @@ frame.acquireDepthConfidenceImage();
 
 
 
-#### ARFrame.acquireSemanticDense
+### ARFrame.acquireSemanticDense
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 acquireSemanticDense(): ARSemanticDenseData
 
@@ -3034,6 +3264,7 @@ acquireSemanticDense(): ARSemanticDenseData
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ARSemanticDenseData | 返回当前帧的高精几何重建对象数据。 |
@@ -3042,6 +3273,7 @@ acquireSemanticDense(): ARSemanticDenseData
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3060,7 +3292,8 @@ frame.acquireSemanticDense();
 
 
 
-#### ARFrame.acquireBodySkeleton
+### ARFrame.acquireBodySkeleton
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -3078,6 +3311,7 @@ acquireBodySkeleton(): Array&lt;ARBody&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;ARBody&gt; | 返回人体对象组成的数组。 |
@@ -3086,6 +3320,7 @@ acquireBodySkeleton(): Array&lt;ARBody&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3104,7 +3339,8 @@ frame.acquireBodySkeleton();
 
 
 
-#### ARFrame.acquireCameraImage
+### ARFrame.acquireCameraImage
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -3122,6 +3358,7 @@ acquireCameraImage(): ARImage
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ARImage | 返回相机视频流帧对象。 |
@@ -3130,6 +3367,7 @@ acquireCameraImage(): ARImage
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3148,7 +3386,8 @@ let arImage: arEngine.ARImage = frame.acquireCameraImage();
 
 
 
-#### ARFrame.release
+### ARFrame.release
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -3166,6 +3405,7 @@ release(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -3174,6 +3414,7 @@ release(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3192,7 +3433,8 @@ await frame.release();
 
 
 
-#### ARGeometry
+## ARGeometry
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -3206,6 +3448,7 @@ await frame.release();
 
 **参数：**
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | verticesSize | number | 是 | 否 | 表示顶点数组的大小。 |
@@ -3217,7 +3460,8 @@ await frame.release();
 
 
 
-#### ARGeometry.getVertices
+### ARGeometry.getVertices
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -3235,6 +3479,7 @@ getVertices(): ArrayBuffer
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArrayBuffer | 人脸Mesh顶点数组。 |
@@ -3243,6 +3488,7 @@ getVertices(): ArrayBuffer
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3263,7 +3509,8 @@ faceGeometry.getVertices();
 
 
 
-#### ARGeometry.getTexCoord
+### ARGeometry.getTexCoord
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -3281,6 +3528,7 @@ getTexCoord(): ArrayBuffer
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArrayBuffer | 人脸Mesh纹理坐标点数组。 |
@@ -3289,6 +3537,7 @@ getTexCoord(): ArrayBuffer
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3309,7 +3558,8 @@ faceGeometry.getTexCoord();
 
 
 
-#### ARGeometry.getIndices
+### ARGeometry.getIndices
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -3327,6 +3577,7 @@ getIndices(): ArrayBuffer
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArrayBuffer | 人脸Mesh三角面下标数组。 |
@@ -3335,6 +3586,7 @@ getIndices(): ArrayBuffer
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3355,7 +3607,8 @@ faceGeometry.getIndices();
 
 
 
-#### ARGeometry.getTriangleLabels
+### ARGeometry.getTriangleLabels
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -3373,6 +3626,7 @@ getTriangleLabels(): ArrayBuffer
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArrayBuffer | 人脸Mesh三角面标签。 |
@@ -3381,6 +3635,7 @@ getTriangleLabels(): ArrayBuffer
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3401,7 +3656,8 @@ faceGeometry.getTriangleLabels();
 
 
 
-#### ARGeometry.release
+### ARGeometry.release
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -3419,6 +3675,7 @@ release(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -3427,6 +3684,7 @@ release(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3447,7 +3705,8 @@ await faceGeometry.release();
 
 
 
-#### ARHitResult
+## ARHitResult
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -3463,6 +3722,7 @@ await faceGeometry.release();
 
 **参数：**
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | distance | number | 是 | 否 | 从相机到命中位置的距离，单位为m，其值范围0~65535。 |
@@ -3470,9 +3730,10 @@ await faceGeometry.release();
 
 
 
-#### ARHitResult.getHitPose
+### ARHitResult.getHitPose
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 getHitPose(): ARPose
 
@@ -3494,6 +3755,7 @@ getHitPose(): ARPose
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ARPose | 返回一个位姿对象。 |
@@ -3502,6 +3764,7 @@ getHitPose(): ARPose
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3521,9 +3784,10 @@ hitResult[0].getHitPose();
 
 
 
-#### ARHitResult.getTrackable
+### ARHitResult.getTrackable
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 getTrackable(): ARTrackable
 
@@ -3539,6 +3803,7 @@ getTrackable(): ARTrackable
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ARTrackable | 返回可被追踪的对象。 |
@@ -3547,6 +3812,7 @@ getTrackable(): ARTrackable
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3566,9 +3832,10 @@ hitResult[0].getTrackable();
 
 
 
-#### ARHitResult.createAnchor
+### ARHitResult.createAnchor
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 createAnchor(): ARAnchor
 
@@ -3584,6 +3851,7 @@ createAnchor(): ARAnchor
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ARAnchor | 返回一个锚点对象。 |
@@ -3592,6 +3860,7 @@ createAnchor(): ARAnchor
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3611,9 +3880,10 @@ hitResult[0].createAnchor();
 
 
 
-#### ARHitResult.release
+### ARHitResult.release
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 release(): Promise&lt;void&gt;
 
@@ -3629,6 +3899,7 @@ release(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -3637,6 +3908,7 @@ release(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3656,7 +3928,8 @@ await hitResult[0].release();
 
 
 
-#### ARImage
+## ARImage
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -3670,6 +3943,7 @@ await hitResult[0].release();
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | format | ARImageFormat | 是 | 否 | 图像数据格式。 |
@@ -3681,7 +3955,8 @@ await hitResult[0].release();
 
 
 
-#### ARImage.release
+### ARImage.release
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -3699,6 +3974,7 @@ release(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -3707,6 +3983,7 @@ release(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3726,7 +4003,8 @@ await image.release();
 
 
 
-#### ARPlane
+## ARPlane
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -3742,6 +4020,7 @@ await image.release();
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | planeType | ARPlaneType | 否 | 否 | 平面类型。 |
@@ -3752,9 +4031,10 @@ await image.release();
 
 
 
-#### ARPlane.getPolygonXZ
+### ARPlane.getPolygonXZ
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 getPolygonXZ(): ArrayBuffer
 
@@ -3770,6 +4050,7 @@ getPolygonXZ(): ArrayBuffer
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArrayBuffer | 返回一个ArrayBuffer缓冲区对象，这个对象包含顶点坐标的数组。表示平面局部坐标系X-Z平面的坐标。 说明： 该类型在使用时，如需转换则为float32类型，转换方法参考数据类型转换说明。 |
@@ -3778,6 +4059,7 @@ getPolygonXZ(): ArrayBuffer
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3797,9 +4079,10 @@ plane.getPolygonXZ();
 
 
 
-#### ARPlane.getSubsumedBy
+### ARPlane.getSubsumedBy
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 getSubsumedBy(): ARPlane
 
@@ -3815,6 +4098,7 @@ getSubsumedBy(): ARPlane
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ARPlane | 返回一个平面对象，表示父平面。如果没有父平面，将返回undefined。 |
@@ -3823,6 +4107,7 @@ getSubsumedBy(): ARPlane
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3842,9 +4127,10 @@ plane.getSubsumedBy();
 
 
 
-#### ARPlane.isPoseInExtents
+### ARPlane.isPoseInExtents
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 isPoseInExtents(pose: ARPose): boolean
 
@@ -3860,12 +4146,14 @@ isPoseInExtents(pose: ARPose): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pose | ARPose | 是 | 位姿对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3875,6 +4163,7 @@ isPoseInExtents(pose: ARPose): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3896,9 +4185,10 @@ plane.isPoseInExtents(pose);
 
 
 
-#### ARPlane.isPoseInPolygon
+### ARPlane.isPoseInPolygon
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 isPoseInPolygon(pose: ARPose): boolean
 
@@ -3914,12 +4204,14 @@ isPoseInPolygon(pose: ARPose): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pose | ARPose | 是 | 位姿对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3929,6 +4221,7 @@ isPoseInPolygon(pose: ARPose): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3950,7 +4243,8 @@ plane.isPoseInPolygon(pose);
 
 
 
-#### ARPlaneAnchor
+## ARPlaneAnchor
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -3968,9 +4262,10 @@ plane.isPoseInPolygon(pose);
 
 
 
-#### ARPlaneAnchor.getPlane
+### ARPlaneAnchor.getPlane
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 getPlane(): ARPlane
 
@@ -3986,6 +4281,7 @@ getPlane(): ARPlane
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ARPlane | 返回平面对象，描述被检测到的可跟踪平面信息。 |
@@ -3994,6 +4290,7 @@ getPlane(): ARPlane
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4015,7 +4312,8 @@ async onAnchorAdd(ctx: arViewController.ARViewContext, node: Node, anchor: arEng
 
 
 
-#### ARPoint
+## ARPoint
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -4031,6 +4329,7 @@ async onAnchorAdd(ctx: arViewController.ARViewContext, node: Node, anchor: arEng
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | orientationMode | ARPointOrientationMode | 是 | 否 | 朝向模式。 |
@@ -4038,7 +4337,8 @@ async onAnchorAdd(ctx: arViewController.ARViewContext, node: Node, anchor: arEng
 
 
 
-#### ARPose
+## ARPose
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -4054,6 +4354,7 @@ async onAnchorAdd(ctx: arViewController.ARViewContext, node: Node, anchor: arEng
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | rotation | Quaternion | 是 | 否 | 来自位姿对象的姿势数据，包括旋转分量。 |
@@ -4062,7 +4363,8 @@ async onAnchorAdd(ctx: arViewController.ARViewContext, node: Node, anchor: arEng
 
 
 
-#### ARPose.getMatrix
+### ARPose.getMatrix
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -4080,6 +4382,7 @@ getMatrix(): Matrix4
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Matrix4 | 返回一个包含16个浮点数的数组，按照列主序（column-major order）存储。 |
@@ -4088,6 +4391,7 @@ getMatrix(): Matrix4
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4108,7 +4412,8 @@ pose.getMatrix();
 
 
 
-#### ARPose.release
+### ARPose.release
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -4126,6 +4431,7 @@ release(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -4134,6 +4440,7 @@ release(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4154,7 +4461,8 @@ await pose.release();
 
 
 
-#### ARSceneMesh
+## ARSceneMesh
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -4168,6 +4476,7 @@ await pose.release();
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | verticesSize | number | 是 | 否 | 场景网格中的顶点数量。 最小为0，无上限。 |
@@ -4176,9 +4485,10 @@ await pose.release();
 
 
 
-#### ARSceneMesh.getVertices
+### ARSceneMesh.getVertices
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 getVertices(): ArrayBuffer
 
@@ -4194,6 +4504,7 @@ getVertices(): ArrayBuffer
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArrayBuffer | 返回一个ArrayBuffer缓冲区对象。这个缓冲区包含了顶点在平面局部坐标系X-Z平面的坐标。 说明： 该类型在使用时，如需转换则为float32类型，转换方法参考数据类型转换说明。 |
@@ -4202,6 +4513,7 @@ getVertices(): ArrayBuffer
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4221,9 +4533,10 @@ sceneMesh.getVertices();
 
 
 
-#### ARSceneMesh.getVertexNormals
+### ARSceneMesh.getVertexNormals
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 getVertexNormals(): ArrayBuffer
 
@@ -4239,6 +4552,7 @@ getVertexNormals(): ArrayBuffer
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArrayBuffer | 返回一个ArrayBuffer缓冲区对象。这个缓冲区包含了顶点在平面局部坐标系X-Z平面的坐标。 说明： 该类型在使用时，如需转换则为float32类型，转换方法参考数据类型转换说明。 |
@@ -4247,6 +4561,7 @@ getVertexNormals(): ArrayBuffer
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4266,9 +4581,10 @@ sceneMesh.getVertexNormals();
 
 
 
-#### ARSceneMesh.getTriangleIndices
+### ARSceneMesh.getTriangleIndices
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 getTriangleIndices(): ArrayBuffer
 
@@ -4284,6 +4600,7 @@ getTriangleIndices(): ArrayBuffer
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArrayBuffer | 返回一个ArrayBuffer缓冲区对象。这个缓冲区包含了顶点在平面局部坐标系X-Z平面的坐标。 说明： 该类型在使用时，如需转换则为int32类型，转换方法参考数据类型转换说明。 |
@@ -4292,6 +4609,7 @@ getTriangleIndices(): ArrayBuffer
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4311,9 +4629,10 @@ sceneMesh.getTriangleIndices();
 
 
 
-#### ARSceneMesh.release
+### ARSceneMesh.release
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 release(): Promise&lt;void&gt;
 
@@ -4329,6 +4648,7 @@ release(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -4337,6 +4657,7 @@ release(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4356,7 +4677,8 @@ await sceneMesh.release();
 
 
 
-#### ARSemanticDenseData
+## ARSemanticDenseData
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -4370,6 +4692,7 @@ await sceneMesh.release();
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | timestamp | number | 是 | 否 | 高精几何重建对象数据的时间戳。以ns为单位。 |
@@ -4379,9 +4702,10 @@ await sceneMesh.release();
 
 
 
-#### ARSemanticDenseData.acquirePointData
+### ARSemanticDenseData.acquirePointData
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 acquirePointData(): ARSemanticDensePointData
 
@@ -4397,6 +4721,7 @@ acquirePointData(): ARSemanticDensePointData
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ARSemanticDensePointData | 返回所有高精几何重建对象数据中稠密点云数据信息。 |
@@ -4405,6 +4730,7 @@ acquirePointData(): ARSemanticDensePointData
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4424,9 +4750,10 @@ semanticData.acquirePointData();
 
 
 
-#### ARSemanticDenseData.acquireCubeData
+### ARSemanticDenseData.acquireCubeData
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 acquireCubeData(): Array&lt;ARSemanticDenseCubeData&gt;
 
@@ -4442,6 +4769,7 @@ acquireCubeData(): Array&lt;ARSemanticDenseCubeData&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;ARSemanticDenseCubeData&gt; | 返回一个高精几何重建对象数据的立方体数据信息的列表。 |
@@ -4450,6 +4778,7 @@ acquireCubeData(): Array&lt;ARSemanticDenseCubeData&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4469,9 +4798,10 @@ semanticData.acquireCubeData();
 
 
 
-#### ARSemanticDenseData.release
+### ARSemanticDenseData.release
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 release(): Promise&lt;void&gt;
 
@@ -4487,6 +4817,7 @@ release(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -4495,6 +4826,7 @@ release(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4514,7 +4846,8 @@ await semanticData.release();
 
 
 
-#### ARTrackable
+## ARTrackable
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -4528,6 +4861,7 @@ await semanticData.release();
 
 **起始版本：** 5.1.0(18)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | ARTrackableType | 是 | 否 | 可追踪对象类型。 |
@@ -4536,7 +4870,8 @@ await semanticData.release();
 
 
 
-#### ARTrackable.getPose
+### ARTrackable.getPose
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -4554,6 +4889,7 @@ getPose(): ARPose
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ARPose | 返回可追踪对象的位姿信息。 |
@@ -4562,6 +4898,7 @@ getPose(): ARPose
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4580,7 +4917,8 @@ trackables[0].getPose();
 
 
 
-#### ARTrackable.getAnchors
+### ARTrackable.getAnchors
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -4598,6 +4936,7 @@ getAnchors(): Array&lt;ARAnchor&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;ARAnchor&gt; | 返回一个锚点对象组成的数组。 |
@@ -4606,6 +4945,7 @@ getAnchors(): Array&lt;ARAnchor&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4624,7 +4964,8 @@ trackables[0].getAnchors();
 
 
 
-#### ARTrackable.createAnchor
+### ARTrackable.createAnchor
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -4642,12 +4983,14 @@ createAnchor(pose: ARPose): ARAnchor
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pose | ARPose | 是 | 位姿对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4657,6 +5000,7 @@ createAnchor(pose: ARPose): ARAnchor
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4677,7 +5021,8 @@ trackables[0].createAnchor(pose);
 
 
 
-#### ARTrackable.release
+### ARTrackable.release
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -4695,6 +5040,7 @@ release(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -4703,6 +5049,7 @@ release(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4721,9 +5068,10 @@ await trackables[0].release();
 
 
 
-#### arEngine.createARAugmentedImageDatabase
+## arEngine.createARAugmentedImageDatabase
 
-**支持设备：** Phone | Tablet | TV
+
+**支持设备：** Phone | Tablet
 
 createARAugmentedImageDatabase(): Promise&lt;ARAugmentedImageDatabase&gt;
 
@@ -4737,6 +5085,7 @@ createARAugmentedImageDatabase(): Promise&lt;ARAugmentedImageDatabase&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;ARAugmentedImageDatabase&gt; | Promise对象，返回ARAugmentedImageDatabase对象。 |
@@ -4745,6 +5094,7 @@ createARAugmentedImageDatabase(): Promise&lt;ARAugmentedImageDatabase&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4761,7 +5111,8 @@ await arEngine.createARAugmentedImageDatabase();
 
 
 
-#### arEngine.createARPose
+## arEngine.createARPose
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -4777,6 +5128,7 @@ createARPose(rotation: Quaternion, translation: Vec3): ARPose
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rotation | Quaternion | 是 | 表示旋转组件的数据。这个参数是Quaternion类型，通常是一个包含四个元素的数组，为四元数，用于表示和操作3D旋转。 |
@@ -4784,6 +5136,7 @@ createARPose(rotation: Quaternion, translation: Vec3): ARPose
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4793,6 +5146,7 @@ createARPose(rotation: Quaternion, translation: Vec3): ARPose
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

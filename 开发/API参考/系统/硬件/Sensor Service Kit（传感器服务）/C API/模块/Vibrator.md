@@ -1,13 +1,14 @@
 # Vibrator
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-vibrator
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 为马达服务提供统一的API以访问马达驱动程序，采用统一接口抽象不同设备差异。支持多种振动模式、强度和时长控制，满足游戏震动反馈、通知提醒等场景需求，帮助开发者提升应用的用户体验和交互效果。
  
@@ -15,10 +16,12 @@
  
   
 
-#### 文件汇总
+## 文件汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | vibrator.h | 为您提供标准的开放API，用于控制马达振动的启停，提供标准化的振动控制接口。定义了Vibrator模块的核心接口。 |

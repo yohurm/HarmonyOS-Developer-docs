@@ -1,11 +1,12 @@
 # avtranscoder_base.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avtranscoder-base-h
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 结构体
+### 结构体
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_AVTranscoder | OH_AVTranscoder | 初始化AVTranscoder。 |
@@ -41,10 +45,12 @@
  
   
 
-#### 枚举
+### 枚举
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_AVTranscoder_State | OH_AVTranscoder_State | 转码状态。 |
@@ -52,10 +58,12 @@
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | typedef void (*OH_AVTranscoder_OnStateChange)(OH_AVTranscoder *transcoder, OH_AVTranscoder_State state, void *userData) | OH_AVTranscoder_OnStateChange | 转码过程的状态回调函数。 |
@@ -65,13 +73,15 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### OH_AVTranscoder_State
+### OH_AVTranscoder_State
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -87,6 +97,7 @@ enum OH_AVTranscoder_State
  
 **起始版本：** 20
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AVTRANSCODER_PREPARED = 1 | 准备 |
@@ -98,13 +109,15 @@ enum OH_AVTranscoder_State
  
   
 
-#### 函数说明
+## 函数说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### OH_AVTranscoder_OnStateChange()
+### OH_AVTranscoder_OnStateChange()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -122,6 +135,7 @@ typedef void (*OH_AVTranscoder_OnStateChange)(OH_AVTranscoder *transcoder, OH_AV
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVTranscoder *transcoder | OH_AVTranscoder实例的指针。 |
@@ -131,12 +145,13 @@ typedef void (*OH_AVTranscoder_OnStateChange)(OH_AVTranscoder *transcoder, OH_AV
  
   
 
-#### OH_AVTranscoder_OnError()
+### OH_AVTranscoder_OnError()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
-typedef void (*OH_AVTranscoder_OnError)(OH_AVTranscoder *transcoder, int32_t errorCode, const char *errorMsg, void *userData)
+typedef void (*OH_AVTranscoder_OnError)(OH_AVTranscoder *transcoder, int32_t errorCode, const char *errorMsg,void *userData)
 ```
  
 **描述**
@@ -149,6 +164,7 @@ typedef void (*OH_AVTranscoder_OnError)(OH_AVTranscoder *transcoder, int32_t err
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVTranscoder *transcoder | OH_AVTranscoder实例的指针。 |
@@ -159,7 +175,8 @@ typedef void (*OH_AVTranscoder_OnError)(OH_AVTranscoder *transcoder, int32_t err
  
   
 
-#### OH_AVTranscoder_OnProgressUpdate()
+### OH_AVTranscoder_OnProgressUpdate()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -177,6 +194,7 @@ typedef void (*OH_AVTranscoder_OnProgressUpdate)(OH_AVTranscoder *transcoder, in
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVTranscoder *transcoder | OH_AVTranscoder实例的指针。 |

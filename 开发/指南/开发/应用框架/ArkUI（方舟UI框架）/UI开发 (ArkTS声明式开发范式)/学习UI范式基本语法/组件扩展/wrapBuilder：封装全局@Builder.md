@@ -1,6 +1,6 @@
 # wrapBuilder：封装全局@Builder
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-wrapbuilder
 
@@ -33,7 +33,7 @@ function testBuilder() {
 为了解决这一问题，引入wrapBuilder作为全局@Builder封装函数。wrapBuilder返回WrappedBuilder对象，用于[全局@Builder](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-builder#全局自定义构建函数)的赋值和传递。
 
 
-#### 接口说明
+## 接口说明
 
 wrapBuilder是一个模板函数，返回一个WrappedBuilder对象。
 
@@ -64,13 +64,13 @@ let builderArr: WrappedBuilder<[string, number]>[] = [wrapBuilder(MyBuilder)]; /
 
 
 
-#### 限制条件
+## 限制条件
 1. wrapBuilder方法只能传入[全局@Builder](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-builder#全局自定义构建函数)方法。
 2. WrappedBuilder对象的builder属性方法仅限在struct内部使用。
 
 
 
-#### @Builder方法赋值给变量
+## @Builder方法赋值给变量
 
 使用@Builder装饰器装饰的方法myBuilder作为wrapBuilder的参数，然后将wrapBuilder的返回值赋值给变量globalBuilder，以解决@Builder方法赋值给变量后无法使用的问题。
 
@@ -103,12 +103,12 @@ struct TestIndex {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/CuDZ0wRhTEKRkv8bT17kqg/zh-cn_image_0000002704391941.png?HW-CC-KV=V1&HW-CC-Date=20260813T095701Z&HW-CC-Expire=86400&HW-CC-Sign=1A64445BA2D2D6EED622B431082D0EF8BB318A2BBFA3A24039D4E1BEE682BD70)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/rT5ZHsqlQF6UMTu88HhE-w/zh-cn_image_0000002747289985.png?HW-CC-KV=V1&HW-CC-Date=20260911T072205Z&HW-CC-Expire=86400&HW-CC-Sign=082A491CEE06A41DC6DB0C9DC5A2FB91A105C954765AE5C63EC9BE81CCA1AA7C)
 
 
 
 
-#### @Builder方法赋值给变量在UI语法中使用
+## @Builder方法赋值给变量在UI语法中使用
 
 自定义组件IndexItem使用ForEach进行不同@Builder函数的渲染，可以使用builderArr声明的wrapBuilder数组来实现不同的@Builder函数的效果。整体代码会更加整洁。
 
@@ -155,12 +155,12 @@ struct IndexItem {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/j4z9KAGwQCeo_EIYJWYVhw/zh-cn_image_0000002674631818.png?HW-CC-KV=V1&HW-CC-Date=20260813T095701Z&HW-CC-Expire=86400&HW-CC-Sign=FBA2E2E3FF176DCF484DC539D183F6708ECA67AA29761C516C6639F372A8355A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/-wKNpOwRQeaFzlb2_8Gllw/zh-cn_image_0000002747209903.png?HW-CC-KV=V1&HW-CC-Date=20260911T072205Z&HW-CC-Expire=86400&HW-CC-Sign=C33DA7D68B0C9B4D79C8A493B2FFDBF44EFF77968F6CACD97534598A850E7159)
 
 
 
 
-#### @Builder方法赋值给类或者接口的属性
+## @Builder方法赋值给类或者接口的属性
 
 使用@Builder装饰器装饰的方法myBuilder作为wrapBuilder的参数，然后将wrapBuilder的返回值赋值给接口ChildOptions中的属性，可以以数据的形式传递给其他子组件调用。
 
@@ -204,12 +204,12 @@ struct Child {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/I0FGrs7USBWBp2_ZFHRyag/zh-cn_image_0000002704271773.png?HW-CC-KV=V1&HW-CC-Date=20260813T095701Z&HW-CC-Expire=86400&HW-CC-Sign=6AD380801F16F9F72CECF6087FA853AFFDC274120EECCE04F96D7C0C294C1250)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/r0erBitMSUyWVRFtaAYCHQ/zh-cn_image_0000002717769970.png?HW-CC-KV=V1&HW-CC-Date=20260911T072205Z&HW-CC-Expire=86400&HW-CC-Sign=CAD91100881E61F272E39869B0FBB07084B4772FA3B965E9BFFAB71801C9AA6A)
 
 
 
 
-#### 引用传递
+## 引用传递
 
 按引用传递参数时，状态变量的改变会引起@Builder方法内的UI刷新。
 
@@ -252,16 +252,16 @@ struct Parent {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/MiiT8C6sRfmHaa_WeomxPg/zh-cn_image_0000002674471974.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095701Z&HW-CC-Expire=86400&HW-CC-Sign=6B20C07655C7740390E48B27F1493437DFE926009817AE75D727125CBF16A958)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/gzE2W7X4Qm2wAJpQ9dfyKA/zh-cn_image_0000002717610036.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072205Z&HW-CC-Expire=86400&HW-CC-Sign=08C494B7D2050CD80A6A53928EC9594C9B1713B24D397484F551E8DD35094E01)
 
 
 
 
-#### 常见问题
+## 常见问题
 
 
 
-#### 重复定义wrapBuilder失效
+### 重复定义wrapBuilder失效
 
 在同一个自定义组件内，同一个wrapBuilder只能初始化一次。例如，builderObj通过wrapBuilder(myBuilderFirst)初始化后，再次对builderObj赋值wrapBuilder(myBuilderSecond)将不会生效。
 
@@ -310,4 +310,4 @@ struct TestBuilderIndex {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/jbyibByZTOWS2TRu4XaYPg/zh-cn_image_0000002704391943.png?HW-CC-KV=V1&HW-CC-Date=20260813T095701Z&HW-CC-Expire=86400&HW-CC-Sign=FE26BBA7F84011E59FCD8F8835AD8E427124DD946B64411FF120019446263F0D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/YlUkh4SDSWW_hixw6h0uPw/zh-cn_image_0000002747289987.png?HW-CC-KV=V1&HW-CC-Date=20260911T072205Z&HW-CC-Expire=86400&HW-CC-Sign=95CF2ABDD14224DA4AA9FAB2474CDA3CEBC6BB7459A504CB92F827EA5B2B8575)

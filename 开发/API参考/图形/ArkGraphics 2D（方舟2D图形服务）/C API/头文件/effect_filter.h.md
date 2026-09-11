@@ -1,13 +1,14 @@
 # effect_filter.h
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-effect-filter-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明滤镜效果的接口。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | EffectErrorCode OH_Filter_CreateEffect(OH_PixelmapNative* pixelmap, OH_Filter** filter) | 创建一个OH_Filter对象。 |
@@ -48,15 +52,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Filter_CreateEffect()
+### OH_Filter_CreateEffect()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 EffectErrorCode OH_Filter_CreateEffect(OH_PixelmapNative* pixelmap, OH_Filter** filter)
@@ -70,6 +76,7 @@ EffectErrorCode OH_Filter_CreateEffect(OH_PixelmapNative* pixelmap, OH_Filter** 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative* pixelmap | 创建滤镜的位图。 |
@@ -78,6 +85,7 @@ EffectErrorCode OH_Filter_CreateEffect(OH_PixelmapNative* pixelmap, OH_Filter** 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | EffectErrorCode | 返回结果参见状态码EffectErrorCode。 |
@@ -85,9 +93,10 @@ EffectErrorCode OH_Filter_CreateEffect(OH_PixelmapNative* pixelmap, OH_Filter** 
  
   
 
-#### OH_Filter_Release()
+### OH_Filter_Release()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 EffectErrorCode OH_Filter_Release(OH_Filter* filter)
@@ -101,6 +110,7 @@ EffectErrorCode OH_Filter_Release(OH_Filter* filter)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Filter* filter | 被释放的对象指针。 |
@@ -108,6 +118,7 @@ EffectErrorCode OH_Filter_Release(OH_Filter* filter)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | EffectErrorCode | 返回结果参见状态码EffectErrorCode。 |
@@ -115,9 +126,10 @@ EffectErrorCode OH_Filter_Release(OH_Filter* filter)
  
   
 
-#### OH_Filter_Blur()
+### OH_Filter_Blur()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 EffectErrorCode OH_Filter_Blur(OH_Filter* filter, float radius)
@@ -131,6 +143,7 @@ EffectErrorCode OH_Filter_Blur(OH_Filter* filter, float radius)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Filter* filter | 滤镜指针。 |
@@ -139,6 +152,7 @@ EffectErrorCode OH_Filter_Blur(OH_Filter* filter, float radius)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | EffectErrorCode | 返回结果参见状态码EffectErrorCode。 |
@@ -146,9 +160,10 @@ EffectErrorCode OH_Filter_Blur(OH_Filter* filter, float radius)
  
   
 
-#### OH_Filter_BlurWithTileMode()
+### OH_Filter_BlurWithTileMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 EffectErrorCode OH_Filter_BlurWithTileMode(OH_Filter* filter, float radius, EffectTileMode tileMode)
@@ -162,6 +177,7 @@ EffectErrorCode OH_Filter_BlurWithTileMode(OH_Filter* filter, float radius, Effe
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Filter* filter | 滤镜指针。 |
@@ -171,6 +187,7 @@ EffectErrorCode OH_Filter_BlurWithTileMode(OH_Filter* filter, float radius, Effe
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | EffectErrorCode | 返回结果参见状态码EffectErrorCode。 操作成功则返回EFFECT_SUCCESS。 无效参数则返回EFFECT_BAD_PARAMETER。 |
@@ -178,9 +195,10 @@ EffectErrorCode OH_Filter_BlurWithTileMode(OH_Filter* filter, float radius, Effe
  
   
 
-#### OH_Filter_Brighten()
+### OH_Filter_Brighten()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 EffectErrorCode OH_Filter_Brighten(OH_Filter* filter, float brightness)
@@ -194,6 +212,7 @@ EffectErrorCode OH_Filter_Brighten(OH_Filter* filter, float brightness)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Filter* filter | 滤镜指针。 |
@@ -202,6 +221,7 @@ EffectErrorCode OH_Filter_Brighten(OH_Filter* filter, float brightness)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | EffectErrorCode | 返回结果参见状态码EffectErrorCode。 |
@@ -209,9 +229,10 @@ EffectErrorCode OH_Filter_Brighten(OH_Filter* filter, float brightness)
  
   
 
-#### OH_Filter_GrayScale()
+### OH_Filter_GrayScale()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 EffectErrorCode OH_Filter_GrayScale(OH_Filter* filter)
@@ -225,6 +246,7 @@ EffectErrorCode OH_Filter_GrayScale(OH_Filter* filter)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Filter* filter | 滤镜指针。 |
@@ -232,6 +254,7 @@ EffectErrorCode OH_Filter_GrayScale(OH_Filter* filter)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | EffectErrorCode | 返回结果参见状态码EffectErrorCode。 |
@@ -239,9 +262,10 @@ EffectErrorCode OH_Filter_GrayScale(OH_Filter* filter)
  
   
 
-#### OH_Filter_Invert()
+### OH_Filter_Invert()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 EffectErrorCode OH_Filter_Invert(OH_Filter* filter)
@@ -255,6 +279,7 @@ EffectErrorCode OH_Filter_Invert(OH_Filter* filter)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Filter* filter | 滤镜指针。 |
@@ -262,6 +287,7 @@ EffectErrorCode OH_Filter_Invert(OH_Filter* filter)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | EffectErrorCode | 返回结果参见状态码EffectErrorCode。 |
@@ -269,9 +295,10 @@ EffectErrorCode OH_Filter_Invert(OH_Filter* filter)
  
   
 
-#### OH_Filter_SetColorMatrix()
+### OH_Filter_SetColorMatrix()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 EffectErrorCode OH_Filter_SetColorMatrix(OH_Filter* filter, OH_Filter_ColorMatrix* matrix)
@@ -285,6 +312,7 @@ EffectErrorCode OH_Filter_SetColorMatrix(OH_Filter* filter, OH_Filter_ColorMatri
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Filter* filter | 滤镜指针。 |
@@ -293,6 +321,7 @@ EffectErrorCode OH_Filter_SetColorMatrix(OH_Filter* filter, OH_Filter_ColorMatri
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | EffectErrorCode | 返回结果参见状态码EffectErrorCode。 |
@@ -300,9 +329,10 @@ EffectErrorCode OH_Filter_SetColorMatrix(OH_Filter* filter, OH_Filter_ColorMatri
  
   
 
-#### OH_Filter_GetEffectPixelMap()
+### OH_Filter_GetEffectPixelMap()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 EffectErrorCode OH_Filter_GetEffectPixelMap(OH_Filter* filter, OH_PixelmapNative** pixelmap)
@@ -316,6 +346,7 @@ EffectErrorCode OH_Filter_GetEffectPixelMap(OH_Filter* filter, OH_PixelmapNative
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Filter* filter | 用来创建位图的滤镜指针。 |
@@ -324,6 +355,7 @@ EffectErrorCode OH_Filter_GetEffectPixelMap(OH_Filter* filter, OH_PixelmapNative
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | EffectErrorCode | 返回结果参见状态码EffectErrorCode。 |

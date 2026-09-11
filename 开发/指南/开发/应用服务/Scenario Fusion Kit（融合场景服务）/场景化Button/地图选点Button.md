@@ -1,10 +1,10 @@
 # 地图选点Button
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusion-button-selecting-point
 
-#### 场景介绍
+## 场景介绍
 
 地图选点Button功能可以帮助开发者调用Button组件拉起Map Kit的地图选点页面，用户在地图中选择位置后，位置相关信息返回Button页面。
 
@@ -12,23 +12,23 @@
 
 
 
-#### 约束与限制
+## 约束与限制
 
 地图选点Button支持Phone和Tablet设备，并且从5.0.1(13)版本开始，新增支持PC/2in1设备。
 
 
 
-#### 前提条件
+## 前提条件
 
 参见[开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-config-agc)。
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 导入Scenario Fusion Kit模块以及相关公共模块。
 
   
-```text
+```ArkTS
 import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 ```
@@ -36,7 +36,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 2. 在容器中声明FunctionalButton，指定Button的openType，并设置对应的回调函数，代码如下：
 
   
-```text
+```ArkTS
 @Entry
 @Component
 struct Index {

@@ -63,10 +63,10 @@ struct Index {
     .width('100%')
   }
 
-  /**
-   * 获取设备的token
-   * @returns
-   */
+<em>  /**</em>
+<em>   * 获取设备的token</em>
+<em>   * @returns</em>
+<em>   */</em>
   getDeviceToken(): string {
     let res = "";
     try {

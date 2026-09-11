@@ -1,6 +1,6 @@
 # @ohos.test.PerfTest
 
-更新时间：2026-07-09 02:26:55
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-perftest
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -12,7 +12,8 @@ PerfTest提供白盒性能测试能力，供开发者在测试场景使用。支
 
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -22,7 +23,8 @@ import { PerfMetric, PerfTest, PerfTestStrategy, PerfMeasureResult } from '@kit.
  
   
 
-#### PerfMetric
+## PerfMetric
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -32,6 +34,7 @@ import { PerfMetric, PerfTest, PerfTestStrategy, PerfMeasureResult } from '@kit.
  
 **系统能力**：SystemCapability.Test.PerfTest
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DURATION | 0 | 代码段执行耗时，单位：ms。 |
@@ -51,7 +54,8 @@ import { PerfMetric, PerfTest, PerfTestStrategy, PerfMeasureResult } from '@kit.
  
   
 
-#### PerfTestStrategy
+## PerfTestStrategy
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -61,6 +65,7 @@ import { PerfMetric, PerfTest, PerfTestStrategy, PerfMeasureResult } from '@kit.
  
 **系统能力**：SystemCapability.Test.PerfTest
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | metrics | Array&lt;PerfMetric&gt; | 否 | 否 | 被测性能指标列表，列表为空则不采集任何性能指标数据。 |
@@ -77,7 +82,8 @@ import { PerfMetric, PerfTest, PerfTestStrategy, PerfMeasureResult } from '@kit.
  
   
 
-#### PerfMeasureResult
+## PerfMeasureResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -87,6 +93,7 @@ import { PerfMetric, PerfTest, PerfTestStrategy, PerfMeasureResult } from '@kit.
  
 **系统能力**：SystemCapability.Test.PerfTest
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | metric | PerfMetric | 是 | 否 | 被测性能指标。 |
@@ -98,15 +105,17 @@ import { PerfMetric, PerfTest, PerfTestStrategy, PerfMeasureResult } from '@kit.
  
   
 
-#### PerfTest
+## PerfTest
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-PerfTest类为白盒性能测试框架的总入口，提供测试任务创建、测试代码段执行和数据采集、测量结果获取等能力。
+PerfTest类为白盒性能测试框架的总入口，提供测试任务创建、测试代码段执行和数据采集、测量结果获取等能力。通过[PerfTest.create](#create)创建实例。
  
   
 
-#### create
+### create
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -120,6 +129,7 @@ static create(strategy: PerfTestStrategy): PerfTest
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | strategy | PerfTestStrategy | 是 | 性能测试执行策略。 |
@@ -127,6 +137,7 @@ static create(strategy: PerfTestStrategy): PerfTest
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | PerfTest | 返回构造的PerfTest对象，可用于执行测试任务、采集性能数据和获取测量结果。 |
@@ -136,6 +147,7 @@ static create(strategy: PerfTestStrategy): PerfTest
  
 以下错误码的详细介绍请参见[PerfTest错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-perftest)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 32400001 | Initialization failed. |
@@ -152,13 +164,13 @@ import { PerfMetric, PerfTest, PerfTestStrategy } from '@kit.TestKit';
 async function demo() {
   let metrics: Array<PerfMetric> = [PerfMetric.DURATION];
   let num = 0;
-  let actionCode = async (finish: Callback<boolean>) => { // 定义测试代码段，入参类型'Callback<boolean>'，命名为finish
+  let actionCode = async (finish: Callback<boolean>) => { // 定义测试代码段，入参类型'Callback<boolean>'，命名为finish。
     for (let index = 0; index < 10000; index++) {
       num++;
     }
-    finish(true); // 调用finish回调函数，通知代码段执行结束，且执行符合预期
+    finish(true); // 调用finish回调函数，通知代码段执行结束，且执行符合预期。
   };
-  let resetCode = async (finish: Callback<boolean>) => { // 定义测试结束环境重置代码段
+  let resetCode = async (finish: Callback<boolean>) => { // 定义测试结束环境重置代码段。
     num = 0;
     finish(true);
   };
@@ -169,13 +181,14 @@ async function demo() {
     timeout: 30000,
     iterations: 10
   };
-  let perfTest: PerfTest = PerfTest.create(perfTestStrategy); // 构造一个PerfTest对象，创建测试任务
+  let perfTest: PerfTest = PerfTest.create(perfTestStrategy); // 构造一个PerfTest对象，创建测试任务。
 }
 ```
  
   
 
-#### run
+### run
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -189,6 +202,7 @@ run(): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -198,6 +212,7 @@ run(): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[PerfTest错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-perftest)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 32400002 | Internal error. Possible causes: 1. IPC connection failed. 2. The object does not exist. |
@@ -218,20 +233,21 @@ async function demo() {
     for (let index = 0; index < 10000; index++) {
       num++;
     }
-    finish(true); // 调用finish回调函数，通知代码段执行结束，且执行符合预期
+    finish(true); // 调用finish回调函数，通知代码段执行结束，且执行符合预期。
   };
   let perfTestStrategy: PerfTestStrategy = {
     metrics: metrics,
     actionCode: actionCode
   };
-  let perfTest: PerfTest = PerfTest.create(perfTestStrategy); // 构造一个PerfTest对象，创建测试任务
-  await perfTest.run(); // 运行性能测试
+  let perfTest: PerfTest = PerfTest.create(perfTestStrategy); // 构造一个PerfTest对象，创建测试任务。
+  await perfTest.run(); // 运行性能测试。
 }
 ```
  
   
 
-#### getMeasureResult
+### getMeasureResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -245,6 +261,7 @@ getMeasureResult(metric: PerfMetric): PerfMeasureResult
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | metric | PerfMetric | 是 | 指定要查询的性能指标。 |
@@ -252,6 +269,7 @@ getMeasureResult(metric: PerfMetric): PerfMeasureResult
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | PerfMeasureResult | 指定性能指标对应的测量结果，包含各轮测量数据值及统计值（最大值、最小值、平均值）。 |
@@ -261,6 +279,7 @@ getMeasureResult(metric: PerfMetric): PerfMeasureResult
  
 以下错误码的详细介绍请参见[PerfTest错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-perftest)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 32400002 | Internal error. Possible causes: 1. IPC connection failed. 2. The object does not exist. |
@@ -281,21 +300,22 @@ async function demo() {
     for (let index = 0; index < 10000; index++) {
       num++;
     }
-    finish(true); // 调用finish回调函数，通知代码段执行结束，且执行符合预期
+    finish(true); // 调用finish回调函数，通知代码段执行结束，且执行符合预期。
   };
   let perfTestStrategy: PerfTestStrategy = {
     metrics: metrics,
     actionCode: actionCode
   };
-  let perfTest: PerfTest = PerfTest.create(perfTestStrategy); // 构造一个PerfTest对象，创建测试任务
+  let perfTest: PerfTest = PerfTest.create(perfTestStrategy); // 构造一个PerfTest对象，创建测试任务。
   await perfTest.run();
-  let res = perfTest.getMeasureResult(PerfMetric.DURATION); // 获取指定性能指标的测量数据
+  let res = perfTest.getMeasureResult(PerfMetric.DURATION); // 获取指定性能指标的测量数据。
 }
 ```
  
   
 
-#### destroy
+### destroy
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -311,6 +331,7 @@ destroy(): void
  
 以下错误码的详细介绍请参见[PerfTest错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-perftest)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 32400002 | Internal error. Possible causes: 1. IPC connection failed. 2. The object does not exist. |
@@ -329,14 +350,14 @@ async function demo() {
     for (let index = 0; index < 10000; index++) {
       num++;
     }
-    finish(true); // 调用finish回调函数，通知代码段执行结束，且执行符合预期
+    finish(true); // 调用finish回调函数，通知代码段执行结束，且执行符合预期。
   };
   let perfTestStrategy: PerfTestStrategy = {
     metrics: metrics,
     actionCode: actionCode
   };
-  let perfTest: PerfTest = PerfTest.create(perfTestStrategy); // 构造一个PerfTest对象，创建测试任务
+  let perfTest: PerfTest = PerfTest.create(perfTestStrategy); // 构造一个PerfTest对象，创建测试任务。
   await perfTest.run();
-  perfTest.destroy(); // 销毁PerfTest对象
+  perfTest.destroy(); // 销毁PerfTest对象。
 }
 ```

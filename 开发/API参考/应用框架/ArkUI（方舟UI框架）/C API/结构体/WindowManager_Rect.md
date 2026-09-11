@@ -1,18 +1,19 @@
 # WindowManager_Rect
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-windowmanager-rect
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct {...} WindowManager_Rect
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义窗口矩形结构体，包含窗口位置和宽高信息。
  
@@ -24,19 +25,22 @@ typedef struct {...} WindowManager_Rect
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 成员变量
+### 成员变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
-| int32_t posX | 窗口的x轴，单位为px，该参数为整数。 |
-| int32_t posY | 窗口的y轴，单位为px，该参数为整数。 |
+| int32_t posX | 窗口的x轴坐标，单位为px，该参数为整数。 |
+| int32_t posY | 窗口的y轴坐标，单位为px，该参数为整数。 |
 | uint32_t width | 窗口的宽度，单位为px，该参数为整数。 |
 | uint32_t height | 窗口的高度，单位为px，该参数为整数。 |

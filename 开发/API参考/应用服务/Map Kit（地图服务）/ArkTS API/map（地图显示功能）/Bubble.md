@@ -1,11 +1,12 @@
 # Interface (Bubble)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-bubble
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -16,7 +17,8 @@ import { image } from '@kit.ImageKit';
  
   
 
-#### Bubble
+## Bubble
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -57,7 +59,8 @@ let bubble: map.Bubble = await this.mapController.addBubble(bubbleOptions);
  
   
 
-#### setIcons
+### setIcons
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -75,6 +78,7 @@ setIcons(icons: Array<string | image.PixelMap | Resource>): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | icons | Array<string \| image.PixelMap \| Resource> | 是 | 气泡的图标，异常值不处理。 - 必须提供4个方向的图标，传入的图标宽高需要相同。 - 图片格式支持jpg、jpeg、png、gif（只支持显示第一帧）、webp、svg。 - string类型入参支持两种格式： - 资源相对路径格式：图标存放在resources/rawfile，icon参数传入rawfile文件夹下的相对路径。 - toDataURL格式（如data:image/png;base64,&lt;图片的Base64字节编码值&gt;）。 说明： 从5.0.0(12)版本开始，icon属性支持Resource和image.PixelMap类型。 |
@@ -82,6 +86,7 @@ setIcons(icons: Array<string | image.PixelMap | Resource>): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -102,7 +107,8 @@ await bubble.setIcons(icons);
  
   
 
-#### setPositions
+### setPositions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -120,6 +126,7 @@ setPositions(positions: Array<Array<mapCommon.LatLng>>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | positions | Array<Array<mapCommon.LatLng>> | 是 | 气泡的候选位置坐标，异常值不处理。 |

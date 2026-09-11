@@ -1,12 +1,13 @@
 # 帧动画（ohos.animator）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-animator
 
 帧动画具备逐帧回调的特性，便于开发者在每一帧中处理需调整的属性。通过向应用提供[AnimatorResult](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-animator#animatorresult)的onFrame属性逐帧回调，帧动画使开发者能够在应用的每一帧设置属性值，从而实现组件属性值变化的自然过渡，营造出动画效果。帧动画接口详情可参考[@ohos.animator (动画)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-animator)。
 
 与属性动画相比，帧动画能让开发者实时感知动画进程，即时调整UI值，具备事件即时响应和可暂停的优势，但在性能上略逊于属性动画。当属性动画能满足需求时，建议优先采用属性动画接口实现。属性动画接口可参考[实现属性动画](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-attribute-animation-apis)。
+
 
 | 名称 | 实现方式 | 事件响应方式 | 可暂停 | 性能 |
 | --- | --- | --- | --- | --- |
@@ -25,7 +26,7 @@
 
 
 
-#### 使用帧动画实现动画效果
+## 使用帧动画实现动画效果
 
 使用如下步骤可以创建一个简单的animator，并且在每个帧回调中打印当前插值。
 1. 引入相关依赖。
@@ -79,7 +80,7 @@ result = undefined;
 
 
 
-#### 使用帧动画实现小球抛物运动
+## 使用帧动画实现小球抛物运动
 1. 引入相关依赖。
 
   

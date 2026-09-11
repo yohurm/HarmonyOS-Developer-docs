@@ -1,13 +1,14 @@
 # avrecorder_base.h
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avrecorder-base-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义了媒体AVRecorder的结构体、枚举和回调函数。
  
@@ -23,34 +24,39 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
-| OH_AVRecorder_Profile | OH_AVRecorder_Profile | 定义音视频录制的详细参数。 |
-| OH_AVRecorder | OH_AVRecorder | 音视频录制的结构体类型，表示AVRecorder实例，支持音视频数据采集与录制，适用于将音视频内容录制保存为文件的场景。 |
-| OH_AVRecorder_Location | OH_AVRecorder_Location | 提供媒体资源的地理位置信息。 |
-| OH_AVRecorder_MetadataTemplate | OH_AVRecorder_MetadataTemplate | 定义AVRecorder录制元数据的基本模板。 |
-| OH_AVRecorder_Metadata | OH_AVRecorder_Metadata | 定义录制元数据信息的数据结构。 |
-| OH_AVRecorder_Config | OH_AVRecorder_Config | 提供媒体AVRecorder的配置定义。 |
-| OH_AVRecorder_Range | OH_AVRecorder_Range | 表示参数的取值范围，包含最小值和最大值。 |
-| OH_AVRecorder_EncoderInfo | OH_AVRecorder_EncoderInfo | 提供AVRecorder的音视频编码器信息，用于查询和选择合适的编码器。 |
+| OH_AVRecorder_Profile | OH_AVRecorder_Profile | 定义音视频录制的详细参数。通过配置音频/视频编码格式、比特率、采样率、帧率、分辨率、容器格式、HDR录制、是否启用时域可分层视频编码功能等参数，可以灵活控制录制质量和录制文件大小，适用于需要自定义录制质量、选择录制内容类型（仅音频/仅视频/音视频同时录制）、启用HDR录制或时域可分层视频编码功能的场景。 通过参数设置可以选择仅录制音频或视频，或者同时录制音视频： 1. 当 audioBitrate 或 audioChannels 为 0 时，不录制音频。 2. 当 videoFrameWidth 或 videoFrameHeight 为 0 时，不录制视频。 各参数的范围请参见AVRecorderProfile。 |
+| OH_AVRecorder | OH_AVRecorder | 音视频录制的结构体类型，用于表示AVRecorder实例，支持音视频数据的采集与录制，提供录制流程控制及回调事件监听等能力。适用于需要将音视频内容录制保存为文件的场景，如视频会议录制、屏幕录制应用、安防监控录像等。 |
+| OH_AVRecorder_Location | OH_AVRecorder_Location | 提供媒体资源的地理位置信息，支持在音视频录制过程中标注纬度和经度。该结构体通过AVRecorder的OH_AVRecorder_Prepare接口将经纬度信息写入录制文件的元数据中，开发者需在录制前设置该结构体的latitude和longitude参数，录制过程中地理位置信息将自动嵌入到生成的媒体文件中。适用于需要在录制结果中嵌入地理位置的场景，如在视频拍摄时标记拍摄地点、运动记录应用中标记轨迹位置、旅行日记应用中记录行程坐标等，便于后续按位置检索和分类管理媒体资源。 |
+| OH_AVRecorder_MetadataTemplate | OH_AVRecorder_MetadataTemplate | 定义音视频录制过程中元数据的基本模板，通过键值对（key-value）形式组织元数据，适用于需要在录制输出中附加自定义元数据（如标题、作者、描述等）的场景，便于对录制文件进行分类、检索和管理。开发者可通过AVRecorder的OH_AVRecorder_Prepare接口将该结构体中的元数据设置到录制输出文件中。 |
+| OH_AVRecorder_Metadata | OH_AVRecorder_Metadata | 定义录制的元数据结构，用于描述媒体资源的体裁分类、视频旋转角度、地理位置及自定义参数等元数据信息，适用于录制过程中需要携带或读取媒体元数据的场景。 |
+| OH_AVRecorder_Config | OH_AVRecorder_Config | 提供媒体AVRecorder的配置定义，用于设置音视频录制时的音频源类型、视频源类型、编码配置、输出文件URL、文件生成模式、元数据及最大录制时长参数，适用于需要自定义录制配置的场景。 |
+| OH_AVRecorder_Range | OH_AVRecorder_Range | 表示AVRecorder相关参数（如比特率、帧率等）的取值范围，用于限定录制参数的可配置范围。开发者可通过OH_AVRecorder_GetAvailableEncoder接口获取编码器相关参数取值范围，并在min和max所界定的范围内设置参数值，以确保配置有效。 |
+| OH_AVRecorder_EncoderInfo | OH_AVRecorder_EncoderInfo | 提供AVRecorder编码器能力信息，包括编码器的MIME类型、比特率范围、帧率范围等参数，适用于在录制前查询和选择合适的音频或视频编码器配置的场景，帮助开发者根据编码器能力参数选择最优编码配置。开发者可通过OH_AVRecorder_GetAvailableEncoder接口获取该结构体对象。 |
  
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_AVRecorder_AudioSourceType | OH_AVRecorder_AudioSourceType | AVRecorder的音频源类型。 |
@@ -64,10 +70,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | typedef void (*OH_AVRecorder_OnStateChange)(OH_AVRecorder *recorder, OH_AVRecorder_State state, OH_AVRecorder_StateChangeReason reason, void *userData) | OH_AVRecorder_OnStateChange | 当录制状态发生变化时调用。 |
@@ -77,15 +85,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AVRecorder_AudioSourceType
+### OH_AVRecorder_AudioSourceType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AVRecorder_AudioSourceType
@@ -99,6 +109,7 @@ AVRecorder的音频源类型。
  
 **起始版本：** 18
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AVRECORDER_DEFAULT = 0 | 默认音频源类型。适用于无需指定特定音频源类型的通用录制场景。 |
@@ -111,9 +122,10 @@ AVRecorder的音频源类型。
  
   
 
-#### OH_AVRecorder_VideoSourceType
+### OH_AVRecorder_VideoSourceType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AVRecorder_VideoSourceType
@@ -127,17 +139,19 @@ AVRecorder的视频源类型。
  
 **起始版本：** 18
   
+
 | 枚举项 | 描述 |
 | --- | --- |
-| AVRECORDER_SURFACE_YUV = 0 | 原始数据Surface。适用于需要对原始视频帧数据进行编码处理的场景。 |
-| AVRECORDER_SURFACE_ES = 1 | ES数据Surface。适用于已有编码数据（如硬编码输出）无需再次编码的场景。 |
+| AVRECORDER_SURFACE_YUV = 0 | 原始数据Surface。 |
+| AVRECORDER_SURFACE_ES = 1 | ES数据Surface。 |
  
  
   
 
-#### OH_AVRecorder_CodecMimeType
+### OH_AVRecorder_CodecMimeType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AVRecorder_CodecMimeType
@@ -151,6 +165,7 @@ enum OH_AVRecorder_CodecMimeType
  
 **起始版本：** 18
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AVRECORDER_VIDEO_AVC = 2 | H.264视频编码器MIME类型。需与mp4容器格式匹配使用。 |
@@ -165,9 +180,10 @@ enum OH_AVRecorder_CodecMimeType
  
   
 
-#### OH_AVRecorder_ContainerFormatType
+### OH_AVRecorder_ContainerFormatType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AVRecorder_ContainerFormatType
@@ -181,6 +197,7 @@ enum OH_AVRecorder_ContainerFormatType
  
 **起始版本：** 18
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AVRECORDER_CFT_MPEG_4 = 2 | 视频容器格式类型mp4。支持AAC音频编码器及MPEG4、H.264或H.265视频编码器。 |
@@ -193,9 +210,10 @@ enum OH_AVRecorder_ContainerFormatType
  
   
 
-#### OH_AVRecorder_State
+### OH_AVRecorder_State
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AVRecorder_State
@@ -209,6 +227,7 @@ AVRecorder状态，用于表示录制器在生命周期中的不同阶段，不�
  
 **起始版本：** 18
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AVRECORDER_IDLE = 0 | 空闲状态，为AVRecorder实例创建后的默认初始状态。此时可以调用OH_AVRecorder_Prepare接口设置录制参数，进入AVRECORDER_PREPARED状态。 |
@@ -222,9 +241,10 @@ AVRecorder状态，用于表示录制器在生命周期中的不同阶段，不�
  
   
 
-#### OH_AVRecorder_StateChangeReason
+### OH_AVRecorder_StateChangeReason
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AVRecorder_StateChangeReason
@@ -238,17 +258,19 @@ AVRecorder状态变化的原因，用于区分状态变化是由用户操作还�
  
 **起始版本：** 18
   
+
 | 枚举项 | 描述 |
 | --- | --- |
-| AVRECORDER_USER = 0 | 用户操作导致的状态变化。例如用户主动调用Start、Pause、Resume、Stop等接口时触发。 |
-| AVRECORDER_BACKGROUND = 1 | 后台操作导致的状态变化。例如因音频打断、录制超时等原因自动改变录制状态时触发。 |
+| AVRECORDER_USER = 0 | 用户操作导致的状态变化。 |
+| AVRECORDER_BACKGROUND = 1 | 后台操作导致的状态变化。 |
  
  
   
 
-#### OH_AVRecorder_FileGenerationMode
+### OH_AVRecorder_FileGenerationMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AVRecorder_FileGenerationMode
@@ -262,6 +284,7 @@ enum OH_AVRecorder_FileGenerationMode
  
 **起始版本：** 18
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AVRECORDER_APP_CREATE = 0 | 由应用自行在沙箱中创建媒体文件，此模式下不会触发OH_AVRecorder_OnUri回调。 |
@@ -270,15 +293,17 @@ enum OH_AVRecorder_FileGenerationMode
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AVRecorder_OnStateChange()
+### OH_AVRecorder_OnStateChange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_AVRecorder_OnStateChange)(OH_AVRecorder *recorder, OH_AVRecorder_State state, OH_AVRecorder_StateChangeReason reason, void *userData)
@@ -294,6 +319,7 @@ typedef void (*OH_AVRecorder_OnStateChange)(OH_AVRecorder *recorder, OH_AVRecord
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVRecorder *recorder | OH_AVRecorder实例的指针。 |
@@ -304,9 +330,10 @@ typedef void (*OH_AVRecorder_OnStateChange)(OH_AVRecorder *recorder, OH_AVRecord
  
   
 
-#### OH_AVRecorder_OnError()
+### OH_AVRecorder_OnError()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_AVRecorder_OnError)(OH_AVRecorder *recorder, int32_t errorCode, const char *errorMsg, void *userData)
@@ -322,6 +349,7 @@ typedef void (*OH_AVRecorder_OnError)(OH_AVRecorder *recorder, int32_t errorCode
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVRecorder *recorder | OH_AVRecorder实例的指针。 |
@@ -332,9 +360,10 @@ typedef void (*OH_AVRecorder_OnError)(OH_AVRecorder *recorder, int32_t errorCode
  
   
 
-#### OH_AVRecorder_OnUri()
+### OH_AVRecorder_OnUri()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_AVRecorder_OnUri)(OH_AVRecorder *recorder, OH_MediaAsset *asset, void *userData)
@@ -350,6 +379,7 @@ typedef void (*OH_AVRecorder_OnUri)(OH_AVRecorder *recorder, OH_MediaAsset *asse
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVRecorder *recorder | OH_AVRecorder实例的指针。 |

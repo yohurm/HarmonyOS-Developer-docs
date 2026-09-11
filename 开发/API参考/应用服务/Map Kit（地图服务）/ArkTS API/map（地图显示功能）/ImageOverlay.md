@@ -1,11 +1,12 @@
 # Interface (ImageOverlay)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-04 10:41:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-imageoverlay
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -15,11 +16,12 @@ import { mapCommon } from '@kit.MapKit';
  
   
 
-#### ImageOverlay
+## ImageOverlay
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-图片覆盖物。继承[BaseOverlay](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-baseoverlay)。
+图片覆盖物，继承[BaseOverlay](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-baseoverlay)。在调用map.[MapComponentController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-mapcomponentcontroller)类的[addImageOverlay](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-mapcomponentcontroller#addimageoverlay)方法时会返回该类型的实例。
  
 **模型约束：** 此接口仅可在Stage模型下使用。
  
@@ -56,7 +58,8 @@ let bearing: number = imageOverlay.getBearing();
  
   
 
-#### getBearing
+### getBearing
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -74,6 +77,7 @@ getBearing(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回覆盖物的旋转角度，单位：度（°）。 |
@@ -87,7 +91,8 @@ let bearing: number = imageOverlay.getBearing();
  
   
 
-#### getBounds
+### getBounds
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -105,6 +110,7 @@ getBounds(): mapCommon.LatLngBounds
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | mapCommon.LatLngBounds | 获取覆盖物的矩形区域。 |
@@ -118,7 +124,8 @@ let bounds: mapCommon.LatLngBounds = imageOverlay.getBounds();
  
   
 
-#### getHeight
+### getHeight
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -136,6 +143,7 @@ getHeight(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 覆盖物的高度，单位：m。 |
@@ -149,7 +157,8 @@ let height: number = imageOverlay.getHeight();
  
   
 
-#### getWidth
+### getWidth
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -167,6 +176,7 @@ getWidth(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 覆盖物的宽度，单位：m。 |
@@ -180,7 +190,8 @@ let width: number = imageOverlay.getWidth();
  
   
 
-#### getPosition
+### getPosition
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -198,6 +209,7 @@ getPosition(): mapCommon.LatLng
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | mapCommon.LatLng | 覆盖物的位置。 |
@@ -211,7 +223,8 @@ let position: mapCommon.LatLng = imageOverlay.getPosition();
  
   
 
-#### getTransparency
+### getTransparency
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -229,6 +242,7 @@ getTransparency(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 覆盖物的透明度。取值范围：[0, 1]。0表示不透明，1表示全透明。 |
@@ -242,7 +256,8 @@ let transparency: number = imageOverlay.getTransparency();
  
   
 
-#### isClickable
+### isClickable
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -260,6 +275,7 @@ isClickable(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 是否可点击。 - true：可点击 - false：不可点击 |
@@ -273,7 +289,8 @@ let click: boolean = imageOverlay.isClickable();
  
   
 
-#### setBearing
+### setBearing
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -291,6 +308,7 @@ setBearing(bearing: number): void
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bearing | number | 是 | 覆盖物的旋转角度，单位：°。 以正北方向为0°、顺时针方向为正的角度，默认值为0°，取值范围：[0, 360)。超出取值范围的值会换算成取值范围内的值，比如361°会被换算成1°，-1°换算为359°。 |
@@ -304,7 +322,8 @@ imageOverlay.setBearing(180);
  
   
 
-#### setClickable
+### setClickable
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -322,6 +341,7 @@ setClickable(clickable: boolean): void
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | clickable | boolean | 是 | 是否开启可点击开关。 - true：开启 - false：不开启 |
@@ -335,7 +355,8 @@ imageOverlay.setClickable(false);
  
   
 
-#### setDimensions
+### setDimensions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -353,6 +374,7 @@ setDimensions(width: number, height?: number): void
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | width | number | 是 | 宽度，width为正整数，单位：m，异常值不处理。 |
@@ -367,7 +389,8 @@ imageOverlay.setDimensions(100000, 100000);
  
   
 
-#### setImage
+### setImage
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -385,6 +408,7 @@ setImage(image: ResourceStr | image.PixelMap): Promise&lt;void&gt;
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | image | ResourceStr \| image.PixelMap | 是 | 覆盖物的图像。 图片格式支持jpg、jpeg、png、gif（只支持显示第一帧）、webp、svg。 说明： ResourceStr为Resource和string两种格式，其中string类型入参支持两种格式： - 资源相对路径格式：图标存放在resources/rawfile，image参数传入rawfile文件夹下的相对路径。 - toDataURL格式（如data:image/png;base64,&lt;图片的Base64字节编码值&gt;）。 |
@@ -392,6 +416,7 @@ setImage(image: ResourceStr | image.PixelMap): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -406,7 +431,8 @@ await imageOverlay.setImage("icon.png");
  
   
 
-#### setBounds
+### setBounds
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -424,6 +450,7 @@ setBounds(bounds: mapCommon.LatLngBounds): void
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bounds | mapCommon.LatLngBounds | 是 | 覆盖物的矩形区域。 |
@@ -441,7 +468,8 @@ imageOverlay.setBounds(bounds);
  
   
 
-#### setPosition
+### setPosition
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -459,6 +487,7 @@ setPosition(position: mapCommon.LatLng): void
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | position | mapCommon.LatLng | 是 | 覆盖物的位置。 |
@@ -473,7 +502,8 @@ imageOverlay.setPosition(position);
  
   
 
-#### setTransparency
+### setTransparency
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -491,6 +521,7 @@ setTransparency(transparency: number): void
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | transparency | number | 是 | 覆盖物的透明度。取值范围：[0, 1]。0表示不透明，1表示全透明。异常值不处理。 |

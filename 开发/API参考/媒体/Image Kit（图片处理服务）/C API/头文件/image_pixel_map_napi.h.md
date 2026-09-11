@@ -1,13 +1,14 @@
 # image_pixel_map_napi.h
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-pixel-map-napi-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明可以锁定并访问pixelmap数据的方法，声明解锁的方法。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OhosPixelMapInfo | - | 用于定义PixelMap的相关信息。 |
@@ -40,10 +44,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | 方法返回的错误码 | 函数方法返回值的错误码的枚举。 |
@@ -53,10 +59,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | int32_t OH_GetImageInfo(napi_env env, napi_value value, OhosPixelMapInfo *info) | 获取PixelMap的信息，并记录信息到OhosPixelMapInfo结构体中。 |
@@ -66,15 +74,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 方法返回的错误码
+### 方法返回的错误码
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum anonymous enum
@@ -88,6 +98,7 @@ enum anonymous enum
  
 **废弃版本：** 10
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OHOS_IMAGE_RESULT_SUCCESS = 0 | 成功的结果。 |
@@ -96,9 +107,10 @@ enum anonymous enum
  
   
 
-#### 像素格式
+### 像素格式
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum anonymous enum
@@ -112,6 +124,7 @@ enum anonymous enum
  
 **废弃版本：** 10
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OHOS_PIXEL_MAP_FORMAT_NONE = 0 | 未知的格式。 |
@@ -121,9 +134,10 @@ enum anonymous enum
  
   
 
-#### PixelMap缩放类型
+### PixelMap缩放类型
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum anonymous enum
@@ -135,6 +149,7 @@ PixelMap缩放类型的枚举。
  
 **起始版本：** 10
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OHOS_PIXEL_MAP_SCALE_MODE_FIT_TARGET_SIZE = 0 | 适应目标图片大小的格式。 |
@@ -143,15 +158,17 @@ PixelMap缩放类型的枚举。
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_GetImageInfo()
+### OH_GetImageInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_GetImageInfo(napi_env env, napi_value value, OhosPixelMapInfo *info)
@@ -167,6 +184,7 @@ int32_t OH_GetImageInfo(napi_env env, napi_value value, OhosPixelMapInfo *info)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | napi_env env | napi的环境指针。 |
@@ -176,6 +194,7 @@ int32_t OH_GetImageInfo(napi_env env, napi_value value, OhosPixelMapInfo *info)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码： OHOS_IMAGE_RESULT_SUCCESS：操作成功。 OHOS_IMAGE_RESULT_BAD_PARAMETER：操作失败。 |
@@ -183,9 +202,10 @@ int32_t OH_GetImageInfo(napi_env env, napi_value value, OhosPixelMapInfo *info)
  
   
 
-#### OH_AccessPixels()
+### OH_AccessPixels()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_AccessPixels(napi_env env, napi_value value, void** addrPtr)
@@ -203,6 +223,7 @@ int32_t OH_AccessPixels(napi_env env, napi_value value, void** addrPtr)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | napi_env env | napi的环境指针。 |
@@ -212,6 +233,7 @@ int32_t OH_AccessPixels(napi_env env, napi_value value, void** addrPtr)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码： OHOS_IMAGE_RESULT_SUCCESS：操作成功。 OHOS_IMAGE_RESULT_BAD_PARAMETER：操作失败。 |
@@ -219,9 +241,10 @@ int32_t OH_AccessPixels(napi_env env, napi_value value, void** addrPtr)
  
   
 
-#### OH_UnAccessPixels()
+### OH_UnAccessPixels()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_UnAccessPixels(napi_env env, napi_value value)
@@ -237,6 +260,7 @@ int32_t OH_UnAccessPixels(napi_env env, napi_value value)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | napi_env env | napi的环境指针。 |
@@ -245,6 +269,7 @@ int32_t OH_UnAccessPixels(napi_env env, napi_value value)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码： OHOS_IMAGE_RESULT_SUCCESS：操作成功。 OHOS_IMAGE_RESULT_BAD_PARAMETER：操作失败。 |

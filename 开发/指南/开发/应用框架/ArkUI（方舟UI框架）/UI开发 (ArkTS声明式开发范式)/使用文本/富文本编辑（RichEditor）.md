@@ -1,6 +1,6 @@
 # 富文本编辑（RichEditor）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-components-richeditor
 
@@ -11,7 +11,7 @@ RichEditor是支持图文混排和文本交互式编辑的组件，通常用于�
 对于需要大量展示HTML格式内容的场景，建议使用[RichText](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richtext)组件。
 
 
-#### 组件构成
+## 组件构成
 
 下图展示了组件元素的构成。
 
@@ -20,6 +20,7 @@ RichEditor是支持图文混排和文本交互式编辑的组件，通常用于�
 
 
 组件的元素构成包括：
+
 
 | 元素 | 说明 |
 | --- | --- |
@@ -31,13 +32,13 @@ RichEditor是支持图文混排和文本交互式编辑的组件，通常用于�
 
 
 
-#### 创建RichEditor组件
+## 创建RichEditor组件
 
 开发者可以[创建基于属性字符串进行内容管理的RichEditor组件](#创建基于属性字符串进行内容管理的richeditor组件)或[创建基于Span进行内容管理的RichEditor组件](#创建基于span进行内容管理的richeditor组件)。
 
 
 
-#### 创建基于属性字符串进行内容管理的RichEditor组件
+### 创建基于属性字符串进行内容管理的RichEditor组件
 
 使用RichEditor(options: [RichEditorStyledStringOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor#richeditorstyledstringoptions12))接口可以创建基于属性字符串（[StyledString/MutableStyledString](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-styled-string)）进行内容管理的RichEditor组件。这种构建方式开发者可以通过在应用侧持有属性字符串对象来管理数据，通过修改属性字符串对象的内容、样式，再传递给组件，即可实现对富文本组件内容的更新。
 
@@ -94,7 +95,7 @@ struct CreateRichEditor {
 
 
 
-#### 创建基于Span进行内容管理的RichEditor组件
+### 创建基于Span进行内容管理的RichEditor组件
 
 使用RichEditor(value: [RichEditorOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor#richeditoroptions))接口可以创建基于Span进行内容管理的RichEditor组件，通常用于复杂内容场景，开发者通过RichEditorController提供的接口实现内容、样式的管理。
 
@@ -145,13 +146,13 @@ struct CreateRichEditor {
 
 
 
-#### 添加内容
+## 添加内容
 
 富文本组件可以通过不同的接口添加多种形式的内容。
 
 
 
-#### 添加文本内容
+### 添加文本内容
 
 除了直接在组件内输入内容，也可以通过[addTextSpan](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor#addtextspan)添加文本内容。
 
@@ -205,7 +206,7 @@ build() {
 
 
 
-#### 添加图片内容
+### 添加图片内容
 
 通过[addImageSpan](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor#addimagespan)添加图片内容。
 
@@ -258,7 +259,7 @@ build() {
 
 
 
-#### 添加@Builder装饰器修饰的内容
+### 添加@Builder装饰器修饰的内容
 
 通过[addBuilderSpan](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor#addbuilderspan11)添加@Builder装饰器修饰的内容。
 
@@ -330,7 +331,7 @@ build() {
 
 
 
-#### 添加SymbolSpan内容
+### 添加SymbolSpan内容
 
 可通过[addSymbolSpan](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor#addsymbolspan11)添加Symbol内容。此接口可用于Symbol矢量图标的添加，例如在文本中插入图标、标志等可视化符号元素。
 
@@ -384,13 +385,13 @@ build() {
 
 
 
-#### 管理内容
+## 管理内容
 
 富文本组件可以通过接口对内容进行管理，例如[获取组件内的图文信息](#获取组件内图文信息)、[设置无输入时的提示文本](#设置无输入时的提示文本)或[设置组件内容的最大字符数](#设置最大长度)。
 
 
 
-#### 获取组件内图文信息
+### 获取组件内图文信息
 
 可通过[getSpans](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor#getspans)获取组件内所有图文内容的信息，包括图文的内容、id、样式、位置等信息。获取内容位置信息后，可对指定范围内容进行样式的更新。
 
@@ -454,7 +455,7 @@ struct GetGraphicInfoInComponent {
 
 
 
-#### 设置无输入时的提示文本
+### 设置无输入时的提示文本
 
 通过[placeholder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor#placeholder12)设置无输入时的提示文本。
 
@@ -495,7 +496,7 @@ build() {
 
 
 
-#### 设置最大长度
+### 设置最大长度
 
 通过[maxLength](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor#maxlength18)可以设置富文本的最大可输入字符数。
 
@@ -525,13 +526,13 @@ build() {
 
 
 
-#### 事件回调
+## 事件回调
 
 开发者可以通过注册事件回调，感知组件事件的触发。
 
 
 
-#### 添加图文变化前和图文变化后可触发的回调
+### 添加图文变化前和图文变化后可触发的回调
 
 通过[onWillChange](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor#onwillchange12)添加图文变化前可触发的回调。此回调适用于用户实时数据校验与提醒，例如在用户输入文本时，可在回调内实现对输入内容的检测，若检测到敏感词汇，应立即弹出提示框。此外，它还适用于实时字数统计与限制，对于有字数限制的输入场景，可在回调中实时统计用户输入的字数，并在接近字数上限时提供相应的提示。
 
@@ -604,7 +605,7 @@ build() {
 
 
 
-#### 添加输入法输入内容前和完成输入后可触发的回调
+### 添加输入法输入内容前和完成输入后可触发的回调
 
 添加输入法输入内容前和完成输入后可触发的回调。
 
@@ -678,7 +679,7 @@ build() {
 
 
 
-#### 添加完成粘贴前可触发的回调
+### 添加完成粘贴前可触发的回调
 
 通过[onPaste](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor#onpaste11)回调，来添加粘贴前要处理的流程。
 
@@ -769,7 +770,7 @@ struct on_cut_copy_paste {
 
 
 
-#### 添加完成剪切前可触发的回调
+### 添加完成剪切前可触发的回调
 
 通过[onCut](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor#oncut12)回调，来添加剪切前要处理的流程。
 
@@ -824,7 +825,7 @@ build() {
 
 
 
-#### 添加完成复制前可触发的回调
+### 添加完成复制前可触发的回调
 
 通过[onCopy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor#oncopy12)回调，来添加复制前要处理的流程。
 
@@ -885,13 +886,13 @@ build() {
 
 
 
-#### 组件交互
+## 组件交互
 
 可以通过接口配置交互元素属性，感知交互元素变化。
 
 
 
-#### 设置输入框光标和手柄的颜色
+### 设置输入框光标和手柄的颜色
 
 通过[caretColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor#caretcolor12)设置输入框光标和手柄的颜色。
 
@@ -932,7 +933,7 @@ build() {
 
 
 
-#### 添加组件内容选择区域或编辑状态下光标位置改变时可触发的回调
+### 添加组件内容选择区域或编辑状态下光标位置改变时可触发的回调
 
 通过[onSelectionChange](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor#onselectionchange12)来添加组件内容选择区域或编辑状态下光标位置改变时可触发的回调。
 
@@ -986,7 +987,7 @@ build() {
 
 
 
-#### 设置内容选中区范围
+### 设置内容选中区范围
 
 通过[setSelection](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor#setselection11)设置组件内的内容选中时部分背板高亮。
 
@@ -1035,13 +1036,13 @@ build() {
 
 
 
-#### 菜单配置
+## 菜单配置
 
 通过接口可以对文本选择菜单进行配置。
 
 
 
-#### 管理选中菜单项
+### 管理选中菜单项
 
 当富文本选择区域变化后显示菜单之前触发[onPrepareMenu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#属性-1)回调，可在该回调中进行菜单数据设置。
 
@@ -1139,7 +1140,7 @@ struct PrepareMenu {
 
 
 
-#### 屏蔽系统服务类菜单项
+### 屏蔽系统服务类菜单项
 
 通过[disableSystemServiceMenuItems](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-textmenucontroller#disablesystemservicemenuitems20)屏蔽富文本选择菜单内所有系统服务菜单项。
 
@@ -1254,7 +1255,7 @@ struct DisableMenuItem {
 
 
 
-#### 设置自定义选择菜单
+### 设置自定义选择菜单
 
 通过[bindSelectionMenu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor#bindselectionmenu)设置自定义选择菜单。
 
@@ -1339,13 +1340,13 @@ SystemMenu() {
 
 
 
-#### 布局配置
+## 布局配置
 
 组件支持通过接口配置布局规则，开发者可以根据业务场景定制合适的布局规则。
 
 
 
-#### 设置最大行数
+### 设置最大行数
 
 通过[maxLines](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor#maxlines18)可以设置富文本组件内可显示文本的最大行数。
 
@@ -1388,13 +1389,13 @@ build() {
 
 
 
-#### 样式设置
+## 样式设置
 
 组件支持对内容设置复杂的样式。
 
 
 
-#### 设置用户预设的文本样式
+### 设置用户预设的文本样式
 
 通过[setTypingStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor#settypingstyle11)可以设置用户预设的文本样式。
 
@@ -1456,7 +1457,7 @@ struct SetUserPresetTextStyles {
 
 
 
-#### 设置装饰线
+### 设置装饰线
 
 通过[decoration](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-span#decoration)设置富文本组件中文本装饰线的样式、颜色和粗细。
 
@@ -1553,7 +1554,7 @@ Button($r('app.string.Demo_SetStyledStringButton'))
 
 
 
-#### 设置垂直居中
+### 设置垂直居中
 
 通过[textVerticalAlign](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#textverticalalign20)设置文本段落在垂直方向的对齐方式。
 
@@ -1602,7 +1603,7 @@ build() {
 
 
 
-#### 设置中西文自动间距
+### 设置中西文自动间距
 
 通过[enableAutoSpacing](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor#enableautospacing20)设置是否开启中文与西文的自动间距。
 
@@ -1655,6 +1656,6 @@ struct EnableAutoSpacing {
 
 
 
-#### 示例代码
+## 示例代码
 
  - [内容发布器](https://gitcode.com/HarmonyOS_Samples/content-publisher)

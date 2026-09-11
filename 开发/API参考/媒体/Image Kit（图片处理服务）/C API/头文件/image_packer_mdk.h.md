@@ -1,13 +1,14 @@
 # image_packer_mdk.h
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-packer-mdk-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明用于将图像编码到缓冲区或文件的api。可用于将像素数据编码到目标缓冲区或文件中。
  
@@ -33,16 +34,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | ImagePacker_Opts_ | ImagePacker_Opts | 定义图像编码选项信息。 |
@@ -51,10 +55,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | int32_t OH_ImagePacker_Create(napi_env env, napi_value *res) | 获取JavaScript native层ImagePacker对象。 |
@@ -66,15 +72,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_ImagePacker_Create()
+### OH_ImagePacker_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ImagePacker_Create(napi_env env, napi_value *res)
@@ -88,6 +96,7 @@ int32_t OH_ImagePacker_Create(napi_env env, napi_value *res)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | napi_env env | 表明JNI环境的指针。 |
@@ -96,6 +105,7 @@ int32_t OH_ImagePacker_Create(napi_env env, napi_value *res)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | IRNdkErrCode： IMAGE_RESULT_SUCCESS：执行成功。 IMAGE_RESULT_INVALID_PARAMETER：参数无效。 |
@@ -103,9 +113,10 @@ int32_t OH_ImagePacker_Create(napi_env env, napi_value *res)
  
   
 
-#### OH_ImagePacker_InitNative()
+### OH_ImagePacker_InitNative()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ImagePacker_Native* OH_ImagePacker_InitNative(napi_env env, napi_value packer)
@@ -119,6 +130,7 @@ ImagePacker_Native* OH_ImagePacker_InitNative(napi_env env, napi_value packer)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | napi_env env | 表明JNI环境的指针。 |
@@ -127,6 +139,7 @@ ImagePacker_Native* OH_ImagePacker_InitNative(napi_env env, napi_value packer)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ImagePacker_Native* | 如果操作成功则返回ImagePacker_Native指针，否则返回空指针。 |
@@ -138,9 +151,10 @@ ImagePacker_Native* OH_ImagePacker_InitNative(napi_env env, napi_value packer)
  
   
 
-#### OH_ImagePacker_PackToData()
+### OH_ImagePacker_PackToData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ImagePacker_PackToData(ImagePacker_Native* native, napi_value source,ImagePacker_Opts* opts, uint8_t* outData, size_t* size)
@@ -154,6 +168,7 @@ int32_t OH_ImagePacker_PackToData(ImagePacker_Native* native, napi_value source,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ImagePacker_Native* native | 表明指向native层ImagePacker的指针。 |
@@ -165,6 +180,7 @@ int32_t OH_ImagePacker_PackToData(ImagePacker_Native* native, napi_value source,
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | IRNdkErrCode： IMAGE_RESULT_SUCCESS：执行成功。 IMAGE_RESULT_INVALID_PARAMETER：参数无效。 ERR_IMAGE_DATA_ABNORMAL：输出缓冲区异常。 ERR_IMAGE_MISMATCHED_FORMAT：格式不匹配。 ERR_IMAGE_MALLOC_ABNORMAL：malloc内部缓冲区错误。 ERR_IMAGE_DECODE_ABNORMAL：init编解码器内部错误。 ERR_IMAGE_ENCODE_FAILED：编码器在编码过程中出现错误。 |
@@ -176,9 +192,10 @@ int32_t OH_ImagePacker_PackToData(ImagePacker_Native* native, napi_value source,
  
   
 
-#### OH_ImagePacker_PackToFile()
+### OH_ImagePacker_PackToFile()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ImagePacker_PackToFile(ImagePacker_Native* native, napi_value source,ImagePacker_Opts* opts, int fd)
@@ -192,6 +209,7 @@ int32_t OH_ImagePacker_PackToFile(ImagePacker_Native* native, napi_value source,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ImagePacker_Native* native | 表明指向native层ImagePacker的指针。 |
@@ -202,6 +220,7 @@ int32_t OH_ImagePacker_PackToFile(ImagePacker_Native* native, napi_value source,
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | IRNdkErrCode： IMAGE_RESULT_SUCCESS：执行成功。 IMAGE_RESULT_INVALID_PARAMETER：参数无效。 ERR_IMAGE_DATA_ABNORMAL：输出缓冲区异常。 ERR_IMAGE_MISMATCHED_FORMAT：格式不匹配。 ERR_IMAGE_MALLOC_ABNORMAL：malloc内部缓冲区错误。 ERR_IMAGE_DECODE_ABNORMAL：init编解码器内部错误。 ERR_IMAGE_ENCODE_FAILED：编码器在编码过程中出现错误。 |
@@ -213,9 +232,10 @@ int32_t OH_ImagePacker_PackToFile(ImagePacker_Native* native, napi_value source,
  
   
 
-#### OH_ImagePacker_Release()
+### OH_ImagePacker_Release()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ImagePacker_Release(ImagePacker_Native* native)
@@ -233,6 +253,7 @@ int32_t OH_ImagePacker_Release(ImagePacker_Native* native)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ImagePacker_Native* native | 表明native层ImagePacker_Native值的指针。 |
@@ -240,6 +261,7 @@ int32_t OH_ImagePacker_Release(ImagePacker_Native* native)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | IRNdkErrCode： IMAGE_RESULT_SUCCESS：执行成功。 |

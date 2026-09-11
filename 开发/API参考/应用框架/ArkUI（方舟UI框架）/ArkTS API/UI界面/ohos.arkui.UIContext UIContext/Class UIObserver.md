@@ -1,9 +1,9 @@
 # Class (UIObserver)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uiobserver
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 UIObserver提供UI组件行为变化的无感监听能力。无感监听是指开发者注册回调函数后，无需手动轮询或主动查询组件状态；当目标组件状态变化时，系统会自动触发回调并返回变化信息。UIObserver支持监听Navigation页面状态变化（NavDestination）、滚动事件、路由页面状态、屏幕像素密度变化、绘制与布局完成情况、点击事件、手势触发信息、文本变化及组件内容切换等UI行为，适用于页面生命周期监控、滚动事件处理和渲染性能优化等场景。
  
@@ -12,17 +12,14 @@ UIObserver提供UI组件行为变化的无感监听能力。无感监听是指�
 
   
 
-#### on('navDestinationUpdate')11+
+## on('navDestinationUpdate')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'navDestinationUpdate', callback: Callback<observer.NavDestinationInfo>): void
  
 监听[NavDestination](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navdestination)组件的状态变化。监听器通过注册回调函数实现，当NavDestination组件的状态发生变化（如显示、隐藏、销毁等）时，系统会自动调用已注册的回调函数，携带状态变化信息。
- 
-> [!NOTE]
-> 必须与 off('navDestinationUpdate') 方法配对使用。 在组件销毁前（如aboutToDisappear生命周期中）必须调用off方法释放监听资源。 未及时调用off方法会导致内存泄漏和资源占用。
-
  
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
  
@@ -30,6 +27,7 @@ on(type: 'navDestinationUpdate', callback: Callback<observer.NavDestinationInfo>
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'navDestinationUpdate'，即NavDestination组件的状态变化。 |
@@ -93,9 +91,10 @@ struct Index {
  
   
 
-#### off('navDestinationUpdate')11+
+## off('navDestinationUpdate')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'navDestinationUpdate', callback?: Callback<observer.NavDestinationInfo>): void
  
@@ -107,10 +106,11 @@ off(type: 'navDestinationUpdate', callback?: Callback<observer.NavDestinationInf
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'navDestinationUpdate'，即NavDestination组件的状态变化。 |
-| callback | Callback<observer.NavDestinationInfo> | 否 | 需要取消的监听回调。不指定具体的回调函数时，取消所有NavDestination组件状态变化的监听回调。 |
+| callback | Callback<observer.NavDestinationInfo> | 否 | 需要取消的监听回调，不传参数时，取消所有NavDestination组件状态变化的监听回调。 |
  
  
 **示例：**
@@ -119,17 +119,14 @@ off(type: 'navDestinationUpdate', callback?: Callback<observer.NavDestinationInf
  
   
 
-#### on('navDestinationUpdate')11+
+## on('navDestinationUpdate')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'navDestinationUpdate', options: { navigationId: ResourceStr }, callback: Callback<observer.NavDestinationInfo>): void
  
 通过[Navigation](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation)的id监听[NavDestination](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navdestination)组件的状态变化。
- 
-> [!NOTE]
-> 必须与 off('navDestinationUpdate') 方法配对使用。 在组件销毁前（如aboutToDisappear生命周期中）必须调用off方法释放监听资源。 未及时调用off方法会导致内存泄漏和资源占用。
-
  
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
  
@@ -137,6 +134,7 @@ on(type: 'navDestinationUpdate', options: { navigationId: ResourceStr }, callbac
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'navDestinationUpdate'，即NavDestination组件的状态变化。 |
@@ -202,9 +200,10 @@ struct Index {
  
   
 
-#### off('navDestinationUpdate')11+
+## off('navDestinationUpdate')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'navDestinationUpdate', options: { navigationId: ResourceStr }, callback?: Callback<observer.NavDestinationInfo>): void
  
@@ -216,11 +215,12 @@ off(type: 'navDestinationUpdate', options: { navigationId: ResourceStr }, callba
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'navDestinationUpdate'，即NavDestination组件的状态变化。 |
 | options | { navigationId: ResourceStr } | 是 | 指定监听的Navigation的id。 |
-| callback | Callback<observer.NavDestinationInfo> | 否 | 需要取消的监听回调。不指定具体的回调函数时，取消options指定的Navigation上所有NavDestination组件状态变化的监听回调。 |
+| callback | Callback<observer.NavDestinationInfo> | 否 | 需要取消的监听回调。不指定具体的回调函数时，取消该Navigation上所有的监听回调。 |
  
  
 **示例：**
@@ -229,17 +229,14 @@ off(type: 'navDestinationUpdate', options: { navigationId: ResourceStr }, callba
  
   
 
-#### on('navDestinationUpdateByUniqueId')20+
+## on('navDestinationUpdateByUniqueId')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'navDestinationUpdateByUniqueId', navigationUniqueId: number, callback: Callback<observer.NavDestinationInfo>): void
  
 通过[Navigation](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation)的uniqueId监听[NavDestination](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navdestination)组件的状态变化，uniqueId可通过[queryNavigationInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-custom-component-api#querynavigationinfo12)获取。
- 
-> [!NOTE]
-> 必须与 off('navDestinationUpdateByUniqueId') 方法配对使用。 在组件销毁前（如aboutToDisappear生命周期中）必须调用off方法释放监听资源。 未及时调用off方法会导致内存泄漏和资源占用。
-
  
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
  
@@ -247,6 +244,7 @@ on(type: 'navDestinationUpdateByUniqueId', navigationUniqueId: number, callback:
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'navDestinationUpdateByUniqueId'，即NavDestination组件的状态变化。 |
@@ -325,9 +323,10 @@ struct Index {
  
   
 
-#### off('navDestinationUpdateByUniqueId')20+
+## off('navDestinationUpdateByUniqueId')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'navDestinationUpdateByUniqueId', navigationUniqueId: number, callback?: Callback<observer.NavDestinationInfo>): void
  
@@ -339,11 +338,12 @@ off(type: 'navDestinationUpdateByUniqueId', navigationUniqueId: number, callback
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'navDestinationUpdateByUniqueId'，即NavDestination组件的状态变化。 |
 | navigationUniqueId | number | 是 | 指定监听的Navigation的uniqueId，可以通过queryNavigationInfo获取。 |
-| callback | Callback<observer.NavDestinationInfo> | 否 | 需要取消的监听回调。不指定具体的回调函数时，取消该Navigation上所有的监听回调。 |
+| callback | Callback<observer.NavDestinationInfo> | 否 | 需要取消的监听回调，不传参数时，取消该Navigation上所有的监听回调。 |
  
  
 **示例：**
@@ -352,9 +352,10 @@ off(type: 'navDestinationUpdateByUniqueId', navigationUniqueId: number, callback
  
   
 
-#### on('scrollEvent')12+
+## on('scrollEvent')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'scrollEvent', callback: Callback<observer.ScrollEventInfo>): void
  
@@ -366,6 +367,7 @@ on(type: 'scrollEvent', callback: Callback<observer.ScrollEventInfo>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'scrollEvent'，即滚动事件的开始和结束。 |
@@ -449,9 +451,10 @@ struct Index {
  
   
 
-#### off('scrollEvent')12+
+## off('scrollEvent')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'scrollEvent', callback?: Callback<observer.ScrollEventInfo>): void
  
@@ -463,6 +466,7 @@ off(type: 'scrollEvent', callback?: Callback<observer.ScrollEventInfo>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'scrollEvent'，即滚动事件的开始和结束。 |
@@ -475,9 +479,10 @@ off(type: 'scrollEvent', callback?: Callback<observer.ScrollEventInfo>): void
  
   
 
-#### on('scrollEvent')12+
+## on('scrollEvent')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'scrollEvent', options: observer.ObserverOptions, callback: Callback<observer.ScrollEventInfo>): void
  
@@ -489,6 +494,7 @@ on(type: 'scrollEvent', options: observer.ObserverOptions, callback: Callback<ob
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'scrollEvent'，即滚动事件的开始和结束。 |
@@ -502,9 +508,10 @@ on(type: 'scrollEvent', options: observer.ObserverOptions, callback: Callback<ob
  
   
 
-#### off('scrollEvent')12+
+## off('scrollEvent')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'scrollEvent', options: observer.ObserverOptions, callback?: Callback<observer.ScrollEventInfo>): void
  
@@ -516,6 +523,7 @@ off(type: 'scrollEvent', options: observer.ObserverOptions, callback?: Callback<
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'scrollEvent'，即滚动事件的开始和结束。 |
@@ -529,17 +537,14 @@ off(type: 'scrollEvent', options: observer.ObserverOptions, callback?: Callback<
  
   
 
-#### on('routerPageUpdate')11+
+## on('routerPageUpdate')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'routerPageUpdate', callback: Callback<observer.RouterPageInfo>): void
  
 监听[Router](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-router)中page页面的状态变化。典型使用场景包括页面路由生命周期管理、页面跳转埋点、页面切换状态跟踪等。
- 
-> [!NOTE]
-> 必须与 off('routerPageUpdate') 方法配对使用。 在组件销毁前（如aboutToDisappear生命周期中）必须调用off方法释放监听资源。 未及时调用off方法会导致内存泄漏和资源占用。
-
  
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
  
@@ -547,6 +552,7 @@ on(type: 'routerPageUpdate', callback: Callback<observer.RouterPageInfo>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'routerPageUpdate'，即Router中page页面的状态变化。 |
@@ -604,9 +610,10 @@ struct Index {
  
   
 
-#### off('routerPageUpdate')11+
+## off('routerPageUpdate')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'routerPageUpdate', callback?: Callback<observer.RouterPageInfo>): void
  
@@ -618,6 +625,7 @@ off(type: 'routerPageUpdate', callback?: Callback<observer.RouterPageInfo>): voi
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'routerPageUpdate'，即Router中page页面的状态变化。 |
@@ -630,17 +638,14 @@ off(type: 'routerPageUpdate', callback?: Callback<observer.RouterPageInfo>): voi
  
   
 
-#### on('densityUpdate')12+
+## on('densityUpdate')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'densityUpdate', callback: Callback<observer.DensityInfo>): void
  
 监听屏幕像素密度变化。
- 
-> [!NOTE]
-> 必须与 off('densityUpdate') 方法配对使用。 在组件销毁前（如aboutToDisappear生命周期中）必须调用off方法释放监听资源。 未及时调用off方法会导致内存泄漏和资源占用。
-
  
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
  
@@ -648,6 +653,7 @@ on(type: 'densityUpdate', callback: Callback<observer.DensityInfo>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'densityUpdate'，即屏幕像素密度变化。 |
@@ -700,9 +706,10 @@ struct Index {
  
   
 
-#### off('densityUpdate')12+
+## off('densityUpdate')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'densityUpdate', callback?: Callback<observer.DensityInfo>): void
  
@@ -714,6 +721,7 @@ off(type: 'densityUpdate', callback?: Callback<observer.DensityInfo>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'densityUpdate'，即屏幕像素密度变化。 |
@@ -726,9 +734,10 @@ off(type: 'densityUpdate', callback?: Callback<observer.DensityInfo>): void
  
   
 
-#### on('willDraw')12+
+## on('willDraw')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'willDraw', callback: Callback&lt;void&gt;): void
  
@@ -740,6 +749,7 @@ on(type: 'willDraw', callback: Callback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'willDraw'，即是否将要绘制。 |
@@ -781,9 +791,10 @@ struct Index {
  
   
 
-#### off('willDraw')12+
+## off('willDraw')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'willDraw', callback?: Callback&lt;void&gt;): void
  
@@ -795,6 +806,7 @@ off(type: 'willDraw', callback?: Callback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'willDraw'，即是否将要绘制。 |
@@ -807,9 +819,10 @@ off(type: 'willDraw', callback?: Callback&lt;void&gt;): void
  
   
 
-#### on('didLayout')12+
+## on('didLayout')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'didLayout', callback: Callback&lt;void&gt;): void
  
@@ -821,6 +834,7 @@ on(type: 'didLayout', callback: Callback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'didLayout'，即是否布局完成。 |
@@ -862,9 +876,10 @@ struct Index {
  
   
 
-#### off('didLayout')12+
+## off('didLayout')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'didLayout', callback?: Callback&lt;void&gt;): void
  
@@ -876,6 +891,7 @@ off(type: 'didLayout', callback?: Callback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'didLayout'，即是否布局完成。 |
@@ -888,17 +904,14 @@ off(type: 'didLayout', callback?: Callback&lt;void&gt;): void
  
   
 
-#### on('navDestinationSwitch')12+
+## on('navDestinationSwitch')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'navDestinationSwitch', callback: Callback<observer.NavDestinationSwitchInfo>): void
  
 监听[Navigation](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation)的页面切换事件。
- 
-> [!NOTE]
-> 必须与 off('navDestinationSwitch') 方法配对使用。 在组件销毁前（如aboutToDisappear生命周期中）必须调用off方法释放监听资源。 未及时调用off方法会导致内存泄漏和资源占用。
-
  
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
  
@@ -906,6 +919,7 @@ on(type: 'navDestinationSwitch', callback: Callback<observer.NavDestinationSwitc
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'navDestinationSwitch'，即Navigation的页面切换事件。 |
@@ -976,9 +990,10 @@ struct Index {
  
   
 
-#### off('navDestinationSwitch')12+
+## off('navDestinationSwitch')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'navDestinationSwitch', callback?: Callback<observer.NavDestinationSwitchInfo>): void
  
@@ -990,6 +1005,7 @@ off(type: 'navDestinationSwitch', callback?: Callback<observer.NavDestinationSwi
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'navDestinationSwitch'，即Navigation的页面切换事件。 |
@@ -1002,17 +1018,14 @@ off(type: 'navDestinationSwitch', callback?: Callback<observer.NavDestinationSwi
  
   
 
-#### on('navDestinationSwitch')12+
+## on('navDestinationSwitch')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'navDestinationSwitch', observerOptions: observer.NavDestinationSwitchObserverOptions, callback: Callback<observer.NavDestinationSwitchInfo>): void
  
 通过监听选项监听[Navigation](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation)的页面切换事件。
- 
-> [!NOTE]
-> 必须与 off('navDestinationSwitch') 方法配对使用。 在组件销毁前（如aboutToDisappear生命周期中）必须调用off方法释放监听资源。 未及时调用off方法会导致内存泄漏和资源占用。
-
  
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
  
@@ -1020,6 +1033,7 @@ on(type: 'navDestinationSwitch', observerOptions: observer.NavDestinationSwitchO
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'navDestinationSwitch'，即Navigation的页面切换事件。 |
@@ -1092,9 +1106,10 @@ struct Index {
  
   
 
-#### off('navDestinationSwitch')12+
+## off('navDestinationSwitch')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'navDestinationSwitch', observerOptions: observer.NavDestinationSwitchObserverOptions, callback?: Callback<observer.NavDestinationSwitchInfo>): void
  
@@ -1106,6 +1121,7 @@ off(type: 'navDestinationSwitch', observerOptions: observer.NavDestinationSwitch
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'navDestinationSwitch'，即Navigation的页面切换事件。 |
@@ -1119,13 +1135,14 @@ off(type: 'navDestinationSwitch', observerOptions: observer.NavDestinationSwitch
  
   
 
-#### on('willClick')12+
+## on('willClick')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'willClick', callback: GestureEventListenerCallback): void
  
-监听点击事件指令下发情况，所注册回调将于点击事件触发前触发。回调类型为[GestureEventListenerCallback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-t#gestureeventlistenercallback12)。从API version 20开始支持屏幕朗读触控模式。
+监听点击事件指令下发情况，所注册回调将于点击事件触发前触发。回调类型为[GestureEventListenerCallback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-t#gestureeventlistenercallback)。从API version 20开始支持屏幕朗读触控模式。
  
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
  
@@ -1133,6 +1150,7 @@ on(type: 'willClick', callback: GestureEventListenerCallback): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'willClick'，用于监听点击事件指令下发情况，所注册回调将于点击事件触发前触发。 |
@@ -1229,9 +1247,10 @@ struct ClickExample {
  
   
 
-#### off('willClick')12+
+## off('willClick')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'willClick', callback?: GestureEventListenerCallback): void
  
@@ -1243,6 +1262,7 @@ off(type: 'willClick', callback?: GestureEventListenerCallback): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'willClick'，即点击事件指令下发情况。 |
@@ -1255,13 +1275,14 @@ off(type: 'willClick', callback?: GestureEventListenerCallback): void
  
   
 
-#### on('didClick')12+
+## on('didClick')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'didClick', callback: GestureEventListenerCallback): void
  
-监听点击事件指令下发情况，所注册回调将于点击事件触发后触发。回调类型为[GestureEventListenerCallback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-t#gestureeventlistenercallback12)。从API version 20开始支持屏幕朗读触控模式。
+监听点击事件指令下发情况，所注册回调将于点击事件触发后触发。回调类型为[GestureEventListenerCallback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-t#gestureeventlistenercallback)。从API version 20开始支持屏幕朗读触控模式。
  
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
  
@@ -1269,6 +1290,7 @@ on(type: 'didClick', callback: GestureEventListenerCallback): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'didClick'，用于监听点击事件指令下发情况，所注册回调将于点击事件触发后触发。 |
@@ -1281,9 +1303,10 @@ on(type: 'didClick', callback: GestureEventListenerCallback): void
  
   
 
-#### off('didClick')12+
+## off('didClick')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'didClick', callback?: GestureEventListenerCallback): void
  
@@ -1295,6 +1318,7 @@ off(type: 'didClick', callback?: GestureEventListenerCallback): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'didClick'，即点击事件指令下发情况。 |
@@ -1307,13 +1331,14 @@ off(type: 'didClick', callback?: GestureEventListenerCallback): void
  
   
 
-#### on('willClick')12+
+## on('willClick')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'willClick', callback: ClickEventListenerCallback): void
  
-监听点击事件指令下发情况，所注册回调将于点击事件触发前触发。回调类型为[ClickEventListenerCallback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-t#clickeventlistenercallback12)。从API version 20开始支持屏幕朗读触控模式。
+监听点击事件指令下发情况，所注册回调将于点击事件触发前触发。回调类型为[ClickEventListenerCallback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-t#clickeventlistenercallback)。从API version 20开始支持屏幕朗读触控模式。
  
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
  
@@ -1321,6 +1346,7 @@ on(type: 'willClick', callback: ClickEventListenerCallback): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'willClick'，用于监听点击事件指令下发情况，所注册回调将于点击事件触发前触发。 |
@@ -1333,9 +1359,10 @@ on(type: 'willClick', callback: ClickEventListenerCallback): void
  
   
 
-#### off('willClick')12+
+## off('willClick')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'willClick', callback?: ClickEventListenerCallback): void
  
@@ -1347,6 +1374,7 @@ off(type: 'willClick', callback?: ClickEventListenerCallback): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'willClick'，即点击事件指令下发情况。 |
@@ -1359,13 +1387,14 @@ off(type: 'willClick', callback?: ClickEventListenerCallback): void
  
   
 
-#### on('didClick')12+
+## on('didClick')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'didClick', callback: ClickEventListenerCallback): void
  
-监听点击事件指令下发情况，所注册回调将于点击事件触发后触发。回调类型为[ClickEventListenerCallback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-t#clickeventlistenercallback12)。从API version 20开始支持屏幕朗读触控模式。
+监听点击事件指令下发情况，所注册回调将于点击事件触发后触发。回调类型为[ClickEventListenerCallback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-t#clickeventlistenercallback)。从API version 20开始支持屏幕朗读触控模式。
  
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
  
@@ -1373,6 +1402,7 @@ on(type: 'didClick', callback: ClickEventListenerCallback): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'didClick'，用于监听点击事件指令下发情况，所注册回调将于点击事件触发后触发。 |
@@ -1385,9 +1415,10 @@ on(type: 'didClick', callback: ClickEventListenerCallback): void
  
   
 
-#### off('didClick')12+
+## off('didClick')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'didClick', callback?: ClickEventListenerCallback): void
  
@@ -1399,6 +1430,7 @@ off(type: 'didClick', callback?: ClickEventListenerCallback): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'didClick'，即点击事件指令下发情况。 |
@@ -1411,9 +1443,10 @@ off(type: 'didClick', callback?: ClickEventListenerCallback): void
  
   
 
-#### on('tabContentUpdate')12+
+## on('tabContentUpdate')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'tabContentUpdate', callback: Callback<observer.TabContentInfo>): void
  
@@ -1425,6 +1458,7 @@ on(type: 'tabContentUpdate', callback: Callback<observer.TabContentInfo>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'tabContentUpdate'，即TabContent页面的切换事件。 |
@@ -1491,9 +1525,10 @@ struct TabsExample {
  
   
 
-#### off('tabContentUpdate')12+
+## off('tabContentUpdate')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'tabContentUpdate', callback?: Callback<observer.TabContentInfo>): void
  
@@ -1505,10 +1540,11 @@ off(type: 'tabContentUpdate', callback?: Callback<observer.TabContentInfo>): voi
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'tabContentUpdate'，即TabContent页面的切换事件。 |
-| callback | Callback<observer.TabContentInfo> | 否 | 需要被注销的回调函数。不传参数时，取消所有Tabs组件上TabContent页面切换事件的监听回调。 |
+| callback | Callback<observer.TabContentInfo> | 否 | 需要被注销的回调函数。不传参数时，取消该Tabs上所有的监听回调。 |
  
  
 **示例：**
@@ -1517,9 +1553,10 @@ off(type: 'tabContentUpdate', callback?: Callback<observer.TabContentInfo>): voi
  
   
 
-#### on('tabContentUpdate')12+
+## on('tabContentUpdate')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'tabContentUpdate', options: observer.ObserverOptions, callback: Callback<observer.TabContentInfo>): void
  
@@ -1531,6 +1568,7 @@ on(type: 'tabContentUpdate', options: observer.ObserverOptions, callback: Callba
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'tabContentUpdate'，即TabContent页面的切换事件。 |
@@ -1598,9 +1636,10 @@ struct TabsExample {
  
   
 
-#### off('tabContentUpdate')12+
+## off('tabContentUpdate')12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'tabContentUpdate', options: observer.ObserverOptions, callback?: Callback<observer.TabContentInfo>): void
  
@@ -1612,11 +1651,12 @@ off(type: 'tabContentUpdate', options: observer.ObserverOptions, callback?: Call
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'tabContentUpdate'，即TabContent页面的切换事件。 |
 | options | observer.ObserverOptions | 是 | 指定监听的Tabs组件的id。 |
-| callback | Callback<observer.TabContentInfo> | 否 | 需要被注销的回调函数。不传参数时，取消options指定的Tabs组件上所有TabContent页面切换事件的监听回调。 |
+| callback | Callback<observer.TabContentInfo> | 否 | 需要被注销的回调函数。不传参数时，取消该Tabs上所有的监听回调。 |
  
  
 **示例：**
@@ -1625,17 +1665,14 @@ off(type: 'tabContentUpdate', options: observer.ObserverOptions, callback?: Call
  
   
 
-#### on('tabChange')22+
+## on('tabChange')22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'tabChange', callback: Callback<observer.TabContentInfo>): void
  
 监听[Tabs](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs)组件页签的切换事件，支持多个[Tabs](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs)组件的监听。相比[on('tabContentUpdate')](#ontabcontentupdate12)，本接口支持监听Tabs组件初始化时，显示首个页签的事件。
- 
-> [!NOTE]
-> 必须与 off('tabChange') 方法配对使用。 在组件销毁前（如aboutToDisappear生命周期中）必须调用off方法释放监听资源。 未及时调用off方法会导致内存泄漏和资源占用。
-
  
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
  
@@ -1643,6 +1680,7 @@ on(type: 'tabChange', callback: Callback<observer.TabContentInfo>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'tabChange'，即Tabs组件页签的切换事件。 |
@@ -1732,9 +1770,10 @@ struct TabsExample {
  
   
 
-#### off('tabChange')22+
+## off('tabChange')22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'tabChange', callback?: Callback<observer.TabContentInfo>): void
  
@@ -1746,6 +1785,7 @@ off(type: 'tabChange', callback?: Callback<observer.TabContentInfo>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'tabChange'，即Tabs组件页签的切换事件。 |
@@ -1758,17 +1798,14 @@ off(type: 'tabChange', callback?: Callback<observer.TabContentInfo>): void
  
   
 
-#### on('tabChange')22+
+## on('tabChange')22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'tabChange', config: observer.ObserverOptions, callback: Callback<observer.TabContentInfo>): void
  
 监听指定[Tabs](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs)组件的页签切换事件。相比[on('tabContentUpdate')](#ontabcontentupdate12-1)，本接口支持监听Tabs组件初始化时，显示首个页签的事件。
- 
-> [!NOTE]
-> 必须与 off('tabChange') 方法配对使用。 在组件销毁前（如aboutToDisappear生命周期中）必须调用off方法释放监听资源。 未及时调用off方法会导致内存泄漏和资源占用。
-
  
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
  
@@ -1776,6 +1813,7 @@ on(type: 'tabChange', config: observer.ObserverOptions, callback: Callback<obser
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'tabChange'，即Tabs组件页签的切换事件。 |
@@ -1863,9 +1901,10 @@ struct TabsExample {
  
   
 
-#### off('tabChange')22+
+## off('tabChange')22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'tabChange', config: observer.ObserverOptions, callback?: Callback<observer.TabContentInfo>): void
  
@@ -1877,6 +1916,7 @@ off(type: 'tabChange', config: observer.ObserverOptions, callback?: Callback<obs
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'tabChange'，即Tabs组件页签的切换事件。 |
@@ -1890,9 +1930,10 @@ off(type: 'tabChange', config: observer.ObserverOptions, callback?: Callback<obs
  
   
 
-#### on('textChange')22+
+## on('textChange')22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'textChange', callback: Callback<observer.TextChangeEventInfo>): void
  
@@ -1904,6 +1945,7 @@ on(type: 'textChange', callback: Callback<observer.TextChangeEventInfo>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'textChange'，表示文本输入的变化。 |
@@ -2000,9 +2042,10 @@ struct TextUiObserver {
  
   
 
-#### off('textChange')22+
+## off('textChange')22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'textChange', callback?: Callback<observer.TextChangeEventInfo>): void
  
@@ -2014,6 +2057,7 @@ off(type: 'textChange', callback?: Callback<observer.TextChangeEventInfo>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'textChange'，表示文本输入的变化。 |
@@ -2026,9 +2070,10 @@ off(type: 'textChange', callback?: Callback<observer.TextChangeEventInfo>): void
  
   
 
-#### on('textChange')22+
+## on('textChange')22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'textChange', identity: observer.ObserverOptions, callback: Callback<observer.TextChangeEventInfo>): void
  
@@ -2040,6 +2085,7 @@ on(type: 'textChange', identity: observer.ObserverOptions, callback: Callback<ob
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'textChange'，表示文本输入的变化。 |
@@ -2053,9 +2099,10 @@ on(type: 'textChange', identity: observer.ObserverOptions, callback: Callback<ob
  
   
 
-#### off('textChange')22+
+## off('textChange')22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'textChange', identity: observer.ObserverOptions, callback?: Callback<observer.TextChangeEventInfo>): void
  
@@ -2067,6 +2114,7 @@ off(type: 'textChange', identity: observer.ObserverOptions, callback?: Callback<
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'textChange'，表示文本输入的变化。 |
@@ -2080,9 +2128,10 @@ off(type: 'textChange', identity: observer.ObserverOptions, callback?: Callback<
  
   
 
-#### on('beforePanStart')19+
+## on('beforePanStart')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'beforePanStart', callback: PanListenerCallback): void
  
@@ -2094,6 +2143,7 @@ on(type: 'beforePanStart', callback: PanListenerCallback): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'beforePanStart'，用于监听Pan手势onActionStart事件执行前的指令下发情况，所注册回调将于Pan手势onActionStart事件触发前触发。 |
@@ -2213,9 +2263,10 @@ struct PanExample {
  
   
 
-#### off('beforePanStart')19+
+## off('beforePanStart')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'beforePanStart', callback?: PanListenerCallback): void
  
@@ -2227,6 +2278,7 @@ off(type: 'beforePanStart', callback?: PanListenerCallback): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'beforePanStart'，即Pan手势onActionStart事件执行前的指令下发情况。 |
@@ -2239,9 +2291,10 @@ off(type: 'beforePanStart', callback?: PanListenerCallback): void
  
   
 
-#### on('afterPanStart')19+
+## on('afterPanStart')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'afterPanStart', callback: PanListenerCallback): void
  
@@ -2253,6 +2306,7 @@ on(type: 'afterPanStart', callback: PanListenerCallback): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'afterPanStart'，用于监听Pan手势onActionStart事件执行后的指令下发情况，所注册回调将于Pan手势onActionStart事件触发后触发。 |
@@ -2265,9 +2319,10 @@ on(type: 'afterPanStart', callback: PanListenerCallback): void
  
   
 
-#### off('afterPanStart')19+
+## off('afterPanStart')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'afterPanStart', callback?: PanListenerCallback): void
  
@@ -2279,6 +2334,7 @@ off(type: 'afterPanStart', callback?: PanListenerCallback): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'afterPanStart'，即Pan手势onActionStart事件执行后的指令下发情况。 |
@@ -2291,9 +2347,10 @@ off(type: 'afterPanStart', callback?: PanListenerCallback): void
  
   
 
-#### on('beforePanEnd')19+
+## on('beforePanEnd')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'beforePanEnd', callback: PanListenerCallback): void
  
@@ -2305,6 +2362,7 @@ on(type: 'beforePanEnd', callback: PanListenerCallback): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'beforePanEnd'，用于监听Pan手势onActionEnd事件执行前的指令下发情况，所注册回调将于Pan手势onActionEnd事件触发前触发。 |
@@ -2317,9 +2375,10 @@ on(type: 'beforePanEnd', callback: PanListenerCallback): void
  
   
 
-#### off('beforePanEnd')19+
+## off('beforePanEnd')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'beforePanEnd', callback?: PanListenerCallback): void
  
@@ -2331,6 +2390,7 @@ off(type: 'beforePanEnd', callback?: PanListenerCallback): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'beforePanEnd'，即Pan手势onActionEnd事件执行前的指令下发情况。 |
@@ -2343,9 +2403,10 @@ off(type: 'beforePanEnd', callback?: PanListenerCallback): void
  
   
 
-#### on('afterPanEnd')19+
+## on('afterPanEnd')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'afterPanEnd', callback: PanListenerCallback): void
  
@@ -2357,6 +2418,7 @@ on(type: 'afterPanEnd', callback: PanListenerCallback): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'afterPanEnd'，用于监听Pan手势onActionEnd事件执行后的指令下发情况，所注册回调将于Pan手势onActionEnd事件触发后触发。 |
@@ -2369,9 +2431,10 @@ on(type: 'afterPanEnd', callback: PanListenerCallback): void
  
   
 
-#### off('afterPanEnd')19+
+## off('afterPanEnd')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'afterPanEnd', callback?: PanListenerCallback): void
  
@@ -2383,6 +2446,7 @@ off(type: 'afterPanEnd', callback?: PanListenerCallback): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'afterPanEnd'，即Pan手势onActionEnd事件执行后的指令下发情况。 |
@@ -2395,9 +2459,10 @@ off(type: 'afterPanEnd', callback?: PanListenerCallback): void
  
   
 
-#### on('nodeRenderState')20+
+## on('nodeRenderState')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'nodeRenderState', nodeIdentity: NodeIdentity, callback: NodeRenderStateChangeCallback): void
  
@@ -2413,6 +2478,7 @@ on(type: 'nodeRenderState', nodeIdentity: NodeIdentity, callback: NodeRenderStat
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'nodeRenderState'，用于监听节点渲染状态发生改变。 |
@@ -2424,6 +2490,7 @@ on(type: 'nodeRenderState', nodeIdentity: NodeIdentity, callback: NodeRenderStat
  
 以下错误码的详细介绍请参见[注册节点渲染状态监听错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-node-render-monitor)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 161001 | The count of nodes monitoring render state is over the limitation. |
@@ -2544,14 +2611,15 @@ struct Index {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/8L8bGh6DT9SPWm27DLxcyg/zh-cn_image_0000002685927867.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071445Z&HW-CC-Expire=86400&HW-CC-Sign=A56C9704FDC6E1C2903A47F6F99926461F0238A246F23CA0F2D7B04B153B3E4B)
+![](assets/Class%20UIObserver/file-20260514163837719-1.gif)
 
  
   
 
-#### off('nodeRenderState')20+
+## off('nodeRenderState')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'nodeRenderState', nodeIdentity: NodeIdentity, callback?: NodeRenderStateChangeCallback): void
  
@@ -2563,6 +2631,7 @@ off(type: 'nodeRenderState', nodeIdentity: NodeIdentity, callback?: NodeRenderSt
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'nodeRenderState'，即节点渲染状态发生变化。 |
@@ -2576,9 +2645,10 @@ off(type: 'nodeRenderState', nodeIdentity: NodeIdentity, callback?: NodeRenderSt
  
   
 
-#### addGlobalGestureListener20+
+## addGlobalGestureListener20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addGlobalGestureListener(type: GestureListenerType, option: GestureObserverConfigs, callback: GestureListenerCallback): void
  
@@ -2590,6 +2660,7 @@ addGlobalGestureListener(type: GestureListenerType, option: GestureObserverConfi
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | GestureListenerType | 是 | 要监听的手势类型。 |
@@ -2777,14 +2848,15 @@ struct Index {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/47ldHLIcScWniGW5yXH-wg/zh-cn_image_0000002656008188.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071445Z&HW-CC-Expire=86400&HW-CC-Sign=606FE5AF12C51A5A7A9E4A3606CAB31AA646B74D8CAB8CE7E7A870E17B29078F)
+![](assets/Class%20UIObserver/file-20260525092918850-001.gif)
 
  
   
 
-#### removeGlobalGestureListener20+
+## removeGlobalGestureListener20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeGlobalGestureListener(type: GestureListenerType, callback?: GestureListenerCallback): void
  
@@ -2796,6 +2868,7 @@ removeGlobalGestureListener(type: GestureListenerType, callback?: GestureListene
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | GestureListenerType | 是 | 要移除监听器的事件类型。 |
@@ -2808,9 +2881,10 @@ removeGlobalGestureListener(type: GestureListenerType, callback?: GestureListene
  
   
 
-#### on('windowSizeLayoutBreakpointChange')22+
+## on('windowSizeLayoutBreakpointChange')22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'windowSizeLayoutBreakpointChange', callback: Callback<observer.WindowSizeLayoutBreakpointInfo>): void
  
@@ -2822,6 +2896,7 @@ on(type: 'windowSizeLayoutBreakpointChange', callback: Callback<observer.WindowS
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'windowSizeLayoutBreakpointChange'，用于监听窗口尺寸布局断点发生改变。 |
@@ -2883,9 +2958,10 @@ struct Index {
  
   
 
-#### off('windowSizeLayoutBreakpointChange')22+
+## off('windowSizeLayoutBreakpointChange')22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'windowSizeLayoutBreakpointChange', callback?: Callback<observer.WindowSizeLayoutBreakpointInfo>): void
  
@@ -2897,6 +2973,7 @@ off(type: 'windowSizeLayoutBreakpointChange', callback?: Callback<observer.Windo
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听事件，固定为'windowSizeLayoutBreakpointChange'，用于监听窗口尺寸布局断点发生改变。 |
@@ -2909,9 +2986,10 @@ off(type: 'windowSizeLayoutBreakpointChange', callback?: Callback<observer.Windo
  
   
 
-#### onSwiperContentUpdate22+
+## onSwiperContentUpdate22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onSwiperContentUpdate(callback: Callback&lt;SwiperContentInfo&gt;): void
  
@@ -2923,6 +3001,7 @@ onSwiperContentUpdate(callback: Callback&lt;SwiperContentInfo&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;SwiperContentInfo&gt; | 是 | 回调函数。携带SwiperContentInfo，返回Swiper内容切换的信息。 |
@@ -2982,9 +3061,10 @@ struct SwiperExample {
  
   
 
-#### offSwiperContentUpdate22+
+## offSwiperContentUpdate22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offSwiperContentUpdate(callback?: Callback&lt;SwiperContentInfo&gt;): void
  
@@ -2996,9 +3076,10 @@ offSwiperContentUpdate(callback?: Callback&lt;SwiperContentInfo&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | Callback&lt;SwiperContentInfo&gt; | 否 | 需要被注销的回调函数。不传参数时，取消所有Swiper组件上内容切换事件的监听回调。 |
+| callback | Callback&lt;SwiperContentInfo&gt; | 否 | 需要被注销的回调函数。不传参数时，取消该Swiper上所有的监听回调。 |
  
  
 **示例：**
@@ -3007,9 +3088,10 @@ offSwiperContentUpdate(callback?: Callback&lt;SwiperContentInfo&gt;): void
  
   
 
-#### onSwiperContentUpdate22+
+## onSwiperContentUpdate22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onSwiperContentUpdate(config: observer.ObserverOptions, callback: Callback&lt;SwiperContentInfo&gt;): void
  
@@ -3021,6 +3103,7 @@ onSwiperContentUpdate(config: observer.ObserverOptions, callback: Callback&lt;Sw
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | config | observer.ObserverOptions | 是 | 指定监听的Swiper组件信息，用于通过id等属性标识需要监听内容切换事件的Swiper组件。 |
@@ -3082,9 +3165,10 @@ struct SwiperExample {
  
   
 
-#### offSwiperContentUpdate22+
+## offSwiperContentUpdate22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offSwiperContentUpdate(config: observer.ObserverOptions, callback?: Callback&lt;SwiperContentInfo&gt;): void
  
@@ -3096,10 +3180,11 @@ offSwiperContentUpdate(config: observer.ObserverOptions, callback?: Callback&lt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | config | observer.ObserverOptions | 是 | 指定监听的Swiper组件信息。 |
-| callback | Callback&lt;SwiperContentInfo&gt; | 否 | 需要被注销的回调函数。不传参数时，取消config指定的Swiper组件上所有内容切换事件的监听回调。 |
+| callback | Callback&lt;SwiperContentInfo&gt; | 否 | 需要被注销的回调函数。不传参数时，取消该Swiper上所有的监听回调。 |
  
  
 **示例：**
@@ -3108,13 +3193,14 @@ offSwiperContentUpdate(config: observer.ObserverOptions, callback?: Callback&lt;
  
   
 
-#### onRouterPageSizeChange23+
+## onRouterPageSizeChange23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onRouterPageSizeChange(callback: Callback<observer.RouterPageInfo>): void
  
-注册监听回调函数，当可见的Router页面大小发生变化时，会触发该回调函数。适用于需要响应Router页面大小变化的场景，例如根据页面大小动态调整UI布局、重新计算组件尺寸、优化显示效果等。
+注册监听回调函数，当可见的Router页面大小发生变化时，会触发该回调函数。使用callback异步回调。
  
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
  
@@ -3122,6 +3208,7 @@ onRouterPageSizeChange(callback: Callback<observer.RouterPageInfo>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback<observer.RouterPageInfo> | 是 | 回调函数。携带RouterPageInfo，返回Router页面的信息。 |
@@ -3164,9 +3251,10 @@ struct QueryRouterPageSize {
  
   
 
-#### offRouterPageSizeChange23+
+## offRouterPageSizeChange23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offRouterPageSizeChange(callback?: Callback<observer.RouterPageInfo>): void
  
@@ -3178,6 +3266,7 @@ offRouterPageSizeChange(callback?: Callback<observer.RouterPageInfo>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback<observer.RouterPageInfo> | 否 | 需要被移除的回调函数。不传参数时，移除所有回调函数。 |
@@ -3189,13 +3278,14 @@ offRouterPageSizeChange(callback?: Callback<observer.RouterPageInfo>): void
  
   
 
-#### onNavDestinationSizeChange23+
+## onNavDestinationSizeChange23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onNavDestinationSizeChange(callback: Callback<observer.NavDestinationInfo>): void
  
-注册监听回调函数，当可见的NavDestination大小发生变化时，会触发该回调函数。适用于需要响应NavDestination页面大小变化的场景，例如根据页面大小动态调整UI布局、重新计算组件尺寸、优化显示效果等。
+注册监听回调函数，当可见的NavDestination大小发生变化时，会触发该回调函数。使用callback异步回调。
  
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
  
@@ -3203,6 +3293,7 @@ onNavDestinationSizeChange(callback: Callback<observer.NavDestinationInfo>): voi
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback<observer.NavDestinationInfo> | 是 | 回调函数。携带NavDestinationInfo，返回NavDestination的信息。 |
@@ -3278,9 +3369,10 @@ struct QueryNavDestinationSize {
  
   
 
-#### offNavDestinationSizeChange23+
+## offNavDestinationSizeChange23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offNavDestinationSizeChange(callback?: Callback<observer.NavDestinationInfo>): void
  
@@ -3292,6 +3384,7 @@ offNavDestinationSizeChange(callback?: Callback<observer.NavDestinationInfo>): v
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback<observer.NavDestinationInfo> | 否 | 需要被移除的回调函数。不传参数时，移除所有回调函数。 |
@@ -3303,13 +3396,14 @@ offNavDestinationSizeChange(callback?: Callback<observer.NavDestinationInfo>): v
  
   
 
-#### onNavDestinationSizeChangeByUniqueId23+
+## onNavDestinationSizeChangeByUniqueId23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onNavDestinationSizeChangeByUniqueId(navigationUniqueId: number, callback: Callback<observer.NavDestinationInfo>): void
  
-注册监听回调函数，当属于指定Navigation的可见NavDestination的大小发生变化时，会触发该回调函数。适用于存在多个Navigation组件时，需要监听特定Navigation的NavDestination大小变化的场景，例如在复杂页面中包含多个独立的Navigation容器时，通过uniqueId精确控制监听范围。
+注册监听回调函数，当属于指定Navigation的可见NavDestination的大小发生变化时，会触发该回调函数。使用callback异步回调。
  
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
  
@@ -3317,6 +3411,7 @@ onNavDestinationSizeChangeByUniqueId(navigationUniqueId: number, callback: Callb
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | navigationUniqueId | number | 是 | 希望监听NavDestination所属的Navigation的唯一ID，可以通过queryNavigationInfo获取。 |
@@ -3399,9 +3494,10 @@ struct QueryNavDestinationSize {
  
   
 
-#### offNavDestinationSizeChangeByUniqueId23+
+## offNavDestinationSizeChangeByUniqueId23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offNavDestinationSizeChangeByUniqueId(navigationUniqueId: number, callback?: Callback<observer.NavDestinationInfo>): void
  
@@ -3413,6 +3509,7 @@ offNavDestinationSizeChangeByUniqueId(navigationUniqueId: number, callback?: Cal
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | navigationUniqueId | number | 是 | 需要取消监听的NavDestination所属的Navigation的唯一ID，可以通过queryNavigationInfo获取。 |

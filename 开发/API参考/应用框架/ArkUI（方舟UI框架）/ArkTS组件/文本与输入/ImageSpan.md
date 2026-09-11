@@ -1,9 +1,9 @@
 # ImageSpan
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-imagespan
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ImageSpan是[Text](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text)、[ContainerSpan](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-containerspan)组件的子组件，用于在文本中显示行内图片，支持设置图片对齐方式、缩放类型、加载占位图和颜色滤镜等，适用于需要在文本段落中嵌入图片实现图文混排的场景。
 
@@ -12,17 +12,19 @@ ImageSpan是[Text](https://developer.huawei.com/consumer/cn/doc/harmonyos-refere
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ImageSpan(value: ResourceStr | PixelMap)
 
@@ -32,6 +34,7 @@ ImageSpan(value: ResourceStr | PixelMap)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceStr \| PixelMap | 是 | 图片的数据源，支持本地图片和网络图片。 使用网络图片时，需要申请权限ohos.permission.INTERNET。具体申请方式请参考声明权限。 当使用相对路径引用图片资源时，例如ImageSpan("common/test.jpg")，不支持跨包/跨模块调用该ImageSpan组件，建议使用$r方式来管理需全局使用的图片资源。 - 支持的图片格式包括png、jpg、bmp、svg、gif、webp和heif。 - 支持Base64字符串。格式data:image/[png\|jpeg\|bmp\|webp\|heif];base64,[base64 data]，其中[base64 data]为Base64字符串数据。 - 支持file://data/storage路径前缀的字符串，用于读取本应用安装目录下file文件夹下的图片资源。需要保证应用安装目录路径下的文件有可读权限。 |
@@ -39,17 +42,19 @@ ImageSpan(value: ResourceStr | PixelMap)
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 属性继承自[BaseSpan](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-span#basespan)，通用属性方法支持[尺寸设置](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size)、[背景设置](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-background)、[边框设置](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-border)。
 
 
 
-#### verticalAlign
+### verticalAlign
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 verticalAlign(value: ImageSpanAlignment)
 
@@ -61,6 +66,7 @@ verticalAlign(value: ImageSpanAlignment)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ImageSpanAlignment | 是 | 图片基于行高的对齐方式。 |
@@ -68,9 +74,10 @@ verticalAlign(value: ImageSpanAlignment)
 
 
 
-#### objectFit
+### objectFit
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 objectFit(value: ImageFit)
 
@@ -82,6 +89,7 @@ objectFit(value: ImageFit)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ImageFit | 是 | 图片的缩放类型。 |
@@ -89,9 +97,10 @@ objectFit(value: ImageFit)
 
 
 
-#### alt12+
+### alt12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 alt(value: PixelMap)
 
@@ -103,16 +112,18 @@ alt(value: PixelMap)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | PixelMap | 是 | 设置图片加载过程中显示的占位图，支持PixelMap类型。 |
+| value | PixelMap | 是 | 图片加载过程中显示的占位图，支持PixelMap类型。 |
 
 
 
 
-#### colorFilter14+
+### colorFilter14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 colorFilter(filter: ColorFilter | DrawingColorFilter)
 
@@ -124,6 +135,7 @@ colorFilter(filter: ColorFilter | DrawingColorFilter)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | filter | ColorFilter \| DrawingColorFilter | 是 | 1. 给图像设置颜色滤镜效果，入参为一个4x5的RGBA转换矩阵。 矩阵第一行用于计算R'（新的红色分量），第二行用于计算G'（新的绿色分量），第三行用于计算B'（新的蓝色分量），第四行用于计算A'（新的透明度分量），4行分别代表不同的RGBA的分量。 当矩阵对角线值为1，其余值为0时，保持图片原有色彩。 计算规则： 如果输入的滤镜矩阵为： 像素点为[R, G, B, A]，色值的范围[0, 255] 则过滤后的颜色为 [R’, G’, B’, A’] 2. 支持@ohos.graphics.drawing的ColorFilter类型作为入参。 说明： 该接口中的DrawingColorFilter类型支持在元服务中使用。其中，svg类型的图源只对stroke属性生效。 |
@@ -131,9 +143,10 @@ colorFilter(filter: ColorFilter | DrawingColorFilter)
 
 
 
-#### supportSvg222+
+### supportSvg222+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 supportSvg2(enable: Optional&lt;boolean&gt;)
 
@@ -147,24 +160,27 @@ ImageSpan组件创建后，不支持动态修改该属性的值。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| enable | Optional&lt;boolean&gt; | 是 | 控制是否开启SVG标签解析能力增强功能。 true：支持SVG解析新能力；false：保持原有SVG解析能力。 |
+| enable | Optional&lt;boolean&gt; | 是 | 是否开启SVG标签解析能力增强功能。 true：支持SVG解析新能力；false：保持原有SVG解析能力。 |
 
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通用事件仅支持[点击控制事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-click)。还支持以下事件：
 
 
 
-#### onComplete12+
+### onComplete12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onComplete(callback: ImageCompleteCallback)
 
@@ -176,6 +192,7 @@ onComplete(callback: ImageCompleteCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | ImageCompleteCallback | 是 | 图片数据加载成功和解码成功时触发的回调。 |
@@ -183,9 +200,10 @@ onComplete(callback: ImageCompleteCallback)
 
 
 
-#### onError12+
+### onError12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onError(callback: ImageErrorCallback)
 
@@ -197,6 +215,7 @@ onError(callback: ImageErrorCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | ImageErrorCallback | 是 | 图片加载异常时触发的回调。 |
@@ -204,9 +223,10 @@ onError(callback: ImageErrorCallback)
 
 
 
-#### ImageCompleteCallback12+
+## ImageCompleteCallback12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ImageCompleteCallback = (result: ImageLoadResult) => void
 
@@ -218,6 +238,7 @@ type ImageCompleteCallback = (result: ImageLoadResult) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | result | ImageLoadResult | 是 | 图片数据加载成功和解码成功触发回调时返回的对象。 |
@@ -225,15 +246,17 @@ type ImageCompleteCallback = (result: ImageLoadResult) => void
 
 
 
-#### ImageLoadResult12+对象说明
+## ImageLoadResult12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 图片数据加载成功和解码成功触发回调时返回的对象。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -250,13 +273,17 @@ type ImageCompleteCallback = (result: ImageLoadResult) => void
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（设置对齐方式）
+
+
+### 示例1（设置对齐方式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 10开始，该示例通过[verticalAlign](#verticalalign)、[objectFit](#objectfit)属性展示了ImageSpan组件的对齐方式以及缩放效果。
 
@@ -312,7 +339,10 @@ struct SpanExample {
 
 
 
-#### 示例2（设置背景样式）
+### 示例2（设置背景样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 11开始，该示例通过[textBackgroundStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-span#textbackgroundstyle11)属性展示了文本设置背景样式的效果。
 
@@ -345,7 +375,10 @@ struct Index {
 
 
 
-#### 示例3（为图片添加事件）
+### 示例3（为图片添加事件）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 12开始，该示例通过[onComplete](#oncomplete12)、[onError](#onerror12)为图片添加加载成功和加载异常的事件。
 
@@ -376,7 +409,10 @@ struct Index {
 
 
 
-#### 示例4（设置颜色滤镜）
+### 示例4（设置颜色滤镜）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 14开始，该示例通过[colorFilter](#colorfilter14)属性展示了给ImageSpan图像设置颜色滤镜的效果。
 
@@ -393,7 +429,7 @@ struct SpanExample {
   build() {
     Row() {
       Column({ space: 10 }) {
-        //创建ColorFilter对象的方式为图片设置颜色滤镜
+        // 创建ColorFilter对象的方式为图片设置颜色滤镜。
         Text() {
           // $r('app.media.sky')需要替换为实际的图像资源文件。
           ImageSpan($r('app.media.sky'))
@@ -402,7 +438,7 @@ struct SpanExample {
             .colorFilter(this.drawingColorFilterFirst)
         }
 
-        //通过drawing.ColorFilter的方式为图片设置颜色滤镜
+        // 通过drawing.ColorFilter的方式为图片设置颜色滤镜。
         Text() {
           // $r('app.media.sky')需要替换为实际的图像资源文件。
           ImageSpan($r('app.media.sky'))
@@ -427,7 +463,10 @@ struct SpanExample {
 
 
 
-#### 示例5（设置加载占位图）
+### 示例5（设置加载占位图）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 12开始，该示例通过[alt](#alt12)属性展示了ImageSpan设置加载网络图片时占位图的效果。
 
@@ -504,7 +543,10 @@ struct SpanExample {
 
 
 
-#### 示例6（使用supportSvg2属性时，SVG图片的显示效果）
+### 示例6（使用supportSvg2属性时，SVG图片的显示效果）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 22开始，该示例通过设置[supportSvg2](#supportsvg222)属性，使[SVG标签解析能力增强功能](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-image-svg2-capabilities)的[SVG易用性提升](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-image-svg2-capabilities#svg易用性提升)能力生效。
 

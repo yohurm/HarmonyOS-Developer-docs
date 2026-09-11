@@ -1,10 +1,10 @@
 # wukong稳定性工具使用指导
 
-更新时间：2026-06-12 06:58:30
+更新时间：2026-08-29 09:41:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wukong-guidelines
 
-#### 功能介绍
+## 功能介绍
 
 wukong是系统自带的一种命令行工具，支持Ability的随机事件注入、控件注入、异常捕获、报告生成和对Ability数据遍历截图等特性。通过模拟用户行为，对系统或应用进行稳定性压力测试。wukong分为随机测试、专项测试和专注测试。
  
@@ -16,7 +16,7 @@ wukong是系统自带的一种命令行工具，支持Ability的随机事件注�
  
   
 
-#### 实现原理
+## 实现原理
 
 wukong部件架构图以及部件内子模块职责如下所述。
  
@@ -34,14 +34,15 @@ wukong部件架构图以及部件内子模块职责如下所述。
  
   
 
-#### 约束与限制
+## 约束与限制
 1. wukong测试工具在API 9版本开始预置使用。
 2. 所有命令执行前需完成[hdc环境配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hdc)，并进入shell模式。
  
   
 
-#### 功能特性及命令说明
+## 功能特性及命令说明
  
+
 | 命令 | 说明 |
 | --- | --- |
 | -v/--version | 获取wukong版本信息。 |
@@ -54,7 +55,7 @@ wukong部件架构图以及部件内子模块职责如下所述。
  
   
 
-#### 执行命令
+### 执行命令
 
 - 进入shell模式
 
@@ -158,12 +159,13 @@ These are wukong special arguments list:
  
   
 
-#### 随机测试
+## 随机测试
 
   
 
-#### 命令参数
+### 命令参数
  
+
 | 命令 | 功能 | 必选 | 说明 |
 | --- | --- | --- | --- |
 | -h,--help | 获取当前测试的帮助信息。 | 否 | - |
@@ -209,7 +211,7 @@ These are wukong special arguments list:
  
   
 
-#### 使用示例
+### 使用示例
 
 - 设置100次事件注入
 
@@ -220,18 +222,25 @@ $ wukong exec -s 10 -i 1000 -a 0.28 -t 0.72 -c 100
   命令中各参数含义：
 
 | 命令 | 参数值 | 说明 |
+
 | --- | --- | --- |
+
 | wukong exec | - | 主命令。 |
+
 | -s | 10 | 参数设置随机种子，10为种子值。 |
+
 | -i | 1000 | 参数设置应用拉起间隔为1000ms。 |
+
 | -a | 0.28 | 参数设置应用随机拉起测试比例28%。 |
+
 | -t | 0.72 | 参数设置屏幕随机touch测试比例为72%。 |
+
 | -c | 100 | 参数设置执行次数为100次。 |
 - 指定页面压测
 
   
 ```bash
-> 显示启动
+> 显式启动
 > hdc_std shell
 $ wukong exec -b bundlename -e abilityname -U uri
 
@@ -254,12 +263,13 @@ $ wukong exec -b com.ohos.settings -e com.ohos.settings.MainAbility -E com.ohos.
  
   
 
-#### 专项测试
+## 专项测试
 
   
 
-#### 命令参数
+### 命令参数
  
+
 | 命令 | 功能 | 必选 | 说明 |
 | --- | --- | --- | --- |
 | -h, --help | 获取当前专项测试的帮助信息。 | 否 | - |
@@ -280,7 +290,7 @@ $ wukong exec -b com.ohos.settings -e com.ohos.settings.MainAbility -E com.ohos.
  
   
 
-#### 测试命令
+### 测试命令
 
 ```bash
 $ wukong special -C [bundlename] -p
@@ -288,12 +298,13 @@ $ wukong special -C [bundlename] -p
  
   
 
-#### 专注测试
+## 专注测试
 
   
 
-#### 命令参数
+### 命令参数
  
+
 | 命令 | 功能 | 必选 | 说明 |
 | --- | --- | --- | --- |
 | -n,--numberfocus | 设置每个控件注入的次数。 | 否 | 单位次数。 |
@@ -324,7 +335,7 @@ $ wukong special -C [bundlename] -p
  
   
 
-#### 使用示例
+### 使用示例
 
 ```bash
 $ wukong focus -s 10 -i 1000 -a 0.28 -t 0.72 -c 100
@@ -332,6 +343,7 @@ $ wukong focus -s 10 -i 1000 -a 0.28 -t 0.72 -c 100
  
 命令中各参数含义：
   
+
 | 命令 | 参数值 | 说明 |
 | --- | --- | --- |
 | wukong focus | - | 主命令。 |
@@ -344,11 +356,11 @@ $ wukong focus -s 10 -i 1000 -a 0.28 -t 0.72 -c 100
  
   
 
-#### 查看测试结果
+## 查看测试结果
 
   
 
-#### 测试结果输出路径
+### 测试结果输出路径
 
 执行完测试指令后，会自动生成测试结果，测试结果输出根路径如下：
  
@@ -358,8 +370,9 @@ $ wukong focus -s 10 -i 1000 -a 0.28 -t 0.72 -c 100
  
   
 
-#### 测试报告文件目录
+### 测试报告文件目录
  
+
 | 类型 | 描述 |
 | --- | --- |
 | exception/ | 存放本次测试产生的异常文件。 |
@@ -370,7 +383,7 @@ $ wukong focus -s 10 -i 1000 -a 0.28 -t 0.72 -c 100
  
   
 
-#### 查看操作日志
+### 查看操作日志
 
 wukong支持通过hdc命令将日志获取到本地，查看操作历程。
  
@@ -391,34 +404,51 @@ FileTransfer finish, Size:76492, File count = 1, time:16ms rate:4780.75kB/s
  
   
 
-#### 测试报告解析
+### 测试报告解析
 
 包含基本信息、事件注入统计、Ability统计、故障统计。
  1. 基本信息（Base Info）
 
 | 字段 | 描述 |
+
 | --- | --- |
+
 | task status | 任务状态。success表示成功，fail表示失败。 |
+
 | task time | 任务执行时间。单位：秒。 |
+
 | seed | 随机种子。 |
+
 | task count | 事件注入总次数。 |
 2. 故障注入统计（Input Message Statistics）
 
 | 类型 | 描述 |
+
 | --- | --- |
-| type | 事件或控件注入的类型，事件注入类型范围请参考随机测试命令参数，控件注入类型范围请参考ArkTS组件。 |
+
+| type | 事件或控件注入的类型，事件注入类型范围请参考随机测试命令参数，控件注入类型范围包括ArkUI（方舟UI框架）下的ArkTS组件和ArkWeb（方舟Web）下的ArkTS组件。 |
+
 | execTimes | 事件或者控件注入执行次数。 |
+
 | proportion | 当前事件操作在事件注入执行总次数里的占比。 |
+
 | inputedTimes | 遍历的控件类型个数。 |
+
 | expectInputTimes | 应用控件类型总数。 |
+
 | coverage | 控件遍历覆盖率。 |
 3. Ability统计（ability Statistics）
 
 | 字段 | 描述 |
+
 | --- | --- |
+
 | bundleName | 应用的bundleName。 |
+
 | inputedAbilityCount | 遍历的Ability数量。 |
+
 | abilitiesCount | 应用的Ability总数。 |
+
 | coverage | Ability遍历覆盖率。 |
 4. 故障统计（Exception Message Statistics）
 
@@ -428,18 +458,22 @@ FileTransfer finish, Size:76492, File count = 1, time:16ms rate:4780.75kB/s
 
 
 | 字段 | 描述 |
+
 | --- | --- |
+
 | type | 故障类型，故障类型包含：CPP_CRASH、JS_CRASH、SYS_FREEZE、APP_FREEZE等。 |
+
 | times | 故障次数。 |
+
 | proportion | 当前故障在故障总数里的占比。 |
  
   
 
-#### 常见问题
+## 常见问题
 
   
 
-#### failed to connect to AAMS
+### failed to connect to AAMS
 
  **错误描述**
  
@@ -455,7 +489,7 @@ AAMS被hypium或者dev testing的UIViewer占用了，AAMS同一时间只能被�
  
   
 
-#### Errorcode:(4005)
+### Errorcode:(4005)
 
  **错误描述**
  
@@ -471,7 +505,7 @@ Errorcode:(4005).
  
   
 
-#### Errorcode:(4007)
+### Errorcode:(4007)
 
  **错误描述**
  

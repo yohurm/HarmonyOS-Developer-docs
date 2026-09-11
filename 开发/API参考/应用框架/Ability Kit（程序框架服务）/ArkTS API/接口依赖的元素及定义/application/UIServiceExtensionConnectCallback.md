@@ -1,9 +1,9 @@
 # UIServiceExtensionConnectCallback
 
-更新时间：2026-06-13 03:51:30（官网已下线）
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiserviceextensionconnectcallback
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** PC/2in1
 
 UIServiceExtensionConnectCallback是UIServiceExtension连接回调接口类，提供UIServiceExtension连接回调数据能力。
 
@@ -12,9 +12,10 @@ UIServiceExtensionConnectCallback是UIServiceExtension连接回调接口类，�
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 ```text
 import { common } from '@kit.AbilityKit';
@@ -22,9 +23,10 @@ import { common } from '@kit.AbilityKit';
 
 
 
-#### UIServiceExtensionConnectCallback.onData
+## UIServiceExtensionConnectCallback.onData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 onData(data: Record<string, Object>): void
 
@@ -39,6 +41,7 @@ onData(data: Record<string, Object>): void
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -133,9 +136,10 @@ struct UIServiceExtensionAbility {
 
 
 
-#### UIServiceExtensionConnectCallback.onDisconnect
+## UIServiceExtensionConnectCallback.onDisconnect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1
 
 onDisconnect(): void
 
@@ -189,7 +193,7 @@ struct UIServiceExtensionAbility {
             middle: { anchor: '__container__', align: HorizontalAlign.Center }
           })
           .onClick(() => {
-            this.myConnectUIServiceExtensionAbility()
+            this.myDisconnectUIServiceExtensionAbility()
           });
       }
       .width('100%')
@@ -197,7 +201,7 @@ struct UIServiceExtensionAbility {
     .height('100%')
   }
 
-  myConnectUIServiceExtensionAbility() {
+  myDisconnectUIServiceExtensionAbility() {
     // 获取上下文
     let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
     // 断开连接的UIServiceExtensionAbility

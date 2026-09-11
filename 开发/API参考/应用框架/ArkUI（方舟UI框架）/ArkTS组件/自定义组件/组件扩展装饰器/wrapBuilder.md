@@ -1,9 +1,9 @@
 # wrapBuilder
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-wrapbuilder
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 wrapBuilder用于封装全局[@Builder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-builder-dynamic#builder)，可以将全局@Builder函数作为参数传递，实现按引用传递和动态调用，提升代码复用性。
 
@@ -14,9 +14,10 @@ wrapBuilder用于封装全局[@Builder](https://developer.huawei.com/consumer/cn
 
 
 
-#### wrapBuilder
+## wrapBuilder
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 wrapBuilder<Args extends Object[]>(builder: (...args: Args) => void): WrappedBuilder&lt;Args&gt;
 
@@ -28,12 +29,14 @@ wrapBuilder是一个模板函数，返回一个WrappedBuilder对象。模板参�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | builder | (...args: Args) => void | 是 | @Builder装饰的全局函数，传入后将被封装为WrappedBuilder对象。函数参数args为该@Builder函数所需的参数列表。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -55,21 +58,24 @@ let builderVar: WrappedBuilder<[string, number]> = wrapBuilder(myBuilder);
 
 
 
-#### WrappedBuilder
+## WrappedBuilder
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 WrappedBuilder是@Builder函数的包装类，用于封装全局@Builder函数及其参数，实现按引用传递和动态调用。模板参数Args extends Object[]应传入@Builder函数的参数类型列表。
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -78,9 +84,10 @@ WrappedBuilder是@Builder函数的包装类，用于封装全局@Builder函数�
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(builder: (...args: Args) => void)
 
@@ -91,6 +98,7 @@ WrappedBuilder的构造函数。
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |

@@ -1,13 +1,14 @@
 # scanCore (扫码公共信息)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/scan-scancore
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 模块概述
+## 模块概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scanCore模块是Scan Kit的公共数据类型模块，提供扫码场景中使用的码类型枚举、错误码、默认界面扫码结果来源等公共数据类型定义。该模块不直接提供扫码能力，而是作为scanBarcode（默认界面扫码）、customScan（自定义界面扫码）、detectBarcode（图像识码）、generateBarcode（码图生成）功能模块的基础数据类型支撑。同时提供了isDefaultScanSupported和isCustomScanSupported两个能力查询接口，用于在调用扫码功能前检查当前设备是否支持相应能力。
  
@@ -15,9 +16,10 @@ scanCore模块是Scan Kit的公共数据类型模块，提供扫码场景中使�
  
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { scanCore } from '@kit.ScanKit';
@@ -25,9 +27,10 @@ import { scanCore } from '@kit.ScanKit';
  
   
 
-#### ScanType
+## ScanType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，码类型。
  
@@ -39,6 +42,7 @@ import { scanCore } from '@kit.ScanKit';
  
 **起始版本：** 4.0.0(10)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | FORMAT_UNKNOWN | 0 | 未知类型，用于事先不知道要扫哪种类型码的场景，此参数不可用作码图生成。 |
@@ -63,9 +67,10 @@ import { scanCore } from '@kit.ScanKit';
  
   
 
-#### ScanErrorCode
+## ScanErrorCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，扫码错误码类型。
  
@@ -75,6 +80,7 @@ import { scanCore } from '@kit.ScanKit';
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | INTERNAL_ERROR | 1000500001 | 内部错误。详细介绍参见1000500001 内部错误。 元服务API： 从API版本4.1.0(11)开始，该接口支持在元服务中使用。 |
@@ -83,9 +89,10 @@ import { scanCore } from '@kit.ScanKit';
  
   
 
-#### ScanSource
+## ScanSource
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，扫码结果来源，表示默认界面扫码结果来源是相机预览流还是相册图片。
  
@@ -97,6 +104,7 @@ import { scanCore } from '@kit.ScanKit';
  
 **起始版本：** 6.0.2(22)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CAMERA | 0 | 默认界面扫码结果来源是相机预览流。 |
@@ -105,9 +113,10 @@ import { scanCore } from '@kit.ScanKit';
  
   
 
-#### isDefaultScanSupported
+## isDefaultScanSupported
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isDefaultScanSupported(): boolean
  
@@ -123,6 +132,7 @@ isDefaultScanSupported(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回查询结果。true代表支持默认界面扫码，false代表不支持默认界面扫码。 |
@@ -147,9 +157,10 @@ if (isSupported) {
  
   
 
-#### isCustomScanSupported
+## isCustomScanSupported
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isCustomScanSupported(): boolean
  
@@ -163,6 +174,7 @@ isCustomScanSupported(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回查询结果。true代表支持自定义界面扫码，false代表不支持自定义界面扫码。 |

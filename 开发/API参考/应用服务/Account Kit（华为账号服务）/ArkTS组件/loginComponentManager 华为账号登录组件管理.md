@@ -1,11 +1,12 @@
 # loginComponentManager (华为账号登录组件管理)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-api-component-manager
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 模块概述
+## 模块概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -30,7 +31,8 @@ LoginPanel和LoginWithHuaweiIDButton则是具体的UI组件，接收从loginComp
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -40,7 +42,8 @@ import { loginComponentManager } from '@kit.AccountKit';
 
 
 
-#### LoginWithHuaweiIDButtonController
+## LoginWithHuaweiIDButtonController
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -58,7 +61,8 @@ import { loginComponentManager } from '@kit.AccountKit';
 
 
 
-#### setAgreementStatus
+### setAgreementStatus
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -74,12 +78,14 @@ setAgreementStatus(agreementStatus: AgreementStatus): LoginWithHuaweiIDButtonCon
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | agreementStatus | AgreementStatus | 是 | 当登录类型为LoginType.QUICK_LOGIN时必须设置协议状态为ACCEPTED才可以完成华为账号登录。 当登录类型不是LoginType.QUICK_LOGIN时，如果需要用户同意协议才能完成华为账号登录，请先设置协议状态为NOT_ACCEPTED，当用户同意协议后设置协议状态为ACCEPTED，才可以完成华为账号登录。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -92,7 +98,8 @@ setAgreementStatus(agreementStatus: AgreementStatus): LoginWithHuaweiIDButtonCon
 
 
 
-#### onClickEvent
+### onClickEvent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -108,12 +115,14 @@ onClickEvent(callback: AsyncCallback&lt;ClickEvent&gt;): LoginWithHuaweiIDButton
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;ClickEvent&gt; | 是 | 回调函数。当用户点击华为账号登录按钮时，err为undefined，data为获取到的ClickEvent；否则为错误对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -126,7 +135,8 @@ onClickEvent(callback: AsyncCallback&lt;ClickEvent&gt;): LoginWithHuaweiIDButton
 
 
 
-#### onClickLoginWithHuaweiIDButton
+### onClickLoginWithHuaweiIDButton
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -142,12 +152,14 @@ onClickLoginWithHuaweiIDButton(callback: AsyncCallback&lt;HuaweiIDCredential&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;HuaweiIDCredential&gt; | 是 | 回调函数。当华为账号登录成功返回结果，err为undefined，data为获取到的HuaweiIDCredential对象；否则为错误对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -157,6 +169,7 @@ onClickLoginWithHuaweiIDButton(callback: AsyncCallback&lt;HuaweiIDCredential&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[ArkTS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account-kit)和[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -181,7 +194,8 @@ onClickLoginWithHuaweiIDButton(callback: AsyncCallback&lt;HuaweiIDCredential&gt;
 
 
 
-#### setEnabled
+### setEnabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -197,12 +211,14 @@ setEnabled(enabled: boolean): LoginWithHuaweiIDButtonController
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 按钮是否可点击。 当enabled为true时，华为账号登录按钮高亮可点击，当enabled为false时，华为账号登录按钮置灰不可点击，默认值：true。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -215,7 +231,8 @@ setEnabled(enabled: boolean): LoginWithHuaweiIDButtonController
 
 
 
-#### continueLogin
+### continueLogin
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -231,12 +248,14 @@ continueLogin(callback: AsyncCallback&lt;void&gt;): LoginWithHuaweiIDButtonContr
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当用户点击协议弹框的同意并登录按钮操作成功，err为undefined，否则为错误对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -246,6 +265,7 @@ continueLogin(callback: AsyncCallback&lt;void&gt;): LoginWithHuaweiIDButtonContr
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account-kit)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -258,7 +278,8 @@ continueLogin(callback: AsyncCallback&lt;void&gt;): LoginWithHuaweiIDButtonContr
 
 
 
-#### setLocale
+### setLocale
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -274,12 +295,14 @@ setLocale(locale: string): LoginWithHuaweiIDButtonController
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | locale | string | 是 | 地区语言代码。 当传入参数无效或系统不支持指定语言时，按钮文本将跟随系统语言进行显示。全量的地区语言代码可通过调用系统资源管理对象的getLocales方法获取。以下为常见的地区语言代码示例。 ar：阿拉伯语 bo-CN：藏语（中国） de：德语 en-US：英语（美国） en-GB：英语（英国） es：西班牙语 es-US：西班牙语（美国） fr：法语 id：印尼语 it：意大利语 ja：日语 ko：韩语 lo：老挝语 ms：马来语 my：缅甸语 my-MM：缅甸语（缅甸） pl：波兰语 pt：葡萄牙语 pt-PT：葡萄牙语（葡萄牙） ru：俄语 th：泰语 tr：土耳其语 ug：维吾尔语 vi：越南语 zh-CN：中文（简体） zh-HK：繁体中文（香港特别行政区） zh-TW：繁体中文（中国台湾） |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -983,7 +1006,8 @@ struct WebPage {
 
 
 
-#### LoginPanelController
+## LoginPanelController
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1005,7 +1029,8 @@ struct WebPage {
 
 
 
-#### onClickLoginWithHuaweiIDButton
+### onClickLoginWithHuaweiIDButton
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1021,12 +1046,14 @@ onClickLoginWithHuaweiIDButton(callback: AsyncCallback&lt;HuaweiIDCredential&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;HuaweiIDCredential&gt; | 是 | 回调函数。当注册华为账号登录返回结果成功，err为undefined，data为获取到的HuaweiIDCredential对象；否则为错误对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1036,6 +1063,7 @@ onClickLoginWithHuaweiIDButton(callback: AsyncCallback&lt;HuaweiIDCredential&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[ArkTS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account-kit)和[账号管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1060,7 +1088,8 @@ onClickLoginWithHuaweiIDButton(callback: AsyncCallback&lt;HuaweiIDCredential&gt;
 
 
 
-#### onClickOptionalLoginButton
+### onClickOptionalLoginButton
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1076,12 +1105,14 @@ onClickOptionalLoginButton(callback: AsyncCallback&lt;void&gt;): LoginPanelContr
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当用户点击可选登录按钮操作成功，err为undefined，否则为错误对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1094,7 +1125,8 @@ onClickOptionalLoginButton(callback: AsyncCallback&lt;void&gt;): LoginPanelContr
 
 
 
-#### onClickOptionalLoginIcon
+### onClickOptionalLoginIcon
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1110,12 +1142,14 @@ onClickOptionalLoginIcon(callback: AsyncCallback&lt;string&gt;): LoginPanelContr
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;string&gt; | 是 | 回调函数。当用户点击LoginIcon操作成功，err为undefined，data为获取到的LoginIcon的tag；否则为错误对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1128,7 +1162,8 @@ onClickOptionalLoginIcon(callback: AsyncCallback&lt;string&gt;): LoginPanelContr
 
 
 
-#### onClickPrivacyText
+### onClickPrivacyText
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1144,12 +1179,14 @@ onClickPrivacyText(callback: AsyncCallback&lt;string&gt;): LoginPanelController
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;string&gt; | 是 | 回调函数。当注册隐私内容为富文本的点击操作成功时，err为undefined，data为获取到的PrivacyText的tag；否则为错误对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1162,7 +1199,8 @@ onClickPrivacyText(callback: AsyncCallback&lt;string&gt;): LoginPanelController
 
 
 
-#### onChangeAgreementStatus
+### onChangeAgreementStatus
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1178,12 +1216,14 @@ onChangeAgreementStatus(callback: AsyncCallback&lt;AgreementStatus&gt;): LoginPa
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;AgreementStatus&gt; | 是 | 回调函数。当用户同意或者取消同意协议成功，err为undefined，data为获取到的AgreementStatus；否则为错误对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1196,7 +1236,8 @@ onChangeAgreementStatus(callback: AsyncCallback&lt;AgreementStatus&gt;): LoginPa
 
 
 
-#### setAgreementStatus
+### setAgreementStatus
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1212,12 +1253,14 @@ setAgreementStatus(agreementStatus: AgreementStatus): LoginPanelController
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | agreementStatus | AgreementStatus | 是 | 开发者如果使用自定义协议页面，需要先设置agreementStatus为NOT_ACCEPTED，当用户同意协议后设置为ACCEPTED。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1230,7 +1273,8 @@ setAgreementStatus(agreementStatus: AgreementStatus): LoginPanelController
 
 
 
-#### setShowAgreementForOptionalLogin
+### setShowAgreementForOptionalLogin
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1246,6 +1290,7 @@ setShowAgreementForOptionalLogin(): LoginPanelController
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | LoginPanelController | LoginPanel组件控制器。 |
@@ -1257,7 +1302,8 @@ setShowAgreementForOptionalLogin(): LoginPanelController
 
 
 
-#### onClickEvent
+### onClickEvent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1273,12 +1319,14 @@ onClickEvent(callback: AsyncCallback&lt;ClickEvent&gt;): LoginPanelController
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;ClickEvent&gt; | 是 | 回调函数。当用户点击华为账号登录按钮时，err为undefined，data为获取到的ClickEvent；否则为错误对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1291,7 +1339,8 @@ onClickEvent(callback: AsyncCallback&lt;ClickEvent&gt;): LoginPanelController
 
 
 
-#### onClickCloseButton
+### onClickCloseButton
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1307,12 +1356,14 @@ onClickCloseButton(callback: AsyncCallback&lt;void&gt;): LoginPanelController
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当注册关闭按钮的点击操作或侧滑返回成功，err为undefined，否则为错误对象。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1487,7 +1538,8 @@ export enum ErrorCode {
 
 
 
-#### ButtonStyle
+## ButtonStyle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1501,7 +1553,8 @@ export enum ErrorCode {
 
 
 
-#### buttonSize
+### buttonSize
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1517,12 +1570,14 @@ buttonSize(value: ButtonSize): ButtonStyle
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ButtonSize | 是 | 当按钮类型为纯图标按钮时，按钮的宽度和高度相等，取value.width和value.height的非undefined的最小值。如果value.width和value.height都为undefined取LoginWithHuaweiIDButtonParams的iconRadius的2倍值，如果iconRadius也是undefined则取默认值48vp。 当按钮类型为非纯图标按钮时，按钮的宽度和高度分别取value.width和value.height。当value.width或者value.height为undefined，按钮宽度或高度取父布局宽高。 说明： 当设置该属性的宽高，父组件的宽高值应该大于等于该属性的宽高值。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1535,7 +1590,8 @@ buttonSize(value: ButtonSize): ButtonStyle
 
 
 
-#### fontSize
+### fontSize
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1551,12 +1607,14 @@ fontSize(value: Length): ButtonStyle
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Length | 是 | 当按钮为图文按钮或文本按钮时，设置按钮文字的字号。根据华为账号开放登录视觉规范，设置范围建议在按钮高度的30%~50%之间。 如果没传此值，字号大小在9~16vp之间随按钮宽度自适应。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1569,7 +1627,8 @@ fontSize(value: Length): ButtonStyle
 
 
 
-#### fontColor
+### fontColor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1585,12 +1644,14 @@ fontColor(value: ResourceColor | FontColor): ButtonStyle
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor \| FontColor | 是 | 当按钮类型为BUTTON_CUSTOM时，此参数可设置按钮文字颜色。当已经设置CustomButtonParams的fontColor属性时，优先取此参数值。 不设置则为白色。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1603,7 +1664,8 @@ fontColor(value: ResourceColor | FontColor): ButtonStyle
 
 
 
-#### fontWeight
+### fontWeight
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1619,12 +1681,14 @@ fontWeight(value: string | number | FontWeight): ButtonStyle
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string \| number \| FontWeight | 是 | 当按钮类型为BUTTON_CUSTOM时，此参数可设置按钮文字字重。number类型取值[100, 900]，取值间隔为100，取值越大字体越粗，当超出边界值时取值为400。string类型仅支持number类型取值的字符串形式，例如"400"，以及"bold"、"bolder"、"lighter"、"regular"、"medium"，分别对应FontWeight中相应的枚举值。 默认字重为FontWeight.Medium，对应的number值为500。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1637,7 +1701,8 @@ fontWeight(value: string | number | FontWeight): ButtonStyle
 
 
 
-#### fontFamily
+### fontFamily
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1653,12 +1718,14 @@ fontFamily(value: ResourceStr): ButtonStyle
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceStr | 是 | 当按钮类型为BUTTON_CUSTOM时，此参数可设置按钮文字字体。 默认字体'HarmonyOS Sans'。 应用当前支持'HarmonyOS Sans'字体和注册自定义字体。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1671,7 +1738,8 @@ fontFamily(value: ResourceStr): ButtonStyle
 
 
 
-#### backgroundColor
+### backgroundColor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1687,12 +1755,14 @@ backgroundColor(value: ResourceColor): ButtonStyle
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 当按钮类型为BUTTON_CUSTOM时，此参数可设置按钮背景颜色。 当已经设置CustomButtonParams的backgroundColor属性时，优先取此参数值。 不设置则为 Red 红色背景。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1705,7 +1775,8 @@ backgroundColor(value: ResourceColor): ButtonStyle
 
 
 
-#### backgroundEffect
+### backgroundEffect
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1721,12 +1792,14 @@ backgroundEffect(value: BackgroundEffectOptions): ButtonStyle
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | BackgroundEffectOptions | 是 | 当按钮类型为BUTTON_CUSTOM时，此参数可设置按钮背景属性，包括饱和度，亮度，颜色。 不设置则无效果。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1739,7 +1812,8 @@ backgroundEffect(value: BackgroundEffectOptions): ButtonStyle
 
 
 
-#### backgroundBrightness
+### backgroundBrightness
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1755,12 +1829,14 @@ backgroundBrightness(value: BackgroundBrightnessOptions): ButtonStyle
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | BackgroundBrightnessOptions | 是 | 当按钮类型为BUTTON_CUSTOM时，此参数可设置按钮背景提亮效果，包括：亮度变化速率，提亮程度。 不设置则无效果。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1773,7 +1849,8 @@ backgroundBrightness(value: BackgroundBrightnessOptions): ButtonStyle
 
 
 
-#### linearGradient
+### linearGradient
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1789,12 +1866,14 @@ linearGradient(value: LinearGradient): ButtonStyle
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | LinearGradient | 是 | 当按钮类型为BUTTON_CUSTOM时，此参数可设置按钮背景颜色线性渐变效果，不设置则无效果。 说明： 使用此属性时，按钮不能有背景色，否则按钮边缘会出现锯齿毛边，需把按钮背景色设置为透明色，如backgroundColor(Color.Transparent)。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1807,7 +1886,8 @@ linearGradient(value: LinearGradient): ButtonStyle
 
 
 
-#### sweepGradient
+### sweepGradient
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1823,12 +1903,14 @@ sweepGradient(value: SweepGradient): ButtonStyle
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | SweepGradient | 是 | 当按钮类型为BUTTON_CUSTOM时，此参数可设置按钮背景颜色角度渐变效果。 不设置则无效果。 说明： 使用此属性时，按钮不能有背景色，否则按钮边缘会出现锯齿毛边，需把按钮背景色设置为透明色，如backgroundColor(Color.Transparent)。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1841,7 +1923,8 @@ sweepGradient(value: SweepGradient): ButtonStyle
 
 
 
-#### radialGradient
+### radialGradient
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1857,12 +1940,14 @@ radialGradient(value: RadialGradient): ButtonStyle
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | RadialGradient | 是 | 当按钮类型为BUTTON_CUSTOM时，此参数可设置按钮背景颜色径向渐变效果。 不设置则无效果。 说明： 使用此属性时，按钮不能有背景色，否则按钮边缘会出现锯齿毛边，需把按钮背景色设置为透明色，如backgroundColor(Color.Transparent)。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1875,7 +1960,8 @@ radialGradient(value: RadialGradient): ButtonStyle
 
 
 
-#### shadow
+### shadow
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1891,12 +1977,14 @@ shadow(value: ShadowOptions | ShadowStyle): ButtonStyle
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ShadowOptions \| ShadowStyle | 是 | 当按钮类型为BUTTON_CUSTOM时，此参数可设置按钮阴影效果，不设置则无效果。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1909,7 +1997,8 @@ shadow(value: ShadowOptions | ShadowStyle): ButtonStyle
 
 
 
-#### opacity
+### opacity
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1925,12 +2014,14 @@ opacity(value: number | Resource): ButtonStyle
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| Resource | 是 | 元素的不透明度，取值范围为0~1，1表示不透明，0表示完全透明，达到隐藏组件效果，但是在布局中占位。 默认值：1。 当按钮类型为BUTTON_CUSTOM时，此参数可设置按钮的不透明度。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1943,7 +2034,8 @@ opacity(value: number | Resource): ButtonStyle
 
 
 
-#### border
+### border
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1959,12 +2051,14 @@ border(value: BorderOptions): ButtonStyle
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | BorderOptions | 是 | 当按钮类型为BUTTON_CUSTOM时，此参数可设置按钮的边框样式，不设置则无效果。 说明： 设置内边框需要预留充足的空间展示按钮，请确保按钮父组件宽高大于按钮本身。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1977,7 +2071,8 @@ border(value: BorderOptions): ButtonStyle
 
 
 
-#### borderImage
+### borderImage
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1993,12 +2088,14 @@ borderImage(value: BorderImageOption): ButtonStyle
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | BorderImageOption | 是 | 当按钮类型为BUTTON_CUSTOM时，此参数可设置按钮的图片边框样式，不设置则无效果。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2011,7 +2108,8 @@ borderImage(value: BorderImageOption): ButtonStyle
 
 
 
-#### outline
+### outline
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2027,12 +2125,14 @@ outline(value: OutlineOptions): ButtonStyle
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | OutlineOptions | 是 | 当按钮类型为BUTTON_CUSTOM时，此参数可设置按钮的外描边样式，不设置则无效果。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2045,7 +2145,8 @@ outline(value: OutlineOptions): ButtonStyle
 
 
 
-#### hoverEffect
+### hoverEffect
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2061,12 +2162,14 @@ hoverEffect(value: HoverEffect): ButtonStyle
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | HoverEffect | 是 | 当按钮类型为BUTTON_CUSTOM时，此参数可设置按钮的悬浮态效果，不设置则为默认效果。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2079,7 +2182,8 @@ hoverEffect(value: HoverEffect): ButtonStyle
 
 
 
-#### clickEffect
+### clickEffect
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2095,12 +2199,14 @@ clickEffect(value: ClickEffect): ButtonStyle
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ClickEffect | 是 | 当按钮类型为BUTTON_CUSTOM时，此参数可设置按钮的点击回弹效果，不设置则无效果。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2113,7 +2219,8 @@ clickEffect(value: ClickEffect): ButtonStyle
 
 
 
-#### loadingStyle
+### loadingStyle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2129,12 +2236,14 @@ loadingStyle(value: LoadingStyle): ButtonStyle
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | LoadingStyle | 是 | 此参数可设置按钮在登录过程中是否显示加载态。 默认不显示加载态。 说明： 纯图标按钮不支持设置加载态，此参数不生效。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2209,7 +2318,8 @@ struct QuickLoginButtonComponent {
 
 
 
-#### LoginPanelParams
+## LoginPanelParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2220,6 +2330,7 @@ struct QuickLoginButtonComponent {
 **系统能力：** SystemCapability.AuthenticationServices.HuaweiID.UIComponent
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2236,7 +2347,8 @@ struct QuickLoginButtonComponent {
 
 
 
-#### LoginWithHuaweiIDButtonParams
+## LoginWithHuaweiIDButtonParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2247,6 +2359,7 @@ struct QuickLoginButtonComponent {
 **系统能力：** SystemCapability.AuthenticationServices.HuaweiID.UIComponent
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2266,7 +2379,8 @@ struct QuickLoginButtonComponent {
 
 
 
-#### HuaweiIDCredential
+## HuaweiIDCredential
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2277,6 +2391,7 @@ struct QuickLoginButtonComponent {
 **系统能力：** SystemCapability.AuthenticationServices.HuaweiID.UIComponent
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2289,7 +2404,8 @@ struct QuickLoginButtonComponent {
 
 
 
-#### AppInfo
+## AppInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2301,6 +2417,7 @@ struct QuickLoginButtonComponent {
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | appIcon | PixelMap \| ResourceStr \| DrawableDescriptor | 否 | 否 | 应用的图标。 |
@@ -2310,7 +2427,8 @@ struct QuickLoginButtonComponent {
 
 
 
-#### PrivacyText
+## PrivacyText
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2322,6 +2440,7 @@ struct QuickLoginButtonComponent {
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | TextType | 否 | 否 | 隐私文本的类型，包含纯文本和富文本。 |
@@ -2331,7 +2450,8 @@ struct QuickLoginButtonComponent {
 
 
 
-#### OptionalLoginButtonAttr
+## OptionalLoginButtonAttr
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2343,6 +2463,7 @@ struct QuickLoginButtonComponent {
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | text | ResourceStr | 否 | 否 | 可选登录按钮的文字描述。 |
@@ -2350,7 +2471,8 @@ struct QuickLoginButtonComponent {
 
 
 
-#### OptionalLoginAreaAttr
+## OptionalLoginAreaAttr
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2362,6 +2484,7 @@ struct QuickLoginButtonComponent {
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | iconArray | LoginIcon[] | 否 | 否 | 可选登录区域会展示应用传入的其他登录方式的Icon，最多支持展示5个Icon。 |
@@ -2369,7 +2492,8 @@ struct QuickLoginButtonComponent {
 
 
 
-#### LoginIcon
+## LoginIcon
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2381,6 +2505,7 @@ struct QuickLoginButtonComponent {
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | icon | PixelMap \| ResourceStr \| DrawableDescriptor | 否 | 否 | 可选登录区域展示其他登录方式的Icon。根据视觉规范，Icon建议为半径18vp的圆形图片。 |
@@ -2389,7 +2514,8 @@ struct QuickLoginButtonComponent {
 
 
 
-#### CustomButtonParams
+## CustomButtonParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2401,6 +2527,7 @@ struct QuickLoginButtonComponent {
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | fontColor | FontColor | 否 | 是 | LoginWithHuaweiIDButton按钮文字颜色。 默认值：FontColor.WHITE |
@@ -2409,7 +2536,8 @@ struct QuickLoginButtonComponent {
 
 
 
-#### ExtraStyle
+## ExtraStyle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2420,6 +2548,7 @@ struct QuickLoginButtonComponent {
 **系统能力：** SystemCapability.AuthenticationServices.HuaweiID.UIComponent
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2432,7 +2561,8 @@ struct QuickLoginButtonComponent {
 
 
 
-#### CanvasAnimationParams
+## CanvasAnimationParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2444,6 +2574,7 @@ struct QuickLoginButtonComponent {
 
 **起始版本：** 26.0.0
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | canvasRenderingContext | CanvasRenderingContext2D | 否 | 否 | 绘制动效画布的上下文。 |
@@ -2452,7 +2583,8 @@ struct QuickLoginButtonComponent {
 
 
 
-#### RadialGradient
+## RadialGradient
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2464,6 +2596,7 @@ struct QuickLoginButtonComponent {
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | center | [Length, Length] | 否 | 否 | 径向渐变的中心点，即相对于当前组件左上角的坐标。 |
@@ -2474,7 +2607,8 @@ struct QuickLoginButtonComponent {
 
 
 
-#### SweepGradient
+## SweepGradient
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2485,6 +2619,7 @@ struct QuickLoginButtonComponent {
 **系统能力：** SystemCapability.AuthenticationServices.HuaweiID.UIComponent
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2498,7 +2633,8 @@ struct QuickLoginButtonComponent {
 
 
 
-#### ButtonSize
+## ButtonSize
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2510,6 +2646,7 @@ struct QuickLoginButtonComponent {
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | width | Length | 否 | 是 | 设置华为账号登录按钮宽度。 |
@@ -2518,7 +2655,8 @@ struct QuickLoginButtonComponent {
 
 
 
-#### LoadingStyle
+## LoadingStyle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2530,6 +2668,7 @@ struct QuickLoginButtonComponent {
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | show | boolean | 否 | 是 | 华为账号登录按钮在登录过程中是否展示加载态。 true：展示登录按钮加载态 false：不展示登录按钮加载态 默认值：false |
@@ -2537,7 +2676,8 @@ struct QuickLoginButtonComponent {
 
 
 
-#### TextAndIconButtonParams
+## TextAndIconButtonParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2549,6 +2689,7 @@ struct QuickLoginButtonComponent {
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | textAndIconMargin | number | 否 | 是 | 图文混合按钮中图标与文字的间距。默认值：8vp，取值范围：4~16vp。当小于4vp时取值为4vp，当大于16vp时取值为16vp。 |
@@ -2556,7 +2697,8 @@ struct QuickLoginButtonComponent {
 
 
 
-#### IconButtonParams
+## IconButtonParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2568,6 +2710,7 @@ struct QuickLoginButtonComponent {
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | logoRadius | number | 否 | 是 | 纯图标按钮内华为图标的半径。 默认值：14vp，最小值：8vp。取值范围：按钮高度的20%~32%。当小于20%时取值为20%，当大于32%时取值为32%。 |
@@ -2575,7 +2718,8 @@ struct QuickLoginButtonComponent {
 
 
 
-#### StateStyles
+## StateStyles
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2587,6 +2731,7 @@ struct QuickLoginButtonComponent {
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | normal | ButtonStyle | 否 | 是 | 登录按钮正常态的通用样式。 |
@@ -2597,7 +2742,8 @@ struct QuickLoginButtonComponent {
 
 
 
-#### LoginType
+## LoginType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2609,17 +2755,19 @@ struct QuickLoginButtonComponent {
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ID | 0 | 表示用OpenID、UnionID来关联华为账号。 用户在登录成功后会返回对应数据。 该登录类型响应数据包含openID、unionID、authorizationCode、idToken字段。 |
 | PHONE_NUMBER | 1 | 表示用PhoneNumber来关联华为账号。 用户在登录成功后，如之前未对快速验证手机号进行授权，则会拉起手机号授权页面；如已授权，则返回对应数据。 该登录类型不需要实时验证华为账号的手机号码，响应数据包含openID、unionID、authorizationCode、idToken字段。 应用使用Authorization Code调用获取用户级凭证接口向华为账号服务器请求获取Access Token，再使用Access Token调用获取华为账号用户信息接口获取用户信息，从用户信息中获取用户手机号。 |
 | REAL_TIME_PHONE_NUMBER | 2 | 表示用PhoneNumber来关联华为账号。 用户每次在登录成功后，都会拉起实时验证手机号授权页面。 该登录类型会实时验证华为账号的手机号码，响应数据包含openID、unionID、authorizationCode、idToken字段。 应用使用Authorization Code调用获取用户级凭证接口向华为账号服务器请求获取Access Token，再使用Access Token调用获取华为账号用户信息接口获取用户信息，从用户信息中获取用户手机号。 说明： REAL_TIME_PHONE_NUMBER暂不支持使用。 |
-| QUICK_LOGIN | 3 | 表示用PhoneNumber来关联华为账号。 该类型不支持Icon类型和图文类型的LoginWithHuaweiIDButton组件。 该登录类型需要通过AuthorizationWithHuaweiIDRequest接口获取华为账号绑定的匿名手机号，如果未获取到华为账号绑定的匿名手机号，请使用其他登录类型。 该登录类型响应数据包含openID、unionID、authorizationCode、idToken字段。 应用使用Authorization Code调用/oauth2/v6/quickLogin/getPhoneNumber接口获取用户信息，从用户信息中获取用户手机号。 起始版本： 5.0.0(12) 设备行为差异： 该接口在Phone、PC/2in1、Tablet、TV中可正常调用（TV设备从5.1.1(19)版本开始支持），在其他设备类型中返回1001500003错误码。 |
+| QUICK_LOGIN | 3 | 表示用PhoneNumber来关联华为账号。 该类型不支持Icon类型和图文类型的LoginWithHuaweiIDButton组件。 该登录类型需要通过AuthorizationWithHuaweiIDRequest接口获取华为账号绑定的匿名手机号，如果未获取到华为账号绑定的匿名手机号，请使用其他登录类型。 该登录类型响应数据包含openID、unionID、authorizationCode、idToken字段。 应用使用Authorization Code调用/oauth2/v6/quickLogin/getPhoneNumber接口获取用户信息，从用户信息中获取用户手机号。 起始版本： 5.0.0(12) |
 
 
 
 
-#### TextType
+## TextType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2631,6 +2779,7 @@ struct QuickLoginButtonComponent {
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | PLAIN_TEXT | 0 | 纯文本类型，不支持点击。 |
@@ -2639,7 +2788,8 @@ struct QuickLoginButtonComponent {
 
 
 
-#### ClickEvent
+## ClickEvent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2651,6 +2801,7 @@ struct QuickLoginButtonComponent {
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | HUAWEI_ID_LOGIN_BUTTON | 0 | 点击华为账号登录按钮。 |
@@ -2658,7 +2809,8 @@ struct QuickLoginButtonComponent {
 
 
 
-#### AgreementStatus
+## AgreementStatus
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2670,6 +2822,7 @@ struct QuickLoginButtonComponent {
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NOT_ACCEPTED | 0 | 用户未同意协议。 |
@@ -2678,7 +2831,8 @@ struct QuickLoginButtonComponent {
 
 
 
-#### Style
+## Style
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2691,6 +2845,7 @@ struct QuickLoginButtonComponent {
 **系统能力：** SystemCapability.AuthenticationServices.HuaweiID.UIComponent
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2709,7 +2864,8 @@ struct QuickLoginButtonComponent {
 
 
 
-#### LoginButtonTextType
+## LoginButtonTextType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2721,6 +2877,7 @@ struct QuickLoginButtonComponent {
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | QUICK_LOGIN | 0 | 华为账号一键登录按钮文本内容显示为“华为账号一键登录”。用于应用账号登录场景。 |
@@ -2729,7 +2886,8 @@ struct QuickLoginButtonComponent {
 
 
 
-#### FontColor
+## FontColor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2740,6 +2898,7 @@ struct QuickLoginButtonComponent {
 **系统能力：** SystemCapability.AuthenticationServices.HuaweiID.UIComponent
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

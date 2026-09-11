@@ -1,6 +1,6 @@
 # @Extend装饰器：定义扩展组件样式
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-extend
 
@@ -11,11 +11,11 @@
 
 
 
-#### 装饰器使用说明
+## 装饰器使用说明
 
 
 
-#### 语法
+### 语法
 
 ```text
 @Extend(UIComponentName) function functionName() { ... }
@@ -23,7 +23,7 @@
 
 
 
-#### 使用规则
+### 使用规则
 
  - 和@Styles不同，@Extend支持封装指定组件的私有属性、私有事件和自身定义的全局方法。
 
@@ -116,7 +116,7 @@ struct FancyUse {
 }
 ```
 
- - @Extend的参数可以为[状态变量](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state-management-overview)，当状态变量改变时，UI可以正常的被刷新渲染。
+ - @Extend的参数可以为[状态变量](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state-management-overview)，当状态变量改变时，UI可以正常地被刷新渲染。
 
   
 ```ArkTS
@@ -151,7 +151,7 @@ struct FancyUse {
 
 
 
-#### 限制条件
+## 限制条件
 
  - 和@Styles不同，@Extend仅支持在全局定义，不支持在组件内部定义。
 
@@ -237,7 +237,7 @@ struct FancyUse {
         Text('this is TextUse')
 
         Button()
-          .ButtonUse()  // 会有编译告警提示: Property 'ButtonUse' does not exist  on type 'ButtonAttribute'.
+          .ButtonUse()  // 会有编译告警提示: Property 'ButtonUse' does not exist on type 'ButtonAttribute'.
           .height(50)
       }
     }
@@ -293,7 +293,7 @@ struct FancyUse {
 
 
 
-#### 使用场景
+## 使用场景
 
 以下示例声明了3个Text组件，每个Text组件均设置了[fontStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#fontstyle)、[fontWeight](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#fontweight) 和[backgroundColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-background#backgroundcolor)样式。
 
@@ -324,7 +324,7 @@ struct FancyUse {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/ifTLR5JUQoig2gk-t4DsLQ/zh-cn_image_0000002704271777.png?HW-CC-KV=V1&HW-CC-Date=20260813T095702Z&HW-CC-Expire=86400&HW-CC-Sign=C6E91B41719E19772C4C32FBB01E3EC004D757FD974EC7F85DE8A6FE3398ACA9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/GCz4KLynTNKvY-RAGQQHVw/zh-cn_image_0000002717769974.png?HW-CC-KV=V1&HW-CC-Date=20260911T072503Z&HW-CC-Expire=86400&HW-CC-Sign=CF67C573A4605EE14B33F47F1A4302CB5919B62DEFE8D1CBD9FAC3EF89544293)
 
 
 使用@Extend将样式组合复用，示例如下。

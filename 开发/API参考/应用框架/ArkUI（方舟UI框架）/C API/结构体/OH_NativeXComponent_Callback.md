@@ -1,18 +1,19 @@
 # OH_NativeXComponent_Callback
 
-更新时间：2026-07-28 11:23:46（官网已下线）
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-nativexcomponent-native-xcomponent-oh-nativexcomponent-callback
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct OH_NativeXComponent_Callback {...} OH_NativeXComponent_Callback
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 OH_NativeXComponent_Callback用于注册XComponent的Surface生命周期（创建、改变、销毁）和触摸事件回调。适用于需要在Native侧感知Surface状态变化并处理用户触摸交互的场景。
  
@@ -24,16 +25,19 @@ OH_NativeXComponent_Callback用于注册XComponent的Surface生命周期（创�
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 成员函数
+### 成员函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | void (*OnSurfaceCreated)(OH_NativeXComponent* component, void* window) | 当Surface创建时调用。 |
@@ -44,15 +48,17 @@ OH_NativeXComponent_Callback用于注册XComponent的Surface生命周期（创�
  
   
 
-#### 成员函数说明
+## 成员函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OnSurfaceCreated()
+### OnSurfaceCreated()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void (*OnSurfaceCreated)(OH_NativeXComponent* component, void* window)
@@ -66,6 +72,7 @@ void (*OnSurfaceCreated)(OH_NativeXComponent* component, void* window)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent* component | 表示指向OH_NativeXComponent实例的指针。 |
@@ -74,9 +81,10 @@ void (*OnSurfaceCreated)(OH_NativeXComponent* component, void* window)
  
   
 
-#### OnSurfaceChanged()
+### OnSurfaceChanged()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void (*OnSurfaceChanged)(OH_NativeXComponent* component, void* window)
@@ -90,17 +98,19 @@ void (*OnSurfaceChanged)(OH_NativeXComponent* component, void* window)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent* component | 表示指向OH_NativeXComponent实例的指针。 |
-| void* window | 表示NativeWindow句柄。 |
+| void* window | 表示NativeWindow句柄。该句柄在Surface尺寸或格式发生变化时传入，开发者可通过该句柄感知Surface的最新状态并更新渲染配置。 |
  
  
   
 
-#### OnSurfaceDestroyed()
+### OnSurfaceDestroyed()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void (*OnSurfaceDestroyed)(OH_NativeXComponent* component, void* window)
@@ -114,17 +124,19 @@ void (*OnSurfaceDestroyed)(OH_NativeXComponent* component, void* window)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent* component | 表示指向OH_NativeXComponent实例的指针。 |
-| void* window | 表示NativeWindow句柄。 在此回调触发后，系统侧持有的NativeWindow引用计数将减一，引用计数归零后NativeWindow将被释放。 |
+| void* window | 表示NativeWindow句柄。此回调触发后，系统侧持有的NativeWindow引用计数将减一，引用计数归零后NativeWindow将被释放，请勿在此回调之后继续使用该window句柄。 |
  
  
   
 
-#### DispatchTouchEvent()
+### DispatchTouchEvent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void (*DispatchTouchEvent)(OH_NativeXComponent* component, void* window)
@@ -132,13 +144,14 @@ void (*DispatchTouchEvent)(OH_NativeXComponent* component, void* window)
  
 **描述：**
  
-当触摸事件被触发时调用，开发者可在此回调中获取触摸事件数据以实现自定义交互逻辑（如手势识别、自定义绘制等）。
+当触摸事件被分发时调用，开发者可在此回调中获取触摸事件数据以实现自定义交互逻辑（如手势识别、自定义绘制等）。
  
 **起始版本：** 8
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeXComponent* component | 表示指向OH_NativeXComponent实例的指针。 |
-| void* window | 表示NativeWindow句柄。 |
+| void* window | 表示NativeWindow句柄。 通过XComponent生命周期获取的NativeWindow本身由系统侧持有了一次引用计数，并会在OnSurfaceDestroyed回调触发之后将引用计数减一，引用计数归零后NativeWindow将被释放。 |

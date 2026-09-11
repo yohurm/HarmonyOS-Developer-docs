@@ -1,10 +1,10 @@
 # 伙伴设备与HarmonyOS设备互通的开发指南
 
-更新时间：2026-06-03 01:38:22
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/partneragent-life-application-guide
 
-#### 简介
+## 简介
 
 伙伴设备需要与HarmonyOS设备互通，比如以下主要场景：
 
@@ -17,7 +17,7 @@
 
 
 
-#### 关键流程
+## 关键流程
 1. 伙伴设备应用需要先实现[PartnerAgentExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-fusionconnectivity-partneragentextensionability)，里面实现应用被系统唤醒后需要实现的数据传输业务操作。
 2. 伙伴设备触发和伙伴设备的[蓝牙配对](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/br-pair-device-development-guide)操作，再调用 **bindDevice** 接口注册伙伴设备。PartnerAgent服务感知到伙伴设备注册后，才会调用蓝牙服务接口进行[BLE](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#ble)扫描和监听蓝牙连接状态去发现伙伴设备，进而拉起伙伴设备[ExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-fusionconnectivity-partneragentextensionability)。若伙伴设备未注册，PartnerAgent服务不会拉起伙伴设备Extension。
 3. 该注册信息会持久化存储，HarmonyOS设备重启后依旧生效。
@@ -25,7 +25,7 @@
 
 
 
-#### 约束与限制
+## 约束与限制
 
 为了降低PartnerAgentExtensionAbility能力被三方应用滥用的风险，现通过基础访问模式的功能约束对应用进行安全管控。
 
@@ -35,11 +35,11 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 
 
 
-#### 创建文件目录层级
+### 创建文件目录层级
 
 开发者在实现一个伙伴设备生命周期管理应用时，需要在DevEco Studio工程中新建一个PartnerAgentExtensionAbility，具体步骤如下：
 1. 在工程Module对应的ets目录下，右键选择“New > Directory”，新建一个目录，并命名为entryability。
@@ -59,13 +59,13 @@
 
 
 
-#### 申请蓝牙权限
+### 申请蓝牙权限
 
 需要申请权限ohos.permission.ACCESS_BLUETOOTH。如何配置和申请权限，请参考[声明权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions)和[向用户申请授权](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/request-user-authorization)。
 
 
 
-#### PartnerAgentExtensionAbility实现
+### PartnerAgentExtensionAbility实现
 
 应用需要实现[PartnerAgentExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-fusionconnectivity-partneragentextensionability)，本模块会在HarmonyOS设备BLE扫描到或连上**已注册**的伙伴设备时被拉起，HarmonyOS设备和已注册伙伴设备断开蓝牙连接后，本模块会延迟3分钟销毁伙伴设备Extension进程。它通过提供以下函数运行保持应用可唤醒。
 
@@ -96,7 +96,7 @@ export default class PartnerAgentAbility extends PartnerAgentExtensionAbility {
 
 
 
-#### 注册设备流程
+### 注册设备流程
 
 调用[bindDevice](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-fusionconnectivity-partneragent#partneragentbinddevice)接口注册设备，注册过的设备才会触发伙伴设备Extension拉起流程。
 
@@ -143,7 +143,7 @@ if (isEnabled == false) {
 
 
 
-#### 解注册设备流程
+### 解注册设备流程
 
 当伙伴设备应用不再需要被系统保持可唤醒状态，调用应用解注册设备接口[unbindDevice](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-fusionconnectivity-partneragent#partneragentunbinddevice)
 
@@ -190,7 +190,7 @@ if (isBound == true) {
 
 
 
-#### 完整示例
+## 完整示例
 1. PartnerAgentAbility.ets文件。
 
   在PartnerAgentAbility.ets文件中，增加导入PartnerAgentExtensionAbility的依赖包，自定义类继承PartnerAgentExtensionAbility并加上需要的生命周期回调。
@@ -276,7 +276,7 @@ export default class EntryAbility extends UIAbility {
   调用注册设备等功能接口。Index.ets中输入要注册的设备蓝牙地址，注册输入的蓝牙设备，去注册输入的蓝牙设备、查询设备的绑定状态，获取本机绑定的设备列表等。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/4oPEsSO9S0O90JPFMSZmuA/zh-cn_image_0000002617668589.jpg?HW-CC-KV=V1&HW-CC-Date=20260604T012919Z&HW-CC-Expire=86400&HW-CC-Sign=11B9E9AA4CF5349F2E9CC7D3F57262D1CE2C8F88DFE753502FD281026FAAC077)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/MKDGFKatRy6LwsXgHe0W4A/zh-cn_image_0000002717611192.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T073034Z&HW-CC-Expire=86400&HW-CC-Sign=074275FBBA31C5F470BF903595A974A0D3B3A406AC8D3A9FC1E16A7B44ED5959)
 
 
   

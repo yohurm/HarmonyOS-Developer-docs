@@ -1,9 +1,9 @@
 # @ohos.app.ability.insightIntent (意图框架基础定义)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-insightintent
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供[意图框架](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/insight-intent-overview)基础定义。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { insightIntent } from '@kit.AbilityKit';
@@ -22,13 +23,15 @@ import { insightIntent } from '@kit.AbilityKit';
 
 
 
-#### ExecuteMode
+## ExecuteMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 意图执行模式。表示系统入口触发意图执行时传递的执行模式，每个意图支持的执行模式在意图开发时定义。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -39,13 +42,15 @@ import { insightIntent } from '@kit.AbilityKit';
 
 
 
-#### ExecuteResult
+## ExecuteResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 意图执行的返回结果。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -57,15 +62,17 @@ import { insightIntent } from '@kit.AbilityKit';
 
 
 
-#### IntentEntity20+
+## IntentEntity20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 意图实体结构体定义，用于定义意图执行过程中涉及的关键信息对象，包括意图参数和意图执行结果等。
 
 开发者通过继承该类来定义意图实体，继承类需使用[@InsightIntentEntity](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-insightintentdecorator#insightintententity)装饰。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -74,13 +81,15 @@ import { insightIntent } from '@kit.AbilityKit';
 
 
 
-#### IntentResult&lt;T&gt;20+
+## IntentResult&lt;T&gt;20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 意图执行的返回结果，支持[泛型类型](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/introduction-to-arkts#泛型类和接口)。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -90,13 +99,15 @@ import { insightIntent } from '@kit.AbilityKit';
 
 
 
-#### ReturnMode23+
+## ReturnMode23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 意图执行结果返回给意图拉起方的返回形式。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -106,9 +117,10 @@ import { insightIntent } from '@kit.AbilityKit';
 
 
 
-#### QueryType
+## QueryType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 意图实体的查询方式。
 
@@ -120,6 +132,7 @@ import { insightIntent } from '@kit.AbilityKit';
 
 **元服务API**：从API版本26.0.0开始，该接口支持在元服务中使用。
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ALL | 'all' | 查询全量的意图实体。 |
@@ -128,9 +141,10 @@ import { insightIntent } from '@kit.AbilityKit';
 
 
 
-#### QueryEntityParam
+## QueryEntityParam
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 意图实体的查询参数。
 
@@ -142,6 +156,7 @@ import { insightIntent } from '@kit.AbilityKit';
 
 **元服务API**：从API版本26.0.0开始，该接口支持在元服务中使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | queryType | QueryType | 否 | 否 | 意图实体查询方式。 |
@@ -150,9 +165,10 @@ import { insightIntent } from '@kit.AbilityKit';
 
 
 
-#### AppIntentEntity
+## AppIntentEntity
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持查询应用内数据的意图实体定义，继承自[IntentEntity](#intententity20)。用于定义应用需要开放的信息对象。
 
@@ -164,6 +180,7 @@ import { insightIntent } from '@kit.AbilityKit';
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | displayName | string | 否 | 否 | 意图实体的显示名称。 元服务API：从API版本26.0.0开始，该接口支持在元服务中使用。 |
@@ -171,9 +188,10 @@ import { insightIntent } from '@kit.AbilityKit';
 
 
 
-#### onQueryEntity
+### onQueryEntity
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 abstract onQueryEntity(params: QueryEntityParam): Promise<Array&lt;T&gt;>
 
@@ -191,12 +209,14 @@ abstract onQueryEntity(params: QueryEntityParam): Promise<Array&lt;T&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | QueryEntityParam | 是 | 意图实体查询参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |

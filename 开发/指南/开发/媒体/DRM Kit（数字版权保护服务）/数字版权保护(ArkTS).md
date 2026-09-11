@@ -1,6 +1,6 @@
 # 数字版权保护(ArkTS)
 
-更新时间：2026-04-10 09:55:20
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/drm-arkts-dev-guide
 
@@ -9,9 +9,9 @@
 DRM Kit提供MediaKeySystem实现DRM证书管理、DRM许可证管理功能，并管理MediaKeySession实例；MediaKeySession实现DRM节目授权，并可支持Media Kit或Media Kit/AVCodec Kit实现DRM节目解密以实现DRM节目播放。
 
 
-#### 开发步骤
+## 开发步骤
 
-详细的API说明请参考[@ohos.multimedia.drm(数字版权保护)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-drm)。
+详细的API说明请参考[@ohos.multimedia.drm](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-drm)。
 1. 导入DRM Kit接口。
 
   
@@ -19,7 +19,7 @@ DRM Kit提供MediaKeySystem实现DRM证书管理、DRM许可证管理功能，�
 import { drm } from '@kit.DrmKit';
 ```
 
-2. 导入BusinessError模块抛出Drm Kit接口的错误码。
+2. 导入BusinessError模块抛出DRM Kit接口的错误码。
 
   
 ```text
@@ -198,7 +198,7 @@ mediaKeySession.generateMediaKeyRequest("video/mp4", initData, drm.MediaKeyType.
 });
 ```
 
-16. （可选）调用[restoreOfflineMediaKey](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-drm-mediakeysession#restoreofflinemediakeys)，恢复离线媒体密钥。
+16. （可选）调用[restoreOfflineMediaKeys](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-drm-mediakeysession#restoreofflinemediakeys)，恢复离线媒体密钥。
 
   
 ```text

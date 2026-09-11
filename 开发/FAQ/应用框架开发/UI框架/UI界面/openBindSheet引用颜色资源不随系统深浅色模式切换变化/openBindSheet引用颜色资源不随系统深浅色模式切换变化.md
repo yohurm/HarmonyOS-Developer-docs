@@ -175,26 +175,26 @@ struct Index {
         uiContext.getHostContext()?.getApplicationContext()
           .getApplicationContext()
           .resourceManager.getConfiguration((err, config) => {
-          // 调用ComponentContent的update更新里面信息
+     <em>     // 调用ComponentContent的update更新里面信息</em>
           this.contentNode?.update(new Params(this.message, config.colorMode));
           setTimeout(() => {
-            // 调用ComponentContent的updateConfiguration，触发节点的全量更新。
+           <em> // 调用ComponentContent的updateConfiguration，触发节点的全量更新。</em>
             this.contentNode?.updateConfiguration();
           }, 1000);
         });
       }
     };
-    // 注册监听回调
+<em>    // 注册监听回调</em>
     this.callbackId =
       this.getUIContext().getHostContext()?.getApplicationContext().on('environment', environmentCallback);
-    // 设置应用深浅色跟随系统
+    <em>// 设置应用深浅色跟随系统</em>
     this.getUIContext()
       .getHostContext()?.getApplicationContext().setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
   }
 
 
   aboutToDisappear(): void {
-    // 解注册监听environment的回调
+<em>    // 解注册监听environment的回调</em>
     this.getUIContext().getHostContext()?.getApplicationContext().off('environment', this.callbackId);
     this.contentNode?.dispose();
   }

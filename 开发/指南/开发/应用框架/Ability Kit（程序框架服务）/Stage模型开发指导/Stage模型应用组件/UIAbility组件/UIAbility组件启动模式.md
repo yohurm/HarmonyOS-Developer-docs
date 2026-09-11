@@ -1,6 +1,6 @@
 # UIAbility组件启动模式
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-launch-type
 
@@ -16,7 +16,7 @@
 
 
 
-#### singleton启动模式
+## singleton启动模式
 
 singleton启动模式为单实例模式，也是默认情况下的启动模式。
 
@@ -52,7 +52,7 @@ singleton启动模式为单实例模式，也是默认情况下的启动模式�
 
 
 
-#### multiton启动模式
+## multiton启动模式
 
 multiton启动模式为多实例模式，每次调用[startAbility()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext#startability)方法时，都会在应用进程中创建一个新的该类型[UIAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability)实例。即在最近任务列表中可以看到有多个该类型的UIAbility实例。这种情况下可以将UIAbility配置为multiton（多实例模式）。
 
@@ -82,7 +82,7 @@ multiton启动模式的开发使用，在[module.json5配置文件](https://deve
 
 
 
-#### specified启动模式
+## specified启动模式
 
 specified启动模式为指定实例模式，针对一些特殊场景使用（例如文档应用中每次新建文档希望都能新建一个文档实例，重复打开一个已保存的文档希望打开的都是同一个文档实例）。
 
@@ -248,6 +248,6 @@ export default class MyAbilityStage extends AbilityStage {
 
 
 
-#### 示例代码
+## 示例代码
 
  - [UIAbility的启动方式](https://gitcode.com/HarmonyOS_Samples/ability-start-mode)

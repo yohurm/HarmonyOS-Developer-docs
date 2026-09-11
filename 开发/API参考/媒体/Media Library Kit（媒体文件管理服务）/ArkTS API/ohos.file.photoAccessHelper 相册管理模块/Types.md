@@ -1,18 +1,19 @@
 # Types
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-photoaccesshelper-t
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
   
 
-#### MemberType
+## MemberType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type MemberType = number | string | boolean
  
@@ -22,6 +23,7 @@ PhotoAsset的成员类型。
  
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 表示值类型为数字，可取任意值。 |
@@ -31,9 +33,10 @@ PhotoAsset的成员类型。
  
   
 
-#### PhotoAssetParams21+
+## PhotoAssetParams21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type PhotoAssetParams = Record<string, MemberType>[]
  
@@ -41,6 +44,7 @@ type PhotoAssetParams = Record<string, MemberType>[]
  
 **系统能力**: SystemCapability.FileManagement.PhotoAccessHelper.Core
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Record<string, MemberType>[] | 文件属性名称及其值的Record类型数组。 |
@@ -48,9 +52,10 @@ type PhotoAssetParams = Record<string, MemberType>[]
  
   
 
-#### OperationValueType22+
+## OperationValueType22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OperationValueType = number | string | boolean
  
@@ -62,6 +67,7 @@ type OperationValueType = number | string | boolean
  
 **系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 表示字段类型为数字，可取任意值。 |

@@ -96,7 +96,7 @@ struct onChangePause {
       }
       .barPosition(BarPosition.End)
       .onChange((index: number) => {
-        // currentIndex控制TabContent显示页签
+        <em>// currentIndex控制TabContent显示页签</em>
         if (this.currentIndex != index) {
           this.vController.pause();
         }

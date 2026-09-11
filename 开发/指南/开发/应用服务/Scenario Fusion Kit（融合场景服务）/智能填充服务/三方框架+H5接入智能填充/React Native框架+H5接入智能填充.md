@@ -1,6 +1,6 @@
 # React Native框架+H5接入智能填充
 
-更新时间：2026-06-16 09:03:21
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusion-reactnative
 
@@ -9,7 +9,7 @@
 
   
 
-#### 前提条件
+## 前提条件
 
 - 设备智能填充开关必须处于打开状态，请前往“设置 > 隐私和安全 > 智能填充”页面开启开关。
 - 设备已连接互联网并且登录华为账号。
@@ -18,13 +18,13 @@
  
   
 
-#### 开发准备
+## 开发准备
 
 配置React Native已适配HarmonyOS的工程。
  
   
 
-#### React Native输入框效果图
+## React Native输入框效果图
 
 
 ![](assets/React%20Native框架+H5接入智能填充/file-20260514132149907-1.png)
@@ -32,7 +32,7 @@
  
   
 
-#### 示例代码
+## 示例代码
 
 在React Native输入框TextInput需要配置[textContentType](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusion-mappingrelationship#react-native-textcontenttype和harmonyos的contenttype的映射关系)属性来支持智能填充，代码如下：
  
@@ -110,10 +110,10 @@ export default RNTesterApp;
  
   
 
-#### React Native框架中加载的H5页面效果图
+## React Native框架中加载的H5页面效果图
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/OVtKyBggR3SaqZG2sSXMjg/zh-cn_image_0000002626229790.png?HW-CC-KV=V1&HW-CC-Date=20260624T020938Z&HW-CC-Expire=86400&HW-CC-Sign=C3F2F9688B113016EFBA6D82717F077778DFC664B6BF86669B86970FEDE9C6A6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/qwvFLe2sTzCENx-7CQv4VA/zh-cn_image_0000002747211909.png?HW-CC-KV=V1&HW-CC-Date=20260911T073052Z&HW-CC-Expire=86400&HW-CC-Sign=87D81B1D034ED45F13674774B9F595D6E8BECEC089493A01B1703E0AFF7F0992)
 
  
 React Native框架加载H5页面场景，通过给form表单的input输入框（form表单的子节点）配置[autocomplete](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusion-mappingrelationship#h5-autocomplete和harmonyos的contenttype的映射关系)属性来支持智能填充，代码如下：

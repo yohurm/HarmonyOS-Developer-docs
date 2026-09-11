@@ -1,6 +1,6 @@
 # Sendable使用场景
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/sendable-guide
 
@@ -11,7 +11,7 @@ Sendable对象在不同并发实例间默认采用引用传递，这种方式比
 
   
 
-#### 跨并发实例传输大数据场景
+## 跨并发实例传输大数据场景
 
 由于跨并发实例序列化的开销随数据量线性增长，因此当传输数据量较大时（100KB的数据传输耗时约为1ms），跨并发实例的拷贝开销会影响应用性能。使用引用传递方式传输对象可提升性能。
  
@@ -117,7 +117,7 @@ export class Test {
  
   
 
-#### 跨并发实例传递带方法的class实例对象
+## 跨并发实例传递带方法的class实例对象
 
 在序列化传输实例对象时，会丢失方法。因此，若需调用实例方法，应使用引用传递。处理数据时，若需解析数据，可使用[ASON工具](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ason-parsing-generation)。
  

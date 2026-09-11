@@ -1,11 +1,12 @@
 # native_avscreen_capture_errors.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avscreen-capture-errors-h
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 枚举
+### 枚举
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_AVSCREEN_CAPTURE_ErrCode | OH_AVSCREEN_CAPTURE_ErrCode | 屏幕录制过程中产生的不同结果码。 |
@@ -40,13 +44,15 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### OH_AVSCREEN_CAPTURE_ErrCode
+### OH_AVSCREEN_CAPTURE_ErrCode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -64,6 +70,7 @@ enum OH_AVSCREEN_CAPTURE_ErrCode
  
 **起始版本：** 10
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AV_SCREEN_CAPTURE_ERR_BASE = 0 | 错误码的基础值，其他错误码在此基础上递增，用于标识不同的错误类型。 |

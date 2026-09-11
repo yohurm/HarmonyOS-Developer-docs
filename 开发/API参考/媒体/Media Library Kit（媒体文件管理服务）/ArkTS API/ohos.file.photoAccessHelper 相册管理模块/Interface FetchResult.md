@@ -1,9 +1,9 @@
 # Interface (FetchResult)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-photoaccesshelper-fetchresult
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文件检索结果集。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
@@ -22,19 +23,21 @@ import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
 
 
-#### getCount
+## getCount
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCount(): number
 
-获取文件检索结果中的文件总数。
+获取文件检索结果总数。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -44,6 +47,7 @@ getCount(): number
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -73,9 +77,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### isAfterLast
+## isAfterLast
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isAfterLast(): boolean
 
@@ -87,6 +92,7 @@ isAfterLast(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 当结果集指向最后一行时返回true，否则返回false。 |
@@ -95,6 +101,7 @@ isAfterLast(): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -120,7 +127,9 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
   console.info('count:' + fetchCount);
   let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getLastObject();
   if (fetchResult.isAfterLast()) {
-    console.info('photoAsset isAfterLast displayName = ', photoAsset.displayName);
+    if (photoAsset) {
+      console.info('photoAsset isAfterLast displayName = ', photoAsset.displayName);
+    }
   } else {
     console.info('photoAsset not isAfterLast.');
   }
@@ -129,9 +138,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### close
+## close
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(): void
 
@@ -144,6 +154,7 @@ close(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -177,9 +188,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### getFirstObject
+## getFirstObject
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFirstObject(callback: AsyncCallback&lt;T&gt;): void
 
@@ -191,6 +203,7 @@ getFirstObject(callback: AsyncCallback&lt;T&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;T&gt; | 是 | 回调函数。当获取结果集中的第一个文件资产成功，err为undefined，data为具体检索结果；否则为错误对象。 |
@@ -199,6 +212,7 @@ getFirstObject(callback: AsyncCallback&lt;T&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -222,20 +236,21 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
   };
   let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
   fetchResult.getFirstObject((err, photoAsset) => {
-    if (photoAsset !== undefined) {
-      console.info('photoAsset displayName: ', photoAsset.displayName);
-    } else {
-      console.error(`photoAsset failed with err:${err.code}, ${err.message}`);
+    if (err) {
+      console.error(`Failed to getFirstObject. Code: ${err.code}, message: ${err.message}`);
+      return;
     }
+      console.info('photoAsset displayName: ', photoAsset.displayName);
   });
 }
 ```
 
 
 
-#### getFirstObject
+## getFirstObject
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFirstObject(): Promise&lt;T&gt;
 
@@ -247,14 +262,16 @@ getFirstObject(): Promise&lt;T&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;T&gt; | Promise对象，返回结果集中第一个对象。 |
+| Promise&lt;T&gt; | Promise对象，返回结果集中的第一个文件资产。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -284,9 +301,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### getNextObject
+## getNextObject
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getNextObject(callback: AsyncCallback&lt;T&gt;): void
 
@@ -300,6 +318,7 @@ getNextObject(callback: AsyncCallback&lt;T&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;T&gt; | 是 | 回调函数。当获取结果集中的下一个文件资产成功，err为undefined，data为具体检索结果；否则为错误对象。 |
@@ -308,6 +327,7 @@ getNextObject(callback: AsyncCallback&lt;T&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -345,9 +365,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### getNextObject
+## getNextObject
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getNextObject(): Promise&lt;T&gt;
 
@@ -361,14 +382,16 @@ getNextObject(): Promise&lt;T&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;T&gt; | Promise对象，返回结果集中下一个对象。 |
+| Promise&lt;T&gt; | Promise对象，返回结果集中的下一个文件资产。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -401,9 +424,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### getLastObject
+## getLastObject
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLastObject(callback: AsyncCallback&lt;T&gt;): void
 
@@ -415,6 +439,7 @@ getLastObject(callback: AsyncCallback&lt;T&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;T&gt; | 是 | 回调函数。当获取结果集中的最后一个文件资产成功，err为undefined，data为具体检索结果；否则为错误对象。 |
@@ -423,6 +448,7 @@ getLastObject(callback: AsyncCallback&lt;T&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -457,9 +483,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### getLastObject
+## getLastObject
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLastObject(): Promise&lt;T&gt;
 
@@ -471,14 +498,16 @@ getLastObject(): Promise&lt;T&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;T&gt; | Promise对象，返回结果集中的最后一个对象。 |
+| Promise&lt;T&gt; | Promise对象，返回结果集中的最后一个文件资产。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -508,9 +537,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### getObjectByPosition
+## getObjectByPosition
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getObjectByPosition(index: number, callback: AsyncCallback&lt;T&gt;): void
 
@@ -522,6 +552,7 @@ getObjectByPosition(index: number, callback: AsyncCallback&lt;T&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 要获取的文件的索引，从0开始。 |
@@ -531,6 +562,7 @@ getObjectByPosition(index: number, callback: AsyncCallback&lt;T&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -565,9 +597,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### getObjectByPosition
+## getObjectByPosition
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getObjectByPosition(index: number): Promise&lt;T&gt;
 
@@ -579,6 +612,7 @@ getObjectByPosition(index: number): Promise&lt;T&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 要获取的文件的索引，从0开始。 |
@@ -586,14 +620,16 @@ getObjectByPosition(index: number): Promise&lt;T&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;T&gt; | Promise对象，返回结果集中指定索引的一个对象。 |
+| Promise&lt;T&gt; | Promise对象，返回结果集中指定索引的文件资产。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -627,9 +663,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### getAllObjects
+## getAllObjects
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllObjects(callback: AsyncCallback<Array&lt;T&gt;>): void
 
@@ -641,6 +678,7 @@ getAllObjects(callback: AsyncCallback<Array&lt;T&gt;>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<Array&lt;T&gt;> | 是 | 回调函数。当获取结果集中的所有文件资产成功，err为undefined，data为具体检索结果；否则为错误对象。 |
@@ -649,6 +687,7 @@ getAllObjects(callback: AsyncCallback<Array&lt;T&gt;>): void
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -683,9 +722,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### getAllObjects
+## getAllObjects
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllObjects(): Promise<Array&lt;T&gt;>
 
@@ -697,6 +737,7 @@ getAllObjects(): Promise<Array&lt;T&gt;>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;T&gt;> | Promise对象，返回所有文件资产的数组。 |
@@ -705,6 +746,7 @@ getAllObjects(): Promise<Array&lt;T&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -734,9 +776,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### contains23+
+## contains23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contains(object: T): Promise&lt;boolean&gt;
 
@@ -750,12 +793,14 @@ contains(object: T): Promise&lt;boolean&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | object | T | 是 | 指定的文件资产。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -789,9 +834,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### getObjectsByIndexSet23+
+## getObjectsByIndexSet23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getObjectsByIndexSet(indexSet: number[]): Promise<T[]>
 
@@ -805,12 +851,14 @@ getObjectsByIndexSet(indexSet: number[]): Promise<T[]>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| indexSet | number[] | 是 | 指定的索引集合。 |
+| indexSet | number[] | 是 | 指定的索引数组。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -820,6 +868,7 @@ getObjectsByIndexSet(indexSet: number[]): Promise<T[]>
 **错误码：**
 
 以下错误码的详细介绍请参见[媒体库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-medialibrary)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -853,9 +902,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### getIndex23+
+## getIndex23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getIndex(object: T): Promise&lt;number&gt;
 
@@ -869,12 +919,14 @@ getIndex(object: T): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | object | T | 是 | 指定的文件资产。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -908,9 +960,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### getRangeObjects23+
+## getRangeObjects23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRangeObjects(index: number, offset: number): Promise<T[]>
 
@@ -920,22 +973,25 @@ getRangeObjects(index: number, offset: number): Promise<T[]>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| index | number | 是 | 开始获取的文件资产索引，大于等于0，小于文件检索结果中对象数量。 |
+| index | number | 是 | 开始获取的文件资产索引，大于等于0，小于文件检索结果中对象数量。index和offset之和需要小于检索结果中的对象数量。 |
 | offset | number | 是 | 要获取的文件资产数量，大于0。 index和offset之和需要小于检索结果中的对象数量，否则抛出23800151错误码。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise<T[]> | 返回Promise异步回调数组。 |
+| Promise<T[]> | Promise对象，返回指定索引范围内的文件资产数组。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[媒体库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-medialibrary)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -960,12 +1016,14 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
       fetchColumns: [],
       predicates: predicates
   };
+  // 创建两个独立的FetchResult实例用于并行获取，提高大批量数据检索效率。
   let fetchResult1: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
       await phAccessHelper.getAssets(fetchOptions);
   let fetchResult2: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
       await phAccessHelper.getAssets(fetchOptions);
   let count: number = fetchResult1.getCount();
   const half: number = Math.ceil(count / 2);
+  // 将结果集分为两批并行获取：前半部分从fetchResult1获取，后半部分从fetchResult2获取。
   let promises: Promise<PhotoAsset[]>[] = [];
   promises[0] = fetchResult1.getRangeObjects(0, half);
   promises[1] = fetchResult2.getRangeObjects(half, count - half);

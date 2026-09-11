@@ -1,10 +1,10 @@
 # 基于AudioRenderer播放PCM音频
 
-更新时间：2026-07-09 02:22:01
+更新时间：2026-09-02 03:30:31
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-playing-pcm-audio-based-audiorenderer
 
-#### 概述
+## 概述
 
 AudioRenderer是用于音频播放的ArkTS API，仅支持PCM格式的音频。指导开发者使用AudioRenderer接口实现播放PCM音频的功能，主要涉及基本播控、精准跳转、静音播放、倍速播放、音量控制、焦点管理、后台播放与接入播控中心、冷启动等开发场景。
  
@@ -22,31 +22,32 @@ AudioRenderer是用于音频播放的ArkTS API，仅支持PCM格式的音频。�
  
  
 
-#### 场景分析
+## 场景分析
  
+
 | 场景名称 | 描述 | 实现方案 |
 | --- | --- | --- |
-| 基础播控 | 音频资源的加载、播放、暂停、退出等操作。 | 使用AudioRenderer接口实现。 |
-| 跳转播放 | 滑动进度条精准跳转到指定时间进行播放。 | 使用Slider组件实现进度条，在AudioRenderer的on('writeData')回调中触发进度调节。 |
-| 静音播放 | 点击按钮设置静音播放。 | 使用AudioRenderer的setSilentModeAndMixWithOthers()方法控制静音状态。 |
+| 基础播控 | 音频资源的加载、播放、暂停、退出等操作。 | 使用Interface (AudioRenderer)接口实现。 |
+| 跳转播放 | 滑动进度条精准跳转到指定时间进行播放。 | 使用Slider实现进度条，在AudioRenderer的on('writeData')回调中触发进度调节。 |
+| 静音播放 | 点击按钮设置静音播放。 | 使用Interface (AudioRenderer)的setSilentModeAndMixWithOthers()方法控制静音状态。 |
 | 切换歌曲播放 | 点击上一首或下一首或歌单列表中的歌曲进行不同歌曲播放。 | 在AudioRenderer的on('writeData')回调中，将获取到的不同的歌曲资源写入数据缓冲区，实现播放不同歌曲的功能。 |
-| 倍速设置 | 选择不同档位调节播放速度。 | 使用AudioRenderer的setSpeed()设置播放倍速。 |
-| 音量设置 | 滑动音量调节面板调节播放音量。 | 使用AudioRenderer的setVolume()设置播放音量。 |
-| 接入播控中心 | 通过播控中心，控制播放、暂停、切换音频、调整播放进度、切换循环模式 | 通过AVSessionKit音频播控服务实现音频应用接入播控中心。 |
+| 倍速设置 | 选择不同档位调节播放速度。 | 使用Interface (AudioRenderer)的setSpeed()设置播放倍速。 |
+| 音量设置 | 滑动音量调节面板调节播放音量。 | 使用Interface (AudioRenderer)的setVolume()设置播放音量。 |
+| 接入播控中心 | 通过播控中心，控制播放、暂停、切换音频、调整播放进度、切换循环模式 | 通过AVSession Kit（音视频播控服务）实现音频应用接入播控中心。 |
 | 后台播放 | 音频切换到后台播放。 | 接入播控中心，在此基础上申请后台运行权限并创建长时后台任务，从而实现音频在后台持续播放的功能。 |
-| 接入播控中心冷启动和历史歌单 | 应用退出后，播控中心显示历史歌单，点击播控中心播放按钮拉起应用播放，或者点击歌单拉起应用播放。 | 注册并适配后台启动模式的播放意图，即可实现接入。 |
+| 接入播控中心冷启动和历史歌单 | 应用退出后，播控中心显示历史歌单，点击播控中心播放按钮拉起应用播放，或者点击歌单拉起应用播放。 | 注册并适配后台启动模式的接入方案，即可实现接入。 |
 | 低功耗音频播放 | 低功耗音频播放是一种通过软硬芯协同设计实现的音频渲染方案。其核心机制是增大音频渲染器的内部缓存，使系统能够一次性填充大量音频数据，从而允许主处理器长时间休眠，减少频繁处理音频数据的功耗，显著降低系统级功耗负载。 | 具体介绍和实现方案参考：低功耗音频播放。 |
  
  
  
 
-#### 基础播控
+## 基础播控
 
  
 
-#### 场景描述
+### 场景描述
 
-通过[AudioRenderer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer)实现基础的音频播放控制能力，包括音频资源加载、播放、暂停、停止及退出等操作。
+通过[Interface (AudioRenderer)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer)实现基础的音频播放控制能力，包括音频资源加载、播放、暂停、停止及退出等操作。
  
 
 ![](assets/基于AudioRender播放PCM音频/file-20260515114702674-11.gif)
@@ -54,15 +55,15 @@ AudioRenderer是用于音频播放的ArkTS API，仅支持PCM格式的音频。�
  
  
 
-#### 实现原理
+### 实现原理
 
-开发者可以通过[AudioRenderer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer)的接口，创建AudioRenderer实例，在AudioRenderer的[on('writeData')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer#onwritedata11)回调中，将获取的歌曲资源写入回调事件中，实现资源加载。通过AudioRenderer的[start()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer#start8)、[pause()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer#pause8)、[stop()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer#stop8)和[release()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer#release8)接口实现音频的播放、暂停、停止和资源释放操作。
+开发者可以通过[Interface (AudioRenderer)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer)的接口，创建AudioRenderer实例，在AudioRenderer的[on('writeData')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer#onwritedata11)回调中，将获取的歌曲资源写入回调事件中，实现资源加载。通过AudioRenderer的[start()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer#start8)、[pause()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer#pause8)、[stop()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer#stop8)和[release()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer#release8)接口实现音频的播放、暂停、停止和资源释放操作。
  
-[AudioRenderer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer)中的不同接口调用和其状态的变化关系参考[AudioRenderer状态变化示意图](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-audiorenderer-for-playback)。
+[Interface (AudioRenderer)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer)中的不同接口调用和其状态的变化关系参考[使用AudioRenderer开发音频播放功能(ArkTS)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-audiorenderer-for-playback)。
  
  
 
-#### 开发步骤
+### 开发步骤
 
 1. 创建AudioRenderer实例。
  
@@ -103,9 +104,9 @@ public async initAudioRenderer() {
 2. 加载歌曲资源。
  
 ```ArkTS
-public async loadSongAssent(songRawFileDescriptor: resourceManager.RawFileDescriptor) {
+public loadSongAsset(songRawFileDescriptor: resourceManager.RawFileDescriptor) {
   if (!songRawFileDescriptor) {
-    Logger.error(TAG, `loadSongAssent faile : songRawFileDescriptor get failed`);
+    Logger.error(TAG, `loadSongAsset failed: songRawFileDescriptor get failed`);
     return;
   }
   this.initOffset = songRawFileDescriptor.offset;
@@ -128,33 +129,50 @@ private setWriteDataCallback() {
   }
   let secondBufferWalk = SECOND_BUFFER_WALK;
   let bufferWalk = 0;
+  let lastFd: number | undefined = undefined;
   let options: Options;
-  this.audioRenderer.on('writeData', (buffer) => {
-    if (!this.songRawFileDescriptor) {
-      return;
-    }
-    options = {
-      offset: this.currentOffset,
-      length: buffer.byteLength
-    };
-    fileIo.readSync(this.songRawFileDescriptor.fd, buffer, options);
-    this.currentOffset += buffer.byteLength;
-    this.bufferRead = this.currentOffset - this.initOffset;
-    bufferWalk += buffer.byteLength;
-    if (this.bufferRead <= this.bufferNeedRead) {
-      if (bufferWalk >= secondBufferWalk) { // 1s seek
-        let curMs = MediaTools.getMsFromByteLength(this.bufferRead);
-        this.seek(curMs);
+  try {
+    this.audioRenderer.on('writeData', (buffer) => {
+      if (this.isStopped || !this.songRawFileDescriptor || !this.songRawFileDescriptor.fd) {
+        return;
+      }
+      if (lastFd !== this.songRawFileDescriptor.fd) {
+        lastFd = this.songRawFileDescriptor.fd;
         bufferWalk = 0;
       }
-    } else {
-      bufferWalk = 0;
-      let curMs = MediaTools.getMsFromByteLength(this.songRawFileDescriptor.length);
-      Logger.info(TAG, 'setWriteDataCallback CurMs is ' + curMs);
-      this.seek(curMs);
-      MediaControlCenterCallbackAction.getInstance().doPlayNextAction();
-    }
-  })
+      options = {
+        offset: this.currentOffset,
+        length: buffer.byteLength
+      };
+      try {
+        fileIo.readSync(this.songRawFileDescriptor.fd, buffer, options);
+      } catch (err) {
+        Logger.error(TAG, `readSync failed,code is ${(err as BusinessError).code},message is ${(err as BusinessError).message}`);
+        return;
+      }
+      this.currentOffset += buffer.byteLength;
+      this.bufferRead = this.currentOffset - this.initOffset;
+      bufferWalk += buffer.byteLength;
+      if (this.bufferRead <= this.bufferNeedRead) {
+        if (bufferWalk >= secondBufferWalk) { // 1s seek
+          let curMs = MediaTools.getMsFromByteLength(this.bufferRead);
+          this.seek(curMs);
+          bufferWalk = 0;
+        }
+      } else {
+        bufferWalk = 0;
+        let curMs = MediaTools.getMsFromByteLength(this.songRawFileDescriptor.length);
+        Logger.info(TAG, 'setWriteDataCallback CurMs is ' + curMs);
+        this.seek(curMs);
+        if (!this.isStopped) {
+          this.isStopped = true;
+          MediaControlCenterCallbackAction.getInstance().doPlayNextAction();
+        }
+      }
+    })
+  } catch (error) {
+    Logger.error(`writeData Failed. ${error.code} message ${error.message}`);
+  }
 }
 ```
  
@@ -168,10 +186,18 @@ public async play() {
     return;
   }
   try {
+    this.isStopped = false;
+    this.isPlaying = true;
     await this.audioRenderer.start().catch((err: BusinessError) => {
       Logger.error(TAG, `start failed,code is ${err.code},message is ${err.message}`);
+      this.isStopped = true;
+      this.isPlaying = false;
+      MediaControlCenterCallbackAction.getInstance().doPauseAction();
     })
   } catch (e) {
+    this.isStopped = true;
+    this.isPlaying = false;
+    MediaControlCenterCallbackAction.getInstance().doPauseAction();
     Logger.error(TAG, `start failed,audioRenderer is undefined`);
   }
 }
@@ -202,11 +228,13 @@ public async pause() {
 public async stop() {
   if (this.audioRenderer) {
     try {
+      this.isStopped = true;
+      this.isPlaying = false;
       await this.audioRenderer.stop().catch((err: BusinessError) => {
         Logger.error(TAG, `stop failed,code is ${err.code},message is ${err.message}`);
       })
       this.curMs = 0;
-      await this.audioRenderer.flush();
+      await new Promise<void>((resolve) => setTimeout(resolve, 50));
       Logger.info(TAG, 'stop success');
     } catch (e) {
       Logger.error(TAG, `stop failed,audioRenderer is undefined`);
@@ -220,32 +248,35 @@ public async stop() {
 ```ArkTS
 // Release audioRenderer
 public async release() {
-  if (this.audioRenderer && this.context) {
+  this.isStopped = true;
+  this.isPlaying = false;
+  if (this.audioRenderer) {
     try {
       await AudioRendererController.getInstance().stop();
       await this.audioRenderer.release().catch((err: BusinessError) => {
-        if (this.songRawFileDescriptor) {
-          fileIo.close(this.songRawFileDescriptor.fd);
-        }
         Logger.error(TAG, `release failed,code is ${err.code},message is ${err.message}`);
       })
-      AppStorage.setOrCreate('audioRendererController', undefined)
       Logger.info(TAG, 'release success');
     } catch (err) {
       Logger.error(TAG,
-        `release failed,audioRenderer is undefined, code is ${JSON.stringify(err.code)},message is ${JSON.stringify(err.message)}`);
+        `release failed,audioRenderer is undefined, code is ${JSON.stringify(err.code)},
+        message is ${JSON.stringify(err.message)}`);
+    } finally {
+      this.songRawFileDescriptor = undefined;
     }
+  } else {
+    this.songRawFileDescriptor = undefined;
   }
 }
 ```
  
  
 
-#### 跳转播放
+## 跳转播放
 
  
 
-#### 场景描述
+### 场景描述
 
 通过点击或拖动进度条精准跳转到指定时间进行播放。
  
@@ -255,14 +286,15 @@ public async release() {
  
  
 
-#### 实现原理
+### 实现原理
 
 在pcm文件中，每1秒时间对应的音频帧数是固定的，并且每音频帧的字节数是固定的，所以歌曲在不同时长对应的资源起始位置也可以计算出来。当用户拖动进度条到指定时间后，计算出当前时间对应当前资源的起始位置，在AudioRenderer的on('writeData')回调中，从对应的起始位置开始获取歌曲资源并写入回调中，从而实现跳转播放。另外一种方案可以参考[基于OHAudio播放PCM音频](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-playing-pcm-audio-based-ohaudio)中[跳转播放](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-playing-pcm-audio-based-ohaudio#section16920851193717)的[实现原理](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-playing-pcm-audio-based-ohaudio#section5752111843915)一节。
  
 > [!NOTE]
-> 音频帧大小 = 通道数 * （采样位深 / 8），单位为字节。 每1秒PCM对应的字节数 = 1秒包含的音频帧数 * 音频帧大小 ，单位为字节。 采样率：等于每秒帧数，采样率为48000代表每秒包含48000音频帧。使用 createAudioRenderer() 接口创建AudioRenderer实例时，通过配置 options 属性，设置音频流信息 streamInfo 中的采样率 samplingRate 来设置。 通道数：决定音频帧大小，1帧 = 所有声道各取1个采样点。使用 createAudioRenderer() 接口创建AudioRenderer实例时，通过配置 options 属性，设置音频流信息 streamInfo 中的通道数 channels 来设置。 采样位深：决定音频帧大小，单位为位（bit)，1字节 = 8位。使用 createAudioRenderer() 接口创建AudioRenderer实例时，通过配置 options 属性，设置音频流信息 streamInfo 中的采样格式 sampleFormat 来获得，其对应关系如下表格。 按照 基础播控 的 开发步骤 1创建AudioRenderer是配置的音频流信息是采样率48000，双声道，采样位深16bit。可以算出： 音频帧大小 = 2 * （16 / 8）= 4 字节； 每1秒PCM对应的字节数 = 48000 * 2 * （16 / 8） = 192000字节。
+> 音频帧大小 = 通道数 * （采样位深 / 8），单位为字节。 每1秒PCM对应的字节数 = 1秒包含的音频帧数 * 音频帧大小 ，单位为字节。 采样率：等于每秒帧数，采样率为48000代表每秒包含48000音频帧。使用 audio.createAudioRenderer() 接口创建AudioRenderer实例时，通过配置 AudioRendererOptions 属性，设置音频流信息 AudioStreamInfo 中的采样率 AudioSamplingRate 来设置。 通道数：决定音频帧大小，1帧 = 所有声道各取1个采样点。使用 audio.createAudioRenderer() 接口创建AudioRenderer实例时，通过配置 AudioRendererOptions 属性，设置音频流信息 AudioStreamInfo 中的通道数 AudioChannel 来设置。 采样位深：决定音频帧大小，单位为位（bit)，1字节 = 8位。使用 audio.createAudioRenderer() 接口创建AudioRenderer实例时，通过配置 AudioRendererOptions 属性，设置音频流信息 AudioStreamInfo 中的采样格式 AudioSampleFormat 来获得，其对应关系如下表格。 按照 基础播控 的 开发步骤 1创建AudioRenderer时配置的音频流信息是采样率48000，双声道，采样位深16bit。可以算出： 音频帧大小 = 2 * （16 / 8）= 4 字节； 每1秒PCM对应的字节数 = 48000 * 2 * （16 / 8） = 192000字节。
 
   
+
 | AudioSampleFormat枚举值 | 对应采样位深 |
 | --- | --- |
 | SAMPLE_FORMAT_U8 | 8bit |
@@ -274,7 +306,7 @@ public async release() {
  
  
 
-#### 开发步骤
+### 开发步骤
 
 1. 计算每1秒PCM对应的字节数。
  
@@ -315,43 +347,60 @@ private setWriteDataCallback() {
   }
   let secondBufferWalk = SECOND_BUFFER_WALK;
   let bufferWalk = 0;
+  let lastFd: number | undefined = undefined;
   let options: Options;
-  this.audioRenderer.on('writeData', (buffer) => {
-    if (!this.songRawFileDescriptor) {
-      return;
-    }
-    options = {
-      offset: this.currentOffset,
-      length: buffer.byteLength
-    };
-    fileIo.readSync(this.songRawFileDescriptor.fd, buffer, options);
-    this.currentOffset += buffer.byteLength;
-    this.bufferRead = this.currentOffset - this.initOffset;
-    bufferWalk += buffer.byteLength;
-    if (this.bufferRead <= this.bufferNeedRead) {
-      if (bufferWalk >= secondBufferWalk) { // 1s seek
-        let curMs = MediaTools.getMsFromByteLength(this.bufferRead);
-        this.seek(curMs);
+  try {
+    this.audioRenderer.on('writeData', (buffer) => {
+      if (this.isStopped || !this.songRawFileDescriptor || !this.songRawFileDescriptor.fd) {
+        return;
+      }
+      if (lastFd !== this.songRawFileDescriptor.fd) {
+        lastFd = this.songRawFileDescriptor.fd;
         bufferWalk = 0;
       }
-    } else {
-      bufferWalk = 0;
-      let curMs = MediaTools.getMsFromByteLength(this.songRawFileDescriptor.length);
-      Logger.info(TAG, 'setWriteDataCallback CurMs is ' + curMs);
-      this.seek(curMs);
-      MediaControlCenterCallbackAction.getInstance().doPlayNextAction();
-    }
-  })
+      options = {
+        offset: this.currentOffset,
+        length: buffer.byteLength
+      };
+      try {
+        fileIo.readSync(this.songRawFileDescriptor.fd, buffer, options);
+      } catch (err) {
+        Logger.error(TAG, `readSync failed,code is ${(err as BusinessError).code},message is ${(err as BusinessError).message}`);
+        return;
+      }
+      this.currentOffset += buffer.byteLength;
+      this.bufferRead = this.currentOffset - this.initOffset;
+      bufferWalk += buffer.byteLength;
+      if (this.bufferRead <= this.bufferNeedRead) {
+        if (bufferWalk >= secondBufferWalk) { // 1s seek
+          let curMs = MediaTools.getMsFromByteLength(this.bufferRead);
+          this.seek(curMs);
+          bufferWalk = 0;
+        }
+      } else {
+        bufferWalk = 0;
+        let curMs = MediaTools.getMsFromByteLength(this.songRawFileDescriptor.length);
+        Logger.info(TAG, 'setWriteDataCallback CurMs is ' + curMs);
+        this.seek(curMs);
+        if (!this.isStopped) {
+          this.isStopped = true;
+          MediaControlCenterCallbackAction.getInstance().doPlayNextAction();
+        }
+      }
+    })
+  } catch (error) {
+    Logger.error(`writeData Failed. ${error.code} message ${error.message}`);
+  }
 }
 ```
  
  
 
-#### 静音播放
+## 静音播放
 
  
 
-#### 场景描述
+### 场景描述
 
 通过界面按钮快捷切换音频播放静音模式，实现一键开启或关闭静音模式。
  
@@ -361,34 +410,34 @@ private setWriteDataCallback() {
  
  
 
-#### 实现原理
+### 实现原理
 
-使用[AudioRenderer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer)的[setSilentModeAndMixWithOthers()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer#setsilentmodeandmixwithothers12)方法来开启或关闭静音模式，参数设置为true，表示开启静音播放模式。
+使用[Interface (AudioRenderer)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer)的[setSilentModeAndMixWithOthers()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer#setsilentmodeandmixwithothers12)方法来开启或关闭静音模式，参数设置为true，表示开启静音播放模式。
  
  
 
-#### 开发步骤
+### 开发步骤
 
 调用[setSilentModeAndMixWithOthers()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer#setsilentmodeandmixwithothers12)接口，开启或关闭静音模式。
  
 ```ArkTS
 // Set the silent mode
-public async setSilentMode(isSupportSilent: boolean = false) {
+public setSilentMode(isSupportSilent: boolean = false) {
   if (!this.audioRenderer || !this.context) {
     return;
   }
   this.audioRenderer.setSilentModeAndMixWithOthers(isSupportSilent);
-  AppStorage.setOrCreate('isSilentMode', isSupportSilent);
+  AppStorage.setOrCreate(AppStorageKeyConstants.KEY_IS_SILENT_MODE, isSupportSilent);
 }
 ```
  
  
 
-#### 切换歌曲播放
+## 切换歌曲播放
 
  
 
-#### 场景描述
+### 场景描述
 
 点击上一首或下一首或歌单列表中的歌曲进行不同歌曲播放。
  
@@ -398,13 +447,13 @@ public async setSilentMode(isSupportSilent: boolean = false) {
  
  
 
-#### 实现原理
+### 实现原理
 
 通过加载不同的资源文件，并在AudioRenderer的[on('writeData')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer#onwritedata11)回调中，读取资源数据，从而完成歌曲切换场景。
  
  
 
-#### 开发步骤
+### 开发步骤
 
 1. 停止当前播放的歌曲，并且清空缓存，防止杂音。
  
@@ -413,11 +462,13 @@ public async setSilentMode(isSupportSilent: boolean = false) {
 public async stop() {
   if (this.audioRenderer) {
     try {
+      this.isStopped = true;
+      this.isPlaying = false;
       await this.audioRenderer.stop().catch((err: BusinessError) => {
         Logger.error(TAG, `stop failed,code is ${err.code},message is ${err.message}`);
       })
       this.curMs = 0;
-      await this.audioRenderer.flush();
+      await new Promise<void>((resolve) => setTimeout(resolve, 50));
       Logger.info(TAG, 'stop success');
     } catch (e) {
       Logger.error(TAG, `stop failed,audioRenderer is undefined`);
@@ -430,38 +481,47 @@ public async stop() {
  
 ```ArkTS
 public async playNext() {
-  await this.stop();
-  let nextIndex = this.musicIndex;
-  switch (this.playMode) {
-    case MusicPlayMode.SINGLE_CYCLE:
-      break;
-    case MusicPlayMode.ORDER:
-      if (this.musicIndex === this.songList.length - 1) {
-        nextIndex = 0;
-      } else {
-        nextIndex += 1;
-      }
-      break;
-    case MusicPlayMode.RANDOM:
-      nextIndex = this.setRandom();
-      break;
-    default:
-      break;
+  if (this.isSwitching) {
+    Logger.info(TAG, 'playNext skipped, already switching');
+    return;
   }
-  this.updateMusicIndex(nextIndex);
-  await this.loadSongAssent();
-  Logger.info(TAG, `nextIndex is ${nextIndex}`);
-  await this.play();
+  this.isSwitching = true;
+  try {
+    await this.stop();
+    let nextIndex = this.musicIndex;
+    switch (this.playMode) {
+      case MusicPlayMode.SINGLE_CYCLE:
+        break;
+      case MusicPlayMode.ORDER:
+        if (this.musicIndex === this.songList.length - 1) {
+          nextIndex = 0;
+        } else {
+          nextIndex += 1;
+        }
+        break;
+      case MusicPlayMode.RANDOM:
+        nextIndex = this.setRandom();
+        break;
+      default:
+        break;
+    }
+    this.updateMusicIndex(nextIndex);
+    await this.loadSongAsset();
+    Logger.info(TAG, `nextIndex is ${nextIndex}`);
+    await this.play();
+  } finally {
+    this.isSwitching = false;
+  }
 }
 ```
  
  
 
-#### 倍速设置
+## 倍速设置
 
  
 
-#### 场景描述
+### 场景描述
 
 选择不同档位调节播放速度。
  
@@ -471,13 +531,13 @@ public async playNext() {
  
  
 
-#### 实现原理
+### 实现原理
 
-通过选择不同档位获取目标速度值，输入到[AudioRenderer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer)的[setSpeed()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer#setspeed11)接口中，实现设置播放速度的功能。
+通过选择不同档位获取目标速度值，输入到[Interface (AudioRenderer)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer)的[setSpeed()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer#setspeed11)接口中，实现设置播放速度的功能。
  
  
 
-#### 开发步骤
+### 开发步骤
 
 1. 通过选择不同档位获取速度值，传入[setSpeed()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer#setspeed11)接口中。
  
@@ -526,11 +586,11 @@ public setSpeed(speed: number) {
  
  
 
-#### 音量设置
+## 音量设置
 
  
 
-#### 场景描述
+### 场景描述
 
 滑动音量调节面板调节播放音量。
  
@@ -540,13 +600,13 @@ public setSpeed(speed: number) {
  
  
 
-#### 实现原理
+### 实现原理
 
-通过调节面板获取目标音量值，输入到[AudioRenderer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer)的[setVolume()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer#setvolume9)接口中，实现设置播放音量的功能。
+通过调节面板获取目标音量值，输入到[Interface (AudioRenderer)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer)的[setVolume()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer#setvolume9)接口中，实现设置播放音量的功能。
  
  
 
-#### 开发步骤
+### 开发步骤
 
 1. 通过调节面板获取音量值，传入[setVolume()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer#setvolume9)接口中。
  
@@ -568,7 +628,7 @@ Slider({
 ```
  
 ```ArkTS
-@StorageLink('currentVolume') @Watch('currentVolumeChange') volume: number = 0;
+@StorageLink(AppStorageKeyConstants.KEY_CURRENT_VOLUME) @Watch('currentVolumeChange') volume: number = 0;
 // ...
 currentVolumeChange() {
   MediaControlCenter.getInstance().setVolume(this.volume)
@@ -589,11 +649,11 @@ public setVolume(volume: number) {
  
  
 
-#### 接入播控中心
+## 接入播控中心
 
  
 
-#### 场景描述
+### 场景描述
 
 通过播控中心，控制播放、暂停、切换上一首或者下一首音频。
  
@@ -607,27 +667,30 @@ public setVolume(volume: number) {
  
  
 
-#### 实现原理
+### 实现原理
 
-通过[AVSessionKit](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avsession-kit)音频播控服务实现音频应用接入播控中心。
+通过[AVSession Kit（音视频播控服务）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avsession-kit)实现音频应用接入播控中心。
  
  
 
-#### 开发步骤
+### 开发步骤
 
-1. 通过[createAVSession()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-avsession-f#avsessioncreateavsession10)创建AVSession实例并激活媒体会话，[AVSessionType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-avsession-t#avsessiontype10)设置为audio。
+1. 通过[avSession.createAVSession()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-avsession-f#avsessioncreateavsession10)创建AVSession实例并激活媒体会话，[AVSessionType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-avsession-t#avsessiontype10)设置为audio。
  
 ```ArkTS
 public async initAVSession() {
-  this.context = AppStorage.get('context');
+  this.context = AppStorage.get(AppStorageKeyConstants.KEY_UI_ABILITY_CONTEXT);
   if (!this.context) {
     Logger.info(TAG, `session create failed, conext is undefined`);
     return;
   }
   this.mediaControlCenter = MediaControlCenter.getInstance();
-  this.AVSession = await avSession.createAVSession(this.context, "PLAY_AUDIO", 'audio');
-  await this.AVSession.activate();
-  Logger.info(TAG, `session create successed : sessionId : ${this.AVSession.sessionId}`);
+  try {
+    this.aVSession = await avSession.createAVSession(this.context, 'PLAY_AUDIO', 'audio');
+    await this.aVSession.activate();
+  } catch (error) {
+    Logger.error(`createAVSession Failed. ${error.code} message ${error.message}`);
+  }
   await this.setAVMetadata();
   this.setLaunchAbility();
   this.setListenerForMesFromController();
@@ -642,9 +705,9 @@ public async initAVSession() {
 ```ArkTS
 // Set metadata
 public async setAVMetadata() {
-  this.musicIndex = AppStorage.get('selectIndex') ? AppStorage.get('selectIndex') : 0;
-  Logger.info(TAG, 'current musicIndex is:' + this.musicIndex);
-  if (this.musicIndex === undefined) {
+  this.musicIndex = AppStorage.get(AppStorageKeyConstants.KEY_SELECT_INDEX) ?
+    AppStorage.get(AppStorageKeyConstants.KEY_SELECT_INDEX) : 0;
+  if (!this.musicIndex || this.musicIndex < 0 || this.musicIndex >= this.songList.length) {
     this.musicIndex = 0;
   }
   try {
@@ -656,14 +719,14 @@ public async setAVMetadata() {
       let artist = '';
       if (this.context) {
         if (this.songList[this.musicIndex].title !== undefined) {
-          title = this.context.resourceManager.getStringSync(this.songList[this.musicIndex].title!.id);
+          title = this.context.resourceManager.getStringSync(this.songList[this.musicIndex].title?.id);
         }
         if (this.songList[this.musicIndex].singer !== undefined) {
-          artist = this.context.resourceManager.getStringSync(this.songList[this.musicIndex].singer!.id);
+          artist = this.context.resourceManager.getStringSync(this.songList[this.musicIndex].singer?.id);
         }
       } else {
-        title = FirstSongTitle;
-        artist = FirstSongSinger;
+        title = firstSongTitle;
+        artist = firstSongSinger;
       }
       let metadata: avSession.AVMetadata = {
         assetId: `${this.musicIndex}`,
@@ -679,16 +742,17 @@ public async setAVMetadata() {
       if (lrc) {
         metadata.lyric = lrc;
       }
-      if (this.AVSession) {
-        this.AVSession.setAVMetadata(metadata).then(() => {
+      if (this.aVSession) {
+        this.aVSession.setAVMetadata(metadata).then(() => {
           Logger.info(TAG, 'SetAVMetadata successfully');
         }).catch((err: BusinessError) => {
           Logger.error(TAG, `SetAVMetadata BusinessError: code: ${err.code}, message: ${err.message}`);
         });
       }
+      mediaImage?.release();
     }
   } catch (error) {
-    Logger.error(TAG, `SetAVMetadata faile, code: ${(error as BusinessError).code}`);
+    Logger.error(TAG, `SetAVMetadata failed, code: ${(error as BusinessError).code}`);
   }
 }
 ```
@@ -713,8 +777,8 @@ private setLaunchAbility() {
     wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
   };
   wantAgent.getWantAgent(wantAgentInfo).then((agent) => {
-    if (this.AVSession) {
-      this.AVSession.setLaunchAbility(agent);
+    if (this.aVSession) {
+      this.aVSession.setLaunchAbility(agent);
     }
   })
     .catch((err: BusinessError) => {
@@ -727,17 +791,21 @@ private setLaunchAbility() {
  
 ```ArkTS
 // Set listening events
-async setListenerForMesFromController() {
-  if (!this.AVSession) {
+setListenerForMesFromController() {
+  if (!this.aVSession) {
     return;
   }
-  this.AVSession.on('play', this.onPlay);
-  this.AVSession.on('pause', this.onPause);
-  this.AVSession.on('playNext', this.onPlayNext);
-  this.AVSession.on('playPrevious', this.onPlayPrevious);
-  this.AVSession.on('seek', this.onSeek);
-  this.AVSession.on('setLoopMode', this.onSetLoopMode);
-  this.AVSession.on('toggleFavorite', this.onToggleFavorite);
+  try {
+    this.aVSession.on('play', this.onPlay);
+    this.aVSession.on('pause', this.onPause);
+    this.aVSession.on('playNext', this.onPlayNext);
+    this.aVSession.on('playPrevious', this.onPlayPrevious);
+    this.aVSession.on('seek', this.onSeek);
+    this.aVSession.on('setLoopMode', this.onSetLoopMode);
+    this.aVSession.on('toggleFavorite', this.onToggleFavorite);
+  } catch (error) {
+    Logger.error(`setListenerForMesFromController Failed. ${error.code} message ${error.message}`);
+  }
 }
 ```
  
@@ -746,8 +814,8 @@ async setListenerForMesFromController() {
 ```ArkTS
 // Set favorite state.
 private setFavoriteState(isFavorite: boolean) {
-  if (this.AVSession) {
-    this.AVSession.setAVPlaybackState({ isFavorite }, (err: BusinessError) => {
+  if (this.aVSession) {
+    this.aVSession.setAVPlaybackState({ isFavorite }, (err: BusinessError) => {
       if (err) {
         Logger.error(TAG, `setFavoriteState BusinessError: code: ${err.code}, message: ${err.message}`);
       } else {
@@ -759,8 +827,8 @@ private setFavoriteState(isFavorite: boolean) {
 
 // Set progress state.
 public setProgressState(ms: number) {
-  if (this.AVSession) {
-    this.AVSession.setAVPlaybackState({
+  if (this.aVSession) {
+    this.aVSession.setAVPlaybackState({
       position: {
         elapsedTime: ms,
         updateTime: new Date().getTime()
@@ -777,11 +845,11 @@ public setProgressState(ms: number) {
 
 // Set play state.
 public setPlayState(isPlay: boolean) {
-  if (!this.AVSession) {
+  if (!this.aVSession) {
     Logger.error(TAG, 'AVSession is undefined');
     return;
   }
-  this.AVSession.setAVPlaybackState({
+  this.aVSession.setAVPlaybackState({
     state: isPlay ? avSession.PlaybackState.PLAYBACK_STATE_PLAY : avSession.PlaybackState.PLAYBACK_STATE_PAUSE,
   }, (err: BusinessError) => {
     if (err) {
@@ -795,11 +863,11 @@ public setPlayState(isPlay: boolean) {
  
  
 
-#### 后台播放
+## 后台播放
 
  
 
-#### 场景描述
+### 场景描述
 
 音频切换到后台播放。
  
@@ -811,13 +879,13 @@ public setPlayState(isPlay: boolean) {
  
  
 
-#### 实现原理
+### 实现原理
 
 首先需实现播控中心的接入，在此基础上申请后台运行权限并设置后台模式，同时为音频应用创建长时后台任务，从而实现音频在后台持续播放的功能。
  
  
 
-#### 开发步骤
+### 开发步骤
 
 1. 在module.json5配置文件中配置[ohos.permission.KEEP_BACKGROUND_RUNNING](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-for-all#ohospermissionkeep_background_running)权限和后台模式audioPlayback。
  
@@ -842,15 +910,12 @@ public setPlayState(isPlay: boolean) {
 }
 ```
  
-2. 创建后台任务管理类，通过startContinuousTask申请后台长时任务（长时任务类型设置为[AUDIO_PLAYBACK](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-resourceschedule-backgroundtaskmanager#backgroundmode)，以实现音频后台播放），并通过stopContinuousTask取消长时任务。
+2. 创建后台任务管理类，通过startContinuousTask申请后台长时任务（长时任务类型[BackgroundMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-resourceschedule-backgroundtaskmanager#backgroundmode)设置为AUDIO_PLAYBACK，以实现音频后台播放），并通过stopContinuousTask取消长时任务。
  
 ```ArkTS
 export class BackgroundUtil {
-  /**
-   * Start background task.
-   *
-   * @param context
-   */
+  // Start background task.
+  // @param context
   public static startContinuousTask(context?: common.UIAbilityContext): void {
     if (!context) {
       Logger.error(TAG, 'startContinuousTask failed', `context undefined`);
@@ -885,11 +950,8 @@ export class BackgroundUtil {
       });
   }
 
-  /**
-   * Stop background task.
-   *
-   * @param context
-   */
+  // Stop background task.
+  // @param context
   public static stopContinuousTask(context: common.UIAbilityContext): void {
     try {
       backgroundTaskManager.stopBackgroundRunning(context).then(() => {
@@ -916,10 +978,10 @@ public async play(index: number = this.musicIndex) {
   if (index !== this.musicIndex) {
     this.updateMusicIndex(index);
     await this.stop();
-    await this.loadSongAssent();
+    await this.loadSongAsset();
   }
   this.updateIsPlay(true);
-  this.mediaControlCenterHandle.play();
+  await this.mediaControlCenterHandle.play();
   BackgroundUtil.startContinuousTask(this.context);
 }
 
@@ -930,17 +992,19 @@ public pause() {
   }
   this.mediaControlCenterHandle.pause();
   this.updateIsPlay(false);
-  BackgroundUtil.stopContinuousTask(this.context!);
+  if(this.context){
+    BackgroundUtil.stopContinuousTask(this.context);
+  }
 }
 ```
  
  
 
-#### 接入播控中心冷启动和历史歌单
+## 接入播控中心冷启动和历史歌单
 
  
 
-#### 场景描述
+### 场景描述
 
 用户在应用内播放后，上滑结束应用进程，再进入播控中心，点击播放键拉起应用播放，或者点击历史歌单拉起应用播放，播控中心正确显示当前播放信息及播放状态。
  
@@ -952,29 +1016,31 @@ public pause() {
  
  
 
-#### 实现原理
+### 实现原理
 
 注册并适配[端侧意图调用](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-habit-rec-access-programme#端侧意图调用)，实现一键冷启动播放和历史歌单。
  
  
 
-#### 开发步骤
+### 开发步骤
 
 1. 注册播放意图。应用按照播放业务，选择PlayMusicList意图，编辑对应的意图配置PROJECT_HOME/entry/src/main/resources/base/profile/insight_intent.json文件，实现播放意图注册，具体步骤参考：[意图注册](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-habit-rec-access-programme#意图注册)。
  
-2. 注册成功后，在配置文件中，配置歌曲播放方法，则实现一键冷启动播放。触发播控冷启动播放时，系统会在意图参数intentParam的歌单id为空，即解析出得的entityId为空字符串，由应用决定播放内容。触发歌单播放时，系统会将歌单的唯一标识id传回应用，应用可以在意图调用接口中，通过解析意图参数intentParam中的entityId，获取到歌单的id，实现对应歌单的播放。
+2. 注册成功后，在配置文件中设置歌曲播放方法，即可实现一键冷启动播放。触发播控冷启动播放时，系统会在意图参数intentParam的歌单id为空，即解析出的entityId为空字符串时，由应用决定播放内容。触发歌单播放时，系统会将歌单的唯一标识id传回应用，应用可以在意图调用接口中，通过解析意图参数intentParam中的entityId，获取到歌单的id，实现对应歌单的播放。
  
 ```ArkTS
 export default class InsightIntentExecutorImpl extends InsightIntentExecutor {
-  async onExecuteInUIAbilityBackgroundMode(intentName: string, intentParam: Record<string, Object>):
+  onExecuteInUIAbilityBackgroundMode(intentName: string, intentParam: Record<string, Object>):
     Promise<insightIntent.ExecuteResult> {
     switch (intentName) {
       case 'PlayMusicList':
-        let entityId: string = (intentParam.items as Array<EntityIdObj>)?.[0]?.entityId;
+        let entityId: string = (intentParam.items as EntityIdObj[])?.[0]?.entityId;
         return this.playFunc(entityId);
       case 'PlayAudio':
         let data = intentParam as Record<string, string>;
-        return this.playFunc(data.entityId);
+        if (data && data.entityId && typeof data.entityId === 'string' && data.entityId.length > 0) {
+          return this.playFunc(data.entityId);
+        }
       default:
         break;
     }
@@ -995,9 +1061,9 @@ export default class InsightIntentExecutorImpl extends InsightIntentExecutor {
 ```ArkTS
 // Set metadata
 public async setAVMetadata() {
-  this.musicIndex = AppStorage.get('selectIndex') ? AppStorage.get('selectIndex') : 0;
-  Logger.info(TAG, 'current musicIndex is:' + this.musicIndex);
-  if (this.musicIndex === undefined) {
+  this.musicIndex = AppStorage.get(AppStorageKeyConstants.KEY_SELECT_INDEX) ?
+    AppStorage.get(AppStorageKeyConstants.KEY_SELECT_INDEX) : 0;
+  if (!this.musicIndex || this.musicIndex < 0 || this.musicIndex >= this.songList.length) {
     this.musicIndex = 0;
   }
   try {
@@ -1009,14 +1075,14 @@ public async setAVMetadata() {
       let artist = '';
       if (this.context) {
         if (this.songList[this.musicIndex].title !== undefined) {
-          title = this.context.resourceManager.getStringSync(this.songList[this.musicIndex].title!.id);
+          title = this.context.resourceManager.getStringSync(this.songList[this.musicIndex].title?.id);
         }
         if (this.songList[this.musicIndex].singer !== undefined) {
-          artist = this.context.resourceManager.getStringSync(this.songList[this.musicIndex].singer!.id);
+          artist = this.context.resourceManager.getStringSync(this.songList[this.musicIndex].singer?.id);
         }
       } else {
-        title = FirstSongTitle;
-        artist = FirstSongSinger;
+        title = firstSongTitle;
+        artist = firstSongSinger;
       }
       let metadata: avSession.AVMetadata = {
         assetId: `${this.musicIndex}`,
@@ -1032,22 +1098,23 @@ public async setAVMetadata() {
       if (lrc) {
         metadata.lyric = lrc;
       }
-      if (this.AVSession) {
-        this.AVSession.setAVMetadata(metadata).then(() => {
+      if (this.aVSession) {
+        this.aVSession.setAVMetadata(metadata).then(() => {
           Logger.info(TAG, 'SetAVMetadata successfully');
         }).catch((err: BusinessError) => {
           Logger.error(TAG, `SetAVMetadata BusinessError: code: ${err.code}, message: ${err.message}`);
         });
       }
+      mediaImage?.release();
     }
   } catch (error) {
-    Logger.error(TAG, `SetAVMetadata faile, code: ${(error as BusinessError).code}`);
+    Logger.error(TAG, `SetAVMetadata failed, code: ${(error as BusinessError).code}`);
   }
 }
 ```
  
  
 
-#### 示例代码
+## 示例代码
 
 - [基于AudioRenderer播放PCM音频](https://gitcode.com/HarmonyOS_Samples/audio-renderer-play-pcm)

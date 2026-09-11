@@ -1,11 +1,12 @@
 # native_avscreen_capture.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avscreen-capture-h
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -27,15 +28,18 @@
 
 
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -85,7 +89,7 @@
 | OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetCaptureAreaHighlight(struct OH_AVScreenCapture *capture, OH_AVScreenCaptureHighlightConfig config) | 设置屏幕捕获区域高亮模式。在录屏过程中，可对指定的捕获区域进行高亮显示，以区分捕获区域与非捕获区域的视觉效果，帮助用户识别当前录屏范围。 |
 | OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetPickerMode(struct OH_AVScreenCapture *capture, OH_CapturePickerMode pickerMode) | 设置Picker显示模式。定义picker中显示的内容类型，适用于需要控制Picker界面展示内容的场景，如仅允许用户选择屏幕、仅允许选择窗口、或同时显示屏幕和窗口供用户选择。模式更改会在下一次调用OH_AVScreenCapture_PresentPicker 函数时生效。 |
 | OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_ExcludePickerWindows(struct OH_AVScreenCapture *capture, const int32_t *excludedWindowIDs, uint32_t windowCount) | 在Picker界面中隐藏指定的窗口。在picker界面显示前调用本接口，可对指定窗口进行过滤和隐藏。 |
-| OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_GetMultiDisplayIdsSelected(OH_AVScreenCapture_UserSelectionInfo selection, uint64_t* displayIds, size_t *count) | 获取picker页面上用户选择录制的DisplayID列表。在OH_AVScreenCapture_OnUserSelected回调中使用，selection指针在回调结束后销毁。 |
+| OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_GetMultiDisplayIdsSelected(OH_AVScreenCapture_UserSelectionInfo *selection, uint64_t** displayIds, size_t *count) | 获取picker页面上用户选择录制的DisplayID列表。在OH_AVScreenCapture_OnUserSelected回调中使用，selection指针在回调结束后销毁。 |
 | OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_GetMultiDisplayCaptureCapability(struct OH_AVScreenCapture *capture, uint64_t *displayIds, size_t count, OH_MultiDisplayCapability *capability) | 获取多屏幕录制能力信息，判断用户选择的多个屏幕是否支持联合录制。 |
 | OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetPrivacyProtectCallback(struct OH_AVScreenCapture *capture, OH_AVScreenCapture_OnPrivacyProtect callback, void *userData) | 设置隐私保护回调函数，用于响应屏幕捕获产生的隐私保护事件。该接口必须在调用开始录屏之前调用。当录屏过程中检测到隐私窗口或隐私内容时，将通过该回调通知应用，应用可根据回调信息进行相应的隐私保护处理。 |
 | OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_StrategyForPause(OH_AVScreenCapture_CaptureStrategy *strategy, bool value) | 允许暂停屏幕捕获。 |
@@ -95,13 +99,15 @@
 
 
 
-#### 函数说明
+## 函数说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 
 
-#### OH_AVScreenCapture_Create()
+### OH_AVScreenCapture_Create()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -121,6 +127,7 @@ struct OH_AVScreenCapture *OH_AVScreenCapture_Create(void)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | struct OH_AVScreenCapture * | 返回一个指向OH_AVScreenCapture实例的指针，用于后续的录屏操作、参数配置和回调设置。 |
@@ -128,7 +135,8 @@ struct OH_AVScreenCapture *OH_AVScreenCapture_Create(void)
 
 
 
-#### OH_AVScreenCapture_Init()
+### OH_AVScreenCapture_Init()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -156,6 +164,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_Init(struct OH_AVScreenCapture *c
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVScreenCapture *capture | 指向OH_AVScreenCapture实例的指针。 |
@@ -164,6 +173,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_Init(struct OH_AVScreenCapture *c
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSCREEN_CAPTURE_ErrCode | AV_SCREEN_CAPTURE_ERR_OK：执行成功。 AV_SCREEN_CAPTURE_ERR_INVALID_VAL：输入参数capture为空指针。请检查capture参数是否为有效指针。 AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT：不允许操作，初始化配置失败。请检查录屏初始化参数配置是否正确。 |
@@ -171,7 +181,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_Init(struct OH_AVScreenCapture *c
 
 
 
-#### OH_AVScreenCapture_StartScreenCapture()
+### OH_AVScreenCapture_StartScreenCapture()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -197,12 +208,14 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_StartScreenCapture(struct OH_AVSc
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVScreenCapture *capture | 指向OH_AVScreenCapture实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -211,7 +224,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_StartScreenCapture(struct OH_AVSc
 
 
 
-#### OH_AVScreenCapture_StopScreenCapture()
+### OH_AVScreenCapture_StopScreenCapture()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -229,12 +243,14 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_StopScreenCapture(struct OH_AVScr
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVScreenCapture *capture | 指向OH_AVScreenCapture实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -243,7 +259,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_StopScreenCapture(struct OH_AVScr
 
 
 
-#### OH_AVScreenCapture_StartScreenRecording()
+### OH_AVScreenCapture_StartScreenRecording()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -263,12 +280,14 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_StartScreenRecording(struct OH_AV
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVScreenCapture *capture | 指向OH_AVScreenCapture实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -277,7 +296,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_StartScreenRecording(struct OH_AV
 
 
 
-#### OH_AVScreenCapture_StopScreenRecording()
+### OH_AVScreenCapture_StopScreenRecording()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -295,12 +315,14 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_StopScreenRecording(struct OH_AVS
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVScreenCapture *capture | 指向OH_AVScreenCapture实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -309,7 +331,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_StopScreenRecording(struct OH_AVS
 
 
 
-#### OH_AVScreenCapture_AcquireAudioBuffer()
+### OH_AVScreenCapture_AcquireAudioBuffer()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -331,6 +354,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_AcquireAudioBuffer(struct OH_AVSc
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVScreenCapture *capture | 指向OH_AVScreenCapture实例的指针。 |
@@ -340,6 +364,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_AcquireAudioBuffer(struct OH_AVSc
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSCREEN_CAPTURE_ErrCode | AV_SCREEN_CAPTURE_ERR_OK：执行成功。 AV_SCREEN_CAPTURE_ERR_INVALID_VAL：输入参数capture为空指针或输入参数audiobuffer为空指针。请检查参数是否为有效指针。 AV_SCREEN_CAPTURE_ERR_NO_MEMORY：内存不足，audiobuffer分配失败。请释放资源后重试或检查系统内存是否充足。 AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT：不允许操作，设置隐私权限启用失败或获取音频buffer失败。请检查隐私权限设置或录屏状态是否正确。 |
@@ -347,7 +372,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_AcquireAudioBuffer(struct OH_AVSc
 
 
 
-#### OH_AVScreenCapture_AcquireVideoBuffer()
+### OH_AVScreenCapture_AcquireVideoBuffer()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -369,6 +395,7 @@ buffer使用完成后，调用OH_AVScreenCapture_ReleaseVideoBuffer接口进行�
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVScreenCapture *capture | 指向OH_AVScreenCapture实例的指针。 |
@@ -379,6 +406,7 @@ buffer使用完成后，调用OH_AVScreenCapture_ReleaseVideoBuffer接口进行�
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_NativeBuffer* | 执行成功返回OH_NativeBuffer对象，通过OH_NativeBuffer对象相关接口可以获取到视频buffer和分辨率等信息参数。 |
@@ -386,7 +414,8 @@ buffer使用完成后，调用OH_AVScreenCapture_ReleaseVideoBuffer接口进行�
 
 
 
-#### OH_AVScreenCapture_ReleaseAudioBuffer()
+### OH_AVScreenCapture_ReleaseAudioBuffer()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -406,6 +435,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_ReleaseAudioBuffer(struct OH_AVSc
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVScreenCapture *capture | 指向OH_AVScreenCapture实例的指针。 |
@@ -414,6 +444,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_ReleaseAudioBuffer(struct OH_AVSc
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSCREEN_CAPTURE_ErrCode | AV_SCREEN_CAPTURE_ERR_OK：执行成功。 AV_SCREEN_CAPTURE_ERR_INVALID_VAL：输入参数capture为空指针。 AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT：不允许操作，不允许用于已设置过DataCallback或释放音频buffer失败。请通过OH_AVScreenCapture_OnBufferAvailable回调处理音频数据。 |
@@ -421,7 +452,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_ReleaseAudioBuffer(struct OH_AVSc
 
 
 
-#### OH_AVScreenCapture_ReleaseVideoBuffer()
+### OH_AVScreenCapture_ReleaseVideoBuffer()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -441,12 +473,14 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_ReleaseVideoBuffer(struct OH_AVSc
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVScreenCapture *capture | 指向OH_AVScreenCapture实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -455,7 +489,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_ReleaseVideoBuffer(struct OH_AVSc
 
 
 
-#### OH_AVScreenCapture_SetCallback()
+### OH_AVScreenCapture_SetCallback()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -475,6 +510,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetCallback(struct OH_AVScreenCap
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVScreenCapture *capture | 指向OH_AVScreenCapture实例的指针。 |
@@ -483,6 +519,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetCallback(struct OH_AVScreenCap
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSCREEN_CAPTURE_ErrCode | AV_SCREEN_CAPTURE_ERR_OK：执行成功。 AV_SCREEN_CAPTURE_ERR_INVALID_VAL：输入参数capture为空指针或输入参数callback为空指针。 AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT：不允许操作，设置监听接口失败。 |
@@ -490,7 +527,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetCallback(struct OH_AVScreenCap
 
 
 
-#### OH_AVScreenCapture_Release()
+### OH_AVScreenCapture_Release()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -508,12 +546,14 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_Release(struct OH_AVScreenCapture
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVScreenCapture *capture | 指向OH_AVScreenCapture实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -522,7 +562,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_Release(struct OH_AVScreenCapture
 
 
 
-#### OH_AVScreenCapture_SetMicrophoneEnabled()
+### OH_AVScreenCapture_SetMicrophoneEnabled()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -544,6 +585,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetMicrophoneEnabled(struct OH_AV
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVScreenCapture *capture | 指向OH_AVScreenCapture实例的指针。 |
@@ -552,6 +594,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetMicrophoneEnabled(struct OH_AV
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSCREEN_CAPTURE_ErrCode | AV_SCREEN_CAPTURE_ERR_OK：执行成功。 AV_SCREEN_CAPTURE_ERR_INVALID_VAL：输入参数capture为空指针。 AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT：不允许操作，设置麦克风开关失败，请检查麦克风权限和设备状态。 |
@@ -559,7 +602,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetMicrophoneEnabled(struct OH_AV
 
 
 
-#### OH_AVScreenCapture_SetStateCallback()
+### OH_AVScreenCapture_SetStateCallback()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -583,6 +627,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetStateCallback(struct OH_AVScre
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVScreenCapture *capture | 指向OH_AVScreenCapture实例的指针。 |
@@ -592,6 +637,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetStateCallback(struct OH_AVScre
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSCREEN_CAPTURE_ErrCode | AV_SCREEN_CAPTURE_ERR_OK：执行成功。 AV_SCREEN_CAPTURE_ERR_INVALID_VAL：输入参数capture为空指针或输入参数callback为空指针。 AV_SCREEN_CAPTURE_ERR_NO_MEMORY：内存不足，内存分配失败。 AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT：不允许操作，设置StateCallback失败。请检查回调函数是否有效并确保回调设置时机是否正确。 |
@@ -599,7 +645,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetStateCallback(struct OH_AVScre
 
 
 
-#### OH_AVScreenCapture_SetDataCallback()
+### OH_AVScreenCapture_SetDataCallback()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -627,6 +674,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetDataCallback(struct OH_AVScree
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVScreenCapture *capture | 指向OH_AVScreenCapture实例的指针。 |
@@ -636,6 +684,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetDataCallback(struct OH_AVScree
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSCREEN_CAPTURE_ErrCode | AV_SCREEN_CAPTURE_ERR_OK：执行成功。 AV_SCREEN_CAPTURE_ERR_INVALID_VAL：输入参数capture为空指针或输入参数callback为空指针。请检查参数是否为有效指针。 AV_SCREEN_CAPTURE_ERR_NO_MEMORY：内存不足，内存分配失败。请释放资源后重试或检查系统内存是否充足。 AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT：不允许操作，设置DataCallback失败。请检查回调设置时机是否正确。 |
@@ -643,7 +692,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetDataCallback(struct OH_AVScree
 
 
 
-#### OH_AVScreenCapture_SetErrorCallback()
+### OH_AVScreenCapture_SetErrorCallback()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -665,6 +715,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetErrorCallback(struct OH_AVScre
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVScreenCapture *capture | 指向OH_AVScreenCapture实例的指针。 |
@@ -674,6 +725,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetErrorCallback(struct OH_AVScre
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSCREEN_CAPTURE_ErrCode | AV_SCREEN_CAPTURE_ERR_OK：执行成功。 AV_SCREEN_CAPTURE_ERR_INVALID_VAL：输入参数capture为空指针或输入参数callback为空指针。请检查参数是否为有效指针。 AV_SCREEN_CAPTURE_ERR_NO_MEMORY：内存不足，内存分配失败。请释放资源后重试或检查系统内存是否充足。 AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT：不允许操作，设置ErrorCallback失败。请检查回调设置时机是否正确。 |
@@ -681,7 +733,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetErrorCallback(struct OH_AVScre
 
 
 
-#### OH_AVScreenCapture_StartScreenCaptureWithSurface()
+### OH_AVScreenCapture_StartScreenCaptureWithSurface()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -703,6 +756,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_StartScreenCaptureWithSurface(str
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVScreenCapture *capture | 指向OH_AVScreenCapture实例的指针。 |
@@ -711,6 +765,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_StartScreenCaptureWithSurface(str
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSCREEN_CAPTURE_ErrCode | AV_SCREEN_CAPTURE_ERR_OK：执行成功。 AV_SCREEN_CAPTURE_ERR_INVALID_VAL：输入参数capture为空指针或输入参数window为空指针或window指向的windowSurface为空指针。 AV_SCREEN_CAPTURE_ERR_UNSUPPORT（API version 20新增）：设备不支持该操作。请检查设备是否支持录屏功能。 AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT：不允许操作，设置隐私权限启用失败或启动ScreenCaptureWithSurface失败。 |
@@ -718,7 +773,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_StartScreenCaptureWithSurface(str
 
 
 
-#### OH_AVScreenCapture_SetCanvasRotation()
+### OH_AVScreenCapture_SetCanvasRotation()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -746,6 +802,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetCanvasRotation(struct OH_AVScr
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVScreenCapture *capture | 指向OH_AVScreenCapture实例的指针。 |
@@ -754,6 +811,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetCanvasRotation(struct OH_AVScr
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSCREEN_CAPTURE_ErrCode | AV_SCREEN_CAPTURE_ERR_OK：执行成功。 AV_SCREEN_CAPTURE_ERR_INVALID_VAL：输入参数capture为空指针。 AV_SCREEN_CAPTURE_ERR_UNSUPPORT（API version 20新增）：设备不支持该操作。请检查设备是否支持录屏功能。 AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT：不允许操作，设置录屏屏幕数据旋转失败。 |
@@ -761,7 +819,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetCanvasRotation(struct OH_AVScr
 
 
 
-#### OH_AVScreenCapture_CreateContentFilter()
+### OH_AVScreenCapture_CreateContentFilter()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -781,6 +840,7 @@ struct OH_AVScreenCapture_ContentFilter *OH_AVScreenCapture_CreateContentFilter(
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | struct OH_AVScreenCapture_ContentFilter * | 执行成功返回OH_AVScreenCapture_ContentFilter实例，用于配置需要过滤的声音类型和窗口内容，否则返回空指针。 |
@@ -788,7 +848,8 @@ struct OH_AVScreenCapture_ContentFilter *OH_AVScreenCapture_CreateContentFilter(
 
 
 
-#### OH_AVScreenCapture_ReleaseContentFilter()
+### OH_AVScreenCapture_ReleaseContentFilter()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -808,12 +869,14 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_ReleaseContentFilter(struct OH_AV
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVScreenCapture_ContentFilter *filter | 指向OH_AVScreenCapture_ContentFilter实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -822,7 +885,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_ReleaseContentFilter(struct OH_AV
 
 
 
-#### OH_AVScreenCapture_ContentFilter_AddAudioContent()
+### OH_AVScreenCapture_ContentFilter_AddAudioContent()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -842,6 +906,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_ContentFilter_AddAudioContent(str
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVScreenCapture_ContentFilter *filter | 指向OH_AVScreenCapture_ContentFilter实例的指针。 |
@@ -850,6 +915,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_ContentFilter_AddAudioContent(str
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSCREEN_CAPTURE_ErrCode | AV_SCREEN_CAPTURE_ERR_OK：执行成功。 AV_SCREEN_CAPTURE_ERR_INVALID_VAL：输入参数filter为空指针或输入参数content无效。 |
@@ -857,7 +923,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_ContentFilter_AddAudioContent(str
 
 
 
-#### OH_AVScreenCapture_ExcludeContent()
+### OH_AVScreenCapture_ExcludeContent()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -877,6 +944,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_ExcludeContent(struct OH_AVScreen
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVScreenCapture *capture | 指向OH_AVScreenCapture实例的指针。 |
@@ -885,6 +953,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_ExcludeContent(struct OH_AVScreen
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSCREEN_CAPTURE_ErrCode | AV_SCREEN_CAPTURE_ERR_OK：执行成功。 AV_SCREEN_CAPTURE_ERR_INVALID_VAL：输入参数capture为空指针或输入参数filter为空指针。 AV_SCREEN_CAPTURE_ERR_UNSUPPORT：操作不支持。对于流，启动时应该调用AudioCapturer接口。 对于capture文件，启动时调用Recorder接口。 |
@@ -892,7 +961,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_ExcludeContent(struct OH_AVScreen
 
 
 
-#### OH_AVScreenCapture_ContentFilter_AddWindowContent()
+### OH_AVScreenCapture_ContentFilter_AddWindowContent()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -912,6 +982,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_ContentFilter_AddWindowContent(st
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVScreenCapture_ContentFilter *filter | 指向OH_AVScreenCapture_ContentFilter实例的指针。 |
@@ -921,6 +992,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_ContentFilter_AddWindowContent(st
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSCREEN_CAPTURE_ErrCode | 执行成功返回AV_SCREEN_CAPTURE_ERR_OK，否则返回具体错误码。 |
@@ -928,7 +1000,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_ContentFilter_AddWindowContent(st
 
 
 
-#### OH_AVScreenCapture_ResizeCanvas()
+### OH_AVScreenCapture_ResizeCanvas()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -956,6 +1029,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_ResizeCanvas(struct OH_AVScreenCa
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVScreenCapture *capture | 指向OH_AVScreenCapture实例的指针。 |
@@ -965,6 +1039,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_ResizeCanvas(struct OH_AVScreenCa
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSCREEN_CAPTURE_ErrCode | AV_SCREEN_CAPTURE_ERR_OK：执行成功。 AV_SCREEN_CAPTURE_ERR_INVALID_VAL：输入参数capture为空指针。 AV_SCREEN_CAPTURE_ERR_UNSUPPORT（API version 20新增）：设备不支持该操作。请检查设备是否支持录屏功能。 AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT：不允许操作。 |
@@ -972,7 +1047,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_ResizeCanvas(struct OH_AVScreenCa
 
 
 
-#### OH_AVScreenCapture_SkipPrivacyMode()
+### OH_AVScreenCapture_SkipPrivacyMode()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -992,6 +1068,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SkipPrivacyMode(struct OH_AVScree
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVScreenCapture *capture | 指向OH_AVScreenCapture实例的指针。 |
@@ -1001,6 +1078,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SkipPrivacyMode(struct OH_AVScree
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSCREEN_CAPTURE_ErrCode | AV_SCREEN_CAPTURE_ERR_OK：执行成功。 AV_SCREEN_CAPTURE_ERR_INVALID_VAL：输入参数capture为空指针。 AV_SCREEN_CAPTURE_ERR_UNSUPPORT（API version 20新增）：设备不支持该操作。请检查设备是否支持录屏功能。 AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT：不允许操作。 |
@@ -1008,7 +1086,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SkipPrivacyMode(struct OH_AVScree
 
 
 
-#### OH_AVScreenCapture_SetMaxVideoFrameRate()
+### OH_AVScreenCapture_SetMaxVideoFrameRate()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1034,6 +1113,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetMaxVideoFrameRate(struct OH_AV
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVScreenCapture *capture | 指向OH_AVScreenCapture实例的指针。 |
@@ -1042,6 +1122,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetMaxVideoFrameRate(struct OH_AV
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSCREEN_CAPTURE_ErrCode | AV_SCREEN_CAPTURE_ERR_OK：执行成功。 AV_SCREEN_CAPTURE_ERR_INVALID_VAL：输入参数capture为空指针或者输入参数frameRate不支持。 AV_SCREEN_CAPTURE_ERR_UNSUPPORT（API version 20新增）：设备不支持该操作。请检查设备是否支持录屏功能。 AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT：不允许操作。 |
@@ -1049,7 +1130,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetMaxVideoFrameRate(struct OH_AV
 
 
 
-#### OH_AVScreenCapture_ShowCursor()
+### OH_AVScreenCapture_ShowCursor()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1067,6 +1149,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_ShowCursor(struct OH_AVScreenCapt
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVScreenCapture *capture | 指向OH_AVScreenCapture实例的指针。 |
@@ -1075,6 +1158,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_ShowCursor(struct OH_AVScreenCapt
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSCREEN_CAPTURE_ErrCode | AV_SCREEN_CAPTURE_ERR_OK：执行成功。 AV_SCREEN_CAPTURE_ERR_INVALID_VAL：输入参数capture为空指针。 AV_SCREEN_CAPTURE_ERR_UNSUPPORT（API version 20新增）：设备不支持该操作。请检查设备是否支持录屏功能。 AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT：不允许操作，设置光标失败。 |
@@ -1082,7 +1166,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_ShowCursor(struct OH_AVScreenCapt
 
 
 
-#### OH_AVScreenCapture_SetDisplayCallback()
+### OH_AVScreenCapture_SetDisplayCallback()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1102,6 +1187,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetDisplayCallback(struct OH_AVSc
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVScreenCapture *capture | 指向OH_AVScreenCapture实例的指针。 |
@@ -1111,6 +1197,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetDisplayCallback(struct OH_AVSc
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSCREEN_CAPTURE_ErrCode | AV_SCREEN_CAPTURE_ERR_OK：执行成功。 AV_SCREEN_CAPTURE_ERR_INVALID_VAL：输入参数capture为空指针或输入参数callback为空指针。 AV_SCREEN_CAPTURE_ERR_NO_MEMORY：内存不足，内存分配失败。 AV_SCREEN_CAPTURE_ERR_INVALID_STATE：回调必须在start方法前调用。 |
@@ -1118,7 +1205,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetDisplayCallback(struct OH_AVSc
 
 
 
-#### OH_AVScreenCapture_CreateCaptureStrategy()
+### OH_AVScreenCapture_CreateCaptureStrategy()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1140,6 +1228,7 @@ OH_AVScreenCapture_CaptureStrategy* OH_AVScreenCapture_CreateCaptureStrategy(voi
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVScreenCapture_CaptureStrategy* | 执行成功返回OH_AVScreenCapture_CaptureStrategy实例，用于配置录屏捕获策略（如自动跟随旋转、通话时保持录屏、B帧编码等），否则返回空指针。 |
@@ -1147,7 +1236,8 @@ OH_AVScreenCapture_CaptureStrategy* OH_AVScreenCapture_CreateCaptureStrategy(voi
 
 
 
-#### OH_AVScreenCapture_ReleaseCaptureStrategy()
+### OH_AVScreenCapture_ReleaseCaptureStrategy()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1167,12 +1257,14 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_ReleaseCaptureStrategy(OH_AVScree
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVScreenCapture_CaptureStrategy* strategy | 指向录屏策略对象的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1181,7 +1273,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_ReleaseCaptureStrategy(OH_AVScree
 
 
 
-#### OH_AVScreenCapture_SetCaptureStrategy()
+### OH_AVScreenCapture_SetCaptureStrategy()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1201,6 +1294,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetCaptureStrategy(struct OH_AVSc
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVScreenCapture *capture | 指向OH_AVScreenCapture实例的指针。 |
@@ -1209,6 +1303,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetCaptureStrategy(struct OH_AVSc
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSCREEN_CAPTURE_ErrCode | AV_SCREEN_CAPTURE_ERR_OK：执行成功。 AV_SCREEN_CAPTURE_ERR_INVALID_VAL：输入参数capture或strategy为空指针。 AV_SCREEN_CAPTURE_ERR_INVALID_STATE：在录屏启动之后调用该接口。 |
@@ -1216,7 +1311,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetCaptureStrategy(struct OH_AVSc
 
 
 
-#### OH_AVScreenCapture_StrategyForCanvasFollowRotation()
+### OH_AVScreenCapture_StrategyForCanvasFollowRotation()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1236,6 +1332,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_StrategyForCanvasFollowRotation(O
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVScreenCapture_CaptureStrategy *strategy | 指向OH_AVScreenCapture_CaptureStrategy实例的指针。 |
@@ -1244,6 +1341,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_StrategyForCanvasFollowRotation(O
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSCREEN_CAPTURE_ErrCode | AV_SCREEN_CAPTURE_ERR_OK：执行成功。 AV_SCREEN_CAPTURE_ERR_INVALID_VAL：输入参数strategy为空指针。 |
@@ -1251,7 +1349,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_StrategyForCanvasFollowRotation(O
 
 
 
-#### OH_AVScreenCapture_StrategyForKeepCaptureDuringCall()
+### OH_AVScreenCapture_StrategyForKeepCaptureDuringCall()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1271,6 +1370,7 @@ value设置为true时，若录屏期间接听蜂窝通话，出于隐私要求�
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVScreenCapture_CaptureStrategy *strategy | 指向OH_AVScreenCapture_CaptureStrategy对象的指针。 |
@@ -1279,6 +1379,7 @@ value设置为true时，若录屏期间接听蜂窝通话，出于隐私要求�
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSCREEN_CAPTURE_ErrCode | AV_SCREEN_CAPTURE_ERR_OK：执行成功。 AV_SCREEN_CAPTURE_ERR_INVALID_VAL：输入参数strategy为空指针。 |
@@ -1286,7 +1387,8 @@ value设置为true时，若录屏期间接听蜂窝通话，出于隐私要求�
 
 
 
-#### OH_AVScreenCapture_SetCaptureContentChangedCallback()
+### OH_AVScreenCapture_SetCaptureContentChangedCallback()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1306,6 +1408,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetCaptureContentChangedCallback(
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVScreenCapture *capture | 指向OH_AVScreenCapture实例的指针。 |
@@ -1315,6 +1418,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetCaptureContentChangedCallback(
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSCREEN_CAPTURE_ErrCode | AV_SCREEN_CAPTURE_ERR_OK：操作成功。 AV_SCREEN_CAPTURE_ERR_INVALID_VAL：参数无效，输入参数capture或callback为空指针。 AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT：不允许操作，设置录屏内容回调失败。 |
@@ -1322,7 +1426,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetCaptureContentChangedCallback(
 
 
 
-#### OH_AVScreenCapture_SetCaptureArea()
+### OH_AVScreenCapture_SetCaptureArea()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1340,6 +1445,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetCaptureArea(struct OH_AVScreen
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVScreenCapture *capture | 指向OH_AVScreenCapture实例的指针。 |
@@ -1349,6 +1455,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetCaptureArea(struct OH_AVScreen
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSCREEN_CAPTURE_ErrCode | AV_SCREEN_CAPTURE_ERR_OK：执行成功。 AV_SCREEN_CAPTURE_ERR_INVALID_VAL：输入参数capture为空指针、输入displayId不存在或输入的捕获区域异常。 |
@@ -1356,7 +1463,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetCaptureArea(struct OH_AVScreen
 
 
 
-#### OH_AVScreenCapture_StrategyForPrivacyMaskMode()
+### OH_AVScreenCapture_StrategyForPrivacyMaskMode()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1376,6 +1484,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_StrategyForPrivacyMaskMode(OH_AVS
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVScreenCapture_CaptureStrategy *strategy | 指向OH_AVScreenCapture_CaptureStrategy实例的指针。 |
@@ -1384,6 +1493,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_StrategyForPrivacyMaskMode(OH_AVS
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSCREEN_CAPTURE_ErrCode | AV_SCREEN_CAPTURE_ERR_OK：执行成功。 AV_SCREEN_CAPTURE_ERR_INVALID_VAL：输入参数strategy为空指针或输入value为无效值。 |
@@ -1391,7 +1501,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_StrategyForPrivacyMaskMode(OH_AVS
 
 
 
-#### OH_AVScreenCapture_SetSelectionCallback()
+### OH_AVScreenCapture_SetSelectionCallback()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1409,6 +1520,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetSelectionCallback(struct OH_AV
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVScreenCapture *capture | 指向需要注册该回调的屏幕捕获实例的指针。 |
@@ -1418,6 +1530,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetSelectionCallback(struct OH_AV
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSCREEN_CAPTURE_ErrCode | AV_SCREEN_CAPTURE_ERR_OK：执行成功。 AV_SCREEN_CAPTURE_ERR_INVALID_VAL：输入参数capture为空指针。 |
@@ -1425,7 +1538,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetSelectionCallback(struct OH_AV
 
 
 
-#### OH_AVScreenCapture_GetCaptureTypeSelected()
+### OH_AVScreenCapture_GetCaptureTypeSelected()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1441,6 +1555,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_GetCaptureTypeSelected(OH_AVScree
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVScreenCapture_UserSelectionInfo *selection | 指向OH_AVScreenCapture_UserSelectionInfo实例的指针。 |
@@ -1449,6 +1564,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_GetCaptureTypeSelected(OH_AVScree
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSCREEN_CAPTURE_ErrCode | AV_SCREEN_CAPTURE_ERR_OK：执行成功。 AV_SCREEN_CAPTURE_ERR_INVALID_VAL：输入参数selection为空指针。 |
@@ -1456,7 +1572,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_GetCaptureTypeSelected(OH_AVScree
 
 
 
-#### OH_AVScreenCapture_GetDisplayIdSelected()
+### OH_AVScreenCapture_GetDisplayIdSelected()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1472,6 +1589,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_GetDisplayIdSelected(OH_AVScreenC
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVScreenCapture_UserSelectionInfo *selection | 指向OH_AVScreenCapture_UserSelectionInfo实例的指针。 |
@@ -1480,6 +1598,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_GetDisplayIdSelected(OH_AVScreenC
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSCREEN_CAPTURE_ErrCode | AV_SCREEN_CAPTURE_ERR_OK：执行成功。 AV_SCREEN_CAPTURE_ERR_INVALID_VAL：输入参数selection为空指针。 |
@@ -1487,7 +1606,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_GetDisplayIdSelected(OH_AVScreenC
 
 
 
-#### OH_AVScreenCapture_StrategyForBFramesEncoding()
+### OH_AVScreenCapture_StrategyForBFramesEncoding()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1507,6 +1627,7 @@ B帧视频编码相关的约束和限制可以参考文档[B帧视频编码约�
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVScreenCapture_CaptureStrategy *strategy | 指向OH_AVScreenCapture_CaptureStrategy对象的指针。 |
@@ -1515,6 +1636,7 @@ B帧视频编码相关的约束和限制可以参考文档[B帧视频编码约�
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSCREEN_CAPTURE_ErrCode | AV_SCREEN_CAPTURE_ERR_OK：执行成功。 AV_SCREEN_CAPTURE_ERR_INVALID_VAL：输入参数strategy为空指针。 |
@@ -1522,7 +1644,8 @@ B帧视频编码相关的约束和限制可以参考文档[B帧视频编码约�
 
 
 
-#### OH_AVScreenCapture_StrategyForPickerPopUp()
+### OH_AVScreenCapture_StrategyForPickerPopUp()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1540,6 +1663,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_StrategyForPickerPopUp(OH_AVScree
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVScreenCapture_CaptureStrategy *strategy | 指向OH_AVScreenCapture_CaptureStrategy对象的指针。 |
@@ -1548,6 +1672,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_StrategyForPickerPopUp(OH_AVScree
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSCREEN_CAPTURE_ErrCode | AV_SCREEN_CAPTURE_ERR_OK：执行成功。 AV_SCREEN_CAPTURE_ERR_INVALID_VAL：输入参数strategy为空指针或输入value为无效值。 |
@@ -1555,7 +1680,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_StrategyForPickerPopUp(OH_AVScree
 
 
 
-#### OH_AVScreenCapture_StrategyForFillMode()
+### OH_AVScreenCapture_StrategyForFillMode()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1573,6 +1699,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_StrategyForFillMode(OH_AVScreenCa
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVScreenCapture_CaptureStrategy *strategy | 指向OH_AVScreenCapture_CaptureStrategy对象的指针。 |
@@ -1581,6 +1708,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_StrategyForFillMode(OH_AVScreenCa
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSCREEN_CAPTURE_ErrCode | AV_SCREEN_CAPTURE_ERR_OK：执行成功。 AV_SCREEN_CAPTURE_ERR_INVALID_VAL：输入参数strategy为空指针。 |
@@ -1588,7 +1716,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_StrategyForFillMode(OH_AVScreenCa
 
 
 
-#### OH_AVScreenCapture_PresentPicker()
+### OH_AVScreenCapture_PresentPicker()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1606,12 +1735,14 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_PresentPicker(struct OH_AVScreenC
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVScreenCapture *capture | 指向OH_AVScreenCapture实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1620,7 +1751,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_PresentPicker(struct OH_AVScreenC
 
 
 
-#### OH_AVScreenCapture_SetCaptureAreaHighlight()
+### OH_AVScreenCapture_SetCaptureAreaHighlight()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1634,9 +1766,14 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetCaptureAreaHighlight(struct OH
 
 在录屏过程中，可对指定的捕获区域进行高亮显示，以区分捕获区域与非捕获区域的视觉效果，帮助用户识别当前录屏范围。适用于需要在录屏过程中突出显示捕获区域边界的场景，如多区域录制时帮助用户识别当前录制范围，或教学演示中标识重点操作区域。
 
+> [!NOTE]
+> 此功能只在 OH_CaptureMode 设置为OH_CAPTURE_SPECIFIED_WINDOW指定窗口进行录制，或使用Picker选择窗口进行录制时生效。
+
+
 **起始版本：** 22
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -1646,6 +1783,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetCaptureAreaHighlight(struct OH
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSCREEN_CAPTURE_ErrCode | AV_SCREEN_CAPTURE_ERR_OK：执行成功。 AV_SCREEN_CAPTURE_ERR_INVALID_VAL：输入参数capture为空指针或者config参数值无效。 |
@@ -1653,7 +1791,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetCaptureAreaHighlight(struct OH
 
 
 
-#### OH_AVScreenCapture_SetPickerMode()
+### OH_AVScreenCapture_SetPickerMode()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1669,6 +1808,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetPickerMode(struct OH_AVScreenC
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVScreenCapture *capture | 指向OH_AVScreenCapture实例的指针。 |
@@ -1677,6 +1817,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetPickerMode(struct OH_AVScreenC
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSCREEN_CAPTURE_ErrCode | AV_SCREEN_CAPTURE_ERR_OK：执行成功。 AV_SCREEN_CAPTURE_ERR_INVALID_VAL：输入参数capture为空指针或者pickerMode参数值无效。 AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT：不允许操作。 |
@@ -1684,7 +1825,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetPickerMode(struct OH_AVScreenC
 
 
 
-#### OH_AVScreenCapture_ExcludePickerWindows()
+### OH_AVScreenCapture_ExcludePickerWindows()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1700,6 +1842,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_ExcludePickerWindows(struct OH_AV
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVScreenCapture *capture | 指向OH_AVScreenCapture实例的指针。 |
@@ -1709,6 +1852,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_ExcludePickerWindows(struct OH_AV
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSCREEN_CAPTURE_ErrCode | AV_SCREEN_CAPTURE_ERR_OK：执行成功。 AV_SCREEN_CAPTURE_ERR_INVALID_VAL：输入参数capture为空指针或者窗口ID参数值无效。 AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT：不允许操作。 |
@@ -1716,7 +1860,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_ExcludePickerWindows(struct OH_AV
 
 
 
-#### OH_AVScreenCapture_GetMultiDisplayIdsSelected()
+### OH_AVScreenCapture_GetMultiDisplayIdsSelected()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1732,6 +1877,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_GetMultiDisplayIdsSelected(OH_AVS
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVScreenCapture_UserSelectionInfo *selection | 指向OH_AVScreenCapture_UserSelectionInfo实例的指针。 |
@@ -1741,6 +1887,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_GetMultiDisplayIdsSelected(OH_AVS
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSCREEN_CAPTURE_ErrCode | AV_SCREEN_CAPTURE_ERR_OK：操作执行成功。 AV_SCREEN_CAPTURE_ERR_INVALID_VAL：输入包含用户选择信息的参数selection为空指针。 |
@@ -1748,7 +1895,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_GetMultiDisplayIdsSelected(OH_AVS
 
 
 
-#### OH_AVScreenCapture_GetMultiDisplayCaptureCapability()
+### OH_AVScreenCapture_GetMultiDisplayCaptureCapability()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1764,6 +1912,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_GetMultiDisplayCaptureCapability(
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVScreenCapture *capture | 指向OH_AVScreenCapture实例的指针。 |
@@ -1774,6 +1923,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_GetMultiDisplayCaptureCapability(
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSCREEN_CAPTURE_ErrCode | AV_SCREEN_CAPTURE_ERR_OK：操作执行成功。 AV_SCREEN_CAPTURE_ERR_INVALID_VAL：输入的录屏实例参数capture为空指针。 AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT：不允许操作，获取数据失败。 |
@@ -1781,7 +1931,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_GetMultiDisplayCaptureCapability(
 
 
 
-#### OH_AVScreenCapture_SetPrivacyProtectCallback()
+### OH_AVScreenCapture_SetPrivacyProtectCallback()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1799,6 +1950,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetPrivacyProtectCallback(struct 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVScreenCapture *capture | 指向OH_AVScreenCapture实例的指针。 |
@@ -1808,6 +1960,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetPrivacyProtectCallback(struct 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSCREEN_CAPTURE_ErrCode | AV_SCREEN_CAPTURE_ERR_OK：执行成功。 AV_SCREEN_CAPTURE_ERR_INVALID_VAL：输入录屏实例为空指针或输入回调为空指针。 |
@@ -1815,7 +1968,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetPrivacyProtectCallback(struct 
 
 
 
-#### OH_AVScreenCapture_StrategyForPause()
+### OH_AVScreenCapture_StrategyForPause()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1833,6 +1987,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_StrategyForPause(OH_AVScreenCaptu
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVScreenCapture_CaptureStrategy *strategy | 指向OH_AVScreenCapture_CaptureStrategy实例的指针。 |
@@ -1841,6 +1996,7 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_StrategyForPause(OH_AVScreenCaptu
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVSCREEN_CAPTURE_ErrCode | AV_SCREEN_CAPTURE_ERR_OK：执行成功。 AV_SCREEN_CAPTURE_ERR_INVALID_VAL：参数strategy为空指针。 |
@@ -1848,7 +2004,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_StrategyForPause(OH_AVScreenCaptu
 
 
 
-#### OH_AVScreenCapture_PauseScreenCapture()
+### OH_AVScreenCapture_PauseScreenCapture()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1866,12 +2023,14 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_PauseScreenCapture(struct OH_AVSc
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVScreenCapture *capture | 已初始化的屏幕捕获实例。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1880,7 +2039,8 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_PauseScreenCapture(struct OH_AVSc
 
 
 
-#### OH_AVScreenCapture_ResumeScreenCapture()
+### OH_AVScreenCapture_ResumeScreenCapture()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1898,12 +2058,14 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_ResumeScreenCapture(struct OH_AVS
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct OH_AVScreenCapture *capture | 已初始化的屏幕捕获实例。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |

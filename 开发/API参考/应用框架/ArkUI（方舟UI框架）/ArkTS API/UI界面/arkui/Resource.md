@@ -1,9 +1,9 @@
 # Resource
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-resource
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供获取应用资源或系统资源信息的接口。应用资源及系统资源的介绍及使用方法可参考[资源分类与访问](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/resource-categories-and-access)。
 
@@ -12,9 +12,10 @@
 
 
 
-#### \$r
+## \$r
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 \$r(value: string, ...params: any[]): Resource
 
@@ -28,6 +29,7 @@
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string | 是 | 资源标识符，访问格式为belonging.type.name。 belonging：表示该资源为系统资源、应用资源或HSP包资源，可选值为sys、app或[hsp_name]。 type：资源类型，可选值为boolean，color，float，intarray，integer，pattern，plural，strarray，string或media。 name：资源名称，应用资源名称定义在工程resources目录下，系统资源名称获取可参考资源分类与访问。 |
@@ -35,6 +37,7 @@
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -63,9 +66,10 @@ struct Page {
 
 
 
-#### \$rawfile
+## \$rawfile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 \$rawfile(value: string): Resource
 
@@ -79,12 +83,14 @@ struct Page {
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string | 是 | rawfile目录下的相对路径。文件名需要包含后缀，路径不可以以"/"开头。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |

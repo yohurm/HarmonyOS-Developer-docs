@@ -1,6 +1,6 @@
 # CollaborationService (跨设备互通组件)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/servicecollaboration-collaborationservice
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -12,7 +12,8 @@
 **起始版本：** 5.0.0(12)
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -22,9 +23,10 @@ import { CollaborationServiceStateDialog, createCollaborationServiceMenuItems, C
 
 
 
-#### createCollaborationServiceMenuItems
+## createCollaborationServiceMenuItems
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 createCollaborationServiceMenuItems(businessFilter?: Array&lt;CollaborationServiceFilter&gt;): void
 
@@ -44,6 +46,7 @@ createCollaborationServiceMenuItems(businessFilter?: Array&lt;CollaborationServi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | businessFilter | Array&lt;CollaborationServiceFilter&gt; | 否 | 传入能力类型。默认值为ALL，匹配跨端拍照、文档扫描和图库选择器。 对于API 6.0.0(20)及之后版本，支持匹配跨端拍照、文档扫描、图库选择器、视频选择器、图片和视频选择器；对于API 6.0.0(20)之前版本，仅支持匹配跨端拍照、文档扫描、图库选择器。 |
@@ -62,9 +65,10 @@ myTestMenu() {
 
 
 
-#### createCollaborationServiceMenuItems
+## createCollaborationServiceMenuItems
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 createCollaborationServiceMenuItems(businessFilter: Array&lt;CollaborationServiceFilter&gt;, canReceiveNumber: number): void
 
@@ -83,6 +87,7 @@ createCollaborationServiceMenuItems(businessFilter: Array&lt;CollaborationServic
 **起始版本：** 5.0.0(12)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -103,7 +108,8 @@ myTestMenu() {
 
 
 
-#### createCollaborationServiceMenuItems
+## createCollaborationServiceMenuItems
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -125,6 +131,7 @@ createCollaborationServiceMenuItems(businessFilter: Array&lt;CollaborationServic
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | businessFilter | Array&lt;CollaborationServiceFilter&gt; | 是 | 传入能力类型。默认值为ALL，匹配跨端拍照、文档扫描和图库选择器。 对于API 6.0.0(20)及之后版本，支持匹配跨端拍照、文档扫描、图库选择器、视频选择器、图片和视频选择器；对于API 6.0.0(20)之前版本，仅支持匹配跨端拍照、文档扫描、图库选择器。 |
@@ -145,7 +152,8 @@ myTestMenu() {
 
 
 
-#### CollaborationServiceFilter
+## CollaborationServiceFilter
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -156,6 +164,7 @@ myTestMenu() {
 **系统能力：** SystemCapability.Collaboration.Service
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -180,7 +189,8 @@ myTestMenu() {
 
 
 
-#### CollaborationDeviceFilterType
+## CollaborationDeviceFilterType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -191,6 +201,7 @@ myTestMenu() {
 **系统能力：** SystemCapability.Collaboration.Service
 
 **起始版本：** 6.1.0(23)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -212,7 +223,8 @@ myTestMenu() {
 
 
 
-#### CollaborationServiceStateDialog
+## CollaborationServiceStateDialog
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -232,7 +244,8 @@ myTestMenu() {
 
 
 
-#### onState
+### onState
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -248,6 +261,7 @@ onState: (stateCode: number, bufferType: string, buffer: ArrayBuffer) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | stateCode | number | 是 | 标识业务完成状态，含义详见下面状态码。 |
@@ -258,6 +272,7 @@ onState: (stateCode: number, bufferType: string, buffer: ArrayBuffer) => void
 **状态码：**
 
 以下部分错误状态的详细介绍请参见[错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-servicecollaboration)。
+
 
 | 状态码ID | 错误信息 |
 | --- | --- |
@@ -276,7 +291,8 @@ onState: (stateCode: number, bufferType: string, buffer: ArrayBuffer) => void
 
 
 
-#### build
+### build
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 

@@ -1,6 +1,6 @@
 # XML解析
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xml-parsing
 
@@ -9,6 +9,7 @@
 XML模块提供XmlPullParser类用于解析XML文本，输入为包含XML数据的ArrayBuffer或DataView，输出为结构化的解析结果。
 
 **表1** XML解析选项，其详细介绍请参见[ParseOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-xml#parseoptions)。
+
 
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -20,7 +21,7 @@ XML模块提供XmlPullParser类用于解析XML文本，输入为包含XML数据�
 
 
 
-#### 注意事项
+## 注意事项
 
  - 确保传入的XML数据符合标准格式。
  - 目前不支持解析指定节点的值。
@@ -28,7 +29,7 @@ XML模块提供XmlPullParser类用于解析XML文本，输入为包含XML数据�
 
 
 
-#### 解析XML标签和标签值
+## 解析XML标签和标签值
 1. 引入模块。
 
   
@@ -103,7 +104,7 @@ note
 
 
 
-#### 解析XML属性和属性值
+## 解析XML属性和属性值
 1. 引入模块。
 
   
@@ -156,7 +157,7 @@ importance high logged true // note节点的属性及属性值
 
 
 
-#### 解析XML事件类型和元素信息
+## 解析XML事件类型和元素信息
 1. 引入模块。
 
   
@@ -207,14 +208,14 @@ xmlParser.parseXml(options);
 2 2 // 2：<title>对应事件类型START_TAG值为2  2：深度为2
 4 2 // 4：Play对应事件类型TEXT值为4  2：深度为2
 3 2 // 3：</title>对应事件类型END_TAG值为3  2：深度为2
-3 1 // 3：</note>对应事件类型END_TAG值为3  1：深度为1（与<note对应>）
+3 1 // 3：</note>对应事件类型END_TAG值为3  1：深度为1（与<note>对应）
 1 0 // 1：对应事件类型END_DOCUMENT值为1  0：深度为0
 ```
 
 
 
 
-#### 场景示例
+## 场景示例
 
 此处以调用所有解析选项为例，提供解析XML标签、属性和事件类型的开发示例。
 

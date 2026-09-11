@@ -1,10 +1,10 @@
 # 通过API展示关注组件
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusion-api-followcomponent
 
-#### 场景介绍
+## 场景介绍
 
 从6.0.1(21)版本开始，支持关注组件API功能。
 
@@ -22,7 +22,7 @@ Scenario Fusion Kit提供服务号关注组件功能，调用该接口可以在�
 
 
 
-#### 前提条件
+## 前提条件
 
 在[华为开发者联盟服务号管理首页](https://developer.huawei.com/consumer/cn/console/service/FastService/service/1063)，申请华为服务号，并获取服务号id。
 1. 使用企业开发者账号登录，并完成企业认证。
@@ -31,9 +31,10 @@ Scenario Fusion Kit提供服务号关注组件功能，调用该接口可以在�
 
 
 
-#### 接口说明
+## 接口说明
 
 以下是关注组件的接口说明，更多接口及使用方法请参见[atomicService（融合场景化API）](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/scenario-fusion-atomicservice)。
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -42,11 +43,11 @@ Scenario Fusion Kit提供服务号关注组件功能，调用该接口可以在�
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 导入Scenario Fusion Kit模块以及相关公共模块。
 
   
-```text
+```ArkTS
 import { atomicService } from '@kit.ScenarioFusionKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -55,7 +56,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 2. 在需要添加关注组件的页面，调用接口展示关注组件，示例代码如下：
 
   
-```text
+```ArkTS
 @Entry
 @Component
 struct Index {

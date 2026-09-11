@@ -1,9 +1,9 @@
 # ProcessData
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-processdata
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 进程数据的对象定义。使用接口[appManager.on('applicationState')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-appmanager#appmanageronapplicationstate14)注册生命周期变化监听后，当应用或组件的生命周期变化时，系统通过[ApplicationStateObserver](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-applicationstateobserver)的[onProcessCreated](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-applicationstateobserver#applicationstateobserveronprocesscreated)等方法回调给开发者。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { appManager } from '@kit.AbilityKit';
@@ -22,12 +23,14 @@ import { appManager } from '@kit.AbilityKit';
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | pid | number | 否 | 否 | 进程ID。 |
@@ -35,7 +38,7 @@ import { appManager } from '@kit.AbilityKit';
 | uid | number | 否 | 否 | 应用的uid。 |
 | isContinuousTask | boolean | 否 | 否 | 是否为长时任务，true表示是，false表示不是。 |
 | isKeepAlive | boolean | 否 | 否 | 是否为常驻进程，true表示是，false表示不是 |
-| state | number | 否 | 否 | 应用的状态，取值及对应的状态为： 0 - 初始化状态，进程正在初始化， 1 - 就绪状态，进程已初始化完毕， 2 - 前台， 4 - 后台， 5 - 已终止。 |
+| state | number | 否 | 否 | 进程的状态，取值及对应的状态为： 0 - 初始化状态，进程正在初始化， 1 - 就绪状态，进程已初始化完毕， 2 - 前台， 4 - 后台， 5 - 已终止。 |
  
  
 **示例：**

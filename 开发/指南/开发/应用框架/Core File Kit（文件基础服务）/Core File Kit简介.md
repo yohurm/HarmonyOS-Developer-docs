@@ -1,13 +1,13 @@
 # Core File Kit简介
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/core-file-kit-intro
 
 Core File Kit（文件基础服务）为开发者提供一套访问和管理应用文件和用户文件的能力。帮助用户更高效地管理、查找和备份各类文件，使用户能够轻松应对各种文件管理的需求。
 
 
-#### Core File Kit概述
+## Core File Kit概述
 
 在Core File Kit套件中，按文件所有者的不同，有如下文件分类模型，其示意图如下：
 
@@ -38,7 +38,7 @@ Core File Kit（文件基础服务）为开发者提供一套访问和管理应�
 
 
 
-#### Kit使用场景
+## Kit使用场景
 
 Core File Kit常见的使用场景：
 
@@ -51,7 +51,7 @@ Core File Kit常见的使用场景：
 
 
 
-#### 能力范围
+## 能力范围
 
  - 支持对应用文件进行查看、创建、读写、删除、移动、复制、获取属性等访问操作。
  - 支持应用文件上传到网络服务器和网络服务器下载网络资源文件到本地应用文件目录。
@@ -66,7 +66,7 @@ Core File Kit常见的使用场景：
 
 
 
-#### 亮点/特征
+## 亮点/特征
 
  - 沙箱隔离：
 
@@ -76,7 +76,7 @@ Core File Kit常见的使用场景：
 隔离性：应用沙箱提供了一个完全隔离的环境，使用户可以安全地访问应用文件。
  - 安全性：应用沙箱限制了应用可见的数据的最小范围，保护了应用文件的安全。
 
-      - 应用分享：
+            - 应用分享：
 
   应用之间可以通过分享URI（Uniform Resource Identifier）或文件描述符FD（File Descriptor）的方式，进行文件共享。有以下优点：
 
@@ -86,7 +86,7 @@ Core File Kit常见的使用场景：
  - 数据一致性：应用间的文件分享能够确保数据的完整性和一致性，避免数据在传输过程中出现损坏或丢失的情况。
  - 安全性：应用间的文件分享可以确保文件的安全性，避免文件被非法获取或篡改。同时，通过文件授权访问的方式，可以进一步增强文件的安全性。
 
-      - 端云协同：
+            - 端云协同：
 
   支持全维度同步上云和灵活的文件缓存能力。有以下优点：
 
@@ -99,17 +99,17 @@ Core File Kit常见的使用场景：
 
 
 
-#### 框架原理
+## 框架原理
 
 
 
-#### 应用文件访问框架
+### 应用文件访问框架
 
 应用文件访问框架是通过基础文件操作接口（[ohos.file.fs](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-file-fs)）实现。开发者无需了解内部实现，基础文件操作接口功能详情请参考[接口说明](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-file-access#接口说明)。
 
 
 
-#### 用户文件访问框架
+### 用户文件访问框架
 
 用户文件访问框架（File Access Framework）是一套提供给开发者访问和管理用户文件的基础框架。该框架依托于HarmonyOS的ExtensionAbility组件机制，提供了一套统一访问用户文件的方法和接口。
 
@@ -135,13 +135,13 @@ UserFileManager：内卡文件管理服务，基于File Access ExtensionAbility�
 
 
 
-#### 与相关Kit的关系
+## 与相关Kit的关系
 
 Ability Kit：Core File Kit中用户文件访问框架依赖Ability Kit提供的Extension基础能力，并受Ability Kit服务调度管理。
 
 
 
-#### 模拟器支持情况
+## 模拟器支持情况
 
 本Kit部分能力不支持模拟器，具体如下。
 

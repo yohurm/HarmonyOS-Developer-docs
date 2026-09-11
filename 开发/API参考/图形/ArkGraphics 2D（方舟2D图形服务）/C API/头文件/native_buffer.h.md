@@ -1,13 +1,14 @@
 # native_buffer.h
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-buffer-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义获取和使用NativeBuffer的相关函数。
 
@@ -23,15 +24,18 @@
 
 
 
-#### 汇总
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 汇总
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 结构体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -44,9 +48,11 @@
 
 
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -56,9 +62,11 @@
 
 
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -84,15 +92,17 @@
 
 
 
-#### 枚举类型说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 枚举类型说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### OH_NativeBuffer_Usage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### OH_NativeBuffer_Usage
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_NativeBuffer_Usage
@@ -105,6 +115,7 @@ OH_NativeBuffer的用途。
 **系统能力：** SystemCapability.Graphic.Graphic2D.NativeBuffer
 
 **起始版本：** 10
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -120,9 +131,10 @@ OH_NativeBuffer的用途。
 
 
 
-#### OH_NativeBuffer_ColorGamut
+### OH_NativeBuffer_ColorGamut
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_NativeBuffer_ColorGamut
@@ -135,6 +147,7 @@ OH_NativeBuffer的色域。
 **系统能力：** SystemCapability.Graphic.Graphic2D.NativeBuffer
 
 **起始版本：** 12
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -153,15 +166,17 @@ OH_NativeBuffer的色域。
 
 
 
-#### 函数说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 函数说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### OH_NativeBuffer_Alloc()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### OH_NativeBuffer_Alloc()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_NativeBuffer* OH_NativeBuffer_Alloc(const OH_NativeBuffer_Config* config)
@@ -181,12 +196,14 @@ OH_NativeBuffer* OH_NativeBuffer_Alloc(const OH_NativeBuffer_Config* config)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_NativeBuffer_Config* config | 一个指向OH_NativeBuffer_Config类型的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -195,9 +212,10 @@ OH_NativeBuffer* OH_NativeBuffer_Alloc(const OH_NativeBuffer_Config* config)
 
 
 
-#### OH_NativeBuffer_Reference()
+### OH_NativeBuffer_Reference()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeBuffer_Reference(OH_NativeBuffer *buffer)
@@ -217,12 +235,14 @@ int32_t OH_NativeBuffer_Reference(OH_NativeBuffer *buffer)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeBuffer *buffer | 一个指向OH_NativeBuffer实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -231,9 +251,10 @@ int32_t OH_NativeBuffer_Reference(OH_NativeBuffer *buffer)
 
 
 
-#### OH_NativeBuffer_Unreference()
+### OH_NativeBuffer_Unreference()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeBuffer_Unreference(OH_NativeBuffer *buffer)
@@ -251,12 +272,14 @@ int32_t OH_NativeBuffer_Unreference(OH_NativeBuffer *buffer)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeBuffer *buffer | 一个指向OH_NativeBuffer实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -265,9 +288,10 @@ int32_t OH_NativeBuffer_Unreference(OH_NativeBuffer *buffer)
 
 
 
-#### OH_NativeBuffer_GetConfig()
+### OH_NativeBuffer_GetConfig()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_NativeBuffer_GetConfig(OH_NativeBuffer *buffer, OH_NativeBuffer_Config* config)
@@ -285,6 +309,7 @@ void OH_NativeBuffer_GetConfig(OH_NativeBuffer *buffer, OH_NativeBuffer_Config* 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeBuffer *buffer | 一个指向OH_NativeBuffer实例的指针。 |
@@ -293,9 +318,10 @@ void OH_NativeBuffer_GetConfig(OH_NativeBuffer *buffer, OH_NativeBuffer_Config* 
 
 
 
-#### OH_NativeBuffer_Map()
+### OH_NativeBuffer_Map()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeBuffer_Map(OH_NativeBuffer *buffer, void **virAddr)
@@ -321,6 +347,7 @@ int32_t OH_NativeBuffer_Map(OH_NativeBuffer *buffer, void **virAddr)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeBuffer *buffer | 一个指向OH_NativeBuffer实例的指针。 |
@@ -329,6 +356,7 @@ int32_t OH_NativeBuffer_Map(OH_NativeBuffer *buffer, void **virAddr)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回值为0表示执行成功，其他返回值可参考OHNativeErrorCode。 |
@@ -336,9 +364,10 @@ int32_t OH_NativeBuffer_Map(OH_NativeBuffer *buffer, void **virAddr)
 
 
 
-#### OH_NativeBuffer_Unmap()
+### OH_NativeBuffer_Unmap()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeBuffer_Unmap(OH_NativeBuffer *buffer)
@@ -356,12 +385,14 @@ int32_t OH_NativeBuffer_Unmap(OH_NativeBuffer *buffer)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeBuffer *buffer | 一个指向OH_NativeBuffer实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -370,9 +401,10 @@ int32_t OH_NativeBuffer_Unmap(OH_NativeBuffer *buffer)
 
 
 
-#### OH_NativeBuffer_GetSeqNum()
+### OH_NativeBuffer_GetSeqNum()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 uint32_t OH_NativeBuffer_GetSeqNum(OH_NativeBuffer *buffer)
@@ -390,12 +422,14 @@ uint32_t OH_NativeBuffer_GetSeqNum(OH_NativeBuffer *buffer)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeBuffer *buffer | 一个指向OH_NativeBuffer实例的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -404,9 +438,10 @@ uint32_t OH_NativeBuffer_GetSeqNum(OH_NativeBuffer *buffer)
 
 
 
-#### OH_NativeBuffer_SetColorSpace()
+### OH_NativeBuffer_SetColorSpace()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeBuffer_SetColorSpace(OH_NativeBuffer *buffer, OH_NativeBuffer_ColorSpace colorSpace)
@@ -424,6 +459,7 @@ int32_t OH_NativeBuffer_SetColorSpace(OH_NativeBuffer *buffer, OH_NativeBuffer_C
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeBuffer *buffer | 一个指向OH_NativeBuffer实例的指针。 |
@@ -432,6 +468,7 @@ int32_t OH_NativeBuffer_SetColorSpace(OH_NativeBuffer *buffer, OH_NativeBuffer_C
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回值为0表示执行成功，其他返回值可参考OHNativeErrorCode。 |
@@ -439,9 +476,10 @@ int32_t OH_NativeBuffer_SetColorSpace(OH_NativeBuffer *buffer, OH_NativeBuffer_C
 
 
 
-#### OH_NativeBuffer_MapPlanes()
+### OH_NativeBuffer_MapPlanes()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeBuffer_MapPlanes(OH_NativeBuffer *buffer, void **virAddr, OH_NativeBuffer_Planes *outPlanes)
@@ -459,6 +497,7 @@ int32_t OH_NativeBuffer_MapPlanes(OH_NativeBuffer *buffer, void **virAddr, OH_Na
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeBuffer *buffer | 一个指向OH_NativeBuffer实例的指针。 |
@@ -468,6 +507,7 @@ int32_t OH_NativeBuffer_MapPlanes(OH_NativeBuffer *buffer, void **virAddr, OH_Na
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回值为0表示执行成功，其他返回值可参考OHNativeErrorCode。 |
@@ -475,9 +515,10 @@ int32_t OH_NativeBuffer_MapPlanes(OH_NativeBuffer *buffer, void **virAddr, OH_Na
 
 
 
-#### OH_NativeBuffer_FromNativeWindowBuffer()
+### OH_NativeBuffer_FromNativeWindowBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeBuffer_FromNativeWindowBuffer(OHNativeWindowBuffer *nativeWindowBuffer, OH_NativeBuffer **buffer)
@@ -495,6 +536,7 @@ int32_t OH_NativeBuffer_FromNativeWindowBuffer(OHNativeWindowBuffer *nativeWindo
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OHNativeWindowBuffer *nativeWindowBuffer | 一个指向OHNativeWindowBuffer实例的指针。 |
@@ -503,6 +545,7 @@ int32_t OH_NativeBuffer_FromNativeWindowBuffer(OHNativeWindowBuffer *nativeWindo
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回值为0表示执行成功，其他返回值可参考OHNativeErrorCode。 |
@@ -510,9 +553,10 @@ int32_t OH_NativeBuffer_FromNativeWindowBuffer(OHNativeWindowBuffer *nativeWindo
 
 
 
-#### OH_NativeBuffer_GetColorSpace()
+### OH_NativeBuffer_GetColorSpace()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeBuffer_GetColorSpace(OH_NativeBuffer *buffer, OH_NativeBuffer_ColorSpace *colorSpace)
@@ -530,6 +574,7 @@ int32_t OH_NativeBuffer_GetColorSpace(OH_NativeBuffer *buffer, OH_NativeBuffer_C
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeBuffer *buffer | 一个指向OH_NativeBuffer实例的指针。 |
@@ -538,6 +583,7 @@ int32_t OH_NativeBuffer_GetColorSpace(OH_NativeBuffer *buffer, OH_NativeBuffer_C
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回值为0表示执行成功，其他返回值可参考OHNativeErrorCode。 |
@@ -545,12 +591,13 @@ int32_t OH_NativeBuffer_GetColorSpace(OH_NativeBuffer *buffer, OH_NativeBuffer_C
 
 
 
-#### OH_NativeBuffer_SetMetadataValue()
+### OH_NativeBuffer_SetMetadataValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-int32_t OH_NativeBuffer_SetMetadataValue(OH_NativeBuffer *buffer, OH_NativeBuffer_MetadataKey metadataKey,int32_t size, uint8_t *metadata)
+int32_t OH_NativeBuffer_SetMetadataValue(OH_NativeBuffer *buffer, OH_NativeBuffer_MetadataKey metadataKey, int32_t size, uint8_t *metadata)
 ```
 
 **描述**
@@ -565,6 +612,7 @@ int32_t OH_NativeBuffer_SetMetadataValue(OH_NativeBuffer *buffer, OH_NativeBuffe
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeBuffer *buffer | 一个指向OH_NativeBuffer实例的指针。 |
@@ -575,6 +623,7 @@ int32_t OH_NativeBuffer_SetMetadataValue(OH_NativeBuffer *buffer, OH_NativeBuffe
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回值为0表示执行成功，其他返回值可参考OHNativeErrorCode。 |
@@ -582,12 +631,13 @@ int32_t OH_NativeBuffer_SetMetadataValue(OH_NativeBuffer *buffer, OH_NativeBuffe
 
 
 
-#### OH_NativeBuffer_GetMetadataValue()
+### OH_NativeBuffer_GetMetadataValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-int32_t OH_NativeBuffer_GetMetadataValue(OH_NativeBuffer *buffer, OH_NativeBuffer_MetadataKey metadataKey,int32_t *size, uint8_t **metadata)
+int32_t OH_NativeBuffer_GetMetadataValue(OH_NativeBuffer *buffer, OH_NativeBuffer_MetadataKey metadataKey, int32_t *size, uint8_t **metadata)
 ```
 
 **描述**
@@ -602,6 +652,7 @@ int32_t OH_NativeBuffer_GetMetadataValue(OH_NativeBuffer *buffer, OH_NativeBuffe
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeBuffer *buffer | 一个指向OH_NativeBuffer实例的指针。 |
@@ -612,6 +663,7 @@ int32_t OH_NativeBuffer_GetMetadataValue(OH_NativeBuffer *buffer, OH_NativeBuffe
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回值为0表示执行成功，其他返回值可参考OHNativeErrorCode。 |
@@ -619,9 +671,10 @@ int32_t OH_NativeBuffer_GetMetadataValue(OH_NativeBuffer *buffer, OH_NativeBuffe
 
 
 
-#### OH_NativeBuffer_MapWaitFence()
+### OH_NativeBuffer_MapWaitFence()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeBuffer_MapWaitFence(OH_NativeBuffer *buffer, int32_t fenceFd, void **virAddr)
@@ -643,14 +696,16 @@ int32_t OH_NativeBuffer_MapWaitFence(OH_NativeBuffer *buffer, int32_t fenceFd, v
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeBuffer *buffer | 一个指向OH_NativeBuffer实例的指针。 |
-| int32_t fenceFd | 指向文件描述符句柄，用于并发同步控制。 |
+| int32_t fenceFd | 文件描述符句柄，用于并发同步控制。 |
 | void **virAddr | 一个二级指针，二级指针指向映射到当前进程的虚拟内存的地址。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -659,9 +714,10 @@ int32_t OH_NativeBuffer_MapWaitFence(OH_NativeBuffer *buffer, int32_t fenceFd, v
 
 
 
-#### OH_NativeBuffer_WriteToParcel()
+### OH_NativeBuffer_WriteToParcel()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeBuffer_WriteToParcel(OH_NativeBuffer* buffer, OHIPCParcel* parcel)
@@ -679,6 +735,7 @@ int32_t OH_NativeBuffer_WriteToParcel(OH_NativeBuffer* buffer, OHIPCParcel* parc
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeBuffer* buffer | 一个指向OH_NativeBuffer实例的指针。 |
@@ -687,6 +744,7 @@ int32_t OH_NativeBuffer_WriteToParcel(OH_NativeBuffer* buffer, OHIPCParcel* parc
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 执行成功时返回NATIVE_ERROR_OK。 buffer或parcel为空指针时返回NATIVE_ERROR_INVALID_ARGUMENTS。 IPC发送失败返回NATIVE_ERROR_BINDER_ERROR。 其他返回值可参考OHNativeErrorCode。 |
@@ -694,9 +752,10 @@ int32_t OH_NativeBuffer_WriteToParcel(OH_NativeBuffer* buffer, OHIPCParcel* parc
 
 
 
-#### OH_NativeBuffer_ReadFromParcel()
+### OH_NativeBuffer_ReadFromParcel()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeBuffer_ReadFromParcel(OHIPCParcel* parcel, OH_NativeBuffer** buffer)
@@ -716,6 +775,7 @@ int32_t OH_NativeBuffer_ReadFromParcel(OHIPCParcel* parcel, OH_NativeBuffer** bu
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OHIPCParcel* parcel | 一个指向OHIPCParcel的结构体实例的指针。 |
@@ -724,6 +784,7 @@ int32_t OH_NativeBuffer_ReadFromParcel(OHIPCParcel* parcel, OH_NativeBuffer** bu
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 执行成功时返回NATIVE_ERROR_OK。 parcel或buffer为空指针时返回NATIVE_ERROR_INVALID_ARGUMENTS。 parcel反序列化失败返回NATIVE_ERROR_UNKNOWN。 其他返回值可参考OHNativeErrorCode。 |
@@ -731,9 +792,10 @@ int32_t OH_NativeBuffer_ReadFromParcel(OHIPCParcel* parcel, OH_NativeBuffer** bu
 
 
 
-#### OH_NativeBuffer_IsSupported()
+### OH_NativeBuffer_IsSupported()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeBuffer_IsSupported(OH_NativeBuffer_Config config, bool* isSupported)
@@ -751,6 +813,7 @@ int32_t OH_NativeBuffer_IsSupported(OH_NativeBuffer_Config config, bool* isSuppo
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeBuffer_Config config | OH_NativeBuffer_Config结构体实例。 |
@@ -759,6 +822,7 @@ int32_t OH_NativeBuffer_IsSupported(OH_NativeBuffer_Config config, bool* isSuppo
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 执行成功时返回NATIVE_ERROR_OK。 isSupported为空指针时返回NATIVE_ERROR_INVALID_ARGUMENTS。 其他返回值可参考OHNativeErrorCode。 |
@@ -766,9 +830,10 @@ int32_t OH_NativeBuffer_IsSupported(OH_NativeBuffer_Config config, bool* isSuppo
 
 
 
-#### OH_NativeBuffer_MapAndGetConfig()
+### OH_NativeBuffer_MapAndGetConfig()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeBuffer_MapAndGetConfig(OH_NativeBuffer* buffer, void** virAddr, OH_NativeBuffer_Config* config)
@@ -786,6 +851,7 @@ int32_t OH_NativeBuffer_MapAndGetConfig(OH_NativeBuffer* buffer, void** virAddr,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeBuffer* buffer | 一个指向OH_NativeBuffer的结构体实例的指针。 |
@@ -795,6 +861,7 @@ int32_t OH_NativeBuffer_MapAndGetConfig(OH_NativeBuffer* buffer, void** virAddr,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| int32_t | 执行成功时返回NATIVE_ERROR_OK。 buffer、virAddr或config为空指针时返回NATIVE_ERROR_INVALID_ARGUMENTS。 映射时返回NATIVE_ERROR_UNKNOWN。 其他返回值可参考OHNativeErrorCode。 |
+| int32_t | 执行成功时返回NATIVE_ERROR_OK。 buffer、virAddr或config为空指针时返回NATIVE_ERROR_INVALID_ARGUMENTS。 映射失败时返回NATIVE_ERROR_UNKNOWN。 其他返回值可参考OHNativeErrorCode。 |

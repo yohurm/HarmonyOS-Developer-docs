@@ -1,11 +1,12 @@
 # SecurityAudit
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesecurity-capi-securityaudit
 **支持设备：** PC/2in1
 
-#### 概述
+## 概述
+
 
 **支持设备：** PC/2in1
 
@@ -17,16 +18,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** PC/2in1
 
   
 
-#### 文件
+### 文件
+
 
 **支持设备：** PC/2in1
  
+
 | 名称 | 描述 |
 | --- | --- |
 | security_audit.h | 文件中定义了与安全审计相关的函数。 |
@@ -34,10 +38,12 @@
  
   
 
-#### 结构体
+### 结构体
+
 
 **支持设备：** PC/2in1
  
+
 | 名称 | 描述 |
 | --- | --- |
 | struct SecurityAudit_Event | 定义审计事件信息。 |
@@ -47,10 +53,12 @@
  
   
 
-#### 类型定义
+### 类型定义
+
 
 **支持设备：** PC/2in1
  
+
 | 名称 | 描述 |
 | --- | --- |
 | typedef void(* SecurityAudit_Handler) (const SecurityAudit_Event *events, uint64_t count) | 定义事件处理函数。 |
@@ -61,10 +69,12 @@
  
   
 
-#### 枚举
+### 枚举
+
 
 **支持设备：** PC/2in1
  
+
 | 名称 | 描述 |
 | --- | --- |
 | SecurityAudit_Notify_Event { SECURITY_AUDIT_NOTIFY_EVENT_PASTEBOARD = 0x27000000, SECURITY_AUDIT_NOTIFY_EVENT_FILE = 0x1C000007, SECURITY_AUDIT_NOTIFY_EVENT_FILE_INTERCEPTED = 0x1C001100, SECURITY_AUDIT_NOTIFY_EVENT_ACCOUNT = 0x10000100, SECURITY_AUDIT_NOTIFY_EVENT_WINDOW = 0x07000000, SECURITY_AUDIT_NOTIFY_EVENT_VOLUME = 0x0F000000, SECURITY_AUDIT_NOTIFY_EVENT_PRINTER = 0x2E000000, SECURITY_AUDIT_NOTIFY_EVENT_PROCESS = 0x1C000008, SECURITY_AUDIT_NOTIFY_EVENT_NETWORK_TRAFFIC = 0x1C00000E, SECURITY_AUDIT_NOTIFY_EVENT_NETWORK_CONN = 0x1C00000F, SECURITY_AUDIT_NOTIFY_EVENT_CAMERA = 0x2D000000, SECURITY_AUDIT_NOTIFY_EVENT_APP = 0x10000000, SECURITY_AUDIT_NOTIFY_EVENT_EDM = 0x11000000, SECURITY_AUDIT_NOTIFY_EVENT_CERT = 0x12003000, SECURITY_AUDIT_NOTIFY_EVENT_KIA_CREATE = 0x1C00000B, SECURITY_AUDIT_NOTIFY_EVENT_KIA_READ = 0x1C000012, SECURITY_AUDIT_NOTIFY_EVENT_KIA_VARIANT = 0x1C00000C, SECURITY_AUDIT_NOTIFY_EVENT_KIA_INTERCEPT = 0x1C00000A, SECURITY_AUDIT_NOTIFY_EVENT_PERMISSION = 0x0B000000, SECURITY_AUDIT_NOTIFY_EVENT_DNS = 0x03000001, SECURITY_AUDIT_NOTIFY_EVENT_APP_INSTALL_INTERCEPTED = 0x18000100, SECURITY_AUDIT_NOTIFY_EVENT_APP_UNINSTALL_INTERCEPTED = 0x18000101, SECURITY_AUDIT_NOTIFY_EVENT_APP_UPDATE_INTERCEPTED = 0x18000102, SECURITY_AUDIT_NOTIFY_EVENT_APP_RECOVER_INTERCEPTED = 0x18000103, SECURITY_AUDIT_NOTIFY_EVENT_APP_START_INTERCEPTED = 0x18000104, SECURITY_AUDIT_NOTIFY_EVENT_USB_ACCESS_INTERCEPTED = 0x30000000, SECURITY_AUDIT_NOTIFY_EVENT_SMB_FILE_SEND = 0x0F000001, SECURITY_AUDIT_NOTIFY_EVENT_FILE_SHARE= 0x0F000002, SECURITY_AUDIT_NOTIFY_EVENT_DATA_DRAG= 0x0F000003, SECURITY_AUDIT_NOTIFY_EVENT_KIA_PRE_OPEN = 0x1C000014, SECURITY_AUDIT_NOTIFY_EVENT_HDC_DEBUG = 0x27000100, SECURITY_AUDIT_NOTIFY_EVENT_HDC_DEBUG_INTERCEPTED = 0x27000101, SECURITY_AUDIT_NOTIFY_EVENT_USER_SPACE_DATA_TRANSFER = 0x2F000000, SECURITY_AUDIT_NOTIFY_EVENT_USER_SPACE_DATA_TRANSFER_POLICY = 0x2F000001, SECURITY_AUDIT_NOTIFY_EVENT_SERIAL_PORT_ACCESS = 0x30000100, SECURITY_AUDIT_NOTIFY_EVENT_BLUETOOTH_INTERCEPTED = 0x03000200, SECURITY_AUDIT_NOTIFY_EVENT_DISC_BURNING = 0x0F000004, SECURITY_AUDIT_NOTIFY_EVENT_MEDIA_FILE_ACCESS = 0x0F000005, SECURITY_AUDIT_NOTIFY_EVENT_ACCOUNT_MANAGEMENT = 0x10000103, SECURITY_AUDIT_NOTIFY_EVENT_DEVICE_POWER_ON = 0x16000001, SECURITY_AUDIT_NOTIFY_EVENT_DEVICE_POWER_OFF = 0x16000002, SECURITY_AUDIT_NOTIFY_EVENT_AUDIO_INTERFACE_ACCESS = 0x1A000001, SECURITY_AUDIT_NOTIFY_EVENT_VIDEO_INTERFACE_ACCESS = 0x1A000002, SECURITY_AUDIT_NOTIFY_EVENT_SERIAL_PORT_INTERCEPTED = 0x30000101, SECURITY_AUDIT_NOTIFY_EVENT_NETWORK_INTERCEPTED = 0x03000002, SECURITY_AUDIT_NOTIFY_EVENT_WIFI_INTERCEPTED = 0x03000100, SECURITY_AUDIT_NOTIFY_EVENT_PRINT_INTERCEPTED = 0x2E000001, SECURITY_AUDIT_NOTIFY_EVENT_CS_VERIFY_NULL = 0x12001081, SECURITY_AUDIT_NOTIFY_EVENT_CS_VERIFY_ABNORMAL = 0x12001082, SECURITY_AUDIT_NOTIFY_EVENT_FS_MOUNT_ABNORMAL = 0x1C001102, SECURITY_AUDIT_NOTIFY_EVENT_DRIVER_CS_ABNORMAL = 0x1C001200, SECURITY_AUDIT_NOTIFY_EVENT_DRIVER_MMAP_ABNORMAL = 0x1C001201, SECURITY_AUDIT_NOTIFY_EVENT_KERNEL_MEMORY_ABNORMAL = 0x1C001300, SECURITY_AUDIT_NOTIFY_EVENT_PROCESS_DEBUG_ABNORMAL = 0x1C001401, SECURITY_AUDIT_NOTIFY_EVENT_PROCESS_CRASH_ABNORMAL = 0x1C001402, SECURITY_AUDIT_NOTIFY_EVENT_PROCESS_PRIVILEGE_ESCALATION = 0x1C001403, SECURITY_AUDIT_NOTIFY_EVENT_DLP_FILE_ACCESS = 0x0F000006, SECURITY_AUDIT_NOTIFY_EVENT_FILE_CREATE = 0x1C001104, SECURITY_AUDIT_NOTIFY_EVENT_FILE_OPEN = 0x1C001105, SECURITY_AUDIT_NOTIFY_EVENT_FILE_CLOSE = 0x1C001106, SECURITY_AUDIT_NOTIFY_EVENT_FILE_DELETE = 0x1C001107, SECURITY_AUDIT_NOTIFY_EVENT_FILE_RENAME = 0x1C001108, SECURITY_AUDIT_NOTIFY_EVENT_FILE_COPY = 0x1C001109, SECURITY_AUDIT_NOTIFY_EVENT_FILE_SETOWNER = 0x1C00110A, SECURITY_AUDIT_NOTIFY_EVENT_FILE_SETMODE = 0x1C00110B, SECURITY_AUDIT_NOTIFY_EVENT_FILE_SETEXTATTR = 0x1C00110C, SECURITY_AUDIT_NOTIFY_EVENT_FILE_DELETEEXTATTR = 0x1C00110D, SECURITY_AUDIT_NOTIFY_EVENT_FILE_WRITE = 0x1C00110E } | 定义通知事件的事件ID。 |
@@ -75,10 +85,12 @@
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** PC/2in1
  
+
 | 名称 | 描述 |
 | --- | --- |
 | int32_t HMS_SecurityAudit_NewClient (SecurityAudit_Client **client, SecurityAudit_Handler handler) | 创建一个新的通知事件客户端。 |
@@ -107,13 +119,15 @@
  
   
 
-#### 类型定义说明
+## 类型定义说明
+
 
 **支持设备：** PC/2in1
 
   
 
-#### SecurityAudit_AuthClient
+### SecurityAudit_AuthClient
+
 
 **支持设备：** PC/2in1
 
@@ -129,7 +143,8 @@ typedef struct SecurityAudit_AuthClient_Impl SecurityAudit_AuthClient
  
   
 
-#### SecurityAudit_Client
+### SecurityAudit_Client
+
 
 **支持设备：** PC/2in1
 
@@ -145,7 +160,8 @@ typedef struct SecurityAudit_Client_Impl SecurityAudit_Client
  
   
 
-#### SecurityAudit_Handler
+### SecurityAudit_Handler
+
 
 **支持设备：** PC/2in1
 
@@ -161,6 +177,7 @@ typedef void(* SecurityAudit_Handler) (const SecurityAudit_Event *events, uint64
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | events | 指向审计事件信息的指针。 |
@@ -169,7 +186,8 @@ typedef void(* SecurityAudit_Handler) (const SecurityAudit_Event *events, uint64
  
   
 
-#### SecurityAudit_AuthClientConfiguration
+### SecurityAudit_AuthClientConfiguration
+
 
 **支持设备：** PC/2in1
 
@@ -185,13 +203,15 @@ typedef struct SecurityAudit_AuthClientConfiguration_Impl SecurityAudit_AuthClie
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
+
 
 **支持设备：** PC/2in1
 
   
 
-#### SecurityAudit_Auth_Event
+### SecurityAudit_Auth_Event
+
 
 **支持设备：** PC/2in1
 
@@ -207,6 +227,7 @@ enum SecurityAudit_Auth_Event
  
 **起始版本：** 6.0.0(20)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | SECURITY_AUDIT_AUTH_EVENT_FILE_CREATE | 文件创建阻断事件。 |
@@ -221,7 +242,8 @@ enum SecurityAudit_Auth_Event
  
   
 
-#### SecurityAudit_AuthResult
+### SecurityAudit_AuthResult
+
 
 **支持设备：** PC/2in1
 
@@ -235,6 +257,7 @@ enum SecurityAudit_AuthResult
  
 **起始版本：** 6.0.0(20)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | SECURITY_AUDIT_AUTH_RESULT_ALLOW | 允许的阻断事件。 |
@@ -243,7 +266,8 @@ enum SecurityAudit_AuthResult
  
   
 
-#### SecurityAudit_FilterType
+### SecurityAudit_FilterType
+
 
 **支持设备：** PC/2in1
 
@@ -259,6 +283,7 @@ enum SecurityAudit_FilterType
  
 **起始版本：** 6.0.0(20)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | EVENT_TYPE_EQUAL | 事件类型的过滤器类型。 |
@@ -276,7 +301,8 @@ enum SecurityAudit_FilterType
  
   
 
-#### SecurityAudit_Notify_Event
+### SecurityAudit_Notify_Event
+
 
 **支持设备：** PC/2in1
 
@@ -292,6 +318,7 @@ enum SecurityAudit_Notify_Event
  
 **起始版本：** 6.0.0(20)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | SECURITY_AUDIT_NOTIFY_EVENT_PASTEBOARD | 剪贴板复制和粘贴事件。 |
@@ -366,13 +393,15 @@ enum SecurityAudit_Notify_Event
  
   
 
-#### 函数说明
+## 函数说明
+
 
 **支持设备：** PC/2in1
 
   
 
-#### HMS_SecurityAudit_AddAuthEventFilter()
+### HMS_SecurityAudit_AddAuthEventFilter()
+
 
 **支持设备：** PC/2in1
 
@@ -388,6 +417,7 @@ int32_t HMS_SecurityAudit_AddAuthEventFilter (const SecurityAudit_AuthClient * c
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | client | 用户已创建的阻断类事件客户端。 |
@@ -405,7 +435,8 @@ ohos.permission.kernel.AUTH_AUDIT_EVENT
  
   
 
-#### HMS_SecurityAudit_AddFilter()
+### HMS_SecurityAudit_AddFilter()
+
 
 **支持设备：** PC/2in1
 
@@ -421,6 +452,7 @@ int32_t HMS_SecurityAudit_AddFilter (const SecurityAudit_Client * client, Securi
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | client | 用户已创建的通知类事件客户端。 |
@@ -438,7 +470,8 @@ ohos.permission.QUERY_AUDIT_EVENT
  
   
 
-#### HMS_SecurityAudit_Auth()
+### HMS_SecurityAudit_Auth()
+
 
 **支持设备：** PC/2in1
 
@@ -454,6 +487,7 @@ int32_t HMS_SecurityAudit_Auth (const SecurityAudit_AuthClient * client, const S
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | client | 用户已创建的阻断类事件客户端。 |
@@ -471,7 +505,8 @@ ohos.permission.kernel.AUTH_AUDIT_EVENT
  
   
 
-#### HMS_SecurityAudit_DeleteAuthClient()
+### HMS_SecurityAudit_DeleteAuthClient()
+
 
 **支持设备：** PC/2in1
 
@@ -487,6 +522,7 @@ int32_t HMS_SecurityAudit_DeleteAuthClient (SecurityAudit_AuthClient * client)
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | client | 要删除的阻断类事件客户端实例。 |
@@ -502,7 +538,8 @@ ohos.permission.kernel.AUTH_AUDIT_EVENT
  
   
 
-#### HMS_SecurityAudit_DeleteClient()
+### HMS_SecurityAudit_DeleteClient()
+
 
 **支持设备：** PC/2in1
 
@@ -518,6 +555,7 @@ int32_t HMS_SecurityAudit_DeleteClient (SecurityAudit_Client * client)
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | client | 要删除的客户端实例。 |
@@ -533,7 +571,8 @@ ohos.permission.QUERY_AUDIT_EVENT
  
   
 
-#### HMS_SecurityAudit_NewAuthClient()
+### HMS_SecurityAudit_NewAuthClient()
+
 
 **支持设备：** PC/2in1
 
@@ -549,6 +588,7 @@ int32_t HMS_SecurityAudit_NewAuthClient (SecurityAudit_AuthClient ** client, Sec
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | client | 指向新阻断类事件客户端实例的指针，一个进程最大只允许创建2个client实例，当前设备最多只允许创建16个client实例。一个客户端实例最大只允许设置256条正过滤的过滤value和256条反过滤的过滤value。 |
@@ -565,7 +605,8 @@ ohos.permission.kernel.AUTH_AUDIT_EVENT
  
   
 
-#### HMS_SecurityAudit_NewClient()
+### HMS_SecurityAudit_NewClient()
+
 
 **支持设备：** PC/2in1
 
@@ -581,6 +622,7 @@ int32_t HMS_SecurityAudit_NewClient (SecurityAudit_Client ** client, SecurityAud
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | client | 指向新客户端实例的指针。 |
@@ -597,7 +639,8 @@ ohos.permission.QUERY_AUDIT_EVENT
  
   
 
-#### HMS_SecurityAudit_RemoveAuthEventFilter()
+### HMS_SecurityAudit_RemoveAuthEventFilter()
+
 
 **支持设备：** PC/2in1
 
@@ -613,6 +656,7 @@ int32_t HMS_SecurityAudit_RemoveAuthEventFilter (const SecurityAudit_AuthClient 
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | client | 客户已创建的阻断类事件客户端。 |
@@ -630,7 +674,8 @@ ohos.permission.kernel.AUTH_AUDIT_EVENT
  
   
 
-#### HMS_SecurityAudit_RemoveFilter()
+### HMS_SecurityAudit_RemoveFilter()
+
 
 **支持设备：** PC/2in1
 
@@ -646,6 +691,7 @@ int32_t HMS_SecurityAudit_RemoveFilter (const SecurityAudit_Client * client, Sec
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | client | 客户已创建的通知类事件客户端。 |
@@ -663,7 +709,8 @@ ohos.permission.QUERY_AUDIT_EVENT
  
   
 
-#### HMS_SecurityAudit_Subscribe()
+### HMS_SecurityAudit_Subscribe()
+
 
 **支持设备：** PC/2in1
 
@@ -679,6 +726,7 @@ int32_t HMS_SecurityAudit_Subscribe (const SecurityAudit_Client * client, const 
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | client | 订阅通知事件的客户端。 |
@@ -696,7 +744,8 @@ ohos.permission.QUERY_AUDIT_EVENT
  
   
 
-#### HMS_SecurityAudit_SubscribeAuthEvent()
+### HMS_SecurityAudit_SubscribeAuthEvent()
+
 
 **支持设备：** PC/2in1
 
@@ -712,6 +761,7 @@ int32_t HMS_SecurityAudit_SubscribeAuthEvent (const SecurityAudit_AuthClient * c
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | client | 客户已创建的阻断类事件客户端。 |
@@ -729,7 +779,8 @@ ohos.permission.kernel.AUTH_AUDIT_EVENT
  
   
 
-#### HMS_SecurityAudit_Unsubscribe()
+### HMS_SecurityAudit_Unsubscribe()
+
 
 **支持设备：** PC/2in1
 
@@ -745,6 +796,7 @@ int32_t HMS_SecurityAudit_Unsubscribe (const SecurityAudit_Client * client, cons
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | client | 取消订阅通知事件的客户端。 |
@@ -762,7 +814,8 @@ ohos.permission.QUERY_AUDIT_EVENT
  
   
 
-#### HMS_SecurityAudit_UnsubscribeAuthEvent()
+### HMS_SecurityAudit_UnsubscribeAuthEvent()
+
 
 **支持设备：** PC/2in1
 
@@ -778,6 +831,7 @@ int32_t HMS_SecurityAudit_UnsubscribeAuthEvent (const SecurityAudit_AuthClient *
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | client | 客户已创建的阻断类事件客户端。 |
@@ -795,7 +849,8 @@ ohos.permission.kernel.AUTH_AUDIT_EVENT
  
   
 
-#### HMS_SecurityAudit_QueryAllProcesses()
+### HMS_SecurityAudit_QueryAllProcesses()
+
 
 **支持设备：** PC/2in1
 
@@ -811,6 +866,7 @@ int32_t HMS_SecurityAudit_QueryAllProcesses(char** result)
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | result | 查询获取到的应用进程信息。 |
@@ -826,7 +882,8 @@ ohos.permission.QUERY_AUDIT_EVENT
  
   
 
-#### HMS_SecurityAudit_QueryProcesses()
+### HMS_SecurityAudit_QueryProcesses()
+
 
 **支持设备：** PC/2in1
 
@@ -842,6 +899,7 @@ int32_t HMS_SecurityAudit_QueryProcesses(uint64_t* pids, uint64_t count, char** 
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | pids | 应用要查询的pid数组名。 |
@@ -859,7 +917,8 @@ ohos.permission.QUERY_AUDIT_EVENT
  
   
 
-#### HMS_SecurityAudit_AcquireCodeSign()
+### HMS_SecurityAudit_AcquireCodeSign()
+
 
 **支持设备：** PC/2in1
 
@@ -877,6 +936,7 @@ int32_t HMS_SecurityAudit_AcquireCodeSign(char* path, char** outOwnedResult)
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | path | 待查询的应用文件路径。 |
@@ -893,7 +953,8 @@ ohos.permission.QUERY_AUDIT_EVENT
  
   
 
-#### HMS_SecurityAudit_AcquireAllClientsInfo()
+### HMS_SecurityAudit_AcquireAllClientsInfo()
+
 
 **支持设备：** PC/2in1
 
@@ -909,6 +970,7 @@ int32_t HMS_SecurityAudit_AcquireAllClientsInfo(char** outOwnedResult)
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | outOwnedResult | 查询获取到的全量通知类客户端信息。 |
@@ -924,7 +986,8 @@ ohos.permission.QUERY_AUDIT_EVENT
  
   
 
-#### HMS_SecurityAudit_CreateAuthClientConfiguration()
+### HMS_SecurityAudit_CreateAuthClientConfiguration()
+
 
 **支持设备：** PC/2in1
 
@@ -940,6 +1003,7 @@ int32_t HMS_SecurityAudit_CreateAuthClientConfiguration(SecurityAudit_AuthClient
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | outOwnedConfiguration | 指向创建的阻断类事件客户端配置对象的指针。 |
@@ -955,7 +1019,8 @@ int32_t HMS_SecurityAudit_CreateAuthClientConfiguration(SecurityAudit_AuthClient
  
   
 
-#### HMS_SecurityAudit_DestroyAuthClientConfiguration()
+### HMS_SecurityAudit_DestroyAuthClientConfiguration()
+
 
 **支持设备：** PC/2in1
 
@@ -971,6 +1036,7 @@ int32_t HMS_SecurityAudit_DestroyAuthClientConfiguration(SecurityAudit_AuthClien
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | configuration | 要销毁的阻断类事件客户端配置对象。 |
@@ -982,7 +1048,8 @@ int32_t HMS_SecurityAudit_DestroyAuthClientConfiguration(SecurityAudit_AuthClien
  
   
 
-#### HMS_SecurityAudit_AuthClientConfiguration_SetTimeoutAuthResult()
+### HMS_SecurityAudit_AuthClientConfiguration_SetTimeoutAuthResult()
+
 
 **支持设备：** PC/2in1
 
@@ -998,6 +1065,7 @@ int32_t HMS_SecurityAudit_AuthClientConfiguration_SetTimeoutAuthResult(SecurityA
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | configuration | 阻断类事件客户端配置对象。 |
@@ -1010,7 +1078,8 @@ int32_t HMS_SecurityAudit_AuthClientConfiguration_SetTimeoutAuthResult(SecurityA
  
   
 
-#### HMS_SecurityAudit_NewAuthClientWithConfiguration()
+### HMS_SecurityAudit_NewAuthClientWithConfiguration()
+
 
 **支持设备：** PC/2in1
 
@@ -1026,6 +1095,7 @@ int32_t HMS_SecurityAudit_NewAuthClientWithConfiguration(SecurityAudit_AuthClien
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | outOwnedClient | 指向新阻断类事件客户端实例的指针。 |
@@ -1043,7 +1113,8 @@ ohos.permission.kernel.AUTH_AUDIT_EVENT
  
   
 
-#### HMS_SecurityAudit_AcquireAllAuthClientsInfo()
+### HMS_SecurityAudit_AcquireAllAuthClientsInfo()
+
 
 **支持设备：** PC/2in1
 
@@ -1059,6 +1130,7 @@ int32_t HMS_SecurityAudit_AcquireAllAuthClientsInfo(char** outOwnedResult)
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | outOwnedResult | 查询获取到的全量阻断类客户端信息。 |

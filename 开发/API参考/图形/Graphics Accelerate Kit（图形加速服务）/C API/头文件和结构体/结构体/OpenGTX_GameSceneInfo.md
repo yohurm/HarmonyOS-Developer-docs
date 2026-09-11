@@ -1,11 +1,12 @@
 # OpenGTX_GameSceneInfo
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_open_g_t_x___game_scene_info
 **支持设备：** Phone | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -19,16 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OpenGTX_SceneID sceneID | 游戏场景类型。 |
@@ -41,13 +45,15 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### description
+### description
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -61,7 +67,8 @@ char* OpenGTX_GameSceneInfo::description
  
   
 
-#### maxFPS
+### maxFPS
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -75,7 +82,8 @@ int32_t OpenGTX_GameSceneInfo::maxFPS
  
   
 
-#### minFPS
+### minFPS
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -89,7 +97,8 @@ int32_t OpenGTX_GameSceneInfo::minFPS
  
   
 
-#### recommendFPS
+### recommendFPS
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -103,7 +112,8 @@ int32_t OpenGTX_GameSceneInfo::recommendFPS
  
   
 
-#### resolutionCurValue
+### resolutionCurValue
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -117,7 +127,8 @@ OpenGTX_ResolutionValue OpenGTX_GameSceneInfo::resolutionCurValue
  
   
 
-#### sceneID
+### sceneID
+
 
 **支持设备：** Phone | Tablet | TV
 

@@ -1,9 +1,9 @@
 # @ohos.app.ability.common (Ability公共模块)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-common
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供Ability Kit中常用公共能力的纯类型定义，包含各类上下文对象、回调接口和数据结构。本模块仅导出类型声明，不包含具体实现逻辑或可执行代码。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { common } from '@kit.AbilityKit';
@@ -22,9 +23,10 @@ import { common } from '@kit.AbilityKit';
 
 
 
-#### UIAbilityContext
+## UIAbilityContext
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type UIAbilityContext = _UIAbilityContext.default
 
@@ -36,6 +38,7 @@ type UIAbilityContext = _UIAbilityContext.default
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _UIAbilityContext.default | UIAbilityContext组件上下文。 |
@@ -43,9 +46,10 @@ type UIAbilityContext = _UIAbilityContext.default
 
 
 
-#### AbilityStageContext
+## AbilityStageContext
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AbilityStageContext = _AbilityStageContext.default
 
@@ -57,6 +61,7 @@ type AbilityStageContext = _AbilityStageContext.default
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _AbilityStageContext.default | AbilityStage组件上下文。 |
@@ -64,9 +69,10 @@ type AbilityStageContext = _AbilityStageContext.default
 
 
 
-#### ApplicationContext
+## ApplicationContext
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ApplicationContext = _ApplicationContext.default
 
@@ -78,6 +84,7 @@ type ApplicationContext = _ApplicationContext.default
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _ApplicationContext.default | 应用上下文。 |
@@ -85,9 +92,10 @@ type ApplicationContext = _ApplicationContext.default
 
 
 
-#### BaseContext
+## BaseContext
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type BaseContext = _BaseContext.default
 
@@ -99,6 +107,7 @@ type BaseContext = _BaseContext.default
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _BaseContext.default | 所有Context的父类。 |
@@ -106,9 +115,10 @@ type BaseContext = _BaseContext.default
 
 
 
-#### Context
+## Context
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Context = _Context.default
 
@@ -120,6 +130,7 @@ type Context = _Context.default
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _Context.default | Stage模型的上下文基类。 |
@@ -127,9 +138,10 @@ type Context = _Context.default
 
 
 
-#### ExtensionContext
+## ExtensionContext
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ExtensionContext = _ExtensionContext.default
 
@@ -141,6 +153,7 @@ type ExtensionContext = _ExtensionContext.default
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _ExtensionContext.default | ExtensionAbility组件上下文。 |
@@ -148,9 +161,10 @@ type ExtensionContext = _ExtensionContext.default
 
 
 
-#### FormExtensionContext
+## FormExtensionContext
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type FormExtensionContext = _FormExtensionContext.default
 
@@ -162,6 +176,7 @@ type FormExtensionContext = _FormExtensionContext.default
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _FormExtensionContext.default | FormExtensionAbility组件上下文。 |
@@ -169,9 +184,10 @@ type FormExtensionContext = _FormExtensionContext.default
 
 
 
-#### VpnExtensionContext11+
+## VpnExtensionContext11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type VpnExtensionContext = _VpnExtensionContext.default
 
@@ -181,6 +197,7 @@ type VpnExtensionContext = _VpnExtensionContext.default
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _VpnExtensionContext.default | VpnExtensionAbility组件上下文。 |
@@ -188,9 +205,10 @@ type VpnExtensionContext = _VpnExtensionContext.default
 
 
 
-#### EventHub
+## EventHub
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type EventHub = _EventHub.default
 
@@ -202,6 +220,7 @@ EventHub是系统提供的基于发布-订阅模式实现的事件通信机制�
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _EventHub.default | 系统提供的基于发布-订阅模式实现的事件通信机制。 |
@@ -209,9 +228,10 @@ EventHub是系统提供的基于发布-订阅模式实现的事件通信机制�
 
 
 
-#### PacMap
+## PacMap
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type PacMap = _PacMap
 
@@ -221,6 +241,7 @@ type PacMap = _PacMap
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _PacMap | 存储基础数据类型的容器。 |
@@ -228,9 +249,10 @@ type PacMap = _PacMap
 
 
 
-#### AbilityResult
+## AbilityResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AbilityResult = _AbilityResult
 
@@ -242,6 +264,7 @@ type AbilityResult = _AbilityResult
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _AbilityResult | 定义Ability被拉起并退出后返回的结果码和数据。 |
@@ -249,9 +272,10 @@ type AbilityResult = _AbilityResult
 
 
 
-#### AbilityStartCallback11+
+## AbilityStartCallback11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AbilityStartCallback = _AbilityStartCallback
 
@@ -263,6 +287,7 @@ type AbilityStartCallback = _AbilityStartCallback
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _AbilityStartCallback | 定义拉起UIExtensionAbility的回调结果。 |
@@ -270,9 +295,10 @@ type AbilityStartCallback = _AbilityStartCallback
 
 
 
-#### ConnectOptions
+## ConnectOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ConnectOptions = _ConnectOptions
 
@@ -282,6 +308,7 @@ type ConnectOptions = _ConnectOptions
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _ConnectOptions | 在连接指定的后台服务时作为入参，用于接收与后台服务的连接状态。 |
@@ -289,9 +316,10 @@ type ConnectOptions = _ConnectOptions
 
 
 
-#### UIExtensionContext10+
+## UIExtensionContext10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type UIExtensionContext = _UIExtensionContext.default
 
@@ -301,6 +329,7 @@ type UIExtensionContext = _UIExtensionContext.default
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _UIExtensionContext.default | UIExtensionAbility组件上下文。 |
@@ -308,9 +337,10 @@ type UIExtensionContext = _UIExtensionContext.default
 
 
 
-#### EmbeddableUIAbilityContext12+
+## EmbeddableUIAbilityContext12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type EmbeddableUIAbilityContext = _EmbeddableUIAbilityContext.default
 
@@ -322,6 +352,7 @@ type EmbeddableUIAbilityContext = _EmbeddableUIAbilityContext.default
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _EmbeddableUIAbilityContext.default | EmbeddableUIAbility组件上下文。 |
@@ -329,7 +360,8 @@ type EmbeddableUIAbilityContext = _EmbeddableUIAbilityContext.default
 
 
 
-#### PhotoEditorExtensionContext12+
+## PhotoEditorExtensionContext12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -341,6 +373,7 @@ type PhotoEditorExtensionContext = _PhotoEditorExtensionContext.default
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _PhotoEditorExtensionContext.default | PhotoEditorExtensionAbility组件上下文。 |
@@ -348,9 +381,10 @@ type PhotoEditorExtensionContext = _PhotoEditorExtensionContext.default
 
 
 
-#### UIServiceProxy14+
+## UIServiceProxy14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type UIServiceProxy = _UIServiceProxy.default
 
@@ -362,6 +396,7 @@ UIServiceProxy提供了与UIServiceExtensionAbility服务端数据通信的能�
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _UIServiceProxy.default | 提供与UIServiceExtensionAbility服务端数据通信的能力。 |
@@ -369,9 +404,10 @@ UIServiceProxy提供了与UIServiceExtensionAbility服务端数据通信的能�
 
 
 
-#### UIServiceExtensionConnectCallback14+
+## UIServiceExtensionConnectCallback14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type UIServiceExtensionConnectCallback = _UIServiceExtensionConnectCallback.default
 
@@ -383,6 +419,7 @@ type UIServiceExtensionConnectCallback = _UIServiceExtensionConnectCallback.defa
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _UIServiceExtensionConnectCallback.default | 提供UIServiceExtensionAbility连接回调数据能力。 |
@@ -390,9 +427,10 @@ type UIServiceExtensionConnectCallback = _UIServiceExtensionConnectCallback.defa
 
 
 
-#### AppServiceExtensionContext20+
+## AppServiceExtensionContext20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AppServiceExtensionContext = _AppServiceExtensionContext.default
 
@@ -402,6 +440,7 @@ type AppServiceExtensionContext = _AppServiceExtensionContext.default
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _AppServiceExtensionContext.default | AppServiceExtensionAbility组件上下文。 |
@@ -409,9 +448,10 @@ type AppServiceExtensionContext = _AppServiceExtensionContext.default
 
 
 
-#### FormEditExtensionContext22+
+## FormEditExtensionContext22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type FormEditExtensionContext = _FormEditExtensionContext.default
 
@@ -423,6 +463,7 @@ type FormEditExtensionContext = _FormEditExtensionContext.default
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _FormEditExtensionContext.default | FormEditExtensionAbility组件上下文。 |
@@ -430,9 +471,10 @@ type FormEditExtensionContext = _FormEditExtensionContext.default
 
 
 
-#### LiveFormExtensionContext22+
+## LiveFormExtensionContext22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type LiveFormExtensionContext = _LiveFormExtensionContext.default
 
@@ -444,6 +486,7 @@ type LiveFormExtensionContext = _LiveFormExtensionContext.default
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _LiveFormExtensionContext.default | LiveFormExtensionAbility组件上下文。 |
@@ -451,9 +494,10 @@ type LiveFormExtensionContext = _LiveFormExtensionContext.default
 
 
 
-#### AgentCard24+
+## AgentCard24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AgentCard = _AgentCard
 
@@ -465,6 +509,7 @@ type AgentCard = _AgentCard
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _AgentCard | Agent(智能体)的"名片"，用于描述Agent的能力和技能。 |
@@ -472,9 +517,10 @@ type AgentCard = _AgentCard
 
 
 
-#### AgentProvider24+
+## AgentProvider24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AgentProvider = _AgentProvider
 
@@ -486,6 +532,7 @@ type AgentProvider = _AgentProvider
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _AgentProvider | Agent的服务提供商。 |
@@ -493,9 +540,10 @@ type AgentProvider = _AgentProvider
 
 
 
-#### AgentCapabilities24+
+## AgentCapabilities24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AgentCapabilities = _AgentCapabilities
 
@@ -507,6 +555,7 @@ type AgentCapabilities = _AgentCapabilities
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _AgentCapabilities | 定义Agent支持的可选能力。 |
@@ -514,9 +563,10 @@ type AgentCapabilities = _AgentCapabilities
 
 
 
-#### AgentSkill24+
+## AgentSkill24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AgentSkill = _AgentSkill
 
@@ -528,6 +578,7 @@ type AgentSkill = _AgentSkill
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _AgentSkill | 表示Agent可以执行的不同能力或功能。 |
@@ -535,9 +586,10 @@ type AgentSkill = _AgentSkill
 
 
 
-#### AgentAppInfo24+
+## AgentAppInfo24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AgentAppInfo = _AgentAppInfo
 
@@ -549,6 +601,7 @@ type AgentAppInfo = _AgentAppInfo
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _AgentAppInfo | Agent所属的应用信息。 |
@@ -556,9 +609,10 @@ type AgentAppInfo = _AgentAppInfo
 
 
 
-#### AgentHostProxy24+
+## AgentHostProxy24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AgentHostProxy = _AgentHostProxy
 
@@ -570,6 +624,7 @@ type AgentHostProxy = _AgentHostProxy
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _AgentHostProxy | 用于从AgentExtensionAbility服务端向客户端发送数据或安全认证请求。 |
@@ -577,9 +632,10 @@ type AgentHostProxy = _AgentHostProxy
 
 
 
-#### AgentExtensionContext24+
+## AgentExtensionContext24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AgentExtensionContext = _AgentExtensionContext
 
@@ -590,6 +646,7 @@ type AgentExtensionContext = _AgentExtensionContext
 **系统能力**：SystemCapability.Ability.AgentRuntime.Core
 
 **模型约束**：此接口仅可在Stage模型下使用。
+
 
 | 类型 | 说明 |
 | --- | --- |

@@ -1,6 +1,6 @@
 # 使用离线Web组件
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-offline-mode
 
@@ -15,7 +15,7 @@ Web组件能够实现在不同窗口的组件树上进行挂载或移除操作�
 
 
 
-#### 整体架构
+## 整体架构
 
 如下图所示，在需要离屏创建Web组件时，定义一个自定义组件以封装Web组件，此Web组件在离线状态下被创建，封装于无状态的[NodeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-nodecontainer)节点中，并与相应的[NodeController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-nodecontroller)组件绑定。Web组件在后台预渲染完毕后，当需要展示时，通过[NodeController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-nodecontroller)将其挂载到ViewTree的[NodeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-nodecontainer)中，即与对应的[NodeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-nodecontainer)组件绑定，即可挂载上树并显示。
 
@@ -25,7 +25,7 @@ Web组件能够实现在不同窗口的组件树上进行挂载或移除操作�
 
 
 
-#### 创建离线Web组件
+## 创建离线Web组件
 
 本示例展示了如何预先创建离线Web组件，并在需要的时候进行挂载和显示。在后续内容中，预启动渲染进程和预渲染Web页面作为性能优化措施，均利用离线Web组件实现。
 
@@ -167,7 +167,7 @@ struct Index {
 
 
 
-#### 预启动渲染进程
+## 预启动渲染进程
 
 在后台预先创建一个Web组件，以启动用于渲染的Web渲染进程，这样可以节省后续Web组件加载时启动Web渲染进程所需的时间。
 
@@ -336,7 +336,7 @@ struct Index2 {
 
 
 
-#### 预渲染Web页面
+## 预渲染Web页面
 
 预渲染Web页面优化方案适用于Web页面启动和跳转场景，例如，进入首页后，跳转到其他子页。建议在高命中率的页面使用该方案。
 
@@ -498,7 +498,7 @@ struct Index {
 
 
 
-#### 复用和释放离线Web组件
+## 复用和释放离线Web组件
 
 通过复用和释放离线Web组件，可以优化内存占用，降低应用因内存占用过高被系统终止的概率。
 
@@ -508,7 +508,7 @@ struct Index {
 
 
 
-#### 复用离线Web组件
+### 复用离线Web组件
 
 应用有多个UI页面都需要显示Web内容时，建议复用离线Web组件，减少组件创建和销毁的性能消耗以及创建多个Web组件的内存占用。
 
@@ -518,7 +518,7 @@ struct Index {
 
 
 
-#### 释放离线Web组件
+### 释放离线Web组件
 
 应用退至后台，或者明确在特定时间段内不再需要使用离线Web组件时，建议释放该组件以减少应用的内存占用。
 
@@ -600,7 +600,7 @@ export const restoreNWebs = (uiContext: UIContext | undefined = undefined) => {
 
 
 
-#### 复用和释放离线Web组件完整示例
+### 复用和释放离线Web组件完整示例
 
 **示例功能说明**
 
@@ -638,13 +638,13 @@ onBackground(): void {
  - 恢复离线Web组件按钮。
  - 显示离线Web组件的数量、状态及URL等详细信息。
 
-      - Home页面为UI主页，演示离线Web组件的创建，预渲染的执行方法和时机：
+            - Home页面为UI主页，演示离线Web组件的创建，预渲染的执行方法和时机：
 
   
 页面在创建时会创建3个离线组件，其中一个加载指定网页并进行预渲染，另外两个为空白离线Web组件。
  - 页面提供导航按钮用于跳转至Page1或Page2页面。
 
-      - Page1页面同时显示了两个Web页面，每个页面使用了一个离线Web组件，加载并显示相同URL的内容。该页面用于演示预渲染与不预渲染的效果对比，以及如何复用离线组件。
+            - Page1页面同时显示了两个Web页面，每个页面使用了一个离线Web组件，加载并显示相同URL的内容。该页面用于演示预渲染与不预渲染的效果对比，以及如何复用离线组件。
 
   
 第一个离线Web组件执行了预渲染，可以直接显示页面内容，比第二个离线Web组件更快。
@@ -652,9 +652,9 @@ onBackground(): void {
 
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/Gp2dhrpcSQyJbDoxc3htCg/zh-cn_image_0000002674472916.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095738Z&HW-CC-Expire=86400&HW-CC-Sign=D217526C49FB6D321681FC0D17643C139D24626026EFCFCBE141E7893177D113)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/wP_TarzYSy-FuIxPfMpJQA/zh-cn_image_0000002717770890.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073148Z&HW-CC-Expire=86400&HW-CC-Sign=C4990CDFB5EA4E996598A976F7C1AF63627933270B0490BCB3855BE5F1EE767A)
 
-      - Page2页面显示单个Web页面，使用复用空闲离线Web组件的方式加载指定url。
+            - Page2页面显示单个Web页面，使用复用空闲离线Web组件的方式加载指定url。
 
   
 Page2页面可以通过传入参数加载指定url，并允许用户在加载后跳转到其他url。
@@ -664,7 +664,7 @@ Page2页面可以通过传入参数加载指定url，并允许用户在加载后
 
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/QfdNG9FnQaOwdUyFWySIEA/zh-cn_image_0000002704392883.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095738Z&HW-CC-Expire=86400&HW-CC-Sign=0AAFFE702BE014AE09266352AFF3408B094B1E9EB3A37095F8EEC915BEA4EEF9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/xPc412cXSKyck5VZ5y2BpQ/zh-cn_image_0000002717610956.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073148Z&HW-CC-Expire=86400&HW-CC-Sign=0233AD52A17D443343FF09926DB99A9C4B8ED7D5A09EEAB93AA172F66BAF57A3)
 
 
 **完整示例**
@@ -673,7 +673,7 @@ Page2页面可以通过传入参数加载指定url，并允许用户在加载后
 
 
 
-#### 常见白屏问题排查
+## 常见白屏问题排查
 
 1.排查应用上网权限配置。
 

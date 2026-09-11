@@ -1,9 +1,9 @@
 # @ohos.prompt (弹窗)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-prompt
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 创建并显示文本提示框、对话框和操作菜单。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import prompt from '@ohos.prompt'
@@ -22,9 +23,10 @@ import prompt from '@ohos.prompt'
  
   
 
-#### prompt.showToast
+## prompt.showToast
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showToast(options: ShowToastOptions): void
  
@@ -34,6 +36,7 @@ showToast(options: ShowToastOptions): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ShowToastOptions | 是 | 文本弹窗选项。 |
@@ -55,14 +58,16 @@ prompt.showToast({
  
   
 
-#### ShowToastOptions
+## ShowToastOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文本提示框的选项。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full。
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | message | string | 是 | 显示的文本信息。 |
@@ -72,9 +77,10 @@ prompt.showToast({
  
   
 
-#### prompt.showDialog
+## prompt.showDialog
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showDialog(options: ShowDialogOptions): Promise&lt;ShowDialogSuccessResponse&gt;
  
@@ -84,6 +90,7 @@ showDialog(options: ShowDialogOptions): Promise&lt;ShowDialogSuccessResponse&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ShowDialogOptions | 是 | 对话框选项。 |
@@ -91,6 +98,7 @@ showDialog(options: ShowDialogOptions): Promise&lt;ShowDialogSuccessResponse&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;ShowDialogSuccessResponse&gt; | 对话框响应结果。 |
@@ -128,9 +136,10 @@ prompt.showDialog({
  
   
 
-#### prompt.showDialog
+## prompt.showDialog
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showDialog(options: ShowDialogOptions, callback: AsyncCallback&lt;ShowDialogSuccessResponse&gt;):void
  
@@ -140,6 +149,7 @@ showDialog(options: ShowDialogOptions, callback: AsyncCallback&lt;ShowDialogSucc
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ShowDialogOptions | 是 | 对话框选项。 |
@@ -178,14 +188,16 @@ prompt.showDialog({
  
   
 
-#### ShowDialogOptions
+## ShowDialogOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 对话框的选项。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | title | string | 否 | 标题文本。 |
@@ -195,14 +207,16 @@ prompt.showDialog({
  
   
 
-#### ShowDialogSuccessResponse
+## ShowDialogSuccessResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 对话框的响应结果。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 选中按钮在buttons数组中的索引。 |
@@ -210,9 +224,10 @@ prompt.showDialog({
  
   
 
-#### prompt.showActionMenu
+## prompt.showActionMenu
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showActionMenu(options: ActionMenuOptions, callback: AsyncCallback&lt;ActionMenuSuccessResponse&gt;):void
  
@@ -222,6 +237,7 @@ showActionMenu(options: ActionMenuOptions, callback: AsyncCallback&lt;ActionMenu
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ActionMenuOptions | 是 | 操作菜单选项。 |
@@ -259,9 +275,10 @@ prompt.showActionMenu({
  
   
 
-#### prompt.showActionMenu
+## prompt.showActionMenu
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showActionMenu(options: ActionMenuOptions): Promise&lt;ActionMenuSuccessResponse&gt;
  
@@ -271,6 +288,7 @@ showActionMenu(options: ActionMenuOptions): Promise&lt;ActionMenuSuccessResponse
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ActionMenuOptions | 是 | 操作菜单选项。 |
@@ -278,6 +296,7 @@ showActionMenu(options: ActionMenuOptions): Promise&lt;ActionMenuSuccessResponse
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;ActionMenuSuccessResponse&gt; | 菜单响应结果。 |
@@ -309,19 +328,21 @@ prompt.showActionMenu({
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/48t-DZCMSpudFQmmsemY4Q/zh-cn_image_0000002686087709.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071450Z&HW-CC-Expire=86400&HW-CC-Sign=68D65448EB0281364B6B616075CCCB9CD194366E8A63B9926F41C00FB1492B1F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/4RnPMSTtRsOF_HAjwmCDDw/zh-cn_image_0000002747292367.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072931Z&HW-CC-Expire=86400&HW-CC-Sign=E266127195ECF7815609347CFEE65CBBC4302CF2F360F1F3CA611A0AC8DC59CF)
 
  
   
 
-#### ActionMenuOptions
+## ActionMenuOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 操作菜单的选项。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full。
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | title | string | 否 | 标题文本。 |
@@ -330,14 +351,16 @@ prompt.showActionMenu({
  
   
 
-#### ActionMenuSuccessResponse
+## ActionMenuSuccessResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 操作菜单的响应结果。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 选中按钮在buttons数组中的索引，从0开始。 |
@@ -345,14 +368,16 @@ prompt.showActionMenu({
  
   
 
-#### Button
+## Button
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 菜单中的菜单项按钮。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | text | string | 是 | 按钮文本内容。 |

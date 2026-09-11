@@ -1,17 +1,21 @@
 # @ohos.wifiext (WLAN扩展接口)
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-wifiext
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-该模块主要提供WLAN扩展接口，供非通用类型产品使用。
+该模块主要提供Wi-Fi扩展接口，供非通用类型产品使用。
  
 > [!NOTE]
-> 本模块首批接口从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 该文档中的接口只供非通用类型产品使用，如路由器等，对于常规类型产品，不应该使用这些接口。 从API Version 9开始，该接口不再维护，推荐使用 @ohos.wifiManagerExt（WLAN扩展接口） 等相关接口。
+> 本模块首批接口从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 该文档中的接口只供非通用类型产品使用，如路由器等，对于常规类型产品，不应该使用这些接口。 从API version 9开始，该接口不再维护，推荐使用 @ohos.wifiManagerExt (WLAN扩展接口) 等相关接口。
 
   
 
-#### 导入模块
+## 导入模块
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import wifiext from '@ohos.wifiext';
@@ -19,11 +23,14 @@ import wifiext from '@ohos.wifiext';
  
   
 
-#### wifiext.enableHotspot(deprecated)
+## wifiext.enableHotspot(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableHotspot(): boolean;
  
-使能WLAN热点。
+启用Wi-Fi热点。
  
 > [!NOTE]
 > 从API version 8开始支持，从API version 9开始废弃。建议使用 wifiManagerExt.enableHotspot 替代。
@@ -35,6 +42,7 @@ enableHotspot(): boolean;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 操作结果， true: 成功， false: 失败。 |
@@ -42,11 +50,14 @@ enableHotspot(): boolean;
  
   
 
-#### wifiext.disableHotspot(deprecated)
+## wifiext.disableHotspot(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 disableHotspot(): boolean;
  
-去使能WLAN热点。
+禁用Wi-Fi热点。
  
 > [!NOTE]
 > 从API version 8开始支持，从API version 9开始废弃。建议使用 wifiManagerExt.disableHotspot 替代。
@@ -58,6 +69,7 @@ disableHotspot(): boolean;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 操作结果， true: 成功， false: 失败。 |
@@ -65,7 +77,10 @@ disableHotspot(): boolean;
  
   
 
-#### wifiext.getSupportedPowerModel(deprecated)
+## wifiext.getSupportedPowerModel(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSupportedPowerModel(): Promise<Array&lt;PowerModel&gt;>
  
@@ -81,6 +96,7 @@ getSupportedPowerModel(): Promise<Array&lt;PowerModel&gt;>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;PowerModel&gt;> | Promise对象。表示功率模式。 |
@@ -88,12 +104,16 @@ getSupportedPowerModel(): Promise<Array&lt;PowerModel&gt;>
  
   
 
-#### PowerModel
+## PowerModel
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示功率模式的枚举。
  
 **系统能力：** SystemCapability.Communication.WiFi.AP.Extension
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SLEEPING | 0 | 睡眠模式。 |
@@ -103,11 +123,18 @@ getSupportedPowerModel(): Promise<Array&lt;PowerModel&gt;>
  
   
 
-#### wifiext.getSupportedPowerModel
+## wifiext.getSupportedPowerModel(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSupportedPowerModel(callback: AsyncCallback<Array&lt;PowerModel&gt;>): void
  
 获取支持的功率模式。使用callback异步回调。
+ 
+> [!NOTE]
+> 从API version 8开始支持，从API version 9开始废弃。建议使用 wifiManagerExt.getSupportedPowerMode 替代。
+
  
 **需要权限：** ohos.permission.GET_WIFI_INFO
  
@@ -115,6 +142,7 @@ getSupportedPowerModel(callback: AsyncCallback<Array&lt;PowerModel&gt;>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<Array&lt;PowerModel&gt;> | 是 | 回调函数。当操作成功时，err为0，data表示支持的功率模式。如果err为非0，表示处理出现错误。 |
@@ -122,14 +150,17 @@ getSupportedPowerModel(callback: AsyncCallback<Array&lt;PowerModel&gt;>): void
  
   
 
-#### wifiext.getPowerModel(deprecated)
+## wifiext.getPowerModel(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPowerModel(): Promise&lt;PowerModel&gt;
  
 获取功率模式，使用Promise异步回调。
  
 > [!NOTE]
-> 从API version 8开始支持，从API version 9开始废弃。建议使用 wifiManagerExt.getSupportedPowerModel 替代。
+> 从API version 8开始支持，从API version 9开始废弃。建议使用 wifiManagerExt.getPowerMode 替代。
 
  
 **需要权限：** ohos.permission.GET_WIFI_INFO
@@ -138,6 +169,7 @@ getPowerModel(): Promise&lt;PowerModel&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;PowerModel&gt; | Promise对象。表示功率模式。 |
@@ -145,14 +177,17 @@ getPowerModel(): Promise&lt;PowerModel&gt;
  
   
 
-#### wifiext.getPowerModel(deprecated)
+## wifiext.getPowerModel(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPowerModel(callback: AsyncCallback&lt;PowerModel&gt;): void
  
 获取功率模式。使用callback异步回调。
  
 > [!NOTE]
-> 从API version 8开始支持，从API version 9开始废弃。建议使用 wifiManagerExt.getSupportedPowerModel 替代。
+> 从API version 8开始支持，从API version 9开始废弃。建议使用 wifiManagerExt.getPowerMode 替代。
 
  
 **需要权限：** ohos.permission.GET_WIFI_INFO
@@ -161,6 +196,7 @@ getPowerModel(callback: AsyncCallback&lt;PowerModel&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;PowerModel&gt; | 是 | 回调函数。当操作成功时，err为0，data表示功率模式。如果err为非0，表示处理出现错误。 |
@@ -168,11 +204,18 @@ getPowerModel(callback: AsyncCallback&lt;PowerModel&gt;): void
  
   
 
-#### wifiext.setPowerModel
+## wifiext.setPowerModel(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setPowerModel(model: PowerModel) : boolean;
  
- 设置功率模式。
+设置功率模式。
+ 
+> [!NOTE]
+> 从API version 8开始支持，从API version 9开始废弃。建议使用 wifiManagerExt.setPowerMode 替代。
+
  
 **需要权限：** ohos.permission.MANAGE_WIFI_HOTSPOT_EXT
  
@@ -180,6 +223,7 @@ setPowerModel(model: PowerModel) : boolean;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | model | PowerModel | 是 | 功率模式。 |
@@ -187,6 +231,7 @@ setPowerModel(model: PowerModel) : boolean;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 操作结果， true: 成功， false: 失败。 |

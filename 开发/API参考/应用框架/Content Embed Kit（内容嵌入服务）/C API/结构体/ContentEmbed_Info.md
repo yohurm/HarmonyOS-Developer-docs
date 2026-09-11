@@ -1,6 +1,6 @@
 # ContentEmbed_Info
 
-更新时间：2026-05-26 06:48:54
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-contentembed-contentembed-info
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -10,7 +10,8 @@ typedef struct ContentEmbed_Info ContentEmbed_Info
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 

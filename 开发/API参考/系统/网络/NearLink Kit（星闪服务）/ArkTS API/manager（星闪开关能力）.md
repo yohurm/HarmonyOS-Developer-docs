@@ -1,18 +1,19 @@
 # manager（星闪开关能力）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-04 10:41:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-manager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供了管理星闪基础能力，包括获取设备信息、订阅状态变化事件等。
  
 **起始版本：** 5.0.1(13)
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { manager } from '@kit.NearLinkKit';
@@ -20,9 +21,10 @@ import { manager } from '@kit.NearLinkKit';
  
   
 
-#### PairingState
+## PairingState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type PairingState = constant.PairingState
  
@@ -34,6 +36,7 @@ type PairingState = constant.PairingState
  
 **起始版本：** 5.0.1(13)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | constant.PairingState | 和远端设备的配对状态。 |
@@ -41,9 +44,10 @@ type PairingState = constant.PairingState
  
   
 
-#### ConnectionState
+## ConnectionState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ConnectionState = constant.ConnectionState
  
@@ -55,6 +59,7 @@ type ConnectionState = constant.ConnectionState
  
 **起始版本：** 5.0.1(13)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | constant.ConnectionState | 和远端设备的连接状态。 |
@@ -62,9 +67,10 @@ type ConnectionState = constant.ConnectionState
  
   
 
-#### AcbState
+## AcbState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AcbState = constant.AcbState
  
@@ -76,6 +82,7 @@ type AcbState = constant.AcbState
  
 **起始版本：** 5.1.0(18)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | constant.AcbState | 和远端设备的逻辑链路连接状态。 |
@@ -83,9 +90,10 @@ type AcbState = constant.AcbState
  
   
 
-#### getState
+## getState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getState(): NearlinkState
  
@@ -99,6 +107,7 @@ getState(): NearlinkState
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | NearlinkState | 表示星闪开关状态。 |
@@ -108,6 +117,7 @@ getState(): NearlinkState
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. |
@@ -130,9 +140,10 @@ try {
  
   
 
-#### isNearLinkSupported
+## isNearLinkSupported
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isNearLinkSupported(): boolean
  
@@ -146,9 +157,10 @@ isNearLinkSupported(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 返回true：设备支持星闪。返回false：设备不支持星闪。 |
+| boolean | true表示设备支持星闪。false表示设备不支持星闪。 |
  
  
 **示例：**
@@ -171,9 +183,10 @@ try {
  
   
 
-#### getLocalName
+## getLocalName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLocalName(): string
  
@@ -189,6 +202,7 @@ getLocalName(): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 表示星闪设备本地名称。最大长度为30。 |
@@ -198,6 +212,7 @@ getLocalName(): string
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -222,9 +237,10 @@ try {
  
   
 
-#### getPairedDevices
+## getPairedDevices
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPairedDevices(): Array&lt;string&gt;
  
@@ -240,6 +256,7 @@ getPairedDevices(): Array&lt;string&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;string&gt; | 配对设备地址的列表。 |
@@ -249,6 +266,7 @@ getPairedDevices(): Array&lt;string&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -277,9 +295,10 @@ try {
  
   
 
-#### on( 'stateChange')
+## on( 'stateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'stateChange', callback: Callback&lt;NearlinkState&gt;): void
  
@@ -293,6 +312,7 @@ on(type: 'stateChange', callback: Callback&lt;NearlinkState&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'stateChange'，表示星闪开关状态变化事件。 当星闪被开启或关闭时，可触发该事件。 |
@@ -303,6 +323,7 @@ on(type: 'stateChange', callback: Callback&lt;NearlinkState&gt;): void
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameter. |
@@ -336,9 +357,10 @@ try {
  
   
 
-#### off( 'stateChange')
+## off( 'stateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'stateChange', callback?: Callback&lt;NearlinkState&gt;): void
  
@@ -352,6 +374,7 @@ off(type: 'stateChange', callback?: Callback&lt;NearlinkState&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'stateChange'，表示星闪开关状态变化事件。 |
@@ -362,6 +385,7 @@ off(type: 'stateChange', callback?: Callback&lt;NearlinkState&gt;): void
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid parameter. |
@@ -384,13 +408,14 @@ try {
  
   
 
-#### on( 'pairingStateChange')
+## on( 'pairingStateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'pairingStateChange', callback: Callback&lt;PairingStateParam&gt;): void
  
-订阅配对请求事件。使用callback异步回调。
+订阅配对状态变化事件。。使用callback异步回调。
  
 **模型约束：** 此接口仅可在Stage模型下使用。
  
@@ -402,9 +427,10 @@ on(type: 'pairingStateChange', callback: Callback&lt;PairingStateParam&gt;): voi
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型，支持的事件为'pairingStateChange'，表示配对请求事件。 当调用remoteDevice.startPairing发起主动配对，或者本机设备收到其他设备的配对请求时，触发该事件。 |
+| type | string | 是 | 事件回调类型，支持的事件为'pairingStateChange'，表示配对状态变化事件。 当调用remoteDevice.startPairing发起主动配对，或者本机设备收到其他设备的配对请求时，触发该事件。 |
 | callback | Callback&lt;PairingStateParam&gt; | 是 | 回调函数，返回订阅的配对状态变化结果。 |
  
  
@@ -412,6 +438,7 @@ on(type: 'pairingStateChange', callback: Callback&lt;PairingStateParam&gt;): voi
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -427,7 +454,7 @@ import { manager } from '@kit.NearLinkKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 let onPairingStateEvent:(data: manager.PairingStateParam) => void = (data: manager.PairingStateParam) => {
-  console.info('onPairStateChange addr: ' + data.address + 'state:' + data.state);
+  console.info('onPairStateChange addr: ' + data.address + ', state: ' + data.state);
 };
 try {
   manager.on('pairingStateChange', onPairingStateEvent);
@@ -438,13 +465,14 @@ try {
  
   
 
-#### off( 'pairingStateChange')
+## off( 'pairingStateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'pairingStateChange', callback?: Callback&lt;PairingStateParam&gt;): void
  
-取消订阅配对请求事件。使用callback异步回调。
+取消订阅配对状态变化事件。使用callback异步回调。
  
 **模型约束：** 此接口仅可在Stage模型下使用。
  
@@ -456,9 +484,10 @@ off(type: 'pairingStateChange', callback?: Callback&lt;PairingStateParam&gt;): v
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型，支持的事件为'pairingStateChange'，表示配对请求事件。 |
+| type | string | 是 | 事件回调类型，支持的事件为'pairingStateChange'，表示配对状态变化事件。 |
 | callback | Callback&lt;PairingStateParam&gt; | 否 | 回调函数，返回订阅的配对状态变化结果。 填写该参数则取消当前callback订阅。不填写该参数则取消该type对应的所有回调。 |
  
  
@@ -466,6 +495,7 @@ off(type: 'pairingStateChange', callback?: Callback&lt;PairingStateParam&gt;): v
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -489,9 +519,10 @@ try {
  
   
 
-#### on( 'connectionStateChange')
+## on( 'connectionStateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'connectionStateChange', callback: Callback&lt;ConnectionStateParam&gt;): void
  
@@ -507,6 +538,7 @@ on(type: 'connectionStateChange', callback: Callback&lt;ConnectionStateParam&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'connectionStateChange'，表示连接状态变化事件。 和远端设备之间的连接状态发生变化时，触发该事件。 |
@@ -517,6 +549,7 @@ on(type: 'connectionStateChange', callback: Callback&lt;ConnectionStateParam&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -543,9 +576,10 @@ try {
  
   
 
-#### off( 'connectionStateChange')
+## off( 'connectionStateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'connectionStateChange', callback?: Callback&lt;ConnectionStateParam&gt;): void
  
@@ -561,6 +595,7 @@ off(type: 'connectionStateChange', callback?: Callback&lt;ConnectionStateParam&g
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'connectionStateChange'，表示连接状态变化事件。 |
@@ -571,6 +606,7 @@ off(type: 'connectionStateChange', callback?: Callback&lt;ConnectionStateParam&g
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -594,9 +630,10 @@ try {
  
   
 
-#### on('acbStateChange')
+## on('acbStateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'acbStateChange', callback: Callback&lt;AcbStateParam&gt;): void
  
@@ -612,6 +649,7 @@ on(type: 'acbStateChange', callback: Callback&lt;AcbStateParam&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'acbStateChange'，表示逻辑链路连接状态变化事件。 和远端设备之间的逻辑链路连接状态发生变化时，触发该事件。 |
@@ -622,6 +660,7 @@ on(type: 'acbStateChange', callback: Callback&lt;AcbStateParam&gt;): void
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -648,9 +687,10 @@ try {
  
   
 
-#### off( 'acbStateChange')
+## off( 'acbStateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'acbStateChange', callback?: Callback&lt;AcbStateParam&gt;): void
  
@@ -666,6 +706,7 @@ off(type: 'acbStateChange', callback?: Callback&lt;AcbStateParam&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'acbStateChange'，表示逻辑链路连接状态变化事件。 |
@@ -676,6 +717,7 @@ off(type: 'acbStateChange', callback?: Callback&lt;AcbStateParam&gt;): void
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-nearlink)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
@@ -699,9 +741,10 @@ try {
  
   
 
-#### PairingStateParam
+## PairingStateParam
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 订阅的配对状态变化结果。
  
@@ -711,6 +754,7 @@ try {
  
 **起始版本：** 5.0.1(13)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | address | string | 否 | 否 | 设备地址，表示和该设备的配对状态发生变化。地址格式参考：11:22:33:AA:BB:FF。 |
@@ -722,9 +766,10 @@ try {
  
   
 
-#### PairingRequestParam
+## PairingRequestParam
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示订阅的配对请求事件上报结果。
  
@@ -734,6 +779,7 @@ try {
  
 **起始版本：** 5.0.1(13)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | address | string | 否 | 否 | 设备地址，表示收到该设备的配对请求上报。地址格式参考：11:22:33:AA:BB:FF。 |
@@ -743,9 +789,10 @@ try {
  
   
 
-#### ConnectionStateParam
+## ConnectionStateParam
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 订阅的连接状态变化事件上报结果。
  
@@ -755,6 +802,7 @@ try {
  
 **起始版本：** 5.0.1(13)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | address | string | 否 | 否 | 设备地址，表示和该设备的连接状态发生变化。地址格式参考：11:22:33:AA:BB:FF。 |
@@ -766,9 +814,10 @@ try {
  
   
 
-#### NearlinkState
+## NearlinkState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 星闪的开关状态，为枚举值。
  
@@ -778,6 +827,7 @@ try {
  
 **起始版本：** 5.0.1(13)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | STATE_TURNING_ON | 0 | 表示星闪正在打开。 |
@@ -788,9 +838,10 @@ try {
  
   
 
-#### PairingReason
+## PairingReason
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示星闪配对状态变化结果的原因值，为枚举值。
  
@@ -800,6 +851,7 @@ try {
  
 **起始版本：** 5.0.1(13)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | PAIRING_REASON_SUCCESS | 0 | 表示配对成功。 |
@@ -812,9 +864,10 @@ try {
  
   
 
-#### PairingType
+## PairingType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 星闪配对类型，为枚举值。
  
@@ -824,6 +877,7 @@ try {
  
 **起始版本：** 5.0.1(13)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NO_PASSKEY_CONFIRMATION | 0 | 表示不需要passkey的配对方式，用户无需检查配对码。 |
@@ -833,9 +887,10 @@ try {
  
   
 
-#### ConnectionReason
+## ConnectionReason
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 星闪连接状态变化结果的原因值。
  
@@ -845,6 +900,7 @@ try {
  
 **起始版本：** 5.0.1(13)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CONNECTION_SUCCESS | 0 | 表示连接成功。 |
@@ -853,9 +909,10 @@ try {
  
   
 
-#### AcbStateParam
+## AcbStateParam
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 订阅的逻辑链路连接状态变化事件上报结果。
  
@@ -865,6 +922,7 @@ try {
  
 **起始版本：** 5.1.0(18)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | address | string | 否 | 否 | 设备地址，表示和该设备的逻辑链路连接状态发生变化。地址格式参考：11:22:33:AA:BB:FF。 |

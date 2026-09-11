@@ -1,11 +1,12 @@
 # opengtx_base.h
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/opengtx__base_8h
 **支持设备：** Phone | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### 结构体
+### 结构体
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | struct OpenGTX_ConfigDescription | 此结构体描述OpenGTX属性配置。 |
@@ -46,10 +50,12 @@
  
   
 
-#### 类型定义
+### 类型定义
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | typedef enum OpenGTX_ErrorCode OpenGTX_ErrorCode | 此枚举描述OpenGTX接口调用错误码。 |
@@ -72,10 +78,12 @@
  
   
 
-#### 枚举
+### 枚举
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OpenGTX_ErrorCode { OPENGTX_SUCCESS = 0, OPENGTX_INVALID_PARAMETER = 401, OPENGTX_CONTEXT_NOT_CONFIG = 1009502001, OPENGTX_CONTEXT_NOT_ACTIVE = 1009502002 } | 此枚举描述OpenGTX接口调用错误码。 |
@@ -89,10 +97,12 @@
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OpenGTX_Context* HMS_OpenGTX_CreateContext(OpenGTX_DeviceInfoCallback deviceInfoCallback) | 创建OpenGTX上下文实例，每次调用会新建OpenGTX_Context对象，并返回指向OpenGTX_Context对象的指针。 |

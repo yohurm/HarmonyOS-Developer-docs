@@ -1,10 +1,10 @@
 # DumpAccChkPoint
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-08-18 12:49:55
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-commissioning-interfaces-dumpaccch
 
-#### 函数功能
+## 函数功能
 
 基于算子工程开发的算子，可以使用该接口Dump指定Tensor的内容。同时支持打印自定义的附加信息（仅支持uint32_t数据类型的信息），比如打印当前行号等。区别于[DumpTensor](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-commissioning-interfaces-dumptensor)，使用该接口可以支持指定偏移位置的Tensor打印。
  
@@ -21,7 +21,7 @@ AscendC::DumpAccChkPoint(srcLocal, 5, 32, dataLen);
 Dump时，每个block核的dump信息前会增加对应信息头DumpHead（32字节大小），用于记录核号和资源使用信息。每次Dump的Tensor数据前也会添加信息头DumpTensorHead（32字节大小），用于记录Tensor的相关信息。如下图所示，展示了多核打印场景下的打印信息结构。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/FMfDBRwfQ7yvO3huirPCyA/zh-cn_image_0000002659221275.png?HW-CC-KV=V1&HW-CC-Date=20260701T015308Z&HW-CC-Expire=86400&HW-CC-Sign=180B0E9205C148265232C31D0D454C29E215CC4C01DA2C06F94BC6E69C2D2DF9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/04zQ4_M1RrS_DCVKDECnaw/zh-cn_image_0000002747292155.png?HW-CC-KV=V1&HW-CC-Date=20260911T072324Z&HW-CC-Expire=86400&HW-CC-Sign=C67C516837117A4D5532C1F1E61E1A452774B1F3E11DEF5B111380C1720836AD)
 
  
 **DumpHead的具体信息如下。**
@@ -58,7 +58,7 @@ DumpTensor: desc=5, addr=0, data_type=DT_FLOAT16, position=UB
  
   
 
-#### 函数原型
+## 函数原型
 
 ```text
 void DumpAccChkPoint(const GlobalTensor<T>& tensor, uint32_t index, uint32_t countOff, uint32_t dumpSize)
@@ -67,8 +67,9 @@ void DumpAccChkPoint(const LocalTensor<T>& tensor, uint32_t index, uint32_t coun
  
   
 
-#### 参数说明
+## 参数说明
  
+
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
 | tensor | 输入 | 需要dump的Tensor。 待dump的tensor位于Unified Buffer/L1 Buffer/L0C Buffer时使用LocalTensor类型的tensor参数输入。 待dump的tensor位于Global Memory时使用GlobalTensor类型的tensor参数输入。 |
@@ -79,21 +80,23 @@ void DumpAccChkPoint(const LocalTensor<T>& tensor, uint32_t index, uint32_t coun
  
   
 
-#### 返回值
+## 返回值
 
 无
  
   
 
-#### 支持的型号
+## 支持的型号
 
 Kirin9020系列处理器
+ 
+Kirin9030系列处理器
  
 KirinX90系列处理器
  
   
 
-#### 约束说明
+## 约束说明
 
 - **该功能仅在如下场景支持：** 通过[工程化算子开发](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-overview-of-engineering-operator)方式调用算子。
 - 当前仅支持打印存储位置为Unified Buffer/L1 Buffer/L0C Buffer/Global Memory的Tensor信息。
@@ -105,7 +108,7 @@ KirinX90系列处理器
  
   
 
-#### 调用示例
+## 调用示例
 
 ```text
 AscendC::DumpAccChkPoint(srcLocal, 7, 32 , 128);

@@ -1,15 +1,16 @@
 # JS卡片开发指导（Stage模型）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-ui-widget-development
 
 Stage模型是从API version 9开始支持，目前主推且会长期演进的模型。该模型采用面向对象的方式，将应用组件以类接口的形式开放给开发者，可以进行派生，利于扩展能力。
 
 
-#### 接口说明
+## 接口说明
 
 FormExtensionAbility类拥有如下API接口，具体的API介绍详见[@ohos.app.form.FormExtensionAbility (FormExtensionAbility)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-form-formextensionability)。
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -24,6 +25,7 @@ FormExtensionAbility类拥有如下API接口，具体的API介绍详见[@ohos.ap
 
 formProvider类部分API接口如下，具体的API介绍详见[@ohos.app.form.formProvider (formProvider)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-form-formprovider)。
 
+
 | 接口名 | 描述 |
 | --- | --- |
 | setFormNextRefreshTime(formId: string, minute: number, callback: AsyncCallback&lt;void&gt;): void | 设置指定卡片的下一次刷新时间，使用callback异步回调。 |
@@ -34,6 +36,7 @@ formProvider类部分API接口如下，具体的API介绍详见[@ohos.app.form.f
 
 formBindingData类部分API接口如下，具体的API介绍详见[@ohos.app.form.formBindingData (卡片数据绑定类)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-form-formbindingdata)。
 
+
 | 接口名 | 描述 |
 | --- | --- |
 | createFormBindingData(obj?: Object \| string): FormBindingData | 创建一个FormBindingData对象。 |
@@ -41,7 +44,7 @@ formBindingData类部分API接口如下，具体的API介绍详见[@ohos.app.for
 
 
 
-#### 开发步骤
+## 开发步骤
 
 Stage卡片开发，即基于[Stage模型](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/stage-model-development-overview)的卡片提供方开发，主要涉及如下关键步骤：
 
@@ -55,7 +58,7 @@ Stage卡片开发，即基于[Stage模型](https://developer.huawei.com/consumer
 
 
 
-#### 创建卡片FormExtensionAbility
+### 创建卡片FormExtensionAbility
 
 创建Stage模型的卡片，需实现FormExtensionAbility生命周期接口。先参考[DevEco Studio服务卡片开发指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-service-widget)生成服务卡片模板。
 1. 在JsCardFormAbility.ets中，导入相关模块。
@@ -172,7 +175,7 @@ export default class JsCardFormAbility extends FormExtensionAbility {
 
 
 
-#### 配置卡片配置文件
+### 配置卡片配置文件
 1. 卡片需要在[module.json5配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)中的extensionAbilities标签下，配置ExtensionAbility相关信息。FormExtensionAbility需要填写metadata元信息标签，其中键名称为固定字符串"ohos.extension.form"，资源为卡片的具体配置信息的索引。
 
   配置示例如下：
@@ -206,20 +209,35 @@ export default class JsCardFormAbility extends FormExtensionAbility {
   **表1** 卡片profile配置文件
 
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
+
 | --- | --- | --- | --- |
+
 | name | 表示卡片的类名，字符串最大长度为127字节。 | 字符串 | 否 |
+
 | description | 表示卡片的描述。取值可以是描述性内容，也可以是对描述性内容的资源索引，以支持多语言。字符串最大长度为255字节。 | 字符串 | 可缺省，缺省为空。 |
+
 | src | 表示卡片对应的UI代码的完整路径。 | 字符串 | 否 |
+
 | window | 用于定义与显示窗口相关的配置。 | 对象 | 可缺省，缺省值参考window标签表格。 |
+
 | isDefault | 表示该卡片是否为默认卡片，每个UIAbility有且只有一个默认卡片。 - true：默认卡片。 - false：非默认卡片。 | 布尔值 | 否 |
+
 | colorMode(deprecated) | 表示卡片的颜色模式，取值范围如下： - auto：跟随系统的颜色模式值选取主题。 - dark：深色主题。 - light：浅色主题。 说明： 1. 从API version 12开始支持该配置项，从API version 20开始废弃该配置项，卡片主题样式统一跟随系统的颜色模式。 | 字符串 | 可缺省，缺省值为“auto”。 |
+
 | supportDimensions | 表示卡片支持的外观规格，取值范围： - 1 * 1：表示1行1列的一宫格。 - 1 * 2：表示1行2列的二宫格。 - 2 * 2：表示2行2列的四宫格。 - 2 * 4：表示2行4列的八宫格。 - 2 * 3：表示2行3列的六宫格。 - 3 * 3：表示3行3列的九宫格。 - 4 * 4：表示4行4列的十六宫格。 - 6 * 4：表示6行4列的二十四宫格。 说明： 2 * 3和 3 * 3仅支持手表设备， 1 * 1只支持在锁屏上使用。 | 字符串数组 | 否 |
+
 | defaultDimension | 表示卡片的默认外观规格，取值必须在该卡片supportDimensions配置的列表中。 | 字符串 | 否 |
+
 | updateEnabled | 表示卡片是否支持周期性刷新，取值范围： - true：表示支持周期性刷新，可以在定时刷新（updateDuration）和定点刷新（scheduledUpdateTime）两种方式任选其一，优先选择定时刷新。 - false：表示不支持周期性刷新。 | 布尔类型 | 否 |
+
 | scheduledUpdateTime | 表示卡片的定点刷新的时刻，采用24小时制，精确到分钟。 updateDuration参数优先级高于scheduledUpdateTime，两者同时配置时，以updateDuration配置的刷新时间为准。 | 字符串 | 可缺省，缺省值为“0:0”，缺省时不进行定点刷新。 |
+
 | updateDuration | 表示卡片定时刷新的更新周期，单位为30分钟，取值为自然数。 当取值为0时，表示该参数不生效。 当取值为正整数N时，表示刷新周期为30*N分钟。 updateDuration参数优先级高于scheduledUpdateTime，两者同时配置时，以updateDuration配置的刷新时间为准。 | 数值 | 可缺省，缺省值为0。 |
+
 | formConfigAbility | 表示卡片的配置跳转链接，采用URI格式。 | 字符串 | 可缺省，缺省值为空。 |
+
 | formVisibleNotify | 标识是否允许卡片使用卡片可见性通知。 | 字符串 | 可缺省，缺省值为空。 |
+
 | metaData | 表示卡片的自定义信息，包含customizeData数组标签。 | 对象 | 可缺省，缺省值为空。 |
 
   配置示例如下：
@@ -252,7 +270,7 @@ export default class JsCardFormAbility extends FormExtensionAbility {
 
 
 
-#### 卡片信息的持久化
+### 卡片信息的持久化
 
 因大部分卡片提供方都不是常驻服务，只有在需要使用时才会被拉起获取卡片信息，且卡片管理服务支持对卡片进行多实例管理，卡片ID对应实例ID，因此若卡片提供方支持对卡片数据进行配置，则需要对卡片的业务数据按照卡片ID进行持久化管理，以便在后续获取、更新以及拉起时能获取到正确的卡片业务数据。
 
@@ -355,7 +373,7 @@ export default class JsCardFormAbility extends FormExtensionAbility {
 
 
 
-#### 卡片数据交互
+### 卡片数据交互
 
 当卡片应用需要更新数据时（如触发了定时更新或定点更新），卡片应用获取最新数据，并调用updateForm()接口主动触发卡片的更新。
 
@@ -389,7 +407,7 @@ export default class JsCardFormAbility extends FormExtensionAbility {
 
 
 
-#### 开发卡片页面
+### 开发卡片页面
 
 开发者可以使用类Web范式（HML+CSS+JSON）开发JS卡片页面。生成如下卡片页面，可以这样配置卡片页面文件：
 
@@ -481,7 +499,7 @@ export default class JsCardFormAbility extends FormExtensionAbility {
 
 
 
-#### 开发卡片事件
+### 开发卡片事件
 
 卡片支持为组件设置交互事件（action），包括router事件和message事件，其中router事件用于UIAbility跳转，message事件用于卡片开发人员自定义点击事件。
 

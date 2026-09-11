@@ -65,7 +65,7 @@ TextInput({ text: this.text!!, placeholder: 'input your word...' })
 onWindowStageCreate(windowStage: window.WindowStage): void {
   let windowClass: window.Window | null = null;
   let calculation: number = 2;
-  // 打开新UI实例
+  <em>// 打开新UI实例</em>
   let uiAbility: string = '@bundle:' + 'com.example.keyboard' + '/entry/ets/pages/KeyboardPage';
 
   hilog.info(0x0000, TAG, 'KeyboardAbility onWindowStageCreate');
@@ -117,7 +117,7 @@ export default class EntryAbility extends UIAbility {
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
-    // Main window is created, set main page for this ability
+    <em>// Main window is created, set main page for this ability</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
     windowStage.loadContent('pages/Index', (err) => {
@@ -136,17 +136,17 @@ export default class EntryAbility extends UIAbility {
   }
 
   onWindowStageDestroy(): void {
-    // Main window is destroyed, release UI related resources
+ <em>   // Main window is destroyed, release UI related resources</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
   }
 
   onForeground(): void {
-    // Ability has brought to foreground
+  <em>  // Ability has brought to foreground</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onForeground');
   }
 
   onBackground(): void {
-    // Ability has back to background
+  <em>  // Ability has back to background</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onBackground');
   }
 };
@@ -187,7 +187,7 @@ struct Index {
   }
 
   openSoftKeyboard() {
-    // 安全键盘输入框
+<em>    // 安全键盘输入框</em>
     let modePosition: componentUtils.ComponentInfo = this.getUIContext().getComponentUtils().getRectangleById('TextInput');
     let layoutX = modePosition.screenOffset.x;
     let layoutY = modePosition.screenOffset.y;
@@ -273,7 +273,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 export default class KeyboardAbility extends UIAbility {
   onWindowStageCreate(windowStage: window.WindowStage): void {
     let windowClass: window.Window | null = null;
-    // 打开
+   <em> // 打开</em>
     let uiAbility: string = '@bundle:' + 'com.example.keyboard' + '/entry/ets/pages/KeyboardPage';
     windowStage.loadContent(uiAbility, (err) => {
       if (err.code) {
@@ -285,17 +285,17 @@ export default class KeyboardAbility extends UIAbility {
           return;
         }
         windowClass = data;
-        // 获取应用启动时的窗口尺寸
-        // 注册回调函数，监听窗口尺寸变化
+       <em> // 获取应用启动时的窗口尺寸</em>
+<em>        // 注册回调函数，监听窗口尺寸变化</em>
         windowClass.resize(500, 300, (err: BusinessError) => {
           let errCode: number = err.code;
           if (errCode) {
             return;
           }
         });
-        // 移动位置
+  <em>      // 移动位置</em>
         windowClass.moveWindowTo(500, 300);
-        // 设置主窗口或子窗口的布局是否为沉浸式布局
+       <em> // 设置主窗口或子窗口的布局是否为沉浸式布局</em>
         let isLayoutFullScreen = true;
         try {
           let promise = windowClass.setWindowLayoutFullScreen(isLayoutFullScreen);

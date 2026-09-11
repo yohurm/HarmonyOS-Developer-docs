@@ -1,6 +1,6 @@
 # ScsiPeripheral_Request
 
-更新时间：2026-05-08 09:27:50
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-scsiperipheralddk-scsiperipheral-request
 **支持设备：** PC/2in1
@@ -10,11 +10,12 @@ typedef struct ScsiPeripheral_Request {...} ScsiPeripheral_Request
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** PC/2in1
 
-请求参数结构体。
+SCSI请求参数结构体，用于构造与SCSI设备交互的请求参数，支持配置命令描述符块、数据缓冲区、超时时间等。
  
 **起始版本：** 18
  
@@ -24,20 +25,23 @@ typedef struct ScsiPeripheral_Request {...} ScsiPeripheral_Request
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** PC/2in1
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** PC/2in1
  
+
 | 名称 | 描述 |
 | --- | --- |
-| uint8_t commandDescriptorBlock[SCSIPERIPHERAL_MAX_CMD_DESC_BLOCK_LEN] | 命令描述符块。 |
-| uint8_t cdbLength | 命令描述符块的长度。 |
-| int8_t dataTransferDirection | 数据传输方向：-1为无数据传输的命令，-2为从主机到设备的数据传输(写)，-3为从设备到主机的数据传输(读)，-4为双向数据传输。 |
-| ScsiPeripheral_DeviceMemMap* data | 数据传输的缓冲区。 |
-| uint32_t timeout | 超时时间（单位：毫秒）。 |
+| uint8_t commandDescriptorBlock[SCSIPERIPHERAL_MAX_CMD_DESC_BLOCK_LEN] | 命令描述符块，应遵循SCSI命令规范，填充对应命令的标准描述符格式。 |
+| uint8_t cdbLength | 命令描述符块的长度，应确保长度和实际命令匹配，最大不超过SCSIPERIPHERAL_MAX_CMD_DESC_BLOCK_LEN。 |
+| int8_t dataTransferDirection | 数据传输方向：-1为无数据传输的命令，-2为从主机到设备的数据传输（写），-3为从设备到主机的数据传输（读），-4为双向数据传输。 |
+| ScsiPeripheral_DeviceMemMap* data | 数据传输缓冲区的指针。 |
+| uint32_t timeout | 超时时间（单位：ms）。 |

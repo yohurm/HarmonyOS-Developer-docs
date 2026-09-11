@@ -34,7 +34,7 @@
   
 ```json
 "dependencies": {
-  // The version number needs to be modified according to the relationship between hvigor and the SDK
+ <em> // The version number needs to be modified according to the relationship between hvigor and the SDK</em>
   "@ohos/hamock": "1.0.0"
 }
 ```

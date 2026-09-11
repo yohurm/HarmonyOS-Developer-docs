@@ -1,10 +1,10 @@
 # 自定义组件节点 (FrameNode)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-arktsnode-framenode
 
-#### 概述
+## 概述
 
 对于拥有自定义前端的第三方框架（如JSON、XML、DOM树等），需将特定的DSL转换为ArkUI的声明式描述。如下图描述了JSON定义的前端框架和ArkUI声明式描述的对应关系。
 
@@ -24,7 +24,7 @@
 
 
 
-#### 创建和删除节点
+## 创建和删除节点
 
 FrameNode提供了节点创建和删除的能力。可以通过FrameNode的构造函数创建自定义FrameNode节点，通过构造函数创建的节点对应一个实体的节点。同时，可以通过FrameNode中的[dispose](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#dispose12)接口来实现与实体节点的绑定关系的解除。
 
@@ -34,13 +34,13 @@ FrameNode提供了节点创建和删除的能力。可以通过FrameNode的构�
 
 
 
-#### 判断节点是否可修改
+## 判断节点是否可修改
 
 [isModifiable](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#ismodifiable12)用于查询当前节点类型是否为系统组件的代理节点。当FrameNode节点作为系统组件的代理节点的时候，该节点不可修改。即无法修改代理节点的自身属性以及其子节点的结构。
 
 
 
-#### 获取对应的RenderNode节点
+## 获取对应的RenderNode节点
 
 FrameNode提供了[getRenderNode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#getrendernode)接口，用于获取FrameNode中的RenderNode。可以通过对获取到的RenderNode对象进行操作，动态修改FrameNode上绘制相关的属性，具体可修改的属性参考[RenderNode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode)的接口。
 
@@ -50,7 +50,7 @@ FrameNode提供了[getRenderNode](https://developer.huawei.com/consumer/cn/doc/h
 
 
 
-#### 操作节点树
+## 操作节点树
 
 FrameNode提供了节点的增、删、查、改的能力，能够修改非代理节点的子树结构。可以对所有FrameNode的节点的父子节点做出查询操作，并返回查询结果。
 
@@ -362,7 +362,7 @@ struct Index {
 
 
 
-#### 使用moveTo移动命令式节点
+## 使用moveTo移动命令式节点
 
 使用[moveTo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#moveto18)接口可以将FrameNode节点移动到新的父节点下，从而按需改变节点树结构。
 
@@ -434,7 +434,7 @@ struct Index {
 
 
 
-#### 设置节点通用属性和事件回调
+## 设置节点通用属性和事件回调
 
 FrameNode提供了[commonAttribute](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#commonattribute12)和[commonEvent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#commonevent12)两个对象用于设置节点的[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)和[设置事件回调](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-uicommonevent)。
 
@@ -626,7 +626,7 @@ struct Index {
 
 
 
-#### 自定义测量布局与绘制
+## 自定义测量布局与绘制
 
 通过重写[onDraw](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#ondraw12)方法，可以自定义FrameNode的绘制内容。[invalidate](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#invalidate12)接口可以主动触发节点的重新绘制。
 
@@ -793,7 +793,7 @@ struct Index {
 
 
 
-#### 查找节点及获取基础信息
+## 查找节点及获取基础信息
 
 FrameNode提供了查询接口用于返回实体节点的基础信息。具体返回的信息内容参考FrameNode中提供的接口。
 
@@ -808,7 +808,7 @@ FrameNode提供了查询接口用于返回实体节点的基础信息。具体�
 
 
 
-#### 获取节点位置偏移信息
+## 获取节点位置偏移信息
 
 FrameNode提供了查询节点相对窗口、父组件以及屏幕位置偏移的信息接口（[getPositionToWindow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#getpositiontowindow12)，[getPositionToParent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#getpositiontoparent12)，[getPositionToScreen](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#getpositiontoscreen12)，[getGlobalPositionOnDisplay](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#getglobalpositionondisplay20)，[getPositionToWindowWithTransform](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#getpositiontowindowwithtransform12)，[getPositionToParentWithTransform](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#getpositiontoparentwithtransform12)，[getPositionToScreenWithTransform](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#getpositiontoscreenwithtransform12)，[getLayoutPosition](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#getlayoutposition12)，[getUserConfigBorderWidth](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#getuserconfigborderwidth12)，[getUserConfigPadding](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#getuserconfigpadding12)，[getUserConfigMargin](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#getuserconfigmargin12)）。
 
@@ -943,7 +943,7 @@ struct Index {
 
 
 
-#### 通过typeNode创建具体类型的FrameNode节点
+## 通过typeNode创建具体类型的FrameNode节点
 
 通过[typeNode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#typenode12)创建具体类型的FrameNode节点，可以根据属性获取接口来检索用户设置的属性信息。
 
@@ -1271,7 +1271,7 @@ struct Index {
 
 
 
-#### 解除当前FrameNode对象对实体FrameNode节点的引用关系
+## 解除当前FrameNode对象对实体FrameNode节点的引用关系
 
 使用[dispose](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#dispose12)接口可以立即解除当前FrameNode对象对实体FrameNode节点的引用关系。
 
@@ -1387,7 +1387,7 @@ struct Index {
 
 
 
-#### 查询当前FrameNode是否解除引用
+## 查询当前FrameNode是否解除引用
 
 前端节点均绑定有相应的后端实体节点，当节点调用dispose接口解除绑定后，再次调用接口可能会出现crash、返回默认值的情况。
 
@@ -1459,7 +1459,7 @@ struct Index {
 
 
 
-#### FrameNode的数据懒加载能力
+## FrameNode的数据懒加载能力
 
 提供[NodeAdapter](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#nodeadapter12)对象替代ArkTS侧的[LazyForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-rendering-control-lazyforeach)功能，提供自定义节点的数据懒加载功能，实现按需迭代数据。
 
@@ -1682,7 +1682,7 @@ struct Index {
 
 
 
-#### 查询LazyForEach中的FrameNode节点信息
+## 查询LazyForEach中的FrameNode节点信息
 
 如果FrameNode子节点中包含[LazyForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-rendering-control-lazyforeach)节点，[getChild](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#getchild15)接口支持指定子节点展开模式[ExpandMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#expandmode15)，以不同展开模式获取子节点。
 
@@ -1960,7 +1960,7 @@ struct Index {
 
 
 
-#### 调整自定义绘制Canvas的变换矩阵
+## 调整自定义绘制Canvas的变换矩阵
 
 从API version 12开始，通过重写FrameNode的[onDraw](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#ondraw12)方法，可以重写默认绘制方法。
 
@@ -2107,12 +2107,12 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/8dHRkgFcTXqw_lYk8Y9l6g/zh-cn_image_0000002704392607.png?HW-CC-KV=V1&HW-CC-Date=20260813T095720Z&HW-CC-Expire=86400&HW-CC-Sign=B18CD09A3FA3930E165BAE7F72AEA7C42820C324ADBB6172BD9C7F1BCCBCDECB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/wvyV5ZGySUCuS0hHiXBr2A/zh-cn_image_0000002747210555.png?HW-CC-KV=V1&HW-CC-Date=20260911T072142Z&HW-CC-Expire=86400&HW-CC-Sign=C73C019586C808A9E463CABA894CA300FBEEE76046A7E5A080DE30AE3791D873)
 
 
 
 
-#### 更新当前帧节点
+## 更新当前帧节点
 
 从API version 21开始，通过使用frameNode的[invalidateAttributes](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#invalidateattributes21)方法，可以在当前帧触发节点更新，避免组件切换过程中出现闪烁。
 
@@ -2211,12 +2211,12 @@ struct ListNodeTest {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/U0VDrKxJRHKUnHrGS5f2Yw/zh-cn_image_0000002674632486.png?HW-CC-KV=V1&HW-CC-Date=20260813T095720Z&HW-CC-Expire=86400&HW-CC-Sign=1FDE39326F811D6ACD20418EEFC9723A29F53948CA793DDB6F57E6F82189D024)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/VL48oN8cR2eaIvUdN9wzwA/zh-cn_image_0000002717770620.png?HW-CC-KV=V1&HW-CC-Date=20260911T072142Z&HW-CC-Expire=86400&HW-CC-Sign=4F26B627C1BD9BC91DEF58DFD2CDC76A8C7C72E6E5F24431D6778415788AD64C)
 
 
 
 
-#### 判断节点是否处于渲染状态
+## 判断节点是否处于渲染状态
 
 从API version 23开始，通过使用FrameNode的[isInRenderState](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#isinrenderstate23)方法，判断FrameNode节点是否处于渲染状态。
 
@@ -2286,4 +2286,4 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/8IUwq7DWTcul3-E2kljYtg/zh-cn_image_0000002704272441.png?HW-CC-KV=V1&HW-CC-Date=20260813T095720Z&HW-CC-Expire=86400&HW-CC-Sign=13EC18349D05C7ABC81BCC65875851D2A9872DC5E19E402C078E9E766B7146B6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/boZudR8rRB-sE0-PJ7TaSQ/zh-cn_image_0000002717610686.png?HW-CC-KV=V1&HW-CC-Date=20260911T072142Z&HW-CC-Expire=86400&HW-CC-Sign=31D7200764D0AE11C44114EE2E43B1D42B2EFB541E4AB09DFC25475A1C93C089)

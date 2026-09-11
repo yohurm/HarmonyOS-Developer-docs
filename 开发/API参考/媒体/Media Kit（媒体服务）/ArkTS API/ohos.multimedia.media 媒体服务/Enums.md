@@ -1,38 +1,38 @@
 # Enums
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-e
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
   
 
-#### AVErrorCode9+
+## AVErrorCode9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [Media错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-media)类型枚举。
  
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
- 
 **系统能力：** SystemCapability.Multimedia.Media.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| AVERR_OK | 0 | 表示操作成功。 |
-| AVERR_NO_PERMISSION | 201 | 表示无权限执行此操作。 |
-| AVERR_INVALID_PARAMETER | 401 | 表示传入参数无效。 |
-| AVERR_UNSUPPORT_CAPABILITY | 801 | 表示当前版本不支持该API能力。 |
-| AVERR_NO_MEMORY | 5400101 | 表示系统内存不足或服务数量达到上限。 |
-| AVERR_OPERATE_NOT_PERMIT | 5400102 | 表示当前状态不允许或无权执行此操作。 |
-| AVERR_IO | 5400103 | 表示数据流异常信息。 |
-| AVERR_TIMEOUT | 5400104 | 表示系统或网络响应超时。 |
-| AVERR_SERVICE_DIED | 5400105 | 表示服务进程死亡。 |
-| AVERR_UNSUPPORT_FORMAT | 5400106 | 表示不支持当前媒体资源的格式。 |
-| AVERR_AUDIO_INTERRUPTED11+ | 5400107 | 表示音频焦点被抢占。 |
+| AVERR_OK | 0 | 表示操作成功。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| AVERR_NO_PERMISSION | 201 | 表示无权限执行此操作。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| AVERR_INVALID_PARAMETER | 401 | 表示传入参数无效。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| AVERR_UNSUPPORT_CAPABILITY | 801 | 表示当前版本不支持该API能力。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| AVERR_NO_MEMORY | 5400101 | 表示系统内存不足或服务数量达到上限。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| AVERR_OPERATE_NOT_PERMIT | 5400102 | 表示当前状态不允许或无权执行此操作。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| AVERR_IO | 5400103 | 表示数据流异常信息。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| AVERR_TIMEOUT | 5400104 | 表示系统或网络响应超时。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| AVERR_SERVICE_DIED | 5400105 | 表示服务进程死亡。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| AVERR_UNSUPPORT_FORMAT | 5400106 | 表示不支持当前媒体资源的格式。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| AVERR_AUDIO_INTERRUPTED11+ | 5400107 | 表示音频焦点被抢占。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | AVERR_IO_HOST_NOT_FOUND14+ | 5411001 | 表示解析或链接服务端地址错误。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
 | AVERR_IO_CONNECTION_TIMEOUT14+ | 5411002 | 表示网络连接超时。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
 | AVERR_IO_NETWORK_ABNORMAL14+ | 5411003 | 表示网络异常导致的数据或链路异常。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
@@ -53,14 +53,16 @@
  
   
 
-#### MediaType8+
+## MediaType8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 媒体类型枚举。
  
 **系统能力：** SystemCapability.Multimedia.Media.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | MEDIA_TYPE_UNSUPPORTED20+ | -1 | 表示未支持的类型。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
@@ -75,14 +77,16 @@
  
   
 
-#### CodecMimeType8+
+## CodecMimeType8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Codec MIME类型枚举。
  
 **系统能力：** SystemCapability.Multimedia.Media.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | VIDEO_H263 | 'video/h263' | 表示视频/H.263类型。 |
@@ -103,9 +107,10 @@ Codec MIME类型枚举。
  
   
 
-#### AacProfile22+
+## AacProfile22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 高级音频编码（AAC）类型枚举。
  
@@ -113,6 +118,7 @@ Codec MIME类型枚举。
  
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | AAC_LC | 0 | 表示AAC Low-Complexity类型。 |
@@ -122,14 +128,16 @@ Codec MIME类型枚举。
  
   
 
-#### MediaDescriptionKey8+
+## MediaDescriptionKey8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 媒体信息描述枚举。
  
 **系统能力：** SystemCapability.Multimedia.Media.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | MD_KEY_TRACK_INDEX | 'track_index' | 表示轨道序号，其对应键值类型为number。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -155,9 +163,10 @@ Codec MIME类型枚举。
  
   
 
-#### FetchResult23+
+## FetchResult23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示批量获取缩略图操作结果的枚举。
  
@@ -165,6 +174,7 @@ Codec MIME类型枚举。
  
 **系统能力：** SystemCapability.Multimedia.Media.AVMetadataExtractor
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | FETCH_FAILED | 0 | 从视频中获取该缩略图失败。 |
@@ -174,14 +184,16 @@ Codec MIME类型枚举。
  
   
 
-#### PlaybackInfoKey12+
+## PlaybackInfoKey12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 播放信息描述枚举。
  
 **系统能力：** SystemCapability.Multimedia.Media.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SERVER_IP_ADDRESS | 'server_ip_address' | 表示服务器IP地址，其对应键值类型为string。 |
@@ -193,14 +205,16 @@ Codec MIME类型枚举。
  
   
 
-#### PlaybackMetricsKey23+
+## PlaybackMetricsKey23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示播放器指标信息的枚举。
  
 **系统能力：** SystemCapability.Multimedia.Media.AVPlayer
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | PREPARE_DURATION | 'prepare_duration' | 表示准备时长，单位为毫秒（ms）。 |
@@ -218,9 +232,10 @@ Codec MIME类型枚举。
  
   
 
-#### BufferingInfoType8+
+## BufferingInfoType8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 缓存事件类型枚举。
  
@@ -228,6 +243,7 @@ Codec MIME类型枚举。
  
 **系统能力：** SystemCapability.Multimedia.Media.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | BUFFERING_START | 1 | 表示开始缓冲。当上报BUFFERING_START时，播放器会暂停播放。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
@@ -238,9 +254,10 @@ Codec MIME类型枚举。
  
   
 
-#### SoundInterruptMode23+
+## SoundInterruptMode23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示在SoundPool中，同一ID的音频在播放时的打断模式的枚举。
  
@@ -248,6 +265,7 @@ Codec MIME类型枚举。
  
 **系统能力：** SystemCapability.Multimedia.Media.SoundPool
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NO_INTERRUPT | 0 | 表示同一ID的音频，如果前者尚未播放完成，后者不会打断前者的播放，二者并行播放。 |
@@ -256,9 +274,10 @@ Codec MIME类型枚举。
  
   
 
-#### StateChangeReason9+
+## StateChangeReason9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示播放或录制实例状态机切换原因的枚举，伴随state一起上报。
  
@@ -266,6 +285,7 @@ Codec MIME类型枚举。
  
 **系统能力：** SystemCapability.Multimedia.Media.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | USER | 1 | 表示用户行为造成的状态切换，由用户或客户端主动调用接口产生。 |
@@ -274,14 +294,16 @@ Codec MIME类型枚举。
  
   
 
-#### SeekMode8+
+## SeekMode8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 视频播放的Seek模式枚举，可通过seek方法作为参数传递下去。
  
 **系统能力：** SystemCapability.Multimedia.Media.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SEEK_NEXT_SYNC | 0 | 表示跳转到指定时间点的下一个关键帧，建议向后快进的时候用这个枚举值。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -292,9 +314,10 @@ Codec MIME类型枚举。
  
   
 
-#### SwitchMode12+
+## SwitchMode12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示视频播放的selectTrack模式枚举。
  
@@ -302,6 +325,7 @@ Codec MIME类型枚举。
  
 **系统能力：** SystemCapability.Multimedia.Media.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SMOOTH | 0 | 表示切换后视频平滑播放，该模式切换存在延迟，不会立即生效。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
@@ -311,9 +335,10 @@ Codec MIME类型枚举。
  
   
 
-#### PlaybackSpeed8+
+## PlaybackSpeed8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 视频播放的倍速枚举，可通过setSpeed方法作为参数传递下去。
  
@@ -321,6 +346,7 @@ Codec MIME类型枚举。
  
 **系统能力：** SystemCapability.Multimedia.Media.VideoPlayer
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SPEED_FORWARD_0_75_X | 0 | 表示视频播放正常播速的0.75倍。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
@@ -337,9 +363,10 @@ Codec MIME类型枚举。
  
   
 
-#### VideoScaleType9+
+## VideoScaleType9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，视频缩放模式。
  
@@ -347,6 +374,7 @@ Codec MIME类型枚举。
  
 **系统能力：** SystemCapability.Multimedia.Media.VideoPlayer
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | VIDEO_SCALE_TYPE_FIT | 0 | 默认比例类型，视频拉伸至与窗口等大。 |
@@ -356,14 +384,16 @@ Codec MIME类型枚举。
  
   
 
-#### AudioSourceType9+
+## AudioSourceType9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示视频录制中音频源类型的枚举。
  
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | AUDIO_SOURCE_TYPE_DEFAULT | 0 | 默认的音频输入源类型。 |
@@ -376,14 +406,16 @@ Codec MIME类型枚举。
  
   
 
-#### VideoSourceType9+
+## VideoSourceType9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示视频录制中视频源类型的枚举。
  
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | VIDEO_SOURCE_TYPE_SURFACE_YUV | 0 | 输入surface中携带的是raw data。 |
@@ -392,14 +424,16 @@ Codec MIME类型枚举。
  
   
 
-#### ContainerFormatType8+
+## ContainerFormatType8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示容器格式类型的枚举，缩写为CFT。
  
 **系统能力：** SystemCapability.Multimedia.Media.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CFT_MPEG_4 | 'mp4' | 视频的容器格式，MP4。 元服务API： 从API version 22开始，该接口支持在元服务中使用。 |
@@ -412,14 +446,16 @@ Codec MIME类型枚举。
  
   
 
-#### FileGenerationMode12+
+## FileGenerationMode12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示创建媒体文件模式的枚举。
  
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | APP_CREATE | 0 | 由应用自行在沙箱创建媒体文件。 |
@@ -428,14 +464,16 @@ Codec MIME类型枚举。
  
   
 
-#### HdrType12+
+## HdrType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示视频HDR类型的枚举。
  
 **系统能力：** SystemCapability.Multimedia.Media.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | AV_HDR_TYPE_NONE | 0 | 表示无HDR类型。 |
@@ -444,9 +482,10 @@ Codec MIME类型枚举。
  
   
 
-#### AVImageQueryOptions12+
+## AVImageQueryOptions12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 需要获取的缩略图时间点与视频帧的对应关系。
  
@@ -454,6 +493,7 @@ Codec MIME类型枚举。
  
 **系统能力：** SystemCapability.Multimedia.Media.AVImageGenerator
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | AV_IMAGE_QUERY_NEXT_SYNC | 0 | 表示选取传入时间点或之后的关键帧。 |
@@ -464,9 +504,10 @@ Codec MIME类型枚举。
  
   
 
-#### LoadingRequestError18+
+## LoadingRequestError18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，数据加载过程中状态变化的原因。
  
@@ -474,6 +515,7 @@ Codec MIME类型枚举。
  
 **系统能力：** SystemCapability.Multimedia.Media.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | LOADING_ERROR_SUCCESS | 0 | 由客户端返回，表示已经推送到资源末尾。 |
@@ -487,9 +529,10 @@ Codec MIME类型枚举。
  
   
 
-#### AVMimeTypes12+
+## AVMimeTypes12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 媒体MIME类型，通过[setMimeType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-mediasource#setmimetype12)设置。
  
@@ -497,6 +540,7 @@ Codec MIME类型枚举。
  
 **系统能力：** SystemCapability.Multimedia.Media.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | APPLICATION_M3U8 | application/m3u8 | 表示m3u8本地文件。 |
@@ -504,7 +548,8 @@ Codec MIME类型枚举。
  
   
 
-#### AVScreenCaptureRecordPreset12+
+## AVScreenCaptureRecordPreset12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -512,6 +557,7 @@ Codec MIME类型枚举。
  
 **系统能力：** SystemCapability.Multimedia.Media.AVScreenCapture
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SCREEN_RECORD_PRESET_H264_AAC_MP4 | 0 | 使用视频H264编码，音频AAC编码，MP4封装格式。 |
@@ -520,7 +566,8 @@ Codec MIME类型枚举。
  
   
 
-#### AVScreenCaptureStateCode12+
+## AVScreenCaptureStateCode12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -528,6 +575,7 @@ Codec MIME类型枚举。
  
 **系统能力：** SystemCapability.Multimedia.Media.AVScreenCapture
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SCREENCAPTURE_STATE_STARTED | 0 | 录屏已开始。 |
@@ -549,7 +597,8 @@ Codec MIME类型枚举。
  
   
 
-#### AVScreenCaptureFillMode18+
+## AVScreenCaptureFillMode18+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -557,6 +606,7 @@ Codec MIME类型枚举。
  
 **系统能力：** SystemCapability.Multimedia.Media.AVScreenCapture
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | PRESERVE_ASPECT_RATIO | 0 | 保持与原始图像相同的宽高比例，即与物理屏幕宽高比例一致。 |
@@ -565,7 +615,8 @@ Codec MIME类型枚举。
  
   
 
-#### PickerMode22+
+## PickerMode22+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -573,6 +624,7 @@ Codec MIME类型枚举。
  
 **系统能力：** SystemCapability.Multimedia.Media.AVScreenCapture
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | WINDOW_ONLY | 0 | 仅显示窗口列表。 |
@@ -586,14 +638,16 @@ Codec MIME类型枚举。
  
   
 
-#### AVMetricsEventType23+
+## AVMetricsEventType23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示媒体服务支持的指标事件的枚举。
  
 **系统能力：** SystemCapability.Multimedia.Media.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | AV_METRICS_EVENT_STALLING | 1 | 表示播放卡顿的指标事件。 |
@@ -607,9 +661,10 @@ Codec MIME类型枚举。
  
   
 
-#### PlaylistLoopMode
+## PlaylistLoopMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示播放列表循环模式的枚举。
  
@@ -621,6 +676,7 @@ Codec MIME类型枚举。
  
 **系统能力：** SystemCapability.Multimedia.Media.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | PLAYLIST_LOOP_MODE_ALL | 1 | 列表循环模式。 |
@@ -631,9 +687,10 @@ Codec MIME类型枚举。
  
   
 
-#### AudioEncoder(deprecated)
+## AudioEncoder(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 6开始支持，从API version 8开始废弃，建议使用 CodecMimeType 替代。
@@ -643,6 +700,7 @@ Codec MIME类型枚举。
  
 **系统能力：** SystemCapability.Multimedia.Media.AudioRecorder
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DEFAULT | 0 | 默认编码格式。 仅做接口定义，暂不支持使用。 说明： 从API version 6开始支持，从API version 8开始废弃，建议使用CodecMimeType中的AUDIO_AAC替代。 |
@@ -654,9 +712,10 @@ Codec MIME类型枚举。
  
   
 
-#### AudioOutputFormat(deprecated)
+## AudioOutputFormat(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 6开始支持，从API version 8开始废弃，建议使用 ContainerFormatType 替代。
@@ -666,6 +725,7 @@ Codec MIME类型枚举。
  
 **系统能力：** SystemCapability.Multimedia.Media.AudioRecorder
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DEFAULT | 0 | 默认封装格式。 仅做接口定义，暂不支持使用。 说明： 从API version 6开始支持，从API version 8开始废弃，建议根据具体情况选择ContainerFormatType中的一项替代。 |
@@ -677,9 +737,10 @@ Codec MIME类型枚举。
  
   
 
-#### MediaErrorCode(deprecated)
+## MediaErrorCode(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 媒体服务错误类型枚举。
  
@@ -689,6 +750,7 @@ Codec MIME类型枚举。
  
 **系统能力：** SystemCapability.Multimedia.Media.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | MSERR_OK | 0 | 表示操作成功。 |

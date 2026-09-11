@@ -1,6 +1,6 @@
 # 菜单控制（Menu）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-popup-and-menu-components-menu
 
@@ -11,7 +11,7 @@ Menu是菜单接口，一般用于鼠标右键弹窗、点击弹窗等。具体�
 使用[bindMenu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-menu#bindmenu11)或bindContextMenu未设置预览图时，菜单弹出无蒙层，此时为非模态。
 
 
-#### 创建默认样式的菜单
+## 创建默认样式的菜单
 
 菜单需要调用[bindMenu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-menu#bindmenu)接口来实现。bindMenu响应绑定组件的点击事件，绑定组件后手势点击对应组件后即可弹出。
 
@@ -33,13 +33,13 @@ Button('click for Menu')
 
 
 
-#### 创建自定义样式的菜单
+## 创建自定义样式的菜单
 
 当默认样式不满足开发需求时，可使用[@Builder](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-builder)自定义菜单内容，通过bindMenu接口进行菜单的自定义。
 
 
 
-#### 使用@Builder自定义菜单内容
+### 使用@Builder自定义菜单内容
 
 ```ArkTS
 import { hilog } from '@kit.PerformanceAnalysisKit';
@@ -127,7 +127,7 @@ export struct BuilderCustomMenuExample {
 
 
 
-#### 使用bindMenu属性绑定组件
+### 使用bindMenu属性绑定组件
 
 ```ArkTS
 Button('click for Menu')
@@ -140,7 +140,7 @@ Button('click for Menu')
 
 
 
-#### 创建支持右键或长按的菜单
+## 创建支持右键或长按的菜单
 
 通过[bindContextMenu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-menu#bindcontextmenu8)接口自定义菜单，设置菜单弹出的触发方式，触发方式为右键或长按。使用bindContextMenu弹出的菜单项是在独立子窗口内的，可显示在应用窗口外部。
 
@@ -157,7 +157,7 @@ Button('Right-click for Menu')
 
 
 
-#### 菜单弹出时振动效果
+## 菜单弹出时振动效果
 
 菜单从API version 18开始支持振动效果。菜单弹出时，默认不振动。若希望菜单弹出时有振动效果，可以通过[ContextMenuOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-menu#contextmenuoptions10)的hapticFeedbackMode属性，设置菜单弹出时的振动模式。
 
@@ -183,7 +183,7 @@ Button('click for Menu')
 
 
 
-#### 菜单支持避让中轴
+## 菜单支持避让中轴
 
 从API version 18起，菜单支持中轴避让功能。从API version 20开始，在2in1设备上默认启用（仅在窗口处于瀑布模式时产生避让）。开发者可通过[ContextMenuOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-menu#contextmenuoptions10)中的enableHoverMode属性，控制菜单是否启用中轴避让。
 
@@ -269,7 +269,7 @@ export struct SupportAvoidCentralAxisMenuExample {
 
 
 
-#### 控制子窗菜单的事件透传
+## 控制子窗菜单的事件透传
 
 当菜单在子窗口中弹出时，默认情况下，菜单周围的事件会传递至所在窗口。从API version 20开始，开发者可通过[ContextMenuOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-menu#contextmenuoptions10)的modalMode属性设置子菜单弹出时的模态模式，以控制菜单周围事件是否传递。将modalMode设置为ModalMode.TARGET_WINDOW时，菜单周围的事件将不再传递，菜单下方的控件也不会响应事件。
 
@@ -313,7 +313,7 @@ export struct EventTransSubWindowMenuExample {
 
 
 
-#### 基于绑定组件指定位置弹出菜单
+## 基于绑定组件指定位置弹出菜单
 
 菜单从API version 20开始支持基于绑定组件在指定位置弹出。通过设置水平与垂直偏移量，控制菜单相对于绑定组件左上角的弹出位置。与单独使用offset接口不同，此方法可使菜单覆盖显示在绑定组件上。需要指定弹出位置时，可使用[ContextMenuOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-menu#contextmenuoptions10)的anchorPosition属性进行设置。
 
@@ -365,4 +365,4 @@ export struct BindComponentMenuExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/0TLV4bmfTOefB4HQtWFoNA/zh-cn_image_0000002674472492.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095714Z&HW-CC-Expire=86400&HW-CC-Sign=676C38229EF709610A6867B21E31CC742BA33847167B0E32E1BD536AEC4FDACA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/De5lvRE1R-qPX-mQhlAVPw/zh-cn_image_0000002717770488.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072247Z&HW-CC-Expire=86400&HW-CC-Sign=8CBAD672E7159A3AA595B5AB3393EC3682E9F19BAEECF8434AFCDD0E22EC7AAF)

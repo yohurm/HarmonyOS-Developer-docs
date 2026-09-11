@@ -1,6 +1,6 @@
 # 卡片传递消息给应用（message事件）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widget-event-formextensionability
 
@@ -118,5 +118,7 @@ export default class EntryFormAbility extends FormExtensionAbility {
 运行效果如下图所示。
 
 | 初始状态 | 点击刷新 |
+
 | --- | --- |
+
 |  |  |

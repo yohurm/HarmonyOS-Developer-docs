@@ -1,6 +1,6 @@
 # ImageEffect_FilterNames
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imageeffect-imageeffect-filternames
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -10,7 +10,8 @@ typedef struct ImageEffect_FilterNames {...} ImageEffect_FilterNames
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -24,18 +25,21 @@ typedef struct ImageEffect_FilterNames {...} ImageEffect_FilterNames
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
 **支持C++语言语法的声明如下：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | uint32_t size = 0 | 滤镜名个数。 |
@@ -44,6 +48,7 @@ typedef struct ImageEffect_FilterNames {...} ImageEffect_FilterNames
  
 **支持C语言语法的声明如下：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | uint32_t size | 滤镜名个数。 |
@@ -52,10 +57,12 @@ typedef struct ImageEffect_FilterNames {...} ImageEffect_FilterNames
  
   
 
-#### 成员函数
+### 成员函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_EffectFilterInfo *OH_EffectFilterInfo_Create() | OH_EffectFilterInfo_Create() | 创建OH_EffectFilterInfo实例，调用OH_EffectFilterInfo_Release进行资源释放。 起始版本： 12 系统能力： SystemCapability.Multimedia.ImageEffect.Core |
@@ -70,13 +77,15 @@ typedef struct ImageEffect_FilterNames {...} ImageEffect_FilterNames
  
   
 
-#### 成员函数说明
+## 成员函数说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### OH_EffectFilterInfo_Create()
+### OH_EffectFilterInfo_Create()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -94,6 +103,7 @@ OH_EffectFilterInfo *OH_EffectFilterInfo_Create()
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_EffectFilterInfo | 返回一个指向OH_EffectFilterInfo实例的指针，创建失败时返回空指针。 |
@@ -101,7 +111,8 @@ OH_EffectFilterInfo *OH_EffectFilterInfo_Create()
  
   
 
-#### OH_EffectFilterInfo_SetFilterName()
+### OH_EffectFilterInfo_SetFilterName()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -119,6 +130,7 @@ ImageEffect_ErrorCode OH_EffectFilterInfo_SetFilterName(OH_EffectFilterInfo *inf
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_EffectFilterInfo *info | 滤镜信息指针。 |
@@ -127,6 +139,7 @@ ImageEffect_ErrorCode OH_EffectFilterInfo_SetFilterName(OH_EffectFilterInfo *inf
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageEffect_ErrorCode | EFFECT_SUCCESS如果方法调用成功。 EFFECT_ERROR_PARAM_INVALID如果入参为空指针。 |
@@ -134,7 +147,8 @@ ImageEffect_ErrorCode OH_EffectFilterInfo_SetFilterName(OH_EffectFilterInfo *inf
  
   
 
-#### OH_EffectFilterInfo_GetFilterName()
+### OH_EffectFilterInfo_GetFilterName()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -152,6 +166,7 @@ ImageEffect_ErrorCode OH_EffectFilterInfo_GetFilterName(OH_EffectFilterInfo *inf
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_EffectFilterInfo *info | 滤镜信息指针。 |
@@ -160,6 +175,7 @@ ImageEffect_ErrorCode OH_EffectFilterInfo_GetFilterName(OH_EffectFilterInfo *inf
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageEffect_ErrorCode | EFFECT_SUCCESS如果方法调用成功。 EFFECT_ERROR_PARAM_INVALID如果入参为空指针。 |
@@ -167,7 +183,8 @@ ImageEffect_ErrorCode OH_EffectFilterInfo_GetFilterName(OH_EffectFilterInfo *inf
  
   
 
-#### OH_EffectFilterInfo_SetSupportedBufferTypes()
+### OH_EffectFilterInfo_SetSupportedBufferTypes()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -185,6 +202,7 @@ ImageEffect_ErrorCode OH_EffectFilterInfo_SetSupportedBufferTypes(OH_EffectFilte
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_EffectFilterInfo *info | 滤镜信息指针。 |
@@ -194,6 +212,7 @@ ImageEffect_ErrorCode OH_EffectFilterInfo_SetSupportedBufferTypes(OH_EffectFilte
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageEffect_ErrorCode | EFFECT_SUCCESS如果方法调用成功。 EFFECT_ERROR_PARAM_INVALID如果入参为空指针。 |
@@ -201,7 +220,8 @@ ImageEffect_ErrorCode OH_EffectFilterInfo_SetSupportedBufferTypes(OH_EffectFilte
  
   
 
-#### OH_EffectFilterInfo_GetSupportedBufferTypes()
+### OH_EffectFilterInfo_GetSupportedBufferTypes()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -219,6 +239,7 @@ ImageEffect_ErrorCode OH_EffectFilterInfo_GetSupportedBufferTypes(OH_EffectFilte
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_EffectFilterInfo *info | 滤镜信息指针。 |
@@ -228,6 +249,7 @@ ImageEffect_ErrorCode OH_EffectFilterInfo_GetSupportedBufferTypes(OH_EffectFilte
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageEffect_ErrorCode | EFFECT_SUCCESS如果方法调用成功。 EFFECT_ERROR_PARAM_INVALID如果入参为空指针。 |
@@ -235,7 +257,8 @@ ImageEffect_ErrorCode OH_EffectFilterInfo_GetSupportedBufferTypes(OH_EffectFilte
  
   
 
-#### OH_EffectFilterInfo_SetSupportedFormats()
+### OH_EffectFilterInfo_SetSupportedFormats()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -253,6 +276,7 @@ ImageEffect_ErrorCode OH_EffectFilterInfo_SetSupportedFormats(OH_EffectFilterInf
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_EffectFilterInfo *info | 滤镜信息指针。 |
@@ -262,6 +286,7 @@ ImageEffect_ErrorCode OH_EffectFilterInfo_SetSupportedFormats(OH_EffectFilterInf
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageEffect_ErrorCode | EFFECT_SUCCESS如果方法调用成功。 EFFECT_ERROR_PARAM_INVALID如果入参为空指针。 |
@@ -269,7 +294,8 @@ ImageEffect_ErrorCode OH_EffectFilterInfo_SetSupportedFormats(OH_EffectFilterInf
  
   
 
-#### OH_EffectFilterInfo_GetSupportedFormats()
+### OH_EffectFilterInfo_GetSupportedFormats()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -287,6 +313,7 @@ ImageEffect_ErrorCode OH_EffectFilterInfo_GetSupportedFormats(OH_EffectFilterInf
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_EffectFilterInfo *info | 滤镜信息指针。 |
@@ -296,6 +323,7 @@ ImageEffect_ErrorCode OH_EffectFilterInfo_GetSupportedFormats(OH_EffectFilterInf
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageEffect_ErrorCode | EFFECT_SUCCESS如果方法调用成功。 EFFECT_ERROR_PARAM_INVALID如果入参为空指针。 |
@@ -303,7 +331,8 @@ ImageEffect_ErrorCode OH_EffectFilterInfo_GetSupportedFormats(OH_EffectFilterInf
  
   
 
-#### OH_EffectFilterInfo_Release()
+### OH_EffectFilterInfo_Release()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -321,6 +350,7 @@ ImageEffect_ErrorCode OH_EffectFilterInfo_Release(OH_EffectFilterInfo *info)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_EffectFilterInfo *info | 滤镜信息指针。 |
@@ -328,6 +358,7 @@ ImageEffect_ErrorCode OH_EffectFilterInfo_Release(OH_EffectFilterInfo *info)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageEffect_ErrorCode | EFFECT_SUCCESS如果方法调用成功。 EFFECT_ERROR_PARAM_INVALID如果入参为空指针。 |

@@ -1,9 +1,9 @@
 # @ohos.ability.ability (Ability模块)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-ability-ability
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Ability模块将二级模块API组织在一起方便开发者进行导出。
  
@@ -12,9 +12,10 @@ Ability模块将二级模块API组织在一起方便开发者进行导出。
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { ability } from '@kit.AbilityKit';
@@ -22,9 +23,10 @@ import { ability } from '@kit.AbilityKit';
  
   
 
-#### DataAbilityHelper
+## DataAbilityHelper
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type DataAbilityHelper = _DataAbilityHelper
  
@@ -34,6 +36,7 @@ DataAbilityHelper二级模块。
  
 **模型约束**：此接口仅可在FA模型下使用。
   
+
 | 类型 | 说明 |
 | --- | --- |
 | _DataAbilityHelper | DataAbilityHelper二级模块。 |
@@ -41,9 +44,10 @@ DataAbilityHelper二级模块。
  
   
 
-#### PacMap
+## PacMap
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type PacMap = _PacMap
  
@@ -51,8 +55,11 @@ PacMap二级模块。
  
 **系统能力**：SystemCapability.Ability.AbilityRuntime.FAModel
  
-**模型约束**：此接口仅可在FA模型下使用。
+**模型约束**：
+ 
+API版本9-10：此接口仅可在FA模型下使用。
   
+
 | 类型 | 说明 |
 | --- | --- |
 | _PacMap | DataAbilityHelper二级模块。 |
@@ -60,9 +67,10 @@ PacMap二级模块。
  
   
 
-#### DataAbilityOperation
+## DataAbilityOperation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type DataAbilityOperation = _DataAbilityOperation
  
@@ -72,6 +80,7 @@ DataAbilityOperation二级模块。
  
 **模型约束**：此接口仅可在FA模型下使用。
   
+
 | 类型 | 说明 |
 | --- | --- |
 | _DataAbilityOperation | DataAbilityOperation二级模块。 |
@@ -79,9 +88,10 @@ DataAbilityOperation二级模块。
  
   
 
-#### DataAbilityResult
+## DataAbilityResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type DataAbilityResult = _DataAbilityResult
  
@@ -91,6 +101,7 @@ DataAbilityResult二级模块。
  
 **模型约束**：此接口仅可在FA模型下使用。
   
+
 | 类型 | 说明 |
 | --- | --- |
 | _DataAbilityResult | DataAbilityResult二级模块。 |
@@ -98,9 +109,10 @@ DataAbilityResult二级模块。
  
   
 
-#### AbilityResult
+## AbilityResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AbilityResult = _AbilityResult
  
@@ -110,6 +122,7 @@ AbilityResult二级模块。
  
 **模型约束**：此接口仅可在FA模型下使用。
   
+
 | 类型 | 说明 |
 | --- | --- |
 | _AbilityResult | AbilityResult二级模块。 |
@@ -117,9 +130,10 @@ AbilityResult二级模块。
  
   
 
-#### ConnectOptions
+## ConnectOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ConnectOptions = _ConnectOptions
  
@@ -129,6 +143,7 @@ ConnectOptions二级模块。
  
 **模型约束**：此接口仅可在FA模型下使用。
   
+
 | 类型 | 说明 |
 | --- | --- |
 | _ConnectOptions | ConnectOptions二级模块。 |
@@ -136,9 +151,10 @@ ConnectOptions二级模块。
  
   
 
-#### StartAbilityParameter
+## StartAbilityParameter
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type StartAbilityParameter = _StartAbilityParameter
  
@@ -148,6 +164,7 @@ StartAbilityParameter二级模块。
  
 **模型约束**：此接口仅可在FA模型下使用。
   
+
 | 类型 | 说明 |
 | --- | --- |
 | _StartAbilityParameter | StartAbilityParameter二级模块。 |

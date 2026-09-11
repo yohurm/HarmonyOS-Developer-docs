@@ -1,9 +1,9 @@
 # ShortcutInfo
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bundle-shortcutinfo
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 应用配置文件中定义的快捷方式信息，[FA模型](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ability-terminology#fa模型)配置在[config.json](https://developer.huawei.com/consumer/cn/doc/lite-wearable-guides/application-configuration-file-overview-fa)文件中进行配置，[Stage模型](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ability-terminology#stage模型)配置在开发视图的resources/base/profile下面定义配置文件即可。
 
@@ -12,15 +12,17 @@
 
 
 
-#### ShortcutInfo(deprecated)
+## ShortcutInfo(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 7开始支持，从API version 9开始废弃，建议使用 bundleManager-ShortcutInfo 替代。
 
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

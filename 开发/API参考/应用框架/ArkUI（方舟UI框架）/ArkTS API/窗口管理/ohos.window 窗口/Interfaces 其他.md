@@ -1,22 +1,24 @@
 # Interfaces (其他)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window-i
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 针对系统能力SystemCapability.Window.SessionManager，请先使用 canIUse() 接口判断当前设备是否支持此syscap及对应接口。
 
 
 
-#### Configuration9+
+## Configuration9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 创建子窗口或系统窗口时的参数。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -31,13 +33,15 @@
 
 
 
-#### SystemBarProperties
+## SystemBarProperties
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 状态栏属性。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -53,30 +57,36 @@
 
 
 
-#### StatusBarProperty18+
+## StatusBarProperty18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 状态栏的属性。在获取状态栏属性信息时返回。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
+**系统能力：** SystemCapability.Window.SessionManager
+
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| contentColor | string | 否 | 否 | 状态栏文字颜色，固定为ARGB格式，如：#E5FFFFFF。 系统能力： SystemCapability.Window.SessionManager |
+| contentColor | string | 否 | 否 | 状态栏文字颜色，固定为ARGB格式，如：#E5FFFFFF。 |
 
 
 
 
-#### SystemBarStyle12+
+## SystemBarStyle12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 状态栏的属性。在设置页面级状态栏属性时使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -85,13 +95,15 @@
 
 
 
-#### FrameMetrics22+
+## FrameMetrics22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 帧率指标。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -103,9 +115,10 @@
 
 
 
-#### Rect7+
+## Rect7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 窗口矩形区域。
 
@@ -119,9 +132,10 @@
 
 与[RectInVP](#rectinvp23)相比，Rect使用像素（px）作为单位，适用于需要精确控制像素的场景；RectInVP使用虚拟像素作为单位，能够自动适配不同屏幕密度，更推荐在大多数UI场景中使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| left | number | 否 | 否 | 矩形区域的左边界，单位为px，该参数为整数。 |
+| left | number | 否 | 否 | 矩形区域的左边界，单位为px，该参数应为整数。 |
 | top | number | 否 | 否 | 矩形区域的上边界，单位为px，该参数应为整数。 |
 | width | number | 否 | 否 | 矩形区域的宽度，单位为px，该参数应为整数。 |
 | height | number | 否 | 否 | 矩形区域的高度，单位为px，该参数应为整数。 |
@@ -129,9 +143,10 @@
 
 
 
-#### RectInVP23+
+## RectInVP23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 窗口矩形区域，单位为vp。
 
@@ -139,19 +154,21 @@
 
 **系统能力：** SystemCapability.Window.SessionManager
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| left | number | 否 | 否 | 矩形区域的左边界值，单位为vp。 |
-| top | number | 否 | 否 | 矩形区域的上边界值，单位为vp。 |
-| width | number | 否 | 否 | 矩形区域的宽度，单位为vp。 |
-| height | number | 否 | 否 | 矩形区域的高度，单位为vp。 |
+| left | number | 否 | 否 | 矩形区域的左边界值，单位为vp，该参数为浮点数。 |
+| top | number | 否 | 否 | 矩形区域的上边界值，单位为vp，该参数为浮点数。 |
+| width | number | 否 | 否 | 矩形区域的宽度，单位为vp，该参数为浮点数。 |
+| height | number | 否 | 否 | 矩形区域的高度，单位为vp，该参数为浮点数。 |
 
 
 
 
-#### AvoidArea7+
+## AvoidArea7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 窗口内容的避让区域。
 
@@ -162,6 +179,7 @@
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -178,13 +196,15 @@
 
 
 
-#### UIEnvAvoidAreaVP23+
+## UIEnvAvoidAreaVP23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 以vp为单位表示的窗口避让区域信息，在进行[沉浸式布局](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/immersive-window-feature#沉浸式布局)适配时需关注。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -197,13 +217,15 @@
 
 
 
-#### UIEnvWindowAvoidAreaInfoPX23+
+## UIEnvWindowAvoidAreaInfoPX23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 窗口不同类型避让区域信息组成的[环境变量](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-env-system-property)数据类型，每种类型避让区域单位为px。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -215,13 +237,15 @@
 
 
 
-#### UIEnvWindowAvoidAreaInfoVP23+
+## UIEnvWindowAvoidAreaInfoVP23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 窗口不同类型避让区域信息组成的[环境变量](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-env-system-property)数据类型，每种类型避让区域单位为vp。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -233,15 +257,17 @@
 
 
 
-#### Size7+
+## Size7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 窗口大小，单位为px。
 
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -251,15 +277,17 @@
 
 
 
-#### SizeInVP23+
+## SizeInVP23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 窗口大小，单位为vp。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -269,13 +297,15 @@
 
 
 
-#### Position20+
+## Position20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 窗口或组件的位置。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -285,15 +315,17 @@
 
 
 
-#### RectChangeOptions12+
+## RectChangeOptions12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 窗口矩形（窗口位置及窗口大小）变化返回的值及变化原因。
 
 **系统能力：** SystemCapability.Window.SessionManager
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -303,15 +335,17 @@
 
 
 
-#### AvoidAreaOptions12+
+## AvoidAreaOptions12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 系统避让区变化后返回当前避让区域以及避让区域类型。
 
 **系统能力：** SystemCapability.WindowManager.WindowManager.Core
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -321,11 +355,13 @@
 
 
 
-#### WindowProperties
+## WindowProperties
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 窗口属性。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -333,8 +369,8 @@
 | drawableRect11+ | Rect | 否 | 否 | 窗口内的可绘制区域尺寸，其中左边界上边界是相对于窗口左上顶点计算。在Stage模型下，需要在调用loadContent()或setUIContent()加载页面内容后获取该属性。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.WindowManager.WindowManager.Core |
 | type(deprecated) | WindowType | 否 | 否 | 窗口类型。 当前存在主窗使用getWindowProperties()接口返回type不准确的问题，从API版本26.0.0开始废弃，可使用windowType字段代替。 起始版本： 7 废弃版本： 26.0.0 替代接口： windowType 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.WindowManager.WindowManager.Core |
 | windowType | WindowType | 否 | 是 | 窗口类型，默认值是TYPE_MAIN。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 系统能力： SystemCapability.WindowManager.WindowManager.Core |
-| isFullScreen | boolean | 否 | 否 | 在满足isLayoutFullScreen为true的条件下如果隐藏了状态栏，返回值为true，其他情况下均返回false。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.WindowManager.WindowManager.Core |
-| isLayoutFullScreen7+ | boolean | 否 | 否 | 对于子窗，如果设置了沉浸式布局，返回值为true。 对于主窗，如果设置了沉浸式布局且处于全屏模式，返回值为true。 其他情况下均返回false 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.WindowManager.WindowManager.Core |
+| isFullScreen | boolean | 否 | 否 | 窗口是否处于沉浸式布局并设置了状态栏隐藏。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.WindowManager.WindowManager.Core 设备行为差异： - 在PC/2in1设备或其他设备的电脑模式下： 在HarmonyOS 6.1.1之前，如果主窗口或子窗口处于沉浸式布局（即isLayoutFullScreen为true）并且已进入全屏会返回true；其他情况下返回值均为false。 从HarmonyOS 6.1.1开始，如果主窗口调用接口（如setSpecificSystemBarEnabled或者setWindowSystemBarEnable）设置状态栏隐藏且处于沉浸式布局（即isLayoutFullScreen为true）的条件下，返回值为true；其他情况下返回值均为false。 - 在其他设备或其他模式下： 如果主窗口调用接口（如setSpecificSystemBarEnabled或者setWindowSystemBarEnable）设置状态栏隐藏且处于沉浸式布局（即isLayoutFullScreen为true）的条件下，返回值为true；其他情况下返回值均为false。 |
+| isLayoutFullScreen7+ | boolean | 否 | 否 | 窗口是否处于沉浸式布局。对于子窗，如果设置了沉浸式布局，返回值为true。 对于主窗，如果设置了沉浸式布局且处于全屏模式，返回值为true。 其他情况下均返回false 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.WindowManager.WindowManager.Core |
 | focusable7+ | boolean | 否 | 否 | 窗口是否可获焦。true表示可获焦；false表示不可获焦。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.WindowManager.WindowManager.Core |
 | touchable7+ | boolean | 否 | 否 | 窗口是否可触摸。true表示可触摸；false表示不可触摸。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.WindowManager.WindowManager.Core |
 | brightness | number | 否 | 否 | 窗口亮度。通过setWindowBrightness()设置窗口的亮度值。该参数为浮点数，可设置的亮度范围为[0.0, 1.0]或-1.0，其取值1.0时表示最大亮度，取值-1.0时，表示亮度跟随系统。如果窗口没有设置亮度值，表示亮度跟随系统，此时获取到的亮度值为-1.0。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 系统能力： SystemCapability.WindowManager.WindowManager.Core |
@@ -351,13 +387,15 @@
 
 
 
-#### DecorButtonStyle14+
+## DecorButtonStyle14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 系统标题栏按钮样式。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -371,9 +409,10 @@
 
 
 
-#### WindowLimits11+
+## WindowLimits11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 窗口尺寸限制参数，应用可以通过[getWindowLimits](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window-window#getwindowlimits11)获得当前窗口的尺寸限制（单位为px）；从API version 22开始，还可以通过[getWindowLimitsVP](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window-window#getwindowlimitsvp22)获取窗口尺寸限制（单位为vp）。
 
@@ -389,6 +428,7 @@
 > 针对maxWidth、maxHeight、minWidth、minHeight属性： 默认单位为px，从API version 22开始支持通过pixelUnit设置单位为px或vp。 参数为整数，浮点数会向下取整。 默认值为0，表示属性不发生变化。 可生效范围下限值：系统限定的最小高度/宽度。 可生效范围上限值：系统限定的最大高度/宽度。
 
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | maxWidth | number | 否 | 是 | 窗口的最大宽度。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
@@ -400,15 +440,17 @@
 
 
 
-#### TitleButtonRect11+
+## TitleButtonRect11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 标题栏上的最小化、最大化、关闭按钮矩形区域，该区域位置坐标相对窗口右上角。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -420,15 +462,17 @@
 
 
 
-#### MoveConfiguration15+
+## MoveConfiguration15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 窗口移动选项。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -437,15 +481,17 @@
 
 
 
-#### WindowDensityInfo15+
+## WindowDensityInfo15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 窗口所在显示设备和窗口自定义的显示密度信息，是与像素单位无关的缩放系数，即显示大小缩放系数。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -456,9 +502,10 @@
 
 
 
-#### WindowInfoOptions
+## WindowInfoOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 窗口布局信息过滤选项。
 
@@ -470,6 +517,7 @@
 
 **系统能力：** SystemCapability.Window.SessionManager
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | excludeSystemWindows | boolean | 否 | 是 | 是否排除系统窗口。true表示需要排除，false表示不排除，默认为false。 |
@@ -479,13 +527,15 @@
 
 
 
-#### WindowLayoutInfo15+
+## WindowLayoutInfo15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 窗口布局信息。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -495,27 +545,30 @@
 
 
 
-#### KeyboardInfo18+
+## KeyboardInfo18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 软键盘窗口信息。
 
 **系统能力：** SystemCapability.Window.SessionManager
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | beginRect | Rect | 否 | 否 | 动画开始前软键盘的位置和大小。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 | endRect | Rect | 否 | 否 | 动画结束后软键盘的位置和大小。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
-| animated20+ | boolean | 否 | 是 | 当前是否有显示/隐藏动画，true表示有动画，false表示没有。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
-| config20+ | WindowAnimationConfig | 否 | 是 | 动画配置信息。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
+| animated20+ | boolean | 否 | 是 | 当前是否有显示/隐藏动画，true表示有动画，false表示没有。默认值：false。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
+| config20+ | WindowAnimationConfig | 否 | 是 | 动画配置信息。不设置，则默认为空。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
 
 
 
 
-#### ShowWindowOptions20+
+## ShowWindowOptions20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 显示子窗口或系统窗口时的参数。
 
@@ -523,16 +576,18 @@
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| focusOnShow | boolean | 否 | 是 | 窗口调用showWindow()显示时是否自动获焦，默认为true。该参数对主窗、模态窗、dialog窗口不生效。 |
+| focusOnShow | boolean | 否 | 是 | 窗口调用showWindow()显示时是否自动获焦，默认为true。该参数对主窗口、模态窗、dialog窗口不生效。 |
 
 
 
 
-#### WindowAnimationConfig20+
+## WindowAnimationConfig20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 窗口动画参数配置。
 
@@ -540,18 +595,20 @@
 
 **系统能力：** SystemCapability.Window.SessionManager
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | curve | WindowAnimationCurve | 否 | 否 | 动画曲线类型。 |
-| duration | number | 否 | 是 | 动画播放的时长，单位毫秒（ms）。 默认值：0，最大值：3000。 根据动画曲线类型决定是否必填。 |
-| param | WindowAnimationCurveParam | 否 | 是 | 动画曲线参数，根据动画曲线类型决定是否必填。 |
+| duration | number | 否 | 是 | 动画播放的时长，单位毫秒（ms）。 取值范围为[0, 3000]。默认值为0，表示不播放动画。 根据动画曲线类型决定是否必填。 |
+| param | WindowAnimationCurveParam | 否 | 是 | 动画曲线参数，根据动画曲线类型决定是否必填。不设置，则默认为空。 |
 
 
 
 
-#### WindowSnapshotAnimationConfig
+## WindowSnapshotAnimationConfig
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 窗口截图动画配置，仅支持在调用[maximizeWithOptions()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window-window#maximizewithoptions)或[recover()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window-window#recover)接口时配置。
 
@@ -561,6 +618,7 @@
 
 **系统能力：** SystemCapability.Window.SessionManager
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | duration | number | 否 | 是 | 截图淡出动画执行时长，单位为ms，取值为非负整数，输入浮点数会向下取整。不指定时使用系统默认值：全屏模式和自由悬浮窗口模式互相切换场景下截图淡出动画执行时长默认值为400，其他场景默认值为250。取值范围为[0, 400]，超出取值范围会报错。 |
@@ -569,9 +627,10 @@
 
 
 
-#### MaximizeOptions
+## MaximizeOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 最大化配置选项。
 
@@ -581,22 +640,25 @@
 
 **系统能力：** SystemCapability.Window.SessionManager
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | maximizePresentation | MaximizePresentation | 否 | 是 | 最大化时的布局方式，默认值为MaximizePresentation.ENTER_IMMERSIVE。 |
 | acrossDisplayPresentation | AcrossDisplayPresentation | 否 | 是 | 折叠屏跨屏策略，默认值为AcrossDisplayPresentation.FOLLOW_ACROSS_DISPLAY_SETTING。仅主窗口可设置，非主窗口调用时返回错误码1300004。设备行为差异： 仅在具备折叠功能的2in1设备可正常调用；在其他设备上调用不生效。 |
-| snapshotAnimationConfig | WindowSnapshotAnimationConfig | 否 | 是 | 截图动画配置。在窗口最大化和窗口恢复自由窗口过程中，系统会通过截图动画遮盖应用布局变化的跳变，可通过此属性指定截图淡出动画延迟和淡出动画执行时长。仅主窗口可设置，主窗口不指定时使用系统默认动画；子窗默认无截图动画，即截图动画参数duration和delay均为0，传入其他动画参数返回1300004错误码。当duration为0时，表示取消截图动画。 |
+| snapshotAnimationConfig | WindowSnapshotAnimationConfig | 否 | 是 | 截图动画配置。在窗口最大化和窗口恢复自由窗口过程中，系统会通过截图动画遮盖应用布局变化的跳变，可通过此属性指定截图淡出动画延迟和淡出动画执行时长。仅主窗口可设置，主窗口不指定时使用系统默认动画；子窗口默认无截图动画，即截图动画参数duration和delay均为0，传入其他动画参数返回1300004错误码。当duration为0时，表示取消截图动画。 |
 
 
 
 
-#### WindowInfo18+
+## WindowInfo18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 当前窗口的详细信息。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -605,7 +667,7 @@
 | abilityName | string | 否 | 否 | Ability的名称。 |
 | windowId | number | 否 | 否 | 窗口ID。 |
 | windowStatusType | WindowStatusType | 否 | 否 | 窗口模式枚举。 |
-| isFocused | boolean | 否 | 是 | 窗口是否获焦。true表示窗口获焦；false表示窗口未获焦。返回值与isFocused()接口一致。 |
+| isFocused | boolean | 否 | 是 | 窗口是否获焦。true表示窗口获焦；false表示窗口未获焦。默认值：false。返回值与isFocused()接口一致。 |
 | globalDisplayRect20+ | Rect | 否 | 是 | 全局坐标系下的窗口尺寸，其中的宽高是未经缩放计算过的原始值。扩展屏场景下以主屏左上角为坐标原点，虚拟屏场景下以虚拟屏左上角为坐标原点。默认值：[0, 0, 0, 0]。 |
 | displayId | number | 否 | 是 | 窗口所在屏幕的ID。默认返回主屏幕ID，该参数为整数。 起始版本： 26.0.0 模型约束： 此接口仅可在Stage模型下使用。 |
 | globalRect | Rect | 否 | 是 | 窗口所在物理屏幕上的真实显示区域，以所在屏幕的左上角为坐标原点。若窗口显示时经过了缩放，获取到的是缩放后窗口在屏幕上的真实位置和大小。默认值：[0, 0, 0, 0]。 起始版本： 26.0.0 模型约束： 此接口仅可在Stage模型下使用。 |
@@ -613,15 +675,17 @@
 
 
 
-#### TransitionAnimation20+
+## TransitionAnimation20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 窗口转场动画配置。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -631,9 +695,10 @@
 
 
 
-#### StartAnimationParams20+
+## StartAnimationParams20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | Tablet
 
 启动动画配置。
 
@@ -645,20 +710,23 @@
 
 **系统能力：** SystemCapability.Window.SessionManager
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| type | AnimationType | 否 | 否 | 窗口动画类型。 |
+| type | AnimationType | 否 | 否 | 窗口动画类型，用于指定窗口启动时使用的动画效果，如淡入淡出等。 |
 
 
 
 
-#### WindowCreateParams20+
+## WindowCreateParams20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 应用启动时的窗口参数配置。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -668,9 +736,10 @@
 
 
 
-#### Callback15+
+## Callback15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Callback<T, V = void> {
 
@@ -688,12 +757,14 @@ Callback<T, V = void> {
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | T | 是 | 回调函数调用时需要传入T类型的参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -702,9 +773,10 @@ Callback<T, V = void> {
 
 
 
-#### RotationChangeInfo19+
+## RotationChangeInfo19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 窗口旋转变化时的窗口信息。
 
@@ -712,19 +784,21 @@ Callback<T, V = void> {
 
 **系统能力：** SystemCapability.Window.SessionManager
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| type | RotationChangeType | 否 | 否 | 窗口旋转事件类型。 |
+| type | RotationChangeType | 否 | 否 | 窗口旋转事件类型，如窗口即将旋转、窗口旋转结束等。 |
 | orientation | number | 否 | 否 | 窗口显示方向。 - 0表示竖屏。 - 1表示反向横屏。 - 2表示反向竖屏。 - 3表示横屏。 开发者在使用时，需要注意该方向与display对象的属性orientation含义不一致。 |
-| displayId | number | 否 | 否 | 窗口所在屏幕Id。 |
+| displayId | number | 否 | 否 | 窗口所在屏幕ID，该参数为整数。 |
 | displayRect | Rect | 否 | 否 | 窗口所在屏幕旋转后的矩形区域大小。 |
 
 
 
 
-#### RotationChangeResult19+
+## RotationChangeResult19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 应用在窗口旋转变化时返回的信息，系统会根据此信息改变当前窗口矩形区域大小。当返回主窗口旋转变化的信息时，系统不改变主窗口的大小。
 
@@ -734,17 +808,19 @@ Callback<T, V = void> {
 
 **系统能力：** SystemCapability.Window.SessionManager
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| rectType | RectType | 否 | 否 | 窗口矩形区域坐标系类型。 |
+| rectType | RectType | 否 | 否 | 窗口矩形区域坐标系类型，用于指定窗口矩形区域使用的坐标系，如屏幕坐标系、父窗口坐标系等。 |
 | windowRect | Rect | 否 | 否 | 相对于屏幕或父窗坐标系的窗口矩形区域信息。 |
 
 
 
 
-#### OrientationResult
+## OrientationResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置窗口显示方向的执行结果。
 
@@ -756,20 +832,23 @@ Callback<T, V = void> {
 
 **系统能力：** SystemCapability.Window.SessionManager
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| executionResult | OrientationExecutionResult | 否 | 否 | 窗口显示方向的执行结果枚举。 |
+| executionResult | OrientationExecutionResult | 否 | 否 | 窗口显示方向的执行结果枚举，表示设置窗口显示方向的操作结果，例如生效、不生效、挂起等。 |
 
 
 
 
-#### SubWindowOptions11+
+## SubWindowOptions11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 子窗口创建参数。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -778,21 +857,23 @@ Callback<T, V = void> {
 | isModal12+ | boolean | 否 | 是 | 子窗口是否启用模态属性。true表示子窗口启用模态属性，false表示子窗口禁用模态属性。不设置，则默认为false。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | modalityType14+ | ModalityType | 否 | 是 | 子窗口模态类型，仅当子窗口启用模态属性时生效。不设置，则默认为WINDOW_MODALITY。 元服务API： 从API version 14开始，该接口支持在元服务中使用。 |
 | windowRect18+ | Rect | 否 | 是 | 子窗口矩形区域，其中子窗口存在大小限制，具体参考resize()方法。不设置且未调用showWindow()显示前，则默认为{left: 0, top: 0, width: 0, height: 0}。具体参考子窗口开发指导。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
-| zLevel18+ | number | 否 | 是 | 子窗口层级级别，仅当子窗口未启用模态属性，即未设置isModal时生效。该参数是整数，取值范围为[-10000, 10000]，浮点数输入将向下取整。不设置，则默认为0。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
+| zLevel18+ | number | 否 | 是 | 子窗口层级级别，仅当子窗口未启用模态属性，即未设置isModal时生效。该参数应为整数，取值范围为[-10000, 10000]，浮点数输入将向下取整。不设置，则默认为0。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 | maximizeSupported19+ | boolean | 否 | 是 | 子窗口是否支持最大化特性。true表示子窗口支持最大化，false表示子窗口不支持最大化。不设置，则默认为false。 元服务API： 从API version 19开始，该接口支持在元服务中使用。 设备行为差异： 该参数在支持并处于自由窗口状态的设备上可正常调用；在不支持自由窗口状态的设备上，作为入参使用时，对应接口不生效不报错；在支持但不处于自由窗口状态的设备上，作为入参使用时，对应接口不生效不报错，切换到自由窗口状态后生效。 |
 | outlineEnabled20+ | boolean | 否 | 是 | 子窗口是否显示描边。true表示子窗口显示描边，false表示子窗口不显示描边。不设置，则默认为false。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 设备行为差异： 该参数在PC/2in1设备、其他设备的电脑模式中可正常调用，在其他设备和其他模式中作为入参使用时，对应接口不生效不报错。 |
-| zLevelAboveParentLoosened | boolean | 否 | 是 | 子窗是否是独立子窗。true表示子窗是独立子窗，false表示子窗不是独立子窗。不设置，则默认为false。 起始版本： 26.0.0 元服务API： 从API version 26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
+| zLevelAboveParentLoosened | boolean | 否 | 是 | 子窗口是否是独立子窗。true表示子窗口是独立子窗，false表示子窗口不是独立子窗。不设置，则默认为false。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 
 
 
 
-#### KeyFramePolicy20+
+## KeyFramePolicy20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 关键帧的策略配置。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -805,31 +886,35 @@ Callback<T, V = void> {
 
 
 
-#### MainWindowInfo21+
+## MainWindowInfo21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 主窗口信息。
 
 **系统能力：** SystemCapability.Window.SessionManager
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| displayId | number | 否 | 否 | 主窗口所在的屏幕ID。 |
-| windowId | number | 否 | 否 | 主窗口ID。 |
+| displayId | number | 否 | 否 | 主窗口所在的屏幕ID，该参数应为正整数。 |
+| windowId | number | 否 | 否 | 主窗口ID，该参数应为正整数。 |
 | showing | boolean | 否 | 否 | 主窗口的前后台状态。true表示主窗口在前台，false表示主窗口不在前台。 |
 | label | string | 否 | 否 | 主窗口的任务名称。 |
 
 
 
 
-#### WindowSnapshotConfiguration21+
+## WindowSnapshotConfiguration21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 主窗口截图的配置项。
 
 **系统能力：** SystemCapability.Window.SessionManager
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

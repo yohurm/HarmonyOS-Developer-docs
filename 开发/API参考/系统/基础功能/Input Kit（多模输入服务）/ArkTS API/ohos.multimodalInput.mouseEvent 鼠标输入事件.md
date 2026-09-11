@@ -1,9 +1,9 @@
 # @ohos.multimodalInput.mouseEvent (鼠标输入事件)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-mouseevent
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设备上报的鼠标事件，继承自[InputEvent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inputevent)。
  
@@ -12,24 +12,27 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-import { Action, Button, Axis, AxisValue, MouseEvent } from '@kit.InputKit';
+import { MouseAction, Button, Axis, AxisValue, MouseToolType, MouseEvent } from '@kit.InputKit';
 ```
  
   
 
-#### Action
+## Action
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 鼠标事件类型。
  
 **系统能力：** SystemCapability.MultimodalInput.Input.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CANCEL | 0 | 取消。鼠标down事件异常打断，未正常闭环，例如：按下鼠标按键后未抬起，窗口退后台或被异常销毁时触发cancel事件。 |
@@ -45,14 +48,16 @@ import { Action, Button, Axis, AxisValue, MouseEvent } from '@kit.InputKit';
  
   
 
-#### Button
+## Button
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 鼠标按键。
  
 **系统能力：** SystemCapability.MultimodalInput.Input.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | LEFT | 0 | 鼠标左键。 |
@@ -67,14 +72,16 @@ import { Action, Button, Axis, AxisValue, MouseEvent } from '@kit.InputKit';
  
   
 
-#### Axis
+## Axis
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 鼠标轴类型。
  
 **系统能力：** SystemCapability.MultimodalInput.Input.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SCROLL_VERTICAL | 0 | 鼠标垂直滚动轴。 |
@@ -84,14 +91,16 @@ import { Action, Button, Axis, AxisValue, MouseEvent } from '@kit.InputKit';
  
   
 
-#### AxisValue
+## AxisValue
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 鼠标轴类型和轴的值。
  
 **系统能力：** SystemCapability.MultimodalInput.Input.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | axis | Axis | 否 | 否 | 鼠标轴类型。 |
@@ -100,14 +109,16 @@ import { Action, Button, Axis, AxisValue, MouseEvent } from '@kit.InputKit';
  
   
 
-#### ToolType11+
+## ToolType11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 工具类型。
  
 **系统能力：** SystemCapability.MultimodalInput.Input.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | UNKNOWN | 0 | 未知类型。 |
@@ -118,14 +129,16 @@ import { Action, Button, Axis, AxisValue, MouseEvent } from '@kit.InputKit';
  
   
 
-#### MouseEvent
+## MouseEvent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 鼠标事件。
  
 **系统能力：** SystemCapability.MultimodalInput.Input.Core
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | action | Action | 否 | 否 | 鼠标事件类型。 |

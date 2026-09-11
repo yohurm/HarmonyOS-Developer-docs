@@ -1,9 +1,9 @@
 # Interface (PhotoAsset)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-photoaccesshelper-photoasset
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供封装文件属性的方法。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
@@ -22,24 +23,27 @@ import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | uri | string | 是 | 否 | 媒体文件资源URI（如：file://media/Photo/1/IMG_datetime_0001/displayName.jpg），详情参见用户文件URI介绍中的媒体文件URI。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | photoType | PhotoType | 是 | 否 | 媒体文件类型。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
-| displayName | string | 是 | 否 | 显示文件名，包含后缀名。字符串长度的取值范围为[1, 255]。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
+| displayName | string | 是 | 否 | 显示文件名，包含后缀名。字符串长度的取值范围为[1, 255]字符。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 |
 
 
 
 
-#### get
+## get
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get(member: string): MemberType
 
@@ -51,12 +55,14 @@ get(member: string): MemberType
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| member | string | 是 | 成员参数名称，在get时，除了'uri'、'media_type'、'subtype'和'display_name'四个属性之外，其他的属性都需要在fetchColumns中填入需要获取的PhotoKeys，例如：get title属性fetchColumns: ['title']。 |
+| member | string | 是 | 成员参数名称，在get时，除了'uri'、'media_type'、'subtype'和'display_name'四个属性之外，其他的属性都需要在fetchColumns中填入需要获取的PhotoKeys，例如：获取title属性时，需要在fetchColumns中填入['title']。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -65,7 +71,8 @@ get(member: string): MemberType
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+以下错误码的详细介绍请参见[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -101,9 +108,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### set
+## set
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 set(member: string, value: string): void
 
@@ -113,15 +121,17 @@ set(member: string, value: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| member | string | 是 | 成员参数名称例如：PhotoKeys.TITLE。字符串长度的取值范围为[1, 255]。 |
-| value | string | 是 | 设置成员参数名称，只能修改PhotoKeys.TITLE的值。title的参数规格为： - 不应包含扩展名。 - 文件名字符串长度的取值范围为[1, 255]（资产文件名为标题+扩展名）。 - 不允许出现的非法英文字符，包括：. \ / : * ? " ' ` < > \| { } [ ] |
+| member | string | 是 | 成员参数名称例如：PhotoKeys.TITLE。字符串长度的取值范围为[1, 255]字符。 |
+| value | string | 是 | 设置成员参数的值，只能修改PhotoKeys.TITLE的值。title的参数规格为： - 不应包含扩展名。 - 文件名字符串长度的取值范围为[1, 255]（资产文件名为标题+扩展名）。 - 不允许出现的非法英文字符，包括：. \ / : * ? " ' ` < > \| { } [ ] |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -157,9 +167,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### commitModify
+## commitModify
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 commitModify(callback: AsyncCallback&lt;void&gt;): void
 
@@ -173,6 +184,7 @@ commitModify(callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当修改文件元数据成功，err为undefined，否则为错误对象。 |
@@ -182,7 +194,8 @@ commitModify(callback: AsyncCallback&lt;void&gt;): void
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
 
-错误码14000001，请参考 [PhotoKeys](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-photoaccesshelper-e#photokeys)获取有关文件名的格式和长度要求。
+错误码14000001表示显示名称无效，请参考[PhotoKeys](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-photoaccesshelper-e#photokeys)中的DISPLAY_NAME字段获取有关文件名的格式和长度要求。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -208,14 +221,21 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
     fetchColumns: ['title'],
     predicates: predicates
   };
+  // 获取照片资源集合。
   let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
+  // 获取第一个照片资源对象。
   let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+  if (photoAsset === undefined) {
+    console.error('photoAsset is undefined');
+    return;
+  }
   let title: string = photoAccessHelper.PhotoKeys.TITLE.toString();
+  // 获取当前标题值。
   let photoAssetTitle: photoAccessHelper.MemberType = photoAsset.get(title);
   console.info('photoAsset get photoAssetTitle = ', photoAssetTitle);
   photoAsset.set(title, 'newTitle2');
   photoAsset.commitModify((err) => {
-    if (err === undefined) {
+    if (!err) {
       let newPhotoAssetTitle: photoAccessHelper.MemberType = photoAsset.get(title);
       console.info('photoAsset get newPhotoAssetTitle = ', newPhotoAssetTitle);
     } else {
@@ -227,9 +247,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### commitModify
+## commitModify
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 commitModify(): Promise&lt;void&gt;
 
@@ -243,6 +264,7 @@ commitModify(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -255,6 +277,7 @@ commitModify(): Promise&lt;void&gt;
 错误码14000001，请参考 [PhotoKeys](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-photoaccesshelper-e#photokeys)获取有关文件名的格式和长度要求。
 
 在API version 13及之前的版本，无相关权限返回错误码13900012；从API version 14开始，无相关权限返回错误码201。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -302,9 +325,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### close(deprecated)
+## close(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(fd: number, callback: AsyncCallback&lt;void&gt;): void
 
@@ -318,6 +342,7 @@ close(fd: number, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fd | number | 是 | 文件描述符。 |
@@ -327,6 +352,7 @@ close(fd: number, callback: AsyncCallback&lt;void&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -369,9 +395,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### close(deprecated)
+## close(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(fd: number): Promise&lt;void&gt;
 
@@ -385,12 +412,14 @@ close(fd: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fd | number | 是 | 文件描述符。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -400,6 +429,7 @@ close(fd: number): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -425,7 +455,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
     };
     let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
     let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-    let fd = await asset.open('rw');
+    let fd: number = await asset.getReadOnlyFd();
     console.info('file fd', fd);
     await asset.close(fd);
     console.info('asset close succeed.');
@@ -437,9 +467,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### getThumbnail
+## getThumbnail
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getThumbnail(callback: AsyncCallback<image.PixelMap>): void
 
@@ -447,11 +478,12 @@ getThumbnail(callback: AsyncCallback<image.PixelMap>): void
 
 **需要权限**：ohos.permission.READ_IMAGEVIDEO
 
-**元服务API**：从API version 22开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -463,6 +495,7 @@ getThumbnail(callback: AsyncCallback<image.PixelMap>): void
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
 
 错误码13900012，请参考[开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-preparation)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -490,7 +523,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
   let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
   console.info('asset displayName = ', asset.displayName);
   asset.getThumbnail((err, pixelMap) => {
-    if (err === undefined) {
+    if (!err) {
       console.info('getThumbnail successful ' + pixelMap);
     } else {
       console.error(`getThumbnail fail with error: ${err.code}, ${err.message}`);
@@ -501,9 +534,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### getThumbnail
+## getThumbnail
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getThumbnail(size: image.Size, callback: AsyncCallback<image.PixelMap>): void
 
@@ -517,9 +551,10 @@ getThumbnail(size: image.Size, callback: AsyncCallback<image.PixelMap>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| size | image.Size | 是 | 缩略图尺寸。 |
+| size | image.Size | 是 | 缩略图尺寸。取值原则：width和height为正整数，单位：像素（px）。 |
 | callback | AsyncCallback<image.PixelMap> | 是 | 回调函数。当获取文件的缩略图成功，err为undefined，data为缩略图的PixelMap；否则为错误对象。 |
 
 
@@ -528,6 +563,7 @@ getThumbnail(size: image.Size, callback: AsyncCallback<image.PixelMap>): void
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
 
 错误码13900012，请参考[开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-preparation)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -558,7 +594,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
     let asset = await fetchResult.getFirstObject();
     console.info('asset displayName = ', asset.displayName);
     asset.getThumbnail(size, (err, pixelMap) => {
-      if (err === undefined) {
+      if (!err) {
         console.info('getThumbnail successful ' + pixelMap);
       } else {
         console.error(`getThumbnail fail with error: ${err.code}, ${err.message}`);
@@ -572,9 +608,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### getThumbnail
+## getThumbnail
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getThumbnail(size?: image.Size): Promise<image.PixelMap>
 
@@ -588,12 +625,14 @@ getThumbnail(size?: image.Size): Promise<image.PixelMap>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| size | image.Size | 否 | 缩略图尺寸。 |
+| size | image.Size | 否 | 缩略图尺寸。取值原则：width和height为正整数，不传则使用默认尺寸256×256。单位：像素（px）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -605,6 +644,7 @@ getThumbnail(size?: image.Size): Promise<image.PixelMap>
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
 
 错误码13900012，请参考[开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-preparation)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -644,9 +684,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### clone14+
+## clone14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clone(title: string): Promise&lt;PhotoAsset&gt;
 
@@ -658,21 +699,24 @@ clone(title: string): Promise&lt;PhotoAsset&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| title | string | 是 | 克隆后资产的标题。参数规格为： - 不应包含扩展名。 - 文件名字符串长度的取值范围为[1, 255]（资产文件名为标题+扩展名）。 - 不允许出现的非法英文字符，包括：. \ / : * ? " ' ` < > \| { } [ ] |
+| title | string | 是 | 克隆后资产的标题。参数规格为： - 不应包含扩展名。 - 文件名字符串长度的取值范围为[1, 255]字符（资产文件名为标题+扩展名）。 - 不允许出现的非法英文字符，包括：. \ / : * ? " ' ` < > \| { } [ ] |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;PhotoAsset&gt; | Promise对象，返回PhotoAsset。 |
+| Promise&lt;PhotoAsset&gt; | Promise对象，返回克隆后生成的新PhotoAsset对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -709,9 +753,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### getReadOnlyFd(deprecated)
+## getReadOnlyFd(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getReadOnlyFd(callback: AsyncCallback&lt;number&gt;): void
 
@@ -729,6 +774,7 @@ getReadOnlyFd(callback: AsyncCallback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;number&gt; | 是 | 回调函数。当打开当前文件成功，err为undefined，data为文件描述符；否则为错误对象。 |
@@ -739,6 +785,7 @@ getReadOnlyFd(callback: AsyncCallback&lt;number&gt;): void
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
 
 在API version 13及之前的版本，无相关权限返回错误码13900012；从API version 14开始，无相关权限返回错误码201。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -766,7 +813,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
   let assetResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOptions);
   let photoAsset: photoAccessHelper.PhotoAsset = await assetResult.getFirstObject();
   photoAsset.getReadOnlyFd((err, fd) => {
-    if (fd !== undefined) {
+    if (!err) {
       console.info('File fd' + fd);
       photoAsset.close(fd);
     } else {
@@ -778,9 +825,10 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 
 
 
-#### getReadOnlyFd(deprecated)
+## getReadOnlyFd(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getReadOnlyFd(): Promise&lt;number&gt;
 
@@ -798,6 +846,7 @@ getReadOnlyFd(): Promise&lt;number&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象，返回文件描述符。 |
@@ -808,6 +857,7 @@ getReadOnlyFd(): Promise&lt;number&gt;
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[文件管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement)。
 
 在API version 13及之前的版本，无相关权限返回错误码13900012；从API version 14开始，无相关权限返回错误码201。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -840,7 +890,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
       return;
     }
     let fd: number = await photoAsset.getReadOnlyFd();
-    if (fd !== undefined) {
+    if (!err) {
       console.info('File fd' + fd);
       photoAsset.close(fd);
     } else {

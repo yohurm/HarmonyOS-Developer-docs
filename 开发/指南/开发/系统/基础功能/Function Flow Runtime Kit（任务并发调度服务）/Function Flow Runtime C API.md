@@ -1,14 +1,14 @@
 # Function Flow Runtime C API
 
-更新时间：2026-07-17 09:35:24
+更新时间：2026-08-18 12:49:55
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ffrt-api-guideline-c
 
-#### 任务管理
+## 任务管理
 
   
 
-#### ffrt_deps_t
+### ffrt_deps_t
 
 **声明**
  
@@ -65,7 +65,7 @@ task_deps.items = task_dependence;
  
   
 
-#### ffrt_task_attr_t
+### ffrt_task_attr_t
 
 **声明**
  
@@ -325,7 +325,7 @@ ffrt_task_attr_destroy(&attr);
  
   
 
-#### ffrt_alloc_auto_managed_function_storage_base
+### ffrt_alloc_auto_managed_function_storage_base
 
 **声明**
  
@@ -449,7 +449,7 @@ int main()
  
   
 
-#### ffrt_submit_base
+### ffrt_submit_base
 
 **声明**
  
@@ -594,7 +594,7 @@ int main()
  
   
 
-#### ffrt_submit_f
+### ffrt_submit_f
 
 **声明**
  
@@ -645,7 +645,7 @@ int main()
  
   
 
-#### ffrt_submit_h_base
+### ffrt_submit_h_base
 
 **声明**
  
@@ -686,7 +686,7 @@ ffrt_task_handle_destroy(t);
  
   
 
-#### ffrt_submit_h_f
+### ffrt_submit_h_f
 
 **声明**
  
@@ -747,7 +747,7 @@ int main()
  
   
 
-#### ffrt_task_handle_inc_ref
+### ffrt_task_handle_inc_ref
 
 **声明**
  
@@ -771,7 +771,7 @@ FFRT_C_API uint32_t ffrt_task_handle_inc_ref(ffrt_task_handle_t handle);
  
   
 
-#### ffrt_task_handle_dec_ref
+### ffrt_task_handle_dec_ref
 
 **声明**
  
@@ -795,7 +795,7 @@ FFRT_C_API uint32_t ffrt_task_handle_dec_ref(ffrt_task_handle_t handle);
  
   
 
-#### ffrt_task_handle_destroy
+### ffrt_task_handle_destroy
 
 **声明**
  
@@ -814,7 +814,7 @@ FFRT_C_API void ffrt_task_handle_destroy(ffrt_task_handle_t handle);
  
   
 
-#### ffrt_wait
+### ffrt_wait
 
 **声明**
  
@@ -838,7 +838,7 @@ ffrt_wait();
  
   
 
-#### ffrt_wait_deps
+### ffrt_wait_deps
 
 **声明**
  
@@ -876,7 +876,7 @@ ffrt_wait_deps(&deps);
  
   
 
-#### ffrt_this_task_update_qos
+### ffrt_this_task_update_qos
 
 **声明**
  
@@ -911,7 +911,7 @@ ffrt::submit([]() {
  
   
 
-#### ffrt_this_task_get_qos
+### ffrt_this_task_get_qos
 
 **声明**
  
@@ -942,7 +942,7 @@ ffrt::submit([]() {
  
   
 
-#### ffrt_this_task_get_id
+### ffrt_this_task_get_id
 
 **声明**
  
@@ -973,11 +973,11 @@ ffrt::submit([]() {
  
   
 
-#### 任务队列
+## 任务队列
 
   
 
-#### ffrt_queue_attr_t
+### ffrt_queue_attr_t
 
 **声明**
  
@@ -1259,7 +1259,7 @@ int main()
  
   
 
-#### ffrt_queue_t
+### ffrt_queue_t
 
 **声明**
  
@@ -1517,11 +1517,11 @@ int main()
  
   
 
-#### 同步原语
+## 同步原语
 
   
 
-#### ffrt_mutexattr_t
+### ffrt_mutexattr_t
 
 **声明**
  
@@ -1661,7 +1661,7 @@ ffrt_mutexattr_destroy(&attr);
  
   
 
-#### ffrt_mutex_t
+### ffrt_mutex_t
 
 - FFRT提供的类似pthread_mutex_t的性能实现，但不支持类似PTHREAD_MUTEX_INITIALIZER的初始化。
 
@@ -1838,7 +1838,7 @@ int main()
  
   
 
-#### ffrt_rwlock_t
+### ffrt_rwlock_t
 
 - FFRT提供的类似pthread_rwlock_t的性能实现。
 
@@ -2095,9 +2095,9 @@ int main()
  
   
 
-#### ffrt_cond_t
+### ffrt_cond_t
 
-- FFRT提供的类似pthread信号量的性能实现，但不支持类似PTHREAD_COND_INITIALIZER的初始化。
+- FFRT提供的类似pthread条件变量的性能实现，但不支持类似PTHREAD_COND_INITIALIZER的初始化。
 
  
 **声明**
@@ -2143,7 +2143,7 @@ FFRT_C_API int ffrt_cond_init(ffrt_cond_t* cond, const ffrt_condattr_t* attr);
  
 参数
  
-- cond：指向所操作的信号量的指针。
+- cond：指向所操作的条件变量的指针。
 - attr：属性设定，空指针表示使用默认属性。
 
  
@@ -2165,7 +2165,7 @@ FFRT_C_API int ffrt_cond_destroy(ffrt_cond_t* cond);
  
 参数
  
-- cond：指向所操作的信号量的指针。
+- cond：指向所操作的条件变量的指针。
 
  
 返回值
@@ -2186,7 +2186,7 @@ FFRT_C_API int ffrt_cond_signal(ffrt_cond_t* cond);
  
 参数
  
-- cond：指向所操作的信号量的指针。
+- cond：指向所操作的条件变量的指针。
 
  
 返回值
@@ -2207,7 +2207,7 @@ FFRT_C_API int ffrt_cond_broadcast(ffrt_cond_t* cond);
  
 参数
  
-- cond：指向所操作的信号量的指针。
+- cond：指向所操作的条件变量的指针。
 
  
 返回值
@@ -2228,7 +2228,7 @@ FFRT_C_API int ffrt_cond_wait(ffrt_cond_t* cond, ffrt_mutex_t* mutex);
  
 参数
  
-- cond：指向所操作的信号量的指针。
+- cond：指向所操作的条件变量的指针。
 - mutex：指向要在阻塞期间解锁的互斥锁的指针。
 
  
@@ -2251,7 +2251,7 @@ FFRT_C_API int ffrt_cond_timedwait(ffrt_cond_t* cond, ffrt_mutex_t* mutex, const
  
 参数
  
-- cond：指向所操作的信号量的指针。
+- cond：指向所操作的条件变量的指针。
 - mutex：指向要在阻塞期间解锁的互斥锁的指针。
 - time_point：指向指定等待时限时间的对象的指针。
 
@@ -2328,11 +2328,11 @@ int main()
  
   
 
-#### 阻塞原语
+## 阻塞原语
 
   
 
-#### ffrt_usleep
+### ffrt_usleep
 
 **声明**
  
@@ -2369,11 +2369,11 @@ int main()
  
   
 
-#### 协同原语
+## 协同原语
 
   
 
-#### ffrt_yield
+### ffrt_yield
 
 **声明**
  
@@ -2412,11 +2412,11 @@ int main()
  
   
 
-#### 定时器
+## 定时器
 
   
 
-#### ffrt_timer_t
+### ffrt_timer_t
 
 **声明**
  
@@ -2550,11 +2550,11 @@ int main()
  
   
 
-#### 循环
+## 循环
 
   
 
-#### ffrt_loop_t
+### ffrt_loop_t
 
 **声明**
  
@@ -2890,11 +2890,11 @@ int main()
  
   
 
-#### 纤程
+## 纤程
 
   
 
-#### ffrt_fiber_t
+### ffrt_fiber_t
 
 **声明**
  

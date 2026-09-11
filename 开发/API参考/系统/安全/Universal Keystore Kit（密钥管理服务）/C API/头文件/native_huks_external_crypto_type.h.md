@@ -1,11 +1,12 @@
 # native_huks_external_crypto_type.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-huks-external-crypto-type-h
 **支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 结构体
+### 结构体
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_Huks_ExternalCryptoParam | OH_Huks_ExternalCryptoParam | 定义参数集合中单个参数的结构体。 |
@@ -41,10 +45,12 @@
  
   
 
-#### 枚举
+### 枚举
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_Huks_ExternalCryptoTag | OH_Huks_ExternalCryptoTag | 列举参数集合中使用的标签值。 |
@@ -53,10 +59,12 @@
  
   
 
-#### 宏定义
+### 宏定义
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_HUKS_EXTERNAL_CRYPTO_MAX_PROVIDER_NAME_LEN 100 | 定义provider名称的最大字节长度。 起始版本： 22 |
@@ -65,13 +73,15 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### OH_Huks_ExternalCryptoTag
+### OH_Huks_ExternalCryptoTag
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -85,6 +95,7 @@ enum OH_Huks_ExternalCryptoTag
  
 **起始版本：** 22
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_HUKS_EXT_CRYPTO_TAG_UKEY_PIN = OH_HUKS_TAG_TYPE_BYTES \| 200001 | PIN码。 |
@@ -97,7 +108,8 @@ enum OH_Huks_ExternalCryptoTag
  
   
 
-#### OH_Huks_ExternalPinAuthState
+### OH_Huks_ExternalPinAuthState
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -111,6 +123,7 @@ enum OH_Huks_ExternalPinAuthState
  
 **起始版本：** 22
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_HUKS_EXT_CRYPTO_PIN_NO_AUTH = 0 | PIN码未认证。 |

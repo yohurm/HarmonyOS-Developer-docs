@@ -1,13 +1,13 @@
 # @performance/state-variable-usage-in-ui-format-check
 
-更新时间：2026-04-20 06:32:02
+更新时间：2026-08-29 09:41:34
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-state-variable-usage-in-ui-format-check
 
 建议删除不使用的UI变量。
  
 
-#### 规则配置
+## 规则配置
 
 ```json
 // code-linter.json5
@@ -20,13 +20,13 @@
  
  
 
-#### 选项
+## 选项
 
-该规则无需配置额外选项。
+该规则无需配置选项。
  
  
 
-#### 正例
+## 正例
 
 ```text
 class User {
@@ -72,7 +72,7 @@ struct Parent {
  
  
 
-#### 反例
+## 反例
 
 ```text
 class User {
@@ -112,7 +112,7 @@ struct Parent {
  
  
 
-#### 规则集
+## 规则集
 
 ```text
 plugin:@performance/all

@@ -26,13 +26,13 @@
 List() {
   ForEach(this.listObjs, (item: MenuObject, index: Number) => {
     ListItem() {
-      MenuComponent({value: item}) // 自定义组件
+      MenuComponent({value: item}) <em>// 自定义组件</em>
         .width('100%')
         .onClick(() => {
           if (item.title === '分享给好友') {
             this.isShow = true
           } else {
-            // 跳转逻辑
+           <em> // 跳转逻辑</em>
           }
         })
         .bindSheet($$this.isShow, this.ShareBuilder(), {
@@ -137,18 +137,18 @@ struct BindSheetExample {
         List() {
           ForEach(this.listObjs, (item: MenuObject) => {
             ListItem() {
-              // 自定义组件
+            <em>  // 自定义组件</em>
               MenuComponent({ value: item })
                 .width('100%')
                 .onClick(() => {
                   if (item.title === '分享给好友') {
                     this.isShow = true;
                   } else {
-                    // 跳转页面逻辑
+                   <em> // 跳转页面逻辑</em>
 
                   }
                 })
-                // 不需要bindSheet的子组件设置undefined
+             <em>   // 不需要bindSheet的子组件设置undefined</em>
                 .bindSheet($$this.isShow, item.title === '分享给好友' ? this.ShareBuilder() : undefined,
                   {
                     detents: [SheetSize.FIT_CONTENT],

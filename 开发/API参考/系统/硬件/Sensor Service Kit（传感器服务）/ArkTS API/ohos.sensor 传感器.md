@@ -1,9 +1,9 @@
 # @ohos.sensor (传感器)
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-sensor
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 @ohos.sensor 模块是鸿蒙操作系统提供的传感器服务模块，属于 SensorServiceKit。该模块为开发者提供了统一的传感器数据访问能力，涵盖设备上各类物理传感器的数据订阅、查询以及传感器算法计算。
 
@@ -35,9 +35,10 @@ sensor.on与sensor.once的区别：
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { sensor } from '@kit.SensorServiceKit';
@@ -45,13 +46,14 @@ import { sensor } from '@kit.SensorServiceKit';
 
 
 
-#### sensor.on('SensorId.ACCELEROMETER')9+
+## sensor.on('SensorId.ACCELEROMETER')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorId.ACCELEROMETER, callback: Callback&lt;AccelerometerResponse&gt;, options?: Options): void
 
-订阅加速度传感器数据。加速度传感器用于测量设备在X、Y、Z三个方向上的加速度，包含重力加速度分量。适用于需要感知设备运动状态、实现屏幕旋转、游戏操控、计步等场景。调用后，系统会按设定频率通过callback持续上报加速度数据。
+订阅加速度传感器数据。使用callback异步回调。加速度传感器用于测量设备在X、Y、Z三个方向上的加速度，包含重力加速度分量。适用于需要感知设备运动状态、实现屏幕旋转、游戏操控、计步等场景。调用后，系统会按设定频率通过callback持续上报加速度数据。
 
 **需要权限**：ohos.permission.ACCELEROMETER
 
@@ -60,6 +62,7 @@ on(type: SensorId.ACCELEROMETER, callback: Callback&lt;AccelerometerResponse&gt;
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -71,6 +74,7 @@ on(type: SensorId.ACCELEROMETER, callback: Callback&lt;AccelerometerResponse&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -105,17 +109,19 @@ try {
 
 
 
-#### sensor.on('SensorId.FUSION_PRESSURE')22+
+## sensor.on('SensorId.FUSION_PRESSURE')22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorId.FUSION_PRESSURE, callback: Callback&lt;FusionPressureResponse&gt;, options?: Options): void
 
-订阅融合压力传感器数据。融合压力传感器用于获取经融合算法处理的压力数据，仅适用于智能手表设备。适用于需要获取手腕压力数据的健康监测场景。调用后，系统会按设定频率通过callback持续上报融合压力数据。
+订阅融合压力传感器数据。使用callback异步回调。融合压力传感器用于获取经融合算法处理的压力数据，仅适用于智能手表设备。适用于需要获取手腕压力数据的健康监测场景。调用后，系统会按设定频率通过callback持续上报融合压力数据。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -127,6 +133,7 @@ on(type: SensorId.FUSION_PRESSURE, callback: Callback&lt;FusionPressureResponse&
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -158,19 +165,21 @@ try {
 
 
 
-#### sensor.on('SensorId.ACCELEROMETER_UNCALIBRATED')9+
+## sensor.on('SensorId.ACCELEROMETER_UNCALIBRATED')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorId.ACCELEROMETER_UNCALIBRATED, callback: Callback&lt;AccelerometerUncalibratedResponse&gt;, options?: Options): void
 
-订阅未校准加速度传感器数据。未校准加速度传感器与加速度传感器的区别在于，其上报的偏移值(biasX/biasY/biasZ)未经系统校准补偿，适用于需要获取原始加速度数据或自行实现校准算法的场景。与sensor.on('SensorId.ACCELEROMETER')相比，本接口额外提供偏移值信息，适用于需要分析设备校准偏差的场景。
+订阅未校准加速度传感器数据。使用callback异步回调。未校准加速度传感器与加速度传感器的区别在于，其上报的偏移值(biasX/biasY/biasZ)未经系统校准补偿，适用于需要获取原始加速度数据或自行实现校准算法的场景。与sensor.on('SensorId.ACCELEROMETER')相比，本接口额外提供偏移值信息，适用于需要分析设备校准偏差的场景。
 
 **需要权限**：ohos.permission.ACCELEROMETER
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -182,6 +191,7 @@ on(type: SensorId.ACCELEROMETER_UNCALIBRATED, callback: Callback&lt;Acceleromete
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -219,17 +229,19 @@ try {
 
 
 
-#### sensor.on('SensorId.AMBIENT_LIGHT')9+
+## sensor.on('SensorId.AMBIENT_LIGHT')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorId.AMBIENT_LIGHT, callback: Callback&lt;LightResponse&gt;, options?: Options): void
 
-订阅环境光传感器数据。环境光传感器用于测量周围环境的光照强度，适用于自动调节屏幕亮度、判断环境明暗等场景。调用后，系统会按设定频率通过callback持续上报环境光强度数据。
+订阅环境光传感器数据。使用callback异步回调。环境光传感器用于测量周围环境的光照强度，适用于自动调节屏幕亮度、判断环境明暗等场景。调用后，系统会按设定频率通过callback持续上报环境光强度数据。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -241,6 +253,7 @@ on(type: SensorId.AMBIENT_LIGHT, callback: Callback&lt;LightResponse&gt;, option
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -272,17 +285,19 @@ try {
 
 
 
-#### sensor.on('SensorId.AMBIENT_TEMPERATURE')9+
+## sensor.on('SensorId.AMBIENT_TEMPERATURE')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorId.AMBIENT_TEMPERATURE, callback: Callback&lt;AmbientTemperatureResponse&gt;, options?: Options): void
 
-订阅环境温度传感器数据。温度传感器用于测量设备周围的环境温度，适用于环境温度监测、温度补偿等场景。调用后，系统会按设定频率通过callback持续上报温度数据。
+订阅环境温度传感器数据。使用callback异步回调。温度传感器用于测量设备周围的环境温度，适用于环境温度监测、温度补偿等场景。调用后，系统会按设定频率通过callback持续上报温度数据。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -294,6 +309,7 @@ on(type: SensorId.AMBIENT_TEMPERATURE, callback: Callback&lt;AmbientTemperatureR
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -325,17 +341,19 @@ try {
 
 
 
-#### sensor.on('SensorId.BAROMETER')9+
+## sensor.on('SensorId.BAROMETER')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorId.BAROMETER, callback: Callback&lt;BarometerResponse&gt;, options?: Options): void
 
-订阅气压计传感器数据。气压计传感器用于测量大气压强，适用于海拔估算、天气预报辅助等场景。调用后，系统会按设定频率通过callback持续上报气压数据。
+订阅气压计传感器数据。使用callback异步回调。气压计传感器用于测量大气压强，适用于海拔估算、天气预报辅助等场景。调用后，系统会按设定频率通过callback持续上报气压数据。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -347,6 +365,7 @@ on(type: SensorId.BAROMETER, callback: Callback&lt;BarometerResponse&gt;, option
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -378,17 +397,19 @@ try {
 
 
 
-#### sensor.on('SensorId.GRAVITY')9+
+## sensor.on('SensorId.GRAVITY')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorId.GRAVITY, callback: Callback&lt;GravityResponse&gt;, options?: Options): void
 
-订阅重力传感器数据。重力传感器用于测量设备在X、Y、Z三个方向上受到的重力加速度分量，适用于需要分离重力分量进行运动分析的场景，如游戏操控、运动检测。调用后，系统会按设定频率通过callback持续上报重力分量数据。
+订阅重力传感器数据。使用callback异步回调。重力传感器用于测量设备在X、Y、Z三个方向上受到的重力加速度分量，适用于需要分离重力分量进行运动分析的场景，如游戏操控、运动检测。调用后，系统会按设定频率通过callback持续上报重力分量数据。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -400,6 +421,7 @@ on(type: SensorId.GRAVITY, callback: Callback&lt;GravityResponse&gt;, options?: 
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -433,13 +455,14 @@ try {
 
 
 
-#### sensor.on('SensorId.GYROSCOPE')9+
+## sensor.on('SensorId.GYROSCOPE')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorId.GYROSCOPE, callback: Callback&lt;GyroscopeResponse&gt;, options?: Options): void
 
-订阅校准的陀螺仪传感器数据。陀螺仪传感器用于测量设备绕X、Y、Z轴的旋转角速度，适用于设备旋转检测、姿态跟踪、游戏操控等场景。调用后，系统会按设定频率通过callback持续上报角速度数据。
+订阅校准的陀螺仪传感器数据。使用callback异步回调。陀螺仪传感器用于测量设备绕X、Y、Z轴的旋转角速度，适用于设备旋转检测、姿态跟踪、游戏操控等场景。调用后，系统会按设定频率通过callback持续上报角速度数据。
 
 **需要权限**：ohos.permission.GYROSCOPE
 
@@ -448,6 +471,7 @@ on(type: SensorId.GYROSCOPE, callback: Callback&lt;GyroscopeResponse&gt;, option
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -459,6 +483,7 @@ on(type: SensorId.GYROSCOPE, callback: Callback&lt;GyroscopeResponse&gt;, option
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -493,19 +518,21 @@ try {
 
 
 
-#### sensor.on('SensorId.GYROSCOPE_UNCALIBRATED')9+
+## sensor.on('SensorId.GYROSCOPE_UNCALIBRATED')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorId.GYROSCOPE_UNCALIBRATED, callback: Callback&lt;GyroscopeUncalibratedResponse&gt;, options?: Options): void
 
-订阅未校准陀螺仪传感器数据。未校准陀螺仪传感器与陀螺仪传感器的区别在于，其上报的偏移值(biasX/biasY/biasZ)未经系统校准补偿，适用于需要获取原始陀螺仪数据或自行实现校准算法的场景。与sensor.on('SensorId.GYROSCOPE')相比，本接口额外提供偏移值信息，适用于需要分析设备陀螺仪校准偏差的场景。
+订阅未校准陀螺仪传感器数据。使用callback异步回调。未校准陀螺仪传感器与陀螺仪传感器的区别在于，其上报的偏移值(biasX/biasY/biasZ)未经系统校准补偿，适用于需要获取原始陀螺仪数据或自行实现校准算法的场景。与sensor.on('SensorId.GYROSCOPE')相比，本接口额外提供偏移值信息，适用于需要分析设备陀螺仪校准偏差的场景。
 
 **需要权限**：ohos.permission.GYROSCOPE
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -517,6 +544,7 @@ on(type: SensorId.GYROSCOPE_UNCALIBRATED, callback: Callback&lt;GyroscopeUncalib
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -554,28 +582,31 @@ try {
 
 
 
-#### sensor.on('SensorId.HALL')9+
+## sensor.on('SensorId.HALL')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorId.HALL, callback: Callback&lt;HallResponse&gt;, options?: Options): void
 
-订阅霍尔传感器数据。霍尔传感器用于检测磁场变化，常用于检测翻盖手机或皮套的开合状态。当霍尔事件被触发得较为频繁时，可通过options参数限定事件上报频率。调用后，系统会通过callback持续上报霍尔状态数据。
+订阅霍尔传感器数据。使用callback异步回调。霍尔传感器用于检测磁场变化，常用于检测翻盖手机或皮套的开合状态。当霍尔事件被触发得较为频繁时，可通过options参数限定事件上报频率。调用后，系统会通过callback持续上报霍尔状态数据。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SensorId.HALL | 是 | 传感器类型，该值固定为SensorId.HALL。 |
 | callback | Callback&lt;HallResponse&gt; | 是 | 回调函数，异步上报的传感器数据固定为HallResponse。 |
-| options | Options | 否 | 可选参数列表，当霍尔事件被触发的很频繁时，用于设置传感器上报频率，默认值为200000000ns（即200ms）。 |
+| options | Options | 否 | 可选参数列表，当霍尔事件被触发得很频繁时，用于设置传感器上报频率，默认值为200000000ns（即200ms）。 |
 
 
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -607,19 +638,21 @@ try {
 
 
 
-#### sensor.on('SensorId.HEART_RATE')9+
+## sensor.on('SensorId.HEART_RATE')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorId.HEART_RATE, callback: Callback&lt;HeartRateResponse&gt;, options?: Options): void
 
-订阅心率传感器数据。心率传感器用于测量用户的心率值，适用于健康监测、运动辅助等场景。调用后，系统会按设定频率通过callback持续上报心率数据。
+订阅心率传感器数据。使用callback异步回调。心率传感器用于测量用户的心率值，适用于健康监测、运动辅助等场景。调用后，系统会按设定频率通过callback持续上报心率数据。
 
 **需要权限**：ohos.permission.READ_HEALTH_DATA
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -631,6 +664,7 @@ on(type: SensorId.HEART_RATE, callback: Callback&lt;HeartRateResponse&gt;, optio
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -663,17 +697,19 @@ try {
 
 
 
-#### sensor.on('SensorId.HUMIDITY')9+
+## sensor.on('SensorId.HUMIDITY')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorId.HUMIDITY, callback: Callback&lt;HumidityResponse&gt;, options?: Options): void
 
-订阅湿度传感器数据。湿度传感器用于测量周围环境的相对湿度，适用于环境湿度监测、智能家居联动等场景。调用后，系统会按设定频率通过callback持续上报湿度数据。
+订阅湿度传感器数据。使用callback异步回调。湿度传感器用于测量周围环境的相对湿度，适用于环境湿度监测、智能家居联动等场景。调用后，系统会按设定频率通过callback持续上报湿度数据。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -685,6 +721,7 @@ on(type: SensorId.HUMIDITY, callback: Callback&lt;HumidityResponse&gt;, options?
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -716,19 +753,21 @@ try {
 
 
 
-#### sensor.on('SensorId.LINEAR_ACCELEROMETER')9+
+## sensor.on('SensorId.LINEAR_ACCELEROMETER')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorId.LINEAR_ACCELEROMETER, callback: Callback&lt;LinearAccelerometerResponse&gt;, options?: Options): void
 
-订阅线性加速度传感器数据。线性加速度传感器用于测量设备在X、Y、Z三个方向上的加速度（不含重力加速度分量），适用于需要感知设备纯粹运动加速度的场景，如运动追踪、碰撞检测。与sensor.on('SensorId.ACCELEROMETER')相比，本接口已去除重力分量，适用于仅需设备运动加速度的场景。
+订阅线性加速度传感器数据。使用callback异步回调。线性加速度传感器用于测量设备在X、Y、Z三个方向上的加速度（不含重力加速度分量），适用于需要感知设备纯粹运动加速度的场景，如运动追踪、碰撞检测。与sensor.on('SensorId.ACCELEROMETER')相比，本接口已去除重力分量，适用于仅需设备运动加速度的场景。
 
 **需要权限**：ohos.permission.ACCELEROMETER
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -740,6 +779,7 @@ on(type: SensorId.LINEAR_ACCELEROMETER, callback: Callback&lt;LinearAcceleromete
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -774,17 +814,19 @@ try {
 
 
 
-#### sensor.on('SensorId.MAGNETIC_FIELD')9+
+## sensor.on('SensorId.MAGNETIC_FIELD')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorId.MAGNETIC_FIELD, callback: Callback&lt;MagneticFieldResponse&gt;, options?: Options): void
 
-订阅地磁传感器数据。地磁传感器用于测量设备周围的磁场强度在X、Y、Z三个方向上的分量，适用于指南针、方向检测、金属检测等场景。调用后，系统会按设定频率通过callback持续上报磁场分量数据。
+订阅地磁传感器数据。使用callback异步回调。地磁传感器用于测量设备周围的磁场强度在X、Y、Z三个方向上的分量，适用于指南针、方向检测、金属检测等场景。调用后，系统会按设定频率通过callback持续上报磁场分量数据。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -796,6 +838,7 @@ on(type: SensorId.MAGNETIC_FIELD, callback: Callback&lt;MagneticFieldResponse&gt
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -829,17 +872,19 @@ try {
 
 
 
-#### sensor.on('SensorId.MAGNETIC_FIELD_UNCALIBRATED')9+
+## sensor.on('SensorId.MAGNETIC_FIELD_UNCALIBRATED')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorId.MAGNETIC_FIELD_UNCALIBRATED, callback: Callback&lt;MagneticFieldUncalibratedResponse&gt;, options?: Options): void
 
-订阅未校准地磁传感器数据。未校准地磁传感器与地磁传感器的区别在于，其上报的偏移值(biasX/biasY/biasZ)未经系统校准补偿，适用于需要获取原始磁场数据或自行实现校准算法的场景。与sensor.on('SensorId.MAGNETIC_FIELD')相比，本接口额外提供偏移值信息，适用于需要分析设备地磁校准偏差的场景。
+订阅未校准地磁传感器数据。使用callback异步回调。未校准地磁传感器与地磁传感器的区别在于，其上报的偏移值(biasX/biasY/biasZ)未经系统校准补偿，适用于需要获取原始磁场数据或自行实现校准算法的场景。与sensor.on('SensorId.MAGNETIC_FIELD')相比，本接口额外提供偏移值信息，适用于需要分析设备地磁校准偏差的场景。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -851,6 +896,7 @@ on(type: SensorId.MAGNETIC_FIELD_UNCALIBRATED, callback: Callback&lt;MagneticFie
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -887,13 +933,14 @@ try {
 
 
 
-#### sensor.on('SensorId.ORIENTATION')9+
+## sensor.on('SensorId.ORIENTATION')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorId.ORIENTATION, callback: Callback&lt;OrientationResponse&gt;, options?: Options): void
 
-订阅方向传感器数据。方向传感器用于测量设备绕Z轴旋转的角度(alpha)、绕X轴旋转的角度(beta)和绕Y轴旋转的角度(gamma)，适用于屏幕旋转、指南针、姿态感知等场景。调用后，系统会按设定频率通过callback持续上报方向数据。调用本接口的应用或服务可以通过提示用户使用8字校准法来提高应用获取的方向传感器的精度，此传感器理论误差正负5度，具体的精度根据不同的驱动及算法实现可能存在差异。
+订阅方向传感器数据。使用callback异步回调。方向传感器用于测量设备绕Z轴旋转的角度(alpha)、绕X轴旋转的角度(beta)和绕Y轴旋转的角度(gamma)，适用于屏幕旋转、指南针、姿态感知等场景。调用后，系统会按设定频率通过callback持续上报方向数据。调用本接口的应用或服务可以通过提示用户使用8字校准法来提高应用获取的方向传感器的精度，此传感器理论误差正负5度，具体的精度根据不同的驱动及算法实现可能存在差异。
 
 > [!NOTE]
 > 调用本接口的应用或服务可以通过提示用户使用8字校准法来提高应用获取的方向传感器的精度，此传感器理论误差正负5度，具体的精度根据不同的驱动及算法实现可能存在差异。
@@ -905,6 +952,7 @@ on(type: SensorId.ORIENTATION, callback: Callback&lt;OrientationResponse&gt;, op
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SensorId.ORIENTATION | 是 | 传感器类型，该值固定为SensorId.ORIENTATION。 |
@@ -915,6 +963,7 @@ on(type: SensorId.ORIENTATION, callback: Callback&lt;OrientationResponse&gt;, op
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -948,19 +997,25 @@ try {
 
 
 
-#### sensor.on('SensorId.PEDOMETER')9+
+## sensor.on('SensorId.PEDOMETER')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorId.PEDOMETER, callback: Callback&lt;PedometerResponse&gt;, options?: Options): void
 
-订阅计步器传感器数据。计步器传感器用于统计用户的步行步数，适用于运动追踪、健康管理等场景。计步传感器数据上报有一定延迟，延迟时间由具体的实现产品决定。调用后，系统会按设定频率通过callback持续上报步数数据。
+订阅计步器传感器数据。使用callback异步回调。计步器传感器用于统计用户的步行步数，适用于运动追踪、健康管理等场景。计步传感器数据上报有一定延迟，延迟时间由具体的实现产品决定。调用后，系统会按设定频率通过callback持续上报步数数据。
+
+> [!NOTE]
+> 计步器传感器数据仅在设备重启时清零，不会每天清零，重启前上报的步数数据为累加值。
+
 
 **需要权限**：ohos.permission.ACTIVITY_MOTION
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -972,6 +1027,7 @@ on(type: SensorId.PEDOMETER, callback: Callback&lt;PedometerResponse&gt;, option
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1004,19 +1060,21 @@ try {
 
 
 
-#### sensor.on('SensorId.PEDOMETER_DETECTION')9+
+## sensor.on('SensorId.PEDOMETER_DETECTION')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorId.PEDOMETER_DETECTION, callback: Callback&lt;PedometerDetectionResponse&gt;, options?: Options): void
 
-订阅计步检测器传感器数据。计步检测器传感器用于检测用户是否发生了计步事件（如迈步动作），适用于需要实时检测步行状态的场景。与sensor.on('SensorId.PEDOMETER')相比，本接口上报的是计步事件标量而非累计步数，适用于需要检测单步事件的场景。
+订阅计步检测器传感器数据。使用callback异步回调。计步检测器传感器用于检测用户是否发生了计步事件（如迈步动作），适用于需要实时检测步行状态的场景。与sensor.on('SensorId.PEDOMETER')相比，本接口上报的是计步事件标量而非累计步数，适用于需要检测单步事件的场景。
 
 **需要权限**：ohos.permission.ACTIVITY_MOTION
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1028,6 +1086,7 @@ on(type: SensorId.PEDOMETER_DETECTION, callback: Callback&lt;PedometerDetectionR
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1060,28 +1119,31 @@ try {
 
 
 
-#### sensor.on('SensorId.PROXIMITY')9+
+## sensor.on('SensorId.PROXIMITY')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorId.PROXIMITY, callback: Callback&lt;ProximityResponse&gt;, options?: Options): void
 
-订阅接近光传感器数据。接近光传感器用于检测物体与设备的距离状态，常用于通话时自动关闭屏幕以防止误触。当接近光事件被触发得较为频繁时，可通过options参数限定事件上报频率。调用后，系统会通过callback持续上报接近状态数据。
+订阅接近光传感器数据。使用callback异步回调。接近光传感器用于检测物体与设备的距离状态，常用于通话时自动关闭屏幕以防止误触。当接近光事件被触发得较为频繁时，可通过options参数限定事件上报频率。调用后，系统会通过callback持续上报接近状态数据。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SensorId.PROXIMITY | 是 | 传感器类型，该值固定为SensorId.PROXIMITY。 |
 | callback | Callback&lt;ProximityResponse&gt; | 是 | 回调函数，异步上报的传感器数据固定为ProximityResponse。 |
-| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns（即200ms）。当接近光事件被触发的很频繁时，该参数用于限定事件上报的频率。 |
+| options | Options | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns（即200ms）。当接近光事件被触发得很频繁时，该参数用于限定事件上报的频率。 |
 
 
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1113,17 +1175,19 @@ try {
 
 
 
-#### sensor.on('SensorId.ROTATION_VECTOR')9+
+## sensor.on('SensorId.ROTATION_VECTOR')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorId.ROTATION_VECTOR, callback: Callback&lt;RotationVectorResponse&gt;, options?: Options): void
 
-订阅旋转矢量传感器数据。旋转矢量传感器用于表示设备的姿态旋转，数据由X、Y、Z分量和标量W组成，可用于设备姿态估计、AR/VR场景等。调用后，系统会按设定频率通过callback持续上报旋转矢量数据。
+订阅旋转矢量传感器数据。使用callback异步回调。旋转矢量传感器用于表示设备的姿态旋转，数据由X、Y、Z分量和标量W组成，可用于设备姿态估计、AR/VR场景等。调用后，系统会按设定频率通过callback持续上报旋转矢量数据。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1135,6 +1199,7 @@ on(type: SensorId.ROTATION_VECTOR, callback: Callback&lt;RotationVectorResponse&
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1167,17 +1232,19 @@ try {
 
 
 
-#### sensor.on('SensorId.SIGNIFICANT_MOTION')9+
+## sensor.on('SensorId.SIGNIFICANT_MOTION')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorId.SIGNIFICANT_MOTION, callback: Callback&lt;SignificantMotionResponse&gt;, options?: Options): void
 
-订阅有效运动传感器数据，用于检测用户拿起设备、明显移动或剧烈摇晃等有效运动事件。适用于需要根据用户活动状态唤醒设备、启动应用或切换模式的场景。调用后，系统会通过callback持续上报有效运动事件数据。
+订阅有效运动传感器数据，用于检测用户拿起设备、明显移动或剧烈摇晃等有效运动事件。使用callback异步回调。适用于需要根据用户活动状态唤醒设备、启动应用或切换模式的场景。调用后，系统会通过callback持续上报有效运动事件数据。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1189,6 +1256,7 @@ on(type: SensorId.SIGNIFICANT_MOTION, callback: Callback&lt;SignificantMotionRes
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1218,17 +1286,19 @@ try {
 
 
 
-#### sensor.on('SensorId.WEAR_DETECTION')9+
+## sensor.on('SensorId.WEAR_DETECTION')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorId.WEAR_DETECTION, callback: Callback&lt;WearDetectionResponse&gt;, options?: Options): void
 
-订阅佩戴检测传感器数据。佩戴检测传感器用于检测设备是否被用户佩戴，适用于智能手表等可穿戴设备的佩戴状态检测，以便自动切换工作模式。调用后，系统会按设定频率通过callback持续上报佩戴状态数据。
+订阅佩戴检测传感器数据。使用callback异步回调。佩戴检测传感器用于检测设备是否被用户佩戴，适用于智能手表等可穿戴设备的佩戴状态检测，以便自动切换工作模式。调用后，系统会按设定频率通过callback持续上报佩戴状态数据。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1240,6 +1310,7 @@ on(type: SensorId.WEAR_DETECTION, callback: Callback&lt;WearDetectionResponse&gt
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1269,17 +1340,19 @@ try {
 
 
 
-#### sensor.on('sensorStatusChange')19+
+## sensor.on('sensorStatusChange')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'sensorStatusChange', callback: Callback&lt;SensorStatusEvent&gt;): void
 
-监听传感器上线下线状态的变化，callback返回传感器状态事件数据。适用于需要感知传感器设备动态上下线的场景，如远程传感器连接或断开时自动更新传感器列表或订阅状态。
+监听传感器上线下线状态的变化。使用callback异步回调。适用于需要感知传感器设备动态上下线的场景，如远程传感器连接或断开时自动更新传感器列表或订阅状态。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1290,6 +1363,7 @@ on(type: 'sensorStatusChange', callback: Callback&lt;SensorStatusEvent&gt;): voi
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1318,9 +1392,10 @@ try {
 
 
 
-#### sensor.once('SensorId.ACCELEROMETER')9+
+## sensor.once('SensorId.ACCELEROMETER')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorId.ACCELEROMETER, callback: Callback&lt;AccelerometerResponse&gt;): void
 
@@ -1332,6 +1407,7 @@ once(type: SensorId.ACCELEROMETER, callback: Callback&lt;AccelerometerResponse&g
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SensorId.ACCELEROMETER | 是 | 传感器类型，该值固定为SensorId.ACCELEROMETER。 |
@@ -1341,6 +1417,7 @@ once(type: SensorId.ACCELEROMETER, callback: Callback&lt;AccelerometerResponse&g
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1370,9 +1447,10 @@ try {
 
 
 
-#### sensor.once('SensorId.ACCELEROMETER_UNCALIBRATED')9+
+## sensor.once('SensorId.ACCELEROMETER_UNCALIBRATED')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorId.ACCELEROMETER_UNCALIBRATED, callback: Callback&lt;AccelerometerUncalibratedResponse&gt;): void
 
@@ -1384,6 +1462,7 @@ once(type: SensorId.ACCELEROMETER_UNCALIBRATED, callback: Callback&lt;Accelerome
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SensorId.ACCELEROMETER_UNCALIBRATED | 是 | 传感器类型，该值固定为SensorId.ACCELEROMETER_UNCALIBRATED。 |
@@ -1393,6 +1472,7 @@ once(type: SensorId.ACCELEROMETER_UNCALIBRATED, callback: Callback&lt;Accelerome
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1425,9 +1505,10 @@ try {
 
 
 
-#### sensor.once('SensorId.AMBIENT_LIGHT')9+
+## sensor.once('SensorId.AMBIENT_LIGHT')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorId.AMBIENT_LIGHT, callback: Callback&lt;LightResponse&gt;): void
 
@@ -1436,6 +1517,7 @@ once(type: SensorId.AMBIENT_LIGHT, callback: Callback&lt;LightResponse&gt;): voi
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1446,6 +1528,7 @@ once(type: SensorId.AMBIENT_LIGHT, callback: Callback&lt;LightResponse&gt;): voi
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1472,9 +1555,10 @@ try {
 
 
 
-#### sensor.once('SensorId.AMBIENT_TEMPERATURE')9+
+## sensor.once('SensorId.AMBIENT_TEMPERATURE')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorId.AMBIENT_TEMPERATURE, callback: Callback&lt;AmbientTemperatureResponse&gt;): void
 
@@ -1483,6 +1567,7 @@ once(type: SensorId.AMBIENT_TEMPERATURE, callback: Callback&lt;AmbientTemperatur
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1493,6 +1578,7 @@ once(type: SensorId.AMBIENT_TEMPERATURE, callback: Callback&lt;AmbientTemperatur
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1519,9 +1605,10 @@ try {
 
 
 
-#### sensor.once('SensorId.BAROMETER')9+
+## sensor.once('SensorId.BAROMETER')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorId.BAROMETER, callback: Callback&lt;BarometerResponse&gt;): void
 
@@ -1530,6 +1617,7 @@ once(type: SensorId.BAROMETER, callback: Callback&lt;BarometerResponse&gt;): voi
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1540,6 +1628,7 @@ once(type: SensorId.BAROMETER, callback: Callback&lt;BarometerResponse&gt;): voi
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1566,9 +1655,10 @@ try {
 
 
 
-#### sensor.once('SensorId.GRAVITY')9+
+## sensor.once('SensorId.GRAVITY')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorId.GRAVITY, callback: Callback&lt;GravityResponse&gt;): void
 
@@ -1577,6 +1667,7 @@ once(type: SensorId.GRAVITY, callback: Callback&lt;GravityResponse&gt;): void
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1587,6 +1678,7 @@ once(type: SensorId.GRAVITY, callback: Callback&lt;GravityResponse&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1615,9 +1707,10 @@ try {
 
 
 
-#### sensor.once('SensorId.GYROSCOPE')9+
+## sensor.once('SensorId.GYROSCOPE')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorId.GYROSCOPE, callback: Callback&lt;GyroscopeResponse&gt;): void
 
@@ -1629,6 +1722,7 @@ once(type: SensorId.GYROSCOPE, callback: Callback&lt;GyroscopeResponse&gt;): voi
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SensorId.GYROSCOPE | 是 | 传感器类型，该值固定为SensorId.GYROSCOPE。 |
@@ -1638,6 +1732,7 @@ once(type: SensorId.GYROSCOPE, callback: Callback&lt;GyroscopeResponse&gt;): voi
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1667,9 +1762,10 @@ try {
 
 
 
-#### sensor.once('SensorId.GYROSCOPE_UNCALIBRATED')9+
+## sensor.once('SensorId.GYROSCOPE_UNCALIBRATED')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorId.GYROSCOPE_UNCALIBRATED, callback: Callback&lt;GyroscopeUncalibratedResponse&gt;): void
 
@@ -1681,6 +1777,7 @@ once(type: SensorId.GYROSCOPE_UNCALIBRATED, callback: Callback&lt;GyroscopeUncal
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SensorId.GYROSCOPE_UNCALIBRATED | 是 | 传感器类型，该值固定为SensorId.GYROSCOPE_UNCALIBRATED。 |
@@ -1690,6 +1787,7 @@ once(type: SensorId.GYROSCOPE_UNCALIBRATED, callback: Callback&lt;GyroscopeUncal
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1722,9 +1820,10 @@ try {
 
 
 
-#### sensor.once('SensorId.HALL')9+
+## sensor.once('SensorId.HALL')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorId.HALL, callback: Callback&lt;HallResponse&gt;): void
 
@@ -1733,6 +1832,7 @@ once(type: SensorId.HALL, callback: Callback&lt;HallResponse&gt;): void
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1743,6 +1843,7 @@ once(type: SensorId.HALL, callback: Callback&lt;HallResponse&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1769,9 +1870,10 @@ try {
 
 
 
-#### sensor.once('SensorId.HEART_RATE')9+
+## sensor.once('SensorId.HEART_RATE')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorId.HEART_RATE, callback: Callback&lt;HeartRateResponse&gt;): void
 
@@ -1783,6 +1885,7 @@ once(type: SensorId.HEART_RATE, callback: Callback&lt;HeartRateResponse&gt;): vo
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SensorId.HEART_RATE | 是 | 传感器类型，该值固定为SensorId.HEART_RATE。 |
@@ -1792,6 +1895,7 @@ once(type: SensorId.HEART_RATE, callback: Callback&lt;HeartRateResponse&gt;): vo
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1819,9 +1923,10 @@ try {
 
 
 
-#### sensor.once('SensorId.HUMIDITY')9+
+## sensor.once('SensorId.HUMIDITY')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorId.HUMIDITY, callback: Callback&lt;HumidityResponse&gt;): void
 
@@ -1830,6 +1935,7 @@ once(type: SensorId.HUMIDITY, callback: Callback&lt;HumidityResponse&gt;): void
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1840,6 +1946,7 @@ once(type: SensorId.HUMIDITY, callback: Callback&lt;HumidityResponse&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1866,9 +1973,10 @@ try {
 
 
 
-#### sensor.once('SensorId.LINEAR_ACCELEROMETER')9+
+## sensor.once('SensorId.LINEAR_ACCELEROMETER')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorId.LINEAR_ACCELEROMETER, callback: Callback&lt;LinearAccelerometerResponse&gt;): void
 
@@ -1880,6 +1988,7 @@ once(type: SensorId.LINEAR_ACCELEROMETER, callback: Callback&lt;LinearAccelerome
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SensorId.LINEAR_ACCELEROMETER | 是 | 传感器类型，该值固定为SensorId.LINEAR_ACCELEROMETER。 |
@@ -1889,6 +1998,7 @@ once(type: SensorId.LINEAR_ACCELEROMETER, callback: Callback&lt;LinearAccelerome
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1918,9 +2028,10 @@ try {
 
 
 
-#### sensor.once('SensorId.MAGNETIC_FIELD')9+
+## sensor.once('SensorId.MAGNETIC_FIELD')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorId.MAGNETIC_FIELD, callback: Callback&lt;MagneticFieldResponse&gt;): void
 
@@ -1929,6 +2040,7 @@ once(type: SensorId.MAGNETIC_FIELD, callback: Callback&lt;MagneticFieldResponse&
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1939,6 +2051,7 @@ once(type: SensorId.MAGNETIC_FIELD, callback: Callback&lt;MagneticFieldResponse&
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1967,9 +2080,10 @@ try {
 
 
 
-#### sensor.once('SensorId.MAGNETIC_FIELD_UNCALIBRATED')9+
+## sensor.once('SensorId.MAGNETIC_FIELD_UNCALIBRATED')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorId.MAGNETIC_FIELD_UNCALIBRATED, callback: Callback&lt;MagneticFieldUncalibratedResponse&gt;): void
 
@@ -1978,6 +2092,7 @@ once(type: SensorId.MAGNETIC_FIELD_UNCALIBRATED, callback: Callback&lt;MagneticF
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1988,6 +2103,7 @@ once(type: SensorId.MAGNETIC_FIELD_UNCALIBRATED, callback: Callback&lt;MagneticF
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2019,9 +2135,10 @@ try {
 
 
 
-#### sensor.once('SensorId.ORIENTATION')9+
+## sensor.once('SensorId.ORIENTATION')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorId.ORIENTATION, callback: Callback&lt;OrientationResponse&gt;): void
 
@@ -2030,6 +2147,7 @@ once(type: SensorId.ORIENTATION, callback: Callback&lt;OrientationResponse&gt;):
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2040,6 +2158,7 @@ once(type: SensorId.ORIENTATION, callback: Callback&lt;OrientationResponse&gt;):
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2068,19 +2187,25 @@ try {
 
 
 
-#### sensor.once('SensorId.PEDOMETER')9+
+## sensor.once('SensorId.PEDOMETER')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorId.PEDOMETER, callback: Callback&lt;PedometerResponse&gt;): void
 
 获取一次计步器传感器数据。计步传感器数据上报有一定延迟，延迟时间由具体的实现产品决定。适用于仅需一次性获取当前步数的场景。调用后，callback仅触发一次，自动取消订阅。
+
+> [!NOTE]
+> 计步器传感器数据仅在设备重启时清零，不会每天清零，重启前上报的步数数据为累加值。
+
 
 **需要权限**：ohos.permission.ACTIVITY_MOTION
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2091,6 +2216,7 @@ once(type: SensorId.PEDOMETER, callback: Callback&lt;PedometerResponse&gt;): voi
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2118,9 +2244,10 @@ try {
 
 
 
-#### sensor.once('SensorId.PEDOMETER_DETECTION')9+
+## sensor.once('SensorId.PEDOMETER_DETECTION')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorId.PEDOMETER_DETECTION, callback: Callback&lt;PedometerDetectionResponse&gt;): void
 
@@ -2132,6 +2259,7 @@ once(type: SensorId.PEDOMETER_DETECTION, callback: Callback&lt;PedometerDetectio
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SensorId.PEDOMETER_DETECTION | 是 | 传感器类型，该值固定为SensorId.PEDOMETER_DETECTION。 |
@@ -2141,6 +2269,7 @@ once(type: SensorId.PEDOMETER_DETECTION, callback: Callback&lt;PedometerDetectio
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2168,9 +2297,10 @@ try {
 
 
 
-#### sensor.once('SensorId.PROXIMITY')9+
+## sensor.once('SensorId.PROXIMITY')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorId.PROXIMITY, callback: Callback&lt;ProximityResponse&gt;): void
 
@@ -2179,6 +2309,7 @@ once(type: SensorId.PROXIMITY, callback: Callback&lt;ProximityResponse&gt;): voi
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2189,6 +2320,7 @@ once(type: SensorId.PROXIMITY, callback: Callback&lt;ProximityResponse&gt;): voi
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2215,9 +2347,10 @@ try {
 
 
 
-#### sensor.once('SensorId.ROTATION_VECTOR')9+
+## sensor.once('SensorId.ROTATION_VECTOR')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorId.ROTATION_VECTOR, callback: Callback&lt;RotationVectorResponse&gt;): void
 
@@ -2226,6 +2359,7 @@ once(type: SensorId.ROTATION_VECTOR, callback: Callback&lt;RotationVectorRespons
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2236,6 +2370,7 @@ once(type: SensorId.ROTATION_VECTOR, callback: Callback&lt;RotationVectorRespons
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2265,9 +2400,10 @@ try {
 
 
 
-#### sensor.once('SensorId.SIGNIFICANT_MOTION')9+
+## sensor.once('SensorId.SIGNIFICANT_MOTION')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorId.SIGNIFICANT_MOTION, callback: Callback&lt;SignificantMotionResponse&gt;): void
 
@@ -2276,6 +2412,7 @@ once(type: SensorId.SIGNIFICANT_MOTION, callback: Callback&lt;SignificantMotionR
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2286,6 +2423,7 @@ once(type: SensorId.SIGNIFICANT_MOTION, callback: Callback&lt;SignificantMotionR
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2312,9 +2450,10 @@ try {
 
 
 
-#### sensor.once('SensorId.WEAR_DETECTION')9+
+## sensor.once('SensorId.WEAR_DETECTION')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorId.WEAR_DETECTION, callback: Callback&lt;WearDetectionResponse&gt;): void
 
@@ -2323,6 +2462,7 @@ once(type: SensorId.WEAR_DETECTION, callback: Callback&lt;WearDetectionResponse&
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2333,6 +2473,7 @@ once(type: SensorId.WEAR_DETECTION, callback: Callback&lt;WearDetectionResponse&
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2359,9 +2500,10 @@ try {
 
 
 
-#### sensor.off('SensorId.ACCELEROMETER')9+
+## sensor.off('SensorId.ACCELEROMETER')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.ACCELEROMETER, callback?: Callback&lt;AccelerometerResponse&gt;): void
 
@@ -2375,6 +2517,7 @@ off(type: SensorId.ACCELEROMETER, callback?: Callback&lt;AccelerometerResponse&g
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SensorId.ACCELEROMETER | 是 | 传感器类型，该值固定为SensorId.ACCELEROMETER。 |
@@ -2384,6 +2527,7 @@ off(type: SensorId.ACCELEROMETER, callback?: Callback&lt;AccelerometerResponse&g
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2421,9 +2565,10 @@ try {
 
 
 
-#### sensor.off('SensorId.ACCELEROMETER')19+
+## sensor.off('SensorId.ACCELEROMETER')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.ACCELEROMETER, sensorInfoParam?: SensorInfoParam, callback?: Callback&lt;AccelerometerResponse&gt;): void
 
@@ -2437,6 +2582,7 @@ off(type: SensorId.ACCELEROMETER, sensorInfoParam?: SensorInfoParam, callback?: 
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SensorId.ACCELEROMETER | 是 | 传感器类型，该值固定为SensorId.ACCELEROMETER。 |
@@ -2447,6 +2593,7 @@ off(type: SensorId.ACCELEROMETER, sensorInfoParam?: SensorInfoParam, callback?: 
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2516,9 +2663,10 @@ function sensorUnsubscribe(): Ret {
 
 
 
-#### sensor.off('SensorId.ACCELEROMETER_UNCALIBRATED')9+
+## sensor.off('SensorId.ACCELEROMETER_UNCALIBRATED')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.ACCELEROMETER_UNCALIBRATED, callback?: Callback&lt;AccelerometerUncalibratedResponse&gt;): void
 
@@ -2530,6 +2678,7 @@ off(type: SensorId.ACCELEROMETER_UNCALIBRATED, callback?: Callback&lt;Accelerome
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SensorId.ACCELEROMETER_UNCALIBRATED | 是 | 传感器类型，该值固定为SensorId.ACCELEROMETER_UNCALIBRATED。 |
@@ -2539,6 +2688,7 @@ off(type: SensorId.ACCELEROMETER_UNCALIBRATED, callback?: Callback&lt;Accelerome
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2576,9 +2726,10 @@ try {
 
 
 
-#### sensor.off('SensorId.FUSION_PRESSURE')22+
+## sensor.off('SensorId.FUSION_PRESSURE')22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.FUSION_PRESSURE, sensorInfoParam?: SensorInfoParam, callback?: Callback&lt;FusionPressureResponse&gt;): void
 
@@ -2587,6 +2738,7 @@ off(type: SensorId.FUSION_PRESSURE, sensorInfoParam?: SensorInfoParam, callback?
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2598,6 +2750,7 @@ off(type: SensorId.FUSION_PRESSURE, sensorInfoParam?: SensorInfoParam, callback?
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2667,9 +2820,10 @@ function sensorUnsubscribe(): Ret {
 
 
 
-#### sensor.off('SensorId.ACCELEROMETER_UNCALIBRATED')19+
+## sensor.off('SensorId.ACCELEROMETER_UNCALIBRATED')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.ACCELEROMETER_UNCALIBRATED, sensorInfoParam?: SensorInfoParam, callback?: Callback&lt;AccelerometerUncalibratedResponse&gt;): void
 
@@ -2681,6 +2835,7 @@ off(type: SensorId.ACCELEROMETER_UNCALIBRATED, sensorInfoParam?: SensorInfoParam
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SensorId.ACCELEROMETER_UNCALIBRATED | 是 | 传感器类型，该值固定为SensorId.ACCELEROMETER_UNCALIBRATED。 |
@@ -2691,6 +2846,7 @@ off(type: SensorId.ACCELEROMETER_UNCALIBRATED, sensorInfoParam?: SensorInfoParam
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2760,9 +2916,10 @@ function sensorUnsubscribe(): Ret {
 
 
 
-#### sensor.off('SensorId.AMBIENT_LIGHT')9+
+## sensor.off('SensorId.AMBIENT_LIGHT')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.AMBIENT_LIGHT, callback?: Callback&lt;LightResponse&gt;): void
 
@@ -2771,6 +2928,7 @@ off(type: SensorId.AMBIENT_LIGHT, callback?: Callback&lt;LightResponse&gt;): voi
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2781,6 +2939,7 @@ off(type: SensorId.AMBIENT_LIGHT, callback?: Callback&lt;LightResponse&gt;): voi
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2817,9 +2976,10 @@ try {
 
 
 
-#### sensor.off('SensorId.AMBIENT_LIGHT')19+
+## sensor.off('SensorId.AMBIENT_LIGHT')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.AMBIENT_LIGHT, sensorInfoParam?: SensorInfoParam, callback?: Callback&lt;LightResponse&gt;): void
 
@@ -2828,6 +2988,7 @@ off(type: SensorId.AMBIENT_LIGHT, sensorInfoParam?: SensorInfoParam, callback?: 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2839,6 +3000,7 @@ off(type: SensorId.AMBIENT_LIGHT, sensorInfoParam?: SensorInfoParam, callback?: 
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2907,9 +3069,10 @@ function sensorUnsubscribe(): Ret {
 
 
 
-#### sensor.off('SensorId.AMBIENT_TEMPERATURE')9+
+## sensor.off('SensorId.AMBIENT_TEMPERATURE')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.AMBIENT_TEMPERATURE, callback?: Callback&lt;AmbientTemperatureResponse&gt;): void
 
@@ -2918,6 +3081,7 @@ off(type: SensorId.AMBIENT_TEMPERATURE, callback?: Callback&lt;AmbientTemperatur
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2928,6 +3092,7 @@ off(type: SensorId.AMBIENT_TEMPERATURE, callback?: Callback&lt;AmbientTemperatur
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2964,9 +3129,10 @@ try {
 
 
 
-#### sensor.off('SensorId.AMBIENT_TEMPERATURE')19+
+## sensor.off('SensorId.AMBIENT_TEMPERATURE')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.AMBIENT_TEMPERATURE, sensorInfoParam?: SensorInfoParam, callback?: Callback&lt;AmbientTemperatureResponse&gt;): void
 
@@ -2975,6 +3141,7 @@ off(type: SensorId.AMBIENT_TEMPERATURE, sensorInfoParam?: SensorInfoParam, callb
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2986,6 +3153,7 @@ off(type: SensorId.AMBIENT_TEMPERATURE, sensorInfoParam?: SensorInfoParam, callb
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3054,9 +3222,10 @@ function sensorUnsubscribe(): Ret {
 
 
 
-#### sensor.off('SensorId.BAROMETER')9+
+## sensor.off('SensorId.BAROMETER')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.BAROMETER, callback?: Callback&lt;BarometerResponse&gt;): void
 
@@ -3065,6 +3234,7 @@ off(type: SensorId.BAROMETER, callback?: Callback&lt;BarometerResponse&gt;): voi
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3075,6 +3245,7 @@ off(type: SensorId.BAROMETER, callback?: Callback&lt;BarometerResponse&gt;): voi
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3111,9 +3282,10 @@ try {
 
 
 
-#### sensor.off('SensorId.BAROMETER')19+
+## sensor.off('SensorId.BAROMETER')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.BAROMETER, sensorInfoParam?: SensorInfoParam, callback?: Callback&lt;BarometerResponse&gt;): void
 
@@ -3122,6 +3294,7 @@ off(type: SensorId.BAROMETER, sensorInfoParam?: SensorInfoParam, callback?: Call
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3133,6 +3306,7 @@ off(type: SensorId.BAROMETER, sensorInfoParam?: SensorInfoParam, callback?: Call
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3201,9 +3375,10 @@ function sensorUnsubscribe(): Ret {
 
 
 
-#### sensor.off('SensorId.GRAVITY')9+
+## sensor.off('SensorId.GRAVITY')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.GRAVITY, callback?: Callback&lt;GravityResponse&gt;): void
 
@@ -3212,6 +3387,7 @@ off(type: SensorId.GRAVITY, callback?: Callback&lt;GravityResponse&gt;): void
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3222,6 +3398,7 @@ off(type: SensorId.GRAVITY, callback?: Callback&lt;GravityResponse&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3258,9 +3435,10 @@ try {
 
 
 
-#### sensor.off('SensorId.GRAVITY')19+
+## sensor.off('SensorId.GRAVITY')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.GRAVITY, sensorInfoParam?: SensorInfoParam, callback?: Callback&lt;GravityResponse&gt;): void
 
@@ -3269,6 +3447,7 @@ off(type: SensorId.GRAVITY, sensorInfoParam?: SensorInfoParam, callback?: Callba
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3280,6 +3459,7 @@ off(type: SensorId.GRAVITY, sensorInfoParam?: SensorInfoParam, callback?: Callba
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3348,9 +3528,10 @@ function sensorUnsubscribe(): Ret {
 
 
 
-#### sensor.off('SensorId.GYROSCOPE')9+
+## sensor.off('SensorId.GYROSCOPE')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.GYROSCOPE, callback?: Callback&lt;GyroscopeResponse&gt;): void
 
@@ -3364,6 +3545,7 @@ off(type: SensorId.GYROSCOPE, callback?: Callback&lt;GyroscopeResponse&gt;): voi
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SensorId.GYROSCOPE | 是 | 传感器类型，该值固定为SensorId.GYROSCOPE。 |
@@ -3373,6 +3555,7 @@ off(type: SensorId.GYROSCOPE, callback?: Callback&lt;GyroscopeResponse&gt;): voi
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3410,9 +3593,10 @@ try {
 
 
 
-#### sensor.off('SensorId.GYROSCOPE')19+
+## sensor.off('SensorId.GYROSCOPE')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.GYROSCOPE, sensorInfoParam?: SensorInfoParam, callback?: Callback&lt;GyroscopeResponse&gt;): void
 
@@ -3426,6 +3610,7 @@ off(type: SensorId.GYROSCOPE, sensorInfoParam?: SensorInfoParam, callback?: Call
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SensorId.GYROSCOPE | 是 | 传感器类型，该值固定为SensorId.GYROSCOPE。 |
@@ -3436,6 +3621,7 @@ off(type: SensorId.GYROSCOPE, sensorInfoParam?: SensorInfoParam, callback?: Call
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3505,9 +3691,10 @@ function sensorUnsubscribe(): Ret {
 
 
 
-#### sensor.off('SensorId.GYROSCOPE_UNCALIBRATED')9+
+## sensor.off('SensorId.GYROSCOPE_UNCALIBRATED')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.GYROSCOPE_UNCALIBRATED, callback?: Callback&lt;GyroscopeUncalibratedResponse&gt;): void
 
@@ -3519,6 +3706,7 @@ off(type: SensorId.GYROSCOPE_UNCALIBRATED, callback?: Callback&lt;GyroscopeUncal
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SensorId.GYROSCOPE_UNCALIBRATED | 是 | 传感器类型，该值固定为SensorId.GYROSCOPE_UNCALIBRATED。 |
@@ -3528,6 +3716,7 @@ off(type: SensorId.GYROSCOPE_UNCALIBRATED, callback?: Callback&lt;GyroscopeUncal
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3565,9 +3754,10 @@ try {
 
 
 
-#### sensor.off('SensorId.GYROSCOPE_UNCALIBRATED')19+
+## sensor.off('SensorId.GYROSCOPE_UNCALIBRATED')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.GYROSCOPE_UNCALIBRATED, sensorInfoParam?: SensorInfoParam, callback?: Callback&lt;GyroscopeUncalibratedResponse&gt;): void
 
@@ -3579,6 +3769,7 @@ off(type: SensorId.GYROSCOPE_UNCALIBRATED, sensorInfoParam?: SensorInfoParam, ca
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SensorId.GYROSCOPE_UNCALIBRATED | 是 | 传感器类型，该值固定为SensorId.GYROSCOPE_UNCALIBRATED。 |
@@ -3589,6 +3780,7 @@ off(type: SensorId.GYROSCOPE_UNCALIBRATED, sensorInfoParam?: SensorInfoParam, ca
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3658,9 +3850,10 @@ function sensorUnsubscribe(): Ret {
 
 
 
-#### sensor.off('SensorId.HALL')9+
+## sensor.off('SensorId.HALL')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.HALL, callback?: Callback&lt;HallResponse&gt;): void
 
@@ -3669,6 +3862,7 @@ off(type: SensorId.HALL, callback?: Callback&lt;HallResponse&gt;): void
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3679,6 +3873,7 @@ off(type: SensorId.HALL, callback?: Callback&lt;HallResponse&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3715,9 +3910,10 @@ try {
 
 
 
-#### sensor.off('SensorId.HALL')19+
+## sensor.off('SensorId.HALL')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.HALL, sensorInfoParam?: SensorInfoParam, callback?: Callback&lt;HallResponse&gt;): void
 
@@ -3726,6 +3922,7 @@ off(type: SensorId.HALL, sensorInfoParam?: SensorInfoParam, callback?: Callback&
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3737,6 +3934,7 @@ off(type: SensorId.HALL, sensorInfoParam?: SensorInfoParam, callback?: Callback&
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3805,9 +4003,10 @@ function sensorUnsubscribe(): Ret {
 
 
 
-#### sensor.off('SensorId.HEART_RATE')9+
+## sensor.off('SensorId.HEART_RATE')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.HEART_RATE, callback?: Callback&lt;HeartRateResponse&gt;): void
 
@@ -3819,6 +4018,7 @@ off(type: SensorId.HEART_RATE, callback?: Callback&lt;HeartRateResponse&gt;): vo
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SensorId.HEART_RATE | 是 | 传感器类型，该值固定为SensorId.HEART_RATE。 |
@@ -3828,6 +4028,7 @@ off(type: SensorId.HEART_RATE, callback?: Callback&lt;HeartRateResponse&gt;): vo
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3865,9 +4066,10 @@ try {
 
 
 
-#### sensor.off('SensorId.HEART_RATE')19+
+## sensor.off('SensorId.HEART_RATE')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.HEART_RATE, sensorInfoParam?: SensorInfoParam, callback?: Callback&lt;HeartRateResponse&gt;): void
 
@@ -3879,6 +4081,7 @@ off(type: SensorId.HEART_RATE, sensorInfoParam?: SensorInfoParam, callback?: Cal
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SensorId.HEART_RATE | 是 | 传感器类型，该值固定为SensorId.HEART_RATE。 |
@@ -3889,6 +4092,7 @@ off(type: SensorId.HEART_RATE, sensorInfoParam?: SensorInfoParam, callback?: Cal
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3958,9 +4162,10 @@ function sensorUnsubscribe(): Ret {
 
 
 
-#### sensor.off('SensorId.HUMIDITY')9+
+## sensor.off('SensorId.HUMIDITY')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.HUMIDITY, callback?: Callback&lt;HumidityResponse&gt;): void
 
@@ -3969,6 +4174,7 @@ off(type: SensorId.HUMIDITY, callback?: Callback&lt;HumidityResponse&gt;): void
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3979,6 +4185,7 @@ off(type: SensorId.HUMIDITY, callback?: Callback&lt;HumidityResponse&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4015,9 +4222,10 @@ try {
 
 
 
-#### sensor.off('SensorId.HUMIDITY')19+
+## sensor.off('SensorId.HUMIDITY')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.HUMIDITY, sensorInfoParam?: SensorInfoParam, callback?: Callback&lt;HumidityResponse&gt;): void
 
@@ -4026,6 +4234,7 @@ off(type: SensorId.HUMIDITY, sensorInfoParam?: SensorInfoParam, callback?: Callb
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4037,6 +4246,7 @@ off(type: SensorId.HUMIDITY, sensorInfoParam?: SensorInfoParam, callback?: Callb
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4105,9 +4315,10 @@ function sensorUnsubscribe(): Ret {
 
 
 
-#### sensor.off('SensorId.LINEAR_ACCELEROMETER')9+
+## sensor.off('SensorId.LINEAR_ACCELEROMETER')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.LINEAR_ACCELEROMETER, callback?: Callback&lt;LinearAccelerometerResponse&gt;): void
 
@@ -4119,6 +4330,7 @@ off(type: SensorId.LINEAR_ACCELEROMETER, callback?: Callback&lt;LinearAccelerome
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SensorId.LINEAR_ACCELEROMETER | 是 | 传感器类型，该值固定为SensorId.LINEAR_ACCELEROMETER。 |
@@ -4128,6 +4340,7 @@ off(type: SensorId.LINEAR_ACCELEROMETER, callback?: Callback&lt;LinearAccelerome
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4165,9 +4378,10 @@ try {
 
 
 
-#### sensor.off('SensorId.LINEAR_ACCELEROMETER')19+
+## sensor.off('SensorId.LINEAR_ACCELEROMETER')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.LINEAR_ACCELEROMETER, sensorInfoParam?: SensorInfoParam, callback?: Callback&lt;LinearAccelerometerResponse&gt;): void
 
@@ -4179,6 +4393,7 @@ off(type: SensorId.LINEAR_ACCELEROMETER, sensorInfoParam?: SensorInfoParam, call
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SensorId.LINEAR_ACCELEROMETER | 是 | 传感器类型，该值固定为SensorId.LINEAR_ACCELEROMETER。 |
@@ -4189,6 +4404,7 @@ off(type: SensorId.LINEAR_ACCELEROMETER, sensorInfoParam?: SensorInfoParam, call
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4258,9 +4474,10 @@ function sensorUnsubscribe(): Ret {
 
 
 
-#### sensor.off('SensorId.MAGNETIC_FIELD')9+
+## sensor.off('SensorId.MAGNETIC_FIELD')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.MAGNETIC_FIELD, callback?: Callback&lt;MagneticFieldResponse&gt;): void
 
@@ -4269,6 +4486,7 @@ off(type: SensorId.MAGNETIC_FIELD, callback?: Callback&lt;MagneticFieldResponse&
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4279,6 +4497,7 @@ off(type: SensorId.MAGNETIC_FIELD, callback?: Callback&lt;MagneticFieldResponse&
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4315,9 +4534,10 @@ try {
 
 
 
-#### sensor.off('SensorId.MAGNETIC_FIELD')19+
+## sensor.off('SensorId.MAGNETIC_FIELD')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.MAGNETIC_FIELD, sensorInfoParam?: SensorInfoParam, callback?: Callback&lt;MagneticFieldResponse&gt;): void
 
@@ -4326,6 +4546,7 @@ off(type: SensorId.MAGNETIC_FIELD, sensorInfoParam?: SensorInfoParam, callback?:
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4337,6 +4558,7 @@ off(type: SensorId.MAGNETIC_FIELD, sensorInfoParam?: SensorInfoParam, callback?:
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4405,9 +4627,10 @@ function sensorUnsubscribe(): Ret {
 
 
 
-#### sensor.off('SensorId.MAGNETIC_FIELD_UNCALIBRATED')9+
+## sensor.off('SensorId.MAGNETIC_FIELD_UNCALIBRATED')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.MAGNETIC_FIELD_UNCALIBRATED, callback?: Callback&lt;MagneticFieldUncalibratedResponse&gt;): void
 
@@ -4416,6 +4639,7 @@ off(type: SensorId.MAGNETIC_FIELD_UNCALIBRATED, callback?: Callback&lt;MagneticF
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4426,6 +4650,7 @@ off(type: SensorId.MAGNETIC_FIELD_UNCALIBRATED, callback?: Callback&lt;MagneticF
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4462,9 +4687,10 @@ try {
 
 
 
-#### sensor.off('SensorId.MAGNETIC_FIELD_UNCALIBRATED')19+
+## sensor.off('SensorId.MAGNETIC_FIELD_UNCALIBRATED')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.MAGNETIC_FIELD_UNCALIBRATED, sensorInfoParam?: SensorInfoParam, callback?: Callback&lt;MagneticFieldUncalibratedResponse&gt;): void
 
@@ -4473,6 +4699,7 @@ off(type: SensorId.MAGNETIC_FIELD_UNCALIBRATED, sensorInfoParam?: SensorInfoPara
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4484,6 +4711,7 @@ off(type: SensorId.MAGNETIC_FIELD_UNCALIBRATED, sensorInfoParam?: SensorInfoPara
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4552,9 +4780,10 @@ function sensorUnsubscribe(): Ret {
 
 
 
-#### sensor.off('SensorId.ORIENTATION')9+
+## sensor.off('SensorId.ORIENTATION')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.ORIENTATION, callback?: Callback&lt;OrientationResponse&gt;): void
 
@@ -4566,6 +4795,7 @@ off(type: SensorId.ORIENTATION, callback?: Callback&lt;OrientationResponse&gt;):
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SensorId.ORIENTATION | 是 | 传感器类型，该值固定为SensorId.ORIENTATION。 |
@@ -4575,6 +4805,7 @@ off(type: SensorId.ORIENTATION, callback?: Callback&lt;OrientationResponse&gt;):
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4611,9 +4842,10 @@ try {
 
 
 
-#### sensor.off('SensorId.ORIENTATION')19+
+## sensor.off('SensorId.ORIENTATION')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.ORIENTATION, sensorInfoParam?: SensorInfoParam, callback?: Callback&lt;OrientationResponse&gt;): void
 
@@ -4625,6 +4857,7 @@ off(type: SensorId.ORIENTATION, sensorInfoParam?: SensorInfoParam, callback?: Ca
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SensorId.ORIENTATION | 是 | 传感器类型，该值固定为SensorId.ORIENTATION。 |
@@ -4635,6 +4868,7 @@ off(type: SensorId.ORIENTATION, sensorInfoParam?: SensorInfoParam, callback?: Ca
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4703,9 +4937,10 @@ function sensorUnsubscribe(): Ret {
 
 
 
-#### sensor.off('SensorId.PEDOMETER')9+
+## sensor.off('SensorId.PEDOMETER')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.PEDOMETER, callback?: Callback&lt;PedometerResponse&gt;): void
 
@@ -4717,6 +4952,7 @@ off(type: SensorId.PEDOMETER, callback?: Callback&lt;PedometerResponse&gt;): voi
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SensorId.PEDOMETER | 是 | 传感器类型，该值固定为SensorId.PEDOMETER。 |
@@ -4726,6 +4962,7 @@ off(type: SensorId.PEDOMETER, callback?: Callback&lt;PedometerResponse&gt;): voi
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4763,9 +5000,10 @@ try {
 
 
 
-#### sensor.off('SensorId.PEDOMETER')19+
+## sensor.off('SensorId.PEDOMETER')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.PEDOMETER, sensorInfoParam?: SensorInfoParam, callback?: Callback&lt;PedometerResponse&gt;): void
 
@@ -4777,6 +5015,7 @@ off(type: SensorId.PEDOMETER, sensorInfoParam?: SensorInfoParam, callback?: Call
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SensorId.PEDOMETER | 是 | 传感器类型，该值固定为SensorId.PEDOMETER。 |
@@ -4787,6 +5026,7 @@ off(type: SensorId.PEDOMETER, sensorInfoParam?: SensorInfoParam, callback?: Call
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4856,9 +5096,10 @@ function sensorUnsubscribe(): Ret {
 
 
 
-#### sensor.off('SensorId.PEDOMETER_DETECTION')9+
+## sensor.off('SensorId.PEDOMETER_DETECTION')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.PEDOMETER_DETECTION, callback?: Callback&lt;PedometerDetectionResponse&gt;): void
 
@@ -4870,6 +5111,7 @@ off(type: SensorId.PEDOMETER_DETECTION, callback?: Callback&lt;PedometerDetectio
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SensorId.PEDOMETER_DETECTION | 是 | 传感器类型，该值固定为SensorId.PEDOMETER_DETECTION。 |
@@ -4879,6 +5121,7 @@ off(type: SensorId.PEDOMETER_DETECTION, callback?: Callback&lt;PedometerDetectio
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4916,9 +5159,10 @@ try {
 
 
 
-#### sensor.off('SensorId.PEDOMETER_DETECTION')19+
+## sensor.off('SensorId.PEDOMETER_DETECTION')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.PEDOMETER_DETECTION, sensorInfoParam?: SensorInfoParam, callback?: Callback&lt;PedometerDetectionResponse&gt;): void
 
@@ -4930,6 +5174,7 @@ off(type: SensorId.PEDOMETER_DETECTION, sensorInfoParam?: SensorInfoParam, callb
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SensorId.PEDOMETER_DETECTION | 是 | 传感器类型，该值固定为SensorId.PEDOMETER_DETECTION。 |
@@ -4940,6 +5185,7 @@ off(type: SensorId.PEDOMETER_DETECTION, sensorInfoParam?: SensorInfoParam, callb
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5009,9 +5255,10 @@ function sensorUnsubscribe(): Ret {
 
 
 
-#### sensor.off('SensorId.PROXIMITY')9+
+## sensor.off('SensorId.PROXIMITY')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.PROXIMITY, callback?: Callback&lt;ProximityResponse&gt;): void
 
@@ -5020,6 +5267,7 @@ off(type: SensorId.PROXIMITY, callback?: Callback&lt;ProximityResponse&gt;): voi
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5030,6 +5278,7 @@ off(type: SensorId.PROXIMITY, callback?: Callback&lt;ProximityResponse&gt;): voi
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5066,9 +5315,10 @@ try {
 
 
 
-#### sensor.off('SensorId.PROXIMITY')19+
+## sensor.off('SensorId.PROXIMITY')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.PROXIMITY, sensorInfoParam?: SensorInfoParam, callback?: Callback&lt;ProximityResponse&gt;): void
 
@@ -5077,6 +5327,7 @@ off(type: SensorId.PROXIMITY, sensorInfoParam?: SensorInfoParam, callback?: Call
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5088,6 +5339,7 @@ off(type: SensorId.PROXIMITY, sensorInfoParam?: SensorInfoParam, callback?: Call
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5156,9 +5408,10 @@ function sensorUnsubscribe(): Ret {
 
 
 
-#### sensor.off('SensorId.ROTATION_VECTOR')9+
+## sensor.off('SensorId.ROTATION_VECTOR')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.ROTATION_VECTOR, callback?: Callback&lt;RotationVectorResponse&gt;): void
 
@@ -5167,6 +5420,7 @@ off(type: SensorId.ROTATION_VECTOR, callback?: Callback&lt;RotationVectorRespons
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5177,6 +5431,7 @@ off(type: SensorId.ROTATION_VECTOR, callback?: Callback&lt;RotationVectorRespons
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5213,9 +5468,10 @@ try {
 
 
 
-#### sensor.off('SensorId.ROTATION_VECTOR')19+
+## sensor.off('SensorId.ROTATION_VECTOR')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.ROTATION_VECTOR, sensorInfoParam?: SensorInfoParam, callback?: Callback&lt;RotationVectorResponse&gt;): void
 
@@ -5224,6 +5480,7 @@ off(type: SensorId.ROTATION_VECTOR, sensorInfoParam?: SensorInfoParam, callback?
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5235,6 +5492,7 @@ off(type: SensorId.ROTATION_VECTOR, sensorInfoParam?: SensorInfoParam, callback?
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5303,9 +5561,10 @@ function sensorUnsubscribe(): Ret {
 
 
 
-#### sensor.off('SensorId.SIGNIFICANT_MOTION')9+
+## sensor.off('SensorId.SIGNIFICANT_MOTION')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.SIGNIFICANT_MOTION, callback?: Callback&lt;SignificantMotionResponse&gt;): void
 
@@ -5314,6 +5573,7 @@ off(type: SensorId.SIGNIFICANT_MOTION, callback?: Callback&lt;SignificantMotionR
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5324,6 +5584,7 @@ off(type: SensorId.SIGNIFICANT_MOTION, callback?: Callback&lt;SignificantMotionR
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5360,9 +5621,10 @@ try {
 
 
 
-#### sensor.off('SensorId.SIGNIFICANT_MOTION')19+
+## sensor.off('SensorId.SIGNIFICANT_MOTION')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.SIGNIFICANT_MOTION, sensorInfoParam?: SensorInfoParam, callback?: Callback&lt;SignificantMotionResponse&gt;): void
 
@@ -5371,6 +5633,7 @@ off(type: SensorId.SIGNIFICANT_MOTION, sensorInfoParam?: SensorInfoParam, callba
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5382,6 +5645,7 @@ off(type: SensorId.SIGNIFICANT_MOTION, sensorInfoParam?: SensorInfoParam, callba
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5450,9 +5714,10 @@ function sensorUnsubscribe(): Ret {
 
 
 
-#### sensor.off('SensorId.WEAR_DETECTION')9+
+## sensor.off('SensorId.WEAR_DETECTION')9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.WEAR_DETECTION, callback?: Callback&lt;WearDetectionResponse&gt;): void
 
@@ -5461,6 +5726,7 @@ off(type: SensorId.WEAR_DETECTION, callback?: Callback&lt;WearDetectionResponse&
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5471,6 +5737,7 @@ off(type: SensorId.WEAR_DETECTION, callback?: Callback&lt;WearDetectionResponse&
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5507,9 +5774,10 @@ try {
 
 
 
-#### sensor.off('SensorId.WEAR_DETECTION')19+
+## sensor.off('SensorId.WEAR_DETECTION')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorId.WEAR_DETECTION, sensorInfoParam?: SensorInfoParam, callback?: Callback&lt;WearDetectionResponse&gt;): void
 
@@ -5518,6 +5786,7 @@ off(type: SensorId.WEAR_DETECTION, sensorInfoParam?: SensorInfoParam, callback?:
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5529,6 +5798,7 @@ off(type: SensorId.WEAR_DETECTION, sensorInfoParam?: SensorInfoParam, callback?:
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5597,9 +5867,10 @@ function sensorUnsubscribe(): Ret {
 
 
 
-#### sensor.off('sensorStatusChange')19+
+## sensor.off('sensorStatusChange')19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'sensorStatusChange', callback?: Callback&lt;SensorStatusEvent&gt;): void
 
@@ -5608,6 +5879,7 @@ off(type: 'sensorStatusChange', callback?: Callback&lt;SensorStatusEvent&gt;): v
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5618,6 +5890,7 @@ off(type: 'sensorStatusChange', callback?: Callback&lt;SensorStatusEvent&gt;): v
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5658,9 +5931,10 @@ try {
 
 
 
-#### sensor.getSensorListByDeviceSync19+
+## sensor.getSensorListByDeviceSync19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSensorListByDeviceSync(deviceId?: number): Array&lt;Sensor&gt;
 
@@ -5670,12 +5944,14 @@ getSensorListByDeviceSync(deviceId?: number): Array&lt;Sensor&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | number | 否 | 设备ID，默认为查询本地设备，默认值为-1，表示本地设备，设备ID需通过getSensorList查询或者监听设备上下线接口sensorStatusChange获取。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5702,9 +5978,10 @@ try {
 
 
 
-#### sensor.getSingleSensorByDeviceSync19+
+## sensor.getSingleSensorByDeviceSync19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSingleSensorByDeviceSync(type: SensorId, deviceId?: number): Array&lt;Sensor&gt;
 
@@ -5714,6 +5991,7 @@ getSingleSensorByDeviceSync(type: SensorId, deviceId?: number): Array&lt;Sensor&
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SensorId | 是 | 指定传感器类型。 |
@@ -5721,6 +5999,7 @@ getSingleSensorByDeviceSync(type: SensorId, deviceId?: number): Array&lt;Sensor&
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5747,9 +6026,10 @@ try {
 
 
 
-#### sensor.getGeomagneticInfo9+
+## sensor.getGeomagneticInfo9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getGeomagneticInfo(locationOptions: LocationOptions, timeMillis: number, callback: AsyncCallback&lt;GeomagneticResponse&gt;): void
 
@@ -5758,6 +6038,7 @@ getGeomagneticInfo(locationOptions: LocationOptions, timeMillis: number, callbac
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5769,6 +6050,7 @@ getGeomagneticInfo(locationOptions: LocationOptions, timeMillis: number, callbac
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5806,9 +6088,10 @@ try {
 
 
 
-#### sensor.getGeomagneticInfo9+
+## sensor.getGeomagneticInfo9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getGeomagneticInfo(locationOptions: LocationOptions, timeMillis: number): Promise&lt;GeomagneticResponse&gt;
 
@@ -5818,6 +6101,7 @@ getGeomagneticInfo(locationOptions: LocationOptions, timeMillis: number): Promis
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | locationOptions | LocationOptions | 是 | 地理位置，包括经度、纬度和海拔高度。 |
@@ -5825,6 +6109,7 @@ getGeomagneticInfo(locationOptions: LocationOptions, timeMillis: number): Promis
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5834,6 +6119,7 @@ getGeomagneticInfo(locationOptions: LocationOptions, timeMillis: number): Promis
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5869,9 +6155,10 @@ try {
 
 
 
-#### sensor.getDeviceAltitude9+
+## sensor.getDeviceAltitude9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDeviceAltitude(seaPressure: number, currentPressure: number, callback: AsyncCallback&lt;number&gt;): void
 
@@ -5880,6 +6167,7 @@ getDeviceAltitude(seaPressure: number, currentPressure: number, callback: AsyncC
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5891,6 +6179,7 @@ getDeviceAltitude(seaPressure: number, currentPressure: number, callback: AsyncC
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5923,9 +6212,10 @@ try {
 
 
 
-#### sensor.getDeviceAltitude9+
+## sensor.getDeviceAltitude9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDeviceAltitude(seaPressure: number, currentPressure: number): Promise&lt;number&gt;
 
@@ -5935,6 +6225,7 @@ getDeviceAltitude(seaPressure: number, currentPressure: number): Promise&lt;numb
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | seaPressure | number | 是 | 海平面气压值，单位：hPa（百帕）。 |
@@ -5942,6 +6233,7 @@ getDeviceAltitude(seaPressure: number, currentPressure: number): Promise&lt;numb
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5951,6 +6243,7 @@ getDeviceAltitude(seaPressure: number, currentPressure: number): Promise&lt;numb
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5982,9 +6275,10 @@ try {
 
 
 
-#### sensor.getInclination9+
+## sensor.getInclination9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getInclination(inclinationMatrix: Array&lt;number&gt;, callback: AsyncCallback&lt;number&gt;): void
 
@@ -5993,6 +6287,7 @@ getInclination(inclinationMatrix: Array&lt;number&gt;, callback: AsyncCallback&l
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6003,6 +6298,7 @@ getInclination(inclinationMatrix: Array&lt;number&gt;, callback: AsyncCallback&l
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6039,9 +6335,10 @@ try {
 
 
 
-#### sensor.getInclination9+
+## sensor.getInclination9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getInclination(inclinationMatrix: Array&lt;number&gt;): Promise&lt;number&gt;
 
@@ -6051,12 +6348,14 @@ getInclination(inclinationMatrix: Array&lt;number&gt;): Promise&lt;number&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | inclinationMatrix | Array&lt;number&gt; | 是 | 倾斜矩阵。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6066,6 +6365,7 @@ getInclination(inclinationMatrix: Array&lt;number&gt;): Promise&lt;number&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6101,9 +6401,10 @@ try {
 
 
 
-#### sensor.getAngleVariation9+
+## sensor.getAngleVariation9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAngleVariation(currentRotationMatrix: Array&lt;number&gt;, preRotationMatrix: Array&lt;number&gt;, callback: AsyncCallback<Array&lt;number&gt;>): void
 
@@ -6112,6 +6413,7 @@ getAngleVariation(currentRotationMatrix: Array&lt;number&gt;, preRotationMatrix:
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6123,6 +6425,7 @@ getAngleVariation(currentRotationMatrix: Array&lt;number&gt;, preRotationMatrix:
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6170,9 +6473,10 @@ try {
 
 
 
-#### sensor.getAngleVariation9+
+## sensor.getAngleVariation9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAngleVariation(currentRotationMatrix: Array&lt;number&gt;, preRotationMatrix: Array&lt;number&gt;): Promise<Array&lt;number&gt;>
 
@@ -6182,6 +6486,7 @@ getAngleVariation(currentRotationMatrix: Array&lt;number&gt;, preRotationMatrix:
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | currentRotationMatrix | Array&lt;number&gt; | 是 | 当前旋转矩阵。 |
@@ -6189,6 +6494,7 @@ getAngleVariation(currentRotationMatrix: Array&lt;number&gt;, preRotationMatrix:
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6198,6 +6504,7 @@ getAngleVariation(currentRotationMatrix: Array&lt;number&gt;, preRotationMatrix:
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6244,9 +6551,10 @@ try {
 
 
 
-#### sensor.getRotationMatrix9+
+## sensor.getRotationMatrix9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRotationMatrix(rotationVector: Array&lt;number&gt;, callback: AsyncCallback<Array&lt;number&gt;>): void
 
@@ -6255,6 +6563,7 @@ getRotationMatrix(rotationVector: Array&lt;number&gt;, callback: AsyncCallback<A
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6265,6 +6574,7 @@ getRotationMatrix(rotationVector: Array&lt;number&gt;, callback: AsyncCallback<A
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6298,9 +6608,10 @@ try {
 
 
 
-#### sensor.getRotationMatrix9+
+## sensor.getRotationMatrix9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRotationMatrix(rotationVector: Array&lt;number&gt;): Promise<Array&lt;number&gt;>
 
@@ -6310,12 +6621,14 @@ getRotationMatrix(rotationVector: Array&lt;number&gt;): Promise<Array&lt;number&
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rotationVector | Array&lt;number&gt; | 是 | 旋转矢量。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6325,6 +6638,7 @@ getRotationMatrix(rotationVector: Array&lt;number&gt;): Promise<Array&lt;number&
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6357,9 +6671,10 @@ try {
 
 
 
-#### sensor.transformRotationMatrix9+
+## sensor.transformRotationMatrix9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 transformRotationMatrix(inRotationVector: Array&lt;number&gt;, coordinates: CoordinatesOptions, callback: AsyncCallback<Array&lt;number&gt;>): void
 
@@ -6368,6 +6683,7 @@ transformRotationMatrix(inRotationVector: Array&lt;number&gt;, coordinates: Coor
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6379,6 +6695,7 @@ transformRotationMatrix(inRotationVector: Array&lt;number&gt;, coordinates: Coor
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6416,9 +6733,10 @@ try {
 
 
 
-#### sensor.transformRotationMatrix9+
+## sensor.transformRotationMatrix9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 transformRotationMatrix(inRotationVector: Array&lt;number&gt;, coordinates: CoordinatesOptions): Promise<Array&lt;number&gt;>
 
@@ -6428,6 +6746,7 @@ transformRotationMatrix(inRotationVector: Array&lt;number&gt;, coordinates: Coor
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | inRotationVector | Array&lt;number&gt; | 是 | 旋转矩阵。 |
@@ -6435,6 +6754,7 @@ transformRotationMatrix(inRotationVector: Array&lt;number&gt;, coordinates: Coor
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6444,6 +6764,7 @@ transformRotationMatrix(inRotationVector: Array&lt;number&gt;, coordinates: Coor
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6480,9 +6801,10 @@ try {
 
 
 
-#### sensor.getQuaternion9+
+## sensor.getQuaternion9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getQuaternion(rotationVector: Array&lt;number&gt;, callback: AsyncCallback<Array&lt;number&gt;>): void
 
@@ -6491,6 +6813,7 @@ getQuaternion(rotationVector: Array&lt;number&gt;, callback: AsyncCallback<Array
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6501,6 +6824,7 @@ getQuaternion(rotationVector: Array&lt;number&gt;, callback: AsyncCallback<Array
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6534,9 +6858,10 @@ try {
 
 
 
-#### sensor.getQuaternion9+
+## sensor.getQuaternion9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getQuaternion(rotationVector: Array&lt;number&gt;): Promise<Array&lt;number&gt;>
 
@@ -6546,12 +6871,14 @@ getQuaternion(rotationVector: Array&lt;number&gt;): Promise<Array&lt;number&gt;>
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rotationVector | Array&lt;number&gt; | 是 | 旋转矢量。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6561,6 +6888,7 @@ getQuaternion(rotationVector: Array&lt;number&gt;): Promise<Array&lt;number&gt;>
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6593,9 +6921,10 @@ try {
 
 
 
-#### sensor.getOrientation9+
+## sensor.getOrientation9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOrientation(rotationMatrix: Array&lt;number&gt;, callback: AsyncCallback<Array&lt;number&gt;>): void
 
@@ -6604,6 +6933,7 @@ getOrientation(rotationMatrix: Array&lt;number&gt;, callback: AsyncCallback<Arra
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6614,6 +6944,7 @@ getOrientation(rotationMatrix: Array&lt;number&gt;, callback: AsyncCallback<Arra
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6654,9 +6985,10 @@ try {
 
 
 
-#### sensor.getOrientation9+
+## sensor.getOrientation9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOrientation(rotationMatrix: Array&lt;number&gt;): Promise<Array&lt;number&gt;>
 
@@ -6666,12 +6998,14 @@ getOrientation(rotationMatrix: Array&lt;number&gt;): Promise<Array&lt;number&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rotationMatrix | Array&lt;number&gt; | 是 | 旋转矩阵。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6681,6 +7015,7 @@ getOrientation(rotationMatrix: Array&lt;number&gt;): Promise<Array&lt;number&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6717,9 +7052,10 @@ try {
 
 
 
-#### sensor.getRotationMatrix9+
+## sensor.getRotationMatrix9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRotationMatrix(gravity: Array&lt;number&gt;, geomagnetic: Array&lt;number&gt;, callback: AsyncCallback&lt;RotationMatrixResponse&gt;): void
 
@@ -6728,6 +7064,7 @@ getRotationMatrix(gravity: Array&lt;number&gt;, geomagnetic: Array&lt;number&gt;
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6739,6 +7076,7 @@ getRotationMatrix(gravity: Array&lt;number&gt;, geomagnetic: Array&lt;number&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6771,9 +7109,10 @@ try {
 
 
 
-#### sensor.getRotationMatrix9+
+## sensor.getRotationMatrix9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRotationMatrix(gravity: Array&lt;number&gt;, geomagnetic: Array&lt;number&gt;): Promise&lt;RotationMatrixResponse&gt;
 
@@ -6783,6 +7122,7 @@ getRotationMatrix(gravity: Array&lt;number&gt;, geomagnetic: Array&lt;number&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | gravity | Array&lt;number&gt; | 是 | 重力向量。 |
@@ -6790,6 +7130,7 @@ getRotationMatrix(gravity: Array&lt;number&gt;, geomagnetic: Array&lt;number&gt;
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6799,6 +7140,7 @@ getRotationMatrix(gravity: Array&lt;number&gt;, geomagnetic: Array&lt;number&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6830,9 +7172,10 @@ try {
 
 
 
-#### sensor.getSensorList9+
+## sensor.getSensorList9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSensorList(callback: AsyncCallback<Array&lt;Sensor&gt;>): void
 
@@ -6842,6 +7185,7 @@ getSensorList(callback: AsyncCallback<Array&lt;Sensor&gt;>): void
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<Array&lt;Sensor&gt;> | 是 | 回调函数，异步返回传感器属性列表。 |
@@ -6850,6 +7194,7 @@ getSensorList(callback: AsyncCallback<Array&lt;Sensor&gt;>): void
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6882,9 +7227,10 @@ try {
 
 
 
-#### sensor.getSensorList9+
+## sensor.getSensorList9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSensorList(): Promise<Array&lt;Sensor&gt;>
 
@@ -6894,6 +7240,7 @@ getSensorList(): Promise<Array&lt;Sensor&gt;>
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;Sensor&gt;> | Promise对象，使用异步方式返回传感器属性列表。每个Sensor对象包含传感器的类型ID、名称、版本、厂商、最大范围、分辨率、功率等属性信息。 |
@@ -6902,6 +7249,7 @@ getSensorList(): Promise<Array&lt;Sensor&gt;>
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6932,9 +7280,10 @@ try {
 
 
 
-#### sensor.getSensorListSync12+
+## sensor.getSensorListSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSensorListSync(): Array&lt;Sensor&gt;
 
@@ -6944,6 +7293,7 @@ getSensorListSync(): Array&lt;Sensor&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;Sensor&gt; | 使用同步方式返回传感器属性列表。 |
@@ -6952,6 +7302,7 @@ getSensorListSync(): Array&lt;Sensor&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6978,9 +7329,10 @@ try {
 
 
 
-#### sensor.getSingleSensor9+
+## sensor.getSingleSensor9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSingleSensor(type: SensorId, callback: AsyncCallback&lt;Sensor&gt;): void
 
@@ -6989,6 +7341,7 @@ getSingleSensor(type: SensorId, callback: AsyncCallback&lt;Sensor&gt;): void
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6999,6 +7352,7 @@ getSingleSensor(type: SensorId, callback: AsyncCallback&lt;Sensor&gt;): void
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7038,9 +7392,10 @@ try {
 
 
 
-#### sensor.getSingleSensor9+
+## sensor.getSingleSensor9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSingleSensor(type: SensorId): Promise&lt;Sensor&gt;
 
@@ -7050,12 +7405,14 @@ getSingleSensor(type: SensorId): Promise&lt;Sensor&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SensorId | 是 | 传感器类型。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7065,6 +7422,7 @@ getSingleSensor(type: SensorId): Promise&lt;Sensor&gt;
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7094,9 +7452,10 @@ try {
 
 
 
-#### sensor.getSingleSensorSync12+
+## sensor.getSingleSensorSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSingleSensorSync(type: SensorId): Sensor
 
@@ -7106,12 +7465,14 @@ getSingleSensorSync(type: SensorId): Sensor
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SensorId | 是 | 传感器类型。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7121,6 +7482,7 @@ getSingleSensorSync(type: SensorId): Sensor
 **错误码**：
 
 以下错误码的详细介绍请参见[传感器错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-sensor)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。错误码和错误信息会以异常的形式抛出，调用接口时需要使用try catch对可能出现的异常进行捕获操作。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7147,13 +7509,15 @@ try {
 
 
 
-#### SensorId9+
+## SensorId9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示当前支持订阅或取消订阅的传感器类型。
 
 **系统能力**：SystemCapability.Sensors.Sensor
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -7165,7 +7529,7 @@ try {
 | HALL | 10 | 霍尔传感器类型，用于检测设备周围是否存在磁力吸引。 |
 | PROXIMITY | 12 | 接近光传感器类型，用于检测物体与设备显示器的接近程度。 |
 | HUMIDITY | 13 | 湿度传感器类型，用于测量环境的相对湿度。 |
-| ORIENTATION | 256 | 方向传感器类型，用于测量设备的旋转方向角度。 元服务API：从API version 11开始，该接口在支持元服务中使用。 |
+| ORIENTATION | 256 | 方向传感器类型，用于测量设备的旋转方向角度。 元服务API：从API version 11开始，该接口支持在元服务中使用。 |
 | GRAVITY | 257 | 重力传感器类型，用于测量设备的重力加速度。 |
 | LINEAR_ACCELEROMETER | 258 | 线性加速度传感器类型，用于测量设备排除重力后的线性加速度。 |
 | ROTATION_VECTOR | 259 | 旋转矢量传感器类型，用于描述设备相对于参考方向的旋转状态。 |
@@ -7183,15 +7547,17 @@ try {
 
 
 
-#### SensorInfoParam19+
+## SensorInfoParam19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 传感器传入设置参数，多传感器情况下通过deviceId、sensorIndex控制指定传感器。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **元服务API**：从API version 19开始，该接口支持在元服务中使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -7201,13 +7567,15 @@ try {
 
 
 
-#### SensorStatusEvent19+
+## SensorStatusEvent19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设备状态变化事件数据，用于描述传感器上下线事件的信息。
 
 **系统能力**：SystemCapability.Sensors.Sensor
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -7221,15 +7589,17 @@ try {
 
 
 
-#### SensorAccuracy11+
+## SensorAccuracy11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 传感器数据的精度挡位。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Sensors.Sensor
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -7241,15 +7611,17 @@ try {
 
 
 
-#### Response
+## Response
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 传感器数据的时间戳与精度信息基类，所有传感器Response类型均继承于此。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Sensors.Sensor
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -7259,13 +7631,15 @@ try {
 
 
 
-#### Sensor9+
+## Sensor9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 指示传感器信息。
 
 **系统能力**：SystemCapability.Sensors.Sensor
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -7288,15 +7662,17 @@ try {
 
 
 
-#### AccelerometerResponse
+## AccelerometerResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 加速度传感器数据，继承于[Response](#response)。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Sensors.Sensor
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -7307,13 +7683,15 @@ try {
 
 
 
-#### LinearAccelerometerResponse
+## LinearAccelerometerResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 线性加速度传感器数据，继承于[Response](#response)。
 
 **系统能力**：SystemCapability.Sensors.Sensor
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -7324,13 +7702,15 @@ try {
 
 
 
-#### AccelerometerUncalibratedResponse
+## AccelerometerUncalibratedResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 未校准加速度传感器数据，继承于[Response](#response)。
 
 **系统能力**：SystemCapability.Sensors.Sensor
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -7344,13 +7724,15 @@ try {
 
 
 
-#### FusionPressureResponse22+
+## FusionPressureResponse22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 融合压力传感器数据，继承于[Response](#response)。
 
 **系统能力**：SystemCapability.Sensors.Sensor
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -7359,13 +7741,15 @@ try {
 
 
 
-#### GravityResponse
+## GravityResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 重力传感器数据，继承于[Response](#response)。
 
 **系统能力**：SystemCapability.Sensors.Sensor
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -7376,15 +7760,17 @@ try {
 
 
 
-#### OrientationResponse
+## OrientationResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 方向传感器数据，继承于[Response](#response)。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Sensors.Sensor
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -7395,13 +7781,15 @@ try {
 
 
 
-#### RotationVectorResponse
+## RotationVectorResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 旋转矢量传感器数据，继承于[Response](#response)。
 
 **系统能力**：SystemCapability.Sensors.Sensor
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -7413,15 +7801,17 @@ try {
 
 
 
-#### GyroscopeResponse
+## GyroscopeResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 陀螺仪传感器数据，继承于[Response](#response)。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Sensors.Sensor
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -7432,13 +7822,15 @@ try {
 
 
 
-#### GyroscopeUncalibratedResponse
+## GyroscopeUncalibratedResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 未校准陀螺仪传感器数据，继承于[Response](#response)。
 
 **系统能力**：SystemCapability.Sensors.Sensor
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -7452,13 +7844,15 @@ try {
 
 
 
-#### SignificantMotionResponse
+## SignificantMotionResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 有效运动传感器数据，继承于[Response](#response)。
 
 **系统能力**：SystemCapability.Sensors.Sensor
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -7467,13 +7861,15 @@ try {
 
 
 
-#### ProximityResponse
+## ProximityResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 接近光传感器数据，继承于[Response](#response)。
 
 **系统能力**：SystemCapability.Sensors.Sensor
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -7482,13 +7878,15 @@ try {
 
 
 
-#### LightResponse
+## LightResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 环境光传感器数据，继承于[Response](#response)。
 
 **系统能力**：SystemCapability.Sensors.Sensor
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -7499,13 +7897,15 @@ try {
 
 
 
-#### HallResponse
+## HallResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 霍尔传感器数据，继承于[Response](#response)。
 
 **系统能力**：SystemCapability.Sensors.Sensor
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -7514,13 +7914,15 @@ try {
 
 
 
-#### MagneticFieldResponse
+## MagneticFieldResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 磁场传感器数据，继承于[Response](#response)。
 
 **系统能力**：SystemCapability.Sensors.Sensor
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -7531,13 +7933,15 @@ try {
 
 
 
-#### MagneticFieldUncalibratedResponse
+## MagneticFieldUncalibratedResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 未校准磁场传感器数据，继承于[Response](#response)。
 
 **系统能力**：SystemCapability.Sensors.Sensor
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -7551,13 +7955,15 @@ try {
 
 
 
-#### PedometerResponse
+## PedometerResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 计步传感器数据，继承于[Response](#response)。
 
 **系统能力**：SystemCapability.Sensors.Sensor
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -7566,13 +7972,15 @@ try {
 
 
 
-#### HumidityResponse
+## HumidityResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 湿度传感器数据，继承于[Response](#response)。
 
 **系统能力**：SystemCapability.Sensors.Sensor
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -7581,13 +7989,15 @@ try {
 
 
 
-#### PedometerDetectionResponse
+## PedometerDetectionResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 计步检测传感器数据，继承于[Response](#response)。
 
 **系统能力**：SystemCapability.Sensors.Sensor
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -7596,13 +8006,15 @@ try {
 
 
 
-#### AmbientTemperatureResponse
+## AmbientTemperatureResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 温度传感器数据，继承于[Response](#response)。
 
 **系统能力**：SystemCapability.Sensors.Sensor
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -7611,13 +8023,15 @@ try {
 
 
 
-#### BarometerResponse
+## BarometerResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 气压计传感器数据，继承于[Response](#response)。
 
 **系统能力**：SystemCapability.Sensors.Sensor
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -7626,13 +8040,15 @@ try {
 
 
 
-#### HeartRateResponse
+## HeartRateResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 心率传感器数据，继承于[Response](#response)。
 
 **系统能力**：SystemCapability.Sensors.Sensor
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -7641,13 +8057,15 @@ try {
 
 
 
-#### WearDetectionResponse
+## WearDetectionResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 佩戴检测传感器数据，继承于[Response](#response)。
 
 **系统能力**：SystemCapability.Sensors.Sensor
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -7656,15 +8074,17 @@ try {
 
 
 
-#### Options
+## Options
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置传感器上报频率及传感器选择参数。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Sensors.Sensor
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -7674,9 +8094,10 @@ try {
 
 
 
-#### SensorFrequency11+
+## SensorFrequency11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type SensorFrequency = 'game' | 'ui' | 'normal'
 
@@ -7685,6 +8106,7 @@ type SensorFrequency = 'game' | 'ui' | 'normal'
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Sensors.Sensor
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7695,13 +8117,15 @@ type SensorFrequency = 'game' | 'ui' | 'normal'
 
 
 
-#### RotationMatrixResponse
+## RotationMatrixResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置旋转矩阵响应对象，用于描述旋转矩阵和倾斜矩阵的计算结果。
 
 **系统能力**：SystemCapability.Sensors.Sensor
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -7711,13 +8135,15 @@ type SensorFrequency = 'game' | 'ui' | 'normal'
 
 
 
-#### CoordinatesOptions
+## CoordinatesOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置坐标选项对象，用于指定坐标系的变换方向。
 
 **系统能力**：SystemCapability.Sensors.Sensor
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -7727,13 +8153,15 @@ type SensorFrequency = 'game' | 'ui' | 'normal'
 
 
 
-#### GeomagneticResponse
+## GeomagneticResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置地磁响应对象，用于描述指定地理位置的地磁场信息。
 
 **系统能力**：SystemCapability.Sensors.Sensor
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -7748,13 +8176,15 @@ type SensorFrequency = 'game' | 'ui' | 'normal'
 
 
 
-#### LocationOptions
+## LocationOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 指示地理位置，用于传入经纬度和海拔信息以计算地磁场。
 
 **系统能力**：SystemCapability.Sensors.Sensor
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -7765,13 +8195,14 @@ type SensorFrequency = 'game' | 'ui' | 'normal'
 
 
 
-#### sensor.on('SensorType.SENSOR_TYPE_ID_ACCELEROMETER')(deprecated)
+## sensor.on('SensorType.SENSOR_TYPE_ID_ACCELEROMETER')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorType.SENSOR_TYPE_ID_ACCELEROMETER, callback: Callback&lt;AccelerometerResponse&gt;,options?: Options): void
 
-监听加速度传感器的数据变化。适用于需要感知设备运动状态、实现屏幕旋转或游戏操控的场景。如果多次调用该接口，仅最后一次调用生效。
+监听加速度传感器的数据变化。使用callback异步回调。适用于需要感知设备运动状态、实现屏幕旋转或游戏操控的场景。如果多次调用该接口，仅最后一次调用生效。
 
 > [!NOTE]
 > 从API version 8 开始支持，从API version 9 开始废弃，建议使用 sensor.on.ACCELEROMETER 替代。
@@ -7782,6 +8213,7 @@ on(type: SensorType.SENSOR_TYPE_ID_ACCELEROMETER, callback: Callback&lt;Accelero
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -7806,13 +8238,14 @@ sensor.on(sensor.SensorType.SENSOR_TYPE_ID_ACCELEROMETER, (data: sensor.Accelero
 
 
 
-#### sensor.on('SensorType.SENSOR_TYPE_ID_LINEAR_ACCELERATION')(deprecated)
+## sensor.on('SensorType.SENSOR_TYPE_ID_LINEAR_ACCELERATION')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorType.SENSOR_TYPE_ID_LINEAR_ACCELERATION,callback:Callback&lt;LinearAccelerometerResponse&gt;, options?: Options): void
 
-监听线性加速度传感器的数据变化。适用于需要获取排除重力影响的线性加速度数据的场景。如果多次调用该接口，仅最后一次调用生效。
+监听线性加速度传感器的数据变化。使用callback异步回调。适用于需要获取排除重力影响的线性加速度数据的场景。如果多次调用该接口，仅最后一次调用生效。
 
 > [!NOTE]
 > 从API version 8 开始支持，从API version 9 开始废弃，建议使用 sensor.on.LINEAR_ACCELEROMETER 替代。
@@ -7824,6 +8257,7 @@ on(type: SensorType.SENSOR_TYPE_ID_LINEAR_ACCELERATION,callback:Callback&lt;Line
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SensorType.SENSOR_TYPE_ID_LINEAR_ACCELERATION | 是 | 要订阅的线性加速度传感器类型为SENSOR_TYPE_ID_LINEAR_ACCELERATION。 |
@@ -7833,13 +8267,14 @@ on(type: SensorType.SENSOR_TYPE_ID_LINEAR_ACCELERATION,callback:Callback&lt;Line
 
 
 
-#### sensor.on('SensorType.SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED')(deprecated)
+## sensor.on('SensorType.SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorType.SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED,callback: Callback&lt;AccelerometerUncalibratedResponse&gt;, options?: Options): void
 
-监听未校准加速度传感器的数据变化。适用于需要获取包含偏差校准数据的加速度原始数据的场景。如果多次调用该接口，仅最后一次调用生效。
+监听未校准加速度传感器的数据变化。使用callback异步回调。适用于需要获取包含偏差校准数据的加速度原始数据的场景。如果多次调用该接口，仅最后一次调用生效。
 
 > [!NOTE]
 > 从API version 8 开始支持，从API version 9 开始废弃，建议使用 sensor.on.ACCELEROMETER_UNCALIBRATED 替代。
@@ -7850,6 +8285,7 @@ on(type: SensorType.SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED,callback: Callback
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -7877,13 +8313,14 @@ sensor.on(sensor.SensorType.SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED, (data: se
 
 
 
-#### sensor.on('SensorType.SENSOR_TYPE_ID_GRAVITY')(deprecated)
+## sensor.on('SensorType.SENSOR_TYPE_ID_GRAVITY')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorType.SENSOR_TYPE_ID_GRAVITY, callback: Callback&lt;GravityResponse&gt;,options?: Options): void
 
-监听重力传感器的数据变化。适用于需要感知设备重力方向的场景。如果多次调用该接口，仅最后一次调用生效。
+监听重力传感器的数据变化。使用callback异步回调。适用于需要感知设备重力方向的场景。如果多次调用该接口，仅最后一次调用生效。
 
 > [!NOTE]
 > 从API version 8 开始支持，从API version 9 开始废弃，建议使用 sensor.on.GRAVITY 替代。
@@ -7892,6 +8329,7 @@ on(type: SensorType.SENSOR_TYPE_ID_GRAVITY, callback: Callback&lt;GravityRespons
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -7916,13 +8354,14 @@ sensor.on(sensor.SensorType.SENSOR_TYPE_ID_GRAVITY, (data: sensor.GravityRespons
 
 
 
-#### sensor.on('SensorType.SENSOR_TYPE_ID_GYROSCOPE')(deprecated)
+## sensor.on('SensorType.SENSOR_TYPE_ID_GYROSCOPE')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorType.SENSOR_TYPE_ID_GYROSCOPE, callback: Callback&lt;GyroscopeResponse&gt;, options?: Options): void
 
-监听陀螺仪传感器的数据变化。适用于需要感知设备旋转角速度的场景。如果多次调用该接口，仅最后一次调用生效。
+监听陀螺仪传感器的数据变化。使用callback异步回调。适用于需要感知设备旋转角速度的场景。如果多次调用该接口，仅最后一次调用生效。
 
 > [!NOTE]
 > 从API version 8 开始支持，从API version 9 开始废弃，建议使用 sensor.on.GYROSCOPE 替代。
@@ -7933,6 +8372,7 @@ on(type: SensorType.SENSOR_TYPE_ID_GYROSCOPE, callback: Callback&lt;GyroscopeRes
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -7957,13 +8397,14 @@ sensor.on(sensor.SensorType.SENSOR_TYPE_ID_GYROSCOPE, (data: sensor.GyroscopeRes
 
 
 
-#### sensor.on('SensorType.SENSOR_TYPE_ID_GYROSCOPE_UNCALIBRATED')(deprecated)
+## sensor.on('SensorType.SENSOR_TYPE_ID_GYROSCOPE_UNCALIBRATED')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorType.SENSOR_TYPE_ID_GYROSCOPE_UNCALIBRATED,callback:Callback&lt;GyroscopeUncalibratedResponse&gt;, options?: Options): void
 
-监听未校准陀螺仪传感器的数据变化。适用于需要获取包含偏差校准数据的陀螺仪原始数据的场景。如果多次调用该接口，仅最后一次调用生效。
+监听未校准陀螺仪传感器的数据变化。使用callback异步回调。适用于需要获取包含偏差校准数据的陀螺仪原始数据的场景。如果多次调用该接口，仅最后一次调用生效。
 
 > [!NOTE]
 > 从API version 8 开始支持，从API version 9 开始废弃，建议使用 sensor.on.GYROSCOPE_UNCALIBRATED 替代。
@@ -7974,6 +8415,7 @@ on(type: SensorType.SENSOR_TYPE_ID_GYROSCOPE_UNCALIBRATED,callback:Callback&lt;G
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -8001,13 +8443,14 @@ sensor.on(sensor.SensorType.SENSOR_TYPE_ID_GYROSCOPE_UNCALIBRATED, (data: sensor
 
 
 
-#### sensor.on('SensorType.SENSOR_TYPE_ID_SIGNIFICANT_MOTION')(deprecated)
+## sensor.on('SensorType.SENSOR_TYPE_ID_SIGNIFICANT_MOTION')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorType.SENSOR_TYPE_ID_SIGNIFICANT_MOTION, callback: Callback&lt;SignificantMotionResponse&gt;, options?: Options): void
 
-监听有效运动传感器数据变化。适用于需要检测设备是否有显著运动的场景。如果多次调用该接口，仅最后一次调用生效。
+监听有效运动传感器数据变化。使用callback异步回调。适用于需要检测设备是否有显著运动的场景。如果多次调用该接口，仅最后一次调用生效。
 
 > [!NOTE]
 > 从API version 8 开始支持，从API version 9 开始废弃，建议使用 sensor.on.SIGNIFICANT_MOTION 替代。
@@ -8016,6 +8459,7 @@ on(type: SensorType.SENSOR_TYPE_ID_SIGNIFICANT_MOTION, callback: Callback&lt;Sig
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -8038,13 +8482,14 @@ sensor.on(sensor.SensorType.SENSOR_TYPE_ID_SIGNIFICANT_MOTION, (data: sensor.Sig
 
 
 
-#### sensor.on('SensorType.SENSOR_TYPE_ID_PEDOMETER_DETECTION')(deprecated)
+## sensor.on('SensorType.SENSOR_TYPE_ID_PEDOMETER_DETECTION')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorType.SENSOR_TYPE_ID_PEDOMETER_DETECTION, callback: Callback&lt;PedometerDetectionResponse&gt;, options?: Options): void
 
-监听计步检测传感器的数据变化。适用于需要检测用户是否在行走的场景。如果多次调用该接口，仅最后一次调用生效。
+监听计步检测传感器的数据变化。使用callback异步回调。适用于需要检测用户是否在行走的场景。如果多次调用该接口，仅最后一次调用生效。
 
 > [!NOTE]
 > 从API version 8 开始支持，从API version 9 开始废弃，建议使用 sensor.on.PEDOMETER_DETECTION 替代。
@@ -8055,6 +8500,7 @@ on(type: SensorType.SENSOR_TYPE_ID_PEDOMETER_DETECTION, callback: Callback&lt;Pe
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -8077,13 +8523,14 @@ sensor.on(sensor.SensorType.SENSOR_TYPE_ID_PEDOMETER_DETECTION, (data: sensor.Pe
 
 
 
-#### sensor.on('SensorType.SENSOR_TYPE_ID_PEDOMETER')(deprecated)
+## sensor.on('SensorType.SENSOR_TYPE_ID_PEDOMETER')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorType.SENSOR_TYPE_ID_PEDOMETER, callback: Callback&lt;PedometerResponse&gt;, options?: Options): void
 
-监听计步传感器的数据变化。适用于需要获取用户步数数据的场景。如果多次调用该接口，仅最后一次调用生效。
+监听计步传感器的数据变化。使用callback异步回调。适用于需要获取用户步数数据的场景。如果多次调用该接口，仅最后一次调用生效。
 
 > [!NOTE]
 > 从API version 8 开始支持，从API version 9 开始废弃，建议使用 sensor.on.PEDOMETER 替代。
@@ -8094,6 +8541,7 @@ on(type: SensorType.SENSOR_TYPE_ID_PEDOMETER, callback: Callback&lt;PedometerRes
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -8116,13 +8564,14 @@ sensor.on(sensor.SensorType.SENSOR_TYPE_ID_PEDOMETER, (data: sensor.PedometerRes
 
 
 
-#### sensor.on('SensorType.SENSOR_TYPE_ID_AMBIENT_TEMPERATURE')(deprecated)
+## sensor.on('SensorType.SENSOR_TYPE_ID_AMBIENT_TEMPERATURE')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorType.SENSOR_TYPE_ID_AMBIENT_TEMPERATURE, callback:Callback&lt;AmbientTemperatureResponse&gt;, options?: Options): void
 
-监听环境温度传感器的数据变化。适用于需要感知环境温度的场景。如果多次调用该接口，仅最后一次调用生效。
+监听环境温度传感器的数据变化。使用callback异步回调。适用于需要感知环境温度的场景。如果多次调用该接口，仅最后一次调用生效。
 
 > [!NOTE]
 > 从API version 8 开始支持，从API version 9 开始废弃，建议使用 sensor.on.AMBIENT_TEMPERATURE 替代。
@@ -8131,6 +8580,7 @@ on(type: SensorType.SENSOR_TYPE_ID_AMBIENT_TEMPERATURE, callback:Callback&lt;Amb
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -8153,13 +8603,14 @@ sensor.on(sensor.SensorType.SENSOR_TYPE_ID_AMBIENT_TEMPERATURE, (data: sensor.Am
 
 
 
-#### sensor.on('SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD')(deprecated)
+## sensor.on('SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD, callback: Callback&lt;MagneticFieldResponse&gt;,options?: Options): void
 
-监听磁场传感器的数据变化。适用于需要感知设备周围磁场强度与方向的场景。如果多次调用该接口，仅最后一次调用生效。
+监听磁场传感器的数据变化。使用callback异步回调。适用于需要感知设备周围磁场强度与方向的场景。如果多次调用该接口，仅最后一次调用生效。
 
 > [!NOTE]
 > 从API version 8 开始支持，从API version 9 开始废弃，建议使用 sensor.on.MAGNETIC_FIELD 替代。
@@ -8168,6 +8619,7 @@ on(type: SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD, callback: Callback&lt;Magneti
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -8192,13 +8644,14 @@ sensor.on(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD, (data: sensor.Magneti
 
 
 
-#### sensor.on('SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD_UNCALIBRATED')(deprecated)
+## sensor.on('SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD_UNCALIBRATED')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD_UNCALIBRATED, callback: Callback&lt;MagneticFieldUncalibratedResponse&gt;, options?: Options): void
 
-监听未校准磁场传感器的数据变化。适用于需要获取包含偏差校准数据的磁场原始数据的场景。如果多次调用该接口，仅最后一次调用生效。
+监听未校准磁场传感器的数据变化。使用callback异步回调。适用于需要获取包含偏差校准数据的磁场原始数据的场景。如果多次调用该接口，仅最后一次调用生效。
 
 > [!NOTE]
 > 从API version 8 开始支持，从API version 9 开始废弃，建议使用 sensor.on.MAGNETIC_FIELD_UNCALIBRATED 替代。
@@ -8207,6 +8660,7 @@ on(type: SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD_UNCALIBRATED, callback: Callba
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -8234,13 +8688,14 @@ sensor.on(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD_UNCALIBRATED, (data: s
 
 
 
-#### sensor.on('SensorType.SENSOR_TYPE_ID_PROXIMITY')(deprecated)
+## sensor.on('SensorType.SENSOR_TYPE_ID_PROXIMITY')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorType.SENSOR_TYPE_ID_PROXIMITY, callback: Callback&lt;ProximityResponse&gt;,options?: Options): void
 
-监听接近光传感器的数据变化。适用于需要感知设备前方是否有物体靠近的场景。如果多次调用该接口，仅最后一次调用生效。
+监听接近光传感器的数据变化。使用callback异步回调。适用于需要感知设备前方是否有物体靠近的场景。如果多次调用该接口，仅最后一次调用生效。
 
 > [!NOTE]
 > 从API version 8 开始支持，从API version 9 开始废弃，建议使用 sensor.on.PROXIMITY 替代。
@@ -8249,6 +8704,7 @@ on(type: SensorType.SENSOR_TYPE_ID_PROXIMITY, callback: Callback&lt;ProximityRes
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -8271,13 +8727,14 @@ sensor.on(sensor.SensorType.SENSOR_TYPE_ID_PROXIMITY, (data: sensor.ProximityRes
 
 
 
-#### sensor.on('SensorType.SENSOR_TYPE_ID_HUMIDITY')(deprecated)
+## sensor.on('SensorType.SENSOR_TYPE_ID_HUMIDITY')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorType.SENSOR_TYPE_ID_HUMIDITY, callback: Callback&lt;HumidityResponse&gt;,options?: Options): void
 
-监听湿度传感器的数据变化。适用于需要感知环境湿度的场景。如果多次调用该接口，仅最后一次调用生效。
+监听湿度传感器的数据变化。使用callback异步回调。适用于需要感知环境湿度的场景。如果多次调用该接口，仅最后一次调用生效。
 
 > [!NOTE]
 > 从API version 8 开始支持，从API version 9 开始废弃，建议使用 sensor.on.HUMIDITY 替代。
@@ -8286,6 +8743,7 @@ on(type: SensorType.SENSOR_TYPE_ID_HUMIDITY, callback: Callback&lt;HumidityRespo
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -8308,13 +8766,14 @@ sensor.on(sensor.SensorType.SENSOR_TYPE_ID_HUMIDITY, (data: sensor.HumidityRespo
 
 
 
-#### sensor.on('SensorType.SENSOR_TYPE_ID_BAROMETER')(deprecated)
+## sensor.on('SensorType.SENSOR_TYPE_ID_BAROMETER')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorType.SENSOR_TYPE_ID_BAROMETER, callback: Callback&lt;BarometerResponse&gt;,options?: Options): void
 
-监听气压计传感器的数据变化。适用于需要感知环境气压的场景。如果多次调用该接口，仅最后一次调用生效。
+监听气压计传感器的数据变化。使用callback异步回调。适用于需要感知环境气压的场景。如果多次调用该接口，仅最后一次调用生效。
 
 > [!NOTE]
 > 从API version 8 开始支持，从API version 9 开始废弃，建议使用 sensor.on.BAROMETER 替代。
@@ -8323,6 +8782,7 @@ on(type: SensorType.SENSOR_TYPE_ID_BAROMETER, callback: Callback&lt;BarometerRes
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -8345,13 +8805,14 @@ sensor.on(sensor.SensorType.SENSOR_TYPE_ID_BAROMETER, (data: sensor.BarometerRes
 
 
 
-#### sensor.on('SensorType.SENSOR_TYPE_ID_HALL')(deprecated)
+## sensor.on('SensorType.SENSOR_TYPE_ID_HALL')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorType.SENSOR_TYPE_ID_HALL, callback: Callback&lt;HallResponse&gt;, options?: Options): void
 
-监听霍尔传感器的数据变化。适用于需要检测设备翻盖或磁铁状态的场景。如果多次调用该接口，仅最后一次调用生效。
+监听霍尔传感器的数据变化。使用callback异步回调。适用于需要检测设备翻盖或磁铁状态的场景。如果多次调用该接口，仅最后一次调用生效。
 
 > [!NOTE]
 > 从API version 8 开始支持，从API version 9 开始废弃，建议使用 sensor.on.HALL 替代。
@@ -8360,6 +8821,7 @@ on(type: SensorType.SENSOR_TYPE_ID_HALL, callback: Callback&lt;HallResponse&gt;,
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -8382,13 +8844,14 @@ sensor.on(sensor.SensorType.SENSOR_TYPE_ID_HALL, (data: sensor.HallResponse) => 
 
 
 
-#### sensor.on('SensorType.SENSOR_TYPE_ID_AMBIENT_LIGHT')(deprecated)
+## sensor.on('SensorType.SENSOR_TYPE_ID_AMBIENT_LIGHT')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorType.SENSOR_TYPE_ID_AMBIENT_LIGHT, callback: Callback&lt;LightResponse&gt;, options?: Options): void
 
-监听环境光传感器的数据变化。适用于需要感知环境光照强度的场景。如果多次调用该接口，仅最后一次调用生效。
+监听环境光传感器的数据变化。使用callback异步回调。适用于需要感知环境光照强度的场景。如果多次调用该接口，仅最后一次调用生效。
 
 > [!NOTE]
 > 从API version 8 开始支持，从API version 9 开始废弃，建议使用 sensor.on.AMBIENT_LIGHT 替代。
@@ -8397,6 +8860,7 @@ on(type: SensorType.SENSOR_TYPE_ID_AMBIENT_LIGHT, callback: Callback&lt;LightRes
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -8419,13 +8883,14 @@ sensor.on(sensor.SensorType.SENSOR_TYPE_ID_AMBIENT_LIGHT, (data: sensor.LightRes
 
 
 
-#### sensor.on('SensorType.SENSOR_TYPE_ID_ORIENTATION')(deprecated)
+## sensor.on('SensorType.SENSOR_TYPE_ID_ORIENTATION')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorType.SENSOR_TYPE_ID_ORIENTATION, callback: Callback&lt;OrientationResponse&gt;, options?: Options): void
 
-监听方向传感器的数据变化。适用于需要感知设备姿态方向的场景。如果多次调用该接口，仅最后一次调用生效。
+监听方向传感器的数据变化。使用callback异步回调。适用于需要感知设备姿态方向的场景。如果多次调用该接口，仅最后一次调用生效。
 
 > [!NOTE]
 > 从API version 8 开始支持，从API version 9 开始废弃，建议使用 sensor.on.ORIENTATION 替代。
@@ -8434,6 +8899,7 @@ on(type: SensorType.SENSOR_TYPE_ID_ORIENTATION, callback: Callback&lt;Orientatio
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -8458,13 +8924,14 @@ sensor.on(sensor.SensorType.SENSOR_TYPE_ID_ORIENTATION, (data: sensor.Orientatio
 
 
 
-#### sensor.on('SensorType.SENSOR_TYPE_ID_HEART_RATE')(deprecated)
+## sensor.on('SensorType.SENSOR_TYPE_ID_HEART_RATE')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorType.SENSOR_TYPE_ID_HEART_RATE, callback: Callback&lt;HeartRateResponse&gt;, options?: Options): void
 
-监听心率传感器的数据变化。适用于需要获取用户心率数据的场景。如果多次调用该接口，仅最后一次调用生效。
+监听心率传感器的数据变化。使用callback异步回调。适用于需要获取用户心率数据的场景。如果多次调用该接口，仅最后一次调用生效。
 
 > [!NOTE]
 > 从API version 8 开始支持，从API version 9 开始废弃，建议使用 sensor.on.HEART_RATE 替代。
@@ -8476,6 +8943,7 @@ on(type: SensorType.SENSOR_TYPE_ID_HEART_RATE, callback: Callback&lt;HeartRateRe
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SensorType.SENSOR_TYPE_ID_HEART_RATE | 是 | 要订阅的心率传感器类型为SENSOR_TYPE_ID_HEART_RATE。 |
@@ -8485,13 +8953,14 @@ on(type: SensorType.SENSOR_TYPE_ID_HEART_RATE, callback: Callback&lt;HeartRateRe
 
 
 
-#### sensor.on('SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR')(deprecated)
+## sensor.on('SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR, callback: Callback&lt;RotationVectorResponse&gt;,options?: Options): void
 
-监听旋转矢量传感器的数据变化。适用于需要感知设备三维空间旋转状态的场景。如果多次调用该接口，仅最后一次调用生效。
+监听旋转矢量传感器的数据变化。使用callback异步回调。适用于需要感知设备三维空间旋转状态的场景。如果多次调用该接口，仅最后一次调用生效。
 
 > [!NOTE]
 > 从API version 8 开始支持，从API version 9 开始废弃，建议使用 sensor.on.ROTATION_VECTOR 替代。
@@ -8500,6 +8969,7 @@ on(type: SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR, callback: Callback&lt;Rotati
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -8525,13 +8995,14 @@ sensor.on(sensor.SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR, (data: sensor.Rotati
 
 
 
-#### sensor.on('SensorType.SENSOR_TYPE_ID_WEAR_DETECTION')(deprecated)
+## sensor.on('SensorType.SENSOR_TYPE_ID_WEAR_DETECTION')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: SensorType.SENSOR_TYPE_ID_WEAR_DETECTION, callback: Callback&lt;WearDetectionResponse&gt;,options?: Options): void
 
-监听所佩戴的检测传感器的数据变化。适用于需要检测设备是否被佩戴的场景。如果多次调用该接口，仅最后一次调用生效。
+监听所佩戴的检测传感器的数据变化。使用callback异步回调。适用于需要检测设备是否被佩戴的场景。如果多次调用该接口，仅最后一次调用生效。
 
 > [!NOTE]
 > 从API version 8 开始支持，从API version 9 开始废弃，建议使用 sensor.on.WEAR_DETECTION 替代。
@@ -8540,6 +9011,7 @@ on(type: SensorType.SENSOR_TYPE_ID_WEAR_DETECTION, callback: Callback&lt;WearDet
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -8562,9 +9034,10 @@ sensor.on(sensor.SensorType.SENSOR_TYPE_ID_WEAR_DETECTION, (data: sensor.WearDet
 
 
 
-#### sensor.once('SensorType.SENSOR_TYPE_ID_ACCELEROMETER')(deprecated)
+## sensor.once('SensorType.SENSOR_TYPE_ID_ACCELEROMETER')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorType.SENSOR_TYPE_ID_ACCELEROMETER, callback: Callback&lt;AccelerometerResponse&gt;): void
 
@@ -8579,6 +9052,7 @@ once(type: SensorType.SENSOR_TYPE_ID_ACCELEROMETER, callback: Callback&lt;Accele
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -8600,9 +9074,10 @@ sensor.once(sensor.SensorType.SENSOR_TYPE_ID_ACCELEROMETER, (data: sensor.Accele
 
 
 
-#### sensor.once('SensorType.SENSOR_TYPE_ID_LINEAR_ACCELERATION')(deprecated)
+## sensor.once('SensorType.SENSOR_TYPE_ID_LINEAR_ACCELERATION')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorType.SENSOR_TYPE_ID_LINEAR_ACCELERATION, callback:Callback&lt;LinearAccelerometerResponse&gt;): void
 
@@ -8618,6 +9093,7 @@ once(type: SensorType.SENSOR_TYPE_ID_LINEAR_ACCELERATION, callback:Callback&lt;L
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | SensorType.SENSOR_TYPE_ID_LINEAR_ACCELERATION | 是 | 线性加速度传感器类型为SENSOR_TYPE_ID_LINEAR_ACCELERATION。 |
@@ -8626,9 +9102,10 @@ once(type: SensorType.SENSOR_TYPE_ID_LINEAR_ACCELERATION, callback:Callback&lt;L
 
 
 
-#### sensor.once('SensorType.SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED')(deprecated)
+## sensor.once('SensorType.SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorType.SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED,callback: Callback&lt;AccelerometerUncalibratedResponse&gt;): void
 
@@ -8643,6 +9120,7 @@ once(type: SensorType.SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED,callback: Callba
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -8667,9 +9145,10 @@ sensor.once(sensor.SensorType.SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED, (data: 
 
 
 
-#### sensor.once('SensorType.SENSOR_TYPE_ID_GRAVITY')(deprecated)
+## sensor.once('SensorType.SENSOR_TYPE_ID_GRAVITY')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorType.SENSOR_TYPE_ID_GRAVITY, callback: Callback&lt;GravityResponse&gt;): void
 
@@ -8682,6 +9161,7 @@ once(type: SensorType.SENSOR_TYPE_ID_GRAVITY, callback: Callback&lt;GravityRespo
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -8703,9 +9183,10 @@ sensor.once(sensor.SensorType.SENSOR_TYPE_ID_GRAVITY, (data: sensor.GravityRespo
 
 
 
-#### sensor.once('SensorType.SENSOR_TYPE_ID_GYROSCOPE')(deprecated)
+## sensor.once('SensorType.SENSOR_TYPE_ID_GYROSCOPE')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorType.SENSOR_TYPE_ID_GYROSCOPE, callback: Callback&lt;GyroscopeResponse&gt;): void
 
@@ -8720,6 +9201,7 @@ once(type: SensorType.SENSOR_TYPE_ID_GYROSCOPE, callback: Callback&lt;GyroscopeR
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -8741,9 +9223,10 @@ sensor.once(sensor.SensorType.SENSOR_TYPE_ID_GYROSCOPE, (data: sensor.GyroscopeR
 
 
 
-#### sensor.once('SensorType.SENSOR_TYPE_ID_GYROSCOPE_UNCALIBRATED')(deprecated)
+## sensor.once('SensorType.SENSOR_TYPE_ID_GYROSCOPE_UNCALIBRATED')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorType.SENSOR_TYPE_ID_GYROSCOPE_UNCALIBRATED,callback: Callback&lt;GyroscopeUncalibratedResponse&gt;): void
 
@@ -8758,6 +9241,7 @@ once(type: SensorType.SENSOR_TYPE_ID_GYROSCOPE_UNCALIBRATED,callback: Callback&l
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -8782,9 +9266,10 @@ sensor.once(sensor.SensorType.SENSOR_TYPE_ID_GYROSCOPE_UNCALIBRATED, (data: sens
 
 
 
-#### sensor.once('SensorType.SENSOR_TYPE_ID_SIGNIFICANT_MOTION')(deprecated)
+## sensor.once('SensorType.SENSOR_TYPE_ID_SIGNIFICANT_MOTION')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorType.SENSOR_TYPE_ID_SIGNIFICANT_MOTION, callback: Callback&lt;SignificantMotionResponse&gt;): void
 
@@ -8797,6 +9282,7 @@ once(type: SensorType.SENSOR_TYPE_ID_SIGNIFICANT_MOTION, callback: Callback&lt;S
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -8816,9 +9302,10 @@ sensor.once(sensor.SensorType.SENSOR_TYPE_ID_SIGNIFICANT_MOTION, (data: sensor.S
 
 
 
-#### sensor.once('SensorType.SENSOR_TYPE_ID_PEDOMETER_DETECTION')(deprecated)
+## sensor.once('SensorType.SENSOR_TYPE_ID_PEDOMETER_DETECTION')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorType.SENSOR_TYPE_ID_PEDOMETER_DETECTION, callback: Callback&lt;PedometerDetectionResponse&gt;): void
 
@@ -8833,6 +9320,7 @@ once(type: SensorType.SENSOR_TYPE_ID_PEDOMETER_DETECTION, callback: Callback&lt;
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -8852,9 +9340,10 @@ sensor.once(sensor.SensorType.SENSOR_TYPE_ID_PEDOMETER_DETECTION, (data: sensor.
 
 
 
-#### sensor.once('SensorType.SENSOR_TYPE_ID_PEDOMETER')(deprecated)
+## sensor.once('SensorType.SENSOR_TYPE_ID_PEDOMETER')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorType.SENSOR_TYPE_ID_PEDOMETER, callback: Callback&lt;PedometerResponse&gt;): void
 
@@ -8869,6 +9358,7 @@ once(type: SensorType.SENSOR_TYPE_ID_PEDOMETER, callback: Callback&lt;PedometerR
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -8888,9 +9378,10 @@ sensor.once(sensor.SensorType.SENSOR_TYPE_ID_PEDOMETER, (data: sensor.PedometerR
 
 
 
-#### sensor.once('SensorType.SENSOR_TYPE_ID_AMBIENT_TEMPERATURE')(deprecated)
+## sensor.once('SensorType.SENSOR_TYPE_ID_AMBIENT_TEMPERATURE')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorType.SENSOR_TYPE_ID_AMBIENT_TEMPERATURE, callback: Callback&lt;AmbientTemperatureResponse&gt;): void
 
@@ -8903,6 +9394,7 @@ once(type: SensorType.SENSOR_TYPE_ID_AMBIENT_TEMPERATURE, callback: Callback&lt;
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -8922,9 +9414,10 @@ sensor.once(sensor.SensorType.SENSOR_TYPE_ID_AMBIENT_TEMPERATURE, (data: sensor.
 
 
 
-#### sensor.once('SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD')(deprecated)
+## sensor.once('SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD, callback: Callback&lt;MagneticFieldResponse&gt;): void
 
@@ -8937,6 +9430,7 @@ once(type: SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD, callback: Callback&lt;Magne
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -8958,9 +9452,10 @@ sensor.once(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD, (data: sensor.Magne
 
 
 
-#### sensor.once('SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD_UNCALIBRATED')(deprecated)
+## sensor.once('SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD_UNCALIBRATED')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD_UNCALIBRATED, callback: Callback&lt;MagneticFieldUncalibratedResponse&gt;): void
 
@@ -8973,6 +9468,7 @@ once(type: SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD_UNCALIBRATED, callback: Call
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -8997,9 +9493,10 @@ sensor.once(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD_UNCALIBRATED, (data:
 
 
 
-#### sensor.once('SensorType.SENSOR_TYPE_ID_PROXIMITY')(deprecated)
+## sensor.once('SensorType.SENSOR_TYPE_ID_PROXIMITY')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorType.SENSOR_TYPE_ID_PROXIMITY, callback: Callback&lt;ProximityResponse&gt;): void
 
@@ -9012,6 +9509,7 @@ once(type: SensorType.SENSOR_TYPE_ID_PROXIMITY, callback: Callback&lt;ProximityR
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -9032,9 +9530,10 @@ sensor.once(sensor.SensorType.SENSOR_TYPE_ID_PROXIMITY, (data: sensor.ProximityR
 
 
 
-#### sensor.once('SensorType.SENSOR_TYPE_ID_HUMIDITY')(deprecated)
+## sensor.once('SensorType.SENSOR_TYPE_ID_HUMIDITY')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorType.SENSOR_TYPE_ID_HUMIDITY, callback: Callback&lt;HumidityResponse&gt;): void
 
@@ -9047,6 +9546,7 @@ once(type: SensorType.SENSOR_TYPE_ID_HUMIDITY, callback: Callback&lt;HumidityRes
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -9066,9 +9566,10 @@ sensor.once(sensor.SensorType.SENSOR_TYPE_ID_HUMIDITY, (data: sensor.HumidityRes
 
 
 
-#### sensor.once('SensorType.SENSOR_TYPE_ID_BAROMETER')(deprecated)
+## sensor.once('SensorType.SENSOR_TYPE_ID_BAROMETER')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorType.SENSOR_TYPE_ID_BAROMETER, callback: Callback&lt;BarometerResponse&gt;): void
 
@@ -9081,6 +9582,7 @@ once(type: SensorType.SENSOR_TYPE_ID_BAROMETER, callback: Callback&lt;BarometerR
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -9100,9 +9602,10 @@ sensor.once(sensor.SensorType.SENSOR_TYPE_ID_BAROMETER, (data: sensor.BarometerR
 
 
 
-#### sensor.once('SensorType.SENSOR_TYPE_ID_HALL')(deprecated)
+## sensor.once('SensorType.SENSOR_TYPE_ID_HALL')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorType.SENSOR_TYPE_ID_HALL, callback: Callback&lt;HallResponse&gt;): void
 
@@ -9115,6 +9618,7 @@ once(type: SensorType.SENSOR_TYPE_ID_HALL, callback: Callback&lt;HallResponse&gt
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -9134,9 +9638,10 @@ sensor.once(sensor.SensorType.SENSOR_TYPE_ID_HALL, (data: sensor.HallResponse) =
 
 
 
-#### sensor.once('SensorType.SENSOR_TYPE_ID_AMBIENT_LIGHT')(deprecated)
+## sensor.once('SensorType.SENSOR_TYPE_ID_AMBIENT_LIGHT')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorType.SENSOR_TYPE_ID_AMBIENT_LIGHT, callback: Callback&lt;LightResponse&gt;): void
 
@@ -9149,6 +9654,7 @@ once(type: SensorType.SENSOR_TYPE_ID_AMBIENT_LIGHT, callback: Callback&lt;LightR
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -9168,9 +9674,10 @@ sensor.once(sensor.SensorType.SENSOR_TYPE_ID_AMBIENT_LIGHT, (data: sensor.LightR
 
 
 
-#### sensor.once('SensorType.SENSOR_TYPE_ID_ORIENTATION')(deprecated)
+## sensor.once('SensorType.SENSOR_TYPE_ID_ORIENTATION')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorType.SENSOR_TYPE_ID_ORIENTATION, callback: Callback&lt;OrientationResponse&gt;): void
 
@@ -9183,6 +9690,7 @@ once(type: SensorType.SENSOR_TYPE_ID_ORIENTATION, callback: Callback&lt;Orientat
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -9204,9 +9712,10 @@ sensor.once(sensor.SensorType.SENSOR_TYPE_ID_ORIENTATION, (data: sensor.Orientat
 
 
 
-#### sensor.once('SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR')(deprecated)
+## sensor.once('SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR, callback: Callback&lt;RotationVectorResponse&gt;): void
 
@@ -9219,6 +9728,7 @@ once(type: SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR, callback: Callback&lt;Rota
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -9241,9 +9751,10 @@ sensor.once(sensor.SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR, (data: sensor.Rota
 
 
 
-#### sensor.once('SensorType.SENSOR_TYPE_ID_HEART_RATE')(deprecated)
+## sensor.once('SensorType.SENSOR_TYPE_ID_HEART_RATE')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorType.SENSOR_TYPE_ID_HEART_RATE, callback: Callback&lt;HeartRateResponse&gt;): void
 
@@ -9258,6 +9769,7 @@ once(type: SensorType.SENSOR_TYPE_ID_HEART_RATE, callback: Callback&lt;HeartRate
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -9277,9 +9789,10 @@ sensor.once(sensor.SensorType.SENSOR_TYPE_ID_HEART_RATE, (data: sensor.HeartRate
 
 
 
-#### sensor.once('SensorType.SENSOR_TYPE_ID_WEAR_DETECTION')(deprecated)
+## sensor.once('SensorType.SENSOR_TYPE_ID_WEAR_DETECTION')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 once(type: SensorType.SENSOR_TYPE_ID_WEAR_DETECTION, callback: Callback&lt;WearDetectionResponse&gt;): void
 
@@ -9292,6 +9805,7 @@ once(type: SensorType.SENSOR_TYPE_ID_WEAR_DETECTION, callback: Callback&lt;WearD
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -9311,9 +9825,10 @@ sensor.once(sensor.SensorType.SENSOR_TYPE_ID_WEAR_DETECTION, (data: sensor.WearD
 
 
 
-#### sensor.off('SensorType.SENSOR_TYPE_ID_ACCELEROMETER')(deprecated)
+## sensor.off('SensorType.SENSOR_TYPE_ID_ACCELEROMETER')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorType.SENSOR_TYPE_ID_ACCELEROMETER, callback?: Callback&lt;AccelerometerResponse&gt;): void
 
@@ -9328,6 +9843,7 @@ off(type: SensorType.SENSOR_TYPE_ID_ACCELEROMETER, callback?: Callback&lt;Accele
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -9351,9 +9867,10 @@ sensor.off(sensor.SensorType.SENSOR_TYPE_ID_ACCELEROMETER, callback);
 
 
 
-#### sensor.off('SensorType.SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED')(deprecated)
+## sensor.off('SensorType.SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorType.SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED, callback?: Callback&lt;AccelerometerUncalibratedResponse&gt;): void
 
@@ -9368,6 +9885,7 @@ off(type: SensorType.SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED, callback?: Callb
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -9394,9 +9912,10 @@ sensor.off(sensor.SensorType.SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED, callback
 
 
 
-#### sensor.off('SensorType.SENSOR_TYPE_ID_AMBIENT_LIGHT')(deprecated)
+## sensor.off('SensorType.SENSOR_TYPE_ID_AMBIENT_LIGHT')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorType.SENSOR_TYPE_ID_AMBIENT_LIGHT, callback?: Callback&lt;LightResponse&gt;): void
 
@@ -9409,6 +9928,7 @@ off(type: SensorType.SENSOR_TYPE_ID_AMBIENT_LIGHT, callback?: Callback&lt;LightR
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -9430,9 +9950,10 @@ sensor.off(sensor.SensorType.SENSOR_TYPE_ID_AMBIENT_LIGHT, callback);
 
 
 
-#### sensor.off('SensorType.SENSOR_TYPE_ID_AMBIENT_TEMPERATURE')(deprecated)
+## sensor.off('SensorType.SENSOR_TYPE_ID_AMBIENT_TEMPERATURE')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorType.SENSOR_TYPE_ID_AMBIENT_TEMPERATURE, callback?: Callback&lt;AmbientTemperatureResponse&gt;): void
 
@@ -9445,6 +9966,7 @@ off(type: SensorType.SENSOR_TYPE_ID_AMBIENT_TEMPERATURE, callback?: Callback&lt;
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -9466,9 +9988,10 @@ sensor.off(sensor.SensorType.SENSOR_TYPE_ID_AMBIENT_TEMPERATURE, callback);
 
 
 
-#### sensor.off('SensorType.SENSOR_TYPE_ID_BAROMETER')(deprecated)
+## sensor.off('SensorType.SENSOR_TYPE_ID_BAROMETER')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorType.SENSOR_TYPE_ID_BAROMETER, callback?: Callback&lt;BarometerResponse&gt;): void
 
@@ -9481,6 +10004,7 @@ off(type: SensorType.SENSOR_TYPE_ID_BAROMETER, callback?: Callback&lt;BarometerR
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -9502,9 +10026,10 @@ sensor.off(sensor.SensorType.SENSOR_TYPE_ID_BAROMETER, callback);
 
 
 
-#### sensor.off('SensorType.SENSOR_TYPE_ID_GRAVITY')(deprecated)
+## sensor.off('SensorType.SENSOR_TYPE_ID_GRAVITY')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorType.SENSOR_TYPE_ID_GRAVITY, callback?: Callback&lt;GravityResponse&gt;): void
 
@@ -9517,6 +10042,7 @@ off(type: SensorType.SENSOR_TYPE_ID_GRAVITY, callback?: Callback&lt;GravityRespo
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -9540,9 +10066,10 @@ sensor.off(sensor.SensorType.SENSOR_TYPE_ID_GRAVITY, callback);
 
 
 
-#### sensor.off('SensorType.SENSOR_TYPE_ID_GYROSCOPE')(deprecated)
+## sensor.off('SensorType.SENSOR_TYPE_ID_GYROSCOPE')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorType.SENSOR_TYPE_ID_GYROSCOPE, callback?: Callback&lt;GyroscopeResponse&gt;): void
 
@@ -9557,6 +10084,7 @@ off(type: SensorType.SENSOR_TYPE_ID_GYROSCOPE, callback?: Callback&lt;GyroscopeR
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -9580,9 +10108,10 @@ sensor.off(sensor.SensorType.SENSOR_TYPE_ID_GYROSCOPE, callback);
 
 
 
-#### sensor.off('SensorType.SENSOR_TYPE_ID_GYROSCOPE_UNCALIBRATED')(deprecated)
+## sensor.off('SensorType.SENSOR_TYPE_ID_GYROSCOPE_UNCALIBRATED')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorType.SENSOR_TYPE_ID_GYROSCOPE_UNCALIBRATED, callback?: Callback&lt;GyroscopeUncalibratedResponse&gt;): void
 
@@ -9597,6 +10126,7 @@ off(type: SensorType.SENSOR_TYPE_ID_GYROSCOPE_UNCALIBRATED, callback?: Callback&
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -9620,9 +10150,10 @@ sensor.off(sensor.SensorType.SENSOR_TYPE_ID_GYROSCOPE_UNCALIBRATED, callback);
 
 
 
-#### sensor.off('SensorType.SENSOR_TYPE_ID_HALL')(deprecated)
+## sensor.off('SensorType.SENSOR_TYPE_ID_HALL')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorType.SENSOR_TYPE_ID_HALL, callback?: Callback&lt;HallResponse&gt;): void
 
@@ -9635,6 +10166,7 @@ off(type: SensorType.SENSOR_TYPE_ID_HALL, callback?: Callback&lt;HallResponse&gt
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -9656,9 +10188,10 @@ sensor.off(sensor.SensorType.SENSOR_TYPE_ID_HALL, callback);
 
 
 
-#### sensor.off('SensorType.SENSOR_TYPE_ID_HEART_RATE')(deprecated)
+## sensor.off('SensorType.SENSOR_TYPE_ID_HEART_RATE')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorType.SENSOR_TYPE_ID_HEART_RATE, callback?: Callback&lt;HeartRateResponse&gt;): void
 
@@ -9673,6 +10206,7 @@ off(type: SensorType.SENSOR_TYPE_ID_HEART_RATE, callback?: Callback&lt;HeartRate
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -9694,9 +10228,10 @@ sensor.off(sensor.SensorType.SENSOR_TYPE_ID_HEART_RATE, callback);
 
 
 
-#### sensor.off('SensorType.SENSOR_TYPE_ID_HUMIDITY')(deprecated)
+## sensor.off('SensorType.SENSOR_TYPE_ID_HUMIDITY')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorType.SENSOR_TYPE_ID_HUMIDITY, callback?: Callback&lt;HumidityResponse&gt;): void
 
@@ -9709,6 +10244,7 @@ off(type: SensorType.SENSOR_TYPE_ID_HUMIDITY, callback?: Callback&lt;HumidityRes
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -9730,9 +10266,10 @@ sensor.off(sensor.SensorType.SENSOR_TYPE_ID_HUMIDITY, callback);
 
 
 
-#### sensor.off('SensorType.SENSOR_TYPE_ID_LINEAR_ACCELERATION')(deprecated)
+## sensor.off('SensorType.SENSOR_TYPE_ID_LINEAR_ACCELERATION')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorType.SENSOR_TYPE_ID_LINEAR_ACCELERATION, callback?: Callback&lt;LinearAccelerometerResponse&gt;): void
 
@@ -9747,6 +10284,7 @@ off(type: SensorType.SENSOR_TYPE_ID_LINEAR_ACCELERATION, callback?: Callback&lt;
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -9770,9 +10308,10 @@ sensor.off(sensor.SensorType.SENSOR_TYPE_ID_LINEAR_ACCELERATION, callback);
 
 
 
-#### sensor.off('SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD')(deprecated)
+## sensor.off('SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD, callback?: Callback&lt;MagneticFieldResponse&gt;): void
 
@@ -9785,6 +10324,7 @@ off(type: SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD, callback?: Callback&lt;Magne
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -9808,9 +10348,10 @@ sensor.off(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD, callback);
 
 
 
-#### sensor.off('SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD_UNCALIBRATED')(deprecated)
+## sensor.off('SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD_UNCALIBRATED')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD_UNCALIBRATED, callback?: Callback&lt;MagneticFieldUncalibratedResponse&gt;): void
 
@@ -9823,6 +10364,7 @@ off(type: SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD_UNCALIBRATED, callback?: Call
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -9849,9 +10391,10 @@ sensor.off(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD_UNCALIBRATED, callbac
 
 
 
-#### sensor.off('SensorType.SENSOR_TYPE_ID_ORIENTATION')(deprecated)
+## sensor.off('SensorType.SENSOR_TYPE_ID_ORIENTATION')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorType.SENSOR_TYPE_ID_ORIENTATION, callback?: Callback&lt;OrientationResponse&gt;): void
 
@@ -9864,6 +10407,7 @@ off(type: SensorType.SENSOR_TYPE_ID_ORIENTATION, callback?: Callback&lt;Orientat
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -9887,9 +10431,10 @@ sensor.off(sensor.SensorType.SENSOR_TYPE_ID_ORIENTATION, callback);
 
 
 
-#### sensor.off('SensorType.SENSOR_TYPE_ID_PEDOMETER')(deprecated)
+## sensor.off('SensorType.SENSOR_TYPE_ID_PEDOMETER')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorType.SENSOR_TYPE_ID_PEDOMETER, callback?: Callback&lt;PedometerResponse&gt;): void
 
@@ -9904,6 +10449,7 @@ off(type: SensorType.SENSOR_TYPE_ID_PEDOMETER, callback?: Callback&lt;PedometerR
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -9925,9 +10471,10 @@ sensor.off(sensor.SensorType.SENSOR_TYPE_ID_PEDOMETER, callback);
 
 
 
-#### sensor.off('SensorType.SENSOR_TYPE_ID_PEDOMETER_DETECTION')(deprecated)
+## sensor.off('SensorType.SENSOR_TYPE_ID_PEDOMETER_DETECTION')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorType.SENSOR_TYPE_ID_PEDOMETER_DETECTION, callback?: Callback&lt;PedometerDetectionResponse&gt;): void
 
@@ -9942,6 +10489,7 @@ off(type: SensorType.SENSOR_TYPE_ID_PEDOMETER_DETECTION, callback?: Callback&lt;
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -9963,9 +10511,10 @@ sensor.off(sensor.SensorType.SENSOR_TYPE_ID_PEDOMETER_DETECTION, callback);
 
 
 
-#### sensor.off('SensorType.SENSOR_TYPE_ID_PROXIMITY')(deprecated)
+## sensor.off('SensorType.SENSOR_TYPE_ID_PROXIMITY')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorType.SENSOR_TYPE_ID_PROXIMITY, callback?: Callback&lt;ProximityResponse&gt;): void
 
@@ -9978,6 +10527,7 @@ off(type: SensorType.SENSOR_TYPE_ID_PROXIMITY, callback?: Callback&lt;ProximityR
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -9999,9 +10549,10 @@ sensor.off(sensor.SensorType.SENSOR_TYPE_ID_PROXIMITY, callback);
 
 
 
-#### sensor.off('SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR')(deprecated)
+## sensor.off('SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR, callback?: Callback&lt;RotationVectorResponse&gt;): void
 
@@ -10014,6 +10565,7 @@ off(type: SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR, callback?: Callback&lt;Rota
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -10038,9 +10590,10 @@ sensor.off(sensor.SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR, callback);
 
 
 
-#### sensor.off('SensorType.SENSOR_TYPE_ID_SIGNIFICANT_MOTION')(deprecated)
+## sensor.off('SensorType.SENSOR_TYPE_ID_SIGNIFICANT_MOTION')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorType.SENSOR_TYPE_ID_SIGNIFICANT_MOTION, callback?: Callback&lt;SignificantMotionResponse&gt;): void
 
@@ -10053,6 +10606,7 @@ off(type: SensorType.SENSOR_TYPE_ID_SIGNIFICANT_MOTION, callback?: Callback&lt;S
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -10074,9 +10628,10 @@ sensor.off(sensor.SensorType.SENSOR_TYPE_ID_SIGNIFICANT_MOTION, callback);
 
 
 
-#### sensor.off('SensorType.SENSOR_TYPE_ID_WEAR_DETECTION')(deprecated)
+## sensor.off('SensorType.SENSOR_TYPE_ID_WEAR_DETECTION')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: SensorType.SENSOR_TYPE_ID_WEAR_DETECTION, callback?: Callback&lt;WearDetectionResponse&gt;): void
 
@@ -10089,6 +10644,7 @@ off(type: SensorType.SENSOR_TYPE_ID_WEAR_DETECTION, callback?: Callback&lt;WearD
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -10110,9 +10666,10 @@ sensor.off(sensor.SensorType.SENSOR_TYPE_ID_WEAR_DETECTION, accCallback);
 
 
 
-#### sensor.transformCoordinateSystem(deprecated)
+## sensor.transformCoordinateSystem(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 transformCoordinateSystem(inRotationVector: Array&lt;number&gt;, coordinates: CoordinatesOptions, callback: AsyncCallback<Array&lt;number&gt;>): void
 
@@ -10125,6 +10682,7 @@ transformCoordinateSystem(inRotationVector: Array&lt;number&gt;, coordinates: Co
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -10154,9 +10712,10 @@ sensor.transformCoordinateSystem([1, 0, 0, 0, 1, 0, 0, 0, 1], { x: 2, y: 3 },
 
 
 
-#### sensor.transformCoordinateSystem(deprecated)
+## sensor.transformCoordinateSystem(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 transformCoordinateSystem(inRotationVector: Array&lt;number&gt;, coordinates: CoordinatesOptions): Promise<Array&lt;number&gt;>
 
@@ -10170,6 +10729,7 @@ transformCoordinateSystem(inRotationVector: Array&lt;number&gt;, coordinates: Co
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | inRotationVector | Array&lt;number&gt; | 是 | 表示旋转矩阵。 |
@@ -10177,6 +10737,7 @@ transformCoordinateSystem(inRotationVector: Array&lt;number&gt;, coordinates: Co
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -10202,9 +10763,10 @@ promise.then((data: Array<number>) => {
 
 
 
-#### sensor.getGeomagneticField(deprecated)
+## sensor.getGeomagneticField(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getGeomagneticField(locationOptions: LocationOptions, timeMillis: number, callback: AsyncCallback&lt;GeomagneticResponse&gt;): void
 
@@ -10217,6 +10779,7 @@ getGeomagneticField(locationOptions: LocationOptions, timeMillis: number, callba
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -10245,9 +10808,10 @@ sensor.getGeomagneticField({ latitude: 80, longitude: 0, altitude: 0 }, 15804864
 
 
 
-#### sensor.getGeomagneticField(deprecated)
+## sensor.getGeomagneticField(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getGeomagneticField(locationOptions: LocationOptions, timeMillis: number): Promise&lt;GeomagneticResponse&gt;
 
@@ -10261,6 +10825,7 @@ getGeomagneticField(locationOptions: LocationOptions, timeMillis: number): Promi
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | locationOptions | LocationOptions | 是 | 地理位置。 |
@@ -10268,6 +10833,7 @@ getGeomagneticField(locationOptions: LocationOptions, timeMillis: number): Promi
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -10292,9 +10858,10 @@ promise.then((data: sensor.GeomagneticResponse) => {
 
 
 
-#### sensor.getAltitude(deprecated)
+## sensor.getAltitude(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAltitude(seaPressure: number, currentPressure: number, callback: AsyncCallback&lt;number&gt;): void
 
@@ -10307,6 +10874,7 @@ getAltitude(seaPressure: number, currentPressure: number, callback: AsyncCallbac
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -10332,9 +10900,10 @@ sensor.getAltitude(0, 200, (err: BusinessError, data: number) => {
 
 
 
-#### sensor.getAltitude(deprecated)
+## sensor.getAltitude(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAltitude(seaPressure: number, currentPressure: number): Promise&lt;number&gt;
 
@@ -10348,6 +10917,7 @@ getAltitude(seaPressure: number, currentPressure: number): Promise&lt;number&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | seaPressure | number | 是 | 表示海平面气压值，单位：hPa（百帕）。 |
@@ -10355,6 +10925,7 @@ getAltitude(seaPressure: number, currentPressure: number): Promise&lt;number&gt;
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -10377,9 +10948,10 @@ promise.then((data: number) => {
 
 
 
-#### sensor.getGeomagneticDip(deprecated)
+## sensor.getGeomagneticDip(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getGeomagneticDip(inclinationMatrix: Array&lt;number&gt;, callback: AsyncCallback&lt;number&gt;): void
 
@@ -10392,6 +10964,7 @@ getGeomagneticDip(inclinationMatrix: Array&lt;number&gt;, callback: AsyncCallbac
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -10416,9 +10989,10 @@ sensor.getGeomagneticDip([1, 0, 0, 0, 1, 0, 0, 0, 1], (err: BusinessError, data:
 
 
 
-#### sensor.getGeomagneticDip(deprecated)
+## sensor.getGeomagneticDip(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getGeomagneticDip(inclinationMatrix: Array&lt;number&gt;): Promise&lt;number&gt;
 
@@ -10432,12 +11006,14 @@ getGeomagneticDip(inclinationMatrix: Array&lt;number&gt;): Promise&lt;number&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | inclinationMatrix | Array&lt;number&gt; | 是 | 表示倾斜矩阵。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -10460,9 +11036,10 @@ promise.then((data: number) => {
 
 
 
-#### sensor. getAngleModify(deprecated)
+## sensor. getAngleModify(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAngleModify(currentRotationMatrix: Array&lt;number&gt;, preRotationMatrix: Array&lt;number&gt;, callback: AsyncCallback<Array&lt;number&gt;>): void
 
@@ -10475,6 +11052,7 @@ getAngleModify(currentRotationMatrix: Array&lt;number&gt;, preRotationMatrix: Ar
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -10503,9 +11081,10 @@ sensor.getAngleModify([1, 0, 0, 0, 1, 0, 0, 0, 1], [1, 0, 0, 0, 0.87, -0.50, 0, 
 
 
 
-#### sensor. getAngleModify(deprecated)
+## sensor. getAngleModify(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAngleModify(currentRotationMatrix: Array&lt;number&gt;, preRotationMatrix: Array&lt;number&gt;): Promise<Array&lt;number&gt;>
 
@@ -10519,6 +11098,7 @@ getAngleModify(currentRotationMatrix: Array&lt;number&gt;, preRotationMatrix: Ar
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | currentRotationMatrix | Array&lt;number&gt; | 是 | 表示当前旋转矩阵。 |
@@ -10526,6 +11106,7 @@ getAngleModify(currentRotationMatrix: Array&lt;number&gt;, preRotationMatrix: Ar
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -10552,9 +11133,10 @@ promise.then((data: Array<number>) => {
 
 
 
-#### sensor.createRotationMatrix(deprecated)
+## sensor.createRotationMatrix(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createRotationMatrix(rotationVector: Array&lt;number&gt;, callback: AsyncCallback<Array&lt;number&gt;>): void
 
@@ -10567,6 +11149,7 @@ createRotationMatrix(rotationVector: Array&lt;number&gt;, callback: AsyncCallbac
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -10594,9 +11177,10 @@ sensor.createRotationMatrix([0.20046076, 0.21907, 0.73978853, 0.60376877],
 
 
 
-#### sensor.createRotationMatrix(deprecated)
+## sensor.createRotationMatrix(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createRotationMatrix(rotationVector: Array&lt;number&gt;): Promise<Array&lt;number&gt;>
 
@@ -10610,12 +11194,14 @@ createRotationMatrix(rotationVector: Array&lt;number&gt;): Promise<Array&lt;numb
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rotationVector | Array&lt;number&gt; | 是 | 表示旋转矢量。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -10641,9 +11227,10 @@ promise.then((data: Array<number>) => {
 
 
 
-#### sensor.createQuaternion(deprecated)
+## sensor.createQuaternion(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createQuaternion(rotationVector: Array&lt;number&gt;, callback: AsyncCallback<Array&lt;number&gt;>): void
 
@@ -10656,6 +11243,7 @@ createQuaternion(rotationVector: Array&lt;number&gt;, callback: AsyncCallback<Ar
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -10683,9 +11271,10 @@ sensor.createQuaternion([0.20046076, 0.21907, 0.73978853, 0.60376877],
 
 
 
-#### sensor.createQuaternion(deprecated)
+## sensor.createQuaternion(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createQuaternion(rotationVector: Array&lt;number&gt;): Promise<Array&lt;number&gt;>
 
@@ -10699,12 +11288,14 @@ createQuaternion(rotationVector: Array&lt;number&gt;): Promise<Array&lt;number&g
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rotationVector | Array&lt;number&gt; | 是 | 表示旋转矢量。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -10730,9 +11321,10 @@ promise.then((data: Array<number>) => {
 
 
 
-#### sensor.getDirection(deprecated)
+## sensor.getDirection(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDirection(rotationMatrix: Array&lt;number&gt;, callback: AsyncCallback<Array&lt;number&gt;>): void
 
@@ -10745,6 +11337,7 @@ getDirection(rotationMatrix: Array&lt;number&gt;, callback: AsyncCallback<Array&
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -10772,9 +11365,10 @@ sensor.getDirection([1, 0, 0, 0, 1, 0, 0, 0, 1], (err: BusinessError, data: Arra
 
 
 
-#### sensor.getDirection(deprecated)
+## sensor.getDirection(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDirection(rotationMatrix: Array&lt;number&gt;): Promise<Array&lt;number&gt;>
 
@@ -10788,12 +11382,14 @@ getDirection(rotationMatrix: Array&lt;number&gt;): Promise<Array&lt;number&gt;>
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rotationMatrix | Array&lt;number&gt; | 是 | 表示旋转矩阵。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -10819,9 +11415,10 @@ promise.then((data: Array<number>) => {
 
 
 
-#### sensor.createRotationMatrix(deprecated)
+## sensor.createRotationMatrix(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createRotationMatrix(gravity: Array&lt;number&gt;, geomagnetic: Array&lt;number&gt;, callback: AsyncCallback&lt;RotationMatrixResponse&gt;): void
 
@@ -10834,6 +11431,7 @@ createRotationMatrix(gravity: Array&lt;number&gt;, geomagnetic: Array&lt;number&
 **系统能力**：SystemCapability.Sensors.Sensor
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -10860,9 +11458,10 @@ sensor.createRotationMatrix([-0.27775216, 0.5351276, 9.788099], [210.87253, -78.
 
 
 
-#### sensor.createRotationMatrix(deprecated)
+## sensor.createRotationMatrix(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createRotationMatrix(gravity: Array&lt;number&gt;, geomagnetic: Array&lt;number&gt;): Promise&lt;RotationMatrixResponse&gt;
 
@@ -10876,6 +11475,7 @@ createRotationMatrix(gravity: Array&lt;number&gt;, geomagnetic: Array&lt;number&
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | gravity | Array&lt;number&gt; | 是 | 表示重力向量。 |
@@ -10883,6 +11483,7 @@ createRotationMatrix(gravity: Array&lt;number&gt;, geomagnetic: Array&lt;number&
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -10905,9 +11506,10 @@ promise.then((data: sensor.RotationMatrixResponse) => {
 
 
 
-#### SensorType(deprecated)
+## SensorType(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示要订阅或取消订阅的传感器类型。
 
@@ -10916,6 +11518,7 @@ promise.then((data: sensor.RotationMatrixResponse) => {
 
 
 **系统能力**：SystemCapability.Sensors.Sensor
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

@@ -1,9 +1,9 @@
 # Context (Stage模型的上下文基类)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-context
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Context是Stage模型的上下文基类，主要用于访问特定应用程序的资源，以及执行应用级操作的回调。
 
@@ -12,9 +12,10 @@ Context是Stage模型的上下文基类，主要用于访问特定应用程序�
 
 
 
-#### 不同类型Context的继承和持有关系
+## 不同类型Context的继承和持有关系
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
  - 不同类型Context的继承关系如下：
 
@@ -24,7 +25,7 @@ Context是Stage模型的上下文基类，主要用于访问特定应用程序�
  - 不同类型Context的持有关系如下：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/MFabnXcQQfulVOe1X-Py2Q/zh-cn_image_0000002704274127.png?HW-CC-KV=V1&HW-CC-Date=20260813T095436Z&HW-CC-Expire=86400&HW-CC-Sign=48C5D58623EBC6BCC53C5420D745608D6B136CCAB5B872D101D338F189E052CA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/Xnyg298YTLeNS0VDee7slA/zh-cn_image_0000002747292315.png?HW-CC-KV=V1&HW-CC-Date=20260911T072915Z&HW-CC-Expire=86400&HW-CC-Sign=144DFEAD61FEEFF1E27890FA3310FC886D393015580220F93865CBDE6EE16DDC)
 
 
 
@@ -34,9 +35,10 @@ Context是Stage模型的上下文基类，主要用于访问特定应用程序�
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { common } from '@kit.AbilityKit';
@@ -44,19 +46,22 @@ import { common } from '@kit.AbilityKit';
 
 
 
-#### Context
+## Context
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Context提供了ability或application的上下文的能力，包括访问特定应用程序的资源等。
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -72,16 +77,17 @@ Context提供了ability或application的上下文的能力，包括访问特定�
 | distributedFilesDir | string | 否 | 否 | 分布式文件目录，详情参考应用沙箱目录。 元服务API：从API version 11开始，该接口支持在元服务中使用。 |
 | cloudFileDir12+ | string | 否 | 否 | 云文件目录。 元服务API：从API version 12开始，该接口支持在元服务中使用。 |
 | logFileDir22+ | string | 否 | 否 | 日志文件目录。 元服务API：从API version 22开始，该接口支持在元服务中使用。 |
-| eventHub | EventHub | 否 | 否 | 事件中心，提供订阅、取消订阅、触发事件对象。 元服务API：从API version 11开始，该接口支持在元服务中使用。 |
+| eventHub | EventHub | 否 | 否 | 事件中心，提供订阅、取消订阅、触发事件的能力。 元服务API：从API version 11开始，该接口支持在元服务中使用。 |
 | area | contextConstant.AreaMode | 否 | 否 | 文件分区信息，按加密等级AreaMode 进行分区。 元服务API：从API version 11开始，该接口支持在元服务中使用。 |
 | processName18+ | string | 否 | 否 | 当前应用的进程名。 元服务API：从API version 18开始，该接口支持在元服务中使用。 |
 
 
 
 
-#### createModuleContext(deprecated)
+### createModuleContext(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createModuleContext(moduleName: string): Context
 
@@ -97,12 +103,14 @@ createModuleContext(moduleName: string): Context
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | moduleName | string | 是 | 模块名。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -112,6 +120,7 @@ createModuleContext(moduleName: string): Context
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -140,9 +149,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getApplicationContext
+### getApplicationContext
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getApplicationContext(): ApplicationContext
 
@@ -154,6 +164,7 @@ getApplicationContext(): ApplicationContext
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ApplicationContext | 应用上下文，提供应用级别的上下文能力，包括应用生命周期管理、环境变量配置等。 |
@@ -162,6 +173,7 @@ getApplicationContext(): ApplicationContext
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -190,9 +202,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getGroupDir10+
+### getGroupDir10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getGroupDir(dataGroupID: string): Promise&lt;string&gt;
 
@@ -204,12 +217,14 @@ getGroupDir(dataGroupID: string): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dataGroupID | string | 是 | 元服务类型的应用创建时，系统会指定分配唯一Group ID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -219,6 +234,7 @@ getGroupDir(dataGroupID: string): Promise&lt;string&gt;
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -251,9 +267,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getGroupDir10+
+### getGroupDir10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getGroupDir(dataGroupID: string, callback: AsyncCallback&lt;string&gt;): void
 
@@ -265,6 +282,7 @@ getGroupDir(dataGroupID: string, callback: AsyncCallback&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dataGroupID | string | 是 | 元服务类型的应用创建时，系统会指定分配唯一Group ID。 |
@@ -274,6 +292,7 @@ getGroupDir(dataGroupID: string, callback: AsyncCallback&lt;string&gt;): void
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -306,13 +325,14 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### createAreaModeContext18+
+### createAreaModeContext18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAreaModeContext(areaMode: contextConstant.AreaMode): Context
 
-创建特定数据加密级别的应用上下文。开发者可以调用该接口创建不同加密级别的上下文，从而获取对应的沙箱路径。
+创建特定数据加密等级的应用上下文。开发者可以调用该接口创建不同加密级别的上下文，从而获取对应的沙箱路径。
 
 **元服务API**：从API version 18开始，该接口支持在元服务中使用。
 
@@ -320,12 +340,14 @@ createAreaModeContext(areaMode: contextConstant.AreaMode): Context
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | areaMode | contextConstant.AreaMode | 是 | 指定的数据加密等级。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -356,9 +378,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### createDisplayContext15+
+### createDisplayContext15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createDisplayContext(displayId: number): Context
 
@@ -370,12 +393,14 @@ createDisplayContext(displayId: number): Context
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | displayId | number | 是 | 物理屏幕ID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -385,6 +410,7 @@ createDisplayContext(displayId: number): Context
 **错误码：**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -396,6 +422,7 @@ createDisplayContext(displayId: number): Context
 ```text
 import { common, UIAbility } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 export default class EntryAbility extends UIAbility {
   onCreate() {
@@ -414,9 +441,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### isContextOf
+### isContextOf
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isContextOf(contextType: contextConstant.ContextType): boolean
 
@@ -430,12 +458,14 @@ isContextOf(contextType: contextConstant.ContextType): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | contextType | contextConstant.ContextType | 是 | 上下文类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |

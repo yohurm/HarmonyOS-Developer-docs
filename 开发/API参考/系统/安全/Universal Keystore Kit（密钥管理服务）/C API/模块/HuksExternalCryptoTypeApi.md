@@ -1,11 +1,12 @@
 # HuksExternalCryptoTypeApi
 
-更新时间：2026-06-12 06:54:11
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-huksexternalcryptotypeapi
 **支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -15,10 +16,12 @@
  
   
 
-#### 文件汇总
+## 文件汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | native_huks_external_crypto_type.h | 定义面向外部密钥管理扩展的结构体与枚举类型。 |

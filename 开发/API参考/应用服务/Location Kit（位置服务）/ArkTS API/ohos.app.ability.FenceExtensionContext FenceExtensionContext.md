@@ -1,8 +1,9 @@
 # @ohos.app.ability.FenceExtensionContext (FenceExtensionContext)
 
-更新时间：2026-03-09 02:50:43
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-fenceextensioncontext
+**支持设备：** Phone | Tablet
 
 FenceExtensionContext是FenceExtensionAbility的上下文环境，继承自[ExtensionContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-extensioncontext)，提供FenceExtensionAbility的相关配置信息以及启动Ability接口。
 
@@ -11,7 +12,10 @@ FenceExtensionContext是FenceExtensionAbility的上下文环境，继承自[Exte
 
 
 
-#### 导入模块
+## 导入模块
+
+
+**支持设备：** Phone | Tablet
 
 ```text
 import { FenceExtensionContext } from '@kit.LocationKit';
@@ -19,7 +23,10 @@ import { FenceExtensionContext } from '@kit.LocationKit';
 
 
 
-#### 使用说明
+## 使用说明
+
+
+**支持设备：** Phone | Tablet
 
 在使用FenceExtensionContext的功能前，需要通过FenceExtensionAbility获取。
 

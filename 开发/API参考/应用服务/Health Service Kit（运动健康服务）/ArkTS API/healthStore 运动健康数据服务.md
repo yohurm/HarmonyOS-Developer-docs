@@ -1,16 +1,21 @@
 # healthStore (运动健康数据服务)
 
-更新时间：2026-08-04 06:06:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/health-api-healthstore
 **支持设备：** Phone | Tablet | Wearable
 
 本模块提供运动健康数据服务。
 
+> [!NOTE]
+> 针对系统能力SystemCapability.Health.HealthStore，请先使用 canIUse() 接口判断当前设备是否支持此syscap及对应接口。
+
+
 **起始版本：** 5.0.0(12)
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -20,7 +25,8 @@ import { healthStore } from '@kit.HealthServiceKit';
 
 
 
-#### AggregateMetrics
+## AggregateMetrics
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -36,6 +42,7 @@ type AggregateMetrics = Partial<Record<[AggregateMetricScope](#aggregatemetricsc
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | max | number | 否 | 是 | 最大值聚合，若未填写，则不查询此聚合类型。 |
@@ -48,7 +55,8 @@ type AggregateMetrics = Partial<Record<[AggregateMetricScope](#aggregatemetricsc
 
 
 
-#### AggregateMetricScope
+## AggregateMetricScope
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -64,6 +72,7 @@ type AggregateMetricScope = 'max' | 'min' | 'avg' | 'sum' | 'last' | 'count'
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | 'max' | 统计最大值。 |
@@ -76,7 +85,8 @@ type AggregateMetricScope = 'max' | 'min' | 'avg' | 'sum' | 'last' | 'count'
 
 
 
-#### AggregateRequest
+## AggregateRequest
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -92,6 +102,7 @@ AggregateRequest<T extends Record<string, [AggregateMetrics](#aggregatemetrics)>
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | dataType | DataType | 否 | 否 | 聚合查询的数据类型。 |
@@ -101,7 +112,8 @@ AggregateRequest<T extends Record<string, [AggregateMetrics](#aggregatemetrics)>
 
 
 
-#### AggregateResult
+## AggregateResult
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -117,6 +129,7 @@ AggregateResult<T extends Record<string, [AggregateMetrics](#aggregatemetrics)> 
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | fields | Pick<T, keyof T> | 否 | 否 | 聚合查询字段。 |
@@ -124,7 +137,8 @@ AggregateResult<T extends Record<string, [AggregateMetrics](#aggregatemetrics)> 
 
 
 
-#### AppInfo
+## AppInfo
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -136,6 +150,7 @@ AggregateResult<T extends Record<string, [AggregateMetrics](#aggregatemetrics)> 
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | bundleName | string | 是 | 是 | 调用方的应用包名，若未填写，默认为调用方包名。 |
@@ -146,7 +161,8 @@ AggregateResult<T extends Record<string, [AggregateMetrics](#aggregatemetrics)> 
 
 
 
-#### AuthorizationBase
+## AuthorizationBase
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -160,6 +176,7 @@ AggregateResult<T extends Record<string, [AggregateMetrics](#aggregatemetrics)> 
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | readDataTypes | DataType[] | 否 | 否 | 读数据类型。 |
@@ -168,7 +185,8 @@ AggregateResult<T extends Record<string, [AggregateMetrics](#aggregatemetrics)> 
 
 
 
-#### AuthorizationRequest
+## AuthorizationRequest
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -180,6 +198,7 @@ AggregateResult<T extends Record<string, [AggregateMetrics](#aggregatemetrics)> 
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | readDataTypes | DataType[] | 否 | 否 | 读数据类型。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
@@ -189,7 +208,8 @@ AggregateResult<T extends Record<string, [AggregateMetrics](#aggregatemetrics)> 
 
 
 
-#### AuthorizationResponse
+## AuthorizationResponse
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -201,6 +221,7 @@ AggregateResult<T extends Record<string, [AggregateMetrics](#aggregatemetrics)> 
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | readDataTypes | DataType[] | 否 | 否 | 授权成功的读数据类型，其对应权限在应用申请权限和用户授权权限的交集中。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
@@ -210,7 +231,8 @@ AggregateResult<T extends Record<string, [AggregateMetrics](#aggregatemetrics)> 
 
 
 
-#### DataReadRequest
+## DataReadRequest
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -224,6 +246,7 @@ AggregateResult<T extends Record<string, [AggregateMetrics](#aggregatemetrics)> 
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | count | number | 否 | 是 | 读取数据的条数，若未填写，默认为无条数限制。 取值范围：[1, ∞) |
@@ -233,7 +256,8 @@ AggregateResult<T extends Record<string, [AggregateMetrics](#aggregatemetrics)> 
 
 
 
-#### DataRequest
+## DataRequest
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -244,6 +268,7 @@ AggregateResult<T extends Record<string, [AggregateMetrics](#aggregatemetrics)> 
 **起始版本：** 5.0.0(12)
 
 **模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -256,7 +281,8 @@ AggregateResult<T extends Record<string, [AggregateMetrics](#aggregatemetrics)> 
 
 
 
-#### DataSource
+## DataSource
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -268,6 +294,7 @@ AggregateResult<T extends Record<string, [AggregateMetrics](#aggregatemetrics)> 
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | dataSourceId | string | 是 | 否 | 数据源的标识，由平台生成，无法更改，长度小于256字节。 |
@@ -277,7 +304,8 @@ AggregateResult<T extends Record<string, [AggregateMetrics](#aggregatemetrics)> 
 
 
 
-#### DataSourceBase
+## DataSourceBase
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -291,6 +319,7 @@ type DataSourceBase = Omit<DataSource, 'dataSourceId'>
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | deviceInfo | DeviceInfo | 是 | 是 | 设备信息，若未填写，默认为空。 |
@@ -299,7 +328,8 @@ type DataSourceBase = Omit<DataSource, 'dataSourceId'>
 
 
 
-#### DataSourceOptions
+## DataSourceOptions
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -311,6 +341,7 @@ type DataSourceBase = Omit<DataSource, 'dataSourceId'>
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | dataSourceId | string | 否 | 是 | 数据源的标识，由平台生成，无法更改，若未填写，默认为空。 |
@@ -321,7 +352,8 @@ type DataSourceBase = Omit<DataSource, 'dataSourceId'>
 
 
 
-#### DataSourceReadRequest
+## DataSourceReadRequest
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -333,6 +365,7 @@ type DataSourceBase = Omit<DataSource, 'dataSourceId'>
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | dataSourceId | string | 否 | 是 | 数据源的唯一标识（dataSourceId与bundleName、deviceUniqueId不能同时填写）。 |
@@ -342,7 +375,8 @@ type DataSourceBase = Omit<DataSource, 'dataSourceId'>
 
 
 
-#### DataType
+## DataType
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -356,6 +390,7 @@ type DataSourceBase = Omit<DataSource, 'dataSourceId'>
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | id | number | 是 | 否 | 数据类型唯一标识值。 |
@@ -364,7 +399,8 @@ type DataSourceBase = Omit<DataSource, 'dataSourceId'>
 
 
 
-#### DeviceCategory
+## DeviceCategory
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -375,6 +411,7 @@ type DataSourceBase = Omit<DataSource, 'dataSourceId'>
 **起始版本：** 5.0.0(12)
 
 **模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -400,7 +437,8 @@ type DataSourceBase = Omit<DataSource, 'dataSourceId'>
 
 
 
-#### DeviceInfo
+## DeviceInfo
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -411,6 +449,7 @@ type DataSourceBase = Omit<DataSource, 'dataSourceId'>
 **起始版本：** 5.0.0(12)
 
 **模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -430,7 +469,8 @@ type DataSourceBase = Omit<DataSource, 'dataSourceId'>
 
 
 
-#### ExerciseSequence
+## ExerciseSequence
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -444,6 +484,7 @@ ExerciseSequence<K extends Record<string, [ExerciseSummary](#exercisesummary)> =
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | exerciseType | SubDataType | 否 | 否 | 锻炼记录子数据类型。 |
@@ -454,7 +495,8 @@ ExerciseSequence<K extends Record<string, [ExerciseSummary](#exercisesummary)> =
 
 
 
-#### ExerciseSequenceDeleteRequest
+## ExerciseSequenceDeleteRequest
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -466,6 +508,7 @@ ExerciseSequence<K extends Record<string, [ExerciseSummary](#exercisesummary)> =
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | exerciseType | SubDataType \| SubDataType[] \| null | 否 | 否 | 锻炼记录子数据类型。若为空时，删除所有类型。 |
@@ -473,7 +516,8 @@ ExerciseSequence<K extends Record<string, [ExerciseSummary](#exercisesummary)> =
 
 
 
-#### ExerciseSequenceReadRequest
+## ExerciseSequenceReadRequest
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -487,6 +531,7 @@ ExerciseSequenceReadRequest<DK extends Record<string, [SequencePoint](#sequencep
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | exerciseType | SubDataType \| SubDataType[] \| null | 否 | 否 | 锻炼记录子数据类型，为空时查询所有类型。 |
@@ -495,7 +540,8 @@ ExerciseSequenceReadRequest<DK extends Record<string, [SequencePoint](#sequencep
 
 
 
-#### ExerciseSummary
+## ExerciseSummary
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -507,6 +553,7 @@ ExerciseSequenceReadRequest<DK extends Record<string, [SequencePoint](#sequencep
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | [P: string] | HealthValueType \| PaceValueType | 否 | 否 | 统计数据字段。 |
@@ -514,7 +561,8 @@ ExerciseSequenceReadRequest<DK extends Record<string, [SequencePoint](#sequencep
 
 
 
-#### GroupOption
+## GroupOption
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -528,6 +576,7 @@ ExerciseSequenceReadRequest<DK extends Record<string, [SequencePoint](#sequencep
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | unitType | GroupUnitType | 否 | 否 | 聚合策略（分组单元）。 |
@@ -536,7 +585,8 @@ ExerciseSequenceReadRequest<DK extends Record<string, [SequencePoint](#sequencep
 
 
 
-#### GroupUnitType
+## GroupUnitType
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -550,6 +600,7 @@ ExerciseSequenceReadRequest<DK extends Record<string, [SequencePoint](#sequencep
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DAY | 3 | 按天聚合。 |
@@ -557,7 +608,8 @@ ExerciseSequenceReadRequest<DK extends Record<string, [SequencePoint](#sequencep
 
 
 
-#### HealthSequence
+## HealthSequence
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -571,6 +623,7 @@ HealthSequence<K extends Record<string, [HealthValueType](#healthvaluetype)> = R
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | summaries | Pick<K, keyof K> | 否 | 否 | 统计数据，健康记录关联的统计数据类型参考healthSequenceHelper定义的模型。 |
@@ -579,7 +632,8 @@ HealthSequence<K extends Record<string, [HealthValueType](#healthvaluetype)> = R
 
 
 
-#### HealthSequenceDeleteRequest
+## HealthSequenceDeleteRequest
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -591,6 +645,7 @@ HealthSequence<K extends Record<string, [HealthValueType](#healthvaluetype)> = R
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | healthSequenceDataType | DataType \| DataType[] | 否 | 否 | 健康数据类型。 |
@@ -598,7 +653,8 @@ HealthSequence<K extends Record<string, [HealthValueType](#healthvaluetype)> = R
 
 
 
-#### HealthSequenceReadRequest
+## HealthSequenceReadRequest
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -612,6 +668,7 @@ HealthSequenceReadRequest<DK extends Record<string, [SequencePoint](#sequencepoi
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | healthSequenceDataType | DataType \| DataType[] | 否 | 否 | 健康数据类型。 |
@@ -620,7 +677,8 @@ HealthSequenceReadRequest<DK extends Record<string, [SequencePoint](#sequencepoi
 
 
 
-#### HealthValueType
+## HealthValueType
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -634,6 +692,7 @@ type HealthValueType = number | string | boolean | undefined
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 表示值类型为数字，可取任意值。 元服务API： 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
@@ -644,7 +703,8 @@ type HealthValueType = number | string | boolean | undefined
 
 
 
-#### PaceValueType
+## PaceValueType
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -658,6 +718,7 @@ type PaceValueType = Record<string, number>
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Record<string, number> | 配速数据字段。 |
@@ -665,7 +726,8 @@ type PaceValueType = Record<string, number>
 
 
 
-#### SampleDataBase
+## SampleDataBase
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -676,6 +738,7 @@ type PaceValueType = Record<string, number>
 **起始版本：** 5.0.0(12)
 
 **模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -690,7 +753,8 @@ type PaceValueType = Record<string, number>
 
 
 
-#### SamplePoint
+## SamplePoint
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -704,6 +768,7 @@ SamplePoint<K extends Record<string, [HealthValueType](#healthvaluetype)> = Reco
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | fields | Pick<K, keyof K> | 否 | 否 | 数据的字段，数据类型对应的字段参考samplePointHelper定义的模型。 |
@@ -711,7 +776,8 @@ SamplePoint<K extends Record<string, [HealthValueType](#healthvaluetype)> = Reco
 
 
 
-#### SamplePointDeleteRequest
+## SamplePointDeleteRequest
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -725,6 +791,7 @@ type SamplePointDeleteRequest = UnixTimeBasedDataDeleteRequest
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | dataType | DataType \| DataType[] | 否 | 否 | 待删除的数据类型。 |
@@ -732,7 +799,8 @@ type SamplePointDeleteRequest = UnixTimeBasedDataDeleteRequest
 
 
 
-#### SamplePointReadRequest
+## SamplePointReadRequest
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -746,6 +814,7 @@ SamplePointReadRequest<FK extends Record<string, [HealthValueType](#healthvaluet
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | samplePointDataType | DataType\| DataType[] | 否 | 否 | 查询的数据类型。 |
@@ -754,7 +823,8 @@ SamplePointReadRequest<FK extends Record<string, [HealthValueType](#healthvaluet
 
 
 
-#### SequencePoint
+## SequencePoint
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -766,6 +836,7 @@ SamplePointReadRequest<FK extends Record<string, [HealthValueType](#healthvaluet
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | startTime | number | 否 | 否 | 数据开始时间，Unix时间戳，单位：ms。 取值范围：(0, ∞) |
@@ -774,7 +845,8 @@ SamplePointReadRequest<FK extends Record<string, [HealthValueType](#healthvaluet
 
 
 
-#### SequenceReadOptions
+## SequenceReadOptions
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -788,6 +860,7 @@ SequenceReadOptions<DK extends Record<string, [SequencePoint](#sequencepoint)[]>
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | withDetails | boolean | 否 | 是 | 是否读取全部详情。true为读取全部详情，false为不读取详情，若未填写，则withPartialDetails参数生效。 |
@@ -796,7 +869,8 @@ SequenceReadOptions<DK extends Record<string, [SequencePoint](#sequencepoint)[]>
 
 
 
-#### SequenceValueType
+## SequenceValueType
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -810,6 +884,7 @@ type SequenceValueType = number | string | boolean | object
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 表示值类型为数字，可取任意值。 |
@@ -820,7 +895,8 @@ type SequenceValueType = number | string | boolean | object
 
 
 
-#### SortOrder
+## SortOrder
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -834,6 +910,7 @@ type SequenceValueType = number | string | boolean | object
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ASC | 0 | 升序。 |
@@ -842,7 +919,8 @@ type SequenceValueType = number | string | boolean | object
 
 
 
-#### SubDataType
+## SubDataType
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -856,6 +934,7 @@ type SubDataType = DataType
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | id | number | 是 | 否 | 子数据类型唯一标识值。 |
@@ -864,7 +943,8 @@ type SubDataType = DataType
 
 
 
-#### UnixTimeBasedDataDeleteRequest
+## UnixTimeBasedDataDeleteRequest
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -876,6 +956,7 @@ type SubDataType = DataType
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | dataType | DataType \| DataType[] | 否 | 否 | 待删除的数据类型。 |
@@ -883,7 +964,8 @@ type SubDataType = DataType
 
 
 
-#### healthStore.init
+## healthStore.init
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -903,12 +985,14 @@ Health Service初始化接口，使用Promise异步回调，其他接口调用�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | 上下文，目前只支持UIAbility或UIExtensionAbility的上下文环境。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -917,7 +1001,8 @@ Health Service初始化接口，使用Promise异步回调，其他接口调用�
 
 **错误码：**
 
-以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
+以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -941,9 +1026,10 @@ try {
 
 
 
-#### healthStore.insertDataSource
+## healthStore.insertDataSource
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 insertDataSource(dataSource: DataSourceBase): Promise&lt;string&gt;
 
@@ -959,12 +1045,14 @@ insertDataSource(dataSource: DataSourceBase): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dataSource | DataSourceBase | 是 | 构造的数据源。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -973,7 +1061,8 @@ insertDataSource(dataSource: DataSourceBase): Promise&lt;string&gt;
 
 **错误码：**
 
-以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
+以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1024,9 +1113,10 @@ try {
 
 
 
-#### healthStore.readDataSource
+## healthStore.readDataSource
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 readDataSource(request: DataSourceReadRequest): Promise<DataSource[]>
 
@@ -1042,12 +1132,14 @@ readDataSource(request: DataSourceReadRequest): Promise<DataSource[]>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | DataSourceReadRequest | 是 | 读取数据源请求。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1056,7 +1148,8 @@ readDataSource(request: DataSourceReadRequest): Promise<DataSource[]>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
+以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1096,9 +1189,10 @@ try {
 
 
 
-#### healthStore.updateDataSource
+## healthStore.updateDataSource
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 updateDataSource(dataSource: DataSource): Promise&lt;void&gt;
 
@@ -1114,12 +1208,14 @@ updateDataSource(dataSource: DataSource): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dataSource | DataSource | 是 | 待更新的数据源。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1128,7 +1224,8 @@ updateDataSource(dataSource: DataSource): Promise&lt;void&gt;
 
 **错误码：**
 
-以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
+以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1182,9 +1279,10 @@ try {
 
 
 
-#### healthStore.saveData
+## healthStore.saveData
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 saveData(sampleData: SamplePoint[] | SamplePoint): Promise&lt;void&gt;
 
@@ -1200,12 +1298,14 @@ saveData(sampleData: SamplePoint[] | SamplePoint): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sampleData | SamplePoint[] \| SamplePoint | 是 | 单个数据采样点或数据采样点数组。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1214,7 +1314,8 @@ saveData(sampleData: SamplePoint[] | SamplePoint): Promise&lt;void&gt;
 
 **错误码：**
 
-以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
+以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1262,9 +1363,10 @@ try {
 
 
 
-#### healthStore.saveData
+## healthStore.saveData
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 saveData(exerciseSequence: ExerciseSequence[] | ExerciseSequence): Promise&lt;void&gt;
 
@@ -1280,12 +1382,14 @@ saveData(exerciseSequence: ExerciseSequence[] | ExerciseSequence): Promise&lt;vo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | exerciseSequence | ExerciseSequence[] \| ExerciseSequence | 是 | 单个锻炼记录或锻炼记录数组。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1294,7 +1398,8 @@ saveData(exerciseSequence: ExerciseSequence[] | ExerciseSequence): Promise&lt;vo
 
 **错误码：**
 
-以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
+以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1388,9 +1493,10 @@ try {
 
 
 
-#### healthStore.saveData
+## healthStore.saveData
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 saveData(healthSequence: HealthSequence[] | HealthSequence): Promise&lt;void&gt;
 
@@ -1406,12 +1512,14 @@ saveData(healthSequence: HealthSequence[] | HealthSequence): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | healthSequence | HealthSequence[] \| HealthSequence | 是 | 单个健康记录或健康记录数组。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1420,7 +1528,8 @@ saveData(healthSequence: HealthSequence[] | HealthSequence): Promise&lt;void&gt;
 
 **错误码：**
 
-以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
+以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1500,7 +1609,8 @@ try {
 
 
 
-#### healthStore.readData
+## healthStore.readData
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1518,12 +1628,14 @@ readData<T extends SamplePoint>(request: SamplePointReadRequest): Promise<T[]>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | SamplePointReadRequest | 是 | 读取数据采样点请求，查询时间跨度范围为31天。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1532,7 +1644,8 @@ readData<T extends SamplePoint>(request: SamplePointReadRequest): Promise<T[]>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
+以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1578,7 +1691,8 @@ try {
 
 
 
-#### healthStore.readData
+## healthStore.readData
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1596,12 +1710,14 @@ readData<T extends ExerciseSequence>(request: ExerciseSequenceReadRequest): Prom
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | ExerciseSequenceReadRequest | 是 | 读取锻炼记录请求，查询时间跨度范围为31天。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1610,7 +1726,8 @@ readData<T extends ExerciseSequence>(request: ExerciseSequenceReadRequest): Prom
 
 **错误码：**
 
-以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
+以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1670,7 +1787,8 @@ try {
 
 
 
-#### healthStore.readData
+## healthStore.readData
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1688,12 +1806,14 @@ readData<T extends HealthSequence>(request: HealthSequenceReadRequest): Promise<
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | HealthSequenceReadRequest | 是 | 读取健康记录请求，查询时间跨度范围为31天。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1702,7 +1822,8 @@ readData<T extends HealthSequence>(request: HealthSequenceReadRequest): Promise<
 
 **错误码：**
 
-以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
+以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1752,9 +1873,10 @@ try {
 
 
 
-#### healthStore.deleteData
+## healthStore.deleteData
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 deleteData(request: SamplePointDeleteRequest | SamplePointDeleteRequest[]): Promise&lt;void&gt;
 
@@ -1770,12 +1892,14 @@ deleteData(request: SamplePointDeleteRequest | SamplePointDeleteRequest[]): Prom
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | SamplePointDeleteRequest \| SamplePointDeleteRequest[] | 是 | 删除数据采样点请求。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1784,7 +1908,8 @@ deleteData(request: SamplePointDeleteRequest | SamplePointDeleteRequest[]): Prom
 
 **错误码：**
 
-以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
+以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1824,9 +1949,10 @@ try {
 
 
 
-#### healthStore.deleteData
+## healthStore.deleteData
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 deleteData(request: ExerciseSequenceDeleteRequest | ExerciseSequenceDeleteRequest[]): Promise&lt;void&gt;
 
@@ -1842,12 +1968,14 @@ deleteData(request: ExerciseSequenceDeleteRequest | ExerciseSequenceDeleteReques
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | ExerciseSequenceDeleteRequest \| ExerciseSequenceDeleteRequest[] | 是 | 删除锻炼记录请求。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1856,7 +1984,8 @@ deleteData(request: ExerciseSequenceDeleteRequest | ExerciseSequenceDeleteReques
 
 **错误码：**
 
-以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
+以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1895,9 +2024,10 @@ try {
 
 
 
-#### healthStore.deleteData
+## healthStore.deleteData
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 deleteData(request: HealthSequenceDeleteRequest | HealthSequenceDeleteRequest[]): Promise&lt;void&gt;
 
@@ -1913,12 +2043,14 @@ deleteData(request: HealthSequenceDeleteRequest | HealthSequenceDeleteRequest[])
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | HealthSequenceDeleteRequest \| HealthSequenceDeleteRequest[] | 是 | 删除健康记录请求。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1927,7 +2059,8 @@ deleteData(request: HealthSequenceDeleteRequest | HealthSequenceDeleteRequest[])
 
 **错误码：**
 
-以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
+以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1966,9 +2099,10 @@ try {
 
 
 
-#### healthStore.deleteData
+## healthStore.deleteData
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 deleteData(samplePoint: SamplePoint | SamplePoint[]): Promise&lt;void&gt;
 
@@ -1984,12 +2118,14 @@ deleteData(samplePoint: SamplePoint | SamplePoint[]): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | samplePoint | SamplePoint \| SamplePoint[] | 是 | 单个数据采样点或数据采样点数组。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1998,7 +2134,8 @@ deleteData(samplePoint: SamplePoint | SamplePoint[]): Promise&lt;void&gt;
 
 **错误码：**
 
-以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
+以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2041,9 +2178,10 @@ try {
 
 
 
-#### healthStore.deleteData
+## healthStore.deleteData
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 deleteData(exerciseSequence: ExerciseSequence | ExerciseSequence[]): Promise&lt;void&gt;
 
@@ -2059,12 +2197,14 @@ deleteData(exerciseSequence: ExerciseSequence | ExerciseSequence[]): Promise&lt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | exerciseSequence | ExerciseSequence \| ExerciseSequence[] | 是 | 单个锻炼记录或锻炼记录数组。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2073,7 +2213,8 @@ deleteData(exerciseSequence: ExerciseSequence | ExerciseSequence[]): Promise&lt;
 
 **错误码：**
 
-以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
+以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2119,9 +2260,10 @@ try {
 
 
 
-#### healthStore.deleteData
+## healthStore.deleteData
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 deleteData(healthSequence: HealthSequence | HealthSequence[]): Promise&lt;void&gt;
 
@@ -2137,12 +2279,14 @@ deleteData(healthSequence: HealthSequence | HealthSequence[]): Promise&lt;void&g
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | healthSequence | HealthSequence \| HealthSequence[] | 是 | 单个健康记录或健康记录数组。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2151,7 +2295,8 @@ deleteData(healthSequence: HealthSequence | HealthSequence[]): Promise&lt;void&g
 
 **错误码：**
 
-以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
+以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2194,9 +2339,10 @@ try {
 
 
 
-#### healthStore.aggregateData
+## healthStore.aggregateData
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 aggregateData<T extends AggregateResult>(request: AggregateRequest | AggregateRequest[]): Promise<T[]>
 
@@ -2214,12 +2360,14 @@ aggregateData<T extends AggregateResult>(request: AggregateRequest | AggregateRe
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | AggregateRequest \| AggregateRequest[] | 是 | 聚合统计查询请求。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2228,7 +2376,8 @@ aggregateData<T extends AggregateResult>(request: AggregateRequest | AggregateRe
 
 **错误码：**
 
-以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
+以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2289,7 +2438,8 @@ try {
 
 
 
-#### healthStore.requestAuthorizations
+## healthStore.requestAuthorizations
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2309,6 +2459,7 @@ requestAuthorizations(context: common.UIAbilityContext, request: AuthorizationRe
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | UIAbility上下文。 |
@@ -2317,6 +2468,7 @@ requestAuthorizations(context: common.UIAbilityContext, request: AuthorizationRe
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;AuthorizationResponse&gt; | Promise对象，返回授权响应结果。 |
@@ -2324,7 +2476,8 @@ requestAuthorizations(context: common.UIAbilityContext, request: AuthorizationRe
 
 **错误码：**
 
-以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)，其他错误码请参见[华为账号服务ArkTS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account-kit)。
+以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)，其他错误码请参见[华为账号服务ArkTS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account-kit)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2368,7 +2521,8 @@ try {
 
 
 
-#### healthStore.getAuthorizations
+## healthStore.getAuthorizations
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2386,12 +2540,14 @@ getAuthorizations(request: AuthorizationRequest): Promise&lt;AuthorizationRespon
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | AuthorizationRequest | 是 | 查询权限请求参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2400,7 +2556,8 @@ getAuthorizations(request: AuthorizationRequest): Promise&lt;AuthorizationRespon
 
 **错误码：**
 
-以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
+以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2443,7 +2600,8 @@ try {
 
 
 
-#### healthStore.cancelAuthorizations
+## healthStore.cancelAuthorizations
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2463,6 +2621,7 @@ cancelAuthorizations(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -2471,6 +2630,7 @@ cancelAuthorizations(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)，其他错误码请参见[华为账号服务ArkTS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account-kit)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2497,9 +2657,10 @@ try {
 
 
 
-#### healthStore.syncAll
+## healthStore.syncAll
 
-**支持设备：** Phone | Tablet | Wearable
+
+**支持设备：** Phone | Tablet
 
 syncAll(): Promise&lt;void&gt;
 
@@ -2515,6 +2676,7 @@ syncAll(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -2522,7 +2684,8 @@ syncAll(): Promise&lt;void&gt;
 
 **错误码：**
 
-以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)。
+以下错误码的详细介绍请参见[运动健康服务ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-healthservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2556,7 +2719,8 @@ try {
 
 
 
-#### healthStore.on('serviceDie')
+## healthStore.on('serviceDie')
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2573,6 +2737,7 @@ on(type: 'serviceDie', callback: Callback&lt;void&gt;): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2597,7 +2762,8 @@ healthStore.on('serviceDie', () => {
 
 
 
-#### healthStore.off('serviceDie')
+## healthStore.off('serviceDie')
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -2614,6 +2780,7 @@ off(type: 'serviceDie', callback?: Callback&lt;void&gt;): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |

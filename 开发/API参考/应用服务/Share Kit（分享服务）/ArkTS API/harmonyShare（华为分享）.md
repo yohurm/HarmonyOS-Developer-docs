@@ -1,6 +1,6 @@
 # harmonyShare（华为分享）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/share-harmony-share
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -12,7 +12,8 @@
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -22,7 +23,8 @@ import { harmonyShare } from '@kit.ShareKit';
  
   
 
-#### SharableErrorCode
+## SharableErrorCode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -34,6 +36,7 @@ import { harmonyShare } from '@kit.ShareKit';
  
 **起始版本：** 5.0.3(15)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NO_CONTENT_ERROR | 1 | 用于无内容分享场景。 |
@@ -43,7 +46,8 @@ import { harmonyShare } from '@kit.ShareKit';
  
   
 
-#### ReceivableErrorCode
+## ReceivableErrorCode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -55,6 +59,7 @@ import { harmonyShare } from '@kit.ShareKit';
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NO_RECEIVABLE_ERROR | 1 | 用于当前无法接收数据的场景。 |
@@ -62,7 +67,8 @@ import { harmonyShare } from '@kit.ShareKit';
  
   
 
-#### ShareResultCode
+## ShareResultCode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -74,6 +80,7 @@ import { harmonyShare } from '@kit.ShareKit';
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SHARE_SUCCESS | 0 | 沙箱接收成功。 |
@@ -84,7 +91,8 @@ import { harmonyShare } from '@kit.ShareKit';
  
   
 
-#### SharableTarget
+## SharableTarget
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -98,7 +106,8 @@ import { harmonyShare } from '@kit.ShareKit';
  
   
 
-#### share
+### share
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -114,6 +123,7 @@ share(data: systemShare.SharedData): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | systemShare.SharedData | 是 | 分享数据。 |
@@ -121,6 +131,7 @@ share(data: systemShare.SharedData): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -130,6 +141,7 @@ share(data: systemShare.SharedData): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -155,7 +167,8 @@ harmonyShare.on('knockShare', (sharableTarget: harmonyShare.SharableTarget) => {
  
   
 
-#### reject
+### reject
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -171,6 +184,7 @@ reject(error: SharableErrorCode): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | error | SharableErrorCode | 是 | 拒绝本次分享的原因。通过系统弹窗提示用户。 |
@@ -178,6 +192,7 @@ reject(error: SharableErrorCode): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -187,6 +202,7 @@ reject(error: SharableErrorCode): Promise&lt;void&gt;
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -206,7 +222,8 @@ harmonyShare.on('knockShare', (sharableTarget: harmonyShare.SharableTarget) => {
  
   
 
-#### updateShareData
+### updateShareData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -224,6 +241,7 @@ updateShareData(data: UpdatedData): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | UpdatedData | 是 | 需要更新的数据信息。 |
@@ -231,6 +249,7 @@ updateShareData(data: UpdatedData): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -256,7 +275,8 @@ harmonyShare.on('knockShare', (sharableTarget: harmonyShare.SharableTarget) => {
  
   
 
-#### clarifyNonShare
+### clarifyNonShare
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -274,6 +294,7 @@ clarifyNonShare(info: SharableErrorInfo): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | info | SharableErrorInfo | 是 | 提示信息，用于告知用户无法分享的原因。 |
@@ -281,6 +302,7 @@ clarifyNonShare(info: SharableErrorInfo): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -300,7 +322,8 @@ harmonyShare.on('knockShare', (sharableTarget: harmonyShare.SharableTarget) => {
  
   
 
-#### getInfo
+### getInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -316,6 +339,7 @@ getInfo(): SharableTargetInfo
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | SharableTargetInfo | PC/2in1或Tablet设备作为发送端触发碰一碰事件时的相关信息，如轻碰屏幕位置的坐标信息等。 |
@@ -337,7 +361,8 @@ harmonyShare.on('knockShare', (sharableTarget: harmonyShare.SharableTarget) => {
  
   
 
-#### ReceivableTarget
+## ReceivableTarget
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -351,7 +376,8 @@ harmonyShare.on('knockShare', (sharableTarget: harmonyShare.SharableTarget) => {
  
   
 
-#### receive
+### receive
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -367,6 +393,7 @@ receive(receiveUri: string, callback: ReceiveCallback): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | receiveUri | string | 是 | 沙箱接收时，存放数据的目录（必须真实存在）。 说明： Share Kit会在传输开始前获取此目录的授权，在数据传输完成后自动撤销授权，建议使用已存在的空文件夹，保护信息安全。 |
@@ -375,6 +402,7 @@ receive(receiveUri: string, callback: ReceiveCallback): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -416,7 +444,8 @@ harmonyShare.on('dataReceive', capabilityRegistry, (receivableTarget: harmonySha
  
   
 
-#### reject
+### reject
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -432,6 +461,7 @@ reject(error: ReceivableErrorCode): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | error | ReceivableErrorCode | 是 | 拒绝本次沙箱接收的原因。通过系统弹窗提示用户。 |
@@ -439,6 +469,7 @@ reject(error: ReceivableErrorCode): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -465,7 +496,8 @@ harmonyShare.on('dataReceive', capabilityRegistry, (receivableTarget: harmonySha
  
   
 
-#### getInfo
+### getInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -481,6 +513,7 @@ getInfo(): ReceivableTargetInfo
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ReceivableTargetInfo | PC/2in1或Tablet设备作为接收端触发碰一碰事件时的相关信息，如轻碰屏幕位置的坐标信息等。 |
@@ -527,7 +560,8 @@ harmonyShare.on('dataReceive', capabilityRegistry, (receivableTarget: harmonySha
  
   
 
-#### UpdatedData
+## UpdatedData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -539,6 +573,7 @@ harmonyShare.on('dataReceive', capabilityRegistry, (receivableTarget: harmonySha
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | thumbnailUri | string | 否 | 是 | 预览图的uri。 |
@@ -546,7 +581,8 @@ harmonyShare.on('dataReceive', capabilityRegistry, (receivableTarget: harmonySha
  
   
 
-#### BaseCapabilityRegistry
+## BaseCapabilityRegistry
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -558,6 +594,7 @@ harmonyShare.on('dataReceive', capabilityRegistry, (receivableTarget: harmonySha
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | windowId | number | 否 | 否 | 窗口id。 |
@@ -565,7 +602,8 @@ harmonyShare.on('dataReceive', capabilityRegistry, (receivableTarget: harmonySha
  
   
 
-#### SendCapabilityRegistry
+## SendCapabilityRegistry
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -577,6 +615,7 @@ harmonyShare.on('dataReceive', capabilityRegistry, (receivableTarget: harmonySha
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | sendOnly | boolean | 否 | 是 | 设置是否仅支持发送数据。默认值：false，表示可同时接收分享数据。当双端设备均设置为true时，双向分享会被拦截。 说明：仅支持碰一碰分享功能。 |
@@ -584,7 +623,8 @@ harmonyShare.on('dataReceive', capabilityRegistry, (receivableTarget: harmonySha
  
   
 
-#### RecvCapability
+## RecvCapability
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -596,6 +636,7 @@ harmonyShare.on('dataReceive', capabilityRegistry, (receivableTarget: harmonySha
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | utd | string | 否 | 否 | 统一数据类型，参考@ohos.data.uniformTypeDescriptor (标准化数据定义与描述)。 |
@@ -604,7 +645,8 @@ harmonyShare.on('dataReceive', capabilityRegistry, (receivableTarget: harmonySha
  
   
 
-#### RecvCapabilityRegistry
+## RecvCapabilityRegistry
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -616,6 +658,7 @@ harmonyShare.on('dataReceive', capabilityRegistry, (receivableTarget: harmonySha
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | capabilities | RecvCapability[] | 否 | 否 | 沙箱接收能力设置，用于设置可接收的数据类型和数量。 |
@@ -623,7 +666,8 @@ harmonyShare.on('dataReceive', capabilityRegistry, (receivableTarget: harmonySha
  
   
 
-#### TransferBaseResults
+## TransferBaseResults
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -635,6 +679,7 @@ harmonyShare.on('dataReceive', capabilityRegistry, (receivableTarget: harmonySha
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | onResult | Callback&lt;ShareResultCode&gt; | 否 | 是 | 传输完成的回调函数。用于通知传输结果。 |
@@ -642,7 +687,8 @@ harmonyShare.on('dataReceive', capabilityRegistry, (receivableTarget: harmonySha
  
   
 
-#### ReceiveCallback
+## ReceiveCallback
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -654,6 +700,7 @@ harmonyShare.on('dataReceive', capabilityRegistry, (receivableTarget: harmonySha
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | onDataReceived | Callback<systemShare.SharedData> | 否 | 否 | 沙箱接收传输完成后回调函数。用于接收已保存至沙箱路径下的文件列表。 |
@@ -661,7 +708,8 @@ harmonyShare.on('dataReceive', capabilityRegistry, (receivableTarget: harmonySha
  
   
 
-#### SharableErrorInfo
+## SharableErrorInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -673,6 +721,7 @@ harmonyShare.on('dataReceive', capabilityRegistry, (receivableTarget: harmonySha
  
 **起始版本：** 6.0.2(22)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | message | string | 否 | 是 | 提示文案。 |
@@ -680,7 +729,8 @@ harmonyShare.on('dataReceive', capabilityRegistry, (receivableTarget: harmonySha
  
   
 
-#### CoordinateInfo
+## CoordinateInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -692,6 +742,7 @@ harmonyShare.on('dataReceive', capabilityRegistry, (receivableTarget: harmonySha
  
 **起始版本：** 26.0.0
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | screenX | number | 否 | 否 | 碰一碰事件触发时，以屏幕左上角为原点的相对坐标系的X坐标。当前仅支持整数。单位：px。 |
@@ -700,7 +751,8 @@ harmonyShare.on('dataReceive', capabilityRegistry, (receivableTarget: harmonySha
  
   
 
-#### SharableTargetInfo
+## SharableTargetInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -712,6 +764,7 @@ PC/2in1或Tablet设备作为发送端，触发碰一碰时的相关信息。
  
 **起始版本：** 26.0.0
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | coordinate | CoordinateInfo | 否 | 是 | 碰一碰事件触发时，轻碰屏幕位置的坐标信息。 |
@@ -719,7 +772,8 @@ PC/2in1或Tablet设备作为发送端，触发碰一碰时的相关信息。
  
   
 
-#### ReceivableTargetInfo
+## ReceivableTargetInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -731,6 +785,7 @@ PC/2in1或Tablet设备作为接收端，触发碰一碰时的相关信息。
  
 **起始版本：** 26.0.0
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | coordinate | CoordinateInfo | 否 | 是 | 碰一碰事件触发时，轻碰屏幕位置的坐标信息。 |
@@ -738,7 +793,8 @@ PC/2in1或Tablet设备作为接收端，触发碰一碰时的相关信息。
  
   
 
-#### on('knockShare')
+## on('knockShare')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -754,6 +810,7 @@ on(event: 'knockShare', callback: Callback&lt;SharableTarget&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 事件回调类型，取值为'knockShare'，当设备轻贴时，触发该事件。 |
@@ -764,6 +821,7 @@ on(event: 'knockShare', callback: Callback&lt;SharableTarget&gt;): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -789,7 +847,8 @@ private tipsListening() {
  
   
 
-#### off('knockShare')
+## off('knockShare')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -805,6 +864,7 @@ off(event: 'knockShare', callback?: Callback&lt;SharableTarget&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 事件回调类型，取值为'knockShare'，取消设备轻贴的事件监听。 |
@@ -815,6 +875,7 @@ off(event: 'knockShare', callback?: Callback&lt;SharableTarget&gt;): void
  
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -831,7 +892,8 @@ private tipsDisablingListening() {
  
   
 
-#### on('knockShare')
+## on('knockShare')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -847,6 +909,7 @@ on(event: 'knockShare', capability: SendCapabilityRegistry, callback: Callback&l
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 事件回调类型，取值为'knockShare'，当设备轻贴时，触发该事件。 |
@@ -880,7 +943,8 @@ private sendOnlyListening() {
  
   
 
-#### off('knockShare')
+## off('knockShare')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -896,6 +960,7 @@ off(event: 'knockShare', capability: SendCapabilityRegistry, callback?: Callback
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 事件回调类型，取值为'knockShare'，取消设备轻贴的事件监听。 |
@@ -920,7 +985,8 @@ private sendOnlyDisablingListening() {
  
   
 
-#### on('gesturesShare')
+## on('gesturesShare')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -936,6 +1002,7 @@ on(event: 'gesturesShare', callback: Callback&lt;SharableTarget&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 事件回调类型，取值为'gesturesShare'，当抓取握拳时，触发该事件。 |
@@ -962,7 +1029,8 @@ private immersiveListening() {
  
   
 
-#### off('gesturesShare')
+## off('gesturesShare')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -978,6 +1046,7 @@ off(event: 'gesturesShare', callback?: Callback&lt;SharableTarget&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 事件回调类型，取值为'gesturesShare'，取消隔空传送的事件监听。 |
@@ -995,7 +1064,8 @@ private immersiveDisablingListening() {
  
   
 
-#### on('gesturesShare')
+## on('gesturesShare')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1011,6 +1081,7 @@ on(event: 'gesturesShare', capability: SendCapabilityRegistry, callback: Callbac
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 事件回调类型，取值为'gesturesShare'，当抓取握拳时，触发该事件。 |
@@ -1043,7 +1114,8 @@ private purityListening() {
  
   
 
-#### off('gesturesShare')
+## off('gesturesShare')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1059,6 +1131,7 @@ off(event: 'gesturesShare', capability: SendCapabilityRegistry, callback?: Callb
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 事件回调类型，取值为'gesturesShare'，取消隔空传送的事件监听。 |
@@ -1082,9 +1155,10 @@ private purityDisablingListening() {
  
   
 
-#### on('dataReceive')
+## on('dataReceive')
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** PC/2in1 | Tablet
 
 on(event: 'dataReceive', capability: RecvCapabilityRegistry, callback: Callback&lt;ReceivableTarget&gt;): void
  
@@ -1100,6 +1174,7 @@ on(event: 'dataReceive', capability: RecvCapabilityRegistry, callback: Callback&
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 事件回调类型，取值为'dataReceive'，当手机设备轻贴PC/2in1、Tablet设备屏幕时，触发该事件。 |
@@ -1164,9 +1239,10 @@ private dataReceiveListening() {
  
   
 
-#### off('dataReceive')
+## off('dataReceive')
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** PC/2in1 | Tablet
 
 off(event: 'dataReceive', capability: RecvCapabilityRegistry, callback?: Callback&lt;ReceivableTarget&gt;): void
  
@@ -1180,6 +1256,7 @@ off(event: 'dataReceive', capability: RecvCapabilityRegistry, callback?: Callbac
  
 **起始版本：** 6.0.0(20)
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 事件回调类型，取值为'dataReceive'，取消沙箱接收的事件监听。 |

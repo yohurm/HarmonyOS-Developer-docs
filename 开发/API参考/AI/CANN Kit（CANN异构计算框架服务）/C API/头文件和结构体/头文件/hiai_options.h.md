@@ -1,11 +1,12 @@
 # hiai_options.h
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/cannkit-hiai-options-8h
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -25,16 +26,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 枚举
+### 枚举
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | HiAI_FormatMode { HIAI_FORMAT_MODE_NCHW = 0, HIAI_FORMAT_MODE_ORIGIN = 1 } | 模型编译时数据的排列格式。 |
@@ -51,10 +55,12 @@
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_NN_ReturnCode HMS_HiAIOptions_SetInputTensorShapes (OH_NNCompilation *compilation, NN_TensorDesc *inputTensorDescs[], size_t shapeCount) | 编译时更新模型输入shape。 |

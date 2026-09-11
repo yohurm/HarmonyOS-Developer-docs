@@ -1,20 +1,21 @@
 # @ohos.bluetooth.map (蓝牙map模块)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bluetooth-map
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-本模块提供基于消息访问协议（Message Access Profile，[MAP](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#map)）的蓝牙消息访问能力，支持获取连接状态等方法。
+本模块提供基于消息访问协议（Message Access Profile，[MAP](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#map)）的蓝牙消息访问能力，支持创建MSE实例、获取和订阅设备间蓝牙消息服务连接状态等，适用于需要通过蓝牙协议进行消息访问与连接管理的场景。
 
 > [!NOTE]
 > 本模块首批接口从API version 11开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { map } from '@kit.ConnectivityKit';
@@ -22,15 +23,17 @@ import { map } from '@kit.ConnectivityKit';
 
 
 
-#### BaseProfile
+## BaseProfile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type BaseProfile = baseProfile.BaseProfile
 
 基础Profile接口定义，提供订阅和获取连接状态等公共能力。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -39,26 +42,29 @@ type BaseProfile = baseProfile.BaseProfile
 
 
 
-#### map.createMapMseProfile
+## map.createMapMseProfile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createMapMseProfile(): MapMseProfile
 
-创建蓝牙消息访问协议中的[MSE](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#mse)实例。通过该实例可使用本端作为MSE设备的接口，如：获取和其他设备间的蓝牙消息服务连接状态。
+创建蓝牙消息访问协议中的[MSE](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#mse)实例。通过该实例可使用本端作为MSE设备时提供的接口，如：获取和其他设备间的蓝牙消息服务连接状态。适用于蓝牙消息同步、车载蓝牙消息查看等场景。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| MapMseProfile | 返回该profile的实例。 |
+| MapMseProfile | 返回MapMseProfile实例，该实例可用于本端作为MSE设备进行蓝牙消息访问相关操作。 |
 
 
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -81,9 +87,10 @@ try {
 
 
 
-#### MapMseProfile
+## MapMseProfile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该实例表示蓝牙消息访问协议中的[MSE](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology#mse)角色。
 

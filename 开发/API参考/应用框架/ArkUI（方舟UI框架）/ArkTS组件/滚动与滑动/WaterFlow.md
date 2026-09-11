@@ -1,9 +1,9 @@
 # WaterFlow
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 瀑布流容器，由“行”和“列”分割的单元格所组成，通过容器自身的排列规则，将不同大小的“项目”自上而下，如瀑布般紧密布局。支持多列布局、分组混合布局、懒加载、自动计算列数和边缘渐隐等功能，适用于图片画廊、商品展示、内容信息流等需要展示不同尺寸内容的场景。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 仅支持[FlowItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-flowitem)子组件和自定义组件。自定义组件在WaterFlow下使用时，建议使用FlowItem作为自定义组件的顶层组件，不建议给自定义组件设置属性和事件方法。
 
@@ -26,9 +27,10 @@
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 WaterFlow(options?: WaterFlowOptions)
 
@@ -40,6 +42,7 @@ WaterFlow(options?: WaterFlowOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | WaterFlowOptions | 否 | 瀑布流组件参数，用于设置滚动控制器、尾部组件、分组和布局模式。 |
@@ -47,13 +50,15 @@ WaterFlow(options?: WaterFlowOptions)
 
 
 
-#### WaterFlowOptions对象说明
+## WaterFlowOptions对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 瀑布流组件参数对象。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -66,9 +71,10 @@ WaterFlow(options?: WaterFlowOptions)
 
 
 
-#### WaterFlowSections12+
+## WaterFlowSections12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 瀑布流分组信息。
 
@@ -78,9 +84,10 @@ WaterFlow(options?: WaterFlowOptions)
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -94,9 +101,10 @@ constructor()
 
 
 
-#### splice12+
+### splice12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 splice(start: number, deleteCount?: number, sections?: Array&lt;SectionOptions&gt;): boolean
 
@@ -110,6 +118,7 @@ splice(start: number, deleteCount?: number, sections?: Array&lt;SectionOptions&g
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | start | number | 是 | 从0开始计算的索引，会转换为整数，表示要开始改变分组的位置。 说明： 1. 如果索引是负数，则从末尾开始计算，使用start + WaterFlowSections.length()。 2. 如果 start < -WaterFlowSections.length()，则使用0。 3. 如果 start >= WaterFlowSections.length()，则在最后添加新分组。 |
@@ -119,6 +128,7 @@ splice(start: number, deleteCount?: number, sections?: Array&lt;SectionOptions&g
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 分组修改成功返回true；修改失败（要加入的分组中有任意分组的itemsCount不是非负数）返回false。 |
@@ -126,9 +136,10 @@ splice(start: number, deleteCount?: number, sections?: Array&lt;SectionOptions&g
 
 
 
-#### push12+
+### push12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 push(section: SectionOptions): boolean
 
@@ -142,12 +153,14 @@ push(section: SectionOptions): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | section | SectionOptions | 是 | 添加到瀑布流末尾的分组，包含该分组的FlowItem数量、列数/行数、间距、外边距和主轴大小回调等配置信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -156,9 +169,10 @@ push(section: SectionOptions): boolean
 
 
 
-#### update12+
+### update12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 update(sectionIndex: number, section: SectionOptions): boolean
 
@@ -172,6 +186,7 @@ update(sectionIndex: number, section: SectionOptions): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sectionIndex | number | 是 | 从0开始计算的索引，会转换为整数，表示要修改的分组的位置。 说明： 1. 如果索引是负数，则从末尾开始计算，使用sectionIndex + WaterFlowSections.length()。 2. 如果sectionIndex < -WaterFlowSections.length()，则使用0。 3. 如果sectionIndex >= WaterFlowSections.length()，则在最后添加新分组。 |
@@ -180,6 +195,7 @@ update(sectionIndex: number, section: SectionOptions): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 分组更新成功返回true，更新失败（新分组的itemsCount不是非负数）返回false。 |
@@ -187,9 +203,10 @@ update(sectionIndex: number, section: SectionOptions): boolean
 
 
 
-#### values12+
+### values12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 values(): Array&lt;SectionOptions&gt;
 
@@ -203,6 +220,7 @@ values(): Array&lt;SectionOptions&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;SectionOptions&gt; | 瀑布流中所有分组配置信息。 |
@@ -210,9 +228,10 @@ values(): Array&lt;SectionOptions&gt;
 
 
 
-#### length12+
+### length12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 length(): number
 
@@ -226,6 +245,7 @@ length(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 瀑布流中分组数量。 |
@@ -233,9 +253,10 @@ length(): number
 
 
 
-#### SectionOptions12+对象说明
+## SectionOptions12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 FlowItem分组配置信息。
 
@@ -244,6 +265,7 @@ FlowItem分组配置信息。
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -257,9 +279,10 @@ FlowItem分组配置信息。
 
 
 
-#### GetItemMainSizeByIndex12+
+## GetItemMainSizeByIndex12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type GetItemMainSizeByIndex = (index: number) => number
 
@@ -273,12 +296,14 @@ type GetItemMainSizeByIndex = (index: number) => number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | FlowItem在WaterFlow中的索引。 取值范围：[0, 子组件总数-1] |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -287,9 +312,10 @@ type GetItemMainSizeByIndex = (index: number) => number
 
 
 
-#### WaterFlowLayoutMode12+枚举说明
+## WaterFlowLayoutMode12+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 瀑布流组件布局模式枚举。
 
@@ -299,10 +325,12 @@ type GetItemMainSizeByIndex = (index: number) => number
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ALWAYS_TOP_DOWN | 0 | 默认的从上到下的布局模式。视窗内的FlowItem依赖视窗上方所有FlowItem的布局信息。因此跳转或切换列数时，需要计算出上方所有的FlowItem的布局信息。 |
 | SLIDING_WINDOW | 1 | 移动窗口式的布局模式。只考虑视窗内的布局信息，对视窗上方的FlowItem没有依赖关系，因此向后跳转或切换列数时只需要布局视窗内的FlowItem。建议优先采用该模式，尤其在应用需要支持屏幕旋转或动态切换列数的场景下。 说明： 1. 无动画跳转到较远的位置时，会以目标位置为基准，向前或向后布局FlowItem。这之后如果滑回跳转前的位置，内容的布局效果可能和之前不一致。这个效果会导致跳转后回滑到顶部时，顶部节点可能不对齐。 2. 使用SLIDING_WINDOW布局模式并设置WaterFlowSections分组时，滚动动画结束后，若视窗内包含分组起始位置，且检测到该分组在视窗内的列或行起始位置未对齐，或分组起始FlowItem与分组起始索引不一致，WaterFlow会重新计算布局以校正分组内容位置。 3. 使用SLIDING_WINDOW布局模式调用backToTop回到顶部操作时，若回顶动画结束后仍未到达顶部，WaterFlow会执行一次无动画的顶部校正，使内容重新对齐到起始位置。 4. scroller的currentOffset或offset接口返回的总偏移量在触发跳转或数据更新后不准确，在回滑到顶部时会重新校准，从API version 23开始，新增offset接口。 5. 如果在同一帧内调用跳转（如无动画的scrollToIndex、scrollEdge）和输入偏移量（如滑动手势或滚动动画），两者都会生效。 6. 调用无动画的scrollToIndex进行跳转，如果跳转到较远位置（超过视窗内的FlowItem数量的位置）时，移动窗口模式对总偏移量进行估算。 7. 仅在API version 18及以上版本中支持滚动条scrollBar显示。低于此版本时，设置滚动条将不显示。 |
+
 
 
 | 对比维度 | ALWAYS_TOP_DOWN (默认) | SLIDING_WINDOW |
@@ -319,9 +347,10 @@ type GetItemMainSizeByIndex = (index: number) => number
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)和[滚动组件通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scrollable-common#属性)外，还支持以下属性：
 
@@ -331,9 +360,10 @@ type GetItemMainSizeByIndex = (index: number) => number
 
 
 
-#### columnsTemplate
+### columnsTemplate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 columnsTemplate(value: string)
 
@@ -349,6 +379,7 @@ columnsTemplate(value: string)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string | 是 | 当前瀑布流组件布局列的数量。 默认值：'1fr' |
@@ -356,9 +387,10 @@ columnsTemplate(value: string)
 
 
 
-#### columnsTemplate22+
+### columnsTemplate22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 columnsTemplate(value: string | ItemFillPolicy)
 
@@ -378,6 +410,7 @@ columnsTemplate(value: string | ItemFillPolicy)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string \| ItemFillPolicy | 是 | 当前瀑布流组件布局列的数量。当value为ItemFillPolicy类型时，根据WaterFlow组件宽度对应断点类型自动确定列数。 |
@@ -385,9 +418,10 @@ columnsTemplate(value: string | ItemFillPolicy)
 
 
 
-#### rowsTemplate
+### rowsTemplate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 rowsTemplate(value: string)
 
@@ -403,6 +437,7 @@ rowsTemplate(value: string)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string | 是 | 当前瀑布流组件布局行的数量。 默认值：'1fr' |
@@ -410,9 +445,10 @@ rowsTemplate(value: string)
 
 
 
-#### itemConstraintSize
+### itemConstraintSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 itemConstraintSize(value: ConstraintSizeOptions)
 
@@ -424,6 +460,7 @@ itemConstraintSize(value: ConstraintSizeOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ConstraintSizeOptions | 是 | 约束尺寸。设置小于0的值，参数不生效。 说明： 1.同时设置itemConstraintSize和FlowItem的constraintSize属性时，minWidth/minHeight会取其中的最大值，maxWidth/maxHeight会取其中的最小值，调整后的值作为FlowItem的constraintSize处理。 2.只设置itemConstraintSize时，相当于对WaterFlow所有子组件设置了相同的constraintSize。 3.itemConstraintSize通过以上两种方式转换成FlowItem的constraintSize后的生效规则与通用属性constraintSize相同。 |
@@ -431,9 +468,10 @@ itemConstraintSize(value: ConstraintSizeOptions)
 
 
 
-#### columnsGap
+### columnsGap
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 columnsGap(value: Length)
 
@@ -445,6 +483,7 @@ columnsGap(value: Length)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Length | 是 | 列与列的间距。 默认值：0 单位：vp 取值范围：[0, +∞)，小于0时按0处理。 |
@@ -452,9 +491,10 @@ columnsGap(value: Length)
 
 
 
-#### rowsGap
+### rowsGap
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 rowsGap(value: Length)
 
@@ -466,6 +506,7 @@ rowsGap(value: Length)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Length | 是 | 行与行的间距。 默认值：0 单位：vp 取值范围：[0, +∞)，小于0时按0处理。 |
@@ -473,9 +514,10 @@ rowsGap(value: Length)
 
 
 
-#### layoutDirection
+### layoutDirection
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 layoutDirection(value: FlexDirection)
 
@@ -486,6 +528,7 @@ layoutDirection(value: FlexDirection)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -507,9 +550,10 @@ layoutDirection优先级高于rowsTemplate和columnsTemplate。根据layoutDirec
 
 
 
-#### enableScrollInteraction10+
+### enableScrollInteraction10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableScrollInteraction(value: boolean)
 
@@ -523,6 +567,7 @@ enableScrollInteraction(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否支持滚动手势。设置为true时可以通过手指或者鼠标滚动，设置为false时无法通过手指或者鼠标滚动，但不影响控制器Scroller的滚动接口。 默认值：true |
@@ -534,9 +579,10 @@ enableScrollInteraction(value: boolean)
 
 
 
-#### nestedScroll10+
+### nestedScroll10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 nestedScroll(value: NestedScrollOptions)
 
@@ -550,6 +596,7 @@ nestedScroll(value: NestedScrollOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | NestedScrollOptions | 是 | 嵌套滚动选项，用于设置前后两个方向的嵌套滚动模式，实现与父组件的滚动联动。 |
@@ -557,9 +604,10 @@ nestedScroll(value: NestedScrollOptions)
 
 
 
-#### friction10+
+### friction10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 friction(value: number | Resource)
 
@@ -573,6 +621,7 @@ friction(value: number | Resource)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| Resource | 是 | 摩擦系数。 默认值：非可穿戴设备为0.6，可穿戴设备为0.9。 从API version 11开始，非可穿戴设备默认值为0.7。 从API version 12开始，非可穿戴设备默认值为0.75。 取值范围：(0, +∞)，设置为小于等于0的值时，按默认值处理。 |
@@ -580,9 +629,10 @@ friction(value: number | Resource)
 
 
 
-#### cachedCount11+
+### cachedCount11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cachedCount(value: number)
 
@@ -598,6 +648,7 @@ cachedCount(value: number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 预加载的FlowItem的数量。 默认值：根据屏幕内显示的节点个数设置，最大值为16。 取值范围：[0, +∞)，设置为小于0的值时，按1处理。 |
@@ -605,9 +656,10 @@ cachedCount(value: number)
 
 
 
-#### cachedCount14+
+### cachedCount14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cachedCount(count: number, show: boolean)
 
@@ -625,6 +677,7 @@ cachedCount(count: number, show: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | count | number | 是 | 预加载的FlowItem的数量。 默认值：根据屏幕内显示的节点个数设置，最大值为16。 取值范围：[0, +∞)，设置为小于0的值时，按1处理。 |
@@ -633,9 +686,10 @@ cachedCount(count: number, show: boolean)
 
 
 
-#### syncLoad20+
+### syncLoad20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 syncLoad(enable: boolean)
 
@@ -649,6 +703,7 @@ syncLoad(enable: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | boolean | 是 | 是否同步加载WaterFlow区域内所有子组件。 true表示同步加载，false表示异步加载。 默认值：true。 说明： 设置为false时，在首次显示、不带动画scrollToIndex跳转场景，若当帧布局耗时超过50ms，会将WaterFlow区域内尚未布局的子组件延后到下一帧进行布局。 |
@@ -656,9 +711,10 @@ syncLoad(enable: boolean)
 
 
 
-#### supportEmptyBranchInLazyLoading
+### supportEmptyBranchInLazyLoading
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 supportEmptyBranchInLazyLoading(supported: boolean | undefined)
 
@@ -678,6 +734,7 @@ supportEmptyBranchInLazyLoading(supported: boolean | undefined)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | supported | boolean \| undefined | 是 | 当前WaterFlow组件是否支持在LazyForEach或Repeat中使用if/else渲染控制语法生成一个不含任何子组件的空分支节点。 true表示显示空分支后的FlowItem；false表示不显示空分支后的FlowItem。 值为undefined时，按false处理。 |
@@ -685,17 +742,19 @@ supportEmptyBranchInLazyLoading(supported: boolean | undefined)
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)和[滚动组件通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scrollable-common#事件)外，还支持以下事件：
 
 
 
-#### onReachStart
+### onReachStart
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onReachStart(event: () => void)
 
@@ -707,6 +766,7 @@ onReachStart(event: () => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | () => void | 是 | 瀑布流内容到达起始位置时触发的回调。 |
@@ -714,9 +774,10 @@ onReachStart(event: () => void)
 
 
 
-#### onReachEnd
+### onReachEnd
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onReachEnd(event: () => void)
 
@@ -728,6 +789,7 @@ onReachEnd(event: () => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | () => void | 是 | 瀑布流内容到达末尾位置时触发的回调。 |
@@ -735,9 +797,10 @@ onReachEnd(event: () => void)
 
 
 
-#### onScrollFrameBegin10+
+### onScrollFrameBegin10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onScrollFrameBegin(event: OnScrollFrameBeginCallback)
 
@@ -761,6 +824,7 @@ onScrollFrameBegin(event: OnScrollFrameBeginCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | OnScrollFrameBeginCallback | 是 | 每帧滚动开始回调函数。 |
@@ -768,9 +832,10 @@ onScrollFrameBegin(event: OnScrollFrameBeginCallback)
 
 
 
-#### onScrollIndex11+
+### onScrollIndex11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onScrollIndex(event: (first: number, last: number) => void)
 
@@ -790,6 +855,7 @@ onScrollIndex(event: (first: number, last: number) => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | first | number | 是 | 当前显示的瀑布流起始位置的索引值。 正常取值范围：[0, 子组件总数-1]。列表为空时存在特殊取值，详见下表。 |
@@ -800,6 +866,7 @@ onScrollIndex(event: (first: number, last: number) => void)
 
 当WaterFlow列表为空时，使用不同的WaterFlowOptions参数会导致onScrollIndex事件的返回值有所不同。具体差异请参见下表：
 
+
 | layoutMode | sections | first | last |
 | --- | --- | --- | --- |
 | ALWAYS_TOP_DOWN | 无 | 0 | 0 |
@@ -809,9 +876,10 @@ onScrollIndex(event: (first: number, last: number) => void)
 
 
 
-#### UIWaterFlowEvent19+
+## UIWaterFlowEvent19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 frameNode中[getEvent('WaterFlow')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#geteventwaterflow19)方法的返回值，可用于给WaterFlow节点设置滚动事件。
 
@@ -819,9 +887,10 @@ UIWaterFlowEvent继承于[UIScrollableCommonEvent](https://developer.huawei.com/
 
 
 
-#### setOnWillScroll19+
+### setOnWillScroll19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setOnWillScroll(callback: OnWillScrollCallback | undefined): void
 
@@ -837,6 +906,7 @@ setOnWillScroll(callback: OnWillScrollCallback | undefined): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | OnWillScrollCallback \| undefined | 是 | onWillScroll事件的回调函数。 |
@@ -844,9 +914,10 @@ setOnWillScroll(callback: OnWillScrollCallback | undefined): void
 
 
 
-#### setOnDidScroll19+
+### setOnDidScroll19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setOnDidScroll(callback: OnScrollCallback | undefined): void
 
@@ -866,6 +937,7 @@ setOnDidScroll(callback: OnScrollCallback | undefined): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | OnScrollCallback \| undefined | 是 | onDidScroll事件的回调函数。 |
@@ -873,9 +945,10 @@ setOnDidScroll(callback: OnScrollCallback | undefined): void
 
 
 
-#### setOnScrollIndex19+
+### setOnScrollIndex19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setOnScrollIndex(callback: OnWaterFlowScrollIndexCallback | undefined): void
 
@@ -891,6 +964,7 @@ setOnScrollIndex(callback: OnWaterFlowScrollIndexCallback | undefined): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | OnWaterFlowScrollIndexCallback \| undefined | 是 | onScrollIndex事件的回调函数。 |
@@ -898,9 +972,10 @@ setOnScrollIndex(callback: OnWaterFlowScrollIndexCallback | undefined): void
 
 
 
-#### OnWaterFlowScrollIndexCallback19+
+## OnWaterFlowScrollIndexCallback19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnWaterFlowScrollIndexCallback = (first: number, last: number) => void
 
@@ -914,6 +989,7 @@ WaterFlow组件可见区域item变化事件的回调类型。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | first | number | 是 | 当前显示的瀑布流起始位置的索引值。 正常取值范围：[0, 子组件总数-1]。列表为空时存在特殊取值，详见onScrollIndex事件说明。 |
@@ -922,13 +998,17 @@ WaterFlow组件可见区域item变化事件的回调类型。
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（使用基本瀑布流）
+
+
+### 示例1（使用基本瀑布流）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示了WaterFlow组件数据加载处理、属性设置和事件回调等基本使用场景。
 
@@ -1227,7 +1307,10 @@ struct WaterFlowDemo {
 
 
 
-#### 示例2（自动计算列数）
+### 示例2（自动计算列数）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过auto-fill实现了自动计算列数的效果。
 
@@ -1303,7 +1386,10 @@ struct WaterFlowDemo {
 
 
 
-#### 示例3（使用分组）
+### 示例3（使用分组）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示了分组的初始化以及splice、update、values、length等接口的不同效果。
 
@@ -1364,7 +1450,7 @@ struct WaterFlowDemo {
   oneColumnSection: SectionOptions = {
     itemsCount: 4,                     // 该分组包含4个FlowItem
     crossCount: 1,                     // 使用1列布局
-    columnsGap: '5vp',
+    columnsGap: 5,
     rowsGap: 10,
     margin: this.sectionMargin,
     // 回调函数：动态设置每个item的高度
@@ -1564,7 +1650,10 @@ struct WaterFlowDemo {
 
 
 
-#### 示例4（双指缩放改变列数）
+### 示例4（双指缩放改变列数）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[priorityGesture](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-gesture-settings#prioritygesture)和[PinchGesture](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-gestures-pinchgesture)实现了双指缩放改变列数效果。
 
@@ -1770,7 +1859,10 @@ struct WaterFlowDemo {
 
 
 
-#### 示例5（设置边缘渐隐效果）
+### 示例5（设置边缘渐隐效果）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[fadingEdge](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scrollable-common#fadingedge14)实现了WaterFlow组件开启边缘渐隐效果，并通过fadingEdgeLength参数设置边缘渐隐长度。
 
@@ -1847,7 +1939,10 @@ struct WaterFlowDemo {
 
 
 
-#### 示例6（单边边缘效果）
+### 示例6（单边边缘效果）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[edgeEffect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scrollable-common#edgeeffect11)接口，实现了WaterFlow组件设置单边边缘效果。
 
@@ -1924,7 +2019,10 @@ struct WaterFlowDemo {
 
 
 
-#### 示例7（WaterFlow组件设置和改变尾部组件）
+### 示例7（WaterFlow组件设置和改变尾部组件）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 18开始，该示例通过[WaterFlowOptions对象说明](#waterflowoptions对象说明)的footerContent接口，实现了WaterFlow组件设置尾部组件。通过[ComponentContent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-componentcontent)的update函数更新尾部组件。
 
@@ -2039,7 +2137,10 @@ struct Index {
 
 
 
-#### 示例8（WaterFlow组件实现下拉刷新）
+### 示例8（WaterFlow组件实现下拉刷新）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[Refresh](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-refresh)组件和WaterFlow组件，实现了下拉刷新瀑布流组件数据源。
 
@@ -2134,7 +2235,10 @@ struct WaterFlowDemo {
 
 
 
-#### 示例9（WaterFlow组件基于断点配置列数）
+### 示例9（WaterFlow组件基于断点配置列数）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 22开始，该示例展示了WaterFlow组件支持基于断点配置列数效果。
 
@@ -2222,7 +2326,10 @@ WaterFlow宽度属于lg及更大的断点区间时显示5列。
 
 
 
-#### 示例10（WaterFlow组件实现获取内容高度）
+### 示例10（WaterFlow组件实现获取内容高度）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 22 开始，该示例通过WaterFlow组件，实现了获取内容高度。
 
@@ -2331,7 +2438,10 @@ struct WaterFlowContentSizeDemo {
 
 
 
-#### 示例11（设置滚动事件）
+### 示例11（设置滚动事件）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过FrameNode中的[getEvent('WaterFlow')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#geteventwaterflow19)获取[UIWaterFlowEvent](#uiwaterflowevent19)，并为WaterFlow设置滚动事件回调，用于事件监听方因无法直接修改页面代码而无法使用声明式接口设置回调的场景。
 

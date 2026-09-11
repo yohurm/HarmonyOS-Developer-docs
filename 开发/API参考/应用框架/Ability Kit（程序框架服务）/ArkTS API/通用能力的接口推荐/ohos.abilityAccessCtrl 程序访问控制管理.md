@@ -1,9 +1,9 @@
 # @ohos.abilityAccessCtrl (程序访问控制管理)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-abilityaccessctrl
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 程序访问控制提供应用程序的权限校验和管理能力，支持应用在访问受保护资源前进行权限状态判断、运行时授权申请、设置页授权引导和权限状态变化监听。权限分为system_grant（系统自动授权）、user_grant（需用户手动授权）和[manual_settings](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-permission-mgmt-overview#manual_settings手动设置授权)（手动设置授权）三类，应用需在配置文件中声明所需权限。权限管理机制详见[应用权限管控概述](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-permission-mgmt-overview)。
 
@@ -19,13 +19,17 @@
 
 
 
-#### 关键Class/Interface介绍
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 关键Class/Interface介绍
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 核心枚举类型
+
+
+### 核心枚举类型
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
  - **[GrantStatus](#grantstatus)：** 权限授权状态枚举，用于表示当前权限的授权状态。
  - **[SwitchType](#switchtype12)：** 全局开关类型枚举，用于表示需要请求的系统全局开关类型。
@@ -36,7 +40,10 @@
 
 
 
-#### 核心接口类型
+### 核心接口类型
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
  - **[PermissionStateChangeInfo](#permissionstatechangeinfo18)：** 权限状态变化事件对象，用于返回变化类型、应用身份标识和权限名。
  - **[PermissionRequestResult](#permissionrequestresult10)：** 权限申请结果对象，用于返回权限申请后的权限名列表、授权结果和弹窗展示结果。
@@ -45,7 +52,10 @@
 
 
 
-#### 核心类
+### 核心类
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
  - **[AtManager](#atmanager)：** 程序访问控制管理类，提供权限校验、权限弹窗申请、设置页授权引导和权限状态监听等能力。
 
@@ -56,7 +66,10 @@
 
 
 
-#### API组合使用关系说明
+### API组合使用关系说明
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 场景1：访问受保护资源前申请授权。
 
@@ -139,9 +152,10 @@ atManager.off('selfPermissionStateChange', permissionList, callback);
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { abilityAccessCtrl } from '@kit.AbilityKit';
@@ -149,9 +163,10 @@ import { abilityAccessCtrl } from '@kit.AbilityKit';
 
 
 
-#### abilityAccessCtrl.createAtManager
+## abilityAccessCtrl.createAtManager
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createAtManager(): AtManager
 
@@ -162,6 +177,7 @@ createAtManager(): AtManager
 **系统能力：** SystemCapability.Security.AccessToken
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -177,17 +193,19 @@ let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager()
 
 
 
-#### AtManager
+## AtManager
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 程序访问控制管理类，提供权限校验、运行时权限弹窗申请、设置页授权引导、全局开关请求和权限状态监听等能力。通过[createAtManager](#abilityaccessctrlcreateatmanager)获取实例。
 
 
 
-#### checkAccessToken9+
+### checkAccessToken9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checkAccessToken(tokenID: number, permissionName: Permissions): Promise&lt;GrantStatus&gt;
 
@@ -201,6 +219,7 @@ checkAccessToken(tokenID: number, permissionName: Permissions): Promise&lt;Grant
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | tokenID | number | 是 | 要校验的目标应用的身份标识。可通过bundleManager.getBundleInfoSync获取；若校验本应用，也可通过bundleManager.getBundleInfoForSelfSync获取。该参数必须为大于0的整数，传入0时返回错误码12100001。 |
@@ -208,6 +227,7 @@ checkAccessToken(tokenID: number, permissionName: Permissions): Promise&lt;Grant
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -217,6 +237,7 @@ checkAccessToken(tokenID: number, permissionName: Permissions): Promise&lt;Grant
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[访问控制错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-access-token)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -248,9 +269,10 @@ atManager.checkAccessToken(tokenID, permissionName).then((data: abilityAccessCtr
 
 
 
-#### checkAccessTokenSync10+
+### checkAccessTokenSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checkAccessTokenSync(tokenID: number, permissionName: Permissions): GrantStatus
 
@@ -266,6 +288,7 @@ checkAccessTokenSync(tokenID: number, permissionName: Permissions): GrantStatus
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | tokenID | number | 是 | 要校验的目标应用的身份标识。可通过bundleManager.getBundleInfoSync获取；若校验本应用，也可通过bundleManager.getBundleInfoForSelfSync获取。该参数必须为大于0的整数，传入0时返回错误码12100001。 |
@@ -273,6 +296,7 @@ checkAccessTokenSync(tokenID: number, permissionName: Permissions): GrantStatus
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -282,6 +306,7 @@ checkAccessTokenSync(tokenID: number, permissionName: Permissions): GrantStatus
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[访问控制错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-access-token)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -309,9 +334,10 @@ console.info(`Result: ${data}`);
 
 
 
-#### on18+
+### on18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'selfPermissionStateChange', permissionList: Array&lt;Permissions&gt;, callback: Callback&lt;PermissionStateChangeInfo&gt;): void
 
@@ -335,6 +361,7 @@ on(type: 'selfPermissionStateChange', permissionList: Array&lt;Permissions&gt;, 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅事件类型，固定为'selfPermissionStateChange'，自身权限状态变更事件。 |
@@ -346,13 +373,14 @@ on(type: 'selfPermissionStateChange', permissionList: Array&lt;Permissions&gt;, 
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[访问控制错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-access-token)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 12100001 | Invalid parameter. Possible causes: 1. The permissionList exceeds the size limit; 2. The permissionNames in the list are all invalid. |
 | 12100004 | The API is used repeatedly with the same input. |
 | 12100005 | The registration time has exceeded the limit. |
-| 12100007 | The service is abnormal. |
+| 12100007 | Service exception. |
 
 
 **示例：**
@@ -379,9 +407,10 @@ try {
 
 
 
-#### off18+
+### off18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'selfPermissionStateChange', permissionList: Array&lt;Permissions&gt;, callback?: Callback&lt;PermissionStateChangeInfo&gt;): void
 
@@ -399,6 +428,7 @@ off(type: 'selfPermissionStateChange', permissionList: Array&lt;Permissions&gt;,
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 取消订阅事件类型，固定为'selfPermissionStateChange'，权限状态变更事件。 |
@@ -410,11 +440,12 @@ off(type: 'selfPermissionStateChange', permissionList: Array&lt;Permissions&gt;,
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[访问控制错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-access-token)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 12100004 | The API is not used in pair with "on". |
-| 12100007 | The service is abnormal. |
+| 12100007 | Service exception. |
 
 
 **示例：**
@@ -438,15 +469,16 @@ try {
 
 
 
-#### requestPermissionsFromUser9+
+### requestPermissionsFromUser9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestPermissionsFromUser(context: Context, permissionList: Array&lt;Permissions&gt;, requestCallback: AsyncCallback&lt;PermissionRequestResult&gt;): void
 
 用于UIAbility/UIExtensionAbility拉起弹窗请求[用户授权](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/request-user-authorization)，返回本次请求权限的授权结果。使用callback异步回调。
 
-适用于应用首次访问受保护资源前主动向用户申请 [user_grant](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-permission-mgmt-overview#user_grant用户授权) 权限的场景。
+适用于应用首次访问受保护资源前主动向用户申请[user_grant](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-permission-mgmt-overview#user_grant用户授权)权限的场景。
 
 如果用户拒绝授权，将无法通过此接口再次拉起授权弹窗。开发者可引导用户前往系统设置界面手动授权，或调用[requestPermissionOnSetting](#requestpermissiononsetting12)拉起权限设置弹窗，引导用户完成授权。
 
@@ -462,6 +494,7 @@ requestPermissionsFromUser(context: Context, permissionList: Array&lt;Permission
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 请求权限的UIAbility/UIExtensionAbility的Context。若传入其他应用、无效页面或非Stage模型的Context，接口可能报错或无法拉起弹窗。 |
@@ -472,6 +505,7 @@ requestPermissionsFromUser(context: Context, permissionList: Array&lt;Permission
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[访问控制错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-access-token)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -510,15 +544,16 @@ atManager.requestPermissionsFromUser(context, ['ohos.permission.CAMERA'], (err: 
 
 
 
-#### requestPermissionsFromUser9+
+### requestPermissionsFromUser9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestPermissionsFromUser(context: Context, permissionList: Array&lt;Permissions&gt;): Promise&lt;PermissionRequestResult&gt;
 
 用于UIAbility/UIExtensionAbility拉起弹窗请求[用户授权](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/request-user-authorization)，返回本次请求权限的授权结果。使用Promise异步回调。
 
-适用于应用首次访问受保护资源前主动向用户申请user_grant权限的场景。
+适用于应用首次访问受保护资源前主动向用户申请[user_grant](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-permission-mgmt-overview#user_grant用户授权)权限的场景。
 
 如果用户拒绝授权，将无法通过此接口再次拉起授权弹窗。开发者可引导用户前往系统设置界面手动授权，或调用[requestPermissionOnSetting](#requestpermissiononsetting12)拉起权限设置弹窗，引导用户完成授权。
 
@@ -530,6 +565,7 @@ requestPermissionsFromUser(context: Context, permissionList: Array&lt;Permission
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 请求权限的UIAbility/UIExtensionAbility的Context。若传入其他应用、无效页面或非Stage模型的Context，接口可能报错或无法拉起弹窗。 |
@@ -537,6 +573,7 @@ requestPermissionsFromUser(context: Context, permissionList: Array&lt;Permission
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -547,11 +584,12 @@ requestPermissionsFromUser(context: Context, permissionList: Array&lt;Permission
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[访问控制错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-access-token)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 12100001 | (Deprecated in 12) Invalid parameter. The context is invalid when it does not belong to the application itself. |
-| 12100009 | Common inner error. An error occurs when creating the pop-up window or obtaining user operation results. |
+| 12100009 | Common inner error. An error occurs when creating the pop-up window or obtaining the user operation result. 适用版本：11+ |
 
 
 **示例：**
@@ -582,9 +620,10 @@ atManager.requestPermissionsFromUser(context, ['ohos.permission.CAMERA']).then((
 
 
 
-#### requestPermissionOnSetting12+
+### requestPermissionOnSetting12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestPermissionOnSetting(context: Context, permissionList: Array&lt;Permissions&gt;): Promise<Array&lt;GrantStatus&gt;>
 
@@ -595,7 +634,7 @@ requestPermissionOnSetting(context: Context, permissionList: Array&lt;Permission
 在调用此接口前，应用需要先调用[requestPermissionsFromUser](#requestpermissionsfromuser9)。如果用户已在首次弹窗中授权，则调用当前接口不会拉起授权弹窗。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/w_QrNZIrT4mdULZJmoaflg/zh-cn_image_0000002655848240.png?HW-CC-KV=V1&HW-CC-Date=20260730T071422Z&HW-CC-Expire=86400&HW-CC-Sign=93DE1141BA8B84FCF6CFC63241455AE85BBB3A48E027E6AFFE47F9E1E47BC07F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/0R557RW2Suq0tnDj_C9HGw/zh-cn_image_0000002747292313.png?HW-CC-KV=V1&HW-CC-Date=20260911T072826Z&HW-CC-Expire=86400&HW-CC-Sign=86112345D46567C0B771F6DD942AB4E98DEE33BFC22377B9C40C6F8720FD0C90)
 
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -606,6 +645,7 @@ requestPermissionOnSetting(context: Context, permissionList: Array&lt;Permission
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 请求权限的UIAbility/UIExtensionAbility的Context。若传入其他应用、无效页面或非Stage模型的Context，接口可能报错或无法拉起弹窗。 |
@@ -613,6 +653,7 @@ requestPermissionOnSetting(context: Context, permissionList: Array&lt;Permission
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -623,13 +664,15 @@ requestPermissionOnSetting(context: Context, permissionList: Array&lt;Permission
 
 以下错误码的详细介绍请参见[访问控制错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-access-token)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 12100001 | Invalid parameter. Possible causes: 1. The context is invalid because it does not belong to the application itself; 2. The permission list contains the permission that is not declared in the module.json file; 3. The permission list is invalid because the permissions in it do not belong to the same permission group; 4. The permission list contains one or more system_grant permissions. |
-| 12100009 | Common inner error. An error occurs when creating the pop-up window or obtaining user operation result. |
+| 12100009 | Common inner error. An error occurs when creating the pop-up window or obtaining the user operation result. |
+| 12100010 | The request already exists. 适用版本：12-20 |
 | 12100011 | All permissions in the permission list have been granted. |
 | 12100012 | The permission list contains the permission that has not been revoked by the user. |
-| 12100014 | Unexpected permission. You cannot request this type of permission from users via a pop-up window. |
+| 12100014 | Unexpected permission. You cannot request this type of permission from users via a pop-up window. 适用版本：21+ |
 
 
 **示例：**
@@ -654,9 +697,10 @@ atManager.requestPermissionOnSetting(context, ['ohos.permission.CAMERA']).then((
 
 
 
-#### requestGlobalSwitch12+
+### requestGlobalSwitch12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestGlobalSwitch(context: Context, type: SwitchType): Promise&lt;boolean&gt;
 
@@ -667,7 +711,7 @@ requestGlobalSwitch(context: Context, type: SwitchType): Promise&lt;boolean&gt;
 当应用需要使用相机、麦克风或定位等需要全局开关管控的功能时，如果对应的全局开关被关闭，应用可拉起此弹窗请求用户开启对应功能。如果当前全局开关的状态为开启，则不拉起弹窗。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/hKX6UjSyTCeWbW7trEuNJQ/zh-cn_image_0000002686087669.png?HW-CC-KV=V1&HW-CC-Date=20260730T071422Z&HW-CC-Expire=86400&HW-CC-Sign=228887AC4763678A742DAE7EE23C7AEAD2C14D2C2BB22704809BA43562528694)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/6FRI7GneQrmUasCG17d0eA/zh-cn_image_0000002747212229.png?HW-CC-KV=V1&HW-CC-Date=20260911T072826Z&HW-CC-Expire=86400&HW-CC-Sign=AA47CED9C26B4A38F9F3E29076D231229A404638271EC516FFFEBC37808F13A9)
 
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -678,6 +722,7 @@ requestGlobalSwitch(context: Context, type: SwitchType): Promise&lt;boolean&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 请求全局开关的UIAbility/UIExtensionAbility的Context。若传入其他应用、无效页面或非Stage模型的Context，接口可能报错或无法拉起弹窗。 |
@@ -685,6 +730,7 @@ requestGlobalSwitch(context: Context, type: SwitchType): Promise&lt;boolean&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -695,10 +741,11 @@ requestGlobalSwitch(context: Context, type: SwitchType): Promise&lt;boolean&gt;
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[访问控制错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-access-token)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-| 12100001 | Invalid parameter. Possible causes: 1. The context is invalid because it does not belong to the application itself; 2. The type of global switch is not support. |
+| 12100001 | Invalid parameter. Possible causes: 1. The context is invalid because it does not belong to the application itself; 2. The type of global switch is not supported. |
 | 12100009 | Common inner error. An error occurs when creating the pop-up window or obtaining user operation result. |
 | 12100013 | The specific global switch is already open. |
 
@@ -725,9 +772,10 @@ atManager.requestGlobalSwitch(context, abilityAccessCtrl.SwitchType.CAMERA).then
 
 
 
-#### getSelfPermissionStatus20+
+### getSelfPermissionStatus20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSelfPermissionStatus(permissionName: Permissions): PermissionStatus
 
@@ -741,12 +789,14 @@ getSelfPermissionStatus(permissionName: Permissions): PermissionStatus
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | permissionName | Permissions | 是 | 需要查询状态的权限名称。权限名不能为空，且长度不能超过256个字符，传入无效值时返回错误码12100001。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -757,10 +807,11 @@ getSelfPermissionStatus(permissionName: Permissions): PermissionStatus
 
 以下错误码的详细介绍请参见[访问控制错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-access-token)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 12100001 | Invalid parameter. The permissionName is empty or exceeds 256 characters. |
-| 12100007 | The service is abnormal. |
+| 12100007 | Service exception. |
 
 
 **示例：**
@@ -783,9 +834,10 @@ try {
 
 
 
-#### openPermissionOnSetting22+
+### openPermissionOnSetting22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 openPermissionOnSetting(context: Context, permission: Permissions): Promise&lt;SelectedResult&gt;
 
@@ -799,6 +851,7 @@ openPermissionOnSetting(context: Context, permission: Permissions): Promise&lt;S
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 请求权限的UIAbility/UIExtensionAbility的Context。若传入其他应用、无效页面或非Stage模型的Context，接口可能报错或无法打开设置页面。 |
@@ -806,6 +859,7 @@ openPermissionOnSetting(context: Context, permission: Permissions): Promise&lt;S
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -816,10 +870,11 @@ openPermissionOnSetting(context: Context, permission: Permissions): Promise&lt;S
 
 以下错误码的详细介绍请参见[访问控制错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-access-token)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 12100001 | Invalid parameter. Possible causes: 1. The context is invalid because it does not belong to the application itself; 2. The permission is invalid or not declared in the module.json file. |
-| 12100009 | Common inner error. An error occurs when creating the pop-up window or obtaining user operation result. |
+| 12100009 | Common inner error. An error occurs when creating the pop-up window or obtaining the user operation result. |
 | 12100014 | Unexpected permission. The permission is not a manual_settings permission. |
 
 
@@ -845,9 +900,10 @@ atManager.openPermissionOnSetting(context, 'ohos.permission.HOOK_KEY_EVENT').the
 
 
 
-#### verifyAccessTokenSync9+
+### verifyAccessTokenSync9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 verifyAccessTokenSync(tokenID: number, permissionName: Permissions): GrantStatus
 
@@ -861,6 +917,7 @@ verifyAccessTokenSync(tokenID: number, permissionName: Permissions): GrantStatus
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | tokenID | number | 是 | 要校验的目标应用的身份标识。可通过bundleManager.getBundleInfoSync获取；若校验本应用，也可通过bundleManager.getBundleInfoForSelfSync获取。该参数必须为大于0的整数，传入0时返回错误码12100001。 |
@@ -868,6 +925,7 @@ verifyAccessTokenSync(tokenID: number, permissionName: Permissions): GrantStatus
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -877,6 +935,7 @@ verifyAccessTokenSync(tokenID: number, permissionName: Permissions): GrantStatus
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[访问控制错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-access-token)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -910,9 +969,10 @@ try {
 
 
 
-#### verifyAccessToken9+
+### verifyAccessToken9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 verifyAccessToken(tokenID: number, permissionName: Permissions): Promise&lt;GrantStatus&gt;
 
@@ -928,6 +988,7 @@ verifyAccessToken(tokenID: number, permissionName: Permissions): Promise&lt;Gran
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | tokenID | number | 是 | 要校验的目标应用的身份标识。可通过bundleManager.getBundleInfoSync获取；若校验本应用，也可通过bundleManager.getBundleInfoForSelfSync获取。该参数必须为大于0的整数，传入0时返回错误码12100001。 |
@@ -935,6 +996,7 @@ verifyAccessToken(tokenID: number, permissionName: Permissions): Promise&lt;Gran
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -965,9 +1027,10 @@ atManager.verifyAccessToken(tokenID, permissionName).then((data: abilityAccessCt
 
 
 
-#### verifyAccessToken(deprecated)
+### verifyAccessToken(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 verifyAccessToken(tokenID: number, permissionName: string): Promise&lt;GrantStatus&gt;
 
@@ -981,6 +1044,7 @@ verifyAccessToken(tokenID: number, permissionName: string): Promise&lt;GrantStat
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | tokenID | number | 是 | 要校验的目标应用的身份标识。可通过bundleManager.getBundleInfoSync获取；若校验本应用，也可通过bundleManager.getBundleInfoForSelfSync获取。该参数必须为大于0的整数，传入0时返回错误码12100001。 |
@@ -988,6 +1052,7 @@ verifyAccessToken(tokenID: number, permissionName: string): Promise&lt;GrantStat
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1018,15 +1083,17 @@ atManager.verifyAccessToken(tokenID, permissionName).then((data: abilityAccessCt
 
 
 
-#### GrantStatus
+## GrantStatus
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示授权状态的枚举。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.AccessToken
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1036,15 +1103,19 @@ atManager.verifyAccessToken(tokenID, permissionName).then((data: abilityAccessCt
 
 
 
-#### SwitchType12+
+## SwitchType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示全局开关类型的枚举。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.AccessToken
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1055,15 +1126,17 @@ atManager.verifyAccessToken(tokenID, permissionName).then((data: abilityAccessCt
 
 
 
-#### PermissionStateChangeType18+
+## PermissionStateChangeType18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示权限授权状态变化操作类型的枚举。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.AccessToken
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1073,15 +1146,17 @@ atManager.verifyAccessToken(tokenID, permissionName).then((data: abilityAccessCt
 
 
 
-#### PermissionStateChangeInfo18+
+## PermissionStateChangeInfo18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示某次权限授权状态变化的详情。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.AccessToken
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1092,9 +1167,10 @@ atManager.verifyAccessToken(tokenID, permissionName).then((data: abilityAccessCt
 
 
 
-#### PermissionRequestResult10+
+## PermissionRequestResult10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type PermissionRequestResult = _PermissionRequestResult
 
@@ -1106,6 +1182,7 @@ type PermissionRequestResult = _PermissionRequestResult
 
 **系统能力：** SystemCapability.Security.AccessToken
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _PermissionRequestResult | 权限请求结果对象，包含申请的权限名列表、每个权限的授权结果、弹窗展示结果及失败原因等信息。 |
@@ -1113,9 +1190,10 @@ type PermissionRequestResult = _PermissionRequestResult
 
 
 
-#### Context10+
+## Context10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type Context = _Context
 
@@ -1127,6 +1205,7 @@ type Context = _Context
 
 **系统能力：** SystemCapability.Security.AccessToken
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _Context | 提供Ability或Application的上下文，可用于访问应用程序的资源。 |
@@ -1134,15 +1213,17 @@ type Context = _Context
 
 
 
-#### PermissionStatus20+
+## PermissionStatus20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示权限状态的枚举。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Security.AccessToken
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1155,13 +1236,17 @@ type Context = _Context
 
 
 
-#### SelectedResult22+
+## SelectedResult22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示跳转设置页弹窗结果的枚举。
 
 **系统能力：** SystemCapability.Security.AccessToken
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

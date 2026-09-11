@@ -1,6 +1,6 @@
 # @ohos.advertising (广告服务框架)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-advertising
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -12,7 +12,8 @@
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -22,7 +23,8 @@ import { advertising } from '@kit.AdsKit';
 
 
 
-#### advertising.showAd
+## advertising.showAd
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -36,6 +38,7 @@ showAd(ad: Advertisement, options: AdDisplayOptions, context?: common.UIAbilityC
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ad | Advertisement | 是 | 广告对象。 |
@@ -46,6 +49,7 @@ showAd(ad: Advertisement, options: AdDisplayOptions, context?: common.UIAbilityC
 **错误码：**
 
 以下错误码的详细介绍请参见[广告服务框架错误码参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ads)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -76,7 +80,8 @@ function showAd(ad: advertising.Advertisement, context?: common.UIAbilityContext
 
 
 
-#### advertising.getAdRequestBody12+
+## advertising.getAdRequestBody12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -88,6 +93,7 @@ getAdRequestBody(adParams: AdRequestParams[], adOptions: AdOptions): Promise&lt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | adParams | AdRequestParams[] | 是 | 广告请求参数。 说明： 该接口体的adId参数可以为空。 |
@@ -95,6 +101,7 @@ getAdRequestBody(adParams: AdRequestParams[], adOptions: AdOptions): Promise&lt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -104,6 +111,7 @@ getAdRequestBody(adParams: AdRequestParams[], adOptions: AdOptions): Promise&lt;
 **错误码：**
 
 以下错误码的详细介绍请参见[广告服务框架错误码参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ads)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -132,7 +140,8 @@ async function getAdRequestBody(adRequestParamsArray: advertising.AdRequestParam
 
 
 
-#### advertising.parseAdResponse12+
+## advertising.parseAdResponse12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -144,6 +153,7 @@ parseAdResponse(adResponse: string, listener: MultiSlotsAdLoadListener, context:
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | adResponse | string | 是 | 广告响应体。 |
@@ -154,6 +164,7 @@ parseAdResponse(adResponse: string, listener: MultiSlotsAdLoadListener, context:
 **错误码：**
 
 以下错误码的详细介绍请参见[广告服务框架错误码参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ads)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -192,7 +203,8 @@ function parseAdResponse(adResponse: string, context: common.UIAbilityContext): 
 
 
 
-#### advertising.registerWebAdInterface12+
+## advertising.registerWebAdInterface12+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -206,6 +218,7 @@ registerWebAdInterface(controller: web_webview.WebviewController, context: commo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | controller | web_webview.WebviewController | 是 | Web组件控制器。 |
@@ -215,6 +228,7 @@ registerWebAdInterface(controller: web_webview.WebviewController, context: commo
 **错误码：**
 
 以下错误码的详细介绍请参见[广告服务框架错误码参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ads)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -253,7 +267,8 @@ struct Index {
 
 
 
-#### advertising.registerWebAdInterface16+
+## advertising.registerWebAdInterface16+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -267,6 +282,7 @@ registerWebAdInterface(controller: web_webview.WebviewController, context: commo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | controller | web_webview.WebviewController | 是 | Web组件控制器。 |
@@ -277,6 +293,7 @@ registerWebAdInterface(controller: web_webview.WebviewController, context: commo
 **错误码：**
 
 以下错误码的详细介绍请参见[广告服务框架错误码参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ads)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -315,7 +332,8 @@ struct Index {
 
 
 
-#### advertising.deleteWebAdInterface16+
+## advertising.deleteWebAdInterface16+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -329,6 +347,7 @@ deleteWebAdInterface(controller: web_webview.WebviewController, needRefresh: boo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | controller | web_webview.WebviewController | 是 | Web组件控制器。 |
@@ -338,6 +357,7 @@ deleteWebAdInterface(controller: web_webview.WebviewController, needRefresh: boo
 **错误码：**
 
 以下错误码的详细介绍请参见[广告服务框架错误码参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ads)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -373,7 +393,8 @@ struct Index {
 
 
 
-#### AdLoader
+## AdLoader
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -385,7 +406,8 @@ struct Index {
 
 
 
-#### constructor
+### constructor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -398,6 +420,7 @@ constructor(context: common.Context)
 **系统能力：** SystemCapability.Advertising.Ads
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -420,7 +443,8 @@ function createAdLoader(context: common.Context): void {
 
 
 
-#### loadAd
+### loadAd
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -434,6 +458,7 @@ loadAd(adParam: AdRequestParams, adOptions: AdOptions, listener: AdLoadListener)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | adParam | AdRequestParams | 是 | 广告请求参数。 |
@@ -444,6 +469,7 @@ loadAd(adParam: AdRequestParams, adOptions: AdOptions, listener: AdLoadListener)
 **错误码：**
 
 以下错误码的详细介绍请参见[广告服务框架错误码参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ads)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -486,7 +512,8 @@ function loadAd(context: common.Context, adRequestParams: advertising.AdRequestP
 
 
 
-#### loadAdWithMultiSlots
+### loadAdWithMultiSlots
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -500,6 +527,7 @@ loadAdWithMultiSlots(adParams: AdRequestParams[], adOptions: AdOptions, listener
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | adParams | AdRequestParams[] | 是 | 广告请求参数。 |
@@ -510,6 +538,7 @@ loadAdWithMultiSlots(adParams: AdRequestParams[], adOptions: AdOptions, listener
 **错误码：**
 
 以下错误码的详细介绍请参见[广告服务框架错误码参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ads)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -553,7 +582,8 @@ function loadAdWithMultiSlots(context: common.Context, adRequestParamsArray: adv
 
 
 
-#### AdLoadListener
+## AdLoadListener
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -565,7 +595,8 @@ function loadAdWithMultiSlots(context: common.Context, adRequestParamsArray: adv
 
 
 
-#### onAdLoadFailure
+### onAdLoadFailure
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -578,6 +609,7 @@ onAdLoadFailure(errorCode: number, errorMsg: string): void
 **系统能力：** SystemCapability.Advertising.Ads
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -603,7 +635,8 @@ const adLoaderListener: advertising.AdLoadListener = {
 
 
 
-#### onAdLoadSuccess
+### onAdLoadSuccess
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -616,6 +649,7 @@ onAdLoadSuccess(ads: Array&lt;Advertisement&gt;): void
 **系统能力：** SystemCapability.Advertising.Ads
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -640,7 +674,8 @@ const adLoaderListener: advertising.AdLoadListener = {
 
 
 
-#### MultiSlotsAdLoadListener
+## MultiSlotsAdLoadListener
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -652,7 +687,8 @@ const adLoaderListener: advertising.AdLoadListener = {
 
 
 
-#### onAdLoadFailure
+### onAdLoadFailure
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -665,6 +701,7 @@ onAdLoadFailure(errorCode: number, errorMsg: string): void
 **系统能力：** SystemCapability.Advertising.Ads
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -690,7 +727,8 @@ const multiSlotsAdLoadListener: advertising.MultiSlotsAdLoadListener = {
 
 
 
-#### onAdLoadSuccess
+### onAdLoadSuccess
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -703,6 +741,7 @@ onAdLoadSuccess(adsMap: Map<string, Array&lt;Advertisement&gt;>): void
 **系统能力：** SystemCapability.Advertising.Ads
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -727,7 +766,8 @@ const multiSlotsAdLoadListener: advertising.MultiSlotsAdLoadListener = {
 
 
 
-#### AdInteractionListener
+## AdInteractionListener
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -739,7 +779,8 @@ const multiSlotsAdLoadListener: advertising.MultiSlotsAdLoadListener = {
 
 
 
-#### onStatusChanged
+### onStatusChanged
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -752,6 +793,7 @@ onStatusChanged(status: string, ad: Advertisement, data: string)
 **系统能力：** SystemCapability.Advertising.Ads
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -827,7 +869,8 @@ const adInteractionListener: advertising.AdInteractionListener = {
 
 
 
-#### AdOptions
+## AdOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -839,6 +882,7 @@ const adInteractionListener: advertising.AdInteractionListener = {
 
 **参数：**
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | tagForChildProtection | number | 否 | 是 | 是否希望根据 COPPA 的规定将您的内容视为面向儿童的内容。 -1：默认值，不确定。 0：不希望。 1：希望。 默认为-1。 |
@@ -849,7 +893,8 @@ const adInteractionListener: advertising.AdInteractionListener = {
 
 
 
-#### AdRequestParams
+## AdRequestParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -860,6 +905,7 @@ const adInteractionListener: advertising.AdInteractionListener = {
 **系统能力：** SystemCapability.Advertising.Ads
 
 **参数：**
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -874,7 +920,8 @@ const adInteractionListener: advertising.AdInteractionListener = {
 
 
 
-#### AdDisplayOptions
+## AdDisplayOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -885,6 +932,7 @@ const adInteractionListener: advertising.AdInteractionListener = {
 **系统能力：** SystemCapability.Advertising.Ads
 
 **参数：**
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

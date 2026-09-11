@@ -1,9 +1,9 @@
 # Interface (Picture)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-picture
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Picture类，一些包含特殊信息的图片可以解码为Picture（也可以称为多图对象）。多图对象一般包含主图、辅助图和元数据。其中主图包含图像的大部分信息，主要用于显示图像内容；辅助图用于存储与主图相关但不同的数据，展示图像更丰富的信息；元数据一般用来存储关于图像文件的信息。多图对象类用于读取或写入多图对象。在调用Picture的方法前，需要先通过[image.createPicture](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-f#imagecreatepicture13)创建一个Picture实例。
 
@@ -14,9 +14,10 @@ Picture类，一些包含特殊信息的图片可以解码为Picture（也可以
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { image } from '@kit.ImageKit';
@@ -24,9 +25,10 @@ import { image } from '@kit.ImageKit';
 
 
 
-#### getMainPixelmap13+
+## getMainPixelmap13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMainPixelmap(): PixelMap
 
@@ -35,6 +37,7 @@ getMainPixelmap(): PixelMap
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -67,9 +70,10 @@ async function GetMainPixelmap(pictureObj : image.Picture) {
 
 
 
-#### getHdrComposedPixelmap13+
+## getHdrComposedPixelmap13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getHdrComposedPixelmap(): Promise&lt;PixelMap&gt;
 
@@ -79,6 +83,7 @@ getHdrComposedPixelmap(): Promise&lt;PixelMap&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;PixelMap&gt; | Promise对象，返回PixelMap。 |
@@ -87,6 +92,7 @@ getHdrComposedPixelmap(): Promise&lt;PixelMap&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -120,9 +126,10 @@ async function GetHdrComposedPixelmap(pictureObj : image.Picture) {
 
 
 
-#### getHdrComposedPixelmapWithOptions23+
+## getHdrComposedPixelmapWithOptions23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getHdrComposedPixelmapWithOptions(options?: HdrComposeOptions): Promise<PixelMap | undefined>
 
@@ -136,12 +143,14 @@ getHdrComposedPixelmapWithOptions(options?: HdrComposeOptions): Promise<PixelMap
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | HdrComposeOptions | 否 | 合成HDR的选项。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -151,6 +160,7 @@ getHdrComposedPixelmapWithOptions(options?: HdrComposeOptions): Promise<PixelMap
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -191,9 +201,10 @@ async function GetHdrComposedPixelmapWithOptions(picture : image.Picture) {
 
 
 
-#### hdrComposeToMainPixelmap
+## hdrComposeToMainPixelmap
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hdrComposeToMainPixelmap(): Promise&lt;void&gt;
 
@@ -209,6 +220,7 @@ hdrComposeToMainPixelmap(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -217,6 +229,7 @@ hdrComposeToMainPixelmap(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -245,9 +258,10 @@ async function HdrComposeToMainPixelmap(picture : image.Picture) {
 
 
 
-#### getGainmapPixelmap13+
+## getGainmapPixelmap13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getGainmapPixelmap(): PixelMap | null
 
@@ -256,6 +270,7 @@ getGainmapPixelmap(): PixelMap | null
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -292,9 +307,10 @@ async function GetGainmapPixelmap(pictureObj : image.Picture) {
 
 
 
-#### setAuxiliaryPicture13+
+## setAuxiliaryPicture13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAuxiliaryPicture(type: AuxiliaryPictureType, auxiliaryPicture: AuxiliaryPicture): void
 
@@ -303,6 +319,7 @@ setAuxiliaryPicture(type: AuxiliaryPictureType, auxiliaryPicture: AuxiliaryPictu
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -313,6 +330,7 @@ setAuxiliaryPicture(type: AuxiliaryPictureType, auxiliaryPicture: AuxiliaryPictu
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -349,9 +367,10 @@ async function SetAuxiliaryPicture(context: Context) {
 
 
 
-#### getAuxiliaryPicture13+
+## getAuxiliaryPicture13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAuxiliaryPicture(type: AuxiliaryPictureType): AuxiliaryPicture | null
 
@@ -361,12 +380,14 @@ getAuxiliaryPicture(type: AuxiliaryPictureType): AuxiliaryPicture | null
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | AuxiliaryPictureType | 是 | 辅助图类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -376,6 +397,7 @@ getAuxiliaryPicture(type: AuxiliaryPictureType): AuxiliaryPicture | null
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -395,9 +417,10 @@ async function GetAuxiliaryPicture(pictureObj : image.Picture) {
 
 
 
-#### setMetadata13+
+## setMetadata13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMetadata(metadataType: MetadataType, metadata: Metadata): Promise&lt;void&gt;
 
@@ -407,6 +430,7 @@ setMetadata(metadataType: MetadataType, metadata: Metadata): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | metadataType | MetadataType | 是 | 元数据类型。 |
@@ -414,6 +438,7 @@ setMetadata(metadataType: MetadataType, metadata: Metadata): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -423,6 +448,7 @@ setMetadata(metadataType: MetadataType, metadata: Metadata): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -466,9 +492,10 @@ async function SetPictureObjMetadata(exifContext: Context) {
 
 
 
-#### getMetadata13+
+## getMetadata13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMetadata(metadataType: MetadataType): Promise&lt;Metadata&gt;
 
@@ -478,12 +505,14 @@ getMetadata(metadataType: MetadataType): Promise&lt;Metadata&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | metadataType | MetadataType | 是 | 元数据类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -493,6 +522,7 @@ getMetadata(metadataType: MetadataType): Promise&lt;Metadata&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -520,9 +550,10 @@ async function GetPictureObjMetadataProperties(pictureObj : image.Picture) {
 
 
 
-#### marshalling13+
+## marshalling13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 marshalling(sequence: rpc.MessageSequence): void
 
@@ -532,6 +563,7 @@ marshalling(sequence: rpc.MessageSequence): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sequence | rpc.MessageSequence | 是 | 新创建的MessageSequence。 |
@@ -540,6 +572,7 @@ marshalling(sequence: rpc.MessageSequence): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -596,9 +629,10 @@ async function Marshalling_UnMarshalling(pictureObj : image.Picture) {
 
 
 
-#### release13+
+## release13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(): void
 

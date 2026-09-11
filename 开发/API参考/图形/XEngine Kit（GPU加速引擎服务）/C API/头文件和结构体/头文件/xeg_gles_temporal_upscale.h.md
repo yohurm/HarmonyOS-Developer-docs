@@ -1,11 +1,12 @@
 # xeg_gles_temporal_upscale.h
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-kit-xeg-gles-temporal-upscale-8h
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -23,16 +24,19 @@ XEngine时域AI超分特性OpenGL ES接口。推荐超分倍率为[1.25, 2.0]，
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 宏定义
+### 宏定义
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | XEG_TEMPORAL_UPSCALE_INPUT_SIZE 0x1U | 用于通过HMS_XEG_TemporalUpscaleParameter接口设置超分输入纹理的真实宽高。 |
@@ -44,10 +48,12 @@ XEngine时域AI超分特性OpenGL ES接口。推荐超分倍率为[1.25, 2.0]，
  
   
 
-#### 类型定义
+### 类型定义
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | typedef void(GL_APIENTRYP PFN_HMS_XEG_TemporalUpscaleParameter) (GLenum pname, GLvoid *param) | 设置时域AI超分输入参数的函数指针定义。 |
@@ -56,10 +62,12 @@ XEngine时域AI超分特性OpenGL ES接口。推荐超分倍率为[1.25, 2.0]，
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | GL_APICALL void GL_APIENTRY HMS_XEG_TemporalUpscaleParameter (GLenum pname, const GLvoid *param) | 设置时域AI超分输入参数。 |

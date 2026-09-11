@@ -1,13 +1,14 @@
 # native_image.h
 
-更新时间：2026-07-21 07:44:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-image-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义获取和使用NativeImage的相关函数。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_OnFrameAvailableListener | OH_OnFrameAvailableListener | 一个OH_NativeImage的监听者，通过OH_NativeImage_SetOnFrameAvailableListener接口注册该监听结构体，当有buffer可获取时，将触发回调给用户。 |
@@ -43,10 +47,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | typedef void (*OH_OnFrameAvailable)(void *context) | OH_OnFrameAvailable | 有buffer可获取时触发的回调函数。 |
@@ -56,7 +62,7 @@
 | int32_t OH_NativeImage_DetachContext(OH_NativeImage* image) | - | 将OH_NativeImage实例从当前OpenGL ES上下文分离。 本接口为非线程安全类型接口。 |
 | int32_t OH_NativeImage_UpdateSurfaceImage(OH_NativeImage* image) | - | 通过OH_NativeImage获取最新帧更新相关联的OpenGL ES纹理。 本接口需要在OpenGL ES环境上下文的线程中调用。 本接口需要在接收到OH_OnFrameAvailableListener回调后调用。 本接口为非线程安全类型接口。 |
 | int64_t OH_NativeImage_GetTimestamp(OH_NativeImage* image) | - | 获取最近调用OH_NativeImage_UpdateSurfaceImage的纹理图像的相关时间戳。 本接口为非线程安全类型接口。 |
-| int32_t OH_NativeImage_GetTransformMatrix(OH_NativeImage* image, float matrix[16]) | - | 获取最近调用OH_NativeImage_UpdateSurfaceImage的纹理图像的变化矩阵。 |
+| int32_t OH_NativeImage_GetTransformMatrix(OH_NativeImage* image, float matrix[16]) | - | 获取最近调用OH_NativeImage_UpdateSurfaceImage的纹理图像的变换矩阵。 本接口为非线程安全类型接口。 |
 | int32_t OH_NativeImage_GetSurfaceId(OH_NativeImage* image, uint64_t* surfaceId) | - | 获取OH_NativeImage的surface编号。 本接口为非线程安全类型接口。 |
 | int32_t OH_NativeImage_SetOnFrameAvailableListener(OH_NativeImage* image, OH_OnFrameAvailableListener listener) | - | 设置帧可用回调。 不允许在回调函数中调用本模块的其他接口。 本接口为非线程安全类型接口。 |
 | int32_t OH_NativeImage_UnsetOnFrameAvailableListener(OH_NativeImage* image) | - | 取消设置帧可用回调。 本接口为非线程安全类型接口。 |
@@ -80,15 +86,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_OnFrameAvailable()
+### OH_OnFrameAvailable()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*OH_OnFrameAvailable)(void *context)
@@ -104,6 +112,7 @@ typedef void (*OH_OnFrameAvailable)(void *context)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | void *context | 用户自定义的上下文信息，会在回调触发时返回给用户。 |
@@ -111,9 +120,10 @@ typedef void (*OH_OnFrameAvailable)(void *context)
  
   
 
-#### OH_NativeImage_Create()
+### OH_NativeImage_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_NativeImage* OH_NativeImage_Create(uint32_t textureId, uint32_t textureTarget)
@@ -133,6 +143,7 @@ OH_NativeImage* OH_NativeImage_Create(uint32_t textureId, uint32_t textureTarget
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t textureId | OpenGL ES的纹理ID，OH_NativeImage实例会与之相关联。 |
@@ -141,6 +152,7 @@ OH_NativeImage* OH_NativeImage_Create(uint32_t textureId, uint32_t textureTarget
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_NativeImage* | 创建成功则返回一个指向OH_NativeImage实例的指针，否则返回NULL。 |
@@ -148,9 +160,10 @@ OH_NativeImage* OH_NativeImage_Create(uint32_t textureId, uint32_t textureTarget
  
   
 
-#### OH_NativeImage_AcquireNativeWindow()
+### OH_NativeImage_AcquireNativeWindow()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OHNativeWindow* OH_NativeImage_AcquireNativeWindow(OH_NativeImage* image)
@@ -170,6 +183,7 @@ OHNativeWindow* OH_NativeImage_AcquireNativeWindow(OH_NativeImage* image)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeImage* image | 指向OH_NativeImage实例的指针。 |
@@ -177,6 +191,7 @@ OHNativeWindow* OH_NativeImage_AcquireNativeWindow(OH_NativeImage* image)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OHNativeWindow* | 成功则返回一个指向OHNativeWindow实例的指针，否则返回NULL。 |
@@ -184,9 +199,10 @@ OHNativeWindow* OH_NativeImage_AcquireNativeWindow(OH_NativeImage* image)
  
   
 
-#### OH_NativeImage_AttachContext()
+### OH_NativeImage_AttachContext()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeImage_AttachContext(OH_NativeImage* image, uint32_t textureId)
@@ -204,6 +220,7 @@ int32_t OH_NativeImage_AttachContext(OH_NativeImage* image, uint32_t textureId)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeImage* image | 指向OH_NativeImage实例的指针。 |
@@ -212,6 +229,7 @@ int32_t OH_NativeImage_AttachContext(OH_NativeImage* image, uint32_t textureId)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回值为0表示执行成功，其他返回值可参考OHNativeErrorCode。 |
@@ -219,9 +237,10 @@ int32_t OH_NativeImage_AttachContext(OH_NativeImage* image, uint32_t textureId)
  
   
 
-#### OH_NativeImage_DetachContext()
+### OH_NativeImage_DetachContext()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeImage_DetachContext(OH_NativeImage* image)
@@ -239,6 +258,7 @@ int32_t OH_NativeImage_DetachContext(OH_NativeImage* image)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeImage* image | 指向OH_NativeImage实例的指针。 |
@@ -246,6 +266,7 @@ int32_t OH_NativeImage_DetachContext(OH_NativeImage* image)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回值为0表示执行成功，其他返回值可参考OHNativeErrorCode。 |
@@ -253,9 +274,10 @@ int32_t OH_NativeImage_DetachContext(OH_NativeImage* image)
  
   
 
-#### OH_NativeImage_UpdateSurfaceImage()
+### OH_NativeImage_UpdateSurfaceImage()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeImage_UpdateSurfaceImage(OH_NativeImage* image)
@@ -277,6 +299,7 @@ int32_t OH_NativeImage_UpdateSurfaceImage(OH_NativeImage* image)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeImage* image | 指向OH_NativeImage实例的指针。 |
@@ -284,6 +307,7 @@ int32_t OH_NativeImage_UpdateSurfaceImage(OH_NativeImage* image)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回值为0表示执行成功，其他返回值可参考OHNativeErrorCode。 |
@@ -291,9 +315,10 @@ int32_t OH_NativeImage_UpdateSurfaceImage(OH_NativeImage* image)
  
   
 
-#### OH_NativeImage_GetTimestamp()
+### OH_NativeImage_GetTimestamp()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int64_t OH_NativeImage_GetTimestamp(OH_NativeImage* image)
@@ -311,6 +336,7 @@ int64_t OH_NativeImage_GetTimestamp(OH_NativeImage* image)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeImage* image | 指向OH_NativeImage实例的指针。 |
@@ -318,6 +344,7 @@ int64_t OH_NativeImage_GetTimestamp(OH_NativeImage* image)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int64_t | 返回纹理图像的相关时间戳。 |
@@ -325,9 +352,10 @@ int64_t OH_NativeImage_GetTimestamp(OH_NativeImage* image)
  
   
 
-#### OH_NativeImage_GetTransformMatrix()
+### OH_NativeImage_GetTransformMatrix()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeImage_GetTransformMatrix(OH_NativeImage* image, float matrix[16])
@@ -335,7 +363,9 @@ int32_t OH_NativeImage_GetTransformMatrix(OH_NativeImage* image, float matrix[16
  
 **描述**
  
-获取最近调用OH_NativeImage_UpdateSurfaceImage的纹理图像的变化矩阵。
+获取最近调用OH_NativeImage_UpdateSurfaceImage的纹理图像的变换矩阵。
+ 
+本接口为非线程安全类型接口。
  
 **系统能力：** SystemCapability.Graphic.Graphic2D.NativeImage
  
@@ -347,6 +377,7 @@ int32_t OH_NativeImage_GetTransformMatrix(OH_NativeImage* image, float matrix[16
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeImage* image | 指向OH_NativeImage实例的指针。 |
@@ -355,6 +386,7 @@ int32_t OH_NativeImage_GetTransformMatrix(OH_NativeImage* image, float matrix[16
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回值为0表示执行成功，其他返回值可参考OHNativeErrorCode。 |
@@ -362,9 +394,10 @@ int32_t OH_NativeImage_GetTransformMatrix(OH_NativeImage* image, float matrix[16
  
   
 
-#### OH_NativeImage_GetSurfaceId()
+### OH_NativeImage_GetSurfaceId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeImage_GetSurfaceId(OH_NativeImage* image, uint64_t* surfaceId)
@@ -382,6 +415,7 @@ int32_t OH_NativeImage_GetSurfaceId(OH_NativeImage* image, uint64_t* surfaceId)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeImage* image | 指向OH_NativeImage实例的指针。 |
@@ -390,6 +424,7 @@ int32_t OH_NativeImage_GetSurfaceId(OH_NativeImage* image, uint64_t* surfaceId)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回值为0表示执行成功，其他返回值可参考OHNativeErrorCode。 |
@@ -397,9 +432,10 @@ int32_t OH_NativeImage_GetSurfaceId(OH_NativeImage* image, uint64_t* surfaceId)
  
   
 
-#### OH_NativeImage_SetOnFrameAvailableListener()
+### OH_NativeImage_SetOnFrameAvailableListener()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeImage_SetOnFrameAvailableListener(OH_NativeImage* image, OH_OnFrameAvailableListener listener)
@@ -419,6 +455,7 @@ int32_t OH_NativeImage_SetOnFrameAvailableListener(OH_NativeImage* image, OH_OnF
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeImage* image | 指向OH_NativeImage实例的指针。 |
@@ -427,6 +464,7 @@ int32_t OH_NativeImage_SetOnFrameAvailableListener(OH_NativeImage* image, OH_OnF
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回值为0表示执行成功，其他返回值可参考OHNativeErrorCode。 |
@@ -434,9 +472,10 @@ int32_t OH_NativeImage_SetOnFrameAvailableListener(OH_NativeImage* image, OH_OnF
  
   
 
-#### OH_NativeImage_UnsetOnFrameAvailableListener()
+### OH_NativeImage_UnsetOnFrameAvailableListener()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeImage_UnsetOnFrameAvailableListener(OH_NativeImage* image)
@@ -454,6 +493,7 @@ int32_t OH_NativeImage_UnsetOnFrameAvailableListener(OH_NativeImage* image)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeImage* image | 指向OH_NativeImage实例的指针。 |
@@ -461,6 +501,7 @@ int32_t OH_NativeImage_UnsetOnFrameAvailableListener(OH_NativeImage* image)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回值为0表示执行成功，其他返回值可参考OHNativeErrorCode。 |
@@ -468,9 +509,10 @@ int32_t OH_NativeImage_UnsetOnFrameAvailableListener(OH_NativeImage* image)
  
   
 
-#### OH_NativeImage_Destroy()
+### OH_NativeImage_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_NativeImage_Destroy(OH_NativeImage** image)
@@ -490,16 +532,18 @@ void OH_NativeImage_Destroy(OH_NativeImage** image)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| OH_NativeImage** image | 指向OH_NativeImage实例的指针。 |
+| OH_NativeImage** image | 指向OH_NativeImage实例指针的指针。 |
  
  
   
 
-#### OH_NativeImage_GetTransformMatrixV2()
+### OH_NativeImage_GetTransformMatrixV2()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeImage_GetTransformMatrixV2(OH_NativeImage* image, float matrix[16])
@@ -507,7 +551,7 @@ int32_t OH_NativeImage_GetTransformMatrixV2(OH_NativeImage* image, float matrix[
  
 **描述**
  
-根据生产端设置的旋转角度，获取最近调用OH_NativeImage_UpdateSurfaceImage的纹理图像的变化矩阵。
+根据生产端设置的旋转角度，获取最近调用OH_NativeImage_UpdateSurfaceImage的纹理图像的变换矩阵。
  
 matrix在[OH_NativeImage_UpdateSurfaceImage](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-image-h#oh_nativeimage_updatesurfaceimage)接口调用后，才会更新。
  
@@ -519,14 +563,16 @@ matrix在[OH_NativeImage_UpdateSurfaceImage](https://developer.huawei.com/consum
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeImage* image | 指向OH_NativeImage实例的指针。 |
-| matrix | 用来存储要获取的4*4的变化矩阵。 |
+| float matrix[16] | 用来存储要获取的4*4的变换矩阵。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回接口执行结果。NATIVE_ERROR_OK，表示接口执行成功。 返回NATIVE_ERROR_INVALID_ARGUMENTS，对应错误码为40001000，表示image参数为空。 返回NATIVE_ERROR_UNKNOWN，对应错误码为50002000，表示未知错误，请查看日志。 |
@@ -534,9 +580,10 @@ matrix在[OH_NativeImage_UpdateSurfaceImage](https://developer.huawei.com/consum
  
   
 
-#### OH_NativeImage_GetBufferMatrix()
+### OH_NativeImage_GetBufferMatrix()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeImage_GetBufferMatrix(OH_NativeImage* image, float matrix[16])
@@ -556,6 +603,7 @@ int32_t OH_NativeImage_GetBufferMatrix(OH_NativeImage* image, float matrix[16])
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeImage* image | 指向OH_NativeImage实例的指针。 |
@@ -564,6 +612,7 @@ int32_t OH_NativeImage_GetBufferMatrix(OH_NativeImage* image, float matrix[16])
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 返回接口执行结果。NATIVE_ERROR_OK，表示接口执行成功。 返回NATIVE_ERROR_INVALID_ARGUMENTS，对应错误码为40001000，表示image参数为空。 返回NATIVE_ERROR_MEM_OPERATION_ERROR，对应错误码为30001000，表示内存操作错误，获取变换矩阵失败。 |
@@ -571,12 +620,13 @@ int32_t OH_NativeImage_GetBufferMatrix(OH_NativeImage* image, float matrix[16])
  
   
 
-#### OH_NativeImage_AcquireNativeWindowBuffer()
+### OH_NativeImage_AcquireNativeWindowBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
-int32_t OH_NativeImage_AcquireNativeWindowBuffer(OH_NativeImage* image,OHNativeWindowBuffer** nativeWindowBuffer, int* fenceFd)
+int32_t OH_NativeImage_AcquireNativeWindowBuffer(OH_NativeImage* image, OHNativeWindowBuffer** nativeWindowBuffer, int* fenceFd)
 ```
  
 **描述**
@@ -597,6 +647,7 @@ int32_t OH_NativeImage_AcquireNativeWindowBuffer(OH_NativeImage* image,OHNativeW
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeImage* image | 指向OH_NativeImage实例的指针。 |
@@ -606,6 +657,7 @@ int32_t OH_NativeImage_AcquireNativeWindowBuffer(OH_NativeImage* image,OHNativeW
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 执行成功时返回NATIVE_ERROR_OK。 image, nativeWindowBuffer, fenceFd是空指针时返回NATIVE_ERROR_INVALID_ARGUMENTS。 没有buffer可以消费时返回NATIVE_ERROR_NO_BUFFER。 |
@@ -613,9 +665,10 @@ int32_t OH_NativeImage_AcquireNativeWindowBuffer(OH_NativeImage* image,OHNativeW
  
   
 
-#### OH_NativeImage_ReleaseNativeWindowBuffer()
+### OH_NativeImage_ReleaseNativeWindowBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeImage_ReleaseNativeWindowBuffer(OH_NativeImage* image,OHNativeWindowBuffer* nativeWindowBuffer, int fenceFd)
@@ -637,15 +690,17 @@ int32_t OH_NativeImage_ReleaseNativeWindowBuffer(OH_NativeImage* image,OHNativeW
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeImage* image | 指向OH_NativeImage实例的指针。 |
 | OHNativeWindowBuffer* nativeWindowBuffer | 指向OHNativeWindowBuffer实例的指针。 |
-| int fenceFd | 指向文件描述符句柄, 用于并发同步控制。 |
+| int fenceFd | 文件描述符句柄，用于并发同步控制。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 执行成功时返回NATIVE_ERROR_OK。 image, nativeWindowBuffer是空指针时返回NATIVE_ERROR_INVALID_ARGUMENTS。 nativeWindowBuffer为状态非法时返回NATIVE_ERROR_BUFFER_STATE_INVALID。 nativeWindowBuffer不在缓存中返回NATIVE_ERROR_BUFFER_NOT_IN_CACHE。 |
@@ -653,9 +708,10 @@ int32_t OH_NativeImage_ReleaseNativeWindowBuffer(OH_NativeImage* image,OHNativeW
  
   
 
-#### OH_ConsumerSurface_Create()
+### OH_ConsumerSurface_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_NativeImage* OH_ConsumerSurface_Create(void)
@@ -681,6 +737,7 @@ OH_NativeImage* OH_ConsumerSurface_Create(void)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_NativeImage* | 成功则返回一个指向OH_NativeImage实例的指针，否则返回NULL。 |
@@ -688,9 +745,10 @@ OH_NativeImage* OH_ConsumerSurface_Create(void)
  
   
 
-#### OH_ConsumerSurface_SetDefaultUsage()
+### OH_ConsumerSurface_SetDefaultUsage()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ConsumerSurface_SetDefaultUsage(OH_NativeImage* image, uint64_t usage)
@@ -708,6 +766,7 @@ int32_t OH_ConsumerSurface_SetDefaultUsage(OH_NativeImage* image, uint64_t usage
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeImage* image | 指向OH_NativeImage实例的指针。 |
@@ -716,6 +775,7 @@ int32_t OH_ConsumerSurface_SetDefaultUsage(OH_NativeImage* image, uint64_t usage
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 执行成功时返回NATIVE_ERROR_OK。 image是空指针时返回NATIVE_ERROR_INVALID_ARGUMENTS。 |
@@ -723,9 +783,10 @@ int32_t OH_ConsumerSurface_SetDefaultUsage(OH_NativeImage* image, uint64_t usage
  
   
 
-#### OH_ConsumerSurface_SetDefaultSize()
+### OH_ConsumerSurface_SetDefaultSize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ConsumerSurface_SetDefaultSize(OH_NativeImage* image, int32_t width, int32_t height)
@@ -743,6 +804,7 @@ int32_t OH_ConsumerSurface_SetDefaultSize(OH_NativeImage* image, int32_t width, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeImage* image | 指向OH_NativeImage实例的指针。 |
@@ -752,6 +814,7 @@ int32_t OH_ConsumerSurface_SetDefaultSize(OH_NativeImage* image, int32_t width, 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 执行成功时返回NATIVE_ERROR_OK。 image是空指针时，或width、height小于等于0时返回NATIVE_ERROR_INVALID_ARGUMENTS。 |
@@ -759,9 +822,10 @@ int32_t OH_ConsumerSurface_SetDefaultSize(OH_NativeImage* image, int32_t width, 
  
   
 
-#### OH_NativeImage_SetDropBufferMode()
+### OH_NativeImage_SetDropBufferMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeImage_SetDropBufferMode(OH_NativeImage* image, bool isOpen)
@@ -789,6 +853,7 @@ int32_t OH_NativeImage_SetDropBufferMode(OH_NativeImage* image, bool isOpen)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeImage* image | 指向OH_NativeImage实例的指针。 |
@@ -797,6 +862,7 @@ int32_t OH_NativeImage_SetDropBufferMode(OH_NativeImage* image, bool isOpen)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 执行成功时返回NATIVE_ERROR_OK。 image是空指针时返回NATIVE_ERROR_INVALID_ARGUMENTS。 |
@@ -804,9 +870,10 @@ int32_t OH_NativeImage_SetDropBufferMode(OH_NativeImage* image, bool isOpen)
  
   
 
-#### OH_NativeImage_CreateWithSingleBufferMode()
+### OH_NativeImage_CreateWithSingleBufferMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_NativeImage* OH_NativeImage_CreateWithSingleBufferMode(uint32_t textureId, uint32_t textureTarget, bool singleBufferMode)
@@ -826,6 +893,7 @@ OH_NativeImage* OH_NativeImage_CreateWithSingleBufferMode(uint32_t textureId, ui
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t textureId | OpenGL ES的纹理ID，OH_NativeImage实例会与之相关联。 |
@@ -835,6 +903,7 @@ OH_NativeImage* OH_NativeImage_CreateWithSingleBufferMode(uint32_t textureId, ui
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_NativeImage* | 创建成功则返回一个指向OH_NativeImage实例的指针，否则返回NULL。 |
@@ -842,9 +911,10 @@ OH_NativeImage* OH_NativeImage_CreateWithSingleBufferMode(uint32_t textureId, ui
  
   
 
-#### OH_ConsumerSurface_CreateWithSingleBufferMode()
+### OH_ConsumerSurface_CreateWithSingleBufferMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_NativeImage* OH_ConsumerSurface_CreateWithSingleBufferMode(bool singleBufferMode)
@@ -868,6 +938,7 @@ OH_NativeImage* OH_ConsumerSurface_CreateWithSingleBufferMode(bool singleBufferM
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | bool singleBufferMode | 是否设置单buffer模式。true表示设置为单buffer模式，false表示不设置。 |
@@ -875,6 +946,7 @@ OH_NativeImage* OH_ConsumerSurface_CreateWithSingleBufferMode(bool singleBufferM
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_NativeImage* | 成功则返回一个指向OH_NativeImage实例的指针，否则返回NULL。 |
@@ -882,9 +954,10 @@ OH_NativeImage* OH_ConsumerSurface_CreateWithSingleBufferMode(bool singleBufferM
  
   
 
-#### OH_NativeImage_ReleaseTextImage()
+### OH_NativeImage_ReleaseTextImage()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeImage_ReleaseTextImage(OH_NativeImage* image)
@@ -904,6 +977,7 @@ int32_t OH_NativeImage_ReleaseTextImage(OH_NativeImage* image)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeImage* image | 指向OH_NativeImage实例的指针。 |
@@ -911,6 +985,7 @@ int32_t OH_NativeImage_ReleaseTextImage(OH_NativeImage* image)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 执行成功时返回NATIVE_ERROR_OK。 image是空指针时返回NATIVE_ERROR_INVALID_ARGUMENTS。 其他返回值可参考OHNativeErrorCode。 |
@@ -918,9 +993,10 @@ int32_t OH_NativeImage_ReleaseTextImage(OH_NativeImage* image)
  
   
 
-#### OH_NativeImage_GetColorSpace()
+### OH_NativeImage_GetColorSpace()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeImage_GetColorSpace(OH_NativeImage* image, OH_NativeBuffer_ColorSpace* colorSpace)
@@ -938,6 +1014,7 @@ int32_t OH_NativeImage_GetColorSpace(OH_NativeImage* image, OH_NativeBuffer_Colo
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeImage* image | 指向OH_NativeImage实例的指针。 |
@@ -946,6 +1023,7 @@ int32_t OH_NativeImage_GetColorSpace(OH_NativeImage* image, OH_NativeBuffer_Colo
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 执行成功时返回NATIVE_ERROR_OK。 image，colorSpace是空指针时返回NATIVE_ERROR_INVALID_ARGUMENTS。 其他返回值可参考OHNativeErrorCode。 |
@@ -953,9 +1031,10 @@ int32_t OH_NativeImage_GetColorSpace(OH_NativeImage* image, OH_NativeBuffer_Colo
  
   
 
-#### OH_NativeImage_AcquireLatestNativeWindowBuffer()
+### OH_NativeImage_AcquireLatestNativeWindowBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeImage_AcquireLatestNativeWindowBuffer(OH_NativeImage* image, OHNativeWindowBuffer** nativeWindowBuffer, int* fenceFd)
@@ -985,6 +1064,7 @@ int32_t OH_NativeImage_AcquireLatestNativeWindowBuffer(OH_NativeImage* image, OH
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeImage* image | 指向OH_NativeImage实例的指针。 |
@@ -994,6 +1074,7 @@ int32_t OH_NativeImage_AcquireLatestNativeWindowBuffer(OH_NativeImage* image, OH
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 执行成功时返回NATIVE_ERROR_OK。 image，nativeWindowBuffer或fenceFd是空指针时返回NATIVE_ERROR_INVALID_ARGUMENTS。 没有buffer可以消费时返回NATIVE_ERROR_NO_BUFFER。 其他返回值可参考OHNativeErrorCode。 |
@@ -1001,9 +1082,10 @@ int32_t OH_NativeImage_AcquireLatestNativeWindowBuffer(OH_NativeImage* image, OH
  
   
 
-#### OH_NativeImage_IsReleased()
+### OH_NativeImage_IsReleased()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeImage_IsReleased(OH_NativeImage* image, bool* isReleased)
@@ -1021,6 +1103,7 @@ int32_t OH_NativeImage_IsReleased(OH_NativeImage* image, bool* isReleased)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeImage* image | 指向OH_NativeImage实例的指针。 |
@@ -1029,6 +1112,7 @@ int32_t OH_NativeImage_IsReleased(OH_NativeImage* image, bool* isReleased)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 执行成功时返回NATIVE_ERROR_OK。 image或isReleased为空指针时返回NATIVE_ERROR_INVALID_ARGUMENTS。 其他返回值可参考OHNativeErrorCode。 |
@@ -1036,9 +1120,10 @@ int32_t OH_NativeImage_IsReleased(OH_NativeImage* image, bool* isReleased)
  
   
 
-#### OH_NativeImage_Release()
+### OH_NativeImage_Release()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_NativeImage_Release(OH_NativeImage* image)
@@ -1056,6 +1141,7 @@ int32_t OH_NativeImage_Release(OH_NativeImage* image)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeImage* image | 指向OH_NativeImage实例的指针。 |
@@ -1063,6 +1149,7 @@ int32_t OH_NativeImage_Release(OH_NativeImage* image)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 执行成功时返回NATIVE_ERROR_OK。 image为空指针时返回NATIVE_ERROR_INVALID_ARGUMENTS。 其他返回值可参考OHNativeErrorCode。 |

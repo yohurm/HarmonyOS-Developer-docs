@@ -1,9 +1,9 @@
 # updateManager（更新功能）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/store-updatemanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供检测新版本及升级功能。
  
@@ -14,9 +14,10 @@
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { updateManager } from '@kit.AppGalleryKit';
@@ -24,9 +25,10 @@ import { updateManager } from '@kit.AppGalleryKit';
  
   
 
-#### UpdateAvailableCode
+## UpdateAvailableCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 检测更新结果码类型的枚举。
  
@@ -38,6 +40,7 @@ import { updateManager } from '@kit.AppGalleryKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | LATER_VERSION_NOT_EXIST | 0 | 不存在新版本。 |
@@ -46,9 +49,10 @@ import { updateManager } from '@kit.AppGalleryKit';
  
   
 
-#### ShowUpdateResultCode
+## ShowUpdateResultCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 显示升级弹框结果码类型的枚举。
  
@@ -58,6 +62,7 @@ import { updateManager } from '@kit.AppGalleryKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SHOW_DIALOG_SUCCESS | 0 | 显示升级弹框成功。 |
@@ -66,9 +71,10 @@ import { updateManager } from '@kit.AppGalleryKit';
  
   
 
-#### CheckUpdateResult
+## CheckUpdateResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 检查是否有“更新”的接口调用结果。
  
@@ -80,6 +86,7 @@ import { updateManager } from '@kit.AppGalleryKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | updateAvailable | UpdateAvailableCode | 是 | 否 | 检查结果。 |
@@ -89,9 +96,10 @@ import { updateManager } from '@kit.AppGalleryKit';
  
   
 
-#### RequestErrorCode
+## RequestErrorCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 监听元服务更新检查接口结果码类型的枚举。
  
@@ -103,6 +111,7 @@ import { updateManager } from '@kit.AppGalleryKit';
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NO_UPGRADE | 0 | 无最新版本。 |
@@ -112,9 +121,10 @@ import { updateManager } from '@kit.AppGalleryKit';
  
   
 
-#### UpdateSessionState
+## UpdateSessionState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 监听元服务更新检查接口的回调结果。
  
@@ -126,6 +136,7 @@ import { updateManager } from '@kit.AppGalleryKit';
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | code | RequestErrorCode | 是 | 否 | 检查结果码。 |
@@ -134,9 +145,10 @@ import { updateManager } from '@kit.AppGalleryKit';
  
   
 
-#### updateManager.checkAppUpdate
+## updateManager.checkAppUpdate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checkAppUpdate(context: common.UIAbilityContext): Promise&lt;CheckUpdateResult&gt;
  
@@ -152,6 +164,7 @@ checkAppUpdate(context: common.UIAbilityContext): Promise&lt;CheckUpdateResult&g
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | 调用方应用的上下文。 |
@@ -159,6 +172,7 @@ checkAppUpdate(context: common.UIAbilityContext): Promise&lt;CheckUpdateResult&g
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;CheckUpdateResult&gt; | Promise对象，返回是否有更新检查结果。 |
@@ -168,6 +182,7 @@ checkAppUpdate(context: common.UIAbilityContext): Promise&lt;CheckUpdateResult&g
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-appgallery)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -222,9 +237,10 @@ struct Index {
  
   
 
-#### updateManager.showUpdateDialog
+## updateManager.showUpdateDialog
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showUpdateDialog(context: common.UIAbilityContext): Promise&lt;ShowUpdateResultCode&gt;
  
@@ -240,6 +256,7 @@ showUpdateDialog(context: common.UIAbilityContext): Promise&lt;ShowUpdateResultC
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | 调用方应用的上下文。 |
@@ -247,6 +264,7 @@ showUpdateDialog(context: common.UIAbilityContext): Promise&lt;ShowUpdateResultC
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;ShowUpdateResultCode&gt; | Promise对象，返回显示升级弹框获取结果。 |
@@ -256,6 +274,7 @@ showUpdateDialog(context: common.UIAbilityContext): Promise&lt;ShowUpdateResultC
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-appgallery)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -309,9 +328,10 @@ struct Index {
  
   
 
-#### updateManager.on('updateChange')
+## updateManager.on('updateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 on(type: 'updateChange', callback: Callback&lt;UpdateSessionState&gt;, timeout?: number): void
  
@@ -331,6 +351,7 @@ on(type: 'updateChange', callback: Callback&lt;UpdateSessionState&gt;, timeout?:
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定值"updateChange"。 |
@@ -342,6 +363,7 @@ on(type: 'updateChange', callback: Callback&lt;UpdateSessionState&gt;, timeout?:
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-appgallery)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1009400001 | SA connection error. |
@@ -404,9 +426,10 @@ struct Index {
  
   
 
-#### updateManager.off('updateChange')
+## updateManager.off('updateChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 off(type: 'updateChange', callback?: Callback&lt;UpdateSessionState&gt;): void
  
@@ -422,6 +445,7 @@ off(type: 'updateChange', callback?: Callback&lt;UpdateSessionState&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 固定值"updateChange"。 |
@@ -432,6 +456,7 @@ off(type: 'updateChange', callback?: Callback&lt;UpdateSessionState&gt;): void
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-appgallery)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1009400001 | SA connection error. |

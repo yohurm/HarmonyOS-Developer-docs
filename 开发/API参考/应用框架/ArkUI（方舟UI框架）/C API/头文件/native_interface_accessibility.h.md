@@ -1,15 +1,16 @@
 # native_interface_accessibility.h
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-interface-accessibility-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-声明用于访问Native Accessibility的API，提供无障碍相关能力。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+声明用于访问Native Accessibility的API，提供无障碍相关能力。支持第三方框架将自身UI组件接入ArkUI无障碍服务体系，包括注册无障碍回调、设置和查询无障碍节点信息、主动上报无障碍事件以及适配多实例场景等，使系统无障碍服务能够识别并操作三方框架的UI组件，适用于第三方UI框架需要与系统无障碍能力进行交互的场景。
 
 **引用文件：** <arkui/native_interface_accessibility.h>
 
@@ -25,15 +26,18 @@
 
 
 
-#### 汇总
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 汇总
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 结构体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -42,8 +46,8 @@
 | ArkUI_AccessibleRangeInfo | ArkUI_AccessibleRangeInfo | 用于表示特定组件（如Slider、Rating、Progress）的范围值信息，包含当前值、最大值和最小值，供无障碍服务读取并向障碍用户播报。 |
 | ArkUI_AccessibleGridInfo | ArkUI_AccessibleGridInfo | 用于描述网格组件的整体布局属性。该结构体用于向无障碍服务提供网格组件的行数、列数和选择模式等信息，支持无障碍服务获取网格的整体布局信息。 |
 | ArkUI_AccessibleGridItemInfo | ArkUI_AccessibleGridItemInfo | 用于描述网格组件内某个网格项的无障碍属性。该结构体用于向无障碍服务提供网格项的位置、跨度、选中状态等信息，支持无障碍服务获取网格项的布局信息。 |
-| ArkUI_AccessibilityProviderCallbacks | ArkUI_AccessibilityProviderCallbacks | 第三方provider回调函数结构定义，需要第三方平台实现的相关函数，通过OH_ArkUI_AccessibilityProviderRegisterCallback注册到系统侧。适用于读屏软件、语音控制、开关控制等无障碍辅助场景，第三方平台通过实现这些回调响应系统的无障碍查询和操作请求。 |
-| ArkUI_AccessibilityProviderCallbacksWithInstance | ArkUI_AccessibilityProviderCallbacksWithInstance | 适配多实例场景第三方操作provider回调函数结构定义，包含节点信息查询、焦点查找与清除、操作执行、光标位置获取等无障碍相关回调函数。该结构需由第三方平台实现，并通过OH_ArkUI_AccessibilityProviderRegisterCallbackWithInstance注册到系统侧，以支持第三方平台接入系统无障碍服务。 |
+| ArkUI_AccessibilityProviderCallbacks | ArkUI_AccessibilityProviderCallbacks | 第三方provider回调函数结构定义，需要第三方平台实现的相关函数，通过OH_ArkUI_AccessibilityProviderRegisterCallback注册到系统侧。适用于读屏软件、语音控制、开关控制等无障碍辅助场景，第三方平台通过实现这些回调响应系统的无障碍查询和操作请求。所有的回调函数执行线程为IPC线程，非UI线程。 |
+| ArkUI_AccessibilityProviderCallbacksWithInstance | ArkUI_AccessibilityProviderCallbacksWithInstance | 适配多实例场景第三方操作provider回调函数结构定义，包含节点信息查询、焦点查找与清除、操作执行、光标位置获取等无障碍相关回调函数。该结构需由第三方平台实现，并通过OH_ArkUI_AccessibilityProviderRegisterCallbackWithInstance注册到系统侧，以支持第三方平台接入系统无障碍服务。所有的回调函数执行线程为IPC线程，非UI线程。 |
 | ArkUI_AccessibilityElementInfo | ArkUI_AccessibilityElementInfo | 无障碍元素信息，用于向无障碍服务、辅助应用（屏幕朗读等）传递元素的属性、操作、位置、文本等信息，适用于无障碍服务获取和操作界面元素的辅助场景。 |
 | ArkUI_AccessibilityEventInfo | ArkUI_AccessibilityEventInfo | 无障碍事件信息。当无障碍服务或辅助应用要求控件执行操作后，应用需发送执行成功事件以通知操作结果，适用于需要向无障碍服务反馈操作执行情况的场景。 |
 | ArkUI_AccessibilityProvider | ArkUI_AccessibilityProvider | 该结构体为无障碍第三方操作提供者，用于承载回调函数的实现。开发者可通过该结构体注册和管理无障碍操作相关的回调，实现自定义的无障碍交互逻辑，适用于需要扩展或定制ArkUI无障碍能力的场景。 |
@@ -54,9 +58,11 @@
 
 
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -70,9 +76,11 @@
 
 
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -137,15 +145,17 @@
 
 
 
-#### 枚举类型说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 枚举类型说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### ArkUI_Accessibility_ActionType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### ArkUI_Accessibility_ActionType
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_Accessibility_ActionType
@@ -156,6 +166,7 @@ enum ArkUI_Accessibility_ActionType
 Accessibility操作类型的枚举。
 
 **起始版本：** 13
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -169,7 +180,7 @@ Accessibility操作类型的枚举。
 | ARKUI_ACCESSIBILITY_NATIVE_ACTION_TYPE_COPY = 0x00000400 | 复制文本组件的选定内容。 |
 | ARKUI_ACCESSIBILITY_NATIVE_ACTION_TYPE_PASTE = 0x00000800 | 粘贴文本组件的选定内容。 |
 | ARKUI_ACCESSIBILITY_NATIVE_ACTION_TYPE_CUT = 0x00001000 | 剪切文本组件的选定内容。 |
-| ARKUI_ACCESSIBILITY_NATIVE_ACTION_TYPE_SELECT_TEXT = 0x00002000 | 针对文本组件进行选择操作。结合ArkUI_AccessibilityActionArguments使用，配置selectTextBegin（表示选择起始位置），selectTextEnd（表示选择结束位置），selectTextInForward（true表示为前光标，false表示为后光标）进入编辑区选择一段文本内容。 |
+| ARKUI_ACCESSIBILITY_NATIVE_ACTION_TYPE_SELECT_TEXT = 0x00002000 | 针对文本组件进行选择操作。需结合ArkUI_AccessibilityActionArguments使用，配置selectTextBegin（选择起始位置）、selectTextEnd（选择结束位置）、selectTextInForward（true表示前光标，false表示后光标），配置后在编辑区选择一段文本内容。 |
 | ARKUI_ACCESSIBILITY_NATIVE_ACTION_TYPE_SET_TEXT = 0x00004000 | 设置文本组件的文本内容。 |
 | ARKUI_ACCESSIBILITY_NATIVE_ACTION_TYPE_SET_CURSOR_POSITION = 0x00100000 | 针对文本组件设置光标位置，结合ArkUI_AccessibilityActionArguments使用，配置可输入文本组件的光标位置。 |
 | ARKUI_ACCESSIBILITY_NATIVE_ACTION_TYPE_NEXT_HTML_ITEM = 0x02000000 | 焦点移动操作中支持查找下一个焦点。此处的HTML并不代表网页元素，仅用于表示具有可自行查找下一个可见聚焦组件的能力，与Web支持的能力相似。实现findNextFocusAccessibilityNode的能力才可配置该属性。 起始版本： 15 |
@@ -178,9 +189,10 @@ Accessibility操作类型的枚举。
 
 
 
-#### ArkUI_AccessibilityEventType
+### ArkUI_AccessibilityEventType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_AccessibilityEventType
@@ -192,6 +204,7 @@ Accessibility事件类型的枚举。
 
 **起始版本：** 13
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ARKUI_ACCESSIBILITY_NATIVE_EVENT_TYPE_INVALID = 0 | 无效值。 |
@@ -201,7 +214,7 @@ Accessibility事件类型的枚举。
 | ARKUI_ACCESSIBILITY_NATIVE_EVENT_TYPE_TEXT_UPDATE = 0x00000010 | 文本更新事件，需要在文本更新时发送。 |
 | ARKUI_ACCESSIBILITY_NATIVE_EVENT_TYPE_PAGE_STATE_UPDATE = 0x00000020 | 页面更新事件，当页面跳转、切换、大小更改或移动时发送。 |
 | ARKUI_ACCESSIBILITY_NATIVE_EVENT_TYPE_PAGE_CONTENT_UPDATE = 0x00000800 | 页面内容发生变化时需要发送事件。 |
-| ARKUI_ACCESSIBILITY_NATIVE_EVENT_TYPE_SCROLLED = 0x000001000 | scrolled事件，当可滚动的组件上发生滚动事件时，会发送此事件。 |
+| ARKUI_ACCESSIBILITY_NATIVE_EVENT_TYPE_SCROLLED = 0x000001000 | 滚动事件，当可滚动的组件上发生滚动事件时，会发送此事件。 |
 | ARKUI_ACCESSIBILITY_NATIVE_EVENT_TYPE_ACCESSIBILITY_FOCUSED = 0x00008000 | Accessibility焦点事件，在UI组件响应后发送。 |
 | ARKUI_ACCESSIBILITY_NATIVE_EVENT_TYPE_ACCESSIBILITY_FOCUS_CLEARED = 0x00010000 | Accessibility焦点清除事件，在UI组件响应后发送。 |
 | ARKUI_ACCESSIBILITY_NATIVE_EVENT_TYPE_REQUEST_ACCESSIBILITY_FOCUS = 0x02000000 | 主动请求指定节点聚焦。 |
@@ -213,9 +226,10 @@ Accessibility事件类型的枚举。
 
 
 
-#### ArkUI_AcessbilityErrorCode
+### ArkUI_AcessbilityErrorCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_AcessbilityErrorCode
@@ -227,19 +241,21 @@ Accessibility错误代码状态的枚举。
 
 **起始版本：** 13
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL = 0 | 成功。 |
-| ARKUI_ACCESSIBILITY_NATIVE_RESULT_FAILED = -1 | 操作失败，请检查接口调用流程。可能原因:接口执行过程中出现内部错误。解决措施:请检查调用流程是否正确,若问题持续存在请排查系统状态。 |
+| ARKUI_ACCESSIBILITY_NATIVE_RESULT_FAILED = -1 | 操作失败，请检查接口调用流程。可能原因：接口执行过程中出现内部错误。解决措施：请检查调用流程是否正确，若问题持续存在请排查系统状态。 |
 | ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER = -2 | 无效参数，请检查传入的参数是否正确。可能原因:传入的参数为空指针或不符合接口要求。解决措施:请检查传入参数是否合法,确保指针不为空且参数值在有效范围内。 |
 | ARKUI_ACCESSIBILITY_NATIVE_RESULT_OUT_OF_MEMORY = -3 | 内存不足，请检查系统内存使用情况。可能原因:系统内存资源不足,无法完成操作。解决措施:请释放不必要的资源后重试。 |
 
 
 
 
-#### ArkUI_AccessibilitySearchMode
+### ArkUI_AccessibilitySearchMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_AccessibilitySearchMode
@@ -250,6 +266,7 @@ enum ArkUI_AccessibilitySearchMode
 Accessibility搜索类型的枚举。
 
 **起始版本：** 13
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -262,9 +279,10 @@ Accessibility搜索类型的枚举。
 
 
 
-#### ArkUI_AccessibilityFocusType
+### ArkUI_AccessibilityFocusType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_AccessibilityFocusType
@@ -276,6 +294,7 @@ Accessibility焦点类型的枚举。
 
 **起始版本：** 13
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ARKUI_ACCESSIBILITY_NATIVE_FOCUS_TYPE_INVALID = -1 | 无效值。 |
@@ -285,9 +304,10 @@ Accessibility焦点类型的枚举。
 
 
 
-#### ArkUI_AccessibilityFocusMoveDirection
+### ArkUI_AccessibilityFocusMoveDirection
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_AccessibilityFocusMoveDirection
@@ -298,6 +318,7 @@ enum ArkUI_AccessibilityFocusMoveDirection
 Accessibility焦点移动方向的枚举。
 
 **起始版本：** 13
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -312,15 +333,17 @@ Accessibility焦点移动方向的枚举。
 
 
 
-#### 函数说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 函数说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### OH_ArkUI_AccessibilityProviderRegisterCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### OH_ArkUI_AccessibilityProviderRegisterCallback()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityProviderRegisterCallback(ArkUI_AccessibilityProvider* provider, ArkUI_AccessibilityProviderCallbacks* callbacks)
@@ -334,6 +357,7 @@ int32_t OH_ArkUI_AccessibilityProviderRegisterCallback(ArkUI_AccessibilityProvid
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityProvider* provider | 表示指向ArkUI_AccessibilityProvider实例的指针。 |
@@ -342,6 +366,7 @@ int32_t OH_ArkUI_AccessibilityProviderRegisterCallback(ArkUI_AccessibilityProvid
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 如果操作成功，则返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 如果参数错误，则返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -349,9 +374,10 @@ int32_t OH_ArkUI_AccessibilityProviderRegisterCallback(ArkUI_AccessibilityProvid
 
 
 
-#### OH_ArkUI_AccessibilityProviderRegisterCallbackWithInstance()
+### OH_ArkUI_AccessibilityProviderRegisterCallbackWithInstance()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityProviderRegisterCallbackWithInstance(const char* instanceId, ArkUI_AccessibilityProvider* provider, ArkUI_AccessibilityProviderCallbacksWithInstance* callbacks)
@@ -365,6 +391,7 @@ int32_t OH_ArkUI_AccessibilityProviderRegisterCallbackWithInstance(const char* i
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char* instanceId | 第三方平台接入的实例ID，用于区分多实例场景中不同的第三方实例，ID由第三方平台指定与维护。 |
@@ -374,6 +401,7 @@ int32_t OH_ArkUI_AccessibilityProviderRegisterCallbackWithInstance(const char* i
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -381,9 +409,10 @@ int32_t OH_ArkUI_AccessibilityProviderRegisterCallbackWithInstance(const char* i
 
 
 
-#### OH_ArkUI_SendAccessibilityAsyncEvent()
+### OH_ArkUI_SendAccessibilityAsyncEvent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_SendAccessibilityAsyncEvent(ArkUI_AccessibilityProvider* provider, ArkUI_AccessibilityEventInfo* eventInfo, void (*callback)(int32_t errorCode))
@@ -403,6 +432,7 @@ void OH_ArkUI_SendAccessibilityAsyncEvent(ArkUI_AccessibilityProvider* provider,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityProvider* provider | 第三方平台接入provider句柄。 |
@@ -412,9 +442,10 @@ void OH_ArkUI_SendAccessibilityAsyncEvent(ArkUI_AccessibilityProvider* provider,
 
 
 
-#### OH_ArkUI_AddAndGetAccessibilityElementInfo()
+### OH_ArkUI_AddAndGetAccessibilityElementInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_AccessibilityElementInfo* OH_ArkUI_AddAndGetAccessibilityElementInfo(ArkUI_AccessibilityElementInfoList* list)
@@ -432,12 +463,14 @@ ArkUI_AccessibilityElementInfo* OH_ArkUI_AddAndGetAccessibilityElementInfo(ArkUI
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfoList* list | 指定的ArkUI_AccessibilityElementInfoList结构，新创建的ElementInfo成员加入该list后返回给函数调用方。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -446,9 +479,10 @@ ArkUI_AccessibilityElementInfo* OH_ArkUI_AddAndGetAccessibilityElementInfo(ArkUI
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetElementId()
+### OH_ArkUI_AccessibilityElementInfoSetElementId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetElementId(ArkUI_AccessibilityElementInfo* elementInfo, int32_t elementId)
@@ -466,6 +500,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetElementId(ArkUI_AccessibilityElement
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | ArkUI_AccessibilityElementInfo指针。 |
@@ -474,6 +509,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetElementId(ArkUI_AccessibilityElement
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -481,9 +517,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetElementId(ArkUI_AccessibilityElement
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetParentId()
+### OH_ArkUI_AccessibilityElementInfoSetParentId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetParentId(ArkUI_AccessibilityElementInfo* elementInfo, int32_t parentId)
@@ -501,6 +538,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetParentId(ArkUI_AccessibilityElementI
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -509,6 +547,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetParentId(ArkUI_AccessibilityElementI
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -516,9 +555,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetParentId(ArkUI_AccessibilityElementI
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetComponentType()
+### OH_ArkUI_AccessibilityElementInfoSetComponentType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetComponentType(ArkUI_AccessibilityElementInfo* elementInfo, const char* componentType)
@@ -536,6 +576,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetComponentType(ArkUI_AccessibilityEle
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -544,6 +585,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetComponentType(ArkUI_AccessibilityEle
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -551,9 +593,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetComponentType(ArkUI_AccessibilityEle
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetContents()
+### OH_ArkUI_AccessibilityElementInfoSetContents()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetContents(ArkUI_AccessibilityElementInfo* elementInfo, const char* contents)
@@ -571,6 +614,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetContents(ArkUI_AccessibilityElementI
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -579,6 +623,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetContents(ArkUI_AccessibilityElementI
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -586,9 +631,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetContents(ArkUI_AccessibilityElementI
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetHintText()
+### OH_ArkUI_AccessibilityElementInfoSetHintText()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetHintText(ArkUI_AccessibilityElementInfo* elementInfo, const char* hintText)
@@ -606,6 +652,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetHintText(ArkUI_AccessibilityElementI
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -614,6 +661,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetHintText(ArkUI_AccessibilityElementI
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -621,9 +669,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetHintText(ArkUI_AccessibilityElementI
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetAccessibilityText()
+### OH_ArkUI_AccessibilityElementInfoSetAccessibilityText()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetAccessibilityText(ArkUI_AccessibilityElementInfo* elementInfo, const char* accessibilityText)
@@ -641,6 +690,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetAccessibilityText(ArkUI_Accessibilit
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -649,6 +699,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetAccessibilityText(ArkUI_Accessibilit
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -656,9 +707,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetAccessibilityText(ArkUI_Accessibilit
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetAccessibilityDescription()
+### OH_ArkUI_AccessibilityElementInfoSetAccessibilityDescription()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetAccessibilityDescription(ArkUI_AccessibilityElementInfo* elementInfo, const char* accessibilityDescription)
@@ -676,6 +728,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetAccessibilityDescription(ArkUI_Acces
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -684,6 +737,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetAccessibilityDescription(ArkUI_Acces
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -691,9 +745,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetAccessibilityDescription(ArkUI_Acces
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetChildNodeIds()
+### OH_ArkUI_AccessibilityElementInfoSetChildNodeIds()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetChildNodeIds(ArkUI_AccessibilityElementInfo* elementInfo, int32_t childCount, int64_t* childNodeIds)
@@ -711,6 +766,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetChildNodeIds(ArkUI_AccessibilityElem
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -720,6 +776,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetChildNodeIds(ArkUI_AccessibilityElem
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -727,9 +784,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetChildNodeIds(ArkUI_AccessibilityElem
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetOperationActions()
+### OH_ArkUI_AccessibilityElementInfoSetOperationActions()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetOperationActions(ArkUI_AccessibilityElementInfo* elementInfo,int32_t operationCount, ArkUI_AccessibleAction* operationActions)
@@ -747,6 +805,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetOperationActions(ArkUI_Accessibility
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -756,6 +815,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetOperationActions(ArkUI_Accessibility
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -763,9 +823,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetOperationActions(ArkUI_Accessibility
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetScreenRect()
+### OH_ArkUI_AccessibilityElementInfoSetScreenRect()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetScreenRect(ArkUI_AccessibilityElementInfo* elementInfo, ArkUI_AccessibleRect* screenRect)
@@ -783,6 +844,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetScreenRect(ArkUI_AccessibilityElemen
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -791,6 +853,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetScreenRect(ArkUI_AccessibilityElemen
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -798,9 +861,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetScreenRect(ArkUI_AccessibilityElemen
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetCheckable()
+### OH_ArkUI_AccessibilityElementInfoSetCheckable()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetCheckable(ArkUI_AccessibilityElementInfo* elementInfo, bool checkable)
@@ -818,6 +882,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetCheckable(ArkUI_AccessibilityElement
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -826,6 +891,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetCheckable(ArkUI_AccessibilityElement
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -833,9 +899,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetCheckable(ArkUI_AccessibilityElement
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetChecked()
+### OH_ArkUI_AccessibilityElementInfoSetChecked()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetChecked(ArkUI_AccessibilityElementInfo* elementInfo, bool checked)
@@ -853,6 +920,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetChecked(ArkUI_AccessibilityElementIn
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -861,6 +929,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetChecked(ArkUI_AccessibilityElementIn
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -868,9 +937,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetChecked(ArkUI_AccessibilityElementIn
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetFocusable()
+### OH_ArkUI_AccessibilityElementInfoSetFocusable()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetFocusable(ArkUI_AccessibilityElementInfo* elementInfo, bool focusable)
@@ -888,6 +958,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetFocusable(ArkUI_AccessibilityElement
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -896,6 +967,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetFocusable(ArkUI_AccessibilityElement
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -903,9 +975,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetFocusable(ArkUI_AccessibilityElement
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetFocused()
+### OH_ArkUI_AccessibilityElementInfoSetFocused()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetFocused(ArkUI_AccessibilityElementInfo* elementInfo, bool isFocused)
@@ -923,6 +996,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetFocused(ArkUI_AccessibilityElementIn
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -931,6 +1005,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetFocused(ArkUI_AccessibilityElementIn
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -938,9 +1013,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetFocused(ArkUI_AccessibilityElementIn
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetVisible()
+### OH_ArkUI_AccessibilityElementInfoSetVisible()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetVisible(ArkUI_AccessibilityElementInfo* elementInfo, bool isVisible)
@@ -958,6 +1034,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetVisible(ArkUI_AccessibilityElementIn
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -966,6 +1043,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetVisible(ArkUI_AccessibilityElementIn
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -973,9 +1051,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetVisible(ArkUI_AccessibilityElementIn
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetAccessibilityFocused()
+### OH_ArkUI_AccessibilityElementInfoSetAccessibilityFocused()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetAccessibilityFocused(ArkUI_AccessibilityElementInfo* elementInfo, bool accessibilityFocused)
@@ -993,6 +1072,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetAccessibilityFocused(ArkUI_Accessibi
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -1001,6 +1081,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetAccessibilityFocused(ArkUI_Accessibi
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -1008,9 +1089,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetAccessibilityFocused(ArkUI_Accessibi
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetSelected()
+### OH_ArkUI_AccessibilityElementInfoSetSelected()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetSelected(ArkUI_AccessibilityElementInfo* elementInfo, bool selected)
@@ -1028,6 +1110,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetSelected(ArkUI_AccessibilityElementI
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -1036,6 +1119,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetSelected(ArkUI_AccessibilityElementI
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -1043,9 +1127,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetSelected(ArkUI_AccessibilityElementI
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetClickable()
+### OH_ArkUI_AccessibilityElementInfoSetClickable()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetClickable(ArkUI_AccessibilityElementInfo* elementInfo, bool clickable)
@@ -1063,6 +1148,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetClickable(ArkUI_AccessibilityElement
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -1071,6 +1157,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetClickable(ArkUI_AccessibilityElement
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -1078,9 +1165,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetClickable(ArkUI_AccessibilityElement
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetLongClickable()
+### OH_ArkUI_AccessibilityElementInfoSetLongClickable()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetLongClickable(ArkUI_AccessibilityElementInfo* elementInfo, bool longClickable)
@@ -1098,6 +1186,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetLongClickable(ArkUI_AccessibilityEle
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -1106,6 +1195,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetLongClickable(ArkUI_AccessibilityEle
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -1113,9 +1203,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetLongClickable(ArkUI_AccessibilityEle
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetEnabled()
+### OH_ArkUI_AccessibilityElementInfoSetEnabled()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetEnabled(ArkUI_AccessibilityElementInfo* elementInfo, bool isEnabled)
@@ -1126,12 +1217,13 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetEnabled(ArkUI_AccessibilityElementIn
 为[ArkUI_AccessibilityElementInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkui-accessibility-arkui-accessibilityelementinfo)设置组件是否处于启用状态。
 
 > [!NOTE]
-> 当isEnabled为false时，无障碍辅助应用会播报“已禁用”或“不可用”，提示用户该组件当前不可交互。 对于被禁用的组件（如灰色按钮），应设置isEnabled为false，并通过 OH_ArkUI_AccessibilityElementInfoSetClickable 设置clickable为true，这样无障碍辅助应用会提示用户该组件存在但当前不可用。 如果isEnabled为false且clickable也为false，无障碍辅助应用可能完全跳过该组件。 所有需要被用户交互的组件必须显式设置为true。
+> 当isEnabled为false时，无障碍辅助应用会播报“已禁用”或“不可用”，提示用户该组件当前不可交互。 对于被禁用的组件（如灰色按钮），应设置isEnabled为false，并通过 OH_ArkUI_AccessibilityElementInfoSetClickable 设置clickable为true，这样无障碍辅助应用会提示用户该组件存在但当前不可用。 如果isEnabled为false且clickable也为false，无障碍辅助应用可能完全跳过该组件。 所有需要与用户交互的组件必须显式设置为true。
 
 
 **起始版本：** 13
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -1141,6 +1233,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetEnabled(ArkUI_AccessibilityElementIn
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -1148,9 +1241,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetEnabled(ArkUI_AccessibilityElementIn
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetIsPassword()
+### OH_ArkUI_AccessibilityElementInfoSetIsPassword()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetIsPassword(ArkUI_AccessibilityElementInfo* elementInfo, bool isPassword)
@@ -1168,6 +1262,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetIsPassword(ArkUI_AccessibilityElemen
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -1176,6 +1271,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetIsPassword(ArkUI_AccessibilityElemen
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -1183,9 +1279,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetIsPassword(ArkUI_AccessibilityElemen
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetScrollable()
+### OH_ArkUI_AccessibilityElementInfoSetScrollable()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetScrollable(ArkUI_AccessibilityElementInfo* elementInfo, bool scrollable)
@@ -1203,6 +1300,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetScrollable(ArkUI_AccessibilityElemen
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -1211,6 +1309,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetScrollable(ArkUI_AccessibilityElemen
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -1218,9 +1317,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetScrollable(ArkUI_AccessibilityElemen
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetEditable()
+### OH_ArkUI_AccessibilityElementInfoSetEditable()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetEditable(ArkUI_AccessibilityElementInfo* elementInfo, bool editable)
@@ -1238,6 +1338,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetEditable(ArkUI_AccessibilityElementI
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -1246,6 +1347,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetEditable(ArkUI_AccessibilityElementI
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -1253,9 +1355,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetEditable(ArkUI_AccessibilityElementI
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetIsHint()
+### OH_ArkUI_AccessibilityElementInfoSetIsHint()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetIsHint(ArkUI_AccessibilityElementInfo* elementInfo, bool isHint)
@@ -1273,6 +1376,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetIsHint(ArkUI_AccessibilityElementInf
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -1281,6 +1385,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetIsHint(ArkUI_AccessibilityElementInf
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -1288,9 +1393,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetIsHint(ArkUI_AccessibilityElementInf
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetRangeInfo()
+### OH_ArkUI_AccessibilityElementInfoSetRangeInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetRangeInfo(ArkUI_AccessibilityElementInfo* elementInfo, ArkUI_AccessibleRangeInfo* rangeInfo)
@@ -1308,6 +1414,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetRangeInfo(ArkUI_AccessibilityElement
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -1316,6 +1423,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetRangeInfo(ArkUI_AccessibilityElement
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -1323,9 +1431,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetRangeInfo(ArkUI_AccessibilityElement
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetGridInfo()
+### OH_ArkUI_AccessibilityElementInfoSetGridInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetGridInfo(ArkUI_AccessibilityElementInfo* elementInfo, ArkUI_AccessibleGridInfo* gridInfo)
@@ -1343,6 +1452,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetGridInfo(ArkUI_AccessibilityElementI
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -1351,6 +1461,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetGridInfo(ArkUI_AccessibilityElementI
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -1358,9 +1469,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetGridInfo(ArkUI_AccessibilityElementI
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetGridItemInfo()
+### OH_ArkUI_AccessibilityElementInfoSetGridItemInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetGridItemInfo(ArkUI_AccessibilityElementInfo* elementInfo, ArkUI_AccessibleGridItemInfo* gridItem)
@@ -1378,6 +1490,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetGridItemInfo(ArkUI_AccessibilityElem
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -1386,6 +1499,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetGridItemInfo(ArkUI_AccessibilityElem
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -1393,9 +1507,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetGridItemInfo(ArkUI_AccessibilityElem
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetSelectedTextStart()
+### OH_ArkUI_AccessibilityElementInfoSetSelectedTextStart()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetSelectedTextStart(ArkUI_AccessibilityElementInfo* elementInfo, int32_t selectedTextStart)
@@ -1413,6 +1528,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetSelectedTextStart(ArkUI_Accessibilit
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -1421,6 +1537,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetSelectedTextStart(ArkUI_Accessibilit
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -1428,9 +1545,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetSelectedTextStart(ArkUI_Accessibilit
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetSelectedTextEnd()
+### OH_ArkUI_AccessibilityElementInfoSetSelectedTextEnd()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetSelectedTextEnd(ArkUI_AccessibilityElementInfo* elementInfo, int32_t selectedTextEnd)
@@ -1448,6 +1566,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetSelectedTextEnd(ArkUI_AccessibilityE
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -1456,6 +1575,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetSelectedTextEnd(ArkUI_AccessibilityE
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -1463,9 +1583,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetSelectedTextEnd(ArkUI_AccessibilityE
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetCurrentItemIndex()
+### OH_ArkUI_AccessibilityElementInfoSetCurrentItemIndex()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetCurrentItemIndex(ArkUI_AccessibilityElementInfo* elementInfo, int32_t currentItemIndex)
@@ -1483,6 +1604,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetCurrentItemIndex(ArkUI_Accessibility
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -1491,6 +1613,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetCurrentItemIndex(ArkUI_Accessibility
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -1498,9 +1621,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetCurrentItemIndex(ArkUI_Accessibility
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetStartItemIndex()
+### OH_ArkUI_AccessibilityElementInfoSetStartItemIndex()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetStartItemIndex(ArkUI_AccessibilityElementInfo* elementInfo, int32_t startItemIndex)
@@ -1518,6 +1642,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetStartItemIndex(ArkUI_AccessibilityEl
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -1526,6 +1651,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetStartItemIndex(ArkUI_AccessibilityEl
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -1533,9 +1659,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetStartItemIndex(ArkUI_AccessibilityEl
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetEndItemIndex()
+### OH_ArkUI_AccessibilityElementInfoSetEndItemIndex()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetEndItemIndex(ArkUI_AccessibilityElementInfo* elementInfo, int32_t endItemIndex)
@@ -1553,6 +1680,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetEndItemIndex(ArkUI_AccessibilityElem
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -1561,6 +1689,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetEndItemIndex(ArkUI_AccessibilityElem
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -1568,9 +1697,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetEndItemIndex(ArkUI_AccessibilityElem
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetItemCount()
+### OH_ArkUI_AccessibilityElementInfoSetItemCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetItemCount(ArkUI_AccessibilityElementInfo* elementInfo, int32_t itemCount)
@@ -1588,6 +1718,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetItemCount(ArkUI_AccessibilityElement
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -1596,6 +1727,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetItemCount(ArkUI_AccessibilityElement
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -1603,9 +1735,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetItemCount(ArkUI_AccessibilityElement
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetAccessibilityOffset()
+### OH_ArkUI_AccessibilityElementInfoSetAccessibilityOffset()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetAccessibilityOffset(ArkUI_AccessibilityElementInfo* elementInfo, int32_t offset)
@@ -1623,6 +1756,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetAccessibilityOffset(ArkUI_Accessibil
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -1631,6 +1765,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetAccessibilityOffset(ArkUI_Accessibil
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -1638,9 +1773,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetAccessibilityOffset(ArkUI_Accessibil
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetAccessibilityGroup()
+### OH_ArkUI_AccessibilityElementInfoSetAccessibilityGroup()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetAccessibilityGroup(ArkUI_AccessibilityElementInfo* elementInfo, bool accessibilityGroup)
@@ -1658,6 +1794,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetAccessibilityGroup(ArkUI_Accessibili
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -1666,6 +1803,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetAccessibilityGroup(ArkUI_Accessibili
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -1673,9 +1811,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetAccessibilityGroup(ArkUI_Accessibili
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetAccessibilityLevel()
+### OH_ArkUI_AccessibilityElementInfoSetAccessibilityLevel()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetAccessibilityLevel(ArkUI_AccessibilityElementInfo* elementInfo, const char* accessibilityLevel)
@@ -1693,6 +1832,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetAccessibilityLevel(ArkUI_Accessibili
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -1701,6 +1841,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetAccessibilityLevel(ArkUI_Accessibili
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -1708,9 +1849,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetAccessibilityLevel(ArkUI_Accessibili
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetZIndex()
+### OH_ArkUI_AccessibilityElementInfoSetZIndex()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetZIndex(ArkUI_AccessibilityElementInfo* elementInfo, int32_t zIndex)
@@ -1728,6 +1870,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetZIndex(ArkUI_AccessibilityElementInf
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -1736,6 +1879,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetZIndex(ArkUI_AccessibilityElementInf
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -1743,9 +1887,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetZIndex(ArkUI_AccessibilityElementInf
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetAccessibilityOpacity()
+### OH_ArkUI_AccessibilityElementInfoSetAccessibilityOpacity()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetAccessibilityOpacity(ArkUI_AccessibilityElementInfo* elementInfo, float opacity)
@@ -1763,6 +1908,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetAccessibilityOpacity(ArkUI_Accessibi
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -1771,6 +1917,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetAccessibilityOpacity(ArkUI_Accessibi
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -1778,9 +1925,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetAccessibilityOpacity(ArkUI_Accessibi
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetBackgroundColor()
+### OH_ArkUI_AccessibilityElementInfoSetBackgroundColor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetBackgroundColor(ArkUI_AccessibilityElementInfo* elementInfo, const char* backgroundColor)
@@ -1798,6 +1946,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetBackgroundColor(ArkUI_AccessibilityE
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -1806,6 +1955,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetBackgroundColor(ArkUI_AccessibilityE
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -1813,9 +1963,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetBackgroundColor(ArkUI_AccessibilityE
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetBackgroundImage()
+### OH_ArkUI_AccessibilityElementInfoSetBackgroundImage()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetBackgroundImage(ArkUI_AccessibilityElementInfo* elementInfo, const char* backgroundImage)
@@ -1833,6 +1984,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetBackgroundImage(ArkUI_AccessibilityE
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -1841,6 +1993,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetBackgroundImage(ArkUI_AccessibilityE
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -1848,9 +2001,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetBackgroundImage(ArkUI_AccessibilityE
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetBlur()
+### OH_ArkUI_AccessibilityElementInfoSetBlur()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetBlur(ArkUI_AccessibilityElementInfo* elementInfo, const char* blur)
@@ -1868,6 +2022,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetBlur(ArkUI_AccessibilityElementInfo*
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -1876,6 +2031,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetBlur(ArkUI_AccessibilityElementInfo*
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -1883,9 +2039,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetBlur(ArkUI_AccessibilityElementInfo*
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetHitTestBehavior()
+### OH_ArkUI_AccessibilityElementInfoSetHitTestBehavior()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetHitTestBehavior(ArkUI_AccessibilityElementInfo* elementInfo, const char* hitTestBehavior)
@@ -1903,6 +2060,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetHitTestBehavior(ArkUI_AccessibilityE
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -1911,6 +2069,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetHitTestBehavior(ArkUI_AccessibilityE
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -1918,9 +2077,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetHitTestBehavior(ArkUI_AccessibilityE
 
 
 
-#### OH_ArkUI_AccessibilityElementInfoSetComponentIdentifier()
+### OH_ArkUI_AccessibilityElementInfoSetComponentIdentifier()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityElementInfoSetComponentIdentifier(ArkUI_AccessibilityElementInfo* elementInfo, const char* identifier)
@@ -1934,6 +2094,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetComponentIdentifier(ArkUI_Accessibil
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -1942,6 +2103,7 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetComponentIdentifier(ArkUI_Accessibil
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -1949,9 +2111,10 @@ int32_t OH_ArkUI_AccessibilityElementInfoSetComponentIdentifier(ArkUI_Accessibil
 
 
 
-#### OH_ArkUI_CreateAccessibilityElementInfo()
+### OH_ArkUI_CreateAccessibilityElementInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_AccessibilityElementInfo* OH_ArkUI_CreateAccessibilityElementInfo(void)
@@ -1965,6 +2128,7 @@ ArkUI_AccessibilityElementInfo* OH_ArkUI_CreateAccessibilityElementInfo(void)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* | 返回新创建的ArkUI_AccessibilityElementInfo对象指针，用于承载无障碍节点信息；如果创建失败，则返回NULL。 |
@@ -1972,9 +2136,10 @@ ArkUI_AccessibilityElementInfo* OH_ArkUI_CreateAccessibilityElementInfo(void)
 
 
 
-#### OH_ArkUI_DestoryAccessibilityElementInfo()
+### OH_ArkUI_DestoryAccessibilityElementInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_DestoryAccessibilityElementInfo(ArkUI_AccessibilityElementInfo* elementInfo)
@@ -1988,6 +2153,7 @@ void OH_ArkUI_DestoryAccessibilityElementInfo(ArkUI_AccessibilityElementInfo* el
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityElementInfo* elementInfo | 表示指向ArkUI_AccessibilityElementInfo的指针。 |
@@ -1995,9 +2161,10 @@ void OH_ArkUI_DestoryAccessibilityElementInfo(ArkUI_AccessibilityElementInfo* el
 
 
 
-#### OH_ArkUI_CreateAccessibilityEventInfo()
+### OH_ArkUI_CreateAccessibilityEventInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_AccessibilityEventInfo* OH_ArkUI_CreateAccessibilityEventInfo(void)
@@ -2011,6 +2178,7 @@ ArkUI_AccessibilityEventInfo* OH_ArkUI_CreateAccessibilityEventInfo(void)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_AccessibilityEventInfo* | 返回新创建的ArkUI_AccessibilityEventInfo对象指针，用于承载无障碍事件信息；如果创建失败，则返回NULL。 |
@@ -2018,9 +2186,10 @@ ArkUI_AccessibilityEventInfo* OH_ArkUI_CreateAccessibilityEventInfo(void)
 
 
 
-#### OH_ArkUI_DestoryAccessibilityEventInfo()
+### OH_ArkUI_DestoryAccessibilityEventInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_DestoryAccessibilityEventInfo(ArkUI_AccessibilityEventInfo* eventInfo)
@@ -2034,6 +2203,7 @@ void OH_ArkUI_DestoryAccessibilityEventInfo(ArkUI_AccessibilityEventInfo* eventI
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityEventInfo* eventInfo | 需要被销毁的ArkUI_AccessibilityEventInfo对象。 |
@@ -2041,9 +2211,10 @@ void OH_ArkUI_DestoryAccessibilityEventInfo(ArkUI_AccessibilityEventInfo* eventI
 
 
 
-#### OH_ArkUI_AccessibilityEventSetEventType()
+### OH_ArkUI_AccessibilityEventSetEventType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityEventSetEventType(ArkUI_AccessibilityEventInfo* eventInfo,  ArkUI_AccessibilityEventType eventType)
@@ -2057,6 +2228,7 @@ int32_t OH_ArkUI_AccessibilityEventSetEventType(ArkUI_AccessibilityEventInfo* ev
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityEventInfo* eventInfo | 表示指向ArkUI_AccessibilityEventInfo的指针。 |
@@ -2065,6 +2237,7 @@ int32_t OH_ArkUI_AccessibilityEventSetEventType(ArkUI_AccessibilityEventInfo* ev
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -2072,9 +2245,10 @@ int32_t OH_ArkUI_AccessibilityEventSetEventType(ArkUI_AccessibilityEventInfo* ev
 
 
 
-#### OH_ArkUI_AccessibilityEventSetTextAnnouncedForAccessibility()
+### OH_ArkUI_AccessibilityEventSetTextAnnouncedForAccessibility()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityEventSetTextAnnouncedForAccessibility(ArkUI_AccessibilityEventInfo* eventInfo,  const char* textAnnouncedForAccessibility)
@@ -2088,6 +2262,7 @@ int32_t OH_ArkUI_AccessibilityEventSetTextAnnouncedForAccessibility(ArkUI_Access
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityEventInfo* eventInfo | 表示事件信息。 |
@@ -2096,6 +2271,7 @@ int32_t OH_ArkUI_AccessibilityEventSetTextAnnouncedForAccessibility(ArkUI_Access
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -2103,9 +2279,10 @@ int32_t OH_ArkUI_AccessibilityEventSetTextAnnouncedForAccessibility(ArkUI_Access
 
 
 
-#### OH_ArkUI_AccessibilityEventSetRequestFocusId()
+### OH_ArkUI_AccessibilityEventSetRequestFocusId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityEventSetRequestFocusId(ArkUI_AccessibilityEventInfo* eventInfo,  int32_t requestFocusId)
@@ -2119,6 +2296,7 @@ int32_t OH_ArkUI_AccessibilityEventSetRequestFocusId(ArkUI_AccessibilityEventInf
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityEventInfo* eventInfo | 表示事件信息。 |
@@ -2127,6 +2305,7 @@ int32_t OH_ArkUI_AccessibilityEventSetRequestFocusId(ArkUI_AccessibilityEventInf
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -2134,9 +2313,10 @@ int32_t OH_ArkUI_AccessibilityEventSetRequestFocusId(ArkUI_AccessibilityEventInf
 
 
 
-#### OH_ArkUI_AccessibilityEventSetElementInfo()
+### OH_ArkUI_AccessibilityEventSetElementInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityEventSetElementInfo(ArkUI_AccessibilityEventInfo* eventInfo,  ArkUI_AccessibilityElementInfo* elementInfo)
@@ -2150,6 +2330,7 @@ int32_t OH_ArkUI_AccessibilityEventSetElementInfo(ArkUI_AccessibilityEventInfo* 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityEventInfo* eventInfo | 表示事件信息。 |
@@ -2158,6 +2339,7 @@ int32_t OH_ArkUI_AccessibilityEventSetElementInfo(ArkUI_AccessibilityEventInfo* 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -2165,9 +2347,10 @@ int32_t OH_ArkUI_AccessibilityEventSetElementInfo(ArkUI_AccessibilityEventInfo* 
 
 
 
-#### OH_ArkUI_FindAccessibilityActionArgumentByKey()
+### OH_ArkUI_FindAccessibilityActionArgumentByKey()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_FindAccessibilityActionArgumentByKey(ArkUI_AccessibilityActionArguments* arguments, const char* key, char** value)
@@ -2181,6 +2364,7 @@ int32_t OH_ArkUI_FindAccessibilityActionArgumentByKey(ArkUI_AccessibilityActionA
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityActionArguments* arguments | 表示指向ArkUI_AccessibilityActionArguments的指针。 |
@@ -2190,6 +2374,7 @@ int32_t OH_ArkUI_FindAccessibilityActionArgumentByKey(ArkUI_AccessibilityActionA
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 成功返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL。 参数错误返回ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER。 |
@@ -2197,9 +2382,10 @@ int32_t OH_ArkUI_FindAccessibilityActionArgumentByKey(ArkUI_AccessibilityActionA
 
 
 
-#### OH_ArkUI_NativeModule_GetNativeAccessibilityProvider()
+### OH_ArkUI_NativeModule_GetNativeAccessibilityProvider()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_NativeModule_GetNativeAccessibilityProvider(ArkUI_NodeHandle* node, ArkUI_AccessibilityProvider** provider)
@@ -2227,6 +2413,7 @@ int32_t OH_ArkUI_NativeModule_GetNativeAccessibilityProvider(ArkUI_NodeHandle* n
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle* node | 指向一个ArkUI_NodeHandle对象的指针。 |
@@ -2234,6 +2421,7 @@ int32_t OH_ArkUI_NativeModule_GetNativeAccessibilityProvider(ArkUI_NodeHandle* n
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |

@@ -1,13 +1,14 @@
 # oh_preferences_option.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-preferences-option-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供访问Preferences配置选项（PreferencesOption）的接口与数据结构。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_PreferencesOption | OH_PreferencesOption | 定义Preferences配置选项的数据结构。 |
@@ -40,10 +44,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | Preferences_StorageType | Preferences_StorageType | 首选项配置选项的存储模式枚举。 |
@@ -51,10 +57,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_PreferencesOption *OH_PreferencesOption_Create(void) | 创建一个Preferences配置选项的OH_PreferencesOption实例对象以及指向它的指针。 当不再需要使用指针时，请使用OH_PreferencesOption_Destroy销毁实例对象，否则会导致内存泄漏。 |
@@ -67,15 +75,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### Preferences_StorageType
+### Preferences_StorageType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Preferences_StorageType
@@ -87,6 +97,7 @@ enum Preferences_StorageType
  
 **起始版本：** 18
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | PREFERENCES_STORAGE_XML = 0 | XML存储模式，对数据的操作发生在内存中，调用OH_Preferences_Close时落盘，不支持多进程。 |
@@ -95,15 +106,17 @@ enum Preferences_StorageType
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_PreferencesOption_Create()
+### OH_PreferencesOption_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_PreferencesOption *OH_PreferencesOption_Create(void)
@@ -119,16 +132,18 @@ OH_PreferencesOption *OH_PreferencesOption_Create(void)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| OH_PreferencesOption | 如果操作成功，返回指向Preferences配置选项OH_PreferencesOption实例对象的指针。失败返回空指针。 |
+| OH_PreferencesOption * | 如果操作成功，返回指向Preferences配置选项OH_PreferencesOption实例对象的指针。失败返回空指针。 |
  
  
   
 
-#### OH_PreferencesOption_SetFileName()
+### OH_PreferencesOption_SetFileName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_PreferencesOption_SetFileName(OH_PreferencesOption *option, const char *fileName)
@@ -142,6 +157,7 @@ int OH_PreferencesOption_SetFileName(OH_PreferencesOption *option, const char *f
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PreferencesOption *option | 指向Preferences配置选项OH_PreferencesOption实例对象的指针。 |
@@ -150,6 +166,7 @@ int OH_PreferencesOption_SetFileName(OH_PreferencesOption *option, const char *f
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的错误码。 若错误码为PREFERENCES_OK，表示操作成功。 若错误码为PREFERENCES_ERROR_INVALID_PARAM，表示参数不合法。 |
@@ -161,9 +178,10 @@ OH_Preferences_ErrCode
  
   
 
-#### OH_PreferencesOption_SetBundleName()
+### OH_PreferencesOption_SetBundleName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_PreferencesOption_SetBundleName(OH_PreferencesOption *option, const char *bundleName)
@@ -177,6 +195,7 @@ int OH_PreferencesOption_SetBundleName(OH_PreferencesOption *option, const char 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PreferencesOption *option | 配置选项OH_PreferencesOption实例对象的指针。 |
@@ -185,6 +204,7 @@ int OH_PreferencesOption_SetBundleName(OH_PreferencesOption *option, const char 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的错误码。 若错误码为PREFERENCES_OK，表示操作成功。 若错误码为PREFERENCES_ERROR_INVALID_PARAM，表示参数不合法。 |
@@ -192,9 +212,10 @@ int OH_PreferencesOption_SetBundleName(OH_PreferencesOption *option, const char 
  
   
 
-#### OH_PreferencesOption_SetDataGroupId()
+### OH_PreferencesOption_SetDataGroupId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_PreferencesOption_SetDataGroupId(OH_PreferencesOption *option, const char *dataGroupId)
@@ -212,6 +233,7 @@ int OH_PreferencesOption_SetDataGroupId(OH_PreferencesOption *option, const char
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PreferencesOption *option | 配置选项OH_PreferencesOption实例对象的指针。 |
@@ -220,6 +242,7 @@ int OH_PreferencesOption_SetDataGroupId(OH_PreferencesOption *option, const char
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的错误码。 若错误码为PREFERENCES_OK，表示操作成功。 若错误码为PREFERENCES_ERROR_INVALID_PARAM，表示参数不合法。 |
@@ -227,9 +250,10 @@ int OH_PreferencesOption_SetDataGroupId(OH_PreferencesOption *option, const char
  
   
 
-#### OH_PreferencesOption_SetStorageType()
+### OH_PreferencesOption_SetStorageType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_PreferencesOption_SetStorageType(OH_PreferencesOption *option, Preferences_StorageType type)
@@ -243,6 +267,7 @@ int OH_PreferencesOption_SetStorageType(OH_PreferencesOption *option, Preference
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PreferencesOption *option | 指向要设置存储模式的配置项的指针。 |
@@ -251,6 +276,7 @@ int OH_PreferencesOption_SetStorageType(OH_PreferencesOption *option, Preference
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的错误码。 若错误码为PREFERENCES_OK，表示操作成功。 若错误码为PREFERENCES_ERROR_INVALID_PARAM，表示参数不合法。 |
@@ -258,9 +284,10 @@ int OH_PreferencesOption_SetStorageType(OH_PreferencesOption *option, Preference
  
   
 
-#### OH_PreferencesOption_Destroy()
+### OH_PreferencesOption_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_PreferencesOption_Destroy(OH_PreferencesOption *option)
@@ -274,6 +301,7 @@ int OH_PreferencesOption_Destroy(OH_PreferencesOption *option)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PreferencesOption *option | 配置选项OH_PreferencesOption实例对象的指针。 |
@@ -281,6 +309,7 @@ int OH_PreferencesOption_Destroy(OH_PreferencesOption *option)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回接口操作执行的状态码。 若错误码为PREFERENCES_OK，表示操作成功。 若错误码为PREFERENCES_ERROR_INVALID_PARAM，表示参数不合法。 |

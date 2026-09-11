@@ -1,20 +1,21 @@
 # Class (Typeface)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-graphics-drawing-typeface
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-字体，如宋体、楷体等。
+Typeface类用于表示和管理字体对象。支持的字体操作包括：获取字体族名、从字体文件或rawfile资源构造字体、结合字体属性构造新字体，以及检查字体的加粗、斜体状态等。
 
 > [!NOTE]
 > 本模块首批接口从API version 11开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 本模块使用屏幕物理像素单位px。 本模块为单线程模型策略，需要调用方自行管理线程安全和上下文状态的切换。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { drawing } from '@kit.ArkGraphics2D';
@@ -22,9 +23,10 @@ import { drawing } from '@kit.ArkGraphics2D';
 
 
 
-#### getFamilyName
+## getFamilyName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFamilyName(): string
 
@@ -34,9 +36,10 @@ getFamilyName(): string
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| string | 返回字体的族名。 |
+| string | 返回字体的族名，表示当前Typeface对象对应的字体设计名称。 |
 
 
 **示例：**
@@ -51,9 +54,10 @@ let familyName = typeface.getFamilyName();
 
 
 
-#### makeFromCurrent20+
+## makeFromCurrent20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 makeFromCurrent(typefaceArguments: TypefaceArguments): Typeface
 
@@ -63,16 +67,18 @@ makeFromCurrent(typefaceArguments: TypefaceArguments): Typeface
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| typefaceArguments | TypefaceArguments | 是 | 字体属性。 |
+| typefaceArguments | TypefaceArguments | 是 | 字体属性参数。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Typeface | 返回字体对象（异常情况下会返回空指针）。 |
+| Typeface | 返回基于当前字体结合字体属性构造的字体对象（异常情况下会返回空指针）。 |
 
 
 **示例：**
@@ -98,9 +104,10 @@ class TextRenderNode extends RenderNode {
 
 
 
-#### makeFromFile12+
+## makeFromFile12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static makeFromFile(filePath: string): Typeface
 
@@ -112,6 +119,7 @@ static makeFromFile(filePath: string): Typeface
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | filePath | string | 是 | 表示字体资源存放的路径。应用沙箱路径和真实物理路径的对应关系请参考应用沙箱路径和真实物理路径的对应关系。 |
@@ -119,18 +127,20 @@ static makeFromFile(filePath: string): Typeface
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Typeface | 返回Typeface对象。 |
+| Typeface | 返回从指定字体文件加载的字体对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 
 **示例：**
@@ -154,19 +164,21 @@ class TextRenderNode extends RenderNode {
 
 
 
-#### makeFromRawFile18+
+## makeFromRawFile18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static makeFromRawFile(rawfile: Resource): Typeface
 
-使用指定的字体文件构造字体，其中要求指定的字体文件需保存在应用资源文件夹的rawfile路径下。
+使用指定的字体文件构造字体，该字体文件需保存在应用资源文件夹的rawfile路径下。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -175,9 +187,10 @@ static makeFromRawFile(rawfile: Resource): Typeface
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Typeface | 返回Typeface对象（异常情况下会返回空指针）。 |
+| Typeface | 返回从rawfile资源加载的字体对象（异常情况下会返回空指针）。 |
 
 
 **示例：**
@@ -200,9 +213,10 @@ class TextRenderNode extends RenderNode {
 
 
 
-#### makeFromFileWithArguments20+
+## makeFromFileWithArguments20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static makeFromFileWithArguments(filePath: string, typefaceArguments: TypefaceArguments): Typeface
 
@@ -214,17 +228,19 @@ static makeFromFileWithArguments(filePath: string, typefaceArguments: TypefaceAr
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | filePath | string | 是 | 表示字体资源存放的路径。应用沙箱路径和真实物理路径的对应关系请参考应用沙箱路径和真实物理路径的对应关系。 |
-| typefaceArguments | TypefaceArguments | 是 | 表示字体属性。 |
+| typefaceArguments | TypefaceArguments | 是 | 字体属性参数。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Typeface | 返回字体对象（异常情况下会返回空指针）。 |
+| Typeface | 返回从指定字体文件加载并结合字体属性构造的字体对象（异常情况下会返回空指针）。 |
 
 
 **示例：**
@@ -249,13 +265,14 @@ class TextRenderNode extends RenderNode {
 
 
 
-#### makeFromRawFileWithArguments20+
+## makeFromRawFileWithArguments20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static makeFromRawFileWithArguments(rawfile: Resource, typefaceArguments: TypefaceArguments): Typeface
 
-使用指定的字体文件和字体属性构造字体，其中要求指定的字体文件需保存在应用资源文件夹的rawfile路径下。
+使用指定的字体文件和字体属性构造新的字体，该字体文件需保存在应用资源文件夹的rawfile路径下。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
@@ -263,17 +280,19 @@ static makeFromRawFileWithArguments(rawfile: Resource, typefaceArguments: Typefa
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| rawfile | Resource | 是 | 指定字体文件对应的资源对象。当前只支持$rawfile格式引用的资源对象，对应格式写为\$rawfile('filePath')，其中filePath为指定字体文件相对于工程中resources/rawfile目录的相对路径。 |
-| typefaceArguments | TypefaceArguments | 是 | 表示字体属性。 |
+| rawfile | Resource | 是 | 指定字体文件对应的资源对象。当前只支持$rawfile格式引用的资源对象，传入非$rawfile格式的资源对象时返回空指针。对应格式写为\$rawfile('filePath')，其中filePath为指定字体文件相对于工程中resources/rawfile目录的相对路径。 |
+| typefaceArguments | TypefaceArguments | 是 | 字体属性参数。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Typeface | 返回字体对象（异常情况下会返回空指针）。 |
+| Typeface | 返回从rawfile资源加载并结合字体属性构造的字体对象（异常情况下会返回空指针）。 |
 
 
 **示例：**
@@ -297,9 +316,10 @@ class TextRenderNode extends RenderNode {
 
 
 
-#### isBold23+
+## isBold23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isBold(): boolean
 
@@ -308,6 +328,7 @@ isBold(): boolean
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -326,21 +347,23 @@ let result = typeface.isBold();
 
 
 
-#### isItalic23+
+## isItalic23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isItalic(): boolean
 
-检查字体是否是斜体。
+检查字体是否为斜体。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 返回当前字体是否是斜体。true表示字体是斜体，false表示字体不是斜体。 |
+| boolean | 返回当前字体是否为斜体。true表示字体为斜体，false表示字体非斜体。 |
 
 
 **示例：**

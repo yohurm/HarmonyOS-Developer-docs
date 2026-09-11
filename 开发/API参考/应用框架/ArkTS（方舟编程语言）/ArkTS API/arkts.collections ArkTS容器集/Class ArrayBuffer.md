@@ -1,9 +1,9 @@
 # Class (ArrayBuffer)
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-arkts-collections-arraybuffer
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ArkTS TypedArray（[Int8Array](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-arkts-collections-int8array)、[Uint8Array](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-arkts-collections-uint8array)、[Int16Array](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-arkts-collections-int16array)、[Uint16Array](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-arkts-collections-uint16array)、[Int32Array](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-arkts-collections-int32array)、[Uint32Array](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-arkts-collections-uint32array)、[Uint8ClampedArray](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-arkts-collections-uint8clampedarray)、[Float32Array](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-arkts-collections-float32array)）的底层数据结构。
  
@@ -14,9 +14,10 @@ ArkTS TypedArray（[Int8Array](https://developer.huawei.com/consumer/cn/doc/harm
 **装饰器类型：**@Sendable
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { collections } from '@kit.ArkTS';
@@ -24,14 +25,16 @@ import { collections } from '@kit.ArkTS';
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Utils.Lang
  
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | byteLength | number | 是 | 否 | buffer所占的字节数。 |
@@ -39,9 +42,10 @@ import { collections } from '@kit.ArkTS';
  
   
 
-#### constructor
+## constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(byteLength: number)
  
@@ -53,6 +57,7 @@ constructor(byteLength: number)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | byteLength | number | 是 | buffer所占的字节数，取值范围是[0, 2147483647]，否则会抛出异常。0代表构造的ArkTS ArrayBuffer的长度为0，2147483647表示构造的ArkTS ArrayBuffer的长度为2147483647。 |
@@ -62,6 +67,7 @@ constructor(byteLength: number)
  
 以下错误码详细介绍请参考[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200012 | The ArrayBuffer's constructor cannot be directly invoked. |
@@ -76,9 +82,10 @@ console.info("byteLength: " + arrayBuffer.byteLength); // byteLength: 10
  
   
 
-#### slice
+## slice
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 slice(begin: number, end?: number): ArrayBuffer
  
@@ -90,6 +97,7 @@ slice(begin: number, end?: number): ArrayBuffer
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | begin | number | 是 | 开始索引。如果begin < 0，则会从begin + arrayBuffer.byteLength位置开始。如果begin < -arrayBuffer.byteLength，则从0开始。 |
@@ -98,6 +106,7 @@ slice(begin: number, end?: number): ArrayBuffer
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ArrayBuffer | collections.ArrayBuffer |
@@ -107,6 +116,7 @@ slice(begin: number, end?: number): ArrayBuffer
  
 以下错误码详细介绍请参考[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The slice method cannot be bound. |

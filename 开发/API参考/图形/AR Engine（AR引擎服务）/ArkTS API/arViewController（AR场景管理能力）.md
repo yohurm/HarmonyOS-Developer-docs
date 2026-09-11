@@ -1,6 +1,6 @@
 # arViewController（AR场景管理能力）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-api-arviewcontroller
 **支持设备：** Phone | Tablet | TV
@@ -16,7 +16,8 @@
 **起始版本：** 5.1.0(18)
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -26,7 +27,8 @@ import { arEngine, arViewController } from '@kit.AREngine';
 
 
 
-#### LandmarkType
+## LandmarkType
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -37,6 +39,7 @@ import { arEngine, arViewController } from '@kit.AREngine';
 **系统能力：** SystemCapability.AREngine.Core
 
 **起始版本：** 6.1.0(23)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -50,7 +53,8 @@ import { arEngine, arViewController } from '@kit.AREngine';
 
 
 
-#### ARViewContext
+## ARViewContext
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -66,7 +70,8 @@ ARView上下文，用于AR场景管理，包括初始化、暂停、恢复及销
 
 
 
-#### ARViewContext.init
+### ARViewContext.init
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -86,6 +91,7 @@ init(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -94,6 +100,7 @@ init(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -122,7 +129,8 @@ await context.init();
 
 
 
-#### ARViewContext.pause
+### ARViewContext.pause
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -142,6 +150,7 @@ pause(): void
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1009200001 | Failure. |
@@ -160,7 +169,8 @@ context.pause();
 
 
 
-#### ARViewContext.destroy
+### ARViewContext.destroy
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -178,6 +188,7 @@ destroy(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -186,6 +197,7 @@ destroy(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -205,7 +217,8 @@ context.destroy();
 
 
 
-#### ARViewContext.resume
+### ARViewContext.resume
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -224,6 +237,7 @@ resume(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -244,7 +258,8 @@ context.resume();
 
 
 
-#### ARViewContext.scene
+### ARViewContext.scene
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -262,6 +277,7 @@ set scene(scene: Scene)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scene | Scene | 是 | AR呈现场景，用于管理空间节点。 |
@@ -270,6 +286,7 @@ set scene(scene: Scene)
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -292,7 +309,8 @@ Scene.load().then((scene: Scene) => {
 
 
 
-#### ARViewContext.scene
+### ARViewContext.scene
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -310,6 +328,7 @@ get scene(): Scene
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Scene | AR呈现场景，用于管理空间节点。 |
@@ -318,6 +337,7 @@ get scene(): Scene
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -336,7 +356,8 @@ context.scene;
 
 
 
-#### ARViewContext.session
+### ARViewContext.session
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -354,6 +375,7 @@ get session(): arEngine.ARSession | undefined
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | arEngine.ARSession \| undefined | 获得的AR会话内容，AR会话正常设置之后返回为arEngine.ARSession，异常设置或异常操作导致ARViewContext未初始化成功，返回undefined。 |
@@ -370,7 +392,8 @@ context.session;
 
 
 
-#### ARViewContext.config
+### ARViewContext.config
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -388,6 +411,7 @@ set config(conf: arEngine.ARConfig)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | conf | arEngine.ARConfig | 是 | ARSession的功能配置参数。 |
@@ -396,6 +420,7 @@ set config(conf: arEngine.ARConfig)
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -418,7 +443,8 @@ context.config = {
 
 
 
-#### ARViewContext.loadAsset
+### ARViewContext.loadAsset
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -436,6 +462,7 @@ loadAsset(resourcePath: ResourceStr, landmark: LandmarkType): Promise&lt;void&gt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resourcePath | ResourceStr | 是 | 存储模型的路径。 |
@@ -443,6 +470,7 @@ loadAsset(resourcePath: ResourceStr, landmark: LandmarkType): Promise&lt;void&gt
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -452,6 +480,7 @@ loadAsset(resourcePath: ResourceStr, landmark: LandmarkType): Promise&lt;void&gt
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -471,7 +500,8 @@ context.loadAsset(resourcePath, arViewController.LandmarkType.LEFT_EYE);
 
 
 
-#### ARViewContext.removeAsset
+### ARViewContext.removeAsset
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -489,12 +519,14 @@ removeAsset(landmark: LandmarkType):Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | landmark | LandmarkType | 是 | 指定想要移除模型的关键点。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -504,6 +536,7 @@ removeAsset(landmark: LandmarkType):Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -521,7 +554,8 @@ context.removeAsset(arViewController.LandmarkType.LEFT_EYE);
 
 
 
-#### ARViewContext.clearResource
+### ARViewContext.clearResource
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -541,12 +575,14 @@ clearResource():Promise&lt;void&gt;
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1009200201 | ARView invalid operation. |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -564,7 +600,8 @@ context.clearResource();
 
 
 
-#### ARViewContext.setBlendShapeWeight
+### ARViewContext.setBlendShapeWeight
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -582,6 +619,7 @@ setBlendShapeWeight(node: Node, type: arEngine.ARBlendShapeType, weight: number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | Node | 是 | 新建锚点对应的AR场景节点。 说明： Node属于AGP（Ark Graphics Platform）渲染引擎能力，使用了AGP齐世界坐标系，与AR Engine所使用的重力对齐世界坐标系不一致，与anchor参数一同使用时需注意区分。具体参见坐标系说明。 |
@@ -591,6 +629,7 @@ setBlendShapeWeight(node: Node, type: arEngine.ARBlendShapeType, weight: number)
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回微表情权重设置结果。返回值true表示成功，false表示失败。 |
@@ -599,6 +638,7 @@ setBlendShapeWeight(node: Node, type: arEngine.ARBlendShapeType, weight: number)
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -618,7 +658,8 @@ onAnchorUpdate(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine
 
 
 
-#### ARViewContext.getBlendShapeWeight
+### ARViewContext.getBlendShapeWeight
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -636,6 +677,7 @@ getBlendShapeWeight(node: Node, type: arEngine.ARBlendShapeType): number | null
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | node | Node | 是 | 新建锚点对应的AR场景节点。 说明： Node属于AGP（Ark Graphics Platform）渲染引擎能力，使用了AGP齐世界坐标系，与AR Engine所使用的重力对齐世界坐标系不一致，与anchor参数一同使用时需注意区分。具体参见坐标系说明。 |
@@ -643,6 +685,7 @@ getBlendShapeWeight(node: Node, type: arEngine.ARBlendShapeType): number | null
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -652,6 +695,7 @@ getBlendShapeWeight(node: Node, type: arEngine.ARBlendShapeType): number | null
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -671,7 +715,8 @@ onAnchorUpdate(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine
 
 
 
-#### ARViewContext.transformPose
+### ARViewContext.transformPose
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -689,6 +734,7 @@ transformPose(position: Vec3, rotation: Quaternion): arEngine.ARPose | null
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | position | Vec3 | 是 | 位姿坐标信息 |
@@ -696,6 +742,7 @@ transformPose(position: Vec3, rotation: Quaternion): arEngine.ARPose | null
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -721,7 +768,8 @@ context.transformPose(pose, rot);
 
 
 
-#### ARViewContext.loadGSModel
+### ARViewContext.loadGSModel
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -739,6 +787,7 @@ loadGSModel(resourcePath: spatialRender.GSImportSettings, location: arEngine.ARP
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resourcePath | spatialRender.GSImportSettings | 是 | 存储模型的路径。 |
@@ -746,6 +795,7 @@ loadGSModel(resourcePath: spatialRender.GSImportSettings, location: arEngine.ARP
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -755,6 +805,7 @@ loadGSModel(resourcePath: spatialRender.GSImportSettings, location: arEngine.ARP
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -784,7 +835,8 @@ await context.loadGSModel(resourcePath, location);
 
 
 
-#### ARViewContext.removeGSModel
+### ARViewContext.removeGSModel
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -802,12 +854,14 @@ removeGSModel(modelID: number):Promise&lt;boolean&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | modelID | number | 是 | 指定想要移除模型的模型ID。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -817,6 +871,7 @@ removeGSModel(modelID: number):Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -834,7 +889,8 @@ await context.removeGSModel(1);
 
 
 
-#### ARViewContext.callback
+### ARViewContext.callback
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -852,6 +908,7 @@ set callback(callback: ARViewCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | ARViewCallback | 是 | ARViewCallback抽象类，声明ARView的回调接口。使用callback方式异步返回结果。 |
@@ -860,6 +917,7 @@ set callback(callback: ARViewCallback)
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -910,7 +968,8 @@ context.callback = new ARViewCallbackImpl();
 
 
 
-#### ARViewCallback
+## ARViewCallback
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -928,7 +987,8 @@ ARViewCallback抽象类，声明ARView的回调接口。使用callback方式异�
 
 
 
-#### ARViewCallback.onAnchorAdd
+### ARViewCallback.onAnchorAdd
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -945,6 +1005,7 @@ abstract onAnchorAdd(ctx: ARViewContext, node: Node, anchor: arEngine.ARAnchor):
 **起始版本：** 5.1.0(18)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -967,7 +1028,8 @@ onAnchorAdd(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.AR
 
 
 
-#### ARViewCallback.onAnchorUpdate
+### ARViewCallback.onAnchorUpdate
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -984,6 +1046,7 @@ abstract onAnchorUpdate(ctx: ARViewContext, node: Node, anchor: arEngine.ARAncho
 **起始版本：** 5.1.0(18)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1006,7 +1069,8 @@ onAnchorUpdate(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine
 
 
 
-#### ARViewCallback.onFrameUpdate
+### ARViewCallback.onFrameUpdate
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1023,6 +1087,7 @@ AR场景每帧刷新前会自动触发该回调，开发者可以基于此回调
 **起始版本：** 5.1.0(18)
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1054,7 +1119,8 @@ onFrameUpdate(ctx: arViewController.ARViewContext, sysBootTs: number): void {
 
 
 
-#### arViewController.isARTypeSupported
+## arViewController.isARTypeSupported
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -1070,12 +1136,14 @@ isARTypeSupported(type: arEngine.ARFeatureType): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | arEngine.ARFeatureType | 是 | 表示想要检查能否正常运行的AR特性。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1085,6 +1153,7 @@ isARTypeSupported(type: arEngine.ARFeatureType): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[AR Engine错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ar-engine)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

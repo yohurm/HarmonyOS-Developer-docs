@@ -1,11 +1,12 @@
 # FG_ImageSync_VK
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_f_g___image_sync___v_k
 **支持设备：** Phone | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -19,16 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | VkAccessFlagBits accessMask | 内存访问类型的位掩码。 |
@@ -38,13 +42,15 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### accessMask
+### accessMask
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -58,7 +64,8 @@ VkAccessFlagBits FG_ImageSync_VK::accessMask
  
   
 
-#### layout
+### layout
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -72,7 +79,8 @@ VkImageLayout FG_ImageSync_VK::layout
  
   
 
-#### stages
+### stages
+
 
 **支持设备：** Phone | Tablet | TV
 

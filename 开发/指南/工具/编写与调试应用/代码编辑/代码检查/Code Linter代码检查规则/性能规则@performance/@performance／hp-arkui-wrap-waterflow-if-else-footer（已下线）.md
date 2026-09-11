@@ -1,13 +1,13 @@
 # @performance/hp-arkui-wrap-waterflow-if-else-footer（已下线）
 
-更新时间：2026-01-15 06:51:04
+更新时间：2026-08-29 09:41:34
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hp-arkui-wrap-waterflow-if-else-footer
 
 建议使用容器包裹waterflow中footer的if-else逻辑。
  
 
-#### 规则配置
+## 规则配置
 
 ```json
 // code-linter.json5
@@ -20,13 +20,13 @@
  
  
 
-#### 选项
+## 选项
 
-该规则无需配置额外选项。
+该规则无需配置选项。
  
  
 
-#### 正例
+## 正例
 
 ```text
 // 源码文件，请以工程实际为准
@@ -110,7 +110,7 @@ struct ReusableFlowItem {
  
  
 
-#### 反例
+## 反例
 
 ```text
 // 源码文件，请以工程实际为准
@@ -192,10 +192,10 @@ struct ReusableFlowItem {
  
  
 
-#### 规则集
+## 规则集
 
 ```text
-plugin:@performance/all
+<span style="color: rgb(106,135,89);">plugin:@performance/all</span>
 ```
  
  

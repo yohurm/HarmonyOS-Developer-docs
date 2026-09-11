@@ -1,6 +1,6 @@
 # navi（路径规划）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-navi-api
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
@@ -10,7 +10,8 @@
 **起始版本：** 4.1.0(11)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -20,7 +21,8 @@ import { navi } from '@kit.MapKit';
  
   
 
-#### getDrivingRoutes
+## getDrivingRoutes
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -42,6 +44,7 @@ getDrivingRoutes(params: DrivingRouteParams): Promise&lt;RouteResult&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | DrivingRouteParams | 是 | 驾车路径规划的参数。 |
@@ -49,6 +52,7 @@ getDrivingRoutes(params: DrivingRouteParams): Promise&lt;RouteResult&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;RouteResult&gt; | Promise对象，返回RouteResult。 |
@@ -58,6 +62,7 @@ getDrivingRoutes(params: DrivingRouteParams): Promise&lt;RouteResult&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid input parameter. |
@@ -106,7 +111,8 @@ console.info("Succeeded in getting driving routes.");
  
   
 
-#### getDrivingRoutes
+## getDrivingRoutes
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -128,6 +134,7 @@ getDrivingRoutes(context: common.Context, params: DrivingRouteParams): Promise&l
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | Context上下文。 |
@@ -136,6 +143,7 @@ getDrivingRoutes(context: common.Context, params: DrivingRouteParams): Promise&l
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;RouteResult&gt; | Promise对象，返回RouteResult。 |
@@ -145,6 +153,7 @@ getDrivingRoutes(context: common.Context, params: DrivingRouteParams): Promise&l
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid input parameter. |
@@ -192,7 +201,8 @@ console.info("Succeeded in getting driving routes.");
  
   
 
-#### getWalkingRoutes
+## getWalkingRoutes
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -214,6 +224,7 @@ getWalkingRoutes(params: RouteParams): Promise&lt;RouteResult&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | RouteParams | 是 | 步行路径规划的参数。 |
@@ -221,6 +232,7 @@ getWalkingRoutes(params: RouteParams): Promise&lt;RouteResult&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;RouteResult&gt; | Promise对象，返回RouteResult。 |
@@ -230,6 +242,7 @@ getWalkingRoutes(params: RouteParams): Promise&lt;RouteResult&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid input parameter. |
@@ -272,7 +285,8 @@ console.info("Succeeded in getting walking routes.");
  
   
 
-#### getWalkingRoutes
+## getWalkingRoutes
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -294,6 +308,7 @@ getWalkingRoutes(context: common.Context, params: RouteParams): Promise&lt;Route
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | Context上下文。 |
@@ -302,6 +317,7 @@ getWalkingRoutes(context: common.Context, params: RouteParams): Promise&lt;Route
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;RouteResult&gt; | Promise对象，返回RouteResult。 |
@@ -311,6 +327,7 @@ getWalkingRoutes(context: common.Context, params: RouteParams): Promise&lt;Route
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid input parameter. |
@@ -356,7 +373,8 @@ console.info("Succeeded in getting cycling routes.");
  
   
 
-#### getCyclingRoutes
+## getCyclingRoutes
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -378,6 +396,7 @@ getCyclingRoutes(params: RouteParams): Promise&lt;RouteResult&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | RouteParams | 是 | 骑行路径规划的参数。 |
@@ -385,6 +404,7 @@ getCyclingRoutes(params: RouteParams): Promise&lt;RouteResult&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;RouteResult&gt; | Promise对象，返回RouteResult。 |
@@ -394,6 +414,7 @@ getCyclingRoutes(params: RouteParams): Promise&lt;RouteResult&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid input parameter. |
@@ -436,7 +457,8 @@ console.info("Succeeded in getting cycling routes.");
  
   
 
-#### getCyclingRoutes
+## getCyclingRoutes
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -458,6 +480,7 @@ getCyclingRoutes(context: common.Context, params: RouteParams): Promise&lt;Route
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | Context上下文。 |
@@ -466,6 +489,7 @@ getCyclingRoutes(context: common.Context, params: RouteParams): Promise&lt;Route
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;RouteResult&gt; | Promise对象，返回RouteResult。 |
@@ -475,6 +499,7 @@ getCyclingRoutes(context: common.Context, params: RouteParams): Promise&lt;Route
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid input parameter. |
@@ -517,7 +542,8 @@ console.info("Succeeded in getting cycling routes.");
  
   
 
-#### getTransitRoutes
+## getTransitRoutes
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -539,6 +565,7 @@ getTransitRoutes(context: common.Context, params: TransitRouteParams): Promise&l
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | Context上下文。 |
@@ -547,6 +574,7 @@ getTransitRoutes(context: common.Context, params: TransitRouteParams): Promise&l
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;TransitRouteResult&gt; | Promise对象，返回TransitRouteResult。 |
@@ -556,6 +584,7 @@ getTransitRoutes(context: common.Context, params: TransitRouteParams): Promise&l
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1002600001 | System internal error. |
@@ -590,7 +619,8 @@ console.info("Succeeded in getting transit routes.");
  
   
 
-#### getDrivingMatrix
+## getDrivingMatrix
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -614,6 +644,7 @@ getDrivingMatrix(params: DrivingMatrixParams): Promise&lt;MatrixResult&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | DrivingMatrixParams | 是 | 驾车批量算路的参数。 |
@@ -621,6 +652,7 @@ getDrivingMatrix(params: DrivingMatrixParams): Promise&lt;MatrixResult&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;MatrixResult&gt; | Promise对象，返回MatrixResult。 |
@@ -630,6 +662,7 @@ getDrivingMatrix(params: DrivingMatrixParams): Promise&lt;MatrixResult&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid input parameter. |
@@ -679,7 +712,8 @@ console.info("Succeeded in getting driving matrix.");
  
   
 
-#### getDrivingMatrix
+## getDrivingMatrix
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -703,6 +737,7 @@ getDrivingMatrix(context: common.Context, params: DrivingMatrixParams): Promise&
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | Context上下文。 |
@@ -711,6 +746,7 @@ getDrivingMatrix(context: common.Context, params: DrivingMatrixParams): Promise&
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;MatrixResult&gt; | Promise对象，返回MatrixResult。 |
@@ -720,6 +756,7 @@ getDrivingMatrix(context: common.Context, params: DrivingMatrixParams): Promise&
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid input parameter. |
@@ -769,7 +806,8 @@ console.info("Succeeded in getting driving matrix.");
  
   
 
-#### getWalkingMatrix
+## getWalkingMatrix
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -793,6 +831,7 @@ getWalkingMatrix(params: MatrixParams): Promise&lt;MatrixResult&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | MatrixParams | 是 | 步行批量算路的参数。 |
@@ -800,6 +839,7 @@ getWalkingMatrix(params: MatrixParams): Promise&lt;MatrixResult&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;MatrixResult&gt; | Promise对象，返回MatrixResult。 |
@@ -809,6 +849,7 @@ getWalkingMatrix(params: MatrixParams): Promise&lt;MatrixResult&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid input parameter. |
@@ -857,7 +898,8 @@ console.info("Succeeded in getting walking matrix.");
  
   
 
-#### getWalkingMatrix
+## getWalkingMatrix
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -881,6 +923,7 @@ getWalkingMatrix(context: common.Context, params: MatrixParams): Promise&lt;Matr
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | Context上下文。 |
@@ -889,6 +932,7 @@ getWalkingMatrix(context: common.Context, params: MatrixParams): Promise&lt;Matr
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;MatrixResult&gt; | Promise对象，返回MatrixResult。 |
@@ -898,6 +942,7 @@ getWalkingMatrix(context: common.Context, params: MatrixParams): Promise&lt;Matr
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid input parameter. |
@@ -946,7 +991,8 @@ console.info("Succeeded in getting walking matrix.");
  
   
 
-#### getCyclingMatrix
+## getCyclingMatrix
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -970,6 +1016,7 @@ getCyclingMatrix(params: MatrixParams): Promise&lt;MatrixResult&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | MatrixParams | 是 | 骑行批量算路的参数。 |
@@ -977,6 +1024,7 @@ getCyclingMatrix(params: MatrixParams): Promise&lt;MatrixResult&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;MatrixResult&gt; | Promise对象，返回MatrixResult。 |
@@ -986,6 +1034,7 @@ getCyclingMatrix(params: MatrixParams): Promise&lt;MatrixResult&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid input parameter. |
@@ -1034,7 +1083,8 @@ console.info("Succeeded in getting cycling matrix.");
  
   
 
-#### getCyclingMatrix
+## getCyclingMatrix
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1058,6 +1108,7 @@ getCyclingMatrix(context: common.Context, params: MatrixParams): Promise&lt;Matr
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | Context上下文。 |
@@ -1066,6 +1117,7 @@ getCyclingMatrix(context: common.Context, params: MatrixParams): Promise&lt;Matr
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;MatrixResult&gt; | Promise对象，返回MatrixResult。 |
@@ -1075,6 +1127,7 @@ getCyclingMatrix(context: common.Context, params: MatrixParams): Promise&lt;Matr
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid input parameter. |
@@ -1123,7 +1176,8 @@ console.info("Succeeded in getting cycling matrix.");
  
   
 
-#### snapToRoads
+## snapToRoads
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1145,6 +1199,7 @@ snapToRoads(params: SnapToRoadsParams): Promise&lt;SnapToRoadsResult&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | params | SnapToRoadsParams | 是 | 轨迹绑路的参数。 |
@@ -1152,6 +1207,7 @@ snapToRoads(params: SnapToRoadsParams): Promise&lt;SnapToRoadsResult&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;SnapToRoadsResult&gt; | Promise对象，返回SnapToRoadsResult。 |
@@ -1161,6 +1217,7 @@ snapToRoads(params: SnapToRoadsParams): Promise&lt;SnapToRoadsResult&gt;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid input parameter. |
@@ -1198,7 +1255,8 @@ console.info("Succeeded in snapping to roads.");
  
   
 
-#### snapToRoads
+## snapToRoads
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1220,6 +1278,7 @@ snapToRoads(context: common.Context, params: SnapToRoadsParams): Promise&lt;Snap
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | Context上下文。 |
@@ -1228,6 +1287,7 @@ snapToRoads(context: common.Context, params: SnapToRoadsParams): Promise&lt;Snap
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;SnapToRoadsResult&gt; | Promise对象，返回SnapToRoadsResult。 |
@@ -1237,6 +1297,7 @@ snapToRoads(context: common.Context, params: SnapToRoadsParams): Promise&lt;Snap
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid input parameter. |
@@ -1274,7 +1335,8 @@ console.info("Succeeded in snapping to roads.");
  
   
 
-#### RouteCoordinate
+## RouteCoordinate
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1288,6 +1350,7 @@ console.info("Succeeded in snapping to roads.");
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | matchType | number | 否 | 是 | 起终点绑路类型。 取值包括0、1、3，默认值为0。 0：限制绑路。起点避免绑定封闭、施工、限行、偏好设置所避免的道路，终点避免绑定高速、轮渡、 偏好设置所避免的道路。 1：无限制绑路，不考虑道路本身限制。 3：轨迹绑路，通过origins字段输入连续轨迹点的经纬度进行无限制绑路，只支持起点。 |
@@ -1302,7 +1365,8 @@ console.info("Succeeded in snapping to roads.");
  
   
 
-#### RouteParams
+## RouteParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1316,6 +1380,7 @@ console.info("Succeeded in snapping to roads.");
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | origins | Array&lt;RouteCoordinate&gt; | 否 | 否 | 道路绑定的起点坐标列表。 坐标点的数量不能超过31个，相邻两个点之间的距离应大于1米。 |
@@ -1327,7 +1392,8 @@ console.info("Succeeded in snapping to roads.");
  
   
 
-#### RouteResult
+## RouteResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1341,6 +1407,7 @@ console.info("Succeeded in snapping to roads.");
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | routes | Array&lt;Route&gt; | 否 | 否 | 从起点到目的地的规划路径。如果没有结果，返回空数组。 |
@@ -1348,7 +1415,8 @@ console.info("Succeeded in snapping to roads.");
  
   
 
-#### DrivingRouteParams
+## DrivingRouteParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1362,6 +1430,7 @@ console.info("Succeeded in snapping to roads.");
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | waypoints | Array<mapCommon.LatLng> | 否 | 是 | 途经点。最多可以输入5个途经点，异常值不处理。 |
@@ -1374,7 +1443,8 @@ console.info("Succeeded in snapping to roads.");
  
   
 
-#### Route
+## Route
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1388,6 +1458,7 @@ console.info("Succeeded in snapping to roads.");
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | steps | Array&lt;RouteStep&gt; | 否 | 否 | 路线规划信息。 |
@@ -1408,7 +1479,8 @@ console.info("Succeeded in snapping to roads.");
  
   
 
-#### RouteStep
+## RouteStep
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1422,6 +1494,7 @@ console.info("Succeeded in snapping to roads.");
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | roads | Array&lt;RouteRoad&gt; | 否 | 否 | 路线分段信息。 |
@@ -1440,7 +1513,8 @@ console.info("Succeeded in snapping to roads.");
  
   
 
-#### RouteRoad
+## RouteRoad
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1454,6 +1528,7 @@ console.info("Succeeded in snapping to roads.");
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | startLocation | mapCommon.LatLng | 否 | 否 | 出发地的经纬度。 |
@@ -1472,7 +1547,8 @@ console.info("Succeeded in snapping to roads.");
  
   
 
-#### CoordinateBound
+## CoordinateBound
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1486,6 +1562,7 @@ console.info("Succeeded in snapping to roads.");
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | northeast | mapCommon.LatLng | 否 | 否 | 东北角的位置。 |
@@ -1494,7 +1571,8 @@ console.info("Succeeded in snapping to roads.");
  
   
 
-#### Waypoint
+## Waypoint
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1508,6 +1586,7 @@ console.info("Succeeded in snapping to roads.");
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | location | mapCommon.LatLng | 否 | 否 | 途经点的经纬度。 |
@@ -1516,7 +1595,8 @@ console.info("Succeeded in snapping to roads.");
  
   
 
-#### TrafficSegment
+## TrafficSegment
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1530,6 +1610,7 @@ console.info("Succeeded in snapping to roads.");
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | distance | number | 否 | 否 | 行驶/步行/骑行距离，单位：m。 |
@@ -1539,7 +1620,8 @@ console.info("Succeeded in snapping to roads.");
  
   
 
-#### MatrixParams
+## MatrixParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1553,6 +1635,7 @@ console.info("Succeeded in snapping to roads.");
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | origins | Array&lt;RouteCoordinate&gt; | 否 | 否 | 起点的经纬度，不能超过100个。 |
@@ -1563,7 +1646,8 @@ console.info("Succeeded in snapping to roads.");
  
   
 
-#### TransitRouteParams
+## TransitRouteParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1577,6 +1661,7 @@ console.info("Succeeded in snapping to roads.");
  
 **起始版本：** 5.1.1(19)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | origin | RouteCoordinate | 否 | 否 | 起点的经纬度。 |
@@ -1587,7 +1672,8 @@ console.info("Succeeded in snapping to roads.");
  
   
 
-#### TransitRouteResult
+## TransitRouteResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1601,6 +1687,7 @@ console.info("Succeeded in snapping to roads.");
  
 **起始版本：** 5.1.1(19)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | routes | TransitRoute[] | 否 | 是 | 可能的路线列表。 |
@@ -1608,7 +1695,8 @@ console.info("Succeeded in snapping to roads.");
  
   
 
-#### TransitRoute
+## TransitRoute
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1622,6 +1710,7 @@ console.info("Succeeded in snapping to roads.");
  
 **起始版本：** 5.1.1(19)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | id | string | 否 | 否 | 路线ID。 |
@@ -1631,7 +1720,8 @@ console.info("Succeeded in snapping to roads.");
  
   
 
-#### BusSortInfo
+## BusSortInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1645,6 +1735,7 @@ console.info("Succeeded in snapping to roads.");
  
 **起始版本：** 5.1.1(19)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | totalCost | number | 否 | 是 | 总时长（单位：s）。 |
@@ -1660,7 +1751,8 @@ console.info("Succeeded in snapping to roads.");
  
   
 
-#### TransitRouteSection
+## TransitRouteSection
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1674,6 +1766,7 @@ console.info("Succeeded in snapping to roads.");
  
 **起始版本：** 5.1.1(19)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | string | 否 | 否 | 路段类型。取值包括： - pedestrian：步行 - transit：中转 |
@@ -1683,7 +1776,8 @@ console.info("Succeeded in snapping to roads.");
  
   
 
-#### PedestrianSection
+## PedestrianSection
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1697,6 +1791,7 @@ console.info("Succeeded in snapping to roads.");
  
 **起始版本：** 5.1.1(19)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | id | string | 否 | 否 | 行人路段的唯一标识符。 |
@@ -1711,7 +1806,8 @@ console.info("Succeeded in snapping to roads.");
  
   
 
-#### PedestrianDepartureArrival
+## PedestrianDepartureArrival
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1725,6 +1821,7 @@ console.info("Succeeded in snapping to roads.");
  
 **起始版本：** 5.1.1(19)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | place | Place | 否 | 否 | 行人路线中的场所。 |
@@ -1733,7 +1830,8 @@ console.info("Succeeded in snapping to roads.");
  
   
 
-#### Passthrough
+## Passthrough
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1747,6 +1845,7 @@ console.info("Succeeded in snapping to roads.");
  
 **起始版本：** 5.1.1(19)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | place | Place | 否 | 否 | 出发/到达地点。 |
@@ -1755,7 +1854,8 @@ console.info("Succeeded in snapping to roads.");
  
   
 
-#### Place
+## Place
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1769,6 +1869,7 @@ console.info("Succeeded in snapping to roads.");
  
 **起始版本：** 5.1.1(19)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | location | mapCommon.LatLng | 否 | 否 | 地点的坐标。 |
@@ -1778,7 +1879,8 @@ console.info("Succeeded in snapping to roads.");
  
   
 
-#### BaseSummary
+## BaseSummary
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1792,6 +1894,7 @@ console.info("Succeeded in snapping to roads.");
  
 **起始版本：** 5.1.1(19)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | duration | number | 否 | 否 | 持续时间，单位：s。 |
@@ -1801,7 +1904,8 @@ console.info("Succeeded in snapping to roads.");
  
   
 
-#### TransitSection
+## TransitSection
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1815,6 +1919,7 @@ console.info("Succeeded in snapping to roads.");
  
 **起始版本：** 5.1.1(19)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | id | string | 否 | 否 | 路线的唯一标识符。预留字段，当前无使用场景。 |
@@ -1836,7 +1941,8 @@ console.info("Succeeded in snapping to roads.");
  
   
 
-#### TransitArrival
+## TransitArrival
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1850,6 +1956,7 @@ console.info("Succeeded in snapping to roads.");
  
 **起始版本：** 5.1.1(19)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | place | Place | 否 | 否 | 到达地点。 |
@@ -1860,7 +1967,8 @@ console.info("Succeeded in snapping to roads.");
  
   
 
-#### TransitDeparture
+## TransitDeparture
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1874,6 +1982,7 @@ console.info("Succeeded in snapping to roads.");
  
 **起始版本：** 5.1.1(19)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | place | Place | 否 | 否 | 出发地点。 |
@@ -1884,7 +1993,8 @@ console.info("Succeeded in snapping to roads.");
  
   
 
-#### TransitEntranceExit
+## TransitEntranceExit
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1898,6 +2008,7 @@ console.info("Succeeded in snapping to roads.");
  
 **起始版本：** 5.1.1(19)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | name | string | 否 | 否 | 出入口编号。 |
@@ -1906,7 +2017,8 @@ console.info("Succeeded in snapping to roads.");
  
   
 
-#### TransitStop
+## TransitStop
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1920,6 +2032,7 @@ console.info("Succeeded in snapping to roads.");
  
 **起始版本：** 5.1.1(19)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | departure | TransitDeparture | 否 | 否 | 中转开始。 |
@@ -1928,7 +2041,8 @@ console.info("Succeeded in snapping to roads.");
  
   
 
-#### TransitTransport
+## TransitTransport
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1942,6 +2056,7 @@ console.info("Succeeded in snapping to roads.");
  
 **起始版本：** 5.1.1(19)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | mode | TransitMode | 否 | 否 | 中转类型。 |
@@ -1954,7 +2069,8 @@ console.info("Succeeded in snapping to roads.");
  
   
 
-#### ExtraTransitSection
+## ExtraTransitSection
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1968,6 +2084,7 @@ console.info("Succeeded in snapping to roads.");
  
 **起始版本：** 5.1.1(19)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | intermediateStops | TransitStop[] | 否 | 否 | 中转线路的始发站和目的地之间的中间站点。如果此信息不可用或未请求，则可能缺失。 |
@@ -1981,7 +2098,8 @@ console.info("Succeeded in snapping to roads.");
  
   
 
-#### TransitMode
+## TransitMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1995,6 +2113,7 @@ console.info("Succeeded in snapping to roads.");
  
 **起始版本：** 5.1.1(19)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | BUS | 'bus' | 公交。 |
@@ -2003,7 +2122,8 @@ console.info("Succeeded in snapping to roads.");
  
   
 
-#### MatrixResult
+## MatrixResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2017,6 +2137,7 @@ console.info("Succeeded in snapping to roads.");
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | originAddresses | Array&lt;string&gt; | 否 | 否 | 起点的地址详情。 |
@@ -2026,7 +2147,8 @@ console.info("Succeeded in snapping to roads.");
  
   
 
-#### DrivingMatrixParams
+## DrivingMatrixParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2040,6 +2162,7 @@ console.info("Succeeded in snapping to roads.");
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | departAt | number | 否 | 是 | 预计出发时间。以自UTC 1970年1月1日午夜以来的秒数为单位。 必须是当前或者未来时间，不能是过去时间。 说明： departAt输入0时，按照当前时间进行处理。 |
@@ -2048,7 +2171,8 @@ console.info("Succeeded in snapping to roads.");
  
   
 
-#### MatrixRow
+## MatrixRow
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2062,6 +2186,7 @@ console.info("Succeeded in snapping to roads.");
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | cells | Array&lt;MatrixCell&gt; | 否 | 否 | 距离矩阵中每个单元格的信息。 |
@@ -2069,7 +2194,8 @@ console.info("Succeeded in snapping to roads.");
  
   
 
-#### MatrixCell
+## MatrixCell
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2083,6 +2209,7 @@ console.info("Succeeded in snapping to roads.");
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | distance | number | 否 | 是 | 行驶/步行/骑行距离，单位：m。 |
@@ -2093,7 +2220,8 @@ console.info("Succeeded in snapping to roads.");
  
   
 
-#### SnapToRoadsParams
+## SnapToRoadsParams
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2107,6 +2235,7 @@ console.info("Succeeded in snapping to roads.");
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | points | Array<mapCommon.LatLng> | 否 | 否 | 道路贴合点集合，集合个数取值范围：[1,100]，且相邻两个点距离需小于等于500米。 |
@@ -2114,7 +2243,8 @@ console.info("Succeeded in snapping to roads.");
  
   
 
-#### SnapToRoadsResult
+## SnapToRoadsResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2128,6 +2258,7 @@ console.info("Succeeded in snapping to roads.");
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | responseTime | number | 否 | 否 | 耗时，单位：ms。 |
@@ -2136,7 +2267,8 @@ console.info("Succeeded in snapping to roads.");
  
   
 
-#### SnappedPoint
+## SnappedPoint
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2150,6 +2282,7 @@ console.info("Succeeded in snapping to roads.");
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | latitude | number | 否 | 否 | 纬度 。 |

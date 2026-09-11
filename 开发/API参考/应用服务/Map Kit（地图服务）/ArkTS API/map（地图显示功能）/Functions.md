@@ -1,11 +1,12 @@
 # Functions
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-functions
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -15,7 +16,8 @@ import { map, mapCommon } from '@kit.MapKit';
  
   
 
-#### newCameraPosition
+## newCameraPosition
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -33,6 +35,7 @@ newCameraPosition(cameraPosition: mapCommon.CameraPosition): CameraUpdate
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cameraPosition | mapCommon.CameraPosition | 是 | 更新后的地图状态。 |
@@ -40,15 +43,17 @@ newCameraPosition(cameraPosition: mapCommon.CameraPosition): CameraUpdate
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| CameraUpdate | 描述地图状态将要发生的变化，例如平移、缩放。 |
+| CameraUpdate | 描述地图状态将要发生的变化，例如平移、缩放。该对象可用于调用地图更新接口，以实现地图状态变更。 |
  
  
 **错误码：**
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid input parameter. |
@@ -70,7 +75,8 @@ let cameraUpdate: map.CameraUpdate = map.newCameraPosition(cameraPosition);
  
   
 
-#### newLatLng
+## newLatLng
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -88,6 +94,7 @@ newLatLng(latLng: mapCommon.LatLng, zoom?: number): CameraUpdate
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | latLng | mapCommon.LatLng | 是 | 经纬度。 |
@@ -96,6 +103,7 @@ newLatLng(latLng: mapCommon.LatLng, zoom?: number): CameraUpdate
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | CameraUpdate | 描述地图状态将要发生的变化。 |
@@ -105,6 +113,7 @@ newLatLng(latLng: mapCommon.LatLng, zoom?: number): CameraUpdate
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid input parameter. |
@@ -122,7 +131,8 @@ let cameraUpdate: map.CameraUpdate = map.newLatLng(latLng);
  
   
 
-#### newLatLngBounds
+## newLatLngBounds
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -140,6 +150,7 @@ newLatLngBounds(bounds: mapCommon.LatLngBounds, padding?: number): CameraUpdate
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bounds | mapCommon.LatLngBounds | 是 | 地图显示经纬度范围。 |
@@ -148,6 +159,7 @@ newLatLngBounds(bounds: mapCommon.LatLngBounds, padding?: number): CameraUpdate
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | CameraUpdate | 描述地图状态将要发生的变化。 |
@@ -157,6 +169,7 @@ newLatLngBounds(bounds: mapCommon.LatLngBounds, padding?: number): CameraUpdate
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid input parameter. |
@@ -181,7 +194,8 @@ let cameraUpdate: map.CameraUpdate = map.newLatLngBounds(bounds, 5);
  
   
 
-#### newLatLngBounds
+## newLatLngBounds
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -199,6 +213,7 @@ newLatLngBounds(bounds: mapCommon.LatLngBounds, width: number, height: number, p
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bounds | mapCommon.LatLngBounds | 是 | 地图显示经纬度范围。 |
@@ -209,6 +224,7 @@ newLatLngBounds(bounds: mapCommon.LatLngBounds, width: number, height: number, p
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | CameraUpdate | 描述地图状态将要发生的变化。 |
@@ -218,6 +234,7 @@ newLatLngBounds(bounds: mapCommon.LatLngBounds, width: number, height: number, p
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid input parameter. |
@@ -242,7 +259,8 @@ let cameraUpdate: map.CameraUpdate = map.newLatLngBounds(bounds, 1000, 1000, 100
  
   
 
-#### newLatLngBounds
+## newLatLngBounds
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -260,6 +278,7 @@ newLatLngBounds(bounds: mapCommon.LatLngBounds, padding: mapCommon.Padding): Cam
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bounds | mapCommon.LatLngBounds | 是 | 地图显示经纬度范围，异常值返回401错误码。 |
@@ -268,6 +287,7 @@ newLatLngBounds(bounds: mapCommon.LatLngBounds, padding: mapCommon.Padding): Cam
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | CameraUpdate | 描述地图状态将要发生的变化。 |
@@ -277,6 +297,7 @@ newLatLngBounds(bounds: mapCommon.LatLngBounds, padding: mapCommon.Padding): Cam
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid input parameter. |
@@ -305,7 +326,8 @@ let cameraUpdate: map.CameraUpdate = map.newLatLngBounds(bounds, padding);
  
   
 
-#### scrollBy
+## scrollBy
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -323,6 +345,7 @@ scrollBy(x: number, y: number): CameraUpdate
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | x | number | 是 | 水平移动的像素数。正值代表可视区域向右移动，负值代表可视区域向左移动。单位：px。 |
@@ -331,6 +354,7 @@ scrollBy(x: number, y: number): CameraUpdate
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | CameraUpdate | 描述地图状态将要发生的变化。 |
@@ -340,6 +364,7 @@ scrollBy(x: number, y: number): CameraUpdate
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid input parameter. |
@@ -353,7 +378,8 @@ let cameraUpdate: map.CameraUpdate = map.scrollBy(100, 200);
  
   
 
-#### zoomBy
+## zoomBy
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -373,6 +399,7 @@ zoomBy(amount: number, focus?: mapCommon.MapPoint): CameraUpdate
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | amount | number | 是 | 地图缩放级别增量。 |
@@ -381,6 +408,7 @@ zoomBy(amount: number, focus?: mapCommon.MapPoint): CameraUpdate
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | CameraUpdate | 描述地图状态将要发生的变化。 |
@@ -390,6 +418,7 @@ zoomBy(amount: number, focus?: mapCommon.MapPoint): CameraUpdate
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid input parameter. |
@@ -407,7 +436,8 @@ let cameraUpdate: map.CameraUpdate = map.zoomBy(10, focus);
  
   
 
-#### zoomIn
+## zoomIn
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -425,6 +455,7 @@ zoomIn(): CameraUpdate
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | CameraUpdate | 描述地图状态将要发生的变化。 |
@@ -438,7 +469,8 @@ let cameraUpdate: map.CameraUpdate = map.zoomIn();
  
   
 
-#### zoomOut
+## zoomOut
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -456,6 +488,7 @@ zoomOut(): CameraUpdate
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | CameraUpdate | 描述地图状态将要发生的变化。 |
@@ -469,7 +502,8 @@ let cameraUpdate: map.CameraUpdate = map.zoomOut();
  
   
 
-#### zoomTo
+## zoomTo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -487,6 +521,7 @@ zoomTo(zoom: number): CameraUpdate
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | zoom | number | 是 | 地图缩放级别，取值范围为[2, 20]，超出按边界值处理。 |
@@ -494,6 +529,7 @@ zoomTo(zoom: number): CameraUpdate
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | CameraUpdate | 描述地图状态将要发生的变化。 |
@@ -503,6 +539,7 @@ zoomTo(zoom: number): CameraUpdate
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid input parameter. |
@@ -516,7 +553,8 @@ let cameraUpdate: map.CameraUpdate = map.zoomTo(10);
  
   
 
-#### calculateDistance
+## calculateDistance
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -534,6 +572,7 @@ calculateDistance(from: mapCommon.LatLng, to: mapCommon.LatLng): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | from | mapCommon.LatLng | 是 | 起点坐标。 |
@@ -542,6 +581,7 @@ calculateDistance(from: mapCommon.LatLng, to: mapCommon.LatLng): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 两个坐标点之间的距离，单位：m。 入参为空返回0。 |
@@ -564,7 +604,8 @@ let distance = map.calculateDistance(fromLatLng, toLatLng);
  
   
 
-#### convertCoordinate
+## convertCoordinate
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -584,6 +625,7 @@ convertCoordinate(fromType: mapCommon.CoordinateType, toType: mapCommon.Coordina
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fromType | mapCommon.CoordinateType | 是 | 转换前坐标类型，当前仅支持WGS84。 |
@@ -593,6 +635,7 @@ convertCoordinate(fromType: mapCommon.CoordinateType, toType: mapCommon.Coordina
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<mapCommon.LatLng> | Promise对象，返回mapCommon.LatLng。 |
@@ -602,6 +645,7 @@ convertCoordinate(fromType: mapCommon.CoordinateType, toType: mapCommon.Coordina
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid input parameter. |
@@ -619,7 +663,8 @@ let gcj02Position: mapCommon.LatLng = await map.convertCoordinate(mapCommon.Coor
  
   
 
-#### convertCoordinateSync
+## convertCoordinateSync
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -637,6 +682,7 @@ convertCoordinateSync(fromType: mapCommon.CoordinateType, toType: mapCommon.Coor
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fromType | mapCommon.CoordinateType | 是 | 转换前坐标类型，当前仅支持WGS84。 |
@@ -646,6 +692,7 @@ convertCoordinateSync(fromType: mapCommon.CoordinateType, toType: mapCommon.Coor
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | mapCommon.LatLng | 经纬度对象。 |
@@ -655,6 +702,7 @@ convertCoordinateSync(fromType: mapCommon.CoordinateType, toType: mapCommon.Coor
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid input parameter. |
@@ -674,7 +722,8 @@ let gcj02Position: mapCommon.LatLng =
  
   
 
-#### rectifyCoordinate
+## rectifyCoordinate
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -696,6 +745,7 @@ rectifyCoordinate(context: common.Context, locations: Array<mapCommon.Coordinate
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | Context上下文。 |
@@ -704,6 +754,7 @@ rectifyCoordinate(context: common.Context, locations: Array<mapCommon.Coordinate
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array<mapCommon.CoordinateLatLng>> | Promise对象，返回修正后的坐标系和坐标。 |
@@ -713,6 +764,7 @@ rectifyCoordinate(context: common.Context, locations: Array<mapCommon.Coordinate
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-map)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Invalid input parameter. |

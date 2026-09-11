@@ -1,11 +1,12 @@
 # udmf.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-udmf-h
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 结构体
+### 结构体
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_UdmfData | OH_UdmfData | 定义统一数据对象数据结构。 |
@@ -48,10 +52,12 @@
  
   
 
-#### 枚举
+### 枚举
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | Udmf_Intention | Udmf_Intention | 描述UDMF数据通路枚举类型。 |
@@ -63,13 +69,27 @@
  
   
 
-#### 函数
+## 宏定义
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
+| 名称 | 描述 |
+| --- | --- |
+| UDMF_KEY_BUFFER_LEN (512) | 统一数据对象唯一标识符最小空间长度。 起始版本： 12 |
+ 
+ 
+  
+
+### 函数
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
+ 
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
-| UDMF_KEY_BUFFER_LEN (512) | - | 统一数据对象唯一标识符最小空间长度。 |
 | typedef void (*OH_Udmf_DataProgressListener)(OH_Udmf_ProgressInfo* progressInfo, OH_UdmfData* data) | OH_Udmf_DataProgressListener | 定义获取进度信息和数据的监听回调函数。 使用时需要判断数据是否返回空指针。只有当进度达到100%时，才会返回数据。 |
 | OH_UdmfData* OH_UdmfData_Create() | - | 创建统一数据对象OH_UdmfData指针及实例对象。当不再需要使用指针时，请使用OH_UdmfData_Destroy销毁实例对象，否则会导致内存泄漏。 |
 | void OH_UdmfData_Destroy(OH_UdmfData* pThis) | - | 销毁统一数据对象OH_UdmfData指针指向的实例对象。 |
@@ -129,8 +149,8 @@
 | int OH_UdmfOptions_Reset(OH_UdmfOptions* pThis) | - | 重置数据操作选项OH_UdmfOptions实例为空。 |
 | int OH_Udmf_GetUnifiedData(const char* key, Udmf_Intention intention, OH_UdmfData* unifiedData) | - | 从统一数据管理框架数据库中获取统一数据对象OH_UdmfData数据。 |
 | int OH_Udmf_GetUnifiedDataByOptions(OH_UdmfOptions* options, OH_UdmfData** dataArray, unsigned int* dataSize) | - | 通过数据通路类型从统一数据管理框架数据库中获取统一数据对象OH_UdmfData数据。 |
-| int OH_Udmf_SetUnifiedData(Udmf_Intention intention, OH_UdmfData* unifiedData, char* key, unsigned int keyLen) | - | 从统一数据管理框架数据库中写入统一数据对象OH_UdmfData数据。 |
-| int OH_Udmf_SetUnifiedDataByOptions(OH_UdmfOptions* options, OH_UdmfData *unifiedData, char *key, unsigned int keyLen) | - | 从统一数据管理框架数据库中写入统一数据对象OH_UdmfData数据。 |
+| int OH_Udmf_SetUnifiedData(Udmf_Intention intention, OH_UdmfData* unifiedData, char* key, unsigned int keyLen) | - | 指定数据通路类型向统一数据管理框架数据库中写入统一数据对象OH_UdmfData数据。 |
+| int OH_Udmf_SetUnifiedDataByOptions(OH_UdmfOptions* options, OH_UdmfData *unifiedData, char *key, unsigned int keyLen) | - | 指定数据操作选项向统一数据管理框架数据库中写入统一数据对象OH_UdmfData数据。 |
 | int OH_Udmf_UpdateUnifiedData(OH_UdmfOptions* options, OH_UdmfData* unifiedData) | - | 对统一数据管理框架数据库中的统一数据对象OH_UdmfData数据进行数据更改。 |
 | int OH_Udmf_DeleteUnifiedData(OH_UdmfOptions* options, OH_UdmfData** dataArray, unsigned int* dataSize) | - | 删除统一数据管理框架数据库中的统一数据对象OH_UdmfData数据。 |
 | void OH_Udmf_DestroyDataArray(OH_UdmfData** dataArray, unsigned int dataSize) | - | 销毁数据数组内存。 |
@@ -161,13 +181,15 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### Udmf_Intention
+### Udmf_Intention
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -181,6 +203,7 @@ enum Udmf_Intention
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | UDMF_INTENTION_DRAG | 拖拽数据通路。 |
@@ -193,7 +216,8 @@ enum Udmf_Intention
  
   
 
-#### Udmf_ShareOption
+### Udmf_ShareOption
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -207,6 +231,7 @@ UDMF支持的设备内使用范围类型枚举。
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | SHARE_OPTIONS_INVALID | 表示不合法的使用范围类型。 |
@@ -216,7 +241,8 @@ UDMF支持的设备内使用范围类型枚举。
  
   
 
-#### Udmf_FileConflictOptions
+### Udmf_FileConflictOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -230,6 +256,7 @@ enum Udmf_FileConflictOptions
  
 **起始版本：** 15
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | UDMF_OVERWRITE = 0 | 目标路径存在同文件名时覆盖。若不配置策略，默认使用该策略。 |
@@ -238,7 +265,8 @@ enum Udmf_FileConflictOptions
  
   
 
-#### Udmf_ProgressIndicator
+### Udmf_ProgressIndicator
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -252,6 +280,7 @@ enum Udmf_ProgressIndicator
  
 **起始版本：** 15
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | UDMF_NONE = 0 | 不采用系统默认进度显示。 |
@@ -260,7 +289,8 @@ enum Udmf_ProgressIndicator
  
   
 
-#### Udmf_Visibility
+### Udmf_Visibility
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -274,6 +304,7 @@ enum Udmf_Visibility
  
 **起始版本：** 20
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | UDMF_ALL | 可见性等级，所有应用可见。 |
@@ -282,13 +313,15 @@ enum Udmf_Visibility
  
   
 
-#### 函数说明
+## 函数说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### OH_UdmfGetDataParams_SetAcceptableInfo()
+### OH_UdmfGetDataParams_SetAcceptableInfo()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -304,6 +337,7 @@ void OH_UdmfGetDataParams_SetAcceptableInfo(OH_UdmfGetDataParams* params, OH_Udm
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfGetDataParams* params | 表示指向OH_UdmfGetDataParams实例的指针。 |
@@ -312,7 +346,8 @@ void OH_UdmfGetDataParams_SetAcceptableInfo(OH_UdmfGetDataParams* params, OH_Udm
  
   
 
-#### OH_UdmfDataLoadParams_Create()
+### OH_UdmfDataLoadParams_Create()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -330,6 +365,7 @@ OH_UdmfDataLoadParams* OH_UdmfDataLoadParams_Create()
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_UdmfDataLoadParams* | 如果创建成功，返回一个指向数据加载参数OH_UdmfDataLoadParams实例的指针；否则返回nullptr。 |
@@ -337,7 +373,8 @@ OH_UdmfDataLoadParams* OH_UdmfDataLoadParams_Create()
  
   
 
-#### OH_UdmfDataLoadParams_Destroy()
+### OH_UdmfDataLoadParams_Destroy()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -353,6 +390,7 @@ void OH_UdmfDataLoadParams_Destroy(OH_UdmfDataLoadParams* pThis)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfDataLoadParams* pThis | 表示指向数据加载参数OH_UdmfDataLoadParams实例的指针。 |
@@ -360,7 +398,8 @@ void OH_UdmfDataLoadParams_Destroy(OH_UdmfDataLoadParams* pThis)
  
   
 
-#### OH_UdmfDataLoadParams_SetLoadHandler()
+### OH_UdmfDataLoadParams_SetLoadHandler()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -376,6 +415,7 @@ void OH_UdmfDataLoadParams_SetLoadHandler(OH_UdmfDataLoadParams* params, const O
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfDataLoadParams* params | 表示指向数据加载参数OH_UdmfDataLoadParams实例的指针。 |
@@ -384,7 +424,8 @@ void OH_UdmfDataLoadParams_SetLoadHandler(OH_UdmfDataLoadParams* params, const O
  
   
 
-#### OH_UdmfDataLoadParams_SetDataLoadInfo()
+### OH_UdmfDataLoadParams_SetDataLoadInfo()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -400,6 +441,7 @@ void OH_UdmfDataLoadParams_SetDataLoadInfo(OH_UdmfDataLoadParams* params, OH_Udm
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfDataLoadParams* params | 表示指向数据加载参数OH_UdmfDataLoadParams实例的指针。 |
@@ -408,7 +450,8 @@ void OH_UdmfDataLoadParams_SetDataLoadInfo(OH_UdmfDataLoadParams* params, OH_Udm
  
   
 
-#### OH_UdmfDataLoadInfo_Create()
+### OH_UdmfDataLoadInfo_Create()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -426,6 +469,7 @@ OH_UdmfDataLoadInfo* OH_UdmfDataLoadInfo_Create()
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_UdmfDataLoadInfo* | 如果创建成功，返回一个指向数据加载信息OH_UdmfDataLoadInfo实例的指针；否则返回nullptr。 |
@@ -433,7 +477,8 @@ OH_UdmfDataLoadInfo* OH_UdmfDataLoadInfo_Create()
  
   
 
-#### OH_UdmfDataLoadInfo_Destroy()
+### OH_UdmfDataLoadInfo_Destroy()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -449,6 +494,7 @@ void OH_UdmfDataLoadInfo_Destroy(OH_UdmfDataLoadInfo* dataLoadInfo)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfDataLoadInfo* dataLoadInfo | 表示指向数据加载信息OH_UdmfDataLoadInfo实例的指针。 |
@@ -456,7 +502,8 @@ void OH_UdmfDataLoadInfo_Destroy(OH_UdmfDataLoadInfo* dataLoadInfo)
  
   
 
-#### OH_UdmfDataLoadInfo_GetTypes()
+### OH_UdmfDataLoadInfo_GetTypes()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -472,6 +519,7 @@ char** OH_UdmfDataLoadInfo_GetTypes(OH_UdmfDataLoadInfo* dataLoadInfo, unsigned 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfDataLoadInfo* dataLoadInfo | 表示指向数据加载信息OH_UdmfDataLoadInfo实例的指针。 |
@@ -480,6 +528,7 @@ char** OH_UdmfDataLoadInfo_GetTypes(OH_UdmfDataLoadInfo* dataLoadInfo, unsigned 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | char** | 返回数据类型的字符串数组。 |
@@ -487,7 +536,8 @@ char** OH_UdmfDataLoadInfo_GetTypes(OH_UdmfDataLoadInfo* dataLoadInfo, unsigned 
  
   
 
-#### OH_UdmfDataLoadInfo_SetType()
+### OH_UdmfDataLoadInfo_SetType()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -503,6 +553,7 @@ void OH_UdmfDataLoadInfo_SetType(OH_UdmfDataLoadInfo* dataLoadInfo, const char* 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfDataLoadInfo* dataLoadInfo | 表示指向数据加载信息OH_UdmfDataLoadInfo实例的指针。 |
@@ -511,7 +562,8 @@ void OH_UdmfDataLoadInfo_SetType(OH_UdmfDataLoadInfo* dataLoadInfo, const char* 
  
   
 
-#### OH_UdmfDataLoadInfo_GetRecordCount()
+### OH_UdmfDataLoadInfo_GetRecordCount()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -527,6 +579,7 @@ int OH_UdmfDataLoadInfo_GetRecordCount(OH_UdmfDataLoadInfo* dataLoadInfo)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfDataLoadInfo* dataLoadInfo | 表示指向数据加载信息OH_UdmfDataLoadInfo实例的指针。 |
@@ -534,6 +587,7 @@ int OH_UdmfDataLoadInfo_GetRecordCount(OH_UdmfDataLoadInfo* dataLoadInfo)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回记录的数量。 |
@@ -541,7 +595,8 @@ int OH_UdmfDataLoadInfo_GetRecordCount(OH_UdmfDataLoadInfo* dataLoadInfo)
  
   
 
-#### OH_UdmfDataLoadInfo_SetRecordCount()
+### OH_UdmfDataLoadInfo_SetRecordCount()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -557,6 +612,7 @@ void OH_UdmfDataLoadInfo_SetRecordCount(OH_UdmfDataLoadInfo* dataLoadInfo, unsig
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfDataLoadInfo* dataLoadInfo | 表示指向数据加载信息OH_UdmfDataLoadInfo实例的指针。 |
@@ -565,7 +621,8 @@ void OH_UdmfDataLoadInfo_SetRecordCount(OH_UdmfDataLoadInfo* dataLoadInfo, unsig
  
   
 
-#### OH_Udmf_DataLoadHandler()
+### OH_Udmf_DataLoadHandler()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -581,6 +638,7 @@ typedef OH_UdmfData* (*OH_Udmf_DataLoadHandler)(OH_UdmfDataLoadInfo* acceptableI
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfDataLoadInfo* acceptableInfo | 表示接收端可接收的数据类型和数量信息。 |
@@ -588,14 +646,16 @@ typedef OH_UdmfData* (*OH_Udmf_DataLoadHandler)(OH_UdmfDataLoadInfo* acceptableI
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| OH_UdmfData* (*OH_Udmf_DataLoadHandler) | 返回待加载的数据。 |
+| OH_UdmfData* | 返回待加载的数据。 |
  
  
   
 
-#### OH_UdmfOptions_GetVisibility()
+### OH_UdmfOptions_GetVisibility()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -611,6 +671,7 @@ Udmf_Visibility OH_UdmfOptions_GetVisibility(OH_UdmfOptions* pThis)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfOptions* pThis | 指向数据操作选项OH_UdmfOptions实例的指针。 |
@@ -618,6 +679,7 @@ Udmf_Visibility OH_UdmfOptions_GetVisibility(OH_UdmfOptions* pThis)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Udmf_Visibility | 返回数据可见性等级Udmf_Visibility的值。 |
@@ -625,7 +687,8 @@ Udmf_Visibility OH_UdmfOptions_GetVisibility(OH_UdmfOptions* pThis)
  
   
 
-#### OH_UdmfOptions_SetVisibility()
+### OH_UdmfOptions_SetVisibility()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -641,6 +704,7 @@ int OH_UdmfOptions_SetVisibility(OH_UdmfOptions* pThis, Udmf_Visibility visibili
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfOptions* pThis | 指向数据操作选项OH_UdmfOptions实例的指针。 |
@@ -649,6 +713,7 @@ int OH_UdmfOptions_SetVisibility(OH_UdmfOptions* pThis, Udmf_Visibility visibili
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行结果。请参阅错误码定义Udmf_ErrCode。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。 |
@@ -656,23 +721,8 @@ int OH_UdmfOptions_SetVisibility(OH_UdmfOptions* pThis, Udmf_Visibility visibili
  
   
 
-#### UDMF_KEY_BUFFER_LEN()
+### OH_Udmf_DataProgressListener()
 
-**支持设备：** Phone | PC/2in1 | Tablet | TV
-
-```text
-UDMF_KEY_BUFFER_LEN (512)
-```
- 
-**描述**
- 
-统一数据对象唯一标识符最小空间长度。
- 
-**起始版本：** 12
- 
-  
-
-#### OH_Udmf_DataProgressListener()
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -690,6 +740,7 @@ typedef void (*OH_Udmf_DataProgressListener)(OH_Udmf_ProgressInfo* progressInfo,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Udmf_ProgressInfo* progressInfo | 进度信息，作为出参使用。 |
@@ -698,7 +749,8 @@ typedef void (*OH_Udmf_DataProgressListener)(OH_Udmf_ProgressInfo* progressInfo,
  
   
 
-#### OH_UdmfData_Create()
+### OH_UdmfData_Create()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -714,6 +766,7 @@ OH_UdmfData* OH_UdmfData_Create()
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_UdmfData* | 执行成功则返回一个指向统一数据对象OH_UdmfData实例对象的指针，否则返回nullptr。 |
@@ -725,7 +778,8 @@ OH_UdmfData
  
   
 
-#### OH_UdmfData_Destroy()
+### OH_UdmfData_Destroy()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -741,6 +795,7 @@ void OH_UdmfData_Destroy(OH_UdmfData* pThis)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfData* pThis | 表示指向统一数据对象OH_UdmfData实例的指针。 |
@@ -752,7 +807,8 @@ OH_UdmfData
  
   
 
-#### OH_UdmfData_AddRecord()
+### OH_UdmfData_AddRecord()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -768,6 +824,7 @@ int OH_UdmfData_AddRecord(OH_UdmfData* pThis, OH_UdmfRecord* record)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfData* pThis | 表示指向统一数据对象OH_UdmfData实例的指针。 |
@@ -776,6 +833,7 @@ int OH_UdmfData_AddRecord(OH_UdmfData* pThis, OH_UdmfRecord* record)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的状态代码。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。具体请参阅错误码定义Udmf_ErrCode。 |
@@ -783,7 +841,8 @@ int OH_UdmfData_AddRecord(OH_UdmfData* pThis, OH_UdmfRecord* record)
  
   
 
-#### OH_UdmfData_HasType()
+### OH_UdmfData_HasType()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -799,6 +858,7 @@ bool OH_UdmfData_HasType(OH_UdmfData* pThis, const char* type)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfData* pThis | 表示指向统一数据对象OH_UdmfData实例的指针。 |
@@ -807,6 +867,7 @@ bool OH_UdmfData_HasType(OH_UdmfData* pThis, const char* type)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回查找类型的状态。返回false表示不存在指定类型，返回true表示存在指定类型。 |
@@ -814,7 +875,8 @@ bool OH_UdmfData_HasType(OH_UdmfData* pThis, const char* type)
  
   
 
-#### OH_UdmfData_GetTypes()
+### OH_UdmfData_GetTypes()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -830,6 +892,7 @@ char** OH_UdmfData_GetTypes(OH_UdmfData* pThis, unsigned int* count)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfData* pThis | 表示指向统一数据对象OH_UdmfData实例的指针。 |
@@ -838,6 +901,7 @@ char** OH_UdmfData_GetTypes(OH_UdmfData* pThis, unsigned int* count)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | char** | 执行成功时返回统一数据对象的类型结果集，否则返回nullptr。 |
@@ -845,7 +909,8 @@ char** OH_UdmfData_GetTypes(OH_UdmfData* pThis, unsigned int* count)
  
   
 
-#### OH_UdmfData_GetRecords()
+### OH_UdmfData_GetRecords()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -861,6 +926,7 @@ OH_UdmfRecord** OH_UdmfData_GetRecords(OH_UdmfData* pThis, unsigned int* count)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfData* pThis | 表示指向统一数据对象OH_UdmfData实例的指针。 |
@@ -869,6 +935,7 @@ OH_UdmfRecord** OH_UdmfData_GetRecords(OH_UdmfData* pThis, unsigned int* count)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_UdmfRecord** | 执行成功时返回统一数据记录OH_UdmfRecord结果集，否则返回nullptr。 |
@@ -876,7 +943,8 @@ OH_UdmfRecord** OH_UdmfData_GetRecords(OH_UdmfData* pThis, unsigned int* count)
  
   
 
-#### UdmfData_Finalize()
+### UdmfData_Finalize()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -892,6 +960,7 @@ typedef void (*UdmfData_Finalize)(void* context)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | void* context | 要释放的上下文指针。 |
@@ -899,7 +968,8 @@ typedef void (*UdmfData_Finalize)(void* context)
  
   
 
-#### OH_UdmfRecordProvider_Create()
+### OH_UdmfRecordProvider_Create()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -915,6 +985,7 @@ OH_UdmfRecordProvider* OH_UdmfRecordProvider_Create()
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_UdmfRecordProvider* | 执行成功时返回一个指向统一数据提供者OH_UdmfRecordProvider实例对象的指针，否则返回nullptr。 |
@@ -922,7 +993,8 @@ OH_UdmfRecordProvider* OH_UdmfRecordProvider_Create()
  
   
 
-#### OH_UdmfRecordProvider_Destroy()
+### OH_UdmfRecordProvider_Destroy()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -938,6 +1010,7 @@ int OH_UdmfRecordProvider_Destroy(OH_UdmfRecordProvider* provider)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfRecordProvider* provider | 表示指向统一数据提供者对象OH_UdmfRecordProvider实例的指针。 |
@@ -945,6 +1018,7 @@ int OH_UdmfRecordProvider_Destroy(OH_UdmfRecordProvider* provider)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的状态代码。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。具体请参阅错误码定义Udmf_ErrCode。 |
@@ -952,7 +1026,8 @@ int OH_UdmfRecordProvider_Destroy(OH_UdmfRecordProvider* provider)
  
   
 
-#### OH_UdmfRecordProvider_GetData()
+### OH_UdmfRecordProvider_GetData()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -968,6 +1043,7 @@ typedef void* (*OH_UdmfRecordProvider_GetData)(void* context, const char* type)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | void* context | 用OH_UdmfRecordProvider_SetData设置的上下文指针。 |
@@ -976,14 +1052,16 @@ typedef void* (*OH_UdmfRecordProvider_GetData)(void* context, const char* type)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| void* | 需要返回一个标准化数据。 |
+| void* | 返回从上下文中获取的指定类型的数据指针。 |
  
  
   
 
-#### OH_UdmfRecordProvider_SetData()
+### OH_UdmfRecordProvider_SetData()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -999,6 +1077,7 @@ int OH_UdmfRecordProvider_SetData(OH_UdmfRecordProvider* provider, void* context
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfRecordProvider* provider | 指向统一数据提供者OH_UdmfRecordProvider实例对象的指针。 |
@@ -1009,6 +1088,7 @@ int OH_UdmfRecordProvider_SetData(OH_UdmfRecordProvider* provider, void* context
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的状态代码。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。具体请参阅错误码定义Udmf_ErrCode。 |
@@ -1016,7 +1096,8 @@ int OH_UdmfRecordProvider_SetData(OH_UdmfRecordProvider* provider, void* context
  
   
 
-#### OH_UdmfRecord_Create()
+### OH_UdmfRecord_Create()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1032,6 +1113,7 @@ OH_UdmfRecord* OH_UdmfRecord_Create()
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_UdmfRecord* | 执行成功则返回一个指向统一数据记录OH_UdmfRecord实例对象的指针，否则返回nullptr。 |
@@ -1039,7 +1121,8 @@ OH_UdmfRecord* OH_UdmfRecord_Create()
  
   
 
-#### OH_UdmfRecord_Destroy()
+### OH_UdmfRecord_Destroy()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1055,14 +1138,16 @@ void OH_UdmfRecord_Destroy(OH_UdmfRecord* pThis)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| OH_UdmfRecord* pThis | 表示指向统一数据对象OH_UdmfRecord实例的指针。 |
+| OH_UdmfRecord* pThis | 表示指向统一数据记录OH_UdmfRecord实例的指针。 |
  
  
   
 
-#### OH_UdmfRecord_AddGeneralEntry()
+### OH_UdmfRecord_AddGeneralEntry()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1078,6 +1163,7 @@ int OH_UdmfRecord_AddGeneralEntry(OH_UdmfRecord* pThis, const char* typeId, unsi
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfRecord* pThis | 表示指向统一数据记录OH_UdmfRecord实例的指针。 |
@@ -1088,6 +1174,7 @@ int OH_UdmfRecord_AddGeneralEntry(OH_UdmfRecord* pThis, const char* typeId, unsi
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的状态代码。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。具体请参阅错误码定义Udmf_ErrCode。 |
@@ -1095,7 +1182,8 @@ int OH_UdmfRecord_AddGeneralEntry(OH_UdmfRecord* pThis, const char* typeId, unsi
  
   
 
-#### OH_UdmfRecord_AddPlainText()
+### OH_UdmfRecord_AddPlainText()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1111,6 +1199,7 @@ int OH_UdmfRecord_AddPlainText(OH_UdmfRecord* pThis, OH_UdsPlainText* plainText)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfRecord* pThis | 表示指向统一数据记录OH_UdmfRecord实例的指针。 |
@@ -1119,6 +1208,7 @@ int OH_UdmfRecord_AddPlainText(OH_UdmfRecord* pThis, OH_UdsPlainText* plainText)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的状态代码。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。具体请参阅错误码定义Udmf_ErrCode。 |
@@ -1126,7 +1216,8 @@ int OH_UdmfRecord_AddPlainText(OH_UdmfRecord* pThis, OH_UdsPlainText* plainText)
  
   
 
-#### OH_UdmfRecord_AddHyperlink()
+### OH_UdmfRecord_AddHyperlink()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1142,6 +1233,7 @@ int OH_UdmfRecord_AddHyperlink(OH_UdmfRecord* pThis, OH_UdsHyperlink* hyperlink)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfRecord* pThis | 表示指向统一数据记录OH_UdmfRecord实例的指针。 |
@@ -1150,6 +1242,7 @@ int OH_UdmfRecord_AddHyperlink(OH_UdmfRecord* pThis, OH_UdsHyperlink* hyperlink)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的状态代码。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。具体请参阅错误码定义Udmf_ErrCode。 |
@@ -1157,7 +1250,8 @@ int OH_UdmfRecord_AddHyperlink(OH_UdmfRecord* pThis, OH_UdsHyperlink* hyperlink)
  
   
 
-#### OH_UdmfRecord_AddHtml()
+### OH_UdmfRecord_AddHtml()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1173,6 +1267,7 @@ int OH_UdmfRecord_AddHtml(OH_UdmfRecord* pThis, OH_UdsHtml* html)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfRecord* pThis | 表示指向统一数据记录OH_UdmfRecord实例的指针。 |
@@ -1181,6 +1276,7 @@ int OH_UdmfRecord_AddHtml(OH_UdmfRecord* pThis, OH_UdsHtml* html)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的状态代码。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。具体请参阅错误码定义Udmf_ErrCode。 |
@@ -1188,7 +1284,8 @@ int OH_UdmfRecord_AddHtml(OH_UdmfRecord* pThis, OH_UdsHtml* html)
  
   
 
-#### OH_UdmfRecord_AddAppItem()
+### OH_UdmfRecord_AddAppItem()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1204,6 +1301,7 @@ int OH_UdmfRecord_AddAppItem(OH_UdmfRecord* pThis, OH_UdsAppItem* appItem)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfRecord* pThis | 表示指向统一数据记录OH_UdmfRecord实例的指针。 |
@@ -1212,6 +1310,7 @@ int OH_UdmfRecord_AddAppItem(OH_UdmfRecord* pThis, OH_UdsAppItem* appItem)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的状态代码。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。具体请参阅错误码定义Udmf_ErrCode。 |
@@ -1219,7 +1318,8 @@ int OH_UdmfRecord_AddAppItem(OH_UdmfRecord* pThis, OH_UdsAppItem* appItem)
  
   
 
-#### OH_UdmfRecord_AddFileUri()
+### OH_UdmfRecord_AddFileUri()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1235,6 +1335,7 @@ int OH_UdmfRecord_AddFileUri(OH_UdmfRecord* pThis, OH_UdsFileUri* fileUri)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfRecord* pThis | 表示指向统一数据记录OH_UdmfRecord实例的指针。 |
@@ -1243,6 +1344,7 @@ int OH_UdmfRecord_AddFileUri(OH_UdmfRecord* pThis, OH_UdsFileUri* fileUri)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的状态代码。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。具体请参阅错误码定义Udmf_ErrCode。 |
@@ -1250,7 +1352,8 @@ int OH_UdmfRecord_AddFileUri(OH_UdmfRecord* pThis, OH_UdsFileUri* fileUri)
  
   
 
-#### OH_UdmfRecord_AddPixelMap()
+### OH_UdmfRecord_AddPixelMap()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1266,6 +1369,7 @@ int OH_UdmfRecord_AddPixelMap(OH_UdmfRecord* pThis, OH_UdsPixelMap* pixelMap)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfRecord* pThis | 表示指向统一数据记录OH_UdmfRecord实例的指针。 |
@@ -1274,6 +1378,7 @@ int OH_UdmfRecord_AddPixelMap(OH_UdmfRecord* pThis, OH_UdsPixelMap* pixelMap)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的状态代码。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。具体请参阅错误码定义Udmf_ErrCode。 |
@@ -1281,7 +1386,8 @@ int OH_UdmfRecord_AddPixelMap(OH_UdmfRecord* pThis, OH_UdsPixelMap* pixelMap)
  
   
 
-#### OH_UdmfRecord_AddArrayBuffer()
+### OH_UdmfRecord_AddArrayBuffer()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1297,6 +1403,7 @@ int OH_UdmfRecord_AddArrayBuffer(OH_UdmfRecord* record, const char* type, OH_Uds
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfRecord* record | 表示指向统一数据记录OH_UdmfRecord实例的指针。 |
@@ -1306,6 +1413,7 @@ int OH_UdmfRecord_AddArrayBuffer(OH_UdmfRecord* record, const char* type, OH_Uds
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的状态代码。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。具体请参阅错误码定义Udmf_ErrCode。 |
@@ -1313,7 +1421,8 @@ int OH_UdmfRecord_AddArrayBuffer(OH_UdmfRecord* record, const char* type, OH_Uds
  
   
 
-#### OH_UdmfRecord_AddContentForm()
+### OH_UdmfRecord_AddContentForm()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1329,6 +1438,7 @@ int OH_UdmfRecord_AddContentForm(OH_UdmfRecord* pThis, OH_UdsContentForm* conten
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfRecord* pThis | 表示指向统一数据记录OH_UdmfRecord实例的指针。 |
@@ -1337,6 +1447,7 @@ int OH_UdmfRecord_AddContentForm(OH_UdmfRecord* pThis, OH_UdsContentForm* conten
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的状态代码。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。具体请参阅错误码定义Udmf_ErrCode。 |
@@ -1344,7 +1455,8 @@ int OH_UdmfRecord_AddContentForm(OH_UdmfRecord* pThis, OH_UdsContentForm* conten
  
   
 
-#### OH_UdmfRecord_GetTypes()
+### OH_UdmfRecord_GetTypes()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1360,6 +1472,7 @@ char** OH_UdmfRecord_GetTypes(OH_UdmfRecord* pThis, unsigned int* count)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfRecord* pThis | 表示指向统一数据记录OH_UdmfRecord实例的指针。 |
@@ -1368,6 +1481,7 @@ char** OH_UdmfRecord_GetTypes(OH_UdmfRecord* pThis, unsigned int* count)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | char** | 执行成功时返回类型列表，否则返回nullptr。 |
@@ -1375,7 +1489,8 @@ char** OH_UdmfRecord_GetTypes(OH_UdmfRecord* pThis, unsigned int* count)
  
   
 
-#### OH_UdmfRecord_GetGeneralEntry()
+### OH_UdmfRecord_GetGeneralEntry()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1391,6 +1506,7 @@ int OH_UdmfRecord_GetGeneralEntry(OH_UdmfRecord* pThis, const char* typeId, unsi
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfRecord* pThis | 表示指向统一数据记录OH_UdmfRecord实例的指针。 |
@@ -1401,6 +1517,7 @@ int OH_UdmfRecord_GetGeneralEntry(OH_UdmfRecord* pThis, const char* typeId, unsi
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的状态代码。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。 若返回UDMF_ERR，表示内部数据错误。可能的原因是服务故障或者内存不足等。具体请参阅错误码定义Udmf_ErrCode。 |
@@ -1408,7 +1525,8 @@ int OH_UdmfRecord_GetGeneralEntry(OH_UdmfRecord* pThis, const char* typeId, unsi
  
   
 
-#### OH_UdmfRecord_GetPlainText()
+### OH_UdmfRecord_GetPlainText()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1424,6 +1542,7 @@ int OH_UdmfRecord_GetPlainText(OH_UdmfRecord* pThis, OH_UdsPlainText* plainText)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfRecord* pThis | 表示指向统一数据记录OH_UdmfRecord实例的指针。 |
@@ -1432,6 +1551,7 @@ int OH_UdmfRecord_GetPlainText(OH_UdmfRecord* pThis, OH_UdsPlainText* plainText)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的状态代码。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。 若返回UDMF_ERR，表示内部数据错误。可能的原因是服务故障或者内存不足等。具体请参阅错误码定义Udmf_ErrCode。 |
@@ -1439,7 +1559,8 @@ int OH_UdmfRecord_GetPlainText(OH_UdmfRecord* pThis, OH_UdsPlainText* plainText)
  
   
 
-#### OH_UdmfRecord_GetHyperlink()
+### OH_UdmfRecord_GetHyperlink()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1455,6 +1576,7 @@ int OH_UdmfRecord_GetHyperlink(OH_UdmfRecord* pThis, OH_UdsHyperlink* hyperlink)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfRecord* pThis | 表示指向统一数据记录OH_UdmfRecord实例的指针。 |
@@ -1463,6 +1585,7 @@ int OH_UdmfRecord_GetHyperlink(OH_UdmfRecord* pThis, OH_UdsHyperlink* hyperlink)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的状态代码。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。 若返回UDMF_ERR，表示内部数据错误。可能的原因是服务故障或者内存不足等。具体请参阅错误码定义Udmf_ErrCode。 |
@@ -1470,7 +1593,8 @@ int OH_UdmfRecord_GetHyperlink(OH_UdmfRecord* pThis, OH_UdsHyperlink* hyperlink)
  
   
 
-#### OH_UdmfRecord_GetHtml()
+### OH_UdmfRecord_GetHtml()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1486,6 +1610,7 @@ int OH_UdmfRecord_GetHtml(OH_UdmfRecord* pThis, OH_UdsHtml* html)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfRecord* pThis | 表示指向统一数据记录OH_UdmfRecord实例的指针。 |
@@ -1494,6 +1619,7 @@ int OH_UdmfRecord_GetHtml(OH_UdmfRecord* pThis, OH_UdsHtml* html)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的状态代码。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。 若返回UDMF_ERR，表示内部数据错误。可能的原因是服务故障或者内存不足等。具体请参阅错误码定义Udmf_ErrCode。 |
@@ -1501,7 +1627,8 @@ int OH_UdmfRecord_GetHtml(OH_UdmfRecord* pThis, OH_UdsHtml* html)
  
   
 
-#### OH_UdmfRecord_GetAppItem()
+### OH_UdmfRecord_GetAppItem()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1517,6 +1644,7 @@ int OH_UdmfRecord_GetAppItem(OH_UdmfRecord* pThis, OH_UdsAppItem* appItem)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfRecord* pThis | 表示指向统一数据记录OH_UdmfRecord实例的指针。 |
@@ -1525,6 +1653,7 @@ int OH_UdmfRecord_GetAppItem(OH_UdmfRecord* pThis, OH_UdsAppItem* appItem)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的状态代码。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。 若返回UDMF_ERR，表示内部数据错误。可能的原因是服务故障或者内存不足等。具体请参阅错误码定义Udmf_ErrCode。 |
@@ -1532,7 +1661,8 @@ int OH_UdmfRecord_GetAppItem(OH_UdmfRecord* pThis, OH_UdsAppItem* appItem)
  
   
 
-#### OH_UdmfRecord_SetProvider()
+### OH_UdmfRecord_SetProvider()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1548,6 +1678,7 @@ int OH_UdmfRecord_SetProvider(OH_UdmfRecord* pThis, const char* const* types, un
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfRecord* pThis | 表示指向统一数据记录OH_UdmfRecord实例的指针。 |
@@ -1558,6 +1689,7 @@ int OH_UdmfRecord_SetProvider(OH_UdmfRecord* pThis, const char* const* types, un
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的状态代码。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。具体请参阅错误码定义Udmf_ErrCode。 |
@@ -1565,7 +1697,8 @@ int OH_UdmfRecord_SetProvider(OH_UdmfRecord* pThis, const char* const* types, un
  
   
 
-#### OH_UdmfRecord_GetFileUri()
+### OH_UdmfRecord_GetFileUri()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1581,6 +1714,7 @@ int OH_UdmfRecord_GetFileUri(OH_UdmfRecord* pThis, OH_UdsFileUri* fileUri)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfRecord* pThis | 表示指向统一数据记录OH_UdmfRecord实例的指针。 |
@@ -1589,6 +1723,7 @@ int OH_UdmfRecord_GetFileUri(OH_UdmfRecord* pThis, OH_UdsFileUri* fileUri)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的状态代码。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。具体请参阅错误码定义Udmf_ErrCode。 |
@@ -1596,7 +1731,8 @@ int OH_UdmfRecord_GetFileUri(OH_UdmfRecord* pThis, OH_UdsFileUri* fileUri)
  
   
 
-#### OH_UdmfRecord_GetPixelMap()
+### OH_UdmfRecord_GetPixelMap()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1612,6 +1748,7 @@ int OH_UdmfRecord_GetPixelMap(OH_UdmfRecord* pThis, OH_UdsPixelMap* pixelMap)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfRecord* pThis | 表示指向统一数据记录OH_UdmfRecord实例的指针。 |
@@ -1620,6 +1757,7 @@ int OH_UdmfRecord_GetPixelMap(OH_UdmfRecord* pThis, OH_UdsPixelMap* pixelMap)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的状态代码。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。具体请参阅错误码定义Udmf_ErrCode。 |
@@ -1627,7 +1765,8 @@ int OH_UdmfRecord_GetPixelMap(OH_UdmfRecord* pThis, OH_UdsPixelMap* pixelMap)
  
   
 
-#### OH_UdmfRecord_GetArrayBuffer()
+### OH_UdmfRecord_GetArrayBuffer()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1643,6 +1782,7 @@ int OH_UdmfRecord_GetArrayBuffer(OH_UdmfRecord* record, const char* type, OH_Uds
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfRecord* record | 表示指向统一数据记录OH_UdmfRecord实例的指针。 |
@@ -1652,6 +1792,7 @@ int OH_UdmfRecord_GetArrayBuffer(OH_UdmfRecord* record, const char* type, OH_Uds
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的状态代码。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。具体请参阅错误码定义Udmf_ErrCode。 |
@@ -1659,7 +1800,8 @@ int OH_UdmfRecord_GetArrayBuffer(OH_UdmfRecord* record, const char* type, OH_Uds
  
   
 
-#### OH_UdmfRecord_GetContentForm()
+### OH_UdmfRecord_GetContentForm()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1675,6 +1817,7 @@ int OH_UdmfRecord_GetContentForm(OH_UdmfRecord* pThis, OH_UdsContentForm* conten
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfRecord* pThis | 表示指向统一数据记录OH_UdmfRecord实例的指针。 |
@@ -1683,6 +1826,7 @@ int OH_UdmfRecord_GetContentForm(OH_UdmfRecord* pThis, OH_UdsContentForm* conten
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的状态代码。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。具体请参阅错误码定义Udmf_ErrCode。 |
@@ -1690,7 +1834,8 @@ int OH_UdmfRecord_GetContentForm(OH_UdmfRecord* pThis, OH_UdsContentForm* conten
  
   
 
-#### OH_UdmfData_GetPrimaryPlainText()
+### OH_UdmfData_GetPrimaryPlainText()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1706,6 +1851,7 @@ int OH_UdmfData_GetPrimaryPlainText(OH_UdmfData* data, OH_UdsPlainText* plainTex
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfData* data | 表示指向统一数据对象OH_UdmfData实例的指针。 |
@@ -1714,6 +1860,7 @@ int OH_UdmfData_GetPrimaryPlainText(OH_UdmfData* data, OH_UdsPlainText* plainTex
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的状态代码。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。具体请参阅错误码定义Udmf_ErrCode。 |
@@ -1721,7 +1868,8 @@ int OH_UdmfData_GetPrimaryPlainText(OH_UdmfData* data, OH_UdsPlainText* plainTex
  
   
 
-#### OH_UdmfData_GetPrimaryHtml()
+### OH_UdmfData_GetPrimaryHtml()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1737,6 +1885,7 @@ int OH_UdmfData_GetPrimaryHtml(OH_UdmfData* data, OH_UdsHtml* html)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfData* data | 表示指向统一数据对象OH_UdmfData实例的指针。 |
@@ -1745,6 +1894,7 @@ int OH_UdmfData_GetPrimaryHtml(OH_UdmfData* data, OH_UdsHtml* html)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的状态代码。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。具体请参阅错误码定义Udmf_ErrCode。 |
@@ -1752,7 +1902,8 @@ int OH_UdmfData_GetPrimaryHtml(OH_UdmfData* data, OH_UdsHtml* html)
  
   
 
-#### OH_UdmfData_GetRecordCount()
+### OH_UdmfData_GetRecordCount()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1768,6 +1919,7 @@ int OH_UdmfData_GetRecordCount(OH_UdmfData* data)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfData* data | 表示指向统一数据对象OH_UdmfData实例的指针。 |
@@ -1775,6 +1927,7 @@ int OH_UdmfData_GetRecordCount(OH_UdmfData* data)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回统一数据记录OH_UdmfRecord的数量。 |
@@ -1782,7 +1935,8 @@ int OH_UdmfData_GetRecordCount(OH_UdmfData* data)
  
   
 
-#### OH_UdmfData_GetRecord()
+### OH_UdmfData_GetRecord()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1798,6 +1952,7 @@ OH_UdmfRecord* OH_UdmfData_GetRecord(OH_UdmfData* data, unsigned int index)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfData* data | 表示指向统一数据对象OH_UdmfData实例的指针。 |
@@ -1806,6 +1961,7 @@ OH_UdmfRecord* OH_UdmfData_GetRecord(OH_UdmfData* data, unsigned int index)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_UdmfRecord* | 执行成功时返回统一数据记录OH_UdmfRecord实例对象的指针，否则返回nullptr。 |
@@ -1813,7 +1969,8 @@ OH_UdmfRecord* OH_UdmfData_GetRecord(OH_UdmfData* data, unsigned int index)
  
   
 
-#### OH_UdmfData_IsLocal()
+### OH_UdmfData_IsLocal()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1829,6 +1986,7 @@ bool OH_UdmfData_IsLocal(OH_UdmfData* data)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfData* data | 表示指向统一数据对象OH_UdmfData实例的指针。 |
@@ -1836,6 +1994,7 @@ bool OH_UdmfData_IsLocal(OH_UdmfData* data)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回数据是否是来自本端设备。返回true表示来自本端设备，返回false表示来自远端设备。 |
@@ -1843,7 +2002,8 @@ bool OH_UdmfData_IsLocal(OH_UdmfData* data)
  
   
 
-#### OH_UdmfProperty_Create()
+### OH_UdmfProperty_Create()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1859,6 +2019,7 @@ OH_UdmfProperty* OH_UdmfProperty_Create(OH_UdmfData* unifiedData)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfData* unifiedData | 表示指向统一数据对象OH_UdmfData实例的指针。 |
@@ -1866,6 +2027,7 @@ OH_UdmfProperty* OH_UdmfProperty_Create(OH_UdmfData* unifiedData)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_UdmfProperty* | 执行成功则返回一个指向属性OH_UdmfProperty实例对象的指针，否则返回nullptr。 |
@@ -1873,7 +2035,8 @@ OH_UdmfProperty* OH_UdmfProperty_Create(OH_UdmfData* unifiedData)
  
   
 
-#### OH_UdmfProperty_Destroy()
+### OH_UdmfProperty_Destroy()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1889,6 +2052,7 @@ void OH_UdmfProperty_Destroy(OH_UdmfProperty* pThis)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfProperty* pThis | 表示指向数据属性OH_UdmfProperty实例的指针。 |
@@ -1896,7 +2060,8 @@ void OH_UdmfProperty_Destroy(OH_UdmfProperty* pThis)
  
   
 
-#### OH_UdmfProperty_GetTag()
+### OH_UdmfProperty_GetTag()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1912,6 +2077,7 @@ const char* OH_UdmfProperty_GetTag(OH_UdmfProperty* pThis)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfProperty* pThis | 表示指向数据属性OH_UdmfProperty实例的指针。 |
@@ -1919,6 +2085,7 @@ const char* OH_UdmfProperty_GetTag(OH_UdmfProperty* pThis)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | const char* | 执行成功时返回自定义标签值的字符串指针，否则返回nullptr。 |
@@ -1926,7 +2093,8 @@ const char* OH_UdmfProperty_GetTag(OH_UdmfProperty* pThis)
  
   
 
-#### OH_UdmfProperty_GetTimestamp()
+### OH_UdmfProperty_GetTimestamp()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1942,6 +2110,7 @@ int64_t OH_UdmfProperty_GetTimestamp(OH_UdmfProperty* pThis)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfProperty* pThis | 表示指向数据属性OH_UdmfProperty实例的指针。 |
@@ -1949,6 +2118,7 @@ int64_t OH_UdmfProperty_GetTimestamp(OH_UdmfProperty* pThis)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int64_t | 返回时间戳值。 |
@@ -1956,7 +2126,8 @@ int64_t OH_UdmfProperty_GetTimestamp(OH_UdmfProperty* pThis)
  
   
 
-#### OH_UdmfProperty_GetShareOption()
+### OH_UdmfProperty_GetShareOption()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -1972,6 +2143,7 @@ Udmf_ShareOption OH_UdmfProperty_GetShareOption(OH_UdmfProperty* pThis)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfProperty* pThis | 表示指向数据属性OH_UdmfProperty实例的指针。 |
@@ -1979,6 +2151,7 @@ Udmf_ShareOption OH_UdmfProperty_GetShareOption(OH_UdmfProperty* pThis)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Udmf_ShareOption | 返回设备内适用范围属性Udmf_ShareOption值。 |
@@ -1986,7 +2159,8 @@ Udmf_ShareOption OH_UdmfProperty_GetShareOption(OH_UdmfProperty* pThis)
  
   
 
-#### OH_UdmfProperty_GetExtrasIntParam()
+### OH_UdmfProperty_GetExtrasIntParam()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2002,6 +2176,7 @@ int OH_UdmfProperty_GetExtrasIntParam(OH_UdmfProperty* pThis, const char* key, i
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfProperty* pThis | 表示指向数据属性OH_UdmfProperty实例的指针。 |
@@ -2011,6 +2186,7 @@ int OH_UdmfProperty_GetExtrasIntParam(OH_UdmfProperty* pThis, const char* key, i
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 执行成功返回指定的键关联的整型值，否则返回用户设置的默认值defaultValue。 |
@@ -2018,7 +2194,8 @@ int OH_UdmfProperty_GetExtrasIntParam(OH_UdmfProperty* pThis, const char* key, i
  
   
 
-#### OH_UdmfProperty_GetExtrasStringParam()
+### OH_UdmfProperty_GetExtrasStringParam()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2034,6 +2211,7 @@ const char* OH_UdmfProperty_GetExtrasStringParam(OH_UdmfProperty* pThis, const c
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfProperty* pThis | 表示指向数据属性OH_UdmfProperty实例的指针。 |
@@ -2042,6 +2220,7 @@ const char* OH_UdmfProperty_GetExtrasStringParam(OH_UdmfProperty* pThis, const c
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | const char* | 执行成功时返回指定的键关联的字符串值的指针，否则返回nullptr。 |
@@ -2049,7 +2228,8 @@ const char* OH_UdmfProperty_GetExtrasStringParam(OH_UdmfProperty* pThis, const c
  
   
 
-#### OH_UdmfProperty_SetTag()
+### OH_UdmfProperty_SetTag()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2065,6 +2245,7 @@ int OH_UdmfProperty_SetTag(OH_UdmfProperty* pThis, const char* tag)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfProperty* pThis | 表示指向数据属性OH_UdmfProperty实例的指针。 |
@@ -2073,6 +2254,7 @@ int OH_UdmfProperty_SetTag(OH_UdmfProperty* pThis, const char* tag)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的状态代码。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。具体请参阅错误码定义Udmf_ErrCode。 |
@@ -2080,7 +2262,8 @@ int OH_UdmfProperty_SetTag(OH_UdmfProperty* pThis, const char* tag)
  
   
 
-#### OH_UdmfProperty_SetShareOption()
+### OH_UdmfProperty_SetShareOption()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2096,6 +2279,7 @@ int OH_UdmfProperty_SetShareOption(OH_UdmfProperty* pThis, Udmf_ShareOption opti
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfProperty* pThis | 表示指向数据属性OH_UdmfProperty实例的指针。 |
@@ -2104,6 +2288,7 @@ int OH_UdmfProperty_SetShareOption(OH_UdmfProperty* pThis, Udmf_ShareOption opti
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的状态代码。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。具体请参阅错误码定义Udmf_ErrCode。 |
@@ -2111,7 +2296,8 @@ int OH_UdmfProperty_SetShareOption(OH_UdmfProperty* pThis, Udmf_ShareOption opti
  
   
 
-#### OH_UdmfProperty_SetExtrasIntParam()
+### OH_UdmfProperty_SetExtrasIntParam()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2127,6 +2313,7 @@ int OH_UdmfProperty_SetExtrasIntParam(OH_UdmfProperty* pThis, const char* key, i
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfProperty* pThis | 表示指向数据属性OH_UdmfProperty实例的指针。 |
@@ -2136,6 +2323,7 @@ int OH_UdmfProperty_SetExtrasIntParam(OH_UdmfProperty* pThis, const char* key, i
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的状态代码。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。具体请参阅错误码定义Udmf_ErrCode。 |
@@ -2143,7 +2331,8 @@ int OH_UdmfProperty_SetExtrasIntParam(OH_UdmfProperty* pThis, const char* key, i
  
   
 
-#### OH_UdmfProperty_SetExtrasStringParam()
+### OH_UdmfProperty_SetExtrasStringParam()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2159,6 +2348,7 @@ int OH_UdmfProperty_SetExtrasStringParam(OH_UdmfProperty* pThis, const char* key
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfProperty* pThis | 表示指向数据属性OH_UdmfProperty实例的指针。 |
@@ -2168,6 +2358,7 @@ int OH_UdmfProperty_SetExtrasStringParam(OH_UdmfProperty* pThis, const char* key
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的状态代码。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。具体请参阅错误码定义Udmf_ErrCode。 |
@@ -2175,7 +2366,8 @@ int OH_UdmfProperty_SetExtrasStringParam(OH_UdmfProperty* pThis, const char* key
  
   
 
-#### OH_UdmfOptions_Create()
+### OH_UdmfOptions_Create()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2191,6 +2383,7 @@ OH_UdmfOptions* OH_UdmfOptions_Create()
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_UdmfOptions* | 执行成功则返回一个指向数据操作选项OH_UdmfOptions实例的指针，否则返回nullptr。 |
@@ -2198,7 +2391,8 @@ OH_UdmfOptions* OH_UdmfOptions_Create()
  
   
 
-#### OH_UdmfOptions_Destroy()
+### OH_UdmfOptions_Destroy()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2214,6 +2408,7 @@ void OH_UdmfOptions_Destroy(OH_UdmfOptions* pThis)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfOptions* pThis | 指向数据操作选项OH_UdmfOptions实例的指针。 |
@@ -2221,7 +2416,8 @@ void OH_UdmfOptions_Destroy(OH_UdmfOptions* pThis)
  
   
 
-#### OH_UdmfOptions_GetKey()
+### OH_UdmfOptions_GetKey()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2237,6 +2433,7 @@ const char* OH_UdmfOptions_GetKey(OH_UdmfOptions* pThis)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfOptions* pThis | 指向数据操作选项OH_UdmfOptions实例的指针。 |
@@ -2244,6 +2441,7 @@ const char* OH_UdmfOptions_GetKey(OH_UdmfOptions* pThis)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | const char* | 输入有效入参时返回字符串指针，否则返回nullptr。 |
@@ -2251,7 +2449,8 @@ const char* OH_UdmfOptions_GetKey(OH_UdmfOptions* pThis)
  
   
 
-#### OH_UdmfOptions_SetKey()
+### OH_UdmfOptions_SetKey()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2267,6 +2466,7 @@ int OH_UdmfOptions_SetKey(OH_UdmfOptions* pThis, const char* key)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfOptions* pThis | 指向数据操作选项OH_UdmfOptions实例的指针。 |
@@ -2275,6 +2475,7 @@ int OH_UdmfOptions_SetKey(OH_UdmfOptions* pThis, const char* key)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的状态代码。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。具体请参阅错误码定义Udmf_ErrCode。 |
@@ -2282,7 +2483,8 @@ int OH_UdmfOptions_SetKey(OH_UdmfOptions* pThis, const char* key)
  
   
 
-#### OH_UdmfOptions_GetIntention()
+### OH_UdmfOptions_GetIntention()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2298,6 +2500,7 @@ Udmf_Intention OH_UdmfOptions_GetIntention(OH_UdmfOptions* pThis)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfOptions* pThis | 指向数据操作选项OH_UdmfOptions实例的指针。 |
@@ -2305,6 +2508,7 @@ Udmf_Intention OH_UdmfOptions_GetIntention(OH_UdmfOptions* pThis)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Udmf_Intention | 返回Udmf_Intention的值。 |
@@ -2312,7 +2516,8 @@ Udmf_Intention OH_UdmfOptions_GetIntention(OH_UdmfOptions* pThis)
  
   
 
-#### OH_UdmfOptions_SetIntention()
+### OH_UdmfOptions_SetIntention()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2328,6 +2533,7 @@ int OH_UdmfOptions_SetIntention(OH_UdmfOptions* pThis, Udmf_Intention intention)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfOptions* pThis | 指向数据操作选项OH_UdmfOptions实例的指针。 |
@@ -2336,6 +2542,7 @@ int OH_UdmfOptions_SetIntention(OH_UdmfOptions* pThis, Udmf_Intention intention)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的状态代码。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。具体请参阅错误码定义Udmf_ErrCode。 |
@@ -2343,7 +2550,8 @@ int OH_UdmfOptions_SetIntention(OH_UdmfOptions* pThis, Udmf_Intention intention)
  
   
 
-#### OH_UdmfOptions_Reset()
+### OH_UdmfOptions_Reset()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2359,6 +2567,7 @@ int OH_UdmfOptions_Reset(OH_UdmfOptions* pThis)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfOptions* pThis | 指向数据操作选项OH_UdmfOptions实例的指针。 |
@@ -2366,6 +2575,7 @@ int OH_UdmfOptions_Reset(OH_UdmfOptions* pThis)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的状态代码。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。具体请参阅错误码定义Udmf_ErrCode。 |
@@ -2373,7 +2583,8 @@ int OH_UdmfOptions_Reset(OH_UdmfOptions* pThis)
  
   
 
-#### OH_Udmf_GetUnifiedData()
+### OH_Udmf_GetUnifiedData()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2389,6 +2600,7 @@ int OH_Udmf_GetUnifiedData(const char* key, Udmf_Intention intention, OH_UdmfDat
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char* key | 表示数据库存储的唯一标识符。 |
@@ -2398,6 +2610,7 @@ int OH_Udmf_GetUnifiedData(const char* key, Udmf_Intention intention, OH_UdmfDat
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的状态代码。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。 若返回UDMF_ERR，表示内部数据错误。可能的原因是服务故障或者内存不足等。具体请参阅错误码定义Udmf_ErrCode。 |
@@ -2405,7 +2618,8 @@ int OH_Udmf_GetUnifiedData(const char* key, Udmf_Intention intention, OH_UdmfDat
  
   
 
-#### OH_Udmf_GetUnifiedDataByOptions()
+### OH_Udmf_GetUnifiedDataByOptions()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2421,6 +2635,7 @@ int OH_Udmf_GetUnifiedDataByOptions(OH_UdmfOptions* options, OH_UdmfData** dataA
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfOptions* options | 指向数据操作选项OH_UdmfOptions实例的指针。 |
@@ -2430,6 +2645,7 @@ int OH_Udmf_GetUnifiedDataByOptions(OH_UdmfOptions* options, OH_UdmfData** dataA
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的状态代码。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。 若返回UDMF_ERR，表示内部数据错误。可能的原因是服务故障或者内存不足等。具体请参阅错误码定义Udmf_ErrCode。 |
@@ -2437,7 +2653,8 @@ int OH_Udmf_GetUnifiedDataByOptions(OH_UdmfOptions* options, OH_UdmfData** dataA
  
   
 
-#### OH_Udmf_SetUnifiedData()
+### OH_Udmf_SetUnifiedData()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2447,12 +2664,13 @@ int OH_Udmf_SetUnifiedData(Udmf_Intention intention, OH_UdmfData* unifiedData, c
  
 **描述**
  
-从统一数据管理框架数据库中写入统一数据对象[OH_UdmfData](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-udmf-oh-udmfdata)数据。
+指定数据通路类型向统一数据管理框架数据库中写入统一数据对象[OH_UdmfData](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-udmf-oh-udmfdata)数据。
  
 **起始版本：** 12
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Udmf_Intention intention | 表示数据通路类型Udmf_Intention。 |
@@ -2463,6 +2681,7 @@ int OH_Udmf_SetUnifiedData(Udmf_Intention intention, OH_UdmfData* unifiedData, c
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的状态代码。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。 若返回UDMF_ERR，表示内部数据错误。可能的原因是服务故障或者内存不足等。具体请参阅错误码定义Udmf_ErrCode。 |
@@ -2470,7 +2689,8 @@ int OH_Udmf_SetUnifiedData(Udmf_Intention intention, OH_UdmfData* unifiedData, c
  
   
 
-#### OH_Udmf_SetUnifiedDataByOptions()
+### OH_Udmf_SetUnifiedDataByOptions()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2480,22 +2700,24 @@ int OH_Udmf_SetUnifiedDataByOptions(OH_UdmfOptions* options, OH_UdmfData *unifie
  
 **描述**
  
-从统一数据管理框架数据库中写入统一数据对象[OH_UdmfData](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-udmf-oh-udmfdata)数据。
+指定数据操作选项向统一数据管理框架数据库中写入统一数据对象[OH_UdmfData](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-udmf-oh-udmfdata)数据。
  
 **起始版本：** 20
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfOptions* options | 指向数据操作选项OH_UdmfOptions实例的指针。 |
-| OH_UdmfData *unifiedData | 指向统一数据对象OH_UdmfData实例的指针。 |
-| char *key | 成功将数据设置到数据库后对应数据的唯一标识符，内存大小不小于UDMF_KEY_BUFFER_LEN。 |
+| OH_UdmfData* unifiedData | 指向统一数据对象OH_UdmfData实例的指针。 |
+| char* key | 成功将数据设置到数据库后对应数据的唯一标识符，内存大小不小于UDMF_KEY_BUFFER_LEN。 |
 | unsigned int keyLen | 唯一标识符参数的空间大小。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的状态代码。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。 若返回UDMF_ERR，表示内部数据错误。可能的原因是服务故障或者内存不足等。具体请参阅错误码定义Udmf_ErrCode。 |
@@ -2503,7 +2725,8 @@ int OH_Udmf_SetUnifiedDataByOptions(OH_UdmfOptions* options, OH_UdmfData *unifie
  
   
 
-#### OH_Udmf_UpdateUnifiedData()
+### OH_Udmf_UpdateUnifiedData()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2519,6 +2742,7 @@ int OH_Udmf_UpdateUnifiedData(OH_UdmfOptions* options, OH_UdmfData* unifiedData)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfOptions* options | 指向数据操作选项OH_UdmfOptions实例的指针。 |
@@ -2527,6 +2751,7 @@ int OH_Udmf_UpdateUnifiedData(OH_UdmfOptions* options, OH_UdmfData* unifiedData)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的状态代码。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。 若返回UDMF_ERR，表示内部数据错误。可能的原因是服务故障或者内存不足等。具体请参阅错误码定义Udmf_ErrCode。 |
@@ -2534,7 +2759,8 @@ int OH_Udmf_UpdateUnifiedData(OH_UdmfOptions* options, OH_UdmfData* unifiedData)
  
   
 
-#### OH_Udmf_DeleteUnifiedData()
+### OH_Udmf_DeleteUnifiedData()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2550,6 +2776,7 @@ int OH_Udmf_DeleteUnifiedData(OH_UdmfOptions* options, OH_UdmfData** dataArray, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfOptions* options | 指向数据操作选项OH_UdmfOptions实例的指针。 |
@@ -2559,6 +2786,7 @@ int OH_Udmf_DeleteUnifiedData(OH_UdmfOptions* options, OH_UdmfData** dataArray, 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的状态代码。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。 若返回UDMF_ERR，表示内部数据错误。可能的原因是服务故障或者内存不足等。具体请参阅错误码定义Udmf_ErrCode。 |
@@ -2566,7 +2794,8 @@ int OH_Udmf_DeleteUnifiedData(OH_UdmfOptions* options, OH_UdmfData** dataArray, 
  
   
 
-#### OH_Udmf_DestroyDataArray()
+### OH_Udmf_DestroyDataArray()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2582,6 +2811,7 @@ void OH_Udmf_DestroyDataArray(OH_UdmfData** dataArray, unsigned int dataSize)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfData** dataArray | 指向统一数据对象OH_UdmfData的指针列表。 |
@@ -2594,7 +2824,8 @@ OH_UdmfData
  
   
 
-#### OH_UdmfProgressInfo_GetProgress()
+### OH_UdmfProgressInfo_GetProgress()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2610,6 +2841,7 @@ int OH_UdmfProgressInfo_GetProgress(OH_Udmf_ProgressInfo* progressInfo)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Udmf_ProgressInfo* progressInfo | 表示进度信息OH_Udmf_ProgressInfo。 |
@@ -2617,6 +2849,7 @@ int OH_UdmfProgressInfo_GetProgress(OH_Udmf_ProgressInfo* progressInfo)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回进度百分比数据。 |
@@ -2624,7 +2857,8 @@ int OH_UdmfProgressInfo_GetProgress(OH_Udmf_ProgressInfo* progressInfo)
  
   
 
-#### OH_UdmfProgressInfo_GetStatus()
+### OH_UdmfProgressInfo_GetStatus()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2640,6 +2874,7 @@ int OH_UdmfProgressInfo_GetStatus(OH_Udmf_ProgressInfo* progressInfo)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Udmf_ProgressInfo* progressInfo | 表示进度信息OH_Udmf_ProgressInfo。 |
@@ -2647,6 +2882,7 @@ int OH_UdmfProgressInfo_GetStatus(OH_Udmf_ProgressInfo* progressInfo)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回状态信息。 |
@@ -2654,7 +2890,8 @@ int OH_UdmfProgressInfo_GetStatus(OH_Udmf_ProgressInfo* progressInfo)
  
   
 
-#### OH_UdmfGetDataParams_Create()
+### OH_UdmfGetDataParams_Create()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2672,14 +2909,16 @@ OH_UdmfGetDataParams* OH_UdmfGetDataParams_Create()
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| OH_UdmfGetDataParams* | 执行成功则返回一个指向属性OH_UdmfGetDataParams实例对象的指针，否则返回nullptr。 |
+| OH_UdmfGetDataParams* | 执行成功则返回一个指向OH_UdmfGetDataParams实例对象的指针，否则返回nullptr。 |
  
  
   
 
-#### OH_UdmfGetDataParams_Destroy()
+### OH_UdmfGetDataParams_Destroy()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2695,6 +2934,7 @@ void OH_UdmfGetDataParams_Destroy(OH_UdmfGetDataParams* pThis)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfGetDataParams* pThis | 表示指向异步请求参数OH_UdmfGetDataParams实例的指针。 |
@@ -2702,7 +2942,8 @@ void OH_UdmfGetDataParams_Destroy(OH_UdmfGetDataParams* pThis)
  
   
 
-#### OH_UdmfGetDataParams_SetDestUri()
+### OH_UdmfGetDataParams_SetDestUri()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2724,6 +2965,7 @@ void OH_UdmfGetDataParams_SetDestUri(OH_UdmfGetDataParams* params, const char* d
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfGetDataParams* params | 表示指向异步请求参数OH_UdmfGetDataParams实例的指针。 |
@@ -2732,7 +2974,8 @@ void OH_UdmfGetDataParams_SetDestUri(OH_UdmfGetDataParams* params, const char* d
  
   
 
-#### OH_UdmfGetDataParams_SetFileConflictOptions()
+### OH_UdmfGetDataParams_SetFileConflictOptions()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2748,6 +2991,7 @@ void OH_UdmfGetDataParams_SetFileConflictOptions(OH_UdmfGetDataParams* params, c
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfGetDataParams* params | 表示指向异步请求参数OH_UdmfGetDataParams实例的指针。 |
@@ -2756,7 +3000,8 @@ void OH_UdmfGetDataParams_SetFileConflictOptions(OH_UdmfGetDataParams* params, c
  
   
 
-#### OH_UdmfGetDataParams_SetProgressIndicator()
+### OH_UdmfGetDataParams_SetProgressIndicator()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2772,6 +3017,7 @@ void OH_UdmfGetDataParams_SetProgressIndicator(OH_UdmfGetDataParams* params, con
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfGetDataParams* params | 表示指向异步请求参数OH_UdmfGetDataParams实例的指针。 |
@@ -2780,7 +3026,8 @@ void OH_UdmfGetDataParams_SetProgressIndicator(OH_UdmfGetDataParams* params, con
  
   
 
-#### OH_UdmfGetDataParams_SetDataProgressListener()
+### OH_UdmfGetDataParams_SetDataProgressListener()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2796,6 +3043,7 @@ void OH_UdmfGetDataParams_SetDataProgressListener(OH_UdmfGetDataParams* params, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfGetDataParams* params | 表示指向异步请求参数OH_UdmfGetDataParams实例的指针。 |
@@ -2804,7 +3052,8 @@ void OH_UdmfGetDataParams_SetDataProgressListener(OH_UdmfGetDataParams* params, 
  
   
 
-#### OH_UDMF_GetDataElementAt()
+### OH_UDMF_GetDataElementAt()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2820,6 +3069,7 @@ OH_UdmfData* OH_UDMF_GetDataElementAt(OH_UdmfData** dataArray, unsigned int inde
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfData** dataArray | 指向统一数据对象OH_UdmfData的指针数组。 只接受从OH_Udmf_GetUnifiedDataByOptions和OH_Udmf_DeleteUnifiedData接口中获得的指针数组。 |
@@ -2828,6 +3078,7 @@ OH_UdmfData* OH_UDMF_GetDataElementAt(OH_UdmfData** dataArray, unsigned int inde
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_UdmfData* | 执行成功则返回一个指向统一数据对象OH_UdmfData实例对象的指针，如果输入数组为空，则返回空。 |
@@ -2835,7 +3086,8 @@ OH_UdmfData* OH_UDMF_GetDataElementAt(OH_UdmfData** dataArray, unsigned int inde
  
   
 
-#### OH_UdmfProperty_SetAuthPermission()
+### OH_UdmfProperty_SetAuthPermission()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -2851,6 +3103,7 @@ int OH_UdmfProperty_SetAuthPermission(OH_UdmfProperty* pThis, uint32_t authPolic
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_UdmfProperty* pThis | 表示指向OH_UdmfProperty实例的指针。 说明：此授权策略仅在拖拽场景下生效，其他场景不生效。 |
@@ -2859,6 +3112,7 @@ int OH_UdmfProperty_SetAuthPermission(OH_UdmfProperty* pThis, uint32_t authPolic
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回执行的状态代码。 若返回UDMF_E_OK，表示执行成功。 若返回UDMF_E_INVALID_PARAM，表示传入了无效参数。具体请参阅错误码定义Udmf_ErrCode。 |

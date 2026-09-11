@@ -1,13 +1,13 @@
 # AR Engine简介
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-overview
 
 AR Engine（AR引擎服务）是一个用于在HarmonyOS上构建增强现实应用的引擎，提供了运动跟踪、环境跟踪等空间计算能力。
 
 
-#### 能力介绍
+## 能力介绍
 
 AR Engine主要包含运动跟踪与平面识别特性、平面语义及物体语义特性、环境Mesh识别特性、深度估计特性、图像跟踪特性、高精几何重建特性、人脸识别与跟踪特性、人体骨骼点识别与跟踪特性。
 
@@ -15,7 +15,7 @@ AR Engine主要包含运动跟踪与平面识别特性、平面语义及物体�
 
 
 
-#### 环境识别与运动跟踪能力
+### 环境识别与运动跟踪能力
 
  - [运动跟踪](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-get-pose-conversion)：实时获取设备位置和姿态。
  - [平面识别](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-get-plane-conversion)：识别环境中的平面。
@@ -29,32 +29,32 @@ AR Engine主要包含运动跟踪与平面识别特性、平面语义及物体�
 
 
 
-#### 人体骨骼识别与跟踪能力
+### 人体骨骼识别与跟踪能力
 
  - [人体骨骼点识别与跟踪](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-body-conversion)：识别环境中的人体骨骼点信息。
 
 
 
 
-#### 人脸识别与跟踪能力
+### 人脸识别与跟踪能力
 
  - [人脸识别与跟踪](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-face-conversion)：识别环境中的人脸信息。
 
 
 
 
-#### 图像识别与跟踪能力
+### 图像识别与跟踪能力
 
  - [图像跟踪](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-get-image-track-conversion)：识别环境中已预置在AR Engine中的图像并输出图像位置和姿态。
 
 
 
 
-#### 坐标系说明
+## 坐标系说明
 
 
 
-#### AR Engine重力对齐世界坐标系
+### AR Engine重力对齐世界坐标系
 
  - 以相机启动时相机中心为坐标原点；
  - 重力方向为Y轴，向上+Y，向下-Y；
@@ -70,7 +70,7 @@ AR Engine主要包含运动跟踪与平面识别特性、平面语义及物体�
 
 
 
-#### AR Engine重力对齐北向坐标系
+### AR Engine重力对齐北向坐标系
 
  - 以相机启动时相机中心为坐标原点；
  - 重力方向为Y轴，向上+Y，向下-Y；
@@ -87,7 +87,7 @@ AR Engine主要包含运动跟踪与平面识别特性、平面语义及物体�
 
 
 
-#### AGP世界坐标系
+### AGP世界坐标系
 
  - 以相机启动时相机中心为坐标原点；
  - 设备垂直方向为Y轴，向上+Y，向下-Y；
@@ -103,7 +103,7 @@ AR Engine主要包含运动跟踪与平面识别特性、平面语义及物体�
 
 
 
-#### 约束与限制
+## 约束与限制
 
  - 在调用AR Engine能力前，需要先通过[canIUse](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/syscap#使用caniuse判断syscap是否可调用)查询您的目标设备是否支持SystemCapability.AREngine.Core系统能力。
  - 支持的设备类型：Phone、Tablet。从6.1.0(23)版本开始，新增支持TV。
@@ -115,17 +115,17 @@ AR Engine主要包含运动跟踪与平面识别特性、平面语义及物体�
 
 
 两种方式均返回对应的特性是否支持，具体使用方式参考各个特性的示例代码。
-      - 支持机型的产品型号也可以参考[社区问答贴](https://developer.huawei.com/consumer/cn/forum/topic/0204192741933553355?fid=0104164651529951067)。
+            - 支持机型的产品型号也可以参考[社区问答贴](https://developer.huawei.com/consumer/cn/forum/topic/0204192741933553355?fid=0104164651529951067)。
 
 
 
 
-#### 支持的国家/地区
+## 支持的国家/地区
 
 本Kit当前仅支持在中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）接入使用。
 
 
 
-#### 模拟器支持情况
+## 模拟器支持情况
 
 本Kit暂不支持模拟器。

@@ -1,6 +1,6 @@
 # 同应用进程嵌入式组件 (EmbeddedComponent)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-embedded-components
 
@@ -11,7 +11,7 @@ EmbeddedComponent组件主要用于实现跨模块、跨进程的嵌入式界面
 开发者在使用时需注意其使用限制和生命周期管理，合理设计应用架构以最大限度地发挥其优势。
 
 
-#### 基本概念
+## 基本概念
 
  - [EmbeddedComponent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-embedded-component)组件
 
@@ -23,7 +23,7 @@ EmbeddedComponent组件主要用于实现跨模块、跨进程的嵌入式界面
 
 
 
-#### 使用约束
+## 使用约束
 
  - 设备要求
 
@@ -47,7 +47,7 @@ EmbeddedComponent组件主要用于实现跨模块、跨进程的嵌入式界面
 
 
 
-#### 获焦能力说明
+## 获焦能力说明
 
 API版本26.0.0之前，EmbeddedComponent组件获焦时，其拉起的EmbeddedUIExtensionAbility进程内焦点直接下发到第一个可获焦子节点。从API版本26.0.0开始，
 1. 如果外部走焦到EmbeddedUIExtensionAbility，焦点正常下发到第一个可获焦子节点。
@@ -55,7 +55,7 @@ API版本26.0.0之前，EmbeddedComponent组件获焦时，其拉起的EmbeddedU
 
 
 
-#### 场景示例
+## 场景示例
 
 该示例简单展示了EmbeddedComponent组件和EmbeddedUIExtensionAbility的基础使用方式。
 

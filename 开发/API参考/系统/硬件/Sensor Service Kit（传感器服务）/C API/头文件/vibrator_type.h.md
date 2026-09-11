@@ -1,13 +1,14 @@
 # vibrator_type.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-vibrator-type-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供标准的开放API，用于控制马达振动。该API支持多种振动场景（如报警、铃声、通知、通信、触摸、媒体、物理反馈、模拟现实等），通过设置振动优先级，能够满足不同场景下的振动需求，提升用户交互体验和设备使用体验。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | Vibrator_Attribute | Vibrator_Attribute | 马达属性，参考 Vibrator_Attribute。 |
@@ -41,10 +45,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | Vibrator_ErrorCode | Vibrator_ErrorCode | 定义错误码。 |
@@ -53,15 +59,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### Vibrator_ErrorCode
+### Vibrator_ErrorCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Vibrator_ErrorCode
@@ -73,6 +81,7 @@ enum Vibrator_ErrorCode
  
 **起始版本：** 11
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | PERMISSION_DENIED = 201 | 权限校验失败，请检查是否已申请所需权限（如ohos.permission.VIBRATE）。 |
@@ -83,9 +92,10 @@ enum Vibrator_ErrorCode
  
   
 
-#### Vibrator_Usage
+### Vibrator_Usage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Vibrator_Usage
@@ -97,6 +107,7 @@ enum Vibrator_Usage
  
 **起始版本：** 11
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | VIBRATOR_USAGE_UNKNOWN = 0 | 未知场景，最低优先级。用于无法确定具体使用场景时，系统按默认策略处理。 |

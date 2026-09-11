@@ -1,6 +1,6 @@
 # SSAP服务端
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nearlink-ssap-server-connect
 
@@ -15,13 +15,14 @@
 
 
 
-#### 场景介绍
+## 场景介绍
 
-支持应用基于Nearlink技术进行数据传输，设备作为服务端，客户端可连接该服务端进行数据传输。
+支持应用基于NearLink技术进行数据传输，设备作为服务端，客户端可连接该服务端进行数据传输。
 
 
 
-#### 接口说明
+## 接口说明
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -35,7 +36,7 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 导入相关模块。
 
   
@@ -158,7 +159,7 @@ try {
 }
 ```
 
-6. 通知客户端属性值更新。其中参数address是步骤4中获取的已连接客户端设备地址。
+6. 订阅客户端写属性请求事件，并在收到写属性请求事件后通知客户端属性值更新。
 
   
 ```json
@@ -189,6 +190,6 @@ try {
 
 
 
-#### 示例代码
+## 示例代码
 
 SSAP服务端功能可参考[星闪示例代码](https://gitcode.com/harmonyos_samples/nearlink-kit_-sample-code)，entry/src/main/ets/pages/SsapServerPage.ets中的实现方法。

@@ -1,6 +1,6 @@
 # @performance/hp-ffrt-no-use-std
 
-更新时间：2026-04-20 06:32:02
+更新时间：2026-08-29 09:41:34
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hp-ffrt-no-use-std
 
@@ -9,26 +9,26 @@
 并行化场景下，建议优先修改。
  
 
-#### 规则配置
+## 规则配置
 
 ```json
 // code-linter.json5
 {
-  "rules": {
-    "@performance/hp-ffrt-no-use-std": "suggestion",
+  <span style="color: rgb(135,16,148);">"rules"</span>: {
+    <span style="color: rgb(135,16,148);">"@performance/hp-ffrt-no-use-std"</span>: <span style="color: rgb(6,125,23);">"suggestion"</span>,
   }
 }
 ```
  
  
 
-#### 选项
+## 选项
 
-该规则无需配置额外选项。
+该规则无需配置选项。
  
  
 
-#### 正例
+## 正例
 
 ```text
 #include <iostream>
@@ -42,7 +42,7 @@ using namespace std;
 int N = 100;
 int M = 100;
 
-// ffrt::submit中使用了std::mutex
+<em>// ffrt::submit中使用了std::mutex</em>
     void PositiveCase1(int temp) {
     ffrt::mutex lock;
     int acc = 0;
@@ -58,7 +58,7 @@ int M = 100;
             {}, {});
     }
 }
-// ffrt::submit中使用了std::condition_variable
+<em>// ffrt::submit中使用了std::condition_variable</em>
     void PositiveCase2(int temp) {
     ffrt::condition_variable cond;
     int a = 0;
@@ -78,7 +78,7 @@ int M = 100;
         {}, {});
     ffrt::wait();
 }
-// ffrt::submit中使用了std::usleep
+<em>// ffrt::submit中使用了std::usleep</em>
     void PositiveCase3(int temp) {
     ffrt::submit(
         [&]() {
@@ -87,7 +87,7 @@ int M = 100;
         ffrt_yield();      
     }, {}, {});
 }
-// ffrt::submit中使用了pthread_rwlock_wrlock或pthread_rwlock_rdlock
+<em>// ffrt::submit中使用了pthread_rwlock_wrlock或pthread_rwlock_rdlock</em>
     void PositiveCase4(int temp) {
     int a = 0;
     ffrt_rwlock_t mtx;
@@ -122,7 +122,7 @@ int M = 100;
  
  
 
-#### 反例
+## 反例
 
 ```text
 #include <iostream>
@@ -135,7 +135,7 @@ int M = 100;
 using namespace std;
 int N = 100;
 int M = 100;
-// ffrt::submit中使用了std::mutex
+<em>// ffrt::submit中使用了std::mutex</em>
     void NegativeCase1(int temp) {
     std::mutex lock;
     int acc = 0;
@@ -151,7 +151,7 @@ int M = 100;
             {}, {});
     }
 }
-// ffrt::submit中使用了std::condition_variable
+<em>// ffrt::submit中使用了std::condition_variable</em>
     void NegativeCase2(int temp) {
     std::condition_variable cond;
     int a = 0;
@@ -171,7 +171,7 @@ int M = 100;
         {}, {});
     ffrt::wait();
 }
-// ffrt::submit中使用了std::usleep
+<em>// ffrt::submit中使用了std::usleep</em>
     void NegativeCase3(int temp) {
     ffrt::submit(
         [&]() {
@@ -180,7 +180,7 @@ int M = 100;
         ffrt_yield();
     }, {}, {});
 }
-// ffrt::submit中使用了pthread_rwlock_wrlock或pthread_rwlock_rdlock
+<em>// ffrt::submit中使用了pthread_rwlock_wrlock或pthread_rwlock_rdlock</em>
     void NegativeCase4(int temp) {
     int a = 0;
     pthread_rwlock_t mtx;
@@ -213,10 +213,10 @@ int M = 100;
  
  
 
-#### 规则集
+## 规则集
 
 ```text
-plugin:@performance/recommended
+<span style="color: rgb(106,135,89);">plugin:@performance/recommended</span>
 plugin:@performance/all
 ```
  

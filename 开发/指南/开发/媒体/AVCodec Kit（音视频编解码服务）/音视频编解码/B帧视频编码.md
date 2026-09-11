@@ -1,6 +1,6 @@
 # B帧视频编码
 
-更新时间：2026-06-12 06:54:11
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-encoding-b-frame
 
@@ -17,7 +17,7 @@ B帧编码预测过程同时利用前后帧的信息，可以显著降低信号�
 
 
 
-#### 适用场景
+## 适用场景
 
  - 录像场景
  - 编辑导出场景
@@ -27,7 +27,7 @@ B帧编码预测过程同时利用前后帧的信息，可以显著降低信号�
 
 
 
-#### 约束和限制
+## 约束和限制
 
  - **支持的平台**：该能力与平台能力有关，可以通过[OH_AVCapability_IsFeatureSupported](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avcapability-h#oh_avcapability_isfeaturesupported)接口查询系统支持情况。
  - **支持的API版本**：API version 20及以后。
@@ -39,11 +39,12 @@ B帧编码预测过程同时利用前后帧的信息，可以显著降低信号�
 
 
 
-#### 接口介绍
+## 接口介绍
 
 支持B帧编码特性需要在初始阶段配置，全程生效，不支持动态修改。
 
 开发配置参数如下：
+
 
 | 配置参数 | 语义 | 格式 |
 | --- | --- | --- |
@@ -53,7 +54,7 @@ B帧编码预测过程同时利用前后帧的信息，可以显著降低信号�
 
 
 
-#### 开发指导
+## 开发指导
 
 基础编码功能请参考[视频编码](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-encoding)开发指南，下面仅针对B帧编码做具体说明。
 1. 在初始阶段创建编码实例时，校验当前视频编码器是否支持B帧编码特性。

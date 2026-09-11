@@ -28,7 +28,7 @@ AES加解密为常见的对称加解密算法，AES加解密相关信息可以�
 3. 检查iv值生成方式。
 4. 检查加密和解密时的iv值是否一致，不一致则修改为一致。
 ```text
-// 生成随机iv
+<em>// 生成随机iv</em>
 function genRandomIv() {
   let rand = cryptoFramework.createRandom();
   let ivBlob = rand.generateRandomSync(16);
@@ -40,22 +40,22 @@ function genRandomIv() {
 }
 
 
-// 加密消息
+<em>// 加密消息</em>
 function encryptMessage(symKey: cryptoFramework.SymKey, plainText: cryptoFramework.DataBlob) {
   let cipher = cryptoFramework.createCipher('AES128|CBC|PKCS7');
   let iv = genRandomIv();
-  // 加密初始化
+  <em>// 加密初始化</em>
   cipher.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, iv);
   let cipherData = cipher.doFinalSync(plainText);
   return cipherData;
 }
 
 
-// 解密消息
+<em>// 解密消息</em>
 function decryptMessage(symKey: cryptoFramework.SymKey, cipherText: cryptoFramework.DataBlob) {
   let decoder = cryptoFramework.createCipher('AES128|CBC|PKCS7');
   let iv = genRandomIv();
-  // 解密初始化
+ <em> // 解密初始化</em>
   let decryptData: cryptoFramework.DataBlob = cipherText;
   decoder.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, iv);
   try {
@@ -81,22 +81,22 @@ AES加解密算法CBC模式需要有偏移向量iv值，由于加密和解密时
 将AES加密和解密的偏移向量iv值修改一致后问题解决，使用安全随机数生成方法生成一次iv，加密与解密共用此iv值。
  
 ```text
-// 加密消息
+<em>// 加密消息</em>
 function encryptMessageNew(symKey: cryptoFramework.SymKey, iv: cryptoFramework.IvParamsSpec,
   plainText: cryptoFramework.DataBlob) {
   let cipher = cryptoFramework.createCipher('AES128|CBC|PKCS7');
-  // 加密初始化
+<em>  // 加密初始化</em>
   cipher.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, iv);
   let cipherData = cipher.doFinalSync(plainText);
   return cipherData;
 }
 
 
-// 解密消息
+<em>// 解密消息</em>
 function decryptMessageNew(symKey: cryptoFramework.SymKey, iv: cryptoFramework.IvParamsSpec,
   cipherText: cryptoFramework.DataBlob) {
   let decoder = cryptoFramework.createCipher('AES128|CBC|PKCS7');
-  // 解密初始化
+  <em>// 解密初始化</em>
   decoder.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, iv);
   let decryptData = decoder.doFinalSync(cipherText);
   return decryptData;
@@ -110,7 +110,7 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 import { buffer, util } from '@kit.ArkTS';
 
 
-// 生成密钥
+<em>// 生成密钥</em>
 function genSymKeyByData(symKeyData: Uint8Array) {
   let symKeyBlob: cryptoFramework.DataBlob = { data: symKeyData };
   let symGenerator = cryptoFramework.createSymKeyGenerator('AES128');
@@ -120,7 +120,7 @@ function genSymKeyByData(symKeyData: Uint8Array) {
 }
 
 
-// 生成随机iv
+<em>// 生成随机iv</em>
 function genRandomIv() {
   let rand = cryptoFramework.createRandom();
   let ivBlob = rand.generateRandomSync(16);
@@ -132,22 +132,22 @@ function genRandomIv() {
 }
 
 
-// 加密消息
+<em>// 加密消息</em>
 function encryptMessage(symKey: cryptoFramework.SymKey, plainText: cryptoFramework.DataBlob) {
   let cipher = cryptoFramework.createCipher('AES128|CBC|PKCS7');
   let iv = genRandomIv();
-  // 加密初始化
+<em>  // 加密初始化</em>
   cipher.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, iv);
   let cipherData = cipher.doFinalSync(plainText);
   return cipherData;
 }
 
 
-// 解密消息
+<em>// 解密消息</em>
 function decryptMessage(symKey: cryptoFramework.SymKey, cipherText: cryptoFramework.DataBlob) {
   let decoder = cryptoFramework.createCipher('AES128|CBC|PKCS7');
   let iv = genRandomIv();
-  // 解密初始化
+<em>  // 解密初始化</em>
   let decryptData: cryptoFramework.DataBlob = cipherText;
   decoder.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, iv);
   try {
@@ -161,22 +161,22 @@ function decryptMessage(symKey: cryptoFramework.SymKey, cipherText: cryptoFramew
 
 
 
-// 加密消息
+<em>// 加密消息</em>
 function encryptMessageNew(symKey: cryptoFramework.SymKey, iv: cryptoFramework.IvParamsSpec,
   plainText: cryptoFramework.DataBlob) {
   let cipher = cryptoFramework.createCipher('AES128|CBC|PKCS7');
-  // 加密初始化
+  <em>// 加密初始化</em>
   cipher.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, iv);
   let cipherData = cipher.doFinalSync(plainText);
   return cipherData;
 }
 
 
-// 解密消息
+<em>// 解密消息</em>
 function decryptMessageNew(symKey: cryptoFramework.SymKey, iv: cryptoFramework.IvParamsSpec,
   cipherText: cryptoFramework.DataBlob) {
   let decoder = cryptoFramework.createCipher('AES128|CBC|PKCS7');
-  // 解密初始化
+ <em> // 解密初始化</em>
   decoder.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, iv);
   let decryptData = decoder.doFinalSync(cipherText);
   return decryptData;
@@ -187,7 +187,7 @@ function decryptMessageNew(symKey: cryptoFramework.SymKey, iv: cryptoFramework.I
 
 function question() {
   let message = 'This is a test';
-  // 必须是16字节
+ <em> // 必须是16字节</em>
   let keyData = new Uint8Array([83, 217, 231, 76, 28, 113, 23, 219, 250, 71, 209, 210, 205, 97, 32, 159]);
   let symKey = genSymKeyByData(keyData);
   let plainText: cryptoFramework.DataBlob = { data: new Uint8Array(buffer.from(message, 'utf-8').buffer) };

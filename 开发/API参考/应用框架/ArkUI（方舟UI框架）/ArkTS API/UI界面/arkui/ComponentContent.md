@@ -1,9 +1,9 @@
 # ComponentContent
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-componentcontent
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 有两种创建实体封装组件的方式。ComponentContent需要通过update接口手动更新内容，主要适用于弹窗等解耦封装场景；ReactiveComponentContent支持响应式数据自动更新、完整生命周期管理和组件复用，适用于长列表等高性能渲染场景。开发者可根据实际需求从以下方式中选择。
 
@@ -16,9 +16,10 @@ ReactiveComponentContent表示组件内容的实体封装，其对象支持在�
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { ComponentContent, ReactiveComponentContent } from '@kit.ArkUI';
@@ -26,9 +27,10 @@ import { ComponentContent, ReactiveComponentContent } from '@kit.ArkUI';
 
 
 
-#### ComponentContent
+## ComponentContent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 继承自[Content](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-content#content-1)。
 
@@ -38,9 +40,10 @@ import { ComponentContent, ReactiveComponentContent } from '@kit.ArkUI';
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(uiContext: UIContext, builder: WrappedBuilder<[]>)
 
@@ -52,6 +55,7 @@ ComponentContent的构造函数。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uiContext | UIContext | 是 | 创建对应节点时所需要的UI上下文。 |
@@ -60,9 +64,10 @@ ComponentContent的构造函数。
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(uiContext: UIContext, builder: WrappedBuilder<[T]>, args: T)
 
@@ -74,6 +79,7 @@ ComponentContent的构造函数。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uiContext | UIContext | 是 | 创建对应节点时所需要的UI上下文。 |
@@ -83,9 +89,10 @@ ComponentContent的构造函数。
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(uiContext: UIContext, builder: WrappedBuilder<[T]>, args: T, options: BuildOptions)
 
@@ -96,6 +103,7 @@ ComponentContent的构造函数。
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -172,9 +180,10 @@ struct Index {
 
 
 
-#### update
+### update
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 update(args: T): void
 
@@ -185,6 +194,7 @@ update(args: T): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -249,9 +259,10 @@ struct Index {
 
 
 
-#### reuse
+### reuse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reuse(param?: Object): void
 
@@ -263,6 +274,7 @@ reuse(param?: Object): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | param | Object | 否 | 用于复用ComponentContent的参数。该参数将直接用于ComponentContent中所有顶层自定义组件的复用，应该包含每个自定义组件的构造函数参数所需内容，否则会导致未定义行为。调用此方法将同步触发内部自定义组件的aboutToReuse生命周期回调，并将该参数作为回调的入参。默认值为undefined，此时ComponentContent中的自定义组件将直接使用构造时的数据源。 |
@@ -270,9 +282,10 @@ reuse(param?: Object): void
 
 
 
-#### recycle
+### recycle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 recycle(): void
 
@@ -636,9 +649,10 @@ struct Index {
 
 
 
-#### dispose
+### dispose
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 dispose(): void
 
@@ -720,9 +734,10 @@ struct Index {
 
 
 
-#### updateConfiguration
+### updateConfiguration
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateConfiguration(): void
 
@@ -842,9 +857,10 @@ struct FrameNodeTypeTest {
 
 
 
-#### isDisposed20+
+### isDisposed20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isDisposed(): boolean
 
@@ -855,6 +871,7 @@ isDisposed(): boolean
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -941,9 +958,10 @@ struct Index {
 
 
 
-#### inheritFreezeOptions20+
+### inheritFreezeOptions20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 inheritFreezeOptions(enabled: boolean): void
 
@@ -958,6 +976,7 @@ inheritFreezeOptions(enabled: boolean): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1158,9 +1177,10 @@ struct TextBuilder {
 
 
 
-#### ReactiveComponentContent22+
+## ReactiveComponentContent22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ReactiveComponentContent继承自[Content](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-content#content-1)，是一个用于动态承载和复用UI内容的容器组件。它通过@Builder函数构建UI，并利用[ReactiveBuilderNode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-buildernode#reactivebuildernode22)生成和管理组件树。该组件的核心价值在于为动态内容提供完整的生命周期管理，使其能够融入ArkUI的组件复用体系，特别适用于长列表等需要高性能渲染的场景。
 
@@ -1170,9 +1190,10 @@ ReactiveComponentContent继承自[Content](https://developer.huawei.com/consumer
 
 
 
-#### constructor22+
+### constructor22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(uiContext: UIContext, builder: WrappedBuilder&lt;T&gt;, config: BuildOptions, ...args: T)
 
@@ -1183,6 +1204,7 @@ ReactiveComponentContent的构造函数。
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1260,9 +1282,10 @@ struct Index {
 
 
 
-#### reuse22+
+### reuse22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reuse(param?: Object): void
 
@@ -1276,6 +1299,7 @@ ReactiveComponentContent通过reuse和[recycle](#recycle22)接口完成其内外
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | param | Object | 否 | 用于复用ReactiveComponentContent的参数。该参数将直接用于ReactiveComponentContent中所有顶层自定义组件的复用，应该包含每个自定义组件的构造函数参数所需内容，否则会导致未定义行为。调用此方法将同步触发内部自定义组件的aboutToReuse生命周期回调，并将该参数作为回调的入参。默认值为undefined，此时ReactiveComponentContent中的自定义组件将直接使用构造时的数据源。 |
@@ -1287,9 +1311,10 @@ ReactiveComponentContent通过reuse和[recycle](#recycle22)接口完成其内外
 
 
 
-#### recycle22+
+### recycle22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 recycle(): void
 
@@ -1653,9 +1678,10 @@ struct Index {
 
 
 
-#### dispose22+
+### dispose22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 dispose(): void
 
@@ -1774,14 +1800,15 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/4Z-siLHFQxGqVO-WgqquVA/zh-cn_image_0000002686087725.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071447Z&HW-CC-Expire=86400&HW-CC-Sign=A0EBE6A6E2B630594ED0083B398629F5647276593CD0C9E709FAE532E61F3467)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/WIEDIdeuQwmqSRzrdpiSVw/zh-cn_image_0000002747292383.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=2E1DB91E8E3DE06AE1B796E5767BF2F1C4E996C4CA429EBDDC7ECA69A36D2A0D)
 
 
 
 
-#### updateConfiguration22+
+### updateConfiguration22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateConfiguration(): void
 
@@ -1898,14 +1925,15 @@ struct FrameNodeTypeTest {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/amfNilWpQDaSoJs7w888MA/zh-cn_image_0000002685927895.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071447Z&HW-CC-Expire=86400&HW-CC-Sign=FE6C32458BF1B49B00CBD65DBBA73ACD61C8AB7FE1AA9C8ECAA8EDA62456E5AE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/Hlb-FF4fRHqmVqhfniVyIA/zh-cn_image_0000002747212297.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=DDCD1A533DB90191BCDE56EB06035A9A9E2DD303DDBFB9017B44044C5A2354B8)
 
 
 
 
-#### flushState22+
+### flushState22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 flushState(): void
 
@@ -2028,14 +2056,15 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/QOXfD09lSUCsFY6Z-B6fQg/zh-cn_image_0000002685927897.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071447Z&HW-CC-Expire=86400&HW-CC-Sign=3A2F3B83BBC4273DB45BEF63809D2EEB014279BC0EC499D6C458384D1CD81AE0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/ccN9obNRRpKgIxP-RhvO7A/zh-cn_image_0000002747212299.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=EEDD76B7A73C9F9BC10E566A881367CC392D33235C79B167EEB7C99F69502C95)
 
 
 
 
-#### inheritFreezeOptions22+
+### inheritFreezeOptions22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 inheritFreezeOptions(enabled: boolean): void
 
@@ -2050,6 +2079,7 @@ inheritFreezeOptions(enabled: boolean): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2241,14 +2271,15 @@ struct TextBuilder {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/IgKVM0TkRySVxwwUODEf8Q/zh-cn_image_0000002656008218.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071447Z&HW-CC-Expire=86400&HW-CC-Sign=117B937D47227886B297E8EDB032C318AE8F6B703CF44AB453E763C99B188340)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/lmFB4EtPQJ-OjL9QwgIOZg/zh-cn_image_0000002717772364.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=2A8AB5A2E4DC2664CD56C17E3C709624A8A734F45AEC50D7954AF267ADBB070F)
 
 
 
 
-#### isDisposed22+
+### isDisposed22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isDisposed(): boolean
 
@@ -2259,6 +2290,7 @@ isDisposed(): boolean
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2390,4 +2422,4 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/HNOeqbyVSrePEgPBptCYiA/zh-cn_image_0000002655848298.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071447Z&HW-CC-Expire=86400&HW-CC-Sign=F85620A68E1A9875218CC05DDC63A9CCE3BB18322C2A36801F77FF61A50E6506)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/qfpta0IKRPSyhRafivIBmQ/zh-cn_image_0000002717612432.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072833Z&HW-CC-Expire=86400&HW-CC-Sign=3A4BE9E03107DF0A0396F4718DBD5811B94167D0D5C9EB04CD951442BD671406)

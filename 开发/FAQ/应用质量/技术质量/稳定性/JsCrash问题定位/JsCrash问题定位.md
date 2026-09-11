@@ -1,16 +1,16 @@
 # JsCrash问题定位
 
-更新时间：2026-07-30 01:24:30
+更新时间：2026-08-19 01:23:00
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-stability-13
 
-#### 问题现象
+## 问题现象
 
 启动应用或者点击应用页面上的按钮，应用出现闪退现象。
  
  
 
-#### 背景知识
+## 背景知识
 
 - JS Crash异常根据不同的异常场景，在Reason字段进行了分类，分为Error、TypeError、SyntaxError、ReferenceError、RangeError等错误类型。参考文档[JS Crash（进程崩溃）检测](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/jscrash-guidelines)。
 - JS Crash日志可参考[日志规格](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/jscrash-guidelines#日志规格)。
@@ -24,11 +24,11 @@
  
  
 
-#### 问题定位
+## 问题定位
 
  
 
-#### 场景一
+### 场景一
 1. 从faultlogger目录下获取到应用的JS Crash故障日志，故障类型是ReferenceError，引用错误类。
 2. 分析上报的异常信息，大部分可在官方文档中检索到相关解释。
 - 异常信息是：Error message：@Component xxx missing @Provide property with name xxx.Fail to resolve @Consume xxx。
@@ -86,7 +86,7 @@ Cannot get SourceMap info, dump raw stack:
 
   
 
-  #### 场景二
+  ### 场景二
 
 1. 从faultlogger目录下获取到应用的JS Crash故障日志，故障类型是TypeError，类型错误类。
 
@@ -171,7 +171,7 @@ Cannot get SourceMap info, dump raw stack:
 
   
 
-  #### 场景三
+  ### 场景三
 
 1. 从faultlogger目录下获取到应用的JS Crash故障日志，故障类型是Error，自定义错误类。
 
@@ -394,7 +394,7 @@ Cannot get SourceMap info, dump raw stack:
 
   
 
-  #### 场景四
+  ### 场景四
 
 1. 从faultlogger目录下获取到应用的JS Crash故障日志，故障类型是BusinessError，业务错误类。
 
@@ -504,7 +504,7 @@ Cannot get SourceMap info, dump raw stack:
 
   
 
-  #### 场景五
+  ### 场景五
 
 1. 从faultlogger目录下获取到应用的JS Crash故障日志，故障类型是SyntaxError，语法错误类。
 
@@ -525,7 +525,7 @@ Cannot get SourceMap info, dump raw stack:
 
   
 
-  #### 场景六
+  ### 场景六
 
 1. 从faultlogger目录下获取到应用的JS Crash故障日志，故障类型是RangeError，边界错误类。
 
@@ -575,7 +575,7 @@ Cannot get SourceMap info, dump raw stack:
 
   
 
-  #### 场景七
+  ### 场景七
 
 1. 从faultlogger目录下获取到应用的JS Crash故障日志，故障类型是OutOfMemoryError，堆内存不够类。
 故障信息为OutOfMemory when trying to allocate 278544 bytes function name: SharedHeap::AllocateHugeObject，AllocateHugeObject内存分配函数，在尝试分配278544字节内存时，超出了大对象空间阈值。
@@ -617,13 +617,13 @@ Cannot get SourceMap info, dump raw stack:
 ```
 
 
-3. 应用分配内存时出现堆内存溢出，老年代和大对象空间初始化时均设定为Heap剩余未分配空间的大小，默认手机设备主线程OldSpaceSize上限接近350MB。应用分配的内存超过了350M导致出现OOM。详情可见[Heap结构及其配置参数](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gc-introduction#heap结构及其配置参数)。
+3. 应用分配内存时出现堆内存溢出，老年代和大对象空间初始化时均设定为Heap剩余未分配空间的大小，默认手机设备主线程OldSpaceSize上限接近350MB。应用分配的内存超过了350M导致出现OOM。详情可见[Heap结构及其配置参数](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gc-introduction#heap)。
 
 4. 找到稳定复现场景，通过[Snapshot分析模板](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-insight-session-snapshot)拍摄内存快照，对比操作前后的内存快照，找到泄漏对象。
 
   
 
-  #### 场景八
+  ### 场景八
 
 1. 从faultlogger目录下获取到应用的JS Crash故障日志，故障类型是URIError，URI错误类。
 
@@ -644,11 +644,11 @@ Cannot get SourceMap info, dump raw stack:
 
   
 
-  #### 分析结论
+  ## 分析结论
 
   
 
-  #### 场景一
+  ### 场景一
 
   
 异常信息是：Error message：@Component xxx missing @Provide property with name xxx.Fail to resolve @Consume xxx。初始化@Consume变量时，没有定义对应名称的@Provide变量，引用一个不存在的变量。
@@ -658,7 +658,7 @@ Cannot get SourceMap info, dump raw stack:
  
  
 
-#### 场景二
+### 场景二
 
 - 异常信息是：Error message:Cannot read property xxx of undefined。变量不是预期的类型，不能调用对应的属性。
 - 异常信息是：Error message:is not callable。变量不是预期的类型，不能调用对应的方法。
@@ -670,7 +670,7 @@ Cannot get SourceMap info, dump raw stack:
  
  
 
-#### 场景三
+### 场景三
 
 - 异常信息是：xxx（应用代码自行抛出）。应用未处理直接抛出的异常。业务代码逻辑问题，应用未处理异常直接抛出导致闪退。
 - 异常信息是：Invalid parameter/The parameter invalid。非法参数抛出异常，应用未处理异常导致闪退。
@@ -691,7 +691,7 @@ Cannot get SourceMap info, dump raw stack:
  
  
 
-#### 场景四
+### 场景四
 
 - 异常信息是：e.message: Unexpected Text in JSON: Invalid Token, e.name: SyntaxError。应用捕获SyntaxError后通过BusinessError抛出业务错误。未处理业务错误抛出的异常导致应用闪退。
 - 异常信息是：Parameter error. xxx。参数类型错误抛出异常，应用未处理异常导致应用闪退。
@@ -702,13 +702,13 @@ Cannot get SourceMap info, dump raw stack:
  
  
 
-#### 场景五
+### 场景五
 
 字符串的格式不符合JSON语法规范。
  
  
 
-#### 场景六
+### 场景六
 
 - 异常信息是：Invalid array length。数组长度为负数或超长。
 - 异常信息是：Stack overflow。函数递归调用导致栈空间溢出。
@@ -716,23 +716,23 @@ Cannot get SourceMap info, dump raw stack:
  
  
 
-#### 场景七
+### 场景七
 
 应用内存溢出，分配的内存超过空间上限。
  
  
 
-#### 场景八
+### 场景八
 
 URL无效，DecodeURI函数抛出异常导致应用闪退。
  
  
 
-#### 修改建议
+## 修改建议
 
  
 
-#### 场景一
+### 场景一
 
 - 异常信息是：Error message：@Component xxx missing @Provide property with name xxx.Fail to resolve @Consume xxx。检查变量是否存在，若存在则在父组件中定义@Provide变量并赋值。
 - 异常信息是：Error message：xxx：duplicate @Provide property with name xxx. Property with this name is provided by one of the ancestor Views already. @Provide override not allowed。删除/更改重复提供对应@Provide属性的代码。
@@ -741,7 +741,7 @@ URL无效，DecodeURI函数抛出异常导致应用闪退。
  
  
 
-#### 场景二
+### 场景二
 
 - 异常信息是：Error message:Cannot read property xxx of undefined。在使用变量前进行校验，检查变量是否存在对应的属性。
 - 异常信息是：Error message:is not callable。检查变量或者this指针是否存在对应的方法。
@@ -753,7 +753,7 @@ URL无效，DecodeURI函数抛出异常导致应用闪退。
  
  
 
-#### 场景三
+### 场景三
 
 - 异常信息是：xxx（应用代码自行抛出）。应用未处理直接抛出的异常。避免出现异常场景或者使用try-catch捕获并处理异常。
 - 异常信息是：Invalid parameter/The parameter invalid。修改异常入参，传递正确参数。
@@ -776,7 +776,7 @@ URL无效，DecodeURI函数抛出异常导致应用闪退。
  
  
 
-#### 场景四
+### 场景四
 
 - 异常信息是：e.message: Unexpected Text in JSON: Invalid Token, e.name: SyntaxError。应用捕获SyntaxError后通过BusinessError抛出业务错误。参考[堆栈轨迹分析](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-release-app-stack-analysis)解析堆栈后结合具体代码进行分析，在异常抛出位置使用try-catch捕获并处理异常。
 - 异常信息是：Parameter error. xxx。参考[堆栈轨迹分析](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-release-app-stack-analysis)解析堆栈后结合具体代码进行分析，传入正确的参数类型。
@@ -787,13 +787,13 @@ URL无效，DecodeURI函数抛出异常导致应用闪退。
  
  
 
-#### 场景五
+### 场景五
 
 在解析JSON数据之前，检查内容是否为有效的JSON格式，避免直接解析非JSON数据或者包含特殊字符。
  
  
 
-#### 场景六
+### 场景六
 
 - 异常信息是：Invalid array length。调整数组长度。
 - 异常信息是：Stack overflow。检查递归调用是否合理，如果合理，请将递归函数重写为循环形式避免栈空间溢出。
@@ -801,7 +801,7 @@ URL无效，DecodeURI函数抛出异常导致应用闪退。
  
  
 
-#### 场景七
+### 场景七
 
 - 如果内存溢出的堆栈一致，说明调用栈是个高频调用并且可能存在内存泄漏，结合具体代码进行分析。
 - 如果内存溢出的堆栈不一致，通过[Snapshot分析模板](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-insight-session-snapshot)分析泄漏对象，修复内存溢出问题。
@@ -809,6 +809,6 @@ URL无效，DecodeURI函数抛出异常导致应用闪退。
  
  
 
-#### 场景八
+### 场景八
 
 检查URL，确保使用的URL真实有效，使用try-catch捕获并处理异常。

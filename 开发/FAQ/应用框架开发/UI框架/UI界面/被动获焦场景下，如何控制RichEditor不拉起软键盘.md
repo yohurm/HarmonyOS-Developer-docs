@@ -113,7 +113,7 @@ struct Scene2 {
           console.info(`RichEditor focus`);
           if (!this.richEditorClick) {
             this.getUIContext().getFocusController().clearFocus();
-            // 部分组件可以使用该方法，如：Button组件支持，Text组件不支持
+          <em>  // 部分组件可以使用该方法，如：Button组件支持，Text组件不支持</em>
           }
         })
         .onBlur(() => {
@@ -191,7 +191,7 @@ struct Scene3 {
       MenuItem({ content: '粘贴', labelInfo: 'Ctrl+V' })
     }
     .onBlur(() => {
-      // 部分组件可以使用该方法，如：Button组件支持，Text组件不支持
+    <em>  // 部分组件可以使用该方法，如：Button组件支持，Text组件不支持</em>
       this.getUIContext().getFocusController().requestFocus('Operation');
     })
   }

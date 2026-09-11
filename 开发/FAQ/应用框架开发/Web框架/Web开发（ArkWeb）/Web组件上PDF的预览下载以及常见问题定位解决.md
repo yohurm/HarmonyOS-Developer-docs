@@ -42,7 +42,7 @@ import { webview } from '@kit.ArkWeb';
 @Component
 struct OnlinePdf {
   controller: webview.WebviewController = new webview.WebviewController();
-  url: string = 'www.example.com/test.pdf'; // 使用时需要替换成真实的在线URL
+  url: string = 'www.example.com/test.pdf'; <em>// 使用时需要替换成真实的在线URL</em>
 
   build() {
     Column() {
@@ -73,7 +73,7 @@ struct DownloadUrlPreview {
   build() {
     Column() {
       Web({
-        src: 'xxx.com/xxx.pdf', // 需要替换为那种打开后自动下载PDF文档的链接
+        src: 'xxx.com/xxx.pdf',<em> // 需要替换为那种打开后自动下载PDF文档的链接</em>
         controller: this.controller
       })
         .fileAccess(true)
@@ -82,24 +82,24 @@ struct DownloadUrlPreview {
         .onControllerAttached(() => {
           try {
             this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
-              // 传入本地沙箱路径并开始下载
+             <em> // 传入本地沙箱路径并开始下载</em>
               webDownloadItem.start(this.cacheDir + '/' + webDownloadItem.getSuggestedFileName());
             });
             this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
-              // 下载任务进度和速度监测处理
+            <em>  // 下载任务进度和速度监测处理</em>
               console.info(`download update guid: ${webDownloadItem.getGuid()}`);
             });
             this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
-              // 下载任务失败处理
+            <em>  // 下载任务失败处理</em>
               console.error(`download failed guid: ${webDownloadItem.getGuid()}`);
             });
             this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
-              // 下载成功通过Web重新加载本地文件打开预览
+            <em>  // 下载成功通过Web重新加载本地文件打开预览</em>
               this.controller.loadUrl(`file://${this.cacheDir}/` + webDownloadItem.getSuggestedFileName());
             });
             this.controller.setDownloadDelegate(this.delegate);
           } catch (error) {
-            // 异常处理
+            <em>// 异常处理</em>
             console.error(
               `ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }
@@ -141,7 +141,7 @@ import { webview } from '@kit.ArkWeb';
 @Component
 struct LocalFilePdf {
   controller: webview.WebviewController = new webview.WebviewController();
-  url: string | Resource = $rawfile('test.pdf'); // 也可以替换成：'resource://rawfile/test.pdf'
+  url: string | Resource = $rawfile('test.pdf'); <em>// 也可以替换成：'resource://rawfile/test.pdf'</em>
 
   build() {
     Column() {
@@ -169,7 +169,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 @Component
 struct LoadUrlDemo {
   controller: webview.WebviewController = new webview.WebviewController();
-  url: string | Resource = $rawfile('test.pdf'); // 也可以替换成：'resource://rawfile/test.pdf'
+  url: string | Resource = $rawfile('test.pdf'); <em>// 也可以替换成：'resource://rawfile/test.pdf'</em>
 
   build() {
     Column() {
@@ -182,7 +182,7 @@ struct LoadUrlDemo {
           }
         });
       Web({
-        src: $rawfile('test2.pdf'), // 使用时需要替换成真实的URL
+        src: $rawfile('test2.pdf'),<em> // 使用时需要替换成真实的URL</em>
         controller: this.controller
       })
         .domStorageAccess(true)
@@ -249,7 +249,7 @@ struct DownloadDemo {
             this.myText = '已开启监听';
             this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
               console.info('will start a download.');
-              // 传入一个下载路径，并开始下载，如果传入一个不存在的路径，则会下载到默认/data/storage/el2/base/cache/web/目录。
+             <em> // 传入一个下载路径，并开始下载，如果传入一个不存在的路径，则会下载到默认/data/storage/el2/base/cache/web/目录。</em>
               webDownloadItem.start(this.webCacheDir + webDownloadItem.getSuggestedFileName());
             });
             this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
@@ -272,7 +272,7 @@ struct DownloadDemo {
       Button('开始下载')
         .onClick(() => {
           try {
-            // 开发者需要替换为自己想要下载的内容的地址。
+           <em> // 开发者需要替换为自己想要下载的内容的地址。</em>
             this.controller.startDownload('xxx.com/xxx.pdf');
           } catch (error) {
             console.error(
@@ -309,7 +309,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 @Component
 struct PrefetchDemo {
   prefetchUrl: string =
-    'www.example.com/xxx.pdf'; // 网络PDF文件路径
+    'www.example.com/xxx.pdf'; <em>// 网络PDF文件路径</em>
   private controller: WebviewController = new webview.WebviewController();
 
   build() {
@@ -436,7 +436,7 @@ import { webview } from '@kit.ArkWeb';
 @Component
 struct Base64Demo {
   controller: webview.WebviewController = new webview.WebviewController();
-  pdfStr: string = 'data:application/pdf;base64,xxx'; // 使用时将xxx替换为PDF的base64格式数据
+  pdfStr: string = 'data:application/pdf;base64,xxx'; <em>// 使用时将xxx替换为PDF的base64格式数据</em>
 
   build() {
     Column() {
@@ -463,7 +463,7 @@ import { webview } from '@kit.ArkWeb';
 @Component
 struct LoadProgressDemo {
   controller: webview.WebviewController = new webview.WebviewController();
-  // 创建变量表示进度值
+ <em> // 创建变量表示进度值</em>
   @State value: number = 0;
 
   build() {
@@ -513,7 +513,7 @@ struct TitleDemo {
       .height(40);
 
       Web({
-        src: 'xxx.com/xxx.pdf', // 运行时替换成真实的地址
+        src: 'xxx.com/xxx.pdf',<em> // 运行时替换成真实的地址</em>
         controller: this.webviewController,
       })
         .width('100%')

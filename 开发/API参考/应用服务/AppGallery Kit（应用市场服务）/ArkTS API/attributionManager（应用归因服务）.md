@@ -1,6 +1,6 @@
 # attributionManager（应用归因服务）
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/store-attributionmanager
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -14,7 +14,8 @@
 **起始版本：** 5.0.0(12)
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -24,7 +25,8 @@ import { attributionManager } from '@kit.AppGalleryKit';
 
 
 
-#### AdSourceInfo
+## AdSourceInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -35,6 +37,7 @@ import { attributionManager } from '@kit.AppGalleryKit';
 **系统能力：** SystemCapability.AppGalleryService.AttributionManager
 
 **起始版本：** 5.0.0(12)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -51,7 +54,8 @@ import { attributionManager } from '@kit.AppGalleryKit';
 
 
 
-#### AdTriggerInfo
+## AdTriggerInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -63,6 +67,7 @@ import { attributionManager } from '@kit.AppGalleryKit';
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | businessScene | number | 否 | 是 | 业务场景值，在开发者登记转化时，用于标识开发者的业务场景。 取值范围：[0,99]。 |
@@ -73,7 +78,8 @@ import { attributionManager } from '@kit.AppGalleryKit';
 
 
 
-#### SourceType
+## SourceType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -85,6 +91,7 @@ import { attributionManager } from '@kit.AppGalleryKit';
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | IMPRESSION | 0 | 归因来源类型：曝光。 |
@@ -93,7 +100,8 @@ import { attributionManager } from '@kit.AppGalleryKit';
 
 
 
-#### attributionManager.registerSource
+## attributionManager.registerSource
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -109,12 +117,14 @@ registerSource(adSourceInfo: AdSourceInfo): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | adSourceInfo | AdSourceInfo | 是 | 媒体/分发平台登记归因来源信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -124,6 +134,7 @@ registerSource(adSourceInfo: AdSourceInfo): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-appgallery)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -199,7 +210,8 @@ class  Attribution {
 
 
 
-#### attributionManager.registerTrigger
+## attributionManager.registerTrigger
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -215,12 +227,14 @@ registerTrigger(adTriggerInfo: AdTriggerInfo): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | adTriggerInfo | AdTriggerInfo | 是 | 转化事件信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -230,6 +244,7 @@ registerTrigger(adTriggerInfo: AdTriggerInfo): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-appgallery)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

@@ -1,9 +1,9 @@
 # @ohos.promptAction (弹窗)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-promptaction
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 创建并显示即时反馈、对话框和操作菜单，适用于系统通知、交互确认、菜单选择等场景。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { promptAction } from '@kit.ArkUI';
@@ -22,9 +23,10 @@ import { promptAction } from '@kit.ArkUI';
 
 
 
-#### promptAction.openToast18+
+## promptAction.openToast18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 openToast(options: ShowToastOptions): Promise&lt;number&gt;
 
@@ -42,12 +44,14 @@ openToast(options: ShowToastOptions): Promise&lt;number&gt;
 
 **参数**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ShowToastOptions | 是 | Toast选项，用于配置Toast的显示内容和样式。 |
 
 
 **返回值**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -57,6 +61,7 @@ openToast(options: ShowToastOptions): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -117,9 +122,10 @@ struct toastExample {
 
 
 
-#### promptAction.closeToast18+
+## promptAction.closeToast18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 closeToast(toastId: number): void
 
@@ -137,6 +143,7 @@ closeToast(toastId: number): void
 
 **参数**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | toastId | number | 是 | openToast返回的id，用于标识要关闭的Toast实例。 |
@@ -145,6 +152,7 @@ closeToast(toastId: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)、[弹窗错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-promptaction)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -159,13 +167,15 @@ closeToast(toastId: number): void
 
 
 
-#### ShowToastOptions
+## ShowToastOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Toast的选项。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -186,9 +196,10 @@ Toast的选项。
 
 
 
-#### ToastShowMode11+
+## ToastShowMode11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置Toast的显示模式，默认显示在应用内，支持显示在子窗。
 
@@ -198,6 +209,7 @@ Toast的选项。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DEFAULT | 0 | Toast显示在应用内。 |
@@ -206,13 +218,15 @@ Toast的选项。
 
 
 
-#### ShowDialogOptions
+## ShowDialogOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 对话框的选项。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -244,15 +258,17 @@ Toast的选项。
 
 
 
-#### ShowDialogSuccessResponse
+## ShowDialogSuccessResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 对话框的响应结果。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -261,13 +277,15 @@ Toast的选项。
 
 
 
-#### ActionMenuOptions
+## ActionMenuOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 操作菜单的选项。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -287,15 +305,17 @@ Toast的选项。
 
 
 
-#### ActionMenuSuccessResponse
+## ActionMenuSuccessResponse
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 操作菜单的响应结果。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -304,9 +324,10 @@ Toast的选项。
 
 
 
-#### CommonState20+
+## CommonState20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 自定义弹窗的状态。
 
@@ -315,6 +336,7 @@ Toast的选项。
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -328,9 +350,10 @@ Toast的选项。
 
 
 
-#### DialogController18+
+## DialogController18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 自定义弹窗控制器，继承自[CommonController](#commoncontroller18)。
 
@@ -344,9 +367,10 @@ DialogController可作为UIContext弹出自定义弹窗的成员变量，具体�
 
 
 
-#### CommonController18+
+## CommonController18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 公共控制器，可以控制promptAction相关组件。
 
@@ -358,9 +382,10 @@ DialogController可作为UIContext弹出自定义弹窗的成员变量，具体�
 
 
 
-#### constructor18+
+### constructor18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -374,9 +399,10 @@ constructor()
 
 
 
-#### close18+
+### close18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(): void
 
@@ -390,9 +416,10 @@ close(): void
 
 
 
-#### getState20+
+### getState20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getState(): CommonState
 
@@ -406,6 +433,7 @@ getState(): CommonState
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | CommonState | 返回对应的弹窗状态。 |
@@ -413,9 +441,10 @@ getState(): CommonState
 
 
 
-#### LevelOrder18+
+## LevelOrder18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 弹窗层级，可以控制弹窗显示的顺序。
 
@@ -427,9 +456,10 @@ getState(): CommonState
 
 
 
-#### clamp18+
+### clamp18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static clamp(order: number): LevelOrder
 
@@ -443,12 +473,14 @@ static clamp(order: number): LevelOrder
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | order | number | 是 | 弹窗显示顺序。取值范围为[-100000.0, 100000.0]，如果值小于-100000.0则设置为-100000.0，如果值大于100000.0则设置为100000.0。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -457,9 +489,10 @@ static clamp(order: number): LevelOrder
 
 
 
-#### getOrder18+
+### getOrder18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOrder(): number
 
@@ -473,6 +506,7 @@ getOrder(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回显示顺序数值。 |
@@ -480,9 +514,10 @@ getOrder(): number
 
 
 
-#### DialogOptions18+
+## DialogOptions18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 自定义弹窗的内容，继承自[BaseDialogOptions](#basedialogoptions11)，用于配置自定义弹窗的显示参数和行为。
 
@@ -491,6 +526,7 @@ getOrder(): number
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -507,9 +543,10 @@ getOrder(): number
 
 
 
-#### DialogOptionsCornerRadius18+
+## DialogOptionsCornerRadius18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type DialogOptionsCornerRadius = Dimension | BorderRadiuses
 
@@ -521,6 +558,7 @@ type DialogOptionsCornerRadius = Dimension | BorderRadiuses
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Dimension | 表示值类型为长度类型，用于描述尺寸单位。 |
@@ -529,9 +567,10 @@ type DialogOptionsCornerRadius = Dimension | BorderRadiuses
 
 
 
-#### DialogOptionsBorderWidth18+
+## DialogOptionsBorderWidth18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type DialogOptionsBorderWidth = Dimension | EdgeWidths
 
@@ -543,6 +582,7 @@ type DialogOptionsBorderWidth = Dimension | EdgeWidths
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Dimension | 表示值类型为长度类型，用于描述尺寸单位。 |
@@ -551,9 +591,10 @@ type DialogOptionsBorderWidth = Dimension | EdgeWidths
 
 
 
-#### DialogOptionsBorderColor18+
+## DialogOptionsBorderColor18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type DialogOptionsBorderColor = ResourceColor | EdgeColors
 
@@ -565,6 +606,7 @@ type DialogOptionsBorderColor = ResourceColor | EdgeColors
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ResourceColor | 表示值类型为颜色类型，用于描述资源颜色类型。 |
@@ -573,9 +615,10 @@ type DialogOptionsBorderColor = ResourceColor | EdgeColors
 
 
 
-#### DialogOptionsBorderStyle18+
+## DialogOptionsBorderStyle18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type DialogOptionsBorderStyle = BorderStyle | EdgeStyles
 
@@ -587,6 +630,7 @@ type DialogOptionsBorderStyle = BorderStyle | EdgeStyles
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | BorderStyle | 表示值类型为边框类型，用于描述组件边框的类型。 |
@@ -595,9 +639,10 @@ type DialogOptionsBorderStyle = BorderStyle | EdgeStyles
 
 
 
-#### DialogOptionsShadow18+
+## DialogOptionsShadow18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type DialogOptionsShadow = ShadowOptions | ShadowStyle
 
@@ -609,6 +654,7 @@ type DialogOptionsShadow = ShadowOptions | ShadowStyle
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ShadowOptions | 表示值类型为阴影属性集合，用于设置阴影的模糊半径、阴影的颜色、X轴和Y轴的偏移量。 |
@@ -617,9 +663,10 @@ type DialogOptionsShadow = ShadowOptions | ShadowStyle
 
 
 
-#### CustomDialogOptions11+
+## CustomDialogOptions11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 自定义弹窗的内容，继承自[BaseDialogOptions](#basedialogoptions11)。
 
@@ -628,6 +675,7 @@ type DialogOptionsShadow = ShadowOptions | ShadowStyle
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -645,15 +693,17 @@ type DialogOptionsShadow = ShadowOptions | ShadowStyle
 
 
 
-#### BaseDialogOptions11+
+## BaseDialogOptions11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 弹窗的选项。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -663,8 +713,8 @@ type DialogOptionsShadow = ShadowOptions | ShadowStyle
 | isModal | boolean | 否 | 是 | 弹窗是否为模态窗口。值为true表示为模态窗口且有蒙层，不可与弹窗周围其他控件进行交互，即蒙层区域无法事件透传。值为false表示为非模态窗口且无蒙层，可以与弹窗周围其他控件进行交互。 默认值：true 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | showInSubWindow | boolean | 否 | 是 | 某弹窗需要显示在主窗口之外时，是否在子窗口显示此弹窗。值为true表示在子窗口显示弹窗。 默认值：false，弹窗显示在应用内，而非独立子窗口。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | displayModeInSubWindow | DialogDisplayMode | 否 | 是 | 弹窗在子窗口中的显示模式。 默认值：DialogDisplayMode.SCREEN_BASED 说明： 仅当showInSubWindow设置为true时生效。 起始版本： 26.0.0 模型约束： 此接口仅可在Stage模型下使用。 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 |
-| onWillDismiss12+ | Callback&lt;DismissDialogAction&gt; | 否 | 是 | 交互式关闭回调函数。 说明： 1.当用户执行点击遮障层关闭、侧滑（左滑/右滑）、三键back、键盘ESC关闭交互操作时，如果注册该回调函数，则不会立刻关闭弹窗。在回调函数中可以通过reason得到阻拦关闭弹窗的操作类型，从而根据原因选择是否能关闭弹窗。当前组件返回的reason中，暂不支持CLOSE_BUTTON的枚举值。 2.在onWillDismiss回调中，不能再做onWillDismiss拦截。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| autoCancel12+ | boolean | 否 | 是 | 点击遮障层时，是否关闭弹窗，true表示关闭弹窗。false表示不关闭弹窗。 默认值：true 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| onWillDismiss12+ | Callback&lt;DismissDialogAction&gt; | 否 | 是 | 交互式关闭回调函数。 说明： 1.当用户执行点击遮罩层关闭、侧滑（左滑/右滑）、三键back、键盘ESC关闭交互操作时，如果注册该回调函数，则不会立刻关闭弹窗。在回调函数中可以通过reason得到阻拦关闭弹窗的操作类型，从而根据原因选择是否能关闭弹窗。当前组件返回的reason中，暂不支持CLOSE_BUTTON的枚举值。 2.在onWillDismiss回调中，不能再做onWillDismiss拦截。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| autoCancel12+ | boolean | 否 | 是 | 点击遮罩层时，是否关闭弹窗，true表示关闭弹窗。false表示不关闭弹窗。 默认值：true 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | maskColor12+ | ResourceColor | 否 | 是 | 自定义蒙层颜色。 默认值: 0x33000000 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | transition12+ | TransitionEffect | 否 | 是 | 设置弹窗显示和退出的过渡效果。 说明： 1.如果不设置，则使用默认的显示/退出动效。 2.显示动效中按back键，打断显示动效，执行退出动效，动画效果为显示动效与退出动效的曲线叠加后的效果。 3.退出动效中按back键，不会打断退出动效，退出动效继续执行，继续按back键退出应用。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | dialogTransition19+ | TransitionEffect | 否 | 是 | 设置弹窗内容显示的过渡效果。默认无动效。 元服务API： 从API version 19开始，该接口支持在元服务中使用。 |
@@ -689,9 +739,10 @@ type DialogOptionsShadow = ShadowOptions | ShadowStyle
 
 
 
-#### DismissDialogAction12+
+## DismissDialogAction12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Dialog关闭的信息。
 
@@ -703,19 +754,24 @@ Dialog关闭的信息。
 
 
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | dismiss | Callback&lt;void&gt; | 否 | 否 | Dialog关闭回调函数。开发者需要退出时调用，不需要退出时无需调用。 |
-| reason | DismissReason | 否 | 否 | 触发Dialog关闭的操作类型（如点击遮障层、按返回键等）。开发者可根据reason判断用户的具体关闭操作，决定是否调用dismiss()关闭Dialog。 |
+| reason | DismissReason | 否 | 否 | 触发Dialog关闭的操作类型（如点击遮罩层、按返回键等）。开发者可根据reason判断用户的具体关闭操作，决定是否调用dismiss()关闭Dialog。 |
 
 
 
 
-#### LevelMode15+
+## LevelMode15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 弹窗显示层级模式。
 
@@ -725,6 +781,7 @@ Dialog关闭的信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | OVERLAY | 0 | 弹窗层级为应用窗口根节点，应用内路由导航切换弹窗不隐藏。 |
@@ -733,9 +790,10 @@ Dialog关闭的信息。
 
 
 
-#### ImmersiveMode15+
+## ImmersiveMode15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 页面内弹窗蒙层显示区域模式。
 
@@ -745,6 +803,7 @@ Dialog关闭的信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DEFAULT | 0 | 弹窗蒙层遵循父节点布局约束进行显示。 |
@@ -753,13 +812,15 @@ Dialog关闭的信息。
 
 
 
-#### Button
+## Button
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 弹窗或菜单中的按钮信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -770,9 +831,10 @@ Dialog关闭的信息。
 
 
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 20开始，该示例实现了在promptAction.DialogController中调用getState获取弹窗当前状态。
 
@@ -879,9 +941,10 @@ struct Index {
 
 
 
-#### promptAction.showToast(deprecated)
+## promptAction.showToast(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showToast(options: ShowToastOptions): void
 
@@ -897,6 +960,7 @@ showToast(options: ShowToastOptions): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ShowToastOptions | 是 | Toast选项。 |
@@ -908,6 +972,7 @@ showToast(options: ShowToastOptions): void
 
 > [!TIP]
 > 当返回100001错误码时，可能出现了UI上下文不明确的问题，对此可以使用UIContext中的接口进行替换，详细说明可参考 使用UI上下文接口操作界面 。
+
 
 
 | 错误码ID | 错误信息 |
@@ -960,9 +1025,10 @@ API version 12及之后Toast样式。
 
 
 
-#### promptAction.showDialog(deprecated)
+## promptAction.showDialog(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showDialog(options: ShowDialogOptions): Promise&lt;ShowDialogSuccessResponse&gt;
 
@@ -978,12 +1044,14 @@ showDialog(options: ShowDialogOptions): Promise&lt;ShowDialogSuccessResponse&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ShowDialogOptions | 是 | 对话框选项。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -993,6 +1061,7 @@ showDialog(options: ShowDialogOptions): Promise&lt;ShowDialogSuccessResponse&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1033,9 +1102,10 @@ promptAction.showDialog({
 
 
 
-#### promptAction.showDialog(deprecated)
+## promptAction.showDialog(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showDialog(options: ShowDialogOptions, callback: AsyncCallback&lt;ShowDialogSuccessResponse&gt;):void
 
@@ -1051,6 +1121,7 @@ showDialog(options: ShowDialogOptions, callback: AsyncCallback&lt;ShowDialogSucc
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ShowDialogOptions | 是 | 页面显示对话框信息描述。 |
@@ -1060,6 +1131,7 @@ showDialog(options: ShowDialogOptions, callback: AsyncCallback&lt;ShowDialogSucc
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1102,7 +1174,7 @@ try {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/Cg_s_IOoSg-GL1wKgXhArA/zh-cn_image_0000002704274165.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095445Z&HW-CC-Expire=86400&HW-CC-Sign=6668F8F29C1D4758E65AB5F141BAE4F975DB648DF76F73058012B68795CAA9A5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/GcazvyOcRYaGFzc2dLzNmQ/zh-cn_image_0000002717612412.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072931Z&HW-CC-Expire=86400&HW-CC-Sign=920221A85F34E32AB445B49F5657B0D3B7259A61BB62F1E9F0DD97C9DB49954D)
 
 
 当弹窗的showInSubWindow属性为true时，弹窗可显示在窗口外。
@@ -1142,7 +1214,7 @@ try {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/Ea1rsOo9SVWiyF5EPUNPzg/zh-cn_image_0000002674474372.jpg?HW-CC-KV=V1&HW-CC-Date=20260813T095445Z&HW-CC-Expire=86400&HW-CC-Sign=403388B68464DAC7169C151228201B5C23FECFAF952B612161A414F30387DA6B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/KXpXm5I2SJOfEW3rzwblnA/zh-cn_image_0000002747292365.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T072931Z&HW-CC-Expire=86400&HW-CC-Sign=22974031C13C599E8DFAAEEFB40F5F213807B01A46446AD399291489121957F1)
 
 
 从API version 19开始，该示例通过调用[ShowDialogOptions](#showdialogoptions)中的onDidAppear、onDidDisappear、onWillAppear和onWillDisappear属性展示了弹窗生命周期的相关接口的使用方法。
@@ -1207,14 +1279,15 @@ struct DialogExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/6HC_YUFFRK-ya_vAPAc0CQ/zh-cn_image_0000002704394331.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095445Z&HW-CC-Expire=86400&HW-CC-Sign=41BF2841693F59BBE4A83A4ECA8C80E5BBA86214A173C332D4546B8E7F83BD92)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/MsIcSlXoQg-ouAWq-apyCg/zh-cn_image_0000002747212281.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072931Z&HW-CC-Expire=86400&HW-CC-Sign=F94493B14C60BA412BC5E6FC2C5A776A0572B36D13713C7A05D5E6D449048139)
 
 
 
 
-#### promptAction.showActionMenu(deprecated)
+## promptAction.showActionMenu(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showActionMenu(options: ActionMenuOptions, callback: AsyncCallback&lt;ActionMenuSuccessResponse&gt;):void
 
@@ -1230,6 +1303,7 @@ showActionMenu(options: ActionMenuOptions, callback: AsyncCallback&lt;ActionMenu
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ActionMenuOptions | 是 | 操作菜单选项。 |
@@ -1239,6 +1313,7 @@ showActionMenu(options: ActionMenuOptions, callback: AsyncCallback&lt;ActionMenu
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1280,7 +1355,7 @@ try {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/8k7eBQ_nQUus7z2t5yV3EQ/zh-cn_image_0000002674634210.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095445Z&HW-CC-Expire=86400&HW-CC-Sign=770FA0CCD743EF1AA854288AC264924BEBD19EDEC29304A8AA8FC925B27A8C82)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/twMzxdumS0aK8TAxIPhQCw/zh-cn_image_0000002717772346.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072931Z&HW-CC-Expire=86400&HW-CC-Sign=1DB8DD233C7D79F3B903F59E16CF67940024CA2A429603C76E9B7BFCD8401091)
 
 
 **示例：2**
@@ -1357,14 +1432,15 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/UQ3tX2OnQwi_1ut0rn2SYQ/zh-cn_image_0000002704274167.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095445Z&HW-CC-Expire=86400&HW-CC-Sign=6DB368139E39F378DE2B4357248965CE7039639E8BD794F6F452A9CD3433FFB6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/jJIN4QhWRO2IRl7VcN7V6w/zh-cn_image_0000002717612414.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072931Z&HW-CC-Expire=86400&HW-CC-Sign=CB1D62412798ABB10B7D69411647079D16812FD80AAA33F7CD0DFE60B69DCDC4)
 
 
 
 
-#### promptAction.showActionMenu(deprecated)
+## promptAction.showActionMenu(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showActionMenu(options: ActionMenuOptions): Promise&lt;ActionMenuSuccessResponse&gt;
 
@@ -1380,12 +1456,14 @@ showActionMenu(options: ActionMenuOptions): Promise&lt;ActionMenuSuccessResponse
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ActionMenuOptions | 是 | 操作菜单选项。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1395,6 +1473,7 @@ showActionMenu(options: ActionMenuOptions): Promise&lt;ActionMenuSuccessResponse
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1429,14 +1508,15 @@ promptAction.showActionMenu({
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/gsXypA6JSbejPjOvUdDUcw/zh-cn_image_0000002674474374.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095445Z&HW-CC-Expire=86400&HW-CC-Sign=21C93BBAAE69D1929C37D386788433F118D8D3E4D3C0FE1E99AF63777644FE13)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/d3NR70r1RK-t849jH2v2NQ/zh-cn_image_0000002747292367.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072931Z&HW-CC-Expire=86400&HW-CC-Sign=E8BFF34C3BCE28F8ACD02FF8BC52D2A532B02C73267259062B162949ED873632)
 
 
 
 
-#### promptAction.openCustomDialog(deprecated)
+## promptAction.openCustomDialog(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 openCustomDialog(options: CustomDialogOptions): Promise&lt;number&gt;
 
@@ -1456,12 +1536,14 @@ openCustomDialog(options: CustomDialogOptions): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | CustomDialogOptions | 是 | 自定义弹窗的内容。 说明： 如果BaseDialogOptions中的isModal与showInSubWindow同时设置为true，则只生效showInSubWindow = true，此时为非模态弹出框且不会显示蒙层，并在子窗口中显示。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1471,6 +1553,7 @@ openCustomDialog(options: CustomDialogOptions): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1633,7 +1716,7 @@ struct Index {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/b7e61IpSSoyK6WMYvhHdsA/zh-cn_image_0000002704394333.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095445Z&HW-CC-Expire=86400&HW-CC-Sign=30AD53785DFF486C18D9704880D2F648ECEC284D4CEA674E3EE8E359B53D7901)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/Uo3ZtcgxRZ2_ZcYh6qi63w/zh-cn_image_0000002747212283.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072931Z&HW-CC-Expire=86400&HW-CC-Sign=8F544F2E306892999341F2F1B0C84E8A102D282739E63B1BC6BE3620BDE033F3)
 
 
 该示例实现了一个页面内的弹窗。
@@ -1725,14 +1808,15 @@ struct Next {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/Fnl1NrFgREiTr2iEEIJ0pA/zh-cn_image_0000002674634212.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095445Z&HW-CC-Expire=86400&HW-CC-Sign=825220DF8F9285F9255E3E610BBBBD66AAD26F078B2CF74E5D9F3D5D9138E8BD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/SnQW6E3jSwOBslIp-DrVgg/zh-cn_image_0000002717772348.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072931Z&HW-CC-Expire=86400&HW-CC-Sign=6AFA8FCC7251ECD3B42468EB7672481FF06E43A65E2FAB7F9140E76151896ABA)
 
 
 
 
-#### promptAction.closeCustomDialog(deprecated)
+## promptAction.closeCustomDialog(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 closeCustomDialog(dialogId: number): void
 
@@ -1750,6 +1834,7 @@ closeCustomDialog(dialogId: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dialogId | number | 是 | openCustomDialog返回的对话框id。 |
@@ -1758,6 +1843,7 @@ closeCustomDialog(dialogId: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

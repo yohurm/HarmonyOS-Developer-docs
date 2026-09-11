@@ -1,9 +1,9 @@
 # @ohos.graphics.text (文本模块)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-graphics-text
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供一系列用于文本布局和字体管理的编程接口。文本布局相关的接口旨在提供高质量的排版，包括字符到字形的转换、字距调整、换行、对齐、文本测量等。字体管理接口提供字体注册、字体描述符、字体集管理等功能。
 
@@ -25,9 +25,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { text } from '@kit.ArkGraphics2D'
@@ -35,9 +36,10 @@ import { text } from '@kit.ArkGraphics2D'
 
 
 
-#### text.setTextHighContrast20+
+## text.setTextHighContrast20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setTextHighContrast(action: TextHighContrast): void
 
@@ -47,13 +49,14 @@ setTextHighContrast(action: TextHighContrast): void
 
 可调用此接口设置，也可通过系统设置界面中**高对比度文字配置开关**进行开启/关闭。使用此接口设置开启/关闭文字渲染高对比度配置的优先级高于系统开关设置。
 
-该接口针对应用的文字自绘制场景不生效。
+该接口针对应用通过Canvas等接口自行绘制文字的场景不生效，仅对使用系统文本组件渲染的场景生效。
 
 **系统能力**：SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -68,20 +71,21 @@ text.setTextHighContrast(text.TextHighContrast.TEXT_APP_DISABLE_HIGH_CONTRAST)
 
 
 
-#### text.setTextUndefinedGlyphDisplay20+
+## text.setTextUndefinedGlyphDisplay20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setTextUndefinedGlyphDisplay(noGlyphShow: TextUndefinedGlyphDisplay): void
 
 设置字符映射到.notdef（未定义）字形时要使用的字形类型。
 
-影响此调用后呈现的所有文本。
+调用此接口后，后续渲染的文本若包含未定义字形，均按此设置显示。
 
 此配置会影响显示字体中未定义字符的方式：
 
- - 默认行为遵循字体的内部.notdef字形设计。
- - 开启后将强制使缺失字形的字符以豆腐块形式显示。
+ - 默认使用字体的.notdef字形设计。
+ - 开启后，缺失字形的字符将以豆腐块形式显示。
 
 
 **系统能力**：SystemCapability.Graphics.Drawing
@@ -89,6 +93,7 @@ setTextUndefinedGlyphDisplay(noGlyphShow: TextUndefinedGlyphDisplay): void
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -103,9 +108,10 @@ text.setTextUndefinedGlyphDisplay(text.TextUndefinedGlyphDisplay.USE_TOFU)
 
 
 
-#### text.matchFontDescriptors18+
+## text.matchFontDescriptors18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 matchFontDescriptors(desc: FontDescriptor): Promise<Array&lt;FontDescriptor&gt;>
 
@@ -117,12 +123,14 @@ matchFontDescriptors(desc: FontDescriptor): Promise<Array&lt;FontDescriptor&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | desc | FontDescriptor | 是 | 指定需要用来做匹配的字体描述符。如果不指定任何字段，则返回系统的所有字体描述符。如果填写了指定字段，则按照指定字段进行匹配。如果匹配失败，返回空数组。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -133,9 +141,10 @@ matchFontDescriptors(desc: FontDescriptor): Promise<Array&lt;FontDescriptor&gt;>
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 
 **示例：**
@@ -177,9 +186,10 @@ struct Index {
 
 
 
-#### text.getSystemFontFullNamesByType14+
+## text.getSystemFontFullNamesByType14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSystemFontFullNamesByType(fontType: SystemFontType): Promise<Array&lt;string&gt;>
 
@@ -191,12 +201,14 @@ getSystemFontFullNamesByType(fontType: SystemFontType): Promise<Array&lt;string&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fontType | SystemFontType | 是 | 指定的字体类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -207,9 +219,10 @@ getSystemFontFullNamesByType(fontType: SystemFontType): Promise<Array&lt;string&
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 
 **示例：**
@@ -251,9 +264,10 @@ struct Index {
 
 
 
-#### text.getFontDescriptorByFullName14+
+## text.getFontDescriptorByFullName14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFontDescriptorByFullName(fullName: string, fontType: SystemFontType): Promise&lt;FontDescriptor&gt;
 
@@ -267,6 +281,7 @@ getFontDescriptorByFullName(fullName: string, fontType: SystemFontType): Promise
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fullName | string | 是 | 指定的字体名称。可以使用getSystemFontFullNamesByType获取。 |
@@ -274,6 +289,7 @@ getFontDescriptorByFullName(fullName: string, fontType: SystemFontType): Promise
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -284,9 +300,10 @@ getFontDescriptorByFullName(fullName: string, fontType: SystemFontType): Promise
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 
 **示例：**
@@ -325,9 +342,10 @@ struct Index {
 
 
 
-#### text.getFontDescriptorsFromPath22+
+## text.getFontDescriptorsFromPath22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFontDescriptorsFromPath(path: string | Resource): Promise<Array&lt;FontDescriptor&gt;>
 
@@ -343,12 +361,14 @@ getFontDescriptorsFromPath(path: string | Resource): Promise<Array&lt;FontDescri
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string \| Resource | 是 | 需要查询的字体文件的路径，应为 "file:// + 字体文件绝对路径" 或 \$rawfile("工程中resources/rawfile目录下的文件名称")。 |
+| path | string \| Resource | 是 | 需要查询的字体文件的路径。支持两种格式： 1. 以"file://"开头的字体文件绝对路径，如"file:///system/fonts/test.ttf"。 2. 工程resources/rawfile目录下的文件，格式为\$rawfile('文件名称')，如\$rawfile('test.ttf')。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -366,7 +386,7 @@ struct GetFontDescriptorsFromPathTest {
   build() {
     Column({ space: 10 }) {
       Button("get fontDescriptors")
-        .onClick(async () => {
+        .onClick(() => {
           let promise = text.getFontDescriptorsFromPath("file:///system/fonts/NotoSansCJK-Regular.ttc")
           promise.then((fontFullDescriptors) => {
             for (let index = 0; index < fontFullDescriptors.length; index++) {
@@ -392,9 +412,10 @@ struct GetFontDescriptorsFromPathTest {
 
 
 
-#### text.getFontUnicodeSet23+
+## text.getFontUnicodeSet23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFontUnicodeSet(path: string | Resource, index: number): Promise<Array&lt;number&gt;>
 
@@ -408,13 +429,15 @@ getFontUnicodeSet(path: string | Resource, index: number): Promise<Array&lt;numb
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string \| Resource | 是 | 需要查询的字体文件的路径，应为 "file:// + 字体文件绝对路径" 或 \$rawfile("工程中resources/rawfile目录下的文件名称")。 |
-| index | number | 是 | 字体文件格式为ttc/otc时，指定加载的字体索引。非ttc/otc格式文件索引值只能指定为0。如果该参数为负数或超出字体文件实际索引范围，将返回空数组。 |
+| path | string \| Resource | 是 | 需要查询的字体文件的路径，应为 "file:// + 字体文件绝对路径" 或 \$rawfile('工程中resources/rawfile目录下的文件名称')。 |
+| index | number | 是 | 字体文件格式为ttc/otc时，指定加载的字体索引，取值范围为[0, count-1]，其中count为字体文件包含的字体数量。非ttc/otc格式文件索引值只能指定为0。如果该参数为负数或超出字体文件实际索引范围，将返回空数组。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -432,7 +455,7 @@ struct GetFontUnicodeSetTest {
   build() {
     Column({ space: 10 }) {
       Button("get fontUnicode")
-        .onClick(async () => {
+        .onClick(() => {
           let promise = text.getFontUnicodeSet("file:///system/fonts/HMSymbolVF.ttf", 0)
           promise.then((unicodeSet) => {
             for (let index = 0; index < unicodeSet.length; index++) {
@@ -449,9 +472,10 @@ struct GetFontUnicodeSetTest {
 
 
 
-#### text.getFontCount23+
+## text.getFontCount23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFontCount(path: string | Resource): number
 
@@ -467,12 +491,14 @@ getFontCount(path: string | Resource): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string \| Resource | 是 | 需要查询的字体文件的路径，应为 "file:// + 字体文件绝对路径" 或 \$rawfile("工程中resources/rawfile目录下的文件名称")。 |
+| path | string \| Resource | 是 | 需要查询的字体文件的路径，应为 "file:// + 字体文件绝对路径" 或 \$rawfile('工程中resources/rawfile目录下的文件名称')。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -503,9 +529,10 @@ struct GetFontCountTest {
 
 
 
-#### text.getFontPathsByType23+
+## text.getFontPathsByType23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFontPathsByType(fontType: SystemFontType): Array&lt;string&gt;
 
@@ -517,12 +544,14 @@ getFontPathsByType(fontType: SystemFontType): Array&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fontType | SystemFontType | 是 | 指定的字体类型。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -556,13 +585,14 @@ struct GetFontPathsByTypeTest {
 
 
 
-#### text.isFontSupported23+
+## text.isFontSupported23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isFontSupported(fontURL: string | Resource): boolean
 
-检查系统是否支持指定的字体文件。
+检查系统是否支持指定的字体文件。可在加载自定义字体前预先验证字体文件的可用性，避免因字体不支持导致文本渲染异常。
 
 **系统能力**：SystemCapability.Graphics.Drawing
 
@@ -570,12 +600,14 @@ isFontSupported(fontURL: string | Resource): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fontURL | string \| Resource | 是 | 需要检查的字体文件的路径，应为 "file:// + 字体文件绝对路径" 或 "rawfile/目录or文件名"。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -607,15 +639,17 @@ struct isFontSupportedTest {
 
 
 
-#### TextHighContrast20+
+## TextHighContrast20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文字渲染高对比度配置类型枚举。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -626,15 +660,17 @@ struct isFontSupportedTest {
 
 
 
-#### TextUndefinedGlyphDisplay20+
+## TextUndefinedGlyphDisplay20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文本未定义字形时的显示方式枚举。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -644,9 +680,10 @@ struct isFontSupportedTest {
 
 
 
-#### TextProcessState
+## TextProcessState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文本处理状态的枚举。
 
@@ -657,6 +694,7 @@ struct isFontSupportedTest {
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 26.0.0
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -671,9 +709,10 @@ struct isFontSupportedTest {
 
 
 
-#### TextDisplayState
+## TextDisplayState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文本显示状态的枚举。表示文本排版后的原生结果，与外部画布裁切、溢出屏幕等外部显示因素无关。
 
@@ -685,6 +724,7 @@ struct isFontSupportedTest {
 
 **起始版本：** 26.0.0
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | UNKNOWN | 0 | 未知显示状态，默认状态。 |
@@ -695,15 +735,17 @@ struct isFontSupportedTest {
 
 
 
-#### TextAlign
+## TextAlign
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文本对齐方式枚举。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -717,15 +759,17 @@ struct isFontSupportedTest {
 
 
 
-#### TextVerticalAlign20+
+## TextVerticalAlign20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文本垂直对齐方式枚举。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -737,15 +781,17 @@ struct isFontSupportedTest {
 
 
 
-#### TextDirection
+## TextDirection
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文本排版方向枚举。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -755,15 +801,17 @@ struct isFontSupportedTest {
 
 
 
-#### BreakStrategy
+## BreakStrategy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 断行策略枚举。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -774,9 +822,10 @@ struct isFontSupportedTest {
 
 
 
-#### WordBreak
+## WordBreak
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 断词策略枚举。
 
@@ -784,25 +833,28 @@ struct isFontSupportedTest {
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NORMAL | 0 | 默认的换行规则。依据各自语言的规则，允许在字间发生换行。 |
 | BREAK_ALL | 1 | 对于Non-CJK（非中文，日文，韩文）文本允许在任意字符内发生换行。该值适合包含一些非亚洲文本的亚洲文本，比如使连续的英文字符断行。 |
-| BREAK_WORD | 2 | 对于Non-CJK的文本可在任意2个字符间断行，一行文本中有断行破发点（如空白符）时，优先按破发点换行，保障单词优先完整显示。若整一行文本均无断行破发点时，则在任意2个字符间断行。对于CJK与NORMAL效果一致。 |
+| BREAK_WORD | 2 | 对于Non-CJK的文本可在任意2个字符间断行，一行文本中有断行点（如空白符）时，优先按断行点换行，保障单词优先完整显示。若整一行文本均无断行点时，则在任意2个字符间断行。对于CJK文本，此策略与NORMAL效果一致。 |
 | BREAK_HYPHEN18+ | 3 | 每行末尾单词尝试通过连字符“-”进行断行，若无法添加连字符“-”，则跟BREAK_WORD保持一致。 使用此断词策略时，需与TextStyle中locale属性配合使用，通过locale定义语言环境共同作用影响断词效果。 |
 
 
 
 
-#### Decoration
+## Decoration
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文本装饰线。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -814,15 +866,17 @@ struct isFontSupportedTest {
 
 
 
-#### TextDecorationType
+## TextDecorationType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 装饰线类型枚举。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -834,15 +888,17 @@ struct isFontSupportedTest {
 
 
 
-#### TextDecorationStyle
+## TextDecorationStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 装饰线样式枚举。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -855,15 +911,17 @@ struct isFontSupportedTest {
 
 
 
-#### FontWeight
+## FontWeight
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 字重枚举。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -880,15 +938,17 @@ struct isFontSupportedTest {
 
 
 
-#### FontWidth
+## FontWidth
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 字体宽度的枚举。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -905,15 +965,17 @@ struct isFontSupportedTest {
 
 
 
-#### FontStyle
+## FontStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 字体样式枚举。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -924,15 +986,17 @@ struct isFontSupportedTest {
 
 
 
-#### TextHeightBehavior
+## TextHeightBehavior
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文本高度修饰符模式枚举。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -944,15 +1008,17 @@ struct isFontSupportedTest {
 
 
 
-#### TextBaseline
+## TextBaseline
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文本基线类型枚举。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -962,15 +1028,17 @@ struct isFontSupportedTest {
 
 
 
-#### EllipsisMode
+## EllipsisMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 省略号类型枚举。
 
 EllipsisMode.START和EllipsisMode.MIDDLE仅在单行超长文本生效。
 
 **系统能力：** SystemCapability.Graphics.Drawing
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -983,34 +1051,38 @@ EllipsisMode.START和EllipsisMode.MIDDLE仅在单行超长文本生效。
 
 
 
-#### TextShadow
+## TextShadow
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-字体阴影。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+文本阴影。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| color | common2D.Color | 否 | 是 | 字体阴影的颜色，默认为黑色Color(255, 0, 0, 0)。 |
-| point | common2D.Point | 否 | 是 | 字体阴影基于当前文本的偏移位置，横、纵坐标要大于等于零，单位为物理像素px。 |
+| color | common2D.Color | 否 | 是 | 文本阴影的颜色，默认为黑色Color(255, 0, 0, 0)。 |
+| point | common2D.Point | 否 | 是 | 文本阴影基于当前文本的偏移位置，横、纵坐标要大于等于零，单位为物理像素px，默认为common2D.Point(0, 0)。 |
 | blurRadius | number | 否 | 是 | 模糊半径，浮点数，单位为物理像素px，默认为0.0。 |
 
 
 
 
-#### RectStyle
+## RectStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 矩形框样式。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1023,9 +1095,10 @@ EllipsisMode.START和EllipsisMode.MIDDLE仅在单行超长文本生效。
 
 
 
-#### FontFeature
+## FontFeature
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文本字体特征。
 
@@ -1033,40 +1106,45 @@ EllipsisMode.START和EllipsisMode.MIDDLE仅在单行超长文本生效。
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| name | string | 否 | 否 | 字体特征键值对中的关键字标识的字符串。 |
+| name | string | 否 | 否 | 字体特征键值对中的关键字标识，如'liga'（标准连字）、'kern'（字距调整）等。 |
 | value | number | 否 | 否 | 字体特征键值对的值。 |
 
 
 
 
-#### FontVariation
+## FontVariation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 可变字体属性。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| axis | string | 否 | 否 | 可变字体属性键值对中的关键字标识的字符串。 元服务API：从API version 22开始，该接口支持在元服务中使用。 |
+| axis | string | 否 | 否 | 可变字体属性键值对中的关键字标识，如'wght'（字重）、'wdth'（字宽）和'ital'（斜体）等。 元服务API：从API version 22开始，该接口支持在元服务中使用。 |
 | value | number | 否 | 否 | 可变字体属性键值对的值。 元服务API：从API version 22开始，该接口支持在元服务中使用。 |
 | isNormalized24+ | boolean | 否 | 是 | 是否归一化。值为true时，value字段取值范围为-1~1，映射字体文件中配置的最小值到最大值范围，0表示字体文件中配置的默认值；值为false时，value字段取值范围为字体文件本身支持调节的范围；默认为false。 元服务API：从API version 24开始，该接口支持在元服务中使用。 |
 
 
 
 
-#### TextBadgeType20+
+## TextBadgeType20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文本上下标枚举。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1077,15 +1155,17 @@ EllipsisMode.START和EllipsisMode.MIDDLE仅在单行超长文本生效。
 
 
 
-#### LineHeightStyle21+
+## LineHeightStyle21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 行高缩放基数枚举。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1095,15 +1175,17 @@ EllipsisMode.START和EllipsisMode.MIDDLE仅在单行超长文本生效。
 
 
 
-#### TextStyle
+## TextStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-文本样式。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+文本样式，用于控制文本的视觉表现属性，包括字体、颜色、字号、间距、装饰线和阴影等。TextStyle通过[ParagraphBuilder](#paragraphbuilder)的[pushStyle](#pushstyle)方法应用到后续添加的文本内容，与[ParagraphStyle](#paragraphstyle)（控制段落级别属性）配合使用。同一段落中可通过多次pushStyle实现对不同文本片段应用不同样式。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1113,22 +1195,22 @@ EllipsisMode.START和EllipsisMode.MIDDLE仅在单行超长文本生效。
 | fontWidth21+ | FontWidth | 否 | 是 | 字体宽度，默认为NORMAL。 |
 | fontStyle | FontStyle | 否 | 是 | 字体样式，默认为常规样式。 |
 | baseline | TextBaseline | 否 | 是 | 文本基线类型，默认为ALPHABETIC。 |
-| fontFamilies | Array&lt;string&gt; | 否 | 是 | 字体家族名称列表，默认为空，匹配系统字体。 |
-| fontTypefaces | Array<drawing.Typeface> | 否 | 是 | 指定排版字体对象数组，用于优先使用指定的字体对象进行文本塑形，跳过字体匹配流程。当数组中某个字体对象无法塑形部分文字时，未能塑形的文字将使用系统字体进行塑形。默认为空数组，表示不指定字体对象，使用默认字体匹配流程。 当fontTypefaces与fontFamilies同时设置时，fontTypefaces优先级更高。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
+| fontFamilies | Array&lt;string&gt; | 否 | 是 | 字体家族名称列表，默认为空，匹配系统字体。使用自定义字体时，需将加载字体时指定的名称填入此列表中。当与fontTypefaces同时设置时，fontTypefaces优先级更高，fontFamilies不生效。 |
+| fontTypefaces | Array<drawing.Typeface> | 否 | 是 | 指定排版字体对象数组，用于优先使用指定的字体对象进行文本塑形，跳过字体匹配流程。当数组中某个字体对象无法塑形部分文字时，未能塑形的文字将使用系统字体进行塑形。默认为空数组，表示不指定字体对象，使用默认字体匹配流程。 当fontTypefaces与TextStyle.fontFamilies同时设置时，fontTypefaces优先级更高。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | fontSize | number | 否 | 是 | 字体大小，浮点数，默认为14.0，单位为物理像素px。 |
 | letterSpacing | number | 否 | 是 | 字符间距，正数拉开字符距离，如果为负数则拉近字符距离，浮点数，单位为物理像素px，默认为0.0。 |
 | wordSpacing | number | 否 | 是 | 单词间距，浮点数，单位为物理像素px，默认为0.0。 |
 | heightScale | number | 否 | 是 | 行高缩放倍数，浮点数，默认为1.0，heightOnly为true时生效。 |
-| heightOnly | boolean | 否 | 是 | true表示根据字体大小和heightScale设置文本框的高度，false表示根据行高和行距，默认为false。 |
+| heightOnly | boolean | 否 | 是 | true表示根据字体大小和heightScale设置文本框的高度，false表示根据行高和行距设置文本框高度，默认为false。 |
 | halfLeading | boolean | 否 | 是 | true表示将行间距平分至行的顶部与底部，false则不平分，默认为false。 |
-| ellipsis | string | 否 | 是 | 省略号文本，表示省略号生效后使用该字段值替换省略号部分。 |
+| ellipsis | string | 否 | 是 | 省略号文本，表示省略号生效后使用该字段值替换省略号部分，默认为空字符串，即使用系统默认省略号…（U+2026）。与ParagraphStyle的tab属性共同配置时，tab属性无效。 |
 | ellipsisMode | EllipsisMode | 否 | 是 | 省略号类型，默认为END，行尾省略号。 |
 | locale | string | 否 | 是 | 语言类型，例如'en-Latn'代表英文(拉丁文字)，'zh-Hans'代表简体中文，'zh-Hant'代表繁体中文。支持language-script格式的两段式语言标签，language遵循ISO 639-1规范，script遵循ISO 15924规范。未指定locale或者设置为空字符串或为undefined时，默认locale为'zh-Hans'。 |
-| baselineShift | number | 否 | 是 | 文本下划线的偏移距离，浮点数，单位为物理像素px，默认为0.0。 |
-| fontFeatures | Array&lt;FontFeature&gt; | 否 | 是 | 文本字体特征数组。 |
-| fontVariations | Array&lt;FontVariation&gt; | 否 | 是 | 可变字体属性数组。 |
-| textShadows | Array&lt;TextShadow&gt; | 否 | 是 | 文本阴影数组。 |
-| backgroundRect | RectStyle | 否 | 是 | 文本矩形框样式。 |
+| baselineShift | number | 否 | 是 | 文本基线的垂直偏移距离，浮点数，单位为物理像素px，默认为0.0。 |
+| fontFeatures | Array&lt;FontFeature&gt; | 否 | 是 | 文本字体特征数组。当需要启用或禁用特定字体特性（如连字、字距调整等）时传入。 |
+| fontVariations | Array&lt;FontVariation&gt; | 否 | 是 | 可变字体属性数组。当需要调整可变字体的可变轴参数（如字重轴、字宽轴等）时传入。 |
+| textShadows | Array&lt;TextShadow&gt; | 否 | 是 | 文本阴影数组。当需要为文本添加阴影效果时传入。 |
+| backgroundRect | RectStyle | 否 | 是 | 文本矩形框样式。当需要为文本添加背景矩形框（如设置背景色、圆角等）时传入。 |
 | badgeType20+ | TextBadgeType | 否 | 是 | 设置文本排版时是否使能上标或下标。TEXT_SUPERSCRIPT表示使能上标，TEXT_SUBSCRIPT表示使能下标，默认值为TEXT_BADGE_NONE表示不使能。 |
 | lineHeightMaximum21+ | number | 否 | 是 | 行高上限，单位为物理像素px。若同时应用行高缩放，行高上限在TextStyle.heightScale大于0时生效。取值为正数浮点数，默认值为Number.MAX_VALUE。 |
 | lineHeightMinimum21+ | number | 否 | 是 | 行高下限，单位为物理像素px。若同时应用行高缩放，行高下限在TextStyle.heightScale大于0时生效。取值范围为非负浮点数，默认值为0。 |
@@ -1138,15 +1220,17 @@ EllipsisMode.START和EllipsisMode.MIDDLE仅在单行超长文本生效。
 
 
 
-#### StrutStyle
+## StrutStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支柱样式，用于控制绘制文本的行间距、基线对齐方式以及其他与行高相关的属性，默认不开启。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1165,13 +1249,15 @@ EllipsisMode.START和EllipsisMode.MIDDLE仅在单行超长文本生效。
 
 
 
-#### FontDescriptor14+
+## FontDescriptor14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 字体描述符信息。
 
 **系统能力**：SystemCapability.Graphics.Drawing
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1197,21 +1283,23 @@ EllipsisMode.START和EllipsisMode.MIDDLE仅在单行超长文本生效。
 | variationAxisRecords24+ | Array&lt;FontVariationAxis&gt; | 否 | 是 | 字体可变轴记录数组，用于描述字体支持的可变轴信息。非可变字体此字段为undefined。 元服务API：从API version 24开始，该接口支持在元服务中使用。 |
 | variationInstanceRecords24+ | Array&lt;FontVariationInstance&gt; | 否 | 是 | 字体可变实例记录数组，用于描述字体支持的可变实例信息。非可变字体此字段为undefined。 元服务API：从API version 24开始，该接口支持在元服务中使用。 |
 | index23+ | number | 否 | 是 | 字体索引，字体文件为ttc类型时有效，ttf类型统一为0。 元服务API：从API version 23开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
-| languages | Array&lt;string&gt; | 否 | 是 | 字体语言，默认为undefined。 起始版本： 26.0.0 元服务API：从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
-| fontFeatures | Array&lt;string&gt; | 否 | 是 | 字体特性，默认为undefined。 起始版本： 26.0.0 元服务API：从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
+| languages | Array&lt;string&gt; | 否 | 是 | 字体支持的语言列表，默认为空数组。数组中每个元素为BCP 47格式的语言标签字符串（如'en'、'zh-Hans'），表示该字体支持的书写语言。 起始版本： 26.0.0 元服务API：从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
+| fontFeatures | Array&lt;string&gt; | 否 | 是 | 字体支持的OpenType特性标签数组，默认为空数组。数组中每个元素为特性标签字符串（如'liga'表示标准连字、'kern'表示字距调整），表示该字体支持的字体特性。 起始版本： 26.0.0 元服务API：从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 
 
 
 
-#### FontVariationAxis24+
+## FontVariationAxis24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 字体可变轴信息。
 
 **系统能力**：SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 24开始，该接口支持在元服务中使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1226,15 +1314,17 @@ EllipsisMode.START和EllipsisMode.MIDDLE仅在单行超长文本生效。
 
 
 
-#### FontVariationInstance24+
+## FontVariationInstance24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 字体可变实例信息，存放预设的可变字体样式信息。
 
 **系统能力**：SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 24开始，该接口支持在元服务中使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1245,17 +1335,19 @@ EllipsisMode.START和EllipsisMode.MIDDLE仅在单行超长文本生效。
 
 
 
-#### FontCollection
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-字体集。
+## FontCollection
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### getGlobalInstance
+字体集，用于管理文本排版所需的字体资源。FontCollection为[ParagraphBuilder](#paragraphbuilder)提供字体匹配和字形查找能力，是文本排版管线的基础组件。提供全局实例（[getGlobalInstance](#getglobalinstance)）和本地实例（[getLocalInstance](#getlocalinstance22)），全局实例加载的字体在应用内共享，适用于普通应用场景；本地实例各实例独立，加载的字体仅对当前实例生效、实例间互不影响，推荐卡片场景使用。支持通过[loadFontSync](#loadfontsync)或[loadFont](#loadfont18)加载自定义字体。
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+### getGlobalInstance
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getGlobalInstance(): FontCollection
 
@@ -1267,9 +1359,10 @@ static getGlobalInstance(): FontCollection
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| FontCollection | FontCollection对象。 |
+| FontCollection | 应用全局FontCollection实例对象，可用于管理字体加载、卸载和排版等操作。 |
 
 
 **示例：**
@@ -1297,9 +1390,10 @@ struct Index {
 
 
 
-#### getLocalInstance22+
+### getLocalInstance22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getLocalInstance(): FontCollection
 
@@ -1313,9 +1407,10 @@ static getLocalInstance(): FontCollection
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| FontCollection | FontCollection对象。 |
+| FontCollection | 本地FontCollection实例对象，推荐卡片场景使用，可用于管理字体加载、卸载和排版等操作。 |
 
 
 **示例：**
@@ -1327,9 +1422,10 @@ let fontCollection = text.FontCollection.getLocalInstance();
 
 
 
-#### loadFontSync
+### loadFontSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 loadFontSync(name: string, path: string | Resource): void
 
@@ -1342,6 +1438,7 @@ loadFontSync(name: string, path: string | Resource): void
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1387,9 +1484,10 @@ struct RenderTest {
 
 
 
-#### loadFont18+
+### loadFont18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 loadFont(name: string, path: string | Resource): Promise&lt;void&gt;
 
@@ -1403,6 +1501,7 @@ loadFont(name: string, path: string | Resource): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 加载字体后，调用该字体所使用的别名，可填写任意字符串，可使用该别名指定并使用该字体。 |
@@ -1411,18 +1510,20 @@ loadFont(name: string, path: string | Resource): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | 无返回结果的Promise对象。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 
 **示例：**
@@ -1438,8 +1539,8 @@ struct RenderTest {
   async loadFontPromise() {
     fontCollection.loadFont('testName', 'file:///system/fonts/a.ttf').then((data) => {
       console.info(`Succeeded in doing loadFont ${JSON.stringify(data)} `);
-    }).catch((error: Error) => {
-      console.error(`Failed to do loadFont, error: ${JSON.stringify(error)} message: ${error.message}`);
+    }).catch((error: BusinessError) => {
+      console.error(`Failed to do loadFont, error: ${error.code} message: ${error.message}`);
     });
   }
 
@@ -1454,9 +1555,10 @@ struct RenderTest {
 
 
 
-#### loadFontSyncWithCheck23+
+### loadFontSyncWithCheck23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 loadFontSyncWithCheck(name: string, path: string | Resource, index?: number): void
 
@@ -1470,16 +1572,18 @@ loadFontSyncWithCheck(name: string, path: string | Resource, index?: number): vo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 加载字体成功后，该字体对应的名称，可填写任意字符串，可使用该名称指定并使用该字体。 |
-| path | string \| Resource | 是 | 需要加载的字体文件的路径，支持两种格式： "file:// + 字体文件绝对路径" 或 \$rawfile("字体文件路径")。 |
+| path | string \| Resource | 是 | 需要加载的字体文件的路径，支持两种格式： "file:// + 字体文件绝对路径" 或 \$rawfile('字体文件路径')。 |
 | index | number | 否 | 字体文件格式为ttc时，指定加载的字体索引。默认为0：表示加载ttc的第一个字体。 非ttc格式文件索引值无意义，若指定索引，只能为0。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[图形绘制与显示错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-drawing)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1495,7 +1599,7 @@ loadFontSyncWithCheck(name: string, path: string | Resource, index?: number): vo
 
 **示例：**
 
-```json
+```text
 import { text } from '@kit.ArkGraphics2D'
 
 let fc: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1520,8 +1624,9 @@ struct Index {
           fc.loadFontSyncWithCheck(this.fontFamily, 'file:///system/fonts/NotoSansCJK-Regular.ttc', 1);
           try {
             fc.loadFontSyncWithCheck(this.fontFamily, '/system/fonts/NotoSansCJK-Regular.ttc', 1);
-          } catch (e) {
-            console.error(`Failed to do loadFontWithCheck, error: ${JSON.stringify(e)} message: ${e.message}`);
+          } catch (error) {
+            let err: BusinessError = error as BusinessError;
+            console.error(`Failed to do loadFontWithCheck, error: ${err.code} message: ${err.message}`);
           }
         })
     }
@@ -1533,9 +1638,10 @@ struct Index {
 
 
 
-#### loadFontWithCheck23+
+### loadFontWithCheck23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 loadFontWithCheck(name: string, path: string | Resource, index?: number): Promise&lt;void&gt;
 
@@ -1549,14 +1655,16 @@ loadFontWithCheck(name: string, path: string | Resource, index?: number): Promis
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 加载字体成功后，该字体对应的名称，可填写任意字符串，可使用该名称指定并使用该字体。 |
-| path | string \| Resource | 是 | 需要加载的字体文件的路径，支持两种格式： "file:// + 字体文件绝对路径" 或 \$rawfile("字体文件路径")。 |
+| path | string \| Resource | 是 | 需要加载的字体文件的路径，支持两种格式： "file:// + 字体文件绝对路径" 或 \$rawfile('字体文件路径')。 |
 | index | number | 否 | 字体文件格式为ttc时，指定加载的字体索引。默认为0：表示加载ttc的第一个字体。 非ttc格式文件索引值无意义，若指定索引，只能为0。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1566,6 +1674,7 @@ loadFontWithCheck(name: string, path: string | Resource, index?: number): Promis
 **错误码：**
 
 以下错误码的详细介绍请参见[图形绘制与显示错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-drawing)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1605,13 +1714,13 @@ struct Index {
         .onClick(() => {
           fc.loadFontWithCheck(this.fontFamily, 'file:///system/fonts/NotoSansCJK-Regular.ttc', 1).then((data) => {
             console.info(`Succeeded in doing loadFontWithCheck ${JSON.stringify(data)} `);
-          }).catch((error: Error) => {
-            console.error(`Failed to do loadFontWithCheck, error: ${JSON.stringify(error)} message: ${error.message}`);
+          }).catch((error: BusinessError) => {
+            console.error(`Failed to do loadFontWithCheck, error: ${error.code} message: ${error.message}`);
           });
           fc.loadFontWithCheck(this.fontFamily, '/system/fonts/NotoSansCJK-Regular.ttc', 1).then((data) => {
             console.info(`Succeeded in doing loadFontWithCheck ${JSON.stringify(data)} `);
-          }).catch((error: Error) => {
-            console.error(`Failed to do loadFontWithCheck, error: ${JSON.stringify(error)} message: ${error.message}`);
+          }).catch((error: BusinessError) => {
+            console.error(`Failed to do loadFontWithCheck, error: ${error.code} message: ${error.message}`);
           });
         })
     }
@@ -1623,9 +1732,10 @@ struct Index {
 
 
 
-#### unloadFontSync20+
+### unloadFontSync20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unloadFontSync(name: string): void
 
@@ -1647,6 +1757,7 @@ unloadFontSync(name: string): void
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1687,9 +1798,10 @@ struct UnloadFontSyncTest {
 
 
 
-#### unloadFont20+
+### unloadFont20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unloadFont(name: string): Promise&lt;void&gt;
 
@@ -1712,6 +1824,7 @@ unloadFont(name: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 需要卸载的字体的别名，与加载字体时使用的别名相同。 |
@@ -1719,9 +1832,10 @@ unloadFont(name: string): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | 无返回结果的Promise对象。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **示例：**
@@ -1758,13 +1872,14 @@ struct UnloadFontTest {
 
 
 
-#### clearCaches
+### clearCaches
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clearCaches(): void
 
-清理字体排版缓存（字体排版缓存本身设有内存上限和清理机制，所占内存有限，如无内存要求，不建议清理）。
+清理字体排版缓存。字体排版缓存本身设有内存上限和自动清理机制，所占内存有限。如无特殊内存要求，不建议清理。
 
 **卡片能力：** 从API version 22开始，该接口支持在ArkTS卡片中使用。
 
@@ -1792,9 +1907,10 @@ struct Index {
 
 
 
-#### setParagraphCachesEnabled
+### setParagraphCachesEnabled
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setParagraphCachesEnabled(enable: boolean): void
 
@@ -1809,6 +1925,7 @@ setParagraphCachesEnabled(enable: boolean): void
 **起始版本：** 26.0.0
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1838,13 +1955,15 @@ struct Index {
 
 
 
-#### ParagraphStyle
+## ParagraphStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-段落样式。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+段落样式，用于控制段落的整体布局行为，包括对齐方式、断行策略和最大行数等属性。ParagraphStyle作为[ParagraphBuilder](#paragraphbuilder)构造函数的必要参数，与[TextStyle](#textstyle)（控制文本级别样式）分工协作，共同决定段落的最终排版效果。
 
 **系统能力：** SystemCapability.Graphics.Drawing
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1859,19 +1978,20 @@ struct Index {
 | tab18+ | TextTab | 否 | 是 | 表示段落中文本制表符后的文本对齐方式及位置，默认将制表符替换为一个空格。此参数与文本对齐方式（align属性）或省略号样式（TextStyle中的ellipsis属性）共同配置时无效。 元服务API： 从API version 22开始，该接口支持在元服务中使用。 |
 | trailingSpaceOptimized20+ | boolean | 否 | 是 | 表示文本排版时是否考虑行尾空格的对齐影响。true表示忽略行尾空格的对齐影响，false表示考虑行尾空格的对齐影响，默认值为false。 元服务API： 从API version 22开始，该接口支持在元服务中使用。 |
 | autoSpace20+ | boolean | 否 | 是 | 设置文本排版时是否使能自动间距。true表示使能自动间距，则会在文本排版时自动调整CJK（中文字符、日文字符、韩文字符）与西文（拉丁字母、西里尔字母、希腊字母）、CJK与数字、CJK与版权符号、版权符号与数字、版权符号与西文之间的间距。false表示不使能自动间距，默认值为false。 元服务API： 从API version 22开始，该接口支持在元服务中使用。 |
-| verticalAlign20+ | TextVerticalAlign | 否 | 是 | 文本垂直对齐方式，开启行高缩放（即设置TextStyle的heightScale）或行内不同字号（即设置TextStyle的fontSize）文本混排时生效。若行内有上下标文本（即设置TextStyle的badgeType属性文本），上下标文本将与普通文本一样参与垂直对齐。 元服务API： 从API version 22开始，该接口支持在元服务中使用。 |
-| lineSpacing21+ | number | 否 | 是 | 行间距，单位为物理像素px，默认值为0。lineSpacing不受TextStyle中lineHeightMaximum和lineHeightMinimum限制。尾行默认保留行间距，可通过设置TextStyle.textHeightBehavior为DISABLE_ALL或DISABLE_LAST_ASCENT禁用尾行行间距。 元服务API： 从API version 22开始，该接口支持在元服务中使用。 |
+| verticalAlign20+ | TextVerticalAlign | 否 | 是 | 文本垂直对齐方式，默认为BASELINE，即文本基线对齐。开启行高缩放（即设置TextStyle的heightScale）或行内不同字号（即设置TextStyle的fontSize）文本混排时生效。若行内有上下标文本（即设置TextStyle的badgeType属性文本），上下标文本将与普通文本一样参与垂直对齐。 元服务API： 从API version 22开始，该接口支持在元服务中使用。 |
+| lineSpacing21+ | number | 否 | 是 | 行间距，单位为物理像素px，默认值为0。lineSpacing不受TextStyle中lineHeightMaximum和lineHeightMinimum限制。尾行默认保留行间距，可通过设置ParagraphStyle的textHeightBehavior为DISABLE_ALL或DISABLE_LAST_ASCENT禁用尾行行间距。 元服务API： 从API version 22开始，该接口支持在元服务中使用。 |
 | compressHeadPunctuation23+ | boolean | 否 | 是 | 设置文本排版时是否使能行首标点压缩。true表示使能行首标点压缩，false表示不使能行首标点压缩，默认值为false。 说明： 1. 需要字体文件支持FontFeature中的"ss08"特性，否则无法压缩。 2. 在行首标点压缩范围内的标点才在本特性作用范围内。 元服务API： 从API version 23开始，该接口支持在元服务中使用。 |
 | includeFontPadding23+ | boolean | 否 | 是 | 设置文本排版时是否使能首尾行padding。true表示使能首尾行padding，false表示不使能首尾行padding，默认值为false。 元服务API： 从API version 23开始，该接口支持在元服务中使用。 |
 | fallbackLineSpacing23+ | boolean | 否 | 是 | 设置文本排版时是否使能行高回退，当设置的行高小于实际行高时，将行高回退为实际行高。true表示使能行高回退，false表示不使能行高回退，默认值为false。 元服务API： 从API version 23开始，该接口支持在元服务中使用。 |
 | punctuationOverflow | boolean | 否 | 是 | 设置文本排版时是否使能行尾标点悬挂。true表示使能行尾标点悬挂，允许行尾单个标点超出排版宽度而不换行，false表示不使能行尾标点悬挂，默认值为false。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | orphanCharOptimization | boolean | 否 | 是 | 设置文本排版时是否使能孤字优化。孤字优化通过更高效地处理孤立字符（段落尾行首字符）来改善文本布局。使能后，它会调整换行点以尽可能避免孤立字符。孤字优化特性需在wordBreak为非BREAK_ALL并且待排版文本首个TextStyle的locale为“zh-Hans”或“zh-Hant”时生效。true表示使能孤字优化，false表示不使能孤字优化，默认值为false。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
-| firstLineHeadIndent | number | 否 | 是 | 设置段落首行缩进，缩进值需大于等于0，默认值为0。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
-| tailIndents | Array&lt;number&gt; | 否 | 是 | 设置行尾缩进数组，数组中每个元素代表一行缩进值，当实际文本行数超过缩进数组个数时，超过行的缩进为数组最后一个值，缩进值需全大于等于0，默认为空数组。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
-| headIndents | Array&lt;number&gt; | 否 | 是 | 设置行首缩进数组，数组中每个元素代表一行缩进值，当实际文本行数超过缩进数组个数时，超过行的缩进为数组最后一个值，缩进值需全大于等于0，默认为空数组。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
+| firstLineHeadIndent | number | 否 | 是 | 设置段落首行缩进，缩进值需大于等于0，单位为物理像素px，默认值为0。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
+| tailIndents | Array&lt;number&gt; | 否 | 是 | 设置行尾缩进数组，数组中每个元素代表一行缩进值，当实际文本行数超过缩进数组个数时，超过行的缩进为数组最后一个值，缩进值需全大于等于0，单位为物理像素px，默认为空数组。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
+| headIndents | Array&lt;number&gt; | 否 | 是 | 设置行首缩进数组，数组中每个元素代表一行缩进值，当实际文本行数超过缩进数组个数时，超过行的缩进为数组最后一个值，缩进值需全大于等于0，单位为物理像素px，默认为空数组。 起始版本： 26.0.0 元服务API： 从API版本26.0.0开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 
 
 行首压缩的标点范围:
+
 
 | 标点 | Unicode码位 | Unicode名称 |
 | --- | --- | --- |
@@ -1891,15 +2011,17 @@ struct Index {
 
 
 
-#### PlaceholderAlignment
+## PlaceholderAlignment
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 占位符相对于周围文本的纵向对齐方式。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1922,15 +2044,17 @@ struct Index {
 
 
 
-#### PlaceholderSpan
+## PlaceholderSpan
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述占位符样式。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1943,15 +2067,17 @@ struct Index {
 
 
 
-#### Range
+## Range
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述左闭右开区间。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1961,9 +2087,10 @@ struct Index {
 
 
 
-#### TextRectSize24+
+## TextRectSize24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文本矩形尺寸，用于描述文本的矩形宽高属性。值为浮点数，单位为物理像素px。
 
@@ -1973,6 +2100,7 @@ struct Index {
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | width | number | 否 | 否 | 文本矩形的宽度，浮点数，单位为物理像素px。 |
@@ -1981,9 +2109,10 @@ struct Index {
 
 
 
-#### TextLayoutResult24+
+## TextLayoutResult24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文本布局结果。
 
@@ -1993,6 +2122,7 @@ struct Index {
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | fitStrRange | Array&lt;Range&gt; | 否 | 否 | 文本布局计算完成后能够完整显示的字符范围数组。 |
@@ -2001,9 +2131,10 @@ struct Index {
 
 
 
-#### Paragraph
+## Paragraph
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 保存文本内容及样式的载体，支持排版与绘制操作。
 
@@ -2011,9 +2142,10 @@ struct Index {
 
 
 
-#### layoutSync
+### layoutSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 layoutSync(width: number): void
 
@@ -2024,6 +2156,7 @@ layoutSync(width: number): void
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2038,9 +2171,10 @@ paragraph.layoutSync(100);
 
 
 
-#### layout18+
+### layout18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 layout(width: number): Promise&lt;void&gt;
 
@@ -2052,6 +2186,7 @@ layout(width: number): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | width | number | 是 | 单行的最大宽度，浮点数，单位为物理像素px。 |
@@ -2059,23 +2194,25 @@ layout(width: number): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;void&gt; | 无返回结果的Promise对象。 |
+| Promise&lt;void&gt; | Promise对象，无返回结果。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 
 **示例：**
 
-```json
+```text
 import { drawing, text } from '@kit.ArkGraphics2D'
 import { image } from '@kit.ImageKit'
 
@@ -2111,13 +2248,14 @@ struct Index {
   @State pixelmap?: PixelMap = undefined;
   fun: Function = textFunc;
 
-  async prepareLayoutPromise() {
-    // 排版对象进行布局计算
-    paragraph.layout(200).then((data) => {
-      console.info(`Succeeded in doing layout,  ${JSON.stringify(data)}`);
-    }).catch((error: Error) => {
-      console.error(`Failed to do layout, error: ${JSON.stringify(error)} message: ${error.message}`);
-    });
+async prepareLayoutPromise() {
+    try {
+      await paragraph.layout(200);
+      console.info('Succeeded in doing layout');
+    } catch (error) {
+      let err: BusinessError = error as BusinessError;
+      console.error(`Failed to do layout, error: ${err.code} message: ${err.message}`);
+    }
   }
 
   aboutToAppear() {
@@ -2151,9 +2289,10 @@ struct Index {
 
 
 
-#### layoutWithConstraints24+
+### layoutWithConstraints24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 layoutWithConstraints(size: TextRectSize): TextLayoutResult
 
@@ -2167,12 +2306,14 @@ layoutWithConstraints(size: TextRectSize): TextLayoutResult
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | size | TextRectSize | 是 | 约束的高度和宽度，单位为物理像素px。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2192,19 +2333,21 @@ for (let i = 0; i < result.fitStrRange.length; ++i) {
 
 
 
-#### paint
+### paint
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 paint(canvas: drawing.Canvas, x: number, y: number): void
 
-在画布上以 (x, y) 为左上角绘制文本。
+在画布上以 (x, y) 为左上角绘制文本。调用前必须先调用[layout()](#layout18)接口进行排版，否则无法正确显示文本内容。
 
 **系统能力**：SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2225,19 +2368,21 @@ paragraph.paint(canvas, 0, 0);
 
 
 
-#### paintOnPath
+### paintOnPath
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 paintOnPath(canvas: drawing.Canvas, path: drawing.Path, hOffset: number, vOffset: number): void
 
-在画布上沿路径绘制文本。
+在画布上沿路径绘制文本。调用前必须先调用[layout()](#layout18)接口进行排版，否则无法正确显示文本内容。
 
 **系统能力**：SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2261,9 +2406,10 @@ paragraph.paintOnPath(canvas, path, 0, 0);
 
 
 
-#### getMaxWidth
+### getMaxWidth
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMaxWidth(): number
 
@@ -2274,6 +2420,7 @@ getMaxWidth(): number
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2288,9 +2435,10 @@ let maxWidth = paragraph.getMaxWidth();
 
 
 
-#### getHeight
+### getHeight
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getHeight(): number
 
@@ -2301,6 +2449,7 @@ getHeight(): number
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2315,9 +2464,10 @@ let height = paragraph.getHeight();
 
 
 
-#### getLongestLine
+### getLongestLine
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLongestLine(): number
 
@@ -2328,6 +2478,7 @@ getLongestLine(): number
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2342,9 +2493,10 @@ let longestLine = paragraph.getLongestLine();
 
 
 
-#### getLongestLineWithIndent13+
+### getLongestLineWithIndent13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLongestLineWithIndent(): number
 
@@ -2355,6 +2507,7 @@ getLongestLineWithIndent(): number
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2369,9 +2522,10 @@ let longestLineWithIndent = paragraph.getLongestLineWithIndent();
 
 
 
-#### getMinIntrinsicWidth
+### getMinIntrinsicWidth
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMinIntrinsicWidth(): number
 
@@ -2382,6 +2536,7 @@ getMinIntrinsicWidth(): number
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2396,9 +2551,10 @@ let minIntrinsicWidth = paragraph.getMinIntrinsicWidth();
 
 
 
-#### getMaxIntrinsicWidth
+### getMaxIntrinsicWidth
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMaxIntrinsicWidth(): number
 
@@ -2409,6 +2565,7 @@ getMaxIntrinsicWidth(): number
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2423,9 +2580,10 @@ let maxIntrinsicWidth = paragraph.getMaxIntrinsicWidth();
 
 
 
-#### getAlphabeticBaseline
+### getAlphabeticBaseline
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAlphabeticBaseline(): number
 
@@ -2436,6 +2594,7 @@ getAlphabeticBaseline(): number
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2450,9 +2609,10 @@ let alphabeticBaseline = paragraph.getAlphabeticBaseline();
 
 
 
-#### getIdeographicBaseline
+### getIdeographicBaseline
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getIdeographicBaseline(): number
 
@@ -2464,9 +2624,10 @@ getIdeographicBaseline(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| number | 获取表意字下的基线位置，浮点数，单位为物理像素px。 |
+| number | 表意字下的基线位置，浮点数，单位为物理像素px。 |
 
 
 **示例：**
@@ -2477,9 +2638,10 @@ let ideographicBaseline = paragraph.getIdeographicBaseline();
 
 
 
-#### getRectsForRange
+### getRectsForRange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRectsForRange(range: Range, widthStyle: RectWidthStyle, heightStyle: RectHeightStyle): Array&lt;TextBox&gt;
 
@@ -2491,6 +2653,7 @@ getRectsForRange(range: Range, widthStyle: RectWidthStyle, heightStyle: RectHeig
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | range | Range | 是 | 需要获取的区域的文本区间。 |
@@ -2499,6 +2662,7 @@ getRectsForRange(range: Range, widthStyle: RectWidthStyle, heightStyle: RectHeig
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2514,9 +2678,10 @@ let rects = paragraph.getRectsForRange(range, text.RectWidthStyle.TIGHT, text.Re
 
 
 
-#### getRectsForPlaceholders
+### getRectsForPlaceholders
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRectsForPlaceholders(): Array&lt;TextBox&gt;
 
@@ -2527,6 +2692,7 @@ getRectsForPlaceholders(): Array&lt;TextBox&gt;
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2541,9 +2707,10 @@ let placeholderRects = paragraph.getRectsForPlaceholders();
 
 
 
-#### getGlyphPositionAtCoordinate
+### getGlyphPositionAtCoordinate
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getGlyphPositionAtCoordinate(x: number, y: number): PositionWithAffinity
 
@@ -2555,6 +2722,7 @@ getGlyphPositionAtCoordinate(x: number, y: number): PositionWithAffinity
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | x | number | 是 | 横坐标，浮点数，单位为物理像素px。 |
@@ -2562,6 +2730,7 @@ getGlyphPositionAtCoordinate(x: number, y: number): PositionWithAffinity
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2576,9 +2745,10 @@ let positionWithAffinity = paragraph.getGlyphPositionAtCoordinate(0, 0);
 
 
 
-#### getWordBoundary
+### getWordBoundary
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getWordBoundary(offset: number): Range
 
@@ -2590,12 +2760,14 @@ getWordBoundary(offset: number): Range
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 是 | 字形的偏移量，整数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2610,9 +2782,10 @@ let wordRange = paragraph.getWordBoundary(0);
 
 
 
-#### getLineCount
+### getLineCount
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLineCount(): number
 
@@ -2623,6 +2796,7 @@ getLineCount(): number
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2637,9 +2811,10 @@ let lineCount = paragraph.getLineCount();
 
 
 
-#### getLineHeight
+### getLineHeight
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLineHeight(line: number): number
 
@@ -2651,12 +2826,14 @@ getLineHeight(line: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| line | number | 是 | 文本行索引，整数，范围为0~getLineCount()-1。 |
+| line | number | 是 | 文本行索引，整数，范围为0~getLineCount-1。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2671,9 +2848,10 @@ let lineHeight = paragraph.getLineHeight(0);
 
 
 
-#### getLineWidth
+### getLineWidth
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLineWidth(line: number): number
 
@@ -2685,12 +2863,14 @@ getLineWidth(line: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| line | number | 是 | 文本行索引，整数，范围为0~getLineCount()-1。 |
+| line | number | 是 | 文本行索引，整数，范围为0~getLineCount-1。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2705,9 +2885,10 @@ let lineWidth = paragraph.getLineWidth(0);
 
 
 
-#### didExceedMaxLines
+### didExceedMaxLines
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 didExceedMaxLines(): boolean
 
@@ -2718,6 +2899,7 @@ didExceedMaxLines(): boolean
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2732,9 +2914,10 @@ let didExceed = paragraph.didExceedMaxLines();
 
 
 
-#### getTextLines
+### getTextLines
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTextLines(): Array&lt;TextLine&gt;
 
@@ -2745,6 +2928,7 @@ getTextLines(): Array&lt;TextLine&gt;
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2759,9 +2943,10 @@ let lines = paragraph.getTextLines();
 
 
 
-#### getActualTextRange
+### getActualTextRange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getActualTextRange(lineNumber: number, includeSpaces: boolean): Range
 
@@ -2773,6 +2958,7 @@ getActualTextRange(lineNumber: number, includeSpaces: boolean): Range
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | lineNumber | number | 是 | 要获取文本范围的行索引，行索引从0开始。该接口只能获取已有行的边界，即输入行索引从0开始。最大行索引为文本行数量-1，文本行数量可通过getLineCount接口获取。 |
@@ -2780,6 +2966,7 @@ getActualTextRange(lineNumber: number, includeSpaces: boolean): Range
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2794,9 +2981,10 @@ let rang = paragraph.getActualTextRange(0, true);
 
 
 
-#### getLineMetrics
+### getLineMetrics
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLineMetrics(): Array&lt;LineMetrics&gt;
 
@@ -2807,6 +2995,7 @@ getLineMetrics(): Array&lt;LineMetrics&gt;
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2821,9 +3010,10 @@ let arrLineMetric =  paragraph.getLineMetrics();
 
 
 
-#### getLineMetrics
+### getLineMetrics
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLineMetrics(lineNumber: number): LineMetrics | undefined
 
@@ -2835,12 +3025,14 @@ getLineMetrics(lineNumber: number): LineMetrics | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| lineNumber | number | 是 | 要查询度量信息的行的编号，行号从0开始。 |
+| lineNumber | number | 是 | 要查询度量信息的行的编号，行号从0开始，最大行索引为文本行数量-1，文本行数量可通过getLineCount接口获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2855,11 +3047,12 @@ let lineMetrics =  paragraph.getLineMetrics(0);
 
 
 
-#### updateColor20+
+### updateColor20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-updateColor(color: common2D.Color): void;
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+updateColor(color: common2D.Color): void
 
 更新整个文本段落的颜色。如果当前装饰线未设置颜色，使用该接口也会同时更新装饰线的颜色。
 
@@ -2868,6 +3061,7 @@ updateColor(color: common2D.Color): void;
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2882,11 +3076,12 @@ paragraph.updateColor({ alpha: 255, red: 255, green: 0, blue: 0 });
 
 
 
-#### updateDecoration20+
+### updateDecoration20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-updateDecoration(decoration: Decoration): void;
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+updateDecoration(decoration: Decoration): void
 
 更新整个文本段落的装饰线。
 
@@ -2895,6 +3090,7 @@ updateDecoration(decoration: Decoration): void;
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2914,9 +3110,10 @@ paragraph.updateDecoration({
 
 
 
-#### getVisibleTextRanges
+### getVisibleTextRanges
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getVisibleTextRanges(): Array&lt;Range&gt;
 
@@ -2932,12 +3129,14 @@ getVisibleTextRanges(): Array&lt;Range&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;Range&gt; | 段落可见文本范围数组，范围为UTF-16编码单元索引。 |
 
 
 返回的范围取决于段落的具体截断情况（如是否设置最大行数或省略号等）：
+
 
 | 场景 | 说明 |
 | --- | --- |
@@ -2958,9 +3157,10 @@ let visibleRanges = paragraph.getVisibleTextRanges();
 
 
 
-#### getCharacterRangeForGlyphRange24+
+### getCharacterRangeForGlyphRange24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCharacterRangeForGlyphRange(glyphRange: Range, encoding: drawing.TextEncoding): Array&lt;Range&gt;
 
@@ -2974,6 +3174,7 @@ getCharacterRangeForGlyphRange(glyphRange: Range, encoding: drawing.TextEncoding
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | glyphRange | Range | 是 | 字形范围。 |
@@ -2981,6 +3182,7 @@ getCharacterRangeForGlyphRange(glyphRange: Range, encoding: drawing.TextEncoding
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2990,6 +3192,7 @@ getCharacterRangeForGlyphRange(glyphRange: Range, encoding: drawing.TextEncoding
 **错误码：**
 
 以下错误码的详细介绍请参见[图形绘制与显示错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-drawing)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3033,9 +3236,10 @@ struct Index {
 
 
 
-#### getGlyphRangeForCharacterRange24+
+### getGlyphRangeForCharacterRange24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getGlyphRangeForCharacterRange(characterRange: Range, encoding: drawing.TextEncoding): Array&lt;Range&gt;
 
@@ -3049,6 +3253,7 @@ getGlyphRangeForCharacterRange(characterRange: Range, encoding: drawing.TextEnco
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | characterRange | Range | 是 | 字符范围。 |
@@ -3056,6 +3261,7 @@ getGlyphRangeForCharacterRange(characterRange: Range, encoding: drawing.TextEnco
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3065,6 +3271,7 @@ getGlyphRangeForCharacterRange(characterRange: Range, encoding: drawing.TextEnco
 **错误码：**
 
 以下错误码的详细介绍请参见[图形绘制与显示错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-drawing)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3108,9 +3315,10 @@ struct Index {
 
 
 
-#### getCharacterPositionAtCoordinate24+
+### getCharacterPositionAtCoordinate24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCharacterPositionAtCoordinate(x: number, y: number, encoding: drawing.TextEncoding): PositionWithAffinity
 
@@ -3124,6 +3332,7 @@ getCharacterPositionAtCoordinate(x: number, y: number, encoding: drawing.TextEnc
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | x | number | 是 | 文本排版区域内的水平坐标，单位为物理像素（px）。相对于文本排版区域左上角的x偏移量，向右为正方向。支持浮点数，可取负值（表示在文本区域左侧）。坐标超出文本区域范围时，将返回最近的字符位置。可通过触摸事件或点击事件获取。 |
@@ -3133,6 +3342,7 @@ getCharacterPositionAtCoordinate(x: number, y: number, encoding: drawing.TextEnc
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | PositionWithAffinity | 字符位置信息。 |
@@ -3141,6 +3351,7 @@ getCharacterPositionAtCoordinate(x: number, y: number, encoding: drawing.TextEnc
 **错误码：**
 
 以下错误码的详细介绍请参见[图形绘制与显示错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-drawing)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3185,9 +3396,10 @@ struct Index {
 
 
 
-#### getProcessState
+### getProcessState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getProcessState(): TextProcessState
 
@@ -3202,6 +3414,7 @@ getProcessState(): TextProcessState
 **起始版本：** 26.0.0
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3245,9 +3458,10 @@ struct Index {
 
 
 
-#### getTextDisplayState
+### getTextDisplayState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTextDisplayState(): TextDisplayState
 
@@ -3262,6 +3476,7 @@ getTextDisplayState(): TextDisplayState
 **起始版本：** 26.0.0
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3305,9 +3520,10 @@ struct Index {
 
 
 
-#### getParagraphStyle
+### getParagraphStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getParagraphStyle(): ParagraphStyle
 
@@ -3322,6 +3538,7 @@ getParagraphStyle(): ParagraphStyle
 **起始版本：** 26.0.0
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3378,13 +3595,16 @@ function numberToRGBA(colorNum: number): common2D.Color {
 
 
 
-#### forceReuseRasterResult
+### forceReuseRasterResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 forceReuseRasterResult(isForce: boolean): void
 
-设置是否强制复用光栅化结果。设置后，在下次调用[paint](#paint)绘制时生效。true表示强制复用光栅化结果，false表示允许更新光栅化结果，默认值为false。
+设置是否强制复用光栅化结果。不调用此接口时，系统默认允许更新光栅化结果。
+
+适用于文本内容未发生变化但需要多次调用[paint](#paint)绘制的场景，通过复用光栅化结果可避免重复光栅化计算以提升绘制性能。设置后，在下次调用[paint](#paint)绘制时生效。
 
 **系统能力**：SystemCapability.Graphics.Drawing
 
@@ -3395,6 +3615,7 @@ forceReuseRasterResult(isForce: boolean): void
 **起始版本：** 26.0.0
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3450,19 +3671,21 @@ struct Index {
 
 
 
-#### LineTypeset18+
+## LineTypeset18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-保存着文本内容以及样式的载体，可以用于计算单行排版信息。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+保存文本内容及样式的载体，可用于计算单行排版信息。
 
 下列API示例中都需先使用[ParagraphBuilder](#paragraphbuilder)类的[buildLineTypeset()](#buildlinetypeset18)接口获取到LineTypeset对象实例，再通过此实例调用对应方法。
 
 
 
-#### getLineBreak18+
+### getLineBreak18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLineBreak(startIndex: number, width: number): number
 
@@ -3474,6 +3697,7 @@ getLineBreak(startIndex: number, width: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | startIndex | number | 是 | 开始计算排版的起始位置（包括起始位置）。取值范围需要为[0,文本字符总数）的整数，当参数超出范围时抛出异常。 |
@@ -3481,6 +3705,7 @@ getLineBreak(startIndex: number, width: number): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3491,9 +3716,10 @@ getLineBreak(startIndex: number, width: number): number
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 
 **示例：**
@@ -3506,9 +3732,10 @@ let count = lineTypeset.getLineBreak(startIndex, width);
 
 
 
-#### createLine18+
+### createLine18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createLine(startIndex: number, count: number): TextLine
 
@@ -3520,6 +3747,7 @@ createLine(startIndex: number, count: number): TextLine
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | startIndex | number | 是 | 开始计算排版的起始位置，整数，取值范围为[0, 文本字符总数)。 |
@@ -3527,6 +3755,7 @@ createLine(startIndex: number, count: number): TextLine
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3537,9 +3766,10 @@ createLine(startIndex: number, count: number): TextLine
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types;3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 
 **示例：**
@@ -3553,15 +3783,17 @@ let line : text.TextLine = lineTypeset.createLine(startIndex, count);
 
 
 
-#### RunMetrics
+## RunMetrics
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述文本行中连续文本块的布局信息和度量数据。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -3571,15 +3803,17 @@ let line : text.TextLine = lineTypeset.createLine(startIndex, count);
 
 
 
-#### LineMetrics
+## LineMetrics
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述文本布局中单行文字的度量信息。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -3598,15 +3832,17 @@ let line : text.TextLine = lineTypeset.createLine(startIndex, count);
 
 
 
-#### TextBox
+## TextBox
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文本矩形区域，表示文本在布局时所占用的矩形空间。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -3616,15 +3852,17 @@ let line : text.TextLine = lineTypeset.createLine(startIndex, count);
 
 
 
-#### PositionWithAffinity
+## PositionWithAffinity
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 位置和亲和度。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -3634,15 +3872,17 @@ let line : text.TextLine = lineTypeset.createLine(startIndex, count);
 
 
 
-#### RectWidthStyle
+## RectWidthStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 矩形区域宽度规格枚举。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -3652,15 +3892,17 @@ let line : text.TextLine = lineTypeset.createLine(startIndex, count);
 
 
 
-#### RectHeightStyle
+## RectHeightStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 矩形区域高度规格枚举。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -3674,15 +3916,17 @@ let line : text.TextLine = lineTypeset.createLine(startIndex, count);
 
 
 
-#### Affinity
+## Affinity
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 位置亲和度枚举。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -3692,17 +3936,19 @@ let line : text.TextLine = lineTypeset.createLine(startIndex, count);
 
 
 
-#### ParagraphBuilder
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-段落生成器。
+## ParagraphBuilder
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### constructor
+段落生成器，采用建造者模式构建段落对象。开发者通过构造函数传入[ParagraphStyle](#paragraphstyle)和[FontCollection](#fontcollection)初始化ParagraphBuilder，然后通过[pushStyle](#pushstyle)设置文本样式、[addText](#addtext)添加文本内容，最终调用[build()](#build)接口生成[Paragraph](#paragraph)对象进行排版和绘制。
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+### constructor
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(paragraphStyle: ParagraphStyle, fontCollection: FontCollection)
 
@@ -3714,10 +3960,11 @@ ParagraphBuilder对象的构造函数。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | paragraphStyle | ParagraphStyle | 是 | 段落样式。 |
-| fontCollection | FontCollection | 是 | 字体集。 |
+| fontCollection | FontCollection | 是 | 字体集对象，提供文本排版所需的字体资源，用于在段落构建过程中进行字形匹配和文本渲染。 |
 
 
 **示例：**
@@ -3754,9 +4001,10 @@ struct Index {
 
 
 
-#### pushStyle
+### pushStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pushStyle(textStyle: TextStyle): void
 
@@ -3772,6 +4020,7 @@ pushStyle(textStyle: TextStyle): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | textStyle | TextStyle | 是 | 包含了对文本的各种视觉属性的定义，如字体、字号、颜色、字重、字间距、行距、装饰（如下划线、删除线）、文本阴影等。 |
@@ -3780,10 +4029,7 @@ pushStyle(textStyle: TextStyle): void
 **示例：**
 
 ```text
-import { drawing } from '@kit.ArkGraphics2D'
 import { text } from '@kit.ArkGraphics2D'
-import { common2D } from '@kit.ArkGraphics2D'
-import { image } from '@kit.ImageKit'
 
 function textFunc() {
   let myTextStyle: text.TextStyle = {
@@ -3815,13 +4061,18 @@ struct Index {
 
 
 
-#### popStyle
+### popStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 popStyle(): void
 
 弹出当前文本样式。
+
+> [!NOTE]
+> 必须在调用 pushStyle() 之后才能调用此方法。调用后，后续添加的文本将使用弹出前的文本样式。如果样式栈为空，将使用 ParagraphStyle 中的textStyle作为默认样式。
+
 
 **系统能力**：SystemCapability.Graphics.Drawing
 
@@ -3830,10 +4081,7 @@ popStyle(): void
 **示例：**
 
 ```text
-import { drawing } from '@kit.ArkGraphics2D'
 import { text } from '@kit.ArkGraphics2D'
-import { common2D } from '@kit.ArkGraphics2D'
-import { image } from '@kit.ImageKit'
 
 function textFunc() {
   let myTextStyle: text.TextStyle = {
@@ -3866,9 +4114,10 @@ struct Index {
 
 
 
-#### addText
+### addText
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addText(text: string): void
 
@@ -3880,6 +4129,7 @@ addText(text: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | text | string | 是 | 段落中插入的具体文本字符串，传入非法Unicode时会显示�。 |
@@ -3888,10 +4138,7 @@ addText(text: string): void
 **示例：**
 
 ```text
-import { drawing } from '@kit.ArkGraphics2D'
 import { text } from '@kit.ArkGraphics2D'
-import { common2D } from '@kit.ArkGraphics2D'
-import { image } from '@kit.ImageKit'
 
 function textFunc() {
   let myTextStyle: text.TextStyle = {
@@ -3923,19 +4170,21 @@ struct Index {
 
 
 
-#### addPlaceholder
+### addPlaceholder
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addPlaceholder(placeholderSpan: PlaceholderSpan): void
 
-用于构建文本段落时插入占位符。
+用于构建文本段落时插入占位符。插入后，占位符将在段落排版中按照指定的宽度、高度和对齐方式占据相应空间，并影响文本的换行和布局。
 
 **系统能力**：SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3945,10 +4194,7 @@ addPlaceholder(placeholderSpan: PlaceholderSpan): void
 **示例：**
 
 ```text
-import { drawing } from '@kit.ArkGraphics2D'
 import { text } from '@kit.ArkGraphics2D'
-import { common2D } from '@kit.ArkGraphics2D'
-import { image } from '@kit.ImageKit'
 
 function textFunc() {
   let myParagraphStyle: text.ParagraphStyle = {
@@ -3982,19 +4228,21 @@ struct Index {
 
 
 
-#### build
+### build
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 build(): Paragraph
 
-用于构建段落，生成可用于后续排版渲染的段落对象。
+用于构建段落，生成可用于后续排版渲染的段落对象。调用build()后，如需再次构建文本，必须创建新的ParagraphBuilder实例。
 
 **系统能力**：SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4004,8 +4252,7 @@ build(): Paragraph
 **示例：**
 
 ```text
-import { drawing, text, common2D } from '@kit.ArkGraphics2D'
-import { image } from '@kit.ImageKit'
+import { text } from '@kit.ArkGraphics2D'
 
 function textFunc() {
   let myTextStyle: text.TextStyle = {
@@ -4038,19 +4285,21 @@ struct Index {
 
 
 
-#### buildLineTypeset18+
+### buildLineTypeset18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 buildLineTypeset(): LineTypeset
 
-构建行排版器。
+构建行排版器，生成可用于逐行排版计算的LineTypeset对象。
 
 **系统能力**：SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4088,9 +4337,10 @@ struct Index {
 
 
 
-#### addSymbol
+### addSymbol
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addSymbol(symbolId: number): void
 
@@ -4101,6 +4351,7 @@ addSymbol(symbolId: number): void
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4143,15 +4394,17 @@ struct Index {
 
 
 
-#### TypographicBounds18+
+## TypographicBounds18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文本行的排版边界。文本行排版边界与排版字体、排版字号有关，与字符本身无关，例如字符串为" a b "，'a'字符前面有1个空格，'b'字符后面有1个空格，排版边界就包括行首和末尾空格的边界。例如字符串为"j"或"E"，排版边界相同，即与字符本身无关。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -4167,9 +4420,10 @@ struct Index {
 
 
 
-#### CaretOffsetsCallback18+
+## CaretOffsetsCallback18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type CaretOffsetsCallback = (offset: number, index: number, leadingEdge: boolean) => boolean
 
@@ -4181,6 +4435,7 @@ type CaretOffsetsCallback = (offset: number, index: number, leadingEdge: boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 是 | 文本行中每个字符的偏移量，浮点数，单位为物理像素px。 |
@@ -4190,6 +4445,7 @@ type CaretOffsetsCallback = (offset: number, index: number, leadingEdge: boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 表示是否停止调用该回调函数，true表示停止调用该回调函数，false表示继续调用该回调函数。 |
@@ -4197,9 +4453,10 @@ type CaretOffsetsCallback = (offset: number, index: number, leadingEdge: boolean
 
 
 
-#### TextLine
+## TextLine
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述段落基础文本行结构的载体。
 
@@ -4207,9 +4464,10 @@ type CaretOffsetsCallback = (offset: number, index: number, leadingEdge: boolean
 
 
 
-#### getGlyphCount
+### getGlyphCount
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getGlyphCount(): number
 
@@ -4220,6 +4478,7 @@ getGlyphCount(): number
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4234,9 +4493,10 @@ let glyphCount = lines[0].getGlyphCount();
 
 
 
-#### getTextRange
+### getTextRange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTextRange(): Range
 
@@ -4247,6 +4507,7 @@ getTextRange(): Range
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4261,9 +4522,10 @@ let textRange = lines[0].getTextRange();
 
 
 
-#### getGlyphRuns
+### getGlyphRuns
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getGlyphRuns(): Array&lt;Run&gt;
 
@@ -4274,6 +4536,7 @@ getGlyphRuns(): Array&lt;Run&gt;
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4288,9 +4551,10 @@ let runs = lines[0].getGlyphRuns();
 
 
 
-#### paint
+### paint
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 paint(canvas: drawing.Canvas, x: number, y: number): void
 
@@ -4301,6 +4565,7 @@ paint(canvas: drawing.Canvas, x: number, y: number): void
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4313,8 +4578,6 @@ paint(canvas: drawing.Canvas, x: number, y: number): void
 
 ```text
 import { drawing } from '@kit.ArkGraphics2D'
-import { text } from '@kit.ArkGraphics2D'
-import { common2D } from '@kit.ArkGraphics2D'
 import { image } from '@kit.ImageKit'
 
 function textFunc(pixelmap: PixelMap) {
@@ -4345,9 +4608,10 @@ struct Index {
 
 
 
-#### createTruncatedLine18+
+### createTruncatedLine18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createTruncatedLine(width: number, ellipsisMode: EllipsisMode, ellipsis: string): TextLine
 
@@ -4359,6 +4623,7 @@ createTruncatedLine(width: number, ellipsisMode: EllipsisMode, ellipsis: string)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | width | number | 是 | 截断后的行宽度，浮点数，单位为物理像素px。 |
@@ -4368,6 +4633,7 @@ createTruncatedLine(width: number, ellipsisMode: EllipsisMode, ellipsis: string)
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TextLine | 截断的文本行对象。 |
@@ -4376,7 +4642,7 @@ createTruncatedLine(width: number, ellipsisMode: EllipsisMode, ellipsis: string)
 **示例：**
 
 ```text
-import { drawing, text, common2D } from '@kit.ArkGraphics2D'
+import { drawing, text } from '@kit.ArkGraphics2D'
 import { image } from '@kit.ImageKit'
 
 function textFunc(pixelmap: PixelMap) {
@@ -4408,9 +4674,10 @@ struct Index {
 
 
 
-#### getTypographicBounds18+
+### getTypographicBounds18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTypographicBounds(): TypographicBounds
 
@@ -4426,6 +4693,7 @@ getTypographicBounds(): TypographicBounds
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypographicBounds | 文本行的排版边界。 |
@@ -4440,9 +4708,10 @@ console.info('textLine ascent:' + bounds.ascent + ', descent:' + bounds.descent 
 
 
 
-#### getImageBounds18+
+### getImageBounds18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getImageBounds(): common2D.Rect
 
@@ -4458,6 +4727,7 @@ getImageBounds(): common2D.Rect
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | common2D.Rect | 文本行的图像边界，单位为物理像素px。 |
@@ -4471,9 +4741,10 @@ let imageBounds = lines[0].getImageBounds();
 
 
 
-#### getTrailingSpaceWidth18+
+### getTrailingSpaceWidth18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTrailingSpaceWidth(): number
 
@@ -4484,6 +4755,7 @@ getTrailingSpaceWidth(): number
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4498,9 +4770,10 @@ let trailingSpaceWidth = lines[0].getTrailingSpaceWidth();
 
 
 
-#### getStringIndexForPosition18+
+### getStringIndexForPosition18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStringIndexForPosition(point: common2D.Point): number
 
@@ -4512,12 +4785,14 @@ getStringIndexForPosition(point: common2D.Point): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| point | common2D.Point | 是 | 要查找索引的位置。 |
+| point | common2D.Point | 是 | 要查找字符索引的坐标位置，坐标相对于文本行的左上角原点，单位为物理像素px。其中x为水平坐标，y为垂直坐标。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4527,15 +4802,17 @@ getStringIndexForPosition(point: common2D.Point): number
 **示例：**
 
 ```text
+import { common2D } from '@kit.ArkGraphics2D'
 let point : common2D.Point = { x: 15.0, y: 2.0 };
 let index = lines[0].getStringIndexForPosition(point);
 ```
 
 
 
-#### getOffsetForStringIndex18+
+### getOffsetForStringIndex18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOffsetForStringIndex(index: number): number
 
@@ -4547,12 +4824,14 @@ getOffsetForStringIndex(index: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 要获取偏移量的字符串索引，整数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4567,9 +4846,10 @@ let offset = lines[0].getOffsetForStringIndex(3);
 
 
 
-#### enumerateCaretOffsets18+
+### enumerateCaretOffsets18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enumerateCaretOffsets(callback: CaretOffsetsCallback): void
 
@@ -4581,6 +4861,7 @@ enumerateCaretOffsets(callback: CaretOffsetsCallback): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | CaretOffsetsCallback | 是 | 用户自定义函数。回调方法参数包括文本行中每个字符的偏移量和索引值。 |
@@ -4589,18 +4870,18 @@ enumerateCaretOffsets(callback: CaretOffsetsCallback): void
 **示例：**
 
 ```text
-function callback(offset: number, index: number, leadingEdge: boolean): boolean {
+lines[0].enumerateCaretOffsets((offset: number, index: number, leadingEdge: boolean): boolean => {
   console.info('textLine: offset: ' + offset + ', index: ' + index + ', leadingEdge: ' + leadingEdge);
   return index > 50;
-}
-lines[0].enumerateCaretOffsets(callback);
+});
 ```
 
 
 
-#### getAlignmentOffset18+
+### getAlignmentOffset18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAlignmentOffset(alignmentFactor: number, alignmentWidth: number): number
 
@@ -4612,6 +4893,7 @@ getAlignmentOffset(alignmentFactor: number, alignmentWidth: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | alignmentFactor | number | 是 | 对齐因子，即对齐的程度，浮点数。小于等于0.0表示左对齐，大于0.0小于0.5表示偏左对齐，0.5表示居中对齐，大于0.5小于1.0表示偏右对齐，大于等于1.0表示右对齐。 |
@@ -4619,6 +4901,7 @@ getAlignmentOffset(alignmentFactor: number, alignmentWidth: number): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4633,19 +4916,21 @@ let alignmentOffset = lines[0].getAlignmentOffset(0.5, 500);
 
 
 
-#### Run
+## Run
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-文本排版单元。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+文本排版单元，表示一段具有相同样式属性的连续文本片段。Run由[TextLine](#textline)类的[getGlyphRuns()](#getglyphruns)接口获取。
 
 下列API示例中都需先使用[TextLine](#textline)类的[getGlyphRuns()](#getglyphruns)接口获取Run对象实例，再通过此实例调用对应方法。
 
 
 
-#### getGlyphCount
+### getGlyphCount
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getGlyphCount(): number
 
@@ -4656,6 +4941,7 @@ getGlyphCount(): number
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4670,9 +4956,10 @@ let glyphs = runs[0].getGlyphCount();
 
 
 
-#### getGlyphs
+### getGlyphs
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getGlyphs(): Array&lt;number&gt;
 
@@ -4683,6 +4970,7 @@ getGlyphs(): Array&lt;number&gt;
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4697,9 +4985,10 @@ let glyph = runs[0].getGlyphs();
 
 
 
-#### getGlyphs18+
+### getGlyphs18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getGlyphs(range: Range): Array&lt;number&gt;
 
@@ -4711,12 +5000,14 @@ getGlyphs(range: Range): Array&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | range | Range | 是 | 要获取的字形序号范围，range.start表示范围开始的位置，range.end表示范围的长度，当range.end为0时表示从range.start开始获取到渲染块结束。当range.end、range.start为负数，或者传入null、undefined时，该方法将返回undefined。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4753,9 +5044,10 @@ struct Index {
 
 
 
-#### getPositions
+### getPositions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPositions(): Array<common2D.Point>
 
@@ -4766,6 +5058,7 @@ getPositions(): Array<common2D.Point>
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4780,9 +5073,10 @@ let positions = runs[0].getPositions();
 
 
 
-#### getPositions18+
+### getPositions18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPositions(range: Range): Array<common2D.Point>
 
@@ -4794,12 +5088,14 @@ getPositions(range: Range): Array<common2D.Point>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | range | Range | 是 | 要获取的字形位置范围，range.start表示范围开始的位置，range.end表示范围的长度，如果长度是0表示从范围range.start开始获取到渲染块结束。当range.end、range.start为负数，或者传入null、undefined时，该方法将返回undefined。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4836,9 +5132,10 @@ struct Index {
 
 
 
-#### getOffsets
+### getOffsets
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOffsets(): Array<common2D.Point>
 
@@ -4849,6 +5146,7 @@ getOffsets(): Array<common2D.Point>
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4863,9 +5161,10 @@ let offsets = runs[0].getOffsets();
 
 
 
-#### getFont
+### getFont
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFont(): drawing.Font
 
@@ -4876,6 +5175,7 @@ getFont(): drawing.Font
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4890,9 +5190,10 @@ let font = runs[0].getFont();
 
 
 
-#### paint
+### paint
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 paint(canvas: drawing.Canvas, x: number, y: number): void
 
@@ -4903,6 +5204,7 @@ paint(canvas: drawing.Canvas, x: number, y: number): void
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4916,7 +5218,6 @@ paint(canvas: drawing.Canvas, x: number, y: number): void
 ```text
 import { drawing } from '@kit.ArkGraphics2D'
 import { text } from '@kit.ArkGraphics2D'
-import { common2D } from '@kit.ArkGraphics2D'
 import { image } from '@kit.ImageKit'
 
 function textFunc(pixelmap: PixelMap) {
@@ -4947,9 +5248,10 @@ struct Index {
 
 
 
-#### getStringRange18+
+### getStringRange18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStringRange(): Range
 
@@ -4960,6 +5262,7 @@ getStringRange(): Range
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4976,9 +5279,10 @@ let length = runStringRange.end;
 
 
 
-#### getStringIndices18+
+### getStringIndices18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStringIndices(range?: Range): Array&lt;number&gt;
 
@@ -4990,12 +5294,14 @@ getStringIndices(range?: Range): Array&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | range | Range | 否 | 要获取的字符索引范围，range.start表示范围开始的位置，range.end表示范围的长度，如果长度是0表示从范围range.start开始获取到渲染块结束。当range.end、range.start为负数，或者传入null、undefined时，该方法将返回undefined。不传该参数时，默认获取整个渲染块。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5032,9 +5338,10 @@ struct Index {
 
 
 
-#### getImageBounds18+
+### getImageBounds18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getImageBounds(): common2D.Rect
 
@@ -5050,6 +5357,7 @@ getImageBounds(): common2D.Rect
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | common2D.Rect | 该排版单元的图像边界，单位为物理像素px。 |
@@ -5063,9 +5371,10 @@ let bounds = runs[0].getImageBounds();
 
 
 
-#### getTypographicBounds18+
+### getTypographicBounds18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTypographicBounds(): TypographicBounds
 
@@ -5081,6 +5390,7 @@ getTypographicBounds(): TypographicBounds
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | TypographicBounds | 该排版单元的排版边界。 |
@@ -5094,9 +5404,10 @@ let typographicBounds = runs[0].getTypographicBounds();
 
 
 
-#### getTextDirection20+
+### getTextDirection20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTextDirection(): TextDirection
 
@@ -5107,6 +5418,7 @@ getTextDirection(): TextDirection
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5121,9 +5433,10 @@ let textDirection = runs[0].getTextDirection();
 
 
 
-#### getAdvances20+
+### getAdvances20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAdvances(range: Range): Array<common2D.Point>
 
@@ -5135,12 +5448,14 @@ getAdvances(range: Range): Array<common2D.Point>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | range | Range | 是 | 要获取的字形位置范围。range.start表示范围开始的位置，range.end表示范围的长度。如果长度是0表示从range.start开始获取到渲染块结束。当range.end、range.start为负数，或者传入null、undefined时，该方法将返回undefined。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5158,9 +5473,10 @@ let advancesNull = runs[0].getAdvances(null); // null是非法参数，将返回
 
 
 
-#### getTextStyle
+### getTextStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTextStyle(): TextStyle
 
@@ -5175,6 +5491,7 @@ getTextStyle(): TextStyle
 **起始版本：** 26.0.0
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5242,15 +5559,17 @@ function numberToRGBA(colorNum: number): common2D.Color {
 
 
 
-#### TextTab18+
+## TextTab18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 段落风格的文本制表符，储存了对齐方式和位置。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -5263,32 +5582,34 @@ function numberToRGBA(colorNum: number): common2D.Color {
 alignment为CENTER，location为200，文本为"12/t345"：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/B3x_lQpoQZiLfACIYdD_4Q/zh-cn_image_0000002656009728.png?HW-CC-KV=V1&HW-CC-Date=20260730T071718Z&HW-CC-Expire=86400&HW-CC-Sign=B50A1CFEF5B0CE99499E7E31157E2FA5A4C42B583895FC8F3849746286644D03)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/PI2d7FSIQD-SojPhfx2KNg/zh-cn_image_0000002747213819.png?HW-CC-KV=V1&HW-CC-Date=20260911T072904Z&HW-CC-Expire=86400&HW-CC-Sign=FEABDA0F7606577C7DB969E0B7190B37DC820BC73E518952DDC950F93B7C11BC)
 
 
 alignment为LEFT，location为100，文本为"abccccccccc/tdef"：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/BHcLX1SKR5ySMJA6s0P3rA/zh-cn_image_0000002655849806.png?HW-CC-KV=V1&HW-CC-Date=20260730T071718Z&HW-CC-Expire=86400&HW-CC-Sign=6DA7915AA3FCE3EB907C4B4E957D69BD79A1B1D58EFB2F1A196F91D6F950B272)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/lxm1taKJS4StrWvXEGWO8g/zh-cn_image_0000002717773884.png?HW-CC-KV=V1&HW-CC-Date=20260911T072904Z&HW-CC-Expire=86400&HW-CC-Sign=BCF0B639CC726A80AA82F1BF2779CB0A7DA970ED6A89F0D1F3D62BFC867721CE)
 
 
 alignment为RIGHT，location为100，文本为"aabcdef/tg hi/tjkl/tmno/tp qr"：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/sjE2PsXuSsCosNUekoro9w/zh-cn_image_0000002686089237.png?HW-CC-KV=V1&HW-CC-Date=20260730T071718Z&HW-CC-Expire=86400&HW-CC-Sign=3B26F2C5D733A21A04E82A4694A67600AC95D3D24497C9CBE8C09DD53984F2B7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/MW_OLkmDTtuxFwaboX_MOA/zh-cn_image_0000002717613954.png?HW-CC-KV=V1&HW-CC-Date=20260911T072904Z&HW-CC-Expire=86400&HW-CC-Sign=6862B480879A0C84FE63B8148A61DF6BD0C2F997AF13D15A7E7CE138B23B8074)
 
 
 
 
-#### SystemFontType14+
+## SystemFontType14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 字体类型枚举，通过位或运算可实现组合类型。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **元服务API**：从API version 22开始，该接口支持在元服务中使用。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

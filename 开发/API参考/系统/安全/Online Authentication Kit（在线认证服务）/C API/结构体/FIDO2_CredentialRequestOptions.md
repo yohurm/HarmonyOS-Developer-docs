@@ -1,10 +1,14 @@
 # FIDO2_CredentialRequestOptions
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_f_i_d_o2___credential_request_options
+**支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 认证信息字典对象。
  
@@ -16,12 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 成员变量
+### 成员变量
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | FIDO2_CredentialMediationRequirement mediation | 操作是否需要用户参与。 |
@@ -30,11 +41,17 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### mediation
+### mediation
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FIDO2_CredentialMediationRequirement FIDO2_CredentialRequestOptions::mediation
@@ -46,7 +63,10 @@ FIDO2_CredentialMediationRequirement FIDO2_CredentialRequestOptions::mediation
  
   
 
-#### publicKey
+### publicKey
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FIDO2_PublicKeyCredentialRequestOptions FIDO2_CredentialRequestOptions::publicKey

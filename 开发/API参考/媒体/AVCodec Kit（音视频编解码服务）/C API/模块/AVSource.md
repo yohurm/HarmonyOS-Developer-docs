@@ -1,13 +1,14 @@
 # AVSource
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avsource
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 AVSource模块提供用于构造媒体资源对象功能的函数。开发者通过本模块可以根据URI、文件描述符或自定义数据源创建媒体源实例，获取媒体文件的基础信息和轨道信息，为后续解封装操作提供数据源。
  
@@ -29,10 +30,12 @@ AVSource模块提供用于构造媒体资源对象功能的函数。开发者通
  
   
 
-#### 文件汇总
+## 文件汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | native_avsource.h | 声明用于音视频媒体数据解析的接口。 |

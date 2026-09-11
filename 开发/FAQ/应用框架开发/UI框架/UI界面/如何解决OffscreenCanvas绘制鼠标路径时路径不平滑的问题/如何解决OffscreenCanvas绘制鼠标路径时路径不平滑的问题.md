@@ -4,14 +4,14 @@
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-996
 
-#### 问题现象
+## 问题现象
 
 PC应用使用OffscreenCanvas离屏画布绘制鼠标路径，绘制路径不平滑，特别是快速移动鼠标时，出现明显折线。
  
 问题效果如下：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/Mi5mS1SHQFmjq5Y8mtJK2Q/zh-cn_image_0000002658801089.png?HW-CC-KV=V1&HW-CC-Date=20260818T063536Z&HW-CC-Expire=86400&HW-CC-Sign=041BA154CD1F74AD8A30372C1A752250B49FCF37FD8E82AF6B82FDC6320326AA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/Mi5mS1SHQFmjq5Y8mtJK2Q/zh-cn_image_0000002658801089.png?HW-CC-KV=V1&HW-CC-Date=20260911T072744Z&HW-CC-Expire=86400&HW-CC-Sign=E3D82AAEB7D61CD9950A22833159F0D4FB88CF3D840AF0071F38F3C741527A47)
 
  
 问题代码如下：
@@ -19,7 +19,7 @@ PC应用使用OffscreenCanvas离屏画布绘制鼠标路径，绘制路径不平
 ```text
 import { display } from '@kit.ArkUI';
 
-// 绘画状态接口
+<em>// 绘画状态接口</em>
 export class DrawingState {
   isDrawing: boolean = false;
   currentColor: string = 'rgb(0,255,0)';
@@ -28,9 +28,9 @@ export class DrawingState {
   startY: number = 0;
 }
 
-/**
- *  canvas绘画工具类
- */
+<em>/**</em>
+<em> *  canvas绘画工具类</em>
+<em> */</em>
 @ObservedV2
 export class CanvasUtils {
   static instance: CanvasUtils | null = null;
@@ -52,11 +52,11 @@ export class CanvasUtils {
     startY: 0
   };
 
-  // 初始化画布
+  <em>// 初始化画布</em>
   initCanvas() {
-    // 填充背景色
+    <em>// 填充背景色</em>
     this.offscreenCanvas.fillStyle = '#000';
-    // 填充一个矩形
+    <em>// 填充一个矩形</em>
     this.offscreenCanvas.fillRect(0, 0, this.getWidth(), this.getHeight());
     this.offscreenCanvas.lineCap = 'round';
     this.offscreenCanvas.lineJoin = 'round';
@@ -75,7 +75,7 @@ export class CanvasUtils {
   }
 
 
-  // 设置绘画样式
+  <em>// 设置绘画样式</em>
   setupDrawingStyle() {
     this.offscreenCanvas.strokeStyle = this.drawingState.currentColor;
     this.offscreenCanvas.lineWidth = this.drawingState.currentSize;
@@ -84,7 +84,7 @@ export class CanvasUtils {
     this.canvasRenderingContext.transferFromImageBitmap(this.offscreenCanvas.transferToImageBitmap());
   }
 
-  // 开始绘画
+  <em>// 开始绘画</em>
   startDrawing(event: MouseEvent) {
     this.drawingState.isDrawing = true;
     this.drawingState.startX = event.displayX;
@@ -95,21 +95,21 @@ export class CanvasUtils {
     this.canvasRenderingContext.transferFromImageBitmap(this.offscreenCanvas.transferToImageBitmap());
   }
 
-  // 绘画中
+  <em>// 绘画中</em>
   drawing(event: MouseEvent) {
     if (!this.drawingState.isDrawing) {
       return;
     }
-    // 从当前点到指定点路径连接
+    <em>// 从当前点到指定点路径连接</em>
     this.offscreenCanvas.lineTo(event.displayX, event.displayY);
-    // 根据当前路径进行边框绘制操作
+    <em>// 根据当前路径进行边框绘制操作</em>
     this.offscreenCanvas.stroke();
     this.offscreenCanvas.globalCompositeOperation = 'source-over';
     this.canvasRenderingContext.transferFromImageBitmap(this.offscreenCanvas.transferToImageBitmap());
   }
 
 
-  // 结束绘画
+  <em>// 结束绘画</em>
   stopDrawing() {
     if (this.drawingState.isDrawing) {
       this.drawingState.isDrawing = false;
@@ -127,7 +127,7 @@ struct Index {
   build() {
     Stack({ alignContent: Alignment.TopStart }) {
 
-      // 画布
+      <em>// 画布</em>
       Canvas(this.canvasUtils.canvasRenderingContext)
         .width('100%')
         .height('100%')
@@ -156,7 +156,7 @@ struct Index {
  
  
 
-#### 背景知识
+## 背景知识
 
 - [Canvas](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-canvas)提供画布组件，用于绘制图形。
 - [CanvasRenderingContext2D](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-canvasrenderingcontext2d)是用于在Canvas上进行绘制的画笔，在主线程上通过CPU进行绘制。
@@ -166,13 +166,13 @@ struct Index {
  
  
 
-#### 问题定位
+## 问题定位
 
 问题代码中主要通过onMouse获取鼠标路径中的各个点的坐标，通过[lineTo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-common-method#lineto)方法将这些点连接起来，进而实现了绘制鼠标移动路径的方法。其中，onMouse的回调频率与屏幕刷新率相关，刷新率越高，触发频率越高。通过GPU进行绘制的OffscreenCanvas在绘制速度上不如使用CPU进行绘制CanvasRenderingContext2D。
  
  
 
-#### 分析结论
+## 分析结论
 
 由于屏幕刷新率不足和OffscreenCanvas绘制速度较慢，导致了问题代码在快速移动鼠标时出现明显折线。其中，离屏渲染和在屏渲染是出现明显折线的主要原因。当刷新率提升时，也能在一定程度上优化体验。
  
@@ -181,24 +181,24 @@ struct Index {
 120Hz刷新率+离屏渲染：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/t3PcVAS2TvS91E1FKO4l7Q/zh-cn_image_0000002628401816.png?HW-CC-KV=V1&HW-CC-Date=20260818T063536Z&HW-CC-Expire=86400&HW-CC-Sign=9508D81A3EDDD1FD98C00DDFF4AF993C194D2A4658A5E14358E6C78DC538F1DF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/t3PcVAS2TvS91E1FKO4l7Q/zh-cn_image_0000002628401816.png?HW-CC-KV=V1&HW-CC-Date=20260911T072744Z&HW-CC-Expire=86400&HW-CC-Sign=4E21E6FA9E844D1BE2F1491AFB9DC29BE0F5BD8F8FA490B1B4916526681D80D0)
 
  
 60Hz刷新率+在屏渲染：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/y0MPoKR2TLiO_mpETUp2Qw/zh-cn_image_0000002628561724.png?HW-CC-KV=V1&HW-CC-Date=20260818T063536Z&HW-CC-Expire=86400&HW-CC-Sign=AE2E9B272085A95D47D3E3F92CB8CFD600C6CFFDDE68C32857863D62E8CF4B64)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/y0MPoKR2TLiO_mpETUp2Qw/zh-cn_image_0000002628561724.png?HW-CC-KV=V1&HW-CC-Date=20260911T072744Z&HW-CC-Expire=86400&HW-CC-Sign=471480965A5F2EB470936341D15B5B946341622119B1CD70B0630AD09C9A0931)
 
  
 120Hz刷新率+在屏渲染：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/bXiRKAk_RdqnXL-tvuY_Cw/zh-cn_image_0000002658921037.png?HW-CC-KV=V1&HW-CC-Date=20260818T063536Z&HW-CC-Expire=86400&HW-CC-Sign=67C16354C99C7A76C4278867B12699E7C7732A748977C94A4A07167EC66384AC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/bXiRKAk_RdqnXL-tvuY_Cw/zh-cn_image_0000002658921037.png?HW-CC-KV=V1&HW-CC-Date=20260911T072744Z&HW-CC-Expire=86400&HW-CC-Sign=4AD61B8E4E57DA88353C334CB4C9BF96A9D214A41FF656A0BC67C6008FFA78BA)
 
  
  
 
-#### 修改建议
+## 修改建议
 
 将离屏渲染OffscreenCanvas改为在屏渲染CanvasRenderingContext2D，即可显著提升绘制性能。同时，建议在PC设备的设置中将屏幕刷新率改为120Hz，优化体验。
  
@@ -207,7 +207,7 @@ struct Index {
 ```text
 import { display } from '@kit.ArkUI';
 
-// 绘画状态接口
+<em>// 绘画状态接口</em>
 export class DrawingState {
   isDrawing: boolean = false;
   currentColor: string = 'rgb(0,255,0)';
@@ -216,9 +216,9 @@ export class DrawingState {
   startY: number = 0;
 }
 
-/**
- *  canvas绘画工具类
- */
+<em>/**</em>
+<em> *  canvas绘画工具类</em>
+<em> */</em>
 @ObservedV2
 export class CanvasUtils {
   static instance: CanvasUtils | null = null;
@@ -238,11 +238,11 @@ export class CanvasUtils {
     startY: 0
   };
 
-  // 初始化画布
+  <em>// 初始化画布</em>
   initCanvas() {
-    // 填充背景色
+    <em>// 填充背景色</em>
     this.canvasRenderingContext.fillStyle = '#000';
-    // 填充一个矩形
+    <em>// 填充一个矩形</em>
     this.canvasRenderingContext.fillRect(0, 0, this.getWidth(), this.getHeight());
     this.canvasRenderingContext.lineCap = 'round';
     this.canvasRenderingContext.lineJoin = 'round';
@@ -258,7 +258,7 @@ export class CanvasUtils {
     return displayInstance.height;
   }
 
-  // 设置绘画样式
+  <em>// 设置绘画样式</em>
   setupDrawingStyle() {
     this.canvasRenderingContext.strokeStyle = this.drawingState.currentColor;
     this.canvasRenderingContext.lineWidth = this.drawingState.currentSize;
@@ -266,7 +266,7 @@ export class CanvasUtils {
     this.canvasRenderingContext.shadowBlur = 0;
   }
 
-  // 开始绘画
+  <em>// 开始绘画</em>
   startDrawing(event: MouseEvent) {
     this.drawingState.isDrawing = true;
     this.drawingState.startX = event.displayX;
@@ -276,19 +276,19 @@ export class CanvasUtils {
     this.canvasRenderingContext.moveTo(event.displayX, event.displayY);
   }
 
-  // 绘画中
+  <em>// 绘画中</em>
   drawing(event: MouseEvent) {
     if (!this.drawingState.isDrawing) {
       return;
     }
-    // 从当前点到指定点路径连接
+    <em>// 从当前点到指定点路径连接</em>
     this.canvasRenderingContext.lineTo(event.displayX, event.displayY);
-    // 根据当前路径进行边框绘制操作
+    <em>// 根据当前路径进行边框绘制操作</em>
     this.canvasRenderingContext.stroke();
     this.canvasRenderingContext.globalCompositeOperation = 'source-over';
   }
 
-  // 结束绘画
+  <em>// 结束绘画</em>
   stopDrawing() {
     if (this.drawingState.isDrawing) {
       this.drawingState.isDrawing = false;
@@ -304,7 +304,7 @@ struct CanvasRenderingContext2DDemo {
 
   build() {
     Stack({ alignContent: Alignment.TopStart }) {
-      // 画布
+      <em>// 画布</em>
       Canvas(this.canvasUtils.canvasRenderingContext)
         .width('100%')
         .height('100%')

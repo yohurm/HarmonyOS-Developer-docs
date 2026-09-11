@@ -1,9 +1,9 @@
 # @ohos.web.WebNativeMessagingExtensionContext (Web Native Messaging Extension Context)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-web-webnativemessagingextensioncontext
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** PC/2in1 | Tablet
 
 WebNativeMessagingExtensionContext是Web原生消息扩展（[WebNativeMessagingExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-web-webnativemessagingextensionability)）的运行上下文，继承自ExtensionContext，为扩展Ability提供生命周期管理、Ability启动以及原生消息连接控制能力。开发者可在继承WebNativeMessagingExtensionAbility的扩展中通过this.context获取该上下文，进而调用[startAbility](#startability)启动其他Ability、调用[startAbilityForResult](#startabilityforresult)启动UIAbility并接收返回结果、调用[terminateSelf](#terminateself)结束当前扩展，或调用[stopNativeConnection](#stopnativeconnection)停止指定的Web原生消息连接。
 
@@ -12,9 +12,10 @@ WebNativeMessagingExtensionContext是Web原生消息扩展（[WebNativeMessaging
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 ```text
 import { WebNativeMessagingExtensionAbility, ConnectionInfo } from '@kit.ArkWeb';
@@ -22,21 +23,25 @@ import { WebNativeMessagingExtensionAbility, ConnectionInfo } from '@kit.ArkWeb'
 
 
 
-#### WebNativeMessagingExtensionContext
+## WebNativeMessagingExtensionContext
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 WebNativeMessagingExtensionContext是Web原生消息扩展的上下文，包含所需交互能力。
 
+**系统能力:** SystemCapability.Web.Webview.Core
 
 
-#### startAbility
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+### startAbility
+
+
+**支持设备：** PC/2in1 | Tablet
 
 startAbility(want: Want, options?: StartOptions): Promise&lt;void&gt;
 
-使用Promise异步回调启动Ability。
+使用Promise异步回调启动Ability。如需获取启动的UIAbility退出时的返回结果，可以使用[startAbilityForResult](#startabilityforresult)。
 
 **系统能力:** SystemCapability.Web.Webview.Core
 
@@ -44,13 +49,15 @@ startAbility(want: Want, options?: StartOptions): Promise&lt;void&gt;
 
 **参数:**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| want | Want | 是 | 表示需要启动的Ability的信息。 |
-| options | StartOptions | 否 | 启动选项。 |
+| want | Want | 是 | 表示需要启动的Ability的信息，包含bundleName、abilityName等属性，用于指定要启动的目标Ability。 |
+| options | StartOptions | 否 | 启动选项，用于指定目标UIAbility启动时的选项，包括但不局限于窗口模式、目标UIAbility启动时所在的屏幕等。当需要自定义启动配置时传入，不传入时使用系统默认启动配置。 |
 
 
 **返回值:**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -60,6 +67,7 @@ startAbility(want: Want, options?: StartOptions): Promise&lt;void&gt;
 **错误码:**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -97,16 +105,20 @@ import { BusinessError } from '@kit.BasicServicesKit';
 export class MyWebNativeMessagingExtension extends WebNativeMessagingExtensionAbility {
   onConnectNative(info: ConnectionInfo): void {
     const abilityWant: Want = {
-    bundleName: 'com.example.mybundle',
-    abilityName: 'MainAbility'
+      bundleName: 'com.example.mybundle',
+      abilityName: 'MainAbility'
     };
     try {
-        const context = this.context; // 获取 WebNativeMessagingExtensionContext 实例
-        context.startAbility(abilityWant);
+      const context = this.context; // 获取 WebNativeMessagingExtensionContext 实例
+      context.startAbility(abilityWant).then(() => {
         console.info('Ability started successfully');
+      }).catch((err: BusinessError) => {
+        console.error(`Failed to start ability. Code: ${err.code},
+          Message: ${err.message}`);
+      });
     } catch (err) {
-        console.error(`Failed to start ability. Code: ${(err as BusinessError).code},
-        Message: ${(err as BusinessError).message}`);
+      console.error(`Failed to start ability. Code: ${(err as BusinessError).code},
+      Message: ${(err as BusinessError).message}`);
     }
   }
 }
@@ -114,13 +126,14 @@ export class MyWebNativeMessagingExtension extends WebNativeMessagingExtensionAb
 
 
 
-#### startAbilityForResult
+### startAbilityForResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 startAbilityForResult(want: Want, options?: StartOptions): Promise&lt;AbilityResult&gt;
 
-启动一个UIAbility，开发者可以通过回调函数接收被拉起的UIAbility退出时的返回结果。使用Promise异步回调。
+启动一个UIAbility，使用Promise异步回调接收被拉起的UIAbility退出时的返回结果。
 
 UIAbility被启动后，有如下情况：
 
@@ -137,13 +150,15 @@ UIAbility被启动后，有如下情况：
 
 **参数:**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| want | Want | 是 | 表示需要启动的UIAbility的信息。 |
-| options | StartOptions | 否 | 启动选项。 |
+| want | Want | 是 | 表示需要启动的UIAbility的信息，包含bundleName、abilityName等属性，用于指定要启动的目标UIAbility。 |
+| options | StartOptions | 否 | 启动选项，用于配置UIAbility的窗口模式等。当需要自定义启动配置时传入，不传入时使用系统默认启动配置。各字段默认值参考StartOptions说明。 |
 
 
 **返回值:**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -153,6 +168,7 @@ UIAbility被启动后，有如下情况：
 **错误码:**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -214,19 +230,21 @@ export class MyWebNativeMessagingExtension extends WebNativeMessagingExtensionAb
 
 
 
-#### terminateSelf
+### terminateSelf
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 terminateSelf(): Promise&lt;void&gt;
 
-销毁当前Web原生消息扩展。该方法返回一个Promise对象用于异步处理。
+销毁当前Web原生消息扩展。该方法返回一个Promise对象用于异步处理，调用此方法会自动停止所有Web原生消息连接，无需再调用stopNativeConnection。
 
 **系统能力:** SystemCapability.Web.Webview.Core
 
 **模型约束:** 此接口仅可在Stage模型下使用。
 
 **返回值:**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -236,6 +254,7 @@ terminateSelf(): Promise&lt;void&gt;
 **错误码:**
 
 以下错误码详细介绍请参考[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -254,8 +273,12 @@ export class MyWebNativeMessagingExtension extends WebNativeMessagingExtensionAb
   onConnectNative(info: ConnectionInfo): void {
     try {
         const context = this.context; // 获取 WebNativeMessagingExtensionContext 实例
-        context.terminateSelf();
-        console.info('Extension terminated successfully');
+        context.terminateSelf().then(() => {
+          console.info('Extension terminated successfully');
+        }).catch((err: BusinessError) => {
+          console.error(`Failed to terminate extension. Code: ${err.code},
+          Message: ${err.message}`);
+        });
     } catch (err) {
         console.error(`Failed to terminate extension. Code: ${(err as BusinessError).code},
         Message: ${(err as BusinessError).message}`);
@@ -266,13 +289,14 @@ export class MyWebNativeMessagingExtension extends WebNativeMessagingExtensionAb
 
 
 
-#### stopNativeConnection
+### stopNativeConnection
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** PC/2in1 | Tablet
 
 stopNativeConnection(connectionId: number): Promise&lt;void&gt;
 
-停止指定的本地连接。使用Promise进行异步回调。
+停止指定的本地连接。使用Promise异步回调。
 
 **系统能力:** SystemCapability.Web.Webview.Core
 
@@ -280,12 +304,14 @@ stopNativeConnection(connectionId: number): Promise&lt;void&gt;
 
 **参数:**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | connectionId | number | 是 | 要停止的连接ID。取值范围为正整数，必须是有效的连接ID。当connectionId值无效时，会对应返回错误码。 |
 
 
 **返回值:**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -295,6 +321,7 @@ stopNativeConnection(connectionId: number): Promise&lt;void&gt;
 **错误码:**
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -314,8 +341,12 @@ export class MyWebNativeMessagingExtension extends WebNativeMessagingExtensionAb
     const CONNECTION_ID = 12345; // 实际的连接 ID
     try {
         const context = this.context;// 获取 WebNativeMessagingExtensionContext 实例
-        context.stopNativeConnection(CONNECTION_ID);
-        console.info('Native connection stopped successfully');
+        context.stopNativeConnection(CONNECTION_ID).then(() => {
+          console.info('Native connection stopped successfully');
+        }).catch((err: BusinessError) => {
+          console.error(`Failed to stop native connection. Code: ${err.code},
+          Message: ${err.message}`);
+        })
     } catch (err) {
         console.error(`Failed to stop native connection. Code: ${(err as BusinessError).code},
         Message: ${(err as BusinessError).message}`);

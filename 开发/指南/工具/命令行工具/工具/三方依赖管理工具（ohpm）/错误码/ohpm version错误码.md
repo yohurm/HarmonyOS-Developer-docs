@@ -1,10 +1,10 @@
 # ohpm version错误码
 
-更新时间：2026-07-21 01:13:31
+更新时间：2026-08-29 09:41:34
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-version-errorcode
 
-#### 00607001 参数无效
+## 00607001 参数无效
 
 **错误信息**
  
@@ -24,7 +24,7 @@ Invalid Version Arg.
  
  
 
-#### 00607002 版本号无效
+## 00607002 版本号无效
 
 **错误信息**
  
@@ -44,7 +44,7 @@ Invalid Origin Version.
  
  
 
-#### 00607003 版本号未配置
+## 00607003 版本号未配置
 
 **错误信息**
  
@@ -64,7 +64,7 @@ Not Exist.
  
  
 
-#### 00607004 版本号无变化
+## 00607004 版本号无变化
 
 **错误信息**
  
@@ -76,15 +76,15 @@ No Change.
  
 **可能原因**
  
-版本未更改。
+模块级oh-package.json5中version字段未更改。如当前version为1.0.0，执行ohpm version 1.0.0命令。
  
 **处理步骤**
  
-检查依赖包的版本号，确保其与当前版本不同。
+检查模块级oh-package.json5中version的版本号，确保其与当前版本不同。
  
  
 
-#### 00607005 命令执行错误
+## 00607005 命令执行错误
 
 **错误信息**
  
@@ -96,8 +96,8 @@ Forbidden Opt.
  
 **可能原因**
  
-执行ohpm version时未配置参数。
+在项目根目录下执行ohpm version [options] [&lt;newversion&gt; | major | minor | patch]。
  
 **处理步骤**
  
-检查和确保命令格式为 ohpm version [options] [&lt;newversion&gt; | major | minor | patch]。
+不支持在项目根目录下执行该命令，需要在模块下执行该命令。

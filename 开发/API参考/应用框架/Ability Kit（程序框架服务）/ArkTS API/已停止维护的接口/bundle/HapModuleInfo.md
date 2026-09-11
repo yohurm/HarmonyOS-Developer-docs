@@ -1,9 +1,9 @@
 # HapModuleInfo
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bundle-hapmoduleinfo
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Hap模块信息，未做特殊说明的属性，均通过[bundle.getBundleInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bundle#bundlegetbundleinfodeprecated)获取。
  
@@ -12,9 +12,10 @@ Hap模块信息，未做特殊说明的属性，均通过[bundle.getBundleInfo](
 
   
 
-#### HapModuleInfo(deprecated)
+## HapModuleInfo(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 7开始支持，从API version 9开始废弃，建议使用 bundleManager-HapModuleInfo 替代。
@@ -22,6 +23,7 @@ Hap模块信息，未做特殊说明的属性，均通过[bundle.getBundleInfo](
  
 **系统能力：** SystemCapability.BundleManager.BundleFramework
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | name | string | 是 | 否 | 模块名称。 |

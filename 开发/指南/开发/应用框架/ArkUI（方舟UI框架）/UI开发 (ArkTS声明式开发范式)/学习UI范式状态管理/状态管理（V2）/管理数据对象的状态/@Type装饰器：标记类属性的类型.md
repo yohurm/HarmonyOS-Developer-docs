@@ -1,25 +1,26 @@
 # @Type装饰器：标记类属性的类型
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-type
 
 为了实现序列化类时不丢失属性的复杂类型，开发者可以使用[@Type](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-state-management-type#type)装饰器装饰类属性。
 
-@Type的目的是标记类属性，配合PersistenceV2使用，防止序列化时类丢失。在阅读本文档前，建议提前阅读：[PersistenceV2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-persistencev2)。
+@Type的目的是标记类属性，配合PersistenceV2使用，防止序列化时类型信息丢失。在阅读本文档前，建议提前阅读：[PersistenceV2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-persistencev2)。
 
 > [!NOTE]
 > @Type从API version 12开始支持。 从API version 12开始，该装饰器支持在元服务中使用。
 
 
 
-#### 概述
+## 概述
 
 @Type标记类属性，使得类属性序列化时不丢失类型信息，便于类的反序列化。
 
 
 
-#### 装饰器说明
+## 装饰器说明
+
 
 | @Type装饰器 | 说明 |
 | --- | --- |
@@ -29,7 +30,7 @@
 
 
 
-#### 使用限制
+## 使用限制
 1. 只能用在[@ObservedV2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-observedv2-and-trace)装饰的类中，不能用在自定义组件中。
 
   
@@ -60,17 +61,17 @@ class Info {
 ```
 
 2. 不支持collections.Set、collections.Map等类型。
-3. 不支持非built-in类型。如[PixelMap](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-pixelmap)、NativePointer、[ArrayList](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arraylist)等Native类型。
+3. 不支持非built-in类型。如[PixelMap](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-pixelmap)、NativePointer等Native类型，以及[ArrayList](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arraylist)等ArkTS容器类型。
 4. 不支持简单类型。如string、number、boolean等。
 5. 不支持构造函数含参的类。
 
 
 
-#### 使用场景
+## 使用场景
 
 
 
-#### 持久化数据
+### 持久化数据
 
 ```ArkTS
 import { PersistenceV2, Type } from '@kit.ArkUI';
@@ -111,18 +112,19 @@ struct TestCase {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/4au2Iqf5S12__UGXeBTn6w/zh-cn_image_0000002674472082.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095706Z&HW-CC-Expire=86400&HW-CC-Sign=A93BA20D26EBF769A5B459BB81B8D72CC1FA30BD1D8CD1AEF59D4F6E38B33FFB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/c7m9kJE-QqmKSf8ZOq3Ccw/zh-cn_image_0000002747290095.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072510Z&HW-CC-Expire=86400&HW-CC-Sign=D4C9C3AFB255E2D67B76F2B8FB5ECAB4EDEA19BA5705C260953E469AA54860FB)
 
 
 
 
-#### 常见问题
+## 常见问题
 
 
 
-#### @Type传入容器泛型而非元素类型
+### @Type传入容器泛型而非元素类型
 
 @Type装饰Array&lt;T&gt;、Set&lt;T&gt;、Map<string, T>等容器类型的属性时，应传入元素类型T对应的类，不应传入Array&lt;T&gt;等容器泛型。泛型参数在运行时会被擦除，@Type(Array&lt;T&gt;)等同于@Type(Array)，@Type(Set&lt;T&gt;)等同于@Type(Set)，框架无法从中获知元素类型为T。
+
 
 | 属性类型 | @Type应传入 | 不应传入 |
 | --- | --- | --- |
@@ -132,6 +134,7 @@ struct TestCase {
 
 
 当T为基本类型、Date、Array、Set、Map等非自定义类时，框架原生支持反序列化，@Type参数不影响结果。当T为自定义类时，首次运行数据可正常保存，但应用重启从磁盘恢复数据时，反序列化创建空容器实例（如new Array()）而非new T()，T的构造函数不执行，T的属性未被初始化。反序列化结果取决于T的属性序列化后的值类型：值为基本类型或对象时被隐式转换为undefined，值为数组时打印Error日志，错误码为140107。具体如下：
+
 
 | T的属性类型 | 序列化后的值 | 反序列化结果 |
 | --- | --- | --- |

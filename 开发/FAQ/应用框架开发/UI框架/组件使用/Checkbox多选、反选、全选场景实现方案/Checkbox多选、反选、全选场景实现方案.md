@@ -43,7 +43,7 @@ class Person {
 
 @ObservedV2
 class Info {
-  // 存储Person对象的数组
+ <em> // 存储Person对象的数组</em>
   personList: Person[] = [];
 
   constructor() {
@@ -55,12 +55,12 @@ class Info {
 @Entry
 @Component
 struct CheckboxPage1 {
-  // 创建Info实例作为组件状态
+ <em> // 创建Info实例作为组件状态</em>
   info: Info = new Info();
 
   build() {
     Column() {
-      // 反选按钮
+     <em> // 反选按钮</em>
       Button() {
         Text('反选')
           .fontColor(Color.White);
@@ -69,25 +69,25 @@ struct CheckboxPage1 {
       .height(30)
       .margin(10)
       .onClick(() => {
-        // 实现反选功能
+      <em>  // 实现反选功能</em>
         for (let i = 0; i < this.info.personList.length; i++) {
           this.info.personList[i].name = !this.info.personList[i].name;
         }
       });
 
-      // 使用List组件显示复选框列表
+     <em> // 使用List组件显示复选框列表</em>
       List({ space: 5, initialIndex: 0 }) {
         ForEach(this.info.personList, (item: Person) => {
           ListItem() {
             Flex() {
-              // Checkbox组件，显示选择状态
+           <em>   // Checkbox组件，显示选择状态</em>
               Checkbox({ name: item.value.toString() })
                 .selectedColor('#027cff')
                 .shape(CheckBoxShape.ROUNDED_SQUARE)
                 .unselectedColor('#027cff')
                 .select(item.name)
                 .onChange((value: boolean) => {
-                  // 复选框状态改变时更新Person对象的name属性
+                <em>  // 复选框状态改变时更新Person对象的name属性</em>
                   item.name = value;
                 })
                 .width(18)
@@ -133,7 +133,7 @@ interface GroupData {
 @Entry
 @Component
 struct CheckboxPage2 {
-  // 数据源
+ <em> // 数据源</em>
   groupDataList: Array<GroupData> = [
     { groupName: '第一章', items: ['1.1', '1.2', '1.3', '1.4'], isGlobalSelectedAll: false },
     { groupName: '第二章', items: ['2.1', '2.2', '2.3'], isGlobalSelectedAll: false }
@@ -155,7 +155,7 @@ struct CheckboxPage2 {
           for (let item of this.groupDataList) {
             this.isGlobalSelectedAll = (this.isGlobalSelectedAll && item.isGlobalSelectedAll);
           }
-          // 保存当前分组所选数据
+      <em>    // 保存当前分组所选数据</em>
           this.selectedItems[index] = event.name;
         });
       Text(data.groupName).fontSize(14).lineHeight(20).fontColor('#182431').fontWeight(500);
@@ -185,7 +185,7 @@ struct CheckboxPage2 {
           .selectedColor('#007DFF')
           .shape(CheckBoxShape.ROUNDED_SQUARE)
           .onClick(() => {
-            // 点击全选按钮，改变每个CheckBoxGroup选择状态
+        <em>    // 点击全选按钮，改变每个CheckBoxGroup选择状态</em>
             this.isGlobalSelectedAll = !this.isGlobalSelectedAll;
             for (let i = 0; i < this.isGroupAllSelected.length; i++) {
               this.isGroupAllSelected[i] = !this.isGroupAllSelected[i];

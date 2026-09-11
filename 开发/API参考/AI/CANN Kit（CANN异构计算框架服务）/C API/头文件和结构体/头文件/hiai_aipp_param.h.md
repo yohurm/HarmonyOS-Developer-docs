@@ -1,11 +1,12 @@
 # hiai_aipp_param.h
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/cannkit-hiai-aipp-param-8h
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 类型定义
+### 类型定义
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | typedef struct HiAI_AippParam HiAI_AippParam | AIPP参数对象。 |
@@ -40,10 +44,12 @@
  
   
 
-#### 枚举
+### 枚举
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | HiAI_ImageFormat { HIAI_YUV420SP_U8 = 0, HIAI_XRGB8888_U8 = 1, HIAI_YUV400_U8 = 2, HIAI_ARGB8888_U8 = 3, HIAI_YUYV_U8 = 4, HIAI_YUV422SP_U8 = 5, HIAI_AYUV444_U8 = 6, HIAI_RGB888_U8 = 7, HIAI_BGR888_U8 = 8, HIAI_YUV444SP_U8 = 9, HIAI_YVU444SP_U8 = 10, HIAI_IMAGE_FORMAT_INVALID = 255 } | CANN Kit推理支持的输入和输出Tensor的图片格式的枚举。 |
@@ -52,10 +58,12 @@
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | HiAI_AippParam * HMS_HiAIAippParam_Create (uint32_t batchNum) | 根据batchNum创建动态AippParam对象。 |

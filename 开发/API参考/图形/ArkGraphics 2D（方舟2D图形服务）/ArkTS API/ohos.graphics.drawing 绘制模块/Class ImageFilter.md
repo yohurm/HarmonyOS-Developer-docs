@@ -1,9 +1,9 @@
 # Class (ImageFilter)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-graphics-drawing-imagefilter
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 图像滤波器。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { drawing } from '@kit.ArkGraphics2D';
@@ -22,9 +23,10 @@ import { drawing } from '@kit.ArkGraphics2D';
 
 
 
-#### createBlurImageFilter12+
+## createBlurImageFilter12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static createBlurImageFilter(sigmaX: number, sigmaY: number, tileMode: TileMode, imageFilter?: ImageFilter | null ): ImageFilter
 
@@ -33,6 +35,7 @@ static createBlurImageFilter(sigmaX: number, sigmaY: number, tileMode: TileMode,
 **系统能力：** SystemCapability.Graphics.Drawing
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -44,6 +47,7 @@ static createBlurImageFilter(sigmaX: number, sigmaY: number, tileMode: TileMode,
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageFilter | 返回创建的图像滤波器。 |
@@ -52,6 +56,7 @@ static createBlurImageFilter(sigmaX: number, sigmaY: number, tileMode: TileMode,
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -68,9 +73,10 @@ let imgFilter = drawing.ImageFilter.createBlurImageFilter(5, 10, drawing.TileMod
 
 
 
-#### createFromImage20+
+## createFromImage20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static createFromImage(pixelmap: image.PixelMap, srcRect?: common2D.Rect | null, dstRect?: common2D.Rect | null): ImageFilter
 
@@ -80,6 +86,7 @@ static createFromImage(pixelmap: image.PixelMap, srcRect?: common2D.Rect | null,
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pixelmap | image.PixelMap | 是 | 图片对象。 |
@@ -88,6 +95,7 @@ static createFromImage(pixelmap: image.PixelMap, srcRect?: common2D.Rect | null,
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -144,9 +152,10 @@ class DrawingRenderNode extends RenderNode {
 
 
 
-#### createBlendImageFilter20+
+## createBlendImageFilter20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static createBlendImageFilter(mode: BlendMode, background: ImageFilter, foreground: ImageFilter): ImageFilter
 
@@ -155,6 +164,7 @@ static createBlendImageFilter(mode: BlendMode, background: ImageFilter, foregrou
 **系统能力**：SystemCapability.Graphics.Drawing
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -165,6 +175,7 @@ static createBlendImageFilter(mode: BlendMode, background: ImageFilter, foregrou
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageFilter | 返回创建的图像滤波器。 |
@@ -173,6 +184,7 @@ static createBlendImageFilter(mode: BlendMode, background: ImageFilter, foregrou
 **错误码：**
 
 以下错误码的详细介绍请参见[图形绘制与显示错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-drawing)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -195,9 +207,10 @@ let blendImageFilter = drawing.ImageFilter.createBlendImageFilter(drawing.BlendM
 
 
 
-#### createComposeImageFilter20+
+## createComposeImageFilter20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static createComposeImageFilter(cOuter: ImageFilter, cInner: ImageFilter): ImageFilter
 
@@ -207,6 +220,7 @@ static createComposeImageFilter(cOuter: ImageFilter, cInner: ImageFilter): Image
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | cOuter | ImageFilter | 是 | 在级联中，作为第二级的滤波器，处理第一级滤波器的输出。如果第二级滤波器为空，第一级滤波器不为空，最后输出第一级滤波器的结果。两级滤波器不能同时为空。 |
@@ -214,6 +228,7 @@ static createComposeImageFilter(cOuter: ImageFilter, cInner: ImageFilter): Image
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -241,9 +256,10 @@ let composedImageFilter = drawing.ImageFilter.createComposeImageFilter(colorFilt
 
 
 
-#### createFromColorFilter12+
+## createFromColorFilter12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static createFromColorFilter(colorFilter: ColorFilter, imageFilter?: ImageFilter | null): ImageFilter
 
@@ -253,6 +269,7 @@ static createFromColorFilter(colorFilter: ColorFilter, imageFilter?: ImageFilter
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | colorFilter | ColorFilter | 是 | 表示颜色滤波器。 |
@@ -260,6 +277,7 @@ static createFromColorFilter(colorFilter: ColorFilter, imageFilter?: ImageFilter
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -269,6 +287,7 @@ static createFromColorFilter(colorFilter: ColorFilter, imageFilter?: ImageFilter
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -287,9 +306,10 @@ let imgFilter1 = drawing.ImageFilter.createFromColorFilter(colorFilter, imgFilte
 
 
 
-#### createOffsetImageFilter20+
+## createOffsetImageFilter20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static createOffsetImageFilter(dx: number, dy: number, input?: ImageFilter | null): ImageFilter
 
@@ -299,6 +319,7 @@ static createOffsetImageFilter(dx: number, dy: number, input?: ImageFilter | nul
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | dx | number | 是 | 水平方向的平移距离，该参数为浮点数。单位为物理像素px。 |
@@ -307,6 +328,7 @@ static createOffsetImageFilter(dx: number, dy: number, input?: ImageFilter | nul
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -325,9 +347,10 @@ let offsetFilter = drawing.ImageFilter.createOffsetImageFilter(dx, dy, null);
 
 
 
-#### createFromShaderEffect20+
+## createFromShaderEffect20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static createFromShaderEffect(shader: ShaderEffect): ImageFilter
 
@@ -337,12 +360,14 @@ static createFromShaderEffect(shader: ShaderEffect): ImageFilter
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | shader | ShaderEffect | 是 | 表示应用于图像的着色器效果。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |

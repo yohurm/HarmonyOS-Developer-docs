@@ -1,9 +1,9 @@
 # @ohos.geolocation (位置服务)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-geolocation
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 位置服务提供GNSS定位、网络定位、地理编码、逆地理编码、国家码和地理围栏等基本功能。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 申请权限
+## 申请权限
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 应用在使用系统能力前，需要检查是否已经获取用户授权访问设备位置信息。如未获得授权，可以向用户申请需要的位置权限，申请方式请参考下文。
 
@@ -30,6 +31,7 @@
 API9之前的版本，申请ohos.permission.LOCATION即可。
 
 API9及之后的版本，需要申请ohos.permission.APPROXIMATELY_LOCATION或者同时申请ohos.permission.APPROXIMATELY_LOCATION和ohos.permission.LOCATION；无法单独申请ohos.permission.LOCATION。
+
 
 | 使用的API版本 | 申请位置权限 | 申请结果 | 位置的精确度 |
 | --- | --- | --- | --- |
@@ -47,9 +49,10 @@ API9及之后的版本，需要申请ohos.permission.APPROXIMATELY_LOCATION或�
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import geolocation from '@ohos.geolocation';
@@ -57,9 +60,10 @@ import geolocation from '@ohos.geolocation';
 
 
 
-#### geolocation.on('locationChange')(deprecated)
+## geolocation.on('locationChange')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'locationChange', request: LocationRequest, callback: Callback&lt;Location&gt;): void
 
@@ -74,6 +78,7 @@ on(type: 'locationChange', request: LocationRequest, callback: Callback&lt;Locat
 **系统能力**：SystemCapability.Location.Location.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -95,9 +100,10 @@ geolocation.on('locationChange', requestInfo, locationChange);
 
 
 
-#### geolocation.off('locationChange')(deprecated)
+## geolocation.off('locationChange')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'locationChange', callback?: Callback&lt;Location&gt;): void
 
@@ -112,6 +118,7 @@ off(type: 'locationChange', callback?: Callback&lt;Location&gt;): void
 **系统能力**：SystemCapability.Location.Location.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -133,9 +140,10 @@ geolocation.off('locationChange', locationChange);
 
 
 
-#### geolocation.on('locationServiceState')(deprecated)
+## geolocation.on('locationServiceState')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'locationServiceState', callback: Callback&lt;boolean&gt;): void
 
@@ -150,6 +158,7 @@ on(type: 'locationServiceState', callback: Callback&lt;boolean&gt;): void
 **系统能力**：SystemCapability.Location.Location.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -169,9 +178,10 @@ geolocation.on('locationServiceState', locationServiceState);
 
 
 
-#### geolocation.off('locationServiceState')(deprecated)
+## geolocation.off('locationServiceState')(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'locationServiceState', callback?: Callback&lt;boolean&gt;): void
 
@@ -186,6 +196,7 @@ off(type: 'locationServiceState', callback?: Callback&lt;boolean&gt;): void
 **系统能力**：SystemCapability.Location.Location.Core
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -206,7 +217,8 @@ geolocation.off('locationServiceState', locationServiceState);
 
 
 
-#### geolocation.on('cachedGnssLocationsReporting')(deprecated)
+## geolocation.on('cachedGnssLocationsReporting')(deprecated)
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -223,6 +235,7 @@ on(type: 'cachedGnssLocationsReporting', request: CachedGnssLocationsRequest, ca
 **系统能力**：SystemCapability.Location.Location.Gnss
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -244,7 +257,8 @@ geolocation.on('cachedGnssLocationsReporting', requestInfo, cachedLocationsCb);
 
 
 
-#### geolocation.off('cachedGnssLocationsReporting')(deprecated)
+## geolocation.off('cachedGnssLocationsReporting')(deprecated)
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -261,6 +275,7 @@ off(type: 'cachedGnssLocationsReporting', callback?: Callback<Array&lt;Location&
 **系统能力**：SystemCapability.Location.Location.Gnss
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -282,7 +297,8 @@ geolocation.off('cachedGnssLocationsReporting');
 
 
 
-#### geolocation.on('gnssStatusChange')(deprecated)
+## geolocation.on('gnssStatusChange')(deprecated)
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -299,6 +315,7 @@ on(type: 'gnssStatusChange', callback: Callback&lt;SatelliteStatusInfo&gt;): voi
 **系统能力**：SystemCapability.Location.Location.Gnss
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -318,7 +335,8 @@ geolocation.on('gnssStatusChange', gnssStatusCb);
 
 
 
-#### geolocation.off('gnssStatusChange')(deprecated)
+## geolocation.off('gnssStatusChange')(deprecated)
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -335,6 +353,7 @@ off(type: 'gnssStatusChange', callback?: Callback&lt;SatelliteStatusInfo&gt;): v
 **系统能力**：SystemCapability.Location.Location.Gnss
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -355,7 +374,8 @@ geolocation.off('gnssStatusChange', gnssStatusCb);
 
 
 
-#### geolocation.on('nmeaMessageChange')(deprecated)
+## geolocation.on('nmeaMessageChange')(deprecated)
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -372,6 +392,7 @@ on(type: 'nmeaMessageChange', callback: Callback&lt;string&gt;): void
 **系统能力**：SystemCapability.Location.Location.Gnss
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -391,7 +412,8 @@ geolocation.on('nmeaMessageChange', nmeaCb );
 
 
 
-#### geolocation.off('nmeaMessageChange')(deprecated)
+## geolocation.off('nmeaMessageChange')(deprecated)
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -408,6 +430,7 @@ off(type: 'nmeaMessageChange', callback?: Callback&lt;string&gt;): void
 **系统能力**：SystemCapability.Location.Location.Gnss
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -428,7 +451,8 @@ geolocation.off('nmeaMessageChange', nmeaCb);
 
 
 
-#### geolocation.on('fenceStatusChange')(deprecated)
+## geolocation.on('fenceStatusChange')(deprecated)
+
 
 **支持设备：** Phone | Tablet
 
@@ -445,6 +469,7 @@ on(type: 'fenceStatusChange', request: GeofenceRequest, want: WantAgent): void
 **系统能力**：SystemCapability.Location.Location.Geofence
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -480,7 +505,8 @@ wantAgent.getWantAgent(wantAgentInfo).then((wantAgentObj) => {
 
 
 
-#### geolocation.off('fenceStatusChange')(deprecated)
+## geolocation.off('fenceStatusChange')(deprecated)
+
 
 **支持设备：** Phone | Tablet
 
@@ -497,6 +523,7 @@ off(type: 'fenceStatusChange', request: GeofenceRequest, want: WantAgent): void
 **系统能力**：SystemCapability.Location.Location.Geofence
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -533,9 +560,10 @@ wantAgent.getWantAgent(wantAgentInfo).then((wantAgentObj) => {
 
 
 
-#### geolocation.getCurrentLocation(deprecated)
+## geolocation.getCurrentLocation(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCurrentLocation(request: CurrentLocationRequest, callback: AsyncCallback&lt;Location&gt;): void
 
@@ -550,6 +578,7 @@ getCurrentLocation(request: CurrentLocationRequest, callback: AsyncCallback&lt;L
 **系统能力**：SystemCapability.Location.Location.Core
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -576,9 +605,10 @@ geolocation.getCurrentLocation(requestInfo, locationChange);
 
 
 
-#### geolocation.getCurrentLocation(deprecated)
+## geolocation.getCurrentLocation(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCurrentLocation(callback: AsyncCallback&lt;Location&gt;): void
 
@@ -593,6 +623,7 @@ getCurrentLocation(callback: AsyncCallback&lt;Location&gt;): void
 **系统能力**：SystemCapability.Location.Location.Core
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -617,9 +648,10 @@ geolocation.getCurrentLocation(locationChange);
 
 
 
-#### geolocation.getCurrentLocation(deprecated)
+## geolocation.getCurrentLocation(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCurrentLocation(request?: CurrentLocationRequest): Promise&lt;Location&gt;
 
@@ -635,12 +667,14 @@ getCurrentLocation(request?: CurrentLocationRequest): Promise&lt;Location&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | CurrentLocationRequest | 否 | 设置位置请求参数。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -659,9 +693,10 @@ geolocation.getCurrentLocation(requestInfo).then((result) => {
 
 
 
-#### geolocation.getLastLocation(deprecated)
+## geolocation.getLastLocation(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLastLocation(callback: AsyncCallback&lt;Location&gt;): void
 
@@ -676,6 +711,7 @@ getLastLocation(callback: AsyncCallback&lt;Location&gt;): void
 **系统能力**：SystemCapability.Location.Location.Core
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -698,9 +734,10 @@ geolocation.getLastLocation((err, data) => {
 
 
 
-#### geolocation.getLastLocation(deprecated)
+## geolocation.getLastLocation(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLastLocation(): Promise&lt;Location&gt;
 
@@ -715,6 +752,7 @@ getLastLocation(): Promise&lt;Location&gt;
 **系统能力**：SystemCapability.Location.Location.Core
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -732,9 +770,10 @@ geolocation.getLastLocation().then((result) => {
 
 
 
-#### geolocation.isLocationEnabled(deprecated)
+## geolocation.isLocationEnabled(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isLocationEnabled(callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -749,6 +788,7 @@ isLocationEnabled(callback: AsyncCallback&lt;boolean&gt;): void
 **系统能力**：SystemCapability.Location.Location.Core
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -771,9 +811,10 @@ geolocation.isLocationEnabled((err, data) => {
 
 
 
-#### geolocation.isLocationEnabled(deprecated)
+## geolocation.isLocationEnabled(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isLocationEnabled(): Promise&lt;boolean&gt;
 
@@ -788,6 +829,7 @@ isLocationEnabled(): Promise&lt;boolean&gt;
 **系统能力**：SystemCapability.Location.Location.Core
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -805,9 +847,10 @@ geolocation.isLocationEnabled().then((result) => {
 
 
 
-#### geolocation.requestEnableLocation(deprecated)
+## geolocation.requestEnableLocation(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestEnableLocation(callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -822,6 +865,7 @@ requestEnableLocation(callback: AsyncCallback&lt;boolean&gt;): void
 **系统能力**：SystemCapability.Location.Location.Core
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -844,9 +888,10 @@ geolocation.requestEnableLocation((err, data) => {
 
 
 
-#### geolocation.requestEnableLocation(deprecated)
+## geolocation.requestEnableLocation(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestEnableLocation(): Promise&lt;boolean&gt;
 
@@ -861,6 +906,7 @@ requestEnableLocation(): Promise&lt;boolean&gt;
 **系统能力**：SystemCapability.Location.Location.Core
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -878,7 +924,8 @@ geolocation.requestEnableLocation().then((result) => {
 
 
 
-#### geolocation.isGeoServiceAvailable(deprecated)
+## geolocation.isGeoServiceAvailable(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -895,6 +942,7 @@ isGeoServiceAvailable(callback: AsyncCallback&lt;boolean&gt;): void
 **系统能力**：SystemCapability.Location.Location.Geocoder
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -917,7 +965,8 @@ geolocation.isGeoServiceAvailable((err, data) => {
 
 
 
-#### geolocation.isGeoServiceAvailable(deprecated)
+## geolocation.isGeoServiceAvailable(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -935,6 +984,7 @@ isGeoServiceAvailable(): Promise&lt;boolean&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象，返回true表示地理编码服务可用；返回false表示地理编码服务不可用。 |
@@ -951,7 +1001,8 @@ geolocation.isGeoServiceAvailable().then((result) => {
 
 
 
-#### geolocation.getAddressesFromLocation(deprecated)
+## geolocation.getAddressesFromLocation(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -968,6 +1019,7 @@ getAddressesFromLocation(request: ReverseGeoCodeRequest, callback: AsyncCallback
 **系统能力**：SystemCapability.Location.Location.Geocoder
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -992,7 +1044,8 @@ geolocation.getAddressesFromLocation(reverseGeocodeRequest, (err, data) => {
 
 
 
-#### geolocation.getAddressesFromLocation(deprecated)
+## geolocation.getAddressesFromLocation(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1010,12 +1063,14 @@ getAddressesFromLocation(request: ReverseGeoCodeRequest): Promise<Array&lt;GeoAd
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | ReverseGeoCodeRequest | 是 | 设置逆地理编码请求的相关参数。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1034,7 +1089,8 @@ geolocation.getAddressesFromLocation(reverseGeocodeRequest).then((data) => {
 
 
 
-#### geolocation.getAddressesFromLocationName(deprecated)
+## geolocation.getAddressesFromLocationName(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1051,6 +1107,7 @@ getAddressesFromLocationName(request: GeoCodeRequest, callback: AsyncCallback<Ar
 **系统能力**：SystemCapability.Location.Location.Geocoder
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1075,7 +1132,8 @@ geolocation.getAddressesFromLocationName(geocodeRequest, (err, data) => {
 
 
 
-#### geolocation.getAddressesFromLocationName(deprecated)
+## geolocation.getAddressesFromLocationName(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1093,12 +1151,14 @@ getAddressesFromLocationName(request: GeoCodeRequest): Promise<Array&lt;GeoAddre
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | request | GeoCodeRequest | 是 | 设置地理编码请求的相关参数。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1117,7 +1177,8 @@ geolocation.getAddressesFromLocationName(geocodeRequest).then((result) => {
 
 
 
-#### geolocation.getCachedGnssLocationsSize(deprecated)
+## geolocation.getCachedGnssLocationsSize(deprecated)
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1134,6 +1195,7 @@ getCachedGnssLocationsSize(callback: AsyncCallback&lt;number&gt;): void
 **系统能力**：SystemCapability.Location.Location.Gnss
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1156,7 +1218,8 @@ geolocation.getCachedGnssLocationsSize((err, size) => {
 
 
 
-#### geolocation.getCachedGnssLocationsSize(deprecated)
+## geolocation.getCachedGnssLocationsSize(deprecated)
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1174,6 +1237,7 @@ getCachedGnssLocationsSize(): Promise&lt;number&gt;;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象，返回GNSS缓存位置的个数。 |
@@ -1190,7 +1254,8 @@ geolocation.getCachedGnssLocationsSize().then((result) => {
 
 
 
-#### geolocation.flushCachedGnssLocations(deprecated)
+## geolocation.flushCachedGnssLocations(deprecated)
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1207,6 +1272,7 @@ flushCachedGnssLocations(callback: AsyncCallback&lt;boolean&gt;): void
 **系统能力**：SystemCapability.Location.Location.Gnss
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1229,7 +1295,8 @@ geolocation.flushCachedGnssLocations((err, result) => {
 
 
 
-#### geolocation.flushCachedGnssLocations(deprecated)
+## geolocation.flushCachedGnssLocations(deprecated)
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1247,6 +1314,7 @@ flushCachedGnssLocations(): Promise&lt;boolean&gt;
 
 **返回值**：
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象，返回true表示操作成功；返回false表示操作失败。 |
@@ -1263,9 +1331,10 @@ geolocation.flushCachedGnssLocations().then((result) => {
 
 
 
-#### geolocation.sendCommand(deprecated)
+## geolocation.sendCommand(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sendCommand(command: LocationCommand, callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -1280,6 +1349,7 @@ sendCommand(command: LocationCommand, callback: AsyncCallback&lt;boolean&gt;): v
 **系统能力**：SystemCapability.Location.Location.Core
 
 **参数**：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1304,9 +1374,10 @@ geolocation.sendCommand(requestInfo, (err, result) => {
 
 
 
-#### geolocation.sendCommand(deprecated)
+## geolocation.sendCommand(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sendCommand(command: LocationCommand): Promise&lt;boolean&gt;
 
@@ -1322,12 +1393,14 @@ sendCommand(command: LocationCommand): Promise&lt;boolean&gt;
 
 **参数**：
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | command | LocationCommand | 是 | 指定目标场景，和将要发送的命令（字符串）。 |
 
 
 **返回值**：
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1346,7 +1419,8 @@ geolocation.sendCommand(requestInfo).then((result) => {
 
 
 
-#### ReverseGeoCodeRequest(deprecated)
+## ReverseGeoCodeRequest(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1360,6 +1434,7 @@ geolocation.sendCommand(requestInfo).then((result) => {
 
 **系统能力**：SystemCapability.Location.Location.Geocoder
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | locale | string | 否 | 是 | 指定位置描述信息的语言，“zh”代表中文，“en”代表英文。 |
@@ -1370,7 +1445,8 @@ geolocation.sendCommand(requestInfo).then((result) => {
 
 
 
-#### GeoCodeRequest(deprecated)
+## GeoCodeRequest(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1383,6 +1459,7 @@ geolocation.sendCommand(requestInfo).then((result) => {
 **需要权限**：ohos.permission.LOCATION
 
 **系统能力**：SystemCapability.Location.Location.Geocoder
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1397,7 +1474,8 @@ geolocation.sendCommand(requestInfo).then((result) => {
 
 
 
-#### GeoAddress(deprecated)
+## GeoAddress(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1410,6 +1488,7 @@ geolocation.sendCommand(requestInfo).then((result) => {
 **需要权限**：ohos.permission.LOCATION
 
 **系统能力**：SystemCapability.Location.Location.Geocoder
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1435,9 +1514,10 @@ geolocation.sendCommand(requestInfo).then((result) => {
 
 
 
-#### LocationRequest(deprecated)
+## LocationRequest(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 位置信息请求参数。
 
@@ -1448,6 +1528,7 @@ geolocation.sendCommand(requestInfo).then((result) => {
 **需要权限**：ohos.permission.LOCATION
 
 **系统能力**：SystemCapability.Location.Location.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1460,9 +1541,10 @@ geolocation.sendCommand(requestInfo).then((result) => {
 
 
 
-#### CurrentLocationRequest(deprecated)
+## CurrentLocationRequest(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 当前位置信息请求参数。
 
@@ -1474,6 +1556,7 @@ geolocation.sendCommand(requestInfo).then((result) => {
 
 **系统能力**：SystemCapability.Location.Location.Core
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | priority | LocationRequestPriority | 否 | 是 | 表示优先级信息。取值范围见LocationRequestPriority的定义。 |
@@ -1484,7 +1567,8 @@ geolocation.sendCommand(requestInfo).then((result) => {
 
 
 
-#### SatelliteStatusInfo(deprecated)
+## SatelliteStatusInfo(deprecated)
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1498,6 +1582,7 @@ geolocation.sendCommand(requestInfo).then((result) => {
 
 **系统能力**：SystemCapability.Location.Location.Gnss
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | satellitesNumber | number | 否 | 否 | 表示卫星个数。取值范围为大于等于0。 |
@@ -1510,7 +1595,8 @@ geolocation.sendCommand(requestInfo).then((result) => {
 
 
 
-#### CachedGnssLocationsRequest(deprecated)
+## CachedGnssLocationsRequest(deprecated)
+
 
 **支持设备：** Phone | Tablet | Wearable
 
@@ -1524,6 +1610,7 @@ geolocation.sendCommand(requestInfo).then((result) => {
 
 **系统能力**：SystemCapability.Location.Location.Gnss
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | reportingPeriodSec | number | 否 | 否 | 表示GNSS缓存位置上报的周期，单位是毫秒。取值范围为大于0。 |
@@ -1532,7 +1619,8 @@ geolocation.sendCommand(requestInfo).then((result) => {
 
 
 
-#### Geofence(deprecated)
+## Geofence(deprecated)
+
 
 **支持设备：** Phone | Tablet
 
@@ -1546,6 +1634,7 @@ GNSS围栏的配置参数。目前只支持圆形围栏。
 
 **系统能力**：SystemCapability.Location.Location.Geofence
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | latitude | number | 否 | 否 | 表示纬度。取值范围为-90到90。 |
@@ -1556,7 +1645,8 @@ GNSS围栏的配置参数。目前只支持圆形围栏。
 
 
 
-#### GeofenceRequest(deprecated)
+## GeofenceRequest(deprecated)
+
 
 **支持设备：** Phone | Tablet
 
@@ -1570,6 +1660,7 @@ GNSS围栏的配置参数。目前只支持圆形围栏。
 
 **系统能力**：SystemCapability.Location.Location.Geofence
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | priority | LocationRequestPriority | 否 | 否 | 表示位置信息优先级。 |
@@ -1579,9 +1670,10 @@ GNSS围栏的配置参数。目前只支持圆形围栏。
 
 
 
-#### LocationCommand(deprecated)
+## LocationCommand(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 扩展命令参数。
 
@@ -1593,6 +1685,7 @@ GNSS围栏的配置参数。目前只支持圆形围栏。
 
 **系统能力**：SystemCapability.Location.Location.Core
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | scenario | LocationRequestScenario | 否 | 否 | 表示定位场景。 |
@@ -1601,9 +1694,10 @@ GNSS围栏的配置参数。目前只支持圆形围栏。
 
 
 
-#### Location(deprecated)
+## Location(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 位置信息。
 
@@ -1614,6 +1708,7 @@ GNSS围栏的配置参数。目前只支持圆形围栏。
 **需要权限**：ohos.permission.LOCATION
 
 **系统能力**：SystemCapability.Location.Location.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1631,9 +1726,10 @@ GNSS围栏的配置参数。目前只支持圆形围栏。
 
 
 
-#### LocationPrivacyType(deprecated)
+## LocationPrivacyType(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定位服务隐私协议类型。
 
@@ -1645,6 +1741,7 @@ GNSS围栏的配置参数。目前只支持圆形围栏。
 
 **系统能力**：SystemCapability.Location.Location.Core
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | OTHERS | 0 | 其他场景。预留字段。 |
@@ -1654,9 +1751,10 @@ GNSS围栏的配置参数。目前只支持圆形围栏。
 
 
 
-#### LocationRequestPriority(deprecated)
+## LocationRequestPriority(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 位置请求中位置信息优先级类型。
 
@@ -1668,6 +1766,7 @@ GNSS围栏的配置参数。目前只支持圆形围栏。
 
 **系统能力**：SystemCapability.Location.Location.Core
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | UNSET | 0x200 | 表示未设置优先级，表示LocationRequestPriority无效。 |
@@ -1678,9 +1777,10 @@ GNSS围栏的配置参数。目前只支持圆形围栏。
 
 
 
-#### LocationRequestScenario(deprecated)
+## LocationRequestScenario(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 位置请求中定位场景类型。
 
@@ -1691,6 +1791,7 @@ GNSS围栏的配置参数。目前只支持圆形围栏。
 **需要权限**：ohos.permission.LOCATION
 
 **系统能力**：SystemCapability.Location.Location.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1704,9 +1805,10 @@ GNSS围栏的配置参数。目前只支持圆形围栏。
 
 
 
-#### GeoLocationErrorCode(deprecated)
+## GeoLocationErrorCode(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 位置服务中的错误码信息。
 
@@ -1717,6 +1819,7 @@ GNSS围栏的配置参数。目前只支持圆形围栏。
 **需要权限**：ohos.permission.LOCATION
 
 **系统能力**：SystemCapability.Location.Location.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

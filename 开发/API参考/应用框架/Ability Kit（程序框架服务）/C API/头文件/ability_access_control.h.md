@@ -1,13 +1,14 @@
 # ability_access_control.h
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ability-access-control-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明管理进程访问控制的接口。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | bool OH_AT_CheckSelfPermission(const char *permission) | 校验应用是否被授予指定的权限。 |
@@ -40,15 +44,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AT_CheckSelfPermission()
+### OH_AT_CheckSelfPermission()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_AT_CheckSelfPermission(const char *permission)
@@ -62,6 +68,7 @@ bool OH_AT_CheckSelfPermission(const char *permission)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *permission | 需要校验的权限名称，合法的权限名取值可在应用权限列表中查询。 |
@@ -69,6 +76,7 @@ bool OH_AT_CheckSelfPermission(const char *permission)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | true：应用已经被授予该权限。 false：应用未被授予该权限。 |

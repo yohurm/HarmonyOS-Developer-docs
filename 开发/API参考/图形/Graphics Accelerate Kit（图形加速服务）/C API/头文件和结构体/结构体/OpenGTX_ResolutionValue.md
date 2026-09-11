@@ -1,11 +1,12 @@
 # OpenGTX_ResolutionValue
 
-更新时间：2026-04-29 07:35:50
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_open_g_t_x___resolution_value
 **支持设备：** Phone | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -19,16 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | int32_t height | 分辨率高度值，以px为单位，取值范围[360,7680]。 |
@@ -37,13 +41,15 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
 
 **支持设备：** Phone | Tablet | TV
 
   
 
-#### height
+### height
+
 
 **支持设备：** Phone | Tablet | TV
 
@@ -57,7 +63,8 @@ int32_t OpenGTX_ResolutionValue::height
  
   
 
-#### width
+### width
+
 
 **支持设备：** Phone | Tablet | TV
 

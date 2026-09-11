@@ -1,15 +1,15 @@
 # Universal Keystore Kit简介
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-overview
 
 Universal Keystore Kit（密钥管理服务，下述简称为HUKS）向业务/应用提供各类密钥的统一安全操作能力，包括密钥管理（密钥生成/销毁、密钥导入、密钥证明、密钥协商、密钥派生）及密钥使用（加密/解密、签名/验签、访问控制）等功能。
  
-HUKS管理的密钥可以由业务/应用导入或调用HUKS的接口生成。同时，HUKS提供了密钥访问控制能力，确保存储在HUKS中的密钥被合法正确的访问。
+HUKS管理的密钥可以由业务/应用导入或调用HUKS的接口生成。同时，HUKS提供了密钥访问控制能力，确保存储在HUKS中的密钥被合法正确地访问。
   
 
-#### 整体架构
+## 整体架构
 
 如图所示，HUKS模块可以分为如下三大部分：
  
@@ -24,19 +24,20 @@ HUKS管理的密钥可以由业务/应用导入或调用HUKS的接口生成。�
 
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/_x4pcCrRQeSn-7UfOAJQOQ/zh-cn_image_0000002686086489.png?HW-CC-KV=V1&HW-CC-Date=20260730T071920Z&HW-CC-Expire=86400&HW-CC-Sign=DBB21505485A0A75A2CC5A0924501AAE1CC8AA9D3AC0251EA5F209F81600115E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/hAuvwcBZRw-7qKYwo8obvw/zh-cn_image_0000002717611174.png?HW-CC-KV=V1&HW-CC-Date=20260911T072804Z&HW-CC-Expire=86400&HW-CC-Sign=4645645CD10E68F010504062364BF22033598211F75363DE9E4D0F79BD2BBEAC)
 
  
   
 
-#### 核心功能
+## 核心功能
 
 HUKS为开发者提供了密钥全生命周期的管理能力，其核心功能按照密钥生命周期划分如下：
  
   
 
-#### 密钥生成
+### 密钥生成
  
+
 | 功能 | 说明 |
 | --- | --- |
 | 密钥生成 | 随机生成密钥，且在密钥的全生命周期内，其明文仅在安全环境中进行访问操作，不会将明文传递出安全环境。 |
@@ -45,8 +46,9 @@ HUKS为开发者提供了密钥全生命周期的管理能力，其核心功能�
  
   
 
-#### 密钥使用
+### 密钥使用
  
+
 | 功能 | 说明 |
 | --- | --- |
 | 加密/解密 | 使用密钥将数据加密为攻击者无法理解的密文，或使用密钥将数据解密为业务可用的明文。 |
@@ -59,8 +61,9 @@ HUKS为开发者提供了密钥全生命周期的管理能力，其核心功能�
  
   
 
-#### 密钥删除
+### 密钥删除
  
+
 | 功能 | 说明 |
 | --- | --- |
 | 密钥删除 | 安全地删除存储在HUKS中的密钥数据。 |
@@ -68,8 +71,9 @@ HUKS为开发者提供了密钥全生命周期的管理能力，其核心功能�
  
   
 
-#### 密钥证明
+### 密钥证明
  
+
 | 功能 | 说明 |
 | --- | --- |
 | 密钥证明 | 为存储在HUKS中的非对称密钥对中的公钥签发证书，从而证明密钥的合法性（如密钥在安全环境中生成）。 |
@@ -77,7 +81,7 @@ HUKS为开发者提供了密钥全生命周期的管理能力，其核心功能�
  
   
 
-#### 模拟器支持情况
+## 模拟器支持情况
 
 本Kit支持模拟器，但与真机存在部分能力差异，具体差异如下。
  
@@ -88,6 +92,6 @@ HUKS为开发者提供了密钥全生命周期的管理能力，其核心功能�
  
   
 
-#### 与相关Kit的关系
+## 与相关Kit的关系
 
 [基于用户身份认证的密钥访问控制](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-identity-authentication-overview)，依赖于[User Authentication Kit（用户身份认证）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/user-authentication-overview)。

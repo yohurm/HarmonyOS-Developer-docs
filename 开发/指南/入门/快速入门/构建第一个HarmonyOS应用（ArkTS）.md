@@ -1,15 +1,15 @@
 # 构建第一个HarmonyOS应用（ArkTS）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/start-with-ets-stage
 
 > [!NOTE]
-> 为确保运行效果，本文以使用 DevEco Studio 6.1.1 Release版本 为例。
+> 为确保运行效果，本文以使用 DevEco Studio 26.0.0 Release版本 为例。
 
   
 
-#### 创建ArkTS工程
+## 创建ArkTS工程
 1. 若首次打开**DevEco Studio**，请单击**Create Project**创建工程。如果已经打开了一个工程，请在菜单栏选择**File** > **New** > **Create Project**来创建一个新工程。
 2. 选择**Application**应用开发（本文以应用开发为例，[Atomic Service](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/glossary#atomic-service元服务)对应为元服务开发），选择模板**Empty Ability**，单击**Next**进行下一步配置。
 
@@ -18,7 +18,7 @@
   
 ![](assets/构建第一个HarmonyOS应用（ArkTS）/file-20260514124510135-1.png)
 
-3. 进入配置工程界面，**Compatible SDK**表示兼容的最低API Version，此处以选择**6.1.1(24)** 为例，其他参数保持默认设置即可。
+3. 进入配置工程界面，**Compatible SDK**表示兼容的最低API Version，此处以选择**26.0.0** 为例，其他参数保持默认设置即可。
 
   
 ![](assets/构建第一个HarmonyOS应用（ArkTS）/file-20260514124510135-2.png)
@@ -27,7 +27,7 @@
  
   
 
-#### ArkTS工程目录结构（Stage模型）
+## ArkTS工程目录结构（Stage模型）
 
 
 ![](assets/构建第一个HarmonyOS应用（ArkTS）/file-20260514124510135-3.png)
@@ -56,7 +56,7 @@
  
   
 
-#### 构建第一个页面
+## 构建第一个页面
 1. 使用文本组件。
 
   工程同步完成后，在**Project**窗口，单击**entry > src > main > ets > pages**，打开**Index.ets**文件，将页面从RelativeContainer相对布局修改成Row/Column线性布局。
@@ -89,7 +89,7 @@ struct Index {
 
 2. 添加按钮。
 
-  在默认页面基础上，我们添加一个Button组件，作为按钮响应用户onClick事件，从而实现跳转到另一个页面。**Index.ets**文件的示例如下：
+  在上述页面基础上，我们添加一个Button组件，作为按钮响应用户onClick事件，从而实现跳转到另一个页面。**Index.ets**文件的示例如下：
 
   
 ```ArkTS
@@ -134,7 +134,7 @@ struct Index {
  
   
 
-#### 构建第二个页面
+## 构建第二个页面
 1. 创建第二个页面。
 
   
@@ -201,7 +201,7 @@ struct Second {
  
   
 
-#### 实现页面间的跳转
+## 实现页面间的跳转
 
 页面间的导航可以通过[页面路由router](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-router)来实现。页面路由router根据页面url找到目标页面，从而实现跳转。
  
@@ -317,9 +317,7 @@ struct Second {
 }
 ```
 
-3. 打开**Index.ets**文件，单击预览器中的
-![](assets/构建第一个HarmonyOS应用（ArkTS）/file-20260514124510135-7.png)
-按钮进行刷新。效果如下图所示：
+3. 打开**Index.ets**文件，单击预览器中的![icon](assets/构建第一个HarmonyOS应用（ArkTS）/file-20260514124510135-7.png)按钮进行刷新。效果如下图所示：
 
   
 ![](assets/构建第一个HarmonyOS应用（ArkTS）/file-20260514124510135-8.png)
@@ -327,19 +325,17 @@ struct Second {
  
   
 
-#### 使用真机运行应用
+## 使用真机运行应用
 1. 将搭载HarmonyOS系统的真机与电脑连接。具体指导及要求，可查看[使用本地真机运行应用/服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-run-device)。
-2. 进入**File > Project Structure... > Project > Signing Configs**界面，勾选“**Automatically generate signature**”，即可完成签名。如果未登录，请先单击**Sign In**进行登录，然后自动完成签名。具体请见[配置调试签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section151231211105010)。如下图所示：
+2. 进入**File > Project Structure... > Project > Signing Configs**界面，勾选“**Automatically generate signature**”，即可完成签名。如果未登录，请先单击**Sign In**进行登录，然后自动完成签名。具体请见[配置调试签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing-auto#section1172562862811)。如下图所示：
 
   
 ![](assets/构建第一个HarmonyOS应用（ArkTS）/file-20260514124510135-9.png)
 
-3. 在编辑窗口右上角的工具栏，单击
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/X866S4C-T1ab2ypnTh9Bkw/zh-cn_image_0000002656005662.png?HW-CC-KV=V1&HW-CC-Date=20260730T071808Z&HW-CC-Expire=86400&HW-CC-Sign=17B3FEA1A1FB2E06F3C9B649741FBE5F850D21FF0468BEDA7F637F1245EE66A5)
-按钮运行。效果如下图所示：
+3. 在编辑窗口右上角的工具栏，单击![icon](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/A5WpyIMZTw6_WzdqTeTaRA/zh-cn_image_0000002747289809.png?HW-CC-KV=V1&HW-CC-Date=20260911T073058Z&HW-CC-Expire=86400&HW-CC-Sign=C577D5234F57DE5B2A5EF7517D9005C37B55F2E79673CDD21A8AE5CD394A7E19)按钮运行。效果如下图所示：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/vgvinTqgSBOSiVQaXQMH_Q/zh-cn_image_0000002655845742.png?HW-CC-KV=V1&HW-CC-Date=20260730T071808Z&HW-CC-Expire=86400&HW-CC-Sign=7AF07173909A6EE9ED71FCC58EDA046520B2F7149881FD81263E6FE3488F0666)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/L6f05IFXSNqHVyvTlcLQ3Q/zh-cn_image_0000002747209727.png?HW-CC-KV=V1&HW-CC-Date=20260911T073058Z&HW-CC-Expire=86400&HW-CC-Sign=CE4004E4B2A279AA2C0EE2AC9EF3184EA6D6982EDEEAEF8E66A6AFABC55FBD35)
 
  
 恭喜您已经基于ArkTS语言构建完成第一个HarmonyOS应用，快来探索更多的HarmonyOS功能吧。

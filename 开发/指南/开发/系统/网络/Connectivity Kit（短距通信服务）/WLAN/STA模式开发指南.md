@@ -1,16 +1,16 @@
 # STA模式开发指南
 
-更新时间：2026-03-09 02:50:43
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/sta-development-guide
 
-#### 简介
+## 简介
 
 Wi-Fi STA模式（Station Mode，站点模式）是无线设备作为客户端接入无线局域网（WLAN）的工作模式。在该模式下，设备（如手机、电脑、平板等）通过连接到接入点（AP，Access Point）或无线路由器，实现对网络的访问。
 
 
 
-#### 场景介绍
+## 场景介绍
 
  - [判断Wi-Fi状态](#判断wi-fi状态)
  - [建立Wi-Fi连接](#建立wi-fi连接)
@@ -18,11 +18,12 @@ Wi-Fi STA模式（Station Mode，站点模式）是无线设备作为客户端�
 
 
 
-#### 接口说明
+## 接口说明
 
 完整的JS API说明以及示例代码请参考：[STA接口](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-wifimanager)。
 
 接口具体说明如下表所示。
+
 
 | 接口名 | 功能描述 |
 | --- | --- |
@@ -40,11 +41,11 @@ Wi-Fi STA模式（Station Mode，站点模式）是无线设备作为客户端�
 
 
 
-#### 主要场景开发步骤
+## 主要场景开发步骤
 
 
 
-#### 判断Wi-Fi状态
+### 判断Wi-Fi状态
 1. 导入需要的Wi-Fi模块。
 2. 需要SystemCapability.Communication.WiFi.STA系统能力。
 3. 需要申请权限ohos.permission.GET_WIFI_INFO。
@@ -99,7 +100,7 @@ try {
 
 
 
-#### 建立Wi-Fi连接
+### 建立Wi-Fi连接
 1. 导入需要的Wi-Fi模块。
 2. 开启设备的Wi-Fi。
 3. 需要SystemCapability.Communication.WiFi.STA系统能力。

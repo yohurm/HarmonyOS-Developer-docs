@@ -1,13 +1,14 @@
 # native_avmetadata.h
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avmetadata-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供播控元数据的定义。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_AVMetadataBuilderStruct | OH_AVMetadataBuilder | 会话元数据构造器。用于构造会话元数据。 |
@@ -41,10 +45,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | AVMetadata_Result OH_AVMetadataBuilder_Create(OH_AVMetadataBuilder** builder) | 创建一个元数据构造器。 |
@@ -70,15 +76,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AVMetadataBuilder_Create()
+### OH_AVMetadataBuilder_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVMetadata_Result OH_AVMetadataBuilder_Create(OH_AVMetadataBuilder** builder)
@@ -92,6 +100,7 @@ AVMetadata_Result OH_AVMetadataBuilder_Create(OH_AVMetadataBuilder** builder)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMetadataBuilder** builder | 指向创建的构造器实例。 |
@@ -99,6 +108,7 @@ AVMetadata_Result OH_AVMetadataBuilder_Create(OH_AVMetadataBuilder** builder)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVMetadata_Result | AVMETADATA_SUCCESS：函数执行成功。 AVMETADATA_ERROR_INVALID_PARAM：参数builder为nullptr。 AVMETADATA_ERROR_NO_MEMORY：内存不足。 |
@@ -106,9 +116,10 @@ AVMetadata_Result OH_AVMetadataBuilder_Create(OH_AVMetadataBuilder** builder)
  
   
 
-#### OH_AVMetadataBuilder_Destroy()
+### OH_AVMetadataBuilder_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVMetadata_Result OH_AVMetadataBuilder_Destroy(OH_AVMetadataBuilder* builder)
@@ -122,6 +133,7 @@ AVMetadata_Result OH_AVMetadataBuilder_Destroy(OH_AVMetadataBuilder* builder)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMetadataBuilder* builder | 指向元数据构造器的实例。 |
@@ -129,6 +141,7 @@ AVMetadata_Result OH_AVMetadataBuilder_Destroy(OH_AVMetadataBuilder* builder)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVMetadata_Result | AVMETADATA_SUCCESS：函数执行成功。 AVMETADATA_ERROR_INVALID_PARAM：参数builder为nullptr。 |
@@ -136,9 +149,10 @@ AVMetadata_Result OH_AVMetadataBuilder_Destroy(OH_AVMetadataBuilder* builder)
  
   
 
-#### OH_AVMetadataBuilder_SetAssetId()
+### OH_AVMetadataBuilder_SetAssetId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVMetadata_Result OH_AVMetadataBuilder_SetAssetId(OH_AVMetadataBuilder* builder, const char* assetId)
@@ -152,6 +166,7 @@ AVMetadata_Result OH_AVMetadataBuilder_SetAssetId(OH_AVMetadataBuilder* builder,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMetadataBuilder* builder | 指向元数据构造器的实例。 |
@@ -160,6 +175,7 @@ AVMetadata_Result OH_AVMetadataBuilder_SetAssetId(OH_AVMetadataBuilder* builder,
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVMetadata_Result | AVMETADATA_SUCCESS：函数执行成功。 AVMETADATA_ERROR_INVALID_PARAM： 1. 参数builder为nullptr。 2. 参数assetId为nullptr。 |
@@ -167,9 +183,10 @@ AVMetadata_Result OH_AVMetadataBuilder_SetAssetId(OH_AVMetadataBuilder* builder,
  
   
 
-#### OH_AVMetadataBuilder_SetTitle()
+### OH_AVMetadataBuilder_SetTitle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVMetadata_Result OH_AVMetadataBuilder_SetTitle(OH_AVMetadataBuilder* builder, const char* title)
@@ -183,6 +200,7 @@ AVMetadata_Result OH_AVMetadataBuilder_SetTitle(OH_AVMetadataBuilder* builder, c
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMetadataBuilder* builder | 指向元数据构造器的实例。 |
@@ -191,6 +209,7 @@ AVMetadata_Result OH_AVMetadataBuilder_SetTitle(OH_AVMetadataBuilder* builder, c
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVMetadata_Result | AVMETADATA_SUCCESS：函数执行成功。 AVMETADATA_ERROR_INVALID_PARAM： 1. 参数builder为nullptr。 2. 参数title为nullptr。 |
@@ -198,9 +217,10 @@ AVMetadata_Result OH_AVMetadataBuilder_SetTitle(OH_AVMetadataBuilder* builder, c
  
   
 
-#### OH_AVMetadataBuilder_SetArtist()
+### OH_AVMetadataBuilder_SetArtist()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVMetadata_Result OH_AVMetadataBuilder_SetArtist(OH_AVMetadataBuilder* builder, const char* artist)
@@ -214,6 +234,7 @@ AVMetadata_Result OH_AVMetadataBuilder_SetArtist(OH_AVMetadataBuilder* builder, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMetadataBuilder* builder | 指向元数据构造器的实例。 |
@@ -222,6 +243,7 @@ AVMetadata_Result OH_AVMetadataBuilder_SetArtist(OH_AVMetadataBuilder* builder, 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVMetadata_Result | AVMETADATA_SUCCESS：函数执行成功。 AVMETADATA_ERROR_INVALID_PARAM： 1. 参数builder为nullptr。 2. 参数artist为nullptr。 |
@@ -229,9 +251,10 @@ AVMetadata_Result OH_AVMetadataBuilder_SetArtist(OH_AVMetadataBuilder* builder, 
  
   
 
-#### OH_AVMetadataBuilder_SetAuthor()
+### OH_AVMetadataBuilder_SetAuthor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVMetadata_Result OH_AVMetadataBuilder_SetAuthor(OH_AVMetadataBuilder* builder, const char* author)
@@ -245,6 +268,7 @@ AVMetadata_Result OH_AVMetadataBuilder_SetAuthor(OH_AVMetadataBuilder* builder, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMetadataBuilder* builder | 指向元数据构造器的实例。 |
@@ -253,6 +277,7 @@ AVMetadata_Result OH_AVMetadataBuilder_SetAuthor(OH_AVMetadataBuilder* builder, 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVMetadata_Result | AVMETADATA_SUCCESS：函数执行成功。 AVMETADATA_ERROR_INVALID_PARAM： 1. 参数builder为nullptr。 2. 参数author为nullptr。 |
@@ -260,9 +285,10 @@ AVMetadata_Result OH_AVMetadataBuilder_SetAuthor(OH_AVMetadataBuilder* builder, 
  
   
 
-#### OH_AVMetadataBuilder_SetAlbum()
+### OH_AVMetadataBuilder_SetAlbum()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVMetadata_Result OH_AVMetadataBuilder_SetAlbum(OH_AVMetadataBuilder* builder, const char* album)
@@ -276,6 +302,7 @@ AVMetadata_Result OH_AVMetadataBuilder_SetAlbum(OH_AVMetadataBuilder* builder, c
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMetadataBuilder* builder | 指向元数据构造器的实例。 |
@@ -284,6 +311,7 @@ AVMetadata_Result OH_AVMetadataBuilder_SetAlbum(OH_AVMetadataBuilder* builder, c
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVMetadata_Result | AVMETADATA_SUCCESS：函数执行成功。 AVMETADATA_ERROR_INVALID_PARAM： 1. 参数builder为nullptr。 2. 参数album为nullptr。 |
@@ -291,9 +319,10 @@ AVMetadata_Result OH_AVMetadataBuilder_SetAlbum(OH_AVMetadataBuilder* builder, c
  
   
 
-#### OH_AVMetadataBuilder_SetWriter()
+### OH_AVMetadataBuilder_SetWriter()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVMetadata_Result OH_AVMetadataBuilder_SetWriter(OH_AVMetadataBuilder* builder, const char* writer)
@@ -307,6 +336,7 @@ AVMetadata_Result OH_AVMetadataBuilder_SetWriter(OH_AVMetadataBuilder* builder, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMetadataBuilder* builder | 指向元数据构造器的实例。 |
@@ -315,6 +345,7 @@ AVMetadata_Result OH_AVMetadataBuilder_SetWriter(OH_AVMetadataBuilder* builder, 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVMetadata_Result | AVMETADATA_SUCCESS：函数执行成功。 AVMETADATA_ERROR_INVALID_PARAM： 1. 参数builder为nullptr。 2. 参数writer为nullptr。 |
@@ -322,9 +353,10 @@ AVMetadata_Result OH_AVMetadataBuilder_SetWriter(OH_AVMetadataBuilder* builder, 
  
   
 
-#### OH_AVMetadataBuilder_SetComposer()
+### OH_AVMetadataBuilder_SetComposer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVMetadata_Result OH_AVMetadataBuilder_SetComposer(OH_AVMetadataBuilder* builder, const char* composer)
@@ -338,6 +370,7 @@ AVMetadata_Result OH_AVMetadataBuilder_SetComposer(OH_AVMetadataBuilder* builder
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMetadataBuilder* builder | 指向元数据构造器的实例。 |
@@ -346,6 +379,7 @@ AVMetadata_Result OH_AVMetadataBuilder_SetComposer(OH_AVMetadataBuilder* builder
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVMetadata_Result | AVMETADATA_SUCCESS：函数执行成功。 AVMETADATA_ERROR_INVALID_PARAM： 1. 参数builder为nullptr。 2. 参数composer为nullptr。 |
@@ -353,9 +387,10 @@ AVMetadata_Result OH_AVMetadataBuilder_SetComposer(OH_AVMetadataBuilder* builder
  
   
 
-#### OH_AVMetadataBuilder_SetDuration()
+### OH_AVMetadataBuilder_SetDuration()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVMetadata_Result OH_AVMetadataBuilder_SetDuration(OH_AVMetadataBuilder* builder, int64_t duration)
@@ -369,6 +404,7 @@ AVMetadata_Result OH_AVMetadataBuilder_SetDuration(OH_AVMetadataBuilder* builder
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMetadataBuilder* builder | 指向元数据构造器的实例。 |
@@ -377,6 +413,7 @@ AVMetadata_Result OH_AVMetadataBuilder_SetDuration(OH_AVMetadataBuilder* builder
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVMetadata_Result | AVMETADATA_SUCCESS：函数执行成功。 AVMETADATA_ERROR_INVALID_PARAM：参数builder为nullptr。 |
@@ -384,9 +421,10 @@ AVMetadata_Result OH_AVMetadataBuilder_SetDuration(OH_AVMetadataBuilder* builder
  
   
 
-#### OH_AVMetadataBuilder_SetMediaImageUri()
+### OH_AVMetadataBuilder_SetMediaImageUri()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVMetadata_Result OH_AVMetadataBuilder_SetMediaImageUri(OH_AVMetadataBuilder* builder, const char* mediaImageUri)
@@ -400,6 +438,7 @@ AVMetadata_Result OH_AVMetadataBuilder_SetMediaImageUri(OH_AVMetadataBuilder* bu
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMetadataBuilder* builder | 指向元数据构造器的实例。 |
@@ -408,6 +447,7 @@ AVMetadata_Result OH_AVMetadataBuilder_SetMediaImageUri(OH_AVMetadataBuilder* bu
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVMetadata_Result | AVMETADATA_SUCCESS：函数执行成功。 AVMETADATA_ERROR_INVALID_PARAM： 1. 参数builder为nullptr。 2. 参数mediaImageUri为nullptr。 |
@@ -415,9 +455,10 @@ AVMetadata_Result OH_AVMetadataBuilder_SetMediaImageUri(OH_AVMetadataBuilder* bu
  
   
 
-#### OH_AVMetadataBuilder_SetSubtitle()
+### OH_AVMetadataBuilder_SetSubtitle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVMetadata_Result OH_AVMetadataBuilder_SetSubtitle(OH_AVMetadataBuilder* builder, const char* subtitle)
@@ -431,6 +472,7 @@ AVMetadata_Result OH_AVMetadataBuilder_SetSubtitle(OH_AVMetadataBuilder* builder
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMetadataBuilder* builder | 指向元数据构造器的实例。 |
@@ -439,6 +481,7 @@ AVMetadata_Result OH_AVMetadataBuilder_SetSubtitle(OH_AVMetadataBuilder* builder
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVMetadata_Result | AVMETADATA_SUCCESS：函数执行成功。 AVMETADATA_ERROR_INVALID_PARAM： 1. 参数builder为nullptr。 2. 参数subtitle为nullptr。 |
@@ -446,9 +489,10 @@ AVMetadata_Result OH_AVMetadataBuilder_SetSubtitle(OH_AVMetadataBuilder* builder
  
   
 
-#### OH_AVMetadataBuilder_SetDescription()
+### OH_AVMetadataBuilder_SetDescription()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVMetadata_Result OH_AVMetadataBuilder_SetDescription(OH_AVMetadataBuilder* builder, const char* description)
@@ -462,6 +506,7 @@ AVMetadata_Result OH_AVMetadataBuilder_SetDescription(OH_AVMetadataBuilder* buil
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMetadataBuilder* builder | 指向元数据构造器的实例。 |
@@ -470,6 +515,7 @@ AVMetadata_Result OH_AVMetadataBuilder_SetDescription(OH_AVMetadataBuilder* buil
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVMetadata_Result | AVMETADATA_SUCCESS：函数执行成功。 AVMETADATA_ERROR_INVALID_PARAM： 1. 参数builder为nullptr。 2. 参数description为nullptr。 |
@@ -477,9 +523,10 @@ AVMetadata_Result OH_AVMetadataBuilder_SetDescription(OH_AVMetadataBuilder* buil
  
   
 
-#### OH_AVMetadataBuilder_SetLyric()
+### OH_AVMetadataBuilder_SetLyric()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVMetadata_Result OH_AVMetadataBuilder_SetLyric(OH_AVMetadataBuilder* builder, const char* lyric)
@@ -493,6 +540,7 @@ AVMetadata_Result OH_AVMetadataBuilder_SetLyric(OH_AVMetadataBuilder* builder, c
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMetadataBuilder* builder | 指向元数据构造器的实例。 |
@@ -501,6 +549,7 @@ AVMetadata_Result OH_AVMetadataBuilder_SetLyric(OH_AVMetadataBuilder* builder, c
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVMetadata_Result | AVMETADATA_SUCCESS：函数执行成功。 AVMETADATA_ERROR_INVALID_PARAM： 1. 参数builder为nullptr。 2. 参数lyric为nullptr。 |
@@ -508,9 +557,10 @@ AVMetadata_Result OH_AVMetadataBuilder_SetLyric(OH_AVMetadataBuilder* builder, c
  
   
 
-#### OH_AVMetadataBuilder_SetSkipIntervals()
+### OH_AVMetadataBuilder_SetSkipIntervals()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVMetadata_Result OH_AVMetadataBuilder_SetSkipIntervals(OH_AVMetadataBuilder* builder, AVMetadata_SkipIntervals intervals)
@@ -524,6 +574,7 @@ AVMetadata_Result OH_AVMetadataBuilder_SetSkipIntervals(OH_AVMetadataBuilder* bu
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMetadataBuilder* builder | 指向元数据构造器的实例。 |
@@ -532,6 +583,7 @@ AVMetadata_Result OH_AVMetadataBuilder_SetSkipIntervals(OH_AVMetadataBuilder* bu
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVMetadata_Result | AVMETADATA_SUCCESS：函数执行成功。 AVMETADATA_ERROR_INVALID_PARAM： 1. 参数builder为nullptr。 2. 参数intervals为nullptr。 |
@@ -539,9 +591,10 @@ AVMetadata_Result OH_AVMetadataBuilder_SetSkipIntervals(OH_AVMetadataBuilder* bu
  
   
 
-#### OH_AVMetadataBuilder_SetDisplayTags()
+### OH_AVMetadataBuilder_SetDisplayTags()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVMetadata_Result OH_AVMetadataBuilder_SetDisplayTags(OH_AVMetadataBuilder* builder, int32_t tags)
@@ -555,14 +608,16 @@ AVMetadata_Result OH_AVMetadataBuilder_SetDisplayTags(OH_AVMetadataBuilder* buil
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMetadataBuilder* builder | 指向元数据构造器的实例。 |
-| int32_t tags | 用于在播控中心显示的媒体资源金标类型。 |
+| int32_t tags | 用于在播控中心显示的媒体资源金标类型，取值参考AVMetadata_DisplayTag相关定义。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVMetadata_Result | AVMETADATA_SUCCESS：函数执行成功。 AVMETADATA_ERROR_INVALID_PARAM：参数builder为nullptr。 |
@@ -570,9 +625,10 @@ AVMetadata_Result OH_AVMetadataBuilder_SetDisplayTags(OH_AVMetadataBuilder* buil
  
   
 
-#### OH_AVMetadataBuilder_SetFilter()
+### OH_AVMetadataBuilder_SetFilter()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVMetadata_Result OH_AVMetadataBuilder_SetFilter(OH_AVMetadataBuilder* builder, uint32_t filter)
@@ -586,6 +642,7 @@ AVMetadata_Result OH_AVMetadataBuilder_SetFilter(OH_AVMetadataBuilder* builder, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMetadataBuilder* builder | 指向元数据构造器的实例。 |
@@ -594,6 +651,7 @@ AVMetadata_Result OH_AVMetadataBuilder_SetFilter(OH_AVMetadataBuilder* builder, 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVMetadata_Result | AVMETADATA_SUCCESS：函数执行成功。 AVMETADATA_ERROR_INVALID_PARAM： 1. 参数builder为nullptr。 2. 参数filter是无效的。 |
@@ -601,9 +659,10 @@ AVMetadata_Result OH_AVMetadataBuilder_SetFilter(OH_AVMetadataBuilder* builder, 
  
   
 
-#### OH_AVMetadataBuilder_GenerateAVMetadata()
+### OH_AVMetadataBuilder_GenerateAVMetadata()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVMetadata_Result OH_AVMetadataBuilder_GenerateAVMetadata(OH_AVMetadataBuilder* builder, OH_AVMetadata** avMetadata)
@@ -617,14 +676,16 @@ AVMetadata_Result OH_AVMetadataBuilder_GenerateAVMetadata(OH_AVMetadataBuilder* 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMetadataBuilder* builder | 指向元数据构造器的实例。 |
-| OH_AVMetadata** avMetadata | 指向元数据的指针对象。 |
+| OH_AVMetadata** avMetadata | 指向OH_AVMetadata的指针对象，用于接收生成的元数据对象。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVMetadata_Result | AVMETADATA_SUCCESS：函数执行成功。 AVMETADATA_ERROR_NO_MEMORY：内存不足。 AVMETADATA_ERROR_INVALID_PARAM： 1. 参数builder为nullptr。 2. 参数avMetadata为nullptr。 |
@@ -632,9 +693,10 @@ AVMetadata_Result OH_AVMetadataBuilder_GenerateAVMetadata(OH_AVMetadataBuilder* 
  
   
 
-#### OH_AVMetadata_Destroy()
+### OH_AVMetadata_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 AVMetadata_Result OH_AVMetadata_Destroy(OH_AVMetadata* avMetadata)
@@ -648,6 +710,7 @@ AVMetadata_Result OH_AVMetadata_Destroy(OH_AVMetadata* avMetadata)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVMetadata* avMetadata | 指向元数据实例的指针。 |
@@ -655,6 +718,7 @@ AVMetadata_Result OH_AVMetadata_Destroy(OH_AVMetadata* avMetadata)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AVMetadata_Result | AVMETADATA_SUCCESS：函数执行成功。 AVMETADATA_ERROR_INVALID_PARAM：参数avMetadata为nullptr。 |

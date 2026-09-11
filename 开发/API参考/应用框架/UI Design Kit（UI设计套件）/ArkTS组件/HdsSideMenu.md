@@ -1,6 +1,6 @@
-# HdsSideMenu
+# HdsSideMenu (侧边菜单)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdssidemenu
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -10,7 +10,8 @@
 **起始版本：** 6.0.0(20)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -20,7 +21,8 @@ import { HdsSideMenu, HdsSideMenuMainItem, HdsSideMenuSubItem, HdsSideMenuBadgeP
  
   
 
-#### HdsSideMenu
+## HdsSideMenu
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -36,6 +38,7 @@ HdsSideMenu({items?: HdsSideMenuMainItem[], selectedIndex: number, $selectedInde
  
 **起始版本：** 6.0.0(20)
   
+
 | 参数名 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | items | HdsSideMenuMainItem[] | 否 | @Param | 一级菜单栏组，数量最多为5个。 |
@@ -46,7 +49,8 @@ HdsSideMenu({items?: HdsSideMenuMainItem[], selectedIndex: number, $selectedInde
  
   
 
-#### build
+### build
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -62,7 +66,8 @@ struct的默认构造函数，无法直接调用此方法。
  
   
 
-#### HdsSideMenuMainItem
+## HdsSideMenuMainItem
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -78,7 +83,8 @@ HdsSideMenu一级菜单栏。
  
   
 
-#### constructor
+### constructor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -94,6 +100,7 @@ HdsSideMenuMainItem的构造函数。
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | param | HdsSideMenuMainItemParam | 是 | HdsSideMenu一级菜单栏的参数。 |
@@ -101,7 +108,8 @@ HdsSideMenuMainItem的构造函数。
  
   
 
-#### getSideMenuSubItem
+### getSideMenuSubItem
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -117,6 +125,7 @@ getSideMenuSubItem(): HdsSideMenuSubItem[]
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | HdsSideMenuSubItem[] | 当前菜单下的二级菜单对象数组。 |
@@ -124,7 +133,8 @@ getSideMenuSubItem(): HdsSideMenuSubItem[]
  
   
 
-#### updateBadge
+### updateBadge
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -140,6 +150,7 @@ updateBadge(badge?: HdsSideMenuBadgeParam): HdsSideMenuMainItem
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | badge | HdsSideMenuBadgeParam | 否 | HdsSideMenu上带信息提醒的图标配置信息。 |
@@ -147,6 +158,7 @@ updateBadge(badge?: HdsSideMenuBadgeParam): HdsSideMenuMainItem
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | HdsSideMenuMainItem | 当前菜单下的一级菜单对象。 |
@@ -154,7 +166,8 @@ updateBadge(badge?: HdsSideMenuBadgeParam): HdsSideMenuMainItem
  
   
 
-#### HdsSideMenuSubItem
+## HdsSideMenuSubItem
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -170,7 +183,8 @@ HdsSideMenu二级菜单栏。
  
   
 
-#### constructor
+### constructor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -186,6 +200,7 @@ HdsSideMenuSubItem的构造函数。
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | param | HdsSideMenuSubItemParam | 是 | HdsSideMenu二级菜单栏的参数。 |
@@ -193,7 +208,8 @@ HdsSideMenuSubItem的构造函数。
  
   
 
-#### updateBadge
+### updateBadge
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -209,6 +225,7 @@ updateBadge(badge?: HdsSideMenuBadgeParam): HdsSideMenuSubItem
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | badge | HdsSideMenuBadgeParam | 否 | HdsSideMenu上带信息提醒的图标配置信息。 |
@@ -216,6 +233,7 @@ updateBadge(badge?: HdsSideMenuBadgeParam): HdsSideMenuSubItem
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | HdsSideMenuSubItem | 当前菜单下的二级菜单对象。 |
@@ -223,7 +241,8 @@ updateBadge(badge?: HdsSideMenuBadgeParam): HdsSideMenuSubItem
  
   
 
-#### HdsSideMenuBadgeParam
+## HdsSideMenuBadgeParam
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -235,6 +254,7 @@ HdsSideMenu上带信息提醒的图标配置信息。
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | count | number | 否 | 是 | 设置提醒消息数。值为0时不显示；值为1时，显示“·”；大于99时，显示“99+”。不支持设置小于0的数字。 默认值：0。 |
@@ -243,7 +263,8 @@ HdsSideMenu上带信息提醒的图标配置信息。
  
   
 
-#### HdsSideMenuBaseItemParam
+## HdsSideMenuBaseItemParam
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -255,6 +276,7 @@ HdsSideMenu菜单栏基础类。
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | itemId | string | 否 | 是 | 菜单的id。 默认值：""。 |
@@ -264,7 +286,8 @@ HdsSideMenu菜单栏基础类。
  
   
 
-#### HdsSideMenuMainItemParam
+## HdsSideMenuMainItemParam
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -276,6 +299,7 @@ HdsSideMenu一级菜单栏配置项，继承自[HdsSideMenuBaseItemParam](#hdssi
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | icon | ResourceStr | 否 | 是 | 设置一级菜单栏的图标，优先级高于symbol。 |
@@ -286,7 +310,8 @@ HdsSideMenu一级菜单栏配置项，继承自[HdsSideMenuBaseItemParam](#hdssi
  
   
 
-#### HdsSideMenuSubItemParam
+## HdsSideMenuSubItemParam
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -298,6 +323,7 @@ HdsSideMenu二级菜单栏配置项，继承自[HdsSideMenuBaseItemParam](#hdssi
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | badge | HdsSideMenuBadgeParam | 否 | 是 | 设置二级菜单栏上带信息提醒的图标配置信息。 |
@@ -305,13 +331,15 @@ HdsSideMenu二级菜单栏配置项，继承自[HdsSideMenuBaseItemParam](#hdssi
  
   
 
-#### 事件
+## 事件
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### OnSelectedIndexChange
+## OnSelectedIndexChange
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -327,6 +355,7 @@ HdsSideMenu的selectedIndex发生变化时的回调函数。
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | selectedIndex | number | 是 | 选择项的序号。 |
@@ -334,7 +363,8 @@ HdsSideMenu的selectedIndex发生变化时的回调函数。
  
   
 
-#### 示例
+## 示例
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 

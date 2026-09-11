@@ -1,11 +1,12 @@
 # Enums
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-enums
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-#### AnimationFillMode
+## AnimationFillMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -19,6 +20,7 @@
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | FORWARDS | 0 | 动画执行后保持在最后一帧。 |
@@ -27,7 +29,8 @@
  
   
 
-#### AnimationRepeatMode
+## AnimationRepeatMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -41,7 +44,8 @@
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| RESTART | 0 | 动画结束后从头播放。 |
-| REVERSE | 1 | 动画结束后从尾倒放。 |
+| RESTART | 0 | 动画结束后从头播放，适用于需要循环播放动画的场景。 |
+| REVERSE | 1 | 动画结束后从尾倒放，适用于需要反向播放动画的场景。 |

@@ -1,13 +1,14 @@
 # vulkan_ohos.h
 
-更新时间：2026-07-21 07:44:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-vulkan-ohos-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义了HarmonyOS平台扩展的Vulkan接口。
  
@@ -23,14 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | VkSurfaceCreateInfoOHOS | VkSurfaceCreateInfoOHOS | 包含创建Vulkan Surface时必要的参数。 |
@@ -50,8 +56,12 @@
  
   
 
-#### 枚举
+### 枚举
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | VkSwapchainImageUsageFlagBitsOHOS | VkSwapchainImageUsageFlagBitsOHOS | 图像使用标志位。 |
@@ -59,8 +69,12 @@
  
   
 
-#### 变量
+### 变量
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | VkFlags | VkSwapchainImageUsageFlagsOHOS | 设置掩码的位掩码类型。 起始版本： 10 |
@@ -69,8 +83,12 @@
  
   
 
-#### 宏定义
+### 宏定义
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | VK_OHOS_surface 1 | HarmonyOS平台Surface扩展宏定义。 起始版本： 10 |
@@ -86,8 +104,12 @@
  
   
 
-#### 函数
+### 函数
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | VkResult (VKAPI_PTR PFN_vkCreateSurfaceOHOS)(VkInstance instance, const VkSurfaceCreateInfoOHOS pCreateInfo, const VkAllocationCallbacks* pAllocator, VkSurfaceKHR* pSurface) | PFN_vkCreateSurfaceOHOS | 创建Vulkan Surface的函数指针定义。 |
@@ -110,13 +132,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### VkSwapchainImageUsageFlagBitsOHOS
+### VkSwapchainImageUsageFlagBitsOHOS
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum VkSwapchainImageUsageFlagBitsOHOS
@@ -128,6 +154,7 @@ enum VkSwapchainImageUsageFlagBitsOHOS
  
 **起始版本：** 10
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | VK_SWAPCHAIN_IMAGE_USAGE_SHARED_BIT_OHOS = 0x00000001 | 共享类型图像标志位。 |
@@ -136,15 +163,17 @@ enum VkSwapchainImageUsageFlagBitsOHOS
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### PFN_vkCreateSurfaceOHOS()
+### PFN_vkCreateSurfaceOHOS()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef VkResult (VKAPI_PTR *PFN_vkCreateSurfaceOHOS)(VkInstance instance, const VkSurfaceCreateInfoOHOS* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkSurfaceKHR* pSurface)
@@ -160,6 +189,7 @@ typedef VkResult (VKAPI_PTR *PFN_vkCreateSurfaceOHOS)(VkInstance instance, const
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | VkInstance instance | Vulkan实例。 |
@@ -170,6 +200,7 @@ typedef VkResult (VKAPI_PTR *PFN_vkCreateSurfaceOHOS)(VkInstance instance, const
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | VkResult | 返回一个VkResult类型的错误码，返回值为VK_SUCCESS表示执行成功。 |
@@ -177,9 +208,10 @@ typedef VkResult (VKAPI_PTR *PFN_vkCreateSurfaceOHOS)(VkInstance instance, const
  
   
 
-#### vkCreateSurfaceOHOS()
+### vkCreateSurfaceOHOS()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateSurfaceOHOS(VkInstance instance, const VkSurfaceCreateInfoOHOS* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkSurfaceKHR* pSurface)
@@ -195,6 +227,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateSurfaceOHOS(VkInstance instance, const Vk
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | VkInstance instance | Vulkan实例。 |
@@ -205,6 +238,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateSurfaceOHOS(VkInstance instance, const Vk
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | VkResult | 返回一个VkResult类型的错误码，具体返回类型如下： 返回VK_SUCCESS，表示执行成功。 返回VK_ERROR_OUT_OF_HOST_MEMORY，表示分配VkSurfaceKHR内存失败。 返回VK_ERROR_SURFACE_LOST_KHR，表示操作NativeWindow失败。 |
@@ -212,9 +246,10 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateSurfaceOHOS(VkInstance instance, const Vk
  
   
 
-#### PFN_vkGetNativeBufferPropertiesOHOS()
+### PFN_vkGetNativeBufferPropertiesOHOS()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef VkResult (VKAPI_PTR *PFN_vkGetNativeBufferPropertiesOHOS)(VkDevice device, const struct OH_NativeBuffer* buffer, VkNativeBufferPropertiesOHOS* pProperties)
@@ -230,6 +265,7 @@ typedef VkResult (VKAPI_PTR *PFN_vkGetNativeBufferPropertiesOHOS)(VkDevice devic
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | VkDevice device | VkDevice对象。 |
@@ -239,6 +275,7 @@ typedef VkResult (VKAPI_PTR *PFN_vkGetNativeBufferPropertiesOHOS)(VkDevice devic
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | VkResult | 返回一个VkResult类型的错误码，返回值为VK_SUCCESS表示执行成功。 |
@@ -246,9 +283,10 @@ typedef VkResult (VKAPI_PTR *PFN_vkGetNativeBufferPropertiesOHOS)(VkDevice devic
  
   
 
-#### PFN_vkGetMemoryNativeBufferOHOS()
+### PFN_vkGetMemoryNativeBufferOHOS()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef VkResult (VKAPI_PTR *PFN_vkGetMemoryNativeBufferOHOS)(VkDevice device, const VkMemoryGetNativeBufferInfoOHOS* pInfo, struct OH_NativeBuffer** pBuffer)
@@ -264,6 +302,7 @@ typedef VkResult (VKAPI_PTR *PFN_vkGetMemoryNativeBufferOHOS)(VkDevice device, c
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | VkDevice device | VkDevice对象。 |
@@ -273,6 +312,7 @@ typedef VkResult (VKAPI_PTR *PFN_vkGetMemoryNativeBufferOHOS)(VkDevice device, c
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | VkResult | 返回一个VkResult类型的错误码，返回值为VK_SUCCESS表示执行成功。 |
@@ -280,9 +320,10 @@ typedef VkResult (VKAPI_PTR *PFN_vkGetMemoryNativeBufferOHOS)(VkDevice device, c
  
   
 
-#### vkGetNativeBufferPropertiesOHOS()
+### vkGetNativeBufferPropertiesOHOS()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 VKAPI_ATTR VkResult VKAPI_CALL vkGetNativeBufferPropertiesOHOS(VkDevice device, const struct OH_NativeBuffer* buffer, VkNativeBufferPropertiesOHOS* pProperties)
@@ -298,6 +339,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetNativeBufferPropertiesOHOS(VkDevice device, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | VkDevice device | VkDevice对象。 |
@@ -307,6 +349,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetNativeBufferPropertiesOHOS(VkDevice device, 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | VkResult | 返回一个VkResult类型的错误码，具体返回类型如下： 返回VK_SUCCESS，表示执行成功。 返回VK_ERROR_INVALID_EXTERNAL_HANDLE_KHR，表示入参存在异常。 返回VK_ERROR_OUT_OF_DEVICE_MEMORY，表示设备内存不足。 |
@@ -314,9 +357,10 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetNativeBufferPropertiesOHOS(VkDevice device, 
  
   
 
-#### vkGetMemoryNativeBufferOHOS()
+### vkGetMemoryNativeBufferOHOS()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 VKAPI_ATTR VkResult VKAPI_CALL vkGetMemoryNativeBufferOHOS(VkDevice device, const VkMemoryGetNativeBufferInfoOHOS* pInfo, struct OH_NativeBuffer** pBuffer)
@@ -332,6 +376,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetMemoryNativeBufferOHOS(VkDevice device, cons
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | VkDevice device | VkDevice对象。 |
@@ -341,6 +386,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetMemoryNativeBufferOHOS(VkDevice device, cons
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | VkResult | 返回一个VkResult类型的错误码，具体返回类型如下： 返回VK_SUCCESS，表示执行成功。 返回VK_ERROR_OUT_OF_HOST_MEMORY，表示pInfo入参异常，或获取的pBuffer异常。 |
@@ -348,9 +394,10 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetMemoryNativeBufferOHOS(VkDevice device, cons
  
   
 
-#### vkGetSwapchainGrallocUsageOHOS()
+### vkGetSwapchainGrallocUsageOHOS()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 VKAPI_ATTR VkResult VKAPI_CALL vkGetSwapchainGrallocUsageOHOS(VkDevice device, VkFormat format, VkImageUsageFlags imageUsage, uint64_t* grallocUsage)
@@ -368,6 +415,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetSwapchainGrallocUsageOHOS(VkDevice device, V
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | VkDevice device | VkDevice对象。 |
@@ -378,6 +426,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetSwapchainGrallocUsageOHOS(VkDevice device, V
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | VkResult | 返回一个VkResult类型的错误码，具体返回类型如下： 返回VK_SUCCESS，表示执行成功。 返回VK_ERROR_INITIALIZATION_FAILED，表示入参异常。 |
@@ -385,9 +434,10 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetSwapchainGrallocUsageOHOS(VkDevice device, V
  
   
 
-#### VKAPI_PTR *PFN_vkGetSwapchainGrallocUsageOHOS()
+### VKAPI_PTR *PFN_vkGetSwapchainGrallocUsageOHOS()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef VkResult (VKAPI_PTR *PFN_vkGetSwapchainGrallocUsageOHOS)(VkDevice device, VkFormat format, VkImageUsageFlags imageUsage, uint64_t* grallocUsage)
@@ -405,6 +455,7 @@ typedef VkResult (VKAPI_PTR *PFN_vkGetSwapchainGrallocUsageOHOS)(VkDevice device
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | VkDevice device | VkDevice对象。 |
@@ -415,6 +466,7 @@ typedef VkResult (VKAPI_PTR *PFN_vkGetSwapchainGrallocUsageOHOS)(VkDevice device
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | VkResult | 返回一个VkResult类型的错误码，具体返回类型如下： 返回VK_SUCCESS，表示执行成功。 返回VK_ERROR_INITIALIZATION_FAILED，表示入参异常。 |
@@ -422,9 +474,10 @@ typedef VkResult (VKAPI_PTR *PFN_vkGetSwapchainGrallocUsageOHOS)(VkDevice device
  
   
 
-#### vkAcquireImageOHOS()
+### vkAcquireImageOHOS()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 VKAPI_ATTR VkResult VKAPI_CALL vkAcquireImageOHOS(VkDevice device, VkImage image, int32_t nativeFenceFd, VkSemaphore semaphore, VkFence fence)
@@ -442,6 +495,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkAcquireImageOHOS(VkDevice device, VkImage image
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | VkDevice device | VkDevice对象。 |
@@ -453,6 +507,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkAcquireImageOHOS(VkDevice device, VkImage image
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | VkResult | 返回一个VkResult类型的错误码，具体返回类型如下： 返回VK_SUCCESS，表示执行成功。 返回VK_ERROR_OUT_OF_HOST_MEMORY，表示主机内存不足。 |
@@ -460,9 +515,10 @@ VKAPI_ATTR VkResult VKAPI_CALL vkAcquireImageOHOS(VkDevice device, VkImage image
  
   
 
-#### VKAPI_PTR *PFN_vkAcquireImageOHOS()
+### VKAPI_PTR *PFN_vkAcquireImageOHOS()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef VkResult (VKAPI_PTR *PFN_vkAcquireImageOHOS)(VkDevice device, VkImage image, int32_t nativeFenceFd, VkSemaphore semaphore, VkFence fence)
@@ -480,6 +536,7 @@ typedef VkResult (VKAPI_PTR *PFN_vkAcquireImageOHOS)(VkDevice device, VkImage im
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | VkDevice device | VkDevice对象。 |
@@ -491,6 +548,7 @@ typedef VkResult (VKAPI_PTR *PFN_vkAcquireImageOHOS)(VkDevice device, VkImage im
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | VkResult | 返回一个VkResult类型的错误码，具体返回类型如下： 返回VK_SUCCESS，表示执行成功。 返回VK_ERROR_OUT_OF_HOST_MEMORY，表示主机内存不足。 |
@@ -498,9 +556,10 @@ typedef VkResult (VKAPI_PTR *PFN_vkAcquireImageOHOS)(VkDevice device, VkImage im
  
   
 
-#### vkQueueSignalReleaseImageOHOS()
+### vkQueueSignalReleaseImageOHOS()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 VKAPI_ATTR VkResult VKAPI_CALL vkQueueSignalReleaseImageOHOS(VkQueue queue, uint32_t waitSemaphoreCount, const VkSemaphore* pWaitSemaphores, VkImage image, int32_t* pNativeFenceFd)
@@ -518,6 +577,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkQueueSignalReleaseImageOHOS(VkQueue queue, uint
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | VkQueue queue | Vulkan队列的句柄。 |
@@ -529,6 +589,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkQueueSignalReleaseImageOHOS(VkQueue queue, uint
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | VkResult | 返回一个VkResult类型的错误码，具体返回类型如下： 返回VK_SUCCESS，表示执行成功。 返回VK_ERROR_DEVICE_LOST，表示Vulkan设备链接丢失。 返回VK_ERROR_OUT_OF_HOST_MEMORY，表示主机内存不足。 |
@@ -536,9 +597,10 @@ VKAPI_ATTR VkResult VKAPI_CALL vkQueueSignalReleaseImageOHOS(VkQueue queue, uint
  
   
 
-#### VKAPI_PTR *PFN_vkQueueSignalReleaseImageOHOS()
+### VKAPI_PTR *PFN_vkQueueSignalReleaseImageOHOS()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef VkResult (VKAPI_PTR *PFN_vkQueueSignalReleaseImageOHOS)(VkQueue queue, uint32_t waitSemaphoreCount, const VkSemaphore* pWaitSemaphores, VkImage image, int32_t* pNativeFenceFd)
@@ -556,6 +618,7 @@ typedef VkResult (VKAPI_PTR *PFN_vkQueueSignalReleaseImageOHOS)(VkQueue queue, u
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | VkQueue queue | Vulkan队列的句柄。 |
@@ -567,6 +630,7 @@ typedef VkResult (VKAPI_PTR *PFN_vkQueueSignalReleaseImageOHOS)(VkQueue queue, u
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | VkResult | 返回一个VkResult类型的错误码，具体返回类型如下： 返回VK_SUCCESS，表示执行成功。 返回VK_ERROR_DEVICE_LOST，表示Vulkan设备链接丢失。 返回VK_ERROR_OUT_OF_HOST_MEMORY，表示主机内存不足。 |
@@ -574,7 +638,10 @@ typedef VkResult (VKAPI_PTR *PFN_vkQueueSignalReleaseImageOHOS)(VkQueue queue, u
  
   
 
-#### VKAPI_PTR *PFN_vkSetNativeFenceFdOpenHarmony()
+### VKAPI_PTR *PFN_vkSetNativeFenceFdOpenHarmony()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef VkResult (VKAPI_PTR *PFN_vkSetNativeFenceFdOpenHarmony)(VkDevice device, int32_t nativeFenceFd, VkSemaphore semaphore, VkFence fence)
@@ -592,7 +659,10 @@ typedef VkResult (VKAPI_PTR *PFN_vkSetNativeFenceFdOpenHarmony)(VkDevice device,
  
   
 
-#### VKAPI_PTR *PFN_vkGetNativeFenceFdOpenHarmony()
+### VKAPI_PTR *PFN_vkGetNativeFenceFdOpenHarmony()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef VkResult (VKAPI_PTR *PFN_vkGetNativeFenceFdOpenHarmony)(VkQueue queue, uint32_t waitSemaphoreCount, const VkSemaphore* pWaitSemaphores, VkImage image, int32_t* pNativeFenceFd)
@@ -610,7 +680,10 @@ typedef VkResult (VKAPI_PTR *PFN_vkGetNativeFenceFdOpenHarmony)(VkQueue queue, u
  
   
 
-#### vkSetNativeFenceFdOpenHarmony()
+### vkSetNativeFenceFdOpenHarmony()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 VKAPI_ATTR VkResult VKAPI_CALL vkSetNativeFenceFdOpenHarmony(VkDevice device, int32_t nativeFenceFd, VkSemaphore semaphore, VkFence fence)
@@ -628,7 +701,10 @@ VKAPI_ATTR VkResult VKAPI_CALL vkSetNativeFenceFdOpenHarmony(VkDevice device, in
  
   
 
-#### vkGetNativeFenceFdOpenHarmony()
+### vkGetNativeFenceFdOpenHarmony()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 VKAPI_ATTR VkResult VKAPI_CALL vkGetNativeFenceFdOpenHarmony(VkQueue queue, uint32_t waitSemaphoreCount, const VkSemaphore* pWaitSemaphores, VkImage image, int32_t* pNativeFenceFd)

@@ -1,10 +1,11 @@
 # ArkGuard字节码混淆原理及功能
 
-更新时间：2026-08-04 06:06:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bytecode-obfuscation
 
-#### 术语清单
+## 术语清单
+
 
 | 名词 | 释义 |
 | --- | --- |
@@ -21,17 +22,17 @@
 
 
 
-#### 混淆生效范围
+## 混淆生效范围
 
 
 
-#### 适用语言
+### 适用语言
 
 ArkGuard支持ArkTS/TS/JS语言，JSON仅支持文件名混淆，不支持C/C++、资源文件等。
 
 
 
-#### 混淆能力
+### 混淆能力
 
 ArkGuard提供的是**面向方舟字节码的基础名称混淆**：在可选规则下，对**类、接口、枚举、函数、类成员方法、变量、对象属性名、源文件名**等标识符进行重命名，并可通过保留选项配置**白名单**；各选项的覆盖范围与例外说明见下文[混淆选项](#混淆选项)。函数参数名不参与字节码名称混淆。
 
@@ -39,7 +40,7 @@ ArkGuard提供的是**面向方舟字节码的基础名称混淆**：在可选�
 
 
 
-#### 混淆能力局限性
+### 混淆能力局限性
 
 **1.语言的限制**
 
@@ -102,7 +103,7 @@ test(a2);
 
 
 
-#### 混淆机制及流程
+## 混淆机制及流程
 
 下图为应用编译的简要流程图：
 
@@ -118,11 +119,12 @@ test(a2);
 
 
 
-#### 混淆选项
+## 混淆选项
 
 
 
-#### 已有混淆选项汇总
+### 已有混淆选项汇总
+
 
 | 功能 | 选项 |
 | --- | --- |
@@ -143,7 +145,7 @@ test(a2);
 
 
 
-#### -disable-obfuscation
+### -disable-obfuscation
 
 关闭所有混淆。
 
@@ -151,7 +153,7 @@ test(a2);
 
 
 
-#### -enable-property-obfuscation
+### -enable-property-obfuscation
 
 开启属性名称混淆，效果如下：
 
@@ -223,7 +225,7 @@ person['personAge'] = 22;
 
 
 
-#### -enable-string-property-obfuscation
+### -enable-string-property-obfuscation
 
 开启字符串属性混淆，仅在已开启属性混淆的基础上生效。
 
@@ -267,7 +269,7 @@ let params = obj1['ohos.want.action.home'];
 
 
 
-#### -enable-toplevel-obfuscation
+### -enable-toplevel-obfuscation
 
 开启顶层作用域名称混淆，效果如下：
 
@@ -291,7 +293,7 @@ let s = 0;
 
 
 
-#### -enable-export-obfuscation
+### -enable-export-obfuscation
 
 开启直接导入或导出的名称混淆，效果如下：
 
@@ -322,7 +324,7 @@ namespace ns {
 
 
 
-#### -enable-filename-obfuscation
+### -enable-filename-obfuscation
 
 开启文件/文件夹名称混淆，效果如下：
 
@@ -362,7 +364,7 @@ const module = import('../a/b');
 
 
 
-#### -compact
+### -compact
 
 删除不必要的空格符和所有的换行符。
 
@@ -392,7 +394,7 @@ release模式构建的应用栈信息仅包含代码行号，不包含列号，�
 
 
 
-#### -remove-log
+### -remove-log
 
 删除对console.*语句的调用，要求console.*语句返回值未被调用，效果如下：
 
@@ -454,7 +456,7 @@ switch (value) {
 
 
 
-#### -print-namecache
+### -print-namecache
 
 将名称缓存保存到指定的文件路径filepath中，名称缓存包含名称混淆前后的映射。其中，filepath为必选参数，支持相对路径和绝对路径，相对路径的起始位置为混淆配置文件的当前目录。filepath参数中的文件名请以.json为后缀。
 
@@ -475,7 +477,7 @@ switch (value) {
 
 
 
-#### -apply-namecache
+### -apply-namecache
 
 复用指定的名称缓存文件filepath。其中，filepath为必选参数，支持相对路径和绝对路径，相对路径的起始位置为混淆配置文件的当前目录。filepath参数中的文件名请以.json为后缀。
 
@@ -494,7 +496,7 @@ switch (value) {
 
 
 
-#### -enable-lib-obfuscation-options
+### -enable-lib-obfuscation-options
 
 配置此开关后，依赖模块的混淆选项将被合并到当前编译模块的混淆配置中。
 
@@ -508,13 +510,13 @@ switch (value) {
 
 
 
-#### -enable-bytecode-obfuscation
+### -enable-bytecode-obfuscation
 
 字节码混淆控制开关。默认不开启。
 
 
 
-#### -enable-bytecode-obfuscation-debugging
+### -enable-bytecode-obfuscation-debugging
 
 控制字节码混淆是否输出调试信息，开启后会生成混淆日志，请参考[混淆效果](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bytecode-obfuscation-guide#查看混淆效果)，默认不开启。
 
@@ -522,11 +524,12 @@ switch (value) {
 
 
 
-#### 保留选项
+## 保留选项
 
 
 
-#### 已有保留选项汇总
+### 已有保留选项汇总
+
 
 | 功能 | 选项 |
 | --- | --- |
@@ -539,7 +542,7 @@ switch (value) {
 
 
 
-#### -keep-property-name
+### -keep-property-name
 
 指定想保留的属性名，支持使用[名称类通配符](#名称类通配符)。按如下方式进行配置，表示保留名称为age、firstName和lastName的属性：
 
@@ -671,7 +674,7 @@ class A {
 
 
 
-#### -keep-global-name
+### -keep-global-name
 
 指定要保留的顶层作用域及导入和导出元素的名称，支持使用[名称类通配符](#名称类通配符)。可按如下方式进行配置：
 
@@ -736,7 +739,7 @@ myNapi();
 
 
 
-#### -keep-file-name
+### -keep-file-name
 
 指定要保留的文件/文件夹的名称（不需要写文件后缀），支持使用[名称类通配符](#名称类通配符)。例如：
 
@@ -787,13 +790,13 @@ const module2 = import(moduleName);
 
 
 
-#### -keep-dts
+### -keep-dts
 
 指定路径filepath的.d.ets文件中的名称（例如类名、属性名等）会被添加至-keep-global-name和-keep-property-name白名单中。请注意，filepath仅支持绝对路径，并且可以指定为一个目录。在这种情况下，该目录中所有.d.ets文件中的名称都将被保留。
 
 
 
-#### -keep
+### -keep
 
 保留指定相对路径filepath中的所有名称（例如类名、属性名等）不被混淆。filepath可以是文件与文件夹，若是文件夹，则文件夹下的文件及子文件夹中文件都不混淆。
 
@@ -814,13 +817,14 @@ filepath仅支持相对路径，./与../为相对于混淆配置文件所在目�
 
 
 
-#### 保留选项支持的通配符
+## 保留选项支持的通配符
 
 
 
-#### 名称类通配符
+### 名称类通配符
 
 名称类通配符使用方式如下：
+
 
 | 通配符 | 含义 | 示例 |
 | --- | --- | --- |
@@ -853,9 +857,10 @@ a*
 
 
 
-#### 路径类通配符
+### 路径类通配符
 
 路径类通配符使用方式如下：
+
 
 | 通配符 | 含义 | 示例 |
 | --- | --- | --- |
@@ -928,7 +933,7 @@ class A {
 
 
 
-#### 混淆规则合并策略
+## 混淆规则合并策略
 
 在编译一个模块时，默认情况下，生效的混淆规则为**当前编译模块的混淆规则**与**依赖模块混淆规则**的合并结果，具体规则如下：
 
@@ -968,7 +973,7 @@ class A {
 
 
 
-#### 混淆规则合并逻辑
+### 混淆规则合并逻辑
 
 混淆选项：使用或运算进行合并，即开关选项只要在参与合并的任意一个规则文件中存在，最终的合并结果中就会包含该开关选项。
 

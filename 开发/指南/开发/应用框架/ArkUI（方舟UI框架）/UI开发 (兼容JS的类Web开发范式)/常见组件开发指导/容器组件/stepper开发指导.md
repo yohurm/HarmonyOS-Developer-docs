@@ -1,13 +1,13 @@
 # stepper开发指导
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-components-stepper
 
 当一个任务需要多个步骤时，可以使用stepper组件展示当前进展。具体用法请参考[stepper API](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-container-stepper)。
 
 
-#### 创建stepper组件
+## 创建stepper组件
 
 在pages/index目录下的hml文件中创建一个stepper组件。
 
@@ -48,7 +48,7 @@ text{
 
 
 
-#### 设置index和label属性
+## 设置index和label属性
 
 页面默认显示索引值为index的步骤。
 
@@ -153,7 +153,7 @@ export default {
 
 
 
-#### 设置样式
+## 设置样式
 
 stepper组件默认填充父容器，通过border和background-color设置边框、背景色。
 
@@ -201,7 +201,7 @@ text{
 
 
 
-#### 添加事件
+## 添加事件
 
 stepper分别添加finish，change，next，back，skip事件。
 

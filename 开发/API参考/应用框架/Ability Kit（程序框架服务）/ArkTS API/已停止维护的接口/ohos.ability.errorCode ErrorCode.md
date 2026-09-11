@@ -1,9 +1,9 @@
 # @ohos.ability.errorCode (ErrorCode)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-ability-errorcode
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ErrorCode定义启动Ability时返回的错误码，包括无效的参数、权限拒绝等。
  
@@ -12,9 +12,10 @@ ErrorCode定义启动Ability时返回的错误码，包括无效的参数、权�
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { ErrorCode } from '@kit.AbilityKit';
@@ -22,14 +23,16 @@ import { ErrorCode } from '@kit.AbilityKit';
  
   
 
-#### ErrorCode
+## ErrorCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义启动Ability时返回的错误码。
  
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NO_ERROR | 0 | 启动成功，无错误。 |

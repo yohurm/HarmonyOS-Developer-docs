@@ -1,9 +1,9 @@
 # @ohos.app.ability.AbilityConstant (Ability相关常量)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-abilityconstant
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 AbilityConstant提供Ability相关的枚举，包括应用启动原因[LaunchReason](#launchreason)、上次退出原因[LastExitReason](#lastexitreason)、迁移结果[OnContinueResult](#oncontinueresult)等。
 
@@ -12,9 +12,10 @@ AbilityConstant提供Ability相关的枚举，包括应用启动原因[LaunchRea
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { AbilityConstant } from '@kit.AbilityKit';
@@ -22,13 +23,15 @@ import { AbilityConstant } from '@kit.AbilityKit';
 
 
 
-#### 常量
+## 常量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力**：SystemCapability.Ability.AbilityBase
 
 **元服务API**：从API version 20开始，该接口支持在元服务中使用。
+
 
 | 名称 | 类型 | 值 | 说明 |
 | --- | --- | --- | --- |
@@ -37,13 +40,15 @@ import { AbilityConstant } from '@kit.AbilityKit';
 
 
 
-#### LaunchParam
+## LaunchParam
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 启动参数，主要包括Ability启动原因以及上次退出原因。Ability启动时由系统自动传入，开发者无需修改。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -58,13 +63,15 @@ import { AbilityConstant } from '@kit.AbilityKit';
 
 
 
-#### LaunchReason
+## LaunchReason
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Ability启动原因，该类型为枚举，可配合UIAbility的[onCreate(want, launchParam)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability#oncreate)方法根据launchParam.launchReason的不同类型执行相应操作。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -96,24 +103,26 @@ export default class MyAbility extends UIAbility {
 
 
 
-#### LastExitReason
+## LastExitReason
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Ability上次退出原因，该类型为枚举，可配合UIAbility的[onCreate()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability#oncreate)方法根据launchParam.lastExitReason的不同类型执行相应操作。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | UNKNOWN | 0 | 未知原因。 元服务API：从API version 11开始，该接口支持在元服务中使用。 |
-| ABILITY_NOT_RESPONDING(deprecated) | 1 | Ability组件未响应。 说明: 从API version 9开始支持，从API version 10开始废弃，请使用APP_FREEZE替代。 |
+| ABILITY_NOT_RESPONDING(deprecated) | 1 | Ability组件未响应。 说明： 从API version 9开始支持，从API version 10开始废弃，请使用APP_FREEZE替代。 |
 | NORMAL | 2 | 用户主动关闭应用，应用程序正常退出。 元服务API：从API version 11开始，该接口支持在元服务中使用。 说明：当开发者直接调用process.exit()、内核kill命令等非Ability Kit提供的能力强制退出应用进程时，也会返回NORMAL。 |
 | CPP_CRASH10+ | 3 | 进程崩溃导致的应用程序退出。 元服务API：从API version 11开始，该接口支持在元服务中使用。 |
 | JS_ERROR10+ | 4 | 当应用存在JS语法错误并未被开发者捕获时，触发JS_ERROR故障，导致应用程序退出。 元服务API：从API version 11开始，该接口支持在元服务中使用。 |
 | APP_FREEZE10+ | 5 | 应用冻屏导致的应用程序退出。 元服务API：从API version 11开始，该接口支持在元服务中使用。 |
 | PERFORMANCE_CONTROL10+ | 6 | 因系统性能问题（如设备内存不足）导致的应用程序退出。 元服务API：从API version 11开始，该接口支持在元服务中使用。 说明：该接口即将废弃，建议使用RESOURCE_CONTROL替代。 |
-| RESOURCE_CONTROL10+ | 7 | 系统资源使用不当导致的应用程序退出。具体错误原因可以通过LaunchParam.lastExitMessage获取，可能原因如下: - CPU Highload，CPU高负载。 - CPU_EXT Highload，快速CPU负载检测。 - IO Manage Control，I/O管控。 - App Memory Deterioration，应用内存超限劣化。 - Temperature Control，温度管控。 - Memory Pressure，整机低内存触发按优先级由低到高终止进程。 元服务API：从API version 11开始，该接口支持在元服务中使用。 |
+| RESOURCE_CONTROL10+ | 7 | 系统资源使用不当导致的应用程序退出。具体错误原因可以通过LaunchParam.lastExitMessage获取，可能原因如下： - CPU Highload，CPU高负载。 - CPU_EXT Highload，快速CPU负载检测。 - IO Manage Control，I/O管控。 - App Memory Deterioration，应用内存超限劣化。 - Temperature Control，温度管控。 - Memory Pressure，整机低内存触发按优先级由低到高终止进程。 元服务API：从API version 11开始，该接口支持在元服务中使用。 |
 | UPGRADE10+ | 8 | 应用升级导致的应用程序退出。 元服务API：从API version 11开始，该接口支持在元服务中使用。 |
 | USER_REQUEST18+ | 9 | 应用程序因多任务中心请求而退出。 元服务API：从API version 18开始，该接口支持在元服务中使用。 |
 | SIGNAL18+ | 10 | 应用程序因收到系统kill指令信号而退出。 元服务API：从API version 18开始，该接口支持在元服务中使用。 |
@@ -138,13 +147,15 @@ export default class MyAbility extends UIAbility {
 
 
 
-#### LastExitDetailInfo18+
+## LastExitDetailInfo18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 记录Ability所在进程上次退出时的关键运行信息。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -190,15 +201,17 @@ export default class MyAbility extends UIAbility {
 
 
 
-#### OnContinueResult
+## OnContinueResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Ability迁移结果，该类型为枚举，可配合UIAbility的[onContinue()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability#oncontinue)方法完成相应的返回。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -221,13 +234,15 @@ export default class MyAbility extends UIAbility {
 
 
 
-#### MemoryLevel
+## MemoryLevel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 整机可用内存级别，该类型为枚举，可配合UIAbility的[onMemoryLevel()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-ability#abilityonmemorylevel)方法根据level执行不同内存级别的相应操作。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -260,13 +275,15 @@ export default class MyAbility extends UIAbility {
 
 
 
-#### WindowMode12+
+## WindowMode12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 启动UIAbility时窗口的创建模式，类型为枚举。可配合[startAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext#startability-2)方法使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -304,15 +321,17 @@ export default class MyAbility extends UIAbility {
 
 
 
-#### OnSaveResult
+## OnSaveResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 保存应用数据的结果，该类型为枚举。配合UIAbility的[onSaveState()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability#onsavestate)方法使用，可以实现[UIAbility备份恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ability-recover-guideline)。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -338,15 +357,17 @@ export default class MyAbility extends UIAbility {
 
 
 
-#### StateType
+## StateType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 保存应用数据场景原因，该类型为枚举。配合UIAbility的[onSaveState()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability#onsavestate)方法使用，可以实现[UIAbility备份恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ability-recover-guideline)。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -371,9 +392,10 @@ export default class MyAbility extends UIAbility {
 
 
 
-#### ContinueState10+
+## ContinueState10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 流转状态枚举值。用于表示当前应用任务流转的状态。可配合[UIAbilityContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext)的[setMissionContinueState](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext#setmissioncontinuestate10)方法进行设置。
 
@@ -382,6 +404,7 @@ export default class MyAbility extends UIAbility {
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **设备行为差异：** 该接口在不支持分布式业务的Wearable设备不生效。
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -406,13 +429,15 @@ export default class MyAbility extends UIAbility {
 
 
 
-#### CollaborateResult18+
+## CollaborateResult18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 应用协同状态，该类型为枚举。用于多设备场景下，调用方应用拉起协同方应用时，协同方应用是否接受协同。需要配合UIAbility的[onCollaborate()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability#oncollaborate18)方法进行设置。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -434,15 +459,17 @@ export default class MyAbility extends UIAbility {
 
 
 
-#### PrepareTermination15+
+## PrepareTermination15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 应用准备关闭时返回的动作，该类型为枚举。需要配合[AbilityStage](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-abilitystage)的[onPrepareTermination](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-abilitystage#onpreparetermination15)或者[onPrepareTerminationAsync](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-abilitystage#onprepareterminationasync15)方法使用。
 
 **元服务API**：从API version 15开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

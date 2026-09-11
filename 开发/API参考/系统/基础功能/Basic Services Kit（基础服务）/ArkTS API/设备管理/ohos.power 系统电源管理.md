@@ -1,9 +1,9 @@
 # @ohos.power (系统电源管理)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-power
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该模块主要提供重启、关机、查询屏幕状态等接口。开发者可以使用该模块的接口获取设备的活动状态、电源模式、亮灭屏状态等。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import {power} from '@kit.BasicServicesKit';
@@ -22,9 +23,10 @@ import {power} from '@kit.BasicServicesKit';
  
   
 
-#### power.isActive9+
+## power.isActive9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isActive(): boolean
  
@@ -38,6 +40,7 @@ isActive(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 活动状态返回true，非活动状态返回false。 |
@@ -52,9 +55,10 @@ console.info('power is active: ' + isActive);
  
   
 
-#### power.rebootDevice(deprecated)
+## power.rebootDevice(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 rebootDevice(reason: string): void
  
@@ -70,6 +74,7 @@ rebootDevice(reason: string): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | reason | string | 是 | 重启原因。例如，“updater”表示重启后进入更新模式。如果未指定该参数，系统将在重启后进入正常模式。 |
@@ -83,9 +88,10 @@ power.rebootDevice('reboot_test');
  
   
 
-#### power.getPowerMode9+
+## power.getPowerMode9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPowerMode(): DevicePowerMode
  
@@ -95,6 +101,7 @@ getPowerMode(): DevicePowerMode
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DevicePowerMode | 电源模式。 |
@@ -109,9 +116,10 @@ console.info('power mode: ' + mode);
  
   
 
-#### power.isStandby10+
+## power.isStandby10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isStandby(): boolean
  
@@ -121,6 +129,7 @@ isStandby(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 进入待机模式返回true，否则返回false。 |
@@ -130,6 +139,7 @@ isStandby(): boolean
  
 以下错误码的详细介绍请参见[系统电源管理错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-power)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 4900101 | Failed to connect to the service. |
@@ -148,9 +158,10 @@ try {
  
   
 
-#### power.isScreenOn(deprecated)
+## power.isScreenOn(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isScreenOn(callback: AsyncCallback&lt;boolean&gt;): void
  
@@ -164,6 +175,7 @@ isScreenOn(callback: AsyncCallback&lt;boolean&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;boolean&gt; | 是 | 回调函数。当检测成功，err为undefined，data为获取到的亮灭屏状态，返回true表示亮屏，返回false表示灭屏；否则为错误对象。 |
@@ -183,9 +195,10 @@ power.isScreenOn((err: Error, data: boolean) => {
  
   
 
-#### power.isScreenOn(deprecated)
+## power.isScreenOn(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isScreenOn(): Promise&lt;boolean&gt;
  
@@ -199,6 +212,7 @@ isScreenOn(): Promise&lt;boolean&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示亮屏；返回false表示灭屏。 |
@@ -218,14 +232,16 @@ power.isScreenOn()
  
   
 
-#### DevicePowerMode9+
+## DevicePowerMode9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示电源模式的枚举值。
  
 **系统能力：** SystemCapability.PowerManager.PowerManager.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | MODE_NORMAL | 600 | 表示标准模式，默认值。 |
@@ -237,14 +253,16 @@ power.isScreenOn()
  
   
 
-#### PowerKeyFilteringStrategy21+
+## PowerKeyFilteringStrategy21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示电源键过滤策略。
  
 **系统能力：** SystemCapability.PowerManager.PowerManager.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DISABLE_LONG_PRESS_FILTERING | 0 | 表示不使能电源键长按事件的过滤策略，默认值。 |

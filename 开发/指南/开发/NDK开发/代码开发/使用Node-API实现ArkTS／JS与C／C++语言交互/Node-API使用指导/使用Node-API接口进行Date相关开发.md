@@ -1,16 +1,16 @@
 # 使用Node-API接口进行Date相关开发
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-about-date
 
-#### 简介
+## 简介
 
 Node-API中date相关接口用于处理ArkTS Date对象，并在Node-API模块和ArkTS代码之间进行日期数据的转换和处理。这对于在Node-API模块中处理时间和日期相关逻辑非常有用。
  
   
 
-#### 基本概念
+## 基本概念
 
 在Node-API中，ArkTS Date对象的数据表示从UTC时间1970年1月1日0时0分0秒起至现在的总毫秒数。
  
@@ -20,10 +20,11 @@ ArkTS Date对象提供了一种在ArkTS中表示和操作日期和时间的方�
  
   
 
-#### 场景和功能介绍
+## 场景和功能介绍
 
 以下Node-API函数通常在开发Node-API模块中与ArkTS的Date对象进行交互时使用，来处理和操作日期数据。以下是一些可能的使用场景：
   
+
 | 接口 | 描述 |
 | --- | --- |
 | napi_create_date | 在需要根据当前系统时间或特定计算生成一个Date对象时，可通过使用此接口创建表示这些时间的ArkTS Date对象，然后将其传递给ArkTS代码进行进一步处理。 |
@@ -33,13 +34,13 @@ ArkTS Date对象提供了一种在ArkTS中表示和操作日期和时间的方�
  
   
 
-#### 使用示例
+## 使用示例
 
 Node-API接口开发流程参考[使用Node-API实现跨语言交互开发流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-process)，本文仅对接口对应的C++及ArkTS相关代码进行展示。
  
   
 
-#### napi_create_date
+### napi_create_date
 
 通过一个C++的double数据创建ArkTS的Date对象。
  
@@ -77,7 +78,7 @@ hilog.info(0x0000, 'testTag', 'Test Node-API napi_create_date: %{public}s',
  
   
 
-#### napi_get_date_value
+### napi_get_date_value
 
 获取给定ArkTS Date对应的C++ double值。
  
@@ -134,7 +135,7 @@ try {
  
   
 
-#### napi_is_date
+### napi_is_date
 
 判断给定ArkTS value是否为ArkTS Date对象。
  

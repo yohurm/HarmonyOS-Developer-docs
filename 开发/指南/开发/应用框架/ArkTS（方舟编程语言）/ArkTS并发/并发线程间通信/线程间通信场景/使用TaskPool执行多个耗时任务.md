@@ -1,6 +1,6 @@
 # 使用TaskPool执行多个耗时任务
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/multi-time-consuming-tasks
 
@@ -61,11 +61,12 @@ taskGroup.addTask(new taskpool.Task(loadPicture, 30));
 taskGroup.addTask(new taskpool.Task(loadPicture, 20));
 taskGroup.addTask(new taskpool.Task(loadPicture, 10));
 taskpool.execute(taskGroup).then((ret: object) => {
-  let tmpLength = (ret as IconItemSource[][]).length
+  let retA = ret as IconItemSource[][];
+  let tmpLength = (retA).length
   for (let i = 0; i < tmpLength; i++) {
-    for (let j = 0; j < ret[i].length; j++) {
-      if (ret[i][j]) {
-        iconItemSourceList.push(ret[i][j]);
+    for (let j = 0; j < retA[i].length; j++) {
+      if (retA[i][j]) {
+        iconItemSourceList.push(retA[i][j]);
       }
     }
   }

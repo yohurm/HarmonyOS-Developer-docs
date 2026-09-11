@@ -71,13 +71,13 @@ struct CustomSliderPage1 {
   @State sliderValue: number = 30;
   @State tipShow: boolean = false;
   @State tipX: number = 0;
-  @State animatedTipX: number = 0; // 动画的平滑位置
+  @State animatedTipX: number = 0; <em>// 动画的平滑位置</em>
   private sliderWidth: number = 340;
   private blockSize: number = 20;
   private hideTask: number = -1;
-  private lastUpdateTime: number = Date.now(); // 防抖动控制
+  private lastUpdateTime: number = Date.now(); <em>// 防抖动控制</em>
 
-  // 基于Slider滑块位置计算气泡偏移量
+  <em>// 基于Slider滑块位置计算气泡偏移量</em>
   private calculateExactPosition(value: number): number {
     const percent = value / 100;
     const blockCenter = percent * (this.sliderWidth - this.blockSize) + (this.blockSize / 2);
@@ -88,7 +88,7 @@ struct CustomSliderPage1 {
   private showTip(value: number) {
     const now = Date.now();
 
-    // 防抖动：如果更新太频繁，限制更新频率
+    <em>// 防抖动：如果更新太频繁，限制更新频率</em>
     if (now - this.lastUpdateTime < 16) {
       return;
     }
@@ -96,10 +96,10 @@ struct CustomSliderPage1 {
     this.lastUpdateTime = now;
     this.sliderValue = value;
 
-    // 计算精确位置
+ <em>   // 计算精确位置</em>
     const newTipX = this.calculateExactPosition(value);
 
-    // 使用动画平滑过渡
+   <em> // 使用动画平滑过渡</em>
     this.getUIContext()?.animateTo({
       duration: 30,
       curve: Curve.EaseOut
@@ -111,13 +111,13 @@ struct CustomSliderPage1 {
     this.tipShow = true;
   }
 
-  // 气泡消失事件的监听，消失后进行业务逻辑处理。
+  <em>// 气泡消失事件的监听，消失后进行业务逻辑处理。</em>
   onTipsHide() {
     console.info(`气泡已消失，最终值=${this.sliderValue}`);
-    // 这里写业务逻辑
+   <em> // 这里写业务逻辑</em>
   }
 
-  // 使用setTimeout定时器管理气泡的延迟隐藏。
+  <em>// 使用setTimeout定时器管理气泡的延迟隐藏。</em>
   private delayedHideTip() {
     clearTimeout(this.hideTask);
     this.hideTask = setTimeout(() => {
@@ -138,7 +138,7 @@ struct CustomSliderPage1 {
 
   build() {
     Column({ space: 50 }) {
-      // 采用Stack层叠布局，将Slider与气泡组件叠加显示。
+   <em>   // 采用Stack层叠布局，将Slider与气泡组件叠加显示。</em>
       Stack() {
         Slider({
           value: this.sliderValue,
@@ -149,7 +149,7 @@ struct CustomSliderPage1 {
           .width(this.sliderWidth)
           .height(40)
           .showTips(false)
-          // 基于SliderChangeMode滑动模式识别，识别气泡行为。
+          <em>// 基于SliderChangeMode滑动模式识别，识别气泡行为。</em>
           .onChange((v: number, mode: SliderChangeMode) => {
             if (mode === SliderChangeMode.Moving ||
               mode === SliderChangeMode.Click) {
@@ -158,9 +158,9 @@ struct CustomSliderPage1 {
               this.delayedHideTip();
             }
           });
-        // 使用if/else：条件渲染动态控制气泡的显示与隐藏。
+      <em>  // 使用if/else：条件渲染动态控制气泡的显示与隐藏。</em>
         if (this.tipShow) {
-          // 使用Text模拟气泡。在自定义气泡上实现需要的内容与样式。使用position控制气泡位置。
+       <em>   // 使用Text模拟气泡。在自定义气泡上实现需要的内容与样式。使用position控制气泡位置。</em>
           Text(`${this.sliderValue}`)
             .fontSize(16)
             .fontColor(Color.White)
@@ -208,13 +208,13 @@ struct CustomSliderPage2 {
   private slideWidth: number = 340;
   private slideStepSize: number = 5;
   private blockSize: number = 32;
-  // 需要将app.media.background替换为实际资源值。
+<em>  // 需要将app.media.background替换为实际资源值。</em>
   private imgArr: string[] =
     ['app.media.background', 'app.media.background', 'app.media.background', 'app.media.background',
       'app.media.background', 'app.media.background',
       'app.media.background', 'app.media.background', 'app.media.background', 'app.media.background'];
 
-  // 基于Slider滑块位置计算气泡偏移量
+ <em> // 基于Slider滑块位置计算气泡偏移量</em>
   private showTip(value: number) {
     this.isTipShow = true;
     let percent = Number((value / 100).toFixed(2));
@@ -222,7 +222,7 @@ struct CustomSliderPage2 {
       Math.round(this.getUIContext().px2vp(this.beginX)) + (this.slideWidth - 8) * percent + (0.8 - percent) * 5;
   }
 
-  // @Builder自定义气泡内容。
+ <em> // @Builder自定义气泡内容。</em>
   @Builder
   popupBuilder() {
     Column() {
@@ -260,7 +260,7 @@ struct CustomSliderPage2 {
           this.beginX = Math.round(Number(newValue.globalPosition.x));
           this.showTip(this.value);
         })
-        // 基于SliderChangeMode滑动模式识别，识别气泡行为。
+      <em>  // 基于SliderChangeMode滑动模式识别，识别气泡行为。</em>
         .onChange((value: number, mode: SliderChangeMode) => {
           this.value = value;
           switch (mode) {
@@ -270,14 +270,14 @@ struct CustomSliderPage2 {
               break;
           }
         });
-      // 使用if/else：条件渲染动态控制气泡的显示与隐藏。
+   <em>   // 使用if/else：条件渲染动态控制气泡的显示与隐藏。</em>
       if (this.isTipShow) {
         Row() {
         }
         .width(this.blockSize)
         .height(this.blockSize)
         .position({ x: this.tipsOffset, y: this.offsetY })
-        // 绑定系统Popup组件实现气泡
+     <em>   // 绑定系统Popup组件实现气泡</em>
         .bindPopup(true, {
           builder: this.popupBuilder,
           placement: Placement.Bottom,
@@ -319,7 +319,7 @@ struct CustomSliderPage3 {
   @State sliderWidth: number = 0;
   @State sliderValue: number = 0;
 
-  // @Builder自定义气泡内容。
+ <em> // @Builder自定义气泡内容。</em>
   @Builder
   CustomPopup() {
     Column() {
@@ -332,7 +332,7 @@ struct CustomSliderPage3 {
     }.padding(10);
   }
 
-  // 基于Slider滑块位置计算气泡偏移量，同时确保在边界内。
+  <em>// 基于Slider滑块位置计算气泡偏移量，同时确保在边界内。</em>
   getSliderPosition(): number {
     const position = this.sliderWidth / 100 * this.sliderValue - this.sliderWidth / 2;
     const maxOffset = this.sliderWidth / 2 - 9;
@@ -343,12 +343,12 @@ struct CustomSliderPage3 {
 
   build() {
     Column() {
-      // 采用Stack层叠布局，将Slider与气泡组件叠加显示。
+     <em> // 采用Stack层叠布局，将Slider与气泡组件叠加显示。</em>
       Stack() {
         Slider({ value: $$this.sliderValue, style: SliderStyle.NONE })
           .enabled(false)
           .width('90%')
-          // 基于SliderChangeMode滑动模式识别，识别气泡行为。
+         <em> // 基于SliderChangeMode滑动模式识别，识别气泡行为。</em>
           .onChange((value: number, mode: SliderChangeMode) => {
             if (mode === SliderChangeMode.Begin || mode === SliderChangeMode.Moving ||
               mode === SliderChangeMode.Click) {
@@ -362,13 +362,13 @@ struct CustomSliderPage3 {
           });
 
         Circle({ width: 18, height: 18 })
-        // 使用offset实现位置的微调，以便气泡与滑块对齐。
+    <em>    // 使用offset实现位置的微调，以便气泡与滑块对齐。</em>
           .offset({ x: this.getSliderPosition() })
           .fill('#fff')
           .hitTestBehavior(HitTestMode.None)
           .borderRadius('50%')
           .shadow({ radius: 10, color: Color.Gray })
-          // 绑定系统Popup组件实现气泡
+       <em>   // 绑定系统Popup组件实现气泡</em>
           .bindPopup(this.showPopup, {
             builder: this.CustomPopup(),
             placement: Placement.Bottom,
@@ -381,7 +381,7 @@ struct CustomSliderPage3 {
       .onTouch((e) => {
         if (e.type === TouchType.Down) {
           let touchX = e.touches[0].x;
-          // 边界限制，确保滑块在滑动条范围内
+       <em>   // 边界限制，确保滑块在滑动条范围内</em>
           const minX = 0;
           const maxX = this.sliderWidth;
 

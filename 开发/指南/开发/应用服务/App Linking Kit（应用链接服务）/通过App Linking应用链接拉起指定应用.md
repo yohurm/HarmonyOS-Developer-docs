@@ -1,10 +1,10 @@
 # 通过App Linking应用链接拉起指定应用
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-linking-startupapp
 
-#### 场景介绍
+## 场景介绍
 
 使用App Linking应用链接进行跳转时，系统会根据接口传入的uri信息（HTTPS链接）将用户引导至目标应用中的特定内容，无论应用是否已安装，用户都可以访问到链接对应的内容，跳转体验相比Deep Linking方式更加顺畅。
  
@@ -16,7 +16,7 @@
  
   
 
-#### 原理机制
+## 原理机制
 
 - App Linking在Deep Linking基础上增加了域名校验环节，通过域名校验，可帮助用户消除歧义，识别合法归属于域名的应用，使链接更加安全可靠。
 - App Linking对于同一HTTPS网址，有应用和网页两种内容的呈现方式。当应用安装时则优先打开应用去呈现内容；当应用未安装时，则打开浏览器呈现Web版的内容。
@@ -24,20 +24,21 @@
  
   
 
-#### 约束与限制
+## 约束与限制
 
 支持Phone、PC/2in1、Tablet设备。并且从5.1.1(19)版本开始，新增支持TV设备。
  
   
 
-#### 前提条件
+## 前提条件
 
 已[开通App Linking服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/applinking-enable-applinking)。
  
   
 
-#### 开发流程
+## 开发流程
  
+
 | 角色 | 操作步骤 |
 | --- | --- |
 | 云端开发 | 开通App Linking服务。 |
@@ -51,11 +52,11 @@
  
   
 
-#### 配置应用链接能力
+## 配置应用链接能力
 
   
 
-#### 建立域名与应用关联关系
+### 建立域名与应用关联关系
 
 在开发者的网站域名服务器上做如下配置。后续[在AGC为应用创建关联的网址域名](#在agc为应用创建关联的网址域名)时，AGC会通过此文件确认哪些应用才是合法归属于此域名的，使链接更加安全可靠。
  1. 创建域名配置文件applinking.json，内容如下：
@@ -83,8 +84,11 @@
 
 
 | 参数名称 | 必选(M)/可选(O) | 类型 | 参数说明 |
+
 | --- | --- | --- | --- |
+
 | appIdentifier | M | String | 填写创建应用时生成的APP ID，获取方式请参见查看应用信息。 |
+
 | index | O | Integer | 当App Linking匹配到多个应用时，若希望直接拉起某个指定应用，可以使用index来设置应用跳转的优先级。 index取值范围为[-100,100]，可以重复，不可以为空值，值越大表示优先级越高。 - 如果App Linking匹配到多个应用，但是都未配置index字段，系统会拉起所有匹配的应用，并弹出对话框询问用户选择拉起哪个应用。 - 如果App Linking匹配到多个应用，并且部分或全部配置了index字段，系统会拉起index值最大的应用。当有多个应用的index值最大时，系统会同时拉起这些应用，并弹出对话框询问用户选择拉起哪个应用。 起始版本： 6.1.0(23) |
 2. 将applinking.json配置文件放在域名服务器的固定目录下：https://domain.name/.well-known/applinking.json。例如：开发者的服务器域名为www.example.com，则必须将applinking.json文件放在如下位置：
 
@@ -92,7 +96,7 @@
  
   
 
-#### 在AGC为应用创建关联的网址域名
+### 在AGC为应用创建关联的网址域名
 
 基于HarmonyOS应用链接能力，需要为HarmonyOS应用创建关联的网址域名。
  1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，点击“开发与服务”。
@@ -122,14 +126,14 @@
   例如：开发者在4月7日17:21创建了应用链接，系统会在4月8日17:30去域名服务器上重新获取配置文件，然后进行交集校验，更新发布状态。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/P3VH8YSyRi2zWWejjH561w/zh-cn_image_0000002655847554.png?HW-CC-KV=V1&HW-CC-Date=20260730T071958Z&HW-CC-Expire=86400&HW-CC-Sign=977703FBDFB1ACDF3035428EB40A294666FC7684AC5F9D11321CC6CC8BF7C030)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/XrjbimexQg-CU7Yo0vjAgA/zh-cn_image_0000002747211541.png?HW-CC-KV=V1&HW-CC-Date=20260911T072401Z&HW-CC-Expire=86400&HW-CC-Sign=63F18D784CCA67CAACAA438069550320FD380835F1329EA5CD18A884A49EBA97)
 
 
   
 - 如果域名的配置文件中存在本项目中的应用，则发布成功，点击“查看”可显示该域名关联的应用信息。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/kbkZNnEfQ_CkomZvBbZXig/zh-cn_image_0000002686086983.png?HW-CC-KV=V1&HW-CC-Date=20260730T071958Z&HW-CC-Expire=86400&HW-CC-Sign=AF70F6255CB9CFBE07CBDA333918A13DF70E7A3DF5F3FCBDF4CE8052DA029F19)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/nGTJ7VBkQICMCJhWDumomQ/zh-cn_image_0000002717771606.png?HW-CC-KV=V1&HW-CC-Date=20260911T072401Z&HW-CC-Expire=86400&HW-CC-Sign=D8464A21447FCEAFC2CEF074F8B3138F61E4D2C0B29EE30D232D34CE37EBC9A7)
 
 
 6. 如果还在校验中，则状态为“发布中”。
@@ -137,12 +141,12 @@
 7. 如果配置文件中没有包含任何本项目中的应用，则发布失败，点击“查看”可显示发布失败原因。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/RaOg1wqGQcah-cLGrX0Clg/zh-cn_image_0000002685927155.png?HW-CC-KV=V1&HW-CC-Date=20260730T071958Z&HW-CC-Expire=86400&HW-CC-Sign=BA23DB8286F68C2E614F1DEBD8C3C6B90789346AFAB1FC2240C557F01E8858AB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/0ki4rHsETau0IXUwhYK8Zg/zh-cn_image_0000002717611674.png?HW-CC-KV=V1&HW-CC-Date=20260911T072401Z&HW-CC-Expire=86400&HW-CC-Sign=E6D896373C627252E38499350C8985589247FE6DE3EED1CCAD1F0DFF7BBD0D3F)
 
 
   
 
-  #### 在module.json5中配置关联的网址域名
+  ### 在module.json5中配置关联的网址域名
 
   在应用的[module.json5文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)中进行如下配置，以声明应用关联的域名地址，并开启域名校验开关。当URL符合module.json5中配置的host和路径规则时，可拉起开发者的App。
 
@@ -215,7 +219,7 @@
  
   
 
-#### 处理传入的链接
+### 处理传入的链接
 
 在应用的Ability（如EntryAbility）的onCreate()或者onNewWant()生命周期回调中添加如下代码，以处理传入的链接。
  
@@ -255,8 +259,8 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### 验证应用被拉起效果
-1. 对应用进行[手动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section297715173233)。
+## 验证应用被拉起效果
+1. 对应用进行[手动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing-manual)。
 
   不能使用DevEco Studio的自动签名功能，必须使用手动签名，否则无法拉起应用。
 2. 编译打包，并安装应用至调试设备。
@@ -273,13 +277,13 @@ export default class EntryAbility extends UIAbility {
 
   
 
-  #### 点击链接验证
+  ### 点击链接验证
 
   将App Linking应用链接地址存入备忘录中，并点击验证该链接是否可以拉起应用。
 
   
 
-  #### 通过openLink接口拉起
+  ### 通过openLink接口拉起
 
   拉起方应用通过[UIAbilityContext.openLink()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext#openlink12)接口，传入目标应用的链接，拉起目标应用。
 
@@ -362,7 +366,7 @@ struct Index {
  
   
 
-#### 通过系统浏览器或ArkWeb拉起
+### 通过系统浏览器或ArkWeb拉起
 
 ArkWeb深度集成了App Linking的能力，当用户在系统浏览器或者集成ArkWeb的应用的网页上点击某个链接时，若有链接匹配的应用，系统则会通过App Linking能力优先拉起目标应用，并在应用内展示相应的内容。此机制有如下限制：
  1. 如果用户当前浏览的网页的域名与点击的App Linking链接的域名完全一致，则系统会继续在系统浏览器或ArkWeb中打开该链接，以维持连贯的用户浏览体验。
@@ -370,27 +374,27 @@ ArkWeb深度集成了App Linking的能力，当用户在系统浏览器或者集
  
   
 
-#### 通过系统级扫码入口拉起
+### 通过系统级扫码入口拉起
 
 通过系统级扫码入口扫描App Linking应用链接对应的二维码，然后查看跳转效果。以“扫码直达”服务的美团单车场景为例。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/pg1AY63mTHe8AmMhSrexSw/zh-cn_image_0000002656007476.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071958Z&HW-CC-Expire=86400&HW-CC-Sign=C2C2736980B6EECCD2998B92795196445D9C98A42E766CFF8961D264EEC44EAD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/EgGSeWUdQYejYkp7NqF1pA/zh-cn_image_0000002747291627.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072401Z&HW-CC-Expire=86400&HW-CC-Sign=986546DCA294940A8D6F6E5ACC41CD3ED05979DB726D31E56D1EB1A20E5FE1AC)
 
  
   
 
-#### FAQ
+## FAQ
 
   
 
-#### 应用的module.json5文件skills设置不正确，如何处理？
+### 应用的module.json5文件skills设置不正确，如何处理？
 
 检查"host"字段中应用所对应的域名是否与AGC创建的网址域名一致。
  
   
 
-#### 开发者网站服务器配置不正确，如何处理？
+### 开发者网站服务器配置不正确，如何处理？
 
 按照以下步骤排查：
  1. 检查服务器的JSON配置，并确保appIdentifier的值正确无误。
@@ -398,7 +402,7 @@ ArkWeb深度集成了App Linking的能力，当用户在系统浏览器或者集
  
   
 
-#### 系统尚未完成域名校验，如何处理？
+### 系统尚未完成域名校验，如何处理？
 
 按照以下步骤排查：
  1. 在设备上安装应用，需等待至少20秒，以确保系统完成域名校验的流程。
@@ -406,7 +410,7 @@ ArkWeb深度集成了App Linking的能力，当用户在系统浏览器或者集
  
   
 
-#### 如何确认域名校验是否成功？
+### 如何确认域名校验是否成功？
 
 如需查看应用域名验证结果，请在DevEco Studio中打开终端，并使用以下命令查询验证结果：
  
@@ -432,31 +436,31 @@ BundleName:
  
   
 
-#### 设备首次启动，若无法通过App Linking拉起系统预装应用，如何处理？
+### 设备首次启动，若无法通过App Linking拉起系统预装应用，如何处理？
 
 设备首次启动后，系统将在20分钟内尝试对预装应用进行域名校验，若在20分钟内设备一直无法访问网络，则可能导致预装应用域名校验失败。若出现此类问题，请重启手机，或者等待24小时后重试。系统将在下次开机或24小时后对预装应用重新尝试进行域名校验。
  
   
 
-#### 访问CDN（Content Delivery Network，内容分发网络）时发现内容未及时更新，如何处理？
+### 访问CDN（Content Delivery Network，内容分发网络）时发现内容未及时更新，如何处理？
 
 CDN缓存时间为10分钟，请耐心等待一段时间后再次访问。
  
   
 
-#### 应用和域名的对应关系如何？
+### 应用和域名的对应关系如何？
 
 应用和域名的关系是多对多的关系：一个应用可以关联多个不同的域名，同样地，一个域名也可以关联多个不同的应用。
  
   
 
-#### 如果同一域名关联了多个应用，那么该域名的链接将拉起哪个应用？
+### 如果同一域名关联了多个应用，那么该域名的链接将拉起哪个应用？
 
 开发者可以通过配置applinking.json以关联多个应用。如果每个应用的module.json5的uris字段配置的都是一样的，那么系统将弹出列表框供用户选择要拉起的目标应用。 为了更好的体验，开发者也可以通过链接的path去区分拉起的目标应用，如链接https://www.example.com/path1拉起目标应用1，链接https://www.example.com/path2拉起目标应用2。
  
   
 
-#### 配置App Linking应用链接时提示“下载源JSON文件被拒，请确认安全策略是否符合要求”，如何处理？
+### 配置App Linking应用链接时提示“下载源JSON文件被拒，请确认安全策略是否符合要求”，如何处理？
 
 配置文件需要放在域名服务器的固定目录下：
  

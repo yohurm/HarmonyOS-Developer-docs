@@ -94,7 +94,7 @@ export struct SceneOne {
         })
         .textAlign(TextAlign.Center)
         .onClick(() => {
-          // 点击刷新数据
+        <em>  // 点击刷新数据</em>
           if (this.value) {
             this.arr2 = this.arr;
           } else {
@@ -124,8 +124,8 @@ export struct SceneOne {
       }
       .scrollBar(BarState.Off)
       .width('95%')
-      .align(Alignment.Top) // Scroll组件内部子组件按照顶部开始排列
-      .layoutWeight(1) // Scroll组件自动占满父组件剩余部分
+      .align(Alignment.Top) <em>// Scroll组件内部子组件按照顶部开始排列</em>
+      .layoutWeight(1)<em> </em><em>// Scroll组件自动占满父组件剩余部分</em>
       .backgroundColor(Color.Gray)
     }
     .width('100%')
@@ -156,7 +156,7 @@ export struct SceneTwo {
         })
         .textAlign(TextAlign.Center)
         .onClick(() => {
-          // 点击刷新数据
+          <em>// </em><em>点击刷新数据</em>
           if (this.value) {
             this.arr2 = this.arr;
           } else {
@@ -189,7 +189,7 @@ export struct SceneTwo {
       }
       .scrollBar(BarState.Off)
       .width('95%')
-      .layoutWeight(1) // List组件自动占满父组件剩余部分
+      .layoutWeight(1) <em>// List组件自动占满父组件剩余部分</em>
       .backgroundColor(Color.Gray)
     }
     .width('100%')

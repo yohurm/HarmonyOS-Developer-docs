@@ -1,13 +1,14 @@
 # mutex.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-mutex-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明互斥锁（mutex）的C接口，用于在并发任务间提供互斥访问，保护共享资源免受竞争条件影响。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | FFRT_C_API int ffrt_mutexattr_init(ffrt_mutexattr_t* attr) | 初始化mutex属性。初始化成功后，mutex属性被设置为默认值。该mutex属性不再使用时，必须通过ffrt_mutexattr_destroy销毁。 |
@@ -48,15 +52,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### ffrt_mutexattr_init()
+### ffrt_mutexattr_init()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API int ffrt_mutexattr_init(ffrt_mutexattr_t* attr)
@@ -70,6 +76,7 @@ FFRT_C_API int ffrt_mutexattr_init(ffrt_mutexattr_t* attr)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_mutexattr_t* attr | 指向mutex属性的指针。 |
@@ -77,6 +84,7 @@ FFRT_C_API int ffrt_mutexattr_init(ffrt_mutexattr_t* attr)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API int | mutex属性初始化成功时返回ffrt_success； 否则返回ffrt_error_inval。 |
@@ -84,9 +92,10 @@ FFRT_C_API int ffrt_mutexattr_init(ffrt_mutexattr_t* attr)
  
   
 
-#### ffrt_mutexattr_settype()
+### ffrt_mutexattr_settype()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API int ffrt_mutexattr_settype(ffrt_mutexattr_t* attr, int type)
@@ -100,6 +109,7 @@ FFRT_C_API int ffrt_mutexattr_settype(ffrt_mutexattr_t* attr, int type)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_mutexattr_t* attr | 指向mutex属性的指针。 |
@@ -108,6 +118,7 @@ FFRT_C_API int ffrt_mutexattr_settype(ffrt_mutexattr_t* attr, int type)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API int | mutex属性类型设置成功时返回ffrt_success； 当attr为空指针，或mutex属性类型既不是ffrt_mutex_normal也不是ffrt_mutex_recursive时 返回ffrt_error_inval。 |
@@ -119,9 +130,10 @@ FFRT_C_API int ffrt_mutexattr_settype(ffrt_mutexattr_t* attr, int type)
  
   
 
-#### ffrt_mutexattr_gettype()
+### ffrt_mutexattr_gettype()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API int ffrt_mutexattr_gettype(ffrt_mutexattr_t* attr, int* type)
@@ -135,6 +147,7 @@ FFRT_C_API int ffrt_mutexattr_gettype(ffrt_mutexattr_t* attr, int* type)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_mutexattr_t* attr | 指向mutex属性的指针。 |
@@ -143,6 +156,7 @@ FFRT_C_API int ffrt_mutexattr_gettype(ffrt_mutexattr_t* attr, int* type)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API int | mutex属性类型获取成功时返回ffrt_success； attr或type为空指针时返回ffrt_error_inval。 |
@@ -150,9 +164,10 @@ FFRT_C_API int ffrt_mutexattr_gettype(ffrt_mutexattr_t* attr, int* type)
  
   
 
-#### ffrt_mutexattr_destroy()
+### ffrt_mutexattr_destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API int ffrt_mutexattr_destroy(ffrt_mutexattr_t* attr)
@@ -166,6 +181,7 @@ FFRT_C_API int ffrt_mutexattr_destroy(ffrt_mutexattr_t* attr)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_mutexattr_t* attr | 指向mutex属性的指针。 |
@@ -173,6 +189,7 @@ FFRT_C_API int ffrt_mutexattr_destroy(ffrt_mutexattr_t* attr)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API int | mutex属性销毁成功时返回ffrt_success； 否则返回ffrt_error_inval。 |
@@ -180,9 +197,10 @@ FFRT_C_API int ffrt_mutexattr_destroy(ffrt_mutexattr_t* attr)
  
   
 
-#### ffrt_mutex_init()
+### ffrt_mutex_init()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API int ffrt_mutex_init(ffrt_mutex_t* mutex, const ffrt_mutexattr_t* attr)
@@ -196,6 +214,7 @@ FFRT_C_API int ffrt_mutex_init(ffrt_mutex_t* mutex, const ffrt_mutexattr_t* attr
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_mutex_t* mutex | 指向mutex的指针。 |
@@ -204,6 +223,7 @@ FFRT_C_API int ffrt_mutex_init(ffrt_mutex_t* mutex, const ffrt_mutexattr_t* attr
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API int | mutex初始化成功时返回ffrt_success； mutex为空，或attr非空但未指定合法的mutex类型时返回ffrt_error_inval。 |
@@ -211,9 +231,10 @@ FFRT_C_API int ffrt_mutex_init(ffrt_mutex_t* mutex, const ffrt_mutexattr_t* attr
  
   
 
-#### ffrt_mutex_lock()
+### ffrt_mutex_lock()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API int ffrt_mutex_lock(ffrt_mutex_t* mutex)
@@ -227,6 +248,7 @@ FFRT_C_API int ffrt_mutex_lock(ffrt_mutex_t* mutex)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_mutex_t* mutex | 指向mutex的指针。 |
@@ -234,6 +256,7 @@ FFRT_C_API int ffrt_mutex_lock(ffrt_mutex_t* mutex)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API int | mutex加锁成功时返回ffrt_success； 否则返回ffrt_error_inval。 |
@@ -245,9 +268,10 @@ FFRT_C_API int ffrt_mutex_lock(ffrt_mutex_t* mutex)
  
   
 
-#### ffrt_mutex_unlock()
+### ffrt_mutex_unlock()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API int ffrt_mutex_unlock(ffrt_mutex_t* mutex)
@@ -261,6 +285,7 @@ FFRT_C_API int ffrt_mutex_unlock(ffrt_mutex_t* mutex)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_mutex_t* mutex | 指向mutex的指针。 |
@@ -268,6 +293,7 @@ FFRT_C_API int ffrt_mutex_unlock(ffrt_mutex_t* mutex)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API int | mutex解锁成功时返回ffrt_success； 否则返回ffrt_error_inval。 |
@@ -275,9 +301,10 @@ FFRT_C_API int ffrt_mutex_unlock(ffrt_mutex_t* mutex)
  
   
 
-#### ffrt_mutex_trylock()
+### ffrt_mutex_trylock()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API int ffrt_mutex_trylock(ffrt_mutex_t* mutex)
@@ -291,6 +318,7 @@ FFRT_C_API int ffrt_mutex_trylock(ffrt_mutex_t* mutex)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_mutex_t* mutex | 指向mutex的指针。 |
@@ -298,6 +326,7 @@ FFRT_C_API int ffrt_mutex_trylock(ffrt_mutex_t* mutex)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API int | mutex加锁成功时返回ffrt_success； 否则返回ffrt_error_inval或ffrt_error_busy。 |
@@ -309,9 +338,10 @@ FFRT_C_API int ffrt_mutex_trylock(ffrt_mutex_t* mutex)
  
   
 
-#### ffrt_mutex_destroy()
+### ffrt_mutex_destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API int ffrt_mutex_destroy(ffrt_mutex_t* mutex)
@@ -325,6 +355,7 @@ FFRT_C_API int ffrt_mutex_destroy(ffrt_mutex_t* mutex)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_mutex_t* mutex | 指向mutex的指针。 |
@@ -332,6 +363,7 @@ FFRT_C_API int ffrt_mutex_destroy(ffrt_mutex_t* mutex)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API int | mutex销毁成功时返回ffrt_success； 否则返回ffrt_error_inval。 |

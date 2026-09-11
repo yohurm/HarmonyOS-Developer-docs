@@ -1,6 +1,6 @@
 # I/O密集型任务开发指导 (TaskPool)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/io-intensive-task-development
 
@@ -74,7 +74,7 @@ struct Index {
           .onClick(() => {
             let context = this.uiContext?.getHostContext() as common.UIAbilityContext;
             // 使用TaskPool执行包含密集I/O的并发函数
-            // 数组较大时，I/O密集型任务分发也会抢占UI主线程，需要使用多线程能力
+            // fileList数组较大时，I/O密集型任务分发也会抢占UI主线程，需要使用多线程能力
             taskpool.execute(concurrentTest, context).then(() => {
               this.message = 'success';
               // 调度结果处理

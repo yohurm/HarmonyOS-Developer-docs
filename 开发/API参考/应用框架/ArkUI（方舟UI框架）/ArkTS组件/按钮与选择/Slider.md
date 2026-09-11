@@ -1,9 +1,9 @@
 # Slider
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-slider
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 滑动条组件，通常用于快速调节设置值，如音量调节、亮度调节等应用场景。支持样式定制、方向配置、交互方式和无障碍功能，能解决UI一致性问题，提升开发效率，从而改善用户体验并降低开发成本。
 
@@ -12,17 +12,19 @@
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Slider(options?: SliderOptions)
 
@@ -34,6 +36,7 @@ Slider(options?: SliderOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | SliderOptions | 否 | 配置滑动条的参数。若不传入，则使用SliderOptions中各属性的默认值。 |
@@ -41,9 +44,10 @@ Slider(options?: SliderOptions)
 
 
 
-#### SliderOptions对象说明
+## SliderOptions对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 滑动条的信息。
 
@@ -53,9 +57,10 @@ Slider(options?: SliderOptions)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| value | number | 否 | 是 | 当前进度值。 默认值：与属性min的取值一致。 从API version 10开始，该属性支持$$双向绑定变量。 该属性支持!!双向绑定变量。 取值范围： [min, max] 小于min时取min，大于max时取max。 $$运算符为系统组件提供TS变量的引用，使TS变量和slider组件的value值保持同步。详细使用示例请参考示例7（设置滑动条的双向绑定）。 |
+| value | number | 否 | 是 | 当前进度值。 默认值：与属性min的取值一致。 从API version 10开始，该属性支持$$双向绑定变量。 该属性支持!!双向绑定变量。 取值范围： [min, max] 小于min时取min，大于max时取max。 $$运算符为系统组件提供TS变量的引用，使TS变量和Slider组件的value值保持同步。详细使用示例请参考示例7（设置滑动条的双向绑定）。 |
 | min | number | 否 | 是 | 设置最小值。 默认值：0 |
 | max | number | 否 | 是 | 设置最大值。 默认值：100 说明： 当min >= max时，min取默认值0，max取默认值100。 当value不在[min, max]范围内时，取min或者max，靠近min取min，靠近max取max。 |
 | step | number | 否 | 是 | 设置Slider滑动步长。 默认值：1 取值范围：[0.01, max - min] 说明： 若设置的step值小于0或大于max - min值，则按默认值显示。 |
@@ -66,13 +71,15 @@ Slider(options?: SliderOptions)
 
 
 
-#### SliderStyle枚举说明
+## SliderStyle枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 滑动条滑块在滑轨上显示的样式，样式说明请参考[Slider组件滑块与滑轨是如何对齐的](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-select-component-faq#slider组件滑块与滑轨是如何对齐的)。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 说明 |
 | --- | --- |
@@ -87,17 +94,19 @@ Slider(options?: SliderOptions)
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持除触摸热区以外的[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)。
 
 
 
-#### blockColor
+### blockColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 blockColor(value: ResourceColor)
 
@@ -117,6 +126,7 @@ blockColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 滑块的颜色。 默认值：\$r('sys.color.ohos_id_color_foreground_contrary') |
@@ -124,9 +134,10 @@ blockColor(value: ResourceColor)
 
 
 
-#### blockColor21+
+### blockColor21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 blockColor(value: ResourceColor | LinearGradient)
 
@@ -148,6 +159,7 @@ blockColor(value: ResourceColor | LinearGradient)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor \| LinearGradient | 是 | 滑块的颜色。 默认值：\$r('sys.color.ohos_id_color_foreground_contrary') 说明： 当滑块形状设置为SliderBlockType.IMAGE时，滑块无填充，设置blockColor不生效。 |
@@ -155,9 +167,10 @@ blockColor(value: ResourceColor | LinearGradient)
 
 
 
-#### trackColor
+### trackColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 trackColor(value: ResourceColor | LinearGradient)
 
@@ -173,6 +186,7 @@ trackColor(value: ResourceColor | LinearGradient)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor \| LinearGradient | 是 | 滑轨的背景颜色。 默认值：\$r('sys.color.ohos_id_color_component_normal') 说明： 1. 设置渐变色时，如果颜色断点颜色值为非法值或渐变色断点为空，渐变色将不起效果。 2. 该接口中的LinearGradient类型不支持在元服务中使用。 |
@@ -180,9 +194,10 @@ trackColor(value: ResourceColor | LinearGradient)
 
 
 
-#### trackColorMetrics23+
+### trackColorMetrics23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 trackColorMetrics(color: ColorMetricsLinearGradient)
 
@@ -198,6 +213,7 @@ trackColorMetrics(color: ColorMetricsLinearGradient)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | ColorMetricsLinearGradient | 是 | 滑轨的线性渐变背景颜色。 设置渐变色时，如果color的值为undefined，渐变色设置无效，滑轨背景颜色默认取值为：\$r('sys.color.ohos_id_color_component_normal')。 |
@@ -205,9 +221,10 @@ trackColorMetrics(color: ColorMetricsLinearGradient)
 
 
 
-#### selectedColor
+### selectedColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectedColor(value: ResourceColor)
 
@@ -221,6 +238,7 @@ selectedColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 滑轨的已滑动部分颜色。 默认值：\$r('sys.color.ohos_id_color_emphasize') |
@@ -228,9 +246,10 @@ selectedColor(value: ResourceColor)
 
 
 
-#### selectedColor18+
+### selectedColor18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectedColor(selectedColor: ResourceColor | LinearGradient)
 
@@ -246,6 +265,7 @@ selectedColor(selectedColor: ResourceColor | LinearGradient)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | selectedColor | ResourceColor \| LinearGradient | 是 | 滑轨的已滑动部分颜色。 默认值：\$r('sys.color.ohos_id_color_emphasize') 说明： 设置渐变色时，若颜色断点颜色值为非法值或者渐变色断点为空时，渐变色不起效果。 |
@@ -253,9 +273,10 @@ selectedColor(selectedColor: ResourceColor | LinearGradient)
 
 
 
-#### showSteps
+### showSteps
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showSteps(value: boolean)
 
@@ -269,6 +290,7 @@ showSteps(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否显示步长刻度值。 true：显示刻度值；false：不显示刻度值。 默认值：false |
@@ -276,9 +298,10 @@ showSteps(value: boolean)
 
 
 
-#### showTips
+### showTips
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showTips(value: boolean, content?: ResourceStr)
 
@@ -296,6 +319,7 @@ showTips(value: boolean, content?: ResourceStr)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 滑动时是否显示气泡提示。 true：显示气泡；false：不显示气泡。 默认值：false |
@@ -304,9 +328,10 @@ showTips(value: boolean, content?: ResourceStr)
 
 
 
-#### trackThickness8+
+### trackThickness8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 trackThickness(value: Length)
 
@@ -328,6 +353,7 @@ trackThickness或[blockSize](#blocksize10)的大小超过Slider组件的宽度�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Length | 是 | 滑轨的粗细。 默认值：style为SliderStyle.OutSet时为4.0vp，style为SliderStyle.InSet时为20.0vp。 |
@@ -335,9 +361,10 @@ trackThickness或[blockSize](#blocksize10)的大小超过Slider组件的宽度�
 
 
 
-#### blockBorderColor10+
+### blockBorderColor10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 blockBorderColor(value: ResourceColor)
 
@@ -357,6 +384,7 @@ blockBorderColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 滑块描边颜色。 默认值：'#00000000' |
@@ -364,9 +392,10 @@ blockBorderColor(value: ResourceColor)
 
 
 
-#### blockBorderWidth10+
+### blockBorderWidth10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 blockBorderWidth(value: Length)
 
@@ -386,6 +415,7 @@ blockBorderWidth(value: Length)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Length | 是 | 滑块描边粗细。 说明： value为string类型时，不支持百分比。 |
@@ -393,9 +423,10 @@ blockBorderWidth(value: Length)
 
 
 
-#### stepColor10+
+### stepColor10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stepColor(value: ResourceColor)
 
@@ -409,6 +440,7 @@ stepColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 刻度颜色。 默认值： 混入\$r('sys.color.ohos_id_alpha_normal_bg')透明度的\$r('sys.color.ohos_id_color_foreground')颜色。 |
@@ -416,9 +448,10 @@ stepColor(value: ResourceColor)
 
 
 
-#### trackBorderRadius10+
+### trackBorderRadius10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 trackBorderRadius(value: Length)
 
@@ -432,6 +465,7 @@ trackBorderRadius(value: Length)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Length | 是 | 滑轨圆角半径。 默认值： style为SliderStyle.OutSet时默认值为2vp。 style为SliderStyle.InSet时默认值为10vp。 说明： 设定值小于0时取默认值。 |
@@ -439,9 +473,10 @@ trackBorderRadius(value: Length)
 
 
 
-#### selectedBorderRadius12+
+### selectedBorderRadius12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectedBorderRadius(value: Dimension)
 
@@ -455,6 +490,7 @@ selectedBorderRadius(value: Dimension)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Dimension | 是 | 已滑动部分的圆角半径。 默认值：style为SliderStyle.InSet或SliderStyle.OutSet时，跟随滑轨圆角；style为SliderStyle.NONE时，为0。 说明： 不支持Percentage类型。设定值小于0时取默认值。 |
@@ -462,9 +498,10 @@ selectedBorderRadius(value: Dimension)
 
 
 
-#### blockSize10+
+### blockSize10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 blockSize(value: SizeOptions)
 
@@ -484,6 +521,7 @@ blockSize(value: SizeOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | SizeOptions | 是 | 滑块大小。 默认值：当参数style的值设置为SliderStyle.OutSet时为{width: 18, height: 18}，当参数style的值设置为SliderStyle.InSet时为{width: 12, height: 12}，当参数style的值设置为SliderStyle.NONE时，此字段不生效。 当blockSize宽高不相等时，取较小值作为尺寸，当设置的宽高值中有一个或两个都小于等于0的时候，取默认值。 |
@@ -491,9 +529,10 @@ blockSize(value: SizeOptions)
 
 
 
-#### blockStyle10+
+### blockStyle10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 blockStyle(value: SliderBlockStyle)
 
@@ -507,6 +546,7 @@ blockStyle(value: SliderBlockStyle)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | SliderBlockStyle | 是 | 滑块形状参数。 默认值为SliderBlockType.DEFAULT，即圆形滑块。 |
@@ -514,9 +554,10 @@ blockStyle(value: SliderBlockStyle)
 
 
 
-#### stepSize10+
+### stepSize10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stepSize(value: Length)
 
@@ -530,6 +571,7 @@ stepSize(value: Length)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Length | 是 | 刻度大小（直径）。 默认值：'4vp' 取值范围：[0, trackThickness)，单位为vp |
@@ -537,9 +579,10 @@ stepSize(value: Length)
 
 
 
-#### sliderInteractionMode12+
+### sliderInteractionMode12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sliderInteractionMode(value: SliderInteraction)
 
@@ -553,6 +596,7 @@ sliderInteractionMode(value: SliderInteraction)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | SliderInteraction | 是 | 用户与滑动条组件交互方式。 默认值为SliderInteraction.SLIDE_AND_CLICK。 |
@@ -560,9 +604,10 @@ sliderInteractionMode(value: SliderInteraction)
 
 
 
-#### minResponsiveDistance12+
+### minResponsiveDistance12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 minResponsiveDistance(value: number)
 
@@ -576,6 +621,7 @@ minResponsiveDistance(value: number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 设置滑块开始滑动的最小响应距离。 默认值：0 说明： 单位与SliderOptions中的属性min以及属性max一致。 当value小于0、大于max-min、为NaN或非数字类型时，取默认值。 |
@@ -583,9 +629,10 @@ minResponsiveDistance(value: number)
 
 
 
-#### contentModifier12+
+### contentModifier12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contentModifier(modifier: ContentModifier&lt;SliderConfiguration&gt;)
 
@@ -599,6 +646,7 @@ contentModifier(modifier: ContentModifier&lt;SliderConfiguration&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | modifier | ContentModifier&lt;SliderConfiguration&gt; | 是 | 在Slider组件上，定制内容区的方法。 ContentModifier为内容修改器，需自定义class实现该接口。 |
@@ -610,9 +658,10 @@ contentModifier(modifier: ContentModifier&lt;SliderConfiguration&gt;)
 
 
 
-#### slideRange12+
+### slideRange12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 slideRange(value: SlideRange)
 
@@ -626,6 +675,7 @@ slideRange(value: SlideRange)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | SlideRange | 是 | 有效滑动区间 |
@@ -633,9 +683,10 @@ slideRange(value: SlideRange)
 
 
 
-#### enableHapticFeedback18+
+### enableHapticFeedback18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableHapticFeedback(enabled: boolean)
 
@@ -659,6 +710,7 @@ enableHapticFeedback(enabled: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 是否开启触控反馈。 true：开启触控反馈；false：不开启触控反馈。 默认值：true |
@@ -666,9 +718,10 @@ enableHapticFeedback(enabled: boolean)
 
 
 
-#### digitalCrownSensitivity18+
+### digitalCrownSensitivity18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 digitalCrownSensitivity(sensitivity: Optional&lt;CrownSensitivity&gt;)
 
@@ -686,6 +739,7 @@ digitalCrownSensitivity(sensitivity: Optional&lt;CrownSensitivity&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sensitivity | Optional&lt;CrownSensitivity&gt; | 是 | 旋转表冠灵敏度。 默认值：CrownSensitivity.MEDIUM |
@@ -693,9 +747,10 @@ digitalCrownSensitivity(sensitivity: Optional&lt;CrownSensitivity&gt;)
 
 
 
-#### prefix20+
+### prefix20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 prefix(content: ComponentContent, options?: SliderPrefixOptions)
 
@@ -709,6 +764,7 @@ prefix(content: ComponentContent, options?: SliderPrefixOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | content | ComponentContent | 是 | 滑动条前缀的可视化内容，显示在滑动条起始位置。 |
@@ -717,9 +773,10 @@ prefix(content: ComponentContent, options?: SliderPrefixOptions)
 
 
 
-#### suffix20+
+### suffix20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 suffix(content: ComponentContent, options?: SliderSuffixOptions)
 
@@ -733,6 +790,7 @@ suffix(content: ComponentContent, options?: SliderSuffixOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | content | ComponentContent | 是 | 滑动条后缀的可视化内容，显示在滑动条结束位置。 |
@@ -741,9 +799,10 @@ suffix(content: ComponentContent, options?: SliderSuffixOptions)
 
 
 
-#### showSteps20+
+### showSteps20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showSteps(value: boolean, options?: SliderShowStepOptions)
 
@@ -763,6 +822,7 @@ showSteps(value: boolean, options?: SliderShowStepOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否显示步长刻度值。 true：显示刻度值；false：不显示刻度值。 默认值：false |
@@ -771,9 +831,10 @@ showSteps(value: boolean, options?: SliderShowStepOptions)
 
 
 
-#### minLabel(deprecated)
+### minLabel(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 minLabel(value: string)
 
@@ -787,6 +848,7 @@ minLabel(value: string)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string | 是 | 最小值标签文本。 |
@@ -794,9 +856,10 @@ minLabel(value: string)
 
 
 
-#### maxLabel(deprecated)
+### maxLabel(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 maxLabel(value: string)
 
@@ -810,6 +873,7 @@ maxLabel(value: string)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string | 是 | 最大值标签文本。 |
@@ -817,17 +881,19 @@ maxLabel(value: string)
 
 
 
-#### ColorMetricsLinearGradient23+
+## ColorMetricsLinearGradient23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 滑轨的线性渐变背景颜色。
 
 
 
-#### constructor23+
+### constructor23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(colorStops: ColorMetricsStop[])
 
@@ -841,6 +907,7 @@ ColorMetricsLinearGradient的构造函数。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | colorStops | ColorMetricsStop[] | 是 | 线性渐变颜色断点数组，每个元素描述一个颜色及其在渐变中的断点值。 |
@@ -848,9 +915,10 @@ ColorMetricsLinearGradient的构造函数。
 
 
 
-#### ColorMetricsStop23+
+## ColorMetricsStop23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 线性渐变颜色断点类型，用于描述渐变色颜色断点。
 
@@ -860,6 +928,7 @@ ColorMetricsLinearGradient的构造函数。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | color | ColorMetrics | 否 | 否 | 线性渐变颜色断点的颜色值。 |
@@ -868,9 +937,10 @@ ColorMetricsLinearGradient的构造函数。
 
 
 
-#### SliderCustomContentOptions20+
+## SliderCustomContentOptions20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Slider前后缀组件无障碍信息参数。
 
@@ -879,6 +949,7 @@ Slider前后缀组件无障碍信息参数。
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -890,9 +961,10 @@ Slider前后缀组件无障碍信息参数。
 
 
 
-#### SliderPrefixOptions20+
+## SliderPrefixOptions20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Slider前缀组件无障碍信息参数。
 
@@ -906,9 +978,10 @@ Slider前缀组件无障碍信息参数。
 
 
 
-#### SliderSuffixOptions20+
+## SliderSuffixOptions20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Slider后缀组件无障碍信息参数。
 
@@ -922,9 +995,10 @@ Slider后缀组件无障碍信息参数。
 
 
 
-#### SliderStepItemAccessibility20+
+## SliderStepItemAccessibility20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Slider刻度点的无障碍文本信息。
 
@@ -934,6 +1008,7 @@ Slider刻度点的无障碍文本信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | text | ResourceStr | 否 | 是 | 无障碍文本，供屏幕阅读器等工具读取，增强无障碍功能。 默认值："" |
@@ -941,9 +1016,10 @@ Slider刻度点的无障碍文本信息。
 
 
 
-#### SliderShowStepOptions20+
+## SliderShowStepOptions20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Slider刻度点的无障碍文本信息映射集。
 
@@ -953,6 +1029,7 @@ Slider刻度点的无障碍文本信息映射集。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | stepsAccessibility | Map<number, SliderStepItemAccessibility> | 否 | 是 | 刻度点无障碍文本映射集，供屏幕阅读器等工具读取，增强无障碍功能。 Key取值范围：[0, INT32_MAX]，当Key设定为负数和小数时，设定项不生效。 默认值：{} |
@@ -960,9 +1037,10 @@ Slider刻度点的无障碍文本信息映射集。
 
 
 
-#### SliderBlockStyle10+对象说明
+## SliderBlockStyle10+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Slider组件滑块形状参数。
 
@@ -971,6 +1049,7 @@ Slider组件滑块形状参数。
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -981,9 +1060,10 @@ Slider组件滑块形状参数。
 
 
 
-#### SliderBlockType10+枚举说明
+## SliderBlockType10+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Slider组件滑块形状枚举。
 
@@ -992,6 +1072,7 @@ Slider组件滑块形状枚举。
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1002,9 +1083,10 @@ Slider组件滑块形状枚举。
 
 
 
-#### SliderInteraction12+枚举说明
+## SliderInteraction12+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用户与滑动条组件交互方式。
 
@@ -1013,6 +1095,7 @@ Slider组件滑块形状枚举。
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1023,9 +1106,10 @@ Slider组件滑块形状枚举。
 
 
 
-#### SlideRange12+对象说明
+## SlideRange12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义有效滑动区间。
 
@@ -1034,6 +1118,7 @@ Slider组件滑块形状枚举。
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1047,17 +1132,19 @@ Slider组件滑块形状枚举。
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)外，还支持以下事件：
 
 
 
-#### onChange
+### onChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onChange(callback: (value: number, mode: SliderChangeMode) => void)
 
@@ -1075,6 +1162,7 @@ Begin和End状态在点击时触发，Moving和Click状态在value值变化时�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 当前滑动进度值，返回值精度由Slider的step参数决定。若返回值有小数，可使用number.toFixed()方法将数据处理为预期的精度。 |
@@ -1083,9 +1171,10 @@ Begin和End状态在点击时触发，Moving和Click状态在value值变化时�
 
 
 
-#### SliderChangeMode枚举说明
+## SliderChangeMode枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 滑块状态值，包括按下、拖动、离开、点击滑动条使滑块移动时。
 
@@ -1094,6 +1183,7 @@ Begin和End状态在点击时触发，Moving和Click状态在value值变化时�
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1105,9 +1195,10 @@ Begin和End状态在点击时触发，Moving和Click状态在value值变化时�
 
 
 
-#### SliderConfiguration12+对象说明
+## SliderConfiguration12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 开发者需要自定义class实现ContentModifier接口。继承自[CommonConfiguration](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-content-modifier#commonconfigurationt)。
 
@@ -1116,6 +1207,7 @@ Begin和End状态在点击时触发，Moving和Click状态在value值变化时�
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1128,9 +1220,10 @@ Begin和End状态在点击时触发，Moving和Click状态在value值变化时�
 
 
 
-#### SliderTriggerChangeCallback12+
+## SliderTriggerChangeCallback12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type SliderTriggerChangeCallback = (value: number, mode: SliderChangeMode) => void
 
@@ -1144,6 +1237,7 @@ type SliderTriggerChangeCallback = (value: number, mode: SliderChangeMode) => vo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 设置当前进度值。 取值范围：[min-max] |
@@ -1152,13 +1246,17 @@ type SliderTriggerChangeCallback = (value: number, mode: SliderChangeMode) => vo
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（滑动条基础样式）
+
+
+### 示例1（滑动条基础样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置style、showTips、showSteps控制气泡、刻度值、滑块和滑轨的显示。
 
@@ -1343,7 +1441,10 @@ struct SliderExample {
 
 
 
-#### 示例2（设置滑动条样式）
+### 示例2（设置滑动条样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过blockBorderColor、blockSize、blockBorderWidth、blockStyle设置滑块的样式，通过stepSize、stepColor设置刻度值的样式，通过trackBorderRadius设置底板的圆角，通过selectedBorderRadius设置已滑动部分的圆角。
 
@@ -1402,7 +1503,10 @@ struct SliderExample {
 
 
 
-#### 示例3（自定义滑动条）
+### 示例3（自定义滑动条）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过样式Builder定制Slider组件内容区。点击增加按钮，进度条会按照原Slider设置的步长增加，反之点击减少按钮进度条会减少，并触发原组件的onChange事件。
 
@@ -1520,12 +1624,15 @@ struct SliderExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/SEqWDMb4Qnuca02UzwppHg/zh-cn_image_0000002655848610.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071504Z&HW-CC-Expire=86400&HW-CC-Sign=4642C7BF9C9195DCD1787239AE1244CE2E38E60760F6E00E4964FA5BE144D467)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/lGEIYrz1QoSb6thzOnMhWw/zh-cn_image_0000002747212615.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073107Z&HW-CC-Expire=86400&HW-CC-Sign=CF7722C454F7758D41DDC78F670332349B65D91D4AE1D18B6AD35D7213498230)
 
 
 
 
-#### 示例4（设置滑动条渐变色）
+### 示例4（设置滑动条渐变色）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过selectedColor设置滑动条渐变色，通过focusable、defaultFocus和focusOnTouch设置滑动条支持表冠操作。
 
@@ -1607,12 +1714,15 @@ struct SliderExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/SDZlc7h_TG2z8yAkzg2_0g/zh-cn_image_0000002686088037.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071504Z&HW-CC-Expire=86400&HW-CC-Sign=ABE6E9045CDE6DDA7EDCCE346CE047E4C57BA063CD1D256848EF3DA76FD2A44E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/KvkhXEjyTI6shKehUU0uUA/zh-cn_image_0000002717772680.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073107Z&HW-CC-Expire=86400&HW-CC-Sign=788E543BF900CF5CA09481BCE5E841109CAACC639C0457C3A179632639CB67CF)
 
 
 
 
-#### 示例5（滑动条设置前后缀内容）
+### 示例5（滑动条设置前后缀内容）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过prefix、suffix属性设置滑动条的前后缀内容，定制其内容区以及无障碍属性。设置无障碍属性后，屏幕阅读器将以设置的无障碍内容进行朗读。
 
@@ -1828,12 +1938,15 @@ struct SliderExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/G77T152ARrmPmv1dqP6N4w/zh-cn_image_0000002685928209.jpeg?HW-CC-KV=V1&HW-CC-Date=20260730T071504Z&HW-CC-Expire=86400&HW-CC-Sign=0133BC650EB3D1E08A0DA1FFFB6EC44AE8259F535644D30DCA811500A77D2523)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/fZtPFWFzQFmVNustZRHwnw/zh-cn_image_0000002717612748.jpeg?HW-CC-KV=V1&HW-CC-Date=20260911T073107Z&HW-CC-Expire=86400&HW-CC-Sign=9004021A5B7B4960B8FAC285E86F666D2E7845B015189A75E2FFB04A0C053262)
 
 
 
 
-#### 示例6（滑动条设置刻度点无障碍文本）
+### 示例6（滑动条设置刻度点无障碍文本）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过[showSteps](#showsteps20)属性设置刻度点的无障碍文本信息。设置后，屏幕阅读器将以设置的无障碍内容进行朗读。从API version 20开始，[showSteps](#showsteps20)方法新增可选参数options。
 
@@ -1900,12 +2013,15 @@ struct SliderExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/R9MwJhdjQYKfwjO_iQVoSg/zh-cn_image_0000002656008532.png?HW-CC-KV=V1&HW-CC-Date=20260730T071504Z&HW-CC-Expire=86400&HW-CC-Sign=D242705E65594632F4E65439E274E75460FF8930B8F505937CAC577DCE084C5D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/N2t7-kfpRLqzTYfn-qehxg/zh-cn_image_0000002747292701.png?HW-CC-KV=V1&HW-CC-Date=20260911T073107Z&HW-CC-Expire=86400&HW-CC-Sign=3C2627E0472B5DAE765B07B3D85FECA80C901A8F81DA469110CC53DCA9AB7DFE)
 
 
 
 
-#### 示例7（设置滑动条的双向绑定）
+### 示例7（设置滑动条的双向绑定）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 11开始，将[SliderOptions](#slideroptions对象说明)的value属性设置为[$$](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-two-way-sync)绑定的变量，实现数据同步。
 
@@ -1937,12 +2053,15 @@ struct SliderExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/dopcAjZmRNCv_xlEMCFSTQ/zh-cn_image_0000002655848612.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071504Z&HW-CC-Expire=86400&HW-CC-Sign=6C62FCB955F3A46FFF50FD4AF2DDB67716ACB23AD3E614B5D36EF04ADBCBA4DE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/oLc54F12RyOoVWRiYJXRoQ/zh-cn_image_0000002747212617.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073107Z&HW-CC-Expire=86400&HW-CC-Sign=048EAEB985EA8C21FC40774D58838B7EAD33FA88240C74249A3C2D75E3EB2CA4)
 
 
 
 
-#### 示例8（滑块设置渐变色）
+### 示例8（滑块设置渐变色）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过blockColor属性设置滑块渐变色。
 
@@ -2060,12 +2179,15 @@ struct SliderExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/xTf1QAqaTcO9sUgae10BcA/zh-cn_image_0000002686088039.png?HW-CC-KV=V1&HW-CC-Date=20260730T071504Z&HW-CC-Expire=86400&HW-CC-Sign=4FE4FFFF79E561329FF20BC017579EB15D131386D638D0A4941010C3B3191115)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/eTHW5GuyQJiOYxZ65MTFJQ/zh-cn_image_0000002717772682.png?HW-CC-KV=V1&HW-CC-Date=20260911T073107Z&HW-CC-Expire=86400&HW-CC-Sign=1AC7F8580FB95C638292E65D77DC716DE536DB89FBAAF63773E2B6B16703A894)
 
 
 
 
-#### 示例9（设置滑轨的背景颜色）
+### 示例9（设置滑轨的背景颜色）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过[trackColorMetrics](#trackcolormetrics23)设置指定色域的渐变断点值。示例中的colorSpace使用了ColorSpace.DISPLAY_P3类型，需要对应窗口调用setWindowColorSpace接口，将当前窗口设置为广色域模式，设置窗口色域模式为广色域参照方法[setWindowColorSpace](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window-window#setwindowcolorspace9)。
 
@@ -2108,14 +2230,19 @@ struct SliderExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/anXSDD2ST7OhZERv664ZYQ/zh-cn_image_0000002685928211.png?HW-CC-KV=V1&HW-CC-Date=20260730T071504Z&HW-CC-Expire=86400&HW-CC-Sign=8AB2B876F9C45BC19317372767BB48EB75958A1B391DE7B161231AB8F5DC85AD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/3dl4DP_QQV6U878BAilFqQ/zh-cn_image_0000002717612750.png?HW-CC-KV=V1&HW-CC-Date=20260911T073107Z&HW-CC-Expire=86400&HW-CC-Sign=EB84D9393CED5C2D4C60CDD17DE4BBE72705EA038D083E47A2E1A147698A1D68)
 
 
 
 
-#### 示例10（设置滑动条的系统材质）
+### 示例10（设置滑动条的沉浸光感效果）
 
-该示例通过通用属性[systemMaterial](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-image-effect#systemmaterial)为滑动条设置沉浸式材质。
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+该示例通过通用属性[systemMaterial](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-image-effect#systemmaterial)设置滑动条的系统材质，实现沉浸光感效果。设置系统材质后，Slider滑动过程中会产生粒子动画效果。
+
+组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
 
 从API版本26.0.0开始，新增systemMaterial接口。
 
@@ -2141,10 +2268,19 @@ struct SliderSystemMaterial {
     }
     .height('100%')
     .width('100%')
-    .backgroundColor(Color.Grey)
+    // 请开发者替换为实际资源文件
+    .backgroundImage($r("app.media.img"))
   }
 }
 ```
 
+未设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/mQGrQK8NQ7Sm7rxm0LI5UQ/zh-cn_image_0000002656008534.png?HW-CC-KV=V1&HW-CC-Date=20260730T071504Z&HW-CC-Expire=86400&HW-CC-Sign=6A47342C2702BAE76146521A05A119F4A0A39CCF89B4BB17405B099DC5CCDA31)
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/q20jOLjIQeeaXBgaWUM3GQ/zh-cn_image_0000002747292703.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073107Z&HW-CC-Expire=86400&HW-CC-Sign=6E09C525408B80084A4C5124A5DD01907C00373F0A8027A97E773485518E3765)
+
+
+设置系统材质后：
+
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/N-gjMhN2Rc-OR8EQWO4hlg/zh-cn_image_0000002747212619.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073107Z&HW-CC-Expire=86400&HW-CC-Sign=8936F472B23A3F689B745B9DA8813A3921F43222360AF4ABADE450F3C5263E1C)

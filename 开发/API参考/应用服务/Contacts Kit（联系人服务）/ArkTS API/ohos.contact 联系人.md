@@ -1,6 +1,6 @@
 # @ohos.contact (联系人)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-contact
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
@@ -12,7 +12,8 @@
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -22,7 +23,8 @@ import { contact } from '@kit.ContactsKit';
 
 
 
-#### contact.addContact10+
+## contact.addContact10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -38,6 +40,7 @@ addContact(context: Context, contact: Contact, callback: AsyncCallback&lt;number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -48,6 +51,7 @@ addContact(context: Context, contact: Contact, callback: AsyncCallback&lt;number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Contacts错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-contacts)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -86,7 +90,8 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 
 
-#### contact.addContact(deprecated)
+## contact.addContact(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -103,6 +108,7 @@ addContact(contact: Contact, callback: AsyncCallback&lt;number&gt;): void
 **系统能力**：SystemCapability.Applications.ContactsData
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -137,7 +143,8 @@ contact.addContact(context, {
 
 
 
-#### contact.addContact10+
+## contact.addContact10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -153,6 +160,7 @@ addContact(context: Context, contact: Contact): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -160,6 +168,7 @@ addContact(context: Context, contact: Contact): Promise&lt;number&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -169,6 +178,7 @@ addContact(context: Context, contact: Contact): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Contacts错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-contacts)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -203,7 +213,8 @@ import { contact } from '@kit.ContactsKit';
 
 
 
-#### contact.addContact(deprecated)
+## contact.addContact(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -221,12 +232,14 @@ addContact(contact: Contact): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | contact | Contact | 是 | 联系人信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -255,7 +268,8 @@ promise.then((data) => {
 
 
 
-#### contact.deleteContact10+
+## contact.deleteContact10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -269,6 +283,7 @@ deleteContact(context: Context, key: string, callback: AsyncCallback&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -277,6 +292,7 @@ deleteContact(context: Context, key: string, callback: AsyncCallback&lt;void&gt;
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -312,7 +328,8 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 
 
-#### contact.deleteContact(deprecated)
+## contact.deleteContact(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -329,6 +346,7 @@ deleteContact(key: string, callback: AsyncCallback&lt;void&gt;): void
 **系统能力**：SystemCapability.Applications.ContactsData
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -359,7 +377,8 @@ contact.selectContacts().then((data) => {
 
 
 
-#### contact.deleteContact10+
+## contact.deleteContact10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -373,6 +392,7 @@ deleteContact(context: Context, key: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -381,12 +401,14 @@ deleteContact(context: Context, key: string): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -418,7 +440,8 @@ contact.selectContacts().then((data) => {
 
 
 
-#### contact.deleteContact(deprecated)
+## contact.deleteContact(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -436,12 +459,14 @@ deleteContact(key: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 联系人的唯一查询键key值，一个联系人对应一个key，可以通过queryKey获取。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -465,7 +490,8 @@ contact.selectContacts().then((data) => {
 
 
 
-#### contact.updateContact10+
+## contact.updateContact10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -479,6 +505,7 @@ updateContact(context: Context, contact: Contact, callback: AsyncCallback&lt;voi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -489,6 +516,7 @@ updateContact(context: Context, contact: Contact, callback: AsyncCallback&lt;voi
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Contacts错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-contacts)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -532,7 +560,8 @@ contact.selectContacts().then((data) => {
 
 
 
-#### contact.updateContact(deprecated)
+## contact.updateContact(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -550,6 +579,7 @@ updateContact(contact: Contact, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | contact | Contact | 是 | 联系人信息。id必填，可通过selectContacts接口获取。 |
@@ -564,9 +594,7 @@ import { contact } from '@kit.ContactsKit';
 
 // 通过selectContacts接口选择联系人。
 contact.selectContacts().then((data) => {
-  // 请在组件内获取context。
-  let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-  contact.updateContact(context, {
+  contact.updateContact({
     id: data[0].id, // 选择联系人的id。
     name: {
       fullName: 'xxx'
@@ -586,7 +614,8 @@ contact.selectContacts().then((data) => {
 
 
 
-#### contact.updateContact10+
+## contact.updateContact10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -600,17 +629,19 @@ updateContact(context: Context, contact: Contact, attrs: ContactAttributes, call
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
 | contact | Contact | 是 | 联系人信息。id必填，可通过selectContacts接口获取。 |
-| attrs | ContactAttributes | 是 | 联系人的属性列表，如果为空，则查询联系人的所有属性字段（包括姓名、电话、邮箱等）。 |
+| attrs | ContactAttributes | 是 | 联系人的属性列表，如果为空，则更新联系人的所有属性字段（包括姓名、电话、邮箱等）。 |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当更新联系人成功，err为undefined，否则为错误对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Contacts错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-contacts)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -655,7 +686,8 @@ contact.selectContacts().then((data) => {
 
 
 
-#### contact.updateContact(deprecated)
+## contact.updateContact(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -673,10 +705,11 @@ updateContact(contact: Contact, attrs: ContactAttributes, callback: AsyncCallbac
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | contact | Contact | 是 | 联系人信息。id必填，可通过selectContacts接口获取。 |
-| attrs | ContactAttributes | 是 | 联系人的属性列表，如果为空，则查询联系人的所有属性字段（包括姓名、电话、邮箱等）。 |
+| attrs | ContactAttributes | 是 | 联系人的属性列表，如果为空，则更新联系人的所有属性字段（包括姓名、电话、邮箱等）。 |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。当更新联系人成功，err为undefined，否则为错误对象。 |
 
 
@@ -711,7 +744,8 @@ contact.selectContacts().then((data) => {
 
 
 
-#### contact.updateContact10+
+## contact.updateContact10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -725,14 +759,16 @@ updateContact(context: Context, contact: Contact, attrs?: ContactAttributes): Pr
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
 | contact | Contact | 是 | 联系人信息。id必填，可通过selectContacts接口获取。 |
-| attrs | ContactAttributes | 否 | 联系人的属性列表，如果为空，则查询联系人的所有属性字段（包括姓名、电话、邮箱等）。 |
+| attrs | ContactAttributes | 否 | 联系人的属性列表，如果为空，则更新联系人的所有属性字段（包括姓名、电话、邮箱等）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -742,6 +778,7 @@ updateContact(context: Context, contact: Contact, attrs?: ContactAttributes): Pr
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Contacts错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-contacts)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -782,7 +819,8 @@ import { contact } from '@kit.ContactsKit';
 
 
 
-#### contact.updateContact(deprecated)
+## contact.updateContact(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -800,13 +838,15 @@ updateContact(contact: Contact, attrs?: ContactAttributes): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | contact | Contact | 是 | 联系人信息。id必填，可通过selectContacts接口获取。 |
-| attrs | ContactAttributes | 否 | 联系人的属性列表，如果为空，则查询联系人的所有属性字段（包括姓名、电话、邮箱等）。 |
+| attrs | ContactAttributes | 否 | 联系人的属性列表，如果为空，则更新联系人的所有属性字段（包括姓名、电话、邮箱等）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -839,7 +879,8 @@ contact.selectContacts().then((data) => {
 
 
 
-#### contact.isLocalContact10+
+## contact.isLocalContact10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -853,6 +894,7 @@ isLocalContact(context: Context, id: number, callback: AsyncCallback&lt;boolean&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -863,6 +905,7 @@ isLocalContact(context: Context, id: number, callback: AsyncCallback&lt;boolean&
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -894,7 +937,8 @@ contact.isLocalContact(context, 1, (err: BusinessError, data) => {
 
 
 
-#### contact.isLocalContact(deprecated)
+## contact.isLocalContact(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -911,6 +955,7 @@ isLocalContact(id: number, callback: AsyncCallback&lt;boolean&gt;): void
 **系统能力**：SystemCapability.Applications.ContactsData
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -936,7 +981,8 @@ contact.isLocalContact(1, (err: BusinessError, data) => {
 
 
 
-#### contact.isLocalContact10+
+## contact.isLocalContact10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -950,6 +996,7 @@ isLocalContact(context: Context, id: number): Promise&lt;boolean&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -957,6 +1004,7 @@ isLocalContact(context: Context, id: number): Promise&lt;boolean&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -966,6 +1014,7 @@ isLocalContact(context: Context, id: number): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -993,7 +1042,8 @@ import { contact } from '@kit.ContactsKit';
 
 
 
-#### contact.isLocalContact(deprecated)
+## contact.isLocalContact(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1011,12 +1061,14 @@ isLocalContact(id: number): Promise&lt;boolean&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | number | 是 | 联系人对象的id属性，一个联系人对应一个id。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1037,7 +1089,8 @@ promise.then((data) => {
 
 
 
-#### contact.isMyCard10+
+## contact.isMyCard10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1051,6 +1104,7 @@ isMyCard(context: Context, id: number, callback: AsyncCallback&lt;boolean&gt;): 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -1061,6 +1115,7 @@ isMyCard(context: Context, id: number, callback: AsyncCallback&lt;boolean&gt;): 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1092,7 +1147,8 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 
 
-#### contact.isMyCard(deprecated)
+## contact.isMyCard(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1109,6 +1165,7 @@ isMyCard(id: number, callback: AsyncCallback&lt;boolean&gt;): void
 **系统能力**：SystemCapability.Applications.ContactsData
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1134,7 +1191,8 @@ contact.isMyCard(1, (err: BusinessError, data) => {
 
 
 
-#### contact.isMyCard10+
+## contact.isMyCard10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1148,6 +1206,7 @@ isMyCard(context: Context, id: number): Promise&lt;boolean&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -1155,6 +1214,7 @@ isMyCard(context: Context, id: number): Promise&lt;boolean&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1164,6 +1224,7 @@ isMyCard(context: Context, id: number): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1191,7 +1252,8 @@ import { contact } from '@kit.ContactsKit';
 
 
 
-#### contact.isMyCard(deprecated)
+## contact.isMyCard(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1209,12 +1271,14 @@ isMyCard(id: number): Promise&lt;boolean&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | number | 是 | 名片对象的id属性。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1235,7 +1299,8 @@ promise.then((data) => {
 
 
 
-#### contact.queryMyCard10+
+## contact.queryMyCard10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1249,6 +1314,7 @@ queryMyCard(context: Context, callback: AsyncCallback&lt;Contact&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -1258,6 +1324,7 @@ queryMyCard(context: Context, callback: AsyncCallback&lt;Contact&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1289,7 +1356,8 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 
 
-#### contact.queryMyCard(deprecated)
+## contact.queryMyCard(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1306,6 +1374,7 @@ queryMyCard(callback: AsyncCallback&lt;Contact&gt;): void
 **系统能力**：SystemCapability.Applications.ContactsData
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1330,7 +1399,8 @@ contact.queryMyCard((err: BusinessError, data) => {
 
 
 
-#### contact.queryMyCard10+
+## contact.queryMyCard10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1344,6 +1414,7 @@ queryMyCard(context: Context, attrs: ContactAttributes, callback: AsyncCallback&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -1354,6 +1425,7 @@ queryMyCard(context: Context, attrs: ContactAttributes, callback: AsyncCallback&
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1387,7 +1459,8 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 
 
-#### contact.queryMyCard(deprecated)
+## contact.queryMyCard(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1404,6 +1477,7 @@ queryMyCard(attrs: ContactAttributes, callback: AsyncCallback&lt;Contact&gt;): v
 **系统能力**：SystemCapability.Applications.ContactsData
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1431,7 +1505,8 @@ contact.queryMyCard({
 
 
 
-#### contact.queryMyCard10+
+## contact.queryMyCard10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1445,6 +1520,7 @@ queryMyCard(context: Context, attrs?: ContactAttributes): Promise&lt;Contact&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -1452,6 +1528,7 @@ queryMyCard(context: Context, attrs?: ContactAttributes): Promise&lt;Contact&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1461,6 +1538,7 @@ queryMyCard(context: Context, attrs?: ContactAttributes): Promise&lt;Contact&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1490,7 +1568,8 @@ import { contact } from '@kit.ContactsKit';
 
 
 
-#### contact.queryMyCard(deprecated)
+## contact.queryMyCard(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1508,12 +1587,14 @@ queryMyCard(attrs?: ContactAttributes): Promise&lt;Contact&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | attrs | ContactAttributes | 否 | 联系人的属性列表，如果为空，则查询联系人的所有属性字段（包括姓名、电话、邮箱等）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1536,9 +1617,10 @@ promise.then((data) => {
 
 
 
-#### contact.selectContact(deprecated)
+## contact.selectContact(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 selectContact(callback: AsyncCallback<Array&lt;Contact&gt;>): void
 
@@ -1551,6 +1633,7 @@ selectContact(callback: AsyncCallback<Array&lt;Contact&gt;>): void
 **系统能力**：SystemCapability.Applications.Contacts
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1575,9 +1658,10 @@ contact.selectContact((err: BusinessError, data) => {
 
 
 
-#### contact.selectContact(deprecated)
+## contact.selectContact(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 selectContact(): Promise<Array&lt;Contact&gt;>
 
@@ -1590,6 +1674,7 @@ selectContact(): Promise<Array&lt;Contact&gt;>
 **系统能力**：SystemCapability.Applications.Contacts
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1610,9 +1695,10 @@ promise.then((data) => {
 
 
 
-#### contact.selectContacts10+
+## contact.selectContacts10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 selectContacts(callback: AsyncCallback<Array&lt;Contact&gt;>): void
 
@@ -1624,6 +1710,7 @@ selectContacts(callback: AsyncCallback<Array&lt;Contact&gt;>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<Array&lt;Contact&gt;> | 是 | 回调函数。当调用选择联系人接口成功，err为undefined，data为选择的联系人数组；否则为错误对象。 |
@@ -1632,6 +1719,7 @@ selectContacts(callback: AsyncCallback<Array&lt;Contact&gt;>): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1656,9 +1744,10 @@ contact.selectContacts((err: BusinessError, data) => {
 
 
 
-#### contact.selectContacts10+
+## contact.selectContacts10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 selectContacts(): Promise<Array&lt;Contact&gt;>
 
@@ -1669,6 +1758,7 @@ selectContacts(): Promise<Array&lt;Contact&gt;>
 **系统能力**：SystemCapability.Applications.Contacts
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1689,9 +1779,10 @@ promise.then((data) => {
 
 
 
-#### contact.selectContacts10+
+## contact.selectContacts10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 selectContacts(options: ContactSelectionOptions, callback: AsyncCallback<Array&lt;Contact&gt;>): void
 
@@ -1703,6 +1794,7 @@ selectContacts(options: ContactSelectionOptions, callback: AsyncCallback<Array&l
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ContactSelectionOptions | 是 | 选择联系人时的筛选条件，表示单选或多选。 |
@@ -1712,6 +1804,7 @@ selectContacts(options: ContactSelectionOptions, callback: AsyncCallback<Array&l
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1738,9 +1831,10 @@ contact.selectContacts({
 
 
 
-#### contact.selectContacts10+
+## contact.selectContacts10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 selectContacts(options: ContactSelectionOptions): Promise<Array&lt;Contact&gt;>
 
@@ -1752,12 +1846,14 @@ selectContacts(options: ContactSelectionOptions): Promise<Array&lt;Contact&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | ContactSelectionOptions | 是 | 选择联系人时的筛选条件，用于指定是单选还是多选。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1767,6 +1863,7 @@ selectContacts(options: ContactSelectionOptions): Promise<Array&lt;Contact&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1787,7 +1884,8 @@ promise.then((data) => {
 
 
 
-#### contact.queryContact10+
+## contact.queryContact10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1801,6 +1899,7 @@ queryContact(context: Context, key: string, callback: AsyncCallback&lt;Contact&g
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -1811,6 +1910,7 @@ queryContact(context: Context, key: string, callback: AsyncCallback&lt;Contact&g
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1842,7 +1942,8 @@ contact.queryContact(context, 'xxx', (err: BusinessError, data) => {
 
 
 
-#### contact.queryContact(deprecated)
+## contact.queryContact(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1859,6 +1960,7 @@ queryContact(key: string, callback: AsyncCallback&lt;Contact&gt;): void
 **系统能力**：SystemCapability.Applications.ContactsData
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1884,7 +1986,8 @@ contact.queryContact('xxx', (err: BusinessError, data) => {
 
 
 
-#### contact.queryContact10+
+## contact.queryContact10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1898,6 +2001,7 @@ queryContact(context: Context, key: string, holder: Holder, callback: AsyncCallb
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -1909,6 +2013,7 @@ queryContact(context: Context, key: string, holder: Holder, callback: AsyncCallb
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1944,7 +2049,8 @@ contact.queryContact(context, 'xxx', {
 
 
 
-#### contact.queryContact(deprecated)
+## contact.queryContact(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -1961,6 +2067,7 @@ queryContact(key: string, holder: Holder, callback: AsyncCallback&lt;Contact&gt;
 **系统能力**：SystemCapability.Applications.ContactsData
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1991,7 +2098,8 @@ contact.queryContact('xxx', {
 
 
 
-#### contact.queryContact10+
+## contact.queryContact10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2005,6 +2113,7 @@ queryContact(context: Context, key: string, attrs: ContactAttributes, callback: 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -2016,6 +2125,7 @@ queryContact(context: Context, key: string, attrs: ContactAttributes, callback: 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2049,7 +2159,8 @@ contact.queryContact(context, 'xxx', {
 
 
 
-#### contact.queryContact(deprecated)
+## contact.queryContact(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2066,6 +2177,7 @@ queryContact(key: string, attrs: ContactAttributes, callback: AsyncCallback&lt;C
 **系统能力**：SystemCapability.Applications.ContactsData
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2094,7 +2206,8 @@ contact.queryContact('xxx', {
 
 
 
-#### contact.queryContact10+
+## contact.queryContact10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2108,6 +2221,7 @@ queryContact(context: Context, key: string, holder: Holder, attrs: ContactAttrib
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -2120,6 +2234,7 @@ queryContact(context: Context, key: string, holder: Holder, attrs: ContactAttrib
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2157,7 +2272,8 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 
 
-#### contact.queryContact(deprecated)
+## contact.queryContact(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2174,6 +2290,7 @@ queryContact(key: string, holder: Holder, attrs: ContactAttributes, callback: As
 **系统能力**：SystemCapability.Applications.ContactsData
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2207,7 +2324,8 @@ contact.queryContact('xxx', {
 
 
 
-#### contact.queryContact10+
+## contact.queryContact10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2221,6 +2339,7 @@ queryContact(context: Context, key: string, holder?: Holder, attrs?: ContactAttr
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -2231,6 +2350,7 @@ queryContact(context: Context, key: string, holder?: Holder, attrs?: ContactAttr
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Contact&gt; | Promise对象。返回查询到的联系人对象。 |
@@ -2239,6 +2359,7 @@ queryContact(context: Context, key: string, holder?: Holder, attrs?: ContactAttr
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2272,7 +2393,8 @@ promise.then((data) => {
 
 
 
-#### contact.queryContact(deprecated)
+## contact.queryContact(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2290,6 +2412,7 @@ queryContact(key: string, holder?: Holder, attrs?: ContactAttributes): Promise&l
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 联系人的唯一查询键key，是新建联系人时自动生成的唯一标识，一个联系人对应一个key，可以通过queryKey获取。 |
@@ -2298,6 +2421,7 @@ queryContact(key: string, holder?: Holder, attrs?: ContactAttributes): Promise&l
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2324,7 +2448,8 @@ promise.then((data) => {
 
 
 
-#### contact.queryContacts10+
+## contact.queryContacts10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2338,6 +2463,7 @@ queryContacts(context: Context, callback: AsyncCallback<Array&lt;Contact&gt;>): 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -2347,6 +2473,7 @@ queryContacts(context: Context, callback: AsyncCallback<Array&lt;Contact&gt;>): 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2378,7 +2505,8 @@ contact.queryContacts(context, (err: BusinessError, data) => {
 
 
 
-#### contact.queryContacts(deprecated)
+## contact.queryContacts(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2395,6 +2523,7 @@ queryContacts(callback: AsyncCallback<Array&lt;Contact&gt;>): void
 **系统能力**：SystemCapability.Applications.ContactsData
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2419,7 +2548,8 @@ contact.queryContacts((err: BusinessError, data) => {
 
 
 
-#### contact.queryContacts10+
+## contact.queryContacts10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2433,6 +2563,7 @@ queryContacts(context: Context, holder: Holder, callback: AsyncCallback<Array&lt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -2443,6 +2574,7 @@ queryContacts(context: Context, holder: Holder, callback: AsyncCallback<Array&lt
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2478,7 +2610,8 @@ contact.queryContacts(context, {
 
 
 
-#### contact.queryContacts(deprecated)
+## contact.queryContacts(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2496,6 +2629,7 @@ queryContacts(holder: Holder, callback: AsyncCallback<Array&lt;Contact&gt;>): vo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | holder | Holder | 是 | 创建联系人的应用信息类，如果传入参数为空则默认使用系统联系人应用查询。 |
@@ -2524,7 +2658,8 @@ contact.queryContacts({
 
 
 
-#### contact.queryContacts10+
+## contact.queryContacts10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2538,6 +2673,7 @@ queryContacts(context: Context, attrs: ContactAttributes, callback: AsyncCallbac
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -2548,6 +2684,7 @@ queryContacts(context: Context, attrs: ContactAttributes, callback: AsyncCallbac
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2581,7 +2718,8 @@ contact.queryContacts(context, {
 
 
 
-#### contact.queryContacts(deprecated)
+## contact.queryContacts(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2599,6 +2737,7 @@ queryContacts(attrs: ContactAttributes, callback: AsyncCallback<Array&lt;Contact
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | attrs | ContactAttributes | 是 | 联系人的属性列表，如果为空，则查询联系人的所有属性字段（包括姓名、电话、邮箱等）。 |
@@ -2625,7 +2764,8 @@ contact.queryContacts({
 
 
 
-#### contact.queryContacts10+
+## contact.queryContacts10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2639,6 +2779,7 @@ queryContacts(context: Context, holder: Holder, attrs: ContactAttributes, callba
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -2650,6 +2791,7 @@ queryContacts(context: Context, holder: Holder, attrs: ContactAttributes, callba
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2687,7 +2829,8 @@ contact.queryContacts(context, {
 
 
 
-#### contact.queryContacts(deprecated)
+## contact.queryContacts(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2704,6 +2847,7 @@ queryContacts(holder: Holder, attrs: ContactAttributes, callback: AsyncCallback<
 **系统能力**：SystemCapability.Applications.ContactsData
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2736,7 +2880,8 @@ contact.queryContacts({
 
 
 
-#### contact.queryContacts10+
+## contact.queryContacts10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2750,6 +2895,7 @@ queryContacts(context: Context, holder?: Holder, attrs?: ContactAttributes): Pro
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -2759,6 +2905,7 @@ queryContacts(context: Context, holder?: Holder, attrs?: ContactAttributes): Pro
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;Contact&gt;> | Promise对象。返回查询到的联系人数组对象。 |
@@ -2767,6 +2914,7 @@ queryContacts(context: Context, holder?: Holder, attrs?: ContactAttributes): Pro
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2800,7 +2948,8 @@ promise.then((data) => {
 
 
 
-#### contact.queryContacts(deprecated)
+## contact.queryContacts(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2818,6 +2967,7 @@ queryContacts(holder?: Holder, attrs?: ContactAttributes): Promise<Array&lt;Cont
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | holder | Holder | 否 | 创建联系人的应用信息类，不传该参数，则默认使用系统联系人应用查询。 |
@@ -2825,6 +2975,7 @@ queryContacts(holder?: Holder, attrs?: ContactAttributes): Promise<Array&lt;Cont
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2851,7 +3002,8 @@ import { contact } from '@kit.ContactsKit';
 
 
 
-#### contact.queryContactsByPhoneNumber10+
+## contact.queryContactsByPhoneNumber10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2865,6 +3017,7 @@ queryContactsByPhoneNumber(context: Context, phoneNumber: string, callback: Asyn
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -2875,6 +3028,7 @@ queryContactsByPhoneNumber(context: Context, phoneNumber: string, callback: Asyn
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Contacts错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-contacts)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2906,7 +3060,8 @@ contact.queryContactsByPhoneNumber(context, '138xxxxxxxx', (err: BusinessError, 
 
 
 
-#### contact.queryContactsByPhoneNumber(deprecated)
+## contact.queryContactsByPhoneNumber(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2923,6 +3078,7 @@ queryContactsByPhoneNumber(phoneNumber: string, callback: AsyncCallback<Array&lt
 **系统能力**：SystemCapability.Applications.ContactsData
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2948,7 +3104,8 @@ contact.queryContactsByPhoneNumber('138xxxxxxxx', (err: BusinessError, data) => 
 
 
 
-#### contact.queryContactsByPhoneNumber10+
+## contact.queryContactsByPhoneNumber10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -2962,6 +3119,7 @@ queryContactsByPhoneNumber(context: Context, phoneNumber: string, holder: Holder
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -2973,6 +3131,7 @@ queryContactsByPhoneNumber(context: Context, phoneNumber: string, holder: Holder
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Contacts错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-contacts)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3008,7 +3167,8 @@ contact.queryContactsByPhoneNumber(context, '138xxxxxxxx', {
 
 
 
-#### contact.queryContactsByPhoneNumber(deprecated)
+## contact.queryContactsByPhoneNumber(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3025,6 +3185,7 @@ queryContactsByPhoneNumber(phoneNumber: string, holder: Holder, callback: AsyncC
 **系统能力**：SystemCapability.Applications.ContactsData
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3055,7 +3216,8 @@ contact.queryContactsByPhoneNumber('138xxxxxxxx', {
 
 
 
-#### contact.queryContactsByPhoneNumber10+
+## contact.queryContactsByPhoneNumber10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3069,17 +3231,19 @@ queryContactsByPhoneNumber(context: Context, phoneNumber: string, attrs: Contact
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
 | phoneNumber | string | 是 | 联系人的电话号码，仅支持全匹配，不支持通配符匹配。 |
-| attrs | ContactAttributes | 是 | 联系人的属性列表，如果为空，则查询联系人的所有属性字段（包括姓名、电话、邮箱等）。 |
+| attrs | ContactAttributes | 是 | 联系人的属性列表，如果为空，则查询联系人的id、key、phoneNumbers属性。 |
 | callback | AsyncCallback<Array&lt;Contact&gt;> | 是 | 回调函数。当查询联系人成功，err为undefined，data为查询到的联系人对象数组；否则为错误对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Contacts错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-contacts)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3113,7 +3277,8 @@ contact.queryContactsByPhoneNumber(context, '138xxxxxxxx', {
 
 
 
-#### contact.queryContactsByPhoneNumber(deprecated)
+## contact.queryContactsByPhoneNumber(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3131,10 +3296,11 @@ queryContactsByPhoneNumber(phoneNumber: string, attrs: ContactAttributes, callba
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | phoneNumber | string | 是 | 联系人的电话号码，仅支持全匹配，不支持通配符匹配。 |
-| attrs | ContactAttributes | 是 | 联系人的属性列表，如果为空，则查询联系人的所有属性字段（包括姓名、电话、邮箱等）。 |
+| attrs | ContactAttributes | 是 | 联系人的属性列表，如果为空，则查询联系人的id、key、phoneNumbers属性。 |
 | callback | AsyncCallback<Array&lt;Contact&gt;> | 是 | 回调函数。当查询联系人成功，err为undefined，data为查询到的联系人对象数组；否则为错误对象。 |
 
 
@@ -3157,7 +3323,8 @@ contact.queryContactsByPhoneNumber('138xxxxxxxx', {
 
 
 
-#### contact.queryContactsByPhoneNumber10+
+## contact.queryContactsByPhoneNumber10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3171,18 +3338,20 @@ queryContactsByPhoneNumber(context: Context, phoneNumber: string, holder: Holder
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
 | phoneNumber | string | 是 | 联系人的电话号码，仅支持全匹配，不支持通配符匹配。 |
 | holder | Holder | 是 | 创建联系人的应用信息类，如果该参数为空，则默认使用系统联系人应用查询。 |
-| attrs | ContactAttributes | 是 | 联系人的属性列表，如果为空，则查询联系人的所有属性字段（包括姓名、电话、邮箱等）。 |
+| attrs | ContactAttributes | 是 | 联系人的属性列表，如果为空，则查询联系人的id、key、phoneNumbers属性。 |
 | callback | AsyncCallback<Array&lt;Contact&gt;> | 是 | 回调函数。当查询联系人成功，err为undefined，data为查询到的联系人对象数组；否则为错误对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Contacts错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-contacts)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3220,7 +3389,8 @@ contact.queryContactsByPhoneNumber(context, '138xxxxxxxx', {
 
 
 
-#### contact.queryContactsByPhoneNumber(deprecated)
+## contact.queryContactsByPhoneNumber(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3238,11 +3408,12 @@ queryContactsByPhoneNumber(phoneNumber: string, holder: Holder, attrs: ContactAt
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | phoneNumber | string | 是 | 联系人的电话号码，仅支持全匹配，不支持通配符匹配。 |
 | holder | Holder | 是 | 创建联系人的应用信息类，如果该参数为空，则默认使用系统联系人应用查询。 |
-| attrs | ContactAttributes | 是 | 联系人的属性列表，如果该参数为空，则查询联系人的所有属性字段。 |
+| attrs | ContactAttributes | 是 | 联系人的属性列表，如果为空，则查询联系人的id、key、phoneNumbers属性。 |
 | callback | AsyncCallback<Array&lt;Contact&gt;> | 是 | 回调函数。当查询联系人成功，err为undefined，data为查询到的联系人对象数组；否则为错误对象。 |
 
 
@@ -3269,7 +3440,8 @@ contact.queryContactsByPhoneNumber('138xxxxxxxx', {
 
 
 
-#### contact.queryContactsByPhoneNumber10+
+## contact.queryContactsByPhoneNumber10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3283,15 +3455,17 @@ queryContactsByPhoneNumber(context: Context, phoneNumber: string, holder?: Holde
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
 | phoneNumber | string | 是 | 联系人的电话号码，仅支持全匹配，不支持通配符匹配。 |
 | holder | Holder | 否 | 创建联系人的应用信息类，不传该参数，则默认使用系统联系人应用查询。 |
-| attrs | ContactAttributes | 否 | 联系人的属性列表，不传默认查询所有联系人属性。 |
+| attrs | ContactAttributes | 否 | 联系人的属性列表，如果为空，则查询联系人的id、key、phoneNumbers属性。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3301,6 +3475,7 @@ queryContactsByPhoneNumber(context: Context, phoneNumber: string, holder?: Holde
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Contacts错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-contacts)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3334,7 +3509,8 @@ promise.then((data) => {
 
 
 
-#### contact.queryContactsByPhoneNumber(deprecated)
+## contact.queryContactsByPhoneNumber(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3352,14 +3528,16 @@ queryContactsByPhoneNumber(phoneNumber: string, holder?: Holder, attrs?: Contact
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | phoneNumber | string | 是 | 联系人的电话号码，仅支持全匹配，不支持通配符匹配。 |
 | holder | Holder | 否 | 创建联系人的应用信息类，不传该参数，则默认使用系统联系人应用查询。 |
-| attrs | ContactAttributes | 否 | 联系人的属性列表，不传默认查询所有联系人属性。 |
+| attrs | ContactAttributes | 否 | 联系人的属性列表，如果为空，则查询联系人的id、key、phoneNumbers属性。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3385,7 +3563,8 @@ promise.then((data) => {
 
 
 
-#### contact.queryContactsByEmail10+
+## contact.queryContactsByEmail10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3399,6 +3578,7 @@ queryContactsByEmail(context: Context, email: string, callback: AsyncCallback<Ar
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -3409,6 +3589,7 @@ queryContactsByEmail(context: Context, email: string, callback: AsyncCallback<Ar
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3440,7 +3621,8 @@ contact.queryContactsByEmail(context, 'xxx@email.com', (err: BusinessError, data
 
 
 
-#### contact.queryContactsByEmail(deprecated)
+## contact.queryContactsByEmail(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3457,6 +3639,7 @@ queryContactsByEmail(email: string, callback: AsyncCallback<Array&lt;Contact&gt;
 **系统能力**：SystemCapability.Applications.ContactsData
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3481,7 +3664,8 @@ contact.queryContactsByEmail('xxx@email.com', (err: BusinessError, data) => {
 
 
 
-#### contact.queryContactsByEmail10+
+## contact.queryContactsByEmail10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3495,6 +3679,7 @@ queryContactsByEmail(context: Context, email: string, holder: Holder, callback: 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -3506,6 +3691,7 @@ queryContactsByEmail(context: Context, email: string, holder: Holder, callback: 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3541,7 +3727,8 @@ contact.queryContactsByEmail(context, 'xxx@email.com', {
 
 
 
-#### contact.queryContactsByEmail(deprecated)
+## contact.queryContactsByEmail(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3558,6 +3745,7 @@ queryContactsByEmail(email: string, holder: Holder, callback: AsyncCallback<Arra
 **系统能力**：SystemCapability.Applications.ContactsData
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3587,7 +3775,8 @@ contact.queryContactsByEmail('xxx@email.com', {
 
 
 
-#### contact.queryContactsByEmail10+
+## contact.queryContactsByEmail10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3601,17 +3790,19 @@ queryContactsByEmail(context: Context, email: string, attrs: ContactAttributes, 
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
 | email | string | 是 | 联系人的邮箱地址。 |
-| attrs | ContactAttributes | 是 | 联系人的属性列表，如果为空，则查询联系人的所有属性字段（包括姓名、电话、邮箱等）。 |
+| attrs | ContactAttributes | 是 | 联系人的属性列表，如果为空，则查询联系人的id、key、Emails属性。 |
 | callback | AsyncCallback<Array&lt;Contact&gt;> | 是 | 回调函数。当查询联系人成功，err为undefined，data为查询到的联系人对象数组；否则为错误对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3645,7 +3836,8 @@ contact.queryContactsByEmail(context, 'xxx@email.com', {
 
 
 
-#### contact.queryContactsByEmail(deprecated)
+## contact.queryContactsByEmail(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3663,10 +3855,11 @@ queryContactsByEmail(email: string, attrs: ContactAttributes, callback: AsyncCal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | email | string | 是 | 联系人的邮箱地址。 |
-| attrs | ContactAttributes | 是 | 联系人的属性列表，如果为空，则查询联系人的所有属性字段（包括姓名、电话、邮箱等）。 |
+| attrs | ContactAttributes | 是 | 联系人的属性列表，如果为空，则查询联系人的id、key、Emails属性。 |
 | callback | AsyncCallback<Array&lt;Contact&gt;> | 是 | 回调函数。当查询联系人成功，err为undefined，data为查询到的联系人对象数组；否则为错误对象。 |
 
 
@@ -3689,7 +3882,8 @@ contact.queryContactsByEmail('xxx@email.com', {
 
 
 
-#### contact.queryContactsByEmail10+
+## contact.queryContactsByEmail10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3703,18 +3897,20 @@ queryContactsByEmail(context: Context, email: string, holder: Holder, attrs: Con
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
 | email | string | 是 | 联系人的邮箱地址。 |
 | holder | Holder | 是 | 创建联系人的应用信息类，如果传入参数为空则默认使用系统联系人应用查询。 |
-| attrs | ContactAttributes | 是 | 联系人的属性列表，如果为空，则查询联系人的所有属性字段（包括姓名、电话、邮箱等）。 |
+| attrs | ContactAttributes | 是 | 联系人的属性列表，如果为空，则查询联系人的id、key、Emails属性。 |
 | callback | AsyncCallback<Array&lt;Contact&gt;> | 是 | 回调函数。当查询联系人成功，err为undefined，data为查询到的联系人对象数组；否则为错误对象。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3752,7 +3948,8 @@ contact.queryContactsByEmail(context, 'xxx@email.com', {
 
 
 
-#### contact.queryContactsByEmail(deprecated)
+## contact.queryContactsByEmail(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3770,11 +3967,12 @@ queryContactsByEmail(email: string, holder: Holder, attrs: ContactAttributes, ca
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | email | string | 是 | 联系人的邮箱地址。 |
 | holder | Holder | 是 | 创建联系人的应用信息类，如果传入参数为空则默认使用系统联系人应用查询。 |
-| attrs | ContactAttributes | 是 | 联系人的属性列表，如果为空，则查询联系人的所有属性字段（包括姓名、电话、邮箱等）。 |
+| attrs | ContactAttributes | 是 | 联系人的属性列表，如果为空，则查询联系人的id、key、Emails属性。 |
 | callback | AsyncCallback<Array&lt;Contact&gt;> | 是 | 回调函数。当查询联系人成功，err为undefined，data为查询到的联系人对象数组；否则为错误对象。 |
 
 
@@ -3801,7 +3999,8 @@ contact.queryContactsByEmail('xxx@email.com', {
 
 
 
-#### contact.queryContactsByEmail10+
+## contact.queryContactsByEmail10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3815,15 +4014,17 @@ queryContactsByEmail(context: Context, email: string, holder?: Holder, attrs?: C
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
 | email | string | 是 | 联系人的邮箱地址。 |
 | holder | Holder | 否 | 创建联系人的应用信息类，不传该参数，则默认使用系统联系人应用查询。 |
-| attrs | ContactAttributes | 否 | 联系人的属性列表，不传默认查询所有联系人属性。 |
+| attrs | ContactAttributes | 否 | 联系人的属性列表，如果为空，则查询联系人的id、key、Emails属性。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3833,6 +4034,7 @@ queryContactsByEmail(context: Context, email: string, holder?: Holder, attrs?: C
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3865,7 +4067,8 @@ promise.then((data) => {
 
 
 
-#### contact.queryContactsByEmail(deprecated)
+## contact.queryContactsByEmail(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3883,14 +4086,16 @@ queryContactsByEmail(email: string, holder?: Holder, attrs?: ContactAttributes):
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | email | string | 是 | 联系人的邮箱地址。 |
 | holder | Holder | 否 | 创建联系人的应用信息类，不传该参数，则默认使用系统联系人应用查询。 |
-| attrs | ContactAttributes | 否 | 联系人的属性列表，不传默认查询所有联系人属性。 |
+| attrs | ContactAttributes | 否 | 联系人的属性列表，如果为空，则查询联系人的id、key、Emails属性。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3916,7 +4121,8 @@ promise.then((data) => {
 
 
 
-#### contact.queryGroups10+
+## contact.queryGroups10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3930,6 +4136,7 @@ queryGroups(context: Context, callback: AsyncCallback<Array&lt;Group&gt;>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -3937,6 +4144,7 @@ queryGroups(context: Context, callback: AsyncCallback<Array&lt;Group&gt;>): void
 
 
 **错误码：**
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3968,7 +4176,8 @@ contact.queryGroups(context, (err: BusinessError, data) => {
 
 
 
-#### contact.queryGroups(deprecated)
+## contact.queryGroups(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -3986,6 +4195,7 @@ queryGroups(callback: AsyncCallback<Array&lt;Group&gt;>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<Array&lt;Group&gt;> | 是 | 回调函数。当查询联系人的群组成功，err为undefined，data为查询到的群组对象数组；否则为错误对象。 |
@@ -4002,13 +4212,14 @@ contact.queryGroups((err: BusinessError, data) => {
     console.error(`Failed to query Groups. Code: ${err.code}, message: ${err.message}`);
     return;
   }
-  console.info(`Succeeded in querying Groups.. data->${JSON.stringify(data)}`);
+  console.info(`Succeeded in querying Groups. data->${JSON.stringify(data)}`);
 });
 ```
 
 
 
-#### contact.queryGroups10+
+## contact.queryGroups10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4022,6 +4233,7 @@ queryGroups(context: Context, holder: Holder, callback: AsyncCallback<Array&lt;G
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -4032,6 +4244,7 @@ queryGroups(context: Context, holder: Holder, callback: AsyncCallback<Array&lt;G
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4067,7 +4280,8 @@ contact.queryGroups(context, {
 
 
 
-#### contact.queryGroups(deprecated)
+## contact.queryGroups(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4084,6 +4298,7 @@ queryGroups(holder: Holder, callback: AsyncCallback<Array&lt;Group&gt;>): void
 **系统能力**：SystemCapability.Applications.ContactsData
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4112,7 +4327,8 @@ contact.queryGroups({
 
 
 
-#### contact.queryGroups10+
+## contact.queryGroups10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4126,6 +4342,7 @@ queryGroups(context: Context, holder?: Holder): Promise<Array&lt;Group&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -4133,6 +4350,7 @@ queryGroups(context: Context, holder?: Holder): Promise<Array&lt;Group&gt;>
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4142,6 +4360,7 @@ queryGroups(context: Context, holder?: Holder): Promise<Array&lt;Group&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4173,7 +4392,8 @@ promise.then((data) => {
 
 
 
-#### contact.queryGroups(deprecated)
+## contact.queryGroups(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4191,12 +4411,14 @@ queryGroups(holder?: Holder): Promise<Array&lt;Group&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | holder | Holder | 否 | 创建联系人的应用信息类，不传该参数，则默认使用系统联系人应用查询。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4220,7 +4442,8 @@ promise.then((data) => {
 
 
 
-#### contact.queryHolders10+
+## contact.queryHolders10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4234,6 +4457,7 @@ queryHolders(context: Context, callback: AsyncCallback<Array&lt;Holder&gt;>): vo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -4243,6 +4467,7 @@ queryHolders(context: Context, callback: AsyncCallback<Array&lt;Holder&gt;>): vo
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4274,7 +4499,8 @@ contact.queryHolders(context, (err: BusinessError, data) => {
 
 
 
-#### contact.queryHolders(deprecated)
+## contact.queryHolders(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4291,6 +4517,7 @@ queryHolders(callback: AsyncCallback<Array&lt;Holder&gt;>): void
 **系统能力**：SystemCapability.Applications.ContactsData
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4314,7 +4541,8 @@ contact.queryHolders((err: BusinessError, data) => {
 
 
 
-#### contact.queryHolders10+
+## contact.queryHolders10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4328,12 +4556,14 @@ queryHolders(context: Context): Promise<Array&lt;Holder&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4343,6 +4573,7 @@ queryHolders(context: Context): Promise<Array&lt;Holder&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4370,7 +4601,8 @@ promise.then((data) => {
 
 
 
-#### contact.queryHolders(deprecated)
+## contact.queryHolders(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4387,6 +4619,7 @@ queryHolders(): Promise<Array&lt;Holder&gt;>
 **系统能力**：SystemCapability.Applications.ContactsData
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4406,7 +4639,8 @@ promise.then((data) => {
 
 
 
-#### contact.queryKey10+
+## contact.queryKey10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4420,6 +4654,7 @@ queryKey(context: Context, id: number, callback: AsyncCallback&lt;string&gt;): v
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -4430,6 +4665,7 @@ queryKey(context: Context, id: number, callback: AsyncCallback&lt;string&gt;): v
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4461,7 +4697,8 @@ contact.queryKey(context, 1, (err: BusinessError, data) => {
 
 
 
-#### contact.queryKey(deprecated)
+## contact.queryKey(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4478,6 +4715,7 @@ queryKey(id: number, callback: AsyncCallback&lt;string&gt;): void
 **系统能力**：SystemCapability.Applications.ContactsData
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4502,7 +4740,8 @@ contact.queryKey(1, (err: BusinessError, data) => {
 
 
 
-#### contact.queryKey10+
+## contact.queryKey10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4516,6 +4755,7 @@ queryKey(context: Context, id: number, holder: Holder, callback: AsyncCallback&l
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -4527,6 +4767,7 @@ queryKey(context: Context, id: number, holder: Holder, callback: AsyncCallback&l
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4562,7 +4803,8 @@ contact.queryKey(context, 1, {
 
 
 
-#### contact.queryKey(deprecated)
+## contact.queryKey(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4579,6 +4821,7 @@ queryKey(id: number, holder: Holder, callback: AsyncCallback&lt;string&gt;): voi
 **系统能力**：SystemCapability.Applications.ContactsData
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4608,7 +4851,8 @@ contact.queryKey(1, {
 
 
 
-#### contact.queryKey10+
+## contact.queryKey10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4622,6 +4866,7 @@ queryKey(context: Context, id: number, holder?: Holder): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -4631,6 +4876,7 @@ queryKey(context: Context, id: number, holder?: Holder): Promise&lt;string&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;string&gt; | Promise对象。返回查询到的联系人对应的key。 |
@@ -4639,6 +4885,7 @@ queryKey(context: Context, id: number, holder?: Holder): Promise&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4670,7 +4917,8 @@ promise.then((data) => {
 
 
 
-#### contact.queryKey(deprecated)
+## contact.queryKey(deprecated)
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4688,6 +4936,7 @@ queryKey(id: number, holder?: Holder): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | number | 是 | 联系人对象的id属性。 |
@@ -4695,6 +4944,7 @@ queryKey(id: number, holder?: Holder): Promise&lt;string&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4718,7 +4968,8 @@ promise.then((data) => {
 
 
 
-#### contact.queryContactsCount22+
+## contact.queryContactsCount22+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4734,12 +4985,14 @@ queryContactsCount(context: Context): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4749,6 +5002,7 @@ queryContactsCount(context: Context): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Contacts错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-contacts)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4776,19 +5030,21 @@ promise.then((data) => {
 
 
 
-#### contact.addContactViaUI15+
+## contact.addContactViaUI15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 addContactViaUI(context: Context, contact: Contact): Promise&lt;number&gt;
 
-调用新建联系人接口，打开新建联系人UI界面，新建完成。使用Promise异步回调。
+调用新建联系人接口，打开新建联系人UI界面。使用Promise异步回调。
 
 **元服务API**: 从API version 15 开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Applications.Contacts
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4798,6 +5054,7 @@ addContactViaUI(context: Context, contact: Contact): Promise&lt;number&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象。返回添加的联系人id，即新建联系人时系统自动生成的唯一标识，一个id唯一对应一个联系人。 |
@@ -4806,6 +5063,7 @@ addContactViaUI(context: Context, contact: Contact): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Contacts错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-contacts)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4844,9 +5102,10 @@ promise.then((data) => {
 
 
 
-#### contact.saveToExistingContactViaUI15+
+## contact.saveToExistingContactViaUI15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 saveToExistingContactViaUI(context: Context, contact: Contact): Promise&lt;number&gt;
 
@@ -4858,6 +5117,7 @@ saveToExistingContactViaUI(context: Context, contact: Contact): Promise&lt;numbe
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -4865,6 +5125,7 @@ saveToExistingContactViaUI(context: Context, contact: Contact): Promise&lt;numbe
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4874,6 +5135,7 @@ saveToExistingContactViaUI(context: Context, contact: Contact): Promise&lt;numbe
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Contacts错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-contacts)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4914,7 +5176,8 @@ promise.then((data) => {
 
 
 
-#### contact.addContacts23+
+## contact.addContacts23+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4930,6 +5193,7 @@ addContacts(context: Context, contacts: Array&lt;Contact&gt;): Promise<Array&lt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -4937,6 +5201,7 @@ addContacts(context: Context, contacts: Array&lt;Contact&gt;): Promise<Array&lt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4946,6 +5211,7 @@ addContacts(context: Context, contacts: Array&lt;Contact&gt;): Promise<Array&lt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Contacts错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-contacts)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4981,7 +5247,8 @@ contact.addContacts(context, [contactInfo1, contactInfo2]).then((data) => {
 
 
 
-#### contact.hasMatchedCallLog24+
+## contact.hasMatchedCallLog24+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -4999,6 +5266,7 @@ hasMatchedCallLog(context: Context, phoneNumber: string, minDuration: number, wi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -5009,6 +5277,7 @@ hasMatchedCallLog(context: Context, phoneNumber: string, minDuration: number, wi
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象，返回是否有符合条件的通话记录，true代表有符合条件的，false代表没有。 |
@@ -5017,6 +5286,7 @@ hasMatchedCallLog(context: Context, phoneNumber: string, minDuration: number, wi
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Contacts错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-contacts)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5050,7 +5320,8 @@ contact.hasMatchedCallLog(context, phoneNumber, minDuration, withinTime).then((h
 
 
 
-#### contact.hasMatchedCallLog24+
+## contact.hasMatchedCallLog24+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5068,6 +5339,7 @@ hasMatchedCallLog(context: Context, phoneNumber: string, minDuration: number): P
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -5077,6 +5349,7 @@ hasMatchedCallLog(context: Context, phoneNumber: string, minDuration: number): P
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象，返回是否有符合条件的通话记录，true代表有符合条件的，false代表没有。 |
@@ -5085,6 +5358,7 @@ hasMatchedCallLog(context: Context, phoneNumber: string, minDuration: number): P
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Contacts错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-contacts)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5116,13 +5390,14 @@ contact.hasMatchedCallLog(context, phoneNumber, minDuration).then((hasMatch:bool
 
 
 
-#### contact.syncContacts
+## contact.syncContacts
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 syncContacts(context: Context, mode: ContactSyncMode, progress: ContactSyncProgress, contacts: Array&lt;Contact&gt;): Promise<Array&lt;number&gt;>
 
-批量同步多个联系人至联系人数据库。每次最多可批量同步400个联系人。同步三方应用自身联系人至本机。调用方必须处于前台。
+批量同步多个联系人至联系人数据库。每次最多可批量同步400个联系人。调用方必须处于前台。使用Promise异步回调。
 
 **起始版本**：26.0.0
 
@@ -5136,6 +5411,7 @@ syncContacts(context: Context, mode: ContactSyncMode, progress: ContactSyncProgr
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -5146,6 +5422,7 @@ syncContacts(context: Context, mode: ContactSyncMode, progress: ContactSyncProgr
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;number&gt;> | Promise对象，返回联系人创建结果的数组。有效的联系人ID表示创建成功。 |
@@ -5154,6 +5431,7 @@ syncContacts(context: Context, mode: ContactSyncMode, progress: ContactSyncProgr
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Contacts错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-contacts)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5208,26 +5486,26 @@ for (let batch: number = 1; batch <= totalBatches; batch++) {
       currentBatch: batch,
       totalBatches: totalBatches
     };
-    console.info(`同步批次 ${batch}/${totalBatches}, 联系人数量: ${currentBatchSize}`);
     let result = await contact.syncContacts(context, mode, progress, contacts);
-    console.info(`批次 ${batch} 同步成功，result: `  + JSON.stringify(result));
+    console.info(`Succeeded in syncContacts. result->${JSON.stringify(result)}`);
   }
   catch (err) {
     const e = err as BusinessError;
-    console.error(`syncContacts 失败: code=${e.code}, message=${e.message}`);
+    console.error(`Failed to syncContacts. Code: ${e.code}, message: ${e.message}`);
   }
 }
 ```
 
 
 
-#### contact.queryContactSyncInfo
+## contact.queryContactSyncInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 queryContactSyncInfo(context: Context): Promise<Array&lt;ContactSyncInfo&gt;>
 
-查询当前应用的联系人信息同步状态。返回空值表示应用未发起同步或同步已完成。
+查询当前应用的联系人信息同步状态。如果返回的联系人同步信息为空，则调用方不进行联系人同步或联系人同步已完成。使用Promise异步回调。
 
 **起始版本**：26.0.0
 
@@ -5241,12 +5519,14 @@ queryContactSyncInfo(context: Context): Promise<Array&lt;ContactSyncInfo&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5256,6 +5536,7 @@ queryContactSyncInfo(context: Context): Promise<Array&lt;ContactSyncInfo&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Contacts错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-contacts)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5281,13 +5562,14 @@ console.info('queryContactSyncInfo syncInfoList '  + JSON.stringify(syncInfoList
 
 
 
-#### contact.importContactsViaUI
+## contact.importContactsViaUI
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 importContactsViaUI(context: Context, contacts: Array&lt;Contact&gt;): Promise<Array&lt;number&gt;>
 
-通过UI交互批量导入多个联系人。每次最多可导入100个联系人。不支持导入联系人的头像。
+通过UI交互批量导入多个联系人。每次最多可导入100个联系人。不支持导入联系人的头像。使用Promise异步回调。
 
 **起始版本**：26.0.0
 
@@ -5299,6 +5581,7 @@ importContactsViaUI(context: Context, contacts: Array&lt;Contact&gt;): Promise<A
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | Context | 是 | 应用上下文Context，Stage模型的应用Context定义见Context。 |
@@ -5306,6 +5589,7 @@ importContactsViaUI(context: Context, contacts: Array&lt;Contact&gt;): Promise<A
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5315,6 +5599,7 @@ importContactsViaUI(context: Context, contacts: Array&lt;Contact&gt;): Promise<A
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Contacts错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-contacts)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5355,13 +5640,15 @@ promise.then((data) => {
 
 
 
-#### ContactSelectionOptions10+
+## ContactSelectionOptions10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 选择联系人条件。
 
 **系统能力**：SystemCapability.Applications.Contacts
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -5374,7 +5661,8 @@ promise.then((data) => {
 
 
 
-#### ContactSelectionFilter15+
+## ContactSelectionFilter15+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5384,6 +5672,7 @@ promise.then((data) => {
 
 **系统能力**：SystemCapability.Applications.Contacts
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | filterClause | FilterClause | 否 | 否 | 过滤条件。 |
@@ -5392,7 +5681,8 @@ promise.then((data) => {
 
 
 
-#### FilterType15+
+## FilterType15+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5401,6 +5691,7 @@ promise.then((data) => {
 **元服务API**：从API version 15 开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Applications.ContactsData
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -5411,7 +5702,8 @@ promise.then((data) => {
 
 
 
-#### FilterClause15+
+## FilterClause15+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5420,6 +5712,7 @@ promise.then((data) => {
 **元服务API**：从API version 15 开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Applications.Contacts
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -5431,7 +5724,8 @@ promise.then((data) => {
 
 
 
-#### FilterOptions15+
+## FilterOptions15+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5441,15 +5735,17 @@ promise.then((data) => {
 
 **系统能力**：SystemCapability.Applications.Contacts
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | filterCondition | FilterCondition | 否 | 否 | 过滤条件。 |
-| value | string \| ValueType[] | 否 | 是 | 过滤值，默认为undefined。 |
+| value | string \| ValueType [] | 否 | 是 | 过滤值，默认为undefined。 |
 
 
 
 
-#### FilterCondition15+
+## FilterCondition15+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5458,6 +5754,7 @@ promise.then((data) => {
 **元服务API**：从API version 15 开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Applications.ContactsData
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -5471,7 +5768,8 @@ promise.then((data) => {
 
 
 
-#### DataFilter15+
+## DataFilter15+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5481,6 +5779,7 @@ promise.then((data) => {
 
 **系统能力**：SystemCapability.Applications.Contacts
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | field | DataField | 否 | 否 | 联系人数据字段。 |
@@ -5489,7 +5788,8 @@ promise.then((data) => {
 
 
 
-#### DataField15+
+## DataField15+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5498,6 +5798,7 @@ promise.then((data) => {
 **元服务API**：从API version 15 开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Applications.ContactsData
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -5508,7 +5809,8 @@ promise.then((data) => {
 
 
 
-#### Contact
+## Contact
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5517,6 +5819,7 @@ promise.then((data) => {
 **元服务API**：从API version 11 开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Applications.ContactsData
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -5563,7 +5866,8 @@ let myContact: contact.Contact = {
 
 
 
-#### ContactAttributes
+## ContactAttributes
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5574,6 +5878,7 @@ let myContact: contact.Contact = {
 **元服务API**：从API version 11 开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Applications.ContactsData
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -5596,7 +5901,8 @@ let contactAttributes: contact.ContactAttributes = {
 
 
 
-#### Attribute
+## Attribute
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5605,6 +5911,7 @@ let contactAttributes: contact.ContactAttributes = {
 **元服务API**：从API version 11 开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Applications.ContactsData
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -5634,7 +5941,8 @@ let attributes = [contact.Attribute.ATTR_EMAIL, contact.Attribute.ATTR_NAME, con
 
 
 
-#### Email
+## Email
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5643,6 +5951,7 @@ let attributes = [contact.Attribute.ATTR_EMAIL, contact.Attribute.ATTR_NAME, con
 **元服务API**：从API version 11 开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Applications.ContactsData
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -5679,13 +5988,15 @@ email.email = 'xxx@email.com';
 
 
 
-#### Holder
+## Holder
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 创建联系人的应用信息类。
 
 **系统能力**：SystemCapability.Applications.ContactsData
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -5708,7 +6019,8 @@ let holder: contact.Holder = {
 
 
 
-#### Event
+## Event
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5717,6 +6029,7 @@ let holder: contact.Holder = {
 **元服务API**：从API version 11 开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Applications.ContactsData
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -5749,7 +6062,8 @@ event.eventDate = '2000-01-01';
 
 
 
-#### Group
+## Group
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5758,6 +6072,7 @@ event.eventDate = '2000-01-01';
 **元服务API**：从API version 11 开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Applications.ContactsData
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -5780,7 +6095,8 @@ let group: contact.Group = {
 
 
 
-#### ImAddress
+## ImAddress
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5789,6 +6105,7 @@ let group: contact.Group = {
 **元服务API**：从API version 11 开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Applications.ContactsData
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -5828,13 +6145,15 @@ imAddress.imAddress = 'imAddress';
 
 
 
-#### Name
+## Name
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 联系人的名字类。
 
 **系统能力**：SystemCapability.Applications.ContactsData
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -5865,7 +6184,8 @@ let name: contact.Name = {
 
 
 
-#### NickName
+## NickName
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5874,6 +6194,7 @@ let name: contact.Name = {
 **元服务API**：从API version 11 开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Applications.ContactsData
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -5894,7 +6215,8 @@ let nickName: contact.NickName = {
 
 
 
-#### Note
+## Note
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5903,6 +6225,7 @@ let nickName: contact.NickName = {
 **元服务API**：从API version 11 开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Applications.ContactsData
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -5921,7 +6244,8 @@ let note: contact.Note = {
 
 
 
-#### Organization
+## Organization
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5930,6 +6254,7 @@ let note: contact.Note = {
 **元服务API**：从API version 11 开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Applications.ContactsData
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -5952,7 +6277,8 @@ let organization: contact.Organization = {
 
 
 
-#### PhoneNumber
+## PhoneNumber
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -5961,6 +6287,7 @@ let organization: contact.Organization = {
 **元服务API**：从API version 11 开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Applications.ContactsData
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -6013,7 +6340,8 @@ phoneNumber.phoneNumber = '138xxxxxxxx';
 
 
 
-#### Portrait
+## Portrait
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6024,6 +6352,7 @@ phoneNumber.phoneNumber = '138xxxxxxxx';
 
 
 **系统能力**：SystemCapability.Applications.ContactsData
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -6055,7 +6384,8 @@ async function SetPortraitPixelMap(photo: image.PixelMap) {
 
 
 
-#### PostalAddress
+## PostalAddress
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6064,6 +6394,7 @@ async function SetPortraitPixelMap(photo: image.PixelMap) {
 **元服务API**：从API version 11 开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Applications.ContactsData
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -6109,7 +6440,8 @@ postalAddress.postalAddress = 'postalAddress';
 
 
 
-#### Relation
+## Relation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6118,6 +6450,7 @@ postalAddress.postalAddress = 'postalAddress';
 **元服务API**：从API version 11 开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Applications.ContactsData
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -6167,7 +6500,8 @@ relation.labelId = contact.Relation.RELATION_ASSISTANT;
 
 
 
-#### SipAddress
+## SipAddress
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6176,6 +6510,7 @@ relation.labelId = contact.Relation.RELATION_ASSISTANT;
 **元服务API**：从API version 11 开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Applications.ContactsData
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -6212,7 +6547,8 @@ sipAddress.sipAddress = 'sipAddress';
 
 
 
-#### Website
+## Website
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6221,6 +6557,7 @@ sipAddress.sipAddress = 'sipAddress';
 **元服务API**：从API version 11 开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Applications.ContactsData
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -6241,7 +6578,8 @@ let website: contact.Website = {
 
 
 
-#### ContactSyncMode
+## ContactSyncMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6255,6 +6593,7 @@ let website: contact.Website = {
 
 **系统能力**：SystemCapability.Applications.ContactsData
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | MODE_INCREMENTAL | 1 | 表示将在数据库中插入或更新云端和本地之间不同的联系人。 |
@@ -6263,7 +6602,8 @@ let website: contact.Website = {
 
 
 
-#### ContactSyncProgress
+## ContactSyncProgress
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6277,6 +6617,7 @@ let website: contact.Website = {
 
 **系统能力**：SystemCapability.Applications.ContactsData
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | syncId | number | 否 | 否 | 表示用于同步所有联系人的同步标识符。取值范围: [0, 2147483647]。 |
@@ -6286,7 +6627,8 @@ let website: contact.Website = {
 
 
 
-#### ContactSyncInfo
+## ContactSyncInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -6299,6 +6641,7 @@ let website: contact.Website = {
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.Applications.ContactsData
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

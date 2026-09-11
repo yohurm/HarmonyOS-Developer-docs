@@ -1,9 +1,9 @@
 # chart
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-components-basic-chart
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 图表组件，用于呈现线形图、柱状图界面。
  
@@ -12,18 +12,21 @@
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 不支持。
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
  
+
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | type | string | 否 | 设置图表类型（不支持动态修改），可选项有： - bar：柱状图。 - line：线形图。 默认值：line |
@@ -37,6 +40,7 @@
  
  **表1** ChartOptions
   
+
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | xAxis | ChartAxis | 是 | x轴参数设置。可以设置x轴最小值、最大值、刻度数以及是否显示。 |
@@ -46,6 +50,7 @@
  
  **表2** ChartDataset
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | backgroundColor(deprecated) | &lt;color&gt; | #ff6384 | 否 | 设置线或柱的颜色（不推荐使用）。 |
@@ -57,6 +62,7 @@
  
  **表3** ChartAxis
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | min | number | 0 | 否 | 轴的最小值。 不支持负数。 |
@@ -68,6 +74,7 @@
  
  **表4** ChartSeries
   
+
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
 | lineStyle | ChartLineStyle | 否 | 线样式设置，如线宽、是否平滑。 |
@@ -79,6 +86,7 @@
  
  **表5** ChartLineStyle
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | width | &lt;length&gt; | 1px | 否 | 线宽设置。 |
@@ -87,6 +95,7 @@
  
  **表6** PointStyle
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | shape | string | circle | 否 | 高亮点的形状。可选值为： - circle：圆形。 |
@@ -99,6 +108,7 @@
  
  **表7** ChartLoop
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | margin | &lt;length&gt; | 1 | 否 | 擦除点的个数（最新绘制的点与最老的点之间的横向距离）。注意：轻量设备margin和topPoint/bottomPoint/headPoint同时使用时，有概率出现point正好位于擦除区域的情况，导致point不可见，因此不建议同时使用。 |
@@ -106,10 +116,12 @@
  
   
 
-#### 方法
+## 方法
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
  
+
 | 方法 | 参数 | 描述 |
 | --- | --- | --- |
 | append | { serial: number, // 设置要更新的线形图数据下标 data: Array&lt;number&gt;, // 设置新增的数据 } | 往已有的数据序列中动态添加数据，根据serial指定目标序列，serial为datasets数组的下标，从0开始。注意：不会更新datasets[index].data。仅线形图支持，按横坐标加1递增（与xAxis min/max设置相关）。 |
@@ -117,10 +129,12 @@
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
  
+
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | click | - | 点击动作触发该事件。 |
@@ -130,10 +144,12 @@
  
   
 
-#### 样式
+## 样式
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
  
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | width | &lt;length&gt; \| &lt;percentage&gt;5+ | - | 否 | 设置组件自身的宽度。 未设置时组件宽度默认为0。 |
@@ -152,9 +168,10 @@
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 1. 线形图
 
   
@@ -301,4 +318,4 @@ export default {
 }
 ```
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/OF4KAiYQSxWyDzyE0_IwWg/zh-cn_image_0000002685928915.png?HW-CC-KV=V1&HW-CC-Date=20260730T071526Z&HW-CC-Expire=86400&HW-CC-Sign=F1E63F48F9AD7E8D56E5CEC75ED06D6CA69608D4D00BDAFE2CCA8AD1C430D86F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/GLSQFhiRRRakoEa6_jPy4w/zh-cn_image_0000002717773392.png?HW-CC-KV=V1&HW-CC-Date=20260911T072959Z&HW-CC-Expire=86400&HW-CC-Sign=56E25C23D386AD8C85B07B86726DB80E49C5D669E9EB69302AE128AA48979940)

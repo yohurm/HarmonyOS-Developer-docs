@@ -1,6 +1,6 @@
 # visionBase（Core Vision Kit基类）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/core-vision-vision-base-api
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -10,7 +10,8 @@ visionBase作为一个基础的视觉能力库，封装了基本资源对象、�
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -20,7 +21,8 @@ import { visionBase } from '@kit.CoreVisionKit';
  
   
 
-#### SceneMode
+## SceneMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -32,6 +34,7 @@ import { visionBase } from '@kit.CoreVisionKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | FOREGROUND | 1 | （默认）前台模式。 |
@@ -40,7 +43,8 @@ import { visionBase } from '@kit.CoreVisionKit';
  
   
 
-#### ImageData
+## ImageData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -52,6 +56,7 @@ import { visionBase } from '@kit.CoreVisionKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | pixelMap | image.PixelMap | 否 | 否 | 待识别的图片。 |
@@ -59,7 +64,8 @@ import { visionBase } from '@kit.CoreVisionKit';
  
   
 
-#### InputData
+## InputData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -73,6 +79,7 @@ type InputData = ImageData | ImageData[]
  
 **起始版本：** 5.0.0(12)
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ImageData \| ImageData[] | 待识别的图片数组。可输入一个或多个图片。 |
@@ -80,7 +87,8 @@ type InputData = ImageData | ImageData[]
  
   
 
-#### BoundingBox
+## BoundingBox
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -92,6 +100,7 @@ type InputData = ImageData | ImageData[]
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | left | number | 否 | 否 | 边界框左上角的x坐标。 |
@@ -102,7 +111,8 @@ type InputData = ImageData | ImageData[]
  
   
 
-#### Point
+## Point
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -114,6 +124,7 @@ type InputData = ImageData | ImageData[]
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | x | number | 否 | 否 | 点的横坐标。 |
@@ -122,7 +133,8 @@ type InputData = ImageData | ImageData[]
  
   
 
-#### Orientation
+## Orientation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -134,6 +146,7 @@ type InputData = ImageData | ImageData[]
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | yaw | number | 否 | 否 | 表示绕垂直轴（Y轴）旋转的角度，也称为“偏航角”，决定了物体在水平面上的朝向。取值范围[-180,180]。 |
@@ -143,7 +156,8 @@ type InputData = ImageData | ImageData[]
  
   
 
-#### DownloadStartData
+## DownloadStartData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -155,6 +169,7 @@ type InputData = ImageData | ImageData[]
  
 **起始版本：** 5.0.2(14)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | resId | string | 否 | 否 | 资源标识符，用于标识正在下载的模型。 |
@@ -162,7 +177,8 @@ type InputData = ImageData | ImageData[]
  
   
 
-#### DownloadCompleteData
+## DownloadCompleteData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -174,6 +190,7 @@ type InputData = ImageData | ImageData[]
  
 **起始版本：** 5.0.2(14)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | resId | string | 否 | 否 | 资源标识符。 |
@@ -182,7 +199,8 @@ type InputData = ImageData | ImageData[]
  
   
 
-#### DownloadCancelData
+## DownloadCancelData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -194,6 +212,7 @@ type InputData = ImageData | ImageData[]
  
 **起始版本：** 5.0.2(14)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | resId | string | 否 | 否 | 资源标识符。 |
@@ -201,7 +220,8 @@ type InputData = ImageData | ImageData[]
  
   
 
-#### DownloadStatusData
+## DownloadStatusData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -213,6 +233,7 @@ type InputData = ImageData | ImageData[]
  
 **起始版本：** 5.0.2(14)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | resId | string | 否 | 否 | 资源标识符。 |
@@ -222,7 +243,8 @@ type InputData = ImageData | ImageData[]
  
   
 
-#### DownloadProgressData
+## DownloadProgressData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -234,6 +256,7 @@ type InputData = ImageData | ImageData[]
  
 **起始版本：** 5.0.2(14)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | resId | string | 否 | 否 | 资源标识符。 |
@@ -242,7 +265,8 @@ type InputData = ImageData | ImageData[]
  
   
 
-#### downloadStatusCode
+## downloadStatusCode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -254,6 +278,7 @@ type InputData = ImageData | ImageData[]
  
 **起始版本：** 5.0.2(14)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | PARAMETER_INVALID | 0 | 传入的下载参数有误，比如资源ID格式错误，建议检查传入参数的格式和有效性。 |
@@ -269,7 +294,8 @@ type InputData = ImageData | ImageData[]
  
   
 
-#### Request
+## Request
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -281,6 +307,7 @@ type InputData = ImageData | ImageData[]
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | inputData | InputData | 否 | 否 | 待识别的图片。可以是单个对象或多个对象的数组。 |
@@ -290,7 +317,8 @@ type InputData = ImageData | ImageData[]
  
   
 
-#### Response
+## Response
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -302,6 +330,7 @@ type InputData = ImageData | ImageData[]
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | requestId | string | 否 | 是 | 请求的唯一标识，用于开发者跟踪和管理自己的请求，与Request请求一一对应。默认值为空字符串。 |
@@ -309,7 +338,8 @@ type InputData = ImageData | ImageData[]
  
   
 
-#### Analyzer
+## Analyzer
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -323,7 +353,8 @@ Analyzer基类，充当能力引擎。
  
   
 
-#### destroy
+### destroy
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -339,6 +370,7 @@ destroy(): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -350,7 +382,8 @@ destroy(): Promise&lt;void&gt;
  
   
 
-#### on('downloadStart')
+## on('downloadStart')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -366,6 +399,7 @@ on(type: 'downloadStart', callback: Callback&lt;DownloadStartData&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件类型，值为'downloadStart'，表示模型开始下载事件。 |
@@ -376,6 +410,7 @@ on(type: 'downloadStart', callback: Callback&lt;DownloadStartData&gt;): void
  
 以下错误码的详细介绍请参见[Core Vision Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-core-vision)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. |
@@ -405,7 +440,8 @@ struct Page {
  
   
 
-#### on('downloadComplete')
+## on('downloadComplete')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -421,6 +457,7 @@ on(type: 'downloadComplete', callback: Callback&lt;DownloadCompleteData&gt;): vo
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件类型，值为'downloadComplete'，表示模型下载完成事件。 |
@@ -431,6 +468,7 @@ on(type: 'downloadComplete', callback: Callback&lt;DownloadCompleteData&gt;): vo
  
 以下错误码的详细介绍请参见[Core Vision Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-core-vision)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. |
@@ -460,7 +498,8 @@ struct Page {
  
   
 
-#### on('downloadCancel')
+## on('downloadCancel')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -476,6 +515,7 @@ on(type: 'downloadCancel', callback: Callback&lt;DownloadCancelData&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件类型，值为'downloadCancel'，表示模型下载取消事件。 |
@@ -486,6 +526,7 @@ on(type: 'downloadCancel', callback: Callback&lt;DownloadCancelData&gt;): void
  
 以下错误码的详细介绍请参见[Core Vision Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-core-vision)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. |
@@ -515,7 +556,8 @@ struct Page {
  
   
 
-#### on('downloadStatus')
+## on('downloadStatus')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -531,6 +573,7 @@ on(type: 'downloadStatus', callback: Callback&lt;DownloadStatusData&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件类型，值为'downloadStatus'，表示模型下载状态事件。 |
@@ -541,6 +584,7 @@ on(type: 'downloadStatus', callback: Callback&lt;DownloadStatusData&gt;): void
  
 以下错误码的详细介绍请参见[Core Vision Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-core-vision)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. |
@@ -570,7 +614,8 @@ struct Page {
  
   
 
-#### on('downloadProgress')
+## on('downloadProgress')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -586,6 +631,7 @@ on(type: 'downloadProgress', callback: Callback&lt;DownloadProgressData&gt;): vo
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件类型，值为'downloadProgress'，表示模型下载进度事件。 |
@@ -596,6 +642,7 @@ on(type: 'downloadProgress', callback: Callback&lt;DownloadProgressData&gt;): vo
  
 以下错误码的详细介绍请参见[Core Vision Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-core-vision)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. |
@@ -625,7 +672,8 @@ struct Page {
  
   
 
-#### off('downloadStart')
+## off('downloadStart')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -641,6 +689,7 @@ off(type: 'downloadStart', callback?: Callback&lt;DownloadStartData&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件类型，固定字符串'downloadStart'，表示取消订阅模型开始下载事件。 |
@@ -651,6 +700,7 @@ off(type: 'downloadStart', callback?: Callback&lt;DownloadStartData&gt;): void
  
 以下错误码的详细介绍请参见[Core Vision Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-core-vision)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. |
@@ -685,7 +735,8 @@ struct Page {
  
   
 
-#### off('downloadComplete')
+## off('downloadComplete')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -701,6 +752,7 @@ off(type: 'downloadComplete', callback?: Callback&lt;DownloadCompleteData&gt;): 
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件类型，固定字符串'downloadComplete'，表示取消订阅模型下载完成事件。 |
@@ -711,6 +763,7 @@ off(type: 'downloadComplete', callback?: Callback&lt;DownloadCompleteData&gt;): 
  
 以下错误码的详细介绍请参见[Core Vision Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-core-vision)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. |
@@ -745,7 +798,8 @@ struct Page {
  
   
 
-#### off('downloadCancel')
+## off('downloadCancel')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -761,6 +815,7 @@ off(type: 'downloadCancel', callback?: Callback&lt;DownloadCancelData&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件类型，固定字符串'downloadCancel'，表示取消订阅模型下载取消事件。 |
@@ -771,6 +826,7 @@ off(type: 'downloadCancel', callback?: Callback&lt;DownloadCancelData&gt;): void
  
 以下错误码的详细介绍请参见[Core Vision Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-core-vision)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. |
@@ -805,7 +861,8 @@ struct Page {
  
   
 
-#### off('downloadStatus')
+## off('downloadStatus')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -821,6 +878,7 @@ off(type: 'downloadStatus', callback?: Callback&lt;DownloadStatusData&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件类型，固定字符串'downloadStatus'，表示取消订阅模型下载状态事件。 |
@@ -831,6 +889,7 @@ off(type: 'downloadStatus', callback?: Callback&lt;DownloadStatusData&gt;): void
  
 以下错误码的详细介绍请参见[Core Vision Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-core-vision)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. |
@@ -866,7 +925,8 @@ struct Page {
  
   
 
-#### off('downloadProgress')
+## off('downloadProgress')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -882,6 +942,7 @@ off(type: 'downloadProgress', callback?: Callback&lt;DownloadProgressData&gt;): 
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件类型，固定字符串'downloadProgress'，表示取消订阅模型下载进度事件。 |
@@ -892,6 +953,7 @@ off(type: 'downloadProgress', callback?: Callback&lt;DownloadProgressData&gt;): 
  
 以下错误码的详细介绍请参见[Core Vision Kit错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-core-vision)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. |

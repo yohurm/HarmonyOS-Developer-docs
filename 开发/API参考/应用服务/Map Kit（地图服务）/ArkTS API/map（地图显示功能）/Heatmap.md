@@ -1,11 +1,12 @@
 # Interface (Heatmap)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-heatmap
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -15,7 +16,8 @@ import { map, mapCommon } from '@kit.MapKit';
  
   
 
-#### Heatmap
+## Heatmap
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -58,7 +60,8 @@ let heatMap = await this.mapController.addHeatmap(heatMapOptions)
  
   
 
-#### setData
+### setData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -76,6 +79,7 @@ setData(data: mapCommon.WeightedLatLng[]): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | mapCommon.WeightedLatLng[] | 是 | 热力图数据（建议数据量小于10000条，数据量过大可能导致卡顿），异常值不处理。 |
@@ -98,7 +102,8 @@ heatMap.setData(data);
  
   
 
-#### getData
+### getData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -116,6 +121,7 @@ getData(): mapCommon.WeightedLatLng[]
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | mapCommon.WeightedLatLng[] | 热力图数据。 |
@@ -129,7 +135,8 @@ let data: mapCommon.WeightedLatLng[] = heatMap.getData();
  
   
 
-#### setColor
+### setColor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -147,6 +154,7 @@ setColor(color: Record<number, number>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | Record<number, number> | 是 | 热力图颜色。 - key：数据密度，取值范围[0, 1]。 - value：颜色渐变值，ARGB格式。 异常值不处理。 |
@@ -170,7 +178,8 @@ heatMap.setColor(record);
  
   
 
-#### getColor
+### getColor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -188,6 +197,7 @@ getColor(): Record<number, number>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Record<number, number> | 热力图颜色。 - key：数据密度，取值范围[0, 1]。 - value：颜色渐变值，ARGB格式。 |
@@ -201,7 +211,8 @@ let record: Record<number, number> = heatMap.getColor();
  
   
 
-#### setIntensity
+### setIntensity
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -219,6 +230,7 @@ setIntensity(intensity: number | Record<number, number>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | intensity | number \| Record<number, number> | 是 | 热力图强度，如果是number类型，所有层级使用同一个强度。 - key：层级，取值范围[2, 20]。 - value：热力图强度，取值范围大于0。 异常值不处理。 |
@@ -237,7 +249,8 @@ heatMap.setIntensity(intensity);
  
   
 
-#### getIntensity
+### getIntensity
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -255,6 +268,7 @@ getIntensity(): number | Record<number, number>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number \| Record<number, number> | 热力图强度，如果是number类型，所有层级使用同一个强度。 - key：层级，取值范围[2, 20]。 - value：热力图强度，取值范围大于0。 |
@@ -268,7 +282,8 @@ let intensity: Record<number, number> | number = heatMap.getIntensity();
  
   
 
-#### setOpacity
+### setOpacity
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -286,6 +301,7 @@ setOpacity(opacity: number | Record<number, number>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | opacity | number \| Record<number, number> | 是 | 热力图透明度，如果是number类型，所有层级使用同一个透明度。 - key：层级，取值范围[2, 20]。 - value：热力图透明度，取值范围[0, 1]，0表示完全不透明，1表示完全透明。 异常值不处理。 |
@@ -304,7 +320,8 @@ heatMap.setOpacity(opacity);
  
   
 
-#### getOpacity
+### getOpacity
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -322,6 +339,7 @@ getOpacity(): number | Record<number, number>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number \| Record<number, number> | 热力图透明度，如果是number类型，所有层级使用同一个透明度。 - key：热力图颜色渐变层级，取值范围[2, 20]。 - value：热力图透明度，取值范围[0, 1]，0表示完全不透明，1表示完全透明。 |
@@ -335,7 +353,8 @@ let opacity: Record<number, number> | number = heatMap.getOpacity();
  
   
 
-#### setRadius
+### setRadius
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -353,6 +372,7 @@ setRadius(radius: number | Record<number, number>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | radius | number \| Record<number, number> | 是 | 热力图半径，如果是number类型，所有层级使用同一个半径。 - key：层级，取值范围[2, 20]。 - value：热力图半径，取值范围：[1, +∞)。 异常值不处理。 |
@@ -366,7 +386,8 @@ heatMap.setRadius(3000);
  
   
 
-#### getRadius
+### getRadius
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -384,6 +405,7 @@ getRadius(): number | Record<number, number>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number \| Record<number, number> | 热力图半径，如果是number类型，所有层级使用同一个半径。 - key：层级，取值范围[2, 20]。 - value：热力图半径，取值范围：[1, +∞)。 |
@@ -397,7 +419,8 @@ let radius: number | Record<number, number> = heatMap.getRadius();
  
   
 
-#### setRadiusUnit
+### setRadiusUnit
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -415,6 +438,7 @@ setRadiusUnit(radiusUnit: mapCommon.RadiusUnit): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | radiusUnit | mapCommon.RadiusUnit | 是 | 热力图半径单位。异常值不处理。 |
@@ -428,7 +452,8 @@ heatMap.setRadiusUnit(mapCommon.RadiusUnit.PIXEL_UNIT);
  
   
 
-#### getRadiusUnit
+### getRadiusUnit
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -446,6 +471,7 @@ getRadiusUnit(): mapCommon.RadiusUnit
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | mapCommon.RadiusUnit | 热力图半径单位。 |
@@ -459,7 +485,8 @@ let radiusUnit: mapCommon.RadiusUnit = heatMap.getRadiusUnit();
  
   
 
-#### setVisible
+### setVisible
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -477,6 +504,7 @@ setVisible(visible: boolean): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | visible | boolean | 是 | 热力图是否可见。 - true：可见。 - false：不可见。 异常值不处理。 |
@@ -490,7 +518,8 @@ heatMap.setVisible(false);
  
   
 
-#### isVisible
+### isVisible
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -508,6 +537,7 @@ isVisible(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 热力图是否可见。 - true：可见。 - false：不可见。 |
@@ -521,7 +551,8 @@ let isVisible: boolean = heatMap.isVisible();
  
   
 
-#### remove
+### remove
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 

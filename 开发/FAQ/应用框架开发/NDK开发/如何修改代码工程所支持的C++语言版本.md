@@ -30,7 +30,7 @@
   "externalNativeOptions": {
     "path": "./src/main/cpp/CMakeLists.txt",
     "arguments": "",
-    // Modify the following line
+  <em>  // Modify the following line</em>
     "cppFlags": "--std=c++17"
   },
 },

@@ -26,9 +26,9 @@
  
 ```text
 "module": {
-  // "name": "your_module",
-  // "type": "har", // or shared, avoid using feature,
-  // ...
+  <em>// "name": "your_module",</em>
+<em>  // "type": "har", // or shared, avoid using feature,</em>
+<em>  // ...</em>
 },
 ```
  
@@ -42,10 +42,10 @@ hideNavBar属性设置为true时，NavBar被隐藏，若页面栈为空，会显
  
 ```text
 Navigation() {
-  // page content
-  // ...
+  <em>// page content</em>
+<em>  // ...</em>
 }
-.hideNavBar(false) // Ensure not hidden
+.hideNavBar(false) <em>// Ensure not hidden</em>
 ```
  
 **原因四：****跳转名称（Name）无效或为空**
@@ -59,7 +59,7 @@ pushPathByName传入的name参数为空、拼写错误或不存在于路由表�
 使用有效名称，例如：
  
 ```text
-// Correct example: The name must match the routing table
+<em>// Correct example: The name must match the routing table</em>
 this.pageStack.pushPathByName('PageDetail', 'param');
 ```
  
@@ -80,15 +80,15 @@ this.pageStack.pushPathByName('PageDetail', 'param');
 子页面应直接使用父级传递的NavPathStack实例，避免重新创建。例如：
  
 ```text
-// Subpage code, avoid creating it yourself
+<em>// Subpage code, avoid creating it yourself</em>
 @Component
 struct ChildPage {
-  // Error: Should not use new NavPathStack()
-  // pageStack: NavPathStack = new NavPathStack();
-  // Correct: Inject the parent stack through @Consume or parameters
+  <em>// Error: Should not use new NavPathStack()</em>
+<em>  // pageStack: NavPathStack = new NavPathStack();</em>
+<em>  // Correct: Inject the parent stack through @Consume or parameters</em>
   @Consume('pageStack') pageStack: NavPathStack;
   build() {
-    // ...
+ <em>   // ...</em>
   }
 }
 ```
@@ -104,7 +104,7 @@ pushPathByName是同步方法，跳转至不存在的页面时不会抛出异常
 改用pushDestinationByName（异步方法），可捕捉错误并重定向：
  
 ```text
-// Asynchronous jump using pushDestructionByName
+<em>// Asynchronous jump using pushDestructionByName</em>
 this.pageStack.pushDestinationByName('TargetPage', 'param')
   .then(() => {
     hilog.info(0x000, 'testTag', 'pushDestinationByName success');

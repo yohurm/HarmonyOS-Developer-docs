@@ -1,13 +1,14 @@
 # net_http_type.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-net-http-type-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义HTTP请求模块的C接口需要的数据结构。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | Http_Buffer | Http_Buffer | HTTP缓存结构体。 |
@@ -51,10 +55,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | Http_ErrCode | Http_ErrCode | 定义HTTP请求的错误码。 |
@@ -67,10 +73,12 @@
  
   
 
-#### 宏定义
+### 宏定义
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OHOS_HTTP_MAX_PATH_LEN 128 | HTTP请求最长目录路径长度。 起始版本： 20 |
@@ -83,15 +91,17 @@
 | NET_HTTPMETHOD_DELETE "DELETE" | HTTP请求DELETE方法。 起始版本： 20 |
 | NET_HTTP_METHOD_POST "POST" | HTTP请求POST方法。 起始版本： 20 |
 | NET_HTTP_METHOD_PUT "PUT" | HTTP请求PUT方法。 起始版本： 20 |
-| NET_HTTP_METHOD_PATCH "CONNECT" | HTTP请求CONNECT方法。 起始版本： 20 |
+| NET_HTTP_METHOD_PATCH "PATCH" | HTTP请求PATCH方法。 起始版本： 20 |
  
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | typedef void (*Http_ResponseCallback)(struct Http_Response *response, uint32_t errCode) | Http_ResponseCallback | 接收到HTTP响应的回调函数。 |
@@ -103,15 +113,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### Http_ErrCode
+### Http_ErrCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Http_ErrCode
@@ -123,6 +135,7 @@ enum Http_ErrCode
  
 **起始版本：** 20
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_HTTP_RESULT_OK = 0 | 请求成功。 |
@@ -157,15 +170,17 @@ enum Http_ErrCode
 | OH_HTTP_SSL_CA_NOT_EXIST = (OH_HTTP_NETSTACK_E_BASE + 77) | SSL CA证书不存在或无法访问。 |
 | OH_HTTP_REMOTE_FILE_NOT_FOUND = (OH_HTTP_NETSTACK_E_BASE + 78) | 远端文件未找到。 |
 | OH_HTTP_AUTHENTICATION_ERROR = (OH_HTTP_NETSTACK_E_BASE + 94) | 身份验证错误。 |
+| OH_HTTP_REQUEST_INTERCEPTED = (OH_HTTP_NETSTACK_E_BASE + 996) | 请求被HTTP全局拦截器拦截。 |
 | OH_HTTP_ACCESS_DOMAIN_NOT_ALLOWED = (OH_HTTP_NETSTACK_E_BASE + 998) | 不允许访问该域。 |
 | OH_HTTP_UNKNOWN_ERROR = (OH_HTTP_NETSTACK_E_BASE + 999) | 未知错误。 |
  
  
   
 
-#### Http_ResponseCode
+### Http_ResponseCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Http_ResponseCode
@@ -177,6 +192,7 @@ enum Http_ResponseCode
  
 **起始版本：** 20
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_HTTP_OK = 200 | 请求成功。 |
@@ -219,9 +235,10 @@ enum Http_ResponseCode
  
   
 
-#### Http_AddressFamilyType
+### Http_AddressFamilyType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Http_AddressFamilyType
@@ -233,6 +250,7 @@ enum Http_AddressFamilyType
  
 **起始版本：** 20
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | HTTP_ADDRESS_FAMILY_DEFAULT = 0 | 默认值，系统将自行选择目标域名的IPv4地址或IPv6地址。 |
@@ -242,9 +260,10 @@ enum Http_AddressFamilyType
  
   
 
-#### Http_HttpProtocol
+### Http_HttpProtocol
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Http_HttpProtocol
@@ -256,6 +275,7 @@ HTTP协议版本号枚举定义。
  
 **起始版本：** 20
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_HTTP_NONE = 0 | 遵循curl的协议版本选择。 |
@@ -266,9 +286,10 @@ HTTP协议版本号枚举定义。
  
   
 
-#### Http_CertType
+### Http_CertType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Http_CertType
@@ -280,6 +301,7 @@ enum Http_CertType
  
 **起始版本：** 20
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_HTTP_PEM = 0 | PEM证书类型。 |
@@ -289,9 +311,10 @@ enum Http_CertType
  
   
 
-#### Http_ProxyType
+### Http_ProxyType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Http_ProxyType
@@ -303,6 +326,7 @@ enum Http_ProxyType
  
 **起始版本：** 20
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | HTTP_PROXY_NOT_USE | 不使用代理。 |
@@ -312,15 +336,17 @@ enum Http_ProxyType
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### Http_ResponseCallback()
+### Http_ResponseCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*Http_ResponseCallback)(struct Http_Response *response, uint32_t errCode)
@@ -334,6 +360,7 @@ typedef void (*Http_ResponseCallback)(struct Http_Response *response, uint32_t e
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | struct Http_Response *response | HTTP响应结构体，指向Http_Response的指针，参考Http_Response。 |
@@ -342,9 +369,10 @@ typedef void (*Http_ResponseCallback)(struct Http_Response *response, uint32_t e
  
   
 
-#### Http_OnDataReceiveCallback()
+### Http_OnDataReceiveCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*Http_OnDataReceiveCallback)(const char *data, size_t length)
@@ -358,6 +386,7 @@ typedef void (*Http_OnDataReceiveCallback)(const char *data, size_t length)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *data | 响应体。 |
@@ -366,9 +395,10 @@ typedef void (*Http_OnDataReceiveCallback)(const char *data, size_t length)
  
   
 
-#### Http_OnProgressCallback()
+### Http_OnProgressCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*Http_OnProgressCallback)(uint64_t totalSize, uint64_t transferredSize)
@@ -382,6 +412,7 @@ typedef void (*Http_OnProgressCallback)(uint64_t totalSize, uint64_t transferred
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint64_t totalSize | 数据总大小。单位：Byte。 |
@@ -390,9 +421,10 @@ typedef void (*Http_OnProgressCallback)(uint64_t totalSize, uint64_t transferred
  
   
 
-#### Http_OnHeaderReceiveCallback()
+### Http_OnHeaderReceiveCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*Http_OnHeaderReceiveCallback)(Http_Headers *headers)
@@ -406,6 +438,7 @@ typedef void (*Http_OnHeaderReceiveCallback)(Http_Headers *headers)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Http_Headers *headers | 接收到的请求头，指向Http_Headers的指针，参考Http_Headers。 |
@@ -413,9 +446,10 @@ typedef void (*Http_OnHeaderReceiveCallback)(Http_Headers *headers)
  
   
 
-#### Http_OnVoidCallback()
+### Http_OnVoidCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*Http_OnVoidCallback)(void)

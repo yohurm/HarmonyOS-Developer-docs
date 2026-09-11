@@ -1,16 +1,17 @@
 # OH_AudioFormat
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohaudiosuite-oh-audioformat
 **支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
-typedef struct {...} OH_AudioFormat
+typedef struct OH_AudioFormat {...} OH_AudioFormat
 ```
   
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -24,16 +25,19 @@ typedef struct {...} OH_AudioFormat
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_Audio_SampleRate samplingRate | 音频流采样率。 |

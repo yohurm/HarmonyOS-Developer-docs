@@ -1,10 +1,10 @@
 # hiprofiler
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiprofiler
 
-#### Hiprofiler简介
+## Hiprofiler简介
 
 HiProfiler调优组件旨在为开发者提供一系列调优能力，可以用来帮助分析内存、性能等问题。
 
@@ -14,7 +14,7 @@ Hiprofiler工具对标业界调优工具，并提供更多能力，比如[跨语
 
 
 
-#### 环境要求
+## 环境要求
 
  - 根据hdc命令行工具指导，完成[环境准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hdc#环境准备)。
  - 确保设备已正常连接，并执行hdc shell。
@@ -22,7 +22,7 @@ Hiprofiler工具对标业界调优工具，并提供更多能力，比如[跨语
 
 
 
-#### 架构简介
+## 架构简介
 1. PC端通过DevEco或Smartperf调用hiprofiler_cmd命令行工具；
 2. hiprofiler_cmd进程启动hiprofilerd调优服务和hiprofiler_plugins插件进程；
 3. hiprofiler_plugins开启对应插件，将获取到的调优数据汇总至hiprofilerd进程；
@@ -35,7 +35,7 @@ Hiprofiler工具对标业界调优工具，并提供更多能力，比如[跨语
 
 
 
-#### 命令行说明
+## 命令行说明
 
 使用hiprofiler_cmd命令行工具可以调用不同插件并输入不同参数，以满足不同的调优需求。示范命令如下：
 
@@ -68,10 +68,11 @@ $ hiprofiler_cmd \
 CONFIG
 ```
 
+
 | 命令 | 命令说明 |
 | --- | --- |
 | -c | 设置该选项后，需要将配置文件放入/data/local/tmp目录下，将路径作为参数输入。 |
-| -o | 自定义文件保存路径（需要以/data/local/tmp开头）。若不设置路径，则调优数据自动保存至/data/local/tmp/hiprofiler_data.htrace。重复调优会覆盖原来路径的文件。 |
+| -o | 自定义文件保存路径（需要以/data/local/tmp开头）。若不设置路径，则调优数据自动保存至/data/local/tmp/hiprofiler_data.htrace。重复调优会覆盖原来路径的文件。 抓取三合一维测日志时，自定义保存路径必须是以.zip为后缀的文件。若不设置路径，则三合一维测日志自动保存至/data/local/tmp/hiprofiler_data_{timestamp}.zip |
 | -k | 杀掉已存在的调优服务进程。 |
 | -s | 拉起调优服务进程。 |
 | -t | 设置调优持续时间，单位：s。若需手动控制采集时长，请使用start/stop参数组合。 |
@@ -84,6 +85,7 @@ CONFIG
 
 以下是session config字段介绍：
 
+
 | 字段 | 字段说明 |
 | --- | --- |
 | buffers | 共享内存页的数量。 |
@@ -92,6 +94,7 @@ CONFIG
 
 
 plugin_configs字段介绍：
+
 
 | 字段 | 字段说明 |
 | --- | --- |
@@ -104,7 +107,8 @@ plugin_configs字段介绍：
 
 
 
-#### 支持插件列表
+## 支持插件列表
+
 
 | 插件名字 | 简介 | 规格说明 |
 | --- | --- | --- |
@@ -123,7 +127,7 @@ plugin_configs字段介绍：
 
 
 
-#### 使用调试证书签名的应用
+## 使用调试证书签名的应用
 
 
 ![](assets/hiprofiler/file-20260514131431989-1.png)
@@ -149,11 +153,11 @@ hdc shell "bm dump -n com.example.myapplication | grep appProvisionType"
 
 
 
-#### 插件参数说明
+## 插件参数说明
 
 
 
-#### native hook插件
+### native hook插件
 
 获取堆内存分配的调用栈信息（通过malloc、mmap、calloc或realloc等基础库函数分配堆内存的调用栈），包括跨语言堆内存分配信息（如在ArkTS语言中调用napi分配native堆内存），还能展示内存泄漏未释放堆内存调用栈信息。
 
@@ -166,6 +170,7 @@ hdc shell "bm dump -n com.example.myapplication | grep appProvisionType"
 
 
 **参数介绍**
+
 
 | 参数名字 | 类型 | 参数含义 | 详细介绍 |
 | --- | --- | --- | --- |
@@ -181,11 +186,13 @@ hdc shell "bm dump -n com.example.myapplication | grep appProvisionType"
 | use_file_cache_mode | bool | 是否使用文件缓存模式。 true：使用文件缓存模式。 false：不使用文件缓存模式。 默认为false。 | 文件缓存模式通过将缓存数据落盘，提升内存分配信息的采集性能，有效缓解应用进程在内存信息采集过程中可能出现的卡顿问题。 说明：从API version 24开始，支持该参数。 |
 | async_stack_enable | bool | 是否抓取异步栈。 true：表示开启抓取异步栈功能。 false：表示关闭抓取异步栈功能。 | 默认为false。 说明：从API version 24开始，支持该参数。 |
 | async_type | AsyncFlagType | 当前系统支持的异步栈类型。 | async_stack_enable为true时，该参数才有效。 默认抓取所有的异步栈。当前支持的类型见表async_type参数介绍。 说明：从API version 24开始，支持该参数。 |
+| discard_destroyed_traces | bool | 是否丢弃已释放内存的调用栈数据。 true：尽量丢弃已释放的调用栈数据，保留未释放的调用栈数据； false：保留全部申请和释放内存调用栈数据。 默认为false。 | 设置为true时，可减少被调优应用的性能影响。 注意： 此功能仅在统计周期或文件缓存周期内生效，本插件会尽量匹配并丢弃已释放内存的调用栈数据；如果数据已持久化，则无法丢弃。 在共享内存模式（use_file_cache_mode为false）与详情模式（statistics_interval为0）同时开启的场景下，将无法丢弃已释放内存调用栈数据。 说明：从API版本26.0.0开始，支持该参数。 |
 
 
 
 
-#### restrace_tag参数介绍
+### restrace_tag参数介绍
+
 
 | 参数名称 | 资源类型 | 开始支持的版本 |
 | --- | --- | --- |
@@ -211,11 +218,13 @@ hdc shell "bm dump -n com.example.myapplication | grep appProvisionType"
 | RES_ARK_GLOBAL_HANDLE | ark全局句柄分配栈。 | 23 |
 | RES_VMA_ARKWEB | ArkWeb PA分配器内存跟踪。 | 23 |
 | RES_ARK_LOCAL_HANDLE | ark本地句柄分配栈。 | 23 |
+| RES_COMPOSITE_HEAP | 三合一维测日志，具体包含调用栈trace、堆快照rawheap、map映射文件。 | 26.0.0 |
 
 
 
 
-#### async_type参数介绍
+### async_type参数介绍
+
 
 | 参数名称 | 参数说明 | 开始支持的版本 |
 | --- | --- | --- |
@@ -417,9 +426,10 @@ CONFIG
 
 
 
-#### ftrace plugin插件
+### ftrace plugin插件
 
 **参数介绍**
+
 
 | 参数名字 | 类型 | 参数含义 | 详细介绍 |
 | --- | --- | --- | --- |
@@ -479,9 +489,10 @@ CONFIG
 
 
 
-#### memory plugin插件
+### memory plugin插件
 
 **参数介绍**
+
 
 | 参数名字 | 类型 | 参数含义 | 详细介绍 |
 | --- | --- | --- | --- |
@@ -602,9 +613,10 @@ CONFIG
 
 
 
-#### xpower plugin插件
+### xpower plugin插件
 
 **参数介绍**
+
 
 | 参数名字 | 类型 | 参数含义 | 详细介绍 |
 | --- | --- | --- | --- |
@@ -622,11 +634,12 @@ CONFIG
 
 
 
-#### GPU plugin插件
+### GPU plugin插件
 
 获取GPU使用率相关信息的数据。
 
 **参数介绍**
+
 
 | 参数名字 | 类型 | 参数含义 | 详细介绍 |
 | --- | --- | --- | --- |
@@ -636,11 +649,12 @@ CONFIG
 
 
 
-#### CPU plugin插件
+### CPU plugin插件
 
 获取CPU使用率的相关信息。
 
 **参数介绍**
+
 
 | 参数名字 | 类型 | 参数含义 | 详细介绍 |
 | --- | --- | --- | --- |
@@ -690,16 +704,17 @@ CONFIG
 此命令读取cpu的基本统计信息。执行命令后，通过hdc file recv /data/local/tmp/hiprofiler_data.htrace命令将文件导出到当前目录，然后通过smartperf打开并解析。结果示例如下图：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/kvT8JmcBR5Gxa6alooU4lA/zh-cn_image_0000002656007126.png?HW-CC-KV=V1&HW-CC-Date=20260730T071934Z&HW-CC-Expire=86400&HW-CC-Sign=B444A972FB2F16885CDD4DF7527BC9838BB659F2CD38F6EADA402591B623D4DC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/KSDXk72UQcmZ4b9qx7cWMg/zh-cn_image_0000002747291275.png?HW-CC-KV=V1&HW-CC-Date=20260911T072801Z&HW-CC-Expire=86400&HW-CC-Sign=32DFB8D9DCEBEAE43B5FB5112E3D7D938A45D86A309F9FFC3BD1F11EB9BE1ECB)
 
 
 
 
-#### diskio plugin插件
+### diskio plugin插件
 
 获取整机磁盘I/O使用率的相关信息。
 
 **参数介绍**
+
 
 | 参数名字 | 类型 | 参数含义 | 详细介绍 |
 | --- | --- | --- | --- |
@@ -749,16 +764,17 @@ CONFIG
 此命令读取disk io的基本统计信息。执行命令后，通过hdc file recv /data/local/tmp/hiprofiler_data.htrace将文件导出到当前目录，然后通过smartperf打开并解析。结果示例如下图：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/AVS6IukrTsyg3Fq9JYqIfg/zh-cn_image_0000002655847206.png?HW-CC-KV=V1&HW-CC-Date=20260730T071934Z&HW-CC-Expire=86400&HW-CC-Sign=303CCE6C134AD78735B781D4D38898BCFFFB59D9972FD8BA6D5D3DB05C27B56E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/Os3MKC7iQRiPlNyAVp7HrQ/zh-cn_image_0000002747211193.png?HW-CC-KV=V1&HW-CC-Date=20260911T072801Z&HW-CC-Expire=86400&HW-CC-Sign=DD31868A991FBF75BF94E9732A7198CA0F4297E7D60B25341E95F4106EA6F308)
 
 
 
 
-#### hidump plugin插件
+### hidump plugin插件
 
 获取应用进程的fps帧率的数据。
 
 **参数介绍**
+
 
 | 参数名字 | 类型 | 参数含义 | 详细介绍 |
 | --- | --- | --- | --- |
@@ -771,16 +787,17 @@ CONFIG
 该插件暂时不支持smartperf工具方式的trace数据解析，只支持DevEco Studio模式下的trace数据解析。如下图所示：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/q3MOBzF5TYutm5B9a-6Mbg/zh-cn_image_0000002686086635.png?HW-CC-KV=V1&HW-CC-Date=20260730T071934Z&HW-CC-Expire=86400&HW-CC-Sign=8C5F1E0C0D7D30CE28253273C54C4D4244FF6612285AB2FD10BAF2E7924654E8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/y705KYOkTcmmLiCj5mr4Rg/zh-cn_image_0000002717771258.png?HW-CC-KV=V1&HW-CC-Date=20260911T072801Z&HW-CC-Expire=86400&HW-CC-Sign=34DF86B229BAD101B48A9BED1B98B0C73FB8E634AEF5C2EEF0A01D2726B1CA8A)
 
 
 
 
-#### hisysevent plugin插件
+### hisysevent plugin插件
 
 获取系统事件记录的数据。
 
 **参数介绍**
+
 
 | 参数名字 | 类型 | 参数含义 | 详细介绍 |
 | --- | --- | --- | --- |
@@ -821,16 +838,17 @@ CONFIG
 此命令示例抓取所有hisystem event订阅事件信息。执行命令后，通过hdc file recv /data/local/tmp/hiprofiler_data.htrace将文件导出到当前目录，然后通过smartperf打开并解析。结果示例如下图：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/LpFOXlXFSqupzRb-BkwSAg/zh-cn_image_0000002685926807.png?HW-CC-KV=V1&HW-CC-Date=20260730T071934Z&HW-CC-Expire=86400&HW-CC-Sign=97BB588E836F8CF2D9D49551F2210D60C8657974355998E66D0D6EABD8FD8E90)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/mK34TOCMQtKWuhaTtSN_8g/zh-cn_image_0000002717611324.png?HW-CC-KV=V1&HW-CC-Date=20260911T072801Z&HW-CC-Expire=86400&HW-CC-Sign=7600AF5A0CEDA55AA198AC43C75AAD8BD88375A2A4208190A9708BBAB9F57DEC)
 
 
 
 
-#### network plugin插件
+### network plugin插件
 
 获取网络上行下载相关的数据。统计网络管理模块提供的网络流量、连接状态等。
 
 **参数介绍**
+
 
 | 参数名字 | 类型 | 参数含义 | 必选 | 详细介绍 |
 | --- | --- | --- | --- | --- |
@@ -840,7 +858,7 @@ CONFIG
 
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/BTskKxrDRVKx_xwp8XCfHQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071934Z&HW-CC-Expire=86400&HW-CC-Sign=F47E86956B148699A0EF9CA1C06F73AEECB76536A049D712416B38FC9A24D478)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/klQ69NDySDuNUOUXr7zFrA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072801Z&HW-CC-Expire=86400&HW-CC-Sign=C8DE55CE6838962AA91DADBD47458FDF852B4B94CAA85DC84804E31F84545C6A)
 
 
 startup_process_name和restart_process_name不能同时为空。
@@ -891,16 +909,17 @@ CONFIG
 此命令示例抓取整机网络数据信息。执行命令后，通过hdc file recv /data/local/tmp/hiprofiler_data.htrace将文件导出到当前目录，然后通过smartperf打开并解析。结果示例如下图：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/5AiR6KZoR6eIY3EFIQ_vsg/zh-cn_image_0000002656007128.png?HW-CC-KV=V1&HW-CC-Date=20260730T071934Z&HW-CC-Expire=86400&HW-CC-Sign=0E3CCBE46B9A28BDDEC3EA2B05115904932BB6DCB2CA77328612F6C466954814)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/TtNnI11pTtiLNfU8C3Ua-g/zh-cn_image_0000002747291277.png?HW-CC-KV=V1&HW-CC-Date=20260911T072801Z&HW-CC-Expire=86400&HW-CC-Sign=35602266B132B4F9C288CEC783F210F7C229E1F75FDD355AF2EE5705796A12F5)
 
 
 
 
-#### network profiler插件
+### network profiler插件
 
 获取进程的网络请求信息，会把每次HTTP请求当作一个数据点记录下来。
 
 **参数介绍**
+
 
 | 参数名字 | 类型 | 参数含义 | 必选 | 详细介绍 |
 | --- | --- | --- | --- | --- |
@@ -921,11 +940,11 @@ smartperf工具暂时不支持该插件的trace数据解析，若需分析networ
 
 
 
-#### 常用命令
+## 常用命令
 
 
 
-#### 堆内存分配调用栈数据采样记录
+### 堆内存分配调用栈数据采样记录
 
 对com.example.insight_test_stage进程的堆内存分配操作进行抓栈，并开启fp回栈、离线符号化和统计模式。
 
@@ -970,7 +989,7 @@ CONFIG
 
 
 
-#### 抓取指定进程CPU使用率。
+### 抓取指定进程CPU使用率。
 
 对进程号为1234的进程采集CPU数据，采集时长为30s，采样周期为1000ms，调优数据传输的共享内存大小是16384个内存页，采集的数据会被保存至/data/local/tmp/hiprofiler_data.htrace文件中。
 
@@ -1001,7 +1020,7 @@ CONFIG
 
 
 
-#### 抓取指定进程GPU图形内存调用栈
+### 抓取指定进程GPU图形内存调用栈
 
 抓取指定进程的GPU图形内存调用栈（需要使用最新smartperf release版本解析文件，下载链接：[smartperf](https://gitcode.com/openharmony/developtools_smartperf_host/releases))。
 
@@ -1051,7 +1070,7 @@ CONFIG
 
 
 
-#### 抓取指定进程GlobalHandle对象的调用栈
+### 抓取指定进程GlobalHandle对象的调用栈
 
 从API version 23开始支持抓取指定进程创建[napi_ref](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-life-cycle#napi_ref)的调用栈，不会抓取创建弱引用的调用栈。
 
@@ -1097,7 +1116,7 @@ CONFIG
 
 
 
-#### 抓取指定进程LocalHandle对象调用栈
+### 抓取指定进程LocalHandle对象调用栈
 
 从API version 23开始支持LocalHandle对象内存录制功能。例如，可通过如下方式对com.example.insight_test_stage进程进行内存录制。
 
@@ -1144,18 +1163,16 @@ CONFIG
 LocalHandle对象内存录制功能要求被测应用在启动时替换加载维测库，才能正常采集LocalHandle内存信息。
 
 应用替换加载维测库方法：
-
-1.应用处于退出状态：下发LocalHandle对象内存录制命令，设置startup_mode参数为true，然后启动应用，应用启动后即可进行数据采集。
-
-2.应用处于运行状态：下发LocalHandle对象内存录制命令，设置startup_mode参数为true，然后重启应用，应用重启后即可进行数据采集。
+1. 应用处于退出状态：下发LocalHandle对象内存录制命令，设置startup_mode参数为true，然后启动应用，应用启动后即可进行数据采集。
+2. 应用处于运行状态：下发LocalHandle对象内存录制命令，设置startup_mode参数为true，然后重启应用，应用重启后即可进行数据采集。
 
 > [!NOTE]
-> 1.应用加载维测库后，只要应用不退出，维测库持续生效。此后，可以通过非启动模式录制LocalHandle内存，此时startup_mode参数必须设置为false。 2.使用此种方式后，此次应用打开的时长会变长，此次运行的性能上也会有损失。但不影响下次的使用。 3.此种方式抓取到的LocalHandle内存一定是泄漏的。 4.命令行方式获取的trace文件，可以通过DevEco Profiler 离线导入 文件功能进行解析。导入的单个文件大小不超过1.5G。
+> 应用加载维测库后，只要应用不退出，维测库持续生效。此后，可以通过非启动模式录制LocalHandle内存，此时startup_mode参数必须设置为false。 使用此种方式后，此次应用打开的时长会变长，此次运行的性能上也会有损失。但不影响下次的使用。 此种方式抓取到的LocalHandle内存一定是泄漏的。 命令行方式获取的trace文件，可以通过DevEco Profiler 离线导入 文件功能进行解析。导入的单个文件大小不超过1.5G。 从API版本26.0.0开始，统计模式支持采集local/global handle地址信息能力。
 
 
 
 
-#### 手动控制采集时长
+### 手动控制采集时长
 
 使用手动控制采集时长调优启停方式对com.example.insight_test_stage进程的堆内存分配操作进行抓栈。
 
@@ -1205,7 +1222,7 @@ $ hiprofiler_cmd stop
 
 
 
-#### 使用文件缓存模式
+### 使用文件缓存模式
 
 从API version 24开始支持使用文件缓存模式，可通过如下方式对com.example.insight_test_stage进程进行内存录制。
 
@@ -1251,18 +1268,74 @@ CONFIG
 
 
 
-#### 常见问题
+### 抓取指定进程三合一维测日志
+
+从API版本26.0.0开始支持抓取指定进程三合一维测日志，具体包含调用栈trace、堆快照rawheap、map映射文件，可配合[RES_ARK_GLOBAL_HANDLE](#抓取指定进程globalhandle对象的调用栈)和[RES_ARK_LOCAL_HANDLE](#抓取指定进程localhandle对象调用栈)使用。
+
+> [!TIP]
+> 抓取三合一维测日志，须在 native hook插件 配置中增加 restrace_tag参数 为RES_COMPOSITE_HEAP。 三合一维测日志保存至 命令行 -o参数指定的zip压缩文件中。若未设置-o参数，则默认保存至/data/local/tmp/hiprofiler_data_{timestamp}.zip中。三合一维测日志文件仅保留最新的一份记录。 采集的进程仅支持 使用调试证书签名的应用 。
+
+
+示例命令：
+
+```bash
+$ hiprofiler_cmd \
+  -c - \
+  -o /data/local/tmp/hiprofiler_data.htrace \
+  -t 60 \
+  -s \
+  -k \
+<<CONFIG
+ request_id: 1
+ session_config {
+  buffers {
+   pages: 16384
+  }
+ }
+ plugin_configs {
+  plugin_name: "nativehook"
+  sample_interval: 5000
+  config_data {
+   save_file: false
+   smb_pages: 16384
+   max_stack_depth: 20
+   process_name: "com.example.insight_test_stage"
+   string_compressed: true
+   fp_unwind: true
+   blocked: true
+   callframe_compress: true
+   record_accurately: true
+   offline_symbolization: true
+   js_stack_report: 1
+   max_js_stack_depth: 20
+   filter_size: 0
+   statistics_interval: 10
+   restrace_tag: "RES_COMPOSITE_HEAP"
+   restrace_tag: "RES_ARK_LOCAL_HANDLE"
+   restrace_tag: "RES_ARK_GLOBAL_HANDLE"
+   startup_mode: true
+   memtrace_enable: true
+   malloc_disable:false
+   discard_destroyed_traces: true
+  }
+ }
+CONFIG
+```
 
 
 
-#### 调优出现异常
+## 常见问题
+
+
+
+### 调优出现异常
 
 **现象描述**
 
 使用hiprofiler_cmd命令时，显示Service not started。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/HO5tzfBpTh2Gy7tYPT6PMA/zh-cn_image_0000002655847208.png?HW-CC-KV=V1&HW-CC-Date=20260730T071934Z&HW-CC-Expire=86400&HW-CC-Sign=7650F3EE14D1204182F8A94C0300DDF87F2216F692BCFB87D79FA354F43FF6C8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/bTH1y6WVQUC4uOXaDy6mhQ/zh-cn_image_0000002747211195.png?HW-CC-KV=V1&HW-CC-Date=20260911T072801Z&HW-CC-Expire=86400&HW-CC-Sign=83DBF32904ED876F290609601241E19308774BF69F6673BAB2E1FCE4A91DCC57)
 
 
 **可能原因&解决方法**
@@ -1271,7 +1344,7 @@ CONFIG
 
 
 
-#### 抓取到的trace文件为空
+### 抓取到的trace文件为空
 
 **现象描述**
 
@@ -1283,7 +1356,7 @@ CONFIG
 
 
 
-#### 调优数据疑似不准确
+### 调优数据疑似不准确
 
 **现象描述**
 
@@ -1295,7 +1368,7 @@ hidumper抓取的是进程维度内存使用情况，hiprofiler抓取到的是�
 
 
 
-#### 调优时目标进程卡顿
+### 调优时目标进程卡顿
 
 **现象描述**
 
@@ -1314,7 +1387,7 @@ hiprofiler_cmd命令中config参数的调整方法如下：
 
 
 
-#### 调优时使用FP回栈异常
+### 调优时使用FP回栈异常
 
 **现象描述**
 

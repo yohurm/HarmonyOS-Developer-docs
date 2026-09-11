@@ -1,13 +1,14 @@
 # drawing_shader_effect.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-shader-effect-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明与绘图模块中的着色器对象相关的函数。
  
@@ -25,16 +26,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_Drawing_TileMode | OH_Drawing_TileMode | 着色器效果平铺模式的枚举。 |
@@ -42,10 +46,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateColorShader(const uint32_t color) | 创建具有单一颜色的着色器。 |
@@ -58,21 +64,23 @@
 | OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateImageShader(OH_Drawing_Image* image,OH_Drawing_TileMode tileX, OH_Drawing_TileMode tileY, const OH_Drawing_SamplingOptions* samplingOptions,const OH_Drawing_Matrix* matrix) | 创建图像着色器。此接口不建议用于录制类型的画布，会影响性能。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 image、samplingOptions任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER； tileX、tileY任意一个不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。 |
 | OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateTwoPointConicalGradient(const OH_Drawing_Point2D* startPt,float startRadius, const OH_Drawing_Point2D* endPt, float endRadius, const uint32_t* colors, const float* pos,uint32_t size, OH_Drawing_TileMode tileMode, const OH_Drawing_Matrix* matrix) | 创建着色器，在给定两个圆之间生成渐变。 本接口会产生错误码，可以通过OH_Drawing_ErrorCodeGet查看错误码的取值。 startPt、endPt、colors任意一个为NULL时返回OH_DRAWING_ERROR_INVALID_PARAMETER； tileMode不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。 |
 | OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateCompose(OH_Drawing_ShaderEffect* dst,OH_Drawing_ShaderEffect* src, OH_Drawing_BlendMode mode) | 按照指定的混合模式对两个着色器进行叠加，生成一个新的着色器。 |
-| void OH_Drawing_ShaderEffectDestroy(OH_Drawing_ShaderEffect* shaderEffect) | 销毁着色器对象，并收回该对象占用的内存。 |
+| void OH_Drawing_ShaderEffectDestroy(OH_Drawing_ShaderEffect* shaderEffect) | 销毁着色器对象，并回收该对象占用的内存。 |
 | OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreatePixelMapShader(OH_Drawing_PixelMap* pixelMap,OH_Drawing_TileMode tileX, OH_Drawing_TileMode tileY, const OH_Drawing_SamplingOptions* samplingOptions,const OH_Drawing_Matrix* matrix) | 创建像素图着色器。 |
  
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Drawing_TileMode
+### OH_Drawing_TileMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Drawing_TileMode
@@ -84,6 +92,7 @@ enum OH_Drawing_TileMode
  
 **起始版本：** 11
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | CLAMP | 如果着色器效果超出其原始边界，则复制边缘颜色。 |
@@ -94,15 +103,17 @@ enum OH_Drawing_TileMode
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Drawing_ShaderEffectCreatePixelMapShader()
+### OH_Drawing_ShaderEffectCreatePixelMapShader()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreatePixelMapShader(OH_Drawing_PixelMap* pixelMap,OH_Drawing_TileMode tileX, OH_Drawing_TileMode tileY, const OH_Drawing_SamplingOptions* samplingOptions,const OH_Drawing_Matrix* matrix)
@@ -118,6 +129,7 @@ OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreatePixelMapShader(OH_Drawing_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_PixelMap* pixelMap | 指向像素图OH_Drawing_PixelMap的指针。 |
@@ -129,6 +141,7 @@ OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreatePixelMapShader(OH_Drawing_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ShaderEffect* | 返回创建的着色器对象的指针。 |
@@ -136,9 +149,10 @@ OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreatePixelMapShader(OH_Drawing_
  
   
 
-#### OH_Drawing_ShaderEffectCreateColorShader()
+### OH_Drawing_ShaderEffectCreateColorShader()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateColorShader(const uint32_t color)
@@ -154,6 +168,7 @@ OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateColorShader(const uint32_t
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const uint32_t color | 表示着色器的ARGB格式颜色，该参数为32位无符号整数。 |
@@ -161,6 +176,7 @@ OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateColorShader(const uint32_t
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ShaderEffect* | 函数会返回一个指针，指针指向创建的着色器对象OH_Drawing_ShaderEffect。如果对象返回NULL，表示创建失败；可能的原因是可用内存为空。 |
@@ -168,9 +184,10 @@ OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateColorShader(const uint32_t
  
   
 
-#### OH_Drawing_ShaderEffectCreateLinearGradient()
+### OH_Drawing_ShaderEffectCreateLinearGradient()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateLinearGradient(const OH_Drawing_Point* startPt,const OH_Drawing_Point* endPt, const uint32_t* colors,const float* pos, uint32_t size, OH_Drawing_TileMode tileMode)
@@ -192,6 +209,7 @@ tileMode不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_Drawing_Point* startPt | 表示渐变的起点。 |
@@ -204,6 +222,7 @@ tileMode不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ShaderEffect* | 返回创建的着色器对象的指针。 |
@@ -211,9 +230,10 @@ tileMode不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。
  
   
 
-#### OH_Drawing_ShaderEffectCreateLinearGradientWithLocalMatrix()
+### OH_Drawing_ShaderEffectCreateLinearGradientWithLocalMatrix()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateLinearGradientWithLocalMatrix(const OH_Drawing_Point2D* startPt, const OH_Drawing_Point2D* endPt, const uint32_t* colors, const float* pos,uint32_t size, OH_Drawing_TileMode tileMode, const OH_Drawing_Matrix* matrix)
@@ -235,6 +255,7 @@ tileMode不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_Drawing_Point2D* startPt | 表示渐变的起点。 |
@@ -248,6 +269,7 @@ tileMode不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ShaderEffect* | 函数会返回一个指针，指针指向创建的着色器对象OH_Drawing_ShaderEffect。如果对象返回NULL，表示创建失败；可能的原因是可用内存为空，或者是startPt、endPt、colors至少一个为NULL。 |
@@ -255,9 +277,10 @@ tileMode不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。
  
   
 
-#### OH_Drawing_ShaderEffectCreateRadialGradient()
+### OH_Drawing_ShaderEffectCreateRadialGradient()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateRadialGradient(const OH_Drawing_Point* centerPt, float radius,const uint32_t* colors, const float* pos, uint32_t size, OH_Drawing_TileMode tileMode)
@@ -281,6 +304,7 @@ tileMode不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_Drawing_Point* centerPt | 表示渐变的圆心。 |
@@ -293,6 +317,7 @@ tileMode不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ShaderEffect* | 返回创建的着色器对象的指针。 |
@@ -300,9 +325,10 @@ tileMode不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。
  
   
 
-#### OH_Drawing_ShaderEffectCreateRadialGradientWithLocalMatrix()
+### OH_Drawing_ShaderEffectCreateRadialGradientWithLocalMatrix()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateRadialGradientWithLocalMatrix(const OH_Drawing_Point2D* centerPt, float radius, const uint32_t* colors, const float* pos, uint32_t size,OH_Drawing_TileMode tileMode, const OH_Drawing_Matrix* matrix)
@@ -326,6 +352,7 @@ tileMode不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_Drawing_Point2D* centerPt | 表示渐变的圆心。 |
@@ -339,6 +366,7 @@ tileMode不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ShaderEffect* | 函数会返回一个指针，指针指向创建的着色器对象OH_Drawing_ShaderEffect。如果对象返回NULL，表示创建失败；可能的原因是可用内存为空，或者是centerPt、colors至少一个为NULL。 |
@@ -346,9 +374,10 @@ tileMode不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。
  
   
 
-#### OH_Drawing_ShaderEffectCreateSweepGradientWithLocalMatrix()
+### OH_Drawing_ShaderEffectCreateSweepGradientWithLocalMatrix()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateSweepGradientWithLocalMatrix(const OH_Drawing_Point* centerPt,const uint32_t* colors, const float* pos, uint32_t size, OH_Drawing_TileMode tileMode, const OH_Drawing_Matrix* matrix)
@@ -366,6 +395,7 @@ OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateSweepGradientWithLocalMatr
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_Drawing_Point* centerPt | 表示渐变的圆心。 |
@@ -378,6 +408,7 @@ OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateSweepGradientWithLocalMatr
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ShaderEffect* | 函数会返回一个指针，指针指向创建的着色器对象OH_Drawing_ShaderEffect。 存在以下任意一种情况时，会返回空指针：1.可用内存为空；2.centerPt、colors任意为空；3.tileMode超出枚举范围。 |
@@ -385,9 +416,10 @@ OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateSweepGradientWithLocalMatr
  
   
 
-#### OH_Drawing_ShaderEffectCreateSweepGradient()
+### OH_Drawing_ShaderEffectCreateSweepGradient()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateSweepGradient(const OH_Drawing_Point* centerPt,const uint32_t* colors, const float* pos, uint32_t size, OH_Drawing_TileMode tileMode)
@@ -411,6 +443,7 @@ tileMode不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_Drawing_Point* centerPt | 表示渐变的圆心。 |
@@ -422,6 +455,7 @@ tileMode不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ShaderEffect* | 函数会返回一个指针，指针指向创建的着色器对象OH_Drawing_ShaderEffect。 存在以下任意一种情况时，会返回空指针：1.可用内存为空；2.centerPt、colors任意为空；3.tileMode超出枚举范围。 |
@@ -429,9 +463,10 @@ tileMode不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。
  
   
 
-#### OH_Drawing_ShaderEffectCreateImageShader()
+### OH_Drawing_ShaderEffectCreateImageShader()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateImageShader(OH_Drawing_Image* image,OH_Drawing_TileMode tileX, OH_Drawing_TileMode tileY, const OH_Drawing_SamplingOptions* samplingOptions,const OH_Drawing_Matrix* matrix)
@@ -453,6 +488,7 @@ tileX、tileY任意一个不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETE
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_Image* image | 指向图片对象OH_Drawing_Image的指针。 |
@@ -464,6 +500,7 @@ tileX、tileY任意一个不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETE
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ShaderEffect* | 函数会返回一个指针，指针指向创建的着色器对象OH_Drawing_ShaderEffect。 存在以下任意一种情况时，会返回空指针：1.可用内存为空；2.image、samplingOptions任意为空；3.tileX、tileY超出枚举范围。 |
@@ -471,9 +508,10 @@ tileX、tileY任意一个不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETE
  
   
 
-#### OH_Drawing_ShaderEffectCreateTwoPointConicalGradient()
+### OH_Drawing_ShaderEffectCreateTwoPointConicalGradient()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateTwoPointConicalGradient(const OH_Drawing_Point2D* startPt,float startRadius, const OH_Drawing_Point2D* endPt, float endRadius, const uint32_t* colors, const float* pos,uint32_t size, OH_Drawing_TileMode tileMode, const OH_Drawing_Matrix* matrix)
@@ -495,6 +533,7 @@ tileMode不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_Drawing_Point2D* startPt | 表示渐变的起点圆心。 |
@@ -510,6 +549,7 @@ tileMode不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ShaderEffect* | 函数会返回一个指针，指针指向创建的着色器对象OH_Drawing_ShaderEffect。如果对象返回NULL，表示创建失败；可能的原因是：1.可用内存为空；2.startPt、endPt、colors任意为空；3.tileMode超出枚举范围。 |
@@ -517,9 +557,10 @@ tileMode不在枚举范围内时返回OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE。
  
   
 
-#### OH_Drawing_ShaderEffectCreateCompose()
+### OH_Drawing_ShaderEffectCreateCompose()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateCompose(OH_Drawing_ShaderEffect* dst,OH_Drawing_ShaderEffect* src, OH_Drawing_BlendMode mode)
@@ -535,6 +576,7 @@ OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateCompose(OH_Drawing_ShaderE
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_ShaderEffect* dst | 在混合模式中作为目标色的着色器。 |
@@ -544,6 +586,7 @@ OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateCompose(OH_Drawing_ShaderE
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_Drawing_ShaderEffect* | 函数会返回一个指针，指针指向创建的着色器对象OH_Drawing_ShaderEffect。 当可用内存为空，或者是dst、src任意一个为空，或mode超出枚举范围时，结果返回NULL，表示创建失败。 |
@@ -551,9 +594,10 @@ OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateCompose(OH_Drawing_ShaderE
  
   
 
-#### OH_Drawing_ShaderEffectDestroy()
+### OH_Drawing_ShaderEffectDestroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_Drawing_ShaderEffectDestroy(OH_Drawing_ShaderEffect* shaderEffect)
@@ -561,7 +605,7 @@ void OH_Drawing_ShaderEffectDestroy(OH_Drawing_ShaderEffect* shaderEffect)
  
 **描述**
  
-销毁着色器对象，并收回该对象占用的内存。
+销毁着色器对象，并回收该对象占用的内存。
  
 **系统能力：** SystemCapability.Graphic.Graphic2D.NativeDrawing
  
@@ -569,6 +613,7 @@ void OH_Drawing_ShaderEffectDestroy(OH_Drawing_ShaderEffect* shaderEffect)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Drawing_ShaderEffect* shaderEffect | 表示指向着色器对象的指针。 |

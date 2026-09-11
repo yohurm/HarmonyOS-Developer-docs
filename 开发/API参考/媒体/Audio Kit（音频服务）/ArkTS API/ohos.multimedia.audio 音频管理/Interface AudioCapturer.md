@@ -1,9 +1,9 @@
 # Interface (AudioCapturer)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiocapturer
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供音频采集的相关接口。
 
@@ -14,9 +14,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { audio } from '@kit.AudioKit';
@@ -24,11 +25,13 @@ import { audio } from '@kit.AudioKit';
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -45,9 +48,10 @@ let state: audio.AudioState = audioCapturer.state;
 
 
 
-#### getCapturerInfo8+
+## getCapturerInfo8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCapturerInfo(callback: AsyncCallback&lt;AudioCapturerInfo&gt;): void
 
@@ -56,6 +60,7 @@ getCapturerInfo(callback: AsyncCallback&lt;AudioCapturerInfo&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -80,9 +85,10 @@ audioCapturer.getCapturerInfo((err: BusinessError, capturerInfo: audio.AudioCapt
 
 
 
-#### getCapturerInfo8+
+## getCapturerInfo8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCapturerInfo(): Promise&lt;AudioCapturerInfo&gt;
 
@@ -91,6 +97,7 @@ getCapturerInfo(): Promise&lt;AudioCapturerInfo&gt;
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -118,9 +125,10 @@ audioCapturer.getCapturerInfo().then((audioParamsGet: audio.AudioCapturerInfo) =
 
 
 
-#### getCapturerInfoSync10+
+## getCapturerInfoSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCapturerInfoSync(): AudioCapturerInfo
 
@@ -129,6 +137,7 @@ getCapturerInfoSync(): AudioCapturerInfo
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -152,9 +161,10 @@ try {
 
 
 
-#### getStreamInfo8+
+## getStreamInfo8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStreamInfo(callback: AsyncCallback&lt;AudioStreamInfo&gt;): void
 
@@ -163,6 +173,7 @@ getStreamInfo(callback: AsyncCallback&lt;AudioStreamInfo&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -189,9 +200,10 @@ audioCapturer.getStreamInfo((err: BusinessError, streamInfo: audio.AudioStreamIn
 
 
 
-#### getStreamInfo8+
+## getStreamInfo8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStreamInfo(): Promise&lt;AudioStreamInfo&gt;
 
@@ -200,6 +212,7 @@ getStreamInfo(): Promise&lt;AudioStreamInfo&gt;
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -224,9 +237,10 @@ audioCapturer.getStreamInfo().then((audioParamsGet: audio.AudioStreamInfo) => {
 
 
 
-#### getStreamInfoSync10+
+## getStreamInfoSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStreamInfoSync(): AudioStreamInfo
 
@@ -235,6 +249,7 @@ getStreamInfoSync(): AudioStreamInfo
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -260,9 +275,10 @@ try {
 
 
 
-#### getAudioStreamId9+
+## getAudioStreamId9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAudioStreamId(callback: AsyncCallback&lt;number&gt;): void
 
@@ -271,6 +287,7 @@ getAudioStreamId(callback: AsyncCallback&lt;number&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -289,9 +306,10 @@ audioCapturer.getAudioStreamId((err: BusinessError, streamId: number) => {
 
 
 
-#### getAudioStreamId9+
+## getAudioStreamId9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAudioStreamId(): Promise&lt;number&gt;
 
@@ -300,6 +318,7 @@ getAudioStreamId(): Promise&lt;number&gt;
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -320,9 +339,10 @@ audioCapturer.getAudioStreamId().then((streamId: number) => {
 
 
 
-#### getAudioStreamIdSync10+
+## getAudioStreamIdSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAudioStreamIdSync(): number
 
@@ -331,6 +351,7 @@ getAudioStreamIdSync(): number
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -353,9 +374,10 @@ try {
 
 
 
-#### start8+
+## start8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 start(callback: AsyncCallback&lt;void&gt;): void
 
@@ -364,6 +386,7 @@ start(callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -386,9 +409,10 @@ audioCapturer.start((err: BusinessError) => {
 
 
 
-#### start8+
+## start8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 start(): Promise&lt;void&gt;
 
@@ -397,6 +421,7 @@ start(): Promise&lt;void&gt;
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -420,7 +445,8 @@ audioCapturer.start().then(() => {
 
 
 
-#### requestPlaybackCaptureStart
+## requestPlaybackCaptureStart
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -439,6 +465,7 @@ requestPlaybackCaptureStart(callback: Callback&lt;PlaybackCaptureStartState&gt;)
 **系统能力：** SystemCapability.Multimedia.Audio.PlaybackCapture
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -459,9 +486,10 @@ audioCapturer.requestPlaybackCaptureStart((state: audio.PlaybackCaptureStartStat
 
 
 
-#### stop8+
+## stop8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stop(callback: AsyncCallback&lt;void&gt;): void
 
@@ -470,6 +498,7 @@ stop(callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -492,9 +521,10 @@ audioCapturer.stop((err: BusinessError) => {
 
 
 
-#### stop8+
+## stop8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stop(): Promise&lt;void&gt;
 
@@ -503,6 +533,7 @@ stop(): Promise&lt;void&gt;
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -526,9 +557,10 @@ audioCapturer.stop().then(() => {
 
 
 
-#### release8+
+## release8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(callback: AsyncCallback&lt;void&gt;): void
 
@@ -537,6 +569,7 @@ release(callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -559,9 +592,10 @@ audioCapturer.release((err: BusinessError) => {
 
 
 
-#### release8+
+## release8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(): Promise&lt;void&gt;
 
@@ -570,6 +604,7 @@ release(): Promise&lt;void&gt;
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -592,9 +627,10 @@ audioCapturer.release().then(() => {
 
 
 
-#### getAudioTime8+
+## getAudioTime8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAudioTime(callback: AsyncCallback&lt;number&gt;): void
 
@@ -603,6 +639,7 @@ getAudioTime(callback: AsyncCallback&lt;number&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -621,9 +658,10 @@ audioCapturer.getAudioTime((err: BusinessError, timestamp: number) => {
 
 
 
-#### getAudioTime8+
+## getAudioTime8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAudioTime(): Promise&lt;number&gt;
 
@@ -632,6 +670,7 @@ getAudioTime(): Promise&lt;number&gt;
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -652,9 +691,10 @@ audioCapturer.getAudioTime().then((timestamp: number) => {
 
 
 
-#### getAudioTimeSync10+
+## getAudioTimeSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAudioTimeSync(): number
 
@@ -663,6 +703,7 @@ getAudioTimeSync(): number
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -685,9 +726,10 @@ try {
 
 
 
-#### getAudioTimestampInfo19+
+## getAudioTimestampInfo19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAudioTimestampInfo(): Promise&lt;AudioTimestampInfo&gt;
 
@@ -699,6 +741,7 @@ getAudioTimestampInfo(): Promise&lt;AudioTimestampInfo&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;AudioTimestampInfo&gt; | Promise对象，返回音频流时间戳和当前数据帧位置信息。 |
@@ -707,6 +750,7 @@ getAudioTimestampInfo(): Promise&lt;AudioTimestampInfo&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -727,9 +771,10 @@ audioCapturer.getAudioTimestampInfo().then((audioTimestampInfo: audio.AudioTimes
 
 
 
-#### getAudioTimestampInfoSync19+
+## getAudioTimestampInfoSync19+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAudioTimestampInfoSync(): AudioTimestampInfo
 
@@ -739,6 +784,7 @@ getAudioTimestampInfoSync(): AudioTimestampInfo
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | AudioTimestampInfo | 返回音频流时间戳和当前数据帧位置信息。 |
@@ -747,6 +793,7 @@ getAudioTimestampInfoSync(): AudioTimestampInfo
 **错误码：**
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -769,9 +816,10 @@ try {
 
 
 
-#### getBufferSize8+
+## getBufferSize8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBufferSize(callback: AsyncCallback&lt;number&gt;): void
 
@@ -780,6 +828,7 @@ getBufferSize(callback: AsyncCallback&lt;number&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -802,9 +851,10 @@ audioCapturer.getBufferSize((err: BusinessError, bufferSize: number) => {
 
 
 
-#### getBufferSize8+
+## getBufferSize8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBufferSize(): Promise&lt;number&gt;
 
@@ -813,6 +863,7 @@ getBufferSize(): Promise&lt;number&gt;
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -833,9 +884,10 @@ audioCapturer.getBufferSize().then((bufferSize: number) => {
 
 
 
-#### getBufferSizeSync10+
+## getBufferSizeSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBufferSizeSync(): number
 
@@ -844,6 +896,7 @@ getBufferSizeSync(): number
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -866,9 +919,10 @@ try {
 
 
 
-#### getCurrentInputDevices11+
+## getCurrentInputDevices11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCurrentInputDevices(): AudioDeviceDescriptors
 
@@ -877,6 +931,7 @@ getCurrentInputDevices(): AudioDeviceDescriptors
 **系统能力：** SystemCapability.Multimedia.Audio.Device
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -902,9 +957,10 @@ if (deviceDescriptors[0].encodingTypes) {
 
 
 
-#### getCurrentAudioCapturerChangeInfo11+
+## getCurrentAudioCapturerChangeInfo11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCurrentAudioCapturerChangeInfo(): AudioCapturerChangeInfo
 
@@ -913,6 +969,7 @@ getCurrentAudioCapturerChangeInfo(): AudioCapturerChangeInfo
 **系统能力：** SystemCapability.Multimedia.Audio.Device
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -941,9 +998,10 @@ if (info.deviceDescriptors[0].encodingTypes) {
 
 
 
-#### on('audioInterrupt')10+
+## on('audioInterrupt')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'audioInterrupt', callback: Callback&lt;InterruptEvent&gt;): void
 
@@ -957,6 +1015,7 @@ AudioCapturer对象在start事件时获取焦点，在pause、stop等事件时�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'audioInterrupt'，当音频焦点状态发生变化时，触发该事件。 |
@@ -966,6 +1025,7 @@ AudioCapturer对象在start事件时获取焦点，在pause、stop等事件时�
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1021,9 +1081,10 @@ audioCapturer.on('audioInterrupt', (interruptEvent: audio.InterruptEvent) => {
 
 
 
-#### off('audioInterrupt')10+
+## off('audioInterrupt')10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'audioInterrupt'): void
 
@@ -1033,6 +1094,7 @@ off(type: 'audioInterrupt'): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'audioInterrupt'，当取消监听音频中断事件时，触发该事件。 |
@@ -1041,6 +1103,7 @@ off(type: 'audioInterrupt'): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1056,9 +1119,10 @@ audioCapturer.off('audioInterrupt');
 
 
 
-#### on('inputDeviceChange')11+
+## on('inputDeviceChange')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'inputDeviceChange', callback: Callback&lt;AudioDeviceDescriptors&gt;): void
 
@@ -1067,6 +1131,7 @@ on(type: 'inputDeviceChange', callback: Callback&lt;AudioDeviceDescriptors&gt;):
 **系统能力：** SystemCapability.Multimedia.Audio.Device
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1077,6 +1142,7 @@ on(type: 'inputDeviceChange', callback: Callback&lt;AudioDeviceDescriptors&gt;):
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1096,9 +1162,10 @@ audioCapturer.on('inputDeviceChange', (deviceChangeInfo: audio.AudioDeviceDescri
 
 
 
-#### off('inputDeviceChange')11+
+## off('inputDeviceChange')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'inputDeviceChange', callback?: Callback&lt;AudioDeviceDescriptors&gt;): void
 
@@ -1107,6 +1174,7 @@ off(type: 'inputDeviceChange', callback?: Callback&lt;AudioDeviceDescriptors&gt;
 **系统能力：** SystemCapability.Multimedia.Audio.Device
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1117,6 +1185,7 @@ off(type: 'inputDeviceChange', callback?: Callback&lt;AudioDeviceDescriptors&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1144,9 +1213,10 @@ audioCapturer.off('inputDeviceChange', inputDeviceChangeCallback);
 
 
 
-#### on('audioCapturerChange')11+
+## on('audioCapturerChange')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'audioCapturerChange', callback: Callback&lt;AudioCapturerChangeInfo&gt;): void
 
@@ -1155,6 +1225,7 @@ on(type: 'audioCapturerChange', callback: Callback&lt;AudioCapturerChangeInfo&gt
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1165,6 +1236,7 @@ on(type: 'audioCapturerChange', callback: Callback&lt;AudioCapturerChangeInfo&gt
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1182,9 +1254,10 @@ audioCapturer.on('audioCapturerChange', (capturerChangeInfo: audio.AudioCapturer
 
 
 
-#### off('audioCapturerChange')11+
+## off('audioCapturerChange')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'audioCapturerChange', callback?: Callback&lt;AudioCapturerChangeInfo&gt;): void
 
@@ -1193,6 +1266,7 @@ off(type: 'audioCapturerChange', callback?: Callback&lt;AudioCapturerChangeInfo&
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1203,6 +1277,7 @@ off(type: 'audioCapturerChange', callback?: Callback&lt;AudioCapturerChangeInfo&
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1228,9 +1303,10 @@ audioCapturer.off('audioCapturerChange', audioCapturerChangeCallback);
 
 
 
-#### on('markReach')8+
+## on('markReach')8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'markReach', frame: number, callback: Callback&lt;number&gt;): void
 
@@ -1241,6 +1317,7 @@ on(type: 'markReach', frame: number, callback: Callback&lt;number&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1261,9 +1338,10 @@ audioCapturer.on('markReach', 1000, (position: number) => {
 
 
 
-#### off('markReach')8+
+## off('markReach')8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'markReach', callback?: Callback&lt;number&gt;): void
 
@@ -1272,6 +1350,7 @@ off(type: 'markReach', callback?: Callback&lt;number&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1299,9 +1378,10 @@ audioCapturer.off('markReach', markReachCallback);
 
 
 
-#### on('periodReach')8+
+## on('periodReach')8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'periodReach', frame: number, callback: Callback&lt;number&gt;): void
 
@@ -1312,6 +1392,7 @@ on(type: 'periodReach', frame: number, callback: Callback&lt;number&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1332,9 +1413,10 @@ audioCapturer.on('periodReach', 1000, (position: number) => {
 
 
 
-#### off('periodReach')8+
+## off('periodReach')8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'periodReach', callback?: Callback&lt;number&gt;): void
 
@@ -1343,6 +1425,7 @@ off(type: 'periodReach', callback?: Callback&lt;number&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1370,9 +1453,10 @@ audioCapturer.off('periodReach', periodReachCallback);
 
 
 
-#### on('stateChange')8+
+## on('stateChange')8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'stateChange', callback: Callback&lt;AudioState&gt;): void
 
@@ -1381,6 +1465,7 @@ on(type: 'stateChange', callback: Callback&lt;AudioState&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1403,9 +1488,10 @@ audioCapturer.on('stateChange', (state: audio.AudioState) => {
 
 
 
-#### off('stateChange')18+
+## off('stateChange')18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'stateChange', callback?: Callback&lt;AudioState&gt;): void
 
@@ -1414,6 +1500,7 @@ off(type: 'stateChange', callback?: Callback&lt;AudioState&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1424,6 +1511,7 @@ off(type: 'stateChange', callback?: Callback&lt;AudioState&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1453,9 +1541,10 @@ audioCapturer.off('stateChange', stateChangeCallback);
 
 
 
-#### on('readData')11+
+## on('readData')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'readData', callback: Callback&lt;ArrayBuffer&gt;): void
 
@@ -1469,6 +1558,7 @@ on(type: 'readData', callback: Callback&lt;ArrayBuffer&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 事件回调类型，支持的事件为'readData'，当需要读取音频流数据时，触发该事件。 |
@@ -1478,6 +1568,7 @@ on(type: 'readData', callback: Callback&lt;ArrayBuffer&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1525,9 +1616,10 @@ audioCapturer.start((err: BusinessError) => {
 
 
 
-#### off('readData')11+
+## off('readData')11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'readData', callback?: Callback&lt;ArrayBuffer&gt;): void
 
@@ -1536,6 +1628,7 @@ off(type: 'readData', callback?: Callback&lt;ArrayBuffer&gt;): void
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1546,6 +1639,7 @@ off(type: 'readData', callback?: Callback&lt;ArrayBuffer&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1571,9 +1665,10 @@ audioCapturer.off('readData', readDataCallback);
 
 
 
-#### getOverflowCount12+
+## getOverflowCount12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOverflowCount(): Promise&lt;number&gt;
 
@@ -1582,6 +1677,7 @@ getOverflowCount(): Promise&lt;number&gt;
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1602,9 +1698,10 @@ audioCapturer.getOverflowCount().then((value: number) => {
 
 
 
-#### getOverflowCountSync12+
+## getOverflowCountSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOverflowCountSync(): number
 
@@ -1613,6 +1710,7 @@ getOverflowCountSync(): number
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1635,9 +1733,10 @@ try {
 
 
 
-#### setWillMuteWhenInterrupted20+
+## setWillMuteWhenInterrupted20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setWillMuteWhenInterrupted(muteWhenInterrupted: boolean): Promise&lt;void&gt;
 
@@ -1647,12 +1746,14 @@ setWillMuteWhenInterrupted(muteWhenInterrupted: boolean): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | muteWhenInterrupted | boolean | 是 | 设置当前录制音频流是否启用静音打断模式，true表示启用，false表示不启用，保持为默认打断模式。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1662,6 +1763,7 @@ setWillMuteWhenInterrupted(muteWhenInterrupted: boolean): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1682,9 +1784,10 @@ audioCapturer.setWillMuteWhenInterrupted(true).then(() => {
 
 
 
-#### setMuteHint24+
+## setMuteHint24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMuteHint(mute: boolean): Promise&lt;void&gt;
 
@@ -1700,12 +1803,14 @@ setMuteHint(mute: boolean): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mute | boolean | 是 | 应用自身给系统音频模块上报的静音状态。true表示应用将当前流静音，false表示取消静音。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1715,6 +1820,7 @@ setMuteHint(mute: boolean): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1735,9 +1841,10 @@ audioCapturer.setMuteHint(true).then(() => {
 
 
 
-#### read(deprecated)
+## read(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 read(size: number, isBlockingRead: boolean, callback: AsyncCallback&lt;ArrayBuffer&gt;): void
 
@@ -1750,6 +1857,7 @@ read(size: number, isBlockingRead: boolean, callback: AsyncCallback&lt;ArrayBuff
 **系统能力：** SystemCapability.Multimedia.Audio.Capturer
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1779,9 +1887,10 @@ audioCapturer.getBufferSize().then((bufferSize: number) => {
 
 
 
-#### read(deprecated)
+## read(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 read(size: number, isBlockingRead: boolean): Promise&lt;ArrayBuffer&gt;
 
@@ -1795,6 +1904,7 @@ read(size: number, isBlockingRead: boolean): Promise&lt;ArrayBuffer&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | size | number | 是 | 读入的字节数。 |
@@ -1802,6 +1912,7 @@ read(size: number, isBlockingRead: boolean): Promise&lt;ArrayBuffer&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1827,9 +1938,10 @@ audioCapturer.getBufferSize().then((bufferSize: number) => {
 
 
 
-#### setIndependentAudioSessionStrategy24+
+## setIndependentAudioSessionStrategy24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setIndependentAudioSessionStrategy(strategy: AudioSessionStrategy, behavior: number): void
 
@@ -1845,6 +1957,7 @@ setIndependentAudioSessionStrategy(strategy: AudioSessionStrategy, behavior: num
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | strategy | AudioSessionStrategy | 是 | 音频会话策略。 |
@@ -1854,6 +1967,7 @@ setIndependentAudioSessionStrategy(strategy: AudioSessionStrategy, behavior: num
 **错误码：**
 
 以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1869,4 +1983,150 @@ let strategy: audio.AudioSessionStrategy = {
 };
 let behavior: number = audio.AudioSessionBehaviorFlags.MUTE_WHEN_INTERRUPTED;
 audioCapturer.setIndependentAudioSessionStrategy(strategy, behavior);
+```
+
+
+
+## setNoiseReductionMode
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+setNoiseReductionMode(noiseReductionMode: NoiseReductionMode): void
+
+设置当前录音流的降噪模式。建议先调用[getSupportedNoiseReductionModes](#getsupportednoisereductionmodes)获取当前录音流支持的降噪模式后，再通过本接口进行设置。
+
+> [!NOTE]
+> 当前仅支持使用 SourceType.SOURCE_TYPE_VOICE_MESSAGE 创建的录音流进行降噪模式设置，其他录音流默认仅支持 NoiseReductionMode.FIDELITY 。 降噪效果受设备平台、音频设备和录音并发情况影响。存在多个录音流同时运行时，设置的降噪模式可能不生效。 该接口仅可在录音流创建后未开始录音，或停止录音后调用；录音流处于运行态或已释放时调用将抛出异常。
+
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Audio.Capturer
+
+**参数：**
+
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| noiseReductionMode | NoiseReductionMode | 是 | 要设置的降噪模式。 |
+
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6800101 | Parameter verification failed. |
+| 6800103 | Illegal state, audio capturer is in running or released state. |
+| 6800104 | The setted mode is not supported. |
+| 6800301 | Audio server process died. |
+
+
+**示例：**
+
+```text
+import { BusinessError } from '@kit.BasicServicesKit';
+
+try {
+  let supportedModes: Array<audio.NoiseReductionMode> = audioCapturer.getSupportedNoiseReductionModes();
+  if (supportedModes.includes(audio.NoiseReductionMode.PURE_VOCALS)) {
+    audioCapturer.setNoiseReductionMode(audio.NoiseReductionMode.PURE_VOCALS);
+  } else {
+    audioCapturer.setNoiseReductionMode(audio.NoiseReductionMode.FIDELITY);
+  }
+  console.info(`setNoiseReductionMode success: ${audioCapturer.getNoiseReductionMode()}`);
+} catch (err) {
+  let error = err as BusinessError;
+  console.error(`setNoiseReductionMode failed. Code: ${error.code}, message: ${error.message}`);
+}
+```
+
+
+
+## getNoiseReductionMode
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+getNoiseReductionMode(): NoiseReductionMode
+
+获取当前录音流的降噪模式。返回结果仅反映当前录音流的降噪模式。默认值为[NoiseReductionMode.FIDELITY](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-e#noisereductionmode)。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Audio.Capturer
+
+**返回值：**
+
+
+| 类型 | 说明 |
+| --- | --- |
+| NoiseReductionMode | 当前录音流的降噪模式。 |
+
+
+**示例：**
+
+```text
+let noiseReductionMode: audio.NoiseReductionMode = audioCapturer.getNoiseReductionMode();
+console.info(`getNoiseReductionMode success: ${noiseReductionMode}`);
+```
+
+
+
+## getSupportedNoiseReductionModes
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+getSupportedNoiseReductionModes(): Array&lt;NoiseReductionMode&gt;
+
+获取当前设备支持的录音降噪模式。
+
+> [!NOTE]
+> 当前仅使用 SourceType.SOURCE_TYPE_VOICE_MESSAGE 创建的录音流会根据设备平台查询支持的降噪模式，其他录音流默认仅返回 NoiseReductionMode.FIDELITY 。 返回结果仅考虑音频格式和设备平台，不考虑当前输入设备和录音并发情况。
+
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Audio.Capturer
+
+**返回值：**
+
+
+| 类型 | 说明 |
+| --- | --- |
+| Array&lt;NoiseReductionMode&gt; | 支持的录音降噪模式数组，默认支持NoiseReductionMode.FIDELITY。 |
+
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Audio错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-audio)。
+
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6800301 | Audio server process died. |
+
+
+**示例：**
+
+```text
+import { BusinessError } from '@kit.BasicServicesKit';
+
+try {
+  let supportedModes: Array<audio.NoiseReductionMode> = audioCapturer.getSupportedNoiseReductionModes();
+  console.info(`getSupportedNoiseReductionModes success: ${supportedModes}`);
+} catch (err) {
+  let error = err as BusinessError;
+  console.error(`getSupportedNoiseReductionModes failed. Code: ${error.code}, message: ${error.message}`);
+}
 ```

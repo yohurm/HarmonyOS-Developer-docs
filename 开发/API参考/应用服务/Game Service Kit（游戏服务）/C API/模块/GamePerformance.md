@@ -1,11 +1,12 @@
 # GamePerformance
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservice-game-performance
 **支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -17,16 +18,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 文件
+### 文件
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | game_performance.h | 声明游戏场景感知的基本概念。 |
@@ -34,10 +38,12 @@
  
   
 
-#### 类型定义
+### 类型定义
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | typedef struct GamePerformance_DeviceInfo GamePerformance_DeviceInfo | 定义设备性能信息。 |
@@ -66,10 +72,12 @@
  
   
 
-#### 枚举
+### 枚举
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | GamePerformance_EngineType { GAME_PERFORMANCE_ENGINE_TYPE_UNITY = 1, GAME_PERFORMANCE_ENGINE_TYPE_UNREAL = 2, GAME_PERFORMANCE_ENGINE_TYPE_MESSIAH = 3, GAME_PERFORMANCE_ENGINE_TYPE_COCOS = 4, GAME_PERFORMANCE_ENGINE_TYPE_OTHERS = 200 } | 此枚举描述引擎类型。 |
@@ -86,10 +94,12 @@
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | GamePerformance_ErrorCode HMS_GamePerformance_CreateInitParameters (GamePerformance_InitParameters **initParameters) | 创建GamePerformance_InitParameters实例，该实例在HMS_GamePerformance_Init方法中使用。 |
@@ -193,13 +203,15 @@
  
   
 
-#### 类型定义说明
+## 类型定义说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### GamePerformance_ConfigInfo
+### GamePerformance_ConfigInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -215,7 +227,8 @@ typedef struct GamePerformance_ConfigInfo GamePerformance_ConfigInfo
  
   
 
-#### GamePerformance_CpuInfo
+### GamePerformance_CpuInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -231,7 +244,8 @@ typedef struct GamePerformance_CpuInfo GamePerformance_CpuInfo
  
   
 
-#### GamePerformance_CpuLevel
+### GamePerformance_CpuLevel
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -247,7 +261,8 @@ typedef enum GamePerformance_CpuLevel GamePerformance_CpuLevel
  
   
 
-#### GamePerformance_DdrLevel
+### GamePerformance_DdrLevel
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -263,7 +278,8 @@ typedef enum GamePerformance_DdrLevel GamePerformance_DdrLevel
  
   
 
-#### GamePerformance_DeviceInfo
+### GamePerformance_DeviceInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -279,7 +295,8 @@ typedef struct GamePerformance_DeviceInfo GamePerformance_DeviceInfo
  
   
 
-#### GamePerformance_DeviceInfoType
+### GamePerformance_DeviceInfoType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -295,7 +312,8 @@ typedef enum GamePerformance_DeviceInfoType GamePerformance_DeviceInfoType
  
   
 
-#### GamePerformance_EngineType
+### GamePerformance_EngineType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -311,7 +329,8 @@ typedef enum GamePerformance_EngineType GamePerformance_EngineType
  
   
 
-#### GamePerformance_ErrorCode
+### GamePerformance_ErrorCode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -327,7 +346,8 @@ typedef enum GamePerformance_ErrorCode GamePerformance_ErrorCode
  
   
 
-#### GamePerformance_GameType
+### GamePerformance_GameType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -343,7 +363,8 @@ typedef enum GamePerformance_GameType GamePerformance_GameType
  
   
 
-#### GamePerformance_GpuInfo
+### GamePerformance_GpuInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -359,7 +380,8 @@ typedef struct GamePerformance_GpuInfo GamePerformance_GpuInfo
  
   
 
-#### GamePerformance_GpuLevel
+### GamePerformance_GpuLevel
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -375,7 +397,8 @@ typedef enum GamePerformance_GpuLevel GamePerformance_GpuLevel
  
   
 
-#### GamePerformance_InitParameters
+### GamePerformance_InitParameters
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -391,7 +414,8 @@ typedef struct GamePerformance_InitParameters GamePerformance_InitParameters
  
   
 
-#### GamePerformance_NetInfo
+### GamePerformance_NetInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -407,7 +431,8 @@ typedef struct GamePerformance_NetInfo GamePerformance_NetInfo
  
   
 
-#### GamePerformance_NetLoad
+### GamePerformance_NetLoad
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -423,7 +448,8 @@ typedef enum GamePerformance_NetLoad GamePerformance_NetLoad
  
   
 
-#### GamePerformance_PackageInfo
+### GamePerformance_PackageInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -439,7 +465,8 @@ typedef struct GamePerformance_PackageInfo GamePerformance_PackageInfo
  
   
 
-#### GamePerformance_PictureQualityLevel
+### GamePerformance_PictureQualityLevel
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -455,7 +482,8 @@ typedef enum GamePerformance_PictureQualityLevel GamePerformance_PictureQualityL
  
   
 
-#### GamePerformance_PlayerInfo
+### GamePerformance_PlayerInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -471,7 +499,8 @@ typedef struct GamePerformance_PlayerInfo GamePerformance_PlayerInfo
  
   
 
-#### GamePerformance_SceneImportanceLevel
+### GamePerformance_SceneImportanceLevel
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -487,7 +516,8 @@ typedef enum GamePerformance_SceneImportanceLevel GamePerformance_SceneImportanc
  
   
 
-#### GamePerformance_SceneInfo
+### GamePerformance_SceneInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -503,7 +533,8 @@ typedef struct GamePerformance_SceneInfo GamePerformance_SceneInfo
  
   
 
-#### GamePerformance_ThermalInfo
+### GamePerformance_ThermalInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -519,7 +550,8 @@ typedef struct GamePerformance_ThermalInfo GamePerformance_ThermalInfo
  
   
 
-#### GamePerformance_ThermalInfoQueryParameters
+### GamePerformance_ThermalInfoQueryParameters
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -535,7 +567,8 @@ typedef struct GamePerformance_ThermalInfoQueryParameters GamePerformance_Therma
  
   
 
-#### GamePerformance_ThermalLevelChangedCallback
+### GamePerformance_ThermalLevelChangedCallback
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -551,6 +584,7 @@ typedef void(*GamePerformance_ThermalLevelChangedCallback) (GamePerformance_Devi
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | deviceInfo | 设备详细信息GamePerformance_DeviceInfo。 |
@@ -559,13 +593,15 @@ typedef void(*GamePerformance_ThermalLevelChangedCallback) (GamePerformance_Devi
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### GamePerformance_CpuLevel
+### GamePerformance_CpuLevel
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -579,6 +615,7 @@ enum GamePerformance_CpuLevel
  
 **起始版本：** 5.0.2(14)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | GAME_PERFORMANCE_CPU_LEVEL_LOW | 低。 |
@@ -588,7 +625,8 @@ enum GamePerformance_CpuLevel
  
   
 
-#### GamePerformance_DdrLevel
+### GamePerformance_DdrLevel
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -602,6 +640,7 @@ enum GamePerformance_DdrLevel
  
 **起始版本：** 5.0.2(14)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | GAME_PERFORMANCE_DDR_LEVEL_LOW | 低。 |
@@ -611,7 +650,8 @@ enum GamePerformance_DdrLevel
  
   
 
-#### GamePerformance_DeviceInfoType
+### GamePerformance_DeviceInfoType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -625,6 +665,7 @@ enum GamePerformance_DeviceInfoType
  
 **起始版本：** 5.0.2(14)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | GAME_PERFORMANCE_DEVICEINFO_TYPE_THERMAL | 温度信息。 |
@@ -634,7 +675,8 @@ enum GamePerformance_DeviceInfoType
  
   
 
-#### GamePerformance_EngineType
+### GamePerformance_EngineType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -648,6 +690,7 @@ enum GamePerformance_EngineType
  
 **起始版本：** 5.0.2(14)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | GAME_PERFORMANCE_ENGINE_TYPE_UNITY | UNITY。 |
@@ -659,7 +702,8 @@ enum GamePerformance_EngineType
  
   
 
-#### GamePerformance_ErrorCode
+### GamePerformance_ErrorCode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -673,6 +717,7 @@ enum GamePerformance_ErrorCode
  
 **起始版本：** 5.0.2(14)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | GAME_PERFORMANCE_SUCCESS | 成功。 |
@@ -685,7 +730,8 @@ enum GamePerformance_ErrorCode
  
   
 
-#### GamePerformance_GameType
+### GamePerformance_GameType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -699,6 +745,7 @@ enum GamePerformance_GameType
  
 **起始版本：** 5.0.2(14)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | GAME_PERFORMANCE_GAME_TYPE_MOBA | 多人在线战术竞技。 |
@@ -711,7 +758,8 @@ enum GamePerformance_GameType
  
   
 
-#### GamePerformance_GpuLevel
+### GamePerformance_GpuLevel
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -725,6 +773,7 @@ enum GamePerformance_GpuLevel
  
 **起始版本：** 5.0.2(14)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | GAME_PERFORMANCE_GPU_LEVEL_LOW | 低。 |
@@ -734,7 +783,8 @@ enum GamePerformance_GpuLevel
  
   
 
-#### GamePerformance_NetLoad
+### GamePerformance_NetLoad
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -748,6 +798,7 @@ enum GamePerformance_NetLoad
  
 **起始版本：** 5.0.2(14)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | GAME_PERFORMANCE_NET_LOAD_LIGHT | 轻度负载。 |
@@ -757,7 +808,8 @@ enum GamePerformance_NetLoad
  
   
 
-#### GamePerformance_PictureQualityLevel
+### GamePerformance_PictureQualityLevel
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -771,6 +823,7 @@ enum GamePerformance_PictureQualityLevel
  
 **起始版本：** 5.0.2(14)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | GAME_PERFORMANCE_PQL_SMOOTH | 流畅。 |
@@ -782,7 +835,8 @@ enum GamePerformance_PictureQualityLevel
  
   
 
-#### GamePerformance_SceneImportanceLevel
+### GamePerformance_SceneImportanceLevel
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -796,6 +850,7 @@ enum GamePerformance_SceneImportanceLevel
  
 **起始版本：** 5.0.2(14)
   
+
 | 枚举值 | 描述 |
 | --- | --- |
 | GAME_PERFORMANCE_SIL_LEVEL1 | 等级1。 |
@@ -807,13 +862,15 @@ enum GamePerformance_SceneImportanceLevel
  
   
 
-#### 函数说明
+## 函数说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### HMS_GamePerformance_ConfigInfo_SetAntiAliasingEnabled()
+### HMS_GamePerformance_ConfigInfo_SetAntiAliasingEnabled()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -829,6 +886,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetAntiAliasingEnabled 
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | configInfo | 指针指向GamePerformance_ConfigInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -837,6 +895,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetAntiAliasingEnabled 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -844,7 +903,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetAntiAliasingEnabled 
  
   
 
-#### HMS_GamePerformance_ConfigInfo_SetCurrentFrameRate()
+### HMS_GamePerformance_ConfigInfo_SetCurrentFrameRate()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -860,6 +920,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetCurrentFrameRate (Ga
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | configInfo | 指针指向GamePerformance_ConfigInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -868,6 +929,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetCurrentFrameRate (Ga
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -875,7 +937,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetCurrentFrameRate (Ga
  
   
 
-#### HMS_GamePerformance_ConfigInfo_SetCurrentPictureQualityLevel()
+### HMS_GamePerformance_ConfigInfo_SetCurrentPictureQualityLevel()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -891,6 +954,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetCurrentPictureQualit
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | configInfo | 指针指向GamePerformance_ConfigInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -899,6 +963,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetCurrentPictureQualit
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -906,7 +971,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetCurrentPictureQualit
  
   
 
-#### HMS_GamePerformance_ConfigInfo_SetCurrentResolution()
+### HMS_GamePerformance_ConfigInfo_SetCurrentResolution()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -922,6 +988,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetCurrentResolution (G
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | configInfo | 指针指向GamePerformance_ConfigInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -930,6 +997,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetCurrentResolution (G
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -937,7 +1005,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetCurrentResolution (G
  
   
 
-#### HMS_GamePerformance_ConfigInfo_SetHdModeEnabled()
+### HMS_GamePerformance_ConfigInfo_SetHdModeEnabled()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -953,6 +1022,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetHdModeEnabled (GameP
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | configInfo | 指针指向GamePerformance_ConfigInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -961,6 +1031,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetHdModeEnabled (GameP
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -968,7 +1039,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetHdModeEnabled (GameP
  
   
 
-#### HMS_GamePerformance_ConfigInfo_SetMaxFrameRate()
+### HMS_GamePerformance_ConfigInfo_SetMaxFrameRate()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -984,6 +1056,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetMaxFrameRate (GamePe
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | configInfo | 指针指向GamePerformance_ConfigInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -992,6 +1065,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetMaxFrameRate (GamePe
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -999,7 +1073,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetMaxFrameRate (GamePe
  
   
 
-#### HMS_GamePerformance_ConfigInfo_SetMaxPictureQualityLevel()
+### HMS_GamePerformance_ConfigInfo_SetMaxPictureQualityLevel()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1015,6 +1090,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetMaxPictureQualityLev
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | configInfo | 指针指向GamePerformance_ConfigInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -1023,6 +1099,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetMaxPictureQualityLev
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -1030,7 +1107,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetMaxPictureQualityLev
  
   
 
-#### HMS_GamePerformance_ConfigInfo_SetMaxResolution()
+### HMS_GamePerformance_ConfigInfo_SetMaxResolution()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1046,6 +1124,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetMaxResolution (GameP
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | configInfo | 指针指向GamePerformance_ConfigInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -1054,6 +1133,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetMaxResolution (GameP
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -1061,7 +1141,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetMaxResolution (GameP
  
   
 
-#### HMS_GamePerformance_ConfigInfo_SetMultithreadingEnabled()
+### HMS_GamePerformance_ConfigInfo_SetMultithreadingEnabled()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1077,6 +1158,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetMultithreadingEnable
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | configInfo | 指针指向GamePerformance_ConfigInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -1085,6 +1167,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetMultithreadingEnable
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -1092,7 +1175,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetMultithreadingEnable
  
   
 
-#### HMS_GamePerformance_ConfigInfo_SetParticleEnabled()
+### HMS_GamePerformance_ConfigInfo_SetParticleEnabled()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1108,6 +1192,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetParticleEnabled (Gam
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | configInfo | 指针指向GamePerformance_ConfigInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -1116,6 +1201,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetParticleEnabled (Gam
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -1123,7 +1209,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetParticleEnabled (Gam
  
   
 
-#### HMS_GamePerformance_ConfigInfo_SetShadowEnabled()
+### HMS_GamePerformance_ConfigInfo_SetShadowEnabled()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1139,6 +1226,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetShadowEnabled (GameP
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | configInfo | 指针指向GamePerformance_ConfigInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -1147,6 +1235,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetShadowEnabled (GameP
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -1154,7 +1243,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetShadowEnabled (GameP
  
   
 
-#### HMS_GamePerformance_CpuInfo_GetCpuLoadLevel()
+### HMS_GamePerformance_CpuInfo_GetCpuLoadLevel()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1170,6 +1260,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_CpuInfo_GetCpuLoadLevel (GamePerfo
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | cpuInfo | 指向GamePerformance_CpuInfo实例的指针。该值不可以为空，否则将返回错误码1010300004。 |
@@ -1178,6 +1269,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_CpuInfo_GetCpuLoadLevel (GamePerfo
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_ERROR：参数错误。参数不能为空指针。 |
@@ -1185,7 +1277,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_CpuInfo_GetCpuLoadLevel (GamePerfo
  
   
 
-#### HMS_GamePerformance_CpuInfo_GetSingleThreadLoadLevel()
+### HMS_GamePerformance_CpuInfo_GetSingleThreadLoadLevel()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1201,6 +1294,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_CpuInfo_GetSingleThreadLoadLevel (
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | cpuInfo | 指针指向GamePerformance_CpuInfo实例。该值不可以为空，否则将返回错误码1010300004。 |
@@ -1209,6 +1303,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_CpuInfo_GetSingleThreadLoadLevel (
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_ERROR：参数错误。参数不能为空指针。 |
@@ -1216,7 +1311,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_CpuInfo_GetSingleThreadLoadLevel (
  
   
 
-#### HMS_GamePerformance_CreateConfigInfo()
+### HMS_GamePerformance_CreateConfigInfo()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1232,6 +1328,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_CreateConfigInfo (GamePerformance_
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | configInfo | 二级指针指向GamePerformance_ConfigInfo实例。 |
@@ -1239,6 +1336,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_CreateConfigInfo (GamePerformance_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 |
@@ -1246,7 +1344,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_CreateConfigInfo (GamePerformance_
  
   
 
-#### HMS_GamePerformance_CreateInitParameters()
+### HMS_GamePerformance_CreateInitParameters()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1262,6 +1361,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_CreateInitParameters (GamePerforma
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | initParameters | 二级指针指向GamePerformance_InitParameters初始化参数实例。 |
@@ -1269,6 +1369,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_CreateInitParameters (GamePerforma
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 |
@@ -1276,7 +1377,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_CreateInitParameters (GamePerforma
  
   
 
-#### HMS_GamePerformance_CreateNetInfo()
+### HMS_GamePerformance_CreateNetInfo()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1292,6 +1394,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_CreateNetInfo (GamePerformance_Net
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | netInfo | 二级指针指向GamePerformance_NetInfo实例。 |
@@ -1299,6 +1402,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_CreateNetInfo (GamePerformance_Net
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 |
@@ -1306,7 +1410,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_CreateNetInfo (GamePerformance_Net
  
   
 
-#### HMS_GamePerformance_CreatePackageInfo()
+### HMS_GamePerformance_CreatePackageInfo()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1322,6 +1427,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_CreatePackageInfo (GamePerformance
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | packageInfo | 二级指针指向GamePerformance_PackageInfo实例。 |
@@ -1329,6 +1435,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_CreatePackageInfo (GamePerformance
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 |
@@ -1336,7 +1443,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_CreatePackageInfo (GamePerformance
  
   
 
-#### HMS_GamePerformance_CreatePlayerInfo()
+### HMS_GamePerformance_CreatePlayerInfo()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1352,6 +1460,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_CreatePlayerInfo (GamePerformance_
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | playerInfo | 二级指针指向GamePerformance_PlayerInfo实例。 |
@@ -1359,6 +1468,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_CreatePlayerInfo (GamePerformance_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 |
@@ -1366,7 +1476,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_CreatePlayerInfo (GamePerformance_
  
   
 
-#### HMS_GamePerformance_CreateSceneInfo()
+### HMS_GamePerformance_CreateSceneInfo()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1382,6 +1493,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_CreateSceneInfo (GamePerformance_S
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | sceneInfo | 二级指针指向GamePerformance_SceneInfo实例。 |
@@ -1389,6 +1501,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_CreateSceneInfo (GamePerformance_S
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 |
@@ -1396,7 +1509,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_CreateSceneInfo (GamePerformance_S
  
   
 
-#### HMS_GamePerformance_CreateThermalInfoQueryParameters()
+### HMS_GamePerformance_CreateThermalInfoQueryParameters()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1412,6 +1526,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_CreateThermalInfoQueryParameters (
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | parameters | 二级指针指向GamePerformance_ThermalInfoQueryParameters实例。 |
@@ -1419,6 +1534,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_CreateThermalInfoQueryParameters (
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 |
@@ -1426,7 +1542,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_CreateThermalInfoQueryParameters (
  
   
 
-#### HMS_GamePerformance_DestroyConfigInfo()
+### HMS_GamePerformance_DestroyConfigInfo()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1442,6 +1559,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_DestroyConfigInfo (GamePerformance
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | configInfo | 二级指针指向GamePerformance_ConfigInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -1449,6 +1567,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_DestroyConfigInfo (GamePerformance
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -1456,7 +1575,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_DestroyConfigInfo (GamePerformance
  
   
 
-#### HMS_GamePerformance_DestroyCpuInfo()
+### HMS_GamePerformance_DestroyCpuInfo()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1472,6 +1592,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_DestroyCpuInfo (GamePerformance_Cp
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | cpuInfo | 二级指针指向GamePerformance_CpuInfo实例。该值不可以为空，否则将返回错误码1010300004。 |
@@ -1479,6 +1600,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_DestroyCpuInfo (GamePerformance_Cp
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_ERROR：参数错误。参数不能为空指针。 |
@@ -1486,7 +1608,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_DestroyCpuInfo (GamePerformance_Cp
  
   
 
-#### HMS_GamePerformance_DestroyDeviceInfo()
+### HMS_GamePerformance_DestroyDeviceInfo()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1502,6 +1625,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_DestroyDeviceInfo (GamePerformance
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | deviceInfo | 二级指针指向GamePerformance_DeviceInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -1509,6 +1633,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_DestroyDeviceInfo (GamePerformance
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -1516,7 +1641,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_DestroyDeviceInfo (GamePerformance
  
   
 
-#### HMS_GamePerformance_DestroyGpuInfo()
+### HMS_GamePerformance_DestroyGpuInfo()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1532,6 +1658,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_DestroyGpuInfo (GamePerformance_Gp
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | gpuInfo | 二级指针指向GamePerformance_GpuInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -1539,6 +1666,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_DestroyGpuInfo (GamePerformance_Gp
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -1546,7 +1674,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_DestroyGpuInfo (GamePerformance_Gp
  
   
 
-#### HMS_GamePerformance_DestroyInitParameters()
+### HMS_GamePerformance_DestroyInitParameters()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1562,6 +1691,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_DestroyInitParameters (GamePerform
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | initParameters | 二级指针指向GamePerformance_InitParameters实例。该值不可以为空，否则将返回错误码401。 |
@@ -1569,6 +1699,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_DestroyInitParameters (GamePerform
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -1576,7 +1707,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_DestroyInitParameters (GamePerform
  
   
 
-#### HMS_GamePerformance_DestroyNetInfo()
+### HMS_GamePerformance_DestroyNetInfo()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1592,6 +1724,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_DestroyNetInfo (GamePerformance_Ne
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | netInfo | 二级指针指向GamePerformance_NetInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -1599,6 +1732,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_DestroyNetInfo (GamePerformance_Ne
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -1606,7 +1740,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_DestroyNetInfo (GamePerformance_Ne
  
   
 
-#### HMS_GamePerformance_DestroyPackageInfo()
+### HMS_GamePerformance_DestroyPackageInfo()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1622,6 +1757,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_DestroyPackageInfo (GamePerformanc
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | packageInfo | 二级指针指向GamePerformance_PackageInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -1629,6 +1765,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_DestroyPackageInfo (GamePerformanc
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -1636,7 +1773,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_DestroyPackageInfo (GamePerformanc
  
   
 
-#### HMS_GamePerformance_DestroyPlayerInfo()
+### HMS_GamePerformance_DestroyPlayerInfo()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1652,6 +1790,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_DestroyPlayerInfo (GamePerformance
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | playerInfo | 二级指针指向GamePerformance_PlayerInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -1659,6 +1798,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_DestroyPlayerInfo (GamePerformance
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -1666,7 +1806,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_DestroyPlayerInfo (GamePerformance
  
   
 
-#### HMS_GamePerformance_DestroySceneInfo()
+### HMS_GamePerformance_DestroySceneInfo()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1682,6 +1823,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_DestroySceneInfo (GamePerformance_
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | sceneInfo | 二级指针指向GamePerformance_SceneInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -1689,6 +1831,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_DestroySceneInfo (GamePerformance_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -1696,7 +1839,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_DestroySceneInfo (GamePerformance_
  
   
 
-#### HMS_GamePerformance_DestroyThermalInfo()
+### HMS_GamePerformance_DestroyThermalInfo()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1712,6 +1856,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_DestroyThermalInfo (GamePerformanc
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | thermalInfo | 二级指针指向GamePerformance_ThermalInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -1719,6 +1864,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_DestroyThermalInfo (GamePerformanc
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -1726,7 +1872,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_DestroyThermalInfo (GamePerformanc
  
   
 
-#### HMS_GamePerformance_DestroyThermalInfoQueryParameters()
+### HMS_GamePerformance_DestroyThermalInfoQueryParameters()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1742,6 +1889,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_DestroyThermalInfoQueryParameters 
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | parameters | 二级指针指向GamePerformance_ThermalInfoQueryParameters实例。该值不可以为空，否则将返回错误码401。 |
@@ -1749,6 +1897,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_DestroyThermalInfoQueryParameters 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -1756,7 +1905,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_DestroyThermalInfoQueryParameters 
  
   
 
-#### HMS_GamePerformance_DeviceInfo_GetCpuInfo()
+### HMS_GamePerformance_DeviceInfo_GetCpuInfo()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1772,6 +1922,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_DeviceInfo_GetCpuInfo (GamePerform
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | deviceInfo | 指针指向GamePerformance_DeviceInfo实例。该值不可以为空，否则将返回错误码1010300004。 |
@@ -1780,6 +1931,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_DeviceInfo_GetCpuInfo (GamePerform
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_ERROR：参数错误。参数不能为空指针。 |
@@ -1787,7 +1939,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_DeviceInfo_GetCpuInfo (GamePerform
  
   
 
-#### HMS_GamePerformance_DeviceInfo_GetGpuInfo()
+### HMS_GamePerformance_DeviceInfo_GetGpuInfo()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1803,6 +1956,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_DeviceInfo_GetGpuInfo (GamePerform
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | deviceInfo | 指针指向GamePerformance_DeviceInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -1811,6 +1965,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_DeviceInfo_GetGpuInfo (GamePerform
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -1818,7 +1973,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_DeviceInfo_GetGpuInfo (GamePerform
  
   
 
-#### HMS_GamePerformance_DeviceInfo_GetThermalInfo()
+### HMS_GamePerformance_DeviceInfo_GetThermalInfo()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1834,6 +1990,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_DeviceInfo_GetThermalInfo (GamePer
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | deviceInfo | 指针指向GamePerformance_DeviceInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -1842,6 +1999,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_DeviceInfo_GetThermalInfo (GamePer
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -1849,7 +2007,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_DeviceInfo_GetThermalInfo (GamePer
  
   
 
-#### HMS_GamePerformance_GpuInfo_GetBandwidthLoadLevel()
+### HMS_GamePerformance_GpuInfo_GetBandwidthLoadLevel()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1865,6 +2024,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_GpuInfo_GetBandwidthLoadLevel (Gam
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | gpuInfo | 指针指向GamePerformance_GpuInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -1873,6 +2033,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_GpuInfo_GetBandwidthLoadLevel (Gam
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -1880,7 +2041,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_GpuInfo_GetBandwidthLoadLevel (Gam
  
   
 
-#### HMS_GamePerformance_GpuInfo_GetCurrentFrequency()
+### HMS_GamePerformance_GpuInfo_GetCurrentFrequency()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1896,6 +2058,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_GpuInfo_GetCurrentFrequency (GameP
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | gpuInfo | 指针指向GamePerformance_GpuInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -1904,6 +2067,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_GpuInfo_GetCurrentFrequency (GameP
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -1911,7 +2075,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_GpuInfo_GetCurrentFrequency (GameP
  
   
 
-#### HMS_GamePerformance_GpuInfo_GetFragmentLoadLevel()
+### HMS_GamePerformance_GpuInfo_GetFragmentLoadLevel()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1927,6 +2092,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_GpuInfo_GetFragmentLoadLevel (Game
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | gpuInfo | 指针指向GamePerformance_GpuInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -1935,6 +2101,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_GpuInfo_GetFragmentLoadLevel (Game
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -1942,7 +2109,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_GpuInfo_GetFragmentLoadLevel (Game
  
   
 
-#### HMS_GamePerformance_GpuInfo_GetGpuLoadLevel()
+### HMS_GamePerformance_GpuInfo_GetGpuLoadLevel()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1958,6 +2126,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_GpuInfo_GetGpuLoadLevel (GamePerfo
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | gpuInfo | 指针指向GamePerformance_GpuInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -1966,6 +2135,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_GpuInfo_GetGpuLoadLevel (GamePerfo
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -1973,7 +2143,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_GpuInfo_GetGpuLoadLevel (GamePerfo
  
   
 
-#### HMS_GamePerformance_GpuInfo_GetTextureLoadLevel()
+### HMS_GamePerformance_GpuInfo_GetTextureLoadLevel()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1989,6 +2160,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_GpuInfo_GetTextureLoadLevel (GameP
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | gpuInfo | 指针指向GamePerformance_GpuInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -1997,6 +2169,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_GpuInfo_GetTextureLoadLevel (GameP
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -2004,7 +2177,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_GpuInfo_GetTextureLoadLevel (GameP
  
   
 
-#### HMS_GamePerformance_GpuInfo_GetVertexLoadLevel()
+### HMS_GamePerformance_GpuInfo_GetVertexLoadLevel()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2020,6 +2194,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_GpuInfo_GetVertexLoadLevel (GamePe
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | gpuInfo | 指针指向GamePerformance_GpuInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -2028,6 +2203,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_GpuInfo_GetVertexLoadLevel (GamePe
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -2035,7 +2211,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_GpuInfo_GetVertexLoadLevel (GamePe
  
   
 
-#### HMS_GamePerformance_Init()
+### HMS_GamePerformance_Init()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2055,6 +2232,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_Init (GamePerformance_InitParamete
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | initParameters | 指针指向GamePerformance_InitParameters实例。该值不可以为空，否则将返回错误码401。 |
@@ -2062,6 +2240,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_Init (GamePerformance_InitParamete
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 GAME_PERFORMANCE_INTERNAL_ERROR：系统内部错误。 GAME_PERFORMANCE_AUTH_FAILED：鉴权失败。 |
@@ -2069,7 +2248,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_Init (GamePerformance_InitParamete
  
   
 
-#### HMS_GamePerformance_InitParameters_SetAppVersion()
+### HMS_GamePerformance_InitParameters_SetAppVersion()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2085,6 +2265,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_InitParameters_SetAppVersion (Game
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | initParameters | 指针指向GamePerformance_InitParameters实例。该值不可以为空，否则将返回错误码401。 |
@@ -2093,6 +2274,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_InitParameters_SetAppVersion (Game
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -2100,7 +2282,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_InitParameters_SetAppVersion (Game
  
   
 
-#### HMS_GamePerformance_InitParameters_SetBundleName()
+### HMS_GamePerformance_InitParameters_SetBundleName()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2116,6 +2299,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_InitParameters_SetBundleName (Game
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | initParameters | 指针指向GamePerformance_InitParameters实例。该值不可以为空，否则将返回错误码401。 |
@@ -2124,6 +2308,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_InitParameters_SetBundleName (Game
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -2131,7 +2316,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_InitParameters_SetBundleName (Game
  
   
 
-#### HMS_GamePerformance_NetInfo_SetDownlinkLatency()
+### HMS_GamePerformance_NetInfo_SetDownlinkLatency()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2147,6 +2333,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_NetInfo_SetDownlinkLatency (GamePe
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | netInfo | 指针指向GamePerformance_NetInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -2155,6 +2342,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_NetInfo_SetDownlinkLatency (GamePe
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -2162,7 +2350,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_NetInfo_SetDownlinkLatency (GamePe
  
   
 
-#### HMS_GamePerformance_NetInfo_SetNetLoad()
+### HMS_GamePerformance_NetInfo_SetNetLoad()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2178,6 +2367,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_NetInfo_SetNetLoad (GamePerformanc
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | netInfo | 指针指向GamePerformance_NetInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -2186,6 +2376,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_NetInfo_SetNetLoad (GamePerformanc
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -2193,7 +2384,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_NetInfo_SetNetLoad (GamePerformanc
  
   
 
-#### HMS_GamePerformance_NetInfo_SetServerLatency()
+### HMS_GamePerformance_NetInfo_SetServerLatency()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2209,6 +2401,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_NetInfo_SetServerLatency (GamePerf
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | netInfo | 指针指向GamePerformance_NetInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -2217,6 +2410,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_NetInfo_SetServerLatency (GamePerf
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -2224,7 +2418,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_NetInfo_SetServerLatency (GamePerf
  
   
 
-#### HMS_GamePerformance_NetInfo_SetTotalLatency()
+### HMS_GamePerformance_NetInfo_SetTotalLatency()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2240,6 +2435,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_NetInfo_SetTotalLatency (GamePerfo
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | netInfo | 指针指向GamePerformance_NetInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -2248,6 +2444,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_NetInfo_SetTotalLatency (GamePerfo
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -2255,7 +2452,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_NetInfo_SetTotalLatency (GamePerfo
  
   
 
-#### HMS_GamePerformance_NetInfo_SetUplinkLatency()
+### HMS_GamePerformance_NetInfo_SetUplinkLatency()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2271,6 +2469,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_NetInfo_SetUplinkLatency (GamePerf
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | netInfo | 指针指向GamePerformance_NetInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -2279,6 +2478,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_NetInfo_SetUplinkLatency (GamePerf
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -2286,7 +2486,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_NetInfo_SetUplinkLatency (GamePerf
  
   
 
-#### HMS_GamePerformance_PackageInfo_SetAppVersion()
+### HMS_GamePerformance_PackageInfo_SetAppVersion()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2302,6 +2503,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_PackageInfo_SetAppVersion (GamePer
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | packageInfo | 指针指向GamePerformance_PackageInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -2310,6 +2512,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_PackageInfo_SetAppVersion (GamePer
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -2317,7 +2520,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_PackageInfo_SetAppVersion (GamePer
  
   
 
-#### HMS_GamePerformance_PackageInfo_SetBundleName()
+### HMS_GamePerformance_PackageInfo_SetBundleName()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2333,6 +2537,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_PackageInfo_SetBundleName (GamePer
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | packageInfo | 指针指向GamePerformance_PackageInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -2341,6 +2546,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_PackageInfo_SetBundleName (GamePer
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -2348,7 +2554,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_PackageInfo_SetBundleName (GamePer
  
   
 
-#### HMS_GamePerformance_PackageInfo_SetEngineType()
+### HMS_GamePerformance_PackageInfo_SetEngineType()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2364,6 +2571,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_PackageInfo_SetEngineType (GamePer
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | packageInfo | 指针指向GamePerformance_PackageInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -2372,6 +2580,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_PackageInfo_SetEngineType (GamePer
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -2379,7 +2588,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_PackageInfo_SetEngineType (GamePer
  
   
 
-#### HMS_GamePerformance_PackageInfo_SetEngineVersion()
+### HMS_GamePerformance_PackageInfo_SetEngineVersion()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2395,6 +2605,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_PackageInfo_SetEngineVersion (Game
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | packageInfo | 指针指向GamePerformance_PackageInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -2403,6 +2614,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_PackageInfo_SetEngineVersion (Game
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -2410,7 +2622,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_PackageInfo_SetEngineVersion (Game
  
   
 
-#### HMS_GamePerformance_PackageInfo_SetGameType()
+### HMS_GamePerformance_PackageInfo_SetGameType()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2426,6 +2639,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_PackageInfo_SetGameType (GamePerfo
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | packageInfo | 指针指向GamePerformance_PackageInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -2434,6 +2648,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_PackageInfo_SetGameType (GamePerfo
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -2441,7 +2656,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_PackageInfo_SetGameType (GamePerfo
  
   
 
-#### HMS_GamePerformance_PackageInfo_SetVulkanSupported()
+### HMS_GamePerformance_PackageInfo_SetVulkanSupported()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2457,6 +2673,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_PackageInfo_SetVulkanSupported (Ga
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | packageInfo | 指针指向GamePerformance_PackageInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -2465,6 +2682,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_PackageInfo_SetVulkanSupported (Ga
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -2472,7 +2690,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_PackageInfo_SetVulkanSupported (Ga
  
   
 
-#### HMS_GamePerformance_PlayerInfo_SetGamePlayerId()
+### HMS_GamePerformance_PlayerInfo_SetGamePlayerId()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2492,6 +2711,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_PlayerInfo_SetGamePlayerId (GamePe
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | playerInfo | 指针指向GamePerformance_PlayerInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -2500,6 +2720,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_PlayerInfo_SetGamePlayerId (GamePe
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -2507,7 +2728,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_PlayerInfo_SetGamePlayerId (GamePe
  
   
 
-#### HMS_GamePerformance_PlayerInfo_SetTeamPlayerId()
+### HMS_GamePerformance_PlayerInfo_SetTeamPlayerId()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2527,6 +2749,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_PlayerInfo_SetTeamPlayerId (GamePe
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | playerInfo | 指针指向GamePerformance_PlayerInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -2535,6 +2758,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_PlayerInfo_SetTeamPlayerId (GamePe
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -2542,7 +2766,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_PlayerInfo_SetTeamPlayerId (GamePe
  
   
 
-#### HMS_GamePerformance_PlayerInfo_SetThirdOpenId()
+### HMS_GamePerformance_PlayerInfo_SetThirdOpenId()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2562,6 +2787,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_PlayerInfo_SetThirdOpenId (GamePer
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | playerInfo | 指针指向GamePerformance_PlayerInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -2570,6 +2796,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_PlayerInfo_SetThirdOpenId (GamePer
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -2577,7 +2804,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_PlayerInfo_SetThirdOpenId (GamePer
  
   
 
-#### HMS_GamePerformance_QueryCpuInfo()
+### HMS_GamePerformance_QueryCpuInfo()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2593,6 +2821,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_QueryCpuInfo (GamePerformance_CpuI
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | cpuInfo | 二级指针指向GamePerformance_CpuInfo实例。 |
@@ -2600,6 +2829,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_QueryCpuInfo (GamePerformance_CpuI
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_INTERNAL_ERROR：系统内部错误。请通过在线提单系统提交此问题。 GAME_PERFORMANCE_INVALID_REQUEST：无效请求。请先调用HMS_GamePerformance_Init接口。 GAME_PERFORMANCE_PARAM_ERROR：参数错误。参数不能为空指针。 |
@@ -2607,7 +2837,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_QueryCpuInfo (GamePerformance_CpuI
  
   
 
-#### HMS_GamePerformance_QueryGpuInfo()
+### HMS_GamePerformance_QueryGpuInfo()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2627,6 +2858,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_QueryGpuInfo (GamePerformance_GpuI
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | gpuInfo | 二级指针指向GamePerformance_GpuInfo实例。 |
@@ -2634,6 +2866,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_QueryGpuInfo (GamePerformance_GpuI
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 GAME_PERFORMANCE_INTERNAL_ERROR：系统内部错误。 GAME_PERFORMANCE_INVALID_REQUEST：无效请求。 |
@@ -2641,7 +2874,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_QueryGpuInfo (GamePerformance_GpuI
  
   
 
-#### HMS_GamePerformance_QueryThermalInfo()
+### HMS_GamePerformance_QueryThermalInfo()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2657,6 +2891,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_QueryThermalInfo (GamePerformance_
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | parameters | 指针指向GamePerformance_ThermalInfoQueryParameters实例。该值不可以为空，否则将返回错误码401。 |
@@ -2665,6 +2900,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_QueryThermalInfo (GamePerformance_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 GAME_PERFORMANCE_INTERNAL_ERROR：系统内部错误。 GAME_PERFORMANCE_INVALID_REQUEST：无效请求。 |
@@ -2672,7 +2908,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_QueryThermalInfo (GamePerformance_
  
   
 
-#### HMS_GamePerformance_RegisterThermalLevelChangedCallback()
+### HMS_GamePerformance_RegisterThermalLevelChangedCallback()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2694,6 +2931,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_RegisterThermalLevelChangedCallbac
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | types | 注册回调的设备性能信息类型GamePerformance_DeviceInfoType。 |
@@ -2704,6 +2942,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_RegisterThermalLevelChangedCallbac
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 GAME_PERFORMANCE_INTERNAL_ERROR：系统内部错误。 GAME_PERFORMANCE_INVALID_REQUEST：无效请求。 |
@@ -2711,7 +2950,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_RegisterThermalLevelChangedCallbac
  
   
 
-#### HMS_GamePerformance_SceneInfo_SetChannelCount()
+### HMS_GamePerformance_SceneInfo_SetChannelCount()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2727,6 +2967,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetChannelCount (GamePer
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | sceneInfo | 指针指向GamePerformance_SceneInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -2735,6 +2976,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetChannelCount (GamePer
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -2742,7 +2984,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetChannelCount (GamePer
  
   
 
-#### HMS_GamePerformance_SceneInfo_SetCurrentFrameRate()
+### HMS_GamePerformance_SceneInfo_SetCurrentFrameRate()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2758,6 +3001,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetCurrentFrameRate (Gam
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | sceneInfo | 指针指向GamePerformance_SceneInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -2766,6 +3010,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetCurrentFrameRate (Gam
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -2773,7 +3018,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetCurrentFrameRate (Gam
  
   
 
-#### HMS_GamePerformance_SceneInfo_SetDescription()
+### HMS_GamePerformance_SceneInfo_SetDescription()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2789,6 +3035,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetDescription (GamePerf
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | sceneInfo | 指针指向GamePerformance_SceneInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -2797,6 +3044,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetDescription (GamePerf
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -2804,7 +3052,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetDescription (GamePerf
  
   
 
-#### HMS_GamePerformance_SceneInfo_SetDrawCallCount()
+### HMS_GamePerformance_SceneInfo_SetDrawCallCount()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2820,6 +3069,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetDrawCallCount (GamePe
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | sceneInfo | 指针指向GamePerformance_SceneInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -2828,6 +3078,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetDrawCallCount (GamePe
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -2835,7 +3086,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetDrawCallCount (GamePe
  
   
 
-#### HMS_GamePerformance_SceneInfo_SetImportanceLevel()
+### HMS_GamePerformance_SceneInfo_SetImportanceLevel()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2851,6 +3103,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetImportanceLevel (Game
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | sceneInfo | 指针指向GamePerformance_SceneInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -2859,6 +3112,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetImportanceLevel (Game
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -2866,7 +3120,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetImportanceLevel (Game
  
   
 
-#### HMS_GamePerformance_SceneInfo_SetKeyThread()
+### HMS_GamePerformance_SceneInfo_SetKeyThread()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2882,6 +3137,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetKeyThread (GamePerfor
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | sceneInfo | 指针指向GamePerformance_SceneInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -2890,6 +3146,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetKeyThread (GamePerfor
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -2897,7 +3154,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetKeyThread (GamePerfor
  
   
 
-#### HMS_GamePerformance_SceneInfo_SetMaxFrameRate()
+### HMS_GamePerformance_SceneInfo_SetMaxFrameRate()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2913,6 +3171,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetMaxFrameRate (GamePer
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | sceneInfo | 指针指向GamePerformance_SceneInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -2921,6 +3180,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetMaxFrameRate (GamePer
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -2928,7 +3188,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetMaxFrameRate (GamePer
  
   
 
-#### HMS_GamePerformance_SceneInfo_SetMeshCount()
+### HMS_GamePerformance_SceneInfo_SetMeshCount()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2944,6 +3205,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetMeshCount (GamePerfor
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | sceneInfo | 指针指向GamePerformance_SceneInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -2952,6 +3214,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetMeshCount (GamePerfor
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -2959,7 +3222,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetMeshCount (GamePerfor
  
   
 
-#### HMS_GamePerformance_SceneInfo_SetParticipantCount()
+### HMS_GamePerformance_SceneInfo_SetParticipantCount()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2975,6 +3239,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetParticipantCount (Gam
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | sceneInfo | 指针指向GamePerformance_SceneInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -2983,6 +3248,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetParticipantCount (Gam
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -2990,7 +3256,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetParticipantCount (Gam
  
   
 
-#### HMS_GamePerformance_SceneInfo_SetRecommendedCpuLevel()
+### HMS_GamePerformance_SceneInfo_SetRecommendedCpuLevel()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3006,6 +3273,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetRecommendedCpuLevel (
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | sceneInfo | 指针指向GamePerformance_SceneInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -3014,6 +3282,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetRecommendedCpuLevel (
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -3021,7 +3290,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetRecommendedCpuLevel (
  
   
 
-#### HMS_GamePerformance_SceneInfo_SetRecommendedDdrLevel()
+### HMS_GamePerformance_SceneInfo_SetRecommendedDdrLevel()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3037,6 +3307,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetRecommendedDdrLevel (
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | sceneInfo | 指针指向GamePerformance_SceneInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -3045,6 +3316,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetRecommendedDdrLevel (
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -3052,7 +3324,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetRecommendedDdrLevel (
  
   
 
-#### HMS_GamePerformance_SceneInfo_SetRecommendedGpuLevel()
+### HMS_GamePerformance_SceneInfo_SetRecommendedGpuLevel()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3068,6 +3341,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetRecommendedGpuLevel (
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | sceneInfo | 指针指向GamePerformance_SceneInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -3076,6 +3350,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetRecommendedGpuLevel (
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -3083,7 +3358,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetRecommendedGpuLevel (
  
   
 
-#### HMS_GamePerformance_SceneInfo_SetSceneFrequency()
+### HMS_GamePerformance_SceneInfo_SetSceneFrequency()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3099,6 +3375,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetSceneFrequency (GameP
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | sceneInfo | 指针指向GamePerformance_SceneInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -3107,6 +3384,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetSceneFrequency (GameP
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -3114,7 +3392,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetSceneFrequency (GameP
  
   
 
-#### HMS_GamePerformance_SceneInfo_SetSceneID()
+### HMS_GamePerformance_SceneInfo_SetSceneID()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3130,6 +3409,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetSceneID (GamePerforma
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | sceneInfo | 指针指向GamePerformance_SceneInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -3138,6 +3418,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetSceneID (GamePerforma
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -3145,7 +3426,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetSceneID (GamePerforma
  
   
 
-#### HMS_GamePerformance_SceneInfo_SetSceneTime()
+### HMS_GamePerformance_SceneInfo_SetSceneTime()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3161,6 +3443,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetSceneTime (GamePerfor
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | sceneInfo | 指针指向GamePerformance_SceneInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -3169,6 +3452,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetSceneTime (GamePerfor
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -3176,7 +3460,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetSceneTime (GamePerfor
  
   
 
-#### HMS_GamePerformance_SceneInfo_SetShaderCount()
+### HMS_GamePerformance_SceneInfo_SetShaderCount()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3192,6 +3477,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetShaderCount (GamePerf
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | sceneInfo | 指针指向GamePerformance_SceneInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -3200,6 +3486,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetShaderCount (GamePerf
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -3207,7 +3494,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetShaderCount (GamePerf
  
   
 
-#### HMS_GamePerformance_SceneInfo_SetSubDescription()
+### HMS_GamePerformance_SceneInfo_SetSubDescription()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3223,6 +3511,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetSubDescription (GameP
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | sceneInfo | 指针指向GamePerformance_SceneInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -3231,6 +3520,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetSubDescription (GameP
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -3238,7 +3528,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetSubDescription (GameP
  
   
 
-#### HMS_GamePerformance_SceneInfo_SetSubSceneID()
+### HMS_GamePerformance_SceneInfo_SetSubSceneID()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3254,6 +3545,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetSubSceneID (GamePerfo
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | sceneInfo | 指针指向GamePerformance_SceneInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -3262,6 +3554,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetSubSceneID (GamePerfo
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -3269,7 +3562,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetSubSceneID (GamePerfo
  
   
 
-#### HMS_GamePerformance_SceneInfo_SetTextureCount()
+### HMS_GamePerformance_SceneInfo_SetTextureCount()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3285,6 +3579,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetTextureCount (GamePer
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | sceneInfo | 指针指向GamePerformance_SceneInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -3293,6 +3588,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetTextureCount (GamePer
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -3300,7 +3596,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetTextureCount (GamePer
  
   
 
-#### HMS_GamePerformance_SceneInfo_SetTriangleCount()
+### HMS_GamePerformance_SceneInfo_SetTriangleCount()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3316,6 +3613,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetTriangleCount (GamePe
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | sceneInfo | 指针指向GamePerformance_SceneInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -3324,6 +3622,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetTriangleCount (GamePe
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -3331,7 +3630,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetTriangleCount (GamePe
  
   
 
-#### HMS_GamePerformance_SceneInfo_SetVertexCount()
+### HMS_GamePerformance_SceneInfo_SetVertexCount()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3347,6 +3647,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetVertexCount (GamePerf
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | sceneInfo | 指针指向GamePerformance_SceneInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -3355,6 +3656,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetVertexCount (GamePerf
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -3362,9 +3664,10 @@ GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetVertexCount (GamePerf
  
   
 
-#### HMS_GamePerformance_ThermalInfo_GetNowNormalizedCurrent()
+### HMS_GamePerformance_ThermalInfo_GetNowNormalizedCurrent()
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone
 
 ```text
 GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfo_GetNowNormalizedCurrent (GamePerformance_ThermalInfo *thermalInfo, int32_t *nowCurrent)
@@ -3380,6 +3683,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfo_GetNowNormalizedCurren
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | thermalInfo | 指针指向GamePerformance_ThermalInfo实例。该值不可以为空，否则将返回错误码1010300004。 |
@@ -3388,6 +3692,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfo_GetNowNormalizedCurren
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_ERROR：参数错误。参数不能为空指针。 |
@@ -3395,9 +3700,10 @@ GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfo_GetNowNormalizedCurren
  
   
 
-#### HMS_GamePerformance_ThermalInfo_GetRecommendMaxNormalizedCurrent()
+### HMS_GamePerformance_ThermalInfo_GetRecommendMaxNormalizedCurrent()
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone
 
 ```text
 GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfo_GetRecommendMaxNormalizedCurrent (GamePerformance_ThermalInfo *thermalInfo, int32_t *recommendMaxCurrent)
@@ -3413,6 +3719,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfo_GetRecommendMaxNormali
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | thermalInfo | 指针指向GamePerformance_ThermalInfo实例。该值不可以为空，否则将返回错误码1010300004。 |
@@ -3421,6 +3728,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfo_GetRecommendMaxNormali
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_ERROR：参数错误。参数不能为空指针。 |
@@ -3428,9 +3736,10 @@ GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfo_GetRecommendMaxNormali
  
   
 
-#### HMS_GamePerformance_ThermalInfo_GetRecommendNormalizedCurrent()
+### HMS_GamePerformance_ThermalInfo_GetRecommendNormalizedCurrent()
 
-**支持设备：** Phone | PC/2in1 | Tablet
+
+**支持设备：** Phone
 
 ```text
 GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfo_GetRecommendNormalizedCurrent (GamePerformance_ThermalInfo *thermalInfo, int32_t *recommendCurrent)
@@ -3446,6 +3755,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfo_GetRecommendNormalized
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | thermalInfo | 指针指向GamePerformance_ThermalInfo实例。该值不可以为空，否则将返回错误码1010300004。 |
@@ -3454,6 +3764,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfo_GetRecommendNormalized
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_ERROR：参数错误。参数不能为空指针。 |
@@ -3461,7 +3772,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfo_GetRecommendNormalized
  
   
 
-#### HMS_GamePerformance_ThermalInfo_GetThermalLevel()
+### HMS_GamePerformance_ThermalInfo_GetThermalLevel()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3477,6 +3789,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfo_GetThermalLevel (GameP
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | thermalInfo | 指针指向GamePerformance_ThermalInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -3485,6 +3798,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfo_GetThermalLevel (GameP
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -3492,7 +3806,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfo_GetThermalLevel (GameP
  
   
 
-#### HMS_GamePerformance_ThermalInfo_GetThermalMargin()
+### HMS_GamePerformance_ThermalInfo_GetThermalMargin()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3508,6 +3823,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfo_GetThermalMargin (Game
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | thermalInfo | 指针指向GamePerformance_ThermalInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -3516,6 +3832,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfo_GetThermalMargin (Game
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -3523,7 +3840,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfo_GetThermalMargin (Game
  
   
 
-#### HMS_GamePerformance_ThermalInfo_GetThermalTrend()
+### HMS_GamePerformance_ThermalInfo_GetThermalTrend()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3539,6 +3857,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfo_GetThermalTrend (GameP
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | thermalInfo | 指针指向GamePerformance_ThermalInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -3547,6 +3866,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfo_GetThermalTrend (GameP
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -3554,7 +3874,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfo_GetThermalTrend (GameP
  
   
 
-#### HMS_GamePerformance_ThermalInfoQueryParameters_SetNeedsPrediction()
+### HMS_GamePerformance_ThermalInfoQueryParameters_SetNeedsPrediction()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3570,6 +3891,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfoQueryParameters_SetNeed
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | parameters | 指针指向GamePerformance_ThermalInfoQueryParameters实例。该值不可以为空，否则将返回错误码401。 |
@@ -3578,6 +3900,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfoQueryParameters_SetNeed
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -3585,7 +3908,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfoQueryParameters_SetNeed
  
   
 
-#### HMS_GamePerformance_ThermalInfoQueryParameters_SetTargetThermalLevel()
+### HMS_GamePerformance_ThermalInfoQueryParameters_SetTargetThermalLevel()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3601,6 +3925,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfoQueryParameters_SetTarg
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | parameters | 指针指向GamePerformance_ThermalInfoQueryParameters实例。该值不可以为空，否则将返回错误码401。 |
@@ -3609,6 +3934,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfoQueryParameters_SetTarg
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 |
@@ -3616,7 +3942,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfoQueryParameters_SetTarg
  
   
 
-#### HMS_GamePerformance_UnregisterAllThermalLevelChangedCallbacks()
+### HMS_GamePerformance_UnregisterAllThermalLevelChangedCallbacks()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3632,6 +3959,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_UnregisterAllThermalLevelChangedCa
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_INTERNAL_ERROR：系统内部错误。 GAME_PERFORMANCE_INVALID_REQUEST：无效请求。 |
@@ -3639,7 +3967,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_UnregisterAllThermalLevelChangedCa
  
   
 
-#### HMS_GamePerformance_UnregisterThermalLevelChangedCallback()
+### HMS_GamePerformance_UnregisterThermalLevelChangedCallback()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3655,6 +3984,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_UnregisterThermalLevelChangedCallb
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | callback | 回调函数GamePerformance_ThermalLevelChangedCallback。 |
@@ -3662,6 +3992,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_UnregisterThermalLevelChangedCallb
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 GAME_PERFORMANCE_INTERNAL_ERROR：系统内部错误。 GAME_PERFORMANCE_INVALID_REQUEST：无效请求。 |
@@ -3669,7 +4000,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_UnregisterThermalLevelChangedCallb
  
   
 
-#### HMS_GamePerformance_UpdateConfigInfo()
+### HMS_GamePerformance_UpdateConfigInfo()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3685,6 +4017,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_UpdateConfigInfo (GamePerformance_
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | configInfo | 指针指向GamePerformance_ConfigInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -3692,6 +4025,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_UpdateConfigInfo (GamePerformance_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 GAME_PERFORMANCE_INTERNAL_ERROR：系统内部错误。 GAME_PERFORMANCE_INVALID_REQUEST：无效请求。 |
@@ -3699,7 +4033,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_UpdateConfigInfo (GamePerformance_
  
   
 
-#### HMS_GamePerformance_UpdateNetInfo()
+### HMS_GamePerformance_UpdateNetInfo()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3719,6 +4054,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_UpdateNetInfo (GamePerformance_Net
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | netInfo | 指针指向GamePerformance_NetInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -3726,6 +4062,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_UpdateNetInfo (GamePerformance_Net
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 GAME_PERFORMANCE_INTERNAL_ERROR：系统内部错误。 GAME_PERFORMANCE_INVALID_REQUEST：无效请求。 |
@@ -3733,7 +4070,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_UpdateNetInfo (GamePerformance_Net
  
   
 
-#### HMS_GamePerformance_UpdatePackageInfo()
+### HMS_GamePerformance_UpdatePackageInfo()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3753,6 +4091,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_UpdatePackageInfo (GamePerformance
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | packageInfo | 指针指向GamePerformance_PackageInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -3760,6 +4099,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_UpdatePackageInfo (GamePerformance
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 GAME_PERFORMANCE_INTERNAL_ERROR：系统内部错误。 GAME_PERFORMANCE_INVALID_REQUEST：无效请求。 |
@@ -3767,7 +4107,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_UpdatePackageInfo (GamePerformance
  
   
 
-#### HMS_GamePerformance_UpdatePlayerInfo()
+### HMS_GamePerformance_UpdatePlayerInfo()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3783,6 +4124,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_UpdatePlayerInfo (GamePerformance_
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | playerInfo | 指针指向GamePerformance_PlayerInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -3790,6 +4132,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_UpdatePlayerInfo (GamePerformance_
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 GAME_PERFORMANCE_INTERNAL_ERROR：系统内部错误。 GAME_PERFORMANCE_INVALID_REQUEST：无效请求。 |
@@ -3797,7 +4140,8 @@ GamePerformance_ErrorCode HMS_GamePerformance_UpdatePlayerInfo (GamePerformance_
  
   
 
-#### HMS_GamePerformance_UpdateSceneInfo()
+### HMS_GamePerformance_UpdateSceneInfo()
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3817,6 +4161,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_UpdateSceneInfo (GamePerformance_S
  
 **参数：**
   
+
 | 名称 | 描述 |
 | --- | --- |
 | sceneInfo | 指针指向GamePerformance_SceneInfo实例。该值不可以为空，否则将返回错误码401。 |
@@ -3824,6 +4169,7 @@ GamePerformance_ErrorCode HMS_GamePerformance_UpdateSceneInfo (GamePerformance_S
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | GamePerformance_ErrorCode | GAME_PERFORMANCE_SUCCESS：成功。 GAME_PERFORMANCE_PARAM_INVALID：无效参数。 GAME_PERFORMANCE_INTERNAL_ERROR：系统内部错误。 GAME_PERFORMANCE_INVALID_REQUEST：无效请求。 |

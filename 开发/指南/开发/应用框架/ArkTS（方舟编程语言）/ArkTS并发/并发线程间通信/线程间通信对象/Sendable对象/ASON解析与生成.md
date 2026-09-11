@@ -1,6 +1,6 @@
 # ASON解析与生成
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ason-parsing-generation
 
@@ -13,7 +13,7 @@ ASON.stringify方法还支持将Map和Set对象转换为字符串，可转换的
 
 
 
-#### 使用示例
+## 使用示例
 
 使用ASON提供的接口，对[Sendable对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable)进行序列化、反序列化。
 

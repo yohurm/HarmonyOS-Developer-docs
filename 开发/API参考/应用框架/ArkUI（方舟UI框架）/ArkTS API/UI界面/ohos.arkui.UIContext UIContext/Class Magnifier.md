@@ -1,9 +1,9 @@
 # Class (Magnifier)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-magnifier
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供控制放大镜的显示与隐藏的能力，放大镜会对组件内容进行放大显示，便于查看组件细节。适用于非文本类组件（如图片）需要查看细节的场景。
  
@@ -12,9 +12,10 @@
 
   
 
-#### bind
+## bind
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 bind(id: string): void
  
@@ -32,6 +33,7 @@ bind(id: string): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | string | 是 | 组件id，可通过通用属性id或key设置。当组件id为空字符串或未找到匹配id的组件时，不显示放大镜。 |
@@ -79,14 +81,15 @@ struct MagnifierExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/3RHsMwpbRh2BDmfpp0G9Mw/zh-cn_image_0000002686087685.png?HW-CC-KV=V1&HW-CC-Date=20260730T071444Z&HW-CC-Expire=86400&HW-CC-Sign=C4605577083EDC09BDED5F5676203712BCCBF6E991CFDB830E898BA99325686C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/hrd6VHzmTGmAMKEvSUPxMA/zh-cn_image_0000002717772310.png?HW-CC-KV=V1&HW-CC-Date=20260911T072446Z&HW-CC-Expire=86400&HW-CC-Sign=A30E2F56A86C1BFD62CBCC94AAC4B1A661577A140D16EA4529D1F668D2370D9C)
 
  
   
 
-#### show
+## show
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 show(x: number, y: number): void
  
@@ -104,6 +107,7 @@ show(x: number, y: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | x | number | 是 | 放大镜显示的组件内容相对于组件左上角的水平方向坐标，单位为vp。当坐标值大于组件宽度或小于0时不显示放大镜；传入undefined时不生效，保持放大镜当前的显示状态。 |
@@ -116,13 +120,18 @@ show(x: number, y: number): void
  
   
 
-#### unbind
+## unbind
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unbind(): void
  
-解除放大镜与当前组件的绑定。使用前需先通过UIContext中的getMagnifier()方法获取Magnifier实例。
+解除放大镜与当前组件的绑定。
+ 
+> [!NOTE]
+> 使用前需先通过UIContext中的getMagnifier()方法获取Magnifier实例。
+
  
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
  

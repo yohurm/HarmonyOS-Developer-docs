@@ -1,9 +1,9 @@
 # progress
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-basic-progress
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
@@ -12,28 +12,32 @@
 进度条，用于显示内容加载或操作处理进度。
   
 
-#### 权限列表
+## 权限列表
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
  
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 不支持。
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-attributes)外，还支持如下属性：
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | type | string | horizontal | 否 | 设置进度条的类型，该属性不支持动态修改，可选值为： - horizontal：线性进度条。 - circular：loading型进度条。 - ring：圆环形进度条。 - scale-ring：带刻度圆环形进度条。 - arc：弧形进度条。 - eclipse5+：圆形进度条，展现类似月圆月缺的进度展示效果。 |
@@ -44,31 +48,40 @@
 - 类型为horizontal、ring、scale-ring时，支持如下属性：
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
+
 | --- | --- | --- | --- | --- |
+
 | percent | number | 0 | 否 | 当前进度。取值范围为0-100。 |
+
 | secondarypercent | number | 0 | 否 | 次级进度。取值范围为0-100。 |
 - 类型为ring、scale-ring时，支持如下属性：
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
+
 | --- | --- | --- | --- | --- |
+
 | clockwise | boolean | true | 否 | 圆环形进度条是否采用顺时针。 默认值：true，表示圆环形进度条采用顺时针。 |
 - 类型为arc、eclipse5+时，支持如下属性：
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
+
 | --- | --- | --- | --- | --- |
+
 | percent | number | 0 | 否 | 当前进度。取值范围为0-100。 |
 
  
   
 
-#### 样式
+## 样式
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用样式](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-styles)外，还支持如下样式：
  
 type=horizontal
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | color | &lt;color&gt; | #ff007dff | 否 | 设置进度条的颜色。 |
@@ -79,6 +92,7 @@ type=horizontal
  
 type=circular
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | color | &lt;color&gt; | - | 否 | loading型进度条上的圆点颜色。 |
@@ -86,6 +100,7 @@ type=circular
  
 type=ring, scale-ring
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | color | &lt;color&gt; \| <linear-gradient> | - | 否 | 环形进度条的颜色，ring类型支持线性渐变色设置。 线性渐变色仅支持两个颜色参数设置格式，如color = linear-gradient(#ff0000, #00ff00)。 |
@@ -98,6 +113,7 @@ type=ring, scale-ring
  
 type=arc
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | color | &lt;color&gt; | - | 否 | 弧形进度条的颜色。 |
@@ -112,6 +128,7 @@ type=arc
  
 type=eclipse5+
   
+
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | color | &lt;color&gt; | - | 否 | 圆形进度条的颜色。 |
@@ -120,25 +137,28 @@ type=eclipse5+
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-events)。
  
   
 
-#### 方法
+## 方法
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用方法](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-common-methods)。
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 <!--xxx.hml -->
@@ -165,4 +185,4 @@ type=eclipse5+
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/oblVD8soQb6ZSVA0Otj21Q/zh-cn_image_0000002628703074.png?HW-CC-KV=V1&HW-CC-Date=20260701T014402Z&HW-CC-Expire=86400&HW-CC-Sign=299909AEFD0A1942DFE6896324B1C6D1B8E7A940336CF5293C6DD6EAE1C04966)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/5rjxsafPSL-1vWvdBxWWzA/zh-cn_image_0000002717613248.png?HW-CC-KV=V1&HW-CC-Date=20260911T072955Z&HW-CC-Expire=86400&HW-CC-Sign=7A5F131C88D70DC20548F3DE4431C42079BE76B3791D430186C21D960AA87EBF)

@@ -1,10 +1,10 @@
 # 振动开发指导(ArkTS)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/vibrator-guidelines
 
-#### 场景介绍
+## 场景介绍
 
 当设备需要设置不同的振动效果时，可以调用Vibrator模块，例如：设备的按键可以设置不同强度和不同时长的振动，闹钟和来电可以设置不同强度和时长的单次或周期振动。
 
@@ -12,7 +12,8 @@
 
 
 
-#### 接口说明
+## 接口说明
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -27,16 +28,17 @@
 | isSupportEffect(effectId: string, callback: AsyncCallback&lt;boolean&gt;): void | 查询是否支持传入的参数effectId。返回true则表示支持，否则不支持，使用Callback异步回调。 |
 | getEffectInfoSync(effectId: string, param?: VibratorInfoParam): EffectInfo | 同步查询是否支持传入的参数effectId，param可指定具体马达。返回EffectInfo中isEffectSupported字段可判断是否支持。 |
 | getVibratorInfoSync(param?: VibratorInfoParam): Array&lt;VibratorInfo&gt; | 同步查询一个或所有设备的马达信息列表。返回VibratorInfo包含设备ID、马达ID、设备名称、是否支持高清振动、是否本地设备等信息。 |
-| on(type: 'vibratorStateChange', callback: Callback&lt;VibratorStatusEvent&gt;): void | 注册马达设备上线下状态变化的监听。callback参数VibratorStatusEvent可返回事件时间戳、设备ID、马达数量、上线或下线等信息。 |
-| off(type: 'vibratorStateChange', callback?: Callback&lt;VibratorStatusEvent&gt;): void | 注销马达设备上线下状态变化的监听。 |
+| on(type: 'vibratorStateChange', callback: Callback&lt;VibratorStatusEvent&gt;): void | 注册马达设备上下线状态变化的监听。callback参数VibratorStatusEvent可返回事件时间戳、设备ID、马达数量、上线或下线等信息。 |
+| off(type: 'vibratorStateChange', callback?: Callback&lt;VibratorStatusEvent&gt;): void | 注销马达设备上下线状态变化的监听。 |
 | isHdHapticSupported(): boolean | 查询是否支持高清振动。 |
 
 
 
 
-#### 振动效果说明
+## 振动效果说明
 
 目前支持三类振动效果，如下所示：
+
 
 | 名称 | 说明 |
 | --- | --- |
@@ -114,43 +116,63 @@ JSON文件共包含3个属性。
 1. "MetaData"属性中为文件头信息，可在如下属性中添加描述：
 
 | 名称 | 必填项 | 说明 |
+
 | --- | --- | --- |
+
 | Version | 是 | 文件格式的版本号，向前兼容，目前支持版本1.0。 |
+
 | ChannelNumber | 是 | 表示马达振动的通道数，最大支持双马达通道。 |
+
 | Create | 否 | 可记录文件创作时间。 |
+
 | Description | 否 | 可指明振动效果、创建信息等附加说明。 |
 2. "Channels"属性中为马达振动通道的相关信息。
 
   "Channels"是Json数组，表示各个通道的信息，包含2个属性。
 
 | 名称 | 必填项 | 说明 |
+
 | --- | --- | --- |
+
 | Parameters | 是 | 为通道参数。其中"Index"表示通道编号，0表示全通道发送，1、2分别对应左右马达。0不能与其他通道编号同时作为配置参数。 |
+
 | Pattern | 否 | 马达振动序列。 |
 
   "Pattern"是Json数组，包含振动事件序列，每个"Event"属性代表1个振动事件，支持添加2种振动类型。
 
 | 振动类型 | 说明 |
+
 | --- | --- |
+
 | transient | 瞬态短振动，干脆有力。 |
+
 | continuous | 稳态长振动，具备长时间输出强劲有力振动的能力。 |
 
   "Event"表示一个振动事件，包含如下属性：
 
 | 名称 | 必填项 | 说明 |
+
 | --- | --- | --- |
+
 | Type | 是 | 振动事件类型，为"transient" 或"continuous"。 |
+
 | StartTime | 是 | 振动的起始时间，单位ms，有效范围为[0, 1800,000]。 |
+
 | Duration | 是 | 振动持续时间，仅当类型为"continuous"时有效，单位ms，有效范围为[0, 5000]。 |
 3. "Parameters"表示振动事件参数设置，必填项，可设置以下属性参数：
 
 | 名称 | 必填项 | 说明 |
+
 | --- | --- | --- |
+
 | Intensity | 是 | 振动事件强度，有效范围为[0, 100]，数字大小代表最大振动量的xx%。 |
+
 | Frequency | 是 | 振动事件频率，有效范围为[0, 100]，一般支持频率调节的马达设置为55时为器件的谐振频率，此时振动量最大，越靠近谐振频率的振动，同强度设置的振动量越大。 |
+
 | Curve | 否 | 振动曲线，当振动事件类型为"continuous"时有效，为Json数组，支持设置一组调节点，调节点数量最大支持16个，最小为4个，每个调节点需包含如下属性： "Time"：相对事件起始时间的偏移，最小为0，最大不能超过事件振动时长； "Intensity"：相对事件振动强度的增益，范围为[0, 1]，此值乘上振动事件强度为对应时间点调节后的强度； "Frequency"：相对事件振动频率的变化，范围为[-100, 100]，此值加上振动事件频率为对应时间点调节后的频率。 |
 
 其他要求：
+
 
 | 参数 | 要求 |
 | --- | --- |
@@ -160,7 +182,7 @@ JSON文件共包含3个属性。
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 新建一个工程。
 
   
@@ -515,7 +537,7 @@ vibratorStateChangeCallback = (data: vibrator.VibratorStatusEvent) => {
               console.error(`An unexpected error occurred. Code: ${e.code}, message: ${e.message}`);
             }
 ```
-取消监听,取消传入的callback需与注册的一致。
+取消监听，取消传入的callback需与注册的一致。
 
   
 ```ArkTS

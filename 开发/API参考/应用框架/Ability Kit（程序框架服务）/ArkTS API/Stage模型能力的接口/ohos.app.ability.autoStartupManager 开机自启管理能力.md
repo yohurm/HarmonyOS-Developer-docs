@@ -1,9 +1,9 @@
 # @ohos.app.ability.autoStartupManager (开机自启管理能力)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-autostartupmanager
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 autoStartupManager模块提供获取自身应用的开机自启状态。
 
@@ -12,9 +12,10 @@ autoStartupManager模块提供获取自身应用的开机自启状态。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { autoStartupManager } from '@kit.AbilityKit';
@@ -22,9 +23,10 @@ import { autoStartupManager } from '@kit.AbilityKit';
 
 
 
-#### autoStartupManager.getAutoStartupStatusForSelf
+## autoStartupManager.getAutoStartupStatusForSelf
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
 getAutoStartupStatusForSelf(): Promise&lt;boolean&gt;
 
@@ -36,6 +38,7 @@ getAutoStartupStatusForSelf(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示当前应用已被用户设置为开机自启动，false表示当前应用未被用户设置为开机自启动。 |
@@ -44,6 +47,7 @@ getAutoStartupStatusForSelf(): Promise&lt;boolean&gt;
 **错误码**：
 
 以下错误码详细介绍请参考[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[元能力子系统错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-ability)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -76,9 +80,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### autoStartupManager.isAutoStartupSupported
+## autoStartupManager.isAutoStartupSupported
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isAutoStartupSupported(): boolean
 
@@ -94,9 +99,10 @@ isAutoStartupSupported(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 当前设备是否支持开机自启动。true：支持，false：不支持。 |
+| boolean | 当前设备是否支持开机自启动。true表示支持开机自启动；false表示不支持开机自启动。 |
 
 
 **示例**：

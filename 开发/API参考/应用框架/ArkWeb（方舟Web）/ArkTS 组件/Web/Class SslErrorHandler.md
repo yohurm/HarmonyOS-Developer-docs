@@ -1,20 +1,21 @@
 # Class (SslErrorHandler)
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-sslerrorhandler
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 SslErrorHandler是Web组件中处理SSL证书验证错误的类。当加载安全页面时遇到SSL证书错误（如证书过期、主机名不匹配、不受信任的CA），应用可通过onSslErrorEvent回调获取SslErrorHandler实例，并决定是否继续加载或取消导航。示例代码参考[onSslErrorEvent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-events#onsslerrorevent12)事件。
  
 > [!NOTE]
-> 该组件首批接口从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 本Class首批接口从API version 9开始支持。 示例效果请以真机运行为准。
+> 该组件从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 本Class从API version 9开始支持。 示例效果请以真机运行为准。
 
   
 
-#### constructor9+
+## constructor9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
  
@@ -24,33 +25,36 @@ SslErrorHandler的构造函数。
  
   
 
-#### handleCancel9+
+## handleCancel9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 handleCancel(): void
  
-通知Web组件取消此请求。
+通知Web组件取消此请求，并停止当前SSL证书验证流程。
  
 **系统能力：** SystemCapability.Web.Webview.Core
  
   
 
-#### handleConfirm9+
+## handleConfirm9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 handleConfirm(): void
  
-通知Web组件继续使用SSL证书。
+忽略SSL证书验证错误，继续加载页面。
  
 **系统能力：** SystemCapability.Web.Webview.Core
  
   
 
-#### handleCancel20+
+## handleCancel20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 handleCancel(abortLoading: boolean): void
  
@@ -60,6 +64,7 @@ handleCancel(abortLoading: boolean): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | abortLoading | boolean | 是 | SSL错误页场景，拒绝错误证书后是否终止页面加载；abortLoading为false时表示不终止，为true时表示终止。 |

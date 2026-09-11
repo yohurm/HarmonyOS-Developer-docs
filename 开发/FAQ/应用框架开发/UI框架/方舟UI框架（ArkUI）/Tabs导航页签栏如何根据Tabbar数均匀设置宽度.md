@@ -53,7 +53,7 @@ struct Index {
       .barHeight(56)
       .animationDuration(400)
       .onChange((index: number) => {
-        // currentIndex controls TabContent to display tabs
+      <em>  // currentIndex controls TabContent to display tabs</em>
         this.currentIndex = index
         this.selectedIndex = index
       })
@@ -61,7 +61,7 @@ struct Index {
         if (index === targetIndex) {
           return
         }
-        // selectedIndex controls the color switching between Image and Text within the custom TabBar
+       <em> // selectedIndex controls the color switching between Image and Text within the custom TabBar</em>
         this.selectedIndex = targetIndex
       })
       .width(360)

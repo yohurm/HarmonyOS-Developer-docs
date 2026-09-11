@@ -1,9 +1,9 @@
 # GridObjectSortComponent
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-gridobjectsortcomponent
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 网格对象排序组件，用于网格对象的编辑、拖动排序、新增和删除。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 import { GridObjectSortComponent, GridObjectSortComponentItem, GridObjectSortComponentOptions, GridObjectSortComponentType , SymbolGlyphModifier } from '@kit.ArkUI';
@@ -22,17 +23,19 @@ import { GridObjectSortComponent, GridObjectSortComponentItem, GridObjectSortCom
  
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 无
  
   
 
-#### GridObjectSortComponent
+## GridObjectSortComponent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 GridObjectSortComponent({options: GridObjectSortComponentOptions, dataList: Array&lt;GridObjectSortComponentItem&gt;, onSave: (select: Array&lt;GridObjectSortComponentItem&gt;, unselect: Array&lt;GridObjectSortComponentItem&gt;) => void, onCancel: () => void })
  
@@ -46,19 +49,21 @@ GridObjectSortComponent({options: GridObjectSortComponentOptions, dataList: Arra
  
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
   
+
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | options | GridObjectSortComponentOptions | 是 | @Prop | 组件配置信息。 |
-| dataList | Array&lt;GridObjectSortComponentItem&gt; | 是 | - | 传入的数据，最大长度为50，数据长度超过50，只会取前50的数据。 |
-| onSave | (select: Array&lt;GridObjectSortComponentItem&gt;, unselect: Array&lt;GridObjectSortComponentItem&gt;) => void | 是 | - | 保存编辑排序的回调函数，返回编辑后的数据。 |
+| dataList | Array&lt;GridObjectSortComponentItem&gt; | 是 | - | 传入的数据，最大长度为50，数据长度超过50，只会取前50条数据。 |
+| onSave | (select: Array&lt;GridObjectSortComponentItem&gt;, unselect: Array&lt;GridObjectSortComponentItem&gt;) => void | 是 | - | 保存编辑排序的回调函数，select为编辑后的选中数据，unselect为编辑后的未选中数据。 |
 | onCancel | () => void | 是 | - | 取消保存数据的回调。 |
  
  
   
 
-#### GridObjectSortComponentOptions
+## GridObjectSortComponentOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 网格对象排序组件的组件配置信息。
  
@@ -68,10 +73,11 @@ GridObjectSortComponent({options: GridObjectSortComponentOptions, dataList: Arra
  
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| type | GridObjectSortComponentType | 否 | 是 | 组件展示形态：文字\|图片+文字。 默认值：GridObjectSortComponentType.TEXT |
-| imageSize | number \| Resource | 否 | 是 | 图片的尺寸，单位vp。 取值范围：大于等于0。 默认值：56vp |
+| type | GridObjectSortComponentType | 否 | 是 | 组件展示形态：文字\|图片+文字。设置为GridObjectSortComponentType.IMAGE_TEXT时，需为数据项配置url或symbolStyle。 默认值：GridObjectSortComponentType.TEXT |
+| imageSize | number \| Resource | 否 | 是 | 图片的尺寸，单位vp。仅在type为GridObjectSortComponentType.IMAGE_TEXT时生效。设置为数值0时，普通图片按默认尺寸显示，Symbol图标的字号为0vp。 取值范围：大于等于0。 默认值：56vp |
 | normalTitle | ResourceStr | 否 | 是 | 未编辑状态下显示的标题。 默认值：频道。 |
 | showAreaTitle | ResourceStr | 否 | 是 | 展示区域标题，第一个子标题。 默认值：长按拖动排序。 |
 | addAreaTitle | ResourceStr | 否 | 是 | 添加区域标题，第二个子标题。 默认值：点击添加。 |
@@ -80,9 +86,10 @@ GridObjectSortComponent({options: GridObjectSortComponentOptions, dataList: Arra
  
   
 
-#### GridObjectSortComponentType
+## GridObjectSortComponentType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 配置网格对象排序组件节点的类型，配置名称 IMAGE_TEXT 为图片文字类型，TEXT 为文字类型。
  
@@ -92,6 +99,7 @@ GridObjectSortComponent({options: GridObjectSortComponentOptions, dataList: Arra
  
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | IMAGE_TEXT | "image_text" | 图片文字类型。 |
@@ -100,9 +108,10 @@ GridObjectSortComponent({options: GridObjectSortComponentOptions, dataList: Arra
  
   
 
-#### GridObjectSortComponentItem
+## GridObjectSortComponentItem
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 网格对象排序组件的组件数据配置信息。
  
@@ -110,29 +119,32 @@ GridObjectSortComponent({options: GridObjectSortComponentOptions, dataList: Arra
  
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | id | number \| string | 否 | 否 | 数据id序号，不可重复。 默认值：空字符串。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | text | ResourceStr | 否 | 否 | 显示文本信息。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
 | selected | boolean | 否 | 否 | 是否被选中，已选中：true，未选中：false。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| url | ResourceStr | 否 | 是 | GridObjectSortComponentType类型为IMAGE_TEXT时，需要传入图片地址。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
-| symbolStyle18+ | SymbolGlyphModifier | 否 | 是 | GridObjectSortComponentType类型为IMAGE_TEXT时，需要传入Symbol图标资源。配置优先级高于url。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
-| order | number | 否 | 否 | 顺序序号。 取值范围：大于等于0。 默认值：0 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| url | ResourceStr | 否 | 是 | GridObjectSortComponentType类型为IMAGE_TEXT时，用于配置图片地址；类型为TEXT时不生效。若同时配置symbolStyle，优先使用symbolStyle。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
+| symbolStyle18+ | SymbolGlyphModifier | 否 | 是 | GridObjectSortComponentType类型为IMAGE_TEXT时，用于配置Symbol图标资源；类型为TEXT时不生效。配置优先级高于url。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
+| order | number | 否 | 否 | 顺序序号，数值越小排序越靠前。 取值范围：大于等于0。 默认值：0 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
  
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-不支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)。
+**支持设备：** Phone | PC/2in1 | Tablet | TV
+
+不建议设置[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)，设置后可能不生效或不符合预期。
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 网格对象的编辑排序组件基础用法，涉及对组件配置信息初始化，数据初始化，保存、取消方法的使用。
  
@@ -189,7 +201,7 @@ struct Index {
       GridObjectSortComponent({
         options: this.option,
         dataList: this.dataList,
-        // 保存编辑排序的回调函数，返回编辑后的数据。
+        // 保存编辑排序的回调函数，接收编辑后的选中数据和未选中数据。
         onSave: (
           select: Array<GridObjectSortComponentItem>,
           unselect: Array<GridObjectSortComponentItem>
@@ -207,4 +219,4 @@ struct Index {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/3jBXwHB7RLugoLgLi46hhg/zh-cn_image_0000002685928617.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071519Z&HW-CC-Expire=86400&HW-CC-Sign=FC5D67A3C1A83279880E309E8859E218FCF222621877FE0313CEC3ECCCCF68BD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/EG3kiy5mQMelf08thmDFFQ/zh-cn_image_0000002717773092.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073029Z&HW-CC-Expire=86400&HW-CC-Sign=9BF2BEDC380A4E892A262809CDFA7CCD2F16EFB7517E80A1FD99CDB22E3A04FC)

@@ -1,10 +1,10 @@
 # 应用加载自定义Symbol
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-custom-symbol-res-register
 
-#### 场景介绍
+## 场景介绍
 
 从5.1.1 (19)版本开始，新增支持资源注册。
 
@@ -12,13 +12,13 @@
 
 
 
-#### 约束条件
+## 约束条件
 
 资源注册支持Phone、Tablet、PC/2in1设备。
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 将Symbol图标资源（TTF文件，设计规范参见[图标设计文档](https://developer.huawei.com/consumer/cn/doc/design-guides/system-icons-0000001929854962#section26702397263)）与动效参数资源（JSON文件）放入entry/src/main/resources/rawfile目录下，可在此目录下新建子目录。
 
   

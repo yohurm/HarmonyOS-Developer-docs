@@ -57,7 +57,7 @@ struct RichTextExample {
         .height(100)
         .backgroundColor('#f1f3f5')
         .borderRadius(10)
-      // .padding(16)
+     <em> // .padding(16)</em>
 
       Divider()
         .height(2)
@@ -72,7 +72,7 @@ struct RichTextExample {
       Text('Web显示模块')
         .padding({bottom:16})
       Web({ src: '', controller: this.webviewController })
-        .onControllerAttached(() => { // 当Controller成功绑定到Web组件时触发该回调
+        .onControllerAttached(() => { <em>// 当Controller成功绑定到Web组件时触发该回调</em>
           this.webviewController.loadData(this.richStrHead + this.value, 'text/html', 'UTF-8', '', '');
         })
         .fileAccess(false)

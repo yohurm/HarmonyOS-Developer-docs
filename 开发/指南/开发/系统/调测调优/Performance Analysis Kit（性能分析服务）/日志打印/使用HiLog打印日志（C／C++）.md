@@ -1,6 +1,6 @@
 # 使用HiLog打印日志（C/C++）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hilog-guidelines-ndk
 
@@ -9,9 +9,10 @@
 HiLog日志系统，提供给系统框架、服务、以及应用，用于打印日志，记录用户操作、系统运行状态等。
 
 
-#### 接口说明
+## 接口说明
 
 HiLog中定义了DEBUG、INFO、WARN、ERROR、FATAL五种日志级别，并提供了对应的方法输出不同级别的日志，接口如下表所示，具体说明可查阅[log.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-log-h)。
+
 
 | 方法/宏 | 接口描述 |
 | --- | --- |
@@ -44,7 +45,7 @@ debug版本应用下，OH_LOG_SetMinLogLevel()和OH_LOG_SetLogLevel()函数均�
 
 
 
-#### 参数解析
+### 参数解析
 
  - domain：用于指定输出日志所对应的业务领域，取值范围为0x0000~0xFFFF，开发者可以根据需要进行自定义。
  - tag：用于指定日志标识，可以为任意字符串，建议标识调用所在的类或者业务行为。tag最多为31字节，超出后会截断。不建议使用中文字符，可能出现乱码或者对齐问题。
@@ -53,14 +54,21 @@ debug版本应用下，OH_LOG_SetMinLogLevel()和OH_LOG_SetLogLevel()函数均�
  - fmt：格式字符串，用于日志的格式化输出。日志打印的格式化参数需按照“%{private flag}specifier”的格式打印。
 
 | 隐私标识符（private flag） | 说明 |
+
 | --- | --- |
+
 | private | 表示日志打印结果不可见，输出结果为&lt;private&gt;。 |
+
 | public | 表示日志打印结果可见，明文显示参数。 |
+
 | 无 | 缺省值默认为private，日志打印结果不可见。 |
 
 | 格式说明符（specifier） | 说明 | 示例 |
+
 | --- | --- | --- |
+
 | d/i | 支持打印十进制整数类型。 | 123 |
+
 | s | 支持打印char*类型。 | "this is a hilog" |
 
   格式字符串中可以设置多个参数，例如格式字符串为"%s World"，“%s”为参数类型为字符串的变参标识，具体取值在args中定义，格式说明符使用参考[printf](https://man7.org/linux/man-pages/man3/printf.3.html)。
@@ -75,13 +83,13 @@ debug版本应用下，OH_LOG_SetMinLogLevel()和OH_LOG_SetLogLevel()函数均�
 
 
 
-#### 约束与限制
+## 约束与限制
 
 日志最多打印4096字节，超出限制文本将被截断。
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 在CMakeLists.txt中新增libhilog_ndk.z.so链接：
 
   
@@ -129,7 +137,7 @@ OH_LOG_ERROR(LOG_APP, "this is an another error level log");
 
 
 
-#### 日志回调接口使用示例
+### 日志回调接口使用示例
 
 
 ![](assets/使用HiLog打印日志（C／C++）/file-20260708103749e7f448b4.png)

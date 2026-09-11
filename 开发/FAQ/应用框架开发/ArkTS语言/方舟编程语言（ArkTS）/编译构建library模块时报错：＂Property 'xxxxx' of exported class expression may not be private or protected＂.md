@@ -53,13 +53,13 @@ struct Index {
     Column() {
       Button('Get Data')
         .onClick(() => {
-          // 通过单例访问数据
+          <em>// 通过单例访问数据</em>
           console.log(singletonInstance.getModifiedData());
         })
 
       Button('Update Data')
         .onClick(() => {
-          // 通过单例修改数据
+          <em>// 通过单例修改数据</em>
           singletonInstance.updateData('New Private Data');
           console.log(singletonInstance.getModifiedData());
         })
@@ -72,18 +72,18 @@ struct Index {
 
 - src/main/ets/pages/SingletonManager.ets代码：
 ```text
-// 单例类定义
+<em>// 单例类定义</em>
 class SingletonManager {
-  // 私有静态实例
+ <em> // 私有静态实例</em>
   private static instance: SingletonManager;
-  // 私有属性（避免直接暴露）
+  <em>// 私有属性（避免直接暴露）</em>
   private _privateData: string = 'Initial Data';
 
-  // 私有构造函数（防止外部实例化）
+  <em>// 私有构造函数（防止外部实例化）</em>
   private constructor() {
   }
 
-  // 静态方法获取唯一实例
+  <em>// 静态方法获取唯一实例</em>
   public static getInstance(): SingletonManager {
     if (!SingletonManager.instance) {
       SingletonManager.instance = new SingletonManager();
@@ -91,17 +91,17 @@ class SingletonManager {
     return SingletonManager.instance;
   }
 
-  // 公共方法访问私有属性
+ <em> // 公共方法访问私有属性</em>
   public getModifiedData(): string {
     return this._privateData + '(Processed)';
   }
 
-  // 公共方法修改私有属性
+  <em>// 公共方法修改私有属性</em>
   public updateData(newValue: string): void {
     this._privateData = newValue;
   }
 }
 
-// 导出单例实例（非类本身）
+<em>// 导出单例实例（非类本身）</em>
 export const singletonInstance = SingletonManager.getInstance();
 ```

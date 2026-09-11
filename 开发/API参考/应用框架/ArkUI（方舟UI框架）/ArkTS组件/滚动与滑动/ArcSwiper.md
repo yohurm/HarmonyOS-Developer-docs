@@ -1,20 +1,21 @@
 # ArcSwiper
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arcswiper
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-弧形滑块视图容器，提供子组件滑动轮播显示的能力，适用于可穿戴设备等圆形屏幕场景，并支持弧形圆点指示器、自定义切换动画和旋转表冠控制等能力。
+弧形滑块视图容器，提供子组件滑动轮播显示的能力。
 
 > [!NOTE]
 > 该组件从API version 18开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > ArcSwiperAttribute是用于配置ArcSwiper组件属性的关键接口。API version 21及之前版本，导入ArcSwiper组件后需要开发者手动导入ArcSwiperAttribute，否则会编译报错。从API version 22开始，编译工具链识别到导入ArcSwiper组件后，会自动导入ArcSwiperAttribute，无需开发者手动导入ArcSwiperAttribute。 如果开发者手动导入ArcSwiperAttribute，DevEco Studio会显示置灰，API version 21及之前版本删除会编译报错，从API version 22开始，删除对功能无影响。 该组件支持在Phone、PC/2in1、Tablet、TV、Wearable设备上使用。API version 22及以前版本，在Phone、PC/2in1、Tablet、TV上使用会编译告警，但可以正常运行。
@@ -45,9 +46,10 @@ import {
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 可以包含子组件。
 
@@ -57,9 +59,10 @@ import {
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ArcSwiper(controller?: ArcSwiperController)
 
@@ -71,34 +74,38 @@ ArcSwiper(controller?: ArcSwiperController)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| controller | ArcSwiperController | 否 | 给组件绑定一个控制器，用来控制组件翻页。不传入时，组件仍可通过手势滑动切换页面，但无法通过控制器调用翻页方法。 |
+| controller | ArcSwiperController | 否 | 给组件绑定一个控制器，用来控制组件翻页。 |
 
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性。
 
 
 
-#### index
+### index
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 index(index: Optional&lt;number&gt;)
 
-设置当前在容器中显示的子组件的索引值。当index值为undefined、小于0或大于等于子组件数量时，按照默认值0处理。
+设置当前在容器中显示的子组件的索引值。设置小于0或大于等于子组件数量时，按照默认值0处理。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Circle
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -107,9 +114,10 @@ index(index: Optional&lt;number&gt;)
 
 
 
-#### indicator
+### indicator
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 indicator(style: Optional<ArcDotIndicator | boolean>)
 
@@ -121,6 +129,7 @@ indicator(style: Optional<ArcDotIndicator | boolean>)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | Optional<ArcDotIndicator \| boolean> | 是 | 弧形圆点指示器样式。 - ArcDotIndicator：弧形圆点指示器属性及功能。 - boolean：是否启用弧形圆点指示器。设置为true启用，false不启用。 默认值：true 默认类型：ArcDotIndicator |
@@ -128,9 +137,10 @@ indicator(style: Optional<ArcDotIndicator | boolean>)
 
 
 
-#### duration
+### duration
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 duration(duration: Optional&lt;number&gt;)
 
@@ -142,16 +152,18 @@ duration(duration: Optional&lt;number&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| duration | Optional&lt;number&gt; | 是 | 子组件切换的动画时长。 默认值：400 单位：毫秒。传入负数时按默认值处理。 |
+| duration | Optional&lt;number&gt; | 是 | 子组件切换的动画时长。 默认值：400 单位：毫秒 |
 
 
 
 
-#### vertical
+### vertical
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 vertical(isVertical: Optional&lt;boolean&gt;)
 
@@ -163,6 +175,7 @@ vertical(isVertical: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isVertical | Optional&lt;boolean&gt; | 是 | 是否为纵向滑动。 true: 纵向滑动；false: 横向滑动。 默认值：false |
@@ -170,19 +183,21 @@ vertical(isVertical: Optional&lt;boolean&gt;)
 
 
 
-#### disableSwipe
+### disableSwipe
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 disableSwipe(disabled: Optional&lt;boolean&gt;)
 
-设置是否禁用组件滑动切换功能。
+是否禁用组件滑动切换功能。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Circle
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -191,13 +206,14 @@ disableSwipe(disabled: Optional&lt;boolean&gt;)
 
 
 
-#### digitalCrownSensitivity
+### digitalCrownSensitivity
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 digitalCrownSensitivity(sensitivity: Optional&lt;CrownSensitivity&gt;)
 
-设置旋转表冠的灵敏度。通过旋转表冠可以控制ArcSwiper组件的翻页，设置不同灵敏度级别可调整表冠滚动的响应速度，灵敏度越高，单位旋转角度对应的页面切换步进越大。
+设置旋转表冠的灵敏度。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -205,47 +221,52 @@ digitalCrownSensitivity(sensitivity: Optional&lt;CrownSensitivity&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| sensitivity | Optional&lt;CrownSensitivity&gt; | 是 | 旋转表冠的灵敏度。设置不同灵敏度级别可调整表冠滚动的响应速度。 默认值：CrownSensitivity.MEDIUM |
+| sensitivity | Optional&lt;CrownSensitivity&gt; | 是 | 旋转表冠的灵敏度。 默认值：CrownSensitivity.MEDIUM |
 
 
 
 
-#### effectMode
+### effectMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 effectMode(edgeEffect: Optional&lt;EdgeEffect&gt;)
 
-设置边缘滑动效果。目前支持的滑动效果参见[EdgeEffect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#edgeeffect)的枚举说明。通过[ArcSwiperController](#arcswipercontroller)的showNext、showPrevious、finishAnimation接口控制翻页时，回弹效果不生效。
+设置边缘滑动效果。 目前支持的滑动效果参见[EdgeEffect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#edgeeffect)的枚举说明。调用控制器接口时回弹不生效。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Circle
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| edgeEffect | Optional&lt;EdgeEffect&gt; | 是 | 边缘滑动效果。通过ArcSwiperController接口控制翻页时，回弹效果不生效。 默认值：EdgeEffect.Spring |
+| edgeEffect | Optional&lt;EdgeEffect&gt; | 是 | 边缘滑动效果。 默认值：EdgeEffect.Spring |
 
 
 
 
-#### disableTransitionAnimation
+### disableTransitionAnimation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 disableTransitionAnimation(disabled: Optional&lt;boolean&gt;)
 
-设置是否关闭特殊动效效果。
+是否关闭特殊动效效果。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Circle
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -254,9 +275,10 @@ disableTransitionAnimation(disabled: Optional&lt;boolean&gt;)
 
 
 
-#### ArcSwiperController
+## ArcSwiperController
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ArcSwiper容器组件的控制器，可以将此对象绑定至ArcSwiper组件，可以通过它控制翻页。
 
@@ -266,9 +288,10 @@ ArcSwiper容器组件的控制器，可以将此对象绑定至ArcSwiper组件�
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -280,13 +303,14 @@ ArcSwiperController的构造函数。
 
 
 
-#### showNext
+### showNext
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showNext()
 
-翻至下一页。翻页带动效切换过程，时长通过[duration](#duration)指定。通过此方法控制翻页时，effectMode设置的回弹效果不生效。
+翻至下一页。翻页带动效切换过程，时长通过[duration](#duration)指定。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -294,13 +318,14 @@ showNext()
 
 
 
-#### showPrevious
+### showPrevious
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showPrevious()
 
-翻至上一页。翻页带动效切换过程，时长通过[duration](#duration)指定。通过此方法控制翻页时，effectMode设置的回弹效果不生效。
+翻至上一页。翻页带动效切换过程，时长通过[duration](#duration)指定。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -308,13 +333,14 @@ showPrevious()
 
 
 
-#### finishAnimation
+### finishAnimation
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 finishAnimation(handler?: FinishAnimationHandler)
 
-停止播放动画。通过此方法控制翻页时，effectMode设置的回弹效果不生效。
+停止播放动画。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -322,16 +348,18 @@ finishAnimation(handler?: FinishAnimationHandler)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| handler | FinishAnimationHandler | 否 | 动画结束的回调。 默认值：不传入时无回调。 |
+| handler | FinishAnimationHandler | 否 | 动画结束的回调。 默认值：不传入的情况，无回调 |
 
 
 
 
-#### ArcDotIndicator
+## ArcDotIndicator
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供弧形圆点指示器属性及功能。
 
@@ -341,9 +369,10 @@ finishAnimation(handler?: FinishAnimationHandler)
 
 
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -355,9 +384,10 @@ ArcDotIndicator的构造函数。
 
 
 
-#### arcDirection
+### arcDirection
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 arcDirection(direction: Optional&lt;ArcDirection&gt;): ArcDotIndicator
 
@@ -369,12 +399,14 @@ arcDirection(direction: Optional&lt;ArcDirection&gt;): ArcDotIndicator
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | direction | Optional&lt;ArcDirection&gt; | 是 | 设置弧形指示器的方向。 默认值：ArcDirection.SIX_CLOCK_DIRECTION，6点钟方向。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -383,9 +415,10 @@ arcDirection(direction: Optional&lt;ArcDirection&gt;): ArcDotIndicator
 
 
 
-#### itemColor
+### itemColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 itemColor(color: Optional&lt;ResourceColor&gt;): ArcDotIndicator
 
@@ -397,12 +430,14 @@ itemColor(color: Optional&lt;ResourceColor&gt;): ArcDotIndicator
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | Optional&lt;ResourceColor&gt; | 是 | 设置弧形指示器中，未选中导航点的颜色。 默认值：'#A9FFFFFF' |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -411,9 +446,10 @@ itemColor(color: Optional&lt;ResourceColor&gt;): ArcDotIndicator
 
 
 
-#### selectedItemColor
+### selectedItemColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectedItemColor(color: Optional&lt;ResourceColor&gt;): ArcDotIndicator
 
@@ -425,12 +461,14 @@ selectedItemColor(color: Optional&lt;ResourceColor&gt;): ArcDotIndicator
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | Optional&lt;ResourceColor&gt; | 是 | 设置弧形指示器中，选中导航点的颜色。 默认值：'#FF5EA1FF' |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -439,9 +477,10 @@ selectedItemColor(color: Optional&lt;ResourceColor&gt;): ArcDotIndicator
 
 
 
-#### backgroundColor
+### backgroundColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 backgroundColor(color: Optional&lt;ResourceColor&gt;): ArcDotIndicator
 
@@ -453,12 +492,14 @@ backgroundColor(color: Optional&lt;ResourceColor&gt;): ArcDotIndicator
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | Optional&lt;ResourceColor&gt; | 是 | 设置弧形指示器被长按时，弧形指示器的颜色。 默认值：'#FF404040' |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -467,9 +508,10 @@ backgroundColor(color: Optional&lt;ResourceColor&gt;): ArcDotIndicator
 
 
 
-#### maskColor
+### maskColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 maskColor(color: Optional&lt;LinearGradient&gt;): ArcDotIndicator
 
@@ -481,12 +523,14 @@ maskColor(color: Optional&lt;LinearGradient&gt;): ArcDotIndicator
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | Optional&lt;LinearGradient&gt; | 是 | 设置弧形指示器的遮罩渐变色。 起始颜色默认值：'#00000000' 结束颜色默认值：'#FF000000' |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -495,15 +539,17 @@ maskColor(color: Optional&lt;LinearGradient&gt;): ArcDotIndicator
 
 
 
-#### ArcDirection
+### ArcDirection
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 弧形方向。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Circle
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -514,9 +560,10 @@ maskColor(color: Optional&lt;LinearGradient&gt;): ArcDotIndicator
 
 
 
-#### FinishAnimationHandler
+## FinishAnimationHandler
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type FinishAnimationHandler = () => void
 
@@ -528,19 +575,21 @@ type FinishAnimationHandler = () => void
 
 
 
-#### IndexChangedHandler
+## IndexChangedHandler
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type IndexChangedHandler = (index: number) => void
 
-当前显示元素的索引变化时，告知应用。index序列从0开始。
+当前显示元素的索引变化时，告知应用。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Circle
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -549,9 +598,10 @@ type IndexChangedHandler = (index: number) => void
 
 
 
-#### AnimationStartHandler
+## AnimationStartHandler
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AnimationStartHandler = (index: number, targetIndex: number, event: SwiperAnimationEvent) => void
 
@@ -563,6 +613,7 @@ type AnimationStartHandler = (index: number, targetIndex: number, event: SwiperA
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 当前显示元素的索引，动画开始前的index值（不是最终结束动画的index值）。 |
@@ -572,9 +623,10 @@ type AnimationStartHandler = (index: number, targetIndex: number, event: SwiperA
 
 
 
-#### AnimationEndHandler
+## AnimationEndHandler
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AnimationEndHandler = (index: number, event: SwiperAnimationEvent) => void
 
@@ -586,6 +638,7 @@ type AnimationEndHandler = (index: number, event: SwiperAnimationEvent) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 当前显示元素的索引。 |
@@ -594,9 +647,10 @@ type AnimationEndHandler = (index: number, event: SwiperAnimationEvent) => void
 
 
 
-#### GestureSwipeHandler
+## GestureSwipeHandler
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type GestureSwipeHandler = (index: number, event: SwiperAnimationEvent) => void
 
@@ -608,6 +662,7 @@ type GestureSwipeHandler = (index: number, event: SwiperAnimationEvent) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 当前显示元素的索引。 |
@@ -616,17 +671,19 @@ type GestureSwipeHandler = (index: number, event: SwiperAnimationEvent) => void
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)外，还支持以下事件：
 
 
 
-#### onChange
+### onChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onChange(handler: Optional&lt;IndexChangedHandler&gt;)
 
@@ -640,6 +697,7 @@ ArcSwiper组件结合[LazyForEach](https://developer.huawei.com/consumer/cn/doc/
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handler | Optional&lt;IndexChangedHandler&gt; | 是 | 当前显示元素的索引回调。 |
@@ -647,9 +705,10 @@ ArcSwiper组件结合[LazyForEach](https://developer.huawei.com/consumer/cn/doc/
 
 
 
-#### onAnimationStart
+### onAnimationStart
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onAnimationStart(handler: Optional&lt;AnimationStartHandler&gt;)
 
@@ -661,6 +720,7 @@ onAnimationStart(handler: Optional&lt;AnimationStartHandler&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handler | Optional&lt;AnimationStartHandler&gt; | 是 | 切换动画开始时的回调。 |
@@ -668,21 +728,23 @@ onAnimationStart(handler: Optional&lt;AnimationStartHandler&gt;)
 
 
 
-#### onAnimationEnd
+### onAnimationEnd
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onAnimationEnd(handler: Optional&lt;AnimationEndHandler&gt;)
 
 切换动画结束时触发该回调。
 
-当ArcSwiper切换动效结束时触发，包括动画过程中手势中断或通过[ArcSwiperController](#arcswipercontroller)调用finishAnimation。参数为动画结束后的index值，多列ArcSwiper时，index为最左侧组件的索引。
+当ArcSwiper切换动效结束时触发，包括动画过程中手势中断，通过[ArcSwiperController](#arcswipercontroller)调用finishAnimation。参数为动画结束后的index值，多列ArcSwiper时，index为最左侧组件的索引。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Circle
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -691,9 +753,10 @@ onAnimationEnd(handler: Optional&lt;AnimationEndHandler&gt;)
 
 
 
-#### onGestureSwipe
+### onGestureSwipe
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onGestureSwipe(handler: Optional&lt;GestureSwipeHandler&gt;)
 
@@ -705,6 +768,7 @@ onGestureSwipe(handler: Optional&lt;GestureSwipeHandler&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handler | Optional&lt;GestureSwipeHandler&gt; | 是 | 在页面跟手滑动过程中，逐帧触发该回调。 |
@@ -712,13 +776,14 @@ onGestureSwipe(handler: Optional&lt;GestureSwipeHandler&gt;)
 
 
 
-#### customContentTransition
+### customContentTransition
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 customContentTransition(transition: Optional&lt;SwiperContentAnimatedTransition&gt;)
 
-自定义ArcSwiper页面切换动画。在页面跟手滑动和离手后执行切换动画的过程中，会对视窗内所有页面逐帧触发回调，开发者可在回调中设置透明度、缩放比例、位移等属性。
+自定义ArcSwiper页面切换动画。在页面跟手滑动和离手后执行切换动画的过程中，会对视窗内所有页面逐帧触发回调。开发者可以在回调中设置透明度、缩放比例、位移等属性来自定义切换动画。
 
 在页面跟手滑动和离手后执行切换动画的过程中，会对视窗内所有页面逐帧触发[SwiperContentTransitionProxy](#swipercontenttransitionproxy)回调。例如，当视窗内有下标为0、1的两个页面时，会每帧触发两次index值分别为0和1的回调。
 
@@ -728,16 +793,18 @@ customContentTransition(transition: Optional&lt;SwiperContentAnimatedTransition&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| transition | Optional&lt;SwiperContentAnimatedTransition&gt; | 是 | ArcSwiper自定义切换动画相关信息，包含timeout和transition两个属性。 |
+| transition | Optional&lt;SwiperContentAnimatedTransition&gt; | 是 | ArcSwiper自定义切换动画相关信息。 |
 
 
 
 
-#### SwiperContentAnimatedTransition
+## SwiperContentAnimatedTransition
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ArcSwiper自定义切换动画相关信息。
 
@@ -745,17 +812,19 @@ ArcSwiper自定义切换动画相关信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Circle
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| timeout | number | 否 | 是 | ArcSwiper自定义切换动画超时时间。从页面执行默认动画（页面滑动）至移出视窗外的第一帧开始计时，如果到达该时间后，开发者仍未调用SwiperContentTransitionProxy的finishTransition接口通知ArcSwiper组件此页面的自定义动画已结束，组件将强制结束该页面的自定义动画，并立即在该页面节点下渲染树。 单位：ms 默认值：0。 |
+| timeout | number | 否 | 是 | ArcSwiper自定义切换动画超时时间，取值范围[0, +∞)。从页面执行默认动画（页面滑动）至移出视窗外的第一帧开始计时，如果到达该时间后，开发者仍未调用SwiperContentTransitionProxy的finishTransition接口通知ArcSwiper组件此页面的自定义动画已结束，那么组件就会认为此页面的自定义动画已结束，立即在该页面节点下渲染树。单位ms，默认值为0。 |
 | transition | Callback&lt;SwiperContentTransitionProxy&gt; | 否 | 否 | 自定义切换动画具体内容。 |
 
 
 
 
-#### SwiperContentTransitionProxy
+## SwiperContentTransitionProxy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ArcSwiper自定义切换动画执行过程中，返回给开发者的proxy对象。开发者可通过该对象获取自定义动画视窗内的页面信息，同时，也可以通过调用该对象的finishTransition接口通知ArcSwiper组件页面自定义动画已结束。
 
@@ -769,21 +838,26 @@ ArcSwiper自定义切换动画执行过程中，返回给开发者的proxy对象
 
 
 
-#### **属性**
+### **属性**
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | selectedIndex | number | 否 | 否 | 当前选中页面的索引。 |
 | index | number | 否 | 否 | 视窗内页面的索引。 |
 | position | number | 否 | 否 | index页面相对于ArcSwiper主轴起始位置（selectedIndex对应页面的起始位置）的移动比例。 |
-| mainAxisLength | number | 否 | 否 | index对应页面在主轴方向上的长度。单位：vp。 |
+| mainAxisLength | number | 否 | 否 | index对应页面在主轴方向上的长度。 |
 
 
 
 
-#### finishTransition
+### finishTransition
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 finishTransition(): void
 
@@ -795,13 +869,17 @@ finishTransition(): void
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（设置ArcSwiper基本属性）
+
+
+### 示例1（设置ArcSwiper基本属性）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过设置ArcSwiper的基本属性，展示了组件的基本功能。
 
@@ -882,15 +960,15 @@ struct TestNewInterface {
         .disableSwipe(false)
         .digitalCrownSensitivity(CrownSensitivity.MEDIUM)
         .onChange((index: number) => {
-          console.info('onChange:' + index.toString());
+          console.info("onChange:" + index.toString());
         })
         .onAnimationStart((index: number, targetIndex: number, extraInfo: SwiperAnimationEvent) => {
           this.innerSelectedIndex = targetIndex;
-          console.info('index: ' + index);
-          console.info('targetIndex: ' + targetIndex);
-          console.info('current offset: ' + extraInfo.currentOffset);
-          console.info('target offset: ' + extraInfo.targetOffset);
-          console.info('velocity: ' + extraInfo.velocity);
+          console.info("index: " + index);
+          console.info("targetIndex: " + targetIndex);
+          console.info("current offset: " + extraInfo.currentOffset);
+          console.info("target offset: " + extraInfo.targetOffset);
+          console.info("velocity: " + extraInfo.velocity);
         })
         .onGestureRecognizerJudgeBegin((event: BaseGestureEvent, current: GestureRecognizer,
           others: Array<GestureRecognizer>): GestureJudgeResult => { // 在识别器即将要成功时，根据当前组件状态，设置识别器使能状态
@@ -898,7 +976,7 @@ struct TestNewInterface {
             let target = current.getEventTargetInfo();
             if (target && current.isBuiltIn() && current.getType() == GestureControl.GestureType.PAN_GESTURE) {
               // 此处判断swiperTarget.isBegin()或innerSelectedIndex === 0，表明ArcSwiper滑动到开头
-              let swiperTarget = target as ScrollableTargetInfo;
+              let swiperTarget = target as ScrollableTargetInfo
               if (swiperTarget instanceof ScrollableTargetInfo &&
                 (swiperTarget.isBegin() || this.innerSelectedIndex === 0)) {
                 let panEvent = event as PanGestureEvent;
@@ -911,8 +989,8 @@ struct TestNewInterface {
           return GestureJudgeResult.CONTINUE;
         })
         .onAnimationEnd((index: number, extraInfo: SwiperAnimationEvent) => {
-          console.info('index: ' + index);
-          console.info('current offset: ' + extraInfo.currentOffset);
+          console.info("index: " + index);
+          console.info("current offset: " + extraInfo.currentOffset);
         })
         .disableTransitionAnimation(false)
       }.height('100%')
@@ -922,12 +1000,15 @@ struct TestNewInterface {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/UoKF9lmtQJW1lwnBj2bSrw/zh-cn_image_0000002686087945.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071501Z&HW-CC-Expire=86400&HW-CC-Sign=EC1FD5C71EFAD39EE340EE4BD715B0D46E766148D73E2C4242BC02A558A9DF72)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/WeFnE3IIQhmGHc8aKO144Q/zh-cn_image_0000002717612654.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073111Z&HW-CC-Expire=86400&HW-CC-Sign=8DFC1FB589AE6BD1719E1EEA7CCF28ADAE142052E8CE28E79BD7D78FDE799F6B)
 
 
 
 
-#### 示例2（设置ArcSwiper自定义页面切换动画）
+### 示例2（设置ArcSwiper自定义页面切换动画）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[customContentTransition](#customcontenttransition)接口，实现了自定义ArcSwiper页面切换动画。
 
@@ -990,4 +1071,4 @@ struct TestNewInterface {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/2ilmOC_eSRKlMDE_p-q9mQ/zh-cn_image_0000002685928117.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071501Z&HW-CC-Expire=86400&HW-CC-Sign=9D41BF395132C36796401D70C267C052E656CB006F2A6429C74E1D6507659727)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/n-oTVGT6QBei4JvADd7VNw/zh-cn_image_0000002747292607.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073111Z&HW-CC-Expire=86400&HW-CC-Sign=DE2FBF177DD6FE756FE5D021E5A95D0D1C99EEF166F86F937179EABE88BC9CC3)

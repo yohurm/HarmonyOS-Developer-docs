@@ -1,10 +1,10 @@
 # 新增关键资产(C/C++)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/asset-native-add
 
-#### 接口介绍
+## 接口介绍
 
 开发者可以查阅API文档，获取关键资产新增接口的详细说明：[OH_Asset_Add](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-asset-api-h#oh_asset_add)。
 
@@ -15,6 +15,7 @@
 
 
 下表中“ASSET_TAG_ALIAS”和名称包含“ASSET_TAG_DATA_LABEL”的关键资产属性，用于存储业务自定义信息，其内容不会被加密，请勿存放敏感个人数据。
+
 
 
 
@@ -47,7 +48,7 @@
 
 
 
-#### 约束和限制
+## 约束和限制
 
  - 基于别名的访问。
 
@@ -62,7 +63,7 @@ ASSET为业务预留了12个关键资产自定义属性，名称以“ASSET_TAG_
 
 
 
-#### 代码示例
+## 代码示例
 
 新增密码为demo_pwd、别名为demo_alias、附属信息为demo_label的关键资产。用户首次解锁设备后，该关键资产可被访问。
 

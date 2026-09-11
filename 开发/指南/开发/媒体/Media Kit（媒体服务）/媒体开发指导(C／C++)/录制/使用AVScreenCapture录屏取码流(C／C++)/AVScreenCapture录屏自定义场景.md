@@ -1,17 +1,17 @@
 # AVScreenCapture录屏自定义场景
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avscreencapture-c-custom-scenarios
 
 AVScreenCapture支持应用完成场景化的自定义配置，具体配置可参考下述指导。
 
 
-#### 设置录屏策略
+## 设置录屏策略
 
 
 
-#### 蜂窝通话设置
+### 蜂窝通话设置
 
 从API version 20开始支持蜂窝通话设置。
 
@@ -26,7 +26,7 @@ OH_AVScreenCapture_ReleaseCaptureStrategy(strategy);
 
 
 
-#### 设置B帧编码
+### 设置B帧编码
 
 从API version 20开始支持设置B帧编码。
 
@@ -41,7 +41,7 @@ OH_AVScreenCapture_ReleaseCaptureStrategy(strategy);
 
 
 
-#### 设置屏幕捕获Picker
+### 设置屏幕捕获Picker
 
 从API version 20开始，支持在PC/2in1设备上设置屏幕捕获Picker。
 
@@ -66,7 +66,7 @@ OH_AVScreenCapture_ReleaseCaptureStrategy(strategy);
 
 
 
-#### 设置旋转适配
+## 设置旋转适配
 
 从API version 20开始支持设置旋转适配。
 
@@ -84,7 +84,7 @@ OH_AVScreenCapture_ReleaseCaptureStrategy(strategy);
 
 
 
-#### 设置麦克风开关
+## 设置麦克风开关
 
 使用[OH_AVScreenCapture_SetMicrophoneEnabled](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avscreen-capture-h#oh_avscreencapture_setmicrophoneenabled)，可设置在录屏过程中是否开启麦克风，默认麦克风开关为开启状态。
 
@@ -99,7 +99,7 @@ OH_AVScreenCapture_SetMicrophoneEnabled(g_avCapture, isMic);
 
 
 
-#### 隐私设置
+## 隐私设置
 
 从API version 20开始，支持使用[OH_AVScreenCapture_StrategyForPrivacyMaskMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avscreen-capture-h#oh_avscreencapture_strategyforprivacymaskmode)设置录屏隐私窗口屏蔽模式。
 
@@ -122,7 +122,7 @@ OH_AVScreenCapture_SkipPrivacyMode(capture, windowIdsSkipPrivacy.empty() ? nullp
 
 
 
-#### 设置捕获区域
+## 设置捕获区域
 
 从API version 20开始支持设置捕获区域。
 
@@ -142,7 +142,7 @@ region = nullptr;
 
 
 
-#### 设置捕获光标
+## 设置捕获光标
 
 从API version 15开始支持设置捕获光标。
 
@@ -154,7 +154,7 @@ OH_AVScreenCapture_ShowCursor(g_avCapture, false);
 
 
 
-#### 设置最大帧率
+## 设置最大帧率
 
 从API version 14开始支持设置最大帧率。
 
@@ -166,7 +166,7 @@ OH_AVScreenCapture_SetMaxVideoFrameRate(g_avCapture, CAPTURE_VIDEO_FRAME_RATE);
 
 
 
-#### 设置屏幕分辨率
+## 设置屏幕分辨率
 
 使用[OH_AVScreenCapture_ResizeCanvas](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avscreen-capture-h#oh_avscreencapture_resizecanvas)调整录屏分辨率，需在启动后调用。分辨率有范围限制，视频的宽度和高度最大值不能超过[OH_AVCapability_GetVideoWidthRange](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avcapability-h#oh_avcapability_getvideowidthrange)和[OH_AVCapability_GetVideoHeightRange](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avcapability-h#oh_avcapability_getvideoheightrange)接口中定义的范围。
 
@@ -176,7 +176,7 @@ OH_AVScreenCapture_ResizeCanvas(g_avCapture, CANVAS_RESIZE_WIDTH, CANVAS_RESIZE_
 
 
 
-#### 设置内容过滤
+## 设置内容过滤
 
 选择录屏时要过滤的声音和窗口。
 
@@ -200,7 +200,7 @@ contentFilter = nullptr;
 
 
 
-#### 更多资源
+## 更多资源
 
  - API参考：详细的API描述请见[native_avscreen_capture.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-avscreen-capture-h)。
  - 示例工程：该示例调用了媒体AVScreenCapture组件提供的接口能力，提供屏幕捕获的功能，详情见[录屏示例工程](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/Media/ScreenCapture/ScreenCaptureSample)。

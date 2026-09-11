@@ -1,24 +1,26 @@
 # NotificationRequest
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-notification-notificationrequest
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-定义了通知请求的数据结构，用于描述一条通知的全部信息，包括通知内容、标识、展示样式、交互行为等。
+定义了[通知请求](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-request通知请求)的数据结构，用于描述一条通知的全部信息，包括[通知内容](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-content通知内容)、标识、展示样式、交互行为等。
 
 > [!NOTE]
 > 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 
 
-#### NotificationRequest
+## NotificationRequest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-定义了通知请求的数据结构，用于描述一条通知的全部信息，包括通知内容、标识、展示样式、交互行为等。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+定义了[通知请求](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-request通知请求)的数据结构，用于描述一条通知的全部信息，包括[通知内容](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#notification-content通知内容)、标识、展示样式、交互行为等。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -39,9 +41,9 @@
 | autoDeletedTime | number | 否 | 是 | 通知定时清除时间。设置该参数可使通知在指定时间后自动清除。默认值为0。传入小于0的值或过去的时间值，该参数不生效。 数据格式：时间戳。 单位：毫秒。 例如，希望某通知存留3秒（3000ms）后对其进行清除，则对应的清除时间为：new Date().getTime() + 3000。 |
 | deliveryTime | number | 否 | 是 | 通知发送时间。系统自动生成，无需开发者配置。 数据格式：时间戳。 单位：毫秒。 |
 | label | string | 否 | 是 | 通知标签。 label字段的功能类似于id，可以单独使用，也可与id结合共同作为通知的标识。优先推荐使用id。 如果发布通知时label不为空，那么在更新或删除该通知时，也需要指定相应的label。 大小不超过202字节，超出部分会被截断。默认为空。 |
-| smallIcon | image.PixelMap | 否 | 是 | 通知小图标，默认为空。图标像素的总字节数不超过192KB（图标像素的总字节数通过getPixelBytesNumber获取），超出后设置不生效。 未设置smallIcon时，通知将展示应用默认图标。建议图标像素长宽为128*128。实际显示效果依赖于设备能力和通知中心UI样式。 |
-| largeIcon | image.PixelMap | 否 | 是 | 通知大图标，默认为空。图标像素的总字节数不超过192KB（图标像素的总字节数通过getPixelBytesNumber获取），超出后设置不生效。 未设置largeIcon时，通知将不展示大图标。建议图标像素长宽为128*128。实际显示效果依赖于设备能力和通知中心UI样式。 |
-| overlayIcon23+ | image.PixelMap | 否 | 是 | 通知重叠图标，默认为空。图标像素的总字节数不超过192KB（图标像素的总字节数通过getPixelBytesNumber获取），超出后设置不生效。 未设置overlayIcon时，通知将不展示重叠图标。 此接口只在notificationSlotType类型设置为SOCIAL_COMMUNICATION时生效。建议图标像素长宽为128*128。实际显示效果依赖于设备能力和通知中心UI样式。 |
+| smallIcon | image.PixelMap | 否 | 是 | 通知左侧图标，默认为空。系统自动生成，无需开发者配置。 图标像素的总字节数不超过192KB（图标像素的总字节数通过getPixelBytesNumber获取），超出后设置不生效。建议图标像素长宽为128*128。实际显示效果依赖于设备能力和通知中心UI样式，详情请参考单条通知中的通知图标。 |
+| largeIcon | image.PixelMap | 否 | 是 | 通知右侧图标，默认为空。当content使用NotificationPictureContent时，该参数设置不生效。 图标像素的总字节数不超过192KB（图标像素的总字节数通过getPixelBytesNumber获取），超出后设置不生效。建议图标像素长宽为128*128。实际显示效果依赖于设备能力和通知中心UI样式，详情请参考图片预览通知。 |
+| overlayIcon23+ | image.PixelMap | 否 | 是 | 通知重叠图标，替换通知左侧图标，默认为空。此接口只在notificationSlotType类型设置为SOCIAL_COMMUNICATION时生效。 图标像素的总字节数不超过192KB（图标像素的总字节数通过getPixelBytesNumber获取），超出后设置不生效。建议图标像素长宽为128*128。实际显示效果依赖于设备能力和通知中心UI样式，详情请参考通讯对话类通知。 |
 | groupName8+ | string | 否 | 是 | 通知所属组。当不同通知的groupName相同时，这些通知将成组展示。 大小不超过202字节，超出部分会被截断。默认为空。 |
 | template8+ | NotificationTemplate | 否 | 是 | 通知模板，默认为空。 |
 | extraInfo | {[key: string]: any} | 否 | 是 | 扩展参数。为应用提供定制服务。默认为空。 以下Key由系统赋值，开发者手动修改也不会生效，系统在数据传递时会自动修改为实际值。 - 'ohos.notificationManager.wantUri'：用户点击通知时传递给应用的Want 中的uri字段，使用getActiveNotifications接口获取该信息。 |
@@ -65,13 +67,15 @@
 
 
 
-#### DistributedOptions8+
+## DistributedOptions8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-描述跨设备协同选项。预留能力，暂未支持。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+描述[跨设备协同](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-glossary#cross-device-collaboration跨设备协同)选项。预留能力，暂未支持。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -82,15 +86,17 @@
 
 
 
-#### NotificationParameters24+
+## NotificationParameters24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述[NotificationRequest](#notificationrequest-1)中wantAgent的部分信息。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
 **系统能力**：SystemCapability.Notification.Notification
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

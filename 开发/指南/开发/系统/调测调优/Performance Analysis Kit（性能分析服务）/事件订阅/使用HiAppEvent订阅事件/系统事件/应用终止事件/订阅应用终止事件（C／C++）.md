@@ -1,20 +1,21 @@
 # 订阅应用终止事件（C/C++）
 
-更新时间：2026-04-30 02:41:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-watcher-app-killed-events-ndk
 
-#### 应用终止事件规格说明
+## 应用终止事件规格说明
 
 请参考[应用终止事件介绍](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-watcher-app-killed-events)。
 
 
 
-#### 接口说明
+## 接口说明
 
 API接口的具体使用说明（参数使用限制、具体取值范围等）请参考[HiAppEvent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hiappevent-h)。
 
 **订阅接口功能介绍：**
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -24,7 +25,7 @@ API接口的具体使用说明（参数使用限制、具体取值范围等）�
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 新建Native C++工程，并将jsoncpp导入到新建工程内，目录结构如下：
 
   
@@ -106,6 +107,7 @@ static void OnReceive(const char *domain, const struct HiAppEvent_AppEventGroup 
                     auto foreground = params["foreground"].asString();
                     auto appRunningUniqueId = params["app_running_unique_id"].asString();
                     auto bundleVersion = params["bundle_version"].asString();
+                    auto lastExitDetailInfo = writer.write(params["last_exit_detail_info"]);
                     OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.time=%{public}lld", time);
                     OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.reason=%{public}s",
                                 reason.c_str());
@@ -115,6 +117,8 @@ static void OnReceive(const char *domain, const struct HiAppEvent_AppEventGroup 
                                 appRunningUniqueId.c_str());
                     OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.bundle_version=%{public}s",
                                 bundleVersion.c_str());
+                    OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.last_exit_detail_info=%{public}s",
+                                lastExitDetailInfo.c_str());
                 }
             }
         }
@@ -211,6 +215,7 @@ HiAppEvent eventInfo.domain=OS
   HiAppEvent eventInfo.params.foreground=true
   HiAppEvent eventInfo.params.app_running_unique_id=207544
   HiAppEvent eventInfo.params.bundle_version=1000000
+  HiAppEvent eventInfo.params.last_exit_detail_info={"exit_msg":"THREAD_BLOCK_6S","kill_reason":"ThreadBlock6S","pid":"52036","process_name":"com.example.apphicollietest0108","process_state":"2","pss":"0","rss":"0","timestamp":"1785753171368","uid":"20020205"}
 ```
 
 > [!TIP]

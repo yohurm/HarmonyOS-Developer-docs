@@ -1,11 +1,12 @@
 # xeg_vulkan_rt_reflection.h
 
-更新时间：2026-06-12 06:54:11
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-kit-xeg-vulkan-rt-reflection-8h
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -23,16 +24,19 @@ XEngine Ray-Traced Reflection（光线追踪反射）特性接口。使用此头
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 结构体
+### 结构体
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | struct XEG_RTReflectionCreateInfo | 此结构体描述创建XEG_RTReflection对象的信息。当结构体中的信息变化时，需要创建新的XEG_RTReflection对象。 |
@@ -41,10 +45,12 @@ XEngine Ray-Traced Reflection（光线追踪反射）特性接口。使用此头
  
   
 
-#### 类型定义
+### 类型定义
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | VK_DEFINE_HANDLE(XEG_RTReflection) | XEG_RTReflection的句柄。 |
@@ -57,10 +63,12 @@ XEngine Ray-Traced Reflection（光线追踪反射）特性接口。使用此头
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | VKAPI_ATTR VkResult VKAPI_CALL HMS_XEG_CreateRTReflection (VkDevice device, const void *pCreateInfo, XEG_RTReflection *pRtReflection) | 创建XEG_RTReflection对象。 |

@@ -1,6 +1,6 @@
 # 拉起邮件类应用（startAbilityByType）
 
-更新时间：2026-03-09 02:50:43
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/start-email-apps
 
@@ -11,9 +11,10 @@
 
 
 
-#### 邮件类应用扩展面板参数说明
+## 邮件类应用扩展面板参数说明
 
 startAbilityByType接口中type字段为mail，对应的wantParam参数：
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -33,7 +34,7 @@ startAbilityByType接口中type字段为mail，对应的wantParam参数：
 
 
 
-#### 拉起方开发步骤
+## 拉起方开发步骤
 1. 导入相关模块。
 
   
@@ -96,16 +97,18 @@ struct Index {
 效果示例图：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/jrhEeB62SduT8tY_l80VRA/zh-cn_image_0000002611833379.png?HW-CC-KV=V1&HW-CC-Date=20260528T030510Z&HW-CC-Expire=86400&HW-CC-Sign=5F09D0BB35F209FB180F685E7949BBF0ADA58E6593145475138CD19D4E7ED869)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/gsaE-KhvT9KBtXYgEmRvjQ/zh-cn_image_0000002717609904.png?HW-CC-KV=V1&HW-CC-Date=20260911T073057Z&HW-CC-Expire=86400&HW-CC-Sign=D5764999C28F85941F90C5D6D95924CB5E212A209038AB04DBFBBA28FE88C8DF)
 
 
 
 
-#### 目标方开发步骤
+## 目标方开发步骤
 1. 在module.json5中新增[linkFeature](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#skills标签)属性并设置声明当前应用支持的特性功能，从而系统可以从设备已安装应用中找到当前支持该特性的应用，取值范围如下：
 
 | 取值 | 含义 |
+
 | --- | --- |
+
 | ComposeMail | 声明应用支持撰写邮件功能 |
 
   
@@ -139,12 +142,19 @@ UIAbility.onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void
 在参数**want.parameters**中会携带Caller方传入的参数（与调用方传入的有些差异），如下表所示：
 
 | 参数名 | 类型 | 必填 | 说明 |
+
 | --- | --- | --- | --- |
+
 | email | string[ ] | 否 | 收件人邮箱地址（支持多个且以逗号分隔）。 |
+
 | cc | string[ ] | 否 | 抄送人邮箱地址（支持多个且以逗号分隔）。 |
+
 | bcc | string[ ] | 否 | 密送人邮箱地址（支持多个且以逗号分隔）。 |
+
 | subject | string | 否 | 邮件主题。 |
+
 | body | string | 否 | 邮件内容。 |
+
 | stream | string[ ] | 否 | 邮件附件列表（附件的uri地址列表）。 |
 
   

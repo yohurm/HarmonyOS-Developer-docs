@@ -1,9 +1,9 @@
 # Enums
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-e
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本章节提供UIContext相关枚举类型，用于配置键盘避让、动态帧率场景、节点渲染状态、手势监听、自定义键盘接续和文本选择清除策略等场景。
  
@@ -12,9 +12,10 @@
 
   
 
-#### KeyboardAvoidMode11+
+## KeyboardAvoidMode11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 配置键盘弹出时页面的避让模式。
  
@@ -22,6 +23,7 @@
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | OFFSET | 0 | 上抬模式。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -33,9 +35,10 @@
  
   
 
-#### SwiperDynamicSyncSceneType12+
+## SwiperDynamicSyncSceneType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举值，表示动态帧率场景的类型。
  
@@ -43,6 +46,7 @@
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | GESTURE | 0 | 手势操作场景。 |
@@ -51,9 +55,10 @@
  
   
 
-#### MarqueeDynamicSyncSceneType14+
+## MarqueeDynamicSyncSceneType14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举值，表示Marquee的动态帧率场景的类型。
  
@@ -61,6 +66,7 @@
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ANIMATION | 1 | 动画过渡场景。 |
@@ -68,9 +74,10 @@
  
   
 
-#### NodeRenderState20+
+## NodeRenderState20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 节点的渲染状态。
  
@@ -80,6 +87,7 @@
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ABOUT_TO_RENDER_IN | 0 | 该节点已挂载到渲染树上，通常会在下一帧渲染并对用户可见，但节点被渲染不代表一定可见。 |
@@ -88,9 +96,10 @@
  
   
 
-#### GestureActionPhase20+
+## GestureActionPhase20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 此枚举类型表示手势回调触发阶段，对应gesture.d.ts中定义的动作回调，但不同手势类型支持的阶段不同（如SwipeGesture仅包含WILL_START枚举值）。
  
@@ -100,6 +109,7 @@
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | WILL_START | 0 | 手势已被系统成功识别，将立即触发onActionStart或onAction回调。若手势绑定了onActionStart，则在onActionStart处触发；若手势绑定了onAction，则在onAction处触发；若两者同时绑定，则优先在onActionStart处触发；若两者均未绑定，则不会触发任何回调。具有内置手势回调的容器（如滚动类容器）默认支持onActionStart或onAction回调触发机制，无需显式绑定即可触发回调。 |
@@ -108,9 +118,10 @@
  
   
 
-#### GestureListenerType20+
+## GestureListenerType20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 此枚举类型用于指定需要监控的手势类型。
  
@@ -120,6 +131,7 @@
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | TAP | 0 | 点击手势。 |
@@ -132,9 +144,10 @@
  
   
 
-#### ResolveStrategy22+
+## ResolveStrategy22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 UIContext对象的解析策略。
  
@@ -144,6 +157,7 @@ UIContext对象的解析策略。
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CALLING_SCOPE | 0 | 获取调用作用域的UIContext。 |
@@ -156,9 +170,10 @@ UIContext对象的解析策略。
  
   
 
-#### CustomKeyboardContinueFeature23+
+## CustomKeyboardContinueFeature23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 指定自定义键盘切换时是否接续。
  
@@ -172,6 +187,7 @@ UIContext对象的解析策略。
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ENABLED | 0 | 接续。 |
@@ -180,9 +196,10 @@ UIContext对象的解析策略。
  
   
 
-#### TextSelectionClearPolicy
+## TextSelectionClearPolicy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 文本选择清除策略枚举。
  
@@ -194,6 +211,7 @@ UIContext对象的解析策略。
  
 **模型约束：** 此接口仅可在Stage模型下使用。
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | KEEP_SELECTED_TEXT_ON_EXTERNAL_TOUCH | 0 | 触摸到文本组件外部时，保留文本选中和手柄。 |

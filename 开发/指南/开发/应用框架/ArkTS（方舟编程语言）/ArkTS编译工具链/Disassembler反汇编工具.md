@@ -1,10 +1,10 @@
 # Disassembler反汇编工具
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/tool-disassembler
 
-#### 简介
+## 简介
 
 Disassembler是ArkTS反汇编工具。如果需要分析方舟字节码文件（*.abc）相关问题，开发者可以使用Disassembler将方舟字节码文件反编译为可读的汇编指令。
  
@@ -12,7 +12,7 @@ Disassembler是ArkTS反汇编工具。如果需要分析方舟字节码文件（
  
   
 
-#### 命令行说明
+## 命令行说明
 
 反汇编命令如下：
  
@@ -22,6 +22,7 @@ ark_disasm.exe [options] input_file output_file
  
 参数说明：
   
+
 | 参数 | 是否可缺省 | 描述 |
 | --- | --- | --- |
 | [options] | 可缺省 | 命令选项，详见下文options选项说明。 |
@@ -31,6 +32,7 @@ ark_disasm.exe [options] input_file output_file
  
 options选项说明：
   
+
 | 选项 | 必填 | 存在入参 | 描述 |
 | --- | --- | --- | --- |
 | --debug | 否 | 否 | 启用输出调试信息，默认输出到屏幕。 |
@@ -44,11 +46,11 @@ options选项说明：
  
   
 
-#### 使用示例
+## 使用示例
 
 假设已存在方舟字节码文件：test.abc，其源代码如下：
  
-```text
+```ts
 // Disassembler.ts
 let i = 99;
 

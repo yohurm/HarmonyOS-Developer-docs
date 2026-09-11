@@ -1,11 +1,13 @@
 # wordTag（词性）
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/natural-language-word-tag-api
+**支持设备：** Phone | PC/2in1 | Tablet
 
 下表为词性参考表。
   
+
 | 名称 | 说明 |
 | --- | --- |
 | n | 名词 |

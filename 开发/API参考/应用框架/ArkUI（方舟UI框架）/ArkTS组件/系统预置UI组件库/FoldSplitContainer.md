@@ -1,20 +1,21 @@
 # FoldSplitContainer
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-foldsplitcontainer
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 FoldSplitContainer分栏布局，实现折叠屏二分栏、三分栏在展开态（设备完全展开状态）、悬停态（设备半折叠状态）以及折叠态（设备完全折叠状态）的区域控制。适用于折叠屏应用的响应式布局适配场景，可帮助开发者实现多屏状态下的智能分栏布局，提升用户体验。折叠状态详情可参考[display.FoldStatus](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-display#foldstatus10)。
 
 > [!NOTE]
-> 该组件从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 本模块接口仅可在Stage模型下使用。 窗口宽度小于等于600vp时默认使用二分栏，窗口宽度大于600vp时在上下分栏的同时可支持扩展区域，窗口宽度大于600vp且在横屏半折状态下可触发悬停态布局。悬停态布局时会增加折痕区的避让并且扩展区域不可以贯穿折痕区，悬停态可设置不展示扩展区域，详情请参考 示例 。
+> 该组件从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 本模块接口仅可在Stage模型下使用。 窗口宽度小于等于600vp时默认使用二分栏，窗口宽度大于600vp时在上下分栏的同时可支持扩展区域，窗口宽度大于600vp且在横屏半折状态下可触发悬停态布局。悬停态布局时会增加折痕区的避让并且扩展区域不可以贯穿折痕区，悬停态可设置不展示扩展区域，详情请参考 示例 。 如果FoldSplitContainer设置 通用属性 或 通用事件 ，编译工具链会额外生成节点__Common__，并将通用属性或通用事件挂载在__Common__上，而不是直接应用到FoldSplitContainer本身。这可能导致开发者设置的通用属性或通用事件不生效或不符合预期，因此，不建议FoldSplitContainer设置通用属性和通用事件。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { FoldSplitContainer } from '@kit.ArkUI';
@@ -22,17 +23,19 @@ import { FoldSplitContainer } from '@kit.ArkUI';
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
 
 
 
-#### FoldSplitContainer
+## FoldSplitContainer
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 FoldSplitContainer({primary: Callback&lt;void&gt;, secondary: Callback&lt;void&gt;, extra?: Callback&lt;void&gt;, expandedLayoutOptions: ExpandedRegionLayoutOptions, hoverModeLayoutOptions: HoverModeRegionLayoutOptions, foldedLayoutOptions: FoldedRegionLayoutOptions, animationOptions?: AnimateParam | null, onHoverStatusChange?: OnHoverStatusChangeHandler})
 
@@ -43,6 +46,7 @@ FoldSplitContainer({primary: Callback&lt;void&gt;, secondary: Callback&lt;void&g
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -58,15 +62,17 @@ FoldSplitContainer({primary: Callback&lt;void&gt;, secondary: Callback&lt;void&g
 
 
 
-#### ExpandedRegionLayoutOptions
+## ExpandedRegionLayoutOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 展开态布局信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -78,15 +84,17 @@ FoldSplitContainer({primary: Callback&lt;void&gt;, secondary: Callback&lt;void&g
 
 
 
-#### HoverModeRegionLayoutOptions
+## HoverModeRegionLayoutOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 悬停态布局信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -101,15 +109,17 @@ FoldSplitContainer({primary: Callback&lt;void&gt;, secondary: Callback&lt;void&g
 
 
 
-#### FoldedRegionLayoutOptions
+## FoldedRegionLayoutOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 折叠态布局信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -118,9 +128,10 @@ FoldSplitContainer({primary: Callback&lt;void&gt;, secondary: Callback&lt;void&g
 
 
 
-#### OnHoverStatusChangeHandler
+## OnHoverStatusChangeHandler
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnHoverStatusChangeHandler = (status: HoverModeStatus) => void
 
@@ -132,6 +143,7 @@ type OnHoverStatusChangeHandler = (status: HoverModeStatus) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | status | HoverModeStatus | 是 | 折叠屏进入或退出悬停模式时的状态信息。 |
@@ -139,15 +151,17 @@ type OnHoverStatusChangeHandler = (status: HoverModeStatus) => void
 
 
 
-#### HoverModeStatus
+## HoverModeStatus
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设备或应用的折叠、悬停、旋转、窗口状态信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -159,15 +173,17 @@ type OnHoverStatusChangeHandler = (status: HoverModeStatus) => void
 
 
 
-#### ExtraRegionPosition
+## ExtraRegionPosition
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 扩展区域位置信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -177,15 +193,17 @@ type OnHoverStatusChangeHandler = (status: HoverModeStatus) => void
 
 
 
-#### PresetSplitRatio
+## PresetSplitRatio
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 区域比例。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -196,13 +214,17 @@ type OnHoverStatusChangeHandler = (status: HoverModeStatus) => void
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（设置二分栏）
+
+
+### 示例1（设置二分栏）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例实现了折叠屏二分栏在展开态、悬停态以及折叠态的区域控制。
 
@@ -251,6 +273,7 @@ struct TwoColumns {
 }
 ```
 
+
 | 折叠态 | 展开态 | 悬停态 |
 | --- | --- | --- |
 |  |  |  |
@@ -258,7 +281,10 @@ struct TwoColumns {
 
 
 
-#### 示例2（设置三分栏）
+### 示例2（设置三分栏）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例实现了折叠屏三分栏在展开态、悬停态以及折叠态的区域控制。
 
@@ -321,6 +347,7 @@ struct ThreeColumns {
 }
 ```
 
+
 | 折叠态 | 展开态 | 悬停态 |
 | --- | --- | --- |
 |  |  |  |
@@ -328,7 +355,10 @@ struct ThreeColumns {
 
 
 
-#### 示例3（展示FoldSplitContainer折叠态、悬停态、展开态下的配置行为）
+### 示例3（展示FoldSplitContainer折叠态、悬停态、展开态下的配置行为）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[ExpandedRegionLayoutOptions](#expandedregionlayoutoptions)、[HoverModeRegionLayoutOptions](#hovermoderegionlayoutoptions)和[FoldedRegionLayoutOptions](#foldedregionlayoutoptions)分别配置折叠屏的展开态、悬停态和折叠态布局信息。示例提供交互式配置界面，用户可在各区域实时调整布局参数：主要区域（MajorRegion）用于配置折叠态参数，次要区域（MinorRegion）用于配置悬停态参数，扩展区域（ExtraRegion）用于配置展开态参数。这些区域使用封装的区域组件Region实现，其中RadioOptions为封装的切换单选框组件，SwitchOption为封装的切换开关组件。示意图展示了不同参数配置下的多种布局效果。
 
@@ -726,6 +756,7 @@ struct Index {
   }
 }
 ```
+
 
 | 折叠态 | 展开态 | 悬停态 |
 | --- | --- | --- |

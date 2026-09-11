@@ -1,15 +1,19 @@
 # ArkUI_NodeAttributeType（滚动容器类组件相关属性）
 
-更新时间：2026-07-28 11:23:46（官网已下线）
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-node-h-nodeattributetype-scrollablecontainer
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_NodeAttributeType
 ```
   
 
-#### 概述
+## 概述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义ArkUI在Native侧可以设置的滚动容器类组件相关属性样式集合，包含Scroll、List、ListItem、ListItemGroup、Refresh、WaterFlow、Grid、GridItem、ArcList、ArcListItem、ArcScrollBar等组件属性设置。
  
@@ -21,7 +25,10 @@ enum ArkUI_NodeAttributeType
  
   
 
-#### NODE_SCROLL_BAR_DISPLAY_MODE
+## NODE_SCROLL_BAR_DISPLAY_MODE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SCROLL_BAR_DISPLAY_MODE = MAX_NODE_SCOPE_NUM * ARKUI_NODE_SCROLL = 1002000
@@ -35,6 +42,7 @@ NODE_SCROLL_BAR_DISPLAY_MODE = MAX_NODE_SCOPE_NUM * ARKUI_NODE_SCROLL = 1002000
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 滚动条状态，数据类型ArkUI_ScrollBarDisplayMode，List、Grid、Scroll组件默认值为ARKUI_SCROLL_BAR_DISPLAY_MODE_AUTO，WaterFlow组件默认值为ARKUI_SCROLL_BAR_DISPLAY_MODE_OFF。 |
@@ -42,6 +50,7 @@ NODE_SCROLL_BAR_DISPLAY_MODE = MAX_NODE_SCOPE_NUM * ARKUI_NODE_SCROLL = 1002000
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 滚动条状态，数据类型ArkUI_ScrollBarDisplayMode。 |
@@ -49,7 +58,10 @@ NODE_SCROLL_BAR_DISPLAY_MODE = MAX_NODE_SCOPE_NUM * ARKUI_NODE_SCROLL = 1002000
  
   
 
-#### NODE_SCROLL_BAR_WIDTH
+## NODE_SCROLL_BAR_WIDTH
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SCROLL_BAR_WIDTH = 1002001
@@ -63,6 +75,7 @@ NODE_SCROLL_BAR_WIDTH = 1002001
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 滚动条宽度，单位vp，默认值4。 取值范围：[0, +∞)。设置为小于0的值时，按默认值处理，儿童智能表则恢复至默认值5vp。设置为0时，不显示滚动条。 |
@@ -70,6 +83,7 @@ NODE_SCROLL_BAR_WIDTH = 1002001
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 滚动条宽度，单位vp。 |
@@ -77,7 +91,10 @@ NODE_SCROLL_BAR_WIDTH = 1002001
  
   
 
-#### NODE_SCROLL_BAR_COLOR
+## NODE_SCROLL_BAR_COLOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SCROLL_BAR_COLOR = 1002002
@@ -91,6 +108,7 @@ NODE_SCROLL_BAR_COLOR = 1002002
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .data[0].u32 | 滚动条颜色，0xargb类型。儿童智能表的默认值颜色：0xffffffff，表示白色（100%不透明度）。其他设备默认值：0x66182431，表示深蓝灰色（40%不透明度）。 |
@@ -98,6 +116,7 @@ NODE_SCROLL_BAR_COLOR = 1002002
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .data[0].u32 | 滚动条颜色，0xargb类型。 |
@@ -105,7 +124,10 @@ NODE_SCROLL_BAR_COLOR = 1002002
  
   
 
-#### NODE_SCROLL_SCROLL_DIRECTION
+## NODE_SCROLL_SCROLL_DIRECTION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SCROLL_SCROLL_DIRECTION = 1002003
@@ -119,6 +141,7 @@ NODE_SCROLL_SCROLL_DIRECTION = 1002003
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 滚动方向，数据类型ArkUI_ScrollDirection，默认值ARKUI_SCROLL_DIRECTION_VERTICAL。 |
@@ -126,6 +149,7 @@ NODE_SCROLL_SCROLL_DIRECTION = 1002003
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 滚动方向，数据类型ArkUI_ScrollDirection。 |
@@ -133,7 +157,10 @@ NODE_SCROLL_SCROLL_DIRECTION = 1002003
  
   
 
-#### NODE_SCROLL_EDGE_EFFECT
+## NODE_SCROLL_EDGE_EFFECT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SCROLL_EDGE_EFFECT = 1002004
@@ -147,25 +174,30 @@ NODE_SCROLL_EDGE_EFFECT = 1002004
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 边缘滑动效果，参数类型ArkUI_EdgeEffect，Grid、Scroll、WaterFlow组件默认值为ARKUI_EDGE_EFFECT_NONE，List组件默认值为ARKUI_EDGE_EFFECT_SPRING。 |
 | .value[1]?.i32 | 可选值，组件内容大小小于组件自身时，设置是否开启滑动效果，开启为1，关闭为0，List、Grid、WaterFlow组件默认值为0，Scroll组件默认值为1。 |
-| .value[2]?.i32 | 边缘效果生效的方向，参数类型ArkUI_EffectEdge，默认值ARKUI_EFFECT_EDGE_START \| ARKUI_EFFECT_EDGE_END。 该参数从API version 18开始支持。 |
+| .value[2]?.i32 | 边缘效果生效的方向，参数类型ArkUI_EffectEdge，默认值ARKUI_EFFECT_EDGE_START \| ARKUI_EFFECT_EDGE_END。 该参数从API version 16开始支持。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 边缘滑动效果，参数类型ArkUI_EdgeEffect。 |
 | .value[1].i32 | 组件内容大小小于组件自身时，设置是否开启滑动效果，开启为1，关闭为0。 |
-| .value[2].i32 | 边缘效果生效的方向，参数类型ArkUI_EffectEdge。该参数从API version 18开始支持。 |
+| .value[2].i32 | 边缘效果生效的方向，参数类型ArkUI_EffectEdge。该参数从API version 16开始支持。 |
  
  
   
 
-#### NODE_SCROLL_ENABLE_SCROLL_INTERACTION
+## NODE_SCROLL_ENABLE_SCROLL_INTERACTION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SCROLL_ENABLE_SCROLL_INTERACTION = 1002005
@@ -181,6 +213,7 @@ List/Scroll/WaterFlow从API version 12开始支持，Grid从API version 22开始
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否支持滚动手势，默认值1。1：支持滚动手势，0：不支持滚动手势。 |
@@ -188,6 +221,7 @@ List/Scroll/WaterFlow从API version 12开始支持，Grid从API version 22开始
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否支持滚动手势。1：支持滚动手势，0：不支持滚动手势。 |
@@ -195,7 +229,10 @@ List/Scroll/WaterFlow从API version 12开始支持，Grid从API version 22开始
  
   
 
-#### NODE_SCROLL_FRICTION
+## NODE_SCROLL_FRICTION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SCROLL_FRICTION = 1002006
@@ -211,6 +248,7 @@ List/Scroll/WaterFlow从API version 12开始支持，Grid从API version 22开始
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 摩擦系数，默认值：非可穿戴设备为0.6，可穿戴设备为0.9。取值范围：(0, +∞)，设置为小于等于0的值时，按默认值处理。 |
@@ -218,6 +256,7 @@ List/Scroll/WaterFlow从API version 12开始支持，Grid从API version 22开始
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 摩擦系数。 |
@@ -225,7 +264,10 @@ List/Scroll/WaterFlow从API version 12开始支持，Grid从API version 22开始
  
   
 
-#### NODE_SCROLL_SNAP
+## NODE_SCROLL_SNAP
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SCROLL_SNAP = 1002007
@@ -239,6 +281,7 @@ NODE_SCROLL_SNAP = 1002007
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | Scroll组件限位滚动时的对齐方式，数据类型ArkUI_ScrollSnapAlign，默认值ARKUI_SCROLL_SNAP_ALIGN_NONE。 |
@@ -249,6 +292,7 @@ NODE_SCROLL_SNAP = 1002007
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | Scroll组件限位滚动时的对齐方式，数据类型ArkUI_ScrollSnapAlign。 |
@@ -259,7 +303,10 @@ NODE_SCROLL_SNAP = 1002007
  
   
 
-#### NODE_SCROLL_NESTED_SCROLL
+## NODE_SCROLL_NESTED_SCROLL
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SCROLL_NESTED_SCROLL = 1002008
@@ -273,6 +320,7 @@ NODE_SCROLL_NESTED_SCROLL = 1002008
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 可滚动组件往末尾端滚动时的嵌套滚动，参数类型ArkUI_ScrollNestedMode。 |
@@ -281,6 +329,7 @@ NODE_SCROLL_NESTED_SCROLL = 1002008
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 可滚动组件往末尾端滚动时的嵌套滚动，参数类型ArkUI_ScrollNestedMode。 |
@@ -289,7 +338,10 @@ NODE_SCROLL_NESTED_SCROLL = 1002008
  
   
 
-#### NODE_SCROLL_OFFSET
+## NODE_SCROLL_OFFSET
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SCROLL_OFFSET = 1002009
@@ -303,6 +355,7 @@ NODE_SCROLL_OFFSET = 1002009
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 水平滑动偏移，单位为vp。取值范围：[0, +∞)，设置为小于0的值时按0处理。值为0时滚动到起始位置，值大于0时滚动到指定偏移位置。 |
@@ -316,6 +369,7 @@ NODE_SCROLL_OFFSET = 1002009
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 水平滑动偏移，单位为vp。 |
@@ -324,7 +378,10 @@ NODE_SCROLL_OFFSET = 1002009
  
   
 
-#### NODE_SCROLL_EDGE
+## NODE_SCROLL_EDGE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SCROLL_EDGE = 1002010
@@ -338,6 +395,7 @@ NODE_SCROLL_EDGE = 1002010
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 容器边缘位置，参数类型ArkUI_ScrollEdge。 |
@@ -345,6 +403,7 @@ NODE_SCROLL_EDGE = 1002010
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 容器是否位于边缘。-1表示未处于边缘；处于边缘状态时，返回值为ArkUI_ScrollEdge枚举值，表示具体边缘位置。 |
@@ -352,7 +411,10 @@ NODE_SCROLL_EDGE = 1002010
  
   
 
-#### NODE_SCROLL_ENABLE_PAGING
+## NODE_SCROLL_ENABLE_PAGING
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SCROLL_ENABLE_PAGING = 1002011
@@ -366,6 +428,7 @@ NODE_SCROLL_ENABLE_PAGING = 1002011
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否支持滑动翻页，默认值0。0：不支持滑动翻页，1：支持滑动翻页。 |
@@ -373,6 +436,7 @@ NODE_SCROLL_ENABLE_PAGING = 1002011
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否支持滑动翻页。0：不支持滑动翻页，1：支持滑动翻页。 |
@@ -380,7 +444,10 @@ NODE_SCROLL_ENABLE_PAGING = 1002011
  
   
 
-#### NODE_SCROLL_PAGE
+## NODE_SCROLL_PAGE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SCROLL_PAGE = 1002012
@@ -394,6 +461,7 @@ NODE_SCROLL_PAGE = 1002012
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 翻页方向。0表示向下翻页，1表示向上翻页。 |
@@ -402,7 +470,10 @@ NODE_SCROLL_PAGE = 1002012
  
   
 
-#### NODE_SCROLL_BY
+## NODE_SCROLL_BY
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SCROLL_BY = 1002013
@@ -416,6 +487,7 @@ NODE_SCROLL_BY = 1002013
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 水平方向滚动距离，单位：vp。 |
@@ -424,7 +496,10 @@ NODE_SCROLL_BY = 1002013
  
   
 
-#### NODE_SCROLL_FLING
+## NODE_SCROLL_FLING
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SCROLL_FLING = 1002014
@@ -438,6 +513,7 @@ NODE_SCROLL_FLING = 1002014
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 惯性滚动的初始速度，单位：vp/s。值设置为0，视为异常值，本次滚动不生效。如果值为正数，则向下滚动；如果值为负数，则向上滚动。 |
@@ -445,7 +521,10 @@ NODE_SCROLL_FLING = 1002014
  
   
 
-#### NODE_SCROLL_FADING_EDGE
+## NODE_SCROLL_FADING_EDGE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SCROLL_FADING_EDGE = 1002015
@@ -459,6 +538,7 @@ NODE_SCROLL_FADING_EDGE = 1002015
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否使能边缘渐隐效果。0表示关闭边缘效果，1表示开启边缘效果，默认值0。 |
@@ -467,6 +547,7 @@ NODE_SCROLL_FADING_EDGE = 1002015
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否使能边缘渐隐效果。0表示关闭边缘效果，1表示开启边缘效果。 |
@@ -475,7 +556,10 @@ NODE_SCROLL_FADING_EDGE = 1002015
  
   
 
-#### NODE_SCROLL_SIZE
+## NODE_SCROLL_SIZE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SCROLL_SIZE = 1002016
@@ -489,6 +573,7 @@ NODE_SCROLL_SIZE = 1002016
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 滚动类组件所有子组件全展开的宽度，默认单位为vp。 |
@@ -497,7 +582,10 @@ NODE_SCROLL_SIZE = 1002016
  
   
 
-#### NODE_SCROLL_CONTENT_START_OFFSET
+## NODE_SCROLL_CONTENT_START_OFFSET
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SCROLL_CONTENT_START_OFFSET = 1002017
@@ -511,13 +599,15 @@ NODE_SCROLL_CONTENT_START_OFFSET = 1002017
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].f32 | 内容起始端偏移量，单位vp。 |
+| .value[0].f32 | 内容起始端偏移量，单位vp。默认值：0。取值范围：[0, +∞)。设置为负数时，按0处理。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 内容起始端偏移量，单位vp。 |
@@ -525,7 +615,10 @@ NODE_SCROLL_CONTENT_START_OFFSET = 1002017
  
   
 
-#### NODE_SCROLL_CONTENT_END_OFFSET
+## NODE_SCROLL_CONTENT_END_OFFSET
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SCROLL_CONTENT_END_OFFSET = 1002018
@@ -539,13 +632,15 @@ NODE_SCROLL_CONTENT_END_OFFSET = 1002018
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].f32 | 内容末尾端偏移量，单位vp。 |
+| .value[0].f32 | 内容末尾端偏移量，单位vp。默认值：0。取值范围：[0, +∞)。设置为负数时，按0处理。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 内容末尾端偏移量，单位vp。 |
@@ -553,7 +648,10 @@ NODE_SCROLL_CONTENT_END_OFFSET = 1002018
  
   
 
-#### NODE_SCROLL_FLING_SPEED_LIMIT
+## NODE_SCROLL_FLING_SPEED_LIMIT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SCROLL_FLING_SPEED_LIMIT = 1002019
@@ -567,13 +665,15 @@ NODE_SCROLL_FLING_SPEED_LIMIT = 1002019
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].f32 | Fling动效开始时的最大初始速度，单位：vp/s。 |
+| .value[0].f32 | Fling动效开始时的最大初始速度，单位：vp/s。非Wearable设备默认值为9000，Wearable设备默认值为5000。取值范围：(0, +∞)。设置为小于等于0的值时，按默认值处理。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | Fling动效开始时的最大初始速度，单位：vp/s。 |
@@ -581,7 +681,10 @@ NODE_SCROLL_FLING_SPEED_LIMIT = 1002019
  
   
 
-#### NODE_SCROLL_CLIP_CONTENT
+## NODE_SCROLL_CLIP_CONTENT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SCROLL_CLIP_CONTENT = 1002020
@@ -595,6 +698,7 @@ NODE_SCROLL_CLIP_CONTENT = 1002020
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 内容裁剪模式，参数类型ArkUI_ContentClipMode。Grid、Scroll组件默认值为ARKUI_CONTENT_CLIP_MODE_BOUNDARY，List、WaterFlow组件默认值为ARKUI_CONTENT_CLIP_MODE_CONTENT_ONLY。 |
@@ -602,6 +706,7 @@ NODE_SCROLL_CLIP_CONTENT = 1002020
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 内容裁剪模式，参数类型ArkUI_ContentClipMode。 |
@@ -609,7 +714,10 @@ NODE_SCROLL_CLIP_CONTENT = 1002020
  
   
 
-#### NODE_SCROLL_BACK_TO_TOP
+## NODE_SCROLL_BACK_TO_TOP
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SCROLL_BACK_TO_TOP = 1002021
@@ -623,6 +731,7 @@ NODE_SCROLL_BACK_TO_TOP = 1002021
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否回到顶部，1表示回到顶部，0表示保持当前位置不变，默认值：API version 18之前：0。API version 18及以后：滚动方向是水平方向时为0，是垂直方向时为1。 |
@@ -630,6 +739,7 @@ NODE_SCROLL_BACK_TO_TOP = 1002021
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否回到顶部。1表示回到顶部，0表示保持当前位置不变。 |
@@ -637,7 +747,10 @@ NODE_SCROLL_BACK_TO_TOP = 1002021
  
   
 
-#### NODE_SCROLL_BAR_MARGIN
+## NODE_SCROLL_BAR_MARGIN
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SCROLL_BAR_MARGIN = 1002022
@@ -651,6 +764,7 @@ NODE_SCROLL_BAR_MARGIN = 1002022
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 设置滚动条起始边距，儿童智能表默认值为42，其他设备默认值为0，单位：vp。 |
@@ -659,6 +773,7 @@ NODE_SCROLL_BAR_MARGIN = 1002022
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 滚动条起始边距，单位：vp。 |
@@ -667,7 +782,10 @@ NODE_SCROLL_BAR_MARGIN = 1002022
  
   
 
-#### NODE_SCROLL_MAX_ZOOM_SCALE
+## NODE_SCROLL_MAX_ZOOM_SCALE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SCROLL_MAX_ZOOM_SCALE = 1002023
@@ -681,6 +799,7 @@ NODE_SCROLL_MAX_ZOOM_SCALE = 1002023
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 设置内容最大缩放比例。默认值：1 取值范围：(0, +∞)，小于或等于0时按默认值1处理。 |
@@ -688,6 +807,7 @@ NODE_SCROLL_MAX_ZOOM_SCALE = 1002023
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 获取内容最大缩放比例。 |
@@ -695,7 +815,10 @@ NODE_SCROLL_MAX_ZOOM_SCALE = 1002023
  
   
 
-#### NODE_SCROLL_MIN_ZOOM_SCALE
+## NODE_SCROLL_MIN_ZOOM_SCALE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SCROLL_MIN_ZOOM_SCALE = 1002024
@@ -709,6 +832,7 @@ NODE_SCROLL_MIN_ZOOM_SCALE = 1002024
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 设置内容最小缩放比例，默认值：1 取值范围：(0, NODE_SCROLL_MAX_ZOOM_SCALE]，小于或等于0时按默认值1处理，大于NODE_SCROLL_MAX_ZOOM_SCALE时按NODE_SCROLL_MAX_ZOOM_SCALE处理。 |
@@ -716,6 +840,7 @@ NODE_SCROLL_MIN_ZOOM_SCALE = 1002024
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 获取内容最小缩放比例。 |
@@ -723,7 +848,10 @@ NODE_SCROLL_MIN_ZOOM_SCALE = 1002024
  
   
 
-#### NODE_SCROLL_ZOOM_SCALE
+## NODE_SCROLL_ZOOM_SCALE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SCROLL_ZOOM_SCALE = 1002025
@@ -737,6 +865,7 @@ NODE_SCROLL_ZOOM_SCALE = 1002025
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 设置内容缩放比例，默认值：1 取值范围：(0, +∞)，小于或等于0时按默认值1处理。 |
@@ -744,6 +873,7 @@ NODE_SCROLL_ZOOM_SCALE = 1002025
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 获取内容缩放比例。 |
@@ -751,7 +881,10 @@ NODE_SCROLL_ZOOM_SCALE = 1002025
  
   
 
-#### NODE_SCROLL_ENABLE_BOUNCES_ZOOM
+## NODE_SCROLL_ENABLE_BOUNCES_ZOOM
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SCROLL_ENABLE_BOUNCES_ZOOM = 1002026
@@ -765,6 +898,7 @@ NODE_SCROLL_ENABLE_BOUNCES_ZOOM = 1002026
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否支持过缩放回弹效果，0：不支持，1：支持。默认值：1。 |
@@ -772,6 +906,7 @@ NODE_SCROLL_ENABLE_BOUNCES_ZOOM = 1002026
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否支持过缩放回弹效果，0：不支持，1：支持。 |
@@ -779,7 +914,10 @@ NODE_SCROLL_ENABLE_BOUNCES_ZOOM = 1002026
  
   
 
-#### NODE_SCROLL_ENABLE_SCROLL_WITH_MOUSE
+## NODE_SCROLL_ENABLE_SCROLL_WITH_MOUSE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SCROLL_ENABLE_SCROLL_WITH_MOUSE = 1002027
@@ -793,6 +931,7 @@ NODE_SCROLL_ENABLE_SCROLL_WITH_MOUSE = 1002027
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否支持鼠标左键按下拖动滚动，0：不支持鼠标左键按下拖动滚动，1：支持鼠标左键按下拖动滚动。默认值：0。 |
@@ -800,6 +939,7 @@ NODE_SCROLL_ENABLE_SCROLL_WITH_MOUSE = 1002027
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否支持鼠标左键按下拖动滚动，0：不支持鼠标左键按下拖动滚动，1：支持鼠标左键按下拖动滚动。 |
@@ -807,7 +947,10 @@ NODE_SCROLL_ENABLE_SCROLL_WITH_MOUSE = 1002027
  
   
 
-#### NODE_SCROLL_AUTO_ADJUST_MARGIN
+## NODE_SCROLL_AUTO_ADJUST_MARGIN
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SCROLL_AUTO_ADJUST_MARGIN = 1002028
@@ -821,6 +964,7 @@ NODE_SCROLL_AUTO_ADJUST_MARGIN = 1002028
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否自动调整边距，0：自动调整边距，1：不自动调整边距。默认值：0。 |
@@ -828,6 +972,7 @@ NODE_SCROLL_AUTO_ADJUST_MARGIN = 1002028
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否自动调整边距，0：自动调整边距，1：不自动调整边距。 |
@@ -835,7 +980,10 @@ NODE_SCROLL_AUTO_ADJUST_MARGIN = 1002028
  
   
 
-#### NODE_SCROLL_BAR_HEIGHT
+## NODE_SCROLL_BAR_HEIGHT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_SCROLL_BAR_HEIGHT = 1002029
@@ -849,6 +997,7 @@ NODE_SCROLL_BAR_HEIGHT = 1002029
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 滚动条滑轨高度，单位：vp。默认值：自适应滚动组件高度。 取值范围：[0, +∞)。设置为小于0时使用默认值，儿童智能表则恢复至默认值37vp。设置为0时不显示滚动条。 |
@@ -856,6 +1005,7 @@ NODE_SCROLL_BAR_HEIGHT = 1002029
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 滚动条滑轨高度，单位：vp。 |
@@ -863,7 +1013,10 @@ NODE_SCROLL_BAR_HEIGHT = 1002029
  
   
 
-#### NODE_LIST_DIRECTION
+## NODE_LIST_DIRECTION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_LIST_DIRECTION = MAX_NODE_SCOPE_NUM * ARKUI_NODE_LIST = 1003000
@@ -877,6 +1030,7 @@ NODE_LIST_DIRECTION = MAX_NODE_SCOPE_NUM * ARKUI_NODE_LIST = 1003000
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | List组件排列方向，数据类型ArkUI_Axis，默认值ARKUI_AXIS_VERTICAL。 |
@@ -884,6 +1038,7 @@ NODE_LIST_DIRECTION = MAX_NODE_SCOPE_NUM * ARKUI_NODE_LIST = 1003000
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | List组件排列方向，数据类型ArkUI_Axis。 |
@@ -891,7 +1046,10 @@ NODE_LIST_DIRECTION = MAX_NODE_SCOPE_NUM * ARKUI_NODE_LIST = 1003000
  
   
 
-#### NODE_LIST_STICKY
+## NODE_LIST_STICKY
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_LIST_STICKY = 1003001
@@ -905,6 +1063,7 @@ NODE_LIST_STICKY = 1003001
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 配合ListItemGroup组件使用，设置ListItemGroup中header和footer是否要吸顶或吸底。数据类型ArkUI_StickyStyle，默认值ARKUI_STICKY_STYLE_NONE。 |
@@ -912,6 +1071,7 @@ NODE_LIST_STICKY = 1003001
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 配合ListItemGroup组件使用，设置ListItemGroup中header和footer是否要吸顶或吸底。数据类型ArkUI_StickyStyle。 |
@@ -919,7 +1079,10 @@ NODE_LIST_STICKY = 1003001
  
   
 
-#### NODE_LIST_SPACE
+## NODE_LIST_SPACE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_LIST_SPACE = 1003002
@@ -933,6 +1096,7 @@ NODE_LIST_SPACE = 1003002
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 子组件主轴方向的间隔，单位vp，默认值0。 |
@@ -940,6 +1104,7 @@ NODE_LIST_SPACE = 1003002
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 子组件主轴方向的间隔。 |
@@ -947,7 +1112,10 @@ NODE_LIST_SPACE = 1003002
  
   
 
-#### NODE_LIST_NODE_ADAPTER
+## NODE_LIST_NODE_ADAPTER
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_LIST_NODE_ADAPTER = 1003003
@@ -961,6 +1129,7 @@ List组件适配器，支持属性设置，属性重置和属性获取接口。
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 使用ArkUI_NodeAdapter对象作为适配器。 |
@@ -968,6 +1137,7 @@ List组件适配器，支持属性设置，属性重置和属性获取接口。
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .object | 返回值格式为ArkUI_NodeAdapter。 |
@@ -975,7 +1145,10 @@ List组件适配器，支持属性设置，属性重置和属性获取接口。
  
   
 
-#### NODE_LIST_CACHED_COUNT
+## NODE_LIST_CACHED_COUNT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_LIST_CACHED_COUNT = 1003004
@@ -989,6 +1162,7 @@ List组件Adapter缓存数量，支持属性设置，属性重置和属性获取
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 配合List组件Adapter使用，设置adapter中的缓存数量。 |
@@ -998,6 +1172,7 @@ List组件Adapter缓存数量，支持属性设置，属性重置和属性获取
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | adapter中的缓存数量。 |
@@ -1007,7 +1182,10 @@ List组件Adapter缓存数量，支持属性设置，属性重置和属性获取
  
   
 
-#### NODE_LIST_SCROLL_TO_INDEX
+## NODE_LIST_SCROLL_TO_INDEX
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_LIST_SCROLL_TO_INDEX = 1003005
@@ -1021,6 +1199,7 @@ NODE_LIST_SCROLL_TO_INDEX = 1003005
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 要滑动到的目标元素在当前容器中的索引值。传入-1时，指滑动到当前容器的最后一个元素。 |
@@ -1031,7 +1210,10 @@ NODE_LIST_SCROLL_TO_INDEX = 1003005
  
   
 
-#### NODE_LIST_ALIGN_LIST_ITEM
+## NODE_LIST_ALIGN_LIST_ITEM
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_LIST_ALIGN_LIST_ITEM = 1003006
@@ -1045,6 +1227,7 @@ NODE_LIST_ALIGN_LIST_ITEM = 1003006
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 交叉轴方向的布局方式。参数类型ArkUI_ListItemAlign。默认值：ARKUI_LIST_ITEM_ALIGNMENT_START。 |
@@ -1052,6 +1235,7 @@ NODE_LIST_ALIGN_LIST_ITEM = 1003006
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 交叉轴方向的布局方式。参数类型ArkUI_ListItemAlign。 |
@@ -1059,7 +1243,10 @@ NODE_LIST_ALIGN_LIST_ITEM = 1003006
  
   
 
-#### NODE_LIST_CHILDREN_MAIN_SIZE
+## NODE_LIST_CHILDREN_MAIN_SIZE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_LIST_CHILDREN_MAIN_SIZE = 1003007
@@ -1073,6 +1260,7 @@ NODE_LIST_CHILDREN_MAIN_SIZE = 1003007
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 参数格式为ArkUI_ListChildrenMainSize。 |
@@ -1080,6 +1268,7 @@ NODE_LIST_CHILDREN_MAIN_SIZE = 1003007
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .object | 参数格式为ArkUI_ListChildrenMainSize。 |
@@ -1087,7 +1276,10 @@ NODE_LIST_CHILDREN_MAIN_SIZE = 1003007
  
   
 
-#### NODE_LIST_INITIAL_INDEX
+## NODE_LIST_INITIAL_INDEX
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_LIST_INITIAL_INDEX = 1003008
@@ -1101,6 +1293,7 @@ NODE_LIST_INITIAL_INDEX = 1003008
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 当前List初次加载时视口起始位置显示的item的索引值。默认值：0。 |
@@ -1108,6 +1301,7 @@ NODE_LIST_INITIAL_INDEX = 1003008
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 当前List初次加载时视口起始位置显示的item的索引值。 |
@@ -1115,7 +1309,10 @@ NODE_LIST_INITIAL_INDEX = 1003008
  
   
 
-#### NODE_LIST_DIVIDER
+## NODE_LIST_DIVIDER
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_LIST_DIVIDER = 1003009
@@ -1129,6 +1326,7 @@ NODE_LIST_DIVIDER = 1003009
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].u32 | 分割线颜色，0xargb类型，默认值为0x08000000。 |
@@ -1139,6 +1337,7 @@ NODE_LIST_DIVIDER = 1003009
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].u32 | 分割线颜色，0xargb类型。 |
@@ -1149,7 +1348,10 @@ NODE_LIST_DIVIDER = 1003009
  
   
 
-#### NODE_LIST_SCROLL_TO_INDEX_IN_GROUP
+## NODE_LIST_SCROLL_TO_INDEX_IN_GROUP
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_LIST_SCROLL_TO_INDEX_IN_GROUP = 1003010
@@ -1163,6 +1365,7 @@ NODE_LIST_SCROLL_TO_INDEX_IN_GROUP = 1003010
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 要滑动到的目标ListItemGroup在当前List中的索引值。 |
@@ -1173,7 +1376,10 @@ NODE_LIST_SCROLL_TO_INDEX_IN_GROUP = 1003010
  
   
 
-#### NODE_LIST_LANES
+## NODE_LIST_LANES
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_LIST_LANES = 1003011
@@ -1187,6 +1393,7 @@ NODE_LIST_LANES = 1003011
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].u32 | List布局列数或行数，List垂直滚动时表示列数，水平滚动时表示行数；如果同时设置了最小、最大列宽或行高，则设置列数或行数不生效；默认值：1，取值范围：[1, +∞)，设置异常值时使用默认值。 |
@@ -1197,6 +1404,7 @@ NODE_LIST_LANES = 1003011
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].u32 | 当前List布局列数或行数，List垂直滚动时表示列数，水平滚动时表示行数。 |
@@ -1207,7 +1415,10 @@ NODE_LIST_LANES = 1003011
  
   
 
-#### NODE_LIST_SCROLL_SNAP_ALIGN
+## NODE_LIST_SCROLL_SNAP_ALIGN
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_LIST_SCROLL_SNAP_ALIGN = 1003012
@@ -1221,6 +1432,7 @@ NODE_LIST_SCROLL_SNAP_ALIGN = 1003012
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | List组件限位滚动时的对齐方式，数据类型ArkUI_ScrollSnapAlign，默认值ARKUI_SCROLL_SNAP_ALIGN_NONE。 |
@@ -1228,6 +1440,7 @@ NODE_LIST_SCROLL_SNAP_ALIGN = 1003012
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | List组件限位滚动时的对齐方式，数据类型ArkUI_ScrollSnapAlign。 |
@@ -1235,7 +1448,10 @@ NODE_LIST_SCROLL_SNAP_ALIGN = 1003012
  
   
 
-#### NODE_LIST_MAINTAIN_VISIBLE_CONTENT_POSITION
+## NODE_LIST_MAINTAIN_VISIBLE_CONTENT_POSITION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_LIST_MAINTAIN_VISIBLE_CONTENT_POSITION = 1003013
@@ -1249,6 +1465,7 @@ NODE_LIST_MAINTAIN_VISIBLE_CONTENT_POSITION = 1003013
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | List显示区域外插入或删除数据是否保持可见内容位置不变。0表示不保持可见内容位置，1表示保持可见内容位置，默认值为0。 |
@@ -1256,6 +1473,7 @@ NODE_LIST_MAINTAIN_VISIBLE_CONTENT_POSITION = 1003013
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | List显示区域外插入或删除数据是否保持可见内容位置不变。0表示不保持可见内容位置，1表示保持可见内容位置，默认值为0。 |
@@ -1263,7 +1481,10 @@ NODE_LIST_MAINTAIN_VISIBLE_CONTENT_POSITION = 1003013
  
   
 
-#### NODE_LIST_STACK_FROM_END
+## NODE_LIST_STACK_FROM_END
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_LIST_STACK_FROM_END = 1003014
@@ -1277,6 +1498,7 @@ NODE_LIST_STACK_FROM_END = 1003014
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 设置List是否从末尾开始布局。0表示从顶部开始布局，1表示从末尾开始布局，默认值为0。 |
@@ -1284,6 +1506,7 @@ NODE_LIST_STACK_FROM_END = 1003014
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 设置List是否从末尾开始布局。0表示从顶部开始布局，1表示从末尾开始布局，默认值为0。 |
@@ -1291,7 +1514,10 @@ NODE_LIST_STACK_FROM_END = 1003014
  
   
 
-#### NODE_LIST_FOCUS_WRAP_MODE
+## NODE_LIST_FOCUS_WRAP_MODE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_LIST_FOCUS_WRAP_MODE = 1003015
@@ -1305,6 +1531,7 @@ List组件走焦换行模式，支持属性设置，属性重置和属性获取�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | List组件走焦换行模式，参数取值为ArkUI_FocusWrapMode下的枚举，默认值为ARKUI_FOCUS_WRAP_MODE_DEFAULT。 |
@@ -1312,6 +1539,7 @@ List组件走焦换行模式，支持属性设置，属性重置和属性获取�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | List组件走焦换行模式，参数类型ArkUI_FocusWrapMode。 |
@@ -1319,7 +1547,10 @@ List组件走焦换行模式，支持属性设置，属性重置和属性获取�
  
   
 
-#### NODE_LIST_SYNC_LOAD
+## NODE_LIST_SYNC_LOAD
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_LIST_SYNC_LOAD = 1003016
@@ -1333,6 +1564,7 @@ List组件是否同步加载子节点，支持属性设置，属性重置和属�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | List组件是否同步加载子节点。0：分帧加载，1：同步加载，默认值为1。 |
@@ -1340,6 +1572,7 @@ List组件是否同步加载子节点，支持属性设置，属性重置和属�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | List组件是否同步加载子节点。0：分帧加载，1：同步加载。 |
@@ -1347,7 +1580,10 @@ List组件是否同步加载子节点，支持属性设置，属性重置和属�
  
   
 
-#### NODE_LIST_SCROLL_SNAP_ANIMATION_SPEED
+## NODE_LIST_SCROLL_SNAP_ANIMATION_SPEED
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_LIST_SCROLL_SNAP_ANIMATION_SPEED = 1003017
@@ -1361,6 +1597,7 @@ List组件限位滚动动画速度，支持属性设置，属性重置和属性�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | List组件限位滚动动画速度，数据类型ArkUI_ScrollSnapAnimationSpeed。默认值：ARKUI_SCROLL_SNAP_ANIMATION_NORMAL。 |
@@ -1368,6 +1605,7 @@ List组件限位滚动动画速度，支持属性设置，属性重置和属性�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | List组件限位滚动动画速度，数据类型ArkUI_ScrollSnapAnimationSpeed。 |
@@ -1375,7 +1613,10 @@ List组件限位滚动动画速度，支持属性设置，属性重置和属性�
  
   
 
-#### NODE_LIST_LANES_ITEMFILLPOLICY
+## NODE_LIST_LANES_ITEMFILLPOLICY
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_LIST_LANES_ITEMFILLPOLICY = 1003018
@@ -1389,6 +1630,7 @@ List组件的响应式列数布局策略，支持属性设置，属性重置和�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 在不同断点规格下的列数，数据类型ArkUI_ItemFillPolicy。 |
@@ -1397,6 +1639,7 @@ List组件的响应式列数布局策略，支持属性设置，属性重置和�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 在不同断点规格下的列数，数据类型ArkUI_ItemFillPolicy。 |
@@ -1405,7 +1648,10 @@ List组件的响应式列数布局策略，支持属性设置，属性重置和�
  
   
 
-#### NODE_LIST_SUPPORT_EMPTY_BRANCH_IN_LAZY_LOADING
+## NODE_LIST_SUPPORT_EMPTY_BRANCH_IN_LAZY_LOADING
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_LIST_SUPPORT_EMPTY_BRANCH_IN_LAZY_LOADING = 1003019
@@ -1419,6 +1665,7 @@ NODE_LIST_SUPPORT_EMPTY_BRANCH_IN_LAZY_LOADING = 1003019
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | List组件是否支持空分支。0：不支持，1：支持。默认值：0。 |
@@ -1426,6 +1673,7 @@ NODE_LIST_SUPPORT_EMPTY_BRANCH_IN_LAZY_LOADING = 1003019
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | List组件是否支持空分支。0：不支持，1：支持。 |
@@ -1433,7 +1681,10 @@ NODE_LIST_SUPPORT_EMPTY_BRANCH_IN_LAZY_LOADING = 1003019
  
   
 
-#### NODE_LIST_BACK_PRESS_BEHAVIOR
+## NODE_LIST_BACK_PRESS_BEHAVIOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_LIST_BACK_PRESS_BEHAVIOR = 1003020
@@ -1447,6 +1698,7 @@ NODE_LIST_BACK_PRESS_BEHAVIOR = 1003020
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 系统返回键生效时是否收起ListItem的划出组件。0：不收起，1：收起。默认值：1 |
@@ -1454,6 +1706,7 @@ NODE_LIST_BACK_PRESS_BEHAVIOR = 1003020
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 系统返回键生效时是否收起ListItem的划出组件。0：不收起，1：收起。 |
@@ -1461,7 +1714,10 @@ NODE_LIST_BACK_PRESS_BEHAVIOR = 1003020
  
   
 
-#### NODE_LIST_ENABLE_EDIT_MODE
+## NODE_LIST_ENABLE_EDIT_MODE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_LIST_ENABLE_EDIT_MODE = 1003021
@@ -1475,6 +1731,7 @@ NODE_LIST_ENABLE_EDIT_MODE = 1003021
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | List组件是否启用编辑模式。0：不启用，1：启用。默认值：0。 |
@@ -1482,6 +1739,7 @@ NODE_LIST_ENABLE_EDIT_MODE = 1003021
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | List组件是否启用编辑模式。0：未启用，1：已启用。 |
@@ -1489,7 +1747,10 @@ NODE_LIST_ENABLE_EDIT_MODE = 1003021
  
   
 
-#### NODE_LIST_EDIT_MODE_OPTIONS
+## NODE_LIST_EDIT_MODE_OPTIONS
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_LIST_EDIT_MODE_OPTIONS = 1003022
@@ -1503,6 +1764,7 @@ NODE_LIST_EDIT_MODE_OPTIONS = 1003022
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | List组件是否使用默认多选样式。0：不使用，1：使用。默认值：1。 |
@@ -1511,6 +1773,7 @@ NODE_LIST_EDIT_MODE_OPTIONS = 1003022
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | List组件是否使用默认多选样式。0：不使用，1：使用。 |
@@ -1519,7 +1782,10 @@ NODE_LIST_EDIT_MODE_OPTIONS = 1003022
  
   
 
-#### NODE_LIST_ITEM_SWIPE_ACTION
+## NODE_LIST_ITEM_SWIPE_ACTION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_LIST_ITEM_SWIPE_ACTION = MAX_NODE_SCOPE_NUM * ARKUI_NODE_LIST_ITEM = 1004000
@@ -1533,6 +1799,7 @@ NODE_LIST_ITEM_SWIPE_ACTION = MAX_NODE_SCOPE_NUM * ARKUI_NODE_LIST_ITEM = 100400
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 使用ArkUI_ListItemSwipeActionOption对象构造。 |
@@ -1540,6 +1807,7 @@ NODE_LIST_ITEM_SWIPE_ACTION = MAX_NODE_SCOPE_NUM * ARKUI_NODE_LIST_ITEM = 100400
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .object | 使用ArkUI_ListItemSwipeActionOption对象构造。 |
@@ -1547,7 +1815,10 @@ NODE_LIST_ITEM_SWIPE_ACTION = MAX_NODE_SCOPE_NUM * ARKUI_NODE_LIST_ITEM = 100400
  
   
 
-#### NODE_LIST_ITEM_GROUP_SET_HEADER
+## NODE_LIST_ITEM_GROUP_SET_HEADER
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_LIST_ITEM_GROUP_SET_HEADER = MAX_NODE_SCOPE_NUM * ARKUI_NODE_LIST_ITEM_GROUP = 1005000
@@ -1561,6 +1832,7 @@ NODE_LIST_ITEM_GROUP_SET_HEADER = MAX_NODE_SCOPE_NUM * ARKUI_NODE_LIST_ITEM_GROU
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 使用ArkUI_NodeHandle对象作为ListItemGroup头部组件。 |
@@ -1568,6 +1840,7 @@ NODE_LIST_ITEM_GROUP_SET_HEADER = MAX_NODE_SCOPE_NUM * ARKUI_NODE_LIST_ITEM_GROU
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .object | 使用ArkUI_NodeHandle对象作为ListItemGroup头部组件。 |
@@ -1575,7 +1848,10 @@ NODE_LIST_ITEM_GROUP_SET_HEADER = MAX_NODE_SCOPE_NUM * ARKUI_NODE_LIST_ITEM_GROU
  
   
 
-#### NODE_LIST_ITEM_GROUP_SET_FOOTER
+## NODE_LIST_ITEM_GROUP_SET_FOOTER
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_LIST_ITEM_GROUP_SET_FOOTER = 1005001
@@ -1589,6 +1865,7 @@ NODE_LIST_ITEM_GROUP_SET_FOOTER = 1005001
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 使用ArkUI_NodeHandle对象作为ListItemGroup尾部组件。 |
@@ -1596,6 +1873,7 @@ NODE_LIST_ITEM_GROUP_SET_FOOTER = 1005001
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .object | 使用ArkUI_NodeHandle对象作为ListItemGroup尾部组件。 |
@@ -1603,7 +1881,10 @@ NODE_LIST_ITEM_GROUP_SET_FOOTER = 1005001
  
   
 
-#### NODE_LIST_ITEM_GROUP_SET_DIVIDER
+## NODE_LIST_ITEM_GROUP_SET_DIVIDER
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_LIST_ITEM_GROUP_SET_DIVIDER = 1005002
@@ -1617,6 +1898,7 @@ NODE_LIST_ITEM_GROUP_SET_DIVIDER = 1005002
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].u32 | 颜色，0xargb类型，默认值为0x08000000。 |
@@ -1627,6 +1909,7 @@ NODE_LIST_ITEM_GROUP_SET_DIVIDER = 1005002
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].u32 | 颜色，0xargb类型。 |
@@ -1637,7 +1920,10 @@ NODE_LIST_ITEM_GROUP_SET_DIVIDER = 1005002
  
   
 
-#### NODE_LIST_ITEM_GROUP_CHILDREN_MAIN_SIZE
+## NODE_LIST_ITEM_GROUP_CHILDREN_MAIN_SIZE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_LIST_ITEM_GROUP_CHILDREN_MAIN_SIZE = 1005003
@@ -1651,6 +1937,7 @@ NODE_LIST_ITEM_GROUP_CHILDREN_MAIN_SIZE = 1005003
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 参数格式为ArkUI_ListChildrenMainSize。 |
@@ -1658,6 +1945,7 @@ NODE_LIST_ITEM_GROUP_CHILDREN_MAIN_SIZE = 1005003
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .object | 参数格式为ArkUI_ListChildrenMainSize。 |
@@ -1665,7 +1953,10 @@ NODE_LIST_ITEM_GROUP_CHILDREN_MAIN_SIZE = 1005003
  
   
 
-#### NODE_LIST_ITEM_GROUP_NODE_ADAPTER
+## NODE_LIST_ITEM_GROUP_NODE_ADAPTER
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_LIST_ITEM_GROUP_NODE_ADAPTER = 1005004
@@ -1679,6 +1970,7 @@ NODE_LIST_ITEM_GROUP_NODE_ADAPTER = 1005004
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 使用ArkUI_NodeAdapter对象作为适配器。 |
@@ -1686,6 +1978,7 @@ NODE_LIST_ITEM_GROUP_NODE_ADAPTER = 1005004
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .object | 返回值格式为ArkUI_NodeAdapter。 |
@@ -1693,7 +1986,10 @@ NODE_LIST_ITEM_GROUP_NODE_ADAPTER = 1005004
  
   
 
-#### NODE_REFRESH_REFRESHING
+## NODE_REFRESH_REFRESHING
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_REFRESH_REFRESHING = MAX_NODE_SCOPE_NUM * ARKUI_NODE_REFRESH = 1009000
@@ -1707,6 +2003,7 @@ NODE_REFRESH_REFRESHING = MAX_NODE_SCOPE_NUM * ARKUI_NODE_REFRESH = 1009000
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 参数值为1或者0，1表示正在刷新，0表示不在刷新。默认值：0。 |
@@ -1714,6 +2011,7 @@ NODE_REFRESH_REFRESHING = MAX_NODE_SCOPE_NUM * ARKUI_NODE_REFRESH = 1009000
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 参数值为1或者0，1表示正在刷新，0表示不在刷新。 |
@@ -1721,7 +2019,10 @@ NODE_REFRESH_REFRESHING = MAX_NODE_SCOPE_NUM * ARKUI_NODE_REFRESH = 1009000
  
   
 
-#### NODE_REFRESH_CONTENT
+## NODE_REFRESH_CONTENT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_REFRESH_CONTENT = 1009001
@@ -1735,6 +2036,7 @@ NODE_REFRESH_CONTENT = 1009001
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 参数类型ArkUI_NodeHandle。 |
@@ -1742,7 +2044,10 @@ NODE_REFRESH_CONTENT = 1009001
  
   
 
-#### NODE_REFRESH_PULL_DOWN_RATIO
+## NODE_REFRESH_PULL_DOWN_RATIO
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_REFRESH_PULL_DOWN_RATIO = 1009002
@@ -1756,6 +2061,7 @@ NODE_REFRESH_PULL_DOWN_RATIO = 1009002
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 下拉跟手系数，取值范围：[0, 1]。设置小于0或大于1的值时，属性设置失败。 |
@@ -1763,6 +2069,7 @@ NODE_REFRESH_PULL_DOWN_RATIO = 1009002
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 下拉跟手系数，取值范围：[0, 1]。 |
@@ -1770,7 +2077,10 @@ NODE_REFRESH_PULL_DOWN_RATIO = 1009002
  
   
 
-#### NODE_REFRESH_OFFSET
+## NODE_REFRESH_OFFSET
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_REFRESH_OFFSET = 1009003
@@ -1784,6 +2094,7 @@ NODE_REFRESH_OFFSET = 1009003
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 下拉偏移量，单位vp， 默认值：64vp。 |
@@ -1791,6 +2102,7 @@ NODE_REFRESH_OFFSET = 1009003
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 下拉偏移量，单位vp， 默认值：64vp。 |
@@ -1798,7 +2110,10 @@ NODE_REFRESH_OFFSET = 1009003
  
   
 
-#### NODE_REFRESH_PULL_TO_REFRESH
+## NODE_REFRESH_PULL_TO_REFRESH
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_REFRESH_PULL_TO_REFRESH = 1009004
@@ -1812,6 +2127,7 @@ NODE_REFRESH_PULL_TO_REFRESH = 1009004
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否触发刷新。支持取值为0或1，其中1为触发刷新，0为不触发刷新。默认值：1。 |
@@ -1819,6 +2135,7 @@ NODE_REFRESH_PULL_TO_REFRESH = 1009004
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否触发刷新，1为触发刷新，0为不触发刷新。 |
@@ -1826,7 +2143,10 @@ NODE_REFRESH_PULL_TO_REFRESH = 1009004
  
   
 
-#### NODE_REFRESH_MAX_PULL_DOWN_DISTANCE
+## NODE_REFRESH_MAX_PULL_DOWN_DISTANCE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_REFRESH_MAX_PULL_DOWN_DISTANCE = 1009005
@@ -1840,6 +2160,7 @@ NODE_REFRESH_MAX_PULL_DOWN_DISTANCE = 1009005
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 最大下拉距离，单位：vp。取值范围：[0, +∞)，设置小于0的值时按0处理。 |
@@ -1847,6 +2168,7 @@ NODE_REFRESH_MAX_PULL_DOWN_DISTANCE = 1009005
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 最大下拉距离，单位：vp。 |
@@ -1854,7 +2176,10 @@ NODE_REFRESH_MAX_PULL_DOWN_DISTANCE = 1009005
  
   
 
-#### NODE_REFRESH_PULL_UP_TO_CANCEL_REFRESH
+## NODE_REFRESH_PULL_UP_TO_CANCEL_REFRESH
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_REFRESH_PULL_UP_TO_CANCEL_REFRESH = 1009006
@@ -1868,6 +2193,7 @@ NODE_REFRESH_PULL_UP_TO_CANCEL_REFRESH = 1009006
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 上划是否取消刷新。支持取值为0或1，其中0为上划不取消刷新，1为上划取消刷新。默认值：1。 |
@@ -1875,6 +2201,7 @@ NODE_REFRESH_PULL_UP_TO_CANCEL_REFRESH = 1009006
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 上划是否取消刷新。0为上划不取消刷新，1为上划取消刷新。 |
@@ -1882,7 +2209,10 @@ NODE_REFRESH_PULL_UP_TO_CANCEL_REFRESH = 1009006
  
   
 
-#### NODE_WATER_FLOW_LAYOUT_DIRECTION
+## NODE_WATER_FLOW_LAYOUT_DIRECTION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_WATER_FLOW_LAYOUT_DIRECTION = MAX_NODE_SCOPE_NUM * ARKUI_NODE_WATER_FLOW = 1010000
@@ -1896,6 +2226,7 @@ NODE_WATER_FLOW_LAYOUT_DIRECTION = MAX_NODE_SCOPE_NUM * ARKUI_NODE_WATER_FLOW = 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 主轴方向，参数类型ArkUI_FlexDirection。默认值ARKUI_FLEX_DIRECTION_COLUMN。 |
@@ -1903,6 +2234,7 @@ NODE_WATER_FLOW_LAYOUT_DIRECTION = MAX_NODE_SCOPE_NUM * ARKUI_NODE_WATER_FLOW = 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 主轴方向，参数类型ArkUI_FlexDirection。 |
@@ -1910,7 +2242,10 @@ NODE_WATER_FLOW_LAYOUT_DIRECTION = MAX_NODE_SCOPE_NUM * ARKUI_NODE_WATER_FLOW = 
  
   
 
-#### NODE_WATER_FLOW_COLUMN_TEMPLATE
+## NODE_WATER_FLOW_COLUMN_TEMPLATE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_WATER_FLOW_COLUMN_TEMPLATE = 1010001
@@ -1924,6 +2259,7 @@ NODE_WATER_FLOW_COLUMN_TEMPLATE = 1010001
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 布局列的数量。默认值：'1fr'。 |
@@ -1931,6 +2267,7 @@ NODE_WATER_FLOW_COLUMN_TEMPLATE = 1010001
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .string | 布局列的数量。 |
@@ -1938,7 +2275,10 @@ NODE_WATER_FLOW_COLUMN_TEMPLATE = 1010001
  
   
 
-#### NODE_WATER_FLOW_ROW_TEMPLATE
+## NODE_WATER_FLOW_ROW_TEMPLATE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_WATER_FLOW_ROW_TEMPLATE = 1010002
@@ -1952,6 +2292,7 @@ NODE_WATER_FLOW_ROW_TEMPLATE = 1010002
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 布局行的数量。默认值：'1fr'。 |
@@ -1959,6 +2300,7 @@ NODE_WATER_FLOW_ROW_TEMPLATE = 1010002
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .string | 布局行的数量。 |
@@ -1966,7 +2308,10 @@ NODE_WATER_FLOW_ROW_TEMPLATE = 1010002
  
   
 
-#### NODE_WATER_FLOW_COLUMN_GAP
+## NODE_WATER_FLOW_COLUMN_GAP
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_WATER_FLOW_COLUMN_GAP = 1010003
@@ -1980,6 +2325,7 @@ NODE_WATER_FLOW_COLUMN_GAP = 1010003
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 列与列的间距，默认值：0，单位vp。取值范围：[0, +∞)。 |
@@ -1987,6 +2333,7 @@ NODE_WATER_FLOW_COLUMN_GAP = 1010003
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 列与列的间距，单位vp。 |
@@ -1994,7 +2341,10 @@ NODE_WATER_FLOW_COLUMN_GAP = 1010003
  
   
 
-#### NODE_WATER_FLOW_ROW_GAP
+## NODE_WATER_FLOW_ROW_GAP
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_WATER_FLOW_ROW_GAP = 1010004
@@ -2008,6 +2358,7 @@ NODE_WATER_FLOW_ROW_GAP = 1010004
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 行与行的间距，默认值：0，单位vp。取值范围：[0, +∞)。 |
@@ -2015,6 +2366,7 @@ NODE_WATER_FLOW_ROW_GAP = 1010004
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 行与行的间距，单位vp。 |
@@ -2022,7 +2374,10 @@ NODE_WATER_FLOW_ROW_GAP = 1010004
  
   
 
-#### NODE_WATER_FLOW_SECTION_OPTION
+## NODE_WATER_FLOW_SECTION_OPTION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_WATER_FLOW_SECTION_OPTION = 1010005
@@ -2036,6 +2391,7 @@ NODE_WATER_FLOW_SECTION_OPTION = 1010005
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 从0开始计算的索引，会转换为整数，表示要开始改变分组的位置。 |
@@ -2044,6 +2400,7 @@ NODE_WATER_FLOW_SECTION_OPTION = 1010005
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .object | 返回值格式为ArkUI_WaterFlowSectionOption。 |
@@ -2051,7 +2408,10 @@ NODE_WATER_FLOW_SECTION_OPTION = 1010005
  
   
 
-#### NODE_WATER_FLOW_NODE_ADAPTER
+## NODE_WATER_FLOW_NODE_ADAPTER
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_WATER_FLOW_NODE_ADAPTER = 1010006
@@ -2065,6 +2425,7 @@ NODE_WATER_FLOW_NODE_ADAPTER = 1010006
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 使用ArkUI_NodeAdapter对象作为适配器。 |
@@ -2072,6 +2433,7 @@ NODE_WATER_FLOW_NODE_ADAPTER = 1010006
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .object | 返回值格式为ArkUI_NodeAdapter。 |
@@ -2079,7 +2441,10 @@ NODE_WATER_FLOW_NODE_ADAPTER = 1010006
  
   
 
-#### NODE_WATER_FLOW_CACHED_COUNT
+## NODE_WATER_FLOW_CACHED_COUNT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_WATER_FLOW_CACHED_COUNT = 1010007
@@ -2093,6 +2458,7 @@ NODE_WATER_FLOW_CACHED_COUNT = 1010007
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 配合WaterFlow组件Adapter使用，设置adapter中的缓存数量。 |
@@ -2101,6 +2467,7 @@ NODE_WATER_FLOW_CACHED_COUNT = 1010007
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | adapter中的缓存数量。 |
@@ -2109,7 +2476,10 @@ NODE_WATER_FLOW_CACHED_COUNT = 1010007
  
   
 
-#### NODE_WATER_FLOW_FOOTER
+## NODE_WATER_FLOW_FOOTER
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_WATER_FLOW_FOOTER = 1010008
@@ -2123,6 +2493,7 @@ NODE_WATER_FLOW_FOOTER = 1010008
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 参数类型ArkUI_NodeHandle。 |
@@ -2130,7 +2501,10 @@ NODE_WATER_FLOW_FOOTER = 1010008
  
   
 
-#### NODE_WATER_FLOW_SCROLL_TO_INDEX
+## NODE_WATER_FLOW_SCROLL_TO_INDEX
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_WATER_FLOW_SCROLL_TO_INDEX = 1010009
@@ -2144,6 +2518,7 @@ NODE_WATER_FLOW_SCROLL_TO_INDEX = 1010009
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 要滑动到的目标元素在当前容器中的索引值。 |
@@ -2154,7 +2529,10 @@ NODE_WATER_FLOW_SCROLL_TO_INDEX = 1010009
  
   
 
-#### NODE_WATER_FLOW_ITEM_CONSTRAINT_SIZE
+## NODE_WATER_FLOW_ITEM_CONSTRAINT_SIZE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_WATER_FLOW_ITEM_CONSTRAINT_SIZE = 1010010
@@ -2168,6 +2546,7 @@ NODE_WATER_FLOW_ITEM_CONSTRAINT_SIZE = 1010010
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 最小宽度，单位：vp。使用-1表示不设置。 |
@@ -2178,6 +2557,7 @@ NODE_WATER_FLOW_ITEM_CONSTRAINT_SIZE = 1010010
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 最小宽度，单位：vp。使用-1表示不设置。 |
@@ -2188,7 +2568,10 @@ NODE_WATER_FLOW_ITEM_CONSTRAINT_SIZE = 1010010
  
   
 
-#### NODE_WATER_FLOW_LAYOUT_MODE
+## NODE_WATER_FLOW_LAYOUT_MODE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_WATER_FLOW_LAYOUT_MODE = 1010011
@@ -2202,6 +2585,7 @@ NODE_WATER_FLOW_LAYOUT_MODE = 1010011
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 布局模式，参数类型ArkUI_WaterFlowLayoutMode，默认值：ARKUI_WATER_FLOW_LAYOUT_MODE_ALWAYS_TOP_DOWN。 |
@@ -2209,6 +2593,7 @@ NODE_WATER_FLOW_LAYOUT_MODE = 1010011
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 布局模式，参数类型ArkUI_WaterFlowLayoutMode。 |
@@ -2216,7 +2601,10 @@ NODE_WATER_FLOW_LAYOUT_MODE = 1010011
  
   
 
-#### NODE_WATER_FLOW_SYNC_LOAD
+## NODE_WATER_FLOW_SYNC_LOAD
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_WATER_FLOW_SYNC_LOAD = 1010012
@@ -2230,6 +2618,7 @@ WaterFlow组件是否同步加载子节点，支持属性设置，属性重置�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | WaterFlow组件是否同步加载子节点。0：分帧加载，1：同步加载。默认值：1。 |
@@ -2237,6 +2626,7 @@ WaterFlow组件是否同步加载子节点，支持属性设置，属性重置�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | WaterFlow组件是否同步加载子节点。0：分帧加载，1：同步加载。 |
@@ -2244,7 +2634,10 @@ WaterFlow组件是否同步加载子节点，支持属性设置，属性重置�
  
   
 
-#### NODE_WATER_FLOW_COLUMN_TEMPLATE_ITEMFILLPOLICY
+## NODE_WATER_FLOW_COLUMN_TEMPLATE_ITEMFILLPOLICY
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_WATER_FLOW_COLUMN_TEMPLATE_ITEMFILLPOLICY  = 1010013
@@ -2258,6 +2651,7 @@ WaterFlow组件的响应式列数布局策略，支持属性设置，属性重�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 在不同断点规格下的列数，数据类型ArkUI_ItemFillPolicy。 |
@@ -2265,6 +2659,7 @@ WaterFlow组件的响应式列数布局策略，支持属性设置，属性重�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 在不同断点规格下的列数，数据类型ArkUI_ItemFillPolicy。 |
@@ -2272,7 +2667,10 @@ WaterFlow组件的响应式列数布局策略，支持属性设置，属性重�
  
   
 
-#### NODE_WATER_FLOW_SUPPORT_EMPTY_BRANCH_IN_LAZY_LOADING
+## NODE_WATER_FLOW_SUPPORT_EMPTY_BRANCH_IN_LAZY_LOADING
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_WATER_FLOW_SUPPORT_EMPTY_BRANCH_IN_LAZY_LOADING = 1010014
@@ -2290,6 +2688,7 @@ NODE_WATER_FLOW_SUPPORT_EMPTY_BRANCH_IN_LAZY_LOADING = 1010014
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | WaterFlow组件是否支持空分支。0：不支持，1：支持。默认值：0。 |
@@ -2297,6 +2696,7 @@ NODE_WATER_FLOW_SUPPORT_EMPTY_BRANCH_IN_LAZY_LOADING = 1010014
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | WaterFlow组件是否支持空分支。0：不支持，1：支持。 |
@@ -2304,7 +2704,10 @@ NODE_WATER_FLOW_SUPPORT_EMPTY_BRANCH_IN_LAZY_LOADING = 1010014
  
   
 
-#### NODE_GRID_COLUMN_TEMPLATE
+## NODE_GRID_COLUMN_TEMPLATE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_GRID_COLUMN_TEMPLATE = MAX_NODE_SCOPE_NUM * ARKUI_NODE_GRID = 1013000
@@ -2318,6 +2721,7 @@ NODE_GRID_COLUMN_TEMPLATE = MAX_NODE_SCOPE_NUM * ARKUI_NODE_GRID = 1013000
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 布局列的数量。 |
@@ -2325,6 +2729,7 @@ NODE_GRID_COLUMN_TEMPLATE = MAX_NODE_SCOPE_NUM * ARKUI_NODE_GRID = 1013000
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .string | 布局列的数量。 |
@@ -2332,7 +2737,10 @@ NODE_GRID_COLUMN_TEMPLATE = MAX_NODE_SCOPE_NUM * ARKUI_NODE_GRID = 1013000
  
   
 
-#### NODE_GRID_ROW_TEMPLATE
+## NODE_GRID_ROW_TEMPLATE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_GRID_ROW_TEMPLATE = 1013001
@@ -2346,6 +2754,7 @@ NODE_GRID_ROW_TEMPLATE = 1013001
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .string | 布局行的数量。 |
@@ -2353,6 +2762,7 @@ NODE_GRID_ROW_TEMPLATE = 1013001
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .string | 布局行的数量。 |
@@ -2360,7 +2770,10 @@ NODE_GRID_ROW_TEMPLATE = 1013001
  
   
 
-#### NODE_GRID_COLUMN_GAP
+## NODE_GRID_COLUMN_GAP
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_GRID_COLUMN_GAP = 1013002
@@ -2374,6 +2787,7 @@ NODE_GRID_COLUMN_GAP = 1013002
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 列与列的间距，默认值：0，单位vp。取值范围：[0, +∞)。 |
@@ -2381,6 +2795,7 @@ NODE_GRID_COLUMN_GAP = 1013002
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 列与列的间距，单位vp。 |
@@ -2388,7 +2803,10 @@ NODE_GRID_COLUMN_GAP = 1013002
  
   
 
-#### NODE_GRID_ROW_GAP
+## NODE_GRID_ROW_GAP
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_GRID_ROW_GAP = 1013003
@@ -2402,6 +2820,7 @@ NODE_GRID_ROW_GAP = 1013003
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 行与行的间距，默认值：0，单位vp。取值范围：[0, +∞)。 |
@@ -2409,6 +2828,7 @@ NODE_GRID_ROW_GAP = 1013003
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 行与行的间距，单位vp。 |
@@ -2416,7 +2836,10 @@ NODE_GRID_ROW_GAP = 1013003
  
   
 
-#### NODE_GRID_NODE_ADAPTER
+## NODE_GRID_NODE_ADAPTER
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_GRID_NODE_ADAPTER = 1013004
@@ -2430,6 +2853,7 @@ NODE_GRID_NODE_ADAPTER = 1013004
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 使用ArkUI_NodeAdapter对象作为适配器。 |
@@ -2437,6 +2861,7 @@ NODE_GRID_NODE_ADAPTER = 1013004
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .object | 返回值格式为ArkUI_NodeAdapter。 |
@@ -2444,7 +2869,10 @@ NODE_GRID_NODE_ADAPTER = 1013004
  
   
 
-#### NODE_GRID_CACHED_COUNT
+## NODE_GRID_CACHED_COUNT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_GRID_CACHED_COUNT = 1013005
@@ -2458,6 +2886,7 @@ NODE_GRID_CACHED_COUNT = 1013005
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 配合Grid组件适配器使用，设置ArkUI_NodeAdapter的缓存数量。 |
@@ -2466,6 +2895,7 @@ NODE_GRID_CACHED_COUNT = 1013005
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | Grid组件适配器的缓存数量。 |
@@ -2474,7 +2904,10 @@ NODE_GRID_CACHED_COUNT = 1013005
  
   
 
-#### NODE_GRID_FOCUS_WRAP_MODE
+## NODE_GRID_FOCUS_WRAP_MODE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_GRID_FOCUS_WRAP_MODE = 1013006
@@ -2488,6 +2921,7 @@ NODE_GRID_FOCUS_WRAP_MODE = 1013006
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | Grid组件走焦换行模式，参数类型ArkUI_FocusWrapMode。默认值：ARKUI_FOCUS_WRAP_MODE_DEFAULT。 |
@@ -2495,6 +2929,7 @@ NODE_GRID_FOCUS_WRAP_MODE = 1013006
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | Grid组件走焦换行模式，参数类型ArkUI_FocusWrapMode。 |
@@ -2502,7 +2937,10 @@ NODE_GRID_FOCUS_WRAP_MODE = 1013006
  
   
 
-#### NODE_GRID_SYNC_LOAD
+## NODE_GRID_SYNC_LOAD
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_GRID_SYNC_LOAD = 1013007
@@ -2516,6 +2954,7 @@ NODE_GRID_SYNC_LOAD = 1013007
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | Grid组件是否同步加载子节点。0：分帧加载，1：同步加载。默认值：1。 |
@@ -2523,6 +2962,7 @@ NODE_GRID_SYNC_LOAD = 1013007
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | Grid组件是否同步加载子节点。0：分帧加载，1：同步加载。 |
@@ -2530,7 +2970,10 @@ NODE_GRID_SYNC_LOAD = 1013007
  
   
 
-#### NODE_GRID_ALIGN_ITEMS
+## NODE_GRID_ALIGN_ITEMS
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_GRID_ALIGN_ITEMS = 1013008
@@ -2544,6 +2987,7 @@ NODE_GRID_ALIGN_ITEMS = 1013008
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | Grid中GridItem的对齐方式，参数取值为ArkUI_GridItemAlignment下的枚举，默认值为ARKUI_GRID_ITEM_ALIGNMENT_DEFAULT。 |
@@ -2551,6 +2995,7 @@ NODE_GRID_ALIGN_ITEMS = 1013008
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | Grid中GridItem的对齐方式，参数类型ArkUI_GridItemAlignment。 |
@@ -2558,7 +3003,10 @@ NODE_GRID_ALIGN_ITEMS = 1013008
  
   
 
-#### NODE_GRID_LAYOUT_OPTIONS
+## NODE_GRID_LAYOUT_OPTIONS
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_GRID_LAYOUT_OPTIONS = 1013009
@@ -2572,6 +3020,7 @@ NODE_GRID_LAYOUT_OPTIONS = 1013009
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 参数格式为ArkUI_GridLayoutOptions。 |
@@ -2579,6 +3028,7 @@ NODE_GRID_LAYOUT_OPTIONS = 1013009
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .object | 返回值格式为ArkUI_GridLayoutOptions。 |
@@ -2586,7 +3036,10 @@ NODE_GRID_LAYOUT_OPTIONS = 1013009
  
   
 
-#### NODE_GRID_COLUMN_TEMPLATE_ITEMFILLPOLICY
+## NODE_GRID_COLUMN_TEMPLATE_ITEMFILLPOLICY
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_GRID_COLUMN_TEMPLATE_ITEMFILLPOLICY = 1013010
@@ -2600,6 +3053,7 @@ Grid组件的响应式列数布局策略，支持属性设置，属性重置和�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 在不同断点规格下的列数，数据类型ArkUI_ItemFillPolicy。 |
@@ -2607,6 +3061,7 @@ Grid组件的响应式列数布局策略，支持属性设置，属性重置和�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 在不同断点规格下的列数，数据类型ArkUI_ItemFillPolicy。 |
@@ -2614,7 +3069,10 @@ Grid组件的响应式列数布局策略，支持属性设置，属性重置和�
  
   
 
-#### NODE_GRID_EDIT_MODE
+## NODE_GRID_EDIT_MODE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_GRID_EDIT_MODE = 1013011
@@ -2628,6 +3086,7 @@ Grid组件是否进入编辑模式。进入编辑模式后，可以通过NODE_GR
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | Grid组件是否进入编辑模式。0：不可编辑，1：可以编辑。默认值：0。 |
@@ -2635,6 +3094,7 @@ Grid组件是否进入编辑模式。进入编辑模式后，可以通过NODE_GR
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | Grid组件是否进入编辑模式。0：不可编辑，1：可以编辑。 |
@@ -2642,7 +3102,10 @@ Grid组件是否进入编辑模式。进入编辑模式后，可以通过NODE_GR
  
   
 
-#### NODE_GRID_DRAG_ANIMATION
+## NODE_GRID_DRAG_ANIMATION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_GRID_DRAG_ANIMATION = 1013012
@@ -2660,6 +3123,7 @@ Grid组件是否启用GridItem拖拽动画。支持属性设置，属性重置�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | Grid组件是否启用GridItem拖拽动画。0：不启用，1：启用。默认值：0。 |
@@ -2667,6 +3131,7 @@ Grid组件是否启用GridItem拖拽动画。支持属性设置，属性重置�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | Grid组件是否启用GridItem拖拽动画。0：不启用，1：启用。 |
@@ -2674,7 +3139,10 @@ Grid组件是否启用GridItem拖拽动画。支持属性设置，属性重置�
  
   
 
-#### NODE_GRID_MULTI_SELECTABLE
+## NODE_GRID_MULTI_SELECTABLE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_GRID_MULTI_SELECTABLE = 1013013
@@ -2690,6 +3158,7 @@ Grid组件是否启用鼠标框选。支持属性设置，属性重置和属性�
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | Grid组件是否启用鼠标框选。0：不启用，1：启用。默认值：0。 |
@@ -2697,6 +3166,7 @@ Grid组件是否启用鼠标框选。支持属性设置，属性重置和属性�
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | Grid组件是否启用鼠标框选。0：不启用，1：启用。 |
@@ -2704,7 +3174,10 @@ Grid组件是否启用鼠标框选。支持属性设置，属性重置和属性�
  
   
 
-#### NODE_GRID_SCROLL_TO_INDEX
+## NODE_GRID_SCROLL_TO_INDEX
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_GRID_SCROLL_TO_INDEX = 1013014
@@ -2720,6 +3193,7 @@ NODE_GRID_SCROLL_TO_INDEX = 1013014
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 要滑动到的目标元素在当前容器中的索引值。 |
@@ -2730,7 +3204,10 @@ NODE_GRID_SCROLL_TO_INDEX = 1013014
  
   
 
-#### NODE_GRID_SUPPORT_EMPTY_BRANCH_IN_LAZY_LOADING
+## NODE_GRID_SUPPORT_EMPTY_BRANCH_IN_LAZY_LOADING
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_GRID_SUPPORT_EMPTY_BRANCH_IN_LAZY_LOADING = 1013015
@@ -2744,6 +3221,7 @@ NODE_GRID_SUPPORT_EMPTY_BRANCH_IN_LAZY_LOADING = 1013015
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | Grid组件是否支持空分支。0：不支持，1：支持。默认值：0。 |
@@ -2751,6 +3229,7 @@ NODE_GRID_SUPPORT_EMPTY_BRANCH_IN_LAZY_LOADING = 1013015
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | Grid组件是否支持空分支。0：不支持，1：支持。 |
@@ -2758,7 +3237,10 @@ NODE_GRID_SUPPORT_EMPTY_BRANCH_IN_LAZY_LOADING = 1013015
  
   
 
-#### NODE_GRID_ENABLE_EDIT_MODE
+## NODE_GRID_ENABLE_EDIT_MODE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_GRID_ENABLE_EDIT_MODE = 1013016
@@ -2772,6 +3254,7 @@ NODE_GRID_ENABLE_EDIT_MODE = 1013016
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | Grid组件是否启用编辑模式。0：不启用，1：启用。默认值：0。 |
@@ -2779,6 +3262,7 @@ NODE_GRID_ENABLE_EDIT_MODE = 1013016
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | Grid组件是否启用编辑模式。0：未启用，1：已启用。 |
@@ -2786,7 +3270,10 @@ NODE_GRID_ENABLE_EDIT_MODE = 1013016
  
   
 
-#### NODE_GRID_EDIT_MODE_OPTIONS
+## NODE_GRID_EDIT_MODE_OPTIONS
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_GRID_EDIT_MODE_OPTIONS = 1013017
@@ -2800,6 +3287,7 @@ NODE_GRID_EDIT_MODE_OPTIONS = 1013017
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | Grid组件是否使用默认多选样式。0：不使用，1：使用。默认值：1。 |
@@ -2808,6 +3296,7 @@ NODE_GRID_EDIT_MODE_OPTIONS = 1013017
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | Grid组件是否使用默认多选样式。0：不使用，1：使用。 |
@@ -2816,7 +3305,10 @@ NODE_GRID_EDIT_MODE_OPTIONS = 1013017
  
   
 
-#### NODE_GRID_ITEM_STYLE
+## NODE_GRID_ITEM_STYLE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_GRID_ITEM_STYLE = MAX_NODE_SCOPE_NUM * ARKUI_NODE_GRID_ITEM = 1014000
@@ -2830,6 +3322,7 @@ NODE_GRID_ITEM_STYLE = MAX_NODE_SCOPE_NUM * ARKUI_NODE_GRID_ITEM = 1014000
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | GridItem样式，参数取值为ArkUI_GridItemStyle下的枚举，默认值为ARKUI_GRID_ITEM_STYLE_NONE。 |
@@ -2837,6 +3330,7 @@ NODE_GRID_ITEM_STYLE = MAX_NODE_SCOPE_NUM * ARKUI_NODE_GRID_ITEM = 1014000
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | GridItem样式，参数类型ArkUI_GridItemStyle。 |
@@ -2844,7 +3338,10 @@ NODE_GRID_ITEM_STYLE = MAX_NODE_SCOPE_NUM * ARKUI_NODE_GRID_ITEM = 1014000
  
   
 
-#### NODE_GRID_ITEM_SELECTABLE
+## NODE_GRID_ITEM_SELECTABLE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_GRID_ITEM_SELECTABLE = 1014001
@@ -2858,6 +3355,7 @@ NODE_GRID_ITEM_SELECTABLE = 1014001
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | GridItem是否可以被鼠标框选。0：不可以，1：可以。默认值：1。 |
@@ -2865,6 +3363,7 @@ NODE_GRID_ITEM_SELECTABLE = 1014001
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | GridItem是否可以被鼠标框选。0：不可以，1：可以。 |
@@ -2872,7 +3371,10 @@ NODE_GRID_ITEM_SELECTABLE = 1014001
  
   
 
-#### NODE_GRID_ITEM_SELECTED
+## NODE_GRID_ITEM_SELECTED
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_GRID_ITEM_SELECTED = 1014002
@@ -2886,6 +3388,7 @@ NODE_GRID_ITEM_SELECTED = 1014002
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | GridItem选中状态。0：未选中，1：已选中。默认值：0。 |
@@ -2893,6 +3396,7 @@ NODE_GRID_ITEM_SELECTED = 1014002
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | GridItem选中状态。0：未选中，1：已选中。 |
@@ -2900,7 +3404,10 @@ NODE_GRID_ITEM_SELECTED = 1014002
  
   
 
-#### NODE_ARC_LIST_DIGITAL_CROWN_SENSITIVITY
+## NODE_ARC_LIST_DIGITAL_CROWN_SENSITIVITY
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_ARC_LIST_DIGITAL_CROWN_SENSITIVITY = MAX_NODE_SCOPE_NUM * ARKUI_NODE_ARC_LIST = 1019000
@@ -2914,6 +3421,7 @@ NODE_ARC_LIST_DIGITAL_CROWN_SENSITIVITY = MAX_NODE_SCOPE_NUM * ARKUI_NODE_ARC_LI
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 表冠灵敏度类型，数据类型ArkUI_CrownSensitivity，默认值为ARKUI_CROWN_SENSITIVITY_MEDIUM。 |
@@ -2921,6 +3429,7 @@ NODE_ARC_LIST_DIGITAL_CROWN_SENSITIVITY = MAX_NODE_SCOPE_NUM * ARKUI_NODE_ARC_LI
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 表冠灵敏度类型，数据类型ArkUI_CrownSensitivity。 |
@@ -2928,7 +3437,10 @@ NODE_ARC_LIST_DIGITAL_CROWN_SENSITIVITY = MAX_NODE_SCOPE_NUM * ARKUI_NODE_ARC_LI
  
   
 
-#### NODE_ARC_LIST_SPACE
+## NODE_ARC_LIST_SPACE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_ARC_LIST_SPACE = 1019001
@@ -2942,6 +3454,7 @@ NODE_ARC_LIST_SPACE = 1019001
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 子组件主轴方向的间隔，单位为vp，默认值0。 |
@@ -2949,6 +3462,7 @@ NODE_ARC_LIST_SPACE = 1019001
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 子组件主轴方向的间隔，单位：vp。 |
@@ -2956,7 +3470,10 @@ NODE_ARC_LIST_SPACE = 1019001
  
   
 
-#### NODE_ARC_LIST_CACHED_COUNT
+## NODE_ARC_LIST_CACHED_COUNT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_ARC_LIST_CACHED_COUNT = 1019002
@@ -2970,6 +3487,7 @@ NODE_ARC_LIST_CACHED_COUNT = 1019002
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 缓存数量。 |
@@ -2977,6 +3495,7 @@ NODE_ARC_LIST_CACHED_COUNT = 1019002
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 缓存数量。 |
@@ -2984,7 +3503,10 @@ NODE_ARC_LIST_CACHED_COUNT = 1019002
  
   
 
-#### NODE_ARC_LIST_SCROLL_TO_INDEX
+## NODE_ARC_LIST_SCROLL_TO_INDEX
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_ARC_LIST_SCROLL_TO_INDEX = 1019003
@@ -2998,6 +3520,7 @@ NODE_ARC_LIST_SCROLL_TO_INDEX = 1019003
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 要滑动到的目标元素在当前容器中的索引值。传入-1时，指滑动到当前容器的最后一个元素。 |
@@ -3008,7 +3531,10 @@ NODE_ARC_LIST_SCROLL_TO_INDEX = 1019003
  
   
 
-#### NODE_ARC_LIST_CHAIN_ANIMATION
+## NODE_ARC_LIST_CHAIN_ANIMATION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_ARC_LIST_CHAIN_ANIMATION = 1019004
@@ -3022,6 +3548,7 @@ NODE_ARC_LIST_CHAIN_ANIMATION = 1019004
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否启用链式联动动效，0：不启用，1：启用，默认值：0。 |
@@ -3029,6 +3556,7 @@ NODE_ARC_LIST_CHAIN_ANIMATION = 1019004
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否启用链式联动动效。0：不启用，1：启用。 |
@@ -3036,7 +3564,10 @@ NODE_ARC_LIST_CHAIN_ANIMATION = 1019004
  
   
 
-#### NODE_ARC_LIST_CHILDREN_MAIN_SIZE
+## NODE_ARC_LIST_CHILDREN_MAIN_SIZE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_ARC_LIST_CHILDREN_MAIN_SIZE = 1019005
@@ -3050,6 +3581,7 @@ NODE_ARC_LIST_CHILDREN_MAIN_SIZE = 1019005
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 参数格式为ArkUI_ListChildrenMainSize。定义ArcList的所有子项主轴尺寸信息的结构体。 通过OH_ArkUI_ListChildrenMainSizeOption_Create接口来创建，并且可以使用OH_ArkUI_ListChildrenMainSizeOption_Splice方法对ArcList组件子项主轴尺寸数组进行大小调整。 |
@@ -3057,7 +3589,10 @@ NODE_ARC_LIST_CHILDREN_MAIN_SIZE = 1019005
  
   
 
-#### NODE_ARC_LIST_SET_HEADER
+## NODE_ARC_LIST_SET_HEADER
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_ARC_LIST_SET_HEADER = 1019006
@@ -3071,6 +3606,7 @@ NODE_ARC_LIST_SET_HEADER = 1019006
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 使用ArkUI_NodeHandle对象作为ArcList头部组件。 |
@@ -3078,6 +3614,7 @@ NODE_ARC_LIST_SET_HEADER = 1019006
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .object | 使用ArkUI_NodeHandle对象作为ArcList头部组件。 |
@@ -3085,7 +3622,10 @@ NODE_ARC_LIST_SET_HEADER = 1019006
  
   
 
-#### NODE_ARC_LIST_SCROLL_BAR
+## NODE_ARC_LIST_SCROLL_BAR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_ARC_LIST_SCROLL_BAR = 1019007
@@ -3099,6 +3639,7 @@ NODE_ARC_LIST_SCROLL_BAR = 1019007
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 滚动条状态，数据类型ArkUI_ScrollBarDisplayMode，默认值为ARKUI_SCROLL_BAR_DISPLAY_MODE_AUTO。 |
@@ -3106,6 +3647,7 @@ NODE_ARC_LIST_SCROLL_BAR = 1019007
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 滚动条状态，数据类型ArkUI_ScrollBarDisplayMode。 |
@@ -3113,7 +3655,10 @@ NODE_ARC_LIST_SCROLL_BAR = 1019007
  
   
 
-#### NODE_ARC_LIST_SCROLL_BAR_COLOR
+## NODE_ARC_LIST_SCROLL_BAR_COLOR
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_ARC_LIST_SCROLL_BAR_COLOR = 1019008
@@ -3127,6 +3672,7 @@ NODE_ARC_LIST_SCROLL_BAR_COLOR = 1019008
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .data[0].u32 | 滚动条颜色，0xargb类型。默认值：0x66182431。 |
@@ -3134,6 +3680,7 @@ NODE_ARC_LIST_SCROLL_BAR_COLOR = 1019008
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .data[0].u32 | 滚动条颜色，0xargb类型。 |
@@ -3141,7 +3688,10 @@ NODE_ARC_LIST_SCROLL_BAR_COLOR = 1019008
  
   
 
-#### NODE_ARC_LIST_SCROLL_BAR_WIDTH
+## NODE_ARC_LIST_SCROLL_BAR_WIDTH
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_ARC_LIST_SCROLL_BAR_WIDTH = 1019009
@@ -3155,6 +3705,7 @@ NODE_ARC_LIST_SCROLL_BAR_WIDTH = 1019009
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 滚动条宽度，单位vp，默认值4。 取值范围：[0, +∞)。设置为小于0的值时，按默认值处理。设置为0时，不显示滚动条。 |
@@ -3162,6 +3713,7 @@ NODE_ARC_LIST_SCROLL_BAR_WIDTH = 1019009
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 滚动条宽度，单位vp。 |
@@ -3169,7 +3721,10 @@ NODE_ARC_LIST_SCROLL_BAR_WIDTH = 1019009
  
   
 
-#### NODE_ARC_LIST_ENABLE_SCROLL_INTERACTION
+## NODE_ARC_LIST_ENABLE_SCROLL_INTERACTION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_ARC_LIST_ENABLE_SCROLL_INTERACTION = 1019010
@@ -3183,6 +3738,7 @@ NODE_ARC_LIST_ENABLE_SCROLL_INTERACTION = 1019010
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否支持滚动手势，默认值1。1：支持滚动手势，0：不支持滚动手势。 |
@@ -3190,6 +3746,7 @@ NODE_ARC_LIST_ENABLE_SCROLL_INTERACTION = 1019010
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否支持滚动手势。1：支持滚动手势，0：不支持滚动手势。 |
@@ -3197,7 +3754,10 @@ NODE_ARC_LIST_ENABLE_SCROLL_INTERACTION = 1019010
  
   
 
-#### NODE_ARC_LIST_FADING_EDGE
+## NODE_ARC_LIST_FADING_EDGE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_ARC_LIST_FADING_EDGE = 1019011
@@ -3211,6 +3771,7 @@ NODE_ARC_LIST_FADING_EDGE = 1019011
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否使能边缘渐隐效果。0表示关闭边缘效果，1表示开启边缘效果。默认值：0。 |
@@ -3219,6 +3780,7 @@ NODE_ARC_LIST_FADING_EDGE = 1019011
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否使能边缘渐隐效果。0表示关闭边缘效果，1表示开启边缘效果。 |
@@ -3227,7 +3789,10 @@ NODE_ARC_LIST_FADING_EDGE = 1019011
  
   
 
-#### NODE_ARC_LIST_FRICTION
+## NODE_ARC_LIST_FRICTION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_ARC_LIST_FRICTION = 1019012
@@ -3241,6 +3806,7 @@ NODE_ARC_LIST_FRICTION = 1019012
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 摩擦系数，默认值：0.8。取值范围：(0, +∞)，设置为小于等于0的值时，按默认值处理。 |
@@ -3248,6 +3814,7 @@ NODE_ARC_LIST_FRICTION = 1019012
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 摩擦系数。 |
@@ -3255,7 +3822,10 @@ NODE_ARC_LIST_FRICTION = 1019012
  
   
 
-#### NODE_ARC_LIST_FLING_SPEED_LIMIT
+## NODE_ARC_LIST_FLING_SPEED_LIMIT
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_ARC_LIST_FLING_SPEED_LIMIT = 1019013
@@ -3269,6 +3839,7 @@ NODE_ARC_LIST_FLING_SPEED_LIMIT = 1019013
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | Fling动效开始时的最大初始速度，单位：vp/s。默认值：9000。 |
@@ -3276,6 +3847,7 @@ NODE_ARC_LIST_FLING_SPEED_LIMIT = 1019013
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | Fling动效开始时的最大初始速度，单位：vp/s。 |
@@ -3283,7 +3855,10 @@ NODE_ARC_LIST_FLING_SPEED_LIMIT = 1019013
  
   
 
-#### NODE_ARC_LIST_ITEM_AUTO_SCALE
+## NODE_ARC_LIST_ITEM_AUTO_SCALE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_ARC_LIST_ITEM_AUTO_SCALE = MAX_NODE_SCOPE_NUM * ARKUI_NODE_ARC_LIST_ITEM = 1020000
@@ -3297,6 +3872,7 @@ NODE_ARC_LIST_ITEM_AUTO_SCALE = MAX_NODE_SCOPE_NUM * ARKUI_NODE_ARC_LIST_ITEM = 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 是否启用自动缩放，0：不启用，1：启用，默认值：1。 |
@@ -3304,6 +3880,7 @@ NODE_ARC_LIST_ITEM_AUTO_SCALE = MAX_NODE_SCOPE_NUM * ARKUI_NODE_ARC_LIST_ITEM = 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否启用自动缩放。0：不启用，1：启用。 |
@@ -3311,7 +3888,10 @@ NODE_ARC_LIST_ITEM_AUTO_SCALE = MAX_NODE_SCOPE_NUM * ARKUI_NODE_ARC_LIST_ITEM = 
  
   
 
-#### NODE_ARC_LIST_ITEM_SWIPE_ACTION
+## NODE_ARC_LIST_ITEM_SWIPE_ACTION
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_ARC_LIST_ITEM_SWIPE_ACTION = 1020001
@@ -3325,6 +3905,7 @@ NODE_ARC_LIST_ITEM_SWIPE_ACTION = 1020001
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 使用ArkUI_ListItemSwipeActionOption对象构造。 定义ArcListItem的划出组件信息的结构体。通过OH_ArkUI_ListItemSwipeActionOption_Create接口来创建，并且可以使用OH_ArkUI_ListItemSwipeActionOption_SetStart方法设置ListItemSwipeActionItem左侧（垂直布局）或上方（横向布局）内容。 |
@@ -3332,7 +3913,10 @@ NODE_ARC_LIST_ITEM_SWIPE_ACTION = 1020001
  
   
 
-#### NODE_ARC_SCROLL_BAR_BIND_SCROLLABLE
+## NODE_ARC_SCROLL_BAR_BIND_SCROLLABLE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_ARC_SCROLL_BAR_BIND_SCROLLABLE = MAX_NODE_SCOPE_NUM * ARKUI_NODE_ARC_SCROLL_BAR = 1021000
@@ -3346,6 +3930,7 @@ NODE_ARC_SCROLL_BAR_BIND_SCROLLABLE = MAX_NODE_SCOPE_NUM * ARKUI_NODE_ARC_SCROLL
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .object | 使用ArkUI_NodeHandle对象作为滚动条绑定的可滚动组件。 |
@@ -3353,6 +3938,7 @@ NODE_ARC_SCROLL_BAR_BIND_SCROLLABLE = MAX_NODE_SCOPE_NUM * ARKUI_NODE_ARC_SCROLL
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .object | 使用ArkUI_NodeHandle对象作为滚动条绑定的可滚动组件。 |
@@ -3360,7 +3946,10 @@ NODE_ARC_SCROLL_BAR_BIND_SCROLLABLE = MAX_NODE_SCOPE_NUM * ARKUI_NODE_ARC_SCROLL
  
   
 
-#### NODE_ARC_SCROLL_BAR_DISPLAY_MODE
+## NODE_ARC_SCROLL_BAR_DISPLAY_MODE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NODE_ARC_SCROLL_BAR_DISPLAY_MODE = 1021001
@@ -3374,6 +3963,7 @@ NODE_ARC_SCROLL_BAR_DISPLAY_MODE = 1021001
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 滚动条状态，数据类型ArkUI_ScrollBarDisplayMode，默认值为ARKUI_SCROLL_BAR_DISPLAY_MODE_AUTO。 |
@@ -3381,6 +3971,7 @@ NODE_ARC_SCROLL_BAR_DISPLAY_MODE = 1021001
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 滚动条状态，数据类型ArkUI_ScrollBarDisplayMode。 |

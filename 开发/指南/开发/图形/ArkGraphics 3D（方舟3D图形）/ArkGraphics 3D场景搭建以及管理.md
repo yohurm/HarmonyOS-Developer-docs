@@ -1,6 +1,6 @@
 # ArkGraphics 3D场景搭建以及管理
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkgraphics3d-scene
 
@@ -18,13 +18,14 @@
 
 
 
-#### 模型的加载及呈现
+## 模型的加载及呈现
 
 模型的格式多种多样，目前ArkGraphics 3D仅支持glTF模型的加载，glTF是一种对于3D场景描述的格式，glTF作为一种开源3D场景格式在业界被广泛采用。关于glTF的介绍可以参照[glTF-2.0](https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html)。
 
 一个glTF模型可以包含光源、相机、模型等3D场景关键要素，如果一个glTF模型中包含相机，使用ArkGraphics 3D提供的接口加载glTF就可以直接完成该相机视角下3D场景的渲染。如果不包含相机，也可以利用ArkGraphics 3D创建一个相机完成渲染。由于3D模型往往数据量很大，通常采用异步方式进行加载，加载成功后将返回一个scene对象，通过该对象可对整个3D场景进行编辑。
 
 glTF模型中引用的纹理图片支持以下格式：
+
 
 | 格式 | 支持情况 |
 | --- | --- |
@@ -70,7 +71,7 @@ if (this.scene == null) {
   
 ```ArkTS
 // Create a Camera.
-this.cam = await rf.createCamera({ 'name': 'Camera' });
+this.cam = await rf.createCamera({ name: 'Camera' });
 // Set proper camera parameters.
 this.cam.enabled = true;
 this.cam.position.z = 5;
@@ -95,7 +96,7 @@ if (this.sceneOpt) {
 
 
 
-#### 相机的创建及管理
+## 相机的创建及管理
 
 相机作为3D场景中的重要部分，决定了整个3D场景向2D图片的投影过程，相机的近远平面、FoV角等关键参数也会对整个3D渲染产生重要的影响。开发者可以通过设置相机参数，控制这个渲染过程，得到开发者想要的渲染效果。
 
@@ -198,7 +199,7 @@ Slider({
 
 
 
-#### 光源的创建及管理
+## 光源的创建及管理
 
 3D场景的光源是对于物理世界中光源的一种数据建模，模拟物理世界的光源对于3D场景中的物体产生影响。
 
@@ -263,7 +264,7 @@ if (globalScene && this.light) {
   this.scene = globalScene;
   this.sceneOpt = { scene: this.scene, modelType: ModelType.SURFACE } as SceneOptions;
   this.rf = this.scene.getResourceFactory();
-  this.cam = await this.rf.createCamera({ 'name': 'Camera1' });
+  this.cam = await this.rf.createCamera({ name: 'Camera1' });
   this.cam.enabled = true;
   this.cam.position.z = 5;
   // Initialize color value
@@ -307,6 +308,6 @@ Slider({
 
 
 
-#### 示例代码
+## 示例代码
 
  - [基于3D引擎接口实现3D图形渲染功能（ArkTS）](https://gitcode.com/HarmonyOS_Samples/Graphics3D)

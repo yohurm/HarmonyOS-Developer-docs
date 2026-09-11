@@ -1,9 +1,9 @@
 # @ohos.file.securityLabel (数据标签)
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-file-securitylabel
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该模块提供文件数据安全等级的相关功能：向应用程序提供查询、设置文件数据安全等级的ArkTS接口。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { securityLabel } from '@kit.CoreFileKit';
@@ -22,9 +23,10 @@ import { securityLabel } from '@kit.CoreFileKit';
 
 
 
-#### 使用说明
+## 使用说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 使用该功能模块对文件/目录进行操作前，需要先获取其应用沙箱路径，获取方式及其接口用法请参考：
 
@@ -44,15 +46,17 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### DataLevel
+## DataLevel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type DataLevel = 's0' | 's1' | 's2' | 's3' | 's4'
 
 数据安全等级。
 
 **系统能力**：SystemCapability.FileManagement.File.FileIO
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -67,9 +71,10 @@ type DataLevel = 's0' | 's1' | 's2' | 's3' | 's4'
 
 
 
-#### securityLabel.setSecurityLabel
+## securityLabel.setSecurityLabel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setSecurityLabel(path:string, type:DataLevel):Promise&lt;void&gt;
 
@@ -79,6 +84,7 @@ setSecurityLabel(path:string, type:DataLevel):Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 文件或目录的应用沙箱路径。 |
@@ -86,6 +92,7 @@ setSecurityLabel(path:string, type:DataLevel):Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -95,6 +102,7 @@ setSecurityLabel(path:string, type:DataLevel):Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[基础文件IO错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement#基础文件io错误码)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -122,9 +130,10 @@ securityLabel.setSecurityLabel(filePath, "s0").then(() => {
 
 
 
-#### securityLabel.setSecurityLabel
+## securityLabel.setSecurityLabel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setSecurityLabel(path:string, type:DataLevel, callback: AsyncCallback&lt;void&gt;):void
 
@@ -133,6 +142,7 @@ setSecurityLabel(path:string, type:DataLevel, callback: AsyncCallback&lt;void&gt
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -144,6 +154,7 @@ setSecurityLabel(path:string, type:DataLevel, callback: AsyncCallback&lt;void&gt
 **错误码：**
 
 以下错误码的详细介绍请参见[基础文件IO错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement#基础文件io错误码)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -173,9 +184,10 @@ securityLabel.setSecurityLabel(filePath, "s0", (err: BusinessError) => {
 
 
 
-#### securityLabel.setSecurityLabelSync
+## securityLabel.setSecurityLabelSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setSecurityLabelSync(path:string, type:DataLevel):void
 
@@ -184,6 +196,7 @@ setSecurityLabelSync(path:string, type:DataLevel):void
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -194,6 +207,7 @@ setSecurityLabelSync(path:string, type:DataLevel):void
 **错误码：**
 
 以下错误码的详细介绍请参见[基础文件IO错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement#基础文件io错误码)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -216,9 +230,10 @@ securityLabel.setSecurityLabelSync(filePath, "s0");
 
 
 
-#### securityLabel.getSecurityLabel
+## securityLabel.getSecurityLabel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSecurityLabel(path:string):Promise&lt;string&gt;
 
@@ -228,12 +243,14 @@ getSecurityLabel(path:string):Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 文件或目录的应用沙箱路径。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -243,6 +260,7 @@ getSecurityLabel(path:string):Promise&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[基础文件IO错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement#基础文件io错误码)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -270,9 +288,10 @@ securityLabel.getSecurityLabel(filePath).then((type: string) => {
 
 
 
-#### securityLabel.getSecurityLabel
+## securityLabel.getSecurityLabel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSecurityLabel(path:string, callback:AsyncCallback&lt;string&gt;): void
 
@@ -281,6 +300,7 @@ getSecurityLabel(path:string, callback:AsyncCallback&lt;string&gt;): void
 **系统能力**：SystemCapability.FileManagement.File.FileIO
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -291,6 +311,7 @@ getSecurityLabel(path:string, callback:AsyncCallback&lt;string&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[基础文件IO错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement#基础文件io错误码)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -320,9 +341,10 @@ securityLabel.getSecurityLabel(filePath, (err: BusinessError, type: string) => {
 
 
 
-#### securityLabel.getSecurityLabelSync
+## securityLabel.getSecurityLabelSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSecurityLabelSync(path:string):string
 
@@ -332,12 +354,14 @@ getSecurityLabelSync(path:string):string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 文件或目录的应用沙箱路径。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -347,6 +371,7 @@ getSecurityLabelSync(path:string):string
 **错误码：**
 
 以下错误码的详细介绍请参见[基础文件IO错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-filemanagement#基础文件io错误码)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

@@ -1,17 +1,18 @@
 # ChildProcess
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-childprocess
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供子进程的管理能力，支持创建Native子进程并在父子进程间建立IPC通道，用于实现多进程应用开发。
  
-创建的子进程不支持UI界面，也不支持Context相关的接口调用。通过此模块和[childProcessManager](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-childprocessmanager)（非SELF_FORK模式）启动的子进程总数最大为512个。
+创建的子进程不支持UI界面，也不支持Context相关的接口调用。通过本模块和[childProcessManager](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-childprocessmanager)启动的子进程总数最大为512个，其中childProcessManager在SELF_FORK模式下启动的子进程不计入总数。
  
 **系统能力：** SystemCapability.Ability.AbilityRuntime.Core
  
@@ -19,10 +20,12 @@
  
   
 
-#### 文件汇总
+## 文件汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | native_child_process.h | 支持创建Native子进程，并在父子进程间建立IPC通道。 引用文件：<AbilityKit/native_child_process.h> 库：libchild_process.so |

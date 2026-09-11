@@ -1,42 +1,45 @@
 # LiveFormExtensionContext
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-application-liveformextensioncontext
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-LiveFormExtensionContext是[LiveFormExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-form-liveformextensionability)的上下文，继承自[ExtensionContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-extensioncontext)。
+LiveFormExtensionContext是[LiveFormExtensionAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-form-liveformextensionability)的上下文，继承自[ExtensionContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-extensioncontext)。它提供访问特定于LiveFormExtensionAbility资源的能力，支持在互动卡片中拉起应用页面，适用于需要在互动卡片中响应用户点击并跳转到应用页面的场景，解决了互动卡片无法主动拉起应用页面的限制问题。
 
 > [!NOTE]
 > 本模块首批接口从API version 20开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 本模块接口仅可在Stage模型下使用。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { common } from '@kit.AbilityKit';
 ```
 
 > [!NOTE]
-> 在API version 22以前，需要通过import LiveFormExtensionContext from 'application/LiveFormExtensionContext'; 导入LiveFormExtensionContext。该导入方式在DevEco Studio中标红，但不影响编译运行，可以直接使用LiveFormExtensionContext。 在API version 22及以后，支持通过import { common } from '@kit.AbilityKit'; 导入LiveFormExtensionContext，并通过common.LiveFormExtensionContext的方式使用。
+> 在API version 22以前，需要通过import LiveFormExtensionContext from 'application/LiveFormExtensionContext';导入。该导入方式在DevEco Studio中标红，但不影响编译运行，可以直接使用LiveFormExtensionContext。 在API version 22及以后，支持通过import { common } from '@kit.AbilityKit';导入，并通过common.LiveFormExtensionContext的方式使用。
 
 
 
 
-#### LiveFormExtensionContext
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-LiveFormExtensionContext提供允许访问特定于LiveFormExtensionAbility资源的能力，继承自[ExtensionContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-extensioncontext)。
+## LiveFormExtensionContext
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### startAbilityByLiveForm
+LiveFormExtensionContext提供访问特定于LiveFormExtensionAbility资源的能力。
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+
+### startAbilityByLiveForm
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startAbilityByLiveForm(want: Want): Promise&lt;void&gt;
 
@@ -46,6 +49,11 @@ startAbilityByLiveForm(want: Want): Promise&lt;void&gt;
 
 该接口仅限在点击事件回调中调用，且需要直接调用，不支持延时后调用，否则会抛出错误码16501011。
 
+**使用场景：**
+
+ - 互动卡片激活态中点击跳转到应用主页或详情页。
+
+
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Ability.Form
@@ -54,12 +62,14 @@ startAbilityByLiveForm(want: Want): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| want | Want | 是 | 需要被拉起的应用页面信息。仅支持使用显式want。 |
+| want | Want | 是 | 需要被拉起的应用页面信息。取值原则：仅支持使用显式Want，必须包含bundleName和abilityName字段。详见使用显式Want启动应用组件。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -69,6 +79,7 @@ startAbilityByLiveForm(want: Want): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[卡片错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-form)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -83,7 +94,7 @@ startAbilityByLiveForm(want: Want): Promise&lt;void&gt;
 
 ```ArkTS
 // MyLiveFormExtensionAbility.ets
-import { formInfo, LiveFormInfo, LiveFormExtensionAbility } from '@kit.FormKit';
+import { LiveFormInfo, LiveFormExtensionAbility } from '@kit.FormKit';
 import { UIExtensionContentSession } from '@kit.AbilityKit';
 
 export default class MyLiveFormExtensionAbility extends LiveFormExtensionAbility {
@@ -126,8 +137,8 @@ struct MyLiveFormPage {
         .catch((err: BusinessError) => {
           console.error(`startAbilityByLiveForm failed, code is ${err?.code}, message is ${err?.message}`);
         });
-    } catch (e) {
-      console.error(`startAbilityByLiveForm failed, code is ${e?.code}, message is ${e?.message}`);
+    } catch (err) {
+      console.error(`startAbilityByLiveForm failed, code is ${err?.code}, message is ${err?.message}`);
     }
   }
 
@@ -149,7 +160,7 @@ struct MyLiveFormPage {
         return;
       }
       this.startAbilityByLiveForm();
-    })
+    });
   }
 }
 ```

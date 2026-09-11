@@ -1,9 +1,9 @@
 # Interface (ImagePacker)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-imagepacker
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ImagePacker类，用于图片压缩和编码。
 
@@ -20,9 +20,10 @@ ImagePacker类，用于图片压缩和编码。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { image } from '@kit.ImageKit';
@@ -30,11 +31,13 @@ import { image } from '@kit.ImageKit';
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Multimedia.Image.ImagePacker
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -43,9 +46,10 @@ import { image } from '@kit.ImageKit';
 
 
 
-#### packToData13+
+## packToData13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 packToData(source: ImageSource, options: PackingOption): Promise&lt;ArrayBuffer&gt;
 
@@ -57,6 +61,7 @@ packToData(source: ImageSource, options: PackingOption): Promise&lt;ArrayBuffer&
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | source | ImageSource | 是 | 编码的ImageSource。 |
@@ -64,6 +69,7 @@ packToData(source: ImageSource, options: PackingOption): Promise&lt;ArrayBuffer&
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -73,6 +79,7 @@ packToData(source: ImageSource, options: PackingOption): Promise&lt;ArrayBuffer&
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -109,9 +116,10 @@ async function PackToData(context : Context) {
 
 
 
-#### packToData13+
+## packToData13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 packToData(source: PixelMap, options: PackingOption): Promise&lt;ArrayBuffer&gt;
 
@@ -131,6 +139,7 @@ packToData(source: PixelMap, options: PackingOption): Promise&lt;ArrayBuffer&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | source | PixelMap | 是 | 编码的PixelMap源。 |
@@ -138,6 +147,7 @@ packToData(source: PixelMap, options: PackingOption): Promise&lt;ArrayBuffer&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -147,6 +157,7 @@ packToData(source: PixelMap, options: PackingOption): Promise&lt;ArrayBuffer&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -186,17 +197,23 @@ async function PackToData() {
 
 
 
-#### packing13+
+## packing13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 packing(picture: Picture, options: PackingOption): Promise&lt;ArrayBuffer&gt;
 
 将图像压缩或重新编码。使用Promise异步回调。
 
+> [!NOTE]
+> 接口的编码对象为Picture，仅支持"image/jpeg"和"image/heic（或者image/heif）"格式。
+
+
 **系统能力：** SystemCapability.Multimedia.Image.ImagePacker
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -206,6 +223,7 @@ packing(picture: Picture, options: PackingOption): Promise&lt;ArrayBuffer&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;ArrayBuffer&gt; | Promise对象，返回压缩或编码后的数据。 |
@@ -214,6 +232,7 @@ packing(picture: Picture, options: PackingOption): Promise&lt;ArrayBuffer&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -254,9 +273,10 @@ async function Packing(context: Context) {
 
 
 
-#### packToDataFromPixelmapSequence18+
+## packToDataFromPixelmapSequence18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 packToDataFromPixelmapSequence(pixelmapSequence: Array&lt;PixelMap&gt;, options: PackingOptionsForSequence): Promise&lt;ArrayBuffer&gt;
 
@@ -266,6 +286,7 @@ packToDataFromPixelmapSequence(pixelmapSequence: Array&lt;PixelMap&gt;, options:
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pixelmapSequence | Array&lt;PixelMap&gt; | 是 | 待编码的PixelMap序列。 |
@@ -273,6 +294,7 @@ packToDataFromPixelmapSequence(pixelmapSequence: Array&lt;PixelMap&gt;, options:
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -282,6 +304,7 @@ packToDataFromPixelmapSequence(pixelmapSequence: Array&lt;PixelMap&gt;, options:
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -319,9 +342,10 @@ async function PackToDataFromPixelmapSequence(context : Context) {
 
 
 
-#### release
+## release
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(callback: AsyncCallback&lt;void&gt;): void
 
@@ -334,6 +358,7 @@ release(callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Image.ImagePacker
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -359,9 +384,10 @@ async function Release() {
 
 
 
-#### release
+## release
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(): Promise&lt;void&gt;
 
@@ -374,6 +400,7 @@ release(): Promise&lt;void&gt;
 **系统能力：** SystemCapability.Multimedia.Image.ImagePacker
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -397,9 +424,10 @@ async function Release() {
 
 
 
-#### packToFile11+
+## packToFile11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 packToFile(source: ImageSource, fd: number, options: PackingOption, callback: AsyncCallback&lt;void&gt;): void
 
@@ -408,6 +436,7 @@ packToFile(source: ImageSource, fd: number, options: PackingOption, callback: As
 **系统能力：** SystemCapability.Multimedia.Image.ImagePacker
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -420,6 +449,7 @@ packToFile(source: ImageSource, fd: number, options: PackingOption, callback: As
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -460,9 +490,10 @@ async function PackToFile(context : Context) {
 
 
 
-#### packToFile11+
+## packToFile11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 packToFile (source: ImageSource, fd: number, options: PackingOption): Promise&lt;void&gt;
 
@@ -471,6 +502,7 @@ packToFile (source: ImageSource, fd: number, options: PackingOption): Promise&lt
 **系统能力：** SystemCapability.Multimedia.Image.ImagePacker
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -481,6 +513,7 @@ packToFile (source: ImageSource, fd: number, options: PackingOption): Promise&lt
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -489,6 +522,7 @@ packToFile (source: ImageSource, fd: number, options: PackingOption): Promise&lt
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -527,16 +561,17 @@ async function PackToFile(context : Context) {
 
 
 
-#### packToFile11+
+## packToFile11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 packToFile (source: PixelMap, fd: number, options: PackingOption, callback: AsyncCallback&lt;void&gt;): void
 
 指定编码参数，将PixelMap直接编码进文件。使用callback异步回调。
 
 
-![](assets/Interface%20ImagePacker/file-20260525092931773-003.png)
+![](assets/Interface%20ImagePacker/file-20260525092931779-004.png)
 
 
 接口如果返回62980115错误码，表明参数异常，可能是PixelMap对象被提前释放了。需要调用方排查，在该方法调用结束后再释放PixelMap对象。
@@ -546,6 +581,7 @@ packToFile (source: PixelMap, fd: number, options: PackingOption, callback: Asyn
 **系统能力：** SystemCapability.Multimedia.Image.ImagePacker
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -558,6 +594,7 @@ packToFile (source: PixelMap, fd: number, options: PackingOption, callback: Asyn
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -599,16 +636,17 @@ async function PackToFile(context : Context) {
 
 
 
-#### packToFile11+
+## packToFile11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 packToFile (source: PixelMap, fd: number, options: PackingOption): Promise&lt;void&gt;
 
 指定编码参数，将PixelMap直接编码进文件。使用Promise异步回调。
 
 
-![](assets/Interface%20ImagePacker/file-20260525092931779-004.png)
+![](assets/Interface%20ImagePacker/file-20260525092931779-005.png)
 
 
 接口如果返回62980115错误码，表明参数异常，可能是PixelMap对象被提前释放了。需要调用方排查，在该方法调用结束后再释放PixelMap对象。
@@ -619,6 +657,7 @@ packToFile (source: PixelMap, fd: number, options: PackingOption): Promise&lt;vo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | source | PixelMap | 是 | 编码的PixelMap资源。 |
@@ -628,6 +667,7 @@ packToFile (source: PixelMap, fd: number, options: PackingOption): Promise&lt;vo
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -636,6 +676,7 @@ packToFile (source: PixelMap, fd: number, options: PackingOption): Promise&lt;vo
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -676,9 +717,10 @@ async function PackToFile(context : Context) {
 
 
 
-#### packToFile13+
+## packToFile13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 packToFile(picture: Picture, fd: number, options: PackingOption): Promise&lt;void&gt;
 
@@ -687,6 +729,7 @@ packToFile(picture: Picture, fd: number, options: PackingOption): Promise&lt;voi
 **系统能力：** SystemCapability.Multimedia.Image.ImagePacker
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -697,6 +740,7 @@ packToFile(picture: Picture, fd: number, options: PackingOption): Promise&lt;voi
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -705,6 +749,7 @@ packToFile(picture: Picture, fd: number, options: PackingOption): Promise&lt;voi
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -749,9 +794,10 @@ async function PackToFile(context: Context) {
 
 
 
-#### packToFileFromPixelmapSequence18+
+## packToFileFromPixelmapSequence18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 packToFileFromPixelmapSequence(pixelmapSequence: Array&lt;PixelMap&gt;, fd: number, options: PackingOptionsForSequence): Promise&lt;void&gt;
 
@@ -760,6 +806,7 @@ packToFileFromPixelmapSequence(pixelmapSequence: Array&lt;PixelMap&gt;, fd: numb
 **系统能力：** SystemCapability.Multimedia.Image.ImagePacker
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -770,6 +817,7 @@ packToFileFromPixelmapSequence(pixelmapSequence: Array&lt;PixelMap&gt;, fd: numb
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -778,6 +826,7 @@ packToFileFromPixelmapSequence(pixelmapSequence: Array&lt;PixelMap&gt;, fd: numb
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -818,9 +867,10 @@ async function PackToFile(context : Context) {
 
 
 
-#### packBinaryImageToTiffFile
+## packBinaryImageToTiffFile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 packBinaryImageToTiffFile(bufferInfo: BinaryBufferInfo, fd: number, options?: PackingOptionsForTiff): Promise&lt;void&gt;
 
@@ -834,6 +884,7 @@ packBinaryImageToTiffFile(bufferInfo: BinaryBufferInfo, fd: number, options?: Pa
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bufferInfo | BinaryBufferInfo | 是 | 图像缓冲区信息。 |
@@ -843,6 +894,7 @@ packBinaryImageToTiffFile(bufferInfo: BinaryBufferInfo, fd: number, options?: Pa
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -851,6 +903,7 @@ packBinaryImageToTiffFile(bufferInfo: BinaryBufferInfo, fd: number, options?: Pa
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -902,9 +955,10 @@ async function PackBinaryImageToTiffFile(context: Context) {
 
 
 
-#### packBinaryImageToTiffData
+## packBinaryImageToTiffData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 packBinaryImageToTiffData(bufferInfo: BinaryBufferInfo, options?: PackingOptionsForTiff): Promise&lt;ArrayBuffer&gt;
 
@@ -918,6 +972,7 @@ packBinaryImageToTiffData(bufferInfo: BinaryBufferInfo, options?: PackingOptions
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bufferInfo | BinaryBufferInfo | 是 | 图像缓冲区信息。 |
@@ -925,6 +980,7 @@ packBinaryImageToTiffData(bufferInfo: BinaryBufferInfo, options?: PackingOptions
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -934,6 +990,7 @@ packBinaryImageToTiffData(bufferInfo: BinaryBufferInfo, options?: PackingOptions
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -980,9 +1037,10 @@ async function PackBinaryImageToTiffData() {
 
 
 
-#### packing(deprecated)
+## packing(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 packing(source: ImageSource, option: PackingOption, callback: AsyncCallback&lt;ArrayBuffer&gt;): void
 
@@ -997,6 +1055,7 @@ packing(source: ImageSource, option: PackingOption, callback: AsyncCallback&lt;A
 **系统能力：** SystemCapability.Multimedia.Image.ImagePacker
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1028,9 +1087,10 @@ async function Packing(context : Context) {
 
 
 
-#### packing(deprecated)
+## packing(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 packing(source: ImageSource, option: PackingOption): Promise&lt;ArrayBuffer&gt;
 
@@ -1046,6 +1106,7 @@ packing(source: ImageSource, option: PackingOption): Promise&lt;ArrayBuffer&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | source | ImageSource | 是 | 编码的ImageSource。 |
@@ -1053,6 +1114,7 @@ packing(source: ImageSource, option: PackingOption): Promise&lt;ArrayBuffer&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1081,9 +1143,10 @@ async function Packing(context : Context) {
 
 
 
-#### packing(deprecated)
+## packing(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 packing(source: PixelMap, option: PackingOption, callback: AsyncCallback&lt;ArrayBuffer&gt;): void
 
@@ -1094,7 +1157,7 @@ packing(source: PixelMap, option: PackingOption, callback: AsyncCallback&lt;Arra
 
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/JtunbG3jTNGTsNH51r8hgA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071703Z&HW-CC-Expire=86400&HW-CC-Sign=0755447467EB577BBF9AA6CC1AE208761BE00715C8204942734F8372AF2771F9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/IgXwXZC-S-yvtdU9hveEUg/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072259Z&HW-CC-Expire=86400&HW-CC-Sign=F7F44C17CBE6F62A91E8EEFDBC4126C93FA75CAB91EB7B8A96A87C4CD29396D1)
 
 
 接口如果返回"PixelMap mismatch"，表明参数异常，可能是PixelMap对象被提前释放了。需要调用方排查，在该方法调用结束后再释放PixelMap对象。
@@ -1106,6 +1169,7 @@ packing(source: PixelMap, option: PackingOption, callback: AsyncCallback&lt;Arra
 **系统能力：** SystemCapability.Multimedia.Image.ImagePacker
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1140,9 +1204,10 @@ async function Packing() {
 
 
 
-#### packing(deprecated)
+## packing(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 packing(source: PixelMap, option: PackingOption): Promise&lt;ArrayBuffer&gt;
 
@@ -1153,7 +1218,7 @@ packing(source: PixelMap, option: PackingOption): Promise&lt;ArrayBuffer&gt;
 
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/_QxjvX33Ts2mI6ero8noRQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071703Z&HW-CC-Expire=86400&HW-CC-Sign=0E0FBBA675FDC04462816A32DC9018D47692C8C0C657531DC31E762CB7ADCD0C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/RITYkKZHR1KZ6k_lKLEJTQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072259Z&HW-CC-Expire=86400&HW-CC-Sign=0D1E9DF5801F1DE4AB591A9A3CE5A0E533B84779DA56A7FF40B149FDF8362BB1)
 
 
 接口如果返回"PixelMap mismatch"，表明参数异常，可能是PixelMap对象被提前释放了。需要调用方排查，在该方法调用结束后再释放PixelMap对象。
@@ -1166,6 +1231,7 @@ packing(source: PixelMap, option: PackingOption): Promise&lt;ArrayBuffer&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | source | PixelMap | 是 | 编码的PixelMap源。 |
@@ -1173,6 +1239,7 @@ packing(source: PixelMap, option: PackingOption): Promise&lt;ArrayBuffer&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |

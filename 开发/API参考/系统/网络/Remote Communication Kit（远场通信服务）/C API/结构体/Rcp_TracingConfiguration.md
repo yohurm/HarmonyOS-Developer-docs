@@ -1,13 +1,14 @@
 # Rcp_TracingConfiguration
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_rcp___tracing_configuration
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 请求追踪配置。
  
@@ -19,16 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 成员变量
+### 成员变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | bool verbose | 请求运行时是否记录详细日志。true表示开启捕获，false表示不开启。默认值为false。如果设置了infoToCollect中的选项，则自动启用。 |
@@ -39,15 +43,17 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### collectTimeInfo
+### collectTimeInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool Rcp_TracingConfiguration::collectTimeInfo
@@ -59,9 +65,10 @@ bool Rcp_TracingConfiguration::collectTimeInfo
  
   
 
-#### httpEventsHandler
+### httpEventsHandler
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Rcp_EventsHandler Rcp_TracingConfiguration::httpEventsHandler
@@ -73,9 +80,10 @@ Rcp_EventsHandler Rcp_TracingConfiguration::httpEventsHandler
  
   
 
-#### infoToCollect
+### infoToCollect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Rcp_InfoToCollect Rcp_TracingConfiguration::infoToCollect
@@ -87,9 +95,10 @@ Rcp_InfoToCollect Rcp_TracingConfiguration::infoToCollect
  
   
 
-#### verbose
+### verbose
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool Rcp_TracingConfiguration::verbose

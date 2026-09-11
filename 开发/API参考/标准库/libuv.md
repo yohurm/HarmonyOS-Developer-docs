@@ -1,16 +1,23 @@
 # libuv
 
-更新时间：2026-04-28 03:31:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/libuv
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 简介
+## 简介
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [libuv](http://libuv.org/)是一个跨平台库，基于事件驱动来实现异步I/O，适用于网络编程和文件系统操作。它是Node.js的核心库之一，也被其他语言的开发者广泛使用。
 
 
 
-#### 支持的能力
+## 支持的能力
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [libuv](http://libuv.org/)实现了跨平台的基于事件驱动的异步I/O。
 
@@ -18,7 +25,10 @@
 
 
 
-#### 引入libuv能力
+## 引入libuv能力
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 如果开发者需要使用libuv相关功能，首先请添加头文件：
 
@@ -34,19 +44,28 @@ libuv.so
 
 
 
-#### 接口列表
+## 接口列表
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 详见[libuv支持的API文档](http://docs.libuv.org/en/v1.x/api.html)。
 
 
 
-#### HarmonyOS引入libuv的背景
+## HarmonyOS引入libuv的背景
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 在HarmonyOS的早期版本中，为了兼容Node.js的生态，将Node.js的Node-API引入到系统中，方便Node.js开发者快速接入HarmonyOS，扩展自己的JS接口。同时引入了Node.js的事件循环实现库——libuv。
 
 
 
-#### 演进方向
+### 演进方向
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 随着HarmonyOS的逐步完善，我们计划在未来的版本中，逐步将应用模型中的事件循环归一，并增强HarmonyOS自身的事件循环，以解决许多双loop机制下的调度问题，并为开发者提供更加完善的任务优先级、插队等与任务主循环交互的方法。
 
@@ -60,7 +79,10 @@ HarmonyOS还将长期通过Node-API来为开发者提供和主线程交互及扩
 
 
 
-#### 当前问题和解决方案
+## 当前问题和解决方案
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 根据现有机制，一个线程上只能存在一个事件循环，为了适配系统应用的主事件循环，在主线程上的JS环境中，uvloop中的事件处理是由主事件循环监听其fd，触发一次uv_run来驱动的。因此部分依赖uvloop事件循环的功能无法生效。
 
@@ -68,7 +90,10 @@ HarmonyOS还将长期通过Node-API来为开发者提供和主线程交互及扩
 
 
 
-#### 场景一、在JS主线程抛异步任务到工作线程执行，在主线程中执行JS代码处理返回结果
+### 场景一、在JS主线程抛异步任务到工作线程执行，在主线程中执行JS代码处理返回结果
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误示例：**
 
@@ -266,7 +291,10 @@ libhilog_ndk.z.so
 
 
 
-#### 场景二、在Native侧向应用主循环抛fd事件，接口无法生效
+### 场景二、在Native侧向应用主循环抛fd事件，接口无法生效
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 由于应用主循环仅仅接收fd事件，在监听了uvloop中的backend_fd后，只有该fd事件被触发才会执行一次uv_run。这就意味着，在应用主循环中调用uv接口，如果不触发一次fd事件，uv_run将永远不会被执行，最后导致libuv的接口正常调用时不生效（仅当应用中没有触发uvloop中的fd事件时）。
 
@@ -523,13 +551,19 @@ libhilog_ndk.z.so
 
 
 
-#### libuv使用指导
-
-**重要：libuv NDK中所有依赖uv_run的接口在当前系统的应用主循环中无法及时生效，并且可能会导致卡顿掉帧的现象。因此不建议直接在JS主线程上使用libuv NDK接口，对于异步任务执行及与使用线程安全函数与主线程通信，开发者可以直接调用Node-API接口来实现相关功能。**
+## libuv使用指导
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### libuv接口与Node-API接口对应关系
+**重要：libuv NDK中所有依赖uv_run的接口在当前系统的应用主循环中无法及时生效，并且可能会导致卡顿掉帧的现象。因此不建议直接在JS主线程上使用libuv NDK接口，对于异步任务执行及使用线程安全函数与主线程通信，开发者可以直接调用Node-API接口来实现相关功能。**
+
+
+
+### libuv接口与Node-API接口对应关系
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 当前HarmonyOS提供了一些Node-API接口，可以替换libuv接口的使用。主要包括异步任务相关接口，线程安全的函数调用接口。
 
@@ -650,25 +684,29 @@ napi_status napi_release_threadsafe_function(napi_threadsafe_function function,
 
 
 
-#### 接口汇总说明
+### 接口汇总说明
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 接口类型 | 接口汇总 |
 | --- | --- |
-| loop概念及相关接口 | uv_loop_init |
-| loop概念及相关接口 | uv_loop_close |
-| loop概念及相关接口 | uv_default_loop |
-| loop概念及相关接口 | uv_run |
-| loop概念及相关接口 | uv_loop_alive |
-| loop概念及相关接口 | uv_stop |
-| Handle概念及相关接口 | uv_poll_* |
-| Handle概念及相关接口 | uv_timer_* |
-| Handle概念及相关接口 | uv_async_* |
-| Handle概念及相关接口 | uv_signal_* |
-| Handle概念及相关接口 | uv_fs_* |
-| Request概念及相关接口 | uv_random |
-| Request概念及相关接口 | uv_getaddrinfo |
-| Request概念及相关接口 | uv_getnameinfo |
-| Request概念及相关接口 | uv_queue_work |
+| libuv中的事件循环概念及相关接口 | uv_loop_init |
+| libuv中的事件循环概念及相关接口 | uv_loop_close |
+| libuv中的事件循环概念及相关接口 | uv_default_loop |
+| libuv中的事件循环概念及相关接口 | uv_run |
+| libuv中的事件循环概念及相关接口 | uv_loop_alive |
+| libuv中的事件循环概念及相关接口 | uv_stop |
+| libuv中的handles和requests概念及相关接口 | uv_poll_* |
+| libuv中的handles和requests概念及相关接口 | uv_timer_* |
+| libuv中的handles和requests概念及相关接口 | uv_async_* |
+| libuv中的handles和requests概念及相关接口 | uv_signal_* |
+| libuv中的handles和requests概念及相关接口 | uv_fs_* |
+| libuv中的handles和requests概念及相关接口 | uv_random |
+| libuv中的handles和requests概念及相关接口 | uv_getaddrinfo |
+| libuv中的handles和requests概念及相关接口 | uv_getnameinfo |
+| libuv中的handles和requests概念及相关接口 | uv_queue_work |
 | 线程间通信原理及相关接口 | uv_async_init |
 | 线程间通信原理及相关接口 | uv_async_send |
 | 线程池概念及相关接口 | uv_queue_work |
@@ -676,7 +714,10 @@ napi_status napi_release_threadsafe_function(napi_threadsafe_function function,
 
 
 
-#### libuv单线程约束
+### libuv单线程约束
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 在HarmonyOS中使用libuv时，**务必注意：使用uv_loop_init接口初始化loop的线程和调用uv_run的线程应保持一致，称为loop线程，并且对uvloop的所有非线程安全操作，均需保证与loop同线程，否则将会有发生crash的风险**。HarmonyOS对libuv的使用有更严格的约束，对于非线程安全的函数，libuv将实现多线程检测机制，检测到多线程问题后输出警告日志。为了确保检测机制的准确性，协助开发者规避uv接口的不规范使用，我们建议在创建事件循环与执行uv_run始终保持在同一线程。根据loop来源的不同，可分为两种情况，即开发者创建loop和从env获取loop。
 
@@ -872,7 +913,10 @@ export const testTimerAsyncSend:() => number;
 
 
 
-#### 线程安全函数
+### 线程安全函数
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 在libuv中，由于涉及到大量的异步任务，稍有不慎就会陷入到多线程问题中。在这里，我们对libuv中常用的线程安全函数和非线程安全函数做了汇总。若开发者在多线程编程中调用了非线程安全的函数，势必要对其进行加锁保护或者保证代码的正确运行时序，否则将陷入到crash问题中。
 
@@ -885,7 +929,7 @@ export const testTimerAsyncSend:() => number;
 
 **提示：所有形如uv_xxx_init的函数，即使它是以线程安全的方式实现的，但使用时要注意，避免多个线程同时调用uv_xxx_init，否则它依旧会引起多线程资源竞争的问题。最好的方式是在事件循环线程中调用该函数。**
 
-**注：uv_async_send函数被调用后，回调函数是被异步触发的。如果调用了多次uv_async_send，libuv只保证至少有一次回调会被执行。这就可能导致一旦对同一句柄触发了多次uv_async_send，libuv对回调的处理可能会违背开发者的预期。多次对同一个async句柄进行send操作，还会导致任意两次相同句柄send操作之间提交的的其他async_cb任务丢失。** 而在Native侧，可以保证回调的执行次数和开发者调用napi_call_threadsafe_function的次数保持一致。
+**注：uv_async_send函数被调用后，回调函数是被异步触发的。如果调用了多次uv_async_send，libuv只保证至少有一次回调会被执行。这就可能导致一旦对同一句柄触发了多次uv_async_send，libuv对回调的处理可能会违背开发者的预期。多次对同一个async句柄进行send操作，还会导致任意两次相同句柄send操作之间提交的其他async_cb任务丢失。** 而在Native侧，可以保证回调的执行次数和开发者调用napi_call_threadsafe_function的次数保持一致。
 
 非线程安全函数：
 
@@ -899,7 +943,10 @@ export const testTimerAsyncSend:() => number;
 
 
 
-#### libuv中的事件循环
+### libuv中的事件循环
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 事件循环是libuv中最核心的一个概念，loop负责管理整个事件循环的所有资源，它贯穿于整个事件循环的生命周期。通常将uv_run所在的线程称为该事件循环的主线程。
 
@@ -957,7 +1004,10 @@ void uv_stop(uv_loop_t* loop);
 
 
 
-#### libuv中的handles和requests
+### libuv中的handles和requests
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 handle表示一个持久性的对象，通常挂载到loop中对应的handle_queue队列上。如果handle处于活跃状态，每次uv_run都会处理handle中的回调函数。
 
@@ -1021,7 +1071,10 @@ uv_queue_work(loop, work, [](uv_work_t* req) {
 
 
 
-#### libuv timer使用规范
+### libuv timer使用规范
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 使用libuv timer需要遵守如下约定：
 1. 请不要在多个线程中使用libuv的接口（uv_timer_start、uv_timer_stop和uv_timer_again）同时操作同一个loop的timer heap，否则将导致崩溃，如果想要使用libuv的接口操作定时器，请**保持在与当前env绑定的loop所在线程上操作**；
@@ -1258,7 +1311,10 @@ export const testTimerAsyncSend:() => number;
 
 
 
-#### 线程间通信
+### 线程间通信
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 上面简单介绍了一些libuv中的基本概念，在这里我们将着重介绍libuv中的线程间通信。
 
@@ -1365,7 +1421,10 @@ delete async
 
 
 
-#### 线程池
+### 线程池
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 线程池是libuv的一个核心功能，libuv中的线程池通过uv_loop_t中的成员变量wq_async来控制工作线程与主线程的通信。核心函数如下：
 
@@ -1393,7 +1452,7 @@ work_cb与after_work_cb的执行有一个时序问题，只有work_cb执行完�
 下图为原生libuv的线程池工作流程，图中流程已简化，默认句柄的pending标志为1，worker线程个数不代表线程池中线程的真实数量。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/9lLihcYuQyC9eWD11rDETA/zh-cn_image_0000002611756995.jpg?HW-CC-KV=V1&HW-CC-Date=20260528T025028Z&HW-CC-Expire=86400&HW-CC-Sign=01DC92E6030D27B4F62085FFA5757225BF52D41777DB3FC73DEC53F67A4A18C3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/-lTRj0H6Td-Yd10NtskVQw/zh-cn_image_0000002747293935.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T073005Z&HW-CC-Expire=86400&HW-CC-Sign=11246E9E14B77353AD7638DF345AA1913A8CD73D4E5EAA75218B836FEF951135)
 
 
 **2. 异步任务提交注意事项**
@@ -1408,7 +1467,10 @@ work_cb与after_work_cb的执行有一个时序问题，只有work_cb执行完�
 
 
 
-#### libuv的使用现状
+### libuv的使用现状
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 当前HarmonyOS系统中涉及到libuv的线程主要有主线程、JS Worker线程、Taskpool中的TaskWorker线程以及IPC线程。除了主线程采用了eventhandler作为主循环，其他线程都是使用libuv中的UV_RUN_DEFAULT运行模式作为当前线程的事件主循环来执行任务。在主线程中，eventhandler通过fd驱动的方式来触发任务的执行，eventhandler监听了uv_loop中的backend_fd。当loop中有fd事件触发的时候，eventhandler会执行一次uv_run来执行一遍libuv中的任务。
 
@@ -1417,7 +1479,7 @@ work_cb与after_work_cb的执行有一个时序问题，只有work_cb执行完�
 另外，在应用主线程中，所有的异步任务尽管最终都是通过libuv得到执行的。但是在当前系统中，libuv的线程池已经对接到了FFRT中，任何抛向libuv的异步任务都会在FFRT的线程中得到调度。应用主线程的回调函数也通过PostTask接口插入到eventhandler的队列上。这就意味着FFRT线程上的异步任务完成后不再通过uv_async_send的方式触发主线程的回调。过程如下图:
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/l0v3e3ZfQjmcBJvWcluqjQ/zh-cn_image_0000002581437054.jpg?HW-CC-KV=V1&HW-CC-Date=20260528T025028Z&HW-CC-Expire=86400&HW-CC-Sign=E54C73D333961F402CCA910DAA8825ECC4C1CAEF1F053641957801555F19BF41)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/VNK5Kr34Qq6BN8ztsTOjlg/zh-cn_image_0000002747213851.jpg?HW-CC-KV=V1&HW-CC-Date=20260911T073005Z&HW-CC-Expire=86400&HW-CC-Sign=EAEFBFBCB81E2B9425B3E6482356F340933A4C89250C42205A4297D8239E8BF8)
 
 
 我们总结了五种类型的请求任务是直接可以按照正常用法在应用主循环中生效的：

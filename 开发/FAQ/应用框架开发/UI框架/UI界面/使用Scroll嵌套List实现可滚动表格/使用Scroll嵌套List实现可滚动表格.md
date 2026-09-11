@@ -131,13 +131,13 @@ export struct ListCard {
     }
     .scrollBar(BarState.Off)
     .listDirection(Axis.Horizontal)
-    // 在组件出现时滚动到之前记录的位置
+   <em> // 在组件出现时滚动到之前记录的位置</em>
     .onAppear(() => {
       if (this.scrollOffset) {
         this.scroller.scrollTo({ xOffset: this.scrollOffset, yOffset: 0 });
       }
     })
-    // 在区域变化时调整滚动位置
+   <em> // 在区域变化时调整滚动位置</em>
     .onAreaChange(() => {
       if (this.scrollOffset !== this.scroller.currentOffset().xOffset) {
         this.scroller.scrollTo({ xOffset: this.scrollOffset, yOffset: 0 });
@@ -153,7 +153,7 @@ export struct ListCard {
     });
   }
 
-  // 在滚动时更新偏移量，并确保滚动位置正确。
+<em>  // 在滚动时更新偏移量，并确保滚动位置正确。</em>
   private updateScrollOffset() {
     if (this.onScroll) {
       let offset: number = this.scroller.currentOffset().xOffset;
@@ -164,12 +164,12 @@ export struct ListCard {
     }
   }
 
-  // 处理滚动状态
+ <em> // 处理滚动状态</em>
   private onScrollReset() {
     this.onScroll = false;
   }
 
-  // 处理偏移量的变化
+ <em> // 处理偏移量的变化</em>
   private onScrollOffsetChange() {
     console.info('Test ',
       `onScrollOffsetChange,itemText =  ${this.itemText} onScroll = ${this.onScroll} ; offset = +
@@ -184,43 +184,43 @@ export struct ListCard {
 3. CommonDataSource.ets：实现了IDataSource接口，确保遵循特定的数据源规范。
 ```text
 export class CommonDataSource<T> implements IDataSource {
-  private listeners: DataChangeListener[] = []; // 存储所有注册的数据变化监听器
-  protected originDataArray: T[] = []; // 存储实际的数据项
+  private listeners: DataChangeListener[] = []; <em>// 存储所有注册的数据变化监听器</em>
+  protected originDataArray: T[] = []; <em>// 存储实际的数据项</em>
 
-  // 返回数据项的总数
+ <em> // 返回数据项的总数</em>
   totalCount(): number {
     return this.originDataArray.length;
   }
 
-  // 返回所有数据项的数组
+ <em> // 返回所有数据项的数组</em>
   getAllData(): T[] {
     return this.originDataArray;
   }
 
-  // 根据索引获取单个数据项
+ <em> // 根据索引获取单个数据项</em>
   getData(index: number) {
     return this.originDataArray[index];
   }
 
-  // 在指定位置插入数据项
+  <em>// 在指定位置插入数据项</em>
   addData(index: number, data: T): void {
     this.originDataArray.splice(index, 0, data);
     this.notifyDataAdd(index);
   }
 
-  // 替换指定位置的数据项
+ <em> // 替换指定位置的数据项</em>
   pushByIndexed(index: number, count: number, items: T[]) {
     this.originDataArray.splice(index, count, ...items);
     this.notifyDataReload();
   }
 
-  // 在末尾添加单个数据项
+ <em> // 在末尾添加单个数据项</em>
   pushData(data: T): void {
     this.originDataArray.push(data);
     this.notifyDataAdd(this.originDataArray.length - 1);
   }
 
-  // 在末尾添加多个数据项
+  <em>// 在末尾添加多个数据项</em>
   pushDataArray(...items: T[]): void {
     for (let data of items) {
       this.originDataArray.push(data);
@@ -228,7 +228,7 @@ export class CommonDataSource<T> implements IDataSource {
     }
   }
 
-  // 根据内容查找并删除数据项
+ <em> // 根据内容查找并删除数据项</em>
   deleteDataUseContent(data: T): void {
     let delIndex: number = -1;
     for (let index = 0; index < this.originDataArray.length; index++) {
@@ -242,19 +242,19 @@ export class CommonDataSource<T> implements IDataSource {
     }
   }
 
-  // 根据索引删除数据项
+ <em> // 根据索引删除数据项</em>
   deleteData(index: number): void {
     this.originDataArray.splice(index, 1);
     this.notifyDataDelete(index);
   }
 
-  // 清空数据数组
+  <em>// 清空数据数组</em>
   clear() {
     this.originDataArray = [];
     this.notifyDataReload();
   }
 
-  // 替换整个数据数组
+  <em>// 替换整个数据数组</em>
   setData(dataArray?: T[]) {
     if (dataArray) {
       this.originDataArray.splice(0, this.originDataArray.length);
@@ -265,14 +265,14 @@ export class CommonDataSource<T> implements IDataSource {
     this.notifyDataReload();
   }
 
-  // 注册一个数据变化监听器
+ <em> // 注册一个数据变化监听器</em>
   registerDataChangeListener(listener: DataChangeListener): void {
     if (this.listeners.indexOf(listener) < 0) {
       this.listeners.push(listener);
     }
   }
 
-  // 注销一个数据变化监听器
+ <em> // 注销一个数据变化监听器</em>
   unregisterDataChangeListener(listener: DataChangeListener): void {
     const pos = this.listeners.indexOf(listener);
     if (pos >= 0) {
@@ -280,7 +280,7 @@ export class CommonDataSource<T> implements IDataSource {
     }
   }
 
-  // 通知数据已重新加载
+  <em>// 通知数据已重新加载</em>
   notifyDataReload() {
     this.listeners.forEach(listener => {
       listener.onDataReloaded();

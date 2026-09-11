@@ -1,9 +1,9 @@
 # Interfaces (其他)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-i
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供图片处理相关的多种接口，涵盖图片区域数据访问、图片信息查询、图像解码与编码配置、元数据管理、HDR合成等能力，适用于图片解码、编码、元数据查询和HDR图像处理等场景。
 
@@ -12,9 +12,10 @@
 
 
 
-#### PositionArea7+
+## PositionArea7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示图片指定区域内的数据。
 
@@ -23,6 +24,7 @@
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -34,13 +36,15 @@
 
 
 
-#### ImageInfo
+## ImageInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示图像的基本信息。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -55,9 +59,10 @@
 
 
 
-#### Size
+## Size
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示图像尺寸。
 
@@ -67,6 +72,7 @@
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | height | number | 否 | 否 | 图像或区域的高度。单位：像素（px）。取值范围是正整数。 |
@@ -75,15 +81,17 @@
 
 
 
-#### HdrComposeOptions23+
+## HdrComposeOptions23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Picture合成HDR时可配置的参数选项。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -92,13 +100,15 @@ Picture合成HDR时可配置的参数选项。
 
 
 
-#### AuxiliaryPictureInfo13+
+## AuxiliaryPictureInfo13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示辅助图的图像信息。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -111,9 +121,10 @@ Picture合成HDR时可配置的参数选项。
 
 
 
-#### SourceOptions9+
+## SourceOptions9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ImageSource的初始化选项。
 
@@ -122,6 +133,7 @@ ImageSource的初始化选项。
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -132,13 +144,15 @@ ImageSource的初始化选项。
 
 
 
-#### InitializationOptions8+
+## InitializationOptions8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 PixelMap的初始化选项。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -152,13 +166,15 @@ PixelMap的初始化选项。
 
 
 
-#### DecodingOptions7+
+## DecodingOptions7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 图像解码设置选项。
 
 **系统能力：** SystemCapability.Multimedia.Image.ImageSource
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -177,13 +193,15 @@ PixelMap的初始化选项。
 
 
 
-#### DecodingOptionsForPicture13+
+## DecodingOptionsForPicture13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 图像解码设置选项。
 
 **系统能力：** SystemCapability.Multimedia.Image.ImageSource
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -194,9 +212,10 @@ PixelMap的初始化选项。
 
 
 
-#### DecodingOptionsForThumbnail
+## DecodingOptionsForThumbnail
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 缩略图解码参数选项。
 
@@ -206,6 +225,7 @@ PixelMap的初始化选项。
 
 **系统能力：** SystemCapability.Multimedia.Image.ImageSource
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | generateThumbnailIfAbsent | boolean | 否 | 是 | 指定图像无缩略图时是否生成缩略图。true表示生成，false表示不生成。默认值为true。 当图片文件中无缩略图且generateThumbnailIfAbsent为false时，返回undefined（抛出错误码7700303 图片不包含缩略图数据）。 |
@@ -214,9 +234,10 @@ PixelMap的初始化选项。
 
 
 
-#### Region8+
+## Region8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示区域信息。
 
@@ -225,6 +246,7 @@ PixelMap的初始化选项。
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -235,9 +257,10 @@ PixelMap的初始化选项。
 
 
 
-#### PackingSizeLimit
+## PackingSizeLimit
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 图片编码的大小限制。
 
@@ -247,6 +270,7 @@ PixelMap的初始化选项。
 
 **系统能力：** SystemCapability.Multimedia.Image.ImagePacker
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | maxSize | Size | 否 | 否 | 最大编码尺寸。 当指定的width或者height大于0时，原图尺寸超过限制将保持原宽高比进行缩放，确保图像尺寸不超过该边界。 默认值为{width: 0, height: 0}，表示不限制编码尺寸。 单位：像素（px）。 |
@@ -255,13 +279,15 @@ PixelMap的初始化选项。
 
 
 
-#### PackingOption
+## PackingOption
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示图片编码选项。
 
 **系统能力：** SystemCapability.Multimedia.Image.ImagePacker
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -279,13 +305,15 @@ PixelMap的初始化选项。
 
 
 
-#### PackingOptionsForSequence18+
+## PackingOptionsForSequence18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述动图编码参数的选项。
 
 **系统能力：** SystemCapability.Multimedia.Image.ImagePacker
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -297,13 +325,15 @@ PixelMap的初始化选项。
 
 
 
-#### ImagePropertyOptions11+
+## ImagePropertyOptions11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示查询图片属性的索引。
 
 **系统能力：** SystemCapability.Multimedia.Image.ImageSource
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -313,13 +343,15 @@ PixelMap的初始化选项。
 
 
 
-#### Component9+
+## Component9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述图像颜色分量。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -331,13 +363,15 @@ PixelMap的初始化选项。
 
 
 
-#### HdrStaticMetadata12+
+## HdrStaticMetadata12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 静态元数据值，[HdrMetadataKey](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-e#hdrmetadatakey12)中HDR_STATIC_METADATA关键字对应的值。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -353,13 +387,15 @@ PixelMap的初始化选项。
 
 
 
-#### GainmapChannel12+
+## GainmapChannel12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 HDR增益图单个通道的数据内容，参考ISO 21496-1。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -372,15 +408,17 @@ HDR增益图单个通道的数据内容，参考ISO 21496-1。
 
 
 
-#### ImageMetadata23+
+## ImageMetadata23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 图像的元数据集。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -399,15 +437,17 @@ HDR增益图单个通道的数据内容，参考ISO 21496-1。
 
 
 
-#### DngMetadata24+
+## DngMetadata24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Dng图像元数据类，用于存储图像的元数据。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -504,13 +544,15 @@ Dng图像元数据类，用于存储图像的元数据。
 
 
 
-#### HdrGainmapMetadata12+
+## HdrGainmapMetadata12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 增益图使用的元数据值，[HdrMetadataKey](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-e#hdrmetadatakey12)中HDR_GAINMAP_METADATA关键字对应的值，参考ISO 21496-1。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -525,15 +567,17 @@ Dng图像元数据类，用于存储图像的元数据。
 
 
 
-#### ImageReceiverOptions23+
+## ImageReceiverOptions23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ImageReceiver的初始化选项。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Image.ImageReceiver
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -543,15 +587,17 @@ ImageReceiver的初始化选项。
 
 
 
-#### ImageBufferData23+
+## ImageBufferData23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 保存图像缓冲区数据的指针、不同颜色分量的行间距与像素间距信息。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -562,15 +608,17 @@ ImageReceiver的初始化选项。
 
 
 
-#### ImageRawData24+
+## ImageRawData24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 图像的RAW数据。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Image.ImageSource
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -580,9 +628,10 @@ ImageReceiver的初始化选项。
 
 
 
-#### XMPTag
+## XMPTag
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示XMP标签信息。
 
@@ -591,6 +640,7 @@ ImageReceiver的初始化选项。
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -602,9 +652,10 @@ ImageReceiver的初始化选项。
 
 
 
-#### XMPNamespace
+## XMPNamespace
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示XMP命名空间。
 
@@ -614,6 +665,7 @@ ImageReceiver的初始化选项。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | uri | string | 否 | 否 | XMP命名空间URI。 |
@@ -622,9 +674,10 @@ ImageReceiver的初始化选项。
 
 
 
-#### XMPEnumerateOptions
+## XMPEnumerateOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示XMP枚举选项。
 
@@ -634,6 +687,7 @@ ImageReceiver的初始化选项。
 
 **系统能力：** SystemCapability.Multimedia.Image.Core
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | isRecursive | boolean | 否 | 是 | 表示是否进行递归遍历。 true表示进行递归遍历。false表示仅遍历直接子节点。默认为false。 |
@@ -642,9 +696,10 @@ ImageReceiver的初始化选项。
 
 
 
-#### BinaryBufferInfo
+## BinaryBufferInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述二值图像缓冲区内的信息及数据。
 
@@ -653,6 +708,7 @@ ImageReceiver的初始化选项。
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Image.ImagePacker
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -663,9 +719,10 @@ ImageReceiver的初始化选项。
 
 
 
-#### PackingOptionsForTiff
+## PackingOptionsForTiff
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 描述TIFF图像编码参数的选项。
 
@@ -674,6 +731,7 @@ ImageReceiver的初始化选项。
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Image.ImagePacker
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -686,9 +744,10 @@ ImageReceiver的初始化选项。
 
 
 
-#### GetImagePropertyOptions(deprecated)
+## GetImagePropertyOptions(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示查询图片属性的索引。
 
@@ -697,6 +756,7 @@ ImageReceiver的初始化选项。
 
 
 **系统能力：** SystemCapability.Multimedia.Image.ImageSource
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

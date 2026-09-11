@@ -1,20 +1,20 @@
 # rawheap-translator工具
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/rawheap-translator
 
-#### 使用场景
+## 使用场景
 
 为方便开发者定位问题，应用在ArkTS内存OOM（Out of Memory）时会自动进行HeapDump。此操作会将虚拟机当前堆上的所有对象信息保存在后缀为.rawheap的二进制文件中。此外，使用接口[hidebug.dumpJsRawHeapData](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hidebug#hidebugdumpjsrawheapdata18)能获取当前线程的rawheap文件，或使用命令行[hidumper --mem-jsheap pid [-T tid] --raw](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hidumper#查询虚拟机堆内存)能主动获取指定进程或指定JS线程的rawheap文件。开发者可使用rawheap_translator工具解析.rawheap文件，生成.heapsnapshot文件。该文件可通过DevEco Studio的[Heap Snapshot离线导入](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-snapshot-basic-operations#section6760173514388)或Chrome浏览器的开发者工具中的内存工具导入并查看。
 
 
 
-#### 使用指导
+## 使用指导
 
 
 
-#### 工具获取
+### 工具获取
 
 此工具支持Windows、Linux和MacOS平台，获取方法如下：
 
@@ -23,7 +23,7 @@
 
 
 
-#### 环境配置
+### 环境配置
 
 建议将从SDK中获取的rawheap_translator工具放置在稳定的路径下，并将该路径配置为系统环境变量。这样可以在终端中直接使用工具，无需每次指定路径。
 
@@ -77,11 +77,11 @@ source ~/.zshrc
 
 
 
-#### 使用方法
+## 使用方法
 
 
 
-#### 解析命令
+### 解析命令
 
 ```bash
 rawheap_translator [rawheap_file] [heapsnapshot_file]
@@ -89,7 +89,8 @@ rawheap_translator [rawheap_file] [heapsnapshot_file]
 
 
 
-#### 参数列表
+### 参数列表
+
 
 | 选项 | 必选 | 描述 |
 | --- | --- | --- |
@@ -99,11 +100,11 @@ rawheap_translator [rawheap_file] [heapsnapshot_file]
 
 
 
-#### 解析命令示例
+## 解析命令示例
 
 
 
-#### 解析示例
+### 解析示例
 
 Windows系统中解析示例
 
@@ -151,13 +152,14 @@ MacOS系统中解析示例
 
 
 
-#### 文件参考规格
+## 文件参考规格
 
 rawheap文件的大小和生成耗时与当前ArkTS堆内存大小及存活对象数量呈强正相关。当ArkTS堆内存占用较大、存活对象数量较多时，生成的rawheap文件会更大，耗时也会更长。开发者可以订阅[资源泄漏事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-watcher-resourceleak-events)，自定义事件处理逻辑。
 
 从API version 20开始，虚拟机支持两种规格的HeapDump，具体切换操作可参考[setJsRawHeapTrimLevel](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hidebug#hidebugsetjsrawheaptrimlevel20)接口设置当前进程转储虚拟机原始堆快照的裁剪级别。
 
 从API version 22开始，TRIM_LEVEL_1模式新增对象属性名解析能力，生成的rawheap文件相对于原先会变大，具体增长大小与对象属性名数量和字符串大小有关。
+
 
 | 规格 | 特点 |
 | --- | --- |
@@ -166,6 +168,7 @@ rawheap文件的大小和生成耗时与当前ArkTS堆内存大小及存活对�
 
 
 为了方便开发者了解上报rawheap文件到服务器所带来的性能和流量开销，下表给出了在不同的堆大小下，不同规格的HeapDump生成的rawheap文件大小、生成耗时、解析耗时的示例，仅供开发者参考。
+
 
 | 规格 | 堆大小（MB） | rawheap文件（MB） | 生成耗时（s） | 解析耗时（s） |
 | --- | --- | --- | --- | --- |
@@ -179,11 +182,11 @@ rawheap文件的大小和生成耗时与当前ArkTS堆内存大小及存活对�
 
 
 
-#### 常见问题
+## 常见问题
 
 
 
-#### 工具版本不匹配
+### 工具版本不匹配
 
 **问题现象**
 
@@ -211,7 +214,7 @@ rawheap文件的大小和生成耗时与当前ArkTS堆内存大小及存活对�
 
 
 
-#### 文件无法打开
+### 文件无法打开
 
 **问题现象**
 
@@ -244,7 +247,7 @@ rawheap文件的大小和生成耗时与当前ArkTS堆内存大小及存活对�
 
 
 
-#### 文件解析失败
+### 文件解析失败
 
 **问题现象**
 

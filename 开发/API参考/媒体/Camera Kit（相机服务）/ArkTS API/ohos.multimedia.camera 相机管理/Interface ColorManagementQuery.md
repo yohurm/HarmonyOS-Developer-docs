@@ -1,9 +1,9 @@
 # Interface (ColorManagementQuery)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-colormanagementquery
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 色彩管理类，用于查询色彩空间参数。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { camera } from '@kit.CameraKit';
@@ -22,9 +23,10 @@ import { camera } from '@kit.CameraKit';
 
 
 
-#### getSupportedColorSpaces12+
+## getSupportedColorSpaces12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSupportedColorSpaces(): Array<colorSpaceManager.ColorSpace>
 
@@ -36,6 +38,7 @@ getSupportedColorSpaces(): Array<colorSpaceManager.ColorSpace>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array<colorSpaceManager.ColorSpace> | 支持的色彩空间列表。若接口调用失败，返回undefined。 |
@@ -44,6 +47,7 @@ getSupportedColorSpaces(): Array<colorSpaceManager.ColorSpace>
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

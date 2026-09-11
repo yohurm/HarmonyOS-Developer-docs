@@ -1,18 +1,19 @@
 # 基于Audio能力实现音频耳返
 
-更新时间：2026-05-18 00:55:31
+更新时间：2026-09-02 03:30:31
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-in-ear-monitor
 
-#### 概述
+## 概述
 
  
 耳返是指通过耳机系统将音频实时传输到耳机中，让使用者能够听到自己的声音、伴奏或其它需要的信息。例如在K歌类应用中，将录制的人声和背景音乐实时送到耳机中，使用户通过反馈即时调整，获得更好的使用体验。
  
 当前系统支持耳返的两种方案如下：
   
+
 |    | 实现方案 | 优点 | 缺点 |
-| 硬件耳返 | 基于AudioLoopback实现音频耳返 | 物理耳返，延时低。在API21，提供混响和均衡器等音效。 | 当前仅支持有线耳机，不支持蓝牙耳机。在耳返的场景下，仅支持录制麦克风。 |
+| 硬件耳返 | 基于AudioLoopback实现音频耳返 | 物理耳返，延时低。在API 21，提供混响和均衡器等音效。 | 当前仅支持有线耳机，不支持蓝牙耳机。在耳返的场景下，仅支持录制麦克风。 |
 | 软件耳返 | 基于OHAudio实现音频耳返 | 可以支持有线耳机和蓝牙耳机。可以支持耳返（使用者自己的声音或其它需要的信息等）和背景音乐同时录制写入到文件中。 | 暂无硬件耳返的接口，软件耳返延时比硬件耳返高。无音效相关的接口，音效等算法需要自行实现。 |
  
  
@@ -23,11 +24,11 @@
 
  
 
-#### 基于AudioLoopback实现音频耳返
+## 基于AudioLoopback实现音频耳返
 
  
 
-#### 场景描述
+### 场景描述
 
 点击进入AudioLoopback页面，连接有线耳机，点击录制按钮开启耳返。开启耳返后开发者可通过麦克风在耳机中实时听到自己或周围的声音，同时进行耳返内音频的录制，并且可通过Slider滑块实现耳返音量调节功能。录制完成后进入播放页面，播放录制的音频资源。实现效果如下图：
  
@@ -37,11 +38,11 @@
  
  
 
-#### 实现原理
+### 实现原理
 
 AudioLoopback是HarmonyOS提供的音频返听接口，用于实现低时延耳返功能，支持自动创建低时延渲染器与采集器，采集的音频可直接通过内部路由返回到渲染器，实时传输到耳机。
  
-AudioLoopback的状态变化如下图所示，在创建AudioLoopback实例后，调用对应的方法可以进入指定的状态实现对应行为。同时需要注意的是，在确定的状态执行不合适的方法，可能导致AudioLoopback发生错误，建议开发者在调用状态转换的方法前进行状态检查，避免程序运行产生预期以外的结果，详细开发指导请参考：[实现音频低时延耳返](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-ear-monitor-loopback)。
+AudioLoopback的状态变化如下图所示，在创建AudioLoopback实例后，调用对应的方法可以进入指定的状态实现对应行为。同时需要注意的是，在确定的状态执行不合适的方法，可能导致AudioLoopback发生错误，建议开发者在调用状态转换的方法前进行状态检查，避免程序运行产生预期以外的结果，详细开发指导请参考：[实现低时延耳返](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-ear-monitor-loopback)。
  
 
 ![](assets/基于Audio能力实现音频耳返/file-20260515114752923-1.png)
@@ -49,9 +50,9 @@ AudioLoopback的状态变化如下图所示，在创建AudioLoopback实例后，
  
  
 
-#### 开发步骤
+### 开发步骤
 
-使用AudioLoopback控制耳返的开启和关闭，结合[AVRecorder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avrecorder)实现音频的录制，将录制的音频保存在应用沙箱目录，并通过[@ohos.file.fs (文件管理)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-file-fs)打开录制的音频文件，再通过[AVPlayer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer)实现已录制音频的播放控制，详细流程如下图所示：
+使用AudioLoopback控制耳返的开启和关闭，结合AVRecorder（参考[Interface (AVRecorder)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avrecorder)）实现音频的录制，将录制的音频保存在应用沙箱目录，并通过[@ohos.file.fs (文件管理)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-file-fs)打开录制的音频文件，再通过AVPlayer（参考[Interface (AVPlayer)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer)）实现已录制音频的播放控制，详细流程如下图所示：
  
 
 ![](assets/基于Audio能力实现音频耳返/file-20260515114752923-2.png)
@@ -80,13 +81,13 @@ public initAudioLoopback(): void {
     }
   } catch (error) {
     let err = error as BusinessError;
-    logger.error(`Failed to use isAudioLoopbackSupported, code=${err.code}, message=${err.message}}`);
+    logger.error(`Failed to use isAudioLoopbackSupported, code=${err.code}, message=${err.message}`);
   }
 }
 ```
 
 
-2. 通过AudioLoopback的[getStatus()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audioloopback#getstatus20)方获取音频返听状态，当返听状态为AVAILABLE_IDLE时，表示返听可用，此时可调用[enable()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audioloopback#enable20)方法传入参数true，开启音频返听。
+2. 通过AudioLoopback的[getStatus()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audioloopback#getstatus20)方法获取音频返听状态，当返听状态为AVAILABLE_IDLE时，表示返听可用，此时可调用[enable()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audioloopback#enable20)方法传入参数true，开启音频返听。
 ```ArkTS
 // Set up a listening event and enable audio feedback.
 public async enable(): Promise<void> {
@@ -362,7 +363,7 @@ atManager.requestPermissionsFromUser(this.getUIContext().getHostContext(), ['oho
     this.capturesStart();
   })
   .catch((err: BusinessError) => {
-    logger.error(`requestPermissionsFromUser fail. err.code=${err.code}, err.message=${err.message}}`);
+    logger.error(`requestPermissionsFromUser fail. err.code=${err.code}, err.message=${err.message}`);
   });
 ```
 
@@ -416,7 +417,7 @@ capturesPause() {
     }
   } catch (error) {
     let err = error as BusinessError;
-    logger.error(`AudioRecording:audioCapturer stop. err.code=${err.code}, err.message=${err.message}}`);
+    logger.error(`AudioRecording:audioCapturer stop. err.code=${err.code}, err.message=${err.message}`);
   }
 }
 ```
@@ -520,11 +521,11 @@ Column() {
 
   
 
-  #### 基于OHAudio实现音频耳返
+  ## 基于OHAudio实现音频耳返
 
   
 
-  #### 场景描述
+  ### 场景描述
 
   点击进入OHAudio页面，连接有线耳机或蓝牙耳机，点击录制按钮开启耳返。开启耳返后开发者同样可以通过麦克风在耳机中实时听到自己或周围的声音，并进行耳返音频的录制，以及可以通过Slider滑块实现耳返音量的调节。录制完成后进入播放页面，播放录制的音频资源。实现效果如下图：
 
@@ -534,7 +535,7 @@ Column() {
 
   
 
-  #### 实现原理
+  ### 实现原理
 
   在C/C++侧实现耳返依赖OHAudio提供的低时延模式进行录制和播放。
 
@@ -548,7 +549,7 @@ Column() {
 
   
 
-  #### 开发步骤
+  ### 开发步骤
 
 1. 录制音频数据。
 调用[OH_AudioStreamBuilder_Create()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-audiostreambuilder-h#oh_audiostreambuilder_create)，并指定[OH_AudioStream_Type](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-audiostream-base-h#oh_audiostream_type)音频流类型为AUDIOSTREAM_TYPE_CAPTURER，创建输入类型的音频流构造器实例，并设置输入音频流的采样率、声道数、低时延模式、采样格式、编码类型及工作场景等属性。
@@ -781,7 +782,7 @@ capturesPause() {
     }
   } catch (error) {
     let err = error as BusinessError;
-    logger.error(`AudioRecording:audioCapturer stop. err.code=${err.code}, err.message=${err.message}}`);
+    logger.error(`AudioRecording:audioCapturer stop. err.code=${err.code}, err.message=${err.message}`);
   }
 }
 ```
@@ -861,7 +862,7 @@ capturesStop() {
 
   
 
-  #### 示例代码
+  ## 示例代码
 
   
 [实现音频耳返](https://gitcode.com/HarmonyOS_Samples/audio-in-ear-monitor)

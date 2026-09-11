@@ -1,10 +1,10 @@
 # Text组件下Span布局属性和触摸事件无效
 
-更新时间：2026-06-26 07:47:42
+更新时间：2026-09-02 03:39:07
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-888
 
-#### 问题现象
+## 问题现象
 
 Text组件内嵌套Span组件时，设置Span组件的布局属性会失效。
  
@@ -50,18 +50,19 @@ struct Index {
  
  
 
-#### 背景知识
+## 背景知识
 
 [Span](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-span)组件是Text组件的子组件，遇到多个字符串拼接场景往往会利用Span组件来实现，但是Span组件的属性不像Text那样丰富，有如下特点：
  
-- Span组件不支持margin，padding属性，Span作为Text组件的子组件，不支持“[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)”。
+- Span组件不支持margin，padding属性，Span作为Text组件的子组件，不支持"[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)"。
 - Span可以继承父组件Text的属性，支持继承的属性仅包括：fontColor、fontSize、fontStyle、fontWeight、decoration、letterSpacing、textCase、fontfamily、textShadow。
 - Span组件通用事件只支持点击事件onClick和悬浮事件onHover。
+- [ContainerSpan](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-containerspan)组件可作为Text的子组件，用于包裹Span和ImageSpan，支持textBackgroundStyle属性设置文本背景样式。
 
  
  
 
-#### 解决方案
+## 解决方案
 
 Text组件搭配Span组件使用时，仅可设置文本通用属性，如果需要实现Span组件的布局效果，建议使用Row和Text组件等其他代替方案实现。
  
@@ -117,17 +118,56 @@ struct Scene3 {
   build() {
     Column() {
       Text() {
-        // 在文本前后增加空格控制左右距离
+       <em> // 在文本前后增加空格控制左右距离</em>
         Span(' 标题 ')
           .fontSize('20fp')
           .textBackgroundStyle({ color: Color.Green, radius: '5vp' })
           .fontColor(Color.White);
-        // 直接增加空格控制间距
+      <em>  // 直接增加空格控制间距</em>
         Span(' ').letterSpacing(10);
         Span('我是一段文本我是一段文本我是一段文本，我是一段文本我是一段文本我是一段文本，我是一段文本我是一段文本我是一段文本')
           .fontSize('20fp');
       }.maxLines(2).textOverflow({ overflow: TextOverflow.Ellipsis }).width('80%')
     }.width('100%').alignItems(HorizontalAlign.Center)
+  }
+}
+```
+ 如果需要在设置背景样式的同时实现内边距效果，可以将高亮关键词生成切图，使用[ImageSpan](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-imagespan)加载图片替代Span。也可以使用[ContainerSpan](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-containerspan)嵌套[ImageSpan](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-imagespan)和Span来实现，通过ImageSpan占位控制左右内边距：
+
+  
+```text
+@Entry
+@Component
+struct Scene3ContainerSpan {
+  build() {
+    Column() {
+      Text() {
+        ContainerSpan() {
+          ImageSpan('')
+            .width(5)
+            .height(18)
+            .verticalAlign(ImageSpanAlignment.CENTER)
+          Span('高亮关键词')
+            .fontSize(12)
+            .fontColor(Color.White)
+          ImageSpan('')
+            .width(5)
+            .height(18)
+            .verticalAlign(ImageSpanAlignment.CENTER)
+        }
+        .textBackgroundStyle({
+          color: '#007AFF',
+          radius: {
+            topLeft: 4,
+            topRight: 4,
+            bottomLeft: 4,
+            bottomRight: 4
+          }
+        })
+      }
+    }
+    .height('100%')
+    .width('100%')
   }
 }
 ```
@@ -186,9 +226,9 @@ struct Scene5 {
  
  
 
-#### 常见FAQ
+## 常见FAQ
 
-Q：DevEco Studio版本（5.0.5.315），使用@Extend装饰器修饰Span，设置margin属性后编译运行报错。报错内容为“Error: Debug Failure. False expression: Node must have a real position for this operatior”。
+Q：DevEco Studio版本（5.0.5.315），使用@Extend装饰器修饰Span，设置margin属性后编译运行报错。报错内容为"Error: Debug Failure. False expression: Node must have a real position for this operatior"。
  
 A：针对该无效属性的编译期的校验已在DevEco Studio 5.0.2 Release（5.0.7.210）版本优化，后续版本中该问题不会影响编译构建，但由于Span组件不支持margin属性，即使设置了该属性，实际运行效果也不会生效。
  

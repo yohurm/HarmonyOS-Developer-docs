@@ -1,16 +1,16 @@
 # 使用Node-API接口创建基本数据类型
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-basic-data-types
 
-#### 简介
+## 简介
 
 ArkTS的Number类型是一个双精度64位二进制格式IEEE 754值。只有在-2^53+1到2^53-1范围内（闭区间）的整数才能在不丢失精度的情况下被表示，在超过该取值范围的情况下，需要使用BigInt对应的Node-API接口来处理更大范围的整数。
  
   
 
-#### 基本概念
+## 基本概念
 
 当使用Node-API接口进行数值类型的创建和获取时，有一些基本概念需要了解：
  
@@ -21,10 +21,11 @@ ArkTS的Number类型是一个双精度64位二进制格式IEEE 754值。只有�
  
   
 
-#### 场景和功能介绍
+## 场景和功能介绍
 
 以下Node-API函数通常在开发ArkTS的Node-API模块时使用，以便处理数值类型值，帮助开发人员在Node-API模块中和ArkTS数值进行交互：
   
+
 | 接口 | 描述 |
 | --- | --- |
 | napi_get_value_uint32 | 将从ArkTS环境中获取的number类型数据转为Node-API模块中的uint32_t类型数据。 |
@@ -43,19 +44,19 @@ ArkTS的Number类型是一个双精度64位二进制格式IEEE 754值。只有�
 | napi_create_string_utf8 | 将Node-API模块中的utf8编码的字符串类型转换为ArkTS环境中string类型。 |
 | napi_create_string_utf16 | 将Node-API模块中的utf16编码的字符串类型转换为ArkTS环境中string类型。 |
 | napi_create_string_latin1 | 将Node-API模块中的ISO-8859-1编码的字符串类型转换为ArkTS环境中string类型。 |
-| napi_create_external_string_ascii | 将Node-API模块中的ascii编码的字符串类型无拷贝的转换为ArkTS环境中string类型。 |
-| napi_create_external_string_utf16 | 将Node-API模块中的utf16编码的字符串类型无拷贝的转换为ArkTS环境中string类型。 |
+| napi_create_external_string_ascii | 将Node-API模块中的ascii编码的字符串类型无拷贝地转换为ArkTS环境中string类型。 |
+| napi_create_external_string_utf16 | 将Node-API模块中的utf16编码的字符串类型无拷贝地转换为ArkTS环境中string类型。 |
  
  
   
 
-#### 使用示例
+## 使用示例
 
 Node-API接口开发流程参考[使用Node-API实现跨语言交互开发流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-process)，本文仅对接口对应C++及ArkTS相关代码进行展示。
  
   
 
-#### napi_get_value_uint32
+### napi_get_value_uint32
 
 用于从ArkTS环境中获取32位无符号整数值。
  
@@ -107,7 +108,7 @@ hilog.info(0x0000, 'Node-API', 'get_value_uint32_number %{public}d',
  
   
 
-#### napi_get_value_int32
+### napi_get_value_int32
 
 将ArkTS value转为Node-API模块中的int32类型数据。
  
@@ -165,7 +166,7 @@ hilog.info(0x0000, 'Node-API', 'get_value_int32_number_-Infinity %{public}d',
  
   
 
-#### napi_get_value_int64
+### napi_get_value_int64
 
 将ArkTS value转为Node-API模块中的int64类型数据。
  
@@ -221,7 +222,7 @@ hilog.info(0x0000, 'Node-API', 'get_value_int64_number_-Infinity %{public}d',
  
   
 
-#### napi_get_value_double
+### napi_get_value_double
 
 将ArkTS value转为Node-API模块中的double类型数据。
  
@@ -264,7 +265,7 @@ hilog.info(0x0000, 'Node-API', 'get_value_double_not_number %{public}s', testNap
  
   
 
-#### napi_create_int32
+### napi_create_int32
 
 用于创建一个ArkTS数字（int32类型）的值。
  
@@ -303,7 +304,7 @@ hilog.info(0x0000, 'testTag', 'Test Node-API napi_create_int32：' + testNapi.cr
  
   
 
-#### napi_create_uint32
+### napi_create_uint32
 
 用于创建一个ArkTS数字（uint32类型）的值。
  
@@ -344,7 +345,7 @@ hilog.info(0x0000, 'testTag', 'Test Node-API napi_create_uint32: ' + testNapi.cr
  
   
 
-#### napi_create_int64
+### napi_create_int64
 
 用于创建一个ArkTS数字（int64类型）的值。
  
@@ -384,7 +385,7 @@ hilog.info(0x0000, 'testTag', 'Test Node-API napi_create_int64: ' + testNapi.cre
  
   
 
-#### napi_create_double
+### napi_create_double
 
 用于创建一个ArkTS数字（double类型）的值。
  

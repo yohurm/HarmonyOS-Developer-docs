@@ -1,10 +1,14 @@
 # FIDO2_AuthenticatorAttestationResponse
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_f_i_d_o2___authenticator_attestation_response
+**支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 认证器声明响应。
  
@@ -16,12 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 成员变量
+### 成员变量
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | Uint8Buff attestationObject | 注册凭证的响应报文中，用于向服务器证明新生成密钥对合法性的数据结构。 |
@@ -34,11 +45,17 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### attestationObject
+### attestationObject
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 Uint8Buff FIDO2_AuthenticatorAttestationResponse::attestationObject
@@ -50,7 +67,10 @@ Uint8Buff FIDO2_AuthenticatorAttestationResponse::attestationObject
  
   
 
-#### authenticatorData
+### authenticatorData
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 Uint8Buff FIDO2_AuthenticatorAttestationResponse::authenticatorData
@@ -62,7 +82,10 @@ Uint8Buff FIDO2_AuthenticatorAttestationResponse::authenticatorData
  
   
 
-#### clientDataJson
+### clientDataJson
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```json
 Uint8Buff FIDO2_AuthenticatorAttestationResponse::clientDataJson
@@ -74,7 +97,10 @@ Uint8Buff FIDO2_AuthenticatorAttestationResponse::clientDataJson
  
   
 
-#### publicKey
+### publicKey
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 Uint8Buff FIDO2_AuthenticatorAttestationResponse::publicKey
@@ -86,7 +112,10 @@ Uint8Buff FIDO2_AuthenticatorAttestationResponse::publicKey
  
   
 
-#### publicKeyAlgorithm
+### publicKeyAlgorithm
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FIDO2_Algorithm FIDO2_AuthenticatorAttestationResponse::publicKeyAlgorithm
@@ -98,7 +127,10 @@ FIDO2_Algorithm FIDO2_AuthenticatorAttestationResponse::publicKeyAlgorithm
  
   
 
-#### transports
+### transports
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
 
 ```text
 FIDO2_AuthenticatorTransportArray FIDO2_AuthenticatorAttestationResponse::transports

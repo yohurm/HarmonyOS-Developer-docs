@@ -1,16 +1,16 @@
 # 使用JSVM-API接口进行Date相关开发
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-about-date
 
-#### 简介
+## 简介
 
 JSVM-API中date相关接口用于处理JavaScript Date对象，并在JSVM模块和JavaScript代码之间进行日期数据的转换和处理。这对于在JSVM模块中处理时间和日期相关逻辑非常有用。
  
   
 
-#### 基本概念
+## 基本概念
 
 在JSVM-API中，JavaScript Date对象的数据表示从UTC时间1970年1月1日0时0分0秒起至现在的总毫秒数。
  
@@ -20,8 +20,9 @@ JavaScript Date对象在JavaScript中用于表示和操作日期和时间。它�
  
   
 
-#### 接口说明
+## 接口说明
  
+
 | 接口 | 功能说明 |
 | --- | --- |
 | OH_JSVM_CreateDate | 创建一个表示给定毫秒数的Date对象。 |
@@ -31,13 +32,13 @@ JavaScript Date对象在JavaScript中用于表示和操作日期和时间。它�
  
   
 
-#### 使用示例
+## 使用示例
 
 JSVM-API接口开发流程参考[使用JSVM-API实现JS与C/C++语言交互开发流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-process)，本文仅展示接口对应C++相关代码。
  
   
 
-#### OH_JSVM_CreateDate
+### OH_JSVM_CreateDate
 
 创建一个表示给定毫秒数的Date对象。
  
@@ -97,7 +98,7 @@ JSVM CreateDate success:Mon Jul 7 10:42:34 2025
  
   
 
-#### OH_JSVM_GetDateValue
+### OH_JSVM_GetDateValue
 
 获取给定JavaScript Date的时间值的Double基础类型值。
  
@@ -147,7 +148,7 @@ JSVM GetDateValue success:Mon Jul 7 10:47:08 2025
  
   
 
-#### OH_JSVM_IsDate
+### OH_JSVM_IsDate
 
 判断一个JavaScript对象是否为Date类型对象。
  

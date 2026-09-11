@@ -1,9 +1,9 @@
 # @ohos.net.vpn (VPN管理)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-net-vpn
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块是操作系统提供的内置VPN功能，允许用户通过系统的网络设置进行VPN连接，通常提供的功能较少，而且有比较严格的限制。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { vpn } from '@kit.NetworkKit';
@@ -22,15 +23,17 @@ import { vpn } from '@kit.NetworkKit';
 
 
 
-#### LinkAddress
+## LinkAddress
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type LinkAddress = connection.LinkAddress
 
-获取网络链接信息。
+表示网络链路信息。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -39,15 +42,17 @@ type LinkAddress = connection.LinkAddress
 
 
 
-#### RouteInfo
+## RouteInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type RouteInfo = connection.RouteInfo
 
-获取网络路由信息。
+表示网络路由信息。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -56,13 +61,15 @@ type RouteInfo = connection.RouteInfo
 
 
 
-#### AbilityContext
+## AbilityContext
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type AbilityContext = _AbilityContext
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
 
 | 类型 | 说明 |
 | --- | --- |

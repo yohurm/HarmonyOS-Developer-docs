@@ -1,9 +1,9 @@
 # @ohos.screenLock (锁屏管理)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-screen-lock
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 锁屏管理服务是HarmonyOS中的系统服务，为锁屏应用提供注册亮屏、灭屏、开启屏幕、结束休眠、退出动画、请求解锁结果监听，并提供回调结果给锁屏应用。锁屏管理服务向三方应用提供请求解锁、查询锁屏状态、查询是否设置锁屏密码的能力。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import screenLock from '@ohos.screenLock';
@@ -22,9 +23,10 @@ import screenLock from '@ohos.screenLock';
  
   
 
-#### screenLock.isScreenLocked(deprecated)
+## screenLock.isScreenLocked(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isScreenLocked(callback: AsyncCallback&lt;boolean&gt;): void
  
@@ -38,6 +40,7 @@ isScreenLocked(callback: AsyncCallback&lt;boolean&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;boolean&gt; | 是 | 回调函数。返回true表示屏幕已锁屏；返回false表示屏幕未锁屏。 |
@@ -59,9 +62,10 @@ screenLock.isScreenLocked((err: BusinessError, data: Boolean)=>{
  
   
 
-#### screenLock.isScreenLocked(deprecated)
+## screenLock.isScreenLocked(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isScreenLocked(): Promise&lt;boolean&gt;
  
@@ -75,6 +79,7 @@ isScreenLocked(): Promise&lt;boolean&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示屏幕已锁屏；返回false表示屏幕未锁屏。 |
@@ -94,9 +99,10 @@ screenLock.isScreenLocked().then((data: Boolean) => {
  
   
 
-#### screenLock.isSecureMode(deprecated)
+## screenLock.isSecureMode(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isSecureMode(callback: AsyncCallback&lt;boolean&gt;): void
  
@@ -110,6 +116,7 @@ isSecureMode(callback: AsyncCallback&lt;boolean&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;boolean&gt; | 是 | 回调函数。返回true表示当前设备的屏幕锁定安全；返回false表示当前设备的屏幕锁定不安全。 |
@@ -131,9 +138,10 @@ screenLock.isSecureMode((err: BusinessError, data: Boolean)=>{
  
   
 
-#### screenLock.isSecureMode(deprecated)
+## screenLock.isSecureMode(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isSecureMode(): Promise&lt;boolean&gt;
  
@@ -147,6 +155,7 @@ isSecureMode(): Promise&lt;boolean&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象。返回true表示当前设备的屏幕锁定安全；返回false表示当前设备的屏幕锁定不安全。 |
@@ -166,9 +175,10 @@ screenLock.isSecureMode().then((data: Boolean) => {
  
   
 
-#### screenLock.unlockScreen(deprecated)
+## screenLock.unlockScreen(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unlockScreen(callback: AsyncCallback&lt;void&gt;): void
  
@@ -182,6 +192,7 @@ unlockScreen(callback: AsyncCallback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。解锁屏幕成功，err为undefined，否则为错误对象。 |
@@ -203,9 +214,10 @@ screenLock.unlockScreen((err: BusinessError) => {
  
   
 
-#### screenLock.unlockScreen(deprecated)
+## screenLock.unlockScreen(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unlockScreen(): Promise&lt;void&gt;
  
@@ -219,6 +231,7 @@ unlockScreen(): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |

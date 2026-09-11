@@ -1,18 +1,19 @@
 # OH_PictureNative
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-nativemodule-oh-picturenative
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 struct OH_PictureNative
 ```
 
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Picture结构体类型，用于执行picture相关操作。
 
@@ -25,6 +26,7 @@ Picture为多图对象结构体，包含主图、辅助图和元数据。
 元数据一般用来存储关于图像文件的信息。
 
 有多种方式创建OH_PictureNative，具体如下：
+
 
 | 函数 | 描述 |
 | --- | --- |
@@ -40,6 +42,7 @@ Picture为多图对象结构体，包含主图、辅助图和元数据。
 资源管理：释放OH_ImageSourceNative对象不会自动释放已创建的OH_PictureNative对象。通过OH_PictureNative获取到的OH_PixelmapNative、OH_AuxiliaryPictureNative和OH_PictureMetadata对象由调用方管理，使用完成后需分别调用[OH_PixelmapNative_Destroy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-pixelmap-native-h#oh_pixelmapnative_destroy)、[OH_AuxiliaryPictureNative_Release](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-picture-native-h#oh_auxiliarypicturenative_release)和[OH_PictureMetadata_Release](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-common-h#oh_picturemetadata_release)释放。获取PixelMap、辅助图或元数据的接口返回失败时，输出参数的内容不能在后续流程中继续使用。
 
 OH_PictureNative结构体内容和操作方式如下：
+
 
 | 字段类型 | 字段名称 | 字段描述 | 操作函数 | 函数描述 |
 | --- | --- | --- | --- | --- |

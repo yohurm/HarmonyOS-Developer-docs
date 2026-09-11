@@ -47,15 +47,15 @@ import path from 'path';
 import fs from 'fs';
 
 
-// 基于hvigor钩子实现添加自定义文件至.har产物中:
+<em>// 基于hvigor钩子实现添加自定义文件至.har产物中:</em>
 function copyFolder(source: string, target: string, excludeExts: string[] = []): void {
-  // 检查目标文件夹是否存在，如果不存在则创建
+<em>  // 检查目标文件夹是否存在，如果不存在则创建</em>
   if (!fs.existsSync(target)) {
     fs.mkdirSync(target, { recursive: true });
   }
 
 
-  // 读取源文件夹中的文件和文件夹
+  <em>// 读取源文件夹中的文件和文件夹</em>
   const entries = fs.readdirSync(source, { withFileTypes: true });
 
 
@@ -65,10 +65,10 @@ function copyFolder(source: string, target: string, excludeExts: string[] = []):
 
 
     if (entry.isDirectory()) {
-      // 如果是文件夹，则递归调用
+    <em>  // 如果是文件夹，则递归调用</em>
       copyFolder(srcPath, destPath, excludeExts);
     } else if (entry.isFile() && !excludeExts.includes(path.extname(entry.name))) {
-      // 如果是文件，则复制文件
+    <em>  // 如果是文件，则复制文件</em>
       fs.copyFileSync(srcPath, destPath);
     }
   }

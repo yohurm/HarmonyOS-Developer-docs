@@ -1,10 +1,10 @@
 # 通过标准化数据通路实现数据共享 (C/C++)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/unified-data-channels-c
 
-#### 场景介绍
+## 场景介绍
 
 在多对多跨应用数据共享的场景下，需要提供一条数据通路，能够写入多个不同应用的数据，并共享给其他应用进行读取。
 
@@ -12,7 +12,7 @@ UDMF针对多对多跨应用数据共享的不同业务场景，提供了标准�
 
 
 
-#### 标准化数据通路的定义和实现
+## 标准化数据通路的定义和实现
 
 标准化数据通路是为各种业务场景提供的跨应用数据写入与读取通路。它能够暂存应用需要共享的、符合标准化数据定义的统一数据对象，并提供给其他应用访问。同时，它按照一定策略对暂存数据的修改、删除权限及生命周期进行管理。
 
@@ -34,9 +34,10 @@ UDMF针对多对多跨应用数据共享的不同业务场景，提供了标准�
 
 
 
-#### 接口说明
+## 接口说明
 
 详细的接口说明请参考UDMF接口文档[udmf.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-udmf-h)。
+
 
 | 接口名称 | 描述 |
 | --- | --- |
@@ -46,7 +47,7 @@ UDMF针对多对多跨应用数据共享的不同业务场景，提供了标准�
 | int OH_UdmfRecord_AddHyperlink(OH_UdmfRecord* pThis, OH_UdsHyperlink* hyperlink) | 向OH_UdmfRecord添加超链接类型数据。 |
 | OH_UdmfData* OH_UdmfData_Create() | 创建一个指向统一数据对象OH_UdmfData的指针。 |
 | int OH_UdmfData_AddRecord(OH_UdmfData* pThis, OH_UdmfRecord* record) | 向OH_UdmfData中增加一条OH_UdmfRecord数据记录。 |
-| int OH_Udmf_SetUnifiedDataByOptions(OH_UdmfOptions* options, OH_UdmfData *unifiedData, char *key, unsigned int keyLen) | 从统一数据管理框架数据库中写入统一数据对象OH_UdmfData数据。 |
+| int OH_Udmf_SetUnifiedDataByOptions(OH_UdmfOptions* options, OH_UdmfData* unifiedData, char* key, unsigned int keyLen) | 向统一数据管理框架数据库中写入统一数据对象OH_UdmfData数据。 |
 | void OH_UdsHyperlink_Destroy(OH_UdsHyperlink* pThis) | 销毁超链接类型指针指向的实例对象。 |
 | void OH_UdmfRecord_Destroy(OH_UdmfRecord* pThis) | 销毁指向统一数据记录OH_UdmfRecord的指针。 |
 | void OH_UdmfData_Destroy(OH_UdmfData* pThis) | 销毁指向统一数据对象OH_UdmfData的指针。 |
@@ -66,7 +67,7 @@ UDMF针对多对多跨应用数据共享的不同业务场景，提供了标准�
 
 
 
-#### 添加动态链接库
+## 添加动态链接库
 
 CMakeLists.txt中添加以下库。
 
@@ -76,7 +77,7 @@ libudmf.so, libhilog_ndk.z.so
 
 
 
-#### 引用头文件
+## 引用头文件
 
 ```cpp
 #include <cstdio>
@@ -94,7 +95,7 @@ libudmf.so, libhilog_ndk.z.so
 
 
 
-#### 使用UDMF写入UDS数据
+## 使用UDMF写入UDS数据
 
 下面以写入超链接OH_UdsHyperlink类型数据场景为例，说明如何使用UDS与UDMF。
 1. 创建hyperlink的UDS数据结构。
@@ -108,7 +109,7 @@ libudmf.so, libhilog_ndk.z.so
 ```cpp
 int32_t SetHyperlinkData(OH_UdsHyperlink* hyperlink, OH_UdmfRecord* record, OH_UdmfData* data)
 {
-    // 2.设置hyperlink中的URL和描述信息。
+    // 2. 设置hyperlink中的URL和描述信息。
     int ret = OH_UdsHyperlink_SetUrl(hyperlink, "www.demo.com");
     if (ret != Udmf_ErrCode::UDMF_E_OK) {
         OH_LOG_ERROR(LOG_APP, "Hyperlink set url error!");
@@ -136,7 +137,7 @@ int32_t SetHyperlinkData(OH_UdsHyperlink* hyperlink, OH_UdmfRecord* record, OH_U
 
 int32_t CreateDataTest()
 {
-    // 1.创建hyperlink的UDS数据结构、OH_UdmfRecord对象及OH_UdmfData对象。
+    // 1. 创建hyperlink的UDS数据结构、OH_UdmfRecord对象及OH_UdmfData对象。
     OH_UdsHyperlink* hyperlink = OH_UdsHyperlink_Create();
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     OH_UdmfData* data = OH_UdmfData_Create();
@@ -148,7 +149,7 @@ int32_t CreateDataTest()
         OH_UdmfData_Destroy(data);
         return ret;
     }
-    // 构建数据操作选项。
+    // 5. 构建数据操作选项。
     OH_UdmfOptions* options = OH_UdmfOptions_Create();
     ret = OH_UdmfOptions_SetIntention(options, Udmf_Intention::UDMF_INTENTION_DATA_HUB);
     if (ret != Udmf_ErrCode::UDMF_E_OK) {
@@ -182,7 +183,7 @@ int32_t CreateDataTest()
 
 
 
-#### 使用UDMF获取UDS数据
+## 使用UDMF获取UDS数据
 
 下面继续以获取超链接OH_UdsHyperlink类型数据场景为例，说明如何使用UDS与UDMF。
 1. 构建数据操作选项。
@@ -202,6 +203,7 @@ int32_t ProcessHyperlinks(OH_UdmfRecord* record, unsigned int recordTypeIdCount,
             int32_t ret = OH_UdmfRecord_GetHyperlink(record, hyperlink);
             if (ret != Udmf_ErrCode::UDMF_E_OK) {
                 OH_LOG_ERROR(LOG_APP, "Fail get hyperlink from record!");
+                OH_UdsHyperlink_Destroy(hyperlink);
                 return ret;
             }
             // 读取OH_UdsHyperlink中的各项信息。
@@ -277,6 +279,7 @@ int32_t GetDataTest()
     ret = HandleUdmfHyperlinkData(readData, dataSize, dataArray);
     if (ret != Udmf_ErrCode::UDMF_E_OK) {
         OH_LOG_ERROR(LOG_APP, "Get Data error!");
+        OH_Udmf_DestroyDataArray(dataArray, dataSize);
         return ret;
     }
     // 5.销毁指针。
@@ -287,7 +290,7 @@ int32_t GetDataTest()
 
 
 
-#### 使用UDMF更新UDS数据
+## 使用UDMF更新UDS数据
 
 下面以更新超链接OH_UdsHyperlink类型数据场景为例，说明如何使用UDS与UDMF。
 1. 创建hyperlink的UDS数据结构。
@@ -377,7 +380,7 @@ int32_t UpdateDataTest()
 
 
 
-#### 使用UDMF删除UDS数据
+## 使用UDMF删除UDS数据
 
 下面继续以删除超链接OH_UdsHyperlink类型数据场景为例，说明如何使用UDS与UDMF。
 1. 构建数据操作选项。
@@ -478,6 +481,7 @@ int32_t DeleteDataTest()
     OH_UdmfData** dataArray = &readData;
     ret = ProcessHyperlinkDataFromArray(readData, dataSize, dataArray);
     if (ret != UDMF_E_OK) {
+        OH_Udmf_DestroyDataArray(dataArray, dataSize);
         OH_LOG_ERROR(LOG_APP, "Process hyperlink data error!");
         return ret;
     }
@@ -489,11 +493,11 @@ int32_t DeleteDataTest()
 
 
 
-#### 使用UDMF延迟写入UDS数据
+## 使用UDMF延迟写入UDS数据
 
 
 
-#### 定义UDS数据提供函数
+### 定义UDS数据提供函数
 
 下面以超链接hyperlink类型数据场景为例，说明如何定义一个提供UDS数据的回调函数。
 1. 定义OH_UdmfRecordProvider的数据提供函数。
@@ -522,7 +526,7 @@ static void ProviderFinalizeCallback(void* context) { OH_LOG_INFO(LOG_APP, "OH_U
 
 
 
-#### 延迟写入UDS数据
+### 延迟写入UDS数据
 
 下面以延迟写入超链接类型数据为例，说明如何使用OH_UdmfRecordProvider与UDMF。此步骤完成后，超链接类型数据并未真正写入数据库。只有当数据使用者从OH_UdmfRecord中获取OH_UdsHyperlink时，才会触发上文定义的GetDataCallback数据提供函数，从中获取数据。
 1. 创建OH_UdmfRecordProvider对象，设置它的数据提供函数和销毁回调函数。
@@ -565,6 +569,7 @@ int32_t ProviderSetDataTest()
     OH_UdmfRecord_Destroy(record);
     OH_UdmfData_Destroy(data);
     OH_UdmfOptions_Destroy(options);
+    OH_UdmfRecordProvider_Destroy(provider);
     return UDMF_E_OK;
 }
 ```

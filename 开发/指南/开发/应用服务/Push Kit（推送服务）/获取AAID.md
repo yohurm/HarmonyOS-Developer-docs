@@ -1,10 +1,10 @@
 # 获取AAID
 
-更新时间：2026-06-12 06:54:11
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-get-aaid
 
-AAID（Anonymous Application Identifier）：应用匿名标识符，标识运行在移动智能终端设备上的应用实例，只有该应用实例才能访问该标识符，AAID只存在于应用的安装期，总长度36位。与无法重置的设备级硬件ID相比，AAID具有更好的隐私属性。
+AAID（Anonymous Application Identifier）：应用匿名标识符，标识运行在移动智能终端设备上的应用实例，只有该应用实例才能访问该标识符，AAID只存在于应用的安装期，总长度36个字符。与无法重置的设备级硬件ID相比，AAID具有更好的隐私属性。
 
 AAID具有以下特性：
 
@@ -16,7 +16,7 @@ AAID具有以下特性：
 
 
 
-#### 场景介绍
+## 场景介绍
 
 AAID会在包括但不限于下述场景中发生变化：
 
@@ -28,15 +28,16 @@ AAID会在包括但不限于下述场景中发生变化：
 
 
 
-#### 约束与限制
+## 约束与限制
 
 获取AAID能力支持Phone、Tablet、PC/2in1设备。并且从5.1.0(18)版本开始，新增支持Wearable设备；从5.1.1(19)版本开始，新增支持TV设备。
 
 
 
-#### 接口说明
+## 接口说明
 
 接口返回值有两种返回形式：Callback和Promise回调。下表中仅展示Promise回调形式的接口，Promise和Callback只是返回值方式不一样，功能相同。
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -46,7 +47,7 @@ AAID会在包括但不限于下述场景中发生变化：
 
 
 
-#### 获取AAID
+## 获取AAID
 1. 导入AAID模块及相关公共模块。
 
   

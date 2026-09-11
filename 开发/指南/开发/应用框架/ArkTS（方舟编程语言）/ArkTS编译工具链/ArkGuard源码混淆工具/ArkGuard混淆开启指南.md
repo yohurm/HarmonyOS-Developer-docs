@@ -1,13 +1,13 @@
 # ArkGuard混淆开启指南
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/source-obfuscation-guide
 
 本指南旨在帮助开发者了解和使用ArkGuard源码混淆功能，保护应用代码安全。通过启用源码混淆，开发者可以对ArkTS代码中的变量名、属性名、文件名等进行混淆处理，增加代码逆向难度，提升应用的安全性。文章将详细介绍如何在DevEco Studio中开启混淆、配置混淆规则、适配不同混淆场景，以及如何查看混淆效果和还原混淆后的报错堆栈。
   
 
-#### 开启源码混淆步骤
+## 开启源码混淆步骤
 
 系统已集成源码混淆功能，开发者可通过以下方式在DevEco Studio中启用。
  
@@ -76,10 +76,11 @@
  
   
 
-#### 混淆配置文件
+### 混淆配置文件
 
 下表简要总结了三种混淆配置文件的差异：
   
+
 | 配置文件（示例） | 配置类型 | 是否可修改配置 | 是否影响本模块的混淆 | 是否影响其他模块的混淆 |
 | --- | --- | --- | --- | --- |
 | obfuscation-rules.txt | 自定义 | 是 | 是 | 否 |
@@ -124,7 +125,7 @@
  
   
 
-#### 配置混淆选项
+### 配置混淆选项
 1. 开启-enable-toplevel-obfuscation选项时，如果代码中使用globalThis访问全局变量，可能会导致访问失败。此时，需要使用-keep-global-name选项来保留该全局变量的名称。
 2. 待上述选项应用适配成功后，开启-enable-property-obfuscation选项。此选项开启后，以下场景需要适配：
 - 若代码中存在静态定义、动态访问的情况，或动态定义、静态访问的情况，需要使用-keep-property-name保留属性名称。
@@ -180,7 +181,7 @@ console.info(obj002.dynamicPropertyName);// 使用点语法静态访问属性，
  
   
 
-#### 注意事项
+### 注意事项
 
 - 目前不支持在hvigor构建流程中添加自定义混淆插件。
 - 混淆后的远程HAR包被某模块依赖，如果该模块开启混淆，HAR包会被二次混淆。
@@ -188,7 +189,7 @@ console.info(obj002.dynamicPropertyName);// 使用点语法静态访问属性，
  
   
 
-#### 查看混淆效果
+## 查看混淆效果
 
 混淆结束后，会在编译产物的build目录中生成混淆后的中间产物。开发者可以查看这些中间产物以确认混淆效果。同时，该目录中还会生成名称映射表和系统API白名单文件。
  
@@ -207,7 +208,7 @@ console.info(obj002.dynamicPropertyName);// 使用点语法静态访问属性，
  
   
 
-#### 报错栈还原
+## 报错栈还原
 
 经过混淆的应用程序，代码名称会更改，导致crash时打印的报错栈难以理解。可使用DevEco Studio命令工具Command Line Tools中的[hstack插件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-command-line-hstack)还原源码堆栈，进而分析问题。
  
@@ -218,4 +219,4 @@ console.info(obj002.dynamicPropertyName);// 使用点语法静态访问属性，
 源代码映射信息文件：sourceMaps.map，该文件记录了压缩/转换后的代码到原始源代码之间的映射关系。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/LihNK7baQfCrtWdESTxYDg/zh-cn_image_0000002674471902.png?HW-CC-KV=V1&HW-CC-Date=20260813T095655Z&HW-CC-Expire=86400&HW-CC-Sign=68D7EB755BFBDF40791D59BFBA6812B6C84AA7989F5674C247F9C0E0B80E1779)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/203nyfKrRsq8rgY_KMHz2A/zh-cn_image_0000002717609966.png?HW-CC-KV=V1&HW-CC-Date=20260911T073056Z&HW-CC-Expire=86400&HW-CC-Sign=25BC3E007A443909444AD7DA5B196F77F21B514D6BE36804A50ED383EC27032E)

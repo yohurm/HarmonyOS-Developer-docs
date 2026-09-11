@@ -1,19 +1,26 @@
 # TSC错误码介绍
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-tsc
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TSC（TypeScript Compiler）的错误码以105开头，是TSC编译流程中的报错提示，会在编辑器、控制台或日志文件中显示输出错误码和相对应的报错描述。
   
 
-#### 10505001 TSC原生报错
+## 10505001 TSC原生报错
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TSC原生报错：以001结尾，是TSC检查中已有的原生报错规则。在TSC的编译流程中，常见的TSC原生报错原因包括：关键字或符号的缺失、多个默认导出、赋值类型与接收类型不一致、js文件接口声明缺失等。这些问题通常是未按照[ArkTS语言规范](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/introduction-to-arkts)编写代码导致的，开发者可以根据报错描述修改代码。
  
   
 
-#### 关键字或符号的缺失
+### 关键字或符号的缺失
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误示例场景：**
  
@@ -43,7 +50,10 @@ declare type Color = 'red';
  
   
 
-#### 多个默认导出
+### 多个默认导出
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误示例场景：**
  
@@ -76,7 +86,10 @@ export default config;
  
   
 
-#### 赋值类型与接收类型不一致
+### 赋值类型与接收类型不一致
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误示例场景：**
  
@@ -110,7 +123,10 @@ count = amount;
  
   
 
-#### js文件接口声明缺失
+### js文件接口声明缺失
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误示例场景：**
  

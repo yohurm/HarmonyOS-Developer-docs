@@ -1,18 +1,19 @@
 # HTTP错误码
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-net-http
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!TIP]
 > 以下仅介绍本模块特有错误码，通用错误码请参考 通用错误码 说明文档。
 
 
 
-#### 2300001 不支持的协议
+## 2300001 不支持的协议
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -20,7 +21,7 @@ Unsupported protocol.
 
 **错误描述**
 
-协议版本服务器不支持。
+协议不支持。
 
 **可能原因**
 
@@ -32,9 +33,10 @@ Unsupported protocol.
 
 
 
-#### 2300003 URL格式错误
+## 2300003 URL格式错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -55,9 +57,10 @@ URL格式错误或URL缺失。
 
 
 
-#### 2300005 代理服务器域名解析失败
+## 2300005 代理服务器域名解析失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -77,9 +80,10 @@ Failed to resolve the proxy name.
 
 
 
-#### 2300006 域名解析失败
+## 2300006 域名解析失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -102,9 +106,10 @@ Failed to resolve the host name.
 
 
 
-#### 2300007 无法连接到服务器
+## 2300007 无法连接到服务器
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -129,9 +134,10 @@ Failed to connect to the server.
 
 
 
-#### 2300008 服务器返回非法数据
+## 2300008 服务器返回非法数据
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -154,9 +160,10 @@ Invalid server response.
 
 
 
-#### 2300009 拒绝对远程资源的访问
+## 2300009 拒绝对远程资源的访问
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -176,9 +183,10 @@ Access to the remote resource denied.
 
 
 
-#### 2300016 HTTP2帧层错误
+## 2300016 HTTP2帧层错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -198,9 +206,10 @@ HTTP2层级的错误。
 
 
 
-#### 2300018 服务器返回数据不完整
+## 2300018 服务器返回数据不完整
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -223,9 +232,10 @@ Transferred a partial file.
 
 
 
-#### 2300023 向磁盘/应用程序写入接收数据失败
+## 2300023 向磁盘/应用程序写入接收数据失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -250,9 +260,10 @@ Failed to write the received data to the disk or application.
 
 
 
-#### 2300025 上传失败
+## 2300025 上传失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -272,9 +283,10 @@ Upload failed.
 
 
 
-#### 2300026 从文件/应用程序中打开/读取本地数据失败
+## 2300026 从文件/应用程序中打开/读取本地数据失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -294,9 +306,10 @@ Failed to open or read local data from the file or application.
 
 
 
-#### 2300027 内存不足
+## 2300027 内存不足
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -316,9 +329,10 @@ Out of memory.
 
 
 
-#### 2300028 操作超时
+## 2300028 操作超时
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -344,9 +358,10 @@ Operation timeout.
 
 
 
-#### 2300047 重定向次数达到最大值
+## 2300047 重定向次数达到最大值
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -366,9 +381,10 @@ The number of redirections reaches the maximum allowed.
 
 
 
-#### 2300052 服务器没有返回内容
+## 2300052 服务器没有返回内容
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -388,9 +404,10 @@ The server returned nothing (no header or data).
 
 
 
-#### 2300055 发送网络数据失败
+## 2300055 发送网络数据失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -410,9 +427,10 @@ Failed to send data to the peer.
 
 
 
-#### 2300056 接收网络数据失败
+## 2300056 接收网络数据失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -437,9 +455,10 @@ Failed to receive data from the peer.
 
 
 
-#### 2300058 本地SSL证书错误
+## 2300058 本地SSL证书错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -459,9 +478,10 @@ SSL证书格式有错误。
 
 
 
-#### 2300059 无法使用指定的密码
+## 2300059 无法使用指定的加密算法
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -469,7 +489,7 @@ The specified SSL cipher cannot be used.
 
 **错误描述**
 
-无法使用指定的密码。
+无法使用指定的加密算法。
 
 **可能原因**
 
@@ -481,9 +501,10 @@ client和server协商的加密算法系统不支持。
 
 
 
-#### 2300060 远程服务器SSL证书或SSH密钥不正确
+## 2300060 远程服务器SSL证书或SSH密钥不正确
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -508,9 +529,10 @@ Invalid SSL peer certificate or SSH remote key.
 
 
 
-#### 2300061 无法识别或错误的HTTP编码格式
+## 2300061 无法识别或错误的HTTP编码格式
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -530,9 +552,10 @@ HTTP编码格式不正确。
 
 
 
-#### 2300063 超出最大文件大小
+## 2300063 超出最大文件大小
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -552,9 +575,10 @@ Maximum file size exceeded.
 
 
 
-#### 2300070 服务器磁盘空间不足
+## 2300070 服务器磁盘空间不足
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -574,9 +598,10 @@ Remote disk full.
 
 
 
-#### 2300073 服务器返回文件已存在
+## 2300073 服务器返回文件已存在
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -596,9 +621,10 @@ Remote file already exists.
 
 
 
-#### 2300077 SSL CA证书不存在或没有访问权限
+## 2300077 SSL CA证书不存在或没有访问权限
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -618,9 +644,10 @@ SSL CA证书不存在或没有访问权限。
 
 
 
-#### 2300078 URL请求的文件不存在
+## 2300078 URL请求的文件不存在
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -640,9 +667,10 @@ URL请求的文件不存在。
 
 
 
-#### 2300094 身份校验失败
+## 2300094 身份校验失败
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -662,9 +690,10 @@ Authentication error.
 
 
 
-#### 2300997 明文HTTP被拦截
+## 2300997 明文HTTP被拦截
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -684,9 +713,10 @@ Cleartext traffic not permitted.
 
 
 
-#### 2300998 不允许访问域名
+## 2300998 不允许访问域名
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -707,9 +737,10 @@ It is not allowed to access this domain.
 
 
 
-#### 2300999 内部错误
+## 2300999 内部错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **错误信息**
 
@@ -718,8 +749,6 @@ Internal error.
 **错误描述**
 
 HTTP模块内部错误，通常由底层网络库返回的未映射错误或其他内部异常引起。
-
-**可能原因**
 1. **底层网络库未映射错误**：
 
   

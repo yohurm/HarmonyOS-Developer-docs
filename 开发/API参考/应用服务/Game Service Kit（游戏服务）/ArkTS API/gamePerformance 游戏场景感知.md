@@ -1,6 +1,6 @@
 # gamePerformance（游戏场景感知）
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservice-gameperformance
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -12,7 +12,8 @@
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -22,7 +23,8 @@ import { gamePerformance } from '@kit.GameServiceKit';
  
   
 
-#### DeviceInfo
+## DeviceInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -34,6 +36,7 @@ import { gamePerformance } from '@kit.GameServiceKit';
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | tempLevel | number | 否 | 否 | 温控档位。不同档位及其建议如下： 1：无需处理。 2：建议降低无感知业务规格，例如后台更新降速或延迟运行。 3：建议暂停无感知业务，降低游戏非核心业务的规格，例如前台更新降速。 4：建议减少游戏特效，降低分辨率，画质。 5：建议降低全场景规格，进一步降低分辨率、画质等。 6：建议游戏降至最低规格。 |
@@ -43,7 +46,8 @@ import { gamePerformance } from '@kit.GameServiceKit';
  
   
 
-#### GpuInfo
+## GpuInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -55,6 +59,7 @@ GPU性能信息类。
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | gpuLoadLevel | number | 否 | 是 | GPU负载整体等级。10个等级，负载程度从1到10递增。 |
@@ -67,7 +72,8 @@ GPU性能信息类。
  
   
 
-#### ThermalInfo
+## ThermalInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -79,6 +85,7 @@ GPU性能信息类。
  
 **起始版本：** 5.0.1(13)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | thermalMargin | number | 否 | 是 | 时间裕量，温控到达指定档位的时间，单位：秒（s）。 说明： - 该数值超过60时，可信度降低。 - 返回0：表示已达到查询的温控档位。 - 返回-1：表示不能到达。 - 返回-2：表示查询的档位低于当前档位。 |
@@ -87,7 +94,8 @@ GPU性能信息类。
  
   
 
-#### BaseGameInfo
+## BaseGameInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -99,6 +107,7 @@ GPU性能信息类。
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | messageType | number | 否 | 否 | 信息类型。 0：标识一个游戏包体消息，对应GamePackageInfo。 1：标识一个游戏设置消息，对应GameConfigInfo。 2：标识一个游戏场景消息，对应GameSceneInfo。 3：标识一个游戏网络状态消息，对应GameNetInfo。 4：标识一个游戏玩家信息，对应GamePlayerInfo。 |
@@ -107,7 +116,8 @@ GPU性能信息类。
  
   
 
-#### GamePackageInfo
+## GamePackageInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -119,6 +129,7 @@ GPU性能信息类。
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | bundleName | string | 否 | 否 | 游戏包名。最大长度为128且不能为空。 |
@@ -131,7 +142,8 @@ GPU性能信息类。
  
   
 
-#### GameConfigInfo
+## GameConfigInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -143,6 +155,7 @@ GPU性能信息类。
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | maxPictureQualityLevel | number | 否 | 否 | 支持的画质最高等级。 1：流畅 2：均衡 3：高清 4：HDR高清 5：超高清 |
@@ -160,7 +173,8 @@ GPU性能信息类。
  
   
 
-#### GameSceneInfo
+## GameSceneInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -172,6 +186,7 @@ GPU性能信息类。
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | sceneID | number | 否 | 否 | 游戏场景ID。 0：回切场景标识结束 1：游戏启动 2：游戏内更新 3：登录过程 4：主界面 5：加载一局游戏（自己加载） 6：加载一局游戏（自己加载完毕，等待其他玩家） 7：游戏中 8：观战模式 （游戏特殊场景编码：从100开始自定义） 说明：游戏自定义场景推荐使用subSceneID传入。 |
@@ -200,7 +215,8 @@ GPU性能信息类。
  
   
 
-#### GameNetInfo
+## GameNetInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -212,6 +228,7 @@ GPU性能信息类。
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | netLatency | string | 否 | 否 | 游戏场景中网络时延，包含整体、上行、下行和服务器处理时间。 单位：毫秒（ms），字符长度范围：[1, 128]。 格式：10,20,30,40（允许10或10,20或10,20,30），按照固定顺序解析：total,up,down,server。 |
@@ -220,7 +237,8 @@ GPU性能信息类。
  
   
 
-#### GamePlayerInfo
+## GamePlayerInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -240,6 +258,7 @@ gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
   
 
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | gamePlayerId | string | 否 | 是 | 游戏玩家ID。字符长度范围：[0, 256]。 |
@@ -249,7 +268,8 @@ gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
  
   
 
-#### DeviceInfoParameter
+## DeviceInfoParameter
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -261,6 +281,7 @@ gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
  
 **起始版本：** 5.0.1(13)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | deviceInfoType | DeviceInfoType | 否 | 否 | 设备状态信息类型。 |
@@ -269,7 +290,8 @@ gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
  
   
 
-#### DeviceInfoType
+## DeviceInfoType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -281,6 +303,7 @@ gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
  
 **起始版本：** 5.0.1(13)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | THERMAL | 1 | 温度变化趋势数据。 |
@@ -289,7 +312,8 @@ gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
  
   
 
-#### DeviceInfoParameterKey
+## DeviceInfoParameterKey
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -301,6 +325,7 @@ gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
  
 **起始版本：** 5.0.1(13)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | THERMAL_TEMP_LEVEL | 'tempLevel' | 温控档位。 |
@@ -308,7 +333,8 @@ gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
  
   
 
-#### GameCustomTag
+## GameCustomTag
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -320,6 +346,7 @@ gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
  
 **起始版本：** 5.1.0(18)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CRASH | 1 | 崩溃。 |
@@ -327,7 +354,8 @@ gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
  
   
 
-#### GamePerformanceErrorCode
+## GamePerformanceErrorCode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -341,6 +369,7 @@ Game Service Kit错误码类。
  
 错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-gameservice)。
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | INTERNAL_ERROR | 1010300001 | 系统内部错误。 |
@@ -350,7 +379,8 @@ Game Service Kit错误码类。
  
   
 
-#### gamePerformance.init
+## gamePerformance.init
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -366,6 +396,7 @@ init(gamePackageInfo: GamePackageInfo): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | gamePackageInfo | GamePackageInfo | 是 | 游戏包信息类。 |
@@ -373,6 +404,7 @@ init(gamePackageInfo: GamePackageInfo): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -382,6 +414,7 @@ init(gamePackageInfo: GamePackageInfo): Promise&lt;void&gt;
  
 错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-gameservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. |
@@ -414,7 +447,8 @@ try {
  
   
 
-#### gamePerformance.updateGameInfo
+## gamePerformance.updateGameInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -430,6 +464,7 @@ updateGameInfo<T extends BaseGameInfo>(gameInfo: T): Promise&lt;void&gt;
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | gameInfo | T | 是 | 游戏基本信息，T为继承自BaseGameInfo的组件属性类型。 |
@@ -437,6 +472,7 @@ updateGameInfo<T extends BaseGameInfo>(gameInfo: T): Promise&lt;void&gt;
  
 **返回值**：
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象。无返回结果的Promise对象。 |
@@ -446,6 +482,7 @@ updateGameInfo<T extends BaseGameInfo>(gameInfo: T): Promise&lt;void&gt;
  
 错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-gameservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. |
@@ -479,7 +516,8 @@ try {
  
   
 
-#### gamePerformance.on('deviceStateChanged')
+## gamePerformance.on('deviceStateChanged')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -499,6 +537,7 @@ on(type: 'deviceStateChanged', callback: Callback&lt;DeviceInfo&gt;): void
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件类型，目前仅支持监听deviceStateChanged（设备状态变化）事件。 |
@@ -509,6 +548,7 @@ on(type: 'deviceStateChanged', callback: Callback&lt;DeviceInfo&gt;): void
  
 错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. |
@@ -538,7 +578,8 @@ try {
  
   
 
-#### gamePerformance.on('deviceStateChanged')
+## gamePerformance.on('deviceStateChanged')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -558,6 +599,7 @@ on(type: 'deviceStateChanged', callback: Callback&lt;DeviceInfo&gt;, scope: Arra
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件类型，目前仅支持监听deviceStateChanged（设备状态变化）事件。 |
@@ -569,6 +611,7 @@ on(type: 'deviceStateChanged', callback: Callback&lt;DeviceInfo&gt;, scope: Arra
  
 错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-gameservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. |
@@ -600,7 +643,8 @@ try {
  
   
 
-#### gamePerformance.off('deviceStateChanged')
+## gamePerformance.off('deviceStateChanged')
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -616,6 +660,7 @@ off(type: 'deviceStateChanged', callback?: Callback&lt;DeviceInfo&gt;): void
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 监听的事件类型，目前仅支持监听deviceStateChanged（设备状态变化）事件。 |
@@ -626,6 +671,7 @@ off(type: 'deviceStateChanged', callback?: Callback&lt;DeviceInfo&gt;): void
  
 错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. |
@@ -664,7 +710,8 @@ try {
  
   
 
-#### gamePerformance.getDeviceInfoByScope
+## gamePerformance.getDeviceInfoByScope
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -684,6 +731,7 @@ getDeviceInfoByScope(scope: Array&lt;DeviceInfoParameter&gt;): Promise&lt;Device
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scope | Array&lt;DeviceInfoParameter&gt; | 是 | 设备状态信息参数。 |
@@ -691,6 +739,7 @@ getDeviceInfoByScope(scope: Array&lt;DeviceInfoParameter&gt;): Promise&lt;Device
  
 **返回值**：
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;DeviceInfo&gt; | Promise对象。返回设备状态信息。 |
@@ -700,6 +749,7 @@ getDeviceInfoByScope(scope: Array&lt;DeviceInfoParameter&gt;): Promise&lt;Device
  
 错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-gameservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | The parameter check failed. |
@@ -734,7 +784,8 @@ try {
  
   
 
-#### gamePerformance.addGameCustomData
+## gamePerformance.addGameCustomData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -750,6 +801,7 @@ addGameCustomData(data: Record<string, string>, tag: GameCustomTag): void
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | Record<string, string> | 是 | 自定义数据。键的字符长度范围：[0, 128]，值的字符长度范围：[0, 1024]，单次上报Record数量范围：[1, 100]。 可多次上报数据，已上报数据的键与值长度总和不能超过128000个字符。 |
@@ -760,6 +812,7 @@ addGameCustomData(data: Record<string, string>, tag: GameCustomTag): void
  
 错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-gameservice)和[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 3. Parameter verification failed. |

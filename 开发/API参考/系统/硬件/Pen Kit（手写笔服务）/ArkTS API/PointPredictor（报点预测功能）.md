@@ -1,6 +1,6 @@
 # PointPredictor（报点预测功能）
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/pen-pointpredictor
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -10,7 +10,8 @@
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -20,6 +21,7 @@ import { PointPredictor } from '@kit.Penkit';
  
 本模块提供以下方法。
   
+
 | 方法名称 | 说明 |
 | --- | --- |
 | getPredictionPoint | 获取预测点信息。 |
@@ -27,7 +29,8 @@ import { PointPredictor } from '@kit.Penkit';
  
   
 
-#### getPredictionPoint
+## getPredictionPoint
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -43,6 +46,7 @@ getPredictionPoint(event: TouchEvent): TouchPoint
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | TouchEvent | 是 | 当前点信息。 |
@@ -50,6 +54,7 @@ getPredictionPoint(event: TouchEvent): TouchPoint
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | TouchPoint | 预测点信息。 |

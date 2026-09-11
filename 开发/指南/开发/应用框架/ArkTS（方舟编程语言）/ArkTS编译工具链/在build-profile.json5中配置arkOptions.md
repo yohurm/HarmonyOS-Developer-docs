@@ -1,23 +1,24 @@
 # 在build-profile.json5中配置arkOptions
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkoptions-guide
 
-#### 概述
+## 概述
 
 arkOptions主要提供ArkTS编译相关配置，当前文档介绍arkOptions中types配置类型、maxFlowDepth配置控制流分析最大深度等，arkOptions中的其他配置项请参考[build-profile.json5](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-configuration-file-overview)。
  
   
 
-#### types
+## types
 
   
 
-#### types配置文件标签说明
+### types配置文件标签说明
 
  arkOptions的types字段配置文件标签说明：
   
+
 | 属性名称 | 含义 | 配置范围 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- | --- |
 | types | 通过types字段将指定的类型声明文件作为全局引入，从而避免在每个源码文件中单独引入。 | 模块级 | 数组 | 该标签可缺省，缺省值为空。 |
@@ -25,7 +26,7 @@ arkOptions主要提供ArkTS编译相关配置，当前文档介绍arkOptions中t
  
   
 
-#### arkOptions中的types字段配置说明
+### arkOptions中的types字段配置说明
 
 arkOptions中types字段示例：
  
@@ -45,7 +46,7 @@ types字段支持填写包名、包所在位置的相对路径，以及声明文
  
   
 
-#### 注意事项
+### 注意事项
 
 如果在types字段中填写包名或者包所在位置的相对路径，需要在entry模块下oh-package.json5文件的dependencies字段中作如下配置：
  
@@ -75,14 +76,15 @@ let testGlobal: Global.ObjectType = 'test';
  
   
 
-#### maxFlowDepth
+## maxFlowDepth
 
   
 
-#### maxFlowDepth配置文件标签说明
+### maxFlowDepth配置文件标签说明
 
 arkOptions下tscConfig中maxFlowDepth字段配置文件标签说明：
   
+
 | 属性名称 | 含义 | 配置范围 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- | --- |
 | maxFlowDepth | 开发者通过maxFlowDepth字段自定义配置tsc编译过程中的tsc控制流分析最大深度，避免固定最大深度导致编译报错问题。该配置项可配置的最小值为2000，可配置最大值为65535。 | 工程级 | 数字型 | 该标签可缺省，缺省值时使用tsc控制流分析最大深度默认值2000。 |
@@ -90,7 +92,7 @@ arkOptions下tscConfig中maxFlowDepth字段配置文件标签说明：
  
   
 
-#### arkOptions下的tscConfig中maxFlowDepth字段配置说明
+### arkOptions下的tscConfig中maxFlowDepth字段配置说明
 
 arkOptions/tscConfig中maxFlowDepth字段展示。
  
@@ -107,7 +109,7 @@ arkOptions/tscConfig中maxFlowDepth字段展示。
  
   
 
-#### 注意事项
+### 注意事项
 
 - 仅可在工程级目录下build-profile.json5文件中配置maxFlowDepth字段。
 - 若开发者对maxFlowDepth字段配置的值超过可配置范围，则会出现编译构建相关报错。
@@ -130,14 +132,15 @@ hvigor ERROR: Schema validate failed.
  
   
 
-#### transformLib
+## transformLib
 
   
 
-#### transformLib配置文件标签说明
+### transformLib配置文件标签说明
 
 arkOptions的transformLib字段配置文件标签说明：
   
+
 | 属性名称 | 含义 | 配置范围 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- | --- |
 | transformLib | 字节码插桩插件配置，允许开发者在编译时对字节码进行插桩修改。仅支持Stage模型，格式为相对路径，指向实现插桩功能的动态库。不同系统要求的动态库文件类型如下，动态库文件内容需要在对应平台生成，不能拷贝修改后缀名混用。 | 模块级 | 字符串型 | 该标签可缺省，缺省值时代表不使用该功能。 |
@@ -145,7 +148,7 @@ arkOptions的transformLib字段配置文件标签说明：
  
   
 
-#### arkOptions中的transformLib字段配置说明
+### arkOptions中的transformLib字段配置说明
 
 arkOptions中transformLib字段示例：
  
@@ -165,7 +168,7 @@ arkOptions中transformLib字段示例：
  
   
 
-#### 注意事项
+### 注意事项
 
 - 若开发者未对字段进行配置时，则默认不使用该功能。
 - HAP、HSP模块配置即生效，HAR模块仅字节码HAR配置生效，非字节码HAR配置不生效。

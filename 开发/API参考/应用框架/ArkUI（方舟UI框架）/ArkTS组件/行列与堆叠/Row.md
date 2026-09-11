@@ -1,9 +1,9 @@
 # Row
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-row
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 沿水平方向布局的容器，支持设置子组件间距、对齐方式，适用于需要横向排列多个子组件的场景，如工具栏、标签栏、按钮组等。
  
@@ -12,23 +12,26 @@
 
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 可以包含子组件。
  
   
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### Row
+### Row
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Row(options?: RowOptions)
  
@@ -46,6 +49,7 @@ Row(options?: RowOptions)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options18+ | RowOptions | 否 | 横向布局的配置对象，用于设置子组件间距（单位：vp），其中space属性支持设置number或string类型的值。当需要自定义子组件间距时传入此参数；不传入时默认间距为0。 模型约束： 此接口仅可在Stage模型下使用。 说明： 从API version 9开始，space为负数或者justifyContent设置为FlexAlign.SpaceBetween、FlexAlign.SpaceAround、FlexAlign.SpaceEvenly时不生效。 |
@@ -53,9 +57,10 @@ Row(options?: RowOptions)
  
   
 
-#### Row18+
+### Row18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Row(options?: RowOptions | RowOptionsV2)
  
@@ -75,6 +80,7 @@ Row(options?: RowOptions | RowOptionsV2)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | RowOptions \| RowOptionsV2 | 否 | 横向布局的配置对象，用于设置子组件间距（单位：vp），其中space属性支持设置number、string或Resource类型的值。不传入时默认间距为0。 说明： 从API version 9开始，space为负数或者justifyContent设置为FlexAlign.SpaceBetween、FlexAlign.SpaceAround、FlexAlign.SpaceEvenly时不生效。 |
@@ -82,9 +88,10 @@ Row(options?: RowOptions | RowOptionsV2)
  
   
 
-#### RowOptions18+对象说明
+## RowOptions18+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置Row组件的子组件间距属性。
  
@@ -100,16 +107,18 @@ Row(options?: RowOptions | RowOptionsV2)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| space7+ | string \| number | 否 | 是 | 横向布局元素间距。 从API version 9开始，space为负数或者justifyContent设置为FlexAlign.SpaceBetween、FlexAlign.SpaceAround、FlexAlign.SpaceEvenly时不生效。 默认值：0 单位：vp 非法值：按默认值处理。 说明： space取值是大于等于0的数字，或者可以转换为数字的字符串。 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| space7+ | string \| number | 否 | 是 | 横向布局元素间距。 从API version 9开始，space为负数或者justifyContent设置为FlexAlign.SpaceBetween、FlexAlign.SpaceAround、FlexAlign.SpaceEvenly时不生效。 默认值：0 单位：vp 非法值：按默认值处理。 说明： space取值是大于等于0的数字，或者可以转换为数字的字符串，不支持设置百分比。 卡片能力： 从API version 9开始，该接口支持在ArkTS卡片中使用。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
  
  
   
 
-#### RowOptionsV218+对象说明
+## RowOptionsV218+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设置Row组件的子组件间距属性。间距类型SpaceType支持number、string或Resource类型。
  
@@ -121,24 +130,27 @@ Row(options?: RowOptions | RowOptionsV2)
  
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| space | SpaceType | 否 | 是 | 横向布局元素间距。 取值范围：大于等于0。 从API version 9开始，justifyContent设置为FlexAlign.SpaceBetween、FlexAlign.SpaceAround、FlexAlign.SpaceEvenly时space参数不生效。 默认值：0 单位：vp 非法值：按默认值处理。 说明： space取值是大于等于0的数字，或者可以转换为非负数字的字符串，或者可以转换为数字的Resource类型数据。负数作为非法值将被当作默认值0处理。 |
+| space | SpaceType | 否 | 是 | 横向布局元素间距。 取值范围：大于等于0。 从API version 9开始，justifyContent设置为FlexAlign.SpaceBetween、FlexAlign.SpaceAround、FlexAlign.SpaceEvenly时space参数不生效。 默认值：0 单位：vp 非法值：按默认值处理。 说明： space取值是大于等于0的数字，或者可以转换为非负数字的字符串，或者可以转换为数字的Resource类型数据，不支持设置百分比。负数作为非法值将被当作默认值0处理。 |
  
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
  
   
 
-#### alignItems
+### alignItems
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 alignItems(value: VerticalAlign)
  
@@ -152,6 +164,7 @@ alignItems(value: VerticalAlign)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | VerticalAlign | 是 | 子组件在垂直方向上的对齐格式。 默认值：VerticalAlign.Center |
@@ -159,9 +172,10 @@ alignItems(value: VerticalAlign)
  
   
 
-#### justifyContent8+
+### justifyContent8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 justifyContent(value: FlexAlign)
  
@@ -175,6 +189,7 @@ justifyContent(value: FlexAlign)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | FlexAlign | 是 | 子组件在水平方向上的对齐格式。 默认值：FlexAlign.Start 说明： 从API version 9开始，space为负数或者justifyContent设置为FlexAlign.SpaceBetween、FlexAlign.SpaceAround、FlexAlign.SpaceEvenly时，space参数不生效。 |
@@ -186,9 +201,10 @@ justifyContent(value: FlexAlign)
  
   
 
-#### reverse12+
+### reverse12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reverse(isReversed: Optional&lt;boolean&gt;)
  
@@ -204,6 +220,7 @@ reverse(isReversed: Optional&lt;boolean&gt;)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isReversed | Optional&lt;boolean&gt; | 是 | 子组件在水平方向上的排列顺序是否反转。 设置true表示子组件在水平方向上反转排列（从右到左），设置false表示子组件在水平方向上正序排列（从左到右）。参数值为undefined时视为true，主轴方向反转。 |
@@ -215,21 +232,26 @@ reverse(isReversed: Optional&lt;boolean&gt;)
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)。
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 示例1（设置Row组件的布局属性）
+### 示例1（设置Row组件的布局属性）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例展示设置Row组件的布局属性，如间距、对齐方式等属性后的效果。
  
@@ -302,12 +324,15 @@ struct RowExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/UPY4mhfTRCiddVB296pW4w/zh-cn_image_0000002674634396.png?HW-CC-KV=V1&HW-CC-Date=20260813T095448Z&HW-CC-Expire=86400&HW-CC-Sign=DFEDE89127EF0083CD2AA6D4BE5C1799D76656089AAEFD9B0F322A5540C82C78)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/0IIiYnevRySl5MZqrGa5NA/zh-cn_image_0000002747292551.png?HW-CC-KV=V1&HW-CC-Date=20260911T073114Z&HW-CC-Expire=86400&HW-CC-Sign=DFEA1C6E772AA874574F16B48BC0A8081494521457B3D8A6CD8CC363189B845C)
 
  
   
 
-#### 示例2（设置反转属性）
+### 示例2（设置反转属性）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例展示设置Row组件的reverse属性后的效果，演示如何实现子组件排列顺序的反转。
  
@@ -336,4 +361,4 @@ struct RowReverseSample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/gKsK3eXIT--xAZYXB-Zr3g/zh-cn_image_0000002704274351.png?HW-CC-KV=V1&HW-CC-Date=20260813T095448Z&HW-CC-Expire=86400&HW-CC-Sign=9F3C34615B2A7862B63E2261DE124C66092C652813A09E3C87E1C05E2FAC883D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/CkZYg4MySDqULlTyMY8sOw/zh-cn_image_0000002747212467.png?HW-CC-KV=V1&HW-CC-Date=20260911T073114Z&HW-CC-Expire=86400&HW-CC-Sign=994E7D44E89155E6C3EDEE45FE2241C6A50B848AA3EA8CD1AE1F8CDFF0EA9166)

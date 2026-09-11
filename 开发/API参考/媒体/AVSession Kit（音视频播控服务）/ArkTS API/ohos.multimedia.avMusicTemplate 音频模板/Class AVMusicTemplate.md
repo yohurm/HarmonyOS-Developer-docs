@@ -1,17 +1,21 @@
 # Class (AVMusicTemplate)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-avmusictemplate-avmusictemplate
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-调用[avMusicTemplate.createAVMusicTemplate](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-avmusictemplate-f#avmusictemplatecreateavmusictemplate)获取实例后，可获取其ID，启动音频模板界面，并配置数据获取方法。随后，同步数据给模板控制方，以完成后续操作。
+开发者调用[avMusicTemplate.createAVMusicTemplate](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-avmusictemplate-f#avmusictemplatecreateavmusictemplate)获取实例后，可获取其ID，启动音频模板界面，并配置数据获取方法。随后，同步数据给模板控制方，以完成数据交互和界面更新等操作。
 
 > [!NOTE]
 > 本模块首批接口从API version 23开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 本模块仅适用于API version 23及以上版本的Car设备。
 
 
 
-#### 导入模块
+## 导入模块
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { avMusicTemplate } from '@kit.AVSessionKit';
@@ -19,11 +23,15 @@ import { avMusicTemplate } from '@kit.AVSessionKit';
 
 
 
-#### 属性
+## 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -38,7 +46,7 @@ import { avMusicTemplate } from '@kit.AVSessionKit';
 
 export class TemplateManager {
   private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
-  private static sInstance: TemplateManager;
+  private static instance: TemplateManager;
 
   private constructor() {
   }
@@ -49,11 +57,11 @@ export class TemplateManager {
    * @returns 模板控制器实例。
    */
   public static getInstance(): TemplateManager {
-    if (!TemplateManager.sInstance) {
-      TemplateManager.sInstance = new TemplateManager();
+    if (!TemplateManager.instance) {
+      TemplateManager.instance = new TemplateManager();
     }
-    return TemplateManager.sInstance;
-  };
+    return TemplateManager.instance;
+  }
 
   /**
    * 创建音频模板。
@@ -61,7 +69,7 @@ export class TemplateManager {
   public createTemplate() {
     if (this.template) {
       console.warn('createTemplate: template not undefined');
-      return
+      return;
     }
     this.template = avMusicTemplate.createAVMusicTemplate(avMusicTemplate.AVMusicTemplateType.DEFAULT);
     console.info('Succeeded in creating template.');
@@ -71,7 +79,10 @@ export class TemplateManager {
 
 
 
-#### startTemplate
+## startTemplate
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startTemplate(): Promise&lt;OperResult&gt;
 
@@ -83,6 +94,7 @@ startTemplate(): Promise&lt;OperResult&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;OperResult&gt; | Promise对象，返回启动音频模板界面的操作结果。 |
@@ -91,6 +103,7 @@ startTemplate(): Promise&lt;OperResult&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -116,7 +129,10 @@ export class TemplateManager {
 
 
 
-#### onQueryMainTabs
+## onQueryMainTabs
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onQueryMainTabs(callback: QueryMainTabsEvent): void
 
@@ -128,6 +144,7 @@ onQueryMainTabs(callback: QueryMainTabsEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | QueryMainTabsEvent | 是 | 回调函数，返回查询主标签事件。 |
@@ -136,6 +153,7 @@ onQueryMainTabs(callback: QueryMainTabsEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -152,10 +170,13 @@ import { avMusicTemplate } from '@kit.AVSessionKit';
 export class TemplateManager {
   private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
   private queryMainTabsEvent: avMusicTemplate.QueryMainTabsEvent = async () => {
-    return new Promise<avMusicTemplate.MediaTab[]>(async (resolve, reject) => {
-      let tabs: avMusicTemplate.MediaTab[] = await this.getMainTabs();
-      resolve(tabs);
-    });
+    try {
+      return await this.getMainTabs();
+    } catch (e) {
+      const msg = `Failed to queryMainTabsEvent. Code: ${e?.code}`;
+      console.error(msg);
+      throw e instanceof Error ? e : new Error(e?.message ?? msg);
+    }
   };
 
   /**
@@ -187,7 +208,10 @@ export class TemplateManager {
 
 
 
-#### offQueryMainTabs
+## offQueryMainTabs
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offQueryMainTabs(callback?: QueryMainTabsEvent): void
 
@@ -199,6 +223,7 @@ offQueryMainTabs(callback?: QueryMainTabsEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | QueryMainTabsEvent | 否 | 查询主标签事件。不填该参数则注销该类型对应的所有回调。 |
@@ -207,6 +232,7 @@ offQueryMainTabs(callback?: QueryMainTabsEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -234,7 +260,10 @@ export class TemplateManager {
 
 
 
-#### onQueryMediaTabContent
+## onQueryMediaTabContent
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onQueryMediaTabContent(callback: QueryMediaTabContentEvent): void
 
@@ -246,6 +275,7 @@ onQueryMediaTabContent(callback: QueryMediaTabContentEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | QueryMediaTabContentEvent | 是 | 回调函数，返回查询媒体标签页内容的事件。 |
@@ -254,6 +284,7 @@ onQueryMediaTabContent(callback: QueryMediaTabContentEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -339,7 +370,10 @@ export class TemplateManager {
 
 
 
-#### offQueryMediaTabContent
+## offQueryMediaTabContent
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offQueryMediaTabContent(callback?: QueryMediaTabContentEvent): void
 
@@ -351,6 +385,7 @@ offQueryMediaTabContent(callback?: QueryMediaTabContentEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | QueryMediaTabContentEvent | 否 | 查询媒体标签页内容的事件。不填该参数则注销该类型对应的所有回调。 |
@@ -359,6 +394,7 @@ offQueryMediaTabContent(callback?: QueryMediaTabContentEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -386,7 +422,10 @@ export class TemplateManager {
 
 
 
-#### onQueryMediaEntity
+## onQueryMediaEntity
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onQueryMediaEntity(callback: QueryMediaEntityEvent): void
 
@@ -398,6 +437,7 @@ onQueryMediaEntity(callback: QueryMediaEntityEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | QueryMediaEntityEvent | 是 | 回调函数，返回查询媒体实体的事件。 |
@@ -406,6 +446,7 @@ onQueryMediaEntity(callback: QueryMediaEntityEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -477,7 +518,10 @@ export class TemplateManager {
 
 
 
-#### offQueryMediaEntity
+## offQueryMediaEntity
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offQueryMediaEntity(callback?: QueryMediaEntityEvent): void
 
@@ -489,6 +533,7 @@ offQueryMediaEntity(callback?: QueryMediaEntityEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | QueryMediaEntityEvent | 否 | 查询媒体实体的事件。不填该参数则注销该类型对应的所有回调。 |
@@ -497,6 +542,7 @@ offQueryMediaEntity(callback?: QueryMediaEntityEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -524,7 +570,10 @@ export class TemplateManager {
 
 
 
-#### onQueryCompilation
+## onQueryCompilation
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onQueryCompilation(callback: QueryCompilationEvent): void
 
@@ -536,6 +585,7 @@ onQueryCompilation(callback: QueryCompilationEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | QueryCompilationEvent | 是 | 回调函数，返回查询合集的事件。 |
@@ -544,6 +594,7 @@ onQueryCompilation(callback: QueryCompilationEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -615,7 +666,10 @@ export class TemplateManager {
 
 
 
-#### offQueryCompilation
+## offQueryCompilation
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offQueryCompilation(callback?: QueryCompilationEvent): void
 
@@ -627,6 +681,7 @@ offQueryCompilation(callback?: QueryCompilationEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | QueryCompilationEvent | 否 | 查询合集的事件。不填该参数则注销该类型对应的所有回调。 |
@@ -635,6 +690,7 @@ offQueryCompilation(callback?: QueryCompilationEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -662,7 +718,10 @@ export class TemplateManager {
 
 
 
-#### onQueryPlaylist
+## onQueryPlaylist
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onQueryPlaylist(callback: QueryPlaylistEvent): void
 
@@ -674,6 +733,7 @@ onQueryPlaylist(callback: QueryPlaylistEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | QueryPlaylistEvent | 是 | 回调函数，返回查询播放列表的事件。 |
@@ -682,6 +742,7 @@ onQueryPlaylist(callback: QueryPlaylistEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -753,7 +814,10 @@ export class TemplateManager {
 
 
 
-#### offQueryPlaylist
+## offQueryPlaylist
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offQueryPlaylist(callback?: QueryPlaylistEvent): void
 
@@ -765,6 +829,7 @@ offQueryPlaylist(callback?: QueryPlaylistEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | QueryPlaylistEvent | 否 | 查询播放列表的事件。不填该参数则注销该类型对应的所有回调。 |
@@ -773,6 +838,7 @@ offQueryPlaylist(callback?: QueryPlaylistEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -800,7 +866,10 @@ export class TemplateManager {
 
 
 
-#### onQueryCurrentSingle
+## onQueryCurrentSingle
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onQueryCurrentSingle(callback: QueryCurrentSingleEvent): void
 
@@ -812,6 +881,7 @@ onQueryCurrentSingle(callback: QueryCurrentSingleEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | QueryCurrentSingleEvent | 是 | 回调函数，返回查询当前单曲的事件。 |
@@ -820,6 +890,7 @@ onQueryCurrentSingle(callback: QueryCurrentSingleEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -868,7 +939,7 @@ export class TemplateManager {
       isSupportPlayMode: true,
       isSupportPlayRate: true,
       supportedPlayRate: ['1', '2', '3'],
-      currentPlayRate: 'string;',
+      currentPlayRate: '1',
       isSupportSoundQuality: false,
       isSupportSoundEffect: true,
       totalDuration: 60,
@@ -888,7 +959,7 @@ export class TemplateManager {
       title: '歌曲标题',
       desc: '歌曲描述',
       imageUrl: '',
-      playState: 0,
+      playState: avMusicTemplate.PlaybackState.PLAYBACK_STATE_PREPARE,
       isVip: false,
       singer: '',
       tags: [],
@@ -902,7 +973,10 @@ export class TemplateManager {
 
 
 
-#### offQueryCurrentSingle
+## offQueryCurrentSingle
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offQueryCurrentSingle(callback?: QueryCurrentSingleEvent): void
 
@@ -914,6 +988,7 @@ offQueryCurrentSingle(callback?: QueryCurrentSingleEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | QueryCurrentSingleEvent | 否 | 查询当前单曲的事件。不填该参数则注销该类型对应的所有回调。 |
@@ -922,6 +997,7 @@ offQueryCurrentSingle(callback?: QueryCurrentSingleEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -949,7 +1025,10 @@ export class TemplateManager {
 
 
 
-#### onQueryCompilationByKeyword
+## onQueryCompilationByKeyword
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onQueryCompilationByKeyword(callback: QueryCompilationByKeywordEvent): void
 
@@ -961,6 +1040,7 @@ onQueryCompilationByKeyword(callback: QueryCompilationByKeywordEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | QueryCompilationByKeywordEvent | 是 | 回调函数，返回按关键字查询合集的事件。 |
@@ -969,6 +1049,7 @@ onQueryCompilationByKeyword(callback: QueryCompilationByKeywordEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1040,7 +1121,10 @@ export class TemplateManager {
 
 
 
-#### offQueryCompilationByKeyword
+## offQueryCompilationByKeyword
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offQueryCompilationByKeyword(callback?: QueryCompilationByKeywordEvent): void
 
@@ -1052,6 +1136,7 @@ offQueryCompilationByKeyword(callback?: QueryCompilationByKeywordEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | QueryCompilationByKeywordEvent | 否 | 按关键字查询合集的事件。不填该参数则注销该类型对应的所有回调。 |
@@ -1060,6 +1145,7 @@ offQueryCompilationByKeyword(callback?: QueryCompilationByKeywordEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1087,7 +1173,10 @@ export class TemplateManager {
 
 
 
-#### onQueryMediaEntityByKeyword
+## onQueryMediaEntityByKeyword
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onQueryMediaEntityByKeyword(callback: QueryMediaEntityByKeywordEvent): void
 
@@ -1099,6 +1188,7 @@ onQueryMediaEntityByKeyword(callback: QueryMediaEntityByKeywordEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | QueryMediaEntityByKeywordEvent | 是 | 回调函数，返回按关键字查询媒体实体的事件。 |
@@ -1107,6 +1197,7 @@ onQueryMediaEntityByKeyword(callback: QueryMediaEntityByKeywordEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1178,7 +1269,10 @@ export class TemplateManager {
 
 
 
-#### offQueryMediaEntityByKeyword
+## offQueryMediaEntityByKeyword
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offQueryMediaEntityByKeyword(callback?: QueryMediaEntityByKeywordEvent): void
 
@@ -1190,6 +1284,7 @@ offQueryMediaEntityByKeyword(callback?: QueryMediaEntityByKeywordEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | QueryMediaEntityByKeywordEvent | 否 | 按关键字查询媒体实体的事件。不填该参数则注销该类型对应的所有回调。 |
@@ -1198,6 +1293,7 @@ offQueryMediaEntityByKeyword(callback?: QueryMediaEntityByKeywordEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1225,7 +1321,10 @@ export class TemplateManager {
 
 
 
-#### onQueryRecommendMediaEntityList
+## onQueryRecommendMediaEntityList
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onQueryRecommendMediaEntityList(callback: QueryRecommendMediaEntityListEvent): void
 
@@ -1237,6 +1336,7 @@ onQueryRecommendMediaEntityList(callback: QueryRecommendMediaEntityListEvent): v
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | QueryRecommendMediaEntityListEvent | 是 | 回调函数，返回查询推荐媒体列表的事件。 |
@@ -1245,6 +1345,7 @@ onQueryRecommendMediaEntityList(callback: QueryRecommendMediaEntityListEvent): v
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1297,7 +1398,10 @@ export class TemplateManager {
 
 
 
-#### offQueryRecommendMediaEntityList
+## offQueryRecommendMediaEntityList
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offQueryRecommendMediaEntityList(callback?: QueryRecommendMediaEntityListEvent): void
 
@@ -1309,6 +1413,7 @@ offQueryRecommendMediaEntityList(callback?: QueryRecommendMediaEntityListEvent):
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | QueryRecommendMediaEntityListEvent | 否 | 查询推荐媒体列表的事件。不填该参数则注销该类型对应的所有回调。 |
@@ -1317,6 +1422,7 @@ offQueryRecommendMediaEntityList(callback?: QueryRecommendMediaEntityListEvent):
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1344,7 +1450,10 @@ export class TemplateManager {
 
 
 
-#### onQueryHotWords
+## onQueryHotWords
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onQueryHotWords(callback: QueryHotWordsEvent): void
 
@@ -1356,6 +1465,7 @@ onQueryHotWords(callback: QueryHotWordsEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | QueryHotWordsEvent | 是 | 回调函数，返回查询热词的事件。 |
@@ -1364,6 +1474,7 @@ onQueryHotWords(callback: QueryHotWordsEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1397,7 +1508,10 @@ export class TemplateManager {
 
 
 
-#### offQueryHotWords
+## offQueryHotWords
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offQueryHotWords(callback?: QueryHotWordsEvent): void
 
@@ -1409,6 +1523,7 @@ offQueryHotWords(callback?: QueryHotWordsEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | QueryHotWordsEvent | 否 | 查询热词的事件。不填该参数则注销该类型对应的所有回调。 |
@@ -1417,6 +1532,7 @@ offQueryHotWords(callback?: QueryHotWordsEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1444,7 +1560,10 @@ export class TemplateManager {
 
 
 
-#### onQuerySearchHistory
+## onQuerySearchHistory
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onQuerySearchHistory(callback: QuerySearchHistoryEvent): void
 
@@ -1456,6 +1575,7 @@ onQuerySearchHistory(callback: QuerySearchHistoryEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | QuerySearchHistoryEvent | 是 | 回调函数，返回查询搜索历史的事件。 |
@@ -1464,6 +1584,7 @@ onQuerySearchHistory(callback: QuerySearchHistoryEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1497,7 +1618,10 @@ export class TemplateManager {
 
 
 
-#### offQuerySearchHistory
+## offQuerySearchHistory
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offQuerySearchHistory(callback?: QuerySearchHistoryEvent): void
 
@@ -1509,6 +1633,7 @@ offQuerySearchHistory(callback?: QuerySearchHistoryEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | QuerySearchHistoryEvent | 否 | 查询搜索历史的事件。不填该参数则注销该类型对应的所有回调。 |
@@ -1517,6 +1642,7 @@ offQuerySearchHistory(callback?: QuerySearchHistoryEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1544,7 +1670,10 @@ export class TemplateManager {
 
 
 
-#### onClearSearchHistory
+## onClearSearchHistory
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onClearSearchHistory(callback: ClearSearchHistoryEvent): void
 
@@ -1556,6 +1685,7 @@ onClearSearchHistory(callback: ClearSearchHistoryEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | ClearSearchHistoryEvent | 是 | 回调函数，返回清除搜索历史的事件。 |
@@ -1564,6 +1694,7 @@ onClearSearchHistory(callback: ClearSearchHistoryEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1609,7 +1740,10 @@ export class TemplateManager {
 
 
 
-#### offClearSearchHistory
+## offClearSearchHistory
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offClearSearchHistory(callback?: ClearSearchHistoryEvent): void
 
@@ -1621,6 +1755,7 @@ offClearSearchHistory(callback?: ClearSearchHistoryEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | ClearSearchHistoryEvent | 否 | 清除搜索历史的事件。不填该参数则注销该类型对应的所有回调。 |
@@ -1629,6 +1764,7 @@ offClearSearchHistory(callback?: ClearSearchHistoryEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1656,7 +1792,10 @@ export class TemplateManager {
 
 
 
-#### onLogin
+## onLogin
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onLogin(callback: LoginEvent): void
 
@@ -1668,6 +1807,7 @@ onLogin(callback: LoginEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | LoginEvent | 是 | 回调函数，返回登录事件。 |
@@ -1676,6 +1816,7 @@ onLogin(callback: LoginEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1728,7 +1869,10 @@ export class TemplateManager {
 
 
 
-#### offLogin
+## offLogin
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offLogin(callback?: LoginEvent): void
 
@@ -1740,6 +1884,7 @@ offLogin(callback?: LoginEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | LoginEvent | 否 | 登录事件。不填该参数则注销该类型对应的所有回调。 |
@@ -1748,6 +1893,7 @@ offLogin(callback?: LoginEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1775,7 +1921,10 @@ export class TemplateManager {
 
 
 
-#### onRequestDialogInfo
+## onRequestDialogInfo
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onRequestDialogInfo(callback: RequestDialogInfoEvent): void
 
@@ -1787,6 +1936,7 @@ onRequestDialogInfo(callback: RequestDialogInfoEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | RequestDialogInfoEvent | 是 | 回调函数，返回请求对话框信息的事件。 |
@@ -1795,6 +1945,7 @@ onRequestDialogInfo(callback: RequestDialogInfoEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1853,7 +2004,10 @@ export class TemplateManager {
 
 
 
-#### offRequestDialogInfo
+## offRequestDialogInfo
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offRequestDialogInfo(callback?: RequestDialogInfoEvent): void
 
@@ -1865,6 +2019,7 @@ offRequestDialogInfo(callback?: RequestDialogInfoEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | RequestDialogInfoEvent | 否 | 请求对话框信息的事件。不填该参数则注销该类型对应的所有回调。 |
@@ -1873,6 +2028,7 @@ offRequestDialogInfo(callback?: RequestDialogInfoEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1900,7 +2056,10 @@ export class TemplateManager {
 
 
 
-#### onHandleMemberPurchase
+## onHandleMemberPurchase
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onHandleMemberPurchase(callback: HandleMemberPurchaseEvent): void
 
@@ -1912,6 +2071,7 @@ onHandleMemberPurchase(callback: HandleMemberPurchaseEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | HandleMemberPurchaseEvent | 是 | 回调函数，返回处理购买会员的事件。 |
@@ -1920,6 +2080,7 @@ onHandleMemberPurchase(callback: HandleMemberPurchaseEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1978,7 +2139,10 @@ export class TemplateManager {
 
 
 
-#### offHandleMemberPurchase
+## offHandleMemberPurchase
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offHandleMemberPurchase(callback?: HandleMemberPurchaseEvent): void
 
@@ -1990,6 +2154,7 @@ offHandleMemberPurchase(callback?: HandleMemberPurchaseEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | HandleMemberPurchaseEvent | 否 | 处理购买会员的事件。不填该参数则注销该类型对应的所有回调。 |
@@ -1998,6 +2163,7 @@ offHandleMemberPurchase(callback?: HandleMemberPurchaseEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2025,7 +2191,10 @@ export class TemplateManager {
 
 
 
-#### onQueryMemberPurchase
+## onQueryMemberPurchase
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onQueryMemberPurchase(callback: QueryMemberPurchaseEvent): void
 
@@ -2037,6 +2206,7 @@ onQueryMemberPurchase(callback: QueryMemberPurchaseEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | QueryMemberPurchaseEvent | 是 | 回调函数，返回查询购买会员的事件。 |
@@ -2045,6 +2215,7 @@ onQueryMemberPurchase(callback: QueryMemberPurchaseEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2095,7 +2266,10 @@ export class TemplateManager {
 
 
 
-#### offQueryMemberPurchase
+## offQueryMemberPurchase
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offQueryMemberPurchase(callback?: QueryMemberPurchaseEvent): void
 
@@ -2107,6 +2281,7 @@ offQueryMemberPurchase(callback?: QueryMemberPurchaseEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | QueryMemberPurchaseEvent | 否 | 查询购买会员的事件。不填该参数则注销该类型对应的所有回调。 |
@@ -2115,6 +2290,7 @@ offQueryMemberPurchase(callback?: QueryMemberPurchaseEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2142,7 +2318,10 @@ export class TemplateManager {
 
 
 
-#### onQueryCustomContent
+## onQueryCustomContent
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onQueryCustomContent(callback: QueryCustomContentEvent): void
 
@@ -2154,6 +2333,7 @@ onQueryCustomContent(callback: QueryCustomContentEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | QueryCustomContentEvent | 是 | 回调函数，返回查询自定义内容的事件。 |
@@ -2162,6 +2342,7 @@ onQueryCustomContent(callback: QueryCustomContentEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2228,7 +2409,10 @@ export class TemplateManager {
 
 
 
-#### offQueryCustomContent
+## offQueryCustomContent
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offQueryCustomContent(callback?: QueryCustomContentEvent): void
 
@@ -2240,6 +2424,7 @@ offQueryCustomContent(callback?: QueryCustomContentEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | QueryCustomContentEvent | 否 | 查询自定义内容的事件。不填该参数则注销该类型对应的所有回调。 |
@@ -2248,6 +2433,7 @@ offQueryCustomContent(callback?: QueryCustomContentEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2275,7 +2461,10 @@ export class TemplateManager {
 
 
 
-#### onDownloadMediaEntity
+## onDownloadMediaEntity
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDownloadMediaEntity(callback: DownloadMediaEntityEvent): void
 
@@ -2287,6 +2476,7 @@ onDownloadMediaEntity(callback: DownloadMediaEntityEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | DownloadMediaEntityEvent | 是 | 回调函数，返回下载媒体实体的事件。 |
@@ -2295,6 +2485,7 @@ onDownloadMediaEntity(callback: DownloadMediaEntityEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2334,11 +2525,6 @@ export class TemplateManager {
   };
 
   /**
-   * 模拟设置改变。
-   *
-   * @returns Promise类型的设置条目。
-   */
-  /**
    * 模拟操作结果。
    *
    * @returns 操作结果。
@@ -2364,7 +2550,10 @@ export class TemplateManager {
 
 
 
-#### offDownloadMediaEntity
+## offDownloadMediaEntity
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offDownloadMediaEntity(callback?: DownloadMediaEntityEvent): void
 
@@ -2376,6 +2565,7 @@ offDownloadMediaEntity(callback?: DownloadMediaEntityEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | DownloadMediaEntityEvent | 否 | 下载媒体实体的事件。不填该参数则注销该类型对应的所有回调。 |
@@ -2384,6 +2574,7 @@ offDownloadMediaEntity(callback?: DownloadMediaEntityEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2411,7 +2602,10 @@ export class TemplateManager {
 
 
 
-#### onSettingsChange
+## onSettingsChange
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onSettingsChange(callback: SettingsChangeEvent): void
 
@@ -2423,6 +2617,7 @@ onSettingsChange(callback: SettingsChangeEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | SettingsChangeEvent | 是 | 回调函数，返回设置改变的事件。 |
@@ -2431,6 +2626,7 @@ onSettingsChange(callback: SettingsChangeEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2482,7 +2678,10 @@ export class TemplateManager {
 
 
 
-#### offSettingsChange
+## offSettingsChange
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offSettingsChange(callback?: SettingsChangeEvent): void
 
@@ -2494,6 +2693,7 @@ offSettingsChange(callback?: SettingsChangeEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | SettingsChangeEvent | 否 | 设置改变的事件。不填该参数则注销该类型对应的所有回调。 |
@@ -2502,6 +2702,7 @@ offSettingsChange(callback?: SettingsChangeEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2529,7 +2730,10 @@ export class TemplateManager {
 
 
 
-#### onProblemAndAdvice
+## onProblemAndAdvice
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onProblemAndAdvice(callback: ProblemAndAdviceEvent): void
 
@@ -2541,6 +2745,7 @@ onProblemAndAdvice(callback: ProblemAndAdviceEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | ProblemAndAdviceEvent | 是 | 回调函数，返回问题与建议的事件。 |
@@ -2549,6 +2754,7 @@ onProblemAndAdvice(callback: ProblemAndAdviceEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2594,7 +2800,10 @@ export class TemplateManager {
 
 
 
-#### offProblemAndAdvice
+## offProblemAndAdvice
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offProblemAndAdvice(callback?: ProblemAndAdviceEvent): void
 
@@ -2606,6 +2815,7 @@ offProblemAndAdvice(callback?: ProblemAndAdviceEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | ProblemAndAdviceEvent | 否 | 处理问题与建议的回调。不填该参数则注销该类型对应的所有回调。 |
@@ -2614,6 +2824,7 @@ offProblemAndAdvice(callback?: ProblemAndAdviceEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2641,7 +2852,10 @@ export class TemplateManager {
 
 
 
-#### onPlayForSearch
+## onPlayForSearch
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onPlayForSearch(callback: PlayForSearchEvent): void
 
@@ -2653,6 +2867,7 @@ onPlayForSearch(callback: PlayForSearchEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | PlayForSearchEvent | 是 | 回调函数，返回搜播的事件。 |
@@ -2661,6 +2876,7 @@ onPlayForSearch(callback: PlayForSearchEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2707,7 +2923,10 @@ export class TemplateManager {
 
 
 
-#### offPlayForSearch
+## offPlayForSearch
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offPlayForSearch(callback?: PlayForSearchEvent): void
 
@@ -2719,6 +2938,7 @@ offPlayForSearch(callback?: PlayForSearchEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | PlayForSearchEvent | 否 | 搜播的事件。不填该参数则注销该类型对应的所有回调。 |
@@ -2727,6 +2947,7 @@ offPlayForSearch(callback?: PlayForSearchEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2754,7 +2975,10 @@ export class TemplateManager {
 
 
 
-#### onExecuteAction
+## onExecuteAction
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onExecuteAction(callback: ExecuteActionEvent): void
 
@@ -2766,6 +2990,7 @@ onExecuteAction(callback: ExecuteActionEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | ExecuteActionEvent | 是 | 回调函数，返回执行操作的事件。 |
@@ -2774,6 +2999,7 @@ onExecuteAction(callback: ExecuteActionEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2807,7 +3033,10 @@ export class TemplateManager {
 
 
 
-#### offExecuteAction
+## offExecuteAction
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offExecuteAction(callback?: ExecuteActionEvent): void
 
@@ -2819,6 +3048,7 @@ offExecuteAction(callback?: ExecuteActionEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | ExecuteActionEvent | 否 | 执行操作的事件。不填该参数则注销该类型对应的所有回调。 |
@@ -2827,6 +3057,7 @@ offExecuteAction(callback?: ExecuteActionEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2854,7 +3085,10 @@ export class TemplateManager {
 
 
 
-#### onPlayMediaEntity
+## onPlayMediaEntity
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onPlayMediaEntity(callback: PlayMediaEntityEvent): void
 
@@ -2866,6 +3100,7 @@ onPlayMediaEntity(callback: PlayMediaEntityEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | PlayMediaEntityEvent | 是 | 回调函数，返回播放媒体实体的事件。 |
@@ -2874,6 +3109,7 @@ onPlayMediaEntity(callback: PlayMediaEntityEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2905,7 +3141,10 @@ export class TemplateManager {
 
 
 
-#### offPlayMediaEntity
+## offPlayMediaEntity
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offPlayMediaEntity(callback?: PlayMediaEntityEvent): void
 
@@ -2917,6 +3156,7 @@ offPlayMediaEntity(callback?: PlayMediaEntityEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | PlayMediaEntityEvent | 否 | 播放媒体实体的事件。不填该参数则注销该类型对应的所有回调。 |
@@ -2925,6 +3165,7 @@ offPlayMediaEntity(callback?: PlayMediaEntityEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2952,7 +3193,10 @@ export class TemplateManager {
 
 
 
-#### onFavoriteMediaEntity
+## onFavoriteMediaEntity
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onFavoriteMediaEntity(callback: FavoriteMediaEntityEvent): void
 
@@ -2964,6 +3208,7 @@ onFavoriteMediaEntity(callback: FavoriteMediaEntityEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | FavoriteMediaEntityEvent | 是 | 回调函数，返回收藏媒体实体的事件。 |
@@ -2972,6 +3217,7 @@ onFavoriteMediaEntity(callback: FavoriteMediaEntityEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3018,7 +3264,10 @@ export class TemplateManager {
 
 
 
-#### offFavoriteMediaEntity
+## offFavoriteMediaEntity
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offFavoriteMediaEntity(callback?: FavoriteMediaEntityEvent): void
 
@@ -3030,6 +3279,7 @@ offFavoriteMediaEntity(callback?: FavoriteMediaEntityEvent): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | FavoriteMediaEntityEvent | 否 | 收藏媒体实体的事件。不填该参数则注销该类型对应的所有回调。 |
@@ -3038,6 +3288,7 @@ offFavoriteMediaEntity(callback?: FavoriteMediaEntityEvent): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3065,7 +3316,10 @@ export class TemplateManager {
 
 
 
-#### setUserInfo
+## setUserInfo
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setUserInfo(userInfo: UserInfo): Promise&lt;void&gt;
 
@@ -3077,12 +3331,14 @@ setUserInfo(userInfo: UserInfo): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | userInfo | UserInfo | 是 | 用户信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3092,6 +3348,7 @@ setUserInfo(userInfo: UserInfo): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3138,7 +3395,10 @@ export class TemplateManager {
 
 
 
-#### setDialogCommand
+## setDialogCommand
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setDialogCommand(type: DialogControlType, dialogInfo: DialogInfo): Promise&lt;void&gt;
 
@@ -3150,6 +3410,7 @@ setDialogCommand(type: DialogControlType, dialogInfo: DialogInfo): Promise&lt;vo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | DialogControlType | 是 | 对话框控制类型。 |
@@ -3157,6 +3418,7 @@ setDialogCommand(type: DialogControlType, dialogInfo: DialogInfo): Promise&lt;vo
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3166,6 +3428,7 @@ setDialogCommand(type: DialogControlType, dialogInfo: DialogInfo): Promise&lt;vo
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3208,7 +3471,10 @@ export class TemplateManager {
 
 
 
-#### setCurrentSingle
+## setCurrentSingle
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCurrentSingle(single: Single): Promise&lt;void&gt;
 
@@ -3220,12 +3486,14 @@ setCurrentSingle(single: Single): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | single | Single | 是 | 当前单曲。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3235,6 +3503,7 @@ setCurrentSingle(single: Single): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3249,67 +3518,70 @@ setCurrentSingle(single: Single): Promise&lt;void&gt;
 import { avMusicTemplate } from '@kit.AVSessionKit';
 
 export class TemplateManager {
-    private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-    public async setCurrentSingle() {
-        let single: avMusicTemplate.Single = await this.createCurrentSingle()
-        this.template?.setCurrentSingle(single);
-    };
+  public async setCurrentSingle() {
+    let single: avMusicTemplate.Single = await this.createCurrentSingle()
+    this.template?.setCurrentSingle(single);
+  };
 
-    /**
-     * 模拟获取当前单曲。
-     *
-     * @returns 当前单曲。
-     */
-    private async createCurrentSingle(): Promise<avMusicTemplate.Single> {
-        let playInfo: avMusicTemplate.PlayInfo = {
-            playCounts: '100w',
-            isSupportNext: true,
-            isSupportPrev: false,
-            isSupportQuickForward: true,
-            isSupportQuickBackward: true,
-            quickForwardStep: 10,
-            quickBackwardStep: 10,
-            isSupportSkipHead: false,
-            isSupportSkipTail: true,
-            isSupportPlayMode: true,
-            isSupportPlayRate: true,
-            supportedPlayRate: ['1', '2', '3'],
-            currentPlayRate: 'string;',
-            isSupportSoundQuality: false,
-            isSupportSoundEffect: true,
-            totalDuration: 60,
-            currentPlayDuration: 10,
-            isSupportProgress: false,
-        }
-        let favoriteData: avMusicTemplate.FavoriteData = {
-            isSupportFav: true,
-            isFavorite: false,
-            favCounts: '1000+'
-        }
-        let single: avMusicTemplate.Single = {
-            mediaId: 'mediaId',
-            mediaType: avMusicTemplate.EntityType.SINGLE,
-            parentId: 'parentId',
-            parentMediaType: avMusicTemplate.EntityType.SINGLE,
-            title: '歌曲标题',
-            desc: '歌曲描述',
-            imageUrl: '',
-            playState: 0,
-            isVip: false,
-            singer: '',
-            tags: [],
-            playInfo: playInfo,
-            favSubscribeData: favoriteData
-        }
-        return single;
-    };
+  /**
+   * 模拟获取当前单曲。
+   *
+   * @returns 当前单曲。
+   */
+  private async createCurrentSingle(): Promise<avMusicTemplate.Single> {
+    let playInfo: avMusicTemplate.PlayInfo = {
+      playCounts: '100w',
+      isSupportNext: true,
+      isSupportPrev: false,
+      isSupportQuickForward: true,
+      isSupportQuickBackward: true,
+      quickForwardStep: 10,
+      quickBackwardStep: 10,
+      isSupportSkipHead: false,
+      isSupportSkipTail: true,
+      isSupportPlayMode: true,
+      isSupportPlayRate: true,
+      supportedPlayRate: ['1', '2', '3'],
+      currentPlayRate: '1',
+      isSupportSoundQuality: false,
+      isSupportSoundEffect: true,
+      totalDuration: 60,
+      currentPlayDuration: 10,
+      isSupportProgress: false,
+    }
+    let favoriteData: avMusicTemplate.FavoriteData = {
+      isSupportFav: true,
+      isFavorite: false,
+      favCounts: '1000+'
+    }
+    let single: avMusicTemplate.Single = {
+      mediaId: 'mediaId',
+      mediaType: avMusicTemplate.EntityType.SINGLE,
+      parentId: 'parentId',
+      parentMediaType: avMusicTemplate.EntityType.SINGLE,
+      title: '歌曲标题',
+      desc: '歌曲描述',
+      imageUrl: '',
+      playState: avMusicTemplate.PlaybackState.PLAYBACK_STATE_PREPARE,
+      isVip: false,
+      singer: '',
+      tags: [],
+      playInfo: playInfo,
+      favSubscribeData: favoriteData
+    }
+    return single;
+  };
 }
 ```
 
 
 
-#### setMediaEntities
+## setMediaEntities
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMediaEntities(entities: MediaEntity[]): Promise&lt;void&gt;
 
@@ -3321,12 +3593,14 @@ setMediaEntities(entities: MediaEntity[]): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | entities | MediaEntity[] | 是 | 媒体实体的数组。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3336,6 +3610,7 @@ setMediaEntities(entities: MediaEntity[]): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3350,29 +3625,32 @@ setMediaEntities(entities: MediaEntity[]): Promise&lt;void&gt;
 import { avMusicTemplate } from '@kit.AVSessionKit';
 
 export class TemplateManager {
-    private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-    /**
-     * 媒体播放后信息后，如：歌单的播放状态。
-     */
-    public setMediaEntities() {
-        let mediaEntities: avMusicTemplate.MediaEntity[] = [{
-            mediaId: 'mediaId',
-            mediaType: avMusicTemplate.EntityType.SINGLE,
-            parentId: 'parentId',
-            parentMediaType: avMusicTemplate.EntityType.SINGLE,
-            title: 'title',
-            imageUrl: 'imageUrl',
-            playState: avMusicTemplate.PlaybackState.PLAYBACK_STATE_PREPARE
-        }];
-        this.template?.setMediaEntities(mediaEntities);
-    };
+  /**
+   * 向音频模板控制方同步媒体资源变更信息，如歌单播放状态。
+   */
+  public setMediaEntities() {
+    let mediaEntities: avMusicTemplate.MediaEntity[] = [{
+      mediaId: 'mediaId',
+      mediaType: avMusicTemplate.EntityType.SINGLE,
+      parentId: 'parentId',
+      parentMediaType: avMusicTemplate.EntityType.SINGLE,
+      title: 'title',
+      imageUrl: 'imageUrl',
+      playState: avMusicTemplate.PlaybackState.PLAYBACK_STATE_PREPARE
+    }];
+    this.template?.setMediaEntities(mediaEntities);
+  };
 }
 ```
 
 
 
-#### setTabContent
+## setTabContent
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setTabContent(tabId: string, tabContent: MediaTabContent): Promise&lt;void&gt;
 
@@ -3384,6 +3662,7 @@ setTabContent(tabId: string, tabContent: MediaTabContent): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | tabId | string | 是 | 标签的ID。 |
@@ -3391,6 +3670,7 @@ setTabContent(tabId: string, tabContent: MediaTabContent): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3400,6 +3680,7 @@ setTabContent(tabId: string, tabContent: MediaTabContent): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3414,44 +3695,48 @@ setTabContent(tabId: string, tabContent: MediaTabContent): Promise&lt;void&gt;
 import { avMusicTemplate } from '@kit.AVSessionKit';
 
 export class TemplateManager {
-    private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
-    /**
-     * 某个tab页签下的内容发生变化后通知界面刷新。
-     */
-    public setTabContent() {
-        let mediaEntity: avMusicTemplate.MediaEntity[] = [{
-            mediaId: 'mediaId',
-            mediaType: avMusicTemplate.EntityType.SINGLE,
-            parentId: 'parentId',
-            parentMediaType: avMusicTemplate.EntityType.SINGLE,
-            title: 'title',
-            imageUrl: 'imageUrl',
-            playState: avMusicTemplate.PlaybackState.PLAYBACK_STATE_PREPARE
-        }]
-        let compilation: avMusicTemplate.Compilation[] = [{
-            errorCode: 0,
-            errorMsg: 'success',
-            id: 'id',
-            title: 'title',
-            hasMoreData: true,
-            totalSize: 2,
-            memberMediaType: avMusicTemplate.EntityType.SINGLE,
-            topElements: mediaEntity
-        }]
-        let mediaTabContent: avMusicTemplate.MediaTabContent = {
-            errorCode: 0,
-            errorMsg: 'success',
-            tabId: 'tabId',
-            compilations: compilation
-        }
-        this.template?.setTabContent('tabId', mediaTabContent);
-    };
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+
+  /**
+   * 向音频模板控制方同步标签页内容信息，用于标签页内容变化后刷新界面。
+   */
+  public setTabContent() {
+    let mediaEntity: avMusicTemplate.MediaEntity[] = [{
+      mediaId: 'mediaId',
+      mediaType: avMusicTemplate.EntityType.SINGLE,
+      parentId: 'parentId',
+      parentMediaType: avMusicTemplate.EntityType.SINGLE,
+      title: 'title',
+      imageUrl: 'imageUrl',
+      playState: avMusicTemplate.PlaybackState.PLAYBACK_STATE_PREPARE
+    }]
+    let compilation: avMusicTemplate.Compilation[] = [{
+      errorCode: 0,
+      errorMsg: 'success',
+      id: 'id',
+      title: 'title',
+      hasMoreData: true,
+      totalSize: 2,
+      memberMediaType: avMusicTemplate.EntityType.SINGLE,
+      topElements: mediaEntity
+    }]
+    let mediaTabContent: avMusicTemplate.MediaTabContent = {
+      errorCode: 0,
+      errorMsg: 'success',
+      tabId: 'tabId',
+      compilations: compilation
+    }
+    this.template?.setTabContent('tabId', mediaTabContent);
+  };
 }
 ```
 
 
 
-#### setPlaylist
+## setPlaylist
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setPlaylist(playlist: PageMediaEntity): Promise&lt;void&gt;
 
@@ -3463,12 +3748,14 @@ setPlaylist(playlist: PageMediaEntity): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | playlist | PageMediaEntity | 是 | 分页媒体实体。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3478,6 +3765,7 @@ setPlaylist(playlist: PageMediaEntity): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3492,39 +3780,42 @@ setPlaylist(playlist: PageMediaEntity): Promise&lt;void&gt;
 import { avMusicTemplate } from '@kit.AVSessionKit';
 
 export class TemplateManager {
-    private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-    /**
-     * 播放列表发送变化后通知界面刷新。
-     */
-    public setPlaylist() {
-        let mediaEntity: avMusicTemplate.MediaEntity = {
-            mediaId: 'mediaId',
-            mediaType: avMusicTemplate.EntityType.SINGLE,
-            parentId: 'parentId',
-            parentMediaType: avMusicTemplate.EntityType.SINGLE,
-            title: 'title',
-            imageUrl: 'imageUrl',
-            playState: avMusicTemplate.PlaybackState.PLAYBACK_STATE_PREPARE
-        }
-        let pageMediaEntity: avMusicTemplate.PageMediaEntity = {
-            errorCode: 0,
-            errorMsg: 'success',
-            pageIndex: 0,
-            pageSize: 1,
-            hasMoreData: true,
-            totalSize: 2,
-            memberMediaType: avMusicTemplate.EntityType.SINGLE,
-            elements: [mediaEntity]
-        }
-        this.template?.setPlaylist(pageMediaEntity);
-    };
+  /**
+   * 向音频模板控制方同步播放列表，用于播放列表变化后刷新界面。
+   */
+  public setPlaylist() {
+    let mediaEntity: avMusicTemplate.MediaEntity = {
+      mediaId: 'mediaId',
+      mediaType: avMusicTemplate.EntityType.SINGLE,
+      parentId: 'parentId',
+      parentMediaType: avMusicTemplate.EntityType.SINGLE,
+      title: 'title',
+      imageUrl: 'imageUrl',
+      playState: avMusicTemplate.PlaybackState.PLAYBACK_STATE_PREPARE
+    }
+    let pageMediaEntity: avMusicTemplate.PageMediaEntity = {
+      errorCode: 0,
+      errorMsg: 'success',
+      pageIndex: 0,
+      pageSize: 1,
+      hasMoreData: true,
+      totalSize: 2,
+      memberMediaType: avMusicTemplate.EntityType.SINGLE,
+      elements: [mediaEntity]
+    }
+    this.template?.setPlaylist(pageMediaEntity);
+  };
 }
 ```
 
 
 
-#### setDownloadMediaEntityStatus
+## setDownloadMediaEntityStatus
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setDownloadMediaEntityStatus(single: MediaEntity): Promise&lt;void&gt;
 
@@ -3536,12 +3827,14 @@ setDownloadMediaEntityStatus(single: MediaEntity): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | single | MediaEntity | 是 | 单曲。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3551,6 +3844,7 @@ setDownloadMediaEntityStatus(single: MediaEntity): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3568,7 +3862,7 @@ export class TemplateManager {
   private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
   /**
-   * 下载状态，进度刷新。
+   * 向音频模板控制方同步单曲下载状态信息，用于刷新下载进度。
    */
   public setDownloadMediaEntityStatus(mediaEntity: avMusicTemplate.MediaEntity) {
     this.template?.setDownloadMediaEntityStatus(mediaEntity);
@@ -3588,7 +3882,10 @@ export class TemplateManager {
 
 
 
-#### setCustomElements
+## setCustomElements
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCustomElements(actionType: ActionType, customType: CustomType, customElement: CustomElement): Promise&lt;void&gt;
 
@@ -3600,6 +3897,7 @@ setCustomElements(actionType: ActionType, customType: CustomType, customElement:
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | actionType | ActionType | 是 | 操作类型。 |
@@ -3609,6 +3907,7 @@ setCustomElements(actionType: ActionType, customType: CustomType, customElement:
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -3617,6 +3916,7 @@ setCustomElements(actionType: ActionType, customType: CustomType, customElement:
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3631,44 +3931,47 @@ setCustomElements(actionType: ActionType, customType: CustomType, customElement:
 import { avMusicTemplate } from '@kit.AVSessionKit';
 
 export class TemplateManager {
-    private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-    /**
-     * 自定义数据发生变化后通知。
-     */
-    public setCustomElements() {
-        let mediaEntity: avMusicTemplate.MediaEntity = {
-            mediaId: 'mediaId',
-            mediaType: avMusicTemplate.EntityType.SINGLE,
-            parentId: 'parentId',
-            parentMediaType: avMusicTemplate.EntityType.SINGLE,
-            title: 'title',
-            imageUrl: 'imageUrl',
-            playState: avMusicTemplate.PlaybackState.PLAYBACK_STATE_PREPARE
-        }
-        let compilation: avMusicTemplate.Compilation = {
-            errorCode: 0,
-            errorMsg: 'success',
-            id: 'id',
-            title: 'title',
-            hasMoreData: true,
-            totalSize: 2,
-            memberMediaType: avMusicTemplate.EntityType.SINGLE,
-            topElements: [mediaEntity]
-        }
-        let customElement: avMusicTemplate.CustomElement = {
-            errorCode: 0,
-            errorMsg: 'success',
-            customCompilations: [compilation]
-        }
-        this.template?.setCustomElements('add', 'COMPILATION', customElement);
-    };
+  /**
+   * 向音频模板控制方同步自定义元素变更信息。
+   */
+  public setCustomElements() {
+    let mediaEntity: avMusicTemplate.MediaEntity = {
+      mediaId: 'mediaId',
+      mediaType: avMusicTemplate.EntityType.SINGLE,
+      parentId: 'parentId',
+      parentMediaType: avMusicTemplate.EntityType.SINGLE,
+      title: 'title',
+      imageUrl: 'imageUrl',
+      playState: avMusicTemplate.PlaybackState.PLAYBACK_STATE_PREPARE
+    }
+    let compilation: avMusicTemplate.Compilation = {
+      errorCode: 0,
+      errorMsg: 'success',
+      id: 'id',
+      title: 'title',
+      hasMoreData: true,
+      totalSize: 2,
+      memberMediaType: avMusicTemplate.EntityType.SINGLE,
+      topElements: [mediaEntity]
+    }
+    let customElement: avMusicTemplate.CustomElement = {
+      errorCode: 0,
+      errorMsg: 'success',
+      customCompilations: [compilation]
+    }
+    this.template?.setCustomElements('add', 'COMPILATION', customElement);
+  };
 }
 ```
 
 
 
-#### setSettings
+## setSettings
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setSettings(settingItems: SettingItem[]): Promise&lt;void&gt;
 
@@ -3680,12 +3983,14 @@ setSettings(settingItems: SettingItem[]): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | settingItems | SettingItem[] | 是 | 设置项数组。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3695,6 +4000,7 @@ setSettings(settingItems: SettingItem[]): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3709,28 +4015,31 @@ setSettings(settingItems: SettingItem[]): Promise&lt;void&gt;
 import { avMusicTemplate } from '@kit.AVSessionKit';
 
 export class TemplateManager {
-    private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-    /**
-     * 设置项变化后通知。
-     */
-    public setSettings() {
-        let settingItems: avMusicTemplate.SettingItem[] = [{
-            id: 'id',
-            title: 'title',
-            desc: 'desc',
-            mediaId: 'mediaId',
-            settingType: avMusicTemplate.SettingType.SWITCH,
-            settingValue: false
-        }];
-        this.template?.setSettings(settingItems);
-    };
+  /**
+   * 向音频模板控制方同步设置信息。
+   */
+  public setSettings() {
+    let settingItems: avMusicTemplate.SettingItem[] = [{
+      id: 'id',
+      title: 'title',
+      desc: 'desc',
+      mediaId: 'mediaId',
+      settingType: avMusicTemplate.SettingType.SWITCH,
+      settingValue: false
+    }];
+    this.template?.setSettings(settingItems);
+  };
 }
 ```
 
 
 
-#### reportExecuteAction
+## reportExecuteAction
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reportExecuteAction(actionType: string, params: string): Promise&lt;void&gt;
 
@@ -3742,6 +4051,7 @@ reportExecuteAction(actionType: string, params: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | actionType | string | 是 | 行为类型。 |
@@ -3749,6 +4059,7 @@ reportExecuteAction(actionType: string, params: string): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3758,6 +4069,7 @@ reportExecuteAction(actionType: string, params: string): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3772,22 +4084,25 @@ reportExecuteAction(actionType: string, params: string): Promise&lt;void&gt;
 import { avMusicTemplate } from '@kit.AVSessionKit';
 
 export class TemplateManager {
-    private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-    /**
-     * 模拟向媒体中心同步执行操作信息。
-     */
-    public reportExecuteAction() {
-        let actionType: string = 'actionType';
-        let params: string = 'params';
-        this.template?.reportExecuteAction(actionType, params);
-    };
+  /**
+   * 向音频模板控制方同步执行操作信息。
+   */
+  public reportExecuteAction() {
+    let actionType: string = 'actionType';
+    let params: string = 'params';
+    this.template?.reportExecuteAction(actionType, params);
+  };
 }
 ```
 
 
 
-#### setExtensionAbility
+## setExtensionAbility
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setExtensionAbility(want: WantAgent): Promise&lt;void&gt;
 
@@ -3799,12 +4114,14 @@ setExtensionAbility(want: WantAgent): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | WantAgent | 是 | 能力信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3814,6 +4131,7 @@ setExtensionAbility(want: WantAgent): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[音频模板错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-avmusictemplate)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3827,39 +4145,41 @@ setExtensionAbility(want: WantAgent): Promise&lt;void&gt;
 ```text
 import { avMusicTemplate } from '@kit.AVSessionKit';
 import { wantAgent } from '@kit.AbilityKit';
-import { BusinessError } from '@kit.BasicServicesKit';
 
 export class TemplateManager {
-    private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
 
-    /**
-     * 媒体应用需要拉起应用的自定义界面时调用。
-     */
-    public setExtensionAbility() {
-        let wantAgentInfo: wantAgent.WantAgentInfo = {
-            wants: [
-                {
-                    bundleName: "com.example.templateprovider",
-                    abilityName: 'EntryAbility',
-                    type: 'action',
-                    parameters: {
-                        'ability.want.params.uiExtensionType': 'action'
-                    }
-                }
-            ],
-            actionType: wantAgent.OperationType.START_ABILITIES,
-            requestCode: 0
+  /**
+   * 媒体应用需要拉起应用的自定义界面时调用。
+   */
+  public setExtensionAbility() {
+    let wantAgentInfo: wantAgent.WantAgentInfo = {
+      wants: [
+        {
+          bundleName: "com.example.templateprovider",
+          abilityName: 'EntryAbility',
+          type: 'action',
+          parameters: {
+            'ability.want.params.uiExtensionType': 'action'
+          }
         }
-        wantAgent.getWantAgent(wantAgentInfo).then((agent) => {
-            this.template?.setExtensionAbility(agent);
-        })
-    };
+      ],
+      actionType: wantAgent.OperationType.START_ABILITIES,
+      requestCode: 0
+    }
+    wantAgent.getWantAgent(wantAgentInfo).then((agent) => {
+      this.template?.setExtensionAbility(agent);
+    })
+  };
 }
 ```
 
 
 
-#### destroy
+## destroy
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 destroy(): Promise&lt;void&gt;
 
@@ -3871,6 +4191,7 @@ destroy(): Promise&lt;void&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -3879,6 +4200,7 @@ destroy(): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

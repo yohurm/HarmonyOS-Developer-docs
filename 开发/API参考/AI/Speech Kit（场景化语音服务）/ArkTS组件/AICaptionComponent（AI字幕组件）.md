@@ -1,6 +1,6 @@
 # AICaptionComponent（AI字幕组件）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/speech-aicaptioncomponent
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -10,7 +10,8 @@ AI字幕控件使用AI能力将语音实时转化成文本并翻译，提供原�
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -22,7 +23,8 @@ import {
  
   
 
-#### AICaptionComponent
+## AICaptionComponent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -38,6 +40,7 @@ AI字幕组件，可以作为动态组件加载。
  
 **参数：**
   
+
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | isShown | boolean | 是 | @Link | 字幕显示状态。 true：显示，从5.1.0(18)开始支持自动识别应用音频生成字幕。 false：隐藏。 |
@@ -47,7 +50,8 @@ AI字幕组件，可以作为动态组件加载。
  
   
 
-#### build
+### build
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -101,12 +105,13 @@ struct Index {
 组件如下图：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/R0XnLcTOSamEnZR4z2Sx_g/zh-cn_image_0000002686089265.png?HW-CC-KV=V1&HW-CC-Date=20260730T071747Z&HW-CC-Expire=86400&HW-CC-Sign=BC7D342BC9770F11318A872CD22AB12279CD95D0737DD4B20B9D5CFDD86F2F37)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/hWTtYcLvQcCNw0_FWr9Y7w/zh-cn_image_0000002717613982.png?HW-CC-KV=V1&HW-CC-Date=20260911T073056Z&HW-CC-Expire=86400&HW-CC-Sign=0ABFD119DCD1B36684E9EFFD02634CC423DDD899F3AC14EA45CA7011448215AE)
 
  
   
 
-#### AICaptionController
+## AICaptionController
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -157,7 +162,8 @@ struct Index {
  
   
 
-#### isCapabilitySupported
+### isCapabilitySupported
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -173,6 +179,7 @@ isCapabilitySupported(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 是否支持AI字幕功能特性。true：支持AI字幕功能。false：不支持AI字幕功能。 |
@@ -224,7 +231,8 @@ struct Index {
  
   
 
-#### getAudioInfo
+### getAudioInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -240,6 +248,7 @@ getAudioInfo(): AudioInfo
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | AudioInfo | 获取当前版本字幕支持的音频信息。 |
@@ -260,7 +269,8 @@ try {
  
   
 
-#### writeAudio
+### writeAudio
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -276,6 +286,7 @@ writeAudio(audioData: AudioData): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | audioData | AudioData | 是 | 音频数据。 |
@@ -285,6 +296,7 @@ writeAudio(audioData: AudioData): void
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
@@ -310,7 +322,8 @@ try {
  
   
 
-#### AudioInfo
+## AudioInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -322,6 +335,7 @@ try {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | audioType | string | 否 | 否 | 音频类型。 当前仅支持 "pcm"编码。 |
@@ -332,7 +346,8 @@ try {
  
   
 
-#### AudioData
+## AudioData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -344,6 +359,7 @@ try {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | data | Uint8Array | 否 | 否 | 音频数据。 当前仅支持音频数据长度为640字节或1280字节。 建议每次发送音频调用间隔为20ms（传输音频长度为640字节）或40ms（传输音频长度为1280字节）。 |
@@ -351,7 +367,8 @@ try {
  
   
 
-#### AICaptionOptions
+## AICaptionOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -363,6 +380,7 @@ try {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | initialOpacity | number | 否 | 是 | 字幕精简态下面板背景的不透明度。 - Phone和tablet的取值范围：[0，1]，1表示不透明，0表示完全透明，达到隐藏组件效果，但是在布局中占位，默认值：0。 - 2in1有全透明：0 、半透明：0.5 、不透明：1三个选项，默认值：全透明：0。 |
@@ -378,6 +396,7 @@ try {
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-speech)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1012900010 | AI caption service is busy. |
@@ -387,7 +406,8 @@ try {
  
   
 
-#### AICaptionFontSize
+## AICaptionFontSize
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -399,6 +419,7 @@ AI字幕字体大小的枚举类。
  
 **起始版本：** 6.1.1(24)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SMALL | 1 | 表示字体大小为小号。 |

@@ -1,9 +1,9 @@
 # Class (JsMessageExt)
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-jsmessageext
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 JsMessageExt是ArkWeb框架中用于封装[runJavaScriptExt](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller#runjavascriptext10)接口执行JavaScript脚本后返回结果的数据类。与常规的runJavaScript接口不同，runJavaScriptExt支持更丰富的返回值类型，JsMessageExt则为这些多样化的返回结果提供了类型安全的访问方式。开发者通过JsMessageExt的getType方法先获取数据类型，再调用对应的get方法获取具体值。
  
@@ -14,9 +14,10 @@ JsMessageExt支持多种JavaScript返回值类型的解析：字符串（getStri
 
   
 
-#### getType10+
+## getType10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getType(): JsMessageType
  
@@ -26,6 +27,7 @@ getType(): JsMessageType
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | JsMessageType | runJavaScriptExt接口脚本执行后返回的结果的类型。 |
@@ -33,9 +35,10 @@ getType(): JsMessageType
  
   
 
-#### getString10+
+## getString10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getString(): string
  
@@ -45,15 +48,17 @@ getString(): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| string | 返回字符串类型的数据。 |
+| string | 返回runJavaScriptExt接口脚本执行后得到的字符串类型的数据。 |
  
  
 **错误码：**
  
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 17100014 | The type and value of the message do not match. |
@@ -61,9 +66,10 @@ getString(): string
  
   
 
-#### getNumber10+
+## getNumber10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getNumber(): number
  
@@ -73,15 +79,17 @@ getNumber(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| number | 返回数值类型的数据。 |
+| number | 返回runJavaScriptExt接口脚本执行后得到的数值类型的数据。 |
  
  
 **错误码：**
  
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 17100014 | The type and value of the message do not match. |
@@ -89,9 +97,10 @@ getNumber(): number
  
   
 
-#### getBoolean10+
+## getBoolean10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBoolean(): boolean
  
@@ -101,15 +110,17 @@ getBoolean(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 返回布尔类型的数据。 |
+| boolean | 返回runJavaScriptExt接口脚本执行后得到的布尔类型的数据。 |
  
  
 **错误码：**
  
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 17100014 | The type and value of the message do not match. |
@@ -117,9 +128,10 @@ getBoolean(): boolean
  
   
 
-#### getArrayBuffer10+
+## getArrayBuffer10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getArrayBuffer(): ArrayBuffer
  
@@ -129,15 +141,17 @@ getArrayBuffer(): ArrayBuffer
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| ArrayBuffer | 返回原始二进制数据。 |
+| ArrayBuffer | 返回runJavaScriptExt接口脚本执行后得到的原始二进制数据。 |
  
  
 **错误码：**
  
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 17100014 | The type and value of the message do not match. |
@@ -145,9 +159,10 @@ getArrayBuffer(): ArrayBuffer
  
   
 
-#### getArray10+
+## getArray10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getArray(): Array<string | number | boolean>
  
@@ -157,15 +172,17 @@ getArray(): Array<string | number | boolean>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| Array<string \| number \| boolean> | 返回数组类型的数据。 |
+| Array<string \| number \| boolean> | 返回runJavaScriptExt接口脚本执行后得到的数组类型的数据。 |
  
  
 **错误码：**
  
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 17100014 | The type and value of the message do not match. |
@@ -173,18 +190,20 @@ getArray(): Array<string | number | boolean>
  
   
 
-#### getErrorDescription22+
+## getErrorDescription22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getErrorDescription(): string | null
  
-获取JS执行的异常信息。完整示例代码参考[runJavaScriptExt](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller#runjavascriptext10)。
+获取JavaScript执行的异常信息。完整示例代码参考[runJavaScriptExt](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller#runjavascriptext10)。
  
 **系统能力：** SystemCapability.Web.Webview.Core
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| string \| null | 若JavaScript脚本执行过程中发生异常，或返回值为object类型，系统会将其格式化为"Not support type: <{exception\|object}>"字符串返回，该字符串长度不超过2048个字符，超长部分将被截断；若object对象中包含callback类型的成员，则序列化时将自动忽略该成员；其余情况，接口均返回null。 |
+| string \| null | 若JavaScript脚本执行过程中发生异常，或返回值为object类型，系统会将异常信息或object对象格式化为"Not support type: <{exception \| object}>"字符串返回，该字符串长度不超过2048个字符，超长部分将被截断；若object对象中包含callback类型的成员，则序列化时将自动忽略该成员；其余情况，接口均返回null。 |

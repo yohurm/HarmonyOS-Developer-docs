@@ -129,9 +129,9 @@ struct SelectedPatternLock {
       PatternLock()
         .circleRadius(6)
         .pathStrokeWidth(12)
-        // 圆点在激活状态的填充颜色
+      <em>  // 圆点在激活状态的填充颜色</em>
         .activeColor('rgba(0, 0, 0, 0.9)')
-        // 圆点在选中状态的填充颜色
+       <em> // 圆点在选中状态的填充颜色</em>
         .selectedColor('rgba(10, 89, 247, 1)')
         .pathColor('rgba(0, 0, 0, 0.2)')
         .alignRules({

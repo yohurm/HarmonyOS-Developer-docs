@@ -1,20 +1,83 @@
 [
   {
-    "slug": "audio-playback-no-sound-troubleshooting",
-    "name": "播放无声定位指导",
     "file": "Audio Kit（音频服务）/Audio Kit常见问题/播放无声定位指导/播放无声定位指导.md",
+    "name": "播放无声定位指导",
+    "slug": "audio-playback-no-sound-troubleshooting",
     "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-playback-no-sound-troubleshooting"
   },
   {
-    "slug": "audio-playback-performance-troubleshooting",
-    "name": "播放卡顿、杂音定位指导",
     "file": "Audio Kit（音频服务）/Audio Kit常见问题/播放卡顿、杂音定位指导/播放卡顿、杂音定位指导.md",
+    "name": "播放卡顿、杂音定位指导",
+    "slug": "audio-playback-performance-troubleshooting",
     "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-playback-performance-troubleshooting"
   },
   {
-    "slug": "using-avsession-controller",
-    "name": "媒体会话控制方",
     "file": "AVSession Kit（音视频播控服务）/本地媒体会话/媒体会话控制方/媒体会话控制方.md",
+    "name": "媒体会话控制方",
+    "slug": "using-avsession-controller",
     "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-avsession-controller"
+  },
+  {
+    "file": "AVSession Kit（音视频播控服务）/使用AVCastPickerHelper接口常见问题.md",
+    "name": "使用AVCastPickerHelper接口常见问题",
+    "slug": "avsession-faq-avcastpickerhelper",
+    "title": "使用AVCastPickerHelper接口常见问题",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avsession-faq-avcastpickerhelper"
+  },
+  {
+    "file": "AVSession Kit（音视频播控服务）/使用AVCastPicker组件常见问题.md",
+    "name": "使用AVCastPicker组件常见问题",
+    "slug": "avsession-faq-avcastpicker",
+    "title": "使用AVCastPicker组件常见问题",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avsession-faq-avcastpicker"
+  },
+  {
+    "file": "Audio Kit（音频服务）/录制系统音频概述与接口选择.md",
+    "name": "录制系统音频概述与接口选择",
+    "slug": "audio-recording-system-audio-overview",
+    "title": "录制系统音频概述与接口选择",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-recording-system-audio-overview"
+  },
+  {
+    "file": "AVSession Kit（音视频播控服务）/分布式媒体会话常见问题.md",
+    "name": "分布式媒体会话常见问题",
+    "slug": "avsession-faq-distributed",
+    "title": "分布式媒体会话常见问题",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avsession-faq-distributed"
+  },
+  {
+    "file": "Audio Kit（音频服务）/音频效果(C-C++).md",
+    "name": "音频效果(C/C++)",
+    "slug": "audio-suite-effects",
+    "title": "音频效果(C/C++)",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-suite-effects"
+  },
+  {
+    "file": "AVSession Kit（音视频播控服务）/本地媒体会话常见问题.md",
+    "name": "本地媒体会话常见问题",
+    "slug": "avsession-faq-local",
+    "title": "本地媒体会话常见问题",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avsession-faq-local"
+  },
+  {
+    "file": "色彩空间配置异常问题.md",
+    "name": "色彩空间配置异常问题",
+    "slug": "camera-colorspace-faq",
+    "title": "色彩空间配置异常问题",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-colorspace-faq"
+  },
+  {
+    "file": "Camera Kit术语.md",
+    "name": "Camera Kit术语",
+    "slug": "camera-glossary",
+    "title": "Camera Kit术语",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-glossary"
+  },
+  {
+    "file": "Audio Kit（音频服务）/实现录制系统音频.md",
+    "name": "实现录制系统音频",
+    "slug": "implement-system-audio-recording",
+    "title": "实现录制系统音频",
+    "url": "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/implement-system-audio-recording"
   }
 ]

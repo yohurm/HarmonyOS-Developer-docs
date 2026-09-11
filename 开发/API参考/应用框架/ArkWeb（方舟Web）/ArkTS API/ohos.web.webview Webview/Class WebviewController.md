@@ -1,9 +1,9 @@
 # Class (WebviewController)
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 WebviewController是Web组件各种行为的核心控制器，提供网页加载与导航控制、JavaScript交互、生命周期、滚动控制、页面缩放与内容查找、消息端口通信、缓存与证书管理等广泛功能。一个WebviewController对象只能控制一个Web组件，且必须在Web组件和WebviewController绑定后，才能调用WebviewController上的方法（静态方法除外）。
 
@@ -12,9 +12,10 @@ WebviewController是Web组件各种行为的核心控制器，提供网页加载
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { webview } from '@kit.ArkWeb';
@@ -22,9 +23,10 @@ import { webview } from '@kit.ArkWeb';
 
 
 
-#### constructor11+
+## constructor11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(webTag?: string)
 
@@ -37,6 +39,7 @@ constructor(webTag?: string)
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -67,7 +70,7 @@ class WebObj {
 @Entry
 @Component
 struct WebComponent {
-  controller: webview.WebviewController = new webview.WebviewController()
+  controller: webview.WebviewController = new webview.WebviewController();
   @State webTestObj: WebObj = new WebObj();
 
   build() {
@@ -126,9 +129,10 @@ struct WebComponent {
 
 
 
-#### initializeWebEngine
+## initializeWebEngine
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static initializeWebEngine(): void
 
@@ -160,9 +164,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### setHttpDns10+
+## setHttpDns10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static setHttpDns(secureDnsMode:SecureDnsMode, secureDnsConfig:string): void
 
@@ -171,6 +176,7 @@ static setHttpDns(secureDnsMode:SecureDnsMode, secureDnsConfig:string): void
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -181,6 +187,7 @@ static setHttpDns(secureDnsMode:SecureDnsMode, secureDnsConfig:string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -212,9 +219,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### setWebDebuggingAccess
+## setWebDebuggingAccess
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static setWebDebuggingAccess(webDebuggingAccess: boolean): void
 
@@ -226,6 +234,7 @@ static setWebDebuggingAccess(webDebuggingAccess: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | webDebuggingAccess | boolean | 是 | 设置是否启用网页调试功能。 true表示启用网页调试功能。false表示不启用网页调试功能。 默认值：false。 |
@@ -234,6 +243,7 @@ static setWebDebuggingAccess(webDebuggingAccess: boolean): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -270,9 +280,10 @@ struct WebComponent {
 
 
 
-#### loadUrl
+## loadUrl
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 loadUrl(url: string | Resource, headers?: Array&lt;WebHeader&gt;): void
 
@@ -281,6 +292,7 @@ loadUrl(url: string | Resource, headers?: Array&lt;WebHeader&gt;): void
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -291,6 +303,7 @@ loadUrl(url: string | Resource, headers?: Array&lt;WebHeader&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -387,7 +400,7 @@ struct WebComponent {
 }
 ```
 
-2.resources协议。
+2.resource协议。
 
 使用 resource://rawfile/ 协议前缀可以避免常规 \$rawfile 方式在处理带有“#”路由链接时URL会被“#”截断的问题。当URL中包含“#”号时，“#”后面的内容会被视为锚点（fragment）。
 
@@ -465,9 +478,10 @@ struct WebComponent {
 
 
 
-#### loadData
+## loadData
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 loadData(data: string, mimeType: string, encoding: string, baseUrl?: string, historyUrl?: string): void
 
@@ -487,6 +501,7 @@ data数据必须使用base64编码或将内容中的任何#字符编码为%23。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | data | string | 是 | 按照"base64"或者"URL"编码后的一段字符串。 |
@@ -499,6 +514,7 @@ data数据必须使用base64编码或将内容中的任何#字符编码为%23。
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -675,9 +691,10 @@ struct WebComponent {
 
 
 
-#### accessForward
+## accessForward
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 accessForward(): boolean
 
@@ -689,6 +706,7 @@ accessForward(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 可以前进返回true，否则返回false。 |
@@ -697,6 +715,7 @@ accessForward(): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -734,9 +753,10 @@ struct WebComponent {
 
 
 
-#### forward
+## forward
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 forward(): void
 
@@ -747,6 +767,7 @@ forward(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -783,9 +804,10 @@ struct WebComponent {
 
 
 
-#### accessBackward
+## accessBackward
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 accessBackward(): boolean
 
@@ -801,6 +823,7 @@ accessBackward(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 当前页面可以后退返回true,否则返回false。 |
@@ -809,6 +832,7 @@ accessBackward(): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -846,9 +870,10 @@ struct WebComponent {
 
 
 
-#### backward
+## backward
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 backward(): void
 
@@ -859,6 +884,7 @@ backward(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -895,9 +921,10 @@ struct WebComponent {
 
 
 
-#### onActive
+## onActive
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onActive(): void
 
@@ -912,6 +939,7 @@ onActive(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -948,9 +976,10 @@ struct WebComponent {
 
 
 
-#### onInactive
+## onInactive
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onInactive(): void
 
@@ -963,6 +992,7 @@ onInactive(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -999,9 +1029,10 @@ struct WebComponent {
 
 
 
-#### refresh
+## refresh
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 refresh(): void
 
@@ -1012,6 +1043,7 @@ refresh(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1048,9 +1080,10 @@ struct WebComponent {
 
 
 
-#### refresh24+
+## refresh24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 refresh(ignoreCache: boolean): void
 
@@ -1060,6 +1093,7 @@ refresh(ignoreCache: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | ignoreCache | boolean | 是 | Web组件刷新网页，选择是否忽略缓存刷新。 true表示忽略缓存刷新，false表示不忽略缓存刷新。 说明： 传入undefined或null时为false。 |
@@ -1068,6 +1102,7 @@ refresh(ignoreCache: boolean): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1104,9 +1139,10 @@ struct WebComponent {
 
 
 
-#### accessStep
+## accessStep
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 accessStep(step: number): boolean
 
@@ -1116,12 +1152,14 @@ accessStep(step: number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | step | number | 是 | 要跳转的步数，正数代表前进，负数代表后退。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1131,6 +1169,7 @@ accessStep(step: number): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1170,9 +1209,10 @@ struct WebComponent {
 
 
 
-#### clearHistory
+## clearHistory
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clearHistory(): void
 
@@ -1183,6 +1223,7 @@ clearHistory(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1219,9 +1260,10 @@ struct WebComponent {
 
 
 
-#### registerJavaScriptProxy
+## registerJavaScriptProxy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 registerJavaScriptProxy(jsObject: object, name: string, methodList: Array&lt;string&gt;, asyncMethodList?: Array&lt;string&gt;, permission?: string): void
 
@@ -1237,6 +1279,7 @@ registerJavaScriptProxy提供了应用与Web组件加载的网页之间强大的
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | jsObject | object | 是 | 参与注册的应用侧JavaScript对象。可以单独声明方法和属性，但无法同时进行注册与使用。对象只包含属性时，H5可以访问对象中的属性。对象只包含方法时，H5可以访问对象中的方法。 1. 方法的参数和返回类型可以为string，number，boolean。 2. 方法的参数和返回类型支持Dictionary，Array，最多嵌套10层，每层1w个数据。 3. 方法的参数和返回类型支持Object，需要在Object里添加属性methodNameListForJsProxy:[fun1, fun2]，fun1和fun2为可被调用的方法。 4. 方法的参数支持Function，Promise，它们的Callback不能有返回值。 5. 方法的返回类型支持Promise，Promise的Callback不能有返回值。 |
@@ -1249,6 +1292,7 @@ registerJavaScriptProxy提供了应用与Web组件加载的网页之间强大的
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1401,9 +1445,10 @@ struct Index {
 
 
 
-#### runJavaScript
+## runJavaScript
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 runJavaScript(script: string, callback : AsyncCallback&lt;string&gt;): void
 
@@ -1417,6 +1462,7 @@ runJavaScript(script: string, callback : AsyncCallback&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | script | string | 是 | JavaScript脚本。 |
@@ -1426,6 +1472,7 @@ runJavaScript(script: string, callback : AsyncCallback&lt;string&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1500,9 +1547,10 @@ struct WebComponent {
 
 
 
-#### runJavaScript
+## runJavaScript
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 runJavaScript(script: string): Promise&lt;string&gt;
 
@@ -1516,12 +1564,14 @@ runJavaScript(script: string): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | script | string | 是 | JavaScript脚本。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1531,6 +1581,7 @@ runJavaScript(script: string): Promise&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1599,9 +1650,10 @@ struct WebComponent {
 
 
 
-#### runJavaScriptExt10+
+## runJavaScriptExt10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 runJavaScriptExt(script: string | ArrayBuffer, callback : AsyncCallback&lt;JsMessageExt&gt;): void
 
@@ -1615,6 +1667,7 @@ runJavaScriptExt(script: string | ArrayBuffer, callback : AsyncCallback&lt;JsMes
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | script | string \| ArrayBuffer12+ | 是 | JavaScript脚本。 |
@@ -1624,6 +1677,7 @@ runJavaScriptExt(script: string | ArrayBuffer, callback : AsyncCallback&lt;JsMes
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1739,7 +1793,7 @@ struct WebComponent {
           try {
             let uiContext : UIContext = this.getUIContext();
             let context : Context | undefined = uiContext.getHostContext() as common.UIAbilityContext;
-            let filePath = context!.filesDir + 'test.txt';
+            let filePath = context!.filesDir + '/test.txt';
             // 新建并打开文件。
             let file = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
             // 写入一段内容至文件。
@@ -1831,9 +1885,10 @@ function test() {
 
 
 
-#### runJavaScriptExt10+
+## runJavaScriptExt10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 runJavaScriptExt(script: string | ArrayBuffer): Promise&lt;JsMessageExt&gt;
 
@@ -1847,12 +1902,14 @@ runJavaScriptExt(script: string | ArrayBuffer): Promise&lt;JsMessageExt&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | script | string \| ArrayBuffer12+ | 是 | JavaScript脚本。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1862,6 +1919,7 @@ runJavaScriptExt(script: string | ArrayBuffer): Promise&lt;JsMessageExt&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1968,7 +2026,7 @@ struct WebComponent {
           try {
             let uiContext : UIContext = this.getUIContext();
             let context : Context | undefined = uiContext.getHostContext() as common.UIAbilityContext;
-            let filePath = context!.filesDir + 'test.txt';
+            let filePath = context!.filesDir + '/test.txt';
             // 新建并打开文件。
             let file = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
             // 写入一段内容至文件。
@@ -2056,9 +2114,10 @@ function test() {
 
 
 
-#### deleteJavaScriptRegister
+## deleteJavaScriptRegister
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteJavaScriptRegister(name: string): void
 
@@ -2068,6 +2127,7 @@ deleteJavaScriptRegister(name: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 注册对象的名称，可在网页侧JavaScript中通过此名称调用应用侧JavaScript对象。 |
@@ -2076,6 +2136,7 @@ deleteJavaScriptRegister(name: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2168,9 +2229,10 @@ struct WebComponent {
 
 
 
-#### zoom
+## zoom
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 zoom(factor: number): void
 
@@ -2180,6 +2242,7 @@ zoom(factor: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | factor | number | 是 | 基于当前网页所需调整的相对缩放比例，入参要求大于0，当入参为1时为默认加载网页的缩放比例，入参小于1为缩小，入参大于1为放大。 取值范围：(0，100]。 |
@@ -2188,6 +2251,7 @@ zoom(factor: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2228,9 +2292,10 @@ struct WebComponent {
 
 
 
-#### searchAllAsync
+## searchAllAsync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 searchAllAsync(searchString: string): void
 
@@ -2240,6 +2305,7 @@ searchAllAsync(searchString: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | searchString | string | 是 | 查找的关键字。 |
@@ -2248,6 +2314,7 @@ searchAllAsync(searchString: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2304,9 +2371,10 @@ struct WebComponent {
 
 
 
-#### clearMatches
+## clearMatches
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clearMatches(): void
 
@@ -2317,6 +2385,7 @@ clearMatches(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2355,9 +2424,10 @@ struct WebComponent {
 
 
 
-#### searchNext
+## searchNext
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 searchNext(forward: boolean): void
 
@@ -2367,6 +2437,7 @@ searchNext(forward: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | forward | boolean | 是 | 从前向后或者逆向查找方式。 true表示从前向后查找，false表示从后向前查找。 |
@@ -2375,6 +2446,7 @@ searchNext(forward: boolean): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2414,9 +2486,10 @@ struct WebComponent {
 
 
 
-#### clearSslCache
+## clearSslCache
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clearSslCache(): void
 
@@ -2427,6 +2500,7 @@ clearSslCache(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2463,9 +2537,10 @@ struct WebComponent {
 
 
 
-#### clearClientAuthenticationCache
+## clearClientAuthenticationCache
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clearClientAuthenticationCache(): void
 
@@ -2476,6 +2551,7 @@ clearClientAuthenticationCache(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2512,9 +2588,10 @@ struct WebComponent {
 
 
 
-#### createWebMessagePorts
+## createWebMessagePorts
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createWebMessagePorts(isExtentionType?: boolean): Array&lt;WebMessagePort&gt;
 
@@ -2524,12 +2601,14 @@ createWebMessagePorts(isExtentionType?: boolean): Array&lt;WebMessagePort&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isExtentionType10+ | boolean | 否 | 是否使用扩展增强接口。 true表示使用扩展增强接口，false表示不使用扩展增强接口。 默认值：false。 传入undefined或null会抛出异常错误码401。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2539,6 +2618,7 @@ createWebMessagePorts(isExtentionType?: boolean): Array&lt;WebMessagePort&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2552,9 +2632,10 @@ createWebMessagePorts(isExtentionType?: boolean): Array&lt;WebMessagePort&gt;
 
 
 
-#### postMessage
+## postMessage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 postMessage(name: string, ports: Array&lt;WebMessagePort&gt;, uri: string): void
 
@@ -2563,6 +2644,7 @@ postMessage(name: string, ports: Array&lt;WebMessagePort&gt;, uri: string): void
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2574,6 +2656,7 @@ postMessage(name: string, ports: Array&lt;WebMessagePort&gt;, uri: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2721,9 +2804,10 @@ function PostMsgToEts(data) {
 
 
 
-#### requestFocus
+## requestFocus
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 requestFocus(): void
 
@@ -2734,6 +2818,7 @@ requestFocus(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2770,9 +2855,10 @@ struct WebComponent {
 
 
 
-#### zoomIn
+## zoomIn
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 zoomIn(): void
 
@@ -2783,6 +2869,7 @@ zoomIn(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2820,9 +2907,10 @@ struct WebComponent {
 
 
 
-#### zoomOut
+## zoomOut
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 zoomOut(): void
 
@@ -2833,6 +2921,7 @@ zoomOut(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2870,9 +2959,10 @@ struct WebComponent {
 
 
 
-#### getWebId
+## getWebId
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getWebId(): number
 
@@ -2882,6 +2972,7 @@ getWebId(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | Web组件的索引值。 |
@@ -2890,6 +2981,7 @@ getWebId(): number
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2927,9 +3019,10 @@ struct WebComponent {
 
 
 
-#### getUserAgent
+## getUserAgent
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUserAgent(): string
 
@@ -2941,6 +3034,7 @@ getUserAgent(): string
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 默认用户代理。 |
@@ -2949,6 +3043,7 @@ getUserAgent(): string
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3019,9 +3114,10 @@ struct WebComponent {
 
 
 
-#### getTitle
+## getTitle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTitle(): string
 
@@ -3031,6 +3127,7 @@ getTitle(): string
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 当前网页的标题。 |
@@ -3039,6 +3136,7 @@ getTitle(): string
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3076,9 +3174,10 @@ struct WebComponent {
 
 
 
-#### getPageHeight
+## getPageHeight
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPageHeight(): number
 
@@ -3088,6 +3187,7 @@ getPageHeight(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 当前网页的页面高度。单位：vp。 |
@@ -3096,6 +3196,7 @@ getPageHeight(): number
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3133,9 +3234,10 @@ struct WebComponent {
 
 
 
-#### storeWebArchive
+## storeWebArchive
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 storeWebArchive(baseName: string, autoName: boolean, callback: AsyncCallback&lt;string&gt;): void
 
@@ -3144,6 +3246,7 @@ storeWebArchive(baseName: string, autoName: boolean, callback: AsyncCallback&lt;
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3155,6 +3258,7 @@ storeWebArchive(baseName: string, autoName: boolean, callback: AsyncCallback&lt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3201,9 +3305,10 @@ struct WebComponent {
 
 
 
-#### storeWebArchive
+## storeWebArchive
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 storeWebArchive(baseName: string, autoName: boolean): Promise&lt;string&gt;
 
@@ -3213,6 +3318,7 @@ storeWebArchive(baseName: string, autoName: boolean): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | baseName | string | 是 | 生成的离线网页存储位置，该值不能为空。 |
@@ -3220,6 +3326,7 @@ storeWebArchive(baseName: string, autoName: boolean): Promise&lt;string&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3229,6 +3336,7 @@ storeWebArchive(baseName: string, autoName: boolean): Promise&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3275,9 +3383,10 @@ struct WebComponent {
 
 
 
-#### getUrl
+## getUrl
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUrl(): string
 
@@ -3287,6 +3396,7 @@ getUrl(): string
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 当前页面的URL地址。 |
@@ -3295,6 +3405,7 @@ getUrl(): string
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3332,9 +3443,10 @@ struct WebComponent {
 
 
 
-#### stop
+## stop
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stop(): void
 
@@ -3345,6 +3457,7 @@ stop(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3381,9 +3494,10 @@ struct WebComponent {
 
 
 
-#### backOrForward
+## backOrForward
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 backOrForward(step: number): void
 
@@ -3395,6 +3509,7 @@ backOrForward(step: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | step | number | 是 | 需要前进或后退的步长。 |
@@ -3403,6 +3518,7 @@ backOrForward(step: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3441,9 +3557,10 @@ struct WebComponent {
 
 
 
-#### scrollTo
+## scrollTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scrollTo(x:number, y:number, duration?:number): void
 
@@ -3452,6 +3569,7 @@ scrollTo(x:number, y:number, duration?:number): void
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3463,6 +3581,7 @@ scrollTo(x:number, y:number, duration?:number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3532,9 +3651,10 @@ Scroll Test
 
 
 
-#### scrollBy
+## scrollBy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scrollBy(deltaX:number, deltaY:number,duration?:number): void
 
@@ -3543,6 +3663,7 @@ scrollBy(deltaX:number, deltaY:number,duration?:number): void
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3554,6 +3675,7 @@ scrollBy(deltaX:number, deltaY:number,duration?:number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3627,9 +3749,10 @@ Scroll Test
 
 
 
-#### scrollByWithResult12+
+## scrollByWithResult12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 scrollByWithResult(deltaX: number, deltaY: number): boolean
 
@@ -3639,6 +3762,7 @@ scrollByWithResult(deltaX: number, deltaY: number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deltaX | number | 是 | 水平偏移量，其中水平向右为正方向。 单位：vp。 |
@@ -3647,14 +3771,16 @@ scrollByWithResult(deltaX: number, deltaY: number): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| boolean | true表示当前网页可以滑动，false表示当前网页不可以滑动。 默认为false。 |
+| boolean | true表示当前网页可以滑动，false表示当前网页不可以滑动。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3721,9 +3847,10 @@ Scroll Test
 
 
 
-#### slideScroll
+## slideScroll
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 slideScroll(vx:number, vy:number): void
 
@@ -3732,6 +3859,7 @@ slideScroll(vx:number, vy:number): void
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -3742,6 +3870,7 @@ slideScroll(vx:number, vy:number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3803,9 +3932,10 @@ Scroll Test
 
 
 
-#### getOriginalUrl
+## getOriginalUrl
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOriginalUrl(): string
 
@@ -3817,6 +3947,7 @@ getOriginalUrl(): string
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 当前页面的原始URL地址。 |
@@ -3825,6 +3956,7 @@ getOriginalUrl(): string
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3862,9 +3994,10 @@ struct WebComponent {
 
 
 
-#### getFavicon
+## getFavicon
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFavicon(): image.PixelMap
 
@@ -3874,6 +4007,7 @@ getFavicon(): image.PixelMap
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | image.PixelMap | 页面favicon图标的PixelMap对象。 |
@@ -3882,6 +4016,7 @@ getFavicon(): image.PixelMap
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -3920,9 +4055,10 @@ struct WebComponent {
 
 
 
-#### setNetworkAvailable
+## setNetworkAvailable
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setNetworkAvailable(enable: boolean): void
 
@@ -3932,6 +4068,7 @@ setNetworkAvailable(enable: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | boolean | 是 | 设置JavaScript中的window.navigator.onLine属性。 true表示设置JavaScript中的window.navigator.onLine属性为true，false表示设置JavaScript中的window.navigator.onLine属性为false。 默认值：true。 |
@@ -3940,6 +4077,7 @@ setNetworkAvailable(enable: boolean): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4001,9 +4139,10 @@ struct WebComponent {
 
 
 
-#### hasImage
+## hasImage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hasImage(callback: AsyncCallback&lt;boolean&gt;): void
 
@@ -4013,6 +4152,7 @@ hasImage(callback: AsyncCallback&lt;boolean&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;boolean&gt; | 是 | 返回查找页面是否存在图像。 true表示页面存在图像；false表示页面不存在图像。 |
@@ -4021,6 +4161,7 @@ hasImage(callback: AsyncCallback&lt;boolean&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4064,9 +4205,10 @@ struct WebComponent {
 
 
 
-#### hasImage
+## hasImage
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hasImage(): Promise&lt;boolean&gt;
 
@@ -4076,6 +4218,7 @@ hasImage(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise实例，返回查找页面是否存在图像。 true表示页面存在图像；false表示页面不存在图像。 |
@@ -4084,6 +4227,7 @@ hasImage(): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4125,9 +4269,10 @@ struct WebComponent {
 
 
 
-#### removeCache
+## removeCache
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeCache(clearRom: boolean): void
 
@@ -4137,6 +4282,7 @@ removeCache(clearRom: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | clearRom | boolean | 是 | 设置为true时同时清除ROM和RAM中的缓存，设置为false时只清除RAM中的缓存。 |
@@ -4145,6 +4291,7 @@ removeCache(clearRom: boolean): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4182,9 +4329,10 @@ struct WebComponent {
 
 
 
-#### removeAllCache18+
+## removeAllCache18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static removeAllCache(clearRom: boolean): void
 
@@ -4194,6 +4342,7 @@ static removeAllCache(clearRom: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | clearRom | boolean | 是 | 设置为true时同时清除ROM和RAM中的缓存，设置为false时只清除RAM中的缓存。 |
@@ -4202,6 +4351,7 @@ static removeAllCache(clearRom: boolean): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4238,9 +4388,10 @@ struct WebComponent {
 
 
 
-#### pageUp
+## pageUp
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pageUp(top: boolean): void
 
@@ -4250,6 +4401,7 @@ pageUp(top: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | top | boolean | 是 | 是否跳转到页面最顶部。 false表示将页面内容向上滚动半个视框大小，true表示跳转到页面最顶部。 |
@@ -4258,6 +4410,7 @@ pageUp(top: boolean): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4328,9 +4481,10 @@ struct WebComponent {
 
 
 
-#### pageDown
+## pageDown
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pageDown(bottom: boolean): void
 
@@ -4340,6 +4494,7 @@ pageDown(bottom: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bottom | boolean | 是 | 是否跳转到页面最底部。 false时表示将页面内容向下滚动半个视框大小，true表示跳转到页面最底部。 |
@@ -4348,6 +4503,7 @@ pageDown(bottom: boolean): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4420,9 +4576,10 @@ struct WebComponent {
 
 
 
-#### getBackForwardEntries
+## getBackForwardEntries
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBackForwardEntries(): BackForwardList
 
@@ -4436,6 +4593,7 @@ getBackForwardEntries(): BackForwardList
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | BackForwardList | 当前WebView的历史信息列表。 |
@@ -4444,6 +4602,7 @@ getBackForwardEntries(): BackForwardList
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4480,9 +4639,10 @@ struct WebComponent {
 
 
 
-#### serializeWebState
+## serializeWebState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 serializeWebState(): Uint8Array
 
@@ -4492,6 +4652,7 @@ serializeWebState(): Uint8Array
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Uint8Array | 当前WebView的页面状态历史记录序列化后的数据。 |
@@ -4500,6 +4661,7 @@ serializeWebState(): Uint8Array
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4563,9 +4725,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### restoreWebState
+## restoreWebState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 restoreWebState(state: Uint8Array): void
 
@@ -4577,6 +4740,7 @@ restoreWebState(state: Uint8Array): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | state | Uint8Array | 是 | 页面状态历史记录序列化数据。 |
@@ -4585,6 +4749,7 @@ restoreWebState(state: Uint8Array): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4658,9 +4823,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### customizeSchemes
+## customizeSchemes
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static customizeSchemes(schemes: Array&lt;WebCustomScheme&gt;): void
 
@@ -4670,6 +4836,7 @@ static customizeSchemes(schemes: Array&lt;WebCustomScheme&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | schemes | Array&lt;WebCustomScheme&gt; | 是 | 自定义协议配置，最多支持同时配置10个自定义协议。 |
@@ -4678,6 +4845,7 @@ static customizeSchemes(schemes: Array&lt;WebCustomScheme&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4725,9 +4893,10 @@ struct WebComponent {
 
 
 
-#### customizeSchemes21+
+## customizeSchemes21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static customizeSchemes(schemes: Array&lt;WebCustomScheme&gt;, lazyInitWebEngine: boolean): void
 
@@ -4736,6 +4905,7 @@ static customizeSchemes(schemes: Array&lt;WebCustomScheme&gt;, lazyInitWebEngine
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -4746,6 +4916,7 @@ static customizeSchemes(schemes: Array&lt;WebCustomScheme&gt;, lazyInitWebEngine
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4787,9 +4958,10 @@ struct WebComponent {
 
 
 
-#### getCertificate10+
+## getCertificate10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCertificate(): Promise<Array<cert.X509Cert>>
 
@@ -4799,6 +4971,7 @@ getCertificate(): Promise<Array<cert.X509Cert>>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array<cert.X509Cert>> | Promise实例，用于获取当前加载的https网站的X509格式证书数组。 |
@@ -4807,6 +4980,7 @@ getCertificate(): Promise<Array<cert.X509Cert>>
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -4954,9 +5128,10 @@ struct Index {
 
 
 
-#### getCertificate10+
+## getCertificate10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCertificate(callback: AsyncCallback<Array<cert.X509Cert>>): void
 
@@ -4966,6 +5141,7 @@ getCertificate(callback: AsyncCallback<Array<cert.X509Cert>>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<Array<cert.X509Cert>> | 是 | 通过AsyncCallback异步返回当前网站的X509格式证书。 |
@@ -4974,6 +5150,7 @@ getCertificate(callback: AsyncCallback<Array<cert.X509Cert>>): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5122,17 +5299,19 @@ struct Index {
 
 
 
-#### setAudioMuted10+
+## setAudioMuted10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAudioMuted(mute: boolean): void
 
-设置网页静音。
+设置网页静音。典型使用场景包括：应用需要控制网页音量（如提供静音开关）、后台播放时需要静音等。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5142,6 +5321,7 @@ setAudioMuted(mute: boolean): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5178,9 +5358,10 @@ struct WebComponent {
 
 
 
-#### prefetchPage21+
+## prefetchPage21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 prefetchPage(url: string, additionalHeaders?: Array&lt;WebHeader&gt;, prefetchOptions?: PrefetchOptions): void
 
@@ -5194,16 +5375,18 @@ prefetchPage(url: string, additionalHeaders?: Array&lt;WebHeader&gt;, prefetchOp
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | string | 是 | 预加载的URL。 |
 | additionalHeaders | Array&lt;WebHeader&gt; | 否 | URL的附加HTTP请求头。 默认值： [] |
-| prefetchOptions | PrefetchOptions | 否 | 用来自定义预取行为的相关选项。 |
+| prefetchOptions | PrefetchOptions | 否 | 用来自定义预取行为的相关选项。 两次预取间默认的最小时间间隔为500ms，默认不忽略响应头中的Cache-Control: no-store。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5245,9 +5428,10 @@ struct WebComponent {
 
 
 
-#### prefetchPage10+
+## prefetchPage10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 prefetchPage(url: string, additionalHeaders?: Array&lt;WebHeader&gt;): void
 
@@ -5261,6 +5445,7 @@ prefetchPage(url: string, additionalHeaders?: Array&lt;WebHeader&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | string | 是 | 预加载的URL。 |
@@ -5270,6 +5455,7 @@ prefetchPage(url: string, additionalHeaders?: Array&lt;WebHeader&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5310,9 +5496,10 @@ struct WebComponent {
 
 
 
-#### prefetchResource12+
+## prefetchResource12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static prefetchResource(request: RequestInfo, additionalHeaders?: Array&lt;WebHeader&gt;, cacheKey?: string, cacheValidTime?: number): void
 
@@ -5323,6 +5510,7 @@ static prefetchResource(request: RequestInfo, additionalHeaders?: Array&lt;WebHe
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5335,6 +5523,7 @@ static prefetchResource(request: RequestInfo, additionalHeaders?: Array&lt;WebHe
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5374,9 +5563,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### clearPrefetchedResource12+
+## clearPrefetchedResource12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static clearPrefetchedResource(cacheKeyList: Array&lt;string&gt;): void
 
@@ -5385,6 +5575,7 @@ static clearPrefetchedResource(cacheKeyList: Array&lt;string&gt;): void
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5430,9 +5621,10 @@ struct WebComponent {
 
 
 
-#### prepareForPageLoad10+
+## prepareForPageLoad10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static prepareForPageLoad(url: string, preconnectable: boolean, numSockets: number): void
 
@@ -5441,6 +5633,7 @@ static prepareForPageLoad(url: string, preconnectable: boolean, numSockets: numb
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5452,6 +5645,7 @@ static prepareForPageLoad(url: string, preconnectable: boolean, numSockets: numb
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5481,9 +5675,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### setCustomUserAgent10+
+## setCustomUserAgent10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setCustomUserAgent(userAgent: string): void
 
@@ -5497,6 +5692,7 @@ setCustomUserAgent(userAgent: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | userAgent | string | 是 | 用户自定义代理信息。建议先使用getUserAgent获取当前默认用户代理，在此基础上追加自定义用户代理信息。 |
@@ -5505,6 +5701,7 @@ setCustomUserAgent(userAgent: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5544,9 +5741,10 @@ struct WebComponent {
 
 
 
-#### setDownloadDelegate11+
+## setDownloadDelegate11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setDownloadDelegate(delegate: WebDownloadDelegate): void
 
@@ -5556,6 +5754,7 @@ setDownloadDelegate(delegate: WebDownloadDelegate): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | delegate | WebDownloadDelegate | 是 | 用来接收下载进度的委托。 |
@@ -5564,6 +5763,7 @@ setDownloadDelegate(delegate: WebDownloadDelegate): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5601,9 +5801,10 @@ struct WebComponent {
 
 
 
-#### startDownload11+
+## startDownload11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startDownload(url: string): void
 
@@ -5613,6 +5814,7 @@ startDownload(url: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | string | 是 | 下载地址。 |
@@ -5621,6 +5823,7 @@ startDownload(url: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5668,9 +5871,10 @@ struct WebComponent {
 
 
 
-#### getCustomUserAgent10+
+## getCustomUserAgent10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCustomUserAgent(): string
 
@@ -5682,6 +5886,7 @@ getCustomUserAgent(): string
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 用户自定义代理信息。 |
@@ -5690,6 +5895,7 @@ getCustomUserAgent(): string
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5728,9 +5934,10 @@ struct WebComponent {
 
 
 
-#### setAppCustomUserAgent20+
+## setAppCustomUserAgent20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static setAppCustomUserAgent(userAgent: string): void
 
@@ -5743,6 +5950,7 @@ static setAppCustomUserAgent(userAgent: string): void
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5782,9 +5990,10 @@ struct WebComponent {
 
 
 
-#### setUserAgentForHosts20+
+## setUserAgentForHosts20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static setUserAgentForHosts(userAgent: string, hosts: Array&lt;string&gt;): void
 
@@ -5797,6 +6006,7 @@ static setUserAgentForHosts(userAgent: string, hosts: Array&lt;string&gt;): void
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -5843,9 +6053,10 @@ struct WebComponent {
 
 
 
-#### setConnectionTimeout11+
+## setConnectionTimeout11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static setConnectionTimeout(timeout: number): void
 
@@ -5855,14 +6066,16 @@ static setConnectionTimeout(timeout: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| timeout | number | 是 | socket连接超时时间，以秒为单位，必须为大于0的整数。 |
+| timeout | number | 是 | socket连接超时时间，单位：s，必须为大于0的整数。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5906,9 +6119,10 @@ struct WebComponent {
 
 
 
-#### warmupServiceWorker12+
+## warmupServiceWorker12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static warmupServiceWorker(url: string): void
 
@@ -5918,6 +6132,7 @@ static warmupServiceWorker(url: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | string | 是 | 需要预热ServiceWorker的URL。 |
@@ -5926,6 +6141,7 @@ static warmupServiceWorker(url: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -5954,9 +6170,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### enableSafeBrowsing11+
+## enableSafeBrowsing11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableSafeBrowsing(enable: boolean): void
 
@@ -5972,6 +6189,7 @@ enableSafeBrowsing(enable: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | boolean | 是 | 是否启用检查网站安全风险的功能。 true表示启用检查网站安全风险的功能，false表示不启用检查网站安全风险的功能。 默认值：false。 |
@@ -5980,6 +6198,7 @@ enableSafeBrowsing(enable: boolean): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6017,9 +6236,10 @@ struct WebComponent {
 
 
 
-#### isSafeBrowsingEnabled11+
+## isSafeBrowsingEnabled11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isSafeBrowsingEnabled(): boolean
 
@@ -6028,6 +6248,7 @@ isSafeBrowsingEnabled(): boolean
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6060,9 +6281,10 @@ struct WebComponent {
 
 
 
-#### enableIntelligentTrackingPrevention12+
+## enableIntelligentTrackingPrevention12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 enableIntelligentTrackingPrevention(enable: boolean): void
 
@@ -6074,6 +6296,7 @@ enableIntelligentTrackingPrevention(enable: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | boolean | 是 | 是否启用智能防跟踪功能。 true表示启用智能防跟踪功能，false表示不启用智能防跟踪功能。 默认值：false。 |
@@ -6082,6 +6305,7 @@ enableIntelligentTrackingPrevention(enable: boolean): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6121,9 +6345,10 @@ struct WebComponent {
 
 
 
-#### isIntelligentTrackingPreventionEnabled12+
+## isIntelligentTrackingPreventionEnabled12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 isIntelligentTrackingPreventionEnabled(): boolean
 
@@ -6135,6 +6360,7 @@ isIntelligentTrackingPreventionEnabled(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | Web组件是否启用了智能防跟踪功能。 true表示启用了智能防跟踪功能，false表示未启用智能防跟踪功能。 默认值：false。 |
@@ -6143,6 +6369,7 @@ isIntelligentTrackingPreventionEnabled(): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6181,9 +6408,10 @@ struct WebComponent {
 
 
 
-#### addIntelligentTrackingPreventionBypassingList12+
+## addIntelligentTrackingPreventionBypassingList12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 static addIntelligentTrackingPreventionBypassingList(hostList: Array&lt;string&gt;): void
 
@@ -6195,6 +6423,7 @@ static addIntelligentTrackingPreventionBypassingList(hostList: Array&lt;string&g
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | hostList | Array&lt;string&gt; | 是 | 绕过智能防跟踪功能的域名列表。 |
@@ -6203,6 +6432,7 @@ static addIntelligentTrackingPreventionBypassingList(hostList: Array&lt;string&g
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6241,9 +6471,10 @@ struct WebComponent {
 
 
 
-#### removeIntelligentTrackingPreventionBypassingList12+
+## removeIntelligentTrackingPreventionBypassingList12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 static removeIntelligentTrackingPreventionBypassingList(hostList: Array&lt;string&gt;): void
 
@@ -6255,6 +6486,7 @@ static removeIntelligentTrackingPreventionBypassingList(hostList: Array&lt;strin
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | hostList | Array&lt;string&gt; | 是 | 绕过智能防跟踪功能的域名列表。 |
@@ -6263,6 +6495,7 @@ static removeIntelligentTrackingPreventionBypassingList(hostList: Array&lt;strin
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6301,9 +6534,10 @@ struct WebComponent {
 
 
 
-#### clearIntelligentTrackingPreventionBypassingList12+
+## clearIntelligentTrackingPreventionBypassingList12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 static clearIntelligentTrackingPreventionBypassingList(): void
 
@@ -6316,6 +6550,7 @@ static clearIntelligentTrackingPreventionBypassingList(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6347,9 +6582,10 @@ struct WebComponent {
 
 
 
-#### getDefaultUserAgent14+
+## getDefaultUserAgent14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getDefaultUserAgent(): string
 
@@ -6362,6 +6598,7 @@ static getDefaultUserAgent(): string
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6387,9 +6624,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### enableAdsBlock12+
+## enableAdsBlock12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableAdsBlock(enable: boolean): void
 
@@ -6403,6 +6641,7 @@ enableAdsBlock(enable: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | boolean | 是 | 是否启用广告过滤功能。 true表示启用广告过滤功能，false表示取消广告过滤功能。 默认值：false。 |
@@ -6415,6 +6654,7 @@ enableAdsBlock(enable: boolean): void
 
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6454,9 +6694,10 @@ struct WebComponent {
 
 
 
-#### isAdsBlockEnabled12+
+## isAdsBlockEnabled12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 isAdsBlockEnabled() : boolean
 
@@ -6465,6 +6706,7 @@ isAdsBlockEnabled() : boolean
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6478,6 +6720,7 @@ isAdsBlockEnabled() : boolean
 
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6515,9 +6758,10 @@ struct WebComponent {
 
 
 
-#### isAdsBlockEnabledForCurPage12+
+## isAdsBlockEnabledForCurPage12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isAdsBlockEnabledForCurPage() : boolean
 
@@ -6528,6 +6772,7 @@ isAdsBlockEnabledForCurPage() : boolean
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6541,6 +6786,7 @@ isAdsBlockEnabledForCurPage() : boolean
 
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6578,17 +6824,19 @@ struct WebComponent {
 
 
 
-#### setRenderProcessMode12+
+## setRenderProcessMode12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static setRenderProcessMode(mode: RenderProcessMode): void
 
-设置ArkWeb渲染子进程模式。
+设置ArkWeb渲染子进程模式，可根据应用对内存占用与渲染进程隔离的需求选择对应的模式。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6598,6 +6846,7 @@ static setRenderProcessMode(mode: RenderProcessMode): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6634,9 +6883,10 @@ struct WebComponent {
 
 
 
-#### getRenderProcessMode12+
+## getRenderProcessMode12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getRenderProcessMode(): RenderProcessMode
 
@@ -6645,6 +6895,7 @@ static getRenderProcessMode(): RenderProcessMode
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6677,9 +6928,10 @@ struct WebComponent {
 
 
 
-#### terminateRenderProcess12+
+## terminateRenderProcess12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 terminateRenderProcess(): boolean
 
@@ -6691,6 +6943,7 @@ terminateRenderProcess(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回销毁渲染进程的结果。 返回true表示渲染进程可以被销毁或已被销毁，返回false表示渲染进程不可以被销毁。 |
@@ -6699,6 +6952,7 @@ terminateRenderProcess(): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6731,9 +6985,10 @@ struct WebComponent {
 
 
 
-#### postUrl11+
+## postUrl11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 postUrl(url: string, postData: ArrayBuffer): void
 
@@ -6742,6 +6997,7 @@ postUrl(url: string, postData: ArrayBuffer): void
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -6752,6 +7008,7 @@ postUrl(url: string, postData: ArrayBuffer): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6808,9 +7065,10 @@ struct WebComponent {
 
 
 
-#### createWebPrintDocumentAdapter11+
+## createWebPrintDocumentAdapter11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createWebPrintDocumentAdapter(jobName: string): print.PrintDocumentAdapter
 
@@ -6820,12 +7078,14 @@ createWebPrintDocumentAdapter(jobName: string): print.PrintDocumentAdapter
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | jobName | string | 是 | 需要打印的文件名。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -6835,6 +7095,7 @@ createWebPrintDocumentAdapter(jobName: string): print.PrintDocumentAdapter
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6873,9 +7134,10 @@ struct WebComponent {
 
 
 
-#### isIncognitoMode11+
+## isIncognitoMode11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isIncognitoMode(): boolean
 
@@ -6885,6 +7147,7 @@ isIncognitoMode(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回是否是隐私模式的Webview。 true表示是隐私模式，false表示不是隐私模式。 默认为false。 |
@@ -6893,6 +7156,7 @@ isIncognitoMode(): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6930,9 +7194,10 @@ struct WebComponent {
 
 
 
-#### getSecurityLevel11+
+## getSecurityLevel11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSecurityLevel(): SecurityLevel
 
@@ -6942,6 +7207,7 @@ getSecurityLevel(): SecurityLevel
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | SecurityLevel | 当前网页的安全级别，具体值为NONE、SECURE、WARNING、DANGEROUS。 |
@@ -6950,6 +7216,7 @@ getSecurityLevel(): SecurityLevel
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -6982,9 +7249,10 @@ struct WebComponent {
 
 
 
-#### setScrollable12+
+## setScrollable12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setScrollable(enable: boolean, type?: ScrollType): void
 
@@ -6993,6 +7261,7 @@ setScrollable(enable: boolean, type?: ScrollType): void
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -7003,6 +7272,7 @@ setScrollable(enable: boolean, type?: ScrollType): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7040,9 +7310,10 @@ struct WebComponent {
 
 
 
-#### getScrollable12+
+## getScrollable12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getScrollable(): boolean
 
@@ -7052,6 +7323,7 @@ getScrollable(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 当前网页是否允许滚动。 true为允许滚动，false为禁止滚动。 |
@@ -7060,6 +7332,7 @@ getScrollable(): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7097,9 +7370,10 @@ struct WebComponent {
 
 
 
-#### setPrintBackground12+
+## setPrintBackground12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setPrintBackground(enable: boolean): void
 
@@ -7109,6 +7383,7 @@ setPrintBackground(enable: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | boolean | 是 | 表示是否打印网页背景。 true表示设置为打印网页背景，false表示取消网页背景打印。 |
@@ -7117,6 +7392,7 @@ setPrintBackground(enable: boolean): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7153,9 +7429,10 @@ struct WebComponent {
 
 
 
-#### getPrintBackground12+
+## getPrintBackground12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPrintBackground(): boolean
 
@@ -7165,6 +7442,7 @@ getPrintBackground(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回webview是否打印网页背景。 true:打印网页背景；false:不打印网页背景。 |
@@ -7173,6 +7451,7 @@ getPrintBackground(): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7209,9 +7488,10 @@ struct WebComponent {
 
 
 
-#### getLastJavascriptProxyCallingFrameUrl12+
+## getLastJavascriptProxyCallingFrameUrl12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLastJavascriptProxyCallingFrameUrl(): string
 
@@ -7221,6 +7501,7 @@ getLastJavascriptProxyCallingFrameUrl(): string
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 最后一次调用注入的对象的frame的URL。 |
@@ -7229,6 +7510,7 @@ getLastJavascriptProxyCallingFrameUrl(): string
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7362,19 +7644,21 @@ struct Index {
 
 
 
-#### pauseAllTimers12+
+## pauseAllTimers12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static pauseAllTimers(): void
 
-暂停所有WebView的定时器。
+暂停所有WebView的定时器，定时器暂停期间，网页中的setInterval、setTimeout等定时操作将被挂起。建议在应用进入后台等场景暂停，前台时恢复，以节省资源，可以与[resumeAllTimers](#resumealltimers12)()成对使用，避免定时器状态混乱。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7436,9 +7720,10 @@ struct WebComponent {
 
 
 
-#### resumeAllTimers12+
+## resumeAllTimers12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static resumeAllTimers(): void
 
@@ -7449,6 +7734,7 @@ static resumeAllTimers(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7514,9 +7800,10 @@ struct WebComponent {
 
 
 
-#### stopAllMedia12+
+## stopAllMedia12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopAllMedia(): void
 
@@ -7527,6 +7814,7 @@ stopAllMedia(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7563,9 +7851,10 @@ struct WebComponent {
 
 
 
-#### pauseAllMedia12+
+## pauseAllMedia12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pauseAllMedia(): void
 
@@ -7576,6 +7865,7 @@ pauseAllMedia(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7612,9 +7902,10 @@ struct WebComponent {
 
 
 
-#### resumeAllMedia12+
+## resumeAllMedia12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 resumeAllMedia(): void
 
@@ -7625,6 +7916,7 @@ resumeAllMedia(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7661,9 +7953,10 @@ struct WebComponent {
 
 
 
-#### closeAllMediaPresentations12+
+## closeAllMediaPresentations12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 closeAllMediaPresentations(): void
 
@@ -7674,6 +7967,7 @@ closeAllMediaPresentations(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7710,9 +8004,10 @@ struct WebComponent {
 
 
 
-#### getMediaPlaybackState12+
+## getMediaPlaybackState12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMediaPlaybackState(): MediaPlaybackState
 
@@ -7722,6 +8017,7 @@ getMediaPlaybackState(): MediaPlaybackState
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | MediaPlaybackState | 当前网页的播放状态，具体值为NONE、PLAYING、PAUSED、STOPPED。 |
@@ -7730,6 +8026,7 @@ getMediaPlaybackState(): MediaPlaybackState
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7766,9 +8063,10 @@ struct WebComponent {
 
 
 
-#### setWebSchemeHandler12+
+## setWebSchemeHandler12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setWebSchemeHandler(scheme: string, handler: WebSchemeHandler): void
 
@@ -7777,6 +8075,7 @@ setWebSchemeHandler(scheme: string, handler: WebSchemeHandler): void
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -7787,6 +8086,7 @@ setWebSchemeHandler(scheme: string, handler: WebSchemeHandler): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7825,9 +8125,10 @@ struct WebComponent {
 
 
 
-#### clearWebSchemeHandler12+
+## clearWebSchemeHandler12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clearWebSchemeHandler(): void
 
@@ -7838,6 +8139,7 @@ clearWebSchemeHandler(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7874,9 +8176,10 @@ struct WebComponent {
 
 
 
-#### setServiceWorkerWebSchemeHandler12+
+## setServiceWorkerWebSchemeHandler12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setServiceWorkerWebSchemeHandler(scheme: string, handler: WebSchemeHandler): void
 
@@ -7885,6 +8188,7 @@ setServiceWorkerWebSchemeHandler(scheme: string, handler: WebSchemeHandler): voi
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -7895,6 +8199,7 @@ setServiceWorkerWebSchemeHandler(scheme: string, handler: WebSchemeHandler): voi
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -7932,9 +8237,10 @@ struct WebComponent {
 
 
 
-#### clearServiceWorkerWebSchemeHandler12+
+## clearServiceWorkerWebSchemeHandler12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clearServiceWorkerWebSchemeHandler(): void
 
@@ -7967,9 +8273,10 @@ struct WebComponent {
 
 
 
-#### startCamera12+
+## startCamera12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startCamera(): void
 
@@ -7980,6 +8287,7 @@ startCamera(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -8099,9 +8407,10 @@ struct WebComponent {
 
 
 
-#### stopCamera12+
+## stopCamera12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopCamera(): void
 
@@ -8113,6 +8422,7 @@ stopCamera(): void
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 17100001 | Init error. The WebviewController must be associated with a Web component. |
@@ -8124,9 +8434,10 @@ stopCamera(): void
 
 
 
-#### closeCamera12+
+## closeCamera12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 closeCamera(): void
 
@@ -8138,6 +8449,7 @@ closeCamera(): void
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 17100001 | Init error. The WebviewController must be associated with a Web component. |
@@ -8149,9 +8461,10 @@ closeCamera(): void
 
 
 
-#### precompileJavaScript12+
+## precompileJavaScript12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 precompileJavaScript(url: string, script: string | Uint8Array, cacheOptions: CacheOptions): Promise&lt;number&gt;
 
@@ -8163,6 +8476,7 @@ precompileJavaScript(url: string, script: string | Uint8Array, cacheOptions: Cac
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | string | 是 | 本地JavaScript文件对应的网络地址，即业务网页请求该文件的服务器版本时使用的网络地址。网络地址仅支持http或https协议，长度不超过2048。如果该网络地址对应的缓存失效，则业务网页将通过网络请求对应的资源。 |
@@ -8172,6 +8486,7 @@ precompileJavaScript(url: string, script: string | Uint8Array, cacheOptions: Cac
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | 生成字节码缓存的错误码，0表示无错误，-1表示内部错误。 |
@@ -8180,6 +8495,7 @@ precompileJavaScript(url: string, script: string | Uint8Array, cacheOptions: Cac
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -8406,9 +8722,10 @@ struct Index {
 
 
 
-#### onCreateNativeMediaPlayer12+
+## onCreateNativeMediaPlayer12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onCreateNativeMediaPlayer(callback: CreateNativeMediaPlayerCallback): void
 
@@ -8419,6 +8736,7 @@ onCreateNativeMediaPlayer(callback: CreateNativeMediaPlayerCallback): void
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -8635,9 +8953,10 @@ function shouldHandle(mediaInfo: webview.MediaInfo) {
 
 
 
-#### enableWholeWebPageDrawing12+
+## enableWholeWebPageDrawing12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static enableWholeWebPageDrawing(): void
 
@@ -8675,9 +8994,10 @@ struct WebComponent {
 
 
 
-#### webPageSnapshot12+
+## webPageSnapshot12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 webPageSnapshot(info: SnapshotInfo, callback: AsyncCallback&lt;SnapshotResult&gt;): void
 
@@ -8690,6 +9010,7 @@ webPageSnapshot(info: SnapshotInfo, callback: AsyncCallback&lt;SnapshotResult&gt
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -8736,9 +9057,10 @@ struct WebComponent {
 
 
 
-#### injectOfflineResources12+
+## injectOfflineResources12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 injectOfflineResources(resourceMaps: Array<[OfflineResourceMap](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-i#offlineresourcemap12)>): void
 
@@ -8758,6 +9080,7 @@ injectOfflineResources(resourceMaps: Array<[OfflineResourceMap](https://develope
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resourceMaps | Array&lt;OfflineResourceMap&gt; | 是 | 本地离线资源配置对象，单次调用最大支持注入30个资源，单个资源最大支持10Mb。 |
@@ -8766,6 +9089,7 @@ injectOfflineResources(resourceMaps: Array<[OfflineResourceMap](https://develope
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9035,9 +9359,10 @@ struct Index {
 
 
 
-#### setHostIP12+
+## setHostIP12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static setHostIP(hostName: string, address: string, aliveTime: number): void
 
@@ -9046,6 +9371,7 @@ static setHostIP(hostName: string, address: string, aliveTime: number): void
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -9058,6 +9384,7 @@ static setHostIP(hostName: string, address: string, aliveTime: number): void
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.2. Incorrect parameter types.3. Parameter verification failed. |
@@ -9069,9 +9396,10 @@ static setHostIP(hostName: string, address: string, aliveTime: number): void
 
 
 
-#### clearHostIP12+
+## clearHostIP12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static clearHostIP(hostName: string): void
 
@@ -9081,6 +9409,7 @@ static clearHostIP(hostName: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | hostName | string | 是 | 要清除DNS记录的主机域名。 |
@@ -9089,6 +9418,7 @@ static clearHostIP(hostName: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9134,9 +9464,10 @@ struct WebComponent {
 
 
 
-#### getSurfaceId12+
+## getSurfaceId12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSurfaceId(): string
 
@@ -9149,6 +9480,7 @@ getSurfaceId(): string
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -9195,9 +9527,10 @@ struct Example{
 
 
 
-#### setUrlTrustList12+
+## setUrlTrustList12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setUrlTrustList(urlTrustList: string): void
 
@@ -9207,12 +9540,14 @@ setUrlTrustList(urlTrustList: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | urlTrustList | string | 是 | URL白名单列表，使用json格式配置，最大支持10MB。 白名单设置接口为覆盖方式，多次调用接口时，以最后一次设置为准。 当本参数为空字符串时，表示取消白名单，放行所有URL的访问。 json格式示例： { "UrlPermissionList": [ { "scheme": "https", "host": "www.example1.com", "port": 443, "path": "pathA/pathB" }, { "scheme": "http", "host": "www.example2.com", "port": 80, "path": "test1/test2/test3" } ] } |
 
 
 **白名单json格式参数**
+
 
 | 字段 | 参数类型 | 必填 | 参数描述 |
 | --- | --- | --- | --- |
@@ -9225,6 +9560,7 @@ setUrlTrustList(urlTrustList: string): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9298,13 +9634,14 @@ struct WebComponent {
 
 
 
-#### setPathAllowingUniversalAccess12+
+## setPathAllowingUniversalAccess12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setPathAllowingUniversalAccess(pathList: Array&lt;string&gt;): void
 
-设置一个路径列表，当file协议访问该路径列表中的资源时，允许跨域访问本地文件，也允许跨域访问其他在线资源。此外，当设置了路径列表时，file协议仅允许访问路径列表中的资源（[fileAccess](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-attributes#fileaccess)的行为将会被此接口行为覆盖）。
+设置一个路径列表，当file协议访问该路径列表中的资源时，允许跨域访问本地文件，也允许跨域访问其他在线资源。此外，当设置了路径列表时，file协议仅允许访问路径列表中的资源。典型使用场景：用于需要允许Web组件跨域访问本地资源文件，同时限制访问范围以保证安全的场景。（[fileAccess](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-attributes#fileaccess)的行为将会被此接口行为覆盖）。
 
 setPathAllowingUniversalAccess放开目录的跨域访问限制是一个高风险操作。基于最小权限原则，当前el1，el2放开的路径是固定的，路径列表中的路径应符合以下任一路径格式：
 
@@ -9339,6 +9676,7 @@ setPathAllowingUniversalAccess放开目录的跨域访问限制是一个高风�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pathList | Array&lt;string&gt; | 是 | 路径列表 |
@@ -9347,6 +9685,7 @@ setPathAllowingUniversalAccess放开目录的跨域访问限制是一个高风�
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9448,9 +9787,10 @@ body.appendChild(element);
 
 
 
-#### enableBackForwardCache12+
+## enableBackForwardCache12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static enableBackForwardCache(features: BackForwardCacheSupportedFeatures): void
 
@@ -9461,6 +9801,7 @@ static enableBackForwardCache(features: BackForwardCacheSupportedFeatures): void
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -9492,9 +9833,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### setBackForwardCacheOptions12+
+## setBackForwardCacheOptions12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setBackForwardCacheOptions(options: BackForwardCacheOptions): void
 
@@ -9504,6 +9846,7 @@ setBackForwardCacheOptions(options: BackForwardCacheOptions): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | BackForwardCacheOptions | 是 | 用来控制Web组件前进后退缓存相关选项。 |
@@ -9512,6 +9855,7 @@ setBackForwardCacheOptions(options: BackForwardCacheOptions): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9555,9 +9899,10 @@ struct Index {
 
 
 
-#### trimMemoryByPressureLevel14+
+## trimMemoryByPressureLevel14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 trimMemoryByPressureLevel(level: PressureLevel): void
 
@@ -9567,6 +9912,7 @@ trimMemoryByPressureLevel(level: PressureLevel): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | level | PressureLevel | 是 | 需要清理内存的内存等级。 |
@@ -9575,6 +9921,7 @@ trimMemoryByPressureLevel(level: PressureLevel): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9614,9 +9961,10 @@ struct WebComponent {
 
 
 
-#### createPdf14+
+## createPdf14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPdf(configuration: PdfConfiguration, callback: AsyncCallback&lt;PdfData&gt;): void
 
@@ -9625,6 +9973,7 @@ createPdf(configuration: PdfConfiguration, callback: AsyncCallback&lt;PdfData&gt
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -9635,6 +9984,7 @@ createPdf(configuration: PdfConfiguration, callback: AsyncCallback&lt;PdfData&gt
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9702,9 +10052,10 @@ struct Index {
 
 
 
-#### createPdf14+
+## createPdf14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPdf(configuration: PdfConfiguration): Promise&lt;PdfData&gt;
 
@@ -9714,12 +10065,14 @@ createPdf(configuration: PdfConfiguration): Promise&lt;PdfData&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | configuration | PdfConfiguration | 是 | 生成PDF所需参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -9729,6 +10082,7 @@ createPdf(configuration: PdfConfiguration): Promise&lt;PdfData&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9791,9 +10145,10 @@ struct Index {
 
 
 
-#### getScrollOffset13+
+## getScrollOffset13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getScrollOffset(): ScrollOffset
 
@@ -9803,9 +10158,10 @@ getScrollOffset(): ScrollOffset
 
 **返回值**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| ScrollOffset | 网页当前的滚动偏移量（包含过滚动偏移量）。 |
+| ScrollOffset | 网页当前的滚动偏移量（包含过滚动偏移量），包含x和y坐标，单位为vp。 |
 
 
 **示例：**
@@ -9890,9 +10246,10 @@ Scroll Test
 
 
 
-#### getPageOffset20+
+## getPageOffset20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPageOffset(): ScrollOffset
 
@@ -9902,14 +10259,16 @@ getPageOffset(): ScrollOffset
 
 **返回值**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| ScrollOffset | 网页当前的滚动偏移量（不包含过滚动偏移量）。 |
+| ScrollOffset | 网页当前的滚动偏移量（不包含过滚动偏移量），包含x和y坐标，单位为vp。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -9979,9 +10338,10 @@ struct WebComponent {
 
 
 
-#### getLastHitTest18+
+## getLastHitTest18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLastHitTest(): HitTestValue
 
@@ -9991,6 +10351,7 @@ getLastHitTest(): HitTestValue
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | HitTestValue | 点击区域的元素信息。 |
@@ -9999,6 +10360,7 @@ getLastHitTest(): HitTestValue
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -10037,9 +10399,10 @@ struct WebComponent {
 
 
 
-#### getAttachState20+
+## getAttachState20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAttachState(): ControllerAttachState
 
@@ -10048,6 +10411,7 @@ getAttachState(): ControllerAttachState
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -10090,9 +10454,10 @@ struct WebComponent {
 
 
 
-#### on('controllerAttachStateChange')20+
+## on('controllerAttachStateChange')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(type: 'controllerAttachStateChange', callback: Callback&lt;ControllerAttachState&gt;): void
 
@@ -10101,6 +10466,7 @@ on(type: 'controllerAttachStateChange', callback: Callback&lt;ControllerAttachSt
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -10114,9 +10480,10 @@ on(type: 'controllerAttachStateChange', callback: Callback&lt;ControllerAttachSt
 
 
 
-#### off('controllerAttachStateChange')20+
+## off('controllerAttachStateChange')20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(type: 'controllerAttachStateChange', callback?: Callback&lt;ControllerAttachState&gt;): void
 
@@ -10125,6 +10492,7 @@ off(type: 'controllerAttachStateChange', callback?: Callback&lt;ControllerAttach
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -10189,17 +10557,19 @@ struct WebComponent {
 
 
 
-#### waitForAttached20+
+## waitForAttached20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 waitForAttached(timeout: number):Promise&lt;ControllerAttachState&gt;
 
-异步等待WebViewController与Web组件绑定完成，绑定完成或超时触发回调，通过Promise方式返回当前[ControllerAttachState](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-i#controllerattachstate20)状态。
+异步等待WebViewController与Web组件绑定完成，绑定完成或超时触发回调，通过Promise方式返回当前[ControllerAttachState](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-e#controllerattachstate20)状态。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -10207,6 +10577,7 @@ waitForAttached(timeout: number):Promise&lt;ControllerAttachState&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -10254,9 +10625,10 @@ struct WebComponent {
 
 
 
-#### setWebDebuggingAccess20+
+## setWebDebuggingAccess20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static setWebDebuggingAccess(webDebuggingAccess: boolean, port: number): void
 
@@ -10274,6 +10646,7 @@ static setWebDebuggingAccess(webDebuggingAccess: boolean, port: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | webDebuggingAccess | boolean | 是 | 设置是否启用网页调试功能。 true表示开启网页调试功能，false表示关闭网页调试功能。 |
@@ -10283,6 +10656,7 @@ static setWebDebuggingAccess(webDebuggingAccess: boolean, port: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -10319,9 +10693,10 @@ struct WebComponent {
 
 
 
-#### getProgress20+
+## getProgress20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getProgress(): number
 
@@ -10331,6 +10706,7 @@ getProgress(): number
 
 **返回值**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 当前页面加载进度，取值范围[0, 100] |
@@ -10339,6 +10715,7 @@ getProgress(): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -10369,9 +10746,10 @@ struct WebComponent {
 
 
 
-#### getHitTest(deprecated)
+## getHitTest(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getHitTest(): WebHitTestType
 
@@ -10385,6 +10763,7 @@ getHitTest(): WebHitTestType
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | WebHitTestType | 被点击区域的元素类型。 |
@@ -10393,6 +10772,7 @@ getHitTest(): WebHitTestType
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -10430,9 +10810,10 @@ struct WebComponent {
 
 
 
-#### getHitTestValue(deprecated)
+## getHitTestValue(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getHitTestValue(): HitTestValue
 
@@ -10446,6 +10827,7 @@ getHitTestValue(): HitTestValue
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | HitTestValue | 点击区域的元素信息。 |
@@ -10454,6 +10836,7 @@ getHitTestValue(): HitTestValue
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -10492,9 +10875,10 @@ struct WebComponent {
 
 
 
-#### avoidVisibleViewportBottom20+
+## avoidVisibleViewportBottom20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 avoidVisibleViewportBottom(avoidHeight: number): void
 
@@ -10508,6 +10892,7 @@ avoidVisibleViewportBottom(avoidHeight: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | avoidHeight | number | 是 | 设置Web网页可视视口底部避让高度。 单位：vp 合法取值范围：0~Web组件高度 非法值设置行为：小于0取值为0，大于Web组件高度取值为Web组件高度。 |
@@ -10516,6 +10901,7 @@ avoidVisibleViewportBottom(avoidHeight: number): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -10562,9 +10948,10 @@ struct WebComponent {
 
 
 
-#### setErrorPageEnabled20+
+## setErrorPageEnabled20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setErrorPageEnabled(enable: boolean): void
 
@@ -10576,6 +10963,7 @@ setErrorPageEnabled(enable: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | boolean | 是 | 表示是否启用默认错误页。true表示启用，false表示不启用。 |
@@ -10584,6 +10972,7 @@ setErrorPageEnabled(enable: boolean): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -10615,9 +11004,10 @@ struct WebComponent {
 
 
 
-#### getErrorPageEnabled20+
+## getErrorPageEnabled20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getErrorPageEnabled(): boolean
 
@@ -10626,6 +11016,7 @@ getErrorPageEnabled(): boolean
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -10636,6 +11027,7 @@ getErrorPageEnabled(): boolean
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 17100001 | Init error. The WebviewController must be associated with a Web component. |
@@ -10666,9 +11058,10 @@ struct WebComponent {
 
 
 
-#### enablePrivateNetworkAccess20+
+## enablePrivateNetworkAccess20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static enablePrivateNetworkAccess(enable: boolean): void
 
@@ -10683,6 +11076,7 @@ static enablePrivateNetworkAccess(enable: boolean): void
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -10713,9 +11107,10 @@ struct WebComponent {
 
 
 
-#### isPrivateNetworkAccessEnabled20+
+## isPrivateNetworkAccessEnabled20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static isPrivateNetworkAccessEnabled(): boolean
 
@@ -10728,6 +11123,7 @@ static isPrivateNetworkAccessEnabled(): boolean
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -10768,9 +11164,10 @@ struct WebComponent {
 
 
 
-#### getBlanklessInfoWithKey20+
+## getBlanklessInfoWithKey20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone
 
 getBlanklessInfoWithKey(key: string): BlanklessInfo
 
@@ -10786,12 +11183,14 @@ getBlanklessInfoWithKey(key: string): BlanklessInfo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 唯一标识本页面的key值。 合法取值范围：非空，长度不超过2048个字符。 设置非法值时不生效。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -10801,6 +11200,7 @@ getBlanklessInfoWithKey(key: string): BlanklessInfo
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -10846,9 +11246,10 @@ struct WebComponent {
 
 
 
-#### setBlanklessLoadingWithKey20+
+## setBlanklessLoadingWithKey20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone
 
 setBlanklessLoadingWithKey(key: string, is_start: boolean): WebBlanklessErrorCode
 
@@ -10862,6 +11263,7 @@ setBlanklessLoadingWithKey(key: string, is_start: boolean): WebBlanklessErrorCod
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 唯一标识本页面的key值。必须与getBlanklessInfoWithKey接口的key值相同。 合法取值范围：非空，长度不超过2048个字符。 非法值设置行为：返回错误码WebBlanklessErrorCode，方案不生效。 |
@@ -10869,6 +11271,7 @@ setBlanklessLoadingWithKey(key: string, is_start: boolean): WebBlanklessErrorCod
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -10878,6 +11281,7 @@ setBlanklessLoadingWithKey(key: string, is_start: boolean): WebBlanklessErrorCod
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -10923,9 +11327,10 @@ struct WebComponent {
 
 
 
-#### setBlanklessLoadingWithParams23+
+## setBlanklessLoadingWithParams23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone
 
 setBlanklessLoadingWithParams(key: string, param: BlanklessLoadingParam): WebBlanklessErrorCode
 
@@ -10941,6 +11346,7 @@ setBlanklessLoadingWithParams(key: string, param: BlanklessLoadingParam): WebBla
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 唯一标识本页面的key值。必须与getBlanklessInfoWithKey接口的key值相同。 合法取值范围：非空，长度不超过2048个字符。 非法值设置行为：返回错误码WebBlanklessErrorCode，方案不生效。 |
@@ -10948,6 +11354,7 @@ setBlanklessLoadingWithParams(key: string, param: BlanklessLoadingParam): WebBla
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -10957,6 +11364,7 @@ setBlanklessLoadingWithParams(key: string, param: BlanklessLoadingParam): WebBla
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -11007,9 +11415,10 @@ struct WebComponent {
 
 
 
-#### clearBlanklessLoadingCache20+
+## clearBlanklessLoadingCache20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone
 
 static clearBlanklessLoadingCache(keys?: Array&lt;string&gt;): void
 
@@ -11025,6 +11434,7 @@ static clearBlanklessLoadingCache(keys?: Array&lt;string&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keys | Array&lt;string&gt; | 否 | 清除Blankless优化方案页面的key值列表，key值为getBlanklessInfoWithKey中指定过的。 默认值：所有Blankless优化方案缓存的页面key列表。 合法取值范围：长度不超过2048，key列表长度<=100。key和加载页面时输入给ArkWeb的相同。 非法值设置行为：传入undefined/null会抛出异常错误码401；key长度超过2048时该key不生效；长度超过100时，取前100个；当为空时，使用默认值。 |
@@ -11033,6 +11443,7 @@ static clearBlanklessLoadingCache(keys?: Array&lt;string&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -11070,9 +11481,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### setBlanklessLoadingCacheCapacity20+
+## setBlanklessLoadingCacheCapacity20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone
 
 static setBlanklessLoadingCacheCapacity(capacity: number): number
 
@@ -11082,12 +11494,14 @@ static setBlanklessLoadingCacheCapacity(capacity: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | capacity | number | 是 | 设置持久化缓存设置，单位MB，最大设置不超过100MB。 合法取值范围：[0, 100]，当设置为0时，无缓存空间，则功能全局不开启。 非法值设置行为：小于0时生效值为0，大于100时生效值为100。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -11097,6 +11511,7 @@ static setBlanklessLoadingCacheCapacity(capacity: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -11128,9 +11543,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### setWebDestroyMode20+
+## setWebDestroyMode20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setWebDestroyMode(mode: WebDestroyMode): void
 
@@ -11143,6 +11559,7 @@ setWebDestroyMode(mode: WebDestroyMode): void
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -11169,9 +11586,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### setScrollbarMode23+
+## setScrollbarMode23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static setScrollbarMode(scrollbarMode: ScrollbarMode): void
 
@@ -11184,6 +11602,7 @@ static setScrollbarMode(scrollbarMode: ScrollbarMode): void
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -11239,13 +11658,14 @@ Scroll Test
 
 
 
-#### setActiveWebEngineVersion20+
+## setActiveWebEngineVersion20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static setActiveWebEngineVersion(engineVersion: ArkWebEngineVersion): void
 
-设置ArkWeb内核版本。若系统不支持指定版本，则设置无效，使用系统默认内核（可参考[约束与限制](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-component-overview#约束与限制)）。该接口为全局静态API，须在调用initializeWebEngine前执行，若已加载任何Web组件，则该设置无效。
+设置ArkWeb内核版本。若系统不支持指定版本，则设置无效，使用系统默认内核（可参考[约束与限制](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-component-overview#约束与限制)）。该接口为全局静态API，须在调用initializeWebEngine前执行，若已加载任何Web组件，则该设置无效。典型使用场景：使用特定内核版本的特性或兼容性需求时，可切换到对应内核版本。
 
 **遗留内核适配：**
 
@@ -11260,6 +11680,7 @@ static setActiveWebEngineVersion(engineVersion: ArkWebEngineVersion): void
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -11289,9 +11710,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### getActiveWebEngineVersion20+
+## getActiveWebEngineVersion20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getActiveWebEngineVersion(): ArkWebEngineVersion
 
@@ -11300,6 +11722,7 @@ static getActiveWebEngineVersion(): ArkWebEngineVersion
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -11312,9 +11735,10 @@ static getActiveWebEngineVersion(): ArkWebEngineVersion
 
 
 
-#### isActiveWebEngineEvergreen23+
+## isActiveWebEngineEvergreen23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static isActiveWebEngineEvergreen(): boolean
 
@@ -11323,6 +11747,7 @@ static isActiveWebEngineEvergreen(): boolean
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -11351,19 +11776,21 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### setAutoPreconnect21+
+## setAutoPreconnect21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static setAutoPreconnect(enabled: boolean): void
 
 设置Web内核的自动预连接状态。若未设置，默认启用自动预连接。
 
-需要在[initializeWebEngine()](#initializewebengine)初始化内核或者创建Web组件之前调用。
+需要在[initializeWebEngine()](#initializewebengine)初始化内核或者创建Web组件之前调用。若已加载任何Web组件，则该设置无效。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -11388,9 +11815,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### isAutoPreconnectEnabled21+
+## isAutoPreconnectEnabled21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static isAutoPreconnectEnabled(): boolean
 
@@ -11401,6 +11829,7 @@ static isAutoPreconnectEnabled(): boolean
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -11434,9 +11863,10 @@ struct WebComponent {
 
 
 
-#### getSiteIsolationMode21+
+## getSiteIsolationMode21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getSiteIsolationMode(): SiteIsolationMode
 
@@ -11445,6 +11875,7 @@ static getSiteIsolationMode(): SiteIsolationMode
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -11477,13 +11908,14 @@ struct WebComponent {
 
 
 
-#### setSiteIsolationMode21+
+## setSiteIsolationMode21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setSiteIsolationMode(mode: SiteIsolationMode): void
 
-设置站点隔离模式。站点隔离机制将不同源的网站隔离在不同的Render进程中，减少跨域攻击面。例如：PC等设备上，在未启用站点隔离模式时，原有进程模型是每一个Tab对应一个Render进程，开启站点隔离后，一个Tab下不同源的Iframe可在独立的Render进程中运行。
+设置站点隔离模式。站点隔离机制将不同源的网站隔离在不同的渲染进程中，减少跨域攻击面。例如：PC等设备上，在未启用站点隔离模式时，原有进程模型是每一个Tab对应一个渲染进程，开启站点隔离后，一个Tab下不同源的Iframe可在独立的渲染进程中运行。
 
 对于仅加载可信网页的第三方应用，可以关闭此功能，以提升性能并减少内存占用，同时减少跨域访问的拦截。默认值根据不同的设备而定，PC/Table采用严格站点隔离[SiteIsolationMode.STRICT](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-e#siteisolationmode21)，Phone默认部分站点隔离[SiteIsolationMode.PARTIAL](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-e#siteisolationmode21)。[坚盾守护模式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-secure-shield-mode)下采用严格站点隔离。
 
@@ -11495,6 +11927,7 @@ setSiteIsolationMode(mode: SiteIsolationMode): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | SiteIsolationMode | 是 | 设置站点隔离模式。 默认值取决于设备类型和设备模式：PC/Tablet默认严格站点隔离，Phone默认部分站点隔离；坚盾守护模式默认严格站点隔离。 |
@@ -11503,6 +11936,7 @@ setSiteIsolationMode(mode: SiteIsolationMode): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -11539,9 +11973,10 @@ struct WebComponent {
 
 
 
-#### setSocketIdleTimeout21+
+## setSocketIdleTimeout21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static setSocketIdleTimeout(timeout: number): void
 
@@ -11552,6 +11987,7 @@ static setSocketIdleTimeout(timeout: number): void
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -11575,17 +12011,19 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### setSoftKeyboardBehaviorMode22+
+## setSoftKeyboardBehaviorMode22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setSoftKeyboardBehaviorMode(mode: WebSoftKeyboardBehaviorMode): void
 
-设置软键盘自动控制模式，当接口没有显式调用时，Web组件失去焦点或获得焦点、状态切换为inactive或active时，系统均会尝试触发软键盘自动隐藏或拉起。
+设置软键盘自动控制模式，当接口没有显式调用时，Web组件失去焦点或获得焦点、状态切换为inactive或active时，系统均会尝试触发软键盘自动隐藏或拉起。典型使用场景：不希望Web组件在inactive或active状态切换时自动隐藏或重新拉起软键盘时，可使用DISABLE_AUTO_KEYBOARD_ON_ACTIVE；需要保留默认自动管理行为时，可使用DEFAULT。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -11595,6 +12033,7 @@ setSoftKeyboardBehaviorMode(mode: WebSoftKeyboardBehaviorMode): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -11626,9 +12065,10 @@ struct WebComponent {
 
 
 
-#### resumeMicrophone23+
+## resumeMicrophone23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 resumeMicrophone(): void
 
@@ -11639,6 +12079,7 @@ resumeMicrophone(): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -11664,6 +12105,10 @@ struct WebComponent {
   aboutToAppear(): void {
     let context: Context | undefined = this.uiContext.getHostContext() as common.UIAbilityContext;
     atManager.requestPermissionsFromUser(context, ['ohos.permission.MICROPHONE'], (err: BusinessError, data: PermissionRequestResult) => {
+      if (err) {
+        console.error(`ErrorCode: ${err.code}, Message: ${err.message}`);
+        return;
+      }
       console.info('data:' + JSON.stringify(data));
       console.info('data permissions:' + data.permissions);
       console.info('data authResults:' + data.authResults);
@@ -11761,19 +12206,25 @@ struct WebComponent {
 
 
 
-#### pauseMicrophone23+
+## pauseMicrophone23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pauseMicrophone(): void
 
 暂停当前网页麦克风捕获。
+
+> [!NOTE]
+> 与resumeMicrophone和stopMicrophone的区别： pauseMicrophone仅暂停麦克风捕获，可通过resumeMicrophone恢复；stopMicrophone会停止捕获并释放资源。
+
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -11786,9 +12237,10 @@ pauseMicrophone(): void
 
 
 
-#### stopMicrophone23+
+## stopMicrophone23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopMicrophone(): void
 
@@ -11800,6 +12252,7 @@ stopMicrophone(): void
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 17100001 | Init error. The WebviewController must be associated with a Web component. |
@@ -11811,9 +12264,10 @@ stopMicrophone(): void
 
 
 
-#### setUserAgentClientHintsEnabled24+
+## setUserAgentClientHintsEnabled24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static setUserAgentClientHintsEnabled(enabled: boolean): void
 
@@ -11826,6 +12280,7 @@ static setUserAgentClientHintsEnabled(enabled: boolean): void
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -11919,9 +12374,10 @@ struct WebComponent {
 
 
 
-#### getUserAgentClientHintsEnabled24+
+## getUserAgentClientHintsEnabled24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static getUserAgentClientHintsEnabled(): boolean
 
@@ -11930,6 +12386,7 @@ static getUserAgentClientHintsEnabled(): boolean
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -11942,9 +12399,10 @@ static getUserAgentClientHintsEnabled(): boolean
 
 
 
-#### setUserAgentMetadata24+
+## setUserAgentMetadata24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setUserAgentMetadata(userAgent: string, metaData: UserAgentMetadata): void
 
@@ -11958,6 +12416,7 @@ setUserAgentMetadata(userAgent: string, metaData: UserAgentMetadata): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | userAgent | string | 是 | 用户自定义代理信息。可以使用getUserAgent获取当前默认用户代理。 |
@@ -11970,9 +12429,10 @@ setUserAgentMetadata(userAgent: string, metaData: UserAgentMetadata): void
 
 
 
-#### getUserAgentMetadata24+
+## getUserAgentMetadata24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUserAgentMetadata(userAgent: string): UserAgentMetadata
 
@@ -11982,12 +12442,14 @@ getUserAgentMetadata(userAgent: string): UserAgentMetadata
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | userAgent | string | 是 | 用户自定义代理信息。可以使用getUserAgent获取当前默认用户代理。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -12000,9 +12462,10 @@ getUserAgentMetadata(userAgent: string): UserAgentMetadata
 
 
 
-#### setUrlTrustList24+
+## setUrlTrustList24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setUrlTrustList(urlTrustList: string, allowOpaqueOrigin: boolean, supportWildcard: boolean): void
 
@@ -12012,6 +12475,7 @@ setUrlTrustList(urlTrustList: string, allowOpaqueOrigin: boolean, supportWildcar
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | urlTrustList | string | 是 | URL白名单列表，使用json格式配置，最大支持10MB。 白名单设置接口为覆盖方式，多次调用接口时，以最后一次设置为准。 当本参数为空字符串时，表示取消白名单，放行所有URL的访问。 json格式示例： { "UrlPermissionList": [ { "scheme": "https", "host": "www.example1.com", "port": 443, "path": "pathA/pathB" }, { "scheme": "http", "host": "www.example2.com", "port": 80, "path": "test1/test2/test3" } ] } |
@@ -12020,6 +12484,7 @@ setUrlTrustList(urlTrustList: string, allowOpaqueOrigin: boolean, supportWildcar
 
 
 **白名单json格式参数**
+
 
 | 字段 | 参数类型 | 必填 | 参数描述 |
 | --- | --- | --- | --- |
@@ -12032,6 +12497,7 @@ setUrlTrustList(urlTrustList: string, allowOpaqueOrigin: boolean, supportWildcar
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)、[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -12115,13 +12581,14 @@ struct WebComponent {
 
 
 
-#### enableAdvancedSecurityMode
+## enableAdvancedSecurityMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static enableAdvancedSecurityMode(securityParams: SecurityParams): void
 
-通过配置安全特性选项禁用特定的Web引擎能力，以降低攻击面。
+通过配置安全特性选项禁用特定的Web引擎能力，以降低攻击面。典型使用场景包括：高安全要求的应用（如金融、政务类应用）应启用高级安全模式以禁用不必要的Web引擎能力。
 
 > [!NOTE]
 > 该接口为全局静态API，在整个APP生命周期中调用一次即可，不需要重复调用。 必须在 initializeWebEngine() 之前调用，否则设置无效。
@@ -12134,6 +12601,7 @@ static enableAdvancedSecurityMode(securityParams: SecurityParams): void
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -12173,9 +12641,10 @@ struct WebComponent {
 
 
 
-#### executeAIPageCommand
+## executeAIPageCommand
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 executeAIPageCommand(command: string): Promise&lt;string&gt;
 
@@ -12193,6 +12662,7 @@ executeAIPageCommand(command: string): Promise&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | command | string | 是 | JSON格式的命令参数。不同命令的参数格式不同，查询类命令请参见AIPageCommand，交互类命令请参见AIPageInteraction。 |
@@ -12200,14 +12670,16 @@ executeAIPageCommand(command: string): Promise&lt;string&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;string&gt; | Promise对象，返回JSON格式的命令执行结果。不同命令的返回格式不同。执行失败或无返回值时，返回空字符串。 |
+| Promise&lt;string&gt; | Promise对象，执行成功时返回JSON格式的命令执行结果，执行失败或无返回值时返回空字符串。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -12249,3 +12721,135 @@ struct WebComponent {
   }
 }
 ```
+
+
+
+## setErrorPageEnabled
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+setErrorPageEnabled(enable: boolean, includeSubframe: boolean): void
+
+设置是否启用mainframe错误页功能，并可控制是否同时启用subframe错误页功能。
+
+当enable设置为true时，mainframe加载发生错误将展示错误页：若设置了[onOverrideErrorPage](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-events#onoverrideerrorpage20)回调，则展示用户自定义的错误页；若未设置，则展示ArkWeb提供的默认错误页。当enable和includeSubframe同时设置为true时，subframe加载发生错误也会展示错误页，onOverrideErrorPage回调对subframe同样生效。
+
+> [!NOTE]
+> 当enable设置为false时，无论includeSubframe取何值，mainframe和subframe的错误页功能均不启用。 当includeSubframe设置为false时，本接口行为与 setErrorPageEnabled 20+ 一致，即仅启用mainframe错误页功能，不启用subframe错误页功能。 可通过 errorPageEvent.request.isMainFrame() 判断错误来源是mainframe还是subframe，以便在onOverrideErrorPage回调中分别设置对应的自定义错误页。
+
+
+**起始版本：** 26.0.0
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| enable | boolean | 是 | 表示是否启用mainframe错误页功能。true表示启用，false表示不启用。启用后mainframe加载出错将展示错误页。 |
+| includeSubframe | boolean | 是 | 表示是否同时启用subframe错误页功能。true表示启用，false表示不启用。启用后subframe加载出错也将展示错误页。仅在enable为true时有效。 |
+
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 17100001 | Init error. The WebviewController must be associated with a Web component. |
+
+
+**示例：**
+
+```ArkTS
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+
+  build() {
+    Column() {
+      Web({ src: $rawfile("iframe_error.html"), controller: this.controller })
+        .onControllerAttached(() => {
+          // 启用mainframe和subframe错误页功能
+          this.controller.setErrorPageEnabled(true, true);
+          // 查询subframe错误页功能是否已启用
+          let isSubframeEnabled: boolean = this.controller.getSubframeErrorPageEnabled();
+          console.info("Subframe error page enabled: " + isSubframeEnabled);
+        })
+        .onOverrideErrorPage((event) => {
+          if (event.request.isMainFrame()) {
+            return "<html><body><h1>主页面加载失败</h1><p>错误码：" + event.error.getErrorCode() + "</p></body></html>";
+          }
+          return "<html><body><h1>子页面加载失败</h1><p>错误码：" + event.error.getErrorCode() + "</p></body></html>";
+        })
+    }
+  }
+}
+```
+
+```text
+<!-- resources/rawfile/iframe_error.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>iframe</title>
+</head>
+<body>
+<iframe src="https://error-test.com/" title="iframe_error.html" loading="lazy" referrerpolicy="no-referrer" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+</body>
+</html>
+```
+
+> [!NOTE]
+> 
+
+
+
+
+## getSubframeErrorPageEnabled
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+getSubframeErrorPageEnabled(): boolean
+
+查询是否启用了subframe错误页功能。
+
+**起始版本：** 26.0.0
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**返回值：**
+
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回是否启用subframe错误页功能。 - true：已启用subframe错误页功能（即enable和includeSubframe均为true）； - false：未启用subframe错误页功能（包括未启用错误页功能、或启用了错误页功能但未启用subframe错误页功能两种情况）。 |
+
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Webview错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-webview)。
+
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 17100001 | Init error. The WebviewController must be associated with a Web component. |
+
+
+**示例：**
+
+完整示例代码参考[setErrorPageEnabled](#seterrorpageenabled)。

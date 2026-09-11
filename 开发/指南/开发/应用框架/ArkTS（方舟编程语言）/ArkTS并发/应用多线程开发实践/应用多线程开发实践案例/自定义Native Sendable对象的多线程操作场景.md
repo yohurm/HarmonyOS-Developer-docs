@@ -1,6 +1,6 @@
 # 自定义Native Sendable对象的多线程操作场景
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-define-sendable-object
 
@@ -45,6 +45,17 @@ add_definitions("-DLOG_TAG=\"testTag\"")
 
 add_library(entry SHARED napi_init.cpp)
 target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so)
+```
+  修改与Index.d.ets同目录下的配置文件oh-package.json5，配置如下：
+
+  
+```ArkTS
+{
+  "name": "libentry.so",
+  "types": "./Index.d.ets",
+  "version": "1.0.0",
+  "description": "Please describe the basic information."
+}
 ```
 
 3. Native实现各项接口功能，例如取值、设置值或者给Native对象的值加1等功能。
@@ -196,7 +207,7 @@ napi_value MyObject::Init(napi_env env, napi_value exports)
     // 定义一个Sendable class MyObject
     napi_define_sendable_class(env, "MyObject", NAPI_AUTO_LENGTH, New, nullptr,
                                sizeof(properties) / sizeof(properties[0]), properties, nullptr, &cons);
-
+    // &g_ref与模块同生命周期
     napi_create_reference(env, cons, 1, &g_ref);
     // 在exports对象上挂载MyObject类
     napi_set_named_property(env, exports, "MyObject", cons);
@@ -270,17 +281,5 @@ struct Index {
     }
     .height('100%')
   }
-}
-```
-
-5. 修改与Index.d.ets同目录下的配置文件oh-package.json5，配置如下：
-
-  
-```ArkTS
-{
-  "name": "libentry.so",
-  "types": "./Index.d.ets",
-  "version": "1.0.0",
-  "description": "Please describe the basic information."
 }
 ```

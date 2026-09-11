@@ -1,19 +1,20 @@
 # K歌解决方案
 
-更新时间：2026-07-28 03:34:01
+更新时间：2026-09-02 03:30:31
 
 来源：https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-karaoke-singing
 
-#### 概述
+## 概述
 
-本文适用于K歌应用的开发，针对市场上主流K歌应用的常见场景，介绍了如何基于[AudioCapturer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiocapturer)、[AudioRenderer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer)、[AudioLoopback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audioloopback)、[AudioRoutingManager](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audioroutingmanager)、[AVPlayer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer)开发一个K歌应用。本文指导开发者实现[原唱和伴奏同步播放](#section1431816338165)、[K歌录音采集](#section5737811161413)、[人声和伴奏混音合成](#section16271239854)、[K歌音频耳返](#section728015301074)、[K歌混响音效](#section4522123111718)、[K歌设备检测管理](#section123557411719)等K歌常见功能。
+本文适用于K歌应用的开发，针对市场上主流K歌应用的常见场景，介绍了如何基于[Interface (AudioCapturer)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiocapturer)、[Interface (AudioRenderer)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer)、[Interface (AudioLoopback)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audioloopback)、[Interface (AudioRoutingManager)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audioroutingmanager)、[Interface (AVPlayer)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avplayer)开发一个K歌应用。本文指导开发者实现[原唱和伴奏同步播放](#section1431816338165)、[K歌录音采集](#section5737811161413)、[人声和伴奏混音合成](#section16271239854)、[K歌音频耳返](#section728015301074)、[K歌混响音效](#section4522123111718)、[K歌设备检测管理](#section123557411719)等K歌常见功能。
  
  
 
-#### 场景分析
+## 场景分析
 
 K歌各功能的实现方式如下表所示：
   
+
 | 功能 | 实现方式 |
 | --- | --- |
 | 原唱和伴奏同步播放 | OH_AVPlayer |
@@ -26,24 +27,25 @@ K歌各功能的实现方式如下表所示：
  
  
 
-#### 原唱和伴奏同步播放
+## 原唱和伴奏同步播放
 
  
 
-#### 场景描述
+### 场景描述
 
 在K歌时，单击首页中的原唱和伴奏按钮，可以实时选择播放带人声的原版音乐或者播放纯伴奏音乐。单击首页面底部的音量按钮，弹出音量设置面板，通过设置伴奏音量可以调整播放器的音量。伴奏音量设置如下图所示：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/skwz7DtcQs-HMx-3NXbiQw/zh-cn_image_0000002654119836.png?HW-CC-KV=V1&HW-CC-Date=20260730T072735Z&HW-CC-Expire=86400&HW-CC-Sign=645C116E6562330A64E80EE5DC6E291CE4013E4F2FE709F6A3B5F0D0B4491FB8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/wEP8zEYcSTyPY9Yciqda7w/zh-cn_image_0000002654119836.png?HW-CC-KV=V1&HW-CC-Date=20260911T072258Z&HW-CC-Expire=86400&HW-CC-Sign=A8B85608E370D5DCA763588FA306A2EA827DDAF1E76901FCCC41DDBD7ECFD843)
 
  
  
 
-#### 实现原理
+### 实现原理
 
 使用两个独立的[OH_AVPlayer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avplayer-oh-avplayer)作为原唱播放器和伴奏播放器，在原唱模式下，将伴奏播放器的音量设置为0；在伴奏模式下，将原唱播放器的音量设置为0。两个播放器同步播放，共享原唱播放器的播放位置。
   
+
 | 模式 | 播放模式值 | 原唱音量 | 伴奏音量 |
 | --- | --- | --- | --- |
 | 原唱 | ORIGINAL | 音量调节设置的伴奏音量 | 0 |
@@ -52,7 +54,7 @@ K歌各功能的实现方式如下表所示：
  
  
 
-#### 开发步骤
+### 开发步骤
 
 1. 通过[OH_AVPlayer_Create()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avplayer-h#oh_avplayer_create)创建原唱播放器和伴奏播放器。
  
@@ -116,24 +118,25 @@ g_position = position;
  
  
 
-#### K歌录音采集
+## K歌录音采集
 
  
 
-#### 场景描述
+### 场景描述
 
 K歌过程中需要录制麦克风采集的音频数据，用于后续人声和伴奏的混音合成、耳返以及K歌文件的保存。单击首页面底部的录制按钮，开始录音采集。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/6jM-j7xHRqmId0m4oOu9Rg/zh-cn_image_0000002653959926.png?HW-CC-KV=V1&HW-CC-Date=20260730T072735Z&HW-CC-Expire=86400&HW-CC-Sign=9F9F236E5A9D9A3A385B63D438E69D0CCA04C959DC1FAD3DD5D738B9FE9DB1AA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/r2NZPfPpQiaNHK1bagkn9w/zh-cn_image_0000002653959926.png?HW-CC-KV=V1&HW-CC-Date=20260911T072258Z&HW-CC-Expire=86400&HW-CC-Sign=8C54A0D754D44BDEB0C6E04E3AD1A2A4931584C540F4AAB2EF38A6F3F6DCAE02)
 
  
  
 
-#### 实现原理
+### 实现原理
 
-通过[AudioCapturer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiocapturer)可以录制PCM（Pulse Code Modulation）音频数据。录音参数如下：
+通过[Interface (AudioCapturer)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiocapturer)可以录制PCM（Pulse Code Modulation）音频数据。录音参数如下：
   
+
 | 参数 | 值 | 说明 |
 | --- | --- | --- |
 | 采样率 | 44100 Hz | CD音质标准 |
@@ -144,7 +147,7 @@ K歌过程中需要录制麦克风采集的音频数据，用于后续人声和�
  
  
 
-#### 开发步骤
+### 开发步骤
 
 1. 通过[audio.createAudioCapturer()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-f#audiocreateaudiocapturer8)创建音频采集器。
  
@@ -169,7 +172,7 @@ try {
 }
 ```
  
-2. 通过[AudioCapturer.on('readData')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiocapturer#onreaddata11)设置录音回调，将接收到的PCM音频数据保存到文件中。
+2. 通过[on('readData')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiocapturer#onreaddata11)设置录音回调，将接收到的PCM音频数据保存到文件中。
  
 ```ArkTS
 this.audioCapturer.on('readData', (buffer: ArrayBuffer): void => {
@@ -190,7 +193,7 @@ this.audioCapturer.on('readData', (buffer: ArrayBuffer): void => {
 });
 ```
  
-3. 通过[AudioCapturer.start()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiocapturer#start8)启动录音。
+3. 通过[start()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiocapturer#start8)启动录音。
  
 ```ArkTS
 // Start AudioCapturer
@@ -199,21 +202,21 @@ await this.audioCapturer.start();
  
  
 
-#### 人声和伴奏混音合成
+## 人声和伴奏混音合成
 
  
 
-#### 场景描述
+### 场景描述
 
 录音后将人声和伴奏混音并合成一个文件，文件可以直接预览、导出或发布。单击首页面底部的音量按钮，弹出音量设置面板，打开混录模式，可以启用混音合成功能。混录模式设置如下图所示：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/nGQurNozR9OCo5wn1S1xWA/zh-cn_image_0000002684119549.png?HW-CC-KV=V1&HW-CC-Date=20260730T072735Z&HW-CC-Expire=86400&HW-CC-Sign=DAFD2FA5D73C1B267AF0F9828F6483992B61130796B517EA34DFAEE31010FC17)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/1vYMpYISQP2roxAdc7XeZQ/zh-cn_image_0000002684119549.png?HW-CC-KV=V1&HW-CC-Date=20260911T072258Z&HW-CC-Expire=86400&HW-CC-Sign=A919596CCA2FB615BD9611FC9CEF01BA52EC9831F87BCD99398C6D7050B07554)
 
  
  
 
-#### 实现原理
+### 实现原理
 
 提取[K歌录音采集](#section5737811161413)保存的人声PCM数据，然后与伴奏的PCM数据进行混合。混合时保持人声不变，按照伴奏的音量调整伴奏PCM数据。
  
@@ -223,7 +226,7 @@ await this.audioCapturer.start();
  
  
 
-#### 开发步骤
+### 开发步骤
 
 1. 读取人声PCM数据。
  
@@ -321,24 +324,25 @@ for (size_t i = 0; i < mixSize; i += DEFAULT_BITS_PER_SAMPLE / SIZE_8BITS) {
  
  
 
-#### K歌音频耳返
+## K歌音频耳返
 
  
 
-#### 场景描述
+### 场景描述
 
 耳返是指通过耳机系统将音频实时传输到耳机中，让使用者能够听到自己的声音、伴奏或其它需要的信息。在K歌类应用中，将录制的人声和背景音乐实时传输到耳机中，使用户通过反馈即时调整，获得更好的使用体验。单击首页面底部的音量按钮，弹出音量设置面板，可以在耳返模式中设置硬件耳返、软件耳返，可以调节耳返音量。耳返设置如下图所示：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/yN1hc5iJQ_moAN4c8jAVNg/zh-cn_image_0000002684279371.png?HW-CC-KV=V1&HW-CC-Date=20260730T072735Z&HW-CC-Expire=86400&HW-CC-Sign=7FA17BE5494B0F8C60EB992297F53F60E8620E950650B7DB5329CEF5D3900A57)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/wyOdI6LdTRCyMiMmzES6Vw/zh-cn_image_0000002684279371.png?HW-CC-KV=V1&HW-CC-Date=20260911T072258Z&HW-CC-Expire=86400&HW-CC-Sign=5F334AF8B7892F4FFFBF8BD560D79F5C9A86C6EFB637996696CC6EC51B05B465)
 
  
  
 
-#### 实现原理
+### 实现原理
 
 当前系统支持硬件耳返和软件耳返两种方案，具体原理可参考：[基于Audio能力实现音频耳返](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-in-ear-monitor)，实现方式如下表：
   
+
 | 耳返模式 | 实现方式 |
 | --- | --- |
 | 硬件耳返 | AudioLoopback |
@@ -347,7 +351,7 @@ for (size_t i = 0; i < mixSize; i += DEFAULT_BITS_PER_SAMPLE / SIZE_8BITS) {
  
  
 
-#### 开发步骤
+### 开发步骤
 
 1. 硬件耳返。
  
@@ -363,7 +367,7 @@ this.audioLoopback = await audio.createAudioLoopback(mode);
 Logger.info(TAG, 'AudioLoopback created');
 ```
 
-- 通过[AudioLoopback.getStatus()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audioloopback#getstatus20)获取音频返听状态，当返听状态为[AVAILABLE_IDLE](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-e#audioloopbackstatus20)时，表示返听可用，此时可调用[AudioLoopback.enable()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audioloopback#enable20)方法传入参数true，开启音频返听。
+- 通过[getStatus()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audioloopback#getstatus20)获取音频返听状态，当返听状态为[AudioLoopbackStatus](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-e#audioloopbackstatus20).AVAILABLE_IDLE时，表示返听可用，此时可调用[enable()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audioloopback#enable20)方法传入参数true，开启音频返听。
 ```ArkTS
 const status = await this.audioLoopback.getStatus();
 if (status === audio.AudioLoopbackStatus.AVAILABLE_RUNNING) {
@@ -378,7 +382,7 @@ if (!success) {
 }
 ```
 
-- 通过[AudioLoopback.setVolume()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audioloopback#setvolume20)调节音频返听音量。
+- 通过[setVolume()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audioloopback#setvolume20)调节音频返听音量。
 ```ArkTS
 try {
   await this.audioLoopback.setVolume(volume);
@@ -408,7 +412,7 @@ this.audioRenderer = await audio.createAudioRenderer({
 });
 ```
 
-- 通过[AudioRenderer.on('writeData')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer#onwritedata11)设置播放回调，将[K歌录音采集](#section5737811161413)录制的PCM音频数据写入到回调事件中。
+- 通过[on('writeData')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer#onwritedata11)设置播放回调，将[K歌录音采集](#section5737811161413)录制的PCM音频数据写入到回调事件中。
 ```ArkTS
 let bufferSize: number = this.recordedBytes;
 this.writeDataCallback = (buffer: ArrayBuffer): audio.AudioDataCallbackResult | void => {
@@ -439,13 +443,13 @@ this.writeDataCallback = (buffer: ArrayBuffer): audio.AudioDataCallbackResult | 
 };
 ```
 
-- 通过[AudioRenderer.start()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer#start8)启动播放。
+- 通过[start()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer#start8)启动播放。
 ```ArkTS
 // Start audioRenderer
 await this.audioRenderer.start();
 ```
 
-- 通过[AudioRenderer.setVolume()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer#setvolume9)调节音频返听音量。
+- 通过[setVolume()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer#setvolume9)调节音频返听音量。
 ```ArkTS
 try {
   await this.audioRenderer.setVolume(volume);
@@ -458,24 +462,25 @@ try {
  
  
 
-#### K歌混响音效
+## K歌混响音效
 
  
 
-#### 场景描述
+### 场景描述
 
 混响是K歌核心音频美化功能，通过模拟不同的环境效果，让声音更饱满通透。单击首页面底部的音效按钮，弹出音效设置面板，可以选择不同的混响音效。音效设置面板如下图所示：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/lSl2wRBgS7Cdd97UrpXzUw/zh-cn_image_0000002654119838.png?HW-CC-KV=V1&HW-CC-Date=20260730T072735Z&HW-CC-Expire=86400&HW-CC-Sign=BA2631405E462E64832CE9A4835E3CE6B437A6D8F80FA8F775A1730DB76F38F4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/pcw4HJySQOKTBpmmPe4R-A/zh-cn_image_0000002654119838.png?HW-CC-KV=V1&HW-CC-Date=20260911T072258Z&HW-CC-Expire=86400&HW-CC-Sign=E745C952457DD331D7BB1302E44859E1CCB69ECC07AA6DF14243C480014E7FE8)
 
  
  
 
-#### 实现原理
+### 实现原理
 
-使用[AudioLoopback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audioloopback)启用硬件耳返后，通过[setReverbPreset()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audioloopback#setreverbpreset21)可以设置耳返的混响模式。[AudioLoopbackReverbPreset](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-e#audioloopbackreverbpreset21)混响预置类型如下：
+使用AudioLoopback启用硬件耳返后，通过[setReverbPreset()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audioloopback#setreverbpreset21)可以设置耳返的混响模式。[AudioLoopbackReverbPreset](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-e#audioloopbackreverbpreset21)混响预置类型如下：
   
+
 | 名称 | 枚举值 | 数值 | 效果描述 |
 | --- | --- | --- | --- |
 | ORIGINAL | AudioLoopbackReverbPreset.ORIGINAL | 1 | 保持原始混响，不进行任何增强。 |
@@ -490,9 +495,9 @@ try {
  
  
 
-#### 开发步骤
+### 开发步骤
 
-通过[AudioLoopback.setReverbPreset()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audioloopback#setreverbpreset21)设置耳返的混响模式。
+通过[setReverbPreset()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audioloopback#setreverbpreset21)设置耳返的混响模式。
  
 ```ArkTS
 setReverbEffect(preset: audio.AudioLoopbackReverbPreset): void {
@@ -509,14 +514,15 @@ setReverbEffect(preset: audio.AudioLoopbackReverbPreset): void {
  
  
 
-#### K歌设备检测管理
+## K歌设备检测管理
 
  
 
-#### 场景描述
+### 场景描述
 
 在K歌时，实时检测耳机的连接状态，并根据状态变化做对应处理，处理方式如下表所示：
   
+
 | 场景 | 处理方法 |
 | --- | --- |
 | 有线耳机连接 | 更新设备状态，允许开启耳返 |
@@ -527,18 +533,18 @@ setReverbEffect(preset: audio.AudioLoopbackReverbPreset): void {
 单击首页面底部的设备按钮，弹出设备面板，用于显示设备连接状态。设备面板如下图所示：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/UblvLLbcSo6CBBBR0NkxWw/zh-cn_image_0000002653959928.png?HW-CC-KV=V1&HW-CC-Date=20260730T072735Z&HW-CC-Expire=86400&HW-CC-Sign=B34E67324B0736D7B0FBA41C4601CD9DB6C78C3A2EDE08BA8D7F99C1E0FE9200)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/2ACsihLDQrK5n8u_lCmboQ/zh-cn_image_0000002653959928.png?HW-CC-KV=V1&HW-CC-Date=20260911T072258Z&HW-CC-Expire=86400&HW-CC-Sign=F8045CE67A43B698CF1AD47F1A74F1D79B902E50A5AE60DB2C5105CD9186144E)
 
  
  
 
-#### 实现原理
+### 实现原理
 
-[AudioRoutingManager](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audioroutingmanager)提供管理全局音频设备的能力，包括查询设备信息、监听设备连接状态变化等。
+AudioRoutingManager提供管理全局音频设备的能力，包括查询设备信息、监听设备连接状态变化等。
  
  
 
-#### 开发步骤
+### 开发步骤
 
 1. 创建AudioRoutingManager实例。
  
@@ -548,7 +554,7 @@ this.audioManager = audio.getAudioManager();
 this.audioRoutingManager = this.audioManager.getRoutingManager();
 ```
  
-2. 通过[AudioRoutingManager.on('deviceChange')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audioroutingmanager#ondevicechange9)监听音频设备连接状态的变化。
+2. 通过[on('deviceChange')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audioroutingmanager#ondevicechange9)监听音频设备连接状态的变化。
  
 ```ArkTS
 const listener = async (deviceChangeInfo: audio.DeviceChangeAction): Promise<void> => {
@@ -579,7 +585,7 @@ this.deviceChangeListener = listener;
 this.audioRoutingManager?.on('deviceChange', audio.DeviceFlag.ALL_DEVICES_FLAG, listener);
 ```
  
-3. 通过[AudioRoutingManager.getDevices()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audioroutingmanager#getdevices9)获取音频设备列表，通过设备的[DeviceType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-e#devicetype)获取有线耳机和蓝牙耳机的状态，通过设备名称获取蓝牙耳机的名称。
+3. 通过[getDevices()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audioroutingmanager#getdevices9)获取音频设备列表，通过设备的[DeviceType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-e#devicetype)获取有线耳机和蓝牙耳机的状态，通过设备名称获取蓝牙耳机的名称。
  
 ```ArkTS
 const allDevices: audio.AudioDeviceDescriptors =
@@ -636,6 +642,6 @@ if (previousWiredHeadset && !state.hasWiredHeadset && this.earMonitorEnabled) {
  
  
 
-#### 示例代码
+## 示例代码
 
 - [开发K歌应用](https://gitcode.com/HarmonyOS_Samples/KaraokeSinging)

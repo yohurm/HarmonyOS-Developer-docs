@@ -25,9 +25,9 @@
 通过IBookUIComponent（书籍UI组件接口）规范组件实现，通过getUIBuilder获取组件构建器实现解耦。
 ```text
 export interface IBookUIComponent {
-  // 获取UI构建器
+ <em> // 获取UI构建器</em>
   getUIBuilder: WrappedBuilder<[]>;
-  // 组件名称
+ <em> // 组件名称</em>
   componentName?: string;
 }
 ```
@@ -41,7 +41,7 @@ export class EllaBookUIView {
   private constructor() {
   }
 
-  // 获取单例
+<em>  // 获取单例</em>
   public static getInstance(): EllaBookUIView {
     if (!EllaBookUIView.instance) {
       EllaBookUIView.instance = new EllaBookUIView();
@@ -49,18 +49,18 @@ export class EllaBookUIView {
     return EllaBookUIView.instance;
   }
 
-  // 注册组件
+ <em> // 注册组件</em>
   public registerComponent(component: IBookUIComponent): void {
     this.components.push(component);
     console.info(`[BookUIRegistry] 组件注册成功: ${component.componentName || '未命名组件'}`);
   }
 
-  // 获取所有组件构建器
+<em>  // 获取所有组件构建器</em>
   public getAllBuilders(): WrappedBuilder<[]>[] {
     return this.components.map(component => component.getUIBuilder);
   }
 
-  // 清除所有组件
+ <em> // 清除所有组件</em>
   public clearComponents(): void {
     this.components = [];
     console.info('[BookUIRegistry] 所有组件已清除');
@@ -74,34 +74,34 @@ export class EllaBookUIView {
 ```text
 @Component
 struct ControlButtons {
-  @State isPlaying: boolean = true; // 播放状态
+  @State isPlaying: boolean = true;<em> // 播放状态</em>
 
-  // 退出书籍
+ <em> // 退出书籍</em>
   private exitBook() {
     console.info('退出书籍');
   }
 
-  // 切换播放状态
+ <em> // 切换播放状态</em>
   private togglePlay() {
     this.isPlaying = !this.isPlaying;
     console.info(this.isPlaying ? '播放中' : '已暂停');
   }
 
-  // 上一页
+ <em> // 上一页</em>
   private prevPage() {
     console.info('上一页');
   }
 
-  // 下一页
+ <em> // 下一页</em>
   private nextPage() {
     console.info('下一页');
   }
 
   build() {
     Stack({ alignContent: Alignment.BottomStart }) {
-      // 顶部控制栏
+    <em>  // 顶部控制栏</em>
       Row() {
-        // 1.顶部最左侧---退出按钮
+      <em>  // 1.顶部最左侧---退出按钮</em>
         Button() {
           Image($r('app.media.xmark'))
             .objectFit(ImageFit.Contain);
@@ -111,12 +111,12 @@ struct ControlButtons {
         .backgroundColor(Color.Transparent)
         .borderRadius(20)
         .onClick(() => {
-          // 退出逻辑
+        <em>  // 退出逻辑</em>
           this.exitBook();
         });
 
         Blank();
-        // 2.顶部最右侧---播放/暂停按钮
+      <em>  // 2.顶部最右侧---播放/暂停按钮</em>
         Button() {
           if (this.isPlaying) {
             Image($r('app.media.pause'))
@@ -138,9 +138,9 @@ struct ControlButtons {
       .padding(10)
       .position({ x: 0, y: 0 });
 
-      // 底部控制栏
+    <em>  // 底部控制栏</em>
       Row() {
-        // 3.底部最左侧---上一页按钮
+     <em>   // 3.底部最左侧---上一页按钮</em>
         Button() {
           Image($r('app.media.chevron_left'))
             .objectFit(ImageFit.Contain);
@@ -154,7 +154,7 @@ struct ControlButtons {
         });
 
         Blank();
-        // 4.底部最右侧---下一页按钮
+     <em>   // 4.底部最右侧---下一页按钮</em>
         Button() {
           Image($r('app.media.chevron_right'))
             .objectFit(ImageFit.Contain);
@@ -175,7 +175,7 @@ struct ControlButtons {
   };
 }
 
-// 创建UI构建器
+<em>// 创建UI构建器</em>
 @Builder
 function controlBuilder() {
   ControlButtons();
@@ -208,7 +208,7 @@ Stack({ alignContent: Alignment.TopStart }) {
 
   ForEach(this.uiBuilders,
     (builder: WrappedBuilder<[]>) => {
-      // 使用公共属性传递索引
+     <em> // 使用公共属性传递索引</em>
       BuilderComponent({ builder: builder })
         .hitTestBehavior(HitTestMode.Transparent);
     }
@@ -220,15 +220,15 @@ Stack({ alignContent: Alignment.TopStart }) {
 完整示例如下：
  
 ```text
-// 书籍UI组件接口
+<em>// 书籍UI组件接口</em>
 export interface IBookUIComponent {
-  // 获取UI构建器
+ <em> // 获取UI构建器</em>
   getUIBuilder: WrappedBuilder<[]>;
-  // 组件名称
+ <em> // 组件名称</em>
   componentName?: string;
 }
 
-// 全局UI组件注册表
+<em>// 全局UI组件注册表</em>
 export class EllaBookUIView {
   private static instance: EllaBookUIView | null = null;
   private components: IBookUIComponent[] = [];
@@ -236,7 +236,7 @@ export class EllaBookUIView {
   private constructor() {
   }
 
-  // 获取单例
+ <em> // 获取单例</em>
   public static getInstance(): EllaBookUIView {
     if (!EllaBookUIView.instance) {
       EllaBookUIView.instance = new EllaBookUIView();
@@ -244,56 +244,56 @@ export class EllaBookUIView {
     return EllaBookUIView.instance;
   }
 
-  // 注册组件
+ <em> // 注册组件</em>
   public registerComponent(component: IBookUIComponent): void {
     this.components.push(component);
     console.info(`[BookUIRegistry] 组件注册成功: ${component.componentName || '未命名组件'}`);
   }
 
-  // 获取所有组件构建器
+ <em> // 获取所有组件构建器</em>
   public getAllBuilders(): WrappedBuilder<[]>[] {
     return this.components.map(component => component.getUIBuilder);
   }
 
-  // 清除所有组件
+ <em> // 清除所有组件</em>
   public clearComponents(): void {
     this.components = [];
     console.info('[BookUIRegistry] 所有组件已清除');
   }
 }
-// 导出全局单例
+<em>// 导出全局单例</em>
 export const ellaBookUIView = EllaBookUIView.getInstance();
 
 @Component
 struct ControlButtons {
-  @State isPlaying: boolean = true; // 播放状态
+  @State isPlaying: boolean = true; <em>// 播放状态</em>
 
-  // 退出书籍
+ <em> // 退出书籍</em>
   private exitBook() {
     console.info('退出书籍');
   }
 
-  // 切换播放状态
+<em>  // 切换播放状态</em>
   private togglePlay() {
     this.isPlaying = !this.isPlaying;
     console.info(this.isPlaying ? '播放中' : '已暂停');
   }
 
-  // 上一页
+ <em> // 上一页</em>
   private prevPage() {
     console.info('上一页');
   }
 
-  // 下一页
+ <em> // 下一页</em>
   private nextPage() {
     console.info('下一页');
   }
 
   build() {
     Stack({ alignContent: Alignment.BottomStart }) {
-      // 顶部控制栏
+     <em> // 顶部控制栏</em>
       Row() {
-        // 1.顶部最左侧---退出按钮
+      <em>  // 1.顶部最左侧---退出按钮</em>
         Button() {
           Image($r('app.media.xmark'))
             .objectFit(ImageFit.Contain);
@@ -303,12 +303,12 @@ struct ControlButtons {
         .backgroundColor(Color.Transparent)
         .borderRadius(20)
         .onClick(() => {
-          // 退出逻辑
+        <em>  // 退出逻辑</em>
           this.exitBook();
         });
 
         Blank();
-        // 2.顶部最右侧---播放/暂停按钮
+     <em>   // 2.顶部最右侧---播放/暂停按钮</em>
         Button() {
           if (this.isPlaying) {
             Image($r('app.media.pause'))
@@ -330,9 +330,9 @@ struct ControlButtons {
       .padding(10)
       .position({ x: 0, y: 0 });
 
-      // 底部控制栏
+    <em>  // 底部控制栏</em>
       Row() {
-        // 3.底部最左侧---上一页按钮
+      <em>  // 3.底部最左侧---上一页按钮</em>
         Button() {
           Image($r('app.media.chevron_left'))
             .objectFit(ImageFit.Contain);
@@ -346,7 +346,7 @@ struct ControlButtons {
         });
 
         Blank();
-        // 4.底部最右侧---下一页按钮
+      <em>  // 4.底部最右侧---下一页按钮</em>
         Button() {
           Image($r('app.media.chevron_right'))
             .objectFit(ImageFit.Contain);
@@ -367,7 +367,7 @@ struct ControlButtons {
   };
 }
 
-// 创建UI构建器
+<em>// 创建UI构建器</em>
 @Builder
 function controlBuilder() {
   ControlButtons();
@@ -401,7 +401,7 @@ struct Page {
 
         ForEach(this.uiBuilders,
           (builder: WrappedBuilder<[]>) => {
-            // 使用公共属性传递索引
+         <em>   // 使用公共属性传递索引</em>
             BuilderComponent({ builder: builder })
               .hitTestBehavior(HitTestMode.Transparent);
           }

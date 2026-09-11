@@ -1,16 +1,16 @@
 # 自定义字体的注册和使用（C/C++）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/custom-font-c
 
-#### 场景介绍
+## 场景介绍
 
 自定义字体是指开发者根据应用需求创建或选择的字体，通常用于实现特定的文字风格或满足独特的设计要求。当应用需要使用特定的文本样式和字符集时，可以注册并使用自定义字体进行文本渲染。
 
 
 
-#### 实现流程
+## 实现流程
 
 **自定义字体的注册**是指将字体文件（如ttf、otf文件等）从应用资源注册到系统中，使得应用能够使用这些字体进行文本渲染。注册过程通常指将字体文件通过字体管理接口注册到系统字体库中，以便在应用中进行调用。
 
@@ -18,22 +18,23 @@
 
 
 
-#### 接口说明
+## 接口说明
 
 注册使用自定义字体的相关接口如下所示，详细接口说明请参考[Drawing](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing)。
+
 
 | 接口名 | 描述 |
 | --- | --- |
 | OH_Drawing_CreateSharedFontCollection(void) | 创建可共享的字体集对象OH_Drawing_FontCollection。 |
-| OH_Drawing_RegisterFont(OH_Drawing_FontCollection* , const char* fontFamily, const char* familySrc ) | 用于在字体管理器中注册自定义字体，支持的字体文件格式包含：ttf、otf。 |
+| OH_Drawing_RegisterFont(OH_Drawing_FontCollection* fontCollection, const char* fontFamily, const char* familySrc) | 用于在字体管理器中注册自定义字体，支持的字体文件格式包含：ttf、otf。 |
 | OH_Drawing_CreateTextStyle(void) | 创建指向OH_Drawing_TextStyle对象的指针，用于设置文本样式。 |
-| OH_Drawing_SetTextStyleFontFamilies(OH_Drawing_TextStyle *, int, const char *fontFamilies[]) | 设置字体类型。 |
-| OH_Drawing_UnregisterFont(OH_Drawing_FontCollection* , const char* fontFamily) | 通过字体家族名称取消注册自定义字体。 |
+| OH_Drawing_SetTextStyleFontFamilies(OH_Drawing_TextStyle* style, int fontFamiliesNumber, const char *fontFamilies[]) | 设置指定文本样式的字体家族类型。 |
+| OH_Drawing_UnregisterFont(OH_Drawing_FontCollection* fontCollection, const char* fontFamily) | 通过字体家族名称取消注册自定义字体。 |
 
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 在工程的src/main/cpp/CMakeLists.txt文件中添加以下lib。
 
   

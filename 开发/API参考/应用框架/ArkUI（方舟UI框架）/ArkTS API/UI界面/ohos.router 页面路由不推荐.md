@@ -1,9 +1,9 @@
 # @ohos.router (页面路由)(不推荐)
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-router
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV | lite_wearable
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 本模块提供页面路由能力，支持通过url或命名路由进行页面跳转与替换、返回上一页面或指定页面、管理页面栈、获取页面状态与跳转参数、设置页面返回询问对话框等，适用于需要在应用内进行页面导航和流转的场景。
 
@@ -14,9 +14,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV | lite_wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 ```text
 import { router } from '@kit.ArkUI';
@@ -24,9 +25,10 @@ import { router } from '@kit.ArkUI';
 
 
 
-#### router.pushUrl(deprecated)
+## router.pushUrl(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pushUrl(options: RouterOptions): Promise&lt;void&gt;
 
@@ -42,12 +44,14 @@ pushUrl(options: RouterOptions): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | RouterOptions | 是 | 跳转页面描述信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -62,6 +66,7 @@ pushUrl(options: RouterOptions): Promise&lt;void&gt;
 > 该接口返回的以下错误码均为string类型。
 
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
@@ -73,8 +78,6 @@ pushUrl(options: RouterOptions): Promise&lt;void&gt;
 **示例：**
 
 ```text
-import { router } from '@kit.ArkUI';
-
 import { BusinessError } from '@kit.BasicServicesKit';
 
 class InnerParams {
@@ -102,16 +105,17 @@ router.pushUrl({
   .then(() => {
     console.info(`pushUrl finish`);
   })
-  .catch((err: BusinessError) => {
-    console.error(`pushUrl failed. Code: ${err.code}, message: ${err.message}`);
+  .catch((err: ESObject) => {
+    console.error(`pushUrl failed, code is ${(err as BusinessError).code}, message is ${(err as BusinessError).message}`);
   });
 ```
 
 
 
-#### router.pushUrl(deprecated)
+## router.pushUrl(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pushUrl(options: RouterOptions, callback: AsyncCallback&lt;void&gt;): void
 
@@ -127,6 +131,7 @@ pushUrl(options: RouterOptions, callback: AsyncCallback&lt;void&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | RouterOptions | 是 | 跳转页面描述信息。 |
@@ -141,6 +146,7 @@ pushUrl(options: RouterOptions, callback: AsyncCallback&lt;void&gt;): void
 > 该接口返回的以下错误码均为string类型。
 
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
@@ -152,8 +158,6 @@ pushUrl(options: RouterOptions, callback: AsyncCallback&lt;void&gt;): void
 **示例：**
 
 ```text
-import { router } from '@kit.ArkUI';
-
 class InnerParams {
   data3: number[];
 
@@ -177,7 +181,7 @@ router.pushUrl({
   params: new RouterParams('message', [123, 456, 789])
 }, (err) => {
   if (err) {
-    console.error(`pushUrl failed. Code: ${err.code}, message: ${err.message}`);
+    console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
     return;
   }
   console.info('pushUrl success');
@@ -186,9 +190,10 @@ router.pushUrl({
 
 
 
-#### router.pushUrl(deprecated)
+## router.pushUrl(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pushUrl(options: RouterOptions, mode: RouterMode): Promise&lt;void&gt;
 
@@ -204,6 +209,7 @@ pushUrl(options: RouterOptions, mode: RouterMode): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | RouterOptions | 是 | 跳转页面描述信息。 |
@@ -211,6 +217,7 @@ pushUrl(options: RouterOptions, mode: RouterMode): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -225,6 +232,7 @@ pushUrl(options: RouterOptions, mode: RouterMode): Promise&lt;void&gt;
 > 该接口返回的以下错误码均为string类型。
 
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
@@ -236,8 +244,6 @@ pushUrl(options: RouterOptions, mode: RouterMode): Promise&lt;void&gt;
 **示例：**
 
 ```text
-import { router } from '@kit.ArkUI';
-
 import { BusinessError } from '@kit.BasicServicesKit';
 
 class InnerParams {
@@ -265,16 +271,17 @@ router.pushUrl({
   .then(() => {
     console.info(`pushUrl finish`);
   })
-  .catch((err: BusinessError) => {
-    console.error(`pushUrl failed. Code: ${err.code}, message: ${err.message}`);
+  .catch((err: ESObject) => {
+    console.error(`pushUrl failed, code is ${(err as BusinessError).code}, message is ${(err as BusinessError).message}`);
   })
 ```
 
 
 
-#### router.pushUrl(deprecated)
+## router.pushUrl(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pushUrl(options: RouterOptions, mode: RouterMode, callback: AsyncCallback&lt;void&gt;): void
 
@@ -289,6 +296,7 @@ pushUrl(options: RouterOptions, mode: RouterMode, callback: AsyncCallback&lt;voi
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -305,6 +313,7 @@ pushUrl(options: RouterOptions, mode: RouterMode, callback: AsyncCallback&lt;voi
 > 该接口返回的以下错误码均为string类型。
 
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
@@ -316,8 +325,6 @@ pushUrl(options: RouterOptions, mode: RouterMode, callback: AsyncCallback&lt;voi
 **示例：**
 
 ```text
-import { router } from '@kit.ArkUI';
-
 class InnerParams {
   data3: number[];
 
@@ -341,7 +348,7 @@ router.pushUrl({
   params: new RouterParams('message', [123, 456, 789])
 }, router.RouterMode.Standard, (err) => {
   if (err) {
-    console.error(`pushUrl failed. Code: ${err.code}, message: ${err.message}`);
+    console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
     return;
   }
   console.info('pushUrl success');
@@ -350,9 +357,10 @@ router.pushUrl({
 
 
 
-#### router.replaceUrl(deprecated)
+## router.replaceUrl(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 replaceUrl(options: RouterOptions): Promise&lt;void&gt;
 
@@ -368,12 +376,14 @@ replaceUrl(options: RouterOptions): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | RouterOptions | 是 | 替换页面描述信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -388,6 +398,7 @@ replaceUrl(options: RouterOptions): Promise&lt;void&gt;
 > 该接口返回的以下错误码均为string类型。
 
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
@@ -398,8 +409,6 @@ replaceUrl(options: RouterOptions): Promise&lt;void&gt;
 **示例：**
 
 ```text
-import { router } from '@kit.ArkUI';
-
 import { BusinessError } from '@kit.BasicServicesKit';
 
 class RouterParams {
@@ -417,20 +426,21 @@ router.replaceUrl({
   .then(() => {
     console.info(`replaceUrl finish`);
   })
-  .catch((err: BusinessError) => {
-    console.error(`replaceUrl failed. Code: ${err.code}, message: ${err.message}`);
+  .catch((err: ESObject) => {
+    console.error(`replaceUrl failed, code is ${(err as BusinessError).code}, message is ${(err as BusinessError).message}`);
   })
 ```
 
 
 
-#### router.replaceUrl(deprecated)
+## router.replaceUrl(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 replaceUrl(options: RouterOptions, callback: AsyncCallback&lt;void&gt;): void
 
-用应用内的某个页面替换当前页面，并销毁被替换的页面。不支持设置页面转场动效，如需设置，推荐使用[Navigation组件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigation-architecture)。
+用应用内的某个页面替换当前页面，并销毁被替换的页面。
 
 > [!NOTE]
 > 从API version 9开始支持，除Lite Wearable外，从API version 18开始废弃，建议使用 replaceUrl(options: router.RouterOptions, callback: AsyncCallback&lt;void&gt;) 替代。replaceUrl需先通过 UIContext 中的 getRouter 获取 Router 实例，然后通过该实例进行调用。 从API version 10开始，可以通过使用 UIContext 中的 getRouter 方法获取当前UI上下文关联的 Router 对象。
@@ -441,6 +451,7 @@ replaceUrl(options: RouterOptions, callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Lite
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -456,6 +467,7 @@ replaceUrl(options: RouterOptions, callback: AsyncCallback&lt;void&gt;): void
 > 该接口返回的以下错误码均为string类型。
 
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
@@ -466,8 +478,6 @@ replaceUrl(options: RouterOptions, callback: AsyncCallback&lt;void&gt;): void
 **示例：**
 
 ```text
-import { router } from '@kit.ArkUI';
-
 class RouterParams {
   data1: string;
 
@@ -481,7 +491,7 @@ router.replaceUrl({
   params: new RouterParams('message')
 }, (err) => {
   if (err) {
-    console.error(`replaceUrl failed. Code: ${err.code}, message: ${err.message}`);
+    console.error(`replaceUrl failed, code is ${err.code}, message is ${err.message}`);
     return;
   }
   console.info('replaceUrl success');
@@ -490,13 +500,14 @@ router.replaceUrl({
 
 
 
-#### router.replaceUrl(deprecated)
+## router.replaceUrl(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 replaceUrl(options: RouterOptions, mode: RouterMode): Promise&lt;void&gt;
 
-用应用内的某个页面替换当前页面，并销毁被替换的页面。不支持设置页面转场动效，如需设置，推荐使用[Navigation组件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigation-architecture)。
+用应用内的某个页面替换当前页面，并销毁被替换的页面。
 
 > [!NOTE]
 > 从API version 9开始支持，除Lite Wearable外，从API version 18开始废弃，建议使用 replaceUrl(options: router.RouterOptions, mode: router.RouterMode) 替代。replaceUrl需先通过 UIContext 中的 getRouter 获取 Router 实例，然后通过该实例进行调用。 从API version 10开始，可以通过使用 UIContext 中的 getRouter 方法获取当前UI上下文关联的 Router 对象。
@@ -508,6 +519,7 @@ replaceUrl(options: RouterOptions, mode: RouterMode): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | RouterOptions | 是 | 替换页面描述信息。 |
@@ -515,6 +527,7 @@ replaceUrl(options: RouterOptions, mode: RouterMode): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -529,6 +542,7 @@ replaceUrl(options: RouterOptions, mode: RouterMode): Promise&lt;void&gt;
 > 该接口返回的以下错误码均为string类型。
 
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
@@ -539,8 +553,6 @@ replaceUrl(options: RouterOptions, mode: RouterMode): Promise&lt;void&gt;
 **示例：**
 
 ```text
-import { router } from '@kit.ArkUI';
-
 import { BusinessError } from '@kit.BasicServicesKit';
 
 class RouterParams {
@@ -558,20 +570,21 @@ router.replaceUrl({
   .then(() => {
     console.info(`replaceUrl finish`);
   })
-  .catch((err: BusinessError) => {
-    console.error(`replaceUrl failed. Code: ${err.code}, message: ${err.message}`);
+  .catch((err: ESObject) => {
+    console.error(`replaceUrl failed, code is ${(err as BusinessError).code}, message is ${(err as BusinessError).message}`);
   })
 ```
 
 
 
-#### router.replaceUrl(deprecated)
+## router.replaceUrl(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 replaceUrl(options: RouterOptions, mode: RouterMode, callback: AsyncCallback&lt;void&gt;): void
 
-用应用内的某个页面替换当前页面，并销毁被替换的页面。不支持设置页面转场动效，如需设置，推荐使用[Navigation组件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigation-architecture)。
+用应用内的某个页面替换当前页面，并销毁被替换的页面。
 
 > [!NOTE]
 > 从API version 9开始支持，除Lite Wearable外，从API version 18开始废弃，建议使用 replaceUrl(options: router.RouterOptions, mode: router.RouterMode, callback: AsyncCallback&lt;void&gt;) 替代。replaceUrl需先通过 UIContext 中的 getRouter 获取 Router 实例，然后通过该实例进行调用。 从API version 10开始，可以通过使用 UIContext 中的 getRouter 方法获取当前UI上下文关联的 Router 对象。
@@ -582,6 +595,7 @@ replaceUrl(options: RouterOptions, mode: RouterMode, callback: AsyncCallback&lt;
 **系统能力：** SystemCapability.ArkUI.ArkUI.Lite
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -598,6 +612,7 @@ replaceUrl(options: RouterOptions, mode: RouterMode, callback: AsyncCallback&lt;
 > 该接口返回的以下错误码均为string类型。
 
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
@@ -608,8 +623,6 @@ replaceUrl(options: RouterOptions, mode: RouterMode, callback: AsyncCallback&lt;
 **示例：**
 
 ```text
-import { router } from '@kit.ArkUI';
-
 class RouterParams {
   data1: string;
 
@@ -623,7 +636,7 @@ router.replaceUrl({
   params: new RouterParams('message')
 }, router.RouterMode.Standard, (err) => {
   if (err) {
-    console.error(`replaceUrl failed. Code: ${err.code}, message: ${err.message}`);
+    console.error(`replaceUrl failed, code is ${err.code}, message is ${err.message}`);
     return;
   }
   console.info('replaceUrl success');
@@ -632,9 +645,10 @@ router.replaceUrl({
 
 
 
-#### router.pushNamedRoute(deprecated)
+## router.pushNamedRoute(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pushNamedRoute(options: NamedRouterOptions): Promise&lt;void&gt;
 
@@ -652,12 +666,14 @@ pushNamedRoute(options: NamedRouterOptions): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | NamedRouterOptions | 是 | 跳转页面描述信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -672,6 +688,7 @@ pushNamedRoute(options: NamedRouterOptions): Promise&lt;void&gt;
 > 该接口返回的以下错误码均为string类型。
 
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
@@ -683,8 +700,6 @@ pushNamedRoute(options: NamedRouterOptions): Promise&lt;void&gt;
 **示例：**
 
 ```text
-import { router } from '@kit.ArkUI';
-
 import { BusinessError } from '@kit.BasicServicesKit';
 
 class InnerParams {
@@ -712,18 +727,19 @@ router.pushNamedRoute({
   .then(() => {
     console.info(`pushNamedRoute finish`);
   })
-  .catch((err: BusinessError) => {
-    console.error(`pushNamedRoute failed. Code: ${err.code}, message: ${err.message}`);
+  .catch((err: ESObject) => {
+    console.error(`pushNamedRoute failed, code is ${(err as BusinessError).code}, message is ${(err as BusinessError).message}`);
   })
 ```
 
-详细示例请参考：[UI开发-命名路由](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-routing#命名路由)。
+详细示例请参考：[UI开发-命名路由](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-routing#命名路由)
 
 
 
-#### router.pushNamedRoute(deprecated)
+## router.pushNamedRoute(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pushNamedRoute(options: NamedRouterOptions, callback: AsyncCallback&lt;void&gt;): void
 
@@ -741,6 +757,7 @@ pushNamedRoute(options: NamedRouterOptions, callback: AsyncCallback&lt;void&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | NamedRouterOptions | 是 | 跳转页面描述信息。 |
@@ -755,6 +772,7 @@ pushNamedRoute(options: NamedRouterOptions, callback: AsyncCallback&lt;void&gt;)
 > 该接口返回的以下错误码均为string类型。
 
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
@@ -766,8 +784,6 @@ pushNamedRoute(options: NamedRouterOptions, callback: AsyncCallback&lt;void&gt;)
 **示例：**
 
 ```text
-import { router } from '@kit.ArkUI';
-
 class InnerParams {
   data3: number[];
 
@@ -791,7 +807,7 @@ router.pushNamedRoute({
   params: new RouterParams('message', [123, 456, 789])
 }, (err) => {
   if (err) {
-    console.error(`pushNamedRoute failed. Code: ${err.code}, message: ${err.message}`);
+    console.error(`pushNamedRoute failed, code is ${err.code}, message is ${err.message}`);
     return;
   }
   console.info('pushNamedRoute success');
@@ -800,9 +816,10 @@ router.pushNamedRoute({
 
 
 
-#### router.pushNamedRoute(deprecated)
+## router.pushNamedRoute(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pushNamedRoute(options: NamedRouterOptions, mode: RouterMode): Promise&lt;void&gt;
 
@@ -820,6 +837,7 @@ pushNamedRoute(options: NamedRouterOptions, mode: RouterMode): Promise&lt;void&g
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | NamedRouterOptions | 是 | 跳转页面描述信息。 |
@@ -827,6 +845,7 @@ pushNamedRoute(options: NamedRouterOptions, mode: RouterMode): Promise&lt;void&g
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -841,6 +860,7 @@ pushNamedRoute(options: NamedRouterOptions, mode: RouterMode): Promise&lt;void&g
 > 该接口返回的以下错误码均为string类型。
 
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
@@ -852,8 +872,6 @@ pushNamedRoute(options: NamedRouterOptions, mode: RouterMode): Promise&lt;void&g
 **示例：**
 
 ```text
-import { router } from '@kit.ArkUI';
-
 import { BusinessError } from '@kit.BasicServicesKit';
 
 class InnerParams {
@@ -881,16 +899,17 @@ router.pushNamedRoute({
   .then(() => {
     console.info(`pushNamedRoute finish`);
   })
-  .catch((err: BusinessError) => {
-    console.error(`pushNamedRoute failed. Code: ${err.code}, message: ${err.message}`);
+  .catch((err: ESObject) => {
+    console.error(`pushNamedRoute failed, code is ${(err as BusinessError).code}, message is ${(err as BusinessError).message}`);
   })
 ```
 
 
 
-#### router.pushNamedRoute(deprecated)
+## router.pushNamedRoute(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pushNamedRoute(options: NamedRouterOptions, mode: RouterMode, callback: AsyncCallback&lt;void&gt;): void
 
@@ -908,6 +927,7 @@ pushNamedRoute(options: NamedRouterOptions, mode: RouterMode, callback: AsyncCal
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | NamedRouterOptions | 是 | 跳转页面描述信息。 |
@@ -923,6 +943,7 @@ pushNamedRoute(options: NamedRouterOptions, mode: RouterMode, callback: AsyncCal
 > 该接口返回的以下错误码均为string类型。
 
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
@@ -934,8 +955,6 @@ pushNamedRoute(options: NamedRouterOptions, mode: RouterMode, callback: AsyncCal
 **示例：**
 
 ```text
-import { router } from '@kit.ArkUI';
-
 class InnerParams {
   data3: number[];
 
@@ -959,7 +978,7 @@ router.pushNamedRoute({
   params: new RouterParams('message', [123, 456, 789])
 }, router.RouterMode.Standard, (err) => {
   if (err) {
-    console.error(`pushNamedRoute failed. Code: ${err.code}, message: ${err.message}`);
+    console.error(`pushNamedRoute failed, code is ${err.code}, message is ${err.message}`);
     return;
   }
   console.info('pushNamedRoute success');
@@ -968,9 +987,10 @@ router.pushNamedRoute({
 
 
 
-#### router.replaceNamedRoute(deprecated)
+## router.replaceNamedRoute(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 replaceNamedRoute(options: NamedRouterOptions): Promise&lt;void&gt;
 
@@ -988,12 +1008,14 @@ replaceNamedRoute(options: NamedRouterOptions): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | NamedRouterOptions | 是 | 替换页面描述信息。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1008,6 +1030,7 @@ replaceNamedRoute(options: NamedRouterOptions): Promise&lt;void&gt;
 > 该接口返回的以下错误码均为string类型。
 
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
@@ -1018,8 +1041,6 @@ replaceNamedRoute(options: NamedRouterOptions): Promise&lt;void&gt;
 **示例：**
 
 ```text
-import { router } from '@kit.ArkUI';
-
 import { BusinessError } from '@kit.BasicServicesKit';
 
 class RouterParams {
@@ -1037,16 +1058,17 @@ router.replaceNamedRoute({
   .then(() => {
     console.info(`replaceNamedRoute finish`);
   })
-  .catch((err: BusinessError) => {
-    console.error(`replaceNamedRoute failed. Code: ${err.code}, message: ${err.message}`);
+  .catch((err: ESObject) => {
+    console.error(`replaceNamedRoute failed, code is ${(err as BusinessError).code}, message is ${(err as BusinessError).message}`);
   })
 ```
 
 
 
-#### router.replaceNamedRoute(deprecated)
+## router.replaceNamedRoute(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 replaceNamedRoute(options: NamedRouterOptions, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1064,6 +1086,7 @@ replaceNamedRoute(options: NamedRouterOptions, callback: AsyncCallback&lt;void&g
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | NamedRouterOptions | 是 | 替换页面描述信息。 |
@@ -1078,6 +1101,7 @@ replaceNamedRoute(options: NamedRouterOptions, callback: AsyncCallback&lt;void&g
 > 该接口返回的以下错误码均为string类型。
 
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
@@ -1088,8 +1112,6 @@ replaceNamedRoute(options: NamedRouterOptions, callback: AsyncCallback&lt;void&g
 **示例：**
 
 ```text
-import { router } from '@kit.ArkUI';
-
 class RouterParams {
   data1: string;
 
@@ -1103,7 +1125,7 @@ router.replaceNamedRoute({
   params: new RouterParams('message')
 }, (err) => {
   if (err) {
-    console.error(`replaceNamedRoute failed. Code: ${err.code}, message: ${err.message}`);
+    console.error(`replaceNamedRoute failed, code is ${err.code}, message is ${err.message}`);
     return;
   }
   console.info('replaceNamedRoute success');
@@ -1112,9 +1134,10 @@ router.replaceNamedRoute({
 
 
 
-#### router.replaceNamedRoute(deprecated)
+## router.replaceNamedRoute(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 replaceNamedRoute(options: NamedRouterOptions, mode: RouterMode): Promise&lt;void&gt;
 
@@ -1132,6 +1155,7 @@ replaceNamedRoute(options: NamedRouterOptions, mode: RouterMode): Promise&lt;voi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | NamedRouterOptions | 是 | 替换页面描述信息。 |
@@ -1139,6 +1163,7 @@ replaceNamedRoute(options: NamedRouterOptions, mode: RouterMode): Promise&lt;voi
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1153,6 +1178,7 @@ replaceNamedRoute(options: NamedRouterOptions, mode: RouterMode): Promise&lt;voi
 > 该接口返回的以下错误码均为string类型。
 
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
@@ -1163,8 +1189,6 @@ replaceNamedRoute(options: NamedRouterOptions, mode: RouterMode): Promise&lt;voi
 **示例：**
 
 ```text
-import { router } from '@kit.ArkUI';
-
 import { BusinessError } from '@kit.BasicServicesKit';
 
 class RouterParams {
@@ -1182,16 +1206,17 @@ router.replaceNamedRoute({
   .then(() => {
     console.info(`replaceNamedRoute finish`);
   })
-  .catch((err: BusinessError) => {
-    console.error(`replaceNamedRoute failed. Code: ${err.code}, message: ${err.message}`);
+  .catch((err: ESObject) => {
+    console.error(`replaceNamedRoute failed, code is ${(err as BusinessError).code}, message is ${(err as BusinessError).message}`);
   })
 ```
 
 
 
-#### router.replaceNamedRoute(deprecated)
+## router.replaceNamedRoute(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 replaceNamedRoute(options: NamedRouterOptions, mode: RouterMode, callback: AsyncCallback&lt;void&gt;): void
 
@@ -1209,6 +1234,7 @@ replaceNamedRoute(options: NamedRouterOptions, mode: RouterMode, callback: Async
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | NamedRouterOptions | 是 | 替换页面描述信息。 |
@@ -1224,6 +1250,7 @@ replaceNamedRoute(options: NamedRouterOptions, mode: RouterMode, callback: Async
 > 该接口返回的以下错误码均为string类型。
 
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2.Incorrect parameters types; 3. Parameter verification failed. |
@@ -1234,8 +1261,6 @@ replaceNamedRoute(options: NamedRouterOptions, mode: RouterMode, callback: Async
 **示例：**
 
 ```text
-import { router } from '@kit.ArkUI';
-
 class RouterParams {
   data1: string;
 
@@ -1249,7 +1274,7 @@ router.replaceNamedRoute({
   params: new RouterParams('message')
 }, router.RouterMode.Standard, (err) => {
   if (err) {
-    console.error(`replaceNamedRoute failed. Code: ${err.code}, message: ${err.message}`);
+    console.error(`replaceNamedRoute failed, code is ${err.code}, message is ${err.message}`);
     return;
   }
   console.info('replaceNamedRoute success');
@@ -1258,9 +1283,10 @@ router.replaceNamedRoute({
 
 
 
-#### router.back(deprecated)
+## router.back(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 back(options?: RouterOptions ): void
 
@@ -1276,6 +1302,7 @@ back(options?: RouterOptions ): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | RouterOptions | 否 | 返回页面描述信息，其中url指返回目标页面的路由地址，如果页面栈中不存在指定url的页面，则不响应当前返回请求。如果url未设置，则返回上一页，页面不会重新构建，页面栈里面的page不会回收，出栈后会被回收。back是返回接口，url设置为特殊值"/"不生效。如果是用命名路由的方式跳转，传入的url需是命名路由的名称。 |
@@ -1289,9 +1316,10 @@ this.getUIContext().getRouter().back({ url: 'pages/detail' });
 
 
 
-#### router.back(deprecated)
+## router.back(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 back(index: number, params?: Object): void;
 
@@ -1309,10 +1337,11 @@ back(index: number, params?: Object): void;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 返回目标页面的索引值，取值范围[1, 页面栈大小]，页面栈最大数量为32。从栈底到栈顶，index从1开始递增。索引不存在或超出页面栈有效范围时不响应。 |
-| params | Object | 否 | 页面返回时携带的参数。 说明： params参数只能传递可序列化的参数，不能传递方法和系统接口返回的对象（例如，媒体接口定义和返回的PixelMap对象）。建议开发者提取系统接口返回的对象中需要被传递的基础类型属性，自行构造object类型对象进行传递。 |
+| params | Object | 否 | 页面返回时携带的参数。 说明： params参数只能传递可序列化的参数，不能传递方法和接口返回的对象（例如，媒体接口定义和返回的PixelMap对象）。建议开发者提取接口返回的对象中需要被传递的基础类型属性，自行构造object类型对象进行传递。 |
 
 
 **示例：**
@@ -1327,9 +1356,10 @@ this.getUIContext().getRouter().back(1, { info: '来自Home页' }); // 携带参
 
 
 
-#### router.clear(deprecated)
+## router.clear(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clear(): void
 
@@ -1351,9 +1381,10 @@ this.getUIContext().getRouter().clear();
 
 
 
-#### router.getLength(deprecated)
+## router.getLength(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLength(): string
 
@@ -1369,6 +1400,7 @@ getLength(): string
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 页面数量，页面栈支持最大数值是32。 |
@@ -1383,9 +1415,10 @@ console.info('pages stack size = ' + size);
 
 
 
-#### router.getState(deprecated)
+## router.getState(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getState(): RouterState
 
@@ -1400,6 +1433,7 @@ getState(): RouterState
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1417,9 +1451,10 @@ console.info('current path = ' + page.path);
 
 
 
-#### router.getStateByIndex(deprecated)
+## router.getStateByIndex(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStateByIndex(index: number): RouterState | undefined
 
@@ -1437,12 +1472,14 @@ getStateByIndex(index: number): RouterState | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 表示要获取的页面索引，取值范围[1, 页面栈大小]，页面栈最大数量为32。从栈底到栈顶，index从1开始递增。索引不存在时返回undefined。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1452,8 +1489,6 @@ getStateByIndex(index: number): RouterState | undefined
 **示例：**
 
 ```json
-import { router } from '@kit.ArkUI';
-
 let options: router.RouterState | undefined = router.getStateByIndex(1);
 if (options != undefined) {
   console.info('index = ' + options.index);
@@ -1465,9 +1500,10 @@ if (options != undefined) {
 
 
 
-#### router.getStateByUrl(deprecated)
+## router.getStateByUrl(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStateByUrl(url: string): Array&lt;RouterState&gt;
 
@@ -1485,12 +1521,14 @@ getStateByUrl(url: string): Array&lt;RouterState&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | url | string | 是 | 表示要获取对应页面信息的url。url格式为页面绝对路径，由配置文件中pages列表提供，例如：pages/index/index。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1500,8 +1538,6 @@ getStateByUrl(url: string): Array&lt;RouterState&gt;
 **示例：**
 
 ```text
-import { router } from '@kit.ArkUI';
-
 let options: Array<router.RouterState> = router.getStateByUrl('pages/index');
 for (let i: number = 0; i < options.length; i++) {
   console.info('index = ' + options[i].index);
@@ -1513,27 +1549,30 @@ for (let i: number = 0; i < options.length; i++) {
 
 
 
-#### RouterState
+## RouterState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 页面状态信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | index | number | 否 | 否 | 表示当前页面在页面栈中的索引。从栈底到栈顶，index从1开始递增。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | name | string | 否 | 否 | 表示当前页面的名称，即对应文件名。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | path | string | 否 | 否 | 表示当前页面的路径。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
-| params12+ | Object | 否 | 否 | 表示当前页面携带的参数。 说明： params参数只能传递可序列化的参数，不能传递方法和系统接口返回的对象（例如，媒体接口定义和返回的PixelMap对象）。建议开发者提取系统接口返回的对象中需要被传递的基础类型属性，自行构造object类型对象进行传递。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
+| params12+ | Object | 否 | 否 | 表示当前页面携带的参数。 说明： params参数只能传递可序列化的参数，不能传递方法和接口返回的对象（例如，媒体接口定义和返回的PixelMap对象）。建议开发者提取接口返回的对象中需要被传递的基础类型属性，自行构造object类型对象进行传递。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 
 
 
 
-#### router.showAlertBeforeBackPage(deprecated)
+## router.showAlertBeforeBackPage(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showAlertBeforeBackPage(options: EnableAlertOptions): void
 
@@ -1549,6 +1588,7 @@ showAlertBeforeBackPage(options: EnableAlertOptions): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | EnableAlertOptions | 是 | 文本弹窗信息描述。 |
@@ -1557,6 +1597,7 @@ showAlertBeforeBackPage(options: EnableAlertOptions): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[接口调用异常错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-internal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1574,21 +1615,23 @@ try {
     message: 'Message Info'
   });
 } catch (err) {
-  console.error(`showAlertBeforeBackPage failed. Code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
+  console.error(`showAlertBeforeBackPage failed, code is ${(err as BusinessError).code}, message is ${(err as BusinessError).message}`);
 }
 ```
 
 
 
-#### EnableAlertOptions
+## EnableAlertOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 页面返回询问对话框选项。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1597,9 +1640,10 @@ try {
 
 
 
-#### router.hideAlertBeforeBackPage(deprecated)
+## router.hideAlertBeforeBackPage(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hideAlertBeforeBackPage(): void
 
@@ -1621,9 +1665,10 @@ this.getUIContext().getRouter().hideAlertBeforeBackPage();
 
 
 
-#### router.getParams(deprecated)
+## router.getParams(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getParams(): Object
 
@@ -1639,6 +1684,7 @@ getParams(): Object
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Object | 发起跳转的页面往当前页传入的参数。 |
@@ -1652,18 +1698,20 @@ this.getUIContext().getRouter().getParams();
 
 
 
-#### RouterOptions
+## RouterOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 路由跳转选项。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Lite
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | url | string | 否 | 否 | 表示目标页面的url，可以用以下两种格式： - 页面绝对路径，由配置文件中pages列表提供，例如： - pages/index/index - pages/detail/detail - 特殊值，如果url的值是"/"，则跳转到首页，首页默认为页面跳转配置项src数组的第一个数据项。 传入不存在或无效的url路径时，跳转失败，具体错误码参见各接口的错误码说明。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
-| params | Object | 否 | 是 | 表示路由跳转时要同时传递到目标页面的数据，切换到其他页面时，当前接收的数据失效。跳转到目标页面后，使用router.getParams()获取传递的参数，此外，在类web范式中，参数也可以在页面中直接使用，如this.keyValue(keyValue为跳转时params参数中的key值)，如果目标页面中已有该字段，则其值会被传入的字段值覆盖。 说明： params参数只能传递可序列化的参数，不能传递方法和系统接口返回的对象（例如，媒体接口定义和返回的PixelMap对象）。传入不可序列化的参数时，可能导致参数传递失败或应用运行异常。建议开发者提取系统接口返回的对象中需要被传递的基础类型属性，自行构造object类型对象进行传递。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| params | Object | 否 | 是 | 表示路由跳转时要同时传递到目标页面的数据，切换到其他页面时，当前接收的数据失效。跳转到目标页面后，使用router.getParams()获取传递的参数，此外，在类Web范式中，参数也可以在页面中直接使用，如this.keyValue(keyValue为跳转时params参数中的key值)，如果目标页面中已有该字段，则其值会被传入的字段值覆盖。 说明： params参数只能传递可序列化的参数，不能传递方法和接口返回的对象（例如，媒体接口定义和返回的PixelMap对象）。传入不可序列化的参数时，可能导致参数传递失败或应用运行异常。建议开发者提取接口返回的对象中需要被传递的基础类型属性，自行构造object类型对象进行传递。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | recoverable14+ | boolean | 否 | 是 | 表示对应的页面是否可恢复，默认为true。当为true时，表示可恢复，当为false时，表示不可恢复。 说明： 当应用退到后台，并且在未来的某个时间点，由于系统资源限制等原因被系统杀死，如果某个页面被设置成可恢复，那么该应用再次被拉到前台后系统可以恢复出页面，详细说明请参考UIAbility备份恢复。 |
 
 
@@ -1673,15 +1721,17 @@ this.getUIContext().getRouter().getParams();
 
 
 
-#### RouterMode9+
+## RouterMode9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 路由跳转模式。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1691,30 +1741,36 @@ this.getUIContext().getRouter().getParams();
 
 
 
-#### NamedRouterOptions10+
+## NamedRouterOptions10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV | lite_wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 命名路由跳转选项。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | name | string | 否 | 否 | 表示目标命名路由页面的name，需为已注册的命名路由名称。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 系统能力： SystemCapability.ArkUI.ArkUI.Full |
-| params | Object | 否 | 是 | 表示路由跳转时要同时传递到目标页面的数据，切换到其他页面时，当前接收的数据失效。跳转到目标页面后，使用router.getParams()获取传递的参数，此外，在类web范式中，参数也可以在页面中直接使用，如this.keyValue(keyValue为跳转时params参数中的key值)，如果目标页面中已有该字段，则其值会被传入的字段值覆盖。 说明： params参数只能传递可序列化的参数，不能传递方法和系统接口返回的对象（例如，媒体接口定义和返回的PixelMap对象）。传入不可序列化的参数时，可能导致参数传递失败或应用运行异常。建议开发者提取系统接口返回的对象中需要被传递的基础类型属性，自行构造object类型对象进行传递。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 系统能力： SystemCapability.ArkUI.ArkUI.Full |
+| params | Object | 否 | 是 | 表示路由跳转时要同时传递到目标页面的数据。跳转到目标页面后，使用router.getParams()获取传递的参数，此外，在类Web范式中，参数也可以在页面中直接使用，如this.keyValue(keyValue为跳转时params参数中的key值)，如果目标页面中已有该字段，则其值会被传入的字段值覆盖。 说明： params参数不能传递方法和接口返回的对象（例如，媒体接口定义和返回的PixelMap对象）。传入不可序列化的参数时，可能导致参数传递失败或应用运行异常。建议开发者提取接口返回的对象中需要被传递的基础类型属性，自行构造object类型对象进行传递。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 系统能力： SystemCapability.ArkUI.ArkUI.Full |
 | recoverable14+ | boolean | 否 | 是 | 表示对应的页面是否可恢复，默认为true。当为true时，表示可恢复，当为false时，表示不可恢复。 说明： 当应用退到后台，并且在未来的某个时间点，由于系统资源限制等原因被系统杀死，如果某个页面被设置成可恢复，那么该应用再次被拉到前台后系统可以恢复出页面，详细说明请参考UIAbility备份恢复。 系统能力： SystemCapability.ArkUI.ArkUI.Lite |
 
 
 
 
-#### 完整示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV | lite_wearable
+## 完整示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
-#### 基于JS扩展的类Web开发范式
 
-以下代码仅适用于javascript文件，不适用于ArkTS文件。
+
+### 基于JS扩展的类Web开发范式
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
+
+以下代码仅适用于javascript文件，不适用于ArkTS文件
 
 ```text
 // 在当前页面中
@@ -1741,7 +1797,10 @@ export default {
 
 
 
-#### 基于TS扩展的声明式开发范式
+### 基于TS扩展的声明式开发范式
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 > [!NOTE]
 > 直接使用router可能导致 UI上下文不明确 的问题，建议使用getUIContext获取 UIContext 实例，并使用 getRouter 获取绑定实例的router。
@@ -1784,8 +1843,8 @@ struct Index {
       .then(() => {
         console.info(`pushUrl finish`);
       })
-      .catch((err: BusinessError) => {
-        console.error(`pushUrl failed. Code: ${err.code}, message: ${err.message}`);
+      .catch((err: ESObject) => {
+        console.error(`pushUrl failed, code is ${(err as BusinessError).code}, message is ${(err as BusinessError).message}`);
       })
     }
 
@@ -1836,7 +1895,7 @@ class RouterParams {
 @Entry
 @Component
 struct Second {
-  private content: string = '这是第二页';
+  private content: string = "这是第二页";
   // 建议使用this.getUIContext().getRouter().getParams()
   @State text: string = (this.getUIContext().getRouter().getParams() as RouterParams).text;
   @State data: InnerParams = (this.getUIContext().getRouter().getParams() as RouterParams).data;
@@ -1866,9 +1925,10 @@ struct Second {
 
 
 
-#### router.push(deprecated)
+## router.push(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 push(options: RouterOptions): void
 
@@ -1882,6 +1942,7 @@ push(options: RouterOptions): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | RouterOptions | 是 | 跳转页面描述信息。 |
@@ -1890,8 +1951,6 @@ push(options: RouterOptions): void
 **示例：**
 
 ```text
-import { router } from '@kit.ArkUI';
-
 class InnerParams {
   data3: number[];
 
@@ -1918,9 +1977,10 @@ router.push({
 
 
 
-#### router.replace(deprecated)
+## router.replace(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | lite_wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 replace(options: RouterOptions): void
 
@@ -1934,6 +1994,7 @@ replace(options: RouterOptions): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | RouterOptions | 是 | 替换页面描述信息。 |
@@ -1942,8 +2003,6 @@ replace(options: RouterOptions): void
 **示例：**
 
 ```text
-import { router } from '@kit.ArkUI';
-
 class RouterParams {
   data1: string;
 
@@ -1960,9 +2019,10 @@ router.replace({
 
 
 
-#### router.enableAlertBeforeBackPage(deprecated)
+## router.enableAlertBeforeBackPage(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableAlertBeforeBackPage(options: EnableAlertOptions): void
 
@@ -1976,6 +2036,7 @@ enableAlertBeforeBackPage(options: EnableAlertOptions): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | EnableAlertOptions | 是 | 文本弹窗信息描述。 |
@@ -1984,8 +2045,6 @@ enableAlertBeforeBackPage(options: EnableAlertOptions): void
 **示例：**
 
 ```text
-import { router } from '@kit.ArkUI';
-
 router.enableAlertBeforeBackPage({
   message: 'Message Info'
 });
@@ -1993,9 +2052,10 @@ router.enableAlertBeforeBackPage({
 
 
 
-#### router.disableAlertBeforeBackPage(deprecated)
+## router.disableAlertBeforeBackPage(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 disableAlertBeforeBackPage(): void
 
@@ -2010,16 +2070,15 @@ disableAlertBeforeBackPage(): void
 **示例：**
 
 ```text
-import { router } from '@kit.ArkUI';
-
 router.disableAlertBeforeBackPage();
 ```
 
 
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV | lite_wearable
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 该示例展示了类Web范式下router.[replace](#routerreplacedeprecated)以及router.[replaceUrl](#routerreplaceurldeprecated)接口的跳转功能。
 
@@ -2107,7 +2166,7 @@ pages
 
 ```text
 // index.js
-import { router } from '@kit.ArkUI';
+import router from '@ohos.router';
 
 export default {
     data: {
@@ -2117,7 +2176,7 @@ export default {
     },
     replaceToRouterPage: function() {
         router.replace({
-            url: 'pages/routerPages/routerPage',
+            uri: 'pages/routerPages/routerPage',
             params: {
                 statusText: 'Opened by router.replace.'
             }
@@ -2204,7 +2263,7 @@ export default {
 
 ```text
 // routerPage.js
-import { router } from '@kit.ArkUI';
+import router from '@ohos.router';
 
 export default {
     data: {
@@ -2214,7 +2273,7 @@ export default {
     },
     replaceToIndex: function() {
         router.replace({
-            url: 'pages/index/index',
+            uri: 'pages/index/index',
             params: {
                 statusText: 'Returned by router.replace.'
             }
@@ -2232,4 +2291,4 @@ export default {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/bsLbdY6yT9O8NMHiZR1Arg/zh-cn_image_0000002679806760.gif?HW-CC-KV=V1&HW-CC-Date=20260818T063502Z&HW-CC-Expire=86400&HW-CC-Sign=95A03E059356B21AAB61F5943CFC33F9C1BB3B806564415EA421154D7C42EE93)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/6uLLRNsySx2xIlMD0ydXSg/zh-cn_image_0000002717612416.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072933Z&HW-CC-Expire=86400&HW-CC-Sign=DEA3661B6E880043E401F3E35ECCE6307358BF59575110D4AA31AFF93F89EAB4)

@@ -1,6 +1,6 @@
 # Enums
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-avsession-e
 **支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
@@ -10,7 +10,8 @@
 
   
 
-#### ProtocolType11+
+## ProtocolType11+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -18,6 +19,7 @@
  
 **系统能力：** SystemCapability.Multimedia.AVSession.AVCast
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | TYPE_LOCAL | 0 | 本地设备，包括设备本身的内置扬声器或音频插孔、A2DP 设备。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
@@ -28,7 +30,8 @@
  
   
 
-#### CastDisplayState12+
+## CastDisplayState12+
+
 
 **支持设备：** Phone | Tablet
 
@@ -38,6 +41,7 @@
  
 **系统能力：** SystemCapability.Multimedia.AVSession.ExtendedDisplayCast
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | STATE_OFF | 1 | 设备断开，扩展屏不再显示内容。 |
@@ -46,14 +50,16 @@
  
   
 
-#### CallerType22+
+## CallerType22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示调用方来源类型的枚举。
  
 **系统能力：** SystemCapability.Multimedia.AVSession.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | TYPE_CAST | 'cast' | 调用方来自投播。 |
@@ -64,9 +70,10 @@
  
   
 
-#### ConnectionState10+
+## ConnectionState10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 连接状态枚举。
  
@@ -74,6 +81,7 @@
  
 **系统能力：** SystemCapability.Multimedia.AVSession.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | STATE_CONNECTING | 0 | 设备连接中。 |
@@ -83,9 +91,10 @@
  
   
 
-#### CallState11+
+## CallState11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示通话状态的枚举。
  
@@ -93,12 +102,13 @@
  
 **系统能力：** SystemCapability.Multimedia.AVSession.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CALL_STATE_IDLE | 0 | 空闲状态。 |
 | CALL_STATE_INCOMING | 1 | 来电。 |
 | CALL_STATE_ACTIVE | 2 | 接通。 |
-| CALL_STATE_DIALING | 3 | 响铃。 |
+| CALL_STATE_DIALING | 3 | 拨号中。 |
 | CALL_STATE_WAITING | 4 | 等待接通。 |
 | CALL_STATE_HOLDING | 5 | 保持。 |
 | CALL_STATE_DISCONNECTING | 6 | 挂断。 |
@@ -106,22 +116,25 @@
  
   
 
-#### DisplayTag11+
+## DisplayTag11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 枚举，表示当前媒体资源的金标，即应用媒体音源的特殊类型标识。
  
 **系统能力：** SystemCapability.Multimedia.AVSession.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| TAG_AUDIO_VIVID | 1 | AUDIO VIVID |
+| TAG_AUDIO_VIVID | 1 | 标识当前媒体资源的AUDIO VIVID属性。 |
  
  
   
 
-#### DecoderType19+
+## DecoderType19+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -131,6 +144,7 @@
  
 **系统能力：** SystemCapability.Multimedia.AVSession.AVCast
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | OH_AVCODEC_MIMETYPE_VIDEO_AVC | 'video/avc' | VIDEO AVC格式。 |
@@ -140,7 +154,8 @@
  
   
 
-#### ResolutionLevel19+
+## ResolutionLevel19+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -150,6 +165,7 @@
  
 **系统能力：** SystemCapability.Multimedia.AVSession.AVCast
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | RESOLUTION_480P | 0 | 分辨率为480P（640×480 px）。 |
@@ -161,7 +177,8 @@
  
   
 
-#### AVCastCategory10+
+## AVCastCategory10+
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -171,22 +188,25 @@
  
 **系统能力：** SystemCapability.Multimedia.AVSession.AVCast
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CATEGORY_LOCAL | 0 | 本地播放，默认播放设备，声音从本机或者连接的蓝牙耳机设备出声。 |
-| CATEGORY_REMOTE | 1 | 远端播放，远端播放设备，声音从其他设备发出声音或者画面。 |
+| CATEGORY_REMOTE | 1 | 远端播放，声音从其他设备发出或画面在其他设备上显示。 |
  
  
   
 
-#### DeviceType10+
+## DeviceType10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 播放设备的类型枚举。
  
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DEVICE_TYPE_LOCAL | 0 | 本地播放类型设备。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Multimedia.AVSession.Core |
@@ -202,9 +222,10 @@
  
   
 
-#### LoopMode10+
+## LoopMode10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示媒体播放循环模式的枚举。
  
@@ -212,20 +233,22 @@
  
 **系统能力：** SystemCapability.Multimedia.AVSession.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | LOOP_MODE_SEQUENCE | 0 | 顺序播放。 |
 | LOOP_MODE_SINGLE | 1 | 单曲循环。 |
-| LOOP_MODE_LIST | 2 | 表单循环。 |
+| LOOP_MODE_LIST | 2 | 列表循环。 |
 | LOOP_MODE_SHUFFLE | 3 | 随机播放。 |
 | LOOP_MODE_CUSTOM11+ | 4 | 自定义播放。 |
  
  
   
 
-#### PlaybackState10+
+## PlaybackState10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示媒体播放状态的枚举。
  
@@ -233,6 +256,7 @@
  
 **系统能力：** SystemCapability.Multimedia.AVSession.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | PLAYBACK_STATE_INITIAL | 0 | 初始状态。 |
@@ -251,12 +275,14 @@
  
   
 
-#### AVSessionErrorCode10+
+## AVSessionErrorCode10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 会话发生错误时的错误码。
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ERR_CODE_SERVICE_EXCEPTION | 6600101 | 会话服务端异常。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Multimedia.AVSession.Core |
@@ -305,12 +331,12 @@
 | ERR_CODE_CAST_CONTROL_PARSING_CONTAINER_MALFORMED13+ | 6613001 | 媒体容器比特流的格式解析错误。 元服务API： 从API version 13开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Multimedia.AVSession.AVCast |
 | ERR_CODE_CAST_CONTROL_PARSING_MANIFEST_MALFORMED13+ | 6613002 | 媒体清单解析错误。 元服务API： 从API version 13开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Multimedia.AVSession.AVCast |
 | ERR_CODE_CAST_CONTROL_PARSING_CONTAINER_UNSUPPORTED13+ | 6613003 | 文件的媒体容器格式/媒体容器特性不被支持。 元服务API： 从API version 13开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Multimedia.AVSession.AVCast |
-| ERR_CODE_CAST_CONTROL_PARSING_MANIFEST_UNSUPPORTED13+ | 6613004 | 媒体清单中不支持的特性。 元服务API： 从API version 13开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Multimedia.AVSession.AVCast |
+| ERR_CODE_CAST_CONTROL_PARSING_MANIFEST_UNSUPPORTED13+ | 6613004 | 媒体清单中不支持此功能。 元服务API： 从API version 13开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Multimedia.AVSession.AVCast |
 | ERR_CODE_CAST_CONTROL_DECODING_UNSPECIFIED13+ | 6614000 | 未指定的解码错误。 元服务API： 从API version 13开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Multimedia.AVSession.AVCast |
 | ERR_CODE_CAST_CONTROL_DECODING_INIT_FAILED13+ | 6614001 | 解码器初始化失败。 元服务API： 从API version 13开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Multimedia.AVSession.AVCast |
 | ERR_CODE_CAST_CONTROL_DECODING_QUERY_FAILED13+ | 6614002 | 解码器查询失败。 元服务API： 从API version 13开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Multimedia.AVSession.AVCast |
 | ERR_CODE_CAST_CONTROL_DECODING_FAILED13+ | 6614003 | 媒体样本解码失败。 元服务API： 从API version 13开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Multimedia.AVSession.AVCast |
-| ERR_CODE_CAST_CONTROL_DECODING_FORMAT_EXCEEDS_CAPABILITIES13+ | 6614004 | 设备的能力无法解码当前格式。 元服务API： 从API version 13开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Multimedia.AVSession.AVCast |
+| ERR_CODE_CAST_CONTROL_DECODING_FORMAT_EXCEEDS_CAPABILITIES13+ | 6614004 | 所需解码的内容格式超出设备能力导致失败。 元服务API： 从API version 13开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Multimedia.AVSession.AVCast |
 | ERR_CODE_CAST_CONTROL_DECODING_FORMAT_UNSUPPORTED13+ | 6614005 | 不支持的解码格式。 元服务API： 从API version 13开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Multimedia.AVSession.AVCast |
 | ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_UNSPECIFIED13+ | 6615000 | 未指定的音频渲染器错误。 元服务API： 从API version 13开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Multimedia.AVSession.AVCast |
 | ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_INIT_FAILED 13+ | 6615001 | 音频渲染器初始化失败。 元服务API： 从API version 13开始，该接口支持在元服务中使用。 系统能力： SystemCapability.Multimedia.AVSession.AVCast |
@@ -329,26 +355,29 @@
  
   
 
-#### SkipIntervals11+
+## SkipIntervals11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示session支持的快进快退时间间隔的枚举。
  
 **系统能力：** SystemCapability.Multimedia.AVSession.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| SECONDS_10 | 10 | 时间为10秒。 |
-| SECONDS_15 | 15 | 时间为15秒。 |
-| SECONDS_30 | 30 | 时间为30秒。 |
+| SECONDS_10 | 10 | 时间间隔为10s。 |
+| SECONDS_15 | 15 | 时间间隔为15s。 |
+| SECONDS_30 | 30 | 时间间隔为30s。 |
  
  
   
 
-#### BackgroundPlayMode24+
+## BackgroundPlayMode24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示session支持的后台播放模式的枚举。
  
@@ -356,6 +385,7 @@
  
 **系统能力：** SystemCapability.Multimedia.AVSession.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ENABLE_BACKGROUND_PLAY | 0 | 支持后台播放。 |
@@ -364,9 +394,10 @@
  
   
 
-#### ExtraKey
+## ExtraKey
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示定义在不同场景中使用的额外键的枚举。
  
@@ -376,6 +407,7 @@
  
 **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | REQUIRE_ABILITY_LIST | 'requireAbilityList' | 作为setExtras接口传入的键，用于向系统设置应用所需的能力列表。 系统能力： SystemCapability.Multimedia.AVSession.Core |

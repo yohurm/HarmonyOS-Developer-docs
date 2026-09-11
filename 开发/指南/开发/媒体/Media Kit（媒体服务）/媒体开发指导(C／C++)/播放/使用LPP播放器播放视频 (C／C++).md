@@ -1,6 +1,6 @@
 # 使用LPP播放器播放视频 (C/C++)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ndk-lpp-for-playback
 
@@ -15,7 +15,7 @@
 **图1** 播放状态变化示意图
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/GrFuRlTLS96hGGbcyRGyVA/zh-cn_image_0000002655847330.png?HW-CC-KV=V1&HW-CC-Date=20260730T071944Z&HW-CC-Expire=86400&HW-CC-Sign=06D830B095E7E7161B62227C00BFC5B5936D2E9C208ADBAB9E7C971C52F31A02)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/AIPx0Lh0Qr65hVrSnHZdoA/zh-cn_image_0000002717771382.png?HW-CC-KV=V1&HW-CC-Date=20260911T073140Z&HW-CC-Expire=86400&HW-CC-Sign=39437C32C4ECE549516CAA6410FC364B2606B743A1259F317093A3AE3FEBE30C)
 
 
 播放流程包含：创建（created）、初始化（initialized）、就绪（ready）、解码（decoding）和渲染（rendering）五个阶段。
@@ -31,7 +31,7 @@
 当播放处于ready/decoding/rendering/paused/stopped状态时，播放引擎此时处于工作状态会占用较多的系统资源。当暂停使用播放器时，可调用reset或destroy回收资源。
 
 
-#### 开发建议
+## 开发建议
 
 当前指导仅介绍如何实现媒体资源播放，在应用开发过程中会涉及后台播放、播放冲突等情况，请根据实际需要参考以下说明。
 
@@ -60,7 +60,7 @@
 
 
 
-#### 开发步骤及注意事项
+## 开发步骤及注意事项
 
 在CMake脚本中链接动态库。
 

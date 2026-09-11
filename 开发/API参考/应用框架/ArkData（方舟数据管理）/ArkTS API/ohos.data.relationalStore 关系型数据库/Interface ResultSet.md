@@ -1,9 +1,9 @@
 # Interface (ResultSet)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-data-relationalstore-resultset
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供通过查询数据库生成的数据库结果集的访问方法。结果集是指用户调用关系型数据库查询接口之后返回的结果集合，提供了多种灵活的数据访问方式，以便用户获取各项数据。
 
@@ -16,9 +16,10 @@ ResultSet实例不会实时刷新。使用结果集后，如果数据库中的�
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { relationalStore } from '@kit.ArkData';
@@ -26,11 +27,13 @@ import { relationalStore } from '@kit.ArkData';
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -47,9 +50,10 @@ import { relationalStore } from '@kit.ArkData';
 
 
 
-#### getColumnNames23+
+## getColumnNames23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getColumnNames(): Array&lt;string&gt;
 
@@ -63,6 +67,7 @@ getColumnNames(): Array&lt;string&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;string&gt; | 返回结果集中所有列的名称。支持获取包含重名列的列名。 |
@@ -71,6 +76,7 @@ getColumnNames(): Array&lt;string&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -101,9 +107,10 @@ try {
 
 
 
-#### getColumnIndex
+## getColumnIndex
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getColumnIndex(columnName: string): number
 
@@ -113,12 +120,14 @@ getColumnIndex(columnName: string): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | columnName | string | 是 | 表示结果集中指定列的名称。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -128,6 +137,7 @@ getColumnIndex(columnName: string): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -166,9 +176,10 @@ if (resultSet != undefined) {
 
 
 
-#### getColumnName
+## getColumnName
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getColumnName(columnIndex: number): string
 
@@ -178,12 +189,14 @@ getColumnName(columnIndex: number): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | columnIndex | number | 是 | 表示结果集中指定列的索引。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -193,6 +206,7 @@ getColumnName(columnIndex: number): string
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -230,9 +244,10 @@ if (resultSet != undefined) {
 
 
 
-#### getColumnType18+
+## getColumnType18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getColumnType(columnIdentifier: number | string): Promise&lt;ColumnType&gt;
 
@@ -242,12 +257,14 @@ getColumnType(columnIdentifier: number | string): Promise&lt;ColumnType&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | columnIdentifier | number \| string | 是 | 表示结果集中指定列的索引或列名。索引必须是非负整数，且必须小于属性columnNames的长度。列名必须是属性columnNames内的名称。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -257,6 +274,7 @@ getColumnType(columnIdentifier: number | string): Promise&lt;ColumnType&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -301,9 +319,10 @@ if (resultSet != undefined) {
 
 
 
-#### getColumnTypeSync18+
+## getColumnTypeSync18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getColumnTypeSync(columnIdentifier: number | string): ColumnType
 
@@ -313,12 +332,14 @@ getColumnTypeSync(columnIdentifier: number | string): ColumnType
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | columnIdentifier | number \| string | 是 | 表示结果集中指定列的索引或名称。索引必须是非负整数，最大不能超过属性columnNames的长度。列名必须是属性columnNames内的名称。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -328,6 +349,7 @@ getColumnTypeSync(columnIdentifier: number | string): ColumnType
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -372,9 +394,10 @@ if (resultSet != undefined) {
 
 
 
-#### goTo
+## goTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 goTo(offset:number): boolean
 
@@ -384,12 +407,14 @@ goTo(offset:number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 是 | 表示相对当前结果集指针位置的偏移量，正值表示向后移动，负值表示向前移动。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -399,6 +424,7 @@ goTo(offset:number): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -434,9 +460,10 @@ if (resultSet != undefined) {
 
 
 
-#### goToRow
+## goToRow
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 goToRow(position: number): boolean
 
@@ -446,12 +473,14 @@ goToRow(position: number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | position | number | 是 | 表示要移动到的指定位置。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -461,6 +490,7 @@ goToRow(position: number): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -496,9 +526,10 @@ if (resultSet != undefined) {
 
 
 
-#### goToFirstRow
+## goToFirstRow
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 goToFirstRow(): boolean
 
@@ -508,6 +539,7 @@ goToFirstRow(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 如果成功移动结果集，则为true；否则返回false。 |
@@ -516,6 +548,7 @@ goToFirstRow(): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -550,9 +583,10 @@ if (resultSet != undefined) {
 
 
 
-#### goToLastRow
+## goToLastRow
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 goToLastRow(): boolean
 
@@ -562,6 +596,7 @@ goToLastRow(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 如果成功移动结果集，则为true；否则返回false。 |
@@ -570,6 +605,7 @@ goToLastRow(): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -604,9 +640,10 @@ if (resultSet != undefined) {
 
 
 
-#### goToNextRow
+## goToNextRow
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 goToNextRow(): boolean
 
@@ -616,6 +653,7 @@ goToNextRow(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 如果成功移动结果集，则为true；否则返回false。 |
@@ -624,6 +662,7 @@ goToNextRow(): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -658,9 +697,10 @@ if (resultSet != undefined) {
 
 
 
-#### goToPreviousRow
+## goToPreviousRow
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 goToPreviousRow(): boolean
 
@@ -670,6 +710,7 @@ goToPreviousRow(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 如果成功移动结果集，则为true；否则返回false。 |
@@ -678,6 +719,7 @@ goToPreviousRow(): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -712,9 +754,10 @@ if (resultSet != undefined) {
 
 
 
-#### getValue12+
+## getValue12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getValue(columnIndex: number): ValueType
 
@@ -724,12 +767,14 @@ getValue(columnIndex: number): ValueType
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | columnIndex | number | 是 | 指定的列索引，从0开始。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -739,6 +784,7 @@ getValue(columnIndex: number): ValueType
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -780,9 +826,10 @@ if (resultSet !== undefined) {
 
 
 
-#### getBlob
+## getBlob
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBlob(columnIndex: number): Uint8Array
 
@@ -792,12 +839,14 @@ getBlob(columnIndex: number): Uint8Array
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | columnIndex | number | 是 | 指定的列索引，从0开始。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -807,6 +856,7 @@ getBlob(columnIndex: number): Uint8Array
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -842,9 +892,10 @@ if (resultSet != undefined) {
 
 
 
-#### getString
+## getString
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getString(columnIndex: number): string
 
@@ -854,12 +905,14 @@ getString(columnIndex: number): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | columnIndex | number | 是 | 指定的列索引，从0开始。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -869,6 +922,7 @@ getString(columnIndex: number): string
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -904,9 +958,10 @@ if (resultSet != undefined) {
 
 
 
-#### getLong
+## getLong
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLong(columnIndex: number): number
 
@@ -916,12 +971,14 @@ getLong(columnIndex: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | columnIndex | number | 是 | 指定的列索引，从0开始。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -931,6 +988,7 @@ getLong(columnIndex: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -972,9 +1030,10 @@ if (resultSet !== undefined) {
 
 
 
-#### getDouble
+## getDouble
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDouble(columnIndex: number): number
 
@@ -984,12 +1043,14 @@ getDouble(columnIndex: number): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | columnIndex | number | 是 | 指定的列索引，从0开始。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -999,6 +1060,7 @@ getDouble(columnIndex: number): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1040,9 +1102,10 @@ if (resultSet !== undefined) {
 
 
 
-#### getAsset10+
+## getAsset10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAsset(columnIndex: number): Asset
 
@@ -1052,12 +1115,14 @@ getAsset(columnIndex: number): Asset
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | columnIndex | number | 是 | 指定的列索引，从0开始。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1067,6 +1132,7 @@ getAsset(columnIndex: number): Asset
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1102,9 +1168,10 @@ if (resultSet != undefined) {
 
 
 
-#### getAssets10+
+## getAssets10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAssets(columnIndex: number): Assets
 
@@ -1114,12 +1181,14 @@ getAssets(columnIndex: number): Assets
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | columnIndex | number | 是 | 指定的列索引，从0开始。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1129,6 +1198,7 @@ getAssets(columnIndex: number): Assets
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1164,9 +1234,10 @@ if (resultSet != undefined) {
 
 
 
-#### getRow11+
+## getRow11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRow(): ValuesBucket
 
@@ -1176,6 +1247,7 @@ getRow(): ValuesBucket
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ValuesBucket | 返回指定行的值。当结果集中包含重名列时，返回值会不符合预期，建议使用getCurrentRowData接口获取。 |
@@ -1184,6 +1256,7 @@ getRow(): ValuesBucket
 **错误码：**
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1218,9 +1291,10 @@ if (resultSet != undefined) {
 
 
 
-#### getRows18+
+## getRows18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRows(maxCount: number, position?: number): Promise<Array&lt;ValuesBucket&gt;>
 
@@ -1230,6 +1304,7 @@ getRows(maxCount: number, position?: number): Promise<Array&lt;ValuesBucket&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | maxCount | number | 是 | 正整数，指定要从结果集中获取数据的条数。不为正整数则参数非法，抛出错误码401。 |
@@ -1238,14 +1313,16 @@ getRows(maxCount: number, position?: number): Promise<Array&lt;ValuesBucket&gt;>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise<Array&lt;ValuesBucket&gt;> | 返回maxCount条数据，剩余数据不足maxCount条则返回剩余数据，返回空数组时代表已经遍历到结果集的末尾。当结果集中包含重名列时，返回值会不符合预期，建议使用getRowsData接口获取。 |
+| Promise<Array&lt;ValuesBucket&gt;> | Promise对象，返回maxCount条数据，剩余数据不足maxCount条则返回剩余数据，返回空数组时代表已经遍历到结果集的末尾。当结果集中包含重名列时，返回值会不符合预期，建议使用getRowsData接口获取。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1299,9 +1376,10 @@ async function processRows(resultSet: relationalStore.ResultSet) {
 
 
 
-#### getCurrentRowData23+
+## getCurrentRowData23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCurrentRowData(): RowData
 
@@ -1313,6 +1391,7 @@ getCurrentRowData(): RowData
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | RowData | 返回当前行所有列的值。支持获取包含重名列的值。 |
@@ -1321,6 +1400,7 @@ getCurrentRowData(): RowData
 **错误码：**
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1353,9 +1433,10 @@ try {
 
 
 
-#### getRowsData23+
+## getRowsData23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRowsData(maxCount: number, position?: number): Promise&lt;RowsData&gt;
 
@@ -1367,6 +1448,7 @@ getRowsData(maxCount: number, position?: number): Promise&lt;RowsData&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | maxCount | number | 是 | 正整数，指定从结果集中获取数据的条数。不为正整数则参数非法，抛出错误码14800001。 |
@@ -1375,14 +1457,16 @@ getRowsData(maxCount: number, position?: number): Promise&lt;RowsData&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Promise&lt;RowsData&gt; | 返回maxCount条数据，剩余数据不足maxCount条则返回剩余数据，返回空数组时代表已经遍历到结果集的末尾。支持获取包含重名列的值。 |
+| Promise&lt;RowsData&gt; | Promise对象，返回maxCount条数据，剩余数据不足maxCount条则返回剩余数据，返回空数组时代表已经遍历到结果集的末尾。支持获取包含重名列的值。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1442,9 +1526,10 @@ try {
 
 
 
-#### getSendableRow12+
+## getSendableRow12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSendableRow(): sendableRelationalStore.ValuesBucket
 
@@ -1454,6 +1539,7 @@ getSendableRow(): sendableRelationalStore.ValuesBucket
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | sendableRelationalStore.ValuesBucket | 当前行数据的sendable形式，用于跨线程传递。 |
@@ -1462,6 +1548,7 @@ getSendableRow(): sendableRelationalStore.ValuesBucket
 **错误码：**
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1538,9 +1625,10 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### isColumnNull
+## isColumnNull
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isColumnNull(columnIndex: number): boolean
 
@@ -1550,12 +1638,14 @@ isColumnNull(columnIndex: number): boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | columnIndex | number | 是 | 指定的列索引，从0开始。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1565,6 +1655,7 @@ isColumnNull(columnIndex: number): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。其中，14800011错误码处理可参考[数据库备份与恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-and-restore)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1606,9 +1697,10 @@ if (resultSet !== undefined) {
 
 
 
-#### close
+## close
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(): void
 
@@ -1627,6 +1719,7 @@ if (resultSet != undefined) {
 **错误码：**
 
 以下错误码的详细介绍请参见[关系型数据库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-data-rdb)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

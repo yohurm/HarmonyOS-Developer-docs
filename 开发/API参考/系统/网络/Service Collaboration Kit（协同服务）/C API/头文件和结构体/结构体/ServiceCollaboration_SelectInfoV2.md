@@ -1,11 +1,12 @@
 # ServiceCollaboration_SelectInfoV2
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/servicecollaboration-selectinfov2
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -19,16 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
  
+
 | 名称 | 描述 |
 | --- | --- |
 | ServiceCollaborationFilterType serviceFilterType | 开发者期望的设备能力类型。 |
@@ -39,13 +43,15 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### deviceNetworkId
+### deviceNetworkId
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -59,7 +65,8 @@ char ServiceCollaboration_SelectInfo::deviceNetworkId[COLLABORATIONDEVICEINFO_DE
  
   
 
-#### maxSize
+### maxSize
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -73,7 +80,8 @@ uint32_t ServiceCollaboration_SelectInfo::maxSize
  
   
 
-#### serviceFilterType
+### serviceFilterType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -87,7 +95,8 @@ ServiceCollaborationFilterType ServiceCollaboration_SelectInfo::serviceFilterTyp
  
   
 
-#### uri
+### uri
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 

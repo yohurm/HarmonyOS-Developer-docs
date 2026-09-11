@@ -1,16 +1,149 @@
 # liveViewManager
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/liveview-liveviewmanager
 **支持设备：** Phone | PC/2in1 | Tablet
 
-本模块提供Live View Kit的基础能力，包括创建、更新和结束实况窗、获取实况窗和检查实况窗开关的功能。
+## 模块概述
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
+
+Live View Kit（实况窗服务）是HarmonyOS提供的一种实时活动展示服务，支持应用将订单或者服务的实时状态信息呈现在设备关键界面（如通知中心、状态栏、横幅卡片、锁屏），帮助用户快速查看和即时处理正在进行的任务。
+
+本模块提供的基础能力包括：
+
+ - 基础生命周期管理：提供创建、更新、结束实况通知接口（对应startLiveView、updateLiveView、stopLiveView接口），支持应用调用接口创建、更新和结束实况通知，在熄屏、锁屏、横幅、通知中心和状态栏等位置，展示用户关注事件（如外卖即时配送，出行打车订单）的实时进展。
+ - 基于条件的生命周期管理：基于地理位置的实况窗提醒是从6.1.0(23)开始支持的高级功能。该功能允许开发者注册地理围栏条件，当设备进入或离开地理围栏后，自动触发实况窗的创建或结束，实现基于地理位置的实况窗提醒服务。
+ - 实况窗信息查询：提供getActiveLiveView、isLiveViewEnabled、isGeofenceTriggerEnabled接口，支持应用在创建或更新实况窗之前查询实况相关信息和开关状态。
+ - 模板管理：提供基于模板定义实况窗卡片、胶囊、小外屏等展示内容的能力，在锁屏、通知中心、状态栏等位置展示，建立开发者和用户的连接。
+ - 提醒方式管理：支持配置实况通知是否响铃振动、状态栏胶囊动效、展开横幅提醒。
+
+
+
+
+### 基本概念
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
+
+ - 应用场景event：是实况窗对象LiveView中用于标识应用场景类型的关键字段。该字段决定了实况窗的适用场景，开发者需根据实际业务选择对应的场景值。
+ - 实况窗id：是实况窗对象LiveView中用于唯一标识一个实况窗的关键字段。由开发者自行生成，用于创建、更新、结束和查询实况窗。
+ - 实况窗布局：实况窗在展示形态上分为卡片态和胶囊态两种。卡片态又分为固定区、辅助区和扩展区三个部分。
+ - 固定区是用于显示实时活动的核心信息和用户最关注的动态内容，位于卡片顶部左侧和中间区域。
+ - 辅助区用于显示实时活动的次要信息，位于卡片上固定区的右侧区域，若选择展示辅助区，则会挤占固定区宽度。
+ - 扩展区用于显示实时活动的详细信息，位于卡片固定区和辅助区下方区域，支持进度可视化、强调文本、左右文本、赛事比分、导航定制样式。
+ - 胶囊是实况窗在状态栏的展示形式，点击胶囊可展开实况窗横幅卡片查看详情。
+ - 扩展区模板类型layoutType：是定义实况窗扩展区模板类型的枚举。扩展区是实况窗卡片中展示详细信息和进度的重要内容区域，不同的模板类型适用于不同的业务场景。
+ - 存档时间keepTime：是用于控制实况窗结束后的存档时间。即在调用stopLiveView结束实况窗后，实况窗仍在通知中心保留展示的时长。
+
+
+
+
+### 关键Class/Interface介绍
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
+
+```text
+LiveView:  实况窗对象参数
+    ├── id
+    ├── event
+    ├── 其他参数......
+    └── LiveViewData: 实况窗详细信息
+        ├── PrimaryData: 卡片形态内容
+            ├── LayoutData: 扩展区数据
+                ├── ProgressLayout: 进度可视化模板扩展区参数
+                ├── FlightLayout: 左右文本模板扩展区参数
+                ├── ScoreLayout: 赛事比分模板扩展区参数
+                ├── PickupLayout: 强调文本模板扩展区参数
+                ├── NavigationLayout: 导航模板扩展区参数
+                └── CustomLayout: 自定义模板扩展区参数
+            └── ExtensionData: 辅助区内容
+        ├── CapsuleData: 实况胶囊形态内容
+            ├── TextCapsule: 文本胶囊参数
+            ├── TimerCapsule: 计时器胶囊参数
+            └── ProgressCapsule: 进度胶囊参数
+        └── ExternalData: 外屏形态模板参数
+```
+
+
+
+### API组合使用关系
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
+
+ - 本地实况窗创建、更新和结束流程
+
+
+```text
+1. 前置检查
+     isLiveViewEnabled()  检查应用实况窗开关是否开启，如开启则继续下一步。
+                                                   
+  2. 创建实况窗
+     startLiveView(liveView)  创建一个liveView实况窗实例。
+                                                  
+  3. 更新实况窗（可多次调用）
+     updateLiveView(liveView)  更新实况窗为liveView实例中的内容。
+                                                   
+  4. 结束实况窗
+     stopLiveView(liveView)  结束一个liveView实况窗实例。
+```
+
+ - 通过条件触发创建实况窗的流程
+
+
+```text
+1. 前置检查
+     isGeofenceTriggerEnabled()  查询基于地理位置的实况窗提醒开关，如果开关使能，则继续下一步。
+                                                   
+  2. 注册一个由条件触发创建的实况窗
+     startLiveViewByTrigger(liveView，trigger)注册一个由条件trigger触发创建的liveView实况窗实例。
+                                                   
+  3. 等待条件满足
+     设备进入/离开指定地理围栏。
+                                                   
+  4. 条件触发
+     系统自动创建并展示实况（无需开发者调用接口创建）。
+                                                  
+  5. 实况窗结束
+     实况窗展示liveViewManager.Trigger.displayTime时长后自动结束。
+```
+
+ - 通过条件触发结束实况窗的流程
+
+
+```text
+1. 前置检查
+     isLiveViewEnabled()  检查应用实况窗开关是否开启，如开启则继续下一步。
+                                                    
+  2. 创建实况窗
+     startLiveView(liveView)  创建一个liveView实况窗实例。
+                                                   
+  3. 更新实况窗（可选，可多次调用）
+     updateLiveView(liveView)  更新实况窗为liveView实例中的内容。
+ 
+  4. 前置检查
+     isGeofenceTriggerEnabled()  查询基于地理位置的实况窗提醒开关, 如果开关使能，则继续下一步。
+ 
+  5. 注册一个由条件触发结束的实况窗
+     stopLiveViewByTrigger(liveView, trigger)  注册一个由条件trigger触发结束的liveView实况窗实例。
+                                                 
+  6. 等待条件满足
+     设备进入/离开指定地理围栏。
+                                                  
+  7. 条件触发
+     系统自动结束实况窗（无需开发者调用接口结束）。
+```
 
 **起始版本：** 4.1.0(11)
 
 
-#### 导入模块
+
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -22,7 +155,8 @@ import { liveViewManager } from '@kit.LiveViewKit';
 
 
 
-#### liveViewManager.isLiveViewEnabled
+## liveViewManager.isLiveViewEnabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -40,6 +174,7 @@ isLiveViewEnabled(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | 以Promise形式返回当前应用实况窗的开关状态。 ● true表示实况窗开关开启。 ● false表示实况窗开关关闭。 |
@@ -48,6 +183,7 @@ isLiveViewEnabled(): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/liveview-error-code)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -77,7 +213,8 @@ try {
 
 
 
-#### liveViewManager.startLiveView
+## liveViewManager.startLiveView
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -95,12 +232,14 @@ startLiveView(liveView: LiveView): Promise&lt;LiveViewResult&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | liveView | LiveView | 是 | 一个实况窗实例。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -110,6 +249,7 @@ startLiveView(liveView: LiveView): Promise&lt;LiveViewResult&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/liveview-error-code)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -209,7 +349,8 @@ async function buildWantAgent(): Promise<Want> {
 
 
 
-#### liveViewManager.updateLiveView
+## liveViewManager.updateLiveView
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -227,12 +368,14 @@ updateLiveView(liveView: LiveView): Promise&lt;LiveViewResult&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | liveView | LiveView | 是 | 一个实况窗实例。对于非必填字段，若无特殊说明，则不携带时默认继承上一次的状态。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -242,6 +385,7 @@ updateLiveView(liveView: LiveView): Promise&lt;LiveViewResult&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/liveview-error-code)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -341,7 +485,8 @@ async function buildWantAgent(): Promise<Want> {
 
 
 
-#### liveViewManager.stopLiveView
+## liveViewManager.stopLiveView
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -359,12 +504,14 @@ stopLiveView(liveView: LiveView): Promise&lt;LiveViewResult&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | liveView | LiveView | 是 | 一个实况窗实例。对于非必填字段，若无特殊说明，则不携带时默认继承上一次的状态。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -374,6 +521,7 @@ stopLiveView(liveView: LiveView): Promise&lt;LiveViewResult&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/liveview-error-code)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -473,7 +621,8 @@ async function buildWantAgent(): Promise<Want> {
 
 
 
-#### liveViewManager.getActiveLiveView
+## liveViewManager.getActiveLiveView
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -491,12 +640,14 @@ getActiveLiveView(id: number): Promise&lt;LiveView&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | number | 是 | 实况窗的id，取值范围为[-2147483648, 2147483647]。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -506,6 +657,7 @@ getActiveLiveView(id: number): Promise&lt;LiveView&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/liveview-error-code)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -539,7 +691,8 @@ try {
 
 
 
-#### liveViewManager.isGeofenceTriggerEnabled
+## liveViewManager.isGeofenceTriggerEnabled
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -557,6 +710,7 @@ isGeofenceTriggerEnabled(): Promise&lt;boolean&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | 以Promise形式返回当前基于地理位置的实况窗提醒的开关状态。 ● true表示基于地理位置的实况窗提醒开关开启。 ● false表示基于地理位置的实况窗提醒开关关闭。 |
@@ -565,6 +719,7 @@ isGeofenceTriggerEnabled(): Promise&lt;boolean&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/liveview-error-code)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -594,7 +749,8 @@ try {
 
 
 
-#### liveViewManager.startLiveViewByTrigger
+## liveViewManager.startLiveViewByTrigger
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -612,6 +768,7 @@ startLiveViewByTrigger(liveView: LiveView, trigger:Trigger): Promise&lt;LiveView
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | liveView | LiveView | 是 | 一个实况窗实例。 |
@@ -619,6 +776,7 @@ startLiveViewByTrigger(liveView: LiveView, trigger:Trigger): Promise&lt;LiveView
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -628,6 +786,7 @@ startLiveViewByTrigger(liveView: LiveView, trigger:Trigger): Promise&lt;LiveView
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/liveview-error-code)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -739,7 +898,8 @@ async function buildWantAgent(): Promise<Want> {
 
 
 
-#### liveViewManager.stopLiveViewByTrigger
+## liveViewManager.stopLiveViewByTrigger
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -757,6 +917,7 @@ stopLiveViewByTrigger(liveView: LiveView, trigger:Trigger): Promise&lt;LiveViewR
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | liveView | LiveView | 是 | 一个实况窗实例。 |
@@ -764,6 +925,7 @@ stopLiveViewByTrigger(liveView: LiveView, trigger:Trigger): Promise&lt;LiveViewR
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -773,6 +935,7 @@ stopLiveViewByTrigger(liveView: LiveView, trigger:Trigger): Promise&lt;LiveViewR
 **错误码：**
 
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/liveview-error-code)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -884,7 +1047,8 @@ async function buildWantAgent(): Promise<Want> {
 
 
 
-#### Trigger
+## Trigger
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -898,6 +1062,7 @@ async function buildWantAgent(): Promise<Want> {
 
 **起始版本：** 6.1.0(23)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | TriggerType | 否 | 否 | 触发创建或结束实况窗的条件类型 |
@@ -907,7 +1072,8 @@ async function buildWantAgent(): Promise<Want> {
 
 
 
-#### Geofence
+## Geofence
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -920,6 +1086,7 @@ async function buildWantAgent(): Promise<Want> {
 **设备行为差异：** 该接口在Phone、Tablet中可正常调用，在其他设备类型中无效果。
 
 **起始版本：** 6.1.0(23)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -937,7 +1104,8 @@ async function buildWantAgent(): Promise<Want> {
 
 
 
-#### TriggerType
+## TriggerType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -951,6 +1119,7 @@ async function buildWantAgent(): Promise<Want> {
 
 **起始版本：** 6.1.0(23)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | TRIGGER_TYPE_GEOFENCE | 1 | 地理围栏条件类型 |
@@ -958,7 +1127,8 @@ async function buildWantAgent(): Promise<Want> {
 
 
 
-#### CoordinateSystemType
+## CoordinateSystemType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -972,6 +1142,7 @@ async function buildWantAgent(): Promise<Want> {
 
 **起始版本：** 6.1.0(23)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | COORDINATE_TYPE_WGS84 | 1 | WGS84坐标系 |
@@ -980,7 +1151,8 @@ async function buildWantAgent(): Promise<Want> {
 
 
 
-#### MonitorEvent
+## MonitorEvent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -994,6 +1166,7 @@ async function buildWantAgent(): Promise<Want> {
 
 **起始版本：** 6.1.0(23)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | MONITOR_TYPE_ENTRY | 1 | 进入围栏 |
@@ -1002,7 +1175,8 @@ async function buildWantAgent(): Promise<Want> {
 
 
 
-#### LiveView
+## LiveView
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1016,9 +1190,10 @@ async function buildWantAgent(): Promise<Want> {
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| id | number | 否 | 否 | 实况窗唯一标识，取值范围为[-2147483648, 2147483647]，由开发者自行生成。对应Push Kit中LiveViewPayload的activityId字段。 |
+| id | number | 否 | 否 | 实况窗唯一标识，取值范围为[-2147483648, 2147483647]，由开发者自行生成。如果通过Push Kit REST API创建、更新和结束实况窗，对应Push Kit REST API中LiveViewPayload的activityId字段。 |
 | event | string | 否 | 否 | 实况窗的应用场景。 ● TAXI：出行打车。 ● DELIVERY：即时配送（外卖、生鲜）。 ● FLIGHT：航班。 ● TRAIN：高铁/火车。 ● QUEUE：排队。 ● PICK_UP：取餐。 ● SCORE：赛事比分。 ● RENT：共享租赁。 ● TIMER：计时。 ● WORKOUT：运动锻炼。 ● NAVIGATION：导航。 ● CHECK_IN：打卡。 ● EXPRESS：快递。 ● PROGRESS：进度类型。 ● TRADE：金融交易。 使用对应场景需要申请权益，详情请参见实况窗权益说明。 |
 | subEvent | string | 否 | 是 | 实况窗的应用子场景。主要用于统计子业务场景的实况窗数量，使用对应子场景无需额外申请权益。 ● 即时配送（外卖、生鲜）场景(event为"DELIVERY") FOOD：美食、GOODS：商超、MEDICINE：买药、BACHELOR：跑腿、GROUPBUY：拼团 ● 导航场景(event为"NAVIGATION") DRIVING：驾车、WALKING：步行、CYCLING：骑行、BUS：公交、METRO：地铁 ● 出行打车场景(event为"TAXI") STANDARD：普通即时打车、SPECIAL：专车、HITCHHIKING：顺风车、CARPOOLING：拼车 ● 排队场景(event为"QUEUE") RESTAURANT：餐饮排号、HOSPITAL：就诊排号、BANK：银行排号、GOVERNMENT：政务中心排号、ATTRACTION：景区排号 ● 共享租赁场景(event为"RENT") BICYCLE：共享单车、EBIKE：共享电动车或助力车、POWERBANK：共享充电宝、CAR：共享汽车 ● 运动锻炼场景(event为"WORKOUT") RUNNING：跑步、CYCLING：骑行、WALKING：步行 ● 进度类型场景(event为"PROGRESS") UPLOAD：文件上传、DOWNLOAD：文件下载、IMPORT：资源导入、EXPORT：资源导出、BACKUP：备份、RECOVER：恢复 起始版本： 26.0.0 |
 | sequence | number | 否 | 是 | 支持实况窗消息更新和结束保序能力，取值范围为[0, 2147483647]，新的实况窗版本号需大于当前展示实况窗版本号，否则更新和结束会失败。若不传入参数值，Live View Kit不会自动生成（此时，调用getActiveLiveView接口查询实况信息，返回结果中sequence：4294967295为无效值，该无效值不允许用来更新实况），也不会校验实况窗版本号。对应Push Kit中的version字段。 |
@@ -1031,7 +1206,8 @@ async function buildWantAgent(): Promise<Want> {
 
 
 
-#### LiveViewTimer
+## LiveViewTimer
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1045,6 +1221,7 @@ async function buildWantAgent(): Promise<Want> {
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | time | number | 否 | 是 | 计时器初始值，单位：ms，默认为0，取值范围为[0,9223372036854775807]。每秒刷新一次。 |
@@ -1056,7 +1233,8 @@ async function buildWantAgent(): Promise<Want> {
 
 
 
-#### CountdownPreset
+## CountdownPreset
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1070,6 +1248,7 @@ async function buildWantAgent(): Promise<Want> {
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | presetTitle | string | 否 | 是 | 自动更新扩展区标题或实况胶囊主文本为预设主文本。该参数值不可为：null/undefined/空字符串，长度小于128。 |
@@ -1078,7 +1257,8 @@ async function buildWantAgent(): Promise<Want> {
 
 
 
-#### LiveViewData
+## LiveViewData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1092,6 +1272,7 @@ async function buildWantAgent(): Promise<Want> {
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | primary | PrimaryData | 否 | 否 | 卡片形态内容。 |
@@ -1101,7 +1282,8 @@ async function buildWantAgent(): Promise<Want> {
 
 
 
-#### PrimaryData
+## PrimaryData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1114,6 +1296,7 @@ async function buildWantAgent(): Promise<Want> {
 **设备行为差异：** 该接口在Phone、Tablet中可正常调用，在其他设备类型中无效果。
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1132,7 +1315,8 @@ async function buildWantAgent(): Promise<Want> {
 
 
 
-#### BackgroundType
+## BackgroundType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1146,6 +1330,7 @@ async function buildWantAgent(): Promise<Want> {
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SYS_BACKGROUND_UNDEFINED | 0 | 未定义，表示在卡片上不展示背景氛围。 |
@@ -1155,7 +1340,8 @@ async function buildWantAgent(): Promise<Want> {
 
 
 
-#### ExtensionData
+## ExtensionData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1184,6 +1370,7 @@ async function buildWantAgent(): Promise<Want> {
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | ExtensionType | 否 | 是 | 辅助区显示类型，默认为EXTENSION_TYPE_DEFAULT不显示辅助区。 |
@@ -1196,7 +1383,8 @@ async function buildWantAgent(): Promise<Want> {
 
 
 
-#### LayoutData
+## LayoutData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1210,6 +1398,7 @@ async function buildWantAgent(): Promise<Want> {
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | layoutType | LayoutType | 否 | 否 | 模板类型。 |
@@ -1220,7 +1409,8 @@ async function buildWantAgent(): Promise<Want> {
 
 
 
-#### WeatherInfo
+## WeatherInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1234,6 +1424,7 @@ async function buildWantAgent(): Promise<Want> {
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | weatherType | WeatherType | 否 | 是 | 天气类型。创建实况窗时，若不传入weatherType或传入值为undefined、WeatherType.WEATHER_TYPE_UNDEFINED、未定义的枚举值，则不展示天气效果。 |
@@ -1244,7 +1435,8 @@ async function buildWantAgent(): Promise<Want> {
 
 
 
-#### WeatherType
+## WeatherType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1257,6 +1449,7 @@ async function buildWantAgent(): Promise<Want> {
 **设备行为差异：** 该接口在Phone、Tablet中可正常调用，在其他设备类型中无效果。
 
 **起始版本：** 6.0.0(20)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1292,7 +1485,8 @@ async function buildWantAgent(): Promise<Want> {
 
 
 
-#### WeatherLocationType
+## WeatherLocationType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1306,6 +1500,7 @@ async function buildWantAgent(): Promise<Want> {
 
 **起始版本：** 6.0.0(20)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | LOCATION_TYPE_LOCAL | 1 | 表示展示本地天气效果，仅支持基础模板、进度可视化模板和强调文本模板（即layoutType为LAYOUT_TYPE_DEFAULT/LAYOUT_TYPE_PROGRESS/LAYOUT_TYPE_PICKUP）。天气图标将展示在固定区标题右侧，不支持显示温度。 说明： 从6.0.2(22)开始支持展示本地天气效果。 |
@@ -1314,7 +1509,8 @@ async function buildWantAgent(): Promise<Want> {
 
 
 
-#### ServiceButton
+## ServiceButton
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1328,6 +1524,7 @@ async function buildWantAgent(): Promise<Want> {
 
 **起始版本：** 5.1.1(19)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | name | string | 否 | 是 | 连续服务按钮名字，长度小于128，超过该长度的字符将被截断。 |
@@ -1336,7 +1533,8 @@ async function buildWantAgent(): Promise<Want> {
 
 
 
-#### ProgressLayout
+## ProgressLayout
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1363,6 +1561,7 @@ async function buildWantAgent(): Promise<Want> {
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | progress | number | 否 | 否 | 进度百分比，决定指示器在进度条中的位置，值范围：[0,100]。 |
@@ -1376,7 +1575,8 @@ async function buildWantAgent(): Promise<Want> {
 
 
 
-#### PickupLayout
+## PickupLayout
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1402,6 +1602,7 @@ async function buildWantAgent(): Promise<Want> {
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | title | string | 否 | 创建或模板切换：否 更新或结束：是 | 扩展区标题，若传入该参数，其值不能为以下值：null/undefined/空字符串/全为空格的字符串，长度小于128。 |
@@ -1412,7 +1613,8 @@ async function buildWantAgent(): Promise<Want> {
 
 
 
-#### FlightLayout
+## FlightLayout
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1444,6 +1646,7 @@ async function buildWantAgent(): Promise<Want> {
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | style | FlightLayoutStyle | 否 | 是 | 左右文本模板子样式类型，若未填默认为强调型子样式。 ● 0：强调型子样式类型。 ● 1：均衡型子样式类型。 起始版本： 5.0.2(14) |
@@ -1462,7 +1665,8 @@ async function buildWantAgent(): Promise<Want> {
 
 
 
-#### ScoreLayout
+## ScoreLayout
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1493,6 +1697,7 @@ async function buildWantAgent(): Promise<Want> {
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | hostName | string | 否 | 创建或模板切换：否 更新或结束：是 | 扩展区左侧名称，若传入该参数，其值不能为以下值：null/undefined/空字符串/全为空格的字符串，长度小于128。 |
@@ -1508,7 +1713,8 @@ async function buildWantAgent(): Promise<Want> {
 
 
 
-#### NavigationLayout
+## NavigationLayout
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1533,6 +1739,7 @@ async function buildWantAgent(): Promise<Want> {
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | currentNavigationIcon | string \| image.PixelMap | 否 | 创建或模板切换：否 更新或结束：是 | 当前导航方向。 ● 当此参数类型为string时，取值为在“/resources/rawfile”路径下的本地资源文件名，长度最大为128。 示例：图片文件“icon.png”存放在应用的“/resources/rawfile”路径下，则取值为“icon.png”。 若本地资源不存在，创建时失败，更新或结束时导航模板扩展区不更新。 说明： 为确保图片在系统深浅模式下的显示效果，系统将对png、svg格式图片做赋色处理，其他格式图片保留原样显示不支持赋色。具体参考 卡片模板 的 "导航定制模板"说明。 ● 当此参数类型为image.PixelMap时，传入图片的PixelMap实例大小有如下限制： 对于26.0.0之前版本，不大于30KB；从26.0.0开始，不大于192KB。 |
@@ -1542,7 +1749,8 @@ async function buildWantAgent(): Promise<Want> {
 
 
 
-#### CustomLayout
+## CustomLayout
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1556,6 +1764,7 @@ async function buildWantAgent(): Promise<Want> {
 
 **起始版本：** 26.0.0
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | abilityName | string | 否 | 否 | LiveViewCardExtensionAbility（实况窗卡片自定义扩展区的扩展Ability）的名称。若传入该参数，其值不能为以下值：null/undefined/空字符串/全为空格的字符串，长度小于128。 |
@@ -1564,7 +1773,8 @@ async function buildWantAgent(): Promise<Want> {
 
 
 
-#### CapsuleData
+## CapsuleData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1591,6 +1801,7 @@ async function buildWantAgent(): Promise<Want> {
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | CapsuleType | 否 | 否 | 实况胶囊的类型。 |
@@ -1604,7 +1815,8 @@ async function buildWantAgent(): Promise<Want> {
 
 
 
-#### TextCapsule
+## TextCapsule
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1628,6 +1840,7 @@ async function buildWantAgent(): Promise<Want> {
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | title | string | 否 | 创建或模板切换：否 更新或结束：是 | 实况胶囊的主文本，长度小于128，若传入该参数，其值不能为以下值：null/undefined/空字符串/全为空格的字符串。 说明： 从6.0.0(20)版本开始，支持当传入值为"数值:数值"，且layoutType为赛事类型LAYOUT_TYPE_SCORE时，系统将自动提取实况卡片扩展区两侧图片和比分，更新实况胶囊样式，显示为赛事队伍图标及比分情况。 |
@@ -1636,7 +1849,8 @@ async function buildWantAgent(): Promise<Want> {
 
 
 
-#### TimerCapsule
+## TimerCapsule
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1660,6 +1874,7 @@ async function buildWantAgent(): Promise<Want> {
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | content | string | 否 | 是 | 实况胶囊的副文本，长度小于128，若传入该参数，其值不能为以下值：null/undefined/空字符串/全为空格的字符串。 |
@@ -1670,7 +1885,8 @@ async function buildWantAgent(): Promise<Want> {
 
 
 
-#### ProgressCapsule
+## ProgressCapsule
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1697,6 +1913,7 @@ indeterminate为false：展示数值占比，格式为x/y（x对应progress字�
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | max | number | 否 | 是 | 进度条最大进度值，默认为1，范围为[1, 2147483647]。 |
@@ -1707,7 +1924,8 @@ indeterminate为false：展示数值占比，格式为x/y（x对应progress字�
 
 
 
-#### ExternalData
+## ExternalData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1716,7 +1934,7 @@ indeterminate为false：展示数值占比，格式为x/y（x对应progress字�
 **外屏元素对应的API字段：**
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/FbICj0nkT02oV9fLtRTMPA/zh-cn_image_0000002655849814.png?HW-CC-KV=V1&HW-CC-Date=20260730T071732Z&HW-CC-Expire=86400&HW-CC-Sign=8F5872F42C7E2DA098567FF4F5656F706CE6141F691F3470C10D3191DECDE0A0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/ojr-6lXCQ9iRdTZCR0Nw7g/zh-cn_image_0000002717773892.png?HW-CC-KV=V1&HW-CC-Date=20260911T073007Z&HW-CC-Expire=86400&HW-CC-Sign=813F8A3AA05EA3FAC51285ABF5F72858FF35796E705BB555EB48FEEE88AC2C83)
 
 
  - 1 外屏标题，对应title字段。
@@ -1733,6 +1951,7 @@ indeterminate为false：展示数值占比，格式为x/y（x对应progress字�
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | title | string | 否 | 创建：否 更新或结束：是 | 外屏标题，若传入该参数，其值不能为以下值：null/undefined/空字符串/全为空格的字符串，长度小于128。 |
@@ -1744,7 +1963,8 @@ indeterminate为false：展示数值占比，格式为x/y（x对应progress字�
 
 
 
-#### RichText
+## RichText
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1758,6 +1978,7 @@ indeterminate为false：展示数值占比，格式为x/y（x对应progress字�
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | text | string | 否 | 否 | 文本内容，长度小于128。 |
@@ -1766,7 +1987,8 @@ indeterminate为false：展示数值占比，格式为x/y（x对应progress字�
 
 
 
-#### LiveViewResult
+## LiveViewResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1780,6 +2002,7 @@ indeterminate为false：展示数值占比，格式为x/y（x对应progress字�
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 类型 | 说明 |
 | --- | --- | --- |
 | resultCode | number | 实况窗结果码。 ● 0：成功。 ● 1：固定区更新或结束失败。 ● 2：辅助区更新或结束失败。 ● 3：扩展区更新或结束失败。 ● 4：实况胶囊更新或结束失败。 ● 5：外屏更新或结束失败。 |
@@ -1788,7 +2011,8 @@ indeterminate为false：展示数值占比，格式为x/y（x对应progress字�
 
 
 
-#### LayoutType
+## LayoutType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1801,6 +2025,7 @@ indeterminate为false：展示数值占比，格式为x/y（x对应progress字�
 **设备行为差异：** 该接口在Phone、Tablet中可正常调用，在其他设备类型中无效果。
 
 **起始版本：** 4.1.0(11)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1815,7 +2040,8 @@ indeterminate为false：展示数值占比，格式为x/y（x对应progress字�
 
 
 
-#### ExtensionType
+## ExtensionType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1829,6 +2055,7 @@ indeterminate为false：展示数值占比，格式为x/y（x对应progress字�
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | EXTENSION_TYPE_DEFAULT | 0 | 不显示辅助区。 |
@@ -1841,7 +2068,8 @@ indeterminate为false：展示数值占比，格式为x/y（x对应progress字�
 
 
 
-#### ActionType
+## ActionType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1855,6 +2083,7 @@ indeterminate为false：展示数值占比，格式为x/y（x对应progress字�
 
 **起始版本：** 6.1.1(24)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ACTION_TYPE_OPEN_APP_PAGE | 1 | 打开应用自定义页面 |
@@ -1863,7 +2092,8 @@ indeterminate为false：展示数值占比，格式为x/y（x对应progress字�
 
 
 
-#### LifeCycleMode
+## LifeCycleMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1877,6 +2107,7 @@ indeterminate为false：展示数值占比，格式为x/y（x对应progress字�
 
 **起始版本：** 26.0.0
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | STOP_BY_APP | 0 | 常规生命周期，不跟随应用进程结束而自动结束，需要由开发者主动调用liveViewManager.stopLiveView方法结束实况窗。 |
@@ -1885,7 +2116,8 @@ indeterminate为false：展示数值占比，格式为x/y（x对应progress字�
 
 
 
-#### IndicatorType
+## IndicatorType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1899,6 +2131,7 @@ indeterminate为false：展示数值占比，格式为x/y（x对应progress字�
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | INDICATOR_TYPE_UNDISPLAYED | 0 | 不显示指示器小图标。 |
@@ -1908,7 +2141,8 @@ indeterminate为false：展示数值占比，格式为x/y（x对应progress字�
 
 
 
-#### LineType
+## LineType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1922,6 +2156,7 @@ indeterminate为false：展示数值占比，格式为x/y（x对应progress字�
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | LINE_TYPE_DOTTED_LINE | 0 | 虚线进度。 |
@@ -1931,7 +2166,8 @@ indeterminate为false：展示数值占比，格式为x/y（x对应progress字�
 
 
 
-#### CapsuleType
+## CapsuleType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1945,6 +2181,7 @@ indeterminate为false：展示数值占比，格式为x/y（x对应progress字�
 
 **起始版本：** 4.1.0(11)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CAPSULE_TYPE_TEXT | 1 | 文本实况胶囊。 |
@@ -1954,7 +2191,8 @@ indeterminate为false：展示数值占比，格式为x/y（x对应progress字�
 
 
 
-#### ExternalType
+## ExternalType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1968,6 +2206,7 @@ indeterminate为false：展示数值占比，格式为x/y（x对应progress字�
 
 **起始版本：** 5.0.0(12)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | BACKGROUND_COLOR | 0 | 显示背景色。 |
@@ -1976,7 +2215,8 @@ indeterminate为false：展示数值占比，格式为x/y（x对应progress字�
 
 
 
-#### FlightLayoutStyle
+## FlightLayoutStyle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1990,6 +2230,7 @@ indeterminate为false：展示数值占比，格式为x/y（x对应progress字�
 
 **起始版本：** 5.0.2(14)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | STYLE_FLIGHT_EMPHASIS | 0 | 强调型子样式类型。 |
@@ -2002,7 +2243,8 @@ indeterminate为false：展示数值占比，格式为x/y（x对应progress字�
 
 
 
-#### SpaceType
+## SpaceType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2015,6 +2257,7 @@ indeterminate为false：展示数值占比，格式为x/y（x对应progress字�
 **设备行为差异：** 该接口在Phone、Tablet中可正常调用，在其他设备类型中无效果。
 
 **起始版本：** 5.0.2(14)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

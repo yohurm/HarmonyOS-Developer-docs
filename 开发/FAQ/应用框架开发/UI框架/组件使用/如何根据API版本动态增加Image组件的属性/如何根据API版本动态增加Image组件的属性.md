@@ -35,14 +35,14 @@ struct Index {
 
 
   aboutToAppear(): void {
-    // 设置动态属性判断的API版本
+  <em>  // 设置动态属性判断的API版本</em>
     this.modifierImg.sdkApiVersionInfo = deviceInfo.sdkApiVersion;
   }
 
 
   build() {
     Flex({justifyContent: FlexAlign.Center}) {
-      // 加载的图片请替换为实际项目所需图片资源
+    <em>  // 加载的图片请替换为实际项目所需图片资源</em>
       Image($r('app.media.img'))
         .width(100)
         .height(100)
@@ -57,11 +57,11 @@ struct Index {
  
 ```text
 export class ImageModifier implements AttributeModifier<ImageAttribute> {
-  // 可以实现一个Modifier，定义私有的成员变量，外部可动态修改
+  <em>// 可以实现一个Modifier，定义私有的成员变量，外部可动态修改</em>
   sdkApiVersionInfo: number = 12;
   applyNormalAttribute(instance: ImageAttribute): void {
-    if (deviceInfo.sdkApiVersion >= 14) { // 支持业务逻辑实现
-      // 属性变化触发apply函数时，变化前已设置并且变化后未设置的属性会恢复为默认值
+    if (deviceInfo.sdkApiVersion >= 14) {<em> // 支持业务逻辑实现</em>
+    <em>  // 属性变化触发apply函数时，变化前已设置并且变化后未设置的属性会恢复为默认值</em>
       instance.orientation(ImageRotateOrientation.RIGHT);
     }
   }

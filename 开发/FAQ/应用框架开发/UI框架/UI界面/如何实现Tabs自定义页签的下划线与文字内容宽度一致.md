@@ -98,7 +98,7 @@ struct TabsExample {
 
   build() {
     Column() {
-      // 使用自定义页签组件
+      <em>// </em><em>使用自定义页签组件</em>
       List({ space: 20, initialIndex: 0, scroller: this.scrollerForList }) {
         ForEach(this.tabArray, (index: number, item: number) => {
           ListItem() {
@@ -143,7 +143,7 @@ struct TabsExample {
         });
       }.barHeight(0)
       .onChange((index: number) => {
-        // currentIndex控制TabContent显示页签
+        <em>// currentIndex控制TabContent显示页签</em>
         this.focusIndex = index;
         this.scrollerForList.scrollToIndex(index, true, ScrollAlign.CENTER);
       });

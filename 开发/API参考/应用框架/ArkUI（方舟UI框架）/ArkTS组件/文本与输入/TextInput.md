@@ -1,28 +1,30 @@
 # TextInput
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textinput
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 单行文本输入框组件，用于接收用户的单行文本输入。支持多种输入类型（如文本、密码、邮箱、数字等）、自定义样式（字体、颜色、下划线、装饰线等）、输入过滤、密码输入模式、自动填充等功能，适用于登录注册、搜索、表单填写等多种场景。能够解决文本输入验证、格式化、安全输入等常见需求，简化开发流程、提升用户体验并增强数据安全性。
 
 > [!NOTE]
-> 该组件从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 该组件仅支持单文本样式，若需实现富文本样式，建议使用 RichEditor 组件。
+> 该组件从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 该组件仅支持单文本样式，若需实现富文本样式，建议使用 RichEditor 组件。 如需设置触摸文本组件外部时是否清除文本选中和手柄，可使用 setTextSelectionClearPolicy 接口。
 
 
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 无
 
 
 
-#### 接口
+## 接口
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TextInput(value?: TextInputOptions)
 
@@ -32,6 +34,7 @@ TextInput(value?: TextInputOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | TextInputOptions | 否 | TextInput组件参数。默认值undefined。不设置该参数时，输入框初始化为空。 |
@@ -39,15 +42,17 @@ TextInput(value?: TextInputOptions)
 
 
 
-#### TextInputOptions对象说明
+## TextInputOptions对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TextInput初始化参数。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -58,9 +63,10 @@ TextInput初始化参数。
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)，还支持以下属性：
 
@@ -70,9 +76,10 @@ TextInput初始化参数。
 
 
 
-#### type
+### type
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type(value: InputType)
 
@@ -86,6 +93,7 @@ type(value: InputType)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | InputType | 是 | 输入框类型。 |
@@ -97,9 +105,10 @@ type(value: InputType)
 
 
 
-#### placeholderColor
+### placeholderColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 placeholderColor(value: ResourceColor)
 
@@ -111,6 +120,7 @@ placeholderColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | placeholder文本颜色。 |
@@ -118,13 +128,18 @@ placeholderColor(value: ResourceColor)
 
 
 
-#### placeholderFont
+### placeholderFont
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 placeholderFont(value?: Font)
 
 设置placeholder文本样式，包括字体大小、字体粗细、字体族、字体风格。
+
+> [!NOTE]
+> 可以使用 loadFontSync 注册自定义字体。
+
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -132,20 +147,18 @@ placeholderFont(value?: Font)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Font | 否 | placeholder文本样式。 省略该参数时使用系统默认字体样式。 Wearable设备上字体大小默认值为18fp |
 
 
-> [!NOTE]
-> 可以使用 loadFontSync 注册自定义字体。
 
 
+### enterKeyType
 
 
-#### enterKeyType
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enterKeyType(value: EnterKeyType)
 
@@ -157,6 +170,7 @@ enterKeyType(value: EnterKeyType)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | EnterKeyType | 是 | 输入法回车键类型。 |
@@ -164,9 +178,10 @@ enterKeyType(value: EnterKeyType)
 
 
 
-#### caretColor
+### caretColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 caretColor(value: ResourceColor)
 
@@ -177,6 +192,7 @@ caretColor(value: ResourceColor)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -189,9 +205,10 @@ caretColor(value: ResourceColor)
 
 
 
-#### maxLength
+### maxLength
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 maxLength(value: number)
 
@@ -203,6 +220,7 @@ maxLength(value: number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 文本的最大输入字符数。 取值范围：[0, 2^31-1] 说明： 当不设置该属性或设置异常值时，取默认值。设置小数时，取整数部分。设置值超过取值范围上限时，可能导致组件显示或功能异常，请勿超过上限值。 |
@@ -210,9 +228,10 @@ maxLength(value: number)
 
 
 
-#### fontColor
+### fontColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontColor(value: ResourceColor)
 
@@ -224,6 +243,7 @@ fontColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor | 是 | 字体颜色。 |
@@ -231,9 +251,10 @@ fontColor(value: ResourceColor)
 
 
 
-#### fontSize
+### fontSize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontSize(value: Length)
 
@@ -245,6 +266,7 @@ fontSize(value: Length)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Length | 是 | 字体大小。fontSize为number类型时，使用fp单位。不支持设置百分比字符串。 |
@@ -252,9 +274,10 @@ fontSize(value: Length)
 
 
 
-#### fontStyle
+### fontStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontStyle(value: FontStyle)
 
@@ -266,6 +289,7 @@ fontStyle(value: FontStyle)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | FontStyle | 是 | 字体样式。 |
@@ -273,9 +297,10 @@ fontStyle(value: FontStyle)
 
 
 
-#### fontWeight
+### fontWeight
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontWeight(value: number | FontWeight | ResourceStr)
 
@@ -287,6 +312,7 @@ fontWeight(value: number | FontWeight | ResourceStr)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| FontWeight \| ResourceStr | 是 | 文本的字体粗细，number类型取值[100,900]，取值间隔为100，取值越大，字体越粗。string类型仅支持number类型取值的字符串形式，例如“400”，以及“bold”、“bolder”、“lighter”、“regular”、“medium”，分别对应FontWeight中相应的枚举值。 从API version 20开始，支持Resource类型。 |
@@ -294,13 +320,18 @@ fontWeight(value: number | FontWeight | ResourceStr)
 
 
 
-#### fontFamily
+### fontFamily
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontFamily(value: ResourceStr)
 
 设置字体列表。未通过该接口设置时，默认字体为'HarmonyOS Sans'。
+
+> [!NOTE]
+> 推荐使用 loadFontSync 注册自定义字体。
+
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -308,20 +339,18 @@ fontFamily(value: ResourceStr)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceStr | 是 | 字体列表。使用多个字体时，请用逗号','分隔，字体的优先级按顺序生效。例如：'Arial,HarmonyOS Sans'。 应用当前支持'HarmonyOS Sans'字体和自定义字体。 卡片当前仅支持'HarmonyOS Sans'字体。 Wearable设备支持'HarmonyOS Sans'字体和自定义字体。 |
 
 
-> [!NOTE]
-> 推荐使用 loadFontSync 注册自定义字体。
 
 
+### inputFilter8+
 
 
-#### inputFilter8+
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 inputFilter(value: ResourceStr, error?: Callback&lt;string&gt;)
 
@@ -335,6 +364,7 @@ inputFilter(value: ResourceStr, error?: Callback&lt;string&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceStr | 是 | 正则表达式。 |
@@ -343,9 +373,10 @@ inputFilter(value: ResourceStr, error?: Callback&lt;string&gt;)
 
 
 
-#### copyOption9+
+### copyOption9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 copyOption(value: CopyOptions)
 
@@ -357,6 +388,7 @@ copyOption(value: CopyOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | CopyOptions | 是 | 输入的文本是否可复制。 |
@@ -364,9 +396,10 @@ copyOption(value: CopyOptions)
 
 
 
-#### showPasswordIcon9+
+### showPasswordIcon9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showPasswordIcon(value: boolean)
 
@@ -378,6 +411,7 @@ showPasswordIcon(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 密码输入模式时，输入框末尾的图标是否显示。 true表示显示，false表示不显示。 |
@@ -385,9 +419,10 @@ showPasswordIcon(value: boolean)
 
 
 
-#### style9+
+### style9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 style(value: TextInputStyle | TextContentStyle)
 
@@ -401,6 +436,7 @@ style(value: TextInputStyle | TextContentStyle)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | TextInputStyle \| TextContentStyle | 是 | 输入框为默认风格或内联输入风格。 |
@@ -408,9 +444,10 @@ style(value: TextInputStyle | TextContentStyle)
 
 
 
-#### textAlign9+
+### textAlign9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 textAlign(value: TextAlign)
 
@@ -431,6 +468,7 @@ textAlign(value: TextAlign)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | TextAlign | 是 | 文本在输入框中的水平对齐方式。 |
@@ -442,9 +480,10 @@ textAlign(value: TextAlign)
 
 
 
-#### textDirection23+
+### textDirection23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 textDirection(direction: TextDirection | undefined)
 
@@ -458,6 +497,7 @@ textDirection(direction: TextDirection | undefined)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | direction | TextDirection \| undefined | 是 | 文本排版方向。 设置为undefined时，按照TextDirection.DEFAULT处理，表现为文本排版方向遵循组件布局方向。 |
@@ -465,13 +505,14 @@ textDirection(direction: TextDirection | undefined)
 
 
 
-#### selectedBackgroundColor10+
+### selectedBackgroundColor10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectedBackgroundColor(value: ResourceColor)
 
-设置文本选中底板颜色。如果未设置不透明度，默认为20%不透明度。未通过该接口设置时，默认为'#FF007DFF'（蓝色），Wearable设备上默认值为'#FF1F71FF'（蓝色，比'#FF007DFF'颜色稍深）。
+设置文本选中高亮颜色。如果未设置不透明度或设置为完全不透明，默认使用20%不透明度。未通过该接口设置时，默认为'#007DFF'（蓝色），Wearable设备上默认值为'#1F71FF'（蓝色，比'#007DFF'颜色稍深）。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -481,16 +522,18 @@ selectedBackgroundColor(value: ResourceColor)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | ResourceColor | 是 | 文本选中底板颜色。 |
+| value | ResourceColor | 是 | 文本选中高亮颜色。 |
 
 
 
 
-#### caretStyle10+
+### caretStyle10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 caretStyle(value: CaretStyle)
 
@@ -504,6 +547,7 @@ caretStyle(value: CaretStyle)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | CaretStyle | 是 | 光标的风格，用于自定义光标的显示样式。配置项包括width（光标宽度）和color（光标颜色）等。不设置时使用系统默认光标样式。 |
@@ -515,9 +559,10 @@ caretStyle(value: CaretStyle)
 
 
 
-#### caretPosition10+
+### caretPosition10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 caretPosition(value: number)
 
@@ -531,6 +576,7 @@ caretPosition(value: number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 光标的位置。 第一个字符前的位置是0。 当取值小于0时，取0；大于文本长度时，显示在文本末尾。 |
@@ -538,9 +584,10 @@ caretPosition(value: number)
 
 
 
-#### showUnit10+
+### showUnit10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showUnit(value: CustomBuilder)
 
@@ -554,6 +601,7 @@ showUnit(value: CustomBuilder)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | CustomBuilder | 是 | 文本输入时，文本框的显示单位。 |
@@ -561,9 +609,10 @@ showUnit(value: CustomBuilder)
 
 
 
-#### showError10+
+### showError10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showError(value?: ResourceStr | undefined)
 
@@ -579,6 +628,7 @@ showError(value?: ResourceStr | undefined)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceStr \| undefined | 否 | 错误状态下提示的错误文本或者不显示错误状态。 默认不显示错误状态。 Wearable设备上字体大小为：13fp，对齐方式为：居中对齐 说明： 从API version 12开始，value支持Resource类型。 不支持TextInputStyle的内联模式。 |
@@ -586,9 +636,10 @@ showError(value?: ResourceStr | undefined)
 
 
 
-#### showUnderline10+
+### showUnderline10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showUnderline(value: boolean)
 
@@ -602,6 +653,7 @@ showUnderline(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否开启下划线。 true表示开启，false表示不开启。 |
@@ -613,9 +665,10 @@ showUnderline(value: boolean)
 
 
 
-#### passwordIcon10+
+### passwordIcon10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 passwordIcon(value: PasswordIcon)
 
@@ -629,6 +682,7 @@ passwordIcon(value: PasswordIcon)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | PasswordIcon | 是 | 密码输入模式时，输入框末尾的图标。 |
@@ -636,9 +690,10 @@ passwordIcon(value: PasswordIcon)
 
 
 
-#### enableKeyboardOnFocus10+
+### enableKeyboardOnFocus10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableKeyboardOnFocus(value: boolean)
 
@@ -654,6 +709,7 @@ enableKeyboardOnFocus(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 通过点击以外的方式获焦时，是否主动拉起软键盘。 true表示主动拉起软键盘，false表示不主动拉起。 |
@@ -661,9 +717,10 @@ enableKeyboardOnFocus(value: boolean)
 
 
 
-#### selectionMenuHidden10+
+### selectionMenuHidden10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectionMenuHidden(value: boolean)
 
@@ -677,6 +734,7 @@ selectionMenuHidden(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否隐藏系统文本选择菜单。 设置为true时，单击输入框光标、长按输入框、双击输入框、三击输入框或者右键输入框，隐藏系统文本选择菜单。 设置为false时，显示系统文本选择菜单。 |
@@ -684,9 +742,10 @@ selectionMenuHidden(value: boolean)
 
 
 
-#### barState10+
+### barState10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 barState(value: BarState)
 
@@ -700,6 +759,7 @@ barState(value: BarState)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | BarState | 是 | 内联输入风格编辑态时滚动条的显示模式。仅设置内联模式时该属性生效。 |
@@ -707,9 +767,10 @@ barState(value: BarState)
 
 
 
-#### maxLines10+
+### maxLines10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 maxLines(value: number)
 
@@ -723,6 +784,7 @@ maxLines(value: number)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 内联输入风格编辑态时文本可显示的最大行数。仅设置内联模式且处于编辑态时该属性生效。 取值范围：(0, UINT32_MAX]。传入0或负数时，按默认值3处理；超出UINT32_MAX时，自动修正为UINT32_MAX。 |
@@ -730,9 +792,10 @@ maxLines(value: number)
 
 
 
-#### customKeyboard10+
+### customKeyboard10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 customKeyboard(value: CustomBuilder | ComponentContent | undefined, options?: KeyboardOptions)
 
@@ -764,6 +827,7 @@ customKeyboard(value: CustomBuilder | ComponentContent | undefined, options?: Ke
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | CustomBuilder \| ComponentContent22+ \| undefined22+ | 是 | 自定义键盘。设定值为undefined时，关闭自定义键盘。 |
@@ -772,9 +836,10 @@ customKeyboard(value: CustomBuilder | ComponentContent | undefined, options?: Ke
 
 
 
-#### enableAutoFill11+
+### enableAutoFill11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableAutoFill(value: boolean)
 
@@ -788,6 +853,7 @@ enableAutoFill(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否启用自动填充。 true表示启用，false表示不启用。 |
@@ -795,9 +861,10 @@ enableAutoFill(value: boolean)
 
 
 
-#### enableSelectedDataDetector22+
+### enableSelectedDataDetector22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableSelectedDataDetector(enable: boolean | undefined)
 
@@ -821,6 +888,7 @@ AI菜单生效时，选中范围内需包括且仅包括一个完整的AI实体�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | boolean \| undefined | 是 | 是否开启选中文本实体识别。 true：开启识别，false：关闭识别。 值为undefined时，按默认值处理。 |
@@ -828,9 +896,10 @@ AI菜单生效时，选中范围内需包括且仅包括一个完整的AI实体�
 
 
 
-#### passwordRules11+
+### passwordRules11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 passwordRules(value: string)
 
@@ -846,6 +915,7 @@ passwordRules(value: string)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string | 是 | 定义生成密码的规则。 说明： 需先设置enableAutoFill启用自动填充功能，并设置contentType为NEW_PASSWORD类型，该属性在触发自动填充时生效。 |
@@ -853,9 +923,10 @@ passwordRules(value: string)
 
 
 
-#### cancelButton11+
+### cancelButton11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancelButton(options: CancelButtonOptions)
 
@@ -873,6 +944,7 @@ style: CancelButtonStyle.INPUT
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | CancelButtonOptions | 是 | 右侧清除按钮样式选项。 |
@@ -880,9 +952,10 @@ style: CancelButtonStyle.INPUT
 
 
 
-#### selectAll11+
+### selectAll11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectAll(value: boolean)
 
@@ -896,6 +969,7 @@ selectAll(value: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否全选文本。 true表示会全选文本，false表示不会全选文本。 |
@@ -903,9 +977,10 @@ selectAll(value: boolean)
 
 
 
-#### showCounter11+
+### showCounter11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showCounter(value: boolean, options?: InputCounterOptions)
 
@@ -931,6 +1006,7 @@ showCounter(value: boolean, options?: InputCounterOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否显示计数器。 true表示显示计数器，false表示不显示。 |
@@ -939,9 +1015,10 @@ showCounter(value: boolean, options?: InputCounterOptions)
 
 
 
-#### contentType12+
+### contentType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contentType(value: ContentType)
 
@@ -955,6 +1032,7 @@ contentType(value: ContentType)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ContentType | 是 | 自动填充类型。取值范围：详见ContentType枚举说明。 |
@@ -962,9 +1040,10 @@ contentType(value: ContentType)
 
 
 
-#### underlineColor12+
+### underlineColor12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 underlineColor(value: ResourceColor|UnderlineColor|undefined)
 
@@ -980,6 +1059,7 @@ underlineColor(value: ResourceColor|UnderlineColor|undefined)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ResourceColor \| UnderlineColor \| undefined | 是 | 设置下划线颜色。 当设置下划线颜色模式时，修改下划线颜色。当只设定非特殊状态下的颜色，可以直接输入ResourceColor。设定值为undefined、null、无效值时，所有下划线恢复为默认值。 |
@@ -987,9 +1067,10 @@ underlineColor(value: ResourceColor|UnderlineColor|undefined)
 
 
 
-#### lineHeight12+
+### lineHeight12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 lineHeight(value: number | string | Resource)
 
@@ -1009,6 +1090,7 @@ lineHeight(value: number | string | Resource)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| string \| Resource | 是 | 文本行高。 number类型时单位为fp。 |
@@ -1016,9 +1098,10 @@ lineHeight(value: number | string | Resource)
 
 
 
-#### decoration12+
+### decoration12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 decoration(value: TextDecorationOptions)
 
@@ -1042,6 +1125,7 @@ thicknessScale: 1.0
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | TextDecorationOptions | 是 | 文本装饰线对象。 |
@@ -1053,9 +1137,10 @@ thicknessScale: 1.0
 
 
 
-#### letterSpacing12+
+### letterSpacing12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 letterSpacing(value: number | string | Resource)
 
@@ -1073,6 +1158,7 @@ letterSpacing(value: number | string | Resource)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| string \| Resource | 是 | 文本字符间距。 单位：fp |
@@ -1080,9 +1166,10 @@ letterSpacing(value: number | string | Resource)
 
 
 
-#### fontFeature12+
+### fontFeature12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fontFeature(value: string)
 
@@ -1104,6 +1191,7 @@ fontFeature(value: string)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string | 是 | 文字特性效果，用于设置OpenType字体高级排版能力（如等宽数字、连字等）。格式为normal或[/topic/body/section/table/tgroup/tbody/row/entry/feature-tag-value {""}) ，例如"ss01" on。 (feature-tag-value] |
@@ -1121,9 +1209,10 @@ Font Feature当前支持的属性参见[fontFeature](https://developer.huawei.co
 
 
 
-#### wordBreak12+
+### wordBreak12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 wordBreak(value: WordBreak)
 
@@ -1137,6 +1226,7 @@ wordBreak(value: WordBreak)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | WordBreak | 是 | 内联输入风格编辑态时断行规则。 |
@@ -1148,9 +1238,10 @@ wordBreak(value: WordBreak)
 
 
 
-#### textOverflow12+
+### textOverflow12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 textOverflow(value: TextOverflow)
 
@@ -1168,6 +1259,7 @@ textOverflow(value: TextOverflow)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | TextOverflow | 是 | 文本超长时的显示方式。 |
@@ -1179,9 +1271,10 @@ textOverflow(value: TextOverflow)
 
 
 
-#### textIndent12+
+### textIndent12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 textIndent(value: Dimension)
 
@@ -1195,6 +1288,7 @@ textIndent(value: Dimension)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | Dimension | 是 | 首行文本缩进。 单位：vp 取值范围：大于等于0。设置负数时，按默认值处理。 |
@@ -1202,9 +1296,10 @@ textIndent(value: Dimension)
 
 
 
-#### minFontSize12+
+### minFontSize12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 minFontSize(value: number | string | Resource)
 
@@ -1224,6 +1319,7 @@ minFontSize小于或等于0时，自适应字号不生效，此时按照[fontSiz
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| string \| Resource | 是 | 文本最小显示字号。 单位：fp 需大于0，小于或等于0时自适应字号不生效，按fontSize属性值生效。 需配合maxFontSize使用，单独设置不生效。 |
@@ -1231,9 +1327,10 @@ minFontSize小于或等于0时，自适应字号不生效，此时按照[fontSiz
 
 
 
-#### maxFontSize12+
+### maxFontSize12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 maxFontSize(value: number | string | Resource)
 
@@ -1253,6 +1350,7 @@ maxFontSize小于等于0或者maxFontSize小于minFontSize时，自适应字号�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| string \| Resource | 是 | 文本最大显示字号。 单位：fp 需大于0且大于minFontSize，否则自适应字号不生效，按fontSize属性值生效。 需配合minFontSize使用，单独设置不生效。 |
@@ -1260,9 +1358,10 @@ maxFontSize小于等于0或者maxFontSize小于minFontSize时，自适应字号�
 
 
 
-#### heightAdaptivePolicy12+
+### heightAdaptivePolicy12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 heightAdaptivePolicy(value: TextHeightAdaptivePolicy)
 
@@ -1288,6 +1387,7 @@ heightAdaptivePolicy(value: TextHeightAdaptivePolicy)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | TextHeightAdaptivePolicy | 是 | 文本自适应高度的方式。仅设置内联输入风格时该属性生效。 |
@@ -1295,9 +1395,10 @@ heightAdaptivePolicy(value: TextHeightAdaptivePolicy)
 
 
 
-#### showPassword12+
+### showPassword12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 showPassword(visible: boolean)
 
@@ -1315,6 +1416,7 @@ showPassword(visible: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | visible | boolean | 是 | 是否显示密码。 true表示会显示密码，false表示不会显示密码。 建议在onSecurityStateChange回调中同步状态，避免末尾图标状态异常。 |
@@ -1322,9 +1424,10 @@ showPassword(visible: boolean)
 
 
 
-#### lineBreakStrategy12+
+### lineBreakStrategy12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 lineBreakStrategy(strategy: LineBreakStrategy)
 
@@ -1340,6 +1443,7 @@ lineBreakStrategy(strategy: LineBreakStrategy)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | strategy | LineBreakStrategy | 是 | 文本的折行规则。 LineBreakStrategy.GREEDY表示贪婪折行，优先填充每行；LineBreakStrategy.HIGH_QUALITY表示高质量折行，平衡行长；LineBreakStrategy.BALANCED表示均衡折行，优化排版美观。 说明： 仅设置TextInputStyle的内联模式时该属性生效。 |
@@ -1347,9 +1451,10 @@ lineBreakStrategy(strategy: LineBreakStrategy)
 
 
 
-#### editMenuOptions12+
+### editMenuOptions12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 editMenuOptions(editMenu: EditMenuOptions)
 
@@ -1365,6 +1470,7 @@ editMenuOptions(editMenu: EditMenuOptions)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | editMenu | EditMenuOptions | 是 | 扩展菜单选项。 |
@@ -1372,9 +1478,10 @@ editMenuOptions(editMenu: EditMenuOptions)
 
 
 
-#### enablePreviewText12+
+### enablePreviewText12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enablePreviewText(enable: boolean)
 
@@ -1390,6 +1497,7 @@ enablePreviewText(enable: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | boolean | 是 | 是否开启输入预上屏。 true表示开启输入预上屏，false表示不开启输入预上屏。 |
@@ -1401,9 +1509,10 @@ enablePreviewText(enable: boolean)
 
 
 
-#### enableHapticFeedback13+
+### enableHapticFeedback13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableHapticFeedback(isEnabled: boolean)
 
@@ -1427,6 +1536,7 @@ enableHapticFeedback(isEnabled: boolean)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isEnabled | boolean | 是 | 是否开启触控反馈。 true表示开启触控反馈，false表示不开启触控反馈。 |
@@ -1434,13 +1544,14 @@ enableHapticFeedback(isEnabled: boolean)
 
 
 
-#### autoCapitalizationMode20+
+### autoCapitalizationMode20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 autoCapitalizationMode(mode: AutoCapitalizationMode)
 
-设置自动大小写模式的文本模式，只提供接口能力，具体实现以输入法应用为主。
+设置自动大小写模式的文本模式，只提供接口能力，具体实现以输入法应用为主。未通过该接口设置时，默认不产生大小写转换效果，具体实现以输入法应用为主。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
@@ -1450,16 +1561,18 @@ autoCapitalizationMode(mode: AutoCapitalizationMode)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| mode | AutoCapitalizationMode | 是 | 自动大小写模式。不设置时，默认不启用自动大小写功能。具体实现以输入法应用为主。 |
+| mode | AutoCapitalizationMode | 是 | 自动大小写模式，用于设置输入法的大小写转换规则，具体实现以输入法应用为主。 |
 
 
 
 
-#### keyboardAppearance15+
+### keyboardAppearance15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 keyboardAppearance(appearance: Optional&lt;KeyboardAppearance&gt;)
 
@@ -1473,6 +1586,7 @@ keyboardAppearance(appearance: Optional&lt;KeyboardAppearance&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | appearance | Optional&lt;KeyboardAppearance&gt; | 是 | 键盘样式。 |
@@ -1480,9 +1594,10 @@ keyboardAppearance(appearance: Optional&lt;KeyboardAppearance&gt;)
 
 
 
-#### strokeWidth20+
+### strokeWidth20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 strokeWidth(width: Optional&lt;LengthMetrics&gt;)
 
@@ -1496,16 +1611,18 @@ strokeWidth(width: Optional&lt;LengthMetrics&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| width | Optional&lt;LengthMetrics&gt; | 是 | 文本描边的宽度。如果LengthMetrics的unit值是PERCENT，当前设置不生效，按默认值处理。 若设置值小于0，显示实心字；若大于0，显示空心字。 |
+| width | Optional&lt;LengthMetrics&gt; | 是 | 文本描边的宽度。当LengthMetrics对象的unit属性为LengthUnit.PERCENT时，当前设置不生效，按默认值处理。 若设置值小于0，显示实心字；若大于0，显示空心字。 |
 
 
 
 
-#### strokeColor20+
+### strokeColor20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 strokeColor(color: Optional&lt;ResourceColor&gt;)
 
@@ -1519,6 +1636,7 @@ strokeColor(color: Optional&lt;ResourceColor&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | Optional&lt;ResourceColor&gt; | 是 | 描边颜色。 |
@@ -1526,9 +1644,10 @@ strokeColor(color: Optional&lt;ResourceColor&gt;)
 
 
 
-#### stopBackPress15+
+### stopBackPress15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopBackPress(isStopped: Optional&lt;boolean&gt;)
 
@@ -1542,6 +1661,7 @@ stopBackPress(isStopped: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isStopped | Optional&lt;boolean&gt; | 是 | 是否阻止返回键。 true表示阻止，false表示不阻止。 |
@@ -1549,9 +1669,10 @@ stopBackPress(isStopped: Optional&lt;boolean&gt;)
 
 
 
-#### halfLeading18+
+### halfLeading18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 halfLeading(halfLeading: Optional&lt;boolean&gt;)
 
@@ -1565,6 +1686,7 @@ halfLeading(halfLeading: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | halfLeading | Optional&lt;boolean&gt; | 是 | 设置文本是否垂直居中。 true表示将行间距平分至行的顶部与底部，false则不平分。 |
@@ -1572,9 +1694,10 @@ halfLeading(halfLeading: Optional&lt;boolean&gt;)
 
 
 
-#### minFontScale18+
+### minFontScale18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 minFontScale(scale: Optional<number | Resource>)
 
@@ -1588,6 +1711,7 @@ minFontScale(scale: Optional<number | Resource>)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scale | Optional<number \| Resource> | 是 | 文本最小的字体缩放倍数，支持undefined类型。 取值范围：[0, 1] 说明： 设置的值小于0时，按值为0处理。设置的值大于1，按值为1处理。异常值默认不生效。 使用前需在工程中配置configuration.json文件和app.json5文件，具体详见示例18（设置最小字体范围与最大字体范围）。 |
@@ -1595,9 +1719,10 @@ minFontScale(scale: Optional<number | Resource>)
 
 
 
-#### maxFontScale18+
+### maxFontScale18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 maxFontScale(scale: Optional<number | Resource>)
 
@@ -1611,6 +1736,7 @@ maxFontScale(scale: Optional<number | Resource>)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scale | Optional<number \| Resource> | 是 | 文本最大的字体缩放倍数，支持undefined类型。 取值范围：[1, +∞) 说明： 设置的值小于1时，按值为1处理。异常值默认不生效。 当设置maxFontScale属性后，showError最多放大到2倍。 使用前需在工程中配置configuration.json文件和app.json5文件，具体详见示例18（设置最小字体范围与最大字体范围）。 |
@@ -1618,9 +1744,10 @@ maxFontScale(scale: Optional<number | Resource>)
 
 
 
-#### cancelButton18+
+### cancelButton18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cancelButton(symbolOptions: CancelButtonSymbolOptions)
 
@@ -1638,6 +1765,7 @@ style: CancelButtonStyle.INPUT
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | symbolOptions | CancelButtonSymbolOptions | 是 | 右侧清除按钮样式。 |
@@ -1645,9 +1773,10 @@ style: CancelButtonStyle.INPUT
 
 
 
-#### ellipsisMode18+
+### ellipsisMode18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ellipsisMode(mode: Optional&lt;EllipsisMode&gt;)
 
@@ -1663,6 +1792,7 @@ ellipsisMode(mode: Optional&lt;EllipsisMode&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | Optional&lt;EllipsisMode&gt; | 是 | 省略位置。 |
@@ -1670,9 +1800,10 @@ ellipsisMode(mode: Optional&lt;EllipsisMode&gt;)
 
 
 
-#### enableAutoFillAnimation20+
+### enableAutoFillAnimation20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableAutoFillAnimation(enabled: Optional&lt;boolean&gt;)
 
@@ -1686,6 +1817,7 @@ enableAutoFillAnimation(enabled: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | Optional&lt;boolean&gt; | 是 | 是否启用自动填充动效。 true表示启用，false表示不启用。 说明： 需先设置enableAutoFill启用自动填充功能。启用之后，仅输入模式InputType设置为Password、NEW_PASSWORD或NUMBER_PASSWORD的输入框在进行自动填充时动效可生效。 |
@@ -1693,9 +1825,10 @@ enableAutoFillAnimation(enabled: Optional&lt;boolean&gt;)
 
 
 
-#### enableAutoSpacing20+
+### enableAutoSpacing20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableAutoSpacing(enabled: Optional&lt;boolean&gt;)
 
@@ -1709,6 +1842,7 @@ enableAutoSpacing(enabled: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | Optional&lt;boolean&gt; | 是 | 是否开启中文与西文的自动间距。 true为开启自动间距，false为不开启。 |
@@ -1716,9 +1850,10 @@ enableAutoSpacing(enabled: Optional&lt;boolean&gt;)
 
 
 
-#### compressLeadingPunctuation23+
+### compressLeadingPunctuation23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 compressLeadingPunctuation(enabled: Optional&lt;boolean&gt;)
 
@@ -1736,6 +1871,7 @@ compressLeadingPunctuation(enabled: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | Optional&lt;boolean&gt; | 是 | 是否开启行首标点符号压缩。 true表示开启行首标点符号压缩；false表示不开启行首标点符号压缩。 |
@@ -1743,9 +1879,10 @@ compressLeadingPunctuation(enabled: Optional&lt;boolean&gt;)
 
 
 
-#### orphanCharOptimization
+### orphanCharOptimization
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 orphanCharOptimization(enabled: Optional&lt;boolean&gt;)
 
@@ -1761,6 +1898,7 @@ orphanCharOptimization(enabled: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | Optional&lt;boolean&gt; | 是 | 段落最后一行是否使能孤字优化。 true表示使能孤字优化，false表示不使能孤字优化。 值为undefined或null时，不使能孤字优化。 孤字优化需在wordBreak为非BREAK_ALL并且待排版文本首个TextStyle的locale为"zh-Hans"或"zh-Hant"时生效。 |
@@ -1768,13 +1906,14 @@ orphanCharOptimization(enabled: Optional&lt;boolean&gt;)
 
 
 
-#### strokeJoinStyle
+### strokeJoinStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 strokeJoinStyle(strokeJoinStyle: StrokeJoinStyle | undefined)
 
-设置文本描边拐角样式。
+设置文本描边拐角样式，仅在使用strokeWidth设置文本描边时生效。
 
 **起始版本：** 26.0.0
 
@@ -1786,16 +1925,18 @@ strokeJoinStyle(strokeJoinStyle: StrokeJoinStyle | undefined)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| strokeJoinStyle | StrokeJoinStyle \| undefined | 是 | 文本描边拐角样式。 值为undefined时，按照StrokeJoinStyle.MITER_JOIN处理，请参考StrokeJoinStyle，文本拐角处表现为锐角。 |
+| strokeJoinStyle | StrokeJoinStyle \| undefined | 是 | 设置文本描边拐角样式，仅在使用strokeWidth设置文本描边时生效。 值为undefined时，按照StrokeJoinStyle.MITER_JOIN处理，请参考StrokeJoinStyle，文本拐角处表现为锐角。 |
 
 
 
 
-#### shaderStyle
+### shaderStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 shaderStyle(shader: ShaderStyle | undefined)
 
@@ -1815,6 +1956,7 @@ shaderStyle(shader: ShaderStyle | undefined)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | shader | ShaderStyle \| undefined | 是 | 文本着色器效果，用于设置文本的渐变或特殊颜色效果。支持线性渐变、径向渐变、纯色等类型。 当同时设置shaderStyle和strokeWidth时，shaderStyle不生效。 值为undefined时，无渐变效果。 |
@@ -1822,9 +1964,10 @@ shaderStyle(shader: ShaderStyle | undefined)
 
 
 
-#### punctuationOverflow
+### punctuationOverflow
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 punctuationOverflow(enabled: Optional&lt;boolean&gt;)
 
@@ -1840,6 +1983,7 @@ punctuationOverflow(enabled: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | Optional&lt;boolean&gt; | 是 | 是否启用行尾标点符号悬挂。 true表示启用行尾标点符号悬挂，false表示不启用行尾标点符号悬挂。设置为undefined或null时，不启用标点符号悬挂。 |
@@ -1847,9 +1991,10 @@ punctuationOverflow(enabled: Optional&lt;boolean&gt;)
 
 
 
-#### includeFontPadding23+
+### includeFontPadding23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 includeFontPadding(include: Optional&lt;boolean&gt;)
 
@@ -1863,6 +2008,7 @@ includeFontPadding(include: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | include | Optional&lt;boolean&gt; | 是 | 是否在首行和尾行增加间距以避免文字截断。 true表示在首行和尾行增加间距；false表示在首行和尾行不增加间距。 |
@@ -1870,9 +2016,10 @@ includeFontPadding(include: Optional&lt;boolean&gt;)
 
 
 
-#### fallbackLineSpacing23+
+### fallbackLineSpacing23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fallbackLineSpacing(enabled: Optional&lt;boolean&gt;)
 
@@ -1886,6 +2033,7 @@ fallbackLineSpacing(enabled: Optional&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | Optional&lt;boolean&gt; | 是 | 行高是否基于文字实际高度自适应。 true表示行高基于文字实际高度自适应；false表示行高不基于文字实际高度自适应。 此接口仅当行高小于文字实际高度时生效。 |
@@ -1893,9 +2041,10 @@ fallbackLineSpacing(enabled: Optional&lt;boolean&gt;)
 
 
 
-#### selectedDragPreviewStyle23+
+### selectedDragPreviewStyle23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 selectedDragPreviewStyle(value: SelectedDragPreviewStyle | undefined)
 
@@ -1909,6 +2058,7 @@ selectedDragPreviewStyle(value: SelectedDragPreviewStyle | undefined)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | SelectedDragPreviewStyle \| undefined | 是 | 文本拖拽时的背板样式。 设置为undefined时：背板颜色跟随主题，浅色模式显示白色，深色模式显示黑色。 |
@@ -1916,13 +2066,15 @@ selectedDragPreviewStyle(value: SelectedDragPreviewStyle | undefined)
 
 
 
-#### InputType枚举说明
+## InputType枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 单行文本输入框类型。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1936,20 +2088,22 @@ selectedDragPreviewStyle(value: SelectedDragPreviewStyle | undefined)
 | NEW_PASSWORD11+ | 11 | 新密码输入模式。 默认输入文字短暂显示后变成圆点。从API version 12开始，PC/2in1设备上输入文字直接显示为圆点。 TV设备上输入框末尾默认不显示小眼睛图标，其他设备输入框末尾默认显示小眼睛图标。 密码输入模式中，decoration、showUnderline、lineHeight、fontFeature不生效。在已启用密码保险箱的情况下，支持自动生成新密码。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | NUMBER_DECIMAL11+ | 12 | 带小数点的数字输入模式。 支持数字，小数点（只能存在一个小数点）。不支持负数（包括负数整数和负数小数）。若需支持负数输入，请使用inputFilter属性实现负数过滤。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | URL12+ | 13 | 带URL的输入模式，无特殊限制。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
-| ONE_TIME_CODE20+ | 14 | 验证码输入模式，无特殊限制。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
+| ONE_TIME_CODE20+ | 14 | 验证码输入模式，无特殊限制。该模式下组件获焦后会默认拉起系统输入法。 元服务API： 从API version 20开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 
 
 
 
-#### ContentType12+枚举说明
+## ContentType12+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 自动填充类型。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1985,36 +2139,40 @@ selectedDragPreviewStyle(value: SelectedDragPreviewStyle | undefined)
 | LICENSE_FILE_NUMBER18+ | 34 | 【驾驶证档案编号】暂不支持自动保存和自动填充。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 | LICENSE_PLATE18+ | 35 | 【车牌号】在已启用情景化自动填充的情况下，支持车牌号的自动保存和自动填充。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 | ENGINE_NUMBER18+ | 36 | 【行驶证发动机号】暂不支持自动保存和自动填充。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
-| LICENSE_CHASSIS_NUMBER18+ | 37 | 【车牌识别号】暂不支持自动保存和自动填充。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
+| LICENSE_CHASSIS_NUMBER18+ | 37 | 【车架号】暂不支持自动保存和自动填充。 元服务API： 从API version 18开始，该接口支持在元服务中使用。 |
 
 
 
 
-#### TextInputStyle9+枚举说明
+## TextInputStyle9+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| Default | - | 默认风格，光标宽1.5vp，光标高度与文本选中底板高度和字体大小相关。 |
-| Inline | - | 内联输入风格，也称内联模式。文本选中底板高度与输入框高度相同。 内联输入是在有明显的编辑态/非编辑态的区分场景下使用，例如：文件列表视图中的重命名。 不支持showError属性。 不支持showCounter属性，内联模式下字符计数器不显示。 内联模式下，不支持拖入文本。 |
+| Default | - | 默认风格，光标宽1.5vp，光标高度与文本选中高亮高度和字体大小相关。 |
+| Inline | - | 内联输入风格，也称内联模式。文本选中高亮高度与输入框高度相同。 内联输入是在有明显的编辑态/非编辑态的区分场景下使用，例如：文件列表视图中的重命名。 不支持showError属性。 不支持showCounter属性，内联模式下字符计数器不显示。 内联模式下，不支持拖入文本。 |
 
 
 
 
-#### PasswordIcon10+对象说明
+## PasswordIcon10+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2024,13 +2182,15 @@ selectedDragPreviewStyle(value: SelectedDragPreviewStyle | undefined)
 
 
 
-#### EnterKeyType枚举说明
+## EnterKeyType枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 输入法回车键类型。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2045,17 +2205,19 @@ selectedDragPreviewStyle(value: SelectedDragPreviewStyle | undefined)
 
 
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 除支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)外，还支持以下事件：
 
 
 
-#### onChange
+### onChange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onChange(callback: EditableTextOnChangeCallback)
 
@@ -2063,11 +2225,16 @@ onChange(callback: EditableTextOnChangeCallback)
 
 在本回调中，若执行了光标操作，需要开发者在预上屏场景下依据previewText参数调整光标逻辑，以适应预上屏场景。
 
+> [!NOTE]
+> onWillChange和onChange形成will/did时序模式： onWillChange在文本变更前触发，可通过返回false拦截变更；返回true则允许变更，随后触发onChange。 onChange在变更完成后触发，无法拦截。 两者可以同时使用，onWillChange用于拦截控制，onChange用于获取变更结果。
+
+
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2076,9 +2243,10 @@ onChange(callback: EditableTextOnChangeCallback)
 
 
 
-#### onSubmit
+### onSubmit
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onSubmit(callback: OnSubmitCallback)
 
@@ -2092,6 +2260,7 @@ onSubmit(callback: OnSubmitCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | OnSubmitCallback | 是 | 提交回调。 |
@@ -2099,9 +2268,10 @@ onSubmit(callback: OnSubmitCallback)
 
 
 
-#### onEditChanged(deprecated)
+### onEditChanged(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onEditChanged(callback: (isEditing: boolean) => void)
 
@@ -2115,6 +2285,7 @@ onEditChanged(callback: (isEditing: boolean) => void)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isEditing | boolean | 是 | 当前是否正在输入中。 true表示正在输入，即输入框处于编辑态，有光标显示，可以接收用户输入；false表示当前没有输入，即输入框处于非编辑态，无光标显示，不能接收用户输入。 |
@@ -2122,9 +2293,10 @@ onEditChanged(callback: (isEditing: boolean) => void)
 
 
 
-#### onEditChange8+
+### onEditChange8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onEditChange(callback: Callback&lt;boolean&gt;)
 
@@ -2136,6 +2308,7 @@ onEditChange(callback: Callback&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;boolean&gt; | 是 | 输入状态变化回调，返回值为true表示输入框处于编辑态（有光标显示，可以接收用户输入）；返回值为false表示输入框处于非编辑态（无光标显示，不能接收用户输入）。 |
@@ -2143,9 +2316,10 @@ onEditChange(callback: Callback&lt;boolean&gt;)
 
 
 
-#### onCopy8+
+### onCopy8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onCopy(callback: Callback&lt;string&gt;)
 
@@ -2157,6 +2331,7 @@ onCopy(callback: Callback&lt;string&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;string&gt; | 是 | 复制回调，其返回值为复制的文本内容。 |
@@ -2164,19 +2339,20 @@ onCopy(callback: Callback&lt;string&gt;)
 
 
 
-#### onWillCopy
+### onWillCopy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onWillCopy(callback: Callback<string, boolean>)
 
 在进行复制操作前，触发该回调。
 
-**起始版本：** 26.0.0
-
 > [!NOTE]
 > onWillCopy和onCopy形成will/did时序模式： onWillCopy在复制操作前触发，可通过返回false拦截复制操作；返回true则允许复制，随后触发onCopy。 onCopy在复制操作完成后触发，无法拦截。 两者可以同时使用，onWillCopy用于拦截控制，onCopy用于获取复制结果。
 
+
+**起始版本：** 26.0.0
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -2186,6 +2362,7 @@ onWillCopy(callback: Callback<string, boolean>)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback<string, boolean> | 是 | 复制操作前的回调。回调参数类型为string时，表示将要被复制的文本内容。回调参数类型为boolean时，表示当前选中文本是否允许被复制，true：允许文本被复制，执行正常的复制操作；false：不允许文本被复制，拦截此次复制操作，文本不会被复制到剪贴板。 |
@@ -2193,9 +2370,10 @@ onWillCopy(callback: Callback<string, boolean>)
 
 
 
-#### onCut8+
+### onCut8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onCut(callback: Callback&lt;string&gt;)
 
@@ -2207,6 +2385,7 @@ onCut(callback: Callback&lt;string&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;string&gt; | 是 | 剪切回调，其返回值为剪切的文本内容。 |
@@ -2214,9 +2393,10 @@ onCut(callback: Callback&lt;string&gt;)
 
 
 
-#### onWillCut
+### onWillCut
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onWillCut(callback: Callback<string, boolean>)
 
@@ -2236,6 +2416,7 @@ onWillCut(callback: Callback<string, boolean>)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback<string, boolean> | 是 | 剪切操作前的回调。回调参数类型为string时，表示将要被剪切的文本内容。回调参数类型为boolean时，表示当前选中文本是否允许被剪切，true：允许文本被剪切，执行正常的剪切操作；false：不允许文本被剪切，拦截此次剪切操作，文本不会被剪切到剪贴板也不会从输入框中删除。 |
@@ -2243,9 +2424,10 @@ onWillCut(callback: Callback<string, boolean>)
 
 
 
-#### onPaste8+
+### onPaste8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onPaste(callback: OnPasteCallback)
 
@@ -2257,6 +2439,7 @@ onPaste(callback: OnPasteCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | OnPasteCallback | 是 | 粘贴回调。 |
@@ -2264,9 +2447,10 @@ onPaste(callback: OnPasteCallback)
 
 
 
-#### onTextSelectionChange10+
+### onTextSelectionChange10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onTextSelectionChange(callback: OnTextSelectionChangeCallback)
 
@@ -2280,6 +2464,7 @@ onTextSelectionChange(callback: OnTextSelectionChangeCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | OnTextSelectionChangeCallback | 是 | 文本选择变化回调或光标位置变化回调。 |
@@ -2287,9 +2472,10 @@ onTextSelectionChange(callback: OnTextSelectionChangeCallback)
 
 
 
-#### onContentScroll10+
+### onContentScroll10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onContentScroll(callback: OnContentScrollCallback)
 
@@ -2303,6 +2489,7 @@ onContentScroll(callback: OnContentScrollCallback)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | OnContentScrollCallback | 是 | 文本内容滚动回调。 |
@@ -2310,9 +2497,10 @@ onContentScroll(callback: OnContentScrollCallback)
 
 
 
-#### onSecurityStateChange12+
+### onSecurityStateChange12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onSecurityStateChange(callback: Callback&lt;boolean&gt;)
 
@@ -2330,6 +2518,7 @@ onSecurityStateChange(callback: Callback&lt;boolean&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;boolean&gt; | 是 | 回调函数。 true表示密码显示；false表示密码隐藏。 |
@@ -2337,16 +2526,17 @@ onSecurityStateChange(callback: Callback&lt;boolean&gt;)
 
 
 
-#### onWillInsert12+
+### onWillInsert12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onWillInsert(callback: Callback<InsertValue, boolean>)
 
 在将要输入时，触发该回调。
 
 > [!NOTE]
-> onWillInsert和onDidInsert形成will/did时序模式： onWillInsert在输入操作前触发，可通过返回false拦截输入操作；返回true则允许输入，随后触发onDidInsert onDidInsert在输入完成后触发，无法拦截 两者可以同时使用，onWillInsert用于拦截控制，onDidInsert用于获取输入结果
+> onWillInsert和onDidInsert形成will/did时序模式： onWillInsert在输入操作前触发，可通过返回false拦截输入操作；返回true则允许输入，随后触发onDidInsert。 onDidInsert在输入完成后触发，无法拦截。 两者可以同时使用，onWillInsert用于拦截控制，onDidInsert用于获取输入结果。
 
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -2357,6 +2547,7 @@ onWillInsert(callback: Callback<InsertValue, boolean>)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback<InsertValue, boolean> | 是 | 在将要输入时调用的回调。 回调参数类型为InsertValue时，包含将要插入的文本内容等信息。回调参数类型为boolean时，表示是否允许此次插入，返回true：允许文本正常插入到输入框中；返回false：拦截此次插入操作，文本不会被插入。开发者可通过此回调实现对输入内容的过滤和拦截。 在预上屏和候选词操作时，该回调不触发。 仅支持系统输入法输入的场景。 |
@@ -2364,9 +2555,10 @@ onWillInsert(callback: Callback<InsertValue, boolean>)
 
 
 
-#### onDidInsert12+
+### onDidInsert12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDidInsert(callback: Callback&lt;InsertValue&gt;)
 
@@ -2380,6 +2572,7 @@ onDidInsert(callback: Callback&lt;InsertValue&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;InsertValue&gt; | 是 | 在输入完成时调用的回调。 仅支持系统输入法输入的场景。 |
@@ -2387,16 +2580,17 @@ onDidInsert(callback: Callback&lt;InsertValue&gt;)
 
 
 
-#### onWillDelete12+
+### onWillDelete12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onWillDelete(callback: Callback<DeleteValue, boolean>)
 
 在将要删除时，触发该回调。
 
 > [!NOTE]
-> onWillDelete和onDidDelete形成will/did时序模式： onWillDelete在删除操作前触发，可通过返回false拦截删除操作；返回true则允许删除，随后触发onDidDelete onDidDelete在删除完成后触发，无法拦截 两者可以同时使用，onWillDelete用于拦截控制，onDidDelete用于获取删除结果
+> 点击清除按钮不触发onWillDelete回调。 onWillDelete和onDidDelete形成will/did时序模式： onWillDelete在删除操作前触发，可通过返回false拦截删除操作；返回true则允许删除，随后触发onDidDelete。 onDidDelete在删除完成后触发，无法拦截。 两者可以同时使用，onWillDelete用于拦截控制，onDidDelete用于获取删除结果。
 
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -2406,6 +2600,7 @@ onWillDelete(callback: Callback<DeleteValue, boolean>)
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2414,13 +2609,18 @@ onWillDelete(callback: Callback<DeleteValue, boolean>)
 
 
 
-#### onDidDelete12+
+### onDidDelete12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDidDelete(callback: Callback&lt;DeleteValue&gt;)
 
 在删除完成时，触发该回调。
+
+> [!NOTE]
+> 点击清除按钮不触发onDidDelete回调。 onWillDelete和onDidDelete形成will/did时序模式： onWillDelete在删除操作前触发，可通过返回false拦截删除操作；返回true则允许删除，随后触发onDidDelete。 onDidDelete在删除完成后触发，无法拦截。 两者可以同时使用，onWillDelete用于拦截控制，onDidDelete用于获取删除结果。
+
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -2430,26 +2630,26 @@ onDidDelete(callback: Callback&lt;DeleteValue&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;DeleteValue&gt; | 是 | 在删除完成时调用的回调。 仅支持系统输入法输入的场景。 |
 
 
-> [!NOTE]
-> 点击清除按钮不触发onDidDelete回调。
 
 
+### onWillChange15+
 
 
-#### onWillChange15+
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onWillChange(callback: Callback<EditableTextChangeValue, boolean>)
 
 在文本内容将要发生变化时，触发该回调。
 
-onWillChange的回调时序晚于onWillInsert、onWillDelete，早于onDidInsert、onDidDelete。
+> [!NOTE]
+> onWillChange的回调时序晚于onWillInsert、onWillDelete，早于onDidInsert、onDidDelete。 onWillChange和onChange形成will/did时序模式： onWillChange在文本变更前触发，可通过返回false拦截变更；返回true则允许变更，随后触发onChange。 onChange在变更完成后触发，无法拦截。 两者可以同时使用，onWillChange用于拦截控制，onChange用于获取变更结果。
+
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
@@ -2459,6 +2659,7 @@ onWillChange的回调时序晚于onWillInsert、onWillDelete，早于onDidInsert
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback<EditableTextChangeValue, boolean> | 是 | 在文本内容将要发生变化时的回调。 回调参数类型为EditableTextChangeValue时，包含文本变化的相关信息。回调参数类型为boolean时，表示是否允许此次文本变化，返回true：允许文本正常修改，变化会生效；返回false：拦截此次文本变化操作，文本内容不会发生改变。开发者可通过此回调实现对文本变化的拦截和控制。 |
@@ -2466,9 +2667,10 @@ onWillChange的回调时序晚于onWillInsert、onWillDelete，早于onDidInsert
 
 
 
-#### onWillAttachIME20+
+### onWillAttachIME20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onWillAttachIME(callback: Callback&lt;IMEClient&gt;)
 
@@ -2490,6 +2692,7 @@ IMEClient仅在onWillAttachIME执行期间有效，不可进行异步调用。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback&lt;IMEClient&gt; | 是 | 在输入框将要绑定输入法前触发该回调。 |
@@ -2497,9 +2700,10 @@ IMEClient仅在onWillAttachIME执行期间有效，不可进行异步调用。
 
 
 
-#### TextInputController8+
+## TextInputController8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 TextInput组件的控制器继承自[TextContentControllerBase](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#textcontentcontrollerbase)，涉及的接口有[getTextContentRect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#gettextcontentrect)、[getTextContentLineCount](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#gettextcontentlinecount)、[getCaretOffset](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#getcaretoffset11)、[addText](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#addtext15)、[deleteText](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#deletetext15)、[getSelection](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#getselection15)、[clearPreviewText](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#clearpreviewtext17)、[setStyledPlaceholder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#setstyledplaceholder22)、[deleteBackward](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#deletebackward23)、[scrollToVisible](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#scrolltovisible23)。
 
@@ -2509,7 +2713,10 @@ TextInput组件的控制器继承自[TextContentControllerBase](https://develope
 
 
 
-#### 导入对象
+### 导入对象
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 controller: TextInputController = new TextInputController();
@@ -2517,9 +2724,10 @@ controller: TextInputController = new TextInputController();
 
 
 
-#### constructor8+
+### constructor8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -2531,9 +2739,10 @@ TextInputController的构造函数。
 
 
 
-#### caretPosition8+
+### caretPosition8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 caretPosition(value: number): void
 
@@ -2545,6 +2754,7 @@ caretPosition(value: number): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 从字符串开始到光标所在位置的字符长度。 |
@@ -2552,9 +2762,10 @@ caretPosition(value: number): void
 
 
 
-#### setTextSelection10+
+### setTextSelection10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setTextSelection(selectionStart: number, selectionEnd: number, options?: SelectionOptions): void
 
@@ -2567,6 +2778,7 @@ setTextSelection(selectionStart: number, selectionEnd: number, options?: Selecti
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2581,9 +2793,10 @@ setTextSelection(selectionStart: number, selectionEnd: number, options?: Selecti
 
 
 
-#### stopEditing10+
+### stopEditing10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 stopEditing(): void
 
@@ -2597,15 +2810,17 @@ stopEditing(): void
 
 
 
-#### UnderlineColor12+对象说明
+## UnderlineColor12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2617,9 +2832,10 @@ stopEditing(): void
 
 
 
-#### SubmitEvent11+
+## SubmitEvent11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义用户提交事件。
 
@@ -2631,15 +2847,17 @@ stopEditing(): void
 
 
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2648,9 +2866,10 @@ stopEditing(): void
 
 
 
-#### keepEditableState11+
+### keepEditableState11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 keepEditableState(): void
 
@@ -2664,9 +2883,10 @@ keepEditableState(): void
 
 
 
-#### OnPasteCallback18+
+## OnPasteCallback18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnPasteCallback = (content: string, event: PasteEvent) => void
 
@@ -2680,6 +2900,7 @@ type OnPasteCallback = (content: string, event: PasteEvent) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | content | string | 是 | 粘贴的文本内容。 |
@@ -2688,9 +2909,10 @@ type OnPasteCallback = (content: string, event: PasteEvent) => void
 
 
 
-#### OnSubmitCallback18+
+## OnSubmitCallback18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnSubmitCallback = (enterKey: EnterKeyType, event: SubmitEvent) => void
 
@@ -2704,6 +2926,7 @@ type OnSubmitCallback = (enterKey: EnterKeyType, event: SubmitEvent) => void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enterKey | EnterKeyType | 是 | 输入法回车键类型。 |
@@ -2712,9 +2935,10 @@ type OnSubmitCallback = (enterKey: EnterKeyType, event: SubmitEvent) => void
 
 
 
-#### OnTextSelectionChangeCallback18+
+## OnTextSelectionChangeCallback18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnTextSelectionChangeCallback = (selectionStart: number, selectionEnd: number) => void
 
@@ -2728,6 +2952,7 @@ type OnTextSelectionChangeCallback = (selectionStart: number, selectionEnd: numb
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | selectionStart | number | 是 | 所选文本的起始位置，文字的起始位置为0。 |
@@ -2736,9 +2961,10 @@ type OnTextSelectionChangeCallback = (selectionStart: number, selectionEnd: numb
 
 
 
-#### OnContentScrollCallback18+
+## OnContentScrollCallback18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type OnContentScrollCallback = (totalOffsetX: number, totalOffsetY: number) => void
 
@@ -2752,6 +2978,7 @@ type OnContentScrollCallback = (totalOffsetX: number, totalOffsetY: number) => v
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | totalOffsetX | number | 是 | 文本在内容区的横坐标偏移，单位px。 |
@@ -2760,13 +2987,17 @@ type OnContentScrollCallback = (totalOffsetX: number, totalOffsetY: number) => v
 
 
 
-#### 示例
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 示例
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 示例1（设置与获取光标位置）
+
+
+### 示例1（设置与获取光标位置）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 8开始，该示例通过[controller](#textinputcontroller8)实现了光标位置的设置与获取的功能，同时，可以使用!!实现text参数的双向数据绑定（从API version 18开始）。
 
@@ -2844,12 +3075,15 @@ struct TextInputExample {
 ```
 
 
-![](assets/TextInput/file-20260525091212539-001.gif)
+![](assets/TextInput/file-20260525091212540-003.gif)
 
 
 
 
-#### 示例2（设置下划线）
+### 示例2（设置下划线）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 10开始支持，该示例通过[showUnderline](#showunderline10)、[showError](#showerror10)、[showUnit](#showunit10)、[passwordIcon](#passwordicon10)属性展示了下划线在不同场景的效果，同时，可以通过[underlineColor](#underlinecolor12)（从API version 12开始）支持配置下划线颜色。
 
@@ -2950,12 +3184,15 @@ struct TextInputExample {
 ```
 
 
-![](assets/TextInput/file-20260525091212540-002.png)
+![](assets/TextInput/file-20260525091212540-004.png)
 
 
 
 
-#### 示例3（设置自定义键盘）
+### 示例3（设置自定义键盘）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[customKeyboard](#customkeyboard10)（从API version 10开始）属性分别将value中的入参类型设置为[CustomBuilder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#custombuilder8)和[ComponentContent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-componentcontent#componentcontent-1)，实现了自定义键盘的功能。
 
@@ -3025,12 +3262,15 @@ struct TextInputExample {
 ```
 
 
-![](assets/TextInput/file-20260525091212540-003.gif)
+![](assets/TextInput/file-20260525091212540-005.jpg)
 
 
 
 
-#### 示例4（设置右侧清除按钮样式）
+### 示例4（设置右侧清除按钮样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[cancelButton](#cancelbutton11)属性展示了自定义右侧清除按钮样式的效果。
 
@@ -3065,12 +3305,15 @@ struct TextInputExample {
 ```
 
 
-![](assets/TextInput/file-20260525091212540-004.png)
+![](assets/TextInput/file-20260525091212541-006.png)
 
 
 
 
-#### 示例5（设置计数器）
+### 示例5（设置计数器）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[maxLength](#maxlength)、[showCounter](#showcounter11)（从API version 11开始）、[showUnderline](#showunderline10)（从API version 10开始）属性实现了计数器的功能。
 
@@ -3104,12 +3347,15 @@ struct TextInputExample {
 ```
 
 
-![](assets/TextInput/file-20260525091212540-005.jpg)
+![](assets/TextInput/file-20260525091212541-007.png)
 
 
 
 
-#### 示例6（电话号码格式化）
+### 示例6（电话号码格式化）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[onChange](#onchange)回调实现了电话号码格式化为XXX XXXX XXXX的功能。
 
@@ -3120,7 +3366,7 @@ struct TextInputExample {
 struct TextInputExample {
   @State text: string = '';
   public readonly NUM_TEXT_MAXSIZE_LENGTH = 13;
-  @State telNumberNoSpace: string = "";
+  @State telNumberNoSpace: string = '';
   @State nextCaret: number = -1; // 用于记录下次光标设置的位置
   @State actualCh: number = -1; // 用于记录光标在第i个数字后插入或者第i个数字前删除
   @State lastCaretPosition: number = 0;
@@ -3213,7 +3459,7 @@ struct TextInputExample {
         TextInput({ text: `${this.text}`, controller: this.controller }).type(InputType.PhoneNumber).height('48vp')
           .onChange((value: string) => {
             this.telNumberNoSpace = this.removeSpace(value);
-            let nextText: string = "";
+            let nextText: string = '';
             // 根据电话号码长度决定格式化方式：长度超限则不格式化，否则按'XXX XXXX XXXX'格式插入空格
             if (this.telNumberNoSpace.length > this.NUM_TEXT_MAXSIZE_LENGTH - 2) {
               nextText = this.telNumberNoSpace;
@@ -3251,18 +3497,21 @@ struct TextInputExample {
       }
     }
     .width('100%')
-    .height("100%")
+    .height('100%')
   }
 }
 ```
 
 
-![](assets/TextInput/file-20260525091212541-006.png)
+![](assets/TextInput/file-20260525091212541-008.png)
 
 
 
 
-#### 示例7（设置文本断行规则）
+### 示例7（设置文本断行规则）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 12开始，该示例通过[wordBreak](#wordbreak12)属性实现了TextInput不同断行规则下的效果。
 
@@ -3279,7 +3528,7 @@ struct TextInputExample {
   build() {
     Row() {
       Column() {
-        Text('TextInput为inline模式，WordBreakType属性为NORMAL的样式：').fontSize(16).fontColor(0xCCCCCC)
+        Text('TextInput为inline模式，wordBreak属性为NORMAL的样式：').fontSize(16).fontColor(0xCCCCCC)
         TextInput({
           text: this.textStrEn
         })
@@ -3288,7 +3537,7 @@ struct TextInputExample {
           .style(TextInputStyle.Inline)// Inline模式
           .wordBreak(WordBreak.NORMAL) // 非Inline模式该属性无效
 
-        Text('TextInput为inline模式，英文文本，WordBreakType属性为BREAK_ALL的样式：').fontSize(16).fontColor(0xCCCCCC)
+        Text('TextInput为inline模式，英文文本，wordBreak属性为BREAK_ALL的样式：').fontSize(16).fontColor(0xCCCCCC)
         TextInput({
           text: this.textStrEn
         })
@@ -3297,7 +3546,7 @@ struct TextInputExample {
           .style(TextInputStyle.Inline)
           .wordBreak(WordBreak.BREAK_ALL)
 
-        Text('TextInput为inline模式，中文文本，WordBreakType属性为BREAK_ALL的样式：').fontSize(16).fontColor(0xCCCCCC)
+        Text('TextInput为inline模式，中文文本，wordBreak属性为BREAK_ALL的样式：').fontSize(16).fontColor(0xCCCCCC)
         TextInput({
           text: this.textStrZn
         })
@@ -3306,7 +3555,7 @@ struct TextInputExample {
           .style(TextInputStyle.Inline)
           .wordBreak(WordBreak.BREAK_ALL)
 
-        Text('TextInput为inline模式，WordBreakType属性为BREAK_WORD的样式：').fontSize(16).fontColor(0xCCCCCC)
+        Text('TextInput为inline模式，wordBreak属性为BREAK_WORD的样式：').fontSize(16).fontColor(0xCCCCCC)
         TextInput({
           text: this.textStrEn
         })
@@ -3321,12 +3570,15 @@ struct TextInputExample {
 ```
 
 
-![](assets/TextInput/file-20260525091212541-007.png)
+![](assets/TextInput/file-20260525091212541-009.png)
 
 
 
 
-#### 示例8（设置文本样式）
+### 示例8（设置文本样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 12开始，该示例通过[lineHeight](#lineheight12)、[letterSpacing](#letterspacing12)、[decoration](#decoration12)属性展示了不同样式的文本效果。
 
@@ -3373,12 +3625,15 @@ struct TextInputExample {
 ```
 
 
-![](assets/TextInput/file-20260525091212541-008.png)
+![](assets/TextInput/file-20260525091212541-010.gif)
 
 
 
 
-#### 示例9（设置文字特性效果）
+### 示例9（设置文字特性效果）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 12开始，该示例通过[fontFeature](#fontfeature12)属性实现了文本在不同文字特性下的展示效果。
 
@@ -3395,11 +3650,11 @@ struct TextInputExample {
       TextInput({ text: this.text1 })
         .fontSize(20)
         .margin({ top: 200 })
-        .fontFeature("\"ss01\" on")
+        .fontFeature('"ss01" on')
       TextInput({ text: this.text2 })
         .margin({ top: 10 })
         .fontSize(20)
-        .fontFeature("\"ss01\" off")
+        .fontFeature('"ss01" off')
     }
     .width('90%')
     .margin('5%')
@@ -3408,12 +3663,15 @@ struct TextInputExample {
 ```
 
 
-![](assets/TextInput/file-20260525091212541-009.png)
+![](assets/TextInput/file-20260525091212541-011.png)
 
 
 
 
-#### 示例10（自定义键盘避让）
+### 示例10（自定义键盘避让）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[customKeyboard](#customkeyboard10)（从API version 10开始）属性配置[KeyboardOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor#keyboardoptions12)（从API version 12开始）接口实现了自定义键盘避让的效果。
 
@@ -3483,12 +3741,15 @@ struct TextInputExample {
 ```
 
 
-![](assets/TextInput/file-20260525091212541-010.gif)
+![](assets/TextInput/file-20260525091212542-012.gif)
 
 
 
 
-#### 示例11（设置文本自适应）
+### 示例11（设置文本自适应）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 12开始，该示例通过[minFontSize](#minfontsize12)、[maxFontSize](#maxfontsize12)、[heightAdaptivePolicy](#heightadaptivepolicy12)属性实现了文本自适应字号的功能。
 
@@ -3539,12 +3800,15 @@ struct TextInputExample {
 ```
 
 
-![](assets/TextInput/file-20260525091212541-011.png)
+![](assets/TextInput/file-20260525091212542-013.png)
 
 
 
 
-#### 示例12（设置折行规则）
+### 示例12（设置折行规则）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 12开始，该示例通过[lineBreakStrategy](#linebreakstrategy12)属性实现了TextInput不同折行规则下的效果。
 
@@ -3587,12 +3851,15 @@ struct TextInputExample {
 ```
 
 
-![](assets/TextInput/file-20260525091212542-012.gif)
+![](assets/TextInput/file-20260525091212542-014.png)
 
 
 
 
-#### 示例13（支持插入和删除回调）
+### 示例13（支持插入和删除回调）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 12开始，该示例通过[onWillInsert](#onwillinsert12)、[onDidInsert](#ondidinsert12)、[onWillDelete](#onwilldelete12)、[onDidDelete](#ondiddelete12)接口实现了插入和删除的效果。
 
@@ -3657,12 +3924,15 @@ struct TextInputExample {
 ```
 
 
-![](assets/TextInput/file-20260525091212542-013.png)
+![](assets/TextInput/file-20260525091212542-015.jpg)
 
 
 
 
-#### 示例14（文本扩展自定义菜单）
+### 示例14（文本扩展自定义菜单）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 12开始，该示例通过[editMenuOptions](#editmenuoptions12)接口实现了文本设置自定义菜单扩展项的文本内容、图标以及回调的功能，同时，可以在[onPrepareMenu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#属性-1)（从API version 20开始）回调中，进行菜单数据的设置。
 
@@ -3747,12 +4017,15 @@ struct TextInputExample {
 ```
 
 
-![](assets/TextInput/file-20260525091212542-014.png)
+![](assets/TextInput/file-20260525091212542-016.gif)
 
 
 
 
-#### 示例15（设置symbol类型清除按钮）
+### 示例15（设置symbol类型清除按钮）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 18开始，该示例通过[cancelButton](#cancelbutton18)属性展示了自定义右侧symbol类型清除按钮样式的效果。
 
@@ -3780,12 +4053,15 @@ struct TextInputExample {
 ```
 
 
-![](assets/TextInput/file-20260525091212542-015.jpg)
+![](assets/TextInput/file-20260525091212543-017.png)
 
 
 
 
-#### 示例16（文本设置省略模式）
+### 示例16（文本设置省略模式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[textOverflow](#textoverflow12)、[ellipsisMode](#ellipsismode18)、[style](#style9)属性展示了文本超长省略以及调整省略位置的效果，通过MULTILINE_START和MULTILINE_CENTER两种类型实现了单行文本和多行文本场景下的省略号在行首和行中的效果。
 
@@ -3852,12 +4128,15 @@ struct EllipsisModeExample {
 ```
 
 
-![](assets/TextInput/file-20260525091212542-016.gif)
+![](assets/TextInput/file-20260525091212544-018.png)
 
 
 
 
-#### 示例17（输入框支持输入状态变化等回调）
+### 示例17（输入框支持输入状态变化等回调）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 8开始，该示例通过[onEditChange](#oneditchange8)、[onCopy](#oncopy8)、[onCut](#oncut8)、[onPaste](#onpaste8)、[onContentScroll](#oncontentscroll10)（从API version 10开始）、[onWillCopy](#onwillcopy)、[onWillCut](#onwillcut)接口实现了输入框监测输入状态变化、复制、剪切、粘贴、文本内容滚动回调的效果、如何屏蔽系统复制功能，以及如何屏蔽系统剪切功能，同时，可以通过设置[selectAll](#selectall11)（从API version 11开始）属性，输入框初始状态下是否全选文本。
 
@@ -3896,7 +4175,7 @@ struct TextInputExample {
           .enableKeyboardOnFocus(false)
           .selectAll(false)
 
-        Text("editStatus:" + this.editStatus).height(30)
+        Text('editStatus:' + this.editStatus).height(30)
 
         TextInput({ text: 'TextInput支持复制操作时回调' })
           .height(60)
@@ -3977,12 +4256,15 @@ struct TextInputExample {
 ```
 
 
-![](assets/TextInput/file-20260525091212543-017.png)
+![](assets/TextInput/file-20260525091212544-019.png)
 
 
 
 
-#### 示例18（设置最小字体范围与最大字体范围）
+### 示例18（设置最小字体范围与最大字体范围）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 18开始，该示例通过[minFontScale](#minfontscale18)、[maxFontScale](#maxfontscale18)设置字体显示最小与最大范围。
 
@@ -4038,6 +4320,7 @@ struct TextInputExample {
 }
 ```
 
+
 | 系统字体缩放倍数为2倍 | 系统字体缩放倍数为3.2倍 |
 | --- | --- |
 |  |  |
@@ -4045,7 +4328,10 @@ struct TextInputExample {
 
 
 
-#### 示例19（设置选中指定区域的文本内容）
+### 示例19（设置选中指定区域的文本内容）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 10开始，该示例通过[setTextSelection](#settextselection10)方法展示如何设置选中指定区域的文本内容以及菜单的显隐策略。
 
@@ -4084,12 +4370,15 @@ struct TextInputExample {
 ```
 
 
-![](assets/TextInput/file-20260525091212544-020.png)
+![](assets/TextInput/file-20260525091212544-022.png)
 
 
 
 
-#### 示例20（设置文本描边）
+### 示例20（设置文本描边）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 20开始，该示例通过[strokeWidth](#strokewidth20)和[strokeColor](#strokecolor20)属性设置文本的描边宽度及颜色。
 
@@ -4136,12 +4425,15 @@ struct TextInputExample {
 ```
 
 
-![](assets/TextInput/file-20260525091212544-021.png)
+![](assets/TextInput/file-20260525091212544-023.gif)
 
 
 
 
-#### 示例21（设置中西文自动间距）
+### 示例21（设置中西文自动间距）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 20开始，该示例通过[enableAutoSpacing](#enableautospacing20)属性设置中西文自动间距。
 
@@ -4167,12 +4459,15 @@ struct TextInputExample {
 ```
 
 
-![](assets/TextInput/file-20260525091212544-022.png)
+![](assets/TextInput/file-20260525091212545-024.jpg)
 
 
 
 
-#### 示例22（设置字符计数颜色以及超出字符颜色）
+### 示例22（设置字符计数颜色以及超出字符颜色）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 22开始，该示例通过[showCounter](#showcounter11)属性的counterTextColor和counterTextOverflowColor设置字符计数颜色以及超出字符颜色。
 
@@ -4208,12 +4503,15 @@ struct TextInputExample {
 ```
 
 
-![](assets/TextInput/file-20260525091212544-023.gif)
+![](assets/TextInput/file-20260525091212545-025.gif)
 
 
 
 
-#### 示例23（设置placeholder富文本样式）
+### 示例23（设置placeholder富文本样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 22开始，该示例通过[setStyledPlaceholder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#setstyledplaceholder22)接口设置placeholder富文本样式。
 
@@ -4279,12 +4577,15 @@ struct TextInputExample  {
 ```
 
 
-![](assets/TextInput/file-20260525091212545-024.jpg)
+![](assets/TextInput/file-20260525091212545-026.gif)
 
 
 
 
-#### 示例24（设置输入法扩展信息）
+### 示例24（设置输入法扩展信息）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 22开始，该示例通过[IMEClient](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#imeclient20对象说明)的setExtraConfig设置输入法扩展信息。
 
@@ -4312,7 +4613,10 @@ struct TextInputExample {
 
 
 
-#### 示例25（设置内联输入风格编辑态时滚动条的显示模式）
+### 示例25（设置内联输入风格编辑态时滚动条的显示模式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 从API version 10开始，该示例通过[barState](#barstate10)接口设置内联输入风格编辑态时滚动条的显示或隐藏状态。
 
@@ -4341,12 +4645,15 @@ struct TextInputBarStateDemo {
 ```
 
 
-![](assets/TextInput/file-20260525091212545-025.gif)
+![](assets/TextInput/file-20260525091212545-027.gif)
 
 
 
 
-#### 示例26（设置行首标点符号压缩和行尾标点符号悬挂）
+### 示例26（设置行首标点符号压缩和行尾标点符号悬挂）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例通过[compressLeadingPunctuation](#compressleadingpunctuation23)接口设置行首标点符号压缩，通过[punctuationOverflow](#punctuationoverflow)设置行尾标点符号悬挂。
 
@@ -4396,12 +4703,15 @@ struct PunctuationDemo {
 ```
 
 
-![](assets/TextInput/file-20260525091212545-026.gif)
+![](assets/TextInput/file-20260525091212545-028.png)
 
 
 
 
-#### 示例27（设置自适应间距）
+### 示例27（设置自适应间距）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[includeFontPadding](#includefontpadding23)接口增加首行尾行间距和[fallbackLineSpacing](#fallbacklinespacing23)接口设置自适应行间距。
 
@@ -4467,12 +4777,15 @@ struct Index {
 ```
 
 
-![](assets/TextInput/file-20260525091212545-027.gif)
+![](assets/TextInput/file-20260525091212545-029.gif)
 
 
 
 
-#### 示例28（设置文本拖拽时的背板样式）
+### 示例28（设置文本拖拽时的背板样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[selectedDragPreviewStyle](#selecteddragpreviewstyle23)接口设置文本拖拽时的背板样式。
 
@@ -4498,12 +4811,15 @@ struct TextInputTest {
 ```
 
 
-![](assets/TextInput/file-20260525091212545-028.png)
+![](assets/TextInput/file-20260525091212546-030.png)
 
 
 
 
-#### 示例29（删除文本框内的最后一个字符）
+### 示例29（删除文本框内的最后一个字符）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过调用[deleteBackward](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#deletebackward23)接口删除文本框内最后一个字符。
 
@@ -4529,12 +4845,15 @@ struct Page {
 ```
 
 
-![](assets/TextInput/file-20260525091212545-029.gif)
+![](assets/TextInput/file-20260525091212546-031.gif)
 
 
 
 
-#### 示例30（设置文本排版方向）
+### 示例30（设置文本排版方向）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[textDirection](#textdirection23)接口设置文本排版方向。
 
@@ -4581,12 +4900,15 @@ struct TextInputExample {
 ```
 
 
-![](assets/TextInput/file-20260525091212546-030.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/NYjmt7XPSemcEytNoRZc0A/zh-cn_image_0000002717612802.png?HW-CC-KV=V1&HW-CC-Date=20260911T073108Z&HW-CC-Expire=86400&HW-CC-Sign=694E51D26F09CDE19AF5A80F15A9D200A628A0A48F9AD30270A5AE2765F4C7DB)
 
 
 
 
-#### 示例31（将指定范围的文字滚动到可视区内）
+### 示例31（将指定范围的文字滚动到可视区内）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例通过[scrollToVisible](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#scrolltovisible23)将可视区外的文本滚动到可视区内。
 
@@ -4615,12 +4937,15 @@ struct TextInputExample {
 ```
 
 
-![](assets/TextInput/file-20260525091212546-031.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/VHtp8psoS_qqev2TvpIh4Q/zh-cn_image_0000002747292755.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073108Z&HW-CC-Expire=86400&HW-CC-Sign=F1DA0704FD055C433863BD514EFDDBB4CC9F9CE636072B1CB14A263429DEC499)
 
 
 
 
-#### 示例32（设置文本排版时是否使能孤字优化）
+### 示例32（设置文本排版时是否使能孤字优化）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[orphanCharOptimization](#orphancharoptimization)接口设置使能孤字优化，确保段落最后一行不出现孤字。
 
@@ -4662,18 +4987,21 @@ struct TextExample {
 不开启孤字优化：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/L7d-I5x2Sga73NbEKkLDzg/zh-cn_image_0000002685928263.png?HW-CC-KV=V1&HW-CC-Date=20260730T071505Z&HW-CC-Expire=86400&HW-CC-Sign=C9476B15E9724E5A1C515E9A827DA5C8DD62A114D7CDBAECE1BECC874A21270C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/z98gjN27QSG02IUyF8rrOw/zh-cn_image_0000002747212671.png?HW-CC-KV=V1&HW-CC-Date=20260911T073108Z&HW-CC-Expire=86400&HW-CC-Sign=5356863EAD528ABCBE36ADE15DBE98FE251876DDFB8E6ADB2F3540AFB74E7F41)
 
 
 开启孤字优化：
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/OeAGG7PUSyS2ETmvqBE2Iw/zh-cn_image_0000002656008586.png?HW-CC-KV=V1&HW-CC-Date=20260730T071505Z&HW-CC-Expire=86400&HW-CC-Sign=52BB18477E0454FDF9D54A5C822D4A223699700B09EA5324BF775B7C67CC5538)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/iTAgTTGURvSQFFFRDkBSdw/zh-cn_image_0000002717772736.png?HW-CC-KV=V1&HW-CC-Date=20260911T073108Z&HW-CC-Expire=86400&HW-CC-Sign=BC0232A8E059EB1550E180366BC4ADA78C2CF542F7DAC236DE2A3F5E6666D4AD)
 
 
 
 
-#### 示例33（设置文本着色器效果）
+### 示例33（设置文本着色器效果）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[shaderStyle](#shaderstyle)接口实现对TextInput组件内文本着色效果。
 
@@ -4742,12 +5070,15 @@ struct ShaderColorStyle {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/Mig6DQqKRNmMDrIyHsPt-w/zh-cn_image_0000002655848666.png?HW-CC-KV=V1&HW-CC-Date=20260730T071505Z&HW-CC-Expire=86400&HW-CC-Sign=4464F814D6D914618D0F7F6FE9A108DE0A5B5F25238AE0B73AD1067DD8EA0B52)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/mkoQYuYgSj2pScPxs6686g/zh-cn_image_0000002717612804.png?HW-CC-KV=V1&HW-CC-Date=20260911T073108Z&HW-CC-Expire=86400&HW-CC-Sign=2B63AB4313F0C176401EDB41A3E7DAD97CA64AB3E7BCAC002F4B21374B311F5B)
 
 
 
 
-#### 示例34（设置文本选择的AI菜单）
+### 示例34（设置文本选择的AI菜单）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[enableSelectedDataDetector](#enableselecteddatadetector22)，配置文本选择AI菜单功能。
 
@@ -4775,4 +5106,4 @@ struct Demo34 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/__WifQhsTtWVMpoMczfgRw/zh-cn_image_0000002686088095.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071505Z&HW-CC-Expire=86400&HW-CC-Sign=C37690730C0774A1E66175042AC5FF58208C0670AD3C1D3703B07BAE21C7042C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/hIAGCMy3R-KwO3q5HYcQaA/zh-cn_image_0000002747292757.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073108Z&HW-CC-Expire=86400&HW-CC-Sign=4242A4603297CD33ACE2C49359A0B5DB8606AED9ECCC09552C1DCB3A6AFCFCC5)

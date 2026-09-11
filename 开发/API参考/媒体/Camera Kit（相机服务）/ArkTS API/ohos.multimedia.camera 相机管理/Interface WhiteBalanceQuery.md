@@ -1,9 +1,9 @@
 # Interface (WhiteBalanceQuery)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-whitebalancequery
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供了查询设备对指定的白平衡模式是否支持，以及获取设备支持的白平衡模式范围的方法。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { camera } from '@kit.CameraKit';
@@ -22,9 +23,10 @@ import { camera } from '@kit.CameraKit';
  
   
 
-#### isWhiteBalanceModeSupported20+
+## isWhiteBalanceModeSupported20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isWhiteBalanceModeSupported(mode: WhiteBalanceMode): boolean
  
@@ -36,6 +38,7 @@ isWhiteBalanceModeSupported(mode: WhiteBalanceMode): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | WhiteBalanceMode | 是 | 白平衡模式。 |
@@ -43,6 +46,7 @@ isWhiteBalanceModeSupported(mode: WhiteBalanceMode): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 表示是否支持白平衡模式。true表示支持，false表示不支持。若接口调用失败，返回undefined。 |
@@ -52,6 +56,7 @@ isWhiteBalanceModeSupported(mode: WhiteBalanceMode): boolean
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400101 | Parameter missing or parameter type incorrect. |
@@ -78,9 +83,10 @@ function isWhiteBalanceModeSupported(session: camera.PhotoSession | camera.Video
  
   
 
-#### getWhiteBalanceRange20+
+## getWhiteBalanceRange20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getWhiteBalanceRange(): Array&lt;number&gt;
  
@@ -92,6 +98,7 @@ getWhiteBalanceRange(): Array&lt;number&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;number&gt; | 用于获取手动白平衡值的可调范围，如[2800，10000]，单位为K（Kelvin，温度单位），实际情况根据底层能力返回为准。若接口调用失败，返回undefined。 |
@@ -101,6 +108,7 @@ getWhiteBalanceRange(): Array&lt;number&gt;
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400103 | Session not config, only throw in session usage. |
@@ -125,9 +133,10 @@ function getWhiteBalanceRange(session: camera.PhotoSession | camera.VideoSession
  
   
 
-#### getColorTintRange
+## getColorTintRange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getColorTintRange(): Array&lt;number&gt;
  
@@ -143,6 +152,7 @@ getColorTintRange(): Array&lt;number&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;number&gt; | 用于获取色调调节值的可调范围。若接口调用失败，返回undefined。 |
@@ -152,6 +162,7 @@ getColorTintRange(): Array&lt;number&gt;
  
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400103 | Session not config, only throw in session usage. |

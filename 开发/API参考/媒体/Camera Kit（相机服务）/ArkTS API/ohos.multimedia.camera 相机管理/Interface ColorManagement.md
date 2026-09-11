@@ -1,9 +1,9 @@
 # Interface (ColorManagement)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-colormanagement
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ColorManagement继承自[ColorManagementQuery](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-colormanagementquery)。
 
@@ -14,9 +14,10 @@ ColorManagement继承自[ColorManagementQuery](https://developer.huawei.com/cons
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { camera } from '@kit.CameraKit';
@@ -24,9 +25,10 @@ import { camera } from '@kit.CameraKit';
 
 
 
-#### setColorSpace12+
+## setColorSpace12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setColorSpace(colorSpace: colorSpaceManager.ColorSpace): void
 
@@ -52,6 +54,7 @@ P3广色域与HDR高动态范围成像：
 
 拍照模式：
 
+
 | SDR/HDR拍摄 | 预览输出格式 | 色彩空间 |
 | --- | --- | --- |
 | SDR(Default) | CAMERA_FORMAT_YUV_420_SP | SRGB |
@@ -62,6 +65,7 @@ P3广色域与HDR高动态范围成像：
 在录像模式下，使能SDR或HDR_VIVID拍摄效果时，CameraFormat与ColorSpace必须按照下列表格中的对应关系配置，若不满足表格中CameraFormat与ColorSpace配置，会导致预览异常等问题。
 
 录像模式：
+
 
 | SDR/HDR拍摄 | CameraFormat | ColorSpace |
 | --- | --- | --- |
@@ -76,6 +80,7 @@ P3广色域与HDR高动态范围成像：
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | colorSpace | colorSpaceManager.ColorSpace | 是 | 色彩空间，通过getSupportedColorSpaces接口获取。 |
@@ -84,6 +89,7 @@ P3广色域与HDR高动态范围成像：
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -114,9 +120,10 @@ function setColorSpace(session: camera.PhotoSession, colorSpaces: Array<colorSpa
 
 
 
-#### getActiveColorSpace12+
+## getActiveColorSpace12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getActiveColorSpace(): colorSpaceManager.ColorSpace
 
@@ -128,6 +135,7 @@ getActiveColorSpace(): colorSpaceManager.ColorSpace
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | colorSpaceManager.ColorSpace | 当前设置的色彩空间。 |
@@ -136,6 +144,7 @@ getActiveColorSpace(): colorSpaceManager.ColorSpace
 **错误码：**
 
 以下错误码的详细介绍请参见[Camera错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-camera)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

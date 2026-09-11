@@ -1,16 +1,16 @@
 # 如何进行App加固操作
 
-更新时间：2026-08-13 01:22:30
+更新时间：2026-08-26 01:00:31
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-and-building-219
 
-#### 问题现象
+## 问题现象
 
 开发的过程中，为了保护开发的App不被恶意破解，如何对App进行加密，混淆操作？
  
  
 
-#### 背景知识
+## 背景知识
 
 - HarmonyOS[反编译](https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-data-prevention-9)安全性提供基础的应用加固安全能力，包括混淆、加密和代码签名，保护代码免受反编译和反调试。高级混淆功能目前由第三方支持。
 - 当前提供的加固方式有：混淆，加密。
@@ -21,7 +21,7 @@
  
  
 
-#### 解决方案
+## 解决方案
 
 - 代码混淆：代码混淆是一种软件安全技术，旨在增加代码的复杂性和模糊性，从而增加攻击者分析和理解代码的难度。1. 开启混淆能力：Stage模型的工程在**Release编译模式**下[使能混淆](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-build-obfuscation#section18326541833)，从DevEco Studio NEXT Developer Beta3（5.0.3.600）版本开始，默认不开启混淆。
 
@@ -33,7 +33,7 @@
  
  
 
-#### 常见FAQ
+## 常见FAQ
 
 Q：使用官方提供的代码加密能力后，应用代码是否需要其它的代码保护措施吗？
  
@@ -49,13 +49,13 @@ A：加密后的应用在程序启动和运行过程中可能会小幅度增加�
  
 Q：App中依赖了其他自研so库，如何对so进行加固？
  
-A：在HarmonyOS开发场景下，应用的代码分为C/C++等实现的代码，最终的编译产物主要为.so文件。其中.so文件由于反编译难度较大，代码逆向困难。so的加固可以使用三方提供的应用安全加固保护，部分[三方安全厂商](https://developer.huawei.com/consumer/cn/market/prod-list/a97c5f2de7df49f49c139a32125fa4c8/categoryL2_202404220005?categoryIdL3=categoryL3_202403120002)已支持HarmonyOS系统，具体方法请参考[使用第三方加固](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-app-code-ob#section4564113173012)。
+A：在HarmonyOS开发场景下，应用的代码分为C/C++等实现的代码，最终的编译产物主要为.so文件。其中.so文件由于反编译难度较大，代码逆向困难。so的加固可以使用三方提供的应用安全加固保护，部分[三方安全厂商](https://developer.huawei.com/consumer/cn/market/prod-list/a97c5f2de7df49f49c139a32125fa4c8/categoryL2_202404220005?categoryIdL3=categoryL3_202403120002)已支持HarmonyOS系统，具体方法请参考[使用第三方加固](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/source-obfuscation-apply-code#使用第三方加固)。
  
 Q：使用三方加固包加固签名后，App上传解析失败，报错993。
  
 A：非自研SDK被混淆影响应用市场审核相关SDK的指纹信息，不允许混淆非自研的SDK，对非自研SDK配置混淆白名单。
  
-Q：HarmonyOS系统中三方SDK需要单独加固吗?
+Q：HarmonyOS系统中三方SDK需要单独加固吗。
  
 A：机制上代码混淆是支持SDK的，业务上自己做功能加固。
  
@@ -71,6 +71,10 @@ Q：由于应用开发内部流程需要在应用上架前进行反编译等逆�
  
 A：因为应用加密是应用提交上架申请时选择触发，所以上架前的应用加固可以使用三方加固工具进行，可参考已支持HarmonyOS系统的[三方安全风控类SDK](https://developer.huawei.com/consumer/cn/market/prod-list/a97c5f2de7df49f49c139a32125fa4c8/categoryL2_202404220005?categoryIdL3=categoryL3_202403120002)。
  
-Q：国标“6.3.1客户端应用程序自身安全”提到：采取防动态调试、代码混淆、防逆向等技术措施，HarmonyOS应用加密是否满足要求？
+Q：国标"6.3.1客户端应用程序自身安全"提到：采取防动态调试、代码混淆、防逆向等技术措施，HarmonyOS应用加密是否满足要求？
  
 A：HarmonyOS系统具备反调试，反篡改，反逆向功能。其中，反逆向是通过代码加密保护；反篡改主要是应用市场上架的签名保护，安装应用时会校验应用签名，被篡改的应用验签过不了无法安装；反调试是系统本身对调试就做了限制，通过系统限制达到反调试的目的。
+ 
+Q：开启代码混淆后，安装包解压仍能看到配置文件中的明文内容，如何处理？
+ 
+A：代码混淆主要针对JS/TS代码生效，无法对配置文件中的明文内容进行混淆。若需进一步提升代码安全性，建议使用第三方安全厂商提供的高级混淆与加固能力，具体可参考[使用第三方加固](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/source-obfuscation-apply-code#使用第三方加固)。

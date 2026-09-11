@@ -1,6 +1,6 @@
 # FunctionalButton（Button组件）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/scenario-fusion-functionalbutton
 **支持设备：** Phone | PC/2in1 | Tablet | TV
@@ -12,7 +12,8 @@ FunctionalButton需要配合[functionalButtonComponentManager](https://developer
 **起始版本：** 4.1.0(11)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -22,7 +23,8 @@ import { FunctionalButton, functionalButtonComponentManager } from '@kit.Scenari
  
   
 
-#### FunctionalButton
+## FunctionalButton
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 
@@ -42,6 +44,7 @@ Button组件需要[functionalButtonComponentManager](https://developer.huawei.co
  
 **起始版本：** 4.1.0(11)
   
+
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | params | functionalButtonComponentManager.FunctionalButtonParams | 是 | @Prop | FunctionalButton组件参数。 |
@@ -50,7 +53,8 @@ Button组件需要[functionalButtonComponentManager](https://developer.huawei.co
  
   
 
-#### build
+### build
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | TV
 

@@ -1,18 +1,19 @@
 # OH_PackingOptions
 
-更新时间：2026-06-27 10:02:54
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-nativemodule-oh-packingoptions
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct OH_PackingOptions OH_PackingOptions
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 OH_PackingOptions是native层封装的图像编码选项结构体，不可直接操作，而是采用函数调用方式创建、释放结构体以及操作具体字段。
  
@@ -32,6 +33,7 @@ OH_PackingOptions是native层封装的图像编码选项结构体，不可直接
  
 OH_PackingOptions结构体内容和操作方式如下：
   
+
 | 字段类型 | 字段名称 | 字段描述 | 字段获取函数 | 字段设置函数 |
 | --- | --- | --- | --- | --- |
 | Image_MimeType | mimeType | 目标编码格式的MIME类型。ImageSource或PixelMap编码支持image/jpeg、image/webp、image/png、image/heic或image/heif、image/sdr_astc_4x4、image/sdr_sut_superfast_4x4、image/hdr_astc_4x4；Picture编码支持image/jpeg、image/heic或image/heif。实际支持范围以OH_ImagePackerNative_GetSupportedFormats返回结果为准。 | OH_PackingOptions_GetMimeType、OH_PackingOptions_GetMimeTypeWithNull | OH_PackingOptions_SetMimeType |

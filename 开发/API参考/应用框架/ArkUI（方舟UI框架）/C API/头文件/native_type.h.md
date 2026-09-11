@@ -1,13 +1,14 @@
 # native_type.h
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-type-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供NativeModule公共的类型定义。
 
@@ -25,19 +26,22 @@
 
 
 
-#### 汇总
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 汇总
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 结构体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
-| ArkUI_Node | - | 定义ArkUI Native组件实例对象，供ArkUI_NodeHandle指针在Native接口中标识和传递组件实例。 |
+| ArkUI_Node | ArkUI_Node | 定义ArkUI Native组件实例对象，供ArkUI_NodeHandle指针在Native接口中标识和传递组件实例。 |
 | ArkUI_ContextCallback | ArkUI_ContextCallback | 事件回调类型，用于定义回调函数及其用户自定义数据。使用该类型的接口触发回调时，会调用callback，并将userData作为参数传入。 |
 | ArkUI_NumberValue | ArkUI_NumberValue | ArkUI 在 Native 侧使用的数字类型，用于通过统一类型承载浮点、有符号整型和无符号整型数值。 |
 | ArkUI_ColorStop | ArkUI_ColorStop | 定义渐变色结构，用于配置组件的渐变效果，支持通过颜色数组与位置数组组合定义多种渐变样式。 |
@@ -71,9 +75,11 @@
 
 
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -101,13 +107,16 @@
 | ArkUI_RenderStrategy | ArkUI_RenderStrategy | 定义组件绘制圆角的模式。 |
 | OH_ArkUI_CrossLanguageOperatingStatus | OH_ArkUI_CrossLanguageOperatingStatus | 跨语言配置项的节点树操作状态。 |
 | OH_ArkUI_NodeMountPolicy | OH_ArkUI_NodeMountPolicy | 子节点挂载策略类型枚举。 |
+| ArkUI_CrownSensitivity | ArkUI_CrownSensitivity | 定义表冠灵敏度枚举值。 |
 
 
 
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -350,19 +359,25 @@
 | ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_GetRepeating(const OH_ArkUI_RadialGradientOptions* options, bool* repeating) | - | 获取径向渐变选项中颜色是否重复的设置。 |
 | ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_SetColorStop(OH_ArkUI_RadialGradientOptions* options, const uint32_t* colors, const float* stops, int32_t colorsAndStopsSize) | - | 设置径向渐变选项的颜色停止点。 |
 | ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_GetColorStop(const OH_ArkUI_RadialGradientOptions* options, uint32_t* colors, float* stops, int32_t colorsAndStopsSize, int32_t* writeLength) | - | 获取径向渐变选项的颜色停止点。 |
+| ArkUI_SelectedDragPreviewStyle* OH_ArkUI_SelectedDragPreviewStyle_Create() | - | 创建选中状态下拖拽文本预览样式对象。 |
+| void OH_ArkUI_SelectedDragPreviewStyle_Dispose(ArkUI_SelectedDragPreviewStyle* config) | - | 销毁选中状态下拖拽文本预览样式对象。 |
+| void OH_ArkUI_SelectedDragPreviewStyle_SetColor(ArkUI_SelectedDragPreviewStyle* config, uint32_t color) | - | 设置选中态拖拽文本预览样式的背景色。 |
+| uint32_t OH_ArkUI_SelectedDragPreviewStyle_GetColor(ArkUI_SelectedDragPreviewStyle* config) | - | 获取选中态拖拽文本预览样式的背景色。 |
 
 
 
 
-#### 枚举类型说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 枚举类型说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### ArkUI_CopyOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### ArkUI_CopyOptions
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_CopyOptions
@@ -374,6 +389,7 @@ enum ArkUI_CopyOptions
 
 **起始版本：** 12
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ARKUI_COPY_OPTIONS_NONE = 0 | 不支持复制。 |
@@ -384,9 +400,10 @@ enum ArkUI_CopyOptions
 
 
 
-#### ArkUI_AccessibilityCheckedState
+### ArkUI_AccessibilityCheckedState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_AccessibilityCheckedState
@@ -398,6 +415,7 @@ enum ArkUI_AccessibilityCheckedState
 
 **起始版本：** 12
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ARKUI_ACCESSIBILITY_UNCHECKED = 0 | 复选框未被选中。 |
@@ -406,9 +424,10 @@ enum ArkUI_AccessibilityCheckedState
 
 
 
-#### ArkUI_AccessibilityActionType
+### ArkUI_AccessibilityActionType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_AccessibilityActionType
@@ -419,6 +438,7 @@ enum ArkUI_AccessibilityActionType
 定义无障碍操作类型。
 
 **起始版本：** 12
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -431,9 +451,10 @@ enum ArkUI_AccessibilityActionType
 
 
 
-#### ArkUI_BorderStyle
+### ArkUI_BorderStyle
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_BorderStyle
@@ -445,6 +466,7 @@ enum ArkUI_BorderStyle
 
 **起始版本：** 12
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ARKUI_BORDER_STYLE_SOLID = 0 | 显示为一条实线，该值为默认值。 |
@@ -454,9 +476,10 @@ enum ArkUI_BorderStyle
 
 
 
-#### ArkUI_AccessibilityMode
+### ArkUI_AccessibilityMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_AccessibilityMode
@@ -468,6 +491,7 @@ enum ArkUI_AccessibilityMode
 
 **起始版本：** 12
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ARKUI_ACCESSIBILITY_MODE_AUTO = 0 | 根据组件不同会转换为“enabled”或者“disabled”。 |
@@ -478,9 +502,10 @@ enum ArkUI_AccessibilityMode
 
 
 
-#### ArkUI_AdaptiveColor
+### ArkUI_AdaptiveColor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_AdaptiveColor
@@ -492,6 +517,7 @@ enum ArkUI_AdaptiveColor
 
 **起始版本：** 12
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ARKUI_ADAPTIVE_COLOR_DEFAULT = 0 | 不使用取色模糊。 |
@@ -500,9 +526,10 @@ enum ArkUI_AdaptiveColor
 
 
 
-#### ArkUI_ColorMode
+### ArkUI_ColorMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_ColorMode
@@ -514,6 +541,7 @@ enum ArkUI_ColorMode
 
 **起始版本：** 12
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ARKUI_COLOR_MODE_SYSTEM = 0 | 跟随系统深浅色模式。 |
@@ -523,9 +551,10 @@ enum ArkUI_ColorMode
 
 
 
-#### ArkUI_SystemColorMode
+### ArkUI_SystemColorMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_SystemColorMode
@@ -537,6 +566,7 @@ enum ArkUI_SystemColorMode
 
 **起始版本：** 12
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ARKUI_SYSTEM_COLOR_MODE_LIGHT = 0 | 浅色模式。 |
@@ -545,9 +575,10 @@ enum ArkUI_SystemColorMode
 
 
 
-#### ArkUI_LengthMetricUnit
+### ArkUI_LengthMetricUnit
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_LengthMetricUnit
@@ -559,6 +590,7 @@ enum ArkUI_LengthMetricUnit
 
 **起始版本：** 12
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ARKUI_LENGTH_METRIC_UNIT_DEFAULT = -1 | 默认，字体类单位为fp，非字体类单位为vp。 |
@@ -569,9 +601,10 @@ enum ArkUI_LengthMetricUnit
 
 
 
-#### ArkUI_ListItemSwipeActionState
+### ArkUI_ListItemSwipeActionState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_ListItemSwipeActionState
@@ -583,6 +616,7 @@ enum ArkUI_ListItemSwipeActionState
 
 **起始版本：** 12
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ARKUI_LIST_ITEM_SWIPE_ACTION_STATE_COLLAPSED = 0 | 收起状态，当ListItem与主轴方向相反滑动时操作项处于隐藏状态。 |
@@ -592,9 +626,10 @@ enum ArkUI_ListItemSwipeActionState
 
 
 
-#### ArkUI_ListItemSwipeEdgeEffect
+### ArkUI_ListItemSwipeEdgeEffect
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_ListItemSwipeEdgeEffect
@@ -606,6 +641,7 @@ enum ArkUI_ListItemSwipeEdgeEffect
 
 **起始版本：** 12
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ARKUI_LIST_ITEM_SWIPE_EDGE_EFFECT_SPRING = 0 | ListItem划动距离超过划出组件大小后可以继续划动。 |
@@ -614,9 +650,10 @@ enum ArkUI_ListItemSwipeEdgeEffect
 
 
 
-#### ArkUI_ListItemSwipeActionDirection
+### ArkUI_ListItemSwipeActionDirection
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_ListItemSwipeActionDirection
@@ -628,6 +665,7 @@ ListItem划出菜单的展开方向。
 
 **起始版本：** 21
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ARKUI_LIST_ITEM_SWIPE_ACTION_DIRECTION_START = 0 | 当列表方向是垂直方向时，LTR模式下表示ListItem的左边，RTL模式下表示ListItem的右边。当列表是水平方向时，表示ListItem的上边。 |
@@ -636,9 +674,10 @@ ListItem划出菜单的展开方向。
 
 
 
-#### ArkUI_CrownSensitivity
+### ArkUI_CrownSensitivity
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_CrownSensitivity
@@ -650,6 +689,7 @@ enum ArkUI_CrownSensitivity
 
 **起始版本：** 26.0.0
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ARKUI_CROWN_SENSITIVITY_LOW = 0 | 低灵敏度。 |
@@ -659,9 +699,10 @@ enum ArkUI_CrownSensitivity
 
 
 
-#### ArkUI_SafeAreaType
+### ArkUI_SafeAreaType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_SafeAreaType
@@ -673,6 +714,7 @@ enum ArkUI_SafeAreaType
 
 **起始版本：** 12
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ARKUI_SAFE_AREA_TYPE_SYSTEM = 1 | 系统默认非安全区域，包括状态栏、导航栏，该值为默认值。 |
@@ -682,9 +724,10 @@ enum ArkUI_SafeAreaType
 
 
 
-#### ArkUI_KeyboardAvoidMode
+### ArkUI_KeyboardAvoidMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_KeyboardAvoidMode
@@ -696,6 +739,7 @@ enum ArkUI_KeyboardAvoidMode
 
 **起始版本：** 15
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ARKUI_KEYBOARD_AVOID_MODE_DEFAULT = 0 | 默认避让软键盘并在到达极限高度之后进行高度压缩。 |
@@ -704,9 +748,10 @@ enum ArkUI_KeyboardAvoidMode
 
 
 
-#### ArkUI_HoverModeAreaType
+### ArkUI_HoverModeAreaType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_HoverModeAreaType
@@ -718,6 +763,7 @@ enum ArkUI_HoverModeAreaType
 
 **起始版本：** 15
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ARKUI_HOVER_MODE_AREA_TYPE_TOP = 0 | 上半屏。 |
@@ -726,9 +772,10 @@ enum ArkUI_HoverModeAreaType
 
 
 
-#### ArkUI_ExpandMode
+### ArkUI_ExpandMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_ExpandMode
@@ -740,6 +787,7 @@ enum ArkUI_ExpandMode
 
 **起始版本：** 15
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ARKUI_NOT_EXPAND = 0 | 不展开。 |
@@ -749,9 +797,10 @@ enum ArkUI_ExpandMode
 
 
 
-#### ArkUI_FocusWrapMode
+### ArkUI_FocusWrapMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_FocusWrapMode
@@ -763,6 +812,7 @@ enum ArkUI_FocusWrapMode
 
 **起始版本：** 20
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ARKUI_FOCUS_WRAP_MODE_DEFAULT = 0 | 默认规则，使用方向键走焦不换行。 |
@@ -771,9 +821,10 @@ enum ArkUI_FocusWrapMode
 
 
 
-#### ArkUI_ItemFillPolicy
+### ArkUI_ItemFillPolicy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_ItemFillPolicy
@@ -785,6 +836,7 @@ enum ArkUI_ItemFillPolicy
 
 **起始版本：** 22
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ARKUI_ITEMFILLPOLICY_NONE = -1 | 没有设置响应式断点规格。 |
@@ -795,9 +847,10 @@ enum ArkUI_ItemFillPolicy
 
 
 
-#### ArkUI_EdgeDirection
+### ArkUI_EdgeDirection
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_EdgeDirection
@@ -808,6 +861,7 @@ enum ArkUI_EdgeDirection
 定义矩形边方向。
 
 **起始版本：** 20
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -820,9 +874,10 @@ enum ArkUI_EdgeDirection
 
 
 
-#### ArkUI_CornerDirection
+### ArkUI_CornerDirection
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_CornerDirection
@@ -834,20 +889,22 @@ enum ArkUI_CornerDirection
 
 **起始版本：** 20
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ARKUI_CORNER_DIRECTION_ALL = 0 | 设置四个角度方向的内容。 |
 | ARKUI_CORNER_DIRECTION_TOP_LEFT = 1 << 0 | 设置左上侧方向内容。 |
 | ARKUI_CORNER_DIRECTION_TOP_RIGHT = 1 << 1 | 设置右上侧方向内容。 |
 | ARKUI_CORNER_DIRECTION_BOTTOM_LEFT = 1 << 2 | 设置左下侧方向内容。 |
-| ARKUI_CORNER_DIRECTION_BOTTOM_RIGHT = 1 << 3 | 设置右下侧方向内容。 |
+| ARKUI_CORNER_DIRECTION_BOTTOM_RIGHT = 1 << 3 | 设置右下侧方向容。 |
 
 
 
 
-#### ArkUI_MenuPolicy
+### ArkUI_MenuPolicy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_MenuPolicy
@@ -859,6 +916,7 @@ enum ArkUI_MenuPolicy
 
 **起始版本：** 23
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ARKUI_MENU_POLICY_DEFAULT = 0 | 根据底层默认逻辑确定是否弹出菜单。 |
@@ -868,9 +926,10 @@ enum ArkUI_MenuPolicy
 
 
 
-#### ArkUI_RenderStrategy
+### ArkUI_RenderStrategy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_RenderStrategy
@@ -882,6 +941,7 @@ enum ArkUI_RenderStrategy
 
 **起始版本：** 23
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ARKUI_RENDERSTRATEGY_FAST = 0 | 在线绘制模式。 |
@@ -890,9 +950,10 @@ enum ArkUI_RenderStrategy
 
 
 
-#### OH_ArkUI_CrossLanguageOperatingStatus
+### OH_ArkUI_CrossLanguageOperatingStatus
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_ArkUI_CrossLanguageOperatingStatus
@@ -904,6 +965,7 @@ enum OH_ArkUI_CrossLanguageOperatingStatus
 
 **起始版本：** 26.0.0
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_ARKUI_TREE_OPERATING_STATUS_UNDEFINED = 0 | 未定义，节点树操作状态的初始值。处于此状态的节点不支持跨语言节点树操作。 |
@@ -913,9 +975,10 @@ enum OH_ArkUI_CrossLanguageOperatingStatus
 
 
 
-#### OH_ArkUI_NodeMountPolicy
+### OH_ArkUI_NodeMountPolicy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_ArkUI_NodeMountPolicy
@@ -927,6 +990,7 @@ enum OH_ArkUI_NodeMountPolicy
 
 **起始版本：** 26.0.0
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_ARKUI_NODE_MOUNT_POLICY_SINGLE_IF_RENDER_NODE = 0 | 如果需要将RenderNode作为子节点挂载，此RenderNode必须是唯一子节点。 |
@@ -935,15 +999,17 @@ enum OH_ArkUI_NodeMountPolicy
 
 
 
-#### 函数说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 函数说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### OH_ArkUI_LayoutConstraint_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### OH_ArkUI_LayoutConstraint_Create()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_LayoutConstraint* OH_ArkUI_LayoutConstraint_Create()
@@ -957,6 +1023,7 @@ ArkUI_LayoutConstraint* OH_ArkUI_LayoutConstraint_Create()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_LayoutConstraint* | 创建布局约束的指针。 |
@@ -964,9 +1031,10 @@ ArkUI_LayoutConstraint* OH_ArkUI_LayoutConstraint_Create()
 
 
 
-#### OH_ArkUI_LayoutConstraint_Copy()
+### OH_ArkUI_LayoutConstraint_Copy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_LayoutConstraint* OH_ArkUI_LayoutConstraint_Copy(const ArkUI_LayoutConstraint* Constraint)
@@ -980,12 +1048,14 @@ ArkUI_LayoutConstraint* OH_ArkUI_LayoutConstraint_Copy(const ArkUI_LayoutConstra
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_LayoutConstraint* Constraint | 布局约束的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -994,9 +1064,10 @@ ArkUI_LayoutConstraint* OH_ArkUI_LayoutConstraint_Copy(const ArkUI_LayoutConstra
 
 
 
-#### OH_ArkUI_LayoutConstraint_Dispose()
+### OH_ArkUI_LayoutConstraint_Dispose()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void* OH_ArkUI_LayoutConstraint_Dispose(ArkUI_LayoutConstraint* Constraint)
@@ -1010,12 +1081,14 @@ void* OH_ArkUI_LayoutConstraint_Dispose(ArkUI_LayoutConstraint* Constraint)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_LayoutConstraint* Constraint | 布局约束的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1024,9 +1097,10 @@ void* OH_ArkUI_LayoutConstraint_Dispose(ArkUI_LayoutConstraint* Constraint)
 
 
 
-#### OH_ArkUI_LayoutConstraint_GetMaxWidth()
+### OH_ArkUI_LayoutConstraint_GetMaxWidth()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_LayoutConstraint_GetMaxWidth(const ArkUI_LayoutConstraint* Constraint)
@@ -1040,12 +1114,14 @@ int32_t OH_ArkUI_LayoutConstraint_GetMaxWidth(const ArkUI_LayoutConstraint* Cons
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_LayoutConstraint* Constraint | 布局约束的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1054,9 +1130,10 @@ int32_t OH_ArkUI_LayoutConstraint_GetMaxWidth(const ArkUI_LayoutConstraint* Cons
 
 
 
-#### OH_ArkUI_LayoutConstraint_GetMinWidth()
+### OH_ArkUI_LayoutConstraint_GetMinWidth()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_LayoutConstraint_GetMinWidth(const ArkUI_LayoutConstraint* Constraint)
@@ -1070,12 +1147,14 @@ int32_t OH_ArkUI_LayoutConstraint_GetMinWidth(const ArkUI_LayoutConstraint* Cons
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_LayoutConstraint* Constraint | 布局约束的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1084,9 +1163,10 @@ int32_t OH_ArkUI_LayoutConstraint_GetMinWidth(const ArkUI_LayoutConstraint* Cons
 
 
 
-#### OH_ArkUI_LayoutConstraint_GetMaxHeight()
+### OH_ArkUI_LayoutConstraint_GetMaxHeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_LayoutConstraint_GetMaxHeight(const ArkUI_LayoutConstraint* Constraint)
@@ -1100,12 +1180,14 @@ int32_t OH_ArkUI_LayoutConstraint_GetMaxHeight(const ArkUI_LayoutConstraint* Con
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_LayoutConstraint* Constraint | 布局约束的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1114,9 +1196,10 @@ int32_t OH_ArkUI_LayoutConstraint_GetMaxHeight(const ArkUI_LayoutConstraint* Con
 
 
 
-#### OH_ArkUI_LayoutConstraint_GetMinHeight()
+### OH_ArkUI_LayoutConstraint_GetMinHeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_LayoutConstraint_GetMinHeight(const ArkUI_LayoutConstraint* Constraint)
@@ -1130,12 +1213,14 @@ int32_t OH_ArkUI_LayoutConstraint_GetMinHeight(const ArkUI_LayoutConstraint* Con
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_LayoutConstraint* Constraint | 布局约束的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1144,9 +1229,10 @@ int32_t OH_ArkUI_LayoutConstraint_GetMinHeight(const ArkUI_LayoutConstraint* Con
 
 
 
-#### OH_ArkUI_LayoutConstraint_GetPercentReferenceWidth()
+### OH_ArkUI_LayoutConstraint_GetPercentReferenceWidth()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_LayoutConstraint_GetPercentReferenceWidth(const ArkUI_LayoutConstraint* Constraint)
@@ -1160,12 +1246,14 @@ int32_t OH_ArkUI_LayoutConstraint_GetPercentReferenceWidth(const ArkUI_LayoutCon
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_LayoutConstraint* Constraint | 布局约束的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1174,9 +1262,10 @@ int32_t OH_ArkUI_LayoutConstraint_GetPercentReferenceWidth(const ArkUI_LayoutCon
 
 
 
-#### OH_ArkUI_LayoutConstraint_GetPercentReferenceHeight()
+### OH_ArkUI_LayoutConstraint_GetPercentReferenceHeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_LayoutConstraint_GetPercentReferenceHeight(const ArkUI_LayoutConstraint* Constraint)
@@ -1190,12 +1279,14 @@ int32_t OH_ArkUI_LayoutConstraint_GetPercentReferenceHeight(const ArkUI_LayoutCo
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_LayoutConstraint* Constraint | 布局约束的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1204,9 +1295,10 @@ int32_t OH_ArkUI_LayoutConstraint_GetPercentReferenceHeight(const ArkUI_LayoutCo
 
 
 
-#### OH_ArkUI_LayoutConstraint_SetMaxWidth()
+### OH_ArkUI_LayoutConstraint_SetMaxWidth()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_LayoutConstraint_SetMaxWidth(ArkUI_LayoutConstraint* Constraint, int32_t value)
@@ -1220,6 +1312,7 @@ void OH_ArkUI_LayoutConstraint_SetMaxWidth(ArkUI_LayoutConstraint* Constraint, i
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_LayoutConstraint* Constraint | 布局约束的指针。 |
@@ -1228,9 +1321,10 @@ void OH_ArkUI_LayoutConstraint_SetMaxWidth(ArkUI_LayoutConstraint* Constraint, i
 
 
 
-#### OH_ArkUI_LayoutConstraint_SetMinWidth()
+### OH_ArkUI_LayoutConstraint_SetMinWidth()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_LayoutConstraint_SetMinWidth(ArkUI_LayoutConstraint* Constraint, int32_t value)
@@ -1244,6 +1338,7 @@ void OH_ArkUI_LayoutConstraint_SetMinWidth(ArkUI_LayoutConstraint* Constraint, i
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_LayoutConstraint* Constraint | 布局约束的指针。 |
@@ -1252,9 +1347,10 @@ void OH_ArkUI_LayoutConstraint_SetMinWidth(ArkUI_LayoutConstraint* Constraint, i
 
 
 
-#### OH_ArkUI_LayoutConstraint_SetMaxHeight()
+### OH_ArkUI_LayoutConstraint_SetMaxHeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_LayoutConstraint_SetMaxHeight(ArkUI_LayoutConstraint* Constraint, int32_t value)
@@ -1268,6 +1364,7 @@ void OH_ArkUI_LayoutConstraint_SetMaxHeight(ArkUI_LayoutConstraint* Constraint, 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_LayoutConstraint* Constraint | 布局约束的指针。 |
@@ -1276,9 +1373,10 @@ void OH_ArkUI_LayoutConstraint_SetMaxHeight(ArkUI_LayoutConstraint* Constraint, 
 
 
 
-#### OH_ArkUI_LayoutConstraint_SetMinHeight()
+### OH_ArkUI_LayoutConstraint_SetMinHeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_LayoutConstraint_SetMinHeight(ArkUI_LayoutConstraint* Constraint, int32_t value)
@@ -1292,6 +1390,7 @@ void OH_ArkUI_LayoutConstraint_SetMinHeight(ArkUI_LayoutConstraint* Constraint, 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_LayoutConstraint* Constraint | 布局约束的指针。 |
@@ -1300,9 +1399,10 @@ void OH_ArkUI_LayoutConstraint_SetMinHeight(ArkUI_LayoutConstraint* Constraint, 
 
 
 
-#### OH_ArkUI_LayoutConstraint_SetPercentReferenceWidth()
+### OH_ArkUI_LayoutConstraint_SetPercentReferenceWidth()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_LayoutConstraint_SetPercentReferenceWidth(ArkUI_LayoutConstraint* Constraint, int32_t value)
@@ -1316,6 +1416,7 @@ void OH_ArkUI_LayoutConstraint_SetPercentReferenceWidth(ArkUI_LayoutConstraint* 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_LayoutConstraint* Constraint | 布局约束的指针。 |
@@ -1324,9 +1425,10 @@ void OH_ArkUI_LayoutConstraint_SetPercentReferenceWidth(ArkUI_LayoutConstraint* 
 
 
 
-#### OH_ArkUI_LayoutConstraint_SetPercentReferenceHeight()
+### OH_ArkUI_LayoutConstraint_SetPercentReferenceHeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_LayoutConstraint_SetPercentReferenceHeight(ArkUI_LayoutConstraint* Constraint, int32_t value)
@@ -1340,6 +1442,7 @@ void OH_ArkUI_LayoutConstraint_SetPercentReferenceHeight(ArkUI_LayoutConstraint*
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_LayoutConstraint* Constraint | 布局约束的指针。 |
@@ -1348,9 +1451,10 @@ void OH_ArkUI_LayoutConstraint_SetPercentReferenceHeight(ArkUI_LayoutConstraint*
 
 
 
-#### OH_ArkUI_DrawContext_GetCanvas()
+### OH_ArkUI_DrawContext_GetCanvas()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void* OH_ArkUI_DrawContext_GetCanvas(ArkUI_DrawContext* context)
@@ -1364,12 +1468,14 @@ void* OH_ArkUI_DrawContext_GetCanvas(ArkUI_DrawContext* context)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DrawContext* context | 绘制上下文。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1378,9 +1484,10 @@ void* OH_ArkUI_DrawContext_GetCanvas(ArkUI_DrawContext* context)
 
 
 
-#### OH_ArkUI_DrawContext_GetSize()
+### OH_ArkUI_DrawContext_GetSize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_IntSize OH_ArkUI_DrawContext_GetSize(ArkUI_DrawContext* context)
@@ -1394,12 +1501,14 @@ ArkUI_IntSize OH_ArkUI_DrawContext_GetSize(ArkUI_DrawContext* context)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_DrawContext* context | 绘制上下文。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1408,9 +1517,10 @@ ArkUI_IntSize OH_ArkUI_DrawContext_GetSize(ArkUI_DrawContext* context)
 
 
 
-#### OH_ArkUI_SwiperDigitIndicator_SetFontWeight()
+### OH_ArkUI_SwiperDigitIndicator_SetFontWeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_SwiperDigitIndicator_SetFontWeight(ArkUI_SwiperDigitIndicator *indicator, ArkUI_FontWeight fontWeight)
@@ -1424,6 +1534,7 @@ void OH_ArkUI_SwiperDigitIndicator_SetFontWeight(ArkUI_SwiperDigitIndicator *ind
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_SwiperDigitIndicator *indicator | 数字导航指示器对象指针。 |
@@ -1432,9 +1543,10 @@ void OH_ArkUI_SwiperDigitIndicator_SetFontWeight(ArkUI_SwiperDigitIndicator *ind
 
 
 
-#### OH_ArkUI_SwiperDigitIndicator_GetFontWeight()
+### OH_ArkUI_SwiperDigitIndicator_GetFontWeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_FontWeight OH_ArkUI_SwiperDigitIndicator_GetFontWeight(ArkUI_SwiperDigitIndicator* indicator)
@@ -1448,12 +1560,14 @@ ArkUI_FontWeight OH_ArkUI_SwiperDigitIndicator_GetFontWeight(ArkUI_SwiperDigitIn
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_SwiperDigitIndicator* indicator | 数字导航指示器对象指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1462,9 +1576,10 @@ ArkUI_FontWeight OH_ArkUI_SwiperDigitIndicator_GetFontWeight(ArkUI_SwiperDigitIn
 
 
 
-#### OH_ArkUI_SwiperDigitIndicator_SetSelectedFontWeight()
+### OH_ArkUI_SwiperDigitIndicator_SetSelectedFontWeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_SwiperDigitIndicator_SetSelectedFontWeight(ArkUI_SwiperDigitIndicator *indicator, ArkUI_FontWeight selectedFontWeight)
@@ -1478,6 +1593,7 @@ void OH_ArkUI_SwiperDigitIndicator_SetSelectedFontWeight(ArkUI_SwiperDigitIndica
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_SwiperDigitIndicator *indicator | 数字导航指示器对象指针。 |
@@ -1486,9 +1602,10 @@ void OH_ArkUI_SwiperDigitIndicator_SetSelectedFontWeight(ArkUI_SwiperDigitIndica
 
 
 
-#### OH_ArkUI_SwiperDigitIndicator_GetSelectedFontWeight()
+### OH_ArkUI_SwiperDigitIndicator_GetSelectedFontWeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_FontWeight OH_ArkUI_SwiperDigitIndicator_GetSelectedFontWeight(ArkUI_SwiperDigitIndicator* indicator)
@@ -1502,12 +1619,14 @@ ArkUI_FontWeight OH_ArkUI_SwiperDigitIndicator_GetSelectedFontWeight(ArkUI_Swipe
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_SwiperDigitIndicator* indicator | 数字导航指示器对象指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1516,9 +1635,10 @@ ArkUI_FontWeight OH_ArkUI_SwiperDigitIndicator_GetSelectedFontWeight(ArkUI_Swipe
 
 
 
-#### OH_ArkUI_ListItemSwipeActionItem_Create()
+### OH_ArkUI_ListItemSwipeActionItem_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ListItemSwipeActionItem* OH_ArkUI_ListItemSwipeActionItem_Create()
@@ -1532,6 +1652,7 @@ ArkUI_ListItemSwipeActionItem* OH_ArkUI_ListItemSwipeActionItem_Create()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ListItemSwipeActionItem* | ListItemSwipeActionItem配置项实例。 |
@@ -1539,9 +1660,10 @@ ArkUI_ListItemSwipeActionItem* OH_ArkUI_ListItemSwipeActionItem_Create()
 
 
 
-#### OH_ArkUI_ListItemSwipeActionItem_Dispose()
+### OH_ArkUI_ListItemSwipeActionItem_Dispose()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_ListItemSwipeActionItem_Dispose(ArkUI_ListItemSwipeActionItem* item)
@@ -1555,6 +1677,7 @@ void OH_ArkUI_ListItemSwipeActionItem_Dispose(ArkUI_ListItemSwipeActionItem* ite
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_ListItemSwipeActionItem* item | 要销毁的ListItemSwipeActionItem实例。 |
@@ -1562,9 +1685,10 @@ void OH_ArkUI_ListItemSwipeActionItem_Dispose(ArkUI_ListItemSwipeActionItem* ite
 
 
 
-#### OH_ArkUI_ListItemSwipeActionItem_SetContent()
+### OH_ArkUI_ListItemSwipeActionItem_SetContent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_ListItemSwipeActionItem_SetContent(ArkUI_ListItemSwipeActionItem* item, ArkUI_NodeHandle node)
@@ -1578,6 +1702,7 @@ void OH_ArkUI_ListItemSwipeActionItem_SetContent(ArkUI_ListItemSwipeActionItem* 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_ListItemSwipeActionItem* item | ListItemSwipeActionItem实例。 |
@@ -1586,9 +1711,10 @@ void OH_ArkUI_ListItemSwipeActionItem_SetContent(ArkUI_ListItemSwipeActionItem* 
 
 
 
-#### OH_ArkUI_ListItemSwipeActionItem_SetActionAreaDistance()
+### OH_ArkUI_ListItemSwipeActionItem_SetActionAreaDistance()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_ListItemSwipeActionItem_SetActionAreaDistance(ArkUI_ListItemSwipeActionItem* item, float distance)
@@ -1602,6 +1728,7 @@ void OH_ArkUI_ListItemSwipeActionItem_SetActionAreaDistance(ArkUI_ListItemSwipeA
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_ListItemSwipeActionItem* item | ListItemSwipeActionItem实例。 |
@@ -1610,9 +1737,10 @@ void OH_ArkUI_ListItemSwipeActionItem_SetActionAreaDistance(ArkUI_ListItemSwipeA
 
 
 
-#### OH_ArkUI_ListItemSwipeActionItem_GetActionAreaDistance()
+### OH_ArkUI_ListItemSwipeActionItem_GetActionAreaDistance()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 float OH_ArkUI_ListItemSwipeActionItem_GetActionAreaDistance(ArkUI_ListItemSwipeActionItem* item)
@@ -1626,12 +1754,14 @@ float OH_ArkUI_ListItemSwipeActionItem_GetActionAreaDistance(ArkUI_ListItemSwipe
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_ListItemSwipeActionItem* item | ListItemSwipeActionItem实例。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1640,9 +1770,10 @@ float OH_ArkUI_ListItemSwipeActionItem_GetActionAreaDistance(ArkUI_ListItemSwipe
 
 
 
-#### OH_ArkUI_ListItemSwipeActionItem_SetOnEnterActionArea()
+### OH_ArkUI_ListItemSwipeActionItem_SetOnEnterActionArea()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_ListItemSwipeActionItem_SetOnEnterActionArea(ArkUI_ListItemSwipeActionItem* item, void (*callback)())
@@ -1656,17 +1787,19 @@ void OH_ArkUI_ListItemSwipeActionItem_SetOnEnterActionArea(ArkUI_ListItemSwipeAc
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_ListItemSwipeActionItem* item | ListItemSwipeActionItem实例。 |
-| callback | 回调事件。 |
+| void (*callback)() | 回调事件。 |
 
 
 
 
-#### OH_ArkUI_ListItemSwipeActionItem_SetOnEnterActionAreaWithUserData()
+### OH_ArkUI_ListItemSwipeActionItem_SetOnEnterActionAreaWithUserData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_ListItemSwipeActionItem_SetOnEnterActionAreaWithUserData(ArkUI_ListItemSwipeActionItem* item,void* userData, void (*callback)(void* userData))
@@ -1680,18 +1813,20 @@ void OH_ArkUI_ListItemSwipeActionItem_SetOnEnterActionAreaWithUserData(ArkUI_Lis
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_ListItemSwipeActionItem* item | ListItemSwipeActionItem实例。 |
 | void* userData | 用户自定义数据。 |
-| callback | 回调事件。 |
+| void (*callback)(void* userData) | 回调事件。 |
 
 
 
 
-#### OH_ArkUI_ListItemSwipeActionItem_SetOnAction()
+### OH_ArkUI_ListItemSwipeActionItem_SetOnAction()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_ListItemSwipeActionItem_SetOnAction(ArkUI_ListItemSwipeActionItem* item, void (*callback)())
@@ -1705,17 +1840,19 @@ void OH_ArkUI_ListItemSwipeActionItem_SetOnAction(ArkUI_ListItemSwipeActionItem*
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_ListItemSwipeActionItem* item | ListItemSwipeActionItem实例。 |
-| callback | 回调事件。 |
+| void (*callback)() | 回调事件。 |
 
 
 
 
-#### OH_ArkUI_ListItemSwipeActionItem_SetOnActionWithUserData()
+### OH_ArkUI_ListItemSwipeActionItem_SetOnActionWithUserData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_ListItemSwipeActionItem_SetOnActionWithUserData(ArkUI_ListItemSwipeActionItem* item,void* userData, void (*callback)(void* userData))
@@ -1729,18 +1866,20 @@ void OH_ArkUI_ListItemSwipeActionItem_SetOnActionWithUserData(ArkUI_ListItemSwip
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_ListItemSwipeActionItem* item | ListItemSwipeActionItem实例。 |
 | void* userData | 用户自定义数据。 |
-| callback | 回调事件。 |
+| void (*callback)(void* userData) | 回调事件。 |
 
 
 
 
-#### OH_ArkUI_ListItemSwipeActionItem_SetOnExitActionArea()
+### OH_ArkUI_ListItemSwipeActionItem_SetOnExitActionArea()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_ListItemSwipeActionItem_SetOnExitActionArea(ArkUI_ListItemSwipeActionItem* item, void (*callback)())
@@ -1754,17 +1893,19 @@ void OH_ArkUI_ListItemSwipeActionItem_SetOnExitActionArea(ArkUI_ListItemSwipeAct
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_ListItemSwipeActionItem* item | ListItemSwipeActionItem实例。 |
-| callback | 回调事件。 |
+| void (*callback)() | 回调事件。 |
 
 
 
 
-#### OH_ArkUI_ListItemSwipeActionItem_SetOnExitActionAreaWithUserData()
+### OH_ArkUI_ListItemSwipeActionItem_SetOnExitActionAreaWithUserData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_ListItemSwipeActionItem_SetOnExitActionAreaWithUserData(ArkUI_ListItemSwipeActionItem* item,void* userData, void (*callback)(void* userData))
@@ -1778,18 +1919,20 @@ void OH_ArkUI_ListItemSwipeActionItem_SetOnExitActionAreaWithUserData(ArkUI_List
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_ListItemSwipeActionItem* item | ListItemSwipeActionItem实例。 |
 | void* userData | 用户自定义数据。 |
-| callback | 回调事件。 |
+| void (*callback)(void* userData) | 回调事件。 |
 
 
 
 
-#### OH_ArkUI_ListItemSwipeActionItem_SetOnStateChange()
+### OH_ArkUI_ListItemSwipeActionItem_SetOnStateChange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_ListItemSwipeActionItem_SetOnStateChange(ArkUI_ListItemSwipeActionItem* item,void (*callback)(ArkUI_ListItemSwipeActionState swipeActionState))
@@ -1803,17 +1946,19 @@ void OH_ArkUI_ListItemSwipeActionItem_SetOnStateChange(ArkUI_ListItemSwipeAction
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_ListItemSwipeActionItem* item | ListItemSwipeActionItem实例。 |
-| callback | 回调事件。传入参数为swipeActionState，表示列表项滑动状态。 |
+| void (*callback)(ArkUI_ListItemSwipeActionState swipeActionState) | 回调事件。传入参数为swipeActionState，表示列表项滑动状态。 |
 
 
 
 
-#### OH_ArkUI_ListItemSwipeActionItem_SetOnStateChangeWithUserData()
+### OH_ArkUI_ListItemSwipeActionItem_SetOnStateChangeWithUserData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_ListItemSwipeActionItem_SetOnStateChangeWithUserData(ArkUI_ListItemSwipeActionItem* item,void* userData, void (*callback)(ArkUI_ListItemSwipeActionState swipeActionState, void* userData))
@@ -1827,6 +1972,7 @@ void OH_ArkUI_ListItemSwipeActionItem_SetOnStateChangeWithUserData(ArkUI_ListIte
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_ListItemSwipeActionItem* item | ListItemSwipeActionItem实例。 |
@@ -1836,9 +1982,10 @@ void OH_ArkUI_ListItemSwipeActionItem_SetOnStateChangeWithUserData(ArkUI_ListIte
 
 
 
-#### OH_ArkUI_ListItemSwipeActionOption_Create()
+### OH_ArkUI_ListItemSwipeActionOption_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ListItemSwipeActionOption* OH_ArkUI_ListItemSwipeActionOption_Create()
@@ -1852,6 +1999,7 @@ ArkUI_ListItemSwipeActionOption* OH_ArkUI_ListItemSwipeActionOption_Create()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ListItemSwipeActionOption* | ListItemSwipeActionOption配置项实例。 |
@@ -1859,9 +2007,10 @@ ArkUI_ListItemSwipeActionOption* OH_ArkUI_ListItemSwipeActionOption_Create()
 
 
 
-#### OH_ArkUI_ListItemSwipeActionOption_Dispose()
+### OH_ArkUI_ListItemSwipeActionOption_Dispose()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_ListItemSwipeActionOption_Dispose(ArkUI_ListItemSwipeActionOption* option)
@@ -1875,6 +2024,7 @@ void OH_ArkUI_ListItemSwipeActionOption_Dispose(ArkUI_ListItemSwipeActionOption*
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_ListItemSwipeActionOption* option | 要销毁的ListItemSwipeActionOption实例。 |
@@ -1882,9 +2032,10 @@ void OH_ArkUI_ListItemSwipeActionOption_Dispose(ArkUI_ListItemSwipeActionOption*
 
 
 
-#### OH_ArkUI_ListItemSwipeActionOption_SetStart()
+### OH_ArkUI_ListItemSwipeActionOption_SetStart()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_ListItemSwipeActionOption_SetStart(ArkUI_ListItemSwipeActionOption* option, ArkUI_ListItemSwipeActionItem* item)
@@ -1898,6 +2049,7 @@ void OH_ArkUI_ListItemSwipeActionOption_SetStart(ArkUI_ListItemSwipeActionOption
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_ListItemSwipeActionOption* option | ListItemSwipeActionOption实例。 |
@@ -1906,9 +2058,10 @@ void OH_ArkUI_ListItemSwipeActionOption_SetStart(ArkUI_ListItemSwipeActionOption
 
 
 
-#### OH_ArkUI_ListItemSwipeActionOption_SetEnd()
+### OH_ArkUI_ListItemSwipeActionOption_SetEnd()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_ListItemSwipeActionOption_SetEnd(ArkUI_ListItemSwipeActionOption* option,ArkUI_ListItemSwipeActionItem* item)
@@ -1922,6 +2075,7 @@ void OH_ArkUI_ListItemSwipeActionOption_SetEnd(ArkUI_ListItemSwipeActionOption* 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_ListItemSwipeActionOption* option | ListItemSwipeActionOption实例。 |
@@ -1930,9 +2084,10 @@ void OH_ArkUI_ListItemSwipeActionOption_SetEnd(ArkUI_ListItemSwipeActionOption* 
 
 
 
-#### OH_ArkUI_ListItemSwipeActionOption_SetEdgeEffect()
+### OH_ArkUI_ListItemSwipeActionOption_SetEdgeEffect()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_ListItemSwipeActionOption_SetEdgeEffect(ArkUI_ListItemSwipeActionOption* option,ArkUI_ListItemSwipeEdgeEffect edgeEffect)
@@ -1946,6 +2101,7 @@ void OH_ArkUI_ListItemSwipeActionOption_SetEdgeEffect(ArkUI_ListItemSwipeActionO
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_ListItemSwipeActionOption* option | ListItemSwipeActionOption实例。 |
@@ -1954,9 +2110,10 @@ void OH_ArkUI_ListItemSwipeActionOption_SetEdgeEffect(ArkUI_ListItemSwipeActionO
 
 
 
-#### OH_ArkUI_ListItemSwipeActionOption_GetEdgeEffect()
+### OH_ArkUI_ListItemSwipeActionOption_GetEdgeEffect()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_ListItemSwipeActionOption_GetEdgeEffect(ArkUI_ListItemSwipeActionOption* option)
@@ -1970,12 +2127,14 @@ int32_t OH_ArkUI_ListItemSwipeActionOption_GetEdgeEffect(ArkUI_ListItemSwipeActi
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_ListItemSwipeActionOption* option | ListItemSwipeActionOption实例。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1984,9 +2143,10 @@ int32_t OH_ArkUI_ListItemSwipeActionOption_GetEdgeEffect(ArkUI_ListItemSwipeActi
 
 
 
-#### OH_ArkUI_ListItemSwipeActionOption_SetOnOffsetChange()
+### OH_ArkUI_ListItemSwipeActionOption_SetOnOffsetChange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_ListItemSwipeActionOption_SetOnOffsetChange(ArkUI_ListItemSwipeActionOption* option,void (*callback)(float offset))
@@ -2000,6 +2160,7 @@ void OH_ArkUI_ListItemSwipeActionOption_SetOnOffsetChange(ArkUI_ListItemSwipeAct
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_ListItemSwipeActionOption* option | ListItemSwipeActionOption实例。 |
@@ -2008,9 +2169,10 @@ void OH_ArkUI_ListItemSwipeActionOption_SetOnOffsetChange(ArkUI_ListItemSwipeAct
 
 
 
-#### OH_ArkUI_ListItemSwipeActionOption_SetOnOffsetChangeWithUserData()
+### OH_ArkUI_ListItemSwipeActionOption_SetOnOffsetChangeWithUserData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_ListItemSwipeActionOption_SetOnOffsetChangeWithUserData(ArkUI_ListItemSwipeActionOption* option,void* userData, void (*callback)(float offset, void* userData))
@@ -2024,6 +2186,7 @@ void OH_ArkUI_ListItemSwipeActionOption_SetOnOffsetChangeWithUserData(ArkUI_List
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_ListItemSwipeActionOption* option | ListItemSwipeActionOption实例。 |
@@ -2033,9 +2196,10 @@ void OH_ArkUI_ListItemSwipeActionOption_SetOnOffsetChangeWithUserData(ArkUI_List
 
 
 
-#### OH_ArkUI_ListItemSwipeAction_Expand()
+### OH_ArkUI_ListItemSwipeAction_Expand()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_ListItemSwipeAction_Expand(ArkUI_NodeHandle node, ArkUI_ListItemSwipeActionDirection direction)
@@ -2049,6 +2213,7 @@ int32_t OH_ArkUI_ListItemSwipeAction_Expand(ArkUI_NodeHandle node, ArkUI_ListIte
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | ListItem节点对象。 |
@@ -2056,6 +2221,7 @@ int32_t OH_ArkUI_ListItemSwipeAction_Expand(ArkUI_NodeHandle node, ArkUI_ListIte
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2068,9 +2234,10 @@ int32_t OH_ArkUI_ListItemSwipeAction_Expand(ArkUI_NodeHandle node, ArkUI_ListIte
 
 
 
-#### OH_ArkUI_ListItemSwipeAction_Collapse()
+### OH_ArkUI_ListItemSwipeAction_Collapse()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_ListItemSwipeAction_Collapse(ArkUI_NodeHandle node)
@@ -2084,12 +2251,14 @@ int32_t OH_ArkUI_ListItemSwipeAction_Collapse(ArkUI_NodeHandle node)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | ListItem节点对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2098,9 +2267,10 @@ int32_t OH_ArkUI_ListItemSwipeAction_Collapse(ArkUI_NodeHandle node)
 
 
 
-#### OH_ArkUI_AccessibilityState_Create()
+### OH_ArkUI_AccessibilityState_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_AccessibilityState* OH_ArkUI_AccessibilityState_Create(void)
@@ -2114,6 +2284,7 @@ ArkUI_AccessibilityState* OH_ArkUI_AccessibilityState_Create(void)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_AccessibilityState* | 无障碍状态对象指针。如果对象返回空指针，表示创建失败，失败的可能原因是应用地址空间满。 |
@@ -2121,9 +2292,10 @@ ArkUI_AccessibilityState* OH_ArkUI_AccessibilityState_Create(void)
 
 
 
-#### OH_ArkUI_AccessibilityState_Dispose()
+### OH_ArkUI_AccessibilityState_Dispose()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_AccessibilityState_Dispose(ArkUI_AccessibilityState* state)
@@ -2137,6 +2309,7 @@ void OH_ArkUI_AccessibilityState_Dispose(ArkUI_AccessibilityState* state)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityState* state | 无障碍状态对象指针。 |
@@ -2144,9 +2317,10 @@ void OH_ArkUI_AccessibilityState_Dispose(ArkUI_AccessibilityState* state)
 
 
 
-#### OH_ArkUI_AccessibilityState_SetDisabled()
+### OH_ArkUI_AccessibilityState_SetDisabled()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_AccessibilityState_SetDisabled(ArkUI_AccessibilityState* state, int32_t isDisabled)
@@ -2160,6 +2334,7 @@ void OH_ArkUI_AccessibilityState_SetDisabled(ArkUI_AccessibilityState* state, in
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityState* state | 无障碍状态对象指针。 |
@@ -2168,9 +2343,10 @@ void OH_ArkUI_AccessibilityState_SetDisabled(ArkUI_AccessibilityState* state, in
 
 
 
-#### OH_ArkUI_AccessibilityState_IsDisabled()
+### OH_ArkUI_AccessibilityState_IsDisabled()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityState_IsDisabled(ArkUI_AccessibilityState* state)
@@ -2184,12 +2360,14 @@ int32_t OH_ArkUI_AccessibilityState_IsDisabled(ArkUI_AccessibilityState* state)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityState* state | 无障碍状态对象指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2198,9 +2376,10 @@ int32_t OH_ArkUI_AccessibilityState_IsDisabled(ArkUI_AccessibilityState* state)
 
 
 
-#### OH_ArkUI_AccessibilityState_SetSelected()
+### OH_ArkUI_AccessibilityState_SetSelected()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_AccessibilityState_SetSelected(ArkUI_AccessibilityState* state, int32_t isSelected)
@@ -2214,6 +2393,7 @@ void OH_ArkUI_AccessibilityState_SetSelected(ArkUI_AccessibilityState* state, in
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityState* state | 无障碍状态对象指针。 |
@@ -2222,9 +2402,10 @@ void OH_ArkUI_AccessibilityState_SetSelected(ArkUI_AccessibilityState* state, in
 
 
 
-#### OH_ArkUI_AccessibilityState_IsSelected()
+### OH_ArkUI_AccessibilityState_IsSelected()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityState_IsSelected(ArkUI_AccessibilityState* state)
@@ -2238,12 +2419,14 @@ int32_t OH_ArkUI_AccessibilityState_IsSelected(ArkUI_AccessibilityState* state)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityState* state | 无障碍状态对象指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2252,9 +2435,10 @@ int32_t OH_ArkUI_AccessibilityState_IsSelected(ArkUI_AccessibilityState* state)
 
 
 
-#### OH_ArkUI_AccessibilityState_SetCheckedState()
+### OH_ArkUI_AccessibilityState_SetCheckedState()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_AccessibilityState_SetCheckedState(ArkUI_AccessibilityState* state, int32_t checkedState)
@@ -2268,6 +2452,7 @@ void OH_ArkUI_AccessibilityState_SetCheckedState(ArkUI_AccessibilityState* state
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityState* state | 无障碍状态对象指针。 |
@@ -2276,9 +2461,10 @@ void OH_ArkUI_AccessibilityState_SetCheckedState(ArkUI_AccessibilityState* state
 
 
 
-#### OH_ArkUI_AccessibilityState_GetCheckedState()
+### OH_ArkUI_AccessibilityState_GetCheckedState()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityState_GetCheckedState(ArkUI_AccessibilityState* state)
@@ -2292,12 +2478,14 @@ int32_t OH_ArkUI_AccessibilityState_GetCheckedState(ArkUI_AccessibilityState* st
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityState* state | 无障碍状态对象指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2306,9 +2494,10 @@ int32_t OH_ArkUI_AccessibilityState_GetCheckedState(ArkUI_AccessibilityState* st
 
 
 
-#### OH_ArkUI_AccessibilityValue_Create()
+### OH_ArkUI_AccessibilityValue_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_AccessibilityValue* OH_ArkUI_AccessibilityValue_Create(void)
@@ -2322,6 +2511,7 @@ ArkUI_AccessibilityValue* OH_ArkUI_AccessibilityValue_Create(void)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_AccessibilityValue* | 无障碍信息对象指针。 |
@@ -2329,9 +2519,10 @@ ArkUI_AccessibilityValue* OH_ArkUI_AccessibilityValue_Create(void)
 
 
 
-#### OH_ArkUI_AccessibilityValue_Dispose()
+### OH_ArkUI_AccessibilityValue_Dispose()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_AccessibilityValue_Dispose(ArkUI_AccessibilityValue* value)
@@ -2345,6 +2536,7 @@ void OH_ArkUI_AccessibilityValue_Dispose(ArkUI_AccessibilityValue* value)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityValue* value | 无障碍信息对象指针。 |
@@ -2352,9 +2544,10 @@ void OH_ArkUI_AccessibilityValue_Dispose(ArkUI_AccessibilityValue* value)
 
 
 
-#### OH_ArkUI_AccessibilityValue_SetMin()
+### OH_ArkUI_AccessibilityValue_SetMin()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_AccessibilityValue_SetMin(ArkUI_AccessibilityValue* value, int32_t min)
@@ -2368,6 +2561,7 @@ void OH_ArkUI_AccessibilityValue_SetMin(ArkUI_AccessibilityValue* value, int32_t
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityValue* value | 无障碍信息对象指针。 |
@@ -2376,9 +2570,10 @@ void OH_ArkUI_AccessibilityValue_SetMin(ArkUI_AccessibilityValue* value, int32_t
 
 
 
-#### OH_ArkUI_AccessibilityValue_GetMin()
+### OH_ArkUI_AccessibilityValue_GetMin()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityValue_GetMin(ArkUI_AccessibilityValue* value)
@@ -2392,12 +2587,14 @@ int32_t OH_ArkUI_AccessibilityValue_GetMin(ArkUI_AccessibilityValue* value)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityValue* value | 无障碍信息对象指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2406,9 +2603,10 @@ int32_t OH_ArkUI_AccessibilityValue_GetMin(ArkUI_AccessibilityValue* value)
 
 
 
-#### OH_ArkUI_AccessibilityValue_SetMax()
+### OH_ArkUI_AccessibilityValue_SetMax()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_AccessibilityValue_SetMax(ArkUI_AccessibilityValue* value, int32_t max)
@@ -2422,6 +2620,7 @@ void OH_ArkUI_AccessibilityValue_SetMax(ArkUI_AccessibilityValue* value, int32_t
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityValue* value | 无障碍信息对象指针。 |
@@ -2430,9 +2629,10 @@ void OH_ArkUI_AccessibilityValue_SetMax(ArkUI_AccessibilityValue* value, int32_t
 
 
 
-#### OH_ArkUI_AccessibilityValue_GetMax()
+### OH_ArkUI_AccessibilityValue_GetMax()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityValue_GetMax(ArkUI_AccessibilityValue* value)
@@ -2446,12 +2646,14 @@ int32_t OH_ArkUI_AccessibilityValue_GetMax(ArkUI_AccessibilityValue* value)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityValue* value | 无障碍信息对象指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2460,9 +2662,10 @@ int32_t OH_ArkUI_AccessibilityValue_GetMax(ArkUI_AccessibilityValue* value)
 
 
 
-#### OH_ArkUI_AccessibilityValue_SetCurrent()
+### OH_ArkUI_AccessibilityValue_SetCurrent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_AccessibilityValue_SetCurrent(ArkUI_AccessibilityValue* value, int32_t current)
@@ -2476,6 +2679,7 @@ void OH_ArkUI_AccessibilityValue_SetCurrent(ArkUI_AccessibilityValue* value, int
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityValue* value | 无障碍信息对象指针。 |
@@ -2484,9 +2688,10 @@ void OH_ArkUI_AccessibilityValue_SetCurrent(ArkUI_AccessibilityValue* value, int
 
 
 
-#### OH_ArkUI_AccessibilityValue_GetCurrent()
+### OH_ArkUI_AccessibilityValue_GetCurrent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityValue_GetCurrent(ArkUI_AccessibilityValue* value)
@@ -2500,12 +2705,14 @@ int32_t OH_ArkUI_AccessibilityValue_GetCurrent(ArkUI_AccessibilityValue* value)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityValue* value | 无障碍信息对象指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2514,9 +2721,10 @@ int32_t OH_ArkUI_AccessibilityValue_GetCurrent(ArkUI_AccessibilityValue* value)
 
 
 
-#### OH_ArkUI_AccessibilityValue_SetRangeMin()
+### OH_ArkUI_AccessibilityValue_SetRangeMin()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_AccessibilityValue_SetRangeMin(ArkUI_AccessibilityValue* value, int32_t rangeMin)
@@ -2530,6 +2738,7 @@ void OH_ArkUI_AccessibilityValue_SetRangeMin(ArkUI_AccessibilityValue* value, in
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityValue* value | 需要设置最小值的范围组件无障碍信息对象指针。 |
@@ -2538,9 +2747,10 @@ void OH_ArkUI_AccessibilityValue_SetRangeMin(ArkUI_AccessibilityValue* value, in
 
 
 
-#### OH_ArkUI_AccessibilityValue_GetRangeMin()
+### OH_ArkUI_AccessibilityValue_GetRangeMin()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityValue_GetRangeMin(ArkUI_AccessibilityValue* value)
@@ -2554,12 +2764,14 @@ int32_t OH_ArkUI_AccessibilityValue_GetRangeMin(ArkUI_AccessibilityValue* value)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityValue* value | 需要获取最小值的范围组件无障碍信息对象指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2568,9 +2780,10 @@ int32_t OH_ArkUI_AccessibilityValue_GetRangeMin(ArkUI_AccessibilityValue* value)
 
 
 
-#### OH_ArkUI_AccessibilityValue_SetRangeMax()
+### OH_ArkUI_AccessibilityValue_SetRangeMax()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_AccessibilityValue_SetRangeMax(ArkUI_AccessibilityValue* value, int32_t rangeMax)
@@ -2584,6 +2797,7 @@ void OH_ArkUI_AccessibilityValue_SetRangeMax(ArkUI_AccessibilityValue* value, in
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityValue* value | 需要设置最大值的范围组件无障碍信息对象指针。 |
@@ -2592,9 +2806,10 @@ void OH_ArkUI_AccessibilityValue_SetRangeMax(ArkUI_AccessibilityValue* value, in
 
 
 
-#### OH_ArkUI_AccessibilityValue_GetRangeMax()
+### OH_ArkUI_AccessibilityValue_GetRangeMax()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityValue_GetRangeMax(ArkUI_AccessibilityValue* value)
@@ -2608,12 +2823,14 @@ int32_t OH_ArkUI_AccessibilityValue_GetRangeMax(ArkUI_AccessibilityValue* value)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityValue* value | 需要获取最小值的范围组件无障碍信息对象指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2622,9 +2839,10 @@ int32_t OH_ArkUI_AccessibilityValue_GetRangeMax(ArkUI_AccessibilityValue* value)
 
 
 
-#### OH_ArkUI_AccessibilityValue_SetRangeCurrent()
+### OH_ArkUI_AccessibilityValue_SetRangeCurrent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_AccessibilityValue_SetRangeCurrent(ArkUI_AccessibilityValue* value, int32_t rangeCurrent)
@@ -2638,6 +2856,7 @@ void OH_ArkUI_AccessibilityValue_SetRangeCurrent(ArkUI_AccessibilityValue* value
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityValue* value | 需要设置当前值的范围组件无障碍信息对象指针。 |
@@ -2646,9 +2865,10 @@ void OH_ArkUI_AccessibilityValue_SetRangeCurrent(ArkUI_AccessibilityValue* value
 
 
 
-#### OH_ArkUI_AccessibilityValue_GetRangeCurrent()
+### OH_ArkUI_AccessibilityValue_GetRangeCurrent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_AccessibilityValue_GetRangeCurrent(ArkUI_AccessibilityValue* value)
@@ -2662,12 +2882,14 @@ int32_t OH_ArkUI_AccessibilityValue_GetRangeCurrent(ArkUI_AccessibilityValue* va
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityValue* value | 需要获取当前值的范围组件无障碍信息对象指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2676,9 +2898,10 @@ int32_t OH_ArkUI_AccessibilityValue_GetRangeCurrent(ArkUI_AccessibilityValue* va
 
 
 
-#### OH_ArkUI_AccessibilityValue_SetText()
+### OH_ArkUI_AccessibilityValue_SetText()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_AccessibilityValue_SetText(ArkUI_AccessibilityValue* value, const char* text)
@@ -2692,6 +2915,7 @@ void OH_ArkUI_AccessibilityValue_SetText(ArkUI_AccessibilityValue* value, const 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityValue* value | 无障碍信息对象指针。 |
@@ -2700,9 +2924,10 @@ void OH_ArkUI_AccessibilityValue_SetText(ArkUI_AccessibilityValue* value, const 
 
 
 
-#### OH_ArkUI_AccessibilityValue_GetText()
+### OH_ArkUI_AccessibilityValue_GetText()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 const char* OH_ArkUI_AccessibilityValue_GetText(ArkUI_AccessibilityValue* value)
@@ -2716,12 +2941,14 @@ const char* OH_ArkUI_AccessibilityValue_GetText(ArkUI_AccessibilityValue* value)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_AccessibilityValue* value | 无障碍信息对象指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2730,9 +2957,10 @@ const char* OH_ArkUI_AccessibilityValue_GetText(ArkUI_AccessibilityValue* value)
 
 
 
-#### OH_ArkUI_CustomProperty_Destroy()
+### OH_ArkUI_CustomProperty_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_CustomProperty_Destroy(ArkUI_CustomProperty* handle)
@@ -2746,6 +2974,7 @@ void OH_ArkUI_CustomProperty_Destroy(ArkUI_CustomProperty* handle)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CustomProperty* handle | 要销毁的实例。 |
@@ -2753,9 +2982,10 @@ void OH_ArkUI_CustomProperty_Destroy(ArkUI_CustomProperty* handle)
 
 
 
-#### OH_ArkUI_CustomProperty_GetStringValue()
+### OH_ArkUI_CustomProperty_GetStringValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 const char* OH_ArkUI_CustomProperty_GetStringValue(ArkUI_CustomProperty* handle)
@@ -2769,12 +2999,14 @@ const char* OH_ArkUI_CustomProperty_GetStringValue(ArkUI_CustomProperty* handle)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CustomProperty* handle | 自定义属性对象指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2783,9 +3015,10 @@ const char* OH_ArkUI_CustomProperty_GetStringValue(ArkUI_CustomProperty* handle)
 
 
 
-#### OH_ArkUI_HostWindowInfo_GetName()
+### OH_ArkUI_HostWindowInfo_GetName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 const char* OH_ArkUI_HostWindowInfo_GetName(ArkUI_HostWindowInfo* info)
@@ -2799,12 +3032,14 @@ const char* OH_ArkUI_HostWindowInfo_GetName(ArkUI_HostWindowInfo* info)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_HostWindowInfo* info | HostWindowInfo对象。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2813,9 +3048,10 @@ const char* OH_ArkUI_HostWindowInfo_GetName(ArkUI_HostWindowInfo* info)
 
 
 
-#### OH_ArkUI_HostWindowInfo_Destroy()
+### OH_ArkUI_HostWindowInfo_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_HostWindowInfo_Destroy(ArkUI_HostWindowInfo* info)
@@ -2829,6 +3065,7 @@ void OH_ArkUI_HostWindowInfo_Destroy(ArkUI_HostWindowInfo* info)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_HostWindowInfo* info | 要销毁的ArkUI_HostWindowInfo对象。 |
@@ -2836,9 +3073,10 @@ void OH_ArkUI_HostWindowInfo_Destroy(ArkUI_HostWindowInfo* info)
 
 
 
-#### OH_ArkUI_ActiveChildrenInfo_Destroy()
+### OH_ArkUI_ActiveChildrenInfo_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_ActiveChildrenInfo_Destroy(ArkUI_ActiveChildrenInfo* handle)
@@ -2852,6 +3090,7 @@ void OH_ArkUI_ActiveChildrenInfo_Destroy(ArkUI_ActiveChildrenInfo* handle)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_ActiveChildrenInfo* handle | 要销毁的ArkUI_ActiveChildrenInfo实例。 |
@@ -2859,9 +3098,10 @@ void OH_ArkUI_ActiveChildrenInfo_Destroy(ArkUI_ActiveChildrenInfo* handle)
 
 
 
-#### OH_ArkUI_ActiveChildrenInfo_GetNodeByIndex()
+### OH_ArkUI_ActiveChildrenInfo_GetNodeByIndex()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_NodeHandle OH_ArkUI_ActiveChildrenInfo_GetNodeByIndex(ArkUI_ActiveChildrenInfo* handle, int32_t index)
@@ -2875,6 +3115,7 @@ ArkUI_NodeHandle OH_ArkUI_ActiveChildrenInfo_GetNodeByIndex(ArkUI_ActiveChildren
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_ActiveChildrenInfo* handle | 要获取信息的ArkUI_ActiveChildrenInfo实例。 |
@@ -2883,6 +3124,7 @@ ArkUI_NodeHandle OH_ArkUI_ActiveChildrenInfo_GetNodeByIndex(ArkUI_ActiveChildren
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_NodeHandle | 下标对应的子节点指针，异常时返回nullptr。 |
@@ -2890,9 +3132,10 @@ ArkUI_NodeHandle OH_ArkUI_ActiveChildrenInfo_GetNodeByIndex(ArkUI_ActiveChildren
 
 
 
-#### OH_ArkUI_ActiveChildrenInfo_GetCount()
+### OH_ArkUI_ActiveChildrenInfo_GetCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_ActiveChildrenInfo_GetCount(ArkUI_ActiveChildrenInfo* handle)
@@ -2906,12 +3149,14 @@ int32_t OH_ArkUI_ActiveChildrenInfo_GetCount(ArkUI_ActiveChildrenInfo* handle)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_ActiveChildrenInfo* handle | 要获取信息的ArkUI_ActiveChildrenInfo实例。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2920,9 +3165,10 @@ int32_t OH_ArkUI_ActiveChildrenInfo_GetCount(ArkUI_ActiveChildrenInfo* handle)
 
 
 
-#### OH_ArkUI_CrossLanguageOption_Create()
+### OH_ArkUI_CrossLanguageOption_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_CrossLanguageOption* OH_ArkUI_CrossLanguageOption_Create(void)
@@ -2936,6 +3182,7 @@ ArkUI_CrossLanguageOption* OH_ArkUI_CrossLanguageOption_Create(void)
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_CrossLanguageOption* | 返回跨语言实例。如果对象返回空指针，则表示创建失败，失败的原因可能是地址空间已满。 |
@@ -2943,9 +3190,10 @@ ArkUI_CrossLanguageOption* OH_ArkUI_CrossLanguageOption_Create(void)
 
 
 
-#### OH_ArkUI_CrossLanguageOption_Destroy()
+### OH_ArkUI_CrossLanguageOption_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_CrossLanguageOption_Destroy(ArkUI_CrossLanguageOption* option)
@@ -2959,6 +3207,7 @@ void OH_ArkUI_CrossLanguageOption_Destroy(ArkUI_CrossLanguageOption* option)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CrossLanguageOption* option | 要销毁的跨语言配置项实例。 |
@@ -2966,9 +3215,10 @@ void OH_ArkUI_CrossLanguageOption_Destroy(ArkUI_CrossLanguageOption* option)
 
 
 
-#### OH_ArkUI_CrossLanguageOption_SetAttributeSettingStatus()
+### OH_ArkUI_CrossLanguageOption_SetAttributeSettingStatus()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_CrossLanguageOption_SetAttributeSettingStatus(ArkUI_CrossLanguageOption* option, bool enabled)
@@ -2982,6 +3232,7 @@ void OH_ArkUI_CrossLanguageOption_SetAttributeSettingStatus(ArkUI_CrossLanguageO
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CrossLanguageOption* option | 跨语言配置项实例。 |
@@ -2990,9 +3241,10 @@ void OH_ArkUI_CrossLanguageOption_SetAttributeSettingStatus(ArkUI_CrossLanguageO
 
 
 
-#### OH_ArkUI_CrossLanguageOption_GetAttributeSettingStatus()
+### OH_ArkUI_CrossLanguageOption_GetAttributeSettingStatus()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_ArkUI_CrossLanguageOption_GetAttributeSettingStatus(ArkUI_CrossLanguageOption* option)
@@ -3006,12 +3258,14 @@ bool OH_ArkUI_CrossLanguageOption_GetAttributeSettingStatus(ArkUI_CrossLanguageO
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CrossLanguageOption* option | 跨语言配置项实例。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3020,9 +3274,10 @@ bool OH_ArkUI_CrossLanguageOption_GetAttributeSettingStatus(ArkUI_CrossLanguageO
 
 
 
-#### OH_ArkUI_CrossLanguageOption_SetTreeOperatingStatus()
+### OH_ArkUI_CrossLanguageOption_SetTreeOperatingStatus()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_CrossLanguageOption_SetTreeOperatingStatus(ArkUI_CrossLanguageOption* option, OH_ArkUI_CrossLanguageOperatingStatus status)
@@ -3036,6 +3291,7 @@ void OH_ArkUI_CrossLanguageOption_SetTreeOperatingStatus(ArkUI_CrossLanguageOpti
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CrossLanguageOption* option | 跨语言配置项实例。 |
@@ -3044,9 +3300,10 @@ void OH_ArkUI_CrossLanguageOption_SetTreeOperatingStatus(ArkUI_CrossLanguageOpti
 
 
 
-#### OH_ArkUI_CrossLanguageOption_GetTreeOperatingStatus()
+### OH_ArkUI_CrossLanguageOption_GetTreeOperatingStatus()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_ArkUI_CrossLanguageOperatingStatus OH_ArkUI_CrossLanguageOption_GetTreeOperatingStatus(ArkUI_CrossLanguageOption* option)
@@ -3060,12 +3317,14 @@ OH_ArkUI_CrossLanguageOperatingStatus OH_ArkUI_CrossLanguageOption_GetTreeOperat
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_CrossLanguageOption* option | 跨语言配置项实例。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3074,9 +3333,10 @@ OH_ArkUI_CrossLanguageOperatingStatus OH_ArkUI_CrossLanguageOption_GetTreeOperat
 
 
 
-#### OH_ArkUI_ContentTransitionEffect_Create()
+### OH_ArkUI_ContentTransitionEffect_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ContentTransitionEffect* OH_ArkUI_ContentTransitionEffect_Create(int32_t type)
@@ -3090,12 +3350,14 @@ ArkUI_ContentTransitionEffect* OH_ArkUI_ContentTransitionEffect_Create(int32_t t
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | int32_t type | 指定动效的转场方式。值为0表示无动效转场，值为1时表示淡入淡出动效转场。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3104,9 +3366,10 @@ ArkUI_ContentTransitionEffect* OH_ArkUI_ContentTransitionEffect_Create(int32_t t
 
 
 
-#### OH_ArkUI_SelectionOptions_Create()
+### OH_ArkUI_SelectionOptions_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_SelectionOptions* OH_ArkUI_SelectionOptions_Create()
@@ -3120,6 +3383,7 @@ ArkUI_SelectionOptions* OH_ArkUI_SelectionOptions_Create()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_SelectionOptions* | 指向选择选项对象的指针。 |
@@ -3127,9 +3391,10 @@ ArkUI_SelectionOptions* OH_ArkUI_SelectionOptions_Create()
 
 
 
-#### OH_ArkUI_SelectionOptions_Dispose()
+### OH_ArkUI_SelectionOptions_Dispose()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_SelectionOptions_Dispose(ArkUI_SelectionOptions* options)
@@ -3143,6 +3408,7 @@ void OH_ArkUI_SelectionOptions_Dispose(ArkUI_SelectionOptions* options)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_SelectionOptions* options | 指向待释放的选择选项对象的指针。 |
@@ -3150,9 +3416,10 @@ void OH_ArkUI_SelectionOptions_Dispose(ArkUI_SelectionOptions* options)
 
 
 
-#### OH_ArkUI_SelectionOptions_SetMenuPolicy()
+### OH_ArkUI_SelectionOptions_SetMenuPolicy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_SelectionOptions_SetMenuPolicy(ArkUI_SelectionOptions* options, ArkUI_MenuPolicy menuPolicy)
@@ -3166,6 +3433,7 @@ void OH_ArkUI_SelectionOptions_SetMenuPolicy(ArkUI_SelectionOptions* options, Ar
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_SelectionOptions* options | 指向选择选项对象的指针。 |
@@ -3174,9 +3442,10 @@ void OH_ArkUI_SelectionOptions_SetMenuPolicy(ArkUI_SelectionOptions* options, Ar
 
 
 
-#### OH_ArkUI_SelectionOptions_GetMenuPolicy()
+### OH_ArkUI_SelectionOptions_GetMenuPolicy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_MenuPolicy  OH_ArkUI_SelectionOptions_GetMenuPolicy(ArkUI_SelectionOptions* options)
@@ -3190,12 +3459,14 @@ ArkUI_MenuPolicy  OH_ArkUI_SelectionOptions_GetMenuPolicy(ArkUI_SelectionOptions
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_SelectionOptions* options | 指向选择选项对象的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3204,9 +3475,10 @@ ArkUI_MenuPolicy  OH_ArkUI_SelectionOptions_GetMenuPolicy(ArkUI_SelectionOptions
 
 
 
-#### OH_ArkUI_TextMenuItem_SetContent()
+### OH_ArkUI_TextMenuItem_SetContent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextMenuItem_SetContent(ArkUI_TextMenuItem* item, const char* content)
@@ -3220,6 +3492,7 @@ ArkUI_ErrorCode OH_ArkUI_TextMenuItem_SetContent(ArkUI_TextMenuItem* item, const
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_TextMenuItem* item | 指向ArkUI_TextMenuItem对象的指针。 |
@@ -3228,6 +3501,7 @@ ArkUI_ErrorCode OH_ArkUI_TextMenuItem_SetContent(ArkUI_TextMenuItem* item, const
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3235,9 +3509,10 @@ ArkUI_ErrorCode OH_ArkUI_TextMenuItem_SetContent(ArkUI_TextMenuItem* item, const
 
 
 
-#### OH_ArkUI_TextMenuItem_GetContent()
+### OH_ArkUI_TextMenuItem_GetContent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextMenuItem_GetContent(const ArkUI_TextMenuItem* item, char* buffer, int32_t bufferSize, int32_t* writeLength)
@@ -3251,6 +3526,7 @@ ArkUI_ErrorCode OH_ArkUI_TextMenuItem_GetContent(const ArkUI_TextMenuItem* item,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_TextMenuItem* item | 指向ArkUI_TextMenuItem对象的指针。 |
@@ -3261,6 +3537,7 @@ ArkUI_ErrorCode OH_ArkUI_TextMenuItem_GetContent(const ArkUI_TextMenuItem* item,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_BUFFER_SIZE_ERROR 缓冲区大小不足。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3268,9 +3545,10 @@ ArkUI_ErrorCode OH_ArkUI_TextMenuItem_GetContent(const ArkUI_TextMenuItem* item,
 
 
 
-#### OH_ArkUI_TextMenuItem_SetIcon()
+### OH_ArkUI_TextMenuItem_SetIcon()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextMenuItem_SetIcon(ArkUI_TextMenuItem* item, const char* icon)
@@ -3284,6 +3562,7 @@ ArkUI_ErrorCode OH_ArkUI_TextMenuItem_SetIcon(ArkUI_TextMenuItem* item, const ch
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_TextMenuItem* item | 指向ArkUI_TextMenuItem对象的指针。 |
@@ -3292,6 +3571,7 @@ ArkUI_ErrorCode OH_ArkUI_TextMenuItem_SetIcon(ArkUI_TextMenuItem* item, const ch
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3299,9 +3579,10 @@ ArkUI_ErrorCode OH_ArkUI_TextMenuItem_SetIcon(ArkUI_TextMenuItem* item, const ch
 
 
 
-#### OH_ArkUI_TextMenuItem_GetIcon()
+### OH_ArkUI_TextMenuItem_GetIcon()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextMenuItem_GetIcon(const ArkUI_TextMenuItem* item, char* buffer, int32_t bufferSize, int32_t* writeLength)
@@ -3315,6 +3596,7 @@ ArkUI_ErrorCode OH_ArkUI_TextMenuItem_GetIcon(const ArkUI_TextMenuItem* item, ch
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_TextMenuItem* item | 指向ArkUI_TextMenuItem对象的指针。 |
@@ -3325,6 +3607,7 @@ ArkUI_ErrorCode OH_ArkUI_TextMenuItem_GetIcon(const ArkUI_TextMenuItem* item, ch
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_BUFFER_SIZE_ERROR 缓冲区大小不足。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3332,9 +3615,10 @@ ArkUI_ErrorCode OH_ArkUI_TextMenuItem_GetIcon(const ArkUI_TextMenuItem* item, ch
 
 
 
-#### OH_ArkUI_TextMenuItem_SetLabelInfo()
+### OH_ArkUI_TextMenuItem_SetLabelInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextMenuItem_SetLabelInfo(ArkUI_TextMenuItem* item, const char* labelInfo)
@@ -3348,6 +3632,7 @@ ArkUI_ErrorCode OH_ArkUI_TextMenuItem_SetLabelInfo(ArkUI_TextMenuItem* item, con
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_TextMenuItem* item | 指向ArkUI_TextMenuItem对象的指针。 |
@@ -3356,6 +3641,7 @@ ArkUI_ErrorCode OH_ArkUI_TextMenuItem_SetLabelInfo(ArkUI_TextMenuItem* item, con
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3363,9 +3649,10 @@ ArkUI_ErrorCode OH_ArkUI_TextMenuItem_SetLabelInfo(ArkUI_TextMenuItem* item, con
 
 
 
-#### OH_ArkUI_TextMenuItem_GetLabelInfo()
+### OH_ArkUI_TextMenuItem_GetLabelInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextMenuItem_GetLabelInfo(const ArkUI_TextMenuItem* item, char* buffer, int32_t bufferSize, int32_t* writeLength)
@@ -3379,6 +3666,7 @@ ArkUI_ErrorCode OH_ArkUI_TextMenuItem_GetLabelInfo(const ArkUI_TextMenuItem* ite
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_TextMenuItem* item | 指向ArkUI_TextMenuItem对象的指针。 |
@@ -3389,6 +3677,7 @@ ArkUI_ErrorCode OH_ArkUI_TextMenuItem_GetLabelInfo(const ArkUI_TextMenuItem* ite
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_BUFFER_SIZE_ERROR 缓冲区大小不足。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3396,9 +3685,10 @@ ArkUI_ErrorCode OH_ArkUI_TextMenuItem_GetLabelInfo(const ArkUI_TextMenuItem* ite
 
 
 
-#### OH_ArkUI_TextMenuItem_SetId()
+### OH_ArkUI_TextMenuItem_SetId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextMenuItem_SetId(ArkUI_TextMenuItem* item, int32_t id)
@@ -3412,6 +3702,7 @@ ArkUI_ErrorCode OH_ArkUI_TextMenuItem_SetId(ArkUI_TextMenuItem* item, int32_t id
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_TextMenuItem* item | 指向ArkUI_TextMenuItem对象的指针。 |
@@ -3420,6 +3711,7 @@ ArkUI_ErrorCode OH_ArkUI_TextMenuItem_SetId(ArkUI_TextMenuItem* item, int32_t id
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3427,9 +3719,10 @@ ArkUI_ErrorCode OH_ArkUI_TextMenuItem_SetId(ArkUI_TextMenuItem* item, int32_t id
 
 
 
-#### OH_ArkUI_TextMenuItem_GetId()
+### OH_ArkUI_TextMenuItem_GetId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextMenuItem_GetId(const ArkUI_TextMenuItem* item, int32_t* id)
@@ -3443,6 +3736,7 @@ ArkUI_ErrorCode OH_ArkUI_TextMenuItem_GetId(const ArkUI_TextMenuItem* item, int3
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_TextMenuItem* item | 指向ArkUI_TextMenuItem对象的指针。 |
@@ -3451,6 +3745,7 @@ ArkUI_ErrorCode OH_ArkUI_TextMenuItem_GetId(const ArkUI_TextMenuItem* item, int3
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3458,9 +3753,10 @@ ArkUI_ErrorCode OH_ArkUI_TextMenuItem_GetId(const ArkUI_TextMenuItem* item, int3
 
 
 
-#### OH_ArkUI_TextMenuItemArray_GetSize()
+### OH_ArkUI_TextMenuItemArray_GetSize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextMenuItemArray_GetSize(ArkUI_TextMenuItemArray* items, int32_t* size)
@@ -3474,6 +3770,7 @@ ArkUI_ErrorCode OH_ArkUI_TextMenuItemArray_GetSize(ArkUI_TextMenuItemArray* item
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_TextMenuItemArray* items | 指向ArkUI_TextMenuItemArray对象的指针。 |
@@ -3482,6 +3779,7 @@ ArkUI_ErrorCode OH_ArkUI_TextMenuItemArray_GetSize(ArkUI_TextMenuItemArray* item
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3489,9 +3787,10 @@ ArkUI_ErrorCode OH_ArkUI_TextMenuItemArray_GetSize(ArkUI_TextMenuItemArray* item
 
 
 
-#### OH_ArkUI_TextMenuItemArray_GetItem()
+### OH_ArkUI_TextMenuItemArray_GetItem()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextMenuItemArray_GetItem(ArkUI_TextMenuItemArray* items, int32_t index, ArkUI_TextMenuItem** item)
@@ -3505,6 +3804,7 @@ ArkUI_ErrorCode OH_ArkUI_TextMenuItemArray_GetItem(ArkUI_TextMenuItemArray* item
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_TextMenuItemArray* items | 指向ArkUI_TextMenuItemArray对象的指针。 |
@@ -3514,6 +3814,7 @@ ArkUI_ErrorCode OH_ArkUI_TextMenuItemArray_GetItem(ArkUI_TextMenuItemArray* item
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3521,9 +3822,10 @@ ArkUI_ErrorCode OH_ArkUI_TextMenuItemArray_GetItem(ArkUI_TextMenuItemArray* item
 
 
 
-#### OH_ArkUI_TextMenuItemArray_Insert()
+### OH_ArkUI_TextMenuItemArray_Insert()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextMenuItemArray_Insert(ArkUI_TextMenuItemArray* items, ArkUI_TextMenuItem* item, int32_t index)
@@ -3537,6 +3839,7 @@ ArkUI_ErrorCode OH_ArkUI_TextMenuItemArray_Insert(ArkUI_TextMenuItemArray* items
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_TextMenuItemArray* items | 指向ArkUI_TextMenuItemArray对象的指针。 |
@@ -3546,6 +3849,7 @@ ArkUI_ErrorCode OH_ArkUI_TextMenuItemArray_Insert(ArkUI_TextMenuItemArray* items
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3553,9 +3857,10 @@ ArkUI_ErrorCode OH_ArkUI_TextMenuItemArray_Insert(ArkUI_TextMenuItemArray* items
 
 
 
-#### OH_ArkUI_TextMenuItemArray_Erase()
+### OH_ArkUI_TextMenuItemArray_Erase()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextMenuItemArray_Erase(ArkUI_TextMenuItemArray* items, int32_t index)
@@ -3569,6 +3874,7 @@ ArkUI_ErrorCode OH_ArkUI_TextMenuItemArray_Erase(ArkUI_TextMenuItemArray* items,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_TextMenuItemArray* items | 指向ArkUI_TextMenuItemArray对象的指针。 |
@@ -3577,6 +3883,7 @@ ArkUI_ErrorCode OH_ArkUI_TextMenuItemArray_Erase(ArkUI_TextMenuItemArray* items,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3584,9 +3891,10 @@ ArkUI_ErrorCode OH_ArkUI_TextMenuItemArray_Erase(ArkUI_TextMenuItemArray* items,
 
 
 
-#### OH_ArkUI_TextMenuItemArray_Clear()
+### OH_ArkUI_TextMenuItemArray_Clear()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextMenuItemArray_Clear(ArkUI_TextMenuItemArray* items)
@@ -3600,12 +3908,14 @@ ArkUI_ErrorCode OH_ArkUI_TextMenuItemArray_Clear(ArkUI_TextMenuItemArray* items)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_TextMenuItemArray* items | 指向ArkUI_TextMenuItemArray对象的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -3614,9 +3924,10 @@ ArkUI_ErrorCode OH_ArkUI_TextMenuItemArray_Clear(ArkUI_TextMenuItemArray* items)
 
 
 
-#### OH_ArkUI_TextEditMenuOptions_RegisterOnCreateMenuCallback()
+### OH_ArkUI_TextEditMenuOptions_RegisterOnCreateMenuCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditMenuOptions_RegisterOnCreateMenuCallback(ArkUI_TextEditMenuOptions* editMenuOptions, void* userData, ArkUI_TextCreateMenuCallback cb)
@@ -3630,6 +3941,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditMenuOptions_RegisterOnCreateMenuCallback(ArkUI_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_TextEditMenuOptions* editMenuOptions | 指向ArkUI_TextEditMenuOptions对象的指针。 |
@@ -3639,6 +3951,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditMenuOptions_RegisterOnCreateMenuCallback(ArkUI_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3646,9 +3959,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditMenuOptions_RegisterOnCreateMenuCallback(ArkUI_
 
 
 
-#### OH_ArkUI_TextEditMenuOptions_RegisterOnPrepareMenuCallback()
+### OH_ArkUI_TextEditMenuOptions_RegisterOnPrepareMenuCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditMenuOptions_RegisterOnPrepareMenuCallback(ArkUI_TextEditMenuOptions* editMenuOptions, void* userData, ArkUI_TextPrepareMenuCallback cb)
@@ -3662,6 +3976,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditMenuOptions_RegisterOnPrepareMenuCallback(ArkUI
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_TextEditMenuOptions* editMenuOptions | 指向ArkUI_TextEditMenuOptions对象的指针。 |
@@ -3671,6 +3986,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditMenuOptions_RegisterOnPrepareMenuCallback(ArkUI
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3678,9 +3994,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditMenuOptions_RegisterOnPrepareMenuCallback(ArkUI
 
 
 
-#### OH_ArkUI_TextEditMenuOptions_RegisterOnMenuItemClickCallback()
+### OH_ArkUI_TextEditMenuOptions_RegisterOnMenuItemClickCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditMenuOptions_RegisterOnMenuItemClickCallback(ArkUI_TextEditMenuOptions* editMenuOptions, void* userData, ArkUI_TextMenuItemClickCallback cb)
@@ -3694,6 +4011,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditMenuOptions_RegisterOnMenuItemClickCallback(Ark
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_TextEditMenuOptions* editMenuOptions | 指向ArkUI_TextEditMenuOptions对象的指针。 |
@@ -3703,6 +4021,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditMenuOptions_RegisterOnMenuItemClickCallback(Ark
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3710,9 +4029,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditMenuOptions_RegisterOnMenuItemClickCallback(Ark
 
 
 
-#### OH_ArkUI_TextSelectionMenuOptions_SetSpanType()
+### OH_ArkUI_TextSelectionMenuOptions_SetSpanType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextSelectionMenuOptions_SetSpanType(ArkUI_TextSelectionMenuOptions* selectionMenuOptions, ArkUI_TextSpanType textSpanType)
@@ -3726,6 +4046,7 @@ ArkUI_ErrorCode OH_ArkUI_TextSelectionMenuOptions_SetSpanType(ArkUI_TextSelectio
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_TextSelectionMenuOptions* selectionMenuOptions | 指向ArkUI_TextSelectionMenuOptions对象的指针。 |
@@ -3734,6 +4055,7 @@ ArkUI_ErrorCode OH_ArkUI_TextSelectionMenuOptions_SetSpanType(ArkUI_TextSelectio
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3741,9 +4063,10 @@ ArkUI_ErrorCode OH_ArkUI_TextSelectionMenuOptions_SetSpanType(ArkUI_TextSelectio
 
 
 
-#### OH_ArkUI_TextSelectionMenuOptions_GetSpanType()
+### OH_ArkUI_TextSelectionMenuOptions_GetSpanType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextSelectionMenuOptions_GetSpanType(ArkUI_TextSelectionMenuOptions* selectionMenuOptions, ArkUI_TextSpanType* spanType)
@@ -3757,6 +4080,7 @@ ArkUI_ErrorCode OH_ArkUI_TextSelectionMenuOptions_GetSpanType(ArkUI_TextSelectio
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_TextSelectionMenuOptions* selectionMenuOptions | 指向ArkUI_TextSelectionMenuOptions对象的指针。 |
@@ -3765,6 +4089,7 @@ ArkUI_ErrorCode OH_ArkUI_TextSelectionMenuOptions_GetSpanType(ArkUI_TextSelectio
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3772,9 +4097,10 @@ ArkUI_ErrorCode OH_ArkUI_TextSelectionMenuOptions_GetSpanType(ArkUI_TextSelectio
 
 
 
-#### OH_ArkUI_TextSelectionMenuOptions_SetContentNode()
+### OH_ArkUI_TextSelectionMenuOptions_SetContentNode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextSelectionMenuOptions_SetContentNode(ArkUI_TextSelectionMenuOptions* selectionMenuOptions, ArkUI_NodeHandle node)
@@ -3788,6 +4114,7 @@ ArkUI_ErrorCode OH_ArkUI_TextSelectionMenuOptions_SetContentNode(ArkUI_TextSelec
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_TextSelectionMenuOptions* selectionMenuOptions | 指向ArkUI_TextSelectionMenuOptions对象的指针。 |
@@ -3796,6 +4123,7 @@ ArkUI_ErrorCode OH_ArkUI_TextSelectionMenuOptions_SetContentNode(ArkUI_TextSelec
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3803,9 +4131,10 @@ ArkUI_ErrorCode OH_ArkUI_TextSelectionMenuOptions_SetContentNode(ArkUI_TextSelec
 
 
 
-#### OH_ArkUI_TextSelectionMenuOptions_GetContentNode()
+### OH_ArkUI_TextSelectionMenuOptions_GetContentNode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextSelectionMenuOptions_GetContentNode(ArkUI_TextSelectionMenuOptions* selectionMenuOptions, ArkUI_NodeHandle* node)
@@ -3819,6 +4148,7 @@ ArkUI_ErrorCode OH_ArkUI_TextSelectionMenuOptions_GetContentNode(ArkUI_TextSelec
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_TextSelectionMenuOptions* selectionMenuOptions | 指向ArkUI_TextSelectionMenuOptions对象的指针。 |
@@ -3827,6 +4157,7 @@ ArkUI_ErrorCode OH_ArkUI_TextSelectionMenuOptions_GetContentNode(ArkUI_TextSelec
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3834,9 +4165,10 @@ ArkUI_ErrorCode OH_ArkUI_TextSelectionMenuOptions_GetContentNode(ArkUI_TextSelec
 
 
 
-#### OH_ArkUI_TextSelectionMenuOptions_SetResponseType()
+### OH_ArkUI_TextSelectionMenuOptions_SetResponseType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextSelectionMenuOptions_SetResponseType(ArkUI_TextSelectionMenuOptions* selectionMenuOptions, ArkUI_TextResponseType responseType)
@@ -3850,6 +4182,7 @@ ArkUI_ErrorCode OH_ArkUI_TextSelectionMenuOptions_SetResponseType(ArkUI_TextSele
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_TextSelectionMenuOptions* selectionMenuOptions | 指向ArkUI_TextSelectionMenuOptions对象的指针。 |
@@ -3858,6 +4191,7 @@ ArkUI_ErrorCode OH_ArkUI_TextSelectionMenuOptions_SetResponseType(ArkUI_TextSele
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3865,9 +4199,10 @@ ArkUI_ErrorCode OH_ArkUI_TextSelectionMenuOptions_SetResponseType(ArkUI_TextSele
 
 
 
-#### OH_ArkUI_TextSelectionMenuOptions_GetResponseType()
+### OH_ArkUI_TextSelectionMenuOptions_GetResponseType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextSelectionMenuOptions_GetResponseType(ArkUI_TextSelectionMenuOptions* selectionMenuOptions, ArkUI_TextResponseType* responseType)
@@ -3881,6 +4216,7 @@ ArkUI_ErrorCode OH_ArkUI_TextSelectionMenuOptions_GetResponseType(ArkUI_TextSele
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_TextSelectionMenuOptions* selectionMenuOptions | 指向ArkUI_TextSelectionMenuOptions对象的指针。 |
@@ -3889,6 +4225,7 @@ ArkUI_ErrorCode OH_ArkUI_TextSelectionMenuOptions_GetResponseType(ArkUI_TextSele
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3896,9 +4233,10 @@ ArkUI_ErrorCode OH_ArkUI_TextSelectionMenuOptions_GetResponseType(ArkUI_TextSele
 
 
 
-#### OH_ArkUI_TextSelectionMenuOptions_RegisterOnMenuShowCallback()
+### OH_ArkUI_TextSelectionMenuOptions_RegisterOnMenuShowCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextSelectionMenuOptions_RegisterOnMenuShowCallback(ArkUI_TextSelectionMenuOptions* selectionMenuOptions, void* userData, void (*callback)(int32_t start, int32_t end, void* userData))
@@ -3912,6 +4250,7 @@ ArkUI_ErrorCode OH_ArkUI_TextSelectionMenuOptions_RegisterOnMenuShowCallback(Ark
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_TextSelectionMenuOptions* selectionMenuOptions | 指向ArkUI_TextSelectionMenuOptions对象的指针。 |
@@ -3921,6 +4260,7 @@ ArkUI_ErrorCode OH_ArkUI_TextSelectionMenuOptions_RegisterOnMenuShowCallback(Ark
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3928,9 +4268,10 @@ ArkUI_ErrorCode OH_ArkUI_TextSelectionMenuOptions_RegisterOnMenuShowCallback(Ark
 
 
 
-#### OH_ArkUI_TextSelectionMenuOptions_RegisterOnMenuHideCallback()
+### OH_ArkUI_TextSelectionMenuOptions_RegisterOnMenuHideCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextSelectionMenuOptions_RegisterOnMenuHideCallback(ArkUI_TextSelectionMenuOptions* selectionMenuOptions, void* userData, void (*callback)(int32_t start, int32_t end, void* userData))
@@ -3944,6 +4285,7 @@ ArkUI_ErrorCode OH_ArkUI_TextSelectionMenuOptions_RegisterOnMenuHideCallback(Ark
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_TextSelectionMenuOptions* selectionMenuOptions | 指向ArkUI_TextSelectionMenuOptions对象的指针。 |
@@ -3953,6 +4295,7 @@ ArkUI_ErrorCode OH_ArkUI_TextSelectionMenuOptions_RegisterOnMenuHideCallback(Ark
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -3960,9 +4303,10 @@ ArkUI_ErrorCode OH_ArkUI_TextSelectionMenuOptions_RegisterOnMenuHideCallback(Ark
 
 
 
-#### OH_ArkUI_SelectedDragPreviewStyle_Create()
+### OH_ArkUI_SelectedDragPreviewStyle_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_SelectedDragPreviewStyle* OH_ArkUI_SelectedDragPreviewStyle_Create();
@@ -3976,6 +4320,7 @@ ArkUI_SelectedDragPreviewStyle* OH_ArkUI_SelectedDragPreviewStyle_Create();
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_SelectedDragPreviewStyle* | 指向ArkUI_SelectedDragPreviewStyle对象的指针。 |
@@ -3983,9 +4328,10 @@ ArkUI_SelectedDragPreviewStyle* OH_ArkUI_SelectedDragPreviewStyle_Create();
 
 
 
-#### OH_ArkUI_SelectedDragPreviewStyle_Dispose()
+### OH_ArkUI_SelectedDragPreviewStyle_Dispose()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_SelectedDragPreviewStyle_Dispose(ArkUI_SelectedDragPreviewStyle* config)
@@ -3999,6 +4345,7 @@ void OH_ArkUI_SelectedDragPreviewStyle_Dispose(ArkUI_SelectedDragPreviewStyle* c
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_SelectedDragPreviewStyle* config | 指向ArkUI_SelectedDragPreviewStyle对象的指针。 |
@@ -4006,9 +4353,10 @@ void OH_ArkUI_SelectedDragPreviewStyle_Dispose(ArkUI_SelectedDragPreviewStyle* c
 
 
 
-#### OH_ArkUI_SelectedDragPreviewStyle_SetColor()
+### OH_ArkUI_SelectedDragPreviewStyle_SetColor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void  OH_ArkUI_SelectedDragPreviewStyle_SetColor(ArkUI_SelectedDragPreviewStyle* config, uint32_t color);
@@ -4022,6 +4370,7 @@ void  OH_ArkUI_SelectedDragPreviewStyle_SetColor(ArkUI_SelectedDragPreviewStyle*
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_SelectedDragPreviewStyle* config | 指向ArkUI_SelectedDragPreviewStyle对象的指针。 |
@@ -4030,9 +4379,10 @@ void  OH_ArkUI_SelectedDragPreviewStyle_SetColor(ArkUI_SelectedDragPreviewStyle*
 
 
 
-#### OH_ArkUI_SelectedDragPreviewStyle_GetColor()
+### OH_ArkUI_SelectedDragPreviewStyle_GetColor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 uint32_t OH_ArkUI_SelectedDragPreviewStyle_GetColor(ArkUI_SelectedDragPreviewStyle* config)
@@ -4046,12 +4396,14 @@ uint32_t OH_ArkUI_SelectedDragPreviewStyle_GetColor(ArkUI_SelectedDragPreviewSty
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_SelectedDragPreviewStyle* config | 指向ArkUI_SelectedDragPreviewStyle对象的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -4060,9 +4412,10 @@ uint32_t OH_ArkUI_SelectedDragPreviewStyle_GetColor(ArkUI_SelectedDragPreviewSty
 
 
 
-#### OH_ArkUI_DecorationStyleOptions_SetTextDecorationType()
+### OH_ArkUI_DecorationStyleOptions_SetTextDecorationType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_DecorationStyleOptions_SetTextDecorationType(OH_ArkUI_DecorationStyleOptions* options, ArkUI_TextDecorationType type)
@@ -4076,6 +4429,7 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyleOptions_SetTextDecorationType(OH_ArkUI_D
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_DecorationStyleOptions* options | 指向OH_ArkUI_DecorationStyleOptions对象的指针。 |
@@ -4084,6 +4438,7 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyleOptions_SetTextDecorationType(OH_ArkUI_D
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -4091,9 +4446,10 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyleOptions_SetTextDecorationType(OH_ArkUI_D
 
 
 
-#### OH_ArkUI_DecorationStyleOptions_GetTextDecorationType()
+### OH_ArkUI_DecorationStyleOptions_GetTextDecorationType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_DecorationStyleOptions_GetTextDecorationType(OH_ArkUI_DecorationStyleOptions* options, ArkUI_TextDecorationType* type)
@@ -4107,6 +4463,7 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyleOptions_GetTextDecorationType(OH_ArkUI_D
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_DecorationStyleOptions* options | 指向OH_ArkUI_DecorationStyleOptions对象的指针。 |
@@ -4115,6 +4472,7 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyleOptions_GetTextDecorationType(OH_ArkUI_D
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -4122,9 +4480,10 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyleOptions_GetTextDecorationType(OH_ArkUI_D
 
 
 
-#### OH_ArkUI_DecorationStyleOptions_SetColor()
+### OH_ArkUI_DecorationStyleOptions_SetColor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_DecorationStyleOptions_SetColor(OH_ArkUI_DecorationStyleOptions* options, uint32_t color)
@@ -4138,6 +4497,7 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyleOptions_SetColor(OH_ArkUI_DecorationStyl
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_DecorationStyleOptions* options | 指向OH_ArkUI_DecorationStyleOptions对象的指针。 |
@@ -4146,6 +4506,7 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyleOptions_SetColor(OH_ArkUI_DecorationStyl
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -4153,9 +4514,10 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyleOptions_SetColor(OH_ArkUI_DecorationStyl
 
 
 
-#### OH_ArkUI_DecorationStyleOptions_GetColor()
+### OH_ArkUI_DecorationStyleOptions_GetColor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_DecorationStyleOptions_GetColor(OH_ArkUI_DecorationStyleOptions* options, uint32_t* color)
@@ -4169,6 +4531,7 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyleOptions_GetColor(OH_ArkUI_DecorationStyl
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_DecorationStyleOptions* options | 指向OH_ArkUI_DecorationStyleOptions对象的指针。 |
@@ -4177,6 +4540,7 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyleOptions_GetColor(OH_ArkUI_DecorationStyl
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -4184,9 +4548,10 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyleOptions_GetColor(OH_ArkUI_DecorationStyl
 
 
 
-#### OH_ArkUI_DecorationStyleOptions_SetTextDecorationStyle()
+### OH_ArkUI_DecorationStyleOptions_SetTextDecorationStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_DecorationStyleOptions_SetTextDecorationStyle(OH_ArkUI_DecorationStyleOptions* options, ArkUI_TextDecorationStyle style)
@@ -4200,6 +4565,7 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyleOptions_SetTextDecorationStyle(OH_ArkUI_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_DecorationStyleOptions* options | 指向OH_ArkUI_DecorationStyleOptions对象的指针。 |
@@ -4208,6 +4574,7 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyleOptions_SetTextDecorationStyle(OH_ArkUI_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -4215,9 +4582,10 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyleOptions_SetTextDecorationStyle(OH_ArkUI_
 
 
 
-#### OH_ArkUI_DecorationStyleOptions_GetTextDecorationStyle()
+### OH_ArkUI_DecorationStyleOptions_GetTextDecorationStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_DecorationStyleOptions_GetTextDecorationStyle(OH_ArkUI_DecorationStyleOptions* options, ArkUI_TextDecorationStyle* style)
@@ -4231,6 +4599,7 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyleOptions_GetTextDecorationStyle(OH_ArkUI_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_DecorationStyleOptions* options | 指向OH_ArkUI_DecorationStyleOptions对象的指针。 |
@@ -4239,6 +4608,7 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyleOptions_GetTextDecorationStyle(OH_ArkUI_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -4246,9 +4616,10 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyleOptions_GetTextDecorationStyle(OH_ArkUI_
 
 
 
-#### OH_ArkUI_DecorationStyleOptions_SetThicknessScale()
+### OH_ArkUI_DecorationStyleOptions_SetThicknessScale()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_DecorationStyleOptions_SetThicknessScale(OH_ArkUI_DecorationStyleOptions* options, float thicknessScale)
@@ -4262,6 +4633,7 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyleOptions_SetThicknessScale(OH_ArkUI_Decor
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_DecorationStyleOptions* options | 指向OH_ArkUI_DecorationStyleOptions对象的指针。 |
@@ -4270,6 +4642,7 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyleOptions_SetThicknessScale(OH_ArkUI_Decor
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -4277,9 +4650,10 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyleOptions_SetThicknessScale(OH_ArkUI_Decor
 
 
 
-#### OH_ArkUI_DecorationStyleOptions_GetThicknessScale()
+### OH_ArkUI_DecorationStyleOptions_GetThicknessScale()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_DecorationStyleOptions_GetThicknessScale(OH_ArkUI_DecorationStyleOptions* options, float* thicknessScale)
@@ -4293,6 +4667,7 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyleOptions_GetThicknessScale(OH_ArkUI_Decor
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_DecorationStyleOptions* options | 指向OH_ArkUI_DecorationStyleOptions对象的指针。 |
@@ -4301,6 +4676,7 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyleOptions_GetThicknessScale(OH_ArkUI_Decor
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -4308,9 +4684,10 @@ ArkUI_ErrorCode OH_ArkUI_DecorationStyleOptions_GetThicknessScale(OH_ArkUI_Decor
 
 
 
-#### OH_ArkUI_TextDataDetectorConfig_SetTypes()
+### OH_ArkUI_TextDataDetectorConfig_SetTypes()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextDataDetectorConfig_SetTypes(OH_ArkUI_TextDataDetectorConfig* config, const ArkUI_TextDataDetectorType* types, int32_t length)
@@ -4324,6 +4701,7 @@ ArkUI_ErrorCode OH_ArkUI_TextDataDetectorConfig_SetTypes(OH_ArkUI_TextDataDetect
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextDataDetectorConfig* config | 指向OH_ArkUI_TextDataDetectorConfig对象的指针。 |
@@ -4333,6 +4711,7 @@ ArkUI_ErrorCode OH_ArkUI_TextDataDetectorConfig_SetTypes(OH_ArkUI_TextDataDetect
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -4340,9 +4719,10 @@ ArkUI_ErrorCode OH_ArkUI_TextDataDetectorConfig_SetTypes(OH_ArkUI_TextDataDetect
 
 
 
-#### OH_ArkUI_TextDataDetectorConfig_GetTypes()
+### OH_ArkUI_TextDataDetectorConfig_GetTypes()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextDataDetectorConfig_GetTypes(OH_ArkUI_TextDataDetectorConfig* config, ArkUI_TextDataDetectorType* buffer, int32_t bufferSize, int32_t* writeLength)
@@ -4356,6 +4736,7 @@ ArkUI_ErrorCode OH_ArkUI_TextDataDetectorConfig_GetTypes(OH_ArkUI_TextDataDetect
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextDataDetectorConfig* config | 指向OH_ArkUI_TextDataDetectorConfig对象的指针。 |
@@ -4366,6 +4747,7 @@ ArkUI_ErrorCode OH_ArkUI_TextDataDetectorConfig_GetTypes(OH_ArkUI_TextDataDetect
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 若bufferSize小于writeLength，返回ARKUI_ERROR_CODE_BUFFER_SIZE_ERROR。 |
@@ -4373,9 +4755,10 @@ ArkUI_ErrorCode OH_ArkUI_TextDataDetectorConfig_GetTypes(OH_ArkUI_TextDataDetect
 
 
 
-#### OH_ArkUI_TextDataDetectorConfig_RegisterOnDetectResultUpdateCallback()
+### OH_ArkUI_TextDataDetectorConfig_RegisterOnDetectResultUpdateCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextDataDetectorConfig_RegisterOnDetectResultUpdateCallback(OH_ArkUI_TextDataDetectorConfig* config, void* userData, void (*callback)(const char* result, int32_t length, void* userData))
@@ -4389,6 +4772,7 @@ ArkUI_ErrorCode OH_ArkUI_TextDataDetectorConfig_RegisterOnDetectResultUpdateCall
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextDataDetectorConfig* config | 指向OH_ArkUI_TextDataDetectorConfig对象的指针。 |
@@ -4398,6 +4782,7 @@ ArkUI_ErrorCode OH_ArkUI_TextDataDetectorConfig_RegisterOnDetectResultUpdateCall
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -4405,9 +4790,10 @@ ArkUI_ErrorCode OH_ArkUI_TextDataDetectorConfig_RegisterOnDetectResultUpdateCall
 
 
 
-#### OH_ArkUI_TextDataDetectorConfig_SetColor()
+### OH_ArkUI_TextDataDetectorConfig_SetColor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextDataDetectorConfig_SetColor(OH_ArkUI_TextDataDetectorConfig* config, uint32_t color)
@@ -4421,6 +4807,7 @@ ArkUI_ErrorCode OH_ArkUI_TextDataDetectorConfig_SetColor(OH_ArkUI_TextDataDetect
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextDataDetectorConfig* config | 指向OH_ArkUI_TextDataDetectorConfig对象的指针。 |
@@ -4429,6 +4816,7 @@ ArkUI_ErrorCode OH_ArkUI_TextDataDetectorConfig_SetColor(OH_ArkUI_TextDataDetect
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -4436,9 +4824,10 @@ ArkUI_ErrorCode OH_ArkUI_TextDataDetectorConfig_SetColor(OH_ArkUI_TextDataDetect
 
 
 
-#### OH_ArkUI_TextDataDetectorConfig_GetColor()
+### OH_ArkUI_TextDataDetectorConfig_GetColor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextDataDetectorConfig_GetColor(OH_ArkUI_TextDataDetectorConfig* config, uint32_t* color)
@@ -4452,6 +4841,7 @@ ArkUI_ErrorCode OH_ArkUI_TextDataDetectorConfig_GetColor(OH_ArkUI_TextDataDetect
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextDataDetectorConfig* config | 指向OH_ArkUI_TextDataDetectorConfig对象的指针。 |
@@ -4460,6 +4850,7 @@ ArkUI_ErrorCode OH_ArkUI_TextDataDetectorConfig_GetColor(OH_ArkUI_TextDataDetect
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -4467,9 +4858,10 @@ ArkUI_ErrorCode OH_ArkUI_TextDataDetectorConfig_GetColor(OH_ArkUI_TextDataDetect
 
 
 
-#### OH_ArkUI_TextDataDetectorConfig_SetDecorationStyleOptions()
+### OH_ArkUI_TextDataDetectorConfig_SetDecorationStyleOptions()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextDataDetectorConfig_SetDecorationStyleOptions(OH_ArkUI_TextDataDetectorConfig* config, OH_ArkUI_DecorationStyleOptions* decoration)
@@ -4483,6 +4875,7 @@ ArkUI_ErrorCode OH_ArkUI_TextDataDetectorConfig_SetDecorationStyleOptions(OH_Ark
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextDataDetectorConfig* config | 指向OH_ArkUI_TextDataDetectorConfig对象的指针。 |
@@ -4491,6 +4884,7 @@ ArkUI_ErrorCode OH_ArkUI_TextDataDetectorConfig_SetDecorationStyleOptions(OH_Ark
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -4498,9 +4892,10 @@ ArkUI_ErrorCode OH_ArkUI_TextDataDetectorConfig_SetDecorationStyleOptions(OH_Ark
 
 
 
-#### OH_ArkUI_TextDataDetectorConfig_GetDecorationStyleOptions()
+### OH_ArkUI_TextDataDetectorConfig_GetDecorationStyleOptions()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextDataDetectorConfig_GetDecorationStyleOptions(OH_ArkUI_TextDataDetectorConfig* config, OH_ArkUI_DecorationStyleOptions* decoration)
@@ -4514,6 +4909,7 @@ ArkUI_ErrorCode OH_ArkUI_TextDataDetectorConfig_GetDecorationStyleOptions(OH_Ark
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextDataDetectorConfig* config | 指向OH_ArkUI_TextDataDetectorConfig对象的指针。 |
@@ -4522,6 +4918,7 @@ ArkUI_ErrorCode OH_ArkUI_TextDataDetectorConfig_GetDecorationStyleOptions(OH_Ark
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -4529,9 +4926,10 @@ ArkUI_ErrorCode OH_ArkUI_TextDataDetectorConfig_GetDecorationStyleOptions(OH_Ark
 
 
 
-#### OH_ArkUI_TextDataDetectorConfig_SetEnablePreviewMenu()
+### OH_ArkUI_TextDataDetectorConfig_SetEnablePreviewMenu()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextDataDetectorConfig_SetEnablePreviewMenu(OH_ArkUI_TextDataDetectorConfig* config, bool enablePreviewMenu)
@@ -4545,6 +4943,7 @@ ArkUI_ErrorCode OH_ArkUI_TextDataDetectorConfig_SetEnablePreviewMenu(OH_ArkUI_Te
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextDataDetectorConfig* config | 指向OH_ArkUI_TextDataDetectorConfig对象的指针。 |
@@ -4553,6 +4952,7 @@ ArkUI_ErrorCode OH_ArkUI_TextDataDetectorConfig_SetEnablePreviewMenu(OH_ArkUI_Te
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -4560,9 +4960,10 @@ ArkUI_ErrorCode OH_ArkUI_TextDataDetectorConfig_SetEnablePreviewMenu(OH_ArkUI_Te
 
 
 
-#### OH_ArkUI_TextDataDetectorConfig_GetEnablePreviewMenu()
+### OH_ArkUI_TextDataDetectorConfig_GetEnablePreviewMenu()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextDataDetectorConfig_GetEnablePreviewMenu(OH_ArkUI_TextDataDetectorConfig* config, bool* enablePreviewMenu)
@@ -4576,6 +4977,7 @@ ArkUI_ErrorCode OH_ArkUI_TextDataDetectorConfig_GetEnablePreviewMenu(OH_ArkUI_Te
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextDataDetectorConfig* config | 指向OH_ArkUI_TextDataDetectorConfig对象的指针。 |
@@ -4584,6 +4986,7 @@ ArkUI_ErrorCode OH_ArkUI_TextDataDetectorConfig_GetEnablePreviewMenu(OH_ArkUI_Te
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -4591,9 +4994,10 @@ ArkUI_ErrorCode OH_ArkUI_TextDataDetectorConfig_GetEnablePreviewMenu(OH_ArkUI_Te
 
 
 
-#### OH_ArkUI_TextEditorPlaceholderOptions_SetValue()
+### OH_ArkUI_TextEditorPlaceholderOptions_SetValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_SetValue(OH_ArkUI_TextEditorPlaceholderOptions* options, const char* value)
@@ -4607,6 +5011,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_SetValue(OH_ArkUI_TextEdit
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorPlaceholderOptions* options | 指向OH_ArkUI_TextEditorPlaceholderOptions对象的指针。 |
@@ -4615,6 +5020,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_SetValue(OH_ArkUI_TextEdit
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -4622,9 +5028,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_SetValue(OH_ArkUI_TextEdit
 
 
 
-#### OH_ArkUI_TextEditorPlaceholderOptions_GetValue()
+### OH_ArkUI_TextEditorPlaceholderOptions_GetValue()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_GetValue(OH_ArkUI_TextEditorPlaceholderOptions* options, char* buffer, int32_t bufferSize, int32_t* writeLength)
@@ -4638,6 +5045,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_GetValue(OH_ArkUI_TextEdit
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorPlaceholderOptions* options | 指向OH_ArkUI_TextEditorPlaceholderOptions对象的指针。 |
@@ -4648,6 +5056,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_GetValue(OH_ArkUI_TextEdit
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 错误码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若节点、缓冲区或writeLength为空，返回ARKUI_ERROR_CODE_PARAM_INVALID。 若bufferSize小于writeLength，返回ARKUI_ERROR_CODE_BUFFER_SIZE_ERROR。 |
@@ -4655,9 +5064,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_GetValue(OH_ArkUI_TextEdit
 
 
 
-#### OH_ArkUI_TextEditorPlaceholderOptions_SetFontSize()
+### OH_ArkUI_TextEditorPlaceholderOptions_SetFontSize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_SetFontSize(OH_ArkUI_TextEditorPlaceholderOptions* options, float fontSize)
@@ -4671,6 +5081,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_SetFontSize(OH_ArkUI_TextE
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorPlaceholderOptions* options | 指向OH_ArkUI_TextEditorPlaceholderOptions对象的指针。 |
@@ -4679,6 +5090,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_SetFontSize(OH_ArkUI_TextE
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -4686,9 +5098,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_SetFontSize(OH_ArkUI_TextE
 
 
 
-#### OH_ArkUI_TextEditorPlaceholderOptions_GetFontSize()
+### OH_ArkUI_TextEditorPlaceholderOptions_GetFontSize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_GetFontSize(OH_ArkUI_TextEditorPlaceholderOptions* options, float* fontSize)
@@ -4702,6 +5115,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_GetFontSize(OH_ArkUI_TextE
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorPlaceholderOptions* options | 指向OH_ArkUI_TextEditorPlaceholderOptions对象的指针。 |
@@ -4710,6 +5124,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_GetFontSize(OH_ArkUI_TextE
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -4717,9 +5132,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_GetFontSize(OH_ArkUI_TextE
 
 
 
-#### OH_ArkUI_TextEditorPlaceholderOptions_SetFontWeight()
+### OH_ArkUI_TextEditorPlaceholderOptions_SetFontWeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_SetFontWeight(OH_ArkUI_TextEditorPlaceholderOptions* options, uint32_t fontWeight)
@@ -4733,6 +5149,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_SetFontWeight(OH_ArkUI_Tex
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorPlaceholderOptions* options | 指向OH_ArkUI_TextEditorPlaceholderOptions对象的指针。 |
@@ -4741,6 +5158,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_SetFontWeight(OH_ArkUI_Tex
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -4748,9 +5166,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_SetFontWeight(OH_ArkUI_Tex
 
 
 
-#### OH_ArkUI_TextEditorPlaceholderOptions_GetFontWeight()
+### OH_ArkUI_TextEditorPlaceholderOptions_GetFontWeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_GetFontWeight(OH_ArkUI_TextEditorPlaceholderOptions* options, uint32_t* fontWeight)
@@ -4764,6 +5183,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_GetFontWeight(OH_ArkUI_Tex
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorPlaceholderOptions* options | 指向OH_ArkUI_TextEditorPlaceholderOptions对象的指针。 |
@@ -4772,6 +5192,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_GetFontWeight(OH_ArkUI_Tex
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -4779,9 +5200,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_GetFontWeight(OH_ArkUI_Tex
 
 
 
-#### OH_ArkUI_TextEditorPlaceholderOptions_SetFontFamily()
+### OH_ArkUI_TextEditorPlaceholderOptions_SetFontFamily()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_SetFontFamily(OH_ArkUI_TextEditorPlaceholderOptions* options, const char* fontFamily)
@@ -4795,6 +5217,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_SetFontFamily(OH_ArkUI_Tex
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorPlaceholderOptions* options | 指向OH_ArkUI_TextEditorPlaceholderOptions对象的指针。 |
@@ -4803,6 +5226,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_SetFontFamily(OH_ArkUI_Tex
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -4810,9 +5234,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_SetFontFamily(OH_ArkUI_Tex
 
 
 
-#### OH_ArkUI_TextEditorPlaceholderOptions_GetFontFamily()
+### OH_ArkUI_TextEditorPlaceholderOptions_GetFontFamily()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_GetFontFamily(OH_ArkUI_TextEditorPlaceholderOptions* options, char* buffer, int32_t bufferSize, int32_t* writeLength)
@@ -4826,6 +5251,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_GetFontFamily(OH_ArkUI_Tex
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorPlaceholderOptions* options | 指向OH_ArkUI_TextEditorPlaceholderOptions对象的指针。 |
@@ -4836,6 +5262,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_GetFontFamily(OH_ArkUI_Tex
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 错误码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若节点、缓冲区或writeLength为空，返回ARKUI_ERROR_CODE_PARAM_INVALID。 若bufferSize小于writeLength，返回ARKUI_ERROR_CODE_BUFFER_SIZE_ERROR。 |
@@ -4843,9 +5270,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_GetFontFamily(OH_ArkUI_Tex
 
 
 
-#### OH_ArkUI_TextEditorPlaceholderOptions_SetFontStyle()
+### OH_ArkUI_TextEditorPlaceholderOptions_SetFontStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_SetFontStyle(OH_ArkUI_TextEditorPlaceholderOptions* options, ArkUI_FontStyle fontStyle)
@@ -4859,6 +5287,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_SetFontStyle(OH_ArkUI_Text
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorPlaceholderOptions* options | 指向OH_ArkUI_TextEditorPlaceholderOptions对象的指针。 |
@@ -4867,6 +5296,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_SetFontStyle(OH_ArkUI_Text
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -4874,9 +5304,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_SetFontStyle(OH_ArkUI_Text
 
 
 
-#### OH_ArkUI_TextEditorPlaceholderOptions_GetFontStyle()
+### OH_ArkUI_TextEditorPlaceholderOptions_GetFontStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_GetFontStyle(OH_ArkUI_TextEditorPlaceholderOptions* options, ArkUI_FontStyle* fontStyle)
@@ -4890,6 +5321,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_GetFontStyle(OH_ArkUI_Text
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorPlaceholderOptions* options | 指向OH_ArkUI_TextEditorPlaceholderOptions对象的指针。 |
@@ -4898,6 +5330,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_GetFontStyle(OH_ArkUI_Text
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -4905,9 +5338,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_GetFontStyle(OH_ArkUI_Text
 
 
 
-#### OH_ArkUI_TextEditorPlaceholderOptions_SetFontColor()
+### OH_ArkUI_TextEditorPlaceholderOptions_SetFontColor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_SetFontColor(OH_ArkUI_TextEditorPlaceholderOptions* options, uint32_t fontColor)
@@ -4921,6 +5355,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_SetFontColor(OH_ArkUI_Text
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorPlaceholderOptions* options | 指向OH_ArkUI_TextEditorPlaceholderOptions对象的指针。 |
@@ -4929,6 +5364,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_SetFontColor(OH_ArkUI_Text
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -4936,9 +5372,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_SetFontColor(OH_ArkUI_Text
 
 
 
-#### OH_ArkUI_TextEditorPlaceholderOptions_GetFontColor()
+### OH_ArkUI_TextEditorPlaceholderOptions_GetFontColor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_GetFontColor(OH_ArkUI_TextEditorPlaceholderOptions* options, uint32_t* fontColor)
@@ -4952,6 +5389,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_GetFontColor(OH_ArkUI_Text
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorPlaceholderOptions* options | 指向OH_ArkUI_TextEditorPlaceholderOptions对象的指针。 |
@@ -4960,6 +5398,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_GetFontColor(OH_ArkUI_Text
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -4967,9 +5406,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorPlaceholderOptions_GetFontColor(OH_ArkUI_Text
 
 
 
-#### OH_ArkUI_TextEditorStyledStringController_SetCaretOffset()
+### OH_ArkUI_TextEditorStyledStringController_SetCaretOffset()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_SetCaretOffset(OH_ArkUI_TextEditorStyledStringController* controller, int32_t caretOffset)
@@ -4983,6 +5423,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_SetCaretOffset(OH_ArkU
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorStyledStringController* controller | 指向OH_ArkUI_TextEditorStyledStringController对象的指针。 |
@@ -4991,6 +5432,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_SetCaretOffset(OH_ArkU
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -4998,9 +5440,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_SetCaretOffset(OH_ArkU
 
 
 
-#### OH_ArkUI_TextEditorStyledStringController_GetCaretOffset()
+### OH_ArkUI_TextEditorStyledStringController_GetCaretOffset()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_GetCaretOffset(OH_ArkUI_TextEditorStyledStringController* controller, int32_t* caretOffset)
@@ -5014,6 +5457,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_GetCaretOffset(OH_ArkU
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorStyledStringController* controller | 指向OH_ArkUI_TextEditorStyledStringController对象的指针。 |
@@ -5022,6 +5466,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_GetCaretOffset(OH_ArkU
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -5029,9 +5474,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_GetCaretOffset(OH_ArkU
 
 
 
-#### OH_ArkUI_TextEditorStyledStringController_SetSelection()
+### OH_ArkUI_TextEditorStyledStringController_SetSelection()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_SetSelection(OH_ArkUI_TextEditorStyledStringController* controller, uint32_t start, uint32_t end, ArkUI_MenuPolicy menuPolicy)
@@ -5045,6 +5491,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_SetSelection(OH_ArkUI_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorStyledStringController* controller | 指向OH_ArkUI_TextEditorStyledStringController对象的指针。 |
@@ -5055,6 +5502,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_SetSelection(OH_ArkUI_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -5062,9 +5510,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_SetSelection(OH_ArkUI_
 
 
 
-#### OH_ArkUI_TextEditorStyledStringController_IsEditing()
+### OH_ArkUI_TextEditorStyledStringController_IsEditing()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_IsEditing(OH_ArkUI_TextEditorStyledStringController* controller, bool* isEditing)
@@ -5078,6 +5527,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_IsEditing(OH_ArkUI_Tex
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorStyledStringController* controller | 指向OH_ArkUI_TextEditorStyledStringController对象的指针。 |
@@ -5086,6 +5536,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_IsEditing(OH_ArkUI_Tex
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -5093,9 +5544,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_IsEditing(OH_ArkUI_Tex
 
 
 
-#### OH_ArkUI_TextEditorStyledStringController_StopEditing()
+### OH_ArkUI_TextEditorStyledStringController_StopEditing()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_StopEditing(OH_ArkUI_TextEditorStyledStringController* controller)
@@ -5109,12 +5561,14 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_StopEditing(OH_ArkUI_T
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorStyledStringController* controller | 指向OH_ArkUI_TextEditorStyledStringController对象的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5123,9 +5577,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_StopEditing(OH_ArkUI_T
 
 
 
-#### OH_ArkUI_TextEditorStyledStringController_GetPreviewText()
+### OH_ArkUI_TextEditorStyledStringController_GetPreviewText()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_GetPreviewText(OH_ArkUI_TextEditorStyledStringController* controller, uint32_t* offset, char* buffer, int32_t bufferSize, int32_t* writeLength)
@@ -5139,6 +5594,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_GetPreviewText(OH_ArkU
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorStyledStringController* controller | 指向OH_ArkUI_TextEditorStyledStringController对象的指针。 |
@@ -5150,6 +5606,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_GetPreviewText(OH_ArkU
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -5157,9 +5614,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_GetPreviewText(OH_ArkU
 
 
 
-#### OH_ArkUI_TextEditorStyledStringController_GetCaretRect()
+### OH_ArkUI_TextEditorStyledStringController_GetCaretRect()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_GetCaretRect(OH_ArkUI_TextEditorStyledStringController* controller, ArkUI_Rect* rect)
@@ -5173,6 +5631,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_GetCaretRect(OH_ArkUI_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorStyledStringController* controller | 指向OH_ArkUI_TextEditorStyledStringController对象的指针。 |
@@ -5181,6 +5640,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_GetCaretRect(OH_ArkUI_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -5188,9 +5648,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_GetCaretRect(OH_ArkUI_
 
 
 
-#### OH_ArkUI_TextEditorStyledStringController_DeleteBackward()
+### OH_ArkUI_TextEditorStyledStringController_DeleteBackward()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_DeleteBackward(OH_ArkUI_TextEditorStyledStringController* controller)
@@ -5204,12 +5665,14 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_DeleteBackward(OH_ArkU
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorStyledStringController* controller | 指向OH_ArkUI_TextEditorStyledStringController对象的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -5218,9 +5681,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_DeleteBackward(OH_ArkU
 
 
 
-#### OH_ArkUI_TextEditorParagraphStyle_SetTextAlign()
+### OH_ArkUI_TextEditorParagraphStyle_SetTextAlign()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_SetTextAlign(OH_ArkUI_TextEditorParagraphStyle* style, ArkUI_TextAlignment align)
@@ -5234,6 +5698,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_SetTextAlign(OH_ArkUI_TextEdit
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorParagraphStyle* style | 指向OH_ArkUI_TextEditorParagraphStyle对象的指针。 |
@@ -5242,6 +5707,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_SetTextAlign(OH_ArkUI_TextEdit
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -5249,9 +5715,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_SetTextAlign(OH_ArkUI_TextEdit
 
 
 
-#### OH_ArkUI_TextEditorParagraphStyle_GetTextAlign()
+### OH_ArkUI_TextEditorParagraphStyle_GetTextAlign()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_GetTextAlign(OH_ArkUI_TextEditorParagraphStyle* style, ArkUI_TextAlignment* align)
@@ -5265,6 +5732,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_GetTextAlign(OH_ArkUI_TextEdit
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorParagraphStyle* style | 指向OH_ArkUI_TextEditorParagraphStyle对象的指针。 |
@@ -5273,6 +5741,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_GetTextAlign(OH_ArkUI_TextEdit
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -5280,9 +5749,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_GetTextAlign(OH_ArkUI_TextEdit
 
 
 
-#### OH_ArkUI_TextEditorParagraphStyle_SetLeadingMarginPixelMap()
+### OH_ArkUI_TextEditorParagraphStyle_SetLeadingMarginPixelMap()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_SetLeadingMarginPixelMap(OH_ArkUI_TextEditorParagraphStyle* style, struct OH_PixelmapNative* pixelmap)
@@ -5296,6 +5766,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_SetLeadingMarginPixelMap(OH_Ar
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorParagraphStyle* style | 指向OH_ArkUI_TextEditorParagraphStyle对象的指针。 |
@@ -5304,6 +5775,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_SetLeadingMarginPixelMap(OH_Ar
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -5311,9 +5783,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_SetLeadingMarginPixelMap(OH_Ar
 
 
 
-#### OH_ArkUI_TextEditorParagraphStyle_GetLeadingMarginPixelMap()
+### OH_ArkUI_TextEditorParagraphStyle_GetLeadingMarginPixelMap()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_GetLeadingMarginPixelMap(OH_ArkUI_TextEditorParagraphStyle* style, struct OH_PixelmapNative** pixelmap)
@@ -5327,6 +5800,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_GetLeadingMarginPixelMap(OH_Ar
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorParagraphStyle* style | 指向OH_ArkUI_TextEditorParagraphStyle对象的指针。 |
@@ -5335,6 +5809,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_GetLeadingMarginPixelMap(OH_Ar
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -5342,9 +5817,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_GetLeadingMarginPixelMap(OH_Ar
 
 
 
-#### OH_ArkUI_TextEditorParagraphStyle_SetLeadingMarginWidth()
+### OH_ArkUI_TextEditorParagraphStyle_SetLeadingMarginWidth()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_SetLeadingMarginWidth(OH_ArkUI_TextEditorParagraphStyle* style, uint32_t width)
@@ -5358,6 +5834,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_SetLeadingMarginWidth(OH_ArkUI
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorParagraphStyle* style | 指向OH_ArkUI_TextEditorParagraphStyle对象的指针。 |
@@ -5366,6 +5843,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_SetLeadingMarginWidth(OH_ArkUI
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -5373,9 +5851,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_SetLeadingMarginWidth(OH_ArkUI
 
 
 
-#### OH_ArkUI_TextEditorParagraphStyle_GetLeadingMarginWidth()
+### OH_ArkUI_TextEditorParagraphStyle_GetLeadingMarginWidth()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_GetLeadingMarginWidth(OH_ArkUI_TextEditorParagraphStyle* style, uint32_t* width)
@@ -5389,6 +5868,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_GetLeadingMarginWidth(OH_ArkUI
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorParagraphStyle* style | 指向OH_ArkUI_TextEditorParagraphStyle对象的指针。 |
@@ -5397,6 +5877,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_GetLeadingMarginWidth(OH_ArkUI
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -5404,9 +5885,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_GetLeadingMarginWidth(OH_ArkUI
 
 
 
-#### OH_ArkUI_TextEditorParagraphStyle_SetLeadingMarginHeight()
+### OH_ArkUI_TextEditorParagraphStyle_SetLeadingMarginHeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_SetLeadingMarginHeight(OH_ArkUI_TextEditorParagraphStyle* style, uint32_t height)
@@ -5420,6 +5902,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_SetLeadingMarginHeight(OH_ArkU
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorParagraphStyle* style | 指向OH_ArkUI_TextEditorParagraphStyle对象的指针。 |
@@ -5428,6 +5911,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_SetLeadingMarginHeight(OH_ArkU
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -5435,9 +5919,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_SetLeadingMarginHeight(OH_ArkU
 
 
 
-#### OH_ArkUI_TextEditorParagraphStyle_GetLeadingMarginHeight()
+### OH_ArkUI_TextEditorParagraphStyle_GetLeadingMarginHeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_GetLeadingMarginHeight(OH_ArkUI_TextEditorParagraphStyle* style, uint32_t* height)
@@ -5451,6 +5936,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_GetLeadingMarginHeight(OH_ArkU
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorParagraphStyle* style | 指向OH_ArkUI_TextEditorParagraphStyle对象的指针。 |
@@ -5459,6 +5945,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_GetLeadingMarginHeight(OH_ArkU
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -5466,9 +5953,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_GetLeadingMarginHeight(OH_ArkU
 
 
 
-#### OH_ArkUI_TextEditorParagraphStyle_SetWordBreak()
+### OH_ArkUI_TextEditorParagraphStyle_SetWordBreak()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_SetWordBreak(OH_ArkUI_TextEditorParagraphStyle* style, ArkUI_WordBreak wordBreak)
@@ -5482,6 +5970,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_SetWordBreak(OH_ArkUI_TextEdit
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorParagraphStyle* style | 指向OH_ArkUI_TextEditorParagraphStyle对象的指针。 |
@@ -5490,6 +5979,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_SetWordBreak(OH_ArkUI_TextEdit
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -5497,9 +5987,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_SetWordBreak(OH_ArkUI_TextEdit
 
 
 
-#### OH_ArkUI_TextEditorParagraphStyle_GetWordBreak()
+### OH_ArkUI_TextEditorParagraphStyle_GetWordBreak()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_GetWordBreak(OH_ArkUI_TextEditorParagraphStyle* style, ArkUI_WordBreak* wordBreak)
@@ -5513,6 +6004,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_GetWordBreak(OH_ArkUI_TextEdit
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorParagraphStyle* style | 指向OH_ArkUI_TextEditorParagraphStyle对象的指针。 |
@@ -5521,6 +6013,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_GetWordBreak(OH_ArkUI_TextEdit
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -5528,9 +6021,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_GetWordBreak(OH_ArkUI_TextEdit
 
 
 
-#### OH_ArkUI_TextEditorParagraphStyle_SetLineBreakStrategy()
+### OH_ArkUI_TextEditorParagraphStyle_SetLineBreakStrategy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_SetLineBreakStrategy(OH_ArkUI_TextEditorParagraphStyle* style, OH_ArkUI_LineBreakStrategy lineBreakStrategy)
@@ -5544,6 +6038,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_SetLineBreakStrategy(OH_ArkUI_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorParagraphStyle* style | 指向OH_ArkUI_TextEditorParagraphStyle对象的指针。 |
@@ -5552,6 +6047,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_SetLineBreakStrategy(OH_ArkUI_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -5559,9 +6055,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_SetLineBreakStrategy(OH_ArkUI_
 
 
 
-#### OH_ArkUI_TextEditorParagraphStyle_GetLineBreakStrategy()
+### OH_ArkUI_TextEditorParagraphStyle_GetLineBreakStrategy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_GetLineBreakStrategy(OH_ArkUI_TextEditorParagraphStyle* style, OH_ArkUI_LineBreakStrategy* lineBreakStrategy)
@@ -5575,6 +6072,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_GetLineBreakStrategy(OH_ArkUI_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorParagraphStyle* style | 指向OH_ArkUI_TextEditorParagraphStyle对象的指针。 |
@@ -5583,6 +6081,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_GetLineBreakStrategy(OH_ArkUI_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -5590,9 +6089,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_GetLineBreakStrategy(OH_ArkUI_
 
 
 
-#### OH_ArkUI_TextEditorParagraphStyle_SetParagraphSpacing()
+### OH_ArkUI_TextEditorParagraphStyle_SetParagraphSpacing()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_SetParagraphSpacing(OH_ArkUI_TextEditorParagraphStyle* style, uint32_t paragraphSpacing)
@@ -5606,6 +6106,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_SetParagraphSpacing(OH_ArkUI_T
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorParagraphStyle* style | 指向OH_ArkUI_TextEditorParagraphStyle对象的指针。 |
@@ -5614,6 +6115,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_SetParagraphSpacing(OH_ArkUI_T
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -5621,9 +6123,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_SetParagraphSpacing(OH_ArkUI_T
 
 
 
-#### OH_ArkUI_TextEditorParagraphStyle_GetParagraphSpacing()
+### OH_ArkUI_TextEditorParagraphStyle_GetParagraphSpacing()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_GetParagraphSpacing(OH_ArkUI_TextEditorParagraphStyle* style, uint32_t* paragraphSpacing)
@@ -5637,6 +6140,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_GetParagraphSpacing(OH_ArkUI_T
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorParagraphStyle* style | 指向OH_ArkUI_TextEditorParagraphStyle对象的指针。 |
@@ -5645,6 +6149,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_GetParagraphSpacing(OH_ArkUI_T
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -5652,9 +6157,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_GetParagraphSpacing(OH_ArkUI_T
 
 
 
-#### OH_ArkUI_TextEditorParagraphStyle_SetTextVerticalAlign()
+### OH_ArkUI_TextEditorParagraphStyle_SetTextVerticalAlign()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_SetTextVerticalAlign(OH_ArkUI_TextEditorParagraphStyle* style, ArkUI_TextVerticalAlignment verticalAlignment)
@@ -5668,6 +6174,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_SetTextVerticalAlign(OH_ArkUI_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorParagraphStyle* style | 指向OH_ArkUI_TextEditorParagraphStyle对象的指针。 |
@@ -5676,6 +6183,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_SetTextVerticalAlign(OH_ArkUI_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -5683,9 +6191,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_SetTextVerticalAlign(OH_ArkUI_
 
 
 
-#### OH_ArkUI_TextEditorParagraphStyle_GetTextVerticalAlign()
+### OH_ArkUI_TextEditorParagraphStyle_GetTextVerticalAlign()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_GetTextVerticalAlign(OH_ArkUI_TextEditorParagraphStyle* style, ArkUI_TextVerticalAlignment* verticalAlignment)
@@ -5699,6 +6208,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_GetTextVerticalAlign(OH_ArkUI_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorParagraphStyle* style | 指向OH_ArkUI_TextEditorParagraphStyle对象的指针。 |
@@ -5707,6 +6217,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_GetTextVerticalAlign(OH_ArkUI_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -5714,9 +6225,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_GetTextVerticalAlign(OH_ArkUI_
 
 
 
-#### OH_ArkUI_TextEditorParagraphStyle_SetTextDirection()
+### OH_ArkUI_TextEditorParagraphStyle_SetTextDirection()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_SetTextDirection(OH_ArkUI_TextEditorParagraphStyle* style, ArkUI_TextDirection textDirection)
@@ -5730,6 +6242,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_SetTextDirection(OH_ArkUI_Text
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorParagraphStyle* style | 指向OH_ArkUI_TextEditorParagraphStyle对象的指针。 |
@@ -5738,6 +6251,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_SetTextDirection(OH_ArkUI_Text
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -5745,9 +6259,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_SetTextDirection(OH_ArkUI_Text
 
 
 
-#### OH_ArkUI_TextEditorParagraphStyle_GetTextDirection()
+### OH_ArkUI_TextEditorParagraphStyle_GetTextDirection()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_GetTextDirection(OH_ArkUI_TextEditorParagraphStyle* style, ArkUI_TextDirection* textDirection)
@@ -5761,6 +6276,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_GetTextDirection(OH_ArkUI_Text
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorParagraphStyle* style | 指向OH_ArkUI_TextEditorParagraphStyle对象的指针。 |
@@ -5769,6 +6285,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_GetTextDirection(OH_ArkUI_Text
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -5776,9 +6293,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorParagraphStyle_GetTextDirection(OH_ArkUI_Text
 
 
 
-#### OH_ArkUI_TextEditorStyledStringController_SetTypingParagraphStyle()
+### OH_ArkUI_TextEditorStyledStringController_SetTypingParagraphStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_SetTypingParagraphStyle(OH_ArkUI_TextEditorStyledStringController* controller, OH_ArkUI_TextEditorParagraphStyle* style)
@@ -5792,6 +6310,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_SetTypingParagraphStyl
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorStyledStringController* controller | 指向OH_ArkUI_TextEditorStyledStringController对象的指针。 |
@@ -5800,6 +6319,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_SetTypingParagraphStyl
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -5807,9 +6327,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_SetTypingParagraphStyl
 
 
 
-#### OH_ArkUI_TextEditorTextStyle_SetFontColor()
+### OH_ArkUI_TextEditorTextStyle_SetFontColor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetFontColor(OH_ArkUI_TextEditorTextStyle* style, uint32_t color)
@@ -5823,6 +6344,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetFontColor(OH_ArkUI_TextEditorTex
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorTextStyle* style | TextEditor组件文本样式。 |
@@ -5831,6 +6353,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetFontColor(OH_ArkUI_TextEditorTex
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -5838,9 +6361,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetFontColor(OH_ArkUI_TextEditorTex
 
 
 
-#### OH_ArkUI_TextEditorTextStyle_GetFontColor()
+### OH_ArkUI_TextEditorTextStyle_GetFontColor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetFontColor(OH_ArkUI_TextEditorTextStyle* style, uint32_t* color)
@@ -5854,6 +6378,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetFontColor(OH_ArkUI_TextEditorTex
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorTextStyle* style | TextEditor组件文本样式。 |
@@ -5862,6 +6387,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetFontColor(OH_ArkUI_TextEditorTex
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -5869,9 +6395,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetFontColor(OH_ArkUI_TextEditorTex
 
 
 
-#### OH_ArkUI_TextEditorTextStyle_SetFontSize()
+### OH_ArkUI_TextEditorTextStyle_SetFontSize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetFontSize(OH_ArkUI_TextEditorTextStyle* style, float size)
@@ -5885,6 +6412,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetFontSize(OH_ArkUI_TextEditorText
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorTextStyle* style | TextEditor组件文本样式。 |
@@ -5893,6 +6421,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetFontSize(OH_ArkUI_TextEditorText
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -5900,9 +6429,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetFontSize(OH_ArkUI_TextEditorText
 
 
 
-#### OH_ArkUI_TextEditorTextStyle_GetFontSize()
+### OH_ArkUI_TextEditorTextStyle_GetFontSize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetFontSize(OH_ArkUI_TextEditorTextStyle* style, float* size)
@@ -5916,6 +6446,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetFontSize(OH_ArkUI_TextEditorText
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorTextStyle* style | TextEditor组件文本样式。 |
@@ -5924,6 +6455,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetFontSize(OH_ArkUI_TextEditorText
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -5931,9 +6463,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetFontSize(OH_ArkUI_TextEditorText
 
 
 
-#### OH_ArkUI_TextEditorTextStyle_SetFontStyle()
+### OH_ArkUI_TextEditorTextStyle_SetFontStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetFontStyle(OH_ArkUI_TextEditorTextStyle* style, ArkUI_FontStyle fontStyle)
@@ -5947,6 +6480,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetFontStyle(OH_ArkUI_TextEditorTex
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorTextStyle* style | TextEditor组件文本样式。 |
@@ -5955,6 +6489,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetFontStyle(OH_ArkUI_TextEditorTex
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -5962,9 +6497,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetFontStyle(OH_ArkUI_TextEditorTex
 
 
 
-#### OH_ArkUI_TextEditorTextStyle_GetFontStyle()
+### OH_ArkUI_TextEditorTextStyle_GetFontStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetFontStyle(OH_ArkUI_TextEditorTextStyle* style, ArkUI_FontStyle* fontStyle)
@@ -5978,6 +6514,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetFontStyle(OH_ArkUI_TextEditorTex
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorTextStyle* style | TextEditor组件文本样式。 |
@@ -5986,6 +6523,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetFontStyle(OH_ArkUI_TextEditorTex
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -5993,9 +6531,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetFontStyle(OH_ArkUI_TextEditorTex
 
 
 
-#### OH_ArkUI_TextEditorTextStyle_SetFontWeight()
+### OH_ArkUI_TextEditorTextStyle_SetFontWeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetFontWeight(OH_ArkUI_TextEditorTextStyle* style, uint32_t fontWeight)
@@ -6009,6 +6548,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetFontWeight(OH_ArkUI_TextEditorTe
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorTextStyle* style | TextEditor组件文本样式。 |
@@ -6017,6 +6557,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetFontWeight(OH_ArkUI_TextEditorTe
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -6024,9 +6565,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetFontWeight(OH_ArkUI_TextEditorTe
 
 
 
-#### OH_ArkUI_TextEditorTextStyle_GetFontWeight()
+### OH_ArkUI_TextEditorTextStyle_GetFontWeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetFontWeight(OH_ArkUI_TextEditorTextStyle* style, uint32_t* fontWeight)
@@ -6040,6 +6582,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetFontWeight(OH_ArkUI_TextEditorTe
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorTextStyle* style | TextEditor组件文本样式。 |
@@ -6048,6 +6591,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetFontWeight(OH_ArkUI_TextEditorTe
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -6055,9 +6599,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetFontWeight(OH_ArkUI_TextEditorTe
 
 
 
-#### OH_ArkUI_TextEditorTextStyle_SetFontFamily()
+### OH_ArkUI_TextEditorTextStyle_SetFontFamily()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetFontFamily(OH_ArkUI_TextEditorTextStyle* style, const char* fontFamily)
@@ -6071,6 +6616,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetFontFamily(OH_ArkUI_TextEditorTe
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorTextStyle* style | TextEditor组件文本样式。 |
@@ -6079,6 +6625,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetFontFamily(OH_ArkUI_TextEditorTe
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -6086,9 +6633,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetFontFamily(OH_ArkUI_TextEditorTe
 
 
 
-#### OH_ArkUI_TextEditorTextStyle_GetFontFamily()
+### OH_ArkUI_TextEditorTextStyle_GetFontFamily()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetFontFamily(OH_ArkUI_TextEditorTextStyle* style, char* buffer, int32_t bufferSize, int32_t* writeLength)
@@ -6102,6 +6650,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetFontFamily(OH_ArkUI_TextEditorTe
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorTextStyle* style | TextEditor组件文本样式。 |
@@ -6112,6 +6661,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetFontFamily(OH_ArkUI_TextEditorTe
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -6119,9 +6669,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetFontFamily(OH_ArkUI_TextEditorTe
 
 
 
-#### OH_ArkUI_TextEditorTextStyle_SetDecoration()
+### OH_ArkUI_TextEditorTextStyle_SetDecoration()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetDecoration(OH_ArkUI_TextEditorTextStyle* style, OH_ArkUI_DecorationStyleOptions* options)
@@ -6135,6 +6686,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetDecoration(OH_ArkUI_TextEditorTe
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorTextStyle* style | TextEditor组件文本样式。 |
@@ -6143,6 +6695,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetDecoration(OH_ArkUI_TextEditorTe
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -6150,9 +6703,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetDecoration(OH_ArkUI_TextEditorTe
 
 
 
-#### OH_ArkUI_TextEditorTextStyle_GetDecoration()
+### OH_ArkUI_TextEditorTextStyle_GetDecoration()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetDecoration(OH_ArkUI_TextEditorTextStyle* style, OH_ArkUI_DecorationStyleOptions* options)
@@ -6166,6 +6720,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetDecoration(OH_ArkUI_TextEditorTe
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorTextStyle* style | TextEditor组件文本样式。 |
@@ -6174,6 +6729,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetDecoration(OH_ArkUI_TextEditorTe
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -6181,9 +6737,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetDecoration(OH_ArkUI_TextEditorTe
 
 
 
-#### OH_ArkUI_TextEditorTextStyle_SetTextShadows()
+### OH_ArkUI_TextEditorTextStyle_SetTextShadows()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetTextShadows(OH_ArkUI_TextEditorTextStyle* style, const OH_ArkUI_ShadowOptions** options, int32_t length)
@@ -6197,6 +6754,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetTextShadows(OH_ArkUI_TextEditorT
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorTextStyle* style | TextEditor组件文本样式。 |
@@ -6206,6 +6764,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetTextShadows(OH_ArkUI_TextEditorT
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -6213,9 +6772,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetTextShadows(OH_ArkUI_TextEditorT
 
 
 
-#### OH_ArkUI_TextEditorTextStyle_GetTextShadows()
+### OH_ArkUI_TextEditorTextStyle_GetTextShadows()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetTextShadows(OH_ArkUI_TextEditorTextStyle* style, OH_ArkUI_ShadowOptions** shadowOptions, uint32_t shadowOptionsSize, uint32_t* writeLength)
@@ -6229,6 +6789,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetTextShadows(OH_ArkUI_TextEditorT
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorTextStyle* style | TextEditor组件文本样式。 |
@@ -6239,6 +6800,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetTextShadows(OH_ArkUI_TextEditorT
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -6246,9 +6808,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetTextShadows(OH_ArkUI_TextEditorT
 
 
 
-#### OH_ArkUI_TextEditorTextStyle_SetLineHeight()
+### OH_ArkUI_TextEditorTextStyle_SetLineHeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetLineHeight(OH_ArkUI_TextEditorTextStyle* style, int32_t lineHeight)
@@ -6262,6 +6825,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetLineHeight(OH_ArkUI_TextEditorTe
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorTextStyle* style | TextEditor组件文本样式。 |
@@ -6270,6 +6834,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetLineHeight(OH_ArkUI_TextEditorTe
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -6277,9 +6842,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetLineHeight(OH_ArkUI_TextEditorTe
 
 
 
-#### OH_ArkUI_TextEditorTextStyle_GetLineHeight()
+### OH_ArkUI_TextEditorTextStyle_GetLineHeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetLineHeight(OH_ArkUI_TextEditorTextStyle* style, int32_t* lineHeight)
@@ -6293,6 +6859,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetLineHeight(OH_ArkUI_TextEditorTe
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorTextStyle* style | TextEditor组件文本样式。 |
@@ -6301,6 +6868,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetLineHeight(OH_ArkUI_TextEditorTe
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -6308,9 +6876,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetLineHeight(OH_ArkUI_TextEditorTe
 
 
 
-#### OH_ArkUI_TextEditorTextStyle_SetLetterSpacing()
+### OH_ArkUI_TextEditorTextStyle_SetLetterSpacing()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetLetterSpacing(OH_ArkUI_TextEditorTextStyle* style, int32_t letterSpacing)
@@ -6324,6 +6893,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetLetterSpacing(OH_ArkUI_TextEdito
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorTextStyle* style | TextEditor组件文本样式。 |
@@ -6332,6 +6902,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetLetterSpacing(OH_ArkUI_TextEdito
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -6339,9 +6910,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetLetterSpacing(OH_ArkUI_TextEdito
 
 
 
-#### OH_ArkUI_TextEditorTextStyle_GetLetterSpacing()
+### OH_ArkUI_TextEditorTextStyle_GetLetterSpacing()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetLetterSpacing(OH_ArkUI_TextEditorTextStyle* style, int32_t* letterSpacing)
@@ -6355,6 +6927,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetLetterSpacing(OH_ArkUI_TextEdito
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorTextStyle* style | TextEditor组件文本样式。 |
@@ -6363,6 +6936,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetLetterSpacing(OH_ArkUI_TextEdito
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -6370,9 +6944,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetLetterSpacing(OH_ArkUI_TextEdito
 
 
 
-#### OH_ArkUI_TextEditorTextStyle_SetFontFeature()
+### OH_ArkUI_TextEditorTextStyle_SetFontFeature()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetFontFeature(OH_ArkUI_TextEditorTextStyle* style, const char* fontFeature)
@@ -6386,6 +6961,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetFontFeature(OH_ArkUI_TextEditorT
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorTextStyle* style | TextEditor组件文本样式。 |
@@ -6394,6 +6970,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetFontFeature(OH_ArkUI_TextEditorT
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -6401,9 +6978,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetFontFeature(OH_ArkUI_TextEditorT
 
 
 
-#### OH_ArkUI_TextEditorTextStyle_GetFontFeature()
+### OH_ArkUI_TextEditorTextStyle_GetFontFeature()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetFontFeature(OH_ArkUI_TextEditorTextStyle* style, char* buffer, int32_t bufferSize, int32_t* writeLength)
@@ -6417,6 +6995,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetFontFeature(OH_ArkUI_TextEditorT
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorTextStyle* style | TextEditor组件文本样式。 |
@@ -6427,6 +7006,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetFontFeature(OH_ArkUI_TextEditorT
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -6434,9 +7014,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetFontFeature(OH_ArkUI_TextEditorT
 
 
 
-#### OH_ArkUI_TextEditorTextStyle_SetHalfLeading()
+### OH_ArkUI_TextEditorTextStyle_SetHalfLeading()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetHalfLeading(OH_ArkUI_TextEditorTextStyle* style, bool halfLeading)
@@ -6450,6 +7031,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetHalfLeading(OH_ArkUI_TextEditorT
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorTextStyle* style | TextEditor组件文本样式。 |
@@ -6458,6 +7040,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetHalfLeading(OH_ArkUI_TextEditorT
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -6465,9 +7048,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetHalfLeading(OH_ArkUI_TextEditorT
 
 
 
-#### OH_ArkUI_TextEditorTextStyle_GetHalfLeading()
+### OH_ArkUI_TextEditorTextStyle_GetHalfLeading()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetHalfLeading(OH_ArkUI_TextEditorTextStyle* style, bool* halfLeading)
@@ -6481,6 +7065,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetHalfLeading(OH_ArkUI_TextEditorT
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorTextStyle* style | TextEditor组件文本样式。 |
@@ -6489,6 +7074,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetHalfLeading(OH_ArkUI_TextEditorT
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -6496,9 +7082,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetHalfLeading(OH_ArkUI_TextEditorT
 
 
 
-#### OH_ArkUI_TextEditorTextStyle_SetTextBackgroundColor()
+### OH_ArkUI_TextEditorTextStyle_SetTextBackgroundColor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetTextBackgroundColor(OH_ArkUI_TextEditorTextStyle* style, uint32_t color)
@@ -6512,6 +7099,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetTextBackgroundColor(OH_ArkUI_Tex
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorTextStyle* style | TextEditor组件文本样式。 |
@@ -6520,6 +7108,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetTextBackgroundColor(OH_ArkUI_Tex
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -6527,9 +7116,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetTextBackgroundColor(OH_ArkUI_Tex
 
 
 
-#### OH_ArkUI_TextEditorTextStyle_GetTextBackgroundColor()
+### OH_ArkUI_TextEditorTextStyle_GetTextBackgroundColor()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetTextBackgroundColor(OH_ArkUI_TextEditorTextStyle* style, uint32_t* color)
@@ -6543,6 +7133,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetTextBackgroundColor(OH_ArkUI_Tex
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorTextStyle* style | TextEditor组件文本样式。 |
@@ -6551,6 +7142,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetTextBackgroundColor(OH_ArkUI_Tex
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -6558,9 +7150,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetTextBackgroundColor(OH_ArkUI_Tex
 
 
 
-#### OH_ArkUI_TextEditorTextStyle_SetTextBackgroundRadius()
+### OH_ArkUI_TextEditorTextStyle_SetTextBackgroundRadius()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetTextBackgroundRadius(OH_ArkUI_TextEditorTextStyle* style, float topLeft, float topRight, float bottomLeft, float bottomRight)
@@ -6574,6 +7167,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetTextBackgroundRadius(OH_ArkUI_Te
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorTextStyle* style | TextEditor组件文本样式。 |
@@ -6585,6 +7179,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetTextBackgroundRadius(OH_ArkUI_Te
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -6592,9 +7187,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_SetTextBackgroundRadius(OH_ArkUI_Te
 
 
 
-#### OH_ArkUI_TextEditorTextStyle_GetTextBackgroundRadius()
+### OH_ArkUI_TextEditorTextStyle_GetTextBackgroundRadius()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetTextBackgroundRadius(OH_ArkUI_TextEditorTextStyle* style, float* topLeft, float* topRight, float* bottomLeft, float* bottomRight)
@@ -6608,6 +7204,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetTextBackgroundRadius(OH_ArkUI_Te
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorTextStyle* style | TextEditor组件文本样式。 |
@@ -6619,6 +7216,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetTextBackgroundRadius(OH_ArkUI_Te
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -6626,9 +7224,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorTextStyle_GetTextBackgroundRadius(OH_ArkUI_Te
 
 
 
-#### OH_ArkUI_TextEditorStyledStringController_SetTypingStyle()
+### OH_ArkUI_TextEditorStyledStringController_SetTypingStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_SetTypingStyle(OH_ArkUI_TextEditorStyledStringController* controller, OH_ArkUI_TextEditorTextStyle* style)
@@ -6642,6 +7241,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_SetTypingStyle(OH_ArkU
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorStyledStringController* controller | 指向OH_ArkUI_TextEditorStyledStringController对象的指针。 |
@@ -6650,6 +7250,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_SetTypingStyle(OH_ArkU
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -6657,9 +7258,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_SetTypingStyle(OH_ArkU
 
 
 
-#### OH_ArkUI_TextEditorStyledStringController_GetTypingStyle()
+### OH_ArkUI_TextEditorStyledStringController_GetTypingStyle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_GetTypingStyle(OH_ArkUI_TextEditorStyledStringController* controller, OH_ArkUI_TextEditorTextStyle* style)
@@ -6673,6 +7275,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_GetTypingStyle(OH_ArkU
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorStyledStringController* controller | 指向OH_ArkUI_TextEditorStyledStringController对象的指针。 |
@@ -6681,6 +7284,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_GetTypingStyle(OH_ArkU
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -6688,9 +7292,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_GetTypingStyle(OH_ArkU
 
 
 
-#### OH_ArkUI_TextEditorSelectionMenuOptions_SetSpanType()
+### OH_ArkUI_TextEditorSelectionMenuOptions_SetSpanType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_SetSpanType(OH_ArkUI_TextEditorSelectionMenuOptions* options, OH_ArkUI_TextEditorSpanType textEditorSpanType)
@@ -6704,6 +7309,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_SetSpanType(OH_ArkUI_Tex
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorSelectionMenuOptions* options | 指向OH_ArkUI_TextEditorSelectionMenuOptions对象的指针。 |
@@ -6712,6 +7318,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_SetSpanType(OH_ArkUI_Tex
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -6719,9 +7326,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_SetSpanType(OH_ArkUI_Tex
 
 
 
-#### OH_ArkUI_TextEditorSelectionMenuOptions_GetSpanType()
+### OH_ArkUI_TextEditorSelectionMenuOptions_GetSpanType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_GetSpanType(OH_ArkUI_TextEditorSelectionMenuOptions* options, OH_ArkUI_TextEditorSpanType* textEditorSpanType)
@@ -6735,6 +7343,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_GetSpanType(OH_ArkUI_Tex
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorSelectionMenuOptions* options | 指向OH_ArkUI_TextEditorSelectionMenuOptions对象的指针。 |
@@ -6743,6 +7352,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_GetSpanType(OH_ArkUI_Tex
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -6750,9 +7360,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_GetSpanType(OH_ArkUI_Tex
 
 
 
-#### OH_ArkUI_TextEditorSelectionMenuOptions_SetContentNode()
+### OH_ArkUI_TextEditorSelectionMenuOptions_SetContentNode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_SetContentNode(OH_ArkUI_TextEditorSelectionMenuOptions* options, ArkUI_NodeHandle node)
@@ -6766,6 +7377,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_SetContentNode(OH_ArkUI_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorSelectionMenuOptions* options | 指向OH_ArkUI_TextEditorSelectionMenuOptions对象的指针。 |
@@ -6774,6 +7386,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_SetContentNode(OH_ArkUI_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -6781,9 +7394,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_SetContentNode(OH_ArkUI_
 
 
 
-#### OH_ArkUI_TextEditorSelectionMenuOptions_GetContentNode()
+### OH_ArkUI_TextEditorSelectionMenuOptions_GetContentNode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_GetContentNode(OH_ArkUI_TextEditorSelectionMenuOptions* options, ArkUI_NodeHandle* node)
@@ -6797,6 +7411,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_GetContentNode(OH_ArkUI_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorSelectionMenuOptions* options | 指向OH_ArkUI_TextEditorSelectionMenuOptions对象的指针。 |
@@ -6805,6 +7420,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_GetContentNode(OH_ArkUI_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -6812,9 +7428,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_GetContentNode(OH_ArkUI_
 
 
 
-#### OH_ArkUI_TextEditorSelectionMenuOptions_SetResponseType()
+### OH_ArkUI_TextEditorSelectionMenuOptions_SetResponseType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_SetResponseType(OH_ArkUI_TextEditorSelectionMenuOptions* options, OH_ArkUI_TextEditorResponseType responseType)
@@ -6828,6 +7445,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_SetResponseType(OH_ArkUI
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorSelectionMenuOptions* options | 指向OH_ArkUI_TextEditorSelectionMenuOptions对象的指针。 |
@@ -6836,6 +7454,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_SetResponseType(OH_ArkUI
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -6843,9 +7462,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_SetResponseType(OH_ArkUI
 
 
 
-#### OH_ArkUI_TextEditorSelectionMenuOptions_GetResponseType()
+### OH_ArkUI_TextEditorSelectionMenuOptions_GetResponseType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_GetResponseType(OH_ArkUI_TextEditorSelectionMenuOptions* options, OH_ArkUI_TextEditorResponseType* responseType)
@@ -6859,6 +7479,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_GetResponseType(OH_ArkUI
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorSelectionMenuOptions* options | 指向OH_ArkUI_TextEditorSelectionMenuOptions对象的指针。 |
@@ -6867,6 +7488,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_GetResponseType(OH_ArkUI
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -6874,9 +7496,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_GetResponseType(OH_ArkUI
 
 
 
-#### OH_ArkUI_TextEditorSelectionMenuOptions_SetMenuType()
+### OH_ArkUI_TextEditorSelectionMenuOptions_SetMenuType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_SetMenuType(OH_ArkUI_TextEditorSelectionMenuOptions* options, OH_ArkUI_TextMenuType menuType)
@@ -6890,6 +7513,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_SetMenuType(OH_ArkUI_Tex
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorSelectionMenuOptions* options | 指向OH_ArkUI_TextEditorSelectionMenuOptions对象的指针。 |
@@ -6898,6 +7522,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_SetMenuType(OH_ArkUI_Tex
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -6905,9 +7530,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_SetMenuType(OH_ArkUI_Tex
 
 
 
-#### OH_ArkUI_TextEditorSelectionMenuOptions_GetMenuType()
+### OH_ArkUI_TextEditorSelectionMenuOptions_GetMenuType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_GetMenuType(OH_ArkUI_TextEditorSelectionMenuOptions* options, OH_ArkUI_TextMenuType* menuType)
@@ -6921,6 +7547,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_GetMenuType(OH_ArkUI_Tex
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorSelectionMenuOptions* options | 指向OH_ArkUI_TextEditorSelectionMenuOptions对象的指针。 |
@@ -6929,6 +7556,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_GetMenuType(OH_ArkUI_Tex
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -6936,9 +7564,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_GetMenuType(OH_ArkUI_Tex
 
 
 
-#### OH_ArkUI_TextEditorSelectionMenuOptions_RegisterOnMenuShowCallback()
+### OH_ArkUI_TextEditorSelectionMenuOptions_RegisterOnMenuShowCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_RegisterOnMenuShowCallback(OH_ArkUI_TextEditorSelectionMenuOptions* options, void* userData, void (*callback)(int32_t start, int32_t end, void* callbackUserData))
@@ -6952,6 +7581,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_RegisterOnMenuShowCallba
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorSelectionMenuOptions* options | 指向OH_ArkUI_TextEditorSelectionMenuOptions对象的指针。 |
@@ -6961,6 +7591,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_RegisterOnMenuShowCallba
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -6968,9 +7599,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_RegisterOnMenuShowCallba
 
 
 
-#### OH_ArkUI_TextEditorSelectionMenuOptions_RegisterOnMenuHideCallback()
+### OH_ArkUI_TextEditorSelectionMenuOptions_RegisterOnMenuHideCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_RegisterOnMenuHideCallback(OH_ArkUI_TextEditorSelectionMenuOptions* options, void* userData, void (*callback)(int32_t start, int32_t end, void* callbackUserData))
@@ -6984,6 +7616,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_RegisterOnMenuHideCallba
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorSelectionMenuOptions* options | 指向OH_ArkUI_TextEditorSelectionMenuOptions对象的指针。 |
@@ -6993,6 +7626,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_RegisterOnMenuHideCallba
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -7000,9 +7634,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_RegisterOnMenuHideCallba
 
 
 
-#### OH_ArkUI_TextEditorSelectionMenuOptions_RegisterOnMenuAppearCallback()
+### OH_ArkUI_TextEditorSelectionMenuOptions_RegisterOnMenuAppearCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_RegisterOnMenuAppearCallback(OH_ArkUI_TextEditorSelectionMenuOptions* options, void* userData, void (*callback)(int32_t start, int32_t end, void* callbackUserData))
@@ -7016,6 +7651,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_RegisterOnMenuAppearCall
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorSelectionMenuOptions* options | 指向OH_ArkUI_TextEditorSelectionMenuOptions对象的指针。 |
@@ -7025,6 +7661,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_RegisterOnMenuAppearCall
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -7032,9 +7669,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_RegisterOnMenuAppearCall
 
 
 
-#### OH_ArkUI_TextEditorSelectionMenuOptions_RegisterOnMenuDisappearCallback()
+### OH_ArkUI_TextEditorSelectionMenuOptions_RegisterOnMenuDisappearCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_RegisterOnMenuDisappearCallback(OH_ArkUI_TextEditorSelectionMenuOptions* options, void* userData, void (*callback)(void* callbackUserData))
@@ -7048,6 +7686,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_RegisterOnMenuDisappearC
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorSelectionMenuOptions* options | 指向OH_ArkUI_TextEditorSelectionMenuOptions对象的指针。 |
@@ -7057,6 +7696,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_RegisterOnMenuDisappearC
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -7064,9 +7704,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_RegisterOnMenuDisappearC
 
 
 
-#### OH_ArkUI_TextEditorSelectionMenuOptions_SetHapticFeedbackMode()
+### OH_ArkUI_TextEditorSelectionMenuOptions_SetHapticFeedbackMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_SetHapticFeedbackMode(OH_ArkUI_TextEditorSelectionMenuOptions* options, OH_ArkUI_HapticFeedbackMode mode)
@@ -7080,6 +7721,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_SetHapticFeedbackMode(OH
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorSelectionMenuOptions* options | 指向OH_ArkUI_TextEditorSelectionMenuOptions对象的指针。 |
@@ -7088,6 +7730,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_SetHapticFeedbackMode(OH
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -7095,9 +7738,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_SetHapticFeedbackMode(OH
 
 
 
-#### OH_ArkUI_TextEditorSelectionMenuOptions_GetHapticFeedbackMode()
+### OH_ArkUI_TextEditorSelectionMenuOptions_GetHapticFeedbackMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_GetHapticFeedbackMode(OH_ArkUI_TextEditorSelectionMenuOptions* options, OH_ArkUI_HapticFeedbackMode* mode)
@@ -7111,6 +7755,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_GetHapticFeedbackMode(OH
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorSelectionMenuOptions* options | 指向OH_ArkUI_TextEditorSelectionMenuOptions对象的指针。 |
@@ -7119,6 +7764,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_GetHapticFeedbackMode(OH
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -7126,9 +7772,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorSelectionMenuOptions_GetHapticFeedbackMode(OH
 
 
 
-#### OH_ArkUI_TextEditorStyledStringController_CloseSelectionMenu()
+### OH_ArkUI_TextEditorStyledStringController_CloseSelectionMenu()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_CloseSelectionMenu(OH_ArkUI_TextEditorStyledStringController* controller)
@@ -7142,12 +7789,14 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_CloseSelectionMenu(OH_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextEditorStyledStringController* controller | 指向OH_ArkUI_TextEditorStyledStringController对象的指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -7156,9 +7805,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_CloseSelectionMenu(OH_
 
 
 
-#### OH_ArkUI_TextEditorStyledStringController_GetSelection()
+### OH_ArkUI_TextEditorStyledStringController_GetSelection()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_GetSelection(const OH_ArkUI_TextEditorStyledStringController* controller, uint32_t* start, uint32_t* end)
@@ -7172,6 +7822,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_GetSelection(const OH_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_TextEditorStyledStringController* controller | 指向OH_ArkUI_TextEditorStyledStringController对象的指针。 |
@@ -7181,6 +7832,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_GetSelection(const OH_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -7188,9 +7840,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_GetSelection(const OH_
 
 
 
-#### OH_ArkUI_TextEditorStyledStringController_SetStyledString()
+### OH_ArkUI_TextEditorStyledStringController_SetStyledString()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_SetStyledString(const OH_ArkUI_TextEditorStyledStringController* controller, const ArkUI_StyledString_Descriptor* descriptor)
@@ -7204,6 +7857,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_SetStyledString(const 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_TextEditorStyledStringController* controller | 指向OH_ArkUI_TextEditorStyledStringController对象的指针。 |
@@ -7212,6 +7866,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_SetStyledString(const 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -7219,9 +7874,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_SetStyledString(const 
 
 
 
-#### OH_ArkUI_TextEditorStyledStringController_GetStyledString()
+### OH_ArkUI_TextEditorStyledStringController_GetStyledString()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_GetStyledString(const OH_ArkUI_TextEditorStyledStringController* controller, ArkUI_StyledString_Descriptor* descriptor)
@@ -7235,6 +7891,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_GetStyledString(const 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_TextEditorStyledStringController* controller | 指向OH_ArkUI_TextEditorStyledStringController对象的指针。 |
@@ -7243,6 +7900,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_GetStyledString(const 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -7250,9 +7908,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_GetStyledString(const 
 
 
 
-#### OH_ArkUI_TextEditorStyledStringController_SetStyledPlaceholder()
+### OH_ArkUI_TextEditorStyledStringController_SetStyledPlaceholder()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_SetStyledPlaceholder(const OH_ArkUI_TextEditorStyledStringController* controller, const ArkUI_StyledString_Descriptor* descriptor)
@@ -7266,6 +7925,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_SetStyledPlaceholder(c
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_TextEditorStyledStringController* controller | 指向OH_ArkUI_TextEditorStyledStringController对象的指针。 |
@@ -7274,6 +7934,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_SetStyledPlaceholder(c
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -7281,9 +7942,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_SetStyledPlaceholder(c
 
 
 
-#### OH_ArkUI_TextEditorStyledStringController_ScrollToVisible()
+### OH_ArkUI_TextEditorStyledStringController_ScrollToVisible()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_ScrollToVisible(const OH_ArkUI_TextEditorStyledStringController* controller, int32_t start, int32_t end)
@@ -7297,6 +7959,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_ScrollToVisible(const 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_TextEditorStyledStringController* controller | 指向OH_ArkUI_TextEditorStyledStringController对象的指针。 |
@@ -7306,6 +7969,7 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_ScrollToVisible(const 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果码。 若操作成功，返回ARKUI_ERROR_CODE_NO_ERROR。 若参数异常，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -7313,9 +7977,10 @@ ArkUI_ErrorCode OH_ArkUI_TextEditorStyledStringController_ScrollToVisible(const 
 
 
 
-#### OH_ArkUI_PickerIndicatorStyle_ConfigureBackground()
+### OH_ArkUI_PickerIndicatorStyle_ConfigureBackground()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_PickerIndicatorStyle_ConfigureBackground(ArkUI_PickerIndicatorStyle* style, ArkUI_PickerIndicatorBackground* background)
@@ -7329,6 +7994,7 @@ ArkUI_ErrorCode OH_ArkUI_PickerIndicatorStyle_ConfigureBackground(ArkUI_PickerIn
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_PickerIndicatorStyle* style | 选中项指示器样式ArkUI_PickerIndicatorStyle的实例。 |
@@ -7337,6 +8003,7 @@ ArkUI_ErrorCode OH_ArkUI_PickerIndicatorStyle_ConfigureBackground(ArkUI_PickerIn
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -7344,9 +8011,10 @@ ArkUI_ErrorCode OH_ArkUI_PickerIndicatorStyle_ConfigureBackground(ArkUI_PickerIn
 
 
 
-#### OH_ArkUI_PickerIndicatorStyle_ConfigureDivider()
+### OH_ArkUI_PickerIndicatorStyle_ConfigureDivider()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_PickerIndicatorStyle_ConfigureDivider(ArkUI_PickerIndicatorStyle* style, ArkUI_PickerIndicatorDivider* divider)
@@ -7360,6 +8028,7 @@ ArkUI_ErrorCode OH_ArkUI_PickerIndicatorStyle_ConfigureDivider(ArkUI_PickerIndic
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_PickerIndicatorStyle* style | 选中项指示器样式ArkUI_PickerIndicatorStyle的实例。 |
@@ -7368,6 +8037,7 @@ ArkUI_ErrorCode OH_ArkUI_PickerIndicatorStyle_ConfigureDivider(ArkUI_PickerIndic
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -7375,9 +8045,10 @@ ArkUI_ErrorCode OH_ArkUI_PickerIndicatorStyle_ConfigureDivider(ArkUI_PickerIndic
 
 
 
-#### OH_ArkUI_TextController_SetStyledString()
+### OH_ArkUI_TextController_SetStyledString()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_TextController_SetStyledString(OH_ArkUI_TextController* controller, ArkUI_StyledString_Descriptor* descriptor)
@@ -7391,6 +8062,7 @@ ArkUI_ErrorCode OH_ArkUI_TextController_SetStyledString(OH_ArkUI_TextController*
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_TextController* controller | 指向OH_ArkUI_TextController对象的指针。 |
@@ -7399,6 +8071,7 @@ ArkUI_ErrorCode OH_ArkUI_TextController_SetStyledString(OH_ArkUI_TextController*
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回结果。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 函数参数异常。 |
@@ -7406,9 +8079,10 @@ ArkUI_ErrorCode OH_ArkUI_TextController_SetStyledString(OH_ArkUI_TextController*
 
 
 
-#### OH_ArkUI_LinearGradientOptions_Create()
+### OH_ArkUI_LinearGradientOptions_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_ArkUI_LinearGradientOptions* OH_ArkUI_LinearGradientOptions_Create()
@@ -7422,6 +8096,7 @@ OH_ArkUI_LinearGradientOptions* OH_ArkUI_LinearGradientOptions_Create()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_ArkUI_LinearGradientOptions* | 指向OH_ArkUI_LinearGradientOptions*的指针。 |
@@ -7429,9 +8104,10 @@ OH_ArkUI_LinearGradientOptions* OH_ArkUI_LinearGradientOptions_Create()
 
 
 
-#### OH_ArkUI_LinearGradientOptions_Destroy()
+### OH_ArkUI_LinearGradientOptions_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_LinearGradientOptions_Destroy(OH_ArkUI_LinearGradientOptions* options)
@@ -7445,6 +8121,7 @@ void OH_ArkUI_LinearGradientOptions_Destroy(OH_ArkUI_LinearGradientOptions* opti
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_LinearGradientOptions* options | 指向OH_ArkUI_LinearGradientOptions对象的指针。 |
@@ -7452,9 +8129,10 @@ void OH_ArkUI_LinearGradientOptions_Destroy(OH_ArkUI_LinearGradientOptions* opti
 
 
 
-#### OH_ArkUI_LinearGradientOptions_SetAngle()
+### OH_ArkUI_LinearGradientOptions_SetAngle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_LinearGradientOptions_SetAngle(OH_ArkUI_LinearGradientOptions* options, float angle)
@@ -7468,6 +8146,7 @@ ArkUI_ErrorCode OH_ArkUI_LinearGradientOptions_SetAngle(OH_ArkUI_LinearGradientO
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_LinearGradientOptions* options | 指向OH_ArkUI_LinearGradientOptions对象的指针。 |
@@ -7476,6 +8155,7 @@ ArkUI_ErrorCode OH_ArkUI_LinearGradientOptions_SetAngle(OH_ArkUI_LinearGradientO
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 操作结果码。 操作成功时，返回ARKUI_ERROR_CODE_NO_ERROR。 参数异常时，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -7483,9 +8163,10 @@ ArkUI_ErrorCode OH_ArkUI_LinearGradientOptions_SetAngle(OH_ArkUI_LinearGradientO
 
 
 
-#### OH_ArkUI_LinearGradientOptions_GetAngle()
+### OH_ArkUI_LinearGradientOptions_GetAngle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_LinearGradientOptions_GetAngle(const OH_ArkUI_LinearGradientOptions* options, float* angle)
@@ -7499,6 +8180,7 @@ ArkUI_ErrorCode OH_ArkUI_LinearGradientOptions_GetAngle(const OH_ArkUI_LinearGra
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_LinearGradientOptions* options | 指向OH_ArkUI_LinearGradientOptions对象的指针。 |
@@ -7507,6 +8189,7 @@ ArkUI_ErrorCode OH_ArkUI_LinearGradientOptions_GetAngle(const OH_ArkUI_LinearGra
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 操作结果码。 操作成功时，返回ARKUI_ERROR_CODE_NO_ERROR。 参数异常时，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -7514,9 +8197,10 @@ ArkUI_ErrorCode OH_ArkUI_LinearGradientOptions_GetAngle(const OH_ArkUI_LinearGra
 
 
 
-#### OH_ArkUI_LinearGradientOptions_SetDirection()
+### OH_ArkUI_LinearGradientOptions_SetDirection()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_LinearGradientOptions_SetDirection(OH_ArkUI_LinearGradientOptions* options, ArkUI_LinearGradientDirection direction)
@@ -7526,9 +8210,14 @@ ArkUI_ErrorCode OH_ArkUI_LinearGradientOptions_SetDirection(OH_ArkUI_LinearGradi
 
 设置线性渐变选项的方向。
 
+> [!NOTE]
+> 当调用 OH_ArkUI_LinearGradientOptions_SetAngle 设置angle时，direction设置不生效。
+
+
 **起始版本：** 26.0.0
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -7538,6 +8227,7 @@ ArkUI_ErrorCode OH_ArkUI_LinearGradientOptions_SetDirection(OH_ArkUI_LinearGradi
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 操作结果码。 操作成功时，返回ARKUI_ERROR_CODE_NO_ERROR。 参数异常时，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -7545,9 +8235,10 @@ ArkUI_ErrorCode OH_ArkUI_LinearGradientOptions_SetDirection(OH_ArkUI_LinearGradi
 
 
 
-#### OH_ArkUI_LinearGradientOptions_GetDirection()
+### OH_ArkUI_LinearGradientOptions_GetDirection()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_LinearGradientOptions_GetDirection(const OH_ArkUI_LinearGradientOptions* options, ArkUI_LinearGradientDirection* direction)
@@ -7561,6 +8252,7 @@ ArkUI_ErrorCode OH_ArkUI_LinearGradientOptions_GetDirection(const OH_ArkUI_Linea
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_LinearGradientOptions* options | 指向OH_ArkUI_LinearGradientOptions对象的指针。 |
@@ -7569,6 +8261,7 @@ ArkUI_ErrorCode OH_ArkUI_LinearGradientOptions_GetDirection(const OH_ArkUI_Linea
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 操作结果码。 操作成功时，返回ARKUI_ERROR_CODE_NO_ERROR。 参数异常时，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -7576,9 +8269,10 @@ ArkUI_ErrorCode OH_ArkUI_LinearGradientOptions_GetDirection(const OH_ArkUI_Linea
 
 
 
-#### OH_ArkUI_LinearGradientOptions_SetRepeating()
+### OH_ArkUI_LinearGradientOptions_SetRepeating()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_LinearGradientOptions_SetRepeating(OH_ArkUI_LinearGradientOptions* options, bool repeating)
@@ -7592,6 +8286,7 @@ ArkUI_ErrorCode OH_ArkUI_LinearGradientOptions_SetRepeating(OH_ArkUI_LinearGradi
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_LinearGradientOptions* options | 指向OH_ArkUI_LinearGradientOptions对象的指针。 |
@@ -7600,6 +8295,7 @@ ArkUI_ErrorCode OH_ArkUI_LinearGradientOptions_SetRepeating(OH_ArkUI_LinearGradi
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 操作结果码。 操作成功时，返回ARKUI_ERROR_CODE_NO_ERROR。 参数异常时，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -7607,9 +8303,10 @@ ArkUI_ErrorCode OH_ArkUI_LinearGradientOptions_SetRepeating(OH_ArkUI_LinearGradi
 
 
 
-#### OH_ArkUI_LinearGradientOptions_GetRepeating()
+### OH_ArkUI_LinearGradientOptions_GetRepeating()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_LinearGradientOptions_GetRepeating(const OH_ArkUI_LinearGradientOptions* options, bool* repeating)
@@ -7623,6 +8320,7 @@ ArkUI_ErrorCode OH_ArkUI_LinearGradientOptions_GetRepeating(const OH_ArkUI_Linea
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_LinearGradientOptions* options | 指向OH_ArkUI_LinearGradientOptions对象的指针。 |
@@ -7631,6 +8329,7 @@ ArkUI_ErrorCode OH_ArkUI_LinearGradientOptions_GetRepeating(const OH_ArkUI_Linea
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 操作结果码。 操作成功时，返回ARKUI_ERROR_CODE_NO_ERROR。 参数异常时，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -7638,9 +8337,10 @@ ArkUI_ErrorCode OH_ArkUI_LinearGradientOptions_GetRepeating(const OH_ArkUI_Linea
 
 
 
-#### OH_ArkUI_LinearGradientOptions_SetColorStop()
+### OH_ArkUI_LinearGradientOptions_SetColorStop()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_LinearGradientOptions_SetColorStop(OH_ArkUI_LinearGradientOptions* options, const uint32_t* colors, const float* stops, int32_t colorsAndStopsSize)
@@ -7654,6 +8354,7 @@ ArkUI_ErrorCode OH_ArkUI_LinearGradientOptions_SetColorStop(OH_ArkUI_LinearGradi
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_LinearGradientOptions* options | 指向OH_ArkUI_LinearGradientOptions对象的指针。 |
@@ -7664,6 +8365,7 @@ ArkUI_ErrorCode OH_ArkUI_LinearGradientOptions_SetColorStop(OH_ArkUI_LinearGradi
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 操作结果码。 操作成功时，返回ARKUI_ERROR_CODE_NO_ERROR。 参数异常时，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -7671,9 +8373,10 @@ ArkUI_ErrorCode OH_ArkUI_LinearGradientOptions_SetColorStop(OH_ArkUI_LinearGradi
 
 
 
-#### OH_ArkUI_LinearGradientOptions_GetColorStop()
+### OH_ArkUI_LinearGradientOptions_GetColorStop()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_LinearGradientOptions_GetColorStop(const OH_ArkUI_LinearGradientOptions* options, uint32_t* colors, float* stops, int32_t colorsAndStopsSize, int32_t* writeLength)
@@ -7687,6 +8390,7 @@ ArkUI_ErrorCode OH_ArkUI_LinearGradientOptions_GetColorStop(const OH_ArkUI_Linea
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_LinearGradientOptions* options | 指向OH_ArkUI_LinearGradientOptions对象的指针。 |
@@ -7698,6 +8402,7 @@ ArkUI_ErrorCode OH_ArkUI_LinearGradientOptions_GetColorStop(const OH_ArkUI_Linea
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 操作结果码。 操作成功时，返回ARKUI_ERROR_CODE_NO_ERROR。 参数异常时，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -7705,9 +8410,10 @@ ArkUI_ErrorCode OH_ArkUI_LinearGradientOptions_GetColorStop(const OH_ArkUI_Linea
 
 
 
-#### OH_ArkUI_RadialGradientOptions_Create()
+### OH_ArkUI_RadialGradientOptions_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_ArkUI_RadialGradientOptions* OH_ArkUI_RadialGradientOptions_Create()
@@ -7721,6 +8427,7 @@ OH_ArkUI_RadialGradientOptions* OH_ArkUI_RadialGradientOptions_Create()
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_ArkUI_RadialGradientOptions* | 指向OH_ArkUI_RadialGradientOptions对象的指针。 |
@@ -7728,9 +8435,10 @@ OH_ArkUI_RadialGradientOptions* OH_ArkUI_RadialGradientOptions_Create()
 
 
 
-#### OH_ArkUI_RadialGradientOptions_Destroy()
+### OH_ArkUI_RadialGradientOptions_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ArkUI_RadialGradientOptions_Destroy(OH_ArkUI_RadialGradientOptions* options)
@@ -7744,6 +8452,7 @@ void OH_ArkUI_RadialGradientOptions_Destroy(OH_ArkUI_RadialGradientOptions* opti
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_RadialGradientOptions* options | 指向OH_ArkUI_RadialGradientOptions对象的指针。 |
@@ -7751,9 +8460,10 @@ void OH_ArkUI_RadialGradientOptions_Destroy(OH_ArkUI_RadialGradientOptions* opti
 
 
 
-#### OH_ArkUI_RadialGradientOptions_SetCenterX()
+### OH_ArkUI_RadialGradientOptions_SetCenterX()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_SetCenterX(OH_ArkUI_RadialGradientOptions* options, float centerX)
@@ -7767,6 +8477,7 @@ ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_SetCenterX(OH_ArkUI_RadialGradien
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_RadialGradientOptions* options | 指向OH_ArkUI_RadialGradientOptions对象的指针。 |
@@ -7775,6 +8486,7 @@ ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_SetCenterX(OH_ArkUI_RadialGradien
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 操作结果码。 操作成功时，返回ARKUI_ERROR_CODE_NO_ERROR。 参数异常时，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -7782,9 +8494,10 @@ ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_SetCenterX(OH_ArkUI_RadialGradien
 
 
 
-#### OH_ArkUI_RadialGradientOptions_GetCenterX()
+### OH_ArkUI_RadialGradientOptions_GetCenterX()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_GetCenterX(const OH_ArkUI_RadialGradientOptions* options, float* centerX)
@@ -7798,6 +8511,7 @@ ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_GetCenterX(const OH_ArkUI_RadialG
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_RadialGradientOptions* options | 指向OH_ArkUI_RadialGradientOptions对象的指针。 |
@@ -7806,6 +8520,7 @@ ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_GetCenterX(const OH_ArkUI_RadialG
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 操作结果码。 操作成功时，返回ARKUI_ERROR_CODE_NO_ERROR。 参数异常时，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -7813,9 +8528,10 @@ ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_GetCenterX(const OH_ArkUI_RadialG
 
 
 
-#### OH_ArkUI_RadialGradientOptions_SetCenterY()
+### OH_ArkUI_RadialGradientOptions_SetCenterY()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_SetCenterY(OH_ArkUI_RadialGradientOptions* options, float centerY)
@@ -7829,6 +8545,7 @@ ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_SetCenterY(OH_ArkUI_RadialGradien
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_RadialGradientOptions* options | 指向OH_ArkUI_RadialGradientOptions对象的指针。 |
@@ -7837,6 +8554,7 @@ ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_SetCenterY(OH_ArkUI_RadialGradien
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 操作结果码。 操作成功时，返回ARKUI_ERROR_CODE_NO_ERROR。 参数异常时，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -7844,9 +8562,10 @@ ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_SetCenterY(OH_ArkUI_RadialGradien
 
 
 
-#### OH_ArkUI_RadialGradientOptions_GetCenterY()
+### OH_ArkUI_RadialGradientOptions_GetCenterY()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_GetCenterY(const OH_ArkUI_RadialGradientOptions* options, float* centerY)
@@ -7860,6 +8579,7 @@ ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_GetCenterY(const OH_ArkUI_RadialG
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_RadialGradientOptions* options | 指向OH_ArkUI_RadialGradientOptions对象的指针。 |
@@ -7868,6 +8588,7 @@ ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_GetCenterY(const OH_ArkUI_RadialG
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 操作结果码。 操作成功时，返回ARKUI_ERROR_CODE_NO_ERROR。 参数异常时，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -7875,9 +8596,10 @@ ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_GetCenterY(const OH_ArkUI_RadialG
 
 
 
-#### OH_ArkUI_RadialGradientOptions_SetRadius()
+### OH_ArkUI_RadialGradientOptions_SetRadius()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_SetRadius(OH_ArkUI_RadialGradientOptions* options, float radius)
@@ -7891,6 +8613,7 @@ ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_SetRadius(OH_ArkUI_RadialGradient
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_RadialGradientOptions* options | 指向OH_ArkUI_RadialGradientOptions对象的指针。 |
@@ -7899,6 +8622,7 @@ ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_SetRadius(OH_ArkUI_RadialGradient
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 操作结果码。 操作成功时，返回ARKUI_ERROR_CODE_NO_ERROR。 参数异常时，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -7906,9 +8630,10 @@ ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_SetRadius(OH_ArkUI_RadialGradient
 
 
 
-#### OH_ArkUI_RadialGradientOptions_GetRadius()
+### OH_ArkUI_RadialGradientOptions_GetRadius()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_GetRadius(const OH_ArkUI_RadialGradientOptions* options, float* radius)
@@ -7922,6 +8647,7 @@ ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_GetRadius(const OH_ArkUI_RadialGr
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_RadialGradientOptions* options | 指向OH_ArkUI_RadialGradientOptions对象的指针。 |
@@ -7930,6 +8656,7 @@ ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_GetRadius(const OH_ArkUI_RadialGr
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 操作结果码。 操作成功时，返回ARKUI_ERROR_CODE_NO_ERROR。 参数异常时，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -7937,9 +8664,10 @@ ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_GetRadius(const OH_ArkUI_RadialGr
 
 
 
-#### OH_ArkUI_RadialGradientOptions_SetRepeating()
+### OH_ArkUI_RadialGradientOptions_SetRepeating()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_SetRepeating(OH_ArkUI_RadialGradientOptions* options, bool repeating)
@@ -7953,6 +8681,7 @@ ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_SetRepeating(OH_ArkUI_RadialGradi
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_RadialGradientOptions* options | 指向OH_ArkUI_RadialGradientOptions对象的指针。 |
@@ -7961,6 +8690,7 @@ ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_SetRepeating(OH_ArkUI_RadialGradi
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 操作结果码。 操作成功时，返回ARKUI_ERROR_CODE_NO_ERROR。 参数异常时，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -7968,9 +8698,10 @@ ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_SetRepeating(OH_ArkUI_RadialGradi
 
 
 
-#### OH_ArkUI_RadialGradientOptions_GetRepeating()
+### OH_ArkUI_RadialGradientOptions_GetRepeating()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_GetRepeating(const OH_ArkUI_RadialGradientOptions* options, bool* repeating)
@@ -7984,6 +8715,7 @@ ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_GetRepeating(const OH_ArkUI_Radia
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_RadialGradientOptions* options | 指向OH_ArkUI_RadialGradientOptions对象的指针。 |
@@ -7992,6 +8724,7 @@ ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_GetRepeating(const OH_ArkUI_Radia
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 操作结果码。 操作成功时，返回ARKUI_ERROR_CODE_NO_ERROR。 参数异常时，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -7999,9 +8732,10 @@ ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_GetRepeating(const OH_ArkUI_Radia
 
 
 
-#### OH_ArkUI_RadialGradientOptions_SetColorStop()
+### OH_ArkUI_RadialGradientOptions_SetColorStop()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_SetColorStop(OH_ArkUI_RadialGradientOptions* options, const uint32_t* colors, const float* stops, int32_t colorsAndStopsSize)
@@ -8015,6 +8749,7 @@ ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_SetColorStop(OH_ArkUI_RadialGradi
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_ArkUI_RadialGradientOptions* options | 指向OH_ArkUI_RadialGradientOptions对象的指针。 |
@@ -8025,6 +8760,7 @@ ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_SetColorStop(OH_ArkUI_RadialGradi
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 操作结果码。 操作成功时，返回ARKUI_ERROR_CODE_NO_ERROR。 参数异常时，返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -8032,9 +8768,10 @@ ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_SetColorStop(OH_ArkUI_RadialGradi
 
 
 
-#### OH_ArkUI_RadialGradientOptions_GetColorStop()
+### OH_ArkUI_RadialGradientOptions_GetColorStop()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_GetColorStop(const OH_ArkUI_RadialGradientOptions* options, uint32_t* colors, float* stops, int32_t colorsAndStopsSize, int32_t* writeLength)
@@ -8048,6 +8785,7 @@ ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_GetColorStop(const OH_ArkUI_Radia
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const OH_ArkUI_RadialGradientOptions* options | 指向OH_ArkUI_RadialGradientOptions对象的指针。 |
@@ -8058,6 +8796,7 @@ ArkUI_ErrorCode OH_ArkUI_RadialGradientOptions_GetColorStop(const OH_ArkUI_Radia
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |

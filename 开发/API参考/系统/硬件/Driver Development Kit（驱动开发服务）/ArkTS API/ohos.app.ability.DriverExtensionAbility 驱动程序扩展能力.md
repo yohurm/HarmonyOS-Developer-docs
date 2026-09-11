@@ -1,6 +1,6 @@
 # @ohos.app.ability.DriverExtensionAbility (驱动程序扩展能力)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-driverextensionability
 **支持设备：** PC/2in1
@@ -12,7 +12,8 @@ DriverExtensionAbility模块提供驱动相关扩展能力，提供驱动创建�
 
 
 
-#### 约束限制
+## 约束限制
+
 
 **支持设备：** PC/2in1
 
@@ -20,7 +21,8 @@ DriverExtensionAbility模块提供驱动相关扩展能力，提供驱动创建�
 
 
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** PC/2in1
 
@@ -30,21 +32,24 @@ import { DriverExtensionAbility } from '@kit.DriverDevelopmentKit';
 
 
 
-#### DriverExtensionAbility
+## DriverExtensionAbility
+
 
 **支持设备：** PC/2in1
 
 
 
-#### 属性
+### 属性
+
 
 **支持设备：** PC/2in1
 
-DriverExtensionAbility类，包含驱动生命周期回调的定义。
+DriverExtensionAbility类，包含驱动扩展的上下文环境定义。
 
 **模型约束**：此接口仅在Stage模型下使用。
 
 **系统能力**：SystemCapability.Driver.ExternalDevice
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -53,7 +58,8 @@ DriverExtensionAbility类，包含驱动生命周期回调的定义。
 
 
 
-#### onInit
+### onInit
+
 
 **支持设备：** PC/2in1
 
@@ -67,6 +73,7 @@ Extension生命周期回调，在创建时回调，执行初始化业务逻辑�
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | 当前Extension相关的Want类型信息，包括ability名称、bundle名称等。 |
@@ -79,7 +86,7 @@ import { DriverExtensionAbility } from '@kit.DriverDevelopmentKit';
 import { Want } from '@kit.AbilityKit';
 
 class DriverExt extends DriverExtensionAbility {
-  onInit(want : Want) {
+  onInit(want: Want) {
     console.info(`onInit, want: ${want.abilityName}`);
   }
 }
@@ -87,7 +94,8 @@ class DriverExt extends DriverExtensionAbility {
 
 
 
-#### onRelease
+### onRelease
+
 
 **支持设备：** PC/2in1
 
@@ -111,7 +119,8 @@ class DriverExt extends DriverExtensionAbility {
 
 
 
-#### onConnect
+### onConnect
+
 
 **支持设备：** PC/2in1
 
@@ -125,12 +134,14 @@ Extension生命周期回调，会在[onCreate](https://developer.huawei.com/cons
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | 当前Extension相关的Want类型信息，包括ability名称、bundle名称等。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -144,17 +155,17 @@ import { DriverExtensionAbility } from '@kit.DriverDevelopmentKit';
 import { rpc } from '@kit.IPCKit';
 import { Want } from '@kit.AbilityKit';
 
-class StubTest extends rpc.RemoteObject{
-    constructor(des : string) {
+class StubTest extends rpc.RemoteObject {
+    constructor(des: string) {
         super(des);
     }
-    onRemoteMessageRequest(code : number, data : rpc.MessageSequence, reply : rpc.MessageSequence, option : rpc.MessageOption) {
+    onRemoteMessageRequest(code: number, data: rpc.MessageSequence, reply: rpc.MessageSequence, option: rpc.MessageOption) {
       // 必须重写此接口
       return true;
     }
 }
 class DriverExt extends DriverExtensionAbility {
-  onConnect(want : Want) {
+  onConnect(want: Want) {
     console.info(`onConnect , want: ${want.abilityName}`);
     return new StubTest('test');
   }
@@ -168,21 +179,21 @@ import { DriverExtensionAbility } from '@kit.DriverDevelopmentKit';
 import { rpc } from '@kit.IPCKit';
 import { Want } from '@kit.AbilityKit';
 
-class StubTest extends rpc.RemoteObject{
-    constructor(des : string) {
+class StubTest extends rpc.RemoteObject {
+    constructor(des: string) {
         super(des);
     }
-    onRemoteMessageRequest(code : number, data : rpc.MessageSequence, reply : rpc.MessageSequence, option : rpc.MessageOption) {
+    onRemoteMessageRequest(code: number, data: rpc.MessageSequence, reply: rpc.MessageSequence, option: rpc.MessageOption) {
       // 必须重写此接口
       return true;
     }
 }
 async function getDescriptor() {
     // 调用异步函数...
-    return "asyncTest";
+    return 'asyncTest';
 }
 class DriverExt extends DriverExtensionAbility {
-  async onConnect(want : Want) {
+  async onConnect(want: Want) {
     console.info(`onConnect , want: ${want.abilityName}`);
     let descriptor = await getDescriptor();
     return new StubTest(descriptor);
@@ -192,7 +203,8 @@ class DriverExt extends DriverExtensionAbility {
 
 
 
-#### onDisconnect
+### onDisconnect
+
 
 **支持设备：** PC/2in1
 
@@ -206,12 +218,14 @@ Extension的生命周期回调，客户端执行断开连接服务时回调。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | 当前Extension相关的Want类型信息，包括ability名称、bundle名称等。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -225,7 +239,7 @@ import { DriverExtensionAbility } from '@kit.DriverDevelopmentKit';
 import { Want } from '@kit.AbilityKit';
 
 class DriverExt extends DriverExtensionAbility {
-  onDisconnect(want : Want) {
+  onDisconnect(want: Want) {
     console.info(`onDisconnect, want: ${want.abilityName}`);
   }
 }
@@ -238,7 +252,7 @@ import { DriverExtensionAbility } from '@kit.DriverDevelopmentKit';
 import { Want } from '@kit.AbilityKit';
 
 class DriverExt extends DriverExtensionAbility {
-  async onDisconnect(want : Want) {
+  async onDisconnect(want: Want) {
     console.info(`onDisconnect, want: ${want.abilityName}`);
     // 调用异步函数...
   }
@@ -247,7 +261,8 @@ class DriverExt extends DriverExtensionAbility {
 
 
 
-#### onDump
+### onDump
+
 
 **支持设备：** PC/2in1
 
@@ -261,23 +276,25 @@ onDump(params: Array&lt;string&gt;): Array&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| params | Array&lt;string&gt; | 是 | 表示命令形式的参数。 |
+| params | Array&lt;string&gt; | 是 | 转储命令的参数列表。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| Array&lt;string&gt; | 一个string类型的数组，用于转存客户端信息。 |
+| Array&lt;string&gt; | 一个string类型的数组，包含转储的客户端信息。 |
 
 
 **示例：**
 
 ```json
 class DriverExt extends DriverExtensionAbility {
-    onDump(params : Array<string>) {
+    onDump(params: Array<string>) {
         console.info(`dump, params: ${JSON.stringify(params)}`);
         return ['params'];
     }
@@ -286,7 +303,8 @@ class DriverExt extends DriverExtensionAbility {
 
 
 
-#### DriverExtensionContext
+## DriverExtensionContext
+
 
 **支持设备：** PC/2in1
 
@@ -296,6 +314,7 @@ DriverExtensionAbility的上下文环境。
 
 **系统能力**：SystemCapability.Driver.ExternalDevice
 
+
 | 类型 | 说明 |
 | --- | --- |
 | _DriverExtensionContext | DriverExtensionAbility的上下文环境，继承自ExtensionContext，其具体使用方法可参考DriverExtensionContext。 |
@@ -303,11 +322,13 @@ DriverExtensionAbility的上下文环境。
 
 
 
-#### 附录
+## 附录
+
 
 **支持设备：** PC/2in1
 
 DriverExtensionAbility不支持以下模块的引用。
+
 
 | Kit | 模块 |
 | --- | --- |

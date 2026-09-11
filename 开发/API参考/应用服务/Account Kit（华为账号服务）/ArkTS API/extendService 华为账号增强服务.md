@@ -1,13 +1,14 @@
 # @hms.core.account.extendService (华为账号增强服务)
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-api-extendservice
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 模块概述
+## 模块概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 @hms.core.account.extendService模块提供华为账号增强能力，在基础的登录、授权功能之上，为应用提供更丰富的账号管理与安全校验能力。包含两大核心功能：身份验证、打开账号中心。
 
@@ -25,9 +26,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { extendService } from '@kit.AccountKit';
@@ -35,9 +37,10 @@ import { extendService } from '@kit.AccountKit';
 
 
 
-#### IdType
+## IdType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 华为账号身份标识类型枚举。当前支持设置：IdType.UNION_ID或IdType.OPEN_ID。
 
@@ -49,6 +52,7 @@ import { extendService } from '@kit.AccountKit';
 
 **起始版本：** 4.0.0(10)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | USER_ID | 1 | 华为账号用户的UID。 说明： 该参数仅对系统应用开放。 |
@@ -58,9 +62,10 @@ import { extendService } from '@kit.AccountKit';
 
 
 
-#### RiskLevel
+## RiskLevel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 风险等级枚举。
 
@@ -72,6 +77,7 @@ import { extendService } from '@kit.AccountKit';
 
 **起始版本：** 4.0.0(10)
 
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | LOW | 1 | 低风险。 |
@@ -80,9 +86,10 @@ import { extendService } from '@kit.AccountKit';
 
 
 
-#### VerifyRequest
+## VerifyRequest
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 身份验证请求。[verifyAccount](#verifyaccount-1)方法入参，接口需包含用户的基础身份标识，与系统华为账号用户进行身份比对。开发者可通过设置身份验证的场景值、风险等级等属性，控制身份验证的次数和方式，华为账号服务会根据这些属性拉起对应的身份验证页面。
 
@@ -93,6 +100,7 @@ import { extendService } from '@kit.AccountKit';
 **系统能力：** SystemCapability.AuthenticationServices.HuaweiID.ExtendService
 
 **起始版本：** 4.0.0(10)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -121,9 +129,10 @@ const request: extendService.VerifyRequest = {
 
 
 
-#### VerifyResult
+## VerifyResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 身份验证请求响应。[verifyAccount](#verifyaccount-1)方法返回值，当用户验证身份成功时返回。
 
@@ -134,6 +143,7 @@ const request: extendService.VerifyRequest = {
 **系统能力：** SystemCapability.AuthenticationServices.HuaweiID.ExtendService
 
 **起始版本：** 4.0.0(10)
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -182,9 +192,10 @@ function dealAllError(error: BusinessError): void {
 
 
 
-#### ExtendErrorCode
+## ExtendErrorCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 华为账号增强服务接口错误码枚举。
 
@@ -193,6 +204,7 @@ function dealAllError(error: BusinessError): void {
 **系统能力：** SystemCapability.AuthenticationServices.HuaweiID.ExtendService
 
 **起始版本：** 4.0.0(10)
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -209,9 +221,10 @@ function dealAllError(error: BusinessError): void {
 
 
 
-#### verifyAccount
+## verifyAccount
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 verifyAccount(context: common.Context, request: VerifyRequest, callback: AsyncCallback&lt;VerifyResult&gt;): void
 
@@ -227,6 +240,7 @@ verifyAccount(context: common.Context, request: VerifyRequest, callback: AsyncCa
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | Context上下文。 应用可支持的Context有：UIAbilityContext和UIExtensionContext。不支持应用在半模态、弹出框、子窗口等非全页面组件中使用UIExtensionContext调用。 元服务可支持的Context有：UIAbilityContext。 说明： - 在4.0.0(10)版本，参数类型为UIAbilityContext。 - 从4.1.0(11)版本开始，参数类型为Context。 |
@@ -237,6 +251,7 @@ verifyAccount(context: common.Context, request: VerifyRequest, callback: AsyncCa
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account-kit)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -292,9 +307,10 @@ function dealAllError(error: BusinessError): void {
 
 
 
-#### verifyAccount
+## verifyAccount
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 verifyAccount(context: common.Context, request: VerifyRequest): Promise&lt;VerifyResult&gt;
 
@@ -310,6 +326,7 @@ verifyAccount(context: common.Context, request: VerifyRequest): Promise&lt;Verif
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | Context上下文。 应用可支持的Context有：UIAbilityContext和UIExtensionContext。不支持应用在半模态、弹出框、子窗口等非全页面组件中使用UIExtensionContext调用。 元服务可支持的Context有：UIAbilityContext。 说明： - 在4.0.0(10)版本，参数类型为UIAbilityContext。 - 从4.1.0(11)版本开始，参数类型为Context。 |
@@ -317,6 +334,7 @@ verifyAccount(context: common.Context, request: VerifyRequest): Promise&lt;Verif
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -326,6 +344,7 @@ verifyAccount(context: common.Context, request: VerifyRequest): Promise&lt;Verif
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account-kit)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -375,9 +394,10 @@ function dealAllError(error: BusinessError): void {
 
 
 
-#### startAccountCenter
+## startAccountCenter
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 startAccountCenter(context: common.Context, callback: AsyncCallback&lt;void&gt;): void
 
@@ -393,6 +413,7 @@ startAccountCenter(context: common.Context, callback: AsyncCallback&lt;void&gt;)
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | Context上下文。 可支持的Context有：UIAbilityContext和UIExtensionContext。不支持应用在半模态、弹出框、子窗口等非全页面组件中使用UIExtensionContext调用。 说明： - 在4.0.0(10)版本，参数类型为UIAbilityContext。 - 从4.1.0(11)版本开始，参数类型为Context。 |
@@ -402,6 +423,7 @@ startAccountCenter(context: common.Context, callback: AsyncCallback&lt;void&gt;)
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account-kit)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -443,9 +465,10 @@ function dealAllError(error: BusinessError): void {
 
 
 
-#### startAccountCenter
+## startAccountCenter
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 startAccountCenter(context: common.Context): Promise&lt;void&gt;
 
@@ -461,12 +484,14 @@ startAccountCenter(context: common.Context): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.Context | 是 | Context上下文。 可支持的Context有：UIAbilityContext和UIExtensionContext。不支持应用在半模态、弹出框、子窗口等非全页面组件中使用UIExtensionContext调用。 说明： - 在4.0.0(10)版本，参数类型为UIAbilityContext。 - 从4.1.0(11)版本开始，参数类型为Context。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -476,6 +501,7 @@ startAccountCenter(context: common.Context): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[ArkTS错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-account-kit)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

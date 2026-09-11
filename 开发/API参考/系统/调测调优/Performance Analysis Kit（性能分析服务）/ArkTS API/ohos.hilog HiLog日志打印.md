@@ -1,9 +1,9 @@
 # @ohos.hilog (HiLog日志打印)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hilog
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hilog模块是HarmonyOS提供的日志打印子系统，允许应用或服务按照指定的日志类型、日志级别和格式字符串输出日志。开发者可利用hilog在应用运行过程中记录关键流程信息，异常情况和错误事件，从而了解应用的运行状态并更好地调试程序。hilog适用于应用和服务在开发调试阶段记录运行日志的场景，也适用于正式发布版本中通过级别控制减少日志输出和保护隐私数据的场景。
 
@@ -22,9 +22,10 @@ hilog模块提供以下核心功能：
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { hilog } from '@kit.PerformanceAnalysisKit';
@@ -32,9 +33,10 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 
 
 
-#### hilog.isLoggable
+## hilog.isLoggable
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isLoggable(domain: number, tag: string, level: LogLevel) : boolean
 
@@ -46,6 +48,7 @@ isLoggable(domain: number, tag: string, level: LogLevel) : boolean
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | domain | number | 是 | 日志对应的领域标识，范围是0x0~0xFFFF，超出范围则日志无法打印。 建议开发者在应用内根据需要自定义划分。 |
@@ -54,6 +57,7 @@ isLoggable(domain: number, tag: string, level: LogLevel) : boolean
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -68,15 +72,17 @@ hilog.isLoggable(0x0001, "testTag", hilog.LogLevel.INFO);
 
 
 
-#### LogLevel
+## LogLevel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 日志级别。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.HiviewDFX.HiLog
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -89,9 +95,10 @@ hilog.isLoggable(0x0001, "testTag", hilog.LogLevel.INFO);
 
 
 
-#### hilog.debug
+## hilog.debug
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 debug(domain: number, tag: string, format: string, ...args: any[]) : void
 
@@ -104,6 +111,7 @@ DEBUG级别的日志在正式发布版本中默认不被打印，只有在调试
 **系统能力**：SystemCapability.HiviewDFX.HiLog
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -129,9 +137,10 @@ hilog.debug(0x0001, "testTag", "%{public}s World %{private}d", "hello", 3);
 
 
 
-#### hilog.info
+## hilog.info
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 info(domain: number, tag: string, format: string, ...args: any[]) : void
 
@@ -142,6 +151,7 @@ info(domain: number, tag: string, format: string, ...args: any[]) : void
 **系统能力**：SystemCapability.HiviewDFX.HiLog
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -167,9 +177,10 @@ hilog.info(0x0001, "testTag", "%{public}s World %{private}d", "hello", 3);
 
 
 
-#### hilog.warn
+## hilog.warn
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 warn(domain: number, tag: string, format: string, ...args: any[]) : void
 
@@ -180,6 +191,7 @@ warn(domain: number, tag: string, format: string, ...args: any[]) : void
 **系统能力**：SystemCapability.HiviewDFX.HiLog
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -205,9 +217,10 @@ hilog.warn(0x0001, "testTag", "%{public}s World %{private}d", "hello", 3);
 
 
 
-#### hilog.error
+## hilog.error
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 error(domain: number, tag: string, format: string, ...args: any[]) : void
 
@@ -218,6 +231,7 @@ error(domain: number, tag: string, format: string, ...args: any[]) : void
 **系统能力**：SystemCapability.HiviewDFX.HiLog
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -243,9 +257,10 @@ hilog.error(0x0001, "testTag", "%{public}s World %{private}d", "hello", 3);
 
 
 
-#### hilog.fatal
+## hilog.fatal
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 fatal(domain: number, tag: string, format: string, ...args: any[]) : void
 
@@ -256,6 +271,7 @@ fatal(domain: number, tag: string, format: string, ...args: any[]) : void
 **系统能力**：SystemCapability.HiviewDFX.HiLog
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -281,16 +297,17 @@ hilog.fatal(0x0001, "testTag", "%{public}s World %{private}d", "hello", 3);
 
 
 
-#### hilog.setMinLogLevel15+
+## hilog.setMinLogLevel15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMinLogLevel(level: LogLevel): void
 
 设置应用日志打印的最低日志级别，用于拦截低级别日志打印，在需要优化应用性能或减少低价值日志干扰时使用，避免冗余日志。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/EA9rWY9dTfCS8aIFif-p2Q/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071645Z&HW-CC-Expire=86400&HW-CC-Sign=84B9E42514D0807CF73BB30C4F8EAA15714806C7676DC6002AFAAF5BC1BDE92C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/npdSBXtXS36UM37qBdq54A/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072909Z&HW-CC-Expire=86400&HW-CC-Sign=7219378313198F4E4660DE5622E8791C9BA6692BBED9F8AED40A660551FF25B4)
 
 
 如果设置的日志级别低于[全局日志级别](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hilog#查看和设置日志级别)，设置不生效。
@@ -304,6 +321,7 @@ debug版本应用下，此函数不生效。
 **系统能力**：SystemCapability.HiviewDFX.HiLog
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -340,9 +358,10 @@ hilog.info(0x0001, "testTag", 'this is an info level log, id: %{public}d', 5);
 
 
 
-#### hilog.setLogLevel21+
+## hilog.setLogLevel21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setLogLevel(level: LogLevel, prefer: PreferStrategy): void
 
@@ -351,7 +370,7 @@ setLogLevel(level: LogLevel, prefer: PreferStrategy): void
 可通过prefer参数配置不同的偏好策略。如果选择策略PREFER_CLOSE_LOG，等同于调用setMinLogLevel函数。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/cxpbOHFcTuyfNedR2HeF7w/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071645Z&HW-CC-Expire=86400&HW-CC-Sign=D544FF984161CA4F437C816C9B9C1E690F4FA38D0928D4D40FC1A5C020F1688E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/Qf4p98S6S8Wo3Qy2O4TkTA/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072909Z&HW-CC-Expire=86400&HW-CC-Sign=70F71AA8B03E334D3F54A5FDE60B69C2BB2AB8202A48A579E2074D59914FDB7E)
 
 
 debug版本应用下，此函数不生效。
@@ -364,6 +383,7 @@ debug版本应用下，此函数不生效。
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | level | LogLevel | 是 | 日志级别。 |
@@ -372,15 +392,17 @@ debug版本应用下，此函数不生效。
 
 
 
-#### PreferStrategy21+
+## PreferStrategy21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 偏好策略。
 
 **元服务API**：从API version 21开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.HiviewDFX.HiLog
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -420,19 +442,22 @@ hilog.info(0x0001, "testTag", 'this is an info level log, id: %{public}d', 5);
 
 
 
-#### 参数格式符
+## 参数格式符
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 上述接口中，日志打印的格式化参数需按照如下格式打印：
 
 %{[private flag]}specifier
+
 
 | 隐私标识符（private flag） | 说明 |
 | --- | --- |
 | 无 | 缺省值默认为private，不打印明文参数。 |
 | private | 隐私参数类型，不打印明文参数。 |
 | public | 明文显示参数。 |
+
 
 
 | 格式说明符（specifier） | 说明 | 示例 |
@@ -474,9 +499,10 @@ hilog.info(0x0001, "jsHilogTest", "print boolean: %{public}s", isBol);
 
 
 
-#### OutputType
+## OutputType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 hilog输出类型的枚举值，DEFAULT和CONSOLE_ONLY适用于仅输出到控制台的场景，PRIVATE_SANDBOX_ONLY适用于隐私日志存储，SHARE_SANDBOX_ONLY适用于需要云端采集日志的场景，PRIVATE_SANDBOX_WITH_CONSOLE和SHARE_SANDBOX_WITH_CONSOLE适用于同时需要控制台输出和沙箱存储的场景。
 
@@ -485,6 +511,7 @@ hilog输出类型的枚举值，DEFAULT和CONSOLE_ONLY适用于仅输出到控�
 **元服务API**：从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.HiviewDFX.HiLog
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -498,9 +525,10 @@ hilog输出类型的枚举值，DEFAULT和CONSOLE_ONLY适用于仅输出到控�
 
 
 
-#### hilog.setOutputType
+## hilog.setOutputType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setOutputType(type: OutputType): OutputType
 
@@ -514,12 +542,14 @@ setOutputType(type: OutputType): OutputType
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | OutputType | 是 | hilog的输出类型，用于设置hilog日志的输出目标（如控制台或沙箱）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -544,9 +574,10 @@ hilog.flush();
 
 
 
-#### hilog.setOutputTypeByDomainID
+## hilog.setOutputTypeByDomainID
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setOutputTypeByDomainID(type: OutputType, domainIDs: Array&lt;number&gt;, isExclude: boolean): OutputType
 
@@ -560,6 +591,7 @@ setOutputTypeByDomainID(type: OutputType, domainIDs: Array&lt;number&gt;, isExcl
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | OutputType | 是 | hilog的输出类型。 |
@@ -568,6 +600,7 @@ setOutputTypeByDomainID(type: OutputType, domainIDs: Array&lt;number&gt;, isExcl
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -597,9 +630,10 @@ hilog.flush();
 
 
 
-#### hilog.getOutputType
+## hilog.getOutputType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOutputType(): OutputType
 
@@ -612,6 +646,7 @@ getOutputType(): OutputType
 **系统能力**：SystemCapability.HiviewDFX.HiLog
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -636,9 +671,10 @@ hilog.info(0x0001, "testTag", 'last output type:%{public}d', last);
 
 
 
-#### hilog.getOutputDir
+## hilog.getOutputDir
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getOutputDir(): string
 
@@ -651,6 +687,7 @@ getOutputDir(): string
 **系统能力**：SystemCapability.HiviewDFX.HiLog
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -675,9 +712,10 @@ hilog.info(0x0001, "testTag", 'sandbox output dir:%{public}s', dir);
 
 
 
-#### hilog.clean
+## hilog.clean
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clean(): void
 
@@ -697,9 +735,10 @@ hilog.clean();
 
 
 
-#### hilog.flush
+## hilog.flush
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 flush(): void
 
@@ -719,9 +758,10 @@ hilog.flush();
 
 
 
-#### hilog.getLogFile
+## hilog.getLogFile
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLogFile(latestSeconds: number): Array&lt;string&gt;
 
@@ -735,12 +775,14 @@ getLogFile(latestSeconds: number): Array&lt;string&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | latestSeconds | number | 是 | 距离现在的时间间隔，以秒为单位。 若传入的值小于0，则为无效值，返回值为空。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |

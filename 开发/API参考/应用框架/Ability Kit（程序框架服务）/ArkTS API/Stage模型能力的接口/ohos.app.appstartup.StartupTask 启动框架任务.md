@@ -1,9 +1,9 @@
 # @ohos.app.appstartup.StartupTask (启动框架任务)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-appstartup-startuptask
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供[应用启动框架](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-startup)任务的相关能力。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { StartupTask } from '@kit.AbilityKit';
@@ -22,9 +23,10 @@ import { StartupTask } from '@kit.AbilityKit';
 
 
 
-#### StartupTask
+## StartupTask
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该类提供启动任务的相关能力，使用[@Sendable装饰器](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable#sendable装饰器)装饰。
 
@@ -32,17 +34,23 @@ import { StartupTask } from '@kit.AbilityKit';
 
 
 
-#### onDependencyCompleted
+### onDependencyCompleted
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 onDependencyCompleted?(dependency: string, result: Object): void
 
-当依赖的启动任务执行完成时该方法将会被调用。
+当依赖的启动任务执行完成时回调该方法，开发者可在该方法中处理依赖任务的执行结果。
+
+> [!NOTE]
+> 每当一个依赖任务完成时触发一次。该方法在 init 方法之前被调用，可用于处理单个依赖任务的执行结果。init方法则在所有依赖任务都完成后被调用一次。
+
 
 **系统能力**：SystemCapability.Ability.AppStartup
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -76,9 +84,10 @@ export default class StartupTask_001 extends StartupTask {
 
 
 
-#### init
+### init
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 init(context: AbilityStageContext): Promise<Object | void>
 
@@ -88,12 +97,14 @@ init(context: AbilityStageContext): Promise<Object | void>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | AbilityStageContext | 是 | AbilityStage的上下文环境 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -115,7 +126,7 @@ export default class StartupTask_001 extends StartupTask {
     hilog.info(0x0000, 'testTag', 'StartupTask_001 init.');
     // ...
     
-    return "StartupTask_001";
+    return 'StartupTask_001';
   }
 
   onDependencyCompleted(dependency: string, result: Object): void {

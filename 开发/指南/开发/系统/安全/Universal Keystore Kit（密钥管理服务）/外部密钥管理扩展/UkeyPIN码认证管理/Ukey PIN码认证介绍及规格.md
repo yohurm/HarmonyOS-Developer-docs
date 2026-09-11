@@ -1,6 +1,6 @@
 # UKey PIN码认证介绍及规格
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-ukey-pin-authentication-management-overview
 
@@ -13,7 +13,7 @@ PIN码作用如下：
 UKey使用resourceId标识UKey资源，生态应用打开资源之后，如需要操作resourceId对应的私钥执行签名操作，则需要先验证PIN码。
 
 
-#### PIN码认证状态管理
+## PIN码认证状态管理
 
 HUKS提供以下PIN码认证状态管理能力：
 
@@ -23,7 +23,7 @@ HUKS提供以下PIN码认证状态管理能力：
 
 
 
-#### 清除认证状态使用场景
+### 清除认证状态使用场景
 
 以下场景可能需要清除PIN码认证状态：
 

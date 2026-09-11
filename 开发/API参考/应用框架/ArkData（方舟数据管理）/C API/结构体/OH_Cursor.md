@@ -1,18 +1,19 @@
 # OH_Cursor
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-rdb-oh-cursor
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct {...} OH_Cursor
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示结果集。提供通过查询数据库生成的数据库结果集的访问方法。
  
@@ -24,10 +25,12 @@ typedef struct {...} OH_Cursor
  
   
 
-#### 成员变量
+### 成员变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | int64_t id | OH_Cursor结构体的唯一标识符。 |
@@ -35,10 +38,12 @@ typedef struct {...} OH_Cursor
  
   
 
-#### 成员函数
+### 成员函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | int (*getColumnCount)(OH_Cursor *cursor, int *count) | 函数指针，获取结果集中的列数。 |
@@ -60,15 +65,17 @@ typedef struct {...} OH_Cursor
  
   
 
-#### 成员函数说明
+## 成员函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### getColumnCount()
+### getColumnCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int (*getColumnCount)(OH_Cursor *cursor, int *count)
@@ -82,14 +89,16 @@ int (*getColumnCount)(OH_Cursor *cursor, int *count)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| OH_Cursor *cursor | 表示指向OH_Cursor实例的指针 |
-| int *count | 该参数是输出参数，结果集中的列数会写入该变量 |
+| OH_Cursor *cursor | 表示指向OH_Cursor实例的指针。 |
+| int *count | 该参数是输出参数，结果集中的列数会写入该变量。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 |
@@ -97,9 +106,10 @@ int (*getColumnCount)(OH_Cursor *cursor, int *count)
  
   
 
-#### getColumnType()
+### getColumnType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int (*getColumnType)(OH_Cursor *cursor, int32_t columnIndex, OH_ColumnType *columnType)
@@ -113,6 +123,7 @@ int (*getColumnType)(OH_Cursor *cursor, int32_t columnIndex, OH_ColumnType *colu
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Cursor *cursor | 表示指向OH_Cursor实例的指针 |
@@ -122,6 +133,7 @@ int (*getColumnType)(OH_Cursor *cursor, int32_t columnIndex, OH_ColumnType *colu
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 |
@@ -129,9 +141,10 @@ int (*getColumnType)(OH_Cursor *cursor, int32_t columnIndex, OH_ColumnType *colu
  
   
 
-#### getColumnIndex()
+### getColumnIndex()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int (*getColumnIndex)(OH_Cursor *cursor, const char *name, int *columnIndex)
@@ -145,6 +158,7 @@ int (*getColumnIndex)(OH_Cursor *cursor, const char *name, int *columnIndex)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Cursor *cursor | 表示指向OH_Cursor实例的指针 |
@@ -154,6 +168,7 @@ int (*getColumnIndex)(OH_Cursor *cursor, const char *name, int *columnIndex)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 |
@@ -161,9 +176,10 @@ int (*getColumnIndex)(OH_Cursor *cursor, const char *name, int *columnIndex)
  
   
 
-#### getColumnName()
+### getColumnName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int (*getColumnName)(OH_Cursor *cursor, int32_t columnIndex, char *name, int length)
@@ -177,6 +193,7 @@ int (*getColumnName)(OH_Cursor *cursor, int32_t columnIndex, char *name, int len
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Cursor *cursor | 表示指向OH_Cursor实例的指针 |
@@ -187,6 +204,7 @@ int (*getColumnName)(OH_Cursor *cursor, int32_t columnIndex, char *name, int len
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 |
@@ -194,9 +212,10 @@ int (*getColumnName)(OH_Cursor *cursor, int32_t columnIndex, char *name, int len
  
   
 
-#### getRowCount()
+### getRowCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int (*getRowCount)(OH_Cursor *cursor, int *count)
@@ -210,6 +229,7 @@ int (*getRowCount)(OH_Cursor *cursor, int *count)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Cursor *cursor | 表示指向OH_Cursor实例的指针。 |
@@ -218,6 +238,7 @@ int (*getRowCount)(OH_Cursor *cursor, int *count)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 |
@@ -225,9 +246,10 @@ int (*getRowCount)(OH_Cursor *cursor, int *count)
  
   
 
-#### goToNextRow()
+### goToNextRow()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int (*goToNextRow)(OH_Cursor *cursor)
@@ -241,6 +263,7 @@ int (*goToNextRow)(OH_Cursor *cursor)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Cursor *cursor | 表示指向OH_Cursor实例的指针 |
@@ -248,6 +271,7 @@ int (*goToNextRow)(OH_Cursor *cursor)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 |
@@ -255,9 +279,10 @@ int (*goToNextRow)(OH_Cursor *cursor)
  
   
 
-#### getSize()
+### getSize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int (*getSize)(OH_Cursor *cursor, int32_t columnIndex, size_t *size)
@@ -271,6 +296,7 @@ int (*getSize)(OH_Cursor *cursor, int32_t columnIndex, size_t *size)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Cursor *cursor | 表示指向OH_Cursor实例的指针。 |
@@ -280,6 +306,7 @@ int (*getSize)(OH_Cursor *cursor, int32_t columnIndex, size_t *size)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 |
@@ -287,9 +314,10 @@ int (*getSize)(OH_Cursor *cursor, int32_t columnIndex, size_t *size)
  
   
 
-#### getText()
+### getText()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int (*getText)(OH_Cursor *cursor, int32_t columnIndex, char *value, int length)
@@ -303,6 +331,7 @@ int (*getText)(OH_Cursor *cursor, int32_t columnIndex, char *value, int length)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Cursor *cursor | 表示指向OH_Cursor实例的指针。 |
@@ -313,6 +342,7 @@ int (*getText)(OH_Cursor *cursor, int32_t columnIndex, char *value, int length)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 |
@@ -320,9 +350,10 @@ int (*getText)(OH_Cursor *cursor, int32_t columnIndex, char *value, int length)
  
   
 
-#### getInt64()
+### getInt64()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int (*getInt64)(OH_Cursor *cursor, int32_t columnIndex, int64_t *value)
@@ -336,6 +367,7 @@ int (*getInt64)(OH_Cursor *cursor, int32_t columnIndex, int64_t *value)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Cursor *cursor | 表示指向OH_Cursor实例的指针 |
@@ -345,6 +377,7 @@ int (*getInt64)(OH_Cursor *cursor, int32_t columnIndex, int64_t *value)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 |
@@ -352,9 +385,10 @@ int (*getInt64)(OH_Cursor *cursor, int32_t columnIndex, int64_t *value)
  
   
 
-#### getReal()
+### getReal()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int (*getReal)(OH_Cursor *cursor, int32_t columnIndex, double *value)
@@ -368,6 +402,7 @@ int (*getReal)(OH_Cursor *cursor, int32_t columnIndex, double *value)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Cursor *cursor | 表示指向OH_Cursor实例的指针 |
@@ -377,6 +412,7 @@ int (*getReal)(OH_Cursor *cursor, int32_t columnIndex, double *value)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 |
@@ -384,9 +420,10 @@ int (*getReal)(OH_Cursor *cursor, int32_t columnIndex, double *value)
  
   
 
-#### getBlob()
+### getBlob()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int (*getBlob)(OH_Cursor *cursor, int32_t columnIndex, unsigned char *value, int length)
@@ -400,6 +437,7 @@ int (*getBlob)(OH_Cursor *cursor, int32_t columnIndex, unsigned char *value, int
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Cursor *cursor | 表示指向OH_Cursor实例的指针 |
@@ -410,6 +448,7 @@ int (*getBlob)(OH_Cursor *cursor, int32_t columnIndex, unsigned char *value, int
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 |
@@ -417,9 +456,10 @@ int (*getBlob)(OH_Cursor *cursor, int32_t columnIndex, unsigned char *value, int
  
   
 
-#### isNull()
+### isNull()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int (*isNull)(OH_Cursor *cursor, int32_t columnIndex, bool *isNull)
@@ -433,6 +473,7 @@ int (*isNull)(OH_Cursor *cursor, int32_t columnIndex, bool *isNull)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Cursor *cursor | 表示指向OH_Cursor实例的指针 |
@@ -442,6 +483,7 @@ int (*isNull)(OH_Cursor *cursor, int32_t columnIndex, bool *isNull)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 |
@@ -449,9 +491,10 @@ int (*isNull)(OH_Cursor *cursor, int32_t columnIndex, bool *isNull)
  
   
 
-#### destroy()
+### destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int (*destroy)(OH_Cursor *cursor)
@@ -465,6 +508,7 @@ int (*destroy)(OH_Cursor *cursor)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Cursor *cursor | 表示指向OH_Cursor实例的指针 |
@@ -472,6 +516,7 @@ int (*destroy)(OH_Cursor *cursor)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 |
@@ -479,9 +524,10 @@ int (*destroy)(OH_Cursor *cursor)
  
   
 
-#### getAsset()
+### getAsset()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int (*getAsset)(OH_Cursor *cursor, int32_t columnIndex, Data_Asset *value)
@@ -495,6 +541,7 @@ int (*getAsset)(OH_Cursor *cursor, int32_t columnIndex, Data_Asset *value)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Cursor *cursor | 表示指向OH_Cursor实例的指针 |
@@ -504,6 +551,7 @@ int (*getAsset)(OH_Cursor *cursor, int32_t columnIndex, Data_Asset *value)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 |
@@ -511,9 +559,10 @@ int (*getAsset)(OH_Cursor *cursor, int32_t columnIndex, Data_Asset *value)
  
   
 
-#### getAssets()
+### getAssets()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int (*getAssets)(OH_Cursor *cursor, int32_t columnIndex, Data_Asset **value, uint32_t *length)
@@ -527,6 +576,7 @@ int (*getAssets)(OH_Cursor *cursor, int32_t columnIndex, Data_Asset **value, uin
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Cursor *cursor | 表示指向OH_Cursor实例的指针 |
@@ -537,6 +587,7 @@ int (*getAssets)(OH_Cursor *cursor, int32_t columnIndex, Data_Asset **value, uin
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，出错时返回对应的错误码。 |

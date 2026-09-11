@@ -1,16 +1,16 @@
 # 案例：ArkTS内存泄漏分析
 
-更新时间：2026-07-28 12:07:32
+更新时间：2026-08-29 09:41:34
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-arkts-memory-leak-analysis
 
 本案例介绍如何判断应用存在ArkTS内存泄漏，以及如何通过快照对比找出ArkTS内存泄漏的原因。
  
 
-#### 初步识别内存问题
+## 初步识别内存问题
 1. 使用[实时监控功能](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/realtime-monitor)对应用的内存资源进行监控。正常操作应用，观察运行过程中Memory泳道的变化。
 
-  当在一段时间内应用内存没有明显增加或者在内存上涨后又逐渐回落至正常水平，则基本可以排除应用存在内存问题；反之，在一段时间内不断上涨且无回落或者内存占用明显增长超出预期，那么则可初步判断应用可能存在内存问题。
+  当在一段时间内应用内存没有明显增加或者在内存上涨后又逐渐回落至正常水平，则基本可以排除应用存在内存问题；反之，在一段时间内不断上涨且无回落或者内存占用明显增长超出预期，则可初步判断应用可能存在内存问题。
 
   
 ![](assets/案例：ArkTS内存泄漏分析/file-20260514133144336-0.png)
@@ -26,9 +26,7 @@
   
 ![](assets/案例：ArkTS内存泄漏分析/file-20260514133144336-10.png)
 
-4. 点击三角按钮
-![](assets/案例：ArkTS内存泄漏分析/file-20260514133144336-11.png)
-即开始录制。
+4. 点击三角按钮![icon](assets/案例：ArkTS内存泄漏分析/file-20260514133144336-11.png)即开始录制。
 5. 录制过程中，不断操作应用在问题场景的功能，将问题放大，便于快速定界问题点。
 6. 点击下图中方块按钮或者左侧停止按钮结束录制。
 
@@ -43,7 +41,7 @@
  
  
 
-#### 使用Snapshot模板分析ArkTS内存问题
+## 使用Snapshot模板分析ArkTS内存问题
 
 分析内存泄漏问题步骤如下：
  1. 使用Snapshot模板录制数据；
@@ -54,7 +52,7 @@
  
  
 
-#### 录制模板数据
+### 录制模板数据
 
 1. 连接设备后启动应用，点击应用选择框选择需要录制的应用，选择**Snapshot**模板，点击Create Session或双击Snapshot图标即可创建一个Snapshot的录制模板。
 2. 创建模板后，点击三角按钮即开始录制。
@@ -86,7 +84,7 @@
 
  
 
-#### 分析ArkTS Heap
+### 分析ArkTS Heap
 
 1. 在每次拍摄堆快照之前，虚拟机都会触发GC，所以理论上堆快照内存在的对象都是当前虚拟机已经无法GC掉的对象。我们可以将两个堆快照进行比较，来查看哪些对象是在触发问题场景时新增了且不能释放的。切换到窗口下方详情区域的**Comparison**区域，将两次快照进行对比。图中数据的含义是以Snapshot2作为基准，Snapshot2对比Snapshot1的数据变化量。
 
@@ -101,11 +99,11 @@
 
  
 
-#### 分析Snapshot数据
+## 分析Snapshot数据
 
  
 
-#### 常见对象介绍
+### 常见对象介绍
 
 **JSArray**
  
@@ -244,12 +242,12 @@ DevEco Studio 6.1.0 Release版本新增，位于（handle）标签中，允许�
  
 **GlobalHandleObject**
  
-26.0.0 Beta2版本新增，位于（handle）标签中，用于记录napi_ref地址，并建立napi_ref和ArkTS对象的引用关系。该功能需要先调用[@util.ArkTSVM.setTrackGlobalRef](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-util#settrackglobalref)接口使能 ，使能后会在快照导出过程中记录napi_ref地址和引用关系。开发者可根据快照中napi_ref相关信息，分析跨语言导致的内存泄漏。
+26.0.0版本新增，位于（handle）标签中，用于记录napi_ref地址，并建立napi_ref和ArkTS对象的引用关系。该功能需要先调用[@util.ArkTSVM.setTrackGlobalRef](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-util#settrackglobalref)接口使能 ，使能后会在快照导出过程中记录napi_ref地址和引用关系。开发者可根据快照中napi_ref相关信息，分析跨语言导致的内存泄漏。
  
 如下图，ReferenceAddress:0x5b0b560160是napi_ref地址，子节点是napi_ref关联的ArkTS对象。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/VJncoYgKRZGiteK4bxB5IQ/zh-cn_image_0000002647917098.png?HW-CC-KV=V1&HW-CC-Date=20260730T071823Z&HW-CC-Expire=86400&HW-CC-Sign=A3AF7AAE4CEF9C3195900E7240C9854B940D1C2C9EE6757845EFE01C09F718D2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/1HjzAGXXQNqH1WFOogsk8w/zh-cn_image_0000002701663604.png?HW-CC-KV=V1&HW-CC-Date=20260911T072808Z&HW-CC-Expire=86400&HW-CC-Sign=415864C615BF73D3E2F2A523D83D0CA5EE7DDC6E9ADF147D0E3616BDC9EB9E5C)
 
  
 > [!NOTE]
@@ -258,30 +256,37 @@ DevEco Studio 6.1.0 Release版本新增，位于（handle）标签中，允许�
  
 **VMRoot**
  
-26.0.0 Beta1版本新增，位于（handle）标签中，表示虚拟机层面的根节点。
+26.0.0版本新增，位于（handle）标签中，表示虚拟机层面的根节点。
  
 **FrameRoot**
  
-26.0.0 Beta1版本新增，位于（handle）标签中，表示函数调用栈帧在GC遍历过程中的根节点。
+26.0.0版本新增，位于（handle）标签中，表示函数调用栈帧在GC遍历过程中的根节点。
  
 **SourceTextModule**
  
 SourceTextModule为虚拟机创建的对象，当应用使用export暴露对象后会被SourceTextModule对象持有。
  
-属性EcmaModuleRecordName表示export对象所在的文件名，属性EcmaModuleFileName表示export对象文件所在的abc文件名，这两个属性名在26.0.0 Beta1版本新增。如果快照用TRIM_LEVEL_2级别裁剪生成的.rawheap文件转换成的.heapsnapshot文件则不显示这两个属性名。
+属性EcmaModuleRecordName表示export对象所在的文件名，属性EcmaModuleFileName表示export对象文件所在的abc文件名，这两个属性名在26.0.0版本新增。如果快照用TRIM_LEVEL_2级别裁剪生成的.rawheap文件转换成的.heapsnapshot文件则不显示这两个属性名。
  
 **Proxy-&lt;对象实例名称&gt;**
  
-26.0.0 Beta1版本新增，被@Observed装饰的class实例，或被状态管理V1装饰器（如@State）装饰的对象实例，系统会自动在Proxy后带上对象实例名称。
+26.0.0版本新增，被@Observed装饰的class实例，或被状态管理V1装饰器（如@State）装饰的对象实例，系统会自动在Proxy后带上对象实例名称。
  
 > [!NOTE]
 > 若开启进程级堆快照转储以后，是由子线程触发的进程级堆快照转储将不会展示对象实例名称。
 
  
  
-
-#### 常见属性介绍
+**HeapMetadata**
  
+26.0.0版本新增，HeapMetadata用于记录触发OOM（Out of Memory，内存溢出）的ArkTS堆内存（Heap）信息，包括heapType（堆类型）、spaceType（堆空间类型）、vmType（虚拟机类型）。
+ 
+其中heapType记录触发OOM的heap，包含Local Heap、Shared Heap、Process Heap；spaceType记录触发OOM具体的堆空间类型；vmType记录当前虚拟机的类型，dynamic表示动态虚拟机类型，static表示静态虚拟机类型。
+ 
+
+### 常见属性介绍
+ 
+
 | 属性 | 含义 |
 | --- | --- |
 | __proto__ | 原型对象 |
@@ -300,20 +305,20 @@ SourceTextModule为虚拟机创建的对象，当应用使用export暴露对象�
  
  
 
-#### 分析方法
+### 分析方法
 
 **查看对象名称**
  
 对于声明对象，可以通过constructor属性来确定对象名称。
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/InYVPUKfTdGoq8qduzdzdA/zh-cn_image_0000002648077008.png?HW-CC-KV=V1&HW-CC-Date=20260730T071823Z&HW-CC-Expire=86400&HW-CC-Sign=082997D4D85DE959B8FF9F4D333030CEF890F2E3BF332C3C0F0B5B1B69F800B7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/fKbLmWc4TAeiTzfwEKgJ0g/zh-cn_image_0000002701663620.png?HW-CC-KV=V1&HW-CC-Date=20260911T072808Z&HW-CC-Expire=86400&HW-CC-Sign=D76609876A63BF6766F65C09DB9760CD0DE9901580E1F30B16E6FED5CFF38CB0)
 
  
 对于实例化对象，一般没有constructor，则需要展开__proto__属性后查找constructor；
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/DKio9fChSZu6_yRFf6eKQw/zh-cn_image_0000002678156731.png?HW-CC-KV=V1&HW-CC-Date=20260730T071823Z&HW-CC-Expire=86400&HW-CC-Sign=D6B90F1A41FFC5F81288000B447EDEE806AC327B2C7C0DCB7B59FCBF0EA633A1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/X2Zeklx9T56t0XkcEyeRiA/zh-cn_image_0000002731382847.png?HW-CC-KV=V1&HW-CC-Date=20260911T072808Z&HW-CC-Expire=86400&HW-CC-Sign=70242F0826F04A6FD04E6378467A50FD4B277A295120D3BD19745E41BBC008F9)
 
  
 若对象里有一些标志性属性，可以通过在代码里搜索属性名称来找到具体是哪个对象。
@@ -321,7 +326,7 @@ SourceTextModule为虚拟机创建的对象，当应用使用export暴露对象�
 如果对象间有继承关系，则可以继续展开__proto__：
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/I8kxWlo8ROyg9V43D9dRnQ/zh-cn_image_0000002648077014.png?HW-CC-KV=V1&HW-CC-Date=20260730T071823Z&HW-CC-Expire=86400&HW-CC-Sign=F39D23166B0228A8A9F62B0B8BC97F823D76DEE3CF91E2E97589FD2706EEB1C7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/uFEMPD4PRhKjJZAH6IN_Og/zh-cn_image_0000002701823542.png?HW-CC-KV=V1&HW-CC-Date=20260911T072808Z&HW-CC-Expire=86400&HW-CC-Sign=1E2896273C7C16967E0B6D31097BA788BC532CDA9BF4782A05AE65F0A2E6D52C)
 
  
 如上图则表明Man对象继承自People对象。

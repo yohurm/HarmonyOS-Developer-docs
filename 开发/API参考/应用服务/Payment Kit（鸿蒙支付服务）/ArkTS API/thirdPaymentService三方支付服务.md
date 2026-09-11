@@ -1,6 +1,6 @@
 # thirdPaymentService(三方支付服务)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-third-payment-service
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -16,7 +16,8 @@
 **起始版本：** 6.0.0(20)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -26,7 +27,8 @@ import { thirdPaymentService } from '@kit.PaymentKit';
  
   
 
-#### PayMethod
+## PayMethod
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -40,6 +42,7 @@ import { thirdPaymentService } from '@kit.PaymentKit';
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | WECHAT_PAY | 'wechat_pay' | 微信支付。 |
@@ -49,7 +52,8 @@ import { thirdPaymentService } from '@kit.PaymentKit';
  
   
 
-#### ThirdPayClient
+## ThirdPayClient
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -65,7 +69,8 @@ import { thirdPaymentService } from '@kit.PaymentKit';
  
   
 
-#### constructor
+### constructor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -83,6 +88,7 @@ constructor(context: common.UIAbilityContext, payMethod: PayMethod, thirdAppId: 
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | UIAbility上下文。 |
@@ -140,7 +146,8 @@ struct Index {
  
   
 
-#### pay
+### pay
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -158,6 +165,7 @@ pay(payInfo: string): Promise&lt;void&gt;;
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | payInfo | string | 是 | 拉起收银台传入的订单信息，payInfo是json字符串的格式（具体参数根据三方支付方式拉起收银台要求传递，参考payInfo）。示例为{"xxx1":"", "xxx2":"", "token":"***"} |
@@ -165,6 +173,7 @@ pay(payInfo: string): Promise&lt;void&gt;;
  
 **返回值**：
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -174,6 +183,7 @@ pay(payInfo: string): Promise&lt;void&gt;;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-payment)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
@@ -227,7 +237,8 @@ struct Index {
  
   
 
-#### handlePayCallback
+### handlePayCallback
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -245,6 +256,7 @@ handlePayCallback(want: Want): boolean;
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | want | Want | 是 | 应用组件间的信息传递的载体。 |
@@ -252,6 +264,7 @@ handlePayCallback(want: Want): boolean;
  
 **返回值**：
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 回调处理结果（该结果为用户支付操作处理结果，非实际支付结果，实际支付结果以三方支付结果为准）。 - true：用户支付操作成功 - false：用户支付操作失败 |
@@ -261,6 +274,7 @@ handlePayCallback(want: Want): boolean;
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-payment)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. Failed to call the API due to limited device capabilities. |

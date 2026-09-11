@@ -1,13 +1,14 @@
 # image_common.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-image-common-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明图像接口使用的公共枚举和结构体。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | Image_Size | Image_Size | 图像大小结构体。 |
@@ -45,10 +49,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | Image_ErrorCode | Image_ErrorCode | 错误码。 |
@@ -58,10 +64,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | Image_ErrorCode OH_PictureMetadata_Create(Image_MetadataType metadataType, OH_PictureMetadata **metadata) | 创建OH_PictureMetadata指针。 |
@@ -77,10 +85,12 @@
  
   
 
-#### 变量
+### 变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | static const char * MIME_TYPE_BMP = "image/bmp" | bmp图片格式。 起始版本： 12 |
@@ -331,15 +341,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### Image_ErrorCode
+### Image_ErrorCode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Image_ErrorCode
@@ -351,6 +363,7 @@ enum Image_ErrorCode
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | IMAGE_SUCCESS = 0 | 操作成功。 |
@@ -393,9 +406,10 @@ enum Image_ErrorCode
  
   
 
-#### Image_MetadataType
+### Image_MetadataType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Image_MetadataType
@@ -407,6 +421,7 @@ enum Image_MetadataType
  
 **起始版本：** 13
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | EXIF_METADATA = 1 | EXIF元数据。 |
@@ -416,9 +431,10 @@ enum Image_MetadataType
  
   
 
-#### IMAGE_ALLOCATOR_MODE
+### IMAGE_ALLOCATOR_MODE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum IMAGE_ALLOCATOR_MODE
@@ -430,6 +446,7 @@ pixelmap内存分配类型。
  
 **起始版本：** 20
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | IMAGE_ALLOCATOR_MODE_AUTO = 0 | 系统决定创建pixelmap时分配内存的类型。 |
@@ -439,15 +456,17 @@ pixelmap内存分配类型。
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_PictureMetadata_Create()
+### OH_PictureMetadata_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PictureMetadata_Create(Image_MetadataType metadataType, OH_PictureMetadata **metadata)
@@ -465,6 +484,7 @@ Image_ErrorCode OH_PictureMetadata_Create(Image_MetadataType metadataType, OH_Pi
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Image_MetadataType metadataType | 元数据的类型。 |
@@ -473,6 +493,7 @@ Image_ErrorCode OH_PictureMetadata_Create(Image_MetadataType metadataType, OH_Pi
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -480,9 +501,10 @@ Image_ErrorCode OH_PictureMetadata_Create(Image_MetadataType metadataType, OH_Pi
  
   
 
-#### OH_PictureMetadata_GetProperty()
+### OH_PictureMetadata_GetProperty()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PictureMetadata_GetProperty(OH_PictureMetadata *metadata, Image_String *key, Image_String *value)
@@ -500,6 +522,7 @@ Image_ErrorCode OH_PictureMetadata_GetProperty(OH_PictureMetadata *metadata, Ima
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PictureMetadata *metadata | 指向OH_PictureMetadata对象的指针。 |
@@ -509,6 +532,7 @@ Image_ErrorCode OH_PictureMetadata_GetProperty(OH_PictureMetadata *metadata, Ima
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 IMAGE_UNSUPPORTED_METADATA：不支持的元数据类型，或元数据类型与辅助图片类型不匹配。 |
@@ -516,9 +540,10 @@ Image_ErrorCode OH_PictureMetadata_GetProperty(OH_PictureMetadata *metadata, Ima
  
   
 
-#### OH_PictureMetadata_SetProperty()
+### OH_PictureMetadata_SetProperty()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PictureMetadata_SetProperty(OH_PictureMetadata *metadata, Image_String *key, Image_String *value)
@@ -536,6 +561,7 @@ Image_ErrorCode OH_PictureMetadata_SetProperty(OH_PictureMetadata *metadata, Ima
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PictureMetadata *metadata | 指向OH_PictureMetadata对象的指针。 |
@@ -545,6 +571,7 @@ Image_ErrorCode OH_PictureMetadata_SetProperty(OH_PictureMetadata *metadata, Ima
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 IMAGE_UNSUPPORTED_METADATA：不支持的元数据类型，或元数据类型与辅助图片类型不匹配。 |
@@ -552,9 +579,10 @@ Image_ErrorCode OH_PictureMetadata_SetProperty(OH_PictureMetadata *metadata, Ima
  
   
 
-#### OH_PictureMetadata_SetBlobData()
+### OH_PictureMetadata_SetBlobData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PictureMetadata_SetBlobData(OH_PictureMetadata *metadata, uint8_t *blob, uint32_t blobSize)
@@ -568,6 +596,7 @@ Image_ErrorCode OH_PictureMetadata_SetBlobData(OH_PictureMetadata *metadata, uin
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PictureMetadata *metadata | 指向OH_PictureMetadata对象的指针。 |
@@ -577,6 +606,7 @@ Image_ErrorCode OH_PictureMetadata_SetBlobData(OH_PictureMetadata *metadata, uin
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_INVALID_PARAMETER：metadata或blob为空指针、blobSize为0。 IMAGE_UNSUPPORTED_METADATA：不支持的元数据类型。 IMAGE_UNSUPPORTED_OPERATION：未能设置二进制数据。 |
@@ -584,9 +614,10 @@ Image_ErrorCode OH_PictureMetadata_SetBlobData(OH_PictureMetadata *metadata, uin
  
   
 
-#### OH_PictureMetadata_GetBlobDataSize()
+### OH_PictureMetadata_GetBlobDataSize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PictureMetadata_GetBlobDataSize(OH_PictureMetadata *metadata, uint32_t *blobSize)
@@ -600,6 +631,7 @@ Image_ErrorCode OH_PictureMetadata_GetBlobDataSize(OH_PictureMetadata *metadata,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PictureMetadata *metadata | 指向OH_PictureMetadata对象的指针。 |
@@ -608,6 +640,7 @@ Image_ErrorCode OH_PictureMetadata_GetBlobDataSize(OH_PictureMetadata *metadata,
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_INVALID_PARAMETER：metadata或blobSize为空指针。 IMAGE_UNSUPPORTED_METADATA：不支持的元数据类型。 |
@@ -615,9 +648,10 @@ Image_ErrorCode OH_PictureMetadata_GetBlobDataSize(OH_PictureMetadata *metadata,
  
   
 
-#### OH_PictureMetadata_GetBlobData()
+### OH_PictureMetadata_GetBlobData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PictureMetadata_GetBlobData(OH_PictureMetadata *metadata, uint8_t *blob, uint32_t blobSize)
@@ -631,6 +665,7 @@ Image_ErrorCode OH_PictureMetadata_GetBlobData(OH_PictureMetadata *metadata, uin
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PictureMetadata *metadata | 指向OH_PictureMetadata对象的指针。 |
@@ -640,6 +675,7 @@ Image_ErrorCode OH_PictureMetadata_GetBlobData(OH_PictureMetadata *metadata, uin
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_INVALID_PARAMETER：metadata或blob为空指针、blobSize为0或小于要求。 IMAGE_UNSUPPORTED_METADATA：不支持的元数据类型。 IMAGE_UNSUPPORTED_OPERATION：无法获取二进制数据。 |
@@ -647,9 +683,10 @@ Image_ErrorCode OH_PictureMetadata_GetBlobData(OH_PictureMetadata *metadata, uin
  
   
 
-#### OH_PictureMetadata_GetPropertyWithNull()
+### OH_PictureMetadata_GetPropertyWithNull()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PictureMetadata_GetPropertyWithNull(OH_PictureMetadata *metadata, Image_String *key, Image_String *value)
@@ -669,6 +706,7 @@ Image_ErrorCode OH_PictureMetadata_GetPropertyWithNull(OH_PictureMetadata *metad
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PictureMetadata *metadata | 将被操作的PictureMetadata指针。 |
@@ -678,6 +716,7 @@ Image_ErrorCode OH_PictureMetadata_GetPropertyWithNull(OH_PictureMetadata *metad
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_INVALID_PARAMETER：metadata、key或value为空。 IMAGE_UNSUPPORTED_METADATA：不支持的元数据类型，或元数据类型与辅助图片类型不匹配。 |
@@ -685,9 +724,10 @@ Image_ErrorCode OH_PictureMetadata_GetPropertyWithNull(OH_PictureMetadata *metad
  
   
 
-#### OH_PictureMetadata_Release()
+### OH_PictureMetadata_Release()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PictureMetadata_Release(OH_PictureMetadata *metadata)
@@ -705,6 +745,7 @@ Image_ErrorCode OH_PictureMetadata_Release(OH_PictureMetadata *metadata)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PictureMetadata *metadata | 被操作的OH_PictureMetadata指针。 |
@@ -712,6 +753,7 @@ Image_ErrorCode OH_PictureMetadata_Release(OH_PictureMetadata *metadata)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -719,9 +761,10 @@ Image_ErrorCode OH_PictureMetadata_Release(OH_PictureMetadata *metadata)
  
   
 
-#### OH_PictureMetadata_Clone()
+### OH_PictureMetadata_Clone()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PictureMetadata_Clone(OH_PictureMetadata *oldMetadata, OH_PictureMetadata **newMetadata)
@@ -739,6 +782,7 @@ Image_ErrorCode OH_PictureMetadata_Clone(OH_PictureMetadata *oldMetadata, OH_Pic
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PictureMetadata *oldMetadata | 被操作的OH_PictureMetadata指针。 |
@@ -747,6 +791,7 @@ Image_ErrorCode OH_PictureMetadata_Clone(OH_PictureMetadata *oldMetadata, OH_Pic
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 IMAGE_ALLOC_FAILED：内存分配失败。 IMAGE_COPY_FAILED：内存拷贝失败。 |

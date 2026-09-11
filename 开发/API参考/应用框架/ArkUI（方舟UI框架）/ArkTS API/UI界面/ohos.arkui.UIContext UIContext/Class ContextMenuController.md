@@ -1,9 +1,9 @@
 # Class (ContextMenuController)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-contextmenucontroller
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供控制菜单关闭的能力。开发者可以通过此接口在特定场景下（如定时关闭、点击外部区域关闭等）主动关闭菜单。
  
@@ -12,9 +12,10 @@
 
   
 
-#### close12+
+## close12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 close(): void
  
@@ -77,4 +78,4 @@ struct Index {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/OtbvURJmTKasL7cDUzXktA/zh-cn_image_0000002655848252.gif?HW-CC-KV=V1&HW-CC-Date=20260730T071444Z&HW-CC-Expire=86400&HW-CC-Sign=721997124CA3728F41CC28F2138A5B0CAC5EC859344FFDE2A05D0E496E9C2151)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/I5JKG2QxTwGiCA4OVoMG2Q/zh-cn_image_0000002747212241.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072226Z&HW-CC-Expire=86400&HW-CC-Sign=039AC633784B8C4AA9B85D1D925461D5B7A36957D3F1485E645C318639A48751)

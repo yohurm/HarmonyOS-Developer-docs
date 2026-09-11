@@ -1,9 +1,9 @@
 # 警告弹窗 (AlertDialog)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-alert-dialog-box
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 显示警告弹窗组件，可设置文本内容与响应回调。
 
@@ -12,32 +12,34 @@
 
 
 
-#### AlertDialogParam对象说明
+## AlertDialogParam对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 警告弹窗的样式。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | title | ResourceStr | 否 | 是 | 弹窗标题。 默认值：未设置时不显示标题。 API version 20之前，弹窗标题的对齐方式为左对齐。 API version 20及之后，弹窗标题的对齐方式为居中对齐。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | subtitle10+ | ResourceStr | 否 | 是 | 弹窗副标题。 默认值：未设置时不显示副标题。 API version 20之前，弹窗副标题的对齐方式为左对齐。 API version 20及之后，弹窗副标题的对齐方式为居中对齐。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | message | ResourceStr | 否 | 否 | 弹窗内容。 API version 20之前，弹窗内容的对齐方式为左对齐。 API version 20及之后，弹窗内容的对齐方式为居中对齐。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
-| autoCancel | boolean | 否 | 是 | 点击遮障层时，是否关闭弹窗。值为true表示关闭弹窗，值为false表示不关闭弹窗。 默认值：true 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
-| cancel | VoidCallback | 否 | 是 | 点击遮障层关闭dialog时的回调。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| autoCancel | boolean | 否 | 是 | 点击遮罩层时，是否关闭弹窗。值为true表示关闭弹窗，值为false表示不关闭弹窗。 默认值：true 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
+| cancel | VoidCallback | 否 | 是 | 点击遮罩层关闭dialog时的回调。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | alignment | DialogAlignment | 否 | 是 | 弹窗在竖直方向上的对齐方式。 默认值：DialogAlignment.Default 元服务API： 从API version 11开始，该接口支持在元服务中使用。 说明： 若在UIExtension中设置showInSubWindow为true，弹窗将基于UIExtension的宿主窗口对齐。 |
 | offset | Offset | 否 | 是 | 弹窗相对alignment所在位置的偏移量。dx表示水平方向偏移，正值为向右偏移，负值为向左偏移；dy表示垂直方向偏移，正值为向下偏移，负值为向上偏移。 默认值：{ dx: 0 , dy: 0 } 单位：vp 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
 | gridCount | number | 否 | 是 | 弹窗容器宽度所占用栅格数。栅格数为弹窗宽度的相对单位，值越大弹窗越宽。 默认值：4 取值范围：大于等于0的整数。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
-| maskRect10+ | Rectangle | 否 | 是 | 弹窗遮蔽层区域，在遮蔽层区域内的事件不透传，在遮蔽层区域外的事件透传。 默认值：{ x: 0, y: 0, width: '100%', height: '100%' } 说明： showInSubWindow为true时，maskRect不生效。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
+| maskRect10+ | Rectangle | 否 | 是 | 弹窗遮罩层区域，在遮罩层区域内的事件不透传，在遮罩层区域外的事件透传。 默认值：{ x: 0, y: 0, width: '100%', height: '100%' } 说明： showInSubWindow为true时，maskRect不生效。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | showInSubWindow11+ | boolean | 否 | 是 | 某弹窗需要显示在主窗口之外时，是否在子窗口显示此弹窗。值为true表示在子窗口显示弹窗。 默认值：false，弹窗显示在应用内，而非独立子窗口。 说明：showInSubWindow为true的弹窗无法触发显示另一个showInSubWindow为true的弹窗。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | isModal11+ | boolean | 否 | 是 | 弹窗是否为模态窗口，模态窗口有蒙层，非模态窗口无蒙层。值为true时，弹窗为模态窗口，有蒙层。值为false时，弹窗为非模态窗口，无蒙层。 默认值：true，此时弹窗有蒙层。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | backgroundColor11+ | ResourceColor | 否 | 是 | 弹窗背板颜色。 默认值：Color.Transparent 说明： backgroundColor会与模糊属性backgroundBlurStyle叠加产生效果，如果不符合预期，可将backgroundBlurStyle设置为BlurStyle.NONE，即可取消模糊。当设置系统材质systemMaterial时，backgroundColor不生效。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | backgroundBlurStyle11+ | BlurStyle | 否 | 是 | 弹窗背板模糊材质。 默认值：从API版本26.0.0开始，为BlurStyle.NONE，API版本26.0.0之前，为BlurStyle.COMPONENT_ULTRA_THICK。 说明： 设置为BlurStyle.NONE即可关闭背景虚化。当设置了backgroundBlurStyle为非NONE值时，则不要设置backgroundColor，否则颜色显示将不符合预期效果。当设置系统材质systemMaterial时，backgroundBlurStyle不生效。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | backgroundBlurStyleOptions19+ | BackgroundBlurStyleOptions | 否 | 是 | 弹窗背板模糊效果。默认值请参考BackgroundBlurStyleOptions类型说明。 元服务API： 从API version 19开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | backgroundEffect19+ | BackgroundEffectOptions | 否 | 是 | 弹窗背板效果参数。当设置系统材质systemMaterial时，backgroundEffect不生效。默认值请参考BackgroundEffectOptions类型说明。 元服务API： 从API version 19开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
-| onWillDismiss12+ | Callback&lt;DismissDialogAction&gt; | 否 | 是 | 交互式关闭回调函数。当用户执行点击遮障层关闭、侧滑（左滑/右滑）、三键back、键盘ESC关闭交互操作时，如果注册该回调函数，则不会立刻关闭弹窗。 说明： 1.在回调函数中可以通过reason得到阻拦关闭弹窗的操作类型，从而根据原因选择是否能关闭弹窗。典型场景如弹窗中存在未保存的表单数据时，拦截关闭并提示用户保存。当前组件返回的reason中，暂不支持CLOSE_BUTTON的枚举值。 2.在onWillDismiss回调中，不能再做onWillDismiss拦截。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
+| onWillDismiss12+ | Callback&lt;DismissDialogAction&gt; | 否 | 是 | 交互式关闭回调函数。当用户执行点击遮罩层关闭、侧滑（左滑/右滑）、三键back、键盘ESC关闭交互操作时，如果注册该回调函数，则不会立刻关闭弹窗。 说明： 1.在回调函数中可以通过reason得到阻拦关闭弹窗的操作类型，从而根据原因选择是否能关闭弹窗。典型场景如弹窗中存在未保存的表单数据时，拦截关闭并提示用户保存。当前组件返回的reason中，暂不支持CLOSE_BUTTON的枚举值。 2.在onWillDismiss回调中，不能再做onWillDismiss拦截。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | cornerRadius12+ | Dimension \| BorderRadiuses \| LocalizedBorderRadiuses | 否 | 是 | 设置背板的圆角半径。 可分别设置4个圆角的半径。 默认值：{ topLeft: '32vp', topRight: '32vp', bottomLeft: '32vp', bottomRight: '32vp' } 圆角大小受组件尺寸限制，最大值为组件宽或高的一半，若值为负，则按照默认值处理。 百分比参数方式：以父元素弹窗宽和高的百分比来设置弹窗的圆角。 说明： 当cornerRadius属性类型为LocalizedBorderRadiuses时，支持随语言习惯改变布局顺序。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | transition12+ | TransitionEffect | 否 | 是 | 设置弹窗显示和退出的过渡效果。 说明： 1.如果不设置，则使用默认的显示/退出动效。 2.显示动效中按back键，打断显示动效，执行退出动效，动画效果为显示动效与退出动效的曲线叠加后的效果。 3.退出动效中按back键，不会打断退出动效，退出动效继续执行，继续按back键退出应用。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
 | width12+ | Dimension | 否 | 是 | 设置弹窗背板的宽度。 说明： - 弹窗宽度默认最大值：400vp。 - 百分比参数方式：弹窗参考宽度为所在窗口的宽度，在此基础上调小或调大。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 模型约束： 此接口仅可在Stage模型下使用。 |
@@ -62,9 +64,10 @@
 
 
 
-#### LevelOrder18+
+## LevelOrder18+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type LevelOrder = import('../api/@ohos.promptAction').LevelOrder
 
@@ -76,6 +79,7 @@ type LevelOrder = import('../api/@ohos.promptAction').LevelOrder
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 类型 | 说明 |
 | --- | --- |
 | import('../api/@ohos.promptAction').LevelOrder | 设置弹窗的显示顺序。 |
@@ -83,9 +87,10 @@ type LevelOrder = import('../api/@ohos.promptAction').LevelOrder
 
 
 
-#### AlertDialogParamWithConfirm对象说明
+## AlertDialogParamWithConfirm对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 继承自[AlertDialogParam](#alertdialogparam对象说明)。
 
@@ -93,12 +98,14 @@ type LevelOrder = import('../api/@ohos.promptAction').LevelOrder
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | confirm | AlertDialogButtonBaseOptions | 否 | 是 | 确认按钮的使能状态、默认焦点、按钮风格、文本内容、文本色、按钮背景色和点击回调。在弹窗获焦且未进行tab键走焦时，该按钮默认响应Enter键。多重弹窗情况下，可自动获焦并连续响应。默认响应Enter键能力在defaultFocus为true时不生效。 |
 
 
 confirm参数优先级：fontColor、backgroundColor > style > defaultFocus
+
 
 | backgroundColor | fontColor | style | defaultFocus | 效果 |
 | --- | --- | --- | --- | --- |
@@ -119,15 +126,17 @@ confirm参数优先级：fontColor、backgroundColor > style > defaultFocus
 
 
 
-#### AlertDialogParamWithButtons对象说明
+## AlertDialogParamWithButtons对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 继承自[AlertDialogParam](#alertdialogparam对象说明)。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -137,9 +146,10 @@ confirm参数优先级：fontColor、backgroundColor > style > defaultFocus
 
 
 
-#### AlertDialogParamWithOptions10+对象说明
+## AlertDialogParamWithOptions10+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 继承自[AlertDialogParam](#alertdialogparam对象说明)。
 
@@ -149,6 +159,7 @@ confirm参数优先级：fontColor、backgroundColor > style > defaultFocus
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | buttons | Array&lt;AlertDialogButtonOptions&gt; | 否 | 否 | 弹窗容器中的多个按钮。 |
@@ -157,15 +168,17 @@ confirm参数优先级：fontColor、backgroundColor > style > defaultFocus
 
 
 
-#### AlertDialogButtonOptions10+对象说明
+## AlertDialogButtonOptions10+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 继承自[AlertDialogButtonBaseOptions](#alertdialogbuttonbaseoptions18对象说明)。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -174,9 +187,10 @@ confirm参数优先级：fontColor、backgroundColor > style > defaultFocus
 
 
 
-#### AlertDialogButtonBaseOptions18+对象说明
+## AlertDialogButtonBaseOptions18+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 警告弹窗中按钮的样式。
 
@@ -189,6 +203,7 @@ confirm参数优先级：fontColor、backgroundColor > style > defaultFocus
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -203,9 +218,10 @@ confirm参数优先级：fontColor、backgroundColor > style > defaultFocus
 
 
 
-#### DialogButtonDirection10+枚举说明
+## DialogButtonDirection10+枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 警告弹窗中按钮的排布方向。
 
@@ -214,6 +230,7 @@ confirm参数优先级：fontColor、backgroundColor > style > defaultFocus
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -224,15 +241,17 @@ confirm参数优先级：fontColor、backgroundColor > style > defaultFocus
 
 
 
-#### DialogAlignment枚举说明
+## DialogAlignment枚举说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 警告弹窗的对齐方式。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -250,9 +269,10 @@ confirm参数优先级：fontColor、backgroundColor > style > defaultFocus
 
 
 
-#### Rectangle8+类型说明
+## Rectangle8+类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Rectangle是各种Dialog中maskRect参数的类型。
 
@@ -262,23 +282,25 @@ Rectangle是各种Dialog中maskRect参数的类型。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| x | Length | 否 | 是 | 弹窗遮蔽层区域相对于窗口左上角的x轴坐标。 默认值：0vp |
-| y | Length | 否 | 是 | 弹窗遮蔽层区域相对于窗口左上角的y轴坐标。 默认值：0vp |
-| width | Length | 否 | 是 | 弹窗遮蔽层区域的宽度。 默认值：'100%' |
-| height | Length | 否 | 是 | 弹窗遮蔽层区域的高度。 默认值：'100%' |
+| x | Length | 否 | 是 | 弹窗遮罩层区域相对于窗口左上角的x轴坐标。 默认值：0vp |
+| y | Length | 否 | 是 | 弹窗遮罩层区域相对于窗口左上角的y轴坐标。 默认值：0vp |
+| width | Length | 否 | 是 | 弹窗遮罩层区域的宽度。 默认值：'100%' |
+| height | Length | 否 | 是 | 弹窗遮罩层区域的高度。 默认值：'100%' |
 
 
 > [!NOTE]
-> x和y可以设置正负值百分比。当x设置为'100%'时表示遮蔽层区域往右偏移窗口本身宽度大小，当x设置为'-100%'时表示遮蔽层区域往左偏移窗口本身宽度大小。当y设置为'100%'时表示遮蔽层区域往下偏移窗口本身高度大小，当y设置为'-100%'时表示遮蔽层区域往上偏移窗口本身高度大小。 width和height只能设置正值，支持百分比，如果设置为负值，那么该值将被重置为默认值。 百分比相对于窗口自身宽高进行计算。
+> x和y可以设置正负值百分比。当x设置为'100%'时表示遮罩层区域往右偏移窗口本身宽度大小，当x设置为'-100%'时表示遮罩层区域往左偏移窗口本身宽度大小。当y设置为'100%'时表示遮罩层区域往下偏移窗口本身高度大小，当y设置为'-100%'时表示遮罩层区域往上偏移窗口本身高度大小。 width和height只能设置正值，支持百分比，如果设置为负值，那么该值将被重置为默认值。 百分比相对于窗口自身宽高进行计算。
 
 
 
 
-#### DismissDialogAction12+
+## DismissDialogAction12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Dialog关闭的信息。
 
@@ -290,7 +312,11 @@ Dialog关闭的信息。
 
 
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -300,9 +326,10 @@ Dialog关闭的信息。
 
 
 
-#### TextStyle12+对象说明
+## TextStyle12+对象说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 弹窗中message的文本样式，包含文本截断方式等。
 
@@ -312,6 +339,7 @@ Dialog关闭的信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | wordBreak | WordBreak | 否 | 是 | 弹窗message内容的文本截断方式。 默认值：WordBreak.BREAK_ALL |
@@ -319,15 +347,17 @@ Dialog关闭的信息。
 
 
 
-#### AlertDialog
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## AlertDialog
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### show(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### show(deprecated)
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 static show(value: AlertDialogParamWithConfirm | AlertDialogParamWithButtons | AlertDialogParamWithOptions)
 
@@ -343,6 +373,7 @@ static show(value: AlertDialogParamWithConfirm | AlertDialogParamWithButtons | A
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | AlertDialogParamWithConfirm \| AlertDialogParamWithButtons \| AlertDialogParamWithOptions10+ | 是 | 定义并显示AlertDialog组件。AlertDialogParamWithConfirm用于只有一个确认按钮的弹窗；AlertDialogParamWithButtons用于有两个按钮（主要按钮和次要按钮）的弹窗；AlertDialogParamWithOptions用于有多个自定义按钮的弹窗。 |
@@ -350,9 +381,10 @@ static show(value: AlertDialogParamWithConfirm | AlertDialogParamWithButtons | A
 
 
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 直接使用AlertDialog可能导致 UI上下文不明确 的问题，建议使用getUIContext()获取 UIContext 实例，并使用 showAlertDialog 调用绑定实例的AlertDialog.show()。
@@ -360,7 +392,10 @@ static show(value: AlertDialogParamWithConfirm | AlertDialogParamWithButtons | A
 
 
 
-#### 示例1（弹出多个按钮的弹窗）
+### 示例1（弹出多个按钮的弹窗）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过[AlertDialogParamWithConfirm](#alertdialogparamwithconfirm对象说明)、[AlertDialogParamWithButtons](#alertdialogparamwithbuttons对象说明)和[AlertDialogParamWithOptions](#alertdialogparamwithoptions10对象说明)实现了分别弹出一、二、三个按钮的弹窗。
 
@@ -508,7 +543,10 @@ struct AlertDialogExample {
 
 
 
-#### 示例2（可在主窗外弹出的弹窗）
+### 示例2（可在主窗外弹出的弹窗）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 在2in1设备上设置[AlertDialogParam](#alertdialogparam对象说明)中showInSubWindow属性的值为true时，可以弹出在主窗外显示的弹窗。
 
@@ -582,7 +620,10 @@ struct AlertDialogExample {
 
 
 
-#### 示例3（设置弹窗的动画）
+### 示例3（设置弹窗的动画）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置[AlertDialogParam](#alertdialogparam对象说明)中的transition属性来实现弹窗的显示和消失动画。
 
@@ -633,7 +674,10 @@ struct AlertDialogExample {
 
 
 
-#### 示例4（设置弹窗的样式）
+### 示例4（设置弹窗的样式）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本示例展示了如何设置AlertDialog的样式，包括宽度、高度、背景色、阴影等。
 
@@ -697,12 +741,15 @@ struct AlertDialogExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/LioI-RrqSZC17MDueEABvw/zh-cn_image_0000002704274805.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095450Z&HW-CC-Expire=86400&HW-CC-Sign=124E1B5A79121698825033BF87E5C4D79A81462FB7D50AC0E5D7B7DFDC15FD24)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/mHUf_3XkRAqrNfQnmr0DNQ/zh-cn_image_0000002717613056.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=771885ADB7AFBECA3D34FD26FD68BF66FEC0CC360AC7060E0A85048168331821)
 
 
 
 
-#### 示例5（悬停态弹窗）
+### 示例5（悬停态弹窗）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示了在折叠屏悬停态下设置dialog布局区域的效果。
 
@@ -753,12 +800,15 @@ struct AlertDialogExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/kulcqleRRzODWCs5LXkt8A/zh-cn_image_0000002674475014.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095450Z&HW-CC-Expire=86400&HW-CC-Sign=42A4A53F3EC754026800BCB280D0FDEC7ACD644673FC2436990C9DF5DEBBC401)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/9EQlTgtJQpSMTO17iHZKqA/zh-cn_image_0000002747293009.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=18DB3208727CAB7F94FCA05927756A26066417D6EB55E8C982B0E6FCA5569F7C)
 
 
 
 
-#### 示例6（弹窗生命周期）
+### 示例6（弹窗生命周期）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例展示了弹窗生命周期的相关接口的使用方法。
 
@@ -813,12 +863,15 @@ struct AlertDialogLifecycleExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/w0KikRIjSsS3SeEaQ6l6Dg/zh-cn_image_0000002704394975.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095450Z&HW-CC-Expire=86400&HW-CC-Sign=A15D5C3D044914023323AE2BD592148566840C431A9265883A2E5F11FCA32335)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/iAsjPoOWTKO5vVCw6s1utw/zh-cn_image_0000002747212925.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=39DB2952668F729111B4A10C95784AC8D3CF6A9999163DF6C287151E53F2AFA1)
 
 
 
 
-#### 示例7（自定义背景模糊效果参数）
+### 示例7（自定义背景模糊效果参数）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置[AlertDialogParam](#alertdialogparam对象说明)中的backgroundBlurStyleOptions属性，实现了自定义背景模糊效果。
 
@@ -868,12 +921,15 @@ struct AlertDialogExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/fY4twkfkTLKAVo_2vfoOwg/zh-cn_image_0000002674634854.png?HW-CC-KV=V1&HW-CC-Date=20260813T095450Z&HW-CC-Expire=86400&HW-CC-Sign=3E249A1416B5700B582E39CECDF83265492CBFB9EF45D148741E32F4B4260F7B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/mkXIMtomQr-UzmyOcgqwiA/zh-cn_image_0000002717772990.png?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=9F9FCF573E0EA37F1C5BCCC72BDC61AA3FE317A1B53450B1A048DA75493B5589)
 
 
 
 
-#### 示例8（自定义背景效果参数）
+### 示例8（自定义背景效果参数）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该示例通过配置[AlertDialogParam](#alertdialogparam对象说明)中的backgroundEffect属性，实现自定义背景效果。
 
@@ -924,14 +980,19 @@ struct AlertDialogExample {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/vf_EPOtPT7iw30p3P-bB3w/zh-cn_image_0000002704274807.png?HW-CC-KV=V1&HW-CC-Date=20260813T095450Z&HW-CC-Expire=86400&HW-CC-Sign=2A73F5E86462E7358C9EF1E71C6AE12AC1D7CD8919E27A440F600DF88F243BA9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/NSRGtMCZTEW7Tu50XTTmJA/zh-cn_image_0000002717613058.png?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=7E082AA059A4FE62D51E7B28471F041723961A0B367150D613B9E70424B09CD5)
 
 
 
 
-#### 示例9（设置弹窗的系统材质）
+### 示例9（设置弹窗的沉浸光感效果）
 
-该示例通过配置[AlertDialogParam](#alertdialogparam对象说明)中的systemMaterial属性，实现系统材质效果。
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+该示例通过[AlertDialogParam](#alertdialogparam对象说明)中的systemMaterial属性设置组件的系统材质，实现沉浸光感效果。
+
+组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
 
 从API版本26.0.0开始，在AlertDialogParam中新增了systemMaterial属性。
 
@@ -968,11 +1029,21 @@ struct AlertDialogExample {
       }
       .height('100%')
       .width('100%')
-      .backgroundColor(Color.Gray)
+      // 请开发者替换为实际资源文件
+      .backgroundImage($r("app.media.img"))
+      .backgroundImageSize({width: '100%', height: '100%'})
     }
   }
 }
 ```
 
+未设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/ybN3vi5DR7qAC-OF6Tj3Tg/zh-cn_image_0000002674475016.png?HW-CC-KV=V1&HW-CC-Date=20260813T095450Z&HW-CC-Expire=86400&HW-CC-Sign=34D1168B30895DD0BFD56D6A39E2F8A3CD849E3EDDFE3AEC2F77CE096D30A3A0)
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/QvGsM03kTAuj2SxP5_Pqfg/zh-cn_image_0000002747293011.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=3BCA3C6909B02B35A6DE28FF50B1B1695A05335D03D824F04F86047B8D388185)
+
+
+设置系统材质后：
+
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/HvOKffTJSqm5GWhBYP4SWQ/zh-cn_image_0000002747212927.gif?HW-CC-KV=V1&HW-CC-Date=20260911T073118Z&HW-CC-Expire=86400&HW-CC-Sign=966F187F265568D766E0DECA162F0A84F711523AAA253C45448993AB9B9207EE)

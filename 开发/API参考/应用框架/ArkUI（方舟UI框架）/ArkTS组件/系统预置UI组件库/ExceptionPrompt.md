@@ -1,9 +1,9 @@
 # ExceptionPrompt
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-exceptionprompt
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 异常提示，适用于有异常需要提示异常内容的情况。
  
@@ -12,9 +12,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ```text
 import { ExceptionPrompt, PromptOptions, MarginType } from '@kit.ArkUI';
@@ -22,17 +23,19 @@ import { ExceptionPrompt, PromptOptions, MarginType } from '@kit.ArkUI';
  
   
 
-#### 子组件
+## 子组件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 无
  
   
 
-#### ExceptionPrompt
+## ExceptionPrompt
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 ExceptionPrompt({ options: PromptOptions, onTipClick?: ()=>void, onActionTextClick?: ()=>void })
  
@@ -46,6 +49,7 @@ ExceptionPrompt({ options: PromptOptions, onTipClick?: ()=>void, onActionTextCli
  
 **参数：**
   
+
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | options | PromptOptions | 是 | @Prop | 指定当前异常提示的配置信息。 |
@@ -55,9 +59,10 @@ ExceptionPrompt({ options: PromptOptions, onTipClick?: ()=>void, onActionTextCli
  
   
 
-#### PromptOptions
+## PromptOptions
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 PromptOptions定义options的类型。
  
@@ -65,6 +70,7 @@ PromptOptions定义options的类型。
  
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | icon | ResourceStr | 否 | 是 | 指定当前异常提示的异常图标样式。 默认不设置或设置为undefined，异常图标不显示。 元服务API： 从API version 12开始，该接口支持在元服务中使用。 |
@@ -78,9 +84,10 @@ PromptOptions定义options的类型。
  
   
 
-#### MarginType
+## MarginType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 MarginType定义marginType的类型。
  
@@ -90,6 +97,7 @@ MarginType定义marginType的类型。
  
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DEFAULT_MARGIN | 0 | 默认边距： 边距1：引用ohos_id_card_margin_start。 边距2：引用ohos_id_card_margin_end。 |
@@ -98,21 +106,26 @@ MarginType定义marginType的类型。
  
   
 
-#### 事件
+## 事件
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 不支持[通用事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-events)。
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
   
 
-#### 示例1（设置异常提示）
+### 示例1（设置异常提示）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例展示了如何设置异常提示的异常图标、异常提示的文字、边距样式和右侧图标按钮的文字内容。
  
@@ -153,7 +166,10 @@ struct Index {
  
   
 
-#### 示例2（设置弹窗类型的异常提示）
+### 示例2（设置弹窗类型的异常提示）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 该示例使用自定义弹窗设置弹窗类型的异常提示。
  
@@ -275,7 +291,10 @@ struct Index1 {
  
   
 
-#### 示例3（设置Symbol类型图标）
+### 示例3（设置Symbol类型图标）
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV
 
 从API version 18开始，该示例通过设置PromptOptions的属性symbolStyle，展示了自定义Symbol类型图标。
  
@@ -314,4 +333,4 @@ struct Index {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/TjXzfBFwSPmA-KMG-Xeaiw/zh-cn_image_0000002685928605.png?HW-CC-KV=V1&HW-CC-Date=20260730T071518Z&HW-CC-Expire=86400&HW-CC-Sign=1EA22D38DFDC1EFDAA71519580B8689E1E2321B571F81BA544B0C58470C94F2E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/aKUlO5igQ76dkrG6XgkBKQ/zh-cn_image_0000002717773080.png?HW-CC-KV=V1&HW-CC-Date=20260911T073028Z&HW-CC-Expire=86400&HW-CC-Sign=09804C483F835AF0DC9AEC13A1767CAA18414BF3132B6F231D1C00D4378109A0)

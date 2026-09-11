@@ -1,9 +1,9 @@
 # @ohos.data.distributedData (分布式数据管理)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-distributed-data
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 分布式数据管理为应用程序提供不同设备间数据库的分布式协同能力。通过调用分布式数据各个接口，应用程序可将数据保存到分布式数据库中，并可对分布式数据库中的数据进行增加、删除、修改、查询、同步等操作。
  
@@ -18,13 +18,14 @@
 
  
 > [!NOTE]
-> 从API Version 9开始，该接口不再维护，推荐使用新接口 @ohos.data.distributedKVStore 。 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 本模块中所有需要获取deviceId的接口，都仅系统应用可用。
+> 从API Version 9开始，该接口不再维护，推荐使用新接口 @ohos.data.distributedKVStore (分布式键值数据库) 。 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。 本模块中所有需要获取deviceId的接口，都仅系统应用可用。
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import distributedData from '@ohos.data.distributedData';
@@ -32,9 +33,10 @@ import distributedData from '@ohos.data.distributedData';
  
   
 
-#### distributedData.createKVManager
+## distributedData.createKVManager
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createKVManager(config: KVManagerConfig, callback: AsyncCallback&lt;KVManager&gt;): void
  
@@ -44,6 +46,7 @@ createKVManager(config: KVManagerConfig, callback: AsyncCallback&lt;KVManager&gt
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | config | KVManagerConfig | 是 | 提供KVManager实例的配置信息，包括调用方的Bundle名称和用户信息。 |
@@ -64,22 +67,23 @@ try {
     }
     distributedData.createKVManager(kvManagerConfig, function (err, manager) {
         if (err) {
-            console.log("Failed to create KVManager: "  + JSON.stringify(err));
+            console.error("Failed to create KVManager: "  + JSON.stringify(err));
             return;
         }
-        console.log("Succeeded in creating KVManager");
+        console.info("Succeeded in creating KVManager");
         kvManager = manager;
     });
 } catch (e) {
-    console.log("An unexpected error occurred. Error:" + e);
+    console.error("An unexpected error occurred. Error:" + e);
 }
 ```
  
   
 
-#### distributedData.createKVManager
+## distributedData.createKVManager
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createKVManager(config: KVManagerConfig): Promise&lt;KVManager&gt;
  
@@ -89,6 +93,7 @@ createKVManager(config: KVManagerConfig): Promise&lt;KVManager&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | config | KVManagerConfig | 是 | 提供KVManager实例的配置信息，包括调用方的包名和用户信息。 |
@@ -96,6 +101,7 @@ createKVManager(config: KVManagerConfig): Promise&lt;KVManager&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;KVManager&gt; | Promise对象。返回创建的KVManager对象实例。 |
@@ -113,26 +119,28 @@ try {
     }
   }
   distributedData.createKVManager(kvManagerConfig).then((manager) => {
-    console.log("Succeeded in creating KVManager");
+    console.info("Succeeded in creating KVManager");
     kvManager = manager;
   }).catch((err) => {
     console.error("Failed to create KVManager: " + JSON.stringify(err));
   });
 } catch (e) {
-  console.log("An unexpected error occurred. Error:" + e);
+  console.error("An unexpected error occurred. Error:" + e);
 }
 ```
  
   
 
-#### KVManagerConfig
+## KVManagerConfig
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供KVManager实例的配置信息，包括调用方的Bundle名称和用户信息。
  
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | userInfo | UserInfo | 是 | 调用方的用户信息。 |
@@ -141,14 +149,16 @@ try {
  
   
 
-#### UserInfo
+## UserInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用户信息。
  
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | userId | string | 否 | 指示要设置的用户ID，默认为'0'。 |
@@ -157,14 +167,16 @@ try {
  
   
 
-#### UserType
+## UserType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用户类型枚举。
  
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SAME_USER_ID | 0 | 使用同一账号登录不同设备的用户。 |
@@ -172,17 +184,19 @@ try {
  
   
 
-#### KVManager
+## KVManager
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 数据管理实例，用于获取KVStore的相关信息。在调用KVManager的方法前，需要先通过[createKVManager](#distributeddatacreatekvmanager)构建一个KVManager实例。
  
   
 
-#### getKVStore
+### getKVStore
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getKVStore<T extends KVStore>(storeId: string, options: Options, callback: AsyncCallback&lt;T&gt;): void
  
@@ -192,6 +206,7 @@ getKVStore<T extends KVStore>(storeId: string, options: Options, callback: Async
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | storeId | string | 是 | 数据库唯一标识符，长度不大于MAX_STORE_ID_LENGTH。 |
@@ -215,22 +230,23 @@ try {
     };
     kvManager.getKVStore('storeId', options, function (err, store) {
         if (err) {
-            console.log("getKVStore err: "  + JSON.stringify(err));
+            console.error("getKVStore err: "  + JSON.stringify(err));
             return;
         }
-        console.log("getKVStore success");
+        console.info("getKVStore success");
         kvStore = store;
     });
 } catch (e) {
-    console.log("An unexpected error occurred. Error:" + e);
+    console.error("An unexpected error occurred. Error:" + e);
 }
 ```
  
   
 
-#### getKVStore
+### getKVStore
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getKVStore<T extends KVStore>(storeId: string, options: Options): Promise&lt;T&gt;
  
@@ -240,6 +256,7 @@ getKVStore<T extends KVStore>(storeId: string, options: Options): Promise&lt;T&g
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | storeId | string | 是 | 数据库唯一标识符，长度不大于MAX_STORE_ID_LENGTH。 |
@@ -248,6 +265,7 @@ getKVStore<T extends KVStore>(storeId: string, options: Options): Promise&lt;T&g
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;T&gt; ，<T extends KVStore> | Promise对象。返回创建的KVStore数据库实例。 |
@@ -268,21 +286,22 @@ try {
         securityLevel : distributedData.SecurityLevel.S3,
     };
     kvManager.getKVStore('storeId', options).then((store) => {
-        console.log("getKVStore success");
+        console.info("getKVStore success");
         kvStore = store;
     }).catch((err) => {
-        console.log("getKVStore err: "  + JSON.stringify(err));
+        console.error("getKVStore err: "  + JSON.stringify(err));
     });
 } catch (e) {
-    console.log("An unexpected error occurred. Error:" + e);
+    console.error("An unexpected error occurred. Error:" + e);
 }
 ```
  
   
 
-#### closeKVStore8+
+### closeKVStore8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 closeKVStore(appId: string, storeId: string, kvStore: KVStore, callback: AsyncCallback&lt;void&gt;): void
  
@@ -292,6 +311,7 @@ closeKVStore(appId: string, storeId: string, kvStore: KVStore, callback: AsyncCa
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | appId | string | 是 | 所调用数据库方的包名。 |
@@ -316,22 +336,23 @@ const options = {
 }
 try {
     kvManager.getKVStore('storeId', options, async function (err, store) {
-        console.log('getKVStore success');
+        console.info('getKVStore success');
         kvStore = store;
         kvManager.closeKVStore('appId', 'storeId', kvStore, function (err, data) {
-            console.log('closeKVStore success');
+            console.info('closeKVStore success');
         });
     });
 } catch (e) {
-    console.log('closeKVStore e ' + e);
+    console.error('closeKVStore e ' + e);
 }
 ```
  
   
 
-#### closeKVStore8+
+### closeKVStore8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 closeKVStore(appId: string, storeId: string, kvStore: KVStore): Promise&lt;void&gt;
  
@@ -341,6 +362,7 @@ closeKVStore(appId: string, storeId: string, kvStore: KVStore): Promise&lt;void&
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | appId | string | 是 | 所调用数据库方的包名。 |
@@ -350,6 +372,7 @@ closeKVStore(appId: string, storeId: string, kvStore: KVStore): Promise&lt;void&
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -371,26 +394,27 @@ const options = {
 }
 try {
     kvManager.getKVStore('storeId', options).then(async (store) => {
-        console.log('getKVStore success');
+        console.info('getKVStore success');
         kvStore = store;
         kvManager.closeKVStore('appId', 'storeId', kvStore).then(() => {
-            console.log('closeKVStore success');
+            console.info('closeKVStore success');
         }).catch((err) => {
-            console.log('closeKVStore err ' + JSON.stringify(err));
+            console.error('closeKVStore err ' + JSON.stringify(err));
         });
     }).catch((err) => {
-        console.log('CloseKVStore getKVStore err ' + JSON.stringify(err));
+        console.error('CloseKVStore getKVStore err ' + JSON.stringify(err));
     });
 } catch (e) {
-    console.log('closeKVStore e ' + e);
+    console.error('closeKVStore e ' + e);
 }
 ```
  
   
 
-#### deleteKVStore8+
+### deleteKVStore8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteKVStore(appId: string, storeId: string, callback: AsyncCallback&lt;void&gt;): void
  
@@ -400,6 +424,7 @@ deleteKVStore(appId: string, storeId: string, callback: AsyncCallback&lt;void&gt
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | appId | string | 是 | 所调用数据库方的包名。 |
@@ -423,22 +448,23 @@ const options = {
 }
 try {
     kvManager.getKVStore('store', options, async function (err, store) {
-        console.log('getKVStore success');
+        console.info('getKVStore success');
         kvStore = store;
         kvManager.deleteKVStore('appId', 'storeId', function (err, data) {
-            console.log('deleteKVStore success');
+            console.info('deleteKVStore success');
         });
     });
 } catch (e) {
-    console.log('DeleteKVStore e ' + e);
+    console.error('DeleteKVStore e ' + e);
 }
 ```
  
   
 
-#### deleteKVStore8+
+### deleteKVStore8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteKVStore(appId: string, storeId: string): Promise&lt;void&gt;
  
@@ -448,6 +474,7 @@ deleteKVStore(appId: string, storeId: string): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | appId | string | 是 | 所调用数据库方的包名。 |
@@ -456,6 +483,7 @@ deleteKVStore(appId: string, storeId: string): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -477,26 +505,27 @@ const options = {
 }
 try {
     kvManager.getKVStore('storeId', options).then(async (store) => {
-        console.log('getKVStore success');
+        console.info('getKVStore success');
         kvStore = store;
         kvManager.deleteKVStore('appId', 'storeId').then(() => {
-            console.log('deleteKVStore success');
+            console.info('deleteKVStore success');
         }).catch((err) => {
-            console.log('deleteKVStore err ' + JSON.stringify(err));
+            console.error('deleteKVStore err ' + JSON.stringify(err));
         });
     }).catch((err) => {
-        console.log('getKVStore err ' + JSON.stringify(err));
+        console.error('getKVStore err ' + JSON.stringify(err));
     });
 } catch (e) {
-    console.log('deleteKVStore e ' + e);
+    console.error('deleteKVStore e ' + e);
 }
 ```
  
   
 
-#### getAllKVStoreId8+
+### getAllKVStoreId8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllKVStoreId(appId: string, callback: AsyncCallback<string[]>): void
  
@@ -506,6 +535,7 @@ getAllKVStoreId(appId: string, callback: AsyncCallback<string[]>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | appId | string | 是 | 所调用数据库方的包名。 |
@@ -518,19 +548,20 @@ getAllKVStoreId(appId: string, callback: AsyncCallback<string[]>): void
 let kvManager;
 try {
     kvManager.getAllKVStoreId('appId', function (err, data) {
-        console.log('GetAllKVStoreId success');
-        console.log('GetAllKVStoreId size = ' + data.length);
+        console.info('GetAllKVStoreId success');
+        console.info('GetAllKVStoreId size = ' + data.length);
     });
 } catch (e) {
-    console.log('GetAllKVStoreId e ' + e);
+    console.error('GetAllKVStoreId e ' + e);
 }
 ```
  
   
 
-#### getAllKVStoreId8+
+### getAllKVStoreId8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAllKVStoreId(appId: string): Promise<string[]>
  
@@ -540,6 +571,7 @@ getAllKVStoreId(appId: string): Promise<string[]>
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | appId | string | 是 | 所调用数据库方的包名。 |
@@ -547,6 +579,7 @@ getAllKVStoreId(appId: string): Promise<string[]>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<string[]> | Promise对象。返回所有创建的KvStore数据库的storeId。 |
@@ -557,23 +590,24 @@ getAllKVStoreId(appId: string): Promise<string[]>
 ```json
 let kvManager;
 try {
-    console.log('GetAllKVStoreId');
+    console.info('GetAllKVStoreId');
     kvManager.getAllKVStoreId('appId').then((data) => {
-        console.log('getAllKVStoreId success');
-        console.log('size = ' + data.length);
+        console.info('getAllKVStoreId success');
+        console.info('size = ' + data.length);
     }).catch((err) => {
-        console.log('getAllKVStoreId err ' + JSON.stringify(err));
+        console.error('getAllKVStoreId err ' + JSON.stringify(err));
     });
 } catch(e) {
-    console.log('getAllKVStoreId e ' + e);
+    console.error('getAllKVStoreId e ' + e);
 }
 ```
  
   
 
-#### on('distributedDataServiceDie')8+
+### on('distributedDataServiceDie')8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(event: 'distributedDataServiceDie', deathCallback: Callback&lt;void&gt;): void
  
@@ -583,6 +617,7 @@ on(event: 'distributedDataServiceDie', deathCallback: Callback&lt;void&gt;): voi
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 订阅的事件名，固定为'distributedDataServiceDie'，即服务状态变更事件。 |
@@ -594,21 +629,22 @@ on(event: 'distributedDataServiceDie', deathCallback: Callback&lt;void&gt;): voi
 ```text
 let kvManager;
 try {
-    console.log('KVManagerOn');
+    console.info('KVManagerOn');
     const deathCallback = function () {
-        console.log('death callback call');
+        console.info('death callback call');
     }
     kvManager.on('distributedDataServiceDie', deathCallback);
 } catch (e) {
-    console.log("An unexpected error occurred. Error:" + e);
+    console.error("An unexpected error occurred. Error:" + e);
 }
 ```
  
   
 
-#### off('distributedDataServiceDie')8+
+### off('distributedDataServiceDie')8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(event: 'distributedDataServiceDie', deathCallback?: Callback&lt;void&gt;): void
  
@@ -618,6 +654,7 @@ off(event: 'distributedDataServiceDie', deathCallback?: Callback&lt;void&gt;): v
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 取消订阅的事件名，固定为'distributedDataServiceDie'，即服务状态变更事件。 |
@@ -629,24 +666,26 @@ off(event: 'distributedDataServiceDie', deathCallback?: Callback&lt;void&gt;): v
 ```text
 let kvManager;
 try {
-    console.log('KVManagerOff');
+    console.info('KVManagerOff');
     const deathCallback = function () {
-        console.log('death callback call');
+        console.info('death callback call');
     }
     kvManager.off('distributedDataServiceDie', deathCallback);
 } catch (e) {
-    console.log("An unexpected error occurred. Error:" + e);
+    console.error("An unexpected error occurred. Error:" + e);
 }
 ```
  
   
 
-#### Options
+## Options
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 用于提供创建数据库的配置信息。
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | createIfMissing | boolean | 否 | 当数据库文件不存在时是否创建数据库，默认为true，即创建。 系统能力： SystemCapability.DistributedDataManager.KVStore.Core |
@@ -660,12 +699,14 @@ try {
  
   
 
-#### KVStoreType
+## KVStoreType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 KVStore数据库类型枚举。
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DEVICE_COLLABORATION | 0 | 表示多设备协同数据库。 数据库特点： 数据以设备的维度管理，不存在冲突；支持按照设备的维度查询数据。 系统能力： SystemCapability.DistributedDataManager.KVStore.DistributedKVStore |
@@ -675,12 +716,14 @@ KVStore数据库类型枚举。
  
   
 
-#### SecurityLevel
+## SecurityLevel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 数据库的安全级别枚举。
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NO_LEVEL | 0 | 表示数据库不设置安全级别(已废弃)。 系统能力： SystemCapability.DistributedDataManager.KVStore.DistributedKVStore |
@@ -693,14 +736,16 @@ KVStore数据库类型枚举。
  
   
 
-#### Constants
+## Constants
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 KVStore常量。
  
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | MAX_KEY_LENGTH | 1024 | 数据库中Key允许的最大长度，单位字节。 |
@@ -713,14 +758,16 @@ KVStore常量。
  
   
 
-#### Schema8+
+## Schema8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示数据库模式，可以在创建或打开数据库时创建Schema对象并将它们放入[Options](#options)中。
  
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
   
+
 | 名称 | 类型 | 可读 | 可写 | 说明 |
 | --- | --- | --- | --- | --- |
 | root8+ | FieldNode | 是 | 是 | 表示json根对象。 |
@@ -731,9 +778,10 @@ KVStore常量。
  
   
 
-#### constructor8+
+### constructor8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
  
@@ -743,26 +791,29 @@ constructor()
  
   
 
-#### FieldNode8+
+## FieldNode8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 表示 Schema 实例的节点，提供定义存储在数据库中的值的方法。
  
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
   
+
 | 名称 | 类型 | 可读 | 可写 | 说明 |
 | --- | --- | --- | --- | --- |
 | nullable8+ | boolean | 是 | 是 | 表示数据库字段是否可以为空。 |
-| default8+ | string | 是 | 是 | 表示Fieldnode的默认值。 |
+| default8+ | string | 是 | 是 | 表示FieldNode的默认值。 |
 | type8+ | number | 是 | 是 | 表示指定节点对应数据类型的值。 |
  
  
   
 
-#### constructor8+
+### constructor8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(name: string)
  
@@ -772,6 +823,7 @@ constructor(name: string)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | FieldNode的值。 |
@@ -779,9 +831,10 @@ constructor(name: string)
  
   
 
-#### appendChild8+
+### appendChild8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 appendChild(child: FieldNode): boolean
  
@@ -791,6 +844,7 @@ appendChild(child: FieldNode): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | child | FieldNode | 是 | 要附加的域节点。 |
@@ -798,6 +852,7 @@ appendChild(child: FieldNode): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回true表示子节点成功添加到FieldNode；返回false则表示操作失败。 |
@@ -815,21 +870,22 @@ try {
     node.appendChild(child1);
     node.appendChild(child2);
     node.appendChild(child3);
-    console.log("appendNode " + JSON.stringify(node));
+    console.info("appendNode " + JSON.stringify(node));
     child1 = null;
     child2 = null;
     child3 = null;
     node = null;
 } catch (e) {
-    console.log("AppendChild " + e);
+    console.error("AppendChild " + e);
 }
 ```
  
   
 
-#### KvStoreResultSet8+
+## KvStoreResultSet8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供获取KVStore数据库结果集的相关方法，包括查询和移动数据读取位置等。
  
@@ -837,9 +893,10 @@ try {
  
   
 
-#### getCount8+
+### getCount8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCount(): number
  
@@ -849,6 +906,7 @@ getCount(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回数据的总行数。 |
@@ -861,23 +919,24 @@ let kvStore;
 try {
     let resultSet;
     kvStore.getResultSet('batch_test_string_key').then((result) => {
-        console.log('getResultSet succeed.');
+        console.info('getResultSet succeed.');
         resultSet = result;
     }).catch((err) => {
-        console.log('getResultSet failed: ' + err);
+        console.error('getResultSet failed: ' + err);
     });
     const count = resultSet.getCount();
-    console.log("getCount succeed:" + count);
+    console.info("getCount succeed:" + count);
 } catch (e) {
-    console.log("getCount failed: " + e);
+    console.error("getCount failed: " + e);
 }
 ```
  
   
 
-#### getPosition8+
+### getPosition8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getPosition(): number
  
@@ -887,6 +946,7 @@ getPosition(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回当前读取位置。 |
@@ -899,23 +959,24 @@ let kvStore;
 try {
     let resultSet;
     kvStore.getResultSet('batch_test_string_key').then((result) => {
-        console.log('getResultSet succeeded.');
+        console.info('getResultSet succeeded.');
         resultSet = result;
     }).catch((err) => {
-        console.log('getResultSet failed: ' + err);
+        console.error('getResultSet failed: ' + err);
     });
     const position = resultSet.getPosition();
-    console.log("getPosition succeed:" + position);
+    console.info("getPosition succeed:" + position);
 } catch (e) {
-    console.log("getPosition failed: " + e);
+    console.error("getPosition failed: " + e);
 }
 ```
  
   
 
-#### moveToFirst8+
+### moveToFirst8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 moveToFirst(): boolean
  
@@ -925,6 +986,7 @@ moveToFirst(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回true表示操作成功；返回false则表示操作失败。 |
@@ -937,23 +999,24 @@ let kvStore;
 try {
     let resultSet;
     kvStore.getResultSet('batch_test_string_key').then((result) => {
-        console.log('getResultSet succeed.');
+        console.info('getResultSet succeed.');
         resultSet = result;
     }).catch((err) => {
-        console.log('getResultSet failed: ' + err);
+        console.error('getResultSet failed: ' + err);
     });
     const moved1 = resultSet.moveToFirst();
-    console.log("moveToFirst succeed: " + moved1);
+    console.info("moveToFirst succeed: " + moved1);
 } catch (e) {
-    console.log("moveToFirst failed " + e);
+    console.error("moveToFirst failed " + e);
 }
 ```
  
   
 
-#### moveToLast8+
+### moveToLast8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 moveToLast(): boolean
  
@@ -963,6 +1026,7 @@ moveToLast(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回true表示操作成功；返回false则表示操作失败。 |
@@ -975,23 +1039,24 @@ let kvStore;
 try {
     let resultSet;
     kvStore.getResultSet('batch_test_string_key').then((result) => {
-        console.log('getResultSet succeed.');
+        console.info('getResultSet succeed.');
         resultSet = result;
     }).catch((err) => {
-        console.log('getResultSet failed: ' + err);
+        console.error('getResultSet failed: ' + err);
     });
     const moved2 = resultSet.moveToLast();
-    console.log("moveToLast succeed:" + moved2);
+    console.info("moveToLast succeed:" + moved2);
 } catch (e) {
-    console.log("moveToLast failed: " + e);
+    console.error("moveToLast failed: " + e);
 }
 ```
  
   
 
-#### moveToNext8+
+### moveToNext8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 moveToNext(): boolean
  
@@ -1001,6 +1066,7 @@ moveToNext(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回true表示操作成功；返回false则表示操作失败。 |
@@ -1013,23 +1079,24 @@ let kvStore;
 try {
     let resultSet;
     kvStore.getResultSet('batch_test_string_key').then((result) => {
-        console.log('getResultSet succeed.');
+        console.info('getResultSet succeed.');
         resultSet = result;
     }).catch((err) => {
-        console.log('getResultSet failed: ' + err);
+        console.error('getResultSet failed: ' + err);
     });
     const moved3 = resultSet.moveToNext();
-    console.log("moveToNext succeed: " + moved3);
+    console.info("moveToNext succeed: " + moved3);
 } catch (e) {
-    console.log("moveToNext failed: " + e);
+    console.error("moveToNext failed: " + e);
 }
 ```
  
   
 
-#### moveToPrevious8+
+### moveToPrevious8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 moveToPrevious(): boolean
  
@@ -1039,6 +1106,7 @@ moveToPrevious(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回true表示操作成功；返回false则表示操作失败。 |
@@ -1051,23 +1119,24 @@ let kvStore;
 try {
     let resultSet;
     kvStore.getResultSet('batch_test_string_key').then((result) => {
-        console.log('getResultSet succeed.');
+        console.info('getResultSet succeed.');
         resultSet = result;
     }).catch((err) => {
-        console.log('getResultSet failed: ' + err);
+        console.error('getResultSet failed: ' + err);
     });
     const moved4 = resultSet.moveToPrevious();
-    console.log("moveToPrevious succeed:" + moved4);
+    console.info("moveToPrevious succeed:" + moved4);
 } catch (e) {
-    console.log("moveToPrevious failed: " + e);
+    console.error("moveToPrevious failed: " + e);
 }
 ```
  
   
 
-#### move8+
+### move8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 move(offset: number): boolean
  
@@ -1077,6 +1146,7 @@ move(offset: number): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 是 | 表示与当前位置的相对偏移量，负偏移表示向后移动，正偏移表示向前移动。 |
@@ -1084,6 +1154,7 @@ move(offset: number): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回true表示操作成功；返回false则表示操作失败。 |
@@ -1096,23 +1167,24 @@ let kvStore;
 try {
     let resultSet;
     kvStore.getResultSet('batch_test_string_key').then((result) => {
-        console.log('getResultSet succeed.');
+        console.info('getResultSet succeed.');
         resultSet = result;
     }).catch((err) => {
-        console.log('getResultSet failed: ' + err);
+        console.error('getResultSet failed: ' + err);
     });
     const moved5 = resultSet.move(1);
-    console.log("move succeed:" + moved5);
+    console.info("move succeed:" + moved5);
 } catch (e) {
-    console.log("move failed: " + e);
+    console.error("move failed: " + e);
 }
 ```
  
   
 
-#### moveToPosition8+
+### moveToPosition8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 moveToPosition(position: number): boolean
  
@@ -1122,6 +1194,7 @@ moveToPosition(position: number): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | position | number | 是 | 表示绝对位置。 |
@@ -1129,6 +1202,7 @@ moveToPosition(position: number): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回true表示操作成功；返回false则表示操作失败。 |
@@ -1141,23 +1215,24 @@ let kvStore;
 try {
     let resultSet;
     kvStore.getResultSet('batch_test_string_key').then((result) => {
-        console.log('getResultSet succeed.');
+        console.info('getResultSet succeed.');
         resultSet = result;
     }).catch((err) => {
-        console.log('getResultSet failed: ' + err);
+        console.error('getResultSet failed: ' + err);
     });
     const moved6 = resultSet.moveToPosition(1);
-    console.log("moveToPosition succeed: " + moved6);
+    console.info("moveToPosition succeed: " + moved6);
 } catch (e) {
-    console.log("moveToPosition failed: " + e);
+    console.error("moveToPosition failed: " + e);
 }
 ```
  
   
 
-#### isFirst8+
+### isFirst8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isFirst(): boolean
  
@@ -1167,6 +1242,7 @@ isFirst(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回true表示读取位置为第一行；返回false表示读取位置不是第一行。 |
@@ -1179,23 +1255,24 @@ let kvStore;
 try {
     let resultSet;
     kvStore.getResultSet('batch_test_string_key').then((result) => {
-        console.log('getResultSet succeed.');
+        console.info('getResultSet succeed.');
         resultSet = result;
     }).catch((err) => {
-        console.log('getResultSet failed: ' + err);
+        console.error('getResultSet failed: ' + err);
     });
     const isfirst = resultSet.isFirst();
-    console.log("Check isFirst succeed:" + isfirst);
+    console.info("Check isFirst succeed:" + isfirst);
 } catch (e) {
-    console.log("Check isFirst failed: " + e);
+    console.error("Check isFirst failed: " + e);
 }
 ```
  
   
 
-#### isLast8+
+### isLast8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isLast(): boolean
  
@@ -1205,6 +1282,7 @@ isLast(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回true表示读取位置为最后一行；返回false表示读取位置不是最后一行。 |
@@ -1217,23 +1295,24 @@ let kvStore;
 try {
     let resultSet;
     kvStore.getResultSet('batch_test_string_key').then((result) => {
-        console.log('getResultSet succeed.');
+        console.info('getResultSet succeed.');
         resultSet = result;
     }).catch((err) => {
-        console.log('getResultSet failed: ' + err);
+        console.error('getResultSet failed: ' + err);
     });
     const islast = resultSet.isLast();
-    console.log("Check isLast succeed: " + islast);
+    console.info("Check isLast succeed: " + islast);
 } catch (e) {
-    console.log("Check isLast failed: " + e);
+    console.error("Check isLast failed: " + e);
 }
 ```
  
   
 
-#### isBeforeFirst8+
+### isBeforeFirst8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isBeforeFirst(): boolean
  
@@ -1243,6 +1322,7 @@ isBeforeFirst(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回true表示读取位置在第一行之前；返回false表示读取位置不在第一行之前。 |
@@ -1255,23 +1335,24 @@ let kvStore;
 try {
     let resultSet;
     kvStore.getResultSet('batch_test_string_key').then((result) => {
-        console.log('getResultSet succeed.');
+        console.info('getResultSet succeed.');
         resultSet = result;
     }).catch((err) => {
-        console.log('getResultSet failed: ' + err);
+        console.error('getResultSet failed: ' + err);
     });
     const isbeforefirst = resultSet.isBeforeFirst();
-    console.log("Check isBeforeFirst succeed: " + isbeforefirst);
+    console.info("Check isBeforeFirst succeed: " + isbeforefirst);
 } catch (e) {
-    console.log("Check isBeforeFirst failed: " + e);
+    console.error("Check isBeforeFirst failed: " + e);
 }
 ```
  
   
 
-#### isAfterLast8+
+### isAfterLast8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isAfterLast(): boolean
  
@@ -1281,6 +1362,7 @@ isAfterLast(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回true表示读取位置在最后一行之后；返回false表示读取位置不在最后一行之后。 |
@@ -1293,23 +1375,24 @@ let kvStore;
 try {
     let resultSet;
     kvStore.getResultSet('batch_test_string_key').then((result) => {
-        console.log('getResultSet succeed.');
+        console.info('getResultSet succeed.');
         resultSet = result;
     }).catch((err) => {
-        console.log('getResultSet failed: ' + err);
+        console.error('getResultSet failed: ' + err);
     });
     const isafterlast = resultSet.isAfterLast();
-    console.log("Check isAfterLast succeed:" + isafterlast);
+    console.info("Check isAfterLast succeed:" + isafterlast);
 } catch (e) {
-    console.log("Check isAfterLast failed: " + e);
+    console.error("Check isAfterLast failed: " + e);
 }
 ```
  
   
 
-#### getEntry8+
+### getEntry8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEntry(): Entry
  
@@ -1319,6 +1402,7 @@ getEntry(): Entry
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Entry | 返回键值对。 |
@@ -1331,23 +1415,24 @@ let kvStore;
 try {
     let resultSet;
     kvStore.getResultSet('batch_test_string_key').then((result) => {
-        console.log('getResultSet succeed.');
+        console.info('getResultSet succeed.');
         resultSet = result;
     }).catch((err) => {
-        console.log('getResultSet failed: ' + err);
+        console.error('getResultSet failed: ' + err);
     });
     const entry  = resultSet.getEntry();
-    console.log("getEntry succeed:" + JSON.stringify(entry));
+    console.info("getEntry succeed:" + JSON.stringify(entry));
 } catch (e) {
-    console.log("getEntry failed: " + e);
+    console.error("getEntry failed: " + e);
 }
 ```
  
   
 
-#### Query8+
+## Query8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 使用谓词表示数据库查询，提供创建Query实例、查询数据库中的数据和添加谓词的方法。
  
@@ -1355,9 +1440,10 @@ try {
  
   
 
-#### constructor8+
+### constructor8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
  
@@ -1367,9 +1453,10 @@ constructor()
  
   
 
-#### reset8+
+### reset8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 reset(): Query
  
@@ -1379,6 +1466,7 @@ reset(): Query
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Query | 返回重置的Query对象。 |
@@ -1390,20 +1478,21 @@ reset(): Query
 try {
     let query = new distributedData.Query();
     query.equalTo("key", "value");
-    console.log("query is " + query.getSqlLike());
+    console.info("query is " + query.getSqlLike());
     query.reset();
-    console.log("query is " + query.getSqlLike());
+    console.info("query is " + query.getSqlLike());
     query = null;
 } catch (e) {
-    console.log("simply calls should be ok :" + e);
+    console.error("simply calls should be ok :" + e);
 }
 ```
  
   
 
-#### equalTo8+
+### equalTo8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 equalTo(field: string, value: number|string|boolean): Query
  
@@ -1413,6 +1502,7 @@ equalTo(field: string, value: number|string|boolean): Query
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 表示指定字段，不能包含' ^ '。 |
@@ -1421,6 +1511,7 @@ equalTo(field: string, value: number|string|boolean): Query
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Query | 返回Query对象。 |
@@ -1432,18 +1523,19 @@ equalTo(field: string, value: number|string|boolean): Query
 try {
     let query = new distributedData.Query();
     query.equalTo("field", "value");
-    console.log("query is " + query.getSqlLike());
+    console.info("query is " + query.getSqlLike());
     query = null;
 } catch (e) {
-    console.log("duplicated calls should be ok :" + e);
+    console.error("duplicated calls should be ok :" + e);
 }
 ```
  
   
 
-#### notEqualTo8+
+### notEqualTo8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 notEqualTo(field: string, value: number|string|boolean): Query
  
@@ -1453,6 +1545,7 @@ notEqualTo(field: string, value: number|string|boolean): Query
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 表示指定字段，不能包含' ^ '。 |
@@ -1461,6 +1554,7 @@ notEqualTo(field: string, value: number|string|boolean): Query
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Query | 返回Query对象。 |
@@ -1472,18 +1566,19 @@ notEqualTo(field: string, value: number|string|boolean): Query
 try {
     let query = new distributedData.Query();
     query.notEqualTo("field", "value");
-    console.log("query is " + query.getSqlLike());
+    console.info("query is " + query.getSqlLike());
     query = null;
 } catch (e) {
-    console.log("duplicated calls should be ok :" + e);
+    console.error("duplicated calls should be ok :" + e);
 }
 ```
  
   
 
-#### greaterThan8+
+### greaterThan8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 greaterThan(field: string, value: number|string|boolean): Query
  
@@ -1493,6 +1588,7 @@ greaterThan(field: string, value: number|string|boolean): Query
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 表示指定字段，不能包含' ^ '。 |
@@ -1501,6 +1597,7 @@ greaterThan(field: string, value: number|string|boolean): Query
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Query | 返回Query对象。 |
@@ -1512,18 +1609,19 @@ greaterThan(field: string, value: number|string|boolean): Query
 try {
     let query = new distributedData.Query();
     query.greaterThan("field", "value");
-    console.log("query is " + query.getSqlLike());
+    console.info("query is " + query.getSqlLike());
     query = null;
 } catch (e) {
-    console.log("duplicated calls should be ok :" + e);
+    console.error("duplicated calls should be ok :" + e);
 }
 ```
  
   
 
-#### lessThan8+
+### lessThan8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 lessThan(field: string, value: number|string): Query
  
@@ -1533,6 +1631,7 @@ lessThan(field: string, value: number|string): Query
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 表示指定字段，不能包含' ^ '。 |
@@ -1541,6 +1640,7 @@ lessThan(field: string, value: number|string): Query
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Query | 返回Query对象。 |
@@ -1552,18 +1652,19 @@ lessThan(field: string, value: number|string): Query
 try {
     let query = new distributedData.Query();
     query.lessThan("field", "value");
-    console.log("query is " + query.getSqlLike());
+    console.info("query is " + query.getSqlLike());
     query = null;
 } catch (e) {
-    console.log("duplicated calls should be ok :" + e);
+    console.error("duplicated calls should be ok :" + e);
 }
 ```
  
   
 
-#### greaterThanOrEqualTo8+
+### greaterThanOrEqualTo8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 greaterThanOrEqualTo(field: string, value: number|string): Query
  
@@ -1573,6 +1674,7 @@ greaterThanOrEqualTo(field: string, value: number|string): Query
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 表示指定字段，不能包含' ^ '。 |
@@ -1581,6 +1683,7 @@ greaterThanOrEqualTo(field: string, value: number|string): Query
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Query | 返回Query对象。 |
@@ -1592,18 +1695,19 @@ greaterThanOrEqualTo(field: string, value: number|string): Query
 try {
     let query = new distributedData.Query();
     query.greaterThanOrEqualTo("field", "value");
-    console.log("query is " + query.getSqlLike());
+    console.info("query is " + query.getSqlLike());
     query = null;
 } catch (e) {
-    console.log("duplicated calls should be ok :" + e);
+    console.error("duplicated calls should be ok :" + e);
 }
 ```
  
   
 
-#### lessThanOrEqualTo8+
+### lessThanOrEqualTo8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 lessThanOrEqualTo(field: string, value: number|string): Query
  
@@ -1613,6 +1717,7 @@ lessThanOrEqualTo(field: string, value: number|string): Query
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 表示指定字段，不能包含' ^ '。 |
@@ -1621,6 +1726,7 @@ lessThanOrEqualTo(field: string, value: number|string): Query
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Query | 返回Query对象。 |
@@ -1632,18 +1738,19 @@ lessThanOrEqualTo(field: string, value: number|string): Query
 try {
     let query = new distributedData.Query();
     query.lessThanOrEqualTo("field", "value");
-    console.log("query is " + query.getSqlLike());
+    console.info("query is " + query.getSqlLike());
     query = null;
 } catch (e) {
-    console.log("duplicated calls should be ok :" + e);
+    console.error("duplicated calls should be ok :" + e);
 }
 ```
  
   
 
-#### isNull8+
+### isNull8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isNull(field: string): Query
  
@@ -1653,6 +1760,7 @@ isNull(field: string): Query
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 表示指定字段，不能包含' ^ '。 |
@@ -1660,6 +1768,7 @@ isNull(field: string): Query
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Query | 返回Query对象。 |
@@ -1671,18 +1780,19 @@ isNull(field: string): Query
 try {
     let query = new distributedData.Query();
     query.isNull("field");
-    console.log("query is " + query.getSqlLike());
+    console.info("query is " + query.getSqlLike());
     query = null;
 } catch (e) {
-    console.log("duplicated calls should be ok :" + e);
+    console.error("duplicated calls should be ok :" + e);
 }
 ```
  
   
 
-#### inNumber8+
+### inNumber8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 inNumber(field: string, valueList: number[]): Query
  
@@ -1692,6 +1802,7 @@ inNumber(field: string, valueList: number[]): Query
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 表示指定字段，不能包含' ^ '。 |
@@ -1700,6 +1811,7 @@ inNumber(field: string, valueList: number[]): Query
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Query | 返回Query对象。 |
@@ -1711,18 +1823,19 @@ inNumber(field: string, valueList: number[]): Query
 try {
     let query = new distributedData.Query();
     query.inNumber("field", [0, 1]);
-    console.log("query is " + query.getSqlLike());
+    console.info("query is " + query.getSqlLike());
     query = null;
 } catch (e) {
-    console.log("duplicated calls should be ok :" + e);
+    console.error("duplicated calls should be ok :" + e);
 }
 ```
  
   
 
-#### inString8+
+### inString8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 inString(field: string, valueList: string[]): Query
  
@@ -1732,6 +1845,7 @@ inString(field: string, valueList: string[]): Query
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 表示指定字段，不能包含' ^ '。 |
@@ -1740,6 +1854,7 @@ inString(field: string, valueList: string[]): Query
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Query | 返回Query对象。 |
@@ -1751,18 +1866,19 @@ inString(field: string, valueList: string[]): Query
 try {
     let query = new distributedData.Query();
     query.inString("field", ['test1', 'test2']);
-    console.log("query is " + query.getSqlLike());
+    console.info("query is " + query.getSqlLike());
     query = null;
 } catch (e) {
-    console.log("duplicated calls should be ok :" + e);
+    console.error("duplicated calls should be ok :" + e);
 }
 ```
  
   
 
-#### notInNumber8+
+### notInNumber8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 notInNumber(field: string, valueList: number[]): Query
  
@@ -1772,6 +1888,7 @@ notInNumber(field: string, valueList: number[]): Query
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 表示指定字段，不能包含' ^ '。 |
@@ -1780,6 +1897,7 @@ notInNumber(field: string, valueList: number[]): Query
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Query | 返回Query对象。 |
@@ -1791,18 +1909,19 @@ notInNumber(field: string, valueList: number[]): Query
 try {
     let query = new distributedData.Query();
     query.notInNumber("field", [0, 1]);
-    console.log("query is " + query.getSqlLike());
+    console.info("query is " + query.getSqlLike());
     query = null;
 } catch (e) {
-    console.log("duplicated calls should be ok :" + e);
+    console.error("duplicated calls should be ok :" + e);
 }
 ```
  
   
 
-#### notInString8+
+### notInString8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 notInString(field: string, valueList: string[]): Query
  
@@ -1812,6 +1931,7 @@ notInString(field: string, valueList: string[]): Query
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 表示指定字段，不能包含' ^ '。 |
@@ -1820,6 +1940,7 @@ notInString(field: string, valueList: string[]): Query
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Query | 返回Query对象。 |
@@ -1831,18 +1952,19 @@ notInString(field: string, valueList: string[]): Query
 try {
     let query = new distributedData.Query();
     query.notInString("field", ['test1', 'test2']);
-    console.log("query is " + query.getSqlLike());
+    console.info("query is " + query.getSqlLike());
     query = null;
 } catch (e) {
-    console.log("duplicated calls should be ok :" + e);
+    console.error("duplicated calls should be ok :" + e);
 }
 ```
  
   
 
-#### like8+
+### like8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 like(field: string, value: string): Query
  
@@ -1852,6 +1974,7 @@ like(field: string, value: string): Query
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 表示指定字段，不能包含' ^ '。 |
@@ -1860,6 +1983,7 @@ like(field: string, value: string): Query
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Query | 返回Query对象。 |
@@ -1871,18 +1995,19 @@ like(field: string, value: string): Query
 try {
     let query = new distributedData.Query();
     query.like("field", "value");
-    console.log("query is " + query.getSqlLike());
+    console.info("query is " + query.getSqlLike());
     query = null;
 } catch (e) {
-    console.log("duplicated calls should be ok :" + e);
+    console.error("duplicated calls should be ok :" + e);
 }
 ```
  
   
 
-#### unlike8+
+### unlike8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 unlike(field: string, value: string): Query
  
@@ -1892,6 +2017,7 @@ unlike(field: string, value: string): Query
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 表示指定字段，不能包含' ^ '。 |
@@ -1900,6 +2026,7 @@ unlike(field: string, value: string): Query
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Query | 返回Query对象。 |
@@ -1911,18 +2038,19 @@ unlike(field: string, value: string): Query
 try {
     let query = new distributedData.Query();
     query.unlike("field", "value");
-    console.log("query is " + query.getSqlLike());
+    console.info("query is " + query.getSqlLike());
     query = null;
 } catch (e) {
-    console.log("duplicated calls should be ok :" + e);
+    console.error("duplicated calls should be ok :" + e);
 }
 ```
  
   
 
-#### and8+
+### and8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 and(): Query
  
@@ -1932,6 +2060,7 @@ and(): Query
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Query | 返回查询对象。 |
@@ -1945,18 +2074,19 @@ try {
     query.notEqualTo("field", "value1");
     query.and();
     query.notEqualTo("field", "value2");
-    console.log("query is " + query.getSqlLike());
+    console.info("query is " + query.getSqlLike());
     query = null;
 } catch (e) {
-    console.log("duplicated calls should be ok :" + e);
+    console.error("duplicated calls should be ok :" + e);
 }
 ```
  
   
 
-#### or8+
+### or8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 or(): Query
  
@@ -1966,6 +2096,7 @@ or(): Query
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Query | 返回查询对象。 |
@@ -1979,18 +2110,19 @@ try {
     query.notEqualTo("field", "value1");
     query.or();
     query.notEqualTo("field", "value2");
-    console.log("query is " + query.getSqlLike());
+    console.info("query is " + query.getSqlLike());
     query = null;
 } catch (e) {
-    console.log("duplicated calls should be ok :" + e);
+    console.error("duplicated calls should be ok :" + e);
 }
 ```
  
   
 
-#### orderByAsc8+
+### orderByAsc8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 orderByAsc(field: string): Query
  
@@ -2000,6 +2132,7 @@ orderByAsc(field: string): Query
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 表示指定字段，不能包含' ^ '。 |
@@ -2007,6 +2140,7 @@ orderByAsc(field: string): Query
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Query | 返回Query对象。 |
@@ -2019,18 +2153,19 @@ try {
     let query = new distributedData.Query();
     query.notEqualTo("field", "value");
     query.orderByAsc("field");
-    console.log("query is " + query.getSqlLike());
+    console.info("query is " + query.getSqlLike());
     query = null;
 } catch (e) {
-    console.log("duplicated calls should be ok :" + e);
+    console.error("duplicated calls should be ok :" + e);
 }
 ```
  
   
 
-#### orderByDesc8+
+### orderByDesc8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 orderByDesc(field: string): Query
  
@@ -2040,6 +2175,7 @@ orderByDesc(field: string): Query
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 表示指定字段，不能包含' ^ '。 |
@@ -2047,6 +2183,7 @@ orderByDesc(field: string): Query
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Query | 返回Query对象。 |
@@ -2059,18 +2196,19 @@ try {
     let query = new distributedData.Query();
     query.notEqualTo("field", "value");
     query.orderByDesc("field");
-    console.log("query is " + query.getSqlLike());
+    console.info("query is " + query.getSqlLike());
     query = null;
 } catch (e) {
-    console.log("duplicated calls should be ok :" + e);
+    console.error("duplicated calls should be ok :" + e);
 }
 ```
  
   
 
-#### limit8+
+### limit8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 limit(total: number, offset: number): Query
  
@@ -2080,6 +2218,7 @@ limit(total: number, offset: number): Query
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | total | number | 是 | 表示指定的结果数。 |
@@ -2088,6 +2227,7 @@ limit(total: number, offset: number): Query
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Query | 返回Query对象。 |
@@ -2102,18 +2242,19 @@ try {
     let query = new distributedData.Query();
     query.notEqualTo("field", "value");
     query.limit(total, offset);
-    console.log("query is " + query.getSqlLike());
+    console.info("query is " + query.getSqlLike());
     query = null;
 } catch (e) {
-    console.log("duplicated calls should be ok :" + e);
+    console.error("duplicated calls should be ok :" + e);
 }
 ```
  
   
 
-#### isNotNull8+
+### isNotNull8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isNotNull(field: string): Query
  
@@ -2123,6 +2264,7 @@ isNotNull(field: string): Query
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 表示指定字段，不能包含' ^ '。 |
@@ -2130,6 +2272,7 @@ isNotNull(field: string): Query
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Query | 返回Query对象。 |
@@ -2141,18 +2284,19 @@ isNotNull(field: string): Query
 try {
     let query = new distributedData.Query();
     query.isNotNull("field");
-    console.log("query is " + query.getSqlLike());
+    console.info("query is " + query.getSqlLike());
     query = null;
 } catch (e) {
-    console.log("duplicated calls should be ok :" + e);
+    console.error("duplicated calls should be ok :" + e);
 }
 ```
  
   
 
-#### beginGroup8+
+### beginGroup8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 beginGroup(): Query
  
@@ -2162,6 +2306,7 @@ beginGroup(): Query
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Query | 返回Query对象。 |
@@ -2175,18 +2320,19 @@ try {
     query.beginGroup();
     query.isNotNull("field");
     query.endGroup();
-    console.log("query is " + query.getSqlLike());
+    console.info("query is " + query.getSqlLike());
     query = null;
 } catch (e) {
-    console.log("duplicated calls should be ok :" + e);
+    console.error("duplicated calls should be ok :" + e);
 }
 ```
  
   
 
-#### endGroup8+
+### endGroup8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 endGroup(): Query
  
@@ -2196,6 +2342,7 @@ endGroup(): Query
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Query | 返回Query对象。 |
@@ -2209,18 +2356,19 @@ try {
     query.beginGroup();
     query.isNotNull("field");
     query.endGroup();
-    console.log("query is " + query.getSqlLike());
+    console.info("query is " + query.getSqlLike());
     query = null;
 } catch (e) {
-    console.log("duplicated calls should be ok :" + e);
+    console.error("duplicated calls should be ok :" + e);
 }
 ```
  
   
 
-#### prefixKey8+
+### prefixKey8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 prefixKey(prefix: string): Query
  
@@ -2230,6 +2378,7 @@ prefixKey(prefix: string): Query
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | prefix | string | 是 | 表示指定的键前缀。 |
@@ -2237,6 +2386,7 @@ prefixKey(prefix: string): Query
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Query | 返回Query对象。 |
@@ -2249,18 +2399,19 @@ try {
     let query = new distributedData.Query();
     query.prefixKey("$.name");
     query.prefixKey("0");
-    console.log("query is " + query.getSqlLike());
+    console.info("query is " + query.getSqlLike());
     query = null;
 } catch (e) {
-    console.log("duplicated calls should be ok :" + e);
+    console.error("duplicated calls should be ok :" + e);
 }
 ```
  
   
 
-#### setSuggestIndex8+
+### setSuggestIndex8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setSuggestIndex(index: string): Query
  
@@ -2270,6 +2421,7 @@ setSuggestIndex(index: string): Query
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | string | 是 | 指示要设置的索引。 |
@@ -2277,6 +2429,7 @@ setSuggestIndex(index: string): Query
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Query | 返回Query对象。 |
@@ -2289,31 +2442,29 @@ try {
     let query = new distributedData.Query();
     query.setSuggestIndex("$.name");
     query.setSuggestIndex("0");
-    console.log("query is " + query.getSqlLike());
+    console.info("query is " + query.getSqlLike());
     query = null;
 } catch (e) {
-   console.log("duplicated calls should be ok :" + e);
+   console.error("duplicated calls should be ok :" + e);
 }
 ```
  
   
 
-#### deviceId8+
+### deviceId8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deviceId(deviceId:string):Query
  
 添加设备ID作为key的前缀。
  
-> [!NOTE]
-> 其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。 deviceId具体获取方式请参考 sync接口示例 。
-
- 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 指示查询的设备ID。 |
@@ -2321,6 +2472,7 @@ deviceId(deviceId:string):Query
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Query | 返回Query对象。 |
@@ -2332,17 +2484,18 @@ deviceId(deviceId:string):Query
 try {
     let query = new distributedData.Query();
     query.deviceId("deviceId");
-    console.log("query is " + query.getSqlLike());
+    console.info("query is " + query.getSqlLike());
 } catch (e) {
-    console.log("should be ok on Method Chaining : " + e);
+    console.error("should be ok on Method Chaining : " + e);
 }
 ```
  
   
 
-#### getSqlLike8+
+### getSqlLike8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSqlLike():string
  
@@ -2352,6 +2505,7 @@ getSqlLike():string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 返回一个字段列中包含对应子串的结果。 |
@@ -2363,17 +2517,18 @@ getSqlLike():string
 try {
     let query = new distributedData.Query();
     let sql1 = query.getSqlLike();
-    console.log("GetSqlLike sql=" + sql1);
+    console.info("GetSqlLike sql=" + sql1);
 } catch (e) {
-    console.log("duplicated calls should be ok : " + e);
+    console.error("duplicated calls should be ok : " + e);
 }
 ```
  
   
 
-#### KVStore
+## KVStore
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 KVStore数据库实例，提供增加数据、删除数据和订阅数据变更、订阅数据同步完成的方法。
  
@@ -2381,9 +2536,10 @@ KVStore数据库实例，提供增加数据、删除数据和订阅数据变更�
  
   
 
-#### put
+### put
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 put(key: string, value: Uint8Array | string | number | boolean, callback: AsyncCallback&lt;void&gt;): void
  
@@ -2393,6 +2549,7 @@ put(key: string, value: Uint8Array | string | number | boolean, callback: AsyncC
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 要添加数据的key，不能为空且长度不大于MAX_KEY_LENGTH。 |
@@ -2409,21 +2566,22 @@ const VALUE_TEST_STRING_ELEMENT = 'value-test-string';
 try {
     kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT, function (err,data) {
         if (err != undefined) {
-            console.log("put err: " + JSON.stringify(err));
+            console.error("put err: " + JSON.stringify(err));
             return;
         }
-        console.log("put success");
+        console.info("put success");
     });
 }catch (e) {
-    console.log("An unexpected error occurred. Error:" + e);
+    console.error("An unexpected error occurred. Error:" + e);
 }
 ```
  
   
 
-#### put
+### put
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 put(key: string, value: Uint8Array | string | number | boolean): Promise&lt;void&gt;
  
@@ -2433,6 +2591,7 @@ put(key: string, value: Uint8Array | string | number | boolean): Promise&lt;void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 要添加数据的key，不能为空且长度不大于MAX_KEY_LENGTH。 |
@@ -2441,6 +2600,7 @@ put(key: string, value: Uint8Array | string | number | boolean): Promise&lt;void
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -2454,20 +2614,21 @@ const KEY_TEST_STRING_ELEMENT = 'key_test_string';
 const VALUE_TEST_STRING_ELEMENT = 'value-test-string';
 try {
     kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT).then((data) => {
-        console.log("put success: " + JSON.stringify(data));
+        console.info("put success: " + JSON.stringify(data));
     }).catch((err) => {
-        console.log("put err: " + JSON.stringify(err));
+        console.error("put err: " + JSON.stringify(err));
     });
 }catch (e) {
-    console.log("An unexpected error occurred. Error:" + e);
+    console.error("An unexpected error occurred. Error:" + e);
 }
 ```
  
   
 
-#### delete
+### delete
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 delete(key: string, callback: AsyncCallback&lt;void&gt;): void
  
@@ -2477,6 +2638,7 @@ delete(key: string, callback: AsyncCallback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 要删除数据的key，不能为空且长度不大于MAX_KEY_LENGTH。 |
@@ -2492,28 +2654,29 @@ const VALUE_TEST_STRING_ELEMENT = 'value-test-string';
 try {
     kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT, function (err,data) {
         if (err != undefined) {
-            console.log("put err: " + JSON.stringify(err));
+            console.error("put err: " + JSON.stringify(err));
             return;
         }
-        console.log("put success");
+        console.info("put success");
         kvStore.delete(KEY_TEST_STRING_ELEMENT, function (err,data) {
             if (err != undefined) {
-                console.log("delete err: " + JSON.stringify(err));
+                console.error("delete err: " + JSON.stringify(err));
                 return;
             }
-            console.log("delete success");
+            console.info("delete success");
         });
     });
 }catch (e) {
-    console.log("An unexpected error occurred. Error:" + e);
+    console.error("An unexpected error occurred. Error:" + e);
 }
 ```
  
   
 
-#### delete
+### delete
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 delete(key: string): Promise&lt;void&gt;
  
@@ -2523,6 +2686,7 @@ delete(key: string): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 要删除数据的key，不能为空且长度不大于MAX_KEY_LENGTH。 |
@@ -2530,6 +2694,7 @@ delete(key: string): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -2543,25 +2708,26 @@ const KEY_TEST_STRING_ELEMENT = 'key_test_string';
 const VALUE_TEST_STRING_ELEMENT = 'value-test-string';
 try {
     kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT).then((data) => {
-        console.log("put success: " + JSON.stringify(data));
+        console.info("put success: " + JSON.stringify(data));
         kvStore.delete(KEY_TEST_STRING_ELEMENT).then((data) => {
-            console.log("delete success");
+            console.info("delete success");
         }).catch((err) => {
-            console.log("delete err: " + JSON.stringify(err));
+            console.error("delete err: " + JSON.stringify(err));
         });
     }).catch((err) => {
-        console.log("put err: " + JSON.stringify(err));
+        console.error("put err: " + JSON.stringify(err));
     });
 }catch (e) {
-    console.log("An unexpected error occurred. Error:" + e);
+    console.error("An unexpected error occurred. Error:" + e);
 }
 ```
  
   
 
-#### on('dataChange')
+### on('dataChange')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(event: 'dataChange', type: SubscribeType, listener: Callback&lt;ChangeNotification&gt;): void
  
@@ -2571,6 +2737,7 @@ on(event: 'dataChange', type: SubscribeType, listener: Callback&lt;ChangeNotific
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 订阅的事件名，固定为'dataChange'，表示数据变更事件。 |
@@ -2583,15 +2750,16 @@ on(event: 'dataChange', type: SubscribeType, listener: Callback&lt;ChangeNotific
 ```json
 let kvStore;
 kvStore.on('dataChange', distributedData.SubscribeType.SUBSCRIBE_TYPE_LOCAL, function (data) {
-    console.log("dataChange callback call data: " + JSON.stringify(data));
+    console.info("dataChange callback call data: " + JSON.stringify(data));
 });
 ```
  
   
 
-#### on('syncComplete')
+### on('syncComplete')
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(event: 'syncComplete', syncCallback: Callback<Array<[string, number]>>): void
  
@@ -2601,6 +2769,7 @@ on(event: 'syncComplete', syncCallback: Callback<Array<[string, number]>>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 订阅的事件名，固定为'syncComplete'，表示同步完成事件。 |
@@ -2612,15 +2781,16 @@ on(event: 'syncComplete', syncCallback: Callback<Array<[string, number]>>): void
 ```text
 let kvStore;
 kvStore.on('syncComplete', function (data) {
-    console.log("callback call data: " + data);
+    console.info("callback call data: " + data);
 });
 ```
  
   
 
-#### off('dataChange')8+
+### off('dataChange')8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(event:'dataChange', listener?: Callback&lt;ChangeNotification&gt;): void
  
@@ -2630,6 +2800,7 @@ off(event:'dataChange', listener?: Callback&lt;ChangeNotification&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 取消订阅的事件名，固定为'dataChange'，表示数据变更事件。 |
@@ -2642,7 +2813,7 @@ off(event:'dataChange', listener?: Callback&lt;ChangeNotification&gt;): void
 let kvStore;
 class KvstoreModel {
     call(data) {
-        console.log("dataChange: " + data);
+        console.info("dataChange: " + data);
     }
     subscribeDataChange() {
         if (kvStore != null) {
@@ -2659,9 +2830,10 @@ class KvstoreModel {
  
   
 
-#### off('syncComplete')8+
+### off('syncComplete')8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(event: 'syncComplete', syncCallback?: Callback<Array<[string, number]>>): void
  
@@ -2671,6 +2843,7 @@ off(event: 'syncComplete', syncCallback?: Callback<Array<[string, number]>>): vo
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 取消订阅的事件名，固定为'syncComplete'，表示同步完成事件。 |
@@ -2683,7 +2856,7 @@ off(event: 'syncComplete', syncCallback?: Callback<Array<[string, number]>>): vo
 let kvStore;
 class KvstoreModel {
     call(data) {
-        console.log("syncComplete: " + data);
+        console.info("syncComplete: " + data);
     }
     subscribeSyncComplete() {
         if (kvStore != null) {
@@ -2700,9 +2873,10 @@ class KvstoreModel {
  
   
 
-#### putBatch8+
+### putBatch8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 putBatch(entries: Entry[], callback: AsyncCallback&lt;void&gt;): void
  
@@ -2712,6 +2886,7 @@ putBatch(entries: Entry[], callback: AsyncCallback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | entries | Entry[] | 是 | 表示要批量插入的键值对。 |
@@ -2735,25 +2910,26 @@ try {
         }
         entries.push(entry);
     }
-    console.log('entries: ' + JSON.stringify(entries));
+    console.info('entries: ' + JSON.stringify(entries));
     kvStore.putBatch(entries, async function (err,data) {
-        console.log('putBatch success');
+        console.info('putBatch success');
         kvStore.getEntries('batch_test_string_key', function (err,entries) {
-            console.log('getEntries success');
-            console.log('entries.length: ' + entries.length);
-            console.log('entries[0]: ' + JSON.stringify(entries[0]));
+            console.info('getEntries success');
+            console.info('entries.length: ' + entries.length);
+            console.info('entries[0]: ' + JSON.stringify(entries[0]));
         });
     });
 }catch(e) {
-    console.log('PutBatch e ' + JSON.stringify(e));
+    console.error('PutBatch e ' + JSON.stringify(e));
 }
 ```
  
   
 
-#### putBatch8+
+### putBatch8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 putBatch(entries: Entry[]): Promise&lt;void&gt;
  
@@ -2763,6 +2939,7 @@ putBatch(entries: Entry[]): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | entries | Entry[] | 是 | 表示要批量插入的键值对。 |
@@ -2770,6 +2947,7 @@ putBatch(entries: Entry[]): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -2792,28 +2970,29 @@ try {
         }
         entries.push(entry);
     }
-    console.log('entries: ' + JSON.stringify(entries));
+    console.info('entries: ' + JSON.stringify(entries));
     kvStore.putBatch(entries).then(async (err) => {
-        console.log('putBatch success');
+        console.info('putBatch success');
         kvStore.getEntries('batch_test_string_key').then((entries) => {
-            console.log('getEntries success');
-            console.log('PutBatch ' + JSON.stringify(entries));
+            console.info('getEntries success');
+            console.info('PutBatch ' + JSON.stringify(entries));
         }).catch((err) => {
-            console.log('getEntries fail ' + JSON.stringify(err));
+            console.error('getEntries fail ' + JSON.stringify(err));
         });
     }).catch((err) => {
-        console.log('putBatch fail ' + JSON.stringify(err));
+        console.error('putBatch fail ' + JSON.stringify(err));
     });
 }catch(e) {
-    console.log('PutBatch e ' + JSON.stringify(e));
+    console.error('PutBatch e ' + JSON.stringify(e));
 }
 ```
  
   
 
-#### deleteBatch8+
+### deleteBatch8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteBatch(keys: string[], callback: AsyncCallback&lt;void&gt;): void
  
@@ -2823,6 +3002,7 @@ deleteBatch(keys: string[], callback: AsyncCallback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keys | string[] | 是 | 表示要批量删除的键值对。 |
@@ -2848,23 +3028,24 @@ try {
         entries.push(entry);
         keys.push(key + i);
     }
-    console.log('entries: ' + JSON.stringify(entries));
+    console.info('entries: ' + JSON.stringify(entries));
     kvStore.putBatch(entries, async function (err,data) {
-        console.log('putBatch success');
+        console.info('putBatch success');
         kvStore.deleteBatch(keys, async function (err,data) {
-            console.log('deleteBatch success');
+            console.info('deleteBatch success');
         });
     });
 }catch(e) {
-    console.log('DeleteBatch e ' + e);
+    console.error('DeleteBatch e ' + e);
 }
 ```
  
   
 
-#### deleteBatch8+
+### deleteBatch8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 deleteBatch(keys: string[]): Promise&lt;void&gt;
  
@@ -2874,6 +3055,7 @@ deleteBatch(keys: string[]): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keys | string[] | 是 | 表示要批量删除的键值对。 |
@@ -2881,6 +3063,7 @@ deleteBatch(keys: string[]): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -2905,27 +3088,28 @@ try {
         entries.push(entry);
         keys.push(key + i);
     }
-    console.log('entries: ' + JSON.stringify(entries));
+    console.info('entries: ' + JSON.stringify(entries));
     kvStore.putBatch(entries).then(async (err) => {
-        console.log('putBatch success');
+        console.info('putBatch success');
         kvStore.deleteBatch(keys).then((err) => {
-            console.log('deleteBatch success');
+            console.info('deleteBatch success');
         }).catch((err) => {
-            console.log('deleteBatch fail ' + JSON.stringify(err));
+            console.error('deleteBatch fail ' + JSON.stringify(err));
         });
     }).catch((err) => {
-        console.log('putBatch fail ' + JSON.stringify(err));
+        console.error('putBatch fail ' + JSON.stringify(err));
     });
 }catch(e) {
-    console.log('DeleteBatch e ' + e);
+    console.error('DeleteBatch e ' + e);
 }
 ```
  
   
 
-#### startTransaction8+
+### startTransaction8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startTransaction(callback: AsyncCallback&lt;void&gt;): void
  
@@ -2935,6 +3119,7 @@ startTransaction(callback: AsyncCallback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。 |
@@ -2961,27 +3146,28 @@ function putBatchString(len, prefix) {
 try {
     var count = 0;
     kvStore.on('dataChange', 0, function (data) {
-        console.log('startTransaction 0' + data)
+        console.info('startTransaction 0' + data)
         count++;
     });
     kvStore.startTransaction(async function (err,data) {
-        console.log('startTransaction success');
+        console.info('startTransaction success');
         let entries = putBatchString(10, 'batch_test_string_key');
-        console.log('entries: ' + JSON.stringify(entries));
+        console.info('entries: ' + JSON.stringify(entries));
         kvStore.putBatch(entries, async function (err,data) {
-            console.log('putBatch success');
+            console.info('putBatch success');
         });
     });
 }catch(e) {
-    console.log('startTransaction e ' + e);
+    console.error('startTransaction e ' + e);
 }
 ```
  
   
 
-#### startTransaction8+
+### startTransaction8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 startTransaction(): Promise&lt;void&gt;
  
@@ -2991,6 +3177,7 @@ startTransaction(): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -3003,24 +3190,25 @@ let kvStore;
 try {
     var count = 0;
     kvStore.on('dataChange', distributedData.SubscribeType.SUBSCRIBE_TYPE_ALL, function (data) {
-        console.log('startTransaction ' + JSON.stringify(data));
+        console.info('startTransaction ' + JSON.stringify(data));
         count++;
     });
     kvStore.startTransaction().then(async (err) => {
-        console.log('startTransaction success');
+        console.info('startTransaction success');
     }).catch((err) => {
-        console.log('startTransaction fail ' + JSON.stringify(err));
+        console.error('startTransaction fail ' + JSON.stringify(err));
     });
 }catch(e) {
-    console.log('startTransaction e ' + e);
+    console.error('startTransaction e ' + e);
 }
 ```
  
   
 
-#### commit8+
+### commit8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 commit(callback: AsyncCallback&lt;void&gt;): void
  
@@ -3030,6 +3218,7 @@ commit(callback: AsyncCallback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。 |
@@ -3042,21 +3231,22 @@ let kvStore;
 try {
     kvStore.commit(function (err,data) {
         if (err == undefined) {
-            console.log('commit success');
+            console.info('commit success');
         } else {
-            console.log('commit fail');
+            console.error('commit fail');
         }
     });
 }catch(e) {
-    console.log('Commit e ' + e);
+    console.error('Commit e ' + e);
 }
 ```
  
   
 
-#### commit8+
+### commit8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 commit(): Promise&lt;void&gt;
  
@@ -3066,6 +3256,7 @@ commit(): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -3077,20 +3268,21 @@ commit(): Promise&lt;void&gt;
 let kvStore;
 try {
     kvStore.commit().then(async (err) => {
-        console.log('commit success');
+        console.info('commit success');
     }).catch((err) => {
-        console.log('commit fail ' + JSON.stringify(err));
+        console.error('commit fail ' + JSON.stringify(err));
     });
 }catch(e) {
-    console.log('Commit e ' + e);
+    console.error('Commit e ' + e);
 }
 ```
  
   
 
-#### rollback8+
+### rollback8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 rollback(callback: AsyncCallback&lt;void&gt;): void
  
@@ -3100,6 +3292,7 @@ rollback(callback: AsyncCallback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;void&gt; | 是 | 回调函数。 |
@@ -3112,21 +3305,22 @@ let kvStore;
 try {
     kvStore.rollback(function (err,data) {
         if (err == undefined) {
-            console.log('commit success');
+            console.info('commit success');
         } else {
-            console.log('commit fail');
+            console.error('commit fail');
         }
     });
 }catch(e) {
-    console.log('Rollback e ' + e);
+    console.error('Rollback e ' + e);
 }
 ```
  
   
 
-#### rollback8+
+### rollback8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 rollback(): Promise&lt;void&gt;
  
@@ -3136,6 +3330,7 @@ rollback(): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -3147,20 +3342,21 @@ rollback(): Promise&lt;void&gt;
 let kvStore;
 try {
     kvStore.rollback().then(async (err) => {
-        console.log('rollback success');
+        console.info('rollback success');
     }).catch((err) => {
-        console.log('rollback fail ' + JSON.stringify(err));
+        console.error('rollback fail ' + JSON.stringify(err));
     });
 }catch(e) {
-    console.log('Rollback e ' + e);
+    console.error('Rollback e ' + e);
 }
 ```
  
   
 
-#### enableSync8+
+### enableSync8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableSync(enabled: boolean, callback: AsyncCallback&lt;void&gt;): void
  
@@ -3170,6 +3366,7 @@ enableSync(enabled: boolean, callback: AsyncCallback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 设定是否开启同步，true表示开启同步，false表示不启用同步。 |
@@ -3183,21 +3380,22 @@ let kvStore;
 try {
     kvStore.enableSync(true, function (err,data) {
         if (err == undefined) {
-            console.log('enableSync success');
+            console.info('enableSync success');
         } else {
-            console.log('enableSync fail');
+            console.error('enableSync fail');
         }
     });
 }catch(e) {
-    console.log('EnableSync e ' + e);
+    console.error('EnableSync e ' + e);
 }
 ```
  
   
 
-#### enableSync8+
+### enableSync8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableSync(enabled: boolean): Promise&lt;void&gt;
  
@@ -3207,6 +3405,7 @@ enableSync(enabled: boolean): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | boolean | 是 | 设定是否开启同步，true表示开启同步，false表示不启用同步。 |
@@ -3214,6 +3413,7 @@ enableSync(enabled: boolean): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -3225,20 +3425,21 @@ enableSync(enabled: boolean): Promise&lt;void&gt;
 let kvStore;
 try {
     kvStore.enableSync(true).then((err) => {
-        console.log('enableSync success');
+        console.info('enableSync success');
     }).catch((err) => {
-        console.log('enableSync fail ' + JSON.stringify(err));
+        console.error('enableSync fail ' + JSON.stringify(err));
     });
 }catch(e) {
-    console.log('EnableSync e ' + e);
+    console.error('EnableSync e ' + e);
 }
 ```
  
   
 
-#### setSyncRange8+
+### setSyncRange8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setSyncRange(localLabels: string[], remoteSupportLabels: string[], callback: AsyncCallback&lt;void&gt;): void
  
@@ -3248,6 +3449,7 @@ setSyncRange(localLabels: string[], remoteSupportLabels: string[], callback: Asy
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | localLabels | string[] | 是 | 表示本地设备的同步标签。 |
@@ -3263,18 +3465,19 @@ try {
     const localLabels = ['A', 'B'];
     const remoteSupportLabels = ['C', 'D'];
     kvStore.setSyncRange(localLabels, remoteSupportLabels, function (err,data) {
-        console.log('SetSyncRange put success');
+        console.info('SetSyncRange put success');
     });
 }catch(e) {
-    console.log('SetSyncRange e ' + e);
+    console.error('SetSyncRange e ' + e);
 }
 ```
  
   
 
-#### setSyncRange8+
+### setSyncRange8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setSyncRange(localLabels: string[], remoteSupportLabels: string[]): Promise&lt;void&gt;
  
@@ -3284,6 +3487,7 @@ setSyncRange(localLabels: string[], remoteSupportLabels: string[]): Promise&lt;v
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | localLabels | string[] | 是 | 表示本地设备的同步标签。 |
@@ -3292,6 +3496,7 @@ setSyncRange(localLabels: string[], remoteSupportLabels: string[]): Promise&lt;v
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -3305,25 +3510,27 @@ try {
     const localLabels = ['A', 'B'];
     const remoteSupportLabels = ['C', 'D'];
     kvStore.setSyncRange(localLabels, remoteSupportLabels).then((err) => {
-        console.log('setSyncRange success');
+        console.info('setSyncRange success');
     }).catch((err) => {
-        console.log('delete fail ' + err);
+        console.error('delete fail ' + err);
     });
 }catch(e) {
-    console.log('SetSyncRange e ' + e);
+    console.error('SetSyncRange e ' + e);
 }
 ```
  
   
 
-#### SubscribeType
+## SubscribeType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 订阅类型枚举。
  
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SUBSCRIBE_TYPE_LOCAL | 0 | 表示订阅本地数据变更。 |
@@ -3333,14 +3540,16 @@ try {
  
   
 
-#### ChangeNotification
+## ChangeNotification
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 数据变更时通知的对象，包括数据插入的数据、更新的数据、删除的数据和设备ID。
  
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | insertEntries | Entry[] | 是 | 数据添加记录。 |
@@ -3351,14 +3560,16 @@ try {
  
   
 
-#### Entry
+## Entry
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 存储在数据库中的键值对。
  
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 键值。 |
@@ -3367,14 +3578,16 @@ try {
  
   
 
-#### Value
+## Value
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 存储在数据库中的值对象。
  
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | ValueType | 是 | 值类型。 |
@@ -3383,14 +3596,16 @@ try {
  
   
 
-#### ValueType
+## ValueType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 数据类型枚举。
  
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | STRING | 0 | 表示值类型为字符串。 |
@@ -3403,9 +3618,10 @@ try {
  
   
 
-#### SingleKVStore
+## SingleKVStore
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 单版本数据库，继承自[KVStore](#kvstore)数据库，提供查询数据和同步数据的方法。
  
@@ -3415,9 +3631,10 @@ try {
  
   
 
-#### get
+### get
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get(key: string, callback: AsyncCallback<Uint8Array | string | boolean | number>): void
  
@@ -3427,6 +3644,7 @@ get(key: string, callback: AsyncCallback<Uint8Array | string | boolean | number>
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 要查询数据的key，不能为空且长度不大于MAX_KEY_LENGTH。 |
@@ -3442,24 +3660,25 @@ const VALUE_TEST_STRING_ELEMENT = 'value-test-string';
 try {
     kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT, function (err,data) {
         if (err != undefined) {
-            console.log("put err: " + JSON.stringify(err));
+            console.error("put err: " + JSON.stringify(err));
             return;
         }
-        console.log("put success");
+        console.info("put success");
         kvStore.get(KEY_TEST_STRING_ELEMENT, function (err,data) {
-            console.log("get success data: " + data);
+            console.info("get success data: " + data);
         });
     });
 }catch (e) {
-    console.log("An unexpected error occurred. Error:" + e);
+    console.error("An unexpected error occurred. Error:" + e);
 }
 ```
  
   
 
-#### get
+### get
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get(key: string): Promise<Uint8Array | string | boolean | number>
  
@@ -3469,6 +3688,7 @@ get(key: string): Promise<Uint8Array | string | boolean | number>
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 要查询数据的key，不能为空且长度不大于MAX_KEY_LENGTH。 |
@@ -3476,6 +3696,7 @@ get(key: string): Promise<Uint8Array | string | boolean | number>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Uint8Array \| string \| boolean \| number> | Promise对象。返回获取查询的值。 |
@@ -3489,25 +3710,26 @@ const KEY_TEST_STRING_ELEMENT = 'key_test_string';
 const VALUE_TEST_STRING_ELEMENT = 'value-test-string';
 try {
     kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT).then((data) => {
-        console.log("put success: " + JSON.stringify(data));
+        console.info("put success: " + JSON.stringify(data));
         kvStore.get(KEY_TEST_STRING_ELEMENT).then((data) => {
-            console.log("get success data: " + data);
+            console.info("get success data: " + data);
         }).catch((err) => {
-            console.log("get err: " + JSON.stringify(err));
+            console.error("get err: " + JSON.stringify(err));
         });
     }).catch((err) => {
-        console.log("put err: " + JSON.stringify(err));
+        console.error("put err: " + JSON.stringify(err));
     });
 }catch (e) {
-    console.log("An unexpected error occurred. Error:" + e);
+    console.error("An unexpected error occurred. Error:" + e);
 }
 ```
  
   
 
-#### getEntries8+
+### getEntries8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEntries(keyPrefix: string, callback: AsyncCallback<Entry[]>): void
  
@@ -3517,6 +3739,7 @@ getEntries(keyPrefix: string, callback: AsyncCallback<Entry[]>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyPrefix | string | 是 | 表示要匹配的键前缀。 |
@@ -3541,23 +3764,24 @@ try {
         entries.push(entry);
     }
     kvStore.putBatch(entries, async function (err,data) {
-        console.log('putBatch success');
+        console.info('putBatch success');
         kvStore.getEntries('batch_test_number_key', function (err,entries) {
-            console.log('getEntries success');
-            console.log('entries.length: ' + entries.length);
-            console.log('entries[0]: ' + JSON.stringify(entries[0]));
+            console.info('getEntries success');
+            console.info('entries.length: ' + entries.length);
+            console.info('entries[0]: ' + JSON.stringify(entries[0]));
         });
     });
 }catch(e) {
-    console.log('PutBatch e ' + e);
+    console.error('PutBatch e ' + e);
 }
 ```
  
   
 
-#### getEntries8+
+### getEntries8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEntries(keyPrefix: string): Promise<Entry[]>
  
@@ -3567,6 +3791,7 @@ getEntries(keyPrefix: string): Promise<Entry[]>
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyPrefix | string | 是 | 表示要匹配的键前缀。 |
@@ -3574,6 +3799,7 @@ getEntries(keyPrefix: string): Promise<Entry[]>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Entry[]> | Promise对象。返回匹配指定前缀的键值对列表。 |
@@ -3596,31 +3822,32 @@ try {
         }
         entries.push(entry);
     }
-    console.log('entries: ' + entries);
+    console.info('entries: ' + entries);
     kvStore.putBatch(entries).then(async (err) => {
-        console.log('putBatch success');
+        console.info('putBatch success');
         kvStore.getEntries('batch_test_string_key').then((entries) => {
-            console.log('getEntries success');
-            console.log('entries.length: ' + entries.length);
-            console.log('entries[0]: ' + JSON.stringify(entries[0]));
-            console.log('entries[0].value: ' + JSON.stringify(entries[0].value));
-            console.log('entries[0].value.value: ' + entries[0].value.value);
+            console.info('getEntries success');
+            console.info('entries.length: ' + entries.length);
+            console.info('entries[0]: ' + JSON.stringify(entries[0]));
+            console.info('entries[0].value: ' + JSON.stringify(entries[0].value));
+            console.info('entries[0].value.value: ' + entries[0].value.value);
         }).catch((err) => {
-            console.log('getEntries fail ' + JSON.stringify(err));
+            console.error('getEntries fail ' + JSON.stringify(err));
         });
     }).catch((err) => {
-        console.log('putBatch fail ' + JSON.stringify(err));
+        console.error('putBatch fail ' + JSON.stringify(err));
     });
 }catch(e) {
-    console.log('PutBatch e ' + e);
+    console.error('PutBatch e ' + e);
 }
 ```
  
   
 
-#### getEntries8+
+### getEntries8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEntries(query: Query, callback: AsyncCallback<Entry[]>): void
  
@@ -3630,6 +3857,7 @@ getEntries(query: Query, callback: AsyncCallback<Entry[]>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | query | Query | 是 | 表示要匹配的键前缀。 |
@@ -3654,28 +3882,29 @@ try {
         }
         entries.push(entry);
     }
-    console.log('entries: ' + JSON.stringify(entries));
+    console.info('entries: ' + JSON.stringify(entries));
     kvStore.putBatch(entries, async function (err,data) {
-        console.log('putBatch success');
+        console.info('putBatch success');
         const query = new distributedData.Query();
         query.prefixKey("batch_test");
         kvStore.getEntries(query, function (err,entries) {
-            console.log('getEntries success');
-            console.log('entries.length: ' + entries.length);
-            console.log('entries[0]: ' + JSON.stringify(entries[0]));
+            console.info('getEntries success');
+            console.info('entries.length: ' + entries.length);
+            console.info('entries[0]: ' + JSON.stringify(entries[0]));
         });
     });
-    console.log('GetEntries success');
+    console.info('GetEntries success');
 }catch(e) {
-    console.log('GetEntries e ' + e);
+    console.error('GetEntries e ' + e);
 }
 ```
  
   
 
-#### getEntries8+
+### getEntries8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEntries(query: Query): Promise<Entry[]>
  
@@ -3685,6 +3914,7 @@ getEntries(query: Query): Promise<Entry[]>
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | query | Query | 是 | 表示查询对象。 |
@@ -3692,6 +3922,7 @@ getEntries(query: Query): Promise<Entry[]>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Entry[]> | Promise对象。返回与指定Query对象匹配的键值对列表。 |
@@ -3715,30 +3946,31 @@ try {
         }
         entries.push(entry);
     }
-    console.log('entries: ' + JSON.stringify(entries));
+    console.info('entries: ' + JSON.stringify(entries));
     kvStore.putBatch(entries).then(async (err) => {
-        console.log('putBatch success');
+        console.info('putBatch success');
         const query = new distributedData.Query();
         query.prefixKey("batch_test");
         kvStore.getEntries(query).then((entries) => {
-            console.log('getEntries success');
+            console.info('getEntries success');
         }).catch((err) => {
-            console.log('getEntries fail ' + JSON.stringify(err));
+            console.error('getEntries fail ' + JSON.stringify(err));
         });
     }).catch((err) => {
-        console.log('GetEntries putBatch fail ' + JSON.stringify(err))
+        console.error('GetEntries putBatch fail ' + JSON.stringify(err))
     });
-    console.log('GetEntries success');
+    console.info('GetEntries success');
 }catch(e) {
-    console.log('GetEntries e ' + e);
+    console.error('GetEntries e ' + e);
 }
 ```
  
   
 
-#### getResultSet8+
+### getResultSet8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResultSet(keyPrefix: string, callback: AsyncCallback&lt;KvStoreResultSet&gt;): void
  
@@ -3748,6 +3980,7 @@ getResultSet(keyPrefix: string, callback: AsyncCallback&lt;KvStoreResultSet&gt;)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyPrefix | string | 是 | 表示要匹配的键前缀。 |
@@ -3773,25 +4006,26 @@ try {
         entries.push(entry);
     }
     kvStore.putBatch(entries, async function (err, data) {
-        console.log('GetResultSet putBatch success');
+        console.info('GetResultSet putBatch success');
         kvStore.getResultSet('batch_test_string_key', async function (err, result) {
-            console.log('GetResultSet getResultSet succeed.');
+            console.info('GetResultSet getResultSet succeed.');
             resultSet = result;
             kvStore.closeResultSet(resultSet, function (err, data) {
-                console.log('GetResultSet closeResultSet success');
+                console.info('GetResultSet closeResultSet success');
             })
         });
     });
 }catch(e) {
-    console.log('GetResultSet e ' + e);
+    console.error('GetResultSet e ' + e);
 }
 ```
  
   
 
-#### getResultSet8+
+### getResultSet8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResultSet(keyPrefix: string): Promise&lt;KvStoreResultSet&gt;
  
@@ -3801,6 +4035,7 @@ getResultSet(keyPrefix: string): Promise&lt;KvStoreResultSet&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | keyPrefix | string | 是 | 表示要匹配的键前缀。 |
@@ -3808,6 +4043,7 @@ getResultSet(keyPrefix: string): Promise&lt;KvStoreResultSet&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;KvStoreResultSet&gt; | Promise对象。返回具有指定前缀的结果集。 |
@@ -3832,31 +4068,32 @@ try {
         entries.push(entry);
     }
     kvStore.putBatch(entries).then(async (err) => {
-        console.log('putBatch success');
+        console.info('putBatch success');
     }).catch((err) => {
-        console.log('PutBatch putBatch fail ' + JSON.stringify(err));
+        console.error('PutBatch putBatch fail ' + JSON.stringify(err));
     });
     kvStore.getResultSet('batch_test_string_key').then((result) => {
-        console.log('GetResult getResultSet succeed.');
+        console.info('GetResult getResultSet succeed.');
         resultSet = result;
     }).catch((err) => {
-        console.log('getResultSet failed: ' + JSON.stringify(err));
+        console.error('getResultSet failed: ' + JSON.stringify(err));
     });
     kvStore.closeResultSet(resultSet).then((err) => {
-        console.log('GetResult closeResultSet success');
+        console.info('GetResult closeResultSet success');
     }).catch((err) => {
-        console.log('closeResultSet fail ' + JSON.stringify(err));
+        console.error('closeResultSet fail ' + JSON.stringify(err));
     });
 }catch(e) {
-    console.log('GetResult e ' + e);
+    console.error('GetResult e ' + e);
 }
 ```
  
   
 
-#### getResultSet8+
+### getResultSet8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResultSet(query: Query, callback: AsyncCallback&lt;KvStoreResultSet&gt;): void
  
@@ -3866,6 +4103,7 @@ getResultSet(query: Query, callback: AsyncCallback&lt;KvStoreResultSet&gt;): voi
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | query | Query | 是 | 表示查询对象。 |
@@ -3891,24 +4129,25 @@ try {
         entries.push(entry);
     }
     kvStore.putBatch(entries, async function (err, data) {
-        console.log('putBatch success');
+        console.info('putBatch success');
         const query = new distributedData.Query();
         query.prefixKey("batch_test");
         kvStore.getResultSet(query, async function (err, result) {
-            console.log('getResultSet succeed.');
+            console.info('getResultSet succeed.');
             resultSet = result;
         });
     });
 } catch(e) {
-    console.log('GetResultSet e ' + e);
+    console.error('GetResultSet e ' + e);
 }
 ```
  
   
 
-#### getResultSet8+
+### getResultSet8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResultSet(query: Query): Promise&lt;KvStoreResultSet&gt;
  
@@ -3918,6 +4157,7 @@ getResultSet(query: Query): Promise&lt;KvStoreResultSet&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | query | Query | 是 | 表示查询对象。 |
@@ -3925,6 +4165,7 @@ getResultSet(query: Query): Promise&lt;KvStoreResultSet&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;KvStoreResultSet&gt; | Promise对象。获取与指定Query对象匹配的KvStoreResultSet对象。 |
@@ -3949,28 +4190,29 @@ try {
         entries.push(entry);
     }
     kvStore.putBatch(entries).then(async (err) => {
-        console.log('putBatch success');
+        console.info('putBatch success');
     }).catch((err) => {
-        console.log('putBatch fail ' + JSON.stringify(err));
+        console.error('putBatch fail ' + JSON.stringify(err));
     });
     const query = new distributedData.Query();
     query.prefixKey("batch_test");
     kvStore.getResultSet(query).then((result) => {
-        console.log(' getResultSet succeed.');
+        console.info(' getResultSet succeed.');
         resultSet = result;
     }).catch((err) => {
-        console.log('getResultSet failed: ' + JSON.stringify(err));
+        console.error('getResultSet failed: ' + JSON.stringify(err));
     });
 }catch(e) {
-    console.log('GetResultSet e ' + e);
+    console.error('GetResultSet e ' + e);
 }
 ```
  
   
 
-#### closeResultSet8+
+### closeResultSet8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 closeResultSet(resultSet: KvStoreResultSet, callback: AsyncCallback&lt;void&gt;): void
  
@@ -3980,6 +4222,7 @@ closeResultSet(resultSet: KvStoreResultSet, callback: AsyncCallback&lt;void&gt;)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resultSet | KvStoreResultSet | 是 | 表示要关闭的KvStoreResultSet对象。 |
@@ -3994,21 +4237,22 @@ try {
     let resultSet = null;
     kvStore.closeResultSet(resultSet, function (err, data) {
         if (err == undefined) {
-            console.log('closeResultSet success');
+            console.info('closeResultSet success');
         } else {
-            console.log('closeResultSet fail');
+            console.error('closeResultSet fail');
         }
     });
 }catch(e) {
-    console.log('CloseResultSet e ' + e);
+    console.error('CloseResultSet e ' + e);
 }
 ```
  
   
 
-#### closeResultSet8+
+### closeResultSet8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 closeResultSet(resultSet: KvStoreResultSet): Promise&lt;void&gt;
  
@@ -4018,6 +4262,7 @@ closeResultSet(resultSet: KvStoreResultSet): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resultSet | KvStoreResultSet | 是 | 表示要关闭的KvStoreResultSet对象。 |
@@ -4025,6 +4270,7 @@ closeResultSet(resultSet: KvStoreResultSet): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -4037,20 +4283,21 @@ let kvStore;
 try {
     let resultSet = null;
     kvStore.closeResultSet(resultSet).then(() => {
-        console.log('closeResultSet success');
+        console.info('closeResultSet success');
     }).catch((err) => {
-        console.log('closeResultSet fail ' + JSON.stringify(err));
+        console.error('closeResultSet fail ' + JSON.stringify(err));
     });
 }catch(e) {
-    console.log('CloseResultSet e ' + e);
+    console.error('CloseResultSet e ' + e);
 }
 ```
  
   
 
-#### getResultSize8+
+### getResultSize8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResultSize(query: Query, callback: AsyncCallback&lt;number&gt;): void
  
@@ -4060,6 +4307,7 @@ getResultSize(query: Query, callback: AsyncCallback&lt;number&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | query | Query | 是 | 表示查询对象。 |
@@ -4084,23 +4332,24 @@ try {
         entries.push(entry);
     }
     kvStore.putBatch(entries, async function (err, data) {
-        console.log('putBatch success');
+        console.info('putBatch success');
         const query = new distributedData.Query();
         query.prefixKey("batch_test");
         kvStore.getResultSize(query, async function (err, resultSize) {
-            console.log('getResultSet succeed.');
+            console.info('getResultSet succeed.');
         });
     });
 } catch(e) {
-    console.log('GetResultSize e ' + e);
+    console.error('GetResultSize e ' + e);
 }
 ```
  
   
 
-#### getResultSize8+
+### getResultSize8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResultSize(query: Query): Promise&lt;number&gt;
  
@@ -4110,6 +4359,7 @@ getResultSize(query: Query): Promise&lt;number&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | query | Query | 是 | 表示查询对象。 |
@@ -4117,6 +4367,7 @@ getResultSize(query: Query): Promise&lt;number&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象。获取与指定Query对象匹配的结果数。 |
@@ -4140,40 +4391,38 @@ try {
         entries.push(entry);
     }
     kvStore.putBatch(entries).then(async (err) => {
-        console.log('putBatch success');
+        console.info('putBatch success');
     }).catch((err) => {
-        console.log('putBatch fail ' + JSON.stringify(err));
+        console.error('putBatch fail ' + JSON.stringify(err));
     });
     const query = new distributedData.Query();
     query.prefixKey("batch_test");
     kvStore.getResultSize(query).then((resultSize) => {
-        console.log('getResultSet succeed.');
+        console.info('getResultSet succeed.');
     }).catch((err) => {
-        console.log('getResultSet failed: ' + JSON.stringify(err));
+        console.error('getResultSet failed: ' + JSON.stringify(err));
     });
 }catch(e) {
-    console.log('GetResultSize e ' + e);
+    console.error('GetResultSize e ' + e);
 }
 ```
  
   
 
-#### removeDeviceData8+
+### removeDeviceData8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeDeviceData(deviceId: string, callback: AsyncCallback&lt;void&gt;): void
  
 删除指定设备的数据，使用callback异步回调。
  
-> [!NOTE]
-> 其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。 deviceId具体获取方式请参考 sync接口示例 。
-
- 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 表示要删除设备的名称。 |
@@ -4188,42 +4437,40 @@ const KEY_TEST_STRING_ELEMENT = 'key_test_string_2';
 const VALUE_TEST_STRING_ELEMENT = 'value-string-002';
 try {
     kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT, async function (err,data) {
-        console.log('put success');
+        console.info('put success');
         const deviceid = 'no_exist_device_id';
         kvStore.removeDeviceData(deviceid, async function (err,data) {
             if (err == undefined) {
-                console.log('removeDeviceData success');
+                console.info('removeDeviceData success');
             } else {
-                console.log('removeDeviceData fail');
+                console.error('removeDeviceData fail');
                 kvStore.get(KEY_TEST_STRING_ELEMENT, async function (err,data) {
-                    console.log('RemoveDeviceData get success');
+                    console.info('RemoveDeviceData get success');
                 });
             }
         });
     });
 }catch(e) {
-    console.log('RemoveDeviceData e ' + e);
+    console.error('RemoveDeviceData e ' + e);
 }
 ```
  
   
 
-#### removeDeviceData8+
+### removeDeviceData8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeDeviceData(deviceId: string): Promise&lt;void&gt;
  
 删除指定设备的数据，使用Promise异步回调。
  
-> [!NOTE]
-> 其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。 deviceId具体获取方式请参考 sync接口示例 。
-
- 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 表示要删除设备的名称。 |
@@ -4231,6 +4478,7 @@ removeDeviceData(deviceId: string): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -4244,39 +4492,36 @@ const KEY_TEST_STRING_ELEMENT = 'key_test_string_2';
 const VALUE_TEST_STRING_ELEMENT = 'value-string-001';
 try {
     kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT).then((err) => {
-        console.log('removeDeviceData put success');
+        console.info('removeDeviceData put success');
     }).catch((err) => {
-        console.log('put fail ' + JSON.stringify(err));
+        console.error('put fail ' + JSON.stringify(err));
     });
     const deviceid = 'no_exist_device_id';
     kvStore.removeDeviceData(deviceid).then((err) => {
-        console.log('removeDeviceData success');
+        console.info('removeDeviceData success');
     }).catch((err) => {
-        console.log('removeDeviceData fail ' + JSON.stringify(err));
+        console.error('removeDeviceData fail ' + JSON.stringify(err));
     });
     kvStore.get(KEY_TEST_STRING_ELEMENT).then((data) => {
-        console.log('get success data:' + data);
+        console.info('get success data:' + data);
     }).catch((err) => {
-        console.log('RemoveDeviceData get fail ' + JSON.stringify(err));
+        console.error('RemoveDeviceData get fail ' + JSON.stringify(err));
     });
 }catch(e) {
-    console.log('RemoveDeviceData e ' + e);
+    console.error('RemoveDeviceData e ' + e);
 }
 ```
  
   
 
-#### sync
+### sync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sync(deviceIds: string[], mode: SyncMode, delayMs?: number): void
  
 在手动同步方式下，触发数据库同步。
- 
-> [!NOTE]
-> 其中deviceIds为DeviceInfo中的networkId，通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。
-
  
 **需要权限**： ohos.permission.DISTRIBUTED_DATASYNC。
  
@@ -4284,6 +4529,7 @@ sync(deviceIds: string[], mode: SyncMode, delayMs?: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceIds | string[] | 是 | 同一组网环境下，需要同步的设备的networkId列表。 |
@@ -4294,48 +4540,34 @@ sync(deviceIds: string[], mode: SyncMode, delayMs?: number): void
 **示例：**
  
 ```json
-import deviceManager from '@ohos.distributedHardware.deviceManager';
-
-let devManager;
 let kvStore;
 const KEY_TEST_SYNC_ELEMENT = 'key_test_sync';
 const VALUE_TEST_SYNC_ELEMENT = 'value-string-001';
-// create deviceManager
-deviceManager.createDeviceManager('bundleName', (err, value) => {
-  if (!err) {
-    devManager = value;
-    let deviceIds = [];
-    if (devManager != null) {
-      var devices = devManager.getTrustedDeviceListSync();
-      for (var i = 0; i < devices.length; i++) {
-        deviceIds[i] = devices[i].networkId;
-      }
+const deviceIds = ['networkId1', 'networkId2'];
+try {
+  kvStore.on('syncComplete', function (data) {
+    console.info('Sync dataChange');
+  });
+  kvStore.put(KEY_TEST_SYNC_ELEMENT + 'testSync101', VALUE_TEST_SYNC_ELEMENT, function (err, data) {
+    if (err != undefined) {
+      console.error("put err: " + JSON.stringify(err));
+      return;
     }
-    try {
-      kvStore.on('syncComplete', function (data) {
-        console.log('Sync dataChange');
-      });
-      kvStore.put(KEY_TEST_SYNC_ELEMENT + 'testSync101', VALUE_TEST_SYNC_ELEMENT, function (err, data) {
-        if (err != undefined) {
-          console.log("put err: " + JSON.stringify(err));
-          return;
-        }
-        console.log('Succeeded in putting data');
-        const mode = distributedData.SyncMode.PULL_ONLY;
-        kvStore.sync(deviceIds, mode, 1000);
-      });
-    } catch (e) {
-      console.log('Sync e' + e);
-    }
-  }
-});
+    console.info('Succeeded in putting data');
+    const mode = distributedData.SyncMode.PULL_ONLY;
+    kvStore.sync(deviceIds, mode, 1000);
+  });
+} catch (e) {
+  console.error('Sync e' + e);
+}
 ```
  
   
 
-#### on('dataChange')8+
+### on('dataChange')8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(event: 'dataChange', type: SubscribeType, listener: Callback&lt;ChangeNotification&gt;): void
  
@@ -4345,6 +4577,7 @@ on(event: 'dataChange', type: SubscribeType, listener: Callback&lt;ChangeNotific
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 订阅的事件名，固定为'dataChange'，表示数据变更事件。 |
@@ -4357,15 +4590,16 @@ on(event: 'dataChange', type: SubscribeType, listener: Callback&lt;ChangeNotific
 ```json
 let kvStore;
 kvStore.on('dataChange', distributedData.SubscribeType.SUBSCRIBE_TYPE_LOCAL, function (data) {
-    console.log("dataChange callback call data: " + JSON.stringify(data));
+    console.info("dataChange callback call data: " + JSON.stringify(data));
 });
 ```
  
   
 
-#### on('syncComplete')8+
+### on('syncComplete')8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(event: 'syncComplete', syncCallback: Callback<Array<[string, number]>>): void
  
@@ -4375,6 +4609,7 @@ on(event: 'syncComplete', syncCallback: Callback<Array<[string, number]>>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 订阅的事件名，固定为'syncComplete'，表示同步完成事件。 |
@@ -4389,23 +4624,24 @@ const KEY_TEST_FLOAT_ELEMENT = 'key_test_float';
 const VALUE_TEST_FLOAT_ELEMENT = 321.12;
 try {
     kvStore.on('syncComplete', function (data) {
-        console.log('syncComplete ' + data)
+        console.info('syncComplete ' + data)
     });
     kvStore.put(KEY_TEST_FLOAT_ELEMENT, VALUE_TEST_FLOAT_ELEMENT).then((data) => {
-        console.log('syncComplete put success');
+        console.info('syncComplete put success');
     }).catch((error) => {
-        console.log('syncComplete put fail ' + error);
+        console.error('syncComplete put fail ' + error);
     });
 }catch(e) {
-    console.log('syncComplete put e ' + e);
+    console.error('syncComplete put e ' + e);
 }
 ```
  
   
 
-#### off('dataChange')8+
+### off('dataChange')8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(event:'dataChange', listener?: Callback&lt;ChangeNotification&gt;): void
  
@@ -4415,6 +4651,7 @@ off(event:'dataChange', listener?: Callback&lt;ChangeNotification&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 取消订阅的事件名，固定为'dataChange'，表示数据变更事件。 |
@@ -4427,7 +4664,7 @@ off(event:'dataChange', listener?: Callback&lt;ChangeNotification&gt;): void
 let kvStore;
 class KvstoreModel {
     call(data) {
-        console.log("dataChange: " + data);
+        console.info("dataChange: " + data);
     }
     subscribeDataChange() {
         if (kvStore != null) {
@@ -4444,9 +4681,10 @@ class KvstoreModel {
  
   
 
-#### off('syncComplete')8+
+### off('syncComplete')8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(event: 'syncComplete', syncCallback?: Callback<Array<[string, number]>>): void
  
@@ -4456,6 +4694,7 @@ off(event: 'syncComplete', syncCallback?: Callback<Array<[string, number]>>): vo
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 取消订阅的事件名，固定为'syncComplete'，表示同步完成事件。 |
@@ -4468,7 +4707,7 @@ off(event: 'syncComplete', syncCallback?: Callback<Array<[string, number]>>): vo
 let kvStore;
 class KvstoreModel {
     call(data) {
-        console.log("syncComplete: " + data);
+        console.info("syncComplete: " + data);
     }
     subscribeSyncComplete() {
         if (kvStore != null) {
@@ -4485,9 +4724,10 @@ class KvstoreModel {
  
   
 
-#### setSyncParam8+
+### setSyncParam8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setSyncParam(defaultAllowedDelayMs: number, callback: AsyncCallback&lt;void&gt;): void
  
@@ -4497,6 +4737,7 @@ setSyncParam(defaultAllowedDelayMs: number, callback: AsyncCallback&lt;void&gt;)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | defaultAllowedDelayMs | number | 是 | 表示数据库同步允许的默认延迟，以毫秒为单位。 |
@@ -4510,18 +4751,19 @@ let kvStore;
 try {
     const defaultAllowedDelayMs = 500;
     kvStore.setSyncParam(defaultAllowedDelayMs, function (err,data) {
-        console.log('SetSyncParam put success');
+        console.info('SetSyncParam put success');
     });
 }catch(e) {
-    console.log('testSingleKvStoreSetSyncParam e ' + e);
+    console.error('testSingleKvStoreSetSyncParam e ' + e);
 }
 ```
  
   
 
-#### setSyncParam8+
+### setSyncParam8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setSyncParam(defaultAllowedDelayMs: number): Promise&lt;void&gt;
  
@@ -4531,6 +4773,7 @@ setSyncParam(defaultAllowedDelayMs: number): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | defaultAllowedDelayMs | number | 是 | 表示数据库同步允许的默认延迟，以毫秒为单位。 |
@@ -4538,6 +4781,7 @@ setSyncParam(defaultAllowedDelayMs: number): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -4550,20 +4794,21 @@ let kvStore;
 try {
     const defaultAllowedDelayMs = 500;
     kvStore.setSyncParam(defaultAllowedDelayMs).then((err) => {
-        console.log('SetSyncParam put success');
+        console.info('SetSyncParam put success');
     }).catch((err) => {
-        console.log('SetSyncParam put fail ' + JSON.stringify(err));
+        console.error('SetSyncParam put fail ' + JSON.stringify(err));
     });
 }catch(e) {
-    console.log('SetSyncParam e ' + e);
+    console.error('SetSyncParam e ' + e);
 }
 ```
  
   
 
-#### getSecurityLevel8+
+### getSecurityLevel8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSecurityLevel(callback: AsyncCallback&lt;SecurityLevel&gt;): void
  
@@ -4573,6 +4818,7 @@ getSecurityLevel(callback: AsyncCallback&lt;SecurityLevel&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;SecurityLevel&gt; | 是 | 回调函数。返回数据库的安全级别。 |
@@ -4584,18 +4830,19 @@ getSecurityLevel(callback: AsyncCallback&lt;SecurityLevel&gt;): void
 let kvStore;
 try {
     kvStore.getSecurityLevel(function (err,data) {
-        console.log('getSecurityLevel success');
+        console.info('getSecurityLevel success');
     });
 }catch(e) {
-    console.log('GetSecurityLevel e ' + e);
+    console.error('GetSecurityLevel e ' + e);
 }
 ```
  
   
 
-#### getSecurityLevel8+
+### getSecurityLevel8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSecurityLevel(): Promise&lt;SecurityLevel&gt;
  
@@ -4605,6 +4852,7 @@ getSecurityLevel(): Promise&lt;SecurityLevel&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;SecurityLevel&gt; | Promise对象。返回数据库的安全级别。 |
@@ -4616,20 +4864,21 @@ getSecurityLevel(): Promise&lt;SecurityLevel&gt;
 let kvStore;
 try {
     kvStore.getSecurityLevel().then((data) => {
-        console.log(' getSecurityLevel success');
+        console.info(' getSecurityLevel success');
     }).catch((err) => {
-        console.log('getSecurityLevel fail ' + JSON.stringify(err));
+        console.error('getSecurityLevel fail ' + JSON.stringify(err));
     });
 }catch(e) {
-    console.log('GetSecurityLevel e ' + e);
+    console.error('GetSecurityLevel e ' + e);
 }
 ```
  
   
 
-#### DeviceKVStore8+
+## DeviceKVStore8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 设备协同数据库，继承自KVStore，提供查询数据和同步数据的方法。
  
@@ -4641,22 +4890,20 @@ try {
  
   
 
-#### get8+
+### get8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get(deviceId: string, key: string, callback: AsyncCallback<boolean|string|number|Uint8Array>): void
  
 获取与指定设备ID和key匹配的string值，使用callback异步回调。
  
-> [!NOTE]
-> 其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。 deviceId具体获取方式请参考 sync接口示例 。
-
- 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 标识要查询其数据的设备。 |
@@ -4672,34 +4919,32 @@ const KEY_TEST_STRING_ELEMENT = 'key_test_string_2';
 const VALUE_TEST_STRING_ELEMENT = 'value-string-002';
 try{
     kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT, async function (err,data) {
-        console.log('put success');
+        console.info('put success');
         kvStore.get('localDeviceId', KEY_TEST_STRING_ELEMENT, function (err,data) {
-            console.log('get success');
+            console.info('get success');
         });
     })
 }catch(e) {
-    console.log('get e' + e);
+    console.error('get e' + e);
 }
 ```
  
   
 
-#### get8+
+### get8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 get(deviceId: string, key: string): Promise<boolean|string|number|Uint8Array>
  
 获取与指定设备ID和key匹配的string值，使用Promise异步回调。
  
-> [!NOTE]
-> 其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。 deviceId具体获取方式请参考 sync接口示例 。
-
- 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 标识要查询其数据的设备。 |
@@ -4708,6 +4953,7 @@ get(deviceId: string, key: string): Promise<boolean|string|number|Uint8Array>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<boolean\|string\|number\|Uint8Array> | Promise对象。返回匹配给定条件的字符串值。 |
@@ -4721,38 +4967,36 @@ const KEY_TEST_STRING_ELEMENT = 'key_test_string_2';
 const VALUE_TEST_STRING_ELEMENT = 'value-string-002';
 try {
     kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT).then(async (data) => {
-        console.log(' put success');
+        console.info(' put success');
         kvStore.get('localDeviceId', KEY_TEST_STRING_ELEMENT).then((data) => {
-            console.log('get success');
+            console.info('get success');
         }).catch((err) => {
-            console.log('get fail ' + JSON.stringify(err));
+            console.error('get fail ' + JSON.stringify(err));
         });
     }).catch((error) => {
-        console.log('put error' + error);
+        console.error('put error' + error);
     });
 } catch (e) {
-    console.log('Get e ' + e);
+    console.error('Get e ' + e);
 }
 ```
  
   
 
-#### getEntries8+
+### getEntries8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEntries(deviceId: string, keyPrefix: string, callback: AsyncCallback<Entry[]>): void
  
 获取与指定设备ID和key前缀匹配的所有键值对，使用callback异步回调。
  
-> [!NOTE]
-> 其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。 deviceId具体获取方式请参考 sync接口示例 。
-
- 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 标识要查询其数据的设备。 |
@@ -4777,38 +5021,36 @@ try {
         }
         entries.push(entry);
     }
-    console.log('entries: ' + entries);
+    console.info('entries: ' + entries);
     kvStore.putBatch(entries, async function (err,data) {
-        console.log('putBatch success');
+        console.info('putBatch success');
         kvStore.getEntries('localDeviceId', 'batch_test_string_key', function (err,entries) {
-            console.log('getEntries success');
-            console.log('entries.length: ' + entries.length);
-            console.log('entries[0]: ' + JSON.stringify(entries[0]));
+            console.info('getEntries success');
+            console.info('entries.length: ' + entries.length);
+            console.info('entries[0]: ' + JSON.stringify(entries[0]));
         });
     });
 }catch(e) {
-    console.log('PutBatch e ' + e);
+    console.error('PutBatch e ' + e);
 }
 ```
  
   
 
-#### getEntries8+
+### getEntries8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEntries(deviceId: string, keyPrefix: string): Promise<Entry[]>
  
 获取与指定设备ID和key前缀匹配的所有键值对，使用Promise异步回调。
  
-> [!NOTE]
-> 其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。 deviceId具体获取方式请参考 sync接口示例 。
-
- 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 标识要查询其数据的设备。 |
@@ -4817,6 +5059,7 @@ getEntries(deviceId: string, keyPrefix: string): Promise<Entry[]>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Entry[]> | Promise对象。返回匹配给定条件的所有键值对的列表。 |
@@ -4839,31 +5082,32 @@ try {
         }
         entries.push(entry);
     }
-    console.log('entries: ' + entries);
+    console.info('entries: ' + entries);
     kvStore.putBatch(entries).then(async (err) => {
-        console.log('putBatch success');
+        console.info('putBatch success');
         kvStore.getEntries('localDeviceId', 'batch_test_string_key').then((entries) => {
-            console.log('getEntries success');
-            console.log('entries.length: ' + entries.length);
-            console.log('entries[0]: ' + JSON.stringify(entries[0]));
-            console.log('entries[0].value: ' + JSON.stringify(entries[0].value));
-            console.log('entries[0].value.value: ' + entries[0].value.value);
+            console.info('getEntries success');
+            console.info('entries.length: ' + entries.length);
+            console.info('entries[0]: ' + JSON.stringify(entries[0]));
+            console.info('entries[0].value: ' + JSON.stringify(entries[0].value));
+            console.info('entries[0].value.value: ' + entries[0].value.value);
         }).catch((err) => {
-            console.log('getEntries fail ' + JSON.stringify(err));
+            console.error('getEntries fail ' + JSON.stringify(err));
         });
     }).catch((err) => {
-        console.log('putBatch fail ' + JSON.stringify(err));
+        console.error('putBatch fail ' + JSON.stringify(err));
     });
 }catch(e) {
-    console.log('PutBatch e ' + e);
+    console.error('PutBatch e ' + e);
 }
 ```
  
   
 
-#### getEntries8+
+### getEntries8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEntries(query: Query, callback: AsyncCallback<Entry[]>): void
  
@@ -4873,6 +5117,7 @@ getEntries(query: Query, callback: AsyncCallback<Entry[]>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | query | Query | 是 | 表示查询对象。 |
@@ -4897,29 +5142,30 @@ try {
         }
         entries.push(entry);
     }
-    console.log('entries: ' + JSON.stringify(entries));
+    console.info('entries: ' + JSON.stringify(entries));
     kvStore.putBatch(entries, async function (err,data) {
-        console.log('putBatch success');
+        console.info('putBatch success');
         const query = new distributedData.Query();
         query.prefixKey("batch_test");
         query.deviceId('localDeviceId');
         kvStore.getEntries(query, function (err,entries) {
-            console.log('getEntries success');
-            console.log('entries.length: ' + entries.length);
-            console.log('entries[0]: ' + JSON.stringify(entries[0]));
+            console.info('getEntries success');
+            console.info('entries.length: ' + entries.length);
+            console.info('entries[0]: ' + JSON.stringify(entries[0]));
         });
     });
-    console.log('GetEntries success');
+    console.info('GetEntries success');
 }catch(e) {
-    console.log('GetEntries e ' + e);
+    console.error('GetEntries e ' + e);
 }
 ```
  
   
 
-#### getEntries8+
+### getEntries8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEntries(query: Query): Promise<Entry[]>
  
@@ -4929,6 +5175,7 @@ getEntries(query: Query): Promise<Entry[]>
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | query | Query | 是 | 表示查询对象。 |
@@ -4936,6 +5183,7 @@ getEntries(query: Query): Promise<Entry[]>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Entry[]> | Promise对象。返回与指定Query对象匹配的键值对列表。 |
@@ -4959,43 +5207,41 @@ try {
         }
         entries.push(entry);
     }
-    console.log('entries: ' + JSON.stringify(entries));
+    console.info('entries: ' + JSON.stringify(entries));
     kvStore.putBatch(entries).then(async (err) => {
-        console.log('putBatch success');
+        console.info('putBatch success');
         const query = new distributedData.Query();
         query.prefixKey("batch_test");
         kvStore.getEntries(query).then((entries) => {
-            console.log('getEntries success');
+            console.info('getEntries success');
         }).catch((err) => {
-            console.log('getEntries fail ' + JSON.stringify(err));
+            console.error('getEntries fail ' + JSON.stringify(err));
         });
     }).catch((err) => {
-        console.log('GetEntries putBatch fail ' + JSON.stringify(err))
+        console.error('GetEntries putBatch fail ' + JSON.stringify(err))
     });
-    console.log('GetEntries success');
+    console.info('GetEntries success');
 }catch(e) {
-    console.log('GetEntries e ' + e);
+    console.error('GetEntries e ' + e);
 }
 ```
  
   
 
-#### getEntries8+
+### getEntries8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEntries(deviceId: string, query: Query, callback: AsyncCallback<Entry[]>): void
  
 获取与指定设备ID和Query对象匹配的键值对列表，使用callback异步回调。
  
-> [!NOTE]
-> 其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。 deviceId具体获取方式请参考 sync接口示例 。
-
- 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 键值对所属的设备ID。 |
@@ -5021,42 +5267,40 @@ try {
         }
         entries.push(entry);
     }
-    console.log('entries: ' + JSON.stringify(entries));
+    console.info('entries: ' + JSON.stringify(entries));
     kvStore.putBatch(entries, async function (err,data) {
-        console.log('putBatch success');
+        console.info('putBatch success');
         var query = new distributedData.Query();
         query.deviceId('localDeviceId');
         query.prefixKey("batch_test");
         kvStore.getEntries('localDeviceId', query, function (err,entries) {
-            console.log('getEntries success');
-            console.log('entries.length: ' + entries.length);
-            console.log('entries[0]: ' + JSON.stringify(entries[0]));
+            console.info('getEntries success');
+            console.info('entries.length: ' + entries.length);
+            console.info('entries[0]: ' + JSON.stringify(entries[0]));
         })
     });
-    console.log('GetEntries success');
+    console.info('GetEntries success');
 }catch(e) {
-    console.log('GetEntries e ' + e);
+    console.error('GetEntries e ' + e);
 }
 ```
  
   
 
-#### getEntries8+
+### getEntries8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEntries(deviceId: string, query: Query): Promise<Entry[]>
  
 获取与指定设备ID和Query对象匹配的键值对列表，使用Promise异步回调。
  
-> [!NOTE]
-> 其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。 deviceId具体获取方式请参考 sync接口示例 。
-
- 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 键值对所属的设备ID。 |
@@ -5065,6 +5309,7 @@ getEntries(deviceId: string, query: Query): Promise<Entry[]>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Entry[]> | Promise对象。返回与指定设备ID和Query对象匹配的键值对列表。 |
@@ -5088,44 +5333,42 @@ try {
         }
         entries.push(entry);
     }
-    console.log('entries: ' + JSON.stringify(entries));
+    console.info('entries: ' + JSON.stringify(entries));
     kvStore.putBatch(entries).then(async (err) => {
-        console.log('putBatch success');
+        console.info('putBatch success');
         var query = new distributedData.Query();
         query.deviceId('localDeviceId');
         query.prefixKey("batch_test");
         kvStore.getEntries('localDeviceId', query).then((entries) => {
-            console.log('getEntries success');
+            console.info('getEntries success');
         }).catch((err) => {
-            console.log('getEntries fail ' + JSON.stringify(err));
+            console.error('getEntries fail ' + JSON.stringify(err));
         });
     }).catch((err) => {
-        console.log('putBatch fail ' + JSON.stringify(err));
+        console.error('putBatch fail ' + JSON.stringify(err));
     });
-    console.log('GetEntries success');
+    console.info('GetEntries success');
 }catch(e) {
-    console.log('GetEntries e ' + e);
+    console.error('GetEntries e ' + e);
 }
 ```
  
   
 
-#### getResultSet8+
+### getResultSet8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResultSet(deviceId: string, keyPrefix: string, callback: AsyncCallback&lt;KvStoreResultSet&gt;): void
  
 获取与指定设备ID和key前缀匹配的KvStoreResultSet对象，使用callback异步回调。
  
-> [!NOTE]
-> 其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。 deviceId具体获取方式请参考 sync接口示例 。
-
- 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 标识要查询其数据的设备。 |
@@ -5140,35 +5383,33 @@ let kvStore;
 try {
     let resultSet;
     kvStore.getResultSet('localDeviceId', 'batch_test_string_key', async function (err, result) {
-        console.log('getResultSet succeed.');
+        console.info('getResultSet succeed.');
         resultSet = result;
         kvStore.closeResultSet(resultSet, function (err, data) {
-            console.log('closeResultSet success');
+            console.info('closeResultSet success');
         })
     });
 }catch(e) {
-    console.log('GetResultSet e ' + e);
+    console.error('GetResultSet e ' + e);
 }
 ```
  
   
 
-#### getResultSet8+
+### getResultSet8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResultSet(deviceId: string, keyPrefix: string): Promise&lt;KvStoreResultSet&gt;
  
 获取与指定设备ID和key前缀匹配的KvStoreResultSet对象，使用Promise异步回调。
  
-> [!NOTE]
-> 其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。 deviceId具体获取方式请参考 sync接口示例 。
-
- 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 标识要查询其数据的设备。 |
@@ -5177,6 +5418,7 @@ getResultSet(deviceId: string, keyPrefix: string): Promise&lt;KvStoreResultSet&g
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;KvStoreResultSet&gt; | Promise对象。返回与指定设备ID和key前缀匹配的KvStoreResultSet对象。 |
@@ -5189,26 +5431,27 @@ let kvStore;
 try {
     let resultSet;
     kvStore.getResultSet('localDeviceId', 'batch_test_string_key').then((result) => {
-        console.log('getResultSet succeed.');
+        console.info('getResultSet succeed.');
         resultSet = result;
     }).catch((err) => {
-        console.log('getResultSet failed: ' + JSON.stringify(err));
+        console.error('getResultSet failed: ' + JSON.stringify(err));
     });
     kvStore.closeResultSet(resultSet).then((err) => {
-        console.log('closeResultSet success');
+        console.info('closeResultSet success');
     }).catch((err) => {
-        console.log('closeResultSet fail ' + JSON.stringify(err));
+        console.error('closeResultSet fail ' + JSON.stringify(err));
     });
 }catch(e) {
-    console.log('GetResultSet e ' + e);
+    console.error('GetResultSet e ' + e);
 }
 ```
  
   
 
-#### getResultSet8+
+### getResultSet8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResultSet(query: Query, callback: AsyncCallback&lt;KvStoreResultSet&gt;): void
  
@@ -5218,6 +5461,7 @@ getResultSet(query: Query, callback: AsyncCallback&lt;KvStoreResultSet&gt;): voi
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | query | Query | 是 | 表示查询对象。 |
@@ -5243,28 +5487,29 @@ try {
         entries.push(entry);
     }
     kvStore.putBatch(entries, async function (err, data) {
-        console.log('putBatch success');
+        console.info('putBatch success');
         const query = new distributedData.Query();
         query.prefixKey("batch_test");
         query.deviceId('localDeviceId');
         kvStore.getResultSet(query, async function (err, result) {
-            console.log('getResultSet succeed.');
+            console.info('getResultSet succeed.');
             resultSet = result;
             kvStore.closeResultSet(resultSet, function (err, data) {
-                console.log('closeResultSet success');
+                console.info('closeResultSet success');
             })
         });
     });
 } catch(e) {
-    console.log('GetResultSet e ' + e);
+    console.error('GetResultSet e ' + e);
 }
 ```
  
   
 
-#### getResultSet8+
+### getResultSet8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResultSet(query: Query): Promise&lt;KvStoreResultSet&gt;
  
@@ -5274,6 +5519,7 @@ getResultSet(query: Query): Promise&lt;KvStoreResultSet&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | query | Query | 是 | 表示查询对象。 |
@@ -5281,6 +5527,7 @@ getResultSet(query: Query): Promise&lt;KvStoreResultSet&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;KvStoreResultSet&gt; | Promise对象。返回与指定Query对象匹配的KvStoreResultSet对象。 |
@@ -5305,48 +5552,46 @@ try {
         entries.push(entry);
     }
     kvStore.putBatch(entries).then(async (err) => {
-        console.log('putBatch success');
+        console.info('putBatch success');
     }).catch((err) => {
-        console.log('putBatch fail ' + err);
+        console.error('putBatch fail ' + err);
     });
     const query = new distributedData.Query();
     query.deviceId('localDeviceId');
     query.prefixKey("batch_test");
-    console.log("GetResultSet " + query.getSqlLike());
+    console.info("GetResultSet " + query.getSqlLike());
     kvStore.getResultSet(query).then((result) => {
-        console.log('getResultSet succeed.');
+        console.info('getResultSet succeed.');
         resultSet = result;
     }).catch((err) => {
-        console.log('getResultSet failed: ' + JSON.stringify(err));
+        console.error('getResultSet failed: ' + JSON.stringify(err));
     });
     kvStore.closeResultSet(resultSet).then((err) => {
-        console.log('closeResultSet success');
+        console.info('closeResultSet success');
     }).catch((err) => {
-        console.log('closeResultSet fail ' + JSON.stringify(err));
+        console.error('closeResultSet fail ' + JSON.stringify(err));
     });
 }catch(e) {
-    console.log('GetResultSet e ' + e);
+    console.error('GetResultSet e ' + e);
 }
 ```
  
   
 
-#### getResultSet8+
+### getResultSet8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResultSet(deviceId: string, query: Query, callback: AsyncCallback&lt;KvStoreResultSet&gt;): void
  
 获取与指定设备ID和Query对象匹配的KvStoreResultSet对象，使用callback异步回调。
  
-> [!NOTE]
-> 其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。 deviceId具体获取方式请参考 sync接口示例 。
-
- 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | KvStoreResultSet对象所属的设备ID。 |
@@ -5373,40 +5618,38 @@ try {
         entries.push(entry);
     }
     kvStore.putBatch(entries, async function (err, data) {
-        console.log('putBatch success');
+        console.info('putBatch success');
         const query = new distributedData.Query();
         query.prefixKey("batch_test");
         kvStore.getResultSet('localDeviceId', query, async function (err, result) {
-            console.log('getResultSet succeed.');
+            console.info('getResultSet succeed.');
             resultSet = result;
             kvStore.closeResultSet(resultSet, function (err, data) {
-                console.log('closeResultSet success');
+                console.info('closeResultSet success');
             })
         });
     });
 } catch(e) {
-    console.log('GetResultSet e ' + e);
+    console.error('GetResultSet e ' + e);
 }
 ```
  
   
 
-#### getResultSet8+
+### getResultSet8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResultSet(deviceId: string, query: Query): Promise&lt;KvStoreResultSet&gt;
  
 获取与指定设备ID和Query对象匹配的KvStoreResultSet对象，使用Promise异步回调。
  
-> [!NOTE]
-> 其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。 deviceId具体获取方式请参考 sync接口示例 。
-
- 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | KvStoreResultSet对象所属的设备ID。 |
@@ -5415,6 +5658,7 @@ getResultSet(deviceId: string, query: Query): Promise&lt;KvStoreResultSet&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;KvStoreResultSet&gt; | Promise对象。返回与指定设备ID和Query对象匹配的KvStoreResultSet对象。 |
@@ -5439,36 +5683,37 @@ try {
         entries.push(entry);
     }
     kvStore.putBatch(entries).then(async (err) => {
-        console.log('GetResultSet putBatch success');
+        console.info('GetResultSet putBatch success');
     }).catch((err) => {
-        console.log('PutBatch putBatch fail ' + JSON.stringify(err));
+        console.error('PutBatch putBatch fail ' + JSON.stringify(err));
     });
     const query = new distributedData.Query();
     query.prefixKey("batch_test");
     kvStore.getResultSet('localDeviceId', query).then((result) => {
-        console.log('GetResultSet getResultSet succeed.');
+        console.info('GetResultSet getResultSet succeed.');
         resultSet = result;
     }).catch((err) => {
-        console.log('GetResultSet getResultSet failed: ' + JSON.stringify(err));
+        console.error('GetResultSet getResultSet failed: ' + JSON.stringify(err));
     });
     query.deviceId('localDeviceId');
-    console.log("GetResultSet " + query.getSqlLike());
+    console.info("GetResultSet " + query.getSqlLike());
     kvStore.closeResultSet(resultSet).then((err) => {
-        console.log('GetResultSet closeResultSet success');
+        console.info('GetResultSet closeResultSet success');
     }).catch((err) => {
-        console.log('GetResultSet closeResultSet fail ' + JSON.stringify(err));
+        console.error('GetResultSet closeResultSet fail ' + JSON.stringify(err));
     });
 
 }catch(e) {
-    console.log('GetResultSet e ' + e);
+    console.error('GetResultSet e ' + e);
 }
 ```
  
   
 
-#### closeResultSet8+
+### closeResultSet8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 closeResultSet(resultSet: KvStoreResultSet, callback: AsyncCallback&lt;void&gt;): void
  
@@ -5478,6 +5723,7 @@ closeResultSet(resultSet: KvStoreResultSet, callback: AsyncCallback&lt;void&gt;)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resultSet | KvStoreResultSet | 是 | 指示要关闭的KvStoreResultSet对象。 |
@@ -5489,25 +5735,26 @@ closeResultSet(resultSet: KvStoreResultSet, callback: AsyncCallback&lt;void&gt;)
 ```text
 let kvStore;
 try {
-    console.log('CloseResultSet success');
+    console.info('CloseResultSet success');
     let resultSet = null;
     kvStore.closeResultSet(resultSet, function (err, data) {
         if (err == undefined) {
-            console.log('closeResultSet success');
+            console.info('closeResultSet success');
         } else {
-            console.log('closeResultSet fail');
+            console.error('closeResultSet fail');
         }
     });
 }catch(e) {
-    console.log('CloseResultSet e ' + e);
+    console.error('CloseResultSet e ' + e);
 }
 ```
  
   
 
-#### closeResultSet8+
+### closeResultSet8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 closeResultSet(resultSet: KvStoreResultSet): Promise&lt;void&gt;
  
@@ -5517,6 +5764,7 @@ closeResultSet(resultSet: KvStoreResultSet): Promise&lt;void&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resultSet | KvStoreResultSet | 是 | 指示要关闭的KvStoreResultSet对象。 |
@@ -5524,6 +5772,7 @@ closeResultSet(resultSet: KvStoreResultSet): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -5534,23 +5783,24 @@ closeResultSet(resultSet: KvStoreResultSet): Promise&lt;void&gt;
 ```json
 let kvStore;
 try {
-    console.log('CloseResultSet success');
+    console.info('CloseResultSet success');
     let resultSet = null;
     kvStore.closeResultSet(resultSet).then(() => {
-        console.log('closeResultSet success');
+        console.info('closeResultSet success');
     }).catch((err) => {
-        console.log('closeResultSet fail ' + JSON.stringify(err));
+        console.error('closeResultSet fail ' + JSON.stringify(err));
     });
 }catch(e) {
-    console.log('CloseResultSet e ' + e);
+    console.error('CloseResultSet e ' + e);
 }
 ```
  
   
 
-#### getResultSize8+
+### getResultSize8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResultSize(query: Query, callback: AsyncCallback&lt;number&gt;): void
  
@@ -5560,6 +5810,7 @@ getResultSize(query: Query, callback: AsyncCallback&lt;number&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | query | Query | 是 | 表示查询对象。 |
@@ -5584,24 +5835,25 @@ try {
         entries.push(entry);
     }
     kvStore.putBatch(entries, async function (err, data) {
-        console.log('putBatch success');
+        console.info('putBatch success');
         const query = new distributedData.Query();
         query.prefixKey("batch_test");
         query.deviceId('localDeviceId');
         kvStore.getResultSize(query, async function (err, resultSize) {
-            console.log('getResultSet succeed.');
+            console.info('getResultSet succeed.');
         });
     });
 } catch(e) {
-    console.log('GetResultSize e ' + e);
+    console.error('GetResultSize e ' + e);
 }
 ```
  
   
 
-#### getResultSize8+
+### getResultSize8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResultSize(query: Query): Promise&lt;number&gt;
  
@@ -5611,6 +5863,7 @@ getResultSize(query: Query): Promise&lt;number&gt;
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | query | Query | 是 | 表示查询对象。 |
@@ -5618,6 +5871,7 @@ getResultSize(query: Query): Promise&lt;number&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象。返回与指定Query对象匹配的结果数。 |
@@ -5641,41 +5895,39 @@ try {
         entries.push(entry);
     }
     kvStore.putBatch(entries).then(async (err) => {
-        console.log('putBatch success');
+        console.info('putBatch success');
     }).catch((err) => {
-        console.log('putBatch fail ' + JSON.stringify(err));
+        console.error('putBatch fail ' + JSON.stringify(err));
     });
     const query = new distributedData.Query();
     query.prefixKey("batch_test");
     query.deviceId('localDeviceId');
     kvStore.getResultSize(query).then((resultSize) => {
-        console.log('getResultSet succeed.');
+        console.info('getResultSet succeed.');
     }).catch((err) => {
-        console.log('getResultSet failed: ' + JSON.stringify(err));
+        console.error('getResultSet failed: ' + JSON.stringify(err));
     });
 }catch(e) {
-    console.log('GetResultSize e ' + e);
+    console.error('GetResultSize e ' + e);
 }
 ```
  
   
 
-#### getResultSize8+
+### getResultSize8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResultSize(deviceId: string, query: Query, callback: AsyncCallback&lt;number&gt;): void;
  
 获取与指定设备ID和Query对象匹配的结果数，使用callback异步回调。
  
-> [!NOTE]
-> 其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。 deviceId具体获取方式请参考 sync接口示例 。
-
- 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | KvStoreResultSet对象所属的设备ID。 |
@@ -5701,36 +5953,34 @@ try {
         entries.push(entry);
     }
     kvStore.putBatch(entries, async function (err, data) {
-        console.log('putBatch success');
+        console.info('putBatch success');
         const query = new distributedData.Query();
         query.prefixKey("batch_test");
         kvStore.getResultSize('localDeviceId', query, async function (err, resultSize) {
-            console.log('getResultSet succeed.');
+            console.info('getResultSet succeed.');
         });
     });
 } catch(e) {
-    console.log('GetResultSize e ' + e);
+    console.error('GetResultSize e ' + e);
 }
 ```
  
   
 
-#### getResultSize8+
+### getResultSize8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getResultSize(deviceId: string, query: Query): Promise&lt;number&gt;
  
 获取与指定设备ID和Query对象匹配的结果数，使用Promise异步回调。
  
-> [!NOTE]
-> 其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。 deviceId具体获取方式请参考 sync接口示例 。
-
- 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | KvStoreResultSet对象所属的设备ID。 |
@@ -5739,6 +5989,7 @@ getResultSize(deviceId: string, query: Query): Promise&lt;number&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象。返回与指定设备ID和Query对象匹配的结果数。 |
@@ -5762,40 +6013,38 @@ try {
         entries.push(entry);
     }
     kvStore.putBatch(entries).then(async (err) => {
-        console.log('putBatch success');
+        console.info('putBatch success');
     }).catch((err) => {
-        console.log('putBatch fail ' + JSON.stringify(err));
+        console.error('putBatch fail ' + JSON.stringify(err));
     });
     var query = new distributedData.Query();
     query.prefixKey("batch_test");
     kvStore.getResultSize('localDeviceId', query).then((resultSize) => {
-        console.log('getResultSet succeed.');
+        console.info('getResultSet succeed.');
     }).catch((err) => {
-        console.log('getResultSet failed: ' + JSON.stringify(err));
+        console.error('getResultSet failed: ' + JSON.stringify(err));
     });
 }catch(e) {
-    console.log('GetResultSize e ' + e);
+    console.error('GetResultSize e ' + e);
 }
 ```
  
   
 
-#### removeDeviceData8+
+### removeDeviceData8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeDeviceData(deviceId: string, callback: AsyncCallback&lt;void&gt;): void
  
 从当前数据库中删除指定设备的数据，使用callback异步回调。
  
-> [!NOTE]
-> 其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。 deviceId具体获取方式请参考 sync接口示例 。
-
- 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 标识要删除其数据的设备。 |
@@ -5810,42 +6059,40 @@ const KEY_TEST_STRING_ELEMENT = 'key_test_string';
 const VALUE_TEST_STRING_ELEMENT = 'value-string-001';
 try {
     kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT, async function (err,data) {
-        console.log('RemoveDeviceData  put success');
+        console.info('RemoveDeviceData  put success');
         const deviceid = 'no_exist_device_id';
         kvStore.removeDeviceData(deviceid, async function (err,data) {
             if (err == undefined) {
-                console.log('removeDeviceData success');
+                console.info('removeDeviceData success');
             } else {
-                console.log('removeDeviceData fail');
+                console.error('removeDeviceData fail');
                 kvStore.get('localDeviceId', KEY_TEST_STRING_ELEMENT, async function (err,data) {
-                    console.log('RemoveDeviceData get success');
+                    console.info('RemoveDeviceData get success');
                 });
             }
         });
     });
 }catch(e) {
-    console.log('RemoveDeviceData e ' + e);
+    console.error('RemoveDeviceData e ' + e);
 }
 ```
  
   
 
-#### removeDeviceData8+
+### removeDeviceData8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 removeDeviceData(deviceId: string): Promise&lt;void&gt;
  
 从当前数据库中删除指定设备的数据，使用Promise异步回调。
  
-> [!NOTE]
-> 其中deviceId通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。 deviceId具体获取方式请参考 sync接口示例 。
-
- 
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.DistributedKVStore
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 标识要删除其数据的设备。 |
@@ -5853,6 +6100,7 @@ removeDeviceData(deviceId: string): Promise&lt;void&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | 无返回结果的Promise对象。 |
@@ -5866,39 +6114,36 @@ const KEY_TEST_STRING_ELEMENT = 'key_test_string';
 const VALUE_TEST_STRING_ELEMENT = 'value-string-001';
 try {
     kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT).then((err) => {
-        console.log('RemoveDeviceData put success');
+        console.info('RemoveDeviceData put success');
     }).catch((err) => {
-        console.log('RemoveDeviceData put fail ' + JSON.stringify(err));
+        console.error('RemoveDeviceData put fail ' + JSON.stringify(err));
     });
     const deviceid = 'no_exist_device_id';
     kvStore.removeDeviceData(deviceid).then((err) => {
-        console.log('removeDeviceData success');
+        console.info('removeDeviceData success');
     }).catch((err) => {
-        console.log('removeDeviceData fail ' + JSON.stringify(err));
+        console.error('removeDeviceData fail ' + JSON.stringify(err));
     });
     kvStore.get('localDeviceId', KEY_TEST_STRING_ELEMENT).then((data) => {
-        console.log('RemoveDeviceData get success data:' + data);
+        console.info('RemoveDeviceData get success data:' + data);
     }).catch((err) => {
-        console.log('RemoveDeviceData get fail ' + JSON.stringify(err));
+        console.error('RemoveDeviceData get fail ' + JSON.stringify(err));
     });
 }catch(e) {
-    console.log('RemoveDeviceData e ' + e);
+    console.error('RemoveDeviceData e ' + e);
 }
 ```
  
   
 
-#### sync8+
+### sync8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 sync(deviceIds: string[], mode: SyncMode, delayMs?: number): void
  
 在手动同步方式下，触发数据库同步。
- 
-> [!NOTE]
-> 其中deviceIds为DeviceInfo中的networkId，通过调用deviceManager.getTrustedDeviceListSync方法得到。deviceManager模块的接口均为系统接口，仅系统应用可用。
-
  
 **需要权限**： ohos.permission.DISTRIBUTED_DATASYNC。
  
@@ -5906,6 +6151,7 @@ sync(deviceIds: string[], mode: SyncMode, delayMs?: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceIds | string[] | 是 | 需要同步DeviceKVStore数据库的设备networkId列表。 |
@@ -5916,48 +6162,34 @@ sync(deviceIds: string[], mode: SyncMode, delayMs?: number): void
 **示例：**
  
 ```json
-import deviceManager from '@ohos.distributedHardware.deviceManager';
-
-let devManager;
 let kvStore;
 const KEY_TEST_SYNC_ELEMENT = 'key_test_sync';
 const VALUE_TEST_SYNC_ELEMENT = 'value-string-001';
-// create deviceManager
-deviceManager.createDeviceManager('bundleName', (err, value) => {
-  if (!err) {
-    devManager = value;
-    let deviceIds = [];
-    if (devManager != null) {
-      var devices = devManager.getTrustedDeviceListSync();
-      for (var i = 0; i < devices.length; i++) {
-        deviceIds[i] = devices[i].networkId;
-      }
+const deviceIds = ['networkId1', 'networkId2'];
+try {
+  kvStore.on('syncComplete', function (data) {
+    console.info('Sync dataChange');
+  });
+  kvStore.put(KEY_TEST_SYNC_ELEMENT + 'testSync101', VALUE_TEST_SYNC_ELEMENT, function (err, data) {
+    if (err != undefined) {
+      console.error("put err: " + JSON.stringify(err));
+      return;
     }
-    try {
-      kvStore.on('syncComplete', function (data) {
-        console.log('Sync dataChange');
-      });
-      kvStore.put(KEY_TEST_SYNC_ELEMENT + 'testSync101', VALUE_TEST_SYNC_ELEMENT, function (err, data) {
-        if (err != undefined) {
-          console.log("put err: " + JSON.stringify(err));
-          return;
-        }
-        console.log('Succeeded in putting data');
-        const mode = distributedData.SyncMode.PULL_ONLY;
-        kvStore.sync(deviceIds, mode, 1000);
-      });
-    } catch (e) {
-      console.log('Sync e' + e);
-    }
-  }
-});
+    console.info('Succeeded in putting data');
+    const mode = distributedData.SyncMode.PULL_ONLY;
+    kvStore.sync(deviceIds, mode, 1000);
+  });
+} catch (e) {
+  console.error('Sync e' + e);
+}
 ```
  
   
 
-#### on('dataChange')8+
+### on('dataChange')8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(event: 'dataChange', type: SubscribeType, listener: Callback&lt;ChangeNotification&gt;): void
  
@@ -5967,6 +6199,7 @@ on(event: 'dataChange', type: SubscribeType, listener: Callback&lt;ChangeNotific
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 订阅的事件名，固定为'dataChange'，表示数据变更事件。 |
@@ -5979,15 +6212,16 @@ on(event: 'dataChange', type: SubscribeType, listener: Callback&lt;ChangeNotific
 ```json
 let kvStore;
 kvStore.on('dataChange', distributedData.SubscribeType.SUBSCRIBE_TYPE_LOCAL, function (data) {
-    console.log("dataChange callback call data: " + JSON.stringify(data));
+    console.info("dataChange callback call data: " + JSON.stringify(data));
 });
 ```
  
   
 
-#### on('syncComplete')8+
+### on('syncComplete')8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 on(event: 'syncComplete', syncCallback: Callback<Array<[string, number]>>): void
  
@@ -5997,6 +6231,7 @@ on(event: 'syncComplete', syncCallback: Callback<Array<[string, number]>>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 订阅的事件名，固定为'syncComplete'，表示同步完成事件。 |
@@ -6011,23 +6246,24 @@ const KEY_TEST_FLOAT_ELEMENT = 'key_test_float';
 const VALUE_TEST_FLOAT_ELEMENT = 321.12;
 try {
     kvStore.on('syncComplete', function (data) {
-        console.log('syncComplete ' + data)
+        console.info('syncComplete ' + data)
     });
     kvStore.put(KEY_TEST_FLOAT_ELEMENT, VALUE_TEST_FLOAT_ELEMENT).then((data) => {
-        console.log('syncComplete put success');
+        console.info('syncComplete put success');
     }).catch((error) => {
-        console.log('syncComplete put fail ' + error);
+        console.error('syncComplete put fail ' + error);
     });
 }catch(e) {
-    console.log('syncComplete put e ' + e);
+    console.error('syncComplete put e ' + e);
 }
 ```
  
   
 
-#### off('dataChange')8+
+### off('dataChange')8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(event:'dataChange', listener?: Callback&lt;ChangeNotification&gt;): void
  
@@ -6037,6 +6273,7 @@ off(event:'dataChange', listener?: Callback&lt;ChangeNotification&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 取消订阅的事件名，固定为'dataChange'，表示数据变更事件。 |
@@ -6049,7 +6286,7 @@ off(event:'dataChange', listener?: Callback&lt;ChangeNotification&gt;): void
 let kvStore;
 class KvstoreModel {
     call(data) {
-        console.log("dataChange: " + data);
+        console.info("dataChange: " + data);
     }
     subscribeDataChange() {
         if (kvStore != null) {
@@ -6066,9 +6303,10 @@ class KvstoreModel {
  
   
 
-#### off('syncComplete')8+
+### off('syncComplete')8+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 off(event: 'syncComplete', syncCallback?: Callback<Array<[string, number]>>): void
  
@@ -6078,6 +6316,7 @@ off(event: 'syncComplete', syncCallback?: Callback<Array<[string, number]>>): vo
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | string | 是 | 取消订阅的事件名，固定为'syncComplete'，表示同步完成事件。 |
@@ -6090,7 +6329,7 @@ off(event: 'syncComplete', syncCallback?: Callback<Array<[string, number]>>): vo
 let kvStore;
 class KvstoreModel {
     call(data) {
-        console.log("syncComplete: " + data);
+        console.info("syncComplete: " + data);
     }
     subscribeSyncComplete() {
         if (kvStore != null) {
@@ -6107,14 +6346,16 @@ class KvstoreModel {
  
   
 
-#### SyncMode
+## SyncMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 同步模式枚举。
  
 **系统能力：** SystemCapability.DistributedDataManager.KVStore.Core
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | PULL_ONLY | 0 | 表示只能从远端拉取数据到本端。 |

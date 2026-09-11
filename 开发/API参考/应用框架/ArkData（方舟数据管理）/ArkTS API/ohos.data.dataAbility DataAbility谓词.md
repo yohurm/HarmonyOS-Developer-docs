@@ -1,9 +1,9 @@
 # @ohos.data.dataAbility (DataAbility谓词)
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-data-ability
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 DataAbility谓词用于构造关系型数据库的谓词，提供用于实现不同查询方法的谓词。
  
@@ -12,9 +12,10 @@ DataAbility谓词用于构造关系型数据库的谓词，提供用于实现不
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { dataAbility } from '@kit.ArkData';
@@ -22,9 +23,10 @@ import { dataAbility } from '@kit.ArkData';
  
   
 
-#### dataAbility.createRdbPredicates
+## dataAbility.createRdbPredicates
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createRdbPredicates(name: string, dataAbilityPredicates: DataAbilityPredicates): rdb.RdbPredicates
  
@@ -34,6 +36,7 @@ createRdbPredicates(name: string, dataAbilityPredicates: DataAbilityPredicates):
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 数据库表中的表名，不能为空字符串。 |
@@ -42,6 +45,7 @@ createRdbPredicates(name: string, dataAbilityPredicates: DataAbilityPredicates):
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | rdb.RdbPredicates | 返回与指定字段匹配的RdbPredicates对象。 |
@@ -50,31 +54,35 @@ createRdbPredicates(name: string, dataAbilityPredicates: DataAbilityPredicates):
 **示例：**
  
 ```text
-let dataAbilityPredicates = new dataAbility.DataAbilityPredicates()
-dataAbilityPredicates.equalTo("NAME", "Rose")
+let dataAbilityPredicates = new dataAbility.DataAbilityPredicates();
+dataAbilityPredicates.equalTo("NAME", "Rose");
 // EMPLOYEE是使用关系型数据库创建的表。
-let predicates = dataAbility.createRdbPredicates("EMPLOYEE", dataAbilityPredicates)
+let predicates = dataAbility.createRdbPredicates("EMPLOYEE", dataAbilityPredicates);
 ```
  
   
 
-#### DataAbilityPredicates
+## DataAbilityPredicates
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供用于实现不同查询方法的谓词。
+ 
+**系统能力：** SystemCapability.DistributedDataManager.DataShare.Core
  
 **初始化：**
  
 ```text
-let dataAbilityPredicates = new dataAbility.DataAbilityPredicates()
+let dataAbilityPredicates = new dataAbility.DataAbilityPredicates();
 ```
  
   
 
-#### equalTo
+### equalTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 equalTo(field: string, value: ValueType): DataAbilityPredicates
  
@@ -86,6 +94,7 @@ equalTo(field: string, value: ValueType): DataAbilityPredicates
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -94,6 +103,7 @@ equalTo(field: string, value: ValueType): DataAbilityPredicates
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DataAbilityPredicates | 返回与指定字段匹配的谓词。 |
@@ -102,14 +112,15 @@ equalTo(field: string, value: ValueType): DataAbilityPredicates
 **示例：**
  
 ```text
-dataAbilityPredicates.equalTo("NAME", "lisi")
+dataAbilityPredicates.equalTo("NAME", "lisi");
 ```
  
   
 
-#### notEqualTo
+### notEqualTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 notEqualTo(field: string, value: ValueType): DataAbilityPredicates
  
@@ -121,6 +132,7 @@ notEqualTo(field: string, value: ValueType): DataAbilityPredicates
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -129,6 +141,7 @@ notEqualTo(field: string, value: ValueType): DataAbilityPredicates
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DataAbilityPredicates | 返回与指定字段匹配的谓词。 |
@@ -137,14 +150,15 @@ notEqualTo(field: string, value: ValueType): DataAbilityPredicates
 **示例：**
  
 ```text
-dataAbilityPredicates.notEqualTo("NAME", "lisi")
+dataAbilityPredicates.notEqualTo("NAME", "lisi");
 ```
  
   
 
-#### beginWrap
+### beginWrap
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 beginWrap(): DataAbilityPredicates
  
@@ -154,6 +168,7 @@ beginWrap(): DataAbilityPredicates
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DataAbilityPredicates | 返回带有左括号的谓词。 |
@@ -167,14 +182,15 @@ dataAbilityPredicates.equalTo("NAME", "lisi")
     .equalTo("AGE", 18)
     .or()
     .equalTo("SALARY", 200.5)
-    .endWrap()
+    .endWrap();
 ```
  
   
 
-#### endWrap
+### endWrap
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 endWrap(): DataAbilityPredicates
  
@@ -184,6 +200,7 @@ endWrap(): DataAbilityPredicates
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DataAbilityPredicates | 返回带有右括号的谓词。 |
@@ -197,18 +214,19 @@ dataAbilityPredicates.equalTo("NAME", "lisi")
     .equalTo("AGE", 18)
     .or()
     .equalTo("SALARY", 200.5)
-    .endWrap()
+    .endWrap();
 ```
  
   
 
-#### or
+### or
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 or(): DataAbilityPredicates
  
-将或条件添加到谓词中。
+将逻辑或（OR）添加到谓词中。
  
 此方法类似于SQL语句"or"。
  
@@ -216,9 +234,10 @@ or(): DataAbilityPredicates
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| DataAbilityPredicates | 返回带有或条件的谓词。 |
+| DataAbilityPredicates | 返回带有逻辑或（OR）的谓词。 |
  
  
 **示例：**
@@ -226,26 +245,28 @@ or(): DataAbilityPredicates
 ```text
 dataAbilityPredicates.equalTo("NAME", "Lisa")
     .or()
-    .equalTo("NAME", "Rose")
+    .equalTo("NAME", "Rose");
 ```
  
   
 
-#### and
+### and
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 and(): DataAbilityPredicates
  
-将和条件添加到谓词中。
+将逻辑与（AND）添加到谓词中。
  
 **系统能力：** SystemCapability.DistributedDataManager.DataShare.Core
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| DataAbilityPredicates | 返回带有和条件的谓词。 |
+| DataAbilityPredicates | 返回带有逻辑与（AND）的谓词。 |
  
  
 **示例：**
@@ -253,31 +274,34 @@ and(): DataAbilityPredicates
 ```text
 dataAbilityPredicates.equalTo("NAME", "Lisa")
     .and()
-    .equalTo("SALARY", 200.5)
+    .equalTo("SALARY", 200.5);
 ```
  
   
 
-#### contains
+### contains
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 contains(field: string, value: string): DataAbilityPredicates
  
-配置谓词以匹配数据类型为string且value包含指定值的字段。
+配置谓词以匹配数据类型为string且值包含指定字符串的字段。
  
 **系统能力：** SystemCapability.DistributedDataManager.DataShare.Core
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
-| value | string | 是 | 指示要与谓词匹配的值。 |
+| value | string | 是 | 指示要与谓词匹配的字符串。 |
  
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DataAbilityPredicates | 返回与指定字段匹配的谓词。 |
@@ -286,14 +310,15 @@ contains(field: string, value: string): DataAbilityPredicates
 **示例：**
  
 ```text
-dataAbilityPredicates.contains("NAME", "os")
+dataAbilityPredicates.contains("NAME", "os");
 ```
  
   
 
-#### beginsWith
+### beginsWith
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 beginsWith(field: string, value: string): DataAbilityPredicates
  
@@ -305,6 +330,7 @@ beginsWith(field: string, value: string): DataAbilityPredicates
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -313,6 +339,7 @@ beginsWith(field: string, value: string): DataAbilityPredicates
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DataAbilityPredicates | 返回与指定字段匹配的谓词。 |
@@ -321,14 +348,15 @@ beginsWith(field: string, value: string): DataAbilityPredicates
 **示例：**
  
 ```text
-dataAbilityPredicates.beginsWith("NAME", "os")
+dataAbilityPredicates.beginsWith("NAME", "os");
 ```
  
   
 
-#### endsWith
+### endsWith
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 endsWith(field: string, value: string): DataAbilityPredicates
  
@@ -340,6 +368,7 @@ endsWith(field: string, value: string): DataAbilityPredicates
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -348,6 +377,7 @@ endsWith(field: string, value: string): DataAbilityPredicates
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DataAbilityPredicates | 返回与指定字段匹配的谓词。 |
@@ -356,14 +386,15 @@ endsWith(field: string, value: string): DataAbilityPredicates
 **示例：**
  
 ```text
-dataAbilityPredicates.endsWith("NAME", "se")
+dataAbilityPredicates.endsWith("NAME", "se");
 ```
  
   
 
-#### isNull
+### isNull
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isNull(field: string): DataAbilityPredicates
  
@@ -373,6 +404,7 @@ isNull(field: string): DataAbilityPredicates
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -380,6 +412,7 @@ isNull(field: string): DataAbilityPredicates
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DataAbilityPredicates | 返回与指定字段匹配的谓词。 |
@@ -388,14 +421,15 @@ isNull(field: string): DataAbilityPredicates
 **示例：**
  
 ```text
-dataAbilityPredicates.isNull("NAME")
+dataAbilityPredicates.isNull("NAME");
 ```
  
   
 
-#### isNotNull
+### isNotNull
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isNotNull(field: string): DataAbilityPredicates
  
@@ -405,6 +439,7 @@ isNotNull(field: string): DataAbilityPredicates
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -412,6 +447,7 @@ isNotNull(field: string): DataAbilityPredicates
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DataAbilityPredicates | 返回与指定字段匹配的谓词。 |
@@ -420,14 +456,15 @@ isNotNull(field: string): DataAbilityPredicates
 **示例：**
  
 ```text
-dataAbilityPredicates.isNotNull("NAME")
+dataAbilityPredicates.isNotNull("NAME");
 ```
  
   
 
-#### like
+### like
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 like(field: string, value: string): DataAbilityPredicates
  
@@ -439,6 +476,7 @@ like(field: string, value: string): DataAbilityPredicates
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -447,6 +485,7 @@ like(field: string, value: string): DataAbilityPredicates
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DataAbilityPredicates | 返回与指定字段匹配的谓词。 |
@@ -455,14 +494,15 @@ like(field: string, value: string): DataAbilityPredicates
 **示例：**
  
 ```text
-dataAbilityPredicates.like("NAME", "%os%")
+dataAbilityPredicates.like("NAME", "%os%");
 ```
  
   
 
-#### glob
+### glob
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 glob(field: string, value: string): DataAbilityPredicates
  
@@ -472,6 +512,7 @@ glob(field: string, value: string): DataAbilityPredicates
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -480,6 +521,7 @@ glob(field: string, value: string): DataAbilityPredicates
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DataAbilityPredicates | 返回与指定字段匹配的谓词。 |
@@ -488,20 +530,21 @@ glob(field: string, value: string): DataAbilityPredicates
 **示例：**
  
 ```text
-dataAbilityPredicates.glob("NAME", "?h*g")
+dataAbilityPredicates.glob("NAME", "?h*g");
 
 // 仅可匹配到"NAME"字段值为"Lisa"
-dataAbilityPredicates.glob("NAME", "Lisa")
+dataAbilityPredicates.glob("NAME", "Lisa");
 
 // 仅可以匹配到"NAME"字段值为"lisa"
-dataAbilityPredicates.glob("NAME", "lisa")
+dataAbilityPredicates.glob("NAME", "lisa");
 ```
  
   
 
-#### between
+### between
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 between(field: string, low: ValueType, high: ValueType): DataAbilityPredicates
  
@@ -511,6 +554,7 @@ between(field: string, low: ValueType, high: ValueType): DataAbilityPredicates
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -520,6 +564,7 @@ between(field: string, low: ValueType, high: ValueType): DataAbilityPredicates
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DataAbilityPredicates | 返回与指定字段匹配的谓词。 |
@@ -528,14 +573,15 @@ between(field: string, low: ValueType, high: ValueType): DataAbilityPredicates
 **示例：**
  
 ```text
-dataAbilityPredicates.between("AGE", 10, 50)
+dataAbilityPredicates.between("AGE", 10, 50);
 ```
  
   
 
-#### notBetween
+### notBetween
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 notBetween(field: string, low: ValueType, high: ValueType): DataAbilityPredicates
  
@@ -545,6 +591,7 @@ notBetween(field: string, low: ValueType, high: ValueType): DataAbilityPredicate
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -554,6 +601,7 @@ notBetween(field: string, low: ValueType, high: ValueType): DataAbilityPredicate
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DataAbilityPredicates | 返回与指定字段匹配的谓词。 |
@@ -562,14 +610,15 @@ notBetween(field: string, low: ValueType, high: ValueType): DataAbilityPredicate
 **示例：**
  
 ```text
-dataAbilityPredicates.notBetween("AGE", 10, 50)
+dataAbilityPredicates.notBetween("AGE", 10, 50);
 ```
  
   
 
-#### greaterThan
+### greaterThan
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 greaterThan(field: string, value: ValueType): DataAbilityPredicates
  
@@ -579,6 +628,7 @@ greaterThan(field: string, value: ValueType): DataAbilityPredicates
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -587,6 +637,7 @@ greaterThan(field: string, value: ValueType): DataAbilityPredicates
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DataAbilityPredicates | 返回与指定字段匹配的谓词。 |
@@ -595,14 +646,15 @@ greaterThan(field: string, value: ValueType): DataAbilityPredicates
 **示例：**
  
 ```text
-dataAbilityPredicates.greaterThan("AGE", 18)
+dataAbilityPredicates.greaterThan("AGE", 18);
 ```
  
   
 
-#### lessThan
+### lessThan
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 lessThan(field: string, value: ValueType): DataAbilityPredicates
  
@@ -612,6 +664,7 @@ lessThan(field: string, value: ValueType): DataAbilityPredicates
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -620,6 +673,7 @@ lessThan(field: string, value: ValueType): DataAbilityPredicates
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DataAbilityPredicates | 返回与指定字段匹配的谓词。 |
@@ -628,14 +682,15 @@ lessThan(field: string, value: ValueType): DataAbilityPredicates
 **示例：**
  
 ```text
-dataAbilityPredicates.lessThan("AGE", 20)
+dataAbilityPredicates.lessThan("AGE", 20);
 ```
  
   
 
-#### greaterThanOrEqualTo
+### greaterThanOrEqualTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 greaterThanOrEqualTo(field: string, value: ValueType): DataAbilityPredicates
  
@@ -645,6 +700,7 @@ greaterThanOrEqualTo(field: string, value: ValueType): DataAbilityPredicates
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -653,6 +709,7 @@ greaterThanOrEqualTo(field: string, value: ValueType): DataAbilityPredicates
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DataAbilityPredicates | 返回与指定字段匹配的谓词。 |
@@ -661,14 +718,15 @@ greaterThanOrEqualTo(field: string, value: ValueType): DataAbilityPredicates
 **示例：**
  
 ```text
-dataAbilityPredicates.greaterThanOrEqualTo("AGE", 18)
+dataAbilityPredicates.greaterThanOrEqualTo("AGE", 18);
 ```
  
   
 
-#### lessThanOrEqualTo
+### lessThanOrEqualTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 lessThanOrEqualTo(field: string, value: ValueType): DataAbilityPredicates
  
@@ -678,6 +736,7 @@ lessThanOrEqualTo(field: string, value: ValueType): DataAbilityPredicates
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -686,6 +745,7 @@ lessThanOrEqualTo(field: string, value: ValueType): DataAbilityPredicates
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DataAbilityPredicates | 返回与指定字段匹配的谓词。 |
@@ -694,14 +754,15 @@ lessThanOrEqualTo(field: string, value: ValueType): DataAbilityPredicates
 **示例：**
  
 ```text
-dataAbilityPredicates.lessThanOrEqualTo("AGE", 20)
+dataAbilityPredicates.lessThanOrEqualTo("AGE", 20);
 ```
  
   
 
-#### orderByAsc
+### orderByAsc
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 orderByAsc(field: string): DataAbilityPredicates
  
@@ -711,6 +772,7 @@ orderByAsc(field: string): DataAbilityPredicates
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -718,6 +780,7 @@ orderByAsc(field: string): DataAbilityPredicates
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DataAbilityPredicates | 返回与指定字段匹配的谓词。 |
@@ -727,23 +790,25 @@ orderByAsc(field: string): DataAbilityPredicates
  
 ```text
 // 先按"NAME"字段排序，相同时按"AGE"字段排序，其次按"SALARY"排序
-dataAbilityPredicates.orderByAsc("NAME").orderByAsc("AGE").orderByAsc("SALARY")
+dataAbilityPredicates.orderByAsc("NAME").orderByAsc("AGE").orderByAsc("SALARY");
 ```
  
   
 
-#### orderByDesc
+### orderByDesc
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 orderByDesc(field: string): DataAbilityPredicates
  
-配置谓词以匹配其值按降序排序的列。当有多个orderByDesc使用时，最先使用的具有最高优先级。
+配置谓词以匹配其值按降序排序的列。当多次调用orderByDesc时，最先调用的具有最高优先级。
  
 **系统能力：** SystemCapability.DistributedDataManager.DataShare.Core
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -751,6 +816,7 @@ orderByDesc(field: string): DataAbilityPredicates
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DataAbilityPredicates | 返回与指定字段匹配的谓词。 |
@@ -760,14 +826,15 @@ orderByDesc(field: string): DataAbilityPredicates
  
 ```text
 // 优先按"AGE"排序，相同时按"SALARY"排序
-dataAbilityPredicates.orderByDesc("AGE").orderByDesc("SALARY")
+dataAbilityPredicates.orderByDesc("AGE").orderByDesc("SALARY");
 ```
  
   
 
-#### distinct
+### distinct
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 distinct(): DataAbilityPredicates
  
@@ -777,6 +844,7 @@ distinct(): DataAbilityPredicates
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DataAbilityPredicates | 返回可用于过滤重复记录的谓词。 |
@@ -785,14 +853,15 @@ distinct(): DataAbilityPredicates
 **示例：**
  
 ```text
-dataAbilityPredicates.equalTo("NAME", "Rose").distinct()
+dataAbilityPredicates.equalTo("NAME", "Rose").distinct();
 ```
  
   
 
-#### limitAs
+### limitAs
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 limitAs(value: number): DataAbilityPredicates
  
@@ -802,6 +871,7 @@ limitAs(value: number): DataAbilityPredicates
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 最大数据记录数，取值为正整数。传入值小于等于0时，不会限制记录数量。 |
@@ -809,6 +879,7 @@ limitAs(value: number): DataAbilityPredicates
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DataAbilityPredicates | 返回可用于设置最大数据记录数的谓词。 |
@@ -817,30 +888,33 @@ limitAs(value: number): DataAbilityPredicates
 **示例：**
  
 ```text
-dataAbilityPredicates.equalTo("NAME", "Rose").limitAs(3)
+dataAbilityPredicates.equalTo("NAME", "Rose").limitAs(3);
 ```
  
   
 
-#### offsetAs
+### offsetAs
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 offsetAs(rowOffset: number): DataAbilityPredicates
  
-设置谓词查询结果的起始位置。需要同步调用[limitAs](#limitas)接口指定查询数量，否则无查询结果。查询指定偏移位置后的所有行时，[limitAs](#limitas)接口需传入参数-1。
+设置谓词查询结果的起始位置。需要配合[limitAs](#limitas)接口使用以指定查询数量，否则无查询结果。查询指定偏移位置后的所有行时，[limitAs](#limitas)接口需传入参数-1。
  
 **系统能力：** SystemCapability.DistributedDataManager.DataShare.Core
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| rowOffset | number | 是 | 返回结果的起始位置，取值为正整数。传入值小于等于0时，查询结果将从第一个元素位置返回。 |
+| rowOffset | number | 是 | 返回结果的起始位置。传入正整数时从指定位置开始返回；传入值小于等于0时，查询结果将从第一个元素位置返回。 |
  
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DataAbilityPredicates | 返回具有指定返回结果起始位置的谓词。 |
@@ -850,14 +924,15 @@ offsetAs(rowOffset: number): DataAbilityPredicates
  
 ```text
 // 跳过前三条数据，显示后续三条数据
-dataAbilityPredicates.equalTo("NAME", "Rose").offsetAs(3).limitAs(3)
+dataAbilityPredicates.equalTo("NAME", "Rose").offsetAs(3).limitAs(3);
 ```
  
   
 
-#### groupBy
+### groupBy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 groupBy(fields: Array&lt;string&gt;): DataAbilityPredicates
  
@@ -867,6 +942,7 @@ groupBy(fields: Array&lt;string&gt;): DataAbilityPredicates
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fields | Array&lt;string&gt; | 是 | 指定分组依赖的列名。 |
@@ -874,6 +950,7 @@ groupBy(fields: Array&lt;string&gt;): DataAbilityPredicates
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DataAbilityPredicates | 返回分组查询列的谓词。 |
@@ -882,30 +959,33 @@ groupBy(fields: Array&lt;string&gt;): DataAbilityPredicates
 **示例：**
  
 ```text
-dataAbilityPredicates.groupBy(["AGE", "NAME"])
+dataAbilityPredicates.groupBy(["AGE", "NAME"]);
 ```
  
   
 
-#### indexedBy
+### indexedBy
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 indexedBy(field: string): DataAbilityPredicates
  
-配置谓词以指定索引列。在使用此方法之前，您需要创建一个索引列。
+配置谓词以指定索引列。在使用此方法之前，需要先创建一个索引列。
  
 **系统能力：** SystemCapability.DistributedDataManager.DataShare.Core
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| field | string | 是 | 创建的索引列名称。 |
+| field | string | 是 | 创建的索引名称。 |
  
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DataAbilityPredicates | 返回具有指定索引列的谓词。 |
@@ -930,7 +1010,7 @@ export default class EntryAbility extends UIAbility {
       };
       // 表结构：EMPLOYEE (ID, NAME, AGE, SALARY, CODES)
       const SQL_CREATE_TABLE =
-        'CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER, SALARY REAL, CODES BLOB)'; // 建表Sql语句
+        'CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER, SALARY REAL, CODES BLOB)'; // 建表SQL语句
       store = await relationalStore.getRdbStore(context, STORE_CONFIG);
       console.info('Succeeded in getting RdbStore.');
       await store.executeSql(SQL_CREATE_TABLE); // 创建数据表
@@ -944,12 +1024,12 @@ export default class EntryAbility extends UIAbility {
     }
 
     // 创建索引
-    const SQL_CREATE_INDEX = 'CREATE INDEX SALARY_INDEX ON EMPLOYEE(SALARY)'
+    const SQL_CREATE_INDEX = 'CREATE INDEX SALARY_INDEX ON EMPLOYEE(SALARY)';
     await store.executeSql(SQL_CREATE_INDEX);
     // ...
 
-    let dataAbilityPredicates = new dataAbility.DataAbilityPredicates()
-    dataAbilityPredicates.indexedBy("SALARY_INDEX")
+    let dataAbilityPredicates = new dataAbility.DataAbilityPredicates();
+    dataAbilityPredicates.indexedBy("SALARY_INDEX");
 
     // ...
   }
@@ -958,18 +1038,20 @@ export default class EntryAbility extends UIAbility {
  
   
 
-#### in
+### in
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 in(field: string, value: Array&lt;ValueType&gt;): DataAbilityPredicates
  
-配置谓词以匹配数据类型为ValueType数组且值在给定范围内的指定字段。
+配置谓词以匹配数据类型为ValueType且值在给定值列表中的指定字段。
  
 **系统能力：** SystemCapability.DistributedDataManager.DataShare.Core
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -978,6 +1060,7 @@ in(field: string, value: Array&lt;ValueType&gt;): DataAbilityPredicates
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DataAbilityPredicates | 返回与指定字段匹配的谓词。 |
@@ -986,23 +1069,25 @@ in(field: string, value: Array&lt;ValueType&gt;): DataAbilityPredicates
 **示例：**
  
 ```text
-dataAbilityPredicates.in("AGE", [18, 20])
+dataAbilityPredicates.in("AGE", [18, 20]);
 ```
  
   
 
-#### notIn
+### notIn
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 notIn(field: string, value: Array&lt;ValueType&gt;): DataAbilityPredicates
  
-配置谓词以匹配数据类型为ValueType数组且值不在给定范围内的指定字段。
+配置谓词以匹配数据类型为ValueType且值不在给定值列表中的指定字段。
  
 **系统能力：** SystemCapability.DistributedDataManager.DataShare.Core
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | field | string | 是 | 数据库表中的列名，不能为空字符串。 |
@@ -1011,6 +1096,7 @@ notIn(field: string, value: Array&lt;ValueType&gt;): DataAbilityPredicates
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DataAbilityPredicates | 返回与指定字段匹配的谓词。 |
@@ -1019,14 +1105,15 @@ notIn(field: string, value: Array&lt;ValueType&gt;): DataAbilityPredicates
 **示例：**
  
 ```text
-dataAbilityPredicates.notIn("NAME", ["Lisa", "Rose"])
+dataAbilityPredicates.notIn("NAME", ["Lisa", "Rose"]);
 ```
  
   
 
-#### ValueType
+## ValueType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 type ValueType = number | string | boolean
  
@@ -1034,6 +1121,7 @@ type ValueType = number | string | boolean
  
 **系统能力：** SystemCapability.DistributedDataManager.DataShare.Core
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 表示值类型为数字。 |

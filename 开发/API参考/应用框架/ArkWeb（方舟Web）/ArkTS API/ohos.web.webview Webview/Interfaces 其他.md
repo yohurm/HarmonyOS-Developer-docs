@@ -1,18 +1,19 @@
 # Interfaces (其他)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-i
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 > [!NOTE]
 > 本模块首批接口从API version 9开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。 示例效果请以真机运行为准。
 
 
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本页面汇总了ArkWeb Webview模块（@kit.ArkWeb）中的辅助接口与数据结构类型。这些类型主要作为Web组件各能力的方法入参、回调出参或状态枚举使用，配合[WebviewController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller)、[WebCookieManager](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webcookiemanager)、[WebStorage](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webstorage)等核心类共同完成Web网页的加载、渲染、交互、媒体接管及性能优化等控制能力。
 
@@ -20,13 +21,15 @@
 
 
 
-#### WebStorageOrigin
+## WebStorageOrigin
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供Web SQL数据库的使用信息。
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -37,13 +40,15 @@
 
 
 
-#### WebHeader
+## WebHeader
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Web组件返回的请求/响应头对象。
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -53,36 +58,40 @@ Web组件返回的请求/响应头对象。
 
 
 
-#### WebCustomScheme
+## WebCustomScheme
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 自定义协议配置。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| schemeName | string | 否 | 否 | 自定义协议名称。最大长度为32，其字符仅支持小写字母、数字、'.'、'+'、'-'，同时需要以字母开头。 |
+| schemeName | string | 否 | 否 | 自定义协议名称。最大长度为32，其字符仅支持小写字母、数字、'.'、'+'、'-'，同时需要以字母开头。不符合上述限制时，该自定义协议配置不生效。 |
 | isSupportCORS | boolean | 否 | 否 | 是否支持跨域请求。 true表示支持跨域请求，false表示不支持跨域请求。 默认值：true。 |
 | isSupportFetch | boolean | 否 | 否 | 是否支持fetch请求。 true表示支持fetch请求，false表示不支持fetch请求。 默认值：true。 |
-| isStandard12+ | boolean | 否 | 是 | 设置了该选项的scheme是否将作为标准scheme进行处理。标准scheme需要符合RFC 1738第3.1节中定义的URL规范化和解析规则。 true表示设置了该选项的scheme将作为标准scheme进行处理，false表示设置了该选项的scheme不作为标准scheme进行处理。 默认值：true。 |
+| isStandard12+ | boolean | 否 | 是 | 设置了该选项的scheme是否将作为标准scheme进行处理。标准scheme需要符合RFC 1738第3.1节中定义的URL解析规则以及RFC 3986第6.2节中定义的URL规范化规则。 true表示设置了该选项的scheme将作为标准scheme进行处理，false表示设置了该选项的scheme不作为标准scheme进行处理。 默认值：true。 |
 | isLocal12+ | boolean | 否 | 是 | 设置了该选项的scheme是否将使用与“file”协议相同的安全规则来处理。 true表示设置了该选项的scheme将使用与“file”协议相同的安全规则来处理，false表示设置了该选项的scheme不使用与“file”协议相同的安全规则来处理。 默认值：true。 |
-| isDisplayIsolated12+ | boolean | 否 | 是 | 设置了该选项的scheme的内容是否只能从相同scheme的其他内容中显示或访问。 true表示设置了该选项的scheme的内容只能从相同scheme的其他内容中显示或访问，false表示设置了该选项的scheme的内容不是只能从相同scheme的其他内容中显示或访问。 默认值：true。 |
+| isDisplayIsolated12+ | boolean | 否 | 是 | 设置了该选项的scheme的内容是否只能从相同scheme的其他内容中显示或访问。 true表示设置了该选项的scheme的内容只能从相同scheme的其他内容中显示或访问，false表示设置了该选项的scheme的内容允许从其他scheme的内容中显示或访问。 默认值：true。 |
 | isSecure12+ | boolean | 否 | 是 | 设置了该选项的scheme是否将使用与应用于“https”的安全规则相同的安全规则来处理。true表示设置了该选项的scheme将使用与应用于“https”的安全规则相同的安全规则来处理，false表示设置了该选项的scheme不使用与应用于“https”的安全规则相同的安全规则来处理。 默认值：true。 |
-| isCspBypassing12+ | boolean | 否 | 是 | 设置了该选项的scheme可以绕过内容安全策略（CSP）检查。 true表示设置了该选项的scheme可以绕过内容安全策略（CSP）检查，false表示设置了该选项的scheme不可以绕过内容安全策略（CSP）检查。 默认值：true。 在大多数情况下，当设置isStandard为true时，不应设置此值。 |
-| isCodeCacheSupported12+ | boolean | 否 | 是 | 设置了该选项的scheme的js资源是否支持生成code cache。 true表示设置了该选项的scheme的js资源支持生成code cache，false表示设置了该选项的scheme的js资源不支持生成code cache。 默认值：false。 |
+| isCspBypassing12+ | boolean | 否 | 是 | 设置了该选项的scheme可以绕过内容安全策略（CSP）检查。 true表示设置了该选项的scheme可以绕过内容安全策略（CSP）检查，false表示设置了该选项的scheme不可以绕过内容安全策略（CSP）检查。 默认值：true。 当设置isStandard为true时，不应设置此值。若此时仍设置isCspBypassing为true，CSP检查绕过的行为可能不符合预期。 |
+| isCodeCacheSupported12+ | boolean | 否 | 是 | 设置了该选项的scheme的JavaScript资源是否支持生成code cache。 true表示设置了该选项的scheme的JavaScript资源支持生成code cache，false表示设置了该选项的scheme的JavaScript资源不支持生成code cache。 默认值：false。 |
 
 
 
 
-#### RequestInfo12+
+## RequestInfo12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Web组件发送的资源请求信息。
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -93,13 +102,15 @@ Web组件发送的资源请求信息。
 
 
 
-#### CacheOptions12+
+## CacheOptions12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Web组件预编译JavaScript生成字节码缓存的配置对象，用于控制字节码缓存更新。
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -108,47 +119,53 @@ Web组件预编译JavaScript生成字节码缓存的配置对象，用于控制�
 
 
 
-#### SnapshotInfo12+
+## SnapshotInfo12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 获取全量绘制结果入参。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| id | string | 否 | 是 | snapshot的id。 |
-| size | SizeOptions | 否 | 是 | web绘制的尺寸，最多支持16000px * 16000px，长度单位支持px、vp、%，需保持不同参数传入长度单位一致，默认单位vp，超过规格时返回最大规格。（示例：width:'100px'，height:'200px'。或者 width:'20%'，height:'30%'。只写数字时单位为vp。） |
+| id | string | 否 | 是 | snapshot的id，用于标识本次全量绘制请求，便于在回调结果中匹配对应的全量绘制数据。不传入时不指定id，由系统自动处理。 |
+| size | SizeOptions | 否 | 是 | Web绘制的尺寸，最多支持16000px * 16000px，长度单位支持px、vp、%，需保持不同参数传入长度单位一致，不一致时可能导致绘制尺寸不符合预期，默认单位vp，超过规格时返回最大规格。不传入以截图区域的实际尺寸绘制。（示例：width:'100px'，height:'200px'。或者 width:'20%'，height:'30%'。只写数字时单位为vp。） |
 
 
 
 
-#### SnapshotResult12+
+## SnapshotResult12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 全量绘制回调结果。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | id | string | 否 | 是 | snapshot的id。 |
-| status | boolean | 否 | 是 | snapshot的状态，正常为true，失败为false，获取全量绘制结果失败，返回size的长宽都为0，map为空。 |
-| size | SizeOptions | 否 | 是 | web绘制的真实尺寸，number类型，单位vp。 |
+| status | boolean | 否 | 是 | snapshot的状态，正常为true，失败为false，获取全量绘制结果失败，返回size的长宽都为0，imagePixelMap为空。 |
+| size | SizeOptions | 否 | 是 | Web绘制的真实尺寸，SizeOptions对象包含width和height属性，均为number类型，单位vp。 |
 | imagePixelMap | image.PixelMap | 否 | 是 | 全量绘制结果为image.PixelMap格式。 |
 
 
 
 
-#### OfflineResourceMap12+
+## OfflineResourceMap12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本地离线资源配置对象，用于配置将被[injectOfflineResources](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller#injectofflineresources12)接口注入到内存缓存的本地离线资源的相关信息，内核会根据此信息生成资源缓存，并据此控制缓存的有效期。
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -160,9 +177,10 @@ Web组件预编译JavaScript生成字节码缓存的配置对象，用于控制�
 
 
 
-#### PdfConfiguration14+
+## PdfConfiguration14+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [createPdf](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller#createpdf14)函数输入参数。
 
@@ -171,6 +189,7 @@ Web组件预编译JavaScript生成字节码缓存的配置对象，用于控制�
 
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -186,13 +205,15 @@ Web组件预编译JavaScript生成字节码缓存的配置对象，用于控制�
 
 
 
-#### ScrollOffset13+
+## ScrollOffset13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 网页当前的滚动偏移量。
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -202,13 +223,15 @@ Web组件预编译JavaScript生成字节码缓存的配置对象，用于控制�
 
 
 
-#### HitTestValue
+## HitTestValue
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供点击区域的元素信息。示例代码参考[getLastHitTest](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller#getlasthittest18)。
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -218,29 +241,15 @@ Web组件预编译JavaScript生成字节码缓存的配置对象，用于控制�
 
 
 
-#### ControllerAttachState20+
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
-
-WebViewController与Web组件的绑定状态。
-
-**系统能力：** SystemCapability.Web.Webview.Core
-
-| 名称 | 值 | 说明 |
-| --- | --- | --- |
-| UNATTACHED | 0 | 未绑定状态。 |
-| ATTACHED | 1 | 已绑定状态。 |
+## BlanklessInfo20+
 
 
-
-
-#### BlanklessInfo20+
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone
 
 页面首屏加载预测信息，主要包括首屏相似度预测值、首屏加载耗时预测值、预测错误码，应用需根据此信息来决策是否启用无白屏加载插帧方案。
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -251,15 +260,17 @@ WebViewController与Web组件的绑定状态。
 
 
 
-#### BlanklessFrameInterpolationInfo23+
+## BlanklessFrameInterpolationInfo23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone
 
 无白屏加载插帧状态信息，作为[BlanklessLoadingParam](#blanklessloadingparam23)中的回调入参使用。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -271,15 +282,17 @@ WebViewController与Web组件的绑定状态。
 
 
 
-#### BlanklessLoadingParam23+
+## BlanklessLoadingParam23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone
 
 无白屏加载插帧方案的加载参数。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **模型约束：** 此接口仅可在Stage模型下使用。
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -291,13 +304,15 @@ WebViewController与Web组件的绑定状态。
 
 
 
-#### HistoryItem
+## HistoryItem
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 页面历史记录项。
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -309,17 +324,19 @@ WebViewController与Web组件的绑定状态。
 
 
 
-#### MediaInfo12+
+## MediaInfo12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [CreateNativeMediaPlayerCallback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-t#createnativemediaplayercallback12)回调函数的一个参数。包含了网页中媒体的信息。应用可以根据这些信息来创建接管网页媒体播放的播放器。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| embedID | string | 否 | 否 | 网页中的 &lt;video&gt; 或 &lt;audio&gt; 的 ID 。 |
+| embedID | string | 否 | 否 | 网页中的&lt;video&gt;或&lt;audio&gt;的 ID。 |
 | mediaType | MediaType | 否 | 否 | 媒体的类型。 |
 | mediaSrcList | MediaSourceInfo[] | 否 | 否 | 媒体的源。可能有多个源，应用需要选择一个支持的源来播放。 |
 | surfaceInfo | NativeMediaPlayerSurfaceInfo | 否 | 否 | 用于同层渲染的 surface 信息。 |
@@ -334,13 +351,15 @@ WebViewController与Web组件的绑定状态。
 
 
 
-#### RectEvent12+
+## RectEvent12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 矩形定义。
 
 **系统能力：** SystemCapability.Web.Webview.Core
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -352,22 +371,24 @@ WebViewController与Web组件的绑定状态。
 
 
 
-#### WebHttpCookie23+
+## WebHttpCookie23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 cookie的相关字段。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | samesitePolicy | WebHttpCookieSameSitePolicy | 否 | 否 | cookie的同站策略。 |
-| expiresDate | string | 否 | 否 | cookie的过期时间。时间格式详见Date。 |
+| expiresDate | string | 否 | 否 | cookie的过期时间。时间格式详见Date。传入不符合该格式的时间字符串时，该cookie设置不生效。 |
 | name | string | 否 | 否 | cookie的名称。 |
 | isSessionCookie | boolean | 否 | 否 | 标记该cookie是否是session cookie。 true表示是session cookie，false表示不是session cookie。 |
 | value | string | 否 | 否 | cookie的值。 |
 | path | string | 否 | 否 | cookie的路径。 |
-| isHttpOnly | boolean | 否 | 否 | 标记该cookie是否只能通过http请求访问。 true表示仅能通过http访问，不能通过JavaScript访问，false表示可以通过JavaScript访问。 |
-| isSecure | boolean | 否 | 否 | 标记该cookie是否只能通过https发送。 true表示仅能通过https发送，不能通过http发送，false表示可以通过http发送。 |
+| isHttpOnly | boolean | 否 | 否 | 标记该cookie是否只能通过HTTP请求访问。 true表示仅能通过HTTP访问，不能通过JavaScript访问，false表示可以通过JavaScript访问。 |
+| isSecure | boolean | 否 | 否 | 标记该cookie是否只能通过HTTPS发送。 true表示仅能通过HTTPS发送，不能通过HTTP发送，false表示可以通过HTTP发送。 |
 | domain | string | 否 | 否 | 指定哪些域名可以访问该cookie。 |

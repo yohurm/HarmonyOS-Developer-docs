@@ -1,16 +1,16 @@
 # 使用主题字体（ArkTS）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/theme-font-arkts
 
-#### 场景介绍
+## 场景介绍
 
 主题字体，特指系统**主题应用**中能使用的字体，属于一种特殊的自定义字体，可以通过相关接口调用使能主题应用中的主题字体。
 
 
 
-#### 实现机制
+## 实现机制
 
 **图1** 主题字体的切换和使用
 
@@ -22,9 +22,10 @@
 
 
 
-#### 接口说明
+## 接口说明
 
 注册使用主题字体的常用接口如下表所示，详细接口说明请见[@ohos.graphics.text (文本模块)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-graphics-text)。
+
 
 | 接口 | 描述 |
 | --- | --- |
@@ -33,7 +34,7 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 请确保在设备系统**主题应用**中，能成功应用一项主题字体。
 2. 导入依赖的相关模块。
 
@@ -50,7 +51,7 @@ import { text } from '@kit.ArkGraphics2D';
 let fontCollection = text.FontCollection.getGlobalInstance();
 ```
 
-4. 创建段落样式，并使用字体管理器实例构造段落生成器ParagraphBuilder实例，用于生成段落。
+4. 创建段落样式，并使用字体集实例构造段落生成器ParagraphBuilder实例，用于生成段落。
 
   
 > [!NOTE]
@@ -174,7 +175,7 @@ export default class EntryAbility extends UIAbility {
 
 
 
-#### 效果展示
+## 效果展示
 
 以下展示了在系统**主题应用**中切换使用不同主题字体后，对应的文字渲染效果。
 

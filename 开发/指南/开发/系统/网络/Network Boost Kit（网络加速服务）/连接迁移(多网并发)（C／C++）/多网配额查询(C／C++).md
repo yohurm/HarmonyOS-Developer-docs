@@ -1,21 +1,22 @@
 # 多网配额查询(C/C++)
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/networkboost-netmultipath-getmultipathquota-c
 
 从6.0.2(22)开始，支持多网配额查询。
 
 
-#### 场景介绍
+## 场景介绍
 
 由于多网络加速受到配额的管控，应用可以获取当前剩余的多网并发配额信息，合理分配使用多网络加速的次数和时长。应用配额以24小时的周期进行刷新。配额（次数或时长）耗尽会限制使用，此时请求多网会抛出错误码，24小时后会重新分配。
 
 
 
-#### 接口说明
+## 接口说明
 
 具体API说明详见[接口文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/network-boost-c-overview)。
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -24,7 +25,7 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 1. 导入Network Boost Kit模块。
 
   

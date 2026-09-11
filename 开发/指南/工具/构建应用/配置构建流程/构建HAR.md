@@ -1,6 +1,6 @@
 # 构建HAR
 
-更新时间：2026-07-28 12:07:32
+更新时间：2026-09-08 02:53:31
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-build-har
 
@@ -11,13 +11,13 @@
 从DevEco Studio NEXT Beta1（5.0.3.800）版本开始，默认构建字节码HAR，用于提升发布产物的安全性。
 
 
-#### 使用约束
+## 使用约束
 
 HAR自身的构建不建议引用本地模块，可能导致其他模块依赖该HAR包时安装失败，如果安装失败，需要在工程级oh-package.json5中配置[overrides](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-oh-package-json5#zh-cn_topic_0000001792256137_overrides)。
 
 
 
-#### 创建模块
+## 创建模块
 1. 新建工程时选择API 10及以上的Stage模型，工程创建完成后，新建“Static Library”模块。模块创建方法可参考[在工程中添加Module](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-add-new-module)。
 
   
@@ -55,7 +55,7 @@ library  // HAR根目录
 ```ArkTS
 {
   ...
-  "main": "./src/main/ets/components/MainPage.ets",
+  <span style="color: rgb(102,14,122);">"main"</span>: <span style="color: rgb(0,128,0);">"./src/main/ets/components/MainPage.ets"</span>,
   ...
 }
 ```
@@ -63,7 +63,7 @@ library  // HAR根目录
 
 
 
-#### 字节码HAR
+## 字节码HAR
 
 默认产物是包含字节码的HAR包，其中包含abc字节码、资源文件、配置文件、readme、changelog声明文件、license证书文件，提升发布到ohpm中心仓产物的安全性。
 
@@ -75,7 +75,7 @@ library  // HAR根目录
 
 
 
-#### 收益
+### 收益
 
  - 字节码HAR可以降低代码泄露的风险，增加反编译获取代码逻辑的难度。
 
@@ -87,7 +87,7 @@ library  // HAR根目录
 
 
 
-#### 使用场景
+### 使用场景
 
 从功能上来说所有的源码HAR包都可以按照任意顺序切换成字节码HAR。但是由于字节码HAR编译和集成的特点，按照推荐场景或顺序来逐步切换字节码HAR可能会获得比较好的性能、内存收益。以下场景中推荐切换使用字节码HAR：
 
@@ -100,7 +100,7 @@ library  // HAR根目录
 
 
 
-#### 约束条件
+### 约束条件
 
  - 字节码HAR使用的依赖需要配置在本模块的oh-package.json5的dependencies或dynamicDependencies中，如果不配置，后续字节码HAR被集成时可能会出现运行时异常。如果出现异常，部分场景可通过在hvigor-config.json5中配置ohos.byteCodeHar.integratedOptimization后重新编译，具体请参考[编译行为差异说明](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-dependencies#section957371853712)。
  - 字节码HAR的oh-package.json5中配置的依赖名和依赖包的包名（即包内oh-package.json5中的name）需要保持一致。
@@ -112,7 +112,7 @@ library  // HAR根目录
 
 
 
-#### 操作步骤
+### 操作步骤
 1. 将工程级build-profile.json5的useNormalizedOHMUrl设置为true。
 
   
@@ -123,7 +123,7 @@ library  // HAR根目录
   
 ```json
 {
-  "app": {
+  <span style="color: rgb(102,14,122);">"app"</span>: {
     "products": [
       {
          "buildOption": {
@@ -142,7 +142,7 @@ library  // HAR根目录
   
 ```json
 {
-  "buildOption": {
+  <span style="color: rgb(102,14,122);">"buildOption"</span>: {
     "arkOptions": {
       "byteCodeHar": true
     }
@@ -150,9 +150,7 @@ library  // HAR根目录
 }
 ```
 
-3. 点击DevEco Studio右上角图标
-![](assets/构建HAR/file-20260514133102827-11.png)
-，选择**Build Mode，**默认为**&lt;Default&gt;**模式：在编译App时使用release模式，编译HAP/HSP/HAR时使用debug模式。
+3. 点击DevEco Studio右上角图标![icon](assets/构建HAR/file-20260514133102827-11.png)，选择**Build Mode，**默认为**&lt;Default&gt;**模式：在编译App时使用release模式，编译HAP/HSP/HAR时使用debug模式。
 
   
 ![](assets/构建HAR/file-20260514133102827-12.png)
@@ -162,34 +160,34 @@ library  // HAR根目录
   
 ```json
 {
-  "apiType": "stageMode",
-  "buildOption": {
+  <span style="color: rgb(135,16,148);">"apiType"</span>: <span style="color: rgb(6,125,23);">"stageMode"</span>,
+  <span style="color: rgb(135,16,148);">"buildOption"</span>: {
   },
-  "buildOptionSet": [
+  <span style="color: rgb(135,16,148);">"buildOptionSet"</span>: [
     {
-      "name": "release",
-      "arkOptions": {
+      <span style="color: rgb(135,16,148);">"name"</span>: <span style="color: rgb(6,125,23);">"release"</span>,
+      <span style="color: rgb(135,16,148);">"arkOptions"</span>: {
         // 混淆相关参数
-        "obfuscation": {
-          "ruleOptions": {
+        <span style="color: rgb(135,16,148);">"obfuscation"</span>: {
+          <span style="color: rgb(135,16,148);">"ruleOptions"</span>: {
             // true表示进行混淆，false表示不进行混淆。5.0.3.600及以上版本默认为false
-            "enable": true,
+            <span style="color: rgb(135,16,148);">"enable"</span>: <span style="color: rgb(0,51,179);">true</span>,
             // 混淆规则文件
-            "files": [
-              "./obfuscation-rules.txt"
+            <span style="color: rgb(135,16,148);">"files"</span>: [
+              <span style="color: rgb(6,125,23);">"./obfuscation-rules.txt"</span>
             ]
           },
           // consumerFiles中指定的混淆配置文件会在构建依赖这个library的工程或library时被应用
-          "consumerFiles": [
-            "./consumer-rules.txt"
+          <span style="color: rgb(135,16,148);">"consumerFiles"</span>: [
+            <span style="color: rgb(6,125,23);">"./consumer-rules.txt"</span>
           ]
         }
       },
     },
   ],
-  "targets": [
+  <span style="color: rgb(135,16,148);">"targets"</span>: [
     {
-      "name": "default"
+      <span style="color: rgb(135,16,148);">"name"</span>: <span style="color: rgb(6,125,23);">"default"</span>
     }
   ]
 }
@@ -199,11 +197,11 @@ library  // HAR根目录
 
   
 ```json
-"buildOption": {
-  "packingOptions": {
-    "asset": {
-      "include": ["./src/router.json5","router.json5"],    // 配置打包到HAR产物中的文件
-      "exclude": ["./config/*"]     // 配置不打包到HAR产物中的文件
+<span style="color: rgb(135,16,148);">"buildOption"</span>: {
+  <span style="color: rgb(135,16,148);">"packingOptions"</span>: {
+    <span style="color: rgb(135,16,148);">"asset"</span>: {
+      <span style="color: rgb(135,16,148);">"include"</span>: [<span style="color: rgb(6,125,23);">"./src/router.json5"</span>,<span style="color: rgb(6,125,23);">"router.json5"</span>],    // 配置打包到HAR产物中的文件
+      <span style="color: rgb(135,16,148);">"exclude"</span>: [<span style="color: rgb(6,125,23);">"./config/*"</span>]     // 配置不打包到HAR产物中的文件
     }
   }
 }
@@ -237,11 +235,11 @@ library  // HAR根目录
 
 
 
-#### 源码HAR
+## 源码HAR
 
 
 
-#### 以debug模式构建
+### 以debug模式构建
 
 产物是包含源码的HAR包，其中包含源码、资源文件以及配置文件等，方便开发者进行本地调测，不包含build、node_modules、oh_modules、.cxx、.preview、.hvigor、.gitignore、.ohpmignore、.gitignore/.ohpmignore中配置的文件、cpp工程的CMakeLists.txt。
 
@@ -253,7 +251,7 @@ library  // HAR根目录
   
 ```json
 {
-  "buildOption": {
+  <span style="color: rgb(102,14,122);">"buildOption"</span>: {
     "arkOptions": {
       "byteCodeHar": false
     }
@@ -264,9 +262,7 @@ library  // HAR根目录
 > [!NOTE]
 > 使用DevEco Studio NEXT Beta1（5.0.3.800）之前的版本，模块级build-profile.json5的byteCodeHar字段的缺省默认值为false，无需执行本步骤。
 
-2. 点击DevEco Studio右上角图标
-![](assets/构建HAR/file-20260514133102827-3.png)
-，**Build Mode**选择**debug。**默认为**&lt;Default&gt;**模式：在编译App时使用release模式，编译HAP/HSP/HAR时使用debug模式。
+2. 点击DevEco Studio右上角图标![icon](assets/构建HAR/file-20260514133102827-3.png)，**Build Mode**选择**debug。**默认为**&lt;Default&gt;**模式：在编译App时使用release模式，编译HAP/HSP/HAR时使用debug模式。
 
   
 ![](assets/构建HAR/file-20260514133102827-4.png)
@@ -280,11 +276,11 @@ library  // HAR根目录
 
   
 ```json
-"buildOption": {
-  "packingOptions": {
-    "asset": {
-      "include": ["./src/router.json5","router.json5"],    // 配置打包到HAR产物中的文件
-      "exclude": ["./config/*"]     // 配置不打包到HAR产物中的文件
+<span style="color: rgb(135,16,148);">"buildOption"</span>: {
+  <span style="color: rgb(135,16,148);">"packingOptions"</span>: {
+    <span style="color: rgb(135,16,148);">"asset"</span>: {
+      <span style="color: rgb(135,16,148);">"include"</span>: [<span style="color: rgb(6,125,23);">"./src/router.json5"</span>,<span style="color: rgb(6,125,23);">"router.json5"</span>],    // 配置打包到HAR产物中的文件
+      <span style="color: rgb(135,16,148);">"exclude"</span>: [<span style="color: rgb(6,125,23);">"./config/*"</span>]     // 配置不打包到HAR产物中的文件
     }
   }
 }
@@ -313,12 +309,12 @@ library  // HAR根目录
   HAR包产物解压后，结构如下：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/PazlXOqRRQG0YiAohdviBg/zh-cn_image_0000002677996721.png?HW-CC-KV=V1&HW-CC-Date=20260730T071820Z&HW-CC-Expire=86400&HW-CC-Sign=787D64EDD33411052716A141E479A7342BCE86D9F7CD329EE280C78607DD6CBF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/Ton4NLEdQ16XcehJXcQtrA/zh-cn_image_0000002731542505.png?HW-CC-KV=V1&HW-CC-Date=20260911T072813Z&HW-CC-Expire=86400&HW-CC-Sign=4AEBD5A8590590158F8F5EC72B835D1DAC79D0362E86FDAF5A13787DA6B6807D)
 
 
 
 
-#### 以release模式构建
+### 以release模式构建
 
 从DevEco Studio NEXT Developer Beta3（5.0.3.600）版本开始，默认不开启混淆，构建产物和debug模式相同，请参考[以debug模式构建](#section197792874110)。
 
@@ -328,7 +324,7 @@ library  // HAR根目录
   
 ```json
 {
-  "buildOption": {
+  <span style="color: rgb(102,14,122);">"buildOption"</span>: {
     "arkOptions": {
       "byteCodeHar": false
     }
@@ -339,46 +335,44 @@ library  // HAR根目录
 > [!NOTE]
 > 使用DevEco Studio NEXT Beta1（5.0.3.800）之前的版本，模块级build-profile.json5的byteCodeHar字段的缺省默认值为false，无需执行本步骤。
 
-2. 点击DevEco Studio右上角图标
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/VEqzmqntSja-M8aRj4LBdA/zh-cn_image_0000002678156577.png?HW-CC-KV=V1&HW-CC-Date=20260730T071820Z&HW-CC-Expire=86400&HW-CC-Sign=BFE6B2424DEE115DE1B3B270A44A04FE59FE5190D152F9B1E94326137E3DB735)
-，**Build Mode**中选择**release。**默认为**&lt;Default&gt;**模式：在编译App时使用release模式，编译HAP/HSP/HAR时使用debug模式。
+2. 点击DevEco Studio右上角图标![icon](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/m1DszQh7QceoVN03mAjRKg/zh-cn_image_0000002701823240.png?HW-CC-KV=V1&HW-CC-Date=20260911T072813Z&HW-CC-Expire=86400&HW-CC-Sign=F02B8634D94AE96B07AE4C304B554FE51C985FD4F5777894E203152A402EA172)，**Build Mode**中选择**release。**默认为**&lt;Default&gt;**模式：在编译App时使用release模式，编译HAP/HSP/HAR时使用debug模式。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/KDs5EsvUQv-R2cy_Qlx1CA/zh-cn_image_0000002648076856.png?HW-CC-KV=V1&HW-CC-Date=20260730T071820Z&HW-CC-Expire=86400&HW-CC-Sign=BE18D7CC938EBC2F41F8DCD3960FB264545D51ED984CE430E60CA228C6C0B5D1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/XUgxv_AQQaaa_qMdAxFbmw/zh-cn_image_0000002701663322.png?HW-CC-KV=V1&HW-CC-Date=20260911T072813Z&HW-CC-Expire=86400&HW-CC-Sign=D0612A92D90FE7D759476EA4AD4E7D9D791A9C9DF49F200ECB0B763016EBC00E)
 
 3. 在[编译模式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-compilation-options-customizing-guide#section192461528194916)为release时，为保护代码资产，建议开启混淆，在模块级build-profile.json5文件的release的buildOptionSet配置中，将obfuscation/ruleOptions下的enable字段设置为true。混淆相关能力和具体规则请参考[代码混淆](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-build-obfuscation)。
 
   
 ```json
 {
-  "apiType": "stageMode",
-  "buildOption": {
+  <span style="color: rgb(135,16,148);">"apiType"</span>: <span style="color: rgb(6,125,23);">"stageMode"</span>,
+  <span style="color: rgb(135,16,148);">"buildOption"</span>: {
   },
-  "buildOptionSet": [
+  <span style="color: rgb(135,16,148);">"buildOptionSet"</span>: [
     {
-      "name": "release",
-      "arkOptions": {
+      <span style="color: rgb(135,16,148);">"name"</span>: <span style="color: rgb(6,125,23);">"release"</span>,
+      <span style="color: rgb(135,16,148);">"arkOptions"</span>: {
         // 混淆相关参数
-        "obfuscation": {
-          "ruleOptions": {
+        <span style="color: rgb(135,16,148);">"obfuscation"</span>: {
+          <span style="color: rgb(135,16,148);">"ruleOptions"</span>: {
             // true表示进行混淆，false表示不进行混淆。5.0.3.600及以上版本默认为false
-            "enable": true,
+            <span style="color: rgb(135,16,148);">"enable"</span>: <span style="color: rgb(0,51,179);">true</span>,
             // 混淆规则文件
-            "files": [
-              "./obfuscation-rules.txt"
+            <span style="color: rgb(135,16,148);">"files"</span>: [
+              <span style="color: rgb(6,125,23);">"./obfuscation-rules.txt"</span>
             ]
           },
           // consumerFiles中指定的混淆配置文件会在构建依赖这个library的工程或library时被应用
-          "consumerFiles": [
-            "./consumer-rules.txt"
+          <span style="color: rgb(135,16,148);">"consumerFiles"</span>: [
+            <span style="color: rgb(6,125,23);">"./consumer-rules.txt"</span>
           ]
         }
       },
     },
   ],
-  "targets": [
+  <span style="color: rgb(135,16,148);">"targets"</span>: [
     {
-      "name": "default"
+      <span style="color: rgb(135,16,148);">"name"</span>: <span style="color: rgb(6,125,23);">"default"</span>
     }
   ]
 }
@@ -388,11 +382,11 @@ library  // HAR根目录
 
   
 ```json
-"buildOption": {
-  "packingOptions": {
-    "asset": {
-      "include": ["./src/router.json5","router.json5"],    // 配置打包到HAR产物中的文件
-      "exclude": ["./config/*"]     // 配置不打包到HAR产物中的文件
+<span style="color: rgb(135,16,148);">"buildOption"</span>: {
+  <span style="color: rgb(135,16,148);">"packingOptions"</span>: {
+    <span style="color: rgb(135,16,148);">"asset"</span>: {
+      <span style="color: rgb(135,16,148);">"include"</span>: [<span style="color: rgb(6,125,23);">"./src/router.json5"</span>,<span style="color: rgb(6,125,23);">"router.json5"</span>],    // 配置打包到HAR产物中的文件
+      <span style="color: rgb(135,16,148);">"exclude"</span>: [<span style="color: rgb(6,125,23);">"./config/*"</span>]     // 配置不打包到HAR产物中的文件
     }
   }
 }
@@ -409,24 +403,24 @@ library  // HAR根目录
 
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/7r67cVcPQ6W9sU0crh3I_w/zh-cn_image_0000002678156573.png?HW-CC-KV=V1&HW-CC-Date=20260730T071820Z&HW-CC-Expire=86400&HW-CC-Sign=0FC88CDFEE5E2843392FFAF67CE31DFDEE593D5F71E298D0A8B2B3AF60043D3A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/PCiKShdLQzaNijnu05KBVQ/zh-cn_image_0000002701823220.png?HW-CC-KV=V1&HW-CC-Date=20260911T072813Z&HW-CC-Expire=86400&HW-CC-Sign=C4B5757BAC8B1D02F7F9554DC328D10A4C823EECD5C24142B611B5B71C008F2B)
 
 
   构建完成后，build目录下生成HAR包产物。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/wEXhkoNlQ62F3yhy1PgdCQ/zh-cn_image_0000002678156569.png?HW-CC-KV=V1&HW-CC-Date=20260730T071820Z&HW-CC-Expire=86400&HW-CC-Sign=82B4FE6397A17A645C9CFCD1F55CF3AA04B18953F555C11A8797C071C41FFF30)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/liVp49CfT3yhuCqckSftqg/zh-cn_image_0000002701663314.png?HW-CC-KV=V1&HW-CC-Date=20260911T072813Z&HW-CC-Expire=86400&HW-CC-Sign=C819EC8C3BDB08DE019C867CE8180DA7244F76D900A6D327B6FCFC94E85DE456)
 
 
   HAR包产物解压后，结构如下：
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/jyTlPY3fRGabGQ-7XpDRKg/zh-cn_image_0000002677996727.png?HW-CC-KV=V1&HW-CC-Date=20260730T071820Z&HW-CC-Expire=86400&HW-CC-Sign=73B8379939ADD7AD4C092F3A75DEAF3AFB199D435D529FDC5AD6C50D46548190)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/IQCGxL05QR2ARAIUCN0HBA/zh-cn_image_0000002731542515.png?HW-CC-KV=V1&HW-CC-Date=20260911T072813Z&HW-CC-Expire=86400&HW-CC-Sign=CC3BC1A093FF08AACE605B7E1B0FDCF9295180EA0E289E4A7677870988694584)
 
 
 
 
-#### 对HAR进行签名
+## 对HAR进行签名
 
 DevEco Studio在构建HAR流程的基础上，支持对HAR进行签名。签名后的HAR包后续可用于接入生态市场，接入流程请参考[SDK类商品接入说明](https://developer.huawei.com/consumer/cn/doc/start/dev-mall-marketplace-sp-sdkservice-access-explain-0000001866499490)。
 
@@ -438,7 +432,7 @@ DevEco Studio在构建HAR流程的基础上，支持对HAR进行签名。签名�
   
 ```text
 {
-  "properties": {
+  <span style="color: rgb(102,14,122);">"properties"</span>: {
     "ohos.sign.har": true
   }
 }
@@ -448,10 +442,118 @@ DevEco Studio在构建HAR流程的基础上，支持对HAR进行签名。签名�
 3. 选中HAR模块的根目录，点击**Build > Make Module '<module-name>'**启动构建。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/XbAFZP1iT-CE6rQBy8cLNg/zh-cn_image_0000002647916956.png?HW-CC-KV=V1&HW-CC-Date=20260730T071820Z&HW-CC-Expire=86400&HW-CC-Sign=F774B460FF9AF2C61C293ACD81FDDCFB39EB55C3A14C54E8DBC4CDCAAB3FC475)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/0DDvIKOPT--ZO9WEoqQOWw/zh-cn_image_0000002701823226.png?HW-CC-KV=V1&HW-CC-Date=20260911T072813Z&HW-CC-Expire=86400&HW-CC-Sign=78BE4238D5C7252A6605CA545177939799BB4B7551D6DB5D845D485939BC2A37)
 
 
   构建完成后，build目录下生成签名HAR包产物。
 
   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/1xAGYXjwSMmTxgsBuIF7Mw/zh-cn_image_0000002677996729.png?HW-CC-KV=V1&HW-CC-Date=20260730T071820Z&HW-CC-Expire=86400&HW-CC-Sign=1001624E4515FED5A8EC228E50E236412FA766EE2C4884DEBBE334215065C35D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/fkMqul_QRUWaVYClHod48A/zh-cn_image_0000002701823222.png?HW-CC-KV=V1&HW-CC-Date=20260911T072813Z&HW-CC-Expire=86400&HW-CC-Sign=5318514CC8FD2BE7B102CEF8021DF67C95F6EF21AD45E9F64419812145267CFE)
+
+
+
+
+## 多HAR合并打包
+
+SDK厂商在对外发布SDK（HAR包）时，有时需要隐藏内部实现细节及依赖，仅暴露必要的接口。从26.0.0版本开始，Hvigor支持将字节码HAR及其所有依赖合并打包，生成一个无外部依赖、可直接使用的独立HAR包。
+
+
+
+### 配置方法
+
+在HAR模块的build-profile.json5文件中，配置bundle字段可以实现多HAR合并打包的能力。bundle下包含bundledDeclare和bundledAllDependencies两个字段，是[bundledDependencies](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-build-profile#section8368152412552)的增强版。使用时，不能同时配置bundle和bundledDependencies。
+
+```json
+// HAR模块build-profile.json5
+"buildOption": {
+  "arkOptions": {
+    "bundle": {
+      "bundledDeclare": true,
+      "bundledAllDependencies": true
+    }
+  }
+}
+```
+
+
+
+> [!NOTE] 说明
+> bundledDeclare开启后，产物HAR中，默认只会生成oh-package.json5中main字段和oh-exports字段所指向源码文件的声明文件。如未配置oh-exports字段，则只生成main字段源码的声明文件。
+
+
+| 字段名称 | 类型 | 可选/必选 | 含义 |
+| --- | --- | --- | --- |
+| bundledDeclare | 布尔值 | 可选 | 构建字节码HAR或HSP时，是否生成bundle化的声明文件。 true：生成。 false（缺省默认值）：不生成。 |
+| bundledAllDependencies | 布尔值 | 可选 | 构建字节码HAR时，是否将所有依赖打包到产物中。 true：打包。 false（缺省默认值）：不打包。 |
+
+
+> [!NOTE]
+> bundledAllDependencies会将dependencies和dynamicDependencies所有依赖都打包，而bundledDependencies只会将dependencies和dynamicDependencies依赖的源码HAR打包。 bundledAllDependencies为true，devDependencies中配置的HAR包的资源/so不会打包。 bundledAllDependencies为true，bundledDeclare也必须配置为true。 bundledAllDependencies为true，且hvigor-config.json5的ohos.byteCodeHar.integratedOptimization为true时，工程级oh-package.json5中的本地模块依赖的资源/so不会打包。 bundledAllDependencies为true，依赖中不支持配置HSP类型的依赖。 bundledAllDependencies为true，若依赖没有被调用，则最终会被裁剪，不会打包到最终的HAR中。
+
+
+
+
+### 使用效果说明
+
+关于bundledDeclare字段的使用效果，示例代码如下：
+
+```json
+// oh-package.json5
+"dependencies": {
+  "shop": "1.0.0"
+}
+```
+
+
+```ArkTS
+// Index.ets
+export { live } from './src/main/ets/components/Live';
+export { shop } from 'shop';
+```
+
+
+ - bundledDeclare不配置，或配置为false时，编译的字节码HAR或者编译HSP生成的HAR中的声明文件如下：       
+```ArkTS
+// Index.d.ets
+export { live } from './src/main/ets/components/Live';
+export { shop } from 'shop';
+```
+
+ - 配置bundledDeclare为true后编译：       
+```ArkTS
+// Index.d.ets
+export declare function live(game: string): void;
+export declare function shop(product: string): void;
+```
+
+
+
+
+
+关于bundledAllDependencies字段的使用效果，示例代码如下，以live模块为例：      
+```json
+// oh-package.json5
+"dependencies": {
+  "shop": "1.0.0"
+}
+```
+
+
+
+```ArkTS
+// Index.ets
+export { live } from './src/main/ets/components/Live';
+export { shop } from 'shop';
+```
+
+
+将bundledAllDependencies配置为true（此时bundledDeclare也必须配置为true）编译，除了Index.d.ets会被bundle合并外，依赖的shop源代码文件也会被合并到live的modules.abc中，资源文件/so文件也会合并打包到live包中。
+
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/oZLmI14LRyen10n-miRKVA/zh-cn_image_0000002701823232.png?HW-CC-KV=V1&HW-CC-Date=20260911T072813Z&HW-CC-Expire=86400&HW-CC-Sign=4BDCC6FC95E65B22316F50CCBDA1021A4006C74E9F4840A2A2C96100FA7CD678)
+
+
+配置bundledAllDependencies为true后，HAR包的oh-package.json5中的dependencies也会被消除：
+
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/ab7DnvlUSMacULKnDL7Zfw/zh-cn_image_0000002731542497.png?HW-CC-KV=V1&HW-CC-Date=20260911T072813Z&HW-CC-Expire=86400&HW-CC-Sign=2602F5C7CBA39335FCD4BDFD409624EEDB1A5EBF996AC360D8A3486958D2198D)

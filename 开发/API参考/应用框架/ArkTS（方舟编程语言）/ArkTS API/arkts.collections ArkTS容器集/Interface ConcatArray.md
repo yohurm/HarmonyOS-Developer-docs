@@ -1,9 +1,9 @@
 # Interface (ConcatArray)
 
-更新时间：2026-08-04 06:06:24
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-arkts-collections-concatarray
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 该接口定义了支持数组连接操作的对象，并继承了ISendable接口，使其兼具高效数组拼接和跨线程传递能力。
 
@@ -17,9 +17,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { collections } from '@kit.ArkTS';
@@ -27,13 +28,15 @@ import { collections } from '@kit.ArkTS';
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -42,9 +45,10 @@ import { collections } from '@kit.ArkTS';
 
 
 
-#### [index: number]
+## [index: number]
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readonly [index: number]: T
 
@@ -54,12 +58,14 @@ readonly [index: number]: T
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 所需代码单元的从零开始的索引，不支持修改指定索引位置的元素。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -69,6 +75,7 @@ readonly [index: number]: T
 **错误码**：
 
 以下错误码详细介绍请参考[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -84,9 +91,10 @@ console.info("Element at index 1: ", concatArray[1]);
 
 
 
-#### join
+## join
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 join(separator?: string): string
 
@@ -98,12 +106,14 @@ join(separator?: string): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | separator | string | 否 | 用于分隔ConcatArray元素的字符串。如果省略，则使用逗号分隔。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -119,9 +129,10 @@ let joinedString = concatArray.join('-'); // 返回 "a-b-c"
 
 
 
-#### slice
+## slice
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 slice(start?: number, end?: number): ConcatArray&lt;T&gt;
 
@@ -133,6 +144,7 @@ slice(start?: number, end?: number): ConcatArray&lt;T&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | start | number | 否 | 开始索引。如果start < 0，则会从start + ConcatArray.length位置开始。默认值为0。 |
@@ -140,6 +152,7 @@ slice(start?: number, end?: number): ConcatArray&lt;T&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |

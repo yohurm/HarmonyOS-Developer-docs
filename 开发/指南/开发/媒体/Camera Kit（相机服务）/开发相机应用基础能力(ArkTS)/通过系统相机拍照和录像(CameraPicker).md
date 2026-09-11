@@ -1,6 +1,6 @@
 # 通过系统相机拍照和录像(CameraPicker)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-picker
 
@@ -13,7 +13,7 @@ CameraPicker的相机交互界面由系统提供，在用户点击拍摄和确�
 由于照片的拍摄和确认都是由用户进行主动确认，因此应用开发者可以不用申请操作相机的相关权限。
 
 
-#### 开发步骤
+## 开发步骤
 
 详细的API说明请参考[@ohos.multimedia.cameraPicker (相机选择器)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-camerapicker)。
 1. 导入相关接口，导入方法如下。
@@ -64,7 +64,7 @@ async getPickerResult(context: Context, pickerProfile: picker.PickerProfile): Pr
 
 
 
-#### 完整示例
+## 完整示例
 
 ```ArkTS
 import { camera, cameraPicker as picker } from '@kit.CameraKit';

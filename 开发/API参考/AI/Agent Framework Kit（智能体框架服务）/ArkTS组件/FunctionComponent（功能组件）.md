@@ -1,6 +1,6 @@
 # FunctionComponent（功能组件）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/hmaf-function-component
 **支持设备：** Phone | Tablet
@@ -12,7 +12,8 @@ Agent Framework Kit（智能体框架服务）提供了拉起指定智能体的�
 **起始版本：** 6.0.0(20)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | Tablet
 
@@ -22,7 +23,8 @@ import { AgentController, BaseOptions, FunctionController, FunctionOptions, Butt
  
   
 
-#### FunctionComponent
+## FunctionComponent
+
 
 **支持设备：** Phone | Tablet
 
@@ -40,12 +42,13 @@ Agent功能组件，可以实现拉起智能体功能。
  
 **参数：**
   
-| 名称 | 类型 | 只读 | 必填 | 说明 |
-| --- | --- | --- | --- | --- |
-| agentId | string | 是 | 是 | Agent ID，Agent的唯一标识，开发Agent时获取。智能体创建成功后，可在智能体配置页面的网址链接中获取。 长度限制1~64个字符。 |
-| onError | ErrorCallback | 是 | 是 | 错误回调函数。返回的错误码及说明如下所示 |
-| options | FunctionOptions | 是 | 否 | Function组件初始化可选参数。 |
-| controller | FunctionController | 是 | 否 | Function组件控制器。默认为undefined。 |
+
+| 名称 | 类型 | 只读 | 必填 | 装饰器类型 | 说明 |
+| --- | --- | --- | --- | --- | --- |
+| agentId | string | 是 | 是 | - | Agent ID，Agent的唯一标识，开发Agent时获取。智能体创建成功后，可在智能体配置页面的网址链接中获取。 长度限制：1~64个字符。 |
+| onError | ErrorCallback | 是 | 是 | - | 错误回调函数。返回的错误码及说明如下所示 |
+| options | FunctionOptions | 是 | 否 | - | Function组件初始化可选参数。 |
+| controller | FunctionController | 是 | 否 | - | Function组件控制器。默认为undefined。 |
  
  
 > [!NOTE]
@@ -56,11 +59,31 @@ Agent功能组件，可以实现拉起智能体功能。
  
 以下错误码为onError回调函数返回的，详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-agent-framework)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1022400010 | Parameter error. |
 | 1022400014 | Internal error. |
  
+ 
+  
+
+### build
+
+
+**支持设备：** Phone | Tablet
+
+build(): void
+ 
+FunctionComponent组件的构造函数。
+ 
+**元服务API：** 从版本6.0.1(21)开始，该接口支持在元服务中使用。
+ 
+**系统能力：** SystemCapability.AI.Agent.AgentKit
+ 
+**模型约束：** 此接口仅可在Stage模型下使用。
+ 
+**起始版本：** 6.0.0(20)
  
 **示例：**
  
@@ -94,7 +117,8 @@ struct FunctionExample {
  
   
 
-#### AgentController
+## AgentController
+
 
 **支持设备：** Phone | Tablet
 
@@ -110,7 +134,8 @@ Agent Framework Kit控件通用控制器。集成了开发者与Agent功能组�
  
   
 
-#### isAgentSupport
+### isAgentSupport
+
 
 **支持设备：** Phone | Tablet
 
@@ -128,14 +153,16 @@ isAgentSupport(context: common.UIAbilityContext, agentId: string): Promise&lt;bo
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | common.UIAbilityContext | 是 | 当前上下文环境。 |
-| agentId | string | 是 | Agent ID，Agent的唯一标识，开发Agent时获取。 长度限制1~64个字符。 |
+| agentId | string | 是 | Agent ID，Agent的唯一标识，开发Agent时获取。 长度限制：1~64个字符。 |
  
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;boolean&gt; | Promise对象，返回true表示agentId有效且Agent功能支持，返回false表示agentId无效或者Agent功能不支持。 |
@@ -145,6 +172,7 @@ isAgentSupport(context: common.UIAbilityContext, agentId: string): Promise&lt;bo
  
 以下错误码的详细介绍请参见[ArkTS API错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-agent-framework)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1022400010 | Parameter error. |
@@ -205,7 +233,8 @@ struct AgentDemo {
  
   
 
-#### on('agentDialogOpened')
+### on('agentDialogOpened')
+
 
 **支持设备：** Phone | Tablet
 
@@ -223,6 +252,7 @@ on(type: 'agentDialogOpened', callback: Callback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为'agentDialogOpened'，监听智能体对话框打开事件。 |
@@ -277,7 +307,8 @@ struct AgentDemo{
  
   
 
-#### off('agentDialogOpened')
+### off('agentDialogOpened')
+
 
 **支持设备：** Phone | Tablet
 
@@ -295,6 +326,7 @@ off(type: 'agentDialogOpened', callback?: Callback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为 'agentDialogOpened'，取消智能体对话框打开事件的监听。 |
@@ -349,7 +381,8 @@ struct AgentDemo{
  
   
 
-#### on('agentDialogClosed')
+### on('agentDialogClosed')
+
 
 **支持设备：** Phone | Tablet
 
@@ -367,6 +400,7 @@ on(type: 'agentDialogClosed', callback: Callback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为'agentDialogClosed'，监听智能体对话框关闭事件。 |
@@ -421,7 +455,8 @@ struct AgentDemo{
  
   
 
-#### off('agentDialogClosed')
+### off('agentDialogClosed')
+
 
 **支持设备：** Phone | Tablet
 
@@ -439,6 +474,7 @@ off(type: 'agentDialogClosed', callback?: Callback&lt;void&gt;): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 值为 'agentDialogClosed'，取消智能体对话框关闭事件的监听。 |
@@ -493,7 +529,8 @@ struct AgentDemo{
  
   
 
-#### FunctionController
+## FunctionController
+
 
 **支持设备：** Phone | Tablet
 
@@ -509,7 +546,8 @@ Function组件控制器，用于与Function组件控制交互。预留接口，�
  
   
 
-#### BaseOptions
+## BaseOptions
+
 
 **支持设备：** Phone | Tablet
 
@@ -525,6 +563,7 @@ Agent组件可选参数的基础对象。集成了Agent组件的共用参数，�
  
 **参数：**
   
+
 | 参数名 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | title | string | 否 | 是 | 表示AgentFramework组件的标题。默认值为空。 FunctionOptions.buttonType按钮类型为ButtonType.CIRCLE时不体现。 当前只显示指定大小，宽度超过8个中文字符会进行省略。 字体大于1.75倍时默认最大显示两行。 |
@@ -535,7 +574,8 @@ Agent组件可选参数的基础对象。集成了Agent组件的共用参数，�
  
   
 
-#### FunctionOptions
+## FunctionOptions
+
 
 **支持设备：** Phone | Tablet
 
@@ -551,6 +591,7 @@ FunctionComponent功能组件的初始化参数，继承自[BaseOptions](#baseop
  
 **参数：**
   
+
 | 参数名 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | queryText | string | 否 | 是 | 使用功能组件的初始查询文本，默认值为空。 |
@@ -563,7 +604,8 @@ FunctionComponent功能组件的初始化参数，继承自[BaseOptions](#baseop
  
   
 
-#### ButtonType
+## ButtonType
+
 
 **支持设备：** Phone | Tablet
 
@@ -577,6 +619,7 @@ FunctionComponent功能组件的初始化参数，继承自[BaseOptions](#baseop
  
 **起始版本：** 6.0.0(20)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CIRCLE | 0 | 圆形按钮。 |

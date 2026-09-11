@@ -1,9 +1,9 @@
 # @ohos.systemDateTime (系统时间、时区)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-date-time
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块主要由系统时间和系统时区功能组成。开发者可以获取系统时间（含Unix纪元时间和系统启动时间）、系统日期、系统时区及自动设置时间开关状态，支持同步和异步两种获取方式，适用于需要在应用中展示当前时间、进行时间计算或处理时区相关业务的场景。
 
@@ -12,9 +12,10 @@
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { systemDateTime } from '@kit.BasicServicesKit';
@@ -22,13 +23,15 @@ import { systemDateTime } from '@kit.BasicServicesKit';
 
 
 
-#### TimeType10+
+## TimeType10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义获取时间的枚举类型。
 
 **系统能力：** SystemCapability.MiscServices.Time
+
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -38,9 +41,10 @@ import { systemDateTime } from '@kit.BasicServicesKit';
 
 
 
-#### systemDateTime.getCurrentTime(deprecated)
+## systemDateTime.getCurrentTime(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCurrentTime(isNano: boolean, callback: AsyncCallback&lt;number&gt;): void
 
@@ -54,6 +58,7 @@ getCurrentTime(isNano: boolean, callback: AsyncCallback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isNano | boolean | 是 | 返回结果是否为纳秒数。 - true：表示返回结果为纳秒数（ns）。 - false：表示返回结果为毫秒数（ms）。 |
@@ -63,6 +68,7 @@ getCurrentTime(isNano: boolean, callback: AsyncCallback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -90,9 +96,10 @@ try {
 
 
 
-#### systemDateTime.getCurrentTime(deprecated)
+## systemDateTime.getCurrentTime(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCurrentTime(callback: AsyncCallback&lt;number&gt;): void
 
@@ -106,6 +113,7 @@ getCurrentTime(callback: AsyncCallback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;number&gt; | 是 | 回调函数，返回自Unix纪元以来经过的时间戳（ms）。 |
@@ -114,6 +122,7 @@ getCurrentTime(callback: AsyncCallback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -141,9 +150,10 @@ try {
 
 
 
-#### systemDateTime.getCurrentTime(deprecated)
+## systemDateTime.getCurrentTime(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getCurrentTime(isNano?: boolean): Promise&lt;number&gt;
 
@@ -157,12 +167,14 @@ getCurrentTime(isNano?: boolean): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isNano | boolean | 否 | 返回结果是否为纳秒数，默认值为false。 - true：表示返回结果为纳秒数（ns）。 - false：表示返回结果为毫秒数（ms）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -172,6 +184,7 @@ getCurrentTime(isNano?: boolean): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -197,9 +210,10 @@ try {
 
 
 
-#### systemDateTime.getRealActiveTime(deprecated)
+## systemDateTime.getRealActiveTime(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRealActiveTime(isNano: boolean, callback: AsyncCallback&lt;number&gt;): void
 
@@ -213,6 +227,7 @@ getRealActiveTime(isNano: boolean, callback: AsyncCallback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isNano | boolean | 是 | 返回结果是否为纳秒数。 - true：表示返回结果为纳秒数（ns）。 - false：表示返回结果为毫秒数（ms）。 |
@@ -222,6 +237,7 @@ getRealActiveTime(isNano: boolean, callback: AsyncCallback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -249,9 +265,10 @@ try {
 
 
 
-#### systemDateTime.getRealActiveTime(deprecated)
+## systemDateTime.getRealActiveTime(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRealActiveTime(callback: AsyncCallback&lt;number&gt;): void
 
@@ -265,6 +282,7 @@ getRealActiveTime(callback: AsyncCallback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;number&gt; | 是 | 回调函数，返回自系统启动以来经过的时间（ms），但不包括深度睡眠时间。 |
@@ -273,6 +291,7 @@ getRealActiveTime(callback: AsyncCallback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -300,9 +319,10 @@ try {
 
 
 
-#### systemDateTime.getRealActiveTime(deprecated)
+## systemDateTime.getRealActiveTime(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRealActiveTime(isNano?: boolean): Promise&lt;number&gt;
 
@@ -316,12 +336,14 @@ getRealActiveTime(isNano?: boolean): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isNano | boolean | 否 | 返回结果是否为纳秒数，默认值为false。 - true：表示返回结果为纳秒数（ns）。 - false：表示返回结果为毫秒数（ms）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -331,6 +353,7 @@ getRealActiveTime(isNano?: boolean): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -356,9 +379,10 @@ try {
 
 
 
-#### systemDateTime.getRealTime(deprecated)
+## systemDateTime.getRealTime(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRealTime(isNano: boolean, callback: AsyncCallback&lt;number&gt;): void
 
@@ -372,6 +396,7 @@ getRealTime(isNano: boolean, callback: AsyncCallback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isNano | boolean | 是 | 返回结果是否为纳秒数。 - true：表示返回结果为纳秒数（ns）。 - false：表示返回结果为毫秒数（ms）。 |
@@ -381,6 +406,7 @@ getRealTime(isNano: boolean, callback: AsyncCallback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -408,9 +434,10 @@ try {
 
 
 
-#### systemDateTime.getRealTime(deprecated)
+## systemDateTime.getRealTime(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRealTime(callback: AsyncCallback&lt;number&gt;): void
 
@@ -424,6 +451,7 @@ getRealTime(callback: AsyncCallback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;number&gt; | 是 | 回调函数，返回自系统启动以来经过的时间（ms），包括深度睡眠时间。 |
@@ -432,6 +460,7 @@ getRealTime(callback: AsyncCallback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -459,9 +488,10 @@ try {
 
 
 
-#### systemDateTime.getRealTime(deprecated)
+## systemDateTime.getRealTime(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getRealTime(isNano?: boolean): Promise&lt;number&gt;
 
@@ -475,12 +505,14 @@ getRealTime(isNano?: boolean): Promise&lt;number&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isNano | boolean | 否 | 返回结果是否为纳秒数，默认值为false。 - true：表示返回结果为纳秒数（ns）。 - false：表示返回结果为毫秒数（ms）。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -490,6 +522,7 @@ getRealTime(isNano?: boolean): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -515,9 +548,10 @@ try {
 
 
 
-#### systemDateTime.getTime10+
+## systemDateTime.getTime10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTime(isNanoseconds?: boolean): number
 
@@ -527,12 +561,14 @@ getTime(isNanoseconds?: boolean): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isNanoseconds | boolean | 否 | 返回结果是否为纳秒数。 - true：表示返回结果为纳秒数（ns）。 - false：表示返回结果为毫秒数（ms）。 默认值为false。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -554,9 +590,10 @@ try {
 
 
 
-#### systemDateTime.getUptime10+
+## systemDateTime.getUptime10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUptime(timeType: TimeType, isNanoseconds?: boolean): number
 
@@ -566,6 +603,7 @@ getUptime(timeType: TimeType, isNanoseconds?: boolean): number
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | timeType | TimeType | 是 | 获取时间的类型，仅能为STARTUP或者ACTIVE。 |
@@ -573,6 +611,7 @@ getUptime(timeType: TimeType, isNanoseconds?: boolean): number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -582,6 +621,7 @@ getUptime(timeType: TimeType, isNanoseconds?: boolean): number
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -603,9 +643,10 @@ try {
 
 
 
-#### systemDateTime.getDate(deprecated)
+## systemDateTime.getDate(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDate(callback: AsyncCallback&lt;Date&gt;): void
 
@@ -619,6 +660,7 @@ getDate(callback: AsyncCallback&lt;Date&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;Date&gt; | 是 | 回调函数，返回当前系统日期。 |
@@ -627,6 +669,7 @@ getDate(callback: AsyncCallback&lt;Date&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -654,9 +697,10 @@ try {
 
 
 
-#### systemDateTime.getDate(deprecated)
+## systemDateTime.getDate(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDate(): Promise&lt;Date&gt;
 
@@ -670,6 +714,7 @@ getDate(): Promise&lt;Date&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;Date&gt; | Promise对象，返回当前系统日期。 |
@@ -678,6 +723,7 @@ getDate(): Promise&lt;Date&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -703,9 +749,10 @@ try {
 
 
 
-#### systemDateTime.getTimezone
+## systemDateTime.getTimezone
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTimezone(callback: AsyncCallback&lt;string&gt;): void
 
@@ -714,6 +761,7 @@ getTimezone(callback: AsyncCallback&lt;string&gt;): void
 **系统能力：** SystemCapability.MiscServices.Time
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -741,9 +789,10 @@ try {
 
 
 
-#### systemDateTime.getTimezone
+## systemDateTime.getTimezone
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTimezone(): Promise&lt;string&gt;
 
@@ -752,6 +801,7 @@ getTimezone(): Promise&lt;string&gt;
 **系统能力：** SystemCapability.MiscServices.Time
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -777,9 +827,10 @@ try {
 
 
 
-#### systemDateTime.getTimezoneSync10+
+## systemDateTime.getTimezoneSync10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getTimezoneSync(): string
 
@@ -788,6 +839,7 @@ getTimezoneSync(): string
 **系统能力：** SystemCapability.MiscServices.Time
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -809,11 +861,13 @@ try {
 
 
 
-#### 支持的系统时区
+## 支持的系统时区
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 支持的系统时区及各时区与0时区相比的标准时间偏移量（单位：h）可见下表。
+
 
 | 时区 | 偏移量 |
 | --- | --- |
@@ -852,9 +906,10 @@ try {
 
 
 
-#### systemDateTime.getAutoTimeStatus21+
+## systemDateTime.getAutoTimeStatus21+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getAutoTimeStatus(): boolean
 
@@ -864,6 +919,7 @@ getAutoTimeStatus(): boolean
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回自动设置时间开关状态。 - true：表示自动设置时间开关状态为打开。 - false：表示自动设置时间开关状态为关闭。 |
@@ -872,6 +928,7 @@ getAutoTimeStatus(): boolean
 **错误码：**
 
 以下错误码的详细介绍请参见[时间时区服务错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-time)和[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |

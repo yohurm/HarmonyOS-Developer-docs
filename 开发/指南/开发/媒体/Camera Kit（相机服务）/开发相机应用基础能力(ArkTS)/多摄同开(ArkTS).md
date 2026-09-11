@@ -1,6 +1,6 @@
 # 多摄同开(ArkTS)
 
-更新时间：2026-07-21 07:44:23
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-concurrent-open
 
@@ -11,7 +11,7 @@
 
 
 
-#### 开发步骤
+## 开发步骤
 
 详细的API说明请参考[Camera](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera)。
 

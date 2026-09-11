@@ -1,6 +1,6 @@
 # 使用Web组件的PDF文档预览能力
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-pdf-preview
 
@@ -18,7 +18,7 @@
 ```
 
 
-#### 通过不同的方式加载PDF文档
+## 通过不同的方式加载PDF文档
 
 在下面的示例中，Web组件创建时指定默认加载的网络PDF文档https://www.example.com/test.pdf。使用时需替换为真实的可访问URL。
 
@@ -95,9 +95,10 @@ Web({
 
 
 
-#### 通过配置PDF文件预览参数，控制打开预览时页面状态
+## 通过配置PDF文件预览参数，控制打开预览时页面状态
 
 当前支持如下参数：
+
 
 | 语法 | 描述 |
 | --- | --- |
@@ -123,7 +124,7 @@ https://example.com/test.pdf#pdfbackgroundcolor=ffffff
 
 
 
-#### PDF文档预览回调功能
+## PDF文档预览回调功能
 
 从API version 20开始，PDF文档预览支持两种回调功能：加载成功/失败回调和滚动到底部事件回调。
 
@@ -163,6 +164,6 @@ Web({
 
 
 
-#### 示例代码
+## 示例代码
 
  - [Web组件预览PDF文件](https://gitcode.com/harmonyos_samples/web-pdfviewer)

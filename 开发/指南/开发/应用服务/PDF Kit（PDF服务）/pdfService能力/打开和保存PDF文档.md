@@ -1,6 +1,6 @@
 # 打开和保存PDF文档
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pdf-open-document
 
@@ -13,7 +13,8 @@ pdfService和PdfView都可实现打开和保存文档，使用场景上有如下
 
 
 
-#### 接口说明
+## 接口说明
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -23,7 +24,7 @@ pdfService和PdfView都可实现打开和保存文档，使用场景上有如下
 
 
 
-#### 示例代码
+## 示例代码
 1. 调用loadDocument方法，加载PDF文档。
 2. 在【Save As】和【Save】两个按钮中调用saveDocument方法，分别实现了另存为PDF文档和保存覆盖源PDF文档的两种方式。
 

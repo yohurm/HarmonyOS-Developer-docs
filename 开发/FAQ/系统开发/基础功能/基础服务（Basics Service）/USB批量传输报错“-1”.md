@@ -21,7 +21,7 @@
 ```text
 import { usbManager } from '@kit.BasicServicesKit';
 
-// 获取USB设备列表
+<em>// </em><em>获取USB设备列表</em>
 let devicesList: Array<usbManager.USBDevice> = usbManager.getDevices();
 console.info(`devicesList = ${devicesList}`);
 ```

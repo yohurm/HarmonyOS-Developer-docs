@@ -70,19 +70,19 @@ export default class EntryAbility extends UIAbility {
 
 
   onWindowStageDestroy(): void {
-    // Main window is destroyed, release UI related resources
+  <em>  // Main window is destroyed, release UI related resources</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
   }
 
 
   onForeground(): void {
-    // Ability has brought to foreground
+ <em>   // Ability has brought to foreground</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onForeground');
   }
 
 
   onBackground(): void {
-    // Ability has back to background
+<em>    // Ability has back to background</em>
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onBackground');
   }
 };

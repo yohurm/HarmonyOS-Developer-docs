@@ -1,6 +1,6 @@
 # app.json5配置文件
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-configuration-file
 
@@ -11,7 +11,7 @@
 
 
 
-#### 配置文件示例
+## 配置文件示例
 
 先通过一个示例，了解app.json5配置文件的结构和内容。
 
@@ -73,11 +73,12 @@
 
 
 
-#### 配置文件标签
+## 配置文件标签
 
 app.json5配置文件包含以下标签。
 
 **表1** app.json5配置文件标签说明
+
 
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |
@@ -133,11 +134,12 @@ app.json5配置文件包含以下标签。
 
 
 
-#### appEnvironments标签
+## appEnvironments标签
 
 此标签标识应用配置的环境变量。应用运行时有时会依赖一些三方库，这些三方库会使用到一些自定义的环境变量，为了不修改三方库的实现逻辑，可以在工程的配置文件中设置自定义的环境变量，以供运行时使用。
 
 **表2** appEnvironments标签说明
+
 
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |
@@ -164,11 +166,12 @@ appEnvironments标签示例：
 
 
 
-#### multiAppMode标签
+## multiAppMode标签
 
 应用多开模式。
 
 **表3** multiAppMode标签说明
+
 
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |
@@ -193,7 +196,7 @@ multiAppMode标签示例：
 
 
 
-#### configuration标签
+## configuration标签
 
 该标签对应一个profile文件资源，对应文件用于配置应用字体大小是否跟随系统变更。
 
@@ -212,6 +215,7 @@ configuration标签示例：
 在开发视图的AppScope/resources/base/profile下面定义配置文件configuration.json，其中文件名"configuration"可自定义，需要和configuration标签指定的文件资源对应。配置文件中列举了设置当前应用字体大小跟随系统变化所需要的属性。
 
 **表4** configuration标签说明
+
 
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |
@@ -232,13 +236,14 @@ configuration标签示例：
 
 
 
-#### alternateIcons标签
+## alternateIcons标签
 
 该标签用于配置应用的备选图标列表，支持应用在运行时动态切换图标。开发者可以预先配置多个备选图标，应用可根据用户偏好、节日主题、品牌活动等场景动态更换应用图标。
 
 从API版本26.0.0开始，支持该标签。
 
 **表5** alternateIcons标签说明
+
 
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |

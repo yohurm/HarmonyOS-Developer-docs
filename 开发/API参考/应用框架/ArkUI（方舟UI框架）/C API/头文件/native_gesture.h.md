@@ -1,15 +1,16 @@
 # native_gesture.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-gesture-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-提供NativeGesture接口的类型定义，支持手势识别器、手势事件、手势打断、触摸识别器、手势收集干预以及手势参数查询与设置等能力，适用于应用通过Native接口处理手势识别、手势冲突和手势收集干预等场景。手势识别管线按优先级和竞争规则进行识别，可通过打断回调拦截手势；手势收集干预机制允许在手势收集阶段动态干预手势的收集流程。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+提供NativeGesture接口的类型定义，支持手势识别器、手势事件、手势打断、触摸识别器、手势收集干预以及手势参数查询与设置等能力，适用于应用通过Native接口处理手势识别、手势冲突和手势收集干预等场景。
  
 **引用文件：** <arkui/native_gesture.h>
  
@@ -23,47 +24,52 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
-| ArkUI_NativeGestureAPI_1 | ArkUI_NativeGestureAPI_1 | 提供创建敲击、长按、滑动、捏合、旋转、快滑手势及手势组的接口，并支持绑定手势、移除手势、设置手势打断回调和并行内部手势回调，用于配置和管理组件的触控交互识别与事件处理。使用该模块配置手势时，推荐按以下流程操作：调用createTapGesture等接口创建手势识别器，调用setGestureEventTarget注册手势事件回调，再调用addGestureToNode将手势识别器绑定至组件节点；不再使用该手势时，调用dispose释放手势资源，如需先解除节点绑定，可在调用dispose()前调用removeGestureFromNode。对于手势竞争场景，可通过手势优先级、屏蔽模式或setGestureInterrupterToNode配置响应策略；对于组件内部手势与外部自定义手势需要并行识别的场景，可调用setInnerGestureParallelTo设置并行内部手势事件回调。 |
-| ArkUI_NativeGestureAPI_2 | - | 定义手势模块接口集合，在ArkUI_NativeGestureAPI_1的基础上扩展提供设置手势打断事件回调函数的能力，用于在手势识别过程中根据回调结果继续或打断手势。开发者可以通过gestureApi1访问基础手势接口，配合setGestureInterrupterToNode处理手势打断。 |
-| ArkUI_GestureRecognizer | ArkUI_GestureRecognizer | 提供手势组件实例对象定义，用于在ArkUI手势识别接口中表示手势识别器对象。手势识别器绑定到UI组件后监听触摸事件，并在满足对应手势类型的识别条件时通过回调通知开发者；不同类型的识别器可用于敲击、长按、拖动、捏合、旋转和快滑等手势。详细机制和使用方式请参见native_gesture.h中的手势接口说明。 |
-| ArkUI_GestureInterruptInfo | ArkUI_GestureInterruptInfo | 定义手势打断事件数据类型，用于向手势打断回调传递手势识别器、响应链手势识别器和触摸识别器等信息。回调可根据这些信息返回继续或拒绝结果。手势打断机制和接口请参见native_gesture.h中的手势打断接口说明。 |
+| ArkUI_NativeGestureAPI_1 | ArkUI_NativeGestureAPI_1 | 提供创建敲击、长按、滑动、捏合、旋转、快滑手势及手势组的接口，并支持绑定手势、移除手势、设置手势打断回调和并行内部手势回调，用于配置和管理组件的触控交互识别与事件处理。 使用该模块配置手势时，推荐按以下流程操作：调用createTapGesture等接口创建手势识别器，调用setGestureEventTarget注册手势事件回调，再调用addGestureToNode将手势识别器绑定至组件节点；不再使用该手势时，先调用removeGestureFromNode解除节点绑定，再调用dispose释放手势资源。对于手势竞争场景，可通过手势优先级、屏蔽模式或setGestureInterrupterToNode配置响应策略；对于组件内部手势与外部自定义手势需要并行识别的场景，可调用setInnerGestureParallelTo设置并行内部手势事件回调。 |
+| ArkUI_NativeGestureAPI_2 | - | 定义手势模块接口集合，在ArkUI_NativeGestureAPI_1的基础上扩展提供设置手势打断事件回调的能力，用于在手势处理过程中根据回调结果继续或打断手势。开发者可以通过gestureApi1访问基础手势接口，配合setGestureInterrupterToNode实现完整的手势打断处理功能。 |
+| ArkUI_GestureRecognizer | ArkUI_GestureRecognizer | 提供手势组件实例对象定义，用于在ArkUI手势识别相关接口中表示手势识别器对象，帮助开发者理解和使用组件手势识别能力。 |
+| ArkUI_GestureInterruptInfo | ArkUI_GestureInterruptInfo | 提供手势打断信息类型对象定义，用于在手势打断场景中表示与打断处理相关的信息。关于手势打断信息的相关接口，请参见native_gesture.h。 |
 | ArkUI_GestureEvent | ArkUI_GestureEvent | 提供手势事件数据类型对象定义，用于在手势事件处理过程中承载和传递手势事件相关数据，支持获取手势事件类型、坐标、时间戳等关键信息；适用于需要处理触摸手势交互的场景，如点击、长按、拖动、缩放等手势识别与响应；开发者可通过相关手势事件接口获取事件信息。 |
-| ArkUI_GestureEventTargetInfo | ArkUI_GestureEventTargetInfo | 定义手势事件目标信息类型，用于在手势处理过程中查询手势事件目标对象的滚动开始、滚动结束等状态，主要适用于滚动类容器组件。开发者可通过OH_ArkUI_GetGestureEventTargetInfo从手势识别器中获取该对象，并通过目标信息查询接口读取目标状态。 |
-| ArkUI_ParallelInnerGestureEvent | ArkUI_ParallelInnerGestureEvent | 定义并行内部手势事件。该结构体作为setInnerGestureParallelTo回调函数的参数传递，包含当前内置手势识别器、响应链中的冲突手势识别器和用户自定义数据，供回调选择需要与当前内置手势并行识别的对象。 |
-| ArkUI_TouchRecognizer | ArkUI_TouchRecognizer | 定义触摸识别器。触摸识别器用于表示手势打断或手势收集拦截信息中返回的触摸事件处理对象，可通过相关接口获取其节点句柄或取消触摸事件。具体接口请参见native_gesture.h。 |
-| ArkUI_TouchRecognizer* | ArkUI_TouchRecognizerHandle | 定义触摸识别器句柄，用于表示触摸识别器对象，并在手势打断、手势收集拦截等接口中传递该对象。具体接口请参见native_gesture.h。 |
+| ArkUI_GestureEventTargetInfo | ArkUI_GestureEventTargetInfo | 提供手势事件目标信息类型对象定义，用于表示手势事件关联的目标信息，便于在手势处理过程中获取目标对象的滚动状态等相关信息。 |
+| ArkUI_ParallelInnerGestureEvent | ArkUI_ParallelInnerGestureEvent | 定义并行内部手势事件。该结构体作为setInnerGestureParallelTo的回调函数的参数传递，用于将系统内置手势（如Scroll、List等容器组件的内置滑动手势）与响应链上其他组件设置为并行关系的场景。 |
+| ArkUI_TouchRecognizer | ArkUI_TouchRecognizer | 定义触摸识别器。触摸识别器是底层触摸事件的识别单元，负责检测和处理触摸按下、移动、抬起等原始触摸事件。 |
+| ArkUI_TouchRecognizer* | ArkUI_TouchRecognizerHandle | 定义触摸识别器句柄，用于表示触摸识别器对象，并在触摸识别或手势处理接口中传递和管理该对象。适用于自定义手势识别、多点触控事件处理，以及需要对触摸事件进行精细化拦截和分发控制的场景。 |
 | ArkUI_TouchRecognizerHandle* | ArkUI_TouchRecognizerHandleArray | 定义触摸识别器句柄数组，用于在批量管理多个触摸识别器时使用，例如从手势打断信息中获取多个触摸识别器句柄。 |
-| ArkUI_GestureRecognizer* | ArkUI_GestureRecognizerHandle | 定义手势识别器句柄类型，是ArkUI_GestureRecognizer指针类型的别名封装，用于在ArkUI原生手势接口中表示手势识别器对象。该句柄可在手势识别器创建、属性配置和事件回调监听等场景中作为对象引用，便于在Native层统一传递、管理和操作手势识别器；获取和使用方式请参见native_gesture.h。 |
-| ArkUI_GestureRecognizerHandle* | ArkUI_GestureRecognizerHandleArray | 定义手势识别器句柄数组类型，用于表示或传递多个手势识别器句柄，例如获取响应链中的手势识别器集合。详细机制和使用方式请参见native_gesture.h中的手势接口说明。 |
-| ArkUI_NativeGestureAPI_3 | ArkUI_NativeGestureAPI_3 | 定义手势模块接口集合，包含ArkUI_NativeGestureAPI_1、ArkUI_NativeGestureAPI_2结构体中的手势接口及新增手势接口。该接口集合支持为ArkUI节点设置并行手势事件回调。回调可从响应链中的冲突手势识别器中选择需要与当前手势并行识别的对象。相关事件数据请参见ArkUI_ParallelGestureEvent。 |
-| ArkUI_ParallelGestureEvent | ArkUI_ParallelGestureEvent | 定义并行手势事件。该结构体作为setGestureParallelTo回调函数的参数传递，包含当前手势识别器、响应链中的冲突手势识别器和用户自定义数据，供回调选择需要与当前手势并行识别的对象。 |
+| ArkUI_GestureRecognizer* | ArkUI_GestureRecognizerHandle | 提供手势识别器句柄类型定义，用于在ArkUI原生手势相关接口中表示手势识别器对象。 |
+| ArkUI_GestureRecognizerHandle* | ArkUI_GestureRecognizerHandleArray | 提供手势识别器句柄类型数组对象定义，用于在需要表示或传递多个手势识别器句柄的场景中使用。 |
+| ArkUI_NativeGestureAPI_3 | ArkUI_NativeGestureAPI_3 | 定义手势模块接口集合。包含ArkUI_NativeGestureAPI_1、ArkUI_NativeGestureAPI_2结构体中的手势接口及新增手势接口，支持为ArkUI节点设置并行手势事件回调，适用于需要进行并行手势识别处理的交互场景。 |
+| ArkUI_ParallelGestureEvent | ArkUI_ParallelGestureEvent | 定义并行手势事件。该结构体作为setGestureParallelTo回调函数的参数传递，用于在触发触摸测试时，将开发者自定义手势与响应链上其他组件的手势设置为并行关系的场景。 |
  
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | ArkUI_GestureEventActionType | ArkUI_GestureEventActionType | 定义手势事件类型。 |
-| ArkUI_GesturePriority | ArkUI_GesturePriority | 定义手势优先级。NORMAL适用于默认手势识别场景；PRIORITY适用于需要确保某个手势优先响应的场景（如优先响应点击而非滑动）；PARALLEL适用于多个手势需要同时独立响应的场景（如同时识别捏合和旋转）。 |
-| ArkUI_GroupGestureMode | ArkUI_GroupGestureMode | 定义手势组事件模式。SEQUENTIAL_GROUP适用于需要按步骤依次识别手势的场景（如先长按再滑动）；PARALLEL_GROUP适用于多个手势需要独立同时识别的场景（如同时监听捏合和旋转）；EXCLUSIVE_GROUP适用于多个手势互斥竞争、只需一个成功的场景（如滑动和长按互斥）。 |
+| ArkUI_GesturePriority | ArkUI_GesturePriority | 定义手势优先级。 |
+| ArkUI_GroupGestureMode | ArkUI_GroupGestureMode | 定义手势组事件模式。 |
 | ArkUI_GestureDirection | ArkUI_GestureDirection | 定义滑动手势方向。 |
-| ArkUI_GestureMask | ArkUI_GestureMask | 定义手势屏蔽模式。NORMAL_GESTURE_MASK适用于默认场景，子组件手势按正常顺序识别；IGNORE_INTERNAL_GESTURE_MASK适用于父组件需要独占手势控制的场景（如全屏滑动时屏蔽子组件的手势干扰），会屏蔽子组件包括系统内置的手势。 |
+| ArkUI_GestureMask | ArkUI_GestureMask | 定义手势屏蔽模式。 |
 | ArkUI_GestureRecognizerType | ArkUI_GestureRecognizerType | 定义手势类型。 |
 | ArkUI_GestureInterruptResult | ArkUI_GestureInterruptResult | 定义手势打断结果。 |
 | ArkUI_GestureRecognizerState | ArkUI_GestureRecognizerState | 定义手势识别器状态。 |
@@ -72,10 +78,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | typedef void (*ArkUI_GestureRecognizerDisposeNotifyCallback)(ArkUI_GestureRecognizer* recognizer, void* userData) | ArkUI_GestureRecognizerDisposeNotifyCallback | 定义手势识别器析构通知事件的回调函数类型。 |
@@ -85,7 +93,7 @@
 | int32_t OH_ArkUI_GestureInterruptInfo_GetSystemRecognizerType(const ArkUI_GestureInterruptInfo* event) | - | 当要触发的是系统内置手势时，使用该方法可返回该系统内置手势的类型。 |
 | int32_t OH_ArkUI_GestureInterruptInfo_GetTouchRecognizers(const ArkUI_GestureInterruptInfo* info,ArkUI_TouchRecognizerHandleArray* recognizers, int32_t* size) | - | 从手势打断信息中获取触摸识别器。 |
 | ArkUI_NodeHandle OH_ArkUI_TouchRecognizer_GetNodeHandle(const ArkUI_TouchRecognizerHandle recognizer) | - | 获取触摸识别器对应的组件句柄。 |
-| int32_t OH_ArkUI_TouchRecognizer_CancelTouch(ArkUI_TouchRecognizerHandle recognizer, ArkUI_GestureInterruptInfo* info) | - | 在手势打断回调中向指定的触摸识别器发送取消触摸的事件。适用于嵌套滚动等场景中，当父组件需要接管滚动控制时，可通过此接口取消子组件触摸识别器的触摸事件，避免手势冲突。 |
+| int32_t OH_ArkUI_TouchRecognizer_CancelTouch(ArkUI_TouchRecognizerHandle recognizer, ArkUI_GestureInterruptInfo* info) | - | 在手势打断回调中向指定的触摸识别器发送取消触摸的事件。 |
 | ArkUI_GestureEventActionType OH_ArkUI_GestureEvent_GetActionType(const ArkUI_GestureEvent* event) | - | 返回手势事件类型。 |
 | const ArkUI_UIInputEvent* OH_ArkUI_GestureEvent_GetRawInputEvent(const ArkUI_GestureEvent* event) | - | 返回手势的原始输入事件。 |
 | int32_t OH_ArkUI_LongPress_GetRepeatCount(const ArkUI_GestureEvent* event) | - | 返回是否为重复触发事件。 |
@@ -109,10 +117,10 @@
 | int32_t OH_ArkUI_GetGestureEventTargetInfo(ArkUI_GestureRecognizer* recognizer, ArkUI_GestureEventTargetInfo** info) | - | 获取手势事件目标信息。 |
 | int32_t OH_ArkUI_GestureEventTargetInfo_IsScrollBegin(ArkUI_GestureEventTargetInfo* info, bool* ret) | - | 当前滚动类容器组件是否在顶部。 |
 | int32_t OH_ArkUI_GestureEventTargetInfo_IsScrollEnd(ArkUI_GestureEventTargetInfo* info, bool* ret) | - | 当前滚动类容器组件是否在底部。 |
-| int32_t OH_ArkUI_GetPanGestureDirectionMask(ArkUI_GestureRecognizer* recognizer,ArkUI_GestureDirectionMask* directionMask) | - | 获取滑动手势的滑动方向。建议优先使用OH_ArkUI_GetGestureParam_DirectMask（API version 18），该接口为统一参数查询接口；OH_ArkUI_GetPanGestureDirectionMask为早期接口（API version 12），功能与OH_ArkUI_GetGestureParam_DirectMask相同。 |
+| int32_t OH_ArkUI_GetPanGestureDirectionMask(ArkUI_GestureRecognizer* recognizer,ArkUI_GestureDirectionMask* directionMask) | - | 获取滑动手势的滑动方向。 |
 | bool OH_ArkUI_IsBuiltInGesture(ArkUI_GestureRecognizer* recognizer) | - | 当前手势是否为系统内置手势。 |
 | int32_t OH_ArkUI_GetGestureTag(ArkUI_GestureRecognizer* recognizer, char* buffer, int32_t bufferSize, int32_t* result) | - | 获取手势识别器的标记。 |
-| int32_t OH_ArkUI_GetGestureBindNodeId(ArkUI_GestureRecognizer* recognizer, char* nodeId, int32_t size,int32_t* result) | - | 获取手势识别器绑定的组件的ID（字符串形式，即开发者在ArkUI组件上设置的nodeId属性值）。如需获取系统自动分配的整数形式唯一标识，请使用OH_ArkUI_GetGestureBindNodeUniqueId。 |
+| int32_t OH_ArkUI_GetGestureBindNodeId(ArkUI_GestureRecognizer* recognizer, char* nodeId, int32_t size,int32_t* result) | - | 获取手势识别器绑定的组件的ID。 |
 | bool OH_ArkUI_IsGestureRecognizerValid(ArkUI_GestureRecognizer* recognizer) | - | 当前手势识别器是否有效。 |
 | void* OH_ArkUI_ParallelInnerGestureEvent_GetUserData(ArkUI_ParallelInnerGestureEvent* event) | - | 获取并行内置手势事件中的用户自定义数据。 |
 | ArkUI_GestureRecognizer* OH_ArkUI_ParallelInnerGestureEvent_GetCurrentRecognizer(ArkUI_ParallelInnerGestureEvent* event) | - | 获取并行内置手势事件中的当前手势识别器。 |
@@ -144,10 +152,12 @@
  
   
 
-#### 变量
+### 变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | uint32_t | ArkUI_GestureDirectionMask | 定义滑动手势方向集合。 例：ArkUI_GestureDirectionMask directions = GESTURE_DIRECTION_LEFT \| GESTURE_DIRECTION_RIGHT。 directions 表明支持左右水平方向。 |
@@ -156,10 +166,12 @@
  
   
 
-#### 示例
+### 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | NdkGestureSetting | 从API version 20开始，新增手势绑定、手势移除以及自定义手势判断的示例。 |
@@ -169,15 +181,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### ArkUI_GestureEventActionType
+### ArkUI_GestureEventActionType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_GestureEventActionType
@@ -189,6 +203,7 @@ enum ArkUI_GestureEventActionType
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | GESTURE_EVENT_ACTION_ACCEPT = 0x01 | 手势事件触发。 |
@@ -199,9 +214,10 @@ enum ArkUI_GestureEventActionType
  
   
 
-#### ArkUI_GesturePriority
+### ArkUI_GesturePriority
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_GesturePriority
@@ -209,10 +225,11 @@ enum ArkUI_GesturePriority
  
 **描述：**
  
-定义手势优先级。NORMAL适用于默认手势识别场景；PRIORITY适用于需要确保某个手势优先响应的场景（如优先响应点击而非滑动）；PARALLEL适用于多个手势需要同时独立响应的场景（如同时识别捏合和旋转）。
+定义手势优先级。
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | NORMAL = 0 | 正常手势。 |
@@ -222,9 +239,10 @@ enum ArkUI_GesturePriority
  
   
 
-#### ArkUI_GroupGestureMode
+### ArkUI_GroupGestureMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_GroupGestureMode
@@ -232,10 +250,11 @@ enum ArkUI_GroupGestureMode
  
 **描述：**
  
-定义手势组事件模式。SEQUENTIAL_GROUP适用于需要按步骤依次识别手势的场景（如先长按再滑动）；PARALLEL_GROUP适用于多个手势需要独立同时识别的场景（如同时监听捏合和旋转）；EXCLUSIVE_GROUP适用于多个手势互斥竞争、只需一个成功的场景（如滑动和长按互斥）。
+定义手势组事件模式。
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | SEQUENTIAL_GROUP = 0 | 顺序手势模式，按照注册顺序识别手势，直到所有手势识别成功。若有识别失败，后续识别均失败。仅有最后一个手势响应结束事件。 |
@@ -245,9 +264,10 @@ enum ArkUI_GroupGestureMode
  
   
 
-#### ArkUI_GestureDirection
+### ArkUI_GestureDirection
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_GestureDirection
@@ -259,6 +279,7 @@ enum ArkUI_GestureDirection
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | GESTURE_DIRECTION_ALL = 0b1111 | 所有方向。 |
@@ -273,9 +294,10 @@ enum ArkUI_GestureDirection
  
   
 
-#### ArkUI_GestureMask
+### ArkUI_GestureMask
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_GestureMask
@@ -283,10 +305,11 @@ enum ArkUI_GestureMask
  
 **描述：**
  
-定义手势屏蔽模式。NORMAL_GESTURE_MASK适用于默认场景，子组件手势按正常顺序识别；IGNORE_INTERNAL_GESTURE_MASK适用于父组件需要独占手势控制的场景（如全屏滑动时屏蔽子组件的手势干扰），会屏蔽子组件包括系统内置的手势。
+定义手势屏蔽模式。
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | NORMAL_GESTURE_MASK = 0 | 不屏蔽子组件的手势，按照默认手势识别顺序进行识别。 |
@@ -295,9 +318,10 @@ enum ArkUI_GestureMask
  
   
 
-#### ArkUI_GestureRecognizerType
+### ArkUI_GestureRecognizerType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_GestureRecognizerType
@@ -309,6 +333,7 @@ enum ArkUI_GestureRecognizerType
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | TAP_GESTURE = 0 | 敲击手势。 |
@@ -324,9 +349,10 @@ enum ArkUI_GestureRecognizerType
  
   
 
-#### OH_ArkUI_GestureCollectIntervention
+### OH_ArkUI_GestureCollectIntervention
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_ArkUI_GestureCollectIntervention
@@ -338,6 +364,7 @@ enum OH_ArkUI_GestureCollectIntervention
  
 **起始版本：** 26.0.0
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_ARKUI_GESTURE_COLLECT_INTERVENTION_CONTINUE = 0 | 继续正常的手势和事件收集流程。不进行任何干预。 |
@@ -349,9 +376,10 @@ enum OH_ArkUI_GestureCollectIntervention
  
   
 
-#### ArkUI_GestureInterruptResult
+### ArkUI_GestureInterruptResult
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_GestureInterruptResult
@@ -363,6 +391,7 @@ enum ArkUI_GestureInterruptResult
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | GESTURE_INTERRUPT_RESULT_CONTINUE = 0 | 手势继续。 |
@@ -371,9 +400,10 @@ enum ArkUI_GestureInterruptResult
  
   
 
-#### ArkUI_GestureRecognizerState
+### ArkUI_GestureRecognizerState
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_GestureRecognizerState
@@ -385,6 +415,7 @@ enum ArkUI_GestureRecognizerState
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ARKUI_GESTURE_RECOGNIZER_STATE_READY = 0 | 准备状态。 |
@@ -397,15 +428,17 @@ enum ArkUI_GestureRecognizerState
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### ArkUI_GestureRecognizerDisposeNotifyCallback()
+### ArkUI_GestureRecognizerDisposeNotifyCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef void (*ArkUI_GestureRecognizerDisposeNotifyCallback)(ArkUI_GestureRecognizer* recognizer, void* userData)
@@ -419,6 +452,7 @@ typedef void (*ArkUI_GestureRecognizerDisposeNotifyCallback)(ArkUI_GestureRecogn
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_GestureRecognizer* recognizer | 手势识别器指针。 |
@@ -427,9 +461,10 @@ typedef void (*ArkUI_GestureRecognizerDisposeNotifyCallback)(ArkUI_GestureRecogn
  
   
 
-#### OH_ArkUI_GestureInterruptInfo_GetSystemFlag()
+### OH_ArkUI_GestureInterruptInfo_GetSystemFlag()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_ArkUI_GestureInterruptInfo_GetSystemFlag(const ArkUI_GestureInterruptInfo* event)
@@ -443,6 +478,7 @@ bool OH_ArkUI_GestureInterruptInfo_GetSystemFlag(const ArkUI_GestureInterruptInf
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_GestureInterruptInfo* event | 手势打断回调事件。 |
@@ -450,6 +486,7 @@ bool OH_ArkUI_GestureInterruptInfo_GetSystemFlag(const ArkUI_GestureInterruptInf
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | true: 系统内置手势； false: 非系统内置手势。 |
@@ -457,9 +494,10 @@ bool OH_ArkUI_GestureInterruptInfo_GetSystemFlag(const ArkUI_GestureInterruptInf
  
   
 
-#### OH_ArkUI_GestureInterruptInfo_GetRecognizer()
+### OH_ArkUI_GestureInterruptInfo_GetRecognizer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_GestureRecognizer* OH_ArkUI_GestureInterruptInfo_GetRecognizer(const ArkUI_GestureInterruptInfo* event)
@@ -473,6 +511,7 @@ ArkUI_GestureRecognizer* OH_ArkUI_GestureInterruptInfo_GetRecognizer(const ArkUI
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_GestureInterruptInfo* event | 手势打断回调事件。 |
@@ -480,6 +519,7 @@ ArkUI_GestureRecognizer* OH_ArkUI_GestureInterruptInfo_GetRecognizer(const ArkUI
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_GestureRecognizer* | 被打断的手势指针。 |
@@ -487,9 +527,10 @@ ArkUI_GestureRecognizer* OH_ArkUI_GestureInterruptInfo_GetRecognizer(const ArkUI
  
   
 
-#### OH_ArkUI_GestureInterruptInfo_GetGestureEvent()
+### OH_ArkUI_GestureInterruptInfo_GetGestureEvent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_GestureEvent* OH_ArkUI_GestureInterruptInfo_GetGestureEvent(const ArkUI_GestureInterruptInfo* event)
@@ -503,6 +544,7 @@ ArkUI_GestureEvent* OH_ArkUI_GestureInterruptInfo_GetGestureEvent(const ArkUI_Ge
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_GestureInterruptInfo* event | 手势打断回调事件。 |
@@ -510,6 +552,7 @@ ArkUI_GestureEvent* OH_ArkUI_GestureInterruptInfo_GetGestureEvent(const ArkUI_Ge
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_GestureEvent* | 打断的手势事件数据。 |
@@ -517,9 +560,10 @@ ArkUI_GestureEvent* OH_ArkUI_GestureInterruptInfo_GetGestureEvent(const ArkUI_Ge
  
   
 
-#### OH_ArkUI_GestureInterruptInfo_GetSystemRecognizerType()
+### OH_ArkUI_GestureInterruptInfo_GetSystemRecognizerType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_GestureInterruptInfo_GetSystemRecognizerType(const ArkUI_GestureInterruptInfo* event)
@@ -533,6 +577,7 @@ int32_t OH_ArkUI_GestureInterruptInfo_GetSystemRecognizerType(const ArkUI_Gestur
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_GestureInterruptInfo* event | 手势打断回调事件。 |
@@ -540,6 +585,7 @@ int32_t OH_ArkUI_GestureInterruptInfo_GetSystemRecognizerType(const ArkUI_Gestur
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 要触发的系统内置手势对应的手势类型，取值由ArkUI_GestureRecognizerType定义。如果当前触发的手势不是系统内置手势，则返回-1。 |
@@ -547,9 +593,10 @@ int32_t OH_ArkUI_GestureInterruptInfo_GetSystemRecognizerType(const ArkUI_Gestur
  
   
 
-#### OH_ArkUI_GestureInterruptInfo_GetTouchRecognizers()
+### OH_ArkUI_GestureInterruptInfo_GetTouchRecognizers()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_GestureInterruptInfo_GetTouchRecognizers(const ArkUI_GestureInterruptInfo* info,ArkUI_TouchRecognizerHandleArray* recognizers, int32_t* size)
@@ -563,6 +610,7 @@ int32_t OH_ArkUI_GestureInterruptInfo_GetTouchRecognizers(const ArkUI_GestureInt
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_GestureInterruptInfo* info | 指向手势打断信息的指针。 |
@@ -572,6 +620,7 @@ int32_t OH_ArkUI_GestureInterruptInfo_GetTouchRecognizers(const ArkUI_GestureInt
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 返回 ARKUI_ERROR_CODE_NO_ERROR 表示成功。 返回 ARKUI_ERROR_CODE_PARAM_INVALID 表示参数错误。 |
@@ -579,9 +628,10 @@ int32_t OH_ArkUI_GestureInterruptInfo_GetTouchRecognizers(const ArkUI_GestureInt
  
   
 
-#### OH_ArkUI_TouchRecognizer_GetNodeHandle()
+### OH_ArkUI_TouchRecognizer_GetNodeHandle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_NodeHandle OH_ArkUI_TouchRecognizer_GetNodeHandle(const ArkUI_TouchRecognizerHandle recognizer)
@@ -595,6 +645,7 @@ ArkUI_NodeHandle OH_ArkUI_TouchRecognizer_GetNodeHandle(const ArkUI_TouchRecogni
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_TouchRecognizerHandle recognizer | 触摸识别器的句柄。 |
@@ -602,6 +653,7 @@ ArkUI_NodeHandle OH_ArkUI_TouchRecognizer_GetNodeHandle(const ArkUI_TouchRecogni
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_NodeHandle | 触摸识别器对应的组件句柄。 |
@@ -609,9 +661,10 @@ ArkUI_NodeHandle OH_ArkUI_TouchRecognizer_GetNodeHandle(const ArkUI_TouchRecogni
  
   
 
-#### OH_ArkUI_TouchRecognizer_CancelTouch()
+### OH_ArkUI_TouchRecognizer_CancelTouch()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_TouchRecognizer_CancelTouch(ArkUI_TouchRecognizerHandle recognizer, ArkUI_GestureInterruptInfo* info)
@@ -619,12 +672,13 @@ int32_t OH_ArkUI_TouchRecognizer_CancelTouch(ArkUI_TouchRecognizerHandle recogni
  
 **描述：**
  
-在手势打断回调中向指定的触摸识别器发送取消触摸的事件。适用于嵌套滚动等场景中，当父组件需要接管滚动控制时，可通过此接口取消子组件触摸识别器的触摸事件，避免手势冲突。
+在手势打断回调中向指定的触摸识别器发送取消触摸的事件。
  
 **起始版本：** 15
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_TouchRecognizerHandle recognizer | 触摸识别器的句柄。 |
@@ -633,6 +687,7 @@ int32_t OH_ArkUI_TouchRecognizer_CancelTouch(ArkUI_TouchRecognizerHandle recogni
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 返回 ARKUI_ERROR_CODE_NO_ERROR 成功。 返回 ARKUI_ERROR_CODE_PARAM_INVALID 参数错误。 |
@@ -640,9 +695,10 @@ int32_t OH_ArkUI_TouchRecognizer_CancelTouch(ArkUI_TouchRecognizerHandle recogni
  
   
 
-#### OH_ArkUI_GestureEvent_GetActionType()
+### OH_ArkUI_GestureEvent_GetActionType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_GestureEventActionType OH_ArkUI_GestureEvent_GetActionType(const ArkUI_GestureEvent* event)
@@ -656,6 +712,7 @@ ArkUI_GestureEventActionType OH_ArkUI_GestureEvent_GetActionType(const ArkUI_Ges
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_GestureEvent* event | 手势事件。 |
@@ -663,6 +720,7 @@ ArkUI_GestureEventActionType OH_ArkUI_GestureEvent_GetActionType(const ArkUI_Ges
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_GestureEventActionType | 手势事件类型。 |
@@ -670,9 +728,10 @@ ArkUI_GestureEventActionType OH_ArkUI_GestureEvent_GetActionType(const ArkUI_Ges
  
   
 
-#### OH_ArkUI_GestureEvent_GetRawInputEvent()
+### OH_ArkUI_GestureEvent_GetRawInputEvent()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 const ArkUI_UIInputEvent* OH_ArkUI_GestureEvent_GetRawInputEvent(const ArkUI_GestureEvent* event)
@@ -686,6 +745,7 @@ const ArkUI_UIInputEvent* OH_ArkUI_GestureEvent_GetRawInputEvent(const ArkUI_Ges
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_GestureEvent* event | 手势事件。 |
@@ -693,6 +753,7 @@ const ArkUI_UIInputEvent* OH_ArkUI_GestureEvent_GetRawInputEvent(const ArkUI_Ges
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | const ArkUI_UIInputEvent* | 手势事件的原始输入事件。 |
@@ -700,9 +761,10 @@ const ArkUI_UIInputEvent* OH_ArkUI_GestureEvent_GetRawInputEvent(const ArkUI_Ges
  
   
 
-#### OH_ArkUI_LongPress_GetRepeatCount()
+### OH_ArkUI_LongPress_GetRepeatCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_LongPress_GetRepeatCount(const ArkUI_GestureEvent* event)
@@ -716,6 +778,7 @@ int32_t OH_ArkUI_LongPress_GetRepeatCount(const ArkUI_GestureEvent* event)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_GestureEvent* event | 手势事件。 |
@@ -723,6 +786,7 @@ int32_t OH_ArkUI_LongPress_GetRepeatCount(const ArkUI_GestureEvent* event)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 是否为重复触发事件。1表示为重复触发事件，0表示为非重复触发事件。 |
@@ -730,9 +794,10 @@ int32_t OH_ArkUI_LongPress_GetRepeatCount(const ArkUI_GestureEvent* event)
  
   
 
-#### OH_ArkUI_PanGesture_GetVelocity()
+### OH_ArkUI_PanGesture_GetVelocity()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 float OH_ArkUI_PanGesture_GetVelocity(const ArkUI_GestureEvent* event)
@@ -746,6 +811,7 @@ float OH_ArkUI_PanGesture_GetVelocity(const ArkUI_GestureEvent* event)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_GestureEvent* event | 手势事件。 |
@@ -753,6 +819,7 @@ float OH_ArkUI_PanGesture_GetVelocity(const ArkUI_GestureEvent* event)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | float | 当前手势主方向速度，为xy轴方向速度的平方和的算术平方根，单位px/s。 |
@@ -760,9 +827,10 @@ float OH_ArkUI_PanGesture_GetVelocity(const ArkUI_GestureEvent* event)
  
   
 
-#### OH_ArkUI_PanGesture_GetVelocityX()
+### OH_ArkUI_PanGesture_GetVelocityX()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 float OH_ArkUI_PanGesture_GetVelocityX(const ArkUI_GestureEvent* event)
@@ -776,6 +844,7 @@ float OH_ArkUI_PanGesture_GetVelocityX(const ArkUI_GestureEvent* event)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_GestureEvent* event | 手势事件。 |
@@ -783,6 +852,7 @@ float OH_ArkUI_PanGesture_GetVelocityX(const ArkUI_GestureEvent* event)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | float | 当前手势的x轴方向速度，单位px/s。 |
@@ -790,9 +860,10 @@ float OH_ArkUI_PanGesture_GetVelocityX(const ArkUI_GestureEvent* event)
  
   
 
-#### OH_ArkUI_PanGesture_GetVelocityY()
+### OH_ArkUI_PanGesture_GetVelocityY()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 float OH_ArkUI_PanGesture_GetVelocityY(const ArkUI_GestureEvent* event)
@@ -806,6 +877,7 @@ float OH_ArkUI_PanGesture_GetVelocityY(const ArkUI_GestureEvent* event)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_GestureEvent* event | 手势事件。 |
@@ -813,6 +885,7 @@ float OH_ArkUI_PanGesture_GetVelocityY(const ArkUI_GestureEvent* event)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | float | 当前手势的y轴方向速度，单位px/s。 |
@@ -820,9 +893,10 @@ float OH_ArkUI_PanGesture_GetVelocityY(const ArkUI_GestureEvent* event)
  
   
 
-#### OH_ArkUI_PanGesture_GetOffsetX()
+### OH_ArkUI_PanGesture_GetOffsetX()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 float OH_ArkUI_PanGesture_GetOffsetX(const ArkUI_GestureEvent* event)
@@ -836,6 +910,7 @@ float OH_ArkUI_PanGesture_GetOffsetX(const ArkUI_GestureEvent* event)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_GestureEvent* event | 手势事件。 |
@@ -843,6 +918,7 @@ float OH_ArkUI_PanGesture_GetOffsetX(const ArkUI_GestureEvent* event)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | float | 当前手势事件x轴相对偏移量，单位为px。 |
@@ -850,9 +926,10 @@ float OH_ArkUI_PanGesture_GetOffsetX(const ArkUI_GestureEvent* event)
  
   
 
-#### OH_ArkUI_PanGesture_GetOffsetY()
+### OH_ArkUI_PanGesture_GetOffsetY()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 float OH_ArkUI_PanGesture_GetOffsetY(const ArkUI_GestureEvent* event)
@@ -866,6 +943,7 @@ float OH_ArkUI_PanGesture_GetOffsetY(const ArkUI_GestureEvent* event)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_GestureEvent* event | 手势事件。 |
@@ -873,6 +951,7 @@ float OH_ArkUI_PanGesture_GetOffsetY(const ArkUI_GestureEvent* event)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | float | 当前手势事件y轴相对偏移量，单位为px。 |
@@ -880,9 +959,10 @@ float OH_ArkUI_PanGesture_GetOffsetY(const ArkUI_GestureEvent* event)
  
   
 
-#### OH_ArkUI_SwipeGesture_GetAngle()
+### OH_ArkUI_SwipeGesture_GetAngle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 float OH_ArkUI_SwipeGesture_GetAngle(const ArkUI_GestureEvent* event)
@@ -896,6 +976,7 @@ float OH_ArkUI_SwipeGesture_GetAngle(const ArkUI_GestureEvent* event)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_GestureEvent* event | 手势事件。 |
@@ -903,6 +984,7 @@ float OH_ArkUI_SwipeGesture_GetAngle(const ArkUI_GestureEvent* event)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | float | 快滑手势的角度，即手指滑动的瞬时方向与水平正方向的夹角，单位为deg。 |
@@ -910,9 +992,10 @@ float OH_ArkUI_SwipeGesture_GetAngle(const ArkUI_GestureEvent* event)
  
   
 
-#### OH_ArkUI_SwipeGesture_GetVelocity()
+### OH_ArkUI_SwipeGesture_GetVelocity()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 float OH_ArkUI_SwipeGesture_GetVelocity(const ArkUI_GestureEvent* event)
@@ -926,6 +1009,7 @@ float OH_ArkUI_SwipeGesture_GetVelocity(const ArkUI_GestureEvent* event)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_GestureEvent* event | 手势事件。 |
@@ -933,6 +1017,7 @@ float OH_ArkUI_SwipeGesture_GetVelocity(const ArkUI_GestureEvent* event)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | float | 快滑手势速度，即所有手指滑动的平均速度，单位为px/s。 |
@@ -940,9 +1025,10 @@ float OH_ArkUI_SwipeGesture_GetVelocity(const ArkUI_GestureEvent* event)
  
   
 
-#### OH_ArkUI_RotationGesture_GetAngle()
+### OH_ArkUI_RotationGesture_GetAngle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 float OH_ArkUI_RotationGesture_GetAngle(const ArkUI_GestureEvent* event)
@@ -956,6 +1042,7 @@ float OH_ArkUI_RotationGesture_GetAngle(const ArkUI_GestureEvent* event)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_GestureEvent* event | 手势事件。 |
@@ -963,6 +1050,7 @@ float OH_ArkUI_RotationGesture_GetAngle(const ArkUI_GestureEvent* event)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | float | 旋转角度。单位为deg。 |
@@ -970,9 +1058,10 @@ float OH_ArkUI_RotationGesture_GetAngle(const ArkUI_GestureEvent* event)
  
   
 
-#### OH_ArkUI_PinchGesture_GetScale()
+### OH_ArkUI_PinchGesture_GetScale()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 float OH_ArkUI_PinchGesture_GetScale(const ArkUI_GestureEvent* event)
@@ -986,6 +1075,7 @@ float OH_ArkUI_PinchGesture_GetScale(const ArkUI_GestureEvent* event)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_GestureEvent* event | 手势事件。 |
@@ -993,16 +1083,18 @@ float OH_ArkUI_PinchGesture_GetScale(const ArkUI_GestureEvent* event)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| float | 捏合手势的缩放比例，值大于1表示放大，小于1表示缩小。 |
+| float | 缩放比例。 |
  
  
   
 
-#### OH_ArkUI_PinchGesture_GetCenterX()
+### OH_ArkUI_PinchGesture_GetCenterX()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 float OH_ArkUI_PinchGesture_GetCenterX(const ArkUI_GestureEvent* event)
@@ -1016,6 +1108,7 @@ float OH_ArkUI_PinchGesture_GetCenterX(const ArkUI_GestureEvent* event)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_GestureEvent* event | 手势事件。 |
@@ -1023,6 +1116,7 @@ float OH_ArkUI_PinchGesture_GetCenterX(const ArkUI_GestureEvent* event)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | float | 捏合手势中心点相对于当前组件元素左上角x轴坐标，单位为px。 |
@@ -1030,9 +1124,10 @@ float OH_ArkUI_PinchGesture_GetCenterX(const ArkUI_GestureEvent* event)
  
   
 
-#### OH_ArkUI_PinchGesture_GetCenterY()
+### OH_ArkUI_PinchGesture_GetCenterY()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 float OH_ArkUI_PinchGesture_GetCenterY(const ArkUI_GestureEvent* event)
@@ -1046,6 +1141,7 @@ float OH_ArkUI_PinchGesture_GetCenterY(const ArkUI_GestureEvent* event)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_GestureEvent* event | 手势事件。 |
@@ -1053,6 +1149,7 @@ float OH_ArkUI_PinchGesture_GetCenterY(const ArkUI_GestureEvent* event)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | float | 捏合手势中心点相对于当前组件元素左上角y轴坐标，单位为px。 |
@@ -1060,9 +1157,10 @@ float OH_ArkUI_PinchGesture_GetCenterY(const ArkUI_GestureEvent* event)
  
   
 
-#### OH_ArkUI_GestureEvent_GetNode()
+### OH_ArkUI_GestureEvent_GetNode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_NodeHandle OH_ArkUI_GestureEvent_GetNode(const ArkUI_GestureEvent* event)
@@ -1076,6 +1174,7 @@ ArkUI_NodeHandle OH_ArkUI_GestureEvent_GetNode(const ArkUI_GestureEvent* event)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_GestureEvent* event | 手势事件。 |
@@ -1083,6 +1182,7 @@ ArkUI_NodeHandle OH_ArkUI_GestureEvent_GetNode(const ArkUI_GestureEvent* event)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_NodeHandle | 绑定该手势的ArkUI组件。若返回Null，则表示event是无效值。 |
@@ -1090,9 +1190,10 @@ ArkUI_NodeHandle OH_ArkUI_GestureEvent_GetNode(const ArkUI_GestureEvent* event)
  
   
 
-#### OH_ArkUI_GetResponseRecognizersFromInterruptInfo()
+### OH_ArkUI_GetResponseRecognizersFromInterruptInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_GetResponseRecognizersFromInterruptInfo(const ArkUI_GestureInterruptInfo* event,ArkUI_GestureRecognizerHandleArray* responseChain, int32_t* count)
@@ -1106,6 +1207,7 @@ int32_t OH_ArkUI_GetResponseRecognizersFromInterruptInfo(const ArkUI_GestureInte
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_GestureInterruptInfo* event | 手势打断回调事件。 |
@@ -1115,6 +1217,7 @@ int32_t OH_ArkUI_GetResponseRecognizersFromInterruptInfo(const ArkUI_GestureInte
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR - 成功。 ARKUI_ERROR_CODE_PARAM_INVALID - 参数错误。 |
@@ -1122,9 +1225,10 @@ int32_t OH_ArkUI_GetResponseRecognizersFromInterruptInfo(const ArkUI_GestureInte
  
   
 
-#### OH_ArkUI_SetGestureRecognizerEnabled()
+### OH_ArkUI_SetGestureRecognizerEnabled()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_SetGestureRecognizerEnabled(ArkUI_GestureRecognizer* recognizer, bool enabled)
@@ -1138,6 +1242,7 @@ int32_t OH_ArkUI_SetGestureRecognizerEnabled(ArkUI_GestureRecognizer* recognizer
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_GestureRecognizer* recognizer | 手势识别器指针。 |
@@ -1146,6 +1251,7 @@ int32_t OH_ArkUI_SetGestureRecognizerEnabled(ArkUI_GestureRecognizer* recognizer
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR - 成功。 ARKUI_ERROR_CODE_PARAM_INVALID - 参数错误。 |
@@ -1153,9 +1259,10 @@ int32_t OH_ArkUI_SetGestureRecognizerEnabled(ArkUI_GestureRecognizer* recognizer
  
   
 
-#### OH_ArkUI_SetGestureRecognizerLimitFingerCount()
+### OH_ArkUI_SetGestureRecognizerLimitFingerCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_SetGestureRecognizerLimitFingerCount(ArkUI_GestureRecognizer* recognizer, bool limitFingerCount)
@@ -1169,6 +1276,7 @@ int32_t OH_ArkUI_SetGestureRecognizerLimitFingerCount(ArkUI_GestureRecognizer* r
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_GestureRecognizer* recognizer | 手势识别器指针。 |
@@ -1177,6 +1285,7 @@ int32_t OH_ArkUI_SetGestureRecognizerLimitFingerCount(ArkUI_GestureRecognizer* r
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR - 成功。 ARKUI_ERROR_CODE_PARAM_INVALID - 参数错误。 |
@@ -1184,9 +1293,10 @@ int32_t OH_ArkUI_SetGestureRecognizerLimitFingerCount(ArkUI_GestureRecognizer* r
  
   
 
-#### OH_ArkUI_GetGestureRecognizerEnabled()
+### OH_ArkUI_GetGestureRecognizerEnabled()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_ArkUI_GetGestureRecognizerEnabled(ArkUI_GestureRecognizer* recognizer)
@@ -1200,6 +1310,7 @@ bool OH_ArkUI_GetGestureRecognizerEnabled(ArkUI_GestureRecognizer* recognizer)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_GestureRecognizer* recognizer | 手势识别器指针。 |
@@ -1207,6 +1318,7 @@ bool OH_ArkUI_GetGestureRecognizerEnabled(ArkUI_GestureRecognizer* recognizer)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | true - 使能。 false - 禁用。 |
@@ -1214,9 +1326,10 @@ bool OH_ArkUI_GetGestureRecognizerEnabled(ArkUI_GestureRecognizer* recognizer)
  
   
 
-#### OH_ArkUI_GetGestureRecognizerState()
+### OH_ArkUI_GetGestureRecognizerState()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_GetGestureRecognizerState(ArkUI_GestureRecognizer* recognizer, ArkUI_GestureRecognizerState* state)
@@ -1230,6 +1343,7 @@ int32_t OH_ArkUI_GetGestureRecognizerState(ArkUI_GestureRecognizer* recognizer, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_GestureRecognizer* recognizer | 手势识别器指针。 |
@@ -1238,6 +1352,7 @@ int32_t OH_ArkUI_GetGestureRecognizerState(ArkUI_GestureRecognizer* recognizer, 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR - 成功。 ARKUI_ERROR_CODE_PARAM_INVALID - 参数错误。 |
@@ -1245,9 +1360,10 @@ int32_t OH_ArkUI_GetGestureRecognizerState(ArkUI_GestureRecognizer* recognizer, 
  
   
 
-#### OH_ArkUI_GetGestureEventTargetInfo()
+### OH_ArkUI_GetGestureEventTargetInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_GetGestureEventTargetInfo(ArkUI_GestureRecognizer* recognizer, ArkUI_GestureEventTargetInfo** info)
@@ -1261,6 +1377,7 @@ int32_t OH_ArkUI_GetGestureEventTargetInfo(ArkUI_GestureRecognizer* recognizer, 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_GestureRecognizer* recognizer | 手势识别器指针。 |
@@ -1269,6 +1386,7 @@ int32_t OH_ArkUI_GetGestureEventTargetInfo(ArkUI_GestureRecognizer* recognizer, 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR - 成功。 ARKUI_ERROR_CODE_PARAM_INVALID - 参数错误。 |
@@ -1276,9 +1394,10 @@ int32_t OH_ArkUI_GetGestureEventTargetInfo(ArkUI_GestureRecognizer* recognizer, 
  
   
 
-#### OH_ArkUI_GestureEventTargetInfo_IsScrollBegin()
+### OH_ArkUI_GestureEventTargetInfo_IsScrollBegin()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_GestureEventTargetInfo_IsScrollBegin(ArkUI_GestureEventTargetInfo* info, bool* ret)
@@ -1292,6 +1411,7 @@ int32_t OH_ArkUI_GestureEventTargetInfo_IsScrollBegin(ArkUI_GestureEventTargetIn
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_GestureEventTargetInfo* info | 手势事件目标信息。 |
@@ -1300,6 +1420,7 @@ int32_t OH_ArkUI_GestureEventTargetInfo_IsScrollBegin(ArkUI_GestureEventTargetIn
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR - 成功。 ARKUI_ERROR_CODE_PARAM_INVALID - 参数错误。 ARKUI_ERROR_CODE_NON_SCROLLABLE_CONTAINER - 非滚动类容器。 |
@@ -1307,9 +1428,10 @@ int32_t OH_ArkUI_GestureEventTargetInfo_IsScrollBegin(ArkUI_GestureEventTargetIn
  
   
 
-#### OH_ArkUI_GestureEventTargetInfo_IsScrollEnd()
+### OH_ArkUI_GestureEventTargetInfo_IsScrollEnd()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_GestureEventTargetInfo_IsScrollEnd(ArkUI_GestureEventTargetInfo* info, bool* ret)
@@ -1323,6 +1445,7 @@ int32_t OH_ArkUI_GestureEventTargetInfo_IsScrollEnd(ArkUI_GestureEventTargetInfo
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_GestureEventTargetInfo* info | 手势事件目标信息。 |
@@ -1331,6 +1454,7 @@ int32_t OH_ArkUI_GestureEventTargetInfo_IsScrollEnd(ArkUI_GestureEventTargetInfo
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR - 成功。 ARKUI_ERROR_CODE_PARAM_INVALID - 参数错误。 ARKUI_ERROR_CODE_NON_SCROLLABLE_CONTAINER - 非滚动类容器。 |
@@ -1338,9 +1462,10 @@ int32_t OH_ArkUI_GestureEventTargetInfo_IsScrollEnd(ArkUI_GestureEventTargetInfo
  
   
 
-#### OH_ArkUI_GetPanGestureDirectionMask()
+### OH_ArkUI_GetPanGestureDirectionMask()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_GetPanGestureDirectionMask(ArkUI_GestureRecognizer* recognizer,ArkUI_GestureDirectionMask* directionMask)
@@ -1348,12 +1473,13 @@ int32_t OH_ArkUI_GetPanGestureDirectionMask(ArkUI_GestureRecognizer* recognizer,
  
 **描述：**
  
-获取滑动手势的滑动方向。建议优先使用OH_ArkUI_GetGestureParam_DirectMask（API version 18），该接口为统一参数查询接口；OH_ArkUI_GetPanGestureDirectionMask为早期接口（API version 12），功能与OH_ArkUI_GetGestureParam_DirectMask相同。
+获取滑动手势的滑动方向。
  
 **起始版本：** 12
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_GestureRecognizer* recognizer | 手势识别器指针。 |
@@ -1362,6 +1488,7 @@ int32_t OH_ArkUI_GetPanGestureDirectionMask(ArkUI_GestureRecognizer* recognizer,
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR - 成功。 ARKUI_ERROR_CODE_PARAM_INVALID - 参数错误。 |
@@ -1369,9 +1496,10 @@ int32_t OH_ArkUI_GetPanGestureDirectionMask(ArkUI_GestureRecognizer* recognizer,
  
   
 
-#### OH_ArkUI_IsBuiltInGesture()
+### OH_ArkUI_IsBuiltInGesture()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_ArkUI_IsBuiltInGesture(ArkUI_GestureRecognizer* recognizer)
@@ -1385,6 +1513,7 @@ bool OH_ArkUI_IsBuiltInGesture(ArkUI_GestureRecognizer* recognizer)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_GestureRecognizer* recognizer | 手势识别器指针。 |
@@ -1392,6 +1521,7 @@ bool OH_ArkUI_IsBuiltInGesture(ArkUI_GestureRecognizer* recognizer)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | true - 是系统内置手势。 false - 不是系统内置手势。 |
@@ -1399,9 +1529,10 @@ bool OH_ArkUI_IsBuiltInGesture(ArkUI_GestureRecognizer* recognizer)
  
   
 
-#### OH_ArkUI_GetGestureTag()
+### OH_ArkUI_GetGestureTag()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_GetGestureTag(ArkUI_GestureRecognizer* recognizer, char* buffer, int32_t bufferSize, int32_t* result)
@@ -1415,16 +1546,18 @@ int32_t OH_ArkUI_GetGestureTag(ArkUI_GestureRecognizer* recognizer, char* buffer
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_GestureRecognizer* recognizer | 手势识别器指针。 |
 | char* buffer | 存储区。 |
-| int32_t bufferSize | buffer缓冲区的大小，用于限制可写入的手势识别器标记字符串长度。 |
+| int32_t bufferSize | 存储区大小。 |
 | int32_t* result | 拷贝的字符串长度。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR - 成功。 ARKUI_ERROR_CODE_PARAM_INVALID - 参数错误。 ARKUI_ERROR_CODE_BUFFER_SIZE_NOT_ENOUGH - 存储区大小不足。 |
@@ -1432,9 +1565,10 @@ int32_t OH_ArkUI_GetGestureTag(ArkUI_GestureRecognizer* recognizer, char* buffer
  
   
 
-#### OH_ArkUI_GetGestureBindNodeId()
+### OH_ArkUI_GetGestureBindNodeId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_GetGestureBindNodeId(ArkUI_GestureRecognizer* recognizer, char* nodeId, int32_t size,int32_t* result)
@@ -1442,22 +1576,24 @@ int32_t OH_ArkUI_GetGestureBindNodeId(ArkUI_GestureRecognizer* recognizer, char*
  
 **描述：**
  
-获取手势识别器绑定的组件的ID（字符串形式，即开发者在ArkUI组件上设置的nodeId属性值）。如需获取系统自动分配的整数形式唯一标识，请使用OH_ArkUI_GetGestureBindNodeUniqueId。
+获取手势识别器绑定的组件的ID。
  
 **起始版本：** 12
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_GestureRecognizer* recognizer | 手势识别器指针。 |
 | char* nodeId | 组件的ID。 |
-| int32_t size | nodeId缓冲区的大小，用于限制可写入的组件ID字符串长度。 |
+| int32_t size | 存储区大小。 |
 | int32_t* result | 拷贝的字符串长度。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR - 成功。 ARKUI_ERROR_CODE_PARAM_INVALID - 参数错误。 ARKUI_ERROR_CODE_BUFFER_SIZE_NOT_ENOUGH - 存储区大小不足。 |
@@ -1465,9 +1601,10 @@ int32_t OH_ArkUI_GetGestureBindNodeId(ArkUI_GestureRecognizer* recognizer, char*
  
   
 
-#### OH_ArkUI_IsGestureRecognizerValid()
+### OH_ArkUI_IsGestureRecognizerValid()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_ArkUI_IsGestureRecognizerValid(ArkUI_GestureRecognizer* recognizer)
@@ -1481,6 +1618,7 @@ bool OH_ArkUI_IsGestureRecognizerValid(ArkUI_GestureRecognizer* recognizer)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_GestureRecognizer* recognizer | 手势识别器指针。 |
@@ -1488,6 +1626,7 @@ bool OH_ArkUI_IsGestureRecognizerValid(ArkUI_GestureRecognizer* recognizer)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | true - 手势识别器有效。 false - 手势识别器无效。 |
@@ -1495,9 +1634,10 @@ bool OH_ArkUI_IsGestureRecognizerValid(ArkUI_GestureRecognizer* recognizer)
  
   
 
-#### OH_ArkUI_ParallelInnerGestureEvent_GetUserData()
+### OH_ArkUI_ParallelInnerGestureEvent_GetUserData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void* OH_ArkUI_ParallelInnerGestureEvent_GetUserData(ArkUI_ParallelInnerGestureEvent* event)
@@ -1511,6 +1651,7 @@ void* OH_ArkUI_ParallelInnerGestureEvent_GetUserData(ArkUI_ParallelInnerGestureE
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_ParallelInnerGestureEvent* event | 并行内置手势事件。 |
@@ -1518,6 +1659,7 @@ void* OH_ArkUI_ParallelInnerGestureEvent_GetUserData(ArkUI_ParallelInnerGestureE
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | void* | 用户自定义数据的指针。 |
@@ -1525,9 +1667,10 @@ void* OH_ArkUI_ParallelInnerGestureEvent_GetUserData(ArkUI_ParallelInnerGestureE
  
   
 
-#### OH_ArkUI_ParallelInnerGestureEvent_GetCurrentRecognizer()
+### OH_ArkUI_ParallelInnerGestureEvent_GetCurrentRecognizer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_GestureRecognizer* OH_ArkUI_ParallelInnerGestureEvent_GetCurrentRecognizer(ArkUI_ParallelInnerGestureEvent* event)
@@ -1541,6 +1684,7 @@ ArkUI_GestureRecognizer* OH_ArkUI_ParallelInnerGestureEvent_GetCurrentRecognizer
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_ParallelInnerGestureEvent* event | 并行内置手势事件。 |
@@ -1548,6 +1692,7 @@ ArkUI_GestureRecognizer* OH_ArkUI_ParallelInnerGestureEvent_GetCurrentRecognizer
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_GestureRecognizer* | 当前手势识别器的指针。 |
@@ -1555,9 +1700,10 @@ ArkUI_GestureRecognizer* OH_ArkUI_ParallelInnerGestureEvent_GetCurrentRecognizer
  
   
 
-#### OH_ArkUI_ParallelInnerGestureEvent_GetConflictRecognizers()
+### OH_ArkUI_ParallelInnerGestureEvent_GetConflictRecognizers()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_ParallelInnerGestureEvent_GetConflictRecognizers(ArkUI_ParallelInnerGestureEvent* event,ArkUI_GestureRecognizerHandleArray* array, int32_t* size)
@@ -1571,6 +1717,7 @@ int32_t OH_ArkUI_ParallelInnerGestureEvent_GetConflictRecognizers(ArkUI_Parallel
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_ParallelInnerGestureEvent* event | 并行内置手势事件。 |
@@ -1580,6 +1727,7 @@ int32_t OH_ArkUI_ParallelInnerGestureEvent_GetConflictRecognizers(ArkUI_Parallel
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR - 成功。 ARKUI_ERROR_CODE_PARAM_INVALID - 参数错误。 |
@@ -1587,9 +1735,10 @@ int32_t OH_ArkUI_ParallelInnerGestureEvent_GetConflictRecognizers(ArkUI_Parallel
  
   
 
-#### OH_ArkUI_SetArkUIGestureRecognizerDisposeNotify()
+### OH_ArkUI_SetArkUIGestureRecognizerDisposeNotify()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_SetArkUIGestureRecognizerDisposeNotify(ArkUI_GestureRecognizer* recognizer,ArkUI_GestureRecognizerDisposeNotifyCallback callback, void* userData)
@@ -1603,6 +1752,7 @@ int32_t OH_ArkUI_SetArkUIGestureRecognizerDisposeNotify(ArkUI_GestureRecognizer*
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_GestureRecognizer* recognizer | 手势识别器指针。 |
@@ -1612,6 +1762,7 @@ int32_t OH_ArkUI_SetArkUIGestureRecognizerDisposeNotify(ArkUI_GestureRecognizer*
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR - 成功。 ARKUI_ERROR_CODE_PARAM_INVALID - 参数错误。 |
@@ -1619,9 +1770,10 @@ int32_t OH_ArkUI_SetArkUIGestureRecognizerDisposeNotify(ArkUI_GestureRecognizer*
  
   
 
-#### OH_ArkUI_GetGestureParam_DirectMask()
+### OH_ArkUI_GetGestureParam_DirectMask()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_GetGestureParam_DirectMask(ArkUI_GestureRecognizer* recognizer, ArkUI_GestureDirectionMask* directMask)
@@ -1635,6 +1787,7 @@ int32_t OH_ArkUI_GetGestureParam_DirectMask(ArkUI_GestureRecognizer* recognizer,
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_GestureRecognizer* recognizer | 手势识别器指针。 |
@@ -1643,6 +1796,7 @@ int32_t OH_ArkUI_GetGestureParam_DirectMask(ArkUI_GestureRecognizer* recognizer,
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 参数错误。 |
@@ -1650,9 +1804,10 @@ int32_t OH_ArkUI_GetGestureParam_DirectMask(ArkUI_GestureRecognizer* recognizer,
  
   
 
-#### OH_ArkUI_GetGestureParam_FingerCount()
+### OH_ArkUI_GetGestureParam_FingerCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_GetGestureParam_FingerCount(ArkUI_GestureRecognizer* recognizer, int* finger)
@@ -1666,6 +1821,7 @@ int32_t OH_ArkUI_GetGestureParam_FingerCount(ArkUI_GestureRecognizer* recognizer
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_GestureRecognizer* recognizer | 手势识别器指针。 |
@@ -1674,6 +1830,7 @@ int32_t OH_ArkUI_GetGestureParam_FingerCount(ArkUI_GestureRecognizer* recognizer
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 参数错误。 |
@@ -1681,9 +1838,10 @@ int32_t OH_ArkUI_GetGestureParam_FingerCount(ArkUI_GestureRecognizer* recognizer
  
   
 
-#### OH_ArkUI_GetGestureParam_limitFingerCount()
+### OH_ArkUI_GetGestureParam_limitFingerCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_GetGestureParam_limitFingerCount(ArkUI_GestureRecognizer* recognizer, bool* isLimited)
@@ -1697,6 +1855,7 @@ int32_t OH_ArkUI_GetGestureParam_limitFingerCount(ArkUI_GestureRecognizer* recog
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_GestureRecognizer* recognizer | 手势识别器指针。 |
@@ -1705,6 +1864,7 @@ int32_t OH_ArkUI_GetGestureParam_limitFingerCount(ArkUI_GestureRecognizer* recog
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 参数错误。 |
@@ -1712,9 +1872,10 @@ int32_t OH_ArkUI_GetGestureParam_limitFingerCount(ArkUI_GestureRecognizer* recog
  
   
 
-#### OH_ArkUI_GetGestureParam_repeat()
+### OH_ArkUI_GetGestureParam_repeat()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_GetGestureParam_repeat(ArkUI_GestureRecognizer* recognizer, bool* isRepeat)
@@ -1728,6 +1889,7 @@ int32_t OH_ArkUI_GetGestureParam_repeat(ArkUI_GestureRecognizer* recognizer, boo
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_GestureRecognizer* recognizer | 手势识别器指针。 |
@@ -1736,6 +1898,7 @@ int32_t OH_ArkUI_GetGestureParam_repeat(ArkUI_GestureRecognizer* recognizer, boo
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_RECOGNIZER_TYPE_NOT_SUPPORTED 不支持手势识别器类型。 |
@@ -1743,9 +1906,10 @@ int32_t OH_ArkUI_GetGestureParam_repeat(ArkUI_GestureRecognizer* recognizer, boo
  
   
 
-#### OH_ArkUI_GetGestureParam_distance()
+### OH_ArkUI_GetGestureParam_distance()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_GetGestureParam_distance(ArkUI_GestureRecognizer* recognizer, double* distance)
@@ -1759,6 +1923,7 @@ int32_t OH_ArkUI_GetGestureParam_distance(ArkUI_GestureRecognizer* recognizer, d
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_GestureRecognizer* recognizer | 手势识别器指针。 |
@@ -1767,6 +1932,7 @@ int32_t OH_ArkUI_GetGestureParam_distance(ArkUI_GestureRecognizer* recognizer, d
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_RECOGNIZER_TYPE_NOT_SUPPORTED 不支持手势识别器类型。 |
@@ -1774,9 +1940,10 @@ int32_t OH_ArkUI_GetGestureParam_distance(ArkUI_GestureRecognizer* recognizer, d
  
   
 
-#### OH_ArkUI_GetGestureParam_speed()
+### OH_ArkUI_GetGestureParam_speed()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_GetGestureParam_speed(ArkUI_GestureRecognizer* recognizer, double* speed)
@@ -1790,6 +1957,7 @@ int32_t OH_ArkUI_GetGestureParam_speed(ArkUI_GestureRecognizer* recognizer, doub
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_GestureRecognizer* recognizer | 手势识别器指针。 |
@@ -1798,6 +1966,7 @@ int32_t OH_ArkUI_GetGestureParam_speed(ArkUI_GestureRecognizer* recognizer, doub
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_RECOGNIZER_TYPE_NOT_SUPPORTED 不支持手势识别器类型。 |
@@ -1805,9 +1974,10 @@ int32_t OH_ArkUI_GetGestureParam_speed(ArkUI_GestureRecognizer* recognizer, doub
  
   
 
-#### OH_ArkUI_GetGestureParam_duration()
+### OH_ArkUI_GetGestureParam_duration()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_GetGestureParam_duration(ArkUI_GestureRecognizer* recognizer, int* duration)
@@ -1821,6 +1991,7 @@ int32_t OH_ArkUI_GetGestureParam_duration(ArkUI_GestureRecognizer* recognizer, i
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_GestureRecognizer* recognizer | 手势识别器指针。 |
@@ -1829,6 +2000,7 @@ int32_t OH_ArkUI_GetGestureParam_duration(ArkUI_GestureRecognizer* recognizer, i
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_RECOGNIZER_TYPE_NOT_SUPPORTED 不支持手势识别器类型。 |
@@ -1836,9 +2008,10 @@ int32_t OH_ArkUI_GetGestureParam_duration(ArkUI_GestureRecognizer* recognizer, i
  
   
 
-#### OH_ArkUI_GetGestureParam_angle()
+### OH_ArkUI_GetGestureParam_angle()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_GetGestureParam_angle(ArkUI_GestureRecognizer* recognizer, double* angle)
@@ -1852,6 +2025,7 @@ int32_t OH_ArkUI_GetGestureParam_angle(ArkUI_GestureRecognizer* recognizer, doub
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_GestureRecognizer* recognizer | 手势识别器指针。 |
@@ -1860,6 +2034,7 @@ int32_t OH_ArkUI_GetGestureParam_angle(ArkUI_GestureRecognizer* recognizer, doub
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_RECOGNIZER_TYPE_NOT_SUPPORTED 不支持手势识别器类型。 |
@@ -1867,9 +2042,10 @@ int32_t OH_ArkUI_GetGestureParam_angle(ArkUI_GestureRecognizer* recognizer, doub
  
   
 
-#### OH_ArkUI_GetGestureParam_distanceThreshold()
+### OH_ArkUI_GetGestureParam_distanceThreshold()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int32_t OH_ArkUI_GetGestureParam_distanceThreshold(ArkUI_GestureRecognizer* recognizer, double* distanceThreshold)
@@ -1883,6 +2059,7 @@ int32_t OH_ArkUI_GetGestureParam_distanceThreshold(ArkUI_GestureRecognizer* reco
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_GestureRecognizer* recognizer | 手势识别器指针。 |
@@ -1891,6 +2068,7 @@ int32_t OH_ArkUI_GetGestureParam_distanceThreshold(ArkUI_GestureRecognizer* reco
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int32_t | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_RECOGNIZER_TYPE_NOT_SUPPORTED 不支持手势识别器类型。 |
@@ -1898,9 +2076,10 @@ int32_t OH_ArkUI_GetGestureParam_distanceThreshold(ArkUI_GestureRecognizer* reco
  
   
 
-#### OH_ArkUI_PanGesture_SetDistanceMap()
+### OH_ArkUI_PanGesture_SetDistanceMap()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_PanGesture_SetDistanceMap(ArkUI_GestureRecognizer* recognizer, int size, int* toolTypeArray, double* distanceArray)
@@ -1914,16 +2093,18 @@ ArkUI_ErrorCode OH_ArkUI_PanGesture_SetDistanceMap(ArkUI_GestureRecognizer* reco
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_GestureRecognizer* recognizer | 手势识别器指针。 |
-| int size | toolTypeArray和distanceArray数组的元素个数，取值需大于0，且需与toolTypeArray和distanceArray的实际元素数一致。 |
+| int size | toolTypeArray和distanceArray数组的元素个数。 |
 | int* toolTypeArray | 指向输入事件工具类型数组的指针，元素取值为UI_INPUT_EVENT_TOOL_TYPE_XXX；当设置该范围以外的值时，设置不生效。 |
-| double* distanceArray | 指向最小滑动阈值数组的指针，取值范围为(0, +∞)，单位为px。传入0或负数时，设置不生效。distanceArray[i]表示toolTypeArray[i]对应工具类型的最小滑动阈值。 |
+| double* distanceArray | 指向最小滑动阈值数组的指针，取值范围为[0, +∞)，单位为px。传入负数时，设置不生效。distanceArray[i]表示toolTypeArray[i]对应工具类型的最小滑动阈值。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 错误码。 返回 ARKUI_ERROR_CODE_NO_ERROR 成功。 返回 ARKUI_ERROR_CODE_PARAM_INVALID 参数错误。 返回 ARKUI_ERROR_CODE_RECOGNIZER_TYPE_NOT_SUPPORTED 不支持手势识别器类型。 |
@@ -1931,9 +2112,10 @@ ArkUI_ErrorCode OH_ArkUI_PanGesture_SetDistanceMap(ArkUI_GestureRecognizer* reco
  
   
 
-#### OH_ArkUI_PanGesture_GetDistanceByToolType()
+### OH_ArkUI_PanGesture_GetDistanceByToolType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_PanGesture_GetDistanceByToolType(ArkUI_GestureRecognizer* recognizer, int toolType, double* distance)
@@ -1947,15 +2129,17 @@ ArkUI_ErrorCode OH_ArkUI_PanGesture_GetDistanceByToolType(ArkUI_GestureRecognize
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_GestureRecognizer* recognizer | 手势识别器指针。 |
-| int toolType | 输入事件的工具类型，取值为UI_INPUT_EVENT_TOOL_TYPE_XXX。仅支持对通过OH_ArkUI_PanGesture_SetDistanceMap修改过的设备类型及UI_INPUT_EVENT_TOOL_TYPE_UNKNOWN类型的阈值查询，其他未设置过的类型不会返回对应阈值。 |
+| int toolType | 输入事件的工具类型。 |
 | double* distance | 手势识别器的手势移动阈值。单位为px。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 错误码。 返回 ARKUI_ERROR_CODE_NO_ERROR 成功。 返回 ARKUI_ERROR_CODE_PARAM_INVALID 参数错误。 返回 ARKUI_ERROR_CODE_RECOGNIZER_TYPE_NOT_SUPPORTED 不支持手势识别器类型。 |
@@ -1963,9 +2147,10 @@ ArkUI_ErrorCode OH_ArkUI_PanGesture_GetDistanceByToolType(ArkUI_GestureRecognize
  
   
 
-#### OH_ArkUI_SetTouchTestDoneCallback()
+### OH_ArkUI_SetTouchTestDoneCallback()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_SetTouchTestDoneCallback(ArkUI_NodeHandle node, void* userData, void (*touchTestDone)(ArkUI_GestureEvent* event, ArkUI_GestureRecognizerHandleArray recognizers, int32_t count, void* userData))
@@ -1979,6 +2164,7 @@ ArkUI_ErrorCode OH_ArkUI_SetTouchTestDoneCallback(ArkUI_NodeHandle node, void* u
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NodeHandle node | 需要设置手势收集完成回调的节点句柄。 |
@@ -1988,6 +2174,7 @@ ArkUI_ErrorCode OH_ArkUI_SetTouchTestDoneCallback(ArkUI_NodeHandle node, void* u
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 错误码。 返回 ARKUI_ERROR_CODE_NO_ERROR 成功。 返回 ARKUI_ERROR_CODE_PARAM_INVALID 参数错误。 |
@@ -1995,9 +2182,10 @@ ArkUI_ErrorCode OH_ArkUI_SetTouchTestDoneCallback(ArkUI_NodeHandle node, void* u
  
   
 
-#### OH_ArkUI_GestureInterrupter_GetUserData()
+### OH_ArkUI_GestureInterrupter_GetUserData()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void* OH_ArkUI_GestureInterrupter_GetUserData(ArkUI_GestureInterruptInfo* event)
@@ -2011,6 +2199,7 @@ void* OH_ArkUI_GestureInterrupter_GetUserData(ArkUI_GestureInterruptInfo* event)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_GestureInterruptInfo* event | 是指向手势中断信息的指针。 |
@@ -2018,6 +2207,7 @@ void* OH_ArkUI_GestureInterrupter_GetUserData(ArkUI_GestureInterruptInfo* event)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | void* | 返回指向用户自定义数据的指针。 |
@@ -2025,9 +2215,10 @@ void* OH_ArkUI_GestureInterrupter_GetUserData(ArkUI_GestureInterruptInfo* event)
  
   
 
-#### OH_ArkUI_PreventGestureRecognizerBegin()
+### OH_ArkUI_PreventGestureRecognizerBegin()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_PreventGestureRecognizerBegin(ArkUI_GestureRecognizer* recognizer)
@@ -2041,6 +2232,7 @@ ArkUI_ErrorCode OH_ArkUI_PreventGestureRecognizerBegin(ArkUI_GestureRecognizer* 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_GestureRecognizer* recognizer | 手势识别器指针。 |
@@ -2048,6 +2240,7 @@ ArkUI_ErrorCode OH_ArkUI_PreventGestureRecognizerBegin(ArkUI_GestureRecognizer* 
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 错误码。 返回 ARKUI_ERROR_CODE_NO_ERROR 成功。 返回 ARKUI_ERROR_CODE_PARAM_INVALID 参数错误。 |
@@ -2055,9 +2248,10 @@ ArkUI_ErrorCode OH_ArkUI_PreventGestureRecognizerBegin(ArkUI_GestureRecognizer* 
  
   
 
-#### OH_ArkUI_LongPressGesture_SetAllowableMovement()
+### OH_ArkUI_LongPressGesture_SetAllowableMovement()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_LongPressGesture_SetAllowableMovement(ArkUI_GestureRecognizer* recognizer, double allowableMovement)
@@ -2071,6 +2265,7 @@ ArkUI_ErrorCode OH_ArkUI_LongPressGesture_SetAllowableMovement(ArkUI_GestureReco
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_GestureRecognizer* recognizer | 手势识别器指针。 |
@@ -2079,6 +2274,7 @@ ArkUI_ErrorCode OH_ArkUI_LongPressGesture_SetAllowableMovement(ArkUI_GestureReco
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 参数错误。 ARKUI_ERROR_CODE_RECOGNIZER_TYPE_NOT_SUPPORTED 不支持手势识别器类型。 |
@@ -2086,9 +2282,10 @@ ArkUI_ErrorCode OH_ArkUI_LongPressGesture_SetAllowableMovement(ArkUI_GestureReco
  
   
 
-#### OH_ArkUI_LongPressGesture_GetAllowableMovement()
+### OH_ArkUI_LongPressGesture_GetAllowableMovement()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_LongPressGesture_GetAllowableMovement(ArkUI_GestureRecognizer* recognizer, double* allowableMovement)
@@ -2102,6 +2299,7 @@ ArkUI_ErrorCode OH_ArkUI_LongPressGesture_GetAllowableMovement(ArkUI_GestureReco
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_GestureRecognizer* recognizer | 手势识别器指针。 |
@@ -2110,6 +2308,7 @@ ArkUI_ErrorCode OH_ArkUI_LongPressGesture_GetAllowableMovement(ArkUI_GestureReco
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 错误码。 ARKUI_ERROR_CODE_NO_ERROR 成功。 ARKUI_ERROR_CODE_PARAM_INVALID 参数错误。 ARKUI_ERROR_CODE_RECOGNIZER_TYPE_NOT_SUPPORTED 不支持手势识别器类型。 |
@@ -2117,9 +2316,10 @@ ArkUI_ErrorCode OH_ArkUI_LongPressGesture_GetAllowableMovement(ArkUI_GestureReco
  
   
 
-#### OH_ArkUI_GestureCollectInterceptInfo_GetResponseRecognizers()
+### OH_ArkUI_GestureCollectInterceptInfo_GetResponseRecognizers()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_GestureCollectInterceptInfo_GetResponseRecognizers(const ArkUI_GestureCollectInterceptInfo* info, ArkUI_GestureRecognizerHandleArray* array, int32_t* size)
@@ -2133,6 +2333,7 @@ ArkUI_ErrorCode OH_ArkUI_GestureCollectInterceptInfo_GetResponseRecognizers(cons
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_GestureCollectInterceptInfo* info | 表示指向手势收集拦截信息的指针。 |
@@ -2142,6 +2343,7 @@ ArkUI_ErrorCode OH_ArkUI_GestureCollectInterceptInfo_GetResponseRecognizers(cons
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回ARKUI_ERROR_CODE_NO_ERROR表示成功。 返回ARKUI_ERROR_CODE_PARAM_INVALID表示发生参数异常。 |
@@ -2149,9 +2351,10 @@ ArkUI_ErrorCode OH_ArkUI_GestureCollectInterceptInfo_GetResponseRecognizers(cons
  
   
 
-#### OH_ArkUI_GestureCollectInterceptInfo_GetTouchRecognizers()
+### OH_ArkUI_GestureCollectInterceptInfo_GetTouchRecognizers()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_GestureCollectInterceptInfo_GetTouchRecognizers(const ArkUI_GestureCollectInterceptInfo* info, ArkUI_TouchRecognizerHandleArray* recognizers, int32_t* size)
@@ -2165,6 +2368,7 @@ ArkUI_ErrorCode OH_ArkUI_GestureCollectInterceptInfo_GetTouchRecognizers(const A
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_GestureCollectInterceptInfo* info | 表示指向手势收集拦截信息的指针。 |
@@ -2174,6 +2378,7 @@ ArkUI_ErrorCode OH_ArkUI_GestureCollectInterceptInfo_GetTouchRecognizers(const A
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回ARKUI_ERROR_CODE_NO_ERROR表示成功。 返回ARKUI_ERROR_CODE_PARAM_INVALID表示发生参数异常。 |
@@ -2181,9 +2386,10 @@ ArkUI_ErrorCode OH_ArkUI_GestureCollectInterceptInfo_GetTouchRecognizers(const A
  
   
 
-#### OH_ArkUI_GestureCollectInterceptInfo_SetGestureCollectIntervention()
+### OH_ArkUI_GestureCollectInterceptInfo_SetGestureCollectIntervention()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_GestureCollectInterceptInfo_SetGestureCollectIntervention(ArkUI_GestureCollectInterceptInfo* info, OH_ArkUI_GestureCollectIntervention intervention)
@@ -2197,6 +2403,7 @@ ArkUI_ErrorCode OH_ArkUI_GestureCollectInterceptInfo_SetGestureCollectInterventi
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_GestureCollectInterceptInfo* info | 手势收集拦截信息指针。 |
@@ -2205,6 +2412,7 @@ ArkUI_ErrorCode OH_ArkUI_GestureCollectInterceptInfo_SetGestureCollectInterventi
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 如果成功，则返回ARKUI_ERROR_CODE_NO_ERROR。 参数异常返回ARKUI_ERROR_CODE_PARAM_INVALID。 |
@@ -2212,9 +2420,10 @@ ArkUI_ErrorCode OH_ArkUI_GestureCollectInterceptInfo_SetGestureCollectInterventi
  
   
 
-#### OH_ArkUI_GetGestureBindNodeUniqueId()
+### OH_ArkUI_GetGestureBindNodeUniqueId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 ArkUI_ErrorCode OH_ArkUI_GetGestureBindNodeUniqueId(const ArkUI_GestureRecognizer* recognizer, int32_t* uniqueId)
@@ -2228,6 +2437,7 @@ ArkUI_ErrorCode OH_ArkUI_GetGestureBindNodeUniqueId(const ArkUI_GestureRecognize
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_GestureRecognizer* recognizer | 表示指向手势识别器的指针。 |
@@ -2236,6 +2446,7 @@ ArkUI_ErrorCode OH_ArkUI_GetGestureBindNodeUniqueId(const ArkUI_GestureRecognize
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ArkUI_ErrorCode | 返回ARKUI_ERROR_CODE_NO_ERROR表示成功。 返回ARKUI_ERROR_CODE_PARAM_INVALID表示发生参数异常。 |
@@ -2243,9 +2454,10 @@ ArkUI_ErrorCode OH_ArkUI_GetGestureBindNodeUniqueId(const ArkUI_GestureRecognize
  
   
 
-#### OH_ArkUI_TouchRecognizer_IsHostBelongsTo()
+### OH_ArkUI_TouchRecognizer_IsHostBelongsTo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_ArkUI_TouchRecognizer_IsHostBelongsTo(const ArkUI_TouchRecognizerHandle recognizer, int32_t uniqueId)
@@ -2259,14 +2471,16 @@ bool OH_ArkUI_TouchRecognizer_IsHostBelongsTo(const ArkUI_TouchRecognizerHandle 
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_TouchRecognizerHandle recognizer | 表示触摸识别器句柄。 |
-| int32_t uniqueId | 表示组件的唯一ID，可通过OH_ArkUI_GetGestureBindNodeUniqueId获取。 |
+| int32_t uniqueId | 表示组件的唯一ID。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 如果当前触摸识别器绑定节点是传入组件的后代，则返回true，否则返回false。 |
@@ -2274,9 +2488,10 @@ bool OH_ArkUI_TouchRecognizer_IsHostBelongsTo(const ArkUI_TouchRecognizerHandle 
  
   
 
-#### OH_ArkUI_GestureRecognizer_IsHostBelongsTo()
+### OH_ArkUI_GestureRecognizer_IsHostBelongsTo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_ArkUI_GestureRecognizer_IsHostBelongsTo(const ArkUI_GestureRecognizer* recognizer, int32_t uniqueId)
@@ -2290,14 +2505,16 @@ bool OH_ArkUI_GestureRecognizer_IsHostBelongsTo(const ArkUI_GestureRecognizer* r
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ArkUI_GestureRecognizer* recognizer | 表示指向手势识别器的指针。 |
-| int32_t uniqueId | 表示组件的唯一ID，可通过OH_ArkUI_GetGestureBindNodeUniqueId获取。 |
+| int32_t uniqueId | 表示组件的唯一ID。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 如果当前手势绑定节点是传入组件的后代，则返回true，否则返回false。 |

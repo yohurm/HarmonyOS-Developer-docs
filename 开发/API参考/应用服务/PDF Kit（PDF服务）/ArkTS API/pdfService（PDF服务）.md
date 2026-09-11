@@ -1,6 +1,6 @@
 # pdfService（PDF服务）
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/pdf-arkts-pdfservice
 **支持设备：** Phone | PC/2in1 | Tablet
@@ -16,7 +16,8 @@
 **起始版本：** 5.0.0(12)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -26,7 +27,8 @@ import { pdfService } from '@kit.PDFKit';
  
   
 
-#### PdfDocument
+## PdfDocument
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -40,7 +42,8 @@ PDF文档类。
  
   
 
-#### constructor
+### constructor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -62,7 +65,8 @@ let pdfDocument = new pdfService.PdfDocument();
  
   
 
-#### loadDocument
+### loadDocument
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -78,6 +82,7 @@ loadDocument(path: string, password?: string, onProgress?: (progress: number) =>
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 文档路径。 |
@@ -87,6 +92,7 @@ loadDocument(path: string, password?: string, onProgress?: (progress: number) =>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | ParseResult | ParseResult枚举类型。 |
@@ -106,7 +112,8 @@ let loadResult = pdfDocument.loadDocument(tempFilePath, '');
  
   
 
-#### releaseDocument
+### releaseDocument
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -137,7 +144,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### saveDocument
+### saveDocument
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -157,6 +165,7 @@ saveDocument(path: string, onProgress?: (progress: number) => number): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 文档的沙箱路径。 |
@@ -165,6 +174,7 @@ saveDocument(path: string, onProgress?: (progress: number) => number): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 是否保存文档成功，true表示成功，false表示失败。 |
@@ -214,7 +224,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### createDocument
+### createDocument
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -230,6 +241,7 @@ createDocument(width: number, height: number): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | width | number | 是 | 文档宽度，必须大于0，单位为Points（一英寸等于72Points）。 |
@@ -238,6 +250,7 @@ createDocument(width: number, height: number): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 是否成功创建文档，true表示成功，false表示失败。 |
@@ -254,7 +267,8 @@ pdfDocument.createDocument(600, 900);
  
   
 
-#### isEncrypted
+### isEncrypted
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -270,6 +284,7 @@ isEncrypted(path: string): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 文件路径。 |
@@ -277,6 +292,7 @@ isEncrypted(path: string): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 文档是否加密，true表示加密，false表示没有加密。 |
@@ -298,7 +314,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### removeSecurity
+### removeSecurity
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -314,6 +331,7 @@ removeSecurity(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 是否成功删除文档加密锁，true表示成功，false表示失败。 |
@@ -335,7 +353,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### getPageCount
+### getPageCount
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -351,6 +370,7 @@ getPageCount(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 文档总页数，取值范围大于0。 |
@@ -372,7 +392,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### getPage
+### getPage
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -388,6 +409,7 @@ getPage(index: number): PdfPage
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 获取第几页对象，大于等于0，小于总页数，0为起始页。 |
@@ -395,6 +417,7 @@ getPage(index: number): PdfPage
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | PdfPage | 指定页的对象 |
@@ -417,7 +440,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### insertBlankPage
+### insertBlankPage
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -433,6 +457,7 @@ insertBlankPage(index: number, width: number, height: number): PdfPage
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 在第几页插入PDF页，必须大于等于0，小于总页数，0为起始页。 |
@@ -442,6 +467,7 @@ insertBlankPage(index: number, width: number, height: number): PdfPage
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | PdfPage | 插入的PDF页 |
@@ -464,7 +490,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### insertPageFromDocument
+### insertPageFromDocument
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -480,16 +507,18 @@ insertPageFromDocument(document: PdfDocument, fromIndex: number, pageCount: numb
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | document | PdfDocument | 是 | PdfDocument对象。 |
 | fromIndex | number | 是 | 从其他文档第几页开始添加，大于等于0，0为起始页。 |
-| pageCount | number | 是 | 添加页数量，大于0，小于等于总页数。 |
+| pageCount | number | 是 | 添加页数量，大于0且不超过总页数。最大支持1000页，从fromIndex起插入，超出1000页部分不插入且不报错。 |
 | index | number | 是 | 从当前文档第几页开始添加，大于等于0，小于总页数，0为起始页。 |
  
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | PdfPage | 插入的PDF最后一页。 |
@@ -518,7 +547,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult1) {
  
   
 
-#### deletePage
+### deletePage
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -534,6 +564,7 @@ deletePage(index: number, count: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 从当前文档第几页开始，索引大于等于0，小于总页数，0为起始页。 |
@@ -557,7 +588,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### movePage
+### movePage
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -577,6 +609,7 @@ movePage(index: number, dest: number): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 指定页面索引，大于等于0，小于总页数，0为起始页。 |
@@ -585,6 +618,7 @@ movePage(index: number, dest: number): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 是否成功将指定页面移到索引位置，true表示成功，false表示失败。 |
@@ -607,7 +641,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### getFontWeight
+### getFontWeight
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -623,6 +658,7 @@ getFontWeight(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 字体粗细，必须大于0，单位为Points（一英寸等于72Points）。 |
@@ -645,7 +681,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### setFontWeight
+### setFontWeight
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -661,6 +698,7 @@ setFontWeight(weight: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | weight | number | 是 | 字体粗细，必须大于0，单位为Points（一英寸等于72Points）。 |
@@ -683,7 +721,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### getMetadata
+### getMetadata
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -699,6 +738,7 @@ getMetadata(): Metadata
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Metadata | PDF元数据 |
@@ -721,7 +761,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### convertToImage
+### convertToImage
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -737,6 +778,7 @@ convertToImage(path: string, format: ImageFormat, onProgress?: (progress: number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 文件路径。 |
@@ -746,6 +788,7 @@ convertToImage(path: string, format: ImageFormat, onProgress?: (progress: number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 是否成功转换图片，true表示成功，false表示失败。 |
@@ -772,7 +815,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### getRootBookmark
+### getRootBookmark
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -788,6 +832,7 @@ getRootBookmark(): Bookmark
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Bookmark | 第一个根书签。 |
@@ -810,7 +855,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### getRootBookmarks
+### getRootBookmarks
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -826,6 +872,7 @@ PDF文档获取根书签。
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;Bookmark&gt; | 根书签。 |
@@ -848,7 +895,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### createBookmark
+### createBookmark
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -864,6 +912,7 @@ createBookmark(): Bookmark
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Bookmark | 成功创建的书签，并返回Bookmark信息。 |
@@ -886,7 +935,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### removeBookmark
+### removeBookmark
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -902,6 +952,7 @@ removeBookmark(bookmark: Bookmark): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bookmark | Bookmark | 是 | 要移除的书签对象。 |
@@ -909,6 +960,7 @@ removeBookmark(bookmark: Bookmark): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 是否成功移除书签，true表示成功，false表示失败。 |
@@ -934,7 +986,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### insertBookmark
+### insertBookmark
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -950,6 +1003,7 @@ insertBookmark(bookmark: Bookmark, parent: Bookmark, position: number): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | bookmark | Bookmark | 是 | 书签的信息。 |
@@ -959,6 +1013,7 @@ insertBookmark(bookmark: Bookmark, parent: Bookmark, position: number): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 是否成功插入书签，true表示成功，false表示失败。 |
@@ -986,7 +1041,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### addHeaderFooter
+### addHeaderFooter
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1002,6 +1058,7 @@ addHeaderFooter(info: HeaderFooterInfo, startIndex: number, endIndex: number, od
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | info | HeaderFooterInfo | 是 | 页眉页脚的信息。 |
@@ -1046,7 +1103,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### getHeaderFooter
+### getHeaderFooter
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1062,6 +1120,7 @@ getHeaderFooter(): HeaderFooterInfo
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | HeaderFooterInfo | 获取到的页眉页脚信息。 |
@@ -1082,7 +1141,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### hasHeaderFooter
+### hasHeaderFooter
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1098,6 +1158,7 @@ PDF文档是否有页眉页脚。
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | PDF文档是否有页眉页脚，true表示有，false表示没有。 |
@@ -1118,7 +1179,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### removeHeaderFooter
+### removeHeaderFooter
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1134,6 +1196,7 @@ removeHeaderFooter(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 删除PDF文档页眉页脚，true表示成功，false表示失败。 |
@@ -1156,7 +1219,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### addWatermark
+### addWatermark
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1172,6 +1236,7 @@ addWatermark(info: WatermarkInfo, startIndex: number, endIndex: number, oddPages
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | info | WatermarkInfo | 是 | 水印的信息。 |
@@ -1241,7 +1306,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### getWatermark
+### getWatermark
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1257,6 +1323,7 @@ getWatermark(): WatermarkInfo
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | WatermarkInfo | 获取PDF文档水印信息。 |
@@ -1277,7 +1344,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### hasWatermark
+### hasWatermark
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1293,6 +1361,7 @@ PDF文档是否有水印。
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | PDF文档是否有水印，true表示有，false表示没有。 |
@@ -1313,7 +1382,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### removeWatermark
+### removeWatermark
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1329,6 +1399,7 @@ removeWatermark(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 是否删除PDF文档水印成功，true表示成功，false表示失败。 |
@@ -1352,7 +1423,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### addBackground
+### addBackground
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1368,6 +1440,7 @@ addBackground(info: BackgroundInfo, startIndex: number, endIndex: number, oddPag
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | info | BackgroundInfo | 是 | 背景的信息。 |
@@ -1403,7 +1476,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### getBackground
+### getBackground
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1419,6 +1493,7 @@ getBackground(): BackgroundInfo
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | BackgroundInfo | 获取PDF文档背景信息。 |
@@ -1441,7 +1516,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### hasBackground
+### hasBackground
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1457,6 +1533,7 @@ PDF文档是否有背景。
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | PDF文档是否有背景，true表示有，false表示没有。 |
@@ -1477,7 +1554,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### removeBackground
+### removeBackground
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1493,6 +1571,7 @@ removeBackground(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 是否成功删除背景，true表示成功，false表示失败。 |
@@ -1515,7 +1594,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### setPdfPassword
+### setPdfPassword
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1535,6 +1615,7 @@ setPdfPassword(password: string): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | password | string | 是 | 密码（只支持0-127以内的ASCII字符）。 |
@@ -1542,6 +1623,7 @@ setPdfPassword(password: string): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 是否添加密码成功。 - true：添加成功 - false：添加失败 |
@@ -1562,7 +1644,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### getPixelMapWithPages
+### getPixelMapWithPages
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1578,6 +1661,7 @@ getPixelMapWithPages(pageIndices: number[], matrices: PdfMatrix[], bitmapWidth: 
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pageIndices | number[] | 是 | 页面索引数组，0为起始页。 |
@@ -1589,6 +1673,7 @@ getPixelMapWithPages(pageIndices: number[], matrices: PdfMatrix[], bitmapWidth: 
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | image.PixelMap | 合并后PDF页面的image.PixelMap。 |
@@ -1598,6 +1683,7 @@ getPixelMapWithPages(pageIndices: number[], matrices: PdfMatrix[], bitmapWidth: 
  
 以下错误码的详细介绍请参见[ArkTS API 错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-pdf)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 1011301001 | The arrays of pageIndices and matrices do not match. |
@@ -1643,7 +1729,8 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### searchKey
+### searchKey
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1659,6 +1746,7 @@ searchKey(text: string, listener: SearchKeyCallback, options?: SearchOptions): P
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | text | string | 是 | 要搜索的关键词（不支持跨PDF页面的字符串） |
@@ -1668,6 +1756,7 @@ searchKey(text: string, listener: SearchKeyCallback, options?: SearchOptions): P
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;void&gt; | Promise对象，无返回结果。 |
@@ -1706,7 +1795,8 @@ if (loadResult === pdfService.ParseResult.PARSE_SUCCESS) {
  
   
 
-#### SearchKeyCallback
+## SearchKeyCallback
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1722,6 +1812,7 @@ type SearchKeyCallback = (results: SearchResultData[]) => boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | results | SearchResultData[] | 是 | 搜索的结果 |
@@ -1729,6 +1820,7 @@ type SearchKeyCallback = (results: SearchResultData[]) => boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 是否终止搜索任务。 - true: 终止搜索任务 - false: 不终止搜索任务 |
@@ -1736,7 +1828,8 @@ type SearchKeyCallback = (results: SearchResultData[]) => boolean
  
   
 
-#### SearchOptions
+## SearchOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1748,6 +1841,7 @@ type SearchKeyCallback = (results: SearchResultData[]) => boolean
  
 **起始版本：** 6.0.1(21)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | startIndex | number | 否 | 是 | 搜索关键词的起始页码，必须大于等于0，默认值：0。 |
@@ -1759,7 +1853,8 @@ type SearchKeyCallback = (results: SearchResultData[]) => boolean
  
   
 
-#### SearchResultData
+## SearchResultData
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1771,16 +1866,18 @@ type SearchKeyCallback = (results: SearchResultData[]) => boolean
  
 **起始版本：** 6.0.1(21)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | pageIndex | number | 否 | 否 | 搜索命中项所在的页码值。 |
 | rects | PdfRect[] | 否 | 否 | 搜索命中项的矩形信息。 |
-| contextString | string | 否 | 否 | 当字符串长度不超过contextStringLength时，按原字符串进行输出；当字符串长度超过contextString时，截取至contextStringLength长度。 |
+| contextString | string | 否 | 否 | 当字符串长度不超过contextStringLength时，按原字符串进行输出；当字符串长度超过contextStringLength时，截取至contextStringLength长度。 |
  
  
   
 
-#### Metadata
+## Metadata
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1792,6 +1889,7 @@ PDF元数据类型。
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | title | string | 否 | 否 | 获取标题。 |
@@ -1806,7 +1904,8 @@ PDF元数据类型。
  
   
 
-#### PdfAnnotation
+## PdfAnnotation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1820,8 +1919,12 @@ PDF页面的批注类。
  
   
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | AnnotationType | 否 | 否 | 批注类型。 |
@@ -1830,7 +1933,8 @@ PDF页面的批注类。
  
   
 
-#### getPdfPage
+### getPdfPage
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1846,6 +1950,7 @@ getPdfPage(): PdfPage
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | PdfPage | PDF页面数据。 |
@@ -1869,7 +1974,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### getAnnotationIndex
+### getAnnotationIndex
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1885,6 +1991,7 @@ getAnnotationIndex(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | PDF页面批注的索引。 |
@@ -1908,7 +2015,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### getAnnotationInfo
+### getAnnotationInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1924,6 +2032,7 @@ getAnnotationInfo(): PdfAnnotationInfo
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | PdfAnnotationInfo | PDF页面批注。 |
@@ -1955,7 +2064,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### moveTo
+### moveTo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -1971,6 +2081,7 @@ moveTo(x: number, y: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | x | number | 是 | 增量移动PDF页面x的距离，单位为Points（一英寸等于72Points）。 |
@@ -1999,7 +2110,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### isMarkup
+### isMarkup
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2015,6 +2127,7 @@ isMarkup(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 当前批注是否为标记类型批注，true表示是，false表示否。 |
@@ -2042,7 +2155,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### PdfAnnotationInfo
+## PdfAnnotationInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2054,6 +2168,7 @@ PDF页面的批注信息。
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | AnnotationType | 否 | 否 | 批注类型。 |
@@ -2071,7 +2186,8 @@ PDF页面的批注信息。
  
   
 
-#### TextAnnotationInfo
+## TextAnnotationInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2083,18 +2199,20 @@ PDF页面的文本批注类，继承[PdfAnnotationInfo](#pdfannotationinfo)。
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | iconName | string | 否 | 否 | 文本类型标注的图标名称。 |
 | state | TextAnnotationState | 否 | 否 | 文本批注状态类型枚举。 |
 | x | number | 否 | 否 | x坐标，必须大于等于0，单位为Points（一英寸等于72Points）。 |
 | y | number | 否 | 否 | y坐标，必须大于等于0，单位为Points（一英寸等于72Points）。 说明：底层做了处理，传值和取值会有偏差。 |
-| color | number | 否 | 是 | 批注文本颜色，取值范围0x000000 ~ 0xFFFFFF，默认值：0x000000。 (例如：0xFF0000代表蓝色，0x0000FF代表红色) |
+| color | number | 否 | 是 | 批注文本颜色，BGR格式，取值范围：0x000000~0xFFFFFF，默认值：0x000000。 例如：0xFF0000代表蓝色，0x0000FF代表红色。 |
  
  
   
 
-#### LinkAnnotationInfo
+## LinkAnnotationInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2106,6 +2224,7 @@ PDF页面的链接类型注释的信息，继承[PdfAnnotationInfo](#pdfannotati
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | left | number | 否 | 否 | 左间距，必须大于等于0，单位为Points（一英寸等于72Points）。 |
@@ -2113,12 +2232,13 @@ PDF页面的链接类型注释的信息，继承[PdfAnnotationInfo](#pdfannotati
 | right | number | 否 | 否 | 右间距，必须大于等于0，单位为Points（一英寸等于72Points）。 |
 | top | number | 否 | 否 | 顶部间距，必须大于等于0，单位为Points（一英寸等于72Points）。 |
 | highlightMode | HighlightMode | 否 | 是 | 高亮模式类型，用于设置链接注释被激活时的高亮效果。 |
-| color | number | 否 | 是 | 颜色，取值范围0x000000 ~ 0xFFFFFF。 (例如：0xFF0000代表蓝色，0x0000FF代表红色) |
+| color | number | 否 | 是 | 颜色，BGR格式，取值范围：0x000000~0xFFFFFF。 例如：0xFF0000代表蓝色，0x0000FF代表红色。 |
  
  
   
 
-#### FreeTextAnnotationInfo
+## FreeTextAnnotationInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2130,19 +2250,21 @@ PDF页面的自由文本类型注释的信息，继承[PdfAnnotationInfo](#pdfan
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | x | number | 否 | 否 | x坐标，必须大于等于0，单位为Points（一英寸等于72Points）。 说明：底层做了处理，传值和取值会有偏差。 |
 | y | number | 否 | 否 | y坐标，必须大于等于0，单位为Points（一英寸等于72Points）。 说明：底层做了处理，传值和取值会有偏差。 |
 | width | number | 否 | 是 | 宽，必须大于0，单位为Points（一英寸等于72Points）。 说明：底层做了处理，传值和取值会有偏差。 |
-| fillColor | number | 否 | 是 | 填充颜色，取值范围 0x000000 ~ 0xFFFFFF，默认值：0x000000。 (例如：0xFF0000代表蓝色，0x0000FF代表红色) |
+| fillColor | number | 否 | 是 | 填充颜色，BGR格式，取值范围：0x000000~0xFFFFFF，默认值：0x000000。 例如：0xFF0000代表蓝色，0x0000FF代表红色。 |
 | textStyle | TextStyle | 否 | 是 | 文本类型。 说明：传值取值会有差异，有些传入的是布尔值，如果是true，则取值是1，如果是false，取值是0。传入的字体参数，因字体文件名称有多个，返回字体名称会有偏差。 |
 | textAlignment | AlignmentType | 否 | 是 | 对齐类型，默认值：LEFT。 |
  
  
   
 
-#### SquareAnnotationInfo
+## SquareAnnotationInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2154,19 +2276,21 @@ PDF页面的方块类型标注信息类，继承[PdfAnnotationInfo](#pdfannotati
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | left | number | 否 | 否 | 左间距，必须大于等于0，单位为Points（一英寸等于72Points）。 |
 | bottom | number | 否 | 否 | 底部间距，必须大于等于0，单位为Points（一英寸等于72Points）。 |
 | right | number | 否 | 否 | 右间距，必须大于等于0，单位为Points（一英寸等于72Points）。 |
 | top | number | 否 | 否 | 顶部间距，必须大于等于0，单位为Points（一英寸等于72Points）。 |
-| lineColor | number | 否 | 是 | 线框颜色，取值范围0x000000 ~ 0xFFFFFF。 (例如：0xFF0000代表蓝色，0x0000FF代表红色) |
-| fillColor | number | 否 | 是 | 填充颜色，取值范围0x000000 ~ 0xFFFFFF。 (例如：0xFF0000代表蓝色，0x0000FF代表红色) |
+| lineColor | number | 否 | 是 | 线框颜色，BGR格式，取值范围：0x000000~0xFFFFFF。 例如：0xFF0000代表蓝色，0x0000FF代表红色。 |
+| fillColor | number | 否 | 是 | 填充颜色，BGR格式，取值范围：0x000000~0xFFFFFF。 例如：0xFF0000代表蓝色，0x0000FF代表红色。 |
  
  
   
 
-#### OvalAnnotationInfo
+## OvalAnnotationInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2178,19 +2302,21 @@ PDF页面的椭圆型标注的信息类，继承[PdfAnnotationInfo](#pdfannotati
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | left | number | 否 | 否 | 左间距，必须大于等于0，单位为Points（一英寸等于72Points）。 |
 | bottom | number | 否 | 否 | 底部间距，必须大于等于0，单位为Points（一英寸等于72Points）。 |
 | right | number | 否 | 否 | 右间距，必须大于等于0，单位为Points（一英寸等于72Points）。 |
 | top | number | 否 | 否 | 顶部间距，必须大于等于0，单位为Points（一英寸等于72Points）。 |
-| lineColor | number | 否 | 是 | 线框颜色，取值范围0x000000 ~ 0xFFFFFF。 (例如：0xFF0000代表蓝色，0x0000FF代表红色) |
-| fillColor | number | 否 | 是 | 填充颜色，取值范围0x000000 ~ 0xFFFFFF。 (例如：0xFF0000代表蓝色，0x0000FF代表红色) |
+| lineColor | number | 否 | 是 | 线框颜色，BGR格式，取值范围：0x000000~0xFFFFFF。 例如：0xFF0000代表蓝色，0x0000FF代表红色。 |
+| fillColor | number | 否 | 是 | 填充颜色，BGR格式，取值范围：0x000000~0xFFFFFF。 例如：0xFF0000代表蓝色，0x0000FF代表红色。 |
  
  
   
 
-#### PolygonAnnotationInfo
+## PolygonAnnotationInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2202,16 +2328,18 @@ PDF页面的多边形批注信息类，继承[PdfAnnotationInfo](#pdfannotationi
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | vertexes | Array&lt;PdfPoint&gt; | 否 | 否 | 按顺序描述多边形的PdfPoint类型的数组。 |
-| lineColor | number | 否 | 是 | 线框颜色，取值范围0x000000 ~ 0xFFFFFF。 (例如：0xFF0000代表蓝色，0x0000FF代表红色) |
-| fillColor | number | 否 | 是 | 填充颜色，取值范围0x000000 ~ 0xFFFFFF。 (例如：0xFF0000代表蓝色，0x0000FF代表红色) |
+| lineColor | number | 否 | 是 | 线框颜色，BGR格式，取值范围：0x000000~0xFFFFFF。 例如：0xFF0000代表蓝色，0x0000FF代表红色。 |
+| fillColor | number | 否 | 是 | 填充颜色，BGR格式，取值范围：0x000000~0xFFFFFF。 例如：0xFF0000代表蓝色，0x0000FF代表红色。 |
  
  
   
 
-#### LineAnnotationInfo
+## LineAnnotationInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2223,6 +2351,7 @@ PDF页面的线型标注信息类，继承[PdfAnnotationInfo](#pdfannotationinfo
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | startX | number | 否 | 否 | 起点的x坐标（到左边缘的距离），单位为Points（一英寸等于72Points）。 说明：传参和取值会有偏差，底层对数据做了处理。 |
@@ -2231,12 +2360,13 @@ PDF页面的线型标注信息类，继承[PdfAnnotationInfo](#pdfannotationinfo
 | endY | number | 否 | 否 | 终点的y坐标（到下边缘的距离），单位为Points（一英寸等于72Points）。 说明：传参和取值会有偏差，底层对数据做了处理。 |
 | startPointStyle | LineEndStyle | 否 | 否 | 线条开始端点的线条样式。 |
 | endPointStyle | LineEndStyle | 否 | 否 | 线条结束端点的线条样式。 |
-| lineColor | number | 否 | 是 | 线框颜色，取值范围0x000000 ~ 0xFFFFFF。（例如：0xFF0000代表蓝色，0x0000FF代表红色) |
+| lineColor | number | 否 | 是 | 线框颜色，BGR格式，取值范围：0x000000~0xFFFFFF。例如：0xFF0000代表蓝色，0x0000FF代表红色。 |
  
  
   
 
-#### PolylineAnnotationInfo
+## PolylineAnnotationInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2248,15 +2378,17 @@ PDF页面的折线类型标注的信息类，继承[PdfAnnotationInfo](#pdfannot
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | vertexes | Array&lt;PdfPoint&gt; | 否 | 否 | 按顺序描述折线的PdfPoint类型的数组。 |
-| lineColor | number | 否 | 是 | 线框颜色，取值范围0x000000~0xFFFFFF。 (例如：0xFF0000代表蓝色，0x0000FF代表红色) |
+| lineColor | number | 否 | 是 | 线框颜色，BGR格式，取值范围：0x000000~0xFFFFFF。 例如：0xFF0000代表蓝色，0x0000FF代表红色。 |
  
  
   
 
-#### HighlightAnnotationInfo
+## HighlightAnnotationInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2268,15 +2400,17 @@ PDF页面的高亮类型标注信息类，继承[PdfAnnotationInfo](#pdfannotati
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | quadPoints | Array&lt;PdfPoint&gt; | 否 | 否 | 高亮区域的PdfPoint数组。 每个链接标注有4*n个点，每组4个点分别是： 第1个点：矩形左上角的点。 第2个点：矩形的右上点。 第3个点：矩形左下角的点。 第4个点：矩形的右下角点。 说明：传参和取值会有差异，底层对数据做了处理。 |
-| color | number | 否 | 是 | 突出显示的RGB颜色，取值范围0x000000~0xFFFFFF。 (例如：0xFF0000代表蓝色，0x0000FF代表红色) |
+| color | number | 否 | 是 | 突出显示的BGR颜色，BGR格式，取值范围：0x000000~0xFFFFFF。 例如：0xFF0000代表蓝色，0x0000FF代表红色。 |
  
  
   
 
-#### UnderlineAnnotationInfo
+## UnderlineAnnotationInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2288,6 +2422,7 @@ PDF页面的下划线类型标注的信息类，继承[PdfAnnotationInfo](#pdfan
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | quadPoints | Array&lt;PdfPoint&gt; | 否 | 否 | 下划线区域的PdfPoint数组。 每个链接标注有4*n个点，每组4个点分别是： 第1个点：矩形左上角的点。 第2个点：矩形的右上点。 第3个点：矩形左下角的点。 第4个点：矩形的右下角点。 说明：传参和取值会有差异，底层对数据做了处理。 |
@@ -2295,7 +2430,8 @@ PDF页面的下划线类型标注的信息类，继承[PdfAnnotationInfo](#pdfan
  
   
 
-#### StrikethroughAnnotationInfo
+## StrikethroughAnnotationInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2307,6 +2443,7 @@ PDF页面的删除线类型批注的信息类，继承[PdfAnnotationInfo](#pdfan
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | quadPoints | Array&lt;PdfPoint&gt; | 否 | 否 | 删除线区域的PdfPoint数组。 每个链接标注有4*n个点，每组4个点分别是： 第1个点：矩形左上角的点。 第2个点：矩形的右上点。 第3个点：矩形左下角的点。 第4个点：矩形的右下角点。 说明：传参和取值会有差异，底层对数据做了处理。 |
@@ -2314,7 +2451,8 @@ PDF页面的删除线类型批注的信息类，继承[PdfAnnotationInfo](#pdfan
  
   
 
-#### InkAnnotationInfo
+## InkAnnotationInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2326,15 +2464,17 @@ PDF页面的墨水类型注释信息类，继承[PdfAnnotationInfo](#pdfannotati
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | inkPoints | Array&lt;PdfPoint&gt; | 否 | 否 | PdfPoint数组按顺序描述墨迹批注 每个链接标注有4*n个点，每组4个点分别是： 第1个点：矩形左上角的点。 第2个点：矩形的右上点。 第3个点：矩形左下角的点。 第4个点：矩形的右下角点。 |
-| lineColor | number | 否 | 是 | 线框颜色，取值范围0x000000~0xFFFFFF，默认值：0x000000。 (例如：0xFF0000代表蓝色，0x0000FF代表红色) |
+| lineColor | number | 否 | 是 | 线框颜色，BGR格式，取值范围：0x000000~0xFFFFFF，默认值：0x000000。 例如：0xFF0000代表蓝色，0x0000FF代表红色。 |
  
  
   
 
-#### StampAnnotationInfo
+## StampAnnotationInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2346,6 +2486,7 @@ PDF页面的图章类型注释的信息类，继承[PdfAnnotationInfo](#pdfannot
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | imagePath | string | 否 | 否 | 标记为的图像的文件路径。 |
@@ -2357,7 +2498,8 @@ PDF页面的图章类型注释的信息类，继承[PdfAnnotationInfo](#pdfannot
  
   
 
-#### PdfPoint
+## PdfPoint
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2371,8 +2513,12 @@ PDF页面的点位置类。
  
   
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | x | number | 否 | 否 | x坐标，距离页面左边缘的距离，单位为Points（一英寸等于72Points）。 |
@@ -2381,7 +2527,8 @@ PDF页面的点位置类。
  
   
 
-#### constructor
+### constructor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2405,7 +2552,8 @@ let pdfPoint = new pdfService.PdfPoint();
  
   
 
-#### PdfBorder
+## PdfBorder
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2419,18 +2567,23 @@ PDF页面的边框类。
  
   
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | borderStyle | BorderStyle | 否 | 否 | 线框类型。 |
 | borderWidth | number | 否 | 否 | 线框宽度，必须大于0，单位为Points（一英寸等于72Points）。 |
-| borderColor | number | 否 | 否 | 线框颜色，取值范围0x000000 ~ 0xFFFFFF。 (例如：0xFF0000代表蓝色，0x0000FF代表红色) |
+| borderColor | number | 否 | 否 | 线框颜色，BGR格式，取值范围：0x000000~0xFFFFFF。 例如：0xFF0000代表蓝色，0x0000FF代表红色。 |
  
  
   
 
-#### constructor
+### constructor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2454,7 +2607,8 @@ let pdfBorder = new pdfService.PdfBorder();
  
   
 
-#### PdfRect
+## PdfRect
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2468,8 +2622,12 @@ PDF页面的矩形类。
  
   
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | left | number | 否 | 否 | 左边距，必须大于等于0，单位为Points（一英寸等于72Points）。 |
@@ -2480,7 +2638,8 @@ PDF页面的矩形类。
  
   
 
-#### constructor
+### constructor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2504,7 +2663,8 @@ let pdfRect = new pdfService.PdfRect();
  
   
 
-#### PdfMatrix
+## PdfMatrix
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2518,8 +2678,12 @@ PDF页面的坐标变换矩阵。包含 x, y, width, height,rotate。x, y指定�
  
   
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | x | number | 否 | 否 | x坐标，必须大于等于0，单位为Points（一英寸等于72Points）。用于指定目标页左上角在 PDF 页面中的水平偏移。 |
@@ -2531,7 +2695,8 @@ PDF页面的坐标变换矩阵。包含 x, y, width, height,rotate。x, y指定�
  
   
 
-#### constructor
+### constructor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2555,7 +2720,8 @@ let pdfMatrix = new pdfService.PdfMatrix();
  
   
 
-#### PdfPage
+## PdfPage
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2569,7 +2735,8 @@ PDF页面类。
  
   
 
-#### getDocument
+### getDocument
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2585,6 +2752,7 @@ getDocument(): PdfDocument
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | PdfDocument | PdfDocument对象。 |
@@ -2606,7 +2774,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### getAnnotations
+### getAnnotations
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2622,6 +2791,7 @@ getAnnotations(): Array&lt;PdfAnnotation&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;PdfAnnotation&gt; | 文档批注数组。 |
@@ -2643,7 +2813,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### addAnnotation
+### addAnnotation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2659,6 +2830,7 @@ addAnnotation(annotationInfo: PdfAnnotationInfo): PdfAnnotation
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | annotationInfo | PdfAnnotationInfo | 是 | 文档批注类。 |
@@ -2666,6 +2838,7 @@ addAnnotation(annotationInfo: PdfAnnotationInfo): PdfAnnotation
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | PdfAnnotation | 文档批注。 |
@@ -2693,7 +2866,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### setAnnotation
+### setAnnotation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2709,6 +2883,7 @@ setAnnotation(annotation: PdfAnnotation, annotationInfo: PdfAnnotationInfo): voi
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | annotation | PdfAnnotation | 是 | 文档批注。 |
@@ -2747,7 +2922,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### removeAnnotation
+### removeAnnotation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2763,6 +2939,7 @@ removeAnnotation(annotation: PdfAnnotation): void
  
 **参数**：
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | annotation | PdfAnnotation | 是 | 文档批注。 |
@@ -2792,7 +2969,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### getIndex
+### getIndex
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2808,6 +2986,7 @@ getIndex(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 索引，取值范围大于等于0，小于总页数。 |
@@ -2829,7 +3008,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### getWidth
+### getWidth
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2845,6 +3025,7 @@ getWidth(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 宽度值，单位为Points（一英寸等于72Points）。 |
@@ -2866,7 +3047,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### getHeight
+### getHeight
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2882,6 +3064,7 @@ getHeight(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 高度值，单位为Points（一英寸等于72Points）。 |
@@ -2903,7 +3086,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### setBox
+### setBox
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2919,6 +3103,7 @@ setBox(boxtype: BoxType, rect: PdfRect): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | boxtype | BoxType | 是 | 页边界。 |
@@ -2946,7 +3131,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### getBox
+### getBox
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -2962,6 +3148,7 @@ getBox(boxtype: BoxType): PdfRect
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | boxtype | BoxType | 是 | 页边界。 |
@@ -2969,6 +3156,7 @@ getBox(boxtype: BoxType): PdfRect
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | PdfRect | 返回页边界矩形。 |
@@ -2990,7 +3178,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### setRotation
+### setRotation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3006,6 +3195,7 @@ setRotation(rotation: RotationAngle): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | rotation | RotationAngle | 是 | 旋转角度枚举值。 |
@@ -3027,7 +3217,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### getRotation
+### getRotation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3043,6 +3234,7 @@ getRotation(): RotationAngle
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | RotationAngle | 旋转角度。 |
@@ -3064,7 +3256,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### getPagePixelMap
+### getPagePixelMap
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3080,6 +3273,7 @@ getPagePixelMap(): image.PixelMap
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | image.PixelMap | 当前页的image.PixelMap类型。 |
@@ -3101,7 +3295,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### getCustomPagePixelMap
+### getCustomPagePixelMap
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3117,6 +3312,7 @@ getCustomPagePixelMap(matrix: PdfMatrix, isGray: boolean, drawAnnotations: boole
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | matrix | PdfMatrix | 是 | 坐标变换矩阵，用于在渲染时对页面内容做缩放、平移、旋转等。 |
@@ -3126,6 +3322,7 @@ getCustomPagePixelMap(matrix: PdfMatrix, isGray: boolean, drawAnnotations: boole
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | image.PixelMap | 当前页PixelMap。 |
@@ -3149,7 +3346,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### getAreaPixelMap
+### getAreaPixelMap
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3165,6 +3363,7 @@ getAreaPixelMap(matrix: PdfMatrix, bitmapwidth: number, bitmapHeight: number, is
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | matrix | PdfMatrix | 是 | 坐标变换矩阵，用于在渲染时对页面内容做 缩放、平移、旋转等。 |
@@ -3176,6 +3375,7 @@ getAreaPixelMap(matrix: PdfMatrix, bitmapwidth: number, bitmapHeight: number, is
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | image.PixelMap | 当前页PixelMap。 |
@@ -3199,7 +3399,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### addTextObject
+### addTextObject
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3219,6 +3420,7 @@ addTextObject(text: string, x: number, y: number, style: TextStyle): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | text | string | 是 | 文本内容。 |
@@ -3252,13 +3454,14 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### addImageObject
+### addImageObject
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
 addImageObject(path: string, x: number, y: number, width: number, height: number): void
  
-在PDF文档的页面中添加图片。
+在PDF文档的页面中添加图片。当前仅支持添加像素格式为RGB_888、RGBA_8888、BGR_888、BGRA_8888、ARGB_8888、ABGR_8888、Y8的图片。
  
 **模型约束：** 此接口仅可在Stage模型下使用。
  
@@ -3268,6 +3471,7 @@ addImageObject(path: string, x: number, y: number, width: number, height: number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 文件路径。 |
@@ -3297,7 +3501,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### getGraphicsObjects
+### getGraphicsObjects
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3313,6 +3518,7 @@ getGraphicsObjects(): Array&lt;GraphicsObject&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;GraphicsObject&gt; | 所有图形对象数组。 |
@@ -3334,7 +3540,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### deleteGraphicsObject
+### deleteGraphicsObject
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3350,6 +3557,7 @@ deleteGraphicsObject(object: GraphicsObject): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | object | GraphicsObject | 是 | 图形对象。 |
@@ -3375,7 +3583,8 @@ pdfDocument.releaseDocument();
  
   
 
-#### release
+### release
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3405,7 +3614,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### getAreaPixelMapWithOptions
+### getAreaPixelMapWithOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3421,6 +3631,7 @@ getAreaPixelMapWithOptions(matrix: PdfMatrix,bitmapwidth: number,bitmapHeight: n
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | matrix | PdfMatrix | 是 | 坐标变换矩阵，用于在渲染时对页面内容做缩放、平移、旋转等。 |
@@ -3431,6 +3642,7 @@ getAreaPixelMapWithOptions(matrix: PdfMatrix,bitmapwidth: number,bitmapHeight: n
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | image.PixelMap | 当前页PixelMap。 |
@@ -3463,7 +3675,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### getTextContent
+### getTextContent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3483,6 +3696,7 @@ getTextContent(): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 页面文本内容。 |
@@ -3508,7 +3722,8 @@ if (loadResult === pdfService.ParseResult.PARSE_SUCCESS) {
  
   
 
-#### GraphicsObject
+## GraphicsObject
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3520,6 +3735,7 @@ if (loadResult === pdfService.ParseResult.PARSE_SUCCESS) {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | GraphicsObjectType | 否 | 否 | 获取当前图形对象的类型。 |
@@ -3535,7 +3751,8 @@ if (loadResult === pdfService.ParseResult.PARSE_SUCCESS) {
  
   
 
-#### TextObject
+## TextObject
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3547,6 +3764,7 @@ if (loadResult === pdfService.ParseResult.PARSE_SUCCESS) {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | text | string | 否 | 否 | 获取文本。 |
@@ -3560,7 +3778,8 @@ if (loadResult === pdfService.ParseResult.PARSE_SUCCESS) {
  
   
 
-#### ImageObject
+## ImageObject
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3572,6 +3791,7 @@ if (loadResult === pdfService.ParseResult.PARSE_SUCCESS) {
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | pixelMap | image.PixelMap | 否 | 否 | 使用一种特殊的语法来表示直接在内容流内的小图像数据。 |
@@ -3581,7 +3801,8 @@ if (loadResult === pdfService.ParseResult.PARSE_SUCCESS) {
  
   
 
-#### Bookmark
+## Bookmark
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3595,7 +3816,8 @@ if (loadResult === pdfService.ParseResult.PARSE_SUCCESS) {
  
   
 
-#### isRootBookmark
+### isRootBookmark
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3611,6 +3833,7 @@ isRootBookmark(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 是否是根书签，true表示是，false表示否。 |
@@ -3635,7 +3858,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### getParent
+### getParent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3651,6 +3875,7 @@ getParent(): Bookmark
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Bookmark | 父书签。 |
@@ -3675,7 +3900,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### hasChild
+### hasChild
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3691,6 +3917,7 @@ hasChild(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 是否有子书签，true表示是，false表示否。 |
@@ -3715,7 +3942,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### getChildren
+### getChildren
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3731,6 +3959,7 @@ getChildren(): Array&lt;Bookmark&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Array&lt;Bookmark&gt; | 子书签列表。 |
@@ -3755,7 +3984,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### getDestInfo
+### getDestInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3771,6 +4001,7 @@ getDestInfo(): DestInfo
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | DestInfo | 书签的跳转信息。 |
@@ -3807,7 +4038,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### setDestInfo
+### setDestInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3823,6 +4055,7 @@ setDestInfo(info: DestInfo): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | info | DestInfo | 是 | 书签的跳转信息。 |
@@ -3859,7 +4092,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### getBookmarkInfo
+### getBookmarkInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3875,6 +4109,7 @@ getBookmarkInfo(): BookmarkInfo
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | BookmarkInfo | 书签信息。 |
@@ -3911,7 +4146,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### setBookmarkInfo
+### setBookmarkInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3927,6 +4163,7 @@ setBookmarkInfo(info: BookmarkInfo): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | info | BookmarkInfo | 是 | 书签信息。 |
@@ -3963,7 +4200,8 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### BookmarkInfo
+## BookmarkInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -3977,19 +4215,24 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
  
   
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | title | string | 否 | 否 | 书签的标题文本，用于标识书签指向的PDF内容。 |
-| titleColor | number | 否 | 是 | 标题颜色，取值范围0x000000 ~ 0xFFFFFF，默认值：0x000000。 (例如：0xFF0000代表蓝色，0x0000FF代表红色) |
+| titleColor | number | 否 | 是 | 标题颜色，BGR格式，取值范围：0x000000~0xFFFFFF，默认值：0x000000。 例如：0xFF0000代表蓝色，0x0000FF代表红色。 |
 | isBold | boolean | 否 | 是 | 标题是否粗体，true表示是，false表示否 ，默认值：false。 |
 | isItalic | boolean | 否 | 是 | 标题是否斜体，true表示是，false表示否，默认值：false。 |
  
  
   
 
-#### constructor
+### constructor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4013,7 +4256,8 @@ let bookmarkInfo = new pdfService.BookmarkInfo();
  
   
 
-#### HeaderFooterInfo
+## HeaderFooterInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4027,15 +4271,19 @@ let bookmarkInfo = new pdfService.BookmarkInfo();
  
   
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | fontInfo | FontInfo | 否 | 否 | 字体的信息。默认值为fontName:""，空字体名（无自定义字体）。 |
 | textSize | number | 否 | 否 | 页眉页脚文本大小，必须大于0，单位为Points（一英寸等于72Points）。默认值：0，0Points（无指定）。 |
 | charset | CharsetType | 否 | 否 | 文本字符集。默认值：0，PDF_FONT_ANSI_CHARSET （ANSI字符集）。 |
 | underline | boolean | 否 | 否 | 下划线是否添加，true表示是，false表示否。默认值：false，无下划线。 |
-| textColor | number | 否 | 否 | 文字颜色，取值范围0x000000 ~ 0xFFFFFF。默认值：0，表示黑色。 （例如：0xFF0000代表蓝色，0x0000FF代表红色） |
+| textColor | number | 否 | 否 | 文字颜色，BGR格式，取值范围：0x000000~0xFFFFFF。默认值：0，表示黑色。 例如：0xFF0000代表蓝色，0x0000FF代表红色。 |
 | leftMargin | number | 否 | 否 | 页眉页脚左间距，必须大于等于0，单位为Points（一英寸等于72Points）。默认值：0，表示无左边距。 |
 | topMargin | number | 否 | 否 | 页眉页脚顶部间距，必须大于等于0，单位为Points（一英寸等于72Points）。默认值：0，表示无顶部边距。 |
 | rightMargin | number | 否 | 否 | 页眉页脚右间距，必须大于等于0，单位为Points（一英寸等于72Points）。默认值：0，表示无右边距。 |
@@ -4050,7 +4298,8 @@ let bookmarkInfo = new pdfService.BookmarkInfo();
  
   
 
-#### constructor
+### constructor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4074,7 +4323,8 @@ let headerFooterInfo = new pdfService.HeaderFooterInfo();
  
   
 
-#### WatermarkInfo
+## WatermarkInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4088,8 +4338,12 @@ let headerFooterInfo = new pdfService.HeaderFooterInfo();
  
   
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | watermarkType | WatermarkType | 否 | 否 | 水印类型。默认值：0，表示无水印。 |
@@ -4105,7 +4359,8 @@ let headerFooterInfo = new pdfService.HeaderFooterInfo();
  
   
 
-#### constructor
+### constructor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4127,11 +4382,12 @@ let watermarkInfo = new pdfService.WatermarkInfo();
  
   
 
-#### TextWatermarkInfo
+## TextWatermarkInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
-文本水印类的相关属性，继承[WatermarkInfo](#watermarkinfo)。
+文本水印类的相关属性，继承[WatermarkInfo](#watermarkinfo)。当前在PC/2in1设备上暂不支持中文文本水印。
  
 **模型约束：** 此接口仅可在Stage模型下使用。
  
@@ -4139,17 +4395,19 @@ let watermarkInfo = new pdfService.WatermarkInfo();
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | content | string | 否 | 否 | 文本水印内容。 |
 | fontInfo | FontInfo | 否 | 否 | 字体的信息。 |
 | textSize | number | 否 | 否 | 文本大小，必须大于0。 |
-| textColor | number | 否 | 否 | 文本颜色，取值范围0x000000 ~ 0xFFFFFF。 (例如：0xFF0000代表蓝色，0x0000FF代表红色) |
+| textColor | number | 否 | 否 | 文本颜色，BGR格式，取值范围：0x000000~0xFFFFFF。 例如：0xFF0000代表蓝色，0x0000FF代表红色。 |
  
  
   
 
-#### ImageWatermarkInfo
+## ImageWatermarkInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4161,6 +4419,7 @@ let watermarkInfo = new pdfService.WatermarkInfo();
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | imagePath | string | 否 | 否 | 图片路径。 |
@@ -4168,7 +4427,8 @@ let watermarkInfo = new pdfService.WatermarkInfo();
  
   
 
-#### BackgroundInfo
+## BackgroundInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4182,12 +4442,16 @@ let watermarkInfo = new pdfService.WatermarkInfo();
  
   
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | imagePath | string | 否 | 否 | 图片路径（图片路径不填则背景色必填）。默认值：""，空字符串（无背景图片）。 |
-| backgroundColor | number | 否 | 否 | 背景颜色（背景色不填则图片路径必填）默认值：0，表示无色。 ，取值范围0x000000 ~ 0xFFFFFF。 （例如：0xFF0000代表蓝色，0x0000FF代表红色） |
+| backgroundColor | number | 否 | 否 | 背景颜色（背景色不填则图片路径必填）默认值：0，表示无色，BGR格式，取值范围：0x000000~0xFFFFFF。 例如：0xFF0000代表蓝色，0x0000FF代表红色。 |
 | isOnTop | boolean | 否 | 否 | 是否置顶，true表示是，false表示否。默认值：false。 |
 | scale | number | 否 | 否 | 缩放，必须大于0，小于等于5。默认值：0，表示无缩放。 |
 | rotation | number | 否 | 否 | 旋转。默认值：0，表示无旋转（0度）。 |
@@ -4200,7 +4464,8 @@ let watermarkInfo = new pdfService.WatermarkInfo();
  
   
 
-#### constructor
+### constructor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4224,7 +4489,8 @@ let backgroundInfo = new pdfService.BackgroundInfo();
  
   
 
-#### PdfAction
+## PdfAction
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4238,8 +4504,12 @@ let backgroundInfo = new pdfService.BackgroundInfo();
  
   
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | PdfActionType | 否 | 否 | 批注链接跳转类型。 |
@@ -4247,7 +4517,8 @@ let backgroundInfo = new pdfService.BackgroundInfo();
  
   
 
-#### constructor
+### constructor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4271,7 +4542,8 @@ let pdfAction = new pdfService.PdfAction();
  
   
 
-#### PdfActionGoTo
+## PdfActionGoTo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4283,6 +4555,7 @@ let pdfAction = new pdfService.PdfAction();
  
 **起始版本：** 5.1.0(18)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | destInfo | DestInfo | 否 | 否 | 跳转信息。 |
@@ -4290,7 +4563,8 @@ let pdfAction = new pdfService.PdfAction();
  
   
 
-#### PdfActionHyperlink
+## PdfActionHyperlink
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4302,6 +4576,7 @@ let pdfAction = new pdfService.PdfAction();
  
 **起始版本：** 5.1.0(18)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | hyperlink | string | 否 | 否 | 超链接地址。 |
@@ -4309,7 +4584,8 @@ let pdfAction = new pdfService.PdfAction();
  
   
 
-#### PixelOptions
+## PixelOptions
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4323,8 +4599,12 @@ PDF页面转图片相关参数选项。
  
   
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | isGray | boolean | 否 | 是 | 是否获取仅灰度的图像，true: 是，false: 否。 默认值：true。 |
@@ -4334,7 +4614,8 @@ PDF页面转图片相关参数选项。
  
   
 
-#### constructor
+### constructor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4356,7 +4637,8 @@ let pixelOptions = new pdfService.PixelOptions();
  
   
 
-#### FontInfo
+## FontInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4370,8 +4652,12 @@ let pixelOptions = new pdfService.PixelOptions();
  
   
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | fontPath | string | 否 | 是 | 字体的路径。 |
@@ -4380,7 +4666,8 @@ let pixelOptions = new pdfService.PixelOptions();
  
   
 
-#### constructor
+### constructor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4404,7 +4691,8 @@ let fontInfo = new pdfService.FontInfo();
  
   
 
-#### DestInfo
+## DestInfo
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4418,8 +4706,12 @@ let fontInfo = new pdfService.FontInfo();
  
   
 
-#### 属性
+### 属性
+
+
+**支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | fitMode | FitMode | 否 | 否 | 跳转到目标时的页面适合模式。 |
@@ -4433,7 +4725,8 @@ let fontInfo = new pdfService.FontInfo();
  
   
 
-#### constructor
+### constructor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4457,7 +4750,8 @@ let destInfo = new pdfService.DestInfo();
  
   
 
-#### TextStyle
+## TextStyle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4469,11 +4763,12 @@ let destInfo = new pdfService.DestInfo();
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | fontInfo | FontInfo | 否 | 是 | 字体信息，默认字体：HarmonyOS_Sans。 |
 | textSize | number | 否 | 是 | 字体大小，必须大于0，默认值：20。单位为Points（一英寸等于72Points）。 |
-| textColor | number | 否 | 是 | 字体颜色，取值范围0x000000 ~ 0xFFFFFF，默认值：0x000000。 (例如：0xFF0000代表蓝色，0x0000FF代表红色) |
+| textColor | number | 否 | 是 | 字体颜色，BGR格式，取值范围：0x000000~0xFFFFFF，默认值：0x000000。 例如：0xFF0000代表蓝色，0x0000FF代表红色。 |
 | isBold | boolean | 否 | 是 | 是否粗体，true表示是，false表示否，默认值：false。 |
 | isItalic | boolean | 否 | 是 | 是否斜体，true表示是，false表示否，默认值：false。 |
 | isUnderline | boolean | 否 | 是 | 是否有下划线，true表示是，false表示否，默认值：false。 |
@@ -4482,7 +4777,8 @@ let destInfo = new pdfService.DestInfo();
  
   
 
-#### BorderStyle
+## BorderStyle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4494,6 +4790,7 @@ let destInfo = new pdfService.DestInfo();
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NONE | 0 | 无边框。 |
@@ -4506,7 +4803,8 @@ let destInfo = new pdfService.DestInfo();
  
   
 
-#### AnnotationFlag
+## AnnotationFlag
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4518,6 +4816,7 @@ let destInfo = new pdfService.DestInfo();
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | INVISIBLE | 1 | 不可见。 |
@@ -4527,7 +4826,8 @@ let destInfo = new pdfService.DestInfo();
  
   
 
-#### TextAnnotationState
+## TextAnnotationState
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4539,6 +4839,7 @@ let destInfo = new pdfService.DestInfo();
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | UNMARKED | 0 | 由用户评论和标记。 |
@@ -4547,7 +4848,8 @@ let destInfo = new pdfService.DestInfo();
  
   
 
-#### HighlightMode
+## HighlightMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4559,6 +4861,7 @@ let destInfo = new pdfService.DestInfo();
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | HIGHLIGHT_INVERT | 1 | 反转注释区域内的颜色。 |
@@ -4569,7 +4872,8 @@ let destInfo = new pdfService.DestInfo();
  
   
 
-#### AlignmentType
+## AlignmentType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4581,6 +4885,7 @@ let destInfo = new pdfService.DestInfo();
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | LEFT | 0 | 到页面左边缘的距离。 |
@@ -4590,7 +4895,8 @@ let destInfo = new pdfService.DestInfo();
  
   
 
-#### LineEndStyle
+## LineEndStyle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4602,6 +4908,7 @@ let destInfo = new pdfService.DestInfo();
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | STYLE_NONE | 0 | 默认样式。 |
@@ -4618,7 +4925,8 @@ let destInfo = new pdfService.DestInfo();
  
   
 
-#### ParseResult
+## ParseResult
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4630,6 +4938,7 @@ let destInfo = new pdfService.DestInfo();
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | PARSE_SUCCESS | 0 | 成功解析。 |
@@ -4642,7 +4951,8 @@ let destInfo = new pdfService.DestInfo();
  
   
 
-#### PageLayout
+## PageLayout
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4654,6 +4964,7 @@ let destInfo = new pdfService.DestInfo();
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | LAYOUT_SINGLE | 1 | 单页面。 |
@@ -4662,7 +4973,8 @@ let destInfo = new pdfService.DestInfo();
  
   
 
-#### PageFit
+## PageFit
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4674,6 +4986,7 @@ let destInfo = new pdfService.DestInfo();
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | FIT_NONE | 0 | 实际大小。 |
@@ -4684,7 +4997,8 @@ let destInfo = new pdfService.DestInfo();
  
   
 
-#### RotationAngle
+## RotationAngle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4696,6 +5010,7 @@ let destInfo = new pdfService.DestInfo();
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ANGLE_0 | 0 | 0度。 |
@@ -4706,7 +5021,8 @@ let destInfo = new pdfService.DestInfo();
  
   
 
-#### ImageFormat
+## ImageFormat
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4718,6 +5034,7 @@ let destInfo = new pdfService.DestInfo();
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | PNG | 0 | png类型。 |
@@ -4727,7 +5044,8 @@ let destInfo = new pdfService.DestInfo();
  
   
 
-#### AnnotationType
+## AnnotationType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4739,6 +5057,7 @@ let destInfo = new pdfService.DestInfo();
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | UNKNOWN | 0 | 未知文本。 |
@@ -4760,7 +5079,8 @@ let destInfo = new pdfService.DestInfo();
  
   
 
-#### BoxType
+## BoxType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4772,6 +5092,7 @@ let destInfo = new pdfService.DestInfo();
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | BOX_MEDIA | 0 | 定义页面显示或打印的物理介质的边界。 |
@@ -4783,7 +5104,8 @@ let destInfo = new pdfService.DestInfo();
  
   
 
-#### GraphicsObjectType
+## GraphicsObjectType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4795,6 +5117,7 @@ let destInfo = new pdfService.DestInfo();
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | OBJECT_TEXT | 1 | 文本对象。 |
@@ -4806,7 +5129,8 @@ let destInfo = new pdfService.DestInfo();
  
   
 
-#### CharsetType
+## CharsetType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4818,6 +5142,7 @@ let destInfo = new pdfService.DestInfo();
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | PDF_FONT_CID_FONT_CHARSET | 0x100000 | CID字符集，用于中日韩等多字节字符。 |
@@ -4841,7 +5166,8 @@ let destInfo = new pdfService.DestInfo();
  
   
 
-#### FitMode
+## FitMode
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4853,6 +5179,7 @@ let destInfo = new pdfService.DestInfo();
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | FIT_MODE_XYZ | 1 | 按页面左上角的点缩放页面，页面内容按缩放比例放大。 |
@@ -4863,7 +5190,8 @@ let destInfo = new pdfService.DestInfo();
  
   
 
-#### WatermarkType
+## WatermarkType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4875,6 +5203,7 @@ let destInfo = new pdfService.DestInfo();
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | WATERMARK_TEXT | 1 | 文本水印。 |
@@ -4883,7 +5212,8 @@ let destInfo = new pdfService.DestInfo();
  
   
 
-#### WatermarkAlignment
+## WatermarkAlignment
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4895,6 +5225,7 @@ let destInfo = new pdfService.DestInfo();
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | WATERMARK_ALIGNMENT_TOP | 0 | 垂直置顶。 |
@@ -4907,7 +5238,8 @@ let destInfo = new pdfService.DestInfo();
  
   
 
-#### BackgroundAlignment
+## BackgroundAlignment
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4919,6 +5251,7 @@ let destInfo = new pdfService.DestInfo();
  
 **起始版本：** 5.0.0(12)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | BACKGROUND_ALIGNMENT_TOP | 0 | 垂直置顶。 |
@@ -4931,7 +5264,8 @@ let destInfo = new pdfService.DestInfo();
  
   
 
-#### PdfActionType
+## PdfActionType
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -4943,6 +5277,7 @@ let destInfo = new pdfService.DestInfo();
  
 **起始版本：** 5.1.0(18)
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | UNKNOWN | 0 | 未知类型 |

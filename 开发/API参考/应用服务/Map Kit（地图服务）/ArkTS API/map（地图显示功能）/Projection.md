@@ -1,11 +1,12 @@
 # Interface (Projection)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-projection
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -15,7 +16,8 @@ import { map, mapCommon } from '@kit.MapKit';
  
   
 
-#### Projection
+## Projection
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -37,7 +39,8 @@ let projection: map.Projection = this.mapController?.getProjection();
  
   
 
-#### fromScreenLocation
+### fromScreenLocation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -55,6 +58,7 @@ fromScreenLocation(point: mapCommon.MapPoint): mapCommon.LatLng
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | point | mapCommon.MapPoint | 是 | 屏幕上的坐标点，异常值不处理。 |
@@ -62,6 +66,7 @@ fromScreenLocation(point: mapCommon.MapPoint): mapCommon.LatLng
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | mapCommon.LatLng | 经纬度坐标。 |
@@ -79,7 +84,8 @@ let latLng: mapCommon.LatLng = projection.fromScreenLocation(point);
  
   
 
-#### fromScreenLocation
+### fromScreenLocation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -97,6 +103,7 @@ fromScreenLocation(point: mapCommon.MapPoint, altitude: number): mapCommon.LatLn
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | point | mapCommon.MapPoint | 是 | 屏幕上的坐标点，异常值不处理。 |
@@ -105,6 +112,7 @@ fromScreenLocation(point: mapCommon.MapPoint, altitude: number): mapCommon.LatLn
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | mapCommon.LatLng | 经纬度坐标。 |
@@ -122,7 +130,8 @@ let latLng: mapCommon.LatLng = projection.fromScreenLocation(point, 100);
  
   
 
-#### toScreenLocation
+### toScreenLocation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -140,6 +149,7 @@ toScreenLocation(position: mapCommon.LatLng): mapCommon.MapPoint
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | position | mapCommon.LatLng | 是 | 经纬度坐标，异常值不处理。 |
@@ -147,6 +157,7 @@ toScreenLocation(position: mapCommon.LatLng): mapCommon.MapPoint
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | mapCommon.MapPoint | 屏幕上的坐标点。 |
@@ -164,7 +175,8 @@ let mapPoint: mapCommon.MapPoint = projection.toScreenLocation(position)
  
   
 
-#### toScreenLocation
+### toScreenLocation
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -182,6 +194,7 @@ toScreenLocation(position: mapCommon.LatLng, altitude: number): mapCommon.MapPoi
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | position | mapCommon.LatLng | 是 | 经纬度坐标，异常值不处理。 |
@@ -190,6 +203,7 @@ toScreenLocation(position: mapCommon.LatLng, altitude: number): mapCommon.MapPoi
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | mapCommon.MapPoint | 屏幕上的坐标点。 |
@@ -207,7 +221,8 @@ let mapPoint: mapCommon.MapPoint = projection.toScreenLocation(position, 100)
  
   
 
-#### getVisibleRegion
+### getVisibleRegion
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -225,6 +240,7 @@ getVisibleRegion(): mapCommon.VisibleRegion
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | mapCommon.VisibleRegion | 可见区域。 |
@@ -238,7 +254,8 @@ let visibleRegion: mapCommon.VisibleRegion = projection.getVisibleRegion();
  
   
 
-#### getMapBounds
+### getMapBounds
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -256,6 +273,7 @@ getMapBounds(center: mapCommon.LatLng, zoom: number): mapCommon.LatLngBounds
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | center | mapCommon.LatLng | 是 | 中心点经纬度坐标，异常值不处理。 |
@@ -264,6 +282,7 @@ getMapBounds(center: mapCommon.LatLng, zoom: number): mapCommon.LatLngBounds
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | mapCommon.LatLngBounds | 目标区域。 |

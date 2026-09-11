@@ -1,16 +1,16 @@
 # InitBufPool
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-18 12:49:55
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-initbufpool
 
-#### 功能说明
+## 功能说明
 
 通过Tpipe::InitBufPool接口可划分出整块资源，整块TBufPool资源可以继续通过TBufPool::InitBufPool接口划分成小块资源。
  
   
 
-#### 函数原型
+## 函数原型
 
 ```text
 template <class T> 
@@ -21,10 +21,11 @@ __aicore__ inline bool InitBufPool(T& bufPool, uint32_t len, U& shareBuf)
  
   
 
-#### 参数说明
+## 参数说明
 
 **表1** InitBufPool(T& bufPool, uint32_t len) 原型定义参数说明
   
+
 | 参数名称 | 输入/输出 | 含义 |
 | --- | --- | --- |
 | bufPool | 输入 | 新划分的资源池，类型为TBufPool。 |
@@ -33,6 +34,7 @@ __aicore__ inline bool InitBufPool(T& bufPool, uint32_t len, U& shareBuf)
  
 **表2** InitBufPool(T& bufPool, uint32_t len, U& shareBuf) 原型定义参数说明
   
+
 | 参数名称 | 输入/输出 | 含义 |
 | --- | --- | --- |
 | bufPool | 输入 | 新划分的资源池，类型为TBufPool。 |
@@ -42,15 +44,17 @@ __aicore__ inline bool InitBufPool(T& bufPool, uint32_t len, U& shareBuf)
  
   
 
-#### 支持的型号
+## 支持的型号
 
 Kirin9020系列处理器
+ 
+Kirin9030系列处理器
  
 KirinX90系列处理器
  
   
 
-#### 注意事项
+## 注意事项
 
 - 新划分的资源池与被复用资源池的物理内存需要一致，两者共享起始地址及长度。
 - 输入长度需要小于等于被复用资源池长度。
@@ -59,13 +63,13 @@ KirinX90系列处理器
  
   
 
-#### 返回值
+## 返回值
 
 无
  
   
 
-#### 调用示例
+## 调用示例
 
 数据量较大且内存有限时，无法一次完成所有数据搬运，需要拆分成多个阶段计算，每次计算使用其中的一部分数据，可以通过TBufPool资源池进行内存地址复用。本例中，从Tpipe划分出资源池tbufPool0，tbufPool0为src0Gm分配空间后，继续分配了资源池tbufPool1，指定tbufPool1与tbufPool2复用并分别运用于第一、二轮计算，此时tbufPool1及tbufPool2共享起始地址及长度。
  

@@ -1,9 +1,9 @@
 # Class (WebSchemeHandlerResponse)
 
-更新时间：2026-07-09 02:26:55
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webschemehandlerresponse
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 WebSchemeHandlerResponse是自定义scheme拦截场景中用于构造HTTP响应数据的类。开发者通过该类创建Response对象，设置HTTP状态码、状态文本、媒体类型、字符集、自定义响应头、网络错误码以及重定向URL等属性，然后通过WebResourceHandler将自定义响应返回给Web组件。该类是自定义资源拦截的核心数据载体。
 
@@ -14,9 +14,10 @@ WebSchemeHandlerResponse与WebResourceHandler配合使用：开发者构造WebSc
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { webview } from '@kit.ArkWeb';
@@ -24,9 +25,10 @@ import { webview } from '@kit.ArkWeb';
 
 
 
-#### constructor12+
+## constructor12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor()
 
@@ -45,7 +47,6 @@ import { BusinessError } from '@kit.BasicServicesKit';
 @Component
 struct WebComponent {
   controller: webview.WebviewController = new webview.WebviewController();
-  schemeHandler: webview.WebSchemeHandler = new webview.WebSchemeHandler();
 
   build() {
     Column() {
@@ -79,9 +80,10 @@ struct WebComponent {
 
 
 
-#### setUrl12+
+## setUrl12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setUrl(url: string): void
 
@@ -91,9 +93,10 @@ setUrl(url: string): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| url | string | 是 | 即将要跳转的URL。 |
+| url | string | 是 | 重定向或因HSTS而更改后的URL。 |
 
 
 **示例：**
@@ -104,6 +107,7 @@ setUrl(url: string): void
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Incorrect parameter types. |
@@ -111,9 +115,10 @@ setUrl(url: string): void
 
 
 
-#### setNetErrorCode12+
+## setNetErrorCode12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setNetErrorCode(code: WebNetErrorList): void
 
@@ -122,6 +127,7 @@ setNetErrorCode(code: WebNetErrorList): void
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -132,6 +138,7 @@ setNetErrorCode(code: WebNetErrorList): void
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
@@ -143,9 +150,10 @@ setNetErrorCode(code: WebNetErrorList): void
 
 
 
-#### setStatus12+
+## setStatus12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setStatus(code: number): void
 
@@ -154,6 +162,7 @@ setStatus(code: number): void
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -164,6 +173,7 @@ setStatus(code: number): void
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Incorrect parameter types. |
@@ -175,9 +185,10 @@ setStatus(code: number): void
 
 
 
-#### setStatusText12+
+## setStatusText12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setStatusText(text: string): void
 
@@ -186,6 +197,7 @@ setStatusText(text: string): void
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -196,6 +208,7 @@ setStatusText(text: string): void
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
 
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Incorrect parameter types. |
@@ -207,26 +220,29 @@ setStatusText(text: string): void
 
 
 
-#### setMimeType12+
+## setMimeType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setMimeType(type: string): void
 
-给当前的Response设置媒体类型。
+给当前的Response设置媒体类型。例如，注入HTML内容时设置为text/html，注入JSON数据时设置为application/json。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 媒体类型。 |
+| type | string | 是 | 媒体类型（MIME类型）。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -239,26 +255,29 @@ setMimeType(type: string): void
 
 
 
-#### setEncoding12+
+## setEncoding12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setEncoding(encoding: string): void
 
-给当前的Response设置字符集。
+给当前的Response设置字符编码格式。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| encoding | string | 是 | 字符集。 |
+| encoding | string | 是 | 字符编码格式。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -271,9 +290,10 @@ setEncoding(encoding: string): void
 
 
 
-#### setHeaderByName12+
+## setHeaderByName12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setHeaderByName(name: string, value: string, overwrite: boolean): void
 
@@ -283,16 +303,18 @@ setHeaderByName(name: string, value: string, overwrite: boolean): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| name | string | 是 | 头部（header）的名称。 |
-| value | string | 是 | 头部（header）的值。 |
+| name | string | 是 | 头部（header）的名称，指定要设置的HTTP响应头字段名。常见值包括'Content-Type'（内容类型）、'Authorization'（授权信息）、'Cache-Control'（缓存控制）等。 |
+| value | string | 是 | 头部（header）的值，指定HTTP响应头字段的具体内容。需要与name参数对应的头部字段匹配，如name为'Content-Type'时，value可以是'text/html; charset=utf-8'。 |
 | overwrite | boolean | 是 | 如果为true，将覆盖现有的头部，否则不覆盖。 |
 
 
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -305,23 +327,25 @@ setHeaderByName(name: string, value: string, overwrite: boolean): void
 
 
 
-#### getUrl12+
+## getUrl12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getUrl(): string
 
-获取重定向或由于HSTS而更改后的URL。
+获取重定向或因HSTS而更改后的URL。
 
-风险提示：如果想获取URL来做JavascriptProxy通信接口认证，请使用[getLastJavascriptProxyCallingFrameUrl12+](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller#getlastjavascriptproxycallingframeurl12)。
+风险提示：若想获取URL来做JavascriptProxy通信接口认证，请使用[getLastJavascriptProxyCallingFrameUrl12+](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller#getlastjavascriptproxycallingframeurl12)。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| string | 获取经过重定向或由于HSTS而更改后的URL。 |
+| string | 获取经过重定向或因HSTS而更改后的URL。 |
 
 
 **示例：**
@@ -330,9 +354,10 @@ getUrl(): string
 
 
 
-#### getNetErrorCode12+
+## getNetErrorCode12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getNetErrorCode(): WebNetErrorList
 
@@ -342,9 +367,10 @@ getNetErrorCode(): WebNetErrorList
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| WebNetErrorList | 获取Response的网络错误码。 |
+| WebNetErrorList | 返回Response的网络错误码。 |
 
 
 **示例：**
@@ -353,9 +379,10 @@ getNetErrorCode(): WebNetErrorList
 
 
 
-#### getStatus12+
+## getStatus12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStatus(): number
 
@@ -365,9 +392,10 @@ getStatus(): number
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| number | 获取Response的HTTP状态码。 |
+| number | 返回Response的HTTP状态码。 |
 
 
 **示例：**
@@ -376,9 +404,10 @@ getStatus(): number
 
 
 
-#### getStatusText12+
+## getStatusText12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getStatusText(): string
 
@@ -387,6 +416,7 @@ getStatusText(): string
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -399,9 +429,10 @@ getStatusText(): string
 
 
 
-#### getMimeType12+
+## getMimeType12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getMimeType(): string
 
@@ -411,9 +442,10 @@ getMimeType(): string
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| string | 媒体类型。 |
+| string | 返回响应内容的MIME类型字符串，如'text/html'、'application/json'等。 |
 
 
 **示例：**
@@ -422,21 +454,23 @@ getMimeType(): string
 
 
 
-#### getEncoding12+
+## getEncoding12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getEncoding(): string
 
-获取Response的字符集。
+获取Response的字符编码格式。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| string | 字符集。 |
+| string | 返回响应内容的字符编码格式，如'utf-8'、'gbk'等。 |
 
 
 **示例：**
@@ -445,9 +479,10 @@ getEncoding(): string
 
 
 
-#### getHeaderByName12+
+## getHeaderByName12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getHeaderByName(name: string): string
 
@@ -457,16 +492,18 @@ getHeaderByName(name: string): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| name | string | 是 | 头部（header）的名称。 |
+| name | string | 是 | 要获取的响应头字段名称。 |
 
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
-| string | 头部（header）的值。 |
+| string | 指定名称的响应头字段对应的值。 |
 
 
 **示例：**

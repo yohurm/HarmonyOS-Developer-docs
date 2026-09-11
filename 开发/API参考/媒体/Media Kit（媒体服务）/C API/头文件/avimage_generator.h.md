@@ -1,13 +1,14 @@
 # avimage_generator.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avimage-generator-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 定义AVImageGenerator接口。使用其C API从视频资源中获取指定时间点视频帧。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_AVImageGenerator | OH_AVImageGenerator | 定义OH_AVImageGenerator类型，用于生成指定时间点视频帧。 |
@@ -40,10 +44,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_AVImageGenerator* OH_AVImageGenerator_Create(void) | 创建OH_AVImageGenerator实例，用于生成指定时间点视频帧。 |
@@ -54,15 +60,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AVImageGenerator_Create()
+### OH_AVImageGenerator_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVImageGenerator* OH_AVImageGenerator_Create(void)
@@ -78,6 +86,7 @@ OH_AVImageGenerator* OH_AVImageGenerator_Create(void)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVImageGenerator* | 创建成功时返回指向OH_AVImageGenerator实例的指针，否则返回空指针。 可能的失败原因：HstEngineFactory未能创建AVMetadataHelperEngine。 |
@@ -85,9 +94,10 @@ OH_AVImageGenerator* OH_AVImageGenerator_Create(void)
  
   
 
-#### OH_AVImageGenerator_SetFDSource()
+### OH_AVImageGenerator_SetFDSource()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVImageGenerator_SetFDSource(OH_AVImageGenerator* generator, int32_t fd, int64_t offset, int64_t size)
@@ -103,6 +113,7 @@ OH_AVErrCode OH_AVImageGenerator_SetFDSource(OH_AVImageGenerator* generator, int
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVImageGenerator* generator | 指向OH_AVImageGenerator实例的指针。 |
@@ -113,6 +124,7 @@ OH_AVErrCode OH_AVImageGenerator_SetFDSource(OH_AVImageGenerator* generator, int
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：输入的generator为空指针或参数无效。 AV_ERR_OPERATE_NOT_PERMIT：操作被禁止。 AV_ERR_NO_MEMORY：内部内存分配失败。 |
@@ -120,9 +132,10 @@ OH_AVErrCode OH_AVImageGenerator_SetFDSource(OH_AVImageGenerator* generator, int
  
   
 
-#### OH_AVImageGenerator_FetchFrameByTime()
+### OH_AVImageGenerator_FetchFrameByTime()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVImageGenerator_FetchFrameByTime(OH_AVImageGenerator* generator, int64_t timeUs, OH_AVImageGenerator_QueryOptions options, OH_PixelmapNative** pixelMap)
@@ -140,6 +153,7 @@ OH_AVErrCode OH_AVImageGenerator_FetchFrameByTime(OH_AVImageGenerator* generator
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVImageGenerator* generator | 指向OH_AVImageGenerator实例的指针。 |
@@ -150,6 +164,7 @@ OH_AVErrCode OH_AVImageGenerator_FetchFrameByTime(OH_AVImageGenerator* generator
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：输入的generator为空指针或参数无效。 AV_ERR_OPERATE_NOT_PERMIT：操作被禁止。 AV_ERR_UNSUPPORTED_FORMAT：格式不支持。 AV_ERR_NO_MEMORY：内部内存分配失败。 |
@@ -157,9 +172,10 @@ OH_AVErrCode OH_AVImageGenerator_FetchFrameByTime(OH_AVImageGenerator* generator
  
   
 
-#### OH_AVImageGenerator_Release()
+### OH_AVImageGenerator_Release()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 OH_AVErrCode OH_AVImageGenerator_Release(OH_AVImageGenerator* generator)
@@ -175,6 +191,7 @@ OH_AVErrCode OH_AVImageGenerator_Release(OH_AVImageGenerator* generator)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_AVImageGenerator* generator | 指向OH_AVImageGenerator实例的指针。 |
@@ -182,6 +199,7 @@ OH_AVErrCode OH_AVImageGenerator_Release(OH_AVImageGenerator* generator)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | OH_AVErrCode | AV_ERR_OK：执行成功。 AV_ERR_INVALID_VAL：输入的generator为空指针或参数无效。 |

@@ -1,11 +1,12 @@
 # SecurityAudit_Event
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesecurity-capi-structs-securityaudit-event
 **支持设备：** PC/2in1
 
-#### 概述
+## 概述
+
 
 **支持设备：** PC/2in1
 
@@ -19,16 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** PC/2in1
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** PC/2in1
  
+
 | 名称 | 描述 |
 | --- | --- |
 | int64_t eventId | 审计事件ID。 |
@@ -38,13 +42,15 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
 
 **支持设备：** PC/2in1
 
   
 
-#### content
+### content
+
 
 **支持设备：** PC/2in1
 
@@ -58,7 +64,8 @@ const char* SecurityAudit_Event::content
  
   
 
-#### eventId
+### eventId
+
 
 **支持设备：** PC/2in1
 
@@ -72,7 +79,8 @@ int64_t SecurityAudit_Event::eventId
  
   
 
-#### metadata
+### metadata
+
 
 **支持设备：** PC/2in1
 

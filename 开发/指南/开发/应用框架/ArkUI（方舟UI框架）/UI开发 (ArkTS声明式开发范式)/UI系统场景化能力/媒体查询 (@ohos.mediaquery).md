@@ -1,10 +1,10 @@
 # 媒体查询 (@ohos.mediaquery)
 
-更新时间：2026-08-04 06:06:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-media-query
 
-#### 概述
+## 概述
 
 [媒体查询](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-mediaquery)作为响应式设计的核心，在移动设备上应用十分广泛。媒体查询可根据不同设备类型或同设备不同状态修改应用的样式。媒体查询常用于下面两种场景：
 1. 针对设备和应用的属性信息（比如显示区域、深浅色、分辨率），设计出相匹配的布局。
@@ -12,7 +12,7 @@
 
 
 
-#### 引入与使用流程
+## 引入与使用流程
 
 媒体查询通过mediaquery模块接口，设置查询条件并绑定回调函数，任一[媒体特征](#媒体特征media-feature)改变时，均会触发回调函数，返回匹配结果，根据返回值更改页面布局或者实现业务逻辑，实现页面的响应式设计。具体步骤如下：
 
@@ -26,7 +26,7 @@ import { mediaquery } from '@kit.ArkUI';
 
 ```ArkTS
 listener: mediaquery.MediaQueryListener =
-    this.getUIContext().getMediaQuery().matchMediaSync('(orientation: landscape)');
+  this.getUIContext().getMediaQuery().matchMediaSync('(orientation: landscape)');
 ```
 
 给条件监听句柄listener绑定回调函数onPortrait，当listener检测设备状态变化时执行回调函数。在回调函数内，根据不同设备状态更改页面布局或者实现业务逻辑。
@@ -49,13 +49,13 @@ onPortrait(mediaQueryResult: mediaquery.MediaQueryResult) {
 
 
 
-#### 媒体查询条件
+## 媒体查询条件
 
 媒体查询条件由媒体类型、逻辑操作符、媒体特征组成，其中媒体类型可省略，逻辑操作符用于连接不同媒体类型与媒体特征，媒体特征要使用()包裹且可以有多个。
 
 
 
-#### 语法规则
+### 语法规则
 
 语法规则包括[媒体类型（media-type）](#媒体类型media-type)、[媒体逻辑操作（media-logic-operations）](#媒体逻辑操作media-logic-operations)和[媒体特征（media-feature）](#媒体特征media-feature)。
 
@@ -74,9 +74,10 @@ onPortrait(mediaQueryResult: mediaquery.MediaQueryResult) {
 
 
 
-#### 媒体类型（media-type）
+### 媒体类型（media-type）
 
 查询条件未写媒体类型时，默认为screen。媒体类型必须写在查询条件开头。
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -85,11 +86,12 @@ onPortrait(mediaQueryResult: mediaquery.MediaQueryResult) {
 
 
 
-#### 媒体逻辑操作（media-logic-operations）
+### 媒体逻辑操作（media-logic-operations）
 
 媒体逻辑操作符包括and、or、not、only，用于构成复杂媒体查询，也可以通过逗号,将其组合，详细解释说明如下表。
 
 **表1** 媒体逻辑操作符
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -104,6 +106,7 @@ onPortrait(mediaQueryResult: mediaquery.MediaQueryResult) {
 
 **表2** 媒体逻辑范围操作符
 
+
 | 类型 | 说明 |
 | --- | --- |
 | <= | 小于等于，例如：screen and (height <= 50)。 |
@@ -114,11 +117,12 @@ onPortrait(mediaQueryResult: mediaquery.MediaQueryResult) {
 
 
 
-#### 媒体特征（media-feature）
+### 媒体特征（media-feature）
 
 媒体特征包括应用显示区域的宽高、设备分辨率以及设备的宽高等属性，详细说明如下表。
 
 **表3** 媒体特征说明表
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -149,14 +153,15 @@ onPortrait(mediaQueryResult: mediaquery.MediaQueryResult) {
 
 
 
-#### 场景示例
+## 场景示例
 
 下面给出两个媒体查询的使用示例。
 
 示例一使用媒体查询，实现屏幕横竖屏切换时，为页面文本应用添加不同的内容和样式。
 
 ```ArkTS
-import { mediaquery, window } from '@kit.ArkUI';
+import { mediaquery } from '@kit.ArkUI';
+import { window } from '@kit.ArkUI';
 import { common } from '@kit.AbilityKit';
 
 @Entry

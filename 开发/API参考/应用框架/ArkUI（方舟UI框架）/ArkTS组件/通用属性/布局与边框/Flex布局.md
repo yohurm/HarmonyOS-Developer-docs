@@ -1,9 +1,9 @@
 # Flex布局
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-flex-layout
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Flex布局提供灵活的组件排列和对齐能力，可以动态分配容器内的子组件空间，使元素根据可用空间自动扩展或收缩。适用于响应式UI布局、动态内容布局、复杂布局实现等场景，能解决传统布局在多设备适配困难、内容变化导致布局错位、复杂对齐需求难以实现等问题。
  
@@ -12,9 +12,10 @@ Flex布局提供灵活的组件排列和对齐能力，可以动态分配容器�
 
   
 
-#### flexBasis
+## flexBasis
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 flexBasis(value: number | string): T
  
@@ -28,6 +29,7 @@ flexBasis(value: number | string): T
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number \| string | 是 | 设置组件在父容器主轴方向上的基准尺寸。 默认值：'auto'（表示组件在主轴方向上的基准尺寸为组件原本的大小）。 string类型：不允许设置百分比字符串。可选值：可以转化为数字的字符串（如'10'）、带长度单位的字符串（如'10px'）或'auto'。传入不符合要求的字符串时，按默认值'auto'处理。 number：取值范围(0,+∞)，单位为vp（virtual pixel，虚拟像素）。 设置异常值时，该属性按默认值'auto'处理。 constraintSize限制组件的尺寸范围，当flexBasis设置的基准尺寸超出constraintSize的限制范围时，会被constraintSize约束。 |
@@ -35,6 +37,7 @@ flexBasis(value: number | string): T
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | T | 返回当前组件，用于链式调用。 |
@@ -42,9 +45,10 @@ flexBasis(value: number | string): T
  
   
 
-#### flexGrow
+## flexGrow
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 flexGrow(value: number): T
  
@@ -58,6 +62,7 @@ flexGrow(value: number): T
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 设置父容器在主轴方向（行布局为水平方向，列布局为垂直方向）上的剩余空间分配给此属性所在组件的比例。值为0表示不参与剩余空间分配，保持原有尺寸；值大于0时，按照比例分配父容器的剩余空间，值越大分配的空间越多。 取值范围：[0, +∞) 默认值：0 父容器为Column、Row时，需设置主轴方向的尺寸（width/height/size），否则可能影响flexGrow的剩余空间分配效果。 constraintSize限制组件的尺寸范围，当flexGrow扩展后的组件尺寸超出constraintSize的最大限制时，会被constraintSize约束。 设置异常值时，该属性为默认值。 |
@@ -65,6 +70,7 @@ flexGrow(value: number): T
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | T | 返回当前组件，用于链式调用。 |
@@ -72,9 +78,10 @@ flexGrow(value: number): T
  
   
 
-#### flexShrink
+## flexShrink
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 flexShrink(value: number): T
  
@@ -92,6 +99,7 @@ flexShrink(value: number): T
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 设置父容器空间不足时，压缩尺寸分配给此属性所在组件的比例。值为0表示该组件不参与压缩；值大于0时，按照比例压缩，值越大压缩量越大。 父容器为Column、Row时，默认值：0，取值范围：[0, +∞)。 父容器为Flex时，默认值：1，取值范围：[0, +∞)。 constraintSize限制组件的尺寸范围。Column和Row即使设置了constraintSize，在父容器未设置主轴尺寸（width/height/size）时仍遵守默认布局行为，在主轴上自适应子组件尺寸，此时flexShrink不生效。 设置异常值时，该属性为默认值。 |
@@ -99,6 +107,7 @@ flexShrink(value: number): T
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | T | 返回当前组件，用于链式调用。 |
@@ -106,9 +115,10 @@ flexShrink(value: number): T
  
   
 
-#### alignSelf
+## alignSelf
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 alignSelf(value: ItemAlign): T
  
@@ -122,6 +132,7 @@ alignSelf(value: ItemAlign): T
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | ItemAlign | 是 | 子组件在父容器交叉轴的对齐格式，会覆盖Flex、Column、Row、DynamicLayout、GridRow布局容器中的alignItems设置。当子组件需要与父容器中其他子组件不同的对齐方式时使用（典型场景：父容器中大部分子组件居中对齐，但某个子组件需要顶部或底部对齐；或需要为单个子组件指定特殊的对齐方式）。 GridCol可以绑定alignSelf属性来改变它自身在交叉轴方向上的布局。 默认值：ItemAlign.Auto（表示继承父容器的对齐设置） |
@@ -129,6 +140,7 @@ alignSelf(value: ItemAlign): T
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | T | 返回当前组件，用于链式调用。 |
@@ -136,9 +148,10 @@ alignSelf(value: ItemAlign): T
  
   
 
-#### 示例
+## 示例
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 通过配置flexBasis/flexGrow/flexShrink/alignSelf属性设置Flex布局。
  
@@ -230,4 +243,4 @@ struct FlexExample {
 ```
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/sLPSNwXDSB2D2DfU-zbJXA/zh-cn_image_0000002674474450.png?HW-CC-KV=V1&HW-CC-Date=20260813T095446Z&HW-CC-Expire=86400&HW-CC-Sign=760E07C9551952988D3E0E10E7350A807922450A4EDD8CD9914EECC367B8C114)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/oWxJ1gTUS-mWa2uXOUzVgQ/zh-cn_image_0000002747212357.png?HW-CC-KV=V1&HW-CC-Date=20260911T073124Z&HW-CC-Expire=86400&HW-CC-Sign=207B9EDC81C45D67B7FB902CBBFAE6C7F8796972AF475D2D83C2813457B919E3)

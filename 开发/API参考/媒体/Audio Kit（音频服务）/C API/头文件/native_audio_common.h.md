@@ -1,13 +1,14 @@
 # native_audio_common.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-audio-common-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明音频公共基础数据结构。
  
@@ -25,34 +26,40 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | OH_AudioCommon_Result | OH_AudioCommon_Result | 音频错误码。 |
 | OH_AudioScene | OH_AudioScene | 定义音频场景。 |
 | OH_AudioRingerMode | OH_AudioRingerMode | 定义铃声模式。 |
+| OH_AudioNoiseReductionMode | OH_AudioNoiseReductionMode | 定义录音降噪模式。 |
  
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_AudioCommon_Result
+### OH_AudioCommon_Result
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AudioCommon_Result
@@ -64,23 +71,27 @@ enum OH_AudioCommon_Result
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AUDIOCOMMON_RESULT_SUCCESS = 0 | 操作成功。 |
+| AUDIOCOMMON_RESULT_ERROR_PERMISSION_DENIED = 201 | 调用方没有所需权限。 起始版本： 26.0.0 |
 | AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM = 6800101 | 入参错误。 |
 | AUDIOCOMMON_RESULT_ERROR_NO_MEMORY = 6800102 | 内存不足。 |
 | AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE = 6800103 | 非法状态。 |
 | AUDIOCOMMON_RESULT_ERROR_UNSUPPORTED = 6800104 | 操作不支持。 |
 | AUDIOCOMMON_RESULT_ERROR_TIMEOUT = 6800105 | 操作超时。 |
+| AUDIOCOMMON_RESULT_ERROR_FRAME_LENGTH_MISMATCH = 6800106 | 输入音频数据与所需帧长度不匹配。 起始版本： 26.0.0 |
 | AUDIOCOMMON_RESULT_ERROR_STREAM_LIMIT = 6800201 | 达到系统可支持的最大数量。 |
 | AUDIOCOMMON_RESULT_ERROR_SYSTEM = 6800301 | 系统通用错误。 |
  
  
   
 
-#### OH_AudioScene
+### OH_AudioScene
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AudioScene
@@ -92,6 +103,7 @@ enum OH_AudioScene
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AUDIO_SCENE_DEFAULT = 0 | 默认音频场景。 |
@@ -102,9 +114,10 @@ enum OH_AudioScene
  
   
 
-#### OH_AudioRingerMode
+### OH_AudioRingerMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_AudioRingerMode
@@ -118,8 +131,34 @@ enum OH_AudioRingerMode
  
 **起始版本：** 20
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | AUDIO_RINGER_MODE_SILENT = 0 | 静音模式。 |
 | AUDIO_RINGER_MODE_VIBRATE = 1 | 振动模式。 |
 | AUDIO_RINGER_MODE_NORMAL = 2 | 响铃模式。 |
+ 
+ 
+  
+
+### OH_AudioNoiseReductionMode
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+```text
+enum OH_AudioNoiseReductionMode
+```
+ 
+**描述**
+ 
+定义录音降噪模式。
+ 
+**起始版本：** 26.0.0
+  
+
+| 枚举项 | 描述 |
+| --- | --- |
+| AUDIO_NOISE_REDUCTION_MODE_FIDELITY = 0 | 保真模式，不进行降噪。 |
+| AUDIO_NOISE_REDUCTION_MODE_PURE_VOCALS = 1 | 纯人声模式，强降噪。 |
+| AUDIO_NOISE_REDUCTION_MODE_STANDARD = 2 | 标准模式，弱降噪。 |

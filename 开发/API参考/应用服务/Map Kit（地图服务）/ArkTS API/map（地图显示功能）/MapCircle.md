@@ -1,11 +1,12 @@
 # Interface (MapCircle)
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-mapcircle
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -15,7 +16,8 @@ import { map, mapCommon } from '@kit.MapKit';
  
   
 
-#### MapCircle
+## MapCircle
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -48,7 +50,8 @@ let mapCircle = await this.mapController.addCircle(mapCircleOptions);
  
   
 
-#### getCenter
+### getCenter
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -66,6 +69,7 @@ getCenter(): mapCommon.LatLng
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | mapCommon.LatLng | 获取圆心经纬度。 |
@@ -79,7 +83,8 @@ let center: mapCommon.LatLng = mapCircle.getCenter();
  
   
 
-#### getFillColor
+### getFillColor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -97,6 +102,7 @@ getFillColor(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 获取圆的填充色。 |
@@ -110,7 +116,8 @@ let fillColor: number = mapCircle.getFillColor();
  
   
 
-#### getRadius
+### getRadius
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -128,6 +135,7 @@ getRadius(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 圆的半径，单位：m。 |
@@ -141,7 +149,8 @@ let radius: number = mapCircle.getRadius();
  
   
 
-#### getStrokeColor
+### getStrokeColor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -159,6 +168,7 @@ getStrokeColor(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | ARGB格式颜色值。 |
@@ -172,7 +182,8 @@ let strokeColor: number = mapCircle.getStrokeColor();
  
   
 
-#### getPatterns
+### getPatterns
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -190,6 +201,7 @@ getPatterns(): Array<mapCommon.PatternItem>
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Array<mapCommon.PatternItem> | 圆的边框样式。 |
@@ -203,7 +215,8 @@ let patterns: Array<mapCommon.PatternItem> = mapCircle.getPatterns();
  
   
 
-#### getStrokeWidth
+### getStrokeWidth
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -221,6 +234,7 @@ getStrokeWidth(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 圆的边框宽度，单位：px。 |
@@ -234,7 +248,8 @@ let strokeWidth: number = mapCircle.getStrokeWidth();
  
   
 
-#### isClickable
+### isClickable
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -252,6 +267,7 @@ isClickable(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 圆的可点击性。 - true：可点击 - false：不可点击 |
@@ -265,7 +281,8 @@ let clickable: boolean = mapCircle.isClickable();
  
   
 
-#### setCenter
+### setCenter
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -283,6 +300,7 @@ setCenter(center: mapCommon.LatLng): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | center | mapCommon.LatLng | 是 | 圆心经纬度坐标。 圆的中心点纬度在[-85.051119, 85.051119]范围内才能画出圆。若圆中心点纬度为-85.051119或85.051119时，能画出半径为1米的圆。 |
@@ -297,7 +315,8 @@ mapCircle.setCenter(center);
  
   
 
-#### setClickable
+### setClickable
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -315,6 +334,7 @@ setClickable(clickable: boolean): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | clickable | boolean | 是 | 圆的可点击性，异常值不处理。 - true：可点击 - false：不可点击 |
@@ -329,7 +349,8 @@ mapCircle.setClickable(clickable);
  
   
 
-#### setFillColor
+### setFillColor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -347,6 +368,7 @@ setFillColor(color: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | number | 是 | 圆的填充色，颜色值为ARGB格式，异常值不处理。 |
@@ -361,7 +383,8 @@ mapCircle.setFillColor(fillColor);
  
   
 
-#### setRadius
+### setRadius
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -379,6 +402,7 @@ setRadius(radius: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | radius | number | 是 | 圆的半径，单位：m，取值范围：大于等于0，异常值不处理。 |
@@ -393,7 +417,8 @@ mapCircle.setRadius(radius);
  
   
 
-#### setStrokeColor
+### setStrokeColor
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -411,6 +436,7 @@ setStrokeColor(color: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | number | 是 | 圆的边框颜色，ARGB格式颜色值，异常值不处理。 |
@@ -425,7 +451,8 @@ mapCircle.setStrokeColor(strokeColor);
  
   
 
-#### setPatterns
+### setPatterns
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -443,6 +470,7 @@ setPatterns(patterns: Array<mapCommon.PatternItem>): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | patterns | Array<mapCommon.PatternItem> | 是 | 圆的边框样式。 |
@@ -460,7 +488,8 @@ mapCircle.setPatterns(patterns);
  
   
 
-#### setStrokeWidth
+### setStrokeWidth
+
 
 **支持设备：** Phone | PC/2in1 | Tablet | Wearable
 
@@ -478,6 +507,7 @@ setStrokeWidth(width: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | width | number | 是 | 圆的边框宽度，单位：px，取值范围：大于等于0。 |

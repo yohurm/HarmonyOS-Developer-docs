@@ -1,6 +1,6 @@
 # @system.geolocation (地理位置)
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-system-location
 **支持设备：** Wearable | lite_wearable
@@ -12,7 +12,8 @@
 
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -22,7 +23,8 @@ import geolocation from '@system.geolocation';
  
   
 
-#### 权限列表
+## 权限列表
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -30,7 +32,8 @@ ohos.permission.LOCATION
  
   
 
-#### geolocation.getLocation(deprecated)
+## geolocation.getLocation(deprecated)
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -48,6 +51,7 @@ getLocation(options?: GetLocationOption): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | GetLocationOption | 否 | 单次定位请求的配置参数。 |
@@ -107,7 +111,8 @@ export default {
  
   
 
-#### geolocation.getLocationType(deprecated)
+## geolocation.getLocationType(deprecated)
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -123,6 +128,7 @@ getLocationType(options?: GetLocationTypeOption): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | GetLocationTypeOption | 否 | 回调函数，用于接收查询结果，或者接收查询失败的结果。 |
@@ -182,7 +188,8 @@ export default {
  
   
 
-#### geolocation.subscribe(deprecated)
+## geolocation.subscribe(deprecated)
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -200,6 +207,7 @@ subscribe(options: SubscribeLocationOption): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | SubscribeLocationOption | 是 | 持续定位的配置参数。 |
@@ -259,7 +267,8 @@ export default {
  
   
 
-#### geolocation.unsubscribe(deprecated)
+## geolocation.unsubscribe(deprecated)
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -322,7 +331,8 @@ export default {
  
   
 
-#### geolocation.getSupportedCoordTypes(deprecated)
+## geolocation.getSupportedCoordTypes(deprecated)
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -338,6 +348,7 @@ getSupportedCoordTypes(): Array&lt;string&gt;
  
 **返回值：**
   
+
 | 类型 | 非空 | 说明 |
 | --- | --- | --- |
 | Array&lt;string&gt; | 是 | 表示坐标系类型，如[wgs84, gcj02]。 |
@@ -391,7 +402,8 @@ export default {
  
   
 
-#### GetLocationOption(deprecated)
+## GetLocationOption(deprecated)
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -405,6 +417,7 @@ export default {
  
 **系统能力**：SystemCapability.Location.Location.Lite
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | timeout | number | 否 | 超时时间，单位为ms，默认值为30000。 设置超时，是为了防止出现权限被系统拒绝、定位信号弱或者定位设置不当，导致请求阻塞的情况。超时后会使用fail回调函数。 取值范围为32位正整数。如果设置值小于等于0，系统按默认值处理。 |
@@ -416,6 +429,7 @@ export default {
  
 fail返回错误代码：
   
+
 | 错误码 | 说明 |
 | --- | --- |
 | 601 | 获取定位权限失败，失败原因：用户拒绝。 |
@@ -427,7 +441,8 @@ fail返回错误代码：
  
   
 
-#### GeolocationResponse(deprecated)
+## GeolocationResponse(deprecated)
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -439,6 +454,7 @@ fail返回错误代码：
  
 **系统能力**：SystemCapability.Location.Location.Lite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | longitude | number | 否 | 否 | 设备位置信息：经度。 |
@@ -450,7 +466,8 @@ fail返回错误代码：
  
   
 
-#### GetLocationTypeOption(deprecated)
+## GetLocationTypeOption(deprecated)
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -462,6 +479,7 @@ fail返回错误代码：
  
 **系统能力**：SystemCapability.Location.Location.Lite
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | success | (data: GetLocationTypeResponse) => void | 否 | 接口调用成功的回调函数。 |
@@ -471,7 +489,8 @@ fail返回错误代码：
  
   
 
-#### GetLocationTypeResponse(deprecated)
+## GetLocationTypeResponse(deprecated)
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -483,6 +502,7 @@ fail返回错误代码：
  
 **系统能力**：SystemCapability.Location.Location.Lite
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | types | Array&lt;string&gt; | 否 | 否 | 可选的定位类型['gps', 'network']。 |
@@ -490,7 +510,8 @@ fail返回错误代码：
  
   
 
-#### SubscribeLocationOption(deprecated)
+## SubscribeLocationOption(deprecated)
+
 
 **支持设备：** Wearable | lite_wearable
 
@@ -504,6 +525,7 @@ fail返回错误代码：
  
 **系统能力**：SystemCapability.Location.Location.Lite
   
+
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | coordType | string | 否 | 坐标系的类型，可通过getSupportedCoordTypes获取可选值，默认值为wgs84。 |
@@ -513,6 +535,7 @@ fail返回错误代码：
  
 fail返回错误代码：
   
+
 | 错误码 | 说明 |
 | --- | --- |
 | 601 | 获取定位权限失败，失败原因：用户拒绝。 |

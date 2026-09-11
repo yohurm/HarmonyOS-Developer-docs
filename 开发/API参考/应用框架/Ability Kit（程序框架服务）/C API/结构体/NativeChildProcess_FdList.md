@@ -1,20 +1,21 @@
 # NativeChildProcess_FdList
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nativechildprocess-fdlist
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct NativeChildProcess_FdList {...} NativeChildProcess_FdList
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-传递给子进程的文件描述符信息列表，文件描述符记录个数不能超过16个。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+传递给子进程的文件描述符信息列表，文件描述符记录个数不能超过16个，超过限制将导致创建子进程失败。
  
 **起始版本：** 13
  
@@ -24,16 +25,19 @@ typedef struct NativeChildProcess_FdList {...} NativeChildProcess_FdList
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 成员变量
+### 成员变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | struct NativeChildProcess_Fd* head | 子进程文件描述符记录链表中的第一个记录。 |

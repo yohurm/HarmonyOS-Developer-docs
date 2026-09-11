@@ -1,11 +1,12 @@
 # NetworkBoost_SceneDesc
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/network-boost-c-struct-scene_desc
 **支持设备：** Phone | PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -19,16 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### 成员变量
+### 成员变量
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | NetworkBoost_ServiceType scene | 表示业务场景类型。 |
@@ -39,13 +43,15 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
   
 
-#### scene
+## scene
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -59,7 +65,8 @@ NetworkBoost_ServiceType NetworkBoost_SceneDesc::scene
  
   
 
-#### sceneEvent
+## sceneEvent
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -73,7 +80,8 @@ NetworkBoost_SceneEvent NetworkBoost_SceneDesc::sceneEvent
  
   
 
-#### startTime
+## startTime
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 
@@ -87,7 +95,8 @@ uint32_t NetworkBoost_SceneDesc::startTime
  
   
 
-#### duration
+## duration
+
 
 **支持设备：** Phone | PC/2in1 | Tablet
 

@@ -1,13 +1,14 @@
 # Rcp_TransferRange
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_rcp___transfer_range
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 HTTP传输范围。该设置将转换为HTTP Range标头。具有范围标头的HTTP请求要求服务器仅发送回HTTP响应的一部分。
  
@@ -19,16 +20,19 @@ HTTP传输范围。该设置将转换为HTTP Range标头。具有范围标头的
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 成员变量
+### 成员变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | int64_t from | 传输起始位置。 |
@@ -40,15 +44,17 @@ HTTP传输范围。该设置将转换为HTTP Range标头。具有范围标头的
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### from
+### from
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int64_t Rcp_TransferRange::from
@@ -60,9 +66,10 @@ int64_t Rcp_TransferRange::from
  
   
 
-#### hasZeroFrom
+### hasZeroFrom
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool Rcp_TransferRange::hasZeroFrom
@@ -74,9 +81,10 @@ bool Rcp_TransferRange::hasZeroFrom
  
   
 
-#### hasZeroTo
+### hasZeroTo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool Rcp_TransferRange::hasZeroTo
@@ -88,9 +96,10 @@ bool Rcp_TransferRange::hasZeroTo
  
   
 
-#### next
+### next
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 struct Rcp_TransferRange* Rcp_TransferRange::next
@@ -102,9 +111,10 @@ struct Rcp_TransferRange* Rcp_TransferRange::next
  
   
 
-#### to
+### to
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int64_t Rcp_TransferRange::to

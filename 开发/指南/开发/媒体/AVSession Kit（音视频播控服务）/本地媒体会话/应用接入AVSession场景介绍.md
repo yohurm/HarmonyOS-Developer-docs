@@ -1,6 +1,6 @@
 # 应用接入AVSession场景介绍
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avsession-access-scene
 
@@ -9,7 +9,7 @@
 对于不同的场景，将会在系统的播控中心呈现不同的UI。同时，在不同的场景下，应用的接入处理也需要遵循不同的规范约束。
 
 
-#### 哪些场景下需要接入AVSession
+## 哪些场景下需要接入AVSession
 
 AVSession会对后台音频播放、VoIP通话进行约束。因此，长音频应用、听书类应用、长视频应用、VoIP类应用等都需要接入AVSession。当应用在没有创建接入AVSession的情况下进行了上述业务，那么系统会在检测到应用后台时，停止对应的音频播放，静音通话声音，以达到约束应用行为的目的。这种约束，应用上架前在本地就可以验证。
 
@@ -19,7 +19,7 @@ AVSession会对后台音频播放、VoIP通话进行约束。因此，长音频�
 
 
 
-#### 接入流程
+## 接入流程
 
 应用接入AVSession流程分为如下几个步骤：
 1. 确定应用需要创建的会话类型，[创建对应的会话](#创建不同类型的会话)，不同类型决定了播控中心展示的控制模板样式。
@@ -31,7 +31,7 @@ AVSession会对后台音频播放、VoIP通话进行约束。因此，长音频�
 
 
 
-#### 创建不同类型的会话
+## 创建不同类型的会话
 
 AVSession在构造方法中支持不同的类型参数，由 [AVSessionType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-avsession-t#avsessiontype10) 定义，不同的类型代表了不同场景的控制能力，对于播控中心来说，会展示不同的控制模板。
 
@@ -80,7 +80,7 @@ struct Index {
 
 
 
-#### 创建后台任务
+## 创建后台任务
 
 当应用需要实现后台播放等功能时，需要使用[BackgroundTasks Kit](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/background-task-overview)（后台任务管理）的能力，申请对应的长时任务，避免进入挂起（Suspend）状态。
 
@@ -88,15 +88,15 @@ struct Index {
 
 
 
-#### 设置元数据信息
+## 设置元数据信息
 
 应用通过[setAVMetadata](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-avsession-avsession#setavmetadata10)将当前媒体会话的元数据信息设置给系统，系统播控中心会根据应用设置的元数据信息进行展示。
 
 
 
-#### 元数据信息
+### 元数据信息
 
-元数据信息[AVMetadata](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-avsession-i#avmetadata10)包括：当前媒体的ID（assetId），上一首媒体的ID（previousAssetId），下一首媒体的ID（nextAssetId），标题（title），专辑作者（author），专辑名称（album），词作者（writer），媒体时长（duration）等。
+元数据信息[AVMetadata](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-avsession-i#avmetadata10)包括：当前媒体的ID（assetId）、上一首媒体的ID（previousAssetId）、下一首媒体的ID（nextAssetId）、标题（title）、专辑作者（author）、艺术家（artist）、专辑名称（album）、词作者（writer）、媒体图片（mediaImage）和媒体时长（duration）等。
 
 ```ArkTS
 import { avSession as AVSessionManager } from '@kit.AVSessionKit';
@@ -148,7 +148,7 @@ struct Index {
 
 
 
-#### 设置歌词字段信息
+### 设置歌词字段信息
 
 元数据信息[AVMetadata](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-avsession-i#avmetadata10)中包含歌词字段，应用可以通过设置歌词字段来满足某些场景的歌词内容展示，当前支持设置两种歌词字段：
 
@@ -157,7 +157,7 @@ struct Index {
 
 
 > [!NOTE]
-> lyric字段仅支持LRC格式（时间标签+歌词信息，如[00:25.44]歌词信息）的歌词内容，若应用传入其他格式的歌词内容，系统播控中心存在解析失败从而导致歌词显示异常问题。 传入的歌词字符串大小均不允许超过40960字节，否则会由于系统传输限制导致歌词信息设置失效。
+> lyric字段仅支持LRC格式（时间标签+歌词信息，如[00:25.44]歌词信息）的歌词内容，若应用传入其他格式的歌词内容，系统播控中心存在解析失败从而导致歌词显示异常问题。 lyric字段和singleLyricText字段的大小均不允许超过40960字节，否则会由于系统传输限制导致歌词信息设置失效。
 
 
 ```ArkTS
@@ -211,7 +211,7 @@ struct Index {
 
 
 
-#### 设置进度条信息
+### 设置进度条信息
 
 元数据信息[AVMetadata](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-avsession-i#avmetadata10)中包含播放资源时长duration字段（单位为ms），应用如果希望在系统播控中心界面展示播放资源的进度条，需要在duration字段中填写正确的资源播放时长信息。
 
@@ -303,7 +303,7 @@ struct Index {
 
   
 
-  #### 历史歌单
+  ### 历史歌单
 
   针对音乐/听书类应用，播控中心提供一系列快捷播放能力，包括一键启动冷启动续播、以及历史歌单功能，其中歌单功能中支持显示的音频媒体内容有：音乐歌单、有声书专辑、播客专辑等。视频媒体内容、直播类媒体内容暂不支持歌单。应用在端侧注册并适配后台启动模式的[播放意图](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-habit-rec-access-programme)，即可实现接入上述功能。接入后的体验自检，可以参考[快捷播放](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/quick-playback)。
 
@@ -465,7 +465,7 @@ export default class InsightIntentExecutorImpl extends InsightIntentExecutor {
 
 
 
-#### 媒体资源金标
+### 媒体资源金标
 
 元数据信息[AVMetadata](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-avsession-i#avmetadata10)中提供了displayTags字段用于展示媒体资源金标（应用音频音源的标识）。应用设置displayTags字段信息后，系统的播控中心界面会同步展示，当前系统只支持展示Audio Vivid标识。
 
@@ -516,15 +516,15 @@ struct Index {
 
 
 
-#### 设置播放状态
+## 设置播放状态
 
 应用通过[setAVPlaybackState](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-avsession-avsession#setavplaybackstate10)将当前的播放状态信息设置给系统，系统播控中心界面会严格根据应用传递的播放状态信息进行同步显示。
 
 
 
-#### 播放状态信息
+### 播放状态信息
 
-播放状态信息[AVPlaybackState](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-avsession-i#avplaybackstate10)包括：当前媒体的播放状态（state）、播放位置（position）、播放倍速（speed）、缓冲时间（bufferedTime）、循环模式（loopMode）、是否收藏（isFavorite）、正在播放的媒体ID（activeItemId）、自定义媒体数据（extras）等。
+播放状态信息[AVPlaybackState](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-avsession-i#avplaybackstate10)包括：当前媒体的播放状态（state）、播放位置（position，包含elapsedTime已播放时长和updateTime更新时间戳）、播放倍速（speed）、缓冲时间（bufferedTime）、循环模式（loopMode）、是否收藏（isFavorite）、正在播放的媒体ID（activeItemId）、自定义媒体数据（extras）等。
 
 ```ArkTS
 import { avSession as AVSessionManager } from '@kit.AVSessionKit';
@@ -572,11 +572,11 @@ struct Index {
 
 
 
-#### 控制命令的处理
+## 控制命令的处理
 
 
 
-#### 支持的控制命令
+### 支持的控制命令
 
 应用接入AVSession，通过on接口可以注册控制命令，实现播控中心界面上对应的控制按钮操作。
 
@@ -585,6 +585,7 @@ struct Index {
 
 
 音视频类应用支持的控制命令列表：
+
 
 | 控制命令 | 功能说明 |
 | --- | --- |
@@ -607,6 +608,7 @@ struct Index {
 
 通话类应用支持的控制：
 
+
 | 控制命令 | 功能说明 |
 | --- | --- |
 | answer | 接听电话的命令。 |
@@ -616,7 +618,7 @@ struct Index {
 
 
 
-#### 处理不支持的控制命令
+### 处理不支持的控制命令
 
 应用若不支持某些控制命令操作（如应用不支持“上一首”命令的控制处理），可以通过off接口注销对应的控制命令，系统播控中心界面会置灰显示或者不显示对应的控制按钮，以明确提示用户应用不支持该控制操作。
 
@@ -654,7 +656,7 @@ struct Index {
 
 
 
-#### 快进快退
+### 快进快退
 
 系统支持三种快进/快退的时长，应用可以通过接口进行设置；同时注册快进/快退的回调命令，以响应控制。
 
@@ -665,18 +667,28 @@ struct Index {
  - **当AVSessionType是audio时：**
 
 | 应用注册的事件组合 | 播放中心显示按钮 | 按钮是否可用 |
+
 | --- | --- | --- |
+
 | 未注册任何事件 | “上一首”、“下一首” | 所有按钮置灰，无法点击。 |
+
 | 注册上一首/下一首事件 | “上一首”、“下一首” | 注册上一首事件 →“上一首”按钮可用。 注册下一首事件 →“下一首”按钮可用。 未注册对应事件的按钮不可用。 |
+
 | 注册快进/快退事件 | “上一首”、“下一首” | 所有按钮置灰，无法点击。 |
+
 | 注册上一首/下一首及快进/快退事件 | “上一首”、“下一首” | 注册上一首事件 →“上一首”按钮可用。 注册下一首事件 →“下一首”按钮可用。 未注册对应事件的按钮不可用。 |
  - **当AVSessionType是video时：**
 
 | 应用注册的事件组合 | 播放中心显示按钮 | 按钮是否可用 |
+
 | --- | --- | --- |
+
 | 未注册任何事件 | “快进”、“快退” | 所有按钮置灰，无法点击。 |
+
 | 注册上一首/下一首事件 | “上一首”、“下一首” | 注册上一首事件 →“上一首”按钮可用。 注册下一首事件 →“下一首”按钮可用。 未注册对应事件的按钮不可用。 |
+
 | 注册快进/快退事件 | “快进”、“快退” | 注册快进事件 →“快进”按钮可用。 注册快退事件 →“快退”按钮可用。 未注册对应事件的按钮不可用。 |
+
 | 注册上一首/下一首及快进/快退事件 | “快进”、“快退” | 注册快进事件 →“快进”按钮可用。 注册快退事件 →“快退”按钮可用。 未注册对应事件的按钮不可用。 |
 
   
@@ -740,7 +752,7 @@ struct Index {
 
 
 
-#### 实现收藏功能
+### 实现收藏功能
 
 音乐类应用可以通过注册收藏的控制命令[on('toggleFavorite')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-avsession-avsession#ontogglefavorite10)实现收藏功能。
 
@@ -793,7 +805,7 @@ struct Index {
 
 
 
-#### 实现循环模式功能
+### 实现循环模式功能
 
 针对音乐类应用，系统的播控中心界面会默认展示循环模式的控制操作，目前系统支持四种固定的循环模式控制，参考: [LoopMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-avsession-e#loopmode10)。
 
@@ -864,7 +876,7 @@ struct Index {
 
 
 
-#### 实现进度条控制功能
+### 实现进度条控制功能
 
 应用如果支持[进度条显示](#设置进度条信息)，则需要同步支持进度条控制功能，即注册seek控制指令。当用户在播控中心界面拖动进度条时，应用会收到对应的回调，应用需要正确响应，参考实现：
 
@@ -937,32 +949,39 @@ struct Index {
 
 
 
-#### 适配媒体通知
+## 适配媒体通知
 
 当应用按照上述流程正确接入AVSession，设置元数据信息、正确的播放状态信息并注册了控制指令，应用进入播放状态时，系统通知和锁屏界面会展示播放的应用信息。
 
 
 
-#### 适配蓝牙按键与有线按键事件
+## 适配蓝牙按键与有线按键事件
 
 应用正确接入AVSession后，可以通过注册控制指令的方式来实现监听蓝牙、有线耳机的按键事件，AVSession提供了如下两种实现方式：
 
  - 方式一（推荐使用）：
 
-
-应用按需[注册需要的控制指令](#控制命令的处理)，目前支持转换的AVSession控制指令如下：
+  应用可以根据[控制命令的处理](#控制命令的处理)按需注册需要的控制命令，目前支持转换的AVSession控制命令如下：
 
 | 控制命令 | 功能说明 |
+
 | --- | --- |
+
 | play | 播放命令。 |
+
 | pause | 暂停命令。 |
+
 | stop | 停止命令。 |
+
 | playNext | 播放下一首命令。 |
+
 | playPrevious | 播放上一首命令。 |
+
 | fastForward | 快进命令。 |
+
 | rewind | 快退命令。 |
 
-
+  
 ```ArkTS
 import { avSession as AVSessionManager } from '@kit.AVSessionKit';
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -1029,17 +1048,26 @@ struct Index {
 
  - 方式二：
 
-  通过AVSession注册[on('handleKeyEvent')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-avsession-avsession#onhandlekeyevent10)指令。该回调接口会直接转发媒体按键事件[KeyEvent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-keyevent)。应用需要自行识别按键事件的类型，并响应事件实现对应的功能。目前支持转发的按键事件类型如下：
+  通过AVSession注册[on('handleKeyEvent')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-avsession-avsession#onhandlekeyevent10)命令。该回调接口会直接转发媒体按键事件[KeyEvent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-keyevent)。应用需要自行识别按键事件的类型，并响应事件实现对应的功能。目前支持转发的按键事件类型如下：
 
 | 按键类型(KeyCode) | 功能说明 |
+
 | --- | --- |
+
 | KEYCODE_MEDIA_PLAY_PAUSE | 多媒体键：播放/暂停 |
+
 | KEYCODE_MEDIA_STOP | 多媒体键：停止 |
+
 | KEYCODE_MEDIA_NEXT | 多媒体键：下一首 |
+
 | KEYCODE_MEDIA_PREVIOUS | 多媒体键：上一首 |
+
 | KEYCODE_MEDIA_REWIND | 多媒体键：快退 |
+
 | KEYCODE_MEDIA_FAST_FORWARD | 多媒体键：快进 |
+
 | KEYCODE_MEDIA_PLAY | 多媒体键：播放 |
+
 | KEYCODE_MEDIA_PAUSE | 多媒体键：暂停 |
 
   
@@ -1099,6 +1127,6 @@ struct Index {
 
 
 
-#### 示例代码
+## 示例代码
 
  - [媒体会话-提供方](https://gitcode.com/HarmonyOS_Samples/media-provider)

@@ -1,13 +1,14 @@
 # rcp.h
 
-更新时间：2026-07-03 02:18:23
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/rcp_8h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明用于访问远程通信的API。提供基本的函数，结构体和const定义。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | struct Rcp_Buffer | 文本存储结构。 |
@@ -94,10 +98,12 @@
  
   
 
-#### 宏定义
+### 宏定义
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | RCP_MAX_REQUEST_ID_LEN 32 | 请求ID的最大长度。 |
@@ -118,10 +124,12 @@
  
   
 
-#### 类型定义
+### 类型定义
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | typedef enum Rcp_FormValueType Rcp_FormValueType | 表单值类型。 |
@@ -146,7 +154,7 @@
 | typedef struct Rcp_ServerAuthentication Rcp_ServerAuthentication | 服务器身份验证。 |
 | typedef bool(* Rcp_ExclusionFunction) (const char *url) | 判断host是否使用代理的函数指针，true代表使用，false代表不使用。 |
 | typedef struct Rcp_Urls Rcp_Urls | url，用于确定主机是否正在使用代理。 |
-| typedef enum Rcp_ExclusionsValueType Rcp_ExclusionsValueType | 代理排除中使用的数据类型. 用于区分Rcp_Exclusions中使用的数据。 |
+| typedef enum Rcp_ExclusionsValueType Rcp_ExclusionsValueType | 代理排除中使用的数据类型，用于区分Rcp_Exclusions中使用的数据。 |
 | typedef struct Rcp_Exclusions Rcp_Exclusions | 代理配置中用于过滤不使用代理的URLs。 |
 | typedef enum Rcp_CertType Rcp_CertType | 客户端证书类型。 |
 | typedef struct Rcp_CertificateAuthority Rcp_CertificateAuthority | 用于验证远程服务器标识的证书颁发机构（CA）。 |
@@ -218,10 +226,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | Rcp_FormValueType { RCP_FORM_VALUE_TYPE_INT32, RCP_FORM_VALUE_TYPE_INT64, RCP_FORM_VALUE_TYPE_BOOL, RCP_FORM_VALUE_TYPE_STRING, RCP_FORM_VALUE_TYPE_DOUBLE } | 表单值类型。 |
@@ -229,7 +239,7 @@
 | Rcp_MultipartValueType { RCP_TYPE_FORM_FIELD_VALUE, RCP_TYPE_FORM_FIELD_FILE_VALUE } | 多部分值类型。用于区分Rcp_MultipartFormFieldValue中使用的数据。 |
 | Rcp_ContentType { RCP_CONTENT_TYPE_STRING, RCP_CONTENT_TYPE_FORM, RCP_CONTENT_TYPE_MULTIPARTFORM, RCP_CONTENT_TYPE_GETCALLBACK } | 内容类型。用于区分Rcp_RequestContent中使用的数据。 |
 | Rcp_AuthenticationType { RCP_AUTHENTICATION_AUTO, RCP_AUTHENTICATION_BASIC, RCP_AUTHENTICATION_NTLM, RCP_AUTHENTICATION_DIGEST } | 枚举类型。服务器的身份验证类型。如果未设置，请与服务器协商。 |
-| Rcp_ExclusionsValueType { RCP_EXCLUSION_USE_URL_ARRAY, RCP_EXCLUSION_USE_CALLBACK } | 代理排除中使用的数据类型. 用于区分Rcp_Exclusions中使用的数据。 |
+| Rcp_ExclusionsValueType { RCP_EXCLUSION_USE_URL_ARRAY, RCP_EXCLUSION_USE_CALLBACK } | 代理排除中使用的数据类型，用于区分Rcp_Exclusions中使用的数据。 |
 | Rcp_CertType { RCP_CERT_PEM, RCP_CERT_DER, RCP_CERT_P12 } | 客户端证书类型。 |
 | Rcp_RemoteValidationType { RCP_REMOTE_VALIDATION_SYSTEM, RCP_REMOTE_VALIDATION_SKIP, RCP_REMOTE_VALIDATION_CERTIFICATE_AUTHORITY } | 远程验证类型。 |
 | Rcp_ProxyTunnelMode { RCP_PROXY_TUNNEL_AUTO, RCP_PROXY_TUNNEL_ALWAYS } | 用于控制何时创建代理隧道。 隧道或隧道传输意味着向代理发送HTTP CONNECT请求，要求它连接到特定端口号上的远程主机，然后流量只是通过代理。“auto”表示为HTTPS创建隧道。“always”表示始终创建隧道。 |
@@ -243,10 +253,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | Rcp_Form * HMS_Rcp_CreateForm (void) | 创建一个简单表单。 |

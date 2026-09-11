@@ -1,13 +1,14 @@
 # task.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-task-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 声明FFRT任务的C接口，提供任务属性的初始化与销毁、任务QoS设置与获取、任务延迟时间管理、并发队列任务优先级管理、任务栈大小管理、任务提交调度执行、任务句柄引用计数管理以及任务等待等功能。
  
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | FFRT_C_API int ffrt_task_attr_init(ffrt_task_attr_t* attr) | 初始化任务属性。调用成功后，任务属性将被设置为默认值（如默认QoS为ffrt_qos_default）。使用完毕后须调用ffrt_task_attr_destroy释放任务属性。 |
@@ -64,15 +68,17 @@
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### ffrt_task_attr_init()
+### ffrt_task_attr_init()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API int ffrt_task_attr_init(ffrt_task_attr_t* attr)
@@ -86,6 +92,7 @@ FFRT_C_API int ffrt_task_attr_init(ffrt_task_attr_t* attr)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_task_attr_t* attr | 指向任务属性的指针。 |
@@ -93,6 +100,7 @@ FFRT_C_API int ffrt_task_attr_init(ffrt_task_attr_t* attr)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API int | 任务属性初始化成功时返回0； 否则返回-1。 |
@@ -100,9 +108,10 @@ FFRT_C_API int ffrt_task_attr_init(ffrt_task_attr_t* attr)
  
   
 
-#### ffrt_task_attr_set_name()
+### ffrt_task_attr_set_name()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API void ffrt_task_attr_set_name(ffrt_task_attr_t* attr, const char* name)
@@ -116,6 +125,7 @@ FFRT_C_API void ffrt_task_attr_set_name(ffrt_task_attr_t* attr, const char* name
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_task_attr_t* attr | 指向任务属性的指针。 |
@@ -124,9 +134,10 @@ FFRT_C_API void ffrt_task_attr_set_name(ffrt_task_attr_t* attr, const char* name
  
   
 
-#### ffrt_task_attr_get_name()
+### ffrt_task_attr_get_name()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API const char* ffrt_task_attr_get_name(const ffrt_task_attr_t* attr)
@@ -140,6 +151,7 @@ FFRT_C_API const char* ffrt_task_attr_get_name(const ffrt_task_attr_t* attr)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ffrt_task_attr_t* attr | 指向任务属性的指针。 |
@@ -147,6 +159,7 @@ FFRT_C_API const char* ffrt_task_attr_get_name(const ffrt_task_attr_t* attr)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API const char* | 任务名称获取成功时返回非空的任务名称指针； 否则返回空指针。 |
@@ -154,9 +167,10 @@ FFRT_C_API const char* ffrt_task_attr_get_name(const ffrt_task_attr_t* attr)
  
   
 
-#### ffrt_task_attr_destroy()
+### ffrt_task_attr_destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API void ffrt_task_attr_destroy(ffrt_task_attr_t* attr)
@@ -170,6 +184,7 @@ FFRT_C_API void ffrt_task_attr_destroy(ffrt_task_attr_t* attr)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_task_attr_t* attr | 指向任务属性的指针。 |
@@ -177,9 +192,10 @@ FFRT_C_API void ffrt_task_attr_destroy(ffrt_task_attr_t* attr)
  
   
 
-#### ffrt_task_attr_set_qos()
+### ffrt_task_attr_set_qos()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API void ffrt_task_attr_set_qos(ffrt_task_attr_t* attr, ffrt_qos_t qos)
@@ -193,6 +209,7 @@ FFRT_C_API void ffrt_task_attr_set_qos(ffrt_task_attr_t* attr, ffrt_qos_t qos)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_task_attr_t* attr | 指向任务属性的指针。 |
@@ -201,9 +218,10 @@ FFRT_C_API void ffrt_task_attr_set_qos(ffrt_task_attr_t* attr, ffrt_qos_t qos)
  
   
 
-#### ffrt_task_attr_get_qos()
+### ffrt_task_attr_get_qos()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API ffrt_qos_t ffrt_task_attr_get_qos(const ffrt_task_attr_t* attr)
@@ -217,6 +235,7 @@ FFRT_C_API ffrt_qos_t ffrt_task_attr_get_qos(const ffrt_task_attr_t* attr)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ffrt_task_attr_t* attr | 指向任务属性的指针。 |
@@ -224,6 +243,7 @@ FFRT_C_API ffrt_qos_t ffrt_task_attr_get_qos(const ffrt_task_attr_t* attr)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API ffrt_qos_t | QoS等级，默认返回ffrt_qos_default。 |
@@ -231,9 +251,10 @@ FFRT_C_API ffrt_qos_t ffrt_task_attr_get_qos(const ffrt_task_attr_t* attr)
  
   
 
-#### ffrt_task_attr_set_delay()
+### ffrt_task_attr_set_delay()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API void ffrt_task_attr_set_delay(ffrt_task_attr_t* attr, uint64_t delay_us)
@@ -247,6 +268,7 @@ FFRT_C_API void ffrt_task_attr_set_delay(ffrt_task_attr_t* attr, uint64_t delay_
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_task_attr_t* attr | 指向任务属性的指针。 |
@@ -255,9 +277,10 @@ FFRT_C_API void ffrt_task_attr_set_delay(ffrt_task_attr_t* attr, uint64_t delay_
  
   
 
-#### ffrt_task_attr_get_delay()
+### ffrt_task_attr_get_delay()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API uint64_t ffrt_task_attr_get_delay(const ffrt_task_attr_t* attr)
@@ -271,6 +294,7 @@ FFRT_C_API uint64_t ffrt_task_attr_get_delay(const ffrt_task_attr_t* attr)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ffrt_task_attr_t* attr | 指向任务属性的指针。 |
@@ -278,6 +302,7 @@ FFRT_C_API uint64_t ffrt_task_attr_get_delay(const ffrt_task_attr_t* attr)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API uint64_t | 任务延迟时间，单位是微秒。 |
@@ -285,9 +310,10 @@ FFRT_C_API uint64_t ffrt_task_attr_get_delay(const ffrt_task_attr_t* attr)
  
   
 
-#### ffrt_task_attr_set_queue_priority()
+### ffrt_task_attr_set_queue_priority()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API void ffrt_task_attr_set_queue_priority(ffrt_task_attr_t* attr, ffrt_queue_priority_t priority)
@@ -301,6 +327,7 @@ FFRT_C_API void ffrt_task_attr_set_queue_priority(ffrt_task_attr_t* attr, ffrt_q
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_task_attr_t* attr | 指向任务属性的指针。 |
@@ -309,9 +336,10 @@ FFRT_C_API void ffrt_task_attr_set_queue_priority(ffrt_task_attr_t* attr, ffrt_q
  
   
 
-#### ffrt_task_attr_get_queue_priority()
+### ffrt_task_attr_get_queue_priority()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API ffrt_queue_priority_t ffrt_task_attr_get_queue_priority(const ffrt_task_attr_t* attr)
@@ -325,6 +353,7 @@ FFRT_C_API ffrt_queue_priority_t ffrt_task_attr_get_queue_priority(const ffrt_ta
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ffrt_task_attr_t* attr | 指向任务属性的指针。 |
@@ -332,6 +361,7 @@ FFRT_C_API ffrt_queue_priority_t ffrt_task_attr_get_queue_priority(const ffrt_ta
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API ffrt_queue_priority_t | 并发队列任务的优先级。 |
@@ -339,9 +369,10 @@ FFRT_C_API ffrt_queue_priority_t ffrt_task_attr_get_queue_priority(const ffrt_ta
  
   
 
-#### ffrt_task_attr_set_stack_size()
+### ffrt_task_attr_set_stack_size()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API void ffrt_task_attr_set_stack_size(ffrt_task_attr_t* attr, uint64_t size)
@@ -355,6 +386,7 @@ FFRT_C_API void ffrt_task_attr_set_stack_size(ffrt_task_attr_t* attr, uint64_t s
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_task_attr_t* attr | 指向任务属性的指针。 |
@@ -363,9 +395,10 @@ FFRT_C_API void ffrt_task_attr_set_stack_size(ffrt_task_attr_t* attr, uint64_t s
  
   
 
-#### ffrt_task_attr_get_stack_size()
+### ffrt_task_attr_get_stack_size()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API uint64_t ffrt_task_attr_get_stack_size(const ffrt_task_attr_t* attr)
@@ -379,6 +412,7 @@ FFRT_C_API uint64_t ffrt_task_attr_get_stack_size(const ffrt_task_attr_t* attr)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ffrt_task_attr_t* attr | 指向任务属性的指针。 |
@@ -386,6 +420,7 @@ FFRT_C_API uint64_t ffrt_task_attr_get_stack_size(const ffrt_task_attr_t* attr)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API uint64_t | 任务栈大小，单位是字节。 |
@@ -393,9 +428,10 @@ FFRT_C_API uint64_t ffrt_task_attr_get_stack_size(const ffrt_task_attr_t* attr)
  
   
 
-#### ffrt_this_task_update_qos()
+### ffrt_this_task_update_qos()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API int ffrt_this_task_update_qos(ffrt_qos_t qos)
@@ -409,6 +445,7 @@ FFRT_C_API int ffrt_this_task_update_qos(ffrt_qos_t qos)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_qos_t qos | 任务待更新的QoS等级，取值参考ffrt_qos_t。 |
@@ -416,6 +453,7 @@ FFRT_C_API int ffrt_this_task_update_qos(ffrt_qos_t qos)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API int | QoS更新成功，或新QoS与当前QoS相同时返回0； QoS映射未注册、当前任务为空，或当前任务非通用类型任务（即非通过ffrt_submit_base或ffrt_submit_h_base提交的任务）时返回1。 |
@@ -427,9 +465,10 @@ FFRT_C_API int ffrt_this_task_update_qos(ffrt_qos_t qos)
  
   
 
-#### ffrt_this_task_get_qos()
+### ffrt_this_task_get_qos()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API ffrt_qos_t ffrt_this_task_get_qos(void)
@@ -443,6 +482,7 @@ FFRT_C_API ffrt_qos_t ffrt_this_task_get_qos(void)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API ffrt_qos_t | 任务QoS。 |
@@ -450,9 +490,10 @@ FFRT_C_API ffrt_qos_t ffrt_this_task_get_qos(void)
  
   
 
-#### ffrt_this_task_get_id()
+### ffrt_this_task_get_id()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API uint64_t ffrt_this_task_get_id(void)
@@ -466,6 +507,7 @@ FFRT_C_API uint64_t ffrt_this_task_get_id(void)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API uint64_t | 当前运行任务的唯一任务ID。 |
@@ -473,9 +515,10 @@ FFRT_C_API uint64_t ffrt_this_task_get_id(void)
  
   
 
-#### ffrt_alloc_auto_managed_function_storage_base()
+### ffrt_alloc_auto_managed_function_storage_base()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API void *ffrt_alloc_auto_managed_function_storage_base(ffrt_function_kind_t kind)
@@ -489,6 +532,7 @@ FFRT_C_API void *ffrt_alloc_auto_managed_function_storage_base(ffrt_function_kin
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_function_kind_t kind | 函数执行结构体类型。通用类型适用于通过ffrt_submit_base或ffrt_submit_h_base提交的任务， 队列类型适用于通过并发队列提交接口提交的任务。 |
@@ -496,6 +540,7 @@ FFRT_C_API void *ffrt_alloc_auto_managed_function_storage_base(ffrt_function_kin
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API void * | 内存申请成功时返回非空指针； 否则返回空指针。 |
@@ -509,9 +554,10 @@ FFRT_C_API void *ffrt_alloc_auto_managed_function_storage_base(ffrt_function_kin
  
   
 
-#### ffrt_submit_base()
+### ffrt_submit_base()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API void ffrt_submit_base(ffrt_function_header_t* f, const ffrt_deps_t* in_deps, const ffrt_deps_t* out_deps, const ffrt_task_attr_t* attr)
@@ -525,6 +571,7 @@ FFRT_C_API void ffrt_submit_base(ffrt_function_header_t* f, const ffrt_deps_t* i
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_function_header_t* f | 任务执行体封装的指针，需通过ffrt_alloc_auto_managed_function_storage_base申请内存，且必须包含任务销毁回调函数。 |
@@ -539,9 +586,10 @@ FFRT_C_API void ffrt_submit_base(ffrt_function_header_t* f, const ffrt_deps_t* i
  
   
 
-#### ffrt_submit_h_base()
+### ffrt_submit_h_base()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API ffrt_task_handle_t ffrt_submit_h_base(ffrt_function_header_t* f, const ffrt_deps_t* in_deps, const ffrt_deps_t* out_deps, const ffrt_task_attr_t* attr)
@@ -555,6 +603,7 @@ FFRT_C_API ffrt_task_handle_t ffrt_submit_h_base(ffrt_function_header_t* f, cons
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_function_header_t* f | 任务执行体封装的指针，需通过ffrt_alloc_auto_managed_function_storage_base申请内存，且必须包含任务销毁回调函数。 |
@@ -565,6 +614,7 @@ FFRT_C_API ffrt_task_handle_t ffrt_submit_h_base(ffrt_function_header_t* f, cons
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API ffrt_task_handle_t | 任务提交成功时返回非空的任务句柄； 否则返回空指针。 |
@@ -576,9 +626,10 @@ FFRT_C_API ffrt_task_handle_t ffrt_submit_h_base(ffrt_function_header_t* f, cons
  
   
 
-#### ffrt_submit_f()
+### ffrt_submit_f()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API void ffrt_submit_f(ffrt_function_t func, void* arg, const ffrt_deps_t* in_deps, const ffrt_deps_t* out_deps, const ffrt_task_attr_t* attr)
@@ -592,6 +643,7 @@ FFRT_C_API void ffrt_submit_f(ffrt_function_t func, void* arg, const ffrt_deps_t
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_function_t func | 待执行的任务函数。 |
@@ -607,9 +659,10 @@ FFRT_C_API void ffrt_submit_f(ffrt_function_t func, void* arg, const ffrt_deps_t
  
   
 
-#### ffrt_submit_h_f()
+### ffrt_submit_h_f()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API ffrt_task_handle_t ffrt_submit_h_f(ffrt_function_t func, void* arg, const ffrt_deps_t* in_deps, const ffrt_deps_t* out_deps, const ffrt_task_attr_t* attr)
@@ -623,6 +676,7 @@ FFRT_C_API ffrt_task_handle_t ffrt_submit_h_f(ffrt_function_t func, void* arg, c
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_function_t func | 待执行的任务函数。 |
@@ -634,6 +688,7 @@ FFRT_C_API ffrt_task_handle_t ffrt_submit_h_f(ffrt_function_t func, void* arg, c
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API ffrt_task_handle_t | 任务提交成功时返回非空的任务句柄； 否则返回空指针。 |
@@ -645,9 +700,10 @@ FFRT_C_API ffrt_task_handle_t ffrt_submit_h_f(ffrt_function_t func, void* arg, c
  
   
 
-#### ffrt_task_handle_inc_ref()
+### ffrt_task_handle_inc_ref()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API uint32_t ffrt_task_handle_inc_ref(ffrt_task_handle_t handle)
@@ -661,6 +717,7 @@ FFRT_C_API uint32_t ffrt_task_handle_inc_ref(ffrt_task_handle_t handle)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_task_handle_t handle | 任务句柄，由ffrt_submit_h_base或ffrt_submit_h_f返回。 |
@@ -668,6 +725,7 @@ FFRT_C_API uint32_t ffrt_task_handle_inc_ref(ffrt_task_handle_t handle)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API uint32_t | 任务句柄增加前的引用计数值；若handle为null则返回UINT_MAX。 |
@@ -675,9 +733,10 @@ FFRT_C_API uint32_t ffrt_task_handle_inc_ref(ffrt_task_handle_t handle)
  
   
 
-#### ffrt_task_handle_dec_ref()
+### ffrt_task_handle_dec_ref()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API uint32_t ffrt_task_handle_dec_ref(ffrt_task_handle_t handle)
@@ -691,6 +750,7 @@ FFRT_C_API uint32_t ffrt_task_handle_dec_ref(ffrt_task_handle_t handle)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_task_handle_t handle | 任务句柄。 |
@@ -698,6 +758,7 @@ FFRT_C_API uint32_t ffrt_task_handle_dec_ref(ffrt_task_handle_t handle)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | FFRT_C_API uint32_t | 任务句柄减少前的引用计数值；若handle为null则返回UINT_MAX。 |
@@ -705,9 +766,10 @@ FFRT_C_API uint32_t ffrt_task_handle_dec_ref(ffrt_task_handle_t handle)
  
   
 
-#### ffrt_task_handle_destroy()
+### ffrt_task_handle_destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API void ffrt_task_handle_destroy(ffrt_task_handle_t handle)
@@ -721,6 +783,7 @@ FFRT_C_API void ffrt_task_handle_destroy(ffrt_task_handle_t handle)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ffrt_task_handle_t handle | 任务句柄。 |
@@ -728,9 +791,10 @@ FFRT_C_API void ffrt_task_handle_destroy(ffrt_task_handle_t handle)
  
   
 
-#### ffrt_wait_deps()
+### ffrt_wait_deps()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API void ffrt_wait_deps(const ffrt_deps_t* deps)
@@ -744,6 +808,7 @@ FFRT_C_API void ffrt_wait_deps(const ffrt_deps_t* deps)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | const ffrt_deps_t* deps | 指向依赖任务列表的指针。阻塞当前任务，直到该依赖列表引用的所有任务执行完毕。 |
@@ -751,9 +816,10 @@ FFRT_C_API void ffrt_wait_deps(const ffrt_deps_t* deps)
  
   
 
-#### ffrt_wait()
+### ffrt_wait()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 FFRT_C_API void ffrt_wait(void)

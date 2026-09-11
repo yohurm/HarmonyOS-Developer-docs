@@ -1,16 +1,19 @@
 # UI上下文错误码
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-uicontext
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 > [!TIP]
 > 以下仅介绍本模块特有错误码，通用错误码请参考 通用错误码说明文档 。
 
 
 
-#### 190001 无效的UIContext对象
+## 190001 无效的UIContext对象
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -30,7 +33,10 @@ The uiContext is invalid.
 
 
 
-#### 190002 无效的回调函数
+## 190002 无效的回调函数
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -50,9 +56,10 @@ The callback function is invalid.
 
 
 
-#### 100101 小于0的非法值
+## 100101 小于0的非法值
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -72,9 +79,10 @@ The parameter value cannot be less than 0.
 
 
 
-#### 100102 参数类型错误
+## 100102 参数类型错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -94,9 +102,10 @@ The parameter value cannot be a floating-point number.
 
 
 
-#### 100103 调用线程错误
+## 100103 调用线程错误
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 
@@ -116,9 +125,10 @@ The function cannot be called from a non-main thread.
 
 
 
-#### 120007 实例不存在
+## 120007 实例不存在
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable | lite_wearable
 
 **错误信息**
 

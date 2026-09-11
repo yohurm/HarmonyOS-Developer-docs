@@ -1,6 +1,6 @@
 # exerciseRealtimeHelper (实时运动数据类型常量)(Lite)
 
-更新时间：2026-07-17 09:35:24
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/health-api-exerciserealtimehelper-lite
 **支持设备：** lite_wearable
@@ -10,7 +10,8 @@
 **起始版本：** 6.1.1(24)
   
 
-#### 导入模块
+## 导入模块
+
 
 **支持设备：** lite_wearable
 
@@ -24,7 +25,8 @@ import healthStore  from '@hms.health.store';
  
   
 
-#### 常量
+## 常量
+
 
 **支持设备：** lite_wearable
 
@@ -34,6 +36,7 @@ import healthStore  from '@hms.health.store';
  
 **模型约束：** 此接口仅可在FA模型下使用。
   
+
 | 名称 | 类型 | 只读 | 说明 |
 | --- | --- | --- | --- |
 | REALTIME_KEY_ACTIVE_TIME | string | 是 | 锻炼时长（运动过程中身体处于活跃状态时长），单位：s 。 支持羽毛球、爬楼、网球、匹克球、足球。 |

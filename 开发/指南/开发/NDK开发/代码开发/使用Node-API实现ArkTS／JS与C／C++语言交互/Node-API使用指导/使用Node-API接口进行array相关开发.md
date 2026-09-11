@@ -1,16 +1,16 @@
 # 使用Node-API接口进行array相关开发
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-about-array
 
-#### 简介
+## 简介
 
 使用Node-API接口进行array相关开发时，调用相关接口可以在Node-API模块中直接操作和处理ArkTS中的数组。
  
   
 
-#### 基本概念
+## 基本概念
 
 使用Node-API接口进行数组（array）相关开发时，涉及的基本概念主要包括数组的创建、访问、修改、遍历以及与数组相关的操作。这些概念对于理解如何在Node-API模块中与ArkTS数组交互非常重要。以下是一些关键概念：
  
@@ -23,10 +23,11 @@
  
   
 
-#### 场景和功能介绍
+## 场景和功能介绍
 
 使用Node-API接口进行数组相关开发时，可以处理各种涉及ArkTS数组的操作和交互场景。以下是几个具体的使用场景介绍：
   
+
 | 接口 | 描述 |
 | --- | --- |
 | napi_create_array | 用于在Node-API模块中向ArkTS层创建一个ArkTS数组对象。 |
@@ -47,7 +48,7 @@
  
   
 
-#### 使用示例
+## 使用示例
 
 Node-API接口开发流程参考[使用Node-API实现跨语言交互开发流程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-process)，本文仅对接口对应C++及ArkTS相关代码进行展示。具体使用见示例。
  
@@ -66,7 +67,7 @@ import testNapi from 'libentry.so';
  
   
 
-#### napi_create_array
+### napi_create_array
 
 用于在Node-API模块中创建一个ArkTS数组。
  
@@ -110,7 +111,7 @@ hilog.info(0x0000, 'testTag', 'Test Node-API napi_create_array:%{public}s',
  
   
 
-#### napi_create_array_with_length
+### napi_create_array_with_length
 
 用于在Node-API模块中创建一个具有指定长度的ArkTS数组。
  
@@ -153,7 +154,7 @@ hilog.info(0x0000, 'testTag', 'Test Node-API napi_create_array_with_length:%{pub
  
   
 
-#### napi_get_array_length
+### napi_get_array_length
 
 获取给定array的长度。
  
@@ -202,7 +203,7 @@ hilog.info(0x0000, 'testTag', 'Test Node-API get_array_length:%{public}d',
  
   
 
-#### napi_is_array
+### napi_is_array
 
 判断给定ArkTS值是否为数组。
  
@@ -259,7 +260,7 @@ try {
  
   
 
-#### napi_set_element
+### napi_set_element
 
 用于在ArkTS数组中设置指定索引位置的元素。
  
@@ -335,7 +336,7 @@ try {
  
   
 
-#### napi_get_element
+### napi_get_element
 
 用于从ArkTS数组中获取请求索引位置的元素值。请求索引值应在数组的有效范围内，如果索引超出数组长度，函数会返回undefined。
  
@@ -393,13 +394,13 @@ hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_element arr[3]: %{public}s
   testNapi.napiGetElement<number | string | null | Object>(arr, 3));
 hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_element arr[4]: %{public}s',
   JSON.stringify(testNapi.napiGetElement(arr, 4)));
-hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_element arr[null]: %{public}s',
+hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_element arr[5]: %{public}s',
   testNapi.napiGetElement<number | string | null | Object>(arr, 5));
 ```
  
   
 
-#### napi_has_element
+### napi_has_element
 
 用于判断ArkTS数组是否具有指定索引的元素。如果索引超出了对象的有效范围，函数返回false，表示没有元素。
  
@@ -447,7 +448,7 @@ hilog.info(0x0000, 'testTag', 'Test Node-API napi_has_element arr[7]: %{public}s
  
   
 
-#### napi_delete_element
+### napi_delete_element
 
 用于从ArkTS数组对象中删除请求索引的元素。
  
@@ -502,7 +503,7 @@ hilog.info(0x0000, 'testTag', 'Test Node-API napi_get_element arr[0]: %{public}d
  
   
 
-#### napi_create_typedarray
+### napi_create_typedarray
 
 用于在Node-API模块中通过现有的ArrayBuffer创建指定类型的ArkTS TypedArray。
  
@@ -636,7 +637,7 @@ EXTERN_C_END
  
   
 
-#### napi_is_typedarray
+### napi_is_typedarray
 
 用于在Node-API模块中判断ArkTS侧给定的napi_value是否为TypedArray对象。
  
@@ -693,7 +694,7 @@ try {
  
   
 
-#### napi_get_typedarray_info
+### napi_get_typedarray_info
 
 获取给定TypedArray的各种属性。
  
@@ -790,7 +791,7 @@ try {
  
   
 
-#### napi_create_dataview
+### napi_create_dataview
 
 创建dataview对象，便于访问和操作二进制数据，需要提供一个指向二进制数据的缓冲区，并指定要包含的字节数。
  
@@ -852,7 +853,7 @@ hilog.info(0x0000, 'testTag', 'Test Node-API dataView第一个数据：%{public}
  
   
 
-#### napi_is_dataview
+### napi_is_dataview
 
 用于在Node-API模块中判断ArkTS侧给定的napi_value是否为DataView。
  
@@ -887,7 +888,7 @@ static napi_value IsDataView(napi_env env, napi_callback_info info)
 index.d.ts
  
 ```ts
-export const isDataView: (date: DataView | string) => boolean | undefined; // 使用Node-API接口进行array相关开发 napi_is_dataview
+export const isDataView: (data: DataView | string) => boolean | undefined; // 使用Node-API接口进行array相关开发 napi_is_dataview
 ```
  
 ArkTS侧示例代码
@@ -911,7 +912,7 @@ try {
  
   
 
-#### napi_get_dataview_info
+### napi_get_dataview_info
 
 获取给定DataView的各种属性。
  

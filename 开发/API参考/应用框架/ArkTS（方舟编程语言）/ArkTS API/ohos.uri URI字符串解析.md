@@ -1,9 +1,9 @@
 # @ohos.uri (URI字符串解析)
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-04 10:41:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-uri
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供URI字符串解析功能，支持URI各组成部分（协议、主机、端口、路径、查询参数和片段等）的提取与设置，以及URI编码/解码、比较判断、路径规范化和查询参数操作等能力。
  
@@ -16,9 +16,10 @@ URI遵循RFC3986规范标准，不支持非标准场景解析。
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { uri } from '@kit.ArkTS';
@@ -26,20 +27,23 @@ import { uri } from '@kit.ArkTS';
  
   
 
-#### URI
+## URI
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 构造一个URI对象，并提供URI比较、路径规范化、查询参数操作、路径段追加和URI类型判断等方法。
  
   
 
-#### 属性
+### 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Utils.Lang
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | scheme | string | 否 | 否 | 获取和设置URI的方案部分，若无此部分则返回null对象。方案名以字母开头，只能包含字母、数字、加号(+)、减号(-)和点号(.)。 此属性在API version 19之前为只读属性，不可写，修改此属性会报错。 元服务API： 从API version 11开始，该接口支持在元服务中使用。 |
@@ -61,7 +65,10 @@ import { uri } from '@kit.ArkTS';
  
   
 
-#### 命名规则
+### 命名规则
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **命名形式：**
  
@@ -154,9 +161,10 @@ console.info('result:', uriObj7.checkIsAbsolute()); // result: true
  
   
 
-#### constructor
+### constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(uri: string)
  
@@ -168,6 +176,7 @@ constructor(uri: string)
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uri | string | 是 | 需要解析的URI字符串，需符合RFC3986规范标准。 |
@@ -177,6 +186,7 @@ constructor(uri: string)
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200002 | Invalid uri string. |
@@ -195,9 +205,10 @@ new uri.URI('https://username:password@host:8080');
  
   
 
-#### toString
+### toString
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 toString(): string
  
@@ -209,6 +220,7 @@ toString(): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 返回URI的字符串序列化。 |
@@ -223,9 +235,10 @@ let result1 = result.toString(); // https://username:password@host:8080/director
  
   
 
-#### equalsTo9+
+### equalsTo9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 equalsTo(other: URI): boolean
  
@@ -237,6 +250,7 @@ equalsTo(other: URI): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | other | URI | 是 | 需要比较的URI对象。 |
@@ -244,6 +258,7 @@ equalsTo(other: URI): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回true表示相等，否则返回false。 |
@@ -259,9 +274,10 @@ let result = uriInstance.equalsTo(uriInstance1); // true
  
   
 
-#### checkIsAbsolute
+### checkIsAbsolute
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checkIsAbsolute(): boolean
  
@@ -273,6 +289,7 @@ checkIsAbsolute(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 如果是绝对URI返回true，否则返回false。 |
@@ -289,9 +306,10 @@ console.info(`${uriInstance1.checkIsAbsolute()}`); // false
  
   
 
-#### normalize
+### normalize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 normalize(): URI
  
@@ -307,6 +325,7 @@ normalize(): URI
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | URI | 返回一个path被规范化后的URI对象。 |
@@ -329,9 +348,10 @@ console.info(uri2.path); // /../../patch/path2/path3
  
   
 
-#### checkRelative12+
+### checkRelative12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checkRelative(): boolean
  
@@ -343,6 +363,7 @@ checkRelative(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 如果是相对URI返回true，否则返回false。 |
@@ -359,9 +380,10 @@ console.info(`${uriInstance1.checkRelative()}`); // true
  
   
 
-#### checkOpaque12+
+### checkOpaque12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checkOpaque(): boolean
  
@@ -373,6 +395,7 @@ checkOpaque(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 如果是不透明的URI返回true，否则返回false。 |
@@ -389,9 +412,10 @@ console.info(`${uriInstance1.checkOpaque()}`); // true
  
   
 
-#### checkHierarchical12+
+### checkHierarchical12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 checkHierarchical(): boolean
  
@@ -403,6 +427,7 @@ checkHierarchical(): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 如果是分层的URI返回true，否则返回false。 |
@@ -419,9 +444,10 @@ console.info(`${uriInstance1.checkHierarchical()}`); // false
  
   
 
-#### getQueryValue12+
+### getQueryValue12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getQueryValue(key: string): string
  
@@ -435,6 +461,7 @@ getQueryValue(key: string): string
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 此URI查询参数的名称。 |
@@ -442,6 +469,7 @@ getQueryValue(key: string): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 返回经解码处理后的URI查询参数的第一个值，若未找到对应值则返回null对象。 |
@@ -459,9 +487,10 @@ console.info(uriInstance1.getQueryValue('abc')) // null
  
   
 
-#### addQueryValue12+
+### addQueryValue12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addQueryValue(key: string, value: string): URI
  
@@ -473,6 +502,7 @@ addQueryValue(key: string, value: string): URI
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 需要添加查询参数的名称。 |
@@ -481,6 +511,7 @@ addQueryValue(key: string, value: string): URI
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | URI | 返回添加查询部分后的URI对象。 |
@@ -496,9 +527,10 @@ console.info(newRoute.toString()); // https://www.test.com?param1=hello%20world
  
   
 
-#### addSegment12+
+### addSegment12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addSegment(pathSegment: string): URI
  
@@ -510,6 +542,7 @@ addSegment(pathSegment: string): URI
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pathSegment | string | 是 | 需要追加到路径部分的字段。 |
@@ -517,6 +550,7 @@ addSegment(pathSegment: string): URI
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | URI | 返回已追加字段的URI对象。 |
@@ -532,9 +566,10 @@ console.info(uriWithSegment.toString()); // http://www.test.com/my%20image.jpg
  
   
 
-#### addEncodedSegment12+
+### addEncodedSegment12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 addEncodedSegment(pathSegment: string): URI
  
@@ -546,6 +581,7 @@ addEncodedSegment(pathSegment: string): URI
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | pathSegment | string | 是 | 需要追加到路径部分的编码字段。 |
@@ -553,6 +589,7 @@ addEncodedSegment(pathSegment: string): URI
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | URI | 返回已追加字段的URI对象。 |
@@ -568,9 +605,10 @@ console.info(uriWithEncodedSegment.toString()); // http://www.test.com/my%20imag
  
   
 
-#### getQueryNames12+
+### getQueryNames12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getQueryNames(): string[]
  
@@ -582,6 +620,7 @@ getQueryNames(): string[]
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string[] | 返回URI查询部分中所有不重复的已解码参数名集合。 |
@@ -597,9 +636,10 @@ console.info(paramNames.toString()); // param1,param2
  
   
 
-#### getQueryValues12+
+### getQueryValues12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getQueryValues(key: string): string[]
  
@@ -613,6 +653,7 @@ getQueryValues(key: string): string[]
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 指定键的名称。 |
@@ -620,6 +661,7 @@ getQueryValues(key: string): string[]
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string[] | 返回此URI中查询参数内指定键对应所有值的集合，若没有找到则返回一个空字符串数组[]。 |
@@ -635,9 +677,10 @@ console.info(JSON.stringify(uriInstance.getQueryValues('abc'))); // []
  
   
 
-#### getBooleanQueryValue12+
+### getBooleanQueryValue12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBooleanQueryValue(key: string, defaultValue: boolean): boolean
  
@@ -649,6 +692,7 @@ getBooleanQueryValue(key: string, defaultValue: boolean): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 要获取的查询参数的名称。 |
@@ -657,6 +701,7 @@ getBooleanQueryValue(key: string, defaultValue: boolean): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 如果指定的查询参数不存在，则返回defaultValue的值；查询参数对应第一个值为“false”或者“0”返回false，否则返回true。 |
@@ -679,9 +724,10 @@ console.info(`${uriInstance4.getBooleanQueryValue('active', true)}`); // true
  
   
 
-#### clearQuery12+
+### clearQuery12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clearQuery(): URI
  
@@ -693,6 +739,7 @@ clearQuery(): URI
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | URI | 返回一个已被清除查询部分的URI对象。 |
@@ -707,9 +754,10 @@ console.info(uriInstance.clearQuery().toString()); // https://www.test.com
  
   
 
-#### getLastSegment12+
+### getLastSegment12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLastSegment(): string
  
@@ -721,6 +769,7 @@ getLastSegment(): string
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string | 返回此URI路径中的最后一个段，如果路径为空则返回null。 |
@@ -735,9 +784,10 @@ console.info(uriInstance.getLastSegment()); // image.jpg
  
   
 
-#### getSegment12+
+### getSegment12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getSegment(): string[]
  
@@ -749,6 +799,7 @@ getSegment(): string[]
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | string[] | 返回此URI中已解码的所有路径段，各段前后均不含 “/”。 |
@@ -763,11 +814,12 @@ console.info(uriInstance.getSegment().toString()); // path,to,image.jpg
  
   
 
-#### createFromParts12+
+### createFromParts12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-createFromParts(scheme: string, ssp: string, fragment: string): URI
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+static createFromParts(scheme: string, ssp: string, fragment: string): URI
  
 根据提供的方案（scheme）、方案特定部分（ssp）以及片段（fragment）创建一个新的URI对象。
  
@@ -777,6 +829,7 @@ createFromParts(scheme: string, ssp: string, fragment: string): URI
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scheme | string | 是 | 此URI方案部分。该参数需符合URI协议标准。 |
@@ -786,6 +839,7 @@ createFromParts(scheme: string, ssp: string, fragment: string): URI
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | URI | 返回由给定方案、方案特定部分和片段创建的URI对象。 |
@@ -800,9 +854,10 @@ console.info(uriInstance.toString()); // mailto:no%20body#top
  
   
 
-#### equals(deprecated)
+### equals(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 equals(other: URI): boolean
  
@@ -816,6 +871,7 @@ equals(other: URI): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | other | URI | 是 | 需要比较的URI对象。 |
@@ -823,6 +879,7 @@ equals(other: URI): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 返回true表示相等，否则返回false。 |

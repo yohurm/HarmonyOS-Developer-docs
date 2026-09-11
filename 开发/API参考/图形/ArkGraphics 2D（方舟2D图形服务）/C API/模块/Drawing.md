@@ -1,13 +1,14 @@
 # Drawing
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-09-01 03:59:25
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 Drawing模块提供包括2D图形渲染、文字绘制和图片显示等功能函数。
  
@@ -21,10 +22,12 @@ Drawing模块提供包括2D图形渲染、文字绘制和图片显示等功能�
  
   
 
-#### 文件汇总
+## 文件汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | drawing_bitmap.h | 文件中定义了与位图相关的功能函数。 |
@@ -41,7 +44,7 @@ Drawing模块提供包括2D图形渲染、文字绘制和图片显示等功能�
 | drawing_gpu_context.h | 声明与绘图模块中的图形处理器上下文对象相关的函数。 |
 | drawing_image.h | 文件中定义了与图片相关的功能函数。 |
 | drawing_image_filter.h | 声明与绘图模块中的图像滤波器对象相关的函数。 |
-| drawing_mask_filter.h | 声明与绘图模块中的对象相关的函数。 |
+| drawing_mask_filter.h | 声明与绘图模块中的蒙版滤波器对象相关的函数。 |
 | drawing_matrix.h | 文件中定义了与矩阵相关的功能函数。 |
 | drawing_memory_stream.h | 文件中定义了与内存流相关的功能函数。 |
 | drawing_path.h | 文件中定义了与自定义路径相关的功能函数。 |

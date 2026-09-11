@@ -1,9 +1,9 @@
 # Class (BitVector)
 
-更新时间：2026-08-14 11:17:56
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-arkts-collections-bitvector
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 BitVector是一种线性数据结构，底层基于数组实现。BitVector中存储元素为bit值，能存储和处理bit级别的操作。
  
@@ -14,9 +14,10 @@ BitVector是一种线性数据结构，底层基于数组实现。BitVector中�
 **装饰器类型：**@Sendable
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { collections } from '@kit.ArkTS';
@@ -24,14 +25,16 @@ import { collections } from '@kit.ArkTS';
  
   
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
  
 **系统能力：** SystemCapability.Utils.Lang
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | length | number | 是 | 否 | BitVector的元素个数。 |
@@ -39,9 +42,10 @@ import { collections } from '@kit.ArkTS';
  
   
 
-#### constructor
+## constructor
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 constructor(length: number)
  
@@ -53,6 +57,7 @@ BitVector的构造函数。
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | length | number | 是 | 初始化BitVector的长度。 |
@@ -66,9 +71,10 @@ let bitVector: collections.BitVector = new collections.BitVector(0); // 初始�
  
   
 
-#### push
+## push
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 push(element: number): boolean
  
@@ -80,6 +86,7 @@ push(element: number): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | element | number | 是 | 待插入的元素，0表示0，其余值表示1。 |
@@ -87,6 +94,7 @@ push(element: number): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 插入成功返回true，失败返回false。 |
@@ -96,6 +104,7 @@ push(element: number): boolean
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The push method cannot be bound. |
@@ -115,9 +124,10 @@ bitVector.push(0); // bitVector: [0, 1, 0, 1, 0]
  
   
 
-#### pop
+## pop
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 pop(): number
  
@@ -129,6 +139,7 @@ pop(): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 弹出BitVector尾部的元素，其值为对应bit值。 |
@@ -138,6 +149,7 @@ pop(): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The pop method cannot be bound. |
@@ -159,9 +171,10 @@ console.info(`bitVector pop: ${res}`); // 0
  
   
 
-#### has
+## has
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 has(element: number, fromIndex: number, toIndex: number): boolean
  
@@ -173,6 +186,7 @@ has(element: number, fromIndex: number, toIndex: number): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | element | number | 是 | 待判断的bit值，0表示0，其余值表示1。 |
@@ -182,6 +196,7 @@ has(element: number, fromIndex: number, toIndex: number): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | 包含特定bit值返回true，否则返回false。 |
@@ -191,6 +206,7 @@ has(element: number, fromIndex: number, toIndex: number): boolean
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of fromIndex or toIndex is out of range. |
@@ -213,9 +229,10 @@ console.info(`bitVector has 0: ${res0}`); // true
  
   
 
-#### setBitsByRange
+## setBitsByRange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setBitsByRange(element: number, fromIndex: number, toIndex: number): void
  
@@ -227,6 +244,7 @@ setBitsByRange(element: number, fromIndex: number, toIndex: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | element | number | 是 | 待设置的bit值，0表示0，其余值表示1。 |
@@ -238,6 +256,7 @@ setBitsByRange(element: number, fromIndex: number, toIndex: number): void
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of fromIndex or toIndex is out of range. |
@@ -259,9 +278,10 @@ bitVector.setBitsByRange(1, 1, 3); // bitVector: [0, 1, 1, 1, 0]
  
   
 
-#### setAllBits
+## setAllBits
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setAllBits(element: number): void
  
@@ -273,6 +293,7 @@ setAllBits(element: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | element | number | 是 | 待设置的元素，0表示0，其余值表示1。 |
@@ -282,6 +303,7 @@ setAllBits(element: number): void
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The setAllBits method cannot be bound. |
@@ -302,9 +324,10 @@ bitVector.setAllBits(1); // bitVector: [1, 1, 1, 1, 1]
  
   
 
-#### getBitsByRange
+## getBitsByRange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBitsByRange(fromIndex: number, toIndex: number): BitVector
  
@@ -316,6 +339,7 @@ getBitsByRange(fromIndex: number, toIndex: number): BitVector
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fromIndex | number | 是 | 范围起始索引，包含本索引值。fromIndex < 0或者fromIndex >= toIndex时，则会抛出错误。 |
@@ -324,6 +348,7 @@ getBitsByRange(fromIndex: number, toIndex: number): BitVector
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | BitVector | 指定范围内的bit值组成的BitVector。 |
@@ -333,6 +358,7 @@ getBitsByRange(fromIndex: number, toIndex: number): BitVector
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of fromIndex or toIndex is out of range. |
@@ -355,9 +381,10 @@ console.info(`bitVector2 length: ${bitVector2.length}`); // 2
  
   
 
-#### resize
+## resize
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 resize(size: number): void
  
@@ -373,6 +400,7 @@ resize(size: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | size | number | 是 | 需要改变的长度。 |
@@ -382,6 +410,7 @@ resize(size: number): void
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The resize method cannot be bound. |
@@ -405,9 +434,10 @@ console.info(`bitVector get bit vector's length: ${bitVector.length}`); // 3
  
   
 
-#### getBitCountByRange
+## getBitCountByRange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getBitCountByRange(element: number, fromIndex: number, toIndex: number): number
  
@@ -419,6 +449,7 @@ getBitCountByRange(element: number, fromIndex: number, toIndex: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | element | number | 是 | 待统计的bit值，0表示0，其余值表示1。 |
@@ -428,6 +459,7 @@ getBitCountByRange(element: number, fromIndex: number, toIndex: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 统计指定范围内获取指定bit值的数量。 |
@@ -437,6 +469,7 @@ getBitCountByRange(element: number, fromIndex: number, toIndex: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of fromIndex or toIndex is out of range. |
@@ -459,9 +492,10 @@ console.info(`bitVector getBitCountByRange: ${res}`); // 2
  
   
 
-#### getIndexOf
+## getIndexOf
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getIndexOf(element: number, fromIndex: number, toIndex: number): number
  
@@ -473,6 +507,7 @@ getIndexOf(element: number, fromIndex: number, toIndex: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | element | number | 是 | 待查找的bit值，0表示0，其余值表示1。 |
@@ -482,6 +517,7 @@ getIndexOf(element: number, fromIndex: number, toIndex: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回指定bit值首次出现时的索引值，查找失败返回-1。 |
@@ -491,6 +527,7 @@ getIndexOf(element: number, fromIndex: number, toIndex: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of fromIndex or toIndex is out of range. |
@@ -513,9 +550,10 @@ console.info(`bitVector getIndexOf: ${res}`); // 2
  
   
 
-#### getLastIndexOf
+## getLastIndexOf
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getLastIndexOf(element: number, fromIndex: number, toIndex: number): number
  
@@ -527,6 +565,7 @@ getLastIndexOf(element: number, fromIndex: number, toIndex: number): number
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | element | number | 是 | 待查找的bit值，0表示0，其余值表示1。 |
@@ -536,6 +575,7 @@ getLastIndexOf(element: number, fromIndex: number, toIndex: number): number
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回指定bit值最后一次出现时的索引值，查找失败返回-1。 |
@@ -545,6 +585,7 @@ getLastIndexOf(element: number, fromIndex: number, toIndex: number): number
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of fromIndex or toIndex is out of range. |
@@ -567,9 +608,10 @@ console.info(`bitVector getLastIndexOf: ${res}`); // 2
  
   
 
-#### flipBitByIndex
+## flipBitByIndex
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 flipBitByIndex(index: number): void
  
@@ -581,6 +623,7 @@ flipBitByIndex(index: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 指定索引。index < 0或者index >= length时，则会抛出错误。 |
@@ -590,6 +633,7 @@ flipBitByIndex(index: number): void
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of index is out of range. |
@@ -611,9 +655,10 @@ bitVector.flipBitByIndex(3); // bitVector: [0, 1, 0, 0, 0]
  
   
 
-#### flipBitsByRange
+## flipBitsByRange
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 flipBitsByRange(fromIndex: number, toIndex: number): void
  
@@ -625,6 +670,7 @@ flipBitsByRange(fromIndex: number, toIndex: number): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fromIndex | number | 是 | 范围起始索引，包含本索引值。fromIndex < 0或者fromIndex >= toIndex时，则会抛出错误。 |
@@ -635,6 +681,7 @@ flipBitsByRange(fromIndex: number, toIndex: number): void
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200001 | The value of fromIndex or toIndex is out of range. |
@@ -656,9 +703,10 @@ bitVector.flipBitsByRange(1, 4); // bitVector: [0, 0, 1, 0, 0]
  
   
 
-#### values
+## values
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 values(): IterableIterator&lt;number&gt;
  
@@ -670,6 +718,7 @@ values(): IterableIterator&lt;number&gt;
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator&lt;number&gt; | 返回一个BitVector迭代器对象。 |
@@ -679,6 +728,7 @@ values(): IterableIterator&lt;number&gt;
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The values method cannot be bound. |
@@ -704,9 +754,10 @@ while (!temp.done) {
  
   
 
-#### [Symbol.iterator]
+## [Symbol.iterator]
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [Symbol.iterator](): IterableIterator&lt;number&gt;
  
@@ -722,6 +773,7 @@ while (!temp.done) {
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | IterableIterator&lt;number&gt; | 返回一个迭代器。 |
@@ -731,6 +783,7 @@ while (!temp.done) {
  
 以下错误码的详细介绍请参见[语言基础类库错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-utils)。
   
+
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 10200011 | The Symbol.iterator method cannot be bound. |
@@ -753,9 +806,10 @@ for (let item of bitVector) {
  
   
 
-#### [index: number]
+## [index: number]
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 [index: number]: number
  
@@ -767,6 +821,7 @@ for (let item of bitVector) {
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 所需代码单元的从零开始的索引。当index < 0或者index >= length，则会抛出错误 |
@@ -774,6 +829,7 @@ for (let item of bitVector) {
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回number数据类型。 |

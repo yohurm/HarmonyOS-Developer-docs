@@ -41,7 +41,7 @@ export class MaterialWrap {
 
 2. 使用@AnimatableExtend定义用于执行动画的属性。
 ```text
-// 使用fontSize作为动画属性
+<em>// </em><em>使用fontSize作为动画属性</em>
 @AnimatableExtend(Button)
 function animatableFontSize(size: number) {
   .fontSize(size);
@@ -196,7 +196,7 @@ struct AnimatableList {
   }
 }
 
-// 使用fontSize作为动画属性
+<em>// </em><em>使用fontSize作为动画属性</em>
 @AnimatableExtend(Button)
 function animatableFontSize(size: number) {
   .fontSize(size);

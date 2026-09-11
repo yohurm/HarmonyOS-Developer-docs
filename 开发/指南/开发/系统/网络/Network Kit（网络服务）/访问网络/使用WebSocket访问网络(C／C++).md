@@ -1,18 +1,19 @@
 # 使用WebSocket访问网络(C/C++)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-websocket-guidelines
 
-#### 场景介绍
+## 场景介绍
 
 通过WebSocket模块可以建立服务器与客户端的双向连接。
 
 
 
-#### 接口说明
+## 接口说明
 
 WebSocket常用接口如下表所示，详细的接口说明请参考[net_websocket.h](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-net-websocket-h)。
+
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -20,17 +21,17 @@ WebSocket常用接口如下表所示，详细的接口说明请参考[net_websoc
 | OH_WebSocketClient_AddHeader(struct WebSocket *client, struct WebSocket_Header header) | 将header头信息添加到client客户端request中。 |
 | OH_WebSocketClient_Connect(struct WebSocket *client, const char *url, struct WebSocket_RequestOptions options) | 客户端连接服务端。 |
 | OH_WebSocketClient_Send(struct WebSocket *client, char *data, size_t length) | 客户端向服务端发送数据。 |
-| OH_WebSocketClient_Close(struct WebSocket *client, struct WebSocket_CloseOption options) | 客户端主动关闭websocket连接。 |
-| OH_WebSocketClient_Destroy(struct WebSocket *client) | 释放websocket连接上下文和资源。 |
+| OH_WebSocketClient_Close(struct WebSocket *client, struct WebSocket_CloseOption options) | 客户端主动关闭WebSocket连接。 |
+| OH_WebSocketClient_Destroy(struct WebSocket *client) | 释放WebSocket连接上下文和资源。 |
 
 
 
 
-#### WebSocket接口开发示例
+## WebSocket接口开发示例
 
 
 
-#### 开发步骤
+### 开发步骤
 
 使用本文档涉及接口创建并连接到WebSocket服务器时，需先创建Native C++工程，在源文件中封装相关接口，然后在ArkTS层调用封装好的接口，使用hilog或console.info等方法将日志打印到控制台或生成设备日志。
 
@@ -38,7 +39,7 @@ WebSocket常用接口如下表所示，详细的接口说明请参考[net_websoc
 
 
 
-#### 添加开发依赖
+### 添加开发依赖
 
 **添加动态链接库**
 
@@ -59,7 +60,7 @@ libnet_websocket.so
 
 
 
-#### 构建工程
+### 构建工程
 
 1、在源文件中编写调用该API的代码，接受ArkTS传递过来的url字符串参数，创建WebSocket对象指针后，检查连接到服务器是否成功。
 
@@ -356,7 +357,7 @@ struct Index {
 
 
 
-#### 测试步骤
+## 测试步骤
 
 1、连接设备，使用DevEco Studio打开搭建好的工程。
 

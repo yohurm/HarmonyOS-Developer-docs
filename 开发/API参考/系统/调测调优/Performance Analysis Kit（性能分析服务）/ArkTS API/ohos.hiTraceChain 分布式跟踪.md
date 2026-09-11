@@ -1,9 +1,9 @@
 # @ohos.hiTraceChain (分布式跟踪)
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-hitracechain
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 本模块提供了端侧业务流程调用链跟踪的打点能力，包括业务流程跟踪的启动、结束、信息埋点等能力。
  
@@ -20,9 +20,10 @@
 
   
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { hiTraceChain } from '@kit.PerformanceAnalysisKit';
@@ -30,14 +31,16 @@ import { hiTraceChain } from '@kit.PerformanceAnalysisKit';
  
   
 
-#### HiTraceFlag
+## HiTraceFlag
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 跟踪标志组合类型枚举。用于控制分布式跟踪的行为模式，例如在需要跟踪异步调用的业务流程中使用INCLUDE_ASYNC标志，在不需要详细分支信息的简单业务流程中使用DONOT_CREATE_SPAN标志，在需要调试埋点信息的场景中使用TP_INFO标志。
  
 **系统能力**：SystemCapability.HiviewDFX.HiTrace
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DEFAULT | 0 | 默认标志。 |
@@ -52,14 +55,16 @@ import { hiTraceChain } from '@kit.PerformanceAnalysisKit';
  
   
 
-#### HiTraceTracepointType
+## HiTraceTracepointType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 跟踪埋点类型枚举。用于标识业务流程中的关键节点，例如CS和CR用于标记客户端请求的发送和接收，SS和SR用于标记服务端请求的接收和发送，GENERAL用于标记无法归入上述四种场景的其他关键节点。
  
 **系统能力**：SystemCapability.HiviewDFX.HiTrace
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | CS | 0 | 客户端发送(Client Send)。 |
@@ -71,14 +76,16 @@ import { hiTraceChain } from '@kit.PerformanceAnalysisKit';
  
   
 
-#### HiTraceCommunicationMode
+## HiTraceCommunicationMode
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 跟踪通信类型枚举。用于标识通信发生的层级，例如THREAD用于标记同一应用内线程间通信，PROCESS用于标记同一设备内进程间通信，DEVICE用于标记跨设备的分布式通信。
  
 **系统能力**：SystemCapability.HiviewDFX.HiTrace
   
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DEFAULT | 0 | 缺省通信类型。 |
@@ -89,14 +96,16 @@ import { hiTraceChain } from '@kit.PerformanceAnalysisKit';
  
   
 
-#### HiTraceId
+## HiTraceId
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 此接口为HiTraceId对象接口。用于标识分布式跟踪链中的唯一节点，在需要跨线程、跨进程、跨设备跟踪业务流程的场景中使用，例如电商下单流程、支付流程、分布式服务调用链等。
  
 **系统能力**：SystemCapability.HiviewDFX.HiTrace
   
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | chainId | bigint | 否 | 否 | 跟踪链标识。 |
@@ -107,9 +116,10 @@ import { hiTraceChain } from '@kit.PerformanceAnalysisKit';
  
   
 
-#### hiTraceChain.begin
+## hiTraceChain.begin
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 begin(name: string, flags?: number): HiTraceId
  
@@ -123,6 +133,7 @@ begin(name: string, flags?: number): HiTraceId
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | name | string | 是 | 跟踪业务名。 该参数的长度不超过63Byte，超出部分将被截断。 |
@@ -131,6 +142,7 @@ begin(name: string, flags?: number): HiTraceId
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | HiTraceId | 当前线程TLS中的HiTraceId实例。 |
@@ -147,9 +159,10 @@ hiTraceChain.end(traceId);
  
   
 
-#### hiTraceChain.end
+## hiTraceChain.end
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 end(id: HiTraceId): void
  
@@ -163,6 +176,7 @@ end(id: HiTraceId): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | HiTraceId | 是 | HiTraceId实例。 |
@@ -179,9 +193,10 @@ hiTraceChain.end(traceId);
  
   
 
-#### hiTraceChain.getId
+## hiTraceChain.getId
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getId(): HiTraceId
  
@@ -195,6 +210,7 @@ getId(): HiTraceId
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | HiTraceId | 当前线程TLS中的HiTraceId实例。 |
@@ -217,9 +233,10 @@ hiTraceChain.end(traceId);
  
   
 
-#### hiTraceChain.setId
+## hiTraceChain.setId
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 setId(id: HiTraceId): void
  
@@ -233,6 +250,7 @@ setId(id: HiTraceId): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | HiTraceId | 是 | HiTraceId实例。 |
@@ -249,9 +267,10 @@ hiTraceChain.setId(traceId);
  
   
 
-#### hiTraceChain.clearId
+## hiTraceChain.clearId
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 clearId(): void
  
@@ -276,9 +295,10 @@ hiTraceChain.end(traceId);
  
   
 
-#### hiTraceChain.createSpan
+## hiTraceChain.createSpan
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createSpan(): HiTraceId
  
@@ -292,6 +312,7 @@ createSpan(): HiTraceId
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | HiTraceId | HiTraceId实例。 |
@@ -314,9 +335,10 @@ hiTraceChain.end(traceId);
  
   
 
-#### hiTraceChain.tracepoint
+## hiTraceChain.tracepoint
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 tracepoint(mode: HiTraceCommunicationMode, type: HiTraceTracepointType, id: HiTraceId, msg?: string): void
  
@@ -330,6 +352,7 @@ tracepoint(mode: HiTraceCommunicationMode, type: HiTraceTracepointType, id: HiTr
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | HiTraceCommunicationMode | 是 | 信息埋点需要指定的跟踪通信模式，用于标识埋点发生的通信范围：THREAD表示线程间通信，PROCESS表示进程间通信，DEVICE表示设备间通信。 |
@@ -351,9 +374,10 @@ hiTraceChain.end(traceId);
  
   
 
-#### hiTraceChain.isValid
+## hiTraceChain.isValid
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isValid(id: HiTraceId): boolean
  
@@ -363,6 +387,7 @@ isValid(id: HiTraceId): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | HiTraceId | 是 | 需要判断是否有效的HiTraceId实例。 |
@@ -370,6 +395,7 @@ isValid(id: HiTraceId): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | true：HiTraceId有效；false：HiTraceId无效。 |
@@ -391,9 +417,10 @@ hiTraceChain.end(traceId);
  
   
 
-#### hiTraceChain.isFlagEnabled
+## hiTraceChain.isFlagEnabled
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 isFlagEnabled(id: HiTraceId, flag: HiTraceFlag): boolean
  
@@ -403,6 +430,7 @@ isFlagEnabled(id: HiTraceId, flag: HiTraceFlag): boolean
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | HiTraceId | 是 | 需要判断指定跟踪标志是否启用的HiTraceId实例。 |
@@ -411,6 +439,7 @@ isFlagEnabled(id: HiTraceId, flag: HiTraceFlag): boolean
  
 **返回值：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | boolean | true：HiTraceId已启用flag；false：HiTraceId未启用flag。 |
@@ -432,9 +461,10 @@ hiTraceChain.end(traceId);
  
   
 
-#### hiTraceChain.enableFlag
+## hiTraceChain.enableFlag
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 enableFlag(id: HiTraceId, flag: HiTraceFlag): void
  
@@ -444,6 +474,7 @@ enableFlag(id: HiTraceId, flag: HiTraceFlag): void
  
 **参数：**
   
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | HiTraceId | 是 | 需要启用指定跟踪标志的HiTraceId实例。 |

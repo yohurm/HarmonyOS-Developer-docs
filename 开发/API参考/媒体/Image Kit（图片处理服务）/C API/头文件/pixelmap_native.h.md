@@ -1,13 +1,14 @@
 # pixelmap_native.h
 
-更新时间：2026-08-07 10:00:25
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-pixelmap-native-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 访问Pixelmap的API。提供对Pixelmap（像素图）的访问能力，支持通过像素数据、Surface、NativeBuffer等多种方式创建像素图、克隆像素图、读写像素数据，以及进行缩放、旋转、翻转、平移、裁剪等图像变换操作，同时支持HDR元数据管理、色彩空间设置、透明度类型转换、Native与Napi对象互转和内存直接访问等功能，适用于需要在Native层对解码后的图像位图进行像素级处理与变换的场景。
 
@@ -23,15 +24,18 @@
 
 
 
-#### 汇总
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 汇总
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### 结构体
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -48,9 +52,11 @@
 
 
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -63,9 +69,11 @@
 
 
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
 
 | 名称 | 描述 |
 | --- | --- |
@@ -113,7 +121,7 @@
 | Image_ErrorCode OH_PixelmapNative_ScaleWithAntiAliasing(OH_PixelmapNative *pixelmap, float scaleX, float scaleY, OH_PixelmapNative_AntiAliasingLevel level) | 根据指定的缩放算法和输入的缩放比例对图片进行缩放。 从API版本26.0.0开始，建议使用OH_PixelmapNative_ApplyScaleWithAntiAliasing代替，以获得更完善的异常报错信息。 |
 | Image_ErrorCode OH_PixelmapNative_CreateScaledPixelMap(OH_PixelmapNative *srcPixelmap, OH_PixelmapNative **dstPixelmap, float scaleX, float scaleY) | 根据输入的宽高的缩放比例，创建一个新的缩放后的图像，生成的新Pixelmap不可编辑。该接口不会拷贝原图像的HDR元数据和EXIF信息。 |
 | Image_ErrorCode OH_PixelmapNative_CreateScaledPixelMapWithAntiAliasing(OH_PixelmapNative *srcPixelmap, OH_PixelmapNative **dstPixelmap, float scaleX, float scaleY, OH_PixelmapNative_AntiAliasingLevel level) | 根据指定的缩放算法和输入的宽高的缩放比例，创建一个新的缩放后的图像，生成的新Pixelmap不可编辑。该接口不会拷贝原图像的HDR元数据和EXIF信息。 |
-| Image_ErrorCode OH_PixelmapNative_CreateAlphaPixelmap(OH_PixelmapNative *srcPixelmap, OH_PixelmapNative **dstPixelmap) | 从源Pixelmap创建一个仅包含Alpha通道的ALPHA_8格式的Pixelmap，生成的新Pixelmap不可编辑。 若源Pixelmap的格式是ALPHA_F16，则新生成的Pixelmap将维持ALPHA_F16格式。 |
+| Image_ErrorCode OH_PixelmapNative_CreateAlphaPixelmap(OH_PixelmapNative *srcPixelmap, OH_PixelmapNative **dstPixelmap) | 从源Pixelmap创建一个仅包含Alpha通道的ALPHA_8格式的Pixelmap，生成的新Pixelmap不可编辑。 如果源Pixelmap的格式是ALPHA_F16，则新生成的Pixelmap将维持ALPHA_F16格式。 |
 | Image_ErrorCode OH_PixelmapNative_Clone(OH_PixelmapNative *srcPixelmap, OH_PixelmapNative **dstPixelmap) | 对源Pixelmap进行拷贝，生成一个新的Pixelmap。该接口不会拷贝原图像的EXIF信息。 |
 | Image_ErrorCode OH_PixelmapNative_CreateCroppedAndScaledPixelMap(OH_PixelmapNative *srcPixelmap, Image_Region *region, Image_Scale *scale, OH_PixelmapNative_AntiAliasingLevel level, OH_PixelmapNative **dstPixelmap) | 基于源Pixelmap创建一个裁剪并缩放的新Pixelmap。该接口不会拷贝原图像的EXIF信息。 |
 | Image_ErrorCode OH_PixelmapNative_ApplyTranslate(OH_PixelmapNative *pixelmap, float x, float y) | 根据指定的横向和纵向距离对Pixelmap进行水平或垂直方向的平移。 平移后的图像尺寸将变为：宽度 = 原宽度 + x，高度 = 原高度 + y。 |
@@ -138,7 +146,7 @@
 | Image_ErrorCode OH_PixelmapNative_SetMetadata(OH_PixelmapNative *pixelmap, OH_Pixelmap_HdrMetadataKey key, OH_Pixelmap_HdrMetadataValue *value) | 设置Pixelmap的HDR元数据。 |
 | Image_ErrorCode OH_PixelmapNative_SetColorSpaceNative(OH_PixelmapNative *pixelmap, OH_NativeColorSpaceManager *colorSpaceNative) | 设置Pixelmap的NativeColorSpaceManager对象，用于管理Pixelmap的色彩空间信息。 |
 | Image_ErrorCode OH_PixelmapNative_GetColorSpaceNative(OH_PixelmapNative *pixelmap, OH_NativeColorSpaceManager **colorSpaceNative) | 获取Pixelmap的NativeColorSpaceManager对象，用于查询Pixelmap当前配置的色彩空间信息。 |
-| Image_ErrorCode OH_PixelmapNative_SetMemoryName(OH_PixelmapNative *pixelmap, char *name, size_t *size) | 设置Pixelmap内存名称，便于在内存调试或问题定位时识别该内存。 |
+| Image_ErrorCode OH_PixelmapNative_SetMemoryName(OH_PixelmapNative *pixelmap, char *name, size_t *size) | 设置Pixelmap的内存标识符，便于在内存调试或问题定位时识别该内存。 仅支持DMA和SHARE_MEMORY内存类型的PixelMap设置内存标识符。 |
 | Image_ErrorCode OH_PixelmapNative_GetByteCount(OH_PixelmapNative *pixelmap, uint32_t *byteCount) | 获取Pixelmap中所有像素所占用的总字节数，不包含内存对齐填充字节。 |
 | Image_ErrorCode OH_PixelmapNative_GetAllocationByteCount(OH_PixelmapNative *pixelmap, uint32_t *allocationByteCount) | 获取Pixelmap实际分配的用于存储像素数据的内存字节数，包含内存对齐填充字节。与OH_PixelmapNative_GetByteCount（不包含内存填充）不同，本接口返回的是系统为Pixelmap分配的真实内存大小。 |
 | Image_ErrorCode OH_PixelmapNative_AccessPixels(OH_PixelmapNative *pixelmap, void **addr) | 获取Pixelmap像素数据的内存地址，并锁定这块内存。 当该内存被锁定时，任何修改或释放该Pixelmap的像素数据的操作均会失败或无效。 使用完毕后，必须调用OH_PixelmapNative_UnaccessPixels释放内存锁，两者需配对使用。 |
@@ -149,15 +157,17 @@
 
 
 
-#### 枚举类型说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 枚举类型说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### PIXELMAP_ALPHA_TYPE
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### PIXELMAP_ALPHA_TYPE
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum PIXELMAP_ALPHA_TYPE
@@ -169,6 +179,7 @@ Pixelmap透明度类型。
 
 **起始版本：** 12
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | PIXELMAP_ALPHA_TYPE_UNKNOWN = 0 | 未知格式。 |
@@ -179,9 +190,10 @@ Pixelmap透明度类型。
 
 
 
-#### PIXEL_FORMAT
+### PIXEL_FORMAT
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum PIXEL_FORMAT
@@ -192,6 +204,7 @@ enum PIXEL_FORMAT
 图像的像素格式，包含像素数据的颜色通道排列和位深信息。
 
 **起始版本：** 12
+
 
 | 枚举项 | 描述 |
 | --- | --- |
@@ -213,9 +226,10 @@ enum PIXEL_FORMAT
 
 
 
-#### OH_PixelmapNative_AntiAliasingLevel
+### OH_PixelmapNative_AntiAliasingLevel
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_PixelmapNative_AntiAliasingLevel
@@ -227,6 +241,7 @@ Pixelmap缩放时采用的缩放算法。
 
 **起始版本：** 12
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative_AntiAliasing_NONE = 0 | 最近邻插值算法。 速度最快，放大时会有明显的马赛克/锯齿感，适合对性能要求高、对画质要求低的快速缩放场景。 |
@@ -237,9 +252,10 @@ Pixelmap缩放时采用的缩放算法。
 
 
 
-#### OH_Pixelmap_HdrMetadataKey
+### OH_Pixelmap_HdrMetadataKey
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Pixelmap_HdrMetadataKey
@@ -251,6 +267,7 @@ Pixelmap使用的HDR相关元数据信息的关键字，用于[OH_PixelmapNative
 
 **起始版本：** 12
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | HDR_METADATA_TYPE = 0 | Pixelmap使用的元数据类型。 |
@@ -261,9 +278,10 @@ Pixelmap使用的HDR相关元数据信息的关键字，用于[OH_PixelmapNative
 
 
 
-#### OH_Pixelmap_HdrMetadataType
+### OH_Pixelmap_HdrMetadataType
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum OH_Pixelmap_HdrMetadataType
@@ -275,6 +293,7 @@ HDR_METADATA_TYPE关键字对应的值。
 
 **起始版本：** 12
 
+
 | 枚举项 | 描述 |
 | --- | --- |
 | HDR_METADATA_TYPE_NONE = 0 | 无元数据内容。 |
@@ -285,15 +304,17 @@ HDR_METADATA_TYPE关键字对应的值。
 
 
 
-#### 函数说明
-
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+## 函数说明
 
 
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### OH_PixelmapInitializationOptions_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+### OH_PixelmapInitializationOptions_Create()
+
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapInitializationOptions_Create(OH_Pixelmap_InitializationOptions **options)
@@ -307,12 +328,14 @@ Image_ErrorCode OH_PixelmapInitializationOptions_Create(OH_Pixelmap_Initializati
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pixelmap_InitializationOptions **options | 被创建的OH_Pixelmap_InitializationOptions指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -321,9 +344,10 @@ Image_ErrorCode OH_PixelmapInitializationOptions_Create(OH_Pixelmap_Initializati
 
 
 
-#### OH_PixelmapInitializationOptions_GetWidth()
+### OH_PixelmapInitializationOptions_GetWidth()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapInitializationOptions_GetWidth(OH_Pixelmap_InitializationOptions *options, uint32_t *width)
@@ -337,6 +361,7 @@ Image_ErrorCode OH_PixelmapInitializationOptions_GetWidth(OH_Pixelmap_Initializa
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pixelmap_InitializationOptions *options | 被操作的OH_Pixelmap_InitializationOptions指针。 |
@@ -345,6 +370,7 @@ Image_ErrorCode OH_PixelmapInitializationOptions_GetWidth(OH_Pixelmap_Initializa
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -352,9 +378,10 @@ Image_ErrorCode OH_PixelmapInitializationOptions_GetWidth(OH_Pixelmap_Initializa
 
 
 
-#### OH_PixelmapInitializationOptions_SetWidth()
+### OH_PixelmapInitializationOptions_SetWidth()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapInitializationOptions_SetWidth(OH_Pixelmap_InitializationOptions *options, uint32_t width)
@@ -368,6 +395,7 @@ Image_ErrorCode OH_PixelmapInitializationOptions_SetWidth(OH_Pixelmap_Initializa
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pixelmap_InitializationOptions *options | 被操作的OH_Pixelmap_InitializationOptions指针。 |
@@ -376,6 +404,7 @@ Image_ErrorCode OH_PixelmapInitializationOptions_SetWidth(OH_Pixelmap_Initializa
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -383,9 +412,10 @@ Image_ErrorCode OH_PixelmapInitializationOptions_SetWidth(OH_Pixelmap_Initializa
 
 
 
-#### OH_PixelmapInitializationOptions_GetHeight()
+### OH_PixelmapInitializationOptions_GetHeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapInitializationOptions_GetHeight(OH_Pixelmap_InitializationOptions *options, uint32_t *height)
@@ -399,6 +429,7 @@ Image_ErrorCode OH_PixelmapInitializationOptions_GetHeight(OH_Pixelmap_Initializ
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pixelmap_InitializationOptions *options | 被操作的OH_Pixelmap_InitializationOptions指针。 |
@@ -407,6 +438,7 @@ Image_ErrorCode OH_PixelmapInitializationOptions_GetHeight(OH_Pixelmap_Initializ
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -414,9 +446,10 @@ Image_ErrorCode OH_PixelmapInitializationOptions_GetHeight(OH_Pixelmap_Initializ
 
 
 
-#### OH_PixelmapInitializationOptions_SetHeight()
+### OH_PixelmapInitializationOptions_SetHeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapInitializationOptions_SetHeight(OH_Pixelmap_InitializationOptions *options, uint32_t height)
@@ -430,6 +463,7 @@ Image_ErrorCode OH_PixelmapInitializationOptions_SetHeight(OH_Pixelmap_Initializ
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pixelmap_InitializationOptions *options | 被操作的OH_Pixelmap_InitializationOptions指针。 |
@@ -438,6 +472,7 @@ Image_ErrorCode OH_PixelmapInitializationOptions_SetHeight(OH_Pixelmap_Initializ
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -445,9 +480,10 @@ Image_ErrorCode OH_PixelmapInitializationOptions_SetHeight(OH_Pixelmap_Initializ
 
 
 
-#### OH_PixelmapInitializationOptions_GetPixelFormat()
+### OH_PixelmapInitializationOptions_GetPixelFormat()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapInitializationOptions_GetPixelFormat(OH_Pixelmap_InitializationOptions *options, int32_t *pixelFormat)
@@ -461,6 +497,7 @@ Image_ErrorCode OH_PixelmapInitializationOptions_GetPixelFormat(OH_Pixelmap_Init
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pixelmap_InitializationOptions *options | 被操作的OH_Pixelmap_InitializationOptions指针。 |
@@ -469,6 +506,7 @@ Image_ErrorCode OH_PixelmapInitializationOptions_GetPixelFormat(OH_Pixelmap_Init
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -476,9 +514,10 @@ Image_ErrorCode OH_PixelmapInitializationOptions_GetPixelFormat(OH_Pixelmap_Init
 
 
 
-#### OH_PixelmapInitializationOptions_SetPixelFormat()
+### OH_PixelmapInitializationOptions_SetPixelFormat()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapInitializationOptions_SetPixelFormat(OH_Pixelmap_InitializationOptions *options, int32_t pixelFormat)
@@ -492,6 +531,7 @@ Image_ErrorCode OH_PixelmapInitializationOptions_SetPixelFormat(OH_Pixelmap_Init
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pixelmap_InitializationOptions *options | 被操作的OH_Pixelmap_InitializationOptions指针。 |
@@ -500,6 +540,7 @@ Image_ErrorCode OH_PixelmapInitializationOptions_SetPixelFormat(OH_Pixelmap_Init
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -507,9 +548,10 @@ Image_ErrorCode OH_PixelmapInitializationOptions_SetPixelFormat(OH_Pixelmap_Init
 
 
 
-#### OH_PixelmapInitializationOptions_GetSrcPixelFormat()
+### OH_PixelmapInitializationOptions_GetSrcPixelFormat()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapInitializationOptions_GetSrcPixelFormat(OH_Pixelmap_InitializationOptions *options, int32_t *srcpixelFormat)
@@ -523,6 +565,7 @@ Image_ErrorCode OH_PixelmapInitializationOptions_GetSrcPixelFormat(OH_Pixelmap_I
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pixelmap_InitializationOptions *options | 被操作的OH_Pixelmap_InitializationOptions指针。 |
@@ -531,6 +574,7 @@ Image_ErrorCode OH_PixelmapInitializationOptions_GetSrcPixelFormat(OH_Pixelmap_I
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -538,9 +582,10 @@ Image_ErrorCode OH_PixelmapInitializationOptions_GetSrcPixelFormat(OH_Pixelmap_I
 
 
 
-#### OH_PixelmapInitializationOptions_SetSrcPixelFormat()
+### OH_PixelmapInitializationOptions_SetSrcPixelFormat()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapInitializationOptions_SetSrcPixelFormat(OH_Pixelmap_InitializationOptions *options, int32_t srcpixelFormat)
@@ -554,6 +599,7 @@ Image_ErrorCode OH_PixelmapInitializationOptions_SetSrcPixelFormat(OH_Pixelmap_I
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pixelmap_InitializationOptions *options | 被操作的OH_Pixelmap_InitializationOptions指针。 |
@@ -562,6 +608,7 @@ Image_ErrorCode OH_PixelmapInitializationOptions_SetSrcPixelFormat(OH_Pixelmap_I
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -569,9 +616,10 @@ Image_ErrorCode OH_PixelmapInitializationOptions_SetSrcPixelFormat(OH_Pixelmap_I
 
 
 
-#### OH_PixelmapInitializationOptions_GetRowStride()
+### OH_PixelmapInitializationOptions_GetRowStride()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapInitializationOptions_GetRowStride(OH_Pixelmap_InitializationOptions *options, int32_t *rowStride)
@@ -587,6 +635,7 @@ Image_ErrorCode OH_PixelmapInitializationOptions_GetRowStride(OH_Pixelmap_Initia
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pixelmap_InitializationOptions *options | 被操作的OH_Pixelmap_InitializationOptions指针。 |
@@ -595,6 +644,7 @@ Image_ErrorCode OH_PixelmapInitializationOptions_GetRowStride(OH_Pixelmap_Initia
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 IMAGE_UNKNOWN_ERROR：options被释放。 |
@@ -602,9 +652,10 @@ Image_ErrorCode OH_PixelmapInitializationOptions_GetRowStride(OH_Pixelmap_Initia
 
 
 
-#### OH_PixelmapInitializationOptions_SetRowStride()
+### OH_PixelmapInitializationOptions_SetRowStride()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapInitializationOptions_SetRowStride(OH_Pixelmap_InitializationOptions *options, int32_t rowStride)
@@ -620,6 +671,7 @@ Image_ErrorCode OH_PixelmapInitializationOptions_SetRowStride(OH_Pixelmap_Initia
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pixelmap_InitializationOptions *options | 被操作的OH_Pixelmap_InitializationOptions指针。 |
@@ -628,6 +680,7 @@ Image_ErrorCode OH_PixelmapInitializationOptions_SetRowStride(OH_Pixelmap_Initia
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 IMAGE_UNKNOWN_ERROR：options被释放。 |
@@ -635,9 +688,10 @@ Image_ErrorCode OH_PixelmapInitializationOptions_SetRowStride(OH_Pixelmap_Initia
 
 
 
-#### OH_PixelmapInitializationOptions_GetAlphaType()
+### OH_PixelmapInitializationOptions_GetAlphaType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapInitializationOptions_GetAlphaType(OH_Pixelmap_InitializationOptions *options, int32_t *alphaType)
@@ -651,6 +705,7 @@ Image_ErrorCode OH_PixelmapInitializationOptions_GetAlphaType(OH_Pixelmap_Initia
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pixelmap_InitializationOptions *options | 被操作的OH_Pixelmap_InitializationOptions指针。 |
@@ -659,6 +714,7 @@ Image_ErrorCode OH_PixelmapInitializationOptions_GetAlphaType(OH_Pixelmap_Initia
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -666,9 +722,10 @@ Image_ErrorCode OH_PixelmapInitializationOptions_GetAlphaType(OH_Pixelmap_Initia
 
 
 
-#### OH_PixelmapInitializationOptions_SetAlphaType()
+### OH_PixelmapInitializationOptions_SetAlphaType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapInitializationOptions_SetAlphaType(OH_Pixelmap_InitializationOptions *options, int32_t alphaType)
@@ -682,6 +739,7 @@ Image_ErrorCode OH_PixelmapInitializationOptions_SetAlphaType(OH_Pixelmap_Initia
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pixelmap_InitializationOptions *options | 被操作的OH_Pixelmap_InitializationOptions指针。 |
@@ -690,6 +748,7 @@ Image_ErrorCode OH_PixelmapInitializationOptions_SetAlphaType(OH_Pixelmap_Initia
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -697,9 +756,10 @@ Image_ErrorCode OH_PixelmapInitializationOptions_SetAlphaType(OH_Pixelmap_Initia
 
 
 
-#### OH_PixelmapInitializationOptions_GetEditable()
+### OH_PixelmapInitializationOptions_GetEditable()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapInitializationOptions_GetEditable(OH_Pixelmap_InitializationOptions *options, bool *editable)
@@ -713,6 +773,7 @@ Image_ErrorCode OH_PixelmapInitializationOptions_GetEditable(OH_Pixelmap_Initial
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pixelmap_InitializationOptions *options | 被操作的OH_Pixelmap_InitializationOptions指针。 |
@@ -721,6 +782,7 @@ Image_ErrorCode OH_PixelmapInitializationOptions_GetEditable(OH_Pixelmap_Initial
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -728,9 +790,10 @@ Image_ErrorCode OH_PixelmapInitializationOptions_GetEditable(OH_Pixelmap_Initial
 
 
 
-#### OH_PixelmapInitializationOptions_SetEditable()
+### OH_PixelmapInitializationOptions_SetEditable()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapInitializationOptions_SetEditable(OH_Pixelmap_InitializationOptions *options, bool editable)
@@ -744,6 +807,7 @@ Image_ErrorCode OH_PixelmapInitializationOptions_SetEditable(OH_Pixelmap_Initial
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pixelmap_InitializationOptions *options | 被操作的OH_Pixelmap_InitializationOptions指针。 |
@@ -752,6 +816,7 @@ Image_ErrorCode OH_PixelmapInitializationOptions_SetEditable(OH_Pixelmap_Initial
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -759,9 +824,10 @@ Image_ErrorCode OH_PixelmapInitializationOptions_SetEditable(OH_Pixelmap_Initial
 
 
 
-#### OH_PixelmapInitializationOptions_Release()
+### OH_PixelmapInitializationOptions_Release()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapInitializationOptions_Release(OH_Pixelmap_InitializationOptions *options)
@@ -775,12 +841,14 @@ Image_ErrorCode OH_PixelmapInitializationOptions_Release(OH_Pixelmap_Initializat
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pixelmap_InitializationOptions *options | 被释放的OH_Pixelmap_InitializationOptions指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -789,9 +857,10 @@ Image_ErrorCode OH_PixelmapInitializationOptions_Release(OH_Pixelmap_Initializat
 
 
 
-#### OH_PixelmapImageInfo_Create()
+### OH_PixelmapImageInfo_Create()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapImageInfo_Create(OH_Pixelmap_ImageInfo **info)
@@ -805,12 +874,14 @@ Image_ErrorCode OH_PixelmapImageInfo_Create(OH_Pixelmap_ImageInfo **info)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pixelmap_ImageInfo **info | 被创建的OH_Pixelmap_ImageInfo指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -819,9 +890,10 @@ Image_ErrorCode OH_PixelmapImageInfo_Create(OH_Pixelmap_ImageInfo **info)
 
 
 
-#### OH_PixelmapImageInfo_GetWidth()
+### OH_PixelmapImageInfo_GetWidth()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapImageInfo_GetWidth(OH_Pixelmap_ImageInfo *info, uint32_t *width)
@@ -835,6 +907,7 @@ Image_ErrorCode OH_PixelmapImageInfo_GetWidth(OH_Pixelmap_ImageInfo *info, uint3
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pixelmap_ImageInfo *info | 被操作的OH_Pixelmap_ImageInfo指针。 |
@@ -843,6 +916,7 @@ Image_ErrorCode OH_PixelmapImageInfo_GetWidth(OH_Pixelmap_ImageInfo *info, uint3
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -850,9 +924,10 @@ Image_ErrorCode OH_PixelmapImageInfo_GetWidth(OH_Pixelmap_ImageInfo *info, uint3
 
 
 
-#### OH_PixelmapImageInfo_GetHeight()
+### OH_PixelmapImageInfo_GetHeight()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapImageInfo_GetHeight(OH_Pixelmap_ImageInfo *info, uint32_t *height)
@@ -866,6 +941,7 @@ Image_ErrorCode OH_PixelmapImageInfo_GetHeight(OH_Pixelmap_ImageInfo *info, uint
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pixelmap_ImageInfo *info | 被操作的OH_Pixelmap_ImageInfo指针。 |
@@ -874,6 +950,7 @@ Image_ErrorCode OH_PixelmapImageInfo_GetHeight(OH_Pixelmap_ImageInfo *info, uint
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -881,9 +958,10 @@ Image_ErrorCode OH_PixelmapImageInfo_GetHeight(OH_Pixelmap_ImageInfo *info, uint
 
 
 
-#### OH_PixelmapImageInfo_GetAlphaMode()
+### OH_PixelmapImageInfo_GetAlphaMode()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapImageInfo_GetAlphaMode(OH_Pixelmap_ImageInfo *info, int32_t *alphaMode)
@@ -897,6 +975,7 @@ Image_ErrorCode OH_PixelmapImageInfo_GetAlphaMode(OH_Pixelmap_ImageInfo *info, i
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pixelmap_ImageInfo *info | 被操作的OH_Pixelmap_ImageInfo指针。 |
@@ -905,6 +984,7 @@ Image_ErrorCode OH_PixelmapImageInfo_GetAlphaMode(OH_Pixelmap_ImageInfo *info, i
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -912,9 +992,10 @@ Image_ErrorCode OH_PixelmapImageInfo_GetAlphaMode(OH_Pixelmap_ImageInfo *info, i
 
 
 
-#### OH_PixelmapImageInfo_GetRowStride()
+### OH_PixelmapImageInfo_GetRowStride()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapImageInfo_GetRowStride(OH_Pixelmap_ImageInfo *info, uint32_t *rowStride)
@@ -928,6 +1009,7 @@ Image_ErrorCode OH_PixelmapImageInfo_GetRowStride(OH_Pixelmap_ImageInfo *info, u
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pixelmap_ImageInfo *info | 被操作的OH_Pixelmap_ImageInfo指针。 |
@@ -936,6 +1018,7 @@ Image_ErrorCode OH_PixelmapImageInfo_GetRowStride(OH_Pixelmap_ImageInfo *info, u
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -943,9 +1026,10 @@ Image_ErrorCode OH_PixelmapImageInfo_GetRowStride(OH_Pixelmap_ImageInfo *info, u
 
 
 
-#### OH_PixelmapImageInfo_GetPixelFormat()
+### OH_PixelmapImageInfo_GetPixelFormat()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapImageInfo_GetPixelFormat(OH_Pixelmap_ImageInfo *info, int32_t *pixelFormat)
@@ -959,6 +1043,7 @@ Image_ErrorCode OH_PixelmapImageInfo_GetPixelFormat(OH_Pixelmap_ImageInfo *info,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pixelmap_ImageInfo *info | 被操作的OH_Pixelmap_ImageInfo指针。 |
@@ -967,6 +1052,7 @@ Image_ErrorCode OH_PixelmapImageInfo_GetPixelFormat(OH_Pixelmap_ImageInfo *info,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -974,9 +1060,10 @@ Image_ErrorCode OH_PixelmapImageInfo_GetPixelFormat(OH_Pixelmap_ImageInfo *info,
 
 
 
-#### OH_PixelmapImageInfo_GetAlphaType()
+### OH_PixelmapImageInfo_GetAlphaType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapImageInfo_GetAlphaType(OH_Pixelmap_ImageInfo *info, int32_t *alphaType)
@@ -990,6 +1077,7 @@ Image_ErrorCode OH_PixelmapImageInfo_GetAlphaType(OH_Pixelmap_ImageInfo *info, i
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pixelmap_ImageInfo *info | 被操作的OH_Pixelmap_ImageInfo指针。 |
@@ -998,6 +1086,7 @@ Image_ErrorCode OH_PixelmapImageInfo_GetAlphaType(OH_Pixelmap_ImageInfo *info, i
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -1005,9 +1094,10 @@ Image_ErrorCode OH_PixelmapImageInfo_GetAlphaType(OH_Pixelmap_ImageInfo *info, i
 
 
 
-#### OH_PixelmapImageInfo_GetDynamicRange()
+### OH_PixelmapImageInfo_GetDynamicRange()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapImageInfo_GetDynamicRange(OH_Pixelmap_ImageInfo *info, bool *isHdr)
@@ -1021,6 +1111,7 @@ Image_ErrorCode OH_PixelmapImageInfo_GetDynamicRange(OH_Pixelmap_ImageInfo *info
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pixelmap_ImageInfo *info | 被操作的OH_Pixelmap_ImageInfo指针。 |
@@ -1029,6 +1120,7 @@ Image_ErrorCode OH_PixelmapImageInfo_GetDynamicRange(OH_Pixelmap_ImageInfo *info
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数校验错误。 |
@@ -1036,9 +1128,10 @@ Image_ErrorCode OH_PixelmapImageInfo_GetDynamicRange(OH_Pixelmap_ImageInfo *info
 
 
 
-#### OH_PixelmapImageInfo_Release()
+### OH_PixelmapImageInfo_Release()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapImageInfo_Release(OH_Pixelmap_ImageInfo *info)
@@ -1052,12 +1145,14 @@ Image_ErrorCode OH_PixelmapImageInfo_Release(OH_Pixelmap_ImageInfo *info)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pixelmap_ImageInfo *info | 被释放的OH_Pixelmap_ImageInfo指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1066,9 +1161,10 @@ Image_ErrorCode OH_PixelmapImageInfo_Release(OH_Pixelmap_ImageInfo *info)
 
 
 
-#### OH_PixelmapNative_CreatePixelmap()
+### OH_PixelmapNative_CreatePixelmap()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_CreatePixelmap(uint8_t *data, size_t dataLength, OH_Pixelmap_InitializationOptions *options, OH_PixelmapNative **pixelmap)
@@ -1084,6 +1180,7 @@ Image_ErrorCode OH_PixelmapNative_CreatePixelmap(uint8_t *data, size_t dataLengt
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint8_t *data | 像素数据的数组。 传入的像素数据默认按BGRA_8888格式解析，如果需要设置为其他格式，请参考OH_PixelmapInitializationOptions_SetSrcPixelFormat。 如果像素数据中含有用于内存对齐的行末填充字节，则必须使用OH_PixelmapInitializationOptions_SetRowStride设置行跨距。 |
@@ -1094,6 +1191,7 @@ Image_ErrorCode OH_PixelmapNative_CreatePixelmap(uint8_t *data, size_t dataLengt
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 IMAGE_UNSUPPORTED_OPERATION：操作不支持。 |
@@ -1101,9 +1199,10 @@ Image_ErrorCode OH_PixelmapNative_CreatePixelmap(uint8_t *data, size_t dataLengt
 
 
 
-#### OH_PixelmapNative_CreatePixelmapUsingAllocator()
+### OH_PixelmapNative_CreatePixelmapUsingAllocator()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_CreatePixelmapUsingAllocator(uint8_t *data, size_t dataLength, OH_Pixelmap_InitializationOptions *options, IMAGE_ALLOCATOR_MODE allocator, OH_PixelmapNative **pixelmap)
@@ -1121,6 +1220,7 @@ Image_ErrorCode OH_PixelmapNative_CreatePixelmapUsingAllocator(uint8_t *data, si
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint8_t *data | 像素数据的数组。 传入的像素数据默认按BGRA_8888格式解析，如果需要设置为其他格式，请参考OH_PixelmapInitializationOptions_SetSrcPixelFormat。 如果像素数据中含有用于内存对齐的行末填充字节，则必须使用OH_PixelmapInitializationOptions_SetRowStride设置行跨距。 |
@@ -1132,6 +1232,7 @@ Image_ErrorCode OH_PixelmapNative_CreatePixelmapUsingAllocator(uint8_t *data, si
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 IMAGE_UNSUPPORTED_OPERATION：操作不支持。 IMAGE_TOO_LARGE：图像过大，无法分配内存。 IMAGE_DMA_OPERATION_FAILED：DMA内存操作失败。 IMAGE_ALLOCATOR_MODE_UNSUPPORTED：不支持分配当前内存类型。例如，使用共享内存创建HDR图。 |
@@ -1139,9 +1240,10 @@ Image_ErrorCode OH_PixelmapNative_CreatePixelmapUsingAllocator(uint8_t *data, si
 
 
 
-#### OH_PixelmapNative_ConvertPixelmapNativeToNapi()
+### OH_PixelmapNative_ConvertPixelmapNativeToNapi()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_ConvertPixelmapNativeToNapi(napi_env env, OH_PixelmapNative *pixelmapNative, napi_value *pixelmapNapi)
@@ -1155,6 +1257,7 @@ Image_ErrorCode OH_PixelmapNative_ConvertPixelmapNativeToNapi(napi_env env, OH_P
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | napi_env env | Napi的环境指针。 |
@@ -1164,6 +1267,7 @@ Image_ErrorCode OH_PixelmapNative_ConvertPixelmapNativeToNapi(napi_env env, OH_P
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：pixelmapNative为空。 |
@@ -1171,9 +1275,10 @@ Image_ErrorCode OH_PixelmapNative_ConvertPixelmapNativeToNapi(napi_env env, OH_P
 
 
 
-#### OH_PixelmapNative_ConvertPixelmapNativeFromNapi()
+### OH_PixelmapNative_ConvertPixelmapNativeFromNapi()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_ConvertPixelmapNativeFromNapi(napi_env env, napi_value pixelmapNapi, OH_PixelmapNative **pixelmapNative)
@@ -1187,6 +1292,7 @@ Image_ErrorCode OH_PixelmapNative_ConvertPixelmapNativeFromNapi(napi_env env, na
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | napi_env env | Napi的环境指针。 |
@@ -1196,6 +1302,7 @@ Image_ErrorCode OH_PixelmapNative_ConvertPixelmapNativeFromNapi(napi_env env, na
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：pixelmapNative是nullptr，或者pixelmapNapi不是PixelmapNapi对象。 |
@@ -1203,9 +1310,10 @@ Image_ErrorCode OH_PixelmapNative_ConvertPixelmapNativeFromNapi(napi_env env, na
 
 
 
-#### OH_PixelmapNative_ReadPixels()
+### OH_PixelmapNative_ReadPixels()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_ReadPixels(OH_PixelmapNative *pixelmap, uint8_t *destination, size_t *bufferSize)
@@ -1219,6 +1327,7 @@ Image_ErrorCode OH_PixelmapNative_ReadPixels(OH_PixelmapNative *pixelmap, uint8_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *pixelmap | 被操作的OH_PixelmapNative指针。 |
@@ -1228,6 +1337,7 @@ Image_ErrorCode OH_PixelmapNative_ReadPixels(OH_PixelmapNative *pixelmap, uint8_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 IMAGE_UNKNOWN_ERROR：未知错误。 |
@@ -1235,9 +1345,10 @@ Image_ErrorCode OH_PixelmapNative_ReadPixels(OH_PixelmapNative *pixelmap, uint8_
 
 
 
-#### OH_PixelmapNative_WritePixels()
+### OH_PixelmapNative_WritePixels()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_WritePixels(OH_PixelmapNative *pixelmap, uint8_t *source, size_t bufferSize)
@@ -1251,6 +1362,7 @@ Image_ErrorCode OH_PixelmapNative_WritePixels(OH_PixelmapNative *pixelmap, uint8
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *pixelmap | 被操作的OH_PixelmapNative指针。 |
@@ -1260,6 +1372,7 @@ Image_ErrorCode OH_PixelmapNative_WritePixels(OH_PixelmapNative *pixelmap, uint8
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 IMAGE_UNSUPPORTED_OPERATION：操作不支持。 IMAGE_UNKNOWN_ERROR：未知错误。 |
@@ -1267,9 +1380,10 @@ Image_ErrorCode OH_PixelmapNative_WritePixels(OH_PixelmapNative *pixelmap, uint8
 
 
 
-#### OH_PixelmapNative_ReadPixelsFromArea()
+### OH_PixelmapNative_ReadPixelsFromArea()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_ReadPixelsFromArea(OH_PixelmapNative *pixelmap, Image_PositionArea *area)
@@ -1283,6 +1397,7 @@ Image_ErrorCode OH_PixelmapNative_ReadPixelsFromArea(OH_PixelmapNative *pixelmap
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *pixelmap | 被读取的Pixelmap。 |
@@ -1291,6 +1406,7 @@ Image_ErrorCode OH_PixelmapNative_ReadPixelsFromArea(OH_PixelmapNative *pixelmap
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：操作成功。 IMAGE_BAD_PARAMETER：参数无效，例如：pixelmap或area有误。 IMAGE_UNKNOWN_ERROR：未知的内部错误，例如：不支持的像素格式。 |
@@ -1298,9 +1414,10 @@ Image_ErrorCode OH_PixelmapNative_ReadPixelsFromArea(OH_PixelmapNative *pixelmap
 
 
 
-#### OH_PixelmapNative_WritePixelsToArea()
+### OH_PixelmapNative_WritePixelsToArea()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_WritePixelsToArea(OH_PixelmapNative *pixelmap, Image_PositionArea *area)
@@ -1314,6 +1431,7 @@ Image_ErrorCode OH_PixelmapNative_WritePixelsToArea(OH_PixelmapNative *pixelmap,
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *pixelmap | 被写入的Pixelmap。 |
@@ -1322,6 +1440,7 @@ Image_ErrorCode OH_PixelmapNative_WritePixelsToArea(OH_PixelmapNative *pixelmap,
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：操作成功。 IMAGE_BAD_PARAMETER：参数无效，例如：pixelmap或area有误。 IMAGE_UNSUPPORTED_OPERATION：Pixelmap不可编辑。 IMAGE_UNKNOWN_ERROR：未知的内部错误，例如：不支持的像素格式。 |
@@ -1329,9 +1448,10 @@ Image_ErrorCode OH_PixelmapNative_WritePixelsToArea(OH_PixelmapNative *pixelmap,
 
 
 
-#### OH_PixelmapNative_GetArgbPixels()
+### OH_PixelmapNative_GetArgbPixels()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_GetArgbPixels(OH_PixelmapNative *pixelmap, uint8_t *destination, size_t *bufferSize)
@@ -1345,6 +1465,7 @@ Image_ErrorCode OH_PixelmapNative_GetArgbPixels(OH_PixelmapNative *pixelmap, uin
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *pixelmap | 被操作的OH_PixelmapNative指针。 |
@@ -1354,6 +1475,7 @@ Image_ErrorCode OH_PixelmapNative_GetArgbPixels(OH_PixelmapNative *pixelmap, uin
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 IMAGE_UNSUPPORTED_CONVERSION：Pixelmap格式不支持读取ARGB数据。 IMAGE_ALLOC_FAILED：内存申请失败。 IMAGE_COPY_FAILED：内存数据拷贝、读取、操作失败。 |
@@ -1361,9 +1483,10 @@ Image_ErrorCode OH_PixelmapNative_GetArgbPixels(OH_PixelmapNative *pixelmap, uin
 
 
 
-#### OH_PixelmapNative_ToSdr()
+### OH_PixelmapNative_ToSdr()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_ToSdr(OH_PixelmapNative *pixelmap)
@@ -1377,12 +1500,14 @@ Image_ErrorCode OH_PixelmapNative_ToSdr(OH_PixelmapNative *pixelmap)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *pixelmap | 被操作的OH_PixelmapNative指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1391,9 +1516,10 @@ Image_ErrorCode OH_PixelmapNative_ToSdr(OH_PixelmapNative *pixelmap)
 
 
 
-#### OH_PixelmapNative_GetImageInfo()
+### OH_PixelmapNative_GetImageInfo()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_GetImageInfo(OH_PixelmapNative *pixelmap, OH_Pixelmap_ImageInfo *imageInfo)
@@ -1407,6 +1533,7 @@ Image_ErrorCode OH_PixelmapNative_GetImageInfo(OH_PixelmapNative *pixelmap, OH_P
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *pixelmap | 被操作的OH_PixelmapNative指针。 |
@@ -1415,6 +1542,7 @@ Image_ErrorCode OH_PixelmapNative_GetImageInfo(OH_PixelmapNative *pixelmap, OH_P
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -1422,9 +1550,10 @@ Image_ErrorCode OH_PixelmapNative_GetImageInfo(OH_PixelmapNative *pixelmap, OH_P
 
 
 
-#### OH_PixelmapNative_SetOpacity()
+### OH_PixelmapNative_SetOpacity()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_SetOpacity(OH_PixelmapNative *pixelmap, float value)
@@ -1438,6 +1567,7 @@ Image_ErrorCode OH_PixelmapNative_SetOpacity(OH_PixelmapNative *pixelmap, float 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *pixelmap | 被操作的OH_PixelmapNative的指针。 |
@@ -1446,6 +1576,7 @@ Image_ErrorCode OH_PixelmapNative_SetOpacity(OH_PixelmapNative *pixelmap, float 
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_GET_IMAGE_DATA_FAILED：获取图像数据失败。可能的原因：内部数据损坏。详情请检查日志。 IMAGE_PIXELMAP_RELEASED：Pixelmap已被释放。 IMAGE_UNSUPPORTED_OPERATION：Pixelmap被锁定，不支持该操作。 IMAGE_INVALID_PARAMETER：无效参数。可能的原因：1. 不透明度值超出范围。2. 入参为空。 IMAGE_UNSUPPORTED_DATA_FORMAT：不支持的数据格式。可能的原因：透明度类型不支持。 |
@@ -1453,9 +1584,10 @@ Image_ErrorCode OH_PixelmapNative_SetOpacity(OH_PixelmapNative *pixelmap, float 
 
 
 
-#### OH_PixelmapNative_Opacity()
+### OH_PixelmapNative_Opacity()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_Opacity(OH_PixelmapNative *pixelmap, float rate)
@@ -1471,6 +1603,7 @@ Image_ErrorCode OH_PixelmapNative_Opacity(OH_PixelmapNative *pixelmap, float rat
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *pixelmap | 被操作的OH_PixelmapNative指针。 |
@@ -1479,6 +1612,7 @@ Image_ErrorCode OH_PixelmapNative_Opacity(OH_PixelmapNative *pixelmap, float rat
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -1486,9 +1620,10 @@ Image_ErrorCode OH_PixelmapNative_Opacity(OH_PixelmapNative *pixelmap, float rat
 
 
 
-#### OH_PixelmapNative_ApplyScale()
+### OH_PixelmapNative_ApplyScale()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_ApplyScale(OH_PixelmapNative *pixelmap, float scaleX, float scaleY)
@@ -1502,14 +1637,16 @@ Image_ErrorCode OH_PixelmapNative_ApplyScale(OH_PixelmapNative *pixelmap, float 
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *pixelmap | 被缩放的OH_PixelmapNative的指针。 |
-| float scaleX | 宽度的缩放倍数。取值不能为0。 |
-| float scaleY | 高度的缩放倍数。取值不能为0。 |
+| float scaleX | 宽度的缩放倍数。 取值不能为0，建议取正数，否则会产生翻转效果。 |
+| float scaleY | 高度的缩放倍数。 取值不能为0，建议取正数，否则会产生翻转效果。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1518,9 +1655,10 @@ Image_ErrorCode OH_PixelmapNative_ApplyScale(OH_PixelmapNative *pixelmap, float 
 
 
 
-#### OH_PixelmapNative_Scale()
+### OH_PixelmapNative_Scale()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_Scale(OH_PixelmapNative *pixelmap, float scaleX, float scaleY)
@@ -1536,14 +1674,16 @@ Image_ErrorCode OH_PixelmapNative_Scale(OH_PixelmapNative *pixelmap, float scale
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *pixelmap | 被操作的OH_PixelmapNative指针。 |
-| float scaleX | 宽度的缩放比例。取值不能为0。 |
-| float scaleY | 高度的缩放比例。取值不能为0。 |
+| float scaleX | 宽度的缩放比例。 取值不能为0，建议取正数，否则会产生翻转效果。 |
+| float scaleY | 高度的缩放比例。 取值不能为0，建议取正数，否则会产生翻转效果。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1552,9 +1692,10 @@ Image_ErrorCode OH_PixelmapNative_Scale(OH_PixelmapNative *pixelmap, float scale
 
 
 
-#### OH_PixelmapNative_ApplyScaleWithAntiAliasing()
+### OH_PixelmapNative_ApplyScaleWithAntiAliasing()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_ApplyScaleWithAntiAliasing(OH_PixelmapNative *pixelmap, float scaleX, float scaleY, OH_PixelmapNative_AntiAliasingLevel level)
@@ -1568,15 +1709,17 @@ Image_ErrorCode OH_PixelmapNative_ApplyScaleWithAntiAliasing(OH_PixelmapNative *
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *pixelmap | 被缩放的OH_PixelmapNative的指针。 |
-| float scaleX | 宽度的缩放倍数。取值不能为0。 |
-| float scaleY | 高度的缩放倍数。取值不能为0。 |
+| float scaleX | 宽度的缩放倍数。 取值不能为0，建议取正数，否则会产生翻转效果。 |
+| float scaleY | 高度的缩放倍数。 取值不能为0，建议取正数，否则会产生翻转效果。 |
 | OH_PixelmapNative_AntiAliasingLevel level | 采用的缩放算法。该参数对于ASTC格式的Pixelmap不生效。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1585,9 +1728,10 @@ Image_ErrorCode OH_PixelmapNative_ApplyScaleWithAntiAliasing(OH_PixelmapNative *
 
 
 
-#### OH_PixelmapNative_ScaleWithAntiAliasing()
+### OH_PixelmapNative_ScaleWithAntiAliasing()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_ScaleWithAntiAliasing(OH_PixelmapNative *pixelmap, float scaleX, float scaleY, OH_PixelmapNative_AntiAliasingLevel level)
@@ -1603,15 +1747,17 @@ Image_ErrorCode OH_PixelmapNative_ScaleWithAntiAliasing(OH_PixelmapNative *pixel
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *pixelmap | 被操作的OH_PixelmapNative指针。 |
-| float scaleX | 宽度的缩放比例。取值不能为0。 |
-| float scaleY | 高度的缩放比例。取值不能为0。 |
+| float scaleX | 宽度的缩放比例。 取值不能为0，建议取正数，否则会产生翻转效果。 |
+| float scaleY | 高度的缩放比例。 取值不能为0，建议取正数，否则会产生翻转效果。 |
 | OH_PixelmapNative_AntiAliasingLevel level | 缩放算法。该参数对于ASTC格式的Pixelmap不生效。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1620,9 +1766,10 @@ Image_ErrorCode OH_PixelmapNative_ScaleWithAntiAliasing(OH_PixelmapNative *pixel
 
 
 
-#### OH_PixelmapNative_CreateScaledPixelMap()
+### OH_PixelmapNative_CreateScaledPixelMap()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_CreateScaledPixelMap(OH_PixelmapNative *srcPixelmap, OH_PixelmapNative **dstPixelmap, float scaleX, float scaleY)
@@ -1636,15 +1783,17 @@ Image_ErrorCode OH_PixelmapNative_CreateScaledPixelMap(OH_PixelmapNative *srcPix
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *srcPixelmap | 被操作的OH_PixelmapNative指针，源Pixelmap对象指针。 |
 | OH_PixelmapNative **dstPixelmap | 被操作的OH_PixelmapNative指针，目标Pixelmap对象指针。 |
-| float scaleX | 宽度的缩放比例。取值不能为0。 |
-| float scaleY | 高度的缩放比例。取值不能为0。 |
+| float scaleX | 宽度的缩放比例。 取值不能为0，建议取正数，否则会产生翻转效果。 |
+| float scaleY | 高度的缩放比例。 取值不能为0，建议取正数，否则会产生翻转效果。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1653,9 +1802,10 @@ Image_ErrorCode OH_PixelmapNative_CreateScaledPixelMap(OH_PixelmapNative *srcPix
 
 
 
-#### OH_PixelmapNative_CreateScaledPixelMapWithAntiAliasing()
+### OH_PixelmapNative_CreateScaledPixelMapWithAntiAliasing()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_CreateScaledPixelMapWithAntiAliasing(OH_PixelmapNative *srcPixelmap, OH_PixelmapNative **dstPixelmap, float scaleX, float scaleY, OH_PixelmapNative_AntiAliasingLevel level)
@@ -1669,16 +1819,18 @@ Image_ErrorCode OH_PixelmapNative_CreateScaledPixelMapWithAntiAliasing(OH_Pixelm
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *srcPixelmap | 被操作的OH_PixelmapNative指针，源Pixelmap对象指针。 |
 | OH_PixelmapNative **dstPixelmap | 被操作的OH_PixelmapNative指针，目标Pixelmap对象指针。 |
-| float scaleX | 宽度的缩放比例。取值不能为0。 |
-| float scaleY | 高度的缩放比例。取值不能为0。 |
+| float scaleX | 宽度的缩放比例。 取值不能为0，建议取正数，否则会产生翻转效果。 |
+| float scaleY | 高度的缩放比例。 取值不能为0，建议取正数，否则会产生翻转效果。 |
 | OH_PixelmapNative_AntiAliasingLevel level | 缩放算法。该参数对于ASTC格式的Pixelmap不生效。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1687,9 +1839,10 @@ Image_ErrorCode OH_PixelmapNative_CreateScaledPixelMapWithAntiAliasing(OH_Pixelm
 
 
 
-#### OH_PixelmapNative_CreateAlphaPixelmap()
+### OH_PixelmapNative_CreateAlphaPixelmap()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_CreateAlphaPixelmap(OH_PixelmapNative *srcPixelmap, OH_PixelmapNative **dstPixelmap)
@@ -1699,11 +1852,12 @@ Image_ErrorCode OH_PixelmapNative_CreateAlphaPixelmap(OH_PixelmapNative *srcPixe
 
 从源Pixelmap创建一个仅包含Alpha通道的ALPHA_8格式的Pixelmap，生成的新Pixelmap不可编辑。
 
-若源Pixelmap的格式是ALPHA_F16，则新生成的Pixelmap将维持ALPHA_F16格式。
+如果源Pixelmap的格式是ALPHA_F16，则新生成的Pixelmap将维持ALPHA_F16格式。
 
 **起始版本：** 22
 
 **参数：**
+
 
 | 参数项 | 描述 |
 | --- | --- |
@@ -1713,6 +1867,7 @@ Image_ErrorCode OH_PixelmapNative_CreateAlphaPixelmap(OH_PixelmapNative *srcPixe
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：操作成功。 IMAGE_BAD_PARAMETER：参数无效，例如：srcPixelmap或dstPixelmap有误。 |
@@ -1720,9 +1875,10 @@ Image_ErrorCode OH_PixelmapNative_CreateAlphaPixelmap(OH_PixelmapNative *srcPixe
 
 
 
-#### OH_PixelmapNative_Clone()
+### OH_PixelmapNative_Clone()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_Clone(OH_PixelmapNative *srcPixelmap, OH_PixelmapNative **dstPixelmap)
@@ -1736,6 +1892,7 @@ Image_ErrorCode OH_PixelmapNative_Clone(OH_PixelmapNative *srcPixelmap, OH_Pixel
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *srcPixelmap | 被拷贝的源Pixelmap。 |
@@ -1744,6 +1901,7 @@ Image_ErrorCode OH_PixelmapNative_Clone(OH_PixelmapNative *srcPixelmap, OH_Pixel
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：操作成功。 IMAGE_BAD_PARAMETER：参数无效，例如：srcPixelmap或dstPixelmap有误。 IMAGE_UNSUPPORTED_DATA_FORMAT：像素格式不支持。 IMAGE_TOO_LARGE：源Pixelmap的尺寸过大。 IMAGE_INIT_FAILED：目标Pixelmap初始化失败。 IMAGE_ALLOC_FAILED：内存申请或数据复制失败。 |
@@ -1751,9 +1909,10 @@ Image_ErrorCode OH_PixelmapNative_Clone(OH_PixelmapNative *srcPixelmap, OH_Pixel
 
 
 
-#### OH_PixelmapNative_CreateCroppedAndScaledPixelMap()
+### OH_PixelmapNative_CreateCroppedAndScaledPixelMap()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_CreateCroppedAndScaledPixelMap(OH_PixelmapNative *srcPixelmap, Image_Region *region, Image_Scale *scale, OH_PixelmapNative_AntiAliasingLevel level, OH_PixelmapNative **dstPixelmap)
@@ -1767,16 +1926,18 @@ Image_ErrorCode OH_PixelmapNative_CreateCroppedAndScaledPixelMap(OH_PixelmapNati
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *srcPixelmap | 源Pixelmap。 |
 | Image_Region *region | 裁剪区域。 |
-| Image_Scale *scale | 宽和高的缩放倍数。不能为0。 |
+| Image_Scale *scale | 宽和高的缩放倍数。 取值不能为0，建议取正数，否则会产生翻转效果。 |
 | OH_PixelmapNative_AntiAliasingLevel level | 要使用的缩放插值算法。该参数对于ASTC格式的Pixelmap不生效。 |
 | OH_PixelmapNative **dstPixelmap | 被创建的目标Pixelmap。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1785,9 +1946,10 @@ Image_ErrorCode OH_PixelmapNative_CreateCroppedAndScaledPixelMap(OH_PixelmapNati
 
 
 
-#### OH_PixelmapNative_ApplyTranslate()
+### OH_PixelmapNative_ApplyTranslate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_ApplyTranslate(OH_PixelmapNative *pixelmap, float x, float y)
@@ -1803,6 +1965,7 @@ Image_ErrorCode OH_PixelmapNative_ApplyTranslate(OH_PixelmapNative *pixelmap, fl
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *pixelmap | 被平移的OH_PixelmapNative的指针。 |
@@ -1812,6 +1975,7 @@ Image_ErrorCode OH_PixelmapNative_ApplyTranslate(OH_PixelmapNative *pixelmap, fl
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_GET_IMAGE_DATA_FAILED：获取图像数据失败。可能的原因：内部数据损坏。详情请检查日志。 IMAGE_PIXELMAP_RELEASED：Pixelmap已被释放。 IMAGE_UNSUPPORTED_OPERATION：Pixelmap被锁定，不支持该操作。 IMAGE_INVALID_PARAMETER：无效参数。可能的原因：入参为空。 IMAGE_ALLOC_FAILED：申请内存失败。可能的原因：1. 生成的Pixelmap尺寸过大。2. 系统内存不足。 |
@@ -1819,9 +1983,10 @@ Image_ErrorCode OH_PixelmapNative_ApplyTranslate(OH_PixelmapNative *pixelmap, fl
 
 
 
-#### OH_PixelmapNative_Translate()
+### OH_PixelmapNative_Translate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_Translate(OH_PixelmapNative *pixelmap, float x, float y)
@@ -1839,6 +2004,7 @@ Image_ErrorCode OH_PixelmapNative_Translate(OH_PixelmapNative *pixelmap, float x
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *pixelmap | 被操作的OH_PixelmapNative指针。 |
@@ -1848,6 +2014,7 @@ Image_ErrorCode OH_PixelmapNative_Translate(OH_PixelmapNative *pixelmap, float x
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -1855,9 +2022,10 @@ Image_ErrorCode OH_PixelmapNative_Translate(OH_PixelmapNative *pixelmap, float x
 
 
 
-#### OH_PixelmapNative_ApplyRotate()
+### OH_PixelmapNative_ApplyRotate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_ApplyRotate(OH_PixelmapNative *pixelmap, float angle)
@@ -1871,6 +2039,7 @@ Image_ErrorCode OH_PixelmapNative_ApplyRotate(OH_PixelmapNative *pixelmap, float
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *pixelmap | 被旋转的OH_PixelmapNative的指针。 |
@@ -1879,6 +2048,7 @@ Image_ErrorCode OH_PixelmapNative_ApplyRotate(OH_PixelmapNative *pixelmap, float
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_GET_IMAGE_DATA_FAILED：获取图像数据失败。可能的原因：内部数据损坏。详情请检查日志。 IMAGE_PIXELMAP_RELEASED：Pixelmap已被释放。 IMAGE_UNSUPPORTED_OPERATION：Pixelmap被锁定，不支持该操作。 IMAGE_INVALID_PARAMETER：无效参数。可能的原因：入参为空。 IMAGE_ALLOC_FAILED：申请内存失败。可能的原因：1. 生成的Pixelmap尺寸过大。2. 系统内存不足。 |
@@ -1886,9 +2056,10 @@ Image_ErrorCode OH_PixelmapNative_ApplyRotate(OH_PixelmapNative *pixelmap, float
 
 
 
-#### OH_PixelmapNative_Rotate()
+### OH_PixelmapNative_Rotate()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_Rotate(OH_PixelmapNative *pixelmap, float angle)
@@ -1904,6 +2075,7 @@ Image_ErrorCode OH_PixelmapNative_Rotate(OH_PixelmapNative *pixelmap, float angl
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *pixelmap | 被操作的OH_PixelmapNative指针。 |
@@ -1912,6 +2084,7 @@ Image_ErrorCode OH_PixelmapNative_Rotate(OH_PixelmapNative *pixelmap, float angl
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -1919,9 +2092,10 @@ Image_ErrorCode OH_PixelmapNative_Rotate(OH_PixelmapNative *pixelmap, float angl
 
 
 
-#### OH_PixelmapNative_ApplyFlip()
+### OH_PixelmapNative_ApplyFlip()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_ApplyFlip(OH_PixelmapNative *pixelmap, bool shouldFlipHorizontally, bool shouldFlipVertically)
@@ -1935,6 +2109,7 @@ Image_ErrorCode OH_PixelmapNative_ApplyFlip(OH_PixelmapNative *pixelmap, bool sh
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *pixelmap | 被翻转的OH_PixelmapNative的指针。 |
@@ -1944,6 +2119,7 @@ Image_ErrorCode OH_PixelmapNative_ApplyFlip(OH_PixelmapNative *pixelmap, bool sh
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_GET_IMAGE_DATA_FAILED：获取图像数据失败。可能的原因：内部数据损坏。详情请检查日志。 IMAGE_PIXELMAP_RELEASED：Pixelmap已被释放。 IMAGE_UNSUPPORTED_OPERATION：Pixelmap被锁定，不支持该操作。 IMAGE_INVALID_PARAMETER：无效参数。可能的原因：入参为空。 IMAGE_ALLOC_FAILED：申请内存失败。可能的原因：系统内存不足。 |
@@ -1951,9 +2127,10 @@ Image_ErrorCode OH_PixelmapNative_ApplyFlip(OH_PixelmapNative *pixelmap, bool sh
 
 
 
-#### OH_PixelmapNative_Flip()
+### OH_PixelmapNative_Flip()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_Flip(OH_PixelmapNative *pixelmap, bool shouldFlipHorizontally, bool shouldFlipVertically)
@@ -1969,6 +2146,7 @@ Image_ErrorCode OH_PixelmapNative_Flip(OH_PixelmapNative *pixelmap, bool shouldF
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *pixelmap | 被操作的OH_PixelmapNative指针。 |
@@ -1978,6 +2156,7 @@ Image_ErrorCode OH_PixelmapNative_Flip(OH_PixelmapNative *pixelmap, bool shouldF
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -1985,9 +2164,10 @@ Image_ErrorCode OH_PixelmapNative_Flip(OH_PixelmapNative *pixelmap, bool shouldF
 
 
 
-#### OH_PixelmapNative_ApplyCrop()
+### OH_PixelmapNative_ApplyCrop()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_ApplyCrop(OH_PixelmapNative *pixelmap, Image_Region *region)
@@ -2001,6 +2181,7 @@ Image_ErrorCode OH_PixelmapNative_ApplyCrop(OH_PixelmapNative *pixelmap, Image_R
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *pixelmap | 被裁剪的OH_PixelmapNative的指针。 |
@@ -2009,6 +2190,7 @@ Image_ErrorCode OH_PixelmapNative_ApplyCrop(OH_PixelmapNative *pixelmap, Image_R
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_GET_IMAGE_DATA_FAILED：获取图像数据失败。可能的原因：内部数据损坏。详情请检查日志。 IMAGE_PIXELMAP_RELEASED：Pixelmap已被释放。 IMAGE_UNSUPPORTED_OPERATION：Pixelmap被锁定，不支持该操作。 IMAGE_INVALID_REGION：指定的区域无效或超出范围。 IMAGE_INVALID_PARAMETER：无效参数。可能的原因：任意入参为空。 IMAGE_ALLOC_FAILED：申请内存失败。可能的原因：1. 处理像素数据失败。2. 系统内存不足。 |
@@ -2016,9 +2198,10 @@ Image_ErrorCode OH_PixelmapNative_ApplyCrop(OH_PixelmapNative *pixelmap, Image_R
 
 
 
-#### OH_PixelmapNative_Crop()
+### OH_PixelmapNative_Crop()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_Crop(OH_PixelmapNative *pixelmap, Image_Region *region)
@@ -2034,6 +2217,7 @@ Image_ErrorCode OH_PixelmapNative_Crop(OH_PixelmapNative *pixelmap, Image_Region
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *pixelmap | 被操作的OH_PixelmapNative指针。 |
@@ -2042,6 +2226,7 @@ Image_ErrorCode OH_PixelmapNative_Crop(OH_PixelmapNative *pixelmap, Image_Region
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -2049,9 +2234,10 @@ Image_ErrorCode OH_PixelmapNative_Crop(OH_PixelmapNative *pixelmap, Image_Region
 
 
 
-#### OH_PixelmapNative_Release()
+### OH_PixelmapNative_Release()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_Release(OH_PixelmapNative *pixelmap)
@@ -2067,12 +2253,14 @@ Image_ErrorCode OH_PixelmapNative_Release(OH_PixelmapNative *pixelmap)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *pixelmap | 被释放的OH_PixelmapNative指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2081,9 +2269,10 @@ Image_ErrorCode OH_PixelmapNative_Release(OH_PixelmapNative *pixelmap)
 
 
 
-#### OH_PixelmapNative_Destroy()
+### OH_PixelmapNative_Destroy()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_Destroy(OH_PixelmapNative **pixelmap)
@@ -2097,12 +2286,14 @@ Image_ErrorCode OH_PixelmapNative_Destroy(OH_PixelmapNative **pixelmap)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative **pixelmap | 被释放的OH_PixelmapNative指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2111,9 +2302,10 @@ Image_ErrorCode OH_PixelmapNative_Destroy(OH_PixelmapNative **pixelmap)
 
 
 
-#### OH_PixelmapNative_ConvertAlphaType()
+### OH_PixelmapNative_ConvertAlphaType()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_ConvertAlphaType(OH_PixelmapNative *srcPixelmap, OH_PixelmapNative *dstPixelmap, const bool toPremul)
@@ -2129,6 +2321,7 @@ Image_ErrorCode OH_PixelmapNative_ConvertAlphaType(OH_PixelmapNative *srcPixelma
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *srcPixelmap | 源Pixelmap的指针，包含待转换的像素数据，其透明度格式必须是预乘或非预乘。 |
@@ -2138,6 +2331,7 @@ Image_ErrorCode OH_PixelmapNative_ConvertAlphaType(OH_PixelmapNative *srcPixelma
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_GET_IMAGE_DATA_FAILED：获取图像数据失败。可能的原因：内部数据损坏。详情请检查日志。 IMAGE_PIXELMAP_RELEASED：任一Pixelmap已被释放。 IMAGE_UNSUPPORTED_OPERATION：Pixelmap被锁定，不支持该操作。 IMAGE_INVALID_PARAMETER：无效参数。可能的原因：1. 任一Pixelmap不符合要求。2. 任意入参为空。 IMAGE_UNSUPPORTED_DATA_FORMAT：任一Pixelmap的像素格式不被支持。 |
@@ -2145,9 +2339,10 @@ Image_ErrorCode OH_PixelmapNative_ConvertAlphaType(OH_PixelmapNative *srcPixelma
 
 
 
-#### OH_PixelmapNative_ConvertAlphaFormat()
+### OH_PixelmapNative_ConvertAlphaFormat()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_ConvertAlphaFormat(OH_PixelmapNative* srcpixelmap, OH_PixelmapNative* dstpixelmap, const bool isPremul)
@@ -2163,6 +2358,7 @@ Image_ErrorCode OH_PixelmapNative_ConvertAlphaFormat(OH_PixelmapNative* srcpixel
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative* srcpixelmap | 源Pixelmap的指针，包含待转换的像素数据，其透明度格式必须是预乘或非预乘。 |
@@ -2172,6 +2368,7 @@ Image_ErrorCode OH_PixelmapNative_ConvertAlphaFormat(OH_PixelmapNative* srcpixel
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -2179,9 +2376,10 @@ Image_ErrorCode OH_PixelmapNative_ConvertAlphaFormat(OH_PixelmapNative* srcpixel
 
 
 
-#### OH_PixelmapNative_CreateEmptyPixelmap()
+### OH_PixelmapNative_CreateEmptyPixelmap()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_CreateEmptyPixelmap(OH_Pixelmap_InitializationOptions *options, OH_PixelmapNative **pixelmap)
@@ -2195,6 +2393,7 @@ Image_ErrorCode OH_PixelmapNative_CreateEmptyPixelmap(OH_Pixelmap_Initialization
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pixelmap_InitializationOptions *options | 创建图像的初始化属性。 |
@@ -2203,6 +2402,7 @@ Image_ErrorCode OH_PixelmapNative_CreateEmptyPixelmap(OH_Pixelmap_Initialization
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -2210,9 +2410,10 @@ Image_ErrorCode OH_PixelmapNative_CreateEmptyPixelmap(OH_Pixelmap_Initialization
 
 
 
-#### OH_PixelmapNative_CreateEmptyPixelmapUsingAllocator()
+### OH_PixelmapNative_CreateEmptyPixelmapUsingAllocator()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_CreateEmptyPixelmapUsingAllocator(OH_Pixelmap_InitializationOptions *options, IMAGE_ALLOCATOR_MODE allocator, OH_PixelmapNative **pixelmap)
@@ -2226,6 +2427,7 @@ Image_ErrorCode OH_PixelmapNative_CreateEmptyPixelmapUsingAllocator(OH_Pixelmap_
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_Pixelmap_InitializationOptions *options | 创建图像的初始化属性。 |
@@ -2235,6 +2437,7 @@ Image_ErrorCode OH_PixelmapNative_CreateEmptyPixelmapUsingAllocator(OH_Pixelmap_
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 IMAGE_UNSUPPORTED_OPERATION：操作不支持。 IMAGE_TOO_LARGE：图像过大，无法分配内存。 IMAGE_DMA_OPERATION_FAILED：DMA内存操作失败。 IMAGE_ALLOCATOR_MODE_UNSUPPORTED：不支持分配当前内存类型。例如，使用共享内存创建HDR图。 |
@@ -2242,9 +2445,10 @@ Image_ErrorCode OH_PixelmapNative_CreateEmptyPixelmapUsingAllocator(OH_Pixelmap_
 
 
 
-#### OH_PixelmapNative_CreatePixelmapFromSurface()
+### OH_PixelmapNative_CreatePixelmapFromSurface()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_CreatePixelmapFromSurface(const char *surfaceId, size_t length, OH_PixelmapNative **pixelmap)
@@ -2258,6 +2462,7 @@ Image_ErrorCode OH_PixelmapNative_CreatePixelmapFromSurface(const char *surfaceI
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *surfaceId | Surface ID字符串。 |
@@ -2267,6 +2472,7 @@ Image_ErrorCode OH_PixelmapNative_CreatePixelmapFromSurface(const char *surfaceI
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：操作成功。 IMAGE_BAD_PARAMETER：参数无效，例如：surfaceId或pixelmap有误。 IMAGE_CREATE_PIXELMAP_FAILED：Pixelmap创建失败。 |
@@ -2274,9 +2480,10 @@ Image_ErrorCode OH_PixelmapNative_CreatePixelmapFromSurface(const char *surfaceI
 
 
 
-#### OH_PixelmapNative_CreatePixelmapFromSurfaceWithTransformation()
+### OH_PixelmapNative_CreatePixelmapFromSurfaceWithTransformation()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_CreatePixelmapFromSurfaceWithTransformation(const char *surfaceId, size_t length, bool transformEnabled, OH_PixelmapNative **pixelmap)
@@ -2290,6 +2497,7 @@ Image_ErrorCode OH_PixelmapNative_CreatePixelmapFromSurfaceWithTransformation(co
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | const char *surfaceId | 对应Surface的ID字符串。 |
@@ -2299,6 +2507,7 @@ Image_ErrorCode OH_PixelmapNative_CreatePixelmapFromSurfaceWithTransformation(co
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2311,9 +2520,10 @@ Image_ErrorCode OH_PixelmapNative_CreatePixelmapFromSurfaceWithTransformation(co
 
 
 
-#### OH_PixelmapNative_CreatePixelmapFromNativeBuffer()
+### OH_PixelmapNative_CreatePixelmapFromNativeBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_CreatePixelmapFromNativeBuffer(OH_NativeBuffer *nativeBuffer, OH_PixelmapNative **pixelmap)
@@ -2329,6 +2539,7 @@ Image_ErrorCode OH_PixelmapNative_CreatePixelmapFromNativeBuffer(OH_NativeBuffer
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_NativeBuffer *nativeBuffer | 含有Pixelmap数据的NativeBuffer对象。NativeBuffer的用途必须配置CPU访问权限（详情请参考OH_NativeBuffer_Usage），且像素格式必须为RGBA_8888、NV21、NV12、YCBCR_P010或YCRCB_P010。 |
@@ -2337,6 +2548,7 @@ Image_ErrorCode OH_PixelmapNative_CreatePixelmapFromNativeBuffer(OH_NativeBuffer
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：操作成功。 IMAGE_BAD_PARAMETER：参数无效，例如：nativeBuffer或pixelmap有误，像素格式不支持，或未配置CPU访问权限。 IMAGE_CREATE_PIXELMAP_FAILED：Pixelmap创建失败。 |
@@ -2344,9 +2556,10 @@ Image_ErrorCode OH_PixelmapNative_CreatePixelmapFromNativeBuffer(OH_NativeBuffer
 
 
 
-#### OH_PixelmapNative_GetNativeBuffer()
+### OH_PixelmapNative_GetNativeBuffer()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_GetNativeBuffer(OH_PixelmapNative *pixelmap, OH_NativeBuffer **nativeBuffer)
@@ -2360,6 +2573,7 @@ Image_ErrorCode OH_PixelmapNative_GetNativeBuffer(OH_PixelmapNative *pixelmap, O
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *pixelmap | 要获取NativeBuffer的源Pixelmap，内存类型必须是DMA。 |
@@ -2368,6 +2582,7 @@ Image_ErrorCode OH_PixelmapNative_GetNativeBuffer(OH_PixelmapNative *pixelmap, O
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 IMAGE_DMA_NOT_EXIST：不是DMA内存。 IMAGE_DMA_OPERATION_FAILED：DMA内存操作失败。 |
@@ -2375,9 +2590,10 @@ Image_ErrorCode OH_PixelmapNative_GetNativeBuffer(OH_PixelmapNative *pixelmap, O
 
 
 
-#### OH_PixelmapNative_GetMetadata()
+### OH_PixelmapNative_GetMetadata()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_GetMetadata(OH_PixelmapNative *pixelmap, OH_Pixelmap_HdrMetadataKey key, OH_Pixelmap_HdrMetadataValue **value)
@@ -2391,6 +2607,7 @@ Image_ErrorCode OH_PixelmapNative_GetMetadata(OH_PixelmapNative *pixelmap, OH_Pi
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *pixelmap | 被操作的OH_PixelmapNative指针，Pixelmap的内存类型必须是DMA。 |
@@ -2400,6 +2617,7 @@ Image_ErrorCode OH_PixelmapNative_GetMetadata(OH_PixelmapNative *pixelmap, OH_Pi
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 IMAGE_DMA_NOT_EXIST：不存在DMA内存。 IMAGE_COPY_FAILED：如果内存拷贝失败。 |
@@ -2407,9 +2625,10 @@ Image_ErrorCode OH_PixelmapNative_GetMetadata(OH_PixelmapNative *pixelmap, OH_Pi
 
 
 
-#### OH_PixelmapNative_SetMetadata()
+### OH_PixelmapNative_SetMetadata()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_SetMetadata(OH_PixelmapNative *pixelmap, OH_Pixelmap_HdrMetadataKey key, OH_Pixelmap_HdrMetadataValue *value)
@@ -2423,6 +2642,7 @@ Image_ErrorCode OH_PixelmapNative_SetMetadata(OH_PixelmapNative *pixelmap, OH_Pi
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *pixelmap | 被操作的OH_PixelmapNative指针，Pixelmap的内存类型必须是DMA。 |
@@ -2432,6 +2652,7 @@ Image_ErrorCode OH_PixelmapNative_SetMetadata(OH_PixelmapNative *pixelmap, OH_Pi
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 IMAGE_DMA_NOT_EXIST：不存在DMA内存。 IMAGE_COPY_FAILED：如果内存拷贝失败。 |
@@ -2439,9 +2660,10 @@ Image_ErrorCode OH_PixelmapNative_SetMetadata(OH_PixelmapNative *pixelmap, OH_Pi
 
 
 
-#### OH_PixelmapNative_SetColorSpaceNative()
+### OH_PixelmapNative_SetColorSpaceNative()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_SetColorSpaceNative(OH_PixelmapNative *pixelmap, OH_NativeColorSpaceManager *colorSpaceNative)
@@ -2455,6 +2677,7 @@ Image_ErrorCode OH_PixelmapNative_SetColorSpaceNative(OH_PixelmapNative *pixelma
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *pixelmap | 要设置NativeColorSpaceManager的目标Pixelmap。 |
@@ -2463,6 +2686,7 @@ Image_ErrorCode OH_PixelmapNative_SetColorSpaceNative(OH_PixelmapNative *pixelma
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -2470,9 +2694,10 @@ Image_ErrorCode OH_PixelmapNative_SetColorSpaceNative(OH_PixelmapNative *pixelma
 
 
 
-#### OH_PixelmapNative_GetColorSpaceNative()
+### OH_PixelmapNative_GetColorSpaceNative()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_GetColorSpaceNative(OH_PixelmapNative *pixelmap, OH_NativeColorSpaceManager **colorSpaceNative)
@@ -2486,6 +2711,7 @@ Image_ErrorCode OH_PixelmapNative_GetColorSpaceNative(OH_PixelmapNative *pixelma
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *pixelmap | 获取到NativeColorSpaceManager的源Pixelmap。 |
@@ -2494,6 +2720,7 @@ Image_ErrorCode OH_PixelmapNative_GetColorSpaceNative(OH_PixelmapNative *pixelma
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：参数错误。 |
@@ -2501,9 +2728,10 @@ Image_ErrorCode OH_PixelmapNative_GetColorSpaceNative(OH_PixelmapNative *pixelma
 
 
 
-#### OH_PixelmapNative_SetMemoryName()
+### OH_PixelmapNative_SetMemoryName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_SetMemoryName(OH_PixelmapNative *pixelmap, char *name, size_t *size)
@@ -2511,20 +2739,24 @@ Image_ErrorCode OH_PixelmapNative_SetMemoryName(OH_PixelmapNative *pixelmap, cha
 
 **描述**
 
-设置Pixelmap内存名称，便于在内存调试或问题定位时识别该内存。
+设置Pixelmap的内存标识符，便于在内存调试或问题定位时识别该内存。
+
+仅支持DMA和SHARE_MEMORY内存类型的PixelMap设置内存标识符。
 
 **起始版本：** 13
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *pixelmap | 被操作的OH_PixelmapNative指针。 |
-| char *name | 需要被设置的Pixelmap内存名称。DMA内存名字取值范围为[1, 255]，SHARE_MEMORY内存名字取值范围为[1, 244]。单位：字节（Byte）。 |
-| size_t *size | 需要被设置的Pixelmap内存名称的字节大小。DMA内存名字取值范围为[1, 255]，SHARE_MEMORY内存名字取值范围为[1, 244]。单位：字节（Byte）。 |
+| char *name | 需要设置的内存标识符。DMA内存标识符的字符串长度取值范围为[1, 255]字节，SHARE_MEMORY内存标识符的字符串长度取值范围为[1, 244]字节。 |
+| size_t *size | 需要设置的内存标识符的字符串长度。单位：字节（Byte）。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2533,9 +2765,10 @@ Image_ErrorCode OH_PixelmapNative_SetMemoryName(OH_PixelmapNative *pixelmap, cha
 
 
 
-#### OH_PixelmapNative_GetByteCount()
+### OH_PixelmapNative_GetByteCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_GetByteCount(OH_PixelmapNative *pixelmap, uint32_t *byteCount)
@@ -2549,6 +2782,7 @@ Image_ErrorCode OH_PixelmapNative_GetByteCount(OH_PixelmapNative *pixelmap, uint
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *pixelmap | 被操作的Pixelmap指针。 |
@@ -2557,6 +2791,7 @@ Image_ErrorCode OH_PixelmapNative_GetByteCount(OH_PixelmapNative *pixelmap, uint
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：pixelmap或byteCount参数无效。 |
@@ -2564,9 +2799,10 @@ Image_ErrorCode OH_PixelmapNative_GetByteCount(OH_PixelmapNative *pixelmap, uint
 
 
 
-#### OH_PixelmapNative_GetAllocationByteCount()
+### OH_PixelmapNative_GetAllocationByteCount()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_GetAllocationByteCount(OH_PixelmapNative *pixelmap, uint32_t *allocationByteCount)
@@ -2580,6 +2816,7 @@ Image_ErrorCode OH_PixelmapNative_GetAllocationByteCount(OH_PixelmapNative *pixe
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *pixelmap | 被操作的Pixelmap指针。 |
@@ -2588,6 +2825,7 @@ Image_ErrorCode OH_PixelmapNative_GetAllocationByteCount(OH_PixelmapNative *pixe
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：pixelmap或allocationByteCount参数无效。 |
@@ -2595,9 +2833,10 @@ Image_ErrorCode OH_PixelmapNative_GetAllocationByteCount(OH_PixelmapNative *pixe
 
 
 
-#### OH_PixelmapNative_AccessPixels()
+### OH_PixelmapNative_AccessPixels()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_AccessPixels(OH_PixelmapNative *pixelmap, void **addr)
@@ -2615,6 +2854,7 @@ Image_ErrorCode OH_PixelmapNative_AccessPixels(OH_PixelmapNative *pixelmap, void
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *pixelmap | 被操作的Pixelmap指针。 |
@@ -2623,6 +2863,7 @@ Image_ErrorCode OH_PixelmapNative_AccessPixels(OH_PixelmapNative *pixelmap, void
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：执行成功。 IMAGE_BAD_PARAMETER：pixelmap或addr参数无效。 IMAGE_LOCK_UNLOCK_FAILED：内存锁定失败。 |
@@ -2630,9 +2871,10 @@ Image_ErrorCode OH_PixelmapNative_AccessPixels(OH_PixelmapNative *pixelmap, void
 
 
 
-#### OH_PixelmapNative_UnaccessPixels()
+### OH_PixelmapNative_UnaccessPixels()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_UnaccessPixels(OH_PixelmapNative *pixelmap)
@@ -2648,12 +2890,14 @@ Image_ErrorCode OH_PixelmapNative_UnaccessPixels(OH_PixelmapNative *pixelmap)
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *pixelmap | 被操作的Pixelmap指针。 |
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2662,9 +2906,10 @@ Image_ErrorCode OH_PixelmapNative_UnaccessPixels(OH_PixelmapNative *pixelmap)
 
 
 
-#### OH_PixelmapNative_GetUniqueId()
+### OH_PixelmapNative_GetUniqueId()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_GetUniqueId(OH_PixelmapNative *pixelmap, uint32_t *uniqueId)
@@ -2678,6 +2923,7 @@ Image_ErrorCode OH_PixelmapNative_GetUniqueId(OH_PixelmapNative *pixelmap, uint3
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *pixelmap | 获取唯一ID的Pixelmap。 |
@@ -2686,6 +2932,7 @@ Image_ErrorCode OH_PixelmapNative_GetUniqueId(OH_PixelmapNative *pixelmap, uint3
 
 **返回：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Image_ErrorCode | IMAGE_SUCCESS：操作成功。 IMAGE_BAD_PARAMETER：参数无效，例如：pixelmap或uniqueId有误。 |
@@ -2693,9 +2940,10 @@ Image_ErrorCode OH_PixelmapNative_GetUniqueId(OH_PixelmapNative *pixelmap, uint3
 
 
 
-#### OH_PixelmapNative_IsReleased()
+### OH_PixelmapNative_IsReleased()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Image_ErrorCode OH_PixelmapNative_IsReleased(OH_PixelmapNative *pixelmap, bool *released)
@@ -2709,6 +2957,7 @@ Image_ErrorCode OH_PixelmapNative_IsReleased(OH_PixelmapNative *pixelmap, bool *
 
 **参数：**
 
+
 | 参数项 | 描述 |
 | --- | --- |
 | OH_PixelmapNative *pixelmap | 被检测的Pixelmap。 |
@@ -2716,6 +2965,7 @@ Image_ErrorCode OH_PixelmapNative_IsReleased(OH_PixelmapNative *pixelmap, bool *
 
 
 **返回：**
+
 
 | 类型 | 说明 |
 | --- | --- |

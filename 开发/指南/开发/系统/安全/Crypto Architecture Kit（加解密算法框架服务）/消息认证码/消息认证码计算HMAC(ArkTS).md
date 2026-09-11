@@ -1,13 +1,13 @@
 # 消息认证码计算HMAC(ArkTS)
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-compute-hmac
 
 HMAC使用指定的摘要算法，以共享密钥和消息作为输入，生成固定长度的消息认证码，用于检验报文的完整性。HMAC在消息摘要算法基础上增加密钥输入，确保信息正确性。
 
 
-#### 开发步骤
+## 开发步骤
 
 在调用update接口传入数据时，可以[一次性传入所有数据](#hmac一次性传入)，也可以把数据人工分段，然后[分段update](#分段hmac)。对于同一段数据而言，是否分段，计算结果没有差异。对于数据量较大的数据，开发者可以根据实际需求选择是否分段传入。
 
@@ -15,7 +15,7 @@ HMAC使用指定的摘要算法，以共享密钥和消息作为输入，生成�
 
 
 
-#### HMAC（一次性传入）
+### HMAC（一次性传入）
 1. 调用[cryptoFramework.createMac](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#cryptoframeworkcreatemac)，指定摘要算法SHA256，生成消息认证码实例（Mac）。
 2. 调用[cryptoFramework.createSymKeyGenerator](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#cryptoframeworkcreatesymkeygenerator)、[SymKeyGenerator.convertKey](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#convertkey-1)，生成密钥算法为HMAC的对称密钥（SymKey）。
 
@@ -93,7 +93,7 @@ function doHmacBySync() {
 
 
 
-#### 分段HMAC
+### 分段HMAC
 1. 调用[cryptoFramework.createMac](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#cryptoframeworkcreatemac)，指定摘要算法SHA256，生成消息认证码实例（Mac）。
 2. 调用[cryptoFramework.createSymKeyGenerator](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#cryptoframeworkcreatesymkeygenerator)和[SymKeyGenerator.convertKey](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#convertkey-1)，生成密钥算法为HMAC的对称密钥（SymKey）。
 
@@ -183,7 +183,7 @@ function doLoopHmacBySync() {
 
 
 
-#### HMAC（HmacSpec作为参数传入）
+### HMAC（HmacSpec作为参数传入）
 1. 调用[cryptoFramework.createMac](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#cryptoframeworkcreatemac)，指定消息认证码算法HMAC，指定摘要算法SHA256，生成消息认证码实例（Mac）。
 2. 调用[cryptoFramework.createSymKeyGenerator](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#cryptoframeworkcreatesymkeygenerator)和[SymKeyGenerator.convertKey](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#convertkey-1)，生成密钥算法为HMAC的对称密钥（SymKey）。
 
@@ -193,7 +193,7 @@ function doLoopHmacBySync() {
 5. 调用[Mac.doFinal](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#dofinal-2)，获取Mac计算结果。
 6. 调用[Mac.getMacLength](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#getmaclength)，获取Mac消息认证码的长度，单位为字节。
 
- - 以使用await方式一次性传入数据，获取消息认证码计算结果为例：        
+ - 以使用await方式一次性传入数据，获取消息认证码计算结果为例：       
 ```ArkTS
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 import { buffer } from '@kit.ArkTS';

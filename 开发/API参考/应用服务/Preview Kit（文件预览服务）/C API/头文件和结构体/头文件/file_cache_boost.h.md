@@ -1,11 +1,12 @@
 # file_cache_boost.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/openfileboost-file__cache__boost_8h
 **支持设备：** PC/2in1 | Tablet
 
-#### 概述
+## 概述
+
 
 **支持设备：** PC/2in1 | Tablet
 
@@ -23,16 +24,19 @@
  
   
 
-#### 汇总
+## 汇总
+
 
 **支持设备：** PC/2in1 | Tablet
 
   
 
-#### 类型定义
+### 类型定义
+
 
 **支持设备：** PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | typedef struct CacheKey CacheKey | 开发者传入的key相关数据结构的对外声明，开发者只需在序列化函数SerializeFunc和反序列化函数DeserializeFunc调用WriteFunc和ReadFunc时传入即可。 |
@@ -44,10 +48,12 @@
  
   
 
-#### 枚举
+### 枚举
+
 
 **支持设备：** PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | FileCacheBoost_ErrCode { FILE_CACHE_BOOST_SUCCESS = 0, FILE_CACHE_BOOST_ERROR_INVALID_PARAM = 401, FILE_CACHE_BOOST_ERROR_NOT_SUPPORTED = 801, FILE_CACHE_BOOST_ERROR_NOMEM = 1017220001, FILE_CACHE_BOOST_ERROR_INTERNAL_ERROR = 1017220002, FILE_CACHE_BOOST_ERROR_KEY_NOT_FOUND = 1017220003, FILE_CACHE_BOOST_ERROR_KEY_EXIST = 1017220004, FILE_CACHE_BOOST_ERROR_NOT_DIR = 1017220005, FILE_CACHE_BOOST_ERROR_IO = 1017220006, FILE_CACHE_BOOST_ERROR_IO_CANCELED = 1017220007, FILE_CACHE_BOOST_ERROR_NOT_INITIALIZED = 1017220008, FILE_CACHE_BOOST_ERROR_EXCEED_LIMIT = 1017220009， FILE_CACHE_BOOST_ERROR_IO_CANCEL_FAILED = 1017220010 } | 文件缓存加速相关的错误码定义。 |
@@ -56,10 +62,12 @@
  
   
 
-#### 函数
+### 函数
+
 
 **支持设备：** PC/2in1 | Tablet
  
+
 | 名称 | 描述 |
 | --- | --- |
 | bool HMS_Preview_FileCacheBoost_IsSupported (void) | 查询当前设备是否支持文件缓存加速功能。建议开发者在使用文件缓存加速功能之前，先调用本接口检查当前设备是否支持文件缓存加速功能。确认支持后再使用其他文件缓存加速接口如HMS_FileCacheBoost_Init等。 |

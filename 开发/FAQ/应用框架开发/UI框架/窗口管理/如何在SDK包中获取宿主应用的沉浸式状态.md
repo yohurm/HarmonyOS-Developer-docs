@@ -36,7 +36,7 @@ export function getFullScreenStatus(): string {
   let winStage: window.WindowStage = AppStorage.get('windowStage') as window.WindowStage;
   let isLayoutFullScreen = winStage.getMainWindowSync().getWindowProperties().isLayoutFullScreen;
   console.info(isLayoutFullScreen ? 'isFullScreen' : 'isNotFullScreen');
-  // 返回结果给应用页，如不需要则不返回。在应用侧直接调用该函数。
+ <em> // 返回结果给应用页，如不需要则不返回。在应用侧直接调用该函数。</em>
   return (isLayoutFullScreen ? 'isFullScreen' : 'isNotFullScreen');
 }
 ```
@@ -51,15 +51,15 @@ import { common } from '@kit.AbilityKit';
 @Entry
 @Component
 struct Index {
-  @State isFullScreen: boolean = false; // 切换屏幕全屏
-  @State state: string = ''; // 存储HAR中获取沉浸式状态
+  @State isFullScreen: boolean = false;<em> // 切换屏幕全屏</em>
+  @State state: string = '';<em> // 存储HAR中获取沉浸式状态</em>
   promptAction: PromptAction = this.getUIContext().getPromptAction();
   context = this.getUIContext().getHostContext() as common.UIAbilityContext;
 
   aboutToAppear(): void {
-    // 通过AppStorage.setAndLink存储WindowStage
+   <em> // 通过AppStorage.setAndLink存储WindowStage</em>
     AppStorage.setAndLink('windowStage', this.context.windowStage);
-    // 进入应用调用HAR方法获取屏幕状态
+   <em> // 进入应用调用HAR方法获取屏幕状态</em>
     this.state = getFullScreenStatus();
     this.promptAction.showToast({
       message: this.state,
@@ -74,10 +74,10 @@ struct Index {
           .fontSize(30)
           .fontWeight(FontWeight.Bold);
         Button('changeFullScreenStatus').onClick(async () => {
-          // 切换屏幕状态
+        <em>  // 切换屏幕状态</em>
           this.isFullScreen = !this.isFullScreen;
           await this.context.windowStage.getMainWindowSync().setWindowLayoutFullScreen(this.isFullScreen);
-          // 调用SDK方法获取屏幕状态
+       <em>   // 调用SDK方法获取屏幕状态</em>
           this.state = getFullScreenStatus();
           this.promptAction.showToast({
             message: this.state,

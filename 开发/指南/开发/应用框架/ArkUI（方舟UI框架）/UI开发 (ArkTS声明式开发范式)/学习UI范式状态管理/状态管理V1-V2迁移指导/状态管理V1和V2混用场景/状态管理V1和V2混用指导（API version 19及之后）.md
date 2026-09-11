@@ -1,10 +1,10 @@
 # 状态管理V1和V2混用指导（API version 19及之后）
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-mixusage
 
-#### 概述
+## 概述
 
 为了帮助开发者顺利地向状态管理V2迁移，从API version 19开始，减少了对状态管理V1和V2混用场景的约束。具体变更可参考[限制条件](#限制条件)。同时提供新的方法[enableV2Compatibility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-statemanagement#enablev2compatibility19)和[makeV1Observed](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-statemanagement#makev1observed19)来帮助开发者解决在迁移过程中遇到的混用问题。
 
@@ -14,18 +14,18 @@
 
 
 
-#### 限制条件
+## 限制条件
 1. V1装饰器不能和[@ObservedV2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-observedv2-and-trace)一起使用。因为@ObservedV2/@Trace有自己独立的观察能力，不仅可以在[@ComponentV2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-custom-components#componentv2)中使用，也可以独立在[@Component](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-custom-components#component)中使用，状态管理框架不希望其观察能力和V1的观察能力混合使用，所以依旧维持禁止现状。
 2. V2->V1，V1不支持用装饰器接收@ObservedV2装饰的class，否则编译报错。
 3. V1中[@Link](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-link)遵循其原本初始化规则，只能被V1状态变量初始化，详情见[@Link初始化规则示意图](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-link#变量的传递访问规则说明)。因为V1中[@Link](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-link)仅能和V1状态变量建立双向同步关系，而V2中如果想实现双向同步，可以使用@Param、@Event，具体例子见[@Link -> @Param/@Event迁移场景](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-migration-inner-component#link---paramevent)。
 
 
 
-#### 新增接口
+## 新增接口
 
 
 
-#### makeV1Observed
+### makeV1Observed
 
 [makeV1Observed](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-statemanagement#makev1observed19)将不可观察的对象包装成状态管理V1可观察的对象，能力等同于@Observed，其返回值可初始化@ObjectLink。
 
@@ -51,7 +51,7 @@
 
 
 
-#### enableV2Compatibility
+### enableV2Compatibility
 
 [enableV2Compatibility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-statemanagement#enablev2compatibility19)将V1的状态变量使能V2的观察能力，即让V1状态变量可以在@ComponentV2中观察到变化。
 
@@ -76,7 +76,7 @@
 
 
 
-#### 混用规则
+## 混用规则
 
  - V1->V2传递复杂类型数据，需要调用enableV2Compatibility，否则无法实现V1和V2的数据联动，建议在V2组件的构造处调用，否则当变量被整体赋值时，需要再次手动调用enableV2Compatibility。
 
@@ -110,7 +110,7 @@ SubComponentV2({param: this.state})
  - 在V2中，UIUtils.enableV2Compatibility(UIUtils.makeV1Observed())可以深度观察，但是需要每一层都是@Observed装饰的class，或者是makeV1Observed的返回值。
  - 不使用enableV2Compatibility和makeV1Observed会导致双重代理问题，使同一状态对象被V1和V2两套状态管理体系同时生成代理对象，从而引起监听逻辑冲突。
 
-      - 当数据已使用V2观察能力，即调用UIUtils.enableV2Compatibility后，会将新的数据默认使用V2观察能力，但需要开发者确保新增数据是@Observed装饰的class，或者是makeV1Observed的返回值。完整例子可见[传递嵌套类型（V1->V2）](#传递嵌套类型v1-v2)、[传递嵌套类型（V2->V1）](#传递嵌套类型v2-v1)。
+            - 当数据已使用V2观察能力，即调用UIUtils.enableV2Compatibility后，会将新的数据默认使用V2观察能力，但需要开发者确保新增数据是@Observed装饰的class，或者是makeV1Observed的返回值。完整例子可见[传递嵌套类型（V1->V2）](#传递嵌套类型v1-v2)、[传递嵌套类型（V2->V1）](#传递嵌套类型v2-v1)。
 
   
 ```text
@@ -127,16 +127,16 @@ arr.push(UIUtils.makeV1Observed(new ArrayItem())); // 新增数据是V1的状态
 开发者在使用这两个接口混用V1V2时，可遵循下图逻辑。
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/jlUT54t4QqSvlaZKdGVitw/zh-cn_image_0000002704271919.png?HW-CC-KV=V1&HW-CC-Date=20260813T095708Z&HW-CC-Expire=86400&HW-CC-Sign=DDBFA1074EE5600BACB59044F521A0BDA640D15B82C367F77267FE30D6650939)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/iAThyR4KSSSGHxKg51OLnw/zh-cn_image_0000002717610182.png?HW-CC-KV=V1&HW-CC-Date=20260911T072515Z&HW-CC-Expire=86400&HW-CC-Sign=C856BDC3B40CAB5715BE3A7E7CD3DF8C1D1C5B426EAAF8EED846E7DFADCC0517)
 
 
 
 
-#### V1中使用V2的自定义组件
+## V1中使用V2的自定义组件
 
 
 
-#### 传递class类型（V1->V2）
+### 传递class类型（V1->V2）
 
 **普通class**
 
@@ -186,7 +186,7 @@ struct CompV2 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/wQeW7ru_Tjy0-DsrJ1HBtA/zh-cn_image_0000002674472120.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095708Z&HW-CC-Expire=86400&HW-CC-Sign=34189C441CF55EF8F0718C9FAFCF3F7F917D8D0A68F91567D453933E1998DE7B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/ZeI6CgsRRHG_MxbDFUa8wg/zh-cn_image_0000002747290133.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072515Z&HW-CC-Expire=86400&HW-CC-Sign=89EFCC6A5367B220DE261B1048D572B63099DCAE1A8A168A358300D638A6D328)
 
 
 **@Observed+@Track装饰的class**
@@ -196,7 +196,7 @@ class类被@Observed修饰，从V1向V2传递使用enableV2Compatibility接口�
 下面的例子中：
 
  - name是@Track装饰的属性，其在V1和V2均是可观察的。
- - count是非@Track装饰的属性，其在V1和V2的UI中使用均是非法的。
+ - count是非@Track装饰的属性，其在V1的UI中使用是非法的，在V2的UI中使用不会响应更新。
 
   
 在V1中，如果将非@Track装饰的属性使用在UI中，是非法行为，会有运行时报错。
@@ -261,12 +261,12 @@ struct CompV2 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/ichMnrsPRfWPsw3bpXlKGA/zh-cn_image_0000002704392089.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095708Z&HW-CC-Expire=86400&HW-CC-Sign=D8CF73F39493F717FBD93D77CD7CD38690DAE74127C2CC0DCFAF4248E0DD3E56)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/Zuu2GEdKSkmGVPEG-sB_Tg/zh-cn_image_0000002747210051.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072515Z&HW-CC-Expire=86400&HW-CC-Sign=FCD778FB97A720C4AD446CA8B4184EE6421C8A77F705841FAD4028012D6C3FF0)
 
 
 
 
-#### 传递内置类型（V1->V2）
+### 传递内置类型（V1->V2）
 
 以Array为例。建议调用enableV2Compatibility和makeV1Observed，避免造成V1和V2双重代理的问题。
 
@@ -316,12 +316,12 @@ struct ArrayCompV2 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/Mige3rw5TJCjc9uZBEIJtg/zh-cn_image_0000002674631966.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095708Z&HW-CC-Expire=86400&HW-CC-Sign=1CF2E6D226605AA8F02266C3D9830C28D51F756068C69602F4C80DE79B6F011F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/-QcOt1qCQv62CwV6fQOsrA/zh-cn_image_0000002717770118.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072515Z&HW-CC-Expire=86400&HW-CC-Sign=15F4551A111927884EB29F6D517F7366D23B83E31B6174987FB8F45FCBC6AD65)
 
 
 
 
-#### 传递二维数组（V1->V2）
+### 传递二维数组（V1->V2）
 
 下面的例子中：
 
@@ -401,12 +401,12 @@ struct IndexPage {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/4upIlEFeQP-UVOu4edhjlg/zh-cn_image_0000002704271921.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095708Z&HW-CC-Expire=86400&HW-CC-Sign=1B2193C51A29D246BE4A4567790CA4792A23F6E29247BB33F10215A5D7B5CD81)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/nhW0g4hMQu2G1_qMd1x3EA/zh-cn_image_0000002717610184.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072515Z&HW-CC-Expire=86400&HW-CC-Sign=A845E251F1B751CE3334290B20181496CF894F90528F12573B848FFB87DEBBB7)
 
 
 
 
-#### 传递嵌套类型（V1->V2）
+### 传递嵌套类型（V1->V2）
 
 开发者在状态管理V1中基于@Observed和@ObjectLink实现深度观测，以下代码示例是嵌套场景：
 
@@ -547,7 +547,7 @@ struct NestedClassV2 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/5bzKgUdIRIaiUIlX1RD-dA/zh-cn_image_0000002674472122.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095708Z&HW-CC-Expire=86400&HW-CC-Sign=F743F29A846C349AC0E3B7040D4D661CC24BE56468545D4EBAEBDD947BD3FC6A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/9t7-RyyvTzmwEEfpdt1xSA/zh-cn_image_0000002747290135.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072515Z&HW-CC-Expire=86400&HW-CC-Sign=689794947765CCD3BD881AF3B3A3BC899CD89037443C5B074EB5E25F2B057D70)
 
 
 以上例子刷新行为可总结为：
@@ -559,11 +559,11 @@ struct NestedClassV2 {
 
 
 
-#### V2中使用V1的自定义组件
+## V2中使用V1的自定义组件
 
 
 
-#### 传递class类型（V2->V1）
+### 传递class类型（V2->V1）
 
 **普通class**
 
@@ -617,7 +617,7 @@ struct CompV1 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/3spkXNnZSw2UuQAGPd9lhQ/zh-cn_image_0000002704392091.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095708Z&HW-CC-Expire=86400&HW-CC-Sign=72770C1F653ABBD5E70558134412A717267C306A81052239CF82338D6FE6F34E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/dKfsX08NQ2-b8ZZJJFisdA/zh-cn_image_0000002747210053.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072515Z&HW-CC-Expire=86400&HW-CC-Sign=B1838880B5FE4E31EF00B00E7C31094472C3163DCA03794701F8CA61C972743B)
 
 
 **@Observed+@Track装饰的class**
@@ -685,12 +685,12 @@ struct CompV1 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/pBYkBmzdQ_WUJtad-uts1g/zh-cn_image_0000002674631968.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095708Z&HW-CC-Expire=86400&HW-CC-Sign=737A2C3ABF53719BB4F4197BE8BBF478B3E9BC41BDE4F13F8187E8D4AC0597B7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/fotK3dZhQLCHRSqBKsfeLw/zh-cn_image_0000002717770120.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072515Z&HW-CC-Expire=86400&HW-CC-Sign=57B4B6A926AE64D2FDAFEA560F4A347566E2F8AC77144E52A60648E84E3FC175)
 
 
 
 
-#### 传递内置类型（V2->V1）
+### 传递内置类型（V2->V1）
 
 如果在V2中定义@Local arr: Array&lt;number&gt; = UIUtils.enableV2Compatibility(UIUtils.makeV1Observed([1, 2, 3]))，由于用了@Local装饰器V2可以观察属性的变化。但是没有调用enableV2Compatibility和makeV1Observed，V1无法观察属性的变化。所以正确做法调用UIUtils.enableV2Compatibility(UIUtils.makeV1Observed())，使V1中可以观察属性的变化。
 
@@ -738,12 +738,12 @@ struct ArrayCompV1 {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/nwxDDsBwSSy2nx_D-8H2rw/zh-cn_image_0000002704271923.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095708Z&HW-CC-Expire=86400&HW-CC-Sign=9C0F4810B96FD106C32AFDB36B8E53A2179F98C173969EBA2C991F3DC917DEAE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/J48iIWx_RE2GTElgyBAoyA/zh-cn_image_0000002717610186.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072515Z&HW-CC-Expire=86400&HW-CC-Sign=47BEAC5FD113AB9B1473FF20766E0499F50A06CB9EE73DA2614241916AB7BC53)
 
 
 
 
-#### 传递二维数组（V2->V1）
+### 传递二维数组（V2->V1）
 
 下面的例子中：
 
@@ -824,12 +824,12 @@ struct IndexPage {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/Nha0t8OmT3SonchndJbozg/zh-cn_image_0000002674472124.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095708Z&HW-CC-Expire=86400&HW-CC-Sign=52C55DF74E3B60CD28EBD4B418380700F3F42A73EA3B4D34C92B717CCB252F5C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/Lv48oBSlQuqkTg1khiWc1Q/zh-cn_image_0000002747290137.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072515Z&HW-CC-Expire=86400&HW-CC-Sign=FA8C38BD8D623C0F39154B62909CF2A50CE0AE0ADBAC3FED27501CF2032E6B36)
 
 
 
 
-#### 传递嵌套类型（V2->V1）
+### 传递嵌套类型（V2->V1）
 
 下面例子中：
 
@@ -966,4 +966,4 @@ struct NestedClassV1ObjectLinkArrayItem {
 ```
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/_4mU6QR4SI-OWIHHhq0TbQ/zh-cn_image_0000002704392093.gif?HW-CC-KV=V1&HW-CC-Date=20260813T095708Z&HW-CC-Expire=86400&HW-CC-Sign=A19D2723318E450A170C848B8250AA7B0351EF2CAF95E57247350AB854DD0E66)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/EkmWdCL1TRS6WX4z0LWGYw/zh-cn_image_0000002747210055.gif?HW-CC-KV=V1&HW-CC-Date=20260911T072515Z&HW-CC-Expire=86400&HW-CC-Sign=191B8D8A3BBA0D2D1596CD25DB0BACC3A2508B7FC8DB27ADF6D04EDB95A8F6EA)

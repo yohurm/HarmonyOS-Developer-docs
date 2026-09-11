@@ -1,10 +1,10 @@
 # ohpm仓库接口协议
 
-更新时间：2026-07-28 12:07:32
+更新时间：2026-08-29 09:41:34
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-interface-protocol
 
-#### 概述
+## 概述
 
  
 ohpm客户端与ohpm-repo私仓通过REST API交互，目前一共如下几种API：
@@ -29,7 +29,7 @@ ohpm客户端在访问ohpm-repo时，支持公私钥和Access Token两种认证�
 
  
 
-#### Fetch Metadata
+## Fetch Metadata
 
  
 返回指定包的metadata元数据。
@@ -38,6 +38,7 @@ ohpm客户端在访问ohpm-repo时，支持公私钥和Access Token两种认证�
 GET <router-prefix>/:group?/:package_name
 ```
   
+
 | 属性 | 类型 | 必填项 | 描述 |
 | --- | --- | --- | --- |
 | group | string | 否 | 组织名，以@开头，比如@ohos |
@@ -58,6 +59,7 @@ authorization: NjJmNjFhODI3N2ZlNDUwMzlhYmUwNjQxZjQ3ZTNhZDU=
  
 请求头包含两个字段，描述如下：
   
+
 | 属性 | 类型 | 必填项 | 描述 |
 | --- | --- | --- | --- |
 | authorization | string | 是 | 填写只读或者读写AccessToken，选填项，当ohpm-repo配置不支持匿名访问时必须填写。 |
@@ -82,6 +84,7 @@ tag版本号："tag:t310"
  
 响应失败有两个字段，描述如下：
   
+
 | 属性 | 类型 | 必填项 | 描述 |
 | --- | --- | --- | --- |
 | code | number | 是 | 响应失败错误码 |
@@ -154,7 +157,7 @@ tag版本号："tag:t310"
 }
 ```
  
-如请求头通过x-ohpm-metadata-type携带value值"install+v1"即可拉取精简元数据，最外层对象只保留name、packageType、versions、dist-tags四个字段，versions版本对象层只保留name、version、dependencies、dynamicDependencies、dist、packageType、debug、_ohpmVersion  8个字段；上述返回成功示例如下：
+如请求头通过x-ohpm-metadata-type携带value值"install+v1"即可拉取精简元数据，最外层对象只保留name、packageType、versions、dist-tags四个字段，versions版本对象层只保留name、version、dependencies、dynamicDependencies、dist、packageType、debug、_ohpmVersion字段。上述返回成功示例如下：
 ```text
 {
   "name": "@test/package1",
@@ -190,11 +193,12 @@ tag版本号："tag:t310"
  
  
 
-#### metadata响应数据说明
+### metadata响应数据说明
 
  
 响应数据中包含八个顶级字段，描述如下：
   
+
 | 属性 | 类型 | 描述 |
 | --- | --- | --- |
 | _id | string | 包名，并用作数据库的主键ID |
@@ -213,6 +217,7 @@ tag版本号："tag:t310"
  
 顶级字段中versions字段包含包的所有版本数据，描述如下：
   
+
 | 属性 | 类型 | 描述 |
 | --- | --- | --- |
 | _id | string | 包名@包的版本号，如：@myscope/myhsplib@1.0.0 |
@@ -256,7 +261,7 @@ integrity: .har文件的[SSRI](https://w3c.github.io/webappsec/specs/subresource
 12. resolved_hsp: .hsp文件的下载地址。
  
 
-#### Login
+## Login
 
  
 客户端登录，获得上传包，下架包和编辑标签tag时所需的token。
@@ -265,6 +270,7 @@ integrity: .har文件的[SSRI](https://w3c.github.io/webappsec/specs/subresource
 POST <router-prefix>/login
 ```
   
+
 | 属性 | 类型 | 必填项 | 描述 |
 | --- | --- | --- | --- |
 | ohpm-repo仓库地址 | string | 是 | 实际搭建的ohpm-repo仓库域名或IP地址 |
@@ -293,6 +299,7 @@ command: login；
  
 请求头包含四个字段，描述如下：
   
+
 | 属性 | 类型 | 描述 |
 | --- | --- | --- |
 | command | string | 命令的名称，选填 |
@@ -300,6 +307,7 @@ command: login；
  
 请求体包含五个字段，描述如下：
   
+
 | 属性 | 类型 | 描述 |
 | --- | --- | --- |
 | version | string | 协议版本，必选 |
@@ -328,6 +336,7 @@ command: login；
  
 成功响应体包含2个字段，描述如下：
   
+
 | 属性 | 类型 | 描述 |
 | --- | --- | --- |
 | success | boolean | 响应是否成功，值为true |
@@ -345,6 +354,7 @@ command: login；
  
 失败响应体包含2个字段，描述如下：
   
+
 | 属性 | 类型 | 描述 |
 | --- | --- | --- |
 | success | boolean | 响应是否成功，值为false |
@@ -356,17 +366,18 @@ command: login；
 
  
 
-#### Publish
+## Publish
 
  
 
-#### 上传一个HAR/HSP包到ohpm-repo私仓中
+### 上传一个HAR/HSP包到ohpm-repo私仓中
 
  
 ```text
 PUT <router-prefix>/:package_name
 ```
   
+
 | 属性 | 类型 | 必填项 | 描述 |
 | --- | --- | --- | --- |
 | package_name | string | 是 | 包名 |
@@ -441,6 +452,7 @@ Authorization：<token>
  
 请求头包含五个字段，描述如下：
   
+
 | 属性 | 类型 | 描述 |
 | --- | --- | --- |
 | command | string | 命令的名称，选填 |
@@ -449,6 +461,7 @@ Authorization：<token>
  
 请求体数据中包含八个顶级字段，描述如下：
   
+
 | 属性 | 类型 | 描述 |
 | --- | --- | --- |
 | _id | string | 包名，并用作数据库的主键ID |
@@ -484,7 +497,7 @@ Authorization：<token>
 ```
  
 
-#### 流式上传一个HAR/HSP到ohpm-repo
+### 流式上传一个HAR/HSP到ohpm-repo
 
  
 ohpm客户端（5.0.1版本）和ohpm-repo（5.0.1版本）开始支持使用流式上传，当上传的三方包大小超过阈值（默认5M，可在.ohpmrc中自定义配置）时，ohpm会优先调用流式上传接口进行上传。
@@ -493,6 +506,7 @@ ohpm客户端（5.0.1版本）和ohpm-repo（5.0.1版本）开始支持使用流
 POST <router-prefix>/stream/:package_name
 ```
   
+
 | 属性 | 类型 | 必填项 | 描述 |
 | --- | --- | --- | --- |
 | package_name | string | 是 | 包名。若包名中包含组织名，则package_name为包名进行url编码后的结果，比如：当包名为@myscope/mypkg时，package_name为@myscope%2fmypkg。 |
@@ -562,6 +576,7 @@ Authorization：<token>
  
 请求头包含五个字段，描述如下：
   
+
 | 属性 | 类型 | 描述 |
 | --- | --- | --- |
 | command | string | 命令的名称，选填 |
@@ -570,6 +585,7 @@ Authorization：<token>
  
 请求体的metadata数据中包含九个顶级字段，描述如下：
   
+
 | 属性 | 类型 | 描述 |
 | --- | --- | --- |
 | _id | string | 包名，并用作数据库的主键ID |
@@ -606,7 +622,7 @@ Authorization：<token>
 ```
  
 
-#### Unpublish
+## Unpublish
 
  
 从ohpm-repo中下架一个HAR/HSP包 （下架一个包的某个版本，或是整个包）。
@@ -615,6 +631,7 @@ Authorization：<token>
 DELETE <router-prefix>/:package_name
 ```
   
+
 | 属性 | 类型 | 必填项 | 描述 |
 | --- | --- | --- | --- |
 | package_name | string | 是 | 包名 |
@@ -641,6 +658,7 @@ Authorization：<token>
  
 请求头包含五个字段，描述如下：
   
+
 | 属性 | 类型 | 描述 |
 | --- | --- | --- |
 | command | string | 命令的名称，选填 |
@@ -666,7 +684,7 @@ Authorization：<token>
 ```
  
 
-#### Ping
+## Ping
 
  
 检测与ohpm-repo仓库的网络连通性。
@@ -704,11 +722,11 @@ GET <router-prefix>/-/ping
 ```
  
 
-#### DistTags
+## DistTags
 
  
 
-#### 新增tag
+### 新增tag
 
  
 为包添加tag。
@@ -717,6 +735,7 @@ GET <router-prefix>/-/ping
 POST <router-prefix>/-/package/:package_name/dist-tags/:tag
 ```
   
+
 | 属性 | 类型 | 必填项 | 描述 |
 | --- | --- | --- | --- |
 | package_name | string | 是 | 包名 |
@@ -744,6 +763,7 @@ Authorization：<token>
  
 请求头包含五个字段，描述如下：
   
+
 | 属性 | 类型 | 描述 |
 | --- | --- | --- |
 | command | string | 命令的名称，选填 |
@@ -769,7 +789,7 @@ Authorization：<token>
 ```
  
 
-#### 更新tag
+### 更新tag
 
  
 修改包tag对应的版本号。
@@ -778,6 +798,7 @@ Authorization：<token>
 PUT <router-prefix>/-/package/:package_name/dist-tags/:tag
 ```
   
+
 | 属性 | 类型 | 必填项 | 描述 |
 | --- | --- | --- | --- |
 | package_name | string | 是 | 包名 |
@@ -801,6 +822,7 @@ Authorization：<token>
  
 请求头包含五个字段，描述如下：
   
+
 | 属性 | 类型 | 描述 |
 | --- | --- | --- |
 | command | string | 命令的名称，选填 |
@@ -826,7 +848,7 @@ Authorization：<token>
 ```
  
 
-#### 删除tag
+### 删除tag
 
  
 删除包的tag。
@@ -835,6 +857,7 @@ Authorization：<token>
 DELETE <router-prefix>/-/package/:package_name/dist-tags/:tag
 ```
   
+
 | 属性 | 类型 | 必填项 | 描述 |
 | --- | --- | --- | --- |
 | package_name | string | 是 | 包名 |
@@ -856,6 +879,7 @@ Authorization：<token>
  
 请求头包含五个字段，描述如下：
   
+
 | 属性 | 类型 | 描述 |
 | --- | --- | --- |
 | command | string | 命令的名称，选填 |
@@ -881,7 +905,7 @@ Authorization：<token>
 ```
  
 
-#### Versions
+## Versions
 
 用于查看三方库版本列表，查询结果按照发布时间升序排列，以列表形式进行分页展示。
  
@@ -889,6 +913,7 @@ Authorization：<token>
 GET <router-prefix>/:group?/:package_name/versions?pageNum=1&pageSize=10
 ```
   
+
 | 属性 | 类型 | 必填项 | 描述 |
 | --- | --- | --- | --- |
 | group | string | 否 | 组织名，以@开头，比如@ohos |
@@ -918,6 +943,7 @@ authorization: NjJmNjFhODI3N2ZlNDUwMzlhYmUwNjQxZjQ3ZTNhZDU=
  
 请求头包含一个字段，描述如下：
   
+
 | 属性 | 类型 | 描述 |
 | --- | --- | --- |
 | authorization | string | 填写只读或者读写AccessToken，选填项，当ohpm-repo配置不支持匿名访问时必须填写。 |
@@ -934,6 +960,7 @@ authorization: NjJmNjFhODI3N2ZlNDUwMzlhYmUwNjQxZjQ3ZTNhZDU=
  
 响应失败有两个字段，描述如下：
   
+
 | 属性 | 类型 | 必填项 | 描述 |
 | --- | --- | --- | --- |
 | code | number | 是 | 响应失败错误码 |
@@ -965,7 +992,7 @@ authorization: NjJmNjFhODI3N2ZlNDUwMzlhYmUwNjQxZjQ3ZTNhZDU=
 ```
  
 
-#### CheckUpdate
+## CheckUpdate
 
 用于查询当前引入的三方库是否有更新，查询结果会过滤掉不存在的包以列表形式展示，一次最多可查询50个库。
  
@@ -976,6 +1003,7 @@ POST <router-prefix>/checkUpdate
  
 请求体body为一个array数组，数组最大长度为50，body的item是一个json对象，包含五个字段，描述如下：
   
+
 | 属性 | 类型 | 必填项 | 描述 |
 | --- | --- | --- | --- |
 | packageName | string | 是 | 包名 (含组织部分) |
@@ -1010,6 +1038,7 @@ Authorization: NjJmNjFhODI3N2ZlNDUwMzlhYmUwNjQxZjQ3ZTNhZDU=
  
 请求头包含一个字段，描述如下：
   
+
 | 属性 | 类型 | 描述 |
 | --- | --- | --- |
 | Authorization | string | 填写只读或者读写AccessToken，选填项。 ohpm-repo不支持匿名访问时，必填项。 |
@@ -1041,6 +1070,7 @@ Authorization: NjJmNjFhODI3N2ZlNDUwMzlhYmUwNjQxZjQ3ZTNhZDU=
  
 响应体包含两个字段，描述如下：
   
+
 | 属性 | 类型 | 描述 |
 | --- | --- | --- |
 | code | string | 状态码 |
@@ -1049,6 +1079,7 @@ Authorization: NjJmNjFhODI3N2ZlNDUwMzlhYmUwNjQxZjQ3ZTNhZDU=
  
 body的item是一个json对象，包含十二个字段，描述如下：
   
+
 | 属性 | 类型 | 描述 |
 | --- | --- | --- |
 | packageName | string | 包名(含组织部分) |
@@ -1065,7 +1096,7 @@ body的item是一个json对象，包含十二个字段，描述如下：
 | security | array | 该包当前使用版本（installVersion）的安全风险信息，私仓不涉及，固定为[] |
  
  
-**响应失败示例****：**
+**响应失败示例：**
 ```text
 {
     "code": 1001,
@@ -1075,8 +1106,9 @@ body的item是一个json对象，包含十二个字段，描述如下：
  
  
 
-#### 仓库响应码说明
+## 仓库响应码说明
  
+
 | 响应码 | 范围 | 说明 |
 | --- | --- | --- |
 | 200 | 仓库所有接口 | 成功 |
@@ -1089,7 +1121,7 @@ body的item是一个json对象，包含十二个字段，描述如下：
  
  
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/LlOqNkXWRIuW65C-soerLQ/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260730T071812Z&HW-CC-Expire=86400&HW-CC-Sign=7E0F5C8997DC565C4BBC82A743EAC4A0F3321CCDEA579A5AFD72E4D20E68A13B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/F6ogeZF1Q7qTxDN_5HiEJw/caution_3.0-zh-cn.png?HW-CC-KV=V1&HW-CC-Date=20260911T072815Z&HW-CC-Expire=86400&HW-CC-Sign=F475DAB96785A686D34DC3B768E0FC208AED1E43C52B46394971FA4A5B99DB38)
  
 
 由于[流式上传接口](#section08863329310)在ohpm 5.0.1版本才开始支持，当ohpm调用该接口时，若返回的响应状态码为404时，ohpm客户端会再次调用[上传接口](#section444511511524)上传。为了保证与ohpm客户端的兼容性，请确保当访问仓库不存在的接口仓库的响应状态码为404。

@@ -1,13 +1,14 @@
 # Rcp_EventsHandler
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_rcp___events_handler
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 监听不同HTTP事件的回调函数。
  
@@ -19,16 +20,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 成员变量
+### 成员变量
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | Rcp_OnDataReceiveCallback onDataReceive | 收到响应体时的回调函数。 |
@@ -41,15 +45,17 @@
  
   
 
-#### 结构体成员变量说明
+## 结构体成员变量说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### onCanceled
+### onCanceled
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Rcp_OnVoidCallback Rcp_EventsHandler::onCanceled
@@ -61,9 +67,10 @@ Rcp_OnVoidCallback Rcp_EventsHandler::onCanceled
  
   
 
-#### onDataEnd
+### onDataEnd
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Rcp_OnVoidCallback Rcp_EventsHandler::onDataEnd
@@ -75,9 +82,10 @@ Rcp_OnVoidCallback Rcp_EventsHandler::onDataEnd
  
   
 
-#### onDataReceive
+### onDataReceive
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Rcp_OnDataReceiveCallback Rcp_EventsHandler::onDataReceive
@@ -89,9 +97,10 @@ Rcp_OnDataReceiveCallback Rcp_EventsHandler::onDataReceive
  
   
 
-#### onDownloadProgress
+### onDownloadProgress
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Rcp_OnProgressCallback Rcp_EventsHandler::onDownloadProgress
@@ -103,9 +112,10 @@ Rcp_OnProgressCallback Rcp_EventsHandler::onDownloadProgress
  
   
 
-#### onHeaderReceive
+### onHeaderReceive
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Rcp_OnHeaderReceiveCallback Rcp_EventsHandler::onHeaderReceive
@@ -117,9 +127,10 @@ Rcp_OnHeaderReceiveCallback Rcp_EventsHandler::onHeaderReceive
  
   
 
-#### onUploadProgress
+### onUploadProgress
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Rcp_OnProgressCallback Rcp_EventsHandler::onUploadProgress

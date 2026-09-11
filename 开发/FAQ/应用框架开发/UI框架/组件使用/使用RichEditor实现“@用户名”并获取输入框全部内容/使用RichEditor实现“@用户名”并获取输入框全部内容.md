@@ -1,30 +1,22 @@
-# 使用RichEditor实现“@用户名”并获取输入框全部内容
+# 使用RichEditor实现@用户名效果
 
-更新时间：2026-06-26 07:47:42
+更新时间：2026-08-27 00:56:37
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-746
 
-#### 问题现象
+## 问题现象
 
 如何通过使用RichEditor实现【@用户名】效果，并且【@用户名】可以作为一个整体被删除，同时实现获取输入框全部内容（包括addBuilderSpan自定义的内容）？
  
  
 
-#### 效果预览
-
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/QTkMBvsdTpKVXp0M7aMyIg/zh-cn_image_0000002628395468.png?HW-CC-KV=V1&HW-CC-Date=20260811T005758Z&HW-CC-Expire=86400&HW-CC-Sign=FE6FF5EF834786EC4428567A8F4BC5BA567BE0D7EFB898F66EBDFF7B02AEB6E5)
-
- 
- 
-
-#### 背景知识
+## 背景知识
 
 [RichEditor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor)是一个支持图文混排和文本交互式编辑的组件。它允许开发者在应用中实现文本的格式化处理，包括设置字体、大小、颜色等属性，以及插入图片、链接和其他媒体内容。
  
  
 
-#### 解决方案
+## 解决方案
 1. 通过RichEditorController.[getSpans](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor#getspans)获取光标前一个span的内容；
 2. 若光标前一个span是内容为@的TextSpan，则先删除；
 3. 然后通过RichEditorController.[addBuilderSpan](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor#addbuilderspan11)将“@[好友昵称]”以指定的样式作为一个整体添加到编辑区域中；
@@ -56,20 +48,20 @@ interface RichEditorSpanClass {
 @Component
 struct RichEditorSpanExample {
   controller: RichEditorController = new RichEditorController();
-  // 选中内容的终止位置
+  <em>// 选中内容的终止位置</em>
   @State end: number = 0;
-  // 当前输入框内容
+  <em>// 当前输入框内容</em>
   @State content: string = '';
-  // 定义一个内容长度
+  <em>// 定义一个内容长度</em>
   @State flag: number = 0;
   @State contentList: Array<string> = [];
-  // 人员列表
+  <em>// 人员列表</em>
   private friends: User[] = [
     { id: '0', avatar: $r('app.media.startIcon'), nickname: '测试1' },
     { id: '1', avatar: $r('app.media.startIcon'), nickname: '测试2' },
   ];
   private builderSpans: RichEditorSpanClass[] = [];
-  // 人员点击事件
+  <em>// 人员点击事件</em>
   onAtFriendClick: (friend: User) => void = friend => {
     const controller = this.controller;
     const offset = controller.getCaretOffset();
@@ -83,7 +75,7 @@ struct RichEditorSpanExample {
     this.setBuilderSpans(controller, friend);
     this.contentList.push(friend.nickname);
     this.content = '';
-    // 当前长度=插入@内容后的长度
+    <em>// 当前长度=插入@内容后的长度</em>
     this.flag = this.contentList.length;
   };
 
@@ -92,7 +84,7 @@ struct RichEditorSpanExample {
     Text(`@${nickname}`).fontColor(0xFF133667);
   }
 
-  // 创建builderSpan
+  <em>// 创建builderSpan</em>
   setBuilderSpans(controller: RichEditorController, friend: User) {
     const builderSpan: RichEditorSpanClass = {
       value: `@${friend.nickname}`,
@@ -161,13 +153,13 @@ struct RichEditorSpanExample {
         })
         .onDidChange((rangeAfter: TextRange) => {
           this.end = rangeAfter.end ? rangeAfter.end : 0;
-          // 当点击删除按钮时，输入框内容随之删除
+          <em>// 当点击删除按钮时，输入框内容随之删除</em>
           this.contentList.splice(this.end - 1, 1);
         })
         .onIMEInputComplete((value: RichEditorTextSpanResult) => {
-          // 输入框内容
+          <em>// 输入框内容</em>
           this.content = value.value;
-          // 当刚开始输入时，将输入的文本内容push进去contentList
+          <em>// 当刚开始输入时，将输入的文本内容push进去contentList</em>
           if (this.contentList.length === this.flag) {
             this.contentList.push(this.content);
           } else if (this.contentList.length - 1 === this.flag) {
@@ -187,9 +179,15 @@ struct RichEditorSpanExample {
 }
 ```
  
+运行结果：
  
 
-#### 常见FAQ
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/Huo4BK9KSs-SVIIcgi6XsA/zh-cn_image_0000002719009371.png?HW-CC-KV=V1&HW-CC-Date=20260911T072744Z&HW-CC-Expire=86400&HW-CC-Sign=1B2120211D56734408446BCAAD31450AA8864CCC8DE83FE3B05B2CE3750A8E4F)
+
+ 
+ 
+
+## 常见FAQ
 
 Q：通过RichEditor的addBuilderSpan接口来实现@功能，当@成员名称较长出现换行时，会导致光标的高度也会变成多行的高度，如何解决此问题？
  

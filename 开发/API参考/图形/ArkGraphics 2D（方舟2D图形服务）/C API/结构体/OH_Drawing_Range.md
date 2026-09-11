@@ -1,20 +1,21 @@
 # OH_Drawing_Range
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drawing-oh-drawing-range
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 typedef struct OH_Drawing_Range OH_Drawing_Range
 ```
   
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-用于接收字体的起始位置和结束位置。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+用于接收文本的起始位置和结束位置。
  
 **起始版本：** 11
  

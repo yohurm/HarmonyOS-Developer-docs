@@ -1,16 +1,16 @@
 # FreeTensor
 
-更新时间：2026-04-20 06:34:33
+更新时间：2026-08-18 12:49:55
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-freetensor
 
-#### 功能说明
+## 功能说明
 
 释放队列中的指定Tensor，供Que后续使用。
  
   
 
-#### 函数原型
+## 函数原型
 
 ```text
 template <typename T> 
@@ -19,8 +19,9 @@ __aicore__ inline void FreeTensor(LocalTensor<T>& tensor)
  
   
 
-#### 参数说明
+## 参数说明
  
+
 | 参数名称 | 输入/输出 | 含义 |
 | --- | --- | --- |
 | tensor | 输入 | 待释放的Tensor。 |
@@ -28,27 +29,29 @@ __aicore__ inline void FreeTensor(LocalTensor<T>& tensor)
  
   
 
-#### 支持的型号
+## 支持的型号
 
 Kirin9020系列处理器
+ 
+Kirin9030系列处理器
  
 KirinX90系列处理器
  
   
 
-#### 注意事项
+## 注意事项
 
 无
  
   
 
-#### 返回值
+## 返回值
 
 无
  
   
 
-#### 调用示例
+## 调用示例
 
 ```text
 // 使用FreeTensor释放通过AllocTensor分配的Tensor，注意配对使用

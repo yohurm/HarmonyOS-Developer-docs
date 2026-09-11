@@ -1,13 +1,14 @@
 # data_asset.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-data-asset-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供资产类型数据结构。
  
@@ -25,16 +26,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | Data_Asset | Data_Asset | 表示资产附件类型的数据。 提供资产附件的信息。 |
@@ -42,10 +46,12 @@
  
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | Data_AssetStatus | Data_AssetStatus | 资产状态值类型。 |
@@ -53,10 +59,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | int OH_Data_Asset_SetName(Data_Asset *asset, const char *name) | 设置资产类型数据的名称。 |
@@ -81,15 +89,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### Data_AssetStatus
+### Data_AssetStatus
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum Data_AssetStatus
@@ -101,6 +111,7 @@ enum Data_AssetStatus
  
 **起始版本：** 11
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ASSET_NULL = 0 | 表示资产为空。 |
@@ -114,15 +125,17 @@ enum Data_AssetStatus
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_Data_Asset_SetName()
+### OH_Data_Asset_SetName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Data_Asset_SetName(Data_Asset *asset, const char *name)
@@ -136,6 +149,7 @@ int OH_Data_Asset_SetName(Data_Asset *asset, const char *name)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Data_Asset *asset | 表示指向Data_Asset实例的指针。 |
@@ -144,6 +158,7 @@ int OH_Data_Asset_SetName(Data_Asset *asset, const char *name)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回特定的错误码值。详细信息可以查看OH_Rdb_ErrCode。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 |
@@ -151,9 +166,10 @@ int OH_Data_Asset_SetName(Data_Asset *asset, const char *name)
  
   
 
-#### OH_Data_Asset_SetUri()
+### OH_Data_Asset_SetUri()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Data_Asset_SetUri(Data_Asset *asset, const char *uri)
@@ -167,6 +183,7 @@ int OH_Data_Asset_SetUri(Data_Asset *asset, const char *uri)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Data_Asset *asset | 表示指向Data_Asset实例的指针。 |
@@ -175,6 +192,7 @@ int OH_Data_Asset_SetUri(Data_Asset *asset, const char *uri)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回特定的错误码值。详细信息可以查看OH_Rdb_ErrCode。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 |
@@ -182,9 +200,10 @@ int OH_Data_Asset_SetUri(Data_Asset *asset, const char *uri)
  
   
 
-#### OH_Data_Asset_SetPath()
+### OH_Data_Asset_SetPath()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Data_Asset_SetPath(Data_Asset *asset, const char *path)
@@ -198,6 +217,7 @@ int OH_Data_Asset_SetPath(Data_Asset *asset, const char *path)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Data_Asset *asset | 表示指向Data_Asset实例的指针。 |
@@ -206,6 +226,7 @@ int OH_Data_Asset_SetPath(Data_Asset *asset, const char *path)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回特定的错误码值。详细信息可以查看OH_Rdb_ErrCode。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 |
@@ -213,9 +234,10 @@ int OH_Data_Asset_SetPath(Data_Asset *asset, const char *path)
  
   
 
-#### OH_Data_Asset_SetCreateTime()
+### OH_Data_Asset_SetCreateTime()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Data_Asset_SetCreateTime(Data_Asset *asset, int64_t createTime)
@@ -229,6 +251,7 @@ int OH_Data_Asset_SetCreateTime(Data_Asset *asset, int64_t createTime)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Data_Asset *asset | 表示指向Data_Asset实例的指针。 |
@@ -237,6 +260,7 @@ int OH_Data_Asset_SetCreateTime(Data_Asset *asset, int64_t createTime)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回特定的错误码值。详细信息可以查看OH_Rdb_ErrCode。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 |
@@ -244,9 +268,10 @@ int OH_Data_Asset_SetCreateTime(Data_Asset *asset, int64_t createTime)
  
   
 
-#### OH_Data_Asset_SetModifyTime()
+### OH_Data_Asset_SetModifyTime()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Data_Asset_SetModifyTime(Data_Asset *asset, int64_t modifyTime)
@@ -260,6 +285,7 @@ int OH_Data_Asset_SetModifyTime(Data_Asset *asset, int64_t modifyTime)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Data_Asset *asset | 表示指向Data_Asset实例的指针。 |
@@ -268,6 +294,7 @@ int OH_Data_Asset_SetModifyTime(Data_Asset *asset, int64_t modifyTime)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回特定的错误码值。详细信息可以查看OH_Rdb_ErrCode。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 |
@@ -275,9 +302,10 @@ int OH_Data_Asset_SetModifyTime(Data_Asset *asset, int64_t modifyTime)
  
   
 
-#### OH_Data_Asset_SetSize()
+### OH_Data_Asset_SetSize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Data_Asset_SetSize(Data_Asset *asset, size_t size)
@@ -291,6 +319,7 @@ int OH_Data_Asset_SetSize(Data_Asset *asset, size_t size)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Data_Asset *asset | 表示指向Data_Asset实例的指针。 |
@@ -299,6 +328,7 @@ int OH_Data_Asset_SetSize(Data_Asset *asset, size_t size)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回特定的错误码值。详细信息可以查看OH_Rdb_ErrCode。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 |
@@ -306,9 +336,10 @@ int OH_Data_Asset_SetSize(Data_Asset *asset, size_t size)
  
   
 
-#### OH_Data_Asset_SetStatus()
+### OH_Data_Asset_SetStatus()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Data_Asset_SetStatus(Data_Asset *asset, Data_AssetStatus status)
@@ -322,6 +353,7 @@ int OH_Data_Asset_SetStatus(Data_Asset *asset, Data_AssetStatus status)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Data_Asset *asset | 表示指向Data_Asset实例的指针。 |
@@ -330,6 +362,7 @@ int OH_Data_Asset_SetStatus(Data_Asset *asset, Data_AssetStatus status)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回特定的错误码值。详细信息可以查看OH_Rdb_ErrCode。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 |
@@ -337,9 +370,10 @@ int OH_Data_Asset_SetStatus(Data_Asset *asset, Data_AssetStatus status)
  
   
 
-#### OH_Data_Asset_GetName()
+### OH_Data_Asset_GetName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Data_Asset_GetName(Data_Asset *asset, char *name, size_t *length)
@@ -353,6 +387,7 @@ int OH_Data_Asset_GetName(Data_Asset *asset, char *name, size_t *length)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Data_Asset *asset | 表示指向Data_Asset实例的指针。 |
@@ -362,6 +397,7 @@ int OH_Data_Asset_GetName(Data_Asset *asset, char *name, size_t *length)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回特定的错误码值。详细信息可以查看OH_Rdb_ErrCode。 返回RDB_ERR表示函数执行异常。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 |
@@ -369,9 +405,10 @@ int OH_Data_Asset_GetName(Data_Asset *asset, char *name, size_t *length)
  
   
 
-#### OH_Data_Asset_GetUri()
+### OH_Data_Asset_GetUri()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Data_Asset_GetUri(Data_Asset *asset, char *uri, size_t *length)
@@ -385,6 +422,7 @@ int OH_Data_Asset_GetUri(Data_Asset *asset, char *uri, size_t *length)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Data_Asset *asset | 表示指向Data_Asset实例的指针。 |
@@ -394,6 +432,7 @@ int OH_Data_Asset_GetUri(Data_Asset *asset, char *uri, size_t *length)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回特定的错误码值。详细信息可以查看OH_Rdb_ErrCode。 返回RDB_ERR表示函数执行异常。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 |
@@ -401,9 +440,10 @@ int OH_Data_Asset_GetUri(Data_Asset *asset, char *uri, size_t *length)
  
   
 
-#### OH_Data_Asset_GetPath()
+### OH_Data_Asset_GetPath()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Data_Asset_GetPath(Data_Asset *asset, char *path, size_t *length)
@@ -417,6 +457,7 @@ int OH_Data_Asset_GetPath(Data_Asset *asset, char *path, size_t *length)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Data_Asset *asset | 表示指向Data_Asset实例的指针。 |
@@ -426,6 +467,7 @@ int OH_Data_Asset_GetPath(Data_Asset *asset, char *path, size_t *length)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回特定的错误码值。详细信息可以查看OH_Rdb_ErrCode。 返回RDB_ERR表示函数执行异常。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 |
@@ -433,9 +475,10 @@ int OH_Data_Asset_GetPath(Data_Asset *asset, char *path, size_t *length)
  
   
 
-#### OH_Data_Asset_GetCreateTime()
+### OH_Data_Asset_GetCreateTime()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Data_Asset_GetCreateTime(Data_Asset *asset, int64_t *createTime)
@@ -449,6 +492,7 @@ int OH_Data_Asset_GetCreateTime(Data_Asset *asset, int64_t *createTime)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Data_Asset *asset | 表示指向Data_Asset实例的指针。 |
@@ -457,6 +501,7 @@ int OH_Data_Asset_GetCreateTime(Data_Asset *asset, int64_t *createTime)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回特定的错误码值。详细信息可以查看OH_Rdb_ErrCode。 返回RDB_ERR表示函数执行异常。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 |
@@ -468,9 +513,10 @@ Data_Asset
  
   
 
-#### OH_Data_Asset_GetModifyTime()
+### OH_Data_Asset_GetModifyTime()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Data_Asset_GetModifyTime(Data_Asset *asset, int64_t *modifyTime)
@@ -484,6 +530,7 @@ int OH_Data_Asset_GetModifyTime(Data_Asset *asset, int64_t *modifyTime)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Data_Asset *asset | 表示指向Data_Asset实例的指针。 |
@@ -492,6 +539,7 @@ int OH_Data_Asset_GetModifyTime(Data_Asset *asset, int64_t *modifyTime)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回特定的错误码值。详细信息可以查看OH_Rdb_ErrCode。 返回RDB_ERR表示函数执行异常。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 |
@@ -499,9 +547,10 @@ int OH_Data_Asset_GetModifyTime(Data_Asset *asset, int64_t *modifyTime)
  
   
 
-#### OH_Data_Asset_GetSize()
+### OH_Data_Asset_GetSize()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Data_Asset_GetSize(Data_Asset *asset, size_t *size)
@@ -515,6 +564,7 @@ int OH_Data_Asset_GetSize(Data_Asset *asset, size_t *size)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Data_Asset *asset | 表示指向Data_Asset实例的指针。 |
@@ -523,6 +573,7 @@ int OH_Data_Asset_GetSize(Data_Asset *asset, size_t *size)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回特定的错误码值。详细信息可以查看OH_Rdb_ErrCode。 返回RDB_ERR表示函数执行异常。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 |
@@ -530,9 +581,10 @@ int OH_Data_Asset_GetSize(Data_Asset *asset, size_t *size)
  
   
 
-#### OH_Data_Asset_GetStatus()
+### OH_Data_Asset_GetStatus()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Data_Asset_GetStatus(Data_Asset *asset, Data_AssetStatus *status)
@@ -546,6 +598,7 @@ int OH_Data_Asset_GetStatus(Data_Asset *asset, Data_AssetStatus *status)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Data_Asset *asset | 表示指向Data_Asset实例的指针。 |
@@ -554,6 +607,7 @@ int OH_Data_Asset_GetStatus(Data_Asset *asset, Data_AssetStatus *status)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回特定的错误码值。详细信息可以查看OH_Rdb_ErrCode。 返回RDB_OK表示成功。 返回RDB_E_INVALID_ARGS表示无效参数。 |
@@ -561,9 +615,10 @@ int OH_Data_Asset_GetStatus(Data_Asset *asset, Data_AssetStatus *status)
  
   
 
-#### OH_Data_Asset_CreateOne()
+### OH_Data_Asset_CreateOne()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Data_Asset *OH_Data_Asset_CreateOne(void)
@@ -577,6 +632,7 @@ Data_Asset *OH_Data_Asset_CreateOne(void)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Data_Asset * | 创建成功则返回一个指向Data_Asset结构体实例的指针，否则返回NULL。 使用完成后，必须通过OH_Data_Asset_DestroyOne接口释放内存。 |
@@ -584,9 +640,10 @@ Data_Asset *OH_Data_Asset_CreateOne(void)
  
   
 
-#### OH_Data_Asset_DestroyOne()
+### OH_Data_Asset_DestroyOne()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Data_Asset_DestroyOne(Data_Asset *asset)
@@ -600,6 +657,7 @@ int OH_Data_Asset_DestroyOne(Data_Asset *asset)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Data_Asset *asset | 表示指向Data_Asset实例的指针。 |
@@ -607,6 +665,7 @@ int OH_Data_Asset_DestroyOne(Data_Asset *asset)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，成功时返回RDB_OK，出错时返回对应的错误码。详细信息可以查看OH_Rdb_ErrCode。 |
@@ -614,9 +673,10 @@ int OH_Data_Asset_DestroyOne(Data_Asset *asset)
  
   
 
-#### OH_Data_Asset_CreateMultiple()
+### OH_Data_Asset_CreateMultiple()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 Data_Asset **OH_Data_Asset_CreateMultiple(uint32_t count)
@@ -630,6 +690,7 @@ Data_Asset **OH_Data_Asset_CreateMultiple(uint32_t count)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | uint32_t count | 表示要创建的Data_Asset类型实例的数量。 |
@@ -637,6 +698,7 @@ Data_Asset **OH_Data_Asset_CreateMultiple(uint32_t count)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | Data_Asset ** | 创建成功则返回一个指向Data_Asset结构体指针数组的指针，否则返回NULL。 使用完成后，必须通过OH_Data_Asset_DestroyMultiple接口释放内存。 |
@@ -644,9 +706,10 @@ Data_Asset **OH_Data_Asset_CreateMultiple(uint32_t count)
  
   
 
-#### OH_Data_Asset_DestroyMultiple()
+### OH_Data_Asset_DestroyMultiple()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 int OH_Data_Asset_DestroyMultiple(Data_Asset **assets, uint32_t count)
@@ -660,6 +723,7 @@ int OH_Data_Asset_DestroyMultiple(Data_Asset **assets, uint32_t count)
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | Data_Asset **assets | 表示指向Data_Asset结构体指针数组的指针。 |
@@ -668,6 +732,7 @@ int OH_Data_Asset_DestroyMultiple(Data_Asset **assets, uint32_t count)
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | int | 返回操作是否成功，成功时返回RDB_OK，出错时返回对应的错误码。详细信息可以查看OH_Rdb_ErrCode。 |

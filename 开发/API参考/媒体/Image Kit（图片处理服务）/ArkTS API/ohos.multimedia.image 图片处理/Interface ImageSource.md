@@ -1,9 +1,9 @@
 # Interface (ImageSource)
 
-更新时间：2026-08-11 11:13:24
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-imagesource
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ImageSource类，用于获取图片相关信息。
 
@@ -18,9 +18,10 @@ ImageSource的所有方法均不支持并发调用。
 
 
 
-#### 导入模块
+## 导入模块
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 import { image } from '@kit.ImageKit';
@@ -28,11 +29,13 @@ import { image } from '@kit.ImageKit';
 
 
 
-#### 属性
+## 属性
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 **系统能力：** SystemCapability.Multimedia.Image.ImageSource
+
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -41,9 +44,10 @@ import { image } from '@kit.ImageKit';
 
 
 
-#### getImageInfo
+## getImageInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getImageInfo(index: number, callback: AsyncCallback&lt;ImageInfo&gt;): void
 
@@ -56,6 +60,7 @@ getImageInfo(index: number, callback: AsyncCallback&lt;ImageInfo&gt;): void
 **系统能力：** SystemCapability.Multimedia.Image.ImageSource
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -81,9 +86,10 @@ async function GetImageInfo(imageSourceObj : image.ImageSource) {
 
 
 
-#### getImageInfo
+## getImageInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getImageInfo(callback: AsyncCallback&lt;ImageInfo&gt;): void
 
@@ -96,6 +102,7 @@ getImageInfo(callback: AsyncCallback&lt;ImageInfo&gt;): void
 **系统能力：** SystemCapability.Multimedia.Image.ImageSource
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -120,9 +127,10 @@ async function GetImageInfo(imageSourceObj : image.ImageSource) {
 
 
 
-#### getImageInfo
+## getImageInfo
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getImageInfo(index?: number): Promise&lt;ImageInfo&gt;
 
@@ -136,12 +144,14 @@ getImageInfo(index?: number): Promise&lt;ImageInfo&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 否 | 创建ImageSource时的序号。默认值为0，表示第一张图片。当取值为N时，表示第N+1张图片。单帧图片场景中index取值只能为0，动图等多帧图片场景中index的取值范围为：[0, (帧数-1)]。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -165,9 +175,10 @@ async function GetImageInfo(imageSourceObj : image.ImageSource) {
 
 
 
-#### getImageInfoSync12+
+## getImageInfoSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getImageInfoSync(index?: number): ImageInfo
 
@@ -181,12 +192,14 @@ getImageInfoSync(index?: number): ImageInfo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 否 | 创建ImageSource时的序号。默认值为0，表示第一张图片。当取值为N时，表示第N+1张图片。单帧图片场景中index取值只能为0，动图等多帧图片场景中index的取值范围为：[0, (帧数-1)]。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -213,9 +226,10 @@ function GetImageInfoSync(context : Context) {
 
 
 
-#### getImageProperty11+
+## getImageProperty11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getImageProperty(key:PropertyKey, options?: ImagePropertyOptions): Promise&lt;string&gt;
 
@@ -231,6 +245,7 @@ getImageProperty(key:PropertyKey, options?: ImagePropertyOptions): Promise&lt;st
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | PropertyKey | 是 | 图片属性名。 |
@@ -238,6 +253,7 @@ getImageProperty(key:PropertyKey, options?: ImagePropertyOptions): Promise&lt;st
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -247,6 +263,7 @@ getImageProperty(key:PropertyKey, options?: ImagePropertyOptions): Promise&lt;st
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -282,9 +299,10 @@ async function GetImageProperty(imageSourceObj : image.ImageSource) {
 
 
 
-#### getImageProperties12+
+## getImageProperties12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getImageProperties(key: Array&lt;PropertyKey&gt;): Promise<Record<PropertyKey, string|null>>
 
@@ -300,12 +318,14 @@ getImageProperties(key: Array&lt;PropertyKey&gt;): Promise<Record<PropertyKey, s
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | Array&lt;PropertyKey&gt; | 是 | 图片属性名的数组。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -315,6 +335,7 @@ getImageProperties(key: Array&lt;PropertyKey&gt;): Promise<Record<PropertyKey, s
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -348,9 +369,10 @@ async function GetImageProperties(imageSourceObj : image.ImageSource) {
 
 
 
-#### getImagePropertySync20+
+## getImagePropertySync20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getImagePropertySync(key:PropertyKey): string
 
@@ -364,12 +386,14 @@ getImagePropertySync(key:PropertyKey): string
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | PropertyKey | 是 | 图片属性名。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -379,6 +403,7 @@ getImagePropertySync(key:PropertyKey): string
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -406,9 +431,10 @@ function GetImagePropertySync(context : Context) {
 
 
 
-#### modifyImageProperty11+
+## modifyImageProperty11+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 modifyImageProperty(key: PropertyKey, value: string): Promise&lt;void&gt;
 
@@ -424,6 +450,7 @@ modifyImageProperty(key: PropertyKey, value: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | PropertyKey | 是 | 图片属性名。 |
@@ -431,6 +458,7 @@ modifyImageProperty(key: PropertyKey, value: string): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -440,6 +468,7 @@ modifyImageProperty(key: PropertyKey, value: string): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -470,9 +499,10 @@ async function ModifyImageProperty(imageSourceObj : image.ImageSource) {
 
 
 
-#### modifyImageProperties12+
+## modifyImageProperties12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 modifyImageProperties(records: Record<PropertyKey, string|null>): Promise&lt;void&gt;
 
@@ -488,12 +518,14 @@ modifyImageProperties(records: Record<PropertyKey, string|null>): Promise&lt;voi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | records | Record<PropertyKey, string \| null> | 是 | 包含图片属性名和属性值的数组。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -503,6 +535,7 @@ modifyImageProperties(records: Record<PropertyKey, string|null>): Promise&lt;voi
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -537,9 +570,10 @@ async function ModifyImageProperties(imageSourceObj : image.ImageSource) {
 
 
 
-#### modifyImagePropertiesEnhanced22+
+## modifyImagePropertiesEnhanced22+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 modifyImagePropertiesEnhanced(records: Record<string, string | null>): Promise&lt;void&gt;
 
@@ -553,12 +587,14 @@ modifyImagePropertiesEnhanced(records: Record<string, string | null>): Promise&l
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | records | Record<string, string \| null> | 是 | 包含图片属性名和属性值的键值对集合。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -568,6 +604,7 @@ modifyImagePropertiesEnhanced(records: Record<string, string | null>): Promise&l
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -602,9 +639,10 @@ async function ModifyImagePropertiesEnhanced(imageSourceObj : image.ImageSource)
 
 
 
-#### readImageMetadata23+
+## readImageMetadata23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readImageMetadata(propertyKeys?: string[], index?: number): Promise&lt;ImageMetadata&gt;
 
@@ -622,6 +660,7 @@ readImageMetadata(propertyKeys?: string[], index?: number): Promise&lt;ImageMeta
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | propertyKeys | string[] | 否 | 图片属性名的数组。若未指定propertyKeys，则返回所有支持的元数据。 |
@@ -629,6 +668,7 @@ readImageMetadata(propertyKeys?: string[], index?: number): Promise&lt;ImageMeta
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -638,6 +678,7 @@ readImageMetadata(propertyKeys?: string[], index?: number): Promise&lt;ImageMeta
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -667,9 +708,10 @@ async function ReadImageMetadata(imageSourceObj : image.ImageSource) {
 
 
 
-#### writeImageMetadata23+
+## writeImageMetadata23+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 writeImageMetadata(imageMetadata: ImageMetadata): Promise&lt;void&gt;
 
@@ -685,12 +727,14 @@ writeImageMetadata(imageMetadata: ImageMetadata): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | imageMetadata | ImageMetadata | 是 | 图像的元数据集。若imageMetadata中的属性值都为空，则清空所有Exif元数据。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -700,6 +744,7 @@ writeImageMetadata(imageMetadata: ImageMetadata): Promise&lt;void&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -729,9 +774,10 @@ async function WriteImageMetadata(imageSourceObj : image.ImageSource) {
 
 
 
-#### readImageMetadataByType24+
+## readImageMetadataByType24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 readImageMetadataByType(metadataTypes?: MetadataType[], index?: number): Promise&lt;ImageMetadata&gt;
 
@@ -749,6 +795,7 @@ readImageMetadataByType(metadataTypes?: MetadataType[], index?: number): Promise
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | metadataTypes | MetadataType[] | 否 | 元数据类型的数组。当该参数缺省时，获取全部支持的元数据。 |
@@ -756,6 +803,7 @@ readImageMetadataByType(metadataTypes?: MetadataType[], index?: number): Promise
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -765,6 +813,7 @@ readImageMetadataByType(metadataTypes?: MetadataType[], index?: number): Promise
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -793,9 +842,10 @@ async function ReadImageMetadataByType(imageSource : image.ImageSource, type: im
 
 
 
-#### createImageRawData24+
+## createImageRawData24+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createImageRawData(): Promise&lt;ImageRawData&gt;
 
@@ -807,6 +857,7 @@ createImageRawData(): Promise&lt;ImageRawData&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;ImageRawData&gt; | Promise对象，返回ImageRawData对象，其中含有数据缓冲区和像素位数。 |
@@ -815,6 +866,7 @@ createImageRawData(): Promise&lt;ImageRawData&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -847,9 +899,10 @@ async function createImageRawData(imageSourceObj: image.ImageSource) {
 
 
 
-#### updateData9+
+## updateData9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateData(buf: ArrayBuffer, isFinished: boolean, offset: number, length: number): Promise&lt;void&gt;
 
@@ -858,6 +911,7 @@ updateData(buf: ArrayBuffer, isFinished: boolean, offset: number, length: number
 **系统能力：** SystemCapability.Multimedia.Image.ImageSource
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -868,6 +922,7 @@ updateData(buf: ArrayBuffer, isFinished: boolean, offset: number, length: number
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -891,9 +946,10 @@ async function UpdateDatay(imageSourceObj : image.ImageSource) {
 
 
 
-#### updateData9+
+## updateData9+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 updateData(buf: ArrayBuffer, isFinished: boolean, offset: number, length: number, callback: AsyncCallback&lt;void&gt;): void
 
@@ -902,6 +958,7 @@ updateData(buf: ArrayBuffer, isFinished: boolean, offset: number, length: number
 **系统能力：** SystemCapability.Multimedia.Image.ImageSource
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -931,9 +988,10 @@ async function UpdateDatay(imageSourceObj : image.ImageSource) {
 
 
 
-#### createPicture13+
+## createPicture13+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPicture(options?: DecodingOptionsForPicture): Promise&lt;Picture&gt;
 
@@ -947,12 +1005,14 @@ createPicture(options?: DecodingOptionsForPicture): Promise&lt;Picture&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | DecodingOptionsForPicture | 否 | 解码参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -962,6 +1022,7 @@ createPicture(options?: DecodingOptionsForPicture): Promise&lt;Picture&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -988,9 +1049,10 @@ async function CreatePicture(imageSourceObj : image.ImageSource) {
 
 
 
-#### createPictureAtIndex20+
+## createPictureAtIndex20+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPictureAtIndex(index: number): Promise&lt;Picture&gt;
 
@@ -1004,12 +1066,14 @@ createPictureAtIndex(index: number): Promise&lt;Picture&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 解码图片序号。图片序号有效的取值范围为：[0, (帧数-1)]。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1019,6 +1083,7 @@ createPictureAtIndex(index: number): Promise&lt;Picture&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1047,9 +1112,10 @@ async function CreatePictures(imageSourceObj : image.ImageSource) {
 
 
 
-#### createPixelMap7+
+## createPixelMap7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPixelMap(options?: DecodingOptions): Promise&lt;PixelMap&gt;
 
@@ -1069,12 +1135,14 @@ createPixelMap(options?: DecodingOptions): Promise&lt;PixelMap&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | DecodingOptions | 否 | 解码参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1097,9 +1165,10 @@ async function CreatePixelMap(imageSourceObj : image.ImageSource) {
 
 
 
-#### createPixelMap7+
+## createPixelMap7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPixelMap(callback: AsyncCallback&lt;PixelMap&gt;): void
 
@@ -1118,6 +1187,7 @@ createPixelMap(callback: AsyncCallback&lt;PixelMap&gt;): void
 **系统能力：** SystemCapability.Multimedia.Image.ImageSource
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1142,9 +1212,10 @@ async function CreatePixelMap(imageSourceObj : image.ImageSource) {
 
 
 
-#### createPixelMap7+
+## createPixelMap7+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPixelMap(options: DecodingOptions, callback: AsyncCallback&lt;PixelMap&gt;): void
 
@@ -1163,6 +1234,7 @@ createPixelMap(options: DecodingOptions, callback: AsyncCallback&lt;PixelMap&gt;
 **系统能力：** SystemCapability.Multimedia.Image.ImageSource
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1199,9 +1271,10 @@ async function CreatePixelMap(imageSourceObj : image.ImageSource) {
 
 
 
-#### createPixelMapSync12+
+## createPixelMapSync12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPixelMapSync(options?: DecodingOptions): PixelMap
 
@@ -1221,12 +1294,14 @@ createPixelMapSync(options?: DecodingOptions): PixelMap
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | DecodingOptions | 否 | 解码参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1262,9 +1337,10 @@ function CreatePixelMapSync(context : Context) {
 
 
 
-#### createPixelMapList10+
+## createPixelMapList10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPixelMapList(options?: DecodingOptions): Promise<Array&lt;PixelMap&gt;>
 
@@ -1280,12 +1356,14 @@ createPixelMapList(options?: DecodingOptions): Promise<Array&lt;PixelMap&gt;>
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | DecodingOptions | 否 | 解码参数。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1295,6 +1373,7 @@ createPixelMapList(options?: DecodingOptions): Promise<Array&lt;PixelMap&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1337,9 +1416,10 @@ async function CreatePixelMapList(imageSourceObj : image.ImageSource) {
 
 
 
-#### createPixelMapList10+
+## createPixelMapList10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPixelMapList(callback: AsyncCallback<Array&lt;PixelMap&gt;>): void
 
@@ -1355,6 +1435,7 @@ createPixelMapList(callback: AsyncCallback<Array&lt;PixelMap&gt;>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<Array&lt;PixelMap&gt;> | 是 | 回调函数，当创建PixelMap对象数组成功，err为undefined，data为获取到的PixelMap对象数组；否则为错误对象。 |
@@ -1363,6 +1444,7 @@ createPixelMapList(callback: AsyncCallback<Array&lt;PixelMap&gt;>): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1399,9 +1481,10 @@ async function CreatePixelMapList(imageSourceObj : image.ImageSource) {
 
 
 
-#### createPixelMapList10+
+## createPixelMapList10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPixelMapList(options: DecodingOptions, callback: AsyncCallback<Array&lt;PixelMap&gt;>): void
 
@@ -1417,6 +1500,7 @@ createPixelMapList(options: DecodingOptions, callback: AsyncCallback<Array&lt;Pi
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | DecodingOptions | 是 | 解码参数。 |
@@ -1426,6 +1510,7 @@ createPixelMapList(options: DecodingOptions, callback: AsyncCallback<Array&lt;Pi
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1470,9 +1555,10 @@ async function CreatePixelMapList(imageSourceObj : image.ImageSource) {
 
 
 
-#### createPixelMapUsingAllocator15+
+## createPixelMapUsingAllocator15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPixelMapUsingAllocator(options?: DecodingOptions, allocatorType?: AllocatorType): Promise&lt;PixelMap&gt;
 
@@ -1486,6 +1572,7 @@ createPixelMapUsingAllocator(options?: DecodingOptions, allocatorType?: Allocato
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | DecodingOptions | 否 | 解码参数。 |
@@ -1493,6 +1580,7 @@ createPixelMapUsingAllocator(options?: DecodingOptions, allocatorType?: Allocato
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1502,6 +1590,7 @@ createPixelMapUsingAllocator(options?: DecodingOptions, allocatorType?: Allocato
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1543,9 +1632,10 @@ async function CreatePixelMapUsingAllocator(context : Context) {
 
 
 
-#### createPixelMapUsingAllocatorSync15+
+## createPixelMapUsingAllocatorSync15+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createPixelMapUsingAllocatorSync(options?: DecodingOptions, allocatorType?: AllocatorType): PixelMap
 
@@ -1563,6 +1653,7 @@ createPixelMapUsingAllocatorSync(options?: DecodingOptions, allocatorType?: Allo
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | DecodingOptions | 否 | 解码参数。 |
@@ -1570,6 +1661,7 @@ createPixelMapUsingAllocatorSync(options?: DecodingOptions, allocatorType?: Allo
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1579,6 +1671,7 @@ createPixelMapUsingAllocatorSync(options?: DecodingOptions, allocatorType?: Allo
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码说明文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-universal)和[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1620,9 +1713,10 @@ async function CreatePixelMapUsingAllocator(context : Context) {
 
 
 
-#### createThumbnail
+## createThumbnail
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createThumbnail(options?: DecodingOptionsForThumbnail): Promise<PixelMap | undefined>
 
@@ -1644,12 +1738,14 @@ createThumbnail(options?: DecodingOptionsForThumbnail): Promise<PixelMap | undef
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | DecodingOptionsForThumbnail | 否 | 解码参数，控制是否生成缩略图以及生成缩略图的目标尺寸。 默认表现： - 当图像有缩略图时，解码原始缩略图，返回的PixelMap对象的宽和高与原缩略图保持一致。 - 当原图文件无缩略图时，对原图进行解码后，根据解码参数options下采样生成缩略图，生成后的缩略图PixelMap对象宽和高都限制在512像素以内。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1659,6 +1755,7 @@ createThumbnail(options?: DecodingOptionsForThumbnail): Promise<PixelMap | undef
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1708,9 +1805,10 @@ async function CreateThumbnail(imageSource: image.ImageSource): Promise<image.Pi
 
 
 
-#### createThumbnailSync
+## createThumbnailSync
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 createThumbnailSync(options?: DecodingOptionsForThumbnail): PixelMap | undefined
 
@@ -1732,12 +1830,14 @@ createThumbnailSync(options?: DecodingOptionsForThumbnail): PixelMap | undefined
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | DecodingOptionsForThumbnail | 否 | 解码参数，控制是否生成缩略图以及生成缩略图的目标尺寸。 默认表现： - 当图像有缩略图时，解码原始缩略图，返回的PixelMap对象的宽和高与原缩略图保持一致。 - 当原图文件无缩略图时，对原图进行解码后，根据解码参数options下采样生成缩略图，生成后的缩略图PixelMap对象宽和高都限制在512像素以内。 |
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1747,6 +1847,7 @@ createThumbnailSync(options?: DecodingOptionsForThumbnail): PixelMap | undefined
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1797,9 +1898,10 @@ async function CreateThumbnailSync(imageSource: image.ImageSource): Promise<imag
 
 
 
-#### getDelayTimeList10+
+## getDelayTimeList10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDelayTimeList(callback: AsyncCallback<Array&lt;number&gt;>): void
 
@@ -1809,6 +1911,7 @@ getDelayTimeList(callback: AsyncCallback<Array&lt;number&gt;>): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback<Array&lt;number&gt;> | 是 | 回调函数，当获取图像延迟时间数组成功，err为undefined，data为获取到的图像延时时间数组；否则为错误对象。 |
@@ -1817,6 +1920,7 @@ getDelayTimeList(callback: AsyncCallback<Array&lt;number&gt;>): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1848,9 +1952,10 @@ async function GetDelayTimeList(imageSourceObj : image.ImageSource) {
 
 
 
-#### getDelayTimeList10+
+## getDelayTimeList10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDelayTimeList(): Promise<Array&lt;number&gt;>
 
@@ -1860,6 +1965,7 @@ getDelayTimeList(): Promise<Array&lt;number&gt;>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;number&gt;> | Promise对象，返回延迟时间数组。 |
@@ -1868,6 +1974,7 @@ getDelayTimeList(): Promise<Array&lt;number&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1897,9 +2004,10 @@ async function GetDelayTimeList(imageSourceObj : image.ImageSource) {
 
 
 
-#### getFrameCount10+
+## getFrameCount10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFrameCount(callback: AsyncCallback&lt;number&gt;): void
 
@@ -1909,6 +2017,7 @@ getFrameCount(callback: AsyncCallback&lt;number&gt;): void
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | AsyncCallback&lt;number&gt; | 是 | 回调函数，当获取图像帧数成功，err为undefined，data为获取到的图像帧数；否则为错误对象。 |
@@ -1917,6 +2026,7 @@ getFrameCount(callback: AsyncCallback&lt;number&gt;): void
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1949,9 +2059,10 @@ async function GetFrameCount(imageSourceObj : image.ImageSource) {
 
 
 
-#### getFrameCount10+
+## getFrameCount10+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getFrameCount(): Promise&lt;number&gt;
 
@@ -1961,6 +2072,7 @@ getFrameCount(): Promise&lt;number&gt;
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise&lt;number&gt; | Promise对象，返回图像帧数。 |
@@ -1969,6 +2081,7 @@ getFrameCount(): Promise&lt;number&gt;
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1999,9 +2112,10 @@ async function GetFrameCount(imageSourceObj : image.ImageSource) {
 
 
 
-#### getDisposalTypeList12+
+## getDisposalTypeList12+
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getDisposalTypeList(): Promise<Array&lt;number&gt;>
 
@@ -2011,6 +2125,7 @@ getDisposalTypeList(): Promise<Array&lt;number&gt;>
 
 **返回值：**
 
+
 | 类型 | 说明 |
 | --- | --- |
 | Promise<Array&lt;number&gt;> | Promise对象，返回帧过渡模式数组。 |
@@ -2019,6 +2134,7 @@ getDisposalTypeList(): Promise<Array&lt;number&gt;>
 **错误码：**
 
 以下错误码的详细介绍请参见[Image错误码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-image)。
+
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2044,9 +2160,10 @@ async function GetDisposalTypeList(imageSourceObj : image.ImageSource) {
 
 
 
-#### release
+## release
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(callback: AsyncCallback&lt;void&gt;): void
 
@@ -2059,6 +2176,7 @@ release(callback: AsyncCallback&lt;void&gt;): void
 **系统能力：** SystemCapability.Multimedia.Image.ImageSource
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2083,9 +2201,10 @@ async function Release(imageSourceObj : image.ImageSource) {
 
 
 
-#### release
+## release
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 release(): Promise&lt;void&gt;
 
@@ -2098,6 +2217,7 @@ release(): Promise&lt;void&gt;
 **系统能力：** SystemCapability.Multimedia.Image.ImageSource
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2120,9 +2240,10 @@ async function Release(imageSourceObj : image.ImageSource) {
 
 
 
-#### getImageProperty(deprecated)
+## getImageProperty(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getImageProperty(key:string, options?: GetImagePropertyOptions): Promise&lt;string&gt;
 
@@ -2138,6 +2259,7 @@ getImageProperty(key:string, options?: GetImagePropertyOptions): Promise&lt;stri
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 图片属性名。 |
@@ -2145,6 +2267,7 @@ getImageProperty(key:string, options?: GetImagePropertyOptions): Promise&lt;stri
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2168,9 +2291,10 @@ async function GetImageProperty(imageSourceObj : image.ImageSource) {
 
 
 
-#### getImageProperty(deprecated)
+## getImageProperty(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getImageProperty(key:string, callback: AsyncCallback&lt;string&gt;): void
 
@@ -2185,6 +2309,7 @@ getImageProperty(key:string, callback: AsyncCallback&lt;string&gt;): void
 **系统能力：** SystemCapability.Multimedia.Image.ImageSource
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2210,9 +2335,10 @@ async function GetImageProperty(imageSourceObj : image.ImageSource) {
 
 
 
-#### getImageProperty(deprecated)
+## getImageProperty(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 getImageProperty(key:string, options: GetImagePropertyOptions, callback: AsyncCallback&lt;string&gt;): void
 
@@ -2227,6 +2353,7 @@ getImageProperty(key:string, options: GetImagePropertyOptions, callback: AsyncCa
 **系统能力：** SystemCapability.Multimedia.Image.ImageSource
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -2254,9 +2381,10 @@ async function GetImageProperty(imageSourceObj : image.ImageSource) {
 
 
 
-#### modifyImageProperty(deprecated)
+## modifyImageProperty(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 modifyImageProperty(key: string, value: string): Promise&lt;void&gt;
 
@@ -2272,6 +2400,7 @@ modifyImageProperty(key: string, value: string): Promise&lt;void&gt;
 
 **参数：**
 
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | key | string | 是 | 图片属性名。 |
@@ -2279,6 +2408,7 @@ modifyImageProperty(key: string, value: string): Promise&lt;void&gt;
 
 
 **返回值：**
+
 
 | 类型 | 说明 |
 | --- | --- |
@@ -2305,9 +2435,10 @@ async function ModifyImageProperty(imageSourceObj : image.ImageSource) {
 
 
 
-#### modifyImageProperty(deprecated)
+## modifyImageProperty(deprecated)
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 modifyImageProperty(key: string, value: string, callback: AsyncCallback&lt;void&gt;): void
 
@@ -2322,6 +2453,7 @@ modifyImageProperty(key: string, value: string, callback: AsyncCallback&lt;void&
 **系统能力：** SystemCapability.Multimedia.Image.ImageSource
 
 **参数：**
+
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |

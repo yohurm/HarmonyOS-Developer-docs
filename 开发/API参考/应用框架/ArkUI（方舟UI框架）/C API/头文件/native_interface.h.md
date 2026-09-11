@@ -1,13 +1,14 @@
 # native_interface.h
 
-更新时间：2026-07-28 11:23:46
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-interface-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 提供NativeModule接口的统一入口函数，用于初始化C-API环境、获取指定类型的Native模块接口集合，以及获取最新一次的报错信息。
  
@@ -25,16 +26,19 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 枚举
+### 枚举
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | ArkUI_NativeAPIVariantKind | ArkUI_NativeAPIVariantKind | 定义Native接口集合类型。 |
@@ -42,10 +46,12 @@
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | void* OH_ArkUI_QueryModuleInterfaceByName(ArkUI_NativeAPIVariantKind type, const char* structName) | 需调用该函数初始化C-API环境，并获取指定类型的Native模块接口集合。 |
@@ -54,10 +60,12 @@
  
   
 
-#### 宏定义
+### 宏定义
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
 | OH_ArkUI_GetModuleInterface(nativeAPIVariantKind, structType, structPtr) | 初始化C-API环境，并基于结构体类型获取对应结构体指针。 |
@@ -65,15 +73,17 @@
  
   
 
-#### 枚举类型说明
+## 枚举类型说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### ArkUI_NativeAPIVariantKind
+### ArkUI_NativeAPIVariantKind
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 enum ArkUI_NativeAPIVariantKind
@@ -85,6 +95,7 @@ enum ArkUI_NativeAPIVariantKind
  
 **起始版本：** 12
   
+
 | 枚举项 | 描述 |
 | --- | --- |
 | ARKUI_NATIVE_NODE = 0 | UI组件相关接口类型，详见native_node.h中的结构体类型定义。 |
@@ -96,15 +107,17 @@ enum ArkUI_NativeAPIVariantKind
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_ArkUI_QueryModuleInterfaceByName()
+### OH_ArkUI_QueryModuleInterfaceByName()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void* OH_ArkUI_QueryModuleInterfaceByName(ArkUI_NativeAPIVariantKind type, const char* structName)
@@ -118,6 +131,7 @@ void* OH_ArkUI_QueryModuleInterfaceByName(ArkUI_NativeAPIVariantKind type, const
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
 | ArkUI_NativeAPIVariantKind type | ArkUI提供的Native接口集合大类，例如UI组件接口类：ARKUI_NATIVE_NODE，手势类：ARKUI_NATIVE_GESTURE。 |
@@ -126,6 +140,7 @@ void* OH_ArkUI_QueryModuleInterfaceByName(ArkUI_NativeAPIVariantKind type, const
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | void* | 返回Native接口抽象指针，在转换为具体类型后进行使用。 |
@@ -133,9 +148,10 @@ void* OH_ArkUI_QueryModuleInterfaceByName(ArkUI_NativeAPIVariantKind type, const
  
   
 
-#### OH_ArkUI_GetModuleInterface()
+### OH_ArkUI_GetModuleInterface()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 #define OH_ArkUI_GetModuleInterface(nativeAPIVariantKind, structType, structPtr)                     \
@@ -157,9 +173,10 @@ do {                                                                            
  
   
 
-#### OH_ArkUI_NativeModule_GetErrorMessage()
+### OH_ArkUI_NativeModule_GetErrorMessage()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 const char* OH_ArkUI_NativeModule_GetErrorMessage()
@@ -173,6 +190,7 @@ const char* OH_ArkUI_NativeModule_GetErrorMessage()
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | const char* | 最新一次的报错信息，包括错误码、方法名称和错误原因。 |

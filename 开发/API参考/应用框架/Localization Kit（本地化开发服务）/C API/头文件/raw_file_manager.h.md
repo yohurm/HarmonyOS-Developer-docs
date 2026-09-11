@@ -1,15 +1,16 @@
 # raw_file_manager.h
 
-更新时间：2026-06-13 03:51:30
+更新时间：2026-08-29 09:41:17
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-raw-file-manager-h
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
-#### 概述
+## 概述
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
 
-提供资源管理rawfile相关功能，可以使用ResourceManager打开rawfile进行后续相关操作，像搜索和读取等。
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
+
+通过本模块可以创建、释放NativeResourceManager对象，以及打开rawfile文件和目录。
  
 **引用文件：** <rawfile/raw_file_manager.h>
  
@@ -23,48 +24,55 @@
  
   
 
-#### 汇总
+## 汇总
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### 结构体
+### 结构体
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
-| NativeResourceManager | NativeResourceManager | 代表native侧的ResourceManager。此类封装了JavaScript resource manager的native实现，ResourceManager指针可以通过调用OH_ResourceManager_InitNativeResourceManager方法获取。 |
+| NativeResourceManager | NativeResourceManager | 表示Native层的ResourceManager对象。NativeResourceManager对JavaScript ResourceManager的Native实现进行封装，可以通过OH_ResourceManager_InitNativeResourceManager函数获取。 |
  
  
   
 
-#### 函数
+### 函数
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
  
+
 | 名称 | 描述 |
 | --- | --- |
-| NativeResourceManager *OH_ResourceManager_InitNativeResourceManager(napi_env env, napi_value jsResMgr) | 基于JavaScript侧的ResourceManager获取native侧的ResourceManager，用来完成rawfile相关功能。 |
-| void OH_ResourceManager_ReleaseNativeResourceManager(NativeResourceManager *resMgr) | 释放native侧ResourceManager。 |
-| RawDir *OH_ResourceManager_OpenRawDir(const NativeResourceManager *mgr, const char *dirName) | 打开rawfile目录，打开后可以遍历对应目录下的rawfile文件。 |
-| RawFile *OH_ResourceManager_OpenRawFile(const NativeResourceManager *mgr, const char *fileName) | 打开rawfile文件，打开后可以读取它的数据。 |
-| RawFile64 *OH_ResourceManager_OpenRawFile64(const NativeResourceManager *mgr, const char *fileName) | 打开较大的rawfile文件，打开后可以读取它的数据。 |
-| bool OH_ResourceManager_IsRawDir(const NativeResourceManager *mgr, const char *path) | 判断路径是否是rawfile下的目录。 |
+| NativeResourceManager *OH_ResourceManager_InitNativeResourceManager(napi_env env, napi_value jsResMgr) | 初始化NativeResourceManager对象。 |
+| void OH_ResourceManager_ReleaseNativeResourceManager(NativeResourceManager *resMgr) | 释放NativeResourceManager对象及其关联资源。 |
+| RawDir *OH_ResourceManager_OpenRawDir(const NativeResourceManager *mgr, const char *dirName) | 打开rawfile目录。 |
+| RawFile *OH_ResourceManager_OpenRawFile(const NativeResourceManager *mgr, const char *fileName) | 打开rawfile文件并返回RawFile对象，用于读取rawfile文件内容。 |
+| RawFile64 *OH_ResourceManager_OpenRawFile64(const NativeResourceManager *mgr, const char *fileName) | 打开rawfile文件并返回RawFile对象，用于读取rawfile文件内容。支持2GB以上的大文件。 |
+| bool OH_ResourceManager_IsRawDir(const NativeResourceManager *mgr, const char *path) | 判断指定路径是否为rawfile的子目录。用于在遍历目录前，判断对应路径是否为目录，或在打开文件前，判断对应路径是否为文件。 |
  
  
   
 
-#### 函数说明
+## 函数说明
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
   
 
-#### OH_ResourceManager_InitNativeResourceManager()
+### OH_ResourceManager_InitNativeResourceManager()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 NativeResourceManager *OH_ResourceManager_InitNativeResourceManager(napi_env env, napi_value jsResMgr)
@@ -72,30 +80,33 @@ NativeResourceManager *OH_ResourceManager_InitNativeResourceManager(napi_env env
  
 **描述**
  
-基于JavaScript侧的ResourceManager获取native侧的ResourceManager，用来完成rawfile相关功能。
+初始化NativeResourceManager对象。
  
 **起始版本：** 8
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| napi_env env | 表示JavaScript Native Interface（napi）环境指针。 |
-| napi_value jsResMgr | 表示JavaScript resource manager。 |
+| napi_env env | 输入参数。指向JavaScript Native Interface（napi）环境的指针。 |
+| napi_value jsResMgr | 输入参数。表示JavaScript ResourceManager对象的引用。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| NativeResourceManager * | 返回NativeResourceManager指针，如果失败返回空指针。 |
+| NativeResourceManager * | 返回NativeResourceManager对象的指针。若初始化失败，返回NULL，可能原因为参数env或jsResMgr无效。 该指针由此函数分配内存，使用完后须调用OH_ResourceManager_ReleaseNativeResourceManager释放。 |
  
  
   
 
-#### OH_ResourceManager_ReleaseNativeResourceManager()
+### OH_ResourceManager_ReleaseNativeResourceManager()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 void OH_ResourceManager_ReleaseNativeResourceManager(NativeResourceManager *resMgr)
@@ -103,22 +114,24 @@ void OH_ResourceManager_ReleaseNativeResourceManager(NativeResourceManager *resM
  
 **描述**
  
-释放native侧ResourceManager。
+释放NativeResourceManager对象及其关联资源。
  
 **起始版本：** 8
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| NativeResourceManager *resMgr | 表示NativeResourceManager指针。 |
+| NativeResourceManager *resMgr | 输入参数。指向要释放的NativeResourceManager对象的指针。释放后resMgr指针失效，不可用于其他操作。 |
  
  
   
 
-#### OH_ResourceManager_OpenRawDir()
+### OH_ResourceManager_OpenRawDir()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 RawDir *OH_ResourceManager_OpenRawDir(const NativeResourceManager *mgr, const char *dirName)
@@ -126,23 +139,25 @@ RawDir *OH_ResourceManager_OpenRawDir(const NativeResourceManager *mgr, const ch
  
 **描述**
  
-打开rawfile目录，打开后可以遍历对应目录下的rawfile文件。
+打开rawfile目录。
  
 **起始版本：** 8
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| const NativeResourceManager *mgr | 表示指向NativeResourceManager的指针，此指针是通过调用OH_ResourceManager_InitNativeResourceManager方法获取的。 |
-| const char *dirName | 表示要打开的rawfile目录名称，当传递一个空字符串时表示打开rawfile根目录。 |
+| const NativeResourceManager *mgr | 输入参数。指向NativeResourceManager对象的指针。 |
+| const char *dirName | 输入参数。待打开的目录路径。相对于rawfile根目录的路径，例如"images/icons"。当为空字符串时表示打开rawfile根目录。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| RawDir * | 返回RawDir指针。使用完此指针后，调用OH_ResourceManager_CloseRawDir释放。如果失败或者mgr为空时返回空指针。 |
+| RawDir * | 返回指向RawDir对象的指针。若调用失败或mgr为空，则返回NULL。使用完后须调用OH_ResourceManager_CloseRawDir释放。 |
  
  
 **参考：**
@@ -153,9 +168,10 @@ RawDir *OH_ResourceManager_OpenRawDir(const NativeResourceManager *mgr, const ch
  
   
 
-#### OH_ResourceManager_OpenRawFile()
+### OH_ResourceManager_OpenRawFile()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 RawFile *OH_ResourceManager_OpenRawFile(const NativeResourceManager *mgr, const char *fileName)
@@ -163,23 +179,25 @@ RawFile *OH_ResourceManager_OpenRawFile(const NativeResourceManager *mgr, const 
  
 **描述**
  
-打开rawfile文件，打开后可以读取它的数据。
+打开rawfile文件并返回RawFile对象，用于读取rawfile文件内容。
  
 **起始版本：** 8
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| const NativeResourceManager *mgr | 表示指向NativeResourceManager的指针，此指针通过调用OH_ResourceManager_InitNativeResourceManager方法获取。 |
-| const char *fileName | 表示基于rawfile根目录的相对路径下的文件名称。 |
+| const NativeResourceManager *mgr | 输入参数。指向NativeResourceManager对象的指针。 |
+| const char *fileName | 输入参数。待打开的文件路径。相对于rawfile根目录的路径，例如"images/icons/1.png"。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| RawFile * | 返回RawFile指针。当使用完此指针，调用OH_ResourceManager_CloseRawFile释放。如果失败或者mgr和fileName为空时返回空指针。 |
+| RawFile * | 返回指向RawFile对象的指针。若调用失败或输入参数为空，则返回NULL。使用完后须调用OH_ResourceManager_CloseRawFile释放。 |
  
  
 **参考：**
@@ -190,9 +208,10 @@ RawFile *OH_ResourceManager_OpenRawFile(const NativeResourceManager *mgr, const 
  
   
 
-#### OH_ResourceManager_OpenRawFile64()
+### OH_ResourceManager_OpenRawFile64()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 RawFile64 *OH_ResourceManager_OpenRawFile64(const NativeResourceManager *mgr, const char *fileName)
@@ -200,23 +219,25 @@ RawFile64 *OH_ResourceManager_OpenRawFile64(const NativeResourceManager *mgr, co
  
 **描述**
  
-打开较大的rawfile文件，打开后可以读取它的数据。
+打开rawfile文件并返回RawFile对象，用于读取rawfile文件内容。支持2GB以上的大文件。
  
 **起始版本：** 11
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| const NativeResourceManager *mgr | 表示指向NativeResourceManager的指针，此指针通过调用OH_ResourceManager_InitNativeResourceManager方法获取。 |
-| const char *fileName | 表示基于rawfile根目录的相对路径下的文件名称。 |
+| const NativeResourceManager *mgr | 输入参数。指向NativeResourceManager对象的指针。 |
+| const char *fileName | 输入参数。待打开的文件路径。相对于rawfile根目录的路径，例如"images/icons/1.png"。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
-| RawFile64 * | 返回RawFile64指针。当使用完此指针，调用OH_ResourceManager_CloseRawFile64释放。如果失败或者mgr和fileName为空时返回空指针。 |
+| RawFile64 * | 返回指向RawFile对象的指针。若调用失败或输入参数为空，则返回NULL。使用完后须调用OH_ResourceManager_CloseRawFile64释放。 |
  
  
 **参考：**
@@ -227,9 +248,10 @@ RawFile64 *OH_ResourceManager_OpenRawFile64(const NativeResourceManager *mgr, co
  
   
 
-#### OH_ResourceManager_IsRawDir()
+### OH_ResourceManager_IsRawDir()
 
-**支持设备：** Phone | PC/2in1 | Tablet | Wearable | TV
+
+**支持设备：** Phone | PC/2in1 | Tablet | TV | Wearable
 
 ```text
 bool OH_ResourceManager_IsRawDir(const NativeResourceManager *mgr, const char *path)
@@ -237,20 +259,22 @@ bool OH_ResourceManager_IsRawDir(const NativeResourceManager *mgr, const char *p
  
 **描述**
  
-判断路径是否是rawfile下的目录。
+判断指定路径是否为rawfile的子目录。用于在遍历目录前，判断对应路径是否为目录，或在打开文件前，判断对应路径是否为文件。
  
 **起始版本：** 12
  
 **参数：**
   
+
 | 参数项 | 描述 |
 | --- | --- |
-| const NativeResourceManager *mgr | 表示指向NativeResourceManager的指针，此指针通过调用OH_ResourceManager_InitNativeResourceManager方法获取。 |
-| const char *path | rawfile路径。 |
+| const NativeResourceManager *mgr | 输入参数。指向NativeResourceManager对象的指针。 |
+| const char *path | 待判断的路径。相对于rawfile根目录的路径，如"images/icons"。 |
  
  
 **返回：**
   
+
 | 类型 | 说明 |
 | --- | --- |
 | bool | 返回true表示是rawfile下的目录，返回false表示不是rawfile下的目录。 |

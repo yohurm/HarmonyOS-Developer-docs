@@ -1,6 +1,6 @@
 # 启动应用内的UIAbility组件
 
-更新时间：2026-08-03 11:34:29
+更新时间：2026-09-09 06:54:05
 
 来源：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-intra-device-interaction
 
@@ -14,7 +14,7 @@
 
 
 
-#### 启动应用内的UIAbility
+## 启动应用内的UIAbility
 
 当一个应用内包含多个[UIAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability)时，存在应用内启动UIAbility的场景。例如在支付应用中从入口UIAbility启动收付款UIAbility。
 
@@ -139,7 +139,7 @@ struct FuncAbilityAPage {
 
 
 
-#### 启动应用内的UIAbility并获取返回结果
+## 启动应用内的UIAbility并获取返回结果
 
 在一个EntryAbility启动另外一个FuncAbility时，希望在被启动的FuncAbility完成相关业务后，能将结果返回给调用方。例如在应用中将入口功能和账号登录功能分别设计为两个独立的[UIAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability)，在账号登录UIAbility中完成登录操作后，需要将登录的结果返回给入口UIAbility。
 1. 在EntryAbility中，调用[startAbilityForResult()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext#startabilityforresult-2)接口启动FuncAbility，异步回调中的data用于接收FuncAbility停止自身后返回给EntryAbility的信息。示例中的context的获取方式请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
@@ -333,11 +333,11 @@ struct MainPage {
 
 
 
-#### 启动UIAbility的指定页面
+## 启动UIAbility的指定页面
 
 
 
-#### 概述
+### 概述
 
 一个[UIAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability)可以对应多个页面，在不同的场景下启动该UIAbility时需要展示不同的页面，例如从一个UIAbility的页面中跳转到另外一个UIAbility时，希望启动目标UIAbility的指定页面。
 
@@ -351,7 +351,7 @@ UIAbility的启动分为两种情况：UIAbility冷启动和UIAbility热启动�
 
 
 
-#### 调用方UIAbility指定启动页面
+### 调用方UIAbility指定启动页面
 
 调用方[UIAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability)启动另外一个UIAbility时，通常需要跳转到指定的页面。例如FuncAbility包含两个页面（Index对应首页，Second对应功能A页面），此时需要在传入的[want](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-want)参数中配置指定的页面路径信息，可以通过Want中的parameters参数增加一个自定义参数传递页面跳转信息。示例中的context的获取方式请参见[获取UIAbility的上下文信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usage#获取uiability的上下文信息)。
 
@@ -409,7 +409,7 @@ struct MainPage {
 
 
 
-#### 目标UIAbility冷启动
+### 目标UIAbility冷启动
 
 目标[UIAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability)冷启动时，在目标UIAbility的[onCreate()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability#oncreate)生命周期回调中，接收调用方传过来的参数。然后在目标UIAbility的[onWindowStageCreate()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability#onwindowstagecreate)生命周期回调中，解析调用方传递过来的[want](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-want)参数，获取到需要加载的页面信息url，传入[windowStage.loadContent()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window-windowstage#loadcontent9)方法。
 
@@ -447,7 +447,7 @@ export default class ColdStartAbility extends UIAbility {
 
 
 
-#### 目标UIAbility热启动
+### 目标UIAbility热启动
 
 在应用开发中，会遇到目标[UIAbility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability)实例之前已经启动过的场景，这时再次启动目标UIAbility时，不会重新走初始化逻辑，只会直接触发[onNewWant()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-uiability#onnewwant)生命周期方法。为了实现跳转到指定页面，需要在onNewWant()中解析参数进行处理。
 
@@ -461,7 +461,7 @@ export default class ColdStartAbility extends UIAbility {
 图1 目标UIAbility热启动
 
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/BGKJCkFDSnCGTBwXBXH1BA/zh-cn_image_0000002674631668.png?HW-CC-KV=V1&HW-CC-Date=20260813T095617Z&HW-CC-Expire=86400&HW-CC-Sign=357ADE6CB801BBC3FA6B3F29EE9F0E7FFC811F5147F671CF0EE882ECC20FD229)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/M1LahDPZRouC2wepGnFJTQ/zh-cn_image_0000002747209749.png?HW-CC-KV=V1&HW-CC-Date=20260911T073134Z&HW-CC-Expire=86400&HW-CC-Sign=CDD8D63299FAA8B7B46E340BA6C2612F12BC675FA07CB4B4624903820CB6482D)
 
 
 开发步骤如下所示。
